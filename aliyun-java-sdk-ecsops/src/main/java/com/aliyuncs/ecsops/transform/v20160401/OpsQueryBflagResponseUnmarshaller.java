@@ -28,17 +28,17 @@ public class OpsQueryBflagResponseUnmarshaller {
 		
 		opsQueryBflagResponse.setRequestId(_ctx.stringValue("OpsQueryBflagResponse.RequestId"));
 		opsQueryBflagResponse.setTotalCount(_ctx.integerValue("OpsQueryBflagResponse.TotalCount"));
-		opsQueryBflagResponse.setPageNumber(_ctx.integerValue("OpsQueryBflagResponse.PageNumber"));
 		opsQueryBflagResponse.setPageSize(_ctx.integerValue("OpsQueryBflagResponse.PageSize"));
+		opsQueryBflagResponse.setPageNumber(_ctx.integerValue("OpsQueryBflagResponse.PageNumber"));
 
 		List<EcsBidRelItem> ecsBidRel = new ArrayList<EcsBidRelItem>();
 		for (int i = 0; i < _ctx.lengthValue("OpsQueryBflagResponse.EcsBidRel.Length"); i++) {
 			EcsBidRelItem ecsBidRelItem = new EcsBidRelItem();
-			ecsBidRelItem.setId(_ctx.longValue("OpsQueryBflagResponse.EcsBidRel["+ i +"].Id"));
+			ecsBidRelItem.setRemark(_ctx.stringValue("OpsQueryBflagResponse.EcsBidRel["+ i +"].Remark"));
+			ecsBidRelItem.setBflag(_ctx.stringValue("OpsQueryBflagResponse.EcsBidRel["+ i +"].Bflag"));
 			ecsBidRelItem.setAliUid(_ctx.longValue("OpsQueryBflagResponse.EcsBidRel["+ i +"].AliUid"));
 			ecsBidRelItem.setBid(_ctx.stringValue("OpsQueryBflagResponse.EcsBidRel["+ i +"].Bid"));
-			ecsBidRelItem.setBflag(_ctx.stringValue("OpsQueryBflagResponse.EcsBidRel["+ i +"].Bflag"));
-			ecsBidRelItem.setRemark(_ctx.stringValue("OpsQueryBflagResponse.EcsBidRel["+ i +"].Remark"));
+			ecsBidRelItem.setId(_ctx.longValue("OpsQueryBflagResponse.EcsBidRel["+ i +"].Id"));
 			ecsBidRelItem.setParentBflag(_ctx.stringValue("OpsQueryBflagResponse.EcsBidRel["+ i +"].ParentBflag"));
 
 			ecsBidRel.add(ecsBidRelItem);

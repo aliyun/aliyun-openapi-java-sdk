@@ -31,15 +31,15 @@ public class OpsShowVportsResponseUnmarshaller {
 		List<ShowVportModel> showVportModels = new ArrayList<ShowVportModel>();
 		for (int i = 0; i < _ctx.lengthValue("OpsShowVportsResponse.ShowVportModels.Length"); i++) {
 			ShowVportModel showVportModel = new ShowVportModel();
-			showVportModel.setCode(_ctx.stringValue("OpsShowVportsResponse.ShowVportModels["+ i +"].Code"));
 			showVportModel.setErrorMessage(_ctx.stringValue("OpsShowVportsResponse.ShowVportModels["+ i +"].ErrorMessage"));
-			showVportModel.setInstanceId(_ctx.stringValue("OpsShowVportsResponse.ShowVportModels["+ i +"].InstanceId"));
-			showVportModel.setEniId(_ctx.stringValue("OpsShowVportsResponse.ShowVportModels["+ i +"].EniId"));
-			showVportModel.setVportName(_ctx.stringValue("OpsShowVportsResponse.ShowVportModels["+ i +"].VportName"));
 			showVportModel.setVportStatus(_ctx.stringValue("OpsShowVportsResponse.ShowVportModels["+ i +"].VportStatus"));
-			showVportModel.setEniStatus(_ctx.stringValue("OpsShowVportsResponse.ShowVportModels["+ i +"].EniStatus"));
-			showVportModel.setEniType(_ctx.stringValue("OpsShowVportsResponse.ShowVportModels["+ i +"].EniType"));
 			showVportModel.setEniNetworkType(_ctx.stringValue("OpsShowVportsResponse.ShowVportModels["+ i +"].EniNetworkType"));
+			showVportModel.setCode(_ctx.stringValue("OpsShowVportsResponse.ShowVportModels["+ i +"].Code"));
+			showVportModel.setVportName(_ctx.stringValue("OpsShowVportsResponse.ShowVportModels["+ i +"].VportName"));
+			showVportModel.setInstanceId(_ctx.stringValue("OpsShowVportsResponse.ShowVportModels["+ i +"].InstanceId"));
+			showVportModel.setEniStatus(_ctx.stringValue("OpsShowVportsResponse.ShowVportModels["+ i +"].EniStatus"));
+			showVportModel.setEniId(_ctx.stringValue("OpsShowVportsResponse.ShowVportModels["+ i +"].EniId"));
+			showVportModel.setEniType(_ctx.stringValue("OpsShowVportsResponse.ShowVportModels["+ i +"].EniType"));
 
 			showVportModels.add(showVportModel);
 		}

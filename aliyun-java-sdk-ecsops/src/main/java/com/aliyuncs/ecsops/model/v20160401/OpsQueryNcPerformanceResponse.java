@@ -37,18 +37,18 @@ public class OpsQueryNcPerformanceResponse extends AcsResponse {
 
 	public static class NcPerInfo {
 
-		private List<CpuException> cpuExceptions;
+		private List<NetworkException> networkExceptions;
 
 		private List<DiskException> diskExceptions;
 
-		private List<NetworkException> networkExceptions;
+		private List<CpuException> cpuExceptions;
 
-		public List<CpuException> getCpuExceptions() {
-			return this.cpuExceptions;
+		public List<NetworkException> getNetworkExceptions() {
+			return this.networkExceptions;
 		}
 
-		public void setCpuExceptions(List<CpuException> cpuExceptions) {
-			this.cpuExceptions = cpuExceptions;
+		public void setNetworkExceptions(List<NetworkException> networkExceptions) {
+			this.networkExceptions = networkExceptions;
 		}
 
 		public List<DiskException> getDiskExceptions() {
@@ -59,15 +59,21 @@ public class OpsQueryNcPerformanceResponse extends AcsResponse {
 			this.diskExceptions = diskExceptions;
 		}
 
-		public List<NetworkException> getNetworkExceptions() {
-			return this.networkExceptions;
+		public List<CpuException> getCpuExceptions() {
+			return this.cpuExceptions;
 		}
 
-		public void setNetworkExceptions(List<NetworkException> networkExceptions) {
-			this.networkExceptions = networkExceptions;
+		public void setCpuExceptions(List<CpuException> cpuExceptions) {
+			this.cpuExceptions = cpuExceptions;
 		}
 
-		public static class CpuException {
+		public static class NetworkException {
+
+			private String exceptionDesc;
+
+			private String perfValue;
+
+			private String description;
 
 			private String unit;
 
@@ -75,17 +81,35 @@ public class OpsQueryNcPerformanceResponse extends AcsResponse {
 
 			private Boolean isPrimary;
 
-			private String level;
+			private String category;
 
 			private String name;
 
-			private String description;
+			private String level;
 
-			private String exceptionDesc;
+			public String getExceptionDesc() {
+				return this.exceptionDesc;
+			}
 
-			private String category;
+			public void setExceptionDesc(String exceptionDesc) {
+				this.exceptionDesc = exceptionDesc;
+			}
 
-			private String perfValue;
+			public String getPerfValue() {
+				return this.perfValue;
+			}
+
+			public void setPerfValue(String perfValue) {
+				this.perfValue = perfValue;
+			}
+
+			public String getDescription() {
+				return this.description;
+			}
+
+			public void setDescription(String description) {
+				this.description = description;
+			}
 
 			public String getUnit() {
 				return this.unit;
@@ -111,12 +135,12 @@ public class OpsQueryNcPerformanceResponse extends AcsResponse {
 				this.isPrimary = isPrimary;
 			}
 
-			public String getLevel() {
-				return this.level;
+			public String getCategory() {
+				return this.category;
 			}
 
-			public void setLevel(String level) {
-				this.level = level;
+			public void setCategory(String category) {
+				this.category = category;
 			}
 
 			public String getName() {
@@ -127,58 +151,58 @@ public class OpsQueryNcPerformanceResponse extends AcsResponse {
 				this.name = name;
 			}
 
-			public String getDescription() {
-				return this.description;
+			public String getLevel() {
+				return this.level;
 			}
 
-			public void setDescription(String description) {
-				this.description = description;
-			}
-
-			public String getExceptionDesc() {
-				return this.exceptionDesc;
-			}
-
-			public void setExceptionDesc(String exceptionDesc) {
-				this.exceptionDesc = exceptionDesc;
-			}
-
-			public String getCategory() {
-				return this.category;
-			}
-
-			public void setCategory(String category) {
-				this.category = category;
-			}
-
-			public String getPerfValue() {
-				return this.perfValue;
-			}
-
-			public void setPerfValue(String perfValue) {
-				this.perfValue = perfValue;
+			public void setLevel(String level) {
+				this.level = level;
 			}
 		}
 
 		public static class DiskException {
 
+			private String exceptionDesc;
+
+			private String perfValue;
+
+			private String description;
+
 			private String unit;
 
 			private String slsKey;
 
 			private Boolean isPrimary;
 
-			private String level;
+			private String category;
 
 			private String name;
 
-			private String description;
+			private String level;
 
-			private String exceptionDesc;
+			public String getExceptionDesc() {
+				return this.exceptionDesc;
+			}
 
-			private String category;
+			public void setExceptionDesc(String exceptionDesc) {
+				this.exceptionDesc = exceptionDesc;
+			}
 
-			private String perfValue;
+			public String getPerfValue() {
+				return this.perfValue;
+			}
+
+			public void setPerfValue(String perfValue) {
+				this.perfValue = perfValue;
+			}
+
+			public String getDescription() {
+				return this.description;
+			}
+
+			public void setDescription(String description) {
+				this.description = description;
+			}
 
 			public String getUnit() {
 				return this.unit;
@@ -204,12 +228,12 @@ public class OpsQueryNcPerformanceResponse extends AcsResponse {
 				this.isPrimary = isPrimary;
 			}
 
-			public String getLevel() {
-				return this.level;
+			public String getCategory() {
+				return this.category;
 			}
 
-			public void setLevel(String level) {
-				this.level = level;
+			public void setCategory(String category) {
+				this.category = category;
 			}
 
 			public String getName() {
@@ -220,40 +244,22 @@ public class OpsQueryNcPerformanceResponse extends AcsResponse {
 				this.name = name;
 			}
 
-			public String getDescription() {
-				return this.description;
+			public String getLevel() {
+				return this.level;
 			}
 
-			public void setDescription(String description) {
-				this.description = description;
-			}
-
-			public String getExceptionDesc() {
-				return this.exceptionDesc;
-			}
-
-			public void setExceptionDesc(String exceptionDesc) {
-				this.exceptionDesc = exceptionDesc;
-			}
-
-			public String getCategory() {
-				return this.category;
-			}
-
-			public void setCategory(String category) {
-				this.category = category;
-			}
-
-			public String getPerfValue() {
-				return this.perfValue;
-			}
-
-			public void setPerfValue(String perfValue) {
-				this.perfValue = perfValue;
+			public void setLevel(String level) {
+				this.level = level;
 			}
 		}
 
-		public static class NetworkException {
+		public static class CpuException {
+
+			private String exceptionDesc;
+
+			private String perfValue;
+
+			private String description;
 
 			private String unit;
 
@@ -261,17 +267,35 @@ public class OpsQueryNcPerformanceResponse extends AcsResponse {
 
 			private Boolean isPrimary;
 
-			private String level;
+			private String category;
 
 			private String name;
 
-			private String description;
+			private String level;
 
-			private String exceptionDesc;
+			public String getExceptionDesc() {
+				return this.exceptionDesc;
+			}
 
-			private String category;
+			public void setExceptionDesc(String exceptionDesc) {
+				this.exceptionDesc = exceptionDesc;
+			}
 
-			private String perfValue;
+			public String getPerfValue() {
+				return this.perfValue;
+			}
+
+			public void setPerfValue(String perfValue) {
+				this.perfValue = perfValue;
+			}
+
+			public String getDescription() {
+				return this.description;
+			}
+
+			public void setDescription(String description) {
+				this.description = description;
+			}
 
 			public String getUnit() {
 				return this.unit;
@@ -297,12 +321,12 @@ public class OpsQueryNcPerformanceResponse extends AcsResponse {
 				this.isPrimary = isPrimary;
 			}
 
-			public String getLevel() {
-				return this.level;
+			public String getCategory() {
+				return this.category;
 			}
 
-			public void setLevel(String level) {
-				this.level = level;
+			public void setCategory(String category) {
+				this.category = category;
 			}
 
 			public String getName() {
@@ -313,36 +337,12 @@ public class OpsQueryNcPerformanceResponse extends AcsResponse {
 				this.name = name;
 			}
 
-			public String getDescription() {
-				return this.description;
+			public String getLevel() {
+				return this.level;
 			}
 
-			public void setDescription(String description) {
-				this.description = description;
-			}
-
-			public String getExceptionDesc() {
-				return this.exceptionDesc;
-			}
-
-			public void setExceptionDesc(String exceptionDesc) {
-				this.exceptionDesc = exceptionDesc;
-			}
-
-			public String getCategory() {
-				return this.category;
-			}
-
-			public void setCategory(String category) {
-				this.category = category;
-			}
-
-			public String getPerfValue() {
-				return this.perfValue;
-			}
-
-			public void setPerfValue(String perfValue) {
-				this.perfValue = perfValue;
+			public void setLevel(String level) {
+				this.level = level;
 			}
 		}
 	}

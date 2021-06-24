@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsQueryMonitorExceptionResponse extends AcsResponse {
 
+	private String endTime;
+
 	private String requestId;
 
 	private String startTime;
 
-	private String endTime;
-
 	private List<ExceptionEvent> exceptionEvents;
 
 	private OverviewInfo overviewInfo;
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -49,14 +57,6 @@ public class OpsQueryMonitorExceptionResponse extends AcsResponse {
 
 	public void setStartTime(String startTime) {
 		this.startTime = startTime;
-	}
-
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
 	}
 
 	public List<ExceptionEvent> getExceptionEvents() {
@@ -77,58 +77,34 @@ public class OpsQueryMonitorExceptionResponse extends AcsResponse {
 
 	public static class ExceptionEvent {
 
-		private String machineId;
-
-		private String ncIp;
-
-		private String exceptionTime;
-
-		private String lastExceptionTime;
+		private String exceptionCount;
 
 		private String exceptionType;
 
-		private String reason;
+		private String warningLevel;
+
+		private String lastExceptionTime;
+
+		private String exceptionTime;
+
+		private String ncIp;
+
+		private String additionalInfo;
 
 		private String exceptionName;
 
 		private String exceptionCondition;
 
-		private String exceptionCount;
+		private String reason;
 
-		private String warningLevel;
+		private String machineId;
 
-		private String additionalInfo;
-
-		public String getMachineId() {
-			return this.machineId;
+		public String getExceptionCount() {
+			return this.exceptionCount;
 		}
 
-		public void setMachineId(String machineId) {
-			this.machineId = machineId;
-		}
-
-		public String getNcIp() {
-			return this.ncIp;
-		}
-
-		public void setNcIp(String ncIp) {
-			this.ncIp = ncIp;
-		}
-
-		public String getExceptionTime() {
-			return this.exceptionTime;
-		}
-
-		public void setExceptionTime(String exceptionTime) {
-			this.exceptionTime = exceptionTime;
-		}
-
-		public String getLastExceptionTime() {
-			return this.lastExceptionTime;
-		}
-
-		public void setLastExceptionTime(String lastExceptionTime) {
-			this.lastExceptionTime = lastExceptionTime;
+		public void setExceptionCount(String exceptionCount) {
+			this.exceptionCount = exceptionCount;
 		}
 
 		public String getExceptionType() {
@@ -139,12 +115,44 @@ public class OpsQueryMonitorExceptionResponse extends AcsResponse {
 			this.exceptionType = exceptionType;
 		}
 
-		public String getReason() {
-			return this.reason;
+		public String getWarningLevel() {
+			return this.warningLevel;
 		}
 
-		public void setReason(String reason) {
-			this.reason = reason;
+		public void setWarningLevel(String warningLevel) {
+			this.warningLevel = warningLevel;
+		}
+
+		public String getLastExceptionTime() {
+			return this.lastExceptionTime;
+		}
+
+		public void setLastExceptionTime(String lastExceptionTime) {
+			this.lastExceptionTime = lastExceptionTime;
+		}
+
+		public String getExceptionTime() {
+			return this.exceptionTime;
+		}
+
+		public void setExceptionTime(String exceptionTime) {
+			this.exceptionTime = exceptionTime;
+		}
+
+		public String getNcIp() {
+			return this.ncIp;
+		}
+
+		public void setNcIp(String ncIp) {
+			this.ncIp = ncIp;
+		}
+
+		public String getAdditionalInfo() {
+			return this.additionalInfo;
+		}
+
+		public void setAdditionalInfo(String additionalInfo) {
+			this.additionalInfo = additionalInfo;
 		}
 
 		public String getExceptionName() {
@@ -163,93 +171,12 @@ public class OpsQueryMonitorExceptionResponse extends AcsResponse {
 			this.exceptionCondition = exceptionCondition;
 		}
 
-		public String getExceptionCount() {
-			return this.exceptionCount;
+		public String getReason() {
+			return this.reason;
 		}
 
-		public void setExceptionCount(String exceptionCount) {
-			this.exceptionCount = exceptionCount;
-		}
-
-		public String getWarningLevel() {
-			return this.warningLevel;
-		}
-
-		public void setWarningLevel(String warningLevel) {
-			this.warningLevel = warningLevel;
-		}
-
-		public String getAdditionalInfo() {
-			return this.additionalInfo;
-		}
-
-		public void setAdditionalInfo(String additionalInfo) {
-			this.additionalInfo = additionalInfo;
-		}
-	}
-
-	public static class OverviewInfo {
-
-		private Integer vCpuCount;
-
-		private String machineId;
-
-		private String ncIp;
-
-		private String ncId;
-
-		private String machineType;
-
-		private String aZone;
-
-		private String instanceFamily;
-
-		private String machineStatus;
-
-		private String cluster;
-
-		private String extInfo;
-
-		private Boolean isLocalDisk;
-
-		private String vips;
-
-		private String regionId;
-
-		private String stressComparisionState;
-
-		private String stressComparisionResult;
-
-		private String stressComparisionStartTime;
-
-		private Integer stressComparisionTime;
-
-		private String riskTag;
-
-		private String productName;
-
-		private String migrateStatus;
-
-		private String canMigrateSla;
-
-		private String canMigrateBySlb;
-
-		private String canMigrateByType;
-
-		private String canMigrateByOthers;
-
-		private List<SnNodeInfo> snNodeInfoList;
-
-		private List<String> blackListInfo;
-
-		private List<String> whiteListInfo;
-
-		public Integer getVCpuCount() {
-			return this.vCpuCount;
-		}
-
-		public void setVCpuCount(Integer vCpuCount) {
-			this.vCpuCount = vCpuCount;
+		public void setReason(String reason) {
+			this.reason = reason;
 		}
 
 		public String getMachineId() {
@@ -258,6 +185,71 @@ public class OpsQueryMonitorExceptionResponse extends AcsResponse {
 
 		public void setMachineId(String machineId) {
 			this.machineId = machineId;
+		}
+	}
+
+	public static class OverviewInfo {
+
+		private String cluster;
+
+		private String ncIp;
+
+		private String machineStatus;
+
+		private String ncId;
+
+		private String stressComparisionStartTime;
+
+		private String canMigrateSla;
+
+		private String vips;
+
+		private Boolean isLocalDisk;
+
+		private String stressComparisionResult;
+
+		private String stressComparisionState;
+
+		private String productName;
+
+		private String aZone;
+
+		private String machineType;
+
+		private Integer vCpuCount;
+
+		private Integer stressComparisionTime;
+
+		private String extInfo;
+
+		private String regionId;
+
+		private String canMigrateBySlb;
+
+		private String riskTag;
+
+		private String instanceFamily;
+
+		private String canMigrateByType;
+
+		private String migrateStatus;
+
+		private String machineId;
+
+		private String canMigrateByOthers;
+
+		private List<SnNodeInfo> snNodeInfoList;
+
+		private List<String> whiteListInfo;
+
+		private List<String> blackListInfo;
+
+		public String getCluster() {
+			return this.cluster;
+		}
+
+		public void setCluster(String cluster) {
+			this.cluster = cluster;
 		}
 
 		public String getNcIp() {
@@ -268,38 +260,6 @@ public class OpsQueryMonitorExceptionResponse extends AcsResponse {
 			this.ncIp = ncIp;
 		}
 
-		public String getNcId() {
-			return this.ncId;
-		}
-
-		public void setNcId(String ncId) {
-			this.ncId = ncId;
-		}
-
-		public String getMachineType() {
-			return this.machineType;
-		}
-
-		public void setMachineType(String machineType) {
-			this.machineType = machineType;
-		}
-
-		public String getAZone() {
-			return this.aZone;
-		}
-
-		public void setAZone(String aZone) {
-			this.aZone = aZone;
-		}
-
-		public String getInstanceFamily() {
-			return this.instanceFamily;
-		}
-
-		public void setInstanceFamily(String instanceFamily) {
-			this.instanceFamily = instanceFamily;
-		}
-
 		public String getMachineStatus() {
 			return this.machineStatus;
 		}
@@ -308,60 +268,12 @@ public class OpsQueryMonitorExceptionResponse extends AcsResponse {
 			this.machineStatus = machineStatus;
 		}
 
-		public String getCluster() {
-			return this.cluster;
+		public String getNcId() {
+			return this.ncId;
 		}
 
-		public void setCluster(String cluster) {
-			this.cluster = cluster;
-		}
-
-		public String getExtInfo() {
-			return this.extInfo;
-		}
-
-		public void setExtInfo(String extInfo) {
-			this.extInfo = extInfo;
-		}
-
-		public Boolean getIsLocalDisk() {
-			return this.isLocalDisk;
-		}
-
-		public void setIsLocalDisk(Boolean isLocalDisk) {
-			this.isLocalDisk = isLocalDisk;
-		}
-
-		public String getVips() {
-			return this.vips;
-		}
-
-		public void setVips(String vips) {
-			this.vips = vips;
-		}
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		public String getStressComparisionState() {
-			return this.stressComparisionState;
-		}
-
-		public void setStressComparisionState(String stressComparisionState) {
-			this.stressComparisionState = stressComparisionState;
-		}
-
-		public String getStressComparisionResult() {
-			return this.stressComparisionResult;
-		}
-
-		public void setStressComparisionResult(String stressComparisionResult) {
-			this.stressComparisionResult = stressComparisionResult;
+		public void setNcId(String ncId) {
+			this.ncId = ncId;
 		}
 
 		public String getStressComparisionStartTime() {
@@ -372,20 +284,44 @@ public class OpsQueryMonitorExceptionResponse extends AcsResponse {
 			this.stressComparisionStartTime = stressComparisionStartTime;
 		}
 
-		public Integer getStressComparisionTime() {
-			return this.stressComparisionTime;
+		public String getCanMigrateSla() {
+			return this.canMigrateSla;
 		}
 
-		public void setStressComparisionTime(Integer stressComparisionTime) {
-			this.stressComparisionTime = stressComparisionTime;
+		public void setCanMigrateSla(String canMigrateSla) {
+			this.canMigrateSla = canMigrateSla;
 		}
 
-		public String getRiskTag() {
-			return this.riskTag;
+		public String getVips() {
+			return this.vips;
 		}
 
-		public void setRiskTag(String riskTag) {
-			this.riskTag = riskTag;
+		public void setVips(String vips) {
+			this.vips = vips;
+		}
+
+		public Boolean getIsLocalDisk() {
+			return this.isLocalDisk;
+		}
+
+		public void setIsLocalDisk(Boolean isLocalDisk) {
+			this.isLocalDisk = isLocalDisk;
+		}
+
+		public String getStressComparisionResult() {
+			return this.stressComparisionResult;
+		}
+
+		public void setStressComparisionResult(String stressComparisionResult) {
+			this.stressComparisionResult = stressComparisionResult;
+		}
+
+		public String getStressComparisionState() {
+			return this.stressComparisionState;
+		}
+
+		public void setStressComparisionState(String stressComparisionState) {
+			this.stressComparisionState = stressComparisionState;
 		}
 
 		public String getProductName() {
@@ -396,20 +332,52 @@ public class OpsQueryMonitorExceptionResponse extends AcsResponse {
 			this.productName = productName;
 		}
 
-		public String getMigrateStatus() {
-			return this.migrateStatus;
+		public String getAZone() {
+			return this.aZone;
 		}
 
-		public void setMigrateStatus(String migrateStatus) {
-			this.migrateStatus = migrateStatus;
+		public void setAZone(String aZone) {
+			this.aZone = aZone;
 		}
 
-		public String getCanMigrateSla() {
-			return this.canMigrateSla;
+		public String getMachineType() {
+			return this.machineType;
 		}
 
-		public void setCanMigrateSla(String canMigrateSla) {
-			this.canMigrateSla = canMigrateSla;
+		public void setMachineType(String machineType) {
+			this.machineType = machineType;
+		}
+
+		public Integer getVCpuCount() {
+			return this.vCpuCount;
+		}
+
+		public void setVCpuCount(Integer vCpuCount) {
+			this.vCpuCount = vCpuCount;
+		}
+
+		public Integer getStressComparisionTime() {
+			return this.stressComparisionTime;
+		}
+
+		public void setStressComparisionTime(Integer stressComparisionTime) {
+			this.stressComparisionTime = stressComparisionTime;
+		}
+
+		public String getExtInfo() {
+			return this.extInfo;
+		}
+
+		public void setExtInfo(String extInfo) {
+			this.extInfo = extInfo;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 
 		public String getCanMigrateBySlb() {
@@ -420,12 +388,44 @@ public class OpsQueryMonitorExceptionResponse extends AcsResponse {
 			this.canMigrateBySlb = canMigrateBySlb;
 		}
 
+		public String getRiskTag() {
+			return this.riskTag;
+		}
+
+		public void setRiskTag(String riskTag) {
+			this.riskTag = riskTag;
+		}
+
+		public String getInstanceFamily() {
+			return this.instanceFamily;
+		}
+
+		public void setInstanceFamily(String instanceFamily) {
+			this.instanceFamily = instanceFamily;
+		}
+
 		public String getCanMigrateByType() {
 			return this.canMigrateByType;
 		}
 
 		public void setCanMigrateByType(String canMigrateByType) {
 			this.canMigrateByType = canMigrateByType;
+		}
+
+		public String getMigrateStatus() {
+			return this.migrateStatus;
+		}
+
+		public void setMigrateStatus(String migrateStatus) {
+			this.migrateStatus = migrateStatus;
+		}
+
+		public String getMachineId() {
+			return this.machineId;
+		}
+
+		public void setMachineId(String machineId) {
+			this.machineId = machineId;
 		}
 
 		public String getCanMigrateByOthers() {
@@ -444,14 +444,6 @@ public class OpsQueryMonitorExceptionResponse extends AcsResponse {
 			this.snNodeInfoList = snNodeInfoList;
 		}
 
-		public List<String> getBlackListInfo() {
-			return this.blackListInfo;
-		}
-
-		public void setBlackListInfo(List<String> blackListInfo) {
-			this.blackListInfo = blackListInfo;
-		}
-
 		public List<String> getWhiteListInfo() {
 			return this.whiteListInfo;
 		}
@@ -460,23 +452,31 @@ public class OpsQueryMonitorExceptionResponse extends AcsResponse {
 			this.whiteListInfo = whiteListInfo;
 		}
 
+		public List<String> getBlackListInfo() {
+			return this.blackListInfo;
+		}
+
+		public void setBlackListInfo(List<String> blackListInfo) {
+			this.blackListInfo = blackListInfo;
+		}
+
 		public static class SnNodeInfo {
 
 			private String ncId;
-
-			private String cnSn;
-
-			private String machineStatus;
-
-			private String stressComparisionState;
 
 			private String stressComparisionResult;
 
 			private String stressComparisionStartTime;
 
-			private Integer stressComparisionTime;
+			private String stressComparisionState;
 
 			private String riskTag;
+
+			private Integer stressComparisionTime;
+
+			private String machineStatus;
+
+			private String cnSn;
 
 			public String getNcId() {
 				return this.ncId;
@@ -484,30 +484,6 @@ public class OpsQueryMonitorExceptionResponse extends AcsResponse {
 
 			public void setNcId(String ncId) {
 				this.ncId = ncId;
-			}
-
-			public String getCnSn() {
-				return this.cnSn;
-			}
-
-			public void setCnSn(String cnSn) {
-				this.cnSn = cnSn;
-			}
-
-			public String getMachineStatus() {
-				return this.machineStatus;
-			}
-
-			public void setMachineStatus(String machineStatus) {
-				this.machineStatus = machineStatus;
-			}
-
-			public String getStressComparisionState() {
-				return this.stressComparisionState;
-			}
-
-			public void setStressComparisionState(String stressComparisionState) {
-				this.stressComparisionState = stressComparisionState;
 			}
 
 			public String getStressComparisionResult() {
@@ -526,12 +502,12 @@ public class OpsQueryMonitorExceptionResponse extends AcsResponse {
 				this.stressComparisionStartTime = stressComparisionStartTime;
 			}
 
-			public Integer getStressComparisionTime() {
-				return this.stressComparisionTime;
+			public String getStressComparisionState() {
+				return this.stressComparisionState;
 			}
 
-			public void setStressComparisionTime(Integer stressComparisionTime) {
-				this.stressComparisionTime = stressComparisionTime;
+			public void setStressComparisionState(String stressComparisionState) {
+				this.stressComparisionState = stressComparisionState;
 			}
 
 			public String getRiskTag() {
@@ -540,6 +516,30 @@ public class OpsQueryMonitorExceptionResponse extends AcsResponse {
 
 			public void setRiskTag(String riskTag) {
 				this.riskTag = riskTag;
+			}
+
+			public Integer getStressComparisionTime() {
+				return this.stressComparisionTime;
+			}
+
+			public void setStressComparisionTime(Integer stressComparisionTime) {
+				this.stressComparisionTime = stressComparisionTime;
+			}
+
+			public String getMachineStatus() {
+				return this.machineStatus;
+			}
+
+			public void setMachineStatus(String machineStatus) {
+				this.machineStatus = machineStatus;
+			}
+
+			public String getCnSn() {
+				return this.cnSn;
+			}
+
+			public void setCnSn(String cnSn) {
+				this.cnSn = cnSn;
 			}
 		}
 	}

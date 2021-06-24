@@ -16,7 +16,6 @@ package com.aliyuncs.ecsops.model.v20160401;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
-import com.aliyuncs.ecsops.Endpoint;
 
 /**
  * @author auto create
@@ -35,12 +34,8 @@ public class OpsDetailHouyiDisksRequest extends RpcAcsRequest<OpsDetailHouyiDisk
 
 	private String auditParamStr;
 	public OpsDetailHouyiDisksRequest() {
-		super("Ecsops", "2016-04-01", "OpsDetailHouyiDisks", "ecs");
+		super("Ecsops", "2016-04-01", "OpsDetailHouyiDisks", "ecsops");
 		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
 	}
 
 	public String getAvailableZoneId() {

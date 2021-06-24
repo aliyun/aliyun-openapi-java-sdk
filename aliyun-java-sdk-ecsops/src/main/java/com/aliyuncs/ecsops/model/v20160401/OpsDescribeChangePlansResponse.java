@@ -47,7 +47,17 @@ public class OpsDescribeChangePlansResponse extends AcsResponse {
 
 	public static class Data {
 
+		private Integer totalCount;
+
 		private List<Plan> plans;
+
+		public Integer getTotalCount() {
+			return this.totalCount;
+		}
+
+		public void setTotalCount(Integer totalCount) {
+			this.totalCount = totalCount;
+		}
 
 		public List<Plan> getPlans() {
 			return this.plans;
@@ -59,77 +69,31 @@ public class OpsDescribeChangePlansResponse extends AcsResponse {
 
 		public static class Plan {
 
-			private String planId;
-
-			private String planningStatus;
-
-			private String operationStatus;
-
-			private String strategy;
-
-			private String strategyModel;
-
-			private String groups;
-
 			private String scopes;
-
-			private String gmtCreated;
-
-			private String gmtModified;
-
-			private String operator;
-
-			private String extensions;
 
 			private String changeDescription;
 
-			public String getPlanId() {
-				return this.planId;
-			}
+			private String gmtModified;
 
-			public void setPlanId(String planId) {
-				this.planId = planId;
-			}
+			private String planId;
 
-			public String getPlanningStatus() {
-				return this.planningStatus;
-			}
+			private String runTimeAdditionalInfo;
 
-			public void setPlanningStatus(String planningStatus) {
-				this.planningStatus = planningStatus;
-			}
+			private String operationStatus;
 
-			public String getOperationStatus() {
-				return this.operationStatus;
-			}
+			private String gmtCreated;
 
-			public void setOperationStatus(String operationStatus) {
-				this.operationStatus = operationStatus;
-			}
+			private String strategy;
 
-			public String getStrategy() {
-				return this.strategy;
-			}
+			private String groups;
 
-			public void setStrategy(String strategy) {
-				this.strategy = strategy;
-			}
+			private String strategyModel;
 
-			public String getStrategyModel() {
-				return this.strategyModel;
-			}
+			private String planningStatus;
 
-			public void setStrategyModel(String strategyModel) {
-				this.strategyModel = strategyModel;
-			}
+			private String extensions;
 
-			public String getGroups() {
-				return this.groups;
-			}
-
-			public void setGroups(String groups) {
-				this.groups = groups;
-			}
+			private String operator;
 
 			public String getScopes() {
 				return this.scopes;
@@ -139,12 +103,12 @@ public class OpsDescribeChangePlansResponse extends AcsResponse {
 				this.scopes = scopes;
 			}
 
-			public String getGmtCreated() {
-				return this.gmtCreated;
+			public String getChangeDescription() {
+				return this.changeDescription;
 			}
 
-			public void setGmtCreated(String gmtCreated) {
-				this.gmtCreated = gmtCreated;
+			public void setChangeDescription(String changeDescription) {
+				this.changeDescription = changeDescription;
 			}
 
 			public String getGmtModified() {
@@ -155,12 +119,68 @@ public class OpsDescribeChangePlansResponse extends AcsResponse {
 				this.gmtModified = gmtModified;
 			}
 
-			public String getOperator() {
-				return this.operator;
+			public String getPlanId() {
+				return this.planId;
 			}
 
-			public void setOperator(String operator) {
-				this.operator = operator;
+			public void setPlanId(String planId) {
+				this.planId = planId;
+			}
+
+			public String getRunTimeAdditionalInfo() {
+				return this.runTimeAdditionalInfo;
+			}
+
+			public void setRunTimeAdditionalInfo(String runTimeAdditionalInfo) {
+				this.runTimeAdditionalInfo = runTimeAdditionalInfo;
+			}
+
+			public String getOperationStatus() {
+				return this.operationStatus;
+			}
+
+			public void setOperationStatus(String operationStatus) {
+				this.operationStatus = operationStatus;
+			}
+
+			public String getGmtCreated() {
+				return this.gmtCreated;
+			}
+
+			public void setGmtCreated(String gmtCreated) {
+				this.gmtCreated = gmtCreated;
+			}
+
+			public String getStrategy() {
+				return this.strategy;
+			}
+
+			public void setStrategy(String strategy) {
+				this.strategy = strategy;
+			}
+
+			public String getGroups() {
+				return this.groups;
+			}
+
+			public void setGroups(String groups) {
+				this.groups = groups;
+			}
+
+			public String getStrategyModel() {
+				return this.strategyModel;
+			}
+
+			public void setStrategyModel(String strategyModel) {
+				this.strategyModel = strategyModel;
+			}
+
+			public String getPlanningStatus() {
+				return this.planningStatus;
+			}
+
+			public void setPlanningStatus(String planningStatus) {
+				this.planningStatus = planningStatus;
 			}
 
 			public String getExtensions() {
@@ -171,12 +191,12 @@ public class OpsDescribeChangePlansResponse extends AcsResponse {
 				this.extensions = extensions;
 			}
 
-			public String getChangeDescription() {
-				return this.changeDescription;
+			public String getOperator() {
+				return this.operator;
 			}
 
-			public void setChangeDescription(String changeDescription) {
-				this.changeDescription = changeDescription;
+			public void setOperator(String operator) {
+				this.operator = operator;
 			}
 		}
 	}

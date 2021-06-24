@@ -57,19 +57,11 @@ public class OpsDescribeModifyVportAttributeResultResponse extends AcsResponse {
 
 	public static class FailedEniListItem {
 
-		private String eniName;
-
 		private Integer code;
 
 		private String message;
 
-		public String getEniName() {
-			return this.eniName;
-		}
-
-		public void setEniName(String eniName) {
-			this.eniName = eniName;
-		}
+		private String eniName;
 
 		public Integer getCode() {
 			return this.code;
@@ -85,6 +77,14 @@ public class OpsDescribeModifyVportAttributeResultResponse extends AcsResponse {
 
 		public void setMessage(String message) {
 			this.message = message;
+		}
+
+		public String getEniName() {
+			return this.eniName;
+		}
+
+		public void setEniName(String eniName) {
+			this.eniName = eniName;
 		}
 	}
 

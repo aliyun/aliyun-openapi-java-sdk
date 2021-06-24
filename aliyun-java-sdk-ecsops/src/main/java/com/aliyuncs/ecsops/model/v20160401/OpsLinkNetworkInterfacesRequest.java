@@ -17,7 +17,6 @@ package com.aliyuncs.ecsops.model.v20160401;
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
 import com.aliyuncs.http.MethodType;
-import com.aliyuncs.ecsops.Endpoint;
 
 /**
  * @author auto create
@@ -40,12 +39,8 @@ public class OpsLinkNetworkInterfacesRequest extends RpcAcsRequest<OpsLinkNetwor
 
 	private String auditParamStr;
 	public OpsLinkNetworkInterfacesRequest() {
-		super("Ecsops", "2016-04-01", "OpsLinkNetworkInterfaces", "ecs");
+		super("Ecsops", "2016-04-01", "OpsLinkNetworkInterfaces", "ecsops");
 		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
 	}
 
 	public String getOperator() {
@@ -89,8 +84,8 @@ public class OpsLinkNetworkInterfacesRequest extends RpcAcsRequest<OpsLinkNetwor
 		this.srcNetworkInterfaces = srcNetworkInterfaces;	
 		if (srcNetworkInterfaces != null) {
 			for (int depth1 = 0; depth1 < srcNetworkInterfaces.size(); depth1++) {
-				putQueryParameter("SrcNetworkInterface." + (depth1 + 1) + ".VlanId" , srcNetworkInterfaces.get(depth1).getVlanId());
 				putQueryParameter("SrcNetworkInterface." + (depth1 + 1) + ".NetworkInterfaceId" , srcNetworkInterfaces.get(depth1).getNetworkInterfaceId());
+				putQueryParameter("SrcNetworkInterface." + (depth1 + 1) + ".VlanId" , srcNetworkInterfaces.get(depth1).getVlanId());
 			}
 		}	
 	}
@@ -130,17 +125,9 @@ public class OpsLinkNetworkInterfacesRequest extends RpcAcsRequest<OpsLinkNetwor
 
 	public static class SrcNetworkInterface {
 
-		private Integer vlanId;
-
 		private String networkInterfaceId;
 
-		public Integer getVlanId() {
-			return this.vlanId;
-		}
-
-		public void setVlanId(Integer vlanId) {
-			this.vlanId = vlanId;
-		}
+		private Integer vlanId;
 
 		public String getNetworkInterfaceId() {
 			return this.networkInterfaceId;
@@ -148,6 +135,14 @@ public class OpsLinkNetworkInterfacesRequest extends RpcAcsRequest<OpsLinkNetwor
 
 		public void setNetworkInterfaceId(String networkInterfaceId) {
 			this.networkInterfaceId = networkInterfaceId;
+		}
+
+		public Integer getVlanId() {
+			return this.vlanId;
+		}
+
+		public void setVlanId(Integer vlanId) {
+			this.vlanId = vlanId;
 		}
 	}
 

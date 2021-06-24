@@ -23,9 +23,9 @@ public class OpsCreateCloudOpsMaintenanceResponseUnmarshaller {
 	public static OpsCreateCloudOpsMaintenanceResponse unmarshall(OpsCreateCloudOpsMaintenanceResponse opsCreateCloudOpsMaintenanceResponse, UnmarshallerContext _ctx) {
 		
 		opsCreateCloudOpsMaintenanceResponse.setRequestId(_ctx.stringValue("OpsCreateCloudOpsMaintenanceResponse.RequestId"));
+		opsCreateCloudOpsMaintenanceResponse.setBizMessage(_ctx.stringValue("OpsCreateCloudOpsMaintenanceResponse.BizMessage"));
 		opsCreateCloudOpsMaintenanceResponse.setData(_ctx.integerValue("OpsCreateCloudOpsMaintenanceResponse.Data"));
 		opsCreateCloudOpsMaintenanceResponse.setBizCode(_ctx.stringValue("OpsCreateCloudOpsMaintenanceResponse.BizCode"));
-		opsCreateCloudOpsMaintenanceResponse.setBizMessage(_ctx.stringValue("OpsCreateCloudOpsMaintenanceResponse.BizMessage"));
 	 
 	 	return opsCreateCloudOpsMaintenanceResponse;
 	}

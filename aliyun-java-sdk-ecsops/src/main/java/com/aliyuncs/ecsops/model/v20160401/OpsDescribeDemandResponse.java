@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsDescribeDemandResponse extends AcsResponse {
 
+	private String message;
+
 	private String requestId;
 
 	private String code;
 
-	private String message;
-
 	private Boolean success;
 
 	private List<DemandInfoModel> demandInfoModelList;
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -49,14 +57,6 @@ public class OpsDescribeDemandResponse extends AcsResponse {
 
 	public void setCode(String code) {
 		this.code = code;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
 	}
 
 	public Boolean getSuccess() {
@@ -77,96 +77,40 @@ public class OpsDescribeDemandResponse extends AcsResponse {
 
 	public static class DemandInfoModel {
 
-		private String demandId;
-
-		private String batchName;
-
-		private String projectId;
-
-		private String demandTime;
-
-		private String sumitterUid;
-
-		private String sumitterName;
-
-		private Long customerUid;
-
-		private String customerName;
+		private String status;
 
 		private String demandSupplyPmName;
 
-		private String demandSupplyPmUid;
+		private String comment;
+
+		private String batchName;
+
+		private String demandId;
+
+		private Long customerUid;
+
+		private String demandTime;
+
+		private String projectId;
 
 		private String supplyStatus;
 
-		private String status;
+		private String sumitterUid;
 
-		private String comment;
+		private String demandSupplyPmUid;
+
+		private String customerName;
+
+		private String sumitterName;
 
 		private List<DemandResourceInfoModel> demandResourceInfoModelList;
 
-		public String getDemandId() {
-			return this.demandId;
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setDemandId(String demandId) {
-			this.demandId = demandId;
-		}
-
-		public String getBatchName() {
-			return this.batchName;
-		}
-
-		public void setBatchName(String batchName) {
-			this.batchName = batchName;
-		}
-
-		public String getProjectId() {
-			return this.projectId;
-		}
-
-		public void setProjectId(String projectId) {
-			this.projectId = projectId;
-		}
-
-		public String getDemandTime() {
-			return this.demandTime;
-		}
-
-		public void setDemandTime(String demandTime) {
-			this.demandTime = demandTime;
-		}
-
-		public String getSumitterUid() {
-			return this.sumitterUid;
-		}
-
-		public void setSumitterUid(String sumitterUid) {
-			this.sumitterUid = sumitterUid;
-		}
-
-		public String getSumitterName() {
-			return this.sumitterName;
-		}
-
-		public void setSumitterName(String sumitterName) {
-			this.sumitterName = sumitterName;
-		}
-
-		public Long getCustomerUid() {
-			return this.customerUid;
-		}
-
-		public void setCustomerUid(Long customerUid) {
-			this.customerUid = customerUid;
-		}
-
-		public String getCustomerName() {
-			return this.customerName;
-		}
-
-		public void setCustomerName(String customerName) {
-			this.customerName = customerName;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public String getDemandSupplyPmName() {
@@ -177,12 +121,52 @@ public class OpsDescribeDemandResponse extends AcsResponse {
 			this.demandSupplyPmName = demandSupplyPmName;
 		}
 
-		public String getDemandSupplyPmUid() {
-			return this.demandSupplyPmUid;
+		public String getComment() {
+			return this.comment;
 		}
 
-		public void setDemandSupplyPmUid(String demandSupplyPmUid) {
-			this.demandSupplyPmUid = demandSupplyPmUid;
+		public void setComment(String comment) {
+			this.comment = comment;
+		}
+
+		public String getBatchName() {
+			return this.batchName;
+		}
+
+		public void setBatchName(String batchName) {
+			this.batchName = batchName;
+		}
+
+		public String getDemandId() {
+			return this.demandId;
+		}
+
+		public void setDemandId(String demandId) {
+			this.demandId = demandId;
+		}
+
+		public Long getCustomerUid() {
+			return this.customerUid;
+		}
+
+		public void setCustomerUid(Long customerUid) {
+			this.customerUid = customerUid;
+		}
+
+		public String getDemandTime() {
+			return this.demandTime;
+		}
+
+		public void setDemandTime(String demandTime) {
+			this.demandTime = demandTime;
+		}
+
+		public String getProjectId() {
+			return this.projectId;
+		}
+
+		public void setProjectId(String projectId) {
+			this.projectId = projectId;
 		}
 
 		public String getSupplyStatus() {
@@ -193,20 +177,36 @@ public class OpsDescribeDemandResponse extends AcsResponse {
 			this.supplyStatus = supplyStatus;
 		}
 
-		public String getStatus() {
-			return this.status;
+		public String getSumitterUid() {
+			return this.sumitterUid;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
+		public void setSumitterUid(String sumitterUid) {
+			this.sumitterUid = sumitterUid;
 		}
 
-		public String getComment() {
-			return this.comment;
+		public String getDemandSupplyPmUid() {
+			return this.demandSupplyPmUid;
 		}
 
-		public void setComment(String comment) {
-			this.comment = comment;
+		public void setDemandSupplyPmUid(String demandSupplyPmUid) {
+			this.demandSupplyPmUid = demandSupplyPmUid;
+		}
+
+		public String getCustomerName() {
+			return this.customerName;
+		}
+
+		public void setCustomerName(String customerName) {
+			this.customerName = customerName;
+		}
+
+		public String getSumitterName() {
+			return this.sumitterName;
+		}
+
+		public void setSumitterName(String sumitterName) {
+			this.sumitterName = sumitterName;
 		}
 
 		public List<DemandResourceInfoModel> getDemandResourceInfoModelList() {
@@ -219,45 +219,53 @@ public class OpsDescribeDemandResponse extends AcsResponse {
 
 		public static class DemandResourceInfoModel {
 
-			private String subDemandId;
+			private String status;
 
-			private String region;
+			private String subDemandId;
 
 			private String iz;
 
-			private String businessType;
-
-			private String instanceType;
-
-			private String networkType;
-
-			private String payType;
-
-			private Integer payDuration;
-
-			private String payDurationUnit;
+			private String comment;
 
 			private String expectPayTimeBegin;
 
-			private String expectPayTimeEnd;
+			private String payType;
 
 			private Integer demandCount;
 
-			private String subDemandSupplyPmName;
+			private String subDemandSupplyPmUid;
 
 			private String subDemandSupplyPerformerUid;
 
-			private String subDemandSupplyPerformerName;
-
-			private String subDemandSupplyPmUid;
-
-			private String status;
-
 			private String supplyStatus;
 
-			private String comment;
+			private String networkType;
+
+			private String expectPayTimeEnd;
+
+			private String instanceType;
+
+			private String businessType;
+
+			private String subDemandSupplyPmName;
+
+			private String payDurationUnit;
+
+			private Integer payDuration;
+
+			private String subDemandSupplyPerformerName;
+
+			private String region;
 
 			private List<DemandSupplyStatusModel> demandSupplyStatusModelList;
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
+			}
 
 			public String getSubDemandId() {
 				return this.subDemandId;
@@ -265,14 +273,6 @@ public class OpsDescribeDemandResponse extends AcsResponse {
 
 			public void setSubDemandId(String subDemandId) {
 				this.subDemandId = subDemandId;
-			}
-
-			public String getRegion() {
-				return this.region;
-			}
-
-			public void setRegion(String region) {
-				this.region = region;
 			}
 
 			public String getIz() {
@@ -283,52 +283,12 @@ public class OpsDescribeDemandResponse extends AcsResponse {
 				this.iz = iz;
 			}
 
-			public String getBusinessType() {
-				return this.businessType;
+			public String getComment() {
+				return this.comment;
 			}
 
-			public void setBusinessType(String businessType) {
-				this.businessType = businessType;
-			}
-
-			public String getInstanceType() {
-				return this.instanceType;
-			}
-
-			public void setInstanceType(String instanceType) {
-				this.instanceType = instanceType;
-			}
-
-			public String getNetworkType() {
-				return this.networkType;
-			}
-
-			public void setNetworkType(String networkType) {
-				this.networkType = networkType;
-			}
-
-			public String getPayType() {
-				return this.payType;
-			}
-
-			public void setPayType(String payType) {
-				this.payType = payType;
-			}
-
-			public Integer getPayDuration() {
-				return this.payDuration;
-			}
-
-			public void setPayDuration(Integer payDuration) {
-				this.payDuration = payDuration;
-			}
-
-			public String getPayDurationUnit() {
-				return this.payDurationUnit;
-			}
-
-			public void setPayDurationUnit(String payDurationUnit) {
-				this.payDurationUnit = payDurationUnit;
+			public void setComment(String comment) {
+				this.comment = comment;
 			}
 
 			public String getExpectPayTimeBegin() {
@@ -339,12 +299,12 @@ public class OpsDescribeDemandResponse extends AcsResponse {
 				this.expectPayTimeBegin = expectPayTimeBegin;
 			}
 
-			public String getExpectPayTimeEnd() {
-				return this.expectPayTimeEnd;
+			public String getPayType() {
+				return this.payType;
 			}
 
-			public void setExpectPayTimeEnd(String expectPayTimeEnd) {
-				this.expectPayTimeEnd = expectPayTimeEnd;
+			public void setPayType(String payType) {
+				this.payType = payType;
 			}
 
 			public Integer getDemandCount() {
@@ -355,12 +315,12 @@ public class OpsDescribeDemandResponse extends AcsResponse {
 				this.demandCount = demandCount;
 			}
 
-			public String getSubDemandSupplyPmName() {
-				return this.subDemandSupplyPmName;
+			public String getSubDemandSupplyPmUid() {
+				return this.subDemandSupplyPmUid;
 			}
 
-			public void setSubDemandSupplyPmName(String subDemandSupplyPmName) {
-				this.subDemandSupplyPmName = subDemandSupplyPmName;
+			public void setSubDemandSupplyPmUid(String subDemandSupplyPmUid) {
+				this.subDemandSupplyPmUid = subDemandSupplyPmUid;
 			}
 
 			public String getSubDemandSupplyPerformerUid() {
@@ -371,30 +331,6 @@ public class OpsDescribeDemandResponse extends AcsResponse {
 				this.subDemandSupplyPerformerUid = subDemandSupplyPerformerUid;
 			}
 
-			public String getSubDemandSupplyPerformerName() {
-				return this.subDemandSupplyPerformerName;
-			}
-
-			public void setSubDemandSupplyPerformerName(String subDemandSupplyPerformerName) {
-				this.subDemandSupplyPerformerName = subDemandSupplyPerformerName;
-			}
-
-			public String getSubDemandSupplyPmUid() {
-				return this.subDemandSupplyPmUid;
-			}
-
-			public void setSubDemandSupplyPmUid(String subDemandSupplyPmUid) {
-				this.subDemandSupplyPmUid = subDemandSupplyPmUid;
-			}
-
-			public String getStatus() {
-				return this.status;
-			}
-
-			public void setStatus(String status) {
-				this.status = status;
-			}
-
 			public String getSupplyStatus() {
 				return this.supplyStatus;
 			}
@@ -403,12 +339,76 @@ public class OpsDescribeDemandResponse extends AcsResponse {
 				this.supplyStatus = supplyStatus;
 			}
 
-			public String getComment() {
-				return this.comment;
+			public String getNetworkType() {
+				return this.networkType;
 			}
 
-			public void setComment(String comment) {
-				this.comment = comment;
+			public void setNetworkType(String networkType) {
+				this.networkType = networkType;
+			}
+
+			public String getExpectPayTimeEnd() {
+				return this.expectPayTimeEnd;
+			}
+
+			public void setExpectPayTimeEnd(String expectPayTimeEnd) {
+				this.expectPayTimeEnd = expectPayTimeEnd;
+			}
+
+			public String getInstanceType() {
+				return this.instanceType;
+			}
+
+			public void setInstanceType(String instanceType) {
+				this.instanceType = instanceType;
+			}
+
+			public String getBusinessType() {
+				return this.businessType;
+			}
+
+			public void setBusinessType(String businessType) {
+				this.businessType = businessType;
+			}
+
+			public String getSubDemandSupplyPmName() {
+				return this.subDemandSupplyPmName;
+			}
+
+			public void setSubDemandSupplyPmName(String subDemandSupplyPmName) {
+				this.subDemandSupplyPmName = subDemandSupplyPmName;
+			}
+
+			public String getPayDurationUnit() {
+				return this.payDurationUnit;
+			}
+
+			public void setPayDurationUnit(String payDurationUnit) {
+				this.payDurationUnit = payDurationUnit;
+			}
+
+			public Integer getPayDuration() {
+				return this.payDuration;
+			}
+
+			public void setPayDuration(Integer payDuration) {
+				this.payDuration = payDuration;
+			}
+
+			public String getSubDemandSupplyPerformerName() {
+				return this.subDemandSupplyPerformerName;
+			}
+
+			public void setSubDemandSupplyPerformerName(String subDemandSupplyPerformerName) {
+				this.subDemandSupplyPerformerName = subDemandSupplyPerformerName;
+			}
+
+			public String getRegion() {
+				return this.region;
+			}
+
+			public void setRegion(String region) {
+				this.region = region;
 			}
 
 			public List<DemandSupplyStatusModel> getDemandSupplyStatusModelList() {
@@ -421,40 +421,32 @@ public class OpsDescribeDemandResponse extends AcsResponse {
 
 			public static class DemandSupplyStatusModel {
 
-				private Integer totalOrder;
-
-				private Integer subOrderId;
+				private String status;
 
 				private Integer amount;
 
-				private Integer deliveredAmount;
-
-				private String status;
-
-				private String supplyStatus;
-
 				private Integer consumeCnt;
-
-				private String lastSupplyTime;
 
 				private String actualSupplyTime;
 
 				private String comment;
 
-				public Integer getTotalOrder() {
-					return this.totalOrder;
+				private Integer subOrderId;
+
+				private String lastSupplyTime;
+
+				private String supplyStatus;
+
+				private Integer totalOrder;
+
+				private Integer deliveredAmount;
+
+				public String getStatus() {
+					return this.status;
 				}
 
-				public void setTotalOrder(Integer totalOrder) {
-					this.totalOrder = totalOrder;
-				}
-
-				public Integer getSubOrderId() {
-					return this.subOrderId;
-				}
-
-				public void setSubOrderId(Integer subOrderId) {
-					this.subOrderId = subOrderId;
+				public void setStatus(String status) {
+					this.status = status;
 				}
 
 				public Integer getAmount() {
@@ -465,44 +457,12 @@ public class OpsDescribeDemandResponse extends AcsResponse {
 					this.amount = amount;
 				}
 
-				public Integer getDeliveredAmount() {
-					return this.deliveredAmount;
-				}
-
-				public void setDeliveredAmount(Integer deliveredAmount) {
-					this.deliveredAmount = deliveredAmount;
-				}
-
-				public String getStatus() {
-					return this.status;
-				}
-
-				public void setStatus(String status) {
-					this.status = status;
-				}
-
-				public String getSupplyStatus() {
-					return this.supplyStatus;
-				}
-
-				public void setSupplyStatus(String supplyStatus) {
-					this.supplyStatus = supplyStatus;
-				}
-
 				public Integer getConsumeCnt() {
 					return this.consumeCnt;
 				}
 
 				public void setConsumeCnt(Integer consumeCnt) {
 					this.consumeCnt = consumeCnt;
-				}
-
-				public String getLastSupplyTime() {
-					return this.lastSupplyTime;
-				}
-
-				public void setLastSupplyTime(String lastSupplyTime) {
-					this.lastSupplyTime = lastSupplyTime;
 				}
 
 				public String getActualSupplyTime() {
@@ -519,6 +479,46 @@ public class OpsDescribeDemandResponse extends AcsResponse {
 
 				public void setComment(String comment) {
 					this.comment = comment;
+				}
+
+				public Integer getSubOrderId() {
+					return this.subOrderId;
+				}
+
+				public void setSubOrderId(Integer subOrderId) {
+					this.subOrderId = subOrderId;
+				}
+
+				public String getLastSupplyTime() {
+					return this.lastSupplyTime;
+				}
+
+				public void setLastSupplyTime(String lastSupplyTime) {
+					this.lastSupplyTime = lastSupplyTime;
+				}
+
+				public String getSupplyStatus() {
+					return this.supplyStatus;
+				}
+
+				public void setSupplyStatus(String supplyStatus) {
+					this.supplyStatus = supplyStatus;
+				}
+
+				public Integer getTotalOrder() {
+					return this.totalOrder;
+				}
+
+				public void setTotalOrder(Integer totalOrder) {
+					this.totalOrder = totalOrder;
+				}
+
+				public Integer getDeliveredAmount() {
+					return this.deliveredAmount;
+				}
+
+				public void setDeliveredAmount(Integer deliveredAmount) {
+					this.deliveredAmount = deliveredAmount;
 				}
 			}
 		}

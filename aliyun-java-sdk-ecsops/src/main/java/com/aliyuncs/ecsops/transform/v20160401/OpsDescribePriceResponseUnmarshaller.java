@@ -41,12 +41,12 @@ public class OpsDescribePriceResponseUnmarshaller {
 		priceInfo.setOrderParams(orderParams);
 
 		Order order = new Order();
-		order.setOriginalPrice(_ctx.floatValue("OpsDescribePriceResponse.PriceInfo.Order.OriginalPrice"));
 		order.setDiscountPrice(_ctx.floatValue("OpsDescribePriceResponse.PriceInfo.Order.DiscountPrice"));
-		order.setSpotInstanceTypePrice(_ctx.floatValue("OpsDescribePriceResponse.PriceInfo.Order.SpotInstanceTypePrice"));
-		order.setSpotInstanceTypeOriginalPrice(_ctx.floatValue("OpsDescribePriceResponse.PriceInfo.Order.SpotInstanceTypeOriginalPrice"));
 		order.setTradePrice(_ctx.floatValue("OpsDescribePriceResponse.PriceInfo.Order.TradePrice"));
+		order.setOriginalPrice(_ctx.floatValue("OpsDescribePriceResponse.PriceInfo.Order.OriginalPrice"));
+		order.setSpotInstanceTypePrice(_ctx.floatValue("OpsDescribePriceResponse.PriceInfo.Order.SpotInstanceTypePrice"));
 		order.setCurrency(_ctx.stringValue("OpsDescribePriceResponse.PriceInfo.Order.Currency"));
+		order.setSpotInstanceTypeOriginalPrice(_ctx.floatValue("OpsDescribePriceResponse.PriceInfo.Order.SpotInstanceTypeOriginalPrice"));
 
 		List<String> ruleIdSet = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("OpsDescribePriceResponse.PriceInfo.Order.RuleIdSet.Length"); i++) {
@@ -57,11 +57,11 @@ public class OpsDescribePriceResponseUnmarshaller {
 		List<Coupon> coupons = new ArrayList<Coupon>();
 		for (int i = 0; i < _ctx.lengthValue("OpsDescribePriceResponse.PriceInfo.Order.Coupons.Length"); i++) {
 			Coupon coupon = new Coupon();
-			coupon.setCouponNo(_ctx.stringValue("OpsDescribePriceResponse.PriceInfo.Order.Coupons["+ i +"].CouponNo"));
-			coupon.setName(_ctx.stringValue("OpsDescribePriceResponse.PriceInfo.Order.Coupons["+ i +"].Name"));
 			coupon.setDescription(_ctx.stringValue("OpsDescribePriceResponse.PriceInfo.Order.Coupons["+ i +"].Description"));
 			coupon.setDiscountOff(_ctx.floatValue("OpsDescribePriceResponse.PriceInfo.Order.Coupons["+ i +"].DiscountOff"));
 			coupon.setIsSelected(_ctx.booleanValue("OpsDescribePriceResponse.PriceInfo.Order.Coupons["+ i +"].IsSelected"));
+			coupon.setCouponNo(_ctx.stringValue("OpsDescribePriceResponse.PriceInfo.Order.Coupons["+ i +"].CouponNo"));
+			coupon.setName(_ctx.stringValue("OpsDescribePriceResponse.PriceInfo.Order.Coupons["+ i +"].Name"));
 
 			coupons.add(coupon);
 		}
@@ -69,16 +69,16 @@ public class OpsDescribePriceResponseUnmarshaller {
 		priceInfo.setOrder(order);
 
 		PriceWarning priceWarning = new PriceWarning();
-		priceWarning.setCode(_ctx.stringValue("OpsDescribePriceResponse.PriceInfo.PriceWarning.Code"));
 		priceWarning.setMsg(_ctx.stringValue("OpsDescribePriceResponse.PriceInfo.PriceWarning.Msg"));
+		priceWarning.setCode(_ctx.stringValue("OpsDescribePriceResponse.PriceInfo.PriceWarning.Code"));
 		priceInfo.setPriceWarning(priceWarning);
 
 		List<Rule> rules = new ArrayList<Rule>();
 		for (int i = 0; i < _ctx.lengthValue("OpsDescribePriceResponse.PriceInfo.Rules.Length"); i++) {
 			Rule rule = new Rule();
-			rule.setRuleId(_ctx.longValue("OpsDescribePriceResponse.PriceInfo.Rules["+ i +"].RuleId"));
 			rule.setTitle(_ctx.stringValue("OpsDescribePriceResponse.PriceInfo.Rules["+ i +"].Title"));
 			rule.setName(_ctx.stringValue("OpsDescribePriceResponse.PriceInfo.Rules["+ i +"].Name"));
+			rule.setRuleId(_ctx.longValue("OpsDescribePriceResponse.PriceInfo.Rules["+ i +"].RuleId"));
 
 			rules.add(rule);
 		}

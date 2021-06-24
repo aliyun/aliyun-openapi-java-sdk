@@ -17,7 +17,6 @@ package com.aliyuncs.ecsops.model.v20160401;
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
 import com.aliyuncs.http.MethodType;
-import com.aliyuncs.ecsops.Endpoint;
 
 /**
  * @author auto create
@@ -34,12 +33,8 @@ public class OpsDescribeChangePlanNcOnServingRequest extends RpcAcsRequest<OpsDe
 
 	private String auditParamStr;
 	public OpsDescribeChangePlanNcOnServingRequest() {
-		super("Ecsops", "2016-04-01", "OpsDescribeChangePlanNcOnServing", "ecs");
+		super("Ecsops", "2016-04-01", "OpsDescribeChangePlanNcOnServing", "ecsops");
 		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
 	}
 
 	public String getResourcesType() {

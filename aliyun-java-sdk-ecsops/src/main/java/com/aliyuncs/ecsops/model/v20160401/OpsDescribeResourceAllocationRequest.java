@@ -17,7 +17,6 @@ package com.aliyuncs.ecsops.model.v20160401;
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
 import com.aliyuncs.http.MethodType;
-import com.aliyuncs.ecsops.Endpoint;
 
 /**
  * @author auto create
@@ -92,12 +91,8 @@ public class OpsDescribeResourceAllocationRequest extends RpcAcsRequest<OpsDescr
 
 	private String auditParamStr;
 	public OpsDescribeResourceAllocationRequest() {
-		super("Ecsops", "2016-04-01", "OpsDescribeResourceAllocation", "ecs");
+		super("Ecsops", "2016-04-01", "OpsDescribeResourceAllocation", "ecsops");
 		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
 	}
 
 	public Long getResourceOwnerId() {
@@ -435,8 +430,8 @@ public class OpsDescribeResourceAllocationRequest extends RpcAcsRequest<OpsDescr
 		if (resourceReservedModels != null) {
 			for (int depth1 = 0; depth1 < resourceReservedModels.size(); depth1++) {
 				putQueryParameter("ResourceReservedModel." + (depth1 + 1) + ".ReservedCores" , resourceReservedModels.get(depth1).getReservedCores());
-				putQueryParameter("ResourceReservedModel." + (depth1 + 1) + ".InstanceTypeFamily" , resourceReservedModels.get(depth1).getInstanceTypeFamily());
 				putQueryParameter("ResourceReservedModel." + (depth1 + 1) + ".ZoneId" , resourceReservedModels.get(depth1).getZoneId());
+				putQueryParameter("ResourceReservedModel." + (depth1 + 1) + ".InstanceTypeFamily" , resourceReservedModels.get(depth1).getInstanceTypeFamily());
 			}
 		}	
 	}
@@ -521,9 +516,9 @@ public class OpsDescribeResourceAllocationRequest extends RpcAcsRequest<OpsDescr
 
 		private Integer reservedCores;
 
-		private String instanceTypeFamily;
-
 		private String zoneId;
+
+		private String instanceTypeFamily;
 
 		public Integer getReservedCores() {
 			return this.reservedCores;
@@ -533,20 +528,20 @@ public class OpsDescribeResourceAllocationRequest extends RpcAcsRequest<OpsDescr
 			this.reservedCores = reservedCores;
 		}
 
-		public String getInstanceTypeFamily() {
-			return this.instanceTypeFamily;
-		}
-
-		public void setInstanceTypeFamily(String instanceTypeFamily) {
-			this.instanceTypeFamily = instanceTypeFamily;
-		}
-
 		public String getZoneId() {
 			return this.zoneId;
 		}
 
 		public void setZoneId(String zoneId) {
 			this.zoneId = zoneId;
+		}
+
+		public String getInstanceTypeFamily() {
+			return this.instanceTypeFamily;
+		}
+
+		public void setInstanceTypeFamily(String instanceTypeFamily) {
+			this.instanceTypeFamily = instanceTypeFamily;
 		}
 	}
 

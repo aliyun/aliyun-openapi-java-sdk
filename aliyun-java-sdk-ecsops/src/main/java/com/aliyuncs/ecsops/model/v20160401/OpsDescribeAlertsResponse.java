@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsDescribeAlertsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
-
-	private Integer pageNumber;
 
 	private Integer pageSize;
 
+	private String requestId;
+
+	private Integer pageNumber;
+
 	private List<Alert> alerts;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -51,20 +43,28 @@ public class OpsDescribeAlertsResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<Alert> getAlerts() {
@@ -77,91 +77,35 @@ public class OpsDescribeAlertsResponse extends AcsResponse {
 
 	public static class Alert {
 
-		private Long alertId;
-
-		private String alertItem;
-
-		private String alertStatus;
-
-		private String alertSource;
-
-		private String alertLevel;
-
-		private String alertTitle;
-
-		private String belongTeam;
-
 		private String owner;
-
-		private String alertTime;
 
 		private String createTime;
 
-		private String modifyTime;
+		private String alertTitle;
 
-		private String alertDetail;
-
-		private String diagnosisTemplate;
-
-		private String diagnosisResult;
+		private String alertSource;
 
 		private String extra;
 
-		public Long getAlertId() {
-			return this.alertId;
-		}
+		private String alertLevel;
 
-		public void setAlertId(Long alertId) {
-			this.alertId = alertId;
-		}
+		private String alertStatus;
 
-		public String getAlertItem() {
-			return this.alertItem;
-		}
+		private String alertItem;
 
-		public void setAlertItem(String alertItem) {
-			this.alertItem = alertItem;
-		}
+		private String alertTime;
 
-		public String getAlertStatus() {
-			return this.alertStatus;
-		}
+		private String diagnosisResult;
 
-		public void setAlertStatus(String alertStatus) {
-			this.alertStatus = alertStatus;
-		}
+		private String diagnosisTemplate;
 
-		public String getAlertSource() {
-			return this.alertSource;
-		}
+		private String belongTeam;
 
-		public void setAlertSource(String alertSource) {
-			this.alertSource = alertSource;
-		}
+		private String alertDetail;
 
-		public String getAlertLevel() {
-			return this.alertLevel;
-		}
+		private Long alertId;
 
-		public void setAlertLevel(String alertLevel) {
-			this.alertLevel = alertLevel;
-		}
-
-		public String getAlertTitle() {
-			return this.alertTitle;
-		}
-
-		public void setAlertTitle(String alertTitle) {
-			this.alertTitle = alertTitle;
-		}
-
-		public String getBelongTeam() {
-			return this.belongTeam;
-		}
-
-		public void setBelongTeam(String belongTeam) {
-			this.belongTeam = belongTeam;
-		}
+		private String modifyTime;
 
 		public String getOwner() {
 			return this.owner;
@@ -169,14 +113,6 @@ public class OpsDescribeAlertsResponse extends AcsResponse {
 
 		public void setOwner(String owner) {
 			this.owner = owner;
-		}
-
-		public String getAlertTime() {
-			return this.alertTime;
-		}
-
-		public void setAlertTime(String alertTime) {
-			this.alertTime = alertTime;
 		}
 
 		public String getCreateTime() {
@@ -187,28 +123,60 @@ public class OpsDescribeAlertsResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
-		public String getModifyTime() {
-			return this.modifyTime;
+		public String getAlertTitle() {
+			return this.alertTitle;
 		}
 
-		public void setModifyTime(String modifyTime) {
-			this.modifyTime = modifyTime;
+		public void setAlertTitle(String alertTitle) {
+			this.alertTitle = alertTitle;
 		}
 
-		public String getAlertDetail() {
-			return this.alertDetail;
+		public String getAlertSource() {
+			return this.alertSource;
 		}
 
-		public void setAlertDetail(String alertDetail) {
-			this.alertDetail = alertDetail;
+		public void setAlertSource(String alertSource) {
+			this.alertSource = alertSource;
 		}
 
-		public String getDiagnosisTemplate() {
-			return this.diagnosisTemplate;
+		public String getExtra() {
+			return this.extra;
 		}
 
-		public void setDiagnosisTemplate(String diagnosisTemplate) {
-			this.diagnosisTemplate = diagnosisTemplate;
+		public void setExtra(String extra) {
+			this.extra = extra;
+		}
+
+		public String getAlertLevel() {
+			return this.alertLevel;
+		}
+
+		public void setAlertLevel(String alertLevel) {
+			this.alertLevel = alertLevel;
+		}
+
+		public String getAlertStatus() {
+			return this.alertStatus;
+		}
+
+		public void setAlertStatus(String alertStatus) {
+			this.alertStatus = alertStatus;
+		}
+
+		public String getAlertItem() {
+			return this.alertItem;
+		}
+
+		public void setAlertItem(String alertItem) {
+			this.alertItem = alertItem;
+		}
+
+		public String getAlertTime() {
+			return this.alertTime;
+		}
+
+		public void setAlertTime(String alertTime) {
+			this.alertTime = alertTime;
 		}
 
 		public String getDiagnosisResult() {
@@ -219,12 +187,44 @@ public class OpsDescribeAlertsResponse extends AcsResponse {
 			this.diagnosisResult = diagnosisResult;
 		}
 
-		public String getExtra() {
-			return this.extra;
+		public String getDiagnosisTemplate() {
+			return this.diagnosisTemplate;
 		}
 
-		public void setExtra(String extra) {
-			this.extra = extra;
+		public void setDiagnosisTemplate(String diagnosisTemplate) {
+			this.diagnosisTemplate = diagnosisTemplate;
+		}
+
+		public String getBelongTeam() {
+			return this.belongTeam;
+		}
+
+		public void setBelongTeam(String belongTeam) {
+			this.belongTeam = belongTeam;
+		}
+
+		public String getAlertDetail() {
+			return this.alertDetail;
+		}
+
+		public void setAlertDetail(String alertDetail) {
+			this.alertDetail = alertDetail;
+		}
+
+		public Long getAlertId() {
+			return this.alertId;
+		}
+
+		public void setAlertId(Long alertId) {
+			this.alertId = alertId;
+		}
+
+		public String getModifyTime() {
+			return this.modifyTime;
+		}
+
+		public void setModifyTime(String modifyTime) {
+			this.modifyTime = modifyTime;
 		}
 	}
 

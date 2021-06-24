@@ -69,19 +69,11 @@ public class OpsDescribeResourcePriceResponse extends AcsResponse {
 
 		public static class Rule {
 
-			private Long ruleId;
-
 			private String title;
 
 			private String name;
 
-			public Long getRuleId() {
-				return this.ruleId;
-			}
-
-			public void setRuleId(Long ruleId) {
-				this.ruleId = ruleId;
-			}
+			private Long ruleId;
 
 			public String getTitle() {
 				return this.title;
@@ -98,28 +90,36 @@ public class OpsDescribeResourcePriceResponse extends AcsResponse {
 			public void setName(String name) {
 				this.name = name;
 			}
+
+			public Long getRuleId() {
+				return this.ruleId;
+			}
+
+			public void setRuleId(Long ruleId) {
+				this.ruleId = ruleId;
+			}
 		}
 
 		public static class Price {
 
-			private Float originalPrice;
+			private Float reservedInstanceHourPrice;
 
 			private Float discountPrice;
 
 			private Float tradePrice;
 
-			private Float reservedInstanceHourPrice;
+			private Float originalPrice;
 
 			private String currency;
 
 			private List<String> ruleIdSet;
 
-			public Float getOriginalPrice() {
-				return this.originalPrice;
+			public Float getReservedInstanceHourPrice() {
+				return this.reservedInstanceHourPrice;
 			}
 
-			public void setOriginalPrice(Float originalPrice) {
-				this.originalPrice = originalPrice;
+			public void setReservedInstanceHourPrice(Float reservedInstanceHourPrice) {
+				this.reservedInstanceHourPrice = reservedInstanceHourPrice;
 			}
 
 			public Float getDiscountPrice() {
@@ -138,12 +138,12 @@ public class OpsDescribeResourcePriceResponse extends AcsResponse {
 				this.tradePrice = tradePrice;
 			}
 
-			public Float getReservedInstanceHourPrice() {
-				return this.reservedInstanceHourPrice;
+			public Float getOriginalPrice() {
+				return this.originalPrice;
 			}
 
-			public void setReservedInstanceHourPrice(Float reservedInstanceHourPrice) {
-				this.reservedInstanceHourPrice = reservedInstanceHourPrice;
+			public void setOriginalPrice(Float originalPrice) {
+				this.originalPrice = originalPrice;
 			}
 
 			public String getCurrency() {

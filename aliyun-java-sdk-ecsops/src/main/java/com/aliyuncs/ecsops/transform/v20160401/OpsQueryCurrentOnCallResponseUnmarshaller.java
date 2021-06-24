@@ -32,11 +32,11 @@ public class OpsQueryCurrentOnCallResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("OpsQueryCurrentOnCallResponse.OnCallStaffInfos.Length"); i++) {
 			OnCallStaffInfo onCallStaffInfo = new OnCallStaffInfo();
 			onCallStaffInfo.setEmpId(_ctx.stringValue("OpsQueryCurrentOnCallResponse.OnCallStaffInfos["+ i +"].EmpId"));
-			onCallStaffInfo.setDepartmentCnName(_ctx.stringValue("OpsQueryCurrentOnCallResponse.OnCallStaffInfos["+ i +"].DepartmentCnName"));
-			onCallStaffInfo.setPhone(_ctx.stringValue("OpsQueryCurrentOnCallResponse.OnCallStaffInfos["+ i +"].Phone"));
-			onCallStaffInfo.setDepartment(_ctx.stringValue("OpsQueryCurrentOnCallResponse.OnCallStaffInfos["+ i +"].Department"));
-			onCallStaffInfo.setNickName(_ctx.stringValue("OpsQueryCurrentOnCallResponse.OnCallStaffInfos["+ i +"].NickName"));
 			onCallStaffInfo.setEmail(_ctx.stringValue("OpsQueryCurrentOnCallResponse.OnCallStaffInfos["+ i +"].Email"));
+			onCallStaffInfo.setNickName(_ctx.stringValue("OpsQueryCurrentOnCallResponse.OnCallStaffInfos["+ i +"].NickName"));
+			onCallStaffInfo.setDepartmentCnName(_ctx.stringValue("OpsQueryCurrentOnCallResponse.OnCallStaffInfos["+ i +"].DepartmentCnName"));
+			onCallStaffInfo.setDepartment(_ctx.stringValue("OpsQueryCurrentOnCallResponse.OnCallStaffInfos["+ i +"].Department"));
+			onCallStaffInfo.setPhone(_ctx.stringValue("OpsQueryCurrentOnCallResponse.OnCallStaffInfos["+ i +"].Phone"));
 
 			onCallStaffInfos.add(onCallStaffInfo);
 		}

@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsQueryNcInfoResponse extends AcsResponse {
 
-	private String ncInfo;
-
 	private String requestId;
 
-	public String getNcInfo() {
-		return this.ncInfo;
-	}
-
-	public void setNcInfo(String ncInfo) {
-		this.ncInfo = ncInfo;
-	}
+	private String ncInfo;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -42,6 +34,14 @@ public class OpsQueryNcInfoResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getNcInfo() {
+		return this.ncInfo;
+	}
+
+	public void setNcInfo(String ncInfo) {
+		this.ncInfo = ncInfo;
 	}
 
 	@Override

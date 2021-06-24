@@ -34,12 +34,12 @@ public class OpsListCloudBoxDemandsResponseUnmarshaller {
 		List<CloudBoxDemandSet> cloudBoxDemandSets = new ArrayList<CloudBoxDemandSet>();
 		for (int i = 0; i < _ctx.lengthValue("OpsListCloudBoxDemandsResponse.CloudBoxDemandSets.Length"); i++) {
 			CloudBoxDemandSet cloudBoxDemandSet = new CloudBoxDemandSet();
-			cloudBoxDemandSet.setCloudBoxId(_ctx.stringValue("OpsListCloudBoxDemandsResponse.CloudBoxDemandSets["+ i +"].CloudBoxId"));
-			cloudBoxDemandSet.setCloudBoxDemandId(_ctx.stringValue("OpsListCloudBoxDemandsResponse.CloudBoxDemandSets["+ i +"].CloudBoxDemandId"));
-			cloudBoxDemandSet.setBlockStorageCapacity(_ctx.floatValue("OpsListCloudBoxDemandsResponse.CloudBoxDemandSets["+ i +"].BlockStorageCapacity"));
 			cloudBoxDemandSet.setStatus(_ctx.stringValue("OpsListCloudBoxDemandsResponse.CloudBoxDemandSets["+ i +"].Status"));
 			cloudBoxDemandSet.setDemandType(_ctx.stringValue("OpsListCloudBoxDemandsResponse.CloudBoxDemandSets["+ i +"].DemandType"));
+			cloudBoxDemandSet.setCloudBoxId(_ctx.stringValue("OpsListCloudBoxDemandsResponse.CloudBoxDemandSets["+ i +"].CloudBoxId"));
+			cloudBoxDemandSet.setCloudBoxDemandId(_ctx.stringValue("OpsListCloudBoxDemandsResponse.CloudBoxDemandSets["+ i +"].CloudBoxDemandId"));
 			cloudBoxDemandSet.setDuration(_ctx.integerValue("OpsListCloudBoxDemandsResponse.CloudBoxDemandSets["+ i +"].Duration"));
+			cloudBoxDemandSet.setBlockStorageCapacity(_ctx.floatValue("OpsListCloudBoxDemandsResponse.CloudBoxDemandSets["+ i +"].BlockStorageCapacity"));
 
 			List<CloudBoxSkuSet> cloudBoxSkuSets = new ArrayList<CloudBoxSkuSet>();
 			for (int j = 0; j < _ctx.lengthValue("OpsListCloudBoxDemandsResponse.CloudBoxDemandSets["+ i +"].CloudBoxSkuSets.Length"); j++) {

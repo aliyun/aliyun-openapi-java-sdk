@@ -36,8 +36,8 @@ public class OpsDescribeChangePlanAllBatchesResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("OpsDescribeChangePlanAllBatchesResponse.Data.Batches.Length"); i++) {
 			Batch batch = new Batch();
 			batch.setBatchNo(_ctx.integerValue("OpsDescribeChangePlanAllBatchesResponse.Data.Batches["+ i +"].BatchNo"));
-			batch.setResourceCount(_ctx.integerValue("OpsDescribeChangePlanAllBatchesResponse.Data.Batches["+ i +"].ResourceCount"));
 			batch.setIsLastBatch(_ctx.booleanValue("OpsDescribeChangePlanAllBatchesResponse.Data.Batches["+ i +"].IsLastBatch"));
+			batch.setResourceCount(_ctx.integerValue("OpsDescribeChangePlanAllBatchesResponse.Data.Batches["+ i +"].ResourceCount"));
 			batch.setOperationStatus(_ctx.stringValue("OpsDescribeChangePlanAllBatchesResponse.Data.Batches["+ i +"].OperationStatus"));
 
 			batches.add(batch);

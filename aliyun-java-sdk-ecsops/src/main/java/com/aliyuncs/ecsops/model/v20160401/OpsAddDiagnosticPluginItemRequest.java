@@ -16,7 +16,6 @@ package com.aliyuncs.ecsops.model.v20160401;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
-import com.aliyuncs.ecsops.Endpoint;
 
 /**
  * @author auto create
@@ -33,6 +32,8 @@ public class OpsAddDiagnosticPluginItemRequest extends RpcAcsRequest<OpsAddDiagn
 
 	private String pluginVersion;
 
+	private String creator;
+
 	private Integer weight;
 
 	private String workOrderId;
@@ -43,12 +44,8 @@ public class OpsAddDiagnosticPluginItemRequest extends RpcAcsRequest<OpsAddDiagn
 
 	private String status;
 	public OpsAddDiagnosticPluginItemRequest() {
-		super("Ecsops", "2016-04-01", "OpsAddDiagnosticPluginItem", "ecs");
+		super("Ecsops", "2016-04-01", "OpsAddDiagnosticPluginItem", "ecsops");
 		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
 	}
 
 	public String getItemCategory() {
@@ -92,6 +89,17 @@ public class OpsAddDiagnosticPluginItemRequest extends RpcAcsRequest<OpsAddDiagn
 		this.pluginVersion = pluginVersion;
 		if(pluginVersion != null){
 			putQueryParameter("PluginVersion", pluginVersion);
+		}
+	}
+
+	public String getCreator() {
+		return this.creator;
+	}
+
+	public void setCreator(String creator) {
+		this.creator = creator;
+		if(creator != null){
+			putQueryParameter("Creator", creator);
 		}
 	}
 

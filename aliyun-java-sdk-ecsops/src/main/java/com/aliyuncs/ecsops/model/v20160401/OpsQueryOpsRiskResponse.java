@@ -47,30 +47,30 @@ public class OpsQueryOpsRiskResponse extends AcsResponse {
 
 	public static class OpsRiskConfig {
 
-		private String name;
+		private Boolean alwaysExec;
 
 		private Integer limitNum;
 
-		private Boolean alwaysExec;
+		private String name;
+
+		private String opsAction;
 
 		private Integer maxFreezeTime;
 
 		private Boolean enable;
 
-		private String opsAction;
-
 		private List<String> postActions;
-
-		private List<String> groupByKeys;
 
 		private List<String> exclusions;
 
-		public String getName() {
-			return this.name;
+		private List<String> groupByKeys;
+
+		public Boolean getAlwaysExec() {
+			return this.alwaysExec;
 		}
 
-		public void setName(String name) {
-			this.name = name;
+		public void setAlwaysExec(Boolean alwaysExec) {
+			this.alwaysExec = alwaysExec;
 		}
 
 		public Integer getLimitNum() {
@@ -81,12 +81,20 @@ public class OpsQueryOpsRiskResponse extends AcsResponse {
 			this.limitNum = limitNum;
 		}
 
-		public Boolean getAlwaysExec() {
-			return this.alwaysExec;
+		public String getName() {
+			return this.name;
 		}
 
-		public void setAlwaysExec(Boolean alwaysExec) {
-			this.alwaysExec = alwaysExec;
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getOpsAction() {
+			return this.opsAction;
+		}
+
+		public void setOpsAction(String opsAction) {
+			this.opsAction = opsAction;
 		}
 
 		public Integer getMaxFreezeTime() {
@@ -105,14 +113,6 @@ public class OpsQueryOpsRiskResponse extends AcsResponse {
 			this.enable = enable;
 		}
 
-		public String getOpsAction() {
-			return this.opsAction;
-		}
-
-		public void setOpsAction(String opsAction) {
-			this.opsAction = opsAction;
-		}
-
 		public List<String> getPostActions() {
 			return this.postActions;
 		}
@@ -121,20 +121,20 @@ public class OpsQueryOpsRiskResponse extends AcsResponse {
 			this.postActions = postActions;
 		}
 
-		public List<String> getGroupByKeys() {
-			return this.groupByKeys;
-		}
-
-		public void setGroupByKeys(List<String> groupByKeys) {
-			this.groupByKeys = groupByKeys;
-		}
-
 		public List<String> getExclusions() {
 			return this.exclusions;
 		}
 
 		public void setExclusions(List<String> exclusions) {
 			this.exclusions = exclusions;
+		}
+
+		public List<String> getGroupByKeys() {
+			return this.groupByKeys;
+		}
+
+		public void setGroupByKeys(List<String> groupByKeys) {
+			this.groupByKeys = groupByKeys;
 		}
 	}
 

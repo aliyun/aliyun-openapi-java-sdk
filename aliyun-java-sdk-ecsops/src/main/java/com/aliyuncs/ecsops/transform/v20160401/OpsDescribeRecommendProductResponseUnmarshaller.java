@@ -29,8 +29,8 @@ public class OpsDescribeRecommendProductResponseUnmarshaller {
 	public static OpsDescribeRecommendProductResponse unmarshall(OpsDescribeRecommendProductResponse opsDescribeRecommendProductResponse, UnmarshallerContext _ctx) {
 		
 		opsDescribeRecommendProductResponse.setRequestId(_ctx.stringValue("OpsDescribeRecommendProductResponse.RequestId"));
-		opsDescribeRecommendProductResponse.setCode(_ctx.stringValue("OpsDescribeRecommendProductResponse.Code"));
 		opsDescribeRecommendProductResponse.setMessage(_ctx.stringValue("OpsDescribeRecommendProductResponse.Message"));
+		opsDescribeRecommendProductResponse.setCode(_ctx.stringValue("OpsDescribeRecommendProductResponse.Code"));
 		opsDescribeRecommendProductResponse.setSuccess(_ctx.booleanValue("OpsDescribeRecommendProductResponse.Success"));
 
 		List<RecommendProduct> recommendProducts = new ArrayList<RecommendProduct>();
@@ -41,23 +41,23 @@ public class OpsDescribeRecommendProductResponseUnmarshaller {
 			List<RecommendInstanceType> recommendInstanceTypes = new ArrayList<RecommendInstanceType>();
 			for (int j = 0; j < _ctx.lengthValue("OpsDescribeRecommendProductResponse.RecommendProducts["+ i +"].RecommendInstanceTypes.Length"); j++) {
 				RecommendInstanceType recommendInstanceType = new RecommendInstanceType();
-				recommendInstanceType.setInstanceChargeType(_ctx.stringValue("OpsDescribeRecommendProductResponse.RecommendProducts["+ i +"].RecommendInstanceTypes["+ j +"].InstanceChargeType"));
-				recommendInstanceType.setSpotStrategy(_ctx.stringValue("OpsDescribeRecommendProductResponse.RecommendProducts["+ i +"].RecommendInstanceTypes["+ j +"].SpotStrategy"));
-				recommendInstanceType.setPriority(_ctx.integerValue("OpsDescribeRecommendProductResponse.RecommendProducts["+ i +"].RecommendInstanceTypes["+ j +"].Priority"));
-				recommendInstanceType.setNetworkType(_ctx.stringValue("OpsDescribeRecommendProductResponse.RecommendProducts["+ i +"].RecommendInstanceTypes["+ j +"].NetworkType"));
-				recommendInstanceType.setInventoryAmount(_ctx.integerValue("OpsDescribeRecommendProductResponse.RecommendProducts["+ i +"].RecommendInstanceTypes["+ j +"].InventoryAmount"));
-				recommendInstanceType.setQuotaAmount(_ctx.integerValue("OpsDescribeRecommendProductResponse.RecommendProducts["+ i +"].RecommendInstanceTypes["+ j +"].QuotaAmount"));
 				recommendInstanceType.setPrice(_ctx.floatValue("OpsDescribeRecommendProductResponse.RecommendProducts["+ i +"].RecommendInstanceTypes["+ j +"].Price"));
 				recommendInstanceType.setCapacitySpecification(_ctx.stringValue("OpsDescribeRecommendProductResponse.RecommendProducts["+ i +"].RecommendInstanceTypes["+ j +"].CapacitySpecification"));
+				recommendInstanceType.setPriority(_ctx.integerValue("OpsDescribeRecommendProductResponse.RecommendProducts["+ i +"].RecommendInstanceTypes["+ j +"].Priority"));
+				recommendInstanceType.setInventoryAmount(_ctx.integerValue("OpsDescribeRecommendProductResponse.RecommendProducts["+ i +"].RecommendInstanceTypes["+ j +"].InventoryAmount"));
+				recommendInstanceType.setNetworkType(_ctx.stringValue("OpsDescribeRecommendProductResponse.RecommendProducts["+ i +"].RecommendInstanceTypes["+ j +"].NetworkType"));
+				recommendInstanceType.setQuotaAmount(_ctx.integerValue("OpsDescribeRecommendProductResponse.RecommendProducts["+ i +"].RecommendInstanceTypes["+ j +"].QuotaAmount"));
+				recommendInstanceType.setSpotStrategy(_ctx.stringValue("OpsDescribeRecommendProductResponse.RecommendProducts["+ i +"].RecommendInstanceTypes["+ j +"].SpotStrategy"));
+				recommendInstanceType.setInstanceChargeType(_ctx.stringValue("OpsDescribeRecommendProductResponse.RecommendProducts["+ i +"].RecommendInstanceTypes["+ j +"].InstanceChargeType"));
 
 				InstanceType instanceType = new InstanceType();
-				instanceType.setGeneration(_ctx.stringValue("OpsDescribeRecommendProductResponse.RecommendProducts["+ i +"].RecommendInstanceTypes["+ j +"].InstanceType.Generation"));
-				instanceType.setInstanceTypeFamily(_ctx.stringValue("OpsDescribeRecommendProductResponse.RecommendProducts["+ i +"].RecommendInstanceTypes["+ j +"].InstanceType.InstanceTypeFamily"));
-				instanceType.setInstanceType(_ctx.stringValue("OpsDescribeRecommendProductResponse.RecommendProducts["+ i +"].RecommendInstanceTypes["+ j +"].InstanceType.InstanceType"));
 				instanceType.setSupportIoOptimized(_ctx.stringValue("OpsDescribeRecommendProductResponse.RecommendProducts["+ i +"].RecommendInstanceTypes["+ j +"].InstanceType.SupportIoOptimized"));
 				instanceType.setCores(_ctx.integerValue("OpsDescribeRecommendProductResponse.RecommendProducts["+ i +"].RecommendInstanceTypes["+ j +"].InstanceType.Cores"));
-				instanceType.setMemory(_ctx.integerValue("OpsDescribeRecommendProductResponse.RecommendProducts["+ i +"].RecommendInstanceTypes["+ j +"].InstanceType.Memory"));
 				instanceType.setInstanceFamilyLevel(_ctx.stringValue("OpsDescribeRecommendProductResponse.RecommendProducts["+ i +"].RecommendInstanceTypes["+ j +"].InstanceType.InstanceFamilyLevel"));
+				instanceType.setMemory(_ctx.integerValue("OpsDescribeRecommendProductResponse.RecommendProducts["+ i +"].RecommendInstanceTypes["+ j +"].InstanceType.Memory"));
+				instanceType.setInstanceType(_ctx.stringValue("OpsDescribeRecommendProductResponse.RecommendProducts["+ i +"].RecommendInstanceTypes["+ j +"].InstanceType.InstanceType"));
+				instanceType.setInstanceTypeFamily(_ctx.stringValue("OpsDescribeRecommendProductResponse.RecommendProducts["+ i +"].RecommendInstanceTypes["+ j +"].InstanceType.InstanceTypeFamily"));
+				instanceType.setGeneration(_ctx.stringValue("OpsDescribeRecommendProductResponse.RecommendProducts["+ i +"].RecommendInstanceTypes["+ j +"].InstanceType.Generation"));
 				recommendInstanceType.setInstanceType(instanceType);
 
 				recommendInstanceTypes.add(recommendInstanceType);

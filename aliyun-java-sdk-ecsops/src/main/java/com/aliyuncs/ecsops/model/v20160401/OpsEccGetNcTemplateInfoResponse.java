@@ -56,26 +56,26 @@ public class OpsEccGetNcTemplateInfoResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String templateName;
+		private String templateAliasName;
 
 		private String templateDesc;
 
-		private Long gmtModified;
+		private String configs;
 
 		private Long gmtCreate;
 
+		private String templateName;
+
+		private Long gmtModified;
+
 		private String adjustStandModels;
 
-		private String templateAliasName;
-
-		private String configs;
-
-		public String getTemplateName() {
-			return this.templateName;
+		public String getTemplateAliasName() {
+			return this.templateAliasName;
 		}
 
-		public void setTemplateName(String templateName) {
-			this.templateName = templateName;
+		public void setTemplateAliasName(String templateAliasName) {
+			this.templateAliasName = templateAliasName;
 		}
 
 		public String getTemplateDesc() {
@@ -86,12 +86,12 @@ public class OpsEccGetNcTemplateInfoResponse extends AcsResponse {
 			this.templateDesc = templateDesc;
 		}
 
-		public Long getGmtModified() {
-			return this.gmtModified;
+		public String getConfigs() {
+			return this.configs;
 		}
 
-		public void setGmtModified(Long gmtModified) {
-			this.gmtModified = gmtModified;
+		public void setConfigs(String configs) {
+			this.configs = configs;
 		}
 
 		public Long getGmtCreate() {
@@ -102,28 +102,28 @@ public class OpsEccGetNcTemplateInfoResponse extends AcsResponse {
 			this.gmtCreate = gmtCreate;
 		}
 
+		public String getTemplateName() {
+			return this.templateName;
+		}
+
+		public void setTemplateName(String templateName) {
+			this.templateName = templateName;
+		}
+
+		public Long getGmtModified() {
+			return this.gmtModified;
+		}
+
+		public void setGmtModified(Long gmtModified) {
+			this.gmtModified = gmtModified;
+		}
+
 		public String getAdjustStandModels() {
 			return this.adjustStandModels;
 		}
 
 		public void setAdjustStandModels(String adjustStandModels) {
 			this.adjustStandModels = adjustStandModels;
-		}
-
-		public String getTemplateAliasName() {
-			return this.templateAliasName;
-		}
-
-		public void setTemplateAliasName(String templateAliasName) {
-			this.templateAliasName = templateAliasName;
-		}
-
-		public String getConfigs() {
-			return this.configs;
-		}
-
-		public void setConfigs(String configs) {
-			this.configs = configs;
 		}
 	}
 

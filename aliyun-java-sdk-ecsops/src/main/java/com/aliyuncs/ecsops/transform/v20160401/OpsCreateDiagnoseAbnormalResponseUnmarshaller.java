@@ -23,8 +23,8 @@ public class OpsCreateDiagnoseAbnormalResponseUnmarshaller {
 	public static OpsCreateDiagnoseAbnormalResponse unmarshall(OpsCreateDiagnoseAbnormalResponse opsCreateDiagnoseAbnormalResponse, UnmarshallerContext _ctx) {
 		
 		opsCreateDiagnoseAbnormalResponse.setRequestId(_ctx.stringValue("OpsCreateDiagnoseAbnormalResponse.RequestId"));
-		opsCreateDiagnoseAbnormalResponse.setCode(_ctx.stringValue("OpsCreateDiagnoseAbnormalResponse.Code"));
 		opsCreateDiagnoseAbnormalResponse.setMessage(_ctx.stringValue("OpsCreateDiagnoseAbnormalResponse.Message"));
+		opsCreateDiagnoseAbnormalResponse.setCode(_ctx.stringValue("OpsCreateDiagnoseAbnormalResponse.Code"));
 		opsCreateDiagnoseAbnormalResponse.setSuccess(_ctx.stringValue("OpsCreateDiagnoseAbnormalResponse.Success"));
 	 
 	 	return opsCreateDiagnoseAbnormalResponse;

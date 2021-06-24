@@ -28,19 +28,19 @@ public class OpsDescribeSnapshotLinksResponseUnmarshaller {
 		
 		opsDescribeSnapshotLinksResponse.setRequestId(_ctx.stringValue("OpsDescribeSnapshotLinksResponse.RequestId"));
 		opsDescribeSnapshotLinksResponse.setTotalCount(_ctx.integerValue("OpsDescribeSnapshotLinksResponse.TotalCount"));
-		opsDescribeSnapshotLinksResponse.setPageNumber(_ctx.integerValue("OpsDescribeSnapshotLinksResponse.PageNumber"));
 		opsDescribeSnapshotLinksResponse.setPageSize(_ctx.integerValue("OpsDescribeSnapshotLinksResponse.PageSize"));
+		opsDescribeSnapshotLinksResponse.setPageNumber(_ctx.integerValue("OpsDescribeSnapshotLinksResponse.PageNumber"));
 
 		List<SnapshotLink> snapshotLinks = new ArrayList<SnapshotLink>();
 		for (int i = 0; i < _ctx.lengthValue("OpsDescribeSnapshotLinksResponse.SnapshotLinks.Length"); i++) {
 			SnapshotLink snapshotLink = new SnapshotLink();
-			snapshotLink.setSnapshotLinkId(_ctx.stringValue("OpsDescribeSnapshotLinksResponse.SnapshotLinks["+ i +"].SnapshotLinkId"));
-			snapshotLink.setRegionId(_ctx.stringValue("OpsDescribeSnapshotLinksResponse.SnapshotLinks["+ i +"].RegionId"));
 			snapshotLink.setSourceDiskId(_ctx.stringValue("OpsDescribeSnapshotLinksResponse.SnapshotLinks["+ i +"].SourceDiskId"));
+			snapshotLink.setTotalSize(_ctx.longValue("OpsDescribeSnapshotLinksResponse.SnapshotLinks["+ i +"].TotalSize"));
 			snapshotLink.setSourceDiskSize(_ctx.integerValue("OpsDescribeSnapshotLinksResponse.SnapshotLinks["+ i +"].SourceDiskSize"));
 			snapshotLink.setSourceDiskType(_ctx.stringValue("OpsDescribeSnapshotLinksResponse.SnapshotLinks["+ i +"].SourceDiskType"));
-			snapshotLink.setTotalSize(_ctx.longValue("OpsDescribeSnapshotLinksResponse.SnapshotLinks["+ i +"].TotalSize"));
 			snapshotLink.setTotalCount(_ctx.integerValue("OpsDescribeSnapshotLinksResponse.SnapshotLinks["+ i +"].TotalCount"));
+			snapshotLink.setSnapshotLinkId(_ctx.stringValue("OpsDescribeSnapshotLinksResponse.SnapshotLinks["+ i +"].SnapshotLinkId"));
+			snapshotLink.setRegionId(_ctx.stringValue("OpsDescribeSnapshotLinksResponse.SnapshotLinks["+ i +"].RegionId"));
 
 			snapshotLinks.add(snapshotLink);
 		}

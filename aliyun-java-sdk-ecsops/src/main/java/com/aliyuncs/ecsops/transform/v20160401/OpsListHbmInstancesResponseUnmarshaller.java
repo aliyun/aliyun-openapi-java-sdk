@@ -37,27 +37,27 @@ public class OpsListHbmInstancesResponseUnmarshaller {
 		List<HbmInstance> hbmInstances = new ArrayList<HbmInstance>();
 		for (int i = 0; i < _ctx.lengthValue("OpsListHbmInstancesResponse.HbmInstances.Length"); i++) {
 			HbmInstance hbmInstance = new HbmInstance();
-			hbmInstance.setRegionId(_ctx.stringValue("OpsListHbmInstancesResponse.HbmInstances["+ i +"].RegionId"));
-			hbmInstance.setZoneId(_ctx.stringValue("OpsListHbmInstancesResponse.HbmInstances["+ i +"].ZoneId"));
-			hbmInstance.setHbmInstanceId(_ctx.stringValue("OpsListHbmInstancesResponse.HbmInstances["+ i +"].HbmInstanceId"));
-			hbmInstance.setHbmInstanceName(_ctx.stringValue("OpsListHbmInstancesResponse.HbmInstances["+ i +"].HbmInstanceName"));
-			hbmInstance.setStatus(_ctx.stringValue("OpsListHbmInstancesResponse.HbmInstances["+ i +"].Status"));
-			hbmInstance.setBootMode(_ctx.stringValue("OpsListHbmInstancesResponse.HbmInstances["+ i +"].BootMode"));
 			hbmInstance.setCreationTime(_ctx.stringValue("OpsListHbmInstancesResponse.HbmInstances["+ i +"].CreationTime"));
-			hbmInstance.setCpu(_ctx.integerValue("OpsListHbmInstancesResponse.HbmInstances["+ i +"].Cpu"));
-			hbmInstance.setMemory(_ctx.integerValue("OpsListHbmInstancesResponse.HbmInstances["+ i +"].Memory"));
+			hbmInstance.setStatus(_ctx.stringValue("OpsListHbmInstancesResponse.HbmInstances["+ i +"].Status"));
+			hbmInstance.setHbmInstanceName(_ctx.stringValue("OpsListHbmInstancesResponse.HbmInstances["+ i +"].HbmInstanceName"));
 			hbmInstance.setHostName(_ctx.stringValue("OpsListHbmInstancesResponse.HbmInstances["+ i +"].HostName"));
+			hbmInstance.setHbmInstanceId(_ctx.stringValue("OpsListHbmInstancesResponse.HbmInstances["+ i +"].HbmInstanceId"));
+			hbmInstance.setRegionId(_ctx.stringValue("OpsListHbmInstancesResponse.HbmInstances["+ i +"].RegionId"));
+			hbmInstance.setCpu(_ctx.integerValue("OpsListHbmInstancesResponse.HbmInstances["+ i +"].Cpu"));
 			hbmInstance.setResourceGroupId(_ctx.stringValue("OpsListHbmInstancesResponse.HbmInstances["+ i +"].ResourceGroupId"));
+			hbmInstance.setZoneId(_ctx.stringValue("OpsListHbmInstancesResponse.HbmInstances["+ i +"].ZoneId"));
+			hbmInstance.setMemory(_ctx.integerValue("OpsListHbmInstancesResponse.HbmInstances["+ i +"].Memory"));
+			hbmInstance.setBootMode(_ctx.stringValue("OpsListHbmInstancesResponse.HbmInstances["+ i +"].BootMode"));
 
 			NetworkAttribute networkAttribute = new NetworkAttribute();
 			networkAttribute.setVpcId(_ctx.stringValue("OpsListHbmInstancesResponse.HbmInstances["+ i +"].NetworkAttribute.VpcId"));
 			networkAttribute.setVSwitchId(_ctx.stringValue("OpsListHbmInstancesResponse.HbmInstances["+ i +"].NetworkAttribute.VSwitchId"));
 
-			List<String> securityGroupIds = new ArrayList<String>();
-			for (int j = 0; j < _ctx.lengthValue("OpsListHbmInstancesResponse.HbmInstances["+ i +"].NetworkAttribute.SecurityGroupIds.Length"); j++) {
-				securityGroupIds.add(_ctx.stringValue("OpsListHbmInstancesResponse.HbmInstances["+ i +"].NetworkAttribute.SecurityGroupIds["+ j +"]"));
+			List<String> privateIpv6Address = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("OpsListHbmInstancesResponse.HbmInstances["+ i +"].NetworkAttribute.PrivateIpv6Address.Length"); j++) {
+				privateIpv6Address.add(_ctx.stringValue("OpsListHbmInstancesResponse.HbmInstances["+ i +"].NetworkAttribute.PrivateIpv6Address["+ j +"]"));
 			}
-			networkAttribute.setSecurityGroupIds(securityGroupIds);
+			networkAttribute.setPrivateIpv6Address(privateIpv6Address);
 
 			List<String> privateIpAddress = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("OpsListHbmInstancesResponse.HbmInstances["+ i +"].NetworkAttribute.PrivateIpAddress.Length"); j++) {
@@ -65,11 +65,11 @@ public class OpsListHbmInstancesResponseUnmarshaller {
 			}
 			networkAttribute.setPrivateIpAddress(privateIpAddress);
 
-			List<String> privateIpv6Address = new ArrayList<String>();
-			for (int j = 0; j < _ctx.lengthValue("OpsListHbmInstancesResponse.HbmInstances["+ i +"].NetworkAttribute.PrivateIpv6Address.Length"); j++) {
-				privateIpv6Address.add(_ctx.stringValue("OpsListHbmInstancesResponse.HbmInstances["+ i +"].NetworkAttribute.PrivateIpv6Address["+ j +"]"));
+			List<String> securityGroupIds = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("OpsListHbmInstancesResponse.HbmInstances["+ i +"].NetworkAttribute.SecurityGroupIds.Length"); j++) {
+				securityGroupIds.add(_ctx.stringValue("OpsListHbmInstancesResponse.HbmInstances["+ i +"].NetworkAttribute.SecurityGroupIds["+ j +"]"));
 			}
-			networkAttribute.setPrivateIpv6Address(privateIpv6Address);
+			networkAttribute.setSecurityGroupIds(securityGroupIds);
 
 			EipAttribute eipAttribute = new EipAttribute();
 			eipAttribute.setAllocationId(_ctx.stringValue("OpsListHbmInstancesResponse.HbmInstances["+ i +"].NetworkAttribute.EipAttribute.AllocationId"));
@@ -79,8 +79,8 @@ public class OpsListHbmInstancesResponseUnmarshaller {
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("OpsListHbmInstancesResponse.HbmInstances["+ i +"].Tags.Length"); j++) {
 				Tag tag = new Tag();
-				tag.setTagKey(_ctx.stringValue("OpsListHbmInstancesResponse.HbmInstances["+ i +"].Tags["+ j +"].TagKey"));
 				tag.setTagValue(_ctx.stringValue("OpsListHbmInstancesResponse.HbmInstances["+ i +"].Tags["+ j +"].TagValue"));
+				tag.setTagKey(_ctx.stringValue("OpsListHbmInstancesResponse.HbmInstances["+ i +"].Tags["+ j +"].TagKey"));
 
 				tags.add(tag);
 			}

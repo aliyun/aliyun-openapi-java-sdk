@@ -23,8 +23,8 @@ public class OpsCancelLiveMigrateEcsInstanceResponseUnmarshaller {
 	public static OpsCancelLiveMigrateEcsInstanceResponse unmarshall(OpsCancelLiveMigrateEcsInstanceResponse opsCancelLiveMigrateEcsInstanceResponse, UnmarshallerContext _ctx) {
 		
 		opsCancelLiveMigrateEcsInstanceResponse.setRequestId(_ctx.stringValue("OpsCancelLiveMigrateEcsInstanceResponse.RequestId"));
-		opsCancelLiveMigrateEcsInstanceResponse.setCode(_ctx.stringValue("OpsCancelLiveMigrateEcsInstanceResponse.Code"));
 		opsCancelLiveMigrateEcsInstanceResponse.setMessage(_ctx.stringValue("OpsCancelLiveMigrateEcsInstanceResponse.Message"));
+		opsCancelLiveMigrateEcsInstanceResponse.setCode(_ctx.stringValue("OpsCancelLiveMigrateEcsInstanceResponse.Code"));
 		opsCancelLiveMigrateEcsInstanceResponse.setSuccess(_ctx.stringValue("OpsCancelLiveMigrateEcsInstanceResponse.Success"));
 	 
 	 	return opsCancelLiveMigrateEcsInstanceResponse;

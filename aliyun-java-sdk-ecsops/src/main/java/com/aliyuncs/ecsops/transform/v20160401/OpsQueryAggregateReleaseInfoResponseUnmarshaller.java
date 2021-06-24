@@ -48,26 +48,26 @@ public class OpsQueryAggregateReleaseInfoResponseUnmarshaller {
 		}
 		opsQueryAggregateReleaseInfoResponse.setAggregateReleaseResults(aggregateReleaseResults);
 
-		List<AggregateTimeResultItem> aggregateTimeResults = new ArrayList<AggregateTimeResultItem>();
-		for (int i = 0; i < _ctx.lengthValue("OpsQueryAggregateReleaseInfoResponse.AggregateTimeResults.Length"); i++) {
-			AggregateTimeResultItem aggregateTimeResultItem = new AggregateTimeResultItem();
-			aggregateTimeResultItem.setTimestamp(_ctx.stringValue("OpsQueryAggregateReleaseInfoResponse.AggregateTimeResults["+ i +"].Timestamp"));
-			aggregateTimeResultItem.setImpactNcIpCnt(_ctx.integerValue("OpsQueryAggregateReleaseInfoResponse.AggregateTimeResults["+ i +"].ImpactNcIpCnt"));
-
-			aggregateTimeResults.add(aggregateTimeResultItem);
-		}
-		opsQueryAggregateReleaseInfoResponse.setAggregateTimeResults(aggregateTimeResults);
-
 		List<DetailInfoItem> detailInfos = new ArrayList<DetailInfoItem>();
 		for (int i = 0; i < _ctx.lengthValue("OpsQueryAggregateReleaseInfoResponse.DetailInfos.Length"); i++) {
 			DetailInfoItem detailInfoItem = new DetailInfoItem();
-			detailInfoItem.setNcIp(_ctx.stringValue("OpsQueryAggregateReleaseInfoResponse.DetailInfos["+ i +"].NcIp"));
-			detailInfoItem.setStartTime(_ctx.stringValue("OpsQueryAggregateReleaseInfoResponse.DetailInfos["+ i +"].StartTime"));
 			detailInfoItem.setEndTime(_ctx.stringValue("OpsQueryAggregateReleaseInfoResponse.DetailInfos["+ i +"].EndTime"));
+			detailInfoItem.setStartTime(_ctx.stringValue("OpsQueryAggregateReleaseInfoResponse.DetailInfos["+ i +"].StartTime"));
+			detailInfoItem.setNcIp(_ctx.stringValue("OpsQueryAggregateReleaseInfoResponse.DetailInfos["+ i +"].NcIp"));
 
 			detailInfos.add(detailInfoItem);
 		}
 		opsQueryAggregateReleaseInfoResponse.setDetailInfos(detailInfos);
+
+		List<AggregateTimeResultItem> aggregateTimeResults = new ArrayList<AggregateTimeResultItem>();
+		for (int i = 0; i < _ctx.lengthValue("OpsQueryAggregateReleaseInfoResponse.AggregateTimeResults.Length"); i++) {
+			AggregateTimeResultItem aggregateTimeResultItem = new AggregateTimeResultItem();
+			aggregateTimeResultItem.setImpactNcIpCnt(_ctx.integerValue("OpsQueryAggregateReleaseInfoResponse.AggregateTimeResults["+ i +"].ImpactNcIpCnt"));
+			aggregateTimeResultItem.setTimestamp(_ctx.stringValue("OpsQueryAggregateReleaseInfoResponse.AggregateTimeResults["+ i +"].Timestamp"));
+
+			aggregateTimeResults.add(aggregateTimeResultItem);
+		}
+		opsQueryAggregateReleaseInfoResponse.setAggregateTimeResults(aggregateTimeResults);
 	 
 	 	return opsQueryAggregateReleaseInfoResponse;
 	}

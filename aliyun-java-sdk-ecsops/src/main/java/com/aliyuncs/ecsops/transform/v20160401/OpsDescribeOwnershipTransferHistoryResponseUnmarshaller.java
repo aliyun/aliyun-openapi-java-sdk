@@ -31,12 +31,12 @@ public class OpsDescribeOwnershipTransferHistoryResponseUnmarshaller {
 		List<Item> items = new ArrayList<Item>();
 		for (int i = 0; i < _ctx.lengthValue("OpsDescribeOwnershipTransferHistoryResponse.Items.Length"); i++) {
 			Item item = new Item();
-			item.setInstanceId(_ctx.stringValue("OpsDescribeOwnershipTransferHistoryResponse.Items["+ i +"].InstanceId"));
-			item.setSourceUserId(_ctx.stringValue("OpsDescribeOwnershipTransferHistoryResponse.Items["+ i +"].SourceUserId"));
-			item.setTargetUserId(_ctx.stringValue("OpsDescribeOwnershipTransferHistoryResponse.Items["+ i +"].TargetUserId"));
 			item.setStatus(_ctx.stringValue("OpsDescribeOwnershipTransferHistoryResponse.Items["+ i +"].Status"));
 			item.setCreationTime(_ctx.stringValue("OpsDescribeOwnershipTransferHistoryResponse.Items["+ i +"].CreationTime"));
+			item.setTargetUserId(_ctx.stringValue("OpsDescribeOwnershipTransferHistoryResponse.Items["+ i +"].TargetUserId"));
 			item.setFinishedTime(_ctx.stringValue("OpsDescribeOwnershipTransferHistoryResponse.Items["+ i +"].FinishedTime"));
+			item.setInstanceId(_ctx.stringValue("OpsDescribeOwnershipTransferHistoryResponse.Items["+ i +"].InstanceId"));
+			item.setSourceUserId(_ctx.stringValue("OpsDescribeOwnershipTransferHistoryResponse.Items["+ i +"].SourceUserId"));
 
 			items.add(item);
 		}

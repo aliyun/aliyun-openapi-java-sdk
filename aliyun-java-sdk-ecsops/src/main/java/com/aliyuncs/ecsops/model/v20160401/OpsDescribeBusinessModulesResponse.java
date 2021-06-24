@@ -47,29 +47,13 @@ public class OpsDescribeBusinessModulesResponse extends AcsResponse {
 
 	public static class BusinessModuleSet {
 
-		private Long id;
-
-		private Long businessId;
-
 		private String moduleCode;
 
 		private String moduleTag;
 
-		public Long getId() {
-			return this.id;
-		}
+		private Long businessId;
 
-		public void setId(Long id) {
-			this.id = id;
-		}
-
-		public Long getBusinessId() {
-			return this.businessId;
-		}
-
-		public void setBusinessId(Long businessId) {
-			this.businessId = businessId;
-		}
+		private Long id;
 
 		public String getModuleCode() {
 			return this.moduleCode;
@@ -85,6 +69,22 @@ public class OpsDescribeBusinessModulesResponse extends AcsResponse {
 
 		public void setModuleTag(String moduleTag) {
 			this.moduleTag = moduleTag;
+		}
+
+		public Long getBusinessId() {
+			return this.businessId;
+		}
+
+		public void setBusinessId(Long businessId) {
+			this.businessId = businessId;
+		}
+
+		public Long getId() {
+			return this.id;
+		}
+
+		public void setId(Long id) {
+			this.id = id;
 		}
 	}
 

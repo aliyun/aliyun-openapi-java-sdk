@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsClearDiskSerialNumberResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
 
+	private String requestId;
+
 	private List<FailedDisk> failedDiskList;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -45,6 +37,14 @@ public class OpsClearDiskSerialNumberResponse extends AcsResponse {
 
 	public void setTotalCount(Integer totalCount) {
 		this.totalCount = totalCount;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<FailedDisk> getFailedDiskList() {
@@ -57,19 +57,11 @@ public class OpsClearDiskSerialNumberResponse extends AcsResponse {
 
 	public static class FailedDisk {
 
-		private String diskId;
-
 		private String code;
 
 		private String message;
 
-		public String getDiskId() {
-			return this.diskId;
-		}
-
-		public void setDiskId(String diskId) {
-			this.diskId = diskId;
-		}
+		private String diskId;
 
 		public String getCode() {
 			return this.code;
@@ -85,6 +77,14 @@ public class OpsClearDiskSerialNumberResponse extends AcsResponse {
 
 		public void setMessage(String message) {
 			this.message = message;
+		}
+
+		public String getDiskId() {
+			return this.diskId;
+		}
+
+		public void setDiskId(String diskId) {
+			this.diskId = diskId;
 		}
 	}
 

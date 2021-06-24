@@ -57,29 +57,13 @@ public class OpsQueryScheduledTaskKeyValueConfigsResponse extends AcsResponse {
 
 	public static class ScheduledTaskKeyValueConfig {
 
-		private Long aliUid;
-
-		private String configKey;
-
 		private String description;
 
 		private String configValue;
 
-		public Long getAliUid() {
-			return this.aliUid;
-		}
+		private Long aliUid;
 
-		public void setAliUid(Long aliUid) {
-			this.aliUid = aliUid;
-		}
-
-		public String getConfigKey() {
-			return this.configKey;
-		}
-
-		public void setConfigKey(String configKey) {
-			this.configKey = configKey;
-		}
+		private String configKey;
 
 		public String getDescription() {
 			return this.description;
@@ -95,6 +79,22 @@ public class OpsQueryScheduledTaskKeyValueConfigsResponse extends AcsResponse {
 
 		public void setConfigValue(String configValue) {
 			this.configValue = configValue;
+		}
+
+		public Long getAliUid() {
+			return this.aliUid;
+		}
+
+		public void setAliUid(Long aliUid) {
+			this.aliUid = aliUid;
+		}
+
+		public String getConfigKey() {
+			return this.configKey;
+		}
+
+		public void setConfigKey(String configKey) {
+			this.configKey = configKey;
 		}
 	}
 

@@ -79,48 +79,40 @@ public class OpsDescribeResourcePlanningResponse extends AcsResponse {
 
 		public static class ResourceModel {
 
-			private String regionId;
+			private Integer amount;
 
-			private String zoneId;
-
-			private String instanceType;
+			private String deliveryTimeEnd;
 
 			private Integer cores;
 
-			private Integer memory;
-
 			private Float price;
-
-			private Integer amount;
 
 			private String deliveryType;
 
 			private String deliveryTimeBegin;
 
-			private String deliveryTimeEnd;
+			private String zoneId;
 
-			public String getRegionId() {
-				return this.regionId;
+			private Integer memory;
+
+			private String instanceType;
+
+			private String regionId;
+
+			public Integer getAmount() {
+				return this.amount;
 			}
 
-			public void setRegionId(String regionId) {
-				this.regionId = regionId;
+			public void setAmount(Integer amount) {
+				this.amount = amount;
 			}
 
-			public String getZoneId() {
-				return this.zoneId;
+			public String getDeliveryTimeEnd() {
+				return this.deliveryTimeEnd;
 			}
 
-			public void setZoneId(String zoneId) {
-				this.zoneId = zoneId;
-			}
-
-			public String getInstanceType() {
-				return this.instanceType;
-			}
-
-			public void setInstanceType(String instanceType) {
-				this.instanceType = instanceType;
+			public void setDeliveryTimeEnd(String deliveryTimeEnd) {
+				this.deliveryTimeEnd = deliveryTimeEnd;
 			}
 
 			public Integer getCores() {
@@ -131,28 +123,12 @@ public class OpsDescribeResourcePlanningResponse extends AcsResponse {
 				this.cores = cores;
 			}
 
-			public Integer getMemory() {
-				return this.memory;
-			}
-
-			public void setMemory(Integer memory) {
-				this.memory = memory;
-			}
-
 			public Float getPrice() {
 				return this.price;
 			}
 
 			public void setPrice(Float price) {
 				this.price = price;
-			}
-
-			public Integer getAmount() {
-				return this.amount;
-			}
-
-			public void setAmount(Integer amount) {
-				this.amount = amount;
 			}
 
 			public String getDeliveryType() {
@@ -171,12 +147,36 @@ public class OpsDescribeResourcePlanningResponse extends AcsResponse {
 				this.deliveryTimeBegin = deliveryTimeBegin;
 			}
 
-			public String getDeliveryTimeEnd() {
-				return this.deliveryTimeEnd;
+			public String getZoneId() {
+				return this.zoneId;
 			}
 
-			public void setDeliveryTimeEnd(String deliveryTimeEnd) {
-				this.deliveryTimeEnd = deliveryTimeEnd;
+			public void setZoneId(String zoneId) {
+				this.zoneId = zoneId;
+			}
+
+			public Integer getMemory() {
+				return this.memory;
+			}
+
+			public void setMemory(Integer memory) {
+				this.memory = memory;
+			}
+
+			public String getInstanceType() {
+				return this.instanceType;
+			}
+
+			public void setInstanceType(String instanceType) {
+				this.instanceType = instanceType;
+			}
+
+			public String getRegionId() {
+				return this.regionId;
+			}
+
+			public void setRegionId(String regionId) {
+				this.regionId = regionId;
 			}
 		}
 	}

@@ -58,43 +58,35 @@ public class OpsQueryAvailableRegionResponse extends AcsResponse {
 
 	public static class IzModel {
 
-		private String no;
-
 		private String regionNo;
-
-		private String cnName;
 
 		private String enName;
 
+		private String status;
+
 		private String statusCatalogue;
 
-		private String status;
+		private String no;
+
+		private String cnName;
 
 		private Map<Object,Object> deployedInstanceTypeToStatus;
 
 		private List<IZResourceModel> iZResourceModels;
 
-		private List<String> supportedVolumeCategories;
-
-		private List<String> allowedResourceCreation;
+		private List<String> supportedDedicatedHostGenerations;
 
 		private List<String> supportedInstanceTypeNames;
 
-		private List<String> supportedInstanceTypeFamilies;
-
-		private List<String> supportedInstanceGenerations;
+		private List<String> allowedResourceCreation;
 
 		private List<String> supportedDedicatedHostTypeNames;
 
-		private List<String> supportedDedicatedHostGenerations;
+		private List<String> supportedVolumeCategories;
 
-		public String getNo() {
-			return this.no;
-		}
+		private List<String> supportedInstanceGenerations;
 
-		public void setNo(String no) {
-			this.no = no;
-		}
+		private List<String> supportedInstanceTypeFamilies;
 
 		public String getRegionNo() {
 			return this.regionNo;
@@ -102,14 +94,6 @@ public class OpsQueryAvailableRegionResponse extends AcsResponse {
 
 		public void setRegionNo(String regionNo) {
 			this.regionNo = regionNo;
-		}
-
-		public String getCnName() {
-			return this.cnName;
-		}
-
-		public void setCnName(String cnName) {
-			this.cnName = cnName;
 		}
 
 		public String getEnName() {
@@ -120,6 +104,14 @@ public class OpsQueryAvailableRegionResponse extends AcsResponse {
 			this.enName = enName;
 		}
 
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
 		public String getStatusCatalogue() {
 			return this.statusCatalogue;
 		}
@@ -128,12 +120,20 @@ public class OpsQueryAvailableRegionResponse extends AcsResponse {
 			this.statusCatalogue = statusCatalogue;
 		}
 
-		public String getStatus() {
-			return this.status;
+		public String getNo() {
+			return this.no;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
+		public void setNo(String no) {
+			this.no = no;
+		}
+
+		public String getCnName() {
+			return this.cnName;
+		}
+
+		public void setCnName(String cnName) {
+			this.cnName = cnName;
 		}
 
 		public Map<Object,Object> getDeployedInstanceTypeToStatus() {
@@ -152,20 +152,12 @@ public class OpsQueryAvailableRegionResponse extends AcsResponse {
 			this.iZResourceModels = iZResourceModels;
 		}
 
-		public List<String> getSupportedVolumeCategories() {
-			return this.supportedVolumeCategories;
+		public List<String> getSupportedDedicatedHostGenerations() {
+			return this.supportedDedicatedHostGenerations;
 		}
 
-		public void setSupportedVolumeCategories(List<String> supportedVolumeCategories) {
-			this.supportedVolumeCategories = supportedVolumeCategories;
-		}
-
-		public List<String> getAllowedResourceCreation() {
-			return this.allowedResourceCreation;
-		}
-
-		public void setAllowedResourceCreation(List<String> allowedResourceCreation) {
-			this.allowedResourceCreation = allowedResourceCreation;
+		public void setSupportedDedicatedHostGenerations(List<String> supportedDedicatedHostGenerations) {
+			this.supportedDedicatedHostGenerations = supportedDedicatedHostGenerations;
 		}
 
 		public List<String> getSupportedInstanceTypeNames() {
@@ -176,20 +168,12 @@ public class OpsQueryAvailableRegionResponse extends AcsResponse {
 			this.supportedInstanceTypeNames = supportedInstanceTypeNames;
 		}
 
-		public List<String> getSupportedInstanceTypeFamilies() {
-			return this.supportedInstanceTypeFamilies;
+		public List<String> getAllowedResourceCreation() {
+			return this.allowedResourceCreation;
 		}
 
-		public void setSupportedInstanceTypeFamilies(List<String> supportedInstanceTypeFamilies) {
-			this.supportedInstanceTypeFamilies = supportedInstanceTypeFamilies;
-		}
-
-		public List<String> getSupportedInstanceGenerations() {
-			return this.supportedInstanceGenerations;
-		}
-
-		public void setSupportedInstanceGenerations(List<String> supportedInstanceGenerations) {
-			this.supportedInstanceGenerations = supportedInstanceGenerations;
+		public void setAllowedResourceCreation(List<String> allowedResourceCreation) {
+			this.allowedResourceCreation = allowedResourceCreation;
 		}
 
 		public List<String> getSupportedDedicatedHostTypeNames() {
@@ -200,45 +184,53 @@ public class OpsQueryAvailableRegionResponse extends AcsResponse {
 			this.supportedDedicatedHostTypeNames = supportedDedicatedHostTypeNames;
 		}
 
-		public List<String> getSupportedDedicatedHostGenerations() {
-			return this.supportedDedicatedHostGenerations;
+		public List<String> getSupportedVolumeCategories() {
+			return this.supportedVolumeCategories;
 		}
 
-		public void setSupportedDedicatedHostGenerations(List<String> supportedDedicatedHostGenerations) {
-			this.supportedDedicatedHostGenerations = supportedDedicatedHostGenerations;
+		public void setSupportedVolumeCategories(List<String> supportedVolumeCategories) {
+			this.supportedVolumeCategories = supportedVolumeCategories;
+		}
+
+		public List<String> getSupportedInstanceGenerations() {
+			return this.supportedInstanceGenerations;
+		}
+
+		public void setSupportedInstanceGenerations(List<String> supportedInstanceGenerations) {
+			this.supportedInstanceGenerations = supportedInstanceGenerations;
+		}
+
+		public List<String> getSupportedInstanceTypeFamilies() {
+			return this.supportedInstanceTypeFamilies;
+		}
+
+		public void setSupportedInstanceTypeFamilies(List<String> supportedInstanceTypeFamilies) {
+			this.supportedInstanceTypeFamilies = supportedInstanceTypeFamilies;
 		}
 
 		public static class IZResourceModel {
 
-			private Integer inventoryResourceType;
-
 			private Boolean supportIoOptimized;
+
+			private Integer inventoryResourceType;
 
 			private Map<Object,Object> deployedInstanceTypeToStatus;
 
-			private List<String> supportedSystemDiskCategories;
-
 			private List<String> supportedDataDiskCategories;
 
-			private List<String> supportedInstanceTypes;
-
-			private List<String> supportedInstanceTypeFamilies1;
-
-			private List<String> supportedInstanceGenerations2;
+			private List<String> supportedDedicatedHostGenerations1;
 
 			private List<String> supportedDedicatedHostTypes;
 
-			private List<String> supportedDedicatedHostGenerations3;
+			private List<String> supportedInstanceTypes;
+
+			private List<String> supportedInstanceTypeFamilies2;
+
+			private List<String> supportedInstanceGenerations3;
 
 			private List<String> networkTypes;
 
-			public Integer getInventoryResourceType() {
-				return this.inventoryResourceType;
-			}
-
-			public void setInventoryResourceType(Integer inventoryResourceType) {
-				this.inventoryResourceType = inventoryResourceType;
-			}
+			private List<String> supportedSystemDiskCategories;
 
 			public Boolean getSupportIoOptimized() {
 				return this.supportIoOptimized;
@@ -246,6 +238,14 @@ public class OpsQueryAvailableRegionResponse extends AcsResponse {
 
 			public void setSupportIoOptimized(Boolean supportIoOptimized) {
 				this.supportIoOptimized = supportIoOptimized;
+			}
+
+			public Integer getInventoryResourceType() {
+				return this.inventoryResourceType;
+			}
+
+			public void setInventoryResourceType(Integer inventoryResourceType) {
+				this.inventoryResourceType = inventoryResourceType;
 			}
 
 			public Map<Object,Object> getDeployedInstanceTypeToStatus() {
@@ -256,14 +256,6 @@ public class OpsQueryAvailableRegionResponse extends AcsResponse {
 				this.deployedInstanceTypeToStatus = deployedInstanceTypeToStatus;
 			}
 
-			public List<String> getSupportedSystemDiskCategories() {
-				return this.supportedSystemDiskCategories;
-			}
-
-			public void setSupportedSystemDiskCategories(List<String> supportedSystemDiskCategories) {
-				this.supportedSystemDiskCategories = supportedSystemDiskCategories;
-			}
-
 			public List<String> getSupportedDataDiskCategories() {
 				return this.supportedDataDiskCategories;
 			}
@@ -272,28 +264,12 @@ public class OpsQueryAvailableRegionResponse extends AcsResponse {
 				this.supportedDataDiskCategories = supportedDataDiskCategories;
 			}
 
-			public List<String> getSupportedInstanceTypes() {
-				return this.supportedInstanceTypes;
+			public List<String> getSupportedDedicatedHostGenerations1() {
+				return this.supportedDedicatedHostGenerations1;
 			}
 
-			public void setSupportedInstanceTypes(List<String> supportedInstanceTypes) {
-				this.supportedInstanceTypes = supportedInstanceTypes;
-			}
-
-			public List<String> getSupportedInstanceTypeFamilies1() {
-				return this.supportedInstanceTypeFamilies1;
-			}
-
-			public void setSupportedInstanceTypeFamilies1(List<String> supportedInstanceTypeFamilies1) {
-				this.supportedInstanceTypeFamilies1 = supportedInstanceTypeFamilies1;
-			}
-
-			public List<String> getSupportedInstanceGenerations2() {
-				return this.supportedInstanceGenerations2;
-			}
-
-			public void setSupportedInstanceGenerations2(List<String> supportedInstanceGenerations2) {
-				this.supportedInstanceGenerations2 = supportedInstanceGenerations2;
+			public void setSupportedDedicatedHostGenerations1(List<String> supportedDedicatedHostGenerations1) {
+				this.supportedDedicatedHostGenerations1 = supportedDedicatedHostGenerations1;
 			}
 
 			public List<String> getSupportedDedicatedHostTypes() {
@@ -304,12 +280,28 @@ public class OpsQueryAvailableRegionResponse extends AcsResponse {
 				this.supportedDedicatedHostTypes = supportedDedicatedHostTypes;
 			}
 
-			public List<String> getSupportedDedicatedHostGenerations3() {
-				return this.supportedDedicatedHostGenerations3;
+			public List<String> getSupportedInstanceTypes() {
+				return this.supportedInstanceTypes;
 			}
 
-			public void setSupportedDedicatedHostGenerations3(List<String> supportedDedicatedHostGenerations3) {
-				this.supportedDedicatedHostGenerations3 = supportedDedicatedHostGenerations3;
+			public void setSupportedInstanceTypes(List<String> supportedInstanceTypes) {
+				this.supportedInstanceTypes = supportedInstanceTypes;
+			}
+
+			public List<String> getSupportedInstanceTypeFamilies2() {
+				return this.supportedInstanceTypeFamilies2;
+			}
+
+			public void setSupportedInstanceTypeFamilies2(List<String> supportedInstanceTypeFamilies2) {
+				this.supportedInstanceTypeFamilies2 = supportedInstanceTypeFamilies2;
+			}
+
+			public List<String> getSupportedInstanceGenerations3() {
+				return this.supportedInstanceGenerations3;
+			}
+
+			public void setSupportedInstanceGenerations3(List<String> supportedInstanceGenerations3) {
+				this.supportedInstanceGenerations3 = supportedInstanceGenerations3;
 			}
 
 			public List<String> getNetworkTypes() {
@@ -319,26 +311,42 @@ public class OpsQueryAvailableRegionResponse extends AcsResponse {
 			public void setNetworkTypes(List<String> networkTypes) {
 				this.networkTypes = networkTypes;
 			}
+
+			public List<String> getSupportedSystemDiskCategories() {
+				return this.supportedSystemDiskCategories;
+			}
+
+			public void setSupportedSystemDiskCategories(List<String> supportedSystemDiskCategories) {
+				this.supportedSystemDiskCategories = supportedSystemDiskCategories;
+			}
 		}
 	}
 
 	public static class Region {
 
+		private Long vmQuota;
+
 		private String regionMemo;
-
-		private String regionNo;
-
-		private String regionName;
 
 		private String regionEnName;
 
-		private String regionNoAlias;
+		private String isActive;
+
+		private String regionName;
 
 		private Long ecsQuota;
 
-		private Long vmQuota;
+		private String regionNo;
 
-		private String isActive;
+		private String regionNoAlias;
+
+		public Long getVmQuota() {
+			return this.vmQuota;
+		}
+
+		public void setVmQuota(Long vmQuota) {
+			this.vmQuota = vmQuota;
+		}
 
 		public String getRegionMemo() {
 			return this.regionMemo;
@@ -346,22 +354,6 @@ public class OpsQueryAvailableRegionResponse extends AcsResponse {
 
 		public void setRegionMemo(String regionMemo) {
 			this.regionMemo = regionMemo;
-		}
-
-		public String getRegionNo() {
-			return this.regionNo;
-		}
-
-		public void setRegionNo(String regionNo) {
-			this.regionNo = regionNo;
-		}
-
-		public String getRegionName() {
-			return this.regionName;
-		}
-
-		public void setRegionName(String regionName) {
-			this.regionName = regionName;
 		}
 
 		public String getRegionEnName() {
@@ -372,12 +364,20 @@ public class OpsQueryAvailableRegionResponse extends AcsResponse {
 			this.regionEnName = regionEnName;
 		}
 
-		public String getRegionNoAlias() {
-			return this.regionNoAlias;
+		public String getIsActive() {
+			return this.isActive;
 		}
 
-		public void setRegionNoAlias(String regionNoAlias) {
-			this.regionNoAlias = regionNoAlias;
+		public void setIsActive(String isActive) {
+			this.isActive = isActive;
+		}
+
+		public String getRegionName() {
+			return this.regionName;
+		}
+
+		public void setRegionName(String regionName) {
+			this.regionName = regionName;
 		}
 
 		public Long getEcsQuota() {
@@ -388,20 +388,20 @@ public class OpsQueryAvailableRegionResponse extends AcsResponse {
 			this.ecsQuota = ecsQuota;
 		}
 
-		public Long getVmQuota() {
-			return this.vmQuota;
+		public String getRegionNo() {
+			return this.regionNo;
 		}
 
-		public void setVmQuota(Long vmQuota) {
-			this.vmQuota = vmQuota;
+		public void setRegionNo(String regionNo) {
+			this.regionNo = regionNo;
 		}
 
-		public String getIsActive() {
-			return this.isActive;
+		public String getRegionNoAlias() {
+			return this.regionNoAlias;
 		}
 
-		public void setIsActive(String isActive) {
-			this.isActive = isActive;
+		public void setRegionNoAlias(String regionNoAlias) {
+			this.regionNoAlias = regionNoAlias;
 		}
 	}
 

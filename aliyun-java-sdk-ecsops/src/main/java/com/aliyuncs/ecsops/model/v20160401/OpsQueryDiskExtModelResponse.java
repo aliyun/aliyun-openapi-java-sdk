@@ -25,210 +25,98 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsQueryDiskExtModelResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String bid;
-
-	private Long resourceOwnerId;
-
-	private String aliyunInstanceType;
-
-	private String diskId;
-
-	private String status;
-
-	private String createdTime;
-
-	private String modifiedTime;
-
-	private String seq;
-
-	private String type;
-
-	private String category;
-
-	private String regionId;
-
-	private String zoneId;
-
-	private String clusterId;
-
-	private String diskName;
+	private String detachedTime;
 
 	private String description;
 
+	private String createdTime;
+
+	private String category;
+
 	private Integer size;
-
-	private Boolean active;
-
-	private Boolean bootable;
-
-	private Boolean portable;
-
-	private String imageId;
-
-	private String snapshotId;
-
-	private String autoSnapshotPolicyId;
 
 	private String snapshotLinkId;
 
-	private String instanceId;
-
-	private String device;
-
-	private Boolean deleteWithInstance;
-
 	private Boolean deleteAutoSnapshot;
-
-	private Boolean enableAutoSnapshot;
-
-	private String attachedTime;
-
-	private String detachedTime;
-
-	private String productCode;
-
-	private String houyiDiskId;
-
-	private Long numericId;
 
 	private String businessStatus;
 
 	private Integer iopsSize;
 
+	private String iopsR;
+
 	private String cacheStatus;
 
-	private String cacheSize;
+	private String modifiedTime;
 
 	private String iopsW;
 
-	private String iopsR;
+	private String imageId;
+
+	private String aliyunInstanceType;
+
+	private String bid;
+
+	private String status;
+
+	private String attachedTime;
+
+	private String houyiDiskId;
+
+	private String requestId;
+
+	private String zoneId;
+
+	private String clusterId;
+
+	private String instanceId;
+
+	private String productCode;
+
+	private String device;
+
+	private Boolean deleteWithInstance;
+
+	private Boolean enableAutoSnapshot;
+
+	private String autoSnapshotPolicyId;
+
+	private String diskName;
 
 	private String bpsW;
 
+	private Long resourceOwnerId;
+
+	private Boolean portable;
+
+	private String cacheSize;
+
+	private String snapshotId;
+
+	private String type;
+
+	private Boolean active;
+
 	private String bpsR;
+
+	private Long numericId;
+
+	private Boolean bootable;
+
+	private String regionId;
+
+	private String seq;
+
+	private String diskId;
 
 	private List<Tag> tags;
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getDetachedTime() {
+		return this.detachedTime;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getBid() {
-		return this.bid;
-	}
-
-	public void setBid(String bid) {
-		this.bid = bid;
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-	}
-
-	public String getAliyunInstanceType() {
-		return this.aliyunInstanceType;
-	}
-
-	public void setAliyunInstanceType(String aliyunInstanceType) {
-		this.aliyunInstanceType = aliyunInstanceType;
-	}
-
-	public String getDiskId() {
-		return this.diskId;
-	}
-
-	public void setDiskId(String diskId) {
-		this.diskId = diskId;
-	}
-
-	public String getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-	}
-
-	public String getCreatedTime() {
-		return this.createdTime;
-	}
-
-	public void setCreatedTime(String createdTime) {
-		this.createdTime = createdTime;
-	}
-
-	public String getModifiedTime() {
-		return this.modifiedTime;
-	}
-
-	public void setModifiedTime(String modifiedTime) {
-		this.modifiedTime = modifiedTime;
-	}
-
-	public String getSeq() {
-		return this.seq;
-	}
-
-	public void setSeq(String seq) {
-		this.seq = seq;
-	}
-
-	public String getType() {
-		return this.type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
-	}
-
-	public String getCategory() {
-		return this.category;
-	}
-
-	public void setCategory(String category) {
-		this.category = category;
-	}
-
-	public String getRegionId() {
-		return this.regionId;
-	}
-
-	public void setRegionId(String regionId) {
-		this.regionId = regionId;
-	}
-
-	public String getZoneId() {
-		return this.zoneId;
-	}
-
-	public void setZoneId(String zoneId) {
-		this.zoneId = zoneId;
-	}
-
-	public String getClusterId() {
-		return this.clusterId;
-	}
-
-	public void setClusterId(String clusterId) {
-		this.clusterId = clusterId;
-	}
-
-	public String getDiskName() {
-		return this.diskName;
-	}
-
-	public void setDiskName(String diskName) {
-		this.diskName = diskName;
+	public void setDetachedTime(String detachedTime) {
+		this.detachedTime = detachedTime;
 	}
 
 	public String getDescription() {
@@ -239,60 +127,28 @@ public class OpsQueryDiskExtModelResponse extends AcsResponse {
 		this.description = description;
 	}
 
+	public String getCreatedTime() {
+		return this.createdTime;
+	}
+
+	public void setCreatedTime(String createdTime) {
+		this.createdTime = createdTime;
+	}
+
+	public String getCategory() {
+		return this.category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
+	}
+
 	public Integer getSize() {
 		return this.size;
 	}
 
 	public void setSize(Integer size) {
 		this.size = size;
-	}
-
-	public Boolean getActive() {
-		return this.active;
-	}
-
-	public void setActive(Boolean active) {
-		this.active = active;
-	}
-
-	public Boolean getBootable() {
-		return this.bootable;
-	}
-
-	public void setBootable(Boolean bootable) {
-		this.bootable = bootable;
-	}
-
-	public Boolean getPortable() {
-		return this.portable;
-	}
-
-	public void setPortable(Boolean portable) {
-		this.portable = portable;
-	}
-
-	public String getImageId() {
-		return this.imageId;
-	}
-
-	public void setImageId(String imageId) {
-		this.imageId = imageId;
-	}
-
-	public String getSnapshotId() {
-		return this.snapshotId;
-	}
-
-	public void setSnapshotId(String snapshotId) {
-		this.snapshotId = snapshotId;
-	}
-
-	public String getAutoSnapshotPolicyId() {
-		return this.autoSnapshotPolicyId;
-	}
-
-	public void setAutoSnapshotPolicyId(String autoSnapshotPolicyId) {
-		this.autoSnapshotPolicyId = autoSnapshotPolicyId;
 	}
 
 	public String getSnapshotLinkId() {
@@ -303,84 +159,12 @@ public class OpsQueryDiskExtModelResponse extends AcsResponse {
 		this.snapshotLinkId = snapshotLinkId;
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-	}
-
-	public String getDevice() {
-		return this.device;
-	}
-
-	public void setDevice(String device) {
-		this.device = device;
-	}
-
-	public Boolean getDeleteWithInstance() {
-		return this.deleteWithInstance;
-	}
-
-	public void setDeleteWithInstance(Boolean deleteWithInstance) {
-		this.deleteWithInstance = deleteWithInstance;
-	}
-
 	public Boolean getDeleteAutoSnapshot() {
 		return this.deleteAutoSnapshot;
 	}
 
 	public void setDeleteAutoSnapshot(Boolean deleteAutoSnapshot) {
 		this.deleteAutoSnapshot = deleteAutoSnapshot;
-	}
-
-	public Boolean getEnableAutoSnapshot() {
-		return this.enableAutoSnapshot;
-	}
-
-	public void setEnableAutoSnapshot(Boolean enableAutoSnapshot) {
-		this.enableAutoSnapshot = enableAutoSnapshot;
-	}
-
-	public String getAttachedTime() {
-		return this.attachedTime;
-	}
-
-	public void setAttachedTime(String attachedTime) {
-		this.attachedTime = attachedTime;
-	}
-
-	public String getDetachedTime() {
-		return this.detachedTime;
-	}
-
-	public void setDetachedTime(String detachedTime) {
-		this.detachedTime = detachedTime;
-	}
-
-	public String getProductCode() {
-		return this.productCode;
-	}
-
-	public void setProductCode(String productCode) {
-		this.productCode = productCode;
-	}
-
-	public String getHouyiDiskId() {
-		return this.houyiDiskId;
-	}
-
-	public void setHouyiDiskId(String houyiDiskId) {
-		this.houyiDiskId = houyiDiskId;
-	}
-
-	public Long getNumericId() {
-		return this.numericId;
-	}
-
-	public void setNumericId(Long numericId) {
-		this.numericId = numericId;
 	}
 
 	public String getBusinessStatus() {
@@ -399,6 +183,14 @@ public class OpsQueryDiskExtModelResponse extends AcsResponse {
 		this.iopsSize = iopsSize;
 	}
 
+	public String getIopsR() {
+		return this.iopsR;
+	}
+
+	public void setIopsR(String iopsR) {
+		this.iopsR = iopsR;
+	}
+
 	public String getCacheStatus() {
 		return this.cacheStatus;
 	}
@@ -407,12 +199,12 @@ public class OpsQueryDiskExtModelResponse extends AcsResponse {
 		this.cacheStatus = cacheStatus;
 	}
 
-	public String getCacheSize() {
-		return this.cacheSize;
+	public String getModifiedTime() {
+		return this.modifiedTime;
 	}
 
-	public void setCacheSize(String cacheSize) {
-		this.cacheSize = cacheSize;
+	public void setModifiedTime(String modifiedTime) {
+		this.modifiedTime = modifiedTime;
 	}
 
 	public String getIopsW() {
@@ -423,12 +215,132 @@ public class OpsQueryDiskExtModelResponse extends AcsResponse {
 		this.iopsW = iopsW;
 	}
 
-	public String getIopsR() {
-		return this.iopsR;
+	public String getImageId() {
+		return this.imageId;
 	}
 
-	public void setIopsR(String iopsR) {
-		this.iopsR = iopsR;
+	public void setImageId(String imageId) {
+		this.imageId = imageId;
+	}
+
+	public String getAliyunInstanceType() {
+		return this.aliyunInstanceType;
+	}
+
+	public void setAliyunInstanceType(String aliyunInstanceType) {
+		this.aliyunInstanceType = aliyunInstanceType;
+	}
+
+	public String getBid() {
+		return this.bid;
+	}
+
+	public void setBid(String bid) {
+		this.bid = bid;
+	}
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	public String getAttachedTime() {
+		return this.attachedTime;
+	}
+
+	public void setAttachedTime(String attachedTime) {
+		this.attachedTime = attachedTime;
+	}
+
+	public String getHouyiDiskId() {
+		return this.houyiDiskId;
+	}
+
+	public void setHouyiDiskId(String houyiDiskId) {
+		this.houyiDiskId = houyiDiskId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getZoneId() {
+		return this.zoneId;
+	}
+
+	public void setZoneId(String zoneId) {
+		this.zoneId = zoneId;
+	}
+
+	public String getClusterId() {
+		return this.clusterId;
+	}
+
+	public void setClusterId(String clusterId) {
+		this.clusterId = clusterId;
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+	}
+
+	public String getProductCode() {
+		return this.productCode;
+	}
+
+	public void setProductCode(String productCode) {
+		this.productCode = productCode;
+	}
+
+	public String getDevice() {
+		return this.device;
+	}
+
+	public void setDevice(String device) {
+		this.device = device;
+	}
+
+	public Boolean getDeleteWithInstance() {
+		return this.deleteWithInstance;
+	}
+
+	public void setDeleteWithInstance(Boolean deleteWithInstance) {
+		this.deleteWithInstance = deleteWithInstance;
+	}
+
+	public Boolean getEnableAutoSnapshot() {
+		return this.enableAutoSnapshot;
+	}
+
+	public void setEnableAutoSnapshot(Boolean enableAutoSnapshot) {
+		this.enableAutoSnapshot = enableAutoSnapshot;
+	}
+
+	public String getAutoSnapshotPolicyId() {
+		return this.autoSnapshotPolicyId;
+	}
+
+	public void setAutoSnapshotPolicyId(String autoSnapshotPolicyId) {
+		this.autoSnapshotPolicyId = autoSnapshotPolicyId;
+	}
+
+	public String getDiskName() {
+		return this.diskName;
+	}
+
+	public void setDiskName(String diskName) {
+		this.diskName = diskName;
 	}
 
 	public String getBpsW() {
@@ -439,12 +351,100 @@ public class OpsQueryDiskExtModelResponse extends AcsResponse {
 		this.bpsW = bpsW;
 	}
 
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
+
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+	}
+
+	public Boolean getPortable() {
+		return this.portable;
+	}
+
+	public void setPortable(Boolean portable) {
+		this.portable = portable;
+	}
+
+	public String getCacheSize() {
+		return this.cacheSize;
+	}
+
+	public void setCacheSize(String cacheSize) {
+		this.cacheSize = cacheSize;
+	}
+
+	public String getSnapshotId() {
+		return this.snapshotId;
+	}
+
+	public void setSnapshotId(String snapshotId) {
+		this.snapshotId = snapshotId;
+	}
+
+	public String getType() {
+		return this.type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	public Boolean getActive() {
+		return this.active;
+	}
+
+	public void setActive(Boolean active) {
+		this.active = active;
+	}
+
 	public String getBpsR() {
 		return this.bpsR;
 	}
 
 	public void setBpsR(String bpsR) {
 		this.bpsR = bpsR;
+	}
+
+	public Long getNumericId() {
+		return this.numericId;
+	}
+
+	public void setNumericId(Long numericId) {
+		this.numericId = numericId;
+	}
+
+	public Boolean getBootable() {
+		return this.bootable;
+	}
+
+	public void setBootable(Boolean bootable) {
+		this.bootable = bootable;
+	}
+
+	public String getRegionId() {
+		return this.regionId;
+	}
+
+	public void setRegionId(String regionId) {
+		this.regionId = regionId;
+	}
+
+	public String getSeq() {
+		return this.seq;
+	}
+
+	public void setSeq(String seq) {
+		this.seq = seq;
+	}
+
+	public String getDiskId() {
+		return this.diskId;
+	}
+
+	public void setDiskId(String diskId) {
+		this.diskId = diskId;
 	}
 
 	public List<Tag> getTags() {
@@ -457,17 +457,9 @@ public class OpsQueryDiskExtModelResponse extends AcsResponse {
 
 	public static class Tag {
 
-		private String tagKey;
-
 		private String tagValue;
 
-		public String getTagKey() {
-			return this.tagKey;
-		}
-
-		public void setTagKey(String tagKey) {
-			this.tagKey = tagKey;
-		}
+		private String tagKey;
 
 		public String getTagValue() {
 			return this.tagValue;
@@ -475,6 +467,14 @@ public class OpsQueryDiskExtModelResponse extends AcsResponse {
 
 		public void setTagValue(String tagValue) {
 			this.tagValue = tagValue;
+		}
+
+		public String getTagKey() {
+			return this.tagKey;
+		}
+
+		public void setTagKey(String tagKey) {
+			this.tagKey = tagKey;
 		}
 	}
 

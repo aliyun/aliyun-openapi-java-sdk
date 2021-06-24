@@ -24,150 +24,126 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsDescribeCapacityReservationPackageResponse extends AcsResponse {
 
-	private String requestId;
+	private String endDateType;
 
-	private Long id;
+	private String regionNo;
 
-	private String bid;
+	private String description;
 
-	private Long aliUid;
-
-	private String capacityReservationId;
-
-	private String capacityReservationName;
-
-	private String packageId;
+	private String platform;
 
 	private String packageName;
 
+	private String gmtModified;
+
+	private Integer availableAmount;
+
+	private String capacityReservationName;
+
+	private String timeSlot;
+
 	private String packageStatus;
-
-	private String packageType;
-
-	private String packageMatchCriteria;
 
 	private String packageChargeType;
 
-	private Integer packageTotalAmount;
+	private Integer businessStatus;
 
-	private Integer packageUsedAmount;
+	private String occurrenceDays;
 
 	private Integer packageTotalTimes;
 
-	private Integer packageUsedTimes;
+	private String startDate;
+
+	private String izNo;
+
+	private Integer frequencyInterval;
+
+	private String networkType;
+
+	private Integer packageTotalAmount;
+
+	private String packageType;
+
+	private String bid;
+
+	private String instanceType;
 
 	private String packageStartTime;
 
 	private String packageEndTime;
 
-	private String regionNo;
+	private String status;
 
-	private String izNo;
+	private String requestId;
 
-	private String instanceType;
+	private String packageMatchCriteria;
 
-	private String platform;
-
-	private Integer availableAmount;
-
-	private Integer totalAmount;
-
-	private String networkType;
-
-	private String startDate;
-
-	private String endDate;
-
-	private String endDateType;
-
-	private String instanceMatchCriteria;
-
-	private String frequency;
-
-	private Integer frequencyInterval;
-
-	private String occurrenceDays;
-
-	private String timeSlot;
-
-	private Integer businessStatus;
-
-	private String gmtRelease;
-
-	private String description;
-
-	private String riId;
+	private String instanceId;
 
 	private String riStatus;
 
-	private Long regionId;
+	private Integer totalAmount;
+
+	private String endDate;
+
+	private String capacityReservationId;
 
 	private Long izId;
 
 	private String type;
 
-	private String instanceId;
-
-	private String status;
-
 	private String gmtCreate;
 
-	private String gmtModified;
+	private String riId;
 
-	public String getRequestId() {
-		return this.requestId;
+	private String frequency;
+
+	private Integer packageUsedTimes;
+
+	private String gmtRelease;
+
+	private String packageId;
+
+	private Long regionId;
+
+	private Long id;
+
+	private String instanceMatchCriteria;
+
+	private Integer packageUsedAmount;
+
+	private Long aliUid;
+
+	public String getEndDateType() {
+		return this.endDateType;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setEndDateType(String endDateType) {
+		this.endDateType = endDateType;
 	}
 
-	public Long getId() {
-		return this.id;
+	public String getRegionNo() {
+		return this.regionNo;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
+	public void setRegionNo(String regionNo) {
+		this.regionNo = regionNo;
 	}
 
-	public String getBid() {
-		return this.bid;
+	public String getDescription() {
+		return this.description;
 	}
 
-	public void setBid(String bid) {
-		this.bid = bid;
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
-	public Long getAliUid() {
-		return this.aliUid;
+	public String getPlatform() {
+		return this.platform;
 	}
 
-	public void setAliUid(Long aliUid) {
-		this.aliUid = aliUid;
-	}
-
-	public String getCapacityReservationId() {
-		return this.capacityReservationId;
-	}
-
-	public void setCapacityReservationId(String capacityReservationId) {
-		this.capacityReservationId = capacityReservationId;
-	}
-
-	public String getCapacityReservationName() {
-		return this.capacityReservationName;
-	}
-
-	public void setCapacityReservationName(String capacityReservationName) {
-		this.capacityReservationName = capacityReservationName;
-	}
-
-	public String getPackageId() {
-		return this.packageId;
-	}
-
-	public void setPackageId(String packageId) {
-		this.packageId = packageId;
+	public void setPlatform(String platform) {
+		this.platform = platform;
 	}
 
 	public String getPackageName() {
@@ -178,28 +154,44 @@ public class OpsDescribeCapacityReservationPackageResponse extends AcsResponse {
 		this.packageName = packageName;
 	}
 
+	public String getGmtModified() {
+		return this.gmtModified;
+	}
+
+	public void setGmtModified(String gmtModified) {
+		this.gmtModified = gmtModified;
+	}
+
+	public Integer getAvailableAmount() {
+		return this.availableAmount;
+	}
+
+	public void setAvailableAmount(Integer availableAmount) {
+		this.availableAmount = availableAmount;
+	}
+
+	public String getCapacityReservationName() {
+		return this.capacityReservationName;
+	}
+
+	public void setCapacityReservationName(String capacityReservationName) {
+		this.capacityReservationName = capacityReservationName;
+	}
+
+	public String getTimeSlot() {
+		return this.timeSlot;
+	}
+
+	public void setTimeSlot(String timeSlot) {
+		this.timeSlot = timeSlot;
+	}
+
 	public String getPackageStatus() {
 		return this.packageStatus;
 	}
 
 	public void setPackageStatus(String packageStatus) {
 		this.packageStatus = packageStatus;
-	}
-
-	public String getPackageType() {
-		return this.packageType;
-	}
-
-	public void setPackageType(String packageType) {
-		this.packageType = packageType;
-	}
-
-	public String getPackageMatchCriteria() {
-		return this.packageMatchCriteria;
-	}
-
-	public void setPackageMatchCriteria(String packageMatchCriteria) {
-		this.packageMatchCriteria = packageMatchCriteria;
 	}
 
 	public String getPackageChargeType() {
@@ -210,20 +202,20 @@ public class OpsDescribeCapacityReservationPackageResponse extends AcsResponse {
 		this.packageChargeType = packageChargeType;
 	}
 
-	public Integer getPackageTotalAmount() {
-		return this.packageTotalAmount;
+	public Integer getBusinessStatus() {
+		return this.businessStatus;
 	}
 
-	public void setPackageTotalAmount(Integer packageTotalAmount) {
-		this.packageTotalAmount = packageTotalAmount;
+	public void setBusinessStatus(Integer businessStatus) {
+		this.businessStatus = businessStatus;
 	}
 
-	public Integer getPackageUsedAmount() {
-		return this.packageUsedAmount;
+	public String getOccurrenceDays() {
+		return this.occurrenceDays;
 	}
 
-	public void setPackageUsedAmount(Integer packageUsedAmount) {
-		this.packageUsedAmount = packageUsedAmount;
+	public void setOccurrenceDays(String occurrenceDays) {
+		this.occurrenceDays = occurrenceDays;
 	}
 
 	public Integer getPackageTotalTimes() {
@@ -234,12 +226,68 @@ public class OpsDescribeCapacityReservationPackageResponse extends AcsResponse {
 		this.packageTotalTimes = packageTotalTimes;
 	}
 
-	public Integer getPackageUsedTimes() {
-		return this.packageUsedTimes;
+	public String getStartDate() {
+		return this.startDate;
 	}
 
-	public void setPackageUsedTimes(Integer packageUsedTimes) {
-		this.packageUsedTimes = packageUsedTimes;
+	public void setStartDate(String startDate) {
+		this.startDate = startDate;
+	}
+
+	public String getIzNo() {
+		return this.izNo;
+	}
+
+	public void setIzNo(String izNo) {
+		this.izNo = izNo;
+	}
+
+	public Integer getFrequencyInterval() {
+		return this.frequencyInterval;
+	}
+
+	public void setFrequencyInterval(Integer frequencyInterval) {
+		this.frequencyInterval = frequencyInterval;
+	}
+
+	public String getNetworkType() {
+		return this.networkType;
+	}
+
+	public void setNetworkType(String networkType) {
+		this.networkType = networkType;
+	}
+
+	public Integer getPackageTotalAmount() {
+		return this.packageTotalAmount;
+	}
+
+	public void setPackageTotalAmount(Integer packageTotalAmount) {
+		this.packageTotalAmount = packageTotalAmount;
+	}
+
+	public String getPackageType() {
+		return this.packageType;
+	}
+
+	public void setPackageType(String packageType) {
+		this.packageType = packageType;
+	}
+
+	public String getBid() {
+		return this.bid;
+	}
+
+	public void setBid(String bid) {
+		this.bid = bid;
+	}
+
+	public String getInstanceType() {
+		return this.instanceType;
+	}
+
+	public void setInstanceType(String instanceType) {
+		this.instanceType = instanceType;
 	}
 
 	public String getPackageStartTime() {
@@ -258,156 +306,36 @@ public class OpsDescribeCapacityReservationPackageResponse extends AcsResponse {
 		this.packageEndTime = packageEndTime;
 	}
 
-	public String getRegionNo() {
-		return this.regionNo;
+	public String getStatus() {
+		return this.status;
 	}
 
-	public void setRegionNo(String regionNo) {
-		this.regionNo = regionNo;
+	public void setStatus(String status) {
+		this.status = status;
 	}
 
-	public String getIzNo() {
-		return this.izNo;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setIzNo(String izNo) {
-		this.izNo = izNo;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
-	public String getInstanceType() {
-		return this.instanceType;
+	public String getPackageMatchCriteria() {
+		return this.packageMatchCriteria;
 	}
 
-	public void setInstanceType(String instanceType) {
-		this.instanceType = instanceType;
+	public void setPackageMatchCriteria(String packageMatchCriteria) {
+		this.packageMatchCriteria = packageMatchCriteria;
 	}
 
-	public String getPlatform() {
-		return this.platform;
+	public String getInstanceId() {
+		return this.instanceId;
 	}
 
-	public void setPlatform(String platform) {
-		this.platform = platform;
-	}
-
-	public Integer getAvailableAmount() {
-		return this.availableAmount;
-	}
-
-	public void setAvailableAmount(Integer availableAmount) {
-		this.availableAmount = availableAmount;
-	}
-
-	public Integer getTotalAmount() {
-		return this.totalAmount;
-	}
-
-	public void setTotalAmount(Integer totalAmount) {
-		this.totalAmount = totalAmount;
-	}
-
-	public String getNetworkType() {
-		return this.networkType;
-	}
-
-	public void setNetworkType(String networkType) {
-		this.networkType = networkType;
-	}
-
-	public String getStartDate() {
-		return this.startDate;
-	}
-
-	public void setStartDate(String startDate) {
-		this.startDate = startDate;
-	}
-
-	public String getEndDate() {
-		return this.endDate;
-	}
-
-	public void setEndDate(String endDate) {
-		this.endDate = endDate;
-	}
-
-	public String getEndDateType() {
-		return this.endDateType;
-	}
-
-	public void setEndDateType(String endDateType) {
-		this.endDateType = endDateType;
-	}
-
-	public String getInstanceMatchCriteria() {
-		return this.instanceMatchCriteria;
-	}
-
-	public void setInstanceMatchCriteria(String instanceMatchCriteria) {
-		this.instanceMatchCriteria = instanceMatchCriteria;
-	}
-
-	public String getFrequency() {
-		return this.frequency;
-	}
-
-	public void setFrequency(String frequency) {
-		this.frequency = frequency;
-	}
-
-	public Integer getFrequencyInterval() {
-		return this.frequencyInterval;
-	}
-
-	public void setFrequencyInterval(Integer frequencyInterval) {
-		this.frequencyInterval = frequencyInterval;
-	}
-
-	public String getOccurrenceDays() {
-		return this.occurrenceDays;
-	}
-
-	public void setOccurrenceDays(String occurrenceDays) {
-		this.occurrenceDays = occurrenceDays;
-	}
-
-	public String getTimeSlot() {
-		return this.timeSlot;
-	}
-
-	public void setTimeSlot(String timeSlot) {
-		this.timeSlot = timeSlot;
-	}
-
-	public Integer getBusinessStatus() {
-		return this.businessStatus;
-	}
-
-	public void setBusinessStatus(Integer businessStatus) {
-		this.businessStatus = businessStatus;
-	}
-
-	public String getGmtRelease() {
-		return this.gmtRelease;
-	}
-
-	public void setGmtRelease(String gmtRelease) {
-		this.gmtRelease = gmtRelease;
-	}
-
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-	}
-
-	public String getRiId() {
-		return this.riId;
-	}
-
-	public void setRiId(String riId) {
-		this.riId = riId;
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
 	}
 
 	public String getRiStatus() {
@@ -418,12 +346,28 @@ public class OpsDescribeCapacityReservationPackageResponse extends AcsResponse {
 		this.riStatus = riStatus;
 	}
 
-	public Long getRegionId() {
-		return this.regionId;
+	public Integer getTotalAmount() {
+		return this.totalAmount;
 	}
 
-	public void setRegionId(Long regionId) {
-		this.regionId = regionId;
+	public void setTotalAmount(Integer totalAmount) {
+		this.totalAmount = totalAmount;
+	}
+
+	public String getEndDate() {
+		return this.endDate;
+	}
+
+	public void setEndDate(String endDate) {
+		this.endDate = endDate;
+	}
+
+	public String getCapacityReservationId() {
+		return this.capacityReservationId;
+	}
+
+	public void setCapacityReservationId(String capacityReservationId) {
+		this.capacityReservationId = capacityReservationId;
 	}
 
 	public Long getIzId() {
@@ -442,22 +386,6 @@ public class OpsDescribeCapacityReservationPackageResponse extends AcsResponse {
 		this.type = type;
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-	}
-
-	public String getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-	}
-
 	public String getGmtCreate() {
 		return this.gmtCreate;
 	}
@@ -466,12 +394,84 @@ public class OpsDescribeCapacityReservationPackageResponse extends AcsResponse {
 		this.gmtCreate = gmtCreate;
 	}
 
-	public String getGmtModified() {
-		return this.gmtModified;
+	public String getRiId() {
+		return this.riId;
 	}
 
-	public void setGmtModified(String gmtModified) {
-		this.gmtModified = gmtModified;
+	public void setRiId(String riId) {
+		this.riId = riId;
+	}
+
+	public String getFrequency() {
+		return this.frequency;
+	}
+
+	public void setFrequency(String frequency) {
+		this.frequency = frequency;
+	}
+
+	public Integer getPackageUsedTimes() {
+		return this.packageUsedTimes;
+	}
+
+	public void setPackageUsedTimes(Integer packageUsedTimes) {
+		this.packageUsedTimes = packageUsedTimes;
+	}
+
+	public String getGmtRelease() {
+		return this.gmtRelease;
+	}
+
+	public void setGmtRelease(String gmtRelease) {
+		this.gmtRelease = gmtRelease;
+	}
+
+	public String getPackageId() {
+		return this.packageId;
+	}
+
+	public void setPackageId(String packageId) {
+		this.packageId = packageId;
+	}
+
+	public Long getRegionId() {
+		return this.regionId;
+	}
+
+	public void setRegionId(Long regionId) {
+		this.regionId = regionId;
+	}
+
+	public Long getId() {
+		return this.id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getInstanceMatchCriteria() {
+		return this.instanceMatchCriteria;
+	}
+
+	public void setInstanceMatchCriteria(String instanceMatchCriteria) {
+		this.instanceMatchCriteria = instanceMatchCriteria;
+	}
+
+	public Integer getPackageUsedAmount() {
+		return this.packageUsedAmount;
+	}
+
+	public void setPackageUsedAmount(Integer packageUsedAmount) {
+		this.packageUsedAmount = packageUsedAmount;
+	}
+
+	public Long getAliUid() {
+		return this.aliUid;
+	}
+
+	public void setAliUid(Long aliUid) {
+		this.aliUid = aliUid;
 	}
 
 	@Override

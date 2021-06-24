@@ -27,8 +27,8 @@ public class OpsBatchRefreshInstanceAclResponseUnmarshaller {
 	public static OpsBatchRefreshInstanceAclResponse unmarshall(OpsBatchRefreshInstanceAclResponse opsBatchRefreshInstanceAclResponse, UnmarshallerContext _ctx) {
 		
 		opsBatchRefreshInstanceAclResponse.setRequestId(_ctx.stringValue("OpsBatchRefreshInstanceAclResponse.RequestId"));
-		opsBatchRefreshInstanceAclResponse.setCode(_ctx.stringValue("OpsBatchRefreshInstanceAclResponse.Code"));
 		opsBatchRefreshInstanceAclResponse.setMessage(_ctx.stringValue("OpsBatchRefreshInstanceAclResponse.Message"));
+		opsBatchRefreshInstanceAclResponse.setCode(_ctx.stringValue("OpsBatchRefreshInstanceAclResponse.Code"));
 		opsBatchRefreshInstanceAclResponse.setSuccess(_ctx.booleanValue("OpsBatchRefreshInstanceAclResponse.Success"));
 
 		List<ResultEntry> resultEntries = new ArrayList<ResultEntry>();

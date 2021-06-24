@@ -27,19 +27,19 @@ public class OpsDescribeAlertStatisticsResponseUnmarshaller {
 	public static OpsDescribeAlertStatisticsResponse unmarshall(OpsDescribeAlertStatisticsResponse opsDescribeAlertStatisticsResponse, UnmarshallerContext _ctx) {
 		
 		opsDescribeAlertStatisticsResponse.setRequestId(_ctx.stringValue("OpsDescribeAlertStatisticsResponse.RequestId"));
-		opsDescribeAlertStatisticsResponse.setWaitTotal(_ctx.integerValue("OpsDescribeAlertStatisticsResponse.WaitTotal"));
-		opsDescribeAlertStatisticsResponse.setProcessingTotal(_ctx.integerValue("OpsDescribeAlertStatisticsResponse.ProcessingTotal"));
 		opsDescribeAlertStatisticsResponse.setFixedTotal(_ctx.integerValue("OpsDescribeAlertStatisticsResponse.FixedTotal"));
+		opsDescribeAlertStatisticsResponse.setWaitTotal(_ctx.integerValue("OpsDescribeAlertStatisticsResponse.WaitTotal"));
 		opsDescribeAlertStatisticsResponse.setFinishedTotal(_ctx.integerValue("OpsDescribeAlertStatisticsResponse.FinishedTotal"));
+		opsDescribeAlertStatisticsResponse.setProcessingTotal(_ctx.integerValue("OpsDescribeAlertStatisticsResponse.ProcessingTotal"));
 
 		List<AlertInfoStatisticalModel> alertInfoStatisticalModels = new ArrayList<AlertInfoStatisticalModel>();
 		for (int i = 0; i < _ctx.lengthValue("OpsDescribeAlertStatisticsResponse.AlertInfoStatisticalModels.Length"); i++) {
 			AlertInfoStatisticalModel alertInfoStatisticalModel = new AlertInfoStatisticalModel();
-			alertInfoStatisticalModel.setAlertWaitTotal(_ctx.integerValue("OpsDescribeAlertStatisticsResponse.AlertInfoStatisticalModels["+ i +"].AlertWaitTotal"));
+			alertInfoStatisticalModel.setAlertLevel(_ctx.stringValue("OpsDescribeAlertStatisticsResponse.AlertInfoStatisticalModels["+ i +"].AlertLevel"));
 			alertInfoStatisticalModel.setAlertProcessingTotal(_ctx.integerValue("OpsDescribeAlertStatisticsResponse.AlertInfoStatisticalModels["+ i +"].AlertProcessingTotal"));
 			alertInfoStatisticalModel.setAlertFixedTotal(_ctx.integerValue("OpsDescribeAlertStatisticsResponse.AlertInfoStatisticalModels["+ i +"].AlertFixedTotal"));
 			alertInfoStatisticalModel.setAlertFinishedTotal(_ctx.integerValue("OpsDescribeAlertStatisticsResponse.AlertInfoStatisticalModels["+ i +"].AlertFinishedTotal"));
-			alertInfoStatisticalModel.setAlertLevel(_ctx.stringValue("OpsDescribeAlertStatisticsResponse.AlertInfoStatisticalModels["+ i +"].AlertLevel"));
+			alertInfoStatisticalModel.setAlertWaitTotal(_ctx.integerValue("OpsDescribeAlertStatisticsResponse.AlertInfoStatisticalModels["+ i +"].AlertWaitTotal"));
 
 			alertInfoStatisticalModels.add(alertInfoStatisticalModel);
 		}

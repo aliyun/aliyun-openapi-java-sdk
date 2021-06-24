@@ -31,12 +31,12 @@ public class OpsQueryOpsRiskResponseUnmarshaller {
 		List<OpsRiskConfig> opsRiskConfigs = new ArrayList<OpsRiskConfig>();
 		for (int i = 0; i < _ctx.lengthValue("OpsQueryOpsRiskResponse.OpsRiskConfigs.Length"); i++) {
 			OpsRiskConfig opsRiskConfig = new OpsRiskConfig();
-			opsRiskConfig.setName(_ctx.stringValue("OpsQueryOpsRiskResponse.OpsRiskConfigs["+ i +"].Name"));
-			opsRiskConfig.setLimitNum(_ctx.integerValue("OpsQueryOpsRiskResponse.OpsRiskConfigs["+ i +"].LimitNum"));
 			opsRiskConfig.setAlwaysExec(_ctx.booleanValue("OpsQueryOpsRiskResponse.OpsRiskConfigs["+ i +"].AlwaysExec"));
+			opsRiskConfig.setLimitNum(_ctx.integerValue("OpsQueryOpsRiskResponse.OpsRiskConfigs["+ i +"].LimitNum"));
+			opsRiskConfig.setName(_ctx.stringValue("OpsQueryOpsRiskResponse.OpsRiskConfigs["+ i +"].Name"));
+			opsRiskConfig.setOpsAction(_ctx.stringValue("OpsQueryOpsRiskResponse.OpsRiskConfigs["+ i +"].OpsAction"));
 			opsRiskConfig.setMaxFreezeTime(_ctx.integerValue("OpsQueryOpsRiskResponse.OpsRiskConfigs["+ i +"].MaxFreezeTime"));
 			opsRiskConfig.setEnable(_ctx.booleanValue("OpsQueryOpsRiskResponse.OpsRiskConfigs["+ i +"].Enable"));
-			opsRiskConfig.setOpsAction(_ctx.stringValue("OpsQueryOpsRiskResponse.OpsRiskConfigs["+ i +"].OpsAction"));
 
 			List<String> postActions = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("OpsQueryOpsRiskResponse.OpsRiskConfigs["+ i +"].PostActions.Length"); j++) {
@@ -44,17 +44,17 @@ public class OpsQueryOpsRiskResponseUnmarshaller {
 			}
 			opsRiskConfig.setPostActions(postActions);
 
-			List<String> groupByKeys = new ArrayList<String>();
-			for (int j = 0; j < _ctx.lengthValue("OpsQueryOpsRiskResponse.OpsRiskConfigs["+ i +"].GroupByKeys.Length"); j++) {
-				groupByKeys.add(_ctx.stringValue("OpsQueryOpsRiskResponse.OpsRiskConfigs["+ i +"].GroupByKeys["+ j +"]"));
-			}
-			opsRiskConfig.setGroupByKeys(groupByKeys);
-
 			List<String> exclusions = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("OpsQueryOpsRiskResponse.OpsRiskConfigs["+ i +"].Exclusions.Length"); j++) {
 				exclusions.add(_ctx.stringValue("OpsQueryOpsRiskResponse.OpsRiskConfigs["+ i +"].Exclusions["+ j +"]"));
 			}
 			opsRiskConfig.setExclusions(exclusions);
+
+			List<String> groupByKeys = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("OpsQueryOpsRiskResponse.OpsRiskConfigs["+ i +"].GroupByKeys.Length"); j++) {
+				groupByKeys.add(_ctx.stringValue("OpsQueryOpsRiskResponse.OpsRiskConfigs["+ i +"].GroupByKeys["+ j +"]"));
+			}
+			opsRiskConfig.setGroupByKeys(groupByKeys);
 
 			opsRiskConfigs.add(opsRiskConfig);
 		}

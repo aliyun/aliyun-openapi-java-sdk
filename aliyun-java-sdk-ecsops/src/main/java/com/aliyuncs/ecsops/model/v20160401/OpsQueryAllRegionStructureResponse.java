@@ -47,17 +47,25 @@ public class OpsQueryAllRegionStructureResponse extends AcsResponse {
 
 	public static class Region {
 
+		private String description;
+
 		private String region;
-
-		private String alias;
-
-		private String chineseName;
 
 		private String englishName;
 
-		private String description;
+		private String chineseName;
+
+		private String alias;
 
 		private List<AvailableZone> availableZones;
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
 
 		public String getRegion() {
 			return this.region;
@@ -65,22 +73,6 @@ public class OpsQueryAllRegionStructureResponse extends AcsResponse {
 
 		public void setRegion(String region) {
 			this.region = region;
-		}
-
-		public String getAlias() {
-			return this.alias;
-		}
-
-		public void setAlias(String alias) {
-			this.alias = alias;
-		}
-
-		public String getChineseName() {
-			return this.chineseName;
-		}
-
-		public void setChineseName(String chineseName) {
-			this.chineseName = chineseName;
 		}
 
 		public String getEnglishName() {
@@ -91,12 +83,20 @@ public class OpsQueryAllRegionStructureResponse extends AcsResponse {
 			this.englishName = englishName;
 		}
 
-		public String getDescription() {
-			return this.description;
+		public String getChineseName() {
+			return this.chineseName;
 		}
 
-		public void setDescription(String description) {
-			this.description = description;
+		public void setChineseName(String chineseName) {
+			this.chineseName = chineseName;
+		}
+
+		public String getAlias() {
+			return this.alias;
+		}
+
+		public void setAlias(String alias) {
+			this.alias = alias;
 		}
 
 		public List<AvailableZone> getAvailableZones() {

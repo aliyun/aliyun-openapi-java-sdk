@@ -28,23 +28,25 @@ public class OpsDescribeOsTypesResponseUnmarshaller {
 		
 		opsDescribeOsTypesResponse.setRequestId(_ctx.stringValue("OpsDescribeOsTypesResponse.RequestId"));
 		opsDescribeOsTypesResponse.setTotalCount(_ctx.integerValue("OpsDescribeOsTypesResponse.TotalCount"));
-		opsDescribeOsTypesResponse.setPageNumber(_ctx.integerValue("OpsDescribeOsTypesResponse.PageNumber"));
 		opsDescribeOsTypesResponse.setPageSize(_ctx.integerValue("OpsDescribeOsTypesResponse.PageSize"));
+		opsDescribeOsTypesResponse.setPageNumber(_ctx.integerValue("OpsDescribeOsTypesResponse.PageNumber"));
 
 		List<OsType> osTypes = new ArrayList<OsType>();
 		for (int i = 0; i < _ctx.lengthValue("OpsDescribeOsTypesResponse.OsTypes.Length"); i++) {
 			OsType osType = new OsType();
-			osType.setOsTypeId(_ctx.longValue("OpsDescribeOsTypesResponse.OsTypes["+ i +"].OsTypeId"));
+			osType.setMinCpu(_ctx.integerValue("OpsDescribeOsTypesResponse.OsTypes["+ i +"].MinCpu"));
 			osType.setKind(_ctx.stringValue("OpsDescribeOsTypesResponse.OsTypes["+ i +"].Kind"));
-			osType.setPlatform(_ctx.stringValue("OpsDescribeOsTypesResponse.OsTypes["+ i +"].Platform"));
 			osType.setOsName(_ctx.stringValue("OpsDescribeOsTypesResponse.OsTypes["+ i +"].OsName"));
-			osType.setOsNameEn(_ctx.stringValue("OpsDescribeOsTypesResponse.OsTypes["+ i +"].OsNameEn"));
 			osType.setOsBit(_ctx.integerValue("OpsDescribeOsTypesResponse.OsTypes["+ i +"].OsBit"));
 			osType.setMaxCpu(_ctx.integerValue("OpsDescribeOsTypesResponse.OsTypes["+ i +"].MaxCpu"));
-			osType.setMinCpu(_ctx.integerValue("OpsDescribeOsTypesResponse.OsTypes["+ i +"].MinCpu"));
-			osType.setMaxMemory(_ctx.integerValue("OpsDescribeOsTypesResponse.OsTypes["+ i +"].MaxMemory"));
+			osType.setPlatform(_ctx.stringValue("OpsDescribeOsTypesResponse.OsTypes["+ i +"].Platform"));
 			osType.setMinMemory(_ctx.integerValue("OpsDescribeOsTypesResponse.OsTypes["+ i +"].MinMemory"));
+			osType.setMaxMemory(_ctx.integerValue("OpsDescribeOsTypesResponse.OsTypes["+ i +"].MaxMemory"));
+			osType.setOsNameEn(_ctx.stringValue("OpsDescribeOsTypesResponse.OsTypes["+ i +"].OsNameEn"));
+			osType.setOsTypeId(_ctx.longValue("OpsDescribeOsTypesResponse.OsTypes["+ i +"].OsTypeId"));
+			osType.setArchitecture(_ctx.stringValue("OpsDescribeOsTypesResponse.OsTypes["+ i +"].Architecture"));
 			osType.setOsLicense(_ctx.stringValue("OpsDescribeOsTypesResponse.OsTypes["+ i +"].OsLicense"));
+			osType.setOsTypeBit(_ctx.longValue("OpsDescribeOsTypesResponse.OsTypes["+ i +"].OsTypeBit"));
 
 			osTypes.add(osType);
 		}

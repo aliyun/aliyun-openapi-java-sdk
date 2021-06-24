@@ -51,13 +51,13 @@ public class OpsQueryMonitorSlsDataResponse extends AcsResponse {
 
 		private String logstore;
 
-		private String source;
-
 		private Long timestamp;
 
-		private String slsData;
-
 		private String project;
+
+		private String source;
+
+		private String slsData;
 
 		public String getRegion() {
 			return this.region;
@@ -75,14 +75,6 @@ public class OpsQueryMonitorSlsDataResponse extends AcsResponse {
 			this.logstore = logstore;
 		}
 
-		public String getSource() {
-			return this.source;
-		}
-
-		public void setSource(String source) {
-			this.source = source;
-		}
-
 		public Long getTimestamp() {
 			return this.timestamp;
 		}
@@ -91,20 +83,28 @@ public class OpsQueryMonitorSlsDataResponse extends AcsResponse {
 			this.timestamp = timestamp;
 		}
 
-		public String getSlsData() {
-			return this.slsData;
-		}
-
-		public void setSlsData(String slsData) {
-			this.slsData = slsData;
-		}
-
 		public String getProject() {
 			return this.project;
 		}
 
 		public void setProject(String project) {
 			this.project = project;
+		}
+
+		public String getSource() {
+			return this.source;
+		}
+
+		public void setSource(String source) {
+			this.source = source;
+		}
+
+		public String getSlsData() {
+			return this.slsData;
+		}
+
+		public void setSlsData(String slsData) {
+			this.slsData = slsData;
 		}
 	}
 

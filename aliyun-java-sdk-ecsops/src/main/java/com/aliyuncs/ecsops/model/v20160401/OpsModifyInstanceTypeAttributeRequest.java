@@ -17,7 +17,6 @@ package com.aliyuncs.ecsops.model.v20160401;
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
 import com.aliyuncs.http.MethodType;
-import com.aliyuncs.ecsops.Endpoint;
 
 /**
  * @author auto create
@@ -128,6 +127,8 @@ public class OpsModifyInstanceTypeAttributeRequest extends RpcAcsRequest<OpsModi
 
 	private String auditParamStr;
 
+	private Integer ebsQuantity;
+
 	private Integer netCpuNormal;
 
 	private Integer sound;
@@ -174,6 +175,8 @@ public class OpsModifyInstanceTypeAttributeRequest extends RpcAcsRequest<OpsModi
 
 	private Integer rxMaxCredit;
 
+	private Integer nvmeSupport;
+
 	private String instanceTypeFamily;
 
 	private Integer eniVportQuota;
@@ -196,12 +199,8 @@ public class OpsModifyInstanceTypeAttributeRequest extends RpcAcsRequest<OpsModi
 
 	private Long vmBurstMaxIopsBalance;
 	public OpsModifyInstanceTypeAttributeRequest() {
-		super("Ecsops", "2016-04-01", "OpsModifyInstanceTypeAttribute", "ecs");
+		super("Ecsops", "2016-04-01", "OpsModifyInstanceTypeAttribute", "ecsops");
 		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
 	}
 
 	public String getGpuSpec() {
@@ -765,6 +764,17 @@ public class OpsModifyInstanceTypeAttributeRequest extends RpcAcsRequest<OpsModi
 		}
 	}
 
+	public Integer getEbsQuantity() {
+		return this.ebsQuantity;
+	}
+
+	public void setEbsQuantity(Integer ebsQuantity) {
+		this.ebsQuantity = ebsQuantity;
+		if(ebsQuantity != null){
+			putQueryParameter("EbsQuantity", ebsQuantity.toString());
+		}
+	}
+
 	public Integer getNetCpuNormal() {
 		return this.netCpuNormal;
 	}
@@ -1017,6 +1027,17 @@ public class OpsModifyInstanceTypeAttributeRequest extends RpcAcsRequest<OpsModi
 		this.rxMaxCredit = rxMaxCredit;
 		if(rxMaxCredit != null){
 			putQueryParameter("RxMaxCredit", rxMaxCredit.toString());
+		}
+	}
+
+	public Integer getNvmeSupport() {
+		return this.nvmeSupport;
+	}
+
+	public void setNvmeSupport(Integer nvmeSupport) {
+		this.nvmeSupport = nvmeSupport;
+		if(nvmeSupport != null){
+			putQueryParameter("NvmeSupport", nvmeSupport.toString());
 		}
 	}
 

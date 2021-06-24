@@ -24,13 +24,13 @@ public class OpsSuspendChangePlanResponseUnmarshaller {
 	public static OpsSuspendChangePlanResponse unmarshall(OpsSuspendChangePlanResponse opsSuspendChangePlanResponse, UnmarshallerContext _ctx) {
 		
 		opsSuspendChangePlanResponse.setRequestId(_ctx.stringValue("OpsSuspendChangePlanResponse.RequestId"));
-		opsSuspendChangePlanResponse.setCode(_ctx.stringValue("OpsSuspendChangePlanResponse.Code"));
 		opsSuspendChangePlanResponse.setMessage(_ctx.stringValue("OpsSuspendChangePlanResponse.Message"));
+		opsSuspendChangePlanResponse.setCode(_ctx.stringValue("OpsSuspendChangePlanResponse.Code"));
 		opsSuspendChangePlanResponse.setSuccess(_ctx.stringValue("OpsSuspendChangePlanResponse.Success"));
 
 		Data data = new Data();
-		data.setPlanId(_ctx.stringValue("OpsSuspendChangePlanResponse.Data.PlanId"));
 		data.setStatus(_ctx.stringValue("OpsSuspendChangePlanResponse.Data.Status"));
+		data.setPlanId(_ctx.stringValue("OpsSuspendChangePlanResponse.Data.PlanId"));
 		opsSuspendChangePlanResponse.setData(data);
 	 
 	 	return opsSuspendChangePlanResponse;

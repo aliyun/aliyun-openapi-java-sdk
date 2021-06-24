@@ -47,94 +47,46 @@ public class OpsPdsaRecommendSolutionResponse extends AcsResponse {
 
 	public static class PdsaSubSolutionResult {
 
-		private String regionNo;
-
-		private String zoneId;
-
-		private String instanceType;
-
-		private Long amount;
-
-		private Long inventoryAmount;
-
-		private Integer inventoryType;
-
-		private String beginDate;
+		private String netWorkParam;
 
 		private String endDate;
 
 		private String solutionType;
 
-		private Float windowsPrice;
+		private String regionNo;
 
-		private Float linuxPrice;
-
-		private Float price;
-
-		private Long cpu;
-
-		private Long mem;
-
-		private String iops;
+		private String beginDate;
 
 		private String cpuModel;
 
-		private String netWorkParam;
+		private Float linuxPrice;
 
-		public String getRegionNo() {
-			return this.regionNo;
+		private String iops;
+
+		private String instanceType;
+
+		private Float windowsPrice;
+
+		private Long mem;
+
+		private Long amount;
+
+		private Integer inventoryType;
+
+		private Long cpu;
+
+		private Float price;
+
+		private String zoneId;
+
+		private Long inventoryAmount;
+
+		public String getNetWorkParam() {
+			return this.netWorkParam;
 		}
 
-		public void setRegionNo(String regionNo) {
-			this.regionNo = regionNo;
-		}
-
-		public String getZoneId() {
-			return this.zoneId;
-		}
-
-		public void setZoneId(String zoneId) {
-			this.zoneId = zoneId;
-		}
-
-		public String getInstanceType() {
-			return this.instanceType;
-		}
-
-		public void setInstanceType(String instanceType) {
-			this.instanceType = instanceType;
-		}
-
-		public Long getAmount() {
-			return this.amount;
-		}
-
-		public void setAmount(Long amount) {
-			this.amount = amount;
-		}
-
-		public Long getInventoryAmount() {
-			return this.inventoryAmount;
-		}
-
-		public void setInventoryAmount(Long inventoryAmount) {
-			this.inventoryAmount = inventoryAmount;
-		}
-
-		public Integer getInventoryType() {
-			return this.inventoryType;
-		}
-
-		public void setInventoryType(Integer inventoryType) {
-			this.inventoryType = inventoryType;
-		}
-
-		public String getBeginDate() {
-			return this.beginDate;
-		}
-
-		public void setBeginDate(String beginDate) {
-			this.beginDate = beginDate;
+		public void setNetWorkParam(String netWorkParam) {
+			this.netWorkParam = netWorkParam;
 		}
 
 		public String getEndDate() {
@@ -153,52 +105,20 @@ public class OpsPdsaRecommendSolutionResponse extends AcsResponse {
 			this.solutionType = solutionType;
 		}
 
-		public Float getWindowsPrice() {
-			return this.windowsPrice;
+		public String getRegionNo() {
+			return this.regionNo;
 		}
 
-		public void setWindowsPrice(Float windowsPrice) {
-			this.windowsPrice = windowsPrice;
+		public void setRegionNo(String regionNo) {
+			this.regionNo = regionNo;
 		}
 
-		public Float getLinuxPrice() {
-			return this.linuxPrice;
+		public String getBeginDate() {
+			return this.beginDate;
 		}
 
-		public void setLinuxPrice(Float linuxPrice) {
-			this.linuxPrice = linuxPrice;
-		}
-
-		public Float getPrice() {
-			return this.price;
-		}
-
-		public void setPrice(Float price) {
-			this.price = price;
-		}
-
-		public Long getCpu() {
-			return this.cpu;
-		}
-
-		public void setCpu(Long cpu) {
-			this.cpu = cpu;
-		}
-
-		public Long getMem() {
-			return this.mem;
-		}
-
-		public void setMem(Long mem) {
-			this.mem = mem;
-		}
-
-		public String getIops() {
-			return this.iops;
-		}
-
-		public void setIops(String iops) {
-			this.iops = iops;
+		public void setBeginDate(String beginDate) {
+			this.beginDate = beginDate;
 		}
 
 		public String getCpuModel() {
@@ -209,12 +129,92 @@ public class OpsPdsaRecommendSolutionResponse extends AcsResponse {
 			this.cpuModel = cpuModel;
 		}
 
-		public String getNetWorkParam() {
-			return this.netWorkParam;
+		public Float getLinuxPrice() {
+			return this.linuxPrice;
 		}
 
-		public void setNetWorkParam(String netWorkParam) {
-			this.netWorkParam = netWorkParam;
+		public void setLinuxPrice(Float linuxPrice) {
+			this.linuxPrice = linuxPrice;
+		}
+
+		public String getIops() {
+			return this.iops;
+		}
+
+		public void setIops(String iops) {
+			this.iops = iops;
+		}
+
+		public String getInstanceType() {
+			return this.instanceType;
+		}
+
+		public void setInstanceType(String instanceType) {
+			this.instanceType = instanceType;
+		}
+
+		public Float getWindowsPrice() {
+			return this.windowsPrice;
+		}
+
+		public void setWindowsPrice(Float windowsPrice) {
+			this.windowsPrice = windowsPrice;
+		}
+
+		public Long getMem() {
+			return this.mem;
+		}
+
+		public void setMem(Long mem) {
+			this.mem = mem;
+		}
+
+		public Long getAmount() {
+			return this.amount;
+		}
+
+		public void setAmount(Long amount) {
+			this.amount = amount;
+		}
+
+		public Integer getInventoryType() {
+			return this.inventoryType;
+		}
+
+		public void setInventoryType(Integer inventoryType) {
+			this.inventoryType = inventoryType;
+		}
+
+		public Long getCpu() {
+			return this.cpu;
+		}
+
+		public void setCpu(Long cpu) {
+			this.cpu = cpu;
+		}
+
+		public Float getPrice() {
+			return this.price;
+		}
+
+		public void setPrice(Float price) {
+			this.price = price;
+		}
+
+		public String getZoneId() {
+			return this.zoneId;
+		}
+
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
+		}
+
+		public Long getInventoryAmount() {
+			return this.inventoryAmount;
+		}
+
+		public void setInventoryAmount(Long inventoryAmount) {
+			this.inventoryAmount = inventoryAmount;
 		}
 	}
 

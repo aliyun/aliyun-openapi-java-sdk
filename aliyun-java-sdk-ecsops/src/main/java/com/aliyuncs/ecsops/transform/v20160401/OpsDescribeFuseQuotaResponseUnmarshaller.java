@@ -28,19 +28,19 @@ public class OpsDescribeFuseQuotaResponseUnmarshaller {
 		
 		opsDescribeFuseQuotaResponse.setRequestId(_ctx.stringValue("OpsDescribeFuseQuotaResponse.RequestId"));
 		opsDescribeFuseQuotaResponse.setTotalCount(_ctx.integerValue("OpsDescribeFuseQuotaResponse.TotalCount"));
-		opsDescribeFuseQuotaResponse.setPageNumber(_ctx.integerValue("OpsDescribeFuseQuotaResponse.PageNumber"));
 		opsDescribeFuseQuotaResponse.setPageSize(_ctx.integerValue("OpsDescribeFuseQuotaResponse.PageSize"));
+		opsDescribeFuseQuotaResponse.setPageNumber(_ctx.integerValue("OpsDescribeFuseQuotaResponse.PageNumber"));
 
 		List<FuseQuota> fuseQuotas = new ArrayList<FuseQuota>();
 		for (int i = 0; i < _ctx.lengthValue("OpsDescribeFuseQuotaResponse.FuseQuotas.Length"); i++) {
 			FuseQuota fuseQuota = new FuseQuota();
-			fuseQuota.setId(_ctx.longValue("OpsDescribeFuseQuotaResponse.FuseQuotas["+ i +"].Id"));
+			fuseQuota.setResourceType(_ctx.stringValue("OpsDescribeFuseQuotaResponse.FuseQuotas["+ i +"].ResourceType"));
+			fuseQuota.setRegionNo(_ctx.stringValue("OpsDescribeFuseQuotaResponse.FuseQuotas["+ i +"].RegionNo"));
+			fuseQuota.setDailyQuota(_ctx.integerValue("OpsDescribeFuseQuotaResponse.FuseQuotas["+ i +"].DailyQuota"));
 			fuseQuota.setGmtCreate(_ctx.longValue("OpsDescribeFuseQuotaResponse.FuseQuotas["+ i +"].GmtCreate"));
 			fuseQuota.setGmtModified(_ctx.longValue("OpsDescribeFuseQuotaResponse.FuseQuotas["+ i +"].GmtModified"));
+			fuseQuota.setId(_ctx.longValue("OpsDescribeFuseQuotaResponse.FuseQuotas["+ i +"].Id"));
 			fuseQuota.setOperatorInfo(_ctx.stringValue("OpsDescribeFuseQuotaResponse.FuseQuotas["+ i +"].OperatorInfo"));
-			fuseQuota.setRegionNo(_ctx.stringValue("OpsDescribeFuseQuotaResponse.FuseQuotas["+ i +"].RegionNo"));
-			fuseQuota.setResourceType(_ctx.stringValue("OpsDescribeFuseQuotaResponse.FuseQuotas["+ i +"].ResourceType"));
-			fuseQuota.setDailyQuota(_ctx.integerValue("OpsDescribeFuseQuotaResponse.FuseQuotas["+ i +"].DailyQuota"));
 
 			fuseQuotas.add(fuseQuota);
 		}

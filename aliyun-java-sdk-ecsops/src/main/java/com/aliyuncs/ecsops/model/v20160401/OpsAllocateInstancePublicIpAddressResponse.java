@@ -26,9 +26,9 @@ public class OpsAllocateInstancePublicIpAddressResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String ipAddress;
-
 	private String instanceId;
+
+	private String ipAddress;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,20 +38,20 @@ public class OpsAllocateInstancePublicIpAddressResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getIpAddress() {
-		return this.ipAddress;
-	}
-
-	public void setIpAddress(String ipAddress) {
-		this.ipAddress = ipAddress;
-	}
-
 	public String getInstanceId() {
 		return this.instanceId;
 	}
 
 	public void setInstanceId(String instanceId) {
 		this.instanceId = instanceId;
+	}
+
+	public String getIpAddress() {
+		return this.ipAddress;
+	}
+
+	public void setIpAddress(String ipAddress) {
+		this.ipAddress = ipAddress;
 	}
 
 	@Override

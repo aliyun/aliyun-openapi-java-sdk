@@ -37,11 +37,11 @@ public class OpsEccQueryNcTemplatesResponseUnmarshaller {
 		List<TemplateInfo> templateInfos = new ArrayList<TemplateInfo>();
 		for (int i = 0; i < _ctx.lengthValue("OpsEccQueryNcTemplatesResponse.Data.TemplateInfos.Length"); i++) {
 			TemplateInfo templateInfo = new TemplateInfo();
-			templateInfo.setTemplateName(_ctx.stringValue("OpsEccQueryNcTemplatesResponse.Data.TemplateInfos["+ i +"].TemplateName"));
 			templateInfo.setTemplateDesc(_ctx.stringValue("OpsEccQueryNcTemplatesResponse.Data.TemplateInfos["+ i +"].TemplateDesc"));
-			templateInfo.setAdjustStandModels(_ctx.stringValue("OpsEccQueryNcTemplatesResponse.Data.TemplateInfos["+ i +"].AdjustStandModels"));
 			templateInfo.setGmtCreate(_ctx.longValue("OpsEccQueryNcTemplatesResponse.Data.TemplateInfos["+ i +"].GmtCreate"));
 			templateInfo.setGmtModified(_ctx.longValue("OpsEccQueryNcTemplatesResponse.Data.TemplateInfos["+ i +"].GmtModified"));
+			templateInfo.setTemplateName(_ctx.stringValue("OpsEccQueryNcTemplatesResponse.Data.TemplateInfos["+ i +"].TemplateName"));
+			templateInfo.setAdjustStandModels(_ctx.stringValue("OpsEccQueryNcTemplatesResponse.Data.TemplateInfos["+ i +"].AdjustStandModels"));
 
 			templateInfos.add(templateInfo);
 		}

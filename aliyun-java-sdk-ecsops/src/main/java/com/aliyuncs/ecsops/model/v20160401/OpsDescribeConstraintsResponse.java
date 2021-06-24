@@ -61,9 +61,9 @@ public class OpsDescribeConstraintsResponse extends AcsResponse {
 
 		private Integer max;
 
-		private Integer min;
-
 		private String unit;
+
+		private Integer min;
 
 		public String getValue() {
 			return this.value;
@@ -81,20 +81,20 @@ public class OpsDescribeConstraintsResponse extends AcsResponse {
 			this.max = max;
 		}
 
-		public Integer getMin() {
-			return this.min;
-		}
-
-		public void setMin(Integer min) {
-			this.min = min;
-		}
-
 		public String getUnit() {
 			return this.unit;
 		}
 
 		public void setUnit(String unit) {
 			this.unit = unit;
+		}
+
+		public Integer getMin() {
+			return this.min;
+		}
+
+		public void setMin(Integer min) {
+			this.min = min;
 		}
 	}
 

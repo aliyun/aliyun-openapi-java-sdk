@@ -17,7 +17,6 @@ package com.aliyuncs.ecsops.model.v20160401;
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
 import com.aliyuncs.http.MethodType;
-import com.aliyuncs.ecsops.Endpoint;
 
 /**
  * @author auto create
@@ -44,16 +43,12 @@ public class OpsDescribeReservedInstancesRequest extends RpcAcsRequest<OpsDescri
 
 	private String instanceType;
 
-	private List<String> statuss;
-
 	private String auditParamStr;
+
+	private List<String> statuss;
 	public OpsDescribeReservedInstancesRequest() {
-		super("Ecsops", "2016-04-01", "OpsDescribeReservedInstances", "ecs");
+		super("Ecsops", "2016-04-01", "OpsDescribeReservedInstances", "ecsops");
 		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
 	}
 
 	public Long getResourceOwnerId() {
@@ -157,6 +152,17 @@ public class OpsDescribeReservedInstancesRequest extends RpcAcsRequest<OpsDescri
 		}
 	}
 
+	public String getAuditParamStr() {
+		return this.auditParamStr;
+	}
+
+	public void setAuditParamStr(String auditParamStr) {
+		this.auditParamStr = auditParamStr;
+		if(auditParamStr != null){
+			putQueryParameter("AuditParamStr", auditParamStr);
+		}
+	}
+
 	public List<String> getStatuss() {
 		return this.statuss;
 	}
@@ -168,17 +174,6 @@ public class OpsDescribeReservedInstancesRequest extends RpcAcsRequest<OpsDescri
 				putQueryParameter("Status." + (i + 1) , statuss.get(i));
 			}
 		}	
-	}
-
-	public String getAuditParamStr() {
-		return this.auditParamStr;
-	}
-
-	public void setAuditParamStr(String auditParamStr) {
-		this.auditParamStr = auditParamStr;
-		if(auditParamStr != null){
-			putQueryParameter("AuditParamStr", auditParamStr);
-		}
 	}
 
 	@Override

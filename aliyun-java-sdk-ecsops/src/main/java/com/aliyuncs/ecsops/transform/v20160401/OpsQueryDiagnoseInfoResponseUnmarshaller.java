@@ -28,24 +28,24 @@ public class OpsQueryDiagnoseInfoResponseUnmarshaller {
 		
 		opsQueryDiagnoseInfoResponse.setRequestId(_ctx.stringValue("OpsQueryDiagnoseInfoResponse.RequestId"));
 		opsQueryDiagnoseInfoResponse.setTotalCount(_ctx.integerValue("OpsQueryDiagnoseInfoResponse.TotalCount"));
-		opsQueryDiagnoseInfoResponse.setPageNumber(_ctx.integerValue("OpsQueryDiagnoseInfoResponse.PageNumber"));
 		opsQueryDiagnoseInfoResponse.setPageSize(_ctx.integerValue("OpsQueryDiagnoseInfoResponse.PageSize"));
+		opsQueryDiagnoseInfoResponse.setPageNumber(_ctx.integerValue("OpsQueryDiagnoseInfoResponse.PageNumber"));
 
 		List<Diagnose> diagnoseList = new ArrayList<Diagnose>();
 		for (int i = 0; i < _ctx.lengthValue("OpsQueryDiagnoseInfoResponse.DiagnoseList.Length"); i++) {
 			Diagnose diagnose = new Diagnose();
-			diagnose.setAction(_ctx.stringValue("OpsQueryDiagnoseInfoResponse.DiagnoseList["+ i +"].Action"));
-			diagnose.setAliUid(_ctx.longValue("OpsQueryDiagnoseInfoResponse.DiagnoseList["+ i +"].AliUid"));
-			diagnose.setDiagnoseId(_ctx.stringValue("OpsQueryDiagnoseInfoResponse.DiagnoseList["+ i +"].DiagnoseId"));
-			diagnose.setErrorCode(_ctx.stringValue("OpsQueryDiagnoseInfoResponse.DiagnoseList["+ i +"].ErrorCode"));
+			diagnose.setType(_ctx.integerValue("OpsQueryDiagnoseInfoResponse.DiagnoseList["+ i +"].Type"));
+			diagnose.setStatus(_ctx.stringValue("OpsQueryDiagnoseInfoResponse.DiagnoseList["+ i +"].Status"));
 			diagnose.setCreationTime(_ctx.stringValue("OpsQueryDiagnoseInfoResponse.DiagnoseList["+ i +"].CreationTime"));
+			diagnose.setAction(_ctx.stringValue("OpsQueryDiagnoseInfoResponse.DiagnoseList["+ i +"].Action"));
 			diagnose.setProduct(_ctx.stringValue("OpsQueryDiagnoseInfoResponse.DiagnoseList["+ i +"].Product"));
+			diagnose.setDiagnoseId(_ctx.stringValue("OpsQueryDiagnoseInfoResponse.DiagnoseList["+ i +"].DiagnoseId"));
+			diagnose.setAliUid(_ctx.longValue("OpsQueryDiagnoseInfoResponse.DiagnoseList["+ i +"].AliUid"));
+			diagnose.setStar(_ctx.integerValue("OpsQueryDiagnoseInfoResponse.DiagnoseList["+ i +"].Star"));
 			diagnose.setRegionId(_ctx.stringValue("OpsQueryDiagnoseInfoResponse.DiagnoseList["+ i +"].RegionId"));
 			diagnose.setRequestId(_ctx.stringValue("OpsQueryDiagnoseInfoResponse.DiagnoseList["+ i +"].RequestId"));
+			diagnose.setErrorCode(_ctx.stringValue("OpsQueryDiagnoseInfoResponse.DiagnoseList["+ i +"].ErrorCode"));
 			diagnose.setSolutions(_ctx.stringValue("OpsQueryDiagnoseInfoResponse.DiagnoseList["+ i +"].Solutions"));
-			diagnose.setStar(_ctx.integerValue("OpsQueryDiagnoseInfoResponse.DiagnoseList["+ i +"].Star"));
-			diagnose.setStatus(_ctx.stringValue("OpsQueryDiagnoseInfoResponse.DiagnoseList["+ i +"].Status"));
-			diagnose.setType(_ctx.integerValue("OpsQueryDiagnoseInfoResponse.DiagnoseList["+ i +"].Type"));
 
 			diagnoseList.add(diagnose);
 		}

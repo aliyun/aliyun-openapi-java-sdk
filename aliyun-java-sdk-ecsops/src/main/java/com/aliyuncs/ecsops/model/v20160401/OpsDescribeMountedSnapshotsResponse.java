@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsDescribeMountedSnapshotsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
-
-	private Integer pageNumber;
 
 	private Integer pageSize;
 
+	private String requestId;
+
+	private Integer pageNumber;
+
 	private List<Snapshot> mountedSnapshots;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -51,20 +43,28 @@ public class OpsDescribeMountedSnapshotsResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<Snapshot> getMountedSnapshots() {
@@ -77,17 +77,25 @@ public class OpsDescribeMountedSnapshotsResponse extends AcsResponse {
 
 	public static class Snapshot {
 
+		private String status;
+
 		private String resourceOwnerId;
 
 		private String snapshotId;
 
-		private String instanceId;
-
 		private String lastAttachedTime;
 
-		private String status;
-
 		private String device;
+
+		private String instanceId;
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
 
 		public String getResourceOwnerId() {
 			return this.resourceOwnerId;
@@ -105,14 +113,6 @@ public class OpsDescribeMountedSnapshotsResponse extends AcsResponse {
 			this.snapshotId = snapshotId;
 		}
 
-		public String getInstanceId() {
-			return this.instanceId;
-		}
-
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
-
 		public String getLastAttachedTime() {
 			return this.lastAttachedTime;
 		}
@@ -121,20 +121,20 @@ public class OpsDescribeMountedSnapshotsResponse extends AcsResponse {
 			this.lastAttachedTime = lastAttachedTime;
 		}
 
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
 		public String getDevice() {
 			return this.device;
 		}
 
 		public void setDevice(String device) {
 			this.device = device;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
 		}
 	}
 

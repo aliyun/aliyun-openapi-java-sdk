@@ -27,11 +27,11 @@ public class OpsDescribeExpireZonesResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Integer total;
-
 	private Integer pageSize;
 
 	private Integer pageNumber;
+
+	private Integer total;
 
 	private List<ExpireZone> expireZoneSet;
 
@@ -41,14 +41,6 @@ public class OpsDescribeExpireZonesResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getTotal() {
-		return this.total;
-	}
-
-	public void setTotal(Integer total) {
-		this.total = total;
 	}
 
 	public Integer getPageSize() {
@@ -67,6 +59,14 @@ public class OpsDescribeExpireZonesResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
+	public Integer getTotal() {
+		return this.total;
+	}
+
+	public void setTotal(Integer total) {
+		this.total = total;
+	}
+
 	public List<ExpireZone> getExpireZoneSet() {
 		return this.expireZoneSet;
 	}
@@ -77,42 +77,26 @@ public class OpsDescribeExpireZonesResponse extends AcsResponse {
 
 	public static class ExpireZone {
 
-		private Long numericId;
-
-		private String sourceZoneNo;
-
-		private String targetZoneNo;
+		private String expireTime;
 
 		private String sourceIzNo;
 
-		private String targetIzNo;
-
 		private Integer expireStrategy;
 
-		private String expireTime;
+		private String targetZoneNo;
 
-		public Long getNumericId() {
-			return this.numericId;
+		private String targetIzNo;
+
+		private String sourceZoneNo;
+
+		private Long numericId;
+
+		public String getExpireTime() {
+			return this.expireTime;
 		}
 
-		public void setNumericId(Long numericId) {
-			this.numericId = numericId;
-		}
-
-		public String getSourceZoneNo() {
-			return this.sourceZoneNo;
-		}
-
-		public void setSourceZoneNo(String sourceZoneNo) {
-			this.sourceZoneNo = sourceZoneNo;
-		}
-
-		public String getTargetZoneNo() {
-			return this.targetZoneNo;
-		}
-
-		public void setTargetZoneNo(String targetZoneNo) {
-			this.targetZoneNo = targetZoneNo;
+		public void setExpireTime(String expireTime) {
+			this.expireTime = expireTime;
 		}
 
 		public String getSourceIzNo() {
@@ -123,14 +107,6 @@ public class OpsDescribeExpireZonesResponse extends AcsResponse {
 			this.sourceIzNo = sourceIzNo;
 		}
 
-		public String getTargetIzNo() {
-			return this.targetIzNo;
-		}
-
-		public void setTargetIzNo(String targetIzNo) {
-			this.targetIzNo = targetIzNo;
-		}
-
 		public Integer getExpireStrategy() {
 			return this.expireStrategy;
 		}
@@ -139,12 +115,36 @@ public class OpsDescribeExpireZonesResponse extends AcsResponse {
 			this.expireStrategy = expireStrategy;
 		}
 
-		public String getExpireTime() {
-			return this.expireTime;
+		public String getTargetZoneNo() {
+			return this.targetZoneNo;
 		}
 
-		public void setExpireTime(String expireTime) {
-			this.expireTime = expireTime;
+		public void setTargetZoneNo(String targetZoneNo) {
+			this.targetZoneNo = targetZoneNo;
+		}
+
+		public String getTargetIzNo() {
+			return this.targetIzNo;
+		}
+
+		public void setTargetIzNo(String targetIzNo) {
+			this.targetIzNo = targetIzNo;
+		}
+
+		public String getSourceZoneNo() {
+			return this.sourceZoneNo;
+		}
+
+		public void setSourceZoneNo(String sourceZoneNo) {
+			this.sourceZoneNo = sourceZoneNo;
+		}
+
+		public Long getNumericId() {
+			return this.numericId;
+		}
+
+		public void setNumericId(Long numericId) {
+			this.numericId = numericId;
 		}
 	}
 

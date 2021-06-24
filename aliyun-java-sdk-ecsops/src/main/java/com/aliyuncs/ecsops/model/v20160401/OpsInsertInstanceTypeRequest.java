@@ -16,7 +16,6 @@ package com.aliyuncs.ecsops.model.v20160401;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
-import com.aliyuncs.ecsops.Endpoint;
 
 /**
  * @author auto create
@@ -31,13 +30,9 @@ public class OpsInsertInstanceTypeRequest extends RpcAcsRequest<OpsInsertInstanc
 
 	private Integer dataDiskBpsR;
 
-	private Integer netCpuNormal;
-
 	private Float txCreditConsumRate;
 
 	private Long sessionEstablishRate;
-
-	private Integer sound;
 
 	private String ecsCategory3En;
 
@@ -47,8 +42,6 @@ public class OpsInsertInstanceTypeRequest extends RpcAcsRequest<OpsInsertInstanc
 
 	private Integer dataDiskBpsW;
 
-	private Integer txMaxCredit;
-
 	private Integer vmBandwidthRx;
 
 	private Integer dataDiskIopsW;
@@ -57,61 +50,33 @@ public class OpsInsertInstanceTypeRequest extends RpcAcsRequest<OpsInsertInstanc
 
 	private String dataNvmPassthruMode;
 
-	private Integer initCredit;
-
 	private Integer cores;
 
 	private Integer diskQueueNum;
-
-	private Boolean cpuOptionsNuma;
 
 	private Float rxCreditConsumRate;
 
 	private Integer maxQueueNumPerEni;
 
-	private Long vmPpsTx;
-
 	private Long privateTxPps;
 
 	private String generation;
 
-	private Long diskSize;
-
 	private Integer rxInitCredit;
-
-	private Integer nvmNum;
 
 	private Integer eniQuantity;
 
-	private Integer txBurst;
-
-	private Integer eniPrivateIpQuantity;
-
 	private Integer baseline;
-
-	private String dataDiskArchitecture;
-
-	private Long sessionQuota;
-
-	private Long vmBurstBaseBps;
-
-	private Integer dataDiskQueueNum;
 
 	private Boolean supportVtpm;
 
 	private Integer status;
-
-	private Integer txInitCredit;
 
 	private Boolean cpuOptionsSupportNuma;
 
 	private Integer flag;
 
 	private Boolean enableEniHotPlug;
-
-	private Integer eniQueueNum;
-
-	private Integer networkInhibitType;
 
 	private Integer rdmaEniNum;
 
@@ -121,13 +86,7 @@ public class OpsInsertInstanceTypeRequest extends RpcAcsRequest<OpsInsertInstanc
 
 	private Integer nodeNum;
 
-	private Long vmBurstIops;
-
-	private Integer cpuOptionsHt;
-
 	private Float netConsumCreditRate;
-
-	private Integer mem;
 
 	private Float txCreditAccumRate;
 
@@ -135,47 +94,25 @@ public class OpsInsertInstanceTypeRequest extends RpcAcsRequest<OpsInsertInstanc
 
 	private Long nvmSize;
 
-	private Long vmPpsRx;
-
-	private Integer rxMaxCredit;
-
 	private Integer netCpuMin;
 
 	private Integer cpuOptionsCore;
 
 	private Integer cpuOptionsCoreFactor;
 
-	private String instanceTypeFamily;
-
 	private String dataDiskScheduleStrategy;
-
-	private Integer eniVportQuota;
 
 	private Integer eniIpv6Quantity;
 
 	private Integer diskNum;
 
-	private Integer secondaryEniQueueNum;
-
 	private Long vmIops;
-
-	private Float netAccumCreditRate;
 
 	private Long publicTxPps;
 
-	private Float rxCreditAccumRate;
-
 	private Integer vmBandwidthTx;
 
-	private Long vmBurstBaseIops;
-
 	private Float networkInhibitRatio;
-
-	private Integer netInitCredit;
-
-	private Boolean eniTrunkEnabled;
-
-	private Integer gpuAmount;
 
 	private Integer netCpuMax;
 
@@ -185,20 +122,82 @@ public class OpsInsertInstanceTypeRequest extends RpcAcsRequest<OpsInsertInstanc
 
 	private Integer rxBurst;
 
-	private Integer netMaxCredit;
-
-	private Long vmBurstMaxIopsBalance;
-
 	private Long vmBps;
 
 	private String auditParamStr;
+
+	private Integer ebsQuantity;
+
+	private Integer netCpuNormal;
+
+	private Integer sound;
+
+	private Integer txMaxCredit;
+
+	private Integer initCredit;
+
+	private Boolean cpuOptionsNuma;
+
+	private Long vmPpsTx;
+
+	private Long diskSize;
+
+	private Integer nvmNum;
+
+	private Integer txBurst;
+
+	private Integer eniPrivateIpQuantity;
+
+	private String dataDiskArchitecture;
+
+	private Long sessionQuota;
+
+	private Long vmBurstBaseBps;
+
+	private Integer dataDiskQueueNum;
+
+	private Integer txInitCredit;
+
+	private Integer eniQueueNum;
+
+	private Integer networkInhibitType;
+
+	private Long vmBurstIops;
+
+	private Integer cpuOptionsHt;
+
+	private Integer mem;
+
+	private Long vmPpsRx;
+
+	private Integer rxMaxCredit;
+
+	private Integer nvmeSupport;
+
+	private String instanceTypeFamily;
+
+	private Integer eniVportQuota;
+
+	private Integer secondaryEniQueueNum;
+
+	private Float netAccumCreditRate;
+
+	private Float rxCreditAccumRate;
+
+	private Long vmBurstBaseIops;
+
+	private Integer netInitCredit;
+
+	private Boolean eniTrunkEnabled;
+
+	private Integer gpuAmount;
+
+	private Integer netMaxCredit;
+
+	private Long vmBurstMaxIopsBalance;
 	public OpsInsertInstanceTypeRequest() {
-		super("Ecsops", "2016-04-01", "OpsInsertInstanceType", "ecs");
+		super("Ecsops", "2016-04-01", "OpsInsertInstanceType", "ecsops");
 		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
 	}
 
 	public String getGpuSpec() {
@@ -234,17 +233,6 @@ public class OpsInsertInstanceTypeRequest extends RpcAcsRequest<OpsInsertInstanc
 		}
 	}
 
-	public Integer getNetCpuNormal() {
-		return this.netCpuNormal;
-	}
-
-	public void setNetCpuNormal(Integer netCpuNormal) {
-		this.netCpuNormal = netCpuNormal;
-		if(netCpuNormal != null){
-			putQueryParameter("NetCpuNormal", netCpuNormal.toString());
-		}
-	}
-
 	public Float getTxCreditConsumRate() {
 		return this.txCreditConsumRate;
 	}
@@ -264,17 +252,6 @@ public class OpsInsertInstanceTypeRequest extends RpcAcsRequest<OpsInsertInstanc
 		this.sessionEstablishRate = sessionEstablishRate;
 		if(sessionEstablishRate != null){
 			putQueryParameter("SessionEstablishRate", sessionEstablishRate.toString());
-		}
-	}
-
-	public Integer getSound() {
-		return this.sound;
-	}
-
-	public void setSound(Integer sound) {
-		this.sound = sound;
-		if(sound != null){
-			putQueryParameter("Sound", sound.toString());
 		}
 	}
 
@@ -322,17 +299,6 @@ public class OpsInsertInstanceTypeRequest extends RpcAcsRequest<OpsInsertInstanc
 		}
 	}
 
-	public Integer getTxMaxCredit() {
-		return this.txMaxCredit;
-	}
-
-	public void setTxMaxCredit(Integer txMaxCredit) {
-		this.txMaxCredit = txMaxCredit;
-		if(txMaxCredit != null){
-			putQueryParameter("TxMaxCredit", txMaxCredit.toString());
-		}
-	}
-
 	public Integer getVmBandwidthRx() {
 		return this.vmBandwidthRx;
 	}
@@ -377,17 +343,6 @@ public class OpsInsertInstanceTypeRequest extends RpcAcsRequest<OpsInsertInstanc
 		}
 	}
 
-	public Integer getInitCredit() {
-		return this.initCredit;
-	}
-
-	public void setInitCredit(Integer initCredit) {
-		this.initCredit = initCredit;
-		if(initCredit != null){
-			putQueryParameter("InitCredit", initCredit.toString());
-		}
-	}
-
 	public Integer getCores() {
 		return this.cores;
 	}
@@ -407,17 +362,6 @@ public class OpsInsertInstanceTypeRequest extends RpcAcsRequest<OpsInsertInstanc
 		this.diskQueueNum = diskQueueNum;
 		if(diskQueueNum != null){
 			putQueryParameter("DiskQueueNum", diskQueueNum.toString());
-		}
-	}
-
-	public Boolean getCpuOptionsNuma() {
-		return this.cpuOptionsNuma;
-	}
-
-	public void setCpuOptionsNuma(Boolean cpuOptionsNuma) {
-		this.cpuOptionsNuma = cpuOptionsNuma;
-		if(cpuOptionsNuma != null){
-			putQueryParameter("CpuOptionsNuma", cpuOptionsNuma.toString());
 		}
 	}
 
@@ -443,17 +387,6 @@ public class OpsInsertInstanceTypeRequest extends RpcAcsRequest<OpsInsertInstanc
 		}
 	}
 
-	public Long getVmPpsTx() {
-		return this.vmPpsTx;
-	}
-
-	public void setVmPpsTx(Long vmPpsTx) {
-		this.vmPpsTx = vmPpsTx;
-		if(vmPpsTx != null){
-			putQueryParameter("VmPpsTx", vmPpsTx.toString());
-		}
-	}
-
 	public Long getPrivateTxPps() {
 		return this.privateTxPps;
 	}
@@ -476,17 +409,6 @@ public class OpsInsertInstanceTypeRequest extends RpcAcsRequest<OpsInsertInstanc
 		}
 	}
 
-	public Long getDiskSize() {
-		return this.diskSize;
-	}
-
-	public void setDiskSize(Long diskSize) {
-		this.diskSize = diskSize;
-		if(diskSize != null){
-			putQueryParameter("DiskSize", diskSize.toString());
-		}
-	}
-
 	public Integer getRxInitCredit() {
 		return this.rxInitCredit;
 	}
@@ -495,17 +417,6 @@ public class OpsInsertInstanceTypeRequest extends RpcAcsRequest<OpsInsertInstanc
 		this.rxInitCredit = rxInitCredit;
 		if(rxInitCredit != null){
 			putQueryParameter("RxInitCredit", rxInitCredit.toString());
-		}
-	}
-
-	public Integer getNvmNum() {
-		return this.nvmNum;
-	}
-
-	public void setNvmNum(Integer nvmNum) {
-		this.nvmNum = nvmNum;
-		if(nvmNum != null){
-			putQueryParameter("NvmNum", nvmNum.toString());
 		}
 	}
 
@@ -520,28 +431,6 @@ public class OpsInsertInstanceTypeRequest extends RpcAcsRequest<OpsInsertInstanc
 		}
 	}
 
-	public Integer getTxBurst() {
-		return this.txBurst;
-	}
-
-	public void setTxBurst(Integer txBurst) {
-		this.txBurst = txBurst;
-		if(txBurst != null){
-			putQueryParameter("TxBurst", txBurst.toString());
-		}
-	}
-
-	public Integer getEniPrivateIpQuantity() {
-		return this.eniPrivateIpQuantity;
-	}
-
-	public void setEniPrivateIpQuantity(Integer eniPrivateIpQuantity) {
-		this.eniPrivateIpQuantity = eniPrivateIpQuantity;
-		if(eniPrivateIpQuantity != null){
-			putQueryParameter("EniPrivateIpQuantity", eniPrivateIpQuantity.toString());
-		}
-	}
-
 	public Integer getBaseline() {
 		return this.baseline;
 	}
@@ -550,50 +439,6 @@ public class OpsInsertInstanceTypeRequest extends RpcAcsRequest<OpsInsertInstanc
 		this.baseline = baseline;
 		if(baseline != null){
 			putQueryParameter("Baseline", baseline.toString());
-		}
-	}
-
-	public String getDataDiskArchitecture() {
-		return this.dataDiskArchitecture;
-	}
-
-	public void setDataDiskArchitecture(String dataDiskArchitecture) {
-		this.dataDiskArchitecture = dataDiskArchitecture;
-		if(dataDiskArchitecture != null){
-			putQueryParameter("DataDiskArchitecture", dataDiskArchitecture);
-		}
-	}
-
-	public Long getSessionQuota() {
-		return this.sessionQuota;
-	}
-
-	public void setSessionQuota(Long sessionQuota) {
-		this.sessionQuota = sessionQuota;
-		if(sessionQuota != null){
-			putQueryParameter("SessionQuota", sessionQuota.toString());
-		}
-	}
-
-	public Long getVmBurstBaseBps() {
-		return this.vmBurstBaseBps;
-	}
-
-	public void setVmBurstBaseBps(Long vmBurstBaseBps) {
-		this.vmBurstBaseBps = vmBurstBaseBps;
-		if(vmBurstBaseBps != null){
-			putQueryParameter("VmBurstBaseBps", vmBurstBaseBps.toString());
-		}
-	}
-
-	public Integer getDataDiskQueueNum() {
-		return this.dataDiskQueueNum;
-	}
-
-	public void setDataDiskQueueNum(Integer dataDiskQueueNum) {
-		this.dataDiskQueueNum = dataDiskQueueNum;
-		if(dataDiskQueueNum != null){
-			putQueryParameter("DataDiskQueueNum", dataDiskQueueNum.toString());
 		}
 	}
 
@@ -616,17 +461,6 @@ public class OpsInsertInstanceTypeRequest extends RpcAcsRequest<OpsInsertInstanc
 		this.status = status;
 		if(status != null){
 			putQueryParameter("Status", status.toString());
-		}
-	}
-
-	public Integer getTxInitCredit() {
-		return this.txInitCredit;
-	}
-
-	public void setTxInitCredit(Integer txInitCredit) {
-		this.txInitCredit = txInitCredit;
-		if(txInitCredit != null){
-			putQueryParameter("TxInitCredit", txInitCredit.toString());
 		}
 	}
 
@@ -660,28 +494,6 @@ public class OpsInsertInstanceTypeRequest extends RpcAcsRequest<OpsInsertInstanc
 		this.enableEniHotPlug = enableEniHotPlug;
 		if(enableEniHotPlug != null){
 			putQueryParameter("EnableEniHotPlug", enableEniHotPlug.toString());
-		}
-	}
-
-	public Integer getEniQueueNum() {
-		return this.eniQueueNum;
-	}
-
-	public void setEniQueueNum(Integer eniQueueNum) {
-		this.eniQueueNum = eniQueueNum;
-		if(eniQueueNum != null){
-			putQueryParameter("EniQueueNum", eniQueueNum.toString());
-		}
-	}
-
-	public Integer getNetworkInhibitType() {
-		return this.networkInhibitType;
-	}
-
-	public void setNetworkInhibitType(Integer networkInhibitType) {
-		this.networkInhibitType = networkInhibitType;
-		if(networkInhibitType != null){
-			putQueryParameter("NetworkInhibitType", networkInhibitType.toString());
 		}
 	}
 
@@ -729,28 +541,6 @@ public class OpsInsertInstanceTypeRequest extends RpcAcsRequest<OpsInsertInstanc
 		}
 	}
 
-	public Long getVmBurstIops() {
-		return this.vmBurstIops;
-	}
-
-	public void setVmBurstIops(Long vmBurstIops) {
-		this.vmBurstIops = vmBurstIops;
-		if(vmBurstIops != null){
-			putQueryParameter("VmBurstIops", vmBurstIops.toString());
-		}
-	}
-
-	public Integer getCpuOptionsHt() {
-		return this.cpuOptionsHt;
-	}
-
-	public void setCpuOptionsHt(Integer cpuOptionsHt) {
-		this.cpuOptionsHt = cpuOptionsHt;
-		if(cpuOptionsHt != null){
-			putQueryParameter("CpuOptionsHt", cpuOptionsHt.toString());
-		}
-	}
-
 	public Float getNetConsumCreditRate() {
 		return this.netConsumCreditRate;
 	}
@@ -759,17 +549,6 @@ public class OpsInsertInstanceTypeRequest extends RpcAcsRequest<OpsInsertInstanc
 		this.netConsumCreditRate = netConsumCreditRate;
 		if(netConsumCreditRate != null){
 			putQueryParameter("NetConsumCreditRate", netConsumCreditRate.toString());
-		}
-	}
-
-	public Integer getMem() {
-		return this.mem;
-	}
-
-	public void setMem(Integer mem) {
-		this.mem = mem;
-		if(mem != null){
-			putQueryParameter("Mem", mem.toString());
 		}
 	}
 
@@ -806,28 +585,6 @@ public class OpsInsertInstanceTypeRequest extends RpcAcsRequest<OpsInsertInstanc
 		}
 	}
 
-	public Long getVmPpsRx() {
-		return this.vmPpsRx;
-	}
-
-	public void setVmPpsRx(Long vmPpsRx) {
-		this.vmPpsRx = vmPpsRx;
-		if(vmPpsRx != null){
-			putQueryParameter("VmPpsRx", vmPpsRx.toString());
-		}
-	}
-
-	public Integer getRxMaxCredit() {
-		return this.rxMaxCredit;
-	}
-
-	public void setRxMaxCredit(Integer rxMaxCredit) {
-		this.rxMaxCredit = rxMaxCredit;
-		if(rxMaxCredit != null){
-			putQueryParameter("RxMaxCredit", rxMaxCredit.toString());
-		}
-	}
-
 	public Integer getNetCpuMin() {
 		return this.netCpuMin;
 	}
@@ -861,17 +618,6 @@ public class OpsInsertInstanceTypeRequest extends RpcAcsRequest<OpsInsertInstanc
 		}
 	}
 
-	public String getInstanceTypeFamily() {
-		return this.instanceTypeFamily;
-	}
-
-	public void setInstanceTypeFamily(String instanceTypeFamily) {
-		this.instanceTypeFamily = instanceTypeFamily;
-		if(instanceTypeFamily != null){
-			putQueryParameter("InstanceTypeFamily", instanceTypeFamily);
-		}
-	}
-
 	public String getDataDiskScheduleStrategy() {
 		return this.dataDiskScheduleStrategy;
 	}
@@ -880,17 +626,6 @@ public class OpsInsertInstanceTypeRequest extends RpcAcsRequest<OpsInsertInstanc
 		this.dataDiskScheduleStrategy = dataDiskScheduleStrategy;
 		if(dataDiskScheduleStrategy != null){
 			putQueryParameter("DataDiskScheduleStrategy", dataDiskScheduleStrategy);
-		}
-	}
-
-	public Integer getEniVportQuota() {
-		return this.eniVportQuota;
-	}
-
-	public void setEniVportQuota(Integer eniVportQuota) {
-		this.eniVportQuota = eniVportQuota;
-		if(eniVportQuota != null){
-			putQueryParameter("EniVportQuota", eniVportQuota.toString());
 		}
 	}
 
@@ -916,17 +651,6 @@ public class OpsInsertInstanceTypeRequest extends RpcAcsRequest<OpsInsertInstanc
 		}
 	}
 
-	public Integer getSecondaryEniQueueNum() {
-		return this.secondaryEniQueueNum;
-	}
-
-	public void setSecondaryEniQueueNum(Integer secondaryEniQueueNum) {
-		this.secondaryEniQueueNum = secondaryEniQueueNum;
-		if(secondaryEniQueueNum != null){
-			putQueryParameter("SecondaryEniQueueNum", secondaryEniQueueNum.toString());
-		}
-	}
-
 	public Long getVmIops() {
 		return this.vmIops;
 	}
@@ -935,17 +659,6 @@ public class OpsInsertInstanceTypeRequest extends RpcAcsRequest<OpsInsertInstanc
 		this.vmIops = vmIops;
 		if(vmIops != null){
 			putQueryParameter("VmIops", vmIops.toString());
-		}
-	}
-
-	public Float getNetAccumCreditRate() {
-		return this.netAccumCreditRate;
-	}
-
-	public void setNetAccumCreditRate(Float netAccumCreditRate) {
-		this.netAccumCreditRate = netAccumCreditRate;
-		if(netAccumCreditRate != null){
-			putQueryParameter("NetAccumCreditRate", netAccumCreditRate.toString());
 		}
 	}
 
@@ -960,17 +673,6 @@ public class OpsInsertInstanceTypeRequest extends RpcAcsRequest<OpsInsertInstanc
 		}
 	}
 
-	public Float getRxCreditAccumRate() {
-		return this.rxCreditAccumRate;
-	}
-
-	public void setRxCreditAccumRate(Float rxCreditAccumRate) {
-		this.rxCreditAccumRate = rxCreditAccumRate;
-		if(rxCreditAccumRate != null){
-			putQueryParameter("RxCreditAccumRate", rxCreditAccumRate.toString());
-		}
-	}
-
 	public Integer getVmBandwidthTx() {
 		return this.vmBandwidthTx;
 	}
@@ -982,17 +684,6 @@ public class OpsInsertInstanceTypeRequest extends RpcAcsRequest<OpsInsertInstanc
 		}
 	}
 
-	public Long getVmBurstBaseIops() {
-		return this.vmBurstBaseIops;
-	}
-
-	public void setVmBurstBaseIops(Long vmBurstBaseIops) {
-		this.vmBurstBaseIops = vmBurstBaseIops;
-		if(vmBurstBaseIops != null){
-			putQueryParameter("VmBurstBaseIops", vmBurstBaseIops.toString());
-		}
-	}
-
 	public Float getNetworkInhibitRatio() {
 		return this.networkInhibitRatio;
 	}
@@ -1001,39 +692,6 @@ public class OpsInsertInstanceTypeRequest extends RpcAcsRequest<OpsInsertInstanc
 		this.networkInhibitRatio = networkInhibitRatio;
 		if(networkInhibitRatio != null){
 			putQueryParameter("NetworkInhibitRatio", networkInhibitRatio.toString());
-		}
-	}
-
-	public Integer getNetInitCredit() {
-		return this.netInitCredit;
-	}
-
-	public void setNetInitCredit(Integer netInitCredit) {
-		this.netInitCredit = netInitCredit;
-		if(netInitCredit != null){
-			putQueryParameter("NetInitCredit", netInitCredit.toString());
-		}
-	}
-
-	public Boolean getEniTrunkEnabled() {
-		return this.eniTrunkEnabled;
-	}
-
-	public void setEniTrunkEnabled(Boolean eniTrunkEnabled) {
-		this.eniTrunkEnabled = eniTrunkEnabled;
-		if(eniTrunkEnabled != null){
-			putQueryParameter("EniTrunkEnabled", eniTrunkEnabled.toString());
-		}
-	}
-
-	public Integer getGpuAmount() {
-		return this.gpuAmount;
-	}
-
-	public void setGpuAmount(Integer gpuAmount) {
-		this.gpuAmount = gpuAmount;
-		if(gpuAmount != null){
-			putQueryParameter("GpuAmount", gpuAmount.toString());
 		}
 	}
 
@@ -1081,28 +739,6 @@ public class OpsInsertInstanceTypeRequest extends RpcAcsRequest<OpsInsertInstanc
 		}
 	}
 
-	public Integer getNetMaxCredit() {
-		return this.netMaxCredit;
-	}
-
-	public void setNetMaxCredit(Integer netMaxCredit) {
-		this.netMaxCredit = netMaxCredit;
-		if(netMaxCredit != null){
-			putQueryParameter("NetMaxCredit", netMaxCredit.toString());
-		}
-	}
-
-	public Long getVmBurstMaxIopsBalance() {
-		return this.vmBurstMaxIopsBalance;
-	}
-
-	public void setVmBurstMaxIopsBalance(Long vmBurstMaxIopsBalance) {
-		this.vmBurstMaxIopsBalance = vmBurstMaxIopsBalance;
-		if(vmBurstMaxIopsBalance != null){
-			putQueryParameter("VmBurstMaxIopsBalance", vmBurstMaxIopsBalance.toString());
-		}
-	}
-
 	public Long getVmBps() {
 		return this.vmBps;
 	}
@@ -1122,6 +758,391 @@ public class OpsInsertInstanceTypeRequest extends RpcAcsRequest<OpsInsertInstanc
 		this.auditParamStr = auditParamStr;
 		if(auditParamStr != null){
 			putQueryParameter("AuditParamStr", auditParamStr);
+		}
+	}
+
+	public Integer getEbsQuantity() {
+		return this.ebsQuantity;
+	}
+
+	public void setEbsQuantity(Integer ebsQuantity) {
+		this.ebsQuantity = ebsQuantity;
+		if(ebsQuantity != null){
+			putQueryParameter("EbsQuantity", ebsQuantity.toString());
+		}
+	}
+
+	public Integer getNetCpuNormal() {
+		return this.netCpuNormal;
+	}
+
+	public void setNetCpuNormal(Integer netCpuNormal) {
+		this.netCpuNormal = netCpuNormal;
+		if(netCpuNormal != null){
+			putQueryParameter("NetCpuNormal", netCpuNormal.toString());
+		}
+	}
+
+	public Integer getSound() {
+		return this.sound;
+	}
+
+	public void setSound(Integer sound) {
+		this.sound = sound;
+		if(sound != null){
+			putQueryParameter("Sound", sound.toString());
+		}
+	}
+
+	public Integer getTxMaxCredit() {
+		return this.txMaxCredit;
+	}
+
+	public void setTxMaxCredit(Integer txMaxCredit) {
+		this.txMaxCredit = txMaxCredit;
+		if(txMaxCredit != null){
+			putQueryParameter("TxMaxCredit", txMaxCredit.toString());
+		}
+	}
+
+	public Integer getInitCredit() {
+		return this.initCredit;
+	}
+
+	public void setInitCredit(Integer initCredit) {
+		this.initCredit = initCredit;
+		if(initCredit != null){
+			putQueryParameter("InitCredit", initCredit.toString());
+		}
+	}
+
+	public Boolean getCpuOptionsNuma() {
+		return this.cpuOptionsNuma;
+	}
+
+	public void setCpuOptionsNuma(Boolean cpuOptionsNuma) {
+		this.cpuOptionsNuma = cpuOptionsNuma;
+		if(cpuOptionsNuma != null){
+			putQueryParameter("CpuOptionsNuma", cpuOptionsNuma.toString());
+		}
+	}
+
+	public Long getVmPpsTx() {
+		return this.vmPpsTx;
+	}
+
+	public void setVmPpsTx(Long vmPpsTx) {
+		this.vmPpsTx = vmPpsTx;
+		if(vmPpsTx != null){
+			putQueryParameter("VmPpsTx", vmPpsTx.toString());
+		}
+	}
+
+	public Long getDiskSize() {
+		return this.diskSize;
+	}
+
+	public void setDiskSize(Long diskSize) {
+		this.diskSize = diskSize;
+		if(diskSize != null){
+			putQueryParameter("DiskSize", diskSize.toString());
+		}
+	}
+
+	public Integer getNvmNum() {
+		return this.nvmNum;
+	}
+
+	public void setNvmNum(Integer nvmNum) {
+		this.nvmNum = nvmNum;
+		if(nvmNum != null){
+			putQueryParameter("NvmNum", nvmNum.toString());
+		}
+	}
+
+	public Integer getTxBurst() {
+		return this.txBurst;
+	}
+
+	public void setTxBurst(Integer txBurst) {
+		this.txBurst = txBurst;
+		if(txBurst != null){
+			putQueryParameter("TxBurst", txBurst.toString());
+		}
+	}
+
+	public Integer getEniPrivateIpQuantity() {
+		return this.eniPrivateIpQuantity;
+	}
+
+	public void setEniPrivateIpQuantity(Integer eniPrivateIpQuantity) {
+		this.eniPrivateIpQuantity = eniPrivateIpQuantity;
+		if(eniPrivateIpQuantity != null){
+			putQueryParameter("EniPrivateIpQuantity", eniPrivateIpQuantity.toString());
+		}
+	}
+
+	public String getDataDiskArchitecture() {
+		return this.dataDiskArchitecture;
+	}
+
+	public void setDataDiskArchitecture(String dataDiskArchitecture) {
+		this.dataDiskArchitecture = dataDiskArchitecture;
+		if(dataDiskArchitecture != null){
+			putQueryParameter("DataDiskArchitecture", dataDiskArchitecture);
+		}
+	}
+
+	public Long getSessionQuota() {
+		return this.sessionQuota;
+	}
+
+	public void setSessionQuota(Long sessionQuota) {
+		this.sessionQuota = sessionQuota;
+		if(sessionQuota != null){
+			putQueryParameter("SessionQuota", sessionQuota.toString());
+		}
+	}
+
+	public Long getVmBurstBaseBps() {
+		return this.vmBurstBaseBps;
+	}
+
+	public void setVmBurstBaseBps(Long vmBurstBaseBps) {
+		this.vmBurstBaseBps = vmBurstBaseBps;
+		if(vmBurstBaseBps != null){
+			putQueryParameter("VmBurstBaseBps", vmBurstBaseBps.toString());
+		}
+	}
+
+	public Integer getDataDiskQueueNum() {
+		return this.dataDiskQueueNum;
+	}
+
+	public void setDataDiskQueueNum(Integer dataDiskQueueNum) {
+		this.dataDiskQueueNum = dataDiskQueueNum;
+		if(dataDiskQueueNum != null){
+			putQueryParameter("DataDiskQueueNum", dataDiskQueueNum.toString());
+		}
+	}
+
+	public Integer getTxInitCredit() {
+		return this.txInitCredit;
+	}
+
+	public void setTxInitCredit(Integer txInitCredit) {
+		this.txInitCredit = txInitCredit;
+		if(txInitCredit != null){
+			putQueryParameter("TxInitCredit", txInitCredit.toString());
+		}
+	}
+
+	public Integer getEniQueueNum() {
+		return this.eniQueueNum;
+	}
+
+	public void setEniQueueNum(Integer eniQueueNum) {
+		this.eniQueueNum = eniQueueNum;
+		if(eniQueueNum != null){
+			putQueryParameter("EniQueueNum", eniQueueNum.toString());
+		}
+	}
+
+	public Integer getNetworkInhibitType() {
+		return this.networkInhibitType;
+	}
+
+	public void setNetworkInhibitType(Integer networkInhibitType) {
+		this.networkInhibitType = networkInhibitType;
+		if(networkInhibitType != null){
+			putQueryParameter("NetworkInhibitType", networkInhibitType.toString());
+		}
+	}
+
+	public Long getVmBurstIops() {
+		return this.vmBurstIops;
+	}
+
+	public void setVmBurstIops(Long vmBurstIops) {
+		this.vmBurstIops = vmBurstIops;
+		if(vmBurstIops != null){
+			putQueryParameter("VmBurstIops", vmBurstIops.toString());
+		}
+	}
+
+	public Integer getCpuOptionsHt() {
+		return this.cpuOptionsHt;
+	}
+
+	public void setCpuOptionsHt(Integer cpuOptionsHt) {
+		this.cpuOptionsHt = cpuOptionsHt;
+		if(cpuOptionsHt != null){
+			putQueryParameter("CpuOptionsHt", cpuOptionsHt.toString());
+		}
+	}
+
+	public Integer getMem() {
+		return this.mem;
+	}
+
+	public void setMem(Integer mem) {
+		this.mem = mem;
+		if(mem != null){
+			putQueryParameter("Mem", mem.toString());
+		}
+	}
+
+	public Long getVmPpsRx() {
+		return this.vmPpsRx;
+	}
+
+	public void setVmPpsRx(Long vmPpsRx) {
+		this.vmPpsRx = vmPpsRx;
+		if(vmPpsRx != null){
+			putQueryParameter("VmPpsRx", vmPpsRx.toString());
+		}
+	}
+
+	public Integer getRxMaxCredit() {
+		return this.rxMaxCredit;
+	}
+
+	public void setRxMaxCredit(Integer rxMaxCredit) {
+		this.rxMaxCredit = rxMaxCredit;
+		if(rxMaxCredit != null){
+			putQueryParameter("RxMaxCredit", rxMaxCredit.toString());
+		}
+	}
+
+	public Integer getNvmeSupport() {
+		return this.nvmeSupport;
+	}
+
+	public void setNvmeSupport(Integer nvmeSupport) {
+		this.nvmeSupport = nvmeSupport;
+		if(nvmeSupport != null){
+			putQueryParameter("NvmeSupport", nvmeSupport.toString());
+		}
+	}
+
+	public String getInstanceTypeFamily() {
+		return this.instanceTypeFamily;
+	}
+
+	public void setInstanceTypeFamily(String instanceTypeFamily) {
+		this.instanceTypeFamily = instanceTypeFamily;
+		if(instanceTypeFamily != null){
+			putQueryParameter("InstanceTypeFamily", instanceTypeFamily);
+		}
+	}
+
+	public Integer getEniVportQuota() {
+		return this.eniVportQuota;
+	}
+
+	public void setEniVportQuota(Integer eniVportQuota) {
+		this.eniVportQuota = eniVportQuota;
+		if(eniVportQuota != null){
+			putQueryParameter("EniVportQuota", eniVportQuota.toString());
+		}
+	}
+
+	public Integer getSecondaryEniQueueNum() {
+		return this.secondaryEniQueueNum;
+	}
+
+	public void setSecondaryEniQueueNum(Integer secondaryEniQueueNum) {
+		this.secondaryEniQueueNum = secondaryEniQueueNum;
+		if(secondaryEniQueueNum != null){
+			putQueryParameter("SecondaryEniQueueNum", secondaryEniQueueNum.toString());
+		}
+	}
+
+	public Float getNetAccumCreditRate() {
+		return this.netAccumCreditRate;
+	}
+
+	public void setNetAccumCreditRate(Float netAccumCreditRate) {
+		this.netAccumCreditRate = netAccumCreditRate;
+		if(netAccumCreditRate != null){
+			putQueryParameter("NetAccumCreditRate", netAccumCreditRate.toString());
+		}
+	}
+
+	public Float getRxCreditAccumRate() {
+		return this.rxCreditAccumRate;
+	}
+
+	public void setRxCreditAccumRate(Float rxCreditAccumRate) {
+		this.rxCreditAccumRate = rxCreditAccumRate;
+		if(rxCreditAccumRate != null){
+			putQueryParameter("RxCreditAccumRate", rxCreditAccumRate.toString());
+		}
+	}
+
+	public Long getVmBurstBaseIops() {
+		return this.vmBurstBaseIops;
+	}
+
+	public void setVmBurstBaseIops(Long vmBurstBaseIops) {
+		this.vmBurstBaseIops = vmBurstBaseIops;
+		if(vmBurstBaseIops != null){
+			putQueryParameter("VmBurstBaseIops", vmBurstBaseIops.toString());
+		}
+	}
+
+	public Integer getNetInitCredit() {
+		return this.netInitCredit;
+	}
+
+	public void setNetInitCredit(Integer netInitCredit) {
+		this.netInitCredit = netInitCredit;
+		if(netInitCredit != null){
+			putQueryParameter("NetInitCredit", netInitCredit.toString());
+		}
+	}
+
+	public Boolean getEniTrunkEnabled() {
+		return this.eniTrunkEnabled;
+	}
+
+	public void setEniTrunkEnabled(Boolean eniTrunkEnabled) {
+		this.eniTrunkEnabled = eniTrunkEnabled;
+		if(eniTrunkEnabled != null){
+			putQueryParameter("EniTrunkEnabled", eniTrunkEnabled.toString());
+		}
+	}
+
+	public Integer getGpuAmount() {
+		return this.gpuAmount;
+	}
+
+	public void setGpuAmount(Integer gpuAmount) {
+		this.gpuAmount = gpuAmount;
+		if(gpuAmount != null){
+			putQueryParameter("GpuAmount", gpuAmount.toString());
+		}
+	}
+
+	public Integer getNetMaxCredit() {
+		return this.netMaxCredit;
+	}
+
+	public void setNetMaxCredit(Integer netMaxCredit) {
+		this.netMaxCredit = netMaxCredit;
+		if(netMaxCredit != null){
+			putQueryParameter("NetMaxCredit", netMaxCredit.toString());
+		}
+	}
+
+	public Long getVmBurstMaxIopsBalance() {
+		return this.vmBurstMaxIopsBalance;
+	}
+
+	public void setVmBurstMaxIopsBalance(Long vmBurstMaxIopsBalance) {
+		this.vmBurstMaxIopsBalance = vmBurstMaxIopsBalance;
+		if(vmBurstMaxIopsBalance != null){
+			putQueryParameter("VmBurstMaxIopsBalance", vmBurstMaxIopsBalance.toString());
 		}
 	}
 

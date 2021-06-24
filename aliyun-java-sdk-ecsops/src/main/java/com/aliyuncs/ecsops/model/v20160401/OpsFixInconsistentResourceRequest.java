@@ -17,7 +17,6 @@ package com.aliyuncs.ecsops.model.v20160401;
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
 import com.aliyuncs.http.MethodType;
-import com.aliyuncs.ecsops.Endpoint;
 
 /**
  * @author auto create
@@ -34,16 +33,12 @@ public class OpsFixInconsistentResourceRequest extends RpcAcsRequest<OpsFixIncon
 
 	private Long aliUid;
 
-	private List<String> resourceIdss;
-
 	private String auditParamStr;
+
+	private List<String> resourceIdss;
 	public OpsFixInconsistentResourceRequest() {
-		super("Ecsops", "2016-04-01", "OpsFixInconsistentResource", "ecs");
+		super("Ecsops", "2016-04-01", "OpsFixInconsistentResource", "ecsops");
 		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
 	}
 
 	public Boolean getForceCheck() {
@@ -90,6 +85,17 @@ public class OpsFixInconsistentResourceRequest extends RpcAcsRequest<OpsFixIncon
 		}
 	}
 
+	public String getAuditParamStr() {
+		return this.auditParamStr;
+	}
+
+	public void setAuditParamStr(String auditParamStr) {
+		this.auditParamStr = auditParamStr;
+		if(auditParamStr != null){
+			putQueryParameter("AuditParamStr", auditParamStr);
+		}
+	}
+
 	public List<String> getResourceIdss() {
 		return this.resourceIdss;
 	}
@@ -101,17 +107,6 @@ public class OpsFixInconsistentResourceRequest extends RpcAcsRequest<OpsFixIncon
 				putQueryParameter("ResourceIds." + (i + 1) , resourceIdss.get(i));
 			}
 		}	
-	}
-
-	public String getAuditParamStr() {
-		return this.auditParamStr;
-	}
-
-	public void setAuditParamStr(String auditParamStr) {
-		this.auditParamStr = auditParamStr;
-		if(auditParamStr != null){
-			putQueryParameter("AuditParamStr", auditParamStr);
-		}
 	}
 
 	@Override

@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsBatchRestartInstanceResponse extends AcsResponse {
 
-	private String requestId;
+	private String message;
 
-	private Boolean success;
+	private String requestId;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private Data data;
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class OpsBatchRestartInstanceResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
 	}
 
 	public String getCode() {
@@ -59,12 +59,12 @@ public class OpsBatchRestartInstanceResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Data getData() {
@@ -77,19 +77,11 @@ public class OpsBatchRestartInstanceResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String taskId;
-
 		private Boolean hasFailed;
 
+		private String taskId;
+
 		private List<OperateResponseModel> operateResponseModels;
-
-		public String getTaskId() {
-			return this.taskId;
-		}
-
-		public void setTaskId(String taskId) {
-			this.taskId = taskId;
-		}
 
 		public Boolean getHasFailed() {
 			return this.hasFailed;
@@ -97,6 +89,14 @@ public class OpsBatchRestartInstanceResponse extends AcsResponse {
 
 		public void setHasFailed(Boolean hasFailed) {
 			this.hasFailed = hasFailed;
+		}
+
+		public String getTaskId() {
+			return this.taskId;
+		}
+
+		public void setTaskId(String taskId) {
+			this.taskId = taskId;
 		}
 
 		public List<OperateResponseModel> getOperateResponseModels() {
@@ -109,19 +109,43 @@ public class OpsBatchRestartInstanceResponse extends AcsResponse {
 
 		public static class OperateResponseModel {
 
+			private String currentStatus;
+
+			private Long ecsId;
+
+			private String previousStatus;
+
 			private String code;
 
 			private String message;
-
-			private Long ecsId;
 
 			private String instanceId;
 
 			private String ecsAction;
 
-			private String previousStatus;
+			public String getCurrentStatus() {
+				return this.currentStatus;
+			}
 
-			private String currentStatus;
+			public void setCurrentStatus(String currentStatus) {
+				this.currentStatus = currentStatus;
+			}
+
+			public Long getEcsId() {
+				return this.ecsId;
+			}
+
+			public void setEcsId(Long ecsId) {
+				this.ecsId = ecsId;
+			}
+
+			public String getPreviousStatus() {
+				return this.previousStatus;
+			}
+
+			public void setPreviousStatus(String previousStatus) {
+				this.previousStatus = previousStatus;
+			}
 
 			public String getCode() {
 				return this.code;
@@ -139,14 +163,6 @@ public class OpsBatchRestartInstanceResponse extends AcsResponse {
 				this.message = message;
 			}
 
-			public Long getEcsId() {
-				return this.ecsId;
-			}
-
-			public void setEcsId(Long ecsId) {
-				this.ecsId = ecsId;
-			}
-
 			public String getInstanceId() {
 				return this.instanceId;
 			}
@@ -161,22 +177,6 @@ public class OpsBatchRestartInstanceResponse extends AcsResponse {
 
 			public void setEcsAction(String ecsAction) {
 				this.ecsAction = ecsAction;
-			}
-
-			public String getPreviousStatus() {
-				return this.previousStatus;
-			}
-
-			public void setPreviousStatus(String previousStatus) {
-				this.previousStatus = previousStatus;
-			}
-
-			public String getCurrentStatus() {
-				return this.currentStatus;
-			}
-
-			public void setCurrentStatus(String currentStatus) {
-				this.currentStatus = currentStatus;
 			}
 		}
 	}

@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsQueryBflagResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
-
-	private Integer pageNumber;
 
 	private Integer pageSize;
 
+	private String requestId;
+
+	private Integer pageNumber;
+
 	private List<EcsBidRelItem> ecsBidRel;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -51,20 +43,28 @@ public class OpsQueryBflagResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<EcsBidRelItem> getEcsBidRel() {
@@ -77,24 +77,32 @@ public class OpsQueryBflagResponse extends AcsResponse {
 
 	public static class EcsBidRelItem {
 
-		private Long id;
+		private String remark;
+
+		private String bflag;
 
 		private Long aliUid;
 
 		private String bid;
 
-		private String bflag;
-
-		private String remark;
+		private Long id;
 
 		private String parentBflag;
 
-		public Long getId() {
-			return this.id;
+		public String getRemark() {
+			return this.remark;
 		}
 
-		public void setId(Long id) {
-			this.id = id;
+		public void setRemark(String remark) {
+			this.remark = remark;
+		}
+
+		public String getBflag() {
+			return this.bflag;
+		}
+
+		public void setBflag(String bflag) {
+			this.bflag = bflag;
 		}
 
 		public Long getAliUid() {
@@ -113,20 +121,12 @@ public class OpsQueryBflagResponse extends AcsResponse {
 			this.bid = bid;
 		}
 
-		public String getBflag() {
-			return this.bflag;
+		public Long getId() {
+			return this.id;
 		}
 
-		public void setBflag(String bflag) {
-			this.bflag = bflag;
-		}
-
-		public String getRemark() {
-			return this.remark;
-		}
-
-		public void setRemark(String remark) {
-			this.remark = remark;
+		public void setId(Long id) {
+			this.id = id;
 		}
 
 		public String getParentBflag() {

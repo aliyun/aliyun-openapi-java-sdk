@@ -23,8 +23,8 @@ public class OpsCancelCloudOpsMaintenanceResponseUnmarshaller {
 	public static OpsCancelCloudOpsMaintenanceResponse unmarshall(OpsCancelCloudOpsMaintenanceResponse opsCancelCloudOpsMaintenanceResponse, UnmarshallerContext _ctx) {
 		
 		opsCancelCloudOpsMaintenanceResponse.setRequestId(_ctx.stringValue("OpsCancelCloudOpsMaintenanceResponse.RequestId"));
-		opsCancelCloudOpsMaintenanceResponse.setBizCode(_ctx.stringValue("OpsCancelCloudOpsMaintenanceResponse.BizCode"));
 		opsCancelCloudOpsMaintenanceResponse.setBizMessage(_ctx.stringValue("OpsCancelCloudOpsMaintenanceResponse.BizMessage"));
+		opsCancelCloudOpsMaintenanceResponse.setBizCode(_ctx.stringValue("OpsCancelCloudOpsMaintenanceResponse.BizCode"));
 	 
 	 	return opsCancelCloudOpsMaintenanceResponse;
 	}

@@ -28,32 +28,32 @@ public class OpsQueryOpLogsResponseUnmarshaller {
 		
 		opsQueryOpLogsResponse.setRequestId(_ctx.stringValue("OpsQueryOpLogsResponse.RequestId"));
 		opsQueryOpLogsResponse.setTotalCount(_ctx.integerValue("OpsQueryOpLogsResponse.TotalCount"));
-		opsQueryOpLogsResponse.setPageNumber(_ctx.integerValue("OpsQueryOpLogsResponse.PageNumber"));
 		opsQueryOpLogsResponse.setPageSize(_ctx.integerValue("OpsQueryOpLogsResponse.PageSize"));
+		opsQueryOpLogsResponse.setPageNumber(_ctx.integerValue("OpsQueryOpLogsResponse.PageNumber"));
 
 		List<OpLog> opLogs = new ArrayList<OpLog>();
 		for (int i = 0; i < _ctx.lengthValue("OpsQueryOpLogsResponse.OpLogs.Length"); i++) {
 			OpLog opLog = new OpLog();
 			opLog.setType(_ctx.stringValue("OpsQueryOpLogsResponse.OpLogs["+ i +"].Type"));
-			opLog.setChannel(_ctx.stringValue("OpsQueryOpLogsResponse.OpLogs["+ i +"].Channel"));
-			opLog.setBizLine(_ctx.stringValue("OpsQueryOpLogsResponse.OpLogs["+ i +"].BizLine"));
-			opLog.setSubLine(_ctx.stringValue("OpsQueryOpLogsResponse.OpLogs["+ i +"].SubLine"));
 			opLog.setKey(_ctx.stringValue("OpsQueryOpLogsResponse.OpLogs["+ i +"].Key"));
-			opLog.setBid(_ctx.stringValue("OpsQueryOpLogsResponse.OpLogs["+ i +"].Bid"));
-			opLog.setAliUid(_ctx.longValue("OpsQueryOpLogsResponse.OpLogs["+ i +"].AliUid"));
-			opLog.setResourceId(_ctx.stringValue("OpsQueryOpLogsResponse.OpLogs["+ i +"].ResourceId"));
-			opLog.setResourceId2(_ctx.stringValue("OpsQueryOpLogsResponse.OpLogs["+ i +"].ResourceId2"));
-			opLog.setResultCode(_ctx.stringValue("OpsQueryOpLogsResponse.OpLogs["+ i +"].ResultCode"));
-			opLog.setResultMsg(_ctx.stringValue("OpsQueryOpLogsResponse.OpLogs["+ i +"].ResultMsg"));
-			opLog.setProgress(_ctx.stringValue("OpsQueryOpLogsResponse.OpLogs["+ i +"].Progress"));
 			opLog.setData(_ctx.stringValue("OpsQueryOpLogsResponse.OpLogs["+ i +"].Data"));
-			opLog.setOperate(_ctx.stringValue("OpsQueryOpLogsResponse.OpLogs["+ i +"].Operate"));
-			opLog.setOperator(_ctx.stringValue("OpsQueryOpLogsResponse.OpLogs["+ i +"].Operator"));
+			opLog.setProgress(_ctx.stringValue("OpsQueryOpLogsResponse.OpLogs["+ i +"].Progress"));
 			opLog.setMemo(_ctx.stringValue("OpsQueryOpLogsResponse.OpLogs["+ i +"].Memo"));
-			opLog.setStartTime(_ctx.stringValue("OpsQueryOpLogsResponse.OpLogs["+ i +"].StartTime"));
-			opLog.setEndTime(_ctx.stringValue("OpsQueryOpLogsResponse.OpLogs["+ i +"].EndTime"));
-			opLog.setDuration(_ctx.longValue("OpsQueryOpLogsResponse.OpLogs["+ i +"].Duration"));
+			opLog.setAliUid(_ctx.longValue("OpsQueryOpLogsResponse.OpLogs["+ i +"].AliUid"));
+			opLog.setResultCode(_ctx.stringValue("OpsQueryOpLogsResponse.OpLogs["+ i +"].ResultCode"));
+			opLog.setBid(_ctx.stringValue("OpsQueryOpLogsResponse.OpLogs["+ i +"].Bid"));
 			opLog.setExtraMapJson(_ctx.stringValue("OpsQueryOpLogsResponse.OpLogs["+ i +"].ExtraMapJson"));
+			opLog.setResultMsg(_ctx.stringValue("OpsQueryOpLogsResponse.OpLogs["+ i +"].ResultMsg"));
+			opLog.setEndTime(_ctx.stringValue("OpsQueryOpLogsResponse.OpLogs["+ i +"].EndTime"));
+			opLog.setStartTime(_ctx.stringValue("OpsQueryOpLogsResponse.OpLogs["+ i +"].StartTime"));
+			opLog.setOperate(_ctx.stringValue("OpsQueryOpLogsResponse.OpLogs["+ i +"].Operate"));
+			opLog.setBizLine(_ctx.stringValue("OpsQueryOpLogsResponse.OpLogs["+ i +"].BizLine"));
+			opLog.setDuration(_ctx.longValue("OpsQueryOpLogsResponse.OpLogs["+ i +"].Duration"));
+			opLog.setResourceId2(_ctx.stringValue("OpsQueryOpLogsResponse.OpLogs["+ i +"].ResourceId2"));
+			opLog.setChannel(_ctx.stringValue("OpsQueryOpLogsResponse.OpLogs["+ i +"].Channel"));
+			opLog.setOperator(_ctx.stringValue("OpsQueryOpLogsResponse.OpLogs["+ i +"].Operator"));
+			opLog.setResourceId(_ctx.stringValue("OpsQueryOpLogsResponse.OpLogs["+ i +"].ResourceId"));
+			opLog.setSubLine(_ctx.stringValue("OpsQueryOpLogsResponse.OpLogs["+ i +"].SubLine"));
 
 			opLogs.add(opLog);
 		}

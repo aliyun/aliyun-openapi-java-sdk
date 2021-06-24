@@ -32,10 +32,10 @@ public class OpsQueryScheduledTaskKeyValueConfigsResponseUnmarshaller {
 		List<ScheduledTaskKeyValueConfig> scheduledTaskKeyValueConfigs = new ArrayList<ScheduledTaskKeyValueConfig>();
 		for (int i = 0; i < _ctx.lengthValue("OpsQueryScheduledTaskKeyValueConfigsResponse.ScheduledTaskKeyValueConfigs.Length"); i++) {
 			ScheduledTaskKeyValueConfig scheduledTaskKeyValueConfig = new ScheduledTaskKeyValueConfig();
-			scheduledTaskKeyValueConfig.setAliUid(_ctx.longValue("OpsQueryScheduledTaskKeyValueConfigsResponse.ScheduledTaskKeyValueConfigs["+ i +"].AliUid"));
-			scheduledTaskKeyValueConfig.setConfigKey(_ctx.stringValue("OpsQueryScheduledTaskKeyValueConfigsResponse.ScheduledTaskKeyValueConfigs["+ i +"].ConfigKey"));
 			scheduledTaskKeyValueConfig.setDescription(_ctx.stringValue("OpsQueryScheduledTaskKeyValueConfigsResponse.ScheduledTaskKeyValueConfigs["+ i +"].Description"));
 			scheduledTaskKeyValueConfig.setConfigValue(_ctx.stringValue("OpsQueryScheduledTaskKeyValueConfigsResponse.ScheduledTaskKeyValueConfigs["+ i +"].ConfigValue"));
+			scheduledTaskKeyValueConfig.setAliUid(_ctx.longValue("OpsQueryScheduledTaskKeyValueConfigsResponse.ScheduledTaskKeyValueConfigs["+ i +"].AliUid"));
+			scheduledTaskKeyValueConfig.setConfigKey(_ctx.stringValue("OpsQueryScheduledTaskKeyValueConfigsResponse.ScheduledTaskKeyValueConfigs["+ i +"].ConfigKey"));
 
 			scheduledTaskKeyValueConfigs.add(scheduledTaskKeyValueConfig);
 		}

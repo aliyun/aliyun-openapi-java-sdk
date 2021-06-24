@@ -24,13 +24,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsModifyInstanceSessionResponse extends AcsResponse {
 
+	private String message;
+
 	private String requestId;
 
 	private String code;
 
-	private String message;
-
 	private String success;
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -46,14 +54,6 @@ public class OpsModifyInstanceSessionResponse extends AcsResponse {
 
 	public void setCode(String code) {
 		this.code = code;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
 	}
 
 	public String getSuccess() {

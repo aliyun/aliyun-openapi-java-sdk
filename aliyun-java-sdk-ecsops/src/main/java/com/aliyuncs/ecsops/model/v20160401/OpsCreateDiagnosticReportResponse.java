@@ -24,29 +24,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsCreateDiagnosticReportResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String reportId;
-
 	private String status;
+
+	private String requestId;
 
 	private String creationTime;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getReportId() {
-		return this.reportId;
-	}
-
-	public void setReportId(String reportId) {
-		this.reportId = reportId;
-	}
+	private String reportId;
 
 	public String getStatus() {
 		return this.status;
@@ -56,12 +40,28 @@ public class OpsCreateDiagnosticReportResponse extends AcsResponse {
 		this.status = status;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	public String getCreationTime() {
 		return this.creationTime;
 	}
 
 	public void setCreationTime(String creationTime) {
 		this.creationTime = creationTime;
+	}
+
+	public String getReportId() {
+		return this.reportId;
+	}
+
+	public void setReportId(String reportId) {
+		this.reportId = reportId;
 	}
 
 	@Override

@@ -27,11 +27,11 @@ public class OpsDescribeMigrationPlansResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Integer total;
-
 	private Integer pageSize;
 
 	private Integer pageNumber;
+
+	private Integer total;
 
 	private List<Plan> planSet;
 
@@ -41,14 +41,6 @@ public class OpsDescribeMigrationPlansResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getTotal() {
-		return this.total;
-	}
-
-	public void setTotal(Integer total) {
-		this.total = total;
 	}
 
 	public Integer getPageSize() {
@@ -67,6 +59,14 @@ public class OpsDescribeMigrationPlansResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
+	public Integer getTotal() {
+		return this.total;
+	}
+
+	public void setTotal(Integer total) {
+		this.total = total;
+	}
+
 	public List<Plan> getPlanSet() {
 		return this.planSet;
 	}
@@ -77,40 +77,32 @@ public class OpsDescribeMigrationPlansResponse extends AcsResponse {
 
 	public static class Plan {
 
-		private String name;
-
-		private String migrationPlanId;
+		private Integer status;
 
 		private Integer type;
 
-		private Integer status;
+		private Boolean ensureNetworkConnectivity;
+
+		private String migrationPlanId;
+
+		private Boolean remainPublicMacAsPriority;
 
 		private String createTime;
 
-		private Integer totalVmCount;
+		private String name;
 
 		private Integer finishVmCount;
 
 		private Boolean keepPrivateIp;
 
-		private Boolean ensureNetworkConnectivity;
+		private Integer totalVmCount;
 
-		private Boolean remainPublicMacAsPriority;
-
-		public String getName() {
-			return this.name;
+		public Integer getStatus() {
+			return this.status;
 		}
 
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getMigrationPlanId() {
-			return this.migrationPlanId;
-		}
-
-		public void setMigrationPlanId(String migrationPlanId) {
-			this.migrationPlanId = migrationPlanId;
+		public void setStatus(Integer status) {
+			this.status = status;
 		}
 
 		public Integer getType() {
@@ -121,12 +113,28 @@ public class OpsDescribeMigrationPlansResponse extends AcsResponse {
 			this.type = type;
 		}
 
-		public Integer getStatus() {
-			return this.status;
+		public Boolean getEnsureNetworkConnectivity() {
+			return this.ensureNetworkConnectivity;
 		}
 
-		public void setStatus(Integer status) {
-			this.status = status;
+		public void setEnsureNetworkConnectivity(Boolean ensureNetworkConnectivity) {
+			this.ensureNetworkConnectivity = ensureNetworkConnectivity;
+		}
+
+		public String getMigrationPlanId() {
+			return this.migrationPlanId;
+		}
+
+		public void setMigrationPlanId(String migrationPlanId) {
+			this.migrationPlanId = migrationPlanId;
+		}
+
+		public Boolean getRemainPublicMacAsPriority() {
+			return this.remainPublicMacAsPriority;
+		}
+
+		public void setRemainPublicMacAsPriority(Boolean remainPublicMacAsPriority) {
+			this.remainPublicMacAsPriority = remainPublicMacAsPriority;
 		}
 
 		public String getCreateTime() {
@@ -137,12 +145,12 @@ public class OpsDescribeMigrationPlansResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
-		public Integer getTotalVmCount() {
-			return this.totalVmCount;
+		public String getName() {
+			return this.name;
 		}
 
-		public void setTotalVmCount(Integer totalVmCount) {
-			this.totalVmCount = totalVmCount;
+		public void setName(String name) {
+			this.name = name;
 		}
 
 		public Integer getFinishVmCount() {
@@ -161,20 +169,12 @@ public class OpsDescribeMigrationPlansResponse extends AcsResponse {
 			this.keepPrivateIp = keepPrivateIp;
 		}
 
-		public Boolean getEnsureNetworkConnectivity() {
-			return this.ensureNetworkConnectivity;
+		public Integer getTotalVmCount() {
+			return this.totalVmCount;
 		}
 
-		public void setEnsureNetworkConnectivity(Boolean ensureNetworkConnectivity) {
-			this.ensureNetworkConnectivity = ensureNetworkConnectivity;
-		}
-
-		public Boolean getRemainPublicMacAsPriority() {
-			return this.remainPublicMacAsPriority;
-		}
-
-		public void setRemainPublicMacAsPriority(Boolean remainPublicMacAsPriority) {
-			this.remainPublicMacAsPriority = remainPublicMacAsPriority;
+		public void setTotalVmCount(Integer totalVmCount) {
+			this.totalVmCount = totalVmCount;
 		}
 	}
 

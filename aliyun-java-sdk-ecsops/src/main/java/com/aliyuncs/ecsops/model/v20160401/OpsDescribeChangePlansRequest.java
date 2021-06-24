@@ -16,7 +16,6 @@ package com.aliyuncs.ecsops.model.v20160401;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
-import com.aliyuncs.ecsops.Endpoint;
 
 /**
  * @author auto create
@@ -25,24 +24,37 @@ import com.aliyuncs.ecsops.Endpoint;
 public class OpsDescribeChangePlansRequest extends RpcAcsRequest<OpsDescribeChangePlansResponse> {
 	   
 
+	private String serverRole;
+
 	private String endTime;
 
 	private String startTime;
 
 	private String planType;
 
+	private Integer pageNo;
+
 	private String serviceVersion;
+
+	private Integer pageSize;
 
 	private String planId;
 
 	private String auditParamStr;
 	public OpsDescribeChangePlansRequest() {
-		super("Ecsops", "2016-04-01", "OpsDescribeChangePlans", "ecs");
+		super("Ecsops", "2016-04-01", "OpsDescribeChangePlans", "ecsops");
 		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
+	}
+
+	public String getServerRole() {
+		return this.serverRole;
+	}
+
+	public void setServerRole(String serverRole) {
+		this.serverRole = serverRole;
+		if(serverRole != null){
+			putQueryParameter("ServerRole", serverRole);
+		}
 	}
 
 	public String getEndTime() {
@@ -78,6 +90,17 @@ public class OpsDescribeChangePlansRequest extends RpcAcsRequest<OpsDescribeChan
 		}
 	}
 
+	public Integer getPageNo() {
+		return this.pageNo;
+	}
+
+	public void setPageNo(Integer pageNo) {
+		this.pageNo = pageNo;
+		if(pageNo != null){
+			putQueryParameter("PageNo", pageNo.toString());
+		}
+	}
+
 	public String getServiceVersion() {
 		return this.serviceVersion;
 	}
@@ -86,6 +109,17 @@ public class OpsDescribeChangePlansRequest extends RpcAcsRequest<OpsDescribeChan
 		this.serviceVersion = serviceVersion;
 		if(serviceVersion != null){
 			putQueryParameter("ServiceVersion", serviceVersion);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 

@@ -26,9 +26,9 @@ public class OpsReleaseHouyiVmResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String vmName;
-
 	private String vmStatus;
+
+	private String vmName;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,20 +38,20 @@ public class OpsReleaseHouyiVmResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getVmName() {
-		return this.vmName;
-	}
-
-	public void setVmName(String vmName) {
-		this.vmName = vmName;
-	}
-
 	public String getVmStatus() {
 		return this.vmStatus;
 	}
 
 	public void setVmStatus(String vmStatus) {
 		this.vmStatus = vmStatus;
+	}
+
+	public String getVmName() {
+		return this.vmName;
+	}
+
+	public void setVmName(String vmName) {
+		this.vmName = vmName;
 	}
 
 	@Override

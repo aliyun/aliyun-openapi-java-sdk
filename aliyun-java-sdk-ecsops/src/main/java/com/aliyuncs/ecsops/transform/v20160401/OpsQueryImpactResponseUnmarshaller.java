@@ -32,16 +32,16 @@ public class OpsQueryImpactResponseUnmarshaller {
 		List<AggregationItem> aggregationItems = new ArrayList<AggregationItem>();
 		for (int i = 0; i < _ctx.lengthValue("OpsQueryImpactResponse.AggregationItems.Length"); i++) {
 			AggregationItem aggregationItem = new AggregationItem();
-			aggregationItem.setVcpuCnt(_ctx.integerValue("OpsQueryImpactResponse.AggregationItems["+ i +"].VcpuCnt"));
+			aggregationItem.setStorageAffectVmCnt(_ctx.integerValue("OpsQueryImpactResponse.AggregationItems["+ i +"].StorageAffectVmCnt"));
+			aggregationItem.setUserCnt(_ctx.integerValue("OpsQueryImpactResponse.AggregationItems["+ i +"].UserCnt"));
+			aggregationItem.setStorageNcCnt(_ctx.integerValue("OpsQueryImpactResponse.AggregationItems["+ i +"].StorageNcCnt"));
+			aggregationItem.setAggregationValue(_ctx.stringValue("OpsQueryImpactResponse.AggregationItems["+ i +"].AggregationValue"));
+			aggregationItem.setGc7Cnt(_ctx.integerValue("OpsQueryImpactResponse.AggregationItems["+ i +"].Gc7Cnt"));
+			aggregationItem.setGc6Cnt(_ctx.integerValue("OpsQueryImpactResponse.AggregationItems["+ i +"].Gc6Cnt"));
 			aggregationItem.setVmCnt(_ctx.integerValue("OpsQueryImpactResponse.AggregationItems["+ i +"].VmCnt"));
 			aggregationItem.setNcCnt(_ctx.integerValue("OpsQueryImpactResponse.AggregationItems["+ i +"].NcCnt"));
-			aggregationItem.setUserCnt(_ctx.integerValue("OpsQueryImpactResponse.AggregationItems["+ i +"].UserCnt"));
-			aggregationItem.setGc6Cnt(_ctx.integerValue("OpsQueryImpactResponse.AggregationItems["+ i +"].Gc6Cnt"));
-			aggregationItem.setGc7Cnt(_ctx.integerValue("OpsQueryImpactResponse.AggregationItems["+ i +"].Gc7Cnt"));
-			aggregationItem.setAggregationValue(_ctx.stringValue("OpsQueryImpactResponse.AggregationItems["+ i +"].AggregationValue"));
-			aggregationItem.setStorageNcCnt(_ctx.integerValue("OpsQueryImpactResponse.AggregationItems["+ i +"].StorageNcCnt"));
 			aggregationItem.setGocVcpuCnt(_ctx.floatValue("OpsQueryImpactResponse.AggregationItems["+ i +"].GocVcpuCnt"));
-			aggregationItem.setStorageAffectVmCnt(_ctx.integerValue("OpsQueryImpactResponse.AggregationItems["+ i +"].StorageAffectVmCnt"));
+			aggregationItem.setVcpuCnt(_ctx.integerValue("OpsQueryImpactResponse.AggregationItems["+ i +"].VcpuCnt"));
 
 			aggregationItems.add(aggregationItem);
 		}

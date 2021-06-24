@@ -25,21 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsListCloudBoxSkusResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
 
 	private String nextToken;
 
+	private String requestId;
+
 	private List<CloudBoxSkuSet> cloudBoxSkuSets;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -57,6 +49,14 @@ public class OpsListCloudBoxSkusResponse extends AcsResponse {
 		this.nextToken = nextToken;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	public List<CloudBoxSkuSet> getCloudBoxSkuSets() {
 		return this.cloudBoxSkuSets;
 	}
@@ -67,102 +67,38 @@ public class OpsListCloudBoxSkusResponse extends AcsResponse {
 
 	public static class CloudBoxSkuSet {
 
-		private String cloudBoxSkuId;
-
-		private String bizType;
-
-		private String skuType;
-
-		private String description;
-
-		private String bandwidth;
-
-		private Float minBlockStorage;
-
-		private Float maxBlockStorage;
-
-		private Float length;
-
-		private Float width;
+		private Float powerConsumption;
 
 		private Float height;
 
+		private Float maxBlockStorage;
+
+		private String skuType;
+
+		private Float minBlockStorage;
+
+		private String bizType;
+
 		private Float weight;
 
-		private Float powerConsumption;
+		private String bandwidth;
+
+		private String description;
+
+		private String cloudBoxSkuId;
+
+		private Float width;
+
+		private Float length;
 
 		private List<InstanceTypeSet> instanceTypeSets;
 
-		public String getCloudBoxSkuId() {
-			return this.cloudBoxSkuId;
+		public Float getPowerConsumption() {
+			return this.powerConsumption;
 		}
 
-		public void setCloudBoxSkuId(String cloudBoxSkuId) {
-			this.cloudBoxSkuId = cloudBoxSkuId;
-		}
-
-		public String getBizType() {
-			return this.bizType;
-		}
-
-		public void setBizType(String bizType) {
-			this.bizType = bizType;
-		}
-
-		public String getSkuType() {
-			return this.skuType;
-		}
-
-		public void setSkuType(String skuType) {
-			this.skuType = skuType;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
-		public String getBandwidth() {
-			return this.bandwidth;
-		}
-
-		public void setBandwidth(String bandwidth) {
-			this.bandwidth = bandwidth;
-		}
-
-		public Float getMinBlockStorage() {
-			return this.minBlockStorage;
-		}
-
-		public void setMinBlockStorage(Float minBlockStorage) {
-			this.minBlockStorage = minBlockStorage;
-		}
-
-		public Float getMaxBlockStorage() {
-			return this.maxBlockStorage;
-		}
-
-		public void setMaxBlockStorage(Float maxBlockStorage) {
-			this.maxBlockStorage = maxBlockStorage;
-		}
-
-		public Float getLength() {
-			return this.length;
-		}
-
-		public void setLength(Float length) {
-			this.length = length;
-		}
-
-		public Float getWidth() {
-			return this.width;
-		}
-
-		public void setWidth(Float width) {
-			this.width = width;
+		public void setPowerConsumption(Float powerConsumption) {
+			this.powerConsumption = powerConsumption;
 		}
 
 		public Float getHeight() {
@@ -173,6 +109,38 @@ public class OpsListCloudBoxSkusResponse extends AcsResponse {
 			this.height = height;
 		}
 
+		public Float getMaxBlockStorage() {
+			return this.maxBlockStorage;
+		}
+
+		public void setMaxBlockStorage(Float maxBlockStorage) {
+			this.maxBlockStorage = maxBlockStorage;
+		}
+
+		public String getSkuType() {
+			return this.skuType;
+		}
+
+		public void setSkuType(String skuType) {
+			this.skuType = skuType;
+		}
+
+		public Float getMinBlockStorage() {
+			return this.minBlockStorage;
+		}
+
+		public void setMinBlockStorage(Float minBlockStorage) {
+			this.minBlockStorage = minBlockStorage;
+		}
+
+		public String getBizType() {
+			return this.bizType;
+		}
+
+		public void setBizType(String bizType) {
+			this.bizType = bizType;
+		}
+
 		public Float getWeight() {
 			return this.weight;
 		}
@@ -181,12 +149,44 @@ public class OpsListCloudBoxSkusResponse extends AcsResponse {
 			this.weight = weight;
 		}
 
-		public Float getPowerConsumption() {
-			return this.powerConsumption;
+		public String getBandwidth() {
+			return this.bandwidth;
 		}
 
-		public void setPowerConsumption(Float powerConsumption) {
-			this.powerConsumption = powerConsumption;
+		public void setBandwidth(String bandwidth) {
+			this.bandwidth = bandwidth;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getCloudBoxSkuId() {
+			return this.cloudBoxSkuId;
+		}
+
+		public void setCloudBoxSkuId(String cloudBoxSkuId) {
+			this.cloudBoxSkuId = cloudBoxSkuId;
+		}
+
+		public Float getWidth() {
+			return this.width;
+		}
+
+		public void setWidth(Float width) {
+			this.width = width;
+		}
+
+		public Float getLength() {
+			return this.length;
+		}
+
+		public void setLength(Float length) {
+			this.length = length;
 		}
 
 		public List<InstanceTypeSet> getInstanceTypeSets() {
@@ -199,19 +199,11 @@ public class OpsListCloudBoxSkusResponse extends AcsResponse {
 
 		public static class InstanceTypeSet {
 
-			private String instanceTypeName;
-
 			private Integer instanceTypeCount;
 
+			private String instanceTypeName;
+
 			private String instanceTypeFamily;
-
-			public String getInstanceTypeName() {
-				return this.instanceTypeName;
-			}
-
-			public void setInstanceTypeName(String instanceTypeName) {
-				this.instanceTypeName = instanceTypeName;
-			}
 
 			public Integer getInstanceTypeCount() {
 				return this.instanceTypeCount;
@@ -219,6 +211,14 @@ public class OpsListCloudBoxSkusResponse extends AcsResponse {
 
 			public void setInstanceTypeCount(Integer instanceTypeCount) {
 				this.instanceTypeCount = instanceTypeCount;
+			}
+
+			public String getInstanceTypeName() {
+				return this.instanceTypeName;
+			}
+
+			public void setInstanceTypeName(String instanceTypeName) {
+				this.instanceTypeName = instanceTypeName;
 			}
 
 			public String getInstanceTypeFamily() {

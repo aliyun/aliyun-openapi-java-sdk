@@ -25,17 +25,33 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsDescribeUserRegionResponse extends AcsResponse {
 
+	private Integer totalCount;
+
+	private String message;
+
 	private String requestId;
 
 	private String code;
 
-	private String message;
-
 	private String success;
 
-	private Integer totalCount;
-
 	private List<UserRegionModel> userRegionModels;
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -53,28 +69,12 @@ public class OpsDescribeUserRegionResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
 	public String getSuccess() {
 		return this.success;
 	}
 
 	public void setSuccess(String success) {
 		this.success = success;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
 	}
 
 	public List<UserRegionModel> getUserRegionModels() {
@@ -87,37 +87,21 @@ public class OpsDescribeUserRegionResponse extends AcsResponse {
 
 	public static class UserRegionModel {
 
-		private String regionNo;
-
-		private String izNo;
-
 		private String zoneGroupNo;
-
-		private String izState;
-
-		private String zoneGroupState;
-
-		private String bflag;
-
-		private String parentBflag;
 
 		private String zoneNos;
 
-		public String getRegionNo() {
-			return this.regionNo;
-		}
+		private String bflag;
 
-		public void setRegionNo(String regionNo) {
-			this.regionNo = regionNo;
-		}
+		private String regionNo;
 
-		public String getIzNo() {
-			return this.izNo;
-		}
+		private String zoneGroupState;
 
-		public void setIzNo(String izNo) {
-			this.izNo = izNo;
-		}
+		private String izState;
+
+		private String izNo;
+
+		private String parentBflag;
 
 		public String getZoneGroupNo() {
 			return this.zoneGroupNo;
@@ -127,20 +111,12 @@ public class OpsDescribeUserRegionResponse extends AcsResponse {
 			this.zoneGroupNo = zoneGroupNo;
 		}
 
-		public String getIzState() {
-			return this.izState;
+		public String getZoneNos() {
+			return this.zoneNos;
 		}
 
-		public void setIzState(String izState) {
-			this.izState = izState;
-		}
-
-		public String getZoneGroupState() {
-			return this.zoneGroupState;
-		}
-
-		public void setZoneGroupState(String zoneGroupState) {
-			this.zoneGroupState = zoneGroupState;
+		public void setZoneNos(String zoneNos) {
+			this.zoneNos = zoneNos;
 		}
 
 		public String getBflag() {
@@ -151,20 +127,44 @@ public class OpsDescribeUserRegionResponse extends AcsResponse {
 			this.bflag = bflag;
 		}
 
+		public String getRegionNo() {
+			return this.regionNo;
+		}
+
+		public void setRegionNo(String regionNo) {
+			this.regionNo = regionNo;
+		}
+
+		public String getZoneGroupState() {
+			return this.zoneGroupState;
+		}
+
+		public void setZoneGroupState(String zoneGroupState) {
+			this.zoneGroupState = zoneGroupState;
+		}
+
+		public String getIzState() {
+			return this.izState;
+		}
+
+		public void setIzState(String izState) {
+			this.izState = izState;
+		}
+
+		public String getIzNo() {
+			return this.izNo;
+		}
+
+		public void setIzNo(String izNo) {
+			this.izNo = izNo;
+		}
+
 		public String getParentBflag() {
 			return this.parentBflag;
 		}
 
 		public void setParentBflag(String parentBflag) {
 			this.parentBflag = parentBflag;
-		}
-
-		public String getZoneNos() {
-			return this.zoneNos;
-		}
-
-		public void setZoneNos(String zoneNos) {
-			this.zoneNos = zoneNos;
 		}
 	}
 

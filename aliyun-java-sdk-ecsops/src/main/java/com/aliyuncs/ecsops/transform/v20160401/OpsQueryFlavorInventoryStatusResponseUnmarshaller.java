@@ -31,8 +31,8 @@ public class OpsQueryFlavorInventoryStatusResponseUnmarshaller {
 		List<AZoneInventoryStatus> availableZones = new ArrayList<AZoneInventoryStatus>();
 		for (int i = 0; i < _ctx.lengthValue("OpsQueryFlavorInventoryStatusResponse.AvailableZones.Length"); i++) {
 			AZoneInventoryStatus aZoneInventoryStatus = new AZoneInventoryStatus();
-			aZoneInventoryStatus.setHouyiAvailableZoneNo(_ctx.stringValue("OpsQueryFlavorInventoryStatusResponse.AvailableZones["+ i +"].HouyiAvailableZoneNo"));
 			aZoneInventoryStatus.setStatus(_ctx.stringValue("OpsQueryFlavorInventoryStatusResponse.AvailableZones["+ i +"].Status"));
+			aZoneInventoryStatus.setHouyiAvailableZoneNo(_ctx.stringValue("OpsQueryFlavorInventoryStatusResponse.AvailableZones["+ i +"].HouyiAvailableZoneNo"));
 			aZoneInventoryStatus.setMeet(_ctx.booleanValue("OpsQueryFlavorInventoryStatusResponse.AvailableZones["+ i +"].Meet"));
 
 			availableZones.add(aZoneInventoryStatus);

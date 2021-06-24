@@ -26,8 +26,8 @@ public class OpsDescribeMigrationPreferencesResponseUnmarshaller {
 	public static OpsDescribeMigrationPreferencesResponse unmarshall(OpsDescribeMigrationPreferencesResponse opsDescribeMigrationPreferencesResponse, UnmarshallerContext _ctx) {
 		
 		opsDescribeMigrationPreferencesResponse.setRequestId(_ctx.stringValue("OpsDescribeMigrationPreferencesResponse.RequestId"));
-		opsDescribeMigrationPreferencesResponse.setRegionId(_ctx.stringValue("OpsDescribeMigrationPreferencesResponse.RegionId"));
 		opsDescribeMigrationPreferencesResponse.setMigrationNetworkType(_ctx.stringValue("OpsDescribeMigrationPreferencesResponse.MigrationNetworkType"));
+		opsDescribeMigrationPreferencesResponse.setRegionId(_ctx.stringValue("OpsDescribeMigrationPreferencesResponse.RegionId"));
 		opsDescribeMigrationPreferencesResponse.setAliUid(_ctx.longValue("OpsDescribeMigrationPreferencesResponse.AliUid"));
 
 		List<String> targetZoneIdSet = new ArrayList<String>();

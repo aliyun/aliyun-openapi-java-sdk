@@ -24,15 +24,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsModifyInstanceTypeAttributeResponse extends AcsResponse {
 
+	private String message;
+
 	private String requestId;
 
-	private String success;
+	private Integer httpStatusCode;
 
 	private String code;
 
-	private String message;
+	private String success;
 
-	private Integer httpStatusCode;
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -42,12 +50,12 @@ public class OpsModifyInstanceTypeAttributeResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getSuccess() {
-		return this.success;
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
 	}
 
-	public void setSuccess(String success) {
-		this.success = success;
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
 	}
 
 	public String getCode() {
@@ -58,20 +66,12 @@ public class OpsModifyInstanceTypeAttributeResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public String getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
-	public Integer getHttpStatusCode() {
-		return this.httpStatusCode;
-	}
-
-	public void setHttpStatusCode(Integer httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
+	public void setSuccess(String success) {
+		this.success = success;
 	}
 
 	@Override

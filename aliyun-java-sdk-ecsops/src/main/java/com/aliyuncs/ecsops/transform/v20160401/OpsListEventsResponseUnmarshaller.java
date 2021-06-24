@@ -28,26 +28,26 @@ public class OpsListEventsResponseUnmarshaller {
 	public static OpsListEventsResponse unmarshall(OpsListEventsResponse opsListEventsResponse, UnmarshallerContext _ctx) {
 		
 		opsListEventsResponse.setRequestId(_ctx.stringValue("OpsListEventsResponse.RequestId"));
-		opsListEventsResponse.setCode(_ctx.stringValue("OpsListEventsResponse.Code"));
-		opsListEventsResponse.setMessage(_ctx.stringValue("OpsListEventsResponse.Message"));
-		opsListEventsResponse.setSuccess(_ctx.stringValue("OpsListEventsResponse.Success"));
-		opsListEventsResponse.setPageNumber(_ctx.integerValue("OpsListEventsResponse.PageNumber"));
-		opsListEventsResponse.setPageSize(_ctx.integerValue("OpsListEventsResponse.PageSize"));
 		opsListEventsResponse.setTotalCount(_ctx.integerValue("OpsListEventsResponse.TotalCount"));
+		opsListEventsResponse.setMessage(_ctx.stringValue("OpsListEventsResponse.Message"));
+		opsListEventsResponse.setPageSize(_ctx.integerValue("OpsListEventsResponse.PageSize"));
+		opsListEventsResponse.setPageNumber(_ctx.integerValue("OpsListEventsResponse.PageNumber"));
+		opsListEventsResponse.setCode(_ctx.stringValue("OpsListEventsResponse.Code"));
+		opsListEventsResponse.setSuccess(_ctx.stringValue("OpsListEventsResponse.Success"));
 
 		List<Event> events = new ArrayList<Event>();
 		for (int i = 0; i < _ctx.lengthValue("OpsListEventsResponse.Events.Length"); i++) {
 			Event event = new Event();
 			event.setEventID(_ctx.stringValue("OpsListEventsResponse.Events["+ i +"].eventID"));
-			event.setEventType(_ctx.stringValue("OpsListEventsResponse.Events["+ i +"].eventType"));
-			event.setEventTypeVersion(_ctx.stringValue("OpsListEventsResponse.Events["+ i +"].eventTypeVersion"));
 			event.setCloudEventsVersion(_ctx.stringValue("OpsListEventsResponse.Events["+ i +"].cloudEventsVersion"));
-			event.setSource(_ctx.stringValue("OpsListEventsResponse.Events["+ i +"].source"));
-			event.setEventTime(_ctx.stringValue("OpsListEventsResponse.Events["+ i +"].eventTime"));
+			event.setEventTypeVersion(_ctx.stringValue("OpsListEventsResponse.Events["+ i +"].eventTypeVersion"));
 			event.setSchemaURL(_ctx.stringValue("OpsListEventsResponse.Events["+ i +"].schemaURL"));
-			event.setContentType(_ctx.stringValue("OpsListEventsResponse.Events["+ i +"].contentType"));
-			event.setExtensions(_ctx.mapValue("OpsListEventsResponse.Events["+ i +"].extensions"));
 			event.setData(_ctx.mapValue("OpsListEventsResponse.Events["+ i +"].data"));
+			event.setEventTime(_ctx.stringValue("OpsListEventsResponse.Events["+ i +"].eventTime"));
+			event.setSource(_ctx.stringValue("OpsListEventsResponse.Events["+ i +"].source"));
+			event.setContentType(_ctx.stringValue("OpsListEventsResponse.Events["+ i +"].contentType"));
+			event.setEventType(_ctx.stringValue("OpsListEventsResponse.Events["+ i +"].eventType"));
+			event.setExtensions(_ctx.mapValue("OpsListEventsResponse.Events["+ i +"].extensions"));
 
 			events.add(event);
 		}

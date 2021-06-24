@@ -32,8 +32,8 @@ public class OpsQueryInstanceVfioDeviceBdfsResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("OpsQueryInstanceVfioDeviceBdfsResponse.BdfList.Length"); i++) {
 			Bdf bdf = new Bdf();
 			bdf.setSourceDomain(_ctx.stringValue("OpsQueryInstanceVfioDeviceBdfsResponse.BdfList["+ i +"].SourceDomain"));
-			bdf.setSourceBdf(_ctx.stringValue("OpsQueryInstanceVfioDeviceBdfsResponse.BdfList["+ i +"].SourceBdf"));
 			bdf.setTargetDomain(_ctx.stringValue("OpsQueryInstanceVfioDeviceBdfsResponse.BdfList["+ i +"].TargetDomain"));
+			bdf.setSourceBdf(_ctx.stringValue("OpsQueryInstanceVfioDeviceBdfsResponse.BdfList["+ i +"].SourceBdf"));
 			bdf.setTargetBdf(_ctx.stringValue("OpsQueryInstanceVfioDeviceBdfsResponse.BdfList["+ i +"].TargetBdf"));
 
 			bdfList.add(bdf);

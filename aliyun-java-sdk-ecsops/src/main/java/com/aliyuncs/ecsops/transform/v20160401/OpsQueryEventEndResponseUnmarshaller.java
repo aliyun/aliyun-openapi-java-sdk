@@ -31,13 +31,13 @@ public class OpsQueryEventEndResponseUnmarshaller {
 		List<InstanceEvent> instanceEvents = new ArrayList<InstanceEvent>();
 		for (int i = 0; i < _ctx.lengthValue("OpsQueryEventEndResponse.InstanceEvents.Length"); i++) {
 			InstanceEvent instanceEvent = new InstanceEvent();
-			instanceEvent.setInstanceId(_ctx.stringValue("OpsQueryEventEndResponse.InstanceEvents["+ i +"].InstanceId"));
-			instanceEvent.setEventStartTime(_ctx.stringValue("OpsQueryEventEndResponse.InstanceEvents["+ i +"].EventStartTime"));
-			instanceEvent.setNcIp(_ctx.stringValue("OpsQueryEventEndResponse.InstanceEvents["+ i +"].NcIp"));
-			instanceEvent.setExceptionName(_ctx.stringValue("OpsQueryEventEndResponse.InstanceEvents["+ i +"].ExceptionName"));
 			instanceEvent.setEventEndTime(_ctx.stringValue("OpsQueryEventEndResponse.InstanceEvents["+ i +"].EventEndTime"));
-			instanceEvent.setAliUid(_ctx.stringValue("OpsQueryEventEndResponse.InstanceEvents["+ i +"].AliUid"));
+			instanceEvent.setEventStartTime(_ctx.stringValue("OpsQueryEventEndResponse.InstanceEvents["+ i +"].EventStartTime"));
 			instanceEvent.setCluster(_ctx.stringValue("OpsQueryEventEndResponse.InstanceEvents["+ i +"].Cluster"));
+			instanceEvent.setAliUid(_ctx.stringValue("OpsQueryEventEndResponse.InstanceEvents["+ i +"].AliUid"));
+			instanceEvent.setNcIp(_ctx.stringValue("OpsQueryEventEndResponse.InstanceEvents["+ i +"].NcIp"));
+			instanceEvent.setInstanceId(_ctx.stringValue("OpsQueryEventEndResponse.InstanceEvents["+ i +"].InstanceId"));
+			instanceEvent.setExceptionName(_ctx.stringValue("OpsQueryEventEndResponse.InstanceEvents["+ i +"].ExceptionName"));
 			instanceEvent.setReason(_ctx.stringValue("OpsQueryEventEndResponse.InstanceEvents["+ i +"].Reason"));
 			instanceEvent.setExtraData(_ctx.stringValue("OpsQueryEventEndResponse.InstanceEvents["+ i +"].ExtraData"));
 

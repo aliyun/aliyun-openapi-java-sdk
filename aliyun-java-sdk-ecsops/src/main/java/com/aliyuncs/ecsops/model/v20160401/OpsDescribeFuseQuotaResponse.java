@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsDescribeFuseQuotaResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
-
-	private Integer pageNumber;
 
 	private Integer pageSize;
 
+	private String requestId;
+
+	private Integer pageNumber;
+
 	private List<FuseQuota> fuseQuotas;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -51,20 +43,28 @@ public class OpsDescribeFuseQuotaResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<FuseQuota> getFuseQuotas() {
@@ -77,26 +77,42 @@ public class OpsDescribeFuseQuotaResponse extends AcsResponse {
 
 	public static class FuseQuota {
 
-		private Long id;
+		private String resourceType;
+
+		private String regionNo;
+
+		private Integer dailyQuota;
 
 		private Long gmtCreate;
 
 		private Long gmtModified;
 
+		private Long id;
+
 		private String operatorInfo;
 
-		private String regionNo;
-
-		private String resourceType;
-
-		private Integer dailyQuota;
-
-		public Long getId() {
-			return this.id;
+		public String getResourceType() {
+			return this.resourceType;
 		}
 
-		public void setId(Long id) {
-			this.id = id;
+		public void setResourceType(String resourceType) {
+			this.resourceType = resourceType;
+		}
+
+		public String getRegionNo() {
+			return this.regionNo;
+		}
+
+		public void setRegionNo(String regionNo) {
+			this.regionNo = regionNo;
+		}
+
+		public Integer getDailyQuota() {
+			return this.dailyQuota;
+		}
+
+		public void setDailyQuota(Integer dailyQuota) {
+			this.dailyQuota = dailyQuota;
 		}
 
 		public Long getGmtCreate() {
@@ -115,36 +131,20 @@ public class OpsDescribeFuseQuotaResponse extends AcsResponse {
 			this.gmtModified = gmtModified;
 		}
 
+		public Long getId() {
+			return this.id;
+		}
+
+		public void setId(Long id) {
+			this.id = id;
+		}
+
 		public String getOperatorInfo() {
 			return this.operatorInfo;
 		}
 
 		public void setOperatorInfo(String operatorInfo) {
 			this.operatorInfo = operatorInfo;
-		}
-
-		public String getRegionNo() {
-			return this.regionNo;
-		}
-
-		public void setRegionNo(String regionNo) {
-			this.regionNo = regionNo;
-		}
-
-		public String getResourceType() {
-			return this.resourceType;
-		}
-
-		public void setResourceType(String resourceType) {
-			this.resourceType = resourceType;
-		}
-
-		public Integer getDailyQuota() {
-			return this.dailyQuota;
-		}
-
-		public void setDailyQuota(Integer dailyQuota) {
-			this.dailyQuota = dailyQuota;
 		}
 	}
 

@@ -47,25 +47,17 @@ public class OpsDescribeEcsFlowLimitResponse extends AcsResponse {
 
 	public static class EcsFlowLimit {
 
-		private String instanceId;
-
 		private String networkType;
 
-		private EcsControlIntranetFlowLimit ecsControlIntranetFlowLimit;
-
-		private EcsControlInternetFlowLimit ecsControlInternetFlowLimit;
+		private String instanceId;
 
 		private AvsIntranetFlowLimit avsIntranetFlowLimit;
 
+		private EcsControlInternetFlowLimit ecsControlInternetFlowLimit;
+
+		private EcsControlIntranetFlowLimit ecsControlIntranetFlowLimit;
+
 		private AvsInternetFlowLimit avsInternetFlowLimit;
-
-		public String getInstanceId() {
-			return this.instanceId;
-		}
-
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
 
 		public String getNetworkType() {
 			return this.networkType;
@@ -75,20 +67,12 @@ public class OpsDescribeEcsFlowLimitResponse extends AcsResponse {
 			this.networkType = networkType;
 		}
 
-		public EcsControlIntranetFlowLimit getEcsControlIntranetFlowLimit() {
-			return this.ecsControlIntranetFlowLimit;
+		public String getInstanceId() {
+			return this.instanceId;
 		}
 
-		public void setEcsControlIntranetFlowLimit(EcsControlIntranetFlowLimit ecsControlIntranetFlowLimit) {
-			this.ecsControlIntranetFlowLimit = ecsControlIntranetFlowLimit;
-		}
-
-		public EcsControlInternetFlowLimit getEcsControlInternetFlowLimit() {
-			return this.ecsControlInternetFlowLimit;
-		}
-
-		public void setEcsControlInternetFlowLimit(EcsControlInternetFlowLimit ecsControlInternetFlowLimit) {
-			this.ecsControlInternetFlowLimit = ecsControlInternetFlowLimit;
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
 		}
 
 		public AvsIntranetFlowLimit getAvsIntranetFlowLimit() {
@@ -99,6 +83,22 @@ public class OpsDescribeEcsFlowLimitResponse extends AcsResponse {
 			this.avsIntranetFlowLimit = avsIntranetFlowLimit;
 		}
 
+		public EcsControlInternetFlowLimit getEcsControlInternetFlowLimit() {
+			return this.ecsControlInternetFlowLimit;
+		}
+
+		public void setEcsControlInternetFlowLimit(EcsControlInternetFlowLimit ecsControlInternetFlowLimit) {
+			this.ecsControlInternetFlowLimit = ecsControlInternetFlowLimit;
+		}
+
+		public EcsControlIntranetFlowLimit getEcsControlIntranetFlowLimit() {
+			return this.ecsControlIntranetFlowLimit;
+		}
+
+		public void setEcsControlIntranetFlowLimit(EcsControlIntranetFlowLimit ecsControlIntranetFlowLimit) {
+			this.ecsControlIntranetFlowLimit = ecsControlIntranetFlowLimit;
+		}
+
 		public AvsInternetFlowLimit getAvsInternetFlowLimit() {
 			return this.avsInternetFlowLimit;
 		}
@@ -107,146 +107,50 @@ public class OpsDescribeEcsFlowLimitResponse extends AcsResponse {
 			this.avsInternetFlowLimit = avsInternetFlowLimit;
 		}
 
-		public static class EcsControlIntranetFlowLimit {
-
-			private Long txBps;
-
-			private Long rxBps;
-
-			private Long txPps;
-
-			private Long rxPps;
-
-			private Long txBurst;
-
-			private Long rxBurst;
-
-			private Long txInitCredit;
-
-			private Long rxInitCredit;
-
-			private Long txMaxCredit;
-
-			private Long rxMaxCredit;
-
-			private Float txCreditAccumRate;
-
-			private Float rxCreditAccumRate;
-
-			private Float txCreditConsumRate;
-
-			private Float rxCreditConsumRate;
-
-			private Long sessionQuota;
-
-			private Long sessionEstablishRate;
+		public static class AvsIntranetFlowLimit {
 
 			private Long inhibitType;
 
+			private Float rxCreditConsumRate;
+
+			private Long sessionEstablishRate;
+
+			private Long txMaxCredit;
+
 			private Float inhibitRatio;
 
-			public Long getTxBps() {
-				return this.txBps;
+			private Long rxBps;
+
+			private Long rxBurst;
+
+			private Long txBps;
+
+			private Float txCreditConsumRate;
+
+			private Long txInitCredit;
+
+			private Long txPps;
+
+			private Long rxMaxCredit;
+
+			private Long txBurst;
+
+			private Float rxCreditAccumRate;
+
+			private Long sessionQuota;
+
+			private Long rxPps;
+
+			private Long rxInitCredit;
+
+			private Float txCreditAccumRate;
+
+			public Long getInhibitType() {
+				return this.inhibitType;
 			}
 
-			public void setTxBps(Long txBps) {
-				this.txBps = txBps;
-			}
-
-			public Long getRxBps() {
-				return this.rxBps;
-			}
-
-			public void setRxBps(Long rxBps) {
-				this.rxBps = rxBps;
-			}
-
-			public Long getTxPps() {
-				return this.txPps;
-			}
-
-			public void setTxPps(Long txPps) {
-				this.txPps = txPps;
-			}
-
-			public Long getRxPps() {
-				return this.rxPps;
-			}
-
-			public void setRxPps(Long rxPps) {
-				this.rxPps = rxPps;
-			}
-
-			public Long getTxBurst() {
-				return this.txBurst;
-			}
-
-			public void setTxBurst(Long txBurst) {
-				this.txBurst = txBurst;
-			}
-
-			public Long getRxBurst() {
-				return this.rxBurst;
-			}
-
-			public void setRxBurst(Long rxBurst) {
-				this.rxBurst = rxBurst;
-			}
-
-			public Long getTxInitCredit() {
-				return this.txInitCredit;
-			}
-
-			public void setTxInitCredit(Long txInitCredit) {
-				this.txInitCredit = txInitCredit;
-			}
-
-			public Long getRxInitCredit() {
-				return this.rxInitCredit;
-			}
-
-			public void setRxInitCredit(Long rxInitCredit) {
-				this.rxInitCredit = rxInitCredit;
-			}
-
-			public Long getTxMaxCredit() {
-				return this.txMaxCredit;
-			}
-
-			public void setTxMaxCredit(Long txMaxCredit) {
-				this.txMaxCredit = txMaxCredit;
-			}
-
-			public Long getRxMaxCredit() {
-				return this.rxMaxCredit;
-			}
-
-			public void setRxMaxCredit(Long rxMaxCredit) {
-				this.rxMaxCredit = rxMaxCredit;
-			}
-
-			public Float getTxCreditAccumRate() {
-				return this.txCreditAccumRate;
-			}
-
-			public void setTxCreditAccumRate(Float txCreditAccumRate) {
-				this.txCreditAccumRate = txCreditAccumRate;
-			}
-
-			public Float getRxCreditAccumRate() {
-				return this.rxCreditAccumRate;
-			}
-
-			public void setRxCreditAccumRate(Float rxCreditAccumRate) {
-				this.rxCreditAccumRate = rxCreditAccumRate;
-			}
-
-			public Float getTxCreditConsumRate() {
-				return this.txCreditConsumRate;
-			}
-
-			public void setTxCreditConsumRate(Float txCreditConsumRate) {
-				this.txCreditConsumRate = txCreditConsumRate;
+			public void setInhibitType(Long inhibitType) {
+				this.inhibitType = inhibitType;
 			}
 
 			public Float getRxCreditConsumRate() {
@@ -257,14 +161,6 @@ public class OpsDescribeEcsFlowLimitResponse extends AcsResponse {
 				this.rxCreditConsumRate = rxCreditConsumRate;
 			}
 
-			public Long getSessionQuota() {
-				return this.sessionQuota;
-			}
-
-			public void setSessionQuota(Long sessionQuota) {
-				this.sessionQuota = sessionQuota;
-			}
-
 			public Long getSessionEstablishRate() {
 				return this.sessionEstablishRate;
 			}
@@ -273,12 +169,12 @@ public class OpsDescribeEcsFlowLimitResponse extends AcsResponse {
 				this.sessionEstablishRate = sessionEstablishRate;
 			}
 
-			public Long getInhibitType() {
-				return this.inhibitType;
+			public Long getTxMaxCredit() {
+				return this.txMaxCredit;
 			}
 
-			public void setInhibitType(Long inhibitType) {
-				this.inhibitType = inhibitType;
+			public void setTxMaxCredit(Long txMaxCredit) {
+				this.txMaxCredit = txMaxCredit;
 			}
 
 			public Float getInhibitRatio() {
@@ -287,149 +183,157 @@ public class OpsDescribeEcsFlowLimitResponse extends AcsResponse {
 
 			public void setInhibitRatio(Float inhibitRatio) {
 				this.inhibitRatio = inhibitRatio;
+			}
+
+			public Long getRxBps() {
+				return this.rxBps;
+			}
+
+			public void setRxBps(Long rxBps) {
+				this.rxBps = rxBps;
+			}
+
+			public Long getRxBurst() {
+				return this.rxBurst;
+			}
+
+			public void setRxBurst(Long rxBurst) {
+				this.rxBurst = rxBurst;
+			}
+
+			public Long getTxBps() {
+				return this.txBps;
+			}
+
+			public void setTxBps(Long txBps) {
+				this.txBps = txBps;
+			}
+
+			public Float getTxCreditConsumRate() {
+				return this.txCreditConsumRate;
+			}
+
+			public void setTxCreditConsumRate(Float txCreditConsumRate) {
+				this.txCreditConsumRate = txCreditConsumRate;
+			}
+
+			public Long getTxInitCredit() {
+				return this.txInitCredit;
+			}
+
+			public void setTxInitCredit(Long txInitCredit) {
+				this.txInitCredit = txInitCredit;
+			}
+
+			public Long getTxPps() {
+				return this.txPps;
+			}
+
+			public void setTxPps(Long txPps) {
+				this.txPps = txPps;
+			}
+
+			public Long getRxMaxCredit() {
+				return this.rxMaxCredit;
+			}
+
+			public void setRxMaxCredit(Long rxMaxCredit) {
+				this.rxMaxCredit = rxMaxCredit;
+			}
+
+			public Long getTxBurst() {
+				return this.txBurst;
+			}
+
+			public void setTxBurst(Long txBurst) {
+				this.txBurst = txBurst;
+			}
+
+			public Float getRxCreditAccumRate() {
+				return this.rxCreditAccumRate;
+			}
+
+			public void setRxCreditAccumRate(Float rxCreditAccumRate) {
+				this.rxCreditAccumRate = rxCreditAccumRate;
+			}
+
+			public Long getSessionQuota() {
+				return this.sessionQuota;
+			}
+
+			public void setSessionQuota(Long sessionQuota) {
+				this.sessionQuota = sessionQuota;
+			}
+
+			public Long getRxPps() {
+				return this.rxPps;
+			}
+
+			public void setRxPps(Long rxPps) {
+				this.rxPps = rxPps;
+			}
+
+			public Long getRxInitCredit() {
+				return this.rxInitCredit;
+			}
+
+			public void setRxInitCredit(Long rxInitCredit) {
+				this.rxInitCredit = rxInitCredit;
+			}
+
+			public Float getTxCreditAccumRate() {
+				return this.txCreditAccumRate;
+			}
+
+			public void setTxCreditAccumRate(Float txCreditAccumRate) {
+				this.txCreditAccumRate = txCreditAccumRate;
 			}
 		}
 
 		public static class EcsControlInternetFlowLimit {
 
-			private Long txBps;
-
-			private Long rxBps;
-
-			private Long txPps;
-
-			private Long rxPps;
-
-			private Long txBurst;
-
-			private Long rxBurst;
-
-			private Long txInitCredit;
-
-			private Long rxInitCredit;
-
-			private Long txMaxCredit;
-
-			private Long rxMaxCredit;
-
-			private Float txCreditAccumRate;
-
-			private Float rxCreditAccumRate;
-
-			private Float txCreditConsumRate;
+			private Long inhibitType;
 
 			private Float rxCreditConsumRate;
 
-			private Long sessionQuota;
-
 			private Long sessionEstablishRate;
 
-			private Long inhibitType;
+			private Long txMaxCredit;
 
 			private Float inhibitRatio;
 
-			public Long getTxBps() {
-				return this.txBps;
+			private Long rxBps;
+
+			private Long rxBurst;
+
+			private Long txBps;
+
+			private Float txCreditConsumRate;
+
+			private Long txInitCredit;
+
+			private Long txPps;
+
+			private Long rxMaxCredit;
+
+			private Long txBurst;
+
+			private Float rxCreditAccumRate;
+
+			private Long sessionQuota;
+
+			private Long rxPps;
+
+			private Long rxInitCredit;
+
+			private Float txCreditAccumRate;
+
+			public Long getInhibitType() {
+				return this.inhibitType;
 			}
 
-			public void setTxBps(Long txBps) {
-				this.txBps = txBps;
-			}
-
-			public Long getRxBps() {
-				return this.rxBps;
-			}
-
-			public void setRxBps(Long rxBps) {
-				this.rxBps = rxBps;
-			}
-
-			public Long getTxPps() {
-				return this.txPps;
-			}
-
-			public void setTxPps(Long txPps) {
-				this.txPps = txPps;
-			}
-
-			public Long getRxPps() {
-				return this.rxPps;
-			}
-
-			public void setRxPps(Long rxPps) {
-				this.rxPps = rxPps;
-			}
-
-			public Long getTxBurst() {
-				return this.txBurst;
-			}
-
-			public void setTxBurst(Long txBurst) {
-				this.txBurst = txBurst;
-			}
-
-			public Long getRxBurst() {
-				return this.rxBurst;
-			}
-
-			public void setRxBurst(Long rxBurst) {
-				this.rxBurst = rxBurst;
-			}
-
-			public Long getTxInitCredit() {
-				return this.txInitCredit;
-			}
-
-			public void setTxInitCredit(Long txInitCredit) {
-				this.txInitCredit = txInitCredit;
-			}
-
-			public Long getRxInitCredit() {
-				return this.rxInitCredit;
-			}
-
-			public void setRxInitCredit(Long rxInitCredit) {
-				this.rxInitCredit = rxInitCredit;
-			}
-
-			public Long getTxMaxCredit() {
-				return this.txMaxCredit;
-			}
-
-			public void setTxMaxCredit(Long txMaxCredit) {
-				this.txMaxCredit = txMaxCredit;
-			}
-
-			public Long getRxMaxCredit() {
-				return this.rxMaxCredit;
-			}
-
-			public void setRxMaxCredit(Long rxMaxCredit) {
-				this.rxMaxCredit = rxMaxCredit;
-			}
-
-			public Float getTxCreditAccumRate() {
-				return this.txCreditAccumRate;
-			}
-
-			public void setTxCreditAccumRate(Float txCreditAccumRate) {
-				this.txCreditAccumRate = txCreditAccumRate;
-			}
-
-			public Float getRxCreditAccumRate() {
-				return this.rxCreditAccumRate;
-			}
-
-			public void setRxCreditAccumRate(Float rxCreditAccumRate) {
-				this.rxCreditAccumRate = rxCreditAccumRate;
-			}
-
-			public Float getTxCreditConsumRate() {
-				return this.txCreditConsumRate;
-			}
-
-			public void setTxCreditConsumRate(Float txCreditConsumRate) {
-				this.txCreditConsumRate = txCreditConsumRate;
+			public void setInhibitType(Long inhibitType) {
+				this.inhibitType = inhibitType;
 			}
 
 			public Float getRxCreditConsumRate() {
@@ -440,14 +344,6 @@ public class OpsDescribeEcsFlowLimitResponse extends AcsResponse {
 				this.rxCreditConsumRate = rxCreditConsumRate;
 			}
 
-			public Long getSessionQuota() {
-				return this.sessionQuota;
-			}
-
-			public void setSessionQuota(Long sessionQuota) {
-				this.sessionQuota = sessionQuota;
-			}
-
 			public Long getSessionEstablishRate() {
 				return this.sessionEstablishRate;
 			}
@@ -456,12 +352,12 @@ public class OpsDescribeEcsFlowLimitResponse extends AcsResponse {
 				this.sessionEstablishRate = sessionEstablishRate;
 			}
 
-			public Long getInhibitType() {
-				return this.inhibitType;
+			public Long getTxMaxCredit() {
+				return this.txMaxCredit;
 			}
 
-			public void setInhibitType(Long inhibitType) {
-				this.inhibitType = inhibitType;
+			public void setTxMaxCredit(Long txMaxCredit) {
+				this.txMaxCredit = txMaxCredit;
 			}
 
 			public Float getInhibitRatio() {
@@ -470,149 +366,157 @@ public class OpsDescribeEcsFlowLimitResponse extends AcsResponse {
 
 			public void setInhibitRatio(Float inhibitRatio) {
 				this.inhibitRatio = inhibitRatio;
+			}
+
+			public Long getRxBps() {
+				return this.rxBps;
+			}
+
+			public void setRxBps(Long rxBps) {
+				this.rxBps = rxBps;
+			}
+
+			public Long getRxBurst() {
+				return this.rxBurst;
+			}
+
+			public void setRxBurst(Long rxBurst) {
+				this.rxBurst = rxBurst;
+			}
+
+			public Long getTxBps() {
+				return this.txBps;
+			}
+
+			public void setTxBps(Long txBps) {
+				this.txBps = txBps;
+			}
+
+			public Float getTxCreditConsumRate() {
+				return this.txCreditConsumRate;
+			}
+
+			public void setTxCreditConsumRate(Float txCreditConsumRate) {
+				this.txCreditConsumRate = txCreditConsumRate;
+			}
+
+			public Long getTxInitCredit() {
+				return this.txInitCredit;
+			}
+
+			public void setTxInitCredit(Long txInitCredit) {
+				this.txInitCredit = txInitCredit;
+			}
+
+			public Long getTxPps() {
+				return this.txPps;
+			}
+
+			public void setTxPps(Long txPps) {
+				this.txPps = txPps;
+			}
+
+			public Long getRxMaxCredit() {
+				return this.rxMaxCredit;
+			}
+
+			public void setRxMaxCredit(Long rxMaxCredit) {
+				this.rxMaxCredit = rxMaxCredit;
+			}
+
+			public Long getTxBurst() {
+				return this.txBurst;
+			}
+
+			public void setTxBurst(Long txBurst) {
+				this.txBurst = txBurst;
+			}
+
+			public Float getRxCreditAccumRate() {
+				return this.rxCreditAccumRate;
+			}
+
+			public void setRxCreditAccumRate(Float rxCreditAccumRate) {
+				this.rxCreditAccumRate = rxCreditAccumRate;
+			}
+
+			public Long getSessionQuota() {
+				return this.sessionQuota;
+			}
+
+			public void setSessionQuota(Long sessionQuota) {
+				this.sessionQuota = sessionQuota;
+			}
+
+			public Long getRxPps() {
+				return this.rxPps;
+			}
+
+			public void setRxPps(Long rxPps) {
+				this.rxPps = rxPps;
+			}
+
+			public Long getRxInitCredit() {
+				return this.rxInitCredit;
+			}
+
+			public void setRxInitCredit(Long rxInitCredit) {
+				this.rxInitCredit = rxInitCredit;
+			}
+
+			public Float getTxCreditAccumRate() {
+				return this.txCreditAccumRate;
+			}
+
+			public void setTxCreditAccumRate(Float txCreditAccumRate) {
+				this.txCreditAccumRate = txCreditAccumRate;
 			}
 		}
 
-		public static class AvsIntranetFlowLimit {
-
-			private Long txBps;
-
-			private Long rxBps;
-
-			private Long txPps;
-
-			private Long rxPps;
-
-			private Long txBurst;
-
-			private Long rxBurst;
-
-			private Long txInitCredit;
-
-			private Long rxInitCredit;
-
-			private Long txMaxCredit;
-
-			private Long rxMaxCredit;
-
-			private Float txCreditAccumRate;
-
-			private Float rxCreditAccumRate;
-
-			private Float txCreditConsumRate;
-
-			private Float rxCreditConsumRate;
-
-			private Long sessionQuota;
-
-			private Long sessionEstablishRate;
+		public static class EcsControlIntranetFlowLimit {
 
 			private Long inhibitType;
 
+			private Float rxCreditConsumRate;
+
+			private Long sessionEstablishRate;
+
+			private Long txMaxCredit;
+
 			private Float inhibitRatio;
 
-			public Long getTxBps() {
-				return this.txBps;
+			private Long rxBps;
+
+			private Long rxBurst;
+
+			private Long txBps;
+
+			private Float txCreditConsumRate;
+
+			private Long txInitCredit;
+
+			private Long txPps;
+
+			private Long rxMaxCredit;
+
+			private Long txBurst;
+
+			private Float rxCreditAccumRate;
+
+			private Long sessionQuota;
+
+			private Long rxPps;
+
+			private Long rxInitCredit;
+
+			private Float txCreditAccumRate;
+
+			public Long getInhibitType() {
+				return this.inhibitType;
 			}
 
-			public void setTxBps(Long txBps) {
-				this.txBps = txBps;
-			}
-
-			public Long getRxBps() {
-				return this.rxBps;
-			}
-
-			public void setRxBps(Long rxBps) {
-				this.rxBps = rxBps;
-			}
-
-			public Long getTxPps() {
-				return this.txPps;
-			}
-
-			public void setTxPps(Long txPps) {
-				this.txPps = txPps;
-			}
-
-			public Long getRxPps() {
-				return this.rxPps;
-			}
-
-			public void setRxPps(Long rxPps) {
-				this.rxPps = rxPps;
-			}
-
-			public Long getTxBurst() {
-				return this.txBurst;
-			}
-
-			public void setTxBurst(Long txBurst) {
-				this.txBurst = txBurst;
-			}
-
-			public Long getRxBurst() {
-				return this.rxBurst;
-			}
-
-			public void setRxBurst(Long rxBurst) {
-				this.rxBurst = rxBurst;
-			}
-
-			public Long getTxInitCredit() {
-				return this.txInitCredit;
-			}
-
-			public void setTxInitCredit(Long txInitCredit) {
-				this.txInitCredit = txInitCredit;
-			}
-
-			public Long getRxInitCredit() {
-				return this.rxInitCredit;
-			}
-
-			public void setRxInitCredit(Long rxInitCredit) {
-				this.rxInitCredit = rxInitCredit;
-			}
-
-			public Long getTxMaxCredit() {
-				return this.txMaxCredit;
-			}
-
-			public void setTxMaxCredit(Long txMaxCredit) {
-				this.txMaxCredit = txMaxCredit;
-			}
-
-			public Long getRxMaxCredit() {
-				return this.rxMaxCredit;
-			}
-
-			public void setRxMaxCredit(Long rxMaxCredit) {
-				this.rxMaxCredit = rxMaxCredit;
-			}
-
-			public Float getTxCreditAccumRate() {
-				return this.txCreditAccumRate;
-			}
-
-			public void setTxCreditAccumRate(Float txCreditAccumRate) {
-				this.txCreditAccumRate = txCreditAccumRate;
-			}
-
-			public Float getRxCreditAccumRate() {
-				return this.rxCreditAccumRate;
-			}
-
-			public void setRxCreditAccumRate(Float rxCreditAccumRate) {
-				this.rxCreditAccumRate = rxCreditAccumRate;
-			}
-
-			public Float getTxCreditConsumRate() {
-				return this.txCreditConsumRate;
-			}
-
-			public void setTxCreditConsumRate(Float txCreditConsumRate) {
-				this.txCreditConsumRate = txCreditConsumRate;
+			public void setInhibitType(Long inhibitType) {
+				this.inhibitType = inhibitType;
 			}
 
 			public Float getRxCreditConsumRate() {
@@ -623,14 +527,6 @@ public class OpsDescribeEcsFlowLimitResponse extends AcsResponse {
 				this.rxCreditConsumRate = rxCreditConsumRate;
 			}
 
-			public Long getSessionQuota() {
-				return this.sessionQuota;
-			}
-
-			public void setSessionQuota(Long sessionQuota) {
-				this.sessionQuota = sessionQuota;
-			}
-
 			public Long getSessionEstablishRate() {
 				return this.sessionEstablishRate;
 			}
@@ -639,12 +535,12 @@ public class OpsDescribeEcsFlowLimitResponse extends AcsResponse {
 				this.sessionEstablishRate = sessionEstablishRate;
 			}
 
-			public Long getInhibitType() {
-				return this.inhibitType;
+			public Long getTxMaxCredit() {
+				return this.txMaxCredit;
 			}
 
-			public void setInhibitType(Long inhibitType) {
-				this.inhibitType = inhibitType;
+			public void setTxMaxCredit(Long txMaxCredit) {
+				this.txMaxCredit = txMaxCredit;
 			}
 
 			public Float getInhibitRatio() {
@@ -653,149 +549,157 @@ public class OpsDescribeEcsFlowLimitResponse extends AcsResponse {
 
 			public void setInhibitRatio(Float inhibitRatio) {
 				this.inhibitRatio = inhibitRatio;
+			}
+
+			public Long getRxBps() {
+				return this.rxBps;
+			}
+
+			public void setRxBps(Long rxBps) {
+				this.rxBps = rxBps;
+			}
+
+			public Long getRxBurst() {
+				return this.rxBurst;
+			}
+
+			public void setRxBurst(Long rxBurst) {
+				this.rxBurst = rxBurst;
+			}
+
+			public Long getTxBps() {
+				return this.txBps;
+			}
+
+			public void setTxBps(Long txBps) {
+				this.txBps = txBps;
+			}
+
+			public Float getTxCreditConsumRate() {
+				return this.txCreditConsumRate;
+			}
+
+			public void setTxCreditConsumRate(Float txCreditConsumRate) {
+				this.txCreditConsumRate = txCreditConsumRate;
+			}
+
+			public Long getTxInitCredit() {
+				return this.txInitCredit;
+			}
+
+			public void setTxInitCredit(Long txInitCredit) {
+				this.txInitCredit = txInitCredit;
+			}
+
+			public Long getTxPps() {
+				return this.txPps;
+			}
+
+			public void setTxPps(Long txPps) {
+				this.txPps = txPps;
+			}
+
+			public Long getRxMaxCredit() {
+				return this.rxMaxCredit;
+			}
+
+			public void setRxMaxCredit(Long rxMaxCredit) {
+				this.rxMaxCredit = rxMaxCredit;
+			}
+
+			public Long getTxBurst() {
+				return this.txBurst;
+			}
+
+			public void setTxBurst(Long txBurst) {
+				this.txBurst = txBurst;
+			}
+
+			public Float getRxCreditAccumRate() {
+				return this.rxCreditAccumRate;
+			}
+
+			public void setRxCreditAccumRate(Float rxCreditAccumRate) {
+				this.rxCreditAccumRate = rxCreditAccumRate;
+			}
+
+			public Long getSessionQuota() {
+				return this.sessionQuota;
+			}
+
+			public void setSessionQuota(Long sessionQuota) {
+				this.sessionQuota = sessionQuota;
+			}
+
+			public Long getRxPps() {
+				return this.rxPps;
+			}
+
+			public void setRxPps(Long rxPps) {
+				this.rxPps = rxPps;
+			}
+
+			public Long getRxInitCredit() {
+				return this.rxInitCredit;
+			}
+
+			public void setRxInitCredit(Long rxInitCredit) {
+				this.rxInitCredit = rxInitCredit;
+			}
+
+			public Float getTxCreditAccumRate() {
+				return this.txCreditAccumRate;
+			}
+
+			public void setTxCreditAccumRate(Float txCreditAccumRate) {
+				this.txCreditAccumRate = txCreditAccumRate;
 			}
 		}
 
 		public static class AvsInternetFlowLimit {
 
-			private Long txBps;
-
-			private Long rxBps;
-
-			private Long txPps;
-
-			private Long rxPps;
-
-			private Long txBurst;
-
-			private Long rxBurst;
-
-			private Long txInitCredit;
-
-			private Long rxInitCredit;
-
-			private Long txMaxCredit;
-
-			private Long rxMaxCredit;
-
-			private Float txCreditAccumRate;
-
-			private Float rxCreditAccumRate;
-
-			private Float txCreditConsumRate;
+			private Long inhibitType;
 
 			private Float rxCreditConsumRate;
 
-			private Long sessionQuota;
-
 			private Long sessionEstablishRate;
 
-			private Long inhibitType;
+			private Long txMaxCredit;
 
 			private Float inhibitRatio;
 
-			public Long getTxBps() {
-				return this.txBps;
+			private Long rxBps;
+
+			private Long rxBurst;
+
+			private Long txBps;
+
+			private Float txCreditConsumRate;
+
+			private Long txInitCredit;
+
+			private Long txPps;
+
+			private Long rxMaxCredit;
+
+			private Long txBurst;
+
+			private Float rxCreditAccumRate;
+
+			private Long sessionQuota;
+
+			private Long rxPps;
+
+			private Long rxInitCredit;
+
+			private Float txCreditAccumRate;
+
+			public Long getInhibitType() {
+				return this.inhibitType;
 			}
 
-			public void setTxBps(Long txBps) {
-				this.txBps = txBps;
-			}
-
-			public Long getRxBps() {
-				return this.rxBps;
-			}
-
-			public void setRxBps(Long rxBps) {
-				this.rxBps = rxBps;
-			}
-
-			public Long getTxPps() {
-				return this.txPps;
-			}
-
-			public void setTxPps(Long txPps) {
-				this.txPps = txPps;
-			}
-
-			public Long getRxPps() {
-				return this.rxPps;
-			}
-
-			public void setRxPps(Long rxPps) {
-				this.rxPps = rxPps;
-			}
-
-			public Long getTxBurst() {
-				return this.txBurst;
-			}
-
-			public void setTxBurst(Long txBurst) {
-				this.txBurst = txBurst;
-			}
-
-			public Long getRxBurst() {
-				return this.rxBurst;
-			}
-
-			public void setRxBurst(Long rxBurst) {
-				this.rxBurst = rxBurst;
-			}
-
-			public Long getTxInitCredit() {
-				return this.txInitCredit;
-			}
-
-			public void setTxInitCredit(Long txInitCredit) {
-				this.txInitCredit = txInitCredit;
-			}
-
-			public Long getRxInitCredit() {
-				return this.rxInitCredit;
-			}
-
-			public void setRxInitCredit(Long rxInitCredit) {
-				this.rxInitCredit = rxInitCredit;
-			}
-
-			public Long getTxMaxCredit() {
-				return this.txMaxCredit;
-			}
-
-			public void setTxMaxCredit(Long txMaxCredit) {
-				this.txMaxCredit = txMaxCredit;
-			}
-
-			public Long getRxMaxCredit() {
-				return this.rxMaxCredit;
-			}
-
-			public void setRxMaxCredit(Long rxMaxCredit) {
-				this.rxMaxCredit = rxMaxCredit;
-			}
-
-			public Float getTxCreditAccumRate() {
-				return this.txCreditAccumRate;
-			}
-
-			public void setTxCreditAccumRate(Float txCreditAccumRate) {
-				this.txCreditAccumRate = txCreditAccumRate;
-			}
-
-			public Float getRxCreditAccumRate() {
-				return this.rxCreditAccumRate;
-			}
-
-			public void setRxCreditAccumRate(Float rxCreditAccumRate) {
-				this.rxCreditAccumRate = rxCreditAccumRate;
-			}
-
-			public Float getTxCreditConsumRate() {
-				return this.txCreditConsumRate;
-			}
-
-			public void setTxCreditConsumRate(Float txCreditConsumRate) {
-				this.txCreditConsumRate = txCreditConsumRate;
+			public void setInhibitType(Long inhibitType) {
+				this.inhibitType = inhibitType;
 			}
 
 			public Float getRxCreditConsumRate() {
@@ -806,14 +710,6 @@ public class OpsDescribeEcsFlowLimitResponse extends AcsResponse {
 				this.rxCreditConsumRate = rxCreditConsumRate;
 			}
 
-			public Long getSessionQuota() {
-				return this.sessionQuota;
-			}
-
-			public void setSessionQuota(Long sessionQuota) {
-				this.sessionQuota = sessionQuota;
-			}
-
 			public Long getSessionEstablishRate() {
 				return this.sessionEstablishRate;
 			}
@@ -822,12 +718,12 @@ public class OpsDescribeEcsFlowLimitResponse extends AcsResponse {
 				this.sessionEstablishRate = sessionEstablishRate;
 			}
 
-			public Long getInhibitType() {
-				return this.inhibitType;
+			public Long getTxMaxCredit() {
+				return this.txMaxCredit;
 			}
 
-			public void setInhibitType(Long inhibitType) {
-				this.inhibitType = inhibitType;
+			public void setTxMaxCredit(Long txMaxCredit) {
+				this.txMaxCredit = txMaxCredit;
 			}
 
 			public Float getInhibitRatio() {
@@ -836,6 +732,110 @@ public class OpsDescribeEcsFlowLimitResponse extends AcsResponse {
 
 			public void setInhibitRatio(Float inhibitRatio) {
 				this.inhibitRatio = inhibitRatio;
+			}
+
+			public Long getRxBps() {
+				return this.rxBps;
+			}
+
+			public void setRxBps(Long rxBps) {
+				this.rxBps = rxBps;
+			}
+
+			public Long getRxBurst() {
+				return this.rxBurst;
+			}
+
+			public void setRxBurst(Long rxBurst) {
+				this.rxBurst = rxBurst;
+			}
+
+			public Long getTxBps() {
+				return this.txBps;
+			}
+
+			public void setTxBps(Long txBps) {
+				this.txBps = txBps;
+			}
+
+			public Float getTxCreditConsumRate() {
+				return this.txCreditConsumRate;
+			}
+
+			public void setTxCreditConsumRate(Float txCreditConsumRate) {
+				this.txCreditConsumRate = txCreditConsumRate;
+			}
+
+			public Long getTxInitCredit() {
+				return this.txInitCredit;
+			}
+
+			public void setTxInitCredit(Long txInitCredit) {
+				this.txInitCredit = txInitCredit;
+			}
+
+			public Long getTxPps() {
+				return this.txPps;
+			}
+
+			public void setTxPps(Long txPps) {
+				this.txPps = txPps;
+			}
+
+			public Long getRxMaxCredit() {
+				return this.rxMaxCredit;
+			}
+
+			public void setRxMaxCredit(Long rxMaxCredit) {
+				this.rxMaxCredit = rxMaxCredit;
+			}
+
+			public Long getTxBurst() {
+				return this.txBurst;
+			}
+
+			public void setTxBurst(Long txBurst) {
+				this.txBurst = txBurst;
+			}
+
+			public Float getRxCreditAccumRate() {
+				return this.rxCreditAccumRate;
+			}
+
+			public void setRxCreditAccumRate(Float rxCreditAccumRate) {
+				this.rxCreditAccumRate = rxCreditAccumRate;
+			}
+
+			public Long getSessionQuota() {
+				return this.sessionQuota;
+			}
+
+			public void setSessionQuota(Long sessionQuota) {
+				this.sessionQuota = sessionQuota;
+			}
+
+			public Long getRxPps() {
+				return this.rxPps;
+			}
+
+			public void setRxPps(Long rxPps) {
+				this.rxPps = rxPps;
+			}
+
+			public Long getRxInitCredit() {
+				return this.rxInitCredit;
+			}
+
+			public void setRxInitCredit(Long rxInitCredit) {
+				this.rxInitCredit = rxInitCredit;
+			}
+
+			public Float getTxCreditAccumRate() {
+				return this.txCreditAccumRate;
+			}
+
+			public void setTxCreditAccumRate(Float txCreditAccumRate) {
+				this.txCreditAccumRate = txCreditAccumRate;
 			}
 		}
 	}

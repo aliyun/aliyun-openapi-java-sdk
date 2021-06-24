@@ -25,40 +25,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsDescribeInstanceAclRulesResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String instanceId;
-
-	private Integer pageNumber;
+	private Integer totalCount;
 
 	private Integer pageSize;
 
-	private Integer totalCount;
+	private String requestId;
+
+	private Integer pageNumber;
+
+	private String instanceId;
 
 	private List<AclRule> aclRules;
 
-	public String getRequestId() {
-		return this.requestId;
+	public Integer getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public Integer getPageSize() {
@@ -69,12 +53,28 @@ public class OpsDescribeInstanceAclRulesResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public Integer getTotalCount() {
-		return this.totalCount;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
 	}
 
 	public List<AclRule> getAclRules() {
@@ -87,78 +87,30 @@ public class OpsDescribeInstanceAclRulesResponse extends AcsResponse {
 
 	public static class AclRule {
 
-		private String ipProtocol;
-
-		private String sourceCidrIp;
-
-		private String destCidrIp;
-
-		private String sourcePortRange;
-
-		private String destPortRange;
-
-		private String policy;
-
-		private String priority;
+		private String type;
 
 		private String direction;
 
-		private String type;
+		private String policy;
 
-		public String getIpProtocol() {
-			return this.ipProtocol;
+		private String sourceCidrIp;
+
+		private String destPortRange;
+
+		private String destCidrIp;
+
+		private String ipProtocol;
+
+		private String priority;
+
+		private String sourcePortRange;
+
+		public String getType() {
+			return this.type;
 		}
 
-		public void setIpProtocol(String ipProtocol) {
-			this.ipProtocol = ipProtocol;
-		}
-
-		public String getSourceCidrIp() {
-			return this.sourceCidrIp;
-		}
-
-		public void setSourceCidrIp(String sourceCidrIp) {
-			this.sourceCidrIp = sourceCidrIp;
-		}
-
-		public String getDestCidrIp() {
-			return this.destCidrIp;
-		}
-
-		public void setDestCidrIp(String destCidrIp) {
-			this.destCidrIp = destCidrIp;
-		}
-
-		public String getSourcePortRange() {
-			return this.sourcePortRange;
-		}
-
-		public void setSourcePortRange(String sourcePortRange) {
-			this.sourcePortRange = sourcePortRange;
-		}
-
-		public String getDestPortRange() {
-			return this.destPortRange;
-		}
-
-		public void setDestPortRange(String destPortRange) {
-			this.destPortRange = destPortRange;
-		}
-
-		public String getPolicy() {
-			return this.policy;
-		}
-
-		public void setPolicy(String policy) {
-			this.policy = policy;
-		}
-
-		public String getPriority() {
-			return this.priority;
-		}
-
-		public void setPriority(String priority) {
-			this.priority = priority;
+		public void setType(String type) {
+			this.type = type;
 		}
 
 		public String getDirection() {
@@ -169,12 +121,60 @@ public class OpsDescribeInstanceAclRulesResponse extends AcsResponse {
 			this.direction = direction;
 		}
 
-		public String getType() {
-			return this.type;
+		public String getPolicy() {
+			return this.policy;
 		}
 
-		public void setType(String type) {
-			this.type = type;
+		public void setPolicy(String policy) {
+			this.policy = policy;
+		}
+
+		public String getSourceCidrIp() {
+			return this.sourceCidrIp;
+		}
+
+		public void setSourceCidrIp(String sourceCidrIp) {
+			this.sourceCidrIp = sourceCidrIp;
+		}
+
+		public String getDestPortRange() {
+			return this.destPortRange;
+		}
+
+		public void setDestPortRange(String destPortRange) {
+			this.destPortRange = destPortRange;
+		}
+
+		public String getDestCidrIp() {
+			return this.destCidrIp;
+		}
+
+		public void setDestCidrIp(String destCidrIp) {
+			this.destCidrIp = destCidrIp;
+		}
+
+		public String getIpProtocol() {
+			return this.ipProtocol;
+		}
+
+		public void setIpProtocol(String ipProtocol) {
+			this.ipProtocol = ipProtocol;
+		}
+
+		public String getPriority() {
+			return this.priority;
+		}
+
+		public void setPriority(String priority) {
+			this.priority = priority;
+		}
+
+		public String getSourcePortRange() {
+			return this.sourcePortRange;
+		}
+
+		public void setSourcePortRange(String sourcePortRange) {
+			this.sourcePortRange = sourcePortRange;
 		}
 	}
 

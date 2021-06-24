@@ -33,30 +33,59 @@ public class OpsDescribeDiagnosticReportsResponseUnmarshaller {
 	public static OpsDescribeDiagnosticReportsResponse unmarshall(OpsDescribeDiagnosticReportsResponse opsDescribeDiagnosticReportsResponse, UnmarshallerContext _ctx) {
 		
 		opsDescribeDiagnosticReportsResponse.setRequestId(_ctx.stringValue("OpsDescribeDiagnosticReportsResponse.RequestId"));
-		opsDescribeDiagnosticReportsResponse.setMaxResults(_ctx.integerValue("OpsDescribeDiagnosticReportsResponse.MaxResults"));
 		opsDescribeDiagnosticReportsResponse.setNextToken(_ctx.stringValue("OpsDescribeDiagnosticReportsResponse.NextToken"));
+		opsDescribeDiagnosticReportsResponse.setMaxResults(_ctx.integerValue("OpsDescribeDiagnosticReportsResponse.MaxResults"));
 
 		List<Report> reports = new ArrayList<Report>();
 		for (int i = 0; i < _ctx.lengthValue("OpsDescribeDiagnosticReportsResponse.Reports.Length"); i++) {
 			Report report = new Report();
-			report.setReportId(_ctx.stringValue("OpsDescribeDiagnosticReportsResponse.Reports["+ i +"].ReportId"));
-			report.setResourceId(_ctx.stringValue("OpsDescribeDiagnosticReportsResponse.Reports["+ i +"].ResourceId"));
-			report.setResourceType(_ctx.stringValue("OpsDescribeDiagnosticReportsResponse.Reports["+ i +"].ResourceType"));
-			report.setCreationTime(_ctx.stringValue("OpsDescribeDiagnosticReportsResponse.Reports["+ i +"].CreationTime"));
-			report.setFinishedTime(_ctx.stringValue("OpsDescribeDiagnosticReportsResponse.Reports["+ i +"].FinishedTime"));
-			report.setStartTime(_ctx.stringValue("OpsDescribeDiagnosticReportsResponse.Reports["+ i +"].StartTime"));
-			report.setEndTime(_ctx.stringValue("OpsDescribeDiagnosticReportsResponse.Reports["+ i +"].EndTime"));
-			report.setSeverity(_ctx.stringValue("OpsDescribeDiagnosticReportsResponse.Reports["+ i +"].Severity"));
 			report.setStatus(_ctx.stringValue("OpsDescribeDiagnosticReportsResponse.Reports["+ i +"].Status"));
+			report.setSeverity(_ctx.stringValue("OpsDescribeDiagnosticReportsResponse.Reports["+ i +"].Severity"));
+			report.setCreationTime(_ctx.stringValue("OpsDescribeDiagnosticReportsResponse.Reports["+ i +"].CreationTime"));
+			report.setReportId(_ctx.stringValue("OpsDescribeDiagnosticReportsResponse.Reports["+ i +"].ReportId"));
+			report.setEndTime(_ctx.stringValue("OpsDescribeDiagnosticReportsResponse.Reports["+ i +"].EndTime"));
+			report.setStartTime(_ctx.stringValue("OpsDescribeDiagnosticReportsResponse.Reports["+ i +"].StartTime"));
+			report.setResourceType(_ctx.stringValue("OpsDescribeDiagnosticReportsResponse.Reports["+ i +"].ResourceType"));
+			report.setFinishedTime(_ctx.stringValue("OpsDescribeDiagnosticReportsResponse.Reports["+ i +"].FinishedTime"));
+			report.setResourceId(_ctx.stringValue("OpsDescribeDiagnosticReportsResponse.Reports["+ i +"].ResourceId"));
+
+			List<Item> items = new ArrayList<Item>();
+			for (int j = 0; j < _ctx.lengthValue("OpsDescribeDiagnosticReportsResponse.Reports["+ i +"].Items.Length"); j++) {
+				Item item = new Item();
+				item.setStatus(_ctx.stringValue("OpsDescribeDiagnosticReportsResponse.Reports["+ i +"].Items["+ j +"].Status"));
+				item.setSeverity(_ctx.stringValue("OpsDescribeDiagnosticReportsResponse.Reports["+ i +"].Items["+ j +"].Severity"));
+				item.setItemCategory(_ctx.stringValue("OpsDescribeDiagnosticReportsResponse.Reports["+ i +"].Items["+ j +"].ItemCategory"));
+				item.setItemCode(_ctx.stringValue("OpsDescribeDiagnosticReportsResponse.Reports["+ i +"].Items["+ j +"].ItemCode"));
+				item.setOccurrenceTime(_ctx.stringValue("OpsDescribeDiagnosticReportsResponse.Reports["+ i +"].Items["+ j +"].OccurrenceTime"));
+				item.setOccurrenceStartTime(_ctx.stringValue("OpsDescribeDiagnosticReportsResponse.Reports["+ i +"].Items["+ j +"].OccurrenceStartTime"));
+				item.setOccurrenceCounts(_ctx.longValue("OpsDescribeDiagnosticReportsResponse.Reports["+ i +"].Items["+ j +"].OccurrenceCounts"));
+				item.setReason(_ctx.stringValue("OpsDescribeDiagnosticReportsResponse.Reports["+ i +"].Items["+ j +"].Reason"));
+
+				List<ItemData> itemDatas = new ArrayList<ItemData>();
+				for (int k = 0; k < _ctx.lengthValue("OpsDescribeDiagnosticReportsResponse.Reports["+ i +"].Items["+ j +"].ItemDatas.Length"); k++) {
+					ItemData itemData = new ItemData();
+					itemData.setValue(_ctx.stringValue("OpsDescribeDiagnosticReportsResponse.Reports["+ i +"].Items["+ j +"].ItemDatas["+ k +"].Value"));
+					itemData.setName(_ctx.stringValue("OpsDescribeDiagnosticReportsResponse.Reports["+ i +"].Items["+ j +"].ItemDatas["+ k +"].Name"));
+
+					itemDatas.add(itemData);
+				}
+				item.setItemDatas(itemDatas);
+
+				items.add(item);
+			}
+			report.setItems(items);
 
 			List<Issue> issues = new ArrayList<Issue>();
 			for (int j = 0; j < _ctx.lengthValue("OpsDescribeDiagnosticReportsResponse.Reports["+ i +"].Issues.Length"); j++) {
 				Issue issue = new Issue();
-				issue.setIssueCategory(_ctx.stringValue("OpsDescribeDiagnosticReportsResponse.Reports["+ i +"].Issues["+ j +"].IssueCategory"));
+				issue.setSeverity(_ctx.stringValue("OpsDescribeDiagnosticReportsResponse.Reports["+ i +"].Issues["+ j +"].Severity"));
 				issue.setIssueCode(_ctx.stringValue("OpsDescribeDiagnosticReportsResponse.Reports["+ i +"].Issues["+ j +"].IssueCode"));
 				issue.setMessage(_ctx.stringValue("OpsDescribeDiagnosticReportsResponse.Reports["+ i +"].Issues["+ j +"].Message"));
-				issue.setSeverity(_ctx.stringValue("OpsDescribeDiagnosticReportsResponse.Reports["+ i +"].Issues["+ j +"].Severity"));
 				issue.setOccurrenceTime(_ctx.stringValue("OpsDescribeDiagnosticReportsResponse.Reports["+ i +"].Issues["+ j +"].OccurrenceTime"));
+				issue.setOccurrenceStartTime(_ctx.stringValue("OpsDescribeDiagnosticReportsResponse.Reports["+ i +"].Issues["+ j +"].OccurrenceStartTime"));
+				issue.setOccurrenceCounts(_ctx.longValue("OpsDescribeDiagnosticReportsResponse.Reports["+ i +"].Issues["+ j +"].OccurrenceCounts"));
+				issue.setReason(_ctx.stringValue("OpsDescribeDiagnosticReportsResponse.Reports["+ i +"].Issues["+ j +"].Reason"));
+				issue.setIssueCategory(_ctx.stringValue("OpsDescribeDiagnosticReportsResponse.Reports["+ i +"].Issues["+ j +"].IssueCategory"));
 
 				List<RecommendedAction> recommendedActions = new ArrayList<RecommendedAction>();
 				for (int k = 0; k < _ctx.lengthValue("OpsDescribeDiagnosticReportsResponse.Reports["+ i +"].Issues["+ j +"].RecommendedActions.Length"); k++) {
@@ -81,29 +110,6 @@ public class OpsDescribeDiagnosticReportsResponseUnmarshaller {
 				issues.add(issue);
 			}
 			report.setIssues(issues);
-
-			List<Item> items = new ArrayList<Item>();
-			for (int j = 0; j < _ctx.lengthValue("OpsDescribeDiagnosticReportsResponse.Reports["+ i +"].Items.Length"); j++) {
-				Item item = new Item();
-				item.setItemCode(_ctx.stringValue("OpsDescribeDiagnosticReportsResponse.Reports["+ i +"].Items["+ j +"].ItemCode"));
-				item.setItemCategory(_ctx.stringValue("OpsDescribeDiagnosticReportsResponse.Reports["+ i +"].Items["+ j +"].ItemCategory"));
-				item.setSeverity(_ctx.stringValue("OpsDescribeDiagnosticReportsResponse.Reports["+ i +"].Items["+ j +"].Severity"));
-				item.setStatus(_ctx.stringValue("OpsDescribeDiagnosticReportsResponse.Reports["+ i +"].Items["+ j +"].Status"));
-				item.setOccurrenceTime(_ctx.stringValue("OpsDescribeDiagnosticReportsResponse.Reports["+ i +"].Items["+ j +"].OccurrenceTime"));
-
-				List<ItemData> itemDatas = new ArrayList<ItemData>();
-				for (int k = 0; k < _ctx.lengthValue("OpsDescribeDiagnosticReportsResponse.Reports["+ i +"].Items["+ j +"].ItemDatas.Length"); k++) {
-					ItemData itemData = new ItemData();
-					itemData.setName(_ctx.stringValue("OpsDescribeDiagnosticReportsResponse.Reports["+ i +"].Items["+ j +"].ItemDatas["+ k +"].Name"));
-					itemData.setValue(_ctx.stringValue("OpsDescribeDiagnosticReportsResponse.Reports["+ i +"].Items["+ j +"].ItemDatas["+ k +"].Value"));
-
-					itemDatas.add(itemData);
-				}
-				item.setItemDatas(itemDatas);
-
-				items.add(item);
-			}
-			report.setItems(items);
 
 			List<RecentEvent> recentEvents = new ArrayList<RecentEvent>();
 			for (int j = 0; j < _ctx.lengthValue("OpsDescribeDiagnosticReportsResponse.Reports["+ i +"].RecentEvents.Length"); j++) {

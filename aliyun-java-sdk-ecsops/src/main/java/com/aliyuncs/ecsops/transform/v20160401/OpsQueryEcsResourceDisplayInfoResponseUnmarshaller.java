@@ -23,10 +23,10 @@ public class OpsQueryEcsResourceDisplayInfoResponseUnmarshaller {
 	public static OpsQueryEcsResourceDisplayInfoResponse unmarshall(OpsQueryEcsResourceDisplayInfoResponse opsQueryEcsResourceDisplayInfoResponse, UnmarshallerContext _ctx) {
 		
 		opsQueryEcsResourceDisplayInfoResponse.setRequestId(_ctx.stringValue("OpsQueryEcsResourceDisplayInfoResponse.RequestId"));
-		opsQueryEcsResourceDisplayInfoResponse.setCode(_ctx.stringValue("OpsQueryEcsResourceDisplayInfoResponse.Code"));
 		opsQueryEcsResourceDisplayInfoResponse.setMessage(_ctx.stringValue("OpsQueryEcsResourceDisplayInfoResponse.Message"));
-		opsQueryEcsResourceDisplayInfoResponse.setSuccess(_ctx.booleanValue("OpsQueryEcsResourceDisplayInfoResponse.Success"));
 		opsQueryEcsResourceDisplayInfoResponse.setData(_ctx.stringValue("OpsQueryEcsResourceDisplayInfoResponse.Data"));
+		opsQueryEcsResourceDisplayInfoResponse.setCode(_ctx.stringValue("OpsQueryEcsResourceDisplayInfoResponse.Code"));
+		opsQueryEcsResourceDisplayInfoResponse.setSuccess(_ctx.booleanValue("OpsQueryEcsResourceDisplayInfoResponse.Success"));
 	 
 	 	return opsQueryEcsResourceDisplayInfoResponse;
 	}

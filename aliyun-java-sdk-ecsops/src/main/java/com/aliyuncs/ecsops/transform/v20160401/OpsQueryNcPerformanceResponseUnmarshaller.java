@@ -32,56 +32,56 @@ public class OpsQueryNcPerformanceResponseUnmarshaller {
 
 		NcPerInfo ncPerInfo = new NcPerInfo();
 
-		List<CpuException> cpuExceptions = new ArrayList<CpuException>();
-		for (int i = 0; i < _ctx.lengthValue("OpsQueryNcPerformanceResponse.NcPerInfo.CpuExceptions.Length"); i++) {
-			CpuException cpuException = new CpuException();
-			cpuException.setUnit(_ctx.stringValue("OpsQueryNcPerformanceResponse.NcPerInfo.CpuExceptions["+ i +"].Unit"));
-			cpuException.setSlsKey(_ctx.stringValue("OpsQueryNcPerformanceResponse.NcPerInfo.CpuExceptions["+ i +"].SlsKey"));
-			cpuException.setIsPrimary(_ctx.booleanValue("OpsQueryNcPerformanceResponse.NcPerInfo.CpuExceptions["+ i +"].IsPrimary"));
-			cpuException.setLevel(_ctx.stringValue("OpsQueryNcPerformanceResponse.NcPerInfo.CpuExceptions["+ i +"].Level"));
-			cpuException.setName(_ctx.stringValue("OpsQueryNcPerformanceResponse.NcPerInfo.CpuExceptions["+ i +"].Name"));
-			cpuException.setDescription(_ctx.stringValue("OpsQueryNcPerformanceResponse.NcPerInfo.CpuExceptions["+ i +"].Description"));
-			cpuException.setExceptionDesc(_ctx.stringValue("OpsQueryNcPerformanceResponse.NcPerInfo.CpuExceptions["+ i +"].ExceptionDesc"));
-			cpuException.setCategory(_ctx.stringValue("OpsQueryNcPerformanceResponse.NcPerInfo.CpuExceptions["+ i +"].Category"));
-			cpuException.setPerfValue(_ctx.stringValue("OpsQueryNcPerformanceResponse.NcPerInfo.CpuExceptions["+ i +"].PerfValue"));
+		List<NetworkException> networkExceptions = new ArrayList<NetworkException>();
+		for (int i = 0; i < _ctx.lengthValue("OpsQueryNcPerformanceResponse.NcPerInfo.NetworkExceptions.Length"); i++) {
+			NetworkException networkException = new NetworkException();
+			networkException.setExceptionDesc(_ctx.stringValue("OpsQueryNcPerformanceResponse.NcPerInfo.NetworkExceptions["+ i +"].ExceptionDesc"));
+			networkException.setPerfValue(_ctx.stringValue("OpsQueryNcPerformanceResponse.NcPerInfo.NetworkExceptions["+ i +"].PerfValue"));
+			networkException.setDescription(_ctx.stringValue("OpsQueryNcPerformanceResponse.NcPerInfo.NetworkExceptions["+ i +"].Description"));
+			networkException.setUnit(_ctx.stringValue("OpsQueryNcPerformanceResponse.NcPerInfo.NetworkExceptions["+ i +"].Unit"));
+			networkException.setSlsKey(_ctx.stringValue("OpsQueryNcPerformanceResponse.NcPerInfo.NetworkExceptions["+ i +"].SlsKey"));
+			networkException.setIsPrimary(_ctx.booleanValue("OpsQueryNcPerformanceResponse.NcPerInfo.NetworkExceptions["+ i +"].IsPrimary"));
+			networkException.setCategory(_ctx.stringValue("OpsQueryNcPerformanceResponse.NcPerInfo.NetworkExceptions["+ i +"].Category"));
+			networkException.setName(_ctx.stringValue("OpsQueryNcPerformanceResponse.NcPerInfo.NetworkExceptions["+ i +"].Name"));
+			networkException.setLevel(_ctx.stringValue("OpsQueryNcPerformanceResponse.NcPerInfo.NetworkExceptions["+ i +"].Level"));
 
-			cpuExceptions.add(cpuException);
+			networkExceptions.add(networkException);
 		}
-		ncPerInfo.setCpuExceptions(cpuExceptions);
+		ncPerInfo.setNetworkExceptions(networkExceptions);
 
 		List<DiskException> diskExceptions = new ArrayList<DiskException>();
 		for (int i = 0; i < _ctx.lengthValue("OpsQueryNcPerformanceResponse.NcPerInfo.DiskExceptions.Length"); i++) {
 			DiskException diskException = new DiskException();
+			diskException.setExceptionDesc(_ctx.stringValue("OpsQueryNcPerformanceResponse.NcPerInfo.DiskExceptions["+ i +"].ExceptionDesc"));
+			diskException.setPerfValue(_ctx.stringValue("OpsQueryNcPerformanceResponse.NcPerInfo.DiskExceptions["+ i +"].PerfValue"));
+			diskException.setDescription(_ctx.stringValue("OpsQueryNcPerformanceResponse.NcPerInfo.DiskExceptions["+ i +"].Description"));
 			diskException.setUnit(_ctx.stringValue("OpsQueryNcPerformanceResponse.NcPerInfo.DiskExceptions["+ i +"].Unit"));
 			diskException.setSlsKey(_ctx.stringValue("OpsQueryNcPerformanceResponse.NcPerInfo.DiskExceptions["+ i +"].SlsKey"));
 			diskException.setIsPrimary(_ctx.booleanValue("OpsQueryNcPerformanceResponse.NcPerInfo.DiskExceptions["+ i +"].IsPrimary"));
-			diskException.setLevel(_ctx.stringValue("OpsQueryNcPerformanceResponse.NcPerInfo.DiskExceptions["+ i +"].Level"));
-			diskException.setName(_ctx.stringValue("OpsQueryNcPerformanceResponse.NcPerInfo.DiskExceptions["+ i +"].Name"));
-			diskException.setDescription(_ctx.stringValue("OpsQueryNcPerformanceResponse.NcPerInfo.DiskExceptions["+ i +"].Description"));
-			diskException.setExceptionDesc(_ctx.stringValue("OpsQueryNcPerformanceResponse.NcPerInfo.DiskExceptions["+ i +"].ExceptionDesc"));
 			diskException.setCategory(_ctx.stringValue("OpsQueryNcPerformanceResponse.NcPerInfo.DiskExceptions["+ i +"].Category"));
-			diskException.setPerfValue(_ctx.stringValue("OpsQueryNcPerformanceResponse.NcPerInfo.DiskExceptions["+ i +"].PerfValue"));
+			diskException.setName(_ctx.stringValue("OpsQueryNcPerformanceResponse.NcPerInfo.DiskExceptions["+ i +"].Name"));
+			diskException.setLevel(_ctx.stringValue("OpsQueryNcPerformanceResponse.NcPerInfo.DiskExceptions["+ i +"].Level"));
 
 			diskExceptions.add(diskException);
 		}
 		ncPerInfo.setDiskExceptions(diskExceptions);
 
-		List<NetworkException> networkExceptions = new ArrayList<NetworkException>();
-		for (int i = 0; i < _ctx.lengthValue("OpsQueryNcPerformanceResponse.NcPerInfo.NetworkExceptions.Length"); i++) {
-			NetworkException networkException = new NetworkException();
-			networkException.setUnit(_ctx.stringValue("OpsQueryNcPerformanceResponse.NcPerInfo.NetworkExceptions["+ i +"].Unit"));
-			networkException.setSlsKey(_ctx.stringValue("OpsQueryNcPerformanceResponse.NcPerInfo.NetworkExceptions["+ i +"].SlsKey"));
-			networkException.setIsPrimary(_ctx.booleanValue("OpsQueryNcPerformanceResponse.NcPerInfo.NetworkExceptions["+ i +"].IsPrimary"));
-			networkException.setLevel(_ctx.stringValue("OpsQueryNcPerformanceResponse.NcPerInfo.NetworkExceptions["+ i +"].Level"));
-			networkException.setName(_ctx.stringValue("OpsQueryNcPerformanceResponse.NcPerInfo.NetworkExceptions["+ i +"].Name"));
-			networkException.setDescription(_ctx.stringValue("OpsQueryNcPerformanceResponse.NcPerInfo.NetworkExceptions["+ i +"].Description"));
-			networkException.setExceptionDesc(_ctx.stringValue("OpsQueryNcPerformanceResponse.NcPerInfo.NetworkExceptions["+ i +"].ExceptionDesc"));
-			networkException.setCategory(_ctx.stringValue("OpsQueryNcPerformanceResponse.NcPerInfo.NetworkExceptions["+ i +"].Category"));
-			networkException.setPerfValue(_ctx.stringValue("OpsQueryNcPerformanceResponse.NcPerInfo.NetworkExceptions["+ i +"].PerfValue"));
+		List<CpuException> cpuExceptions = new ArrayList<CpuException>();
+		for (int i = 0; i < _ctx.lengthValue("OpsQueryNcPerformanceResponse.NcPerInfo.CpuExceptions.Length"); i++) {
+			CpuException cpuException = new CpuException();
+			cpuException.setExceptionDesc(_ctx.stringValue("OpsQueryNcPerformanceResponse.NcPerInfo.CpuExceptions["+ i +"].ExceptionDesc"));
+			cpuException.setPerfValue(_ctx.stringValue("OpsQueryNcPerformanceResponse.NcPerInfo.CpuExceptions["+ i +"].PerfValue"));
+			cpuException.setDescription(_ctx.stringValue("OpsQueryNcPerformanceResponse.NcPerInfo.CpuExceptions["+ i +"].Description"));
+			cpuException.setUnit(_ctx.stringValue("OpsQueryNcPerformanceResponse.NcPerInfo.CpuExceptions["+ i +"].Unit"));
+			cpuException.setSlsKey(_ctx.stringValue("OpsQueryNcPerformanceResponse.NcPerInfo.CpuExceptions["+ i +"].SlsKey"));
+			cpuException.setIsPrimary(_ctx.booleanValue("OpsQueryNcPerformanceResponse.NcPerInfo.CpuExceptions["+ i +"].IsPrimary"));
+			cpuException.setCategory(_ctx.stringValue("OpsQueryNcPerformanceResponse.NcPerInfo.CpuExceptions["+ i +"].Category"));
+			cpuException.setName(_ctx.stringValue("OpsQueryNcPerformanceResponse.NcPerInfo.CpuExceptions["+ i +"].Name"));
+			cpuException.setLevel(_ctx.stringValue("OpsQueryNcPerformanceResponse.NcPerInfo.CpuExceptions["+ i +"].Level"));
 
-			networkExceptions.add(networkException);
+			cpuExceptions.add(cpuException);
 		}
-		ncPerInfo.setNetworkExceptions(networkExceptions);
+		ncPerInfo.setCpuExceptions(cpuExceptions);
 		opsQueryNcPerformanceResponse.setNcPerInfo(ncPerInfo);
 	 
 	 	return opsQueryNcPerformanceResponse;

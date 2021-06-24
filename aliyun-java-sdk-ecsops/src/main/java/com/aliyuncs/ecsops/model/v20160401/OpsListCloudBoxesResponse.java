@@ -25,21 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsListCloudBoxesResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
 
 	private String nextToken;
 
+	private String requestId;
+
 	private List<CloudBoxSet> cloudBoxSets;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -57,6 +49,14 @@ public class OpsListCloudBoxesResponse extends AcsResponse {
 		this.nextToken = nextToken;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	public List<CloudBoxSet> getCloudBoxSets() {
 		return this.cloudBoxSets;
 	}
@@ -67,23 +67,31 @@ public class OpsListCloudBoxesResponse extends AcsResponse {
 
 	public static class CloudBoxSet {
 
+		private String status;
+
 		private String cloudBoxId;
 
 		private String description;
 
-		private String cloudBoxName;
+		private String zoneId;
 
 		private String cloudBoxSiteId;
 
-		private String zoneId;
-
-		private String status;
+		private String cloudBoxName;
 
 		private List<String> businessStatus;
 
+		private CloudBoxCapacity cloudBoxCapacity;
+
 		private LifecycleAttribute lifecycleAttribute;
 
-		private CloudBoxCapacity cloudBoxCapacity;
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
 
 		public String getCloudBoxId() {
 			return this.cloudBoxId;
@@ -101,12 +109,12 @@ public class OpsListCloudBoxesResponse extends AcsResponse {
 			this.description = description;
 		}
 
-		public String getCloudBoxName() {
-			return this.cloudBoxName;
+		public String getZoneId() {
+			return this.zoneId;
 		}
 
-		public void setCloudBoxName(String cloudBoxName) {
-			this.cloudBoxName = cloudBoxName;
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
 		}
 
 		public String getCloudBoxSiteId() {
@@ -117,20 +125,12 @@ public class OpsListCloudBoxesResponse extends AcsResponse {
 			this.cloudBoxSiteId = cloudBoxSiteId;
 		}
 
-		public String getZoneId() {
-			return this.zoneId;
+		public String getCloudBoxName() {
+			return this.cloudBoxName;
 		}
 
-		public void setZoneId(String zoneId) {
-			this.zoneId = zoneId;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
+		public void setCloudBoxName(String cloudBoxName) {
+			this.cloudBoxName = cloudBoxName;
 		}
 
 		public List<String> getBusinessStatus() {
@@ -141,14 +141,6 @@ public class OpsListCloudBoxesResponse extends AcsResponse {
 			this.businessStatus = businessStatus;
 		}
 
-		public LifecycleAttribute getLifecycleAttribute() {
-			return this.lifecycleAttribute;
-		}
-
-		public void setLifecycleAttribute(LifecycleAttribute lifecycleAttribute) {
-			this.lifecycleAttribute = lifecycleAttribute;
-		}
-
 		public CloudBoxCapacity getCloudBoxCapacity() {
 			return this.cloudBoxCapacity;
 		}
@@ -157,27 +149,12 @@ public class OpsListCloudBoxesResponse extends AcsResponse {
 			this.cloudBoxCapacity = cloudBoxCapacity;
 		}
 
-		public static class LifecycleAttribute {
+		public LifecycleAttribute getLifecycleAttribute() {
+			return this.lifecycleAttribute;
+		}
 
-			private String expiredTime;
-
-			private String startServiceTime;
-
-			public String getExpiredTime() {
-				return this.expiredTime;
-			}
-
-			public void setExpiredTime(String expiredTime) {
-				this.expiredTime = expiredTime;
-			}
-
-			public String getStartServiceTime() {
-				return this.startServiceTime;
-			}
-
-			public void setStartServiceTime(String startServiceTime) {
-				this.startServiceTime = startServiceTime;
-			}
+		public void setLifecycleAttribute(LifecycleAttribute lifecycleAttribute) {
+			this.lifecycleAttribute = lifecycleAttribute;
 		}
 
 		public static class CloudBoxCapacity {
@@ -204,19 +181,11 @@ public class OpsListCloudBoxesResponse extends AcsResponse {
 
 			public static class EcsCapacitySet {
 
-				private String instanceTypeName;
-
 				private Integer instanceTypeCount;
 
+				private String instanceTypeName;
+
 				private String instanceTypeFamily;
-
-				public String getInstanceTypeName() {
-					return this.instanceTypeName;
-				}
-
-				public void setInstanceTypeName(String instanceTypeName) {
-					this.instanceTypeName = instanceTypeName;
-				}
 
 				public Integer getInstanceTypeCount() {
 					return this.instanceTypeCount;
@@ -226,6 +195,14 @@ public class OpsListCloudBoxesResponse extends AcsResponse {
 					this.instanceTypeCount = instanceTypeCount;
 				}
 
+				public String getInstanceTypeName() {
+					return this.instanceTypeName;
+				}
+
+				public void setInstanceTypeName(String instanceTypeName) {
+					this.instanceTypeName = instanceTypeName;
+				}
+
 				public String getInstanceTypeFamily() {
 					return this.instanceTypeFamily;
 				}
@@ -233,6 +210,29 @@ public class OpsListCloudBoxesResponse extends AcsResponse {
 				public void setInstanceTypeFamily(String instanceTypeFamily) {
 					this.instanceTypeFamily = instanceTypeFamily;
 				}
+			}
+		}
+
+		public static class LifecycleAttribute {
+
+			private String expiredTime;
+
+			private String startServiceTime;
+
+			public String getExpiredTime() {
+				return this.expiredTime;
+			}
+
+			public void setExpiredTime(String expiredTime) {
+				this.expiredTime = expiredTime;
+			}
+
+			public String getStartServiceTime() {
+				return this.startServiceTime;
+			}
+
+			public void setStartServiceTime(String startServiceTime) {
+				this.startServiceTime = startServiceTime;
 			}
 		}
 	}

@@ -17,7 +17,6 @@ package com.aliyuncs.ecsops.model.v20160401;
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
 import com.aliyuncs.http.MethodType;
-import com.aliyuncs.ecsops.Endpoint;
 
 /**
  * @author auto create
@@ -52,12 +51,8 @@ public class OpsCreateAdvisorCheckRequest extends RpcAcsRequest<OpsCreateAdvisor
 
 	private String auditParamStr;
 	public OpsCreateAdvisorCheckRequest() {
-		super("Ecsops", "2016-04-01", "OpsCreateAdvisorCheck", "ecs");
+		super("Ecsops", "2016-04-01", "OpsCreateAdvisorCheck", "ecsops");
 		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
 	}
 
 	public Integer getVisibility() {
@@ -93,8 +88,8 @@ public class OpsCreateAdvisorCheckRequest extends RpcAcsRequest<OpsCreateAdvisor
 				putQueryParameter("Column." + (depth1 + 1) + ".Field" , columns.get(depth1).getField());
 				putQueryParameter("Column." + (depth1 + 1) + ".DataType" , columns.get(depth1).getDataType());
 				putQueryParameter("Column." + (depth1 + 1) + ".DisplayName" , columns.get(depth1).getDisplayName());
-				putQueryParameter("Column." + (depth1 + 1) + ".Width" , columns.get(depth1).getWidth());
 				putQueryParameter("Column." + (depth1 + 1) + ".CustomSort" , columns.get(depth1).getCustomSort());
+				putQueryParameter("Column." + (depth1 + 1) + ".Width" , columns.get(depth1).getWidth());
 				putQueryParameter("Column." + (depth1 + 1) + ".Sortable" , columns.get(depth1).getSortable());
 			}
 		}	
@@ -222,9 +217,9 @@ public class OpsCreateAdvisorCheckRequest extends RpcAcsRequest<OpsCreateAdvisor
 
 		private String displayName;
 
-		private String width;
-
 		private String customSort;
+
+		private String width;
 
 		private Boolean sortable;
 
@@ -252,20 +247,20 @@ public class OpsCreateAdvisorCheckRequest extends RpcAcsRequest<OpsCreateAdvisor
 			this.displayName = displayName;
 		}
 
-		public String getWidth() {
-			return this.width;
-		}
-
-		public void setWidth(String width) {
-			this.width = width;
-		}
-
 		public String getCustomSort() {
 			return this.customSort;
 		}
 
 		public void setCustomSort(String customSort) {
 			this.customSort = customSort;
+		}
+
+		public String getWidth() {
+			return this.width;
+		}
+
+		public void setWidth(String width) {
+			this.width = width;
 		}
 
 		public Boolean getSortable() {

@@ -47,17 +47,9 @@ public class OpsQueryEcsPermitResponse extends AcsResponse {
 
 	public static class Permition {
 
-		private String permitKey;
-
 		private String permitValue;
 
-		public String getPermitKey() {
-			return this.permitKey;
-		}
-
-		public void setPermitKey(String permitKey) {
-			this.permitKey = permitKey;
-		}
+		private String permitKey;
 
 		public String getPermitValue() {
 			return this.permitValue;
@@ -65,6 +57,14 @@ public class OpsQueryEcsPermitResponse extends AcsResponse {
 
 		public void setPermitValue(String permitValue) {
 			this.permitValue = permitValue;
+		}
+
+		public String getPermitKey() {
+			return this.permitKey;
+		}
+
+		public void setPermitKey(String permitKey) {
+			this.permitKey = permitKey;
 		}
 	}
 

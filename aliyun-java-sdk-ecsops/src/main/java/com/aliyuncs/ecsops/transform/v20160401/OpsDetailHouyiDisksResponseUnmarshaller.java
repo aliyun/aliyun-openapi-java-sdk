@@ -28,29 +28,29 @@ public class OpsDetailHouyiDisksResponseUnmarshaller {
 		
 		opsDetailHouyiDisksResponse.setRequestId(_ctx.stringValue("OpsDetailHouyiDisksResponse.RequestId"));
 		opsDetailHouyiDisksResponse.setTotalCount(_ctx.integerValue("OpsDetailHouyiDisksResponse.TotalCount"));
-		opsDetailHouyiDisksResponse.setPageNumber(_ctx.integerValue("OpsDetailHouyiDisksResponse.PageNumber"));
-		opsDetailHouyiDisksResponse.setPageSize(_ctx.integerValue("OpsDetailHouyiDisksResponse.PageSize"));
 		opsDetailHouyiDisksResponse.setNextToken(_ctx.stringValue("OpsDetailHouyiDisksResponse.NextToken"));
+		opsDetailHouyiDisksResponse.setPageSize(_ctx.integerValue("OpsDetailHouyiDisksResponse.PageSize"));
+		opsDetailHouyiDisksResponse.setPageNumber(_ctx.integerValue("OpsDetailHouyiDisksResponse.PageNumber"));
 
 		List<DiskItem> diskSet = new ArrayList<DiskItem>();
 		for (int i = 0; i < _ctx.lengthValue("OpsDetailHouyiDisksResponse.DiskSet.Length"); i++) {
 			DiskItem diskItem = new DiskItem();
-			diskItem.setDiskId(_ctx.stringValue("OpsDetailHouyiDisksResponse.DiskSet["+ i +"].DiskId"));
-			diskItem.setDiskName(_ctx.stringValue("OpsDetailHouyiDisksResponse.DiskSet["+ i +"].DiskName"));
-			diskItem.setDiskSize(_ctx.stringValue("OpsDetailHouyiDisksResponse.DiskSet["+ i +"].DiskSize"));
-			diskItem.setDiskType(_ctx.stringValue("OpsDetailHouyiDisksResponse.DiskSet["+ i +"].DiskType"));
-			diskItem.setAvailableZoneId(_ctx.stringValue("OpsDetailHouyiDisksResponse.DiskSet["+ i +"].AvailableZoneId"));
-			diskItem.setZoneId(_ctx.stringValue("OpsDetailHouyiDisksResponse.DiskSet["+ i +"].ZoneId"));
 			diskItem.setStatus(_ctx.stringValue("OpsDetailHouyiDisksResponse.DiskSet["+ i +"].Status"));
-			diskItem.setInstanceId(_ctx.stringValue("OpsDetailHouyiDisksResponse.DiskSet["+ i +"].InstanceId"));
-			diskItem.setIopsW(_ctx.stringValue("OpsDetailHouyiDisksResponse.DiskSet["+ i +"].IopsW"));
-			diskItem.setIopsR(_ctx.stringValue("OpsDetailHouyiDisksResponse.DiskSet["+ i +"].IopsR"));
 			diskItem.setBpsR(_ctx.stringValue("OpsDetailHouyiDisksResponse.DiskSet["+ i +"].BpsR"));
 			diskItem.setBpsW(_ctx.stringValue("OpsDetailHouyiDisksResponse.DiskSet["+ i +"].BpsW"));
-			diskItem.setBps(_ctx.stringValue("OpsDetailHouyiDisksResponse.DiskSet["+ i +"].Bps"));
+			diskItem.setAvailableZoneId(_ctx.stringValue("OpsDetailHouyiDisksResponse.DiskSet["+ i +"].AvailableZoneId"));
+			diskItem.setDiskSize(_ctx.stringValue("OpsDetailHouyiDisksResponse.DiskSet["+ i +"].DiskSize"));
+			diskItem.setDiskType(_ctx.stringValue("OpsDetailHouyiDisksResponse.DiskSet["+ i +"].DiskType"));
+			diskItem.setDiskId(_ctx.stringValue("OpsDetailHouyiDisksResponse.DiskSet["+ i +"].DiskId"));
+			diskItem.setInstanceId(_ctx.stringValue("OpsDetailHouyiDisksResponse.DiskSet["+ i +"].InstanceId"));
 			diskItem.setIops(_ctx.stringValue("OpsDetailHouyiDisksResponse.DiskSet["+ i +"].Iops"));
 			diskItem.setDriver(_ctx.stringValue("OpsDetailHouyiDisksResponse.DiskSet["+ i +"].Driver"));
+			diskItem.setBps(_ctx.stringValue("OpsDetailHouyiDisksResponse.DiskSet["+ i +"].Bps"));
+			diskItem.setIopsR(_ctx.stringValue("OpsDetailHouyiDisksResponse.DiskSet["+ i +"].IopsR"));
+			diskItem.setIopsW(_ctx.stringValue("OpsDetailHouyiDisksResponse.DiskSet["+ i +"].IopsW"));
 			diskItem.setDevice(_ctx.stringValue("OpsDetailHouyiDisksResponse.DiskSet["+ i +"].Device"));
+			diskItem.setDiskName(_ctx.stringValue("OpsDetailHouyiDisksResponse.DiskSet["+ i +"].DiskName"));
+			diskItem.setZoneId(_ctx.stringValue("OpsDetailHouyiDisksResponse.DiskSet["+ i +"].ZoneId"));
 			diskItem.setSerialNumber(_ctx.stringValue("OpsDetailHouyiDisksResponse.DiskSet["+ i +"].serialNumber"));
 
 			diskSet.add(diskItem);

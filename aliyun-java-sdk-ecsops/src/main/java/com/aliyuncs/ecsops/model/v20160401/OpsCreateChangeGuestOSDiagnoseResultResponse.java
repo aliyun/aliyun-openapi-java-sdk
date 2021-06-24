@@ -49,9 +49,9 @@ public class OpsCreateChangeGuestOSDiagnoseResultResponse extends AcsResponse {
 
 		private String status;
 
-		private String name;
-
 		private String parameters;
+
+		private String name;
 
 		public String getStatus() {
 			return this.status;
@@ -61,20 +61,20 @@ public class OpsCreateChangeGuestOSDiagnoseResultResponse extends AcsResponse {
 			this.status = status;
 		}
 
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
 		public String getParameters() {
 			return this.parameters;
 		}
 
 		public void setParameters(String parameters) {
 			this.parameters = parameters;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
 		}
 	}
 

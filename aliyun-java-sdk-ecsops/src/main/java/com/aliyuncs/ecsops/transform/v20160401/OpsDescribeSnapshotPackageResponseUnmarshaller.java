@@ -28,16 +28,16 @@ public class OpsDescribeSnapshotPackageResponseUnmarshaller {
 		
 		opsDescribeSnapshotPackageResponse.setRequestId(_ctx.stringValue("OpsDescribeSnapshotPackageResponse.RequestId"));
 		opsDescribeSnapshotPackageResponse.setTotalCount(_ctx.integerValue("OpsDescribeSnapshotPackageResponse.TotalCount"));
-		opsDescribeSnapshotPackageResponse.setPageNumber(_ctx.integerValue("OpsDescribeSnapshotPackageResponse.PageNumber"));
 		opsDescribeSnapshotPackageResponse.setPageSize(_ctx.integerValue("OpsDescribeSnapshotPackageResponse.PageSize"));
+		opsDescribeSnapshotPackageResponse.setPageNumber(_ctx.integerValue("OpsDescribeSnapshotPackageResponse.PageNumber"));
 
 		List<SnapshotPackageModel> snapshotPackageModels = new ArrayList<SnapshotPackageModel>();
 		for (int i = 0; i < _ctx.lengthValue("OpsDescribeSnapshotPackageResponse.SnapshotPackageModels.Length"); i++) {
 			SnapshotPackageModel snapshotPackageModel = new SnapshotPackageModel();
-			snapshotPackageModel.setInstanceName(_ctx.stringValue("OpsDescribeSnapshotPackageResponse.SnapshotPackageModels["+ i +"].InstanceName"));
+			snapshotPackageModel.setEndTime(_ctx.stringValue("OpsDescribeSnapshotPackageResponse.SnapshotPackageModels["+ i +"].EndTime"));
 			snapshotPackageModel.setDisplayName(_ctx.stringValue("OpsDescribeSnapshotPackageResponse.SnapshotPackageModels["+ i +"].DisplayName"));
 			snapshotPackageModel.setStartTime(_ctx.stringValue("OpsDescribeSnapshotPackageResponse.SnapshotPackageModels["+ i +"].StartTime"));
-			snapshotPackageModel.setEndTime(_ctx.stringValue("OpsDescribeSnapshotPackageResponse.SnapshotPackageModels["+ i +"].EndTime"));
+			snapshotPackageModel.setInstanceName(_ctx.stringValue("OpsDescribeSnapshotPackageResponse.SnapshotPackageModels["+ i +"].InstanceName"));
 			snapshotPackageModel.setInitCapacity(_ctx.longValue("OpsDescribeSnapshotPackageResponse.SnapshotPackageModels["+ i +"].InitCapacity"));
 
 			snapshotPackageModels.add(snapshotPackageModel);

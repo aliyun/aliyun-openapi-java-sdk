@@ -25,21 +25,29 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsDescribeCloudOpsIcloneAppsResponse extends AcsResponse {
 
+	private Integer totalCount;
+
 	private String requestId;
-
-	private String bizCode;
-
-	private String bizMessage;
-
-	private Integer count;
-
-	private Integer page;
 
 	private Integer pageSize;
 
-	private Integer totalCount;
+	private String bizMessage;
+
+	private Integer page;
+
+	private Integer count;
+
+	private String bizCode;
 
 	private List<IcloneAppInfo> data;
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -47,38 +55,6 @@ public class OpsDescribeCloudOpsIcloneAppsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getBizCode() {
-		return this.bizCode;
-	}
-
-	public void setBizCode(String bizCode) {
-		this.bizCode = bizCode;
-	}
-
-	public String getBizMessage() {
-		return this.bizMessage;
-	}
-
-	public void setBizMessage(String bizMessage) {
-		this.bizMessage = bizMessage;
-	}
-
-	public Integer getCount() {
-		return this.count;
-	}
-
-	public void setCount(Integer count) {
-		this.count = count;
-	}
-
-	public Integer getPage() {
-		return this.page;
-	}
-
-	public void setPage(Integer page) {
-		this.page = page;
 	}
 
 	public Integer getPageSize() {
@@ -89,12 +65,36 @@ public class OpsDescribeCloudOpsIcloneAppsResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public Integer getTotalCount() {
-		return this.totalCount;
+	public String getBizMessage() {
+		return this.bizMessage;
 	}
 
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
+	public void setBizMessage(String bizMessage) {
+		this.bizMessage = bizMessage;
+	}
+
+	public Integer getPage() {
+		return this.page;
+	}
+
+	public void setPage(Integer page) {
+		this.page = page;
+	}
+
+	public Integer getCount() {
+		return this.count;
+	}
+
+	public void setCount(Integer count) {
+		this.count = count;
+	}
+
+	public String getBizCode() {
+		return this.bizCode;
+	}
+
+	public void setBizCode(String bizCode) {
+		this.bizCode = bizCode;
 	}
 
 	public List<IcloneAppInfo> getData() {
@@ -109,13 +109,13 @@ public class OpsDescribeCloudOpsIcloneAppsResponse extends AcsResponse {
 
 		private String appName;
 
+		private String sn;
+
 		private String ip;
 
 		private String os;
 
 		private String osProfile;
-
-		private String sn;
 
 		public String getAppName() {
 			return this.appName;
@@ -123,6 +123,14 @@ public class OpsDescribeCloudOpsIcloneAppsResponse extends AcsResponse {
 
 		public void setAppName(String appName) {
 			this.appName = appName;
+		}
+
+		public String getSn() {
+			return this.sn;
+		}
+
+		public void setSn(String sn) {
+			this.sn = sn;
 		}
 
 		public String getIp() {
@@ -147,14 +155,6 @@ public class OpsDescribeCloudOpsIcloneAppsResponse extends AcsResponse {
 
 		public void setOsProfile(String osProfile) {
 			this.osProfile = osProfile;
-		}
-
-		public String getSn() {
-			return this.sn;
-		}
-
-		public void setSn(String sn) {
-			this.sn = sn;
 		}
 	}
 

@@ -28,24 +28,24 @@ public class OpsBatchStartInstanceResponseUnmarshaller {
 	public static OpsBatchStartInstanceResponse unmarshall(OpsBatchStartInstanceResponse opsBatchStartInstanceResponse, UnmarshallerContext _ctx) {
 		
 		opsBatchStartInstanceResponse.setRequestId(_ctx.stringValue("OpsBatchStartInstanceResponse.RequestId"));
-		opsBatchStartInstanceResponse.setSuccess(_ctx.booleanValue("OpsBatchStartInstanceResponse.Success"));
-		opsBatchStartInstanceResponse.setCode(_ctx.stringValue("OpsBatchStartInstanceResponse.Code"));
 		opsBatchStartInstanceResponse.setMessage(_ctx.stringValue("OpsBatchStartInstanceResponse.Message"));
+		opsBatchStartInstanceResponse.setCode(_ctx.stringValue("OpsBatchStartInstanceResponse.Code"));
+		opsBatchStartInstanceResponse.setSuccess(_ctx.booleanValue("OpsBatchStartInstanceResponse.Success"));
 
 		Data data = new Data();
-		data.setTaskId(_ctx.stringValue("OpsBatchStartInstanceResponse.Data.TaskId"));
 		data.setHasFailed(_ctx.booleanValue("OpsBatchStartInstanceResponse.Data.HasFailed"));
+		data.setTaskId(_ctx.stringValue("OpsBatchStartInstanceResponse.Data.TaskId"));
 
 		List<OperateResponseModel> operateResponseModels = new ArrayList<OperateResponseModel>();
 		for (int i = 0; i < _ctx.lengthValue("OpsBatchStartInstanceResponse.Data.OperateResponseModels.Length"); i++) {
 			OperateResponseModel operateResponseModel = new OperateResponseModel();
+			operateResponseModel.setCurrentStatus(_ctx.stringValue("OpsBatchStartInstanceResponse.Data.OperateResponseModels["+ i +"].CurrentStatus"));
+			operateResponseModel.setEcsId(_ctx.longValue("OpsBatchStartInstanceResponse.Data.OperateResponseModels["+ i +"].EcsId"));
+			operateResponseModel.setPreviousStatus(_ctx.stringValue("OpsBatchStartInstanceResponse.Data.OperateResponseModels["+ i +"].PreviousStatus"));
 			operateResponseModel.setCode(_ctx.stringValue("OpsBatchStartInstanceResponse.Data.OperateResponseModels["+ i +"].Code"));
 			operateResponseModel.setMessage(_ctx.stringValue("OpsBatchStartInstanceResponse.Data.OperateResponseModels["+ i +"].Message"));
-			operateResponseModel.setEcsId(_ctx.longValue("OpsBatchStartInstanceResponse.Data.OperateResponseModels["+ i +"].EcsId"));
 			operateResponseModel.setInstanceId(_ctx.stringValue("OpsBatchStartInstanceResponse.Data.OperateResponseModels["+ i +"].InstanceId"));
 			operateResponseModel.setEcsAction(_ctx.stringValue("OpsBatchStartInstanceResponse.Data.OperateResponseModels["+ i +"].EcsAction"));
-			operateResponseModel.setPreviousStatus(_ctx.stringValue("OpsBatchStartInstanceResponse.Data.OperateResponseModels["+ i +"].PreviousStatus"));
-			operateResponseModel.setCurrentStatus(_ctx.stringValue("OpsBatchStartInstanceResponse.Data.OperateResponseModels["+ i +"].CurrentStatus"));
 
 			operateResponseModels.add(operateResponseModel);
 		}

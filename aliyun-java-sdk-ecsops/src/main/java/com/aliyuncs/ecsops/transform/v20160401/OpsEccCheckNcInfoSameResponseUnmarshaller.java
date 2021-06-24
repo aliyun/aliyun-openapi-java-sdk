@@ -23,8 +23,8 @@ public class OpsEccCheckNcInfoSameResponseUnmarshaller {
 	public static OpsEccCheckNcInfoSameResponse unmarshall(OpsEccCheckNcInfoSameResponse opsEccCheckNcInfoSameResponse, UnmarshallerContext _ctx) {
 		
 		opsEccCheckNcInfoSameResponse.setRequestId(_ctx.stringValue("OpsEccCheckNcInfoSameResponse.RequestId"));
-		opsEccCheckNcInfoSameResponse.setData(_ctx.stringValue("OpsEccCheckNcInfoSameResponse.Data"));
 		opsEccCheckNcInfoSameResponse.setMessage(_ctx.stringValue("OpsEccCheckNcInfoSameResponse.Message"));
+		opsEccCheckNcInfoSameResponse.setData(_ctx.stringValue("OpsEccCheckNcInfoSameResponse.Data"));
 	 
 	 	return opsEccCheckNcInfoSameResponse;
 	}

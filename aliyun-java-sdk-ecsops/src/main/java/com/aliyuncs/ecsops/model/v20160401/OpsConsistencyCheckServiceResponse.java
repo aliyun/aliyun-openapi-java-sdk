@@ -51,9 +51,9 @@ public class OpsConsistencyCheckServiceResponse extends AcsResponse {
 
 		private String checkCode;
 
-		private List<String> dataFeatures;
-
 		private List<String> abnormalAttrs;
+
+		private List<String> dataFeatures;
 
 		public Boolean getConsist() {
 			return this.consist;
@@ -71,20 +71,20 @@ public class OpsConsistencyCheckServiceResponse extends AcsResponse {
 			this.checkCode = checkCode;
 		}
 
-		public List<String> getDataFeatures() {
-			return this.dataFeatures;
-		}
-
-		public void setDataFeatures(List<String> dataFeatures) {
-			this.dataFeatures = dataFeatures;
-		}
-
 		public List<String> getAbnormalAttrs() {
 			return this.abnormalAttrs;
 		}
 
 		public void setAbnormalAttrs(List<String> abnormalAttrs) {
 			this.abnormalAttrs = abnormalAttrs;
+		}
+
+		public List<String> getDataFeatures() {
+			return this.dataFeatures;
+		}
+
+		public void setDataFeatures(List<String> dataFeatures) {
+			this.dataFeatures = dataFeatures;
 		}
 	}
 

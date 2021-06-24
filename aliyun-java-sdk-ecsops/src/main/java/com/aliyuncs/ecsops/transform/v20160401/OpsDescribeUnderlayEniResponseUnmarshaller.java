@@ -24,17 +24,17 @@ public class OpsDescribeUnderlayEniResponseUnmarshaller {
 	public static OpsDescribeUnderlayEniResponse unmarshall(OpsDescribeUnderlayEniResponse opsDescribeUnderlayEniResponse, UnmarshallerContext _ctx) {
 		
 		opsDescribeUnderlayEniResponse.setRequestId(_ctx.stringValue("OpsDescribeUnderlayEniResponse.RequestId"));
-		opsDescribeUnderlayEniResponse.setCode(_ctx.stringValue("OpsDescribeUnderlayEniResponse.Code"));
 		opsDescribeUnderlayEniResponse.setMessage(_ctx.stringValue("OpsDescribeUnderlayEniResponse.Message"));
+		opsDescribeUnderlayEniResponse.setCode(_ctx.stringValue("OpsDescribeUnderlayEniResponse.Code"));
 		opsDescribeUnderlayEniResponse.setSuccess(_ctx.stringValue("OpsDescribeUnderlayEniResponse.Success"));
 
 		Data data = new Data();
-		data.setInstanceId(_ctx.stringValue("OpsDescribeUnderlayEniResponse.Data.InstanceId"));
-		data.setUnderlayEniId(_ctx.stringValue("OpsDescribeUnderlayEniResponse.Data.UnderlayEniId"));
-		data.setIp(_ctx.stringValue("OpsDescribeUnderlayEniResponse.Data.Ip"));
-		data.setVlan(_ctx.stringValue("OpsDescribeUnderlayEniResponse.Data.Vlan"));
 		data.setMask(_ctx.stringValue("OpsDescribeUnderlayEniResponse.Data.Mask"));
 		data.setGateway(_ctx.stringValue("OpsDescribeUnderlayEniResponse.Data.Gateway"));
+		data.setUnderlayEniId(_ctx.stringValue("OpsDescribeUnderlayEniResponse.Data.UnderlayEniId"));
+		data.setIp(_ctx.stringValue("OpsDescribeUnderlayEniResponse.Data.Ip"));
+		data.setInstanceId(_ctx.stringValue("OpsDescribeUnderlayEniResponse.Data.InstanceId"));
+		data.setVlan(_ctx.stringValue("OpsDescribeUnderlayEniResponse.Data.Vlan"));
 		data.setMac(_ctx.stringValue("OpsDescribeUnderlayEniResponse.Data.Mac"));
 		opsDescribeUnderlayEniResponse.setData(data);
 	 

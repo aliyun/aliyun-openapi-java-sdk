@@ -25,11 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsDetectRootCauseResponse extends AcsResponse {
 
+	private String endTime;
+
 	private String requestId;
 
 	private String startTime;
-
-	private String endTime;
 
 	private List<ExceptionEvent> exceptionEvents;
 
@@ -38,6 +38,14 @@ public class OpsDetectRootCauseResponse extends AcsResponse {
 	private RootCause rootCause;
 
 	private OverviewInfo overviewInfo;
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -53,14 +61,6 @@ public class OpsDetectRootCauseResponse extends AcsResponse {
 
 	public void setStartTime(String startTime) {
 		this.startTime = startTime;
-	}
-
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
 	}
 
 	public List<ExceptionEvent> getExceptionEvents() {
@@ -97,38 +97,46 @@ public class OpsDetectRootCauseResponse extends AcsResponse {
 
 	public static class ExceptionEvent {
 
-		private String machineId;
+		private String exceptionType;
+
+		private String message;
 
 		private String ncIp;
 
-		private String exceptionTime;
-
-		private String exceptionType;
-
-		private String reason;
-
-		private String exceptionName;
-
 		private String instanceType;
 
-		private String warningLevel;
-
-		private String message;
+		private String cnSn;
 
 		private String desc;
 
 		private String ncId;
 
-		private String cnSn;
+		private String warningLevel;
+
+		private String exceptionTime;
+
+		private String exceptionName;
+
+		private String machineId;
+
+		private String reason;
 
 		private List<String> responseTeams;
 
-		public String getMachineId() {
-			return this.machineId;
+		public String getExceptionType() {
+			return this.exceptionType;
 		}
 
-		public void setMachineId(String machineId) {
-			this.machineId = machineId;
+		public void setExceptionType(String exceptionType) {
+			this.exceptionType = exceptionType;
+		}
+
+		public String getMessage() {
+			return this.message;
+		}
+
+		public void setMessage(String message) {
+			this.message = message;
 		}
 
 		public String getNcIp() {
@@ -139,38 +147,6 @@ public class OpsDetectRootCauseResponse extends AcsResponse {
 			this.ncIp = ncIp;
 		}
 
-		public String getExceptionTime() {
-			return this.exceptionTime;
-		}
-
-		public void setExceptionTime(String exceptionTime) {
-			this.exceptionTime = exceptionTime;
-		}
-
-		public String getExceptionType() {
-			return this.exceptionType;
-		}
-
-		public void setExceptionType(String exceptionType) {
-			this.exceptionType = exceptionType;
-		}
-
-		public String getReason() {
-			return this.reason;
-		}
-
-		public void setReason(String reason) {
-			this.reason = reason;
-		}
-
-		public String getExceptionName() {
-			return this.exceptionName;
-		}
-
-		public void setExceptionName(String exceptionName) {
-			this.exceptionName = exceptionName;
-		}
-
 		public String getInstanceType() {
 			return this.instanceType;
 		}
@@ -179,20 +155,12 @@ public class OpsDetectRootCauseResponse extends AcsResponse {
 			this.instanceType = instanceType;
 		}
 
-		public String getWarningLevel() {
-			return this.warningLevel;
+		public String getCnSn() {
+			return this.cnSn;
 		}
 
-		public void setWarningLevel(String warningLevel) {
-			this.warningLevel = warningLevel;
-		}
-
-		public String getMessage() {
-			return this.message;
-		}
-
-		public void setMessage(String message) {
-			this.message = message;
+		public void setCnSn(String cnSn) {
+			this.cnSn = cnSn;
 		}
 
 		public String getDesc() {
@@ -211,12 +179,44 @@ public class OpsDetectRootCauseResponse extends AcsResponse {
 			this.ncId = ncId;
 		}
 
-		public String getCnSn() {
-			return this.cnSn;
+		public String getWarningLevel() {
+			return this.warningLevel;
 		}
 
-		public void setCnSn(String cnSn) {
-			this.cnSn = cnSn;
+		public void setWarningLevel(String warningLevel) {
+			this.warningLevel = warningLevel;
+		}
+
+		public String getExceptionTime() {
+			return this.exceptionTime;
+		}
+
+		public void setExceptionTime(String exceptionTime) {
+			this.exceptionTime = exceptionTime;
+		}
+
+		public String getExceptionName() {
+			return this.exceptionName;
+		}
+
+		public void setExceptionName(String exceptionName) {
+			this.exceptionName = exceptionName;
+		}
+
+		public String getMachineId() {
+			return this.machineId;
+		}
+
+		public void setMachineId(String machineId) {
+			this.machineId = machineId;
+		}
+
+		public String getReason() {
+			return this.reason;
+		}
+
+		public void setReason(String reason) {
+			this.reason = reason;
 		}
 
 		public List<String> getResponseTeams() {
@@ -230,41 +230,25 @@ public class OpsDetectRootCauseResponse extends AcsResponse {
 
 	public static class KeyExceptionEvent {
 
-		private String machineId;
-
-		private String ncIp;
-
 		private String startTime;
 
-		private String lastExceptionTime;
-
 		private String exceptionType;
-
-		private String reason;
-
-		private String exceptionName;
 
 		private String warningLevel;
 
 		private String message;
 
+		private String lastExceptionTime;
+
+		private String ncIp;
+
+		private String exceptionName;
+
+		private String reason;
+
+		private String machineId;
+
 		private String desc;
-
-		public String getMachineId() {
-			return this.machineId;
-		}
-
-		public void setMachineId(String machineId) {
-			this.machineId = machineId;
-		}
-
-		public String getNcIp() {
-			return this.ncIp;
-		}
-
-		public void setNcIp(String ncIp) {
-			this.ncIp = ncIp;
-		}
 
 		public String getStartTime() {
 			return this.startTime;
@@ -274,36 +258,12 @@ public class OpsDetectRootCauseResponse extends AcsResponse {
 			this.startTime = startTime;
 		}
 
-		public String getLastExceptionTime() {
-			return this.lastExceptionTime;
-		}
-
-		public void setLastExceptionTime(String lastExceptionTime) {
-			this.lastExceptionTime = lastExceptionTime;
-		}
-
 		public String getExceptionType() {
 			return this.exceptionType;
 		}
 
 		public void setExceptionType(String exceptionType) {
 			this.exceptionType = exceptionType;
-		}
-
-		public String getReason() {
-			return this.reason;
-		}
-
-		public void setReason(String reason) {
-			this.reason = reason;
-		}
-
-		public String getExceptionName() {
-			return this.exceptionName;
-		}
-
-		public void setExceptionName(String exceptionName) {
-			this.exceptionName = exceptionName;
 		}
 
 		public String getWarningLevel() {
@@ -320,6 +280,46 @@ public class OpsDetectRootCauseResponse extends AcsResponse {
 
 		public void setMessage(String message) {
 			this.message = message;
+		}
+
+		public String getLastExceptionTime() {
+			return this.lastExceptionTime;
+		}
+
+		public void setLastExceptionTime(String lastExceptionTime) {
+			this.lastExceptionTime = lastExceptionTime;
+		}
+
+		public String getNcIp() {
+			return this.ncIp;
+		}
+
+		public void setNcIp(String ncIp) {
+			this.ncIp = ncIp;
+		}
+
+		public String getExceptionName() {
+			return this.exceptionName;
+		}
+
+		public void setExceptionName(String exceptionName) {
+			this.exceptionName = exceptionName;
+		}
+
+		public String getReason() {
+			return this.reason;
+		}
+
+		public void setReason(String reason) {
+			this.reason = reason;
+		}
+
+		public String getMachineId() {
+			return this.machineId;
+		}
+
+		public void setMachineId(String machineId) {
+			this.machineId = machineId;
 		}
 
 		public String getDesc() {
@@ -333,138 +333,50 @@ public class OpsDetectRootCauseResponse extends AcsResponse {
 
 	public static class RootCause {
 
-		private String additionalInfo;
-
-		private String machineId;
-
-		private String ncIp;
-
-		private String exceptionTime;
-
-		private String reason;
-
-		private String aZone;
-
-		private String exceptionName;
-
-		private String message;
-
-		private String warningLevel;
-
-		private String desc;
-
-		private String ncId;
-
-		private String cnSn;
+		private String stressComparisionResult;
 
 		private String stressComparisionState;
 
-		private String stressComparisionResult;
+		private String aZone;
 
-		private String stressComparisionStartTime;
+		private String message;
+
+		private String ncIp;
+
+		private String additionalInfo;
 
 		private Integer stressComparisionTime;
 
+		private String desc;
+
+		private String cnSn;
+
+		private String ncId;
+
+		private String stressComparisionStartTime;
+
 		private String riskTag;
+
+		private String warningLevel;
+
+		private String exceptionTime;
+
+		private String exceptionName;
+
+		private String reason;
+
+		private String machineId;
 
 		private List<SnNodeInfo> snNodeInfoList;
 
 		private List<String> supportTeams;
 
-		public String getAdditionalInfo() {
-			return this.additionalInfo;
+		public String getStressComparisionResult() {
+			return this.stressComparisionResult;
 		}
 
-		public void setAdditionalInfo(String additionalInfo) {
-			this.additionalInfo = additionalInfo;
-		}
-
-		public String getMachineId() {
-			return this.machineId;
-		}
-
-		public void setMachineId(String machineId) {
-			this.machineId = machineId;
-		}
-
-		public String getNcIp() {
-			return this.ncIp;
-		}
-
-		public void setNcIp(String ncIp) {
-			this.ncIp = ncIp;
-		}
-
-		public String getExceptionTime() {
-			return this.exceptionTime;
-		}
-
-		public void setExceptionTime(String exceptionTime) {
-			this.exceptionTime = exceptionTime;
-		}
-
-		public String getReason() {
-			return this.reason;
-		}
-
-		public void setReason(String reason) {
-			this.reason = reason;
-		}
-
-		public String getAZone() {
-			return this.aZone;
-		}
-
-		public void setAZone(String aZone) {
-			this.aZone = aZone;
-		}
-
-		public String getExceptionName() {
-			return this.exceptionName;
-		}
-
-		public void setExceptionName(String exceptionName) {
-			this.exceptionName = exceptionName;
-		}
-
-		public String getMessage() {
-			return this.message;
-		}
-
-		public void setMessage(String message) {
-			this.message = message;
-		}
-
-		public String getWarningLevel() {
-			return this.warningLevel;
-		}
-
-		public void setWarningLevel(String warningLevel) {
-			this.warningLevel = warningLevel;
-		}
-
-		public String getDesc() {
-			return this.desc;
-		}
-
-		public void setDesc(String desc) {
-			this.desc = desc;
-		}
-
-		public String getNcId() {
-			return this.ncId;
-		}
-
-		public void setNcId(String ncId) {
-			this.ncId = ncId;
-		}
-
-		public String getCnSn() {
-			return this.cnSn;
-		}
-
-		public void setCnSn(String cnSn) {
-			this.cnSn = cnSn;
+		public void setStressComparisionResult(String stressComparisionResult) {
+			this.stressComparisionResult = stressComparisionResult;
 		}
 
 		public String getStressComparisionState() {
@@ -475,20 +387,36 @@ public class OpsDetectRootCauseResponse extends AcsResponse {
 			this.stressComparisionState = stressComparisionState;
 		}
 
-		public String getStressComparisionResult() {
-			return this.stressComparisionResult;
+		public String getAZone() {
+			return this.aZone;
 		}
 
-		public void setStressComparisionResult(String stressComparisionResult) {
-			this.stressComparisionResult = stressComparisionResult;
+		public void setAZone(String aZone) {
+			this.aZone = aZone;
 		}
 
-		public String getStressComparisionStartTime() {
-			return this.stressComparisionStartTime;
+		public String getMessage() {
+			return this.message;
 		}
 
-		public void setStressComparisionStartTime(String stressComparisionStartTime) {
-			this.stressComparisionStartTime = stressComparisionStartTime;
+		public void setMessage(String message) {
+			this.message = message;
+		}
+
+		public String getNcIp() {
+			return this.ncIp;
+		}
+
+		public void setNcIp(String ncIp) {
+			this.ncIp = ncIp;
+		}
+
+		public String getAdditionalInfo() {
+			return this.additionalInfo;
+		}
+
+		public void setAdditionalInfo(String additionalInfo) {
+			this.additionalInfo = additionalInfo;
 		}
 
 		public Integer getStressComparisionTime() {
@@ -499,12 +427,84 @@ public class OpsDetectRootCauseResponse extends AcsResponse {
 			this.stressComparisionTime = stressComparisionTime;
 		}
 
+		public String getDesc() {
+			return this.desc;
+		}
+
+		public void setDesc(String desc) {
+			this.desc = desc;
+		}
+
+		public String getCnSn() {
+			return this.cnSn;
+		}
+
+		public void setCnSn(String cnSn) {
+			this.cnSn = cnSn;
+		}
+
+		public String getNcId() {
+			return this.ncId;
+		}
+
+		public void setNcId(String ncId) {
+			this.ncId = ncId;
+		}
+
+		public String getStressComparisionStartTime() {
+			return this.stressComparisionStartTime;
+		}
+
+		public void setStressComparisionStartTime(String stressComparisionStartTime) {
+			this.stressComparisionStartTime = stressComparisionStartTime;
+		}
+
 		public String getRiskTag() {
 			return this.riskTag;
 		}
 
 		public void setRiskTag(String riskTag) {
 			this.riskTag = riskTag;
+		}
+
+		public String getWarningLevel() {
+			return this.warningLevel;
+		}
+
+		public void setWarningLevel(String warningLevel) {
+			this.warningLevel = warningLevel;
+		}
+
+		public String getExceptionTime() {
+			return this.exceptionTime;
+		}
+
+		public void setExceptionTime(String exceptionTime) {
+			this.exceptionTime = exceptionTime;
+		}
+
+		public String getExceptionName() {
+			return this.exceptionName;
+		}
+
+		public void setExceptionName(String exceptionName) {
+			this.exceptionName = exceptionName;
+		}
+
+		public String getReason() {
+			return this.reason;
+		}
+
+		public void setReason(String reason) {
+			this.reason = reason;
+		}
+
+		public String getMachineId() {
+			return this.machineId;
+		}
+
+		public void setMachineId(String machineId) {
+			this.machineId = machineId;
 		}
 
 		public List<SnNodeInfo> getSnNodeInfoList() {
@@ -527,17 +527,17 @@ public class OpsDetectRootCauseResponse extends AcsResponse {
 
 			private String ncId;
 
-			private String cnSn;
-
-			private String stressComparisionState;
-
 			private String stressComparisionResult;
 
 			private String stressComparisionStartTime;
 
-			private Integer stressComparisionTime;
+			private String stressComparisionState;
 
 			private String riskTag;
+
+			private Integer stressComparisionTime;
+
+			private String cnSn;
 
 			public String getNcId() {
 				return this.ncId;
@@ -545,22 +545,6 @@ public class OpsDetectRootCauseResponse extends AcsResponse {
 
 			public void setNcId(String ncId) {
 				this.ncId = ncId;
-			}
-
-			public String getCnSn() {
-				return this.cnSn;
-			}
-
-			public void setCnSn(String cnSn) {
-				this.cnSn = cnSn;
-			}
-
-			public String getStressComparisionState() {
-				return this.stressComparisionState;
-			}
-
-			public void setStressComparisionState(String stressComparisionState) {
-				this.stressComparisionState = stressComparisionState;
 			}
 
 			public String getStressComparisionResult() {
@@ -579,12 +563,12 @@ public class OpsDetectRootCauseResponse extends AcsResponse {
 				this.stressComparisionStartTime = stressComparisionStartTime;
 			}
 
-			public Integer getStressComparisionTime() {
-				return this.stressComparisionTime;
+			public String getStressComparisionState() {
+				return this.stressComparisionState;
 			}
 
-			public void setStressComparisionTime(Integer stressComparisionTime) {
-				this.stressComparisionTime = stressComparisionTime;
+			public void setStressComparisionState(String stressComparisionState) {
+				this.stressComparisionState = stressComparisionState;
 			}
 
 			public String getRiskTag() {
@@ -594,34 +578,82 @@ public class OpsDetectRootCauseResponse extends AcsResponse {
 			public void setRiskTag(String riskTag) {
 				this.riskTag = riskTag;
 			}
+
+			public Integer getStressComparisionTime() {
+				return this.stressComparisionTime;
+			}
+
+			public void setStressComparisionTime(Integer stressComparisionTime) {
+				this.stressComparisionTime = stressComparisionTime;
+			}
+
+			public String getCnSn() {
+				return this.cnSn;
+			}
+
+			public void setCnSn(String cnSn) {
+				this.cnSn = cnSn;
+			}
 		}
 	}
 
 	public static class OverviewInfo {
 
+		private String extension;
+
+		private String aZone;
+
+		private String aliUid;
+
+		private String hostname;
+
 		private Integer vCpuCount;
 
 		private String ncIp;
 
-		private String aliUid;
-
-		private String aZone;
-
-		private String machineId;
-
-		private String region;
-
-		private String hostname;
+		private String instanceType;
 
 		private String intranetIp;
 
-		private String extension;
-
-		private String instanceType;
+		private String cnSn;
 
 		private String ncId;
 
-		private String cnSn;
+		private String region;
+
+		private String machineId;
+
+		public String getExtension() {
+			return this.extension;
+		}
+
+		public void setExtension(String extension) {
+			this.extension = extension;
+		}
+
+		public String getAZone() {
+			return this.aZone;
+		}
+
+		public void setAZone(String aZone) {
+			this.aZone = aZone;
+		}
+
+		public String getAliUid() {
+			return this.aliUid;
+		}
+
+		public void setAliUid(String aliUid) {
+			this.aliUid = aliUid;
+		}
+
+		public String getHostname() {
+			return this.hostname;
+		}
+
+		public void setHostname(String hostname) {
+			this.hostname = hostname;
+		}
 
 		public Integer getVCpuCount() {
 			return this.vCpuCount;
@@ -639,44 +671,12 @@ public class OpsDetectRootCauseResponse extends AcsResponse {
 			this.ncIp = ncIp;
 		}
 
-		public String getAliUid() {
-			return this.aliUid;
+		public String getInstanceType() {
+			return this.instanceType;
 		}
 
-		public void setAliUid(String aliUid) {
-			this.aliUid = aliUid;
-		}
-
-		public String getAZone() {
-			return this.aZone;
-		}
-
-		public void setAZone(String aZone) {
-			this.aZone = aZone;
-		}
-
-		public String getMachineId() {
-			return this.machineId;
-		}
-
-		public void setMachineId(String machineId) {
-			this.machineId = machineId;
-		}
-
-		public String getRegion() {
-			return this.region;
-		}
-
-		public void setRegion(String region) {
-			this.region = region;
-		}
-
-		public String getHostname() {
-			return this.hostname;
-		}
-
-		public void setHostname(String hostname) {
-			this.hostname = hostname;
+		public void setInstanceType(String instanceType) {
+			this.instanceType = instanceType;
 		}
 
 		public String getIntranetIp() {
@@ -687,20 +687,12 @@ public class OpsDetectRootCauseResponse extends AcsResponse {
 			this.intranetIp = intranetIp;
 		}
 
-		public String getExtension() {
-			return this.extension;
+		public String getCnSn() {
+			return this.cnSn;
 		}
 
-		public void setExtension(String extension) {
-			this.extension = extension;
-		}
-
-		public String getInstanceType() {
-			return this.instanceType;
-		}
-
-		public void setInstanceType(String instanceType) {
-			this.instanceType = instanceType;
+		public void setCnSn(String cnSn) {
+			this.cnSn = cnSn;
 		}
 
 		public String getNcId() {
@@ -711,12 +703,20 @@ public class OpsDetectRootCauseResponse extends AcsResponse {
 			this.ncId = ncId;
 		}
 
-		public String getCnSn() {
-			return this.cnSn;
+		public String getRegion() {
+			return this.region;
 		}
 
-		public void setCnSn(String cnSn) {
-			this.cnSn = cnSn;
+		public void setRegion(String region) {
+			this.region = region;
+		}
+
+		public String getMachineId() {
+			return this.machineId;
+		}
+
+		public void setMachineId(String machineId) {
+			this.machineId = machineId;
 		}
 	}
 

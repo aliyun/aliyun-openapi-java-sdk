@@ -16,7 +16,6 @@ package com.aliyuncs.ecsops.model.v20160401;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
-import com.aliyuncs.ecsops.Endpoint;
 
 /**
  * @author auto create
@@ -39,12 +38,8 @@ public class OpsQueryBflagRequest extends RpcAcsRequest<OpsQueryBflagResponse> {
 
 	private String auditParamStr;
 	public OpsQueryBflagRequest() {
-		super("Ecsops", "2016-04-01", "OpsQueryBflag", "ecs");
+		super("Ecsops", "2016-04-01", "OpsQueryBflag", "ecsops");
 		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
 	}
 
 	public String getRegionNo() {

@@ -17,7 +17,6 @@ package com.aliyuncs.ecsops.model.v20160401;
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
 import com.aliyuncs.http.MethodType;
-import com.aliyuncs.ecsops.Endpoint;
 
 /**
  * @author auto create
@@ -26,20 +25,27 @@ import com.aliyuncs.ecsops.Endpoint;
 public class OpsDeleteDemandRequest extends RpcAcsRequest<OpsDeleteDemandResponse> {
 	   
 
-	private List<String> subDemandIdss;
-
 	private String reason;
+
+	private List<String> subDemandIdss;
 
 	private String demandId;
 
 	private String auditParamStr;
 	public OpsDeleteDemandRequest() {
-		super("Ecsops", "2016-04-01", "OpsDeleteDemand", "ecs");
+		super("Ecsops", "2016-04-01", "OpsDeleteDemand", "ecsops");
 		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
+	}
+
+	public String getReason() {
+		return this.reason;
+	}
+
+	public void setReason(String reason) {
+		this.reason = reason;
+		if(reason != null){
+			putQueryParameter("Reason", reason);
+		}
 	}
 
 	public List<String> getSubDemandIdss() {
@@ -53,17 +59,6 @@ public class OpsDeleteDemandRequest extends RpcAcsRequest<OpsDeleteDemandRespons
 				putQueryParameter("SubDemandIds." + (i + 1) , subDemandIdss.get(i));
 			}
 		}	
-	}
-
-	public String getReason() {
-		return this.reason;
-	}
-
-	public void setReason(String reason) {
-		this.reason = reason;
-		if(reason != null){
-			putQueryParameter("Reason", reason);
-		}
 	}
 
 	public String getDemandId() {

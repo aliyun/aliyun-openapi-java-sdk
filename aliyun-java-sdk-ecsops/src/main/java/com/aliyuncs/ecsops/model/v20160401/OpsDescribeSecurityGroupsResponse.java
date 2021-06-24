@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsDescribeSecurityGroupsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
-
-	private Integer pageNumber;
 
 	private Integer pageSize;
 
+	private String requestId;
+
+	private Integer pageNumber;
+
 	private List<SecurityGroup> securityGroups;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -51,20 +43,28 @@ public class OpsDescribeSecurityGroupsResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<SecurityGroup> getSecurityGroups() {
@@ -77,32 +77,48 @@ public class OpsDescribeSecurityGroupsResponse extends AcsResponse {
 
 	public static class SecurityGroup {
 
-		private String regionId;
+		private String vpcId;
+
+		private String modifiedTime;
+
+		private String description;
 
 		private String securityGroupId;
 
 		private String securityGroupName;
 
-		private String description;
-
-		private String vpcId;
-
 		private Integer ecsCount;
-
-		private Long availableInstanceAmount;
-
-		private String groupType;
 
 		private String createdTime;
 
-		private String modifiedTime;
+		private String groupType;
 
-		public String getRegionId() {
-			return this.regionId;
+		private Long availableInstanceAmount;
+
+		private String regionId;
+
+		public String getVpcId() {
+			return this.vpcId;
 		}
 
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
+		public void setVpcId(String vpcId) {
+			this.vpcId = vpcId;
+		}
+
+		public String getModifiedTime() {
+			return this.modifiedTime;
+		}
+
+		public void setModifiedTime(String modifiedTime) {
+			this.modifiedTime = modifiedTime;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
 		}
 
 		public String getSecurityGroupId() {
@@ -121,44 +137,12 @@ public class OpsDescribeSecurityGroupsResponse extends AcsResponse {
 			this.securityGroupName = securityGroupName;
 		}
 
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
-		public String getVpcId() {
-			return this.vpcId;
-		}
-
-		public void setVpcId(String vpcId) {
-			this.vpcId = vpcId;
-		}
-
 		public Integer getEcsCount() {
 			return this.ecsCount;
 		}
 
 		public void setEcsCount(Integer ecsCount) {
 			this.ecsCount = ecsCount;
-		}
-
-		public Long getAvailableInstanceAmount() {
-			return this.availableInstanceAmount;
-		}
-
-		public void setAvailableInstanceAmount(Long availableInstanceAmount) {
-			this.availableInstanceAmount = availableInstanceAmount;
-		}
-
-		public String getGroupType() {
-			return this.groupType;
-		}
-
-		public void setGroupType(String groupType) {
-			this.groupType = groupType;
 		}
 
 		public String getCreatedTime() {
@@ -169,12 +153,28 @@ public class OpsDescribeSecurityGroupsResponse extends AcsResponse {
 			this.createdTime = createdTime;
 		}
 
-		public String getModifiedTime() {
-			return this.modifiedTime;
+		public String getGroupType() {
+			return this.groupType;
 		}
 
-		public void setModifiedTime(String modifiedTime) {
-			this.modifiedTime = modifiedTime;
+		public void setGroupType(String groupType) {
+			this.groupType = groupType;
+		}
+
+		public Long getAvailableInstanceAmount() {
+			return this.availableInstanceAmount;
+		}
+
+		public void setAvailableInstanceAmount(Long availableInstanceAmount) {
+			this.availableInstanceAmount = availableInstanceAmount;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 	}
 

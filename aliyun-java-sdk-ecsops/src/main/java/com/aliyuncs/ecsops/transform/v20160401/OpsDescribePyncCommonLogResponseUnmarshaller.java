@@ -28,18 +28,18 @@ public class OpsDescribePyncCommonLogResponseUnmarshaller {
 		
 		opsDescribePyncCommonLogResponse.setRequestId(_ctx.stringValue("OpsDescribePyncCommonLogResponse.RequestId"));
 		opsDescribePyncCommonLogResponse.setTotalCount(_ctx.integerValue("OpsDescribePyncCommonLogResponse.TotalCount"));
-		opsDescribePyncCommonLogResponse.setPageNumber(_ctx.integerValue("OpsDescribePyncCommonLogResponse.PageNumber"));
 		opsDescribePyncCommonLogResponse.setPageSize(_ctx.integerValue("OpsDescribePyncCommonLogResponse.PageSize"));
+		opsDescribePyncCommonLogResponse.setPageNumber(_ctx.integerValue("OpsDescribePyncCommonLogResponse.PageNumber"));
 
 		List<Log> logs = new ArrayList<Log>();
 		for (int i = 0; i < _ctx.lengthValue("OpsDescribePyncCommonLogResponse.Logs.Length"); i++) {
 			Log log = new Log();
-			log.setLogRequestId(_ctx.stringValue("OpsDescribePyncCommonLogResponse.Logs["+ i +"].LogRequestId"));
-			log.setContent(_ctx.stringValue("OpsDescribePyncCommonLogResponse.Logs["+ i +"].Content"));
 			log.setTime(_ctx.stringValue("OpsDescribePyncCommonLogResponse.Logs["+ i +"].Time"));
 			log.setMs(_ctx.stringValue("OpsDescribePyncCommonLogResponse.Logs["+ i +"].Ms"));
-			log.setPath(_ctx.stringValue("OpsDescribePyncCommonLogResponse.Logs["+ i +"].Path"));
 			log.setTopic(_ctx.stringValue("OpsDescribePyncCommonLogResponse.Logs["+ i +"].Topic"));
+			log.setPath(_ctx.stringValue("OpsDescribePyncCommonLogResponse.Logs["+ i +"].Path"));
+			log.setLogRequestId(_ctx.stringValue("OpsDescribePyncCommonLogResponse.Logs["+ i +"].LogRequestId"));
+			log.setContent(_ctx.stringValue("OpsDescribePyncCommonLogResponse.Logs["+ i +"].Content"));
 
 			logs.add(log);
 		}

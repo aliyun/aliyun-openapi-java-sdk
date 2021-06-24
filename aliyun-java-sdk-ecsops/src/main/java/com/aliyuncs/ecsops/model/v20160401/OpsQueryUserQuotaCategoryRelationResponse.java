@@ -25,25 +25,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsQueryUserQuotaCategoryRelationResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
-
-	private Integer pageNumber;
-
-	private Integer pageSize;
 
 	private String nextToken;
 
+	private Integer pageSize;
+
+	private String requestId;
+
+	private Integer pageNumber;
+
 	private List<CategoryRelation> categoryRelations;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -53,12 +45,12 @@ public class OpsQueryUserQuotaCategoryRelationResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public String getNextToken() {
+		return this.nextToken;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
 	}
 
 	public Integer getPageSize() {
@@ -69,12 +61,20 @@ public class OpsQueryUserQuotaCategoryRelationResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public String getNextToken() {
-		return this.nextToken;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setNextToken(String nextToken) {
-		this.nextToken = nextToken;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<CategoryRelation> getCategoryRelations() {
@@ -87,19 +87,51 @@ public class OpsQueryUserQuotaCategoryRelationResponse extends AcsResponse {
 
 	public static class CategoryRelation {
 
+		private Integer uidType;
+
+		private String gmtModifiedStr;
+
+		private String categoryName;
+
+		private Integer categoryType;
+
 		private Long id;
 
 		private String gmtCreateStr;
 
-		private String gmtModifiedStr;
-
 		private Long uid;
 
-		private Integer uidType;
+		public Integer getUidType() {
+			return this.uidType;
+		}
 
-		private Integer categoryType;
+		public void setUidType(Integer uidType) {
+			this.uidType = uidType;
+		}
 
-		private String categoryName;
+		public String getGmtModifiedStr() {
+			return this.gmtModifiedStr;
+		}
+
+		public void setGmtModifiedStr(String gmtModifiedStr) {
+			this.gmtModifiedStr = gmtModifiedStr;
+		}
+
+		public String getCategoryName() {
+			return this.categoryName;
+		}
+
+		public void setCategoryName(String categoryName) {
+			this.categoryName = categoryName;
+		}
+
+		public Integer getCategoryType() {
+			return this.categoryType;
+		}
+
+		public void setCategoryType(Integer categoryType) {
+			this.categoryType = categoryType;
+		}
 
 		public Long getId() {
 			return this.id;
@@ -117,44 +149,12 @@ public class OpsQueryUserQuotaCategoryRelationResponse extends AcsResponse {
 			this.gmtCreateStr = gmtCreateStr;
 		}
 
-		public String getGmtModifiedStr() {
-			return this.gmtModifiedStr;
-		}
-
-		public void setGmtModifiedStr(String gmtModifiedStr) {
-			this.gmtModifiedStr = gmtModifiedStr;
-		}
-
 		public Long getUid() {
 			return this.uid;
 		}
 
 		public void setUid(Long uid) {
 			this.uid = uid;
-		}
-
-		public Integer getUidType() {
-			return this.uidType;
-		}
-
-		public void setUidType(Integer uidType) {
-			this.uidType = uidType;
-		}
-
-		public Integer getCategoryType() {
-			return this.categoryType;
-		}
-
-		public void setCategoryType(Integer categoryType) {
-			this.categoryType = categoryType;
-		}
-
-		public String getCategoryName() {
-			return this.categoryName;
-		}
-
-		public void setCategoryName(String categoryName) {
-			this.categoryName = categoryName;
 		}
 	}
 

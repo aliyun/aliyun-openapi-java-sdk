@@ -24,15 +24,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsUpdateUserGrayBusinessResponse extends AcsResponse {
 
+	private String message;
+
 	private String requestId;
 
 	private String code;
 
-	private String message;
-
 	private String success;
 
 	private UserGrayBusinessDO userGrayBusinessDO;
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -48,14 +56,6 @@ public class OpsUpdateUserGrayBusinessResponse extends AcsResponse {
 
 	public void setCode(String code) {
 		this.code = code;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
 	}
 
 	public String getSuccess() {
@@ -76,56 +76,32 @@ public class OpsUpdateUserGrayBusinessResponse extends AcsResponse {
 
 	public static class UserGrayBusinessDO {
 
-		private Long id;
-
-		private String grayBizType;
-
-		private Integer grayStrictMode;
-
-		private String userLevels;
+		private Integer status;
 
 		private Integer maxVms;
 
-		private Integer status;
+		private Integer grayStrictMode;
 
-		private String gmtCreate;
-
-		private String gmtModified;
-
-		private Long aliUid;
+		private String grayBizType;
 
 		private String regionNo;
 
-		public Long getId() {
-			return this.id;
+		private String userLevels;
+
+		private String gmtCreate;
+
+		private Long aliUid;
+
+		private String gmtModified;
+
+		private Long id;
+
+		public Integer getStatus() {
+			return this.status;
 		}
 
-		public void setId(Long id) {
-			this.id = id;
-		}
-
-		public String getGrayBizType() {
-			return this.grayBizType;
-		}
-
-		public void setGrayBizType(String grayBizType) {
-			this.grayBizType = grayBizType;
-		}
-
-		public Integer getGrayStrictMode() {
-			return this.grayStrictMode;
-		}
-
-		public void setGrayStrictMode(Integer grayStrictMode) {
-			this.grayStrictMode = grayStrictMode;
-		}
-
-		public String getUserLevels() {
-			return this.userLevels;
-		}
-
-		public void setUserLevels(String userLevels) {
-			this.userLevels = userLevels;
+		public void setStatus(Integer status) {
+			this.status = status;
 		}
 
 		public Integer getMaxVms() {
@@ -136,12 +112,36 @@ public class OpsUpdateUserGrayBusinessResponse extends AcsResponse {
 			this.maxVms = maxVms;
 		}
 
-		public Integer getStatus() {
-			return this.status;
+		public Integer getGrayStrictMode() {
+			return this.grayStrictMode;
 		}
 
-		public void setStatus(Integer status) {
-			this.status = status;
+		public void setGrayStrictMode(Integer grayStrictMode) {
+			this.grayStrictMode = grayStrictMode;
+		}
+
+		public String getGrayBizType() {
+			return this.grayBizType;
+		}
+
+		public void setGrayBizType(String grayBizType) {
+			this.grayBizType = grayBizType;
+		}
+
+		public String getRegionNo() {
+			return this.regionNo;
+		}
+
+		public void setRegionNo(String regionNo) {
+			this.regionNo = regionNo;
+		}
+
+		public String getUserLevels() {
+			return this.userLevels;
+		}
+
+		public void setUserLevels(String userLevels) {
+			this.userLevels = userLevels;
 		}
 
 		public String getGmtCreate() {
@@ -152,14 +152,6 @@ public class OpsUpdateUserGrayBusinessResponse extends AcsResponse {
 			this.gmtCreate = gmtCreate;
 		}
 
-		public String getGmtModified() {
-			return this.gmtModified;
-		}
-
-		public void setGmtModified(String gmtModified) {
-			this.gmtModified = gmtModified;
-		}
-
 		public Long getAliUid() {
 			return this.aliUid;
 		}
@@ -168,12 +160,20 @@ public class OpsUpdateUserGrayBusinessResponse extends AcsResponse {
 			this.aliUid = aliUid;
 		}
 
-		public String getRegionNo() {
-			return this.regionNo;
+		public String getGmtModified() {
+			return this.gmtModified;
 		}
 
-		public void setRegionNo(String regionNo) {
-			this.regionNo = regionNo;
+		public void setGmtModified(String gmtModified) {
+			this.gmtModified = gmtModified;
+		}
+
+		public Long getId() {
+			return this.id;
+		}
+
+		public void setId(Long id) {
+			this.id = id;
 		}
 	}
 

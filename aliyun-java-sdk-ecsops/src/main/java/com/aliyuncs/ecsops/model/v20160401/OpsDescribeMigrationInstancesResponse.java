@@ -27,11 +27,11 @@ public class OpsDescribeMigrationInstancesResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Integer total;
-
 	private Integer pageSize;
 
 	private Integer pageNumber;
+
+	private Integer total;
 
 	private List<Instance> instanceSet;
 
@@ -41,14 +41,6 @@ public class OpsDescribeMigrationInstancesResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getTotal() {
-		return this.total;
-	}
-
-	public void setTotal(Integer total) {
-		this.total = total;
 	}
 
 	public Integer getPageSize() {
@@ -67,6 +59,14 @@ public class OpsDescribeMigrationInstancesResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
+	public Integer getTotal() {
+		return this.total;
+	}
+
+	public void setTotal(Integer total) {
+		this.total = total;
+	}
+
 	public List<Instance> getInstanceSet() {
 		return this.instanceSet;
 	}
@@ -77,64 +77,48 @@ public class OpsDescribeMigrationInstancesResponse extends AcsResponse {
 
 	public static class Instance {
 
-		private Long numericId;
-
-		private String instanceId;
-
-		private Long aliUid;
+		private String status;
 
 		private Integer networkTranType;
 
-		private Integer transType;
+		private String finishTime;
 
 		private String sourceIzNo;
 
-		private String targetIzNo;
-
-		private String publicIp;
-
-		private String privateIpBefore;
+		private Boolean needKeepPrivateIp;
 
 		private String privateIpAfter;
 
 		private String createTime;
 
-		private String startTime;
+		private Boolean needNetworkConnectivity;
 
-		private String finishTime;
+		private Long aliUid;
+
+		private String instanceId;
+
+		private String targetIzNo;
+
+		private Integer transType;
 
 		private Boolean needTransDisk;
 
-		private Boolean needKeepPrivateIp;
-
-		private Boolean needNetworkConnectivity;
-
 		private String migrationPlanId;
 
-		private String status;
+		private String startTime;
 
-		public Long getNumericId() {
-			return this.numericId;
+		private String publicIp;
+
+		private String privateIpBefore;
+
+		private Long numericId;
+
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setNumericId(Long numericId) {
-			this.numericId = numericId;
-		}
-
-		public String getInstanceId() {
-			return this.instanceId;
-		}
-
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
-
-		public Long getAliUid() {
-			return this.aliUid;
-		}
-
-		public void setAliUid(Long aliUid) {
-			this.aliUid = aliUid;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public Integer getNetworkTranType() {
@@ -145,12 +129,12 @@ public class OpsDescribeMigrationInstancesResponse extends AcsResponse {
 			this.networkTranType = networkTranType;
 		}
 
-		public Integer getTransType() {
-			return this.transType;
+		public String getFinishTime() {
+			return this.finishTime;
 		}
 
-		public void setTransType(Integer transType) {
-			this.transType = transType;
+		public void setFinishTime(String finishTime) {
+			this.finishTime = finishTime;
 		}
 
 		public String getSourceIzNo() {
@@ -161,28 +145,12 @@ public class OpsDescribeMigrationInstancesResponse extends AcsResponse {
 			this.sourceIzNo = sourceIzNo;
 		}
 
-		public String getTargetIzNo() {
-			return this.targetIzNo;
+		public Boolean getNeedKeepPrivateIp() {
+			return this.needKeepPrivateIp;
 		}
 
-		public void setTargetIzNo(String targetIzNo) {
-			this.targetIzNo = targetIzNo;
-		}
-
-		public String getPublicIp() {
-			return this.publicIp;
-		}
-
-		public void setPublicIp(String publicIp) {
-			this.publicIp = publicIp;
-		}
-
-		public String getPrivateIpBefore() {
-			return this.privateIpBefore;
-		}
-
-		public void setPrivateIpBefore(String privateIpBefore) {
-			this.privateIpBefore = privateIpBefore;
+		public void setNeedKeepPrivateIp(Boolean needKeepPrivateIp) {
+			this.needKeepPrivateIp = needKeepPrivateIp;
 		}
 
 		public String getPrivateIpAfter() {
@@ -201,20 +169,44 @@ public class OpsDescribeMigrationInstancesResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
-		public String getStartTime() {
-			return this.startTime;
+		public Boolean getNeedNetworkConnectivity() {
+			return this.needNetworkConnectivity;
 		}
 
-		public void setStartTime(String startTime) {
-			this.startTime = startTime;
+		public void setNeedNetworkConnectivity(Boolean needNetworkConnectivity) {
+			this.needNetworkConnectivity = needNetworkConnectivity;
 		}
 
-		public String getFinishTime() {
-			return this.finishTime;
+		public Long getAliUid() {
+			return this.aliUid;
 		}
 
-		public void setFinishTime(String finishTime) {
-			this.finishTime = finishTime;
+		public void setAliUid(Long aliUid) {
+			this.aliUid = aliUid;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public String getTargetIzNo() {
+			return this.targetIzNo;
+		}
+
+		public void setTargetIzNo(String targetIzNo) {
+			this.targetIzNo = targetIzNo;
+		}
+
+		public Integer getTransType() {
+			return this.transType;
+		}
+
+		public void setTransType(Integer transType) {
+			this.transType = transType;
 		}
 
 		public Boolean getNeedTransDisk() {
@@ -225,22 +217,6 @@ public class OpsDescribeMigrationInstancesResponse extends AcsResponse {
 			this.needTransDisk = needTransDisk;
 		}
 
-		public Boolean getNeedKeepPrivateIp() {
-			return this.needKeepPrivateIp;
-		}
-
-		public void setNeedKeepPrivateIp(Boolean needKeepPrivateIp) {
-			this.needKeepPrivateIp = needKeepPrivateIp;
-		}
-
-		public Boolean getNeedNetworkConnectivity() {
-			return this.needNetworkConnectivity;
-		}
-
-		public void setNeedNetworkConnectivity(Boolean needNetworkConnectivity) {
-			this.needNetworkConnectivity = needNetworkConnectivity;
-		}
-
 		public String getMigrationPlanId() {
 			return this.migrationPlanId;
 		}
@@ -249,12 +225,36 @@ public class OpsDescribeMigrationInstancesResponse extends AcsResponse {
 			this.migrationPlanId = migrationPlanId;
 		}
 
-		public String getStatus() {
-			return this.status;
+		public String getStartTime() {
+			return this.startTime;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
+		public void setStartTime(String startTime) {
+			this.startTime = startTime;
+		}
+
+		public String getPublicIp() {
+			return this.publicIp;
+		}
+
+		public void setPublicIp(String publicIp) {
+			this.publicIp = publicIp;
+		}
+
+		public String getPrivateIpBefore() {
+			return this.privateIpBefore;
+		}
+
+		public void setPrivateIpBefore(String privateIpBefore) {
+			this.privateIpBefore = privateIpBefore;
+		}
+
+		public Long getNumericId() {
+			return this.numericId;
+		}
+
+		public void setNumericId(Long numericId) {
+			this.numericId = numericId;
 		}
 	}
 

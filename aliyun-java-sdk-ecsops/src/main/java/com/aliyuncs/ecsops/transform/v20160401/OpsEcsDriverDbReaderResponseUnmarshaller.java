@@ -28,8 +28,8 @@ public class OpsEcsDriverDbReaderResponseUnmarshaller {
 		
 		opsEcsDriverDbReaderResponse.setRequestId(_ctx.stringValue("OpsEcsDriverDbReaderResponse.RequestId"));
 		opsEcsDriverDbReaderResponse.setTotalCount(_ctx.integerValue("OpsEcsDriverDbReaderResponse.TotalCount"));
-		opsEcsDriverDbReaderResponse.setPageNumber(_ctx.integerValue("OpsEcsDriverDbReaderResponse.PageNumber"));
 		opsEcsDriverDbReaderResponse.setPageSize(_ctx.integerValue("OpsEcsDriverDbReaderResponse.PageSize"));
+		opsEcsDriverDbReaderResponse.setPageNumber(_ctx.integerValue("OpsEcsDriverDbReaderResponse.PageNumber"));
 
 		List<Row> rows = new ArrayList<Row>();
 		for (int i = 0; i < _ctx.lengthValue("OpsEcsDriverDbReaderResponse.Rows.Length"); i++) {

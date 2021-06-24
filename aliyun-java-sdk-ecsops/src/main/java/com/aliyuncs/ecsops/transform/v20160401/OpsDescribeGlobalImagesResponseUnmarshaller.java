@@ -28,28 +28,29 @@ public class OpsDescribeGlobalImagesResponseUnmarshaller {
 		
 		opsDescribeGlobalImagesResponse.setRequestId(_ctx.stringValue("OpsDescribeGlobalImagesResponse.RequestId"));
 		opsDescribeGlobalImagesResponse.setTotalCount(_ctx.integerValue("OpsDescribeGlobalImagesResponse.TotalCount"));
-		opsDescribeGlobalImagesResponse.setPageNumber(_ctx.integerValue("OpsDescribeGlobalImagesResponse.PageNumber"));
 		opsDescribeGlobalImagesResponse.setPageSize(_ctx.integerValue("OpsDescribeGlobalImagesResponse.PageSize"));
+		opsDescribeGlobalImagesResponse.setPageNumber(_ctx.integerValue("OpsDescribeGlobalImagesResponse.PageNumber"));
 
 		List<Image> images = new ArrayList<Image>();
 		for (int i = 0; i < _ctx.lengthValue("OpsDescribeGlobalImagesResponse.Images.Length"); i++) {
 			Image image = new Image();
+			image.setCreationTime(_ctx.stringValue("OpsDescribeGlobalImagesResponse.Images["+ i +"].CreationTime"));
+			image.setStatus(_ctx.stringValue("OpsDescribeGlobalImagesResponse.Images["+ i +"].Status"));
 			image.setDbId(_ctx.longValue("OpsDescribeGlobalImagesResponse.Images["+ i +"].DbId"));
-			image.setAliUid(_ctx.longValue("OpsDescribeGlobalImagesResponse.Images["+ i +"].AliUid"));
-			image.setImageId(_ctx.stringValue("OpsDescribeGlobalImagesResponse.Images["+ i +"].ImageId"));
 			image.setOsName(_ctx.stringValue("OpsDescribeGlobalImagesResponse.Images["+ i +"].OsName"));
-			image.setImageCategory(_ctx.stringValue("OpsDescribeGlobalImagesResponse.Images["+ i +"].ImageCategory"));
+			image.setAliUid(_ctx.longValue("OpsDescribeGlobalImagesResponse.Images["+ i +"].AliUid"));
 			image.setVirtBaseImageId(_ctx.longValue("OpsDescribeGlobalImagesResponse.Images["+ i +"].VirtBaseImageId"));
 			image.setRegionId(_ctx.stringValue("OpsDescribeGlobalImagesResponse.Images["+ i +"].RegionId"));
-			image.setStatus(_ctx.stringValue("OpsDescribeGlobalImagesResponse.Images["+ i +"].Status"));
-			image.setCreationTime(_ctx.stringValue("OpsDescribeGlobalImagesResponse.Images["+ i +"].CreationTime"));
-			image.setModifyTime(_ctx.stringValue("OpsDescribeGlobalImagesResponse.Images["+ i +"].ModifyTime"));
-			image.setPlatform(_ctx.stringValue("OpsDescribeGlobalImagesResponse.Images["+ i +"].Platform"));
+			image.setImageSize(_ctx.integerValue("OpsDescribeGlobalImagesResponse.Images["+ i +"].ImageSize"));
+			image.setDescription(_ctx.stringValue("OpsDescribeGlobalImagesResponse.Images["+ i +"].Description"));
+			image.setVersion(_ctx.stringValue("OpsDescribeGlobalImagesResponse.Images["+ i +"].Version"));
 			image.setOsType(_ctx.stringValue("OpsDescribeGlobalImagesResponse.Images["+ i +"].OsType"));
 			image.setImageName(_ctx.stringValue("OpsDescribeGlobalImagesResponse.Images["+ i +"].ImageName"));
-			image.setImageSize(_ctx.integerValue("OpsDescribeGlobalImagesResponse.Images["+ i +"].ImageSize"));
-			image.setVersion(_ctx.stringValue("OpsDescribeGlobalImagesResponse.Images["+ i +"].Version"));
-			image.setDescription(_ctx.stringValue("OpsDescribeGlobalImagesResponse.Images["+ i +"].Description"));
+			image.setPlatform(_ctx.stringValue("OpsDescribeGlobalImagesResponse.Images["+ i +"].Platform"));
+			image.setImageCategory(_ctx.stringValue("OpsDescribeGlobalImagesResponse.Images["+ i +"].ImageCategory"));
+			image.setImageId(_ctx.stringValue("OpsDescribeGlobalImagesResponse.Images["+ i +"].ImageId"));
+			image.setModifyTime(_ctx.stringValue("OpsDescribeGlobalImagesResponse.Images["+ i +"].ModifyTime"));
+			image.setProductCode(_ctx.stringValue("OpsDescribeGlobalImagesResponse.Images["+ i +"].ProductCode"));
 
 			images.add(image);
 		}

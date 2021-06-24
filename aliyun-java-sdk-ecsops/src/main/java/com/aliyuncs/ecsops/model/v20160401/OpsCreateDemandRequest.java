@@ -17,7 +17,6 @@ package com.aliyuncs.ecsops.model.v20160401;
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
 import com.aliyuncs.http.MethodType;
-import com.aliyuncs.ecsops.Endpoint;
 
 /**
  * @author auto create
@@ -54,12 +53,8 @@ public class OpsCreateDemandRequest extends RpcAcsRequest<OpsCreateDemandRespons
 
 	private String auditParamStr;
 	public OpsCreateDemandRequest() {
-		super("Ecsops", "2016-04-01", "OpsCreateDemand", "ecs");
+		super("Ecsops", "2016-04-01", "OpsCreateDemand", "ecsops");
 		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
 	}
 
 	public String getDemandTime() {
@@ -190,9 +185,9 @@ public class OpsCreateDemandRequest extends RpcAcsRequest<OpsCreateDemandRespons
 				putQueryParameter("SubDemand." + (depth1 + 1) + ".Iz" , subDemands.get(depth1).getIz());
 				putQueryParameter("SubDemand." + (depth1 + 1) + ".SubDemandId" , subDemands.get(depth1).getSubDemandId());
 				putQueryParameter("SubDemand." + (depth1 + 1) + ".InstanceType" , subDemands.get(depth1).getInstanceType());
-				putQueryParameter("SubDemand." + (depth1 + 1) + ".DemandCount" , subDemands.get(depth1).getDemandCount());
-				putQueryParameter("SubDemand." + (depth1 + 1) + ".OutId" , subDemands.get(depth1).getOutId());
 				putQueryParameter("SubDemand." + (depth1 + 1) + ".Comment" , subDemands.get(depth1).getComment());
+				putQueryParameter("SubDemand." + (depth1 + 1) + ".OutId" , subDemands.get(depth1).getOutId());
+				putQueryParameter("SubDemand." + (depth1 + 1) + ".DemandCount" , subDemands.get(depth1).getDemandCount());
 				putQueryParameter("SubDemand." + (depth1 + 1) + ".Region" , subDemands.get(depth1).getRegion());
 				putQueryParameter("SubDemand." + (depth1 + 1) + ".PayType" , subDemands.get(depth1).getPayType());
 				putQueryParameter("SubDemand." + (depth1 + 1) + ".ExpectPayTimeEnd" , subDemands.get(depth1).getExpectPayTimeEnd());
@@ -255,11 +250,11 @@ public class OpsCreateDemandRequest extends RpcAcsRequest<OpsCreateDemandRespons
 
 		private String instanceType;
 
-		private Integer demandCount;
+		private String comment;
 
 		private String outId;
 
-		private String comment;
+		private Integer demandCount;
 
 		private String region;
 
@@ -347,12 +342,12 @@ public class OpsCreateDemandRequest extends RpcAcsRequest<OpsCreateDemandRespons
 			this.instanceType = instanceType;
 		}
 
-		public Integer getDemandCount() {
-			return this.demandCount;
+		public String getComment() {
+			return this.comment;
 		}
 
-		public void setDemandCount(Integer demandCount) {
-			this.demandCount = demandCount;
+		public void setComment(String comment) {
+			this.comment = comment;
 		}
 
 		public String getOutId() {
@@ -363,12 +358,12 @@ public class OpsCreateDemandRequest extends RpcAcsRequest<OpsCreateDemandRespons
 			this.outId = outId;
 		}
 
-		public String getComment() {
-			return this.comment;
+		public Integer getDemandCount() {
+			return this.demandCount;
 		}
 
-		public void setComment(String comment) {
-			this.comment = comment;
+		public void setDemandCount(Integer demandCount) {
+			this.demandCount = demandCount;
 		}
 
 		public String getRegion() {

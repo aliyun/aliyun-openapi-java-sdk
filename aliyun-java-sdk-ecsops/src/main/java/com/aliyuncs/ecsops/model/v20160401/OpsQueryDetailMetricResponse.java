@@ -25,31 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsQueryDetailMetricResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Boolean isStack;
-
-	private Integer interval;
-
-	private String startTime;
 
 	private String endTime;
 
-	private String metricDescription;
+	private String requestId;
 
-	private String exceptionName;
+	private String startTime;
+
+	private String metricDescription;
 
 	private String extraInfo;
 
+	private Integer interval;
+
+	private String exceptionName;
+
 	private List<DetailMetric> detailMetrics;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Boolean getIsStack() {
 		return this.isStack;
@@ -57,22 +49,6 @@ public class OpsQueryDetailMetricResponse extends AcsResponse {
 
 	public void setIsStack(Boolean isStack) {
 		this.isStack = isStack;
-	}
-
-	public Integer getInterval() {
-		return this.interval;
-	}
-
-	public void setInterval(Integer interval) {
-		this.interval = interval;
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
 	}
 
 	public String getEndTime() {
@@ -83,6 +59,22 @@ public class OpsQueryDetailMetricResponse extends AcsResponse {
 		this.endTime = endTime;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+	}
+
 	public String getMetricDescription() {
 		return this.metricDescription;
 	}
@@ -91,20 +83,28 @@ public class OpsQueryDetailMetricResponse extends AcsResponse {
 		this.metricDescription = metricDescription;
 	}
 
-	public String getExceptionName() {
-		return this.exceptionName;
-	}
-
-	public void setExceptionName(String exceptionName) {
-		this.exceptionName = exceptionName;
-	}
-
 	public String getExtraInfo() {
 		return this.extraInfo;
 	}
 
 	public void setExtraInfo(String extraInfo) {
 		this.extraInfo = extraInfo;
+	}
+
+	public Integer getInterval() {
+		return this.interval;
+	}
+
+	public void setInterval(Integer interval) {
+		this.interval = interval;
+	}
+
+	public String getExceptionName() {
+		return this.exceptionName;
+	}
+
+	public void setExceptionName(String exceptionName) {
+		this.exceptionName = exceptionName;
 	}
 
 	public List<DetailMetric> getDetailMetrics() {

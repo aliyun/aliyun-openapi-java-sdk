@@ -31,14 +31,14 @@ public class OpsQueryHouyiZoneInventoryResponseUnmarshaller {
 		List<ProductResource> productResources = new ArrayList<ProductResource>();
 		for (int i = 0; i < _ctx.lengthValue("OpsQueryHouyiZoneInventoryResponse.ProductResources.Length"); i++) {
 			ProductResource productResource = new ProductResource();
-			productResource.setInstanceType(_ctx.stringValue("OpsQueryHouyiZoneInventoryResponse.ProductResources["+ i +"].InstanceType"));
+			productResource.setIoOptimized(_ctx.longValue("OpsQueryHouyiZoneInventoryResponse.ProductResources["+ i +"].IoOptimized"));
+			productResource.setResourceType(_ctx.integerValue("OpsQueryHouyiZoneInventoryResponse.ProductResources["+ i +"].ResourceType"));
 			productResource.setVendibleAmount(_ctx.longValue("OpsQueryHouyiZoneInventoryResponse.ProductResources["+ i +"].VendibleAmount"));
+			productResource.setPayType(_ctx.stringValue("OpsQueryHouyiZoneInventoryResponse.ProductResources["+ i +"].PayType"));
 			productResource.setTotalAmount(_ctx.longValue("OpsQueryHouyiZoneInventoryResponse.ProductResources["+ i +"].TotalAmount"));
 			productResource.setNetworkType(_ctx.stringValue("OpsQueryHouyiZoneInventoryResponse.ProductResources["+ i +"].NetworkType"));
-			productResource.setPayType(_ctx.stringValue("OpsQueryHouyiZoneInventoryResponse.ProductResources["+ i +"].PayType"));
-			productResource.setIoOptimized(_ctx.longValue("OpsQueryHouyiZoneInventoryResponse.ProductResources["+ i +"].IoOptimized"));
+			productResource.setInstanceType(_ctx.stringValue("OpsQueryHouyiZoneInventoryResponse.ProductResources["+ i +"].InstanceType"));
 			productResource.setBizType(_ctx.stringValue("OpsQueryHouyiZoneInventoryResponse.ProductResources["+ i +"].BizType"));
-			productResource.setResourceType(_ctx.integerValue("OpsQueryHouyiZoneInventoryResponse.ProductResources["+ i +"].ResourceType"));
 
 			productResources.add(productResource);
 		}

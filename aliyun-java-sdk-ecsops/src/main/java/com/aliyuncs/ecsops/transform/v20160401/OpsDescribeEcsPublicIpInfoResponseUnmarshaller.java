@@ -25,25 +25,25 @@ public class OpsDescribeEcsPublicIpInfoResponseUnmarshaller {
 	public static OpsDescribeEcsPublicIpInfoResponse unmarshall(OpsDescribeEcsPublicIpInfoResponse opsDescribeEcsPublicIpInfoResponse, UnmarshallerContext _ctx) {
 		
 		opsDescribeEcsPublicIpInfoResponse.setRequestId(_ctx.stringValue("OpsDescribeEcsPublicIpInfoResponse.RequestId"));
-		opsDescribeEcsPublicIpInfoResponse.setCode(_ctx.stringValue("OpsDescribeEcsPublicIpInfoResponse.Code"));
 		opsDescribeEcsPublicIpInfoResponse.setMessage(_ctx.stringValue("OpsDescribeEcsPublicIpInfoResponse.Message"));
+		opsDescribeEcsPublicIpInfoResponse.setCode(_ctx.stringValue("OpsDescribeEcsPublicIpInfoResponse.Code"));
 
 		EcsNatPublicIpModel ecsNatPublicIpModel = new EcsNatPublicIpModel();
-		ecsNatPublicIpModel.setEcsInstanceInternetIp(_ctx.stringValue("OpsDescribeEcsPublicIpInfoResponse.EcsNatPublicIpModel.EcsInstanceInternetIp"));
-		ecsNatPublicIpModel.setEcsInstanceIpForms(_ctx.stringValue("OpsDescribeEcsPublicIpInfoResponse.EcsNatPublicIpModel.EcsInstanceIpForms"));
-		ecsNatPublicIpModel.setEcsInstanceInternetTx(_ctx.integerValue("OpsDescribeEcsPublicIpInfoResponse.EcsNatPublicIpModel.EcsInstanceInternetTx"));
 		ecsNatPublicIpModel.setEcsInstanceInternetRx(_ctx.integerValue("OpsDescribeEcsPublicIpInfoResponse.EcsNatPublicIpModel.EcsInstanceInternetRx"));
 		ecsNatPublicIpModel.setEniInstancePrimaryIp(_ctx.stringValue("OpsDescribeEcsPublicIpInfoResponse.EcsNatPublicIpModel.EniInstancePrimaryIp"));
+		ecsNatPublicIpModel.setEcsInstanceIpForms(_ctx.stringValue("OpsDescribeEcsPublicIpInfoResponse.EcsNatPublicIpModel.EcsInstanceIpForms"));
+		ecsNatPublicIpModel.setEcsInstanceInternetIp(_ctx.stringValue("OpsDescribeEcsPublicIpInfoResponse.EcsNatPublicIpModel.EcsInstanceInternetIp"));
 		ecsNatPublicIpModel.setIsp(_ctx.stringValue("OpsDescribeEcsPublicIpInfoResponse.EcsNatPublicIpModel.Isp"));
+		ecsNatPublicIpModel.setEcsInstanceInternetTx(_ctx.integerValue("OpsDescribeEcsPublicIpInfoResponse.EcsNatPublicIpModel.EcsInstanceInternetTx"));
 		opsDescribeEcsPublicIpInfoResponse.setEcsNatPublicIpModel(ecsNatPublicIpModel);
 
 		VpcNatPublicIpModel vpcNatPublicIpModel = new VpcNatPublicIpModel();
-		vpcNatPublicIpModel.setIp(_ctx.stringValue("OpsDescribeEcsPublicIpInfoResponse.VpcNatPublicIpModel.Ip"));
-		vpcNatPublicIpModel.setEcsInstanceId(_ctx.stringValue("OpsDescribeEcsPublicIpInfoResponse.VpcNatPublicIpModel.EcsInstanceId"));
 		vpcNatPublicIpModel.setStatus(_ctx.stringValue("OpsDescribeEcsPublicIpInfoResponse.VpcNatPublicIpModel.Status"));
-		vpcNatPublicIpModel.setIsp(_ctx.stringValue("OpsDescribeEcsPublicIpInfoResponse.VpcNatPublicIpModel.Isp"));
 		vpcNatPublicIpModel.setPublicTxBps(_ctx.integerValue("OpsDescribeEcsPublicIpInfoResponse.VpcNatPublicIpModel.PublicTxBps"));
+		vpcNatPublicIpModel.setIp(_ctx.stringValue("OpsDescribeEcsPublicIpInfoResponse.VpcNatPublicIpModel.Ip"));
 		vpcNatPublicIpModel.setPublicRxBps(_ctx.integerValue("OpsDescribeEcsPublicIpInfoResponse.VpcNatPublicIpModel.PublicRxBps"));
+		vpcNatPublicIpModel.setEcsInstanceId(_ctx.stringValue("OpsDescribeEcsPublicIpInfoResponse.VpcNatPublicIpModel.EcsInstanceId"));
+		vpcNatPublicIpModel.setIsp(_ctx.stringValue("OpsDescribeEcsPublicIpInfoResponse.VpcNatPublicIpModel.Isp"));
 		opsDescribeEcsPublicIpInfoResponse.setVpcNatPublicIpModel(vpcNatPublicIpModel);
 	 
 	 	return opsDescribeEcsPublicIpInfoResponse;

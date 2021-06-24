@@ -32,14 +32,14 @@ public class OpsQueryDetailMetricConfigResponseUnmarshaller {
 		List<MetricConfig> metricConfigs = new ArrayList<MetricConfig>();
 		for (int i = 0; i < _ctx.lengthValue("OpsQueryDetailMetricConfigResponse.MetricConfigs.Length"); i++) {
 			MetricConfig metricConfig = new MetricConfig();
-			metricConfig.setMetricName(_ctx.stringValue("OpsQueryDetailMetricConfigResponse.MetricConfigs["+ i +"].MetricName"));
-			metricConfig.setMetricTarget(_ctx.stringValue("OpsQueryDetailMetricConfigResponse.MetricConfigs["+ i +"].MetricTarget"));
-			metricConfig.setMetricDescription(_ctx.stringValue("OpsQueryDetailMetricConfigResponse.MetricConfigs["+ i +"].MetricDescription"));
-			metricConfig.setMetricLogStore(_ctx.stringValue("OpsQueryDetailMetricConfigResponse.MetricConfigs["+ i +"].MetricLogStore"));
-			metricConfig.setMetricSlsConfigName(_ctx.stringValue("OpsQueryDetailMetricConfigResponse.MetricConfigs["+ i +"].MetricSlsConfigName"));
-			metricConfig.setMetricInterval(_ctx.integerValue("OpsQueryDetailMetricConfigResponse.MetricConfigs["+ i +"].MetricInterval"));
-			metricConfig.setMetricAnalyse(_ctx.stringValue("OpsQueryDetailMetricConfigResponse.MetricConfigs["+ i +"].MetricAnalyse"));
 			metricConfig.setMetricQuery(_ctx.stringValue("OpsQueryDetailMetricConfigResponse.MetricConfigs["+ i +"].MetricQuery"));
+			metricConfig.setMetricName(_ctx.stringValue("OpsQueryDetailMetricConfigResponse.MetricConfigs["+ i +"].MetricName"));
+			metricConfig.setMetricSlsConfigName(_ctx.stringValue("OpsQueryDetailMetricConfigResponse.MetricConfigs["+ i +"].MetricSlsConfigName"));
+			metricConfig.setMetricTarget(_ctx.stringValue("OpsQueryDetailMetricConfigResponse.MetricConfigs["+ i +"].MetricTarget"));
+			metricConfig.setMetricInterval(_ctx.integerValue("OpsQueryDetailMetricConfigResponse.MetricConfigs["+ i +"].MetricInterval"));
+			metricConfig.setMetricLogStore(_ctx.stringValue("OpsQueryDetailMetricConfigResponse.MetricConfigs["+ i +"].MetricLogStore"));
+			metricConfig.setMetricDescription(_ctx.stringValue("OpsQueryDetailMetricConfigResponse.MetricConfigs["+ i +"].MetricDescription"));
+			metricConfig.setMetricAnalyse(_ctx.stringValue("OpsQueryDetailMetricConfigResponse.MetricConfigs["+ i +"].MetricAnalyse"));
 
 			List<String> metricRegions = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("OpsQueryDetailMetricConfigResponse.MetricConfigs["+ i +"].MetricRegions.Length"); j++) {
@@ -50,9 +50,9 @@ public class OpsQueryDetailMetricConfigResponseUnmarshaller {
 			List<AggregationDimension> aggregationDimensions = new ArrayList<AggregationDimension>();
 			for (int j = 0; j < _ctx.lengthValue("OpsQueryDetailMetricConfigResponse.MetricConfigs["+ i +"].AggregationDimensions.Length"); j++) {
 				AggregationDimension aggregationDimension = new AggregationDimension();
+				aggregationDimension.setAggregationType(_ctx.stringValue("OpsQueryDetailMetricConfigResponse.MetricConfigs["+ i +"].AggregationDimensions["+ j +"].AggregationType"));
 				aggregationDimension.setAggregationMaxCnt(_ctx.integerValue("OpsQueryDetailMetricConfigResponse.MetricConfigs["+ i +"].AggregationDimensions["+ j +"].AggregationMaxCnt"));
 				aggregationDimension.setAggregationIndex(_ctx.stringValue("OpsQueryDetailMetricConfigResponse.MetricConfigs["+ i +"].AggregationDimensions["+ j +"].AggregationIndex"));
-				aggregationDimension.setAggregationType(_ctx.stringValue("OpsQueryDetailMetricConfigResponse.MetricConfigs["+ i +"].AggregationDimensions["+ j +"].AggregationType"));
 
 				aggregationDimensions.add(aggregationDimension);
 			}

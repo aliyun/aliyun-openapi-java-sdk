@@ -32,27 +32,27 @@ public class OpsDescribeSpotInstancesResponseUnmarshaller {
 		List<Instance> instances = new ArrayList<Instance>();
 		for (int i = 0; i < _ctx.lengthValue("OpsDescribeSpotInstancesResponse.Instances.Length"); i++) {
 			Instance instance = new Instance();
-			instance.setInstanceId(_ctx.stringValue("OpsDescribeSpotInstancesResponse.Instances["+ i +"].InstanceId"));
-			instance.setRegionId(_ctx.stringValue("OpsDescribeSpotInstancesResponse.Instances["+ i +"].RegionId"));
+			instance.setStatus(_ctx.stringValue("OpsDescribeSpotInstancesResponse.Instances["+ i +"].Status"));
+			instance.setSpotStatus(_ctx.stringValue("OpsDescribeSpotInstancesResponse.Instances["+ i +"].spotStatus"));
 			instance.setIzId(_ctx.stringValue("OpsDescribeSpotInstancesResponse.Instances["+ i +"].IzId"));
-			instance.setZoneId(_ctx.stringValue("OpsDescribeSpotInstancesResponse.Instances["+ i +"].ZoneId"));
+			instance.setInstanceId(_ctx.stringValue("OpsDescribeSpotInstancesResponse.Instances["+ i +"].InstanceId"));
+			instance.setInstanceType(_ctx.stringValue("OpsDescribeSpotInstancesResponse.Instances["+ i +"].InstanceType"));
 			instance.setBid(_ctx.stringValue("OpsDescribeSpotInstancesResponse.Instances["+ i +"].Bid"));
+			instance.setSpotStrategy(_ctx.stringValue("OpsDescribeSpotInstancesResponse.Instances["+ i +"].SpotStrategy"));
+			instance.setRegionId(_ctx.stringValue("OpsDescribeSpotInstancesResponse.Instances["+ i +"].RegionId"));
+			instance.setSpotDiscountLimit(_ctx.integerValue("OpsDescribeSpotInstancesResponse.Instances["+ i +"].SpotDiscountLimit"));
+			instance.setIoOptimized(_ctx.booleanValue("OpsDescribeSpotInstancesResponse.Instances["+ i +"].IoOptimized"));
 			instance.setResourceOwnerId(_ctx.stringValue("OpsDescribeSpotInstancesResponse.Instances["+ i +"].ResourceOwnerId"));
 			instance.setCpu(_ctx.integerValue("OpsDescribeSpotInstancesResponse.Instances["+ i +"].Cpu"));
-			instance.setMemory(_ctx.integerValue("OpsDescribeSpotInstancesResponse.Instances["+ i +"].Memory"));
-			instance.setInstanceType(_ctx.stringValue("OpsDescribeSpotInstancesResponse.Instances["+ i +"].InstanceType"));
-			instance.setInstanceTypeFamily(_ctx.stringValue("OpsDescribeSpotInstancesResponse.Instances["+ i +"].InstanceTypeFamily"));
-			instance.setStatus(_ctx.stringValue("OpsDescribeSpotInstancesResponse.Instances["+ i +"].Status"));
-			instance.setBusinessStatus(_ctx.stringValue("OpsDescribeSpotInstancesResponse.Instances["+ i +"].BusinessStatus"));
-			instance.setCreatedTime(_ctx.stringValue("OpsDescribeSpotInstancesResponse.Instances["+ i +"].CreatedTime"));
-			instance.setInstanceNetworkType(_ctx.stringValue("OpsDescribeSpotInstancesResponse.Instances["+ i +"].InstanceNetworkType"));
-			instance.setIoOptimized(_ctx.booleanValue("OpsDescribeSpotInstancesResponse.Instances["+ i +"].IoOptimized"));
-			instance.setSpotStrategy(_ctx.stringValue("OpsDescribeSpotInstancesResponse.Instances["+ i +"].SpotStrategy"));
 			instance.setSpotDuration(_ctx.integerValue("OpsDescribeSpotInstancesResponse.Instances["+ i +"].SpotDuration"));
+			instance.setInstanceNetworkType(_ctx.stringValue("OpsDescribeSpotInstancesResponse.Instances["+ i +"].InstanceNetworkType"));
+			instance.setZoneId(_ctx.stringValue("OpsDescribeSpotInstancesResponse.Instances["+ i +"].ZoneId"));
+			instance.setBusinessStatus(_ctx.stringValue("OpsDescribeSpotInstancesResponse.Instances["+ i +"].BusinessStatus"));
 			instance.setSpotPriceLimit(_ctx.floatValue("OpsDescribeSpotInstancesResponse.Instances["+ i +"].SpotPriceLimit"));
-			instance.setSpotDiscountLimit(_ctx.integerValue("OpsDescribeSpotInstancesResponse.Instances["+ i +"].SpotDiscountLimit"));
+			instance.setMemory(_ctx.integerValue("OpsDescribeSpotInstancesResponse.Instances["+ i +"].Memory"));
+			instance.setCreatedTime(_ctx.stringValue("OpsDescribeSpotInstancesResponse.Instances["+ i +"].CreatedTime"));
+			instance.setInstanceTypeFamily(_ctx.stringValue("OpsDescribeSpotInstancesResponse.Instances["+ i +"].InstanceTypeFamily"));
 			instance.setSpotInterruptionBehavior(_ctx.stringValue("OpsDescribeSpotInstancesResponse.Instances["+ i +"].SpotInterruptionBehavior"));
-			instance.setSpotStatus(_ctx.stringValue("OpsDescribeSpotInstancesResponse.Instances["+ i +"].spotStatus"));
 
 			instances.add(instance);
 		}

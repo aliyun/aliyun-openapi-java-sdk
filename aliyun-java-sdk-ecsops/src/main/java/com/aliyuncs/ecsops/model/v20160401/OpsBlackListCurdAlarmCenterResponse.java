@@ -25,17 +25,33 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsBlackListCurdAlarmCenterResponse extends AcsResponse {
 
+	private String bpmsUrl;
+
+	private Boolean useBpms;
+
 	private String blacklistDataType;
 
 	private String operateType;
 
-	private Boolean useBpms;
-
-	private String bpmsUrl;
+	private List<BlacklistContent> blacklistContents;
 
 	private List<BlacklistDimension> blacklistDimensions;
 
-	private List<BlacklistContent> blacklistContents;
+	public String getBpmsUrl() {
+		return this.bpmsUrl;
+	}
+
+	public void setBpmsUrl(String bpmsUrl) {
+		this.bpmsUrl = bpmsUrl;
+	}
+
+	public Boolean getUseBpms() {
+		return this.useBpms;
+	}
+
+	public void setUseBpms(Boolean useBpms) {
+		this.useBpms = useBpms;
+	}
 
 	public String getBlacklistDataType() {
 		return this.blacklistDataType;
@@ -53,20 +69,12 @@ public class OpsBlackListCurdAlarmCenterResponse extends AcsResponse {
 		this.operateType = operateType;
 	}
 
-	public Boolean getUseBpms() {
-		return this.useBpms;
+	public List<BlacklistContent> getBlacklistContents() {
+		return this.blacklistContents;
 	}
 
-	public void setUseBpms(Boolean useBpms) {
-		this.useBpms = useBpms;
-	}
-
-	public String getBpmsUrl() {
-		return this.bpmsUrl;
-	}
-
-	public void setBpmsUrl(String bpmsUrl) {
-		this.bpmsUrl = bpmsUrl;
+	public void setBlacklistContents(List<BlacklistContent> blacklistContents) {
+		this.blacklistContents = blacklistContents;
 	}
 
 	public List<BlacklistDimension> getBlacklistDimensions() {
@@ -77,40 +85,17 @@ public class OpsBlackListCurdAlarmCenterResponse extends AcsResponse {
 		this.blacklistDimensions = blacklistDimensions;
 	}
 
-	public List<BlacklistContent> getBlacklistContents() {
-		return this.blacklistContents;
-	}
-
-	public void setBlacklistContents(List<BlacklistContent> blacklistContents) {
-		this.blacklistContents = blacklistContents;
-	}
-
-	public static class BlacklistDimension {
-
-		private Integer blacklistDimensionId;
-
-		private String blacklistDimension;
-
-		public Integer getBlacklistDimensionId() {
-			return this.blacklistDimensionId;
-		}
-
-		public void setBlacklistDimensionId(Integer blacklistDimensionId) {
-			this.blacklistDimensionId = blacklistDimensionId;
-		}
-
-		public String getBlacklistDimension() {
-			return this.blacklistDimension;
-		}
-
-		public void setBlacklistDimension(String blacklistDimension) {
-			this.blacklistDimension = blacklistDimension;
-		}
-	}
-
 	public static class BlacklistContent {
 
-		private Integer blacklistContentId;
+		private String gmtCreated;
+
+		private String extension;
+
+		private String startDueTime;
+
+		private String blackContent;
+
+		private String dueTime;
 
 		private Integer metaInfoId;
 
@@ -118,22 +103,48 @@ public class OpsBlackListCurdAlarmCenterResponse extends AcsResponse {
 
 		private String nickname;
 
-		private String blackContent;
-
-		private String dueTime;
-
-		private String gmtCreated;
+		private Integer blacklistContentId;
 
 		private String gmtModified;
 
-		private String extension;
-
-		public Integer getBlacklistContentId() {
-			return this.blacklistContentId;
+		public String getGmtCreated() {
+			return this.gmtCreated;
 		}
 
-		public void setBlacklistContentId(Integer blacklistContentId) {
-			this.blacklistContentId = blacklistContentId;
+		public void setGmtCreated(String gmtCreated) {
+			this.gmtCreated = gmtCreated;
+		}
+
+		public String getExtension() {
+			return this.extension;
+		}
+
+		public void setExtension(String extension) {
+			this.extension = extension;
+		}
+
+		public String getStartDueTime() {
+			return this.startDueTime;
+		}
+
+		public void setStartDueTime(String startDueTime) {
+			this.startDueTime = startDueTime;
+		}
+
+		public String getBlackContent() {
+			return this.blackContent;
+		}
+
+		public void setBlackContent(String blackContent) {
+			this.blackContent = blackContent;
+		}
+
+		public String getDueTime() {
+			return this.dueTime;
+		}
+
+		public void setDueTime(String dueTime) {
+			this.dueTime = dueTime;
 		}
 
 		public Integer getMetaInfoId() {
@@ -160,28 +171,12 @@ public class OpsBlackListCurdAlarmCenterResponse extends AcsResponse {
 			this.nickname = nickname;
 		}
 
-		public String getBlackContent() {
-			return this.blackContent;
+		public Integer getBlacklistContentId() {
+			return this.blacklistContentId;
 		}
 
-		public void setBlackContent(String blackContent) {
-			this.blackContent = blackContent;
-		}
-
-		public String getDueTime() {
-			return this.dueTime;
-		}
-
-		public void setDueTime(String dueTime) {
-			this.dueTime = dueTime;
-		}
-
-		public String getGmtCreated() {
-			return this.gmtCreated;
-		}
-
-		public void setGmtCreated(String gmtCreated) {
-			this.gmtCreated = gmtCreated;
+		public void setBlacklistContentId(Integer blacklistContentId) {
+			this.blacklistContentId = blacklistContentId;
 		}
 
 		public String getGmtModified() {
@@ -191,13 +186,28 @@ public class OpsBlackListCurdAlarmCenterResponse extends AcsResponse {
 		public void setGmtModified(String gmtModified) {
 			this.gmtModified = gmtModified;
 		}
+	}
 
-		public String getExtension() {
-			return this.extension;
+	public static class BlacklistDimension {
+
+		private String blacklistDimension;
+
+		private Integer blacklistDimensionId;
+
+		public String getBlacklistDimension() {
+			return this.blacklistDimension;
 		}
 
-		public void setExtension(String extension) {
-			this.extension = extension;
+		public void setBlacklistDimension(String blacklistDimension) {
+			this.blacklistDimension = blacklistDimension;
+		}
+
+		public Integer getBlacklistDimensionId() {
+			return this.blacklistDimensionId;
+		}
+
+		public void setBlacklistDimensionId(Integer blacklistDimensionId) {
+			this.blacklistDimensionId = blacklistDimensionId;
 		}
 	}
 

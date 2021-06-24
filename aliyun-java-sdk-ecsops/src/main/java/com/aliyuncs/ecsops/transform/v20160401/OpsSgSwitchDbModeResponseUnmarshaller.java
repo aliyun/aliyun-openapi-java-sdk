@@ -24,8 +24,8 @@ public class OpsSgSwitchDbModeResponseUnmarshaller {
 	public static OpsSgSwitchDbModeResponse unmarshall(OpsSgSwitchDbModeResponse opsSgSwitchDbModeResponse, UnmarshallerContext _ctx) {
 		
 		opsSgSwitchDbModeResponse.setRequestId(_ctx.stringValue("OpsSgSwitchDbModeResponse.RequestId"));
-		opsSgSwitchDbModeResponse.setCode(_ctx.stringValue("OpsSgSwitchDbModeResponse.Code"));
 		opsSgSwitchDbModeResponse.setMessage(_ctx.stringValue("OpsSgSwitchDbModeResponse.Message"));
+		opsSgSwitchDbModeResponse.setCode(_ctx.stringValue("OpsSgSwitchDbModeResponse.Code"));
 		opsSgSwitchDbModeResponse.setSuccess(_ctx.booleanValue("OpsSgSwitchDbModeResponse.Success"));
 
 		Data data = new Data();

@@ -25,17 +25,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsDescribeLimitInstancesResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String code;
-
 	private String message;
 
-	private String success;
+	private String requestId;
 
 	private Long total;
 
+	private String code;
+
+	private String success;
+
 	private List<LimitInstance> limitInstances;
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -43,6 +51,14 @@ public class OpsDescribeLimitInstancesResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Long getTotal() {
+		return this.total;
+	}
+
+	public void setTotal(Long total) {
+		this.total = total;
 	}
 
 	public String getCode() {
@@ -53,28 +69,12 @@ public class OpsDescribeLimitInstancesResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
 	public String getSuccess() {
 		return this.success;
 	}
 
 	public void setSuccess(String success) {
 		this.success = success;
-	}
-
-	public Long getTotal() {
-		return this.total;
-	}
-
-	public void setTotal(Long total) {
-		this.total = total;
 	}
 
 	public List<LimitInstance> getLimitInstances() {
@@ -87,92 +87,36 @@ public class OpsDescribeLimitInstancesResponse extends AcsResponse {
 
 	public static class LimitInstance {
 
-		private String limitType;
-
-		private String instanceId;
-
-		private Long privateRxBps;
-
-		private Long privateTxBps;
-
-		private Long privateRxPps;
-
-		private Long privateTxPps;
-
-		private Long publicRxBps;
-
-		private Long publicTxBps;
+		private Long publicTxPps;
 
 		private Long publicRxPps;
 
-		private Long publicTxPps;
+		private Long sessionEstablishRate;
+
+		private Long publicTxBps;
+
+		private Long privateRxBps;
+
+		private Long privateRxPps;
+
+		private String instanceId;
+
+		private Long publicRxBps;
+
+		private Long privateTxBps;
+
+		private String limitType;
+
+		private Long privateTxPps;
 
 		private Long sessionQuota;
 
-		private Long sessionEstablishRate;
-
-		public String getLimitType() {
-			return this.limitType;
+		public Long getPublicTxPps() {
+			return this.publicTxPps;
 		}
 
-		public void setLimitType(String limitType) {
-			this.limitType = limitType;
-		}
-
-		public String getInstanceId() {
-			return this.instanceId;
-		}
-
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
-
-		public Long getPrivateRxBps() {
-			return this.privateRxBps;
-		}
-
-		public void setPrivateRxBps(Long privateRxBps) {
-			this.privateRxBps = privateRxBps;
-		}
-
-		public Long getPrivateTxBps() {
-			return this.privateTxBps;
-		}
-
-		public void setPrivateTxBps(Long privateTxBps) {
-			this.privateTxBps = privateTxBps;
-		}
-
-		public Long getPrivateRxPps() {
-			return this.privateRxPps;
-		}
-
-		public void setPrivateRxPps(Long privateRxPps) {
-			this.privateRxPps = privateRxPps;
-		}
-
-		public Long getPrivateTxPps() {
-			return this.privateTxPps;
-		}
-
-		public void setPrivateTxPps(Long privateTxPps) {
-			this.privateTxPps = privateTxPps;
-		}
-
-		public Long getPublicRxBps() {
-			return this.publicRxBps;
-		}
-
-		public void setPublicRxBps(Long publicRxBps) {
-			this.publicRxBps = publicRxBps;
-		}
-
-		public Long getPublicTxBps() {
-			return this.publicTxBps;
-		}
-
-		public void setPublicTxBps(Long publicTxBps) {
-			this.publicTxBps = publicTxBps;
+		public void setPublicTxPps(Long publicTxPps) {
+			this.publicTxPps = publicTxPps;
 		}
 
 		public Long getPublicRxPps() {
@@ -183,12 +127,76 @@ public class OpsDescribeLimitInstancesResponse extends AcsResponse {
 			this.publicRxPps = publicRxPps;
 		}
 
-		public Long getPublicTxPps() {
-			return this.publicTxPps;
+		public Long getSessionEstablishRate() {
+			return this.sessionEstablishRate;
 		}
 
-		public void setPublicTxPps(Long publicTxPps) {
-			this.publicTxPps = publicTxPps;
+		public void setSessionEstablishRate(Long sessionEstablishRate) {
+			this.sessionEstablishRate = sessionEstablishRate;
+		}
+
+		public Long getPublicTxBps() {
+			return this.publicTxBps;
+		}
+
+		public void setPublicTxBps(Long publicTxBps) {
+			this.publicTxBps = publicTxBps;
+		}
+
+		public Long getPrivateRxBps() {
+			return this.privateRxBps;
+		}
+
+		public void setPrivateRxBps(Long privateRxBps) {
+			this.privateRxBps = privateRxBps;
+		}
+
+		public Long getPrivateRxPps() {
+			return this.privateRxPps;
+		}
+
+		public void setPrivateRxPps(Long privateRxPps) {
+			this.privateRxPps = privateRxPps;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public Long getPublicRxBps() {
+			return this.publicRxBps;
+		}
+
+		public void setPublicRxBps(Long publicRxBps) {
+			this.publicRxBps = publicRxBps;
+		}
+
+		public Long getPrivateTxBps() {
+			return this.privateTxBps;
+		}
+
+		public void setPrivateTxBps(Long privateTxBps) {
+			this.privateTxBps = privateTxBps;
+		}
+
+		public String getLimitType() {
+			return this.limitType;
+		}
+
+		public void setLimitType(String limitType) {
+			this.limitType = limitType;
+		}
+
+		public Long getPrivateTxPps() {
+			return this.privateTxPps;
+		}
+
+		public void setPrivateTxPps(Long privateTxPps) {
+			this.privateTxPps = privateTxPps;
 		}
 
 		public Long getSessionQuota() {
@@ -197,14 +205,6 @@ public class OpsDescribeLimitInstancesResponse extends AcsResponse {
 
 		public void setSessionQuota(Long sessionQuota) {
 			this.sessionQuota = sessionQuota;
-		}
-
-		public Long getSessionEstablishRate() {
-			return this.sessionEstablishRate;
-		}
-
-		public void setSessionEstablishRate(Long sessionEstablishRate) {
-			this.sessionEstablishRate = sessionEstablishRate;
 		}
 	}
 

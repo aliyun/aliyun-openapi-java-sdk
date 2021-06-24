@@ -27,9 +27,9 @@ public class OpsDescribeCleanIpResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String total;
-
 	private String pageSize;
+
+	private String total;
 
 	private String pageNo;
 
@@ -43,20 +43,20 @@ public class OpsDescribeCleanIpResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getTotal() {
-		return this.total;
-	}
-
-	public void setTotal(String total) {
-		this.total = total;
-	}
-
 	public String getPageSize() {
 		return this.pageSize;
 	}
 
 	public void setPageSize(String pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public String getTotal() {
+		return this.total;
+	}
+
+	public void setTotal(String total) {
+		this.total = total;
 	}
 
 	public String getPageNo() {
@@ -77,17 +77,9 @@ public class OpsDescribeCleanIpResponse extends AcsResponse {
 
 	public static class LockedIp {
 
-		private String iP;
-
 		private String ipType;
 
-		public String getIP() {
-			return this.iP;
-		}
-
-		public void setIP(String iP) {
-			this.iP = iP;
-		}
+		private String iP;
 
 		public String getIpType() {
 			return this.ipType;
@@ -95,6 +87,14 @@ public class OpsDescribeCleanIpResponse extends AcsResponse {
 
 		public void setIpType(String ipType) {
 			this.ipType = ipType;
+		}
+
+		public String getIP() {
+			return this.iP;
+		}
+
+		public void setIP(String iP) {
+			this.iP = iP;
 		}
 	}
 

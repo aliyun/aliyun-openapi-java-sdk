@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsDescribeDemandPerformResponse extends AcsResponse {
 
+	private String message;
+
 	private String requestId;
 
 	private String code;
 
-	private String message;
-
 	private Boolean success;
 
 	private List<DemandPerformInfoModel> demandPerformInfoModelList;
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -49,14 +57,6 @@ public class OpsDescribeDemandPerformResponse extends AcsResponse {
 
 	public void setCode(String code) {
 		this.code = code;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
 	}
 
 	public Boolean getSuccess() {
@@ -77,30 +77,22 @@ public class OpsDescribeDemandPerformResponse extends AcsResponse {
 
 	public static class DemandPerformInfoModel {
 
-		private String demandId;
-
-		private String subDemandId;
+		private String status;
 
 		private Integer amount;
 
-		private String status;
-
 		private Integer consumeCnt;
 
-		public String getDemandId() {
-			return this.demandId;
+		private String subDemandId;
+
+		private String demandId;
+
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setDemandId(String demandId) {
-			this.demandId = demandId;
-		}
-
-		public String getSubDemandId() {
-			return this.subDemandId;
-		}
-
-		public void setSubDemandId(String subDemandId) {
-			this.subDemandId = subDemandId;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public Integer getAmount() {
@@ -111,20 +103,28 @@ public class OpsDescribeDemandPerformResponse extends AcsResponse {
 			this.amount = amount;
 		}
 
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
 		public Integer getConsumeCnt() {
 			return this.consumeCnt;
 		}
 
 		public void setConsumeCnt(Integer consumeCnt) {
 			this.consumeCnt = consumeCnt;
+		}
+
+		public String getSubDemandId() {
+			return this.subDemandId;
+		}
+
+		public void setSubDemandId(String subDemandId) {
+			this.subDemandId = subDemandId;
+		}
+
+		public String getDemandId() {
+			return this.demandId;
+		}
+
+		public void setDemandId(String demandId) {
+			this.demandId = demandId;
 		}
 	}
 

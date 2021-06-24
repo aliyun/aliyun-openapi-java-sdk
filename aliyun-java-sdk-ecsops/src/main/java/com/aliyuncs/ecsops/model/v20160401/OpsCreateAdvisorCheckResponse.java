@@ -24,15 +24,31 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsCreateAdvisorCheckResponse extends AcsResponse {
 
+	private String checkId;
+
+	private String message;
+
 	private String requestId;
 
 	private String code;
 
-	private String message;
-
 	private String success;
 
-	private String checkId;
+	public String getCheckId() {
+		return this.checkId;
+	}
+
+	public void setCheckId(String checkId) {
+		this.checkId = checkId;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -50,28 +66,12 @@ public class OpsCreateAdvisorCheckResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
 	public String getSuccess() {
 		return this.success;
 	}
 
 	public void setSuccess(String success) {
 		this.success = success;
-	}
-
-	public String getCheckId() {
-		return this.checkId;
-	}
-
-	public void setCheckId(String checkId) {
-		this.checkId = checkId;
 	}
 
 	@Override

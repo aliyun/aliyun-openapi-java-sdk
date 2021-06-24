@@ -25,10 +25,10 @@ public class OpsAlarmCenterProcessTriggerResponseUnmarshaller {
 		opsAlarmCenterProcessTriggerResponse.setRequestId(_ctx.stringValue("OpsAlarmCenterProcessTriggerResponse.RequestId"));
 		opsAlarmCenterProcessTriggerResponse.setStatus(_ctx.stringValue("OpsAlarmCenterProcessTriggerResponse.Status"));
 		opsAlarmCenterProcessTriggerResponse.setFinished(_ctx.booleanValue("OpsAlarmCenterProcessTriggerResponse.Finished"));
+		opsAlarmCenterProcessTriggerResponse.setErrorInfo(_ctx.stringValue("OpsAlarmCenterProcessTriggerResponse.ErrorInfo"));
+		opsAlarmCenterProcessTriggerResponse.setProcessResult(_ctx.stringValue("OpsAlarmCenterProcessTriggerResponse.ProcessResult"));
 		opsAlarmCenterProcessTriggerResponse.setToken(_ctx.stringValue("OpsAlarmCenterProcessTriggerResponse.Token"));
 		opsAlarmCenterProcessTriggerResponse.setRequestTime(_ctx.stringValue("OpsAlarmCenterProcessTriggerResponse.RequestTime"));
-		opsAlarmCenterProcessTriggerResponse.setProcessResult(_ctx.stringValue("OpsAlarmCenterProcessTriggerResponse.ProcessResult"));
-		opsAlarmCenterProcessTriggerResponse.setErrorInfo(_ctx.stringValue("OpsAlarmCenterProcessTriggerResponse.ErrorInfo"));
 	 
 	 	return opsAlarmCenterProcessTriggerResponse;
 	}

@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsDescribePurchasesResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
-
-	private Integer pageNumber;
 
 	private Integer pageSize;
 
+	private String requestId;
+
+	private Integer pageNumber;
+
 	private List<PurchaseSet> purchaseSets;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -51,20 +43,28 @@ public class OpsDescribePurchasesResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<PurchaseSet> getPurchaseSets() {
@@ -77,32 +77,40 @@ public class OpsDescribePurchasesResponse extends AcsResponse {
 
 	public static class PurchaseSet {
 
-		private Long id;
+		private String status;
+
+		private String endDate;
 
 		private Long userId;
 
 		private String startDate;
 
-		private String endDate;
-
-		private String status;
+		private String instanceId;
 
 		private String orderType;
 
 		private Long orderId;
 
-		private String instanceId;
-
-		private List<Property> properties;
+		private Long id;
 
 		private List<Component> components;
 
-		public Long getId() {
-			return this.id;
+		private List<Property2> properties;
+
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setId(Long id) {
-			this.id = id;
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
+		public String getEndDate() {
+			return this.endDate;
+		}
+
+		public void setEndDate(String endDate) {
+			this.endDate = endDate;
 		}
 
 		public Long getUserId() {
@@ -121,20 +129,12 @@ public class OpsDescribePurchasesResponse extends AcsResponse {
 			this.startDate = startDate;
 		}
 
-		public String getEndDate() {
-			return this.endDate;
+		public String getInstanceId() {
+			return this.instanceId;
 		}
 
-		public void setEndDate(String endDate) {
-			this.endDate = endDate;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
 		}
 
 		public String getOrderType() {
@@ -153,20 +153,12 @@ public class OpsDescribePurchasesResponse extends AcsResponse {
 			this.orderId = orderId;
 		}
 
-		public String getInstanceId() {
-			return this.instanceId;
+		public Long getId() {
+			return this.id;
 		}
 
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
-
-		public List<Property> getProperties() {
-			return this.properties;
-		}
-
-		public void setProperties(List<Property> properties) {
-			this.properties = properties;
+		public void setId(Long id) {
+			this.id = id;
 		}
 
 		public List<Component> getComponents() {
@@ -177,56 +169,23 @@ public class OpsDescribePurchasesResponse extends AcsResponse {
 			this.components = components;
 		}
 
-		public static class Property {
+		public List<Property2> getProperties() {
+			return this.properties;
+		}
 
-			private String code;
-
-			private String value;
-
-			private String name;
-
-			public String getCode() {
-				return this.code;
-			}
-
-			public void setCode(String code) {
-				this.code = code;
-			}
-
-			public String getValue() {
-				return this.value;
-			}
-
-			public void setValue(String value) {
-				this.value = value;
-			}
-
-			public String getName() {
-				return this.name;
-			}
-
-			public void setName(String name) {
-				this.name = name;
-			}
+		public void setProperties(List<Property2> properties) {
+			this.properties = properties;
 		}
 
 		public static class Component {
-
-			private String componentCode;
 
 			private Long moduleAttrStatus;
 
 			private String tag;
 
-			private List<Property2> properties1;
+			private String componentCode;
 
-			public String getComponentCode() {
-				return this.componentCode;
-			}
-
-			public void setComponentCode(String componentCode) {
-				this.componentCode = componentCode;
-			}
+			private List<Property> properties1;
 
 			public Long getModuleAttrStatus() {
 				return this.moduleAttrStatus;
@@ -244,29 +203,29 @@ public class OpsDescribePurchasesResponse extends AcsResponse {
 				this.tag = tag;
 			}
 
-			public List<Property2> getProperties1() {
+			public String getComponentCode() {
+				return this.componentCode;
+			}
+
+			public void setComponentCode(String componentCode) {
+				this.componentCode = componentCode;
+			}
+
+			public List<Property> getProperties1() {
 				return this.properties1;
 			}
 
-			public void setProperties1(List<Property2> properties1) {
+			public void setProperties1(List<Property> properties1) {
 				this.properties1 = properties1;
 			}
 
-			public static class Property2 {
-
-				private String code;
+			public static class Property {
 
 				private String value;
 
+				private String code;
+
 				private String name;
-
-				public String getCode() {
-					return this.code;
-				}
-
-				public void setCode(String code) {
-					this.code = code;
-				}
 
 				public String getValue() {
 					return this.value;
@@ -276,6 +235,14 @@ public class OpsDescribePurchasesResponse extends AcsResponse {
 					this.value = value;
 				}
 
+				public String getCode() {
+					return this.code;
+				}
+
+				public void setCode(String code) {
+					this.code = code;
+				}
+
 				public String getName() {
 					return this.name;
 				}
@@ -283,6 +250,39 @@ public class OpsDescribePurchasesResponse extends AcsResponse {
 				public void setName(String name) {
 					this.name = name;
 				}
+			}
+		}
+
+		public static class Property2 {
+
+			private String value;
+
+			private String code;
+
+			private String name;
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
+			}
+
+			public String getCode() {
+				return this.code;
+			}
+
+			public void setCode(String code) {
+				this.code = code;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
 			}
 		}
 	}

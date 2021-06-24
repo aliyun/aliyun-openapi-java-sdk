@@ -47,41 +47,17 @@ public class OpsDescribeOwnershipTransferHistoryResponse extends AcsResponse {
 
 	public static class Item {
 
-		private String instanceId;
-
-		private String sourceUserId;
-
-		private String targetUserId;
-
 		private String status;
 
 		private String creationTime;
 
+		private String targetUserId;
+
 		private String finishedTime;
 
-		public String getInstanceId() {
-			return this.instanceId;
-		}
+		private String instanceId;
 
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
-
-		public String getSourceUserId() {
-			return this.sourceUserId;
-		}
-
-		public void setSourceUserId(String sourceUserId) {
-			this.sourceUserId = sourceUserId;
-		}
-
-		public String getTargetUserId() {
-			return this.targetUserId;
-		}
-
-		public void setTargetUserId(String targetUserId) {
-			this.targetUserId = targetUserId;
-		}
+		private String sourceUserId;
 
 		public String getStatus() {
 			return this.status;
@@ -99,12 +75,36 @@ public class OpsDescribeOwnershipTransferHistoryResponse extends AcsResponse {
 			this.creationTime = creationTime;
 		}
 
+		public String getTargetUserId() {
+			return this.targetUserId;
+		}
+
+		public void setTargetUserId(String targetUserId) {
+			this.targetUserId = targetUserId;
+		}
+
 		public String getFinishedTime() {
 			return this.finishedTime;
 		}
 
 		public void setFinishedTime(String finishedTime) {
 			this.finishedTime = finishedTime;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public String getSourceUserId() {
+			return this.sourceUserId;
+		}
+
+		public void setSourceUserId(String sourceUserId) {
+			this.sourceUserId = sourceUserId;
 		}
 	}
 

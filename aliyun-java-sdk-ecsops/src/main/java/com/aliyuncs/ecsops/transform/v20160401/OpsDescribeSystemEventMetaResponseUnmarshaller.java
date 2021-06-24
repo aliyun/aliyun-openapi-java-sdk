@@ -32,14 +32,14 @@ public class OpsDescribeSystemEventMetaResponseUnmarshaller {
 		List<EventMeta> eventMetas = new ArrayList<EventMeta>();
 		for (int i = 0; i < _ctx.lengthValue("OpsDescribeSystemEventMetaResponse.EventMetas.Length"); i++) {
 			EventMeta eventMeta = new EventMeta();
-			eventMeta.setResourceType(_ctx.stringValue("OpsDescribeSystemEventMetaResponse.EventMetas["+ i +"].ResourceType"));
-			eventMeta.setCode(_ctx.integerValue("OpsDescribeSystemEventMetaResponse.EventMetas["+ i +"].Code"));
-			eventMeta.setName(_ctx.stringValue("OpsDescribeSystemEventMetaResponse.EventMetas["+ i +"].Name"));
-			eventMeta.setOnlyNotification(_ctx.booleanValue("OpsDescribeSystemEventMetaResponse.EventMetas["+ i +"].OnlyNotification"));
-			eventMeta.setOpenStatus(_ctx.stringValue("OpsDescribeSystemEventMetaResponse.EventMetas["+ i +"].OpenStatus"));
-			eventMeta.setLevel(_ctx.stringValue("OpsDescribeSystemEventMetaResponse.EventMetas["+ i +"].Level"));
-			eventMeta.setSupportSimulate(_ctx.booleanValue("OpsDescribeSystemEventMetaResponse.EventMetas["+ i +"].SupportSimulate"));
 			eventMeta.setReportCms(_ctx.booleanValue("OpsDescribeSystemEventMetaResponse.EventMetas["+ i +"].ReportCms"));
+			eventMeta.setOpenStatus(_ctx.stringValue("OpsDescribeSystemEventMetaResponse.EventMetas["+ i +"].OpenStatus"));
+			eventMeta.setResourceType(_ctx.stringValue("OpsDescribeSystemEventMetaResponse.EventMetas["+ i +"].ResourceType"));
+			eventMeta.setOnlyNotification(_ctx.booleanValue("OpsDescribeSystemEventMetaResponse.EventMetas["+ i +"].OnlyNotification"));
+			eventMeta.setCode(_ctx.integerValue("OpsDescribeSystemEventMetaResponse.EventMetas["+ i +"].Code"));
+			eventMeta.setSupportSimulate(_ctx.booleanValue("OpsDescribeSystemEventMetaResponse.EventMetas["+ i +"].SupportSimulate"));
+			eventMeta.setName(_ctx.stringValue("OpsDescribeSystemEventMetaResponse.EventMetas["+ i +"].Name"));
+			eventMeta.setLevel(_ctx.stringValue("OpsDescribeSystemEventMetaResponse.EventMetas["+ i +"].Level"));
 
 			eventMetas.add(eventMeta);
 		}

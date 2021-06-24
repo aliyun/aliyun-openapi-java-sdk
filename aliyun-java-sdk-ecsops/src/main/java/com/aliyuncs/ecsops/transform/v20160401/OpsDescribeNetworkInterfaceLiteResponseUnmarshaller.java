@@ -30,26 +30,26 @@ public class OpsDescribeNetworkInterfaceLiteResponseUnmarshaller {
 		opsDescribeNetworkInterfaceLiteResponse.setRequestId(_ctx.stringValue("OpsDescribeNetworkInterfaceLiteResponse.RequestId"));
 
 		Data data = new Data();
-		data.setNetworkInterfaceId(_ctx.stringValue("OpsDescribeNetworkInterfaceLiteResponse.Data.NetworkInterfaceId"));
-		data.setStatus(_ctx.stringValue("OpsDescribeNetworkInterfaceLiteResponse.Data.Status"));
-		data.setType(_ctx.stringValue("OpsDescribeNetworkInterfaceLiteResponse.Data.Type"));
-		data.setVSwitchId(_ctx.stringValue("OpsDescribeNetworkInterfaceLiteResponse.Data.VSwitchId"));
-		data.setPrivateIpAddress(_ctx.stringValue("OpsDescribeNetworkInterfaceLiteResponse.Data.PrivateIpAddress"));
-		data.setMacAddress(_ctx.stringValue("OpsDescribeNetworkInterfaceLiteResponse.Data.MacAddress"));
-		data.setNetworkInterfaceName(_ctx.stringValue("OpsDescribeNetworkInterfaceLiteResponse.Data.NetworkInterfaceName"));
-		data.setDescription(_ctx.stringValue("OpsDescribeNetworkInterfaceLiteResponse.Data.Description"));
 		data.setCreationTime(_ctx.stringValue("OpsDescribeNetworkInterfaceLiteResponse.Data.CreationTime"));
-		data.setServiceID(_ctx.longValue("OpsDescribeNetworkInterfaceLiteResponse.Data.ServiceID"));
-		data.setServiceManaged(_ctx.booleanValue("OpsDescribeNetworkInterfaceLiteResponse.Data.ServiceManaged"));
+		data.setType(_ctx.stringValue("OpsDescribeNetworkInterfaceLiteResponse.Data.Type"));
+		data.setStatus(_ctx.stringValue("OpsDescribeNetworkInterfaceLiteResponse.Data.Status"));
+		data.setNetworkInterfaceName(_ctx.stringValue("OpsDescribeNetworkInterfaceLiteResponse.Data.NetworkInterfaceName"));
+		data.setMacAddress(_ctx.stringValue("OpsDescribeNetworkInterfaceLiteResponse.Data.MacAddress"));
+		data.setNetworkInterfaceId(_ctx.stringValue("OpsDescribeNetworkInterfaceLiteResponse.Data.NetworkInterfaceId"));
 		data.setAliUid(_ctx.longValue("OpsDescribeNetworkInterfaceLiteResponse.Data.AliUid"));
+		data.setServiceID(_ctx.longValue("OpsDescribeNetworkInterfaceLiteResponse.Data.ServiceID"));
 		data.setBid(_ctx.stringValue("OpsDescribeNetworkInterfaceLiteResponse.Data.Bid"));
 		data.setRegionId(_ctx.stringValue("OpsDescribeNetworkInterfaceLiteResponse.Data.RegionId"));
+		data.setServiceManaged(_ctx.booleanValue("OpsDescribeNetworkInterfaceLiteResponse.Data.ServiceManaged"));
+		data.setVSwitchId(_ctx.stringValue("OpsDescribeNetworkInterfaceLiteResponse.Data.VSwitchId"));
+		data.setDescription(_ctx.stringValue("OpsDescribeNetworkInterfaceLiteResponse.Data.Description"));
+		data.setPrivateIpAddress(_ctx.stringValue("OpsDescribeNetworkInterfaceLiteResponse.Data.PrivateIpAddress"));
 
 		List<PrivateIpSet> privateIpSets = new ArrayList<PrivateIpSet>();
 		for (int i = 0; i < _ctx.lengthValue("OpsDescribeNetworkInterfaceLiteResponse.Data.PrivateIpSets.Length"); i++) {
 			PrivateIpSet privateIpSet = new PrivateIpSet();
-			privateIpSet.setPrivateIpAddress(_ctx.stringValue("OpsDescribeNetworkInterfaceLiteResponse.Data.PrivateIpSets["+ i +"].PrivateIpAddress"));
 			privateIpSet.setPrimary(_ctx.booleanValue("OpsDescribeNetworkInterfaceLiteResponse.Data.PrivateIpSets["+ i +"].Primary"));
+			privateIpSet.setPrivateIpAddress(_ctx.stringValue("OpsDescribeNetworkInterfaceLiteResponse.Data.PrivateIpSets["+ i +"].PrivateIpAddress"));
 
 			privateIpSets.add(privateIpSet);
 		}

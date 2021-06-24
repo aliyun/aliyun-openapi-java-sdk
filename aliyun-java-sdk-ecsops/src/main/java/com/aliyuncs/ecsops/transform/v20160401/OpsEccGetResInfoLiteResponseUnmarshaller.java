@@ -23,8 +23,8 @@ public class OpsEccGetResInfoLiteResponseUnmarshaller {
 	public static OpsEccGetResInfoLiteResponse unmarshall(OpsEccGetResInfoLiteResponse opsEccGetResInfoLiteResponse, UnmarshallerContext _ctx) {
 		
 		opsEccGetResInfoLiteResponse.setRequestId(_ctx.stringValue("OpsEccGetResInfoLiteResponse.RequestId"));
-		opsEccGetResInfoLiteResponse.setData(_ctx.stringValue("OpsEccGetResInfoLiteResponse.Data"));
 		opsEccGetResInfoLiteResponse.setMessage(_ctx.stringValue("OpsEccGetResInfoLiteResponse.Message"));
+		opsEccGetResInfoLiteResponse.setData(_ctx.stringValue("OpsEccGetResInfoLiteResponse.Data"));
 	 
 	 	return opsEccGetResInfoLiteResponse;
 	}

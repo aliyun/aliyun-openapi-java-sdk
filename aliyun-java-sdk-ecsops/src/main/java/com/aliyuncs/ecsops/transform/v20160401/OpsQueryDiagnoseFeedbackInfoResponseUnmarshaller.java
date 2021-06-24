@@ -27,24 +27,24 @@ public class OpsQueryDiagnoseFeedbackInfoResponseUnmarshaller {
 		opsQueryDiagnoseFeedbackInfoResponse.setFeedbackFlag(_ctx.stringValue("OpsQueryDiagnoseFeedbackInfoResponse.FeedbackFlag"));
 
 		DiagnoseFeedbackInfo diagnoseFeedbackInfo = new DiagnoseFeedbackInfo();
-		diagnoseFeedbackInfo.setMachineId(_ctx.stringValue("OpsQueryDiagnoseFeedbackInfoResponse.DiagnoseFeedbackInfo.MachineId"));
-		diagnoseFeedbackInfo.setNcIp(_ctx.stringValue("OpsQueryDiagnoseFeedbackInfoResponse.DiagnoseFeedbackInfo.NcIp"));
-		diagnoseFeedbackInfo.setSrcExceptionName(_ctx.stringValue("OpsQueryDiagnoseFeedbackInfoResponse.DiagnoseFeedbackInfo.SrcExceptionName"));
-		diagnoseFeedbackInfo.setSrcExceptionType(_ctx.stringValue("OpsQueryDiagnoseFeedbackInfoResponse.DiagnoseFeedbackInfo.SrcExceptionType"));
-		diagnoseFeedbackInfo.setSrcExceptionTime(_ctx.stringValue("OpsQueryDiagnoseFeedbackInfoResponse.DiagnoseFeedbackInfo.SrcExceptionTime"));
-		diagnoseFeedbackInfo.setSrcReason(_ctx.stringValue("OpsQueryDiagnoseFeedbackInfoResponse.DiagnoseFeedbackInfo.SrcReason"));
 		diagnoseFeedbackInfo.setSrcErrorDesc(_ctx.stringValue("OpsQueryDiagnoseFeedbackInfoResponse.DiagnoseFeedbackInfo.SrcErrorDesc"));
-		diagnoseFeedbackInfo.setSrcTeams(_ctx.stringValue("OpsQueryDiagnoseFeedbackInfoResponse.DiagnoseFeedbackInfo.SrcTeams"));
 		diagnoseFeedbackInfo.setCompareResult(_ctx.stringValue("OpsQueryDiagnoseFeedbackInfoResponse.DiagnoseFeedbackInfo.CompareResult"));
-		diagnoseFeedbackInfo.setMatchedFeatures(_ctx.stringValue("OpsQueryDiagnoseFeedbackInfoResponse.DiagnoseFeedbackInfo.MatchedFeatures"));
+		diagnoseFeedbackInfo.setSrcExceptionName(_ctx.stringValue("OpsQueryDiagnoseFeedbackInfoResponse.DiagnoseFeedbackInfo.SrcExceptionName"));
 		diagnoseFeedbackInfo.setSuggestExceptionName(_ctx.stringValue("OpsQueryDiagnoseFeedbackInfoResponse.DiagnoseFeedbackInfo.SuggestExceptionName"));
-		diagnoseFeedbackInfo.setSuggestReason(_ctx.stringValue("OpsQueryDiagnoseFeedbackInfoResponse.DiagnoseFeedbackInfo.SuggestReason"));
+		diagnoseFeedbackInfo.setFeedbackUserId(_ctx.stringValue("OpsQueryDiagnoseFeedbackInfoResponse.DiagnoseFeedbackInfo.FeedbackUserId"));
+		diagnoseFeedbackInfo.setNcIp(_ctx.stringValue("OpsQueryDiagnoseFeedbackInfoResponse.DiagnoseFeedbackInfo.NcIp"));
+		diagnoseFeedbackInfo.setSrcTeams(_ctx.stringValue("OpsQueryDiagnoseFeedbackInfoResponse.DiagnoseFeedbackInfo.SrcTeams"));
+		diagnoseFeedbackInfo.setSrcExceptionTime(_ctx.stringValue("OpsQueryDiagnoseFeedbackInfoResponse.DiagnoseFeedbackInfo.SrcExceptionTime"));
+		diagnoseFeedbackInfo.setGmtCreated(_ctx.stringValue("OpsQueryDiagnoseFeedbackInfoResponse.DiagnoseFeedbackInfo.GmtCreated"));
+		diagnoseFeedbackInfo.setSrcExceptionType(_ctx.stringValue("OpsQueryDiagnoseFeedbackInfoResponse.DiagnoseFeedbackInfo.SrcExceptionType"));
+		diagnoseFeedbackInfo.setMatchedFeatures(_ctx.stringValue("OpsQueryDiagnoseFeedbackInfoResponse.DiagnoseFeedbackInfo.MatchedFeatures"));
 		diagnoseFeedbackInfo.setSuggestErrorDesc(_ctx.stringValue("OpsQueryDiagnoseFeedbackInfoResponse.DiagnoseFeedbackInfo.SuggestErrorDesc"));
 		diagnoseFeedbackInfo.setSuggestTeams(_ctx.stringValue("OpsQueryDiagnoseFeedbackInfoResponse.DiagnoseFeedbackInfo.SuggestTeams"));
-		diagnoseFeedbackInfo.setSuggestOthers(_ctx.stringValue("OpsQueryDiagnoseFeedbackInfoResponse.DiagnoseFeedbackInfo.SuggestOthers"));
-		diagnoseFeedbackInfo.setFeedbackUserId(_ctx.stringValue("OpsQueryDiagnoseFeedbackInfoResponse.DiagnoseFeedbackInfo.FeedbackUserId"));
 		diagnoseFeedbackInfo.setFeedbackUserName(_ctx.stringValue("OpsQueryDiagnoseFeedbackInfoResponse.DiagnoseFeedbackInfo.FeedbackUserName"));
-		diagnoseFeedbackInfo.setGmtCreated(_ctx.stringValue("OpsQueryDiagnoseFeedbackInfoResponse.DiagnoseFeedbackInfo.GmtCreated"));
+		diagnoseFeedbackInfo.setSuggestOthers(_ctx.stringValue("OpsQueryDiagnoseFeedbackInfoResponse.DiagnoseFeedbackInfo.SuggestOthers"));
+		diagnoseFeedbackInfo.setSrcReason(_ctx.stringValue("OpsQueryDiagnoseFeedbackInfoResponse.DiagnoseFeedbackInfo.SrcReason"));
+		diagnoseFeedbackInfo.setSuggestReason(_ctx.stringValue("OpsQueryDiagnoseFeedbackInfoResponse.DiagnoseFeedbackInfo.SuggestReason"));
+		diagnoseFeedbackInfo.setMachineId(_ctx.stringValue("OpsQueryDiagnoseFeedbackInfoResponse.DiagnoseFeedbackInfo.MachineId"));
 		opsQueryDiagnoseFeedbackInfoResponse.setDiagnoseFeedbackInfo(diagnoseFeedbackInfo);
 	 
 	 	return opsQueryDiagnoseFeedbackInfoResponse;

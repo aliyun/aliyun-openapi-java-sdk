@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsCoreApiStatsQueryHistoryResponse extends AcsResponse {
 
+	private String message;
+
 	private String requestId;
 
 	private String code;
 
-	private String message;
-
 	private String success;
 
 	private List<DataItem> data;
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -49,14 +57,6 @@ public class OpsCoreApiStatsQueryHistoryResponse extends AcsResponse {
 
 	public void setCode(String code) {
 		this.code = code;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
 	}
 
 	public String getSuccess() {
@@ -99,21 +99,13 @@ public class OpsCoreApiStatsQueryHistoryResponse extends AcsResponse {
 
 		public static class ApiStat {
 
-			private Long timestamp;
-
 			private Long failureCount;
 
-			private Float responseTimeAvg;
+			private Long timestamp;
 
 			private Long totalCount;
 
-			public Long getTimestamp() {
-				return this.timestamp;
-			}
-
-			public void setTimestamp(Long timestamp) {
-				this.timestamp = timestamp;
-			}
+			private Float responseTimeAvg;
 
 			public Long getFailureCount() {
 				return this.failureCount;
@@ -123,12 +115,12 @@ public class OpsCoreApiStatsQueryHistoryResponse extends AcsResponse {
 				this.failureCount = failureCount;
 			}
 
-			public Float getResponseTimeAvg() {
-				return this.responseTimeAvg;
+			public Long getTimestamp() {
+				return this.timestamp;
 			}
 
-			public void setResponseTimeAvg(Float responseTimeAvg) {
-				this.responseTimeAvg = responseTimeAvg;
+			public void setTimestamp(Long timestamp) {
+				this.timestamp = timestamp;
 			}
 
 			public Long getTotalCount() {
@@ -137,6 +129,14 @@ public class OpsCoreApiStatsQueryHistoryResponse extends AcsResponse {
 
 			public void setTotalCount(Long totalCount) {
 				this.totalCount = totalCount;
+			}
+
+			public Float getResponseTimeAvg() {
+				return this.responseTimeAvg;
+			}
+
+			public void setResponseTimeAvg(Float responseTimeAvg) {
+				this.responseTimeAvg = responseTimeAvg;
 			}
 		}
 	}

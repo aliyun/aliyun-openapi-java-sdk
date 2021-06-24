@@ -30,23 +30,23 @@ public class OpsDescribeMaintenanceAttributesResponseUnmarshaller {
 	public static OpsDescribeMaintenanceAttributesResponse unmarshall(OpsDescribeMaintenanceAttributesResponse opsDescribeMaintenanceAttributesResponse, UnmarshallerContext _ctx) {
 		
 		opsDescribeMaintenanceAttributesResponse.setRequestId(_ctx.stringValue("OpsDescribeMaintenanceAttributesResponse.RequestId"));
-		opsDescribeMaintenanceAttributesResponse.setPageNumber(_ctx.integerValue("OpsDescribeMaintenanceAttributesResponse.PageNumber"));
 		opsDescribeMaintenanceAttributesResponse.setPageSize(_ctx.integerValue("OpsDescribeMaintenanceAttributesResponse.PageSize"));
+		opsDescribeMaintenanceAttributesResponse.setPageNumber(_ctx.integerValue("OpsDescribeMaintenanceAttributesResponse.PageNumber"));
 		opsDescribeMaintenanceAttributesResponse.setTotal(_ctx.integerValue("OpsDescribeMaintenanceAttributesResponse.Total"));
 
 		List<MaintenanceAttribute> maintenanceAttributes = new ArrayList<MaintenanceAttribute>();
 		for (int i = 0; i < _ctx.lengthValue("OpsDescribeMaintenanceAttributesResponse.MaintenanceAttributes.Length"); i++) {
 			MaintenanceAttribute maintenanceAttribute = new MaintenanceAttribute();
-			maintenanceAttribute.setPropertyId(_ctx.stringValue("OpsDescribeMaintenanceAttributesResponse.MaintenanceAttributes["+ i +"].PropertyId"));
-			maintenanceAttribute.setLevel(_ctx.stringValue("OpsDescribeMaintenanceAttributesResponse.MaintenanceAttributes["+ i +"].Level"));
-			maintenanceAttribute.setInstanceId(_ctx.stringValue("OpsDescribeMaintenanceAttributesResponse.MaintenanceAttributes["+ i +"].InstanceId"));
 			maintenanceAttribute.setLiveMigration(_ctx.booleanValue("OpsDescribeMaintenanceAttributesResponse.MaintenanceAttributes["+ i +"].LiveMigration"));
 			maintenanceAttribute.setNotifyOnMaintenance(_ctx.booleanValue("OpsDescribeMaintenanceAttributesResponse.MaintenanceAttributes["+ i +"].NotifyOnMaintenance"));
+			maintenanceAttribute.setInstanceId(_ctx.stringValue("OpsDescribeMaintenanceAttributesResponse.MaintenanceAttributes["+ i +"].InstanceId"));
+			maintenanceAttribute.setPropertyId(_ctx.stringValue("OpsDescribeMaintenanceAttributesResponse.MaintenanceAttributes["+ i +"].PropertyId"));
+			maintenanceAttribute.setLevel(_ctx.stringValue("OpsDescribeMaintenanceAttributesResponse.MaintenanceAttributes["+ i +"].Level"));
 
 			ActionOnMaintenance actionOnMaintenance = new ActionOnMaintenance();
 			actionOnMaintenance.setValue(_ctx.stringValue("OpsDescribeMaintenanceAttributesResponse.MaintenanceAttributes["+ i +"].ActionOnMaintenance.Value"));
-			actionOnMaintenance.setDefaultValue(_ctx.stringValue("OpsDescribeMaintenanceAttributesResponse.MaintenanceAttributes["+ i +"].ActionOnMaintenance.DefaultValue"));
 			actionOnMaintenance.setCanRecover(_ctx.integerValue("OpsDescribeMaintenanceAttributesResponse.MaintenanceAttributes["+ i +"].ActionOnMaintenance.CanRecover"));
+			actionOnMaintenance.setDefaultValue(_ctx.stringValue("OpsDescribeMaintenanceAttributesResponse.MaintenanceAttributes["+ i +"].ActionOnMaintenance.DefaultValue"));
 
 			List<String> supportedValues = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("OpsDescribeMaintenanceAttributesResponse.MaintenanceAttributes["+ i +"].ActionOnMaintenance.SupportedValues.Length"); j++) {
@@ -55,25 +55,25 @@ public class OpsDescribeMaintenanceAttributesResponseUnmarshaller {
 			actionOnMaintenance.setSupportedValues(supportedValues);
 			maintenanceAttribute.setActionOnMaintenance(actionOnMaintenance);
 
-			List<MaintenanceWindow> maintenanceWindows = new ArrayList<MaintenanceWindow>();
-			for (int j = 0; j < _ctx.lengthValue("OpsDescribeMaintenanceAttributesResponse.MaintenanceAttributes["+ i +"].MaintenanceWindows.Length"); j++) {
-				MaintenanceWindow maintenanceWindow = new MaintenanceWindow();
-				maintenanceWindow.setStartTime(_ctx.stringValue("OpsDescribeMaintenanceAttributesResponse.MaintenanceAttributes["+ i +"].MaintenanceWindows["+ j +"].StartTime"));
-				maintenanceWindow.setEndTime(_ctx.stringValue("OpsDescribeMaintenanceAttributesResponse.MaintenanceAttributes["+ i +"].MaintenanceWindows["+ j +"].EndTime"));
-
-				maintenanceWindows.add(maintenanceWindow);
-			}
-			maintenanceAttribute.setMaintenanceWindows(maintenanceWindows);
-
 			List<ReleaseWindow> releaseWindows = new ArrayList<ReleaseWindow>();
 			for (int j = 0; j < _ctx.lengthValue("OpsDescribeMaintenanceAttributesResponse.MaintenanceAttributes["+ i +"].ReleaseWindows.Length"); j++) {
 				ReleaseWindow releaseWindow = new ReleaseWindow();
-				releaseWindow.setStartTime(_ctx.stringValue("OpsDescribeMaintenanceAttributesResponse.MaintenanceAttributes["+ i +"].ReleaseWindows["+ j +"].StartTime"));
 				releaseWindow.setEndTime(_ctx.stringValue("OpsDescribeMaintenanceAttributesResponse.MaintenanceAttributes["+ i +"].ReleaseWindows["+ j +"].EndTime"));
+				releaseWindow.setStartTime(_ctx.stringValue("OpsDescribeMaintenanceAttributesResponse.MaintenanceAttributes["+ i +"].ReleaseWindows["+ j +"].StartTime"));
 
 				releaseWindows.add(releaseWindow);
 			}
 			maintenanceAttribute.setReleaseWindows(releaseWindows);
+
+			List<MaintenanceWindow> maintenanceWindows = new ArrayList<MaintenanceWindow>();
+			for (int j = 0; j < _ctx.lengthValue("OpsDescribeMaintenanceAttributesResponse.MaintenanceAttributes["+ i +"].MaintenanceWindows.Length"); j++) {
+				MaintenanceWindow maintenanceWindow = new MaintenanceWindow();
+				maintenanceWindow.setEndTime(_ctx.stringValue("OpsDescribeMaintenanceAttributesResponse.MaintenanceAttributes["+ i +"].MaintenanceWindows["+ j +"].EndTime"));
+				maintenanceWindow.setStartTime(_ctx.stringValue("OpsDescribeMaintenanceAttributesResponse.MaintenanceAttributes["+ i +"].MaintenanceWindows["+ j +"].StartTime"));
+
+				maintenanceWindows.add(maintenanceWindow);
+			}
+			maintenanceAttribute.setMaintenanceWindows(maintenanceWindows);
 
 			maintenanceAttributes.add(maintenanceAttribute);
 		}

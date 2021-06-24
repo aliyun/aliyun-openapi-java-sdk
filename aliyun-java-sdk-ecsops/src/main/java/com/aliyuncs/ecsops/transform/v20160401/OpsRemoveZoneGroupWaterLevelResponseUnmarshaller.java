@@ -31,18 +31,18 @@ public class OpsRemoveZoneGroupWaterLevelResponseUnmarshaller {
 		List<ZoneGroupWaterLevel> zoneGroupWaterLevels = new ArrayList<ZoneGroupWaterLevel>();
 		for (int i = 0; i < _ctx.lengthValue("OpsRemoveZoneGroupWaterLevelResponse.ZoneGroupWaterLevels.Length"); i++) {
 			ZoneGroupWaterLevel zoneGroupWaterLevel = new ZoneGroupWaterLevel();
-			zoneGroupWaterLevel.setRegionId(_ctx.stringValue("OpsRemoveZoneGroupWaterLevelResponse.ZoneGroupWaterLevels["+ i +"].RegionId"));
-			zoneGroupWaterLevel.setIzNo(_ctx.stringValue("OpsRemoveZoneGroupWaterLevelResponse.ZoneGroupWaterLevels["+ i +"].IzNo"));
-			zoneGroupWaterLevel.setClusterGroup(_ctx.stringValue("OpsRemoveZoneGroupWaterLevelResponse.ZoneGroupWaterLevels["+ i +"].ClusterGroup"));
-			zoneGroupWaterLevel.setGrayBizType(_ctx.stringValue("OpsRemoveZoneGroupWaterLevelResponse.ZoneGroupWaterLevels["+ i +"].GrayBizType"));
+			zoneGroupWaterLevel.setHighLevel(_ctx.longValue("OpsRemoveZoneGroupWaterLevelResponse.ZoneGroupWaterLevels["+ i +"].HighLevel"));
 			zoneGroupWaterLevel.setFlavor(_ctx.stringValue("OpsRemoveZoneGroupWaterLevelResponse.ZoneGroupWaterLevels["+ i +"].Flavor"));
-			zoneGroupWaterLevel.setBizType(_ctx.stringValue("OpsRemoveZoneGroupWaterLevelResponse.ZoneGroupWaterLevels["+ i +"].BizType"));
+			zoneGroupWaterLevel.setGrayBizType(_ctx.stringValue("OpsRemoveZoneGroupWaterLevelResponse.ZoneGroupWaterLevels["+ i +"].GrayBizType"));
 			zoneGroupWaterLevel.setNetworkType(_ctx.integerValue("OpsRemoveZoneGroupWaterLevelResponse.ZoneGroupWaterLevels["+ i +"].NetworkType"));
+			zoneGroupWaterLevel.setClusterGroup(_ctx.stringValue("OpsRemoveZoneGroupWaterLevelResponse.ZoneGroupWaterLevels["+ i +"].ClusterGroup"));
+			zoneGroupWaterLevel.setBizType(_ctx.stringValue("OpsRemoveZoneGroupWaterLevelResponse.ZoneGroupWaterLevels["+ i +"].BizType"));
+			zoneGroupWaterLevel.setRegionId(_ctx.stringValue("OpsRemoveZoneGroupWaterLevelResponse.ZoneGroupWaterLevels["+ i +"].RegionId"));
 			zoneGroupWaterLevel.setIoOptimized(_ctx.integerValue("OpsRemoveZoneGroupWaterLevelResponse.ZoneGroupWaterLevels["+ i +"].IoOptimized"));
+			zoneGroupWaterLevel.setRiLevel(_ctx.longValue("OpsRemoveZoneGroupWaterLevelResponse.ZoneGroupWaterLevels["+ i +"].RiLevel"));
 			zoneGroupWaterLevel.setResourceType(_ctx.integerValue("OpsRemoveZoneGroupWaterLevelResponse.ZoneGroupWaterLevels["+ i +"].ResourceType"));
 			zoneGroupWaterLevel.setLowLevel(_ctx.longValue("OpsRemoveZoneGroupWaterLevelResponse.ZoneGroupWaterLevels["+ i +"].LowLevel"));
-			zoneGroupWaterLevel.setHighLevel(_ctx.longValue("OpsRemoveZoneGroupWaterLevelResponse.ZoneGroupWaterLevels["+ i +"].HighLevel"));
-			zoneGroupWaterLevel.setRiLevel(_ctx.longValue("OpsRemoveZoneGroupWaterLevelResponse.ZoneGroupWaterLevels["+ i +"].RiLevel"));
+			zoneGroupWaterLevel.setIzNo(_ctx.stringValue("OpsRemoveZoneGroupWaterLevelResponse.ZoneGroupWaterLevels["+ i +"].IzNo"));
 
 			zoneGroupWaterLevels.add(zoneGroupWaterLevel);
 		}

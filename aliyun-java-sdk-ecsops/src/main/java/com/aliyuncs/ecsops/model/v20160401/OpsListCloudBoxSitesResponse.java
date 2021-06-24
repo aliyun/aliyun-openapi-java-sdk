@@ -25,21 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsListCloudBoxSitesResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
 
 	private String nextToken;
 
+	private String requestId;
+
 	private List<CloudBoxSiteSet> cloudBoxSiteSets;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -57,6 +49,14 @@ public class OpsListCloudBoxSitesResponse extends AcsResponse {
 		this.nextToken = nextToken;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	public List<CloudBoxSiteSet> getCloudBoxSiteSets() {
 		return this.cloudBoxSiteSets;
 	}
@@ -67,28 +67,28 @@ public class OpsListCloudBoxSitesResponse extends AcsResponse {
 
 	public static class CloudBoxSiteSet {
 
-		private String cloudBoxSiteId;
+		private String cloudBoxSiteName;
 
 		private String description;
 
-		private String cloudBoxSiteName;
+		private String siteQuestionares;
+
+		private String cloudBoxSiteId;
 
 		private String country;
 
-		private String province;
+		private String streetAddress;
 
 		private String city;
 
-		private String streetAddress;
+		private String province;
 
-		private String siteQuestionares;
-
-		public String getCloudBoxSiteId() {
-			return this.cloudBoxSiteId;
+		public String getCloudBoxSiteName() {
+			return this.cloudBoxSiteName;
 		}
 
-		public void setCloudBoxSiteId(String cloudBoxSiteId) {
-			this.cloudBoxSiteId = cloudBoxSiteId;
+		public void setCloudBoxSiteName(String cloudBoxSiteName) {
+			this.cloudBoxSiteName = cloudBoxSiteName;
 		}
 
 		public String getDescription() {
@@ -99,12 +99,20 @@ public class OpsListCloudBoxSitesResponse extends AcsResponse {
 			this.description = description;
 		}
 
-		public String getCloudBoxSiteName() {
-			return this.cloudBoxSiteName;
+		public String getSiteQuestionares() {
+			return this.siteQuestionares;
 		}
 
-		public void setCloudBoxSiteName(String cloudBoxSiteName) {
-			this.cloudBoxSiteName = cloudBoxSiteName;
+		public void setSiteQuestionares(String siteQuestionares) {
+			this.siteQuestionares = siteQuestionares;
+		}
+
+		public String getCloudBoxSiteId() {
+			return this.cloudBoxSiteId;
+		}
+
+		public void setCloudBoxSiteId(String cloudBoxSiteId) {
+			this.cloudBoxSiteId = cloudBoxSiteId;
 		}
 
 		public String getCountry() {
@@ -115,12 +123,12 @@ public class OpsListCloudBoxSitesResponse extends AcsResponse {
 			this.country = country;
 		}
 
-		public String getProvince() {
-			return this.province;
+		public String getStreetAddress() {
+			return this.streetAddress;
 		}
 
-		public void setProvince(String province) {
-			this.province = province;
+		public void setStreetAddress(String streetAddress) {
+			this.streetAddress = streetAddress;
 		}
 
 		public String getCity() {
@@ -131,20 +139,12 @@ public class OpsListCloudBoxSitesResponse extends AcsResponse {
 			this.city = city;
 		}
 
-		public String getStreetAddress() {
-			return this.streetAddress;
+		public String getProvince() {
+			return this.province;
 		}
 
-		public void setStreetAddress(String streetAddress) {
-			this.streetAddress = streetAddress;
-		}
-
-		public String getSiteQuestionares() {
-			return this.siteQuestionares;
-		}
-
-		public void setSiteQuestionares(String siteQuestionares) {
-			this.siteQuestionares = siteQuestionares;
+		public void setProvince(String province) {
+			this.province = province;
 		}
 	}
 

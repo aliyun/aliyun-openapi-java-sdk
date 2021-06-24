@@ -16,7 +16,6 @@ package com.aliyuncs.ecsops.model.v20160401;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
-import com.aliyuncs.ecsops.Endpoint;
 
 /**
  * @author auto create
@@ -31,12 +30,8 @@ public class OpsDescribeClusterTagsRequest extends RpcAcsRequest<OpsDescribeClus
 
 	private String auditParamStr;
 	public OpsDescribeClusterTagsRequest() {
-		super("Ecsops", "2016-04-01", "OpsDescribeClusterTags", "ecs");
+		super("Ecsops", "2016-04-01", "OpsDescribeClusterTags", "ecsops");
 		setMethod(MethodType.GET);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
 	}
 
 	public String getCluster() {

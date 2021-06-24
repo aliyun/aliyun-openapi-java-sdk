@@ -24,11 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsQueryConfigDiffContentResponse extends AcsResponse {
 
+	private String commitContent;
+
 	private String requestId;
 
 	private String currentContent;
 
-	private String commitContent;
+	public String getCommitContent() {
+		return this.commitContent;
+	}
+
+	public void setCommitContent(String commitContent) {
+		this.commitContent = commitContent;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -44,14 +52,6 @@ public class OpsQueryConfigDiffContentResponse extends AcsResponse {
 
 	public void setCurrentContent(String currentContent) {
 		this.currentContent = currentContent;
-	}
-
-	public String getCommitContent() {
-		return this.commitContent;
-	}
-
-	public void setCommitContent(String commitContent) {
-		this.commitContent = commitContent;
 	}
 
 	@Override

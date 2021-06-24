@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsDescribeDisksFullStatusResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
-
-	private Integer pageNumber;
 
 	private Integer pageSize;
 
+	private String requestId;
+
+	private Integer pageNumber;
+
 	private List<DiskFullStatusType> diskFullStatusSet;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -51,20 +43,28 @@ public class OpsDescribeDisksFullStatusResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<DiskFullStatusType> getDiskFullStatusSet() {
@@ -121,9 +121,9 @@ public class OpsDescribeDisksFullStatusResponse extends AcsResponse {
 
 			private String eventId;
 
-			private String eventTime;
-
 			private String eventEndTime;
+
+			private String eventTime;
 
 			private EventType eventType;
 
@@ -135,20 +135,20 @@ public class OpsDescribeDisksFullStatusResponse extends AcsResponse {
 				this.eventId = eventId;
 			}
 
-			public String getEventTime() {
-				return this.eventTime;
-			}
-
-			public void setEventTime(String eventTime) {
-				this.eventTime = eventTime;
-			}
-
 			public String getEventEndTime() {
 				return this.eventEndTime;
 			}
 
 			public void setEventEndTime(String eventEndTime) {
 				this.eventEndTime = eventEndTime;
+			}
+
+			public String getEventTime() {
+				return this.eventTime;
+			}
+
+			public void setEventTime(String eventTime) {
+				this.eventTime = eventTime;
 			}
 
 			public EventType getEventType() {

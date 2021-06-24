@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsDescribeInstanceFlowLimitsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
-
-	private Integer pageNo;
 
 	private Integer pageSize;
 
+	private String requestId;
+
+	private Integer pageNo;
+
 	private List<InstanceFlowLimit> instanceFlowLimits;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -51,20 +43,28 @@ public class OpsDescribeInstanceFlowLimitsResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public Integer getPageNo() {
-		return this.pageNo;
-	}
-
-	public void setPageNo(Integer pageNo) {
-		this.pageNo = pageNo;
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Integer getPageNo() {
+		return this.pageNo;
+	}
+
+	public void setPageNo(Integer pageNo) {
+		this.pageNo = pageNo;
 	}
 
 	public List<InstanceFlowLimit> getInstanceFlowLimits() {
@@ -77,31 +77,15 @@ public class OpsDescribeInstanceFlowLimitsResponse extends AcsResponse {
 
 	public static class InstanceFlowLimit {
 
-		private String instanceId;
-
-		private String regionId;
-
 		private Long aliUid;
+
+		private String instanceId;
 
 		private String bid;
 
 		private String reason;
 
-		public String getInstanceId() {
-			return this.instanceId;
-		}
-
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
+		private String regionId;
 
 		public Long getAliUid() {
 			return this.aliUid;
@@ -109,6 +93,14 @@ public class OpsDescribeInstanceFlowLimitsResponse extends AcsResponse {
 
 		public void setAliUid(Long aliUid) {
 			this.aliUid = aliUid;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
 		}
 
 		public String getBid() {
@@ -125,6 +117,14 @@ public class OpsDescribeInstanceFlowLimitsResponse extends AcsResponse {
 
 		public void setReason(String reason) {
 			this.reason = reason;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 	}
 

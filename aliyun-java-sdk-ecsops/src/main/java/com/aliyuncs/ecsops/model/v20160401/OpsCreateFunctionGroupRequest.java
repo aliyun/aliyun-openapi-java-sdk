@@ -16,7 +16,6 @@ package com.aliyuncs.ecsops.model.v20160401;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
-import com.aliyuncs.ecsops.Endpoint;
 
 /**
  * @author auto create
@@ -37,12 +36,8 @@ public class OpsCreateFunctionGroupRequest extends RpcAcsRequest<OpsCreateFuncti
 
 	private String auditParamStr;
 	public OpsCreateFunctionGroupRequest() {
-		super("Ecsops", "2016-04-01", "OpsCreateFunctionGroup", "ecs");
+		super("Ecsops", "2016-04-01", "OpsCreateFunctionGroup", "ecsops");
 		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
 	}
 
 	public String getGroupId() {

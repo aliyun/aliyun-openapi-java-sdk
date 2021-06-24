@@ -32,9 +32,9 @@ public class OpsRefreshDiskSerialNumberResponseUnmarshaller {
 		List<FailedDisk> failedDiskList = new ArrayList<FailedDisk>();
 		for (int i = 0; i < _ctx.lengthValue("OpsRefreshDiskSerialNumberResponse.FailedDiskList.Length"); i++) {
 			FailedDisk failedDisk = new FailedDisk();
-			failedDisk.setDiskId(_ctx.stringValue("OpsRefreshDiskSerialNumberResponse.FailedDiskList["+ i +"].DiskId"));
 			failedDisk.setCode(_ctx.stringValue("OpsRefreshDiskSerialNumberResponse.FailedDiskList["+ i +"].Code"));
 			failedDisk.setMessage(_ctx.stringValue("OpsRefreshDiskSerialNumberResponse.FailedDiskList["+ i +"].Message"));
+			failedDisk.setDiskId(_ctx.stringValue("OpsRefreshDiskSerialNumberResponse.FailedDiskList["+ i +"].DiskId"));
 
 			failedDiskList.add(failedDisk);
 		}

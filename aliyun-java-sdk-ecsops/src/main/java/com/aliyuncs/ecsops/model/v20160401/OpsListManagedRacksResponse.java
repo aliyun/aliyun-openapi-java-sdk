@@ -25,21 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsListManagedRacksResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
 
 	private String nextToken;
 
+	private String requestId;
+
 	private List<ManagedRacksSet> managedRacksSets;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -57,6 +49,14 @@ public class OpsListManagedRacksResponse extends AcsResponse {
 		this.nextToken = nextToken;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	public List<ManagedRacksSet> getManagedRacksSets() {
 		return this.managedRacksSets;
 	}
@@ -67,19 +67,11 @@ public class OpsListManagedRacksResponse extends AcsResponse {
 
 	public static class ManagedRacksSet {
 
-		private String zoneId;
-
 		private String managedRackId;
 
+		private String zoneId;
+
 		private List<ManagedHostSet> managedHostSets;
-
-		public String getZoneId() {
-			return this.zoneId;
-		}
-
-		public void setZoneId(String zoneId) {
-			this.zoneId = zoneId;
-		}
 
 		public String getManagedRackId() {
 			return this.managedRackId;
@@ -87,6 +79,14 @@ public class OpsListManagedRacksResponse extends AcsResponse {
 
 		public void setManagedRackId(String managedRackId) {
 			this.managedRackId = managedRackId;
+		}
+
+		public String getZoneId() {
+			return this.zoneId;
+		}
+
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
 		}
 
 		public List<ManagedHostSet> getManagedHostSets() {
@@ -99,21 +99,13 @@ public class OpsListManagedRacksResponse extends AcsResponse {
 
 		public static class ManagedHostSet {
 
-			private String managedHostId;
-
 			private String status;
 
 			private String description;
 
+			private String managedHostId;
+
 			private HostAttribute hostAttribute;
-
-			public String getManagedHostId() {
-				return this.managedHostId;
-			}
-
-			public void setManagedHostId(String managedHostId) {
-				this.managedHostId = managedHostId;
-			}
 
 			public String getStatus() {
 				return this.status;
@@ -131,6 +123,14 @@ public class OpsListManagedRacksResponse extends AcsResponse {
 				this.description = description;
 			}
 
+			public String getManagedHostId() {
+				return this.managedHostId;
+			}
+
+			public void setManagedHostId(String managedHostId) {
+				this.managedHostId = managedHostId;
+			}
+
 			public HostAttribute getHostAttribute() {
 				return this.hostAttribute;
 			}
@@ -141,17 +141,9 @@ public class OpsListManagedRacksResponse extends AcsResponse {
 
 			public static class HostAttribute {
 
-				private String cpuModelName;
-
 				private String hostType;
 
-				public String getCpuModelName() {
-					return this.cpuModelName;
-				}
-
-				public void setCpuModelName(String cpuModelName) {
-					this.cpuModelName = cpuModelName;
-				}
+				private String cpuModelName;
 
 				public String getHostType() {
 					return this.hostType;
@@ -159,6 +151,14 @@ public class OpsListManagedRacksResponse extends AcsResponse {
 
 				public void setHostType(String hostType) {
 					this.hostType = hostType;
+				}
+
+				public String getCpuModelName() {
+					return this.cpuModelName;
+				}
+
+				public void setCpuModelName(String cpuModelName) {
+					this.cpuModelName = cpuModelName;
 				}
 			}
 		}

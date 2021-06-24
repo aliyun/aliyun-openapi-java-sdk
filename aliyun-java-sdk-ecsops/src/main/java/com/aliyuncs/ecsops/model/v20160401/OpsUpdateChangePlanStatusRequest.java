@@ -17,7 +17,6 @@ package com.aliyuncs.ecsops.model.v20160401;
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
 import com.aliyuncs.http.MethodType;
-import com.aliyuncs.ecsops.Endpoint;
 
 /**
  * @author auto create
@@ -40,16 +39,12 @@ public class OpsUpdateChangePlanStatusRequest extends RpcAcsRequest<OpsUpdateCha
 
 	private String planId;
 
-	private List<String> pausedLists;
-
 	private String auditParamStr;
+
+	private List<String> pausedLists;
 	public OpsUpdateChangePlanStatusRequest() {
-		super("Ecsops", "2016-04-01", "OpsUpdateChangePlanStatus", "ecs");
+		super("Ecsops", "2016-04-01", "OpsUpdateChangePlanStatus", "ecsops");
 		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
 	}
 
 	public List<String> getFailedLists() {
@@ -137,6 +132,17 @@ public class OpsUpdateChangePlanStatusRequest extends RpcAcsRequest<OpsUpdateCha
 		}
 	}
 
+	public String getAuditParamStr() {
+		return this.auditParamStr;
+	}
+
+	public void setAuditParamStr(String auditParamStr) {
+		this.auditParamStr = auditParamStr;
+		if(auditParamStr != null){
+			putQueryParameter("AuditParamStr", auditParamStr);
+		}
+	}
+
 	public List<String> getPausedLists() {
 		return this.pausedLists;
 	}
@@ -148,17 +154,6 @@ public class OpsUpdateChangePlanStatusRequest extends RpcAcsRequest<OpsUpdateCha
 				putQueryParameter("PausedList." + (i + 1) , pausedLists.get(i));
 			}
 		}	
-	}
-
-	public String getAuditParamStr() {
-		return this.auditParamStr;
-	}
-
-	public void setAuditParamStr(String auditParamStr) {
-		this.auditParamStr = auditParamStr;
-		if(auditParamStr != null){
-			putQueryParameter("AuditParamStr", auditParamStr);
-		}
 	}
 
 	@Override

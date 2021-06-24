@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsCoreApiStatsQueryLatestResponse extends AcsResponse {
 
+	private String message;
+
 	private String requestId;
 
 	private String code;
 
-	private String message;
-
 	private String success;
 
 	private List<DataItem> data;
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -49,14 +57,6 @@ public class OpsCoreApiStatsQueryLatestResponse extends AcsResponse {
 
 	public void setCode(String code) {
 		this.code = code;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
 	}
 
 	public String getSuccess() {
@@ -77,19 +77,11 @@ public class OpsCoreApiStatsQueryLatestResponse extends AcsResponse {
 
 	public static class DataItem {
 
-		private String regionId;
-
 		private Long timestamp;
 
+		private String regionId;
+
 		private List<ApiStat> apiStats;
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
 
 		public Long getTimestamp() {
 			return this.timestamp;
@@ -97,6 +89,14 @@ public class OpsCoreApiStatsQueryLatestResponse extends AcsResponse {
 
 		public void setTimestamp(Long timestamp) {
 			this.timestamp = timestamp;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 
 		public List<ApiStat> getApiStats() {
@@ -109,21 +109,13 @@ public class OpsCoreApiStatsQueryLatestResponse extends AcsResponse {
 
 		public static class ApiStat {
 
-			private String apiType;
-
 			private Long failureCount;
 
-			private Float responseTimeAvg;
+			private String apiType;
 
 			private Long totalCount;
 
-			public String getApiType() {
-				return this.apiType;
-			}
-
-			public void setApiType(String apiType) {
-				this.apiType = apiType;
-			}
+			private Float responseTimeAvg;
 
 			public Long getFailureCount() {
 				return this.failureCount;
@@ -133,12 +125,12 @@ public class OpsCoreApiStatsQueryLatestResponse extends AcsResponse {
 				this.failureCount = failureCount;
 			}
 
-			public Float getResponseTimeAvg() {
-				return this.responseTimeAvg;
+			public String getApiType() {
+				return this.apiType;
 			}
 
-			public void setResponseTimeAvg(Float responseTimeAvg) {
-				this.responseTimeAvg = responseTimeAvg;
+			public void setApiType(String apiType) {
+				this.apiType = apiType;
 			}
 
 			public Long getTotalCount() {
@@ -147,6 +139,14 @@ public class OpsCoreApiStatsQueryLatestResponse extends AcsResponse {
 
 			public void setTotalCount(Long totalCount) {
 				this.totalCount = totalCount;
+			}
+
+			public Float getResponseTimeAvg() {
+				return this.responseTimeAvg;
+			}
+
+			public void setResponseTimeAvg(Float responseTimeAvg) {
+				this.responseTimeAvg = responseTimeAvg;
 			}
 		}
 	}

@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsQueryChangeRecordResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
-
-	private Integer pageNumber;
 
 	private Integer pageSize;
 
+	private String requestId;
+
+	private Integer pageNumber;
+
 	private List<ChangeRecord> changeRecords;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -51,20 +43,28 @@ public class OpsQueryChangeRecordResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<ChangeRecord> getChangeRecords() {
@@ -77,58 +77,50 @@ public class OpsQueryChangeRecordResponse extends AcsResponse {
 
 	public static class ChangeRecord {
 
-		private Long id;
-
-		private String gmtCreate;
+		private String changeCategory;
 
 		private String changeSummary;
 
-		private String changeContent;
-
-		private String changeResult;
-
-		private String executorNo;
-
-		private String executorName;
-
-		private String changeType;
-
-		private String changeApps;
-
-		private String app;
-
 		private String startTimePlan;
 
-		private String startTimeReal;
-
-		private String endTimeReal;
+		private String executorName;
 
 		private Integer isEmergency;
 
 		private String changefreeUrl;
 
-		private String sourceSystem;
+		private String endTimeReal;
 
-		private String sourceOrderId;
+		private String changeContent;
+
+		private String changeType;
 
 		private String changeCollectChannel;
 
-		private String changeCategory;
+		private String changeApps;
 
-		public Long getId() {
-			return this.id;
+		private String sourceSystem;
+
+		private String app;
+
+		private String executorNo;
+
+		private String changeResult;
+
+		private String gmtCreate;
+
+		private String sourceOrderId;
+
+		private String startTimeReal;
+
+		private Long id;
+
+		public String getChangeCategory() {
+			return this.changeCategory;
 		}
 
-		public void setId(Long id) {
-			this.id = id;
-		}
-
-		public String getGmtCreate() {
-			return this.gmtCreate;
-		}
-
-		public void setGmtCreate(String gmtCreate) {
-			this.gmtCreate = gmtCreate;
+		public void setChangeCategory(String changeCategory) {
+			this.changeCategory = changeCategory;
 		}
 
 		public String getChangeSummary() {
@@ -139,62 +131,6 @@ public class OpsQueryChangeRecordResponse extends AcsResponse {
 			this.changeSummary = changeSummary;
 		}
 
-		public String getChangeContent() {
-			return this.changeContent;
-		}
-
-		public void setChangeContent(String changeContent) {
-			this.changeContent = changeContent;
-		}
-
-		public String getChangeResult() {
-			return this.changeResult;
-		}
-
-		public void setChangeResult(String changeResult) {
-			this.changeResult = changeResult;
-		}
-
-		public String getExecutorNo() {
-			return this.executorNo;
-		}
-
-		public void setExecutorNo(String executorNo) {
-			this.executorNo = executorNo;
-		}
-
-		public String getExecutorName() {
-			return this.executorName;
-		}
-
-		public void setExecutorName(String executorName) {
-			this.executorName = executorName;
-		}
-
-		public String getChangeType() {
-			return this.changeType;
-		}
-
-		public void setChangeType(String changeType) {
-			this.changeType = changeType;
-		}
-
-		public String getChangeApps() {
-			return this.changeApps;
-		}
-
-		public void setChangeApps(String changeApps) {
-			this.changeApps = changeApps;
-		}
-
-		public String getApp() {
-			return this.app;
-		}
-
-		public void setApp(String app) {
-			this.app = app;
-		}
-
 		public String getStartTimePlan() {
 			return this.startTimePlan;
 		}
@@ -203,20 +139,12 @@ public class OpsQueryChangeRecordResponse extends AcsResponse {
 			this.startTimePlan = startTimePlan;
 		}
 
-		public String getStartTimeReal() {
-			return this.startTimeReal;
+		public String getExecutorName() {
+			return this.executorName;
 		}
 
-		public void setStartTimeReal(String startTimeReal) {
-			this.startTimeReal = startTimeReal;
-		}
-
-		public String getEndTimeReal() {
-			return this.endTimeReal;
-		}
-
-		public void setEndTimeReal(String endTimeReal) {
-			this.endTimeReal = endTimeReal;
+		public void setExecutorName(String executorName) {
+			this.executorName = executorName;
 		}
 
 		public Integer getIsEmergency() {
@@ -235,20 +163,28 @@ public class OpsQueryChangeRecordResponse extends AcsResponse {
 			this.changefreeUrl = changefreeUrl;
 		}
 
-		public String getSourceSystem() {
-			return this.sourceSystem;
+		public String getEndTimeReal() {
+			return this.endTimeReal;
 		}
 
-		public void setSourceSystem(String sourceSystem) {
-			this.sourceSystem = sourceSystem;
+		public void setEndTimeReal(String endTimeReal) {
+			this.endTimeReal = endTimeReal;
 		}
 
-		public String getSourceOrderId() {
-			return this.sourceOrderId;
+		public String getChangeContent() {
+			return this.changeContent;
 		}
 
-		public void setSourceOrderId(String sourceOrderId) {
-			this.sourceOrderId = sourceOrderId;
+		public void setChangeContent(String changeContent) {
+			this.changeContent = changeContent;
+		}
+
+		public String getChangeType() {
+			return this.changeType;
+		}
+
+		public void setChangeType(String changeType) {
+			this.changeType = changeType;
 		}
 
 		public String getChangeCollectChannel() {
@@ -259,12 +195,76 @@ public class OpsQueryChangeRecordResponse extends AcsResponse {
 			this.changeCollectChannel = changeCollectChannel;
 		}
 
-		public String getChangeCategory() {
-			return this.changeCategory;
+		public String getChangeApps() {
+			return this.changeApps;
 		}
 
-		public void setChangeCategory(String changeCategory) {
-			this.changeCategory = changeCategory;
+		public void setChangeApps(String changeApps) {
+			this.changeApps = changeApps;
+		}
+
+		public String getSourceSystem() {
+			return this.sourceSystem;
+		}
+
+		public void setSourceSystem(String sourceSystem) {
+			this.sourceSystem = sourceSystem;
+		}
+
+		public String getApp() {
+			return this.app;
+		}
+
+		public void setApp(String app) {
+			this.app = app;
+		}
+
+		public String getExecutorNo() {
+			return this.executorNo;
+		}
+
+		public void setExecutorNo(String executorNo) {
+			this.executorNo = executorNo;
+		}
+
+		public String getChangeResult() {
+			return this.changeResult;
+		}
+
+		public void setChangeResult(String changeResult) {
+			this.changeResult = changeResult;
+		}
+
+		public String getGmtCreate() {
+			return this.gmtCreate;
+		}
+
+		public void setGmtCreate(String gmtCreate) {
+			this.gmtCreate = gmtCreate;
+		}
+
+		public String getSourceOrderId() {
+			return this.sourceOrderId;
+		}
+
+		public void setSourceOrderId(String sourceOrderId) {
+			this.sourceOrderId = sourceOrderId;
+		}
+
+		public String getStartTimeReal() {
+			return this.startTimeReal;
+		}
+
+		public void setStartTimeReal(String startTimeReal) {
+			this.startTimeReal = startTimeReal;
+		}
+
+		public Long getId() {
+			return this.id;
+		}
+
+		public void setId(Long id) {
+			this.id = id;
 		}
 	}
 

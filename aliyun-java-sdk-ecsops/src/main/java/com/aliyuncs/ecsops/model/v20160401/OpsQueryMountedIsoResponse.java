@@ -26,9 +26,9 @@ public class OpsQueryMountedIsoResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String isoId;
-
 	private String isoName;
+
+	private String isoId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,20 +38,20 @@ public class OpsQueryMountedIsoResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getIsoId() {
-		return this.isoId;
-	}
-
-	public void setIsoId(String isoId) {
-		this.isoId = isoId;
-	}
-
 	public String getIsoName() {
 		return this.isoName;
 	}
 
 	public void setIsoName(String isoName) {
 		this.isoName = isoName;
+	}
+
+	public String getIsoId() {
+		return this.isoId;
+	}
+
+	public void setIsoId(String isoId) {
+		this.isoId = isoId;
 	}
 
 	@Override

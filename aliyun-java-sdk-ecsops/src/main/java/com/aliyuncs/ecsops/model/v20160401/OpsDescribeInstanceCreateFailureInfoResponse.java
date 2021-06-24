@@ -25,22 +25,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsDescribeInstanceCreateFailureInfoResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer totalCount;
 
 	private String nextToken;
 
-	private Integer pageSize;
+	private String requestId;
 
-	private Integer totalCount;
+	private Integer pageSize;
 
 	private List<Resource> resources;
 
-	public String getRequestId() {
-		return this.requestId;
+	public Integer getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public String getNextToken() {
@@ -51,20 +51,20 @@ public class OpsDescribeInstanceCreateFailureInfoResponse extends AcsResponse {
 		this.nextToken = nextToken;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
 	}
 
 	public List<Resource> getResources() {
@@ -77,17 +77,33 @@ public class OpsDescribeInstanceCreateFailureInfoResponse extends AcsResponse {
 
 	public static class Resource {
 
+		private String gmtCreated;
+
+		private String suggestAction;
+
 		private String aliUid;
 
 		private String instanceId;
 
 		private String failureReason;
 
-		private String suggestAction;
-
-		private String gmtCreated;
-
 		private String failureLevel;
+
+		public String getGmtCreated() {
+			return this.gmtCreated;
+		}
+
+		public void setGmtCreated(String gmtCreated) {
+			this.gmtCreated = gmtCreated;
+		}
+
+		public String getSuggestAction() {
+			return this.suggestAction;
+		}
+
+		public void setSuggestAction(String suggestAction) {
+			this.suggestAction = suggestAction;
+		}
 
 		public String getAliUid() {
 			return this.aliUid;
@@ -111,22 +127,6 @@ public class OpsDescribeInstanceCreateFailureInfoResponse extends AcsResponse {
 
 		public void setFailureReason(String failureReason) {
 			this.failureReason = failureReason;
-		}
-
-		public String getSuggestAction() {
-			return this.suggestAction;
-		}
-
-		public void setSuggestAction(String suggestAction) {
-			this.suggestAction = suggestAction;
-		}
-
-		public String getGmtCreated() {
-			return this.gmtCreated;
-		}
-
-		public void setGmtCreated(String gmtCreated) {
-			this.gmtCreated = gmtCreated;
 		}
 
 		public String getFailureLevel() {

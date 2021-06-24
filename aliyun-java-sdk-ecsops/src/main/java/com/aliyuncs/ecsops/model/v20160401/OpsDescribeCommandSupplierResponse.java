@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsDescribeCommandSupplierResponse extends AcsResponse {
 
+	private Integer pageSize;
+
 	private String requestId;
 
 	private Integer total;
 
 	private Integer pageNo;
 
-	private Integer pageSize;
-
 	private List<Supplier> supplierList;
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -59,14 +67,6 @@ public class OpsDescribeCommandSupplierResponse extends AcsResponse {
 		this.pageNo = pageNo;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-	}
-
 	public List<Supplier> getSupplierList() {
 		return this.supplierList;
 	}
@@ -77,41 +77,17 @@ public class OpsDescribeCommandSupplierResponse extends AcsResponse {
 
 	public static class Supplier {
 
-		private Long aliyunUid;
-
-		private String employeeId;
-
-		private String supplierId;
-
 		private String displayName;
 
 		private String description;
 
+		private String employeeId;
+
+		private Long aliyunUid;
+
+		private String supplierId;
+
 		private String activeStatus;
-
-		public Long getAliyunUid() {
-			return this.aliyunUid;
-		}
-
-		public void setAliyunUid(Long aliyunUid) {
-			this.aliyunUid = aliyunUid;
-		}
-
-		public String getEmployeeId() {
-			return this.employeeId;
-		}
-
-		public void setEmployeeId(String employeeId) {
-			this.employeeId = employeeId;
-		}
-
-		public String getSupplierId() {
-			return this.supplierId;
-		}
-
-		public void setSupplierId(String supplierId) {
-			this.supplierId = supplierId;
-		}
 
 		public String getDisplayName() {
 			return this.displayName;
@@ -127,6 +103,30 @@ public class OpsDescribeCommandSupplierResponse extends AcsResponse {
 
 		public void setDescription(String description) {
 			this.description = description;
+		}
+
+		public String getEmployeeId() {
+			return this.employeeId;
+		}
+
+		public void setEmployeeId(String employeeId) {
+			this.employeeId = employeeId;
+		}
+
+		public Long getAliyunUid() {
+			return this.aliyunUid;
+		}
+
+		public void setAliyunUid(Long aliyunUid) {
+			this.aliyunUid = aliyunUid;
+		}
+
+		public String getSupplierId() {
+			return this.supplierId;
+		}
+
+		public void setSupplierId(String supplierId) {
+			this.supplierId = supplierId;
 		}
 
 		public String getActiveStatus() {

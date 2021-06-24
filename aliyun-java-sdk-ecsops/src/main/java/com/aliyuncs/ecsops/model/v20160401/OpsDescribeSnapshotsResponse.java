@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsDescribeSnapshotsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
-
-	private Integer pageNumber;
 
 	private Integer pageSize;
 
+	private String requestId;
+
+	private Integer pageNumber;
+
 	private List<Snapshot> snapshots;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -51,20 +43,28 @@ public class OpsDescribeSnapshotsResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<Snapshot> getSnapshots() {
@@ -77,85 +77,45 @@ public class OpsDescribeSnapshotsResponse extends AcsResponse {
 
 	public static class Snapshot {
 
-		private String snapshotId;
-
-		private String snapshotName;
-
-		private String bid;
-
-		private Long resourceOwnerId;
-
-		private String description;
-
 		private String progress;
-
-		private String sourceDiskId;
-
-		private Integer sourceDiskSize;
-
-		private String sourceDiskType;
-
-		private String snapshotType;
-
-		private String houyiSnapshotId;
-
-		private String createdTime;
-
-		private String modifiedTime;
-
-		private String imageId;
-
-		private String regionId;
-
-		private String ecsSnapshotStatus;
-
-		private String encrypted;
-
-		private Integer retentionDays;
 
 		private Boolean instantAccess;
 
+		private Integer sourceDiskSize;
+
+		private Integer retentionDays;
+
+		private String sourceDiskType;
+
+		private String bid;
+
+		private String regionId;
+
+		private String encrypted;
+
+		private String sourceDiskId;
+
+		private String snapshotType;
+
+		private String ecsSnapshotStatus;
+
+		private String snapshotName;
+
+		private Long resourceOwnerId;
+
+		private String modifiedTime;
+
+		private String description;
+
+		private String snapshotId;
+
 		private Integer iaRetentionDays;
 
-		public String getSnapshotId() {
-			return this.snapshotId;
-		}
+		private String imageId;
 
-		public void setSnapshotId(String snapshotId) {
-			this.snapshotId = snapshotId;
-		}
+		private String createdTime;
 
-		public String getSnapshotName() {
-			return this.snapshotName;
-		}
-
-		public void setSnapshotName(String snapshotName) {
-			this.snapshotName = snapshotName;
-		}
-
-		public String getBid() {
-			return this.bid;
-		}
-
-		public void setBid(String bid) {
-			this.bid = bid;
-		}
-
-		public Long getResourceOwnerId() {
-			return this.resourceOwnerId;
-		}
-
-		public void setResourceOwnerId(Long resourceOwnerId) {
-			this.resourceOwnerId = resourceOwnerId;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
+		private String houyiSnapshotId;
 
 		public String getProgress() {
 			return this.progress;
@@ -163,102 +123,6 @@ public class OpsDescribeSnapshotsResponse extends AcsResponse {
 
 		public void setProgress(String progress) {
 			this.progress = progress;
-		}
-
-		public String getSourceDiskId() {
-			return this.sourceDiskId;
-		}
-
-		public void setSourceDiskId(String sourceDiskId) {
-			this.sourceDiskId = sourceDiskId;
-		}
-
-		public Integer getSourceDiskSize() {
-			return this.sourceDiskSize;
-		}
-
-		public void setSourceDiskSize(Integer sourceDiskSize) {
-			this.sourceDiskSize = sourceDiskSize;
-		}
-
-		public String getSourceDiskType() {
-			return this.sourceDiskType;
-		}
-
-		public void setSourceDiskType(String sourceDiskType) {
-			this.sourceDiskType = sourceDiskType;
-		}
-
-		public String getSnapshotType() {
-			return this.snapshotType;
-		}
-
-		public void setSnapshotType(String snapshotType) {
-			this.snapshotType = snapshotType;
-		}
-
-		public String getHouyiSnapshotId() {
-			return this.houyiSnapshotId;
-		}
-
-		public void setHouyiSnapshotId(String houyiSnapshotId) {
-			this.houyiSnapshotId = houyiSnapshotId;
-		}
-
-		public String getCreatedTime() {
-			return this.createdTime;
-		}
-
-		public void setCreatedTime(String createdTime) {
-			this.createdTime = createdTime;
-		}
-
-		public String getModifiedTime() {
-			return this.modifiedTime;
-		}
-
-		public void setModifiedTime(String modifiedTime) {
-			this.modifiedTime = modifiedTime;
-		}
-
-		public String getImageId() {
-			return this.imageId;
-		}
-
-		public void setImageId(String imageId) {
-			this.imageId = imageId;
-		}
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		public String getEcsSnapshotStatus() {
-			return this.ecsSnapshotStatus;
-		}
-
-		public void setEcsSnapshotStatus(String ecsSnapshotStatus) {
-			this.ecsSnapshotStatus = ecsSnapshotStatus;
-		}
-
-		public String getEncrypted() {
-			return this.encrypted;
-		}
-
-		public void setEncrypted(String encrypted) {
-			this.encrypted = encrypted;
-		}
-
-		public Integer getRetentionDays() {
-			return this.retentionDays;
-		}
-
-		public void setRetentionDays(Integer retentionDays) {
-			this.retentionDays = retentionDays;
 		}
 
 		public Boolean getInstantAccess() {
@@ -269,12 +133,148 @@ public class OpsDescribeSnapshotsResponse extends AcsResponse {
 			this.instantAccess = instantAccess;
 		}
 
+		public Integer getSourceDiskSize() {
+			return this.sourceDiskSize;
+		}
+
+		public void setSourceDiskSize(Integer sourceDiskSize) {
+			this.sourceDiskSize = sourceDiskSize;
+		}
+
+		public Integer getRetentionDays() {
+			return this.retentionDays;
+		}
+
+		public void setRetentionDays(Integer retentionDays) {
+			this.retentionDays = retentionDays;
+		}
+
+		public String getSourceDiskType() {
+			return this.sourceDiskType;
+		}
+
+		public void setSourceDiskType(String sourceDiskType) {
+			this.sourceDiskType = sourceDiskType;
+		}
+
+		public String getBid() {
+			return this.bid;
+		}
+
+		public void setBid(String bid) {
+			this.bid = bid;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		public String getEncrypted() {
+			return this.encrypted;
+		}
+
+		public void setEncrypted(String encrypted) {
+			this.encrypted = encrypted;
+		}
+
+		public String getSourceDiskId() {
+			return this.sourceDiskId;
+		}
+
+		public void setSourceDiskId(String sourceDiskId) {
+			this.sourceDiskId = sourceDiskId;
+		}
+
+		public String getSnapshotType() {
+			return this.snapshotType;
+		}
+
+		public void setSnapshotType(String snapshotType) {
+			this.snapshotType = snapshotType;
+		}
+
+		public String getEcsSnapshotStatus() {
+			return this.ecsSnapshotStatus;
+		}
+
+		public void setEcsSnapshotStatus(String ecsSnapshotStatus) {
+			this.ecsSnapshotStatus = ecsSnapshotStatus;
+		}
+
+		public String getSnapshotName() {
+			return this.snapshotName;
+		}
+
+		public void setSnapshotName(String snapshotName) {
+			this.snapshotName = snapshotName;
+		}
+
+		public Long getResourceOwnerId() {
+			return this.resourceOwnerId;
+		}
+
+		public void setResourceOwnerId(Long resourceOwnerId) {
+			this.resourceOwnerId = resourceOwnerId;
+		}
+
+		public String getModifiedTime() {
+			return this.modifiedTime;
+		}
+
+		public void setModifiedTime(String modifiedTime) {
+			this.modifiedTime = modifiedTime;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getSnapshotId() {
+			return this.snapshotId;
+		}
+
+		public void setSnapshotId(String snapshotId) {
+			this.snapshotId = snapshotId;
+		}
+
 		public Integer getIaRetentionDays() {
 			return this.iaRetentionDays;
 		}
 
 		public void setIaRetentionDays(Integer iaRetentionDays) {
 			this.iaRetentionDays = iaRetentionDays;
+		}
+
+		public String getImageId() {
+			return this.imageId;
+		}
+
+		public void setImageId(String imageId) {
+			this.imageId = imageId;
+		}
+
+		public String getCreatedTime() {
+			return this.createdTime;
+		}
+
+		public void setCreatedTime(String createdTime) {
+			this.createdTime = createdTime;
+		}
+
+		public String getHouyiSnapshotId() {
+			return this.houyiSnapshotId;
+		}
+
+		public void setHouyiSnapshotId(String houyiSnapshotId) {
+			this.houyiSnapshotId = houyiSnapshotId;
 		}
 	}
 

@@ -31,10 +31,10 @@ public class OpsQueryDedicatedHostAttrResponseUnmarshaller {
 		List<DedicatedHostAttr> dedicatedHostAttrs = new ArrayList<DedicatedHostAttr>();
 		for (int i = 0; i < _ctx.lengthValue("OpsQueryDedicatedHostAttrResponse.DedicatedHostAttrs.Length"); i++) {
 			DedicatedHostAttr dedicatedHostAttr = new DedicatedHostAttr();
-			dedicatedHostAttr.setDedicatedHostId(_ctx.stringValue("OpsQueryDedicatedHostAttrResponse.DedicatedHostAttrs["+ i +"].DedicatedHostId"));
-			dedicatedHostAttr.setAttrName(_ctx.stringValue("OpsQueryDedicatedHostAttrResponse.DedicatedHostAttrs["+ i +"].AttrName"));
-			dedicatedHostAttr.setAttrVale(_ctx.stringValue("OpsQueryDedicatedHostAttrResponse.DedicatedHostAttrs["+ i +"].AttrVale"));
 			dedicatedHostAttr.setIsDeleted(_ctx.stringValue("OpsQueryDedicatedHostAttrResponse.DedicatedHostAttrs["+ i +"].IsDeleted"));
+			dedicatedHostAttr.setAttrName(_ctx.stringValue("OpsQueryDedicatedHostAttrResponse.DedicatedHostAttrs["+ i +"].AttrName"));
+			dedicatedHostAttr.setDedicatedHostId(_ctx.stringValue("OpsQueryDedicatedHostAttrResponse.DedicatedHostAttrs["+ i +"].DedicatedHostId"));
+			dedicatedHostAttr.setAttrVale(_ctx.stringValue("OpsQueryDedicatedHostAttrResponse.DedicatedHostAttrs["+ i +"].AttrVale"));
 
 			dedicatedHostAttrs.add(dedicatedHostAttr);
 		}

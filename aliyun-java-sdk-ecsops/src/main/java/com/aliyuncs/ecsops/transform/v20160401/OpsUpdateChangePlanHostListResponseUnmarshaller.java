@@ -23,8 +23,8 @@ public class OpsUpdateChangePlanHostListResponseUnmarshaller {
 	public static OpsUpdateChangePlanHostListResponse unmarshall(OpsUpdateChangePlanHostListResponse opsUpdateChangePlanHostListResponse, UnmarshallerContext _ctx) {
 		
 		opsUpdateChangePlanHostListResponse.setRequestId(_ctx.stringValue("OpsUpdateChangePlanHostListResponse.RequestId"));
-		opsUpdateChangePlanHostListResponse.setCode(_ctx.stringValue("OpsUpdateChangePlanHostListResponse.Code"));
 		opsUpdateChangePlanHostListResponse.setMessage(_ctx.stringValue("OpsUpdateChangePlanHostListResponse.Message"));
+		opsUpdateChangePlanHostListResponse.setCode(_ctx.stringValue("OpsUpdateChangePlanHostListResponse.Code"));
 		opsUpdateChangePlanHostListResponse.setSuccess(_ctx.stringValue("OpsUpdateChangePlanHostListResponse.Success"));
 	 
 	 	return opsUpdateChangePlanHostListResponse;

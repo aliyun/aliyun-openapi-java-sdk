@@ -26,10 +26,10 @@ public class OpsStatisticOpsRuleResponseUnmarshaller {
 	public static OpsStatisticOpsRuleResponse unmarshall(OpsStatisticOpsRuleResponse opsStatisticOpsRuleResponse, UnmarshallerContext _ctx) {
 		
 		opsStatisticOpsRuleResponse.setRequestId(_ctx.stringValue("OpsStatisticOpsRuleResponse.RequestId"));
-		opsStatisticOpsRuleResponse.setStartTimeStamp(_ctx.integerValue("OpsStatisticOpsRuleResponse.StartTimeStamp"));
 		opsStatisticOpsRuleResponse.setEndTimeStamp(_ctx.integerValue("OpsStatisticOpsRuleResponse.EndTimeStamp"));
-		opsStatisticOpsRuleResponse.setTimeCnt(_ctx.integerValue("OpsStatisticOpsRuleResponse.TimeCnt"));
+		opsStatisticOpsRuleResponse.setStartTimeStamp(_ctx.integerValue("OpsStatisticOpsRuleResponse.StartTimeStamp"));
 		opsStatisticOpsRuleResponse.setIntervalTime(_ctx.integerValue("OpsStatisticOpsRuleResponse.IntervalTime"));
+		opsStatisticOpsRuleResponse.setTimeCnt(_ctx.integerValue("OpsStatisticOpsRuleResponse.TimeCnt"));
 
 		List<String> ncCnts = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("OpsStatisticOpsRuleResponse.NcCnts.Length"); i++) {

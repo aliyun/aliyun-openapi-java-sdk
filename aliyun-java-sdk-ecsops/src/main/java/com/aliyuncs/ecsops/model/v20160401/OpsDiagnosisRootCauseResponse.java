@@ -25,21 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsDiagnosisRootCauseResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String status;
 
 	private String taskId;
 
+	private String requestId;
+
 	private List<RootCause> rootCauses;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getStatus() {
 		return this.status;
@@ -57,6 +49,14 @@ public class OpsDiagnosisRootCauseResponse extends AcsResponse {
 		this.taskId = taskId;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	public List<RootCause> getRootCauses() {
 		return this.rootCauses;
 	}
@@ -67,61 +67,29 @@ public class OpsDiagnosisRootCauseResponse extends AcsResponse {
 
 	public static class RootCause {
 
-		private String reason;
-
-		private String targetId;
-
-		private String relatedDetectId;
-
-		private String dimension;
-
 		private String srcExceptionName;
 
-		private String featureName;
+		private String dimension;
 
 		private String rootCauseDesc;
 
 		private String additionalInfo;
 
+		private String relatedDetectId;
+
+		private String featureName;
+
+		private String targetId;
+
 		private String exceptionTime;
 
-		private List<FeatureData> featureDatas;
+		private String reason;
 
 		private List<DerivationPath> derivationPaths;
 
+		private List<FeatureData> featureDatas;
+
 		private List<String> supportTeams;
-
-		public String getReason() {
-			return this.reason;
-		}
-
-		public void setReason(String reason) {
-			this.reason = reason;
-		}
-
-		public String getTargetId() {
-			return this.targetId;
-		}
-
-		public void setTargetId(String targetId) {
-			this.targetId = targetId;
-		}
-
-		public String getRelatedDetectId() {
-			return this.relatedDetectId;
-		}
-
-		public void setRelatedDetectId(String relatedDetectId) {
-			this.relatedDetectId = relatedDetectId;
-		}
-
-		public String getDimension() {
-			return this.dimension;
-		}
-
-		public void setDimension(String dimension) {
-			this.dimension = dimension;
-		}
 
 		public String getSrcExceptionName() {
 			return this.srcExceptionName;
@@ -131,12 +99,12 @@ public class OpsDiagnosisRootCauseResponse extends AcsResponse {
 			this.srcExceptionName = srcExceptionName;
 		}
 
-		public String getFeatureName() {
-			return this.featureName;
+		public String getDimension() {
+			return this.dimension;
 		}
 
-		public void setFeatureName(String featureName) {
-			this.featureName = featureName;
+		public void setDimension(String dimension) {
+			this.dimension = dimension;
 		}
 
 		public String getRootCauseDesc() {
@@ -155,6 +123,30 @@ public class OpsDiagnosisRootCauseResponse extends AcsResponse {
 			this.additionalInfo = additionalInfo;
 		}
 
+		public String getRelatedDetectId() {
+			return this.relatedDetectId;
+		}
+
+		public void setRelatedDetectId(String relatedDetectId) {
+			this.relatedDetectId = relatedDetectId;
+		}
+
+		public String getFeatureName() {
+			return this.featureName;
+		}
+
+		public void setFeatureName(String featureName) {
+			this.featureName = featureName;
+		}
+
+		public String getTargetId() {
+			return this.targetId;
+		}
+
+		public void setTargetId(String targetId) {
+			this.targetId = targetId;
+		}
+
 		public String getExceptionTime() {
 			return this.exceptionTime;
 		}
@@ -163,12 +155,12 @@ public class OpsDiagnosisRootCauseResponse extends AcsResponse {
 			this.exceptionTime = exceptionTime;
 		}
 
-		public List<FeatureData> getFeatureDatas() {
-			return this.featureDatas;
+		public String getReason() {
+			return this.reason;
 		}
 
-		public void setFeatureDatas(List<FeatureData> featureDatas) {
-			this.featureDatas = featureDatas;
+		public void setReason(String reason) {
+			this.reason = reason;
 		}
 
 		public List<DerivationPath> getDerivationPaths() {
@@ -179,6 +171,14 @@ public class OpsDiagnosisRootCauseResponse extends AcsResponse {
 			this.derivationPaths = derivationPaths;
 		}
 
+		public List<FeatureData> getFeatureDatas() {
+			return this.featureDatas;
+		}
+
+		public void setFeatureDatas(List<FeatureData> featureDatas) {
+			this.featureDatas = featureDatas;
+		}
+
 		public List<String> getSupportTeams() {
 			return this.supportTeams;
 		}
@@ -187,11 +187,89 @@ public class OpsDiagnosisRootCauseResponse extends AcsResponse {
 			this.supportTeams = supportTeams;
 		}
 
+		public static class DerivationPath {
+
+			private Float coverage;
+
+			private Float confidence;
+
+			private List<DerivationEdgeModel> derivationEdgeModels;
+
+			public Float getCoverage() {
+				return this.coverage;
+			}
+
+			public void setCoverage(Float coverage) {
+				this.coverage = coverage;
+			}
+
+			public Float getConfidence() {
+				return this.confidence;
+			}
+
+			public void setConfidence(Float confidence) {
+				this.confidence = confidence;
+			}
+
+			public List<DerivationEdgeModel> getDerivationEdgeModels() {
+				return this.derivationEdgeModels;
+			}
+
+			public void setDerivationEdgeModels(List<DerivationEdgeModel> derivationEdgeModels) {
+				this.derivationEdgeModels = derivationEdgeModels;
+			}
+
+			public static class DerivationEdgeModel {
+
+				private Float logicalCorrelation;
+
+				private String srcFeatureName;
+
+				private Float correlationByHuman;
+
+				private String dstFeatureName;
+
+				public Float getLogicalCorrelation() {
+					return this.logicalCorrelation;
+				}
+
+				public void setLogicalCorrelation(Float logicalCorrelation) {
+					this.logicalCorrelation = logicalCorrelation;
+				}
+
+				public String getSrcFeatureName() {
+					return this.srcFeatureName;
+				}
+
+				public void setSrcFeatureName(String srcFeatureName) {
+					this.srcFeatureName = srcFeatureName;
+				}
+
+				public Float getCorrelationByHuman() {
+					return this.correlationByHuman;
+				}
+
+				public void setCorrelationByHuman(Float correlationByHuman) {
+					this.correlationByHuman = correlationByHuman;
+				}
+
+				public String getDstFeatureName() {
+					return this.dstFeatureName;
+				}
+
+				public void setDstFeatureName(String dstFeatureName) {
+					this.dstFeatureName = dstFeatureName;
+				}
+			}
+		}
+
 		public static class FeatureData {
 
-			private Long firstMatchedTimestamp;
-
 			private Long lastMatchedTimestamp;
+
+			private String extension;
+
+			private Long firstMatchedTimestamp;
 
 			private String featureName;
 
@@ -199,7 +277,21 @@ public class OpsDiagnosisRootCauseResponse extends AcsResponse {
 
 			private String sourceData;
 
-			private String extension;
+			public Long getLastMatchedTimestamp() {
+				return this.lastMatchedTimestamp;
+			}
+
+			public void setLastMatchedTimestamp(Long lastMatchedTimestamp) {
+				this.lastMatchedTimestamp = lastMatchedTimestamp;
+			}
+
+			public String getExtension() {
+				return this.extension;
+			}
+
+			public void setExtension(String extension) {
+				this.extension = extension;
+			}
 
 			public Long getFirstMatchedTimestamp() {
 				return this.firstMatchedTimestamp;
@@ -207,14 +299,6 @@ public class OpsDiagnosisRootCauseResponse extends AcsResponse {
 
 			public void setFirstMatchedTimestamp(Long firstMatchedTimestamp) {
 				this.firstMatchedTimestamp = firstMatchedTimestamp;
-			}
-
-			public Long getLastMatchedTimestamp() {
-				return this.lastMatchedTimestamp;
-			}
-
-			public void setLastMatchedTimestamp(Long lastMatchedTimestamp) {
-				this.lastMatchedTimestamp = lastMatchedTimestamp;
 			}
 
 			public String getFeatureName() {
@@ -239,90 +323,6 @@ public class OpsDiagnosisRootCauseResponse extends AcsResponse {
 
 			public void setSourceData(String sourceData) {
 				this.sourceData = sourceData;
-			}
-
-			public String getExtension() {
-				return this.extension;
-			}
-
-			public void setExtension(String extension) {
-				this.extension = extension;
-			}
-		}
-
-		public static class DerivationPath {
-
-			private Float confidence;
-
-			private Float coverage;
-
-			private List<DerivationEdgeModel> derivationEdgeModels;
-
-			public Float getConfidence() {
-				return this.confidence;
-			}
-
-			public void setConfidence(Float confidence) {
-				this.confidence = confidence;
-			}
-
-			public Float getCoverage() {
-				return this.coverage;
-			}
-
-			public void setCoverage(Float coverage) {
-				this.coverage = coverage;
-			}
-
-			public List<DerivationEdgeModel> getDerivationEdgeModels() {
-				return this.derivationEdgeModels;
-			}
-
-			public void setDerivationEdgeModels(List<DerivationEdgeModel> derivationEdgeModels) {
-				this.derivationEdgeModels = derivationEdgeModels;
-			}
-
-			public static class DerivationEdgeModel {
-
-				private String srcFeatureName;
-
-				private String dstFeatureName;
-
-				private Float logicalCorrelation;
-
-				private Float correlationByHuman;
-
-				public String getSrcFeatureName() {
-					return this.srcFeatureName;
-				}
-
-				public void setSrcFeatureName(String srcFeatureName) {
-					this.srcFeatureName = srcFeatureName;
-				}
-
-				public String getDstFeatureName() {
-					return this.dstFeatureName;
-				}
-
-				public void setDstFeatureName(String dstFeatureName) {
-					this.dstFeatureName = dstFeatureName;
-				}
-
-				public Float getLogicalCorrelation() {
-					return this.logicalCorrelation;
-				}
-
-				public void setLogicalCorrelation(Float logicalCorrelation) {
-					this.logicalCorrelation = logicalCorrelation;
-				}
-
-				public Float getCorrelationByHuman() {
-					return this.correlationByHuman;
-				}
-
-				public void setCorrelationByHuman(Float correlationByHuman) {
-					this.correlationByHuman = correlationByHuman;
-				}
 			}
 		}
 	}

@@ -31,22 +31,22 @@ public class OpsQueryRebootInfoResponseUnmarshaller {
 		List<CheckPoint> checkPoints = new ArrayList<CheckPoint>();
 		for (int i = 0; i < _ctx.lengthValue("OpsQueryRebootInfoResponse.CheckPoints.Length"); i++) {
 			CheckPoint checkPoint = new CheckPoint();
-			checkPoint.setId(_ctx.stringValue("OpsQueryRebootInfoResponse.CheckPoints["+ i +"].Id"));
-			checkPoint.setAliUid(_ctx.stringValue("OpsQueryRebootInfoResponse.CheckPoints["+ i +"].AliUid"));
-			checkPoint.setProductCode(_ctx.stringValue("OpsQueryRebootInfoResponse.CheckPoints["+ i +"].ProductCode"));
-			checkPoint.setInstanceId(_ctx.stringValue("OpsQueryRebootInfoResponse.CheckPoints["+ i +"].InstanceId"));
-			checkPoint.setOrderId(_ctx.stringValue("OpsQueryRebootInfoResponse.CheckPoints["+ i +"].OrderId"));
-			checkPoint.setRestartDate(_ctx.stringValue("OpsQueryRebootInfoResponse.CheckPoints["+ i +"].RestartDate"));
-			checkPoint.setUserPerform(_ctx.booleanValue("OpsQueryRebootInfoResponse.CheckPoints["+ i +"].UserPerform"));
 			checkPoint.setSystemPerform(_ctx.booleanValue("OpsQueryRebootInfoResponse.CheckPoints["+ i +"].SystemPerform"));
-			checkPoint.setGmtCreated(_ctx.stringValue("OpsQueryRebootInfoResponse.CheckPoints["+ i +"].GmtCreated"));
-			checkPoint.setGmtModified(_ctx.stringValue("OpsQueryRebootInfoResponse.CheckPoints["+ i +"].GmtModified"));
-			checkPoint.setIsDeleted(_ctx.stringValue("OpsQueryRebootInfoResponse.CheckPoints["+ i +"].IsDeleted"));
-			checkPoint.setExpectedTime(_ctx.stringValue("OpsQueryRebootInfoResponse.CheckPoints["+ i +"].ExpectedTime"));
-			checkPoint.setRequestId(_ctx.stringValue("OpsQueryRebootInfoResponse.CheckPoints["+ i +"].RequestId"));
-			checkPoint.setUpgradeDate(_ctx.stringValue("OpsQueryRebootInfoResponse.CheckPoints["+ i +"].UpgradeDate"));
+			checkPoint.setUserPerform(_ctx.booleanValue("OpsQueryRebootInfoResponse.CheckPoints["+ i +"].UserPerform"));
 			checkPoint.setScriptionId(_ctx.stringValue("OpsQueryRebootInfoResponse.CheckPoints["+ i +"].ScriptionId"));
+			checkPoint.setRestartDate(_ctx.stringValue("OpsQueryRebootInfoResponse.CheckPoints["+ i +"].RestartDate"));
+			checkPoint.setAliUid(_ctx.stringValue("OpsQueryRebootInfoResponse.CheckPoints["+ i +"].AliUid"));
+			checkPoint.setInstanceId(_ctx.stringValue("OpsQueryRebootInfoResponse.CheckPoints["+ i +"].InstanceId"));
+			checkPoint.setGmtModified(_ctx.stringValue("OpsQueryRebootInfoResponse.CheckPoints["+ i +"].GmtModified"));
+			checkPoint.setGmtCreated(_ctx.stringValue("OpsQueryRebootInfoResponse.CheckPoints["+ i +"].GmtCreated"));
+			checkPoint.setRequestId(_ctx.stringValue("OpsQueryRebootInfoResponse.CheckPoints["+ i +"].RequestId"));
+			checkPoint.setExpectedTime(_ctx.stringValue("OpsQueryRebootInfoResponse.CheckPoints["+ i +"].ExpectedTime"));
+			checkPoint.setIsDeleted(_ctx.stringValue("OpsQueryRebootInfoResponse.CheckPoints["+ i +"].IsDeleted"));
 			checkPoint.setMark(_ctx.stringValue("OpsQueryRebootInfoResponse.CheckPoints["+ i +"].Mark"));
+			checkPoint.setUpgradeDate(_ctx.stringValue("OpsQueryRebootInfoResponse.CheckPoints["+ i +"].UpgradeDate"));
+			checkPoint.setId(_ctx.stringValue("OpsQueryRebootInfoResponse.CheckPoints["+ i +"].Id"));
+			checkPoint.setOrderId(_ctx.stringValue("OpsQueryRebootInfoResponse.CheckPoints["+ i +"].OrderId"));
+			checkPoint.setProductCode(_ctx.stringValue("OpsQueryRebootInfoResponse.CheckPoints["+ i +"].ProductCode"));
 
 			checkPoints.add(checkPoint);
 		}

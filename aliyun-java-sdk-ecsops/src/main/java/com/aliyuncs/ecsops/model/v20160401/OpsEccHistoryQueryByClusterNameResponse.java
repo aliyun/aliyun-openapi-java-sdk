@@ -59,13 +59,13 @@ public class OpsEccHistoryQueryByClusterNameResponse extends AcsResponse {
 
 		private Integer checkCount;
 
-		private Long checkTS;
-
 		private String clusterInventory;
 
-		private String clusterName;
-
 		private String validCount;
+
+		private Long checkTS;
+
+		private String clusterName;
 
 		private List<String> checkItems;
 
@@ -77,14 +77,6 @@ public class OpsEccHistoryQueryByClusterNameResponse extends AcsResponse {
 			this.checkCount = checkCount;
 		}
 
-		public Long getCheckTS() {
-			return this.checkTS;
-		}
-
-		public void setCheckTS(Long checkTS) {
-			this.checkTS = checkTS;
-		}
-
 		public String getClusterInventory() {
 			return this.clusterInventory;
 		}
@@ -93,20 +85,28 @@ public class OpsEccHistoryQueryByClusterNameResponse extends AcsResponse {
 			this.clusterInventory = clusterInventory;
 		}
 
-		public String getClusterName() {
-			return this.clusterName;
-		}
-
-		public void setClusterName(String clusterName) {
-			this.clusterName = clusterName;
-		}
-
 		public String getValidCount() {
 			return this.validCount;
 		}
 
 		public void setValidCount(String validCount) {
 			this.validCount = validCount;
+		}
+
+		public Long getCheckTS() {
+			return this.checkTS;
+		}
+
+		public void setCheckTS(Long checkTS) {
+			this.checkTS = checkTS;
+		}
+
+		public String getClusterName() {
+			return this.clusterName;
+		}
+
+		public void setClusterName(String clusterName) {
+			this.clusterName = clusterName;
 		}
 
 		public List<String> getCheckItems() {

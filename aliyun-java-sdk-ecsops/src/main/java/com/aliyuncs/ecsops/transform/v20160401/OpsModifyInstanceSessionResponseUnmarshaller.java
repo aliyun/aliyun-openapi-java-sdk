@@ -23,8 +23,8 @@ public class OpsModifyInstanceSessionResponseUnmarshaller {
 	public static OpsModifyInstanceSessionResponse unmarshall(OpsModifyInstanceSessionResponse opsModifyInstanceSessionResponse, UnmarshallerContext _ctx) {
 		
 		opsModifyInstanceSessionResponse.setRequestId(_ctx.stringValue("OpsModifyInstanceSessionResponse.RequestId"));
-		opsModifyInstanceSessionResponse.setCode(_ctx.stringValue("OpsModifyInstanceSessionResponse.Code"));
 		opsModifyInstanceSessionResponse.setMessage(_ctx.stringValue("OpsModifyInstanceSessionResponse.Message"));
+		opsModifyInstanceSessionResponse.setCode(_ctx.stringValue("OpsModifyInstanceSessionResponse.Code"));
 		opsModifyInstanceSessionResponse.setSuccess(_ctx.stringValue("OpsModifyInstanceSessionResponse.Success"));
 	 
 	 	return opsModifyInstanceSessionResponse;

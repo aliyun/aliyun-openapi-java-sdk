@@ -24,15 +24,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsDescribeUserVcpusResponse extends AcsResponse {
 
+	private String message;
+
 	private String requestId;
+
+	private Integer vcpus;
 
 	private String code;
 
-	private String message;
-
 	private String success;
 
-	private Integer vcpus;
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -40,6 +48,14 @@ public class OpsDescribeUserVcpusResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Integer getVcpus() {
+		return this.vcpus;
+	}
+
+	public void setVcpus(Integer vcpus) {
+		this.vcpus = vcpus;
 	}
 
 	public String getCode() {
@@ -50,28 +66,12 @@ public class OpsDescribeUserVcpusResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
 	public String getSuccess() {
 		return this.success;
 	}
 
 	public void setSuccess(String success) {
 		this.success = success;
-	}
-
-	public Integer getVcpus() {
-		return this.vcpus;
-	}
-
-	public void setVcpus(Integer vcpus) {
-		this.vcpus = vcpus;
 	}
 
 	@Override

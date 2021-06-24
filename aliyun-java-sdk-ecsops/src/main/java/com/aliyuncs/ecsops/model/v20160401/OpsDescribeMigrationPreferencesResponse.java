@@ -27,9 +27,9 @@ public class OpsDescribeMigrationPreferencesResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String regionId;
-
 	private String migrationNetworkType;
+
+	private String regionId;
 
 	private Long aliUid;
 
@@ -43,20 +43,20 @@ public class OpsDescribeMigrationPreferencesResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getRegionId() {
-		return this.regionId;
-	}
-
-	public void setRegionId(String regionId) {
-		this.regionId = regionId;
-	}
-
 	public String getMigrationNetworkType() {
 		return this.migrationNetworkType;
 	}
 
 	public void setMigrationNetworkType(String migrationNetworkType) {
 		this.migrationNetworkType = migrationNetworkType;
+	}
+
+	public String getRegionId() {
+		return this.regionId;
+	}
+
+	public void setRegionId(String regionId) {
+		this.regionId = regionId;
 	}
 
 	public Long getAliUid() {

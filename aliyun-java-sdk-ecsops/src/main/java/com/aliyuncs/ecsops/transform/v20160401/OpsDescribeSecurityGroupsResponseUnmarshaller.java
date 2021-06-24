@@ -28,22 +28,22 @@ public class OpsDescribeSecurityGroupsResponseUnmarshaller {
 		
 		opsDescribeSecurityGroupsResponse.setRequestId(_ctx.stringValue("OpsDescribeSecurityGroupsResponse.RequestId"));
 		opsDescribeSecurityGroupsResponse.setTotalCount(_ctx.integerValue("OpsDescribeSecurityGroupsResponse.TotalCount"));
-		opsDescribeSecurityGroupsResponse.setPageNumber(_ctx.integerValue("OpsDescribeSecurityGroupsResponse.PageNumber"));
 		opsDescribeSecurityGroupsResponse.setPageSize(_ctx.integerValue("OpsDescribeSecurityGroupsResponse.PageSize"));
+		opsDescribeSecurityGroupsResponse.setPageNumber(_ctx.integerValue("OpsDescribeSecurityGroupsResponse.PageNumber"));
 
 		List<SecurityGroup> securityGroups = new ArrayList<SecurityGroup>();
 		for (int i = 0; i < _ctx.lengthValue("OpsDescribeSecurityGroupsResponse.SecurityGroups.Length"); i++) {
 			SecurityGroup securityGroup = new SecurityGroup();
-			securityGroup.setRegionId(_ctx.stringValue("OpsDescribeSecurityGroupsResponse.SecurityGroups["+ i +"].RegionId"));
+			securityGroup.setVpcId(_ctx.stringValue("OpsDescribeSecurityGroupsResponse.SecurityGroups["+ i +"].VpcId"));
+			securityGroup.setModifiedTime(_ctx.stringValue("OpsDescribeSecurityGroupsResponse.SecurityGroups["+ i +"].ModifiedTime"));
+			securityGroup.setDescription(_ctx.stringValue("OpsDescribeSecurityGroupsResponse.SecurityGroups["+ i +"].Description"));
 			securityGroup.setSecurityGroupId(_ctx.stringValue("OpsDescribeSecurityGroupsResponse.SecurityGroups["+ i +"].SecurityGroupId"));
 			securityGroup.setSecurityGroupName(_ctx.stringValue("OpsDescribeSecurityGroupsResponse.SecurityGroups["+ i +"].SecurityGroupName"));
-			securityGroup.setDescription(_ctx.stringValue("OpsDescribeSecurityGroupsResponse.SecurityGroups["+ i +"].Description"));
-			securityGroup.setVpcId(_ctx.stringValue("OpsDescribeSecurityGroupsResponse.SecurityGroups["+ i +"].VpcId"));
 			securityGroup.setEcsCount(_ctx.integerValue("OpsDescribeSecurityGroupsResponse.SecurityGroups["+ i +"].EcsCount"));
-			securityGroup.setAvailableInstanceAmount(_ctx.longValue("OpsDescribeSecurityGroupsResponse.SecurityGroups["+ i +"].AvailableInstanceAmount"));
-			securityGroup.setGroupType(_ctx.stringValue("OpsDescribeSecurityGroupsResponse.SecurityGroups["+ i +"].GroupType"));
 			securityGroup.setCreatedTime(_ctx.stringValue("OpsDescribeSecurityGroupsResponse.SecurityGroups["+ i +"].CreatedTime"));
-			securityGroup.setModifiedTime(_ctx.stringValue("OpsDescribeSecurityGroupsResponse.SecurityGroups["+ i +"].ModifiedTime"));
+			securityGroup.setGroupType(_ctx.stringValue("OpsDescribeSecurityGroupsResponse.SecurityGroups["+ i +"].GroupType"));
+			securityGroup.setAvailableInstanceAmount(_ctx.longValue("OpsDescribeSecurityGroupsResponse.SecurityGroups["+ i +"].AvailableInstanceAmount"));
+			securityGroup.setRegionId(_ctx.stringValue("OpsDescribeSecurityGroupsResponse.SecurityGroups["+ i +"].RegionId"));
 
 			securityGroups.add(securityGroup);
 		}

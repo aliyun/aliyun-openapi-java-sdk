@@ -23,8 +23,8 @@ public class OpsModifyInstanceInternetFlowLimitResponseUnmarshaller {
 	public static OpsModifyInstanceInternetFlowLimitResponse unmarshall(OpsModifyInstanceInternetFlowLimitResponse opsModifyInstanceInternetFlowLimitResponse, UnmarshallerContext _ctx) {
 		
 		opsModifyInstanceInternetFlowLimitResponse.setRequestId(_ctx.stringValue("OpsModifyInstanceInternetFlowLimitResponse.RequestId"));
-		opsModifyInstanceInternetFlowLimitResponse.setCode(_ctx.stringValue("OpsModifyInstanceInternetFlowLimitResponse.Code"));
 		opsModifyInstanceInternetFlowLimitResponse.setMessage(_ctx.stringValue("OpsModifyInstanceInternetFlowLimitResponse.Message"));
+		opsModifyInstanceInternetFlowLimitResponse.setCode(_ctx.stringValue("OpsModifyInstanceInternetFlowLimitResponse.Code"));
 		opsModifyInstanceInternetFlowLimitResponse.setSuccess(_ctx.stringValue("OpsModifyInstanceInternetFlowLimitResponse.Success"));
 	 
 	 	return opsModifyInstanceInternetFlowLimitResponse;

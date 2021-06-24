@@ -23,10 +23,10 @@ public class OpsInsertInstanceTypeResponseUnmarshaller {
 	public static OpsInsertInstanceTypeResponse unmarshall(OpsInsertInstanceTypeResponse opsInsertInstanceTypeResponse, UnmarshallerContext _ctx) {
 		
 		opsInsertInstanceTypeResponse.setRequestId(_ctx.stringValue("OpsInsertInstanceTypeResponse.RequestId"));
-		opsInsertInstanceTypeResponse.setSuccess(_ctx.stringValue("OpsInsertInstanceTypeResponse.Success"));
-		opsInsertInstanceTypeResponse.setCode(_ctx.stringValue("OpsInsertInstanceTypeResponse.Code"));
 		opsInsertInstanceTypeResponse.setMessage(_ctx.stringValue("OpsInsertInstanceTypeResponse.Message"));
 		opsInsertInstanceTypeResponse.setHttpStatusCode(_ctx.integerValue("OpsInsertInstanceTypeResponse.HttpStatusCode"));
+		opsInsertInstanceTypeResponse.setCode(_ctx.stringValue("OpsInsertInstanceTypeResponse.Code"));
+		opsInsertInstanceTypeResponse.setSuccess(_ctx.stringValue("OpsInsertInstanceTypeResponse.Success"));
 	 
 	 	return opsInsertInstanceTypeResponse;
 	}

@@ -27,8 +27,8 @@ public class OpsDescribeChangePlanBatchResponseUnmarshaller {
 	public static OpsDescribeChangePlanBatchResponse unmarshall(OpsDescribeChangePlanBatchResponse opsDescribeChangePlanBatchResponse, UnmarshallerContext _ctx) {
 		
 		opsDescribeChangePlanBatchResponse.setRequestId(_ctx.stringValue("OpsDescribeChangePlanBatchResponse.RequestId"));
-		opsDescribeChangePlanBatchResponse.setCode(_ctx.stringValue("OpsDescribeChangePlanBatchResponse.Code"));
 		opsDescribeChangePlanBatchResponse.setMessage(_ctx.stringValue("OpsDescribeChangePlanBatchResponse.Message"));
+		opsDescribeChangePlanBatchResponse.setCode(_ctx.stringValue("OpsDescribeChangePlanBatchResponse.Code"));
 		opsDescribeChangePlanBatchResponse.setSuccess(_ctx.stringValue("OpsDescribeChangePlanBatchResponse.Success"));
 
 		Data data = new Data();

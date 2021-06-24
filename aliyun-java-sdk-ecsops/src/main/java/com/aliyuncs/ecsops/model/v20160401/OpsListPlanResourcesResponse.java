@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsListPlanResourcesResponse extends AcsResponse {
 
+	private String message;
+
 	private String requestId;
 
 	private String code;
 
-	private String message;
-
 	private String success;
 
 	private Data data;
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -49,14 +57,6 @@ public class OpsListPlanResourcesResponse extends AcsResponse {
 
 	public void setCode(String code) {
 		this.code = code;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
 	}
 
 	public String getSuccess() {
@@ -77,13 +77,21 @@ public class OpsListPlanResourcesResponse extends AcsResponse {
 
 	public static class Data {
 
+		private Integer totalSize;
+
 		private Integer pageNo;
 
 		private Integer pageSize;
 
-		private Integer totalSize;
-
 		private List<String> resources;
+
+		public Integer getTotalSize() {
+			return this.totalSize;
+		}
+
+		public void setTotalSize(Integer totalSize) {
+			this.totalSize = totalSize;
+		}
 
 		public Integer getPageNo() {
 			return this.pageNo;
@@ -99,14 +107,6 @@ public class OpsListPlanResourcesResponse extends AcsResponse {
 
 		public void setPageSize(Integer pageSize) {
 			this.pageSize = pageSize;
-		}
-
-		public Integer getTotalSize() {
-			return this.totalSize;
-		}
-
-		public void setTotalSize(Integer totalSize) {
-			this.totalSize = totalSize;
 		}
 
 		public List<String> getResources() {

@@ -49,15 +49,15 @@ public class OpsQueryCurrentOnCallResponse extends AcsResponse {
 
 		private String empId;
 
-		private String departmentCnName;
-
-		private String phone;
-
-		private String department;
+		private String email;
 
 		private String nickName;
 
-		private String email;
+		private String departmentCnName;
+
+		private String department;
+
+		private String phone;
 
 		public String getEmpId() {
 			return this.empId;
@@ -67,28 +67,12 @@ public class OpsQueryCurrentOnCallResponse extends AcsResponse {
 			this.empId = empId;
 		}
 
-		public String getDepartmentCnName() {
-			return this.departmentCnName;
+		public String getEmail() {
+			return this.email;
 		}
 
-		public void setDepartmentCnName(String departmentCnName) {
-			this.departmentCnName = departmentCnName;
-		}
-
-		public String getPhone() {
-			return this.phone;
-		}
-
-		public void setPhone(String phone) {
-			this.phone = phone;
-		}
-
-		public String getDepartment() {
-			return this.department;
-		}
-
-		public void setDepartment(String department) {
-			this.department = department;
+		public void setEmail(String email) {
+			this.email = email;
 		}
 
 		public String getNickName() {
@@ -99,12 +83,28 @@ public class OpsQueryCurrentOnCallResponse extends AcsResponse {
 			this.nickName = nickName;
 		}
 
-		public String getEmail() {
-			return this.email;
+		public String getDepartmentCnName() {
+			return this.departmentCnName;
 		}
 
-		public void setEmail(String email) {
-			this.email = email;
+		public void setDepartmentCnName(String departmentCnName) {
+			this.departmentCnName = departmentCnName;
+		}
+
+		public String getDepartment() {
+			return this.department;
+		}
+
+		public void setDepartment(String department) {
+			this.department = department;
+		}
+
+		public String getPhone() {
+			return this.phone;
+		}
+
+		public void setPhone(String phone) {
+			this.phone = phone;
 		}
 	}
 

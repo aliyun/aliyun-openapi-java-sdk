@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsDeleteDiagnosticPluginItemResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String itemCode;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getItemCode() {
 		return this.itemCode;
@@ -42,6 +34,14 @@ public class OpsDeleteDiagnosticPluginItemResponse extends AcsResponse {
 
 	public void setItemCode(String itemCode) {
 		this.itemCode = itemCode;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

@@ -25,13 +25,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsDescribeDiagnosticReportsResponse extends AcsResponse {
 
+	private String nextToken;
+
 	private String requestId;
 
 	private Integer maxResults;
 
-	private String nextToken;
-
 	private List<Report> reports;
+
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -49,14 +57,6 @@ public class OpsDescribeDiagnosticReportsResponse extends AcsResponse {
 		this.maxResults = maxResults;
 	}
 
-	public String getNextToken() {
-		return this.nextToken;
-	}
-
-	public void setNextToken(String nextToken) {
-		this.nextToken = nextToken;
-	}
-
 	public List<Report> getReports() {
 		return this.reports;
 	}
@@ -67,84 +67,36 @@ public class OpsDescribeDiagnosticReportsResponse extends AcsResponse {
 
 	public static class Report {
 
-		private String reportId;
-
-		private String resourceId;
-
-		private String resourceType;
-
-		private String creationTime;
-
-		private String finishedTime;
-
-		private String startTime;
-
-		private String endTime;
+		private String status;
 
 		private String severity;
 
-		private String status;
+		private String creationTime;
 
-		private List<Issue> issues;
+		private String reportId;
+
+		private String endTime;
+
+		private String startTime;
+
+		private String resourceType;
+
+		private String finishedTime;
+
+		private String resourceId;
 
 		private List<Item> items;
 
+		private List<Issue> issues;
+
 		private List<RecentEvent> recentEvents;
 
-		public String getReportId() {
-			return this.reportId;
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setReportId(String reportId) {
-			this.reportId = reportId;
-		}
-
-		public String getResourceId() {
-			return this.resourceId;
-		}
-
-		public void setResourceId(String resourceId) {
-			this.resourceId = resourceId;
-		}
-
-		public String getResourceType() {
-			return this.resourceType;
-		}
-
-		public void setResourceType(String resourceType) {
-			this.resourceType = resourceType;
-		}
-
-		public String getCreationTime() {
-			return this.creationTime;
-		}
-
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
-		}
-
-		public String getFinishedTime() {
-			return this.finishedTime;
-		}
-
-		public void setFinishedTime(String finishedTime) {
-			this.finishedTime = finishedTime;
-		}
-
-		public String getStartTime() {
-			return this.startTime;
-		}
-
-		public void setStartTime(String startTime) {
-			this.startTime = startTime;
-		}
-
-		public String getEndTime() {
-			return this.endTime;
-		}
-
-		public void setEndTime(String endTime) {
-			this.endTime = endTime;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public String getSeverity() {
@@ -155,20 +107,60 @@ public class OpsDescribeDiagnosticReportsResponse extends AcsResponse {
 			this.severity = severity;
 		}
 
-		public String getStatus() {
-			return this.status;
+		public String getCreationTime() {
+			return this.creationTime;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
 		}
 
-		public List<Issue> getIssues() {
-			return this.issues;
+		public String getReportId() {
+			return this.reportId;
 		}
 
-		public void setIssues(List<Issue> issues) {
-			this.issues = issues;
+		public void setReportId(String reportId) {
+			this.reportId = reportId;
+		}
+
+		public String getEndTime() {
+			return this.endTime;
+		}
+
+		public void setEndTime(String endTime) {
+			this.endTime = endTime;
+		}
+
+		public String getStartTime() {
+			return this.startTime;
+		}
+
+		public void setStartTime(String startTime) {
+			this.startTime = startTime;
+		}
+
+		public String getResourceType() {
+			return this.resourceType;
+		}
+
+		public void setResourceType(String resourceType) {
+			this.resourceType = resourceType;
+		}
+
+		public String getFinishedTime() {
+			return this.finishedTime;
+		}
+
+		public void setFinishedTime(String finishedTime) {
+			this.finishedTime = finishedTime;
+		}
+
+		public String getResourceId() {
+			return this.resourceId;
+		}
+
+		public void setResourceId(String resourceId) {
+			this.resourceId = resourceId;
 		}
 
 		public List<Item> getItems() {
@@ -179,6 +171,14 @@ public class OpsDescribeDiagnosticReportsResponse extends AcsResponse {
 			this.items = items;
 		}
 
+		public List<Issue> getIssues() {
+			return this.issues;
+		}
+
+		public void setIssues(List<Issue> issues) {
+			this.issues = issues;
+		}
+
 		public List<RecentEvent> getRecentEvents() {
 			return this.recentEvents;
 		}
@@ -187,26 +187,148 @@ public class OpsDescribeDiagnosticReportsResponse extends AcsResponse {
 			this.recentEvents = recentEvents;
 		}
 
+		public static class Item {
+
+			private String status;
+
+			private String severity;
+
+			private String itemCategory;
+
+			private String itemCode;
+
+			private String occurrenceTime;
+
+			private String occurrenceStartTime;
+
+			private Long occurrenceCounts;
+
+			private String reason;
+
+			private List<ItemData> itemDatas;
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
+			}
+
+			public String getSeverity() {
+				return this.severity;
+			}
+
+			public void setSeverity(String severity) {
+				this.severity = severity;
+			}
+
+			public String getItemCategory() {
+				return this.itemCategory;
+			}
+
+			public void setItemCategory(String itemCategory) {
+				this.itemCategory = itemCategory;
+			}
+
+			public String getItemCode() {
+				return this.itemCode;
+			}
+
+			public void setItemCode(String itemCode) {
+				this.itemCode = itemCode;
+			}
+
+			public String getOccurrenceTime() {
+				return this.occurrenceTime;
+			}
+
+			public void setOccurrenceTime(String occurrenceTime) {
+				this.occurrenceTime = occurrenceTime;
+			}
+
+			public String getOccurrenceStartTime() {
+				return this.occurrenceStartTime;
+			}
+
+			public void setOccurrenceStartTime(String occurrenceStartTime) {
+				this.occurrenceStartTime = occurrenceStartTime;
+			}
+
+			public Long getOccurrenceCounts() {
+				return this.occurrenceCounts;
+			}
+
+			public void setOccurrenceCounts(Long occurrenceCounts) {
+				this.occurrenceCounts = occurrenceCounts;
+			}
+
+			public String getReason() {
+				return this.reason;
+			}
+
+			public void setReason(String reason) {
+				this.reason = reason;
+			}
+
+			public List<ItemData> getItemDatas() {
+				return this.itemDatas;
+			}
+
+			public void setItemDatas(List<ItemData> itemDatas) {
+				this.itemDatas = itemDatas;
+			}
+
+			public static class ItemData {
+
+				private String value;
+
+				private String name;
+
+				public String getValue() {
+					return this.value;
+				}
+
+				public void setValue(String value) {
+					this.value = value;
+				}
+
+				public String getName() {
+					return this.name;
+				}
+
+				public void setName(String name) {
+					this.name = name;
+				}
+			}
+		}
+
 		public static class Issue {
 
-			private String issueCategory;
+			private String severity;
 
 			private String issueCode;
 
 			private String message;
 
-			private String severity;
-
 			private String occurrenceTime;
+
+			private String occurrenceStartTime;
+
+			private Long occurrenceCounts;
+
+			private String reason;
+
+			private String issueCategory;
 
 			private List<RecommendedAction> recommendedActions;
 
-			public String getIssueCategory() {
-				return this.issueCategory;
+			public String getSeverity() {
+				return this.severity;
 			}
 
-			public void setIssueCategory(String issueCategory) {
-				this.issueCategory = issueCategory;
+			public void setSeverity(String severity) {
+				this.severity = severity;
 			}
 
 			public String getIssueCode() {
@@ -225,20 +347,44 @@ public class OpsDescribeDiagnosticReportsResponse extends AcsResponse {
 				this.message = message;
 			}
 
-			public String getSeverity() {
-				return this.severity;
-			}
-
-			public void setSeverity(String severity) {
-				this.severity = severity;
-			}
-
 			public String getOccurrenceTime() {
 				return this.occurrenceTime;
 			}
 
 			public void setOccurrenceTime(String occurrenceTime) {
 				this.occurrenceTime = occurrenceTime;
+			}
+
+			public String getOccurrenceStartTime() {
+				return this.occurrenceStartTime;
+			}
+
+			public void setOccurrenceStartTime(String occurrenceStartTime) {
+				this.occurrenceStartTime = occurrenceStartTime;
+			}
+
+			public Long getOccurrenceCounts() {
+				return this.occurrenceCounts;
+			}
+
+			public void setOccurrenceCounts(Long occurrenceCounts) {
+				this.occurrenceCounts = occurrenceCounts;
+			}
+
+			public String getReason() {
+				return this.reason;
+			}
+
+			public void setReason(String reason) {
+				this.reason = reason;
+			}
+
+			public String getIssueCategory() {
+				return this.issueCategory;
+			}
+
+			public void setIssueCategory(String issueCategory) {
+				this.issueCategory = issueCategory;
 			}
 
 			public List<RecommendedAction> getRecommendedActions() {
@@ -302,92 +448,6 @@ public class OpsDescribeDiagnosticReportsResponse extends AcsResponse {
 					public void setValue(String value) {
 						this.value = value;
 					}
-				}
-			}
-		}
-
-		public static class Item {
-
-			private String itemCode;
-
-			private String itemCategory;
-
-			private String severity;
-
-			private String status;
-
-			private String occurrenceTime;
-
-			private List<ItemData> itemDatas;
-
-			public String getItemCode() {
-				return this.itemCode;
-			}
-
-			public void setItemCode(String itemCode) {
-				this.itemCode = itemCode;
-			}
-
-			public String getItemCategory() {
-				return this.itemCategory;
-			}
-
-			public void setItemCategory(String itemCategory) {
-				this.itemCategory = itemCategory;
-			}
-
-			public String getSeverity() {
-				return this.severity;
-			}
-
-			public void setSeverity(String severity) {
-				this.severity = severity;
-			}
-
-			public String getStatus() {
-				return this.status;
-			}
-
-			public void setStatus(String status) {
-				this.status = status;
-			}
-
-			public String getOccurrenceTime() {
-				return this.occurrenceTime;
-			}
-
-			public void setOccurrenceTime(String occurrenceTime) {
-				this.occurrenceTime = occurrenceTime;
-			}
-
-			public List<ItemData> getItemDatas() {
-				return this.itemDatas;
-			}
-
-			public void setItemDatas(List<ItemData> itemDatas) {
-				this.itemDatas = itemDatas;
-			}
-
-			public static class ItemData {
-
-				private String name;
-
-				private String value;
-
-				public String getName() {
-					return this.name;
-				}
-
-				public void setName(String name) {
-					this.name = name;
-				}
-
-				public String getValue() {
-					return this.value;
-				}
-
-				public void setValue(String value) {
-					this.value = value;
 				}
 			}
 		}

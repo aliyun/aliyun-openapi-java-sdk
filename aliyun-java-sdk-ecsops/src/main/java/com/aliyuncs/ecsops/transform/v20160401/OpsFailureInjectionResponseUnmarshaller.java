@@ -29,15 +29,15 @@ public class OpsFailureInjectionResponseUnmarshaller {
 		opsFailureInjectionResponse.setRequestId(_ctx.stringValue("OpsFailureInjectionResponse.RequestId"));
 		opsFailureInjectionResponse.setStatus(_ctx.stringValue("OpsFailureInjectionResponse.Status"));
 		opsFailureInjectionResponse.setFinished(_ctx.booleanValue("OpsFailureInjectionResponse.Finished"));
-		opsFailureInjectionResponse.setToken(_ctx.stringValue("OpsFailureInjectionResponse.Token"));
 		opsFailureInjectionResponse.setValidMachineIdCount(_ctx.integerValue("OpsFailureInjectionResponse.ValidMachineIdCount"));
+		opsFailureInjectionResponse.setToken(_ctx.stringValue("OpsFailureInjectionResponse.Token"));
 
 		List<FailedMachine> failedMachines = new ArrayList<FailedMachine>();
 		for (int i = 0; i < _ctx.lengthValue("OpsFailureInjectionResponse.FailedMachines.Length"); i++) {
 			FailedMachine failedMachine = new FailedMachine();
+			failedMachine.setMachineId(_ctx.stringValue("OpsFailureInjectionResponse.FailedMachines["+ i +"].MachineId"));
 			failedMachine.setInfo(_ctx.stringValue("OpsFailureInjectionResponse.FailedMachines["+ i +"].Info"));
 			failedMachine.setFailedReason(_ctx.stringValue("OpsFailureInjectionResponse.FailedMachines["+ i +"].FailedReason"));
-			failedMachine.setMachineId(_ctx.stringValue("OpsFailureInjectionResponse.FailedMachines["+ i +"].MachineId"));
 
 			failedMachines.add(failedMachine);
 		}

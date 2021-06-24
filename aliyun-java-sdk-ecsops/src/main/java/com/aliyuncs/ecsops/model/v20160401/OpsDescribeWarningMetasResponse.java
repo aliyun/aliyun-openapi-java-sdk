@@ -25,21 +25,29 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsDescribeWarningMetasResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer totalCount;
 
-	private String code;
+	private String requestId;
 
 	private String message;
 
-	private String success;
-
-	private Integer totalCount;
+	private Integer pageSize;
 
 	private Integer pageNumber;
 
-	private Integer pageSize;
+	private String code;
+
+	private String success;
 
 	private List<WarningMetas> data;
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -47,14 +55,6 @@ public class OpsDescribeWarningMetasResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
 	}
 
 	public String getMessage() {
@@ -65,20 +65,12 @@ public class OpsDescribeWarningMetasResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getSuccess() {
-		return this.success;
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setSuccess(String success) {
-		this.success = success;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
 	}
 
 	public Integer getPageNumber() {
@@ -89,12 +81,20 @@ public class OpsDescribeWarningMetasResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(String success) {
+		this.success = success;
 	}
 
 	public List<WarningMetas> getData() {
@@ -107,64 +107,44 @@ public class OpsDescribeWarningMetasResponse extends AcsResponse {
 
 	public static class WarningMetas {
 
-		private Long id;
-
-		private String gmtCreate;
-
-		private String gmtModified;
-
-		private String warningMetaId;
+		private String owner;
 
 		private String productName;
 
+		private Integer triggerWarning;
+
+		private String tel;
+
+		private String ownerName;
+
+		private String gmtModified;
+
 		private String sourceSystem;
 
+		private Integer triggerDiagnosis;
+
+		private String diagnoseCategory;
+
 		private String app;
+
+		private String gmtCreate;
+
+		private String warningMetaId;
+
+		private String monitorTitle;
+
+		private Long id;
 
 		private String level;
 
 		private String ownerTeam;
 
-		private String owner;
-
-		private String ownerName;
-
-		private String phoneNumber;
-
-		private String diagnoseCategory;
-
-		private String monitorTitle;
-
-		public Long getId() {
-			return this.id;
+		public String getOwner() {
+			return this.owner;
 		}
 
-		public void setId(Long id) {
-			this.id = id;
-		}
-
-		public String getGmtCreate() {
-			return this.gmtCreate;
-		}
-
-		public void setGmtCreate(String gmtCreate) {
-			this.gmtCreate = gmtCreate;
-		}
-
-		public String getGmtModified() {
-			return this.gmtModified;
-		}
-
-		public void setGmtModified(String gmtModified) {
-			this.gmtModified = gmtModified;
-		}
-
-		public String getWarningMetaId() {
-			return this.warningMetaId;
-		}
-
-		public void setWarningMetaId(String warningMetaId) {
-			this.warningMetaId = warningMetaId;
+		public void setOwner(String owner) {
+			this.owner = owner;
 		}
 
 		public String getProductName() {
@@ -175,6 +155,38 @@ public class OpsDescribeWarningMetasResponse extends AcsResponse {
 			this.productName = productName;
 		}
 
+		public Integer getTriggerWarning() {
+			return this.triggerWarning;
+		}
+
+		public void setTriggerWarning(Integer triggerWarning) {
+			this.triggerWarning = triggerWarning;
+		}
+
+		public String getTel() {
+			return this.tel;
+		}
+
+		public void setTel(String tel) {
+			this.tel = tel;
+		}
+
+		public String getOwnerName() {
+			return this.ownerName;
+		}
+
+		public void setOwnerName(String ownerName) {
+			this.ownerName = ownerName;
+		}
+
+		public String getGmtModified() {
+			return this.gmtModified;
+		}
+
+		public void setGmtModified(String gmtModified) {
+			this.gmtModified = gmtModified;
+		}
+
 		public String getSourceSystem() {
 			return this.sourceSystem;
 		}
@@ -183,12 +195,60 @@ public class OpsDescribeWarningMetasResponse extends AcsResponse {
 			this.sourceSystem = sourceSystem;
 		}
 
+		public Integer getTriggerDiagnosis() {
+			return this.triggerDiagnosis;
+		}
+
+		public void setTriggerDiagnosis(Integer triggerDiagnosis) {
+			this.triggerDiagnosis = triggerDiagnosis;
+		}
+
+		public String getDiagnoseCategory() {
+			return this.diagnoseCategory;
+		}
+
+		public void setDiagnoseCategory(String diagnoseCategory) {
+			this.diagnoseCategory = diagnoseCategory;
+		}
+
 		public String getApp() {
 			return this.app;
 		}
 
 		public void setApp(String app) {
 			this.app = app;
+		}
+
+		public String getGmtCreate() {
+			return this.gmtCreate;
+		}
+
+		public void setGmtCreate(String gmtCreate) {
+			this.gmtCreate = gmtCreate;
+		}
+
+		public String getWarningMetaId() {
+			return this.warningMetaId;
+		}
+
+		public void setWarningMetaId(String warningMetaId) {
+			this.warningMetaId = warningMetaId;
+		}
+
+		public String getMonitorTitle() {
+			return this.monitorTitle;
+		}
+
+		public void setMonitorTitle(String monitorTitle) {
+			this.monitorTitle = monitorTitle;
+		}
+
+		public Long getId() {
+			return this.id;
+		}
+
+		public void setId(Long id) {
+			this.id = id;
 		}
 
 		public String getLevel() {
@@ -205,46 +265,6 @@ public class OpsDescribeWarningMetasResponse extends AcsResponse {
 
 		public void setOwnerTeam(String ownerTeam) {
 			this.ownerTeam = ownerTeam;
-		}
-
-		public String getOwner() {
-			return this.owner;
-		}
-
-		public void setOwner(String owner) {
-			this.owner = owner;
-		}
-
-		public String getOwnerName() {
-			return this.ownerName;
-		}
-
-		public void setOwnerName(String ownerName) {
-			this.ownerName = ownerName;
-		}
-
-		public String getPhoneNumber() {
-			return this.phoneNumber;
-		}
-
-		public void setPhoneNumber(String phoneNumber) {
-			this.phoneNumber = phoneNumber;
-		}
-
-		public String getDiagnoseCategory() {
-			return this.diagnoseCategory;
-		}
-
-		public void setDiagnoseCategory(String diagnoseCategory) {
-			this.diagnoseCategory = diagnoseCategory;
-		}
-
-		public String getMonitorTitle() {
-			return this.monitorTitle;
-		}
-
-		public void setMonitorTitle(String monitorTitle) {
-			this.monitorTitle = monitorTitle;
 		}
 	}
 

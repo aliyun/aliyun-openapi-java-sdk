@@ -49,9 +49,9 @@ public class OpsQueryInstanceVfioDeviceBdfsResponse extends AcsResponse {
 
 		private String sourceDomain;
 
-		private String sourceBdf;
-
 		private String targetDomain;
+
+		private String sourceBdf;
 
 		private String targetBdf;
 
@@ -63,20 +63,20 @@ public class OpsQueryInstanceVfioDeviceBdfsResponse extends AcsResponse {
 			this.sourceDomain = sourceDomain;
 		}
 
-		public String getSourceBdf() {
-			return this.sourceBdf;
-		}
-
-		public void setSourceBdf(String sourceBdf) {
-			this.sourceBdf = sourceBdf;
-		}
-
 		public String getTargetDomain() {
 			return this.targetDomain;
 		}
 
 		public void setTargetDomain(String targetDomain) {
 			this.targetDomain = targetDomain;
+		}
+
+		public String getSourceBdf() {
+			return this.sourceBdf;
+		}
+
+		public void setSourceBdf(String sourceBdf) {
+			this.sourceBdf = sourceBdf;
 		}
 
 		public String getTargetBdf() {

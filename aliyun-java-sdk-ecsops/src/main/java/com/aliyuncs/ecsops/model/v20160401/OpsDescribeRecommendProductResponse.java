@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsDescribeRecommendProductResponse extends AcsResponse {
 
+	private String message;
+
 	private String requestId;
 
 	private String code;
 
-	private String message;
-
 	private Boolean success;
 
 	private List<RecommendProduct> recommendProducts;
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -49,14 +57,6 @@ public class OpsDescribeRecommendProductResponse extends AcsResponse {
 
 	public void setCode(String code) {
 		this.code = code;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
 	}
 
 	public Boolean getSuccess() {
@@ -99,71 +99,23 @@ public class OpsDescribeRecommendProductResponse extends AcsResponse {
 
 		public static class RecommendInstanceType {
 
-			private String instanceChargeType;
-
-			private String spotStrategy;
-
-			private Integer priority;
-
-			private String networkType;
-
-			private Integer inventoryAmount;
-
-			private Integer quotaAmount;
-
 			private Float price;
 
 			private String capacitySpecification;
 
+			private Integer priority;
+
+			private Integer inventoryAmount;
+
+			private String networkType;
+
+			private Integer quotaAmount;
+
+			private String spotStrategy;
+
+			private String instanceChargeType;
+
 			private InstanceType instanceType;
-
-			public String getInstanceChargeType() {
-				return this.instanceChargeType;
-			}
-
-			public void setInstanceChargeType(String instanceChargeType) {
-				this.instanceChargeType = instanceChargeType;
-			}
-
-			public String getSpotStrategy() {
-				return this.spotStrategy;
-			}
-
-			public void setSpotStrategy(String spotStrategy) {
-				this.spotStrategy = spotStrategy;
-			}
-
-			public Integer getPriority() {
-				return this.priority;
-			}
-
-			public void setPriority(Integer priority) {
-				this.priority = priority;
-			}
-
-			public String getNetworkType() {
-				return this.networkType;
-			}
-
-			public void setNetworkType(String networkType) {
-				this.networkType = networkType;
-			}
-
-			public Integer getInventoryAmount() {
-				return this.inventoryAmount;
-			}
-
-			public void setInventoryAmount(Integer inventoryAmount) {
-				this.inventoryAmount = inventoryAmount;
-			}
-
-			public Integer getQuotaAmount() {
-				return this.quotaAmount;
-			}
-
-			public void setQuotaAmount(Integer quotaAmount) {
-				this.quotaAmount = quotaAmount;
-			}
 
 			public Float getPrice() {
 				return this.price;
@@ -181,6 +133,54 @@ public class OpsDescribeRecommendProductResponse extends AcsResponse {
 				this.capacitySpecification = capacitySpecification;
 			}
 
+			public Integer getPriority() {
+				return this.priority;
+			}
+
+			public void setPriority(Integer priority) {
+				this.priority = priority;
+			}
+
+			public Integer getInventoryAmount() {
+				return this.inventoryAmount;
+			}
+
+			public void setInventoryAmount(Integer inventoryAmount) {
+				this.inventoryAmount = inventoryAmount;
+			}
+
+			public String getNetworkType() {
+				return this.networkType;
+			}
+
+			public void setNetworkType(String networkType) {
+				this.networkType = networkType;
+			}
+
+			public Integer getQuotaAmount() {
+				return this.quotaAmount;
+			}
+
+			public void setQuotaAmount(Integer quotaAmount) {
+				this.quotaAmount = quotaAmount;
+			}
+
+			public String getSpotStrategy() {
+				return this.spotStrategy;
+			}
+
+			public void setSpotStrategy(String spotStrategy) {
+				this.spotStrategy = spotStrategy;
+			}
+
+			public String getInstanceChargeType() {
+				return this.instanceChargeType;
+			}
+
+			public void setInstanceChargeType(String instanceChargeType) {
+				this.instanceChargeType = instanceChargeType;
+			}
+
 			public InstanceType getInstanceType() {
 				return this.instanceType;
 			}
@@ -191,43 +191,19 @@ public class OpsDescribeRecommendProductResponse extends AcsResponse {
 
 			public static class InstanceType {
 
-				private String generation;
-
-				private String instanceTypeFamily;
-
-				private String instanceType;
-
 				private String supportIoOptimized;
 
 				private Integer cores;
 
-				private Integer memory;
-
 				private String instanceFamilyLevel;
 
-				public String getGeneration() {
-					return this.generation;
-				}
+				private Integer memory;
 
-				public void setGeneration(String generation) {
-					this.generation = generation;
-				}
+				private String instanceType;
 
-				public String getInstanceTypeFamily() {
-					return this.instanceTypeFamily;
-				}
+				private String instanceTypeFamily;
 
-				public void setInstanceTypeFamily(String instanceTypeFamily) {
-					this.instanceTypeFamily = instanceTypeFamily;
-				}
-
-				public String getInstanceType() {
-					return this.instanceType;
-				}
-
-				public void setInstanceType(String instanceType) {
-					this.instanceType = instanceType;
-				}
+				private String generation;
 
 				public String getSupportIoOptimized() {
 					return this.supportIoOptimized;
@@ -245,6 +221,14 @@ public class OpsDescribeRecommendProductResponse extends AcsResponse {
 					this.cores = cores;
 				}
 
+				public String getInstanceFamilyLevel() {
+					return this.instanceFamilyLevel;
+				}
+
+				public void setInstanceFamilyLevel(String instanceFamilyLevel) {
+					this.instanceFamilyLevel = instanceFamilyLevel;
+				}
+
 				public Integer getMemory() {
 					return this.memory;
 				}
@@ -253,12 +237,28 @@ public class OpsDescribeRecommendProductResponse extends AcsResponse {
 					this.memory = memory;
 				}
 
-				public String getInstanceFamilyLevel() {
-					return this.instanceFamilyLevel;
+				public String getInstanceType() {
+					return this.instanceType;
 				}
 
-				public void setInstanceFamilyLevel(String instanceFamilyLevel) {
-					this.instanceFamilyLevel = instanceFamilyLevel;
+				public void setInstanceType(String instanceType) {
+					this.instanceType = instanceType;
+				}
+
+				public String getInstanceTypeFamily() {
+					return this.instanceTypeFamily;
+				}
+
+				public void setInstanceTypeFamily(String instanceTypeFamily) {
+					this.instanceTypeFamily = instanceTypeFamily;
+				}
+
+				public String getGeneration() {
+					return this.generation;
+				}
+
+				public void setGeneration(String generation) {
+					this.generation = generation;
 				}
 			}
 		}

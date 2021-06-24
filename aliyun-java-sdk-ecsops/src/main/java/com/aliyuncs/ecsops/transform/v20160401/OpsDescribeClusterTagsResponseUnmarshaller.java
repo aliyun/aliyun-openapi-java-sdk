@@ -28,8 +28,8 @@ public class OpsDescribeClusterTagsResponseUnmarshaller {
 	public static OpsDescribeClusterTagsResponse unmarshall(OpsDescribeClusterTagsResponse opsDescribeClusterTagsResponse, UnmarshallerContext _ctx) {
 		
 		opsDescribeClusterTagsResponse.setRequestId(_ctx.stringValue("OpsDescribeClusterTagsResponse.RequestId"));
-		opsDescribeClusterTagsResponse.setCode(_ctx.stringValue("OpsDescribeClusterTagsResponse.Code"));
 		opsDescribeClusterTagsResponse.setMessage(_ctx.stringValue("OpsDescribeClusterTagsResponse.Message"));
+		opsDescribeClusterTagsResponse.setCode(_ctx.stringValue("OpsDescribeClusterTagsResponse.Code"));
 		opsDescribeClusterTagsResponse.setSuccess(_ctx.stringValue("OpsDescribeClusterTagsResponse.Success"));
 
 		List<ClusterTag> data = new ArrayList<ClusterTag>();

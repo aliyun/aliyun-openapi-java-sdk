@@ -27,37 +27,38 @@ public class OpsBlackListCurdAlarmCenterResponseUnmarshaller {
 
 	public static OpsBlackListCurdAlarmCenterResponse unmarshall(OpsBlackListCurdAlarmCenterResponse opsBlackListCurdAlarmCenterResponse, UnmarshallerContext _ctx) {
 		
+		opsBlackListCurdAlarmCenterResponse.setBpmsUrl(_ctx.stringValue("OpsBlackListCurdAlarmCenterResponse.BpmsUrl"));
+		opsBlackListCurdAlarmCenterResponse.setUseBpms(_ctx.booleanValue("OpsBlackListCurdAlarmCenterResponse.UseBpms"));
 		opsBlackListCurdAlarmCenterResponse.setBlacklistDataType(_ctx.stringValue("OpsBlackListCurdAlarmCenterResponse.BlacklistDataType"));
 		opsBlackListCurdAlarmCenterResponse.setOperateType(_ctx.stringValue("OpsBlackListCurdAlarmCenterResponse.OperateType"));
-		opsBlackListCurdAlarmCenterResponse.setUseBpms(_ctx.booleanValue("OpsBlackListCurdAlarmCenterResponse.UseBpms"));
-		opsBlackListCurdAlarmCenterResponse.setBpmsUrl(_ctx.stringValue("OpsBlackListCurdAlarmCenterResponse.BpmsUrl"));
-
-		List<BlacklistDimension> blacklistDimensions = new ArrayList<BlacklistDimension>();
-		for (int i = 0; i < _ctx.lengthValue("OpsBlackListCurdAlarmCenterResponse.BlacklistDimensions.Length"); i++) {
-			BlacklistDimension blacklistDimension = new BlacklistDimension();
-			blacklistDimension.setBlacklistDimensionId(_ctx.integerValue("OpsBlackListCurdAlarmCenterResponse.BlacklistDimensions["+ i +"].BlacklistDimensionId"));
-			blacklistDimension.setBlacklistDimension(_ctx.stringValue("OpsBlackListCurdAlarmCenterResponse.BlacklistDimensions["+ i +"].BlacklistDimension"));
-
-			blacklistDimensions.add(blacklistDimension);
-		}
-		opsBlackListCurdAlarmCenterResponse.setBlacklistDimensions(blacklistDimensions);
 
 		List<BlacklistContent> blacklistContents = new ArrayList<BlacklistContent>();
 		for (int i = 0; i < _ctx.lengthValue("OpsBlackListCurdAlarmCenterResponse.BlacklistContents.Length"); i++) {
 			BlacklistContent blacklistContent = new BlacklistContent();
-			blacklistContent.setBlacklistContentId(_ctx.integerValue("OpsBlackListCurdAlarmCenterResponse.BlacklistContents["+ i +"].BlacklistContentId"));
+			blacklistContent.setGmtCreated(_ctx.stringValue("OpsBlackListCurdAlarmCenterResponse.BlacklistContents["+ i +"].GmtCreated"));
+			blacklistContent.setExtension(_ctx.stringValue("OpsBlackListCurdAlarmCenterResponse.BlacklistContents["+ i +"].Extension"));
+			blacklistContent.setStartDueTime(_ctx.stringValue("OpsBlackListCurdAlarmCenterResponse.BlacklistContents["+ i +"].StartDueTime"));
+			blacklistContent.setBlackContent(_ctx.stringValue("OpsBlackListCurdAlarmCenterResponse.BlacklistContents["+ i +"].BlackContent"));
+			blacklistContent.setDueTime(_ctx.stringValue("OpsBlackListCurdAlarmCenterResponse.BlacklistContents["+ i +"].DueTime"));
 			blacklistContent.setMetaInfoId(_ctx.integerValue("OpsBlackListCurdAlarmCenterResponse.BlacklistContents["+ i +"].MetaInfoId"));
 			blacklistContent.setStaffId(_ctx.stringValue("OpsBlackListCurdAlarmCenterResponse.BlacklistContents["+ i +"].StaffId"));
 			blacklistContent.setNickname(_ctx.stringValue("OpsBlackListCurdAlarmCenterResponse.BlacklistContents["+ i +"].Nickname"));
-			blacklistContent.setBlackContent(_ctx.stringValue("OpsBlackListCurdAlarmCenterResponse.BlacklistContents["+ i +"].BlackContent"));
-			blacklistContent.setDueTime(_ctx.stringValue("OpsBlackListCurdAlarmCenterResponse.BlacklistContents["+ i +"].DueTime"));
-			blacklistContent.setGmtCreated(_ctx.stringValue("OpsBlackListCurdAlarmCenterResponse.BlacklistContents["+ i +"].GmtCreated"));
+			blacklistContent.setBlacklistContentId(_ctx.integerValue("OpsBlackListCurdAlarmCenterResponse.BlacklistContents["+ i +"].BlacklistContentId"));
 			blacklistContent.setGmtModified(_ctx.stringValue("OpsBlackListCurdAlarmCenterResponse.BlacklistContents["+ i +"].GmtModified"));
-			blacklistContent.setExtension(_ctx.stringValue("OpsBlackListCurdAlarmCenterResponse.BlacklistContents["+ i +"].Extension"));
 
 			blacklistContents.add(blacklistContent);
 		}
 		opsBlackListCurdAlarmCenterResponse.setBlacklistContents(blacklistContents);
+
+		List<BlacklistDimension> blacklistDimensions = new ArrayList<BlacklistDimension>();
+		for (int i = 0; i < _ctx.lengthValue("OpsBlackListCurdAlarmCenterResponse.BlacklistDimensions.Length"); i++) {
+			BlacklistDimension blacklistDimension = new BlacklistDimension();
+			blacklistDimension.setBlacklistDimension(_ctx.stringValue("OpsBlackListCurdAlarmCenterResponse.BlacklistDimensions["+ i +"].BlacklistDimension"));
+			blacklistDimension.setBlacklistDimensionId(_ctx.integerValue("OpsBlackListCurdAlarmCenterResponse.BlacklistDimensions["+ i +"].BlacklistDimensionId"));
+
+			blacklistDimensions.add(blacklistDimension);
+		}
+		opsBlackListCurdAlarmCenterResponse.setBlacklistDimensions(blacklistDimensions);
 	 
 	 	return opsBlackListCurdAlarmCenterResponse;
 	}

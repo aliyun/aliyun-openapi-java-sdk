@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsQueryEcsApiMetaSettingAttributeResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
 
+	private String requestId;
+
 	private List<AttributesItem> attributes;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -45,6 +37,14 @@ public class OpsQueryEcsApiMetaSettingAttributeResponse extends AcsResponse {
 
 	public void setTotalCount(Integer totalCount) {
 		this.totalCount = totalCount;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<AttributesItem> getAttributes() {
@@ -57,13 +57,29 @@ public class OpsQueryEcsApiMetaSettingAttributeResponse extends AcsResponse {
 
 	public static class AttributesItem {
 
+		private String type;
+
+		private String comment;
+
 		private String attributeKey;
 
 		private String defaultValue;
 
-		private String comment;
+		public String getType() {
+			return this.type;
+		}
 
-		private String type;
+		public void setType(String type) {
+			this.type = type;
+		}
+
+		public String getComment() {
+			return this.comment;
+		}
+
+		public void setComment(String comment) {
+			this.comment = comment;
+		}
 
 		public String getAttributeKey() {
 			return this.attributeKey;
@@ -79,22 +95,6 @@ public class OpsQueryEcsApiMetaSettingAttributeResponse extends AcsResponse {
 
 		public void setDefaultValue(String defaultValue) {
 			this.defaultValue = defaultValue;
-		}
-
-		public String getComment() {
-			return this.comment;
-		}
-
-		public void setComment(String comment) {
-			this.comment = comment;
-		}
-
-		public String getType() {
-			return this.type;
-		}
-
-		public void setType(String type) {
-			this.type = type;
 		}
 	}
 

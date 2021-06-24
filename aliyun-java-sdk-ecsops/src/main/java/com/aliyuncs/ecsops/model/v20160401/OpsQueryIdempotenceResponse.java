@@ -47,34 +47,58 @@ public class OpsQueryIdempotenceResponse extends AcsResponse {
 
 	public static class IdempotenceModel {
 
-		private Long id;
+		private String gmtCreated;
+
+		private String status;
+
+		private Boolean continueAfterProcessingTimeout;
+
+		private String processingExpireDate;
 
 		private String token;
 
 		private Integer version;
 
-		private String status;
-
-		private String gmtCreated;
-
-		private String gmtModified;
+		private String expireDate;
 
 		private Boolean deleted;
 
-		private Boolean continueAfterProcessingTimeout;
-
-		private String expireDate;
-
-		private String processingExpireDate;
+		private String gmtModified;
 
 		private String lastResult;
 
-		public Long getId() {
-			return this.id;
+		private Long id;
+
+		public String getGmtCreated() {
+			return this.gmtCreated;
 		}
 
-		public void setId(Long id) {
-			this.id = id;
+		public void setGmtCreated(String gmtCreated) {
+			this.gmtCreated = gmtCreated;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
+		public Boolean getContinueAfterProcessingTimeout() {
+			return this.continueAfterProcessingTimeout;
+		}
+
+		public void setContinueAfterProcessingTimeout(Boolean continueAfterProcessingTimeout) {
+			this.continueAfterProcessingTimeout = continueAfterProcessingTimeout;
+		}
+
+		public String getProcessingExpireDate() {
+			return this.processingExpireDate;
+		}
+
+		public void setProcessingExpireDate(String processingExpireDate) {
+			this.processingExpireDate = processingExpireDate;
 		}
 
 		public String getToken() {
@@ -93,28 +117,12 @@ public class OpsQueryIdempotenceResponse extends AcsResponse {
 			this.version = version;
 		}
 
-		public String getStatus() {
-			return this.status;
+		public String getExpireDate() {
+			return this.expireDate;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
-		public String getGmtCreated() {
-			return this.gmtCreated;
-		}
-
-		public void setGmtCreated(String gmtCreated) {
-			this.gmtCreated = gmtCreated;
-		}
-
-		public String getGmtModified() {
-			return this.gmtModified;
-		}
-
-		public void setGmtModified(String gmtModified) {
-			this.gmtModified = gmtModified;
+		public void setExpireDate(String expireDate) {
+			this.expireDate = expireDate;
 		}
 
 		public Boolean getDeleted() {
@@ -125,28 +133,12 @@ public class OpsQueryIdempotenceResponse extends AcsResponse {
 			this.deleted = deleted;
 		}
 
-		public Boolean getContinueAfterProcessingTimeout() {
-			return this.continueAfterProcessingTimeout;
+		public String getGmtModified() {
+			return this.gmtModified;
 		}
 
-		public void setContinueAfterProcessingTimeout(Boolean continueAfterProcessingTimeout) {
-			this.continueAfterProcessingTimeout = continueAfterProcessingTimeout;
-		}
-
-		public String getExpireDate() {
-			return this.expireDate;
-		}
-
-		public void setExpireDate(String expireDate) {
-			this.expireDate = expireDate;
-		}
-
-		public String getProcessingExpireDate() {
-			return this.processingExpireDate;
-		}
-
-		public void setProcessingExpireDate(String processingExpireDate) {
-			this.processingExpireDate = processingExpireDate;
+		public void setGmtModified(String gmtModified) {
+			this.gmtModified = gmtModified;
 		}
 
 		public String getLastResult() {
@@ -155,6 +147,14 @@ public class OpsQueryIdempotenceResponse extends AcsResponse {
 
 		public void setLastResult(String lastResult) {
 			this.lastResult = lastResult;
+		}
+
+		public Long getId() {
+			return this.id;
+		}
+
+		public void setId(Long id) {
+			this.id = id;
 		}
 	}
 

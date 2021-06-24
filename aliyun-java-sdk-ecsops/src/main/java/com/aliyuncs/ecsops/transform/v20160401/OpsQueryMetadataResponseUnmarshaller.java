@@ -24,8 +24,8 @@ public class OpsQueryMetadataResponseUnmarshaller {
 		
 		opsQueryMetadataResponse.setRequestId(_ctx.stringValue("OpsQueryMetadataResponse.RequestId"));
 		opsQueryMetadataResponse.setInstanceId(_ctx.stringValue("OpsQueryMetadataResponse.InstanceId"));
-		opsQueryMetadataResponse.setMetaData(_ctx.stringValue("OpsQueryMetadataResponse.MetaData"));
 		opsQueryMetadataResponse.setUserData(_ctx.stringValue("OpsQueryMetadataResponse.UserData"));
+		opsQueryMetadataResponse.setMetaData(_ctx.stringValue("OpsQueryMetadataResponse.MetaData"));
 	 
 	 	return opsQueryMetadataResponse;
 	}

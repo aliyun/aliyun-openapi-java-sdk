@@ -26,10 +26,10 @@ public class OpsPublishCommandResponseUnmarshaller {
 	public static OpsPublishCommandResponse unmarshall(OpsPublishCommandResponse opsPublishCommandResponse, UnmarshallerContext _ctx) {
 		
 		opsPublishCommandResponse.setRequestId(_ctx.stringValue("OpsPublishCommandResponse.RequestId"));
-		opsPublishCommandResponse.setCommandId(_ctx.stringValue("OpsPublishCommandResponse.CommandId"));
-		opsPublishCommandResponse.setShareStatus(_ctx.stringValue("OpsPublishCommandResponse.ShareStatus"));
 		opsPublishCommandResponse.setVersion(_ctx.stringValue("OpsPublishCommandResponse.Version"));
+		opsPublishCommandResponse.setShareStatus(_ctx.stringValue("OpsPublishCommandResponse.ShareStatus"));
 		opsPublishCommandResponse.setLatest(_ctx.stringValue("OpsPublishCommandResponse.Latest"));
+		opsPublishCommandResponse.setCommandId(_ctx.stringValue("OpsPublishCommandResponse.CommandId"));
 
 		List<String> modifiers = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("OpsPublishCommandResponse.Modifiers.Length"); i++) {

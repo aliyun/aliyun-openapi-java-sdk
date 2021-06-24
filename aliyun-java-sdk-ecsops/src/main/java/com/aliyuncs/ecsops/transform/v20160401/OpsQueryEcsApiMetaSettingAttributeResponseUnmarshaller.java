@@ -32,10 +32,10 @@ public class OpsQueryEcsApiMetaSettingAttributeResponseUnmarshaller {
 		List<AttributesItem> attributes = new ArrayList<AttributesItem>();
 		for (int i = 0; i < _ctx.lengthValue("OpsQueryEcsApiMetaSettingAttributeResponse.Attributes.Length"); i++) {
 			AttributesItem attributesItem = new AttributesItem();
+			attributesItem.setType(_ctx.stringValue("OpsQueryEcsApiMetaSettingAttributeResponse.Attributes["+ i +"].Type"));
+			attributesItem.setComment(_ctx.stringValue("OpsQueryEcsApiMetaSettingAttributeResponse.Attributes["+ i +"].Comment"));
 			attributesItem.setAttributeKey(_ctx.stringValue("OpsQueryEcsApiMetaSettingAttributeResponse.Attributes["+ i +"].AttributeKey"));
 			attributesItem.setDefaultValue(_ctx.stringValue("OpsQueryEcsApiMetaSettingAttributeResponse.Attributes["+ i +"].DefaultValue"));
-			attributesItem.setComment(_ctx.stringValue("OpsQueryEcsApiMetaSettingAttributeResponse.Attributes["+ i +"].Comment"));
-			attributesItem.setType(_ctx.stringValue("OpsQueryEcsApiMetaSettingAttributeResponse.Attributes["+ i +"].Type"));
 
 			attributes.add(attributesItem);
 		}

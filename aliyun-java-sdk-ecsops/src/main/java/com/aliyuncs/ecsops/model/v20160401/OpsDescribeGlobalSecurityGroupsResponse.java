@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsDescribeGlobalSecurityGroupsResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer pageSize;
 
-	private Integer total;
+	private String requestId;
 
 	private Integer pageNumber;
 
-	private Integer pageSize;
+	private Integer total;
 
 	private List<SecurityGroup> securityGroups;
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class OpsDescribeGlobalSecurityGroupsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getTotal() {
-		return this.total;
-	}
-
-	public void setTotal(Integer total) {
-		this.total = total;
 	}
 
 	public Integer getPageNumber() {
@@ -59,12 +59,12 @@ public class OpsDescribeGlobalSecurityGroupsResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public Integer getTotal() {
+		return this.total;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setTotal(Integer total) {
+		this.total = total;
 	}
 
 	public List<SecurityGroup> getSecurityGroups() {
@@ -77,82 +77,42 @@ public class OpsDescribeGlobalSecurityGroupsResponse extends AcsResponse {
 
 	public static class SecurityGroup {
 
-		private Long id;
-
-		private Long aliUid;
-
-		private String bid;
-
-		private String securityGroupId;
-
-		private String securityGroupName;
-
-		private String description;
+		private String type;
 
 		private String vpcId;
 
-		private String createdTime;
-
-		private String modifiedTime;
-
-		private Integer ecsNum;
-
-		private Boolean authed;
-
-		private String type;
-
-		private Integer groupType;
-
-		private Boolean defaultGroup;
+		private String securityGroupId;
 
 		private String regionNo;
 
-		public Long getId() {
-			return this.id;
+		private Boolean defaultGroup;
+
+		private Long aliUid;
+
+		private Integer ecsNum;
+
+		private String bid;
+
+		private Boolean authed;
+
+		private String modifiedTime;
+
+		private String description;
+
+		private String securityGroupName;
+
+		private Integer groupType;
+
+		private String createdTime;
+
+		private Long id;
+
+		public String getType() {
+			return this.type;
 		}
 
-		public void setId(Long id) {
-			this.id = id;
-		}
-
-		public Long getAliUid() {
-			return this.aliUid;
-		}
-
-		public void setAliUid(Long aliUid) {
-			this.aliUid = aliUid;
-		}
-
-		public String getBid() {
-			return this.bid;
-		}
-
-		public void setBid(String bid) {
-			this.bid = bid;
-		}
-
-		public String getSecurityGroupId() {
-			return this.securityGroupId;
-		}
-
-		public void setSecurityGroupId(String securityGroupId) {
-			this.securityGroupId = securityGroupId;
-		}
-
-		public String getSecurityGroupName() {
-			return this.securityGroupName;
-		}
-
-		public void setSecurityGroupName(String securityGroupName) {
-			this.securityGroupName = securityGroupName;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
+		public void setType(String type) {
+			this.type = type;
 		}
 
 		public String getVpcId() {
@@ -163,52 +123,20 @@ public class OpsDescribeGlobalSecurityGroupsResponse extends AcsResponse {
 			this.vpcId = vpcId;
 		}
 
-		public String getCreatedTime() {
-			return this.createdTime;
+		public String getSecurityGroupId() {
+			return this.securityGroupId;
 		}
 
-		public void setCreatedTime(String createdTime) {
-			this.createdTime = createdTime;
+		public void setSecurityGroupId(String securityGroupId) {
+			this.securityGroupId = securityGroupId;
 		}
 
-		public String getModifiedTime() {
-			return this.modifiedTime;
+		public String getRegionNo() {
+			return this.regionNo;
 		}
 
-		public void setModifiedTime(String modifiedTime) {
-			this.modifiedTime = modifiedTime;
-		}
-
-		public Integer getEcsNum() {
-			return this.ecsNum;
-		}
-
-		public void setEcsNum(Integer ecsNum) {
-			this.ecsNum = ecsNum;
-		}
-
-		public Boolean getAuthed() {
-			return this.authed;
-		}
-
-		public void setAuthed(Boolean authed) {
-			this.authed = authed;
-		}
-
-		public String getType() {
-			return this.type;
-		}
-
-		public void setType(String type) {
-			this.type = type;
-		}
-
-		public Integer getGroupType() {
-			return this.groupType;
-		}
-
-		public void setGroupType(Integer groupType) {
-			this.groupType = groupType;
+		public void setRegionNo(String regionNo) {
+			this.regionNo = regionNo;
 		}
 
 		public Boolean getDefaultGroup() {
@@ -219,12 +147,84 @@ public class OpsDescribeGlobalSecurityGroupsResponse extends AcsResponse {
 			this.defaultGroup = defaultGroup;
 		}
 
-		public String getRegionNo() {
-			return this.regionNo;
+		public Long getAliUid() {
+			return this.aliUid;
 		}
 
-		public void setRegionNo(String regionNo) {
-			this.regionNo = regionNo;
+		public void setAliUid(Long aliUid) {
+			this.aliUid = aliUid;
+		}
+
+		public Integer getEcsNum() {
+			return this.ecsNum;
+		}
+
+		public void setEcsNum(Integer ecsNum) {
+			this.ecsNum = ecsNum;
+		}
+
+		public String getBid() {
+			return this.bid;
+		}
+
+		public void setBid(String bid) {
+			this.bid = bid;
+		}
+
+		public Boolean getAuthed() {
+			return this.authed;
+		}
+
+		public void setAuthed(Boolean authed) {
+			this.authed = authed;
+		}
+
+		public String getModifiedTime() {
+			return this.modifiedTime;
+		}
+
+		public void setModifiedTime(String modifiedTime) {
+			this.modifiedTime = modifiedTime;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getSecurityGroupName() {
+			return this.securityGroupName;
+		}
+
+		public void setSecurityGroupName(String securityGroupName) {
+			this.securityGroupName = securityGroupName;
+		}
+
+		public Integer getGroupType() {
+			return this.groupType;
+		}
+
+		public void setGroupType(Integer groupType) {
+			this.groupType = groupType;
+		}
+
+		public String getCreatedTime() {
+			return this.createdTime;
+		}
+
+		public void setCreatedTime(String createdTime) {
+			this.createdTime = createdTime;
+		}
+
+		public Long getId() {
+			return this.id;
+		}
+
+		public void setId(Long id) {
+			this.id = id;
 		}
 	}
 

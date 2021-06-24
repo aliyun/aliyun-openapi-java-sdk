@@ -17,7 +17,6 @@ package com.aliyuncs.ecsops.model.v20160401;
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
 import com.aliyuncs.http.MethodType;
-import com.aliyuncs.ecsops.Endpoint;
 
 /**
  * @author auto create
@@ -32,12 +31,8 @@ public class OpsRefreshZoneGroupWaterLevelRequest extends RpcAcsRequest<OpsRefre
 
 	private String auditParamStr;
 	public OpsRefreshZoneGroupWaterLevelRequest() {
-		super("Ecsops", "2016-04-01", "OpsRefreshZoneGroupWaterLevel", "ecs");
+		super("Ecsops", "2016-04-01", "OpsRefreshZoneGroupWaterLevel", "ecsops");
 		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
 	}
 
 	public String getOperator() {
@@ -61,8 +56,8 @@ public class OpsRefreshZoneGroupWaterLevelRequest extends RpcAcsRequest<OpsRefre
 			for (int depth1 = 0; depth1 < batchZoneGroupWaterLevelss.size(); depth1++) {
 				putQueryParameter("BatchZoneGroupWaterLevels." + (depth1 + 1) + ".Flavor" , batchZoneGroupWaterLevelss.get(depth1).getFlavor());
 				putQueryParameter("BatchZoneGroupWaterLevels." + (depth1 + 1) + ".BizType" , batchZoneGroupWaterLevelss.get(depth1).getBizType());
-				putQueryParameter("BatchZoneGroupWaterLevels." + (depth1 + 1) + ".ClusterGroup" , batchZoneGroupWaterLevelss.get(depth1).getClusterGroup());
 				putQueryParameter("BatchZoneGroupWaterLevels." + (depth1 + 1) + ".HighLevel" , batchZoneGroupWaterLevelss.get(depth1).getHighLevel());
+				putQueryParameter("BatchZoneGroupWaterLevels." + (depth1 + 1) + ".ClusterGroup" , batchZoneGroupWaterLevelss.get(depth1).getClusterGroup());
 				putQueryParameter("BatchZoneGroupWaterLevels." + (depth1 + 1) + ".IzNo" , batchZoneGroupWaterLevelss.get(depth1).getIzNo());
 				putQueryParameter("BatchZoneGroupWaterLevels." + (depth1 + 1) + ".LowLevel" , batchZoneGroupWaterLevelss.get(depth1).getLowLevel());
 				putQueryParameter("BatchZoneGroupWaterLevels." + (depth1 + 1) + ".IoOptimized" , batchZoneGroupWaterLevelss.get(depth1).getIoOptimized());
@@ -91,9 +86,9 @@ public class OpsRefreshZoneGroupWaterLevelRequest extends RpcAcsRequest<OpsRefre
 
 		private String bizType;
 
-		private String clusterGroup;
-
 		private Long highLevel;
+
+		private String clusterGroup;
 
 		private String izNo;
 
@@ -125,20 +120,20 @@ public class OpsRefreshZoneGroupWaterLevelRequest extends RpcAcsRequest<OpsRefre
 			this.bizType = bizType;
 		}
 
-		public String getClusterGroup() {
-			return this.clusterGroup;
-		}
-
-		public void setClusterGroup(String clusterGroup) {
-			this.clusterGroup = clusterGroup;
-		}
-
 		public Long getHighLevel() {
 			return this.highLevel;
 		}
 
 		public void setHighLevel(Long highLevel) {
 			this.highLevel = highLevel;
+		}
+
+		public String getClusterGroup() {
+			return this.clusterGroup;
+		}
+
+		public void setClusterGroup(String clusterGroup) {
+			this.clusterGroup = clusterGroup;
 		}
 
 		public String getIzNo() {

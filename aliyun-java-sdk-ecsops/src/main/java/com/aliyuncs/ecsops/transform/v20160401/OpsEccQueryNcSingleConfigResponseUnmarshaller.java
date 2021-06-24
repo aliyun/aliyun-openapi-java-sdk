@@ -26,16 +26,16 @@ public class OpsEccQueryNcSingleConfigResponseUnmarshaller {
 		opsEccQueryNcSingleConfigResponse.setRequestId(_ctx.stringValue("OpsEccQueryNcSingleConfigResponse.RequestId"));
 
 		Data data = new Data();
-		data.setCategory(_ctx.stringValue("OpsEccQueryNcSingleConfigResponse.Data.Category"));
+		data.setStatus(_ctx.stringValue("OpsEccQueryNcSingleConfigResponse.Data.Status"));
 		data.setGmtCreated(_ctx.stringValue("OpsEccQueryNcSingleConfigResponse.Data.GmtCreated"));
+		data.setSN(_ctx.stringValue("OpsEccQueryNcSingleConfigResponse.Data.SN"));
+		data.setItemValue(_ctx.stringValue("OpsEccQueryNcSingleConfigResponse.Data.ItemValue"));
+		data.setItemName(_ctx.stringValue("OpsEccQueryNcSingleConfigResponse.Data.ItemName"));
+		data.setVersion(_ctx.integerValue("OpsEccQueryNcSingleConfigResponse.Data.Version"));
+		data.setItemType(_ctx.stringValue("OpsEccQueryNcSingleConfigResponse.Data.ItemType"));
+		data.setCategory(_ctx.stringValue("OpsEccQueryNcSingleConfigResponse.Data.Category"));
 		data.setGmtModified(_ctx.stringValue("OpsEccQueryNcSingleConfigResponse.Data.GmtModified"));
 		data.setId(_ctx.stringValue("OpsEccQueryNcSingleConfigResponse.Data.Id"));
-		data.setItemName(_ctx.stringValue("OpsEccQueryNcSingleConfigResponse.Data.ItemName"));
-		data.setItemType(_ctx.stringValue("OpsEccQueryNcSingleConfigResponse.Data.ItemType"));
-		data.setItemValue(_ctx.stringValue("OpsEccQueryNcSingleConfigResponse.Data.ItemValue"));
-		data.setSN(_ctx.stringValue("OpsEccQueryNcSingleConfigResponse.Data.SN"));
-		data.setStatus(_ctx.stringValue("OpsEccQueryNcSingleConfigResponse.Data.Status"));
-		data.setVersion(_ctx.integerValue("OpsEccQueryNcSingleConfigResponse.Data.Version"));
 		opsEccQueryNcSingleConfigResponse.setData(data);
 	 
 	 	return opsEccQueryNcSingleConfigResponse;

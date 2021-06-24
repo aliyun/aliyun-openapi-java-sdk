@@ -17,7 +17,6 @@ package com.aliyuncs.ecsops.model.v20160401;
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
 import com.aliyuncs.http.MethodType;
-import com.aliyuncs.ecsops.Endpoint;
 
 /**
  * @author auto create
@@ -32,12 +31,8 @@ public class OpsAddFeatureDataRequest extends RpcAcsRequest<OpsAddFeatureDataRes
 
 	private String auditParamStr;
 	public OpsAddFeatureDataRequest() {
-		super("Ecsops", "2016-04-01", "OpsAddFeatureData", "ecs");
+		super("Ecsops", "2016-04-01", "OpsAddFeatureData", "ecsops");
 		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
 	}
 
 	public String getRegionNo() {
@@ -59,12 +54,13 @@ public class OpsAddFeatureDataRequest extends RpcAcsRequest<OpsAddFeatureDataRes
 		this.featureDataParams = featureDataParams;	
 		if (featureDataParams != null) {
 			for (int depth1 = 0; depth1 < featureDataParams.size(); depth1++) {
+				putQueryParameter("FeatureDataParam." + (depth1 + 1) + ".Extension" , featureDataParams.get(depth1).getExtension());
 				putQueryParameter("FeatureDataParam." + (depth1 + 1) + ".FeatureName" , featureDataParams.get(depth1).getFeatureName());
 				putQueryParameter("FeatureDataParam." + (depth1 + 1) + ".SourceData" , featureDataParams.get(depth1).getSourceData());
-				putQueryParameter("FeatureDataParam." + (depth1 + 1) + ".Extension" , featureDataParams.get(depth1).getExtension());
 				putQueryParameter("FeatureDataParam." + (depth1 + 1) + ".TargetId" , featureDataParams.get(depth1).getTargetId());
 				putQueryParameter("FeatureDataParam." + (depth1 + 1) + ".TargetRegionId" , featureDataParams.get(depth1).getTargetRegionId());
 				putQueryParameter("FeatureDataParam." + (depth1 + 1) + ".MatchedTimestamp" , featureDataParams.get(depth1).getMatchedTimestamp());
+				putQueryParameter("FeatureDataParam." + (depth1 + 1) + ".RelatedTargetId" , featureDataParams.get(depth1).getRelatedTargetId());
 			}
 		}	
 	}
@@ -82,17 +78,27 @@ public class OpsAddFeatureDataRequest extends RpcAcsRequest<OpsAddFeatureDataRes
 
 	public static class FeatureDataParam {
 
+		private String extension;
+
 		private String featureName;
 
 		private String sourceData;
-
-		private String extension;
 
 		private String targetId;
 
 		private String targetRegionId;
 
 		private Long matchedTimestamp;
+
+		private String relatedTargetId;
+
+		public String getExtension() {
+			return this.extension;
+		}
+
+		public void setExtension(String extension) {
+			this.extension = extension;
+		}
 
 		public String getFeatureName() {
 			return this.featureName;
@@ -108,14 +114,6 @@ public class OpsAddFeatureDataRequest extends RpcAcsRequest<OpsAddFeatureDataRes
 
 		public void setSourceData(String sourceData) {
 			this.sourceData = sourceData;
-		}
-
-		public String getExtension() {
-			return this.extension;
-		}
-
-		public void setExtension(String extension) {
-			this.extension = extension;
 		}
 
 		public String getTargetId() {
@@ -140,6 +138,14 @@ public class OpsAddFeatureDataRequest extends RpcAcsRequest<OpsAddFeatureDataRes
 
 		public void setMatchedTimestamp(Long matchedTimestamp) {
 			this.matchedTimestamp = matchedTimestamp;
+		}
+
+		public String getRelatedTargetId() {
+			return this.relatedTargetId;
+		}
+
+		public void setRelatedTargetId(String relatedTargetId) {
+			this.relatedTargetId = relatedTargetId;
 		}
 	}
 

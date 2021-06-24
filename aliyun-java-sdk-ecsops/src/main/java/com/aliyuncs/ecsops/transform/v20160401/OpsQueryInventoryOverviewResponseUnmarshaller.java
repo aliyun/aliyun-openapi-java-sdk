@@ -24,30 +24,30 @@ public class OpsQueryInventoryOverviewResponseUnmarshaller {
 	public static OpsQueryInventoryOverviewResponse unmarshall(OpsQueryInventoryOverviewResponse opsQueryInventoryOverviewResponse, UnmarshallerContext _ctx) {
 		
 		opsQueryInventoryOverviewResponse.setRequestId(_ctx.stringValue("OpsQueryInventoryOverviewResponse.RequestId"));
-		opsQueryInventoryOverviewResponse.setCode(_ctx.stringValue("OpsQueryInventoryOverviewResponse.Code"));
 		opsQueryInventoryOverviewResponse.setMessage(_ctx.stringValue("OpsQueryInventoryOverviewResponse.Message"));
+		opsQueryInventoryOverviewResponse.setCode(_ctx.stringValue("OpsQueryInventoryOverviewResponse.Code"));
 		opsQueryInventoryOverviewResponse.setSuccess(_ctx.stringValue("OpsQueryInventoryOverviewResponse.Success"));
 
 		Data data = new Data();
-		data.setGmtCreate(_ctx.stringValue("OpsQueryInventoryOverviewResponse.Data.GmtCreate"));
-		data.setGmtModified(_ctx.stringValue("OpsQueryInventoryOverviewResponse.Data.GmtModified"));
-		data.setIzNo(_ctx.stringValue("OpsQueryInventoryOverviewResponse.Data.IzNo"));
-		data.setFlavorFamily(_ctx.stringValue("OpsQueryInventoryOverviewResponse.Data.FlavorFamily"));
-		data.setCycleCpu(_ctx.longValue("OpsQueryInventoryOverviewResponse.Data.CycleCpu"));
-		data.setCycleMem(_ctx.longValue("OpsQueryInventoryOverviewResponse.Data.CycleMem"));
-		data.setDailyIncreaseCpu(_ctx.longValue("OpsQueryInventoryOverviewResponse.Data.DailyIncreaseCpu"));
-		data.setDailyIncreaseMem(_ctx.longValue("OpsQueryInventoryOverviewResponse.Data.DailyIncreaseMem"));
-		data.setCpuCycleDays(_ctx.longValue("OpsQueryInventoryOverviewResponse.Data.CpuCycleDays"));
 		data.setMemCycleDays(_ctx.longValue("OpsQueryInventoryOverviewResponse.Data.MemCycleDays"));
-		data.setCycleCpuSaleRate(_ctx.longValue("OpsQueryInventoryOverviewResponse.Data.CycleCpuSaleRate"));
-		data.setCycleMemSaleRate(_ctx.longValue("OpsQueryInventoryOverviewResponse.Data.CycleMemSaleRate"));
-		data.setElasticCpu(_ctx.longValue("OpsQueryInventoryOverviewResponse.Data.ElasticCpu"));
-		data.setElasticMem(_ctx.longValue("OpsQueryInventoryOverviewResponse.Data.ElasticMem"));
-		data.setFragmentCpu(_ctx.longValue("OpsQueryInventoryOverviewResponse.Data.FragmentCpu"));
+		data.setCycleMem(_ctx.longValue("OpsQueryInventoryOverviewResponse.Data.CycleMem"));
+		data.setDs(_ctx.longValue("OpsQueryInventoryOverviewResponse.Data.Ds"));
+		data.setCycleCpu(_ctx.longValue("OpsQueryInventoryOverviewResponse.Data.CycleCpu"));
 		data.setFragmentMem(_ctx.longValue("OpsQueryInventoryOverviewResponse.Data.FragmentMem"));
 		data.setWaterCpu(_ctx.longValue("OpsQueryInventoryOverviewResponse.Data.WaterCpu"));
+		data.setCycleMemSaleRate(_ctx.longValue("OpsQueryInventoryOverviewResponse.Data.CycleMemSaleRate"));
+		data.setGmtModified(_ctx.stringValue("OpsQueryInventoryOverviewResponse.Data.GmtModified"));
+		data.setElasticMem(_ctx.longValue("OpsQueryInventoryOverviewResponse.Data.ElasticMem"));
+		data.setCpuCycleDays(_ctx.longValue("OpsQueryInventoryOverviewResponse.Data.CpuCycleDays"));
+		data.setElasticCpu(_ctx.longValue("OpsQueryInventoryOverviewResponse.Data.ElasticCpu"));
+		data.setDailyIncreaseMem(_ctx.longValue("OpsQueryInventoryOverviewResponse.Data.DailyIncreaseMem"));
+		data.setGmtCreate(_ctx.stringValue("OpsQueryInventoryOverviewResponse.Data.GmtCreate"));
 		data.setWaterMem(_ctx.longValue("OpsQueryInventoryOverviewResponse.Data.WaterMem"));
-		data.setDs(_ctx.longValue("OpsQueryInventoryOverviewResponse.Data.Ds"));
+		data.setCycleCpuSaleRate(_ctx.longValue("OpsQueryInventoryOverviewResponse.Data.CycleCpuSaleRate"));
+		data.setDailyIncreaseCpu(_ctx.longValue("OpsQueryInventoryOverviewResponse.Data.DailyIncreaseCpu"));
+		data.setIzNo(_ctx.stringValue("OpsQueryInventoryOverviewResponse.Data.IzNo"));
+		data.setFlavorFamily(_ctx.stringValue("OpsQueryInventoryOverviewResponse.Data.FlavorFamily"));
+		data.setFragmentCpu(_ctx.longValue("OpsQueryInventoryOverviewResponse.Data.FragmentCpu"));
 		opsQueryInventoryOverviewResponse.setData(data);
 	 
 	 	return opsQueryInventoryOverviewResponse;

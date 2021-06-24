@@ -23,8 +23,8 @@ public class OpsCreateChangeMemberResponseUnmarshaller {
 	public static OpsCreateChangeMemberResponse unmarshall(OpsCreateChangeMemberResponse opsCreateChangeMemberResponse, UnmarshallerContext _ctx) {
 		
 		opsCreateChangeMemberResponse.setRequestId(_ctx.stringValue("OpsCreateChangeMemberResponse.RequestId"));
-		opsCreateChangeMemberResponse.setCode(_ctx.stringValue("OpsCreateChangeMemberResponse.Code"));
 		opsCreateChangeMemberResponse.setMessage(_ctx.stringValue("OpsCreateChangeMemberResponse.Message"));
+		opsCreateChangeMemberResponse.setCode(_ctx.stringValue("OpsCreateChangeMemberResponse.Code"));
 		opsCreateChangeMemberResponse.setSuccess(_ctx.stringValue("OpsCreateChangeMemberResponse.Success"));
 	 
 	 	return opsCreateChangeMemberResponse;

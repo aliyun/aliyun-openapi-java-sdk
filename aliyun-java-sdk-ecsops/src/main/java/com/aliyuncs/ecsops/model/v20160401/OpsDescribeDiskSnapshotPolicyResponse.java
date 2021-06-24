@@ -24,23 +24,39 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsDescribeDiskSnapshotPolicyResponse extends AcsResponse {
 
-	private String requestId;
+	private String timePoints;
 
 	private String snapshotPolicyId;
+
+	private String requestId;
+
+	private String creationTime;
+
+	private Integer retentionDays;
+
+	private String repeatWeekdays;
 
 	private String regionId;
 
 	private String autoSnapshotPolicyName;
 
-	private String timePoints;
-
-	private String repeatWeekdays;
-
-	private Integer retentionDays;
-
 	private Integer diskNums;
 
-	private String creationTime;
+	public String getTimePoints() {
+		return this.timePoints;
+	}
+
+	public void setTimePoints(String timePoints) {
+		this.timePoints = timePoints;
+	}
+
+	public String getSnapshotPolicyId() {
+		return this.snapshotPolicyId;
+	}
+
+	public void setSnapshotPolicyId(String snapshotPolicyId) {
+		this.snapshotPolicyId = snapshotPolicyId;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -50,12 +66,28 @@ public class OpsDescribeDiskSnapshotPolicyResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getSnapshotPolicyId() {
-		return this.snapshotPolicyId;
+	public String getCreationTime() {
+		return this.creationTime;
 	}
 
-	public void setSnapshotPolicyId(String snapshotPolicyId) {
-		this.snapshotPolicyId = snapshotPolicyId;
+	public void setCreationTime(String creationTime) {
+		this.creationTime = creationTime;
+	}
+
+	public Integer getRetentionDays() {
+		return this.retentionDays;
+	}
+
+	public void setRetentionDays(Integer retentionDays) {
+		this.retentionDays = retentionDays;
+	}
+
+	public String getRepeatWeekdays() {
+		return this.repeatWeekdays;
+	}
+
+	public void setRepeatWeekdays(String repeatWeekdays) {
+		this.repeatWeekdays = repeatWeekdays;
 	}
 
 	public String getRegionId() {
@@ -74,44 +106,12 @@ public class OpsDescribeDiskSnapshotPolicyResponse extends AcsResponse {
 		this.autoSnapshotPolicyName = autoSnapshotPolicyName;
 	}
 
-	public String getTimePoints() {
-		return this.timePoints;
-	}
-
-	public void setTimePoints(String timePoints) {
-		this.timePoints = timePoints;
-	}
-
-	public String getRepeatWeekdays() {
-		return this.repeatWeekdays;
-	}
-
-	public void setRepeatWeekdays(String repeatWeekdays) {
-		this.repeatWeekdays = repeatWeekdays;
-	}
-
-	public Integer getRetentionDays() {
-		return this.retentionDays;
-	}
-
-	public void setRetentionDays(Integer retentionDays) {
-		this.retentionDays = retentionDays;
-	}
-
 	public Integer getDiskNums() {
 		return this.diskNums;
 	}
 
 	public void setDiskNums(Integer diskNums) {
 		this.diskNums = diskNums;
-	}
-
-	public String getCreationTime() {
-		return this.creationTime;
-	}
-
-	public void setCreationTime(String creationTime) {
-		this.creationTime = creationTime;
 	}
 
 	@Override

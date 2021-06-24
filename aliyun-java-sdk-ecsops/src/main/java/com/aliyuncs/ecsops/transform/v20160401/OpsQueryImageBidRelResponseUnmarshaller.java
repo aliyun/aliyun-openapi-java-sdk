@@ -23,10 +23,10 @@ public class OpsQueryImageBidRelResponseUnmarshaller {
 	public static OpsQueryImageBidRelResponse unmarshall(OpsQueryImageBidRelResponse opsQueryImageBidRelResponse, UnmarshallerContext _ctx) {
 		
 		opsQueryImageBidRelResponse.setRequestId(_ctx.stringValue("OpsQueryImageBidRelResponse.RequestId"));
+		opsQueryImageBidRelResponse.setBid2PrivilegeJson(_ctx.stringValue("OpsQueryImageBidRelResponse.Bid2PrivilegeJson"));
 		opsQueryImageBidRelResponse.setImageId(_ctx.stringValue("OpsQueryImageBidRelResponse.ImageId"));
 		opsQueryImageBidRelResponse.setRegionId(_ctx.stringValue("OpsQueryImageBidRelResponse.RegionId"));
 		opsQueryImageBidRelResponse.setResourceOwnerId(_ctx.longValue("OpsQueryImageBidRelResponse.ResourceOwnerId"));
-		opsQueryImageBidRelResponse.setBid2PrivilegeJson(_ctx.stringValue("OpsQueryImageBidRelResponse.Bid2PrivilegeJson"));
 	 
 	 	return opsQueryImageBidRelResponse;
 	}

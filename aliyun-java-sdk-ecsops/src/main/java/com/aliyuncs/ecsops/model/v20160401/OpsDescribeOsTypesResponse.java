@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsDescribeOsTypesResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
-
-	private Integer pageNumber;
 
 	private Integer pageSize;
 
+	private String requestId;
+
+	private Integer pageNumber;
+
 	private List<OsType> osTypes;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -51,20 +43,28 @@ public class OpsDescribeOsTypesResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<OsType> getOsTypes() {
@@ -77,34 +77,38 @@ public class OpsDescribeOsTypesResponse extends AcsResponse {
 
 	public static class OsType {
 
-		private Long osTypeId;
+		private Integer minCpu;
 
 		private String kind;
 
-		private String platform;
-
 		private String osName;
-
-		private String osNameEn;
 
 		private Integer osBit;
 
 		private Integer maxCpu;
 
-		private Integer minCpu;
-
-		private Integer maxMemory;
+		private String platform;
 
 		private Integer minMemory;
 
+		private Integer maxMemory;
+
+		private String osNameEn;
+
+		private Long osTypeId;
+
+		private String architecture;
+
 		private String osLicense;
 
-		public Long getOsTypeId() {
-			return this.osTypeId;
+		private Long osTypeBit;
+
+		public Integer getMinCpu() {
+			return this.minCpu;
 		}
 
-		public void setOsTypeId(Long osTypeId) {
-			this.osTypeId = osTypeId;
+		public void setMinCpu(Integer minCpu) {
+			this.minCpu = minCpu;
 		}
 
 		public String getKind() {
@@ -115,28 +119,12 @@ public class OpsDescribeOsTypesResponse extends AcsResponse {
 			this.kind = kind;
 		}
 
-		public String getPlatform() {
-			return this.platform;
-		}
-
-		public void setPlatform(String platform) {
-			this.platform = platform;
-		}
-
 		public String getOsName() {
 			return this.osName;
 		}
 
 		public void setOsName(String osName) {
 			this.osName = osName;
-		}
-
-		public String getOsNameEn() {
-			return this.osNameEn;
-		}
-
-		public void setOsNameEn(String osNameEn) {
-			this.osNameEn = osNameEn;
 		}
 
 		public Integer getOsBit() {
@@ -155,20 +143,12 @@ public class OpsDescribeOsTypesResponse extends AcsResponse {
 			this.maxCpu = maxCpu;
 		}
 
-		public Integer getMinCpu() {
-			return this.minCpu;
+		public String getPlatform() {
+			return this.platform;
 		}
 
-		public void setMinCpu(Integer minCpu) {
-			this.minCpu = minCpu;
-		}
-
-		public Integer getMaxMemory() {
-			return this.maxMemory;
-		}
-
-		public void setMaxMemory(Integer maxMemory) {
-			this.maxMemory = maxMemory;
+		public void setPlatform(String platform) {
+			this.platform = platform;
 		}
 
 		public Integer getMinMemory() {
@@ -179,12 +159,52 @@ public class OpsDescribeOsTypesResponse extends AcsResponse {
 			this.minMemory = minMemory;
 		}
 
+		public Integer getMaxMemory() {
+			return this.maxMemory;
+		}
+
+		public void setMaxMemory(Integer maxMemory) {
+			this.maxMemory = maxMemory;
+		}
+
+		public String getOsNameEn() {
+			return this.osNameEn;
+		}
+
+		public void setOsNameEn(String osNameEn) {
+			this.osNameEn = osNameEn;
+		}
+
+		public Long getOsTypeId() {
+			return this.osTypeId;
+		}
+
+		public void setOsTypeId(Long osTypeId) {
+			this.osTypeId = osTypeId;
+		}
+
+		public String getArchitecture() {
+			return this.architecture;
+		}
+
+		public void setArchitecture(String architecture) {
+			this.architecture = architecture;
+		}
+
 		public String getOsLicense() {
 			return this.osLicense;
 		}
 
 		public void setOsLicense(String osLicense) {
 			this.osLicense = osLicense;
+		}
+
+		public Long getOsTypeBit() {
+			return this.osTypeBit;
+		}
+
+		public void setOsTypeBit(Long osTypeBit) {
+			this.osTypeBit = osTypeBit;
 		}
 	}
 

@@ -33,16 +33,16 @@ public class OpsEccQueryNcConfigResponseUnmarshaller {
 		Data data = new Data();
 
 		NcModel ncModel = new NcModel();
-		ncModel.setNcIp(_ctx.stringValue("OpsEccQueryNcConfigResponse.Data.NcModel.NcIp"));
 		ncModel.setSN(_ctx.stringValue("OpsEccQueryNcConfigResponse.Data.NcModel.SN"));
+		ncModel.setNcIp(_ctx.stringValue("OpsEccQueryNcConfigResponse.Data.NcModel.NcIp"));
 		data.setNcModel(ncModel);
 
 		List<ItemModelsItem> itemModels = new ArrayList<ItemModelsItem>();
 		for (int i = 0; i < _ctx.lengthValue("OpsEccQueryNcConfigResponse.Data.ItemModels.Length"); i++) {
 			ItemModelsItem itemModelsItem = new ItemModelsItem();
+			itemModelsItem.setValue(_ctx.stringValue("OpsEccQueryNcConfigResponse.Data.ItemModels["+ i +"].Value"));
 			itemModelsItem.setCategory(_ctx.stringValue("OpsEccQueryNcConfigResponse.Data.ItemModels["+ i +"].Category"));
 			itemModelsItem.setName(_ctx.stringValue("OpsEccQueryNcConfigResponse.Data.ItemModels["+ i +"].Name"));
-			itemModelsItem.setValue(_ctx.stringValue("OpsEccQueryNcConfigResponse.Data.ItemModels["+ i +"].Value"));
 
 			itemModels.add(itemModelsItem);
 		}

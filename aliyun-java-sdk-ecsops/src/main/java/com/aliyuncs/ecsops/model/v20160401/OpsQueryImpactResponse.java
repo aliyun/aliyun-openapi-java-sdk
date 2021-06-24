@@ -57,32 +57,72 @@ public class OpsQueryImpactResponse extends AcsResponse {
 
 	public static class AggregationItem {
 
-		private Integer vcpuCnt;
+		private Integer storageAffectVmCnt;
+
+		private Integer userCnt;
+
+		private Integer storageNcCnt;
+
+		private String aggregationValue;
+
+		private Integer gc7Cnt;
+
+		private Integer gc6Cnt;
 
 		private Integer vmCnt;
 
 		private Integer ncCnt;
 
-		private Integer userCnt;
-
-		private Integer gc6Cnt;
-
-		private Integer gc7Cnt;
-
-		private String aggregationValue;
-
-		private Integer storageNcCnt;
-
 		private Float gocVcpuCnt;
 
-		private Integer storageAffectVmCnt;
+		private Integer vcpuCnt;
 
-		public Integer getVcpuCnt() {
-			return this.vcpuCnt;
+		public Integer getStorageAffectVmCnt() {
+			return this.storageAffectVmCnt;
 		}
 
-		public void setVcpuCnt(Integer vcpuCnt) {
-			this.vcpuCnt = vcpuCnt;
+		public void setStorageAffectVmCnt(Integer storageAffectVmCnt) {
+			this.storageAffectVmCnt = storageAffectVmCnt;
+		}
+
+		public Integer getUserCnt() {
+			return this.userCnt;
+		}
+
+		public void setUserCnt(Integer userCnt) {
+			this.userCnt = userCnt;
+		}
+
+		public Integer getStorageNcCnt() {
+			return this.storageNcCnt;
+		}
+
+		public void setStorageNcCnt(Integer storageNcCnt) {
+			this.storageNcCnt = storageNcCnt;
+		}
+
+		public String getAggregationValue() {
+			return this.aggregationValue;
+		}
+
+		public void setAggregationValue(String aggregationValue) {
+			this.aggregationValue = aggregationValue;
+		}
+
+		public Integer getGc7Cnt() {
+			return this.gc7Cnt;
+		}
+
+		public void setGc7Cnt(Integer gc7Cnt) {
+			this.gc7Cnt = gc7Cnt;
+		}
+
+		public Integer getGc6Cnt() {
+			return this.gc6Cnt;
+		}
+
+		public void setGc6Cnt(Integer gc6Cnt) {
+			this.gc6Cnt = gc6Cnt;
 		}
 
 		public Integer getVmCnt() {
@@ -101,46 +141,6 @@ public class OpsQueryImpactResponse extends AcsResponse {
 			this.ncCnt = ncCnt;
 		}
 
-		public Integer getUserCnt() {
-			return this.userCnt;
-		}
-
-		public void setUserCnt(Integer userCnt) {
-			this.userCnt = userCnt;
-		}
-
-		public Integer getGc6Cnt() {
-			return this.gc6Cnt;
-		}
-
-		public void setGc6Cnt(Integer gc6Cnt) {
-			this.gc6Cnt = gc6Cnt;
-		}
-
-		public Integer getGc7Cnt() {
-			return this.gc7Cnt;
-		}
-
-		public void setGc7Cnt(Integer gc7Cnt) {
-			this.gc7Cnt = gc7Cnt;
-		}
-
-		public String getAggregationValue() {
-			return this.aggregationValue;
-		}
-
-		public void setAggregationValue(String aggregationValue) {
-			this.aggregationValue = aggregationValue;
-		}
-
-		public Integer getStorageNcCnt() {
-			return this.storageNcCnt;
-		}
-
-		public void setStorageNcCnt(Integer storageNcCnt) {
-			this.storageNcCnt = storageNcCnt;
-		}
-
 		public Float getGocVcpuCnt() {
 			return this.gocVcpuCnt;
 		}
@@ -149,12 +149,12 @@ public class OpsQueryImpactResponse extends AcsResponse {
 			this.gocVcpuCnt = gocVcpuCnt;
 		}
 
-		public Integer getStorageAffectVmCnt() {
-			return this.storageAffectVmCnt;
+		public Integer getVcpuCnt() {
+			return this.vcpuCnt;
 		}
 
-		public void setStorageAffectVmCnt(Integer storageAffectVmCnt) {
-			this.storageAffectVmCnt = storageAffectVmCnt;
+		public void setVcpuCnt(Integer vcpuCnt) {
+			this.vcpuCnt = vcpuCnt;
 		}
 	}
 

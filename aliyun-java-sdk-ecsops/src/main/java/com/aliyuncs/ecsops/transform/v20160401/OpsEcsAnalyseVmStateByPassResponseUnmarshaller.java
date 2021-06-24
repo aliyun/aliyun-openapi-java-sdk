@@ -32,11 +32,11 @@ public class OpsEcsAnalyseVmStateByPassResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("OpsEcsAnalyseVmStateByPassResponse.DataList.Length"); i++) {
 			Item item = new Item();
 			item.setStatus(_ctx.stringValue("OpsEcsAnalyseVmStateByPassResponse.DataList["+ i +"].Status"));
-			item.setDescription(_ctx.stringValue("OpsEcsAnalyseVmStateByPassResponse.DataList["+ i +"].Description"));
 			item.setOfficialResponse(_ctx.stringValue("OpsEcsAnalyseVmStateByPassResponse.DataList["+ i +"].OfficialResponse"));
-			item.setDetail(_ctx.stringValue("OpsEcsAnalyseVmStateByPassResponse.DataList["+ i +"].Detail"));
-			item.setSolution(_ctx.stringValue("OpsEcsAnalyseVmStateByPassResponse.DataList["+ i +"].Solution"));
+			item.setDescription(_ctx.stringValue("OpsEcsAnalyseVmStateByPassResponse.DataList["+ i +"].Description"));
 			item.setErrorType(_ctx.stringValue("OpsEcsAnalyseVmStateByPassResponse.DataList["+ i +"].ErrorType"));
+			item.setSolution(_ctx.stringValue("OpsEcsAnalyseVmStateByPassResponse.DataList["+ i +"].Solution"));
+			item.setDetail(_ctx.stringValue("OpsEcsAnalyseVmStateByPassResponse.DataList["+ i +"].Detail"));
 
 			dataList.add(item);
 		}

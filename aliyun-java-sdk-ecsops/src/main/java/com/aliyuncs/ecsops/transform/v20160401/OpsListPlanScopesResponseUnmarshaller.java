@@ -27,8 +27,8 @@ public class OpsListPlanScopesResponseUnmarshaller {
 	public static OpsListPlanScopesResponse unmarshall(OpsListPlanScopesResponse opsListPlanScopesResponse, UnmarshallerContext _ctx) {
 		
 		opsListPlanScopesResponse.setRequestId(_ctx.stringValue("OpsListPlanScopesResponse.RequestId"));
-		opsListPlanScopesResponse.setCode(_ctx.stringValue("OpsListPlanScopesResponse.Code"));
 		opsListPlanScopesResponse.setMessage(_ctx.stringValue("OpsListPlanScopesResponse.Message"));
+		opsListPlanScopesResponse.setCode(_ctx.stringValue("OpsListPlanScopesResponse.Code"));
 		opsListPlanScopesResponse.setSuccess(_ctx.stringValue("OpsListPlanScopesResponse.Success"));
 
 		List<PlanScope> planScopes = new ArrayList<PlanScope>();

@@ -33,8 +33,8 @@ public class OpsDescribeResourceRelatedResourcesResponseUnmarshaller {
 		List<Resource> resources = new ArrayList<Resource>();
 		for (int i = 0; i < _ctx.lengthValue("OpsDescribeResourceRelatedResourcesResponse.Resources.Length"); i++) {
 			Resource resource = new Resource();
-			resource.setResourceId(_ctx.stringValue("OpsDescribeResourceRelatedResourcesResponse.Resources["+ i +"].ResourceId"));
 			resource.setResourceType(_ctx.stringValue("OpsDescribeResourceRelatedResourcesResponse.Resources["+ i +"].ResourceType"));
+			resource.setResourceId(_ctx.stringValue("OpsDescribeResourceRelatedResourcesResponse.Resources["+ i +"].ResourceId"));
 
 			List<RelatedResource> relatedResources = new ArrayList<RelatedResource>();
 			for (int j = 0; j < _ctx.lengthValue("OpsDescribeResourceRelatedResourcesResponse.Resources["+ i +"].RelatedResources.Length"); j++) {

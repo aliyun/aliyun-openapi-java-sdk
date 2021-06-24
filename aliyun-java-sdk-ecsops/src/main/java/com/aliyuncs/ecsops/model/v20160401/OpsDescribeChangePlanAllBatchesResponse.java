@@ -71,9 +71,9 @@ public class OpsDescribeChangePlanAllBatchesResponse extends AcsResponse {
 
 			private Integer batchNo;
 
-			private Integer resourceCount;
-
 			private Boolean isLastBatch;
+
+			private Integer resourceCount;
 
 			private String operationStatus;
 
@@ -85,20 +85,20 @@ public class OpsDescribeChangePlanAllBatchesResponse extends AcsResponse {
 				this.batchNo = batchNo;
 			}
 
-			public Integer getResourceCount() {
-				return this.resourceCount;
-			}
-
-			public void setResourceCount(Integer resourceCount) {
-				this.resourceCount = resourceCount;
-			}
-
 			public Boolean getIsLastBatch() {
 				return this.isLastBatch;
 			}
 
 			public void setIsLastBatch(Boolean isLastBatch) {
 				this.isLastBatch = isLastBatch;
+			}
+
+			public Integer getResourceCount() {
+				return this.resourceCount;
+			}
+
+			public void setResourceCount(Integer resourceCount) {
+				this.resourceCount = resourceCount;
 			}
 
 			public String getOperationStatus() {

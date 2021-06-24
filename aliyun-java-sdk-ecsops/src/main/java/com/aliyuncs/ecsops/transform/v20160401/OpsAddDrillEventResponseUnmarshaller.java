@@ -31,13 +31,13 @@ public class OpsAddDrillEventResponseUnmarshaller {
 		List<DrillEvent> drillEvents = new ArrayList<DrillEvent>();
 		for (int i = 0; i < _ctx.lengthValue("OpsAddDrillEventResponse.DrillEvents.Length"); i++) {
 			DrillEvent drillEvent = new DrillEvent();
-			drillEvent.setClusterName(_ctx.stringValue("OpsAddDrillEventResponse.DrillEvents["+ i +"].ClusterName"));
-			drillEvent.setMachineId(_ctx.stringValue("OpsAddDrillEventResponse.DrillEvents["+ i +"].MachineId"));
-			drillEvent.setDrillReason(_ctx.stringValue("OpsAddDrillEventResponse.DrillEvents["+ i +"].DrillReason"));
-			drillEvent.setStartTime(_ctx.stringValue("OpsAddDrillEventResponse.DrillEvents["+ i +"].StartTime"));
 			drillEvent.setEndTime(_ctx.stringValue("OpsAddDrillEventResponse.DrillEvents["+ i +"].EndTime"));
+			drillEvent.setStartTime(_ctx.stringValue("OpsAddDrillEventResponse.DrillEvents["+ i +"].StartTime"));
+			drillEvent.setDrillReason(_ctx.stringValue("OpsAddDrillEventResponse.DrillEvents["+ i +"].DrillReason"));
 			drillEvent.setDrillExecResult(_ctx.stringValue("OpsAddDrillEventResponse.DrillEvents["+ i +"].DrillExecResult"));
+			drillEvent.setClusterName(_ctx.stringValue("OpsAddDrillEventResponse.DrillEvents["+ i +"].ClusterName"));
 			drillEvent.setDrillExecTime(_ctx.stringValue("OpsAddDrillEventResponse.DrillEvents["+ i +"].DrillExecTime"));
+			drillEvent.setMachineId(_ctx.stringValue("OpsAddDrillEventResponse.DrillEvents["+ i +"].MachineId"));
 
 			drillEvents.add(drillEvent);
 		}

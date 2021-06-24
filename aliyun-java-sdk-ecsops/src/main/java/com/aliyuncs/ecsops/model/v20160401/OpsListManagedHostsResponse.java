@@ -25,21 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsListManagedHostsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
 
 	private String nextToken;
 
+	private String requestId;
+
 	private List<ManagedHostSet> managedHostSets;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -57,6 +49,14 @@ public class OpsListManagedHostsResponse extends AcsResponse {
 		this.nextToken = nextToken;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	public List<ManagedHostSet> getManagedHostSets() {
 		return this.managedHostSets;
 	}
@@ -67,29 +67,31 @@ public class OpsListManagedHostsResponse extends AcsResponse {
 
 	public static class ManagedHostSet {
 
-		private String managedHostId;
-
 		private String status;
-
-		private String mode;
-
-		private String resourceGroupId;
 
 		private String managedRackId;
 
-		private String managedRealRackId;
-
 		private String managedHostType;
 
-		private List<InstanceSet> instanceSets;
+		private String mode;
+
+		private String managedRealRackId;
+
+		private String managedHostId;
+
+		private String resourceGroupId;
 
 		private List<Tag> tags;
 
-		private List<String> supportInstanceTypeFamilies;
+		private List<InstanceSet> instanceSets;
+
+		private List<String> supportedInstanceTypes;
 
 		private List<String> supportedCustomInstanceTypeFamilies;
 
-		private List<String> supportedInstanceTypes;
+		private List<String> supportInstanceTypeFamilies;
+
+		private List<String> sharedProductCodes;
 
 		private CapacityAttribute capacityAttribute;
 
@@ -97,36 +99,12 @@ public class OpsListManagedHostsResponse extends AcsResponse {
 
 		private HostAttribute hostAttribute;
 
-		public String getManagedHostId() {
-			return this.managedHostId;
-		}
-
-		public void setManagedHostId(String managedHostId) {
-			this.managedHostId = managedHostId;
-		}
-
 		public String getStatus() {
 			return this.status;
 		}
 
 		public void setStatus(String status) {
 			this.status = status;
-		}
-
-		public String getMode() {
-			return this.mode;
-		}
-
-		public void setMode(String mode) {
-			this.mode = mode;
-		}
-
-		public String getResourceGroupId() {
-			return this.resourceGroupId;
-		}
-
-		public void setResourceGroupId(String resourceGroupId) {
-			this.resourceGroupId = resourceGroupId;
 		}
 
 		public String getManagedRackId() {
@@ -137,14 +115,6 @@ public class OpsListManagedHostsResponse extends AcsResponse {
 			this.managedRackId = managedRackId;
 		}
 
-		public String getManagedRealRackId() {
-			return this.managedRealRackId;
-		}
-
-		public void setManagedRealRackId(String managedRealRackId) {
-			this.managedRealRackId = managedRealRackId;
-		}
-
 		public String getManagedHostType() {
 			return this.managedHostType;
 		}
@@ -153,12 +123,36 @@ public class OpsListManagedHostsResponse extends AcsResponse {
 			this.managedHostType = managedHostType;
 		}
 
-		public List<InstanceSet> getInstanceSets() {
-			return this.instanceSets;
+		public String getMode() {
+			return this.mode;
 		}
 
-		public void setInstanceSets(List<InstanceSet> instanceSets) {
-			this.instanceSets = instanceSets;
+		public void setMode(String mode) {
+			this.mode = mode;
+		}
+
+		public String getManagedRealRackId() {
+			return this.managedRealRackId;
+		}
+
+		public void setManagedRealRackId(String managedRealRackId) {
+			this.managedRealRackId = managedRealRackId;
+		}
+
+		public String getManagedHostId() {
+			return this.managedHostId;
+		}
+
+		public void setManagedHostId(String managedHostId) {
+			this.managedHostId = managedHostId;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
 		}
 
 		public List<Tag> getTags() {
@@ -169,12 +163,20 @@ public class OpsListManagedHostsResponse extends AcsResponse {
 			this.tags = tags;
 		}
 
-		public List<String> getSupportInstanceTypeFamilies() {
-			return this.supportInstanceTypeFamilies;
+		public List<InstanceSet> getInstanceSets() {
+			return this.instanceSets;
 		}
 
-		public void setSupportInstanceTypeFamilies(List<String> supportInstanceTypeFamilies) {
-			this.supportInstanceTypeFamilies = supportInstanceTypeFamilies;
+		public void setInstanceSets(List<InstanceSet> instanceSets) {
+			this.instanceSets = instanceSets;
+		}
+
+		public List<String> getSupportedInstanceTypes() {
+			return this.supportedInstanceTypes;
+		}
+
+		public void setSupportedInstanceTypes(List<String> supportedInstanceTypes) {
+			this.supportedInstanceTypes = supportedInstanceTypes;
 		}
 
 		public List<String> getSupportedCustomInstanceTypeFamilies() {
@@ -185,12 +187,20 @@ public class OpsListManagedHostsResponse extends AcsResponse {
 			this.supportedCustomInstanceTypeFamilies = supportedCustomInstanceTypeFamilies;
 		}
 
-		public List<String> getSupportedInstanceTypes() {
-			return this.supportedInstanceTypes;
+		public List<String> getSupportInstanceTypeFamilies() {
+			return this.supportInstanceTypeFamilies;
 		}
 
-		public void setSupportedInstanceTypes(List<String> supportedInstanceTypes) {
-			this.supportedInstanceTypes = supportedInstanceTypes;
+		public void setSupportInstanceTypeFamilies(List<String> supportInstanceTypeFamilies) {
+			this.supportInstanceTypeFamilies = supportInstanceTypeFamilies;
+		}
+
+		public List<String> getSharedProductCodes() {
+			return this.sharedProductCodes;
+		}
+
+		public void setSharedProductCodes(List<String> sharedProductCodes) {
+			this.sharedProductCodes = sharedProductCodes;
 		}
 
 		public CapacityAttribute getCapacityAttribute() {
@@ -217,6 +227,29 @@ public class OpsListManagedHostsResponse extends AcsResponse {
 			this.hostAttribute = hostAttribute;
 		}
 
+		public static class Tag {
+
+			private String tagValue;
+
+			private String tagKey;
+
+			public String getTagValue() {
+				return this.tagValue;
+			}
+
+			public void setTagValue(String tagValue) {
+				this.tagValue = tagValue;
+			}
+
+			public String getTagKey() {
+				return this.tagKey;
+			}
+
+			public void setTagKey(String tagKey) {
+				this.tagKey = tagKey;
+			}
+		}
+
 		public static class InstanceSet {
 
 			private String instanceId;
@@ -230,38 +263,15 @@ public class OpsListManagedHostsResponse extends AcsResponse {
 			}
 		}
 
-		public static class Tag {
-
-			private String tagKey;
-
-			private String tagValue;
-
-			public String getTagKey() {
-				return this.tagKey;
-			}
-
-			public void setTagKey(String tagKey) {
-				this.tagKey = tagKey;
-			}
-
-			public String getTagValue() {
-				return this.tagValue;
-			}
-
-			public void setTagValue(String tagValue) {
-				this.tagValue = tagValue;
-			}
-		}
-
 		public static class CapacityAttribute {
 
 			private Integer totalVcpus;
 
-			private Integer totalMemories;
+			private Integer availableVcpus;
 
 			private Integer availableMemories;
 
-			private Integer availableVcpus;
+			private Integer totalMemories;
 
 			public Integer getTotalVcpus() {
 				return this.totalVcpus;
@@ -271,12 +281,12 @@ public class OpsListManagedHostsResponse extends AcsResponse {
 				this.totalVcpus = totalVcpus;
 			}
 
-			public Integer getTotalMemories() {
-				return this.totalMemories;
+			public Integer getAvailableVcpus() {
+				return this.availableVcpus;
 			}
 
-			public void setTotalMemories(Integer totalMemories) {
-				this.totalMemories = totalMemories;
+			public void setAvailableVcpus(Integer availableVcpus) {
+				this.availableVcpus = availableVcpus;
 			}
 
 			public Integer getAvailableMemories() {
@@ -287,12 +297,12 @@ public class OpsListManagedHostsResponse extends AcsResponse {
 				this.availableMemories = availableMemories;
 			}
 
-			public Integer getAvailableVcpus() {
-				return this.availableVcpus;
+			public Integer getTotalMemories() {
+				return this.totalMemories;
 			}
 
-			public void setAvailableVcpus(Integer availableVcpus) {
-				this.availableVcpus = availableVcpus;
+			public void setTotalMemories(Integer totalMemories) {
+				this.totalMemories = totalMemories;
 			}
 		}
 
@@ -324,11 +334,19 @@ public class OpsListManagedHostsResponse extends AcsResponse {
 
 		public static class HostAttribute {
 
+			private String serialNumber;
+
 			private String hostType;
 
 			private String cpuModelName;
 
-			private String serialNumber;
+			public String getSerialNumber() {
+				return this.serialNumber;
+			}
+
+			public void setSerialNumber(String serialNumber) {
+				this.serialNumber = serialNumber;
+			}
 
 			public String getHostType() {
 				return this.hostType;
@@ -344,14 +362,6 @@ public class OpsListManagedHostsResponse extends AcsResponse {
 
 			public void setCpuModelName(String cpuModelName) {
 				this.cpuModelName = cpuModelName;
-			}
-
-			public String getSerialNumber() {
-				return this.serialNumber;
-			}
-
-			public void setSerialNumber(String serialNumber) {
-				this.serialNumber = serialNumber;
 			}
 		}
 	}

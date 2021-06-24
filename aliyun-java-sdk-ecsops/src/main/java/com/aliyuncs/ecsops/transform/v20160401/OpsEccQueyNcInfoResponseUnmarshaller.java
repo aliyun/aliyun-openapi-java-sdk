@@ -23,8 +23,8 @@ public class OpsEccQueyNcInfoResponseUnmarshaller {
 	public static OpsEccQueyNcInfoResponse unmarshall(OpsEccQueyNcInfoResponse opsEccQueyNcInfoResponse, UnmarshallerContext _ctx) {
 		
 		opsEccQueyNcInfoResponse.setRequestId(_ctx.stringValue("OpsEccQueyNcInfoResponse.RequestId"));
-		opsEccQueyNcInfoResponse.setData(_ctx.stringValue("OpsEccQueyNcInfoResponse.Data"));
 		opsEccQueyNcInfoResponse.setMessage(_ctx.stringValue("OpsEccQueyNcInfoResponse.Message"));
+		opsEccQueyNcInfoResponse.setData(_ctx.stringValue("OpsEccQueyNcInfoResponse.Data"));
 	 
 	 	return opsEccQueyNcInfoResponse;
 	}

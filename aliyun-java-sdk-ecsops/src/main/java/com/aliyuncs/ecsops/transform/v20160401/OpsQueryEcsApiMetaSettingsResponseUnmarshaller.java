@@ -28,16 +28,16 @@ public class OpsQueryEcsApiMetaSettingsResponseUnmarshaller {
 	public static OpsQueryEcsApiMetaSettingsResponse unmarshall(OpsQueryEcsApiMetaSettingsResponse opsQueryEcsApiMetaSettingsResponse, UnmarshallerContext _ctx) {
 		
 		opsQueryEcsApiMetaSettingsResponse.setRequestId(_ctx.stringValue("OpsQueryEcsApiMetaSettingsResponse.RequestId"));
-		opsQueryEcsApiMetaSettingsResponse.setPageNumber(_ctx.integerValue("OpsQueryEcsApiMetaSettingsResponse.PageNumber"));
-		opsQueryEcsApiMetaSettingsResponse.setPageSize(_ctx.integerValue("OpsQueryEcsApiMetaSettingsResponse.PageSize"));
 		opsQueryEcsApiMetaSettingsResponse.setTotalCount(_ctx.integerValue("OpsQueryEcsApiMetaSettingsResponse.TotalCount"));
+		opsQueryEcsApiMetaSettingsResponse.setPageSize(_ctx.integerValue("OpsQueryEcsApiMetaSettingsResponse.PageSize"));
+		opsQueryEcsApiMetaSettingsResponse.setPageNumber(_ctx.integerValue("OpsQueryEcsApiMetaSettingsResponse.PageNumber"));
 
 		List<ProductsItem> products = new ArrayList<ProductsItem>();
 		for (int i = 0; i < _ctx.lengthValue("OpsQueryEcsApiMetaSettingsResponse.Products.Length"); i++) {
 			ProductsItem productsItem = new ProductsItem();
 			productsItem.setProductName(_ctx.stringValue("OpsQueryEcsApiMetaSettingsResponse.Products["+ i +"].ProductName"));
-			productsItem.setVersionName(_ctx.stringValue("OpsQueryEcsApiMetaSettingsResponse.Products["+ i +"].VersionName"));
 			productsItem.setProApiName(_ctx.stringValue("OpsQueryEcsApiMetaSettingsResponse.Products["+ i +"].ProApiName"));
+			productsItem.setVersionName(_ctx.stringValue("OpsQueryEcsApiMetaSettingsResponse.Products["+ i +"].VersionName"));
 
 			List<MetaInfosItem> metaInfos = new ArrayList<MetaInfosItem>();
 			for (int j = 0; j < _ctx.lengthValue("OpsQueryEcsApiMetaSettingsResponse.Products["+ i +"].MetaInfos.Length"); j++) {

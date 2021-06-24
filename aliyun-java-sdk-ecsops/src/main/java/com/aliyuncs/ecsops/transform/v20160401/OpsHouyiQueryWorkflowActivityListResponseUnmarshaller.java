@@ -31,19 +31,19 @@ public class OpsHouyiQueryWorkflowActivityListResponseUnmarshaller {
 		List<ActivityInstance> activityInstances = new ArrayList<ActivityInstance>();
 		for (int i = 0; i < _ctx.lengthValue("OpsHouyiQueryWorkflowActivityListResponse.ActivityInstances.Length"); i++) {
 			ActivityInstance activityInstance = new ActivityInstance();
-			activityInstance.setActivityId(_ctx.longValue("OpsHouyiQueryWorkflowActivityListResponse.ActivityInstances["+ i +"].ActivityId"));
-			activityInstance.setWorkflowId(_ctx.stringValue("OpsHouyiQueryWorkflowActivityListResponse.ActivityInstances["+ i +"].WorkflowId"));
-			activityInstance.setActivityName(_ctx.stringValue("OpsHouyiQueryWorkflowActivityListResponse.ActivityInstances["+ i +"].ActivityName"));
-			activityInstance.setBizMethod(_ctx.stringValue("OpsHouyiQueryWorkflowActivityListResponse.ActivityInstances["+ i +"].Method"));
 			activityInstance.setState(_ctx.stringValue("OpsHouyiQueryWorkflowActivityListResponse.ActivityInstances["+ i +"].State"));
-			activityInstance.setStartTime(_ctx.longValue("OpsHouyiQueryWorkflowActivityListResponse.ActivityInstances["+ i +"].StartTime"));
-			activityInstance.setEndTime(_ctx.longValue("OpsHouyiQueryWorkflowActivityListResponse.ActivityInstances["+ i +"].EndTime"));
-			activityInstance.setDuration(_ctx.longValue("OpsHouyiQueryWorkflowActivityListResponse.ActivityInstances["+ i +"].Duration"));
-			activityInstance.setCreateTime(_ctx.longValue("OpsHouyiQueryWorkflowActivityListResponse.ActivityInstances["+ i +"].CreateTime"));
-			activityInstance.setInput(_ctx.stringValue("OpsHouyiQueryWorkflowActivityListResponse.ActivityInstances["+ i +"].Input"));
-			activityInstance.setOutput(_ctx.stringValue("OpsHouyiQueryWorkflowActivityListResponse.ActivityInstances["+ i +"].Output"));
-			activityInstance.setError(_ctx.stringValue("OpsHouyiQueryWorkflowActivityListResponse.ActivityInstances["+ i +"].Error"));
 			activityInstance.setWorkerNode(_ctx.stringValue("OpsHouyiQueryWorkflowActivityListResponse.ActivityInstances["+ i +"].WorkerNode"));
+			activityInstance.setCreateTime(_ctx.longValue("OpsHouyiQueryWorkflowActivityListResponse.ActivityInstances["+ i +"].CreateTime"));
+			activityInstance.setActivityId(_ctx.longValue("OpsHouyiQueryWorkflowActivityListResponse.ActivityInstances["+ i +"].ActivityId"));
+			activityInstance.setBizMethod(_ctx.stringValue("OpsHouyiQueryWorkflowActivityListResponse.ActivityInstances["+ i +"].Method"));
+			activityInstance.setOutput(_ctx.stringValue("OpsHouyiQueryWorkflowActivityListResponse.ActivityInstances["+ i +"].Output"));
+			activityInstance.setInput(_ctx.stringValue("OpsHouyiQueryWorkflowActivityListResponse.ActivityInstances["+ i +"].Input"));
+			activityInstance.setEndTime(_ctx.longValue("OpsHouyiQueryWorkflowActivityListResponse.ActivityInstances["+ i +"].EndTime"));
+			activityInstance.setStartTime(_ctx.longValue("OpsHouyiQueryWorkflowActivityListResponse.ActivityInstances["+ i +"].StartTime"));
+			activityInstance.setError(_ctx.stringValue("OpsHouyiQueryWorkflowActivityListResponse.ActivityInstances["+ i +"].Error"));
+			activityInstance.setWorkflowId(_ctx.stringValue("OpsHouyiQueryWorkflowActivityListResponse.ActivityInstances["+ i +"].WorkflowId"));
+			activityInstance.setDuration(_ctx.longValue("OpsHouyiQueryWorkflowActivityListResponse.ActivityInstances["+ i +"].Duration"));
+			activityInstance.setActivityName(_ctx.stringValue("OpsHouyiQueryWorkflowActivityListResponse.ActivityInstances["+ i +"].ActivityName"));
 
 			activityInstances.add(activityInstance);
 		}

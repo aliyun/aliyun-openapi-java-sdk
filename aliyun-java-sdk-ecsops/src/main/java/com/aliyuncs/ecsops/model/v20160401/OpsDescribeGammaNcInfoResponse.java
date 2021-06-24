@@ -46,29 +46,21 @@ public class OpsDescribeGammaNcInfoResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String ncIp;
-
 		private String ncId;
-
-		private String sn;
-
-		private String aliUid;
-
-		private String group;
-
-		private String operator;
-
-		private String gmtCreate;
 
 		private Boolean getGammaConfig;
 
-		public String getNcIp() {
-			return this.ncIp;
-		}
+		private String sn;
 
-		public void setNcIp(String ncIp) {
-			this.ncIp = ncIp;
-		}
+		private String gmtCreate;
+
+		private String aliUid;
+
+		private String ncIp;
+
+		private String operator;
+
+		private String group;
 
 		public String getNcId() {
 			return this.ncId;
@@ -76,6 +68,14 @@ public class OpsDescribeGammaNcInfoResponse extends AcsResponse {
 
 		public void setNcId(String ncId) {
 			this.ncId = ncId;
+		}
+
+		public Boolean getGetGammaConfig() {
+			return this.getGammaConfig;
+		}
+
+		public void setGetGammaConfig(Boolean getGammaConfig) {
+			this.getGammaConfig = getGammaConfig;
 		}
 
 		public String getSn() {
@@ -86,6 +86,14 @@ public class OpsDescribeGammaNcInfoResponse extends AcsResponse {
 			this.sn = sn;
 		}
 
+		public String getGmtCreate() {
+			return this.gmtCreate;
+		}
+
+		public void setGmtCreate(String gmtCreate) {
+			this.gmtCreate = gmtCreate;
+		}
+
 		public String getAliUid() {
 			return this.aliUid;
 		}
@@ -94,12 +102,12 @@ public class OpsDescribeGammaNcInfoResponse extends AcsResponse {
 			this.aliUid = aliUid;
 		}
 
-		public String getGroup() {
-			return this.group;
+		public String getNcIp() {
+			return this.ncIp;
 		}
 
-		public void setGroup(String group) {
-			this.group = group;
+		public void setNcIp(String ncIp) {
+			this.ncIp = ncIp;
 		}
 
 		public String getOperator() {
@@ -110,20 +118,12 @@ public class OpsDescribeGammaNcInfoResponse extends AcsResponse {
 			this.operator = operator;
 		}
 
-		public String getGmtCreate() {
-			return this.gmtCreate;
+		public String getGroup() {
+			return this.group;
 		}
 
-		public void setGmtCreate(String gmtCreate) {
-			this.gmtCreate = gmtCreate;
-		}
-
-		public Boolean getGetGammaConfig() {
-			return this.getGammaConfig;
-		}
-
-		public void setGetGammaConfig(Boolean getGammaConfig) {
-			this.getGammaConfig = getGammaConfig;
+		public void setGroup(String group) {
+			this.group = group;
 		}
 	}
 

@@ -27,21 +27,21 @@ public class OpsDescribeCloudOpsIcloneAppsResponseUnmarshaller {
 	public static OpsDescribeCloudOpsIcloneAppsResponse unmarshall(OpsDescribeCloudOpsIcloneAppsResponse opsDescribeCloudOpsIcloneAppsResponse, UnmarshallerContext _ctx) {
 		
 		opsDescribeCloudOpsIcloneAppsResponse.setRequestId(_ctx.stringValue("OpsDescribeCloudOpsIcloneAppsResponse.RequestId"));
-		opsDescribeCloudOpsIcloneAppsResponse.setBizCode(_ctx.stringValue("OpsDescribeCloudOpsIcloneAppsResponse.BizCode"));
-		opsDescribeCloudOpsIcloneAppsResponse.setBizMessage(_ctx.stringValue("OpsDescribeCloudOpsIcloneAppsResponse.BizMessage"));
-		opsDescribeCloudOpsIcloneAppsResponse.setCount(_ctx.integerValue("OpsDescribeCloudOpsIcloneAppsResponse.Count"));
-		opsDescribeCloudOpsIcloneAppsResponse.setPage(_ctx.integerValue("OpsDescribeCloudOpsIcloneAppsResponse.Page"));
-		opsDescribeCloudOpsIcloneAppsResponse.setPageSize(_ctx.integerValue("OpsDescribeCloudOpsIcloneAppsResponse.PageSize"));
 		opsDescribeCloudOpsIcloneAppsResponse.setTotalCount(_ctx.integerValue("OpsDescribeCloudOpsIcloneAppsResponse.TotalCount"));
+		opsDescribeCloudOpsIcloneAppsResponse.setPageSize(_ctx.integerValue("OpsDescribeCloudOpsIcloneAppsResponse.PageSize"));
+		opsDescribeCloudOpsIcloneAppsResponse.setBizMessage(_ctx.stringValue("OpsDescribeCloudOpsIcloneAppsResponse.BizMessage"));
+		opsDescribeCloudOpsIcloneAppsResponse.setPage(_ctx.integerValue("OpsDescribeCloudOpsIcloneAppsResponse.Page"));
+		opsDescribeCloudOpsIcloneAppsResponse.setCount(_ctx.integerValue("OpsDescribeCloudOpsIcloneAppsResponse.Count"));
+		opsDescribeCloudOpsIcloneAppsResponse.setBizCode(_ctx.stringValue("OpsDescribeCloudOpsIcloneAppsResponse.BizCode"));
 
 		List<IcloneAppInfo> data = new ArrayList<IcloneAppInfo>();
 		for (int i = 0; i < _ctx.lengthValue("OpsDescribeCloudOpsIcloneAppsResponse.Data.Length"); i++) {
 			IcloneAppInfo icloneAppInfo = new IcloneAppInfo();
 			icloneAppInfo.setAppName(_ctx.stringValue("OpsDescribeCloudOpsIcloneAppsResponse.Data["+ i +"].AppName"));
+			icloneAppInfo.setSn(_ctx.stringValue("OpsDescribeCloudOpsIcloneAppsResponse.Data["+ i +"].Sn"));
 			icloneAppInfo.setIp(_ctx.stringValue("OpsDescribeCloudOpsIcloneAppsResponse.Data["+ i +"].Ip"));
 			icloneAppInfo.setOs(_ctx.stringValue("OpsDescribeCloudOpsIcloneAppsResponse.Data["+ i +"].Os"));
 			icloneAppInfo.setOsProfile(_ctx.stringValue("OpsDescribeCloudOpsIcloneAppsResponse.Data["+ i +"].OsProfile"));
-			icloneAppInfo.setSn(_ctx.stringValue("OpsDescribeCloudOpsIcloneAppsResponse.Data["+ i +"].Sn"));
 
 			data.add(icloneAppInfo);
 		}

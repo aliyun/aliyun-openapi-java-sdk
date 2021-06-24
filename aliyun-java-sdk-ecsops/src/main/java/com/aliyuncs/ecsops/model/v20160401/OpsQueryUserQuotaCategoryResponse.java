@@ -25,25 +25,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsQueryUserQuotaCategoryResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
-
-	private Integer pageNumber;
-
-	private Integer pageSize;
 
 	private String nextToken;
 
+	private Integer pageSize;
+
+	private String requestId;
+
+	private Integer pageNumber;
+
 	private List<Category> categories;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -53,12 +45,12 @@ public class OpsQueryUserQuotaCategoryResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public String getNextToken() {
+		return this.nextToken;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
 	}
 
 	public Integer getPageSize() {
@@ -69,12 +61,20 @@ public class OpsQueryUserQuotaCategoryResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public String getNextToken() {
-		return this.nextToken;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setNextToken(String nextToken) {
-		this.nextToken = nextToken;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<Category> getCategories() {
@@ -87,35 +87,131 @@ public class OpsQueryUserQuotaCategoryResponse extends AcsResponse {
 
 	public static class Category {
 
+		private Long baseQuota;
+
+		private String gmtModifiedStr;
+
+		private String quotaUnit;
+
+		private Integer payType;
+
+		private Integer networkType;
+
+		private String categoryName;
+
+		private Long reservedQuota;
+
+		private String regionId;
+
+		private Long resourceType;
+
+		private Long burstQuota;
+
+		private String zoneId;
+
+		private String categoryId;
+
 		private Long id;
 
 		private String gmtCreateStr;
 
-		private String gmtModifiedStr;
-
-		private String regionId;
-
-		private String zoneId;
-
-		private Integer payType;
-
-		private Long resourceType;
-
 		private String resourceName;
 
-		private Integer networkType;
+		public Long getBaseQuota() {
+			return this.baseQuota;
+		}
 
-		private String quotaUnit;
+		public void setBaseQuota(Long baseQuota) {
+			this.baseQuota = baseQuota;
+		}
 
-		private String categoryName;
+		public String getGmtModifiedStr() {
+			return this.gmtModifiedStr;
+		}
 
-		private String categoryId;
+		public void setGmtModifiedStr(String gmtModifiedStr) {
+			this.gmtModifiedStr = gmtModifiedStr;
+		}
 
-		private Long reservedQuota;
+		public String getQuotaUnit() {
+			return this.quotaUnit;
+		}
 
-		private Long baseQuota;
+		public void setQuotaUnit(String quotaUnit) {
+			this.quotaUnit = quotaUnit;
+		}
 
-		private Long burstQuota;
+		public Integer getPayType() {
+			return this.payType;
+		}
+
+		public void setPayType(Integer payType) {
+			this.payType = payType;
+		}
+
+		public Integer getNetworkType() {
+			return this.networkType;
+		}
+
+		public void setNetworkType(Integer networkType) {
+			this.networkType = networkType;
+		}
+
+		public String getCategoryName() {
+			return this.categoryName;
+		}
+
+		public void setCategoryName(String categoryName) {
+			this.categoryName = categoryName;
+		}
+
+		public Long getReservedQuota() {
+			return this.reservedQuota;
+		}
+
+		public void setReservedQuota(Long reservedQuota) {
+			this.reservedQuota = reservedQuota;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		public Long getResourceType() {
+			return this.resourceType;
+		}
+
+		public void setResourceType(Long resourceType) {
+			this.resourceType = resourceType;
+		}
+
+		public Long getBurstQuota() {
+			return this.burstQuota;
+		}
+
+		public void setBurstQuota(Long burstQuota) {
+			this.burstQuota = burstQuota;
+		}
+
+		public String getZoneId() {
+			return this.zoneId;
+		}
+
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
+		}
+
+		public String getCategoryId() {
+			return this.categoryId;
+		}
+
+		public void setCategoryId(String categoryId) {
+			this.categoryId = categoryId;
+		}
 
 		public Long getId() {
 			return this.id;
@@ -133,108 +229,12 @@ public class OpsQueryUserQuotaCategoryResponse extends AcsResponse {
 			this.gmtCreateStr = gmtCreateStr;
 		}
 
-		public String getGmtModifiedStr() {
-			return this.gmtModifiedStr;
-		}
-
-		public void setGmtModifiedStr(String gmtModifiedStr) {
-			this.gmtModifiedStr = gmtModifiedStr;
-		}
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		public String getZoneId() {
-			return this.zoneId;
-		}
-
-		public void setZoneId(String zoneId) {
-			this.zoneId = zoneId;
-		}
-
-		public Integer getPayType() {
-			return this.payType;
-		}
-
-		public void setPayType(Integer payType) {
-			this.payType = payType;
-		}
-
-		public Long getResourceType() {
-			return this.resourceType;
-		}
-
-		public void setResourceType(Long resourceType) {
-			this.resourceType = resourceType;
-		}
-
 		public String getResourceName() {
 			return this.resourceName;
 		}
 
 		public void setResourceName(String resourceName) {
 			this.resourceName = resourceName;
-		}
-
-		public Integer getNetworkType() {
-			return this.networkType;
-		}
-
-		public void setNetworkType(Integer networkType) {
-			this.networkType = networkType;
-		}
-
-		public String getQuotaUnit() {
-			return this.quotaUnit;
-		}
-
-		public void setQuotaUnit(String quotaUnit) {
-			this.quotaUnit = quotaUnit;
-		}
-
-		public String getCategoryName() {
-			return this.categoryName;
-		}
-
-		public void setCategoryName(String categoryName) {
-			this.categoryName = categoryName;
-		}
-
-		public String getCategoryId() {
-			return this.categoryId;
-		}
-
-		public void setCategoryId(String categoryId) {
-			this.categoryId = categoryId;
-		}
-
-		public Long getReservedQuota() {
-			return this.reservedQuota;
-		}
-
-		public void setReservedQuota(Long reservedQuota) {
-			this.reservedQuota = reservedQuota;
-		}
-
-		public Long getBaseQuota() {
-			return this.baseQuota;
-		}
-
-		public void setBaseQuota(Long baseQuota) {
-			this.baseQuota = baseQuota;
-		}
-
-		public Long getBurstQuota() {
-			return this.burstQuota;
-		}
-
-		public void setBurstQuota(Long burstQuota) {
-			this.burstQuota = burstQuota;
 		}
 	}
 

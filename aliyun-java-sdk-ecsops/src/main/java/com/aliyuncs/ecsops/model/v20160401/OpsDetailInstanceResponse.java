@@ -25,9 +25,39 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsDetailInstanceResponse extends AcsResponse {
 
-	private String requestId;
+	private String rackId;
 
-	private String regionId;
+	private String publicAssignIpAddress;
+
+	private String description;
+
+	private String vswId;
+
+	private String securityControl;
+
+	private String businessStatus;
+
+	private String netWorkType;
+
+	private String houyiStatus;
+
+	private String innerIpAddress;
+
+	private String publicAssignNatIpAddress;
+
+	private String imageId;
+
+	private String eipId;
+
+	private String instanceType;
+
+	private String vlanId;
+
+	private String status;
+
+	private Boolean ioOptimized;
+
+	private String requestId;
 
 	private String zoneId;
 
@@ -35,77 +65,175 @@ public class OpsDetailInstanceResponse extends AcsResponse {
 
 	private String instanceId;
 
-	private Long resourceOwnerId;
+	private Integer intranetTx;
 
 	private String hostname;
 
-	private String instanceName;
-
-	private String description;
-
-	private String status;
-
-	private String businessStatus;
-
-	private String houyiStatus;
-
-	private String innerIpAddress;
-
-	private String publicBindIpAddress;
-
-	private String publicAssignIpAddress;
-
-	private String publicAssignNatIpAddress;
-
-	private String imageId;
-
-	private String imageName;
-
-	private Integer cores;
-
-	private Integer mem;
-
-	private Integer intranetRx;
-
-	private Integer intranetTx;
-
-	private Integer internetRx;
-
-	private Integer internetTx;
-
-	private String securityControl;
+	private Boolean networkValidation;
 
 	private String systemDeviceCategory;
 
-	private String vpcId;
-
-	private String vswId;
-
-	private String natIp;
+	private Integer payType;
 
 	private String eip;
 
-	private String eipId;
+	private Long resourceOwnerId;
+
+	private Integer intranetRx;
+
+	private String natIp;
+
+	private String instanceName;
+
+	private Integer cores;
+
+	private String imageName;
 
 	private Integer eipBandwidth;
 
-	private String netWorkType;
+	private String vpcId;
 
-	private Boolean networkValidation;
-
-	private Boolean ioOptimized;
-
-	private String vlanId;
+	private Integer mem;
 
 	private String ncId;
 
-	private String rackId;
+	private String publicBindIpAddress;
 
-	private String instanceType;
+	private Integer internetTx;
 
-	private Integer payType;
+	private Integer internetRx;
+
+	private String regionId;
 
 	private List<String> securityGroupIds;
+
+	public String getRackId() {
+		return this.rackId;
+	}
+
+	public void setRackId(String rackId) {
+		this.rackId = rackId;
+	}
+
+	public String getPublicAssignIpAddress() {
+		return this.publicAssignIpAddress;
+	}
+
+	public void setPublicAssignIpAddress(String publicAssignIpAddress) {
+		this.publicAssignIpAddress = publicAssignIpAddress;
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public String getVswId() {
+		return this.vswId;
+	}
+
+	public void setVswId(String vswId) {
+		this.vswId = vswId;
+	}
+
+	public String getSecurityControl() {
+		return this.securityControl;
+	}
+
+	public void setSecurityControl(String securityControl) {
+		this.securityControl = securityControl;
+	}
+
+	public String getBusinessStatus() {
+		return this.businessStatus;
+	}
+
+	public void setBusinessStatus(String businessStatus) {
+		this.businessStatus = businessStatus;
+	}
+
+	public String getNetWorkType() {
+		return this.netWorkType;
+	}
+
+	public void setNetWorkType(String netWorkType) {
+		this.netWorkType = netWorkType;
+	}
+
+	public String getHouyiStatus() {
+		return this.houyiStatus;
+	}
+
+	public void setHouyiStatus(String houyiStatus) {
+		this.houyiStatus = houyiStatus;
+	}
+
+	public String getInnerIpAddress() {
+		return this.innerIpAddress;
+	}
+
+	public void setInnerIpAddress(String innerIpAddress) {
+		this.innerIpAddress = innerIpAddress;
+	}
+
+	public String getPublicAssignNatIpAddress() {
+		return this.publicAssignNatIpAddress;
+	}
+
+	public void setPublicAssignNatIpAddress(String publicAssignNatIpAddress) {
+		this.publicAssignNatIpAddress = publicAssignNatIpAddress;
+	}
+
+	public String getImageId() {
+		return this.imageId;
+	}
+
+	public void setImageId(String imageId) {
+		this.imageId = imageId;
+	}
+
+	public String getEipId() {
+		return this.eipId;
+	}
+
+	public void setEipId(String eipId) {
+		this.eipId = eipId;
+	}
+
+	public String getInstanceType() {
+		return this.instanceType;
+	}
+
+	public void setInstanceType(String instanceType) {
+		this.instanceType = instanceType;
+	}
+
+	public String getVlanId() {
+		return this.vlanId;
+	}
+
+	public void setVlanId(String vlanId) {
+		this.vlanId = vlanId;
+	}
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	public Boolean getIoOptimized() {
+		return this.ioOptimized;
+	}
+
+	public void setIoOptimized(Boolean ioOptimized) {
+		this.ioOptimized = ioOptimized;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -113,14 +241,6 @@ public class OpsDetailInstanceResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getRegionId() {
-		return this.regionId;
-	}
-
-	public void setRegionId(String regionId) {
-		this.regionId = regionId;
 	}
 
 	public String getZoneId() {
@@ -147,12 +267,12 @@ public class OpsDetailInstanceResponse extends AcsResponse {
 		this.instanceId = instanceId;
 	}
 
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
+	public Integer getIntranetTx() {
+		return this.intranetTx;
 	}
 
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
+	public void setIntranetTx(Integer intranetTx) {
+		this.intranetTx = intranetTx;
 	}
 
 	public String getHostname() {
@@ -163,148 +283,12 @@ public class OpsDetailInstanceResponse extends AcsResponse {
 		this.hostname = hostname;
 	}
 
-	public String getInstanceName() {
-		return this.instanceName;
+	public Boolean getNetworkValidation() {
+		return this.networkValidation;
 	}
 
-	public void setInstanceName(String instanceName) {
-		this.instanceName = instanceName;
-	}
-
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-	}
-
-	public String getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-	}
-
-	public String getBusinessStatus() {
-		return this.businessStatus;
-	}
-
-	public void setBusinessStatus(String businessStatus) {
-		this.businessStatus = businessStatus;
-	}
-
-	public String getHouyiStatus() {
-		return this.houyiStatus;
-	}
-
-	public void setHouyiStatus(String houyiStatus) {
-		this.houyiStatus = houyiStatus;
-	}
-
-	public String getInnerIpAddress() {
-		return this.innerIpAddress;
-	}
-
-	public void setInnerIpAddress(String innerIpAddress) {
-		this.innerIpAddress = innerIpAddress;
-	}
-
-	public String getPublicBindIpAddress() {
-		return this.publicBindIpAddress;
-	}
-
-	public void setPublicBindIpAddress(String publicBindIpAddress) {
-		this.publicBindIpAddress = publicBindIpAddress;
-	}
-
-	public String getPublicAssignIpAddress() {
-		return this.publicAssignIpAddress;
-	}
-
-	public void setPublicAssignIpAddress(String publicAssignIpAddress) {
-		this.publicAssignIpAddress = publicAssignIpAddress;
-	}
-
-	public String getPublicAssignNatIpAddress() {
-		return this.publicAssignNatIpAddress;
-	}
-
-	public void setPublicAssignNatIpAddress(String publicAssignNatIpAddress) {
-		this.publicAssignNatIpAddress = publicAssignNatIpAddress;
-	}
-
-	public String getImageId() {
-		return this.imageId;
-	}
-
-	public void setImageId(String imageId) {
-		this.imageId = imageId;
-	}
-
-	public String getImageName() {
-		return this.imageName;
-	}
-
-	public void setImageName(String imageName) {
-		this.imageName = imageName;
-	}
-
-	public Integer getCores() {
-		return this.cores;
-	}
-
-	public void setCores(Integer cores) {
-		this.cores = cores;
-	}
-
-	public Integer getMem() {
-		return this.mem;
-	}
-
-	public void setMem(Integer mem) {
-		this.mem = mem;
-	}
-
-	public Integer getIntranetRx() {
-		return this.intranetRx;
-	}
-
-	public void setIntranetRx(Integer intranetRx) {
-		this.intranetRx = intranetRx;
-	}
-
-	public Integer getIntranetTx() {
-		return this.intranetTx;
-	}
-
-	public void setIntranetTx(Integer intranetTx) {
-		this.intranetTx = intranetTx;
-	}
-
-	public Integer getInternetRx() {
-		return this.internetRx;
-	}
-
-	public void setInternetRx(Integer internetRx) {
-		this.internetRx = internetRx;
-	}
-
-	public Integer getInternetTx() {
-		return this.internetTx;
-	}
-
-	public void setInternetTx(Integer internetTx) {
-		this.internetTx = internetTx;
-	}
-
-	public String getSecurityControl() {
-		return this.securityControl;
-	}
-
-	public void setSecurityControl(String securityControl) {
-		this.securityControl = securityControl;
+	public void setNetworkValidation(Boolean networkValidation) {
+		this.networkValidation = networkValidation;
 	}
 
 	public String getSystemDeviceCategory() {
@@ -315,28 +299,12 @@ public class OpsDetailInstanceResponse extends AcsResponse {
 		this.systemDeviceCategory = systemDeviceCategory;
 	}
 
-	public String getVpcId() {
-		return this.vpcId;
+	public Integer getPayType() {
+		return this.payType;
 	}
 
-	public void setVpcId(String vpcId) {
-		this.vpcId = vpcId;
-	}
-
-	public String getVswId() {
-		return this.vswId;
-	}
-
-	public void setVswId(String vswId) {
-		this.vswId = vswId;
-	}
-
-	public String getNatIp() {
-		return this.natIp;
-	}
-
-	public void setNatIp(String natIp) {
-		this.natIp = natIp;
+	public void setPayType(Integer payType) {
+		this.payType = payType;
 	}
 
 	public String getEip() {
@@ -347,12 +315,52 @@ public class OpsDetailInstanceResponse extends AcsResponse {
 		this.eip = eip;
 	}
 
-	public String getEipId() {
-		return this.eipId;
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
 	}
 
-	public void setEipId(String eipId) {
-		this.eipId = eipId;
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+	}
+
+	public Integer getIntranetRx() {
+		return this.intranetRx;
+	}
+
+	public void setIntranetRx(Integer intranetRx) {
+		this.intranetRx = intranetRx;
+	}
+
+	public String getNatIp() {
+		return this.natIp;
+	}
+
+	public void setNatIp(String natIp) {
+		this.natIp = natIp;
+	}
+
+	public String getInstanceName() {
+		return this.instanceName;
+	}
+
+	public void setInstanceName(String instanceName) {
+		this.instanceName = instanceName;
+	}
+
+	public Integer getCores() {
+		return this.cores;
+	}
+
+	public void setCores(Integer cores) {
+		this.cores = cores;
+	}
+
+	public String getImageName() {
+		return this.imageName;
+	}
+
+	public void setImageName(String imageName) {
+		this.imageName = imageName;
 	}
 
 	public Integer getEipBandwidth() {
@@ -363,36 +371,20 @@ public class OpsDetailInstanceResponse extends AcsResponse {
 		this.eipBandwidth = eipBandwidth;
 	}
 
-	public String getNetWorkType() {
-		return this.netWorkType;
+	public String getVpcId() {
+		return this.vpcId;
 	}
 
-	public void setNetWorkType(String netWorkType) {
-		this.netWorkType = netWorkType;
+	public void setVpcId(String vpcId) {
+		this.vpcId = vpcId;
 	}
 
-	public Boolean getNetworkValidation() {
-		return this.networkValidation;
+	public Integer getMem() {
+		return this.mem;
 	}
 
-	public void setNetworkValidation(Boolean networkValidation) {
-		this.networkValidation = networkValidation;
-	}
-
-	public Boolean getIoOptimized() {
-		return this.ioOptimized;
-	}
-
-	public void setIoOptimized(Boolean ioOptimized) {
-		this.ioOptimized = ioOptimized;
-	}
-
-	public String getVlanId() {
-		return this.vlanId;
-	}
-
-	public void setVlanId(String vlanId) {
-		this.vlanId = vlanId;
+	public void setMem(Integer mem) {
+		this.mem = mem;
 	}
 
 	public String getNcId() {
@@ -403,28 +395,36 @@ public class OpsDetailInstanceResponse extends AcsResponse {
 		this.ncId = ncId;
 	}
 
-	public String getRackId() {
-		return this.rackId;
+	public String getPublicBindIpAddress() {
+		return this.publicBindIpAddress;
 	}
 
-	public void setRackId(String rackId) {
-		this.rackId = rackId;
+	public void setPublicBindIpAddress(String publicBindIpAddress) {
+		this.publicBindIpAddress = publicBindIpAddress;
 	}
 
-	public String getInstanceType() {
-		return this.instanceType;
+	public Integer getInternetTx() {
+		return this.internetTx;
 	}
 
-	public void setInstanceType(String instanceType) {
-		this.instanceType = instanceType;
+	public void setInternetTx(Integer internetTx) {
+		this.internetTx = internetTx;
 	}
 
-	public Integer getPayType() {
-		return this.payType;
+	public Integer getInternetRx() {
+		return this.internetRx;
 	}
 
-	public void setPayType(Integer payType) {
-		this.payType = payType;
+	public void setInternetRx(Integer internetRx) {
+		this.internetRx = internetRx;
+	}
+
+	public String getRegionId() {
+		return this.regionId;
+	}
+
+	public void setRegionId(String regionId) {
+		this.regionId = regionId;
 	}
 
 	public List<String> getSecurityGroupIds() {

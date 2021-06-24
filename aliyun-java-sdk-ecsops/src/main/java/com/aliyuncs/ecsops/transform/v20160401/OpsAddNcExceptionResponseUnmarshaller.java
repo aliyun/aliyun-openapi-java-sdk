@@ -25,9 +25,9 @@ public class OpsAddNcExceptionResponseUnmarshaller {
 		opsAddNcExceptionResponse.setRequestId(_ctx.stringValue("OpsAddNcExceptionResponse.RequestId"));
 		opsAddNcExceptionResponse.setStatus(_ctx.stringValue("OpsAddNcExceptionResponse.Status"));
 		opsAddNcExceptionResponse.setFinished(_ctx.booleanValue("OpsAddNcExceptionResponse.Finished"));
+		opsAddNcExceptionResponse.setErrorInfo(_ctx.stringValue("OpsAddNcExceptionResponse.ErrorInfo"));
 		opsAddNcExceptionResponse.setToken(_ctx.stringValue("OpsAddNcExceptionResponse.Token"));
 		opsAddNcExceptionResponse.setResult(_ctx.stringValue("OpsAddNcExceptionResponse.Result"));
-		opsAddNcExceptionResponse.setErrorInfo(_ctx.stringValue("OpsAddNcExceptionResponse.ErrorInfo"));
 	 
 	 	return opsAddNcExceptionResponse;
 	}

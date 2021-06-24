@@ -27,31 +27,31 @@ public class OpsDescribeMigrationInstancesResponseUnmarshaller {
 	public static OpsDescribeMigrationInstancesResponse unmarshall(OpsDescribeMigrationInstancesResponse opsDescribeMigrationInstancesResponse, UnmarshallerContext _ctx) {
 		
 		opsDescribeMigrationInstancesResponse.setRequestId(_ctx.stringValue("OpsDescribeMigrationInstancesResponse.RequestId"));
-		opsDescribeMigrationInstancesResponse.setTotal(_ctx.integerValue("OpsDescribeMigrationInstancesResponse.Total"));
 		opsDescribeMigrationInstancesResponse.setPageSize(_ctx.integerValue("OpsDescribeMigrationInstancesResponse.PageSize"));
 		opsDescribeMigrationInstancesResponse.setPageNumber(_ctx.integerValue("OpsDescribeMigrationInstancesResponse.PageNumber"));
+		opsDescribeMigrationInstancesResponse.setTotal(_ctx.integerValue("OpsDescribeMigrationInstancesResponse.Total"));
 
 		List<Instance> instanceSet = new ArrayList<Instance>();
 		for (int i = 0; i < _ctx.lengthValue("OpsDescribeMigrationInstancesResponse.InstanceSet.Length"); i++) {
 			Instance instance = new Instance();
-			instance.setNumericId(_ctx.longValue("OpsDescribeMigrationInstancesResponse.InstanceSet["+ i +"].NumericId"));
-			instance.setInstanceId(_ctx.stringValue("OpsDescribeMigrationInstancesResponse.InstanceSet["+ i +"].InstanceId"));
-			instance.setAliUid(_ctx.longValue("OpsDescribeMigrationInstancesResponse.InstanceSet["+ i +"].AliUid"));
+			instance.setStatus(_ctx.stringValue("OpsDescribeMigrationInstancesResponse.InstanceSet["+ i +"].Status"));
 			instance.setNetworkTranType(_ctx.integerValue("OpsDescribeMigrationInstancesResponse.InstanceSet["+ i +"].NetworkTranType"));
-			instance.setTransType(_ctx.integerValue("OpsDescribeMigrationInstancesResponse.InstanceSet["+ i +"].TransType"));
+			instance.setFinishTime(_ctx.stringValue("OpsDescribeMigrationInstancesResponse.InstanceSet["+ i +"].FinishTime"));
 			instance.setSourceIzNo(_ctx.stringValue("OpsDescribeMigrationInstancesResponse.InstanceSet["+ i +"].SourceIzNo"));
-			instance.setTargetIzNo(_ctx.stringValue("OpsDescribeMigrationInstancesResponse.InstanceSet["+ i +"].TargetIzNo"));
-			instance.setPublicIp(_ctx.stringValue("OpsDescribeMigrationInstancesResponse.InstanceSet["+ i +"].PublicIp"));
-			instance.setPrivateIpBefore(_ctx.stringValue("OpsDescribeMigrationInstancesResponse.InstanceSet["+ i +"].PrivateIpBefore"));
+			instance.setNeedKeepPrivateIp(_ctx.booleanValue("OpsDescribeMigrationInstancesResponse.InstanceSet["+ i +"].NeedKeepPrivateIp"));
 			instance.setPrivateIpAfter(_ctx.stringValue("OpsDescribeMigrationInstancesResponse.InstanceSet["+ i +"].PrivateIpAfter"));
 			instance.setCreateTime(_ctx.stringValue("OpsDescribeMigrationInstancesResponse.InstanceSet["+ i +"].CreateTime"));
-			instance.setStartTime(_ctx.stringValue("OpsDescribeMigrationInstancesResponse.InstanceSet["+ i +"].StartTime"));
-			instance.setFinishTime(_ctx.stringValue("OpsDescribeMigrationInstancesResponse.InstanceSet["+ i +"].FinishTime"));
-			instance.setNeedTransDisk(_ctx.booleanValue("OpsDescribeMigrationInstancesResponse.InstanceSet["+ i +"].NeedTransDisk"));
-			instance.setNeedKeepPrivateIp(_ctx.booleanValue("OpsDescribeMigrationInstancesResponse.InstanceSet["+ i +"].NeedKeepPrivateIp"));
 			instance.setNeedNetworkConnectivity(_ctx.booleanValue("OpsDescribeMigrationInstancesResponse.InstanceSet["+ i +"].NeedNetworkConnectivity"));
+			instance.setAliUid(_ctx.longValue("OpsDescribeMigrationInstancesResponse.InstanceSet["+ i +"].AliUid"));
+			instance.setInstanceId(_ctx.stringValue("OpsDescribeMigrationInstancesResponse.InstanceSet["+ i +"].InstanceId"));
+			instance.setTargetIzNo(_ctx.stringValue("OpsDescribeMigrationInstancesResponse.InstanceSet["+ i +"].TargetIzNo"));
+			instance.setTransType(_ctx.integerValue("OpsDescribeMigrationInstancesResponse.InstanceSet["+ i +"].TransType"));
+			instance.setNeedTransDisk(_ctx.booleanValue("OpsDescribeMigrationInstancesResponse.InstanceSet["+ i +"].NeedTransDisk"));
 			instance.setMigrationPlanId(_ctx.stringValue("OpsDescribeMigrationInstancesResponse.InstanceSet["+ i +"].MigrationPlanId"));
-			instance.setStatus(_ctx.stringValue("OpsDescribeMigrationInstancesResponse.InstanceSet["+ i +"].Status"));
+			instance.setStartTime(_ctx.stringValue("OpsDescribeMigrationInstancesResponse.InstanceSet["+ i +"].StartTime"));
+			instance.setPublicIp(_ctx.stringValue("OpsDescribeMigrationInstancesResponse.InstanceSet["+ i +"].PublicIp"));
+			instance.setPrivateIpBefore(_ctx.stringValue("OpsDescribeMigrationInstancesResponse.InstanceSet["+ i +"].PrivateIpBefore"));
+			instance.setNumericId(_ctx.longValue("OpsDescribeMigrationInstancesResponse.InstanceSet["+ i +"].NumericId"));
 
 			instanceSet.add(instance);
 		}

@@ -31,10 +31,10 @@ public class OpsDescribeBusinessModulesResponseUnmarshaller {
 		List<BusinessModuleSet> businessModuleSets = new ArrayList<BusinessModuleSet>();
 		for (int i = 0; i < _ctx.lengthValue("OpsDescribeBusinessModulesResponse.BusinessModuleSets.Length"); i++) {
 			BusinessModuleSet businessModuleSet = new BusinessModuleSet();
-			businessModuleSet.setId(_ctx.longValue("OpsDescribeBusinessModulesResponse.BusinessModuleSets["+ i +"].Id"));
-			businessModuleSet.setBusinessId(_ctx.longValue("OpsDescribeBusinessModulesResponse.BusinessModuleSets["+ i +"].BusinessId"));
 			businessModuleSet.setModuleCode(_ctx.stringValue("OpsDescribeBusinessModulesResponse.BusinessModuleSets["+ i +"].moduleCode"));
 			businessModuleSet.setModuleTag(_ctx.stringValue("OpsDescribeBusinessModulesResponse.BusinessModuleSets["+ i +"].moduleTag"));
+			businessModuleSet.setBusinessId(_ctx.longValue("OpsDescribeBusinessModulesResponse.BusinessModuleSets["+ i +"].BusinessId"));
+			businessModuleSet.setId(_ctx.longValue("OpsDescribeBusinessModulesResponse.BusinessModuleSets["+ i +"].Id"));
 
 			businessModuleSets.add(businessModuleSet);
 		}

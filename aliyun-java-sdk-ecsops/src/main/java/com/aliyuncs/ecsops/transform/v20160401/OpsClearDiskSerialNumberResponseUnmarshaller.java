@@ -32,9 +32,9 @@ public class OpsClearDiskSerialNumberResponseUnmarshaller {
 		List<FailedDisk> failedDiskList = new ArrayList<FailedDisk>();
 		for (int i = 0; i < _ctx.lengthValue("OpsClearDiskSerialNumberResponse.FailedDiskList.Length"); i++) {
 			FailedDisk failedDisk = new FailedDisk();
-			failedDisk.setDiskId(_ctx.stringValue("OpsClearDiskSerialNumberResponse.FailedDiskList["+ i +"].DiskId"));
 			failedDisk.setCode(_ctx.stringValue("OpsClearDiskSerialNumberResponse.FailedDiskList["+ i +"].Code"));
 			failedDisk.setMessage(_ctx.stringValue("OpsClearDiskSerialNumberResponse.FailedDiskList["+ i +"].Message"));
+			failedDisk.setDiskId(_ctx.stringValue("OpsClearDiskSerialNumberResponse.FailedDiskList["+ i +"].DiskId"));
 
 			failedDiskList.add(failedDisk);
 		}

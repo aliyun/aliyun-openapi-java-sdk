@@ -89,23 +89,15 @@ public class OpsEccQueryNcTemplatesResponse extends AcsResponse {
 
 		public static class TemplateInfo {
 
-			private String templateName;
-
 			private String templateDesc;
-
-			private String adjustStandModels;
 
 			private Long gmtCreate;
 
 			private Long gmtModified;
 
-			public String getTemplateName() {
-				return this.templateName;
-			}
+			private String templateName;
 
-			public void setTemplateName(String templateName) {
-				this.templateName = templateName;
-			}
+			private String adjustStandModels;
 
 			public String getTemplateDesc() {
 				return this.templateDesc;
@@ -113,14 +105,6 @@ public class OpsEccQueryNcTemplatesResponse extends AcsResponse {
 
 			public void setTemplateDesc(String templateDesc) {
 				this.templateDesc = templateDesc;
-			}
-
-			public String getAdjustStandModels() {
-				return this.adjustStandModels;
-			}
-
-			public void setAdjustStandModels(String adjustStandModels) {
-				this.adjustStandModels = adjustStandModels;
 			}
 
 			public Long getGmtCreate() {
@@ -137,6 +121,22 @@ public class OpsEccQueryNcTemplatesResponse extends AcsResponse {
 
 			public void setGmtModified(Long gmtModified) {
 				this.gmtModified = gmtModified;
+			}
+
+			public String getTemplateName() {
+				return this.templateName;
+			}
+
+			public void setTemplateName(String templateName) {
+				this.templateName = templateName;
+			}
+
+			public String getAdjustStandModels() {
+				return this.adjustStandModels;
+			}
+
+			public void setAdjustStandModels(String adjustStandModels) {
+				this.adjustStandModels = adjustStandModels;
 			}
 		}
 	}

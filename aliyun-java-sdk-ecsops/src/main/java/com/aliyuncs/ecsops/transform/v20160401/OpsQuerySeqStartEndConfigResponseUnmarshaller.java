@@ -31,8 +31,8 @@ public class OpsQuerySeqStartEndConfigResponseUnmarshaller {
 		List<SeqStartEndConfig> seqStartEndConfigs = new ArrayList<SeqStartEndConfig>();
 		for (int i = 0; i < _ctx.lengthValue("OpsQuerySeqStartEndConfigResponse.SeqStartEndConfigs.Length"); i++) {
 			SeqStartEndConfig seqStartEndConfig = new SeqStartEndConfig();
-			seqStartEndConfig.setName(_ctx.stringValue("OpsQuerySeqStartEndConfigResponse.SeqStartEndConfigs["+ i +"].Name"));
 			seqStartEndConfig.setDescription(_ctx.stringValue("OpsQuerySeqStartEndConfigResponse.SeqStartEndConfigs["+ i +"].Description"));
+			seqStartEndConfig.setName(_ctx.stringValue("OpsQuerySeqStartEndConfigResponse.SeqStartEndConfigs["+ i +"].Name"));
 
 			List<String> startEvents = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("OpsQuerySeqStartEndConfigResponse.SeqStartEndConfigs["+ i +"].StartEvents.Length"); j++) {

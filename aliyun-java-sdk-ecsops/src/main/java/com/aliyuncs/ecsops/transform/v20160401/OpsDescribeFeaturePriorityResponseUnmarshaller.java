@@ -27,22 +27,22 @@ public class OpsDescribeFeaturePriorityResponseUnmarshaller {
 	public static OpsDescribeFeaturePriorityResponse unmarshall(OpsDescribeFeaturePriorityResponse opsDescribeFeaturePriorityResponse, UnmarshallerContext _ctx) {
 		
 		opsDescribeFeaturePriorityResponse.setRequestId(_ctx.stringValue("OpsDescribeFeaturePriorityResponse.RequestId"));
-		opsDescribeFeaturePriorityResponse.setPage(_ctx.integerValue("OpsDescribeFeaturePriorityResponse.Page"));
-		opsDescribeFeaturePriorityResponse.setPageSize(_ctx.integerValue("OpsDescribeFeaturePriorityResponse.PageSize"));
 		opsDescribeFeaturePriorityResponse.setTotalCount(_ctx.integerValue("OpsDescribeFeaturePriorityResponse.TotalCount"));
+		opsDescribeFeaturePriorityResponse.setPageSize(_ctx.integerValue("OpsDescribeFeaturePriorityResponse.PageSize"));
+		opsDescribeFeaturePriorityResponse.setPage(_ctx.integerValue("OpsDescribeFeaturePriorityResponse.Page"));
 		opsDescribeFeaturePriorityResponse.setCount(_ctx.integerValue("OpsDescribeFeaturePriorityResponse.Count"));
 
 		List<FeaturePriority> featurePriorities = new ArrayList<FeaturePriority>();
 		for (int i = 0; i < _ctx.lengthValue("OpsDescribeFeaturePriorityResponse.FeaturePriorities.Length"); i++) {
 			FeaturePriority featurePriority = new FeaturePriority();
-			featurePriority.setGmtCreate(_ctx.stringValue("OpsDescribeFeaturePriorityResponse.FeaturePriorities["+ i +"].GmtCreate"));
-			featurePriority.setGmtModified(_ctx.stringValue("OpsDescribeFeaturePriorityResponse.FeaturePriorities["+ i +"].GmtModified"));
-			featurePriority.setDeleted(_ctx.booleanValue("OpsDescribeFeaturePriorityResponse.FeaturePriorities["+ i +"].Deleted"));
-			featurePriority.setProblemClassification(_ctx.stringValue("OpsDescribeFeaturePriorityResponse.FeaturePriorities["+ i +"].ProblemClassification"));
-			featurePriority.setFeatureName(_ctx.stringValue("OpsDescribeFeaturePriorityResponse.FeaturePriorities["+ i +"].FeatureName"));
 			featurePriority.setPriorityLevel(_ctx.integerValue("OpsDescribeFeaturePriorityResponse.FeaturePriorities["+ i +"].PriorityLevel"));
 			featurePriority.setCreateUserName(_ctx.stringValue("OpsDescribeFeaturePriorityResponse.FeaturePriorities["+ i +"].CreateUserName"));
+			featurePriority.setFeatureName(_ctx.stringValue("OpsDescribeFeaturePriorityResponse.FeaturePriorities["+ i +"].FeatureName"));
+			featurePriority.setGmtCreate(_ctx.stringValue("OpsDescribeFeaturePriorityResponse.FeaturePriorities["+ i +"].GmtCreate"));
+			featurePriority.setDeleted(_ctx.booleanValue("OpsDescribeFeaturePriorityResponse.FeaturePriorities["+ i +"].Deleted"));
+			featurePriority.setGmtModified(_ctx.stringValue("OpsDescribeFeaturePriorityResponse.FeaturePriorities["+ i +"].GmtModified"));
 			featurePriority.setLastModifiedUserName(_ctx.stringValue("OpsDescribeFeaturePriorityResponse.FeaturePriorities["+ i +"].LastModifiedUserName"));
+			featurePriority.setProblemClassification(_ctx.stringValue("OpsDescribeFeaturePriorityResponse.FeaturePriorities["+ i +"].ProblemClassification"));
 
 			featurePriorities.add(featurePriority);
 		}

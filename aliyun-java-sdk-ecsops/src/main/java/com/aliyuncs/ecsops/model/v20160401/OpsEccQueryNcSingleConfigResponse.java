@@ -46,32 +46,32 @@ public class OpsEccQueryNcSingleConfigResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String category;
+		private String status;
 
 		private String gmtCreated;
+
+		private String sN;
+
+		private String itemValue;
+
+		private String itemName;
+
+		private Integer version;
+
+		private String itemType;
+
+		private String category;
 
 		private String gmtModified;
 
 		private String id;
 
-		private String itemName;
-
-		private String itemType;
-
-		private String itemValue;
-
-		private String sN;
-
-		private String status;
-
-		private Integer version;
-
-		public String getCategory() {
-			return this.category;
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setCategory(String category) {
-			this.category = category;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public String getGmtCreated() {
@@ -80,6 +80,54 @@ public class OpsEccQueryNcSingleConfigResponse extends AcsResponse {
 
 		public void setGmtCreated(String gmtCreated) {
 			this.gmtCreated = gmtCreated;
+		}
+
+		public String getSN() {
+			return this.sN;
+		}
+
+		public void setSN(String sN) {
+			this.sN = sN;
+		}
+
+		public String getItemValue() {
+			return this.itemValue;
+		}
+
+		public void setItemValue(String itemValue) {
+			this.itemValue = itemValue;
+		}
+
+		public String getItemName() {
+			return this.itemName;
+		}
+
+		public void setItemName(String itemName) {
+			this.itemName = itemName;
+		}
+
+		public Integer getVersion() {
+			return this.version;
+		}
+
+		public void setVersion(Integer version) {
+			this.version = version;
+		}
+
+		public String getItemType() {
+			return this.itemType;
+		}
+
+		public void setItemType(String itemType) {
+			this.itemType = itemType;
+		}
+
+		public String getCategory() {
+			return this.category;
+		}
+
+		public void setCategory(String category) {
+			this.category = category;
 		}
 
 		public String getGmtModified() {
@@ -96,54 +144,6 @@ public class OpsEccQueryNcSingleConfigResponse extends AcsResponse {
 
 		public void setId(String id) {
 			this.id = id;
-		}
-
-		public String getItemName() {
-			return this.itemName;
-		}
-
-		public void setItemName(String itemName) {
-			this.itemName = itemName;
-		}
-
-		public String getItemType() {
-			return this.itemType;
-		}
-
-		public void setItemType(String itemType) {
-			this.itemType = itemType;
-		}
-
-		public String getItemValue() {
-			return this.itemValue;
-		}
-
-		public void setItemValue(String itemValue) {
-			this.itemValue = itemValue;
-		}
-
-		public String getSN() {
-			return this.sN;
-		}
-
-		public void setSN(String sN) {
-			this.sN = sN;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
-		public Integer getVersion() {
-			return this.version;
-		}
-
-		public void setVersion(Integer version) {
-			this.version = version;
 		}
 	}
 

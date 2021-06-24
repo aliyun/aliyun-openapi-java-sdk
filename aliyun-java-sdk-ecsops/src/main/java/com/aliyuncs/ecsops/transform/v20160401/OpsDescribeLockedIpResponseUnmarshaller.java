@@ -27,17 +27,17 @@ public class OpsDescribeLockedIpResponseUnmarshaller {
 	public static OpsDescribeLockedIpResponse unmarshall(OpsDescribeLockedIpResponse opsDescribeLockedIpResponse, UnmarshallerContext _ctx) {
 		
 		opsDescribeLockedIpResponse.setRequestId(_ctx.stringValue("OpsDescribeLockedIpResponse.RequestId"));
-		opsDescribeLockedIpResponse.setTotal(_ctx.stringValue("OpsDescribeLockedIpResponse.Total"));
 		opsDescribeLockedIpResponse.setPageSize(_ctx.stringValue("OpsDescribeLockedIpResponse.PageSize"));
+		opsDescribeLockedIpResponse.setTotal(_ctx.stringValue("OpsDescribeLockedIpResponse.Total"));
 		opsDescribeLockedIpResponse.setPageNo(_ctx.stringValue("OpsDescribeLockedIpResponse.PageNo"));
 
 		List<LockedIp> lockedIps = new ArrayList<LockedIp>();
 		for (int i = 0; i < _ctx.lengthValue("OpsDescribeLockedIpResponse.LockedIps.Length"); i++) {
 			LockedIp lockedIp = new LockedIp();
-			lockedIp.setIP(_ctx.stringValue("OpsDescribeLockedIpResponse.LockedIps["+ i +"].IP"));
+			lockedIp.setLockType(_ctx.stringValue("OpsDescribeLockedIpResponse.LockedIps["+ i +"].LockType"));
 			lockedIp.setIpType(_ctx.stringValue("OpsDescribeLockedIpResponse.LockedIps["+ i +"].IpType"));
 			lockedIp.setLockReason(_ctx.stringValue("OpsDescribeLockedIpResponse.LockedIps["+ i +"].LockReason"));
-			lockedIp.setLockType(_ctx.stringValue("OpsDescribeLockedIpResponse.LockedIps["+ i +"].LockType"));
+			lockedIp.setIP(_ctx.stringValue("OpsDescribeLockedIpResponse.LockedIps["+ i +"].IP"));
 
 			lockedIps.add(lockedIp);
 		}

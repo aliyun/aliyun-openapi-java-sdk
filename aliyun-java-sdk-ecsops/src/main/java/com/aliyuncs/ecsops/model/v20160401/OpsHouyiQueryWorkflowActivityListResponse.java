@@ -47,63 +47,31 @@ public class OpsHouyiQueryWorkflowActivityListResponse extends AcsResponse {
 
 	public static class ActivityInstance {
 
-		private Long activityId;
-
-		private String workflowId;
-
-		private String activityName;
-
-		private String method;
-
 		private String state;
-
-		private Long startTime;
-
-		private Long endTime;
-
-		private Long duration;
-
-		private Long createTime;
-
-		private String input;
-
-		private String output;
-
-		private String error;
 
 		private String workerNode;
 
-		public Long getActivityId() {
-			return this.activityId;
-		}
+		private Long createTime;
 
-		public void setActivityId(Long activityId) {
-			this.activityId = activityId;
-		}
+		private Long activityId;
 
-		public String getWorkflowId() {
-			return this.workflowId;
-		}
+		private String method;
 
-		public void setWorkflowId(String workflowId) {
-			this.workflowId = workflowId;
-		}
+		private String output;
 
-		public String getActivityName() {
-			return this.activityName;
-		}
+		private String input;
 
-		public void setActivityName(String activityName) {
-			this.activityName = activityName;
-		}
+		private Long endTime;
 
-		public String getBizMethod() {
-			return this.method;
-		}
+		private Long startTime;
 
-		public void setBizMethod(String method) {
-			this.method = method;
-		}
+		private String error;
+
+		private String workflowId;
+
+		private Long duration;
+
+		private String activityName;
 
 		public String getState() {
 			return this.state;
@@ -113,28 +81,12 @@ public class OpsHouyiQueryWorkflowActivityListResponse extends AcsResponse {
 			this.state = state;
 		}
 
-		public Long getStartTime() {
-			return this.startTime;
+		public String getWorkerNode() {
+			return this.workerNode;
 		}
 
-		public void setStartTime(Long startTime) {
-			this.startTime = startTime;
-		}
-
-		public Long getEndTime() {
-			return this.endTime;
-		}
-
-		public void setEndTime(Long endTime) {
-			this.endTime = endTime;
-		}
-
-		public Long getDuration() {
-			return this.duration;
-		}
-
-		public void setDuration(Long duration) {
-			this.duration = duration;
+		public void setWorkerNode(String workerNode) {
+			this.workerNode = workerNode;
 		}
 
 		public Long getCreateTime() {
@@ -145,12 +97,20 @@ public class OpsHouyiQueryWorkflowActivityListResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
-		public String getInput() {
-			return this.input;
+		public Long getActivityId() {
+			return this.activityId;
 		}
 
-		public void setInput(String input) {
-			this.input = input;
+		public void setActivityId(Long activityId) {
+			this.activityId = activityId;
+		}
+
+		public String getBizMethod() {
+			return this.method;
+		}
+
+		public void setBizMethod(String method) {
+			this.method = method;
 		}
 
 		public String getOutput() {
@@ -161,6 +121,30 @@ public class OpsHouyiQueryWorkflowActivityListResponse extends AcsResponse {
 			this.output = output;
 		}
 
+		public String getInput() {
+			return this.input;
+		}
+
+		public void setInput(String input) {
+			this.input = input;
+		}
+
+		public Long getEndTime() {
+			return this.endTime;
+		}
+
+		public void setEndTime(Long endTime) {
+			this.endTime = endTime;
+		}
+
+		public Long getStartTime() {
+			return this.startTime;
+		}
+
+		public void setStartTime(Long startTime) {
+			this.startTime = startTime;
+		}
+
 		public String getError() {
 			return this.error;
 		}
@@ -169,12 +153,28 @@ public class OpsHouyiQueryWorkflowActivityListResponse extends AcsResponse {
 			this.error = error;
 		}
 
-		public String getWorkerNode() {
-			return this.workerNode;
+		public String getWorkflowId() {
+			return this.workflowId;
 		}
 
-		public void setWorkerNode(String workerNode) {
-			this.workerNode = workerNode;
+		public void setWorkflowId(String workflowId) {
+			this.workflowId = workflowId;
+		}
+
+		public Long getDuration() {
+			return this.duration;
+		}
+
+		public void setDuration(Long duration) {
+			this.duration = duration;
+		}
+
+		public String getActivityName() {
+			return this.activityName;
+		}
+
+		public void setActivityName(String activityName) {
+			this.activityName = activityName;
 		}
 	}
 

@@ -23,14 +23,14 @@ public class OpsDescribeDiskSnapshotPolicyResponseUnmarshaller {
 	public static OpsDescribeDiskSnapshotPolicyResponse unmarshall(OpsDescribeDiskSnapshotPolicyResponse opsDescribeDiskSnapshotPolicyResponse, UnmarshallerContext _ctx) {
 		
 		opsDescribeDiskSnapshotPolicyResponse.setRequestId(_ctx.stringValue("OpsDescribeDiskSnapshotPolicyResponse.RequestId"));
+		opsDescribeDiskSnapshotPolicyResponse.setTimePoints(_ctx.stringValue("OpsDescribeDiskSnapshotPolicyResponse.TimePoints"));
 		opsDescribeDiskSnapshotPolicyResponse.setSnapshotPolicyId(_ctx.stringValue("OpsDescribeDiskSnapshotPolicyResponse.SnapshotPolicyId"));
+		opsDescribeDiskSnapshotPolicyResponse.setCreationTime(_ctx.stringValue("OpsDescribeDiskSnapshotPolicyResponse.CreationTime"));
+		opsDescribeDiskSnapshotPolicyResponse.setRetentionDays(_ctx.integerValue("OpsDescribeDiskSnapshotPolicyResponse.RetentionDays"));
+		opsDescribeDiskSnapshotPolicyResponse.setRepeatWeekdays(_ctx.stringValue("OpsDescribeDiskSnapshotPolicyResponse.RepeatWeekdays"));
 		opsDescribeDiskSnapshotPolicyResponse.setRegionId(_ctx.stringValue("OpsDescribeDiskSnapshotPolicyResponse.RegionId"));
 		opsDescribeDiskSnapshotPolicyResponse.setAutoSnapshotPolicyName(_ctx.stringValue("OpsDescribeDiskSnapshotPolicyResponse.AutoSnapshotPolicyName"));
-		opsDescribeDiskSnapshotPolicyResponse.setTimePoints(_ctx.stringValue("OpsDescribeDiskSnapshotPolicyResponse.TimePoints"));
-		opsDescribeDiskSnapshotPolicyResponse.setRepeatWeekdays(_ctx.stringValue("OpsDescribeDiskSnapshotPolicyResponse.RepeatWeekdays"));
-		opsDescribeDiskSnapshotPolicyResponse.setRetentionDays(_ctx.integerValue("OpsDescribeDiskSnapshotPolicyResponse.RetentionDays"));
 		opsDescribeDiskSnapshotPolicyResponse.setDiskNums(_ctx.integerValue("OpsDescribeDiskSnapshotPolicyResponse.DiskNums"));
-		opsDescribeDiskSnapshotPolicyResponse.setCreationTime(_ctx.stringValue("OpsDescribeDiskSnapshotPolicyResponse.CreationTime"));
 	 
 	 	return opsDescribeDiskSnapshotPolicyResponse;
 	}

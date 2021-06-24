@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsDescribeDiagnosticPluginResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
-
-	private Integer pageNumber;
 
 	private Integer pageSize;
 
+	private String requestId;
+
+	private Integer pageNumber;
+
 	private List<Plugin> plugins;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -51,20 +43,28 @@ public class OpsDescribeDiagnosticPluginResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<Plugin> getPlugins() {
@@ -77,38 +77,38 @@ public class OpsDescribeDiagnosticPluginResponse extends AcsResponse {
 
 	public static class Plugin {
 
-		private Long id;
+		private String status;
 
-		private String pluginCode;
+		private String owner;
 
 		private String description;
 
 		private String version;
 
-		private String status;
-
-		private String owner;
-
 		private String gmtCreate;
 
 		private String gmtModified;
 
+		private String pluginCode;
+
+		private Long id;
+
 		private List<PluginItem> pluginItems;
 
-		public Long getId() {
-			return this.id;
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setId(Long id) {
-			this.id = id;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
-		public String getPluginCode() {
-			return this.pluginCode;
+		public String getOwner() {
+			return this.owner;
 		}
 
-		public void setPluginCode(String pluginCode) {
-			this.pluginCode = pluginCode;
+		public void setOwner(String owner) {
+			this.owner = owner;
 		}
 
 		public String getDescription() {
@@ -127,22 +127,6 @@ public class OpsDescribeDiagnosticPluginResponse extends AcsResponse {
 			this.version = version;
 		}
 
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
-		public String getOwner() {
-			return this.owner;
-		}
-
-		public void setOwner(String owner) {
-			this.owner = owner;
-		}
-
 		public String getGmtCreate() {
 			return this.gmtCreate;
 		}
@@ -159,6 +143,22 @@ public class OpsDescribeDiagnosticPluginResponse extends AcsResponse {
 			this.gmtModified = gmtModified;
 		}
 
+		public String getPluginCode() {
+			return this.pluginCode;
+		}
+
+		public void setPluginCode(String pluginCode) {
+			this.pluginCode = pluginCode;
+		}
+
+		public Long getId() {
+			return this.id;
+		}
+
+		public void setId(Long id) {
+			this.id = id;
+		}
+
 		public List<PluginItem> getPluginItems() {
 			return this.pluginItems;
 		}
@@ -169,37 +169,21 @@ public class OpsDescribeDiagnosticPluginResponse extends AcsResponse {
 
 		public static class PluginItem {
 
-			private Long pluginId;
-
-			private String itemCode;
-
 			private String itemCategory;
-
-			private Integer weight;
 
 			private String status;
 
-			private String creator;
+			private Integer weight;
+
+			private Long pluginId;
 
 			private String gmtCreate;
 
+			private String itemCode;
+
 			private String gmtModified;
 
-			public Long getPluginId() {
-				return this.pluginId;
-			}
-
-			public void setPluginId(Long pluginId) {
-				this.pluginId = pluginId;
-			}
-
-			public String getItemCode() {
-				return this.itemCode;
-			}
-
-			public void setItemCode(String itemCode) {
-				this.itemCode = itemCode;
-			}
+			private String creator;
 
 			public String getItemCategory() {
 				return this.itemCategory;
@@ -207,14 +191,6 @@ public class OpsDescribeDiagnosticPluginResponse extends AcsResponse {
 
 			public void setItemCategory(String itemCategory) {
 				this.itemCategory = itemCategory;
-			}
-
-			public Integer getWeight() {
-				return this.weight;
-			}
-
-			public void setWeight(Integer weight) {
-				this.weight = weight;
 			}
 
 			public String getStatus() {
@@ -225,12 +201,20 @@ public class OpsDescribeDiagnosticPluginResponse extends AcsResponse {
 				this.status = status;
 			}
 
-			public String getCreator() {
-				return this.creator;
+			public Integer getWeight() {
+				return this.weight;
 			}
 
-			public void setCreator(String creator) {
-				this.creator = creator;
+			public void setWeight(Integer weight) {
+				this.weight = weight;
+			}
+
+			public Long getPluginId() {
+				return this.pluginId;
+			}
+
+			public void setPluginId(Long pluginId) {
+				this.pluginId = pluginId;
 			}
 
 			public String getGmtCreate() {
@@ -241,12 +225,28 @@ public class OpsDescribeDiagnosticPluginResponse extends AcsResponse {
 				this.gmtCreate = gmtCreate;
 			}
 
+			public String getItemCode() {
+				return this.itemCode;
+			}
+
+			public void setItemCode(String itemCode) {
+				this.itemCode = itemCode;
+			}
+
 			public String getGmtModified() {
 				return this.gmtModified;
 			}
 
 			public void setGmtModified(String gmtModified) {
 				this.gmtModified = gmtModified;
+			}
+
+			public String getCreator() {
+				return this.creator;
+			}
+
+			public void setCreator(String creator) {
+				this.creator = creator;
 			}
 		}
 	}

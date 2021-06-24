@@ -32,13 +32,13 @@ public class OpsEcsAnalyseUploadResultResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("OpsEcsAnalyseUploadResultResponse.DataList.Length"); i++) {
 			Item item = new Item();
 			item.setStatus(_ctx.stringValue("OpsEcsAnalyseUploadResultResponse.DataList["+ i +"].Status"));
-			item.setDescription(_ctx.stringValue("OpsEcsAnalyseUploadResultResponse.DataList["+ i +"].Description"));
 			item.setOfficialResponse(_ctx.stringValue("OpsEcsAnalyseUploadResultResponse.DataList["+ i +"].OfficialResponse"));
-			item.setDetail(_ctx.stringValue("OpsEcsAnalyseUploadResultResponse.DataList["+ i +"].Detail"));
-			item.setSolution(_ctx.stringValue("OpsEcsAnalyseUploadResultResponse.DataList["+ i +"].Solution"));
+			item.setParameters(_ctx.stringValue("OpsEcsAnalyseUploadResultResponse.DataList["+ i +"].Parameters"));
+			item.setDescription(_ctx.stringValue("OpsEcsAnalyseUploadResultResponse.DataList["+ i +"].Description"));
 			item.setErrorType(_ctx.stringValue("OpsEcsAnalyseUploadResultResponse.DataList["+ i +"].ErrorType"));
 			item.setName(_ctx.stringValue("OpsEcsAnalyseUploadResultResponse.DataList["+ i +"].Name"));
-			item.setParameters(_ctx.stringValue("OpsEcsAnalyseUploadResultResponse.DataList["+ i +"].Parameters"));
+			item.setSolution(_ctx.stringValue("OpsEcsAnalyseUploadResultResponse.DataList["+ i +"].Solution"));
+			item.setDetail(_ctx.stringValue("OpsEcsAnalyseUploadResultResponse.DataList["+ i +"].Detail"));
 
 			dataList.add(item);
 		}

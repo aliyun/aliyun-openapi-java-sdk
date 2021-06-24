@@ -31,22 +31,22 @@ public class OpsQueryDedicatedHostTypeResponseUnmarshaller {
 		List<DedicatedHostType> dedicatedHostTypes = new ArrayList<DedicatedHostType>();
 		for (int i = 0; i < _ctx.lengthValue("OpsQueryDedicatedHostTypeResponse.DedicatedHostTypes.Length"); i++) {
 			DedicatedHostType dedicatedHostType = new DedicatedHostType();
-			dedicatedHostType.setHostType(_ctx.integerValue("OpsQueryDedicatedHostTypeResponse.DedicatedHostTypes["+ i +"].HostType"));
 			dedicatedHostType.setStatus(_ctx.stringValue("OpsQueryDedicatedHostTypeResponse.DedicatedHostTypes["+ i +"].Status"));
-			dedicatedHostType.setGeneration(_ctx.stringValue("OpsQueryDedicatedHostTypeResponse.DedicatedHostTypes["+ i +"].Generation"));
-			dedicatedHostType.setSupportInstanceTypeFamily(_ctx.stringValue("OpsQueryDedicatedHostTypeResponse.DedicatedHostTypes["+ i +"].SupportInstanceTypeFamily"));
-			dedicatedHostType.setSockets(_ctx.integerValue("OpsQueryDedicatedHostTypeResponse.DedicatedHostTypes["+ i +"].Sockets"));
-			dedicatedHostType.setCores(_ctx.integerValue("OpsQueryDedicatedHostTypeResponse.DedicatedHostTypes["+ i +"].Cores"));
-			dedicatedHostType.setPhysicalCores(_ctx.integerValue("OpsQueryDedicatedHostTypeResponse.DedicatedHostTypes["+ i +"].PhysicalCores"));
-			dedicatedHostType.setMem(_ctx.integerValue("OpsQueryDedicatedHostTypeResponse.DedicatedHostTypes["+ i +"].Mem"));
-			dedicatedHostType.setDiskNum(_ctx.integerValue("OpsQueryDedicatedHostTypeResponse.DedicatedHostTypes["+ i +"].DiskNum"));
-			dedicatedHostType.setDiskSize(_ctx.longValue("OpsQueryDedicatedHostTypeResponse.DedicatedHostTypes["+ i +"].DiskSize"));
 			dedicatedHostType.setDataDiskCategory(_ctx.stringValue("OpsQueryDedicatedHostTypeResponse.DedicatedHostTypes["+ i +"].DataDiskCategory"));
-			dedicatedHostType.setFlag(_ctx.integerValue("OpsQueryDedicatedHostTypeResponse.DedicatedHostTypes["+ i +"].Flag"));
+			dedicatedHostType.setCores(_ctx.integerValue("OpsQueryDedicatedHostTypeResponse.DedicatedHostTypes["+ i +"].Cores"));
+			dedicatedHostType.setDiskSize(_ctx.longValue("OpsQueryDedicatedHostTypeResponse.DedicatedHostTypes["+ i +"].DiskSize"));
+			dedicatedHostType.setHostType(_ctx.integerValue("OpsQueryDedicatedHostTypeResponse.DedicatedHostTypes["+ i +"].HostType"));
+			dedicatedHostType.setMem(_ctx.integerValue("OpsQueryDedicatedHostTypeResponse.DedicatedHostTypes["+ i +"].Mem"));
 			dedicatedHostType.setPhysicalGpus(_ctx.integerValue("OpsQueryDedicatedHostTypeResponse.DedicatedHostTypes["+ i +"].PhysicalGpus"));
-			dedicatedHostType.setGpuSpec(_ctx.stringValue("OpsQueryDedicatedHostTypeResponse.DedicatedHostTypes["+ i +"].GpuSpec"));
-			dedicatedHostType.setVgpus(_ctx.integerValue("OpsQueryDedicatedHostTypeResponse.DedicatedHostTypes["+ i +"].Vgpus"));
+			dedicatedHostType.setDiskNum(_ctx.integerValue("OpsQueryDedicatedHostTypeResponse.DedicatedHostTypes["+ i +"].DiskNum"));
+			dedicatedHostType.setFlag(_ctx.integerValue("OpsQueryDedicatedHostTypeResponse.DedicatedHostTypes["+ i +"].Flag"));
+			dedicatedHostType.setPhysicalCores(_ctx.integerValue("OpsQueryDedicatedHostTypeResponse.DedicatedHostTypes["+ i +"].PhysicalCores"));
+			dedicatedHostType.setSupportInstanceTypeFamily(_ctx.stringValue("OpsQueryDedicatedHostTypeResponse.DedicatedHostTypes["+ i +"].SupportInstanceTypeFamily"));
 			dedicatedHostType.setMaxInstanceCount(_ctx.integerValue("OpsQueryDedicatedHostTypeResponse.DedicatedHostTypes["+ i +"].MaxInstanceCount"));
+			dedicatedHostType.setVgpus(_ctx.integerValue("OpsQueryDedicatedHostTypeResponse.DedicatedHostTypes["+ i +"].Vgpus"));
+			dedicatedHostType.setGpuSpec(_ctx.stringValue("OpsQueryDedicatedHostTypeResponse.DedicatedHostTypes["+ i +"].GpuSpec"));
+			dedicatedHostType.setSockets(_ctx.integerValue("OpsQueryDedicatedHostTypeResponse.DedicatedHostTypes["+ i +"].Sockets"));
+			dedicatedHostType.setGeneration(_ctx.stringValue("OpsQueryDedicatedHostTypeResponse.DedicatedHostTypes["+ i +"].Generation"));
 
 			List<String> supportInstanceTypesList = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("OpsQueryDedicatedHostTypeResponse.DedicatedHostTypes["+ i +"].SupportInstanceTypesList.Length"); j++) {

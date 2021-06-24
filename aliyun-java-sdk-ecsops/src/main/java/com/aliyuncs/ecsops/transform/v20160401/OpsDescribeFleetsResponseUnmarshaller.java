@@ -28,19 +28,19 @@ public class OpsDescribeFleetsResponseUnmarshaller {
 		
 		opsDescribeFleetsResponse.setRequestId(_ctx.stringValue("OpsDescribeFleetsResponse.RequestId"));
 		opsDescribeFleetsResponse.setTotalCount(_ctx.integerValue("OpsDescribeFleetsResponse.TotalCount"));
-		opsDescribeFleetsResponse.setPageNumber(_ctx.integerValue("OpsDescribeFleetsResponse.PageNumber"));
 		opsDescribeFleetsResponse.setPageSize(_ctx.integerValue("OpsDescribeFleetsResponse.PageSize"));
+		opsDescribeFleetsResponse.setPageNumber(_ctx.integerValue("OpsDescribeFleetsResponse.PageNumber"));
 
 		List<Fleet> fleets = new ArrayList<Fleet>();
 		for (int i = 0; i < _ctx.lengthValue("OpsDescribeFleetsResponse.Fleets.Length"); i++) {
 			Fleet fleet = new Fleet();
-			fleet.setId(_ctx.longValue("OpsDescribeFleetsResponse.Fleets["+ i +"].Id"));
-			fleet.setAliUid(_ctx.longValue("OpsDescribeFleetsResponse.Fleets["+ i +"].AliUid"));
-			fleet.setFleetId(_ctx.stringValue("OpsDescribeFleetsResponse.Fleets["+ i +"].FleetId"));
-			fleet.setFleetName(_ctx.stringValue("OpsDescribeFleetsResponse.Fleets["+ i +"].FleetName"));
-			fleet.setScalingId(_ctx.stringValue("OpsDescribeFleetsResponse.Fleets["+ i +"].ScalingId"));
 			fleet.setStatus(_ctx.stringValue("OpsDescribeFleetsResponse.Fleets["+ i +"].Status"));
+			fleet.setFleetId(_ctx.stringValue("OpsDescribeFleetsResponse.Fleets["+ i +"].FleetId"));
+			fleet.setScalingId(_ctx.stringValue("OpsDescribeFleetsResponse.Fleets["+ i +"].ScalingId"));
 			fleet.setResult(_ctx.stringValue("OpsDescribeFleetsResponse.Fleets["+ i +"].Result"));
+			fleet.setAliUid(_ctx.longValue("OpsDescribeFleetsResponse.Fleets["+ i +"].AliUid"));
+			fleet.setFleetName(_ctx.stringValue("OpsDescribeFleetsResponse.Fleets["+ i +"].FleetName"));
+			fleet.setId(_ctx.longValue("OpsDescribeFleetsResponse.Fleets["+ i +"].Id"));
 
 			fleets.add(fleet);
 		}

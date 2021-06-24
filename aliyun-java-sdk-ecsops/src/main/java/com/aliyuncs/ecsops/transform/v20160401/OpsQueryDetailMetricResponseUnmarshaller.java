@@ -28,12 +28,12 @@ public class OpsQueryDetailMetricResponseUnmarshaller {
 		
 		opsQueryDetailMetricResponse.setRequestId(_ctx.stringValue("OpsQueryDetailMetricResponse.RequestId"));
 		opsQueryDetailMetricResponse.setIsStack(_ctx.booleanValue("OpsQueryDetailMetricResponse.IsStack"));
-		opsQueryDetailMetricResponse.setInterval(_ctx.integerValue("OpsQueryDetailMetricResponse.Interval"));
-		opsQueryDetailMetricResponse.setStartTime(_ctx.stringValue("OpsQueryDetailMetricResponse.StartTime"));
 		opsQueryDetailMetricResponse.setEndTime(_ctx.stringValue("OpsQueryDetailMetricResponse.EndTime"));
+		opsQueryDetailMetricResponse.setStartTime(_ctx.stringValue("OpsQueryDetailMetricResponse.StartTime"));
 		opsQueryDetailMetricResponse.setMetricDescription(_ctx.stringValue("OpsQueryDetailMetricResponse.MetricDescription"));
-		opsQueryDetailMetricResponse.setExceptionName(_ctx.stringValue("OpsQueryDetailMetricResponse.ExceptionName"));
 		opsQueryDetailMetricResponse.setExtraInfo(_ctx.stringValue("OpsQueryDetailMetricResponse.ExtraInfo"));
+		opsQueryDetailMetricResponse.setInterval(_ctx.integerValue("OpsQueryDetailMetricResponse.Interval"));
+		opsQueryDetailMetricResponse.setExceptionName(_ctx.stringValue("OpsQueryDetailMetricResponse.ExceptionName"));
 
 		List<DetailMetric> detailMetrics = new ArrayList<DetailMetric>();
 		for (int i = 0; i < _ctx.lengthValue("OpsQueryDetailMetricResponse.DetailMetrics.Length"); i++) {

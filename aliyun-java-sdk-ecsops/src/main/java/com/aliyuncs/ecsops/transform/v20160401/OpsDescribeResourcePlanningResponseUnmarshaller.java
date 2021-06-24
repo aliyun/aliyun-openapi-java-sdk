@@ -36,16 +36,16 @@ public class OpsDescribeResourcePlanningResponseUnmarshaller {
 		List<ResourceModel> resourceModels = new ArrayList<ResourceModel>();
 		for (int i = 0; i < _ctx.lengthValue("OpsDescribeResourcePlanningResponse.ResourcePlanningResult.ResourceModels.Length"); i++) {
 			ResourceModel resourceModel = new ResourceModel();
-			resourceModel.setRegionId(_ctx.stringValue("OpsDescribeResourcePlanningResponse.ResourcePlanningResult.ResourceModels["+ i +"].RegionId"));
-			resourceModel.setZoneId(_ctx.stringValue("OpsDescribeResourcePlanningResponse.ResourcePlanningResult.ResourceModels["+ i +"].ZoneId"));
-			resourceModel.setInstanceType(_ctx.stringValue("OpsDescribeResourcePlanningResponse.ResourcePlanningResult.ResourceModels["+ i +"].InstanceType"));
-			resourceModel.setCores(_ctx.integerValue("OpsDescribeResourcePlanningResponse.ResourcePlanningResult.ResourceModels["+ i +"].Cores"));
-			resourceModel.setMemory(_ctx.integerValue("OpsDescribeResourcePlanningResponse.ResourcePlanningResult.ResourceModels["+ i +"].Memory"));
-			resourceModel.setPrice(_ctx.floatValue("OpsDescribeResourcePlanningResponse.ResourcePlanningResult.ResourceModels["+ i +"].Price"));
 			resourceModel.setAmount(_ctx.integerValue("OpsDescribeResourcePlanningResponse.ResourcePlanningResult.ResourceModels["+ i +"].Amount"));
+			resourceModel.setDeliveryTimeEnd(_ctx.stringValue("OpsDescribeResourcePlanningResponse.ResourcePlanningResult.ResourceModels["+ i +"].DeliveryTimeEnd"));
+			resourceModel.setCores(_ctx.integerValue("OpsDescribeResourcePlanningResponse.ResourcePlanningResult.ResourceModels["+ i +"].Cores"));
+			resourceModel.setPrice(_ctx.floatValue("OpsDescribeResourcePlanningResponse.ResourcePlanningResult.ResourceModels["+ i +"].Price"));
 			resourceModel.setDeliveryType(_ctx.stringValue("OpsDescribeResourcePlanningResponse.ResourcePlanningResult.ResourceModels["+ i +"].DeliveryType"));
 			resourceModel.setDeliveryTimeBegin(_ctx.stringValue("OpsDescribeResourcePlanningResponse.ResourcePlanningResult.ResourceModels["+ i +"].DeliveryTimeBegin"));
-			resourceModel.setDeliveryTimeEnd(_ctx.stringValue("OpsDescribeResourcePlanningResponse.ResourcePlanningResult.ResourceModels["+ i +"].DeliveryTimeEnd"));
+			resourceModel.setZoneId(_ctx.stringValue("OpsDescribeResourcePlanningResponse.ResourcePlanningResult.ResourceModels["+ i +"].ZoneId"));
+			resourceModel.setMemory(_ctx.integerValue("OpsDescribeResourcePlanningResponse.ResourcePlanningResult.ResourceModels["+ i +"].Memory"));
+			resourceModel.setInstanceType(_ctx.stringValue("OpsDescribeResourcePlanningResponse.ResourcePlanningResult.ResourceModels["+ i +"].InstanceType"));
+			resourceModel.setRegionId(_ctx.stringValue("OpsDescribeResourcePlanningResponse.ResourcePlanningResult.ResourceModels["+ i +"].RegionId"));
 
 			resourceModels.add(resourceModel);
 		}

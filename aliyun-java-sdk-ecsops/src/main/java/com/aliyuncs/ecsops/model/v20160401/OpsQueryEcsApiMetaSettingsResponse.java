@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsQueryEcsApiMetaSettingsResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer totalCount;
 
-	private Integer pageNumber;
+	private String requestId;
 
 	private Integer pageSize;
 
-	private Integer totalCount;
+	private Integer pageNumber;
 
 	private List<ProductsItem> products;
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class OpsQueryEcsApiMetaSettingsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
 	}
 
 	public Integer getPageSize() {
@@ -59,12 +59,12 @@ public class OpsQueryEcsApiMetaSettingsResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public Integer getTotalCount() {
-		return this.totalCount;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<ProductsItem> getProducts() {
@@ -79,9 +79,9 @@ public class OpsQueryEcsApiMetaSettingsResponse extends AcsResponse {
 
 		private String productName;
 
-		private String versionName;
-
 		private String proApiName;
+
+		private String versionName;
 
 		private List<MetaInfosItem> metaInfos;
 
@@ -93,20 +93,20 @@ public class OpsQueryEcsApiMetaSettingsResponse extends AcsResponse {
 			this.productName = productName;
 		}
 
-		public String getVersionName() {
-			return this.versionName;
-		}
-
-		public void setVersionName(String versionName) {
-			this.versionName = versionName;
-		}
-
 		public String getProApiName() {
 			return this.proApiName;
 		}
 
 		public void setProApiName(String proApiName) {
 			this.proApiName = proApiName;
+		}
+
+		public String getVersionName() {
+			return this.versionName;
+		}
+
+		public void setVersionName(String versionName) {
+			this.versionName = versionName;
 		}
 
 		public List<MetaInfosItem> getMetaInfos() {

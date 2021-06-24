@@ -23,8 +23,8 @@ public class OpsAllocateInstancePublicIpAddressResponseUnmarshaller {
 	public static OpsAllocateInstancePublicIpAddressResponse unmarshall(OpsAllocateInstancePublicIpAddressResponse opsAllocateInstancePublicIpAddressResponse, UnmarshallerContext _ctx) {
 		
 		opsAllocateInstancePublicIpAddressResponse.setRequestId(_ctx.stringValue("OpsAllocateInstancePublicIpAddressResponse.RequestId"));
-		opsAllocateInstancePublicIpAddressResponse.setIpAddress(_ctx.stringValue("OpsAllocateInstancePublicIpAddressResponse.IpAddress"));
 		opsAllocateInstancePublicIpAddressResponse.setInstanceId(_ctx.stringValue("OpsAllocateInstancePublicIpAddressResponse.InstanceId"));
+		opsAllocateInstancePublicIpAddressResponse.setIpAddress(_ctx.stringValue("OpsAllocateInstancePublicIpAddressResponse.IpAddress"));
 	 
 	 	return opsAllocateInstancePublicIpAddressResponse;
 	}

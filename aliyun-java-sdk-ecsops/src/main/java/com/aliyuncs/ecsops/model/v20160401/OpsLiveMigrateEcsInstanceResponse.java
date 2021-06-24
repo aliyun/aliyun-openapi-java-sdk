@@ -24,25 +24,33 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsLiveMigrateEcsInstanceResponse extends AcsResponse {
 
-	private String requestId;
+	private String sourceNcId;
 
-	private String code;
+	private String requestId;
 
 	private String message;
 
-	private String success;
-
 	private String instanceId;
 
-	private String migrationId;
-
-	private String sourceNcId;
-
-	private String destinationNcId;
+	private Long timeout;
 
 	private Long rate;
 
-	private Long timeout;
+	private String migrationId;
+
+	private String code;
+
+	private String success;
+
+	private String destinationNcId;
+
+	public String getSourceNcId() {
+		return this.sourceNcId;
+	}
+
+	public void setSourceNcId(String sourceNcId) {
+		this.sourceNcId = sourceNcId;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -50,14 +58,6 @@ public class OpsLiveMigrateEcsInstanceResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
 	}
 
 	public String getMessage() {
@@ -68,14 +68,6 @@ public class OpsLiveMigrateEcsInstanceResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(String success) {
-		this.success = success;
-	}
-
 	public String getInstanceId() {
 		return this.instanceId;
 	}
@@ -84,28 +76,12 @@ public class OpsLiveMigrateEcsInstanceResponse extends AcsResponse {
 		this.instanceId = instanceId;
 	}
 
-	public String getMigrationId() {
-		return this.migrationId;
+	public Long getTimeout() {
+		return this.timeout;
 	}
 
-	public void setMigrationId(String migrationId) {
-		this.migrationId = migrationId;
-	}
-
-	public String getSourceNcId() {
-		return this.sourceNcId;
-	}
-
-	public void setSourceNcId(String sourceNcId) {
-		this.sourceNcId = sourceNcId;
-	}
-
-	public String getDestinationNcId() {
-		return this.destinationNcId;
-	}
-
-	public void setDestinationNcId(String destinationNcId) {
-		this.destinationNcId = destinationNcId;
+	public void setTimeout(Long timeout) {
+		this.timeout = timeout;
 	}
 
 	public Long getRate() {
@@ -116,12 +92,36 @@ public class OpsLiveMigrateEcsInstanceResponse extends AcsResponse {
 		this.rate = rate;
 	}
 
-	public Long getTimeout() {
-		return this.timeout;
+	public String getMigrationId() {
+		return this.migrationId;
 	}
 
-	public void setTimeout(Long timeout) {
-		this.timeout = timeout;
+	public void setMigrationId(String migrationId) {
+		this.migrationId = migrationId;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(String success) {
+		this.success = success;
+	}
+
+	public String getDestinationNcId() {
+		return this.destinationNcId;
+	}
+
+	public void setDestinationNcId(String destinationNcId) {
+		this.destinationNcId = destinationNcId;
 	}
 
 	@Override

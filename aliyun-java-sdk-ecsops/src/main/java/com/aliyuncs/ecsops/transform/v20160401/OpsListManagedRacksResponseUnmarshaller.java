@@ -35,19 +35,19 @@ public class OpsListManagedRacksResponseUnmarshaller {
 		List<ManagedRacksSet> managedRacksSets = new ArrayList<ManagedRacksSet>();
 		for (int i = 0; i < _ctx.lengthValue("OpsListManagedRacksResponse.ManagedRacksSets.Length"); i++) {
 			ManagedRacksSet managedRacksSet = new ManagedRacksSet();
-			managedRacksSet.setZoneId(_ctx.stringValue("OpsListManagedRacksResponse.ManagedRacksSets["+ i +"].ZoneId"));
 			managedRacksSet.setManagedRackId(_ctx.stringValue("OpsListManagedRacksResponse.ManagedRacksSets["+ i +"].ManagedRackId"));
+			managedRacksSet.setZoneId(_ctx.stringValue("OpsListManagedRacksResponse.ManagedRacksSets["+ i +"].ZoneId"));
 
 			List<ManagedHostSet> managedHostSets = new ArrayList<ManagedHostSet>();
 			for (int j = 0; j < _ctx.lengthValue("OpsListManagedRacksResponse.ManagedRacksSets["+ i +"].ManagedHostSets.Length"); j++) {
 				ManagedHostSet managedHostSet = new ManagedHostSet();
-				managedHostSet.setManagedHostId(_ctx.stringValue("OpsListManagedRacksResponse.ManagedRacksSets["+ i +"].ManagedHostSets["+ j +"].ManagedHostId"));
 				managedHostSet.setStatus(_ctx.stringValue("OpsListManagedRacksResponse.ManagedRacksSets["+ i +"].ManagedHostSets["+ j +"].Status"));
 				managedHostSet.setDescription(_ctx.stringValue("OpsListManagedRacksResponse.ManagedRacksSets["+ i +"].ManagedHostSets["+ j +"].Description"));
+				managedHostSet.setManagedHostId(_ctx.stringValue("OpsListManagedRacksResponse.ManagedRacksSets["+ i +"].ManagedHostSets["+ j +"].ManagedHostId"));
 
 				HostAttribute hostAttribute = new HostAttribute();
-				hostAttribute.setCpuModelName(_ctx.stringValue("OpsListManagedRacksResponse.ManagedRacksSets["+ i +"].ManagedHostSets["+ j +"].HostAttribute.CpuModelName"));
 				hostAttribute.setHostType(_ctx.stringValue("OpsListManagedRacksResponse.ManagedRacksSets["+ i +"].ManagedHostSets["+ j +"].HostAttribute.HostType"));
+				hostAttribute.setCpuModelName(_ctx.stringValue("OpsListManagedRacksResponse.ManagedRacksSets["+ i +"].ManagedHostSets["+ j +"].HostAttribute.CpuModelName"));
 				managedHostSet.setHostAttribute(hostAttribute);
 
 				managedHostSets.add(managedHostSet);

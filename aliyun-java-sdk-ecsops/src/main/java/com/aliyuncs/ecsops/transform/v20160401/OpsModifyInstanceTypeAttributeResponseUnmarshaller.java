@@ -23,10 +23,10 @@ public class OpsModifyInstanceTypeAttributeResponseUnmarshaller {
 	public static OpsModifyInstanceTypeAttributeResponse unmarshall(OpsModifyInstanceTypeAttributeResponse opsModifyInstanceTypeAttributeResponse, UnmarshallerContext _ctx) {
 		
 		opsModifyInstanceTypeAttributeResponse.setRequestId(_ctx.stringValue("OpsModifyInstanceTypeAttributeResponse.RequestId"));
-		opsModifyInstanceTypeAttributeResponse.setSuccess(_ctx.stringValue("OpsModifyInstanceTypeAttributeResponse.Success"));
-		opsModifyInstanceTypeAttributeResponse.setCode(_ctx.stringValue("OpsModifyInstanceTypeAttributeResponse.Code"));
 		opsModifyInstanceTypeAttributeResponse.setMessage(_ctx.stringValue("OpsModifyInstanceTypeAttributeResponse.Message"));
 		opsModifyInstanceTypeAttributeResponse.setHttpStatusCode(_ctx.integerValue("OpsModifyInstanceTypeAttributeResponse.HttpStatusCode"));
+		opsModifyInstanceTypeAttributeResponse.setCode(_ctx.stringValue("OpsModifyInstanceTypeAttributeResponse.Code"));
+		opsModifyInstanceTypeAttributeResponse.setSuccess(_ctx.stringValue("OpsModifyInstanceTypeAttributeResponse.Success"));
 	 
 	 	return opsModifyInstanceTypeAttributeResponse;
 	}

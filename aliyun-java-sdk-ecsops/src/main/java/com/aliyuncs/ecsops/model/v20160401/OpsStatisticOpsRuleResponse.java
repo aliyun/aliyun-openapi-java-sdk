@@ -27,13 +27,13 @@ public class OpsStatisticOpsRuleResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Integer startTimeStamp;
-
 	private Integer endTimeStamp;
 
-	private Integer timeCnt;
+	private Integer startTimeStamp;
 
 	private Integer intervalTime;
+
+	private Integer timeCnt;
 
 	private List<String> ncCnts;
 
@@ -45,14 +45,6 @@ public class OpsStatisticOpsRuleResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Integer getStartTimeStamp() {
-		return this.startTimeStamp;
-	}
-
-	public void setStartTimeStamp(Integer startTimeStamp) {
-		this.startTimeStamp = startTimeStamp;
-	}
-
 	public Integer getEndTimeStamp() {
 		return this.endTimeStamp;
 	}
@@ -61,12 +53,12 @@ public class OpsStatisticOpsRuleResponse extends AcsResponse {
 		this.endTimeStamp = endTimeStamp;
 	}
 
-	public Integer getTimeCnt() {
-		return this.timeCnt;
+	public Integer getStartTimeStamp() {
+		return this.startTimeStamp;
 	}
 
-	public void setTimeCnt(Integer timeCnt) {
-		this.timeCnt = timeCnt;
+	public void setStartTimeStamp(Integer startTimeStamp) {
+		this.startTimeStamp = startTimeStamp;
 	}
 
 	public Integer getIntervalTime() {
@@ -75,6 +67,14 @@ public class OpsStatisticOpsRuleResponse extends AcsResponse {
 
 	public void setIntervalTime(Integer intervalTime) {
 		this.intervalTime = intervalTime;
+	}
+
+	public Integer getTimeCnt() {
+		return this.timeCnt;
+	}
+
+	public void setTimeCnt(Integer timeCnt) {
+		this.timeCnt = timeCnt;
 	}
 
 	public List<String> getNcCnts() {

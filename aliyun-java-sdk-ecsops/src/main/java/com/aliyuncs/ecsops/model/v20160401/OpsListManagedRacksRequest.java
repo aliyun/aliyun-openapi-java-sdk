@@ -17,7 +17,6 @@ package com.aliyuncs.ecsops.model.v20160401;
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
 import com.aliyuncs.http.MethodType;
-import com.aliyuncs.ecsops.Endpoint;
 
 /**
  * @author auto create
@@ -26,9 +25,9 @@ import com.aliyuncs.ecsops.Endpoint;
 public class OpsListManagedRacksRequest extends RpcAcsRequest<OpsListManagedRacksResponse> {
 	   
 
-	private List<String> managedRackIdss;
-
 	private String hostType;
+
+	private List<String> managedRackIdss;
 
 	private String nextToken;
 
@@ -42,12 +41,19 @@ public class OpsListManagedRacksRequest extends RpcAcsRequest<OpsListManagedRack
 
 	private String auditParamStr;
 	public OpsListManagedRacksRequest() {
-		super("Ecsops", "2016-04-01", "OpsListManagedRacks", "ecs");
+		super("Ecsops", "2016-04-01", "OpsListManagedRacks", "ecsops");
 		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
+	}
+
+	public String getHostType() {
+		return this.hostType;
+	}
+
+	public void setHostType(String hostType) {
+		this.hostType = hostType;
+		if(hostType != null){
+			putQueryParameter("HostType", hostType);
+		}
 	}
 
 	public List<String> getManagedRackIdss() {
@@ -61,17 +67,6 @@ public class OpsListManagedRacksRequest extends RpcAcsRequest<OpsListManagedRack
 				putQueryParameter("ManagedRackIds." + (i + 1) , managedRackIdss.get(i));
 			}
 		}	
-	}
-
-	public String getHostType() {
-		return this.hostType;
-	}
-
-	public void setHostType(String hostType) {
-		this.hostType = hostType;
-		if(hostType != null){
-			putQueryParameter("HostType", hostType);
-		}
 	}
 
 	public String getNextToken() {

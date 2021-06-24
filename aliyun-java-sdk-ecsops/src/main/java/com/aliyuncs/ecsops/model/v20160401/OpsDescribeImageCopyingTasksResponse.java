@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsDescribeImageCopyingTasksResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
-
-	private Integer pageNumber;
 
 	private Integer pageSize;
 
+	private String requestId;
+
+	private Integer pageNumber;
+
 	private List<ImageTask> imageTasks;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -51,20 +43,28 @@ public class OpsDescribeImageCopyingTasksResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<ImageTask> getImageTasks() {
@@ -77,53 +77,29 @@ public class OpsDescribeImageCopyingTasksResponse extends AcsResponse {
 
 	public static class ImageTask {
 
-		private Long resourceOwnerId;
-
-		private String taskId;
-
-		private String taskType;
-
 		private String status;
-
-		private Integer copiedBlock;
-
-		private Integer totalBlock;
-
-		private String srcRegionId;
-
-		private String srcInfo;
-
-		private String dstRegionId;
 
 		private String dstInfo;
 
-		private Long createdTime;
+		private String srcRegionId;
+
+		private Integer totalBlock;
+
+		private String taskType;
+
+		private String dstRegionId;
+
+		private Long resourceOwnerId;
 
 		private Long modifiedTime;
 
-		public Long getResourceOwnerId() {
-			return this.resourceOwnerId;
-		}
+		private String srcInfo;
 
-		public void setResourceOwnerId(Long resourceOwnerId) {
-			this.resourceOwnerId = resourceOwnerId;
-		}
+		private Integer copiedBlock;
 
-		public String getTaskId() {
-			return this.taskId;
-		}
+		private Long createdTime;
 
-		public void setTaskId(String taskId) {
-			this.taskId = taskId;
-		}
-
-		public String getTaskType() {
-			return this.taskType;
-		}
-
-		public void setTaskType(String taskType) {
-			this.taskType = taskType;
-		}
+		private String taskId;
 
 		public String getStatus() {
 			return this.status;
@@ -131,46 +107,6 @@ public class OpsDescribeImageCopyingTasksResponse extends AcsResponse {
 
 		public void setStatus(String status) {
 			this.status = status;
-		}
-
-		public Integer getCopiedBlock() {
-			return this.copiedBlock;
-		}
-
-		public void setCopiedBlock(Integer copiedBlock) {
-			this.copiedBlock = copiedBlock;
-		}
-
-		public Integer getTotalBlock() {
-			return this.totalBlock;
-		}
-
-		public void setTotalBlock(Integer totalBlock) {
-			this.totalBlock = totalBlock;
-		}
-
-		public String getSrcRegionId() {
-			return this.srcRegionId;
-		}
-
-		public void setSrcRegionId(String srcRegionId) {
-			this.srcRegionId = srcRegionId;
-		}
-
-		public String getSrcInfo() {
-			return this.srcInfo;
-		}
-
-		public void setSrcInfo(String srcInfo) {
-			this.srcInfo = srcInfo;
-		}
-
-		public String getDstRegionId() {
-			return this.dstRegionId;
-		}
-
-		public void setDstRegionId(String dstRegionId) {
-			this.dstRegionId = dstRegionId;
 		}
 
 		public String getDstInfo() {
@@ -181,12 +117,44 @@ public class OpsDescribeImageCopyingTasksResponse extends AcsResponse {
 			this.dstInfo = dstInfo;
 		}
 
-		public Long getCreatedTime() {
-			return this.createdTime;
+		public String getSrcRegionId() {
+			return this.srcRegionId;
 		}
 
-		public void setCreatedTime(Long createdTime) {
-			this.createdTime = createdTime;
+		public void setSrcRegionId(String srcRegionId) {
+			this.srcRegionId = srcRegionId;
+		}
+
+		public Integer getTotalBlock() {
+			return this.totalBlock;
+		}
+
+		public void setTotalBlock(Integer totalBlock) {
+			this.totalBlock = totalBlock;
+		}
+
+		public String getTaskType() {
+			return this.taskType;
+		}
+
+		public void setTaskType(String taskType) {
+			this.taskType = taskType;
+		}
+
+		public String getDstRegionId() {
+			return this.dstRegionId;
+		}
+
+		public void setDstRegionId(String dstRegionId) {
+			this.dstRegionId = dstRegionId;
+		}
+
+		public Long getResourceOwnerId() {
+			return this.resourceOwnerId;
+		}
+
+		public void setResourceOwnerId(Long resourceOwnerId) {
+			this.resourceOwnerId = resourceOwnerId;
 		}
 
 		public Long getModifiedTime() {
@@ -195,6 +163,38 @@ public class OpsDescribeImageCopyingTasksResponse extends AcsResponse {
 
 		public void setModifiedTime(Long modifiedTime) {
 			this.modifiedTime = modifiedTime;
+		}
+
+		public String getSrcInfo() {
+			return this.srcInfo;
+		}
+
+		public void setSrcInfo(String srcInfo) {
+			this.srcInfo = srcInfo;
+		}
+
+		public Integer getCopiedBlock() {
+			return this.copiedBlock;
+		}
+
+		public void setCopiedBlock(Integer copiedBlock) {
+			this.copiedBlock = copiedBlock;
+		}
+
+		public Long getCreatedTime() {
+			return this.createdTime;
+		}
+
+		public void setCreatedTime(Long createdTime) {
+			this.createdTime = createdTime;
+		}
+
+		public String getTaskId() {
+			return this.taskId;
+		}
+
+		public void setTaskId(String taskId) {
+			this.taskId = taskId;
 		}
 	}
 

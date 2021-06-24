@@ -31,11 +31,11 @@ public class OpsQueryNcRegionInfoResponseUnmarshaller {
 		List<HighRiskMetricData> ncRegionInfoList = new ArrayList<HighRiskMetricData>();
 		for (int i = 0; i < _ctx.lengthValue("OpsQueryNcRegionInfoResponse.NcRegionInfoList.Length"); i++) {
 			HighRiskMetricData highRiskMetricData = new HighRiskMetricData();
-			highRiskMetricData.setNcIp(_ctx.stringValue("OpsQueryNcRegionInfoResponse.NcRegionInfoList["+ i +"].NcIp"));
 			highRiskMetricData.setNcId(_ctx.stringValue("OpsQueryNcRegionInfoResponse.NcRegionInfoList["+ i +"].NcId"));
+			highRiskMetricData.setIsDragonBox(_ctx.booleanValue("OpsQueryNcRegionInfoResponse.NcRegionInfoList["+ i +"].IsDragonBox"));
 			highRiskMetricData.setSn(_ctx.stringValue("OpsQueryNcRegionInfoResponse.NcRegionInfoList["+ i +"].Sn"));
 			highRiskMetricData.setRegion(_ctx.stringValue("OpsQueryNcRegionInfoResponse.NcRegionInfoList["+ i +"].Region"));
-			highRiskMetricData.setIsDragonBox(_ctx.booleanValue("OpsQueryNcRegionInfoResponse.NcRegionInfoList["+ i +"].IsDragonBox"));
+			highRiskMetricData.setNcIp(_ctx.stringValue("OpsQueryNcRegionInfoResponse.NcRegionInfoList["+ i +"].NcIp"));
 
 			ncRegionInfoList.add(highRiskMetricData);
 		}

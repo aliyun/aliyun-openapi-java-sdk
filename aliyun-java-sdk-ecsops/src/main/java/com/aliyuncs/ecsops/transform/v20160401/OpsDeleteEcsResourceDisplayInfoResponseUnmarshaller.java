@@ -23,8 +23,8 @@ public class OpsDeleteEcsResourceDisplayInfoResponseUnmarshaller {
 	public static OpsDeleteEcsResourceDisplayInfoResponse unmarshall(OpsDeleteEcsResourceDisplayInfoResponse opsDeleteEcsResourceDisplayInfoResponse, UnmarshallerContext _ctx) {
 		
 		opsDeleteEcsResourceDisplayInfoResponse.setRequestId(_ctx.stringValue("OpsDeleteEcsResourceDisplayInfoResponse.RequestId"));
-		opsDeleteEcsResourceDisplayInfoResponse.setCode(_ctx.stringValue("OpsDeleteEcsResourceDisplayInfoResponse.Code"));
 		opsDeleteEcsResourceDisplayInfoResponse.setMessage(_ctx.stringValue("OpsDeleteEcsResourceDisplayInfoResponse.Message"));
+		opsDeleteEcsResourceDisplayInfoResponse.setCode(_ctx.stringValue("OpsDeleteEcsResourceDisplayInfoResponse.Code"));
 		opsDeleteEcsResourceDisplayInfoResponse.setSuccess(_ctx.booleanValue("OpsDeleteEcsResourceDisplayInfoResponse.Success"));
 	 
 	 	return opsDeleteEcsResourceDisplayInfoResponse;

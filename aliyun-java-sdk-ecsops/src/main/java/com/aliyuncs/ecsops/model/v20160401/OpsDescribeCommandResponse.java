@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsDescribeCommandResponse extends AcsResponse {
 
+	private Integer pageSize;
+
 	private String requestId;
 
 	private Integer total;
 
 	private Integer pageNo;
 
-	private Integer pageSize;
-
 	private List<Command> commandList;
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -59,14 +67,6 @@ public class OpsDescribeCommandResponse extends AcsResponse {
 		this.pageNo = pageNo;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-	}
-
 	public List<Command> getCommandList() {
 		return this.commandList;
 	}
@@ -77,52 +77,44 @@ public class OpsDescribeCommandResponse extends AcsResponse {
 
 	public static class Command {
 
-		private String commandId;
-
-		private String name;
+		private String creationTime;
 
 		private String type;
 
-		private Boolean latest;
+		private Integer invokeTimes;
 
-		private Integer version;
+		private String commandId;
+
+		private String publishTime;
+
+		private Long timeOut;
+
+		private String workingDir;
 
 		private String shareStatus;
 
 		private String description;
 
+		private Integer version;
+
 		private String commandContent;
 
-		private String workingDir;
+		private Boolean latest;
 
-		private Long timeOut;
-
-		private String creationTime;
-
-		private String publishTime;
-
-		private Integer invokeTimes;
+		private String name;
 
 		private Boolean enableParameter;
 
-		private List<String> parameterNames;
-
 		private List<String> modifiers;
 
-		public String getCommandId() {
-			return this.commandId;
+		private List<String> parameterNames;
+
+		public String getCreationTime() {
+			return this.creationTime;
 		}
 
-		public void setCommandId(String commandId) {
-			this.commandId = commandId;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
 		}
 
 		public String getType() {
@@ -133,20 +125,44 @@ public class OpsDescribeCommandResponse extends AcsResponse {
 			this.type = type;
 		}
 
-		public Boolean getLatest() {
-			return this.latest;
+		public Integer getInvokeTimes() {
+			return this.invokeTimes;
 		}
 
-		public void setLatest(Boolean latest) {
-			this.latest = latest;
+		public void setInvokeTimes(Integer invokeTimes) {
+			this.invokeTimes = invokeTimes;
 		}
 
-		public Integer getVersion() {
-			return this.version;
+		public String getCommandId() {
+			return this.commandId;
 		}
 
-		public void setVersion(Integer version) {
-			this.version = version;
+		public void setCommandId(String commandId) {
+			this.commandId = commandId;
+		}
+
+		public String getPublishTime() {
+			return this.publishTime;
+		}
+
+		public void setPublishTime(String publishTime) {
+			this.publishTime = publishTime;
+		}
+
+		public Long getTimeOut() {
+			return this.timeOut;
+		}
+
+		public void setTimeOut(Long timeOut) {
+			this.timeOut = timeOut;
+		}
+
+		public String getWorkingDir() {
+			return this.workingDir;
+		}
+
+		public void setWorkingDir(String workingDir) {
+			this.workingDir = workingDir;
 		}
 
 		public String getShareStatus() {
@@ -165,6 +181,14 @@ public class OpsDescribeCommandResponse extends AcsResponse {
 			this.description = description;
 		}
 
+		public Integer getVersion() {
+			return this.version;
+		}
+
+		public void setVersion(Integer version) {
+			this.version = version;
+		}
+
 		public String getCommandContent() {
 			return this.commandContent;
 		}
@@ -173,44 +197,20 @@ public class OpsDescribeCommandResponse extends AcsResponse {
 			this.commandContent = commandContent;
 		}
 
-		public String getWorkingDir() {
-			return this.workingDir;
+		public Boolean getLatest() {
+			return this.latest;
 		}
 
-		public void setWorkingDir(String workingDir) {
-			this.workingDir = workingDir;
+		public void setLatest(Boolean latest) {
+			this.latest = latest;
 		}
 
-		public Long getTimeOut() {
-			return this.timeOut;
+		public String getName() {
+			return this.name;
 		}
 
-		public void setTimeOut(Long timeOut) {
-			this.timeOut = timeOut;
-		}
-
-		public String getCreationTime() {
-			return this.creationTime;
-		}
-
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
-		}
-
-		public String getPublishTime() {
-			return this.publishTime;
-		}
-
-		public void setPublishTime(String publishTime) {
-			this.publishTime = publishTime;
-		}
-
-		public Integer getInvokeTimes() {
-			return this.invokeTimes;
-		}
-
-		public void setInvokeTimes(Integer invokeTimes) {
-			this.invokeTimes = invokeTimes;
+		public void setName(String name) {
+			this.name = name;
 		}
 
 		public Boolean getEnableParameter() {
@@ -221,20 +221,20 @@ public class OpsDescribeCommandResponse extends AcsResponse {
 			this.enableParameter = enableParameter;
 		}
 
-		public List<String> getParameterNames() {
-			return this.parameterNames;
-		}
-
-		public void setParameterNames(List<String> parameterNames) {
-			this.parameterNames = parameterNames;
-		}
-
 		public List<String> getModifiers() {
 			return this.modifiers;
 		}
 
 		public void setModifiers(List<String> modifiers) {
 			this.modifiers = modifiers;
+		}
+
+		public List<String> getParameterNames() {
+			return this.parameterNames;
+		}
+
+		public void setParameterNames(List<String> parameterNames) {
+			this.parameterNames = parameterNames;
 		}
 	}
 

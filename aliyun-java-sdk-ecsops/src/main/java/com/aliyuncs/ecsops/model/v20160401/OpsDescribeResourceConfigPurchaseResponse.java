@@ -25,31 +25,39 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsDescribeResourceConfigPurchaseResponse extends AcsResponse {
 
+	private String status;
+
 	private String requestId;
-
-	private Integer totalCount;
-
-	private Integer pageNumber;
 
 	private Integer pageSize;
 
-	private Long userId;
-
-	private String startDate;
-
-	private String endDate;
-
-	private String status;
-
-	private String orderType;
+	private String instanceId;
 
 	private Long orderId;
 
-	private String instanceId;
+	private String endDate;
+
+	private String startDate;
+
+	private Integer totalCount;
+
+	private String orderType;
+
+	private Integer pageNumber;
+
+	private Long userId;
 
 	private List<Property> properties;
 
 	private List<Component> components;
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -57,22 +65,6 @@ public class OpsDescribeResourceConfigPurchaseResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
 	}
 
 	public Integer getPageSize() {
@@ -83,44 +75,12 @@ public class OpsDescribeResourceConfigPurchaseResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public Long getUserId() {
-		return this.userId;
+	public String getInstanceId() {
+		return this.instanceId;
 	}
 
-	public void setUserId(Long userId) {
-		this.userId = userId;
-	}
-
-	public String getStartDate() {
-		return this.startDate;
-	}
-
-	public void setStartDate(String startDate) {
-		this.startDate = startDate;
-	}
-
-	public String getEndDate() {
-		return this.endDate;
-	}
-
-	public void setEndDate(String endDate) {
-		this.endDate = endDate;
-	}
-
-	public String getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-	}
-
-	public String getOrderType() {
-		return this.orderType;
-	}
-
-	public void setOrderType(String orderType) {
-		this.orderType = orderType;
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
 	}
 
 	public Long getOrderId() {
@@ -131,12 +91,52 @@ public class OpsDescribeResourceConfigPurchaseResponse extends AcsResponse {
 		this.orderId = orderId;
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
+	public String getEndDate() {
+		return this.endDate;
 	}
 
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
+	public void setEndDate(String endDate) {
+		this.endDate = endDate;
+	}
+
+	public String getStartDate() {
+		return this.startDate;
+	}
+
+	public void setStartDate(String startDate) {
+		this.startDate = startDate;
+	}
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
+
+	public String getOrderType() {
+		return this.orderType;
+	}
+
+	public void setOrderType(String orderType) {
+		this.orderType = orderType;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+	}
+
+	public Long getUserId() {
+		return this.userId;
+	}
+
+	public void setUserId(Long userId) {
+		this.userId = userId;
 	}
 
 	public List<Property> getProperties() {
@@ -157,19 +157,11 @@ public class OpsDescribeResourceConfigPurchaseResponse extends AcsResponse {
 
 	public static class Property {
 
-		private String code;
-
 		private String value;
 
+		private String code;
+
 		private String name;
-
-		public String getCode() {
-			return this.code;
-		}
-
-		public void setCode(String code) {
-			this.code = code;
-		}
 
 		public String getValue() {
 			return this.value;
@@ -177,6 +169,14 @@ public class OpsDescribeResourceConfigPurchaseResponse extends AcsResponse {
 
 		public void setValue(String value) {
 			this.value = value;
+		}
+
+		public String getCode() {
+			return this.code;
+		}
+
+		public void setCode(String code) {
+			this.code = code;
 		}
 
 		public String getName() {
@@ -190,21 +190,13 @@ public class OpsDescribeResourceConfigPurchaseResponse extends AcsResponse {
 
 	public static class Component {
 
-		private String componentCode;
-
 		private Long moduleAttrStatus;
 
 		private String tag;
 
+		private String componentCode;
+
 		private List<Property2> properties1;
-
-		public String getComponentCode() {
-			return this.componentCode;
-		}
-
-		public void setComponentCode(String componentCode) {
-			this.componentCode = componentCode;
-		}
 
 		public Long getModuleAttrStatus() {
 			return this.moduleAttrStatus;
@@ -222,6 +214,14 @@ public class OpsDescribeResourceConfigPurchaseResponse extends AcsResponse {
 			this.tag = tag;
 		}
 
+		public String getComponentCode() {
+			return this.componentCode;
+		}
+
+		public void setComponentCode(String componentCode) {
+			this.componentCode = componentCode;
+		}
+
 		public List<Property2> getProperties1() {
 			return this.properties1;
 		}
@@ -232,19 +232,11 @@ public class OpsDescribeResourceConfigPurchaseResponse extends AcsResponse {
 
 		public static class Property2 {
 
-			private String code;
-
 			private String value;
 
+			private String code;
+
 			private String name;
-
-			public String getCode() {
-				return this.code;
-			}
-
-			public void setCode(String code) {
-				this.code = code;
-			}
 
 			public String getValue() {
 				return this.value;
@@ -252,6 +244,14 @@ public class OpsDescribeResourceConfigPurchaseResponse extends AcsResponse {
 
 			public void setValue(String value) {
 				this.value = value;
+			}
+
+			public String getCode() {
+				return this.code;
+			}
+
+			public void setCode(String code) {
+				this.code = code;
 			}
 
 			public String getName() {

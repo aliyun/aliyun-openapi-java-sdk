@@ -27,20 +27,20 @@ public class OpsDescribeExpireZonesResponseUnmarshaller {
 	public static OpsDescribeExpireZonesResponse unmarshall(OpsDescribeExpireZonesResponse opsDescribeExpireZonesResponse, UnmarshallerContext _ctx) {
 		
 		opsDescribeExpireZonesResponse.setRequestId(_ctx.stringValue("OpsDescribeExpireZonesResponse.RequestId"));
-		opsDescribeExpireZonesResponse.setTotal(_ctx.integerValue("OpsDescribeExpireZonesResponse.Total"));
 		opsDescribeExpireZonesResponse.setPageSize(_ctx.integerValue("OpsDescribeExpireZonesResponse.PageSize"));
 		opsDescribeExpireZonesResponse.setPageNumber(_ctx.integerValue("OpsDescribeExpireZonesResponse.PageNumber"));
+		opsDescribeExpireZonesResponse.setTotal(_ctx.integerValue("OpsDescribeExpireZonesResponse.Total"));
 
 		List<ExpireZone> expireZoneSet = new ArrayList<ExpireZone>();
 		for (int i = 0; i < _ctx.lengthValue("OpsDescribeExpireZonesResponse.ExpireZoneSet.Length"); i++) {
 			ExpireZone expireZone = new ExpireZone();
-			expireZone.setNumericId(_ctx.longValue("OpsDescribeExpireZonesResponse.ExpireZoneSet["+ i +"].NumericId"));
-			expireZone.setSourceZoneNo(_ctx.stringValue("OpsDescribeExpireZonesResponse.ExpireZoneSet["+ i +"].SourceZoneNo"));
-			expireZone.setTargetZoneNo(_ctx.stringValue("OpsDescribeExpireZonesResponse.ExpireZoneSet["+ i +"].TargetZoneNo"));
-			expireZone.setSourceIzNo(_ctx.stringValue("OpsDescribeExpireZonesResponse.ExpireZoneSet["+ i +"].SourceIzNo"));
-			expireZone.setTargetIzNo(_ctx.stringValue("OpsDescribeExpireZonesResponse.ExpireZoneSet["+ i +"].TargetIzNo"));
-			expireZone.setExpireStrategy(_ctx.integerValue("OpsDescribeExpireZonesResponse.ExpireZoneSet["+ i +"].ExpireStrategy"));
 			expireZone.setExpireTime(_ctx.stringValue("OpsDescribeExpireZonesResponse.ExpireZoneSet["+ i +"].ExpireTime"));
+			expireZone.setSourceIzNo(_ctx.stringValue("OpsDescribeExpireZonesResponse.ExpireZoneSet["+ i +"].SourceIzNo"));
+			expireZone.setExpireStrategy(_ctx.integerValue("OpsDescribeExpireZonesResponse.ExpireZoneSet["+ i +"].ExpireStrategy"));
+			expireZone.setTargetZoneNo(_ctx.stringValue("OpsDescribeExpireZonesResponse.ExpireZoneSet["+ i +"].TargetZoneNo"));
+			expireZone.setTargetIzNo(_ctx.stringValue("OpsDescribeExpireZonesResponse.ExpireZoneSet["+ i +"].TargetIzNo"));
+			expireZone.setSourceZoneNo(_ctx.stringValue("OpsDescribeExpireZonesResponse.ExpireZoneSet["+ i +"].SourceZoneNo"));
+			expireZone.setNumericId(_ctx.longValue("OpsDescribeExpireZonesResponse.ExpireZoneSet["+ i +"].NumericId"));
 
 			expireZoneSet.add(expireZone);
 		}

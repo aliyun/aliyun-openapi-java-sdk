@@ -31,13 +31,13 @@ public class OpsDescribeBusinessModulePropertiesResponseUnmarshaller {
 		List<BusinessModulePropertySet> businessModulePropertySets = new ArrayList<BusinessModulePropertySet>();
 		for (int i = 0; i < _ctx.lengthValue("OpsDescribeBusinessModulePropertiesResponse.BusinessModulePropertySets.Length"); i++) {
 			BusinessModulePropertySet businessModulePropertySet = new BusinessModulePropertySet();
-			businessModulePropertySet.setId(_ctx.longValue("OpsDescribeBusinessModulePropertiesResponse.BusinessModulePropertySets["+ i +"].Id"));
-			businessModulePropertySet.setBusinessId(_ctx.longValue("OpsDescribeBusinessModulePropertiesResponse.BusinessModulePropertySets["+ i +"].BusinessId"));
-			businessModulePropertySet.setModuleCode(_ctx.stringValue("OpsDescribeBusinessModulePropertiesResponse.BusinessModulePropertySets["+ i +"].ModuleCode"));
 			businessModulePropertySet.setPropertyCode(_ctx.stringValue("OpsDescribeBusinessModulePropertiesResponse.BusinessModulePropertySets["+ i +"].PropertyCode"));
 			businessModulePropertySet.setModuleId(_ctx.longValue("OpsDescribeBusinessModulePropertiesResponse.BusinessModulePropertySets["+ i +"].ModuleId"));
-			businessModulePropertySet.setPropertyValue(_ctx.stringValue("OpsDescribeBusinessModulePropertiesResponse.BusinessModulePropertySets["+ i +"].PropertyValue"));
 			businessModulePropertySet.setPropertyDisplayValue(_ctx.stringValue("OpsDescribeBusinessModulePropertiesResponse.BusinessModulePropertySets["+ i +"].PropertyDisplayValue"));
+			businessModulePropertySet.setModuleCode(_ctx.stringValue("OpsDescribeBusinessModulePropertiesResponse.BusinessModulePropertySets["+ i +"].ModuleCode"));
+			businessModulePropertySet.setBusinessId(_ctx.longValue("OpsDescribeBusinessModulePropertiesResponse.BusinessModulePropertySets["+ i +"].BusinessId"));
+			businessModulePropertySet.setPropertyValue(_ctx.stringValue("OpsDescribeBusinessModulePropertiesResponse.BusinessModulePropertySets["+ i +"].PropertyValue"));
+			businessModulePropertySet.setId(_ctx.longValue("OpsDescribeBusinessModulePropertiesResponse.BusinessModulePropertySets["+ i +"].Id"));
 
 			businessModulePropertySets.add(businessModulePropertySet);
 		}

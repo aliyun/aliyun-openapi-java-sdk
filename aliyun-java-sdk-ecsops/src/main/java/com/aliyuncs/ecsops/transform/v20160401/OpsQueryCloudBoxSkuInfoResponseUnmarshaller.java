@@ -33,44 +33,44 @@ public class OpsQueryCloudBoxSkuInfoResponseUnmarshaller {
 		List<CloudBoxSkuInfoModel> cloudBoxSkuInfoModels = new ArrayList<CloudBoxSkuInfoModel>();
 		for (int i = 0; i < _ctx.lengthValue("OpsQueryCloudBoxSkuInfoResponse.CloudBoxSkuInfoModels.Length"); i++) {
 			CloudBoxSkuInfoModel cloudBoxSkuInfoModel = new CloudBoxSkuInfoModel();
-			cloudBoxSkuInfoModel.setSkuId(_ctx.stringValue("OpsQueryCloudBoxSkuInfoResponse.CloudBoxSkuInfoModels["+ i +"].SkuId"));
-			cloudBoxSkuInfoModel.setSkuType(_ctx.stringValue("OpsQueryCloudBoxSkuInfoResponse.CloudBoxSkuInfoModels["+ i +"].SkuType"));
-			cloudBoxSkuInfoModel.setSkuCabinetType(_ctx.stringValue("OpsQueryCloudBoxSkuInfoResponse.CloudBoxSkuInfoModels["+ i +"].SkuCabinetType"));
-			cloudBoxSkuInfoModel.setSkuDescribe(_ctx.stringValue("OpsQueryCloudBoxSkuInfoResponse.CloudBoxSkuInfoModels["+ i +"].SkuDescribe"));
-			cloudBoxSkuInfoModel.setBandwidth(_ctx.stringValue("OpsQueryCloudBoxSkuInfoResponse.CloudBoxSkuInfoModels["+ i +"].Bandwidth"));
-			cloudBoxSkuInfoModel.setPowerConsumption(_ctx.stringValue("OpsQueryCloudBoxSkuInfoResponse.CloudBoxSkuInfoModels["+ i +"].PowerConsumption"));
-			cloudBoxSkuInfoModel.setWeight(_ctx.stringValue("OpsQueryCloudBoxSkuInfoResponse.CloudBoxSkuInfoModels["+ i +"].Weight"));
-			cloudBoxSkuInfoModel.setLength(_ctx.stringValue("OpsQueryCloudBoxSkuInfoResponse.CloudBoxSkuInfoModels["+ i +"].Length"));
-			cloudBoxSkuInfoModel.setHight(_ctx.stringValue("OpsQueryCloudBoxSkuInfoResponse.CloudBoxSkuInfoModels["+ i +"].Hight"));
-			cloudBoxSkuInfoModel.setWidth(_ctx.stringValue("OpsQueryCloudBoxSkuInfoResponse.CloudBoxSkuInfoModels["+ i +"].Width"));
-			cloudBoxSkuInfoModel.setSize(_ctx.stringValue("OpsQueryCloudBoxSkuInfoResponse.CloudBoxSkuInfoModels["+ i +"].Size"));
-			cloudBoxSkuInfoModel.setSubmitterName(_ctx.stringValue("OpsQueryCloudBoxSkuInfoResponse.CloudBoxSkuInfoModels["+ i +"].SubmitterName"));
 			cloudBoxSkuInfoModel.setComment(_ctx.stringValue("OpsQueryCloudBoxSkuInfoResponse.CloudBoxSkuInfoModels["+ i +"].Comment"));
-
-			List<CloudBoxSkuCalInfoModel> cloudBoxSkuCalInfoModels = new ArrayList<CloudBoxSkuCalInfoModel>();
-			for (int j = 0; j < _ctx.lengthValue("OpsQueryCloudBoxSkuInfoResponse.CloudBoxSkuInfoModels["+ i +"].CloudBoxSkuCalInfoModels.Length"); j++) {
-				CloudBoxSkuCalInfoModel cloudBoxSkuCalInfoModel = new CloudBoxSkuCalInfoModel();
-				cloudBoxSkuCalInfoModel.setInstanceType(_ctx.stringValue("OpsQueryCloudBoxSkuInfoResponse.CloudBoxSkuInfoModels["+ i +"].CloudBoxSkuCalInfoModels["+ j +"].InstanceType"));
-				cloudBoxSkuCalInfoModel.setAmount(_ctx.integerValue("OpsQueryCloudBoxSkuInfoResponse.CloudBoxSkuInfoModels["+ i +"].CloudBoxSkuCalInfoModels["+ j +"].Amount"));
-				cloudBoxSkuCalInfoModel.setNcType(_ctx.stringValue("OpsQueryCloudBoxSkuInfoResponse.CloudBoxSkuInfoModels["+ i +"].CloudBoxSkuCalInfoModels["+ j +"].NcType"));
-				cloudBoxSkuCalInfoModel.setNcAmount(_ctx.integerValue("OpsQueryCloudBoxSkuInfoResponse.CloudBoxSkuInfoModels["+ i +"].CloudBoxSkuCalInfoModels["+ j +"].NcAmount"));
-				cloudBoxSkuCalInfoModel.setCalProduct(_ctx.stringValue("OpsQueryCloudBoxSkuInfoResponse.CloudBoxSkuInfoModels["+ i +"].CloudBoxSkuCalInfoModels["+ j +"].CalProduct"));
-
-				cloudBoxSkuCalInfoModels.add(cloudBoxSkuCalInfoModel);
-			}
-			cloudBoxSkuInfoModel.setCloudBoxSkuCalInfoModels(cloudBoxSkuCalInfoModels);
+			cloudBoxSkuInfoModel.setPowerConsumption(_ctx.stringValue("OpsQueryCloudBoxSkuInfoResponse.CloudBoxSkuInfoModels["+ i +"].PowerConsumption"));
+			cloudBoxSkuInfoModel.setSkuType(_ctx.stringValue("OpsQueryCloudBoxSkuInfoResponse.CloudBoxSkuInfoModels["+ i +"].SkuType"));
+			cloudBoxSkuInfoModel.setSkuDescribe(_ctx.stringValue("OpsQueryCloudBoxSkuInfoResponse.CloudBoxSkuInfoModels["+ i +"].SkuDescribe"));
+			cloudBoxSkuInfoModel.setSkuCabinetType(_ctx.stringValue("OpsQueryCloudBoxSkuInfoResponse.CloudBoxSkuInfoModels["+ i +"].SkuCabinetType"));
+			cloudBoxSkuInfoModel.setWeight(_ctx.stringValue("OpsQueryCloudBoxSkuInfoResponse.CloudBoxSkuInfoModels["+ i +"].Weight"));
+			cloudBoxSkuInfoModel.setSubmitterName(_ctx.stringValue("OpsQueryCloudBoxSkuInfoResponse.CloudBoxSkuInfoModels["+ i +"].SubmitterName"));
+			cloudBoxSkuInfoModel.setBandwidth(_ctx.stringValue("OpsQueryCloudBoxSkuInfoResponse.CloudBoxSkuInfoModels["+ i +"].Bandwidth"));
+			cloudBoxSkuInfoModel.setHight(_ctx.stringValue("OpsQueryCloudBoxSkuInfoResponse.CloudBoxSkuInfoModels["+ i +"].Hight"));
+			cloudBoxSkuInfoModel.setSize(_ctx.stringValue("OpsQueryCloudBoxSkuInfoResponse.CloudBoxSkuInfoModels["+ i +"].Size"));
+			cloudBoxSkuInfoModel.setWidth(_ctx.stringValue("OpsQueryCloudBoxSkuInfoResponse.CloudBoxSkuInfoModels["+ i +"].Width"));
+			cloudBoxSkuInfoModel.setSkuId(_ctx.stringValue("OpsQueryCloudBoxSkuInfoResponse.CloudBoxSkuInfoModels["+ i +"].SkuId"));
+			cloudBoxSkuInfoModel.setLength(_ctx.stringValue("OpsQueryCloudBoxSkuInfoResponse.CloudBoxSkuInfoModels["+ i +"].Length"));
 
 			List<CloudBoxSkuStoreInfoModel> cloudBoxSkuStoreInfoModels = new ArrayList<CloudBoxSkuStoreInfoModel>();
 			for (int j = 0; j < _ctx.lengthValue("OpsQueryCloudBoxSkuInfoResponse.CloudBoxSkuInfoModels["+ i +"].CloudBoxSkuStoreInfoModels.Length"); j++) {
 				CloudBoxSkuStoreInfoModel cloudBoxSkuStoreInfoModel = new CloudBoxSkuStoreInfoModel();
 				cloudBoxSkuStoreInfoModel.setStoreNcType(_ctx.stringValue("OpsQueryCloudBoxSkuInfoResponse.CloudBoxSkuInfoModels["+ i +"].CloudBoxSkuStoreInfoModels["+ j +"].StoreNcType"));
-				cloudBoxSkuStoreInfoModel.setStoreProduct(_ctx.stringValue("OpsQueryCloudBoxSkuInfoResponse.CloudBoxSkuInfoModels["+ i +"].CloudBoxSkuStoreInfoModels["+ j +"].StoreProduct"));
 				cloudBoxSkuStoreInfoModel.setStoreMax(_ctx.stringValue("OpsQueryCloudBoxSkuInfoResponse.CloudBoxSkuInfoModels["+ i +"].CloudBoxSkuStoreInfoModels["+ j +"].StoreMax"));
 				cloudBoxSkuStoreInfoModel.setStoreMin(_ctx.stringValue("OpsQueryCloudBoxSkuInfoResponse.CloudBoxSkuInfoModels["+ i +"].CloudBoxSkuStoreInfoModels["+ j +"].StoreMin"));
+				cloudBoxSkuStoreInfoModel.setStoreProduct(_ctx.stringValue("OpsQueryCloudBoxSkuInfoResponse.CloudBoxSkuInfoModels["+ i +"].CloudBoxSkuStoreInfoModels["+ j +"].StoreProduct"));
 
 				cloudBoxSkuStoreInfoModels.add(cloudBoxSkuStoreInfoModel);
 			}
 			cloudBoxSkuInfoModel.setCloudBoxSkuStoreInfoModels(cloudBoxSkuStoreInfoModels);
+
+			List<CloudBoxSkuCalInfoModel> cloudBoxSkuCalInfoModels = new ArrayList<CloudBoxSkuCalInfoModel>();
+			for (int j = 0; j < _ctx.lengthValue("OpsQueryCloudBoxSkuInfoResponse.CloudBoxSkuInfoModels["+ i +"].CloudBoxSkuCalInfoModels.Length"); j++) {
+				CloudBoxSkuCalInfoModel cloudBoxSkuCalInfoModel = new CloudBoxSkuCalInfoModel();
+				cloudBoxSkuCalInfoModel.setAmount(_ctx.integerValue("OpsQueryCloudBoxSkuInfoResponse.CloudBoxSkuInfoModels["+ i +"].CloudBoxSkuCalInfoModels["+ j +"].Amount"));
+				cloudBoxSkuCalInfoModel.setNcAmount(_ctx.integerValue("OpsQueryCloudBoxSkuInfoResponse.CloudBoxSkuInfoModels["+ i +"].CloudBoxSkuCalInfoModels["+ j +"].NcAmount"));
+				cloudBoxSkuCalInfoModel.setCalProduct(_ctx.stringValue("OpsQueryCloudBoxSkuInfoResponse.CloudBoxSkuInfoModels["+ i +"].CloudBoxSkuCalInfoModels["+ j +"].CalProduct"));
+				cloudBoxSkuCalInfoModel.setNcType(_ctx.stringValue("OpsQueryCloudBoxSkuInfoResponse.CloudBoxSkuInfoModels["+ i +"].CloudBoxSkuCalInfoModels["+ j +"].NcType"));
+				cloudBoxSkuCalInfoModel.setInstanceType(_ctx.stringValue("OpsQueryCloudBoxSkuInfoResponse.CloudBoxSkuInfoModels["+ i +"].CloudBoxSkuCalInfoModels["+ j +"].InstanceType"));
+
+				cloudBoxSkuCalInfoModels.add(cloudBoxSkuCalInfoModel);
+			}
+			cloudBoxSkuInfoModel.setCloudBoxSkuCalInfoModels(cloudBoxSkuCalInfoModels);
 
 			cloudBoxSkuInfoModels.add(cloudBoxSkuInfoModel);
 		}

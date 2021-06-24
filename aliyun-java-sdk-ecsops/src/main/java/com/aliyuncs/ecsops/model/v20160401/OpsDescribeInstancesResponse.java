@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsDescribeInstancesResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
-
-	private Integer pageNumber;
 
 	private Integer pageSize;
 
+	private String requestId;
+
+	private Integer pageNumber;
+
 	private List<Instance> instances;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -51,20 +43,28 @@ public class OpsDescribeInstancesResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<Instance> getInstances() {
@@ -77,311 +77,127 @@ public class OpsDescribeInstancesResponse extends AcsResponse {
 
 	public static class Instance {
 
-		private String instanceId;
-
-		private String instanceName;
-
-		private String description;
-
-		private String regionId;
-
-		private String zoneId;
-
-		private String clusterId;
-
-		private String bid;
-
-		private String resourceOwnerId;
-
-		private String hostname;
-
-		private String status;
-
-		private String businessStatus;
-
-		private String houyiStatus;
-
-		private String innerIpAddress;
-
-		private String publicIpAddress;
-
-		private String imageId;
-
-		private String imageName;
-
-		private String oSName;
-
-		private String oSType;
-
-		private Integer cpu;
-
-		private Integer memory;
-
-		private Integer intranetRx;
-
-		private Integer intranetTx;
-
-		private Integer internetRx;
-
-		private Integer internetTx;
-
-		private String systemDeviceCategory;
-
-		private String createdTime;
-
 		private String vpcId;
-
-		private String vswId;
 
 		private String natIp;
 
-		private String eipAddress;
-
-		private String eipAllocationId;
-
-		private Integer eipBandwidth;
-
-		private String instanceNetworkType;
-
-		private Boolean ioOptimized;
-
-		private Boolean deviceAvailable;
-
-		private String vlanId;
-
-		private String ncId;
-
-		private String ncIp;
-
-		private String rackId;
-
-		private String vncHost;
+		private Integer instanceChargeType;
 
 		private Integer vncPort;
 
-		private Integer gPUAmount;
-
-		private String gPUSpec;
-
-		private String platform;
+		private Integer intranetTx;
 
 		private Integer spotStrategy;
 
-		private Integer instanceChargeType;
+		private Boolean deviceAvailable;
 
-		private Integer internetChargeType;
+		private String publicIpAddress;
+
+		private String eipAddress;
+
+		private String ncId;
+
+		private String instanceName;
+
+		private String instanceNetworkType;
+
+		private Integer internetRx;
+
+		private String platform;
+
+		private Integer eipBandwidth;
+
+		private String oSName;
+
+		private String imageId;
+
+		private String clusterId;
+
+		private String gPUSpec;
+
+		private String innerIpAddress;
+
+		private Integer gPUAmount;
+
+		private String instanceId;
+
+		private String eipAllocationId;
+
+		private String resourceOwnerId;
+
+		private String imageName;
+
+		private String zoneId;
+
+		private String vswId;
+
+		private String businessStatus;
+
+		private String oSType;
+
+		private String status;
+
+		private String systemDeviceCategory;
+
+		private Integer internetTx;
+
+		private Integer eipInternetChargeType;
+
+		private String vncHost;
+
+		private String ncIp;
+
+		private String bid;
+
+		private String description;
+
+		private String rackId;
+
+		private Integer memory;
+
+		private String createdTime;
+
+		private String vlanId;
+
+		private String hostname;
+
+		private String regionId;
+
+		private Boolean ioOptimized;
+
+		private Integer cpu;
+
+		private String houyiStatus;
+
+		private Integer intranetRx;
+
+		private String stopBehavior;
+
+		private String creditSpecification;
+
+		private String autoReleaseTime;
+
+		private String mac;
+
+		private String expiredStopTime;
+
+		private String expiredTime;
+
+		private String expectReleaseTime;
+
+		private String serialNumber;
+
+		private String id;
+
+		private String spotPriceLimit;
+
+		private Integer spotDiscountLimit;
+
+		private String spotInterruptionBehavior;
 
 		private List<Disk> disks;
 
 		private List<String> securityGroupIds;
-
-		public String getInstanceId() {
-			return this.instanceId;
-		}
-
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
-
-		public String getInstanceName() {
-			return this.instanceName;
-		}
-
-		public void setInstanceName(String instanceName) {
-			this.instanceName = instanceName;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		public String getZoneId() {
-			return this.zoneId;
-		}
-
-		public void setZoneId(String zoneId) {
-			this.zoneId = zoneId;
-		}
-
-		public String getClusterId() {
-			return this.clusterId;
-		}
-
-		public void setClusterId(String clusterId) {
-			this.clusterId = clusterId;
-		}
-
-		public String getBid() {
-			return this.bid;
-		}
-
-		public void setBid(String bid) {
-			this.bid = bid;
-		}
-
-		public String getResourceOwnerId() {
-			return this.resourceOwnerId;
-		}
-
-		public void setResourceOwnerId(String resourceOwnerId) {
-			this.resourceOwnerId = resourceOwnerId;
-		}
-
-		public String getHostname() {
-			return this.hostname;
-		}
-
-		public void setHostname(String hostname) {
-			this.hostname = hostname;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
-		public String getBusinessStatus() {
-			return this.businessStatus;
-		}
-
-		public void setBusinessStatus(String businessStatus) {
-			this.businessStatus = businessStatus;
-		}
-
-		public String getHouyiStatus() {
-			return this.houyiStatus;
-		}
-
-		public void setHouyiStatus(String houyiStatus) {
-			this.houyiStatus = houyiStatus;
-		}
-
-		public String getInnerIpAddress() {
-			return this.innerIpAddress;
-		}
-
-		public void setInnerIpAddress(String innerIpAddress) {
-			this.innerIpAddress = innerIpAddress;
-		}
-
-		public String getPublicIpAddress() {
-			return this.publicIpAddress;
-		}
-
-		public void setPublicIpAddress(String publicIpAddress) {
-			this.publicIpAddress = publicIpAddress;
-		}
-
-		public String getImageId() {
-			return this.imageId;
-		}
-
-		public void setImageId(String imageId) {
-			this.imageId = imageId;
-		}
-
-		public String getImageName() {
-			return this.imageName;
-		}
-
-		public void setImageName(String imageName) {
-			this.imageName = imageName;
-		}
-
-		public String getOSName() {
-			return this.oSName;
-		}
-
-		public void setOSName(String oSName) {
-			this.oSName = oSName;
-		}
-
-		public String getOSType() {
-			return this.oSType;
-		}
-
-		public void setOSType(String oSType) {
-			this.oSType = oSType;
-		}
-
-		public Integer getCpu() {
-			return this.cpu;
-		}
-
-		public void setCpu(Integer cpu) {
-			this.cpu = cpu;
-		}
-
-		public Integer getMemory() {
-			return this.memory;
-		}
-
-		public void setMemory(Integer memory) {
-			this.memory = memory;
-		}
-
-		public Integer getIntranetRx() {
-			return this.intranetRx;
-		}
-
-		public void setIntranetRx(Integer intranetRx) {
-			this.intranetRx = intranetRx;
-		}
-
-		public Integer getIntranetTx() {
-			return this.intranetTx;
-		}
-
-		public void setIntranetTx(Integer intranetTx) {
-			this.intranetTx = intranetTx;
-		}
-
-		public Integer getInternetRx() {
-			return this.internetRx;
-		}
-
-		public void setInternetRx(Integer internetRx) {
-			this.internetRx = internetRx;
-		}
-
-		public Integer getInternetTx() {
-			return this.internetTx;
-		}
-
-		public void setInternetTx(Integer internetTx) {
-			this.internetTx = internetTx;
-		}
-
-		public String getSystemDeviceCategory() {
-			return this.systemDeviceCategory;
-		}
-
-		public void setSystemDeviceCategory(String systemDeviceCategory) {
-			this.systemDeviceCategory = systemDeviceCategory;
-		}
-
-		public String getCreatedTime() {
-			return this.createdTime;
-		}
-
-		public void setCreatedTime(String createdTime) {
-			this.createdTime = createdTime;
-		}
 
 		public String getVpcId() {
 			return this.vpcId;
@@ -389,14 +205,6 @@ public class OpsDescribeInstancesResponse extends AcsResponse {
 
 		public void setVpcId(String vpcId) {
 			this.vpcId = vpcId;
-		}
-
-		public String getVswId() {
-			return this.vswId;
-		}
-
-		public void setVswId(String vswId) {
-			this.vswId = vswId;
 		}
 
 		public String getNatIp() {
@@ -407,92 +215,12 @@ public class OpsDescribeInstancesResponse extends AcsResponse {
 			this.natIp = natIp;
 		}
 
-		public String getEipAddress() {
-			return this.eipAddress;
+		public Integer getInstanceChargeType() {
+			return this.instanceChargeType;
 		}
 
-		public void setEipAddress(String eipAddress) {
-			this.eipAddress = eipAddress;
-		}
-
-		public String getEipAllocationId() {
-			return this.eipAllocationId;
-		}
-
-		public void setEipAllocationId(String eipAllocationId) {
-			this.eipAllocationId = eipAllocationId;
-		}
-
-		public Integer getEipBandwidth() {
-			return this.eipBandwidth;
-		}
-
-		public void setEipBandwidth(Integer eipBandwidth) {
-			this.eipBandwidth = eipBandwidth;
-		}
-
-		public String getInstanceNetworkType() {
-			return this.instanceNetworkType;
-		}
-
-		public void setInstanceNetworkType(String instanceNetworkType) {
-			this.instanceNetworkType = instanceNetworkType;
-		}
-
-		public Boolean getIoOptimized() {
-			return this.ioOptimized;
-		}
-
-		public void setIoOptimized(Boolean ioOptimized) {
-			this.ioOptimized = ioOptimized;
-		}
-
-		public Boolean getDeviceAvailable() {
-			return this.deviceAvailable;
-		}
-
-		public void setDeviceAvailable(Boolean deviceAvailable) {
-			this.deviceAvailable = deviceAvailable;
-		}
-
-		public String getVlanId() {
-			return this.vlanId;
-		}
-
-		public void setVlanId(String vlanId) {
-			this.vlanId = vlanId;
-		}
-
-		public String getNcId() {
-			return this.ncId;
-		}
-
-		public void setNcId(String ncId) {
-			this.ncId = ncId;
-		}
-
-		public String getNcIp() {
-			return this.ncIp;
-		}
-
-		public void setNcIp(String ncIp) {
-			this.ncIp = ncIp;
-		}
-
-		public String getRackId() {
-			return this.rackId;
-		}
-
-		public void setRackId(String rackId) {
-			this.rackId = rackId;
-		}
-
-		public String getVncHost() {
-			return this.vncHost;
-		}
-
-		public void setVncHost(String vncHost) {
-			this.vncHost = vncHost;
+		public void setInstanceChargeType(Integer instanceChargeType) {
+			this.instanceChargeType = instanceChargeType;
 		}
 
 		public Integer getVncPort() {
@@ -503,28 +231,12 @@ public class OpsDescribeInstancesResponse extends AcsResponse {
 			this.vncPort = vncPort;
 		}
 
-		public Integer getGPUAmount() {
-			return this.gPUAmount;
+		public Integer getIntranetTx() {
+			return this.intranetTx;
 		}
 
-		public void setGPUAmount(Integer gPUAmount) {
-			this.gPUAmount = gPUAmount;
-		}
-
-		public String getGPUSpec() {
-			return this.gPUSpec;
-		}
-
-		public void setGPUSpec(String gPUSpec) {
-			this.gPUSpec = gPUSpec;
-		}
-
-		public String getPlatform() {
-			return this.platform;
-		}
-
-		public void setPlatform(String platform) {
-			this.platform = platform;
+		public void setIntranetTx(Integer intranetTx) {
+			this.intranetTx = intranetTx;
 		}
 
 		public Integer getSpotStrategy() {
@@ -535,20 +247,428 @@ public class OpsDescribeInstancesResponse extends AcsResponse {
 			this.spotStrategy = spotStrategy;
 		}
 
-		public Integer getInstanceChargeType() {
-			return this.instanceChargeType;
+		public Boolean getDeviceAvailable() {
+			return this.deviceAvailable;
 		}
 
-		public void setInstanceChargeType(Integer instanceChargeType) {
-			this.instanceChargeType = instanceChargeType;
+		public void setDeviceAvailable(Boolean deviceAvailable) {
+			this.deviceAvailable = deviceAvailable;
 		}
 
-		public Integer getInternetChargeType() {
-			return this.internetChargeType;
+		public String getPublicIpAddress() {
+			return this.publicIpAddress;
 		}
 
-		public void setInternetChargeType(Integer internetChargeType) {
-			this.internetChargeType = internetChargeType;
+		public void setPublicIpAddress(String publicIpAddress) {
+			this.publicIpAddress = publicIpAddress;
+		}
+
+		public String getEipAddress() {
+			return this.eipAddress;
+		}
+
+		public void setEipAddress(String eipAddress) {
+			this.eipAddress = eipAddress;
+		}
+
+		public String getNcId() {
+			return this.ncId;
+		}
+
+		public void setNcId(String ncId) {
+			this.ncId = ncId;
+		}
+
+		public String getInstanceName() {
+			return this.instanceName;
+		}
+
+		public void setInstanceName(String instanceName) {
+			this.instanceName = instanceName;
+		}
+
+		public String getInstanceNetworkType() {
+			return this.instanceNetworkType;
+		}
+
+		public void setInstanceNetworkType(String instanceNetworkType) {
+			this.instanceNetworkType = instanceNetworkType;
+		}
+
+		public Integer getInternetRx() {
+			return this.internetRx;
+		}
+
+		public void setInternetRx(Integer internetRx) {
+			this.internetRx = internetRx;
+		}
+
+		public String getPlatform() {
+			return this.platform;
+		}
+
+		public void setPlatform(String platform) {
+			this.platform = platform;
+		}
+
+		public Integer getEipBandwidth() {
+			return this.eipBandwidth;
+		}
+
+		public void setEipBandwidth(Integer eipBandwidth) {
+			this.eipBandwidth = eipBandwidth;
+		}
+
+		public String getOSName() {
+			return this.oSName;
+		}
+
+		public void setOSName(String oSName) {
+			this.oSName = oSName;
+		}
+
+		public String getImageId() {
+			return this.imageId;
+		}
+
+		public void setImageId(String imageId) {
+			this.imageId = imageId;
+		}
+
+		public String getClusterId() {
+			return this.clusterId;
+		}
+
+		public void setClusterId(String clusterId) {
+			this.clusterId = clusterId;
+		}
+
+		public String getGPUSpec() {
+			return this.gPUSpec;
+		}
+
+		public void setGPUSpec(String gPUSpec) {
+			this.gPUSpec = gPUSpec;
+		}
+
+		public String getInnerIpAddress() {
+			return this.innerIpAddress;
+		}
+
+		public void setInnerIpAddress(String innerIpAddress) {
+			this.innerIpAddress = innerIpAddress;
+		}
+
+		public Integer getGPUAmount() {
+			return this.gPUAmount;
+		}
+
+		public void setGPUAmount(Integer gPUAmount) {
+			this.gPUAmount = gPUAmount;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public String getEipAllocationId() {
+			return this.eipAllocationId;
+		}
+
+		public void setEipAllocationId(String eipAllocationId) {
+			this.eipAllocationId = eipAllocationId;
+		}
+
+		public String getResourceOwnerId() {
+			return this.resourceOwnerId;
+		}
+
+		public void setResourceOwnerId(String resourceOwnerId) {
+			this.resourceOwnerId = resourceOwnerId;
+		}
+
+		public String getImageName() {
+			return this.imageName;
+		}
+
+		public void setImageName(String imageName) {
+			this.imageName = imageName;
+		}
+
+		public String getZoneId() {
+			return this.zoneId;
+		}
+
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
+		}
+
+		public String getVswId() {
+			return this.vswId;
+		}
+
+		public void setVswId(String vswId) {
+			this.vswId = vswId;
+		}
+
+		public String getBusinessStatus() {
+			return this.businessStatus;
+		}
+
+		public void setBusinessStatus(String businessStatus) {
+			this.businessStatus = businessStatus;
+		}
+
+		public String getOSType() {
+			return this.oSType;
+		}
+
+		public void setOSType(String oSType) {
+			this.oSType = oSType;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
+		public String getSystemDeviceCategory() {
+			return this.systemDeviceCategory;
+		}
+
+		public void setSystemDeviceCategory(String systemDeviceCategory) {
+			this.systemDeviceCategory = systemDeviceCategory;
+		}
+
+		public Integer getInternetTx() {
+			return this.internetTx;
+		}
+
+		public void setInternetTx(Integer internetTx) {
+			this.internetTx = internetTx;
+		}
+
+		public Integer getEipInternetChargeType() {
+			return this.eipInternetChargeType;
+		}
+
+		public void setEipInternetChargeType(Integer eipInternetChargeType) {
+			this.eipInternetChargeType = eipInternetChargeType;
+		}
+
+		public String getVncHost() {
+			return this.vncHost;
+		}
+
+		public void setVncHost(String vncHost) {
+			this.vncHost = vncHost;
+		}
+
+		public String getNcIp() {
+			return this.ncIp;
+		}
+
+		public void setNcIp(String ncIp) {
+			this.ncIp = ncIp;
+		}
+
+		public String getBid() {
+			return this.bid;
+		}
+
+		public void setBid(String bid) {
+			this.bid = bid;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getRackId() {
+			return this.rackId;
+		}
+
+		public void setRackId(String rackId) {
+			this.rackId = rackId;
+		}
+
+		public Integer getMemory() {
+			return this.memory;
+		}
+
+		public void setMemory(Integer memory) {
+			this.memory = memory;
+		}
+
+		public String getCreatedTime() {
+			return this.createdTime;
+		}
+
+		public void setCreatedTime(String createdTime) {
+			this.createdTime = createdTime;
+		}
+
+		public String getVlanId() {
+			return this.vlanId;
+		}
+
+		public void setVlanId(String vlanId) {
+			this.vlanId = vlanId;
+		}
+
+		public String getHostname() {
+			return this.hostname;
+		}
+
+		public void setHostname(String hostname) {
+			this.hostname = hostname;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		public Boolean getIoOptimized() {
+			return this.ioOptimized;
+		}
+
+		public void setIoOptimized(Boolean ioOptimized) {
+			this.ioOptimized = ioOptimized;
+		}
+
+		public Integer getCpu() {
+			return this.cpu;
+		}
+
+		public void setCpu(Integer cpu) {
+			this.cpu = cpu;
+		}
+
+		public String getHouyiStatus() {
+			return this.houyiStatus;
+		}
+
+		public void setHouyiStatus(String houyiStatus) {
+			this.houyiStatus = houyiStatus;
+		}
+
+		public Integer getIntranetRx() {
+			return this.intranetRx;
+		}
+
+		public void setIntranetRx(Integer intranetRx) {
+			this.intranetRx = intranetRx;
+		}
+
+		public String getStopBehavior() {
+			return this.stopBehavior;
+		}
+
+		public void setStopBehavior(String stopBehavior) {
+			this.stopBehavior = stopBehavior;
+		}
+
+		public String getCreditSpecification() {
+			return this.creditSpecification;
+		}
+
+		public void setCreditSpecification(String creditSpecification) {
+			this.creditSpecification = creditSpecification;
+		}
+
+		public String getAutoReleaseTime() {
+			return this.autoReleaseTime;
+		}
+
+		public void setAutoReleaseTime(String autoReleaseTime) {
+			this.autoReleaseTime = autoReleaseTime;
+		}
+
+		public String getMac() {
+			return this.mac;
+		}
+
+		public void setMac(String mac) {
+			this.mac = mac;
+		}
+
+		public String getExpiredStopTime() {
+			return this.expiredStopTime;
+		}
+
+		public void setExpiredStopTime(String expiredStopTime) {
+			this.expiredStopTime = expiredStopTime;
+		}
+
+		public String getExpiredTime() {
+			return this.expiredTime;
+		}
+
+		public void setExpiredTime(String expiredTime) {
+			this.expiredTime = expiredTime;
+		}
+
+		public String getExpectReleaseTime() {
+			return this.expectReleaseTime;
+		}
+
+		public void setExpectReleaseTime(String expectReleaseTime) {
+			this.expectReleaseTime = expectReleaseTime;
+		}
+
+		public String getSerialNumber() {
+			return this.serialNumber;
+		}
+
+		public void setSerialNumber(String serialNumber) {
+			this.serialNumber = serialNumber;
+		}
+
+		public String getId() {
+			return this.id;
+		}
+
+		public void setId(String id) {
+			this.id = id;
+		}
+
+		public String getSpotPriceLimit() {
+			return this.spotPriceLimit;
+		}
+
+		public void setSpotPriceLimit(String spotPriceLimit) {
+			this.spotPriceLimit = spotPriceLimit;
+		}
+
+		public Integer getSpotDiscountLimit() {
+			return this.spotDiscountLimit;
+		}
+
+		public void setSpotDiscountLimit(Integer spotDiscountLimit) {
+			this.spotDiscountLimit = spotDiscountLimit;
+		}
+
+		public String getSpotInterruptionBehavior() {
+			return this.spotInterruptionBehavior;
+		}
+
+		public void setSpotInterruptionBehavior(String spotInterruptionBehavior) {
+			this.spotInterruptionBehavior = spotInterruptionBehavior;
 		}
 
 		public List<Disk> getDisks() {
@@ -569,105 +689,57 @@ public class OpsDescribeInstancesResponse extends AcsResponse {
 
 		public static class Disk {
 
-			private Long resourceOwnerId;
-
-			private String bid;
-
-			private String diskId;
-
-			private String houyiDiskId;
-
-			private String diskType;
-
-			private String diskCategory;
-
 			private String status;
-
-			private String regionId;
-
-			private String zoneId;
-
-			private String clusterId;
-
-			private String diskName;
-
-			private String diskDesc;
-
-			private Integer diskSize;
 
 			private Boolean active;
 
+			private String houyiDiskId;
+
+			private Boolean enableAutoSnapshot;
+
+			private String diskType;
+
 			private Boolean bootable;
+
+			private String diskId;
+
+			private String bid;
+
+			private Boolean deleteAutoSnapshot;
+
+			private String diskDesc;
+
+			private String diskCategory;
+
+			private String device;
+
+			private String diskName;
 
 			private Boolean portable;
 
 			private String imageId;
 
-			private String snapshotId;
+			private Boolean deleteWithInstance;
+
+			private String clusterId;
+
+			private Integer diskSize;
 
 			private String instanceId;
 
-			private String device;
+			private Integer iopsSize;
 
-			private Boolean deleteWithInstance;
+			private String regionId;
 
-			private Boolean deleteAutoSnapshot;
+			private Long resourceOwnerId;
 
-			private Boolean enableAutoSnapshot;
+			private String snapshotId;
+
+			private String zoneId;
 
 			private String businessStatus;
 
-			private Integer iopsSize;
-
 			private String productCode;
-
-			public Long getResourceOwnerId() {
-				return this.resourceOwnerId;
-			}
-
-			public void setResourceOwnerId(Long resourceOwnerId) {
-				this.resourceOwnerId = resourceOwnerId;
-			}
-
-			public String getBid() {
-				return this.bid;
-			}
-
-			public void setBid(String bid) {
-				this.bid = bid;
-			}
-
-			public String getDiskId() {
-				return this.diskId;
-			}
-
-			public void setDiskId(String diskId) {
-				this.diskId = diskId;
-			}
-
-			public String getHouyiDiskId() {
-				return this.houyiDiskId;
-			}
-
-			public void setHouyiDiskId(String houyiDiskId) {
-				this.houyiDiskId = houyiDiskId;
-			}
-
-			public String getDiskType() {
-				return this.diskType;
-			}
-
-			public void setDiskType(String diskType) {
-				this.diskType = diskType;
-			}
-
-			public String getDiskCategory() {
-				return this.diskCategory;
-			}
-
-			public void setDiskCategory(String diskCategory) {
-				this.diskCategory = diskCategory;
-			}
 
 			public String getStatus() {
 				return this.status;
@@ -675,54 +747,6 @@ public class OpsDescribeInstancesResponse extends AcsResponse {
 
 			public void setStatus(String status) {
 				this.status = status;
-			}
-
-			public String getRegionId() {
-				return this.regionId;
-			}
-
-			public void setRegionId(String regionId) {
-				this.regionId = regionId;
-			}
-
-			public String getZoneId() {
-				return this.zoneId;
-			}
-
-			public void setZoneId(String zoneId) {
-				this.zoneId = zoneId;
-			}
-
-			public String getClusterId() {
-				return this.clusterId;
-			}
-
-			public void setClusterId(String clusterId) {
-				this.clusterId = clusterId;
-			}
-
-			public String getDiskName() {
-				return this.diskName;
-			}
-
-			public void setDiskName(String diskName) {
-				this.diskName = diskName;
-			}
-
-			public String getDiskDesc() {
-				return this.diskDesc;
-			}
-
-			public void setDiskDesc(String diskDesc) {
-				this.diskDesc = diskDesc;
-			}
-
-			public Integer getDiskSize() {
-				return this.diskSize;
-			}
-
-			public void setDiskSize(Integer diskSize) {
-				this.diskSize = diskSize;
 			}
 
 			public Boolean getActive() {
@@ -733,12 +757,92 @@ public class OpsDescribeInstancesResponse extends AcsResponse {
 				this.active = active;
 			}
 
+			public String getHouyiDiskId() {
+				return this.houyiDiskId;
+			}
+
+			public void setHouyiDiskId(String houyiDiskId) {
+				this.houyiDiskId = houyiDiskId;
+			}
+
+			public Boolean getEnableAutoSnapshot() {
+				return this.enableAutoSnapshot;
+			}
+
+			public void setEnableAutoSnapshot(Boolean enableAutoSnapshot) {
+				this.enableAutoSnapshot = enableAutoSnapshot;
+			}
+
+			public String getDiskType() {
+				return this.diskType;
+			}
+
+			public void setDiskType(String diskType) {
+				this.diskType = diskType;
+			}
+
 			public Boolean getBootable() {
 				return this.bootable;
 			}
 
 			public void setBootable(Boolean bootable) {
 				this.bootable = bootable;
+			}
+
+			public String getDiskId() {
+				return this.diskId;
+			}
+
+			public void setDiskId(String diskId) {
+				this.diskId = diskId;
+			}
+
+			public String getBid() {
+				return this.bid;
+			}
+
+			public void setBid(String bid) {
+				this.bid = bid;
+			}
+
+			public Boolean getDeleteAutoSnapshot() {
+				return this.deleteAutoSnapshot;
+			}
+
+			public void setDeleteAutoSnapshot(Boolean deleteAutoSnapshot) {
+				this.deleteAutoSnapshot = deleteAutoSnapshot;
+			}
+
+			public String getDiskDesc() {
+				return this.diskDesc;
+			}
+
+			public void setDiskDesc(String diskDesc) {
+				this.diskDesc = diskDesc;
+			}
+
+			public String getDiskCategory() {
+				return this.diskCategory;
+			}
+
+			public void setDiskCategory(String diskCategory) {
+				this.diskCategory = diskCategory;
+			}
+
+			public String getDevice() {
+				return this.device;
+			}
+
+			public void setDevice(String device) {
+				this.device = device;
+			}
+
+			public String getDiskName() {
+				return this.diskName;
+			}
+
+			public void setDiskName(String diskName) {
+				this.diskName = diskName;
 			}
 
 			public Boolean getPortable() {
@@ -757,12 +861,28 @@ public class OpsDescribeInstancesResponse extends AcsResponse {
 				this.imageId = imageId;
 			}
 
-			public String getSnapshotId() {
-				return this.snapshotId;
+			public Boolean getDeleteWithInstance() {
+				return this.deleteWithInstance;
 			}
 
-			public void setSnapshotId(String snapshotId) {
-				this.snapshotId = snapshotId;
+			public void setDeleteWithInstance(Boolean deleteWithInstance) {
+				this.deleteWithInstance = deleteWithInstance;
+			}
+
+			public String getClusterId() {
+				return this.clusterId;
+			}
+
+			public void setClusterId(String clusterId) {
+				this.clusterId = clusterId;
+			}
+
+			public Integer getDiskSize() {
+				return this.diskSize;
+			}
+
+			public void setDiskSize(Integer diskSize) {
+				this.diskSize = diskSize;
 			}
 
 			public String getInstanceId() {
@@ -773,36 +893,44 @@ public class OpsDescribeInstancesResponse extends AcsResponse {
 				this.instanceId = instanceId;
 			}
 
-			public String getDevice() {
-				return this.device;
+			public Integer getIopsSize() {
+				return this.iopsSize;
 			}
 
-			public void setDevice(String device) {
-				this.device = device;
+			public void setIopsSize(Integer iopsSize) {
+				this.iopsSize = iopsSize;
 			}
 
-			public Boolean getDeleteWithInstance() {
-				return this.deleteWithInstance;
+			public String getRegionId() {
+				return this.regionId;
 			}
 
-			public void setDeleteWithInstance(Boolean deleteWithInstance) {
-				this.deleteWithInstance = deleteWithInstance;
+			public void setRegionId(String regionId) {
+				this.regionId = regionId;
 			}
 
-			public Boolean getDeleteAutoSnapshot() {
-				return this.deleteAutoSnapshot;
+			public Long getResourceOwnerId() {
+				return this.resourceOwnerId;
 			}
 
-			public void setDeleteAutoSnapshot(Boolean deleteAutoSnapshot) {
-				this.deleteAutoSnapshot = deleteAutoSnapshot;
+			public void setResourceOwnerId(Long resourceOwnerId) {
+				this.resourceOwnerId = resourceOwnerId;
 			}
 
-			public Boolean getEnableAutoSnapshot() {
-				return this.enableAutoSnapshot;
+			public String getSnapshotId() {
+				return this.snapshotId;
 			}
 
-			public void setEnableAutoSnapshot(Boolean enableAutoSnapshot) {
-				this.enableAutoSnapshot = enableAutoSnapshot;
+			public void setSnapshotId(String snapshotId) {
+				this.snapshotId = snapshotId;
+			}
+
+			public String getZoneId() {
+				return this.zoneId;
+			}
+
+			public void setZoneId(String zoneId) {
+				this.zoneId = zoneId;
 			}
 
 			public String getBusinessStatus() {
@@ -811,14 +939,6 @@ public class OpsDescribeInstancesResponse extends AcsResponse {
 
 			public void setBusinessStatus(String businessStatus) {
 				this.businessStatus = businessStatus;
-			}
-
-			public Integer getIopsSize() {
-				return this.iopsSize;
-			}
-
-			public void setIopsSize(Integer iopsSize) {
-				this.iopsSize = iopsSize;
 			}
 
 			public String getProductCode() {

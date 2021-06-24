@@ -25,21 +25,29 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsDescribeCloudOpsMaintenancesResponse extends AcsResponse {
 
+	private Integer totalCount;
+
 	private String requestId;
-
-	private String bizCode;
-
-	private String bizMessage;
-
-	private Integer count;
-
-	private Integer page;
 
 	private Integer pageSize;
 
-	private Integer totalCount;
+	private String bizMessage;
+
+	private Integer page;
+
+	private Integer count;
+
+	private String bizCode;
 
 	private List<MaintenanceInfo> data;
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -47,38 +55,6 @@ public class OpsDescribeCloudOpsMaintenancesResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getBizCode() {
-		return this.bizCode;
-	}
-
-	public void setBizCode(String bizCode) {
-		this.bizCode = bizCode;
-	}
-
-	public String getBizMessage() {
-		return this.bizMessage;
-	}
-
-	public void setBizMessage(String bizMessage) {
-		this.bizMessage = bizMessage;
-	}
-
-	public Integer getCount() {
-		return this.count;
-	}
-
-	public void setCount(Integer count) {
-		this.count = count;
-	}
-
-	public Integer getPage() {
-		return this.page;
-	}
-
-	public void setPage(Integer page) {
-		this.page = page;
 	}
 
 	public Integer getPageSize() {
@@ -89,12 +65,36 @@ public class OpsDescribeCloudOpsMaintenancesResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public Integer getTotalCount() {
-		return this.totalCount;
+	public String getBizMessage() {
+		return this.bizMessage;
 	}
 
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
+	public void setBizMessage(String bizMessage) {
+		this.bizMessage = bizMessage;
+	}
+
+	public Integer getPage() {
+		return this.page;
+	}
+
+	public void setPage(Integer page) {
+		this.page = page;
+	}
+
+	public Integer getCount() {
+		return this.count;
+	}
+
+	public void setCount(Integer count) {
+		this.count = count;
+	}
+
+	public String getBizCode() {
+		return this.bizCode;
+	}
+
+	public void setBizCode(String bizCode) {
+		this.bizCode = bizCode;
 	}
 
 	public List<MaintenanceInfo> getData() {
@@ -107,94 +107,62 @@ public class OpsDescribeCloudOpsMaintenancesResponse extends AcsResponse {
 
 	public static class MaintenanceInfo {
 
-		private String domainType;
+		private String updateTime;
 
-		private String ncIp;
+		private String comment;
 
-		private String ncId;
-
-		private String hostname;
-
-		private String opsUser;
-
-		private String opsType;
-
-		private String maintenanceReason;
+		private String sn;
 
 		private String maintenanceTime;
 
-		private String maintenanceStatus;
+		private String hostname;
 
-		private String updateTime;
-
-		private String notifyTime;
+		private String ncIp;
 
 		private String notifyStatus;
-
-		private String comment;
 
 		private String bizStatus;
 
 		private String vmNum;
 
+		private String ncId;
+
+		private String opsType;
+
+		private String maintenanceStatus;
+
+		private String maintenanceReason;
+
+		private String opsUser;
+
+		private String notifyTime;
+
 		private String extraData;
 
-		private String sn;
+		private String domainType;
 
-		public String getDomainType() {
-			return this.domainType;
+		public String getUpdateTime() {
+			return this.updateTime;
 		}
 
-		public void setDomainType(String domainType) {
-			this.domainType = domainType;
+		public void setUpdateTime(String updateTime) {
+			this.updateTime = updateTime;
 		}
 
-		public String getNcIp() {
-			return this.ncIp;
+		public String getComment() {
+			return this.comment;
 		}
 
-		public void setNcIp(String ncIp) {
-			this.ncIp = ncIp;
+		public void setComment(String comment) {
+			this.comment = comment;
 		}
 
-		public String getNcId() {
-			return this.ncId;
+		public String getSn() {
+			return this.sn;
 		}
 
-		public void setNcId(String ncId) {
-			this.ncId = ncId;
-		}
-
-		public String getHostname() {
-			return this.hostname;
-		}
-
-		public void setHostname(String hostname) {
-			this.hostname = hostname;
-		}
-
-		public String getOpsUser() {
-			return this.opsUser;
-		}
-
-		public void setOpsUser(String opsUser) {
-			this.opsUser = opsUser;
-		}
-
-		public String getOpsType() {
-			return this.opsType;
-		}
-
-		public void setOpsType(String opsType) {
-			this.opsType = opsType;
-		}
-
-		public String getMaintenanceReason() {
-			return this.maintenanceReason;
-		}
-
-		public void setMaintenanceReason(String maintenanceReason) {
-			this.maintenanceReason = maintenanceReason;
+		public void setSn(String sn) {
+			this.sn = sn;
 		}
 
 		public String getMaintenanceTime() {
@@ -205,28 +173,20 @@ public class OpsDescribeCloudOpsMaintenancesResponse extends AcsResponse {
 			this.maintenanceTime = maintenanceTime;
 		}
 
-		public String getMaintenanceStatus() {
-			return this.maintenanceStatus;
+		public String getHostname() {
+			return this.hostname;
 		}
 
-		public void setMaintenanceStatus(String maintenanceStatus) {
-			this.maintenanceStatus = maintenanceStatus;
+		public void setHostname(String hostname) {
+			this.hostname = hostname;
 		}
 
-		public String getUpdateTime() {
-			return this.updateTime;
+		public String getNcIp() {
+			return this.ncIp;
 		}
 
-		public void setUpdateTime(String updateTime) {
-			this.updateTime = updateTime;
-		}
-
-		public String getNotifyTime() {
-			return this.notifyTime;
-		}
-
-		public void setNotifyTime(String notifyTime) {
-			this.notifyTime = notifyTime;
+		public void setNcIp(String ncIp) {
+			this.ncIp = ncIp;
 		}
 
 		public String getNotifyStatus() {
@@ -235,14 +195,6 @@ public class OpsDescribeCloudOpsMaintenancesResponse extends AcsResponse {
 
 		public void setNotifyStatus(String notifyStatus) {
 			this.notifyStatus = notifyStatus;
-		}
-
-		public String getComment() {
-			return this.comment;
-		}
-
-		public void setComment(String comment) {
-			this.comment = comment;
 		}
 
 		public String getBizStatus() {
@@ -261,6 +213,54 @@ public class OpsDescribeCloudOpsMaintenancesResponse extends AcsResponse {
 			this.vmNum = vmNum;
 		}
 
+		public String getNcId() {
+			return this.ncId;
+		}
+
+		public void setNcId(String ncId) {
+			this.ncId = ncId;
+		}
+
+		public String getOpsType() {
+			return this.opsType;
+		}
+
+		public void setOpsType(String opsType) {
+			this.opsType = opsType;
+		}
+
+		public String getMaintenanceStatus() {
+			return this.maintenanceStatus;
+		}
+
+		public void setMaintenanceStatus(String maintenanceStatus) {
+			this.maintenanceStatus = maintenanceStatus;
+		}
+
+		public String getMaintenanceReason() {
+			return this.maintenanceReason;
+		}
+
+		public void setMaintenanceReason(String maintenanceReason) {
+			this.maintenanceReason = maintenanceReason;
+		}
+
+		public String getOpsUser() {
+			return this.opsUser;
+		}
+
+		public void setOpsUser(String opsUser) {
+			this.opsUser = opsUser;
+		}
+
+		public String getNotifyTime() {
+			return this.notifyTime;
+		}
+
+		public void setNotifyTime(String notifyTime) {
+			this.notifyTime = notifyTime;
+		}
+
 		public String getExtraData() {
 			return this.extraData;
 		}
@@ -269,12 +269,12 @@ public class OpsDescribeCloudOpsMaintenancesResponse extends AcsResponse {
 			this.extraData = extraData;
 		}
 
-		public String getSn() {
-			return this.sn;
+		public String getDomainType() {
+			return this.domainType;
 		}
 
-		public void setSn(String sn) {
-			this.sn = sn;
+		public void setDomainType(String domainType) {
+			this.domainType = domainType;
 		}
 	}
 

@@ -19,7 +19,6 @@ import java.util.List;
 import java.util.Map;
 import com.google.gson.Gson;
 import com.aliyuncs.http.MethodType;
-import com.aliyuncs.ecsops.Endpoint;
 
 /**
  * @author auto create
@@ -40,12 +39,8 @@ public class OpsListTagResourcesRequest extends RpcAcsRequest<OpsListTagResource
 
 	private String auditParamStr;
 	public OpsListTagResourcesRequest() {
-		super("Ecsops", "2016-04-01", "OpsListTagResources", "ecs");
+		super("Ecsops", "2016-04-01", "OpsListTagResources", "ecsops");
 		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
 	}
 
 	public List<String> getResourceIds() {

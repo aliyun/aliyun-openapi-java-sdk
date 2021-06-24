@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsDescribeOrdersResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
-
-	private Integer pageNumber;
 
 	private Integer pageSize;
 
+	private String requestId;
+
+	private Integer pageNumber;
+
 	private List<OrderSet> orderSets;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -51,20 +43,28 @@ public class OpsDescribeOrdersResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<OrderSet> getOrderSets() {
@@ -77,15 +77,7 @@ public class OpsDescribeOrdersResponse extends AcsResponse {
 
 	public static class OrderSet {
 
-		private Long id;
-
-		private Long orderId;
-
-		private Long aliUid;
-
 		private Integer status;
-
-		private String orderDetail;
 
 		private Integer actionType;
 
@@ -95,31 +87,15 @@ public class OpsDescribeOrdersResponse extends AcsResponse {
 
 		private String gmtCreate;
 
+		private String orderDetail;
+
+		private Long aliUid;
+
 		private String gmtModified;
 
-		public Long getId() {
-			return this.id;
-		}
+		private Long orderId;
 
-		public void setId(Long id) {
-			this.id = id;
-		}
-
-		public Long getOrderId() {
-			return this.orderId;
-		}
-
-		public void setOrderId(Long orderId) {
-			this.orderId = orderId;
-		}
-
-		public Long getAliUid() {
-			return this.aliUid;
-		}
-
-		public void setAliUid(Long aliUid) {
-			this.aliUid = aliUid;
-		}
+		private Long id;
 
 		public Integer getStatus() {
 			return this.status;
@@ -127,14 +103,6 @@ public class OpsDescribeOrdersResponse extends AcsResponse {
 
 		public void setStatus(Integer status) {
 			this.status = status;
-		}
-
-		public String getOrderDetail() {
-			return this.orderDetail;
-		}
-
-		public void setOrderDetail(String orderDetail) {
-			this.orderDetail = orderDetail;
 		}
 
 		public Integer getActionType() {
@@ -169,12 +137,44 @@ public class OpsDescribeOrdersResponse extends AcsResponse {
 			this.gmtCreate = gmtCreate;
 		}
 
+		public String getOrderDetail() {
+			return this.orderDetail;
+		}
+
+		public void setOrderDetail(String orderDetail) {
+			this.orderDetail = orderDetail;
+		}
+
+		public Long getAliUid() {
+			return this.aliUid;
+		}
+
+		public void setAliUid(Long aliUid) {
+			this.aliUid = aliUid;
+		}
+
 		public String getGmtModified() {
 			return this.gmtModified;
 		}
 
 		public void setGmtModified(String gmtModified) {
 			this.gmtModified = gmtModified;
+		}
+
+		public Long getOrderId() {
+			return this.orderId;
+		}
+
+		public void setOrderId(Long orderId) {
+			this.orderId = orderId;
+		}
+
+		public Long getId() {
+			return this.id;
+		}
+
+		public void setId(Long id) {
+			this.id = id;
 		}
 	}
 

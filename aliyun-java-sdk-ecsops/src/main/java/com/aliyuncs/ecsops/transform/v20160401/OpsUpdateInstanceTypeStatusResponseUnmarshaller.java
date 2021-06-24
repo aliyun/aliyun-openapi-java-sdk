@@ -23,10 +23,10 @@ public class OpsUpdateInstanceTypeStatusResponseUnmarshaller {
 	public static OpsUpdateInstanceTypeStatusResponse unmarshall(OpsUpdateInstanceTypeStatusResponse opsUpdateInstanceTypeStatusResponse, UnmarshallerContext _ctx) {
 		
 		opsUpdateInstanceTypeStatusResponse.setRequestId(_ctx.stringValue("OpsUpdateInstanceTypeStatusResponse.RequestId"));
-		opsUpdateInstanceTypeStatusResponse.setSuccess(_ctx.stringValue("OpsUpdateInstanceTypeStatusResponse.Success"));
-		opsUpdateInstanceTypeStatusResponse.setCode(_ctx.stringValue("OpsUpdateInstanceTypeStatusResponse.Code"));
 		opsUpdateInstanceTypeStatusResponse.setMessage(_ctx.stringValue("OpsUpdateInstanceTypeStatusResponse.Message"));
 		opsUpdateInstanceTypeStatusResponse.setHttpStatusCode(_ctx.integerValue("OpsUpdateInstanceTypeStatusResponse.HttpStatusCode"));
+		opsUpdateInstanceTypeStatusResponse.setCode(_ctx.stringValue("OpsUpdateInstanceTypeStatusResponse.Code"));
+		opsUpdateInstanceTypeStatusResponse.setSuccess(_ctx.stringValue("OpsUpdateInstanceTypeStatusResponse.Success"));
 	 
 	 	return opsUpdateInstanceTypeStatusResponse;
 	}

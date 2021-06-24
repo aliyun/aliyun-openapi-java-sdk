@@ -23,10 +23,10 @@ public class OpsUpdateInventoryOverviewResponseUnmarshaller {
 	public static OpsUpdateInventoryOverviewResponse unmarshall(OpsUpdateInventoryOverviewResponse opsUpdateInventoryOverviewResponse, UnmarshallerContext _ctx) {
 		
 		opsUpdateInventoryOverviewResponse.setRequestId(_ctx.stringValue("OpsUpdateInventoryOverviewResponse.RequestId"));
-		opsUpdateInventoryOverviewResponse.setCode(_ctx.stringValue("OpsUpdateInventoryOverviewResponse.Code"));
 		opsUpdateInventoryOverviewResponse.setMessage(_ctx.stringValue("OpsUpdateInventoryOverviewResponse.Message"));
-		opsUpdateInventoryOverviewResponse.setSuccess(_ctx.stringValue("OpsUpdateInventoryOverviewResponse.Success"));
 		opsUpdateInventoryOverviewResponse.setData(_ctx.integerValue("OpsUpdateInventoryOverviewResponse.Data"));
+		opsUpdateInventoryOverviewResponse.setCode(_ctx.stringValue("OpsUpdateInventoryOverviewResponse.Code"));
+		opsUpdateInventoryOverviewResponse.setSuccess(_ctx.stringValue("OpsUpdateInventoryOverviewResponse.Success"));
 	 
 	 	return opsUpdateInventoryOverviewResponse;
 	}

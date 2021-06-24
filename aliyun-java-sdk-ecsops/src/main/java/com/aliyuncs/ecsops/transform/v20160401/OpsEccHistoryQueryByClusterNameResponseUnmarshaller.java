@@ -33,10 +33,10 @@ public class OpsEccHistoryQueryByClusterNameResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("OpsEccHistoryQueryByClusterNameResponse.Data.Length"); i++) {
 			ClusterRenderHistory clusterRenderHistory = new ClusterRenderHistory();
 			clusterRenderHistory.setCheckCount(_ctx.integerValue("OpsEccHistoryQueryByClusterNameResponse.Data["+ i +"].CheckCount"));
-			clusterRenderHistory.setCheckTS(_ctx.longValue("OpsEccHistoryQueryByClusterNameResponse.Data["+ i +"].CheckTS"));
 			clusterRenderHistory.setClusterInventory(_ctx.stringValue("OpsEccHistoryQueryByClusterNameResponse.Data["+ i +"].ClusterInventory"));
-			clusterRenderHistory.setClusterName(_ctx.stringValue("OpsEccHistoryQueryByClusterNameResponse.Data["+ i +"].ClusterName"));
 			clusterRenderHistory.setValidCount(_ctx.stringValue("OpsEccHistoryQueryByClusterNameResponse.Data["+ i +"].ValidCount"));
+			clusterRenderHistory.setCheckTS(_ctx.longValue("OpsEccHistoryQueryByClusterNameResponse.Data["+ i +"].CheckTS"));
+			clusterRenderHistory.setClusterName(_ctx.stringValue("OpsEccHistoryQueryByClusterNameResponse.Data["+ i +"].ClusterName"));
 
 			List<String> checkItems = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("OpsEccHistoryQueryByClusterNameResponse.Data["+ i +"].CheckItems.Length"); j++) {

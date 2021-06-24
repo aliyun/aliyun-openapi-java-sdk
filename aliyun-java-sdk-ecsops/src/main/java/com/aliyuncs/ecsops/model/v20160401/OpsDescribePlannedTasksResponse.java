@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsDescribePlannedTasksResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
-
-	private Integer pageNumber;
 
 	private Integer pageSize;
 
+	private String requestId;
+
+	private Integer pageNumber;
+
 	private List<PlannedTask> plannedTasks;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -51,20 +43,28 @@ public class OpsDescribePlannedTasksResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<PlannedTask> getPlannedTasks() {
@@ -77,74 +77,34 @@ public class OpsDescribePlannedTasksResponse extends AcsResponse {
 
 	public static class PlannedTask {
 
-		private Long id;
-
-		private String bid;
-
-		private Long aliUid;
-
-		private String gmtCreate;
-
-		private String gmtModified;
-
-		private String expectedExecuteTime;
+		private Integer status;
 
 		private Integer actionType;
 
-		private Integer status;
+		private String gmtCreate;
 
-		private String instanceId;
-
-		private String extendInfo;
+		private Long aliUid;
 
 		private Boolean deleted;
 
-		public Long getId() {
-			return this.id;
+		private String instanceId;
+
+		private String expectedExecuteTime;
+
+		private String gmtModified;
+
+		private String bid;
+
+		private String extendInfo;
+
+		private Long id;
+
+		public Integer getStatus() {
+			return this.status;
 		}
 
-		public void setId(Long id) {
-			this.id = id;
-		}
-
-		public String getBid() {
-			return this.bid;
-		}
-
-		public void setBid(String bid) {
-			this.bid = bid;
-		}
-
-		public Long getAliUid() {
-			return this.aliUid;
-		}
-
-		public void setAliUid(Long aliUid) {
-			this.aliUid = aliUid;
-		}
-
-		public String getGmtCreate() {
-			return this.gmtCreate;
-		}
-
-		public void setGmtCreate(String gmtCreate) {
-			this.gmtCreate = gmtCreate;
-		}
-
-		public String getGmtModified() {
-			return this.gmtModified;
-		}
-
-		public void setGmtModified(String gmtModified) {
-			this.gmtModified = gmtModified;
-		}
-
-		public String getExpectedExecuteTime() {
-			return this.expectedExecuteTime;
-		}
-
-		public void setExpectedExecuteTime(String expectedExecuteTime) {
-			this.expectedExecuteTime = expectedExecuteTime;
+		public void setStatus(Integer status) {
+			this.status = status;
 		}
 
 		public Integer getActionType() {
@@ -155,12 +115,28 @@ public class OpsDescribePlannedTasksResponse extends AcsResponse {
 			this.actionType = actionType;
 		}
 
-		public Integer getStatus() {
-			return this.status;
+		public String getGmtCreate() {
+			return this.gmtCreate;
 		}
 
-		public void setStatus(Integer status) {
-			this.status = status;
+		public void setGmtCreate(String gmtCreate) {
+			this.gmtCreate = gmtCreate;
+		}
+
+		public Long getAliUid() {
+			return this.aliUid;
+		}
+
+		public void setAliUid(Long aliUid) {
+			this.aliUid = aliUid;
+		}
+
+		public Boolean getDeleted() {
+			return this.deleted;
+		}
+
+		public void setDeleted(Boolean deleted) {
+			this.deleted = deleted;
 		}
 
 		public String getInstanceId() {
@@ -171,6 +147,30 @@ public class OpsDescribePlannedTasksResponse extends AcsResponse {
 			this.instanceId = instanceId;
 		}
 
+		public String getExpectedExecuteTime() {
+			return this.expectedExecuteTime;
+		}
+
+		public void setExpectedExecuteTime(String expectedExecuteTime) {
+			this.expectedExecuteTime = expectedExecuteTime;
+		}
+
+		public String getGmtModified() {
+			return this.gmtModified;
+		}
+
+		public void setGmtModified(String gmtModified) {
+			this.gmtModified = gmtModified;
+		}
+
+		public String getBid() {
+			return this.bid;
+		}
+
+		public void setBid(String bid) {
+			this.bid = bid;
+		}
+
 		public String getExtendInfo() {
 			return this.extendInfo;
 		}
@@ -179,12 +179,12 @@ public class OpsDescribePlannedTasksResponse extends AcsResponse {
 			this.extendInfo = extendInfo;
 		}
 
-		public Boolean getDeleted() {
-			return this.deleted;
+		public Long getId() {
+			return this.id;
 		}
 
-		public void setDeleted(Boolean deleted) {
-			this.deleted = deleted;
+		public void setId(Long id) {
+			this.id = id;
 		}
 	}
 

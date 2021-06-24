@@ -31,8 +31,8 @@ public class OpsQueryEcsPermitResponseUnmarshaller {
 		List<Permition> permitions = new ArrayList<Permition>();
 		for (int i = 0; i < _ctx.lengthValue("OpsQueryEcsPermitResponse.Permitions.Length"); i++) {
 			Permition permition = new Permition();
-			permition.setPermitKey(_ctx.stringValue("OpsQueryEcsPermitResponse.Permitions["+ i +"].PermitKey"));
 			permition.setPermitValue(_ctx.stringValue("OpsQueryEcsPermitResponse.Permitions["+ i +"].PermitValue"));
+			permition.setPermitKey(_ctx.stringValue("OpsQueryEcsPermitResponse.Permitions["+ i +"].PermitKey"));
 
 			permitions.add(permition);
 		}

@@ -27,8 +27,8 @@ public class OpsCreateEventListResponseUnmarshaller {
 	public static OpsCreateEventListResponse unmarshall(OpsCreateEventListResponse opsCreateEventListResponse, UnmarshallerContext _ctx) {
 		
 		opsCreateEventListResponse.setRequestId(_ctx.stringValue("OpsCreateEventListResponse.RequestId"));
-		opsCreateEventListResponse.setCode(_ctx.stringValue("OpsCreateEventListResponse.Code"));
 		opsCreateEventListResponse.setMessage(_ctx.stringValue("OpsCreateEventListResponse.Message"));
+		opsCreateEventListResponse.setCode(_ctx.stringValue("OpsCreateEventListResponse.Code"));
 		opsCreateEventListResponse.setSuccess(_ctx.stringValue("OpsCreateEventListResponse.Success"));
 
 		Data data = new Data();

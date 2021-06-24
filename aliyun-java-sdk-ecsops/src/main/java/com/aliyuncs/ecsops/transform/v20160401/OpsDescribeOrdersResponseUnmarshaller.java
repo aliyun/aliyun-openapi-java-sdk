@@ -28,22 +28,22 @@ public class OpsDescribeOrdersResponseUnmarshaller {
 		
 		opsDescribeOrdersResponse.setRequestId(_ctx.stringValue("OpsDescribeOrdersResponse.RequestId"));
 		opsDescribeOrdersResponse.setTotalCount(_ctx.integerValue("OpsDescribeOrdersResponse.TotalCount"));
-		opsDescribeOrdersResponse.setPageNumber(_ctx.integerValue("OpsDescribeOrdersResponse.PageNumber"));
 		opsDescribeOrdersResponse.setPageSize(_ctx.integerValue("OpsDescribeOrdersResponse.PageSize"));
+		opsDescribeOrdersResponse.setPageNumber(_ctx.integerValue("OpsDescribeOrdersResponse.PageNumber"));
 
 		List<OrderSet> orderSets = new ArrayList<OrderSet>();
 		for (int i = 0; i < _ctx.lengthValue("OpsDescribeOrdersResponse.OrderSets.Length"); i++) {
 			OrderSet orderSet = new OrderSet();
-			orderSet.setId(_ctx.longValue("OpsDescribeOrdersResponse.OrderSets["+ i +"].Id"));
-			orderSet.setOrderId(_ctx.longValue("OpsDescribeOrdersResponse.OrderSets["+ i +"].OrderId"));
-			orderSet.setAliUid(_ctx.longValue("OpsDescribeOrdersResponse.OrderSets["+ i +"].AliUid"));
 			orderSet.setStatus(_ctx.integerValue("OpsDescribeOrdersResponse.OrderSets["+ i +"].Status"));
-			orderSet.setOrderDetail(_ctx.stringValue("OpsDescribeOrdersResponse.OrderSets["+ i +"].OrderDetail"));
 			orderSet.setActionType(_ctx.integerValue("OpsDescribeOrdersResponse.OrderSets["+ i +"].ActionType"));
 			orderSet.setIsAsync(_ctx.booleanValue("OpsDescribeOrdersResponse.OrderSets["+ i +"].IsAsync"));
 			orderSet.setChargeType(_ctx.integerValue("OpsDescribeOrdersResponse.OrderSets["+ i +"].ChargeType"));
 			orderSet.setGmtCreate(_ctx.stringValue("OpsDescribeOrdersResponse.OrderSets["+ i +"].GmtCreate"));
+			orderSet.setOrderDetail(_ctx.stringValue("OpsDescribeOrdersResponse.OrderSets["+ i +"].OrderDetail"));
+			orderSet.setAliUid(_ctx.longValue("OpsDescribeOrdersResponse.OrderSets["+ i +"].AliUid"));
 			orderSet.setGmtModified(_ctx.stringValue("OpsDescribeOrdersResponse.OrderSets["+ i +"].GmtModified"));
+			orderSet.setOrderId(_ctx.longValue("OpsDescribeOrdersResponse.OrderSets["+ i +"].OrderId"));
+			orderSet.setId(_ctx.longValue("OpsDescribeOrdersResponse.OrderSets["+ i +"].Id"));
 
 			orderSets.add(orderSet);
 		}

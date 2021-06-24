@@ -28,16 +28,16 @@ public class OpsQueryServerListOfZoneResponseUnmarshaller {
 		
 		opsQueryServerListOfZoneResponse.setRequestId(_ctx.stringValue("OpsQueryServerListOfZoneResponse.RequestId"));
 		opsQueryServerListOfZoneResponse.setPageSize(_ctx.longValue("OpsQueryServerListOfZoneResponse.PageSize"));
-		opsQueryServerListOfZoneResponse.setPageNo(_ctx.longValue("OpsQueryServerListOfZoneResponse.PageNo"));
 		opsQueryServerListOfZoneResponse.setTotal(_ctx.longValue("OpsQueryServerListOfZoneResponse.Total"));
+		opsQueryServerListOfZoneResponse.setPageNo(_ctx.longValue("OpsQueryServerListOfZoneResponse.PageNo"));
 
 		List<Server> servers = new ArrayList<Server>();
 		for (int i = 0; i < _ctx.lengthValue("OpsQueryServerListOfZoneResponse.Servers.Length"); i++) {
 			Server server = new Server();
-			server.setHostname(_ctx.stringValue("OpsQueryServerListOfZoneResponse.Servers["+ i +"].Hostname"));
-			server.setIp(_ctx.stringValue("OpsQueryServerListOfZoneResponse.Servers["+ i +"].Ip"));
-			server.setStatus(_ctx.stringValue("OpsQueryServerListOfZoneResponse.Servers["+ i +"].Status"));
 			server.setType(_ctx.stringValue("OpsQueryServerListOfZoneResponse.Servers["+ i +"].Type"));
+			server.setStatus(_ctx.stringValue("OpsQueryServerListOfZoneResponse.Servers["+ i +"].Status"));
+			server.setIp(_ctx.stringValue("OpsQueryServerListOfZoneResponse.Servers["+ i +"].Ip"));
+			server.setHostname(_ctx.stringValue("OpsQueryServerListOfZoneResponse.Servers["+ i +"].Hostname"));
 
 			servers.add(server);
 		}

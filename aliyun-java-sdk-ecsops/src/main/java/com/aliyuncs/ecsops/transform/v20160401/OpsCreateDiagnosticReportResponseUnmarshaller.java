@@ -23,9 +23,9 @@ public class OpsCreateDiagnosticReportResponseUnmarshaller {
 	public static OpsCreateDiagnosticReportResponse unmarshall(OpsCreateDiagnosticReportResponse opsCreateDiagnosticReportResponse, UnmarshallerContext _ctx) {
 		
 		opsCreateDiagnosticReportResponse.setRequestId(_ctx.stringValue("OpsCreateDiagnosticReportResponse.RequestId"));
-		opsCreateDiagnosticReportResponse.setReportId(_ctx.stringValue("OpsCreateDiagnosticReportResponse.ReportId"));
 		opsCreateDiagnosticReportResponse.setStatus(_ctx.stringValue("OpsCreateDiagnosticReportResponse.Status"));
 		opsCreateDiagnosticReportResponse.setCreationTime(_ctx.stringValue("OpsCreateDiagnosticReportResponse.CreationTime"));
+		opsCreateDiagnosticReportResponse.setReportId(_ctx.stringValue("OpsCreateDiagnosticReportResponse.ReportId"));
 	 
 	 	return opsCreateDiagnosticReportResponse;
 	}

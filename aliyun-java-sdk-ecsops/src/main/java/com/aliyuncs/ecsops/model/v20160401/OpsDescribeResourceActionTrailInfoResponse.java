@@ -47,27 +47,19 @@ public class OpsDescribeResourceActionTrailInfoResponse extends AcsResponse {
 
 	public static class Resource {
 
-		private String resourceId;
-
 		private String relatedResourceId;
-
-		private String relatedResourceType;
-
-		private String startTime;
 
 		private String endTime;
 
+		private String startTime;
+
 		private String nextToken;
 
+		private String resourceId;
+
+		private String relatedResourceType;
+
 		private List<ResourceAction> resourceActions;
-
-		public String getResourceId() {
-			return this.resourceId;
-		}
-
-		public void setResourceId(String resourceId) {
-			this.resourceId = resourceId;
-		}
 
 		public String getRelatedResourceId() {
 			return this.relatedResourceId;
@@ -75,22 +67,6 @@ public class OpsDescribeResourceActionTrailInfoResponse extends AcsResponse {
 
 		public void setRelatedResourceId(String relatedResourceId) {
 			this.relatedResourceId = relatedResourceId;
-		}
-
-		public String getRelatedResourceType() {
-			return this.relatedResourceType;
-		}
-
-		public void setRelatedResourceType(String relatedResourceType) {
-			this.relatedResourceType = relatedResourceType;
-		}
-
-		public String getStartTime() {
-			return this.startTime;
-		}
-
-		public void setStartTime(String startTime) {
-			this.startTime = startTime;
 		}
 
 		public String getEndTime() {
@@ -101,12 +77,36 @@ public class OpsDescribeResourceActionTrailInfoResponse extends AcsResponse {
 			this.endTime = endTime;
 		}
 
+		public String getStartTime() {
+			return this.startTime;
+		}
+
+		public void setStartTime(String startTime) {
+			this.startTime = startTime;
+		}
+
 		public String getNextToken() {
 			return this.nextToken;
 		}
 
 		public void setNextToken(String nextToken) {
 			this.nextToken = nextToken;
+		}
+
+		public String getResourceId() {
+			return this.resourceId;
+		}
+
+		public void setResourceId(String resourceId) {
+			this.resourceId = resourceId;
+		}
+
+		public String getRelatedResourceType() {
+			return this.relatedResourceType;
+		}
+
+		public void setRelatedResourceType(String relatedResourceType) {
+			this.relatedResourceType = relatedResourceType;
 		}
 
 		public List<ResourceAction> getResourceActions() {
@@ -119,78 +119,38 @@ public class OpsDescribeResourceActionTrailInfoResponse extends AcsResponse {
 
 		public static class ResourceAction {
 
-			private String actionApiVersion;
-
-			private String actionErrorMessage;
-
-			private String userInfoAk;
-
-			private String actionRequestId;
-
-			private String actionSourceIpAddress;
-
-			private String actionEventType;
+			private String actionErrorCode;
 
 			private String actionEventSource;
 
-			private String actionEventId;
-
-			private String actionErrorCode;
-
-			private String actionEventTime;
-
 			private Boolean actionSuccess;
+
+			private String actionEventType;
+
+			private String actionSourceIpAddress;
+
+			private String actionRequestId;
+
+			private String userInfoAk;
 
 			private String actionEventName;
 
+			private String actionApiVersion;
+
+			private String actionEventTime;
+
+			private String actionEventId;
+
+			private String actionErrorMessage;
+
 			private List<ActionRelatedResource> actionRelatedResources;
 
-			public String getActionApiVersion() {
-				return this.actionApiVersion;
+			public String getActionErrorCode() {
+				return this.actionErrorCode;
 			}
 
-			public void setActionApiVersion(String actionApiVersion) {
-				this.actionApiVersion = actionApiVersion;
-			}
-
-			public String getActionErrorMessage() {
-				return this.actionErrorMessage;
-			}
-
-			public void setActionErrorMessage(String actionErrorMessage) {
-				this.actionErrorMessage = actionErrorMessage;
-			}
-
-			public String getUserInfoAk() {
-				return this.userInfoAk;
-			}
-
-			public void setUserInfoAk(String userInfoAk) {
-				this.userInfoAk = userInfoAk;
-			}
-
-			public String getActionRequestId() {
-				return this.actionRequestId;
-			}
-
-			public void setActionRequestId(String actionRequestId) {
-				this.actionRequestId = actionRequestId;
-			}
-
-			public String getActionSourceIpAddress() {
-				return this.actionSourceIpAddress;
-			}
-
-			public void setActionSourceIpAddress(String actionSourceIpAddress) {
-				this.actionSourceIpAddress = actionSourceIpAddress;
-			}
-
-			public String getActionEventType() {
-				return this.actionEventType;
-			}
-
-			public void setActionEventType(String actionEventType) {
-				this.actionEventType = actionEventType;
+			public void setActionErrorCode(String actionErrorCode) {
+				this.actionErrorCode = actionErrorCode;
 			}
 
 			public String getActionEventSource() {
@@ -201,20 +161,60 @@ public class OpsDescribeResourceActionTrailInfoResponse extends AcsResponse {
 				this.actionEventSource = actionEventSource;
 			}
 
-			public String getActionEventId() {
-				return this.actionEventId;
+			public Boolean getActionSuccess() {
+				return this.actionSuccess;
 			}
 
-			public void setActionEventId(String actionEventId) {
-				this.actionEventId = actionEventId;
+			public void setActionSuccess(Boolean actionSuccess) {
+				this.actionSuccess = actionSuccess;
 			}
 
-			public String getActionErrorCode() {
-				return this.actionErrorCode;
+			public String getActionEventType() {
+				return this.actionEventType;
 			}
 
-			public void setActionErrorCode(String actionErrorCode) {
-				this.actionErrorCode = actionErrorCode;
+			public void setActionEventType(String actionEventType) {
+				this.actionEventType = actionEventType;
+			}
+
+			public String getActionSourceIpAddress() {
+				return this.actionSourceIpAddress;
+			}
+
+			public void setActionSourceIpAddress(String actionSourceIpAddress) {
+				this.actionSourceIpAddress = actionSourceIpAddress;
+			}
+
+			public String getActionRequestId() {
+				return this.actionRequestId;
+			}
+
+			public void setActionRequestId(String actionRequestId) {
+				this.actionRequestId = actionRequestId;
+			}
+
+			public String getUserInfoAk() {
+				return this.userInfoAk;
+			}
+
+			public void setUserInfoAk(String userInfoAk) {
+				this.userInfoAk = userInfoAk;
+			}
+
+			public String getActionEventName() {
+				return this.actionEventName;
+			}
+
+			public void setActionEventName(String actionEventName) {
+				this.actionEventName = actionEventName;
+			}
+
+			public String getActionApiVersion() {
+				return this.actionApiVersion;
+			}
+
+			public void setActionApiVersion(String actionApiVersion) {
+				this.actionApiVersion = actionApiVersion;
 			}
 
 			public String getActionEventTime() {
@@ -225,20 +225,20 @@ public class OpsDescribeResourceActionTrailInfoResponse extends AcsResponse {
 				this.actionEventTime = actionEventTime;
 			}
 
-			public Boolean getActionSuccess() {
-				return this.actionSuccess;
+			public String getActionEventId() {
+				return this.actionEventId;
 			}
 
-			public void setActionSuccess(Boolean actionSuccess) {
-				this.actionSuccess = actionSuccess;
+			public void setActionEventId(String actionEventId) {
+				this.actionEventId = actionEventId;
 			}
 
-			public String getActionEventName() {
-				return this.actionEventName;
+			public String getActionErrorMessage() {
+				return this.actionErrorMessage;
 			}
 
-			public void setActionEventName(String actionEventName) {
-				this.actionEventName = actionEventName;
+			public void setActionErrorMessage(String actionErrorMessage) {
+				this.actionErrorMessage = actionErrorMessage;
 			}
 
 			public List<ActionRelatedResource> getActionRelatedResources() {

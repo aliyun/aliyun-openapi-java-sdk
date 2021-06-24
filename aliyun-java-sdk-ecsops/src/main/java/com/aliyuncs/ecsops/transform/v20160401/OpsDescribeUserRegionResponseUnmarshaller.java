@@ -27,22 +27,22 @@ public class OpsDescribeUserRegionResponseUnmarshaller {
 	public static OpsDescribeUserRegionResponse unmarshall(OpsDescribeUserRegionResponse opsDescribeUserRegionResponse, UnmarshallerContext _ctx) {
 		
 		opsDescribeUserRegionResponse.setRequestId(_ctx.stringValue("OpsDescribeUserRegionResponse.RequestId"));
-		opsDescribeUserRegionResponse.setCode(_ctx.stringValue("OpsDescribeUserRegionResponse.Code"));
-		opsDescribeUserRegionResponse.setMessage(_ctx.stringValue("OpsDescribeUserRegionResponse.Message"));
-		opsDescribeUserRegionResponse.setSuccess(_ctx.stringValue("OpsDescribeUserRegionResponse.Success"));
 		opsDescribeUserRegionResponse.setTotalCount(_ctx.integerValue("OpsDescribeUserRegionResponse.TotalCount"));
+		opsDescribeUserRegionResponse.setMessage(_ctx.stringValue("OpsDescribeUserRegionResponse.Message"));
+		opsDescribeUserRegionResponse.setCode(_ctx.stringValue("OpsDescribeUserRegionResponse.Code"));
+		opsDescribeUserRegionResponse.setSuccess(_ctx.stringValue("OpsDescribeUserRegionResponse.Success"));
 
 		List<UserRegionModel> userRegionModels = new ArrayList<UserRegionModel>();
 		for (int i = 0; i < _ctx.lengthValue("OpsDescribeUserRegionResponse.UserRegionModels.Length"); i++) {
 			UserRegionModel userRegionModel = new UserRegionModel();
-			userRegionModel.setRegionNo(_ctx.stringValue("OpsDescribeUserRegionResponse.UserRegionModels["+ i +"].RegionNo"));
-			userRegionModel.setIzNo(_ctx.stringValue("OpsDescribeUserRegionResponse.UserRegionModels["+ i +"].IzNo"));
 			userRegionModel.setZoneGroupNo(_ctx.stringValue("OpsDescribeUserRegionResponse.UserRegionModels["+ i +"].ZoneGroupNo"));
-			userRegionModel.setIzState(_ctx.stringValue("OpsDescribeUserRegionResponse.UserRegionModels["+ i +"].IzState"));
-			userRegionModel.setZoneGroupState(_ctx.stringValue("OpsDescribeUserRegionResponse.UserRegionModels["+ i +"].ZoneGroupState"));
-			userRegionModel.setBflag(_ctx.stringValue("OpsDescribeUserRegionResponse.UserRegionModels["+ i +"].Bflag"));
-			userRegionModel.setParentBflag(_ctx.stringValue("OpsDescribeUserRegionResponse.UserRegionModels["+ i +"].ParentBflag"));
 			userRegionModel.setZoneNos(_ctx.stringValue("OpsDescribeUserRegionResponse.UserRegionModels["+ i +"].ZoneNos"));
+			userRegionModel.setBflag(_ctx.stringValue("OpsDescribeUserRegionResponse.UserRegionModels["+ i +"].Bflag"));
+			userRegionModel.setRegionNo(_ctx.stringValue("OpsDescribeUserRegionResponse.UserRegionModels["+ i +"].RegionNo"));
+			userRegionModel.setZoneGroupState(_ctx.stringValue("OpsDescribeUserRegionResponse.UserRegionModels["+ i +"].ZoneGroupState"));
+			userRegionModel.setIzState(_ctx.stringValue("OpsDescribeUserRegionResponse.UserRegionModels["+ i +"].IzState"));
+			userRegionModel.setIzNo(_ctx.stringValue("OpsDescribeUserRegionResponse.UserRegionModels["+ i +"].IzNo"));
+			userRegionModel.setParentBflag(_ctx.stringValue("OpsDescribeUserRegionResponse.UserRegionModels["+ i +"].ParentBflag"));
 
 			userRegionModels.add(userRegionModel);
 		}

@@ -69,17 +69,9 @@ public class OpsAddVpcToClassicMigrationInstanceResponse extends AcsResponse {
 
 		public static class Reason {
 
-			private String errorCode;
-
 			private String errorMessage;
 
-			public String getErrorCode() {
-				return this.errorCode;
-			}
-
-			public void setErrorCode(String errorCode) {
-				this.errorCode = errorCode;
-			}
+			private String errorCode;
 
 			public String getErrorMessage() {
 				return this.errorMessage;
@@ -87,6 +79,14 @@ public class OpsAddVpcToClassicMigrationInstanceResponse extends AcsResponse {
 
 			public void setErrorMessage(String errorMessage) {
 				this.errorMessage = errorMessage;
+			}
+
+			public String getErrorCode() {
+				return this.errorCode;
+			}
+
+			public void setErrorCode(String errorCode) {
+				this.errorCode = errorCode;
 			}
 		}
 	}

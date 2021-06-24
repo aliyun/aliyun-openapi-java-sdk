@@ -27,20 +27,20 @@ public class OpsDescribeChangeMemberResponseUnmarshaller {
 	public static OpsDescribeChangeMemberResponse unmarshall(OpsDescribeChangeMemberResponse opsDescribeChangeMemberResponse, UnmarshallerContext _ctx) {
 		
 		opsDescribeChangeMemberResponse.setRequestId(_ctx.stringValue("OpsDescribeChangeMemberResponse.RequestId"));
-		opsDescribeChangeMemberResponse.setCode(_ctx.stringValue("OpsDescribeChangeMemberResponse.Code"));
-		opsDescribeChangeMemberResponse.setMessage(_ctx.stringValue("OpsDescribeChangeMemberResponse.Message"));
-		opsDescribeChangeMemberResponse.setSuccess(_ctx.stringValue("OpsDescribeChangeMemberResponse.Success"));
 		opsDescribeChangeMemberResponse.setTotalCount(_ctx.integerValue("OpsDescribeChangeMemberResponse.TotalCount"));
-		opsDescribeChangeMemberResponse.setPageNumber(_ctx.integerValue("OpsDescribeChangeMemberResponse.PageNumber"));
+		opsDescribeChangeMemberResponse.setMessage(_ctx.stringValue("OpsDescribeChangeMemberResponse.Message"));
 		opsDescribeChangeMemberResponse.setPageSize(_ctx.integerValue("OpsDescribeChangeMemberResponse.PageSize"));
+		opsDescribeChangeMemberResponse.setPageNumber(_ctx.integerValue("OpsDescribeChangeMemberResponse.PageNumber"));
+		opsDescribeChangeMemberResponse.setCode(_ctx.stringValue("OpsDescribeChangeMemberResponse.Code"));
+		opsDescribeChangeMemberResponse.setSuccess(_ctx.stringValue("OpsDescribeChangeMemberResponse.Success"));
 
 		List<ChangeMembers> data = new ArrayList<ChangeMembers>();
 		for (int i = 0; i < _ctx.lengthValue("OpsDescribeChangeMemberResponse.Data.Length"); i++) {
 			ChangeMembers changeMembers = new ChangeMembers();
-			changeMembers.setId(_ctx.longValue("OpsDescribeChangeMemberResponse.Data["+ i +"].Id"));
+			changeMembers.setMemberName(_ctx.stringValue("OpsDescribeChangeMemberResponse.Data["+ i +"].MemberName"));
 			changeMembers.setGmtCreate(_ctx.stringValue("OpsDescribeChangeMemberResponse.Data["+ i +"].GmtCreate"));
 			changeMembers.setMemberNo(_ctx.stringValue("OpsDescribeChangeMemberResponse.Data["+ i +"].MemberNo"));
-			changeMembers.setMemberName(_ctx.stringValue("OpsDescribeChangeMemberResponse.Data["+ i +"].MemberName"));
+			changeMembers.setId(_ctx.longValue("OpsDescribeChangeMemberResponse.Data["+ i +"].Id"));
 
 			data.add(changeMembers);
 		}

@@ -27,23 +27,23 @@ public class OpsDescribeWhitelistResponseUnmarshaller {
 	public static OpsDescribeWhitelistResponse unmarshall(OpsDescribeWhitelistResponse opsDescribeWhitelistResponse, UnmarshallerContext _ctx) {
 		
 		opsDescribeWhitelistResponse.setRequestId(_ctx.stringValue("OpsDescribeWhitelistResponse.RequestId"));
-		opsDescribeWhitelistResponse.setCode(_ctx.stringValue("OpsDescribeWhitelistResponse.Code"));
-		opsDescribeWhitelistResponse.setMessage(_ctx.stringValue("OpsDescribeWhitelistResponse.Message"));
-		opsDescribeWhitelistResponse.setSuccess(_ctx.booleanValue("OpsDescribeWhitelistResponse.Success"));
 		opsDescribeWhitelistResponse.setTotalCount(_ctx.integerValue("OpsDescribeWhitelistResponse.TotalCount"));
-		opsDescribeWhitelistResponse.setPageNo(_ctx.integerValue("OpsDescribeWhitelistResponse.PageNo"));
+		opsDescribeWhitelistResponse.setMessage(_ctx.stringValue("OpsDescribeWhitelistResponse.Message"));
 		opsDescribeWhitelistResponse.setPageSize(_ctx.integerValue("OpsDescribeWhitelistResponse.PageSize"));
+		opsDescribeWhitelistResponse.setPageNo(_ctx.integerValue("OpsDescribeWhitelistResponse.PageNo"));
+		opsDescribeWhitelistResponse.setCode(_ctx.stringValue("OpsDescribeWhitelistResponse.Code"));
+		opsDescribeWhitelistResponse.setSuccess(_ctx.booleanValue("OpsDescribeWhitelistResponse.Success"));
 
 		List<EcsWhiteListModel> ecsWhiteListModels = new ArrayList<EcsWhiteListModel>();
 		for (int i = 0; i < _ctx.lengthValue("OpsDescribeWhitelistResponse.EcsWhiteListModels.Length"); i++) {
 			EcsWhiteListModel ecsWhiteListModel = new EcsWhiteListModel();
-			ecsWhiteListModel.setId(_ctx.longValue("OpsDescribeWhitelistResponse.EcsWhiteListModels["+ i +"].Id"));
-			ecsWhiteListModel.setUserName(_ctx.stringValue("OpsDescribeWhitelistResponse.EcsWhiteListModels["+ i +"].UserName"));
 			ecsWhiteListModel.setType(_ctx.stringValue("OpsDescribeWhitelistResponse.EcsWhiteListModels["+ i +"].Type"));
-			ecsWhiteListModel.setAliUid(_ctx.longValue("OpsDescribeWhitelistResponse.EcsWhiteListModels["+ i +"].AliUid"));
-			ecsWhiteListModel.setQuota(_ctx.integerValue("OpsDescribeWhitelistResponse.EcsWhiteListModels["+ i +"].Quota"));
 			ecsWhiteListModel.setGmtCreated(_ctx.stringValue("OpsDescribeWhitelistResponse.EcsWhiteListModels["+ i +"].GmtCreated"));
+			ecsWhiteListModel.setQuota(_ctx.integerValue("OpsDescribeWhitelistResponse.EcsWhiteListModels["+ i +"].Quota"));
+			ecsWhiteListModel.setAliUid(_ctx.longValue("OpsDescribeWhitelistResponse.EcsWhiteListModels["+ i +"].AliUid"));
 			ecsWhiteListModel.setGmtModified(_ctx.stringValue("OpsDescribeWhitelistResponse.EcsWhiteListModels["+ i +"].GmtModified"));
+			ecsWhiteListModel.setUserName(_ctx.stringValue("OpsDescribeWhitelistResponse.EcsWhiteListModels["+ i +"].UserName"));
+			ecsWhiteListModel.setId(_ctx.longValue("OpsDescribeWhitelistResponse.EcsWhiteListModels["+ i +"].Id"));
 
 			ecsWhiteListModels.add(ecsWhiteListModel);
 		}

@@ -25,17 +25,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsDescribeAlertStatisticsResponse extends AcsResponse {
 
+	private Integer fixedTotal;
+
 	private String requestId;
 
 	private Integer waitTotal;
 
-	private Integer processingTotal;
-
-	private Integer fixedTotal;
-
 	private Integer finishedTotal;
 
+	private Integer processingTotal;
+
 	private List<AlertInfoStatisticalModel> alertInfoStatisticalModels;
+
+	public Integer getFixedTotal() {
+		return this.fixedTotal;
+	}
+
+	public void setFixedTotal(Integer fixedTotal) {
+		this.fixedTotal = fixedTotal;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -53,28 +61,20 @@ public class OpsDescribeAlertStatisticsResponse extends AcsResponse {
 		this.waitTotal = waitTotal;
 	}
 
-	public Integer getProcessingTotal() {
-		return this.processingTotal;
-	}
-
-	public void setProcessingTotal(Integer processingTotal) {
-		this.processingTotal = processingTotal;
-	}
-
-	public Integer getFixedTotal() {
-		return this.fixedTotal;
-	}
-
-	public void setFixedTotal(Integer fixedTotal) {
-		this.fixedTotal = fixedTotal;
-	}
-
 	public Integer getFinishedTotal() {
 		return this.finishedTotal;
 	}
 
 	public void setFinishedTotal(Integer finishedTotal) {
 		this.finishedTotal = finishedTotal;
+	}
+
+	public Integer getProcessingTotal() {
+		return this.processingTotal;
+	}
+
+	public void setProcessingTotal(Integer processingTotal) {
+		this.processingTotal = processingTotal;
 	}
 
 	public List<AlertInfoStatisticalModel> getAlertInfoStatisticalModels() {
@@ -87,7 +87,7 @@ public class OpsDescribeAlertStatisticsResponse extends AcsResponse {
 
 	public static class AlertInfoStatisticalModel {
 
-		private Integer alertWaitTotal;
+		private String alertLevel;
 
 		private Integer alertProcessingTotal;
 
@@ -95,14 +95,14 @@ public class OpsDescribeAlertStatisticsResponse extends AcsResponse {
 
 		private Integer alertFinishedTotal;
 
-		private String alertLevel;
+		private Integer alertWaitTotal;
 
-		public Integer getAlertWaitTotal() {
-			return this.alertWaitTotal;
+		public String getAlertLevel() {
+			return this.alertLevel;
 		}
 
-		public void setAlertWaitTotal(Integer alertWaitTotal) {
-			this.alertWaitTotal = alertWaitTotal;
+		public void setAlertLevel(String alertLevel) {
+			this.alertLevel = alertLevel;
 		}
 
 		public Integer getAlertProcessingTotal() {
@@ -129,12 +129,12 @@ public class OpsDescribeAlertStatisticsResponse extends AcsResponse {
 			this.alertFinishedTotal = alertFinishedTotal;
 		}
 
-		public String getAlertLevel() {
-			return this.alertLevel;
+		public Integer getAlertWaitTotal() {
+			return this.alertWaitTotal;
 		}
 
-		public void setAlertLevel(String alertLevel) {
-			this.alertLevel = alertLevel;
+		public void setAlertWaitTotal(Integer alertWaitTotal) {
+			this.alertWaitTotal = alertWaitTotal;
 		}
 	}
 

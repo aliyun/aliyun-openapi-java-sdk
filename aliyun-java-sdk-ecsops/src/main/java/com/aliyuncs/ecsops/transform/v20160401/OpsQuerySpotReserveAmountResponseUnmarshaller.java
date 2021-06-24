@@ -31,17 +31,17 @@ public class OpsQuerySpotReserveAmountResponseUnmarshaller {
 		List<EcsSpotDurationReserveVmStock> ecsSpotDurationReserveVmStocks = new ArrayList<EcsSpotDurationReserveVmStock>();
 		for (int i = 0; i < _ctx.lengthValue("OpsQuerySpotReserveAmountResponse.EcsSpotDurationReserveVmStocks.Length"); i++) {
 			EcsSpotDurationReserveVmStock ecsSpotDurationReserveVmStock = new EcsSpotDurationReserveVmStock();
-			ecsSpotDurationReserveVmStock.setId(_ctx.longValue("OpsQuerySpotReserveAmountResponse.EcsSpotDurationReserveVmStocks["+ i +"].Id"));
+			ecsSpotDurationReserveVmStock.setIoOptimized(_ctx.integerValue("OpsQuerySpotReserveAmountResponse.EcsSpotDurationReserveVmStocks["+ i +"].IoOptimized"));
+			ecsSpotDurationReserveVmStock.setFlavor(_ctx.stringValue("OpsQuerySpotReserveAmountResponse.EcsSpotDurationReserveVmStocks["+ i +"].Flavor"));
+			ecsSpotDurationReserveVmStock.setSpotDuration(_ctx.integerValue("OpsQuerySpotReserveAmountResponse.EcsSpotDurationReserveVmStocks["+ i +"].SpotDuration"));
 			ecsSpotDurationReserveVmStock.setGmtCreate(_ctx.stringValue("OpsQuerySpotReserveAmountResponse.EcsSpotDurationReserveVmStocks["+ i +"].GmtCreate"));
+			ecsSpotDurationReserveVmStock.setNetworkType(_ctx.integerValue("OpsQuerySpotReserveAmountResponse.EcsSpotDurationReserveVmStocks["+ i +"].NetworkType"));
 			ecsSpotDurationReserveVmStock.setGmtModified(_ctx.stringValue("OpsQuerySpotReserveAmountResponse.EcsSpotDurationReserveVmStocks["+ i +"].GmtModified"));
 			ecsSpotDurationReserveVmStock.setIzNo(_ctx.stringValue("OpsQuerySpotReserveAmountResponse.EcsSpotDurationReserveVmStocks["+ i +"].IzNo"));
 			ecsSpotDurationReserveVmStock.setFlavorFamily(_ctx.stringValue("OpsQuerySpotReserveAmountResponse.EcsSpotDurationReserveVmStocks["+ i +"].FlavorFamily"));
-			ecsSpotDurationReserveVmStock.setFlavor(_ctx.stringValue("OpsQuerySpotReserveAmountResponse.EcsSpotDurationReserveVmStocks["+ i +"].Flavor"));
-			ecsSpotDurationReserveVmStock.setNetworkType(_ctx.integerValue("OpsQuerySpotReserveAmountResponse.EcsSpotDurationReserveVmStocks["+ i +"].NetworkType"));
-			ecsSpotDurationReserveVmStock.setIoOptimized(_ctx.integerValue("OpsQuerySpotReserveAmountResponse.EcsSpotDurationReserveVmStocks["+ i +"].IoOptimized"));
-			ecsSpotDurationReserveVmStock.setSpotDuration(_ctx.integerValue("OpsQuerySpotReserveAmountResponse.EcsSpotDurationReserveVmStocks["+ i +"].SpotDuration"));
-			ecsSpotDurationReserveVmStock.setReserveAmount(_ctx.integerValue("OpsQuerySpotReserveAmountResponse.EcsSpotDurationReserveVmStocks["+ i +"].ReserveAmount"));
+			ecsSpotDurationReserveVmStock.setId(_ctx.longValue("OpsQuerySpotReserveAmountResponse.EcsSpotDurationReserveVmStocks["+ i +"].Id"));
 			ecsSpotDurationReserveVmStock.setBizHour(_ctx.stringValue("OpsQuerySpotReserveAmountResponse.EcsSpotDurationReserveVmStocks["+ i +"].BizHour"));
+			ecsSpotDurationReserveVmStock.setReserveAmount(_ctx.integerValue("OpsQuerySpotReserveAmountResponse.EcsSpotDurationReserveVmStocks["+ i +"].ReserveAmount"));
 
 			ecsSpotDurationReserveVmStocks.add(ecsSpotDurationReserveVmStock);
 		}

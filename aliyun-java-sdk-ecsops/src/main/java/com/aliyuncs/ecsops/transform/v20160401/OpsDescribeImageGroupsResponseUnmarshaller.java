@@ -28,16 +28,16 @@ public class OpsDescribeImageGroupsResponseUnmarshaller {
 		
 		opsDescribeImageGroupsResponse.setRequestId(_ctx.stringValue("OpsDescribeImageGroupsResponse.RequestId"));
 		opsDescribeImageGroupsResponse.setTotalCount(_ctx.integerValue("OpsDescribeImageGroupsResponse.TotalCount"));
-		opsDescribeImageGroupsResponse.setPageNumber(_ctx.integerValue("OpsDescribeImageGroupsResponse.PageNumber"));
 		opsDescribeImageGroupsResponse.setPageSize(_ctx.integerValue("OpsDescribeImageGroupsResponse.PageSize"));
+		opsDescribeImageGroupsResponse.setPageNumber(_ctx.integerValue("OpsDescribeImageGroupsResponse.PageNumber"));
 
 		List<ImageGroup> imageGroups = new ArrayList<ImageGroup>();
 		for (int i = 0; i < _ctx.lengthValue("OpsDescribeImageGroupsResponse.ImageGroups.Length"); i++) {
 			ImageGroup imageGroup = new ImageGroup();
-			imageGroup.setImageGroup(_ctx.stringValue("OpsDescribeImageGroupsResponse.ImageGroups["+ i +"].ImageGroup"));
-			imageGroup.setPublishState(_ctx.stringValue("OpsDescribeImageGroupsResponse.ImageGroups["+ i +"].PublishState"));
-			imageGroup.setPublishTag(_ctx.stringValue("OpsDescribeImageGroupsResponse.ImageGroups["+ i +"].PublishTag"));
 			imageGroup.setCreationTime(_ctx.stringValue("OpsDescribeImageGroupsResponse.ImageGroups["+ i +"].CreationTime"));
+			imageGroup.setPublishState(_ctx.stringValue("OpsDescribeImageGroupsResponse.ImageGroups["+ i +"].PublishState"));
+			imageGroup.setImageGroup(_ctx.stringValue("OpsDescribeImageGroupsResponse.ImageGroups["+ i +"].ImageGroup"));
+			imageGroup.setPublishTag(_ctx.stringValue("OpsDescribeImageGroupsResponse.ImageGroups["+ i +"].PublishTag"));
 			imageGroup.setModifyTime(_ctx.stringValue("OpsDescribeImageGroupsResponse.ImageGroups["+ i +"].ModifyTime"));
 
 			imageGroups.add(imageGroup);

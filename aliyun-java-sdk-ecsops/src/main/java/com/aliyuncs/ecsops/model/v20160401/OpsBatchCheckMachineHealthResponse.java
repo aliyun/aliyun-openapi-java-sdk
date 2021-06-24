@@ -25,35 +25,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsBatchCheckMachineHealthResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String token;
-
 	private String status;
 
 	private Boolean finished;
 
 	private String checkTime;
 
+	private String requestId;
+
+	private String token;
+
 	private List<MachineHealthInfo> machineHealthInfos;
 
 	private List<String> machineIds;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getToken() {
-		return this.token;
-	}
-
-	public void setToken(String token) {
-		this.token = token;
-	}
 
 	public String getStatus() {
 		return this.status;
@@ -77,6 +61,22 @@ public class OpsBatchCheckMachineHealthResponse extends AcsResponse {
 
 	public void setCheckTime(String checkTime) {
 		this.checkTime = checkTime;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getToken() {
+		return this.token;
+	}
+
+	public void setToken(String token) {
+		this.token = token;
 	}
 
 	public List<MachineHealthInfo> getMachineHealthInfos() {
@@ -119,20 +119,20 @@ public class OpsBatchCheckMachineHealthResponse extends AcsResponse {
 
 		public static class HealthInfo {
 
-			private String machineId;
+			private String detailInfo;
 
 			private String checkItem;
 
-			private String detailInfo;
+			private String machineId;
 
 			private List<ResultInfo> resultInfos;
 
-			public String getMachineId() {
-				return this.machineId;
+			public String getDetailInfo() {
+				return this.detailInfo;
 			}
 
-			public void setMachineId(String machineId) {
-				this.machineId = machineId;
+			public void setDetailInfo(String detailInfo) {
+				this.detailInfo = detailInfo;
 			}
 
 			public String getCheckItem() {
@@ -143,12 +143,12 @@ public class OpsBatchCheckMachineHealthResponse extends AcsResponse {
 				this.checkItem = checkItem;
 			}
 
-			public String getDetailInfo() {
-				return this.detailInfo;
+			public String getMachineId() {
+				return this.machineId;
 			}
 
-			public void setDetailInfo(String detailInfo) {
-				this.detailInfo = detailInfo;
+			public void setMachineId(String machineId) {
+				this.machineId = machineId;
 			}
 
 			public List<ResultInfo> getResultInfos() {
@@ -161,19 +161,11 @@ public class OpsBatchCheckMachineHealthResponse extends AcsResponse {
 
 			public static class ResultInfo {
 
-				private String resultKey;
-
 				private String resultValue;
 
+				private String resultKey;
+
 				private String resultMsg;
-
-				public String getResultKey() {
-					return this.resultKey;
-				}
-
-				public void setResultKey(String resultKey) {
-					this.resultKey = resultKey;
-				}
 
 				public String getResultValue() {
 					return this.resultValue;
@@ -181,6 +173,14 @@ public class OpsBatchCheckMachineHealthResponse extends AcsResponse {
 
 				public void setResultValue(String resultValue) {
 					this.resultValue = resultValue;
+				}
+
+				public String getResultKey() {
+					return this.resultKey;
+				}
+
+				public void setResultKey(String resultKey) {
+					this.resultKey = resultKey;
 				}
 
 				public String getResultMsg() {

@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsQueryEcsResourceDisplayInfoDTOsResponse extends AcsResponse {
 
+	private String message;
+
 	private String requestId;
 
 	private String code;
 
-	private String message;
-
 	private Boolean success;
 
 	private List<EcsResourceDisplayInfoDTO> ecsResourceDisplayInfoDTOs;
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -49,14 +57,6 @@ public class OpsQueryEcsResourceDisplayInfoDTOsResponse extends AcsResponse {
 
 	public void setCode(String code) {
 		this.code = code;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
 	}
 
 	public Boolean getSuccess() {
@@ -77,57 +77,25 @@ public class OpsQueryEcsResourceDisplayInfoDTOsResponse extends AcsResponse {
 
 	public static class EcsResourceDisplayInfoDTO {
 
-		private Long id;
-
-		private String gmtCreate;
-
-		private String gmtModified;
-
-		private String scope;
-
 		private String type;
-
-		private String level;
-
-		private Long parentId;
 
 		private String value;
 
+		private Long parentId;
+
 		private String subIds;
 
+		private String gmtCreate;
+
+		private String scope;
+
+		private String gmtModified;
+
+		private String level;
+
+		private Long id;
+
 		private List<String> tags;
-
-		public Long getId() {
-			return this.id;
-		}
-
-		public void setId(Long id) {
-			this.id = id;
-		}
-
-		public String getGmtCreate() {
-			return this.gmtCreate;
-		}
-
-		public void setGmtCreate(String gmtCreate) {
-			this.gmtCreate = gmtCreate;
-		}
-
-		public String getGmtModified() {
-			return this.gmtModified;
-		}
-
-		public void setGmtModified(String gmtModified) {
-			this.gmtModified = gmtModified;
-		}
-
-		public String getScope() {
-			return this.scope;
-		}
-
-		public void setScope(String scope) {
-			this.scope = scope;
-		}
 
 		public String getType() {
 			return this.type;
@@ -135,22 +103,6 @@ public class OpsQueryEcsResourceDisplayInfoDTOsResponse extends AcsResponse {
 
 		public void setType(String type) {
 			this.type = type;
-		}
-
-		public String getLevel() {
-			return this.level;
-		}
-
-		public void setLevel(String level) {
-			this.level = level;
-		}
-
-		public Long getParentId() {
-			return this.parentId;
-		}
-
-		public void setParentId(Long parentId) {
-			this.parentId = parentId;
 		}
 
 		public String getValue() {
@@ -161,12 +113,60 @@ public class OpsQueryEcsResourceDisplayInfoDTOsResponse extends AcsResponse {
 			this.value = value;
 		}
 
+		public Long getParentId() {
+			return this.parentId;
+		}
+
+		public void setParentId(Long parentId) {
+			this.parentId = parentId;
+		}
+
 		public String getSubIds() {
 			return this.subIds;
 		}
 
 		public void setSubIds(String subIds) {
 			this.subIds = subIds;
+		}
+
+		public String getGmtCreate() {
+			return this.gmtCreate;
+		}
+
+		public void setGmtCreate(String gmtCreate) {
+			this.gmtCreate = gmtCreate;
+		}
+
+		public String getScope() {
+			return this.scope;
+		}
+
+		public void setScope(String scope) {
+			this.scope = scope;
+		}
+
+		public String getGmtModified() {
+			return this.gmtModified;
+		}
+
+		public void setGmtModified(String gmtModified) {
+			this.gmtModified = gmtModified;
+		}
+
+		public String getLevel() {
+			return this.level;
+		}
+
+		public void setLevel(String level) {
+			this.level = level;
+		}
+
+		public Long getId() {
+			return this.id;
+		}
+
+		public void setId(Long id) {
+			this.id = id;
 		}
 
 		public List<String> getTags() {

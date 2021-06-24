@@ -28,20 +28,20 @@ public class OpsSubmitFailureNcsResponseUnmarshaller {
 		opsSubmitFailureNcsResponse.setRequestId(_ctx.stringValue("OpsSubmitFailureNcsResponse.RequestId"));
 		opsSubmitFailureNcsResponse.setStatus(_ctx.stringValue("OpsSubmitFailureNcsResponse.Status"));
 		opsSubmitFailureNcsResponse.setFinished(_ctx.booleanValue("OpsSubmitFailureNcsResponse.Finished"));
-		opsSubmitFailureNcsResponse.setToken(_ctx.stringValue("OpsSubmitFailureNcsResponse.Token"));
 		opsSubmitFailureNcsResponse.setErrorInfo(_ctx.stringValue("OpsSubmitFailureNcsResponse.ErrorInfo"));
-
-		List<String> insertedNcList = new ArrayList<String>();
-		for (int i = 0; i < _ctx.lengthValue("OpsSubmitFailureNcsResponse.InsertedNcList.Length"); i++) {
-			insertedNcList.add(_ctx.stringValue("OpsSubmitFailureNcsResponse.InsertedNcList["+ i +"]"));
-		}
-		opsSubmitFailureNcsResponse.setInsertedNcList(insertedNcList);
+		opsSubmitFailureNcsResponse.setToken(_ctx.stringValue("OpsSubmitFailureNcsResponse.Token"));
 
 		List<String> insertedVmList = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("OpsSubmitFailureNcsResponse.InsertedVmList.Length"); i++) {
 			insertedVmList.add(_ctx.stringValue("OpsSubmitFailureNcsResponse.InsertedVmList["+ i +"]"));
 		}
 		opsSubmitFailureNcsResponse.setInsertedVmList(insertedVmList);
+
+		List<String> insertedNcList = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("OpsSubmitFailureNcsResponse.InsertedNcList.Length"); i++) {
+			insertedNcList.add(_ctx.stringValue("OpsSubmitFailureNcsResponse.InsertedNcList["+ i +"]"));
+		}
+		opsSubmitFailureNcsResponse.setInsertedNcList(insertedNcList);
 	 
 	 	return opsSubmitFailureNcsResponse;
 	}

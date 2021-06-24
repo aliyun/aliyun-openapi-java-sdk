@@ -23,8 +23,8 @@ public class OpsDeleteDemandResponseUnmarshaller {
 	public static OpsDeleteDemandResponse unmarshall(OpsDeleteDemandResponse opsDeleteDemandResponse, UnmarshallerContext _ctx) {
 		
 		opsDeleteDemandResponse.setRequestId(_ctx.stringValue("OpsDeleteDemandResponse.RequestId"));
-		opsDeleteDemandResponse.setCode(_ctx.stringValue("OpsDeleteDemandResponse.Code"));
 		opsDeleteDemandResponse.setMessage(_ctx.stringValue("OpsDeleteDemandResponse.Message"));
+		opsDeleteDemandResponse.setCode(_ctx.stringValue("OpsDeleteDemandResponse.Code"));
 		opsDeleteDemandResponse.setSuccess(_ctx.booleanValue("OpsDeleteDemandResponse.Success"));
 	 
 	 	return opsDeleteDemandResponse;

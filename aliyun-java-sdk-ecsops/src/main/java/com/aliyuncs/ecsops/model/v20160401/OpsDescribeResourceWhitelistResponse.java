@@ -47,23 +47,15 @@ public class OpsDescribeResourceWhitelistResponse extends AcsResponse {
 
 	public static class ResourceWhitelist {
 
-		private String product;
-
 		private String module;
+
+		private String product;
 
 		private List<ResourceProperty> propertyLists;
 
-		private List<Whitelist> whitelists;
-
 		private List<ModuleRule> rules;
 
-		public String getProduct() {
-			return this.product;
-		}
-
-		public void setProduct(String product) {
-			this.product = product;
-		}
+		private List<Whitelist> whitelists;
 
 		public String getModule() {
 			return this.module;
@@ -71,6 +63,14 @@ public class OpsDescribeResourceWhitelistResponse extends AcsResponse {
 
 		public void setModule(String module) {
 			this.module = module;
+		}
+
+		public String getProduct() {
+			return this.product;
+		}
+
+		public void setProduct(String product) {
+			this.product = product;
 		}
 
 		public List<ResourceProperty> getPropertyLists() {
@@ -81,14 +81,6 @@ public class OpsDescribeResourceWhitelistResponse extends AcsResponse {
 			this.propertyLists = propertyLists;
 		}
 
-		public List<Whitelist> getWhitelists() {
-			return this.whitelists;
-		}
-
-		public void setWhitelists(List<Whitelist> whitelists) {
-			this.whitelists = whitelists;
-		}
-
 		public List<ModuleRule> getRules() {
 			return this.rules;
 		}
@@ -97,11 +89,27 @@ public class OpsDescribeResourceWhitelistResponse extends AcsResponse {
 			this.rules = rules;
 		}
 
+		public List<Whitelist> getWhitelists() {
+			return this.whitelists;
+		}
+
+		public void setWhitelists(List<Whitelist> whitelists) {
+			this.whitelists = whitelists;
+		}
+
 		public static class ResourceProperty {
+
+			private String value;
 
 			private String name;
 
-			private String value;
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
+			}
 
 			public String getName() {
 				return this.name;
@@ -110,13 +118,68 @@ public class OpsDescribeResourceWhitelistResponse extends AcsResponse {
 			public void setName(String name) {
 				this.name = name;
 			}
+		}
 
-			public String getValue() {
-				return this.value;
+		public static class ModuleRule {
+
+			private Integer groupId;
+
+			private String requirements;
+
+			private String moduleRuleName;
+
+			private String supportedProducts;
+
+			private String supportedActions;
+
+			private Boolean notFlag;
+
+			public Integer getGroupId() {
+				return this.groupId;
 			}
 
-			public void setValue(String value) {
-				this.value = value;
+			public void setGroupId(Integer groupId) {
+				this.groupId = groupId;
+			}
+
+			public String getRequirements() {
+				return this.requirements;
+			}
+
+			public void setRequirements(String requirements) {
+				this.requirements = requirements;
+			}
+
+			public String getModuleRuleName() {
+				return this.moduleRuleName;
+			}
+
+			public void setModuleRuleName(String moduleRuleName) {
+				this.moduleRuleName = moduleRuleName;
+			}
+
+			public String getSupportedProducts() {
+				return this.supportedProducts;
+			}
+
+			public void setSupportedProducts(String supportedProducts) {
+				this.supportedProducts = supportedProducts;
+			}
+
+			public String getSupportedActions() {
+				return this.supportedActions;
+			}
+
+			public void setSupportedActions(String supportedActions) {
+				this.supportedActions = supportedActions;
+			}
+
+			public Boolean getNotFlag() {
+				return this.notFlag;
+			}
+
+			public void setNotFlag(Boolean notFlag) {
+				this.notFlag = notFlag;
 			}
 		}
 
@@ -126,9 +189,9 @@ public class OpsDescribeResourceWhitelistResponse extends AcsResponse {
 
 			private String groupName;
 
-			private String supportedActions;
-
 			private String supportedProducts;
+
+			private String supportedActions;
 
 			private List<ResourceProperty1> existedMembers;
 
@@ -148,20 +211,20 @@ public class OpsDescribeResourceWhitelistResponse extends AcsResponse {
 				this.groupName = groupName;
 			}
 
-			public String getSupportedActions() {
-				return this.supportedActions;
-			}
-
-			public void setSupportedActions(String supportedActions) {
-				this.supportedActions = supportedActions;
-			}
-
 			public String getSupportedProducts() {
 				return this.supportedProducts;
 			}
 
 			public void setSupportedProducts(String supportedProducts) {
 				this.supportedProducts = supportedProducts;
+			}
+
+			public String getSupportedActions() {
+				return this.supportedActions;
+			}
+
+			public void setSupportedActions(String supportedActions) {
+				this.supportedActions = supportedActions;
 			}
 
 			public List<ResourceProperty1> getExistedMembers() {
@@ -174,17 +237,9 @@ public class OpsDescribeResourceWhitelistResponse extends AcsResponse {
 
 			public static class ResourceProperty1 {
 
-				private String name;
-
 				private String value;
 
-				public String getName() {
-					return this.name;
-				}
-
-				public void setName(String name) {
-					this.name = name;
-				}
+				private String name;
 
 				public String getValue() {
 					return this.value;
@@ -193,69 +248,14 @@ public class OpsDescribeResourceWhitelistResponse extends AcsResponse {
 				public void setValue(String value) {
 					this.value = value;
 				}
-			}
-		}
 
-		public static class ModuleRule {
+				public String getName() {
+					return this.name;
+				}
 
-			private Integer groupId;
-
-			private String moduleRuleName;
-
-			private String requirements;
-
-			private Boolean notFlag;
-
-			private String supportedActions;
-
-			private String supportedProducts;
-
-			public Integer getGroupId() {
-				return this.groupId;
-			}
-
-			public void setGroupId(Integer groupId) {
-				this.groupId = groupId;
-			}
-
-			public String getModuleRuleName() {
-				return this.moduleRuleName;
-			}
-
-			public void setModuleRuleName(String moduleRuleName) {
-				this.moduleRuleName = moduleRuleName;
-			}
-
-			public String getRequirements() {
-				return this.requirements;
-			}
-
-			public void setRequirements(String requirements) {
-				this.requirements = requirements;
-			}
-
-			public Boolean getNotFlag() {
-				return this.notFlag;
-			}
-
-			public void setNotFlag(Boolean notFlag) {
-				this.notFlag = notFlag;
-			}
-
-			public String getSupportedActions() {
-				return this.supportedActions;
-			}
-
-			public void setSupportedActions(String supportedActions) {
-				this.supportedActions = supportedActions;
-			}
-
-			public String getSupportedProducts() {
-				return this.supportedProducts;
-			}
-
-			public void setSupportedProducts(String supportedProducts) {
-				this.supportedProducts = supportedProducts;
+				public void setName(String name) {
+					this.name = name;
+				}
 			}
 		}
 	}

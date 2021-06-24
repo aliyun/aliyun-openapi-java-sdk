@@ -57,89 +57,41 @@ public class OpsAddDiagnoseFeedbackInfoResponse extends AcsResponse {
 
 	public static class DiagnoseFeedbackContent {
 
-		private String machineId;
-
-		private String ncIp;
-
-		private String srcExceptionName;
-
-		private String srcExceptionType;
-
-		private String srcExceptionTime;
-
-		private String srcReason;
-
 		private String srcErrorDesc;
-
-		private String srcTeams;
 
 		private String compareResult;
 
-		private String matchedFeatures;
+		private String srcExceptionName;
 
 		private String suggestExceptionName;
 
-		private String suggestReason;
+		private String feedbackUserId;
+
+		private String ncIp;
+
+		private String srcTeams;
+
+		private String srcExceptionTime;
+
+		private String gmtCreated;
+
+		private String srcExceptionType;
+
+		private String matchedFeatures;
 
 		private String suggestErrorDesc;
 
 		private String suggestTeams;
 
-		private String suggestOthers;
-
-		private String feedbackUserId;
-
 		private String feedbackUserName;
 
-		private String gmtCreated;
+		private String suggestOthers;
 
-		public String getMachineId() {
-			return this.machineId;
-		}
+		private String srcReason;
 
-		public void setMachineId(String machineId) {
-			this.machineId = machineId;
-		}
+		private String suggestReason;
 
-		public String getNcIp() {
-			return this.ncIp;
-		}
-
-		public void setNcIp(String ncIp) {
-			this.ncIp = ncIp;
-		}
-
-		public String getSrcExceptionName() {
-			return this.srcExceptionName;
-		}
-
-		public void setSrcExceptionName(String srcExceptionName) {
-			this.srcExceptionName = srcExceptionName;
-		}
-
-		public String getSrcExceptionType() {
-			return this.srcExceptionType;
-		}
-
-		public void setSrcExceptionType(String srcExceptionType) {
-			this.srcExceptionType = srcExceptionType;
-		}
-
-		public String getSrcExceptionTime() {
-			return this.srcExceptionTime;
-		}
-
-		public void setSrcExceptionTime(String srcExceptionTime) {
-			this.srcExceptionTime = srcExceptionTime;
-		}
-
-		public String getSrcReason() {
-			return this.srcReason;
-		}
-
-		public void setSrcReason(String srcReason) {
-			this.srcReason = srcReason;
-		}
+		private String machineId;
 
 		public String getSrcErrorDesc() {
 			return this.srcErrorDesc;
@@ -147,14 +99,6 @@ public class OpsAddDiagnoseFeedbackInfoResponse extends AcsResponse {
 
 		public void setSrcErrorDesc(String srcErrorDesc) {
 			this.srcErrorDesc = srcErrorDesc;
-		}
-
-		public String getSrcTeams() {
-			return this.srcTeams;
-		}
-
-		public void setSrcTeams(String srcTeams) {
-			this.srcTeams = srcTeams;
 		}
 
 		public String getCompareResult() {
@@ -165,12 +109,12 @@ public class OpsAddDiagnoseFeedbackInfoResponse extends AcsResponse {
 			this.compareResult = compareResult;
 		}
 
-		public String getMatchedFeatures() {
-			return this.matchedFeatures;
+		public String getSrcExceptionName() {
+			return this.srcExceptionName;
 		}
 
-		public void setMatchedFeatures(String matchedFeatures) {
-			this.matchedFeatures = matchedFeatures;
+		public void setSrcExceptionName(String srcExceptionName) {
+			this.srcExceptionName = srcExceptionName;
 		}
 
 		public String getSuggestExceptionName() {
@@ -181,12 +125,60 @@ public class OpsAddDiagnoseFeedbackInfoResponse extends AcsResponse {
 			this.suggestExceptionName = suggestExceptionName;
 		}
 
-		public String getSuggestReason() {
-			return this.suggestReason;
+		public String getFeedbackUserId() {
+			return this.feedbackUserId;
 		}
 
-		public void setSuggestReason(String suggestReason) {
-			this.suggestReason = suggestReason;
+		public void setFeedbackUserId(String feedbackUserId) {
+			this.feedbackUserId = feedbackUserId;
+		}
+
+		public String getNcIp() {
+			return this.ncIp;
+		}
+
+		public void setNcIp(String ncIp) {
+			this.ncIp = ncIp;
+		}
+
+		public String getSrcTeams() {
+			return this.srcTeams;
+		}
+
+		public void setSrcTeams(String srcTeams) {
+			this.srcTeams = srcTeams;
+		}
+
+		public String getSrcExceptionTime() {
+			return this.srcExceptionTime;
+		}
+
+		public void setSrcExceptionTime(String srcExceptionTime) {
+			this.srcExceptionTime = srcExceptionTime;
+		}
+
+		public String getGmtCreated() {
+			return this.gmtCreated;
+		}
+
+		public void setGmtCreated(String gmtCreated) {
+			this.gmtCreated = gmtCreated;
+		}
+
+		public String getSrcExceptionType() {
+			return this.srcExceptionType;
+		}
+
+		public void setSrcExceptionType(String srcExceptionType) {
+			this.srcExceptionType = srcExceptionType;
+		}
+
+		public String getMatchedFeatures() {
+			return this.matchedFeatures;
+		}
+
+		public void setMatchedFeatures(String matchedFeatures) {
+			this.matchedFeatures = matchedFeatures;
 		}
 
 		public String getSuggestErrorDesc() {
@@ -205,22 +197,6 @@ public class OpsAddDiagnoseFeedbackInfoResponse extends AcsResponse {
 			this.suggestTeams = suggestTeams;
 		}
 
-		public String getSuggestOthers() {
-			return this.suggestOthers;
-		}
-
-		public void setSuggestOthers(String suggestOthers) {
-			this.suggestOthers = suggestOthers;
-		}
-
-		public String getFeedbackUserId() {
-			return this.feedbackUserId;
-		}
-
-		public void setFeedbackUserId(String feedbackUserId) {
-			this.feedbackUserId = feedbackUserId;
-		}
-
 		public String getFeedbackUserName() {
 			return this.feedbackUserName;
 		}
@@ -229,12 +205,36 @@ public class OpsAddDiagnoseFeedbackInfoResponse extends AcsResponse {
 			this.feedbackUserName = feedbackUserName;
 		}
 
-		public String getGmtCreated() {
-			return this.gmtCreated;
+		public String getSuggestOthers() {
+			return this.suggestOthers;
 		}
 
-		public void setGmtCreated(String gmtCreated) {
-			this.gmtCreated = gmtCreated;
+		public void setSuggestOthers(String suggestOthers) {
+			this.suggestOthers = suggestOthers;
+		}
+
+		public String getSrcReason() {
+			return this.srcReason;
+		}
+
+		public void setSrcReason(String srcReason) {
+			this.srcReason = srcReason;
+		}
+
+		public String getSuggestReason() {
+			return this.suggestReason;
+		}
+
+		public void setSuggestReason(String suggestReason) {
+			this.suggestReason = suggestReason;
+		}
+
+		public String getMachineId() {
+			return this.machineId;
+		}
+
+		public void setMachineId(String machineId) {
+			this.machineId = machineId;
 		}
 	}
 

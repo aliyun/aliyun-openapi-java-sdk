@@ -17,7 +17,6 @@ package com.aliyuncs.ecsops.model.v20160401;
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
 import com.aliyuncs.http.MethodType;
-import com.aliyuncs.ecsops.Endpoint;
 
 /**
  * @author auto create
@@ -27,6 +26,8 @@ public class OpsQueryMonitorSlsDataRequest extends RpcAcsRequest<OpsQueryMonitor
 	   
 
 	private String startTime;
+
+	private String logstoreName;
 
 	private String query;
 
@@ -38,12 +39,8 @@ public class OpsQueryMonitorSlsDataRequest extends RpcAcsRequest<OpsQueryMonitor
 
 	private String auditParamStr;
 	public OpsQueryMonitorSlsDataRequest() {
-		super("Ecsops", "2016-04-01", "OpsQueryMonitorSlsData", "ecs");
+		super("Ecsops", "2016-04-01", "OpsQueryMonitorSlsData", "ecsops");
 		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
 	}
 
 	public String getStartTime() {
@@ -54,6 +51,17 @@ public class OpsQueryMonitorSlsDataRequest extends RpcAcsRequest<OpsQueryMonitor
 		this.startTime = startTime;
 		if(startTime != null){
 			putQueryParameter("StartTime", startTime);
+		}
+	}
+
+	public String getLogstoreName() {
+		return this.logstoreName;
+	}
+
+	public void setLogstoreName(String logstoreName) {
+		this.logstoreName = logstoreName;
+		if(logstoreName != null){
+			putQueryParameter("LogstoreName", logstoreName);
 		}
 	}
 

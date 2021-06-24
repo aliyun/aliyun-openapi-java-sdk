@@ -23,8 +23,8 @@ public class OpsQueryConfigDiffContentResponseUnmarshaller {
 	public static OpsQueryConfigDiffContentResponse unmarshall(OpsQueryConfigDiffContentResponse opsQueryConfigDiffContentResponse, UnmarshallerContext _ctx) {
 		
 		opsQueryConfigDiffContentResponse.setRequestId(_ctx.stringValue("OpsQueryConfigDiffContentResponse.RequestId"));
-		opsQueryConfigDiffContentResponse.setCurrentContent(_ctx.stringValue("OpsQueryConfigDiffContentResponse.CurrentContent"));
 		opsQueryConfigDiffContentResponse.setCommitContent(_ctx.stringValue("OpsQueryConfigDiffContentResponse.CommitContent"));
+		opsQueryConfigDiffContentResponse.setCurrentContent(_ctx.stringValue("OpsQueryConfigDiffContentResponse.CurrentContent"));
 	 
 	 	return opsQueryConfigDiffContentResponse;
 	}

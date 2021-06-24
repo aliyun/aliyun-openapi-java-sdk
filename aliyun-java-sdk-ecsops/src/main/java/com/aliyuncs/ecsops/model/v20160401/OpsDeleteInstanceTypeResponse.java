@@ -26,9 +26,9 @@ public class OpsDeleteInstanceTypeResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String success;
-
 	private Integer httpStatusCode;
+
+	private String success;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,20 +38,20 @@ public class OpsDeleteInstanceTypeResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(String success) {
-		this.success = success;
-	}
-
 	public Integer getHttpStatusCode() {
 		return this.httpStatusCode;
 	}
 
 	public void setHttpStatusCode(Integer httpStatusCode) {
 		this.httpStatusCode = httpStatusCode;
+	}
+
+	public String getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(String success) {
+		this.success = success;
 	}
 
 	@Override

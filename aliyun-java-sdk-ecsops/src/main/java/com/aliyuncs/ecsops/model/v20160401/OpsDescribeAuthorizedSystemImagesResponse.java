@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsDescribeAuthorizedSystemImagesResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
-
-	private Integer pageNumber;
 
 	private Integer pageSize;
 
+	private String requestId;
+
+	private Integer pageNumber;
+
 	private List<Image> images;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -51,20 +43,28 @@ public class OpsDescribeAuthorizedSystemImagesResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<Image> getImages() {
@@ -77,37 +77,53 @@ public class OpsDescribeAuthorizedSystemImagesResponse extends AcsResponse {
 
 	public static class Image {
 
+		private String creationTime;
+
+		private String status;
+
 		private Long dbId;
-
-		private Long aliUid;
-
-		private String imageId;
 
 		private String osName;
 
-		private String imageCategory;
+		private Long aliUid;
 
 		private Long virtBaseImageId;
 
 		private String regionId;
 
-		private String status;
+		private Integer imageSize;
 
-		private String creationTime;
+		private String description;
 
-		private String modifyTime;
-
-		private String platform;
+		private String version;
 
 		private String osType;
 
 		private String imageName;
 
-		private Integer imageSize;
+		private String platform;
 
-		private String version;
+		private String imageCategory;
 
-		private String description;
+		private String imageId;
+
+		private String modifyTime;
+
+		public String getCreationTime() {
+			return this.creationTime;
+		}
+
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
 
 		public Long getDbId() {
 			return this.dbId;
@@ -115,22 +131,6 @@ public class OpsDescribeAuthorizedSystemImagesResponse extends AcsResponse {
 
 		public void setDbId(Long dbId) {
 			this.dbId = dbId;
-		}
-
-		public Long getAliUid() {
-			return this.aliUid;
-		}
-
-		public void setAliUid(Long aliUid) {
-			this.aliUid = aliUid;
-		}
-
-		public String getImageId() {
-			return this.imageId;
-		}
-
-		public void setImageId(String imageId) {
-			this.imageId = imageId;
 		}
 
 		public String getOsName() {
@@ -141,12 +141,12 @@ public class OpsDescribeAuthorizedSystemImagesResponse extends AcsResponse {
 			this.osName = osName;
 		}
 
-		public String getImageCategory() {
-			return this.imageCategory;
+		public Long getAliUid() {
+			return this.aliUid;
 		}
 
-		public void setImageCategory(String imageCategory) {
-			this.imageCategory = imageCategory;
+		public void setAliUid(Long aliUid) {
+			this.aliUid = aliUid;
 		}
 
 		public Long getVirtBaseImageId() {
@@ -165,36 +165,28 @@ public class OpsDescribeAuthorizedSystemImagesResponse extends AcsResponse {
 			this.regionId = regionId;
 		}
 
-		public String getStatus() {
-			return this.status;
+		public Integer getImageSize() {
+			return this.imageSize;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
+		public void setImageSize(Integer imageSize) {
+			this.imageSize = imageSize;
 		}
 
-		public String getCreationTime() {
-			return this.creationTime;
+		public String getDescription() {
+			return this.description;
 		}
 
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
+		public void setDescription(String description) {
+			this.description = description;
 		}
 
-		public String getModifyTime() {
-			return this.modifyTime;
+		public String getVersion() {
+			return this.version;
 		}
 
-		public void setModifyTime(String modifyTime) {
-			this.modifyTime = modifyTime;
-		}
-
-		public String getPlatform() {
-			return this.platform;
-		}
-
-		public void setPlatform(String platform) {
-			this.platform = platform;
+		public void setVersion(String version) {
+			this.version = version;
 		}
 
 		public String getOsType() {
@@ -213,28 +205,36 @@ public class OpsDescribeAuthorizedSystemImagesResponse extends AcsResponse {
 			this.imageName = imageName;
 		}
 
-		public Integer getImageSize() {
-			return this.imageSize;
+		public String getPlatform() {
+			return this.platform;
 		}
 
-		public void setImageSize(Integer imageSize) {
-			this.imageSize = imageSize;
+		public void setPlatform(String platform) {
+			this.platform = platform;
 		}
 
-		public String getVersion() {
-			return this.version;
+		public String getImageCategory() {
+			return this.imageCategory;
 		}
 
-		public void setVersion(String version) {
-			this.version = version;
+		public void setImageCategory(String imageCategory) {
+			this.imageCategory = imageCategory;
 		}
 
-		public String getDescription() {
-			return this.description;
+		public String getImageId() {
+			return this.imageId;
 		}
 
-		public void setDescription(String description) {
-			this.description = description;
+		public void setImageId(String imageId) {
+			this.imageId = imageId;
+		}
+
+		public String getModifyTime() {
+			return this.modifyTime;
+		}
+
+		public void setModifyTime(String modifyTime) {
+			this.modifyTime = modifyTime;
 		}
 	}
 

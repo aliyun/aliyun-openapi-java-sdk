@@ -26,14 +26,14 @@ public class OpsDescribeGammaNcInfoResponseUnmarshaller {
 		opsDescribeGammaNcInfoResponse.setRequestId(_ctx.stringValue("OpsDescribeGammaNcInfoResponse.RequestId"));
 
 		Data data = new Data();
-		data.setNcIp(_ctx.stringValue("OpsDescribeGammaNcInfoResponse.Data.NcIp"));
 		data.setNcId(_ctx.stringValue("OpsDescribeGammaNcInfoResponse.Data.NcId"));
-		data.setSn(_ctx.stringValue("OpsDescribeGammaNcInfoResponse.Data.Sn"));
-		data.setAliUid(_ctx.stringValue("OpsDescribeGammaNcInfoResponse.Data.AliUid"));
-		data.setGroup(_ctx.stringValue("OpsDescribeGammaNcInfoResponse.Data.Group"));
-		data.setOperator(_ctx.stringValue("OpsDescribeGammaNcInfoResponse.Data.Operator"));
-		data.setGmtCreate(_ctx.stringValue("OpsDescribeGammaNcInfoResponse.Data.GmtCreate"));
 		data.setGetGammaConfig(_ctx.booleanValue("OpsDescribeGammaNcInfoResponse.Data.GetGammaConfig"));
+		data.setSn(_ctx.stringValue("OpsDescribeGammaNcInfoResponse.Data.Sn"));
+		data.setGmtCreate(_ctx.stringValue("OpsDescribeGammaNcInfoResponse.Data.GmtCreate"));
+		data.setAliUid(_ctx.stringValue("OpsDescribeGammaNcInfoResponse.Data.AliUid"));
+		data.setNcIp(_ctx.stringValue("OpsDescribeGammaNcInfoResponse.Data.NcIp"));
+		data.setOperator(_ctx.stringValue("OpsDescribeGammaNcInfoResponse.Data.Operator"));
+		data.setGroup(_ctx.stringValue("OpsDescribeGammaNcInfoResponse.Data.Group"));
 		opsDescribeGammaNcInfoResponse.setData(data);
 	 
 	 	return opsDescribeGammaNcInfoResponse;

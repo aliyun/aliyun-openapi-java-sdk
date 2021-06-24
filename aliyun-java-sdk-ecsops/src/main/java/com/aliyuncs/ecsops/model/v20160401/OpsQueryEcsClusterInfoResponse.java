@@ -24,9 +24,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsQueryEcsClusterInfoResponse extends AcsResponse {
 
-	private String requestId;
+	private String supportStorageType;
+
+	private Integer ncCount;
+
+	private String deployType;
 
 	private String networkArch;
+
+	private String agIp;
+
+	private String requestId;
 
 	private String zoneId;
 
@@ -36,20 +44,32 @@ public class OpsQueryEcsClusterInfoResponse extends AcsResponse {
 
 	private Integer clusterConfig;
 
-	private Integer ncCount;
+	private String regionName;
 
-	private String agIp;
+	private String regionNo;
 
-	private String supportStorageType;
-
-	private String deployType;
-
-	public String getRequestId() {
-		return this.requestId;
+	public String getSupportStorageType() {
+		return this.supportStorageType;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setSupportStorageType(String supportStorageType) {
+		this.supportStorageType = supportStorageType;
+	}
+
+	public Integer getNcCount() {
+		return this.ncCount;
+	}
+
+	public void setNcCount(Integer ncCount) {
+		this.ncCount = ncCount;
+	}
+
+	public String getDeployType() {
+		return this.deployType;
+	}
+
+	public void setDeployType(String deployType) {
+		this.deployType = deployType;
 	}
 
 	public String getNetworkArch() {
@@ -58,6 +78,22 @@ public class OpsQueryEcsClusterInfoResponse extends AcsResponse {
 
 	public void setNetworkArch(String networkArch) {
 		this.networkArch = networkArch;
+	}
+
+	public String getAgIp() {
+		return this.agIp;
+	}
+
+	public void setAgIp(String agIp) {
+		this.agIp = agIp;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getZoneId() {
@@ -92,36 +128,20 @@ public class OpsQueryEcsClusterInfoResponse extends AcsResponse {
 		this.clusterConfig = clusterConfig;
 	}
 
-	public Integer getNcCount() {
-		return this.ncCount;
+	public String getRegionName() {
+		return this.regionName;
 	}
 
-	public void setNcCount(Integer ncCount) {
-		this.ncCount = ncCount;
+	public void setRegionName(String regionName) {
+		this.regionName = regionName;
 	}
 
-	public String getAgIp() {
-		return this.agIp;
+	public String getRegionNo() {
+		return this.regionNo;
 	}
 
-	public void setAgIp(String agIp) {
-		this.agIp = agIp;
-	}
-
-	public String getSupportStorageType() {
-		return this.supportStorageType;
-	}
-
-	public void setSupportStorageType(String supportStorageType) {
-		this.supportStorageType = supportStorageType;
-	}
-
-	public String getDeployType() {
-		return this.deployType;
-	}
-
-	public void setDeployType(String deployType) {
-		this.deployType = deployType;
+	public void setRegionNo(String regionNo) {
+		this.regionNo = regionNo;
 	}
 
 	@Override

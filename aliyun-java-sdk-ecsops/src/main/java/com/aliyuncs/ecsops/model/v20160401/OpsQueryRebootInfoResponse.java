@@ -47,84 +47,44 @@ public class OpsQueryRebootInfoResponse extends AcsResponse {
 
 	public static class CheckPoint {
 
-		private String id;
-
-		private String aliUid;
-
-		private String productCode;
-
-		private String instanceId;
-
-		private String orderId;
-
-		private String restartDate;
+		private Boolean systemPerform;
 
 		private Boolean userPerform;
 
-		private Boolean systemPerform;
+		private String scriptionId;
 
-		private String gmtCreated;
+		private String restartDate;
+
+		private String aliUid;
+
+		private String instanceId;
 
 		private String gmtModified;
 
-		private String isDeleted;
-
-		private String expectedTime;
+		private String gmtCreated;
 
 		private String requestId;
 
-		private String upgradeDate;
+		private String expectedTime;
 
-		private String scriptionId;
+		private String isDeleted;
 
 		private String mark;
 
-		public String getId() {
-			return this.id;
+		private String upgradeDate;
+
+		private String id;
+
+		private String orderId;
+
+		private String productCode;
+
+		public Boolean getSystemPerform() {
+			return this.systemPerform;
 		}
 
-		public void setId(String id) {
-			this.id = id;
-		}
-
-		public String getAliUid() {
-			return this.aliUid;
-		}
-
-		public void setAliUid(String aliUid) {
-			this.aliUid = aliUid;
-		}
-
-		public String getProductCode() {
-			return this.productCode;
-		}
-
-		public void setProductCode(String productCode) {
-			this.productCode = productCode;
-		}
-
-		public String getInstanceId() {
-			return this.instanceId;
-		}
-
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
-
-		public String getOrderId() {
-			return this.orderId;
-		}
-
-		public void setOrderId(String orderId) {
-			this.orderId = orderId;
-		}
-
-		public String getRestartDate() {
-			return this.restartDate;
-		}
-
-		public void setRestartDate(String restartDate) {
-			this.restartDate = restartDate;
+		public void setSystemPerform(Boolean systemPerform) {
+			this.systemPerform = systemPerform;
 		}
 
 		public Boolean getUserPerform() {
@@ -135,20 +95,36 @@ public class OpsQueryRebootInfoResponse extends AcsResponse {
 			this.userPerform = userPerform;
 		}
 
-		public Boolean getSystemPerform() {
-			return this.systemPerform;
+		public String getScriptionId() {
+			return this.scriptionId;
 		}
 
-		public void setSystemPerform(Boolean systemPerform) {
-			this.systemPerform = systemPerform;
+		public void setScriptionId(String scriptionId) {
+			this.scriptionId = scriptionId;
 		}
 
-		public String getGmtCreated() {
-			return this.gmtCreated;
+		public String getRestartDate() {
+			return this.restartDate;
 		}
 
-		public void setGmtCreated(String gmtCreated) {
-			this.gmtCreated = gmtCreated;
+		public void setRestartDate(String restartDate) {
+			this.restartDate = restartDate;
+		}
+
+		public String getAliUid() {
+			return this.aliUid;
+		}
+
+		public void setAliUid(String aliUid) {
+			this.aliUid = aliUid;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
 		}
 
 		public String getGmtModified() {
@@ -159,20 +135,12 @@ public class OpsQueryRebootInfoResponse extends AcsResponse {
 			this.gmtModified = gmtModified;
 		}
 
-		public String getIsDeleted() {
-			return this.isDeleted;
+		public String getGmtCreated() {
+			return this.gmtCreated;
 		}
 
-		public void setIsDeleted(String isDeleted) {
-			this.isDeleted = isDeleted;
-		}
-
-		public String getExpectedTime() {
-			return this.expectedTime;
-		}
-
-		public void setExpectedTime(String expectedTime) {
-			this.expectedTime = expectedTime;
+		public void setGmtCreated(String gmtCreated) {
+			this.gmtCreated = gmtCreated;
 		}
 
 		public String getRequestId() {
@@ -183,20 +151,20 @@ public class OpsQueryRebootInfoResponse extends AcsResponse {
 			this.requestId = requestId;
 		}
 
-		public String getUpgradeDate() {
-			return this.upgradeDate;
+		public String getExpectedTime() {
+			return this.expectedTime;
 		}
 
-		public void setUpgradeDate(String upgradeDate) {
-			this.upgradeDate = upgradeDate;
+		public void setExpectedTime(String expectedTime) {
+			this.expectedTime = expectedTime;
 		}
 
-		public String getScriptionId() {
-			return this.scriptionId;
+		public String getIsDeleted() {
+			return this.isDeleted;
 		}
 
-		public void setScriptionId(String scriptionId) {
-			this.scriptionId = scriptionId;
+		public void setIsDeleted(String isDeleted) {
+			this.isDeleted = isDeleted;
 		}
 
 		public String getMark() {
@@ -205,6 +173,38 @@ public class OpsQueryRebootInfoResponse extends AcsResponse {
 
 		public void setMark(String mark) {
 			this.mark = mark;
+		}
+
+		public String getUpgradeDate() {
+			return this.upgradeDate;
+		}
+
+		public void setUpgradeDate(String upgradeDate) {
+			this.upgradeDate = upgradeDate;
+		}
+
+		public String getId() {
+			return this.id;
+		}
+
+		public void setId(String id) {
+			this.id = id;
+		}
+
+		public String getOrderId() {
+			return this.orderId;
+		}
+
+		public void setOrderId(String orderId) {
+			this.orderId = orderId;
+		}
+
+		public String getProductCode() {
+			return this.productCode;
+		}
+
+		public void setProductCode(String productCode) {
+			this.productCode = productCode;
 		}
 	}
 

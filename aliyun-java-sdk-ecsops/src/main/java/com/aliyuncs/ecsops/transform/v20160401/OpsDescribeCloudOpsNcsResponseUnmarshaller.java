@@ -23,9 +23,9 @@ public class OpsDescribeCloudOpsNcsResponseUnmarshaller {
 	public static OpsDescribeCloudOpsNcsResponse unmarshall(OpsDescribeCloudOpsNcsResponse opsDescribeCloudOpsNcsResponse, UnmarshallerContext _ctx) {
 		
 		opsDescribeCloudOpsNcsResponse.setRequestId(_ctx.stringValue("OpsDescribeCloudOpsNcsResponse.RequestId"));
+		opsDescribeCloudOpsNcsResponse.setBizMessage(_ctx.stringValue("OpsDescribeCloudOpsNcsResponse.BizMessage"));
 		opsDescribeCloudOpsNcsResponse.setData(_ctx.stringValue("OpsDescribeCloudOpsNcsResponse.Data"));
 		opsDescribeCloudOpsNcsResponse.setBizCode(_ctx.stringValue("OpsDescribeCloudOpsNcsResponse.BizCode"));
-		opsDescribeCloudOpsNcsResponse.setBizMessage(_ctx.stringValue("OpsDescribeCloudOpsNcsResponse.BizMessage"));
 	 
 	 	return opsDescribeCloudOpsNcsResponse;
 	}

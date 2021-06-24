@@ -25,29 +25,37 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsDescribeOpsStatusResponse extends AcsResponse {
 
+	private Boolean ncInTest;
+
 	private String requestId;
 
-	private String bizCode;
+	private Boolean ncInYaoChiTest;
 
 	private String bizMessage;
 
 	private Boolean ncInBlack;
 
-	private Boolean ncInTest;
-
-	private Boolean ncInYaoChiTest;
-
 	private Boolean ncIsDownAndNoVm;
 
-	private List<VmOpsEventItem> vmOpsEvent;
+	private String bizCode;
 
 	private List<MaintenanceInfo> maintenanceRecord;
 
 	private List<NcReleaseHistoryItem> ncReleaseHistory;
 
-	private NcInGammaTest ncInGammaTest;
+	private List<VmOpsEventItem> vmOpsEvent;
 
 	private NcInAlarmCenterBlack ncInAlarmCenterBlack;
+
+	private NcInGammaTest ncInGammaTest;
+
+	public Boolean getNcInTest() {
+		return this.ncInTest;
+	}
+
+	public void setNcInTest(Boolean ncInTest) {
+		this.ncInTest = ncInTest;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -57,12 +65,12 @@ public class OpsDescribeOpsStatusResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getBizCode() {
-		return this.bizCode;
+	public Boolean getNcInYaoChiTest() {
+		return this.ncInYaoChiTest;
 	}
 
-	public void setBizCode(String bizCode) {
-		this.bizCode = bizCode;
+	public void setNcInYaoChiTest(Boolean ncInYaoChiTest) {
+		this.ncInYaoChiTest = ncInYaoChiTest;
 	}
 
 	public String getBizMessage() {
@@ -81,22 +89,6 @@ public class OpsDescribeOpsStatusResponse extends AcsResponse {
 		this.ncInBlack = ncInBlack;
 	}
 
-	public Boolean getNcInTest() {
-		return this.ncInTest;
-	}
-
-	public void setNcInTest(Boolean ncInTest) {
-		this.ncInTest = ncInTest;
-	}
-
-	public Boolean getNcInYaoChiTest() {
-		return this.ncInYaoChiTest;
-	}
-
-	public void setNcInYaoChiTest(Boolean ncInYaoChiTest) {
-		this.ncInYaoChiTest = ncInYaoChiTest;
-	}
-
 	public Boolean getNcIsDownAndNoVm() {
 		return this.ncIsDownAndNoVm;
 	}
@@ -105,12 +97,12 @@ public class OpsDescribeOpsStatusResponse extends AcsResponse {
 		this.ncIsDownAndNoVm = ncIsDownAndNoVm;
 	}
 
-	public List<VmOpsEventItem> getVmOpsEvent() {
-		return this.vmOpsEvent;
+	public String getBizCode() {
+		return this.bizCode;
 	}
 
-	public void setVmOpsEvent(List<VmOpsEventItem> vmOpsEvent) {
-		this.vmOpsEvent = vmOpsEvent;
+	public void setBizCode(String bizCode) {
+		this.bizCode = bizCode;
 	}
 
 	public List<MaintenanceInfo> getMaintenanceRecord() {
@@ -129,12 +121,12 @@ public class OpsDescribeOpsStatusResponse extends AcsResponse {
 		this.ncReleaseHistory = ncReleaseHistory;
 	}
 
-	public NcInGammaTest getNcInGammaTest() {
-		return this.ncInGammaTest;
+	public List<VmOpsEventItem> getVmOpsEvent() {
+		return this.vmOpsEvent;
 	}
 
-	public void setNcInGammaTest(NcInGammaTest ncInGammaTest) {
-		this.ncInGammaTest = ncInGammaTest;
+	public void setVmOpsEvent(List<VmOpsEventItem> vmOpsEvent) {
+		this.vmOpsEvent = vmOpsEvent;
 	}
 
 	public NcInAlarmCenterBlack getNcInAlarmCenterBlack() {
@@ -145,144 +137,37 @@ public class OpsDescribeOpsStatusResponse extends AcsResponse {
 		this.ncInAlarmCenterBlack = ncInAlarmCenterBlack;
 	}
 
-	public static class VmOpsEventItem {
+	public NcInGammaTest getNcInGammaTest() {
+		return this.ncInGammaTest;
+	}
 
-		private String aliUid;
-
-		private String clusterAlias;
-
-		private String endTime;
-
-		private String eventStatus;
-
-		private String ncIp;
-
-		private String opsCode;
-
-		private String opsType;
-
-		private String planTime;
-
-		private String publishTime;
-
-		private String startTime;
-
-		private String vmName;
-
-		private String clusterName;
-
-		public String getAliUid() {
-			return this.aliUid;
-		}
-
-		public void setAliUid(String aliUid) {
-			this.aliUid = aliUid;
-		}
-
-		public String getClusterAlias() {
-			return this.clusterAlias;
-		}
-
-		public void setClusterAlias(String clusterAlias) {
-			this.clusterAlias = clusterAlias;
-		}
-
-		public String getEndTime() {
-			return this.endTime;
-		}
-
-		public void setEndTime(String endTime) {
-			this.endTime = endTime;
-		}
-
-		public String getEventStatus() {
-			return this.eventStatus;
-		}
-
-		public void setEventStatus(String eventStatus) {
-			this.eventStatus = eventStatus;
-		}
-
-		public String getNcIp() {
-			return this.ncIp;
-		}
-
-		public void setNcIp(String ncIp) {
-			this.ncIp = ncIp;
-		}
-
-		public String getOpsCode() {
-			return this.opsCode;
-		}
-
-		public void setOpsCode(String opsCode) {
-			this.opsCode = opsCode;
-		}
-
-		public String getOpsType() {
-			return this.opsType;
-		}
-
-		public void setOpsType(String opsType) {
-			this.opsType = opsType;
-		}
-
-		public String getPlanTime() {
-			return this.planTime;
-		}
-
-		public void setPlanTime(String planTime) {
-			this.planTime = planTime;
-		}
-
-		public String getPublishTime() {
-			return this.publishTime;
-		}
-
-		public void setPublishTime(String publishTime) {
-			this.publishTime = publishTime;
-		}
-
-		public String getStartTime() {
-			return this.startTime;
-		}
-
-		public void setStartTime(String startTime) {
-			this.startTime = startTime;
-		}
-
-		public String getVmName() {
-			return this.vmName;
-		}
-
-		public void setVmName(String vmName) {
-			this.vmName = vmName;
-		}
-
-		public String getClusterName() {
-			return this.clusterName;
-		}
-
-		public void setClusterName(String clusterName) {
-			this.clusterName = clusterName;
-		}
+	public void setNcInGammaTest(NcInGammaTest ncInGammaTest) {
+		this.ncInGammaTest = ncInGammaTest;
 	}
 
 	public static class MaintenanceInfo {
 
+		private String status;
+
 		private String ncId;
-
-		private String reason;
-
-		private String gmtCreate;
-
-		private String gmtModified;
 
 		private String opsType;
 
 		private String comment;
 
-		private String status;
+		private String gmtCreate;
+
+		private String gmtModified;
+
+		private String reason;
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
 
 		public String getNcId() {
 			return this.ncId;
@@ -290,30 +175,6 @@ public class OpsDescribeOpsStatusResponse extends AcsResponse {
 
 		public void setNcId(String ncId) {
 			this.ncId = ncId;
-		}
-
-		public String getReason() {
-			return this.reason;
-		}
-
-		public void setReason(String reason) {
-			this.reason = reason;
-		}
-
-		public String getGmtCreate() {
-			return this.gmtCreate;
-		}
-
-		public void setGmtCreate(String gmtCreate) {
-			this.gmtCreate = gmtCreate;
-		}
-
-		public String getGmtModified() {
-			return this.gmtModified;
-		}
-
-		public void setGmtModified(String gmtModified) {
-			this.gmtModified = gmtModified;
 		}
 
 		public String getOpsType() {
@@ -332,61 +193,53 @@ public class OpsDescribeOpsStatusResponse extends AcsResponse {
 			this.comment = comment;
 		}
 
-		public String getStatus() {
-			return this.status;
+		public String getGmtCreate() {
+			return this.gmtCreate;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
+		public void setGmtCreate(String gmtCreate) {
+			this.gmtCreate = gmtCreate;
+		}
+
+		public String getGmtModified() {
+			return this.gmtModified;
+		}
+
+		public void setGmtModified(String gmtModified) {
+			this.gmtModified = gmtModified;
+		}
+
+		public String getReason() {
+			return this.reason;
+		}
+
+		public void setReason(String reason) {
+			this.reason = reason;
 		}
 	}
 
 	public static class NcReleaseHistoryItem {
 
-		private String ncIp;
-
-		private String planId;
-
-		private String serverRole;
-
-		private String operator;
+		private String changeDescription;
 
 		private String createTime;
 
+		private String serverRole;
+
+		private String ncIp;
+
+		private String operator;
+
+		private String planId;
+
 		private String operationStatus;
 
-		private String changeDescription;
-
-		public String getNcIp() {
-			return this.ncIp;
+		public String getChangeDescription() {
+			return this.changeDescription;
 		}
 
-		public void setNcIp(String ncIp) {
-			this.ncIp = ncIp;
-		}
-
-		public String getPlanId() {
-			return this.planId;
-		}
-
-		public void setPlanId(String planId) {
-			this.planId = planId;
-		}
-
-		public String getServerRole() {
-			return this.serverRole;
-		}
-
-		public void setServerRole(String serverRole) {
-			this.serverRole = serverRole;
-		}
-
-		public String getOperator() {
-			return this.operator;
-		}
-
-		public void setOperator(String operator) {
-			this.operator = operator;
+		public void setChangeDescription(String changeDescription) {
+			this.changeDescription = changeDescription;
 		}
 
 		public String getCreateTime() {
@@ -397,6 +250,38 @@ public class OpsDescribeOpsStatusResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
+		public String getServerRole() {
+			return this.serverRole;
+		}
+
+		public void setServerRole(String serverRole) {
+			this.serverRole = serverRole;
+		}
+
+		public String getNcIp() {
+			return this.ncIp;
+		}
+
+		public void setNcIp(String ncIp) {
+			this.ncIp = ncIp;
+		}
+
+		public String getOperator() {
+			return this.operator;
+		}
+
+		public void setOperator(String operator) {
+			this.operator = operator;
+		}
+
+		public String getPlanId() {
+			return this.planId;
+		}
+
+		public void setPlanId(String planId) {
+			this.planId = planId;
+		}
+
 		public String getOperationStatus() {
 			return this.operationStatus;
 		}
@@ -404,76 +289,142 @@ public class OpsDescribeOpsStatusResponse extends AcsResponse {
 		public void setOperationStatus(String operationStatus) {
 			this.operationStatus = operationStatus;
 		}
-
-		public String getChangeDescription() {
-			return this.changeDescription;
-		}
-
-		public void setChangeDescription(String changeDescription) {
-			this.changeDescription = changeDescription;
-		}
 	}
 
-	public static class NcInGammaTest {
+	public static class VmOpsEventItem {
 
-		private Boolean ncInTest;
+		private String planTime;
 
-		private String staffId;
+		private String vmName;
 
-		private String userGroup;
+		private String aliUid;
 
-		public Boolean getNcInTest() {
-			return this.ncInTest;
+		private String ncIp;
+
+		private String opsCode;
+
+		private String endTime;
+
+		private String startTime;
+
+		private String publishTime;
+
+		private String opsType;
+
+		private String clusterAlias;
+
+		private String clusterName;
+
+		private String eventStatus;
+
+		public String getPlanTime() {
+			return this.planTime;
 		}
 
-		public void setNcInTest(Boolean ncInTest) {
-			this.ncInTest = ncInTest;
+		public void setPlanTime(String planTime) {
+			this.planTime = planTime;
 		}
 
-		public String getStaffId() {
-			return this.staffId;
+		public String getVmName() {
+			return this.vmName;
 		}
 
-		public void setStaffId(String staffId) {
-			this.staffId = staffId;
+		public void setVmName(String vmName) {
+			this.vmName = vmName;
 		}
 
-		public String getUserGroup() {
-			return this.userGroup;
+		public String getAliUid() {
+			return this.aliUid;
 		}
 
-		public void setUserGroup(String userGroup) {
-			this.userGroup = userGroup;
+		public void setAliUid(String aliUid) {
+			this.aliUid = aliUid;
+		}
+
+		public String getNcIp() {
+			return this.ncIp;
+		}
+
+		public void setNcIp(String ncIp) {
+			this.ncIp = ncIp;
+		}
+
+		public String getOpsCode() {
+			return this.opsCode;
+		}
+
+		public void setOpsCode(String opsCode) {
+			this.opsCode = opsCode;
+		}
+
+		public String getEndTime() {
+			return this.endTime;
+		}
+
+		public void setEndTime(String endTime) {
+			this.endTime = endTime;
+		}
+
+		public String getStartTime() {
+			return this.startTime;
+		}
+
+		public void setStartTime(String startTime) {
+			this.startTime = startTime;
+		}
+
+		public String getPublishTime() {
+			return this.publishTime;
+		}
+
+		public void setPublishTime(String publishTime) {
+			this.publishTime = publishTime;
+		}
+
+		public String getOpsType() {
+			return this.opsType;
+		}
+
+		public void setOpsType(String opsType) {
+			this.opsType = opsType;
+		}
+
+		public String getClusterAlias() {
+			return this.clusterAlias;
+		}
+
+		public void setClusterAlias(String clusterAlias) {
+			this.clusterAlias = clusterAlias;
+		}
+
+		public String getClusterName() {
+			return this.clusterName;
+		}
+
+		public void setClusterName(String clusterName) {
+			this.clusterName = clusterName;
+		}
+
+		public String getEventStatus() {
+			return this.eventStatus;
+		}
+
+		public void setEventStatus(String eventStatus) {
+			this.eventStatus = eventStatus;
 		}
 	}
 
 	public static class NcInAlarmCenterBlack {
 
-		private Boolean ncInTest;
-
-		private String staffId;
-
 		private String extension;
-
-		private String nickName;
 
 		private String dueTime;
 
-		public Boolean getNcInTest() {
-			return this.ncInTest;
-		}
+		private String staffId;
 
-		public void setNcInTest(Boolean ncInTest) {
-			this.ncInTest = ncInTest;
-		}
+		private String nickName;
 
-		public String getStaffId() {
-			return this.staffId;
-		}
-
-		public void setStaffId(String staffId) {
-			this.staffId = staffId;
-		}
+		private Boolean ncInTest;
 
 		public String getExtension() {
 			return this.extension;
@@ -481,6 +432,22 @@ public class OpsDescribeOpsStatusResponse extends AcsResponse {
 
 		public void setExtension(String extension) {
 			this.extension = extension;
+		}
+
+		public String getDueTime() {
+			return this.dueTime;
+		}
+
+		public void setDueTime(String dueTime) {
+			this.dueTime = dueTime;
+		}
+
+		public String getStaffId() {
+			return this.staffId;
+		}
+
+		public void setStaffId(String staffId) {
+			this.staffId = staffId;
 		}
 
 		public String getNickName() {
@@ -491,12 +458,45 @@ public class OpsDescribeOpsStatusResponse extends AcsResponse {
 			this.nickName = nickName;
 		}
 
-		public String getDueTime() {
-			return this.dueTime;
+		public Boolean getNcInTest() {
+			return this.ncInTest;
 		}
 
-		public void setDueTime(String dueTime) {
-			this.dueTime = dueTime;
+		public void setNcInTest(Boolean ncInTest) {
+			this.ncInTest = ncInTest;
+		}
+	}
+
+	public static class NcInGammaTest {
+
+		private String userGroup;
+
+		private String staffId;
+
+		private Boolean ncInTest;
+
+		public String getUserGroup() {
+			return this.userGroup;
+		}
+
+		public void setUserGroup(String userGroup) {
+			this.userGroup = userGroup;
+		}
+
+		public String getStaffId() {
+			return this.staffId;
+		}
+
+		public void setStaffId(String staffId) {
+			this.staffId = staffId;
+		}
+
+		public Boolean getNcInTest() {
+			return this.ncInTest;
+		}
+
+		public void setNcInTest(Boolean ncInTest) {
+			this.ncInTest = ncInTest;
 		}
 	}
 

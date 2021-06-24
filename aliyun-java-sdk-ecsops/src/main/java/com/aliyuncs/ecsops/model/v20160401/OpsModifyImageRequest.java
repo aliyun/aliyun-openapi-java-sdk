@@ -16,7 +16,6 @@ package com.aliyuncs.ecsops.model.v20160401;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
-import com.aliyuncs.ecsops.Endpoint;
 
 /**
  * @author auto create
@@ -41,11 +40,17 @@ public class OpsModifyImageRequest extends RpcAcsRequest<OpsModifyImageResponse>
 
 	private Boolean quickBoot;
 
+	private Long imageBit;
+
 	private String bootMode;
+
+	private Boolean soundDevice;
 
 	private String imageName;
 
 	private String isPublic;
+
+	private Boolean fakeCpuModel;
 
 	private Boolean dhcp;
 
@@ -67,12 +72,8 @@ public class OpsModifyImageRequest extends RpcAcsRequest<OpsModifyImageResponse>
 
 	private String auditParamStr;
 	public OpsModifyImageRequest() {
-		super("Ecsops", "2016-04-01", "OpsModifyImage", "ecs");
+		super("Ecsops", "2016-04-01", "OpsModifyImage", "ecsops");
 		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
 	}
 
 	public Long getResourceOwnerId() {
@@ -163,6 +164,17 @@ public class OpsModifyImageRequest extends RpcAcsRequest<OpsModifyImageResponse>
 		}
 	}
 
+	public Long getImageBit() {
+		return this.imageBit;
+	}
+
+	public void setImageBit(Long imageBit) {
+		this.imageBit = imageBit;
+		if(imageBit != null){
+			putQueryParameter("ImageBit", imageBit.toString());
+		}
+	}
+
 	public String getBootMode() {
 		return this.bootMode;
 	}
@@ -171,6 +183,17 @@ public class OpsModifyImageRequest extends RpcAcsRequest<OpsModifyImageResponse>
 		this.bootMode = bootMode;
 		if(bootMode != null){
 			putQueryParameter("BootMode", bootMode);
+		}
+	}
+
+	public Boolean getSoundDevice() {
+		return this.soundDevice;
+	}
+
+	public void setSoundDevice(Boolean soundDevice) {
+		this.soundDevice = soundDevice;
+		if(soundDevice != null){
+			putQueryParameter("SoundDevice", soundDevice.toString());
 		}
 	}
 
@@ -193,6 +216,17 @@ public class OpsModifyImageRequest extends RpcAcsRequest<OpsModifyImageResponse>
 		this.isPublic = isPublic;
 		if(isPublic != null){
 			putQueryParameter("IsPublic", isPublic);
+		}
+	}
+
+	public Boolean getFakeCpuModel() {
+		return this.fakeCpuModel;
+	}
+
+	public void setFakeCpuModel(Boolean fakeCpuModel) {
+		this.fakeCpuModel = fakeCpuModel;
+		if(fakeCpuModel != null){
+			putQueryParameter("FakeCpuModel", fakeCpuModel.toString());
 		}
 	}
 

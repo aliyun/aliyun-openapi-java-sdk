@@ -69,11 +69,19 @@ public class OpsEccQueryNcConfigResponse extends AcsResponse {
 
 		public static class ItemModelsItem {
 
+			private String value;
+
 			private String category;
 
 			private String name;
 
-			private String value;
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
+			}
 
 			public String getCategory() {
 				return this.category;
@@ -90,29 +98,13 @@ public class OpsEccQueryNcConfigResponse extends AcsResponse {
 			public void setName(String name) {
 				this.name = name;
 			}
-
-			public String getValue() {
-				return this.value;
-			}
-
-			public void setValue(String value) {
-				this.value = value;
-			}
 		}
 
 		public static class NcModel {
 
-			private String ncIp;
-
 			private String sN;
 
-			public String getNcIp() {
-				return this.ncIp;
-			}
-
-			public void setNcIp(String ncIp) {
-				this.ncIp = ncIp;
-			}
+			private String ncIp;
 
 			public String getSN() {
 				return this.sN;
@@ -120,6 +112,14 @@ public class OpsEccQueryNcConfigResponse extends AcsResponse {
 
 			public void setSN(String sN) {
 				this.sN = sN;
+			}
+
+			public String getNcIp() {
+				return this.ncIp;
+			}
+
+			public void setNcIp(String ncIp) {
+				this.ncIp = ncIp;
 			}
 		}
 	}

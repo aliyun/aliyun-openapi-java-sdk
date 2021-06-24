@@ -48,9 +48,9 @@ public class OpsEccQueryNcSalesResourceResponse extends AcsResponse {
 
 		private String saleCpuCount;
 
-		private String saleMemorySizeMb;
-
 		private String ncPerfTemplateName;
+
+		private String saleMemorySizeMb;
 
 		public String getSaleCpuCount() {
 			return this.saleCpuCount;
@@ -60,20 +60,20 @@ public class OpsEccQueryNcSalesResourceResponse extends AcsResponse {
 			this.saleCpuCount = saleCpuCount;
 		}
 
-		public String getSaleMemorySizeMb() {
-			return this.saleMemorySizeMb;
-		}
-
-		public void setSaleMemorySizeMb(String saleMemorySizeMb) {
-			this.saleMemorySizeMb = saleMemorySizeMb;
-		}
-
 		public String getNcPerfTemplateName() {
 			return this.ncPerfTemplateName;
 		}
 
 		public void setNcPerfTemplateName(String ncPerfTemplateName) {
 			this.ncPerfTemplateName = ncPerfTemplateName;
+		}
+
+		public String getSaleMemorySizeMb() {
+			return this.saleMemorySizeMb;
+		}
+
+		public void setSaleMemorySizeMb(String saleMemorySizeMb) {
+			this.saleMemorySizeMb = saleMemorySizeMb;
 		}
 	}
 

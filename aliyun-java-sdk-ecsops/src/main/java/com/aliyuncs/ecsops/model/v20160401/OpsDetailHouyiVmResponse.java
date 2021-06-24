@@ -25,162 +25,98 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsDetailHouyiVmResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String machineNo;
-
-	private String serialNumber;
-
-	private String vmName;
-
-	private String hostname;
-
-	private String vmStatus;
-
-	private String regionId;
-
-	private String clusterId;
-
-	private String ncId;
+	private String rackId;
 
 	private String vlanNo;
 
-	private String rackId;
+	private Integer vncPort;
 
-	private String securityGroupId;
-
-	private String vmInnerIp;
-
-	private Integer vmCores;
-
-	private String vgwVip;
-
-	private String storageNetworkType;
-
-	private Integer vmMemory;
-
-	private Integer vmDisk;
-
-	private Integer vmBps;
+	private Integer intensiveIo;
 
 	private String vmPlatform;
 
-	private String mac;
+	private String vmAliIp;
+
+	private String vgwVip;
 
 	private String gateway;
-
-	private String netmask;
-
-	private Integer intranetRx;
-
-	private Integer intranetTx;
-
-	private Integer internetRx;
-
-	private Integer internetTx;
-
-	private String safetyQuota;
-
-	private Integer intensiveIo;
 
 	private Integer intensiveCpu;
 
 	private Integer intensiveNet;
 
+	private String vpcSubnetId;
+
+	private Integer vmBps;
+
+	private Integer vmCores;
+
+	private String storageNetworkType;
+
+	private String requestId;
+
+	private String clusterId;
+
+	private String securityGroupId;
+
+	private String vmName;
+
+	private Integer intranetTx;
+
+	private String safetyQuota;
+
+	private String hostname;
+
+	private Integer vmMemory;
+
 	private String payType;
+
+	private String machineNo;
+
+	private String mac;
+
+	private Integer intranetRx;
+
+	private String vmInnerIp;
 
 	private String vncHost;
 
-	private Integer vncPort;
+	private String vpcId;
+
+	private String serialNumber;
+
+	private String ncId;
+
+	private Integer vmDisk;
+
+	private String vmStatus;
+
+	private Integer internetTx;
+
+	private Integer internetRx;
 
 	private String vncPassword;
 
-	private String vpcId;
+	private String regionId;
 
-	private String vpcSubnetId;
-
-	private String vmAliIp;
+	private String netmask;
 
 	private List<Group> groups;
+
+	private VmImage vmImage;
 
 	private VmStatusNote vmStatusNote;
 
 	private VmPublicIp vmPublicIp;
 
-	private VmImage vmImage;
-
 	private Eip eip;
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getRackId() {
+		return this.rackId;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getMachineNo() {
-		return this.machineNo;
-	}
-
-	public void setMachineNo(String machineNo) {
-		this.machineNo = machineNo;
-	}
-
-	public String getSerialNumber() {
-		return this.serialNumber;
-	}
-
-	public void setSerialNumber(String serialNumber) {
-		this.serialNumber = serialNumber;
-	}
-
-	public String getVmName() {
-		return this.vmName;
-	}
-
-	public void setVmName(String vmName) {
-		this.vmName = vmName;
-	}
-
-	public String getHostname() {
-		return this.hostname;
-	}
-
-	public void setHostname(String hostname) {
-		this.hostname = hostname;
-	}
-
-	public String getVmStatus() {
-		return this.vmStatus;
-	}
-
-	public void setVmStatus(String vmStatus) {
-		this.vmStatus = vmStatus;
-	}
-
-	public String getRegionId() {
-		return this.regionId;
-	}
-
-	public void setRegionId(String regionId) {
-		this.regionId = regionId;
-	}
-
-	public String getClusterId() {
-		return this.clusterId;
-	}
-
-	public void setClusterId(String clusterId) {
-		this.clusterId = clusterId;
-	}
-
-	public String getNcId() {
-		return this.ncId;
-	}
-
-	public void setNcId(String ncId) {
-		this.ncId = ncId;
+	public void setRackId(String rackId) {
+		this.rackId = rackId;
 	}
 
 	public String getVlanNo() {
@@ -191,76 +127,20 @@ public class OpsDetailHouyiVmResponse extends AcsResponse {
 		this.vlanNo = vlanNo;
 	}
 
-	public String getRackId() {
-		return this.rackId;
+	public Integer getVncPort() {
+		return this.vncPort;
 	}
 
-	public void setRackId(String rackId) {
-		this.rackId = rackId;
+	public void setVncPort(Integer vncPort) {
+		this.vncPort = vncPort;
 	}
 
-	public String getSecurityGroupId() {
-		return this.securityGroupId;
+	public Integer getIntensiveIo() {
+		return this.intensiveIo;
 	}
 
-	public void setSecurityGroupId(String securityGroupId) {
-		this.securityGroupId = securityGroupId;
-	}
-
-	public String getVmInnerIp() {
-		return this.vmInnerIp;
-	}
-
-	public void setVmInnerIp(String vmInnerIp) {
-		this.vmInnerIp = vmInnerIp;
-	}
-
-	public Integer getVmCores() {
-		return this.vmCores;
-	}
-
-	public void setVmCores(Integer vmCores) {
-		this.vmCores = vmCores;
-	}
-
-	public String getVgwVip() {
-		return this.vgwVip;
-	}
-
-	public void setVgwVip(String vgwVip) {
-		this.vgwVip = vgwVip;
-	}
-
-	public String getStorageNetworkType() {
-		return this.storageNetworkType;
-	}
-
-	public void setStorageNetworkType(String storageNetworkType) {
-		this.storageNetworkType = storageNetworkType;
-	}
-
-	public Integer getVmMemory() {
-		return this.vmMemory;
-	}
-
-	public void setVmMemory(Integer vmMemory) {
-		this.vmMemory = vmMemory;
-	}
-
-	public Integer getVmDisk() {
-		return this.vmDisk;
-	}
-
-	public void setVmDisk(Integer vmDisk) {
-		this.vmDisk = vmDisk;
-	}
-
-	public Integer getVmBps() {
-		return this.vmBps;
-	}
-
-	public void setVmBps(Integer vmBps) {
-		this.vmBps = vmBps;
+	public void setIntensiveIo(Integer intensiveIo) {
+		this.intensiveIo = intensiveIo;
 	}
 
 	public String getVmPlatform() {
@@ -271,12 +151,20 @@ public class OpsDetailHouyiVmResponse extends AcsResponse {
 		this.vmPlatform = vmPlatform;
 	}
 
-	public String getMac() {
-		return this.mac;
+	public String getVmAliIp() {
+		return this.vmAliIp;
 	}
 
-	public void setMac(String mac) {
-		this.mac = mac;
+	public void setVmAliIp(String vmAliIp) {
+		this.vmAliIp = vmAliIp;
+	}
+
+	public String getVgwVip() {
+		return this.vgwVip;
+	}
+
+	public void setVgwVip(String vgwVip) {
+		this.vgwVip = vgwVip;
 	}
 
 	public String getGateway() {
@@ -285,62 +173,6 @@ public class OpsDetailHouyiVmResponse extends AcsResponse {
 
 	public void setGateway(String gateway) {
 		this.gateway = gateway;
-	}
-
-	public String getNetmask() {
-		return this.netmask;
-	}
-
-	public void setNetmask(String netmask) {
-		this.netmask = netmask;
-	}
-
-	public Integer getIntranetRx() {
-		return this.intranetRx;
-	}
-
-	public void setIntranetRx(Integer intranetRx) {
-		this.intranetRx = intranetRx;
-	}
-
-	public Integer getIntranetTx() {
-		return this.intranetTx;
-	}
-
-	public void setIntranetTx(Integer intranetTx) {
-		this.intranetTx = intranetTx;
-	}
-
-	public Integer getInternetRx() {
-		return this.internetRx;
-	}
-
-	public void setInternetRx(Integer internetRx) {
-		this.internetRx = internetRx;
-	}
-
-	public Integer getInternetTx() {
-		return this.internetTx;
-	}
-
-	public void setInternetTx(Integer internetTx) {
-		this.internetTx = internetTx;
-	}
-
-	public String getSafetyQuota() {
-		return this.safetyQuota;
-	}
-
-	public void setSafetyQuota(String safetyQuota) {
-		this.safetyQuota = safetyQuota;
-	}
-
-	public Integer getIntensiveIo() {
-		return this.intensiveIo;
-	}
-
-	public void setIntensiveIo(Integer intensiveIo) {
-		this.intensiveIo = intensiveIo;
 	}
 
 	public Integer getIntensiveCpu() {
@@ -359,12 +191,140 @@ public class OpsDetailHouyiVmResponse extends AcsResponse {
 		this.intensiveNet = intensiveNet;
 	}
 
+	public String getVpcSubnetId() {
+		return this.vpcSubnetId;
+	}
+
+	public void setVpcSubnetId(String vpcSubnetId) {
+		this.vpcSubnetId = vpcSubnetId;
+	}
+
+	public Integer getVmBps() {
+		return this.vmBps;
+	}
+
+	public void setVmBps(Integer vmBps) {
+		this.vmBps = vmBps;
+	}
+
+	public Integer getVmCores() {
+		return this.vmCores;
+	}
+
+	public void setVmCores(Integer vmCores) {
+		this.vmCores = vmCores;
+	}
+
+	public String getStorageNetworkType() {
+		return this.storageNetworkType;
+	}
+
+	public void setStorageNetworkType(String storageNetworkType) {
+		this.storageNetworkType = storageNetworkType;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getClusterId() {
+		return this.clusterId;
+	}
+
+	public void setClusterId(String clusterId) {
+		this.clusterId = clusterId;
+	}
+
+	public String getSecurityGroupId() {
+		return this.securityGroupId;
+	}
+
+	public void setSecurityGroupId(String securityGroupId) {
+		this.securityGroupId = securityGroupId;
+	}
+
+	public String getVmName() {
+		return this.vmName;
+	}
+
+	public void setVmName(String vmName) {
+		this.vmName = vmName;
+	}
+
+	public Integer getIntranetTx() {
+		return this.intranetTx;
+	}
+
+	public void setIntranetTx(Integer intranetTx) {
+		this.intranetTx = intranetTx;
+	}
+
+	public String getSafetyQuota() {
+		return this.safetyQuota;
+	}
+
+	public void setSafetyQuota(String safetyQuota) {
+		this.safetyQuota = safetyQuota;
+	}
+
+	public String getHostname() {
+		return this.hostname;
+	}
+
+	public void setHostname(String hostname) {
+		this.hostname = hostname;
+	}
+
+	public Integer getVmMemory() {
+		return this.vmMemory;
+	}
+
+	public void setVmMemory(Integer vmMemory) {
+		this.vmMemory = vmMemory;
+	}
+
 	public String getPayType() {
 		return this.payType;
 	}
 
 	public void setPayType(String payType) {
 		this.payType = payType;
+	}
+
+	public String getMachineNo() {
+		return this.machineNo;
+	}
+
+	public void setMachineNo(String machineNo) {
+		this.machineNo = machineNo;
+	}
+
+	public String getMac() {
+		return this.mac;
+	}
+
+	public void setMac(String mac) {
+		this.mac = mac;
+	}
+
+	public Integer getIntranetRx() {
+		return this.intranetRx;
+	}
+
+	public void setIntranetRx(Integer intranetRx) {
+		this.intranetRx = intranetRx;
+	}
+
+	public String getVmInnerIp() {
+		return this.vmInnerIp;
+	}
+
+	public void setVmInnerIp(String vmInnerIp) {
+		this.vmInnerIp = vmInnerIp;
 	}
 
 	public String getVncHost() {
@@ -375,12 +335,60 @@ public class OpsDetailHouyiVmResponse extends AcsResponse {
 		this.vncHost = vncHost;
 	}
 
-	public Integer getVncPort() {
-		return this.vncPort;
+	public String getVpcId() {
+		return this.vpcId;
 	}
 
-	public void setVncPort(Integer vncPort) {
-		this.vncPort = vncPort;
+	public void setVpcId(String vpcId) {
+		this.vpcId = vpcId;
+	}
+
+	public String getSerialNumber() {
+		return this.serialNumber;
+	}
+
+	public void setSerialNumber(String serialNumber) {
+		this.serialNumber = serialNumber;
+	}
+
+	public String getNcId() {
+		return this.ncId;
+	}
+
+	public void setNcId(String ncId) {
+		this.ncId = ncId;
+	}
+
+	public Integer getVmDisk() {
+		return this.vmDisk;
+	}
+
+	public void setVmDisk(Integer vmDisk) {
+		this.vmDisk = vmDisk;
+	}
+
+	public String getVmStatus() {
+		return this.vmStatus;
+	}
+
+	public void setVmStatus(String vmStatus) {
+		this.vmStatus = vmStatus;
+	}
+
+	public Integer getInternetTx() {
+		return this.internetTx;
+	}
+
+	public void setInternetTx(Integer internetTx) {
+		this.internetTx = internetTx;
+	}
+
+	public Integer getInternetRx() {
+		return this.internetRx;
+	}
+
+	public void setInternetRx(Integer internetRx) {
+		this.internetRx = internetRx;
 	}
 
 	public String getVncPassword() {
@@ -391,28 +399,20 @@ public class OpsDetailHouyiVmResponse extends AcsResponse {
 		this.vncPassword = vncPassword;
 	}
 
-	public String getVpcId() {
-		return this.vpcId;
+	public String getRegionId() {
+		return this.regionId;
 	}
 
-	public void setVpcId(String vpcId) {
-		this.vpcId = vpcId;
+	public void setRegionId(String regionId) {
+		this.regionId = regionId;
 	}
 
-	public String getVpcSubnetId() {
-		return this.vpcSubnetId;
+	public String getNetmask() {
+		return this.netmask;
 	}
 
-	public void setVpcSubnetId(String vpcSubnetId) {
-		this.vpcSubnetId = vpcSubnetId;
-	}
-
-	public String getVmAliIp() {
-		return this.vmAliIp;
-	}
-
-	public void setVmAliIp(String vmAliIp) {
-		this.vmAliIp = vmAliIp;
+	public void setNetmask(String netmask) {
+		this.netmask = netmask;
 	}
 
 	public List<Group> getGroups() {
@@ -421,6 +421,14 @@ public class OpsDetailHouyiVmResponse extends AcsResponse {
 
 	public void setGroups(List<Group> groups) {
 		this.groups = groups;
+	}
+
+	public VmImage getVmImage() {
+		return this.vmImage;
+	}
+
+	public void setVmImage(VmImage vmImage) {
+		this.vmImage = vmImage;
 	}
 
 	public VmStatusNote getVmStatusNote() {
@@ -437,14 +445,6 @@ public class OpsDetailHouyiVmResponse extends AcsResponse {
 
 	public void setVmPublicIp(VmPublicIp vmPublicIp) {
 		this.vmPublicIp = vmPublicIp;
-	}
-
-	public VmImage getVmImage() {
-		return this.vmImage;
-	}
-
-	public void setVmImage(VmImage vmImage) {
-		this.vmImage = vmImage;
 	}
 
 	public Eip getEip() {
@@ -465,6 +465,29 @@ public class OpsDetailHouyiVmResponse extends AcsResponse {
 
 		public void setSecurityGroupId(String securityGroupId) {
 			this.securityGroupId = securityGroupId;
+		}
+	}
+
+	public static class VmImage {
+
+		private String imageName;
+
+		private String imageId;
+
+		public String getImageName() {
+			return this.imageName;
+		}
+
+		public void setImageName(String imageName) {
+			this.imageName = imageName;
+		}
+
+		public String getImageId() {
+			return this.imageId;
+		}
+
+		public void setImageId(String imageId) {
+			this.imageId = imageId;
 		}
 	}
 
@@ -524,42 +547,11 @@ public class OpsDetailHouyiVmResponse extends AcsResponse {
 		}
 	}
 
-	public static class VmImage {
-
-		private String imageId;
-
-		private String imageName;
-
-		public String getImageId() {
-			return this.imageId;
-		}
-
-		public void setImageId(String imageId) {
-			this.imageId = imageId;
-		}
-
-		public String getImageName() {
-			return this.imageName;
-		}
-
-		public void setImageName(String imageName) {
-			this.imageName = imageName;
-		}
-	}
-
 	public static class Eip {
-
-		private String ip;
 
 		private Integer internetTx;
 
-		public String getIp() {
-			return this.ip;
-		}
-
-		public void setIp(String ip) {
-			this.ip = ip;
-		}
+		private String ip;
 
 		public Integer getInternetTx() {
 			return this.internetTx;
@@ -567,6 +559,14 @@ public class OpsDetailHouyiVmResponse extends AcsResponse {
 
 		public void setInternetTx(Integer internetTx) {
 			this.internetTx = internetTx;
+		}
+
+		public String getIp() {
+			return this.ip;
+		}
+
+		public void setIp(String ip) {
+			this.ip = ip;
 		}
 	}
 

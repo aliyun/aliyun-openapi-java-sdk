@@ -32,9 +32,9 @@ public class OpsDescribeModifyVportAttributeResultResponseUnmarshaller {
 		List<FailedEniListItem> failedEniList = new ArrayList<FailedEniListItem>();
 		for (int i = 0; i < _ctx.lengthValue("OpsDescribeModifyVportAttributeResultResponse.FailedEniList.Length"); i++) {
 			FailedEniListItem failedEniListItem = new FailedEniListItem();
-			failedEniListItem.setEniName(_ctx.stringValue("OpsDescribeModifyVportAttributeResultResponse.FailedEniList["+ i +"].EniName"));
 			failedEniListItem.setCode(_ctx.integerValue("OpsDescribeModifyVportAttributeResultResponse.FailedEniList["+ i +"].Code"));
 			failedEniListItem.setMessage(_ctx.stringValue("OpsDescribeModifyVportAttributeResultResponse.FailedEniList["+ i +"].Message"));
+			failedEniListItem.setEniName(_ctx.stringValue("OpsDescribeModifyVportAttributeResultResponse.FailedEniList["+ i +"].EniName"));
 
 			failedEniList.add(failedEniListItem);
 		}

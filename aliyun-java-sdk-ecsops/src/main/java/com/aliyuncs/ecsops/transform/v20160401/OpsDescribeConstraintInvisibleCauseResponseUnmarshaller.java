@@ -28,17 +28,17 @@ public class OpsDescribeConstraintInvisibleCauseResponseUnmarshaller {
 		opsDescribeConstraintInvisibleCauseResponse.setRequestId(_ctx.stringValue("OpsDescribeConstraintInvisibleCauseResponse.RequestId"));
 		opsDescribeConstraintInvisibleCauseResponse.setVisible(_ctx.booleanValue("OpsDescribeConstraintInvisibleCauseResponse.Visible"));
 
-		List<String> causeList = new ArrayList<String>();
-		for (int i = 0; i < _ctx.lengthValue("OpsDescribeConstraintInvisibleCauseResponse.CauseList.Length"); i++) {
-			causeList.add(_ctx.stringValue("OpsDescribeConstraintInvisibleCauseResponse.CauseList["+ i +"]"));
-		}
-		opsDescribeConstraintInvisibleCauseResponse.setCauseList(causeList);
-
 		List<String> passedRuleList = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("OpsDescribeConstraintInvisibleCauseResponse.PassedRuleList.Length"); i++) {
 			passedRuleList.add(_ctx.stringValue("OpsDescribeConstraintInvisibleCauseResponse.PassedRuleList["+ i +"]"));
 		}
 		opsDescribeConstraintInvisibleCauseResponse.setPassedRuleList(passedRuleList);
+
+		List<String> causeList = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("OpsDescribeConstraintInvisibleCauseResponse.CauseList.Length"); i++) {
+			causeList.add(_ctx.stringValue("OpsDescribeConstraintInvisibleCauseResponse.CauseList["+ i +"]"));
+		}
+		opsDescribeConstraintInvisibleCauseResponse.setCauseList(causeList);
 
 		List<String> failedRuleList = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("OpsDescribeConstraintInvisibleCauseResponse.FailedRuleList.Length"); i++) {

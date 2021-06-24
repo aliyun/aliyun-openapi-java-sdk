@@ -27,13 +27,13 @@ public class OpsEccGetNcTemplateInfoResponseUnmarshaller {
 		opsEccGetNcTemplateInfoResponse.setMessage(_ctx.stringValue("OpsEccGetNcTemplateInfoResponse.Message"));
 
 		Data data = new Data();
-		data.setTemplateName(_ctx.stringValue("OpsEccGetNcTemplateInfoResponse.Data.TemplateName"));
-		data.setTemplateDesc(_ctx.stringValue("OpsEccGetNcTemplateInfoResponse.Data.TemplateDesc"));
-		data.setGmtModified(_ctx.longValue("OpsEccGetNcTemplateInfoResponse.Data.GmtModified"));
-		data.setGmtCreate(_ctx.longValue("OpsEccGetNcTemplateInfoResponse.Data.GmtCreate"));
-		data.setAdjustStandModels(_ctx.stringValue("OpsEccGetNcTemplateInfoResponse.Data.AdjustStandModels"));
 		data.setTemplateAliasName(_ctx.stringValue("OpsEccGetNcTemplateInfoResponse.Data.TemplateAliasName"));
+		data.setTemplateDesc(_ctx.stringValue("OpsEccGetNcTemplateInfoResponse.Data.TemplateDesc"));
 		data.setConfigs(_ctx.stringValue("OpsEccGetNcTemplateInfoResponse.Data.Configs"));
+		data.setGmtCreate(_ctx.longValue("OpsEccGetNcTemplateInfoResponse.Data.GmtCreate"));
+		data.setTemplateName(_ctx.stringValue("OpsEccGetNcTemplateInfoResponse.Data.TemplateName"));
+		data.setGmtModified(_ctx.longValue("OpsEccGetNcTemplateInfoResponse.Data.GmtModified"));
+		data.setAdjustStandModels(_ctx.stringValue("OpsEccGetNcTemplateInfoResponse.Data.AdjustStandModels"));
 		opsEccGetNcTemplateInfoResponse.setData(data);
 	 
 	 	return opsEccGetNcTemplateInfoResponse;

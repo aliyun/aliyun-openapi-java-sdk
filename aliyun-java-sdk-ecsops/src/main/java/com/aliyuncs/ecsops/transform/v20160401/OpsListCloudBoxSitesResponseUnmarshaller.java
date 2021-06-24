@@ -33,14 +33,14 @@ public class OpsListCloudBoxSitesResponseUnmarshaller {
 		List<CloudBoxSiteSet> cloudBoxSiteSets = new ArrayList<CloudBoxSiteSet>();
 		for (int i = 0; i < _ctx.lengthValue("OpsListCloudBoxSitesResponse.CloudBoxSiteSets.Length"); i++) {
 			CloudBoxSiteSet cloudBoxSiteSet = new CloudBoxSiteSet();
-			cloudBoxSiteSet.setCloudBoxSiteId(_ctx.stringValue("OpsListCloudBoxSitesResponse.CloudBoxSiteSets["+ i +"].CloudBoxSiteId"));
-			cloudBoxSiteSet.setDescription(_ctx.stringValue("OpsListCloudBoxSitesResponse.CloudBoxSiteSets["+ i +"].Description"));
 			cloudBoxSiteSet.setCloudBoxSiteName(_ctx.stringValue("OpsListCloudBoxSitesResponse.CloudBoxSiteSets["+ i +"].CloudBoxSiteName"));
-			cloudBoxSiteSet.setCountry(_ctx.stringValue("OpsListCloudBoxSitesResponse.CloudBoxSiteSets["+ i +"].Country"));
-			cloudBoxSiteSet.setProvince(_ctx.stringValue("OpsListCloudBoxSitesResponse.CloudBoxSiteSets["+ i +"].Province"));
-			cloudBoxSiteSet.setCity(_ctx.stringValue("OpsListCloudBoxSitesResponse.CloudBoxSiteSets["+ i +"].City"));
-			cloudBoxSiteSet.setStreetAddress(_ctx.stringValue("OpsListCloudBoxSitesResponse.CloudBoxSiteSets["+ i +"].StreetAddress"));
+			cloudBoxSiteSet.setDescription(_ctx.stringValue("OpsListCloudBoxSitesResponse.CloudBoxSiteSets["+ i +"].Description"));
 			cloudBoxSiteSet.setSiteQuestionares(_ctx.stringValue("OpsListCloudBoxSitesResponse.CloudBoxSiteSets["+ i +"].SiteQuestionares"));
+			cloudBoxSiteSet.setCloudBoxSiteId(_ctx.stringValue("OpsListCloudBoxSitesResponse.CloudBoxSiteSets["+ i +"].CloudBoxSiteId"));
+			cloudBoxSiteSet.setCountry(_ctx.stringValue("OpsListCloudBoxSitesResponse.CloudBoxSiteSets["+ i +"].Country"));
+			cloudBoxSiteSet.setStreetAddress(_ctx.stringValue("OpsListCloudBoxSitesResponse.CloudBoxSiteSets["+ i +"].StreetAddress"));
+			cloudBoxSiteSet.setCity(_ctx.stringValue("OpsListCloudBoxSitesResponse.CloudBoxSiteSets["+ i +"].City"));
+			cloudBoxSiteSet.setProvince(_ctx.stringValue("OpsListCloudBoxSitesResponse.CloudBoxSiteSets["+ i +"].Province"));
 
 			cloudBoxSiteSets.add(cloudBoxSiteSet);
 		}

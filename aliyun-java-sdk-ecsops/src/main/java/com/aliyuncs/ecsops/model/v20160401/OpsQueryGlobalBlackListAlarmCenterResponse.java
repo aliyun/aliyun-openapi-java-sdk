@@ -49,15 +49,15 @@ public class OpsQueryGlobalBlackListAlarmCenterResponse extends AcsResponse {
 
 		private String name;
 
-		private List<String> zoneIds;
-
-		private List<String> regionIds;
+		private List<String> clusterIds;
 
 		private List<String> ncIps;
 
 		private List<String> instanceIds;
 
-		private List<String> clusterIds;
+		private List<String> regionIds;
+
+		private List<String> zoneIds;
 
 		public String getName() {
 			return this.name;
@@ -67,20 +67,12 @@ public class OpsQueryGlobalBlackListAlarmCenterResponse extends AcsResponse {
 			this.name = name;
 		}
 
-		public List<String> getZoneIds() {
-			return this.zoneIds;
+		public List<String> getClusterIds() {
+			return this.clusterIds;
 		}
 
-		public void setZoneIds(List<String> zoneIds) {
-			this.zoneIds = zoneIds;
-		}
-
-		public List<String> getRegionIds() {
-			return this.regionIds;
-		}
-
-		public void setRegionIds(List<String> regionIds) {
-			this.regionIds = regionIds;
+		public void setClusterIds(List<String> clusterIds) {
+			this.clusterIds = clusterIds;
 		}
 
 		public List<String> getNcIps() {
@@ -99,12 +91,20 @@ public class OpsQueryGlobalBlackListAlarmCenterResponse extends AcsResponse {
 			this.instanceIds = instanceIds;
 		}
 
-		public List<String> getClusterIds() {
-			return this.clusterIds;
+		public List<String> getRegionIds() {
+			return this.regionIds;
 		}
 
-		public void setClusterIds(List<String> clusterIds) {
-			this.clusterIds = clusterIds;
+		public void setRegionIds(List<String> regionIds) {
+			this.regionIds = regionIds;
+		}
+
+		public List<String> getZoneIds() {
+			return this.zoneIds;
+		}
+
+		public void setZoneIds(List<String> zoneIds) {
+			this.zoneIds = zoneIds;
 		}
 	}
 
@@ -112,15 +112,15 @@ public class OpsQueryGlobalBlackListAlarmCenterResponse extends AcsResponse {
 
 		private String name;
 
-		private List<String> zoneIds1;
+		private List<String> clusterIds1;
 
-		private List<String> regionIds2;
+		private List<String> ncIps2;
 
-		private List<String> ncIps3;
+		private List<String> instanceIds3;
 
-		private List<String> instanceIds4;
+		private List<String> regionIds4;
 
-		private List<String> clusterIds5;
+		private List<String> zoneIds5;
 
 		public String getName() {
 			return this.name;
@@ -130,44 +130,44 @@ public class OpsQueryGlobalBlackListAlarmCenterResponse extends AcsResponse {
 			this.name = name;
 		}
 
-		public List<String> getZoneIds1() {
-			return this.zoneIds1;
+		public List<String> getClusterIds1() {
+			return this.clusterIds1;
 		}
 
-		public void setZoneIds1(List<String> zoneIds1) {
-			this.zoneIds1 = zoneIds1;
+		public void setClusterIds1(List<String> clusterIds1) {
+			this.clusterIds1 = clusterIds1;
 		}
 
-		public List<String> getRegionIds2() {
-			return this.regionIds2;
+		public List<String> getNcIps2() {
+			return this.ncIps2;
 		}
 
-		public void setRegionIds2(List<String> regionIds2) {
-			this.regionIds2 = regionIds2;
+		public void setNcIps2(List<String> ncIps2) {
+			this.ncIps2 = ncIps2;
 		}
 
-		public List<String> getNcIps3() {
-			return this.ncIps3;
+		public List<String> getInstanceIds3() {
+			return this.instanceIds3;
 		}
 
-		public void setNcIps3(List<String> ncIps3) {
-			this.ncIps3 = ncIps3;
+		public void setInstanceIds3(List<String> instanceIds3) {
+			this.instanceIds3 = instanceIds3;
 		}
 
-		public List<String> getInstanceIds4() {
-			return this.instanceIds4;
+		public List<String> getRegionIds4() {
+			return this.regionIds4;
 		}
 
-		public void setInstanceIds4(List<String> instanceIds4) {
-			this.instanceIds4 = instanceIds4;
+		public void setRegionIds4(List<String> regionIds4) {
+			this.regionIds4 = regionIds4;
 		}
 
-		public List<String> getClusterIds5() {
-			return this.clusterIds5;
+		public List<String> getZoneIds5() {
+			return this.zoneIds5;
 		}
 
-		public void setClusterIds5(List<String> clusterIds5) {
-			this.clusterIds5 = clusterIds5;
+		public void setZoneIds5(List<String> zoneIds5) {
+			this.zoneIds5 = zoneIds5;
 		}
 	}
 

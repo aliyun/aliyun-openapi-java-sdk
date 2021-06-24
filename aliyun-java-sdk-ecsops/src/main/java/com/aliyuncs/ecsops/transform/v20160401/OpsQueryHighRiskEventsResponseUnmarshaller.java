@@ -27,18 +27,18 @@ public class OpsQueryHighRiskEventsResponseUnmarshaller {
 	public static OpsQueryHighRiskEventsResponse unmarshall(OpsQueryHighRiskEventsResponse opsQueryHighRiskEventsResponse, UnmarshallerContext _ctx) {
 		
 		opsQueryHighRiskEventsResponse.setRequestId(_ctx.stringValue("OpsQueryHighRiskEventsResponse.RequestId"));
-		opsQueryHighRiskEventsResponse.setNcIps(_ctx.stringValue("OpsQueryHighRiskEventsResponse.NcIps"));
-		opsQueryHighRiskEventsResponse.setStartTime(_ctx.stringValue("OpsQueryHighRiskEventsResponse.StartTime"));
 		opsQueryHighRiskEventsResponse.setEndTime(_ctx.stringValue("OpsQueryHighRiskEventsResponse.EndTime"));
+		opsQueryHighRiskEventsResponse.setStartTime(_ctx.stringValue("OpsQueryHighRiskEventsResponse.StartTime"));
+		opsQueryHighRiskEventsResponse.setNcIps(_ctx.stringValue("OpsQueryHighRiskEventsResponse.NcIps"));
 
 		List<HighRiskMetricData> highRiskReleaseList = new ArrayList<HighRiskMetricData>();
 		for (int i = 0; i < _ctx.lengthValue("OpsQueryHighRiskEventsResponse.HighRiskReleaseList.Length"); i++) {
 			HighRiskMetricData highRiskMetricData = new HighRiskMetricData();
-			highRiskMetricData.setNcIp(_ctx.stringValue("OpsQueryHighRiskEventsResponse.HighRiskReleaseList["+ i +"].NcIp"));
 			highRiskMetricData.setMetricName(_ctx.stringValue("OpsQueryHighRiskEventsResponse.HighRiskReleaseList["+ i +"].MetricName"));
 			highRiskMetricData.setHighRiskEvent(_ctx.stringValue("OpsQueryHighRiskEventsResponse.HighRiskReleaseList["+ i +"].HighRiskEvent"));
-			highRiskMetricData.setRemarks(_ctx.stringValue("OpsQueryHighRiskEventsResponse.HighRiskReleaseList["+ i +"].Remarks"));
 			highRiskMetricData.setTimestamp(_ctx.stringValue("OpsQueryHighRiskEventsResponse.HighRiskReleaseList["+ i +"].Timestamp"));
+			highRiskMetricData.setNcIp(_ctx.stringValue("OpsQueryHighRiskEventsResponse.HighRiskReleaseList["+ i +"].NcIp"));
+			highRiskMetricData.setRemarks(_ctx.stringValue("OpsQueryHighRiskEventsResponse.HighRiskReleaseList["+ i +"].Remarks"));
 
 			highRiskReleaseList.add(highRiskMetricData);
 		}

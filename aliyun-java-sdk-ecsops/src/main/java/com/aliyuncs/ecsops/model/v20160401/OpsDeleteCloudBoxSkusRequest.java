@@ -17,7 +17,6 @@ package com.aliyuncs.ecsops.model.v20160401;
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
 import com.aliyuncs.http.MethodType;
-import com.aliyuncs.ecsops.Endpoint;
 
 /**
  * @author auto create
@@ -30,12 +29,8 @@ public class OpsDeleteCloudBoxSkusRequest extends RpcAcsRequest<OpsDeleteCloudBo
 
 	private String auditParamStr;
 	public OpsDeleteCloudBoxSkusRequest() {
-		super("Ecsops", "2016-04-01", "OpsDeleteCloudBoxSkus", "ecs");
+		super("Ecsops", "2016-04-01", "OpsDeleteCloudBoxSkus", "ecsops");
 		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
 	}
 
 	public List<String> getCloudBoxSkuIds() {

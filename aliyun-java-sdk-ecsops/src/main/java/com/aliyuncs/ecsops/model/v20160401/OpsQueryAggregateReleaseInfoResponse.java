@@ -25,27 +25,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsQueryAggregateReleaseInfoResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String status;
 
 	private Boolean finished;
+
+	private String requestId;
 
 	private String token;
 
 	private List<AggregateReleaseItem> aggregateReleaseResults;
 
-	private List<AggregateTimeResultItem> aggregateTimeResults;
-
 	private List<DetailInfoItem> detailInfos;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private List<AggregateTimeResultItem> aggregateTimeResults;
 
 	public String getStatus() {
 		return this.status;
@@ -61,6 +53,14 @@ public class OpsQueryAggregateReleaseInfoResponse extends AcsResponse {
 
 	public void setFinished(Boolean finished) {
 		this.finished = finished;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getToken() {
@@ -79,20 +79,20 @@ public class OpsQueryAggregateReleaseInfoResponse extends AcsResponse {
 		this.aggregateReleaseResults = aggregateReleaseResults;
 	}
 
-	public List<AggregateTimeResultItem> getAggregateTimeResults() {
-		return this.aggregateTimeResults;
-	}
-
-	public void setAggregateTimeResults(List<AggregateTimeResultItem> aggregateTimeResults) {
-		this.aggregateTimeResults = aggregateTimeResults;
-	}
-
 	public List<DetailInfoItem> getDetailInfos() {
 		return this.detailInfos;
 	}
 
 	public void setDetailInfos(List<DetailInfoItem> detailInfos) {
 		this.detailInfos = detailInfos;
+	}
+
+	public List<AggregateTimeResultItem> getAggregateTimeResults() {
+		return this.aggregateTimeResults;
+	}
+
+	public void setAggregateTimeResults(List<AggregateTimeResultItem> aggregateTimeResults) {
+		this.aggregateTimeResults = aggregateTimeResults;
 	}
 
 	public static class AggregateReleaseItem {
@@ -118,43 +118,20 @@ public class OpsQueryAggregateReleaseInfoResponse extends AcsResponse {
 		}
 	}
 
-	public static class AggregateTimeResultItem {
-
-		private String timestamp;
-
-		private Integer impactNcIpCnt;
-
-		public String getTimestamp() {
-			return this.timestamp;
-		}
-
-		public void setTimestamp(String timestamp) {
-			this.timestamp = timestamp;
-		}
-
-		public Integer getImpactNcIpCnt() {
-			return this.impactNcIpCnt;
-		}
-
-		public void setImpactNcIpCnt(Integer impactNcIpCnt) {
-			this.impactNcIpCnt = impactNcIpCnt;
-		}
-	}
-
 	public static class DetailInfoItem {
-
-		private String ncIp;
-
-		private String startTime;
 
 		private String endTime;
 
-		public String getNcIp() {
-			return this.ncIp;
+		private String startTime;
+
+		private String ncIp;
+
+		public String getEndTime() {
+			return this.endTime;
 		}
 
-		public void setNcIp(String ncIp) {
-			this.ncIp = ncIp;
+		public void setEndTime(String endTime) {
+			this.endTime = endTime;
 		}
 
 		public String getStartTime() {
@@ -165,12 +142,35 @@ public class OpsQueryAggregateReleaseInfoResponse extends AcsResponse {
 			this.startTime = startTime;
 		}
 
-		public String getEndTime() {
-			return this.endTime;
+		public String getNcIp() {
+			return this.ncIp;
 		}
 
-		public void setEndTime(String endTime) {
-			this.endTime = endTime;
+		public void setNcIp(String ncIp) {
+			this.ncIp = ncIp;
+		}
+	}
+
+	public static class AggregateTimeResultItem {
+
+		private Integer impactNcIpCnt;
+
+		private String timestamp;
+
+		public Integer getImpactNcIpCnt() {
+			return this.impactNcIpCnt;
+		}
+
+		public void setImpactNcIpCnt(Integer impactNcIpCnt) {
+			this.impactNcIpCnt = impactNcIpCnt;
+		}
+
+		public String getTimestamp() {
+			return this.timestamp;
+		}
+
+		public void setTimestamp(String timestamp) {
+			this.timestamp = timestamp;
 		}
 	}
 

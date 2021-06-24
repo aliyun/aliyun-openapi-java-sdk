@@ -68,38 +68,38 @@ public class OpsDescribeFullVPortInfoResponse extends AcsResponse {
 
 		public static class Eni {
 
-			private String eniNo;
+			private String vpcId;
 
 			private String vPortId;
 
-			private String vPortName;
-
 			private String instanceId;
-
-			private String eniType;
-
-			private String vpcId;
-
-			private String vSwitchId;
-
-			private String eniStatus;
-
-			private String eniNetworkType;
-
-			private Long tx;
 
 			private Long rx;
 
+			private String vSwitchId;
+
+			private Long tx;
+
+			private String vPortName;
+
 			private Long txPps;
+
+			private String eniNetworkType;
+
+			private String eniNo;
+
+			private String eniStatus;
 
 			private Long rxPps;
 
-			public String getEniNo() {
-				return this.eniNo;
+			private String eniType;
+
+			public String getVpcId() {
+				return this.vpcId;
 			}
 
-			public void setEniNo(String eniNo) {
-				this.eniNo = eniNo;
+			public void setVpcId(String vpcId) {
+				this.vpcId = vpcId;
 			}
 
 			public String getVPortId() {
@@ -110,68 +110,12 @@ public class OpsDescribeFullVPortInfoResponse extends AcsResponse {
 				this.vPortId = vPortId;
 			}
 
-			public String getVPortName() {
-				return this.vPortName;
-			}
-
-			public void setVPortName(String vPortName) {
-				this.vPortName = vPortName;
-			}
-
 			public String getInstanceId() {
 				return this.instanceId;
 			}
 
 			public void setInstanceId(String instanceId) {
 				this.instanceId = instanceId;
-			}
-
-			public String getEniType() {
-				return this.eniType;
-			}
-
-			public void setEniType(String eniType) {
-				this.eniType = eniType;
-			}
-
-			public String getVpcId() {
-				return this.vpcId;
-			}
-
-			public void setVpcId(String vpcId) {
-				this.vpcId = vpcId;
-			}
-
-			public String getVSwitchId() {
-				return this.vSwitchId;
-			}
-
-			public void setVSwitchId(String vSwitchId) {
-				this.vSwitchId = vSwitchId;
-			}
-
-			public String getEniStatus() {
-				return this.eniStatus;
-			}
-
-			public void setEniStatus(String eniStatus) {
-				this.eniStatus = eniStatus;
-			}
-
-			public String getEniNetworkType() {
-				return this.eniNetworkType;
-			}
-
-			public void setEniNetworkType(String eniNetworkType) {
-				this.eniNetworkType = eniNetworkType;
-			}
-
-			public Long getTx() {
-				return this.tx;
-			}
-
-			public void setTx(Long tx) {
-				this.tx = tx;
 			}
 
 			public Long getRx() {
@@ -182,6 +126,30 @@ public class OpsDescribeFullVPortInfoResponse extends AcsResponse {
 				this.rx = rx;
 			}
 
+			public String getVSwitchId() {
+				return this.vSwitchId;
+			}
+
+			public void setVSwitchId(String vSwitchId) {
+				this.vSwitchId = vSwitchId;
+			}
+
+			public Long getTx() {
+				return this.tx;
+			}
+
+			public void setTx(Long tx) {
+				this.tx = tx;
+			}
+
+			public String getVPortName() {
+				return this.vPortName;
+			}
+
+			public void setVPortName(String vPortName) {
+				this.vPortName = vPortName;
+			}
+
 			public Long getTxPps() {
 				return this.txPps;
 			}
@@ -190,49 +158,81 @@ public class OpsDescribeFullVPortInfoResponse extends AcsResponse {
 				this.txPps = txPps;
 			}
 
+			public String getEniNetworkType() {
+				return this.eniNetworkType;
+			}
+
+			public void setEniNetworkType(String eniNetworkType) {
+				this.eniNetworkType = eniNetworkType;
+			}
+
+			public String getEniNo() {
+				return this.eniNo;
+			}
+
+			public void setEniNo(String eniNo) {
+				this.eniNo = eniNo;
+			}
+
+			public String getEniStatus() {
+				return this.eniStatus;
+			}
+
+			public void setEniStatus(String eniStatus) {
+				this.eniStatus = eniStatus;
+			}
+
 			public Long getRxPps() {
 				return this.rxPps;
 			}
 
 			public void setRxPps(Long rxPps) {
 				this.rxPps = rxPps;
+			}
+
+			public String getEniType() {
+				return this.eniType;
+			}
+
+			public void setEniType(String eniType) {
+				this.eniType = eniType;
 			}
 		}
 
 		public static class Vport {
 
-			private String eniNo;
+			private String vpcId;
 
 			private String vPortId;
 
-			private String vPortName;
-
 			private String instanceId;
-
-			private String eniType;
-
-			private String vpcId;
-
-			private String vSwitchId;
-
-			private String eniStatus;
-
-			private String eniNetworkType;
-
-			private Long tx;
 
 			private Long rx;
 
+			private String vSwitchId;
+
+			private Long tx;
+
+			private String vPortName;
+
 			private Long txPps;
+
+			private String eniNetworkType;
+
+			private String eniNo;
+
+			private String eniStatus;
 
 			private Long rxPps;
 
-			public String getEniNo() {
-				return this.eniNo;
+			private String eniType;
+
+			public String getVpcId() {
+				return this.vpcId;
 			}
 
-			public void setEniNo(String eniNo) {
-				this.eniNo = eniNo;
+			public void setVpcId(String vpcId) {
+				this.vpcId = vpcId;
 			}
 
 			public String getVPortId() {
@@ -243,68 +243,12 @@ public class OpsDescribeFullVPortInfoResponse extends AcsResponse {
 				this.vPortId = vPortId;
 			}
 
-			public String getVPortName() {
-				return this.vPortName;
-			}
-
-			public void setVPortName(String vPortName) {
-				this.vPortName = vPortName;
-			}
-
 			public String getInstanceId() {
 				return this.instanceId;
 			}
 
 			public void setInstanceId(String instanceId) {
 				this.instanceId = instanceId;
-			}
-
-			public String getEniType() {
-				return this.eniType;
-			}
-
-			public void setEniType(String eniType) {
-				this.eniType = eniType;
-			}
-
-			public String getVpcId() {
-				return this.vpcId;
-			}
-
-			public void setVpcId(String vpcId) {
-				this.vpcId = vpcId;
-			}
-
-			public String getVSwitchId() {
-				return this.vSwitchId;
-			}
-
-			public void setVSwitchId(String vSwitchId) {
-				this.vSwitchId = vSwitchId;
-			}
-
-			public String getEniStatus() {
-				return this.eniStatus;
-			}
-
-			public void setEniStatus(String eniStatus) {
-				this.eniStatus = eniStatus;
-			}
-
-			public String getEniNetworkType() {
-				return this.eniNetworkType;
-			}
-
-			public void setEniNetworkType(String eniNetworkType) {
-				this.eniNetworkType = eniNetworkType;
-			}
-
-			public Long getTx() {
-				return this.tx;
-			}
-
-			public void setTx(Long tx) {
-				this.tx = tx;
 			}
 
 			public Long getRx() {
@@ -315,6 +259,30 @@ public class OpsDescribeFullVPortInfoResponse extends AcsResponse {
 				this.rx = rx;
 			}
 
+			public String getVSwitchId() {
+				return this.vSwitchId;
+			}
+
+			public void setVSwitchId(String vSwitchId) {
+				this.vSwitchId = vSwitchId;
+			}
+
+			public Long getTx() {
+				return this.tx;
+			}
+
+			public void setTx(Long tx) {
+				this.tx = tx;
+			}
+
+			public String getVPortName() {
+				return this.vPortName;
+			}
+
+			public void setVPortName(String vPortName) {
+				this.vPortName = vPortName;
+			}
+
 			public Long getTxPps() {
 				return this.txPps;
 			}
@@ -323,12 +291,44 @@ public class OpsDescribeFullVPortInfoResponse extends AcsResponse {
 				this.txPps = txPps;
 			}
 
+			public String getEniNetworkType() {
+				return this.eniNetworkType;
+			}
+
+			public void setEniNetworkType(String eniNetworkType) {
+				this.eniNetworkType = eniNetworkType;
+			}
+
+			public String getEniNo() {
+				return this.eniNo;
+			}
+
+			public void setEniNo(String eniNo) {
+				this.eniNo = eniNo;
+			}
+
+			public String getEniStatus() {
+				return this.eniStatus;
+			}
+
+			public void setEniStatus(String eniStatus) {
+				this.eniStatus = eniStatus;
+			}
+
 			public Long getRxPps() {
 				return this.rxPps;
 			}
 
 			public void setRxPps(Long rxPps) {
 				this.rxPps = rxPps;
+			}
+
+			public String getEniType() {
+				return this.eniType;
+			}
+
+			public void setEniType(String eniType) {
+				this.eniType = eniType;
 			}
 		}
 	}

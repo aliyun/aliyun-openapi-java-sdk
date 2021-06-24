@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsQueryDetailImpactResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
 
+	private String requestId;
+
 	private List<ImpactDetailInfo> impactDetailInfos;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -45,6 +37,14 @@ public class OpsQueryDetailImpactResponse extends AcsResponse {
 
 	public void setTotalCount(Integer totalCount) {
 		this.totalCount = totalCount;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<ImpactDetailInfo> getImpactDetailInfos() {
@@ -57,55 +57,199 @@ public class OpsQueryDetailImpactResponse extends AcsResponse {
 
 	public static class ImpactDetailInfo {
 
+		private String status;
+
+		private String physicalModel;
+
+		private String gcLevel;
+
+		private String room;
+
+		private String cluster;
+
+		private String isStorageNc;
+
+		private String ncIp;
+
+		private String additionalInfo;
+
+		private Float gocCores;
+
+		private String region;
+
+		private String warningLevel;
+
+		private String asw;
+
+		private String exceptionTime;
+
+		private String isLocalDisk;
+
+		private String idc;
+
+		private String cores;
+
+		private String productName;
+
+		private String aZone;
+
 		private String aliUid;
 
 		private String instanceId;
 
-		private String cluster;
-
-		private String physicalModel;
-
 		private String instanceType;
-
-		private String additionalInfo;
-
-		private String ncIp;
-
-		private String aZone;
-
-		private String zone;
-
-		private String status;
-
-		private String asw;
-
-		private String productName;
-
-		private String reason;
-
-		private String isLocalDisk;
-
-		private String room;
-
-		private String exceptionTime;
-
-		private String region;
-
-		private String idc;
 
 		private String isPhysicalMachine;
 
-		private String gcLevel;
-
-		private String cores;
-
-		private Float gocCores;
-
-		private String warningLevel;
-
 		private String rack;
 
-		private String isStorageNc;
+		private String zone;
+
+		private String reason;
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
+		public String getPhysicalModel() {
+			return this.physicalModel;
+		}
+
+		public void setPhysicalModel(String physicalModel) {
+			this.physicalModel = physicalModel;
+		}
+
+		public String getGcLevel() {
+			return this.gcLevel;
+		}
+
+		public void setGcLevel(String gcLevel) {
+			this.gcLevel = gcLevel;
+		}
+
+		public String getRoom() {
+			return this.room;
+		}
+
+		public void setRoom(String room) {
+			this.room = room;
+		}
+
+		public String getCluster() {
+			return this.cluster;
+		}
+
+		public void setCluster(String cluster) {
+			this.cluster = cluster;
+		}
+
+		public String getIsStorageNc() {
+			return this.isStorageNc;
+		}
+
+		public void setIsStorageNc(String isStorageNc) {
+			this.isStorageNc = isStorageNc;
+		}
+
+		public String getNcIp() {
+			return this.ncIp;
+		}
+
+		public void setNcIp(String ncIp) {
+			this.ncIp = ncIp;
+		}
+
+		public String getAdditionalInfo() {
+			return this.additionalInfo;
+		}
+
+		public void setAdditionalInfo(String additionalInfo) {
+			this.additionalInfo = additionalInfo;
+		}
+
+		public Float getGocCores() {
+			return this.gocCores;
+		}
+
+		public void setGocCores(Float gocCores) {
+			this.gocCores = gocCores;
+		}
+
+		public String getRegion() {
+			return this.region;
+		}
+
+		public void setRegion(String region) {
+			this.region = region;
+		}
+
+		public String getWarningLevel() {
+			return this.warningLevel;
+		}
+
+		public void setWarningLevel(String warningLevel) {
+			this.warningLevel = warningLevel;
+		}
+
+		public String getAsw() {
+			return this.asw;
+		}
+
+		public void setAsw(String asw) {
+			this.asw = asw;
+		}
+
+		public String getExceptionTime() {
+			return this.exceptionTime;
+		}
+
+		public void setExceptionTime(String exceptionTime) {
+			this.exceptionTime = exceptionTime;
+		}
+
+		public String getIsLocalDisk() {
+			return this.isLocalDisk;
+		}
+
+		public void setIsLocalDisk(String isLocalDisk) {
+			this.isLocalDisk = isLocalDisk;
+		}
+
+		public String getIdc() {
+			return this.idc;
+		}
+
+		public void setIdc(String idc) {
+			this.idc = idc;
+		}
+
+		public String getCores() {
+			return this.cores;
+		}
+
+		public void setCores(String cores) {
+			this.cores = cores;
+		}
+
+		public String getProductName() {
+			return this.productName;
+		}
+
+		public void setProductName(String productName) {
+			this.productName = productName;
+		}
+
+		public String getAZone() {
+			return this.aZone;
+		}
+
+		public void setAZone(String aZone) {
+			this.aZone = aZone;
+		}
 
 		public String getAliUid() {
 			return this.aliUid;
@@ -123,132 +267,12 @@ public class OpsQueryDetailImpactResponse extends AcsResponse {
 			this.instanceId = instanceId;
 		}
 
-		public String getCluster() {
-			return this.cluster;
-		}
-
-		public void setCluster(String cluster) {
-			this.cluster = cluster;
-		}
-
-		public String getPhysicalModel() {
-			return this.physicalModel;
-		}
-
-		public void setPhysicalModel(String physicalModel) {
-			this.physicalModel = physicalModel;
-		}
-
 		public String getInstanceType() {
 			return this.instanceType;
 		}
 
 		public void setInstanceType(String instanceType) {
 			this.instanceType = instanceType;
-		}
-
-		public String getAdditionalInfo() {
-			return this.additionalInfo;
-		}
-
-		public void setAdditionalInfo(String additionalInfo) {
-			this.additionalInfo = additionalInfo;
-		}
-
-		public String getNcIp() {
-			return this.ncIp;
-		}
-
-		public void setNcIp(String ncIp) {
-			this.ncIp = ncIp;
-		}
-
-		public String getAZone() {
-			return this.aZone;
-		}
-
-		public void setAZone(String aZone) {
-			this.aZone = aZone;
-		}
-
-		public String getZone() {
-			return this.zone;
-		}
-
-		public void setZone(String zone) {
-			this.zone = zone;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
-		public String getAsw() {
-			return this.asw;
-		}
-
-		public void setAsw(String asw) {
-			this.asw = asw;
-		}
-
-		public String getProductName() {
-			return this.productName;
-		}
-
-		public void setProductName(String productName) {
-			this.productName = productName;
-		}
-
-		public String getReason() {
-			return this.reason;
-		}
-
-		public void setReason(String reason) {
-			this.reason = reason;
-		}
-
-		public String getIsLocalDisk() {
-			return this.isLocalDisk;
-		}
-
-		public void setIsLocalDisk(String isLocalDisk) {
-			this.isLocalDisk = isLocalDisk;
-		}
-
-		public String getRoom() {
-			return this.room;
-		}
-
-		public void setRoom(String room) {
-			this.room = room;
-		}
-
-		public String getExceptionTime() {
-			return this.exceptionTime;
-		}
-
-		public void setExceptionTime(String exceptionTime) {
-			this.exceptionTime = exceptionTime;
-		}
-
-		public String getRegion() {
-			return this.region;
-		}
-
-		public void setRegion(String region) {
-			this.region = region;
-		}
-
-		public String getIdc() {
-			return this.idc;
-		}
-
-		public void setIdc(String idc) {
-			this.idc = idc;
 		}
 
 		public String getIsPhysicalMachine() {
@@ -259,38 +283,6 @@ public class OpsQueryDetailImpactResponse extends AcsResponse {
 			this.isPhysicalMachine = isPhysicalMachine;
 		}
 
-		public String getGcLevel() {
-			return this.gcLevel;
-		}
-
-		public void setGcLevel(String gcLevel) {
-			this.gcLevel = gcLevel;
-		}
-
-		public String getCores() {
-			return this.cores;
-		}
-
-		public void setCores(String cores) {
-			this.cores = cores;
-		}
-
-		public Float getGocCores() {
-			return this.gocCores;
-		}
-
-		public void setGocCores(Float gocCores) {
-			this.gocCores = gocCores;
-		}
-
-		public String getWarningLevel() {
-			return this.warningLevel;
-		}
-
-		public void setWarningLevel(String warningLevel) {
-			this.warningLevel = warningLevel;
-		}
-
 		public String getRack() {
 			return this.rack;
 		}
@@ -299,12 +291,20 @@ public class OpsQueryDetailImpactResponse extends AcsResponse {
 			this.rack = rack;
 		}
 
-		public String getIsStorageNc() {
-			return this.isStorageNc;
+		public String getZone() {
+			return this.zone;
 		}
 
-		public void setIsStorageNc(String isStorageNc) {
-			this.isStorageNc = isStorageNc;
+		public void setZone(String zone) {
+			this.zone = zone;
+		}
+
+		public String getReason() {
+			return this.reason;
+		}
+
+		public void setReason(String reason) {
+			this.reason = reason;
 		}
 	}
 

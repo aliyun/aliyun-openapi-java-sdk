@@ -31,15 +31,15 @@ public class OpsDescribeCommandsResponseUnmarshaller {
 		List<CommandSet> commandSets = new ArrayList<CommandSet>();
 		for (int i = 0; i < _ctx.lengthValue("OpsDescribeCommandsResponse.CommandSets.Length"); i++) {
 			CommandSet commandSet = new CommandSet();
-			commandSet.setId(_ctx.longValue("OpsDescribeCommandsResponse.CommandSets["+ i +"].Id"));
-			commandSet.setAliUid(_ctx.longValue("OpsDescribeCommandsResponse.CommandSets["+ i +"].AliUid"));
-			commandSet.setCommandType(_ctx.stringValue("OpsDescribeCommandsResponse.CommandSets["+ i +"].CommandType"));
+			commandSet.setCommandResult(_ctx.stringValue("OpsDescribeCommandsResponse.CommandSets["+ i +"].CommandResult"));
+			commandSet.setRetryTimes(_ctx.integerValue("OpsDescribeCommandsResponse.CommandSets["+ i +"].RetryTimes"));
 			commandSet.setCommandDetail(_ctx.stringValue("OpsDescribeCommandsResponse.CommandSets["+ i +"].CommandDetail"));
+			commandSet.setAliUid(_ctx.longValue("OpsDescribeCommandsResponse.CommandSets["+ i +"].AliUid"));
+			commandSet.setInstanceId(_ctx.stringValue("OpsDescribeCommandsResponse.CommandSets["+ i +"].InstanceId"));
 			commandSet.setCommandStatus(_ctx.stringValue("OpsDescribeCommandsResponse.CommandSets["+ i +"].CommandStatus"));
 			commandSet.setOrderId(_ctx.longValue("OpsDescribeCommandsResponse.CommandSets["+ i +"].OrderId"));
-			commandSet.setRetryTimes(_ctx.integerValue("OpsDescribeCommandsResponse.CommandSets["+ i +"].RetryTimes"));
-			commandSet.setInstanceId(_ctx.stringValue("OpsDescribeCommandsResponse.CommandSets["+ i +"].InstanceId"));
-			commandSet.setCommandResult(_ctx.stringValue("OpsDescribeCommandsResponse.CommandSets["+ i +"].CommandResult"));
+			commandSet.setCommandType(_ctx.stringValue("OpsDescribeCommandsResponse.CommandSets["+ i +"].CommandType"));
+			commandSet.setId(_ctx.longValue("OpsDescribeCommandsResponse.CommandSets["+ i +"].Id"));
 
 			commandSets.add(commandSet);
 		}

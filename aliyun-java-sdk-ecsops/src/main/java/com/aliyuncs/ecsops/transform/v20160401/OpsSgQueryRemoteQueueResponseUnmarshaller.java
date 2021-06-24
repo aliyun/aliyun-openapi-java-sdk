@@ -24,8 +24,8 @@ public class OpsSgQueryRemoteQueueResponseUnmarshaller {
 	public static OpsSgQueryRemoteQueueResponse unmarshall(OpsSgQueryRemoteQueueResponse opsSgQueryRemoteQueueResponse, UnmarshallerContext _ctx) {
 		
 		opsSgQueryRemoteQueueResponse.setRequestId(_ctx.stringValue("OpsSgQueryRemoteQueueResponse.RequestId"));
-		opsSgQueryRemoteQueueResponse.setCode(_ctx.stringValue("OpsSgQueryRemoteQueueResponse.Code"));
 		opsSgQueryRemoteQueueResponse.setMessage(_ctx.stringValue("OpsSgQueryRemoteQueueResponse.Message"));
+		opsSgQueryRemoteQueueResponse.setCode(_ctx.stringValue("OpsSgQueryRemoteQueueResponse.Code"));
 		opsSgQueryRemoteQueueResponse.setSuccess(_ctx.booleanValue("OpsSgQueryRemoteQueueResponse.Success"));
 
 		Data data = new Data();

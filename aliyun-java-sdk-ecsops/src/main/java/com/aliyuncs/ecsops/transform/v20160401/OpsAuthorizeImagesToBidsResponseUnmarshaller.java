@@ -28,17 +28,17 @@ public class OpsAuthorizeImagesToBidsResponseUnmarshaller {
 		
 		opsAuthorizeImagesToBidsResponse.setRequestId(_ctx.stringValue("OpsAuthorizeImagesToBidsResponse.RequestId"));
 		opsAuthorizeImagesToBidsResponse.setTotalCount(_ctx.integerValue("OpsAuthorizeImagesToBidsResponse.TotalCount"));
-		opsAuthorizeImagesToBidsResponse.setPageNumber(_ctx.integerValue("OpsAuthorizeImagesToBidsResponse.PageNumber"));
 		opsAuthorizeImagesToBidsResponse.setPageSize(_ctx.integerValue("OpsAuthorizeImagesToBidsResponse.PageSize"));
+		opsAuthorizeImagesToBidsResponse.setPageNumber(_ctx.integerValue("OpsAuthorizeImagesToBidsResponse.PageNumber"));
 
 		List<AuthorizeBid> authorizeBids = new ArrayList<AuthorizeBid>();
 		for (int i = 0; i < _ctx.lengthValue("OpsAuthorizeImagesToBidsResponse.AuthorizeBids.Length"); i++) {
 			AuthorizeBid authorizeBid = new AuthorizeBid();
-			authorizeBid.setRegionId(_ctx.stringValue("OpsAuthorizeImagesToBidsResponse.AuthorizeBids["+ i +"].RegionId"));
-			authorizeBid.setOsName(_ctx.stringValue("OpsAuthorizeImagesToBidsResponse.AuthorizeBids["+ i +"].OsName"));
-			authorizeBid.setOnlineImageId(_ctx.stringValue("OpsAuthorizeImagesToBidsResponse.AuthorizeBids["+ i +"].OnlineImageId"));
 			authorizeBid.setHiddenImageId(_ctx.stringValue("OpsAuthorizeImagesToBidsResponse.AuthorizeBids["+ i +"].HiddenImageId"));
+			authorizeBid.setOnlineImageId(_ctx.stringValue("OpsAuthorizeImagesToBidsResponse.AuthorizeBids["+ i +"].OnlineImageId"));
+			authorizeBid.setOsName(_ctx.stringValue("OpsAuthorizeImagesToBidsResponse.AuthorizeBids["+ i +"].OsName"));
 			authorizeBid.setOfflineImageId(_ctx.stringValue("OpsAuthorizeImagesToBidsResponse.AuthorizeBids["+ i +"].OfflineImageId"));
+			authorizeBid.setRegionId(_ctx.stringValue("OpsAuthorizeImagesToBidsResponse.AuthorizeBids["+ i +"].RegionId"));
 
 			List<String> bids = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("OpsAuthorizeImagesToBidsResponse.AuthorizeBids["+ i +"].Bids.Length"); j++) {

@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsDescribeNetworkInterfacesResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
-
-	private Integer pageNumber;
 
 	private Integer pageSize;
 
+	private String requestId;
+
+	private Integer pageNumber;
+
 	private List<NetworkInterfaceSet> networkInterfaceSets;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -51,20 +43,28 @@ public class OpsDescribeNetworkInterfacesResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<NetworkInterfaceSet> getNetworkInterfaceSets() {
@@ -77,59 +77,51 @@ public class OpsDescribeNetworkInterfacesResponse extends AcsResponse {
 
 	public static class NetworkInterfaceSet {
 
-		private String networkInterfaceId;
-
 		private String status;
 
 		private String type;
 
 		private String vpcId;
 
+		private String creationTime;
+
+		private String networkInterfaceName;
+
+		private String macAddress;
+
+		private String networkInterfaceId;
+
+		private Long serviceID;
+
+		private String instanceId;
+
+		private Long gmtModified;
+
+		private Boolean serviceManaged;
+
 		private String vSwitchId;
+
+		private String description;
+
+		private String resourceGroupId;
+
+		private Long gmtCreate;
 
 		private String zoneId;
 
 		private String privateIpAddress;
 
-		private String macAddress;
-
-		private String networkInterfaceName;
-
-		private String description;
-
-		private String instanceId;
-
-		private String creationTime;
-
-		private String resourceGroupId;
-
-		private Long serviceID;
-
-		private Boolean serviceManaged;
-
-		private Long gmtModified;
-
-		private Long gmtCreate;
-
-		private List<PrivateIpSet> privateIpSets;
+		private List<Tag> tags;
 
 		private List<Ipv6Set> ipv6Sets;
 
-		private List<Tag> tags;
+		private List<PrivateIpSet> privateIpSets;
 
 		private List<String> securityGroupIds;
 
-		private AssociatedPublicIp associatedPublicIp;
-
 		private Attachment attachment;
 
-		public String getNetworkInterfaceId() {
-			return this.networkInterfaceId;
-		}
-
-		public void setNetworkInterfaceId(String networkInterfaceId) {
-			this.networkInterfaceId = networkInterfaceId;
-		}
+		private AssociatedPublicIp associatedPublicIp;
 
 		public String getStatus() {
 			return this.status;
@@ -155,12 +147,100 @@ public class OpsDescribeNetworkInterfacesResponse extends AcsResponse {
 			this.vpcId = vpcId;
 		}
 
+		public String getCreationTime() {
+			return this.creationTime;
+		}
+
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
+		}
+
+		public String getNetworkInterfaceName() {
+			return this.networkInterfaceName;
+		}
+
+		public void setNetworkInterfaceName(String networkInterfaceName) {
+			this.networkInterfaceName = networkInterfaceName;
+		}
+
+		public String getMacAddress() {
+			return this.macAddress;
+		}
+
+		public void setMacAddress(String macAddress) {
+			this.macAddress = macAddress;
+		}
+
+		public String getNetworkInterfaceId() {
+			return this.networkInterfaceId;
+		}
+
+		public void setNetworkInterfaceId(String networkInterfaceId) {
+			this.networkInterfaceId = networkInterfaceId;
+		}
+
+		public Long getServiceID() {
+			return this.serviceID;
+		}
+
+		public void setServiceID(Long serviceID) {
+			this.serviceID = serviceID;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public Long getGmtModified() {
+			return this.gmtModified;
+		}
+
+		public void setGmtModified(Long gmtModified) {
+			this.gmtModified = gmtModified;
+		}
+
+		public Boolean getServiceManaged() {
+			return this.serviceManaged;
+		}
+
+		public void setServiceManaged(Boolean serviceManaged) {
+			this.serviceManaged = serviceManaged;
+		}
+
 		public String getVSwitchId() {
 			return this.vSwitchId;
 		}
 
 		public void setVSwitchId(String vSwitchId) {
 			this.vSwitchId = vSwitchId;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
+		public Long getGmtCreate() {
+			return this.gmtCreate;
+		}
+
+		public void setGmtCreate(Long gmtCreate) {
+			this.gmtCreate = gmtCreate;
 		}
 
 		public String getZoneId() {
@@ -179,92 +259,12 @@ public class OpsDescribeNetworkInterfacesResponse extends AcsResponse {
 			this.privateIpAddress = privateIpAddress;
 		}
 
-		public String getMacAddress() {
-			return this.macAddress;
+		public List<Tag> getTags() {
+			return this.tags;
 		}
 
-		public void setMacAddress(String macAddress) {
-			this.macAddress = macAddress;
-		}
-
-		public String getNetworkInterfaceName() {
-			return this.networkInterfaceName;
-		}
-
-		public void setNetworkInterfaceName(String networkInterfaceName) {
-			this.networkInterfaceName = networkInterfaceName;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
-		public String getInstanceId() {
-			return this.instanceId;
-		}
-
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
-
-		public String getCreationTime() {
-			return this.creationTime;
-		}
-
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
-		}
-
-		public String getResourceGroupId() {
-			return this.resourceGroupId;
-		}
-
-		public void setResourceGroupId(String resourceGroupId) {
-			this.resourceGroupId = resourceGroupId;
-		}
-
-		public Long getServiceID() {
-			return this.serviceID;
-		}
-
-		public void setServiceID(Long serviceID) {
-			this.serviceID = serviceID;
-		}
-
-		public Boolean getServiceManaged() {
-			return this.serviceManaged;
-		}
-
-		public void setServiceManaged(Boolean serviceManaged) {
-			this.serviceManaged = serviceManaged;
-		}
-
-		public Long getGmtModified() {
-			return this.gmtModified;
-		}
-
-		public void setGmtModified(Long gmtModified) {
-			this.gmtModified = gmtModified;
-		}
-
-		public Long getGmtCreate() {
-			return this.gmtCreate;
-		}
-
-		public void setGmtCreate(Long gmtCreate) {
-			this.gmtCreate = gmtCreate;
-		}
-
-		public List<PrivateIpSet> getPrivateIpSets() {
-			return this.privateIpSets;
-		}
-
-		public void setPrivateIpSets(List<PrivateIpSet> privateIpSets) {
-			this.privateIpSets = privateIpSets;
+		public void setTags(List<Tag> tags) {
+			this.tags = tags;
 		}
 
 		public List<Ipv6Set> getIpv6Sets() {
@@ -275,12 +275,12 @@ public class OpsDescribeNetworkInterfacesResponse extends AcsResponse {
 			this.ipv6Sets = ipv6Sets;
 		}
 
-		public List<Tag> getTags() {
-			return this.tags;
+		public List<PrivateIpSet> getPrivateIpSets() {
+			return this.privateIpSets;
 		}
 
-		public void setTags(List<Tag> tags) {
-			this.tags = tags;
+		public void setPrivateIpSets(List<PrivateIpSet> privateIpSets) {
+			this.privateIpSets = privateIpSets;
 		}
 
 		public List<String> getSecurityGroupIds() {
@@ -291,14 +291,6 @@ public class OpsDescribeNetworkInterfacesResponse extends AcsResponse {
 			this.securityGroupIds = securityGroupIds;
 		}
 
-		public AssociatedPublicIp getAssociatedPublicIp() {
-			return this.associatedPublicIp;
-		}
-
-		public void setAssociatedPublicIp(AssociatedPublicIp associatedPublicIp) {
-			this.associatedPublicIp = associatedPublicIp;
-		}
-
 		public Attachment getAttachment() {
 			return this.attachment;
 		}
@@ -307,59 +299,34 @@ public class OpsDescribeNetworkInterfacesResponse extends AcsResponse {
 			this.attachment = attachment;
 		}
 
-		public static class PrivateIpSet {
+		public AssociatedPublicIp getAssociatedPublicIp() {
+			return this.associatedPublicIp;
+		}
 
-			private String privateIpAddress;
+		public void setAssociatedPublicIp(AssociatedPublicIp associatedPublicIp) {
+			this.associatedPublicIp = associatedPublicIp;
+		}
 
-			private Boolean primary;
+		public static class Tag {
 
-			private AssociatedPublicIp1 associatedPublicIp1;
+			private String tagValue;
 
-			public String getPrivateIpAddress() {
-				return this.privateIpAddress;
+			private String tagKey;
+
+			public String getTagValue() {
+				return this.tagValue;
 			}
 
-			public void setPrivateIpAddress(String privateIpAddress) {
-				this.privateIpAddress = privateIpAddress;
+			public void setTagValue(String tagValue) {
+				this.tagValue = tagValue;
 			}
 
-			public Boolean getPrimary() {
-				return this.primary;
+			public String getTagKey() {
+				return this.tagKey;
 			}
 
-			public void setPrimary(Boolean primary) {
-				this.primary = primary;
-			}
-
-			public AssociatedPublicIp1 getAssociatedPublicIp1() {
-				return this.associatedPublicIp1;
-			}
-
-			public void setAssociatedPublicIp1(AssociatedPublicIp1 associatedPublicIp1) {
-				this.associatedPublicIp1 = associatedPublicIp1;
-			}
-
-			public static class AssociatedPublicIp1 {
-
-				private String publicIpAddress;
-
-				private String allocationId;
-
-				public String getPublicIpAddress() {
-					return this.publicIpAddress;
-				}
-
-				public void setPublicIpAddress(String publicIpAddress) {
-					this.publicIpAddress = publicIpAddress;
-				}
-
-				public String getAllocationId() {
-					return this.allocationId;
-				}
-
-				public void setAllocationId(String allocationId) {
-					this.allocationId = allocationId;
-				}
+			public void setTagKey(String tagKey) {
+				this.tagKey = tagKey;
 			}
 		}
 
@@ -376,61 +343,79 @@ public class OpsDescribeNetworkInterfacesResponse extends AcsResponse {
 			}
 		}
 
-		public static class Tag {
+		public static class PrivateIpSet {
 
-			private String tagKey;
+			private Boolean primary;
 
-			private String tagValue;
+			private String privateIpAddress;
 
-			public String getTagKey() {
-				return this.tagKey;
+			private AssociatedPublicIp1 associatedPublicIp1;
+
+			public Boolean getPrimary() {
+				return this.primary;
 			}
 
-			public void setTagKey(String tagKey) {
-				this.tagKey = tagKey;
+			public void setPrimary(Boolean primary) {
+				this.primary = primary;
 			}
 
-			public String getTagValue() {
-				return this.tagValue;
+			public String getPrivateIpAddress() {
+				return this.privateIpAddress;
 			}
 
-			public void setTagValue(String tagValue) {
-				this.tagValue = tagValue;
-			}
-		}
-
-		public static class AssociatedPublicIp {
-
-			private String publicIpAddress;
-
-			private String allocationId;
-
-			public String getPublicIpAddress() {
-				return this.publicIpAddress;
+			public void setPrivateIpAddress(String privateIpAddress) {
+				this.privateIpAddress = privateIpAddress;
 			}
 
-			public void setPublicIpAddress(String publicIpAddress) {
-				this.publicIpAddress = publicIpAddress;
+			public AssociatedPublicIp1 getAssociatedPublicIp1() {
+				return this.associatedPublicIp1;
 			}
 
-			public String getAllocationId() {
-				return this.allocationId;
+			public void setAssociatedPublicIp1(AssociatedPublicIp1 associatedPublicIp1) {
+				this.associatedPublicIp1 = associatedPublicIp1;
 			}
 
-			public void setAllocationId(String allocationId) {
-				this.allocationId = allocationId;
+			public static class AssociatedPublicIp1 {
+
+				private String allocationId;
+
+				private String publicIpAddress;
+
+				public String getAllocationId() {
+					return this.allocationId;
+				}
+
+				public void setAllocationId(String allocationId) {
+					this.allocationId = allocationId;
+				}
+
+				public String getPublicIpAddress() {
+					return this.publicIpAddress;
+				}
+
+				public void setPublicIpAddress(String publicIpAddress) {
+					this.publicIpAddress = publicIpAddress;
+				}
 			}
 		}
 
 		public static class Attachment {
 
+			private Integer deviceIndex;
+
 			private String instanceId;
 
 			private String trunkNetworkInterfaceId;
 
-			private Integer deviceIndex;
-
 			private List<String> memberNetworkInterfaceIds;
+
+			public Integer getDeviceIndex() {
+				return this.deviceIndex;
+			}
+
+			public void setDeviceIndex(Integer deviceIndex) {
+				this.deviceIndex = deviceIndex;
+			}
 
 			public String getInstanceId() {
 				return this.instanceId;
@@ -448,20 +433,35 @@ public class OpsDescribeNetworkInterfacesResponse extends AcsResponse {
 				this.trunkNetworkInterfaceId = trunkNetworkInterfaceId;
 			}
 
-			public Integer getDeviceIndex() {
-				return this.deviceIndex;
-			}
-
-			public void setDeviceIndex(Integer deviceIndex) {
-				this.deviceIndex = deviceIndex;
-			}
-
 			public List<String> getMemberNetworkInterfaceIds() {
 				return this.memberNetworkInterfaceIds;
 			}
 
 			public void setMemberNetworkInterfaceIds(List<String> memberNetworkInterfaceIds) {
 				this.memberNetworkInterfaceIds = memberNetworkInterfaceIds;
+			}
+		}
+
+		public static class AssociatedPublicIp {
+
+			private String allocationId;
+
+			private String publicIpAddress;
+
+			public String getAllocationId() {
+				return this.allocationId;
+			}
+
+			public void setAllocationId(String allocationId) {
+				this.allocationId = allocationId;
+			}
+
+			public String getPublicIpAddress() {
+				return this.publicIpAddress;
+			}
+
+			public void setPublicIpAddress(String publicIpAddress) {
+				this.publicIpAddress = publicIpAddress;
 			}
 		}
 	}

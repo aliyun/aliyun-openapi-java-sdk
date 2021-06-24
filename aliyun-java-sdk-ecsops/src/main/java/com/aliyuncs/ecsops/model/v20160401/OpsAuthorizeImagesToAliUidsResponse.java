@@ -47,24 +47,24 @@ public class OpsAuthorizeImagesToAliUidsResponse extends AcsResponse {
 
 	public static class AuthorizeAliUid {
 
-		private String osName;
+		private String hiddenImageId;
 
 		private String onlineImageId;
 
-		private String hiddenImageId;
-
-		private String deprecatedImageId;
+		private String osName;
 
 		private String offlineImageId;
 
+		private String deprecatedImageId;
+
 		private List<String> aliUids;
 
-		public String getOsName() {
-			return this.osName;
+		public String getHiddenImageId() {
+			return this.hiddenImageId;
 		}
 
-		public void setOsName(String osName) {
-			this.osName = osName;
+		public void setHiddenImageId(String hiddenImageId) {
+			this.hiddenImageId = hiddenImageId;
 		}
 
 		public String getOnlineImageId() {
@@ -75,20 +75,12 @@ public class OpsAuthorizeImagesToAliUidsResponse extends AcsResponse {
 			this.onlineImageId = onlineImageId;
 		}
 
-		public String getHiddenImageId() {
-			return this.hiddenImageId;
+		public String getOsName() {
+			return this.osName;
 		}
 
-		public void setHiddenImageId(String hiddenImageId) {
-			this.hiddenImageId = hiddenImageId;
-		}
-
-		public String getDeprecatedImageId() {
-			return this.deprecatedImageId;
-		}
-
-		public void setDeprecatedImageId(String deprecatedImageId) {
-			this.deprecatedImageId = deprecatedImageId;
+		public void setOsName(String osName) {
+			this.osName = osName;
 		}
 
 		public String getOfflineImageId() {
@@ -97,6 +89,14 @@ public class OpsAuthorizeImagesToAliUidsResponse extends AcsResponse {
 
 		public void setOfflineImageId(String offlineImageId) {
 			this.offlineImageId = offlineImageId;
+		}
+
+		public String getDeprecatedImageId() {
+			return this.deprecatedImageId;
+		}
+
+		public void setDeprecatedImageId(String deprecatedImageId) {
+			this.deprecatedImageId = deprecatedImageId;
 		}
 
 		public List<String> getAliUids() {

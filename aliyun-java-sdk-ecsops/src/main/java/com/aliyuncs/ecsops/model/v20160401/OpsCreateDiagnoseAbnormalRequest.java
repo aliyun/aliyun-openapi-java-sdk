@@ -17,7 +17,6 @@ package com.aliyuncs.ecsops.model.v20160401;
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
 import com.aliyuncs.http.MethodType;
-import com.aliyuncs.ecsops.Endpoint;
 
 /**
  * @author auto create
@@ -32,12 +31,8 @@ public class OpsCreateDiagnoseAbnormalRequest extends RpcAcsRequest<OpsCreateDia
 
 	private String resourceType;
 	public OpsCreateDiagnoseAbnormalRequest() {
-		super("Ecsops", "2016-04-01", "OpsCreateDiagnoseAbnormal", "ecs");
+		super("Ecsops", "2016-04-01", "OpsCreateDiagnoseAbnormal", "ecsops");
 		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
 	}
 
 	public List<String> getResourceIds() {
@@ -62,8 +57,8 @@ public class OpsCreateDiagnoseAbnormalRequest extends RpcAcsRequest<OpsCreateDia
 		if (items != null) {
 			for (int depth1 = 0; depth1 < items.size(); depth1++) {
 				putQueryParameter("Item." + (depth1 + 1) + ".ItemCategory" , items.get(depth1).getItemCategory());
-				putQueryParameter("Item." + (depth1 + 1) + ".ItemCode" , items.get(depth1).getItemCode());
 				putQueryParameter("Item." + (depth1 + 1) + ".Message" , items.get(depth1).getMessage());
+				putQueryParameter("Item." + (depth1 + 1) + ".ItemCode" , items.get(depth1).getItemCode());
 			}
 		}	
 	}
@@ -83,9 +78,9 @@ public class OpsCreateDiagnoseAbnormalRequest extends RpcAcsRequest<OpsCreateDia
 
 		private String itemCategory;
 
-		private String itemCode;
-
 		private String message;
+
+		private String itemCode;
 
 		public String getItemCategory() {
 			return this.itemCategory;
@@ -95,20 +90,20 @@ public class OpsCreateDiagnoseAbnormalRequest extends RpcAcsRequest<OpsCreateDia
 			this.itemCategory = itemCategory;
 		}
 
-		public String getItemCode() {
-			return this.itemCode;
-		}
-
-		public void setItemCode(String itemCode) {
-			this.itemCode = itemCode;
-		}
-
 		public String getMessage() {
 			return this.message;
 		}
 
 		public void setMessage(String message) {
 			this.message = message;
+		}
+
+		public String getItemCode() {
+			return this.itemCode;
+		}
+
+		public void setItemCode(String itemCode) {
+			this.itemCode = itemCode;
 		}
 	}
 

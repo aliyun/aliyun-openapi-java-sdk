@@ -24,21 +24,21 @@ public class OpsUpdateUserGrayBusinessResponseUnmarshaller {
 	public static OpsUpdateUserGrayBusinessResponse unmarshall(OpsUpdateUserGrayBusinessResponse opsUpdateUserGrayBusinessResponse, UnmarshallerContext _ctx) {
 		
 		opsUpdateUserGrayBusinessResponse.setRequestId(_ctx.stringValue("OpsUpdateUserGrayBusinessResponse.RequestId"));
-		opsUpdateUserGrayBusinessResponse.setCode(_ctx.stringValue("OpsUpdateUserGrayBusinessResponse.Code"));
 		opsUpdateUserGrayBusinessResponse.setMessage(_ctx.stringValue("OpsUpdateUserGrayBusinessResponse.Message"));
+		opsUpdateUserGrayBusinessResponse.setCode(_ctx.stringValue("OpsUpdateUserGrayBusinessResponse.Code"));
 		opsUpdateUserGrayBusinessResponse.setSuccess(_ctx.stringValue("OpsUpdateUserGrayBusinessResponse.Success"));
 
 		UserGrayBusinessDO userGrayBusinessDO = new UserGrayBusinessDO();
-		userGrayBusinessDO.setId(_ctx.longValue("OpsUpdateUserGrayBusinessResponse.UserGrayBusinessDO.Id"));
-		userGrayBusinessDO.setGrayBizType(_ctx.stringValue("OpsUpdateUserGrayBusinessResponse.UserGrayBusinessDO.GrayBizType"));
-		userGrayBusinessDO.setGrayStrictMode(_ctx.integerValue("OpsUpdateUserGrayBusinessResponse.UserGrayBusinessDO.GrayStrictMode"));
-		userGrayBusinessDO.setUserLevels(_ctx.stringValue("OpsUpdateUserGrayBusinessResponse.UserGrayBusinessDO.UserLevels"));
-		userGrayBusinessDO.setMaxVms(_ctx.integerValue("OpsUpdateUserGrayBusinessResponse.UserGrayBusinessDO.MaxVms"));
 		userGrayBusinessDO.setStatus(_ctx.integerValue("OpsUpdateUserGrayBusinessResponse.UserGrayBusinessDO.Status"));
-		userGrayBusinessDO.setGmtCreate(_ctx.stringValue("OpsUpdateUserGrayBusinessResponse.UserGrayBusinessDO.GmtCreate"));
-		userGrayBusinessDO.setGmtModified(_ctx.stringValue("OpsUpdateUserGrayBusinessResponse.UserGrayBusinessDO.GmtModified"));
-		userGrayBusinessDO.setAliUid(_ctx.longValue("OpsUpdateUserGrayBusinessResponse.UserGrayBusinessDO.AliUid"));
+		userGrayBusinessDO.setMaxVms(_ctx.integerValue("OpsUpdateUserGrayBusinessResponse.UserGrayBusinessDO.MaxVms"));
+		userGrayBusinessDO.setGrayStrictMode(_ctx.integerValue("OpsUpdateUserGrayBusinessResponse.UserGrayBusinessDO.GrayStrictMode"));
+		userGrayBusinessDO.setGrayBizType(_ctx.stringValue("OpsUpdateUserGrayBusinessResponse.UserGrayBusinessDO.GrayBizType"));
 		userGrayBusinessDO.setRegionNo(_ctx.stringValue("OpsUpdateUserGrayBusinessResponse.UserGrayBusinessDO.RegionNo"));
+		userGrayBusinessDO.setUserLevels(_ctx.stringValue("OpsUpdateUserGrayBusinessResponse.UserGrayBusinessDO.UserLevels"));
+		userGrayBusinessDO.setGmtCreate(_ctx.stringValue("OpsUpdateUserGrayBusinessResponse.UserGrayBusinessDO.GmtCreate"));
+		userGrayBusinessDO.setAliUid(_ctx.longValue("OpsUpdateUserGrayBusinessResponse.UserGrayBusinessDO.AliUid"));
+		userGrayBusinessDO.setGmtModified(_ctx.stringValue("OpsUpdateUserGrayBusinessResponse.UserGrayBusinessDO.GmtModified"));
+		userGrayBusinessDO.setId(_ctx.longValue("OpsUpdateUserGrayBusinessResponse.UserGrayBusinessDO.Id"));
 		opsUpdateUserGrayBusinessResponse.setUserGrayBusinessDO(userGrayBusinessDO);
 	 
 	 	return opsUpdateUserGrayBusinessResponse;

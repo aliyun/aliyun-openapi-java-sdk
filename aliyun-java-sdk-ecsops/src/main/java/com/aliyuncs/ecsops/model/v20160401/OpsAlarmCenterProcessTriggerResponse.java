@@ -24,27 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsAlarmCenterProcessTriggerResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String status;
 
 	private Boolean finished;
 
-	private String token;
-
-	private String requestTime;
-
-	private String processResult;
+	private String requestId;
 
 	private String errorInfo;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
+	private String processResult;
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String token;
+
+	private String requestTime;
 
 	public String getStatus() {
 		return this.status;
@@ -62,6 +54,30 @@ public class OpsAlarmCenterProcessTriggerResponse extends AcsResponse {
 		this.finished = finished;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getErrorInfo() {
+		return this.errorInfo;
+	}
+
+	public void setErrorInfo(String errorInfo) {
+		this.errorInfo = errorInfo;
+	}
+
+	public String getProcessResult() {
+		return this.processResult;
+	}
+
+	public void setProcessResult(String processResult) {
+		this.processResult = processResult;
+	}
+
 	public String getToken() {
 		return this.token;
 	}
@@ -76,22 +92,6 @@ public class OpsAlarmCenterProcessTriggerResponse extends AcsResponse {
 
 	public void setRequestTime(String requestTime) {
 		this.requestTime = requestTime;
-	}
-
-	public String getProcessResult() {
-		return this.processResult;
-	}
-
-	public void setProcessResult(String processResult) {
-		this.processResult = processResult;
-	}
-
-	public String getErrorInfo() {
-		return this.errorInfo;
-	}
-
-	public void setErrorInfo(String errorInfo) {
-		this.errorInfo = errorInfo;
 	}
 
 	@Override

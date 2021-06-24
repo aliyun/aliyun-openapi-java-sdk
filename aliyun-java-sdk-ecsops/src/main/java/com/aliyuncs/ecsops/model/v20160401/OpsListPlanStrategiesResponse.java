@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsListPlanStrategiesResponse extends AcsResponse {
 
+	private String message;
+
 	private String requestId;
 
 	private String code;
 
-	private String message;
-
 	private String success;
 
 	private List<PlanStrategy> planStrategies;
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -49,14 +57,6 @@ public class OpsListPlanStrategiesResponse extends AcsResponse {
 
 	public void setCode(String code) {
 		this.code = code;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
 	}
 
 	public String getSuccess() {
@@ -77,33 +77,17 @@ public class OpsListPlanStrategiesResponse extends AcsResponse {
 
 	public static class PlanStrategy {
 
-		private String strategyName;
-
-		private String description;
-
 		private String step;
 
 		private String model;
 
+		private String strategyName;
+
+		private String description;
+
 		private String orders;
 
 		private Integer forks;
-
-		public String getStrategyName() {
-			return this.strategyName;
-		}
-
-		public void setStrategyName(String strategyName) {
-			this.strategyName = strategyName;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
 
 		public String getStep() {
 			return this.step;
@@ -119,6 +103,22 @@ public class OpsListPlanStrategiesResponse extends AcsResponse {
 
 		public void setModel(String model) {
 			this.model = model;
+		}
+
+		public String getStrategyName() {
+			return this.strategyName;
+		}
+
+		public void setStrategyName(String strategyName) {
+			this.strategyName = strategyName;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
 		}
 
 		public String getOrders() {

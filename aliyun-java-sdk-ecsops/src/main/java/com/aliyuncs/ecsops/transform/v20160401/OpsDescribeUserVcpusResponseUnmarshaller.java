@@ -23,10 +23,10 @@ public class OpsDescribeUserVcpusResponseUnmarshaller {
 	public static OpsDescribeUserVcpusResponse unmarshall(OpsDescribeUserVcpusResponse opsDescribeUserVcpusResponse, UnmarshallerContext _ctx) {
 		
 		opsDescribeUserVcpusResponse.setRequestId(_ctx.stringValue("OpsDescribeUserVcpusResponse.RequestId"));
-		opsDescribeUserVcpusResponse.setCode(_ctx.stringValue("OpsDescribeUserVcpusResponse.Code"));
 		opsDescribeUserVcpusResponse.setMessage(_ctx.stringValue("OpsDescribeUserVcpusResponse.Message"));
-		opsDescribeUserVcpusResponse.setSuccess(_ctx.stringValue("OpsDescribeUserVcpusResponse.Success"));
 		opsDescribeUserVcpusResponse.setVcpus(_ctx.integerValue("OpsDescribeUserVcpusResponse.Vcpus"));
+		opsDescribeUserVcpusResponse.setCode(_ctx.stringValue("OpsDescribeUserVcpusResponse.Code"));
+		opsDescribeUserVcpusResponse.setSuccess(_ctx.stringValue("OpsDescribeUserVcpusResponse.Success"));
 	 
 	 	return opsDescribeUserVcpusResponse;
 	}

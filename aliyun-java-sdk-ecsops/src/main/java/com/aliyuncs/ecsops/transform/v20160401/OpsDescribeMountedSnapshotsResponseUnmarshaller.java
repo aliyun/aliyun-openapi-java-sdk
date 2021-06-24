@@ -28,18 +28,18 @@ public class OpsDescribeMountedSnapshotsResponseUnmarshaller {
 		
 		opsDescribeMountedSnapshotsResponse.setRequestId(_ctx.stringValue("OpsDescribeMountedSnapshotsResponse.RequestId"));
 		opsDescribeMountedSnapshotsResponse.setTotalCount(_ctx.integerValue("OpsDescribeMountedSnapshotsResponse.TotalCount"));
-		opsDescribeMountedSnapshotsResponse.setPageNumber(_ctx.integerValue("OpsDescribeMountedSnapshotsResponse.PageNumber"));
 		opsDescribeMountedSnapshotsResponse.setPageSize(_ctx.integerValue("OpsDescribeMountedSnapshotsResponse.PageSize"));
+		opsDescribeMountedSnapshotsResponse.setPageNumber(_ctx.integerValue("OpsDescribeMountedSnapshotsResponse.PageNumber"));
 
 		List<Snapshot> mountedSnapshots = new ArrayList<Snapshot>();
 		for (int i = 0; i < _ctx.lengthValue("OpsDescribeMountedSnapshotsResponse.MountedSnapshots.Length"); i++) {
 			Snapshot snapshot = new Snapshot();
+			snapshot.setStatus(_ctx.stringValue("OpsDescribeMountedSnapshotsResponse.MountedSnapshots["+ i +"].Status"));
 			snapshot.setResourceOwnerId(_ctx.stringValue("OpsDescribeMountedSnapshotsResponse.MountedSnapshots["+ i +"].ResourceOwnerId"));
 			snapshot.setSnapshotId(_ctx.stringValue("OpsDescribeMountedSnapshotsResponse.MountedSnapshots["+ i +"].SnapshotId"));
-			snapshot.setInstanceId(_ctx.stringValue("OpsDescribeMountedSnapshotsResponse.MountedSnapshots["+ i +"].InstanceId"));
 			snapshot.setLastAttachedTime(_ctx.stringValue("OpsDescribeMountedSnapshotsResponse.MountedSnapshots["+ i +"].LastAttachedTime"));
-			snapshot.setStatus(_ctx.stringValue("OpsDescribeMountedSnapshotsResponse.MountedSnapshots["+ i +"].Status"));
 			snapshot.setDevice(_ctx.stringValue("OpsDescribeMountedSnapshotsResponse.MountedSnapshots["+ i +"].Device"));
+			snapshot.setInstanceId(_ctx.stringValue("OpsDescribeMountedSnapshotsResponse.MountedSnapshots["+ i +"].InstanceId"));
 
 			mountedSnapshots.add(snapshot);
 		}

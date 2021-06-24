@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsListPlanGroupsResponse extends AcsResponse {
 
+	private String message;
+
 	private String requestId;
 
 	private String code;
 
-	private String message;
-
 	private String success;
 
 	private List<PlanGroup> planGroups;
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -49,14 +57,6 @@ public class OpsListPlanGroupsResponse extends AcsResponse {
 
 	public void setCode(String code) {
 		this.code = code;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
 	}
 
 	public String getSuccess() {
@@ -77,13 +77,21 @@ public class OpsListPlanGroupsResponse extends AcsResponse {
 
 	public static class PlanGroup {
 
+		private Boolean required;
+
 		private String groupName;
 
 		private String description;
 
-		private Boolean required;
-
 		private String resourceLevel;
+
+		public Boolean getRequired() {
+			return this.required;
+		}
+
+		public void setRequired(Boolean required) {
+			this.required = required;
+		}
 
 		public String getGroupName() {
 			return this.groupName;
@@ -99,14 +107,6 @@ public class OpsListPlanGroupsResponse extends AcsResponse {
 
 		public void setDescription(String description) {
 			this.description = description;
-		}
-
-		public Boolean getRequired() {
-			return this.required;
-		}
-
-		public void setRequired(Boolean required) {
-			this.required = required;
 		}
 
 		public String getResourceLevel() {

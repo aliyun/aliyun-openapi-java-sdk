@@ -29,9 +29,9 @@ public class OpsDescribeConstraintInvisibleCauseResponse extends AcsResponse {
 
 	private Boolean visible;
 
-	private List<String> causeList;
-
 	private List<String> passedRuleList;
+
+	private List<String> causeList;
 
 	private List<String> failedRuleList;
 
@@ -51,20 +51,20 @@ public class OpsDescribeConstraintInvisibleCauseResponse extends AcsResponse {
 		this.visible = visible;
 	}
 
-	public List<String> getCauseList() {
-		return this.causeList;
-	}
-
-	public void setCauseList(List<String> causeList) {
-		this.causeList = causeList;
-	}
-
 	public List<String> getPassedRuleList() {
 		return this.passedRuleList;
 	}
 
 	public void setPassedRuleList(List<String> passedRuleList) {
 		this.passedRuleList = passedRuleList;
+	}
+
+	public List<String> getCauseList() {
+		return this.causeList;
+	}
+
+	public void setCauseList(List<String> causeList) {
+		this.causeList = causeList;
 	}
 
 	public List<String> getFailedRuleList() {

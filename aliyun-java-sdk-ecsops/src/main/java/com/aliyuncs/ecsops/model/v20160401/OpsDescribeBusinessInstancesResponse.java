@@ -47,90 +47,34 @@ public class OpsDescribeBusinessInstancesResponse extends AcsResponse {
 
 	public static class BusinessInstanceSet {
 
-		private Long id;
-
-		private String tradeInstanceId;
-
-		private String resourceType;
-
-		private String orderType;
-
-		private Long aliUid;
-
-		private String chargeType;
-
-		private String commodityCode;
-
-		private String startDate;
+		private String status;
 
 		private String endDate;
 
+		private String commodityCode;
+
+		private String resourceType;
+
+		private String chargeType;
+
+		private String startDate;
+
+		private Long aliUid;
+
+		private String orderType;
+
 		private String orderId;
 
-		private String status;
+		private String tradeInstanceId;
 
-		public Long getId() {
-			return this.id;
+		private Long id;
+
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setId(Long id) {
-			this.id = id;
-		}
-
-		public String getTradeInstanceId() {
-			return this.tradeInstanceId;
-		}
-
-		public void setTradeInstanceId(String tradeInstanceId) {
-			this.tradeInstanceId = tradeInstanceId;
-		}
-
-		public String getResourceType() {
-			return this.resourceType;
-		}
-
-		public void setResourceType(String resourceType) {
-			this.resourceType = resourceType;
-		}
-
-		public String getOrderType() {
-			return this.orderType;
-		}
-
-		public void setOrderType(String orderType) {
-			this.orderType = orderType;
-		}
-
-		public Long getAliUid() {
-			return this.aliUid;
-		}
-
-		public void setAliUid(Long aliUid) {
-			this.aliUid = aliUid;
-		}
-
-		public String getChargeType() {
-			return this.chargeType;
-		}
-
-		public void setChargeType(String chargeType) {
-			this.chargeType = chargeType;
-		}
-
-		public String getCommodityCode() {
-			return this.commodityCode;
-		}
-
-		public void setCommodityCode(String commodityCode) {
-			this.commodityCode = commodityCode;
-		}
-
-		public String getStartDate() {
-			return this.startDate;
-		}
-
-		public void setStartDate(String startDate) {
-			this.startDate = startDate;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public String getEndDate() {
@@ -141,6 +85,54 @@ public class OpsDescribeBusinessInstancesResponse extends AcsResponse {
 			this.endDate = endDate;
 		}
 
+		public String getCommodityCode() {
+			return this.commodityCode;
+		}
+
+		public void setCommodityCode(String commodityCode) {
+			this.commodityCode = commodityCode;
+		}
+
+		public String getResourceType() {
+			return this.resourceType;
+		}
+
+		public void setResourceType(String resourceType) {
+			this.resourceType = resourceType;
+		}
+
+		public String getChargeType() {
+			return this.chargeType;
+		}
+
+		public void setChargeType(String chargeType) {
+			this.chargeType = chargeType;
+		}
+
+		public String getStartDate() {
+			return this.startDate;
+		}
+
+		public void setStartDate(String startDate) {
+			this.startDate = startDate;
+		}
+
+		public Long getAliUid() {
+			return this.aliUid;
+		}
+
+		public void setAliUid(Long aliUid) {
+			this.aliUid = aliUid;
+		}
+
+		public String getOrderType() {
+			return this.orderType;
+		}
+
+		public void setOrderType(String orderType) {
+			this.orderType = orderType;
+		}
+
 		public String getOrderId() {
 			return this.orderId;
 		}
@@ -149,12 +141,20 @@ public class OpsDescribeBusinessInstancesResponse extends AcsResponse {
 			this.orderId = orderId;
 		}
 
-		public String getStatus() {
-			return this.status;
+		public String getTradeInstanceId() {
+			return this.tradeInstanceId;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
+		public void setTradeInstanceId(String tradeInstanceId) {
+			this.tradeInstanceId = tradeInstanceId;
+		}
+
+		public Long getId() {
+			return this.id;
+		}
+
+		public void setId(Long id) {
+			this.id = id;
 		}
 	}
 

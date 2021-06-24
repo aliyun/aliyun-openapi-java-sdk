@@ -27,35 +27,35 @@ public class OpsDescribeCloudOpsNcDownsResponseUnmarshaller {
 	public static OpsDescribeCloudOpsNcDownsResponse unmarshall(OpsDescribeCloudOpsNcDownsResponse opsDescribeCloudOpsNcDownsResponse, UnmarshallerContext _ctx) {
 		
 		opsDescribeCloudOpsNcDownsResponse.setRequestId(_ctx.stringValue("OpsDescribeCloudOpsNcDownsResponse.RequestId"));
-		opsDescribeCloudOpsNcDownsResponse.setBizCode(_ctx.stringValue("OpsDescribeCloudOpsNcDownsResponse.BizCode"));
-		opsDescribeCloudOpsNcDownsResponse.setBizMessage(_ctx.stringValue("OpsDescribeCloudOpsNcDownsResponse.BizMessage"));
-		opsDescribeCloudOpsNcDownsResponse.setCount(_ctx.integerValue("OpsDescribeCloudOpsNcDownsResponse.Count"));
-		opsDescribeCloudOpsNcDownsResponse.setPage(_ctx.integerValue("OpsDescribeCloudOpsNcDownsResponse.Page"));
-		opsDescribeCloudOpsNcDownsResponse.setPageSize(_ctx.integerValue("OpsDescribeCloudOpsNcDownsResponse.PageSize"));
 		opsDescribeCloudOpsNcDownsResponse.setTotalCount(_ctx.integerValue("OpsDescribeCloudOpsNcDownsResponse.TotalCount"));
+		opsDescribeCloudOpsNcDownsResponse.setPageSize(_ctx.integerValue("OpsDescribeCloudOpsNcDownsResponse.PageSize"));
+		opsDescribeCloudOpsNcDownsResponse.setBizMessage(_ctx.stringValue("OpsDescribeCloudOpsNcDownsResponse.BizMessage"));
+		opsDescribeCloudOpsNcDownsResponse.setPage(_ctx.integerValue("OpsDescribeCloudOpsNcDownsResponse.Page"));
+		opsDescribeCloudOpsNcDownsResponse.setCount(_ctx.integerValue("OpsDescribeCloudOpsNcDownsResponse.Count"));
+		opsDescribeCloudOpsNcDownsResponse.setBizCode(_ctx.stringValue("OpsDescribeCloudOpsNcDownsResponse.BizCode"));
 
 		List<NcDownInfo> data = new ArrayList<NcDownInfo>();
 		for (int i = 0; i < _ctx.lengthValue("OpsDescribeCloudOpsNcDownsResponse.Data.Length"); i++) {
 			NcDownInfo ncDownInfo = new NcDownInfo();
-			ncDownInfo.setAggrDownType(_ctx.stringValue("OpsDescribeCloudOpsNcDownsResponse.Data["+ i +"].AggrDownType"));
-			ncDownInfo.setCluster(_ctx.stringValue("OpsDescribeCloudOpsNcDownsResponse.Data["+ i +"].Cluster"));
-			ncDownInfo.setClusterUsage(_ctx.stringValue("OpsDescribeCloudOpsNcDownsResponse.Data["+ i +"].ClusterUsage"));
-			ncDownInfo.setCreate(_ctx.stringValue("OpsDescribeCloudOpsNcDownsResponse.Data["+ i +"].Create"));
-			ncDownInfo.setDownId(_ctx.stringValue("OpsDescribeCloudOpsNcDownsResponse.Data["+ i +"].DownId"));
-			ncDownInfo.setHeader(_ctx.stringValue("OpsDescribeCloudOpsNcDownsResponse.Data["+ i +"].Header"));
-			ncDownInfo.setHitch(_ctx.integerValue("OpsDescribeCloudOpsNcDownsResponse.Data["+ i +"].Hitch"));
-			ncDownInfo.setHostname(_ctx.stringValue("OpsDescribeCloudOpsNcDownsResponse.Data["+ i +"].Hostname"));
-			ncDownInfo.setId(_ctx.longValue("OpsDescribeCloudOpsNcDownsResponse.Data["+ i +"].Id"));
-			ncDownInfo.setIp(_ctx.stringValue("OpsDescribeCloudOpsNcDownsResponse.Data["+ i +"].Ip"));
 			ncDownInfo.setKelude(_ctx.stringValue("OpsDescribeCloudOpsNcDownsResponse.Data["+ i +"].Kelude"));
-			ncDownInfo.setManufacturer(_ctx.stringValue("OpsDescribeCloudOpsNcDownsResponse.Data["+ i +"].Manufacturer"));
-			ncDownInfo.setNcId(_ctx.stringValue("OpsDescribeCloudOpsNcDownsResponse.Data["+ i +"].NcId"));
-			ncDownInfo.setNcType(_ctx.stringValue("OpsDescribeCloudOpsNcDownsResponse.Data["+ i +"].NcType"));
-			ncDownInfo.setOpsType(_ctx.stringValue("OpsDescribeCloudOpsNcDownsResponse.Data["+ i +"].OpsType"));
-			ncDownInfo.setReason(_ctx.stringValue("OpsDescribeCloudOpsNcDownsResponse.Data["+ i +"].Reason"));
-			ncDownInfo.setRip(_ctx.stringValue("OpsDescribeCloudOpsNcDownsResponse.Data["+ i +"].Rip"));
 			ncDownInfo.setType(_ctx.stringValue("OpsDescribeCloudOpsNcDownsResponse.Data["+ i +"].Type"));
 			ncDownInfo.setVmInfo(_ctx.stringValue("OpsDescribeCloudOpsNcDownsResponse.Data["+ i +"].VmInfo"));
+			ncDownInfo.setHitch(_ctx.integerValue("OpsDescribeCloudOpsNcDownsResponse.Data["+ i +"].Hitch"));
+			ncDownInfo.setCreate(_ctx.stringValue("OpsDescribeCloudOpsNcDownsResponse.Data["+ i +"].Create"));
+			ncDownInfo.setCluster(_ctx.stringValue("OpsDescribeCloudOpsNcDownsResponse.Data["+ i +"].Cluster"));
+			ncDownInfo.setIp(_ctx.stringValue("OpsDescribeCloudOpsNcDownsResponse.Data["+ i +"].Ip"));
+			ncDownInfo.setHostname(_ctx.stringValue("OpsDescribeCloudOpsNcDownsResponse.Data["+ i +"].Hostname"));
+			ncDownInfo.setNcType(_ctx.stringValue("OpsDescribeCloudOpsNcDownsResponse.Data["+ i +"].NcType"));
+			ncDownInfo.setManufacturer(_ctx.stringValue("OpsDescribeCloudOpsNcDownsResponse.Data["+ i +"].Manufacturer"));
+			ncDownInfo.setAggrDownType(_ctx.stringValue("OpsDescribeCloudOpsNcDownsResponse.Data["+ i +"].AggrDownType"));
+			ncDownInfo.setRip(_ctx.stringValue("OpsDescribeCloudOpsNcDownsResponse.Data["+ i +"].Rip"));
+			ncDownInfo.setNcId(_ctx.stringValue("OpsDescribeCloudOpsNcDownsResponse.Data["+ i +"].NcId"));
+			ncDownInfo.setOpsType(_ctx.stringValue("OpsDescribeCloudOpsNcDownsResponse.Data["+ i +"].OpsType"));
+			ncDownInfo.setClusterUsage(_ctx.stringValue("OpsDescribeCloudOpsNcDownsResponse.Data["+ i +"].ClusterUsage"));
+			ncDownInfo.setDownId(_ctx.stringValue("OpsDescribeCloudOpsNcDownsResponse.Data["+ i +"].DownId"));
+			ncDownInfo.setHeader(_ctx.stringValue("OpsDescribeCloudOpsNcDownsResponse.Data["+ i +"].Header"));
+			ncDownInfo.setReason(_ctx.stringValue("OpsDescribeCloudOpsNcDownsResponse.Data["+ i +"].Reason"));
+			ncDownInfo.setId(_ctx.longValue("OpsDescribeCloudOpsNcDownsResponse.Data["+ i +"].Id"));
 
 			data.add(ncDownInfo);
 		}

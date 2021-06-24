@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsDescribeSystemEventMetaResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
 
+	private String requestId;
+
 	private List<EventMeta> eventMetas;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -45,6 +37,14 @@ public class OpsDescribeSystemEventMetaResponse extends AcsResponse {
 
 	public void setTotalCount(Integer totalCount) {
 		this.totalCount = totalCount;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<EventMeta> getEventMetas() {
@@ -57,52 +57,28 @@ public class OpsDescribeSystemEventMetaResponse extends AcsResponse {
 
 	public static class EventMeta {
 
-		private String resourceType;
-
-		private Integer code;
-
-		private String name;
-
-		private Boolean onlyNotification;
+		private Boolean reportCms;
 
 		private String openStatus;
 
-		private String level;
+		private String resourceType;
+
+		private Boolean onlyNotification;
+
+		private Integer code;
 
 		private Boolean supportSimulate;
 
-		private Boolean reportCms;
+		private String name;
 
-		public String getResourceType() {
-			return this.resourceType;
+		private String level;
+
+		public Boolean getReportCms() {
+			return this.reportCms;
 		}
 
-		public void setResourceType(String resourceType) {
-			this.resourceType = resourceType;
-		}
-
-		public Integer getCode() {
-			return this.code;
-		}
-
-		public void setCode(Integer code) {
-			this.code = code;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public Boolean getOnlyNotification() {
-			return this.onlyNotification;
-		}
-
-		public void setOnlyNotification(Boolean onlyNotification) {
-			this.onlyNotification = onlyNotification;
+		public void setReportCms(Boolean reportCms) {
+			this.reportCms = reportCms;
 		}
 
 		public String getOpenStatus() {
@@ -113,12 +89,28 @@ public class OpsDescribeSystemEventMetaResponse extends AcsResponse {
 			this.openStatus = openStatus;
 		}
 
-		public String getLevel() {
-			return this.level;
+		public String getResourceType() {
+			return this.resourceType;
 		}
 
-		public void setLevel(String level) {
-			this.level = level;
+		public void setResourceType(String resourceType) {
+			this.resourceType = resourceType;
+		}
+
+		public Boolean getOnlyNotification() {
+			return this.onlyNotification;
+		}
+
+		public void setOnlyNotification(Boolean onlyNotification) {
+			this.onlyNotification = onlyNotification;
+		}
+
+		public Integer getCode() {
+			return this.code;
+		}
+
+		public void setCode(Integer code) {
+			this.code = code;
 		}
 
 		public Boolean getSupportSimulate() {
@@ -129,12 +121,20 @@ public class OpsDescribeSystemEventMetaResponse extends AcsResponse {
 			this.supportSimulate = supportSimulate;
 		}
 
-		public Boolean getReportCms() {
-			return this.reportCms;
+		public String getName() {
+			return this.name;
 		}
 
-		public void setReportCms(Boolean reportCms) {
-			this.reportCms = reportCms;
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getLevel() {
+			return this.level;
+		}
+
+		public void setLevel(String level) {
+			this.level = level;
 		}
 	}
 

@@ -27,9 +27,9 @@ public class OpsDescribeLockedIpResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String total;
-
 	private String pageSize;
+
+	private String total;
 
 	private String pageNo;
 
@@ -43,20 +43,20 @@ public class OpsDescribeLockedIpResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getTotal() {
-		return this.total;
-	}
-
-	public void setTotal(String total) {
-		this.total = total;
-	}
-
 	public String getPageSize() {
 		return this.pageSize;
 	}
 
 	public void setPageSize(String pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public String getTotal() {
+		return this.total;
+	}
+
+	public void setTotal(String total) {
+		this.total = total;
 	}
 
 	public String getPageNo() {
@@ -77,20 +77,20 @@ public class OpsDescribeLockedIpResponse extends AcsResponse {
 
 	public static class LockedIp {
 
-		private String iP;
+		private String lockType;
 
 		private String ipType;
 
 		private String lockReason;
 
-		private String lockType;
+		private String iP;
 
-		public String getIP() {
-			return this.iP;
+		public String getLockType() {
+			return this.lockType;
 		}
 
-		public void setIP(String iP) {
-			this.iP = iP;
+		public void setLockType(String lockType) {
+			this.lockType = lockType;
 		}
 
 		public String getIpType() {
@@ -109,12 +109,12 @@ public class OpsDescribeLockedIpResponse extends AcsResponse {
 			this.lockReason = lockReason;
 		}
 
-		public String getLockType() {
-			return this.lockType;
+		public String getIP() {
+			return this.iP;
 		}
 
-		public void setLockType(String lockType) {
-			this.lockType = lockType;
+		public void setIP(String iP) {
+			this.iP = iP;
 		}
 	}
 

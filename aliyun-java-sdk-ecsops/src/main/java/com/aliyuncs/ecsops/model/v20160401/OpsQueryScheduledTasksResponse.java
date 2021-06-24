@@ -57,34 +57,26 @@ public class OpsQueryScheduledTasksResponse extends AcsResponse {
 
 	public static class ScheduledTaskConfig {
 
-		private Long id;
-
-		private String name;
+		private Integer concurrentHandleCount;
 
 		private Integer size;
 
-		private Integer concurrentHandleCount;
+		private Integer taskExecuteTimeout;
+
+		private String name;
+
+		private Long id;
 
 		private Integer taskPendingTimeout;
 
-		private Integer taskExecuteTimeout;
-
 		private ScheduleFactory scheduleFactory;
 
-		public Long getId() {
-			return this.id;
+		public Integer getConcurrentHandleCount() {
+			return this.concurrentHandleCount;
 		}
 
-		public void setId(Long id) {
-			this.id = id;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
+		public void setConcurrentHandleCount(Integer concurrentHandleCount) {
+			this.concurrentHandleCount = concurrentHandleCount;
 		}
 
 		public Integer getSize() {
@@ -95,12 +87,28 @@ public class OpsQueryScheduledTasksResponse extends AcsResponse {
 			this.size = size;
 		}
 
-		public Integer getConcurrentHandleCount() {
-			return this.concurrentHandleCount;
+		public Integer getTaskExecuteTimeout() {
+			return this.taskExecuteTimeout;
 		}
 
-		public void setConcurrentHandleCount(Integer concurrentHandleCount) {
-			this.concurrentHandleCount = concurrentHandleCount;
+		public void setTaskExecuteTimeout(Integer taskExecuteTimeout) {
+			this.taskExecuteTimeout = taskExecuteTimeout;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public Long getId() {
+			return this.id;
+		}
+
+		public void setId(Long id) {
+			this.id = id;
 		}
 
 		public Integer getTaskPendingTimeout() {
@@ -109,14 +117,6 @@ public class OpsQueryScheduledTasksResponse extends AcsResponse {
 
 		public void setTaskPendingTimeout(Integer taskPendingTimeout) {
 			this.taskPendingTimeout = taskPendingTimeout;
-		}
-
-		public Integer getTaskExecuteTimeout() {
-			return this.taskExecuteTimeout;
-		}
-
-		public void setTaskExecuteTimeout(Integer taskExecuteTimeout) {
-			this.taskExecuteTimeout = taskExecuteTimeout;
 		}
 
 		public ScheduleFactory getScheduleFactory() {
@@ -129,21 +129,13 @@ public class OpsQueryScheduledTasksResponse extends AcsResponse {
 
 		public static class ScheduleFactory {
 
-			private String taskName;
-
 			private Long maxSize;
+
+			private String taskName;
 
 			private Integer concurrentSize;
 
 			private List<ScheduleConfig> scheduleConfigs;
-
-			public String getTaskName() {
-				return this.taskName;
-			}
-
-			public void setTaskName(String taskName) {
-				this.taskName = taskName;
-			}
 
 			public Long getMaxSize() {
 				return this.maxSize;
@@ -151,6 +143,14 @@ public class OpsQueryScheduledTasksResponse extends AcsResponse {
 
 			public void setMaxSize(Long maxSize) {
 				this.maxSize = maxSize;
+			}
+
+			public String getTaskName() {
+				return this.taskName;
+			}
+
+			public void setTaskName(String taskName) {
+				this.taskName = taskName;
 			}
 
 			public Integer getConcurrentSize() {
@@ -171,19 +171,11 @@ public class OpsQueryScheduledTasksResponse extends AcsResponse {
 
 			public static class ScheduleConfig {
 
-				private String scheduleFactor;
-
 				private Long maxSize;
 
+				private String scheduleFactor;
+
 				private Integer concurrentSize;
-
-				public String getScheduleFactor() {
-					return this.scheduleFactor;
-				}
-
-				public void setScheduleFactor(String scheduleFactor) {
-					this.scheduleFactor = scheduleFactor;
-				}
 
 				public Long getMaxSize() {
 					return this.maxSize;
@@ -191,6 +183,14 @@ public class OpsQueryScheduledTasksResponse extends AcsResponse {
 
 				public void setMaxSize(Long maxSize) {
 					this.maxSize = maxSize;
+				}
+
+				public String getScheduleFactor() {
+					return this.scheduleFactor;
+				}
+
+				public void setScheduleFactor(String scheduleFactor) {
+					this.scheduleFactor = scheduleFactor;
 				}
 
 				public Integer getConcurrentSize() {

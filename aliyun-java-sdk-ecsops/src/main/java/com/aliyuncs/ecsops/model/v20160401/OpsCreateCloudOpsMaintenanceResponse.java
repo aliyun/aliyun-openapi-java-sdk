@@ -26,11 +26,11 @@ public class OpsCreateCloudOpsMaintenanceResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String bizMessage;
+
 	private Integer data;
 
 	private String bizCode;
-
-	private String bizMessage;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,6 +38,14 @@ public class OpsCreateCloudOpsMaintenanceResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getBizMessage() {
+		return this.bizMessage;
+	}
+
+	public void setBizMessage(String bizMessage) {
+		this.bizMessage = bizMessage;
 	}
 
 	public Integer getData() {
@@ -54,14 +62,6 @@ public class OpsCreateCloudOpsMaintenanceResponse extends AcsResponse {
 
 	public void setBizCode(String bizCode) {
 		this.bizCode = bizCode;
-	}
-
-	public String getBizMessage() {
-		return this.bizMessage;
-	}
-
-	public void setBizMessage(String bizMessage) {
-		this.bizMessage = bizMessage;
 	}
 
 	@Override

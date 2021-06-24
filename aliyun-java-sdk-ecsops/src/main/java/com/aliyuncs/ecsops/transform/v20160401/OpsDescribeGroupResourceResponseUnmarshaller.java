@@ -29,9 +29,9 @@ public class OpsDescribeGroupResourceResponseUnmarshaller {
 		opsDescribeGroupResourceResponse.setRequestId(_ctx.stringValue("OpsDescribeGroupResourceResponse.RequestId"));
 
 		Data data = new Data();
-		data.setGroupId(_ctx.longValue("OpsDescribeGroupResourceResponse.Data.GroupId"));
 		data.setVpcId(_ctx.stringValue("OpsDescribeGroupResourceResponse.Data.VpcId"));
 		data.setGroupNo(_ctx.stringValue("OpsDescribeGroupResourceResponse.Data.GroupNo"));
+		data.setGroupId(_ctx.longValue("OpsDescribeGroupResourceResponse.Data.GroupId"));
 		data.setGroupDesc(_ctx.stringValue("OpsDescribeGroupResourceResponse.Data.GroupDesc"));
 
 		List<String> dirtyVms = new ArrayList<String>();

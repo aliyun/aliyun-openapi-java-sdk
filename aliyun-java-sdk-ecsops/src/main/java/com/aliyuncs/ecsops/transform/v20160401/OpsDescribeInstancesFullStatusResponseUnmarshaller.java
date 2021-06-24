@@ -33,8 +33,8 @@ public class OpsDescribeInstancesFullStatusResponseUnmarshaller {
 		
 		opsDescribeInstancesFullStatusResponse.setRequestId(_ctx.stringValue("OpsDescribeInstancesFullStatusResponse.RequestId"));
 		opsDescribeInstancesFullStatusResponse.setTotalCount(_ctx.integerValue("OpsDescribeInstancesFullStatusResponse.TotalCount"));
-		opsDescribeInstancesFullStatusResponse.setPageNumber(_ctx.integerValue("OpsDescribeInstancesFullStatusResponse.PageNumber"));
 		opsDescribeInstancesFullStatusResponse.setPageSize(_ctx.integerValue("OpsDescribeInstancesFullStatusResponse.PageSize"));
+		opsDescribeInstancesFullStatusResponse.setPageNumber(_ctx.integerValue("OpsDescribeInstancesFullStatusResponse.PageNumber"));
 
 		List<InstanceFullStatusType> instanceFullStatusSet = new ArrayList<InstanceFullStatusType>();
 		for (int i = 0; i < _ctx.lengthValue("OpsDescribeInstancesFullStatusResponse.InstanceFullStatusSet.Length"); i++) {
@@ -55,19 +55,19 @@ public class OpsDescribeInstancesFullStatusResponseUnmarshaller {
 			for (int j = 0; j < _ctx.lengthValue("OpsDescribeInstancesFullStatusResponse.InstanceFullStatusSet["+ i +"].ScheduledSystemEventSet.Length"); j++) {
 				ScheduledSystemEventType scheduledSystemEventType = new ScheduledSystemEventType();
 				scheduledSystemEventType.setEventId(_ctx.stringValue("OpsDescribeInstancesFullStatusResponse.InstanceFullStatusSet["+ i +"].ScheduledSystemEventSet["+ j +"].EventId"));
-				scheduledSystemEventType.setEventInitiateBy(_ctx.stringValue("OpsDescribeInstancesFullStatusResponse.InstanceFullStatusSet["+ i +"].ScheduledSystemEventSet["+ j +"].EventInitiateBy"));
 				scheduledSystemEventType.setEventPublishTime(_ctx.stringValue("OpsDescribeInstancesFullStatusResponse.InstanceFullStatusSet["+ i +"].ScheduledSystemEventSet["+ j +"].EventPublishTime"));
 				scheduledSystemEventType.setNotBefore(_ctx.stringValue("OpsDescribeInstancesFullStatusResponse.InstanceFullStatusSet["+ i +"].ScheduledSystemEventSet["+ j +"].NotBefore"));
-
-				EventCycleStatus eventCycleStatus = new EventCycleStatus();
-				eventCycleStatus.setCode(_ctx.integerValue("OpsDescribeInstancesFullStatusResponse.InstanceFullStatusSet["+ i +"].ScheduledSystemEventSet["+ j +"].EventCycleStatus.Code"));
-				eventCycleStatus.setName(_ctx.stringValue("OpsDescribeInstancesFullStatusResponse.InstanceFullStatusSet["+ i +"].ScheduledSystemEventSet["+ j +"].EventCycleStatus.Name"));
-				scheduledSystemEventType.setEventCycleStatus(eventCycleStatus);
+				scheduledSystemEventType.setEventInitiateBy(_ctx.stringValue("OpsDescribeInstancesFullStatusResponse.InstanceFullStatusSet["+ i +"].ScheduledSystemEventSet["+ j +"].EventInitiateBy"));
 
 				EventType eventType = new EventType();
 				eventType.setCode(_ctx.integerValue("OpsDescribeInstancesFullStatusResponse.InstanceFullStatusSet["+ i +"].ScheduledSystemEventSet["+ j +"].EventType.Code"));
 				eventType.setName(_ctx.stringValue("OpsDescribeInstancesFullStatusResponse.InstanceFullStatusSet["+ i +"].ScheduledSystemEventSet["+ j +"].EventType.Name"));
 				scheduledSystemEventType.setEventType(eventType);
+
+				EventCycleStatus eventCycleStatus = new EventCycleStatus();
+				eventCycleStatus.setCode(_ctx.integerValue("OpsDescribeInstancesFullStatusResponse.InstanceFullStatusSet["+ i +"].ScheduledSystemEventSet["+ j +"].EventCycleStatus.Code"));
+				eventCycleStatus.setName(_ctx.stringValue("OpsDescribeInstancesFullStatusResponse.InstanceFullStatusSet["+ i +"].ScheduledSystemEventSet["+ j +"].EventCycleStatus.Name"));
+				scheduledSystemEventType.setEventCycleStatus(eventCycleStatus);
 
 				scheduledSystemEventSet.add(scheduledSystemEventType);
 			}

@@ -29,20 +29,14 @@ public class OpsQueryForIzResourceModifyResponseUnmarshaller {
 		
 		opsQueryForIzResourceModifyResponse.setRequestId(_ctx.stringValue("OpsQueryForIzResourceModifyResponse.RequestId"));
 		opsQueryForIzResourceModifyResponse.setZoneId(_ctx.stringValue("OpsQueryForIzResourceModifyResponse.ZoneId"));
-		opsQueryForIzResourceModifyResponse.setLocalName(_ctx.stringValue("OpsQueryForIzResourceModifyResponse.LocalName"));
 		opsQueryForIzResourceModifyResponse.setDeployedInstanceTypeToStatus(_ctx.mapValue("OpsQueryForIzResourceModifyResponse.DeployedInstanceTypeToStatus"));
+		opsQueryForIzResourceModifyResponse.setLocalName(_ctx.stringValue("OpsQueryForIzResourceModifyResponse.LocalName"));
 
-		List<String> availableResourceCreation = new ArrayList<String>();
-		for (int i = 0; i < _ctx.lengthValue("OpsQueryForIzResourceModifyResponse.AvailableResourceCreation.Length"); i++) {
-			availableResourceCreation.add(_ctx.stringValue("OpsQueryForIzResourceModifyResponse.AvailableResourceCreation["+ i +"]"));
+		List<String> dedicatedHostGenerations = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("OpsQueryForIzResourceModifyResponse.DedicatedHostGenerations.Length"); i++) {
+			dedicatedHostGenerations.add(_ctx.stringValue("OpsQueryForIzResourceModifyResponse.DedicatedHostGenerations["+ i +"]"));
 		}
-		opsQueryForIzResourceModifyResponse.setAvailableResourceCreation(availableResourceCreation);
-
-		List<String> availableDiskCategories = new ArrayList<String>();
-		for (int i = 0; i < _ctx.lengthValue("OpsQueryForIzResourceModifyResponse.AvailableDiskCategories.Length"); i++) {
-			availableDiskCategories.add(_ctx.stringValue("OpsQueryForIzResourceModifyResponse.AvailableDiskCategories["+ i +"]"));
-		}
-		opsQueryForIzResourceModifyResponse.setAvailableDiskCategories(availableDiskCategories);
+		opsQueryForIzResourceModifyResponse.setDedicatedHostGenerations(dedicatedHostGenerations);
 
 		List<String> availableInstanceTypes = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("OpsQueryForIzResourceModifyResponse.AvailableInstanceTypes.Length"); i++) {
@@ -50,23 +44,29 @@ public class OpsQueryForIzResourceModifyResponseUnmarshaller {
 		}
 		opsQueryForIzResourceModifyResponse.setAvailableInstanceTypes(availableInstanceTypes);
 
-		List<String> availableVolumeCategories = new ArrayList<String>();
-		for (int i = 0; i < _ctx.lengthValue("OpsQueryForIzResourceModifyResponse.AvailableVolumeCategories.Length"); i++) {
-			availableVolumeCategories.add(_ctx.stringValue("OpsQueryForIzResourceModifyResponse.AvailableVolumeCategories["+ i +"]"));
-		}
-		opsQueryForIzResourceModifyResponse.setAvailableVolumeCategories(availableVolumeCategories);
-
 		List<String> availableDedicatedHostTypes = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("OpsQueryForIzResourceModifyResponse.AvailableDedicatedHostTypes.Length"); i++) {
 			availableDedicatedHostTypes.add(_ctx.stringValue("OpsQueryForIzResourceModifyResponse.AvailableDedicatedHostTypes["+ i +"]"));
 		}
 		opsQueryForIzResourceModifyResponse.setAvailableDedicatedHostTypes(availableDedicatedHostTypes);
 
-		List<String> dedicatedHostGenerations = new ArrayList<String>();
-		for (int i = 0; i < _ctx.lengthValue("OpsQueryForIzResourceModifyResponse.DedicatedHostGenerations.Length"); i++) {
-			dedicatedHostGenerations.add(_ctx.stringValue("OpsQueryForIzResourceModifyResponse.DedicatedHostGenerations["+ i +"]"));
+		List<String> availableDiskCategories = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("OpsQueryForIzResourceModifyResponse.AvailableDiskCategories.Length"); i++) {
+			availableDiskCategories.add(_ctx.stringValue("OpsQueryForIzResourceModifyResponse.AvailableDiskCategories["+ i +"]"));
 		}
-		opsQueryForIzResourceModifyResponse.setDedicatedHostGenerations(dedicatedHostGenerations);
+		opsQueryForIzResourceModifyResponse.setAvailableDiskCategories(availableDiskCategories);
+
+		List<String> availableResourceCreation = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("OpsQueryForIzResourceModifyResponse.AvailableResourceCreation.Length"); i++) {
+			availableResourceCreation.add(_ctx.stringValue("OpsQueryForIzResourceModifyResponse.AvailableResourceCreation["+ i +"]"));
+		}
+		opsQueryForIzResourceModifyResponse.setAvailableResourceCreation(availableResourceCreation);
+
+		List<String> availableVolumeCategories = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("OpsQueryForIzResourceModifyResponse.AvailableVolumeCategories.Length"); i++) {
+			availableVolumeCategories.add(_ctx.stringValue("OpsQueryForIzResourceModifyResponse.AvailableVolumeCategories["+ i +"]"));
+		}
+		opsQueryForIzResourceModifyResponse.setAvailableVolumeCategories(availableVolumeCategories);
 
 		List<ResourcesInfo> availableResources = new ArrayList<ResourcesInfo>();
 		for (int i = 0; i < _ctx.lengthValue("OpsQueryForIzResourceModifyResponse.AvailableResources.Length"); i++) {
@@ -80,17 +80,17 @@ public class OpsQueryForIzResourceModifyResponseUnmarshaller {
 			}
 			resourcesInfo.setSystemDiskCategories(systemDiskCategories);
 
+			List<String> instanceGenerations = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("OpsQueryForIzResourceModifyResponse.AvailableResources["+ i +"].InstanceGenerations.Length"); j++) {
+				instanceGenerations.add(_ctx.stringValue("OpsQueryForIzResourceModifyResponse.AvailableResources["+ i +"].InstanceGenerations["+ j +"]"));
+			}
+			resourcesInfo.setInstanceGenerations(instanceGenerations);
+
 			List<String> dataDiskCategories = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("OpsQueryForIzResourceModifyResponse.AvailableResources["+ i +"].DataDiskCategories.Length"); j++) {
 				dataDiskCategories.add(_ctx.stringValue("OpsQueryForIzResourceModifyResponse.AvailableResources["+ i +"].DataDiskCategories["+ j +"]"));
 			}
 			resourcesInfo.setDataDiskCategories(dataDiskCategories);
-
-			List<String> networkTypes = new ArrayList<String>();
-			for (int j = 0; j < _ctx.lengthValue("OpsQueryForIzResourceModifyResponse.AvailableResources["+ i +"].NetworkTypes.Length"); j++) {
-				networkTypes.add(_ctx.stringValue("OpsQueryForIzResourceModifyResponse.AvailableResources["+ i +"].NetworkTypes["+ j +"]"));
-			}
-			resourcesInfo.setNetworkTypes(networkTypes);
 
 			List<String> instanceTypes = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("OpsQueryForIzResourceModifyResponse.AvailableResources["+ i +"].InstanceTypes.Length"); j++) {
@@ -104,11 +104,11 @@ public class OpsQueryForIzResourceModifyResponseUnmarshaller {
 			}
 			resourcesInfo.setInstanceTypeFamilies(instanceTypeFamilies);
 
-			List<String> instanceGenerations = new ArrayList<String>();
-			for (int j = 0; j < _ctx.lengthValue("OpsQueryForIzResourceModifyResponse.AvailableResources["+ i +"].InstanceGenerations.Length"); j++) {
-				instanceGenerations.add(_ctx.stringValue("OpsQueryForIzResourceModifyResponse.AvailableResources["+ i +"].InstanceGenerations["+ j +"]"));
+			List<String> networkTypes = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("OpsQueryForIzResourceModifyResponse.AvailableResources["+ i +"].NetworkTypes.Length"); j++) {
+				networkTypes.add(_ctx.stringValue("OpsQueryForIzResourceModifyResponse.AvailableResources["+ i +"].NetworkTypes["+ j +"]"));
 			}
-			resourcesInfo.setInstanceGenerations(instanceGenerations);
+			resourcesInfo.setNetworkTypes(networkTypes);
 
 			availableResources.add(resourcesInfo);
 		}

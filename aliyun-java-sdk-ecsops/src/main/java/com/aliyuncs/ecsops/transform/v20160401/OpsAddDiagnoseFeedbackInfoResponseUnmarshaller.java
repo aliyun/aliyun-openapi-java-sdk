@@ -32,24 +32,24 @@ public class OpsAddDiagnoseFeedbackInfoResponseUnmarshaller {
 		List<DiagnoseFeedbackContent> diagnoseFeedbackContents = new ArrayList<DiagnoseFeedbackContent>();
 		for (int i = 0; i < _ctx.lengthValue("OpsAddDiagnoseFeedbackInfoResponse.DiagnoseFeedbackContents.Length"); i++) {
 			DiagnoseFeedbackContent diagnoseFeedbackContent = new DiagnoseFeedbackContent();
-			diagnoseFeedbackContent.setMachineId(_ctx.stringValue("OpsAddDiagnoseFeedbackInfoResponse.DiagnoseFeedbackContents["+ i +"].MachineId"));
-			diagnoseFeedbackContent.setNcIp(_ctx.stringValue("OpsAddDiagnoseFeedbackInfoResponse.DiagnoseFeedbackContents["+ i +"].NcIp"));
-			diagnoseFeedbackContent.setSrcExceptionName(_ctx.stringValue("OpsAddDiagnoseFeedbackInfoResponse.DiagnoseFeedbackContents["+ i +"].SrcExceptionName"));
-			diagnoseFeedbackContent.setSrcExceptionType(_ctx.stringValue("OpsAddDiagnoseFeedbackInfoResponse.DiagnoseFeedbackContents["+ i +"].SrcExceptionType"));
-			diagnoseFeedbackContent.setSrcExceptionTime(_ctx.stringValue("OpsAddDiagnoseFeedbackInfoResponse.DiagnoseFeedbackContents["+ i +"].SrcExceptionTime"));
-			diagnoseFeedbackContent.setSrcReason(_ctx.stringValue("OpsAddDiagnoseFeedbackInfoResponse.DiagnoseFeedbackContents["+ i +"].SrcReason"));
 			diagnoseFeedbackContent.setSrcErrorDesc(_ctx.stringValue("OpsAddDiagnoseFeedbackInfoResponse.DiagnoseFeedbackContents["+ i +"].SrcErrorDesc"));
-			diagnoseFeedbackContent.setSrcTeams(_ctx.stringValue("OpsAddDiagnoseFeedbackInfoResponse.DiagnoseFeedbackContents["+ i +"].SrcTeams"));
 			diagnoseFeedbackContent.setCompareResult(_ctx.stringValue("OpsAddDiagnoseFeedbackInfoResponse.DiagnoseFeedbackContents["+ i +"].CompareResult"));
-			diagnoseFeedbackContent.setMatchedFeatures(_ctx.stringValue("OpsAddDiagnoseFeedbackInfoResponse.DiagnoseFeedbackContents["+ i +"].MatchedFeatures"));
+			diagnoseFeedbackContent.setSrcExceptionName(_ctx.stringValue("OpsAddDiagnoseFeedbackInfoResponse.DiagnoseFeedbackContents["+ i +"].SrcExceptionName"));
 			diagnoseFeedbackContent.setSuggestExceptionName(_ctx.stringValue("OpsAddDiagnoseFeedbackInfoResponse.DiagnoseFeedbackContents["+ i +"].SuggestExceptionName"));
-			diagnoseFeedbackContent.setSuggestReason(_ctx.stringValue("OpsAddDiagnoseFeedbackInfoResponse.DiagnoseFeedbackContents["+ i +"].SuggestReason"));
+			diagnoseFeedbackContent.setFeedbackUserId(_ctx.stringValue("OpsAddDiagnoseFeedbackInfoResponse.DiagnoseFeedbackContents["+ i +"].FeedbackUserId"));
+			diagnoseFeedbackContent.setNcIp(_ctx.stringValue("OpsAddDiagnoseFeedbackInfoResponse.DiagnoseFeedbackContents["+ i +"].NcIp"));
+			diagnoseFeedbackContent.setSrcTeams(_ctx.stringValue("OpsAddDiagnoseFeedbackInfoResponse.DiagnoseFeedbackContents["+ i +"].SrcTeams"));
+			diagnoseFeedbackContent.setSrcExceptionTime(_ctx.stringValue("OpsAddDiagnoseFeedbackInfoResponse.DiagnoseFeedbackContents["+ i +"].SrcExceptionTime"));
+			diagnoseFeedbackContent.setGmtCreated(_ctx.stringValue("OpsAddDiagnoseFeedbackInfoResponse.DiagnoseFeedbackContents["+ i +"].GmtCreated"));
+			diagnoseFeedbackContent.setSrcExceptionType(_ctx.stringValue("OpsAddDiagnoseFeedbackInfoResponse.DiagnoseFeedbackContents["+ i +"].SrcExceptionType"));
+			diagnoseFeedbackContent.setMatchedFeatures(_ctx.stringValue("OpsAddDiagnoseFeedbackInfoResponse.DiagnoseFeedbackContents["+ i +"].MatchedFeatures"));
 			diagnoseFeedbackContent.setSuggestErrorDesc(_ctx.stringValue("OpsAddDiagnoseFeedbackInfoResponse.DiagnoseFeedbackContents["+ i +"].SuggestErrorDesc"));
 			diagnoseFeedbackContent.setSuggestTeams(_ctx.stringValue("OpsAddDiagnoseFeedbackInfoResponse.DiagnoseFeedbackContents["+ i +"].SuggestTeams"));
-			diagnoseFeedbackContent.setSuggestOthers(_ctx.stringValue("OpsAddDiagnoseFeedbackInfoResponse.DiagnoseFeedbackContents["+ i +"].SuggestOthers"));
-			diagnoseFeedbackContent.setFeedbackUserId(_ctx.stringValue("OpsAddDiagnoseFeedbackInfoResponse.DiagnoseFeedbackContents["+ i +"].FeedbackUserId"));
 			diagnoseFeedbackContent.setFeedbackUserName(_ctx.stringValue("OpsAddDiagnoseFeedbackInfoResponse.DiagnoseFeedbackContents["+ i +"].FeedbackUserName"));
-			diagnoseFeedbackContent.setGmtCreated(_ctx.stringValue("OpsAddDiagnoseFeedbackInfoResponse.DiagnoseFeedbackContents["+ i +"].GmtCreated"));
+			diagnoseFeedbackContent.setSuggestOthers(_ctx.stringValue("OpsAddDiagnoseFeedbackInfoResponse.DiagnoseFeedbackContents["+ i +"].SuggestOthers"));
+			diagnoseFeedbackContent.setSrcReason(_ctx.stringValue("OpsAddDiagnoseFeedbackInfoResponse.DiagnoseFeedbackContents["+ i +"].SrcReason"));
+			diagnoseFeedbackContent.setSuggestReason(_ctx.stringValue("OpsAddDiagnoseFeedbackInfoResponse.DiagnoseFeedbackContents["+ i +"].SuggestReason"));
+			diagnoseFeedbackContent.setMachineId(_ctx.stringValue("OpsAddDiagnoseFeedbackInfoResponse.DiagnoseFeedbackContents["+ i +"].MachineId"));
 
 			diagnoseFeedbackContents.add(diagnoseFeedbackContent);
 		}

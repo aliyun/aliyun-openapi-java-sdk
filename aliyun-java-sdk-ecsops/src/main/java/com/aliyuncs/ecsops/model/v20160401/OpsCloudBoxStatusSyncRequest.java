@@ -17,7 +17,6 @@ package com.aliyuncs.ecsops.model.v20160401;
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
 import com.aliyuncs.http.MethodType;
-import com.aliyuncs.ecsops.Endpoint;
 
 /**
  * @author auto create
@@ -30,18 +29,14 @@ public class OpsCloudBoxStatusSyncRequest extends RpcAcsRequest<OpsCloudBoxStatu
 
 	private String comment;
 
-	private List<String> snModels;
+	private List<SnModel> snModels;
 
 	private String auditParamStr;
 
 	private String status;
 	public OpsCloudBoxStatusSyncRequest() {
-		super("Ecsops", "2016-04-01", "OpsCloudBoxStatusSync", "ecs");
+		super("Ecsops", "2016-04-01", "OpsCloudBoxStatusSync", "ecsops");
 		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
 	}
 
 	public String getDemandId() {
@@ -66,15 +61,22 @@ public class OpsCloudBoxStatusSyncRequest extends RpcAcsRequest<OpsCloudBoxStatu
 		}
 	}
 
-	public List<String> getSnModels() {
+	public List<SnModel> getSnModels() {
 		return this.snModels;
 	}
 
-	public void setSnModels(List<String> snModels) {
+	public void setSnModels(List<SnModel> snModels) {
 		this.snModels = snModels;	
 		if (snModels != null) {
-			for (int i = 0; i < snModels.size(); i++) {
-				putQueryParameter("SnModel." + (i + 1) , snModels.get(i));
+			for (int depth1 = 0; depth1 < snModels.size(); depth1++) {
+				putQueryParameter("SnModel." + (depth1 + 1) + ".Product" , snModels.get(depth1).getProduct());
+				putQueryParameter("SnModel." + (depth1 + 1) + ".ArmoryGroup" , snModels.get(depth1).getArmoryGroup());
+				if (snModels.get(depth1).getSnss() != null) {
+					for (int i = 0; i < snModels.get(depth1).getSnss().size(); i++) {
+						putQueryParameter("SnModel." + (depth1 + 1) + ".Sns." + (i + 1) , snModels.get(depth1).getSnss().get(i));
+					}
+				}
+				putQueryParameter("SnModel." + (depth1 + 1) + ".Type" , snModels.get(depth1).getType());
 			}
 		}	
 	}
@@ -98,6 +100,49 @@ public class OpsCloudBoxStatusSyncRequest extends RpcAcsRequest<OpsCloudBoxStatu
 		this.status = status;
 		if(status != null){
 			putQueryParameter("Status", status);
+		}
+	}
+
+	public static class SnModel {
+
+		private String product;
+
+		private String armoryGroup;
+
+		private List<String> snss;
+
+		private String type;
+
+		public String getProduct() {
+			return this.product;
+		}
+
+		public void setProduct(String product) {
+			this.product = product;
+		}
+
+		public String getArmoryGroup() {
+			return this.armoryGroup;
+		}
+
+		public void setArmoryGroup(String armoryGroup) {
+			this.armoryGroup = armoryGroup;
+		}
+
+		public List<String> getSnss() {
+			return this.snss;
+		}
+
+		public void setSnss(List<String> snss) {
+			this.snss = snss;
+		}
+
+		public String getType() {
+			return this.type;
+		}
+
+		public void setType(String type) {
+			this.type = type;
 		}
 	}
 

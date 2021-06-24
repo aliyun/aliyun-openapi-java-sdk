@@ -31,13 +31,13 @@ public class OpsEcsStatusDiagnoseResponseUnmarshaller {
 		List<EcsStatusDiagnose> ecsStatusDiagnoseSet = new ArrayList<EcsStatusDiagnose>();
 		for (int i = 0; i < _ctx.lengthValue("OpsEcsStatusDiagnoseResponse.EcsStatusDiagnoseSet.Length"); i++) {
 			EcsStatusDiagnose ecsStatusDiagnose = new EcsStatusDiagnose();
-			ecsStatusDiagnose.setInstanceId(_ctx.stringValue("OpsEcsStatusDiagnoseResponse.EcsStatusDiagnoseSet["+ i +"].InstanceId"));
 			ecsStatusDiagnose.setStatus(_ctx.stringValue("OpsEcsStatusDiagnoseResponse.EcsStatusDiagnoseSet["+ i +"].Status"));
-			ecsStatusDiagnose.setHouyiStatus(_ctx.stringValue("OpsEcsStatusDiagnoseResponse.EcsStatusDiagnoseSet["+ i +"].HouyiStatus"));
-			ecsStatusDiagnose.setStatusOnNc(_ctx.stringValue("OpsEcsStatusDiagnoseResponse.EcsStatusDiagnoseSet["+ i +"].StatusOnNc"));
-			ecsStatusDiagnose.setYaochiConsistent(_ctx.booleanValue("OpsEcsStatusDiagnoseResponse.EcsStatusDiagnoseSet["+ i +"].YaochiConsistent"));
 			ecsStatusDiagnose.setHouyiConsistent(_ctx.booleanValue("OpsEcsStatusDiagnoseResponse.EcsStatusDiagnoseSet["+ i +"].HouyiConsistent"));
 			ecsStatusDiagnose.setSyncResult(_ctx.stringValue("OpsEcsStatusDiagnoseResponse.EcsStatusDiagnoseSet["+ i +"].SyncResult"));
+			ecsStatusDiagnose.setHouyiStatus(_ctx.stringValue("OpsEcsStatusDiagnoseResponse.EcsStatusDiagnoseSet["+ i +"].HouyiStatus"));
+			ecsStatusDiagnose.setStatusOnNc(_ctx.stringValue("OpsEcsStatusDiagnoseResponse.EcsStatusDiagnoseSet["+ i +"].StatusOnNc"));
+			ecsStatusDiagnose.setInstanceId(_ctx.stringValue("OpsEcsStatusDiagnoseResponse.EcsStatusDiagnoseSet["+ i +"].InstanceId"));
+			ecsStatusDiagnose.setYaochiConsistent(_ctx.booleanValue("OpsEcsStatusDiagnoseResponse.EcsStatusDiagnoseSet["+ i +"].YaochiConsistent"));
 
 			ecsStatusDiagnoseSet.add(ecsStatusDiagnose);
 		}

@@ -47,64 +47,40 @@ public class OpsQueryMonitorConfigsResponse extends AcsResponse {
 
 	public static class MonitorConfig {
 
-		private String owner;
-
-		private String category;
-
-		private Boolean enable;
-
-		private String monitorItem;
+		private Integer timeout;
 
 		private String monitorCodeFile;
 
 		private String trigger;
 
-		private Integer timeout;
+		private String owner;
 
-		private Integer totalSeconds;
+		private String monitorItem;
 
 		private String executor;
 
 		private String description;
 
+		private Integer totalSeconds;
+
+		private String category;
+
+		private Boolean enable;
+
 		private List<MonitorResultKey> monitorResultKeys;
 
 		private List<String> monitorResultFiles;
 
-		private Exclusion exclusion;
-
 		private Inclusion inclusion;
 
-		public String getOwner() {
-			return this.owner;
+		private Exclusion exclusion;
+
+		public Integer getTimeout() {
+			return this.timeout;
 		}
 
-		public void setOwner(String owner) {
-			this.owner = owner;
-		}
-
-		public String getCategory() {
-			return this.category;
-		}
-
-		public void setCategory(String category) {
-			this.category = category;
-		}
-
-		public Boolean getEnable() {
-			return this.enable;
-		}
-
-		public void setEnable(Boolean enable) {
-			this.enable = enable;
-		}
-
-		public String getMonitorItem() {
-			return this.monitorItem;
-		}
-
-		public void setMonitorItem(String monitorItem) {
-			this.monitorItem = monitorItem;
+		public void setTimeout(Integer timeout) {
+			this.timeout = timeout;
 		}
 
 		public String getMonitorCodeFile() {
@@ -123,20 +99,20 @@ public class OpsQueryMonitorConfigsResponse extends AcsResponse {
 			this.trigger = trigger;
 		}
 
-		public Integer getTimeout() {
-			return this.timeout;
+		public String getOwner() {
+			return this.owner;
 		}
 
-		public void setTimeout(Integer timeout) {
-			this.timeout = timeout;
+		public void setOwner(String owner) {
+			this.owner = owner;
 		}
 
-		public Integer getTotalSeconds() {
-			return this.totalSeconds;
+		public String getMonitorItem() {
+			return this.monitorItem;
 		}
 
-		public void setTotalSeconds(Integer totalSeconds) {
-			this.totalSeconds = totalSeconds;
+		public void setMonitorItem(String monitorItem) {
+			this.monitorItem = monitorItem;
 		}
 
 		public String getExecutor() {
@@ -155,6 +131,30 @@ public class OpsQueryMonitorConfigsResponse extends AcsResponse {
 			this.description = description;
 		}
 
+		public Integer getTotalSeconds() {
+			return this.totalSeconds;
+		}
+
+		public void setTotalSeconds(Integer totalSeconds) {
+			this.totalSeconds = totalSeconds;
+		}
+
+		public String getCategory() {
+			return this.category;
+		}
+
+		public void setCategory(String category) {
+			this.category = category;
+		}
+
+		public Boolean getEnable() {
+			return this.enable;
+		}
+
+		public void setEnable(Boolean enable) {
+			this.enable = enable;
+		}
+
 		public List<MonitorResultKey> getMonitorResultKeys() {
 			return this.monitorResultKeys;
 		}
@@ -171,20 +171,20 @@ public class OpsQueryMonitorConfigsResponse extends AcsResponse {
 			this.monitorResultFiles = monitorResultFiles;
 		}
 
-		public Exclusion getExclusion() {
-			return this.exclusion;
-		}
-
-		public void setExclusion(Exclusion exclusion) {
-			this.exclusion = exclusion;
-		}
-
 		public Inclusion getInclusion() {
 			return this.inclusion;
 		}
 
 		public void setInclusion(Inclusion inclusion) {
 			this.inclusion = inclusion;
+		}
+
+		public Exclusion getExclusion() {
+			return this.exclusion;
+		}
+
+		public void setExclusion(Exclusion exclusion) {
+			this.exclusion = exclusion;
 		}
 
 		public static class MonitorResultKey {
@@ -210,13 +210,13 @@ public class OpsQueryMonitorConfigsResponse extends AcsResponse {
 			}
 		}
 
-		public static class Exclusion {
+		public static class Inclusion {
 
 			private String ext;
 
-			private List<String> cluster;
-
 			private List<String> nc;
+
+			private List<String> cluster;
 
 			public String getExt() {
 				return this.ext;
@@ -224,14 +224,6 @@ public class OpsQueryMonitorConfigsResponse extends AcsResponse {
 
 			public void setExt(String ext) {
 				this.ext = ext;
-			}
-
-			public List<String> getCluster() {
-				return this.cluster;
-			}
-
-			public void setCluster(List<String> cluster) {
-				this.cluster = cluster;
 			}
 
 			public List<String> getNc() {
@@ -241,15 +233,23 @@ public class OpsQueryMonitorConfigsResponse extends AcsResponse {
 			public void setNc(List<String> nc) {
 				this.nc = nc;
 			}
+
+			public List<String> getCluster() {
+				return this.cluster;
+			}
+
+			public void setCluster(List<String> cluster) {
+				this.cluster = cluster;
+			}
 		}
 
-		public static class Inclusion {
+		public static class Exclusion {
 
 			private String ext;
 
-			private List<String> cluster1;
+			private List<String> nc1;
 
-			private List<String> nc2;
+			private List<String> cluster2;
 
 			public String getExt() {
 				return this.ext;
@@ -259,20 +259,20 @@ public class OpsQueryMonitorConfigsResponse extends AcsResponse {
 				this.ext = ext;
 			}
 
-			public List<String> getCluster1() {
-				return this.cluster1;
+			public List<String> getNc1() {
+				return this.nc1;
 			}
 
-			public void setCluster1(List<String> cluster1) {
-				this.cluster1 = cluster1;
+			public void setNc1(List<String> nc1) {
+				this.nc1 = nc1;
 			}
 
-			public List<String> getNc2() {
-				return this.nc2;
+			public List<String> getCluster2() {
+				return this.cluster2;
 			}
 
-			public void setNc2(List<String> nc2) {
-				this.nc2 = nc2;
+			public void setCluster2(List<String> cluster2) {
+				this.cluster2 = cluster2;
 			}
 		}
 	}

@@ -17,7 +17,6 @@ package com.aliyuncs.ecsops.model.v20160401;
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
 import com.aliyuncs.http.MethodType;
-import com.aliyuncs.ecsops.Endpoint;
 
 /**
  * @author auto create
@@ -28,6 +27,8 @@ public class OpsListCloudBoxesRequest extends RpcAcsRequest<OpsListCloudBoxesRes
 
 	private List<String> cloudBoxIds;
 
+	private Boolean optionCapacity;
+
 	private String nextToken;
 
 	private Long aliUid;
@@ -36,18 +37,16 @@ public class OpsListCloudBoxesRequest extends RpcAcsRequest<OpsListCloudBoxesRes
 
 	private String cloudBoxSiteId;
 
+	private List<String> businessStatuss;
+
 	private String zoneId;
 
 	private Integer maxResults;
 
 	private String auditParamStr;
 	public OpsListCloudBoxesRequest() {
-		super("Ecsops", "2016-04-01", "OpsListCloudBoxes", "ecs");
+		super("Ecsops", "2016-04-01", "OpsListCloudBoxes", "ecsops");
 		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
 	}
 
 	public List<String> getCloudBoxIds() {
@@ -61,6 +60,17 @@ public class OpsListCloudBoxesRequest extends RpcAcsRequest<OpsListCloudBoxesRes
 				putQueryParameter("CloudBoxId." + (i + 1) , cloudBoxIds.get(i));
 			}
 		}	
+	}
+
+	public Boolean getOptionCapacity() {
+		return this.optionCapacity;
+	}
+
+	public void setOptionCapacity(Boolean optionCapacity) {
+		this.optionCapacity = optionCapacity;
+		if(optionCapacity != null){
+			putQueryParameter("OptionCapacity", optionCapacity.toString());
+		}
 	}
 
 	public String getNextToken() {
@@ -105,6 +115,19 @@ public class OpsListCloudBoxesRequest extends RpcAcsRequest<OpsListCloudBoxesRes
 		if(cloudBoxSiteId != null){
 			putQueryParameter("CloudBoxSiteId", cloudBoxSiteId);
 		}
+	}
+
+	public List<String> getBusinessStatuss() {
+		return this.businessStatuss;
+	}
+
+	public void setBusinessStatuss(List<String> businessStatuss) {
+		this.businessStatuss = businessStatuss;	
+		if (businessStatuss != null) {
+			for (int i = 0; i < businessStatuss.size(); i++) {
+				putQueryParameter("BusinessStatus." + (i + 1) , businessStatuss.get(i));
+			}
+		}	
 	}
 
 	public String getZoneId() {

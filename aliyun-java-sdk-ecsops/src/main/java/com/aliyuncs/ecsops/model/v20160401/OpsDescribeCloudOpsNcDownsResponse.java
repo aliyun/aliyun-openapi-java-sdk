@@ -25,21 +25,29 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsDescribeCloudOpsNcDownsResponse extends AcsResponse {
 
+	private Integer totalCount;
+
 	private String requestId;
-
-	private String bizCode;
-
-	private String bizMessage;
-
-	private Integer count;
-
-	private Integer page;
 
 	private Integer pageSize;
 
-	private Integer totalCount;
+	private String bizMessage;
+
+	private Integer page;
+
+	private Integer count;
+
+	private String bizCode;
 
 	private List<NcDownInfo> data;
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -47,38 +55,6 @@ public class OpsDescribeCloudOpsNcDownsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getBizCode() {
-		return this.bizCode;
-	}
-
-	public void setBizCode(String bizCode) {
-		this.bizCode = bizCode;
-	}
-
-	public String getBizMessage() {
-		return this.bizMessage;
-	}
-
-	public void setBizMessage(String bizMessage) {
-		this.bizMessage = bizMessage;
-	}
-
-	public Integer getCount() {
-		return this.count;
-	}
-
-	public void setCount(Integer count) {
-		this.count = count;
-	}
-
-	public Integer getPage() {
-		return this.page;
-	}
-
-	public void setPage(Integer page) {
-		this.page = page;
 	}
 
 	public Integer getPageSize() {
@@ -89,12 +65,36 @@ public class OpsDescribeCloudOpsNcDownsResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public Integer getTotalCount() {
-		return this.totalCount;
+	public String getBizMessage() {
+		return this.bizMessage;
 	}
 
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
+	public void setBizMessage(String bizMessage) {
+		this.bizMessage = bizMessage;
+	}
+
+	public Integer getPage() {
+		return this.page;
+	}
+
+	public void setPage(Integer page) {
+		this.page = page;
+	}
+
+	public Integer getCount() {
+		return this.count;
+	}
+
+	public void setCount(Integer count) {
+		this.count = count;
+	}
+
+	public String getBizCode() {
+		return this.bizCode;
+	}
+
+	public void setBizCode(String bizCode) {
+		this.bizCode = bizCode;
 	}
 
 	public List<NcDownInfo> getData() {
@@ -107,50 +107,82 @@ public class OpsDescribeCloudOpsNcDownsResponse extends AcsResponse {
 
 	public static class NcDownInfo {
 
-		private String aggrDownType;
-
-		private String cluster;
-
-		private String clusterUsage;
-
-		private String create;
-
-		private String downId;
-
-		private String header;
-
-		private Integer hitch;
-
-		private String hostname;
-
-		private Long id;
-
-		private String ip;
-
 		private String kelude;
-
-		private String manufacturer;
-
-		private String ncId;
-
-		private String ncType;
-
-		private String opsType;
-
-		private String reason;
-
-		private String rip;
 
 		private String type;
 
 		private String vmInfo;
 
-		public String getAggrDownType() {
-			return this.aggrDownType;
+		private Integer hitch;
+
+		private String create;
+
+		private String cluster;
+
+		private String ip;
+
+		private String hostname;
+
+		private String ncType;
+
+		private String manufacturer;
+
+		private String aggrDownType;
+
+		private String rip;
+
+		private String ncId;
+
+		private String opsType;
+
+		private String clusterUsage;
+
+		private String downId;
+
+		private String header;
+
+		private String reason;
+
+		private Long id;
+
+		public String getKelude() {
+			return this.kelude;
 		}
 
-		public void setAggrDownType(String aggrDownType) {
-			this.aggrDownType = aggrDownType;
+		public void setKelude(String kelude) {
+			this.kelude = kelude;
+		}
+
+		public String getType() {
+			return this.type;
+		}
+
+		public void setType(String type) {
+			this.type = type;
+		}
+
+		public String getVmInfo() {
+			return this.vmInfo;
+		}
+
+		public void setVmInfo(String vmInfo) {
+			this.vmInfo = vmInfo;
+		}
+
+		public Integer getHitch() {
+			return this.hitch;
+		}
+
+		public void setHitch(Integer hitch) {
+			this.hitch = hitch;
+		}
+
+		public String getCreate() {
+			return this.create;
+		}
+
+		public void setCreate(String create) {
+			this.create = create;
 		}
 
 		public String getCluster() {
@@ -161,20 +193,76 @@ public class OpsDescribeCloudOpsNcDownsResponse extends AcsResponse {
 			this.cluster = cluster;
 		}
 
+		public String getIp() {
+			return this.ip;
+		}
+
+		public void setIp(String ip) {
+			this.ip = ip;
+		}
+
+		public String getHostname() {
+			return this.hostname;
+		}
+
+		public void setHostname(String hostname) {
+			this.hostname = hostname;
+		}
+
+		public String getNcType() {
+			return this.ncType;
+		}
+
+		public void setNcType(String ncType) {
+			this.ncType = ncType;
+		}
+
+		public String getManufacturer() {
+			return this.manufacturer;
+		}
+
+		public void setManufacturer(String manufacturer) {
+			this.manufacturer = manufacturer;
+		}
+
+		public String getAggrDownType() {
+			return this.aggrDownType;
+		}
+
+		public void setAggrDownType(String aggrDownType) {
+			this.aggrDownType = aggrDownType;
+		}
+
+		public String getRip() {
+			return this.rip;
+		}
+
+		public void setRip(String rip) {
+			this.rip = rip;
+		}
+
+		public String getNcId() {
+			return this.ncId;
+		}
+
+		public void setNcId(String ncId) {
+			this.ncId = ncId;
+		}
+
+		public String getOpsType() {
+			return this.opsType;
+		}
+
+		public void setOpsType(String opsType) {
+			this.opsType = opsType;
+		}
+
 		public String getClusterUsage() {
 			return this.clusterUsage;
 		}
 
 		public void setClusterUsage(String clusterUsage) {
 			this.clusterUsage = clusterUsage;
-		}
-
-		public String getCreate() {
-			return this.create;
-		}
-
-		public void setCreate(String create) {
-			this.create = create;
 		}
 
 		public String getDownId() {
@@ -193,78 +281,6 @@ public class OpsDescribeCloudOpsNcDownsResponse extends AcsResponse {
 			this.header = header;
 		}
 
-		public Integer getHitch() {
-			return this.hitch;
-		}
-
-		public void setHitch(Integer hitch) {
-			this.hitch = hitch;
-		}
-
-		public String getHostname() {
-			return this.hostname;
-		}
-
-		public void setHostname(String hostname) {
-			this.hostname = hostname;
-		}
-
-		public Long getId() {
-			return this.id;
-		}
-
-		public void setId(Long id) {
-			this.id = id;
-		}
-
-		public String getIp() {
-			return this.ip;
-		}
-
-		public void setIp(String ip) {
-			this.ip = ip;
-		}
-
-		public String getKelude() {
-			return this.kelude;
-		}
-
-		public void setKelude(String kelude) {
-			this.kelude = kelude;
-		}
-
-		public String getManufacturer() {
-			return this.manufacturer;
-		}
-
-		public void setManufacturer(String manufacturer) {
-			this.manufacturer = manufacturer;
-		}
-
-		public String getNcId() {
-			return this.ncId;
-		}
-
-		public void setNcId(String ncId) {
-			this.ncId = ncId;
-		}
-
-		public String getNcType() {
-			return this.ncType;
-		}
-
-		public void setNcType(String ncType) {
-			this.ncType = ncType;
-		}
-
-		public String getOpsType() {
-			return this.opsType;
-		}
-
-		public void setOpsType(String opsType) {
-			this.opsType = opsType;
-		}
-
 		public String getReason() {
 			return this.reason;
 		}
@@ -273,28 +289,12 @@ public class OpsDescribeCloudOpsNcDownsResponse extends AcsResponse {
 			this.reason = reason;
 		}
 
-		public String getRip() {
-			return this.rip;
+		public Long getId() {
+			return this.id;
 		}
 
-		public void setRip(String rip) {
-			this.rip = rip;
-		}
-
-		public String getType() {
-			return this.type;
-		}
-
-		public void setType(String type) {
-			this.type = type;
-		}
-
-		public String getVmInfo() {
-			return this.vmInfo;
-		}
-
-		public void setVmInfo(String vmInfo) {
-			this.vmInfo = vmInfo;
+		public void setId(Long id) {
+			this.id = id;
 		}
 	}
 

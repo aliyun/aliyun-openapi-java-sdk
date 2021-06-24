@@ -23,8 +23,8 @@ public class OpsEccDeleteNcConfigResponseUnmarshaller {
 	public static OpsEccDeleteNcConfigResponse unmarshall(OpsEccDeleteNcConfigResponse opsEccDeleteNcConfigResponse, UnmarshallerContext _ctx) {
 		
 		opsEccDeleteNcConfigResponse.setRequestId(_ctx.stringValue("OpsEccDeleteNcConfigResponse.RequestId"));
-		opsEccDeleteNcConfigResponse.setData(_ctx.stringValue("OpsEccDeleteNcConfigResponse.Data"));
 		opsEccDeleteNcConfigResponse.setMessage(_ctx.stringValue("OpsEccDeleteNcConfigResponse.Message"));
+		opsEccDeleteNcConfigResponse.setData(_ctx.stringValue("OpsEccDeleteNcConfigResponse.Data"));
 	 
 	 	return opsEccDeleteNcConfigResponse;
 	}

@@ -47,21 +47,13 @@ public class OpsDescribeResourceRecommendFiltersResponse extends AcsResponse {
 
 	public static class RecommendFilter {
 
-		private String product;
-
 		private String resourceType;
 
 		private String attributeName;
 
+		private String product;
+
 		private String attributeValue;
-
-		public String getProduct() {
-			return this.product;
-		}
-
-		public void setProduct(String product) {
-			this.product = product;
-		}
 
 		public String getResourceType() {
 			return this.resourceType;
@@ -77,6 +69,14 @@ public class OpsDescribeResourceRecommendFiltersResponse extends AcsResponse {
 
 		public void setAttributeName(String attributeName) {
 			this.attributeName = attributeName;
+		}
+
+		public String getProduct() {
+			return this.product;
+		}
+
+		public void setProduct(String product) {
+			this.product = product;
 		}
 
 		public String getAttributeValue() {

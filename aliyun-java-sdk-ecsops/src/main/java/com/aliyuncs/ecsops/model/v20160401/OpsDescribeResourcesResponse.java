@@ -26,15 +26,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsDescribeResourcesResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer estimatedTotal;
 
-	private String marker;
+	private String requestId;
 
 	private Boolean truncated;
 
-	private Integer estimatedTotal;
+	private String marker;
 
 	private List<Resource> resources;
+
+	public Integer getEstimatedTotal() {
+		return this.estimatedTotal;
+	}
+
+	public void setEstimatedTotal(Integer estimatedTotal) {
+		this.estimatedTotal = estimatedTotal;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -42,14 +50,6 @@ public class OpsDescribeResourcesResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getMarker() {
-		return this.marker;
-	}
-
-	public void setMarker(String marker) {
-		this.marker = marker;
 	}
 
 	public Boolean getTruncated() {
@@ -60,12 +60,12 @@ public class OpsDescribeResourcesResponse extends AcsResponse {
 		this.truncated = truncated;
 	}
 
-	public Integer getEstimatedTotal() {
-		return this.estimatedTotal;
+	public String getMarker() {
+		return this.marker;
 	}
 
-	public void setEstimatedTotal(Integer estimatedTotal) {
-		this.estimatedTotal = estimatedTotal;
+	public void setMarker(String marker) {
+		this.marker = marker;
 	}
 
 	public List<Resource> getResources() {
@@ -78,30 +78,30 @@ public class OpsDescribeResourcesResponse extends AcsResponse {
 
 	public static class Resource {
 
-		private String product;
+		private String updateTime;
 
 		private String resourceType;
 
-		private String resourceId;
-
-		private String resourceName;
+		private String product;
 
 		private String createTime;
 
-		private String updateTime;
-
-		private String regionId;
-
 		private Map<Object,Object> matchedAttributes;
+
+		private String resourceId;
 
 		private String arn;
 
-		public String getProduct() {
-			return this.product;
+		private String resourceName;
+
+		private String regionId;
+
+		public String getUpdateTime() {
+			return this.updateTime;
 		}
 
-		public void setProduct(String product) {
-			this.product = product;
+		public void setUpdateTime(String updateTime) {
+			this.updateTime = updateTime;
 		}
 
 		public String getResourceType() {
@@ -112,20 +112,12 @@ public class OpsDescribeResourcesResponse extends AcsResponse {
 			this.resourceType = resourceType;
 		}
 
-		public String getResourceId() {
-			return this.resourceId;
+		public String getProduct() {
+			return this.product;
 		}
 
-		public void setResourceId(String resourceId) {
-			this.resourceId = resourceId;
-		}
-
-		public String getResourceName() {
-			return this.resourceName;
-		}
-
-		public void setResourceName(String resourceName) {
-			this.resourceName = resourceName;
+		public void setProduct(String product) {
+			this.product = product;
 		}
 
 		public String getCreateTime() {
@@ -136,22 +128,6 @@ public class OpsDescribeResourcesResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
-		public String getUpdateTime() {
-			return this.updateTime;
-		}
-
-		public void setUpdateTime(String updateTime) {
-			this.updateTime = updateTime;
-		}
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
 		public Map<Object,Object> getMatchedAttributes() {
 			return this.matchedAttributes;
 		}
@@ -160,12 +136,36 @@ public class OpsDescribeResourcesResponse extends AcsResponse {
 			this.matchedAttributes = matchedAttributes;
 		}
 
+		public String getResourceId() {
+			return this.resourceId;
+		}
+
+		public void setResourceId(String resourceId) {
+			this.resourceId = resourceId;
+		}
+
 		public String getArn() {
 			return this.arn;
 		}
 
 		public void setArn(String arn) {
 			this.arn = arn;
+		}
+
+		public String getResourceName() {
+			return this.resourceName;
+		}
+
+		public void setResourceName(String resourceName) {
+			this.resourceName = resourceName;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 	}
 

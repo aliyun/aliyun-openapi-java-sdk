@@ -17,7 +17,6 @@ package com.aliyuncs.ecsops.model.v20160401;
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
 import com.aliyuncs.http.MethodType;
-import com.aliyuncs.ecsops.Endpoint;
 
 /**
  * @author auto create
@@ -104,9 +103,9 @@ public class OpsRunInstancesRequest extends RpcAcsRequest<OpsRunInstancesRespons
 
 	private Long aliUid;
 
-	private List<NetworkInterface> networkInterfaces;
-
 	private String deploymentSetId;
+
+	private List<NetworkInterface> networkInterfaces;
 
 	private String resourceOwnerAccount;
 
@@ -138,12 +137,8 @@ public class OpsRunInstancesRequest extends RpcAcsRequest<OpsRunInstancesRespons
 
 	private String auditParamStr;
 	public OpsRunInstancesRequest() {
-		super("Ecsops", "2016-04-01", "OpsRunInstances", "ecs");
+		super("Ecsops", "2016-04-01", "OpsRunInstances", "ecsops");
 		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
 	}
 
 	public Long getResourceOwnerId() {
@@ -580,6 +575,17 @@ public class OpsRunInstancesRequest extends RpcAcsRequest<OpsRunInstancesRespons
 		}
 	}
 
+	public String getDeploymentSetId() {
+		return this.deploymentSetId;
+	}
+
+	public void setDeploymentSetId(String deploymentSetId) {
+		this.deploymentSetId = deploymentSetId;
+		if(deploymentSetId != null){
+			putQueryParameter("DeploymentSetId", deploymentSetId);
+		}
+	}
+
 	public List<NetworkInterface> getNetworkInterfaces() {
 		return this.networkInterfaces;
 	}
@@ -590,22 +596,11 @@ public class OpsRunInstancesRequest extends RpcAcsRequest<OpsRunInstancesRespons
 			for (int depth1 = 0; depth1 < networkInterfaces.size(); depth1++) {
 				putQueryParameter("NetworkInterface." + (depth1 + 1) + ".VSwitchId" , networkInterfaces.get(depth1).getVSwitchId());
 				putQueryParameter("NetworkInterface." + (depth1 + 1) + ".SecurityGroupId" , networkInterfaces.get(depth1).getSecurityGroupId());
-				putQueryParameter("NetworkInterface." + (depth1 + 1) + ".PrimaryIpAddress" , networkInterfaces.get(depth1).getPrimaryIpAddress());
 				putQueryParameter("NetworkInterface." + (depth1 + 1) + ".Description" , networkInterfaces.get(depth1).getDescription());
+				putQueryParameter("NetworkInterface." + (depth1 + 1) + ".PrimaryIpAddress" , networkInterfaces.get(depth1).getPrimaryIpAddress());
 				putQueryParameter("NetworkInterface." + (depth1 + 1) + ".NetworkInterfaceName" , networkInterfaces.get(depth1).getNetworkInterfaceName());
 			}
 		}	
-	}
-
-	public String getDeploymentSetId() {
-		return this.deploymentSetId;
-	}
-
-	public void setDeploymentSetId(String deploymentSetId) {
-		this.deploymentSetId = deploymentSetId;
-		if(deploymentSetId != null){
-			putQueryParameter("DeploymentSetId", deploymentSetId);
-		}
 	}
 
 	public String getResourceOwnerAccount() {
@@ -818,9 +813,9 @@ public class OpsRunInstancesRequest extends RpcAcsRequest<OpsRunInstancesRespons
 
 		private String securityGroupId;
 
-		private String primaryIpAddress;
-
 		private String description;
+
+		private String primaryIpAddress;
 
 		private String networkInterfaceName;
 
@@ -840,20 +835,20 @@ public class OpsRunInstancesRequest extends RpcAcsRequest<OpsRunInstancesRespons
 			this.securityGroupId = securityGroupId;
 		}
 
-		public String getPrimaryIpAddress() {
-			return this.primaryIpAddress;
-		}
-
-		public void setPrimaryIpAddress(String primaryIpAddress) {
-			this.primaryIpAddress = primaryIpAddress;
-		}
-
 		public String getDescription() {
 			return this.description;
 		}
 
 		public void setDescription(String description) {
 			this.description = description;
+		}
+
+		public String getPrimaryIpAddress() {
+			return this.primaryIpAddress;
+		}
+
+		public void setPrimaryIpAddress(String primaryIpAddress) {
+			this.primaryIpAddress = primaryIpAddress;
 		}
 
 		public String getNetworkInterfaceName() {

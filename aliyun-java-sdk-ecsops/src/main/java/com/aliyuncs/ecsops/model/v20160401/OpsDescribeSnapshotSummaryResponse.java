@@ -24,19 +24,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsDescribeSnapshotSummaryResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String snapshotCount;
 
 	private Long snapshotSize;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getSnapshotCount() {
 		return this.snapshotCount;
@@ -52,6 +44,14 @@ public class OpsDescribeSnapshotSummaryResponse extends AcsResponse {
 
 	public void setSnapshotSize(Long snapshotSize) {
 		this.snapshotSize = snapshotSize;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

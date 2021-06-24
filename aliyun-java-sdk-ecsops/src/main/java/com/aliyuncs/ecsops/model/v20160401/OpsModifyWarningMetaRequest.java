@@ -16,7 +16,6 @@ package com.aliyuncs.ecsops.model.v20160401;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
-import com.aliyuncs.ecsops.Endpoint;
 
 /**
  * @author auto create
@@ -27,9 +26,13 @@ public class OpsModifyWarningMetaRequest extends RpcAcsRequest<OpsModifyWarningM
 
 	private String diagnoseCategory;
 
+	private Integer triggerDiagnosis;
+
 	private String phoneNumber;
 
 	private String ownerTeam;
+
+	private String productName;
 
 	private String owner;
 
@@ -41,14 +44,12 @@ public class OpsModifyWarningMetaRequest extends RpcAcsRequest<OpsModifyWarningM
 
 	private String ownerName;
 
+	private Integer triggerWarning;
+
 	private String auditParamStr;
 	public OpsModifyWarningMetaRequest() {
-		super("Ecsops", "2016-04-01", "OpsModifyWarningMeta", "ecs");
+		super("Ecsops", "2016-04-01", "OpsModifyWarningMeta", "ecsops");
 		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
 	}
 
 	public String getDiagnoseCategory() {
@@ -59,6 +60,17 @@ public class OpsModifyWarningMetaRequest extends RpcAcsRequest<OpsModifyWarningM
 		this.diagnoseCategory = diagnoseCategory;
 		if(diagnoseCategory != null){
 			putQueryParameter("DiagnoseCategory", diagnoseCategory);
+		}
+	}
+
+	public Integer getTriggerDiagnosis() {
+		return this.triggerDiagnosis;
+	}
+
+	public void setTriggerDiagnosis(Integer triggerDiagnosis) {
+		this.triggerDiagnosis = triggerDiagnosis;
+		if(triggerDiagnosis != null){
+			putQueryParameter("TriggerDiagnosis", triggerDiagnosis.toString());
 		}
 	}
 
@@ -81,6 +93,17 @@ public class OpsModifyWarningMetaRequest extends RpcAcsRequest<OpsModifyWarningM
 		this.ownerTeam = ownerTeam;
 		if(ownerTeam != null){
 			putQueryParameter("OwnerTeam", ownerTeam);
+		}
+	}
+
+	public String getProductName() {
+		return this.productName;
+	}
+
+	public void setProductName(String productName) {
+		this.productName = productName;
+		if(productName != null){
+			putQueryParameter("ProductName", productName);
 		}
 	}
 
@@ -136,6 +159,17 @@ public class OpsModifyWarningMetaRequest extends RpcAcsRequest<OpsModifyWarningM
 		this.ownerName = ownerName;
 		if(ownerName != null){
 			putQueryParameter("OwnerName", ownerName);
+		}
+	}
+
+	public Integer getTriggerWarning() {
+		return this.triggerWarning;
+	}
+
+	public void setTriggerWarning(Integer triggerWarning) {
+		this.triggerWarning = triggerWarning;
+		if(triggerWarning != null){
+			putQueryParameter("TriggerWarning", triggerWarning.toString());
 		}
 	}
 

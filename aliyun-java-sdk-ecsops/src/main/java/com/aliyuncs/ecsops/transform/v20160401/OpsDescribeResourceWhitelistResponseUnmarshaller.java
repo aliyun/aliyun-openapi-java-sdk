@@ -35,32 +35,46 @@ public class OpsDescribeResourceWhitelistResponseUnmarshaller {
 		List<ResourceWhitelist> resourceWhitelists = new ArrayList<ResourceWhitelist>();
 		for (int i = 0; i < _ctx.lengthValue("OpsDescribeResourceWhitelistResponse.ResourceWhitelists.Length"); i++) {
 			ResourceWhitelist resourceWhitelist = new ResourceWhitelist();
-			resourceWhitelist.setProduct(_ctx.stringValue("OpsDescribeResourceWhitelistResponse.ResourceWhitelists["+ i +"].Product"));
 			resourceWhitelist.setModule(_ctx.stringValue("OpsDescribeResourceWhitelistResponse.ResourceWhitelists["+ i +"].Module"));
+			resourceWhitelist.setProduct(_ctx.stringValue("OpsDescribeResourceWhitelistResponse.ResourceWhitelists["+ i +"].Product"));
 
 			List<ResourceProperty> propertyLists = new ArrayList<ResourceProperty>();
 			for (int j = 0; j < _ctx.lengthValue("OpsDescribeResourceWhitelistResponse.ResourceWhitelists["+ i +"].PropertyLists.Length"); j++) {
 				ResourceProperty resourceProperty = new ResourceProperty();
-				resourceProperty.setName(_ctx.stringValue("OpsDescribeResourceWhitelistResponse.ResourceWhitelists["+ i +"].PropertyLists["+ j +"].Name"));
 				resourceProperty.setValue(_ctx.stringValue("OpsDescribeResourceWhitelistResponse.ResourceWhitelists["+ i +"].PropertyLists["+ j +"].Value"));
+				resourceProperty.setName(_ctx.stringValue("OpsDescribeResourceWhitelistResponse.ResourceWhitelists["+ i +"].PropertyLists["+ j +"].Name"));
 
 				propertyLists.add(resourceProperty);
 			}
 			resourceWhitelist.setPropertyLists(propertyLists);
+
+			List<ModuleRule> rules = new ArrayList<ModuleRule>();
+			for (int j = 0; j < _ctx.lengthValue("OpsDescribeResourceWhitelistResponse.ResourceWhitelists["+ i +"].Rules.Length"); j++) {
+				ModuleRule moduleRule = new ModuleRule();
+				moduleRule.setGroupId(_ctx.integerValue("OpsDescribeResourceWhitelistResponse.ResourceWhitelists["+ i +"].Rules["+ j +"].GroupId"));
+				moduleRule.setRequirements(_ctx.stringValue("OpsDescribeResourceWhitelistResponse.ResourceWhitelists["+ i +"].Rules["+ j +"].Requirements"));
+				moduleRule.setModuleRuleName(_ctx.stringValue("OpsDescribeResourceWhitelistResponse.ResourceWhitelists["+ i +"].Rules["+ j +"].ModuleRuleName"));
+				moduleRule.setSupportedProducts(_ctx.stringValue("OpsDescribeResourceWhitelistResponse.ResourceWhitelists["+ i +"].Rules["+ j +"].SupportedProducts"));
+				moduleRule.setSupportedActions(_ctx.stringValue("OpsDescribeResourceWhitelistResponse.ResourceWhitelists["+ i +"].Rules["+ j +"].SupportedActions"));
+				moduleRule.setNotFlag(_ctx.booleanValue("OpsDescribeResourceWhitelistResponse.ResourceWhitelists["+ i +"].Rules["+ j +"].NotFlag"));
+
+				rules.add(moduleRule);
+			}
+			resourceWhitelist.setRules(rules);
 
 			List<Whitelist> whitelists = new ArrayList<Whitelist>();
 			for (int j = 0; j < _ctx.lengthValue("OpsDescribeResourceWhitelistResponse.ResourceWhitelists["+ i +"].Whitelists.Length"); j++) {
 				Whitelist whitelist = new Whitelist();
 				whitelist.setGroupId(_ctx.integerValue("OpsDescribeResourceWhitelistResponse.ResourceWhitelists["+ i +"].Whitelists["+ j +"].GroupId"));
 				whitelist.setGroupName(_ctx.stringValue("OpsDescribeResourceWhitelistResponse.ResourceWhitelists["+ i +"].Whitelists["+ j +"].GroupName"));
-				whitelist.setSupportedActions(_ctx.stringValue("OpsDescribeResourceWhitelistResponse.ResourceWhitelists["+ i +"].Whitelists["+ j +"].SupportedActions"));
 				whitelist.setSupportedProducts(_ctx.stringValue("OpsDescribeResourceWhitelistResponse.ResourceWhitelists["+ i +"].Whitelists["+ j +"].SupportedProducts"));
+				whitelist.setSupportedActions(_ctx.stringValue("OpsDescribeResourceWhitelistResponse.ResourceWhitelists["+ i +"].Whitelists["+ j +"].SupportedActions"));
 
 				List<ResourceProperty1> existedMembers = new ArrayList<ResourceProperty1>();
 				for (int k = 0; k < _ctx.lengthValue("OpsDescribeResourceWhitelistResponse.ResourceWhitelists["+ i +"].Whitelists["+ j +"].ExistedMembers.Length"); k++) {
 					ResourceProperty1 resourceProperty1 = new ResourceProperty1();
-					resourceProperty1.setName(_ctx.stringValue("OpsDescribeResourceWhitelistResponse.ResourceWhitelists["+ i +"].Whitelists["+ j +"].ExistedMembers["+ k +"].Name"));
 					resourceProperty1.setValue(_ctx.stringValue("OpsDescribeResourceWhitelistResponse.ResourceWhitelists["+ i +"].Whitelists["+ j +"].ExistedMembers["+ k +"].Value"));
+					resourceProperty1.setName(_ctx.stringValue("OpsDescribeResourceWhitelistResponse.ResourceWhitelists["+ i +"].Whitelists["+ j +"].ExistedMembers["+ k +"].Name"));
 
 					existedMembers.add(resourceProperty1);
 				}
@@ -69,20 +83,6 @@ public class OpsDescribeResourceWhitelistResponseUnmarshaller {
 				whitelists.add(whitelist);
 			}
 			resourceWhitelist.setWhitelists(whitelists);
-
-			List<ModuleRule> rules = new ArrayList<ModuleRule>();
-			for (int j = 0; j < _ctx.lengthValue("OpsDescribeResourceWhitelistResponse.ResourceWhitelists["+ i +"].Rules.Length"); j++) {
-				ModuleRule moduleRule = new ModuleRule();
-				moduleRule.setGroupId(_ctx.integerValue("OpsDescribeResourceWhitelistResponse.ResourceWhitelists["+ i +"].Rules["+ j +"].GroupId"));
-				moduleRule.setModuleRuleName(_ctx.stringValue("OpsDescribeResourceWhitelistResponse.ResourceWhitelists["+ i +"].Rules["+ j +"].ModuleRuleName"));
-				moduleRule.setRequirements(_ctx.stringValue("OpsDescribeResourceWhitelistResponse.ResourceWhitelists["+ i +"].Rules["+ j +"].Requirements"));
-				moduleRule.setNotFlag(_ctx.booleanValue("OpsDescribeResourceWhitelistResponse.ResourceWhitelists["+ i +"].Rules["+ j +"].NotFlag"));
-				moduleRule.setSupportedActions(_ctx.stringValue("OpsDescribeResourceWhitelistResponse.ResourceWhitelists["+ i +"].Rules["+ j +"].SupportedActions"));
-				moduleRule.setSupportedProducts(_ctx.stringValue("OpsDescribeResourceWhitelistResponse.ResourceWhitelists["+ i +"].Rules["+ j +"].SupportedProducts"));
-
-				rules.add(moduleRule);
-			}
-			resourceWhitelist.setRules(rules);
 
 			resourceWhitelists.add(resourceWhitelist);
 		}

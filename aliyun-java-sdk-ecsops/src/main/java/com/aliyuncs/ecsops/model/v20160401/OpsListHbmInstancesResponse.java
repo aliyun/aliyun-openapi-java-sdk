@@ -25,9 +25,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsListHbmInstancesResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
+
+	private String requestId;
 
 	private Integer pageSize;
 
@@ -35,20 +35,20 @@ public class OpsListHbmInstancesResponse extends AcsResponse {
 
 	private List<HbmInstance> hbmInstances;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public Integer getTotalCount() {
 		return this.totalCount;
 	}
 
 	public void setTotalCount(Integer totalCount) {
 		this.totalCount = totalCount;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getPageSize() {
@@ -77,62 +77,38 @@ public class OpsListHbmInstancesResponse extends AcsResponse {
 
 	public static class HbmInstance {
 
-		private String regionId;
-
-		private String zoneId;
-
-		private String hbmInstanceId;
-
-		private String hbmInstanceName;
+		private String creationTime;
 
 		private String status;
 
-		private String bootMode;
-
-		private String creationTime;
-
-		private Integer cpu;
-
-		private Integer memory;
+		private String hbmInstanceName;
 
 		private String hostName;
 
+		private String hbmInstanceId;
+
+		private String regionId;
+
+		private Integer cpu;
+
 		private String resourceGroupId;
+
+		private String zoneId;
+
+		private Integer memory;
+
+		private String bootMode;
 
 		private List<Tag> tags;
 
 		private NetworkAttribute networkAttribute;
 
-		public String getRegionId() {
-			return this.regionId;
+		public String getCreationTime() {
+			return this.creationTime;
 		}
 
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		public String getZoneId() {
-			return this.zoneId;
-		}
-
-		public void setZoneId(String zoneId) {
-			this.zoneId = zoneId;
-		}
-
-		public String getHbmInstanceId() {
-			return this.hbmInstanceId;
-		}
-
-		public void setHbmInstanceId(String hbmInstanceId) {
-			this.hbmInstanceId = hbmInstanceId;
-		}
-
-		public String getHbmInstanceName() {
-			return this.hbmInstanceName;
-		}
-
-		public void setHbmInstanceName(String hbmInstanceName) {
-			this.hbmInstanceName = hbmInstanceName;
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
 		}
 
 		public String getStatus() {
@@ -143,36 +119,12 @@ public class OpsListHbmInstancesResponse extends AcsResponse {
 			this.status = status;
 		}
 
-		public String getBootMode() {
-			return this.bootMode;
+		public String getHbmInstanceName() {
+			return this.hbmInstanceName;
 		}
 
-		public void setBootMode(String bootMode) {
-			this.bootMode = bootMode;
-		}
-
-		public String getCreationTime() {
-			return this.creationTime;
-		}
-
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
-		}
-
-		public Integer getCpu() {
-			return this.cpu;
-		}
-
-		public void setCpu(Integer cpu) {
-			this.cpu = cpu;
-		}
-
-		public Integer getMemory() {
-			return this.memory;
-		}
-
-		public void setMemory(Integer memory) {
-			this.memory = memory;
+		public void setHbmInstanceName(String hbmInstanceName) {
+			this.hbmInstanceName = hbmInstanceName;
 		}
 
 		public String getHostName() {
@@ -183,12 +135,60 @@ public class OpsListHbmInstancesResponse extends AcsResponse {
 			this.hostName = hostName;
 		}
 
+		public String getHbmInstanceId() {
+			return this.hbmInstanceId;
+		}
+
+		public void setHbmInstanceId(String hbmInstanceId) {
+			this.hbmInstanceId = hbmInstanceId;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		public Integer getCpu() {
+			return this.cpu;
+		}
+
+		public void setCpu(Integer cpu) {
+			this.cpu = cpu;
+		}
+
 		public String getResourceGroupId() {
 			return this.resourceGroupId;
 		}
 
 		public void setResourceGroupId(String resourceGroupId) {
 			this.resourceGroupId = resourceGroupId;
+		}
+
+		public String getZoneId() {
+			return this.zoneId;
+		}
+
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
+		}
+
+		public Integer getMemory() {
+			return this.memory;
+		}
+
+		public void setMemory(Integer memory) {
+			this.memory = memory;
+		}
+
+		public String getBootMode() {
+			return this.bootMode;
+		}
+
+		public void setBootMode(String bootMode) {
+			this.bootMode = bootMode;
 		}
 
 		public List<Tag> getTags() {
@@ -209,17 +209,9 @@ public class OpsListHbmInstancesResponse extends AcsResponse {
 
 		public static class Tag {
 
-			private String tagKey;
-
 			private String tagValue;
 
-			public String getTagKey() {
-				return this.tagKey;
-			}
-
-			public void setTagKey(String tagKey) {
-				this.tagKey = tagKey;
-			}
+			private String tagKey;
 
 			public String getTagValue() {
 				return this.tagValue;
@@ -227,6 +219,14 @@ public class OpsListHbmInstancesResponse extends AcsResponse {
 
 			public void setTagValue(String tagValue) {
 				this.tagValue = tagValue;
+			}
+
+			public String getTagKey() {
+				return this.tagKey;
+			}
+
+			public void setTagKey(String tagKey) {
+				this.tagKey = tagKey;
 			}
 		}
 
@@ -236,11 +236,11 @@ public class OpsListHbmInstancesResponse extends AcsResponse {
 
 			private String vSwitchId;
 
-			private List<String> securityGroupIds;
+			private List<String> privateIpv6Address;
 
 			private List<String> privateIpAddress;
 
-			private List<String> privateIpv6Address;
+			private List<String> securityGroupIds;
 
 			private EipAttribute eipAttribute;
 
@@ -260,12 +260,12 @@ public class OpsListHbmInstancesResponse extends AcsResponse {
 				this.vSwitchId = vSwitchId;
 			}
 
-			public List<String> getSecurityGroupIds() {
-				return this.securityGroupIds;
+			public List<String> getPrivateIpv6Address() {
+				return this.privateIpv6Address;
 			}
 
-			public void setSecurityGroupIds(List<String> securityGroupIds) {
-				this.securityGroupIds = securityGroupIds;
+			public void setPrivateIpv6Address(List<String> privateIpv6Address) {
+				this.privateIpv6Address = privateIpv6Address;
 			}
 
 			public List<String> getPrivateIpAddress() {
@@ -276,12 +276,12 @@ public class OpsListHbmInstancesResponse extends AcsResponse {
 				this.privateIpAddress = privateIpAddress;
 			}
 
-			public List<String> getPrivateIpv6Address() {
-				return this.privateIpv6Address;
+			public List<String> getSecurityGroupIds() {
+				return this.securityGroupIds;
 			}
 
-			public void setPrivateIpv6Address(List<String> privateIpv6Address) {
-				this.privateIpv6Address = privateIpv6Address;
+			public void setSecurityGroupIds(List<String> securityGroupIds) {
+				this.securityGroupIds = securityGroupIds;
 			}
 
 			public EipAttribute getEipAttribute() {

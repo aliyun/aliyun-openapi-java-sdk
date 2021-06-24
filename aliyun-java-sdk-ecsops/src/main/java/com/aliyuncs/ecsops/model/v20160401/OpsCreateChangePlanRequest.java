@@ -17,7 +17,6 @@ package com.aliyuncs.ecsops.model.v20160401;
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
 import com.aliyuncs.http.MethodType;
-import com.aliyuncs.ecsops.Endpoint;
 
 /**
  * @author auto create
@@ -42,18 +41,14 @@ public class OpsCreateChangePlanRequest extends RpcAcsRequest<OpsCreateChangePla
 
 	private Boolean aswTypePlanFlag;
 
-	private List<String> groups;
-
 	private Boolean hostListTypePlanFlag;
 
 	private String auditParamStr;
+
+	private List<String> groups;
 	public OpsCreateChangePlanRequest() {
-		super("Ecsops", "2016-04-01", "OpsCreateChangePlan", "ecs");
+		super("Ecsops", "2016-04-01", "OpsCreateChangePlan", "ecsops");
 		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
 	}
 
 	public String getExtension() {
@@ -144,19 +139,6 @@ public class OpsCreateChangePlanRequest extends RpcAcsRequest<OpsCreateChangePla
 		}
 	}
 
-	public List<String> getGroups() {
-		return this.groups;
-	}
-
-	public void setGroups(List<String> groups) {
-		this.groups = groups;	
-		if (groups != null) {
-			for (int i = 0; i < groups.size(); i++) {
-				putQueryParameter("Group." + (i + 1) , groups.get(i));
-			}
-		}	
-	}
-
 	public Boolean getHostListTypePlanFlag() {
 		return this.hostListTypePlanFlag;
 	}
@@ -177,6 +159,19 @@ public class OpsCreateChangePlanRequest extends RpcAcsRequest<OpsCreateChangePla
 		if(auditParamStr != null){
 			putQueryParameter("AuditParamStr", auditParamStr);
 		}
+	}
+
+	public List<String> getGroups() {
+		return this.groups;
+	}
+
+	public void setGroups(List<String> groups) {
+		this.groups = groups;	
+		if (groups != null) {
+			for (int i = 0; i < groups.size(); i++) {
+				putQueryParameter("Group." + (i + 1) , groups.get(i));
+			}
+		}	
 	}
 
 	@Override

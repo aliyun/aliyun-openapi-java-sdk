@@ -31,12 +31,12 @@ public class OpsQueryFunctionGroupsResponseUnmarshaller {
 		List<FunctionGroup> functionGroups = new ArrayList<FunctionGroup>();
 		for (int i = 0; i < _ctx.lengthValue("OpsQueryFunctionGroupsResponse.FunctionGroups.Length"); i++) {
 			FunctionGroup functionGroup = new FunctionGroup();
-			functionGroup.setId(_ctx.longValue("OpsQueryFunctionGroupsResponse.FunctionGroups["+ i +"].Id"));
+			functionGroup.setParentGroupId(_ctx.stringValue("OpsQueryFunctionGroupsResponse.FunctionGroups["+ i +"].ParentGroupId"));
 			functionGroup.setGroupId(_ctx.stringValue("OpsQueryFunctionGroupsResponse.FunctionGroups["+ i +"].GroupId"));
 			functionGroup.setGroupName(_ctx.stringValue("OpsQueryFunctionGroupsResponse.FunctionGroups["+ i +"].GroupName"));
-			functionGroup.setGroupCategory(_ctx.stringValue("OpsQueryFunctionGroupsResponse.FunctionGroups["+ i +"].GroupCategory"));
 			functionGroup.setPriority(_ctx.integerValue("OpsQueryFunctionGroupsResponse.FunctionGroups["+ i +"].Priority"));
-			functionGroup.setParentGroupId(_ctx.stringValue("OpsQueryFunctionGroupsResponse.FunctionGroups["+ i +"].ParentGroupId"));
+			functionGroup.setGroupCategory(_ctx.stringValue("OpsQueryFunctionGroupsResponse.FunctionGroups["+ i +"].GroupCategory"));
+			functionGroup.setId(_ctx.longValue("OpsQueryFunctionGroupsResponse.FunctionGroups["+ i +"].Id"));
 
 			functionGroups.add(functionGroup);
 		}

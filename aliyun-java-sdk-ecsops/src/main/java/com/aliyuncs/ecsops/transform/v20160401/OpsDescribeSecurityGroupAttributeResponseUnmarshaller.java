@@ -27,27 +27,27 @@ public class OpsDescribeSecurityGroupAttributeResponseUnmarshaller {
 	public static OpsDescribeSecurityGroupAttributeResponse unmarshall(OpsDescribeSecurityGroupAttributeResponse opsDescribeSecurityGroupAttributeResponse, UnmarshallerContext _ctx) {
 		
 		opsDescribeSecurityGroupAttributeResponse.setRequestId(_ctx.stringValue("OpsDescribeSecurityGroupAttributeResponse.RequestId"));
-		opsDescribeSecurityGroupAttributeResponse.setRegionId(_ctx.stringValue("OpsDescribeSecurityGroupAttributeResponse.RegionId"));
-		opsDescribeSecurityGroupAttributeResponse.setSecurityGroupId(_ctx.stringValue("OpsDescribeSecurityGroupAttributeResponse.SecurityGroupId"));
 		opsDescribeSecurityGroupAttributeResponse.setDescription(_ctx.stringValue("OpsDescribeSecurityGroupAttributeResponse.Description"));
-		opsDescribeSecurityGroupAttributeResponse.setSecurityGroupName(_ctx.stringValue("OpsDescribeSecurityGroupAttributeResponse.SecurityGroupName"));
 		opsDescribeSecurityGroupAttributeResponse.setVpcId(_ctx.stringValue("OpsDescribeSecurityGroupAttributeResponse.VpcId"));
+		opsDescribeSecurityGroupAttributeResponse.setSecurityGroupName(_ctx.stringValue("OpsDescribeSecurityGroupAttributeResponse.SecurityGroupName"));
+		opsDescribeSecurityGroupAttributeResponse.setSecurityGroupId(_ctx.stringValue("OpsDescribeSecurityGroupAttributeResponse.SecurityGroupId"));
+		opsDescribeSecurityGroupAttributeResponse.setRegionId(_ctx.stringValue("OpsDescribeSecurityGroupAttributeResponse.RegionId"));
 
 		List<Permission> permissions = new ArrayList<Permission>();
 		for (int i = 0; i < _ctx.lengthValue("OpsDescribeSecurityGroupAttributeResponse.Permissions.Length"); i++) {
 			Permission permission = new Permission();
-			permission.setIpProtocol(_ctx.stringValue("OpsDescribeSecurityGroupAttributeResponse.Permissions["+ i +"].IpProtocol"));
-			permission.setPortRange(_ctx.stringValue("OpsDescribeSecurityGroupAttributeResponse.Permissions["+ i +"].PortRange"));
+			permission.setDirection(_ctx.stringValue("OpsDescribeSecurityGroupAttributeResponse.Permissions["+ i +"].Direction"));
 			permission.setSourceGroupId(_ctx.stringValue("OpsDescribeSecurityGroupAttributeResponse.Permissions["+ i +"].SourceGroupId"));
+			permission.setDestGroupOwnerAccount(_ctx.stringValue("OpsDescribeSecurityGroupAttributeResponse.Permissions["+ i +"].DestGroupOwnerAccount"));
 			permission.setSourceCidrIp(_ctx.stringValue("OpsDescribeSecurityGroupAttributeResponse.Permissions["+ i +"].SourceCidrIp"));
-			permission.setPolicy(_ctx.stringValue("OpsDescribeSecurityGroupAttributeResponse.Permissions["+ i +"].Policy"));
-			permission.setNicType(_ctx.stringValue("OpsDescribeSecurityGroupAttributeResponse.Permissions["+ i +"].NicType"));
-			permission.setSourceGroupOwnerAccount(_ctx.stringValue("OpsDescribeSecurityGroupAttributeResponse.Permissions["+ i +"].SourceGroupOwnerAccount"));
 			permission.setDestGroupId(_ctx.stringValue("OpsDescribeSecurityGroupAttributeResponse.Permissions["+ i +"].DestGroupId"));
 			permission.setDestCidrIp(_ctx.stringValue("OpsDescribeSecurityGroupAttributeResponse.Permissions["+ i +"].DestCidrIp"));
-			permission.setDestGroupOwnerAccount(_ctx.stringValue("OpsDescribeSecurityGroupAttributeResponse.Permissions["+ i +"].DestGroupOwnerAccount"));
+			permission.setIpProtocol(_ctx.stringValue("OpsDescribeSecurityGroupAttributeResponse.Permissions["+ i +"].IpProtocol"));
 			permission.setPriority(_ctx.stringValue("OpsDescribeSecurityGroupAttributeResponse.Permissions["+ i +"].Priority"));
-			permission.setDirection(_ctx.stringValue("OpsDescribeSecurityGroupAttributeResponse.Permissions["+ i +"].Direction"));
+			permission.setNicType(_ctx.stringValue("OpsDescribeSecurityGroupAttributeResponse.Permissions["+ i +"].NicType"));
+			permission.setPolicy(_ctx.stringValue("OpsDescribeSecurityGroupAttributeResponse.Permissions["+ i +"].Policy"));
+			permission.setPortRange(_ctx.stringValue("OpsDescribeSecurityGroupAttributeResponse.Permissions["+ i +"].PortRange"));
+			permission.setSourceGroupOwnerAccount(_ctx.stringValue("OpsDescribeSecurityGroupAttributeResponse.Permissions["+ i +"].SourceGroupOwnerAccount"));
 
 			permissions.add(permission);
 		}

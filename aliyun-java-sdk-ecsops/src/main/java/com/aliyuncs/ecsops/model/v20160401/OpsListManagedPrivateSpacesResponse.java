@@ -25,21 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsListManagedPrivateSpacesResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
 
 	private String nextToken;
 
+	private String requestId;
+
 	private List<ManagedPrivateSpaceSet> managedPrivateSpaceSets;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -55,6 +47,14 @@ public class OpsListManagedPrivateSpacesResponse extends AcsResponse {
 
 	public void setNextToken(String nextToken) {
 		this.nextToken = nextToken;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<ManagedPrivateSpaceSet> getManagedPrivateSpaceSets() {
@@ -73,17 +73,17 @@ public class OpsListManagedPrivateSpacesResponse extends AcsResponse {
 
 		private String managedPrivateSpaceId;
 
-		private String managedPrivateSpaceName;
-
 		private String resourceGroupId;
-
-		private String saleMode;
 
 		private String zoneId;
 
-		private List<DeploymentAttribute> deploymentAttributes;
+		private String saleMode;
+
+		private String managedPrivateSpaceName;
 
 		private List<ManagedHostSet> managedHostSets;
+
+		private List<DeploymentAttribute> deploymentAttributes;
 
 		private List<Tag> tags;
 
@@ -117,28 +117,12 @@ public class OpsListManagedPrivateSpacesResponse extends AcsResponse {
 			this.managedPrivateSpaceId = managedPrivateSpaceId;
 		}
 
-		public String getManagedPrivateSpaceName() {
-			return this.managedPrivateSpaceName;
-		}
-
-		public void setManagedPrivateSpaceName(String managedPrivateSpaceName) {
-			this.managedPrivateSpaceName = managedPrivateSpaceName;
-		}
-
 		public String getResourceGroupId() {
 			return this.resourceGroupId;
 		}
 
 		public void setResourceGroupId(String resourceGroupId) {
 			this.resourceGroupId = resourceGroupId;
-		}
-
-		public String getSaleMode() {
-			return this.saleMode;
-		}
-
-		public void setSaleMode(String saleMode) {
-			this.saleMode = saleMode;
 		}
 
 		public String getZoneId() {
@@ -149,12 +133,20 @@ public class OpsListManagedPrivateSpacesResponse extends AcsResponse {
 			this.zoneId = zoneId;
 		}
 
-		public List<DeploymentAttribute> getDeploymentAttributes() {
-			return this.deploymentAttributes;
+		public String getSaleMode() {
+			return this.saleMode;
 		}
 
-		public void setDeploymentAttributes(List<DeploymentAttribute> deploymentAttributes) {
-			this.deploymentAttributes = deploymentAttributes;
+		public void setSaleMode(String saleMode) {
+			this.saleMode = saleMode;
+		}
+
+		public String getManagedPrivateSpaceName() {
+			return this.managedPrivateSpaceName;
+		}
+
+		public void setManagedPrivateSpaceName(String managedPrivateSpaceName) {
+			this.managedPrivateSpaceName = managedPrivateSpaceName;
 		}
 
 		public List<ManagedHostSet> getManagedHostSets() {
@@ -163,6 +155,14 @@ public class OpsListManagedPrivateSpacesResponse extends AcsResponse {
 
 		public void setManagedHostSets(List<ManagedHostSet> managedHostSets) {
 			this.managedHostSets = managedHostSets;
+		}
+
+		public List<DeploymentAttribute> getDeploymentAttributes() {
+			return this.deploymentAttributes;
+		}
+
+		public void setDeploymentAttributes(List<DeploymentAttribute> deploymentAttributes) {
+			this.deploymentAttributes = deploymentAttributes;
 		}
 
 		public List<Tag> getTags() {
@@ -197,22 +197,45 @@ public class OpsListManagedPrivateSpacesResponse extends AcsResponse {
 			this.locationAttribute = locationAttribute;
 		}
 
+		public static class ManagedHostSet {
+
+			private String managedHostStatus;
+
+			private String managedHostId;
+
+			public String getManagedHostStatus() {
+				return this.managedHostStatus;
+			}
+
+			public void setManagedHostStatus(String managedHostStatus) {
+				this.managedHostStatus = managedHostStatus;
+			}
+
+			public String getManagedHostId() {
+				return this.managedHostId;
+			}
+
+			public void setManagedHostId(String managedHostId) {
+				this.managedHostId = managedHostId;
+			}
+		}
+
 		public static class DeploymentAttribute {
-
-			private String contractId;
-
-			private String createTime;
 
 			private String description;
 
+			private String createTime;
+
+			private String contractId;
+
 			private List<DeploymentStep> deploymentSteps;
 
-			public String getContractId() {
-				return this.contractId;
+			public String getDescription() {
+				return this.description;
 			}
 
-			public void setContractId(String contractId) {
-				this.contractId = contractId;
+			public void setDescription(String description) {
+				this.description = description;
 			}
 
 			public String getCreateTime() {
@@ -223,12 +246,12 @@ public class OpsListManagedPrivateSpacesResponse extends AcsResponse {
 				this.createTime = createTime;
 			}
 
-			public String getDescription() {
-				return this.description;
+			public String getContractId() {
+				return this.contractId;
 			}
 
-			public void setDescription(String description) {
-				this.description = description;
+			public void setContractId(String contractId) {
+				this.contractId = contractId;
 			}
 
 			public List<DeploymentStep> getDeploymentSteps() {
@@ -241,21 +264,13 @@ public class OpsListManagedPrivateSpacesResponse extends AcsResponse {
 
 			public static class DeploymentStep {
 
-				private Boolean currentStep;
-
 				private String status;
 
-				private String expectTime;
+				private Boolean currentStep;
 
 				private String actualTime;
 
-				public Boolean getCurrentStep() {
-					return this.currentStep;
-				}
-
-				public void setCurrentStep(Boolean currentStep) {
-					this.currentStep = currentStep;
-				}
+				private String expectTime;
 
 				public String getStatus() {
 					return this.status;
@@ -265,12 +280,12 @@ public class OpsListManagedPrivateSpacesResponse extends AcsResponse {
 					this.status = status;
 				}
 
-				public String getExpectTime() {
-					return this.expectTime;
+				public Boolean getCurrentStep() {
+					return this.currentStep;
 				}
 
-				public void setExpectTime(String expectTime) {
-					this.expectTime = expectTime;
+				public void setCurrentStep(Boolean currentStep) {
+					this.currentStep = currentStep;
 				}
 
 				public String getActualTime() {
@@ -280,45 +295,22 @@ public class OpsListManagedPrivateSpacesResponse extends AcsResponse {
 				public void setActualTime(String actualTime) {
 					this.actualTime = actualTime;
 				}
-			}
-		}
 
-		public static class ManagedHostSet {
+				public String getExpectTime() {
+					return this.expectTime;
+				}
 
-			private String managedHostId;
-
-			private String managedHostStatus;
-
-			public String getManagedHostId() {
-				return this.managedHostId;
-			}
-
-			public void setManagedHostId(String managedHostId) {
-				this.managedHostId = managedHostId;
-			}
-
-			public String getManagedHostStatus() {
-				return this.managedHostStatus;
-			}
-
-			public void setManagedHostStatus(String managedHostStatus) {
-				this.managedHostStatus = managedHostStatus;
+				public void setExpectTime(String expectTime) {
+					this.expectTime = expectTime;
+				}
 			}
 		}
 
 		public static class Tag {
 
-			private String tagKey;
-
 			private String tagValue;
 
-			public String getTagKey() {
-				return this.tagKey;
-			}
-
-			public void setTagKey(String tagKey) {
-				this.tagKey = tagKey;
-			}
+			private String tagKey;
 
 			public String getTagValue() {
 				return this.tagValue;
@@ -327,35 +319,37 @@ public class OpsListManagedPrivateSpacesResponse extends AcsResponse {
 			public void setTagValue(String tagValue) {
 				this.tagValue = tagValue;
 			}
+
+			public String getTagKey() {
+				return this.tagKey;
+			}
+
+			public void setTagKey(String tagKey) {
+				this.tagKey = tagKey;
+			}
 		}
 
 		public static class CapacityAttribute {
 
-			private Integer totalHostCount;
-
 			private Integer totalVcpus;
-
-			private Integer totalMemories;
-
-			private Integer availableHostCount;
-
-			private Integer availableMemories;
-
-			private Integer availableVcpus;
-
-			private Integer reservedHostCount;
 
 			private Integer reservedVcpus;
 
+			private Integer reservedHostCount;
+
+			private Integer availableVcpus;
+
+			private Integer availableHostCount;
+
+			private Integer totalHostCount;
+
 			private Integer reservedMemories;
 
-			public Integer getTotalHostCount() {
-				return this.totalHostCount;
-			}
+			private Integer availableMemories;
 
-			public void setTotalHostCount(Integer totalHostCount) {
-				this.totalHostCount = totalHostCount;
-			}
+			private Integer totalMemories;
+
+			private List<AvailableInstanceType> availableInstanceTypes;
 
 			public Integer getTotalVcpus() {
 				return this.totalVcpus;
@@ -363,46 +357,6 @@ public class OpsListManagedPrivateSpacesResponse extends AcsResponse {
 
 			public void setTotalVcpus(Integer totalVcpus) {
 				this.totalVcpus = totalVcpus;
-			}
-
-			public Integer getTotalMemories() {
-				return this.totalMemories;
-			}
-
-			public void setTotalMemories(Integer totalMemories) {
-				this.totalMemories = totalMemories;
-			}
-
-			public Integer getAvailableHostCount() {
-				return this.availableHostCount;
-			}
-
-			public void setAvailableHostCount(Integer availableHostCount) {
-				this.availableHostCount = availableHostCount;
-			}
-
-			public Integer getAvailableMemories() {
-				return this.availableMemories;
-			}
-
-			public void setAvailableMemories(Integer availableMemories) {
-				this.availableMemories = availableMemories;
-			}
-
-			public Integer getAvailableVcpus() {
-				return this.availableVcpus;
-			}
-
-			public void setAvailableVcpus(Integer availableVcpus) {
-				this.availableVcpus = availableVcpus;
-			}
-
-			public Integer getReservedHostCount() {
-				return this.reservedHostCount;
-			}
-
-			public void setReservedHostCount(Integer reservedHostCount) {
-				this.reservedHostCount = reservedHostCount;
 			}
 
 			public Integer getReservedVcpus() {
@@ -413,6 +367,38 @@ public class OpsListManagedPrivateSpacesResponse extends AcsResponse {
 				this.reservedVcpus = reservedVcpus;
 			}
 
+			public Integer getReservedHostCount() {
+				return this.reservedHostCount;
+			}
+
+			public void setReservedHostCount(Integer reservedHostCount) {
+				this.reservedHostCount = reservedHostCount;
+			}
+
+			public Integer getAvailableVcpus() {
+				return this.availableVcpus;
+			}
+
+			public void setAvailableVcpus(Integer availableVcpus) {
+				this.availableVcpus = availableVcpus;
+			}
+
+			public Integer getAvailableHostCount() {
+				return this.availableHostCount;
+			}
+
+			public void setAvailableHostCount(Integer availableHostCount) {
+				this.availableHostCount = availableHostCount;
+			}
+
+			public Integer getTotalHostCount() {
+				return this.totalHostCount;
+			}
+
+			public void setTotalHostCount(Integer totalHostCount) {
+				this.totalHostCount = totalHostCount;
+			}
+
 			public Integer getReservedMemories() {
 				return this.reservedMemories;
 			}
@@ -420,22 +406,79 @@ public class OpsListManagedPrivateSpacesResponse extends AcsResponse {
 			public void setReservedMemories(Integer reservedMemories) {
 				this.reservedMemories = reservedMemories;
 			}
+
+			public Integer getAvailableMemories() {
+				return this.availableMemories;
+			}
+
+			public void setAvailableMemories(Integer availableMemories) {
+				this.availableMemories = availableMemories;
+			}
+
+			public Integer getTotalMemories() {
+				return this.totalMemories;
+			}
+
+			public void setTotalMemories(Integer totalMemories) {
+				this.totalMemories = totalMemories;
+			}
+
+			public List<AvailableInstanceType> getAvailableInstanceTypes() {
+				return this.availableInstanceTypes;
+			}
+
+			public void setAvailableInstanceTypes(List<AvailableInstanceType> availableInstanceTypes) {
+				this.availableInstanceTypes = availableInstanceTypes;
+			}
+
+			public static class AvailableInstanceType {
+
+				private String instanceType;
+
+				private Integer availableCount;
+
+				private Integer totalCount;
+
+				public String getInstanceType() {
+					return this.instanceType;
+				}
+
+				public void setInstanceType(String instanceType) {
+					this.instanceType = instanceType;
+				}
+
+				public Integer getAvailableCount() {
+					return this.availableCount;
+				}
+
+				public void setAvailableCount(Integer availableCount) {
+					this.availableCount = availableCount;
+				}
+
+				public Integer getTotalCount() {
+					return this.totalCount;
+				}
+
+				public void setTotalCount(Integer totalCount) {
+					this.totalCount = totalCount;
+				}
+			}
 		}
 
 		public static class LifecycleAttribute {
 
-			private String expirationTime;
+			private String receptionTime;
 
 			private String deliveryTime;
 
-			private String receptionTime;
+			private String expirationTime;
 
-			public String getExpirationTime() {
-				return this.expirationTime;
+			public String getReceptionTime() {
+				return this.receptionTime;
 			}
 
-			public void setExpirationTime(String expirationTime) {
-				this.expirationTime = expirationTime;
+			public void setReceptionTime(String receptionTime) {
+				this.receptionTime = receptionTime;
 			}
 
 			public String getDeliveryTime() {
@@ -446,12 +489,12 @@ public class OpsListManagedPrivateSpacesResponse extends AcsResponse {
 				this.deliveryTime = deliveryTime;
 			}
 
-			public String getReceptionTime() {
-				return this.receptionTime;
+			public String getExpirationTime() {
+				return this.expirationTime;
 			}
 
-			public void setReceptionTime(String receptionTime) {
-				this.receptionTime = receptionTime;
+			public void setExpirationTime(String expirationTime) {
+				this.expirationTime = expirationTime;
 			}
 		}
 

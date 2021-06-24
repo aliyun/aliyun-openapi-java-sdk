@@ -17,7 +17,6 @@ package com.aliyuncs.ecsops.model.v20160401;
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
 import com.aliyuncs.http.MethodType;
-import com.aliyuncs.ecsops.Endpoint;
 
 /**
  * @author auto create
@@ -36,9 +35,9 @@ public class OpsModifyMaintenanceAttributesRequest extends RpcAcsRequest<OpsModi
 
 	private List<ReleaseWindow> releaseWindows;
 
-	private List<String> instanceIds;
-
 	private Boolean notifyOnMaintenance;
+
+	private List<String> instanceIds;
 
 	private String actionOnMaintenance;
 
@@ -48,12 +47,8 @@ public class OpsModifyMaintenanceAttributesRequest extends RpcAcsRequest<OpsModi
 
 	private String auditParamStr;
 	public OpsModifyMaintenanceAttributesRequest() {
-		super("Ecsops", "2016-04-01", "OpsModifyMaintenanceAttributes", "ecs");
+		super("Ecsops", "2016-04-01", "OpsModifyMaintenanceAttributes", "ecsops");
 		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
 	}
 
 	public String getLevel() {
@@ -117,6 +112,17 @@ public class OpsModifyMaintenanceAttributesRequest extends RpcAcsRequest<OpsModi
 		}	
 	}
 
+	public Boolean getNotifyOnMaintenance() {
+		return this.notifyOnMaintenance;
+	}
+
+	public void setNotifyOnMaintenance(Boolean notifyOnMaintenance) {
+		this.notifyOnMaintenance = notifyOnMaintenance;
+		if(notifyOnMaintenance != null){
+			putQueryParameter("NotifyOnMaintenance", notifyOnMaintenance.toString());
+		}
+	}
+
 	public List<String> getInstanceIds() {
 		return this.instanceIds;
 	}
@@ -128,17 +134,6 @@ public class OpsModifyMaintenanceAttributesRequest extends RpcAcsRequest<OpsModi
 				putQueryParameter("InstanceId." + (i + 1) , instanceIds.get(i));
 			}
 		}	
-	}
-
-	public Boolean getNotifyOnMaintenance() {
-		return this.notifyOnMaintenance;
-	}
-
-	public void setNotifyOnMaintenance(Boolean notifyOnMaintenance) {
-		this.notifyOnMaintenance = notifyOnMaintenance;
-		if(notifyOnMaintenance != null){
-			putQueryParameter("NotifyOnMaintenance", notifyOnMaintenance.toString());
-		}
 	}
 
 	public String getActionOnMaintenance() {

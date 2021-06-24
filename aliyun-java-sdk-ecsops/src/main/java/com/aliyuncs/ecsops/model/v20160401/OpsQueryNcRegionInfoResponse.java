@@ -47,23 +47,15 @@ public class OpsQueryNcRegionInfoResponse extends AcsResponse {
 
 	public static class HighRiskMetricData {
 
-		private String ncIp;
-
 		private String ncId;
+
+		private Boolean isDragonBox;
 
 		private String sn;
 
 		private String region;
 
-		private Boolean isDragonBox;
-
-		public String getNcIp() {
-			return this.ncIp;
-		}
-
-		public void setNcIp(String ncIp) {
-			this.ncIp = ncIp;
-		}
+		private String ncIp;
 
 		public String getNcId() {
 			return this.ncId;
@@ -71,6 +63,14 @@ public class OpsQueryNcRegionInfoResponse extends AcsResponse {
 
 		public void setNcId(String ncId) {
 			this.ncId = ncId;
+		}
+
+		public Boolean getIsDragonBox() {
+			return this.isDragonBox;
+		}
+
+		public void setIsDragonBox(Boolean isDragonBox) {
+			this.isDragonBox = isDragonBox;
 		}
 
 		public String getSn() {
@@ -89,12 +89,12 @@ public class OpsQueryNcRegionInfoResponse extends AcsResponse {
 			this.region = region;
 		}
 
-		public Boolean getIsDragonBox() {
-			return this.isDragonBox;
+		public String getNcIp() {
+			return this.ncIp;
 		}
 
-		public void setIsDragonBox(Boolean isDragonBox) {
-			this.isDragonBox = isDragonBox;
+		public void setNcIp(String ncIp) {
+			this.ncIp = ncIp;
 		}
 	}
 

@@ -25,17 +25,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsListZonesResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String code;
-
 	private String message;
 
-	private String success;
+	private String requestId;
 
 	private String total;
 
+	private String code;
+
+	private String success;
+
 	private List<HouyiZoneInfo> houyiZoneInfos;
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -43,6 +51,14 @@ public class OpsListZonesResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getTotal() {
+		return this.total;
+	}
+
+	public void setTotal(String total) {
+		this.total = total;
 	}
 
 	public String getCode() {
@@ -53,28 +69,12 @@ public class OpsListZonesResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
 	public String getSuccess() {
 		return this.success;
 	}
 
 	public void setSuccess(String success) {
 		this.success = success;
-	}
-
-	public String getTotal() {
-		return this.total;
-	}
-
-	public void setTotal(String total) {
-		this.total = total;
 	}
 
 	public List<HouyiZoneInfo> getHouyiZoneInfos() {
@@ -87,29 +87,37 @@ public class OpsListZonesResponse extends AcsResponse {
 
 	public static class HouyiZoneInfo {
 
+		private Boolean visibility;
+
 		private String houyiZoneNo;
-
-		private String houyiClusterNo;
-
-		private String houyiClusterNumericId;
 
 		private String houyiAvailableZoneNo;
 
+		private String houyiClusterNumericId;
+
+		private String houyiClusterNo;
+
 		private String houyiClusterName;
 
-		private Boolean visibility;
-
-		private List<String> diskTypes;
-
-		private List<String> networkTypes;
-
-		private List<String> storageNetworkTypes;
+		private List<String> networkTechnologys;
 
 		private List<String> virtTypes;
 
+		private List<String> storageNetworkTypes;
+
 		private List<String> instanceTypes;
 
-		private List<String> networkTechnologys;
+		private List<String> networkTypes;
+
+		private List<String> diskTypes;
+
+		public Boolean getVisibility() {
+			return this.visibility;
+		}
+
+		public void setVisibility(Boolean visibility) {
+			this.visibility = visibility;
+		}
 
 		public String getHouyiZoneNo() {
 			return this.houyiZoneNo;
@@ -117,22 +125,6 @@ public class OpsListZonesResponse extends AcsResponse {
 
 		public void setHouyiZoneNo(String houyiZoneNo) {
 			this.houyiZoneNo = houyiZoneNo;
-		}
-
-		public String getHouyiClusterNo() {
-			return this.houyiClusterNo;
-		}
-
-		public void setHouyiClusterNo(String houyiClusterNo) {
-			this.houyiClusterNo = houyiClusterNo;
-		}
-
-		public String getHouyiClusterNumericId() {
-			return this.houyiClusterNumericId;
-		}
-
-		public void setHouyiClusterNumericId(String houyiClusterNumericId) {
-			this.houyiClusterNumericId = houyiClusterNumericId;
 		}
 
 		public String getHouyiAvailableZoneNo() {
@@ -143,6 +135,22 @@ public class OpsListZonesResponse extends AcsResponse {
 			this.houyiAvailableZoneNo = houyiAvailableZoneNo;
 		}
 
+		public String getHouyiClusterNumericId() {
+			return this.houyiClusterNumericId;
+		}
+
+		public void setHouyiClusterNumericId(String houyiClusterNumericId) {
+			this.houyiClusterNumericId = houyiClusterNumericId;
+		}
+
+		public String getHouyiClusterNo() {
+			return this.houyiClusterNo;
+		}
+
+		public void setHouyiClusterNo(String houyiClusterNo) {
+			this.houyiClusterNo = houyiClusterNo;
+		}
+
 		public String getHouyiClusterName() {
 			return this.houyiClusterName;
 		}
@@ -151,36 +159,12 @@ public class OpsListZonesResponse extends AcsResponse {
 			this.houyiClusterName = houyiClusterName;
 		}
 
-		public Boolean getVisibility() {
-			return this.visibility;
+		public List<String> getNetworkTechnologys() {
+			return this.networkTechnologys;
 		}
 
-		public void setVisibility(Boolean visibility) {
-			this.visibility = visibility;
-		}
-
-		public List<String> getDiskTypes() {
-			return this.diskTypes;
-		}
-
-		public void setDiskTypes(List<String> diskTypes) {
-			this.diskTypes = diskTypes;
-		}
-
-		public List<String> getNetworkTypes() {
-			return this.networkTypes;
-		}
-
-		public void setNetworkTypes(List<String> networkTypes) {
-			this.networkTypes = networkTypes;
-		}
-
-		public List<String> getStorageNetworkTypes() {
-			return this.storageNetworkTypes;
-		}
-
-		public void setStorageNetworkTypes(List<String> storageNetworkTypes) {
-			this.storageNetworkTypes = storageNetworkTypes;
+		public void setNetworkTechnologys(List<String> networkTechnologys) {
+			this.networkTechnologys = networkTechnologys;
 		}
 
 		public List<String> getVirtTypes() {
@@ -191,6 +175,14 @@ public class OpsListZonesResponse extends AcsResponse {
 			this.virtTypes = virtTypes;
 		}
 
+		public List<String> getStorageNetworkTypes() {
+			return this.storageNetworkTypes;
+		}
+
+		public void setStorageNetworkTypes(List<String> storageNetworkTypes) {
+			this.storageNetworkTypes = storageNetworkTypes;
+		}
+
 		public List<String> getInstanceTypes() {
 			return this.instanceTypes;
 		}
@@ -199,12 +191,20 @@ public class OpsListZonesResponse extends AcsResponse {
 			this.instanceTypes = instanceTypes;
 		}
 
-		public List<String> getNetworkTechnologys() {
-			return this.networkTechnologys;
+		public List<String> getNetworkTypes() {
+			return this.networkTypes;
 		}
 
-		public void setNetworkTechnologys(List<String> networkTechnologys) {
-			this.networkTechnologys = networkTechnologys;
+		public void setNetworkTypes(List<String> networkTypes) {
+			this.networkTypes = networkTypes;
+		}
+
+		public List<String> getDiskTypes() {
+			return this.diskTypes;
+		}
+
+		public void setDiskTypes(List<String> diskTypes) {
+			this.diskTypes = diskTypes;
 		}
 	}
 

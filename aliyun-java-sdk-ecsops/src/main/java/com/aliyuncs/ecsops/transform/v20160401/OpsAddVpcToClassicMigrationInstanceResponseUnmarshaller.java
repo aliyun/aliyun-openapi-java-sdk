@@ -37,8 +37,8 @@ public class OpsAddVpcToClassicMigrationInstanceResponseUnmarshaller {
 			List<Reason> reasons = new ArrayList<Reason>();
 			for (int j = 0; j < _ctx.lengthValue("OpsAddVpcToClassicMigrationInstanceResponse.FailModels["+ i +"].Reasons.Length"); j++) {
 				Reason reason = new Reason();
-				reason.setErrorCode(_ctx.stringValue("OpsAddVpcToClassicMigrationInstanceResponse.FailModels["+ i +"].Reasons["+ j +"].ErrorCode"));
 				reason.setErrorMessage(_ctx.stringValue("OpsAddVpcToClassicMigrationInstanceResponse.FailModels["+ i +"].Reasons["+ j +"].ErrorMessage"));
+				reason.setErrorCode(_ctx.stringValue("OpsAddVpcToClassicMigrationInstanceResponse.FailModels["+ i +"].Reasons["+ j +"].ErrorCode"));
 
 				reasons.add(reason);
 			}

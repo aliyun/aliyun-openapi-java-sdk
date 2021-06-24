@@ -28,24 +28,24 @@ public class OpsListAxtPluginsResponseUnmarshaller {
 		
 		opsListAxtPluginsResponse.setRequestId(_ctx.stringValue("OpsListAxtPluginsResponse.RequestId"));
 		opsListAxtPluginsResponse.setTotalCount(_ctx.longValue("OpsListAxtPluginsResponse.TotalCount"));
-		opsListAxtPluginsResponse.setPageNumber(_ctx.longValue("OpsListAxtPluginsResponse.PageNumber"));
 		opsListAxtPluginsResponse.setPageSize(_ctx.longValue("OpsListAxtPluginsResponse.PageSize"));
+		opsListAxtPluginsResponse.setPageNumber(_ctx.longValue("OpsListAxtPluginsResponse.PageNumber"));
 
 		List<Plugin> pluginList = new ArrayList<Plugin>();
 		for (int i = 0; i < _ctx.lengthValue("OpsListAxtPluginsResponse.PluginList.Length"); i++) {
 			Plugin plugin = new Plugin();
-			plugin.setPluginId(_ctx.stringValue("OpsListAxtPluginsResponse.PluginList["+ i +"].PluginId"));
-			plugin.setName(_ctx.stringValue("OpsListAxtPluginsResponse.PluginList["+ i +"].Name"));
-			plugin.setPublisher(_ctx.stringValue("OpsListAxtPluginsResponse.PluginList["+ i +"].Publisher"));
-			plugin.setUrl(_ctx.stringValue("OpsListAxtPluginsResponse.PluginList["+ i +"].Url"));
-			plugin.setMd5(_ctx.stringValue("OpsListAxtPluginsResponse.PluginList["+ i +"].Md5"));
-			plugin.setRunPath(_ctx.stringValue("OpsListAxtPluginsResponse.PluginList["+ i +"].RunPath"));
-			plugin.setPreInstalled(_ctx.booleanValue("OpsListAxtPluginsResponse.PluginList["+ i +"].PreInstalled"));
-			plugin.setPluginVersion(_ctx.stringValue("OpsListAxtPluginsResponse.PluginList["+ i +"].PluginVersion"));
-			plugin.setArch(_ctx.stringValue("OpsListAxtPluginsResponse.PluginList["+ i +"].Arch"));
-			plugin.setOsType(_ctx.stringValue("OpsListAxtPluginsResponse.PluginList["+ i +"].OsType"));
-			plugin.setDistro(_ctx.stringValue("OpsListAxtPluginsResponse.PluginList["+ i +"].Distro"));
 			plugin.setTimeout(_ctx.longValue("OpsListAxtPluginsResponse.PluginList["+ i +"].Timeout"));
+			plugin.setPluginId(_ctx.stringValue("OpsListAxtPluginsResponse.PluginList["+ i +"].PluginId"));
+			plugin.setArch(_ctx.stringValue("OpsListAxtPluginsResponse.PluginList["+ i +"].Arch"));
+			plugin.setPublisher(_ctx.stringValue("OpsListAxtPluginsResponse.PluginList["+ i +"].Publisher"));
+			plugin.setPreInstalled(_ctx.booleanValue("OpsListAxtPluginsResponse.PluginList["+ i +"].PreInstalled"));
+			plugin.setRunPath(_ctx.stringValue("OpsListAxtPluginsResponse.PluginList["+ i +"].RunPath"));
+			plugin.setUrl(_ctx.stringValue("OpsListAxtPluginsResponse.PluginList["+ i +"].Url"));
+			plugin.setPluginVersion(_ctx.stringValue("OpsListAxtPluginsResponse.PluginList["+ i +"].PluginVersion"));
+			plugin.setDistro(_ctx.stringValue("OpsListAxtPluginsResponse.PluginList["+ i +"].Distro"));
+			plugin.setOsType(_ctx.stringValue("OpsListAxtPluginsResponse.PluginList["+ i +"].OsType"));
+			plugin.setMd5(_ctx.stringValue("OpsListAxtPluginsResponse.PluginList["+ i +"].Md5"));
+			plugin.setName(_ctx.stringValue("OpsListAxtPluginsResponse.PluginList["+ i +"].Name"));
 
 			pluginList.add(plugin);
 		}

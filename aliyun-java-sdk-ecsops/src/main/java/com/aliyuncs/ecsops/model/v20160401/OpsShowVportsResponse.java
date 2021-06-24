@@ -47,31 +47,23 @@ public class OpsShowVportsResponse extends AcsResponse {
 
 	public static class ShowVportModel {
 
-		private String code;
-
 		private String errorMessage;
-
-		private String instanceId;
-
-		private String eniId;
-
-		private String vportName;
 
 		private String vportStatus;
 
-		private String eniStatus;
-
-		private String eniType;
-
 		private String eniNetworkType;
 
-		public String getCode() {
-			return this.code;
-		}
+		private String code;
 
-		public void setCode(String code) {
-			this.code = code;
-		}
+		private String vportName;
+
+		private String instanceId;
+
+		private String eniStatus;
+
+		private String eniId;
+
+		private String eniType;
 
 		public String getErrorMessage() {
 			return this.errorMessage;
@@ -79,30 +71,6 @@ public class OpsShowVportsResponse extends AcsResponse {
 
 		public void setErrorMessage(String errorMessage) {
 			this.errorMessage = errorMessage;
-		}
-
-		public String getInstanceId() {
-			return this.instanceId;
-		}
-
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
-
-		public String getEniId() {
-			return this.eniId;
-		}
-
-		public void setEniId(String eniId) {
-			this.eniId = eniId;
-		}
-
-		public String getVportName() {
-			return this.vportName;
-		}
-
-		public void setVportName(String vportName) {
-			this.vportName = vportName;
 		}
 
 		public String getVportStatus() {
@@ -113,6 +81,38 @@ public class OpsShowVportsResponse extends AcsResponse {
 			this.vportStatus = vportStatus;
 		}
 
+		public String getEniNetworkType() {
+			return this.eniNetworkType;
+		}
+
+		public void setEniNetworkType(String eniNetworkType) {
+			this.eniNetworkType = eniNetworkType;
+		}
+
+		public String getCode() {
+			return this.code;
+		}
+
+		public void setCode(String code) {
+			this.code = code;
+		}
+
+		public String getVportName() {
+			return this.vportName;
+		}
+
+		public void setVportName(String vportName) {
+			this.vportName = vportName;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
 		public String getEniStatus() {
 			return this.eniStatus;
 		}
@@ -121,20 +121,20 @@ public class OpsShowVportsResponse extends AcsResponse {
 			this.eniStatus = eniStatus;
 		}
 
+		public String getEniId() {
+			return this.eniId;
+		}
+
+		public void setEniId(String eniId) {
+			this.eniId = eniId;
+		}
+
 		public String getEniType() {
 			return this.eniType;
 		}
 
 		public void setEniType(String eniType) {
 			this.eniType = eniType;
-		}
-
-		public String getEniNetworkType() {
-			return this.eniNetworkType;
-		}
-
-		public void setEniNetworkType(String eniNetworkType) {
-			this.eniNetworkType = eniNetworkType;
 		}
 	}
 

@@ -23,10 +23,10 @@ public class OpsAddScheduledTaskResponseUnmarshaller {
 	public static OpsAddScheduledTaskResponse unmarshall(OpsAddScheduledTaskResponse opsAddScheduledTaskResponse, UnmarshallerContext _ctx) {
 		
 		opsAddScheduledTaskResponse.setRequestId(_ctx.stringValue("OpsAddScheduledTaskResponse.RequestId"));
-		opsAddScheduledTaskResponse.setCode(_ctx.stringValue("OpsAddScheduledTaskResponse.Code"));
-		opsAddScheduledTaskResponse.setMessage(_ctx.stringValue("OpsAddScheduledTaskResponse.Message"));
-		opsAddScheduledTaskResponse.setSuccess(_ctx.stringValue("OpsAddScheduledTaskResponse.Success"));
 		opsAddScheduledTaskResponse.setExtendedCode(_ctx.stringValue("OpsAddScheduledTaskResponse.ExtendedCode"));
+		opsAddScheduledTaskResponse.setMessage(_ctx.stringValue("OpsAddScheduledTaskResponse.Message"));
+		opsAddScheduledTaskResponse.setCode(_ctx.stringValue("OpsAddScheduledTaskResponse.Code"));
+		opsAddScheduledTaskResponse.setSuccess(_ctx.stringValue("OpsAddScheduledTaskResponse.Success"));
 	 
 	 	return opsAddScheduledTaskResponse;
 	}

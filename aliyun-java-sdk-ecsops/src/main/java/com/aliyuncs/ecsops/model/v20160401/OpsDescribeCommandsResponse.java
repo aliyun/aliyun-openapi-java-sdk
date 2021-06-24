@@ -47,30 +47,46 @@ public class OpsDescribeCommandsResponse extends AcsResponse {
 
 	public static class CommandSet {
 
-		private Long id;
+		private String commandResult;
+
+		private Integer retryTimes;
+
+		private String commandDetail;
 
 		private Long aliUid;
 
-		private String commandType;
-
-		private String commandDetail;
+		private String instanceId;
 
 		private String commandStatus;
 
 		private Long orderId;
 
-		private Integer retryTimes;
+		private String commandType;
 
-		private String instanceId;
+		private Long id;
 
-		private String commandResult;
-
-		public Long getId() {
-			return this.id;
+		public String getCommandResult() {
+			return this.commandResult;
 		}
 
-		public void setId(Long id) {
-			this.id = id;
+		public void setCommandResult(String commandResult) {
+			this.commandResult = commandResult;
+		}
+
+		public Integer getRetryTimes() {
+			return this.retryTimes;
+		}
+
+		public void setRetryTimes(Integer retryTimes) {
+			this.retryTimes = retryTimes;
+		}
+
+		public String getCommandDetail() {
+			return this.commandDetail;
+		}
+
+		public void setCommandDetail(String commandDetail) {
+			this.commandDetail = commandDetail;
 		}
 
 		public Long getAliUid() {
@@ -81,20 +97,12 @@ public class OpsDescribeCommandsResponse extends AcsResponse {
 			this.aliUid = aliUid;
 		}
 
-		public String getCommandType() {
-			return this.commandType;
+		public String getInstanceId() {
+			return this.instanceId;
 		}
 
-		public void setCommandType(String commandType) {
-			this.commandType = commandType;
-		}
-
-		public String getCommandDetail() {
-			return this.commandDetail;
-		}
-
-		public void setCommandDetail(String commandDetail) {
-			this.commandDetail = commandDetail;
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
 		}
 
 		public String getCommandStatus() {
@@ -113,28 +121,20 @@ public class OpsDescribeCommandsResponse extends AcsResponse {
 			this.orderId = orderId;
 		}
 
-		public Integer getRetryTimes() {
-			return this.retryTimes;
+		public String getCommandType() {
+			return this.commandType;
 		}
 
-		public void setRetryTimes(Integer retryTimes) {
-			this.retryTimes = retryTimes;
+		public void setCommandType(String commandType) {
+			this.commandType = commandType;
 		}
 
-		public String getInstanceId() {
-			return this.instanceId;
+		public Long getId() {
+			return this.id;
 		}
 
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
-
-		public String getCommandResult() {
-			return this.commandResult;
-		}
-
-		public void setCommandResult(String commandResult) {
-			this.commandResult = commandResult;
+		public void setId(Long id) {
+			this.id = id;
 		}
 	}
 

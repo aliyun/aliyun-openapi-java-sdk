@@ -47,20 +47,20 @@ public class OpsQueryDedicatedHostAttrResponse extends AcsResponse {
 
 	public static class DedicatedHostAttr {
 
-		private String dedicatedHostId;
+		private String isDeleted;
 
 		private String attrName;
 
+		private String dedicatedHostId;
+
 		private String attrVale;
 
-		private String isDeleted;
-
-		public String getDedicatedHostId() {
-			return this.dedicatedHostId;
+		public String getIsDeleted() {
+			return this.isDeleted;
 		}
 
-		public void setDedicatedHostId(String dedicatedHostId) {
-			this.dedicatedHostId = dedicatedHostId;
+		public void setIsDeleted(String isDeleted) {
+			this.isDeleted = isDeleted;
 		}
 
 		public String getAttrName() {
@@ -71,20 +71,20 @@ public class OpsQueryDedicatedHostAttrResponse extends AcsResponse {
 			this.attrName = attrName;
 		}
 
+		public String getDedicatedHostId() {
+			return this.dedicatedHostId;
+		}
+
+		public void setDedicatedHostId(String dedicatedHostId) {
+			this.dedicatedHostId = dedicatedHostId;
+		}
+
 		public String getAttrVale() {
 			return this.attrVale;
 		}
 
 		public void setAttrVale(String attrVale) {
 			this.attrVale = attrVale;
-		}
-
-		public String getIsDeleted() {
-			return this.isDeleted;
-		}
-
-		public void setIsDeleted(String isDeleted) {
-			this.isDeleted = isDeleted;
 		}
 	}
 

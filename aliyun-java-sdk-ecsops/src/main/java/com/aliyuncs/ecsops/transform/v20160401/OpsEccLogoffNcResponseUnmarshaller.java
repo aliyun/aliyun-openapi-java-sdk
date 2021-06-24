@@ -23,8 +23,8 @@ public class OpsEccLogoffNcResponseUnmarshaller {
 	public static OpsEccLogoffNcResponse unmarshall(OpsEccLogoffNcResponse opsEccLogoffNcResponse, UnmarshallerContext _ctx) {
 		
 		opsEccLogoffNcResponse.setRequestId(_ctx.stringValue("OpsEccLogoffNcResponse.RequestId"));
-		opsEccLogoffNcResponse.setData(_ctx.stringValue("OpsEccLogoffNcResponse.Data"));
 		opsEccLogoffNcResponse.setMessage(_ctx.stringValue("OpsEccLogoffNcResponse.Message"));
+		opsEccLogoffNcResponse.setData(_ctx.stringValue("OpsEccLogoffNcResponse.Data"));
 	 
 	 	return opsEccLogoffNcResponse;
 	}

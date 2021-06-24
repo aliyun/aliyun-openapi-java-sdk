@@ -49,15 +49,15 @@ public class OpsEcsAnalyseVmStateByPassResponse extends AcsResponse {
 
 		private String status;
 
-		private String description;
-
 		private String officialResponse;
 
-		private String detail;
+		private String description;
+
+		private String errorType;
 
 		private String solution;
 
-		private String errorType;
+		private String detail;
 
 		public String getStatus() {
 			return this.status;
@@ -65,14 +65,6 @@ public class OpsEcsAnalyseVmStateByPassResponse extends AcsResponse {
 
 		public void setStatus(String status) {
 			this.status = status;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
 		}
 
 		public String getOfficialResponse() {
@@ -83,12 +75,20 @@ public class OpsEcsAnalyseVmStateByPassResponse extends AcsResponse {
 			this.officialResponse = officialResponse;
 		}
 
-		public String getDetail() {
-			return this.detail;
+		public String getDescription() {
+			return this.description;
 		}
 
-		public void setDetail(String detail) {
-			this.detail = detail;
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getErrorType() {
+			return this.errorType;
+		}
+
+		public void setErrorType(String errorType) {
+			this.errorType = errorType;
 		}
 
 		public String getSolution() {
@@ -99,12 +99,12 @@ public class OpsEcsAnalyseVmStateByPassResponse extends AcsResponse {
 			this.solution = solution;
 		}
 
-		public String getErrorType() {
-			return this.errorType;
+		public String getDetail() {
+			return this.detail;
 		}
 
-		public void setErrorType(String errorType) {
-			this.errorType = errorType;
+		public void setDetail(String detail) {
+			this.detail = detail;
 		}
 	}
 

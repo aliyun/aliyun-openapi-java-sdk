@@ -46,13 +46,29 @@ public class OpsCheckGroupFirewallResponse extends AcsResponse {
 
 	public static class Data {
 
+		private String comment;
+
+		private String failMessage;
+
 		private Boolean consistent;
 
 		private String failCode;
 
-		private String failMessage;
+		public String getComment() {
+			return this.comment;
+		}
 
-		private String comment;
+		public void setComment(String comment) {
+			this.comment = comment;
+		}
+
+		public String getFailMessage() {
+			return this.failMessage;
+		}
+
+		public void setFailMessage(String failMessage) {
+			this.failMessage = failMessage;
+		}
 
 		public Boolean getConsistent() {
 			return this.consistent;
@@ -68,22 +84,6 @@ public class OpsCheckGroupFirewallResponse extends AcsResponse {
 
 		public void setFailCode(String failCode) {
 			this.failCode = failCode;
-		}
-
-		public String getFailMessage() {
-			return this.failMessage;
-		}
-
-		public void setFailMessage(String failMessage) {
-			this.failMessage = failMessage;
-		}
-
-		public String getComment() {
-			return this.comment;
-		}
-
-		public void setComment(String comment) {
-			this.comment = comment;
 		}
 	}
 

@@ -47,19 +47,11 @@ public class OpsQueryFlavorInventoryStatusResponse extends AcsResponse {
 
 	public static class AZoneInventoryStatus {
 
-		private String houyiAvailableZoneNo;
-
 		private String status;
 
+		private String houyiAvailableZoneNo;
+
 		private Boolean meet;
-
-		public String getHouyiAvailableZoneNo() {
-			return this.houyiAvailableZoneNo;
-		}
-
-		public void setHouyiAvailableZoneNo(String houyiAvailableZoneNo) {
-			this.houyiAvailableZoneNo = houyiAvailableZoneNo;
-		}
 
 		public String getStatus() {
 			return this.status;
@@ -67,6 +59,14 @@ public class OpsQueryFlavorInventoryStatusResponse extends AcsResponse {
 
 		public void setStatus(String status) {
 			this.status = status;
+		}
+
+		public String getHouyiAvailableZoneNo() {
+			return this.houyiAvailableZoneNo;
+		}
+
+		public void setHouyiAvailableZoneNo(String houyiAvailableZoneNo) {
+			this.houyiAvailableZoneNo = houyiAvailableZoneNo;
 		}
 
 		public Boolean getMeet() {

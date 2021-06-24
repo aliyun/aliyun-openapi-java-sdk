@@ -47,29 +47,37 @@ public class OpsQueryMonitorStoragesResponse extends AcsResponse {
 
 	public static class MonitorStorage {
 
+		private String shipperTable;
+
 		private String packageName;
 
-		private String packageId;
-
-		private String accountName;
+		private String shipperName;
 
 		private String regionNo;
 
-		private String endpoint;
-
 		private String projectName;
-
-		private String isCenter;
 
 		private String fileName;
 
 		private String logtailName;
 
+		private String isCenter;
+
+		private String endpoint;
+
+		private String packageId;
+
 		private String logstoreName;
 
-		private String shipperName;
+		private String accountName;
 
-		private String shipperTable;
+		public String getShipperTable() {
+			return this.shipperTable;
+		}
+
+		public void setShipperTable(String shipperTable) {
+			this.shipperTable = shipperTable;
+		}
 
 		public String getPackageName() {
 			return this.packageName;
@@ -79,20 +87,12 @@ public class OpsQueryMonitorStoragesResponse extends AcsResponse {
 			this.packageName = packageName;
 		}
 
-		public String getPackageId() {
-			return this.packageId;
+		public String getShipperName() {
+			return this.shipperName;
 		}
 
-		public void setPackageId(String packageId) {
-			this.packageId = packageId;
-		}
-
-		public String getAccountName() {
-			return this.accountName;
-		}
-
-		public void setAccountName(String accountName) {
-			this.accountName = accountName;
+		public void setShipperName(String shipperName) {
+			this.shipperName = shipperName;
 		}
 
 		public String getRegionNo() {
@@ -103,28 +103,12 @@ public class OpsQueryMonitorStoragesResponse extends AcsResponse {
 			this.regionNo = regionNo;
 		}
 
-		public String getEndpoint() {
-			return this.endpoint;
-		}
-
-		public void setEndpoint(String endpoint) {
-			this.endpoint = endpoint;
-		}
-
 		public String getProjectName() {
 			return this.projectName;
 		}
 
 		public void setProjectName(String projectName) {
 			this.projectName = projectName;
-		}
-
-		public String getIsCenter() {
-			return this.isCenter;
-		}
-
-		public void setIsCenter(String isCenter) {
-			this.isCenter = isCenter;
 		}
 
 		public String getFileName() {
@@ -143,6 +127,30 @@ public class OpsQueryMonitorStoragesResponse extends AcsResponse {
 			this.logtailName = logtailName;
 		}
 
+		public String getIsCenter() {
+			return this.isCenter;
+		}
+
+		public void setIsCenter(String isCenter) {
+			this.isCenter = isCenter;
+		}
+
+		public String getEndpoint() {
+			return this.endpoint;
+		}
+
+		public void setEndpoint(String endpoint) {
+			this.endpoint = endpoint;
+		}
+
+		public String getPackageId() {
+			return this.packageId;
+		}
+
+		public void setPackageId(String packageId) {
+			this.packageId = packageId;
+		}
+
 		public String getLogstoreName() {
 			return this.logstoreName;
 		}
@@ -151,20 +159,12 @@ public class OpsQueryMonitorStoragesResponse extends AcsResponse {
 			this.logstoreName = logstoreName;
 		}
 
-		public String getShipperName() {
-			return this.shipperName;
+		public String getAccountName() {
+			return this.accountName;
 		}
 
-		public void setShipperName(String shipperName) {
-			this.shipperName = shipperName;
-		}
-
-		public String getShipperTable() {
-			return this.shipperTable;
-		}
-
-		public void setShipperTable(String shipperTable) {
-			this.shipperTable = shipperTable;
+		public void setAccountName(String accountName) {
+			this.accountName = accountName;
 		}
 	}
 

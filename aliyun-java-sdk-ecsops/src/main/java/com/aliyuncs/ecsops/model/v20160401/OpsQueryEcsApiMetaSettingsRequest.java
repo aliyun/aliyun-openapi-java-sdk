@@ -17,7 +17,6 @@ package com.aliyuncs.ecsops.model.v20160401;
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
 import com.aliyuncs.http.MethodType;
-import com.aliyuncs.ecsops.Endpoint;
 
 /**
  * @author auto create
@@ -28,24 +27,22 @@ public class OpsQueryEcsApiMetaSettingsRequest extends RpcAcsRequest<OpsQueryEcs
 
 	private String proApiName;
 
-	private List<String> attributeNamess;
-
 	private Integer pageNumber;
+
+	private List<String> attributeNamess;
 
 	private Integer pageSize;
 
 	private String productName;
 
+	private List<MetaInfo> metaInfos;
+
 	private String apiVersion;
 
 	private String auditParamStr;
 	public OpsQueryEcsApiMetaSettingsRequest() {
-		super("Ecsops", "2016-04-01", "OpsQueryEcsApiMetaSettings", "ecs");
+		super("Ecsops", "2016-04-01", "OpsQueryEcsApiMetaSettings", "ecsops");
 		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
 	}
 
 	public String getProApiName() {
@@ -56,6 +53,17 @@ public class OpsQueryEcsApiMetaSettingsRequest extends RpcAcsRequest<OpsQueryEcs
 		this.proApiName = proApiName;
 		if(proApiName != null){
 			putQueryParameter("ProApiName", proApiName);
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 
@@ -70,17 +78,6 @@ public class OpsQueryEcsApiMetaSettingsRequest extends RpcAcsRequest<OpsQueryEcs
 				putQueryParameter("AttributeNames." + (i + 1) , attributeNamess.get(i));
 			}
 		}	
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
 	}
 
 	public Integer getPageSize() {
@@ -105,6 +102,24 @@ public class OpsQueryEcsApiMetaSettingsRequest extends RpcAcsRequest<OpsQueryEcs
 		}
 	}
 
+	public List<MetaInfo> getMetaInfos() {
+		return this.metaInfos;
+	}
+
+	public void setMetaInfos(List<MetaInfo> metaInfos) {
+		this.metaInfos = metaInfos;	
+		if (metaInfos != null) {
+			for (int depth1 = 0; depth1 < metaInfos.size(); depth1++) {
+				putQueryParameter("MetaInfo." + (depth1 + 1) + ".Key" , metaInfos.get(depth1).getKey());
+				if (metaInfos.get(depth1).getValuess() != null) {
+					for (int i = 0; i < metaInfos.get(depth1).getValuess().size(); i++) {
+						putQueryParameter("MetaInfo." + (depth1 + 1) + ".Values." + (i + 1) , metaInfos.get(depth1).getValuess().get(i));
+					}
+				}
+			}
+		}	
+	}
+
 	public String getApiVersion() {
 		return this.apiVersion;
 	}
@@ -124,6 +139,29 @@ public class OpsQueryEcsApiMetaSettingsRequest extends RpcAcsRequest<OpsQueryEcs
 		this.auditParamStr = auditParamStr;
 		if(auditParamStr != null){
 			putQueryParameter("AuditParamStr", auditParamStr);
+		}
+	}
+
+	public static class MetaInfo {
+
+		private String key;
+
+		private List<String> valuess;
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
+		}
+
+		public List<String> getValuess() {
+			return this.valuess;
+		}
+
+		public void setValuess(List<String> valuess) {
+			this.valuess = valuess;
 		}
 	}
 

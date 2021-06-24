@@ -17,7 +17,6 @@ package com.aliyuncs.ecsops.model.v20160401;
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
 import com.aliyuncs.http.MethodType;
-import com.aliyuncs.ecsops.Endpoint;
 
 /**
  * @author auto create
@@ -40,16 +39,12 @@ public class OpsCreateChangePlanBatchRequest extends RpcAcsRequest<OpsCreateChan
 
 	private String jobId;
 
-	private List<Group> groups;
-
 	private String auditParamStr;
+
+	private List<Group> groups;
 	public OpsCreateChangePlanBatchRequest() {
-		super("Ecsops", "2016-04-01", "OpsCreateChangePlanBatch", "ecs");
+		super("Ecsops", "2016-04-01", "OpsCreateChangePlanBatch", "ecsops");
 		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
 	}
 
 	public String getCluster() {
@@ -129,25 +124,6 @@ public class OpsCreateChangePlanBatchRequest extends RpcAcsRequest<OpsCreateChan
 		}
 	}
 
-	public List<Group> getGroups() {
-		return this.groups;
-	}
-
-	public void setGroups(List<Group> groups) {
-		this.groups = groups;	
-		if (groups != null) {
-			for (int depth1 = 0; depth1 < groups.size(); depth1++) {
-				putQueryParameter("Group." + (depth1 + 1) + ".Compress" , groups.get(depth1).getCompress());
-				putQueryParameter("Group." + (depth1 + 1) + ".SucceededsStr" , groups.get(depth1).getSucceededsStr());
-				putQueryParameter("Group." + (depth1 + 1) + ".FailedsStr" , groups.get(depth1).getFailedsStr());
-				putQueryParameter("Group." + (depth1 + 1) + ".DoingsStr" , groups.get(depth1).getDoingsStr());
-				putQueryParameter("Group." + (depth1 + 1) + ".BuildId" , groups.get(depth1).getBuildId());
-				putQueryParameter("Group." + (depth1 + 1) + ".WaitingsStr" , groups.get(depth1).getWaitingsStr());
-				putQueryParameter("Group." + (depth1 + 1) + ".GroupName" , groups.get(depth1).getGroupName());
-			}
-		}	
-	}
-
 	public String getAuditParamStr() {
 		return this.auditParamStr;
 	}
@@ -159,21 +135,48 @@ public class OpsCreateChangePlanBatchRequest extends RpcAcsRequest<OpsCreateChan
 		}
 	}
 
+	public List<Group> getGroups() {
+		return this.groups;
+	}
+
+	public void setGroups(List<Group> groups) {
+		this.groups = groups;	
+		if (groups != null) {
+			for (int depth1 = 0; depth1 < groups.size(); depth1++) {
+				putQueryParameter("Group." + (depth1 + 1) + ".FailedsStr" , groups.get(depth1).getFailedsStr());
+				putQueryParameter("Group." + (depth1 + 1) + ".Compress" , groups.get(depth1).getCompress());
+				putQueryParameter("Group." + (depth1 + 1) + ".SucceededsStr" , groups.get(depth1).getSucceededsStr());
+				putQueryParameter("Group." + (depth1 + 1) + ".DoingsStr" , groups.get(depth1).getDoingsStr());
+				putQueryParameter("Group." + (depth1 + 1) + ".WaitingsStr" , groups.get(depth1).getWaitingsStr());
+				putQueryParameter("Group." + (depth1 + 1) + ".BuildId" , groups.get(depth1).getBuildId());
+				putQueryParameter("Group." + (depth1 + 1) + ".GroupName" , groups.get(depth1).getGroupName());
+			}
+		}	
+	}
+
 	public static class Group {
+
+		private String failedsStr;
 
 		private Boolean compress;
 
 		private String succeededsStr;
 
-		private String failedsStr;
-
 		private String doingsStr;
-
-		private String buildId;
 
 		private String waitingsStr;
 
+		private String buildId;
+
 		private String groupName;
+
+		public String getFailedsStr() {
+			return this.failedsStr;
+		}
+
+		public void setFailedsStr(String failedsStr) {
+			this.failedsStr = failedsStr;
+		}
 
 		public Boolean getCompress() {
 			return this.compress;
@@ -191,14 +194,6 @@ public class OpsCreateChangePlanBatchRequest extends RpcAcsRequest<OpsCreateChan
 			this.succeededsStr = succeededsStr;
 		}
 
-		public String getFailedsStr() {
-			return this.failedsStr;
-		}
-
-		public void setFailedsStr(String failedsStr) {
-			this.failedsStr = failedsStr;
-		}
-
 		public String getDoingsStr() {
 			return this.doingsStr;
 		}
@@ -207,20 +202,20 @@ public class OpsCreateChangePlanBatchRequest extends RpcAcsRequest<OpsCreateChan
 			this.doingsStr = doingsStr;
 		}
 
-		public String getBuildId() {
-			return this.buildId;
-		}
-
-		public void setBuildId(String buildId) {
-			this.buildId = buildId;
-		}
-
 		public String getWaitingsStr() {
 			return this.waitingsStr;
 		}
 
 		public void setWaitingsStr(String waitingsStr) {
 			this.waitingsStr = waitingsStr;
+		}
+
+		public String getBuildId() {
+			return this.buildId;
+		}
+
+		public void setBuildId(String buildId) {
+			this.buildId = buildId;
 		}
 
 		public String getGroupName() {

@@ -23,9 +23,9 @@ public class OpsModifyWhitelistResponseUnmarshaller {
 	public static OpsModifyWhitelistResponse unmarshall(OpsModifyWhitelistResponse opsModifyWhitelistResponse, UnmarshallerContext _ctx) {
 		
 		opsModifyWhitelistResponse.setRequestId(_ctx.stringValue("OpsModifyWhitelistResponse.RequestId"));
-		opsModifyWhitelistResponse.setSuccess(_ctx.booleanValue("OpsModifyWhitelistResponse.Success"));
-		opsModifyWhitelistResponse.setCode(_ctx.stringValue("OpsModifyWhitelistResponse.Code"));
 		opsModifyWhitelistResponse.setMessage(_ctx.stringValue("OpsModifyWhitelistResponse.Message"));
+		opsModifyWhitelistResponse.setCode(_ctx.stringValue("OpsModifyWhitelistResponse.Code"));
+		opsModifyWhitelistResponse.setSuccess(_ctx.booleanValue("OpsModifyWhitelistResponse.Success"));
 	 
 	 	return opsModifyWhitelistResponse;
 	}

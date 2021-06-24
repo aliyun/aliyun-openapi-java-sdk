@@ -31,24 +31,24 @@ public class OpsDetailInstancesSimpleInfoResponseUnmarshaller {
 		List<Resource> resources = new ArrayList<Resource>();
 		for (int i = 0; i < _ctx.lengthValue("OpsDetailInstancesSimpleInfoResponse.Resources.Length"); i++) {
 			Resource resource = new Resource();
+			resource.setVpcId(_ctx.stringValue("OpsDetailInstancesSimpleInfoResponse.Resources["+ i +"].VpcId"));
+			resource.setStatus(_ctx.stringValue("OpsDetailInstancesSimpleInfoResponse.Resources["+ i +"].Status"));
 			resource.setAliUid(_ctx.stringValue("OpsDetailInstancesSimpleInfoResponse.Resources["+ i +"].AliUid"));
 			resource.setInstanceId(_ctx.stringValue("OpsDetailInstancesSimpleInfoResponse.Resources["+ i +"].InstanceId"));
-			resource.setInstanceType(_ctx.stringValue("OpsDetailInstancesSimpleInfoResponse.Resources["+ i +"].InstanceType"));
 			resource.setNetworkType(_ctx.stringValue("OpsDetailInstancesSimpleInfoResponse.Resources["+ i +"].NetworkType"));
-			resource.setVpcId(_ctx.stringValue("OpsDetailInstancesSimpleInfoResponse.Resources["+ i +"].VpcId"));
-			resource.setPrivateIpAddress(_ctx.stringValue("OpsDetailInstancesSimpleInfoResponse.Resources["+ i +"].PrivateIpAddress"));
+			resource.setNcIp(_ctx.stringValue("OpsDetailInstancesSimpleInfoResponse.Resources["+ i +"].NcIp"));
+			resource.setInstanceType(_ctx.stringValue("OpsDetailInstancesSimpleInfoResponse.Resources["+ i +"].InstanceType"));
 			resource.setPublicIpAddress(_ctx.stringValue("OpsDetailInstancesSimpleInfoResponse.Resources["+ i +"].PublicIpAddress"));
+			resource.setNcId(_ctx.stringValue("OpsDetailInstancesSimpleInfoResponse.Resources["+ i +"].NcId"));
+			resource.setGmtCreated(_ctx.stringValue("OpsDetailInstancesSimpleInfoResponse.Resources["+ i +"].GmtCreated"));
 			resource.setEip(_ctx.stringValue("OpsDetailInstancesSimpleInfoResponse.Resources["+ i +"].Eip"));
 			resource.setOsType(_ctx.stringValue("OpsDetailInstancesSimpleInfoResponse.Resources["+ i +"].OsType"));
-			resource.setOsVersion(_ctx.stringValue("OpsDetailInstancesSimpleInfoResponse.Resources["+ i +"].OsVersion"));
-			resource.setNcId(_ctx.stringValue("OpsDetailInstancesSimpleInfoResponse.Resources["+ i +"].NcId"));
-			resource.setNcIp(_ctx.stringValue("OpsDetailInstancesSimpleInfoResponse.Resources["+ i +"].NcIp"));
-			resource.setRackId(_ctx.stringValue("OpsDetailInstancesSimpleInfoResponse.Resources["+ i +"].RackId"));
 			resource.setZoneId(_ctx.stringValue("OpsDetailInstancesSimpleInfoResponse.Resources["+ i +"].ZoneId"));
-			resource.setClusterId(_ctx.stringValue("OpsDetailInstancesSimpleInfoResponse.Resources["+ i +"].ClusterId"));
-			resource.setGmtCreated(_ctx.stringValue("OpsDetailInstancesSimpleInfoResponse.Resources["+ i +"].GmtCreated"));
+			resource.setRackId(_ctx.stringValue("OpsDetailInstancesSimpleInfoResponse.Resources["+ i +"].RackId"));
 			resource.setAsw(_ctx.stringValue("OpsDetailInstancesSimpleInfoResponse.Resources["+ i +"].Asw"));
-			resource.setStatus(_ctx.stringValue("OpsDetailInstancesSimpleInfoResponse.Resources["+ i +"].Status"));
+			resource.setOsVersion(_ctx.stringValue("OpsDetailInstancesSimpleInfoResponse.Resources["+ i +"].OsVersion"));
+			resource.setPrivateIpAddress(_ctx.stringValue("OpsDetailInstancesSimpleInfoResponse.Resources["+ i +"].PrivateIpAddress"));
+			resource.setClusterId(_ctx.stringValue("OpsDetailInstancesSimpleInfoResponse.Resources["+ i +"].ClusterId"));
 
 			resources.add(resource);
 		}

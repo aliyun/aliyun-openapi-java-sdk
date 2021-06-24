@@ -27,9 +27,9 @@ public class OpsDescribeBidRelationsResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Integer pageNumber;
-
 	private Integer pageSize;
+
+	private Integer pageNumber;
 
 	private Integer total;
 
@@ -43,20 +43,20 @@ public class OpsDescribeBidRelationsResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public Integer getTotal() {
@@ -77,50 +77,26 @@ public class OpsDescribeBidRelationsResponse extends AcsResponse {
 
 	public static class BidRelation {
 
-		private Long id;
-
-		private String bid;
-
-		private String parentBid;
-
-		private Boolean isService;
+		private String serviceCode;
 
 		private String remark;
 
-		private String serviceCode;
-
 		private Boolean isSite;
 
-		public Long getId() {
-			return this.id;
+		private String parentBid;
+
+		private String bid;
+
+		private Long id;
+
+		private Boolean isService;
+
+		public String getServiceCode() {
+			return this.serviceCode;
 		}
 
-		public void setId(Long id) {
-			this.id = id;
-		}
-
-		public String getBid() {
-			return this.bid;
-		}
-
-		public void setBid(String bid) {
-			this.bid = bid;
-		}
-
-		public String getParentBid() {
-			return this.parentBid;
-		}
-
-		public void setParentBid(String parentBid) {
-			this.parentBid = parentBid;
-		}
-
-		public Boolean getIsService() {
-			return this.isService;
-		}
-
-		public void setIsService(Boolean isService) {
-			this.isService = isService;
+		public void setServiceCode(String serviceCode) {
+			this.serviceCode = serviceCode;
 		}
 
 		public String getRemark() {
@@ -131,20 +107,44 @@ public class OpsDescribeBidRelationsResponse extends AcsResponse {
 			this.remark = remark;
 		}
 
-		public String getServiceCode() {
-			return this.serviceCode;
-		}
-
-		public void setServiceCode(String serviceCode) {
-			this.serviceCode = serviceCode;
-		}
-
 		public Boolean getIsSite() {
 			return this.isSite;
 		}
 
 		public void setIsSite(Boolean isSite) {
 			this.isSite = isSite;
+		}
+
+		public String getParentBid() {
+			return this.parentBid;
+		}
+
+		public void setParentBid(String parentBid) {
+			this.parentBid = parentBid;
+		}
+
+		public String getBid() {
+			return this.bid;
+		}
+
+		public void setBid(String bid) {
+			this.bid = bid;
+		}
+
+		public Long getId() {
+			return this.id;
+		}
+
+		public void setId(Long id) {
+			this.id = id;
+		}
+
+		public Boolean getIsService() {
+			return this.isService;
+		}
+
+		public void setIsService(Boolean isService) {
+			this.isService = isService;
 		}
 	}
 

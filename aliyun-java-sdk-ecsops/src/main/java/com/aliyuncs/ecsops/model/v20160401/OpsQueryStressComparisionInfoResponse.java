@@ -25,19 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsQueryStressComparisionInfoResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String machineId;
+
+	private String requestId;
 
 	private List<SnNodeInfo> snNodeInfoList;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private List<DimensionInfo> dimensionInfoList;
 
 	public String getMachineId() {
 		return this.machineId;
@@ -45,6 +39,14 @@ public class OpsQueryStressComparisionInfoResponse extends AcsResponse {
 
 	public void setMachineId(String machineId) {
 		this.machineId = machineId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<SnNodeInfo> getSnNodeInfoList() {
@@ -55,21 +57,29 @@ public class OpsQueryStressComparisionInfoResponse extends AcsResponse {
 		this.snNodeInfoList = snNodeInfoList;
 	}
 
+	public List<DimensionInfo> getDimensionInfoList() {
+		return this.dimensionInfoList;
+	}
+
+	public void setDimensionInfoList(List<DimensionInfo> dimensionInfoList) {
+		this.dimensionInfoList = dimensionInfoList;
+	}
+
 	public static class SnNodeInfo {
 
 		private String ncId;
-
-		private String cnSn;
-
-		private String stressComparisionState;
 
 		private String stressComparisionResult;
 
 		private String stressComparisionStartTime;
 
-		private Integer stressComparisionTime;
+		private String stressComparisionState;
 
 		private String riskTag;
+
+		private Integer stressComparisionTime;
+
+		private String cnSn;
 
 		public String getNcId() {
 			return this.ncId;
@@ -77,22 +87,6 @@ public class OpsQueryStressComparisionInfoResponse extends AcsResponse {
 
 		public void setNcId(String ncId) {
 			this.ncId = ncId;
-		}
-
-		public String getCnSn() {
-			return this.cnSn;
-		}
-
-		public void setCnSn(String cnSn) {
-			this.cnSn = cnSn;
-		}
-
-		public String getStressComparisionState() {
-			return this.stressComparisionState;
-		}
-
-		public void setStressComparisionState(String stressComparisionState) {
-			this.stressComparisionState = stressComparisionState;
 		}
 
 		public String getStressComparisionResult() {
@@ -111,12 +105,12 @@ public class OpsQueryStressComparisionInfoResponse extends AcsResponse {
 			this.stressComparisionStartTime = stressComparisionStartTime;
 		}
 
-		public Integer getStressComparisionTime() {
-			return this.stressComparisionTime;
+		public String getStressComparisionState() {
+			return this.stressComparisionState;
 		}
 
-		public void setStressComparisionTime(Integer stressComparisionTime) {
-			this.stressComparisionTime = stressComparisionTime;
+		public void setStressComparisionState(String stressComparisionState) {
+			this.stressComparisionState = stressComparisionState;
 		}
 
 		public String getRiskTag() {
@@ -125,6 +119,55 @@ public class OpsQueryStressComparisionInfoResponse extends AcsResponse {
 
 		public void setRiskTag(String riskTag) {
 			this.riskTag = riskTag;
+		}
+
+		public Integer getStressComparisionTime() {
+			return this.stressComparisionTime;
+		}
+
+		public void setStressComparisionTime(Integer stressComparisionTime) {
+			this.stressComparisionTime = stressComparisionTime;
+		}
+
+		public String getCnSn() {
+			return this.cnSn;
+		}
+
+		public void setCnSn(String cnSn) {
+			this.cnSn = cnSn;
+		}
+	}
+
+	public static class DimensionInfo {
+
+		private String dimensionValue;
+
+		private String userInputTargetId;
+
+		private List<String> relatedTargetIds;
+
+		public String getDimensionValue() {
+			return this.dimensionValue;
+		}
+
+		public void setDimensionValue(String dimensionValue) {
+			this.dimensionValue = dimensionValue;
+		}
+
+		public String getUserInputTargetId() {
+			return this.userInputTargetId;
+		}
+
+		public void setUserInputTargetId(String userInputTargetId) {
+			this.userInputTargetId = userInputTargetId;
+		}
+
+		public List<String> getRelatedTargetIds() {
+			return this.relatedTargetIds;
+		}
+
+		public void setRelatedTargetIds(List<String> relatedTargetIds) {
+			this.relatedTargetIds = relatedTargetIds;
 		}
 	}
 

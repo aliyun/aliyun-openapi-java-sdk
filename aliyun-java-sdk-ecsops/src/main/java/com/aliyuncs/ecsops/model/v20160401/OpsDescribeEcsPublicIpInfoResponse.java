@@ -24,15 +24,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsDescribeEcsPublicIpInfoResponse extends AcsResponse {
 
+	private String message;
+
 	private String requestId;
 
 	private String code;
 
-	private String message;
-
 	private EcsNatPublicIpModel ecsNatPublicIpModel;
 
 	private VpcNatPublicIpModel vpcNatPublicIpModel;
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -48,14 +56,6 @@ public class OpsDescribeEcsPublicIpInfoResponse extends AcsResponse {
 
 	public void setCode(String code) {
 		this.code = code;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
 	}
 
 	public EcsNatPublicIpModel getEcsNatPublicIpModel() {
@@ -76,41 +76,17 @@ public class OpsDescribeEcsPublicIpInfoResponse extends AcsResponse {
 
 	public static class EcsNatPublicIpModel {
 
-		private String ecsInstanceInternetIp;
-
-		private String ecsInstanceIpForms;
-
-		private Integer ecsInstanceInternetTx;
-
 		private Integer ecsInstanceInternetRx;
 
 		private String eniInstancePrimaryIp;
 
+		private String ecsInstanceIpForms;
+
+		private String ecsInstanceInternetIp;
+
 		private String isp;
 
-		public String getEcsInstanceInternetIp() {
-			return this.ecsInstanceInternetIp;
-		}
-
-		public void setEcsInstanceInternetIp(String ecsInstanceInternetIp) {
-			this.ecsInstanceInternetIp = ecsInstanceInternetIp;
-		}
-
-		public String getEcsInstanceIpForms() {
-			return this.ecsInstanceIpForms;
-		}
-
-		public void setEcsInstanceIpForms(String ecsInstanceIpForms) {
-			this.ecsInstanceIpForms = ecsInstanceIpForms;
-		}
-
-		public Integer getEcsInstanceInternetTx() {
-			return this.ecsInstanceInternetTx;
-		}
-
-		public void setEcsInstanceInternetTx(Integer ecsInstanceInternetTx) {
-			this.ecsInstanceInternetTx = ecsInstanceInternetTx;
-		}
+		private Integer ecsInstanceInternetTx;
 
 		public Integer getEcsInstanceInternetRx() {
 			return this.ecsInstanceInternetRx;
@@ -128,6 +104,22 @@ public class OpsDescribeEcsPublicIpInfoResponse extends AcsResponse {
 			this.eniInstancePrimaryIp = eniInstancePrimaryIp;
 		}
 
+		public String getEcsInstanceIpForms() {
+			return this.ecsInstanceIpForms;
+		}
+
+		public void setEcsInstanceIpForms(String ecsInstanceIpForms) {
+			this.ecsInstanceIpForms = ecsInstanceIpForms;
+		}
+
+		public String getEcsInstanceInternetIp() {
+			return this.ecsInstanceInternetIp;
+		}
+
+		public void setEcsInstanceInternetIp(String ecsInstanceInternetIp) {
+			this.ecsInstanceInternetIp = ecsInstanceInternetIp;
+		}
+
 		public String getIsp() {
 			return this.isp;
 		}
@@ -135,37 +127,29 @@ public class OpsDescribeEcsPublicIpInfoResponse extends AcsResponse {
 		public void setIsp(String isp) {
 			this.isp = isp;
 		}
+
+		public Integer getEcsInstanceInternetTx() {
+			return this.ecsInstanceInternetTx;
+		}
+
+		public void setEcsInstanceInternetTx(Integer ecsInstanceInternetTx) {
+			this.ecsInstanceInternetTx = ecsInstanceInternetTx;
+		}
 	}
 
 	public static class VpcNatPublicIpModel {
 
-		private String ip;
-
-		private String ecsInstanceId;
-
 		private String status;
-
-		private String isp;
 
 		private Integer publicTxBps;
 
+		private String ip;
+
 		private Integer publicRxBps;
 
-		public String getIp() {
-			return this.ip;
-		}
+		private String ecsInstanceId;
 
-		public void setIp(String ip) {
-			this.ip = ip;
-		}
-
-		public String getEcsInstanceId() {
-			return this.ecsInstanceId;
-		}
-
-		public void setEcsInstanceId(String ecsInstanceId) {
-			this.ecsInstanceId = ecsInstanceId;
-		}
+		private String isp;
 
 		public String getStatus() {
 			return this.status;
@@ -173,14 +157,6 @@ public class OpsDescribeEcsPublicIpInfoResponse extends AcsResponse {
 
 		public void setStatus(String status) {
 			this.status = status;
-		}
-
-		public String getIsp() {
-			return this.isp;
-		}
-
-		public void setIsp(String isp) {
-			this.isp = isp;
 		}
 
 		public Integer getPublicTxBps() {
@@ -191,12 +167,36 @@ public class OpsDescribeEcsPublicIpInfoResponse extends AcsResponse {
 			this.publicTxBps = publicTxBps;
 		}
 
+		public String getIp() {
+			return this.ip;
+		}
+
+		public void setIp(String ip) {
+			this.ip = ip;
+		}
+
 		public Integer getPublicRxBps() {
 			return this.publicRxBps;
 		}
 
 		public void setPublicRxBps(Integer publicRxBps) {
 			this.publicRxBps = publicRxBps;
+		}
+
+		public String getEcsInstanceId() {
+			return this.ecsInstanceId;
+		}
+
+		public void setEcsInstanceId(String ecsInstanceId) {
+			this.ecsInstanceId = ecsInstanceId;
+		}
+
+		public String getIsp() {
+			return this.isp;
+		}
+
+		public void setIsp(String isp) {
+			this.isp = isp;
 		}
 	}
 

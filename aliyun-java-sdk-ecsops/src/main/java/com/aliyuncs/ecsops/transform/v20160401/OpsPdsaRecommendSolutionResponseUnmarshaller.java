@@ -31,23 +31,23 @@ public class OpsPdsaRecommendSolutionResponseUnmarshaller {
 		List<PdsaSubSolutionResult> pdsaSubSolutionResults = new ArrayList<PdsaSubSolutionResult>();
 		for (int i = 0; i < _ctx.lengthValue("OpsPdsaRecommendSolutionResponse.PdsaSubSolutionResults.Length"); i++) {
 			PdsaSubSolutionResult pdsaSubSolutionResult = new PdsaSubSolutionResult();
-			pdsaSubSolutionResult.setRegionNo(_ctx.stringValue("OpsPdsaRecommendSolutionResponse.PdsaSubSolutionResults["+ i +"].RegionNo"));
-			pdsaSubSolutionResult.setZoneId(_ctx.stringValue("OpsPdsaRecommendSolutionResponse.PdsaSubSolutionResults["+ i +"].ZoneId"));
-			pdsaSubSolutionResult.setInstanceType(_ctx.stringValue("OpsPdsaRecommendSolutionResponse.PdsaSubSolutionResults["+ i +"].InstanceType"));
-			pdsaSubSolutionResult.setAmount(_ctx.longValue("OpsPdsaRecommendSolutionResponse.PdsaSubSolutionResults["+ i +"].Amount"));
-			pdsaSubSolutionResult.setInventoryAmount(_ctx.longValue("OpsPdsaRecommendSolutionResponse.PdsaSubSolutionResults["+ i +"].InventoryAmount"));
-			pdsaSubSolutionResult.setInventoryType(_ctx.integerValue("OpsPdsaRecommendSolutionResponse.PdsaSubSolutionResults["+ i +"].InventoryType"));
-			pdsaSubSolutionResult.setBeginDate(_ctx.stringValue("OpsPdsaRecommendSolutionResponse.PdsaSubSolutionResults["+ i +"].BeginDate"));
+			pdsaSubSolutionResult.setNetWorkParam(_ctx.stringValue("OpsPdsaRecommendSolutionResponse.PdsaSubSolutionResults["+ i +"].NetWorkParam"));
 			pdsaSubSolutionResult.setEndDate(_ctx.stringValue("OpsPdsaRecommendSolutionResponse.PdsaSubSolutionResults["+ i +"].EndDate"));
 			pdsaSubSolutionResult.setSolutionType(_ctx.stringValue("OpsPdsaRecommendSolutionResponse.PdsaSubSolutionResults["+ i +"].SolutionType"));
-			pdsaSubSolutionResult.setWindowsPrice(_ctx.floatValue("OpsPdsaRecommendSolutionResponse.PdsaSubSolutionResults["+ i +"].WindowsPrice"));
-			pdsaSubSolutionResult.setLinuxPrice(_ctx.floatValue("OpsPdsaRecommendSolutionResponse.PdsaSubSolutionResults["+ i +"].LinuxPrice"));
-			pdsaSubSolutionResult.setPrice(_ctx.floatValue("OpsPdsaRecommendSolutionResponse.PdsaSubSolutionResults["+ i +"].Price"));
-			pdsaSubSolutionResult.setCpu(_ctx.longValue("OpsPdsaRecommendSolutionResponse.PdsaSubSolutionResults["+ i +"].Cpu"));
-			pdsaSubSolutionResult.setMem(_ctx.longValue("OpsPdsaRecommendSolutionResponse.PdsaSubSolutionResults["+ i +"].Mem"));
-			pdsaSubSolutionResult.setIops(_ctx.stringValue("OpsPdsaRecommendSolutionResponse.PdsaSubSolutionResults["+ i +"].Iops"));
+			pdsaSubSolutionResult.setRegionNo(_ctx.stringValue("OpsPdsaRecommendSolutionResponse.PdsaSubSolutionResults["+ i +"].RegionNo"));
+			pdsaSubSolutionResult.setBeginDate(_ctx.stringValue("OpsPdsaRecommendSolutionResponse.PdsaSubSolutionResults["+ i +"].BeginDate"));
 			pdsaSubSolutionResult.setCpuModel(_ctx.stringValue("OpsPdsaRecommendSolutionResponse.PdsaSubSolutionResults["+ i +"].CpuModel"));
-			pdsaSubSolutionResult.setNetWorkParam(_ctx.stringValue("OpsPdsaRecommendSolutionResponse.PdsaSubSolutionResults["+ i +"].NetWorkParam"));
+			pdsaSubSolutionResult.setLinuxPrice(_ctx.floatValue("OpsPdsaRecommendSolutionResponse.PdsaSubSolutionResults["+ i +"].LinuxPrice"));
+			pdsaSubSolutionResult.setIops(_ctx.stringValue("OpsPdsaRecommendSolutionResponse.PdsaSubSolutionResults["+ i +"].Iops"));
+			pdsaSubSolutionResult.setInstanceType(_ctx.stringValue("OpsPdsaRecommendSolutionResponse.PdsaSubSolutionResults["+ i +"].InstanceType"));
+			pdsaSubSolutionResult.setWindowsPrice(_ctx.floatValue("OpsPdsaRecommendSolutionResponse.PdsaSubSolutionResults["+ i +"].WindowsPrice"));
+			pdsaSubSolutionResult.setMem(_ctx.longValue("OpsPdsaRecommendSolutionResponse.PdsaSubSolutionResults["+ i +"].Mem"));
+			pdsaSubSolutionResult.setAmount(_ctx.longValue("OpsPdsaRecommendSolutionResponse.PdsaSubSolutionResults["+ i +"].Amount"));
+			pdsaSubSolutionResult.setInventoryType(_ctx.integerValue("OpsPdsaRecommendSolutionResponse.PdsaSubSolutionResults["+ i +"].InventoryType"));
+			pdsaSubSolutionResult.setCpu(_ctx.longValue("OpsPdsaRecommendSolutionResponse.PdsaSubSolutionResults["+ i +"].Cpu"));
+			pdsaSubSolutionResult.setPrice(_ctx.floatValue("OpsPdsaRecommendSolutionResponse.PdsaSubSolutionResults["+ i +"].Price"));
+			pdsaSubSolutionResult.setZoneId(_ctx.stringValue("OpsPdsaRecommendSolutionResponse.PdsaSubSolutionResults["+ i +"].ZoneId"));
+			pdsaSubSolutionResult.setInventoryAmount(_ctx.longValue("OpsPdsaRecommendSolutionResponse.PdsaSubSolutionResults["+ i +"].InventoryAmount"));
 
 			pdsaSubSolutionResults.add(pdsaSubSolutionResult);
 		}

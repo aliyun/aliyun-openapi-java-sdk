@@ -57,85 +57,37 @@ public class OpsQueryScheduledTaskInstancesResponse extends AcsResponse {
 
 	public static class ScheduledTaskInstance {
 
-		private Long id;
-
-		private String taskName;
-
-		private String bizId;
-
-		private Long aliUid;
-
-		private String taskStatus;
-
-		private String taskResult;
-
 		private String token;
-
-		private String requestParameters;
-
-		private String extendedField;
 
 		private String scheduleFactor;
 
-		private String gmtCreate;
+		private String taskName;
 
-		private String gmtModified;
+		private Long aliUid;
 
-		private String gmtBeginProcess;
-
-		private String execType;
-
-		private String sourceIpNode;
+		private String bizId;
 
 		private String execIpNode;
 
-		public Long getId() {
-			return this.id;
-		}
+		private String extendedField;
 
-		public void setId(Long id) {
-			this.id = id;
-		}
+		private String gmtModified;
 
-		public String getTaskName() {
-			return this.taskName;
-		}
+		private String taskResult;
 
-		public void setTaskName(String taskName) {
-			this.taskName = taskName;
-		}
+		private String taskStatus;
 
-		public String getBizId() {
-			return this.bizId;
-		}
+		private String execType;
 
-		public void setBizId(String bizId) {
-			this.bizId = bizId;
-		}
+		private String requestParameters;
 
-		public Long getAliUid() {
-			return this.aliUid;
-		}
+		private String gmtCreate;
 
-		public void setAliUid(Long aliUid) {
-			this.aliUid = aliUid;
-		}
+		private String gmtBeginProcess;
 
-		public String getTaskStatus() {
-			return this.taskStatus;
-		}
+		private Long id;
 
-		public void setTaskStatus(String taskStatus) {
-			this.taskStatus = taskStatus;
-		}
-
-		public String getTaskResult() {
-			return this.taskResult;
-		}
-
-		public void setTaskResult(String taskResult) {
-			this.taskResult = taskResult;
-		}
+		private String sourceIpNode;
 
 		public String getToken() {
 			return this.token;
@@ -143,22 +95,6 @@ public class OpsQueryScheduledTaskInstancesResponse extends AcsResponse {
 
 		public void setToken(String token) {
 			this.token = token;
-		}
-
-		public String getRequestParameters() {
-			return this.requestParameters;
-		}
-
-		public void setRequestParameters(String requestParameters) {
-			this.requestParameters = requestParameters;
-		}
-
-		public String getExtendedField() {
-			return this.extendedField;
-		}
-
-		public void setExtendedField(String extendedField) {
-			this.extendedField = extendedField;
 		}
 
 		public String getScheduleFactor() {
@@ -169,12 +105,44 @@ public class OpsQueryScheduledTaskInstancesResponse extends AcsResponse {
 			this.scheduleFactor = scheduleFactor;
 		}
 
-		public String getGmtCreate() {
-			return this.gmtCreate;
+		public String getTaskName() {
+			return this.taskName;
 		}
 
-		public void setGmtCreate(String gmtCreate) {
-			this.gmtCreate = gmtCreate;
+		public void setTaskName(String taskName) {
+			this.taskName = taskName;
+		}
+
+		public Long getAliUid() {
+			return this.aliUid;
+		}
+
+		public void setAliUid(Long aliUid) {
+			this.aliUid = aliUid;
+		}
+
+		public String getBizId() {
+			return this.bizId;
+		}
+
+		public void setBizId(String bizId) {
+			this.bizId = bizId;
+		}
+
+		public String getExecIpNode() {
+			return this.execIpNode;
+		}
+
+		public void setExecIpNode(String execIpNode) {
+			this.execIpNode = execIpNode;
+		}
+
+		public String getExtendedField() {
+			return this.extendedField;
+		}
+
+		public void setExtendedField(String extendedField) {
+			this.extendedField = extendedField;
 		}
 
 		public String getGmtModified() {
@@ -185,12 +153,20 @@ public class OpsQueryScheduledTaskInstancesResponse extends AcsResponse {
 			this.gmtModified = gmtModified;
 		}
 
-		public String getGmtBeginProcess() {
-			return this.gmtBeginProcess;
+		public String getTaskResult() {
+			return this.taskResult;
 		}
 
-		public void setGmtBeginProcess(String gmtBeginProcess) {
-			this.gmtBeginProcess = gmtBeginProcess;
+		public void setTaskResult(String taskResult) {
+			this.taskResult = taskResult;
+		}
+
+		public String getTaskStatus() {
+			return this.taskStatus;
+		}
+
+		public void setTaskStatus(String taskStatus) {
+			this.taskStatus = taskStatus;
 		}
 
 		public String getExecType() {
@@ -201,20 +177,44 @@ public class OpsQueryScheduledTaskInstancesResponse extends AcsResponse {
 			this.execType = execType;
 		}
 
+		public String getRequestParameters() {
+			return this.requestParameters;
+		}
+
+		public void setRequestParameters(String requestParameters) {
+			this.requestParameters = requestParameters;
+		}
+
+		public String getGmtCreate() {
+			return this.gmtCreate;
+		}
+
+		public void setGmtCreate(String gmtCreate) {
+			this.gmtCreate = gmtCreate;
+		}
+
+		public String getGmtBeginProcess() {
+			return this.gmtBeginProcess;
+		}
+
+		public void setGmtBeginProcess(String gmtBeginProcess) {
+			this.gmtBeginProcess = gmtBeginProcess;
+		}
+
+		public Long getId() {
+			return this.id;
+		}
+
+		public void setId(Long id) {
+			this.id = id;
+		}
+
 		public String getSourceIpNode() {
 			return this.sourceIpNode;
 		}
 
 		public void setSourceIpNode(String sourceIpNode) {
 			this.sourceIpNode = sourceIpNode;
-		}
-
-		public String getExecIpNode() {
-			return this.execIpNode;
-		}
-
-		public void setExecIpNode(String execIpNode) {
-			this.execIpNode = execIpNode;
 		}
 	}
 

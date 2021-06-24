@@ -47,50 +47,42 @@ public class OpsDescribeNetworkInterfaceLiteResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String networkInterfaceId;
-
-		private String status;
+		private String creationTime;
 
 		private String type;
 
-		private String vSwitchId;
-
-		private String privateIpAddress;
-
-		private String macAddress;
+		private String status;
 
 		private String networkInterfaceName;
 
-		private String description;
+		private String macAddress;
 
-		private String creationTime;
-
-		private Long serviceID;
-
-		private Boolean serviceManaged;
+		private String networkInterfaceId;
 
 		private Long aliUid;
+
+		private Long serviceID;
 
 		private String bid;
 
 		private String regionId;
 
+		private Boolean serviceManaged;
+
+		private String vSwitchId;
+
+		private String description;
+
+		private String privateIpAddress;
+
 		private List<PrivateIpSet> privateIpSets;
 
-		public String getNetworkInterfaceId() {
-			return this.networkInterfaceId;
+		public String getCreationTime() {
+			return this.creationTime;
 		}
 
-		public void setNetworkInterfaceId(String networkInterfaceId) {
-			this.networkInterfaceId = networkInterfaceId;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
 		}
 
 		public String getType() {
@@ -101,28 +93,12 @@ public class OpsDescribeNetworkInterfaceLiteResponse extends AcsResponse {
 			this.type = type;
 		}
 
-		public String getVSwitchId() {
-			return this.vSwitchId;
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setVSwitchId(String vSwitchId) {
-			this.vSwitchId = vSwitchId;
-		}
-
-		public String getPrivateIpAddress() {
-			return this.privateIpAddress;
-		}
-
-		public void setPrivateIpAddress(String privateIpAddress) {
-			this.privateIpAddress = privateIpAddress;
-		}
-
-		public String getMacAddress() {
-			return this.macAddress;
-		}
-
-		public void setMacAddress(String macAddress) {
-			this.macAddress = macAddress;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public String getNetworkInterfaceName() {
@@ -133,36 +109,20 @@ public class OpsDescribeNetworkInterfaceLiteResponse extends AcsResponse {
 			this.networkInterfaceName = networkInterfaceName;
 		}
 
-		public String getDescription() {
-			return this.description;
+		public String getMacAddress() {
+			return this.macAddress;
 		}
 
-		public void setDescription(String description) {
-			this.description = description;
+		public void setMacAddress(String macAddress) {
+			this.macAddress = macAddress;
 		}
 
-		public String getCreationTime() {
-			return this.creationTime;
+		public String getNetworkInterfaceId() {
+			return this.networkInterfaceId;
 		}
 
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
-		}
-
-		public Long getServiceID() {
-			return this.serviceID;
-		}
-
-		public void setServiceID(Long serviceID) {
-			this.serviceID = serviceID;
-		}
-
-		public Boolean getServiceManaged() {
-			return this.serviceManaged;
-		}
-
-		public void setServiceManaged(Boolean serviceManaged) {
-			this.serviceManaged = serviceManaged;
+		public void setNetworkInterfaceId(String networkInterfaceId) {
+			this.networkInterfaceId = networkInterfaceId;
 		}
 
 		public Long getAliUid() {
@@ -171,6 +131,14 @@ public class OpsDescribeNetworkInterfaceLiteResponse extends AcsResponse {
 
 		public void setAliUid(Long aliUid) {
 			this.aliUid = aliUid;
+		}
+
+		public Long getServiceID() {
+			return this.serviceID;
+		}
+
+		public void setServiceID(Long serviceID) {
+			this.serviceID = serviceID;
 		}
 
 		public String getBid() {
@@ -189,6 +157,38 @@ public class OpsDescribeNetworkInterfaceLiteResponse extends AcsResponse {
 			this.regionId = regionId;
 		}
 
+		public Boolean getServiceManaged() {
+			return this.serviceManaged;
+		}
+
+		public void setServiceManaged(Boolean serviceManaged) {
+			this.serviceManaged = serviceManaged;
+		}
+
+		public String getVSwitchId() {
+			return this.vSwitchId;
+		}
+
+		public void setVSwitchId(String vSwitchId) {
+			this.vSwitchId = vSwitchId;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getPrivateIpAddress() {
+			return this.privateIpAddress;
+		}
+
+		public void setPrivateIpAddress(String privateIpAddress) {
+			this.privateIpAddress = privateIpAddress;
+		}
+
 		public List<PrivateIpSet> getPrivateIpSets() {
 			return this.privateIpSets;
 		}
@@ -199,17 +199,9 @@ public class OpsDescribeNetworkInterfaceLiteResponse extends AcsResponse {
 
 		public static class PrivateIpSet {
 
-			private String privateIpAddress;
-
 			private Boolean primary;
 
-			public String getPrivateIpAddress() {
-				return this.privateIpAddress;
-			}
-
-			public void setPrivateIpAddress(String privateIpAddress) {
-				this.privateIpAddress = privateIpAddress;
-			}
+			private String privateIpAddress;
 
 			public Boolean getPrimary() {
 				return this.primary;
@@ -217,6 +209,14 @@ public class OpsDescribeNetworkInterfaceLiteResponse extends AcsResponse {
 
 			public void setPrimary(Boolean primary) {
 				this.primary = primary;
+			}
+
+			public String getPrivateIpAddress() {
+				return this.privateIpAddress;
+			}
+
+			public void setPrivateIpAddress(String privateIpAddress) {
+				this.privateIpAddress = privateIpAddress;
 			}
 		}
 	}

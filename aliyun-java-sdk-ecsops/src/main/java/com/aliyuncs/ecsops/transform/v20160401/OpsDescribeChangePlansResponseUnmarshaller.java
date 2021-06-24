@@ -30,22 +30,24 @@ public class OpsDescribeChangePlansResponseUnmarshaller {
 		opsDescribeChangePlansResponse.setRequestId(_ctx.stringValue("OpsDescribeChangePlansResponse.RequestId"));
 
 		Data data = new Data();
+		data.setTotalCount(_ctx.integerValue("OpsDescribeChangePlansResponse.Data.TotalCount"));
 
 		List<Plan> plans = new ArrayList<Plan>();
 		for (int i = 0; i < _ctx.lengthValue("OpsDescribeChangePlansResponse.Data.Plans.Length"); i++) {
 			Plan plan = new Plan();
-			plan.setPlanId(_ctx.stringValue("OpsDescribeChangePlansResponse.Data.Plans["+ i +"].PlanId"));
-			plan.setPlanningStatus(_ctx.stringValue("OpsDescribeChangePlansResponse.Data.Plans["+ i +"].PlanningStatus"));
-			plan.setOperationStatus(_ctx.stringValue("OpsDescribeChangePlansResponse.Data.Plans["+ i +"].OperationStatus"));
-			plan.setStrategy(_ctx.stringValue("OpsDescribeChangePlansResponse.Data.Plans["+ i +"].Strategy"));
-			plan.setStrategyModel(_ctx.stringValue("OpsDescribeChangePlansResponse.Data.Plans["+ i +"].StrategyModel"));
-			plan.setGroups(_ctx.stringValue("OpsDescribeChangePlansResponse.Data.Plans["+ i +"].Groups"));
 			plan.setScopes(_ctx.stringValue("OpsDescribeChangePlansResponse.Data.Plans["+ i +"].Scopes"));
-			plan.setGmtCreated(_ctx.stringValue("OpsDescribeChangePlansResponse.Data.Plans["+ i +"].GmtCreated"));
-			plan.setGmtModified(_ctx.stringValue("OpsDescribeChangePlansResponse.Data.Plans["+ i +"].GmtModified"));
-			plan.setOperator(_ctx.stringValue("OpsDescribeChangePlansResponse.Data.Plans["+ i +"].Operator"));
-			plan.setExtensions(_ctx.stringValue("OpsDescribeChangePlansResponse.Data.Plans["+ i +"].Extensions"));
 			plan.setChangeDescription(_ctx.stringValue("OpsDescribeChangePlansResponse.Data.Plans["+ i +"].ChangeDescription"));
+			plan.setGmtModified(_ctx.stringValue("OpsDescribeChangePlansResponse.Data.Plans["+ i +"].GmtModified"));
+			plan.setPlanId(_ctx.stringValue("OpsDescribeChangePlansResponse.Data.Plans["+ i +"].PlanId"));
+			plan.setRunTimeAdditionalInfo(_ctx.stringValue("OpsDescribeChangePlansResponse.Data.Plans["+ i +"].RunTimeAdditionalInfo"));
+			plan.setOperationStatus(_ctx.stringValue("OpsDescribeChangePlansResponse.Data.Plans["+ i +"].OperationStatus"));
+			plan.setGmtCreated(_ctx.stringValue("OpsDescribeChangePlansResponse.Data.Plans["+ i +"].GmtCreated"));
+			plan.setStrategy(_ctx.stringValue("OpsDescribeChangePlansResponse.Data.Plans["+ i +"].Strategy"));
+			plan.setGroups(_ctx.stringValue("OpsDescribeChangePlansResponse.Data.Plans["+ i +"].Groups"));
+			plan.setStrategyModel(_ctx.stringValue("OpsDescribeChangePlansResponse.Data.Plans["+ i +"].StrategyModel"));
+			plan.setPlanningStatus(_ctx.stringValue("OpsDescribeChangePlansResponse.Data.Plans["+ i +"].PlanningStatus"));
+			plan.setExtensions(_ctx.stringValue("OpsDescribeChangePlansResponse.Data.Plans["+ i +"].Extensions"));
+			plan.setOperator(_ctx.stringValue("OpsDescribeChangePlansResponse.Data.Plans["+ i +"].Operator"));
 
 			plans.add(plan);
 		}

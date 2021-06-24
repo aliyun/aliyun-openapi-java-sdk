@@ -26,9 +26,9 @@ public class OpsUpdateDelayExecuteEventsResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String bizCode;
-
 	private String bizMessage;
+
+	private String bizCode;
 
 	private DelayExecuteEvent delayExecuteEvent;
 
@@ -40,20 +40,20 @@ public class OpsUpdateDelayExecuteEventsResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getBizCode() {
-		return this.bizCode;
-	}
-
-	public void setBizCode(String bizCode) {
-		this.bizCode = bizCode;
-	}
-
 	public String getBizMessage() {
 		return this.bizMessage;
 	}
 
 	public void setBizMessage(String bizMessage) {
 		this.bizMessage = bizMessage;
+	}
+
+	public String getBizCode() {
+		return this.bizCode;
+	}
+
+	public void setBizCode(String bizCode) {
+		this.bizCode = bizCode;
 	}
 
 	public DelayExecuteEvent getDelayExecuteEvent() {
@@ -66,40 +66,64 @@ public class OpsUpdateDelayExecuteEventsResponse extends AcsResponse {
 
 	public static class DelayExecuteEvent {
 
-		private Long id;
+		private String eventFinishTime;
+
+		private String eventStartTime;
+
+		private String extendData;
+
+		private String planTime;
 
 		private Long maintenanceId;
 
 		private String vmName;
 
-		private String eventType;
-
-		private String eventStatus;
-
-		private String publishTime;
-
-		private String planTime;
-
-		private String eventStartTime;
-
-		private String eventFinishTime;
+		private String gmtModified;
 
 		private Integer effective;
 
+		private String publishTime;
+
+		private String eventType;
+
 		private String gmtCreate;
 
-		private String gmtModified;
-
-		private String extendData;
+		private String eventStatus;
 
 		private Integer delayTimes;
 
-		public Long getId() {
-			return this.id;
+		private Long id;
+
+		public String getEventFinishTime() {
+			return this.eventFinishTime;
 		}
 
-		public void setId(Long id) {
-			this.id = id;
+		public void setEventFinishTime(String eventFinishTime) {
+			this.eventFinishTime = eventFinishTime;
+		}
+
+		public String getEventStartTime() {
+			return this.eventStartTime;
+		}
+
+		public void setEventStartTime(String eventStartTime) {
+			this.eventStartTime = eventStartTime;
+		}
+
+		public String getExtendData() {
+			return this.extendData;
+		}
+
+		public void setExtendData(String extendData) {
+			this.extendData = extendData;
+		}
+
+		public String getPlanTime() {
+			return this.planTime;
+		}
+
+		public void setPlanTime(String planTime) {
+			this.planTime = planTime;
 		}
 
 		public Long getMaintenanceId() {
@@ -118,52 +142,12 @@ public class OpsUpdateDelayExecuteEventsResponse extends AcsResponse {
 			this.vmName = vmName;
 		}
 
-		public String getEventType() {
-			return this.eventType;
+		public String getGmtModified() {
+			return this.gmtModified;
 		}
 
-		public void setEventType(String eventType) {
-			this.eventType = eventType;
-		}
-
-		public String getEventStatus() {
-			return this.eventStatus;
-		}
-
-		public void setEventStatus(String eventStatus) {
-			this.eventStatus = eventStatus;
-		}
-
-		public String getPublishTime() {
-			return this.publishTime;
-		}
-
-		public void setPublishTime(String publishTime) {
-			this.publishTime = publishTime;
-		}
-
-		public String getPlanTime() {
-			return this.planTime;
-		}
-
-		public void setPlanTime(String planTime) {
-			this.planTime = planTime;
-		}
-
-		public String getEventStartTime() {
-			return this.eventStartTime;
-		}
-
-		public void setEventStartTime(String eventStartTime) {
-			this.eventStartTime = eventStartTime;
-		}
-
-		public String getEventFinishTime() {
-			return this.eventFinishTime;
-		}
-
-		public void setEventFinishTime(String eventFinishTime) {
-			this.eventFinishTime = eventFinishTime;
+		public void setGmtModified(String gmtModified) {
+			this.gmtModified = gmtModified;
 		}
 
 		public Integer getEffective() {
@@ -174,6 +158,22 @@ public class OpsUpdateDelayExecuteEventsResponse extends AcsResponse {
 			this.effective = effective;
 		}
 
+		public String getPublishTime() {
+			return this.publishTime;
+		}
+
+		public void setPublishTime(String publishTime) {
+			this.publishTime = publishTime;
+		}
+
+		public String getEventType() {
+			return this.eventType;
+		}
+
+		public void setEventType(String eventType) {
+			this.eventType = eventType;
+		}
+
 		public String getGmtCreate() {
 			return this.gmtCreate;
 		}
@@ -182,20 +182,12 @@ public class OpsUpdateDelayExecuteEventsResponse extends AcsResponse {
 			this.gmtCreate = gmtCreate;
 		}
 
-		public String getGmtModified() {
-			return this.gmtModified;
+		public String getEventStatus() {
+			return this.eventStatus;
 		}
 
-		public void setGmtModified(String gmtModified) {
-			this.gmtModified = gmtModified;
-		}
-
-		public String getExtendData() {
-			return this.extendData;
-		}
-
-		public void setExtendData(String extendData) {
-			this.extendData = extendData;
+		public void setEventStatus(String eventStatus) {
+			this.eventStatus = eventStatus;
 		}
 
 		public Integer getDelayTimes() {
@@ -204,6 +196,14 @@ public class OpsUpdateDelayExecuteEventsResponse extends AcsResponse {
 
 		public void setDelayTimes(Integer delayTimes) {
 			this.delayTimes = delayTimes;
+		}
+
+		public Long getId() {
+			return this.id;
+		}
+
+		public void setId(Long id) {
+			this.id = id;
 		}
 	}
 

@@ -47,30 +47,30 @@ public class OpsQueryEventEndResponse extends AcsResponse {
 
 	public static class InstanceEvent {
 
-		private String instanceId;
+		private String eventEndTime;
 
 		private String eventStartTime;
 
-		private String ncIp;
-
-		private String exceptionName;
-
-		private String eventEndTime;
+		private String cluster;
 
 		private String aliUid;
 
-		private String cluster;
+		private String ncIp;
+
+		private String instanceId;
+
+		private String exceptionName;
 
 		private String reason;
 
 		private String extraData;
 
-		public String getInstanceId() {
-			return this.instanceId;
+		public String getEventEndTime() {
+			return this.eventEndTime;
 		}
 
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
+		public void setEventEndTime(String eventEndTime) {
+			this.eventEndTime = eventEndTime;
 		}
 
 		public String getEventStartTime() {
@@ -81,28 +81,12 @@ public class OpsQueryEventEndResponse extends AcsResponse {
 			this.eventStartTime = eventStartTime;
 		}
 
-		public String getNcIp() {
-			return this.ncIp;
+		public String getCluster() {
+			return this.cluster;
 		}
 
-		public void setNcIp(String ncIp) {
-			this.ncIp = ncIp;
-		}
-
-		public String getExceptionName() {
-			return this.exceptionName;
-		}
-
-		public void setExceptionName(String exceptionName) {
-			this.exceptionName = exceptionName;
-		}
-
-		public String getEventEndTime() {
-			return this.eventEndTime;
-		}
-
-		public void setEventEndTime(String eventEndTime) {
-			this.eventEndTime = eventEndTime;
+		public void setCluster(String cluster) {
+			this.cluster = cluster;
 		}
 
 		public String getAliUid() {
@@ -113,12 +97,28 @@ public class OpsQueryEventEndResponse extends AcsResponse {
 			this.aliUid = aliUid;
 		}
 
-		public String getCluster() {
-			return this.cluster;
+		public String getNcIp() {
+			return this.ncIp;
 		}
 
-		public void setCluster(String cluster) {
-			this.cluster = cluster;
+		public void setNcIp(String ncIp) {
+			this.ncIp = ncIp;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public String getExceptionName() {
+			return this.exceptionName;
+		}
+
+		public void setExceptionName(String exceptionName) {
+			this.exceptionName = exceptionName;
 		}
 
 		public String getReason() {

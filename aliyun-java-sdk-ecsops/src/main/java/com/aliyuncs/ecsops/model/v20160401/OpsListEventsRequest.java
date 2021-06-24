@@ -16,7 +16,6 @@ package com.aliyuncs.ecsops.model.v20160401;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
-import com.aliyuncs.ecsops.Endpoint;
 
 /**
  * @author auto create
@@ -29,12 +28,8 @@ public class OpsListEventsRequest extends RpcAcsRequest<OpsListEventsResponse> {
 
 	private String auditParamStr;
 	public OpsListEventsRequest() {
-		super("Ecsops", "2016-04-01", "OpsListEvents", "ecs");
+		super("Ecsops", "2016-04-01", "OpsListEvents", "ecsops");
 		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
 	}
 
 	public String getQueryFilters() {

@@ -27,38 +27,26 @@ public class OpsListZonesResponseUnmarshaller {
 	public static OpsListZonesResponse unmarshall(OpsListZonesResponse opsListZonesResponse, UnmarshallerContext _ctx) {
 		
 		opsListZonesResponse.setRequestId(_ctx.stringValue("OpsListZonesResponse.RequestId"));
-		opsListZonesResponse.setCode(_ctx.stringValue("OpsListZonesResponse.Code"));
 		opsListZonesResponse.setMessage(_ctx.stringValue("OpsListZonesResponse.Message"));
-		opsListZonesResponse.setSuccess(_ctx.stringValue("OpsListZonesResponse.Success"));
 		opsListZonesResponse.setTotal(_ctx.stringValue("OpsListZonesResponse.Total"));
+		opsListZonesResponse.setCode(_ctx.stringValue("OpsListZonesResponse.Code"));
+		opsListZonesResponse.setSuccess(_ctx.stringValue("OpsListZonesResponse.Success"));
 
 		List<HouyiZoneInfo> houyiZoneInfos = new ArrayList<HouyiZoneInfo>();
 		for (int i = 0; i < _ctx.lengthValue("OpsListZonesResponse.HouyiZoneInfos.Length"); i++) {
 			HouyiZoneInfo houyiZoneInfo = new HouyiZoneInfo();
-			houyiZoneInfo.setHouyiZoneNo(_ctx.stringValue("OpsListZonesResponse.HouyiZoneInfos["+ i +"].HouyiZoneNo"));
-			houyiZoneInfo.setHouyiClusterNo(_ctx.stringValue("OpsListZonesResponse.HouyiZoneInfos["+ i +"].HouyiClusterNo"));
-			houyiZoneInfo.setHouyiClusterNumericId(_ctx.stringValue("OpsListZonesResponse.HouyiZoneInfos["+ i +"].HouyiClusterNumericId"));
-			houyiZoneInfo.setHouyiAvailableZoneNo(_ctx.stringValue("OpsListZonesResponse.HouyiZoneInfos["+ i +"].HouyiAvailableZoneNo"));
-			houyiZoneInfo.setHouyiClusterName(_ctx.stringValue("OpsListZonesResponse.HouyiZoneInfos["+ i +"].HouyiClusterName"));
 			houyiZoneInfo.setVisibility(_ctx.booleanValue("OpsListZonesResponse.HouyiZoneInfos["+ i +"].Visibility"));
+			houyiZoneInfo.setHouyiZoneNo(_ctx.stringValue("OpsListZonesResponse.HouyiZoneInfos["+ i +"].HouyiZoneNo"));
+			houyiZoneInfo.setHouyiAvailableZoneNo(_ctx.stringValue("OpsListZonesResponse.HouyiZoneInfos["+ i +"].HouyiAvailableZoneNo"));
+			houyiZoneInfo.setHouyiClusterNumericId(_ctx.stringValue("OpsListZonesResponse.HouyiZoneInfos["+ i +"].HouyiClusterNumericId"));
+			houyiZoneInfo.setHouyiClusterNo(_ctx.stringValue("OpsListZonesResponse.HouyiZoneInfos["+ i +"].HouyiClusterNo"));
+			houyiZoneInfo.setHouyiClusterName(_ctx.stringValue("OpsListZonesResponse.HouyiZoneInfos["+ i +"].HouyiClusterName"));
 
-			List<String> diskTypes = new ArrayList<String>();
-			for (int j = 0; j < _ctx.lengthValue("OpsListZonesResponse.HouyiZoneInfos["+ i +"].DiskTypes.Length"); j++) {
-				diskTypes.add(_ctx.stringValue("OpsListZonesResponse.HouyiZoneInfos["+ i +"].DiskTypes["+ j +"]"));
+			List<String> networkTechnologys = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("OpsListZonesResponse.HouyiZoneInfos["+ i +"].NetworkTechnologys.Length"); j++) {
+				networkTechnologys.add(_ctx.stringValue("OpsListZonesResponse.HouyiZoneInfos["+ i +"].NetworkTechnologys["+ j +"]"));
 			}
-			houyiZoneInfo.setDiskTypes(diskTypes);
-
-			List<String> networkTypes = new ArrayList<String>();
-			for (int j = 0; j < _ctx.lengthValue("OpsListZonesResponse.HouyiZoneInfos["+ i +"].NetworkTypes.Length"); j++) {
-				networkTypes.add(_ctx.stringValue("OpsListZonesResponse.HouyiZoneInfos["+ i +"].NetworkTypes["+ j +"]"));
-			}
-			houyiZoneInfo.setNetworkTypes(networkTypes);
-
-			List<String> storageNetworkTypes = new ArrayList<String>();
-			for (int j = 0; j < _ctx.lengthValue("OpsListZonesResponse.HouyiZoneInfos["+ i +"].StorageNetworkTypes.Length"); j++) {
-				storageNetworkTypes.add(_ctx.stringValue("OpsListZonesResponse.HouyiZoneInfos["+ i +"].StorageNetworkTypes["+ j +"]"));
-			}
-			houyiZoneInfo.setStorageNetworkTypes(storageNetworkTypes);
+			houyiZoneInfo.setNetworkTechnologys(networkTechnologys);
 
 			List<String> virtTypes = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("OpsListZonesResponse.HouyiZoneInfos["+ i +"].VirtTypes.Length"); j++) {
@@ -66,17 +54,29 @@ public class OpsListZonesResponseUnmarshaller {
 			}
 			houyiZoneInfo.setVirtTypes(virtTypes);
 
+			List<String> storageNetworkTypes = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("OpsListZonesResponse.HouyiZoneInfos["+ i +"].StorageNetworkTypes.Length"); j++) {
+				storageNetworkTypes.add(_ctx.stringValue("OpsListZonesResponse.HouyiZoneInfos["+ i +"].StorageNetworkTypes["+ j +"]"));
+			}
+			houyiZoneInfo.setStorageNetworkTypes(storageNetworkTypes);
+
 			List<String> instanceTypes = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("OpsListZonesResponse.HouyiZoneInfos["+ i +"].InstanceTypes.Length"); j++) {
 				instanceTypes.add(_ctx.stringValue("OpsListZonesResponse.HouyiZoneInfos["+ i +"].InstanceTypes["+ j +"]"));
 			}
 			houyiZoneInfo.setInstanceTypes(instanceTypes);
 
-			List<String> networkTechnologys = new ArrayList<String>();
-			for (int j = 0; j < _ctx.lengthValue("OpsListZonesResponse.HouyiZoneInfos["+ i +"].NetworkTechnologys.Length"); j++) {
-				networkTechnologys.add(_ctx.stringValue("OpsListZonesResponse.HouyiZoneInfos["+ i +"].NetworkTechnologys["+ j +"]"));
+			List<String> networkTypes = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("OpsListZonesResponse.HouyiZoneInfos["+ i +"].NetworkTypes.Length"); j++) {
+				networkTypes.add(_ctx.stringValue("OpsListZonesResponse.HouyiZoneInfos["+ i +"].NetworkTypes["+ j +"]"));
 			}
-			houyiZoneInfo.setNetworkTechnologys(networkTechnologys);
+			houyiZoneInfo.setNetworkTypes(networkTypes);
+
+			List<String> diskTypes = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("OpsListZonesResponse.HouyiZoneInfos["+ i +"].DiskTypes.Length"); j++) {
+				diskTypes.add(_ctx.stringValue("OpsListZonesResponse.HouyiZoneInfos["+ i +"].DiskTypes["+ j +"]"));
+			}
+			houyiZoneInfo.setDiskTypes(diskTypes);
 
 			houyiZoneInfos.add(houyiZoneInfo);
 		}

@@ -47,20 +47,20 @@ public class OpsDescribeResourceModificationResponse extends AcsResponse {
 
 	public static class AvailableZone {
 
-		private String regionId;
+		private String status;
 
 		private String zoneId;
 
-		private String status;
+		private String regionId;
 
 		private List<AvailableResource> availableResources;
 
-		public String getRegionId() {
-			return this.regionId;
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public String getZoneId() {
@@ -71,12 +71,12 @@ public class OpsDescribeResourceModificationResponse extends AcsResponse {
 			this.zoneId = zoneId;
 		}
 
-		public String getStatus() {
-			return this.status;
+		public String getRegionId() {
+			return this.regionId;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 
 		public List<AvailableResource> getAvailableResources() {
@@ -111,23 +111,15 @@ public class OpsDescribeResourceModificationResponse extends AcsResponse {
 
 			public static class SupportedResource {
 
-				private String value;
-
 				private String status;
 
-				private Integer min;
+				private String value;
 
 				private Integer max;
 
 				private String unit;
 
-				public String getValue() {
-					return this.value;
-				}
-
-				public void setValue(String value) {
-					this.value = value;
-				}
+				private Integer min;
 
 				public String getStatus() {
 					return this.status;
@@ -137,12 +129,12 @@ public class OpsDescribeResourceModificationResponse extends AcsResponse {
 					this.status = status;
 				}
 
-				public Integer getMin() {
-					return this.min;
+				public String getValue() {
+					return this.value;
 				}
 
-				public void setMin(Integer min) {
-					this.min = min;
+				public void setValue(String value) {
+					this.value = value;
 				}
 
 				public Integer getMax() {
@@ -159,6 +151,14 @@ public class OpsDescribeResourceModificationResponse extends AcsResponse {
 
 				public void setUnit(String unit) {
 					this.unit = unit;
+				}
+
+				public Integer getMin() {
+					return this.min;
+				}
+
+				public void setMin(Integer min) {
+					this.min = min;
 				}
 			}
 		}

@@ -28,8 +28,8 @@ public class OpsChangeGroupTypeResponseUnmarshaller {
 	public static OpsChangeGroupTypeResponse unmarshall(OpsChangeGroupTypeResponse opsChangeGroupTypeResponse, UnmarshallerContext _ctx) {
 		
 		opsChangeGroupTypeResponse.setRequestId(_ctx.stringValue("OpsChangeGroupTypeResponse.RequestId"));
-		opsChangeGroupTypeResponse.setCode(_ctx.stringValue("OpsChangeGroupTypeResponse.Code"));
 		opsChangeGroupTypeResponse.setMessage(_ctx.stringValue("OpsChangeGroupTypeResponse.Message"));
+		opsChangeGroupTypeResponse.setCode(_ctx.stringValue("OpsChangeGroupTypeResponse.Code"));
 		opsChangeGroupTypeResponse.setSuccess(_ctx.stringValue("OpsChangeGroupTypeResponse.Success"));
 
 		Data data = new Data();
@@ -38,9 +38,9 @@ public class OpsChangeGroupTypeResponseUnmarshaller {
 		List<CheckErrorMsg> checkErrorMsgs = new ArrayList<CheckErrorMsg>();
 		for (int i = 0; i < _ctx.lengthValue("OpsChangeGroupTypeResponse.Data.CheckErrorMsgs.Length"); i++) {
 			CheckErrorMsg checkErrorMsg = new CheckErrorMsg();
-			checkErrorMsg.setResourceId(_ctx.stringValue("OpsChangeGroupTypeResponse.Data.CheckErrorMsgs["+ i +"].ResourceId"));
 			checkErrorMsg.setErrorCode(_ctx.integerValue("OpsChangeGroupTypeResponse.Data.CheckErrorMsgs["+ i +"].ErrorCode"));
 			checkErrorMsg.setErrorMsg(_ctx.stringValue("OpsChangeGroupTypeResponse.Data.CheckErrorMsgs["+ i +"].ErrorMsg"));
+			checkErrorMsg.setResourceId(_ctx.stringValue("OpsChangeGroupTypeResponse.Data.CheckErrorMsgs["+ i +"].ResourceId"));
 
 			checkErrorMsgs.add(checkErrorMsg);
 		}

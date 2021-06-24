@@ -31,18 +31,19 @@ public class OpsQueryRealtimeDetectConfigResponseUnmarshaller {
 		List<ScriptConfig> scriptConfigs = new ArrayList<ScriptConfig>();
 		for (int i = 0; i < _ctx.lengthValue("OpsQueryRealtimeDetectConfigResponse.ScriptConfigs.Length"); i++) {
 			ScriptConfig scriptConfig = new ScriptConfig();
-			scriptConfig.setDetectConfig(_ctx.stringValue("OpsQueryRealtimeDetectConfigResponse.ScriptConfigs["+ i +"].DetectConfig"));
-			scriptConfig.setName(_ctx.stringValue("OpsQueryRealtimeDetectConfigResponse.ScriptConfigs["+ i +"].Name"));
-			scriptConfig.setDesc(_ctx.stringValue("OpsQueryRealtimeDetectConfigResponse.ScriptConfigs["+ i +"].Desc"));
-			scriptConfig.setEnable(_ctx.booleanValue("OpsQueryRealtimeDetectConfigResponse.ScriptConfigs["+ i +"].Enable"));
-			scriptConfig.setTarget(_ctx.stringValue("OpsQueryRealtimeDetectConfigResponse.ScriptConfigs["+ i +"].Target"));
-			scriptConfig.setCommand(_ctx.stringValue("OpsQueryRealtimeDetectConfigResponse.ScriptConfigs["+ i +"].Command"));
-			scriptConfig.setExecFlowControl(_ctx.integerValue("OpsQueryRealtimeDetectConfigResponse.ScriptConfigs["+ i +"].ExecFlowControl"));
-			scriptConfig.setExecCondition(_ctx.stringValue("OpsQueryRealtimeDetectConfigResponse.ScriptConfigs["+ i +"].ExecCondition"));
-			scriptConfig.setBatchDetect(_ctx.booleanValue("OpsQueryRealtimeDetectConfigResponse.ScriptConfigs["+ i +"].BatchDetect"));
-			scriptConfig.setHandler(_ctx.stringValue("OpsQueryRealtimeDetectConfigResponse.ScriptConfigs["+ i +"].Handler"));
-			scriptConfig.setExecMode(_ctx.stringValue("OpsQueryRealtimeDetectConfigResponse.ScriptConfigs["+ i +"].ExecMode"));
 			scriptConfig.setTimeout(_ctx.integerValue("OpsQueryRealtimeDetectConfigResponse.ScriptConfigs["+ i +"].Timeout"));
+			scriptConfig.setExecFlowControl(_ctx.integerValue("OpsQueryRealtimeDetectConfigResponse.ScriptConfigs["+ i +"].ExecFlowControl"));
+			scriptConfig.setExecMode(_ctx.stringValue("OpsQueryRealtimeDetectConfigResponse.ScriptConfigs["+ i +"].ExecMode"));
+			scriptConfig.setExecCondition(_ctx.stringValue("OpsQueryRealtimeDetectConfigResponse.ScriptConfigs["+ i +"].ExecCondition"));
+			scriptConfig.setDesc(_ctx.stringValue("OpsQueryRealtimeDetectConfigResponse.ScriptConfigs["+ i +"].Desc"));
+			scriptConfig.setBatchDetect(_ctx.booleanValue("OpsQueryRealtimeDetectConfigResponse.ScriptConfigs["+ i +"].BatchDetect"));
+			scriptConfig.setDetectConfig(_ctx.stringValue("OpsQueryRealtimeDetectConfigResponse.ScriptConfigs["+ i +"].DetectConfig"));
+			scriptConfig.setCommand(_ctx.stringValue("OpsQueryRealtimeDetectConfigResponse.ScriptConfigs["+ i +"].Command"));
+			scriptConfig.setHandler(_ctx.stringValue("OpsQueryRealtimeDetectConfigResponse.ScriptConfigs["+ i +"].Handler"));
+			scriptConfig.setName(_ctx.stringValue("OpsQueryRealtimeDetectConfigResponse.ScriptConfigs["+ i +"].Name"));
+			scriptConfig.setTarget(_ctx.stringValue("OpsQueryRealtimeDetectConfigResponse.ScriptConfigs["+ i +"].Target"));
+			scriptConfig.setConfigDesc(_ctx.stringValue("OpsQueryRealtimeDetectConfigResponse.ScriptConfigs["+ i +"].ConfigDesc"));
+			scriptConfig.setEnable(_ctx.booleanValue("OpsQueryRealtimeDetectConfigResponse.ScriptConfigs["+ i +"].Enable"));
 
 			List<String> params = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("OpsQueryRealtimeDetectConfigResponse.ScriptConfigs["+ i +"].Params.Length"); j++) {

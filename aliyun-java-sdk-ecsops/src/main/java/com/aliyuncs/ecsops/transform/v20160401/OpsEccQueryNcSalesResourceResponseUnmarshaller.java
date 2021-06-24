@@ -27,8 +27,8 @@ public class OpsEccQueryNcSalesResourceResponseUnmarshaller {
 
 		Data data = new Data();
 		data.setSaleCpuCount(_ctx.stringValue("OpsEccQueryNcSalesResourceResponse.Data.SaleCpuCount"));
-		data.setSaleMemorySizeMb(_ctx.stringValue("OpsEccQueryNcSalesResourceResponse.Data.SaleMemorySizeMb"));
 		data.setNcPerfTemplateName(_ctx.stringValue("OpsEccQueryNcSalesResourceResponse.Data.NcPerfTemplateName"));
+		data.setSaleMemorySizeMb(_ctx.stringValue("OpsEccQueryNcSalesResourceResponse.Data.SaleMemorySizeMb"));
 		opsEccQueryNcSalesResourceResponse.setData(data);
 	 
 	 	return opsEccQueryNcSalesResourceResponse;

@@ -24,15 +24,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsDescribeUnderlayEniResponse extends AcsResponse {
 
+	private String message;
+
 	private String requestId;
 
 	private String code;
 
-	private String message;
-
 	private String success;
 
 	private Data data;
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -48,14 +56,6 @@ public class OpsDescribeUnderlayEniResponse extends AcsResponse {
 
 	public void setCode(String code) {
 		this.code = code;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
 	}
 
 	public String getSuccess() {
@@ -76,26 +76,34 @@ public class OpsDescribeUnderlayEniResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String instanceId;
+		private String mask;
+
+		private String gateway;
 
 		private String underlayEniId;
 
 		private String ip;
 
+		private String instanceId;
+
 		private String vlan;
-
-		private String mask;
-
-		private String gateway;
 
 		private String mac;
 
-		public String getInstanceId() {
-			return this.instanceId;
+		public String getMask() {
+			return this.mask;
 		}
 
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
+		public void setMask(String mask) {
+			this.mask = mask;
+		}
+
+		public String getGateway() {
+			return this.gateway;
+		}
+
+		public void setGateway(String gateway) {
+			this.gateway = gateway;
 		}
 
 		public String getUnderlayEniId() {
@@ -114,28 +122,20 @@ public class OpsDescribeUnderlayEniResponse extends AcsResponse {
 			this.ip = ip;
 		}
 
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
 		public String getVlan() {
 			return this.vlan;
 		}
 
 		public void setVlan(String vlan) {
 			this.vlan = vlan;
-		}
-
-		public String getMask() {
-			return this.mask;
-		}
-
-		public void setMask(String mask) {
-			this.mask = mask;
-		}
-
-		public String getGateway() {
-			return this.gateway;
-		}
-
-		public void setGateway(String gateway) {
-			this.gateway = gateway;
 		}
 
 		public String getMac() {

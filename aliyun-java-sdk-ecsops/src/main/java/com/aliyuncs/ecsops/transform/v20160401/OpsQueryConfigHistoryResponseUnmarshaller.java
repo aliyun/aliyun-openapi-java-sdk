@@ -31,10 +31,10 @@ public class OpsQueryConfigHistoryResponseUnmarshaller {
 		List<OpsCommitRecord> opsCommitRecords = new ArrayList<OpsCommitRecord>();
 		for (int i = 0; i < _ctx.lengthValue("OpsQueryConfigHistoryResponse.OpsCommitRecords.Length"); i++) {
 			OpsCommitRecord opsCommitRecord = new OpsCommitRecord();
-			opsCommitRecord.setCommitId(_ctx.stringValue("OpsQueryConfigHistoryResponse.OpsCommitRecords["+ i +"].CommitId"));
-			opsCommitRecord.setCommitDate(_ctx.stringValue("OpsQueryConfigHistoryResponse.OpsCommitRecords["+ i +"].CommitDate"));
 			opsCommitRecord.setUniqueKey(_ctx.stringValue("OpsQueryConfigHistoryResponse.OpsCommitRecords["+ i +"].UniqueKey"));
+			opsCommitRecord.setCommitDate(_ctx.stringValue("OpsQueryConfigHistoryResponse.OpsCommitRecords["+ i +"].CommitDate"));
 			opsCommitRecord.setDescription(_ctx.stringValue("OpsQueryConfigHistoryResponse.OpsCommitRecords["+ i +"].Description"));
+			opsCommitRecord.setCommitId(_ctx.stringValue("OpsQueryConfigHistoryResponse.OpsCommitRecords["+ i +"].CommitId"));
 			opsCommitRecord.setAuthor(_ctx.stringValue("OpsQueryConfigHistoryResponse.OpsCommitRecords["+ i +"].Author"));
 
 			opsCommitRecords.add(opsCommitRecord);

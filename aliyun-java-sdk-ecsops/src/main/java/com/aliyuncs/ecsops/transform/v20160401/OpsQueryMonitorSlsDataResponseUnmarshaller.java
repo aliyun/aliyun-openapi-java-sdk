@@ -33,10 +33,10 @@ public class OpsQueryMonitorSlsDataResponseUnmarshaller {
 			MonitorSlsData monitorSlsData = new MonitorSlsData();
 			monitorSlsData.setRegion(_ctx.stringValue("OpsQueryMonitorSlsDataResponse.MonitorSlsDataList["+ i +"].Region"));
 			monitorSlsData.setLogstore(_ctx.stringValue("OpsQueryMonitorSlsDataResponse.MonitorSlsDataList["+ i +"].Logstore"));
-			monitorSlsData.setSource(_ctx.stringValue("OpsQueryMonitorSlsDataResponse.MonitorSlsDataList["+ i +"].Source"));
 			monitorSlsData.setTimestamp(_ctx.longValue("OpsQueryMonitorSlsDataResponse.MonitorSlsDataList["+ i +"].Timestamp"));
-			monitorSlsData.setSlsData(_ctx.stringValue("OpsQueryMonitorSlsDataResponse.MonitorSlsDataList["+ i +"].SlsData"));
 			monitorSlsData.setProject(_ctx.stringValue("OpsQueryMonitorSlsDataResponse.MonitorSlsDataList["+ i +"].Project"));
+			monitorSlsData.setSource(_ctx.stringValue("OpsQueryMonitorSlsDataResponse.MonitorSlsDataList["+ i +"].Source"));
+			monitorSlsData.setSlsData(_ctx.stringValue("OpsQueryMonitorSlsDataResponse.MonitorSlsDataList["+ i +"].SlsData"));
 
 			monitorSlsDataList.add(monitorSlsData);
 		}

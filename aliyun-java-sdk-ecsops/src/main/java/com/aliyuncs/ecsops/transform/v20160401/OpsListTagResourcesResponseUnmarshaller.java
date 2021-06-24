@@ -33,10 +33,10 @@ public class OpsListTagResourcesResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("OpsListTagResourcesResponse.TagResources.Length"); i++) {
 			TagResource tagResource = new TagResource();
 			tagResource.setResourceType(_ctx.stringValue("OpsListTagResourcesResponse.TagResources["+ i +"].ResourceType"));
+			tagResource.setAliUid(_ctx.longValue("OpsListTagResourcesResponse.TagResources["+ i +"].AliUid"));
+			tagResource.setTagValue(_ctx.stringValue("OpsListTagResourcesResponse.TagResources["+ i +"].TagValue"));
 			tagResource.setResourceId(_ctx.stringValue("OpsListTagResourcesResponse.TagResources["+ i +"].ResourceId"));
 			tagResource.setTagKey(_ctx.stringValue("OpsListTagResourcesResponse.TagResources["+ i +"].TagKey"));
-			tagResource.setTagValue(_ctx.stringValue("OpsListTagResourcesResponse.TagResources["+ i +"].TagValue"));
-			tagResource.setAliUid(_ctx.longValue("OpsListTagResourcesResponse.TagResources["+ i +"].AliUid"));
 
 			tagResources.add(tagResource);
 		}

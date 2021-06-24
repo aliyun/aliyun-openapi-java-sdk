@@ -27,9 +27,9 @@ public class OpsDescribeMaintenanceAttributesResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Integer pageNumber;
-
 	private Integer pageSize;
+
+	private Integer pageNumber;
 
 	private Integer total;
 
@@ -43,20 +43,20 @@ public class OpsDescribeMaintenanceAttributesResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public Integer getTotal() {
@@ -77,45 +77,21 @@ public class OpsDescribeMaintenanceAttributesResponse extends AcsResponse {
 
 	public static class MaintenanceAttribute {
 
-		private String propertyId;
-
-		private String level;
-
-		private String instanceId;
-
 		private Boolean liveMigration;
 
 		private Boolean notifyOnMaintenance;
 
-		private List<MaintenanceWindow> maintenanceWindows;
+		private String instanceId;
+
+		private String propertyId;
+
+		private String level;
 
 		private List<ReleaseWindow> releaseWindows;
 
+		private List<MaintenanceWindow> maintenanceWindows;
+
 		private ActionOnMaintenance actionOnMaintenance;
-
-		public String getPropertyId() {
-			return this.propertyId;
-		}
-
-		public void setPropertyId(String propertyId) {
-			this.propertyId = propertyId;
-		}
-
-		public String getLevel() {
-			return this.level;
-		}
-
-		public void setLevel(String level) {
-			this.level = level;
-		}
-
-		public String getInstanceId() {
-			return this.instanceId;
-		}
-
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
 
 		public Boolean getLiveMigration() {
 			return this.liveMigration;
@@ -133,12 +109,28 @@ public class OpsDescribeMaintenanceAttributesResponse extends AcsResponse {
 			this.notifyOnMaintenance = notifyOnMaintenance;
 		}
 
-		public List<MaintenanceWindow> getMaintenanceWindows() {
-			return this.maintenanceWindows;
+		public String getInstanceId() {
+			return this.instanceId;
 		}
 
-		public void setMaintenanceWindows(List<MaintenanceWindow> maintenanceWindows) {
-			this.maintenanceWindows = maintenanceWindows;
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public String getPropertyId() {
+			return this.propertyId;
+		}
+
+		public void setPropertyId(String propertyId) {
+			this.propertyId = propertyId;
+		}
+
+		public String getLevel() {
+			return this.level;
+		}
+
+		public void setLevel(String level) {
+			this.level = level;
 		}
 
 		public List<ReleaseWindow> getReleaseWindows() {
@@ -149,6 +141,14 @@ public class OpsDescribeMaintenanceAttributesResponse extends AcsResponse {
 			this.releaseWindows = releaseWindows;
 		}
 
+		public List<MaintenanceWindow> getMaintenanceWindows() {
+			return this.maintenanceWindows;
+		}
+
+		public void setMaintenanceWindows(List<MaintenanceWindow> maintenanceWindows) {
+			this.maintenanceWindows = maintenanceWindows;
+		}
+
 		public ActionOnMaintenance getActionOnMaintenance() {
 			return this.actionOnMaintenance;
 		}
@@ -157,19 +157,11 @@ public class OpsDescribeMaintenanceAttributesResponse extends AcsResponse {
 			this.actionOnMaintenance = actionOnMaintenance;
 		}
 
-		public static class MaintenanceWindow {
-
-			private String startTime;
+		public static class ReleaseWindow {
 
 			private String endTime;
 
-			public String getStartTime() {
-				return this.startTime;
-			}
-
-			public void setStartTime(String startTime) {
-				this.startTime = startTime;
-			}
+			private String startTime;
 
 			public String getEndTime() {
 				return this.endTime;
@@ -177,22 +169,22 @@ public class OpsDescribeMaintenanceAttributesResponse extends AcsResponse {
 
 			public void setEndTime(String endTime) {
 				this.endTime = endTime;
+			}
+
+			public String getStartTime() {
+				return this.startTime;
+			}
+
+			public void setStartTime(String startTime) {
+				this.startTime = startTime;
 			}
 		}
 
-		public static class ReleaseWindow {
-
-			private String startTime;
+		public static class MaintenanceWindow {
 
 			private String endTime;
 
-			public String getStartTime() {
-				return this.startTime;
-			}
-
-			public void setStartTime(String startTime) {
-				this.startTime = startTime;
-			}
+			private String startTime;
 
 			public String getEndTime() {
 				return this.endTime;
@@ -200,6 +192,14 @@ public class OpsDescribeMaintenanceAttributesResponse extends AcsResponse {
 
 			public void setEndTime(String endTime) {
 				this.endTime = endTime;
+			}
+
+			public String getStartTime() {
+				return this.startTime;
+			}
+
+			public void setStartTime(String startTime) {
+				this.startTime = startTime;
 			}
 		}
 
@@ -207,9 +207,9 @@ public class OpsDescribeMaintenanceAttributesResponse extends AcsResponse {
 
 			private String value;
 
-			private String defaultValue;
-
 			private Integer canRecover;
+
+			private String defaultValue;
 
 			private List<String> supportedValues;
 
@@ -221,20 +221,20 @@ public class OpsDescribeMaintenanceAttributesResponse extends AcsResponse {
 				this.value = value;
 			}
 
-			public String getDefaultValue() {
-				return this.defaultValue;
-			}
-
-			public void setDefaultValue(String defaultValue) {
-				this.defaultValue = defaultValue;
-			}
-
 			public Integer getCanRecover() {
 				return this.canRecover;
 			}
 
 			public void setCanRecover(Integer canRecover) {
 				this.canRecover = canRecover;
+			}
+
+			public String getDefaultValue() {
+				return this.defaultValue;
+			}
+
+			public void setDefaultValue(String defaultValue) {
+				this.defaultValue = defaultValue;
 			}
 
 			public List<String> getSupportedValues() {

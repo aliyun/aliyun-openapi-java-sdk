@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsDescribeSnapshotLinksResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
-
-	private Integer pageNumber;
 
 	private Integer pageSize;
 
+	private String requestId;
+
+	private Integer pageNumber;
+
 	private List<SnapshotLink> snapshotLinks;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -51,20 +43,28 @@ public class OpsDescribeSnapshotLinksResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<SnapshotLink> getSnapshotLinks() {
@@ -77,35 +77,19 @@ public class OpsDescribeSnapshotLinksResponse extends AcsResponse {
 
 	public static class SnapshotLink {
 
-		private String snapshotLinkId;
-
-		private String regionId;
-
 		private String sourceDiskId;
+
+		private Long totalSize;
 
 		private Integer sourceDiskSize;
 
 		private String sourceDiskType;
 
-		private Long totalSize;
-
 		private Integer totalCount;
 
-		public String getSnapshotLinkId() {
-			return this.snapshotLinkId;
-		}
+		private String snapshotLinkId;
 
-		public void setSnapshotLinkId(String snapshotLinkId) {
-			this.snapshotLinkId = snapshotLinkId;
-		}
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
+		private String regionId;
 
 		public String getSourceDiskId() {
 			return this.sourceDiskId;
@@ -113,6 +97,14 @@ public class OpsDescribeSnapshotLinksResponse extends AcsResponse {
 
 		public void setSourceDiskId(String sourceDiskId) {
 			this.sourceDiskId = sourceDiskId;
+		}
+
+		public Long getTotalSize() {
+			return this.totalSize;
+		}
+
+		public void setTotalSize(Long totalSize) {
+			this.totalSize = totalSize;
 		}
 
 		public Integer getSourceDiskSize() {
@@ -131,20 +123,28 @@ public class OpsDescribeSnapshotLinksResponse extends AcsResponse {
 			this.sourceDiskType = sourceDiskType;
 		}
 
-		public Long getTotalSize() {
-			return this.totalSize;
-		}
-
-		public void setTotalSize(Long totalSize) {
-			this.totalSize = totalSize;
-		}
-
 		public Integer getTotalCount() {
 			return this.totalCount;
 		}
 
 		public void setTotalCount(Integer totalCount) {
 			this.totalCount = totalCount;
+		}
+
+		public String getSnapshotLinkId() {
+			return this.snapshotLinkId;
+		}
+
+		public void setSnapshotLinkId(String snapshotLinkId) {
+			this.snapshotLinkId = snapshotLinkId;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 	}
 

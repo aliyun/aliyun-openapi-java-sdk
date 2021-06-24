@@ -31,10 +31,10 @@ public class OpsDescribeRegionsResponseUnmarshaller {
 		List<Region> regions = new ArrayList<Region>();
 		for (int i = 0; i < _ctx.lengthValue("OpsDescribeRegionsResponse.Regions.Length"); i++) {
 			Region region = new Region();
-			region.setRegionId(_ctx.stringValue("OpsDescribeRegionsResponse.Regions["+ i +"].RegionId"));
+			region.setStatus(_ctx.stringValue("OpsDescribeRegionsResponse.Regions["+ i +"].Status"));
 			region.setLocalName(_ctx.stringValue("OpsDescribeRegionsResponse.Regions["+ i +"].LocalName"));
 			region.setRegionEndpoint(_ctx.stringValue("OpsDescribeRegionsResponse.Regions["+ i +"].RegionEndpoint"));
-			region.setStatus(_ctx.stringValue("OpsDescribeRegionsResponse.Regions["+ i +"].Status"));
+			region.setRegionId(_ctx.stringValue("OpsDescribeRegionsResponse.Regions["+ i +"].RegionId"));
 
 			regions.add(region);
 		}

@@ -25,21 +25,29 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsDescribeChangeMemberResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer totalCount;
 
-	private String code;
+	private String requestId;
 
 	private String message;
 
-	private String success;
-
-	private Integer totalCount;
+	private Integer pageSize;
 
 	private Integer pageNumber;
 
-	private Integer pageSize;
+	private String code;
+
+	private String success;
 
 	private List<ChangeMembers> data;
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -47,14 +55,6 @@ public class OpsDescribeChangeMemberResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
 	}
 
 	public String getMessage() {
@@ -65,20 +65,12 @@ public class OpsDescribeChangeMemberResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getSuccess() {
-		return this.success;
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setSuccess(String success) {
-		this.success = success;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
 	}
 
 	public Integer getPageNumber() {
@@ -89,12 +81,20 @@ public class OpsDescribeChangeMemberResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(String success) {
+		this.success = success;
 	}
 
 	public List<ChangeMembers> getData() {
@@ -107,20 +107,20 @@ public class OpsDescribeChangeMemberResponse extends AcsResponse {
 
 	public static class ChangeMembers {
 
-		private Long id;
+		private String memberName;
 
 		private String gmtCreate;
 
 		private String memberNo;
 
-		private String memberName;
+		private Long id;
 
-		public Long getId() {
-			return this.id;
+		public String getMemberName() {
+			return this.memberName;
 		}
 
-		public void setId(Long id) {
-			this.id = id;
+		public void setMemberName(String memberName) {
+			this.memberName = memberName;
 		}
 
 		public String getGmtCreate() {
@@ -139,12 +139,12 @@ public class OpsDescribeChangeMemberResponse extends AcsResponse {
 			this.memberNo = memberNo;
 		}
 
-		public String getMemberName() {
-			return this.memberName;
+		public Long getId() {
+			return this.id;
 		}
 
-		public void setMemberName(String memberName) {
-			this.memberName = memberName;
+		public void setId(Long id) {
+			this.id = id;
 		}
 	}
 

@@ -17,7 +17,6 @@ package com.aliyuncs.ecsops.model.v20160401;
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
 import com.aliyuncs.http.MethodType;
-import com.aliyuncs.ecsops.Endpoint;
 
 /**
  * @author auto create
@@ -62,12 +61,8 @@ public class OpsDescribeResourcesRequest extends RpcAcsRequest<OpsDescribeResour
 
 	private String auditParamStr;
 	public OpsDescribeResourcesRequest() {
-		super("Ecsops", "2016-04-01", "OpsDescribeResources", "ecs");
+		super("Ecsops", "2016-04-01", "OpsDescribeResources", "ecsops");
 		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
 	}
 
 	public Long getResourceOwnerId() {
@@ -191,13 +186,13 @@ public class OpsDescribeResourcesRequest extends RpcAcsRequest<OpsDescribeResour
 		this.tagFilters = tagFilters;	
 		if (tagFilters != null) {
 			for (int depth1 = 0; depth1 < tagFilters.size(); depth1++) {
-				putQueryParameter("TagFilter." + (depth1 + 1) + ".TagKey" , tagFilters.get(depth1).getTagKey());
 				putQueryParameter("TagFilter." + (depth1 + 1) + ".Operation" , tagFilters.get(depth1).getOperation());
 				if (tagFilters.get(depth1).getTagValuess() != null) {
 					for (int i = 0; i < tagFilters.get(depth1).getTagValuess().size(); i++) {
 						putQueryParameter("TagFilter." + (depth1 + 1) + ".TagValues." + (i + 1) , tagFilters.get(depth1).getTagValuess().get(i));
 					}
 				}
+				putQueryParameter("TagFilter." + (depth1 + 1) + ".TagKey" , tagFilters.get(depth1).getTagKey());
 			}
 		}	
 	}
@@ -232,8 +227,8 @@ public class OpsDescribeResourcesRequest extends RpcAcsRequest<OpsDescribeResour
 		this.filters = filters;	
 		if (filters != null) {
 			for (int depth1 = 0; depth1 < filters.size(); depth1++) {
-				putQueryParameter("Filter." + (depth1 + 1) + ".AttributeName" , filters.get(depth1).getAttributeName());
 				putQueryParameter("Filter." + (depth1 + 1) + ".Operation" , filters.get(depth1).getOperation());
+				putQueryParameter("Filter." + (depth1 + 1) + ".AttributeName" , filters.get(depth1).getAttributeName());
 				putQueryParameter("Filter." + (depth1 + 1) + ".AttributeValue" , filters.get(depth1).getAttributeValue());
 			}
 		}	
@@ -308,19 +303,11 @@ public class OpsDescribeResourcesRequest extends RpcAcsRequest<OpsDescribeResour
 
 	public static class TagFilter {
 
-		private String tagKey;
-
 		private String operation;
 
 		private List<String> tagValuess;
 
-		public String getTagKey() {
-			return this.tagKey;
-		}
-
-		public void setTagKey(String tagKey) {
-			this.tagKey = tagKey;
-		}
+		private String tagKey;
 
 		public String getOperation() {
 			return this.operation;
@@ -337,23 +324,23 @@ public class OpsDescribeResourcesRequest extends RpcAcsRequest<OpsDescribeResour
 		public void setTagValuess(List<String> tagValuess) {
 			this.tagValuess = tagValuess;
 		}
+
+		public String getTagKey() {
+			return this.tagKey;
+		}
+
+		public void setTagKey(String tagKey) {
+			this.tagKey = tagKey;
+		}
 	}
 
 	public static class Filter {
 
-		private String attributeName;
-
 		private String operation;
 
+		private String attributeName;
+
 		private String attributeValue;
-
-		public String getAttributeName() {
-			return this.attributeName;
-		}
-
-		public void setAttributeName(String attributeName) {
-			this.attributeName = attributeName;
-		}
 
 		public String getOperation() {
 			return this.operation;
@@ -361,6 +348,14 @@ public class OpsDescribeResourcesRequest extends RpcAcsRequest<OpsDescribeResour
 
 		public void setOperation(String operation) {
 			this.operation = operation;
+		}
+
+		public String getAttributeName() {
+			return this.attributeName;
+		}
+
+		public void setAttributeName(String attributeName) {
+			this.attributeName = attributeName;
 		}
 
 		public String getAttributeValue() {

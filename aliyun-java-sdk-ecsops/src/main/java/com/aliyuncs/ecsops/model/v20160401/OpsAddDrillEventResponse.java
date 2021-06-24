@@ -47,42 +47,26 @@ public class OpsAddDrillEventResponse extends AcsResponse {
 
 	public static class DrillEvent {
 
-		private String clusterName;
-
-		private String machineId;
-
-		private String drillReason;
+		private String endTime;
 
 		private String startTime;
 
-		private String endTime;
+		private String drillReason;
 
 		private String drillExecResult;
 
+		private String clusterName;
+
 		private String drillExecTime;
 
-		public String getClusterName() {
-			return this.clusterName;
+		private String machineId;
+
+		public String getEndTime() {
+			return this.endTime;
 		}
 
-		public void setClusterName(String clusterName) {
-			this.clusterName = clusterName;
-		}
-
-		public String getMachineId() {
-			return this.machineId;
-		}
-
-		public void setMachineId(String machineId) {
-			this.machineId = machineId;
-		}
-
-		public String getDrillReason() {
-			return this.drillReason;
-		}
-
-		public void setDrillReason(String drillReason) {
-			this.drillReason = drillReason;
+		public void setEndTime(String endTime) {
+			this.endTime = endTime;
 		}
 
 		public String getStartTime() {
@@ -93,12 +77,12 @@ public class OpsAddDrillEventResponse extends AcsResponse {
 			this.startTime = startTime;
 		}
 
-		public String getEndTime() {
-			return this.endTime;
+		public String getDrillReason() {
+			return this.drillReason;
 		}
 
-		public void setEndTime(String endTime) {
-			this.endTime = endTime;
+		public void setDrillReason(String drillReason) {
+			this.drillReason = drillReason;
 		}
 
 		public String getDrillExecResult() {
@@ -109,12 +93,28 @@ public class OpsAddDrillEventResponse extends AcsResponse {
 			this.drillExecResult = drillExecResult;
 		}
 
+		public String getClusterName() {
+			return this.clusterName;
+		}
+
+		public void setClusterName(String clusterName) {
+			this.clusterName = clusterName;
+		}
+
 		public String getDrillExecTime() {
 			return this.drillExecTime;
 		}
 
 		public void setDrillExecTime(String drillExecTime) {
 			this.drillExecTime = drillExecTime;
+		}
+
+		public String getMachineId() {
+			return this.machineId;
+		}
+
+		public void setMachineId(String machineId) {
+			this.machineId = machineId;
 		}
 	}
 

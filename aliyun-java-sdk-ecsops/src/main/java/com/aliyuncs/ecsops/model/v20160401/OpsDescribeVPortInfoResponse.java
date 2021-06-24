@@ -46,43 +46,19 @@ public class OpsDescribeVPortInfoResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String vPortName;
-
-		private String instanceId;
-
-		private String eniType;
-
 		private String vpcId;
 
 		private String vSwitchId;
 
-		private String eniStatus;
+		private String vPortName;
 
 		private String eniNetworkType;
 
-		public String getVPortName() {
-			return this.vPortName;
-		}
+		private String instanceId;
 
-		public void setVPortName(String vPortName) {
-			this.vPortName = vPortName;
-		}
+		private String eniStatus;
 
-		public String getInstanceId() {
-			return this.instanceId;
-		}
-
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
-
-		public String getEniType() {
-			return this.eniType;
-		}
-
-		public void setEniType(String eniType) {
-			this.eniType = eniType;
-		}
+		private String eniType;
 
 		public String getVpcId() {
 			return this.vpcId;
@@ -100,12 +76,12 @@ public class OpsDescribeVPortInfoResponse extends AcsResponse {
 			this.vSwitchId = vSwitchId;
 		}
 
-		public String getEniStatus() {
-			return this.eniStatus;
+		public String getVPortName() {
+			return this.vPortName;
 		}
 
-		public void setEniStatus(String eniStatus) {
-			this.eniStatus = eniStatus;
+		public void setVPortName(String vPortName) {
+			this.vPortName = vPortName;
 		}
 
 		public String getEniNetworkType() {
@@ -114,6 +90,30 @@ public class OpsDescribeVPortInfoResponse extends AcsResponse {
 
 		public void setEniNetworkType(String eniNetworkType) {
 			this.eniNetworkType = eniNetworkType;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public String getEniStatus() {
+			return this.eniStatus;
+		}
+
+		public void setEniStatus(String eniStatus) {
+			this.eniStatus = eniStatus;
+		}
+
+		public String getEniType() {
+			return this.eniType;
+		}
+
+		public void setEniType(String eniType) {
+			this.eniType = eniType;
 		}
 	}
 

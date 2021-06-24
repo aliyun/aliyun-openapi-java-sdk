@@ -47,28 +47,36 @@ public class OpsQueryHouyiZoneInventoryResponse extends AcsResponse {
 
 	public static class ProductResource {
 
-		private String instanceType;
+		private Long ioOptimized;
+
+		private Integer resourceType;
 
 		private Long vendibleAmount;
+
+		private String payType;
 
 		private Long totalAmount;
 
 		private String networkType;
 
-		private String payType;
-
-		private Long ioOptimized;
+		private String instanceType;
 
 		private String bizType;
 
-		private Integer resourceType;
-
-		public String getInstanceType() {
-			return this.instanceType;
+		public Long getIoOptimized() {
+			return this.ioOptimized;
 		}
 
-		public void setInstanceType(String instanceType) {
-			this.instanceType = instanceType;
+		public void setIoOptimized(Long ioOptimized) {
+			this.ioOptimized = ioOptimized;
+		}
+
+		public Integer getResourceType() {
+			return this.resourceType;
+		}
+
+		public void setResourceType(Integer resourceType) {
+			this.resourceType = resourceType;
 		}
 
 		public Long getVendibleAmount() {
@@ -77,6 +85,14 @@ public class OpsQueryHouyiZoneInventoryResponse extends AcsResponse {
 
 		public void setVendibleAmount(Long vendibleAmount) {
 			this.vendibleAmount = vendibleAmount;
+		}
+
+		public String getPayType() {
+			return this.payType;
+		}
+
+		public void setPayType(String payType) {
+			this.payType = payType;
 		}
 
 		public Long getTotalAmount() {
@@ -95,20 +111,12 @@ public class OpsQueryHouyiZoneInventoryResponse extends AcsResponse {
 			this.networkType = networkType;
 		}
 
-		public String getPayType() {
-			return this.payType;
+		public String getInstanceType() {
+			return this.instanceType;
 		}
 
-		public void setPayType(String payType) {
-			this.payType = payType;
-		}
-
-		public Long getIoOptimized() {
-			return this.ioOptimized;
-		}
-
-		public void setIoOptimized(Long ioOptimized) {
-			this.ioOptimized = ioOptimized;
+		public void setInstanceType(String instanceType) {
+			this.instanceType = instanceType;
 		}
 
 		public String getBizType() {
@@ -117,14 +125,6 @@ public class OpsQueryHouyiZoneInventoryResponse extends AcsResponse {
 
 		public void setBizType(String bizType) {
 			this.bizType = bizType;
-		}
-
-		public Integer getResourceType() {
-			return this.resourceType;
-		}
-
-		public void setResourceType(Integer resourceType) {
-			this.resourceType = resourceType;
 		}
 	}
 

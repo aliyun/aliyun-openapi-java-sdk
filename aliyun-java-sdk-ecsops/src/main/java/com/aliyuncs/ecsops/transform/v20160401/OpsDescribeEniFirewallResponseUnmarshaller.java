@@ -23,10 +23,10 @@ public class OpsDescribeEniFirewallResponseUnmarshaller {
 	public static OpsDescribeEniFirewallResponse unmarshall(OpsDescribeEniFirewallResponse opsDescribeEniFirewallResponse, UnmarshallerContext _ctx) {
 		
 		opsDescribeEniFirewallResponse.setRequestId(_ctx.stringValue("OpsDescribeEniFirewallResponse.RequestId"));
-		opsDescribeEniFirewallResponse.setCode(_ctx.stringValue("OpsDescribeEniFirewallResponse.Code"));
 		opsDescribeEniFirewallResponse.setMessage(_ctx.stringValue("OpsDescribeEniFirewallResponse.Message"));
-		opsDescribeEniFirewallResponse.setSuccess(_ctx.booleanValue("OpsDescribeEniFirewallResponse.Success"));
+		opsDescribeEniFirewallResponse.setCode(_ctx.stringValue("OpsDescribeEniFirewallResponse.Code"));
 		opsDescribeEniFirewallResponse.setRules(_ctx.stringValue("OpsDescribeEniFirewallResponse.Rules"));
+		opsDescribeEniFirewallResponse.setSuccess(_ctx.booleanValue("OpsDescribeEniFirewallResponse.Success"));
 	 
 	 	return opsDescribeEniFirewallResponse;
 	}

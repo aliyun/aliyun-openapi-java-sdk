@@ -16,7 +16,6 @@ package com.aliyuncs.ecsops.model.v20160401;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
-import com.aliyuncs.ecsops.Endpoint;
 
 /**
  * @author auto create
@@ -37,12 +36,8 @@ public class OpsDetectRootCauseRequest extends RpcAcsRequest<OpsDetectRootCauseR
 
 	private String auditParamStr;
 	public OpsDetectRootCauseRequest() {
-		super("Ecsops", "2016-04-01", "OpsDetectRootCause", "ecs");
+		super("Ecsops", "2016-04-01", "OpsDetectRootCause", "ecsops");
 		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
 	}
 
 	public String getEndTime() {

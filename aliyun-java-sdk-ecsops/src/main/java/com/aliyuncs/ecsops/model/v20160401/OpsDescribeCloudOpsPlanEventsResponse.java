@@ -25,21 +25,29 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsDescribeCloudOpsPlanEventsResponse extends AcsResponse {
 
+	private Integer totalCount;
+
 	private String requestId;
-
-	private String bizCode;
-
-	private String bizMessage;
-
-	private Integer count;
-
-	private Integer page;
 
 	private Integer pageSize;
 
-	private Integer totalCount;
+	private String bizMessage;
+
+	private Integer page;
+
+	private Integer count;
+
+	private String bizCode;
 
 	private List<PlanEventInfo> data;
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -47,38 +55,6 @@ public class OpsDescribeCloudOpsPlanEventsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getBizCode() {
-		return this.bizCode;
-	}
-
-	public void setBizCode(String bizCode) {
-		this.bizCode = bizCode;
-	}
-
-	public String getBizMessage() {
-		return this.bizMessage;
-	}
-
-	public void setBizMessage(String bizMessage) {
-		this.bizMessage = bizMessage;
-	}
-
-	public Integer getCount() {
-		return this.count;
-	}
-
-	public void setCount(Integer count) {
-		this.count = count;
-	}
-
-	public Integer getPage() {
-		return this.page;
-	}
-
-	public void setPage(Integer page) {
-		this.page = page;
 	}
 
 	public Integer getPageSize() {
@@ -89,12 +65,36 @@ public class OpsDescribeCloudOpsPlanEventsResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public Integer getTotalCount() {
-		return this.totalCount;
+	public String getBizMessage() {
+		return this.bizMessage;
 	}
 
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
+	public void setBizMessage(String bizMessage) {
+		this.bizMessage = bizMessage;
+	}
+
+	public Integer getPage() {
+		return this.page;
+	}
+
+	public void setPage(Integer page) {
+		this.page = page;
+	}
+
+	public Integer getCount() {
+		return this.count;
+	}
+
+	public void setCount(Integer count) {
+		this.count = count;
+	}
+
+	public String getBizCode() {
+		return this.bizCode;
+	}
+
+	public void setBizCode(String bizCode) {
+		this.bizCode = bizCode;
 	}
 
 	public List<PlanEventInfo> getData() {
@@ -107,66 +107,50 @@ public class OpsDescribeCloudOpsPlanEventsResponse extends AcsResponse {
 
 	public static class PlanEventInfo {
 
-		private String bizEventId;
-
-		private String eventId;
-
-		private String eventSource;
+		private String status;
 
 		private String eventTime;
 
-		private String eventType;
-
 		private String extendData;
-
-		private String gmtCreate;
-
-		private String gmtModified;
 
 		private String impact;
 
+		private String remark;
+
 		private String maintenanceId;
+
+		private String gmtModified;
 
 		private String opsCode;
 
-		private String remark;
+		private String eventId;
 
-		private String resourceId;
-
-		private String resourceType;
-
-		private String scheduleId;
-
-		private String status;
-
-		private Integer version;
-
-		private String opsTime;
+		private String bizEventId;
 
 		private String actionCode;
 
-		public String getBizEventId() {
-			return this.bizEventId;
+		private String resourceType;
+
+		private String eventType;
+
+		private Integer version;
+
+		private String gmtCreate;
+
+		private String scheduleId;
+
+		private String opsTime;
+
+		private String resourceId;
+
+		private String eventSource;
+
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setBizEventId(String bizEventId) {
-			this.bizEventId = bizEventId;
-		}
-
-		public String getEventId() {
-			return this.eventId;
-		}
-
-		public void setEventId(String eventId) {
-			this.eventId = eventId;
-		}
-
-		public String getEventSource() {
-			return this.eventSource;
-		}
-
-		public void setEventSource(String eventSource) {
-			this.eventSource = eventSource;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public String getEventTime() {
@@ -177,36 +161,12 @@ public class OpsDescribeCloudOpsPlanEventsResponse extends AcsResponse {
 			this.eventTime = eventTime;
 		}
 
-		public String getEventType() {
-			return this.eventType;
-		}
-
-		public void setEventType(String eventType) {
-			this.eventType = eventType;
-		}
-
 		public String getExtendData() {
 			return this.extendData;
 		}
 
 		public void setExtendData(String extendData) {
 			this.extendData = extendData;
-		}
-
-		public String getGmtCreate() {
-			return this.gmtCreate;
-		}
-
-		public void setGmtCreate(String gmtCreate) {
-			this.gmtCreate = gmtCreate;
-		}
-
-		public String getGmtModified() {
-			return this.gmtModified;
-		}
-
-		public void setGmtModified(String gmtModified) {
-			this.gmtModified = gmtModified;
 		}
 
 		public String getImpact() {
@@ -217,12 +177,28 @@ public class OpsDescribeCloudOpsPlanEventsResponse extends AcsResponse {
 			this.impact = impact;
 		}
 
+		public String getRemark() {
+			return this.remark;
+		}
+
+		public void setRemark(String remark) {
+			this.remark = remark;
+		}
+
 		public String getMaintenanceId() {
 			return this.maintenanceId;
 		}
 
 		public void setMaintenanceId(String maintenanceId) {
 			this.maintenanceId = maintenanceId;
+		}
+
+		public String getGmtModified() {
+			return this.gmtModified;
+		}
+
+		public void setGmtModified(String gmtModified) {
+			this.gmtModified = gmtModified;
 		}
 
 		public String getOpsCode() {
@@ -233,20 +209,28 @@ public class OpsDescribeCloudOpsPlanEventsResponse extends AcsResponse {
 			this.opsCode = opsCode;
 		}
 
-		public String getRemark() {
-			return this.remark;
+		public String getEventId() {
+			return this.eventId;
 		}
 
-		public void setRemark(String remark) {
-			this.remark = remark;
+		public void setEventId(String eventId) {
+			this.eventId = eventId;
 		}
 
-		public String getResourceId() {
-			return this.resourceId;
+		public String getBizEventId() {
+			return this.bizEventId;
 		}
 
-		public void setResourceId(String resourceId) {
-			this.resourceId = resourceId;
+		public void setBizEventId(String bizEventId) {
+			this.bizEventId = bizEventId;
+		}
+
+		public String getActionCode() {
+			return this.actionCode;
+		}
+
+		public void setActionCode(String actionCode) {
+			this.actionCode = actionCode;
 		}
 
 		public String getResourceType() {
@@ -257,20 +241,12 @@ public class OpsDescribeCloudOpsPlanEventsResponse extends AcsResponse {
 			this.resourceType = resourceType;
 		}
 
-		public String getScheduleId() {
-			return this.scheduleId;
+		public String getEventType() {
+			return this.eventType;
 		}
 
-		public void setScheduleId(String scheduleId) {
-			this.scheduleId = scheduleId;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
+		public void setEventType(String eventType) {
+			this.eventType = eventType;
 		}
 
 		public Integer getVersion() {
@@ -281,6 +257,22 @@ public class OpsDescribeCloudOpsPlanEventsResponse extends AcsResponse {
 			this.version = version;
 		}
 
+		public String getGmtCreate() {
+			return this.gmtCreate;
+		}
+
+		public void setGmtCreate(String gmtCreate) {
+			this.gmtCreate = gmtCreate;
+		}
+
+		public String getScheduleId() {
+			return this.scheduleId;
+		}
+
+		public void setScheduleId(String scheduleId) {
+			this.scheduleId = scheduleId;
+		}
+
 		public String getOpsTime() {
 			return this.opsTime;
 		}
@@ -289,12 +281,20 @@ public class OpsDescribeCloudOpsPlanEventsResponse extends AcsResponse {
 			this.opsTime = opsTime;
 		}
 
-		public String getActionCode() {
-			return this.actionCode;
+		public String getResourceId() {
+			return this.resourceId;
 		}
 
-		public void setActionCode(String actionCode) {
-			this.actionCode = actionCode;
+		public void setResourceId(String resourceId) {
+			this.resourceId = resourceId;
+		}
+
+		public String getEventSource() {
+			return this.eventSource;
+		}
+
+		public void setEventSource(String eventSource) {
+			this.eventSource = eventSource;
 		}
 	}
 

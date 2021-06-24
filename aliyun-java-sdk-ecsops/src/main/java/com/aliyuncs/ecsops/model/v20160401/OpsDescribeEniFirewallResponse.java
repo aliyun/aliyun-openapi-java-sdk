@@ -24,15 +24,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsDescribeEniFirewallResponse extends AcsResponse {
 
+	private String message;
+
 	private String requestId;
 
 	private String code;
 
-	private String message;
+	private String rules;
 
 	private Boolean success;
 
-	private String rules;
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -50,12 +58,12 @@ public class OpsDescribeEniFirewallResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public String getRules() {
+		return this.rules;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setRules(String rules) {
+		this.rules = rules;
 	}
 
 	public Boolean getSuccess() {
@@ -64,14 +72,6 @@ public class OpsDescribeEniFirewallResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
-	}
-
-	public String getRules() {
-		return this.rules;
-	}
-
-	public void setRules(String rules) {
-		this.rules = rules;
 	}
 
 	@Override

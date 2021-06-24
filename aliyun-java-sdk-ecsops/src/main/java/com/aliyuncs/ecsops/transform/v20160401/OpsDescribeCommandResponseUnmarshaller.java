@@ -27,39 +27,39 @@ public class OpsDescribeCommandResponseUnmarshaller {
 	public static OpsDescribeCommandResponse unmarshall(OpsDescribeCommandResponse opsDescribeCommandResponse, UnmarshallerContext _ctx) {
 		
 		opsDescribeCommandResponse.setRequestId(_ctx.stringValue("OpsDescribeCommandResponse.RequestId"));
+		opsDescribeCommandResponse.setPageSize(_ctx.integerValue("OpsDescribeCommandResponse.PageSize"));
 		opsDescribeCommandResponse.setTotal(_ctx.integerValue("OpsDescribeCommandResponse.Total"));
 		opsDescribeCommandResponse.setPageNo(_ctx.integerValue("OpsDescribeCommandResponse.PageNo"));
-		opsDescribeCommandResponse.setPageSize(_ctx.integerValue("OpsDescribeCommandResponse.PageSize"));
 
 		List<Command> commandList = new ArrayList<Command>();
 		for (int i = 0; i < _ctx.lengthValue("OpsDescribeCommandResponse.CommandList.Length"); i++) {
 			Command command = new Command();
-			command.setCommandId(_ctx.stringValue("OpsDescribeCommandResponse.CommandList["+ i +"].CommandId"));
-			command.setName(_ctx.stringValue("OpsDescribeCommandResponse.CommandList["+ i +"].Name"));
+			command.setCreationTime(_ctx.stringValue("OpsDescribeCommandResponse.CommandList["+ i +"].CreationTime"));
 			command.setType(_ctx.stringValue("OpsDescribeCommandResponse.CommandList["+ i +"].Type"));
-			command.setLatest(_ctx.booleanValue("OpsDescribeCommandResponse.CommandList["+ i +"].Latest"));
-			command.setVersion(_ctx.integerValue("OpsDescribeCommandResponse.CommandList["+ i +"].Version"));
+			command.setInvokeTimes(_ctx.integerValue("OpsDescribeCommandResponse.CommandList["+ i +"].InvokeTimes"));
+			command.setCommandId(_ctx.stringValue("OpsDescribeCommandResponse.CommandList["+ i +"].CommandId"));
+			command.setPublishTime(_ctx.stringValue("OpsDescribeCommandResponse.CommandList["+ i +"].PublishTime"));
+			command.setTimeOut(_ctx.longValue("OpsDescribeCommandResponse.CommandList["+ i +"].TimeOut"));
+			command.setWorkingDir(_ctx.stringValue("OpsDescribeCommandResponse.CommandList["+ i +"].WorkingDir"));
 			command.setShareStatus(_ctx.stringValue("OpsDescribeCommandResponse.CommandList["+ i +"].ShareStatus"));
 			command.setDescription(_ctx.stringValue("OpsDescribeCommandResponse.CommandList["+ i +"].Description"));
+			command.setVersion(_ctx.integerValue("OpsDescribeCommandResponse.CommandList["+ i +"].Version"));
 			command.setCommandContent(_ctx.stringValue("OpsDescribeCommandResponse.CommandList["+ i +"].CommandContent"));
-			command.setWorkingDir(_ctx.stringValue("OpsDescribeCommandResponse.CommandList["+ i +"].WorkingDir"));
-			command.setTimeOut(_ctx.longValue("OpsDescribeCommandResponse.CommandList["+ i +"].TimeOut"));
-			command.setCreationTime(_ctx.stringValue("OpsDescribeCommandResponse.CommandList["+ i +"].CreationTime"));
-			command.setPublishTime(_ctx.stringValue("OpsDescribeCommandResponse.CommandList["+ i +"].PublishTime"));
-			command.setInvokeTimes(_ctx.integerValue("OpsDescribeCommandResponse.CommandList["+ i +"].InvokeTimes"));
+			command.setLatest(_ctx.booleanValue("OpsDescribeCommandResponse.CommandList["+ i +"].Latest"));
+			command.setName(_ctx.stringValue("OpsDescribeCommandResponse.CommandList["+ i +"].Name"));
 			command.setEnableParameter(_ctx.booleanValue("OpsDescribeCommandResponse.CommandList["+ i +"].EnableParameter"));
-
-			List<String> parameterNames = new ArrayList<String>();
-			for (int j = 0; j < _ctx.lengthValue("OpsDescribeCommandResponse.CommandList["+ i +"].ParameterNames.Length"); j++) {
-				parameterNames.add(_ctx.stringValue("OpsDescribeCommandResponse.CommandList["+ i +"].ParameterNames["+ j +"]"));
-			}
-			command.setParameterNames(parameterNames);
 
 			List<String> modifiers = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("OpsDescribeCommandResponse.CommandList["+ i +"].Modifiers.Length"); j++) {
 				modifiers.add(_ctx.stringValue("OpsDescribeCommandResponse.CommandList["+ i +"].Modifiers["+ j +"]"));
 			}
 			command.setModifiers(modifiers);
+
+			List<String> parameterNames = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("OpsDescribeCommandResponse.CommandList["+ i +"].ParameterNames.Length"); j++) {
+				parameterNames.add(_ctx.stringValue("OpsDescribeCommandResponse.CommandList["+ i +"].ParameterNames["+ j +"]"));
+			}
+			command.setParameterNames(parameterNames);
 
 			commandList.add(command);
 		}

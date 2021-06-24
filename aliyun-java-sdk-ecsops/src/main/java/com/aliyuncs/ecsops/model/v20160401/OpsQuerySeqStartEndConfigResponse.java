@@ -47,9 +47,9 @@ public class OpsQuerySeqStartEndConfigResponse extends AcsResponse {
 
 	public static class SeqStartEndConfig {
 
-		private String name;
-
 		private String description;
+
+		private String name;
 
 		private List<String> startEvents;
 
@@ -57,20 +57,20 @@ public class OpsQuerySeqStartEndConfigResponse extends AcsResponse {
 
 		private List<String> relatedAlarms;
 
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
 		public String getDescription() {
 			return this.description;
 		}
 
 		public void setDescription(String description) {
 			this.description = description;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
 		}
 
 		public List<String> getStartEvents() {

@@ -27,13 +27,13 @@ public class OpsPublishCommandResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String commandId;
+	private String version;
 
 	private String shareStatus;
 
-	private String version;
-
 	private String latest;
+
+	private String commandId;
 
 	private List<String> modifiers;
 
@@ -45,12 +45,12 @@ public class OpsPublishCommandResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getCommandId() {
-		return this.commandId;
+	public String getVersion() {
+		return this.version;
 	}
 
-	public void setCommandId(String commandId) {
-		this.commandId = commandId;
+	public void setVersion(String version) {
+		this.version = version;
 	}
 
 	public String getShareStatus() {
@@ -61,20 +61,20 @@ public class OpsPublishCommandResponse extends AcsResponse {
 		this.shareStatus = shareStatus;
 	}
 
-	public String getVersion() {
-		return this.version;
-	}
-
-	public void setVersion(String version) {
-		this.version = version;
-	}
-
 	public String getLatest() {
 		return this.latest;
 	}
 
 	public void setLatest(String latest) {
 		this.latest = latest;
+	}
+
+	public String getCommandId() {
+		return this.commandId;
+	}
+
+	public void setCommandId(String commandId) {
+		this.commandId = commandId;
 	}
 
 	public List<String> getModifiers() {

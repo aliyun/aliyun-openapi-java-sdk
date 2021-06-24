@@ -25,27 +25,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsSubmitFailureNcsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String status;
 
 	private Boolean finished;
 
-	private String token;
+	private String requestId;
 
 	private String errorInfo;
 
-	private List<String> insertedNcList;
+	private String token;
 
 	private List<String> insertedVmList;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private List<String> insertedNcList;
 
 	public String getStatus() {
 		return this.status;
@@ -63,12 +55,12 @@ public class OpsSubmitFailureNcsResponse extends AcsResponse {
 		this.finished = finished;
 	}
 
-	public String getToken() {
-		return this.token;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setToken(String token) {
-		this.token = token;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getErrorInfo() {
@@ -79,12 +71,12 @@ public class OpsSubmitFailureNcsResponse extends AcsResponse {
 		this.errorInfo = errorInfo;
 	}
 
-	public List<String> getInsertedNcList() {
-		return this.insertedNcList;
+	public String getToken() {
+		return this.token;
 	}
 
-	public void setInsertedNcList(List<String> insertedNcList) {
-		this.insertedNcList = insertedNcList;
+	public void setToken(String token) {
+		this.token = token;
 	}
 
 	public List<String> getInsertedVmList() {
@@ -93,6 +85,14 @@ public class OpsSubmitFailureNcsResponse extends AcsResponse {
 
 	public void setInsertedVmList(List<String> insertedVmList) {
 		this.insertedVmList = insertedVmList;
+	}
+
+	public List<String> getInsertedNcList() {
+		return this.insertedNcList;
+	}
+
+	public void setInsertedNcList(List<String> insertedNcList) {
+		this.insertedNcList = insertedNcList;
 	}
 
 	@Override

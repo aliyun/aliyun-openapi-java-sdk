@@ -23,8 +23,8 @@ public class OpsModifyDemandResponseUnmarshaller {
 	public static OpsModifyDemandResponse unmarshall(OpsModifyDemandResponse opsModifyDemandResponse, UnmarshallerContext _ctx) {
 		
 		opsModifyDemandResponse.setRequestId(_ctx.stringValue("OpsModifyDemandResponse.RequestId"));
-		opsModifyDemandResponse.setCode(_ctx.stringValue("OpsModifyDemandResponse.Code"));
 		opsModifyDemandResponse.setMessage(_ctx.stringValue("OpsModifyDemandResponse.Message"));
+		opsModifyDemandResponse.setCode(_ctx.stringValue("OpsModifyDemandResponse.Code"));
 		opsModifyDemandResponse.setSuccess(_ctx.booleanValue("OpsModifyDemandResponse.Success"));
 	 
 	 	return opsModifyDemandResponse;

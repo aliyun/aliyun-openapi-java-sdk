@@ -28,8 +28,8 @@ public class OpsQueryAvailableIsosResponseUnmarshaller {
 		
 		opsQueryAvailableIsosResponse.setRequestId(_ctx.stringValue("OpsQueryAvailableIsosResponse.RequestId"));
 		opsQueryAvailableIsosResponse.setTotalCount(_ctx.integerValue("OpsQueryAvailableIsosResponse.TotalCount"));
-		opsQueryAvailableIsosResponse.setPageNumber(_ctx.integerValue("OpsQueryAvailableIsosResponse.PageNumber"));
 		opsQueryAvailableIsosResponse.setPageSize(_ctx.integerValue("OpsQueryAvailableIsosResponse.PageSize"));
+		opsQueryAvailableIsosResponse.setPageNumber(_ctx.integerValue("OpsQueryAvailableIsosResponse.PageNumber"));
 
 		List<Iso> isos = new ArrayList<Iso>();
 		for (int i = 0; i < _ctx.lengthValue("OpsQueryAvailableIsosResponse.Isos.Length"); i++) {

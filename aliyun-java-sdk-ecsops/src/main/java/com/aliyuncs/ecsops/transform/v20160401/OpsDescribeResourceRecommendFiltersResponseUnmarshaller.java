@@ -31,9 +31,9 @@ public class OpsDescribeResourceRecommendFiltersResponseUnmarshaller {
 		List<RecommendFilter> recommendFilters = new ArrayList<RecommendFilter>();
 		for (int i = 0; i < _ctx.lengthValue("OpsDescribeResourceRecommendFiltersResponse.RecommendFilters.Length"); i++) {
 			RecommendFilter recommendFilter = new RecommendFilter();
-			recommendFilter.setProduct(_ctx.stringValue("OpsDescribeResourceRecommendFiltersResponse.RecommendFilters["+ i +"].Product"));
 			recommendFilter.setResourceType(_ctx.stringValue("OpsDescribeResourceRecommendFiltersResponse.RecommendFilters["+ i +"].ResourceType"));
 			recommendFilter.setAttributeName(_ctx.stringValue("OpsDescribeResourceRecommendFiltersResponse.RecommendFilters["+ i +"].AttributeName"));
+			recommendFilter.setProduct(_ctx.stringValue("OpsDescribeResourceRecommendFiltersResponse.RecommendFilters["+ i +"].Product"));
 			recommendFilter.setAttributeValue(_ctx.stringValue("OpsDescribeResourceRecommendFiltersResponse.RecommendFilters["+ i +"].AttributeValue"));
 
 			recommendFilters.add(recommendFilter);

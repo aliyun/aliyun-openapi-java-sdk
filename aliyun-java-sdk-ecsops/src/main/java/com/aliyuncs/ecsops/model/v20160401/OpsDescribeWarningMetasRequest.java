@@ -16,7 +16,6 @@ package com.aliyuncs.ecsops.model.v20160401;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
-import com.aliyuncs.ecsops.Endpoint;
 
 /**
  * @author auto create
@@ -33,18 +32,16 @@ public class OpsDescribeWarningMetasRequest extends RpcAcsRequest<OpsDescribeWar
 
 	private String productName;
 
+	private String monitorTitle;
+
 	private String app;
 
 	private String level;
 
 	private String auditParamStr;
 	public OpsDescribeWarningMetasRequest() {
-		super("Ecsops", "2016-04-01", "OpsDescribeWarningMetas", "ecs");
+		super("Ecsops", "2016-04-01", "OpsDescribeWarningMetas", "ecsops");
 		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
 	}
 
 	public String getOwnerTeam() {
@@ -88,6 +85,17 @@ public class OpsDescribeWarningMetasRequest extends RpcAcsRequest<OpsDescribeWar
 		this.productName = productName;
 		if(productName != null){
 			putQueryParameter("ProductName", productName);
+		}
+	}
+
+	public String getMonitorTitle() {
+		return this.monitorTitle;
+	}
+
+	public void setMonitorTitle(String monitorTitle) {
+		this.monitorTitle = monitorTitle;
+		if(monitorTitle != null){
+			putQueryParameter("MonitorTitle", monitorTitle);
 		}
 	}
 

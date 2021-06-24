@@ -46,17 +46,9 @@ public class OpsQueryWorkflowResultResponse extends AcsResponse {
 
 	public static class Result {
 
-		private String desc;
-
 		private String workflowStatus;
 
-		public String getDesc() {
-			return this.desc;
-		}
-
-		public void setDesc(String desc) {
-			this.desc = desc;
-		}
+		private String desc;
 
 		public String getWorkflowStatus() {
 			return this.workflowStatus;
@@ -64,6 +56,14 @@ public class OpsQueryWorkflowResultResponse extends AcsResponse {
 
 		public void setWorkflowStatus(String workflowStatus) {
 			this.workflowStatus = workflowStatus;
+		}
+
+		public String getDesc() {
+			return this.desc;
+		}
+
+		public void setDesc(String desc) {
+			this.desc = desc;
 		}
 	}
 

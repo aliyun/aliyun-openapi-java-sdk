@@ -49,11 +49,11 @@ public class OpsSyncDemandResponse extends AcsResponse {
 
 		private String regionNo;
 
-		private Integer totalCount;
-
 		private Integer pageNo;
 
 		private Integer pageSize;
+
+		private Integer totalCount;
 
 		private List<DemandModel> demandModels;
 
@@ -63,14 +63,6 @@ public class OpsSyncDemandResponse extends AcsResponse {
 
 		public void setRegionNo(String regionNo) {
 			this.regionNo = regionNo;
-		}
-
-		public Integer getTotalCount() {
-			return this.totalCount;
-		}
-
-		public void setTotalCount(Integer totalCount) {
-			this.totalCount = totalCount;
 		}
 
 		public Integer getPageNo() {
@@ -89,6 +81,14 @@ public class OpsSyncDemandResponse extends AcsResponse {
 			this.pageSize = pageSize;
 		}
 
+		public Integer getTotalCount() {
+			return this.totalCount;
+		}
+
+		public void setTotalCount(Integer totalCount) {
+			this.totalCount = totalCount;
+		}
+
 		public List<DemandModel> getDemandModels() {
 			return this.demandModels;
 		}
@@ -99,53 +99,61 @@ public class OpsSyncDemandResponse extends AcsResponse {
 
 		public static class DemandModel {
 
+			private String comment;
+
 			private String demandId;
-
-			private String subDemandId;
-
-			private String demandTime;
 
 			private Long customerUid;
 
-			private String customerName;
-
-			private Long cbmUid;
-
-			private String cbmName;
-
-			private String availableZoneId;
-
-			private String instanceType;
-
-			private String instanceTypeFamily;
-
-			private String networkType;
-
-			private Boolean ioOptimized;
+			private String demandTime;
 
 			private String payType;
 
-			private String payDuration;
+			private String cbmName;
 
-			private String durationUnit;
-
-			private String startTime;
-
-			private String endTime;
-
-			private String demandStatus;
-
-			private Integer totalCount;
+			private String networkType;
 
 			private Integer availableAmount;
 
-			private Integer usedAmount;
+			private String customerName;
+
+			private String durationUnit;
 
 			private Integer deliveringAmount;
 
-			private String comment;
+			private String subDemandId;
+
+			private String availableZoneId;
+
+			private Integer totalCount;
+
+			private String instanceType;
+
+			private String endTime;
+
+			private Boolean ioOptimized;
+
+			private String startTime;
+
+			private Long cbmUid;
+
+			private String payDuration;
+
+			private Integer usedAmount;
+
+			private String instanceTypeFamily;
+
+			private String demandStatus;
 
 			private List<DemandSupply> demandSupplyList;
+
+			public String getComment() {
+				return this.comment;
+			}
+
+			public void setComment(String comment) {
+				this.comment = comment;
+			}
 
 			public String getDemandId() {
 				return this.demandId;
@@ -153,22 +161,6 @@ public class OpsSyncDemandResponse extends AcsResponse {
 
 			public void setDemandId(String demandId) {
 				this.demandId = demandId;
-			}
-
-			public String getSubDemandId() {
-				return this.subDemandId;
-			}
-
-			public void setSubDemandId(String subDemandId) {
-				this.subDemandId = subDemandId;
-			}
-
-			public String getDemandTime() {
-				return this.demandTime;
-			}
-
-			public void setDemandTime(String demandTime) {
-				this.demandTime = demandTime;
 			}
 
 			public Long getCustomerUid() {
@@ -179,68 +171,12 @@ public class OpsSyncDemandResponse extends AcsResponse {
 				this.customerUid = customerUid;
 			}
 
-			public String getCustomerName() {
-				return this.customerName;
+			public String getDemandTime() {
+				return this.demandTime;
 			}
 
-			public void setCustomerName(String customerName) {
-				this.customerName = customerName;
-			}
-
-			public Long getCbmUid() {
-				return this.cbmUid;
-			}
-
-			public void setCbmUid(Long cbmUid) {
-				this.cbmUid = cbmUid;
-			}
-
-			public String getCbmName() {
-				return this.cbmName;
-			}
-
-			public void setCbmName(String cbmName) {
-				this.cbmName = cbmName;
-			}
-
-			public String getAvailableZoneId() {
-				return this.availableZoneId;
-			}
-
-			public void setAvailableZoneId(String availableZoneId) {
-				this.availableZoneId = availableZoneId;
-			}
-
-			public String getInstanceType() {
-				return this.instanceType;
-			}
-
-			public void setInstanceType(String instanceType) {
-				this.instanceType = instanceType;
-			}
-
-			public String getInstanceTypeFamily() {
-				return this.instanceTypeFamily;
-			}
-
-			public void setInstanceTypeFamily(String instanceTypeFamily) {
-				this.instanceTypeFamily = instanceTypeFamily;
-			}
-
-			public String getNetworkType() {
-				return this.networkType;
-			}
-
-			public void setNetworkType(String networkType) {
-				this.networkType = networkType;
-			}
-
-			public Boolean getIoOptimized() {
-				return this.ioOptimized;
-			}
-
-			public void setIoOptimized(Boolean ioOptimized) {
-				this.ioOptimized = ioOptimized;
+			public void setDemandTime(String demandTime) {
+				this.demandTime = demandTime;
 			}
 
 			public String getPayType() {
@@ -251,52 +187,20 @@ public class OpsSyncDemandResponse extends AcsResponse {
 				this.payType = payType;
 			}
 
-			public String getPayDuration() {
-				return this.payDuration;
+			public String getCbmName() {
+				return this.cbmName;
 			}
 
-			public void setPayDuration(String payDuration) {
-				this.payDuration = payDuration;
+			public void setCbmName(String cbmName) {
+				this.cbmName = cbmName;
 			}
 
-			public String getDurationUnit() {
-				return this.durationUnit;
+			public String getNetworkType() {
+				return this.networkType;
 			}
 
-			public void setDurationUnit(String durationUnit) {
-				this.durationUnit = durationUnit;
-			}
-
-			public String getStartTime() {
-				return this.startTime;
-			}
-
-			public void setStartTime(String startTime) {
-				this.startTime = startTime;
-			}
-
-			public String getEndTime() {
-				return this.endTime;
-			}
-
-			public void setEndTime(String endTime) {
-				this.endTime = endTime;
-			}
-
-			public String getDemandStatus() {
-				return this.demandStatus;
-			}
-
-			public void setDemandStatus(String demandStatus) {
-				this.demandStatus = demandStatus;
-			}
-
-			public Integer getTotalCount() {
-				return this.totalCount;
-			}
-
-			public void setTotalCount(Integer totalCount) {
-				this.totalCount = totalCount;
+			public void setNetworkType(String networkType) {
+				this.networkType = networkType;
 			}
 
 			public Integer getAvailableAmount() {
@@ -307,12 +211,20 @@ public class OpsSyncDemandResponse extends AcsResponse {
 				this.availableAmount = availableAmount;
 			}
 
-			public Integer getUsedAmount() {
-				return this.usedAmount;
+			public String getCustomerName() {
+				return this.customerName;
 			}
 
-			public void setUsedAmount(Integer usedAmount) {
-				this.usedAmount = usedAmount;
+			public void setCustomerName(String customerName) {
+				this.customerName = customerName;
+			}
+
+			public String getDurationUnit() {
+				return this.durationUnit;
+			}
+
+			public void setDurationUnit(String durationUnit) {
+				this.durationUnit = durationUnit;
 			}
 
 			public Integer getDeliveringAmount() {
@@ -323,12 +235,100 @@ public class OpsSyncDemandResponse extends AcsResponse {
 				this.deliveringAmount = deliveringAmount;
 			}
 
-			public String getComment() {
-				return this.comment;
+			public String getSubDemandId() {
+				return this.subDemandId;
 			}
 
-			public void setComment(String comment) {
-				this.comment = comment;
+			public void setSubDemandId(String subDemandId) {
+				this.subDemandId = subDemandId;
+			}
+
+			public String getAvailableZoneId() {
+				return this.availableZoneId;
+			}
+
+			public void setAvailableZoneId(String availableZoneId) {
+				this.availableZoneId = availableZoneId;
+			}
+
+			public Integer getTotalCount() {
+				return this.totalCount;
+			}
+
+			public void setTotalCount(Integer totalCount) {
+				this.totalCount = totalCount;
+			}
+
+			public String getInstanceType() {
+				return this.instanceType;
+			}
+
+			public void setInstanceType(String instanceType) {
+				this.instanceType = instanceType;
+			}
+
+			public String getEndTime() {
+				return this.endTime;
+			}
+
+			public void setEndTime(String endTime) {
+				this.endTime = endTime;
+			}
+
+			public Boolean getIoOptimized() {
+				return this.ioOptimized;
+			}
+
+			public void setIoOptimized(Boolean ioOptimized) {
+				this.ioOptimized = ioOptimized;
+			}
+
+			public String getStartTime() {
+				return this.startTime;
+			}
+
+			public void setStartTime(String startTime) {
+				this.startTime = startTime;
+			}
+
+			public Long getCbmUid() {
+				return this.cbmUid;
+			}
+
+			public void setCbmUid(Long cbmUid) {
+				this.cbmUid = cbmUid;
+			}
+
+			public String getPayDuration() {
+				return this.payDuration;
+			}
+
+			public void setPayDuration(String payDuration) {
+				this.payDuration = payDuration;
+			}
+
+			public Integer getUsedAmount() {
+				return this.usedAmount;
+			}
+
+			public void setUsedAmount(Integer usedAmount) {
+				this.usedAmount = usedAmount;
+			}
+
+			public String getInstanceTypeFamily() {
+				return this.instanceTypeFamily;
+			}
+
+			public void setInstanceTypeFamily(String instanceTypeFamily) {
+				this.instanceTypeFamily = instanceTypeFamily;
+			}
+
+			public String getDemandStatus() {
+				return this.demandStatus;
+			}
+
+			public void setDemandStatus(String demandStatus) {
+				this.demandStatus = demandStatus;
 			}
 
 			public List<DemandSupply> getDemandSupplyList() {
@@ -341,34 +341,26 @@ public class OpsSyncDemandResponse extends AcsResponse {
 
 			public static class DemandSupply {
 
-				private Integer totalAmount;
-
-				private Integer usedAmount;
+				private String endTime;
 
 				private Integer availableAmount;
 
-				private Integer deliveringAmount;
+				private String startTime;
 
 				private String supplyStatus;
 
-				private String startTime;
+				private Integer usedAmount;
 
-				private String endTime;
+				private Integer totalAmount;
 
-				public Integer getTotalAmount() {
-					return this.totalAmount;
+				private Integer deliveringAmount;
+
+				public String getEndTime() {
+					return this.endTime;
 				}
 
-				public void setTotalAmount(Integer totalAmount) {
-					this.totalAmount = totalAmount;
-				}
-
-				public Integer getUsedAmount() {
-					return this.usedAmount;
-				}
-
-				public void setUsedAmount(Integer usedAmount) {
-					this.usedAmount = usedAmount;
+				public void setEndTime(String endTime) {
+					this.endTime = endTime;
 				}
 
 				public Integer getAvailableAmount() {
@@ -379,12 +371,12 @@ public class OpsSyncDemandResponse extends AcsResponse {
 					this.availableAmount = availableAmount;
 				}
 
-				public Integer getDeliveringAmount() {
-					return this.deliveringAmount;
+				public String getStartTime() {
+					return this.startTime;
 				}
 
-				public void setDeliveringAmount(Integer deliveringAmount) {
-					this.deliveringAmount = deliveringAmount;
+				public void setStartTime(String startTime) {
+					this.startTime = startTime;
 				}
 
 				public String getSupplyStatus() {
@@ -395,20 +387,28 @@ public class OpsSyncDemandResponse extends AcsResponse {
 					this.supplyStatus = supplyStatus;
 				}
 
-				public String getStartTime() {
-					return this.startTime;
+				public Integer getUsedAmount() {
+					return this.usedAmount;
 				}
 
-				public void setStartTime(String startTime) {
-					this.startTime = startTime;
+				public void setUsedAmount(Integer usedAmount) {
+					this.usedAmount = usedAmount;
 				}
 
-				public String getEndTime() {
-					return this.endTime;
+				public Integer getTotalAmount() {
+					return this.totalAmount;
 				}
 
-				public void setEndTime(String endTime) {
-					this.endTime = endTime;
+				public void setTotalAmount(Integer totalAmount) {
+					this.totalAmount = totalAmount;
+				}
+
+				public Integer getDeliveringAmount() {
+					return this.deliveringAmount;
+				}
+
+				public void setDeliveringAmount(Integer deliveringAmount) {
+					this.deliveringAmount = deliveringAmount;
 				}
 			}
 		}

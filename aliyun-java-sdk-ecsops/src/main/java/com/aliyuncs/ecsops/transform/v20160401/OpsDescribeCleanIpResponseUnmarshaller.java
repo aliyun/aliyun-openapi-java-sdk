@@ -27,15 +27,15 @@ public class OpsDescribeCleanIpResponseUnmarshaller {
 	public static OpsDescribeCleanIpResponse unmarshall(OpsDescribeCleanIpResponse opsDescribeCleanIpResponse, UnmarshallerContext _ctx) {
 		
 		opsDescribeCleanIpResponse.setRequestId(_ctx.stringValue("OpsDescribeCleanIpResponse.RequestId"));
-		opsDescribeCleanIpResponse.setTotal(_ctx.stringValue("OpsDescribeCleanIpResponse.Total"));
 		opsDescribeCleanIpResponse.setPageSize(_ctx.stringValue("OpsDescribeCleanIpResponse.PageSize"));
+		opsDescribeCleanIpResponse.setTotal(_ctx.stringValue("OpsDescribeCleanIpResponse.Total"));
 		opsDescribeCleanIpResponse.setPageNo(_ctx.stringValue("OpsDescribeCleanIpResponse.PageNo"));
 
 		List<LockedIp> lockedIps = new ArrayList<LockedIp>();
 		for (int i = 0; i < _ctx.lengthValue("OpsDescribeCleanIpResponse.LockedIps.Length"); i++) {
 			LockedIp lockedIp = new LockedIp();
-			lockedIp.setIP(_ctx.stringValue("OpsDescribeCleanIpResponse.LockedIps["+ i +"].IP"));
 			lockedIp.setIpType(_ctx.stringValue("OpsDescribeCleanIpResponse.LockedIps["+ i +"].IpType"));
+			lockedIp.setIP(_ctx.stringValue("OpsDescribeCleanIpResponse.LockedIps["+ i +"].IP"));
 
 			lockedIps.add(lockedIp);
 		}

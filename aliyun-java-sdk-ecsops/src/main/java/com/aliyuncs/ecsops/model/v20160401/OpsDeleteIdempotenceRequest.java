@@ -17,7 +17,6 @@ package com.aliyuncs.ecsops.model.v20160401;
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
 import com.aliyuncs.http.MethodType;
-import com.aliyuncs.ecsops.Endpoint;
 
 /**
  * @author auto create
@@ -32,12 +31,8 @@ public class OpsDeleteIdempotenceRequest extends RpcAcsRequest<OpsDeleteIdempote
 
 	private String auditParamStr;
 	public OpsDeleteIdempotenceRequest() {
-		super("Ecsops", "2016-04-01", "OpsDeleteIdempotence", "ecs");
+		super("Ecsops", "2016-04-01", "OpsDeleteIdempotence", "ecsops");
 		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
 	}
 
 	public List<String> getTokens() {

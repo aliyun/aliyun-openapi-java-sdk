@@ -17,7 +17,6 @@ package com.aliyuncs.ecsops.model.v20160401;
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
 import com.aliyuncs.http.MethodType;
-import com.aliyuncs.ecsops.Endpoint;
 
 /**
  * @author auto create
@@ -54,12 +53,8 @@ public class OpsUpdateCloudBoxSkuRequest extends RpcAcsRequest<OpsUpdateCloudBox
 
 	private String auditParamStr;
 	public OpsUpdateCloudBoxSkuRequest() {
-		super("Ecsops", "2016-04-01", "OpsUpdateCloudBoxSku", "ecs");
+		super("Ecsops", "2016-04-01", "OpsUpdateCloudBoxSku", "ecsops");
 		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
 	}
 
 	public Float getMaxBlockStorage() {

@@ -25,25 +25,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsFailureInjectionResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String status;
 
 	private Boolean finished;
 
-	private String token;
-
 	private Integer validMachineIdCount;
 
+	private String requestId;
+
+	private String token;
+
 	private List<FailedMachine> failedMachines;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getStatus() {
 		return this.status;
@@ -61,20 +53,28 @@ public class OpsFailureInjectionResponse extends AcsResponse {
 		this.finished = finished;
 	}
 
-	public String getToken() {
-		return this.token;
-	}
-
-	public void setToken(String token) {
-		this.token = token;
-	}
-
 	public Integer getValidMachineIdCount() {
 		return this.validMachineIdCount;
 	}
 
 	public void setValidMachineIdCount(Integer validMachineIdCount) {
 		this.validMachineIdCount = validMachineIdCount;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getToken() {
+		return this.token;
+	}
+
+	public void setToken(String token) {
+		this.token = token;
 	}
 
 	public List<FailedMachine> getFailedMachines() {
@@ -87,11 +87,19 @@ public class OpsFailureInjectionResponse extends AcsResponse {
 
 	public static class FailedMachine {
 
+		private String machineId;
+
 		private String info;
 
 		private String failedReason;
 
-		private String machineId;
+		public String getMachineId() {
+			return this.machineId;
+		}
+
+		public void setMachineId(String machineId) {
+			this.machineId = machineId;
+		}
 
 		public String getInfo() {
 			return this.info;
@@ -107,14 +115,6 @@ public class OpsFailureInjectionResponse extends AcsResponse {
 
 		public void setFailedReason(String failedReason) {
 			this.failedReason = failedReason;
-		}
-
-		public String getMachineId() {
-			return this.machineId;
-		}
-
-		public void setMachineId(String machineId) {
-			this.machineId = machineId;
 		}
 	}
 

@@ -34,8 +34,8 @@ public class OpsDescribeConstraintsResponseUnmarshaller {
 			SupportedResourceModel supportedResourceModel = new SupportedResourceModel();
 			supportedResourceModel.setValue(_ctx.stringValue("OpsDescribeConstraintsResponse.ConstraintInfo["+ i +"].Value"));
 			supportedResourceModel.setMax(_ctx.integerValue("OpsDescribeConstraintsResponse.ConstraintInfo["+ i +"].Max"));
-			supportedResourceModel.setMin(_ctx.integerValue("OpsDescribeConstraintsResponse.ConstraintInfo["+ i +"].Min"));
 			supportedResourceModel.setUnit(_ctx.stringValue("OpsDescribeConstraintsResponse.ConstraintInfo["+ i +"].Unit"));
+			supportedResourceModel.setMin(_ctx.integerValue("OpsDescribeConstraintsResponse.ConstraintInfo["+ i +"].Min"));
 
 			constraintInfo.add(supportedResourceModel);
 		}

@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsCheckChangeGroupTypeResponse extends AcsResponse {
 
+	private String message;
+
 	private String requestId;
 
 	private String code;
 
-	private String message;
-
 	private String success;
 
 	private Data data;
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -49,14 +57,6 @@ public class OpsCheckChangeGroupTypeResponse extends AcsResponse {
 
 	public void setCode(String code) {
 		this.code = code;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
 	}
 
 	public String getSuccess() {
@@ -99,19 +99,11 @@ public class OpsCheckChangeGroupTypeResponse extends AcsResponse {
 
 		public static class CheckErrorMsg {
 
-			private String resourceId;
-
 			private Integer errorCode;
 
 			private String errorMsg;
 
-			public String getResourceId() {
-				return this.resourceId;
-			}
-
-			public void setResourceId(String resourceId) {
-				this.resourceId = resourceId;
-			}
+			private String resourceId;
 
 			public Integer getErrorCode() {
 				return this.errorCode;
@@ -127,6 +119,14 @@ public class OpsCheckChangeGroupTypeResponse extends AcsResponse {
 
 			public void setErrorMsg(String errorMsg) {
 				this.errorMsg = errorMsg;
+			}
+
+			public String getResourceId() {
+				return this.resourceId;
+			}
+
+			public void setResourceId(String resourceId) {
+				this.resourceId = resourceId;
 			}
 		}
 	}

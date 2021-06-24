@@ -24,34 +24,34 @@ public class OpsQuerySpotAdvisorSummaryResponseUnmarshaller {
 	public static OpsQuerySpotAdvisorSummaryResponse unmarshall(OpsQuerySpotAdvisorSummaryResponse opsQuerySpotAdvisorSummaryResponse, UnmarshallerContext _ctx) {
 		
 		opsQuerySpotAdvisorSummaryResponse.setRequestId(_ctx.stringValue("OpsQuerySpotAdvisorSummaryResponse.RequestId"));
-		opsQuerySpotAdvisorSummaryResponse.setCode(_ctx.stringValue("OpsQuerySpotAdvisorSummaryResponse.Code"));
 		opsQuerySpotAdvisorSummaryResponse.setMessage(_ctx.stringValue("OpsQuerySpotAdvisorSummaryResponse.Message"));
+		opsQuerySpotAdvisorSummaryResponse.setCode(_ctx.stringValue("OpsQuerySpotAdvisorSummaryResponse.Code"));
 		opsQuerySpotAdvisorSummaryResponse.setSuccess(_ctx.stringValue("OpsQuerySpotAdvisorSummaryResponse.Success"));
 
 		Data data = new Data();
-		data.setGmtCreate(_ctx.stringValue("OpsQuerySpotAdvisorSummaryResponse.Data.GmtCreate"));
-		data.setGmtModified(_ctx.stringValue("OpsQuerySpotAdvisorSummaryResponse.Data.GmtModified"));
-		data.setIzNo(_ctx.stringValue("OpsQuerySpotAdvisorSummaryResponse.Data.IzNo"));
-		data.setNetworkType(_ctx.stringValue("OpsQuerySpotAdvisorSummaryResponse.Data.NetworkType"));
-		data.setNetworkType1(_ctx.integerValue("OpsQuerySpotAdvisorSummaryResponse.Data.NetworkType"));
-		data.setInstanceTypeName(_ctx.stringValue("OpsQuerySpotAdvisorSummaryResponse.Data.InstanceTypeName"));
+		data.setInventoryReleaseRateStddev(_ctx.floatValue("OpsQuerySpotAdvisorSummaryResponse.Data.InventoryReleaseRateStddev"));
 		data.setUserReleaseVcpu(_ctx.integerValue("OpsQuerySpotAdvisorSummaryResponse.Data.UserReleaseVcpu"));
 		data.setUserReleaseRate(_ctx.floatValue("OpsQuerySpotAdvisorSummaryResponse.Data.UserReleaseRate"));
-		data.setUserReleaseRateStddev(_ctx.floatValue("OpsQuerySpotAdvisorSummaryResponse.Data.UserReleaseRateStddev"));
-		data.setPriceReleaseVcpu(_ctx.integerValue("OpsQuerySpotAdvisorSummaryResponse.Data.PriceReleaseVcpu"));
-		data.setPriceReleaseRate(_ctx.floatValue("OpsQuerySpotAdvisorSummaryResponse.Data.PriceReleaseRate"));
-		data.setPriceReleaseRateStddev(_ctx.floatValue("OpsQuerySpotAdvisorSummaryResponse.Data.PriceReleaseRateStddev"));
-		data.setInventoryReleaseVcpu(_ctx.integerValue("OpsQuerySpotAdvisorSummaryResponse.Data.InventoryReleaseVcpu"));
 		data.setInventoryReleaseRate(_ctx.floatValue("OpsQuerySpotAdvisorSummaryResponse.Data.InventoryReleaseRate"));
-		data.setInventoryReleaseRateStddev(_ctx.floatValue("OpsQuerySpotAdvisorSummaryResponse.Data.InventoryReleaseRateStddev"));
-		data.setOpsReleaseVcpu(_ctx.integerValue("OpsQuerySpotAdvisorSummaryResponse.Data.OpsReleaseVcpu"));
 		data.setOpsReleaseRate(_ctx.floatValue("OpsQuerySpotAdvisorSummaryResponse.Data.OpsReleaseRate"));
+		data.setOpsReleaseVcpu(_ctx.integerValue("OpsQuerySpotAdvisorSummaryResponse.Data.OpsReleaseVcpu"));
+		data.setNetworkType(_ctx.stringValue("OpsQuerySpotAdvisorSummaryResponse.Data.NetworkType"));
+		data.setInstanceTypeName(_ctx.stringValue("OpsQuerySpotAdvisorSummaryResponse.Data.InstanceTypeName"));
+		data.setGmtModified(_ctx.stringValue("OpsQuerySpotAdvisorSummaryResponse.Data.GmtModified"));
+		data.setPassiveReleaseRate(_ctx.floatValue("OpsQuerySpotAdvisorSummaryResponse.Data.PassiveReleaseRate"));
+		data.setPriceReleaseRate(_ctx.floatValue("OpsQuerySpotAdvisorSummaryResponse.Data.PriceReleaseRate"));
+		data.setDiscountStddev(_ctx.floatValue("OpsQuerySpotAdvisorSummaryResponse.Data.DiscountStddev"));
+		data.setIoOptimized(_ctx.integerValue("OpsQuerySpotAdvisorSummaryResponse.Data.IoOptimized"));
 		data.setOpsReleaseRateStddev(_ctx.floatValue("OpsQuerySpotAdvisorSummaryResponse.Data.OpsReleaseRateStddev"));
 		data.setPassiveReleaseVcpu(_ctx.integerValue("OpsQuerySpotAdvisorSummaryResponse.Data.PassiveReleaseVcpu"));
-		data.setPassiveReleaseRate(_ctx.floatValue("OpsQuerySpotAdvisorSummaryResponse.Data.PassiveReleaseRate"));
-		data.setPassiveReleaseRateStddev(_ctx.floatValue("OpsQuerySpotAdvisorSummaryResponse.Data.PassiveReleaseRateStddev"));
+		data.setUserReleaseRateStddev(_ctx.floatValue("OpsQuerySpotAdvisorSummaryResponse.Data.UserReleaseRateStddev"));
 		data.setDiscountAvg(_ctx.floatValue("OpsQuerySpotAdvisorSummaryResponse.Data.DiscountAvg"));
-		data.setDiscountStddev(_ctx.floatValue("OpsQuerySpotAdvisorSummaryResponse.Data.DiscountStddev"));
+		data.setPassiveReleaseRateStddev(_ctx.floatValue("OpsQuerySpotAdvisorSummaryResponse.Data.PassiveReleaseRateStddev"));
+		data.setGmtCreate(_ctx.stringValue("OpsQuerySpotAdvisorSummaryResponse.Data.GmtCreate"));
+		data.setPriceReleaseVcpu(_ctx.integerValue("OpsQuerySpotAdvisorSummaryResponse.Data.PriceReleaseVcpu"));
+		data.setIzNo(_ctx.stringValue("OpsQuerySpotAdvisorSummaryResponse.Data.IzNo"));
+		data.setInventoryReleaseVcpu(_ctx.integerValue("OpsQuerySpotAdvisorSummaryResponse.Data.InventoryReleaseVcpu"));
+		data.setPriceReleaseRateStddev(_ctx.floatValue("OpsQuerySpotAdvisorSummaryResponse.Data.PriceReleaseRateStddev"));
 		opsQuerySpotAdvisorSummaryResponse.setData(data);
 	 
 	 	return opsQuerySpotAdvisorSummaryResponse;

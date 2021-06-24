@@ -27,8 +27,8 @@ public class OpsQueryVmFailureOverviewResponseUnmarshaller {
 	public static OpsQueryVmFailureOverviewResponse unmarshall(OpsQueryVmFailureOverviewResponse opsQueryVmFailureOverviewResponse, UnmarshallerContext _ctx) {
 		
 		opsQueryVmFailureOverviewResponse.setRequestId(_ctx.stringValue("OpsQueryVmFailureOverviewResponse.RequestId"));
-		opsQueryVmFailureOverviewResponse.setStartTime(_ctx.stringValue("OpsQueryVmFailureOverviewResponse.StartTime"));
 		opsQueryVmFailureOverviewResponse.setEndTime(_ctx.stringValue("OpsQueryVmFailureOverviewResponse.EndTime"));
+		opsQueryVmFailureOverviewResponse.setStartTime(_ctx.stringValue("OpsQueryVmFailureOverviewResponse.StartTime"));
 		opsQueryVmFailureOverviewResponse.setQueryGroupField(_ctx.stringValue("OpsQueryVmFailureOverviewResponse.QueryGroupField"));
 
 		List<String> groupFieldValues = new ArrayList<String>();
@@ -40,24 +40,28 @@ public class OpsQueryVmFailureOverviewResponseUnmarshaller {
 		List<OverviewInfoItem> overviewInfoList = new ArrayList<OverviewInfoItem>();
 		for (int i = 0; i < _ctx.lengthValue("OpsQueryVmFailureOverviewResponse.OverviewInfoList.Length"); i++) {
 			OverviewInfoItem overviewInfoItem = new OverviewInfoItem();
-			overviewInfoItem.setGocExceptionName(_ctx.stringValue("OpsQueryVmFailureOverviewResponse.OverviewInfoList["+ i +"].GocExceptionName"));
-			overviewInfoItem.setVcpuCnt(_ctx.integerValue("OpsQueryVmFailureOverviewResponse.OverviewInfoList["+ i +"].VcpuCnt"));
-			overviewInfoItem.setGocVcpuCnt(_ctx.floatValue("OpsQueryVmFailureOverviewResponse.OverviewInfoList["+ i +"].GocVcpuCnt"));
-			overviewInfoItem.setNcCnt(_ctx.integerValue("OpsQueryVmFailureOverviewResponse.OverviewInfoList["+ i +"].NcCnt"));
-			overviewInfoItem.setVmCnt(_ctx.integerValue("OpsQueryVmFailureOverviewResponse.OverviewInfoList["+ i +"].VmCnt"));
-			overviewInfoItem.setUserCnt(_ctx.integerValue("OpsQueryVmFailureOverviewResponse.OverviewInfoList["+ i +"].UserCnt"));
-			overviewInfoItem.setGc6Cnt(_ctx.integerValue("OpsQueryVmFailureOverviewResponse.OverviewInfoList["+ i +"].Gc6Cnt"));
-			overviewInfoItem.setGc7Cnt(_ctx.integerValue("OpsQueryVmFailureOverviewResponse.OverviewInfoList["+ i +"].Gc7Cnt"));
-			overviewInfoItem.setRecoverNcCnt(_ctx.integerValue("OpsQueryVmFailureOverviewResponse.OverviewInfoList["+ i +"].RecoverNcCnt"));
-			overviewInfoItem.setUnrecoverNcCnt(_ctx.integerValue("OpsQueryVmFailureOverviewResponse.OverviewInfoList["+ i +"].UnrecoverNcCnt"));
-			overviewInfoItem.setRecoverVmCnt(_ctx.integerValue("OpsQueryVmFailureOverviewResponse.OverviewInfoList["+ i +"].RecoverVmCnt"));
-			overviewInfoItem.setUnrecoverVmCnt(_ctx.integerValue("OpsQueryVmFailureOverviewResponse.OverviewInfoList["+ i +"].UnrecoverVmCnt"));
 			overviewInfoItem.setRecoverVcpuCnt(_ctx.integerValue("OpsQueryVmFailureOverviewResponse.OverviewInfoList["+ i +"].RecoverVcpuCnt"));
-			overviewInfoItem.setUnrecoverVCpuCnt(_ctx.integerValue("OpsQueryVmFailureOverviewResponse.OverviewInfoList["+ i +"].UnrecoverVCpuCnt"));
-			overviewInfoItem.setSequentialRecoverVmCnt(_ctx.integerValue("OpsQueryVmFailureOverviewResponse.OverviewInfoList["+ i +"].SequentialRecoverVmCnt"));
 			overviewInfoItem.setSequentialUnRecoverVmCnt(_ctx.integerValue("OpsQueryVmFailureOverviewResponse.OverviewInfoList["+ i +"].SequentialUnRecoverVmCnt"));
-			overviewInfoItem.setSequentialRecoverVcpuCnt(_ctx.integerValue("OpsQueryVmFailureOverviewResponse.OverviewInfoList["+ i +"].SequentialRecoverVcpuCnt"));
+			overviewInfoItem.setRecoverVmCnt(_ctx.integerValue("OpsQueryVmFailureOverviewResponse.OverviewInfoList["+ i +"].RecoverVmCnt"));
+			overviewInfoItem.setGocExceptionName(_ctx.stringValue("OpsQueryVmFailureOverviewResponse.OverviewInfoList["+ i +"].GocExceptionName"));
+			overviewInfoItem.setNcCnt(_ctx.integerValue("OpsQueryVmFailureOverviewResponse.OverviewInfoList["+ i +"].NcCnt"));
+			overviewInfoItem.setVcpuCnt(_ctx.integerValue("OpsQueryVmFailureOverviewResponse.OverviewInfoList["+ i +"].VcpuCnt"));
+			overviewInfoItem.setUnrecoverVmCnt(_ctx.integerValue("OpsQueryVmFailureOverviewResponse.OverviewInfoList["+ i +"].UnrecoverVmCnt"));
+			overviewInfoItem.setUserCnt(_ctx.integerValue("OpsQueryVmFailureOverviewResponse.OverviewInfoList["+ i +"].UserCnt"));
+			overviewInfoItem.setUnrecoverNcCnt(_ctx.integerValue("OpsQueryVmFailureOverviewResponse.OverviewInfoList["+ i +"].UnrecoverNcCnt"));
+			overviewInfoItem.setGc7Cnt(_ctx.integerValue("OpsQueryVmFailureOverviewResponse.OverviewInfoList["+ i +"].Gc7Cnt"));
 			overviewInfoItem.setSequentialUnRecoverVcpuCnt(_ctx.integerValue("OpsQueryVmFailureOverviewResponse.OverviewInfoList["+ i +"].SequentialUnRecoverVcpuCnt"));
+			overviewInfoItem.setUnrecoverVCpuCnt(_ctx.integerValue("OpsQueryVmFailureOverviewResponse.OverviewInfoList["+ i +"].UnrecoverVCpuCnt"));
+			overviewInfoItem.setRecoverNcCnt(_ctx.integerValue("OpsQueryVmFailureOverviewResponse.OverviewInfoList["+ i +"].RecoverNcCnt"));
+			overviewInfoItem.setGc6Cnt(_ctx.integerValue("OpsQueryVmFailureOverviewResponse.OverviewInfoList["+ i +"].Gc6Cnt"));
+			overviewInfoItem.setVmCnt(_ctx.integerValue("OpsQueryVmFailureOverviewResponse.OverviewInfoList["+ i +"].VmCnt"));
+			overviewInfoItem.setSequentialRecoverVmCnt(_ctx.integerValue("OpsQueryVmFailureOverviewResponse.OverviewInfoList["+ i +"].SequentialRecoverVmCnt"));
+			overviewInfoItem.setGocVcpuCnt(_ctx.floatValue("OpsQueryVmFailureOverviewResponse.OverviewInfoList["+ i +"].GocVcpuCnt"));
+			overviewInfoItem.setSequentialRecoverVcpuCnt(_ctx.integerValue("OpsQueryVmFailureOverviewResponse.OverviewInfoList["+ i +"].SequentialRecoverVcpuCnt"));
+			overviewInfoItem.setAliProductVmCnt(_ctx.integerValue("OpsQueryVmFailureOverviewResponse.OverviewInfoList["+ i +"].AliProductVmCnt"));
+			overviewInfoItem.setVmUniqueCnt(_ctx.integerValue("OpsQueryVmFailureOverviewResponse.OverviewInfoList["+ i +"].VmUniqueCnt"));
+			overviewInfoItem.setUnRecoverVmUniqueCnt(_ctx.integerValue("OpsQueryVmFailureOverviewResponse.OverviewInfoList["+ i +"].UnRecoverVmUniqueCnt"));
+			overviewInfoItem.setSequentialUnRecoverVmUniqueCnt(_ctx.integerValue("OpsQueryVmFailureOverviewResponse.OverviewInfoList["+ i +"].SequentialUnRecoverVmUniqueCnt"));
 
 			overviewInfoList.add(overviewInfoItem);
 		}

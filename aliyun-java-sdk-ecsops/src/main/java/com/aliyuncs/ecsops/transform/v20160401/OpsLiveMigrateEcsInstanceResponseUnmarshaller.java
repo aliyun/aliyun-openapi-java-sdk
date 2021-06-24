@@ -23,15 +23,15 @@ public class OpsLiveMigrateEcsInstanceResponseUnmarshaller {
 	public static OpsLiveMigrateEcsInstanceResponse unmarshall(OpsLiveMigrateEcsInstanceResponse opsLiveMigrateEcsInstanceResponse, UnmarshallerContext _ctx) {
 		
 		opsLiveMigrateEcsInstanceResponse.setRequestId(_ctx.stringValue("OpsLiveMigrateEcsInstanceResponse.RequestId"));
-		opsLiveMigrateEcsInstanceResponse.setCode(_ctx.stringValue("OpsLiveMigrateEcsInstanceResponse.Code"));
-		opsLiveMigrateEcsInstanceResponse.setMessage(_ctx.stringValue("OpsLiveMigrateEcsInstanceResponse.Message"));
-		opsLiveMigrateEcsInstanceResponse.setSuccess(_ctx.stringValue("OpsLiveMigrateEcsInstanceResponse.Success"));
-		opsLiveMigrateEcsInstanceResponse.setInstanceId(_ctx.stringValue("OpsLiveMigrateEcsInstanceResponse.InstanceId"));
-		opsLiveMigrateEcsInstanceResponse.setMigrationId(_ctx.stringValue("OpsLiveMigrateEcsInstanceResponse.MigrationId"));
 		opsLiveMigrateEcsInstanceResponse.setSourceNcId(_ctx.stringValue("OpsLiveMigrateEcsInstanceResponse.SourceNcId"));
-		opsLiveMigrateEcsInstanceResponse.setDestinationNcId(_ctx.stringValue("OpsLiveMigrateEcsInstanceResponse.DestinationNcId"));
-		opsLiveMigrateEcsInstanceResponse.setRate(_ctx.longValue("OpsLiveMigrateEcsInstanceResponse.Rate"));
+		opsLiveMigrateEcsInstanceResponse.setMessage(_ctx.stringValue("OpsLiveMigrateEcsInstanceResponse.Message"));
+		opsLiveMigrateEcsInstanceResponse.setInstanceId(_ctx.stringValue("OpsLiveMigrateEcsInstanceResponse.InstanceId"));
 		opsLiveMigrateEcsInstanceResponse.setTimeout(_ctx.longValue("OpsLiveMigrateEcsInstanceResponse.Timeout"));
+		opsLiveMigrateEcsInstanceResponse.setRate(_ctx.longValue("OpsLiveMigrateEcsInstanceResponse.Rate"));
+		opsLiveMigrateEcsInstanceResponse.setMigrationId(_ctx.stringValue("OpsLiveMigrateEcsInstanceResponse.MigrationId"));
+		opsLiveMigrateEcsInstanceResponse.setCode(_ctx.stringValue("OpsLiveMigrateEcsInstanceResponse.Code"));
+		opsLiveMigrateEcsInstanceResponse.setSuccess(_ctx.stringValue("OpsLiveMigrateEcsInstanceResponse.Success"));
+		opsLiveMigrateEcsInstanceResponse.setDestinationNcId(_ctx.stringValue("OpsLiveMigrateEcsInstanceResponse.DestinationNcId"));
 	 
 	 	return opsLiveMigrateEcsInstanceResponse;
 	}

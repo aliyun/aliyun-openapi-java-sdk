@@ -31,8 +31,8 @@ public class OpsQueryExceptionNameByAlarmIdResponseUnmarshaller {
 		List<AlarmConfigInfo> alarmConfigInfos = new ArrayList<AlarmConfigInfo>();
 		for (int i = 0; i < _ctx.lengthValue("OpsQueryExceptionNameByAlarmIdResponse.AlarmConfigInfos.Length"); i++) {
 			AlarmConfigInfo alarmConfigInfo = new AlarmConfigInfo();
-			alarmConfigInfo.setExceptionName(_ctx.stringValue("OpsQueryExceptionNameByAlarmIdResponse.AlarmConfigInfos["+ i +"].ExceptionName"));
 			alarmConfigInfo.setAlarmId(_ctx.stringValue("OpsQueryExceptionNameByAlarmIdResponse.AlarmConfigInfos["+ i +"].AlarmId"));
+			alarmConfigInfo.setExceptionName(_ctx.stringValue("OpsQueryExceptionNameByAlarmIdResponse.AlarmConfigInfos["+ i +"].ExceptionName"));
 
 			alarmConfigInfos.add(alarmConfigInfo);
 		}

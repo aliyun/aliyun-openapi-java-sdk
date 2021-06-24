@@ -31,18 +31,18 @@ public class OpsQueryZoneGroupWaterLevelResponseUnmarshaller {
 		List<ZoneGroupWaterLevel> zoneGroupWaterLevels = new ArrayList<ZoneGroupWaterLevel>();
 		for (int i = 0; i < _ctx.lengthValue("OpsQueryZoneGroupWaterLevelResponse.ZoneGroupWaterLevels.Length"); i++) {
 			ZoneGroupWaterLevel zoneGroupWaterLevel = new ZoneGroupWaterLevel();
-			zoneGroupWaterLevel.setRegionId(_ctx.stringValue("OpsQueryZoneGroupWaterLevelResponse.ZoneGroupWaterLevels["+ i +"].RegionId"));
-			zoneGroupWaterLevel.setIzNo(_ctx.stringValue("OpsQueryZoneGroupWaterLevelResponse.ZoneGroupWaterLevels["+ i +"].IzNo"));
-			zoneGroupWaterLevel.setClusterGroup(_ctx.stringValue("OpsQueryZoneGroupWaterLevelResponse.ZoneGroupWaterLevels["+ i +"].ClusterGroup"));
-			zoneGroupWaterLevel.setGrayBizType(_ctx.stringValue("OpsQueryZoneGroupWaterLevelResponse.ZoneGroupWaterLevels["+ i +"].GrayBizType"));
+			zoneGroupWaterLevel.setHighLevel(_ctx.longValue("OpsQueryZoneGroupWaterLevelResponse.ZoneGroupWaterLevels["+ i +"].HighLevel"));
 			zoneGroupWaterLevel.setFlavor(_ctx.stringValue("OpsQueryZoneGroupWaterLevelResponse.ZoneGroupWaterLevels["+ i +"].Flavor"));
-			zoneGroupWaterLevel.setBizType(_ctx.stringValue("OpsQueryZoneGroupWaterLevelResponse.ZoneGroupWaterLevels["+ i +"].BizType"));
+			zoneGroupWaterLevel.setGrayBizType(_ctx.stringValue("OpsQueryZoneGroupWaterLevelResponse.ZoneGroupWaterLevels["+ i +"].GrayBizType"));
 			zoneGroupWaterLevel.setNetworkType(_ctx.integerValue("OpsQueryZoneGroupWaterLevelResponse.ZoneGroupWaterLevels["+ i +"].NetworkType"));
+			zoneGroupWaterLevel.setClusterGroup(_ctx.stringValue("OpsQueryZoneGroupWaterLevelResponse.ZoneGroupWaterLevels["+ i +"].ClusterGroup"));
+			zoneGroupWaterLevel.setBizType(_ctx.stringValue("OpsQueryZoneGroupWaterLevelResponse.ZoneGroupWaterLevels["+ i +"].BizType"));
+			zoneGroupWaterLevel.setRegionId(_ctx.stringValue("OpsQueryZoneGroupWaterLevelResponse.ZoneGroupWaterLevels["+ i +"].RegionId"));
 			zoneGroupWaterLevel.setIoOptimized(_ctx.integerValue("OpsQueryZoneGroupWaterLevelResponse.ZoneGroupWaterLevels["+ i +"].IoOptimized"));
+			zoneGroupWaterLevel.setRiLevel(_ctx.longValue("OpsQueryZoneGroupWaterLevelResponse.ZoneGroupWaterLevels["+ i +"].RiLevel"));
 			zoneGroupWaterLevel.setResourceType(_ctx.integerValue("OpsQueryZoneGroupWaterLevelResponse.ZoneGroupWaterLevels["+ i +"].ResourceType"));
 			zoneGroupWaterLevel.setLowLevel(_ctx.longValue("OpsQueryZoneGroupWaterLevelResponse.ZoneGroupWaterLevels["+ i +"].LowLevel"));
-			zoneGroupWaterLevel.setHighLevel(_ctx.longValue("OpsQueryZoneGroupWaterLevelResponse.ZoneGroupWaterLevels["+ i +"].HighLevel"));
-			zoneGroupWaterLevel.setRiLevel(_ctx.longValue("OpsQueryZoneGroupWaterLevelResponse.ZoneGroupWaterLevels["+ i +"].RiLevel"));
+			zoneGroupWaterLevel.setIzNo(_ctx.stringValue("OpsQueryZoneGroupWaterLevelResponse.ZoneGroupWaterLevels["+ i +"].IzNo"));
 
 			zoneGroupWaterLevels.add(zoneGroupWaterLevel);
 		}

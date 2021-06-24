@@ -47,25 +47,33 @@ public class OpsQueryDetailMetricConfigResponse extends AcsResponse {
 
 	public static class MetricConfig {
 
+		private String metricQuery;
+
 		private String metricName;
-
-		private String metricTarget;
-
-		private String metricDescription;
-
-		private String metricLogStore;
 
 		private String metricSlsConfigName;
 
+		private String metricTarget;
+
 		private Integer metricInterval;
 
-		private String metricAnalyse;
+		private String metricLogStore;
 
-		private String metricQuery;
+		private String metricDescription;
+
+		private String metricAnalyse;
 
 		private List<AggregationDimension> aggregationDimensions;
 
 		private List<String> metricRegions;
+
+		public String getMetricQuery() {
+			return this.metricQuery;
+		}
+
+		public void setMetricQuery(String metricQuery) {
+			this.metricQuery = metricQuery;
+		}
 
 		public String getMetricName() {
 			return this.metricName;
@@ -73,30 +81,6 @@ public class OpsQueryDetailMetricConfigResponse extends AcsResponse {
 
 		public void setMetricName(String metricName) {
 			this.metricName = metricName;
-		}
-
-		public String getMetricTarget() {
-			return this.metricTarget;
-		}
-
-		public void setMetricTarget(String metricTarget) {
-			this.metricTarget = metricTarget;
-		}
-
-		public String getMetricDescription() {
-			return this.metricDescription;
-		}
-
-		public void setMetricDescription(String metricDescription) {
-			this.metricDescription = metricDescription;
-		}
-
-		public String getMetricLogStore() {
-			return this.metricLogStore;
-		}
-
-		public void setMetricLogStore(String metricLogStore) {
-			this.metricLogStore = metricLogStore;
 		}
 
 		public String getMetricSlsConfigName() {
@@ -107,6 +91,14 @@ public class OpsQueryDetailMetricConfigResponse extends AcsResponse {
 			this.metricSlsConfigName = metricSlsConfigName;
 		}
 
+		public String getMetricTarget() {
+			return this.metricTarget;
+		}
+
+		public void setMetricTarget(String metricTarget) {
+			this.metricTarget = metricTarget;
+		}
+
 		public Integer getMetricInterval() {
 			return this.metricInterval;
 		}
@@ -115,20 +107,28 @@ public class OpsQueryDetailMetricConfigResponse extends AcsResponse {
 			this.metricInterval = metricInterval;
 		}
 
+		public String getMetricLogStore() {
+			return this.metricLogStore;
+		}
+
+		public void setMetricLogStore(String metricLogStore) {
+			this.metricLogStore = metricLogStore;
+		}
+
+		public String getMetricDescription() {
+			return this.metricDescription;
+		}
+
+		public void setMetricDescription(String metricDescription) {
+			this.metricDescription = metricDescription;
+		}
+
 		public String getMetricAnalyse() {
 			return this.metricAnalyse;
 		}
 
 		public void setMetricAnalyse(String metricAnalyse) {
 			this.metricAnalyse = metricAnalyse;
-		}
-
-		public String getMetricQuery() {
-			return this.metricQuery;
-		}
-
-		public void setMetricQuery(String metricQuery) {
-			this.metricQuery = metricQuery;
 		}
 
 		public List<AggregationDimension> getAggregationDimensions() {
@@ -149,11 +149,19 @@ public class OpsQueryDetailMetricConfigResponse extends AcsResponse {
 
 		public static class AggregationDimension {
 
+			private String aggregationType;
+
 			private Integer aggregationMaxCnt;
 
 			private String aggregationIndex;
 
-			private String aggregationType;
+			public String getAggregationType() {
+				return this.aggregationType;
+			}
+
+			public void setAggregationType(String aggregationType) {
+				this.aggregationType = aggregationType;
+			}
 
 			public Integer getAggregationMaxCnt() {
 				return this.aggregationMaxCnt;
@@ -169,14 +177,6 @@ public class OpsQueryDetailMetricConfigResponse extends AcsResponse {
 
 			public void setAggregationIndex(String aggregationIndex) {
 				this.aggregationIndex = aggregationIndex;
-			}
-
-			public String getAggregationType() {
-				return this.aggregationType;
-			}
-
-			public void setAggregationType(String aggregationType) {
-				this.aggregationType = aggregationType;
 			}
 		}
 	}

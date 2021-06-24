@@ -47,60 +47,36 @@ public class OpsRemoveZoneGroupWaterLevelResponse extends AcsResponse {
 
 	public static class ZoneGroupWaterLevel {
 
-		private String regionId;
-
-		private String izNo;
-
-		private String clusterGroup;
-
-		private String grayBizType;
+		private Long highLevel;
 
 		private String flavor;
 
-		private String bizType;
+		private String grayBizType;
 
 		private Integer networkType;
 
+		private String clusterGroup;
+
+		private String bizType;
+
+		private String regionId;
+
 		private Integer ioOptimized;
+
+		private Long riLevel;
 
 		private Integer resourceType;
 
 		private Long lowLevel;
 
-		private Long highLevel;
+		private String izNo;
 
-		private Long riLevel;
-
-		public String getRegionId() {
-			return this.regionId;
+		public Long getHighLevel() {
+			return this.highLevel;
 		}
 
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		public String getIzNo() {
-			return this.izNo;
-		}
-
-		public void setIzNo(String izNo) {
-			this.izNo = izNo;
-		}
-
-		public String getClusterGroup() {
-			return this.clusterGroup;
-		}
-
-		public void setClusterGroup(String clusterGroup) {
-			this.clusterGroup = clusterGroup;
-		}
-
-		public String getGrayBizType() {
-			return this.grayBizType;
-		}
-
-		public void setGrayBizType(String grayBizType) {
-			this.grayBizType = grayBizType;
+		public void setHighLevel(Long highLevel) {
+			this.highLevel = highLevel;
 		}
 
 		public String getFlavor() {
@@ -111,12 +87,12 @@ public class OpsRemoveZoneGroupWaterLevelResponse extends AcsResponse {
 			this.flavor = flavor;
 		}
 
-		public String getBizType() {
-			return this.bizType;
+		public String getGrayBizType() {
+			return this.grayBizType;
 		}
 
-		public void setBizType(String bizType) {
-			this.bizType = bizType;
+		public void setGrayBizType(String grayBizType) {
+			this.grayBizType = grayBizType;
 		}
 
 		public Integer getNetworkType() {
@@ -127,12 +103,44 @@ public class OpsRemoveZoneGroupWaterLevelResponse extends AcsResponse {
 			this.networkType = networkType;
 		}
 
+		public String getClusterGroup() {
+			return this.clusterGroup;
+		}
+
+		public void setClusterGroup(String clusterGroup) {
+			this.clusterGroup = clusterGroup;
+		}
+
+		public String getBizType() {
+			return this.bizType;
+		}
+
+		public void setBizType(String bizType) {
+			this.bizType = bizType;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
 		public Integer getIoOptimized() {
 			return this.ioOptimized;
 		}
 
 		public void setIoOptimized(Integer ioOptimized) {
 			this.ioOptimized = ioOptimized;
+		}
+
+		public Long getRiLevel() {
+			return this.riLevel;
+		}
+
+		public void setRiLevel(Long riLevel) {
+			this.riLevel = riLevel;
 		}
 
 		public Integer getResourceType() {
@@ -151,20 +159,12 @@ public class OpsRemoveZoneGroupWaterLevelResponse extends AcsResponse {
 			this.lowLevel = lowLevel;
 		}
 
-		public Long getHighLevel() {
-			return this.highLevel;
+		public String getIzNo() {
+			return this.izNo;
 		}
 
-		public void setHighLevel(Long highLevel) {
-			this.highLevel = highLevel;
-		}
-
-		public Long getRiLevel() {
-			return this.riLevel;
-		}
-
-		public void setRiLevel(Long riLevel) {
-			this.riLevel = riLevel;
+		public void setIzNo(String izNo) {
+			this.izNo = izNo;
 		}
 	}
 

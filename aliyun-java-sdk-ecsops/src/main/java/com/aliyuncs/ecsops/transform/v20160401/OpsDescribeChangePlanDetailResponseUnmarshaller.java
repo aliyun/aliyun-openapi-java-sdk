@@ -27,15 +27,15 @@ public class OpsDescribeChangePlanDetailResponseUnmarshaller {
 	public static OpsDescribeChangePlanDetailResponse unmarshall(OpsDescribeChangePlanDetailResponse opsDescribeChangePlanDetailResponse, UnmarshallerContext _ctx) {
 		
 		opsDescribeChangePlanDetailResponse.setRequestId(_ctx.stringValue("OpsDescribeChangePlanDetailResponse.RequestId"));
-		opsDescribeChangePlanDetailResponse.setCode(_ctx.stringValue("OpsDescribeChangePlanDetailResponse.Code"));
 		opsDescribeChangePlanDetailResponse.setMessage(_ctx.stringValue("OpsDescribeChangePlanDetailResponse.Message"));
+		opsDescribeChangePlanDetailResponse.setCode(_ctx.stringValue("OpsDescribeChangePlanDetailResponse.Code"));
 		opsDescribeChangePlanDetailResponse.setSuccess(_ctx.stringValue("OpsDescribeChangePlanDetailResponse.Success"));
 
 		Data data = new Data();
-		data.setPlanId(_ctx.stringValue("OpsDescribeChangePlanDetailResponse.Data.PlanId"));
 		data.setBatchNo(_ctx.integerValue("OpsDescribeChangePlanDetailResponse.Data.BatchNo"));
-		data.setTotalSize(_ctx.integerValue("OpsDescribeChangePlanDetailResponse.Data.TotalSize"));
 		data.setLastBatch(_ctx.booleanValue("OpsDescribeChangePlanDetailResponse.Data.LastBatch"));
+		data.setTotalSize(_ctx.integerValue("OpsDescribeChangePlanDetailResponse.Data.TotalSize"));
+		data.setPlanId(_ctx.stringValue("OpsDescribeChangePlanDetailResponse.Data.PlanId"));
 
 		List<String> resources = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("OpsDescribeChangePlanDetailResponse.Data.Resources.Length"); i++) {

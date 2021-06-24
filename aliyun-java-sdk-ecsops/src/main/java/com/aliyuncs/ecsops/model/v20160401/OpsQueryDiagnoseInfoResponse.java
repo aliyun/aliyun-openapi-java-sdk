@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsQueryDiagnoseInfoResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
-
-	private Integer pageNumber;
 
 	private Integer pageSize;
 
+	private String requestId;
+
+	private Integer pageNumber;
+
 	private List<Diagnose> diagnoseList;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -51,20 +43,28 @@ public class OpsQueryDiagnoseInfoResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<Diagnose> getDiagnoseList() {
@@ -77,60 +77,44 @@ public class OpsQueryDiagnoseInfoResponse extends AcsResponse {
 
 	public static class Diagnose {
 
-		private String action;
+		private Integer type;
 
-		private Long aliUid;
-
-		private String diagnoseId;
-
-		private String errorCode;
+		private String status;
 
 		private String creationTime;
 
+		private String action;
+
 		private String product;
+
+		private String diagnoseId;
+
+		private Long aliUid;
+
+		private Integer star;
 
 		private String regionId;
 
 		private String requestId;
 
+		private String errorCode;
+
 		private String solutions;
 
-		private Integer star;
-
-		private String status;
-
-		private Integer type;
-
-		public String getAction() {
-			return this.action;
+		public Integer getType() {
+			return this.type;
 		}
 
-		public void setAction(String action) {
-			this.action = action;
+		public void setType(Integer type) {
+			this.type = type;
 		}
 
-		public Long getAliUid() {
-			return this.aliUid;
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setAliUid(Long aliUid) {
-			this.aliUid = aliUid;
-		}
-
-		public String getDiagnoseId() {
-			return this.diagnoseId;
-		}
-
-		public void setDiagnoseId(String diagnoseId) {
-			this.diagnoseId = diagnoseId;
-		}
-
-		public String getErrorCode() {
-			return this.errorCode;
-		}
-
-		public void setErrorCode(String errorCode) {
-			this.errorCode = errorCode;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public String getCreationTime() {
@@ -141,12 +125,44 @@ public class OpsQueryDiagnoseInfoResponse extends AcsResponse {
 			this.creationTime = creationTime;
 		}
 
+		public String getAction() {
+			return this.action;
+		}
+
+		public void setAction(String action) {
+			this.action = action;
+		}
+
 		public String getProduct() {
 			return this.product;
 		}
 
 		public void setProduct(String product) {
 			this.product = product;
+		}
+
+		public String getDiagnoseId() {
+			return this.diagnoseId;
+		}
+
+		public void setDiagnoseId(String diagnoseId) {
+			this.diagnoseId = diagnoseId;
+		}
+
+		public Long getAliUid() {
+			return this.aliUid;
+		}
+
+		public void setAliUid(Long aliUid) {
+			this.aliUid = aliUid;
+		}
+
+		public Integer getStar() {
+			return this.star;
+		}
+
+		public void setStar(Integer star) {
+			this.star = star;
 		}
 
 		public String getRegionId() {
@@ -165,36 +181,20 @@ public class OpsQueryDiagnoseInfoResponse extends AcsResponse {
 			this.requestId = requestId;
 		}
 
+		public String getErrorCode() {
+			return this.errorCode;
+		}
+
+		public void setErrorCode(String errorCode) {
+			this.errorCode = errorCode;
+		}
+
 		public String getSolutions() {
 			return this.solutions;
 		}
 
 		public void setSolutions(String solutions) {
 			this.solutions = solutions;
-		}
-
-		public Integer getStar() {
-			return this.star;
-		}
-
-		public void setStar(Integer star) {
-			this.star = star;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
-		public Integer getType() {
-			return this.type;
-		}
-
-		public void setType(Integer type) {
-			this.type = type;
 		}
 	}
 

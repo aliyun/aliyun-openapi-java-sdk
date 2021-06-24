@@ -46,29 +46,21 @@ public class OpsQueryWorkflowUserSpecificSettingsResponse extends AcsResponse {
 
 	public static class WorkflowUserSpecificSettings {
 
-		private Boolean wildcard;
-
 		private Integer size;
-
-		private Integer concurrent;
-
-		private Integer pendingTimeout;
-
-		private Integer execTimeout;
-
-		private String createDate;
-
-		private String modifyDate;
 
 		private String expireDate;
 
-		public Boolean getWildcard() {
-			return this.wildcard;
-		}
+		private Integer pendingTimeout;
 
-		public void setWildcard(Boolean wildcard) {
-			this.wildcard = wildcard;
-		}
+		private Integer concurrent;
+
+		private Integer execTimeout;
+
+		private Boolean wildcard;
+
+		private String modifyDate;
+
+		private String createDate;
 
 		public Integer getSize() {
 			return this.size;
@@ -78,12 +70,12 @@ public class OpsQueryWorkflowUserSpecificSettingsResponse extends AcsResponse {
 			this.size = size;
 		}
 
-		public Integer getConcurrent() {
-			return this.concurrent;
+		public String getExpireDate() {
+			return this.expireDate;
 		}
 
-		public void setConcurrent(Integer concurrent) {
-			this.concurrent = concurrent;
+		public void setExpireDate(String expireDate) {
+			this.expireDate = expireDate;
 		}
 
 		public Integer getPendingTimeout() {
@@ -94,6 +86,14 @@ public class OpsQueryWorkflowUserSpecificSettingsResponse extends AcsResponse {
 			this.pendingTimeout = pendingTimeout;
 		}
 
+		public Integer getConcurrent() {
+			return this.concurrent;
+		}
+
+		public void setConcurrent(Integer concurrent) {
+			this.concurrent = concurrent;
+		}
+
 		public Integer getExecTimeout() {
 			return this.execTimeout;
 		}
@@ -102,12 +102,12 @@ public class OpsQueryWorkflowUserSpecificSettingsResponse extends AcsResponse {
 			this.execTimeout = execTimeout;
 		}
 
-		public String getCreateDate() {
-			return this.createDate;
+		public Boolean getWildcard() {
+			return this.wildcard;
 		}
 
-		public void setCreateDate(String createDate) {
-			this.createDate = createDate;
+		public void setWildcard(Boolean wildcard) {
+			this.wildcard = wildcard;
 		}
 
 		public String getModifyDate() {
@@ -118,12 +118,12 @@ public class OpsQueryWorkflowUserSpecificSettingsResponse extends AcsResponse {
 			this.modifyDate = modifyDate;
 		}
 
-		public String getExpireDate() {
-			return this.expireDate;
+		public String getCreateDate() {
+			return this.createDate;
 		}
 
-		public void setExpireDate(String expireDate) {
-			this.expireDate = expireDate;
+		public void setCreateDate(String createDate) {
+			this.createDate = createDate;
 		}
 	}
 

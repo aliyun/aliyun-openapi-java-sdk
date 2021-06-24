@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsDescribeReservedInstancesResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
-
-	private Integer pageNumber;
 
 	private Integer pageSize;
 
+	private String requestId;
+
+	private Integer pageNumber;
+
 	private List<ReservedInstance> reservedInstances;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -51,20 +43,28 @@ public class OpsDescribeReservedInstancesResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<ReservedInstance> getReservedInstances() {
@@ -77,50 +77,34 @@ public class OpsDescribeReservedInstancesResponse extends AcsResponse {
 
 	public static class ReservedInstance {
 
-		private String reservedInstanceId;
-
-		private String regionId;
-
-		private String zoneId;
+		private String status;
 
 		private String reservedInstanceName;
 
 		private String description;
 
-		private String instanceType;
+		private String resourceGroupId;
+
+		private String zoneId;
+
+		private String reservedInstanceId;
 
 		private String scope;
 
-		private String offeringType;
+		private String instanceType;
 
 		private Integer instanceAmount;
 
-		private String status;
+		private String offeringType;
 
-		private String resourceGroupId;
+		private String regionId;
 
-		public String getReservedInstanceId() {
-			return this.reservedInstanceId;
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setReservedInstanceId(String reservedInstanceId) {
-			this.reservedInstanceId = reservedInstanceId;
-		}
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		public String getZoneId() {
-			return this.zoneId;
-		}
-
-		public void setZoneId(String zoneId) {
-			this.zoneId = zoneId;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public String getReservedInstanceName() {
@@ -139,12 +123,28 @@ public class OpsDescribeReservedInstancesResponse extends AcsResponse {
 			this.description = description;
 		}
 
-		public String getInstanceType() {
-			return this.instanceType;
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
 		}
 
-		public void setInstanceType(String instanceType) {
-			this.instanceType = instanceType;
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
+		public String getZoneId() {
+			return this.zoneId;
+		}
+
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
+		}
+
+		public String getReservedInstanceId() {
+			return this.reservedInstanceId;
+		}
+
+		public void setReservedInstanceId(String reservedInstanceId) {
+			this.reservedInstanceId = reservedInstanceId;
 		}
 
 		public String getScope() {
@@ -155,12 +155,12 @@ public class OpsDescribeReservedInstancesResponse extends AcsResponse {
 			this.scope = scope;
 		}
 
-		public String getOfferingType() {
-			return this.offeringType;
+		public String getInstanceType() {
+			return this.instanceType;
 		}
 
-		public void setOfferingType(String offeringType) {
-			this.offeringType = offeringType;
+		public void setInstanceType(String instanceType) {
+			this.instanceType = instanceType;
 		}
 
 		public Integer getInstanceAmount() {
@@ -171,20 +171,20 @@ public class OpsDescribeReservedInstancesResponse extends AcsResponse {
 			this.instanceAmount = instanceAmount;
 		}
 
-		public String getStatus() {
-			return this.status;
+		public String getOfferingType() {
+			return this.offeringType;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
+		public void setOfferingType(String offeringType) {
+			this.offeringType = offeringType;
 		}
 
-		public String getResourceGroupId() {
-			return this.resourceGroupId;
+		public String getRegionId() {
+			return this.regionId;
 		}
 
-		public void setResourceGroupId(String resourceGroupId) {
-			this.resourceGroupId = resourceGroupId;
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 	}
 

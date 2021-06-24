@@ -32,15 +32,15 @@ public class OpsDescribeFailedDeploymentStatusInfoResponseUnmarshaller {
 		List<FailedDeployStatusInfoItem> failedDeployStatusInfo = new ArrayList<FailedDeployStatusInfoItem>();
 		for (int i = 0; i < _ctx.lengthValue("OpsDescribeFailedDeploymentStatusInfoResponse.FailedDeployStatusInfo.Length"); i++) {
 			FailedDeployStatusInfoItem failedDeployStatusInfoItem = new FailedDeployStatusInfoItem();
-			failedDeployStatusInfoItem.setPlanId(_ctx.stringValue("OpsDescribeFailedDeploymentStatusInfoResponse.FailedDeployStatusInfo["+ i +"].PlanId"));
-			failedDeployStatusInfoItem.setBatchNo(_ctx.stringValue("OpsDescribeFailedDeploymentStatusInfoResponse.FailedDeployStatusInfo["+ i +"].BatchNo"));
-			failedDeployStatusInfoItem.setResourceId(_ctx.stringValue("OpsDescribeFailedDeploymentStatusInfoResponse.FailedDeployStatusInfo["+ i +"].ResourceId"));
-			failedDeployStatusInfoItem.setNcIp(_ctx.stringValue("OpsDescribeFailedDeploymentStatusInfoResponse.FailedDeployStatusInfo["+ i +"].NcIp"));
-			failedDeployStatusInfoItem.setReason(_ctx.stringValue("OpsDescribeFailedDeploymentStatusInfoResponse.FailedDeployStatusInfo["+ i +"].Reason"));
-			failedDeployStatusInfoItem.setRawReason(_ctx.stringValue("OpsDescribeFailedDeploymentStatusInfoResponse.FailedDeployStatusInfo["+ i +"].RawReason"));
-			failedDeployStatusInfoItem.setReasonDetail(_ctx.stringValue("OpsDescribeFailedDeploymentStatusInfoResponse.FailedDeployStatusInfo["+ i +"].ReasonDetail"));
 			failedDeployStatusInfoItem.setGmtCreated(_ctx.stringValue("OpsDescribeFailedDeploymentStatusInfoResponse.FailedDeployStatusInfo["+ i +"].GmtCreated"));
+			failedDeployStatusInfoItem.setBatchNo(_ctx.stringValue("OpsDescribeFailedDeploymentStatusInfoResponse.FailedDeployStatusInfo["+ i +"].BatchNo"));
+			failedDeployStatusInfoItem.setReasonDetail(_ctx.stringValue("OpsDescribeFailedDeploymentStatusInfoResponse.FailedDeployStatusInfo["+ i +"].ReasonDetail"));
+			failedDeployStatusInfoItem.setRawReason(_ctx.stringValue("OpsDescribeFailedDeploymentStatusInfoResponse.FailedDeployStatusInfo["+ i +"].RawReason"));
+			failedDeployStatusInfoItem.setNcIp(_ctx.stringValue("OpsDescribeFailedDeploymentStatusInfoResponse.FailedDeployStatusInfo["+ i +"].NcIp"));
 			failedDeployStatusInfoItem.setGmtModified(_ctx.stringValue("OpsDescribeFailedDeploymentStatusInfoResponse.FailedDeployStatusInfo["+ i +"].GmtModified"));
+			failedDeployStatusInfoItem.setResourceId(_ctx.stringValue("OpsDescribeFailedDeploymentStatusInfoResponse.FailedDeployStatusInfo["+ i +"].ResourceId"));
+			failedDeployStatusInfoItem.setPlanId(_ctx.stringValue("OpsDescribeFailedDeploymentStatusInfoResponse.FailedDeployStatusInfo["+ i +"].PlanId"));
+			failedDeployStatusInfoItem.setReason(_ctx.stringValue("OpsDescribeFailedDeploymentStatusInfoResponse.FailedDeployStatusInfo["+ i +"].Reason"));
 
 			failedDeployStatusInfo.add(failedDeployStatusInfoItem);
 		}

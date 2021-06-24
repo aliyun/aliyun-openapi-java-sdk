@@ -25,17 +25,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsQueryVmFailureOverviewResponse extends AcsResponse {
 
+	private String endTime;
+
 	private String requestId;
 
 	private String startTime;
-
-	private String endTime;
 
 	private String queryGroupField;
 
 	private List<OverviewInfoItem> overviewInfoList;
 
 	private List<String> groupFieldValues;
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -51,14 +59,6 @@ public class OpsQueryVmFailureOverviewResponse extends AcsResponse {
 
 	public void setStartTime(String startTime) {
 		this.startTime = startTime;
-	}
-
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
 	}
 
 	public String getQueryGroupField() {
@@ -87,137 +87,49 @@ public class OpsQueryVmFailureOverviewResponse extends AcsResponse {
 
 	public static class OverviewInfoItem {
 
-		private String gocExceptionName;
-
-		private Integer vcpuCnt;
-
-		private Float gocVcpuCnt;
-
-		private Integer ncCnt;
-
-		private Integer vmCnt;
-
-		private Integer userCnt;
-
-		private Integer gc6Cnt;
-
-		private Integer gc7Cnt;
-
-		private Integer recoverNcCnt;
-
-		private Integer unrecoverNcCnt;
-
-		private Integer recoverVmCnt;
-
-		private Integer unrecoverVmCnt;
-
 		private Integer recoverVcpuCnt;
-
-		private Integer unrecoverVCpuCnt;
-
-		private Integer sequentialRecoverVmCnt;
 
 		private Integer sequentialUnRecoverVmCnt;
 
-		private Integer sequentialRecoverVcpuCnt;
+		private Integer recoverVmCnt;
+
+		private String gocExceptionName;
+
+		private Integer ncCnt;
+
+		private Integer vcpuCnt;
+
+		private Integer unrecoverVmCnt;
+
+		private Integer userCnt;
+
+		private Integer unrecoverNcCnt;
+
+		private Integer gc7Cnt;
 
 		private Integer sequentialUnRecoverVcpuCnt;
 
-		public String getGocExceptionName() {
-			return this.gocExceptionName;
-		}
+		private Integer unrecoverVCpuCnt;
 
-		public void setGocExceptionName(String gocExceptionName) {
-			this.gocExceptionName = gocExceptionName;
-		}
+		private Integer recoverNcCnt;
 
-		public Integer getVcpuCnt() {
-			return this.vcpuCnt;
-		}
+		private Integer gc6Cnt;
 
-		public void setVcpuCnt(Integer vcpuCnt) {
-			this.vcpuCnt = vcpuCnt;
-		}
+		private Integer vmCnt;
 
-		public Float getGocVcpuCnt() {
-			return this.gocVcpuCnt;
-		}
+		private Integer sequentialRecoverVmCnt;
 
-		public void setGocVcpuCnt(Float gocVcpuCnt) {
-			this.gocVcpuCnt = gocVcpuCnt;
-		}
+		private Float gocVcpuCnt;
 
-		public Integer getNcCnt() {
-			return this.ncCnt;
-		}
+		private Integer sequentialRecoverVcpuCnt;
 
-		public void setNcCnt(Integer ncCnt) {
-			this.ncCnt = ncCnt;
-		}
+		private Integer aliProductVmCnt;
 
-		public Integer getVmCnt() {
-			return this.vmCnt;
-		}
+		private Integer vmUniqueCnt;
 
-		public void setVmCnt(Integer vmCnt) {
-			this.vmCnt = vmCnt;
-		}
+		private Integer unRecoverVmUniqueCnt;
 
-		public Integer getUserCnt() {
-			return this.userCnt;
-		}
-
-		public void setUserCnt(Integer userCnt) {
-			this.userCnt = userCnt;
-		}
-
-		public Integer getGc6Cnt() {
-			return this.gc6Cnt;
-		}
-
-		public void setGc6Cnt(Integer gc6Cnt) {
-			this.gc6Cnt = gc6Cnt;
-		}
-
-		public Integer getGc7Cnt() {
-			return this.gc7Cnt;
-		}
-
-		public void setGc7Cnt(Integer gc7Cnt) {
-			this.gc7Cnt = gc7Cnt;
-		}
-
-		public Integer getRecoverNcCnt() {
-			return this.recoverNcCnt;
-		}
-
-		public void setRecoverNcCnt(Integer recoverNcCnt) {
-			this.recoverNcCnt = recoverNcCnt;
-		}
-
-		public Integer getUnrecoverNcCnt() {
-			return this.unrecoverNcCnt;
-		}
-
-		public void setUnrecoverNcCnt(Integer unrecoverNcCnt) {
-			this.unrecoverNcCnt = unrecoverNcCnt;
-		}
-
-		public Integer getRecoverVmCnt() {
-			return this.recoverVmCnt;
-		}
-
-		public void setRecoverVmCnt(Integer recoverVmCnt) {
-			this.recoverVmCnt = recoverVmCnt;
-		}
-
-		public Integer getUnrecoverVmCnt() {
-			return this.unrecoverVmCnt;
-		}
-
-		public void setUnrecoverVmCnt(Integer unrecoverVmCnt) {
-			this.unrecoverVmCnt = unrecoverVmCnt;
-		}
+		private Integer sequentialUnRecoverVmUniqueCnt;
 
 		public Integer getRecoverVcpuCnt() {
 			return this.recoverVcpuCnt;
@@ -225,22 +137,6 @@ public class OpsQueryVmFailureOverviewResponse extends AcsResponse {
 
 		public void setRecoverVcpuCnt(Integer recoverVcpuCnt) {
 			this.recoverVcpuCnt = recoverVcpuCnt;
-		}
-
-		public Integer getUnrecoverVCpuCnt() {
-			return this.unrecoverVCpuCnt;
-		}
-
-		public void setUnrecoverVCpuCnt(Integer unrecoverVCpuCnt) {
-			this.unrecoverVCpuCnt = unrecoverVCpuCnt;
-		}
-
-		public Integer getSequentialRecoverVmCnt() {
-			return this.sequentialRecoverVmCnt;
-		}
-
-		public void setSequentialRecoverVmCnt(Integer sequentialRecoverVmCnt) {
-			this.sequentialRecoverVmCnt = sequentialRecoverVmCnt;
 		}
 
 		public Integer getSequentialUnRecoverVmCnt() {
@@ -251,12 +147,68 @@ public class OpsQueryVmFailureOverviewResponse extends AcsResponse {
 			this.sequentialUnRecoverVmCnt = sequentialUnRecoverVmCnt;
 		}
 
-		public Integer getSequentialRecoverVcpuCnt() {
-			return this.sequentialRecoverVcpuCnt;
+		public Integer getRecoverVmCnt() {
+			return this.recoverVmCnt;
 		}
 
-		public void setSequentialRecoverVcpuCnt(Integer sequentialRecoverVcpuCnt) {
-			this.sequentialRecoverVcpuCnt = sequentialRecoverVcpuCnt;
+		public void setRecoverVmCnt(Integer recoverVmCnt) {
+			this.recoverVmCnt = recoverVmCnt;
+		}
+
+		public String getGocExceptionName() {
+			return this.gocExceptionName;
+		}
+
+		public void setGocExceptionName(String gocExceptionName) {
+			this.gocExceptionName = gocExceptionName;
+		}
+
+		public Integer getNcCnt() {
+			return this.ncCnt;
+		}
+
+		public void setNcCnt(Integer ncCnt) {
+			this.ncCnt = ncCnt;
+		}
+
+		public Integer getVcpuCnt() {
+			return this.vcpuCnt;
+		}
+
+		public void setVcpuCnt(Integer vcpuCnt) {
+			this.vcpuCnt = vcpuCnt;
+		}
+
+		public Integer getUnrecoverVmCnt() {
+			return this.unrecoverVmCnt;
+		}
+
+		public void setUnrecoverVmCnt(Integer unrecoverVmCnt) {
+			this.unrecoverVmCnt = unrecoverVmCnt;
+		}
+
+		public Integer getUserCnt() {
+			return this.userCnt;
+		}
+
+		public void setUserCnt(Integer userCnt) {
+			this.userCnt = userCnt;
+		}
+
+		public Integer getUnrecoverNcCnt() {
+			return this.unrecoverNcCnt;
+		}
+
+		public void setUnrecoverNcCnt(Integer unrecoverNcCnt) {
+			this.unrecoverNcCnt = unrecoverNcCnt;
+		}
+
+		public Integer getGc7Cnt() {
+			return this.gc7Cnt;
+		}
+
+		public void setGc7Cnt(Integer gc7Cnt) {
+			this.gc7Cnt = gc7Cnt;
 		}
 
 		public Integer getSequentialUnRecoverVcpuCnt() {
@@ -265,6 +217,94 @@ public class OpsQueryVmFailureOverviewResponse extends AcsResponse {
 
 		public void setSequentialUnRecoverVcpuCnt(Integer sequentialUnRecoverVcpuCnt) {
 			this.sequentialUnRecoverVcpuCnt = sequentialUnRecoverVcpuCnt;
+		}
+
+		public Integer getUnrecoverVCpuCnt() {
+			return this.unrecoverVCpuCnt;
+		}
+
+		public void setUnrecoverVCpuCnt(Integer unrecoverVCpuCnt) {
+			this.unrecoverVCpuCnt = unrecoverVCpuCnt;
+		}
+
+		public Integer getRecoverNcCnt() {
+			return this.recoverNcCnt;
+		}
+
+		public void setRecoverNcCnt(Integer recoverNcCnt) {
+			this.recoverNcCnt = recoverNcCnt;
+		}
+
+		public Integer getGc6Cnt() {
+			return this.gc6Cnt;
+		}
+
+		public void setGc6Cnt(Integer gc6Cnt) {
+			this.gc6Cnt = gc6Cnt;
+		}
+
+		public Integer getVmCnt() {
+			return this.vmCnt;
+		}
+
+		public void setVmCnt(Integer vmCnt) {
+			this.vmCnt = vmCnt;
+		}
+
+		public Integer getSequentialRecoverVmCnt() {
+			return this.sequentialRecoverVmCnt;
+		}
+
+		public void setSequentialRecoverVmCnt(Integer sequentialRecoverVmCnt) {
+			this.sequentialRecoverVmCnt = sequentialRecoverVmCnt;
+		}
+
+		public Float getGocVcpuCnt() {
+			return this.gocVcpuCnt;
+		}
+
+		public void setGocVcpuCnt(Float gocVcpuCnt) {
+			this.gocVcpuCnt = gocVcpuCnt;
+		}
+
+		public Integer getSequentialRecoverVcpuCnt() {
+			return this.sequentialRecoverVcpuCnt;
+		}
+
+		public void setSequentialRecoverVcpuCnt(Integer sequentialRecoverVcpuCnt) {
+			this.sequentialRecoverVcpuCnt = sequentialRecoverVcpuCnt;
+		}
+
+		public Integer getAliProductVmCnt() {
+			return this.aliProductVmCnt;
+		}
+
+		public void setAliProductVmCnt(Integer aliProductVmCnt) {
+			this.aliProductVmCnt = aliProductVmCnt;
+		}
+
+		public Integer getVmUniqueCnt() {
+			return this.vmUniqueCnt;
+		}
+
+		public void setVmUniqueCnt(Integer vmUniqueCnt) {
+			this.vmUniqueCnt = vmUniqueCnt;
+		}
+
+		public Integer getUnRecoverVmUniqueCnt() {
+			return this.unRecoverVmUniqueCnt;
+		}
+
+		public void setUnRecoverVmUniqueCnt(Integer unRecoverVmUniqueCnt) {
+			this.unRecoverVmUniqueCnt = unRecoverVmUniqueCnt;
+		}
+
+		public Integer getSequentialUnRecoverVmUniqueCnt() {
+			return this.sequentialUnRecoverVmUniqueCnt;
+		}
+
+		public void setSequentialUnRecoverVmUniqueCnt(Integer sequentialUnRecoverVmUniqueCnt) {
+			this.sequentialUnRecoverVmUniqueCnt = sequentialUnRecoverVmUniqueCnt;
 		}
 	}
 

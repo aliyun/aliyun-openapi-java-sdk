@@ -25,40 +25,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsDescribeIpAclRulesResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String targetIp;
-
-	private Integer pageNumber;
+	private Integer totalCount;
 
 	private Integer pageSize;
 
-	private Integer totalCount;
+	private String requestId;
+
+	private Integer pageNumber;
+
+	private String targetIp;
 
 	private List<AclRule> aclRules;
 
-	public String getRequestId() {
-		return this.requestId;
+	public Integer getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getTargetIp() {
-		return this.targetIp;
-	}
-
-	public void setTargetIp(String targetIp) {
-		this.targetIp = targetIp;
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public Integer getPageSize() {
@@ -69,12 +53,28 @@ public class OpsDescribeIpAclRulesResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public Integer getTotalCount() {
-		return this.totalCount;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+	}
+
+	public String getTargetIp() {
+		return this.targetIp;
+	}
+
+	public void setTargetIp(String targetIp) {
+		this.targetIp = targetIp;
 	}
 
 	public List<AclRule> getAclRules() {
@@ -87,60 +87,28 @@ public class OpsDescribeIpAclRulesResponse extends AcsResponse {
 
 	public static class AclRule {
 
-		private String ipProtocol;
-
-		private String sourceCidrIp;
-
-		private String destCidrIp;
-
-		private String sourcePortRange;
-
-		private String destPortRange;
+		private String direction;
 
 		private String policy;
 
+		private String sourceCidrIp;
+
+		private String ipProtocol;
+
+		private String destCidrIp;
+
+		private String destPortRange;
+
 		private String priority;
 
-		private String direction;
+		private String sourcePortRange;
 
-		public String getIpProtocol() {
-			return this.ipProtocol;
+		public String getDirection() {
+			return this.direction;
 		}
 
-		public void setIpProtocol(String ipProtocol) {
-			this.ipProtocol = ipProtocol;
-		}
-
-		public String getSourceCidrIp() {
-			return this.sourceCidrIp;
-		}
-
-		public void setSourceCidrIp(String sourceCidrIp) {
-			this.sourceCidrIp = sourceCidrIp;
-		}
-
-		public String getDestCidrIp() {
-			return this.destCidrIp;
-		}
-
-		public void setDestCidrIp(String destCidrIp) {
-			this.destCidrIp = destCidrIp;
-		}
-
-		public String getSourcePortRange() {
-			return this.sourcePortRange;
-		}
-
-		public void setSourcePortRange(String sourcePortRange) {
-			this.sourcePortRange = sourcePortRange;
-		}
-
-		public String getDestPortRange() {
-			return this.destPortRange;
-		}
-
-		public void setDestPortRange(String destPortRange) {
-			this.destPortRange = destPortRange;
+		public void setDirection(String direction) {
+			this.direction = direction;
 		}
 
 		public String getPolicy() {
@@ -151,6 +119,38 @@ public class OpsDescribeIpAclRulesResponse extends AcsResponse {
 			this.policy = policy;
 		}
 
+		public String getSourceCidrIp() {
+			return this.sourceCidrIp;
+		}
+
+		public void setSourceCidrIp(String sourceCidrIp) {
+			this.sourceCidrIp = sourceCidrIp;
+		}
+
+		public String getIpProtocol() {
+			return this.ipProtocol;
+		}
+
+		public void setIpProtocol(String ipProtocol) {
+			this.ipProtocol = ipProtocol;
+		}
+
+		public String getDestCidrIp() {
+			return this.destCidrIp;
+		}
+
+		public void setDestCidrIp(String destCidrIp) {
+			this.destCidrIp = destCidrIp;
+		}
+
+		public String getDestPortRange() {
+			return this.destPortRange;
+		}
+
+		public void setDestPortRange(String destPortRange) {
+			this.destPortRange = destPortRange;
+		}
+
 		public String getPriority() {
 			return this.priority;
 		}
@@ -159,12 +159,12 @@ public class OpsDescribeIpAclRulesResponse extends AcsResponse {
 			this.priority = priority;
 		}
 
-		public String getDirection() {
-			return this.direction;
+		public String getSourcePortRange() {
+			return this.sourcePortRange;
 		}
 
-		public void setDirection(String direction) {
-			this.direction = direction;
+		public void setSourcePortRange(String sourcePortRange) {
+			this.sourcePortRange = sourcePortRange;
 		}
 	}
 

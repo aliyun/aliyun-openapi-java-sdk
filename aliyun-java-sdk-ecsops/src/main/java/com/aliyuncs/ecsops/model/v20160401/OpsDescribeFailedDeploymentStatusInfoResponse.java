@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsDescribeFailedDeploymentStatusInfoResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
 
+	private String requestId;
+
 	private List<FailedDeployStatusInfoItem> failedDeployStatusInfo;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -45,6 +37,14 @@ public class OpsDescribeFailedDeploymentStatusInfoResponse extends AcsResponse {
 
 	public void setTotalCount(Integer totalCount) {
 		this.totalCount = totalCount;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<FailedDeployStatusInfoItem> getFailedDeployStatusInfo() {
@@ -57,30 +57,30 @@ public class OpsDescribeFailedDeploymentStatusInfoResponse extends AcsResponse {
 
 	public static class FailedDeployStatusInfoItem {
 
-		private String planId;
+		private String gmtCreated;
 
 		private String batchNo;
 
-		private String resourceId;
-
-		private String ncIp;
-
-		private String reason;
+		private String reasonDetail;
 
 		private String rawReason;
 
-		private String reasonDetail;
-
-		private String gmtCreated;
+		private String ncIp;
 
 		private String gmtModified;
 
-		public String getPlanId() {
-			return this.planId;
+		private String resourceId;
+
+		private String planId;
+
+		private String reason;
+
+		public String getGmtCreated() {
+			return this.gmtCreated;
 		}
 
-		public void setPlanId(String planId) {
-			this.planId = planId;
+		public void setGmtCreated(String gmtCreated) {
+			this.gmtCreated = gmtCreated;
 		}
 
 		public String getBatchNo() {
@@ -91,28 +91,12 @@ public class OpsDescribeFailedDeploymentStatusInfoResponse extends AcsResponse {
 			this.batchNo = batchNo;
 		}
 
-		public String getResourceId() {
-			return this.resourceId;
+		public String getReasonDetail() {
+			return this.reasonDetail;
 		}
 
-		public void setResourceId(String resourceId) {
-			this.resourceId = resourceId;
-		}
-
-		public String getNcIp() {
-			return this.ncIp;
-		}
-
-		public void setNcIp(String ncIp) {
-			this.ncIp = ncIp;
-		}
-
-		public String getReason() {
-			return this.reason;
-		}
-
-		public void setReason(String reason) {
-			this.reason = reason;
+		public void setReasonDetail(String reasonDetail) {
+			this.reasonDetail = reasonDetail;
 		}
 
 		public String getRawReason() {
@@ -123,20 +107,12 @@ public class OpsDescribeFailedDeploymentStatusInfoResponse extends AcsResponse {
 			this.rawReason = rawReason;
 		}
 
-		public String getReasonDetail() {
-			return this.reasonDetail;
+		public String getNcIp() {
+			return this.ncIp;
 		}
 
-		public void setReasonDetail(String reasonDetail) {
-			this.reasonDetail = reasonDetail;
-		}
-
-		public String getGmtCreated() {
-			return this.gmtCreated;
-		}
-
-		public void setGmtCreated(String gmtCreated) {
-			this.gmtCreated = gmtCreated;
+		public void setNcIp(String ncIp) {
+			this.ncIp = ncIp;
 		}
 
 		public String getGmtModified() {
@@ -145,6 +121,30 @@ public class OpsDescribeFailedDeploymentStatusInfoResponse extends AcsResponse {
 
 		public void setGmtModified(String gmtModified) {
 			this.gmtModified = gmtModified;
+		}
+
+		public String getResourceId() {
+			return this.resourceId;
+		}
+
+		public void setResourceId(String resourceId) {
+			this.resourceId = resourceId;
+		}
+
+		public String getPlanId() {
+			return this.planId;
+		}
+
+		public void setPlanId(String planId) {
+			this.planId = planId;
+		}
+
+		public String getReason() {
+			return this.reason;
+		}
+
+		public void setReason(String reason) {
+			this.reason = reason;
 		}
 	}
 

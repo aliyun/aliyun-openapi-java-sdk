@@ -24,59 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsMigrateEcsInstanceResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String code;
-
-	private String message;
-
-	private String success;
-
-	private String instanceId;
-
 	private String status;
 
 	private String ncId;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
+	private String requestId;
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String message;
 
-	public String getCode() {
-		return this.code;
-	}
+	private String instanceId;
 
-	public void setCode(String code) {
-		this.code = code;
-	}
+	private String code;
 
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
-	public String getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(String success) {
-		this.success = success;
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-	}
+	private String success;
 
 	public String getStatus() {
 		return this.status;
@@ -92,6 +52,46 @@ public class OpsMigrateEcsInstanceResponse extends AcsResponse {
 
 	public void setNcId(String ncId) {
 		this.ncId = ncId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(String success) {
+		this.success = success;
 	}
 
 	@Override

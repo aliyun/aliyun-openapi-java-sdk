@@ -47,17 +47,9 @@ public class OpsQueryExceptionNameByAlarmIdResponse extends AcsResponse {
 
 	public static class AlarmConfigInfo {
 
-		private String exceptionName;
-
 		private String alarmId;
 
-		public String getExceptionName() {
-			return this.exceptionName;
-		}
-
-		public void setExceptionName(String exceptionName) {
-			this.exceptionName = exceptionName;
-		}
+		private String exceptionName;
 
 		public String getAlarmId() {
 			return this.alarmId;
@@ -65,6 +57,14 @@ public class OpsQueryExceptionNameByAlarmIdResponse extends AcsResponse {
 
 		public void setAlarmId(String alarmId) {
 			this.alarmId = alarmId;
+		}
+
+		public String getExceptionName() {
+			return this.exceptionName;
+		}
+
+		public void setExceptionName(String exceptionName) {
+			this.exceptionName = exceptionName;
 		}
 	}
 

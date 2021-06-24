@@ -47,22 +47,22 @@ public class OpsDescribeAxtVmResponse extends AcsResponse {
 
 	public static class CloudAssistantStatus {
 
-		private String instanceId;
+		private String agentVersion;
 
 		private String status;
 
-		private String agentVersion;
-
-		private String reportTime;
+		private String instanceId;
 
 		private String agentStatus;
 
-		public String getInstanceId() {
-			return this.instanceId;
+		private String reportTime;
+
+		public String getAgentVersion() {
+			return this.agentVersion;
 		}
 
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
+		public void setAgentVersion(String agentVersion) {
+			this.agentVersion = agentVersion;
 		}
 
 		public String getStatus() {
@@ -73,20 +73,12 @@ public class OpsDescribeAxtVmResponse extends AcsResponse {
 			this.status = status;
 		}
 
-		public String getAgentVersion() {
-			return this.agentVersion;
+		public String getInstanceId() {
+			return this.instanceId;
 		}
 
-		public void setAgentVersion(String agentVersion) {
-			this.agentVersion = agentVersion;
-		}
-
-		public String getReportTime() {
-			return this.reportTime;
-		}
-
-		public void setReportTime(String reportTime) {
-			this.reportTime = reportTime;
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
 		}
 
 		public String getAgentStatus() {
@@ -95,6 +87,14 @@ public class OpsDescribeAxtVmResponse extends AcsResponse {
 
 		public void setAgentStatus(String agentStatus) {
 			this.agentStatus = agentStatus;
+		}
+
+		public String getReportTime() {
+			return this.reportTime;
+		}
+
+		public void setReportTime(String reportTime) {
+			this.reportTime = reportTime;
 		}
 	}
 

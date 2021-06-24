@@ -27,20 +27,20 @@ public class OpsDescribeBidRelationsResponseUnmarshaller {
 	public static OpsDescribeBidRelationsResponse unmarshall(OpsDescribeBidRelationsResponse opsDescribeBidRelationsResponse, UnmarshallerContext _ctx) {
 		
 		opsDescribeBidRelationsResponse.setRequestId(_ctx.stringValue("OpsDescribeBidRelationsResponse.RequestId"));
-		opsDescribeBidRelationsResponse.setPageNumber(_ctx.integerValue("OpsDescribeBidRelationsResponse.PageNumber"));
 		opsDescribeBidRelationsResponse.setPageSize(_ctx.integerValue("OpsDescribeBidRelationsResponse.PageSize"));
+		opsDescribeBidRelationsResponse.setPageNumber(_ctx.integerValue("OpsDescribeBidRelationsResponse.PageNumber"));
 		opsDescribeBidRelationsResponse.setTotal(_ctx.integerValue("OpsDescribeBidRelationsResponse.Total"));
 
 		List<BidRelation> bidRelations = new ArrayList<BidRelation>();
 		for (int i = 0; i < _ctx.lengthValue("OpsDescribeBidRelationsResponse.BidRelations.Length"); i++) {
 			BidRelation bidRelation = new BidRelation();
-			bidRelation.setId(_ctx.longValue("OpsDescribeBidRelationsResponse.BidRelations["+ i +"].id"));
-			bidRelation.setBid(_ctx.stringValue("OpsDescribeBidRelationsResponse.BidRelations["+ i +"].Bid"));
-			bidRelation.setParentBid(_ctx.stringValue("OpsDescribeBidRelationsResponse.BidRelations["+ i +"].ParentBid"));
-			bidRelation.setIsService(_ctx.booleanValue("OpsDescribeBidRelationsResponse.BidRelations["+ i +"].IsService"));
-			bidRelation.setRemark(_ctx.stringValue("OpsDescribeBidRelationsResponse.BidRelations["+ i +"].Remark"));
 			bidRelation.setServiceCode(_ctx.stringValue("OpsDescribeBidRelationsResponse.BidRelations["+ i +"].ServiceCode"));
+			bidRelation.setRemark(_ctx.stringValue("OpsDescribeBidRelationsResponse.BidRelations["+ i +"].Remark"));
 			bidRelation.setIsSite(_ctx.booleanValue("OpsDescribeBidRelationsResponse.BidRelations["+ i +"].IsSite"));
+			bidRelation.setParentBid(_ctx.stringValue("OpsDescribeBidRelationsResponse.BidRelations["+ i +"].ParentBid"));
+			bidRelation.setBid(_ctx.stringValue("OpsDescribeBidRelationsResponse.BidRelations["+ i +"].Bid"));
+			bidRelation.setId(_ctx.longValue("OpsDescribeBidRelationsResponse.BidRelations["+ i +"].id"));
+			bidRelation.setIsService(_ctx.booleanValue("OpsDescribeBidRelationsResponse.BidRelations["+ i +"].IsService"));
 
 			bidRelations.add(bidRelation);
 		}

@@ -23,19 +23,19 @@ public class OpsQueryLiveMigrateEcsInstanceHouyiInfoResponseUnmarshaller {
 	public static OpsQueryLiveMigrateEcsInstanceHouyiInfoResponse unmarshall(OpsQueryLiveMigrateEcsInstanceHouyiInfoResponse opsQueryLiveMigrateEcsInstanceHouyiInfoResponse, UnmarshallerContext _ctx) {
 		
 		opsQueryLiveMigrateEcsInstanceHouyiInfoResponse.setRequestId(_ctx.stringValue("OpsQueryLiveMigrateEcsInstanceHouyiInfoResponse.RequestId"));
-		opsQueryLiveMigrateEcsInstanceHouyiInfoResponse.setCode(_ctx.stringValue("OpsQueryLiveMigrateEcsInstanceHouyiInfoResponse.Code"));
-		opsQueryLiveMigrateEcsInstanceHouyiInfoResponse.setMessage(_ctx.stringValue("OpsQueryLiveMigrateEcsInstanceHouyiInfoResponse.Message"));
-		opsQueryLiveMigrateEcsInstanceHouyiInfoResponse.setSuccess(_ctx.stringValue("OpsQueryLiveMigrateEcsInstanceHouyiInfoResponse.Success"));
-		opsQueryLiveMigrateEcsInstanceHouyiInfoResponse.setMigrationId(_ctx.longValue("OpsQueryLiveMigrateEcsInstanceHouyiInfoResponse.MigrationId"));
-		opsQueryLiveMigrateEcsInstanceHouyiInfoResponse.setInstanceId(_ctx.stringValue("OpsQueryLiveMigrateEcsInstanceHouyiInfoResponse.InstanceId"));
-		opsQueryLiveMigrateEcsInstanceHouyiInfoResponse.setDestinationNcId(_ctx.stringValue("OpsQueryLiveMigrateEcsInstanceHouyiInfoResponse.DestinationNcId"));
-		opsQueryLiveMigrateEcsInstanceHouyiInfoResponse.setSourceNcId(_ctx.stringValue("OpsQueryLiveMigrateEcsInstanceHouyiInfoResponse.SourceNcId"));
-		opsQueryLiveMigrateEcsInstanceHouyiInfoResponse.setRate(_ctx.longValue("OpsQueryLiveMigrateEcsInstanceHouyiInfoResponse.Rate"));
-		opsQueryLiveMigrateEcsInstanceHouyiInfoResponse.setTimeout(_ctx.longValue("OpsQueryLiveMigrateEcsInstanceHouyiInfoResponse.Timeout"));
 		opsQueryLiveMigrateEcsInstanceHouyiInfoResponse.setStatus(_ctx.stringValue("OpsQueryLiveMigrateEcsInstanceHouyiInfoResponse.Status"));
+		opsQueryLiveMigrateEcsInstanceHouyiInfoResponse.setSourceNcId(_ctx.stringValue("OpsQueryLiveMigrateEcsInstanceHouyiInfoResponse.SourceNcId"));
+		opsQueryLiveMigrateEcsInstanceHouyiInfoResponse.setMessage(_ctx.stringValue("OpsQueryLiveMigrateEcsInstanceHouyiInfoResponse.Message"));
+		opsQueryLiveMigrateEcsInstanceHouyiInfoResponse.setInstanceId(_ctx.stringValue("OpsQueryLiveMigrateEcsInstanceHouyiInfoResponse.InstanceId"));
+		opsQueryLiveMigrateEcsInstanceHouyiInfoResponse.setTimeout(_ctx.longValue("OpsQueryLiveMigrateEcsInstanceHouyiInfoResponse.Timeout"));
+		opsQueryLiveMigrateEcsInstanceHouyiInfoResponse.setRate(_ctx.longValue("OpsQueryLiveMigrateEcsInstanceHouyiInfoResponse.Rate"));
+		opsQueryLiveMigrateEcsInstanceHouyiInfoResponse.setMigrationId(_ctx.longValue("OpsQueryLiveMigrateEcsInstanceHouyiInfoResponse.MigrationId"));
+		opsQueryLiveMigrateEcsInstanceHouyiInfoResponse.setCode(_ctx.stringValue("OpsQueryLiveMigrateEcsInstanceHouyiInfoResponse.Code"));
+		opsQueryLiveMigrateEcsInstanceHouyiInfoResponse.setSuccess(_ctx.stringValue("OpsQueryLiveMigrateEcsInstanceHouyiInfoResponse.Success"));
 		opsQueryLiveMigrateEcsInstanceHouyiInfoResponse.setSourceNcMigStatus(_ctx.stringValue("OpsQueryLiveMigrateEcsInstanceHouyiInfoResponse.SourceNcMigStatus"));
 		opsQueryLiveMigrateEcsInstanceHouyiInfoResponse.setDestinationNcMigStatus(_ctx.stringValue("OpsQueryLiveMigrateEcsInstanceHouyiInfoResponse.DestinationNcMigStatus"));
 		opsQueryLiveMigrateEcsInstanceHouyiInfoResponse.setResultCode(_ctx.longValue("OpsQueryLiveMigrateEcsInstanceHouyiInfoResponse.ResultCode"));
+		opsQueryLiveMigrateEcsInstanceHouyiInfoResponse.setDestinationNcId(_ctx.stringValue("OpsQueryLiveMigrateEcsInstanceHouyiInfoResponse.DestinationNcId"));
 	 
 	 	return opsQueryLiveMigrateEcsInstanceHouyiInfoResponse;
 	}

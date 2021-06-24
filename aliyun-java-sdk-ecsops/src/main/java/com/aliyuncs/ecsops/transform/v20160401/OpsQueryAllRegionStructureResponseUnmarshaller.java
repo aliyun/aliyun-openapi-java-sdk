@@ -33,11 +33,11 @@ public class OpsQueryAllRegionStructureResponseUnmarshaller {
 		List<Region> regions = new ArrayList<Region>();
 		for (int i = 0; i < _ctx.lengthValue("OpsQueryAllRegionStructureResponse.Regions.Length"); i++) {
 			Region region = new Region();
-			region.setRegion(_ctx.stringValue("OpsQueryAllRegionStructureResponse.Regions["+ i +"].Region"));
-			region.setAlias(_ctx.stringValue("OpsQueryAllRegionStructureResponse.Regions["+ i +"].Alias"));
-			region.setChineseName(_ctx.stringValue("OpsQueryAllRegionStructureResponse.Regions["+ i +"].ChineseName"));
-			region.setEnglishName(_ctx.stringValue("OpsQueryAllRegionStructureResponse.Regions["+ i +"].EnglishName"));
 			region.setDescription(_ctx.stringValue("OpsQueryAllRegionStructureResponse.Regions["+ i +"].Description"));
+			region.setRegion(_ctx.stringValue("OpsQueryAllRegionStructureResponse.Regions["+ i +"].Region"));
+			region.setEnglishName(_ctx.stringValue("OpsQueryAllRegionStructureResponse.Regions["+ i +"].EnglishName"));
+			region.setChineseName(_ctx.stringValue("OpsQueryAllRegionStructureResponse.Regions["+ i +"].ChineseName"));
+			region.setAlias(_ctx.stringValue("OpsQueryAllRegionStructureResponse.Regions["+ i +"].Alias"));
 
 			List<AvailableZone> availableZones = new ArrayList<AvailableZone>();
 			for (int j = 0; j < _ctx.lengthValue("OpsQueryAllRegionStructureResponse.Regions["+ i +"].AvailableZones.Length"); j++) {

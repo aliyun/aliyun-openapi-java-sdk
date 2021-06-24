@@ -26,13 +26,13 @@ public class OpsDescribeVPortInfoResponseUnmarshaller {
 		opsDescribeVPortInfoResponse.setRequestId(_ctx.stringValue("OpsDescribeVPortInfoResponse.RequestId"));
 
 		Data data = new Data();
-		data.setVPortName(_ctx.stringValue("OpsDescribeVPortInfoResponse.Data.VPortName"));
-		data.setInstanceId(_ctx.stringValue("OpsDescribeVPortInfoResponse.Data.InstanceId"));
-		data.setEniType(_ctx.stringValue("OpsDescribeVPortInfoResponse.Data.EniType"));
 		data.setVpcId(_ctx.stringValue("OpsDescribeVPortInfoResponse.Data.VpcId"));
 		data.setVSwitchId(_ctx.stringValue("OpsDescribeVPortInfoResponse.Data.VSwitchId"));
-		data.setEniStatus(_ctx.stringValue("OpsDescribeVPortInfoResponse.Data.EniStatus"));
+		data.setVPortName(_ctx.stringValue("OpsDescribeVPortInfoResponse.Data.VPortName"));
 		data.setEniNetworkType(_ctx.stringValue("OpsDescribeVPortInfoResponse.Data.EniNetworkType"));
+		data.setInstanceId(_ctx.stringValue("OpsDescribeVPortInfoResponse.Data.InstanceId"));
+		data.setEniStatus(_ctx.stringValue("OpsDescribeVPortInfoResponse.Data.EniStatus"));
+		data.setEniType(_ctx.stringValue("OpsDescribeVPortInfoResponse.Data.EniType"));
 		opsDescribeVPortInfoResponse.setData(data);
 	 
 	 	return opsDescribeVPortInfoResponse;

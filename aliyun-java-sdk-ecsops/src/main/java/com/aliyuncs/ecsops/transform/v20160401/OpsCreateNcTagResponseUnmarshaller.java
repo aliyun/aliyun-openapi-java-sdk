@@ -24,8 +24,8 @@ public class OpsCreateNcTagResponseUnmarshaller {
 	public static OpsCreateNcTagResponse unmarshall(OpsCreateNcTagResponse opsCreateNcTagResponse, UnmarshallerContext _ctx) {
 		
 		opsCreateNcTagResponse.setRequestId(_ctx.stringValue("OpsCreateNcTagResponse.RequestId"));
-		opsCreateNcTagResponse.setCode(_ctx.stringValue("OpsCreateNcTagResponse.Code"));
 		opsCreateNcTagResponse.setMessage(_ctx.stringValue("OpsCreateNcTagResponse.Message"));
+		opsCreateNcTagResponse.setCode(_ctx.stringValue("OpsCreateNcTagResponse.Code"));
 		opsCreateNcTagResponse.setSuccess(_ctx.stringValue("OpsCreateNcTagResponse.Success"));
 
 		Data data = new Data();

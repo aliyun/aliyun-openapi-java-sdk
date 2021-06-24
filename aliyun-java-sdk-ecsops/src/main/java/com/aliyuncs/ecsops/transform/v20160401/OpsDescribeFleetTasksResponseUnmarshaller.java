@@ -28,18 +28,18 @@ public class OpsDescribeFleetTasksResponseUnmarshaller {
 		
 		opsDescribeFleetTasksResponse.setRequestId(_ctx.stringValue("OpsDescribeFleetTasksResponse.RequestId"));
 		opsDescribeFleetTasksResponse.setTotalCount(_ctx.integerValue("OpsDescribeFleetTasksResponse.TotalCount"));
-		opsDescribeFleetTasksResponse.setPageNumber(_ctx.integerValue("OpsDescribeFleetTasksResponse.PageNumber"));
 		opsDescribeFleetTasksResponse.setPageSize(_ctx.integerValue("OpsDescribeFleetTasksResponse.PageSize"));
+		opsDescribeFleetTasksResponse.setPageNumber(_ctx.integerValue("OpsDescribeFleetTasksResponse.PageNumber"));
 
 		List<Task> tasks = new ArrayList<Task>();
 		for (int i = 0; i < _ctx.lengthValue("OpsDescribeFleetTasksResponse.Tasks.Length"); i++) {
 			Task task = new Task();
-			task.setId(_ctx.longValue("OpsDescribeFleetTasksResponse.Tasks["+ i +"].Id"));
-			task.setAliUid(_ctx.longValue("OpsDescribeFleetTasksResponse.Tasks["+ i +"].AliUid"));
-			task.setFleetId(_ctx.stringValue("OpsDescribeFleetTasksResponse.Tasks["+ i +"].FleetId"));
-			task.setFleetTaskId(_ctx.stringValue("OpsDescribeFleetTasksResponse.Tasks["+ i +"].FleetTaskId"));
 			task.setStatus(_ctx.stringValue("OpsDescribeFleetTasksResponse.Tasks["+ i +"].Status"));
+			task.setFleetId(_ctx.stringValue("OpsDescribeFleetTasksResponse.Tasks["+ i +"].FleetId"));
 			task.setResult(_ctx.stringValue("OpsDescribeFleetTasksResponse.Tasks["+ i +"].Result"));
+			task.setFleetTaskId(_ctx.stringValue("OpsDescribeFleetTasksResponse.Tasks["+ i +"].FleetTaskId"));
+			task.setAliUid(_ctx.longValue("OpsDescribeFleetTasksResponse.Tasks["+ i +"].AliUid"));
+			task.setId(_ctx.longValue("OpsDescribeFleetTasksResponse.Tasks["+ i +"].Id"));
 
 			tasks.add(task);
 		}

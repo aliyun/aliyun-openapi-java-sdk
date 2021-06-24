@@ -25,37 +25,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsUpdateAlarmConfigFileResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String approvalUrl;
-
 	private String status;
 
 	private Boolean finished;
+
+	private String requestId;
+
+	private String errorInfo;
 
 	private String token;
 
 	private Boolean iterationQuery;
 
-	private String errorInfo;
+	private String approvalUrl;
 
 	private List<String> iterationTokens;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getApprovalUrl() {
-		return this.approvalUrl;
-	}
-
-	public void setApprovalUrl(String approvalUrl) {
-		this.approvalUrl = approvalUrl;
-	}
 
 	public String getStatus() {
 		return this.status;
@@ -71,6 +55,22 @@ public class OpsUpdateAlarmConfigFileResponse extends AcsResponse {
 
 	public void setFinished(Boolean finished) {
 		this.finished = finished;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getErrorInfo() {
+		return this.errorInfo;
+	}
+
+	public void setErrorInfo(String errorInfo) {
+		this.errorInfo = errorInfo;
 	}
 
 	public String getToken() {
@@ -89,12 +89,12 @@ public class OpsUpdateAlarmConfigFileResponse extends AcsResponse {
 		this.iterationQuery = iterationQuery;
 	}
 
-	public String getErrorInfo() {
-		return this.errorInfo;
+	public String getApprovalUrl() {
+		return this.approvalUrl;
 	}
 
-	public void setErrorInfo(String errorInfo) {
-		this.errorInfo = errorInfo;
+	public void setApprovalUrl(String approvalUrl) {
+		this.approvalUrl = approvalUrl;
 	}
 
 	public List<String> getIterationTokens() {

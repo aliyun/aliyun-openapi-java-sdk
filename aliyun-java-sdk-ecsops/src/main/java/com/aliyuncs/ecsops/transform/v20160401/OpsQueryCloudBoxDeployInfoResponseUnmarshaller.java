@@ -45,17 +45,17 @@ public class OpsQueryCloudBoxDeployInfoResponseUnmarshaller {
 					DeployInfo deployInfo = new DeployInfo();
 					deployInfo.setCluster(_ctx.stringValue("OpsQueryCloudBoxDeployInfoResponse.CloudBoxDeployInfoModels["+ i +"].DeployModels["+ j +"].DeployInfos["+ k +"].Cluster"));
 
-					List<String> sns = new ArrayList<String>();
-					for (int l = 0; l < _ctx.lengthValue("OpsQueryCloudBoxDeployInfoResponse.CloudBoxDeployInfoModels["+ i +"].DeployModels["+ j +"].DeployInfos["+ k +"].Sns.Length"); l++) {
-						sns.add(_ctx.stringValue("OpsQueryCloudBoxDeployInfoResponse.CloudBoxDeployInfoModels["+ i +"].DeployModels["+ j +"].DeployInfos["+ k +"].Sns["+ l +"]"));
-					}
-					deployInfo.setSns(sns);
-
 					List<String> ags = new ArrayList<String>();
 					for (int l = 0; l < _ctx.lengthValue("OpsQueryCloudBoxDeployInfoResponse.CloudBoxDeployInfoModels["+ i +"].DeployModels["+ j +"].DeployInfos["+ k +"].Ags.Length"); l++) {
 						ags.add(_ctx.stringValue("OpsQueryCloudBoxDeployInfoResponse.CloudBoxDeployInfoModels["+ i +"].DeployModels["+ j +"].DeployInfos["+ k +"].Ags["+ l +"]"));
 					}
 					deployInfo.setAgs(ags);
+
+					List<String> sns = new ArrayList<String>();
+					for (int l = 0; l < _ctx.lengthValue("OpsQueryCloudBoxDeployInfoResponse.CloudBoxDeployInfoModels["+ i +"].DeployModels["+ j +"].DeployInfos["+ k +"].Sns.Length"); l++) {
+						sns.add(_ctx.stringValue("OpsQueryCloudBoxDeployInfoResponse.CloudBoxDeployInfoModels["+ i +"].DeployModels["+ j +"].DeployInfos["+ k +"].Sns["+ l +"]"));
+					}
+					deployInfo.setSns(sns);
 
 					deployInfos.add(deployInfo);
 				}

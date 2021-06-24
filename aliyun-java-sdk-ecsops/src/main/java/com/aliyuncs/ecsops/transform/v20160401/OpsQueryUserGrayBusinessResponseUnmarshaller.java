@@ -27,23 +27,23 @@ public class OpsQueryUserGrayBusinessResponseUnmarshaller {
 	public static OpsQueryUserGrayBusinessResponse unmarshall(OpsQueryUserGrayBusinessResponse opsQueryUserGrayBusinessResponse, UnmarshallerContext _ctx) {
 		
 		opsQueryUserGrayBusinessResponse.setRequestId(_ctx.stringValue("OpsQueryUserGrayBusinessResponse.RequestId"));
-		opsQueryUserGrayBusinessResponse.setCode(_ctx.stringValue("OpsQueryUserGrayBusinessResponse.Code"));
 		opsQueryUserGrayBusinessResponse.setMessage(_ctx.stringValue("OpsQueryUserGrayBusinessResponse.Message"));
+		opsQueryUserGrayBusinessResponse.setCode(_ctx.stringValue("OpsQueryUserGrayBusinessResponse.Code"));
 		opsQueryUserGrayBusinessResponse.setSuccess(_ctx.stringValue("OpsQueryUserGrayBusinessResponse.Success"));
 
 		List<UserGrayBusinessDO> userGrayBusinessDOs = new ArrayList<UserGrayBusinessDO>();
 		for (int i = 0; i < _ctx.lengthValue("OpsQueryUserGrayBusinessResponse.UserGrayBusinessDOs.Length"); i++) {
 			UserGrayBusinessDO userGrayBusinessDO = new UserGrayBusinessDO();
-			userGrayBusinessDO.setId(_ctx.longValue("OpsQueryUserGrayBusinessResponse.UserGrayBusinessDOs["+ i +"].Id"));
-			userGrayBusinessDO.setGrayBizType(_ctx.stringValue("OpsQueryUserGrayBusinessResponse.UserGrayBusinessDOs["+ i +"].GrayBizType"));
-			userGrayBusinessDO.setGrayStrictMode(_ctx.integerValue("OpsQueryUserGrayBusinessResponse.UserGrayBusinessDOs["+ i +"].GrayStrictMode"));
-			userGrayBusinessDO.setUserLevels(_ctx.stringValue("OpsQueryUserGrayBusinessResponse.UserGrayBusinessDOs["+ i +"].UserLevels"));
-			userGrayBusinessDO.setMaxVms(_ctx.integerValue("OpsQueryUserGrayBusinessResponse.UserGrayBusinessDOs["+ i +"].MaxVms"));
 			userGrayBusinessDO.setStatus(_ctx.integerValue("OpsQueryUserGrayBusinessResponse.UserGrayBusinessDOs["+ i +"].Status"));
-			userGrayBusinessDO.setGmtCreate(_ctx.stringValue("OpsQueryUserGrayBusinessResponse.UserGrayBusinessDOs["+ i +"].GmtCreate"));
-			userGrayBusinessDO.setGmtModified(_ctx.stringValue("OpsQueryUserGrayBusinessResponse.UserGrayBusinessDOs["+ i +"].GmtModified"));
-			userGrayBusinessDO.setAliUid(_ctx.longValue("OpsQueryUserGrayBusinessResponse.UserGrayBusinessDOs["+ i +"].AliUid"));
+			userGrayBusinessDO.setMaxVms(_ctx.integerValue("OpsQueryUserGrayBusinessResponse.UserGrayBusinessDOs["+ i +"].MaxVms"));
+			userGrayBusinessDO.setGrayStrictMode(_ctx.integerValue("OpsQueryUserGrayBusinessResponse.UserGrayBusinessDOs["+ i +"].GrayStrictMode"));
+			userGrayBusinessDO.setGrayBizType(_ctx.stringValue("OpsQueryUserGrayBusinessResponse.UserGrayBusinessDOs["+ i +"].GrayBizType"));
 			userGrayBusinessDO.setRegionNo(_ctx.stringValue("OpsQueryUserGrayBusinessResponse.UserGrayBusinessDOs["+ i +"].RegionNo"));
+			userGrayBusinessDO.setUserLevels(_ctx.stringValue("OpsQueryUserGrayBusinessResponse.UserGrayBusinessDOs["+ i +"].UserLevels"));
+			userGrayBusinessDO.setGmtCreate(_ctx.stringValue("OpsQueryUserGrayBusinessResponse.UserGrayBusinessDOs["+ i +"].GmtCreate"));
+			userGrayBusinessDO.setAliUid(_ctx.longValue("OpsQueryUserGrayBusinessResponse.UserGrayBusinessDOs["+ i +"].AliUid"));
+			userGrayBusinessDO.setGmtModified(_ctx.stringValue("OpsQueryUserGrayBusinessResponse.UserGrayBusinessDOs["+ i +"].GmtModified"));
+			userGrayBusinessDO.setId(_ctx.longValue("OpsQueryUserGrayBusinessResponse.UserGrayBusinessDOs["+ i +"].Id"));
 
 			userGrayBusinessDOs.add(userGrayBusinessDO);
 		}

@@ -25,25 +25,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsDetailHouyiDisksResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
-
-	private Integer pageNumber;
-
-	private Integer pageSize;
 
 	private String nextToken;
 
+	private Integer pageSize;
+
+	private String requestId;
+
+	private Integer pageNumber;
+
 	private List<DiskItem> diskSet;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -53,12 +45,12 @@ public class OpsDetailHouyiDisksResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public String getNextToken() {
+		return this.nextToken;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
 	}
 
 	public Integer getPageSize() {
@@ -69,12 +61,20 @@ public class OpsDetailHouyiDisksResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public String getNextToken() {
-		return this.nextToken;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setNextToken(String nextToken) {
-		this.nextToken = nextToken;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<DiskItem> getDiskSet() {
@@ -87,87 +87,39 @@ public class OpsDetailHouyiDisksResponse extends AcsResponse {
 
 	public static class DiskItem {
 
-		private String diskId;
-
-		private String diskName;
-
-		private String diskSize;
-
-		private String diskType;
-
-		private String availableZoneId;
-
-		private String zoneId;
-
 		private String status;
-
-		private String instanceId;
-
-		private String iopsW;
-
-		private String iopsR;
 
 		private String bpsR;
 
 		private String bpsW;
 
-		private String bps;
+		private String availableZoneId;
+
+		private String diskSize;
+
+		private String diskType;
+
+		private String diskId;
+
+		private String instanceId;
 
 		private String iops;
 
 		private String driver;
 
+		private String bps;
+
+		private String iopsR;
+
+		private String iopsW;
+
 		private String device;
 
+		private String diskName;
+
+		private String zoneId;
+
 		private String serialNumber;
-
-		public String getDiskId() {
-			return this.diskId;
-		}
-
-		public void setDiskId(String diskId) {
-			this.diskId = diskId;
-		}
-
-		public String getDiskName() {
-			return this.diskName;
-		}
-
-		public void setDiskName(String diskName) {
-			this.diskName = diskName;
-		}
-
-		public String getDiskSize() {
-			return this.diskSize;
-		}
-
-		public void setDiskSize(String diskSize) {
-			this.diskSize = diskSize;
-		}
-
-		public String getDiskType() {
-			return this.diskType;
-		}
-
-		public void setDiskType(String diskType) {
-			this.diskType = diskType;
-		}
-
-		public String getAvailableZoneId() {
-			return this.availableZoneId;
-		}
-
-		public void setAvailableZoneId(String availableZoneId) {
-			this.availableZoneId = availableZoneId;
-		}
-
-		public String getZoneId() {
-			return this.zoneId;
-		}
-
-		public void setZoneId(String zoneId) {
-			this.zoneId = zoneId;
-		}
 
 		public String getStatus() {
 			return this.status;
@@ -175,30 +127,6 @@ public class OpsDetailHouyiDisksResponse extends AcsResponse {
 
 		public void setStatus(String status) {
 			this.status = status;
-		}
-
-		public String getInstanceId() {
-			return this.instanceId;
-		}
-
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
-
-		public String getIopsW() {
-			return this.iopsW;
-		}
-
-		public void setIopsW(String iopsW) {
-			this.iopsW = iopsW;
-		}
-
-		public String getIopsR() {
-			return this.iopsR;
-		}
-
-		public void setIopsR(String iopsR) {
-			this.iopsR = iopsR;
 		}
 
 		public String getBpsR() {
@@ -217,12 +145,44 @@ public class OpsDetailHouyiDisksResponse extends AcsResponse {
 			this.bpsW = bpsW;
 		}
 
-		public String getBps() {
-			return this.bps;
+		public String getAvailableZoneId() {
+			return this.availableZoneId;
 		}
 
-		public void setBps(String bps) {
-			this.bps = bps;
+		public void setAvailableZoneId(String availableZoneId) {
+			this.availableZoneId = availableZoneId;
+		}
+
+		public String getDiskSize() {
+			return this.diskSize;
+		}
+
+		public void setDiskSize(String diskSize) {
+			this.diskSize = diskSize;
+		}
+
+		public String getDiskType() {
+			return this.diskType;
+		}
+
+		public void setDiskType(String diskType) {
+			this.diskType = diskType;
+		}
+
+		public String getDiskId() {
+			return this.diskId;
+		}
+
+		public void setDiskId(String diskId) {
+			this.diskId = diskId;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
 		}
 
 		public String getIops() {
@@ -241,12 +201,52 @@ public class OpsDetailHouyiDisksResponse extends AcsResponse {
 			this.driver = driver;
 		}
 
+		public String getBps() {
+			return this.bps;
+		}
+
+		public void setBps(String bps) {
+			this.bps = bps;
+		}
+
+		public String getIopsR() {
+			return this.iopsR;
+		}
+
+		public void setIopsR(String iopsR) {
+			this.iopsR = iopsR;
+		}
+
+		public String getIopsW() {
+			return this.iopsW;
+		}
+
+		public void setIopsW(String iopsW) {
+			this.iopsW = iopsW;
+		}
+
 		public String getDevice() {
 			return this.device;
 		}
 
 		public void setDevice(String device) {
 			this.device = device;
+		}
+
+		public String getDiskName() {
+			return this.diskName;
+		}
+
+		public void setDiskName(String diskName) {
+			this.diskName = diskName;
+		}
+
+		public String getZoneId() {
+			return this.zoneId;
+		}
+
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
 		}
 
 		public String getSerialNumber() {

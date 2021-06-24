@@ -24,8 +24,8 @@ public class OpsSgQueryKeyValueConfigResponseUnmarshaller {
 	public static OpsSgQueryKeyValueConfigResponse unmarshall(OpsSgQueryKeyValueConfigResponse opsSgQueryKeyValueConfigResponse, UnmarshallerContext _ctx) {
 		
 		opsSgQueryKeyValueConfigResponse.setRequestId(_ctx.stringValue("OpsSgQueryKeyValueConfigResponse.RequestId"));
-		opsSgQueryKeyValueConfigResponse.setCode(_ctx.stringValue("OpsSgQueryKeyValueConfigResponse.Code"));
 		opsSgQueryKeyValueConfigResponse.setMessage(_ctx.stringValue("OpsSgQueryKeyValueConfigResponse.Message"));
+		opsSgQueryKeyValueConfigResponse.setCode(_ctx.stringValue("OpsSgQueryKeyValueConfigResponse.Code"));
 		opsSgQueryKeyValueConfigResponse.setSuccess(_ctx.booleanValue("OpsSgQueryKeyValueConfigResponse.Success"));
 
 		Data data = new Data();

@@ -47,45 +47,29 @@ public class OpsQueryBaseFeatureResponse extends AcsResponse {
 
 	public static class BaseFeature {
 
-		private String name;
-
-		private String featureType;
-
 		private String type;
 
 		private Integer validTimeRange;
+
+		private String featureType;
+
+		private Boolean execOpsRuleNow;
 
 		private String desc;
 
 		private String exceptionTarget;
 
-		private Boolean execOpsRuleNow;
+		private String name;
 
 		private String reason;
 
 		private List<LinkedMonitor> linkedMonitors;
 
-		private List<String> conditions;
-
 		private List<String> restrictions;
 
+		private List<String> conditions;
+
 		private List<String> supportTeams;
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getFeatureType() {
-			return this.featureType;
-		}
-
-		public void setFeatureType(String featureType) {
-			this.featureType = featureType;
-		}
 
 		public String getType() {
 			return this.type;
@@ -101,6 +85,22 @@ public class OpsQueryBaseFeatureResponse extends AcsResponse {
 
 		public void setValidTimeRange(Integer validTimeRange) {
 			this.validTimeRange = validTimeRange;
+		}
+
+		public String getFeatureType() {
+			return this.featureType;
+		}
+
+		public void setFeatureType(String featureType) {
+			this.featureType = featureType;
+		}
+
+		public Boolean getExecOpsRuleNow() {
+			return this.execOpsRuleNow;
+		}
+
+		public void setExecOpsRuleNow(Boolean execOpsRuleNow) {
+			this.execOpsRuleNow = execOpsRuleNow;
 		}
 
 		public String getDesc() {
@@ -119,12 +119,12 @@ public class OpsQueryBaseFeatureResponse extends AcsResponse {
 			this.exceptionTarget = exceptionTarget;
 		}
 
-		public Boolean getExecOpsRuleNow() {
-			return this.execOpsRuleNow;
+		public String getName() {
+			return this.name;
 		}
 
-		public void setExecOpsRuleNow(Boolean execOpsRuleNow) {
-			this.execOpsRuleNow = execOpsRuleNow;
+		public void setName(String name) {
+			this.name = name;
 		}
 
 		public String getReason() {
@@ -143,20 +143,20 @@ public class OpsQueryBaseFeatureResponse extends AcsResponse {
 			this.linkedMonitors = linkedMonitors;
 		}
 
-		public List<String> getConditions() {
-			return this.conditions;
-		}
-
-		public void setConditions(List<String> conditions) {
-			this.conditions = conditions;
-		}
-
 		public List<String> getRestrictions() {
 			return this.restrictions;
 		}
 
 		public void setRestrictions(List<String> restrictions) {
 			this.restrictions = restrictions;
+		}
+
+		public List<String> getConditions() {
+			return this.conditions;
+		}
+
+		public void setConditions(List<String> conditions) {
+			this.conditions = conditions;
 		}
 
 		public List<String> getSupportTeams() {
@@ -169,40 +169,24 @@ public class OpsQueryBaseFeatureResponse extends AcsResponse {
 
 		public static class LinkedMonitor {
 
-			private String logstore;
-
-			private Integer timeRange;
-
-			private String monitorName;
+			private String slsConfigName;
 
 			private Integer interval;
 
-			private String slsConfigName;
+			private Integer timeRange;
+
+			private String logstore;
+
+			private String monitorName;
 
 			private String defaultProject;
 
-			public String getLogstore() {
-				return this.logstore;
+			public String getSlsConfigName() {
+				return this.slsConfigName;
 			}
 
-			public void setLogstore(String logstore) {
-				this.logstore = logstore;
-			}
-
-			public Integer getTimeRange() {
-				return this.timeRange;
-			}
-
-			public void setTimeRange(Integer timeRange) {
-				this.timeRange = timeRange;
-			}
-
-			public String getMonitorName() {
-				return this.monitorName;
-			}
-
-			public void setMonitorName(String monitorName) {
-				this.monitorName = monitorName;
+			public void setSlsConfigName(String slsConfigName) {
+				this.slsConfigName = slsConfigName;
 			}
 
 			public Integer getInterval() {
@@ -213,12 +197,28 @@ public class OpsQueryBaseFeatureResponse extends AcsResponse {
 				this.interval = interval;
 			}
 
-			public String getSlsConfigName() {
-				return this.slsConfigName;
+			public Integer getTimeRange() {
+				return this.timeRange;
 			}
 
-			public void setSlsConfigName(String slsConfigName) {
-				this.slsConfigName = slsConfigName;
+			public void setTimeRange(Integer timeRange) {
+				this.timeRange = timeRange;
+			}
+
+			public String getLogstore() {
+				return this.logstore;
+			}
+
+			public void setLogstore(String logstore) {
+				this.logstore = logstore;
+			}
+
+			public String getMonitorName() {
+				return this.monitorName;
+			}
+
+			public void setMonitorName(String monitorName) {
+				this.monitorName = monitorName;
 			}
 
 			public String getDefaultProject() {

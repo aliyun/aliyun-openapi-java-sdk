@@ -25,17 +25,33 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsDescribeFeatureDefinitionResponse extends AcsResponse {
 
+	private Integer totalCount;
+
+	private Integer pageSize;
+
 	private String requestId;
 
 	private Integer page;
 
-	private Integer pageSize;
-
-	private Integer totalCount;
-
 	private Integer count;
 
 	private List<FeatureDefinition> featureDefinitions;
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -51,22 +67,6 @@ public class OpsDescribeFeatureDefinitionResponse extends AcsResponse {
 
 	public void setPage(Integer page) {
 		this.page = page;
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
 	}
 
 	public Integer getCount() {
@@ -87,61 +87,37 @@ public class OpsDescribeFeatureDefinitionResponse extends AcsResponse {
 
 	public static class FeatureDefinition {
 
-		private String gmtCreate;
-
-		private String gmtModified;
-
-		private Boolean deleted;
-
 		private Long detailDocId;
-
-		private String featureName;
-
-		private String featureType;
-
-		private String featureTargetType;
-
-		private String shortDesc;
 
 		private Long validTimeRange;
 
-		private Boolean execRule;
+		private String createUserName;
 
-		private String reason;
+		private String featureType;
 
-		private String severityLevel;
+		private String gmtModified;
 
 		private String supportTeams;
 
-		private Long extractionId;
+		private Boolean execRule;
 
-		private String createUserName;
+		private String severityLevel;
+
+		private String featureName;
+
+		private String gmtCreate;
+
+		private String featureTargetType;
+
+		private Boolean deleted;
 
 		private String lastModifiedUserName;
 
-		public String getGmtCreate() {
-			return this.gmtCreate;
-		}
+		private Long extractionId;
 
-		public void setGmtCreate(String gmtCreate) {
-			this.gmtCreate = gmtCreate;
-		}
+		private String reason;
 
-		public String getGmtModified() {
-			return this.gmtModified;
-		}
-
-		public void setGmtModified(String gmtModified) {
-			this.gmtModified = gmtModified;
-		}
-
-		public Boolean getDeleted() {
-			return this.deleted;
-		}
-
-		public void setDeleted(Boolean deleted) {
-			this.deleted = deleted;
-		}
+		private String shortDesc;
 
 		public Long getDetailDocId() {
 			return this.detailDocId;
@@ -149,38 +125,6 @@ public class OpsDescribeFeatureDefinitionResponse extends AcsResponse {
 
 		public void setDetailDocId(Long detailDocId) {
 			this.detailDocId = detailDocId;
-		}
-
-		public String getFeatureName() {
-			return this.featureName;
-		}
-
-		public void setFeatureName(String featureName) {
-			this.featureName = featureName;
-		}
-
-		public String getFeatureType() {
-			return this.featureType;
-		}
-
-		public void setFeatureType(String featureType) {
-			this.featureType = featureType;
-		}
-
-		public String getFeatureTargetType() {
-			return this.featureTargetType;
-		}
-
-		public void setFeatureTargetType(String featureTargetType) {
-			this.featureTargetType = featureTargetType;
-		}
-
-		public String getShortDesc() {
-			return this.shortDesc;
-		}
-
-		public void setShortDesc(String shortDesc) {
-			this.shortDesc = shortDesc;
 		}
 
 		public Long getValidTimeRange() {
@@ -191,28 +135,28 @@ public class OpsDescribeFeatureDefinitionResponse extends AcsResponse {
 			this.validTimeRange = validTimeRange;
 		}
 
-		public Boolean getExecRule() {
-			return this.execRule;
+		public String getCreateUserName() {
+			return this.createUserName;
 		}
 
-		public void setExecRule(Boolean execRule) {
-			this.execRule = execRule;
+		public void setCreateUserName(String createUserName) {
+			this.createUserName = createUserName;
 		}
 
-		public String getReason() {
-			return this.reason;
+		public String getFeatureType() {
+			return this.featureType;
 		}
 
-		public void setReason(String reason) {
-			this.reason = reason;
+		public void setFeatureType(String featureType) {
+			this.featureType = featureType;
 		}
 
-		public String getSeverityLevel() {
-			return this.severityLevel;
+		public String getGmtModified() {
+			return this.gmtModified;
 		}
 
-		public void setSeverityLevel(String severityLevel) {
-			this.severityLevel = severityLevel;
+		public void setGmtModified(String gmtModified) {
+			this.gmtModified = gmtModified;
 		}
 
 		public String getSupportTeams() {
@@ -223,20 +167,52 @@ public class OpsDescribeFeatureDefinitionResponse extends AcsResponse {
 			this.supportTeams = supportTeams;
 		}
 
-		public Long getExtractionId() {
-			return this.extractionId;
+		public Boolean getExecRule() {
+			return this.execRule;
 		}
 
-		public void setExtractionId(Long extractionId) {
-			this.extractionId = extractionId;
+		public void setExecRule(Boolean execRule) {
+			this.execRule = execRule;
 		}
 
-		public String getCreateUserName() {
-			return this.createUserName;
+		public String getSeverityLevel() {
+			return this.severityLevel;
 		}
 
-		public void setCreateUserName(String createUserName) {
-			this.createUserName = createUserName;
+		public void setSeverityLevel(String severityLevel) {
+			this.severityLevel = severityLevel;
+		}
+
+		public String getFeatureName() {
+			return this.featureName;
+		}
+
+		public void setFeatureName(String featureName) {
+			this.featureName = featureName;
+		}
+
+		public String getGmtCreate() {
+			return this.gmtCreate;
+		}
+
+		public void setGmtCreate(String gmtCreate) {
+			this.gmtCreate = gmtCreate;
+		}
+
+		public String getFeatureTargetType() {
+			return this.featureTargetType;
+		}
+
+		public void setFeatureTargetType(String featureTargetType) {
+			this.featureTargetType = featureTargetType;
+		}
+
+		public Boolean getDeleted() {
+			return this.deleted;
+		}
+
+		public void setDeleted(Boolean deleted) {
+			this.deleted = deleted;
 		}
 
 		public String getLastModifiedUserName() {
@@ -245,6 +221,30 @@ public class OpsDescribeFeatureDefinitionResponse extends AcsResponse {
 
 		public void setLastModifiedUserName(String lastModifiedUserName) {
 			this.lastModifiedUserName = lastModifiedUserName;
+		}
+
+		public Long getExtractionId() {
+			return this.extractionId;
+		}
+
+		public void setExtractionId(Long extractionId) {
+			this.extractionId = extractionId;
+		}
+
+		public String getReason() {
+			return this.reason;
+		}
+
+		public void setReason(String reason) {
+			this.reason = reason;
+		}
+
+		public String getShortDesc() {
+			return this.shortDesc;
+		}
+
+		public void setShortDesc(String shortDesc) {
+			this.shortDesc = shortDesc;
 		}
 	}
 

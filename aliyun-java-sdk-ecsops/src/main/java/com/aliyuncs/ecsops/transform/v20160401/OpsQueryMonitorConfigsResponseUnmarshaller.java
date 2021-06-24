@@ -34,16 +34,16 @@ public class OpsQueryMonitorConfigsResponseUnmarshaller {
 		List<MonitorConfig> monitorConfigList = new ArrayList<MonitorConfig>();
 		for (int i = 0; i < _ctx.lengthValue("OpsQueryMonitorConfigsResponse.MonitorConfigList.Length"); i++) {
 			MonitorConfig monitorConfig = new MonitorConfig();
-			monitorConfig.setOwner(_ctx.stringValue("OpsQueryMonitorConfigsResponse.MonitorConfigList["+ i +"].Owner"));
-			monitorConfig.setCategory(_ctx.stringValue("OpsQueryMonitorConfigsResponse.MonitorConfigList["+ i +"].Category"));
-			monitorConfig.setEnable(_ctx.booleanValue("OpsQueryMonitorConfigsResponse.MonitorConfigList["+ i +"].Enable"));
-			monitorConfig.setMonitorItem(_ctx.stringValue("OpsQueryMonitorConfigsResponse.MonitorConfigList["+ i +"].MonitorItem"));
+			monitorConfig.setTimeout(_ctx.integerValue("OpsQueryMonitorConfigsResponse.MonitorConfigList["+ i +"].Timeout"));
 			monitorConfig.setMonitorCodeFile(_ctx.stringValue("OpsQueryMonitorConfigsResponse.MonitorConfigList["+ i +"].MonitorCodeFile"));
 			monitorConfig.setTrigger(_ctx.stringValue("OpsQueryMonitorConfigsResponse.MonitorConfigList["+ i +"].Trigger"));
-			monitorConfig.setTimeout(_ctx.integerValue("OpsQueryMonitorConfigsResponse.MonitorConfigList["+ i +"].Timeout"));
-			monitorConfig.setTotalSeconds(_ctx.integerValue("OpsQueryMonitorConfigsResponse.MonitorConfigList["+ i +"].TotalSeconds"));
+			monitorConfig.setOwner(_ctx.stringValue("OpsQueryMonitorConfigsResponse.MonitorConfigList["+ i +"].Owner"));
+			monitorConfig.setMonitorItem(_ctx.stringValue("OpsQueryMonitorConfigsResponse.MonitorConfigList["+ i +"].MonitorItem"));
 			monitorConfig.setExecutor(_ctx.stringValue("OpsQueryMonitorConfigsResponse.MonitorConfigList["+ i +"].Executor"));
 			monitorConfig.setDescription(_ctx.stringValue("OpsQueryMonitorConfigsResponse.MonitorConfigList["+ i +"].Description"));
+			monitorConfig.setTotalSeconds(_ctx.integerValue("OpsQueryMonitorConfigsResponse.MonitorConfigList["+ i +"].TotalSeconds"));
+			monitorConfig.setCategory(_ctx.stringValue("OpsQueryMonitorConfigsResponse.MonitorConfigList["+ i +"].Category"));
+			monitorConfig.setEnable(_ctx.booleanValue("OpsQueryMonitorConfigsResponse.MonitorConfigList["+ i +"].Enable"));
 
 			List<String> monitorResultFiles = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("OpsQueryMonitorConfigsResponse.MonitorConfigList["+ i +"].MonitorResultFiles.Length"); j++) {
@@ -51,37 +51,37 @@ public class OpsQueryMonitorConfigsResponseUnmarshaller {
 			}
 			monitorConfig.setMonitorResultFiles(monitorResultFiles);
 
-			Exclusion exclusion = new Exclusion();
-			exclusion.setExt(_ctx.stringValue("OpsQueryMonitorConfigsResponse.MonitorConfigList["+ i +"].Exclusion.Ext"));
-
-			List<String> cluster = new ArrayList<String>();
-			for (int j = 0; j < _ctx.lengthValue("OpsQueryMonitorConfigsResponse.MonitorConfigList["+ i +"].Exclusion.Cluster.Length"); j++) {
-				cluster.add(_ctx.stringValue("OpsQueryMonitorConfigsResponse.MonitorConfigList["+ i +"].Exclusion.Cluster["+ j +"]"));
-			}
-			exclusion.setCluster(cluster);
-
-			List<String> nc = new ArrayList<String>();
-			for (int j = 0; j < _ctx.lengthValue("OpsQueryMonitorConfigsResponse.MonitorConfigList["+ i +"].Exclusion.Nc.Length"); j++) {
-				nc.add(_ctx.stringValue("OpsQueryMonitorConfigsResponse.MonitorConfigList["+ i +"].Exclusion.Nc["+ j +"]"));
-			}
-			exclusion.setNc(nc);
-			monitorConfig.setExclusion(exclusion);
-
 			Inclusion inclusion = new Inclusion();
 			inclusion.setExt(_ctx.stringValue("OpsQueryMonitorConfigsResponse.MonitorConfigList["+ i +"].Inclusion.Ext"));
 
-			List<String> cluster1 = new ArrayList<String>();
-			for (int j = 0; j < _ctx.lengthValue("OpsQueryMonitorConfigsResponse.MonitorConfigList["+ i +"].Inclusion.Cluster.Length"); j++) {
-				cluster1.add(_ctx.stringValue("OpsQueryMonitorConfigsResponse.MonitorConfigList["+ i +"].Inclusion.Cluster["+ j +"]"));
-			}
-			inclusion.setCluster1(cluster1);
-
-			List<String> nc2 = new ArrayList<String>();
+			List<String> nc = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("OpsQueryMonitorConfigsResponse.MonitorConfigList["+ i +"].Inclusion.Nc.Length"); j++) {
-				nc2.add(_ctx.stringValue("OpsQueryMonitorConfigsResponse.MonitorConfigList["+ i +"].Inclusion.Nc["+ j +"]"));
+				nc.add(_ctx.stringValue("OpsQueryMonitorConfigsResponse.MonitorConfigList["+ i +"].Inclusion.Nc["+ j +"]"));
 			}
-			inclusion.setNc2(nc2);
+			inclusion.setNc(nc);
+
+			List<String> cluster = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("OpsQueryMonitorConfigsResponse.MonitorConfigList["+ i +"].Inclusion.Cluster.Length"); j++) {
+				cluster.add(_ctx.stringValue("OpsQueryMonitorConfigsResponse.MonitorConfigList["+ i +"].Inclusion.Cluster["+ j +"]"));
+			}
+			inclusion.setCluster(cluster);
 			monitorConfig.setInclusion(inclusion);
+
+			Exclusion exclusion = new Exclusion();
+			exclusion.setExt(_ctx.stringValue("OpsQueryMonitorConfigsResponse.MonitorConfigList["+ i +"].Exclusion.Ext"));
+
+			List<String> nc1 = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("OpsQueryMonitorConfigsResponse.MonitorConfigList["+ i +"].Exclusion.Nc.Length"); j++) {
+				nc1.add(_ctx.stringValue("OpsQueryMonitorConfigsResponse.MonitorConfigList["+ i +"].Exclusion.Nc["+ j +"]"));
+			}
+			exclusion.setNc1(nc1);
+
+			List<String> cluster2 = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("OpsQueryMonitorConfigsResponse.MonitorConfigList["+ i +"].Exclusion.Cluster.Length"); j++) {
+				cluster2.add(_ctx.stringValue("OpsQueryMonitorConfigsResponse.MonitorConfigList["+ i +"].Exclusion.Cluster["+ j +"]"));
+			}
+			exclusion.setCluster2(cluster2);
+			monitorConfig.setExclusion(exclusion);
 
 			List<MonitorResultKey> monitorResultKeys = new ArrayList<MonitorResultKey>();
 			for (int j = 0; j < _ctx.lengthValue("OpsQueryMonitorConfigsResponse.MonitorConfigList["+ i +"].MonitorResultKeys.Length"); j++) {

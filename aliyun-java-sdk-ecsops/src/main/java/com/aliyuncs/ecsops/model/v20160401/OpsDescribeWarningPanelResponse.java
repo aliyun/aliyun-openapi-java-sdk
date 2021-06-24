@@ -24,15 +24,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsDescribeWarningPanelResponse extends AcsResponse {
 
+	private String message;
+
 	private String requestId;
 
 	private String code;
 
-	private String message;
-
 	private String success;
 
 	private Data data;
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -48,14 +56,6 @@ public class OpsDescribeWarningPanelResponse extends AcsResponse {
 
 	public void setCode(String code) {
 		this.code = code;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
 	}
 
 	public String getSuccess() {
@@ -76,84 +76,44 @@ public class OpsDescribeWarningPanelResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String total;
-
-		private String waiting;
-
-		private String doing;
-
-		private String done;
-
-		private String p1total;
-
-		private String p1waiting;
+		private String p1done;
 
 		private String p1doing;
 
-		private String p1done;
+		private String p2done;
 
 		private String p2total;
 
+		private String p3waiting;
+
+		private String p1waiting;
+
+		private String total;
+
+		private String p1total;
+
+		private String waiting;
+
+		private String done;
+
 		private String p2waiting;
 
-		private String p2doing;
-
-		private String p2done;
-
 		private String p3total;
-
-		private String p3waiting;
 
 		private String p3doing;
 
 		private String p3done;
 
-		public String getTotal() {
-			return this.total;
+		private String p2doing;
+
+		private String doing;
+
+		public String getP1done() {
+			return this.p1done;
 		}
 
-		public void setTotal(String total) {
-			this.total = total;
-		}
-
-		public String getWaiting() {
-			return this.waiting;
-		}
-
-		public void setWaiting(String waiting) {
-			this.waiting = waiting;
-		}
-
-		public String getDoing() {
-			return this.doing;
-		}
-
-		public void setDoing(String doing) {
-			this.doing = doing;
-		}
-
-		public String getDone() {
-			return this.done;
-		}
-
-		public void setDone(String done) {
-			this.done = done;
-		}
-
-		public String getP1total() {
-			return this.p1total;
-		}
-
-		public void setP1total(String p1total) {
-			this.p1total = p1total;
-		}
-
-		public String getP1waiting() {
-			return this.p1waiting;
-		}
-
-		public void setP1waiting(String p1waiting) {
-			this.p1waiting = p1waiting;
+		public void setP1done(String p1done) {
+			this.p1done = p1done;
 		}
 
 		public String getP1doing() {
@@ -164,12 +124,12 @@ public class OpsDescribeWarningPanelResponse extends AcsResponse {
 			this.p1doing = p1doing;
 		}
 
-		public String getP1done() {
-			return this.p1done;
+		public String getP2done() {
+			return this.p2done;
 		}
 
-		public void setP1done(String p1done) {
-			this.p1done = p1done;
+		public void setP2done(String p2done) {
+			this.p2done = p2done;
 		}
 
 		public String getP2total() {
@@ -180,6 +140,54 @@ public class OpsDescribeWarningPanelResponse extends AcsResponse {
 			this.p2total = p2total;
 		}
 
+		public String getP3waiting() {
+			return this.p3waiting;
+		}
+
+		public void setP3waiting(String p3waiting) {
+			this.p3waiting = p3waiting;
+		}
+
+		public String getP1waiting() {
+			return this.p1waiting;
+		}
+
+		public void setP1waiting(String p1waiting) {
+			this.p1waiting = p1waiting;
+		}
+
+		public String getTotal() {
+			return this.total;
+		}
+
+		public void setTotal(String total) {
+			this.total = total;
+		}
+
+		public String getP1total() {
+			return this.p1total;
+		}
+
+		public void setP1total(String p1total) {
+			this.p1total = p1total;
+		}
+
+		public String getWaiting() {
+			return this.waiting;
+		}
+
+		public void setWaiting(String waiting) {
+			this.waiting = waiting;
+		}
+
+		public String getDone() {
+			return this.done;
+		}
+
+		public void setDone(String done) {
+			this.done = done;
+		}
+
 		public String getP2waiting() {
 			return this.p2waiting;
 		}
@@ -188,36 +196,12 @@ public class OpsDescribeWarningPanelResponse extends AcsResponse {
 			this.p2waiting = p2waiting;
 		}
 
-		public String getP2doing() {
-			return this.p2doing;
-		}
-
-		public void setP2doing(String p2doing) {
-			this.p2doing = p2doing;
-		}
-
-		public String getP2done() {
-			return this.p2done;
-		}
-
-		public void setP2done(String p2done) {
-			this.p2done = p2done;
-		}
-
 		public String getP3total() {
 			return this.p3total;
 		}
 
 		public void setP3total(String p3total) {
 			this.p3total = p3total;
-		}
-
-		public String getP3waiting() {
-			return this.p3waiting;
-		}
-
-		public void setP3waiting(String p3waiting) {
-			this.p3waiting = p3waiting;
 		}
 
 		public String getP3doing() {
@@ -234,6 +218,22 @@ public class OpsDescribeWarningPanelResponse extends AcsResponse {
 
 		public void setP3done(String p3done) {
 			this.p3done = p3done;
+		}
+
+		public String getP2doing() {
+			return this.p2doing;
+		}
+
+		public void setP2doing(String p2doing) {
+			this.p2doing = p2doing;
+		}
+
+		public String getDoing() {
+			return this.doing;
+		}
+
+		public void setDoing(String doing) {
+			this.doing = doing;
 		}
 	}
 

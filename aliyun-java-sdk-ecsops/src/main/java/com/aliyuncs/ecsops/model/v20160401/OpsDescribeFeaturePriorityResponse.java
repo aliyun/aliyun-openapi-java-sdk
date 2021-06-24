@@ -25,17 +25,33 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsDescribeFeaturePriorityResponse extends AcsResponse {
 
+	private Integer totalCount;
+
+	private Integer pageSize;
+
 	private String requestId;
 
 	private Integer page;
 
-	private Integer pageSize;
-
-	private Integer totalCount;
-
 	private Integer count;
 
 	private List<FeaturePriority> featurePriorities;
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -51,22 +67,6 @@ public class OpsDescribeFeaturePriorityResponse extends AcsResponse {
 
 	public void setPage(Integer page) {
 		this.page = page;
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
 	}
 
 	public Integer getCount() {
@@ -87,61 +87,21 @@ public class OpsDescribeFeaturePriorityResponse extends AcsResponse {
 
 	public static class FeaturePriority {
 
-		private String gmtCreate;
-
-		private String gmtModified;
-
-		private Boolean deleted;
-
-		private String problemClassification;
-
-		private String featureName;
-
 		private Integer priorityLevel;
 
 		private String createUserName;
 
+		private String featureName;
+
+		private String gmtCreate;
+
+		private Boolean deleted;
+
+		private String gmtModified;
+
 		private String lastModifiedUserName;
 
-		public String getGmtCreate() {
-			return this.gmtCreate;
-		}
-
-		public void setGmtCreate(String gmtCreate) {
-			this.gmtCreate = gmtCreate;
-		}
-
-		public String getGmtModified() {
-			return this.gmtModified;
-		}
-
-		public void setGmtModified(String gmtModified) {
-			this.gmtModified = gmtModified;
-		}
-
-		public Boolean getDeleted() {
-			return this.deleted;
-		}
-
-		public void setDeleted(Boolean deleted) {
-			this.deleted = deleted;
-		}
-
-		public String getProblemClassification() {
-			return this.problemClassification;
-		}
-
-		public void setProblemClassification(String problemClassification) {
-			this.problemClassification = problemClassification;
-		}
-
-		public String getFeatureName() {
-			return this.featureName;
-		}
-
-		public void setFeatureName(String featureName) {
-			this.featureName = featureName;
-		}
+		private String problemClassification;
 
 		public Integer getPriorityLevel() {
 			return this.priorityLevel;
@@ -159,12 +119,52 @@ public class OpsDescribeFeaturePriorityResponse extends AcsResponse {
 			this.createUserName = createUserName;
 		}
 
+		public String getFeatureName() {
+			return this.featureName;
+		}
+
+		public void setFeatureName(String featureName) {
+			this.featureName = featureName;
+		}
+
+		public String getGmtCreate() {
+			return this.gmtCreate;
+		}
+
+		public void setGmtCreate(String gmtCreate) {
+			this.gmtCreate = gmtCreate;
+		}
+
+		public Boolean getDeleted() {
+			return this.deleted;
+		}
+
+		public void setDeleted(Boolean deleted) {
+			this.deleted = deleted;
+		}
+
+		public String getGmtModified() {
+			return this.gmtModified;
+		}
+
+		public void setGmtModified(String gmtModified) {
+			this.gmtModified = gmtModified;
+		}
+
 		public String getLastModifiedUserName() {
 			return this.lastModifiedUserName;
 		}
 
 		public void setLastModifiedUserName(String lastModifiedUserName) {
 			this.lastModifiedUserName = lastModifiedUserName;
+		}
+
+		public String getProblemClassification() {
+			return this.problemClassification;
+		}
+
+		public void setProblemClassification(String problemClassification) {
+			this.problemClassification = problemClassification;
 		}
 	}
 

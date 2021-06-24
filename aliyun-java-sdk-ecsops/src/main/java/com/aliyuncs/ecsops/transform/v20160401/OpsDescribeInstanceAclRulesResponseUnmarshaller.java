@@ -27,23 +27,23 @@ public class OpsDescribeInstanceAclRulesResponseUnmarshaller {
 	public static OpsDescribeInstanceAclRulesResponse unmarshall(OpsDescribeInstanceAclRulesResponse opsDescribeInstanceAclRulesResponse, UnmarshallerContext _ctx) {
 		
 		opsDescribeInstanceAclRulesResponse.setRequestId(_ctx.stringValue("OpsDescribeInstanceAclRulesResponse.RequestId"));
-		opsDescribeInstanceAclRulesResponse.setInstanceId(_ctx.stringValue("OpsDescribeInstanceAclRulesResponse.InstanceId"));
-		opsDescribeInstanceAclRulesResponse.setPageNumber(_ctx.integerValue("OpsDescribeInstanceAclRulesResponse.PageNumber"));
-		opsDescribeInstanceAclRulesResponse.setPageSize(_ctx.integerValue("OpsDescribeInstanceAclRulesResponse.PageSize"));
 		opsDescribeInstanceAclRulesResponse.setTotalCount(_ctx.integerValue("OpsDescribeInstanceAclRulesResponse.TotalCount"));
+		opsDescribeInstanceAclRulesResponse.setPageSize(_ctx.integerValue("OpsDescribeInstanceAclRulesResponse.PageSize"));
+		opsDescribeInstanceAclRulesResponse.setPageNumber(_ctx.integerValue("OpsDescribeInstanceAclRulesResponse.PageNumber"));
+		opsDescribeInstanceAclRulesResponse.setInstanceId(_ctx.stringValue("OpsDescribeInstanceAclRulesResponse.InstanceId"));
 
 		List<AclRule> aclRules = new ArrayList<AclRule>();
 		for (int i = 0; i < _ctx.lengthValue("OpsDescribeInstanceAclRulesResponse.AclRules.Length"); i++) {
 			AclRule aclRule = new AclRule();
-			aclRule.setIpProtocol(_ctx.stringValue("OpsDescribeInstanceAclRulesResponse.AclRules["+ i +"].IpProtocol"));
-			aclRule.setSourceCidrIp(_ctx.stringValue("OpsDescribeInstanceAclRulesResponse.AclRules["+ i +"].SourceCidrIp"));
-			aclRule.setDestCidrIp(_ctx.stringValue("OpsDescribeInstanceAclRulesResponse.AclRules["+ i +"].DestCidrIp"));
-			aclRule.setSourcePortRange(_ctx.stringValue("OpsDescribeInstanceAclRulesResponse.AclRules["+ i +"].SourcePortRange"));
-			aclRule.setDestPortRange(_ctx.stringValue("OpsDescribeInstanceAclRulesResponse.AclRules["+ i +"].DestPortRange"));
-			aclRule.setPolicy(_ctx.stringValue("OpsDescribeInstanceAclRulesResponse.AclRules["+ i +"].Policy"));
-			aclRule.setPriority(_ctx.stringValue("OpsDescribeInstanceAclRulesResponse.AclRules["+ i +"].Priority"));
-			aclRule.setDirection(_ctx.stringValue("OpsDescribeInstanceAclRulesResponse.AclRules["+ i +"].Direction"));
 			aclRule.setType(_ctx.stringValue("OpsDescribeInstanceAclRulesResponse.AclRules["+ i +"].Type"));
+			aclRule.setDirection(_ctx.stringValue("OpsDescribeInstanceAclRulesResponse.AclRules["+ i +"].Direction"));
+			aclRule.setPolicy(_ctx.stringValue("OpsDescribeInstanceAclRulesResponse.AclRules["+ i +"].Policy"));
+			aclRule.setSourceCidrIp(_ctx.stringValue("OpsDescribeInstanceAclRulesResponse.AclRules["+ i +"].SourceCidrIp"));
+			aclRule.setDestPortRange(_ctx.stringValue("OpsDescribeInstanceAclRulesResponse.AclRules["+ i +"].DestPortRange"));
+			aclRule.setDestCidrIp(_ctx.stringValue("OpsDescribeInstanceAclRulesResponse.AclRules["+ i +"].DestCidrIp"));
+			aclRule.setIpProtocol(_ctx.stringValue("OpsDescribeInstanceAclRulesResponse.AclRules["+ i +"].IpProtocol"));
+			aclRule.setPriority(_ctx.stringValue("OpsDescribeInstanceAclRulesResponse.AclRules["+ i +"].Priority"));
+			aclRule.setSourcePortRange(_ctx.stringValue("OpsDescribeInstanceAclRulesResponse.AclRules["+ i +"].SourcePortRange"));
 
 			aclRules.add(aclRule);
 		}

@@ -47,23 +47,15 @@ public class OpsDescribeChangePlanBatchDetailResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String planId;
-
 		private Integer batchNo;
-
-		private Integer totalSize;
 
 		private Boolean lastBatch;
 
+		private Integer totalSize;
+
+		private String planId;
+
 		private List<Resource> resources;
-
-		public String getPlanId() {
-			return this.planId;
-		}
-
-		public void setPlanId(String planId) {
-			this.planId = planId;
-		}
 
 		public Integer getBatchNo() {
 			return this.batchNo;
@@ -71,6 +63,14 @@ public class OpsDescribeChangePlanBatchDetailResponse extends AcsResponse {
 
 		public void setBatchNo(Integer batchNo) {
 			this.batchNo = batchNo;
+		}
+
+		public Boolean getLastBatch() {
+			return this.lastBatch;
+		}
+
+		public void setLastBatch(Boolean lastBatch) {
+			this.lastBatch = lastBatch;
 		}
 
 		public Integer getTotalSize() {
@@ -81,12 +81,12 @@ public class OpsDescribeChangePlanBatchDetailResponse extends AcsResponse {
 			this.totalSize = totalSize;
 		}
 
-		public Boolean getLastBatch() {
-			return this.lastBatch;
+		public String getPlanId() {
+			return this.planId;
 		}
 
-		public void setLastBatch(Boolean lastBatch) {
-			this.lastBatch = lastBatch;
+		public void setPlanId(String planId) {
+			this.planId = planId;
 		}
 
 		public List<Resource> getResources() {
@@ -99,29 +99,13 @@ public class OpsDescribeChangePlanBatchDetailResponse extends AcsResponse {
 
 		public static class Resource {
 
-			private String resourceId;
-
-			private String operationStatus;
-
 			private String gmtCreated;
 
 			private String gmtModified;
 
-			public String getResourceId() {
-				return this.resourceId;
-			}
+			private String resourceId;
 
-			public void setResourceId(String resourceId) {
-				this.resourceId = resourceId;
-			}
-
-			public String getOperationStatus() {
-				return this.operationStatus;
-			}
-
-			public void setOperationStatus(String operationStatus) {
-				this.operationStatus = operationStatus;
-			}
+			private String operationStatus;
 
 			public String getGmtCreated() {
 				return this.gmtCreated;
@@ -137,6 +121,22 @@ public class OpsDescribeChangePlanBatchDetailResponse extends AcsResponse {
 
 			public void setGmtModified(String gmtModified) {
 				this.gmtModified = gmtModified;
+			}
+
+			public String getResourceId() {
+				return this.resourceId;
+			}
+
+			public void setResourceId(String resourceId) {
+				this.resourceId = resourceId;
+			}
+
+			public String getOperationStatus() {
+				return this.operationStatus;
+			}
+
+			public void setOperationStatus(String operationStatus) {
+				this.operationStatus = operationStatus;
 			}
 		}
 	}

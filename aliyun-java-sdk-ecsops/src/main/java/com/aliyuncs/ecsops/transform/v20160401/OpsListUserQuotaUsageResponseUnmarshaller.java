@@ -27,28 +27,28 @@ public class OpsListUserQuotaUsageResponseUnmarshaller {
 	public static OpsListUserQuotaUsageResponse unmarshall(OpsListUserQuotaUsageResponse opsListUserQuotaUsageResponse, UnmarshallerContext _ctx) {
 		
 		opsListUserQuotaUsageResponse.setRequestId(_ctx.stringValue("OpsListUserQuotaUsageResponse.RequestId"));
-		opsListUserQuotaUsageResponse.setNextToken(_ctx.stringValue("OpsListUserQuotaUsageResponse.NextToken"));
 		opsListUserQuotaUsageResponse.setTotalCount(_ctx.integerValue("OpsListUserQuotaUsageResponse.TotalCount"));
-		opsListUserQuotaUsageResponse.setPageNumber(_ctx.integerValue("OpsListUserQuotaUsageResponse.PageNumber"));
+		opsListUserQuotaUsageResponse.setNextToken(_ctx.stringValue("OpsListUserQuotaUsageResponse.NextToken"));
 		opsListUserQuotaUsageResponse.setPageSize(_ctx.integerValue("OpsListUserQuotaUsageResponse.PageSize"));
+		opsListUserQuotaUsageResponse.setPageNumber(_ctx.integerValue("OpsListUserQuotaUsageResponse.PageNumber"));
 
 		List<EcsQuota> ecsQuotas = new ArrayList<EcsQuota>();
 		for (int i = 0; i < _ctx.lengthValue("OpsListUserQuotaUsageResponse.EcsQuotas.Length"); i++) {
 			EcsQuota ecsQuota = new EcsQuota();
-			ecsQuota.setRegionId(_ctx.stringValue("OpsListUserQuotaUsageResponse.EcsQuotas["+ i +"].RegionId"));
-			ecsQuota.setZoneId(_ctx.stringValue("OpsListUserQuotaUsageResponse.EcsQuotas["+ i +"].ZoneId"));
-			ecsQuota.setChargeType(_ctx.stringValue("OpsListUserQuotaUsageResponse.EcsQuotas["+ i +"].ChargeType"));
-			ecsQuota.setNetworkType(_ctx.stringValue("OpsListUserQuotaUsageResponse.EcsQuotas["+ i +"].NetworkType"));
-			ecsQuota.setQuotaResourceType(_ctx.stringValue("OpsListUserQuotaUsageResponse.EcsQuotas["+ i +"].QuotaResourceType"));
+			ecsQuota.setBaseQuota(_ctx.longValue("OpsListUserQuotaUsageResponse.EcsQuotas["+ i +"].BaseQuota"));
 			ecsQuota.setQuotaResourceName(_ctx.stringValue("OpsListUserQuotaUsageResponse.EcsQuotas["+ i +"].QuotaResourceName"));
 			ecsQuota.setQuotaUnit(_ctx.stringValue("OpsListUserQuotaUsageResponse.EcsQuotas["+ i +"].QuotaUnit"));
+			ecsQuota.setQuotaResourceType(_ctx.stringValue("OpsListUserQuotaUsageResponse.EcsQuotas["+ i +"].QuotaResourceType"));
+			ecsQuota.setChargeType(_ctx.stringValue("OpsListUserQuotaUsageResponse.EcsQuotas["+ i +"].ChargeType"));
+			ecsQuota.setNetworkType(_ctx.stringValue("OpsListUserQuotaUsageResponse.EcsQuotas["+ i +"].NetworkType"));
 			ecsQuota.setReservedQuota(_ctx.longValue("OpsListUserQuotaUsageResponse.EcsQuotas["+ i +"].ReservedQuota"));
 			ecsQuota.setReservedQuotaUsage(_ctx.longValue("OpsListUserQuotaUsageResponse.EcsQuotas["+ i +"].ReservedQuotaUsage"));
-			ecsQuota.setBaseQuota(_ctx.longValue("OpsListUserQuotaUsageResponse.EcsQuotas["+ i +"].BaseQuota"));
-			ecsQuota.setBaseQuotaUsage(_ctx.longValue("OpsListUserQuotaUsageResponse.EcsQuotas["+ i +"].BaseQuotaUsage"));
-			ecsQuota.setTotalQuota(_ctx.longValue("OpsListUserQuotaUsageResponse.EcsQuotas["+ i +"].TotalQuota"));
+			ecsQuota.setRegionId(_ctx.stringValue("OpsListUserQuotaUsageResponse.EcsQuotas["+ i +"].RegionId"));
 			ecsQuota.setTotalQuotaUsage(_ctx.longValue("OpsListUserQuotaUsageResponse.EcsQuotas["+ i +"].TotalQuotaUsage"));
+			ecsQuota.setBaseQuotaUsage(_ctx.longValue("OpsListUserQuotaUsageResponse.EcsQuotas["+ i +"].BaseQuotaUsage"));
 			ecsQuota.setApplicationStatus(_ctx.stringValue("OpsListUserQuotaUsageResponse.EcsQuotas["+ i +"].ApplicationStatus"));
+			ecsQuota.setZoneId(_ctx.stringValue("OpsListUserQuotaUsageResponse.EcsQuotas["+ i +"].ZoneId"));
+			ecsQuota.setTotalQuota(_ctx.longValue("OpsListUserQuotaUsageResponse.EcsQuotas["+ i +"].TotalQuota"));
 
 			ecsQuotas.add(ecsQuota);
 		}

@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsDescribeFleetTasksResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
-
-	private Integer pageNumber;
 
 	private Integer pageSize;
 
+	private String requestId;
+
+	private Integer pageNumber;
+
 	private List<Task> tasks;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -51,20 +43,28 @@ public class OpsDescribeFleetTasksResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<Task> getTasks() {
@@ -77,32 +77,24 @@ public class OpsDescribeFleetTasksResponse extends AcsResponse {
 
 	public static class Task {
 
-		private Long id;
-
-		private Long aliUid;
+		private String status;
 
 		private String fleetId;
 
-		private String fleetTaskId;
-
-		private String status;
-
 		private String result;
 
-		public Long getId() {
-			return this.id;
+		private String fleetTaskId;
+
+		private Long aliUid;
+
+		private Long id;
+
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setId(Long id) {
-			this.id = id;
-		}
-
-		public Long getAliUid() {
-			return this.aliUid;
-		}
-
-		public void setAliUid(Long aliUid) {
-			this.aliUid = aliUid;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public String getFleetId() {
@@ -113,6 +105,14 @@ public class OpsDescribeFleetTasksResponse extends AcsResponse {
 			this.fleetId = fleetId;
 		}
 
+		public String getResult() {
+			return this.result;
+		}
+
+		public void setResult(String result) {
+			this.result = result;
+		}
+
 		public String getFleetTaskId() {
 			return this.fleetTaskId;
 		}
@@ -121,20 +121,20 @@ public class OpsDescribeFleetTasksResponse extends AcsResponse {
 			this.fleetTaskId = fleetTaskId;
 		}
 
-		public String getStatus() {
-			return this.status;
+		public Long getAliUid() {
+			return this.aliUid;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
+		public void setAliUid(Long aliUid) {
+			this.aliUid = aliUid;
 		}
 
-		public String getResult() {
-			return this.result;
+		public Long getId() {
+			return this.id;
 		}
 
-		public void setResult(String result) {
-			this.result = result;
+		public void setId(Long id) {
+			this.id = id;
 		}
 	}
 

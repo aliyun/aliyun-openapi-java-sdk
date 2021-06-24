@@ -17,7 +17,6 @@ package com.aliyuncs.ecsops.model.v20160401;
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
 import com.aliyuncs.http.MethodType;
-import com.aliyuncs.ecsops.Endpoint;
 
 /**
  * @author auto create
@@ -58,12 +57,8 @@ public class OpsPdsaRecommendSolutionRequest extends RpcAcsRequest<OpsPdsaRecomm
 
 	private String auditParamStr;
 	public OpsPdsaRecommendSolutionRequest() {
-		super("Ecsops", "2016-04-01", "OpsPdsaRecommendSolution", "ecs");
+		super("Ecsops", "2016-04-01", "OpsPdsaRecommendSolution", "ecsops");
 		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
 	}
 
 	public String getBeginDate() {

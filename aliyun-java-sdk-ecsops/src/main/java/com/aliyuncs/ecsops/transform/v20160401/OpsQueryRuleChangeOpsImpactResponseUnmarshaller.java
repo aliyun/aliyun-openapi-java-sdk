@@ -29,9 +29,9 @@ public class OpsQueryRuleChangeOpsImpactResponseUnmarshaller {
 		opsQueryRuleChangeOpsImpactResponse.setRequestId(_ctx.stringValue("OpsQueryRuleChangeOpsImpactResponse.RequestId"));
 		opsQueryRuleChangeOpsImpactResponse.setStatus(_ctx.stringValue("OpsQueryRuleChangeOpsImpactResponse.Status"));
 		opsQueryRuleChangeOpsImpactResponse.setFinished(_ctx.booleanValue("OpsQueryRuleChangeOpsImpactResponse.Finished"));
+		opsQueryRuleChangeOpsImpactResponse.setErrorInfo(_ctx.stringValue("OpsQueryRuleChangeOpsImpactResponse.ErrorInfo"));
 		opsQueryRuleChangeOpsImpactResponse.setToken(_ctx.stringValue("OpsQueryRuleChangeOpsImpactResponse.Token"));
 		opsQueryRuleChangeOpsImpactResponse.setIterationQuery(_ctx.booleanValue("OpsQueryRuleChangeOpsImpactResponse.IterationQuery"));
-		opsQueryRuleChangeOpsImpactResponse.setErrorInfo(_ctx.stringValue("OpsQueryRuleChangeOpsImpactResponse.ErrorInfo"));
 
 		List<String> iterationTokens = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("OpsQueryRuleChangeOpsImpactResponse.IterationTokens.Length"); i++) {
@@ -42,12 +42,12 @@ public class OpsQueryRuleChangeOpsImpactResponseUnmarshaller {
 		List<MatchedException> matchedExceptions = new ArrayList<MatchedException>();
 		for (int i = 0; i < _ctx.lengthValue("OpsQueryRuleChangeOpsImpactResponse.MatchedExceptions.Length"); i++) {
 			MatchedException matchedException = new MatchedException();
-			matchedException.setAdditionalInfo(_ctx.stringValue("OpsQueryRuleChangeOpsImpactResponse.MatchedExceptions["+ i +"].AdditionalInfo"));
-			matchedException.setNcIp(_ctx.stringValue("OpsQueryRuleChangeOpsImpactResponse.MatchedExceptions["+ i +"].NcIp"));
-			matchedException.setClusterName(_ctx.stringValue("OpsQueryRuleChangeOpsImpactResponse.MatchedExceptions["+ i +"].ClusterName"));
+			matchedException.setFirstMatchedTime(_ctx.stringValue("OpsQueryRuleChangeOpsImpactResponse.MatchedExceptions["+ i +"].FirstMatchedTime"));
 			matchedException.setMatchedFeatures(_ctx.stringValue("OpsQueryRuleChangeOpsImpactResponse.MatchedExceptions["+ i +"].MatchedFeatures"));
 			matchedException.setProductName(_ctx.stringValue("OpsQueryRuleChangeOpsImpactResponse.MatchedExceptions["+ i +"].ProductName"));
-			matchedException.setFirstMatchedTime(_ctx.stringValue("OpsQueryRuleChangeOpsImpactResponse.MatchedExceptions["+ i +"].FirstMatchedTime"));
+			matchedException.setClusterName(_ctx.stringValue("OpsQueryRuleChangeOpsImpactResponse.MatchedExceptions["+ i +"].ClusterName"));
+			matchedException.setNcIp(_ctx.stringValue("OpsQueryRuleChangeOpsImpactResponse.MatchedExceptions["+ i +"].NcIp"));
+			matchedException.setAdditionalInfo(_ctx.stringValue("OpsQueryRuleChangeOpsImpactResponse.MatchedExceptions["+ i +"].AdditionalInfo"));
 
 			matchedExceptions.add(matchedException);
 		}

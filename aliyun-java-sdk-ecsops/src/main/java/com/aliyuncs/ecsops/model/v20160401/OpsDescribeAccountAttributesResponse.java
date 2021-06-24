@@ -73,11 +73,11 @@ public class OpsDescribeAccountAttributesResponse extends AcsResponse {
 
 			private String zoneId;
 
-			private String instanceChargeType;
-
 			private String instanceType;
 
 			private Integer count;
+
+			private String instanceChargeType;
 
 			public String getValue() {
 				return this.value;
@@ -95,14 +95,6 @@ public class OpsDescribeAccountAttributesResponse extends AcsResponse {
 				this.zoneId = zoneId;
 			}
 
-			public String getInstanceChargeType() {
-				return this.instanceChargeType;
-			}
-
-			public void setInstanceChargeType(String instanceChargeType) {
-				this.instanceChargeType = instanceChargeType;
-			}
-
 			public String getInstanceType() {
 				return this.instanceType;
 			}
@@ -117,6 +109,14 @@ public class OpsDescribeAccountAttributesResponse extends AcsResponse {
 
 			public void setCount(Integer count) {
 				this.count = count;
+			}
+
+			public String getInstanceChargeType() {
+				return this.instanceChargeType;
+			}
+
+			public void setInstanceChargeType(String instanceChargeType) {
+				this.instanceChargeType = instanceChargeType;
 			}
 		}
 	}

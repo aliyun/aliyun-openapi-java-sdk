@@ -28,20 +28,20 @@ public class OpsQueryAvailableNcsResponseUnmarshaller {
 		
 		opsQueryAvailableNcsResponse.setRequestId(_ctx.stringValue("OpsQueryAvailableNcsResponse.RequestId"));
 		opsQueryAvailableNcsResponse.setTotalCount(_ctx.integerValue("OpsQueryAvailableNcsResponse.TotalCount"));
-		opsQueryAvailableNcsResponse.setPageNumber(_ctx.integerValue("OpsQueryAvailableNcsResponse.PageNumber"));
 		opsQueryAvailableNcsResponse.setPageSize(_ctx.integerValue("OpsQueryAvailableNcsResponse.PageSize"));
+		opsQueryAvailableNcsResponse.setPageNumber(_ctx.integerValue("OpsQueryAvailableNcsResponse.PageNumber"));
 
 		List<NcModel> ncModels = new ArrayList<NcModel>();
 		for (int i = 0; i < _ctx.lengthValue("OpsQueryAvailableNcsResponse.NcModels.Length"); i++) {
 			NcModel ncModel = new NcModel();
 			ncModel.setNcId(_ctx.stringValue("OpsQueryAvailableNcsResponse.NcModels["+ i +"].NcId"));
-			ncModel.setNcIp(_ctx.stringValue("OpsQueryAvailableNcsResponse.NcModels["+ i +"].NcIp"));
-			ncModel.setClusterId(_ctx.stringValue("OpsQueryAvailableNcsResponse.NcModels["+ i +"].ClusterId"));
-			ncModel.setRackId(_ctx.stringValue("OpsQueryAvailableNcsResponse.NcModels["+ i +"].RackId"));
 			ncModel.setTotalCpu(_ctx.integerValue("OpsQueryAvailableNcsResponse.NcModels["+ i +"].TotalCpu"));
 			ncModel.setTotalMem(_ctx.integerValue("OpsQueryAvailableNcsResponse.NcModels["+ i +"].TotalMem"));
 			ncModel.setAvailableCpu(_ctx.integerValue("OpsQueryAvailableNcsResponse.NcModels["+ i +"].AvailableCpu"));
 			ncModel.setAvailableMem(_ctx.integerValue("OpsQueryAvailableNcsResponse.NcModels["+ i +"].AvailableMem"));
+			ncModel.setRackId(_ctx.stringValue("OpsQueryAvailableNcsResponse.NcModels["+ i +"].RackId"));
+			ncModel.setNcIp(_ctx.stringValue("OpsQueryAvailableNcsResponse.NcModels["+ i +"].NcIp"));
+			ncModel.setClusterId(_ctx.stringValue("OpsQueryAvailableNcsResponse.NcModels["+ i +"].ClusterId"));
 
 			ncModels.add(ncModel);
 		}

@@ -28,9 +28,9 @@ public class OpsQueryMetadataResponse extends AcsResponse {
 
 	private String instanceId;
 
-	private String metaData;
-
 	private String userData;
+
+	private String metaData;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -48,20 +48,20 @@ public class OpsQueryMetadataResponse extends AcsResponse {
 		this.instanceId = instanceId;
 	}
 
-	public String getMetaData() {
-		return this.metaData;
-	}
-
-	public void setMetaData(String metaData) {
-		this.metaData = metaData;
-	}
-
 	public String getUserData() {
 		return this.userData;
 	}
 
 	public void setUserData(String userData) {
 		this.userData = userData;
+	}
+
+	public String getMetaData() {
+		return this.metaData;
+	}
+
+	public void setMetaData(String metaData) {
+		this.metaData = metaData;
 	}
 
 	@Override

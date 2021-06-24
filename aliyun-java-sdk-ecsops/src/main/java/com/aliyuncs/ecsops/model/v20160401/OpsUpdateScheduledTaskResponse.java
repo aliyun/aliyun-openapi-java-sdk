@@ -24,15 +24,31 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsUpdateScheduledTaskResponse extends AcsResponse {
 
+	private String extendedCode;
+
+	private String message;
+
 	private String requestId;
 
 	private String code;
 
-	private String message;
-
 	private String success;
 
-	private String extendedCode;
+	public String getExtendedCode() {
+		return this.extendedCode;
+	}
+
+	public void setExtendedCode(String extendedCode) {
+		this.extendedCode = extendedCode;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -50,28 +66,12 @@ public class OpsUpdateScheduledTaskResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
 	public String getSuccess() {
 		return this.success;
 	}
 
 	public void setSuccess(String success) {
 		this.success = success;
-	}
-
-	public String getExtendedCode() {
-		return this.extendedCode;
-	}
-
-	public void setExtendedCode(String extendedCode) {
-		this.extendedCode = extendedCode;
 	}
 
 	@Override

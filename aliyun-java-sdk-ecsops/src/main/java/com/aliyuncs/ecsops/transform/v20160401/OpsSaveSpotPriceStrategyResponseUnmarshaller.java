@@ -23,10 +23,10 @@ public class OpsSaveSpotPriceStrategyResponseUnmarshaller {
 	public static OpsSaveSpotPriceStrategyResponse unmarshall(OpsSaveSpotPriceStrategyResponse opsSaveSpotPriceStrategyResponse, UnmarshallerContext _ctx) {
 		
 		opsSaveSpotPriceStrategyResponse.setRequestId(_ctx.stringValue("OpsSaveSpotPriceStrategyResponse.RequestId"));
-		opsSaveSpotPriceStrategyResponse.setCode(_ctx.stringValue("OpsSaveSpotPriceStrategyResponse.Code"));
 		opsSaveSpotPriceStrategyResponse.setMessage(_ctx.stringValue("OpsSaveSpotPriceStrategyResponse.Message"));
-		opsSaveSpotPriceStrategyResponse.setSuccess(_ctx.stringValue("OpsSaveSpotPriceStrategyResponse.Success"));
 		opsSaveSpotPriceStrategyResponse.setData(_ctx.integerValue("OpsSaveSpotPriceStrategyResponse.Data"));
+		opsSaveSpotPriceStrategyResponse.setCode(_ctx.stringValue("OpsSaveSpotPriceStrategyResponse.Code"));
+		opsSaveSpotPriceStrategyResponse.setSuccess(_ctx.stringValue("OpsSaveSpotPriceStrategyResponse.Success"));
 	 
 	 	return opsSaveSpotPriceStrategyResponse;
 	}

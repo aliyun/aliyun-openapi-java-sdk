@@ -26,12 +26,12 @@ public class OpsUpdateAlarmConfigFileResponseUnmarshaller {
 	public static OpsUpdateAlarmConfigFileResponse unmarshall(OpsUpdateAlarmConfigFileResponse opsUpdateAlarmConfigFileResponse, UnmarshallerContext _ctx) {
 		
 		opsUpdateAlarmConfigFileResponse.setRequestId(_ctx.stringValue("OpsUpdateAlarmConfigFileResponse.RequestId"));
-		opsUpdateAlarmConfigFileResponse.setApprovalUrl(_ctx.stringValue("OpsUpdateAlarmConfigFileResponse.ApprovalUrl"));
 		opsUpdateAlarmConfigFileResponse.setStatus(_ctx.stringValue("OpsUpdateAlarmConfigFileResponse.Status"));
 		opsUpdateAlarmConfigFileResponse.setFinished(_ctx.booleanValue("OpsUpdateAlarmConfigFileResponse.Finished"));
+		opsUpdateAlarmConfigFileResponse.setErrorInfo(_ctx.stringValue("OpsUpdateAlarmConfigFileResponse.ErrorInfo"));
 		opsUpdateAlarmConfigFileResponse.setToken(_ctx.stringValue("OpsUpdateAlarmConfigFileResponse.Token"));
 		opsUpdateAlarmConfigFileResponse.setIterationQuery(_ctx.booleanValue("OpsUpdateAlarmConfigFileResponse.IterationQuery"));
-		opsUpdateAlarmConfigFileResponse.setErrorInfo(_ctx.stringValue("OpsUpdateAlarmConfigFileResponse.ErrorInfo"));
+		opsUpdateAlarmConfigFileResponse.setApprovalUrl(_ctx.stringValue("OpsUpdateAlarmConfigFileResponse.ApprovalUrl"));
 
 		List<String> iterationTokens = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("OpsUpdateAlarmConfigFileResponse.IterationTokens.Length"); i++) {

@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsQueryHighRiskEventsResponse extends AcsResponse {
 
-	private String requestId;
+	private String endTime;
 
-	private String ncIps;
+	private String requestId;
 
 	private String startTime;
 
-	private String endTime;
+	private String ncIps;
 
 	private List<HighRiskMetricData> highRiskReleaseList;
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class OpsQueryHighRiskEventsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getNcIps() {
-		return this.ncIps;
-	}
-
-	public void setNcIps(String ncIps) {
-		this.ncIps = ncIps;
 	}
 
 	public String getStartTime() {
@@ -59,12 +59,12 @@ public class OpsQueryHighRiskEventsResponse extends AcsResponse {
 		this.startTime = startTime;
 	}
 
-	public String getEndTime() {
-		return this.endTime;
+	public String getNcIps() {
+		return this.ncIps;
 	}
 
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
+	public void setNcIps(String ncIps) {
+		this.ncIps = ncIps;
 	}
 
 	public List<HighRiskMetricData> getHighRiskReleaseList() {
@@ -77,23 +77,15 @@ public class OpsQueryHighRiskEventsResponse extends AcsResponse {
 
 	public static class HighRiskMetricData {
 
-		private String ncIp;
-
 		private String metricName;
 
 		private String highRiskEvent;
 
-		private String remarks;
-
 		private String timestamp;
 
-		public String getNcIp() {
-			return this.ncIp;
-		}
+		private String ncIp;
 
-		public void setNcIp(String ncIp) {
-			this.ncIp = ncIp;
-		}
+		private String remarks;
 
 		public String getMetricName() {
 			return this.metricName;
@@ -111,20 +103,28 @@ public class OpsQueryHighRiskEventsResponse extends AcsResponse {
 			this.highRiskEvent = highRiskEvent;
 		}
 
-		public String getRemarks() {
-			return this.remarks;
-		}
-
-		public void setRemarks(String remarks) {
-			this.remarks = remarks;
-		}
-
 		public String getTimestamp() {
 			return this.timestamp;
 		}
 
 		public void setTimestamp(String timestamp) {
 			this.timestamp = timestamp;
+		}
+
+		public String getNcIp() {
+			return this.ncIp;
+		}
+
+		public void setNcIp(String ncIp) {
+			this.ncIp = ncIp;
+		}
+
+		public String getRemarks() {
+			return this.remarks;
+		}
+
+		public void setRemarks(String remarks) {
+			this.remarks = remarks;
 		}
 	}
 

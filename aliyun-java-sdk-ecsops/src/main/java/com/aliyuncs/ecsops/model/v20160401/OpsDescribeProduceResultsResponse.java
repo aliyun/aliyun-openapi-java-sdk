@@ -47,21 +47,69 @@ public class OpsDescribeProduceResultsResponse extends AcsResponse {
 
 	public static class ProduceResultSet {
 
+		private Integer status;
+
+		private Integer actionType;
+
+		private String resourceType;
+
+		private String commodityCode;
+
+		private Integer chargeType;
+
+		private String instanceId;
+
 		private Long id;
 
 		private Long orderId;
 
-		private String instanceId;
+		public Integer getStatus() {
+			return this.status;
+		}
 
-		private Integer status;
+		public void setStatus(Integer status) {
+			this.status = status;
+		}
 
-		private String resourceType;
+		public Integer getActionType() {
+			return this.actionType;
+		}
 
-		private Integer chargeType;
+		public void setActionType(Integer actionType) {
+			this.actionType = actionType;
+		}
 
-		private Integer actionType;
+		public String getResourceType() {
+			return this.resourceType;
+		}
 
-		private String commodityCode;
+		public void setResourceType(String resourceType) {
+			this.resourceType = resourceType;
+		}
+
+		public String getCommodityCode() {
+			return this.commodityCode;
+		}
+
+		public void setCommodityCode(String commodityCode) {
+			this.commodityCode = commodityCode;
+		}
+
+		public Integer getChargeType() {
+			return this.chargeType;
+		}
+
+		public void setChargeType(Integer chargeType) {
+			this.chargeType = chargeType;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
 
 		public Long getId() {
 			return this.id;
@@ -77,54 +125,6 @@ public class OpsDescribeProduceResultsResponse extends AcsResponse {
 
 		public void setOrderId(Long orderId) {
 			this.orderId = orderId;
-		}
-
-		public String getInstanceId() {
-			return this.instanceId;
-		}
-
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
-
-		public Integer getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(Integer status) {
-			this.status = status;
-		}
-
-		public String getResourceType() {
-			return this.resourceType;
-		}
-
-		public void setResourceType(String resourceType) {
-			this.resourceType = resourceType;
-		}
-
-		public Integer getChargeType() {
-			return this.chargeType;
-		}
-
-		public void setChargeType(Integer chargeType) {
-			this.chargeType = chargeType;
-		}
-
-		public Integer getActionType() {
-			return this.actionType;
-		}
-
-		public void setActionType(Integer actionType) {
-			this.actionType = actionType;
-		}
-
-		public String getCommodityCode() {
-			return this.commodityCode;
-		}
-
-		public void setCommodityCode(String commodityCode) {
-			this.commodityCode = commodityCode;
 		}
 	}
 

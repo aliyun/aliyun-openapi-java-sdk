@@ -22,10 +22,10 @@ public class OpsQueryDiskMigrateProgressResponseUnmarshaller {
 
 	public static OpsQueryDiskMigrateProgressResponse unmarshall(OpsQueryDiskMigrateProgressResponse opsQueryDiskMigrateProgressResponse, UnmarshallerContext _ctx) {
 		
-		opsQueryDiskMigrateProgressResponse.setCode(_ctx.stringValue("OpsQueryDiskMigrateProgressResponse.Code"));
 		opsQueryDiskMigrateProgressResponse.setMessage(_ctx.stringValue("OpsQueryDiskMigrateProgressResponse.Message"));
-		opsQueryDiskMigrateProgressResponse.setSuccess(_ctx.stringValue("OpsQueryDiskMigrateProgressResponse.Success"));
 		opsQueryDiskMigrateProgressResponse.setLoadProgress(_ctx.longValue("OpsQueryDiskMigrateProgressResponse.LoadProgress"));
+		opsQueryDiskMigrateProgressResponse.setCode(_ctx.stringValue("OpsQueryDiskMigrateProgressResponse.Code"));
+		opsQueryDiskMigrateProgressResponse.setSuccess(_ctx.stringValue("OpsQueryDiskMigrateProgressResponse.Success"));
 	 
 	 	return opsQueryDiskMigrateProgressResponse;
 	}

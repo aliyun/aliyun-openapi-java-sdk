@@ -24,8 +24,8 @@ public class OpsSgModifyQueueIntervalResponseUnmarshaller {
 	public static OpsSgModifyQueueIntervalResponse unmarshall(OpsSgModifyQueueIntervalResponse opsSgModifyQueueIntervalResponse, UnmarshallerContext _ctx) {
 		
 		opsSgModifyQueueIntervalResponse.setRequestId(_ctx.stringValue("OpsSgModifyQueueIntervalResponse.RequestId"));
-		opsSgModifyQueueIntervalResponse.setCode(_ctx.stringValue("OpsSgModifyQueueIntervalResponse.Code"));
 		opsSgModifyQueueIntervalResponse.setMessage(_ctx.stringValue("OpsSgModifyQueueIntervalResponse.Message"));
+		opsSgModifyQueueIntervalResponse.setCode(_ctx.stringValue("OpsSgModifyQueueIntervalResponse.Code"));
 		opsSgModifyQueueIntervalResponse.setSuccess(_ctx.booleanValue("OpsSgModifyQueueIntervalResponse.Success"));
 
 		Data data = new Data();

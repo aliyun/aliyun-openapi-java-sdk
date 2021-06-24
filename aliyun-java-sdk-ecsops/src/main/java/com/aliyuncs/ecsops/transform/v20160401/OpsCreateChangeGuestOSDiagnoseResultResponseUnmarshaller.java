@@ -32,8 +32,8 @@ public class OpsCreateChangeGuestOSDiagnoseResultResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("OpsCreateChangeGuestOSDiagnoseResultResponse.Data.Length"); i++) {
 			GuestOSDiagnoseResult guestOSDiagnoseResult = new GuestOSDiagnoseResult();
 			guestOSDiagnoseResult.setStatus(_ctx.stringValue("OpsCreateChangeGuestOSDiagnoseResultResponse.Data["+ i +"].Status"));
-			guestOSDiagnoseResult.setName(_ctx.stringValue("OpsCreateChangeGuestOSDiagnoseResultResponse.Data["+ i +"].Name"));
 			guestOSDiagnoseResult.setParameters(_ctx.stringValue("OpsCreateChangeGuestOSDiagnoseResultResponse.Data["+ i +"].Parameters"));
+			guestOSDiagnoseResult.setName(_ctx.stringValue("OpsCreateChangeGuestOSDiagnoseResultResponse.Data["+ i +"].Name"));
 
 			data.add(guestOSDiagnoseResult);
 		}

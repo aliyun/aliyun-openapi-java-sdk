@@ -47,23 +47,15 @@ public class OpsDescribeGroupResourceResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Long groupId;
-
 		private String vpcId;
 
 		private String groupNo;
 
+		private Long groupId;
+
 		private String groupDesc;
 
 		private List<String> dirtyVms;
-
-		public Long getGroupId() {
-			return this.groupId;
-		}
-
-		public void setGroupId(Long groupId) {
-			this.groupId = groupId;
-		}
 
 		public String getVpcId() {
 			return this.vpcId;
@@ -79,6 +71,14 @@ public class OpsDescribeGroupResourceResponse extends AcsResponse {
 
 		public void setGroupNo(String groupNo) {
 			this.groupNo = groupNo;
+		}
+
+		public Long getGroupId() {
+			return this.groupId;
+		}
+
+		public void setGroupId(Long groupId) {
+			this.groupId = groupId;
 		}
 
 		public String getGroupDesc() {

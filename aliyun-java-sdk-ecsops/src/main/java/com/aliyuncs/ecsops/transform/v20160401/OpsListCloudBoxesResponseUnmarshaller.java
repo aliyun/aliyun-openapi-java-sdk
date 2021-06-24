@@ -36,12 +36,12 @@ public class OpsListCloudBoxesResponseUnmarshaller {
 		List<CloudBoxSet> cloudBoxSets = new ArrayList<CloudBoxSet>();
 		for (int i = 0; i < _ctx.lengthValue("OpsListCloudBoxesResponse.CloudBoxSets.Length"); i++) {
 			CloudBoxSet cloudBoxSet = new CloudBoxSet();
+			cloudBoxSet.setStatus(_ctx.stringValue("OpsListCloudBoxesResponse.CloudBoxSets["+ i +"].Status"));
 			cloudBoxSet.setCloudBoxId(_ctx.stringValue("OpsListCloudBoxesResponse.CloudBoxSets["+ i +"].CloudBoxId"));
 			cloudBoxSet.setDescription(_ctx.stringValue("OpsListCloudBoxesResponse.CloudBoxSets["+ i +"].Description"));
-			cloudBoxSet.setCloudBoxName(_ctx.stringValue("OpsListCloudBoxesResponse.CloudBoxSets["+ i +"].CloudBoxName"));
-			cloudBoxSet.setCloudBoxSiteId(_ctx.stringValue("OpsListCloudBoxesResponse.CloudBoxSets["+ i +"].CloudBoxSiteId"));
 			cloudBoxSet.setZoneId(_ctx.stringValue("OpsListCloudBoxesResponse.CloudBoxSets["+ i +"].ZoneId"));
-			cloudBoxSet.setStatus(_ctx.stringValue("OpsListCloudBoxesResponse.CloudBoxSets["+ i +"].Status"));
+			cloudBoxSet.setCloudBoxSiteId(_ctx.stringValue("OpsListCloudBoxesResponse.CloudBoxSets["+ i +"].CloudBoxSiteId"));
+			cloudBoxSet.setCloudBoxName(_ctx.stringValue("OpsListCloudBoxesResponse.CloudBoxSets["+ i +"].CloudBoxName"));
 
 			List<String> businessStatus = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("OpsListCloudBoxesResponse.CloudBoxSets["+ i +"].BusinessStatus.Length"); j++) {
@@ -49,25 +49,25 @@ public class OpsListCloudBoxesResponseUnmarshaller {
 			}
 			cloudBoxSet.setBusinessStatus(businessStatus);
 
-			LifecycleAttribute lifecycleAttribute = new LifecycleAttribute();
-			lifecycleAttribute.setExpiredTime(_ctx.stringValue("OpsListCloudBoxesResponse.CloudBoxSets["+ i +"].LifecycleAttribute.ExpiredTime"));
-			lifecycleAttribute.setStartServiceTime(_ctx.stringValue("OpsListCloudBoxesResponse.CloudBoxSets["+ i +"].LifecycleAttribute.StartServiceTime"));
-			cloudBoxSet.setLifecycleAttribute(lifecycleAttribute);
-
 			CloudBoxCapacity cloudBoxCapacity = new CloudBoxCapacity();
 			cloudBoxCapacity.setBlockStorageCapacity(_ctx.floatValue("OpsListCloudBoxesResponse.CloudBoxSets["+ i +"].CloudBoxCapacity.BlockStorageCapacity"));
 
 			List<EcsCapacitySet> ecsCapacitySets = new ArrayList<EcsCapacitySet>();
 			for (int j = 0; j < _ctx.lengthValue("OpsListCloudBoxesResponse.CloudBoxSets["+ i +"].CloudBoxCapacity.EcsCapacitySets.Length"); j++) {
 				EcsCapacitySet ecsCapacitySet = new EcsCapacitySet();
-				ecsCapacitySet.setInstanceTypeName(_ctx.stringValue("OpsListCloudBoxesResponse.CloudBoxSets["+ i +"].CloudBoxCapacity.EcsCapacitySets["+ j +"].InstanceTypeName"));
 				ecsCapacitySet.setInstanceTypeCount(_ctx.integerValue("OpsListCloudBoxesResponse.CloudBoxSets["+ i +"].CloudBoxCapacity.EcsCapacitySets["+ j +"].InstanceTypeCount"));
+				ecsCapacitySet.setInstanceTypeName(_ctx.stringValue("OpsListCloudBoxesResponse.CloudBoxSets["+ i +"].CloudBoxCapacity.EcsCapacitySets["+ j +"].InstanceTypeName"));
 				ecsCapacitySet.setInstanceTypeFamily(_ctx.stringValue("OpsListCloudBoxesResponse.CloudBoxSets["+ i +"].CloudBoxCapacity.EcsCapacitySets["+ j +"].InstanceTypeFamily"));
 
 				ecsCapacitySets.add(ecsCapacitySet);
 			}
 			cloudBoxCapacity.setEcsCapacitySets(ecsCapacitySets);
 			cloudBoxSet.setCloudBoxCapacity(cloudBoxCapacity);
+
+			LifecycleAttribute lifecycleAttribute = new LifecycleAttribute();
+			lifecycleAttribute.setExpiredTime(_ctx.stringValue("OpsListCloudBoxesResponse.CloudBoxSets["+ i +"].LifecycleAttribute.ExpiredTime"));
+			lifecycleAttribute.setStartServiceTime(_ctx.stringValue("OpsListCloudBoxesResponse.CloudBoxSets["+ i +"].LifecycleAttribute.StartServiceTime"));
+			cloudBoxSet.setLifecycleAttribute(lifecycleAttribute);
 
 			cloudBoxSets.add(cloudBoxSet);
 		}

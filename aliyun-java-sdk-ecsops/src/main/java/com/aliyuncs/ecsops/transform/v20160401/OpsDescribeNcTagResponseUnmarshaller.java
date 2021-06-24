@@ -27,16 +27,16 @@ public class OpsDescribeNcTagResponseUnmarshaller {
 	public static OpsDescribeNcTagResponse unmarshall(OpsDescribeNcTagResponse opsDescribeNcTagResponse, UnmarshallerContext _ctx) {
 		
 		opsDescribeNcTagResponse.setRequestId(_ctx.stringValue("OpsDescribeNcTagResponse.RequestId"));
-		opsDescribeNcTagResponse.setCode(_ctx.stringValue("OpsDescribeNcTagResponse.Code"));
 		opsDescribeNcTagResponse.setMessage(_ctx.stringValue("OpsDescribeNcTagResponse.Message"));
+		opsDescribeNcTagResponse.setCode(_ctx.stringValue("OpsDescribeNcTagResponse.Code"));
 		opsDescribeNcTagResponse.setSuccess(_ctx.stringValue("OpsDescribeNcTagResponse.Success"));
 
 		List<Event> tags = new ArrayList<Event>();
 		for (int i = 0; i < _ctx.lengthValue("OpsDescribeNcTagResponse.Tags.Length"); i++) {
 			Event event = new Event();
 			event.setNcId(_ctx.stringValue("OpsDescribeNcTagResponse.Tags["+ i +"].NcId"));
-			event.setTagKey(_ctx.stringValue("OpsDescribeNcTagResponse.Tags["+ i +"].TagKey"));
 			event.setTagValue(_ctx.stringValue("OpsDescribeNcTagResponse.Tags["+ i +"].TagValue"));
+			event.setTagKey(_ctx.stringValue("OpsDescribeNcTagResponse.Tags["+ i +"].TagKey"));
 
 			tags.add(event);
 		}

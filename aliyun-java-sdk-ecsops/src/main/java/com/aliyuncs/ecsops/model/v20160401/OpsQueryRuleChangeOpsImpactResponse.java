@@ -25,29 +25,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsQueryRuleChangeOpsImpactResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String status;
 
 	private Boolean finished;
+
+	private String requestId;
+
+	private String errorInfo;
 
 	private String token;
 
 	private Boolean iterationQuery;
 
-	private String errorInfo;
-
 	private List<MatchedException> matchedExceptions;
 
 	private List<String> iterationTokens;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getStatus() {
 		return this.status;
@@ -65,6 +57,22 @@ public class OpsQueryRuleChangeOpsImpactResponse extends AcsResponse {
 		this.finished = finished;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getErrorInfo() {
+		return this.errorInfo;
+	}
+
+	public void setErrorInfo(String errorInfo) {
+		this.errorInfo = errorInfo;
+	}
+
 	public String getToken() {
 		return this.token;
 	}
@@ -79,14 +87,6 @@ public class OpsQueryRuleChangeOpsImpactResponse extends AcsResponse {
 
 	public void setIterationQuery(Boolean iterationQuery) {
 		this.iterationQuery = iterationQuery;
-	}
-
-	public String getErrorInfo() {
-		return this.errorInfo;
-	}
-
-	public void setErrorInfo(String errorInfo) {
-		this.errorInfo = errorInfo;
 	}
 
 	public List<MatchedException> getMatchedExceptions() {
@@ -107,40 +107,24 @@ public class OpsQueryRuleChangeOpsImpactResponse extends AcsResponse {
 
 	public static class MatchedException {
 
-		private String additionalInfo;
-
-		private String ncIp;
-
-		private String clusterName;
+		private String firstMatchedTime;
 
 		private String matchedFeatures;
 
 		private String productName;
 
-		private String firstMatchedTime;
+		private String clusterName;
 
-		public String getAdditionalInfo() {
-			return this.additionalInfo;
+		private String ncIp;
+
+		private String additionalInfo;
+
+		public String getFirstMatchedTime() {
+			return this.firstMatchedTime;
 		}
 
-		public void setAdditionalInfo(String additionalInfo) {
-			this.additionalInfo = additionalInfo;
-		}
-
-		public String getNcIp() {
-			return this.ncIp;
-		}
-
-		public void setNcIp(String ncIp) {
-			this.ncIp = ncIp;
-		}
-
-		public String getClusterName() {
-			return this.clusterName;
-		}
-
-		public void setClusterName(String clusterName) {
-			this.clusterName = clusterName;
+		public void setFirstMatchedTime(String firstMatchedTime) {
+			this.firstMatchedTime = firstMatchedTime;
 		}
 
 		public String getMatchedFeatures() {
@@ -159,12 +143,28 @@ public class OpsQueryRuleChangeOpsImpactResponse extends AcsResponse {
 			this.productName = productName;
 		}
 
-		public String getFirstMatchedTime() {
-			return this.firstMatchedTime;
+		public String getClusterName() {
+			return this.clusterName;
 		}
 
-		public void setFirstMatchedTime(String firstMatchedTime) {
-			this.firstMatchedTime = firstMatchedTime;
+		public void setClusterName(String clusterName) {
+			this.clusterName = clusterName;
+		}
+
+		public String getNcIp() {
+			return this.ncIp;
+		}
+
+		public void setNcIp(String ncIp) {
+			this.ncIp = ncIp;
+		}
+
+		public String getAdditionalInfo() {
+			return this.additionalInfo;
+		}
+
+		public void setAdditionalInfo(String additionalInfo) {
+			this.additionalInfo = additionalInfo;
 		}
 	}
 

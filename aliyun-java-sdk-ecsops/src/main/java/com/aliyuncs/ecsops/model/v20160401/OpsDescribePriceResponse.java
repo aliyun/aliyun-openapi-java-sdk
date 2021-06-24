@@ -89,19 +89,11 @@ public class OpsDescribePriceResponse extends AcsResponse {
 
 		public static class Rule {
 
-			private Long ruleId;
-
 			private String title;
 
 			private String name;
 
-			public Long getRuleId() {
-				return this.ruleId;
-			}
-
-			public void setRuleId(Long ruleId) {
-				this.ruleId = ruleId;
-			}
+			private Long ruleId;
 
 			public String getTitle() {
 				return this.title;
@@ -118,33 +110,33 @@ public class OpsDescribePriceResponse extends AcsResponse {
 			public void setName(String name) {
 				this.name = name;
 			}
+
+			public Long getRuleId() {
+				return this.ruleId;
+			}
+
+			public void setRuleId(Long ruleId) {
+				this.ruleId = ruleId;
+			}
 		}
 
 		public static class Order {
 
-			private Float originalPrice;
-
 			private Float discountPrice;
-
-			private Float spotInstanceTypePrice;
-
-			private Float spotInstanceTypeOriginalPrice;
 
 			private Float tradePrice;
 
+			private Float originalPrice;
+
+			private Float spotInstanceTypePrice;
+
 			private String currency;
+
+			private Float spotInstanceTypeOriginalPrice;
 
 			private List<Coupon> coupons;
 
 			private List<String> ruleIdSet;
-
-			public Float getOriginalPrice() {
-				return this.originalPrice;
-			}
-
-			public void setOriginalPrice(Float originalPrice) {
-				this.originalPrice = originalPrice;
-			}
 
 			public Float getDiscountPrice() {
 				return this.discountPrice;
@@ -152,22 +144,6 @@ public class OpsDescribePriceResponse extends AcsResponse {
 
 			public void setDiscountPrice(Float discountPrice) {
 				this.discountPrice = discountPrice;
-			}
-
-			public Float getSpotInstanceTypePrice() {
-				return this.spotInstanceTypePrice;
-			}
-
-			public void setSpotInstanceTypePrice(Float spotInstanceTypePrice) {
-				this.spotInstanceTypePrice = spotInstanceTypePrice;
-			}
-
-			public Float getSpotInstanceTypeOriginalPrice() {
-				return this.spotInstanceTypeOriginalPrice;
-			}
-
-			public void setSpotInstanceTypeOriginalPrice(Float spotInstanceTypeOriginalPrice) {
-				this.spotInstanceTypeOriginalPrice = spotInstanceTypeOriginalPrice;
 			}
 
 			public Float getTradePrice() {
@@ -178,12 +154,36 @@ public class OpsDescribePriceResponse extends AcsResponse {
 				this.tradePrice = tradePrice;
 			}
 
+			public Float getOriginalPrice() {
+				return this.originalPrice;
+			}
+
+			public void setOriginalPrice(Float originalPrice) {
+				this.originalPrice = originalPrice;
+			}
+
+			public Float getSpotInstanceTypePrice() {
+				return this.spotInstanceTypePrice;
+			}
+
+			public void setSpotInstanceTypePrice(Float spotInstanceTypePrice) {
+				this.spotInstanceTypePrice = spotInstanceTypePrice;
+			}
+
 			public String getCurrency() {
 				return this.currency;
 			}
 
 			public void setCurrency(String currency) {
 				this.currency = currency;
+			}
+
+			public Float getSpotInstanceTypeOriginalPrice() {
+				return this.spotInstanceTypeOriginalPrice;
+			}
+
+			public void setSpotInstanceTypeOriginalPrice(Float spotInstanceTypeOriginalPrice) {
+				this.spotInstanceTypeOriginalPrice = spotInstanceTypeOriginalPrice;
 			}
 
 			public List<Coupon> getCoupons() {
@@ -204,31 +204,15 @@ public class OpsDescribePriceResponse extends AcsResponse {
 
 			public static class Coupon {
 
-				private String couponNo;
-
-				private String name;
-
 				private String description;
 
 				private Float discountOff;
 
 				private Boolean isSelected;
 
-				public String getCouponNo() {
-					return this.couponNo;
-				}
+				private String couponNo;
 
-				public void setCouponNo(String couponNo) {
-					this.couponNo = couponNo;
-				}
-
-				public String getName() {
-					return this.name;
-				}
-
-				public void setName(String name) {
-					this.name = name;
-				}
+				private String name;
 
 				public String getDescription() {
 					return this.description;
@@ -253,22 +237,30 @@ public class OpsDescribePriceResponse extends AcsResponse {
 				public void setIsSelected(Boolean isSelected) {
 					this.isSelected = isSelected;
 				}
+
+				public String getCouponNo() {
+					return this.couponNo;
+				}
+
+				public void setCouponNo(String couponNo) {
+					this.couponNo = couponNo;
+				}
+
+				public String getName() {
+					return this.name;
+				}
+
+				public void setName(String name) {
+					this.name = name;
+				}
 			}
 		}
 
 		public static class PriceWarning {
 
-			private String code;
-
 			private String msg;
 
-			public String getCode() {
-				return this.code;
-			}
-
-			public void setCode(String code) {
-				this.code = code;
-			}
+			private String code;
 
 			public String getMsg() {
 				return this.msg;
@@ -276,6 +268,14 @@ public class OpsDescribePriceResponse extends AcsResponse {
 
 			public void setMsg(String msg) {
 				this.msg = msg;
+			}
+
+			public String getCode() {
+				return this.code;
+			}
+
+			public void setCode(String code) {
+				this.code = code;
 			}
 		}
 	}

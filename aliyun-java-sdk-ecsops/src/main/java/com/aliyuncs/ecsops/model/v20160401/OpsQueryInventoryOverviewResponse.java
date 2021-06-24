@@ -24,15 +24,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsQueryInventoryOverviewResponse extends AcsResponse {
 
+	private String message;
+
 	private String requestId;
 
 	private String code;
 
-	private String message;
-
 	private String success;
 
 	private Data data;
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -48,14 +56,6 @@ public class OpsQueryInventoryOverviewResponse extends AcsResponse {
 
 	public void setCode(String code) {
 		this.code = code;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
 	}
 
 	public String getSuccess() {
@@ -76,82 +76,50 @@ public class OpsQueryInventoryOverviewResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String gmtCreate;
-
-		private String gmtModified;
-
-		private String izNo;
-
-		private String flavorFamily;
-
-		private Long cycleCpu;
+		private Long memCycleDays;
 
 		private Long cycleMem;
 
-		private Long dailyIncreaseCpu;
+		private Long ds;
 
-		private Long dailyIncreaseMem;
-
-		private Long cpuCycleDays;
-
-		private Long memCycleDays;
-
-		private Long cycleCpuSaleRate;
-
-		private Long cycleMemSaleRate;
-
-		private Long elasticCpu;
-
-		private Long elasticMem;
-
-		private Long fragmentCpu;
+		private Long cycleCpu;
 
 		private Long fragmentMem;
 
 		private Long waterCpu;
 
+		private Long cycleMemSaleRate;
+
+		private String gmtModified;
+
+		private Long elasticMem;
+
+		private Long cpuCycleDays;
+
+		private Long elasticCpu;
+
+		private Long dailyIncreaseMem;
+
+		private String gmtCreate;
+
 		private Long waterMem;
 
-		private Long ds;
+		private Long cycleCpuSaleRate;
 
-		public String getGmtCreate() {
-			return this.gmtCreate;
+		private Long dailyIncreaseCpu;
+
+		private String izNo;
+
+		private String flavorFamily;
+
+		private Long fragmentCpu;
+
+		public Long getMemCycleDays() {
+			return this.memCycleDays;
 		}
 
-		public void setGmtCreate(String gmtCreate) {
-			this.gmtCreate = gmtCreate;
-		}
-
-		public String getGmtModified() {
-			return this.gmtModified;
-		}
-
-		public void setGmtModified(String gmtModified) {
-			this.gmtModified = gmtModified;
-		}
-
-		public String getIzNo() {
-			return this.izNo;
-		}
-
-		public void setIzNo(String izNo) {
-			this.izNo = izNo;
-		}
-
-		public String getFlavorFamily() {
-			return this.flavorFamily;
-		}
-
-		public void setFlavorFamily(String flavorFamily) {
-			this.flavorFamily = flavorFamily;
-		}
-
-		public Long getCycleCpu() {
-			return this.cycleCpu;
-		}
-
-		public void setCycleCpu(Long cycleCpu) {
-			this.cycleCpu = cycleCpu;
+		public void setMemCycleDays(Long memCycleDays) {
+			this.memCycleDays = memCycleDays;
 		}
 
 		public Long getCycleMem() {
@@ -162,76 +130,20 @@ public class OpsQueryInventoryOverviewResponse extends AcsResponse {
 			this.cycleMem = cycleMem;
 		}
 
-		public Long getDailyIncreaseCpu() {
-			return this.dailyIncreaseCpu;
+		public Long getDs() {
+			return this.ds;
 		}
 
-		public void setDailyIncreaseCpu(Long dailyIncreaseCpu) {
-			this.dailyIncreaseCpu = dailyIncreaseCpu;
+		public void setDs(Long ds) {
+			this.ds = ds;
 		}
 
-		public Long getDailyIncreaseMem() {
-			return this.dailyIncreaseMem;
+		public Long getCycleCpu() {
+			return this.cycleCpu;
 		}
 
-		public void setDailyIncreaseMem(Long dailyIncreaseMem) {
-			this.dailyIncreaseMem = dailyIncreaseMem;
-		}
-
-		public Long getCpuCycleDays() {
-			return this.cpuCycleDays;
-		}
-
-		public void setCpuCycleDays(Long cpuCycleDays) {
-			this.cpuCycleDays = cpuCycleDays;
-		}
-
-		public Long getMemCycleDays() {
-			return this.memCycleDays;
-		}
-
-		public void setMemCycleDays(Long memCycleDays) {
-			this.memCycleDays = memCycleDays;
-		}
-
-		public Long getCycleCpuSaleRate() {
-			return this.cycleCpuSaleRate;
-		}
-
-		public void setCycleCpuSaleRate(Long cycleCpuSaleRate) {
-			this.cycleCpuSaleRate = cycleCpuSaleRate;
-		}
-
-		public Long getCycleMemSaleRate() {
-			return this.cycleMemSaleRate;
-		}
-
-		public void setCycleMemSaleRate(Long cycleMemSaleRate) {
-			this.cycleMemSaleRate = cycleMemSaleRate;
-		}
-
-		public Long getElasticCpu() {
-			return this.elasticCpu;
-		}
-
-		public void setElasticCpu(Long elasticCpu) {
-			this.elasticCpu = elasticCpu;
-		}
-
-		public Long getElasticMem() {
-			return this.elasticMem;
-		}
-
-		public void setElasticMem(Long elasticMem) {
-			this.elasticMem = elasticMem;
-		}
-
-		public Long getFragmentCpu() {
-			return this.fragmentCpu;
-		}
-
-		public void setFragmentCpu(Long fragmentCpu) {
-			this.fragmentCpu = fragmentCpu;
+		public void setCycleCpu(Long cycleCpu) {
+			this.cycleCpu = cycleCpu;
 		}
 
 		public Long getFragmentMem() {
@@ -250,6 +162,62 @@ public class OpsQueryInventoryOverviewResponse extends AcsResponse {
 			this.waterCpu = waterCpu;
 		}
 
+		public Long getCycleMemSaleRate() {
+			return this.cycleMemSaleRate;
+		}
+
+		public void setCycleMemSaleRate(Long cycleMemSaleRate) {
+			this.cycleMemSaleRate = cycleMemSaleRate;
+		}
+
+		public String getGmtModified() {
+			return this.gmtModified;
+		}
+
+		public void setGmtModified(String gmtModified) {
+			this.gmtModified = gmtModified;
+		}
+
+		public Long getElasticMem() {
+			return this.elasticMem;
+		}
+
+		public void setElasticMem(Long elasticMem) {
+			this.elasticMem = elasticMem;
+		}
+
+		public Long getCpuCycleDays() {
+			return this.cpuCycleDays;
+		}
+
+		public void setCpuCycleDays(Long cpuCycleDays) {
+			this.cpuCycleDays = cpuCycleDays;
+		}
+
+		public Long getElasticCpu() {
+			return this.elasticCpu;
+		}
+
+		public void setElasticCpu(Long elasticCpu) {
+			this.elasticCpu = elasticCpu;
+		}
+
+		public Long getDailyIncreaseMem() {
+			return this.dailyIncreaseMem;
+		}
+
+		public void setDailyIncreaseMem(Long dailyIncreaseMem) {
+			this.dailyIncreaseMem = dailyIncreaseMem;
+		}
+
+		public String getGmtCreate() {
+			return this.gmtCreate;
+		}
+
+		public void setGmtCreate(String gmtCreate) {
+			this.gmtCreate = gmtCreate;
+		}
+
 		public Long getWaterMem() {
 			return this.waterMem;
 		}
@@ -258,12 +226,44 @@ public class OpsQueryInventoryOverviewResponse extends AcsResponse {
 			this.waterMem = waterMem;
 		}
 
-		public Long getDs() {
-			return this.ds;
+		public Long getCycleCpuSaleRate() {
+			return this.cycleCpuSaleRate;
 		}
 
-		public void setDs(Long ds) {
-			this.ds = ds;
+		public void setCycleCpuSaleRate(Long cycleCpuSaleRate) {
+			this.cycleCpuSaleRate = cycleCpuSaleRate;
+		}
+
+		public Long getDailyIncreaseCpu() {
+			return this.dailyIncreaseCpu;
+		}
+
+		public void setDailyIncreaseCpu(Long dailyIncreaseCpu) {
+			this.dailyIncreaseCpu = dailyIncreaseCpu;
+		}
+
+		public String getIzNo() {
+			return this.izNo;
+		}
+
+		public void setIzNo(String izNo) {
+			this.izNo = izNo;
+		}
+
+		public String getFlavorFamily() {
+			return this.flavorFamily;
+		}
+
+		public void setFlavorFamily(String flavorFamily) {
+			this.flavorFamily = flavorFamily;
+		}
+
+		public Long getFragmentCpu() {
+			return this.fragmentCpu;
+		}
+
+		public void setFragmentCpu(Long fragmentCpu) {
+			this.fragmentCpu = fragmentCpu;
 		}
 	}
 

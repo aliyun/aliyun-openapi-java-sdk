@@ -47,24 +47,24 @@ public class OpsQueryFunctionGroupsResponse extends AcsResponse {
 
 	public static class FunctionGroup {
 
-		private Long id;
+		private String parentGroupId;
 
 		private String groupId;
 
 		private String groupName;
 
-		private String groupCategory;
-
 		private Integer priority;
 
-		private String parentGroupId;
+		private String groupCategory;
 
-		public Long getId() {
-			return this.id;
+		private Long id;
+
+		public String getParentGroupId() {
+			return this.parentGroupId;
 		}
 
-		public void setId(Long id) {
-			this.id = id;
+		public void setParentGroupId(String parentGroupId) {
+			this.parentGroupId = parentGroupId;
 		}
 
 		public String getGroupId() {
@@ -83,14 +83,6 @@ public class OpsQueryFunctionGroupsResponse extends AcsResponse {
 			this.groupName = groupName;
 		}
 
-		public String getGroupCategory() {
-			return this.groupCategory;
-		}
-
-		public void setGroupCategory(String groupCategory) {
-			this.groupCategory = groupCategory;
-		}
-
 		public Integer getPriority() {
 			return this.priority;
 		}
@@ -99,12 +91,20 @@ public class OpsQueryFunctionGroupsResponse extends AcsResponse {
 			this.priority = priority;
 		}
 
-		public String getParentGroupId() {
-			return this.parentGroupId;
+		public String getGroupCategory() {
+			return this.groupCategory;
 		}
 
-		public void setParentGroupId(String parentGroupId) {
-			this.parentGroupId = parentGroupId;
+		public void setGroupCategory(String groupCategory) {
+			this.groupCategory = groupCategory;
+		}
+
+		public Long getId() {
+			return this.id;
+		}
+
+		public void setId(Long id) {
+			this.id = id;
 		}
 	}
 

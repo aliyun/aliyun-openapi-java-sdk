@@ -47,22 +47,22 @@ public class OpsQueryConfigHistoryResponse extends AcsResponse {
 
 	public static class OpsCommitRecord {
 
-		private String commitId;
+		private String uniqueKey;
 
 		private String commitDate;
 
-		private String uniqueKey;
-
 		private String description;
+
+		private String commitId;
 
 		private String author;
 
-		public String getCommitId() {
-			return this.commitId;
+		public String getUniqueKey() {
+			return this.uniqueKey;
 		}
 
-		public void setCommitId(String commitId) {
-			this.commitId = commitId;
+		public void setUniqueKey(String uniqueKey) {
+			this.uniqueKey = uniqueKey;
 		}
 
 		public String getCommitDate() {
@@ -73,20 +73,20 @@ public class OpsQueryConfigHistoryResponse extends AcsResponse {
 			this.commitDate = commitDate;
 		}
 
-		public String getUniqueKey() {
-			return this.uniqueKey;
-		}
-
-		public void setUniqueKey(String uniqueKey) {
-			this.uniqueKey = uniqueKey;
-		}
-
 		public String getDescription() {
 			return this.description;
 		}
 
 		public void setDescription(String description) {
 			this.description = description;
+		}
+
+		public String getCommitId() {
+			return this.commitId;
+		}
+
+		public void setCommitId(String commitId) {
+			this.commitId = commitId;
 		}
 
 		public String getAuthor() {

@@ -27,25 +27,25 @@ public class OpsQueryInstanceMigrateLogResponseUnmarshaller {
 	public static OpsQueryInstanceMigrateLogResponse unmarshall(OpsQueryInstanceMigrateLogResponse opsQueryInstanceMigrateLogResponse, UnmarshallerContext _ctx) {
 		
 		opsQueryInstanceMigrateLogResponse.setRequestId(_ctx.stringValue("OpsQueryInstanceMigrateLogResponse.RequestId"));
+		opsQueryInstanceMigrateLogResponse.setPageSize(_ctx.integerValue("OpsQueryInstanceMigrateLogResponse.PageSize"));
 		opsQueryInstanceMigrateLogResponse.setTotal(_ctx.integerValue("OpsQueryInstanceMigrateLogResponse.Total"));
 		opsQueryInstanceMigrateLogResponse.setPageNo(_ctx.integerValue("OpsQueryInstanceMigrateLogResponse.PageNo"));
-		opsQueryInstanceMigrateLogResponse.setPageSize(_ctx.integerValue("OpsQueryInstanceMigrateLogResponse.PageSize"));
 
 		List<MigrateLog> migrateLogs = new ArrayList<MigrateLog>();
 		for (int i = 0; i < _ctx.lengthValue("OpsQueryInstanceMigrateLogResponse.MigrateLogs.Length"); i++) {
 			MigrateLog migrateLog = new MigrateLog();
-			migrateLog.setId(_ctx.longValue("OpsQueryInstanceMigrateLogResponse.MigrateLogs["+ i +"].Id"));
-			migrateLog.setInstanceId(_ctx.stringValue("OpsQueryInstanceMigrateLogResponse.MigrateLogs["+ i +"].InstanceId"));
-			migrateLog.setSrcNcId(_ctx.stringValue("OpsQueryInstanceMigrateLogResponse.MigrateLogs["+ i +"].SrcNcId"));
-			migrateLog.setDestNcId(_ctx.stringValue("OpsQueryInstanceMigrateLogResponse.MigrateLogs["+ i +"].DestNcId"));
-			migrateLog.setRate(_ctx.longValue("OpsQueryInstanceMigrateLogResponse.MigrateLogs["+ i +"].Rate"));
 			migrateLog.setStatus(_ctx.stringValue("OpsQueryInstanceMigrateLogResponse.MigrateLogs["+ i +"].Status"));
-			migrateLog.setCreatedTime(_ctx.stringValue("OpsQueryInstanceMigrateLogResponse.MigrateLogs["+ i +"].CreatedTime"));
-			migrateLog.setModifiedTime(_ctx.stringValue("OpsQueryInstanceMigrateLogResponse.MigrateLogs["+ i +"].ModifiedTime"));
-			migrateLog.setReason(_ctx.stringValue("OpsQueryInstanceMigrateLogResponse.MigrateLogs["+ i +"].Reason"));
 			migrateLog.setSrcNcIp(_ctx.stringValue("OpsQueryInstanceMigrateLogResponse.MigrateLogs["+ i +"].SrcNcIp"));
+			migrateLog.setInstanceId(_ctx.stringValue("OpsQueryInstanceMigrateLogResponse.MigrateLogs["+ i +"].InstanceId"));
+			migrateLog.setDestNcId(_ctx.stringValue("OpsQueryInstanceMigrateLogResponse.MigrateLogs["+ i +"].DestNcId"));
+			migrateLog.setSrcNcId(_ctx.stringValue("OpsQueryInstanceMigrateLogResponse.MigrateLogs["+ i +"].SrcNcId"));
+			migrateLog.setModifiedTime(_ctx.stringValue("OpsQueryInstanceMigrateLogResponse.MigrateLogs["+ i +"].ModifiedTime"));
 			migrateLog.setDestNcIp(_ctx.stringValue("OpsQueryInstanceMigrateLogResponse.MigrateLogs["+ i +"].DestNcIp"));
 			migrateLog.setRetCode(_ctx.longValue("OpsQueryInstanceMigrateLogResponse.MigrateLogs["+ i +"].RetCode"));
+			migrateLog.setCreatedTime(_ctx.stringValue("OpsQueryInstanceMigrateLogResponse.MigrateLogs["+ i +"].CreatedTime"));
+			migrateLog.setReason(_ctx.stringValue("OpsQueryInstanceMigrateLogResponse.MigrateLogs["+ i +"].Reason"));
+			migrateLog.setId(_ctx.longValue("OpsQueryInstanceMigrateLogResponse.MigrateLogs["+ i +"].Id"));
+			migrateLog.setRate(_ctx.longValue("OpsQueryInstanceMigrateLogResponse.MigrateLogs["+ i +"].Rate"));
 
 			migrateLogs.add(migrateLog);
 		}

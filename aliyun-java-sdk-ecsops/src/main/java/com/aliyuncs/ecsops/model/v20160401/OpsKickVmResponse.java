@@ -47,29 +47,13 @@ public class OpsKickVmResponse extends AcsResponse {
 
 	public static class KickVmResult {
 
-		private String instanceId;
-
-		private String output;
-
 		private Long usedTime;
 
 		private String result;
 
-		public String getInstanceId() {
-			return this.instanceId;
-		}
+		private String instanceId;
 
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
-
-		public String getOutput() {
-			return this.output;
-		}
-
-		public void setOutput(String output) {
-			this.output = output;
-		}
+		private String output;
 
 		public Long getUsedTime() {
 			return this.usedTime;
@@ -85,6 +69,22 @@ public class OpsKickVmResponse extends AcsResponse {
 
 		public void setResult(String result) {
 			this.result = result;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public String getOutput() {
+			return this.output;
+		}
+
+		public void setOutput(String output) {
+			this.output = output;
 		}
 	}
 

@@ -28,23 +28,23 @@ public class OpsCoreApiStatsQueryLatestResponseUnmarshaller {
 	public static OpsCoreApiStatsQueryLatestResponse unmarshall(OpsCoreApiStatsQueryLatestResponse opsCoreApiStatsQueryLatestResponse, UnmarshallerContext _ctx) {
 		
 		opsCoreApiStatsQueryLatestResponse.setRequestId(_ctx.stringValue("OpsCoreApiStatsQueryLatestResponse.RequestId"));
-		opsCoreApiStatsQueryLatestResponse.setCode(_ctx.stringValue("OpsCoreApiStatsQueryLatestResponse.Code"));
 		opsCoreApiStatsQueryLatestResponse.setMessage(_ctx.stringValue("OpsCoreApiStatsQueryLatestResponse.Message"));
+		opsCoreApiStatsQueryLatestResponse.setCode(_ctx.stringValue("OpsCoreApiStatsQueryLatestResponse.Code"));
 		opsCoreApiStatsQueryLatestResponse.setSuccess(_ctx.stringValue("OpsCoreApiStatsQueryLatestResponse.Success"));
 
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("OpsCoreApiStatsQueryLatestResponse.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
-			dataItem.setRegionId(_ctx.stringValue("OpsCoreApiStatsQueryLatestResponse.Data["+ i +"].RegionId"));
 			dataItem.setTimestamp(_ctx.longValue("OpsCoreApiStatsQueryLatestResponse.Data["+ i +"].Timestamp"));
+			dataItem.setRegionId(_ctx.stringValue("OpsCoreApiStatsQueryLatestResponse.Data["+ i +"].RegionId"));
 
 			List<ApiStat> apiStats = new ArrayList<ApiStat>();
 			for (int j = 0; j < _ctx.lengthValue("OpsCoreApiStatsQueryLatestResponse.Data["+ i +"].ApiStats.Length"); j++) {
 				ApiStat apiStat = new ApiStat();
-				apiStat.setApiType(_ctx.stringValue("OpsCoreApiStatsQueryLatestResponse.Data["+ i +"].ApiStats["+ j +"].ApiType"));
 				apiStat.setFailureCount(_ctx.longValue("OpsCoreApiStatsQueryLatestResponse.Data["+ i +"].ApiStats["+ j +"].FailureCount"));
-				apiStat.setResponseTimeAvg(_ctx.floatValue("OpsCoreApiStatsQueryLatestResponse.Data["+ i +"].ApiStats["+ j +"].ResponseTimeAvg"));
+				apiStat.setApiType(_ctx.stringValue("OpsCoreApiStatsQueryLatestResponse.Data["+ i +"].ApiStats["+ j +"].ApiType"));
 				apiStat.setTotalCount(_ctx.longValue("OpsCoreApiStatsQueryLatestResponse.Data["+ i +"].ApiStats["+ j +"].TotalCount"));
+				apiStat.setResponseTimeAvg(_ctx.floatValue("OpsCoreApiStatsQueryLatestResponse.Data["+ i +"].ApiStats["+ j +"].ResponseTimeAvg"));
 
 				apiStats.add(apiStat);
 			}

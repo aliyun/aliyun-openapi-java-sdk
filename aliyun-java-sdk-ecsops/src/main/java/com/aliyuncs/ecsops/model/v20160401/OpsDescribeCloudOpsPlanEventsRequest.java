@@ -17,7 +17,6 @@ package com.aliyuncs.ecsops.model.v20160401;
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
 import com.aliyuncs.http.MethodType;
-import com.aliyuncs.ecsops.Endpoint;
 
 /**
  * @author auto create
@@ -46,16 +45,12 @@ public class OpsDescribeCloudOpsPlanEventsRequest extends RpcAcsRequest<OpsDescr
 
 	private String auditParamStr;
 
-	private List<String> resourceIdss;
-
 	private String status;
+
+	private List<String> resourceIdss;
 	public OpsDescribeCloudOpsPlanEventsRequest() {
-		super("Ecsops", "2016-04-01", "OpsDescribeCloudOpsPlanEvents", "ecs");
+		super("Ecsops", "2016-04-01", "OpsDescribeCloudOpsPlanEvents", "ecsops");
 		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
 	}
 
 	public String getSource() {
@@ -170,6 +165,17 @@ public class OpsDescribeCloudOpsPlanEventsRequest extends RpcAcsRequest<OpsDescr
 		}
 	}
 
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+		if(status != null){
+			putQueryParameter("Status", status);
+		}
+	}
+
 	public List<String> getResourceIdss() {
 		return this.resourceIdss;
 	}
@@ -181,17 +187,6 @@ public class OpsDescribeCloudOpsPlanEventsRequest extends RpcAcsRequest<OpsDescr
 				putQueryParameter("ResourceIds." + (i + 1) , resourceIdss.get(i));
 			}
 		}	
-	}
-
-	public String getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-		if(status != null){
-			putQueryParameter("Status", status);
-		}
 	}
 
 	@Override

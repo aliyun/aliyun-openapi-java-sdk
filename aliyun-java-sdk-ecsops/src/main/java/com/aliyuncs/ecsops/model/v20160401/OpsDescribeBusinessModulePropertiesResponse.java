@@ -47,43 +47,19 @@ public class OpsDescribeBusinessModulePropertiesResponse extends AcsResponse {
 
 	public static class BusinessModulePropertySet {
 
-		private Long id;
-
-		private Long businessId;
-
-		private String moduleCode;
-
 		private String propertyCode;
 
 		private Long moduleId;
 
-		private String propertyValue;
-
 		private String propertyDisplayValue;
 
-		public Long getId() {
-			return this.id;
-		}
+		private String moduleCode;
 
-		public void setId(Long id) {
-			this.id = id;
-		}
+		private Long businessId;
 
-		public Long getBusinessId() {
-			return this.businessId;
-		}
+		private String propertyValue;
 
-		public void setBusinessId(Long businessId) {
-			this.businessId = businessId;
-		}
-
-		public String getModuleCode() {
-			return this.moduleCode;
-		}
-
-		public void setModuleCode(String moduleCode) {
-			this.moduleCode = moduleCode;
-		}
+		private Long id;
 
 		public String getPropertyCode() {
 			return this.propertyCode;
@@ -101,6 +77,30 @@ public class OpsDescribeBusinessModulePropertiesResponse extends AcsResponse {
 			this.moduleId = moduleId;
 		}
 
+		public String getPropertyDisplayValue() {
+			return this.propertyDisplayValue;
+		}
+
+		public void setPropertyDisplayValue(String propertyDisplayValue) {
+			this.propertyDisplayValue = propertyDisplayValue;
+		}
+
+		public String getModuleCode() {
+			return this.moduleCode;
+		}
+
+		public void setModuleCode(String moduleCode) {
+			this.moduleCode = moduleCode;
+		}
+
+		public Long getBusinessId() {
+			return this.businessId;
+		}
+
+		public void setBusinessId(Long businessId) {
+			this.businessId = businessId;
+		}
+
 		public String getPropertyValue() {
 			return this.propertyValue;
 		}
@@ -109,12 +109,12 @@ public class OpsDescribeBusinessModulePropertiesResponse extends AcsResponse {
 			this.propertyValue = propertyValue;
 		}
 
-		public String getPropertyDisplayValue() {
-			return this.propertyDisplayValue;
+		public Long getId() {
+			return this.id;
 		}
 
-		public void setPropertyDisplayValue(String propertyDisplayValue) {
-			this.propertyDisplayValue = propertyDisplayValue;
+		public void setId(Long id) {
+			this.id = id;
 		}
 	}
 

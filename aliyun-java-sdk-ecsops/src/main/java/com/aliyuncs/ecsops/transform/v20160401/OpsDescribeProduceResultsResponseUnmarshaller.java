@@ -31,14 +31,14 @@ public class OpsDescribeProduceResultsResponseUnmarshaller {
 		List<ProduceResultSet> produceResultSets = new ArrayList<ProduceResultSet>();
 		for (int i = 0; i < _ctx.lengthValue("OpsDescribeProduceResultsResponse.ProduceResultSets.Length"); i++) {
 			ProduceResultSet produceResultSet = new ProduceResultSet();
+			produceResultSet.setStatus(_ctx.integerValue("OpsDescribeProduceResultsResponse.ProduceResultSets["+ i +"].Status"));
+			produceResultSet.setActionType(_ctx.integerValue("OpsDescribeProduceResultsResponse.ProduceResultSets["+ i +"].ActionType"));
+			produceResultSet.setResourceType(_ctx.stringValue("OpsDescribeProduceResultsResponse.ProduceResultSets["+ i +"].ResourceType"));
+			produceResultSet.setCommodityCode(_ctx.stringValue("OpsDescribeProduceResultsResponse.ProduceResultSets["+ i +"].commodityCode"));
+			produceResultSet.setChargeType(_ctx.integerValue("OpsDescribeProduceResultsResponse.ProduceResultSets["+ i +"].ChargeType"));
+			produceResultSet.setInstanceId(_ctx.stringValue("OpsDescribeProduceResultsResponse.ProduceResultSets["+ i +"].InstanceId"));
 			produceResultSet.setId(_ctx.longValue("OpsDescribeProduceResultsResponse.ProduceResultSets["+ i +"].Id"));
 			produceResultSet.setOrderId(_ctx.longValue("OpsDescribeProduceResultsResponse.ProduceResultSets["+ i +"].OrderId"));
-			produceResultSet.setInstanceId(_ctx.stringValue("OpsDescribeProduceResultsResponse.ProduceResultSets["+ i +"].InstanceId"));
-			produceResultSet.setStatus(_ctx.integerValue("OpsDescribeProduceResultsResponse.ProduceResultSets["+ i +"].Status"));
-			produceResultSet.setResourceType(_ctx.stringValue("OpsDescribeProduceResultsResponse.ProduceResultSets["+ i +"].ResourceType"));
-			produceResultSet.setChargeType(_ctx.integerValue("OpsDescribeProduceResultsResponse.ProduceResultSets["+ i +"].ChargeType"));
-			produceResultSet.setActionType(_ctx.integerValue("OpsDescribeProduceResultsResponse.ProduceResultSets["+ i +"].ActionType"));
-			produceResultSet.setCommodityCode(_ctx.stringValue("OpsDescribeProduceResultsResponse.ProduceResultSets["+ i +"].commodityCode"));
 
 			produceResultSets.add(produceResultSet);
 		}

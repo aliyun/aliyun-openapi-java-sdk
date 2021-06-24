@@ -28,23 +28,23 @@ public class OpsDescribeSetFirewallLogResponseUnmarshaller {
 		
 		opsDescribeSetFirewallLogResponse.setRequestId(_ctx.stringValue("OpsDescribeSetFirewallLogResponse.RequestId"));
 		opsDescribeSetFirewallLogResponse.setTotalCount(_ctx.integerValue("OpsDescribeSetFirewallLogResponse.TotalCount"));
-		opsDescribeSetFirewallLogResponse.setPageNumber(_ctx.integerValue("OpsDescribeSetFirewallLogResponse.PageNumber"));
 		opsDescribeSetFirewallLogResponse.setPageSize(_ctx.integerValue("OpsDescribeSetFirewallLogResponse.PageSize"));
+		opsDescribeSetFirewallLogResponse.setPageNumber(_ctx.integerValue("OpsDescribeSetFirewallLogResponse.PageNumber"));
 
 		List<Log> logs = new ArrayList<Log>();
 		for (int i = 0; i < _ctx.lengthValue("OpsDescribeSetFirewallLogResponse.Logs.Length"); i++) {
 			Log log = new Log();
+			log.setMsg(_ctx.stringValue("OpsDescribeSetFirewallLogResponse.Logs["+ i +"].Msg"));
+			log.setType(_ctx.stringValue("OpsDescribeSetFirewallLogResponse.Logs["+ i +"].Type"));
+			log.setPyncCode(_ctx.stringValue("OpsDescribeSetFirewallLogResponse.Logs["+ i +"].PyncCode"));
+			log.setMs(_ctx.stringValue("OpsDescribeSetFirewallLogResponse.Logs["+ i +"].Ms"));
+			log.setTime(_ctx.stringValue("OpsDescribeSetFirewallLogResponse.Logs["+ i +"].Time"));
+			log.setSuccess(_ctx.stringValue("OpsDescribeSetFirewallLogResponse.Logs["+ i +"].Success"));
+			log.setTopic(_ctx.stringValue("OpsDescribeSetFirewallLogResponse.Logs["+ i +"].Topic"));
+			log.setPath(_ctx.stringValue("OpsDescribeSetFirewallLogResponse.Logs["+ i +"].Path"));
+			log.setTypeName(_ctx.stringValue("OpsDescribeSetFirewallLogResponse.Logs["+ i +"].TypeName"));
 			log.setLogRequestId(_ctx.stringValue("OpsDescribeSetFirewallLogResponse.Logs["+ i +"].LogRequestId"));
 			log.setContent(_ctx.stringValue("OpsDescribeSetFirewallLogResponse.Logs["+ i +"].Content"));
-			log.setTime(_ctx.stringValue("OpsDescribeSetFirewallLogResponse.Logs["+ i +"].Time"));
-			log.setMs(_ctx.stringValue("OpsDescribeSetFirewallLogResponse.Logs["+ i +"].Ms"));
-			log.setPath(_ctx.stringValue("OpsDescribeSetFirewallLogResponse.Logs["+ i +"].Path"));
-			log.setTopic(_ctx.stringValue("OpsDescribeSetFirewallLogResponse.Logs["+ i +"].Topic"));
-			log.setSuccess(_ctx.stringValue("OpsDescribeSetFirewallLogResponse.Logs["+ i +"].Success"));
-			log.setPyncCode(_ctx.stringValue("OpsDescribeSetFirewallLogResponse.Logs["+ i +"].PyncCode"));
-			log.setType(_ctx.stringValue("OpsDescribeSetFirewallLogResponse.Logs["+ i +"].Type"));
-			log.setTypeName(_ctx.stringValue("OpsDescribeSetFirewallLogResponse.Logs["+ i +"].TypeName"));
-			log.setMsg(_ctx.stringValue("OpsDescribeSetFirewallLogResponse.Logs["+ i +"].Msg"));
 
 			logs.add(log);
 		}

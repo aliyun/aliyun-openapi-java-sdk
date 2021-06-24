@@ -29,10 +29,10 @@ public class OpsSituationalAwareResponseUnmarshaller {
 		opsSituationalAwareResponse.setRequestId(_ctx.stringValue("OpsSituationalAwareResponse.RequestId"));
 		opsSituationalAwareResponse.setStatus(_ctx.stringValue("OpsSituationalAwareResponse.Status"));
 		opsSituationalAwareResponse.setFinished(_ctx.booleanValue("OpsSituationalAwareResponse.Finished"));
-		opsSituationalAwareResponse.setToken(_ctx.stringValue("OpsSituationalAwareResponse.Token"));
-		opsSituationalAwareResponse.setIterationQuery(_ctx.booleanValue("OpsSituationalAwareResponse.IterationQuery"));
 		opsSituationalAwareResponse.setValidMachineIdCount(_ctx.integerValue("OpsSituationalAwareResponse.ValidMachineIdCount"));
 		opsSituationalAwareResponse.setErrorInfo(_ctx.stringValue("OpsSituationalAwareResponse.ErrorInfo"));
+		opsSituationalAwareResponse.setToken(_ctx.stringValue("OpsSituationalAwareResponse.Token"));
+		opsSituationalAwareResponse.setIterationQuery(_ctx.booleanValue("OpsSituationalAwareResponse.IterationQuery"));
 
 		List<String> iterationTokens = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("OpsSituationalAwareResponse.IterationTokens.Length"); i++) {
@@ -49,19 +49,19 @@ public class OpsSituationalAwareResponseUnmarshaller {
 		List<RootCause> rootCauseList = new ArrayList<RootCause>();
 		for (int i = 0; i < _ctx.lengthValue("OpsSituationalAwareResponse.RootCauseList.Length"); i++) {
 			RootCause rootCause = new RootCause();
-			rootCause.setAdditionalInfo(_ctx.stringValue("OpsSituationalAwareResponse.RootCauseList["+ i +"].AdditionalInfo"));
+			rootCause.setExceptionType(_ctx.stringValue("OpsSituationalAwareResponse.RootCauseList["+ i +"].ExceptionType"));
+			rootCause.setMessage(_ctx.stringValue("OpsSituationalAwareResponse.RootCauseList["+ i +"].Message"));
 			rootCause.setNcIp(_ctx.stringValue("OpsSituationalAwareResponse.RootCauseList["+ i +"].NcIp"));
+			rootCause.setInstanceType(_ctx.stringValue("OpsSituationalAwareResponse.RootCauseList["+ i +"].InstanceType"));
+			rootCause.setAdditionalInfo(_ctx.stringValue("OpsSituationalAwareResponse.RootCauseList["+ i +"].AdditionalInfo"));
+			rootCause.setDesc(_ctx.stringValue("OpsSituationalAwareResponse.RootCauseList["+ i +"].Desc"));
+			rootCause.setWarningValue(_ctx.stringValue("OpsSituationalAwareResponse.RootCauseList["+ i +"].WarningValue"));
+			rootCause.setWarningLevel(_ctx.stringValue("OpsSituationalAwareResponse.RootCauseList["+ i +"].WarningLevel"));
 			rootCause.setExceptionTime(_ctx.stringValue("OpsSituationalAwareResponse.RootCauseList["+ i +"].ExceptionTime"));
+			rootCause.setExceptionName(_ctx.stringValue("OpsSituationalAwareResponse.RootCauseList["+ i +"].ExceptionName"));
 			rootCause.setLevel(_ctx.integerValue("OpsSituationalAwareResponse.RootCauseList["+ i +"].Level"));
 			rootCause.setMachineId(_ctx.stringValue("OpsSituationalAwareResponse.RootCauseList["+ i +"].MachineId"));
-			rootCause.setExceptionType(_ctx.stringValue("OpsSituationalAwareResponse.RootCauseList["+ i +"].ExceptionType"));
-			rootCause.setInstanceType(_ctx.stringValue("OpsSituationalAwareResponse.RootCauseList["+ i +"].InstanceType"));
 			rootCause.setReason(_ctx.stringValue("OpsSituationalAwareResponse.RootCauseList["+ i +"].Reason"));
-			rootCause.setExceptionName(_ctx.stringValue("OpsSituationalAwareResponse.RootCauseList["+ i +"].ExceptionName"));
-			rootCause.setWarningLevel(_ctx.stringValue("OpsSituationalAwareResponse.RootCauseList["+ i +"].WarningLevel"));
-			rootCause.setWarningValue(_ctx.stringValue("OpsSituationalAwareResponse.RootCauseList["+ i +"].WarningValue"));
-			rootCause.setMessage(_ctx.stringValue("OpsSituationalAwareResponse.RootCauseList["+ i +"].Message"));
-			rootCause.setDesc(_ctx.stringValue("OpsSituationalAwareResponse.RootCauseList["+ i +"].Desc"));
 
 			List<String> supportTeams = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("OpsSituationalAwareResponse.RootCauseList["+ i +"].SupportTeams.Length"); j++) {

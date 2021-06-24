@@ -26,35 +26,27 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsQueryForIzResourceModifyResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String zoneId;
 
-	private String localName;
+	private String requestId;
 
 	private Map<Object,Object> deployedInstanceTypeToStatus;
 
+	private String localName;
+
 	private List<ResourcesInfo> availableResources;
-
-	private List<String> availableResourceCreation;
-
-	private List<String> availableDiskCategories;
-
-	private List<String> availableInstanceTypes;
-
-	private List<String> availableVolumeCategories;
-
-	private List<String> availableDedicatedHostTypes;
 
 	private List<String> dedicatedHostGenerations;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
+	private List<String> availableInstanceTypes;
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private List<String> availableDedicatedHostTypes;
+
+	private List<String> availableDiskCategories;
+
+	private List<String> availableResourceCreation;
+
+	private List<String> availableVolumeCategories;
 
 	public String getZoneId() {
 		return this.zoneId;
@@ -64,12 +56,12 @@ public class OpsQueryForIzResourceModifyResponse extends AcsResponse {
 		this.zoneId = zoneId;
 	}
 
-	public String getLocalName() {
-		return this.localName;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setLocalName(String localName) {
-		this.localName = localName;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Map<Object,Object> getDeployedInstanceTypeToStatus() {
@@ -80,52 +72,20 @@ public class OpsQueryForIzResourceModifyResponse extends AcsResponse {
 		this.deployedInstanceTypeToStatus = deployedInstanceTypeToStatus;
 	}
 
+	public String getLocalName() {
+		return this.localName;
+	}
+
+	public void setLocalName(String localName) {
+		this.localName = localName;
+	}
+
 	public List<ResourcesInfo> getAvailableResources() {
 		return this.availableResources;
 	}
 
 	public void setAvailableResources(List<ResourcesInfo> availableResources) {
 		this.availableResources = availableResources;
-	}
-
-	public List<String> getAvailableResourceCreation() {
-		return this.availableResourceCreation;
-	}
-
-	public void setAvailableResourceCreation(List<String> availableResourceCreation) {
-		this.availableResourceCreation = availableResourceCreation;
-	}
-
-	public List<String> getAvailableDiskCategories() {
-		return this.availableDiskCategories;
-	}
-
-	public void setAvailableDiskCategories(List<String> availableDiskCategories) {
-		this.availableDiskCategories = availableDiskCategories;
-	}
-
-	public List<String> getAvailableInstanceTypes() {
-		return this.availableInstanceTypes;
-	}
-
-	public void setAvailableInstanceTypes(List<String> availableInstanceTypes) {
-		this.availableInstanceTypes = availableInstanceTypes;
-	}
-
-	public List<String> getAvailableVolumeCategories() {
-		return this.availableVolumeCategories;
-	}
-
-	public void setAvailableVolumeCategories(List<String> availableVolumeCategories) {
-		this.availableVolumeCategories = availableVolumeCategories;
-	}
-
-	public List<String> getAvailableDedicatedHostTypes() {
-		return this.availableDedicatedHostTypes;
-	}
-
-	public void setAvailableDedicatedHostTypes(List<String> availableDedicatedHostTypes) {
-		this.availableDedicatedHostTypes = availableDedicatedHostTypes;
 	}
 
 	public List<String> getDedicatedHostGenerations() {
@@ -136,6 +96,46 @@ public class OpsQueryForIzResourceModifyResponse extends AcsResponse {
 		this.dedicatedHostGenerations = dedicatedHostGenerations;
 	}
 
+	public List<String> getAvailableInstanceTypes() {
+		return this.availableInstanceTypes;
+	}
+
+	public void setAvailableInstanceTypes(List<String> availableInstanceTypes) {
+		this.availableInstanceTypes = availableInstanceTypes;
+	}
+
+	public List<String> getAvailableDedicatedHostTypes() {
+		return this.availableDedicatedHostTypes;
+	}
+
+	public void setAvailableDedicatedHostTypes(List<String> availableDedicatedHostTypes) {
+		this.availableDedicatedHostTypes = availableDedicatedHostTypes;
+	}
+
+	public List<String> getAvailableDiskCategories() {
+		return this.availableDiskCategories;
+	}
+
+	public void setAvailableDiskCategories(List<String> availableDiskCategories) {
+		this.availableDiskCategories = availableDiskCategories;
+	}
+
+	public List<String> getAvailableResourceCreation() {
+		return this.availableResourceCreation;
+	}
+
+	public void setAvailableResourceCreation(List<String> availableResourceCreation) {
+		this.availableResourceCreation = availableResourceCreation;
+	}
+
+	public List<String> getAvailableVolumeCategories() {
+		return this.availableVolumeCategories;
+	}
+
+	public void setAvailableVolumeCategories(List<String> availableVolumeCategories) {
+		this.availableVolumeCategories = availableVolumeCategories;
+	}
+
 	public static class ResourcesInfo {
 
 		private Boolean ioOptimized;
@@ -144,15 +144,15 @@ public class OpsQueryForIzResourceModifyResponse extends AcsResponse {
 
 		private List<String> systemDiskCategories;
 
-		private List<String> dataDiskCategories;
+		private List<String> instanceGenerations;
 
-		private List<String> networkTypes;
+		private List<String> dataDiskCategories;
 
 		private List<String> instanceTypes;
 
 		private List<String> instanceTypeFamilies;
 
-		private List<String> instanceGenerations;
+		private List<String> networkTypes;
 
 		public Boolean getIoOptimized() {
 			return this.ioOptimized;
@@ -178,20 +178,20 @@ public class OpsQueryForIzResourceModifyResponse extends AcsResponse {
 			this.systemDiskCategories = systemDiskCategories;
 		}
 
+		public List<String> getInstanceGenerations() {
+			return this.instanceGenerations;
+		}
+
+		public void setInstanceGenerations(List<String> instanceGenerations) {
+			this.instanceGenerations = instanceGenerations;
+		}
+
 		public List<String> getDataDiskCategories() {
 			return this.dataDiskCategories;
 		}
 
 		public void setDataDiskCategories(List<String> dataDiskCategories) {
 			this.dataDiskCategories = dataDiskCategories;
-		}
-
-		public List<String> getNetworkTypes() {
-			return this.networkTypes;
-		}
-
-		public void setNetworkTypes(List<String> networkTypes) {
-			this.networkTypes = networkTypes;
 		}
 
 		public List<String> getInstanceTypes() {
@@ -210,12 +210,12 @@ public class OpsQueryForIzResourceModifyResponse extends AcsResponse {
 			this.instanceTypeFamilies = instanceTypeFamilies;
 		}
 
-		public List<String> getInstanceGenerations() {
-			return this.instanceGenerations;
+		public List<String> getNetworkTypes() {
+			return this.networkTypes;
 		}
 
-		public void setInstanceGenerations(List<String> instanceGenerations) {
-			this.instanceGenerations = instanceGenerations;
+		public void setNetworkTypes(List<String> networkTypes) {
+			this.networkTypes = networkTypes;
 		}
 	}
 

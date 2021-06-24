@@ -25,21 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsListCloudBoxDemandsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
 
 	private String nextToken;
 
+	private String requestId;
+
 	private List<CloudBoxDemandSet> cloudBoxDemandSets;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -57,6 +49,14 @@ public class OpsListCloudBoxDemandsResponse extends AcsResponse {
 		this.nextToken = nextToken;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	public List<CloudBoxDemandSet> getCloudBoxDemandSets() {
 		return this.cloudBoxDemandSets;
 	}
@@ -67,43 +67,19 @@ public class OpsListCloudBoxDemandsResponse extends AcsResponse {
 
 	public static class CloudBoxDemandSet {
 
-		private String cloudBoxId;
-
-		private String cloudBoxDemandId;
-
-		private Float blockStorageCapacity;
-
 		private String status;
 
 		private String demandType;
 
+		private String cloudBoxId;
+
+		private String cloudBoxDemandId;
+
 		private Integer duration;
 
+		private Float blockStorageCapacity;
+
 		private List<CloudBoxSkuSet> cloudBoxSkuSets;
-
-		public String getCloudBoxId() {
-			return this.cloudBoxId;
-		}
-
-		public void setCloudBoxId(String cloudBoxId) {
-			this.cloudBoxId = cloudBoxId;
-		}
-
-		public String getCloudBoxDemandId() {
-			return this.cloudBoxDemandId;
-		}
-
-		public void setCloudBoxDemandId(String cloudBoxDemandId) {
-			this.cloudBoxDemandId = cloudBoxDemandId;
-		}
-
-		public Float getBlockStorageCapacity() {
-			return this.blockStorageCapacity;
-		}
-
-		public void setBlockStorageCapacity(Float blockStorageCapacity) {
-			this.blockStorageCapacity = blockStorageCapacity;
-		}
 
 		public String getStatus() {
 			return this.status;
@@ -121,12 +97,36 @@ public class OpsListCloudBoxDemandsResponse extends AcsResponse {
 			this.demandType = demandType;
 		}
 
+		public String getCloudBoxId() {
+			return this.cloudBoxId;
+		}
+
+		public void setCloudBoxId(String cloudBoxId) {
+			this.cloudBoxId = cloudBoxId;
+		}
+
+		public String getCloudBoxDemandId() {
+			return this.cloudBoxDemandId;
+		}
+
+		public void setCloudBoxDemandId(String cloudBoxDemandId) {
+			this.cloudBoxDemandId = cloudBoxDemandId;
+		}
+
 		public Integer getDuration() {
 			return this.duration;
 		}
 
 		public void setDuration(Integer duration) {
 			this.duration = duration;
+		}
+
+		public Float getBlockStorageCapacity() {
+			return this.blockStorageCapacity;
+		}
+
+		public void setBlockStorageCapacity(Float blockStorageCapacity) {
+			this.blockStorageCapacity = blockStorageCapacity;
 		}
 
 		public List<CloudBoxSkuSet> getCloudBoxSkuSets() {

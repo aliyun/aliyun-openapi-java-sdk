@@ -47,94 +47,62 @@ public class OpsGetMonitorConfigResponse extends AcsResponse {
 
 	public static class MonitorConfig {
 
-		private String name;
-
-		private String monitorType;
-
-		private Integer interval;
-
-		private Integer timeRange;
-
-		private Boolean enable;
+		private String type;
 
 		private String doc;
 
-		private String type;
-
-		private String query;
-
 		private String analyse;
-
-		private String logstore;
-
-		private String slsConfigName;
-
-		private Integer silent;
-
-		private String detailMetric;
 
 		private Integer opsTimeout;
 
 		private Integer retentionTime;
 
+		private Integer timeRange;
+
+		private String logstore;
+
+		private String name;
+
+		private String slsConfigName;
+
+		private String monitorType;
+
+		private Integer silent;
+
+		private String detailMetric;
+
+		private String query;
+
+		private Integer interval;
+
+		private Boolean enable;
+
 		private List<Level> levels;
 
-		private List<String> slsUrlList;
-
-		private List<String> slsRegionProjectList;
-
-		private List<String> regions;
-
-		private List<String> linkedQuerys;
+		private List<String> linkedDimensions;
 
 		private List<String> notifyTokens;
 
+		private List<String> linkedQuerys;
+
 		private List<String> excludeKeys;
 
-		private List<String> linkedDimensions;
+		private List<String> regions;
+
+		private List<String> slsRegionProjectList;
+
+		private List<String> slsUrlList;
 
 		private EventCenter eventCenter;
 
 		private Exclusion exclusion;
 
-		public String getName() {
-			return this.name;
+		public String getType() {
+			return this.type;
 		}
 
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getMonitorType() {
-			return this.monitorType;
-		}
-
-		public void setMonitorType(String monitorType) {
-			this.monitorType = monitorType;
-		}
-
-		public Integer getInterval() {
-			return this.interval;
-		}
-
-		public void setInterval(Integer interval) {
-			this.interval = interval;
-		}
-
-		public Integer getTimeRange() {
-			return this.timeRange;
-		}
-
-		public void setTimeRange(Integer timeRange) {
-			this.timeRange = timeRange;
-		}
-
-		public Boolean getEnable() {
-			return this.enable;
-		}
-
-		public void setEnable(Boolean enable) {
-			this.enable = enable;
+		public void setType(String type) {
+			this.type = type;
 		}
 
 		public String getDoc() {
@@ -145,60 +113,12 @@ public class OpsGetMonitorConfigResponse extends AcsResponse {
 			this.doc = doc;
 		}
 
-		public String getType() {
-			return this.type;
-		}
-
-		public void setType(String type) {
-			this.type = type;
-		}
-
-		public String getQuery() {
-			return this.query;
-		}
-
-		public void setQuery(String query) {
-			this.query = query;
-		}
-
 		public String getAnalyse() {
 			return this.analyse;
 		}
 
 		public void setAnalyse(String analyse) {
 			this.analyse = analyse;
-		}
-
-		public String getLogstore() {
-			return this.logstore;
-		}
-
-		public void setLogstore(String logstore) {
-			this.logstore = logstore;
-		}
-
-		public String getSlsConfigName() {
-			return this.slsConfigName;
-		}
-
-		public void setSlsConfigName(String slsConfigName) {
-			this.slsConfigName = slsConfigName;
-		}
-
-		public Integer getSilent() {
-			return this.silent;
-		}
-
-		public void setSilent(Integer silent) {
-			this.silent = silent;
-		}
-
-		public String getDetailMetric() {
-			return this.detailMetric;
-		}
-
-		public void setDetailMetric(String detailMetric) {
-			this.detailMetric = detailMetric;
 		}
 
 		public Integer getOpsTimeout() {
@@ -217,6 +137,86 @@ public class OpsGetMonitorConfigResponse extends AcsResponse {
 			this.retentionTime = retentionTime;
 		}
 
+		public Integer getTimeRange() {
+			return this.timeRange;
+		}
+
+		public void setTimeRange(Integer timeRange) {
+			this.timeRange = timeRange;
+		}
+
+		public String getLogstore() {
+			return this.logstore;
+		}
+
+		public void setLogstore(String logstore) {
+			this.logstore = logstore;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getSlsConfigName() {
+			return this.slsConfigName;
+		}
+
+		public void setSlsConfigName(String slsConfigName) {
+			this.slsConfigName = slsConfigName;
+		}
+
+		public String getMonitorType() {
+			return this.monitorType;
+		}
+
+		public void setMonitorType(String monitorType) {
+			this.monitorType = monitorType;
+		}
+
+		public Integer getSilent() {
+			return this.silent;
+		}
+
+		public void setSilent(Integer silent) {
+			this.silent = silent;
+		}
+
+		public String getDetailMetric() {
+			return this.detailMetric;
+		}
+
+		public void setDetailMetric(String detailMetric) {
+			this.detailMetric = detailMetric;
+		}
+
+		public String getQuery() {
+			return this.query;
+		}
+
+		public void setQuery(String query) {
+			this.query = query;
+		}
+
+		public Integer getInterval() {
+			return this.interval;
+		}
+
+		public void setInterval(Integer interval) {
+			this.interval = interval;
+		}
+
+		public Boolean getEnable() {
+			return this.enable;
+		}
+
+		public void setEnable(Boolean enable) {
+			this.enable = enable;
+		}
+
 		public List<Level> getLevels() {
 			return this.levels;
 		}
@@ -225,36 +225,12 @@ public class OpsGetMonitorConfigResponse extends AcsResponse {
 			this.levels = levels;
 		}
 
-		public List<String> getSlsUrlList() {
-			return this.slsUrlList;
+		public List<String> getLinkedDimensions() {
+			return this.linkedDimensions;
 		}
 
-		public void setSlsUrlList(List<String> slsUrlList) {
-			this.slsUrlList = slsUrlList;
-		}
-
-		public List<String> getSlsRegionProjectList() {
-			return this.slsRegionProjectList;
-		}
-
-		public void setSlsRegionProjectList(List<String> slsRegionProjectList) {
-			this.slsRegionProjectList = slsRegionProjectList;
-		}
-
-		public List<String> getRegions() {
-			return this.regions;
-		}
-
-		public void setRegions(List<String> regions) {
-			this.regions = regions;
-		}
-
-		public List<String> getLinkedQuerys() {
-			return this.linkedQuerys;
-		}
-
-		public void setLinkedQuerys(List<String> linkedQuerys) {
-			this.linkedQuerys = linkedQuerys;
+		public void setLinkedDimensions(List<String> linkedDimensions) {
+			this.linkedDimensions = linkedDimensions;
 		}
 
 		public List<String> getNotifyTokens() {
@@ -265,6 +241,14 @@ public class OpsGetMonitorConfigResponse extends AcsResponse {
 			this.notifyTokens = notifyTokens;
 		}
 
+		public List<String> getLinkedQuerys() {
+			return this.linkedQuerys;
+		}
+
+		public void setLinkedQuerys(List<String> linkedQuerys) {
+			this.linkedQuerys = linkedQuerys;
+		}
+
 		public List<String> getExcludeKeys() {
 			return this.excludeKeys;
 		}
@@ -273,12 +257,28 @@ public class OpsGetMonitorConfigResponse extends AcsResponse {
 			this.excludeKeys = excludeKeys;
 		}
 
-		public List<String> getLinkedDimensions() {
-			return this.linkedDimensions;
+		public List<String> getRegions() {
+			return this.regions;
 		}
 
-		public void setLinkedDimensions(List<String> linkedDimensions) {
-			this.linkedDimensions = linkedDimensions;
+		public void setRegions(List<String> regions) {
+			this.regions = regions;
+		}
+
+		public List<String> getSlsRegionProjectList() {
+			return this.slsRegionProjectList;
+		}
+
+		public void setSlsRegionProjectList(List<String> slsRegionProjectList) {
+			this.slsRegionProjectList = slsRegionProjectList;
+		}
+
+		public List<String> getSlsUrlList() {
+			return this.slsUrlList;
+		}
+
+		public void setSlsUrlList(List<String> slsUrlList) {
+			this.slsUrlList = slsUrlList;
 		}
 
 		public EventCenter getEventCenter() {
@@ -299,44 +299,36 @@ public class OpsGetMonitorConfigResponse extends AcsResponse {
 
 		public static class Level {
 
-			private Boolean hasVmThenAlert;
-
-			private String name;
+			private Boolean phoneCall;
 
 			private Boolean persistent;
 
-			private Boolean phoneCall;
+			private Boolean hasVmThenAlert;
+
+			private String expression;
 
 			private Integer alertOnCall;
 
-			private String expression;
+			private String name;
+
+			private List<String> actions;
 
 			private List<String> notifys;
 
 			private List<String> filterChains;
 
-			private List<String> levelNotifyTokens;
+			private List<String> atDutys;
 
 			private List<String> notifyTokenUrlList;
 
-			private List<String> actions;
+			private List<String> levelNotifyTokens;
 
-			private List<String> atDutys;
-
-			public Boolean getHasVmThenAlert() {
-				return this.hasVmThenAlert;
+			public Boolean getPhoneCall() {
+				return this.phoneCall;
 			}
 
-			public void setHasVmThenAlert(Boolean hasVmThenAlert) {
-				this.hasVmThenAlert = hasVmThenAlert;
-			}
-
-			public String getName() {
-				return this.name;
-			}
-
-			public void setName(String name) {
-				this.name = name;
+			public void setPhoneCall(Boolean phoneCall) {
+				this.phoneCall = phoneCall;
 			}
 
 			public Boolean getPersistent() {
@@ -347,12 +339,20 @@ public class OpsGetMonitorConfigResponse extends AcsResponse {
 				this.persistent = persistent;
 			}
 
-			public Boolean getPhoneCall() {
-				return this.phoneCall;
+			public Boolean getHasVmThenAlert() {
+				return this.hasVmThenAlert;
 			}
 
-			public void setPhoneCall(Boolean phoneCall) {
-				this.phoneCall = phoneCall;
+			public void setHasVmThenAlert(Boolean hasVmThenAlert) {
+				this.hasVmThenAlert = hasVmThenAlert;
+			}
+
+			public String getExpression() {
+				return this.expression;
+			}
+
+			public void setExpression(String expression) {
+				this.expression = expression;
 			}
 
 			public Integer getAlertOnCall() {
@@ -363,12 +363,20 @@ public class OpsGetMonitorConfigResponse extends AcsResponse {
 				this.alertOnCall = alertOnCall;
 			}
 
-			public String getExpression() {
-				return this.expression;
+			public String getName() {
+				return this.name;
 			}
 
-			public void setExpression(String expression) {
-				this.expression = expression;
+			public void setName(String name) {
+				this.name = name;
+			}
+
+			public List<String> getActions() {
+				return this.actions;
+			}
+
+			public void setActions(List<String> actions) {
+				this.actions = actions;
 			}
 
 			public List<String> getNotifys() {
@@ -387,12 +395,12 @@ public class OpsGetMonitorConfigResponse extends AcsResponse {
 				this.filterChains = filterChains;
 			}
 
-			public List<String> getLevelNotifyTokens() {
-				return this.levelNotifyTokens;
+			public List<String> getAtDutys() {
+				return this.atDutys;
 			}
 
-			public void setLevelNotifyTokens(List<String> levelNotifyTokens) {
-				this.levelNotifyTokens = levelNotifyTokens;
+			public void setAtDutys(List<String> atDutys) {
+				this.atDutys = atDutys;
 			}
 
 			public List<String> getNotifyTokenUrlList() {
@@ -403,20 +411,12 @@ public class OpsGetMonitorConfigResponse extends AcsResponse {
 				this.notifyTokenUrlList = notifyTokenUrlList;
 			}
 
-			public List<String> getActions() {
-				return this.actions;
+			public List<String> getLevelNotifyTokens() {
+				return this.levelNotifyTokens;
 			}
 
-			public void setActions(List<String> actions) {
-				this.actions = actions;
-			}
-
-			public List<String> getAtDutys() {
-				return this.atDutys;
-			}
-
-			public void setAtDutys(List<String> atDutys) {
-				this.atDutys = atDutys;
+			public void setLevelNotifyTokens(List<String> levelNotifyTokens) {
+				this.levelNotifyTokens = levelNotifyTokens;
 			}
 		}
 
@@ -424,19 +424,19 @@ public class OpsGetMonitorConfigResponse extends AcsResponse {
 
 			private Boolean push;
 
-			private String opsCode;
-
 			private String impact;
 
-			private String resourceStatus;
+			private String closureFlag;
+
+			private String closureEvent;
 
 			private String category;
 
 			private String eventSilent;
 
-			private String closureFlag;
+			private String opsCode;
 
-			private String closureEvent;
+			private String resourceStatus;
 
 			public Boolean getPush() {
 				return this.push;
@@ -444,14 +444,6 @@ public class OpsGetMonitorConfigResponse extends AcsResponse {
 
 			public void setPush(Boolean push) {
 				this.push = push;
-			}
-
-			public String getOpsCode() {
-				return this.opsCode;
-			}
-
-			public void setOpsCode(String opsCode) {
-				this.opsCode = opsCode;
 			}
 
 			public String getImpact() {
@@ -462,12 +454,20 @@ public class OpsGetMonitorConfigResponse extends AcsResponse {
 				this.impact = impact;
 			}
 
-			public String getResourceStatus() {
-				return this.resourceStatus;
+			public String getClosureFlag() {
+				return this.closureFlag;
 			}
 
-			public void setResourceStatus(String resourceStatus) {
-				this.resourceStatus = resourceStatus;
+			public void setClosureFlag(String closureFlag) {
+				this.closureFlag = closureFlag;
+			}
+
+			public String getClosureEvent() {
+				return this.closureEvent;
+			}
+
+			public void setClosureEvent(String closureEvent) {
+				this.closureEvent = closureEvent;
 			}
 
 			public String getCategory() {
@@ -486,20 +486,20 @@ public class OpsGetMonitorConfigResponse extends AcsResponse {
 				this.eventSilent = eventSilent;
 			}
 
-			public String getClosureFlag() {
-				return this.closureFlag;
+			public String getOpsCode() {
+				return this.opsCode;
 			}
 
-			public void setClosureFlag(String closureFlag) {
-				this.closureFlag = closureFlag;
+			public void setOpsCode(String opsCode) {
+				this.opsCode = opsCode;
 			}
 
-			public String getClosureEvent() {
-				return this.closureEvent;
+			public String getResourceStatus() {
+				return this.resourceStatus;
 			}
 
-			public void setClosureEvent(String closureEvent) {
-				this.closureEvent = closureEvent;
+			public void setResourceStatus(String resourceStatus) {
+				this.resourceStatus = resourceStatus;
 			}
 		}
 
@@ -509,13 +509,13 @@ public class OpsGetMonitorConfigResponse extends AcsResponse {
 
 			private List<String> excludedAZones;
 
-			private List<String> excludedRegions;
-
-			private List<String> excludedNcs;
+			private List<String> excludedClusters;
 
 			private List<String> excludedVms;
 
-			private List<String> excludedClusters;
+			private List<String> excludedNcs;
+
+			private List<String> excludedRegions;
 
 			public String getExtension() {
 				return this.extension;
@@ -533,20 +533,12 @@ public class OpsGetMonitorConfigResponse extends AcsResponse {
 				this.excludedAZones = excludedAZones;
 			}
 
-			public List<String> getExcludedRegions() {
-				return this.excludedRegions;
+			public List<String> getExcludedClusters() {
+				return this.excludedClusters;
 			}
 
-			public void setExcludedRegions(List<String> excludedRegions) {
-				this.excludedRegions = excludedRegions;
-			}
-
-			public List<String> getExcludedNcs() {
-				return this.excludedNcs;
-			}
-
-			public void setExcludedNcs(List<String> excludedNcs) {
-				this.excludedNcs = excludedNcs;
+			public void setExcludedClusters(List<String> excludedClusters) {
+				this.excludedClusters = excludedClusters;
 			}
 
 			public List<String> getExcludedVms() {
@@ -557,12 +549,20 @@ public class OpsGetMonitorConfigResponse extends AcsResponse {
 				this.excludedVms = excludedVms;
 			}
 
-			public List<String> getExcludedClusters() {
-				return this.excludedClusters;
+			public List<String> getExcludedNcs() {
+				return this.excludedNcs;
 			}
 
-			public void setExcludedClusters(List<String> excludedClusters) {
-				this.excludedClusters = excludedClusters;
+			public void setExcludedNcs(List<String> excludedNcs) {
+				this.excludedNcs = excludedNcs;
+			}
+
+			public List<String> getExcludedRegions() {
+				return this.excludedRegions;
+			}
+
+			public void setExcludedRegions(List<String> excludedRegions) {
+				this.excludedRegions = excludedRegions;
 			}
 		}
 	}

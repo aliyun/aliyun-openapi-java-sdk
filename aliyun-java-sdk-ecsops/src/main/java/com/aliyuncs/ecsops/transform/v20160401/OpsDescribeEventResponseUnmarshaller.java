@@ -25,21 +25,21 @@ public class OpsDescribeEventResponseUnmarshaller {
 	public static OpsDescribeEventResponse unmarshall(OpsDescribeEventResponse opsDescribeEventResponse, UnmarshallerContext _ctx) {
 		
 		opsDescribeEventResponse.setRequestId(_ctx.stringValue("OpsDescribeEventResponse.RequestId"));
-		opsDescribeEventResponse.setCode(_ctx.stringValue("OpsDescribeEventResponse.Code"));
 		opsDescribeEventResponse.setMessage(_ctx.stringValue("OpsDescribeEventResponse.Message"));
+		opsDescribeEventResponse.setCode(_ctx.stringValue("OpsDescribeEventResponse.Code"));
 		opsDescribeEventResponse.setSuccess(_ctx.stringValue("OpsDescribeEventResponse.Success"));
 
 		Event event = new Event();
 		event.setEventID(_ctx.stringValue("OpsDescribeEventResponse.Event.eventID"));
-		event.setEventType(_ctx.stringValue("OpsDescribeEventResponse.Event.eventType"));
-		event.setEventTypeVersion(_ctx.stringValue("OpsDescribeEventResponse.Event.eventTypeVersion"));
 		event.setCloudEventsVersion(_ctx.stringValue("OpsDescribeEventResponse.Event.cloudEventsVersion"));
-		event.setSource(_ctx.stringValue("OpsDescribeEventResponse.Event.source"));
-		event.setEventTime(_ctx.stringValue("OpsDescribeEventResponse.Event.eventTime"));
+		event.setEventTypeVersion(_ctx.stringValue("OpsDescribeEventResponse.Event.eventTypeVersion"));
 		event.setSchemaURL(_ctx.stringValue("OpsDescribeEventResponse.Event.schemaURL"));
-		event.setContentType(_ctx.stringValue("OpsDescribeEventResponse.Event.contentType"));
-		event.setExtensions(_ctx.mapValue("OpsDescribeEventResponse.Event.extensions"));
 		event.setData(_ctx.mapValue("OpsDescribeEventResponse.Event.data"));
+		event.setEventTime(_ctx.stringValue("OpsDescribeEventResponse.Event.eventTime"));
+		event.setSource(_ctx.stringValue("OpsDescribeEventResponse.Event.source"));
+		event.setContentType(_ctx.stringValue("OpsDescribeEventResponse.Event.contentType"));
+		event.setEventType(_ctx.stringValue("OpsDescribeEventResponse.Event.eventType"));
+		event.setExtensions(_ctx.mapValue("OpsDescribeEventResponse.Event.extensions"));
 		opsDescribeEventResponse.setEvent(event);
 	 
 	 	return opsDescribeEventResponse;

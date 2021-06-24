@@ -31,13 +31,13 @@ public class OpsQueryFeedbacksResponseUnmarshaller {
 		List<Feedback> data = new ArrayList<Feedback>();
 		for (int i = 0; i < _ctx.lengthValue("OpsQueryFeedbacksResponse.Data.Length"); i++) {
 			Feedback feedback = new Feedback();
-			feedback.setAliUid(_ctx.longValue("OpsQueryFeedbacksResponse.Data["+ i +"].AliUid"));
-			feedback.setCreateTime(_ctx.stringValue("OpsQueryFeedbacksResponse.Data["+ i +"].CreateTime"));
-			feedback.setModifyTime(_ctx.stringValue("OpsQueryFeedbacksResponse.Data["+ i +"].ModifyTime"));
+			feedback.setSuggestion(_ctx.stringValue("OpsQueryFeedbacksResponse.Data["+ i +"].Suggestion"));
 			feedback.setFunctionName(_ctx.stringValue("OpsQueryFeedbacksResponse.Data["+ i +"].FunctionName"));
+			feedback.setCreateTime(_ctx.stringValue("OpsQueryFeedbacksResponse.Data["+ i +"].CreateTime"));
+			feedback.setAliUid(_ctx.longValue("OpsQueryFeedbacksResponse.Data["+ i +"].AliUid"));
 			feedback.setCategory(_ctx.stringValue("OpsQueryFeedbacksResponse.Data["+ i +"].Category"));
 			feedback.setFeedback(_ctx.stringValue("OpsQueryFeedbacksResponse.Data["+ i +"].Feedback"));
-			feedback.setSuggestion(_ctx.stringValue("OpsQueryFeedbacksResponse.Data["+ i +"].Suggestion"));
+			feedback.setModifyTime(_ctx.stringValue("OpsQueryFeedbacksResponse.Data["+ i +"].ModifyTime"));
 
 			data.add(feedback);
 		}

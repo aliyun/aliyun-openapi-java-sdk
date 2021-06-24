@@ -31,11 +31,11 @@ public class OpsAuthorizeImagesToAliUidsResponseUnmarshaller {
 		List<AuthorizeAliUid> authorizeAliUids = new ArrayList<AuthorizeAliUid>();
 		for (int i = 0; i < _ctx.lengthValue("OpsAuthorizeImagesToAliUidsResponse.AuthorizeAliUids.Length"); i++) {
 			AuthorizeAliUid authorizeAliUid = new AuthorizeAliUid();
-			authorizeAliUid.setOsName(_ctx.stringValue("OpsAuthorizeImagesToAliUidsResponse.AuthorizeAliUids["+ i +"].OsName"));
-			authorizeAliUid.setOnlineImageId(_ctx.stringValue("OpsAuthorizeImagesToAliUidsResponse.AuthorizeAliUids["+ i +"].OnlineImageId"));
 			authorizeAliUid.setHiddenImageId(_ctx.stringValue("OpsAuthorizeImagesToAliUidsResponse.AuthorizeAliUids["+ i +"].HiddenImageId"));
-			authorizeAliUid.setDeprecatedImageId(_ctx.stringValue("OpsAuthorizeImagesToAliUidsResponse.AuthorizeAliUids["+ i +"].DeprecatedImageId"));
+			authorizeAliUid.setOnlineImageId(_ctx.stringValue("OpsAuthorizeImagesToAliUidsResponse.AuthorizeAliUids["+ i +"].OnlineImageId"));
+			authorizeAliUid.setOsName(_ctx.stringValue("OpsAuthorizeImagesToAliUidsResponse.AuthorizeAliUids["+ i +"].OsName"));
 			authorizeAliUid.setOfflineImageId(_ctx.stringValue("OpsAuthorizeImagesToAliUidsResponse.AuthorizeAliUids["+ i +"].OfflineImageId"));
+			authorizeAliUid.setDeprecatedImageId(_ctx.stringValue("OpsAuthorizeImagesToAliUidsResponse.AuthorizeAliUids["+ i +"].DeprecatedImageId"));
 
 			List<String> aliUids = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("OpsAuthorizeImagesToAliUidsResponse.AuthorizeAliUids["+ i +"].AliUids.Length"); j++) {

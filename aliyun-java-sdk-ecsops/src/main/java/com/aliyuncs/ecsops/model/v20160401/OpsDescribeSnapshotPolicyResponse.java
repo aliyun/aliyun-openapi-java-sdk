@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsDescribeSnapshotPolicyResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
-
-	private Integer pageNumber;
 
 	private Integer pageSize;
 
+	private String requestId;
+
+	private Integer pageNumber;
+
 	private List<SnapshotPolicy> snapshotPolicys;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -51,20 +43,28 @@ public class OpsDescribeSnapshotPolicyResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<SnapshotPolicy> getSnapshotPolicys() {
@@ -77,88 +77,32 @@ public class OpsDescribeSnapshotPolicyResponse extends AcsResponse {
 
 	public static class SnapshotPolicy {
 
-		private String snapshotPolicyId;
-
-		private String regionId;
-
-		private String autoSnapshotPolicyName;
-
-		private String timePoints;
-
-		private String repeatWeekdays;
-
-		private Integer retentionDays;
-
-		private Integer diskNums;
-
-		private Integer volumeNums;
+		private String status;
 
 		private String creationTime;
 
-		private String status;
+		private Integer diskNums;
 
-		public String getSnapshotPolicyId() {
-			return this.snapshotPolicyId;
+		private String timePoints;
+
+		private String snapshotPolicyId;
+
+		private String repeatWeekdays;
+
+		private String autoSnapshotPolicyName;
+
+		private Integer retentionDays;
+
+		private Integer volumeNums;
+
+		private String regionId;
+
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setSnapshotPolicyId(String snapshotPolicyId) {
-			this.snapshotPolicyId = snapshotPolicyId;
-		}
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		public String getAutoSnapshotPolicyName() {
-			return this.autoSnapshotPolicyName;
-		}
-
-		public void setAutoSnapshotPolicyName(String autoSnapshotPolicyName) {
-			this.autoSnapshotPolicyName = autoSnapshotPolicyName;
-		}
-
-		public String getTimePoints() {
-			return this.timePoints;
-		}
-
-		public void setTimePoints(String timePoints) {
-			this.timePoints = timePoints;
-		}
-
-		public String getRepeatWeekdays() {
-			return this.repeatWeekdays;
-		}
-
-		public void setRepeatWeekdays(String repeatWeekdays) {
-			this.repeatWeekdays = repeatWeekdays;
-		}
-
-		public Integer getRetentionDays() {
-			return this.retentionDays;
-		}
-
-		public void setRetentionDays(Integer retentionDays) {
-			this.retentionDays = retentionDays;
-		}
-
-		public Integer getDiskNums() {
-			return this.diskNums;
-		}
-
-		public void setDiskNums(Integer diskNums) {
-			this.diskNums = diskNums;
-		}
-
-		public Integer getVolumeNums() {
-			return this.volumeNums;
-		}
-
-		public void setVolumeNums(Integer volumeNums) {
-			this.volumeNums = volumeNums;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public String getCreationTime() {
@@ -169,12 +113,68 @@ public class OpsDescribeSnapshotPolicyResponse extends AcsResponse {
 			this.creationTime = creationTime;
 		}
 
-		public String getStatus() {
-			return this.status;
+		public Integer getDiskNums() {
+			return this.diskNums;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
+		public void setDiskNums(Integer diskNums) {
+			this.diskNums = diskNums;
+		}
+
+		public String getTimePoints() {
+			return this.timePoints;
+		}
+
+		public void setTimePoints(String timePoints) {
+			this.timePoints = timePoints;
+		}
+
+		public String getSnapshotPolicyId() {
+			return this.snapshotPolicyId;
+		}
+
+		public void setSnapshotPolicyId(String snapshotPolicyId) {
+			this.snapshotPolicyId = snapshotPolicyId;
+		}
+
+		public String getRepeatWeekdays() {
+			return this.repeatWeekdays;
+		}
+
+		public void setRepeatWeekdays(String repeatWeekdays) {
+			this.repeatWeekdays = repeatWeekdays;
+		}
+
+		public String getAutoSnapshotPolicyName() {
+			return this.autoSnapshotPolicyName;
+		}
+
+		public void setAutoSnapshotPolicyName(String autoSnapshotPolicyName) {
+			this.autoSnapshotPolicyName = autoSnapshotPolicyName;
+		}
+
+		public Integer getRetentionDays() {
+			return this.retentionDays;
+		}
+
+		public void setRetentionDays(Integer retentionDays) {
+			this.retentionDays = retentionDays;
+		}
+
+		public Integer getVolumeNums() {
+			return this.volumeNums;
+		}
+
+		public void setVolumeNums(Integer volumeNums) {
+			this.volumeNums = volumeNums;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 	}
 

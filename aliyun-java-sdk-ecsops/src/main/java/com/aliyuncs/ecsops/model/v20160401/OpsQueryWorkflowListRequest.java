@@ -16,7 +16,6 @@ package com.aliyuncs.ecsops.model.v20160401;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
-import com.aliyuncs.ecsops.Endpoint;
 
 /**
  * @author auto create
@@ -51,12 +50,8 @@ public class OpsQueryWorkflowListRequest extends RpcAcsRequest<OpsQueryWorkflowL
 
 	private String extCol2;
 	public OpsQueryWorkflowListRequest() {
-		super("Ecsops", "2016-04-01", "OpsQueryWorkflowList", "ecs");
+		super("Ecsops", "2016-04-01", "OpsQueryWorkflowList", "ecsops");
 		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
 	}
 
 	public String getWorkflowStatus() {

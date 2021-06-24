@@ -29,10 +29,10 @@ public class OpsBatchCheckMachineHealthResponseUnmarshaller {
 	public static OpsBatchCheckMachineHealthResponse unmarshall(OpsBatchCheckMachineHealthResponse opsBatchCheckMachineHealthResponse, UnmarshallerContext _ctx) {
 		
 		opsBatchCheckMachineHealthResponse.setRequestId(_ctx.stringValue("OpsBatchCheckMachineHealthResponse.RequestId"));
-		opsBatchCheckMachineHealthResponse.setToken(_ctx.stringValue("OpsBatchCheckMachineHealthResponse.Token"));
 		opsBatchCheckMachineHealthResponse.setStatus(_ctx.stringValue("OpsBatchCheckMachineHealthResponse.Status"));
 		opsBatchCheckMachineHealthResponse.setFinished(_ctx.booleanValue("OpsBatchCheckMachineHealthResponse.Finished"));
 		opsBatchCheckMachineHealthResponse.setCheckTime(_ctx.stringValue("OpsBatchCheckMachineHealthResponse.CheckTime"));
+		opsBatchCheckMachineHealthResponse.setToken(_ctx.stringValue("OpsBatchCheckMachineHealthResponse.Token"));
 
 		List<String> machineIds = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("OpsBatchCheckMachineHealthResponse.MachineIds.Length"); i++) {
@@ -48,15 +48,15 @@ public class OpsBatchCheckMachineHealthResponseUnmarshaller {
 			List<HealthInfo> healthInfos = new ArrayList<HealthInfo>();
 			for (int j = 0; j < _ctx.lengthValue("OpsBatchCheckMachineHealthResponse.MachineHealthInfos["+ i +"].HealthInfos.Length"); j++) {
 				HealthInfo healthInfo = new HealthInfo();
-				healthInfo.setMachineId(_ctx.stringValue("OpsBatchCheckMachineHealthResponse.MachineHealthInfos["+ i +"].HealthInfos["+ j +"].MachineId"));
-				healthInfo.setCheckItem(_ctx.stringValue("OpsBatchCheckMachineHealthResponse.MachineHealthInfos["+ i +"].HealthInfos["+ j +"].CheckItem"));
 				healthInfo.setDetailInfo(_ctx.stringValue("OpsBatchCheckMachineHealthResponse.MachineHealthInfos["+ i +"].HealthInfos["+ j +"].DetailInfo"));
+				healthInfo.setCheckItem(_ctx.stringValue("OpsBatchCheckMachineHealthResponse.MachineHealthInfos["+ i +"].HealthInfos["+ j +"].CheckItem"));
+				healthInfo.setMachineId(_ctx.stringValue("OpsBatchCheckMachineHealthResponse.MachineHealthInfos["+ i +"].HealthInfos["+ j +"].MachineId"));
 
 				List<ResultInfo> resultInfos = new ArrayList<ResultInfo>();
 				for (int k = 0; k < _ctx.lengthValue("OpsBatchCheckMachineHealthResponse.MachineHealthInfos["+ i +"].HealthInfos["+ j +"].ResultInfos.Length"); k++) {
 					ResultInfo resultInfo = new ResultInfo();
-					resultInfo.setResultKey(_ctx.stringValue("OpsBatchCheckMachineHealthResponse.MachineHealthInfos["+ i +"].HealthInfos["+ j +"].ResultInfos["+ k +"].ResultKey"));
 					resultInfo.setResultValue(_ctx.stringValue("OpsBatchCheckMachineHealthResponse.MachineHealthInfos["+ i +"].HealthInfos["+ j +"].ResultInfos["+ k +"].ResultValue"));
+					resultInfo.setResultKey(_ctx.stringValue("OpsBatchCheckMachineHealthResponse.MachineHealthInfos["+ i +"].HealthInfos["+ j +"].ResultInfos["+ k +"].ResultKey"));
 					resultInfo.setResultMsg(_ctx.stringValue("OpsBatchCheckMachineHealthResponse.MachineHealthInfos["+ i +"].HealthInfos["+ j +"].ResultInfos["+ k +"].ResultMsg"));
 
 					resultInfos.add(resultInfo);

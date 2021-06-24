@@ -89,31 +89,15 @@ public class OpsEccQuerySpecItemDiffNcsResponse extends AcsResponse {
 
 		public static class CompareResultItem {
 
-			private String sn;
-
-			private String ncIp;
-
 			private String configName;
+
+			private String sn;
 
 			private String configValue;
 
+			private String ncIp;
+
 			private String comparisonValue;
-
-			public String getSn() {
-				return this.sn;
-			}
-
-			public void setSn(String sn) {
-				this.sn = sn;
-			}
-
-			public String getNcIp() {
-				return this.ncIp;
-			}
-
-			public void setNcIp(String ncIp) {
-				this.ncIp = ncIp;
-			}
 
 			public String getConfigName() {
 				return this.configName;
@@ -123,12 +107,28 @@ public class OpsEccQuerySpecItemDiffNcsResponse extends AcsResponse {
 				this.configName = configName;
 			}
 
+			public String getSn() {
+				return this.sn;
+			}
+
+			public void setSn(String sn) {
+				this.sn = sn;
+			}
+
 			public String getConfigValue() {
 				return this.configValue;
 			}
 
 			public void setConfigValue(String configValue) {
 				this.configValue = configValue;
+			}
+
+			public String getNcIp() {
+				return this.ncIp;
+			}
+
+			public void setNcIp(String ncIp) {
+				this.ncIp = ncIp;
 			}
 
 			public String getComparisonValue() {

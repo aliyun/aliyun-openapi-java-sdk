@@ -17,7 +17,6 @@ package com.aliyuncs.ecsops.model.v20160401;
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
 import com.aliyuncs.http.MethodType;
-import com.aliyuncs.ecsops.Endpoint;
 
 /**
  * @author auto create
@@ -26,18 +25,29 @@ import com.aliyuncs.ecsops.Endpoint;
 public class OpsQueryMonitorStoragesRequest extends RpcAcsRequest<OpsQueryMonitorStoragesResponse> {
 	   
 
+	private List<String> logstoreNames;
+
 	private List<String> monitorResultFiles;
 
 	private Boolean force;
 
 	private String auditParamStr;
 	public OpsQueryMonitorStoragesRequest() {
-		super("Ecsops", "2016-04-01", "OpsQueryMonitorStorages", "ecs");
+		super("Ecsops", "2016-04-01", "OpsQueryMonitorStorages", "ecsops");
 		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
+	}
+
+	public List<String> getLogstoreNames() {
+		return this.logstoreNames;
+	}
+
+	public void setLogstoreNames(List<String> logstoreNames) {
+		this.logstoreNames = logstoreNames;	
+		if (logstoreNames != null) {
+			for (int i = 0; i < logstoreNames.size(); i++) {
+				putQueryParameter("LogstoreName." + (i + 1) , logstoreNames.get(i));
+			}
+		}	
 	}
 
 	public List<String> getMonitorResultFiles() {

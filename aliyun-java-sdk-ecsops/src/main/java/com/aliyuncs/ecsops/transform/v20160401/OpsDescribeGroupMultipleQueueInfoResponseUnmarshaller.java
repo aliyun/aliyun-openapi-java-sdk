@@ -23,12 +23,12 @@ public class OpsDescribeGroupMultipleQueueInfoResponseUnmarshaller {
 	public static OpsDescribeGroupMultipleQueueInfoResponse unmarshall(OpsDescribeGroupMultipleQueueInfoResponse opsDescribeGroupMultipleQueueInfoResponse, UnmarshallerContext _ctx) {
 		
 		opsDescribeGroupMultipleQueueInfoResponse.setRequestId(_ctx.stringValue("OpsDescribeGroupMultipleQueueInfoResponse.RequestId"));
-		opsDescribeGroupMultipleQueueInfoResponse.setScanInterval(_ctx.stringValue("OpsDescribeGroupMultipleQueueInfoResponse.ScanInterval"));
 		opsDescribeGroupMultipleQueueInfoResponse.setBlackListScanInterval(_ctx.stringValue("OpsDescribeGroupMultipleQueueInfoResponse.BlackListScanInterval"));
 		opsDescribeGroupMultipleQueueInfoResponse.setMode(_ctx.stringValue("OpsDescribeGroupMultipleQueueInfoResponse.Mode"));
-		opsDescribeGroupMultipleQueueInfoResponse.setZkConfig(_ctx.stringValue("OpsDescribeGroupMultipleQueueInfoResponse.ZkConfig"));
 		opsDescribeGroupMultipleQueueInfoResponse.setDbConfig(_ctx.stringValue("OpsDescribeGroupMultipleQueueInfoResponse.DbConfig"));
+		opsDescribeGroupMultipleQueueInfoResponse.setZkConfig(_ctx.stringValue("OpsDescribeGroupMultipleQueueInfoResponse.ZkConfig"));
 		opsDescribeGroupMultipleQueueInfoResponse.setRecommendedConfig(_ctx.stringValue("OpsDescribeGroupMultipleQueueInfoResponse.RecommendedConfig"));
+		opsDescribeGroupMultipleQueueInfoResponse.setScanInterval(_ctx.stringValue("OpsDescribeGroupMultipleQueueInfoResponse.ScanInterval"));
 	 
 	 	return opsDescribeGroupMultipleQueueInfoResponse;
 	}

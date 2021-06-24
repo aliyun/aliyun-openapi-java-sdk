@@ -33,10 +33,10 @@ public class OpsDescribeResourcePriceResponseUnmarshaller {
 		PriceInfo priceInfo = new PriceInfo();
 
 		Price price = new Price();
-		price.setOriginalPrice(_ctx.floatValue("OpsDescribeResourcePriceResponse.PriceInfo.Price.OriginalPrice"));
+		price.setReservedInstanceHourPrice(_ctx.floatValue("OpsDescribeResourcePriceResponse.PriceInfo.Price.ReservedInstanceHourPrice"));
 		price.setDiscountPrice(_ctx.floatValue("OpsDescribeResourcePriceResponse.PriceInfo.Price.DiscountPrice"));
 		price.setTradePrice(_ctx.floatValue("OpsDescribeResourcePriceResponse.PriceInfo.Price.TradePrice"));
-		price.setReservedInstanceHourPrice(_ctx.floatValue("OpsDescribeResourcePriceResponse.PriceInfo.Price.ReservedInstanceHourPrice"));
+		price.setOriginalPrice(_ctx.floatValue("OpsDescribeResourcePriceResponse.PriceInfo.Price.OriginalPrice"));
 		price.setCurrency(_ctx.stringValue("OpsDescribeResourcePriceResponse.PriceInfo.Price.Currency"));
 
 		List<String> ruleIdSet = new ArrayList<String>();
@@ -49,9 +49,9 @@ public class OpsDescribeResourcePriceResponseUnmarshaller {
 		List<Rule> rules = new ArrayList<Rule>();
 		for (int i = 0; i < _ctx.lengthValue("OpsDescribeResourcePriceResponse.PriceInfo.Rules.Length"); i++) {
 			Rule rule = new Rule();
-			rule.setRuleId(_ctx.longValue("OpsDescribeResourcePriceResponse.PriceInfo.Rules["+ i +"].RuleId"));
 			rule.setTitle(_ctx.stringValue("OpsDescribeResourcePriceResponse.PriceInfo.Rules["+ i +"].Title"));
 			rule.setName(_ctx.stringValue("OpsDescribeResourcePriceResponse.PriceInfo.Rules["+ i +"].Name"));
+			rule.setRuleId(_ctx.longValue("OpsDescribeResourcePriceResponse.PriceInfo.Rules["+ i +"].RuleId"));
 
 			rules.add(rule);
 		}

@@ -29,21 +29,21 @@ public class OpsDescribeGlobalSecurityGroupResponseUnmarshaller {
 		opsDescribeGlobalSecurityGroupResponse.setRequestId(_ctx.stringValue("OpsDescribeGlobalSecurityGroupResponse.RequestId"));
 
 		Data data = new Data();
-		data.setId(_ctx.longValue("OpsDescribeGlobalSecurityGroupResponse.Data.Id"));
-		data.setAliUid(_ctx.longValue("OpsDescribeGlobalSecurityGroupResponse.Data.AliUid"));
-		data.setBid(_ctx.stringValue("OpsDescribeGlobalSecurityGroupResponse.Data.Bid"));
-		data.setSecurityGroupId(_ctx.stringValue("OpsDescribeGlobalSecurityGroupResponse.Data.SecurityGroupId"));
-		data.setSecurityGroupName(_ctx.stringValue("OpsDescribeGlobalSecurityGroupResponse.Data.SecurityGroupName"));
-		data.setDescription(_ctx.stringValue("OpsDescribeGlobalSecurityGroupResponse.Data.Description"));
-		data.setVpcId(_ctx.stringValue("OpsDescribeGlobalSecurityGroupResponse.Data.VpcId"));
-		data.setCreatedTime(_ctx.stringValue("OpsDescribeGlobalSecurityGroupResponse.Data.CreatedTime"));
-		data.setModifiedTime(_ctx.stringValue("OpsDescribeGlobalSecurityGroupResponse.Data.ModifiedTime"));
-		data.setEcsNum(_ctx.integerValue("OpsDescribeGlobalSecurityGroupResponse.Data.EcsNum"));
-		data.setAuthed(_ctx.booleanValue("OpsDescribeGlobalSecurityGroupResponse.Data.Authed"));
 		data.setType(_ctx.stringValue("OpsDescribeGlobalSecurityGroupResponse.Data.Type"));
-		data.setGroupType(_ctx.integerValue("OpsDescribeGlobalSecurityGroupResponse.Data.GroupType"));
-		data.setDefaultGroup(_ctx.booleanValue("OpsDescribeGlobalSecurityGroupResponse.Data.DefaultGroup"));
+		data.setVpcId(_ctx.stringValue("OpsDescribeGlobalSecurityGroupResponse.Data.VpcId"));
+		data.setSecurityGroupId(_ctx.stringValue("OpsDescribeGlobalSecurityGroupResponse.Data.SecurityGroupId"));
 		data.setRegionNo(_ctx.stringValue("OpsDescribeGlobalSecurityGroupResponse.Data.RegionNo"));
+		data.setDefaultGroup(_ctx.booleanValue("OpsDescribeGlobalSecurityGroupResponse.Data.DefaultGroup"));
+		data.setAliUid(_ctx.longValue("OpsDescribeGlobalSecurityGroupResponse.Data.AliUid"));
+		data.setEcsNum(_ctx.integerValue("OpsDescribeGlobalSecurityGroupResponse.Data.EcsNum"));
+		data.setBid(_ctx.stringValue("OpsDescribeGlobalSecurityGroupResponse.Data.Bid"));
+		data.setAuthed(_ctx.booleanValue("OpsDescribeGlobalSecurityGroupResponse.Data.Authed"));
+		data.setModifiedTime(_ctx.stringValue("OpsDescribeGlobalSecurityGroupResponse.Data.ModifiedTime"));
+		data.setDescription(_ctx.stringValue("OpsDescribeGlobalSecurityGroupResponse.Data.Description"));
+		data.setSecurityGroupName(_ctx.stringValue("OpsDescribeGlobalSecurityGroupResponse.Data.SecurityGroupName"));
+		data.setGroupType(_ctx.integerValue("OpsDescribeGlobalSecurityGroupResponse.Data.GroupType"));
+		data.setCreatedTime(_ctx.stringValue("OpsDescribeGlobalSecurityGroupResponse.Data.CreatedTime"));
+		data.setId(_ctx.longValue("OpsDescribeGlobalSecurityGroupResponse.Data.Id"));
 
 		List<String> ecsInstanceIds = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("OpsDescribeGlobalSecurityGroupResponse.Data.EcsInstanceIds.Length"); i++) {

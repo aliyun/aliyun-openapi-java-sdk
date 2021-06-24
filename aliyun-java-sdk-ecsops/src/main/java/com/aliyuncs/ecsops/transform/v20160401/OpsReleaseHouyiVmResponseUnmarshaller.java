@@ -23,8 +23,8 @@ public class OpsReleaseHouyiVmResponseUnmarshaller {
 	public static OpsReleaseHouyiVmResponse unmarshall(OpsReleaseHouyiVmResponse opsReleaseHouyiVmResponse, UnmarshallerContext _ctx) {
 		
 		opsReleaseHouyiVmResponse.setRequestId(_ctx.stringValue("OpsReleaseHouyiVmResponse.RequestId"));
-		opsReleaseHouyiVmResponse.setVmName(_ctx.stringValue("OpsReleaseHouyiVmResponse.VmName"));
 		opsReleaseHouyiVmResponse.setVmStatus(_ctx.stringValue("OpsReleaseHouyiVmResponse.VmStatus"));
+		opsReleaseHouyiVmResponse.setVmName(_ctx.stringValue("OpsReleaseHouyiVmResponse.VmName"));
 	 
 	 	return opsReleaseHouyiVmResponse;
 	}

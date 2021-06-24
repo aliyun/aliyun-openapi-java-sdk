@@ -47,80 +47,42 @@ public class OpsQueryRealtimeDetectConfigResponse extends AcsResponse {
 
 	public static class ScriptConfig {
 
-		private String detectConfig;
-
-		private String name;
-
-		private String desc;
-
-		private Boolean enable;
-
-		private String target;
-
-		private String command;
+		private Integer timeout;
 
 		private Integer execFlowControl;
 
+		private String execMode;
+
 		private String execCondition;
+
+		private String desc;
 
 		private Boolean batchDetect;
 
+		private String detectConfig;
+
+		private String command;
+
 		private String handler;
 
-		private String execMode;
+		private String name;
 
-		private Integer timeout;
+		private String target;
+
+		private String configDesc;
+
+		private Boolean enable;
 
 		private List<String> params;
 
 		private List<String> detectItems;
 
-		public String getDetectConfig() {
-			return this.detectConfig;
+		public Integer getTimeout() {
+			return this.timeout;
 		}
 
-		public void setDetectConfig(String detectConfig) {
-			this.detectConfig = detectConfig;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getDesc() {
-			return this.desc;
-		}
-
-		public void setDesc(String desc) {
-			this.desc = desc;
-		}
-
-		public Boolean getEnable() {
-			return this.enable;
-		}
-
-		public void setEnable(Boolean enable) {
-			this.enable = enable;
-		}
-
-		public String getTarget() {
-			return this.target;
-		}
-
-		public void setTarget(String target) {
-			this.target = target;
-		}
-
-		public String getCommand() {
-			return this.command;
-		}
-
-		public void setCommand(String command) {
-			this.command = command;
+		public void setTimeout(Integer timeout) {
+			this.timeout = timeout;
 		}
 
 		public Integer getExecFlowControl() {
@@ -131,12 +93,28 @@ public class OpsQueryRealtimeDetectConfigResponse extends AcsResponse {
 			this.execFlowControl = execFlowControl;
 		}
 
+		public String getExecMode() {
+			return this.execMode;
+		}
+
+		public void setExecMode(String execMode) {
+			this.execMode = execMode;
+		}
+
 		public String getExecCondition() {
 			return this.execCondition;
 		}
 
 		public void setExecCondition(String execCondition) {
 			this.execCondition = execCondition;
+		}
+
+		public String getDesc() {
+			return this.desc;
+		}
+
+		public void setDesc(String desc) {
+			this.desc = desc;
 		}
 
 		public Boolean getBatchDetect() {
@@ -147,6 +125,22 @@ public class OpsQueryRealtimeDetectConfigResponse extends AcsResponse {
 			this.batchDetect = batchDetect;
 		}
 
+		public String getDetectConfig() {
+			return this.detectConfig;
+		}
+
+		public void setDetectConfig(String detectConfig) {
+			this.detectConfig = detectConfig;
+		}
+
+		public String getCommand() {
+			return this.command;
+		}
+
+		public void setCommand(String command) {
+			this.command = command;
+		}
+
 		public String getHandler() {
 			return this.handler;
 		}
@@ -155,20 +149,36 @@ public class OpsQueryRealtimeDetectConfigResponse extends AcsResponse {
 			this.handler = handler;
 		}
 
-		public String getExecMode() {
-			return this.execMode;
+		public String getName() {
+			return this.name;
 		}
 
-		public void setExecMode(String execMode) {
-			this.execMode = execMode;
+		public void setName(String name) {
+			this.name = name;
 		}
 
-		public Integer getTimeout() {
-			return this.timeout;
+		public String getTarget() {
+			return this.target;
 		}
 
-		public void setTimeout(Integer timeout) {
-			this.timeout = timeout;
+		public void setTarget(String target) {
+			this.target = target;
+		}
+
+		public String getConfigDesc() {
+			return this.configDesc;
+		}
+
+		public void setConfigDesc(String configDesc) {
+			this.configDesc = configDesc;
+		}
+
+		public Boolean getEnable() {
+			return this.enable;
+		}
+
+		public void setEnable(Boolean enable) {
+			this.enable = enable;
 		}
 
 		public List<String> getParams() {

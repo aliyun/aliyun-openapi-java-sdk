@@ -31,17 +31,17 @@ public class OpsDescribeBusinessInstancesResponseUnmarshaller {
 		List<BusinessInstanceSet> businessInstanceSets = new ArrayList<BusinessInstanceSet>();
 		for (int i = 0; i < _ctx.lengthValue("OpsDescribeBusinessInstancesResponse.BusinessInstanceSets.Length"); i++) {
 			BusinessInstanceSet businessInstanceSet = new BusinessInstanceSet();
-			businessInstanceSet.setId(_ctx.longValue("OpsDescribeBusinessInstancesResponse.BusinessInstanceSets["+ i +"].Id"));
-			businessInstanceSet.setTradeInstanceId(_ctx.stringValue("OpsDescribeBusinessInstancesResponse.BusinessInstanceSets["+ i +"].tradeInstanceId"));
-			businessInstanceSet.setResourceType(_ctx.stringValue("OpsDescribeBusinessInstancesResponse.BusinessInstanceSets["+ i +"].ResourceType"));
-			businessInstanceSet.setOrderType(_ctx.stringValue("OpsDescribeBusinessInstancesResponse.BusinessInstanceSets["+ i +"].OrderType"));
-			businessInstanceSet.setAliUid(_ctx.longValue("OpsDescribeBusinessInstancesResponse.BusinessInstanceSets["+ i +"].AliUid"));
-			businessInstanceSet.setChargeType(_ctx.stringValue("OpsDescribeBusinessInstancesResponse.BusinessInstanceSets["+ i +"].ChargeType"));
-			businessInstanceSet.setCommodityCode(_ctx.stringValue("OpsDescribeBusinessInstancesResponse.BusinessInstanceSets["+ i +"].CommodityCode"));
-			businessInstanceSet.setStartDate(_ctx.stringValue("OpsDescribeBusinessInstancesResponse.BusinessInstanceSets["+ i +"].StartDate"));
-			businessInstanceSet.setEndDate(_ctx.stringValue("OpsDescribeBusinessInstancesResponse.BusinessInstanceSets["+ i +"].EndDate"));
-			businessInstanceSet.setOrderId(_ctx.stringValue("OpsDescribeBusinessInstancesResponse.BusinessInstanceSets["+ i +"].OrderId"));
 			businessInstanceSet.setStatus(_ctx.stringValue("OpsDescribeBusinessInstancesResponse.BusinessInstanceSets["+ i +"].Status"));
+			businessInstanceSet.setEndDate(_ctx.stringValue("OpsDescribeBusinessInstancesResponse.BusinessInstanceSets["+ i +"].EndDate"));
+			businessInstanceSet.setCommodityCode(_ctx.stringValue("OpsDescribeBusinessInstancesResponse.BusinessInstanceSets["+ i +"].CommodityCode"));
+			businessInstanceSet.setResourceType(_ctx.stringValue("OpsDescribeBusinessInstancesResponse.BusinessInstanceSets["+ i +"].ResourceType"));
+			businessInstanceSet.setChargeType(_ctx.stringValue("OpsDescribeBusinessInstancesResponse.BusinessInstanceSets["+ i +"].ChargeType"));
+			businessInstanceSet.setStartDate(_ctx.stringValue("OpsDescribeBusinessInstancesResponse.BusinessInstanceSets["+ i +"].StartDate"));
+			businessInstanceSet.setAliUid(_ctx.longValue("OpsDescribeBusinessInstancesResponse.BusinessInstanceSets["+ i +"].AliUid"));
+			businessInstanceSet.setOrderType(_ctx.stringValue("OpsDescribeBusinessInstancesResponse.BusinessInstanceSets["+ i +"].OrderType"));
+			businessInstanceSet.setOrderId(_ctx.stringValue("OpsDescribeBusinessInstancesResponse.BusinessInstanceSets["+ i +"].OrderId"));
+			businessInstanceSet.setTradeInstanceId(_ctx.stringValue("OpsDescribeBusinessInstancesResponse.BusinessInstanceSets["+ i +"].tradeInstanceId"));
+			businessInstanceSet.setId(_ctx.longValue("OpsDescribeBusinessInstancesResponse.BusinessInstanceSets["+ i +"].Id"));
 
 			businessInstanceSets.add(businessInstanceSet);
 		}

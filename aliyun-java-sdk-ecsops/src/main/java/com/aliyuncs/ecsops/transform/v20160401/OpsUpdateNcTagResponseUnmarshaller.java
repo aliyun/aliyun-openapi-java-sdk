@@ -23,8 +23,8 @@ public class OpsUpdateNcTagResponseUnmarshaller {
 	public static OpsUpdateNcTagResponse unmarshall(OpsUpdateNcTagResponse opsUpdateNcTagResponse, UnmarshallerContext _ctx) {
 		
 		opsUpdateNcTagResponse.setRequestId(_ctx.stringValue("OpsUpdateNcTagResponse.RequestId"));
-		opsUpdateNcTagResponse.setCode(_ctx.stringValue("OpsUpdateNcTagResponse.Code"));
 		opsUpdateNcTagResponse.setMessage(_ctx.stringValue("OpsUpdateNcTagResponse.Message"));
+		opsUpdateNcTagResponse.setCode(_ctx.stringValue("OpsUpdateNcTagResponse.Code"));
 		opsUpdateNcTagResponse.setSuccess(_ctx.stringValue("OpsUpdateNcTagResponse.Success"));
 	 
 	 	return opsUpdateNcTagResponse;

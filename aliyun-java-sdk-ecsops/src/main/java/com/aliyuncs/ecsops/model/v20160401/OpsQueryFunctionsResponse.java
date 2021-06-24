@@ -57,24 +57,24 @@ public class OpsQueryFunctionsResponse extends AcsResponse {
 
 	public static class FunctionGroup {
 
-		private Long id;
+		private String parentGroupId;
 
 		private String groupId;
 
 		private String groupName;
 
-		private String groupCategory;
-
 		private Integer priority;
 
-		private String parentGroupId;
+		private String groupCategory;
 
-		public Long getId() {
-			return this.id;
+		private Long id;
+
+		public String getParentGroupId() {
+			return this.parentGroupId;
 		}
 
-		public void setId(Long id) {
-			this.id = id;
+		public void setParentGroupId(String parentGroupId) {
+			this.parentGroupId = parentGroupId;
 		}
 
 		public String getGroupId() {
@@ -93,14 +93,6 @@ public class OpsQueryFunctionsResponse extends AcsResponse {
 			this.groupName = groupName;
 		}
 
-		public String getGroupCategory() {
-			return this.groupCategory;
-		}
-
-		public void setGroupCategory(String groupCategory) {
-			this.groupCategory = groupCategory;
-		}
-
 		public Integer getPriority() {
 			return this.priority;
 		}
@@ -109,36 +101,13 @@ public class OpsQueryFunctionsResponse extends AcsResponse {
 			this.priority = priority;
 		}
 
-		public String getParentGroupId() {
-			return this.parentGroupId;
+		public String getGroupCategory() {
+			return this.groupCategory;
 		}
 
-		public void setParentGroupId(String parentGroupId) {
-			this.parentGroupId = parentGroupId;
+		public void setGroupCategory(String groupCategory) {
+			this.groupCategory = groupCategory;
 		}
-	}
-
-	public static class Function {
-
-		private Long id;
-
-		private String functionId;
-
-		private String functionName;
-
-		private String functionDescription;
-
-		private String productCode;
-
-		private Integer priority;
-
-		private String functionViperFeature;
-
-		private String gmtCreate;
-
-		private List<FunctionDoc> functionDocList;
-
-		private List<String> functionGroupIdList;
 
 		public Long getId() {
 			return this.id;
@@ -147,6 +116,29 @@ public class OpsQueryFunctionsResponse extends AcsResponse {
 		public void setId(Long id) {
 			this.id = id;
 		}
+	}
+
+	public static class Function {
+
+		private String functionId;
+
+		private String functionDescription;
+
+		private String functionName;
+
+		private String gmtCreate;
+
+		private String functionViperFeature;
+
+		private Integer priority;
+
+		private Long id;
+
+		private String productCode;
+
+		private List<FunctionDoc> functionDocList;
+
+		private List<String> functionGroupIdList;
 
 		public String getFunctionId() {
 			return this.functionId;
@@ -154,14 +146,6 @@ public class OpsQueryFunctionsResponse extends AcsResponse {
 
 		public void setFunctionId(String functionId) {
 			this.functionId = functionId;
-		}
-
-		public String getFunctionName() {
-			return this.functionName;
-		}
-
-		public void setFunctionName(String functionName) {
-			this.functionName = functionName;
 		}
 
 		public String getFunctionDescription() {
@@ -172,20 +156,20 @@ public class OpsQueryFunctionsResponse extends AcsResponse {
 			this.functionDescription = functionDescription;
 		}
 
-		public String getProductCode() {
-			return this.productCode;
+		public String getFunctionName() {
+			return this.functionName;
 		}
 
-		public void setProductCode(String productCode) {
-			this.productCode = productCode;
+		public void setFunctionName(String functionName) {
+			this.functionName = functionName;
 		}
 
-		public Integer getPriority() {
-			return this.priority;
+		public String getGmtCreate() {
+			return this.gmtCreate;
 		}
 
-		public void setPriority(Integer priority) {
-			this.priority = priority;
+		public void setGmtCreate(String gmtCreate) {
+			this.gmtCreate = gmtCreate;
 		}
 
 		public String getFunctionViperFeature() {
@@ -196,12 +180,28 @@ public class OpsQueryFunctionsResponse extends AcsResponse {
 			this.functionViperFeature = functionViperFeature;
 		}
 
-		public String getGmtCreate() {
-			return this.gmtCreate;
+		public Integer getPriority() {
+			return this.priority;
 		}
 
-		public void setGmtCreate(String gmtCreate) {
-			this.gmtCreate = gmtCreate;
+		public void setPriority(Integer priority) {
+			this.priority = priority;
+		}
+
+		public Long getId() {
+			return this.id;
+		}
+
+		public void setId(Long id) {
+			this.id = id;
+		}
+
+		public String getProductCode() {
+			return this.productCode;
+		}
+
+		public void setProductCode(String productCode) {
+			this.productCode = productCode;
 		}
 
 		public List<FunctionDoc> getFunctionDocList() {
@@ -222,21 +222,13 @@ public class OpsQueryFunctionsResponse extends AcsResponse {
 
 		public static class FunctionDoc {
 
-			private Long id;
-
 			private String docId;
-
-			private String docTitle;
 
 			private String docType;
 
-			public Long getId() {
-				return this.id;
-			}
+			private String docTitle;
 
-			public void setId(Long id) {
-				this.id = id;
-			}
+			private Long id;
 
 			public String getDocId() {
 				return this.docId;
@@ -244,6 +236,14 @@ public class OpsQueryFunctionsResponse extends AcsResponse {
 
 			public void setDocId(String docId) {
 				this.docId = docId;
+			}
+
+			public String getDocType() {
+				return this.docType;
+			}
+
+			public void setDocType(String docType) {
+				this.docType = docType;
 			}
 
 			public String getDocTitle() {
@@ -254,12 +254,12 @@ public class OpsQueryFunctionsResponse extends AcsResponse {
 				this.docTitle = docTitle;
 			}
 
-			public String getDocType() {
-				return this.docType;
+			public Long getId() {
+				return this.id;
 			}
 
-			public void setDocType(String docType) {
-				this.docType = docType;
+			public void setId(Long id) {
+				this.id = id;
 			}
 		}
 	}

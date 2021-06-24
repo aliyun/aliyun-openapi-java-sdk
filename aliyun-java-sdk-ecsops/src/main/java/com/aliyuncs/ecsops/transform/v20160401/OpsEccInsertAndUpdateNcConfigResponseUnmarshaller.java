@@ -23,8 +23,8 @@ public class OpsEccInsertAndUpdateNcConfigResponseUnmarshaller {
 	public static OpsEccInsertAndUpdateNcConfigResponse unmarshall(OpsEccInsertAndUpdateNcConfigResponse opsEccInsertAndUpdateNcConfigResponse, UnmarshallerContext _ctx) {
 		
 		opsEccInsertAndUpdateNcConfigResponse.setRequestId(_ctx.stringValue("OpsEccInsertAndUpdateNcConfigResponse.RequestId"));
-		opsEccInsertAndUpdateNcConfigResponse.setData(_ctx.stringValue("OpsEccInsertAndUpdateNcConfigResponse.Data"));
 		opsEccInsertAndUpdateNcConfigResponse.setMessage(_ctx.stringValue("OpsEccInsertAndUpdateNcConfigResponse.Message"));
+		opsEccInsertAndUpdateNcConfigResponse.setData(_ctx.stringValue("OpsEccInsertAndUpdateNcConfigResponse.Data"));
 	 
 	 	return opsEccInsertAndUpdateNcConfigResponse;
 	}

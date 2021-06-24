@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsDescribeSpotInstancesResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
 
+	private String requestId;
+
 	private List<Instance> instances;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -45,6 +37,14 @@ public class OpsDescribeSpotInstancesResponse extends AcsResponse {
 
 	public void setTotalCount(Integer totalCount) {
 		this.totalCount = totalCount;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<Instance> getInstances() {
@@ -57,62 +57,62 @@ public class OpsDescribeSpotInstancesResponse extends AcsResponse {
 
 	public static class Instance {
 
-		private String instanceId;
+		private String status;
 
-		private String regionId;
+		private String spotStatus;
 
 		private String izId;
 
-		private String zoneId;
+		private String instanceId;
+
+		private String instanceType;
 
 		private String bid;
+
+		private String spotStrategy;
+
+		private String regionId;
+
+		private Integer spotDiscountLimit;
+
+		private Boolean ioOptimized;
 
 		private String resourceOwnerId;
 
 		private Integer cpu;
 
-		private Integer memory;
-
-		private String instanceType;
-
-		private String instanceTypeFamily;
-
-		private String status;
-
-		private String businessStatus;
-
-		private String createdTime;
+		private Integer spotDuration;
 
 		private String instanceNetworkType;
 
-		private Boolean ioOptimized;
+		private String zoneId;
 
-		private String spotStrategy;
-
-		private Integer spotDuration;
+		private String businessStatus;
 
 		private Float spotPriceLimit;
 
-		private Integer spotDiscountLimit;
+		private Integer memory;
+
+		private String createdTime;
+
+		private String instanceTypeFamily;
 
 		private String spotInterruptionBehavior;
 
-		private String spotStatus;
-
-		public String getInstanceId() {
-			return this.instanceId;
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
-		public String getRegionId() {
-			return this.regionId;
+		public String getSpotStatus() {
+			return this.spotStatus;
 		}
 
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
+		public void setSpotStatus(String spotStatus) {
+			this.spotStatus = spotStatus;
 		}
 
 		public String getIzId() {
@@ -123,12 +123,20 @@ public class OpsDescribeSpotInstancesResponse extends AcsResponse {
 			this.izId = izId;
 		}
 
-		public String getZoneId() {
-			return this.zoneId;
+		public String getInstanceId() {
+			return this.instanceId;
 		}
 
-		public void setZoneId(String zoneId) {
-			this.zoneId = zoneId;
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public String getInstanceType() {
+			return this.instanceType;
+		}
+
+		public void setInstanceType(String instanceType) {
+			this.instanceType = instanceType;
 		}
 
 		public String getBid() {
@@ -137,6 +145,38 @@ public class OpsDescribeSpotInstancesResponse extends AcsResponse {
 
 		public void setBid(String bid) {
 			this.bid = bid;
+		}
+
+		public String getSpotStrategy() {
+			return this.spotStrategy;
+		}
+
+		public void setSpotStrategy(String spotStrategy) {
+			this.spotStrategy = spotStrategy;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		public Integer getSpotDiscountLimit() {
+			return this.spotDiscountLimit;
+		}
+
+		public void setSpotDiscountLimit(Integer spotDiscountLimit) {
+			this.spotDiscountLimit = spotDiscountLimit;
+		}
+
+		public Boolean getIoOptimized() {
+			return this.ioOptimized;
+		}
+
+		public void setIoOptimized(Boolean ioOptimized) {
+			this.ioOptimized = ioOptimized;
 		}
 
 		public String getResourceOwnerId() {
@@ -155,52 +195,12 @@ public class OpsDescribeSpotInstancesResponse extends AcsResponse {
 			this.cpu = cpu;
 		}
 
-		public Integer getMemory() {
-			return this.memory;
+		public Integer getSpotDuration() {
+			return this.spotDuration;
 		}
 
-		public void setMemory(Integer memory) {
-			this.memory = memory;
-		}
-
-		public String getInstanceType() {
-			return this.instanceType;
-		}
-
-		public void setInstanceType(String instanceType) {
-			this.instanceType = instanceType;
-		}
-
-		public String getInstanceTypeFamily() {
-			return this.instanceTypeFamily;
-		}
-
-		public void setInstanceTypeFamily(String instanceTypeFamily) {
-			this.instanceTypeFamily = instanceTypeFamily;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
-		public String getBusinessStatus() {
-			return this.businessStatus;
-		}
-
-		public void setBusinessStatus(String businessStatus) {
-			this.businessStatus = businessStatus;
-		}
-
-		public String getCreatedTime() {
-			return this.createdTime;
-		}
-
-		public void setCreatedTime(String createdTime) {
-			this.createdTime = createdTime;
+		public void setSpotDuration(Integer spotDuration) {
+			this.spotDuration = spotDuration;
 		}
 
 		public String getInstanceNetworkType() {
@@ -211,28 +211,20 @@ public class OpsDescribeSpotInstancesResponse extends AcsResponse {
 			this.instanceNetworkType = instanceNetworkType;
 		}
 
-		public Boolean getIoOptimized() {
-			return this.ioOptimized;
+		public String getZoneId() {
+			return this.zoneId;
 		}
 
-		public void setIoOptimized(Boolean ioOptimized) {
-			this.ioOptimized = ioOptimized;
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
 		}
 
-		public String getSpotStrategy() {
-			return this.spotStrategy;
+		public String getBusinessStatus() {
+			return this.businessStatus;
 		}
 
-		public void setSpotStrategy(String spotStrategy) {
-			this.spotStrategy = spotStrategy;
-		}
-
-		public Integer getSpotDuration() {
-			return this.spotDuration;
-		}
-
-		public void setSpotDuration(Integer spotDuration) {
-			this.spotDuration = spotDuration;
+		public void setBusinessStatus(String businessStatus) {
+			this.businessStatus = businessStatus;
 		}
 
 		public Float getSpotPriceLimit() {
@@ -243,12 +235,28 @@ public class OpsDescribeSpotInstancesResponse extends AcsResponse {
 			this.spotPriceLimit = spotPriceLimit;
 		}
 
-		public Integer getSpotDiscountLimit() {
-			return this.spotDiscountLimit;
+		public Integer getMemory() {
+			return this.memory;
 		}
 
-		public void setSpotDiscountLimit(Integer spotDiscountLimit) {
-			this.spotDiscountLimit = spotDiscountLimit;
+		public void setMemory(Integer memory) {
+			this.memory = memory;
+		}
+
+		public String getCreatedTime() {
+			return this.createdTime;
+		}
+
+		public void setCreatedTime(String createdTime) {
+			this.createdTime = createdTime;
+		}
+
+		public String getInstanceTypeFamily() {
+			return this.instanceTypeFamily;
+		}
+
+		public void setInstanceTypeFamily(String instanceTypeFamily) {
+			this.instanceTypeFamily = instanceTypeFamily;
 		}
 
 		public String getSpotInterruptionBehavior() {
@@ -257,14 +265,6 @@ public class OpsDescribeSpotInstancesResponse extends AcsResponse {
 
 		public void setSpotInterruptionBehavior(String spotInterruptionBehavior) {
 			this.spotInterruptionBehavior = spotInterruptionBehavior;
-		}
-
-		public String getSpotStatus() {
-			return this.spotStatus;
-		}
-
-		public void setSpotStatus(String spotStatus) {
-			this.spotStatus = spotStatus;
 		}
 	}
 

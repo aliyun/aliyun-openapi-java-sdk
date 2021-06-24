@@ -30,18 +30,18 @@ public class OpsDescribeChangePlanBatchDetailResponseUnmarshaller {
 		opsDescribeChangePlanBatchDetailResponse.setRequestId(_ctx.stringValue("OpsDescribeChangePlanBatchDetailResponse.RequestId"));
 
 		Data data = new Data();
-		data.setPlanId(_ctx.stringValue("OpsDescribeChangePlanBatchDetailResponse.Data.PlanId"));
 		data.setBatchNo(_ctx.integerValue("OpsDescribeChangePlanBatchDetailResponse.Data.BatchNo"));
-		data.setTotalSize(_ctx.integerValue("OpsDescribeChangePlanBatchDetailResponse.Data.TotalSize"));
 		data.setLastBatch(_ctx.booleanValue("OpsDescribeChangePlanBatchDetailResponse.Data.LastBatch"));
+		data.setTotalSize(_ctx.integerValue("OpsDescribeChangePlanBatchDetailResponse.Data.TotalSize"));
+		data.setPlanId(_ctx.stringValue("OpsDescribeChangePlanBatchDetailResponse.Data.PlanId"));
 
 		List<Resource> resources = new ArrayList<Resource>();
 		for (int i = 0; i < _ctx.lengthValue("OpsDescribeChangePlanBatchDetailResponse.Data.Resources.Length"); i++) {
 			Resource resource = new Resource();
-			resource.setResourceId(_ctx.stringValue("OpsDescribeChangePlanBatchDetailResponse.Data.Resources["+ i +"].ResourceId"));
-			resource.setOperationStatus(_ctx.stringValue("OpsDescribeChangePlanBatchDetailResponse.Data.Resources["+ i +"].OperationStatus"));
 			resource.setGmtCreated(_ctx.stringValue("OpsDescribeChangePlanBatchDetailResponse.Data.Resources["+ i +"].GmtCreated"));
 			resource.setGmtModified(_ctx.stringValue("OpsDescribeChangePlanBatchDetailResponse.Data.Resources["+ i +"].GmtModified"));
+			resource.setResourceId(_ctx.stringValue("OpsDescribeChangePlanBatchDetailResponse.Data.Resources["+ i +"].ResourceId"));
+			resource.setOperationStatus(_ctx.stringValue("OpsDescribeChangePlanBatchDetailResponse.Data.Resources["+ i +"].OperationStatus"));
 
 			resources.add(resource);
 		}

@@ -47,19 +47,11 @@ public class OpsDescribeResourceRelatedResourcesResponse extends AcsResponse {
 
 	public static class Resource {
 
-		private String resourceId;
-
 		private String resourceType;
 
+		private String resourceId;
+
 		private List<RelatedResource> relatedResources;
-
-		public String getResourceId() {
-			return this.resourceId;
-		}
-
-		public void setResourceId(String resourceId) {
-			this.resourceId = resourceId;
-		}
 
 		public String getResourceType() {
 			return this.resourceType;
@@ -67,6 +59,14 @@ public class OpsDescribeResourceRelatedResourcesResponse extends AcsResponse {
 
 		public void setResourceType(String resourceType) {
 			this.resourceType = resourceType;
+		}
+
+		public String getResourceId() {
+			return this.resourceId;
+		}
+
+		public void setResourceId(String resourceId) {
+			this.resourceId = resourceId;
 		}
 
 		public List<RelatedResource> getRelatedResources() {

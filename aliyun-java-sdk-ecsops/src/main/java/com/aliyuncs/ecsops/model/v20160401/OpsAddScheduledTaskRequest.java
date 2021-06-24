@@ -17,7 +17,6 @@ package com.aliyuncs.ecsops.model.v20160401;
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
 import com.aliyuncs.http.MethodType;
-import com.aliyuncs.ecsops.Endpoint;
 
 /**
  * @author auto create
@@ -42,12 +41,8 @@ public class OpsAddScheduledTaskRequest extends RpcAcsRequest<OpsAddScheduledTas
 
 	private String auditParamStr;
 	public OpsAddScheduledTaskRequest() {
-		super("Ecsops", "2016-04-01", "OpsAddScheduledTask", "ecs");
+		super("Ecsops", "2016-04-01", "OpsAddScheduledTask", "ecsops");
 		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
 	}
 
 	public Integer getTaskPendingTimeout() {
@@ -124,13 +119,13 @@ public class OpsAddScheduledTaskRequest extends RpcAcsRequest<OpsAddScheduledTas
 		this.scheduleFactorys = scheduleFactorys;	
 		if (scheduleFactorys != null) {
 			for (int depth1 = 0; depth1 < scheduleFactorys.size(); depth1++) {
-				putQueryParameter("ScheduleFactory." + (depth1 + 1) + ".TaskName" , scheduleFactorys.get(depth1).getTaskName());
 				putQueryParameter("ScheduleFactory." + (depth1 + 1) + ".MaxSize" , scheduleFactorys.get(depth1).getMaxSize());
+				putQueryParameter("ScheduleFactory." + (depth1 + 1) + ".TaskName" , scheduleFactorys.get(depth1).getTaskName());
 				putQueryParameter("ScheduleFactory." + (depth1 + 1) + ".ConcurrentSize" , scheduleFactorys.get(depth1).getConcurrentSize());
 				if (scheduleFactorys.get(depth1).getScheduleConfigs() != null) {
 					for (int depth2 = 0; depth2 < scheduleFactorys.get(depth1).getScheduleConfigs().size(); depth2++) {
-						putQueryParameter("ScheduleFactory." + (depth1 + 1) + ".ScheduleConfig." + (depth2 + 1) + ".ScheduleFactor" , scheduleFactorys.get(depth1).getScheduleConfigs().get(depth2).getScheduleFactor());
 						putQueryParameter("ScheduleFactory." + (depth1 + 1) + ".ScheduleConfig." + (depth2 + 1) + ".MaxSize" , scheduleFactorys.get(depth1).getScheduleConfigs().get(depth2).getMaxSize());
+						putQueryParameter("ScheduleFactory." + (depth1 + 1) + ".ScheduleConfig." + (depth2 + 1) + ".ScheduleFactor" , scheduleFactorys.get(depth1).getScheduleConfigs().get(depth2).getScheduleFactor());
 						putQueryParameter("ScheduleFactory." + (depth1 + 1) + ".ScheduleConfig." + (depth2 + 1) + ".ConcurrentSize" , scheduleFactorys.get(depth1).getScheduleConfigs().get(depth2).getConcurrentSize());
 					}
 				}
@@ -151,21 +146,13 @@ public class OpsAddScheduledTaskRequest extends RpcAcsRequest<OpsAddScheduledTas
 
 	public static class ScheduleFactory {
 
-		private String taskName;
-
 		private Long maxSize;
+
+		private String taskName;
 
 		private Long concurrentSize;
 
 		private List<ScheduleConfig> scheduleConfigs;
-
-		public String getTaskName() {
-			return this.taskName;
-		}
-
-		public void setTaskName(String taskName) {
-			this.taskName = taskName;
-		}
 
 		public Long getMaxSize() {
 			return this.maxSize;
@@ -173,6 +160,14 @@ public class OpsAddScheduledTaskRequest extends RpcAcsRequest<OpsAddScheduledTas
 
 		public void setMaxSize(Long maxSize) {
 			this.maxSize = maxSize;
+		}
+
+		public String getTaskName() {
+			return this.taskName;
+		}
+
+		public void setTaskName(String taskName) {
+			this.taskName = taskName;
 		}
 
 		public Long getConcurrentSize() {
@@ -193,19 +188,11 @@ public class OpsAddScheduledTaskRequest extends RpcAcsRequest<OpsAddScheduledTas
 
 		public static class ScheduleConfig {
 
-			private String scheduleFactor;
-
 			private Long maxSize;
 
+			private String scheduleFactor;
+
 			private Long concurrentSize;
-
-			public String getScheduleFactor() {
-				return this.scheduleFactor;
-			}
-
-			public void setScheduleFactor(String scheduleFactor) {
-				this.scheduleFactor = scheduleFactor;
-			}
 
 			public Long getMaxSize() {
 				return this.maxSize;
@@ -213,6 +200,14 @@ public class OpsAddScheduledTaskRequest extends RpcAcsRequest<OpsAddScheduledTas
 
 			public void setMaxSize(Long maxSize) {
 				this.maxSize = maxSize;
+			}
+
+			public String getScheduleFactor() {
+				return this.scheduleFactor;
+			}
+
+			public void setScheduleFactor(String scheduleFactor) {
+				this.scheduleFactor = scheduleFactor;
 			}
 
 			public Long getConcurrentSize() {

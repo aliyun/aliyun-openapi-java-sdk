@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsQuerySpotPriceStrategyResponse extends AcsResponse {
 
+	private String message;
+
 	private String requestId;
 
 	private String code;
 
-	private String message;
-
 	private String success;
 
 	private List<SpotStrategy> spotStrategies;
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -49,14 +57,6 @@ public class OpsQuerySpotPriceStrategyResponse extends AcsResponse {
 
 	public void setCode(String code) {
 		this.code = code;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
 	}
 
 	public String getSuccess() {
@@ -77,68 +77,42 @@ public class OpsQuerySpotPriceStrategyResponse extends AcsResponse {
 
 	public static class SpotStrategy {
 
-		private Long id;
-
-		private String gmtCreate;
-
-		private String gmtModified;
-
-		private String gmtModified1;
+		private String endDate;
 
 		private String regionNo;
 
-		private String izNo;
-
-		private String instanceType;
-
-		private String instanceTypeFamily;
-
-		private Integer ioOptimized;
+		private String startDate;
 
 		private String networkType;
 
-		private Integer spotDuration;
+		private String instanceType;
 
-		private String startDate;
-
-		private String endDate;
+		private String gmtModified;
 
 		private Integer strategyType;
 
+		private Integer ioOptimized;
+
 		private String strategyDetails;
+
+		private Integer spotDuration;
 
 		private String createdBy;
 
-		public Long getId() {
-			return this.id;
+		private String gmtCreate;
+
+		private String izNo;
+
+		private String instanceTypeFamily;
+
+		private Long id;
+
+		public String getEndDate() {
+			return this.endDate;
 		}
 
-		public void setId(Long id) {
-			this.id = id;
-		}
-
-		public String getGmtCreate() {
-			return this.gmtCreate;
-		}
-
-		public void setGmtCreate(String gmtCreate) {
-			this.gmtCreate = gmtCreate;
-		}
-
-		public String getGmtModified() {
-			return this.gmtModified;
-		}
-
-		public void setGmtModified(String gmtModified) {
-			this.gmtModified = gmtModified;
-		}
-
-		public String getGmtModified1() {
-			return this.gmtModified1;
-		}
-
-		public void setGmtModified1(String gmtModified1) {
-			this.gmtModified1 = gmtModified1;
+		public void setEndDate(String endDate) {
+			this.endDate = endDate;
 		}
 
 		public String getRegionNo() {
@@ -149,36 +123,12 @@ public class OpsQuerySpotPriceStrategyResponse extends AcsResponse {
 			this.regionNo = regionNo;
 		}
 
-		public String getIzNo() {
-			return this.izNo;
+		public String getStartDate() {
+			return this.startDate;
 		}
 
-		public void setIzNo(String izNo) {
-			this.izNo = izNo;
-		}
-
-		public String getInstanceType() {
-			return this.instanceType;
-		}
-
-		public void setInstanceType(String instanceType) {
-			this.instanceType = instanceType;
-		}
-
-		public String getInstanceTypeFamily() {
-			return this.instanceTypeFamily;
-		}
-
-		public void setInstanceTypeFamily(String instanceTypeFamily) {
-			this.instanceTypeFamily = instanceTypeFamily;
-		}
-
-		public Integer getIoOptimized() {
-			return this.ioOptimized;
-		}
-
-		public void setIoOptimized(Integer ioOptimized) {
-			this.ioOptimized = ioOptimized;
+		public void setStartDate(String startDate) {
+			this.startDate = startDate;
 		}
 
 		public String getNetworkType() {
@@ -189,28 +139,20 @@ public class OpsQuerySpotPriceStrategyResponse extends AcsResponse {
 			this.networkType = networkType;
 		}
 
-		public Integer getSpotDuration() {
-			return this.spotDuration;
+		public String getInstanceType() {
+			return this.instanceType;
 		}
 
-		public void setSpotDuration(Integer spotDuration) {
-			this.spotDuration = spotDuration;
+		public void setInstanceType(String instanceType) {
+			this.instanceType = instanceType;
 		}
 
-		public String getStartDate() {
-			return this.startDate;
+		public String getGmtModified() {
+			return this.gmtModified;
 		}
 
-		public void setStartDate(String startDate) {
-			this.startDate = startDate;
-		}
-
-		public String getEndDate() {
-			return this.endDate;
-		}
-
-		public void setEndDate(String endDate) {
-			this.endDate = endDate;
+		public void setGmtModified(String gmtModified) {
+			this.gmtModified = gmtModified;
 		}
 
 		public Integer getStrategyType() {
@@ -221,6 +163,14 @@ public class OpsQuerySpotPriceStrategyResponse extends AcsResponse {
 			this.strategyType = strategyType;
 		}
 
+		public Integer getIoOptimized() {
+			return this.ioOptimized;
+		}
+
+		public void setIoOptimized(Integer ioOptimized) {
+			this.ioOptimized = ioOptimized;
+		}
+
 		public String getStrategyDetails() {
 			return this.strategyDetails;
 		}
@@ -229,12 +179,52 @@ public class OpsQuerySpotPriceStrategyResponse extends AcsResponse {
 			this.strategyDetails = strategyDetails;
 		}
 
+		public Integer getSpotDuration() {
+			return this.spotDuration;
+		}
+
+		public void setSpotDuration(Integer spotDuration) {
+			this.spotDuration = spotDuration;
+		}
+
 		public String getCreatedBy() {
 			return this.createdBy;
 		}
 
 		public void setCreatedBy(String createdBy) {
 			this.createdBy = createdBy;
+		}
+
+		public String getGmtCreate() {
+			return this.gmtCreate;
+		}
+
+		public void setGmtCreate(String gmtCreate) {
+			this.gmtCreate = gmtCreate;
+		}
+
+		public String getIzNo() {
+			return this.izNo;
+		}
+
+		public void setIzNo(String izNo) {
+			this.izNo = izNo;
+		}
+
+		public String getInstanceTypeFamily() {
+			return this.instanceTypeFamily;
+		}
+
+		public void setInstanceTypeFamily(String instanceTypeFamily) {
+			this.instanceTypeFamily = instanceTypeFamily;
+		}
+
+		public Long getId() {
+			return this.id;
+		}
+
+		public void setId(Long id) {
+			this.id = id;
 		}
 	}
 

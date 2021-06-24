@@ -26,8 +26,8 @@ public class OpsQueryWorkflowResultResponseUnmarshaller {
 		opsQueryWorkflowResultResponse.setRequestId(_ctx.stringValue("OpsQueryWorkflowResultResponse.RequestId"));
 
 		Result result = new Result();
-		result.setDesc(_ctx.stringValue("OpsQueryWorkflowResultResponse.Result.Desc"));
 		result.setWorkflowStatus(_ctx.stringValue("OpsQueryWorkflowResultResponse.Result.WorkflowStatus"));
+		result.setDesc(_ctx.stringValue("OpsQueryWorkflowResultResponse.Result.Desc"));
 		opsQueryWorkflowResultResponse.setResult(result);
 	 
 	 	return opsQueryWorkflowResultResponse;

@@ -25,21 +25,29 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsDescribeCloudOpsDiskOpsEventsResponse extends AcsResponse {
 
+	private Integer totalCount;
+
 	private String requestId;
-
-	private String bizCode;
-
-	private String bizMessage;
-
-	private Integer count;
-
-	private Integer page;
 
 	private Integer pageSize;
 
-	private Integer totalCount;
+	private String bizMessage;
+
+	private Integer page;
+
+	private Integer count;
+
+	private String bizCode;
 
 	private List<DiskOpsEventInfo> data;
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -47,38 +55,6 @@ public class OpsDescribeCloudOpsDiskOpsEventsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getBizCode() {
-		return this.bizCode;
-	}
-
-	public void setBizCode(String bizCode) {
-		this.bizCode = bizCode;
-	}
-
-	public String getBizMessage() {
-		return this.bizMessage;
-	}
-
-	public void setBizMessage(String bizMessage) {
-		this.bizMessage = bizMessage;
-	}
-
-	public Integer getCount() {
-		return this.count;
-	}
-
-	public void setCount(Integer count) {
-		this.count = count;
-	}
-
-	public Integer getPage() {
-		return this.page;
-	}
-
-	public void setPage(Integer page) {
-		this.page = page;
 	}
 
 	public Integer getPageSize() {
@@ -89,12 +65,36 @@ public class OpsDescribeCloudOpsDiskOpsEventsResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public Integer getTotalCount() {
-		return this.totalCount;
+	public String getBizMessage() {
+		return this.bizMessage;
 	}
 
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
+	public void setBizMessage(String bizMessage) {
+		this.bizMessage = bizMessage;
+	}
+
+	public Integer getPage() {
+		return this.page;
+	}
+
+	public void setPage(Integer page) {
+		this.page = page;
+	}
+
+	public Integer getCount() {
+		return this.count;
+	}
+
+	public void setCount(Integer count) {
+		this.count = count;
+	}
+
+	public String getBizCode() {
+		return this.bizCode;
+	}
+
+	public void setBizCode(String bizCode) {
+		this.bizCode = bizCode;
 	}
 
 	public List<DiskOpsEventInfo> getData() {
@@ -107,90 +107,50 @@ public class OpsDescribeCloudOpsDiskOpsEventsResponse extends AcsResponse {
 
 	public static class DiskOpsEventInfo {
 
-		private String deployMode;
-
-		private String device;
-
-		private String diskStatus;
-
-		private String diskType;
-
-		private String eventStatus;
-
-		private String eventType;
+		private String yaochiDiskId;
 
 		private String houyiDiskId;
 
-		private Integer id;
-
-		private String idcOrderId;
-
-		private String ioType;
-
-		private Integer isHotSwap;
+		private String deployMode;
 
 		private Integer maintenanceId;
 
-		private String storageDeviceId;
-
-		private String tef;
-
 		private String tes;
 
-		private String tnb;
-
-		private String tp;
+		private String diskType;
 
 		private String vmName;
 
-		private String yaochiDiskId;
+		private String diskStatus;
 
-		public String getDeployMode() {
-			return this.deployMode;
+		private String idcOrderId;
+
+		private String tp;
+
+		private String tnb;
+
+		private String eventType;
+
+		private String tef;
+
+		private String storageDeviceId;
+
+		private String device;
+
+		private String eventStatus;
+
+		private Integer isHotSwap;
+
+		private String ioType;
+
+		private Integer id;
+
+		public String getYaochiDiskId() {
+			return this.yaochiDiskId;
 		}
 
-		public void setDeployMode(String deployMode) {
-			this.deployMode = deployMode;
-		}
-
-		public String getDevice() {
-			return this.device;
-		}
-
-		public void setDevice(String device) {
-			this.device = device;
-		}
-
-		public String getDiskStatus() {
-			return this.diskStatus;
-		}
-
-		public void setDiskStatus(String diskStatus) {
-			this.diskStatus = diskStatus;
-		}
-
-		public String getDiskType() {
-			return this.diskType;
-		}
-
-		public void setDiskType(String diskType) {
-			this.diskType = diskType;
-		}
-
-		public String getEventStatus() {
-			return this.eventStatus;
-		}
-
-		public void setEventStatus(String eventStatus) {
-			this.eventStatus = eventStatus;
-		}
-
-		public String getEventType() {
-			return this.eventType;
-		}
-
-		public void setEventType(String eventType) {
-			this.eventType = eventType;
+		public void setYaochiDiskId(String yaochiDiskId) {
+			this.yaochiDiskId = yaochiDiskId;
 		}
 
 		public String getHouyiDiskId() {
@@ -201,36 +161,12 @@ public class OpsDescribeCloudOpsDiskOpsEventsResponse extends AcsResponse {
 			this.houyiDiskId = houyiDiskId;
 		}
 
-		public Integer getId() {
-			return this.id;
+		public String getDeployMode() {
+			return this.deployMode;
 		}
 
-		public void setId(Integer id) {
-			this.id = id;
-		}
-
-		public String getIdcOrderId() {
-			return this.idcOrderId;
-		}
-
-		public void setIdcOrderId(String idcOrderId) {
-			this.idcOrderId = idcOrderId;
-		}
-
-		public String getIoType() {
-			return this.ioType;
-		}
-
-		public void setIoType(String ioType) {
-			this.ioType = ioType;
-		}
-
-		public Integer getIsHotSwap() {
-			return this.isHotSwap;
-		}
-
-		public void setIsHotSwap(Integer isHotSwap) {
-			this.isHotSwap = isHotSwap;
+		public void setDeployMode(String deployMode) {
+			this.deployMode = deployMode;
 		}
 
 		public Integer getMaintenanceId() {
@@ -241,22 +177,6 @@ public class OpsDescribeCloudOpsDiskOpsEventsResponse extends AcsResponse {
 			this.maintenanceId = maintenanceId;
 		}
 
-		public String getStorageDeviceId() {
-			return this.storageDeviceId;
-		}
-
-		public void setStorageDeviceId(String storageDeviceId) {
-			this.storageDeviceId = storageDeviceId;
-		}
-
-		public String getTef() {
-			return this.tef;
-		}
-
-		public void setTef(String tef) {
-			this.tef = tef;
-		}
-
 		public String getTes() {
 			return this.tes;
 		}
@@ -265,20 +185,12 @@ public class OpsDescribeCloudOpsDiskOpsEventsResponse extends AcsResponse {
 			this.tes = tes;
 		}
 
-		public String getTnb() {
-			return this.tnb;
+		public String getDiskType() {
+			return this.diskType;
 		}
 
-		public void setTnb(String tnb) {
-			this.tnb = tnb;
-		}
-
-		public String getTp() {
-			return this.tp;
-		}
-
-		public void setTp(String tp) {
-			this.tp = tp;
+		public void setDiskType(String diskType) {
+			this.diskType = diskType;
 		}
 
 		public String getVmName() {
@@ -289,12 +201,100 @@ public class OpsDescribeCloudOpsDiskOpsEventsResponse extends AcsResponse {
 			this.vmName = vmName;
 		}
 
-		public String getYaochiDiskId() {
-			return this.yaochiDiskId;
+		public String getDiskStatus() {
+			return this.diskStatus;
 		}
 
-		public void setYaochiDiskId(String yaochiDiskId) {
-			this.yaochiDiskId = yaochiDiskId;
+		public void setDiskStatus(String diskStatus) {
+			this.diskStatus = diskStatus;
+		}
+
+		public String getIdcOrderId() {
+			return this.idcOrderId;
+		}
+
+		public void setIdcOrderId(String idcOrderId) {
+			this.idcOrderId = idcOrderId;
+		}
+
+		public String getTp() {
+			return this.tp;
+		}
+
+		public void setTp(String tp) {
+			this.tp = tp;
+		}
+
+		public String getTnb() {
+			return this.tnb;
+		}
+
+		public void setTnb(String tnb) {
+			this.tnb = tnb;
+		}
+
+		public String getEventType() {
+			return this.eventType;
+		}
+
+		public void setEventType(String eventType) {
+			this.eventType = eventType;
+		}
+
+		public String getTef() {
+			return this.tef;
+		}
+
+		public void setTef(String tef) {
+			this.tef = tef;
+		}
+
+		public String getStorageDeviceId() {
+			return this.storageDeviceId;
+		}
+
+		public void setStorageDeviceId(String storageDeviceId) {
+			this.storageDeviceId = storageDeviceId;
+		}
+
+		public String getDevice() {
+			return this.device;
+		}
+
+		public void setDevice(String device) {
+			this.device = device;
+		}
+
+		public String getEventStatus() {
+			return this.eventStatus;
+		}
+
+		public void setEventStatus(String eventStatus) {
+			this.eventStatus = eventStatus;
+		}
+
+		public Integer getIsHotSwap() {
+			return this.isHotSwap;
+		}
+
+		public void setIsHotSwap(Integer isHotSwap) {
+			this.isHotSwap = isHotSwap;
+		}
+
+		public String getIoType() {
+			return this.ioType;
+		}
+
+		public void setIoType(String ioType) {
+			this.ioType = ioType;
+		}
+
+		public Integer getId() {
+			return this.id;
+		}
+
+		public void setId(Integer id) {
+			this.id = id;
 		}
 	}
 

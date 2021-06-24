@@ -28,8 +28,8 @@ public class OpsCoreApiStatsQueryHistoryResponseUnmarshaller {
 	public static OpsCoreApiStatsQueryHistoryResponse unmarshall(OpsCoreApiStatsQueryHistoryResponse opsCoreApiStatsQueryHistoryResponse, UnmarshallerContext _ctx) {
 		
 		opsCoreApiStatsQueryHistoryResponse.setRequestId(_ctx.stringValue("OpsCoreApiStatsQueryHistoryResponse.RequestId"));
-		opsCoreApiStatsQueryHistoryResponse.setCode(_ctx.stringValue("OpsCoreApiStatsQueryHistoryResponse.Code"));
 		opsCoreApiStatsQueryHistoryResponse.setMessage(_ctx.stringValue("OpsCoreApiStatsQueryHistoryResponse.Message"));
+		opsCoreApiStatsQueryHistoryResponse.setCode(_ctx.stringValue("OpsCoreApiStatsQueryHistoryResponse.Code"));
 		opsCoreApiStatsQueryHistoryResponse.setSuccess(_ctx.stringValue("OpsCoreApiStatsQueryHistoryResponse.Success"));
 
 		List<DataItem> data = new ArrayList<DataItem>();
@@ -40,10 +40,10 @@ public class OpsCoreApiStatsQueryHistoryResponseUnmarshaller {
 			List<ApiStat> apiStats = new ArrayList<ApiStat>();
 			for (int j = 0; j < _ctx.lengthValue("OpsCoreApiStatsQueryHistoryResponse.Data["+ i +"].ApiStats.Length"); j++) {
 				ApiStat apiStat = new ApiStat();
-				apiStat.setTimestamp(_ctx.longValue("OpsCoreApiStatsQueryHistoryResponse.Data["+ i +"].ApiStats["+ j +"].Timestamp"));
 				apiStat.setFailureCount(_ctx.longValue("OpsCoreApiStatsQueryHistoryResponse.Data["+ i +"].ApiStats["+ j +"].FailureCount"));
-				apiStat.setResponseTimeAvg(_ctx.floatValue("OpsCoreApiStatsQueryHistoryResponse.Data["+ i +"].ApiStats["+ j +"].ResponseTimeAvg"));
+				apiStat.setTimestamp(_ctx.longValue("OpsCoreApiStatsQueryHistoryResponse.Data["+ i +"].ApiStats["+ j +"].Timestamp"));
 				apiStat.setTotalCount(_ctx.longValue("OpsCoreApiStatsQueryHistoryResponse.Data["+ i +"].ApiStats["+ j +"].TotalCount"));
+				apiStat.setResponseTimeAvg(_ctx.floatValue("OpsCoreApiStatsQueryHistoryResponse.Data["+ i +"].ApiStats["+ j +"].ResponseTimeAvg"));
 
 				apiStats.add(apiStat);
 			}

@@ -26,9 +26,9 @@ public class OpsCancelCloudOpsMaintenanceResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String bizCode;
-
 	private String bizMessage;
+
+	private String bizCode;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,20 +38,20 @@ public class OpsCancelCloudOpsMaintenanceResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getBizCode() {
-		return this.bizCode;
-	}
-
-	public void setBizCode(String bizCode) {
-		this.bizCode = bizCode;
-	}
-
 	public String getBizMessage() {
 		return this.bizMessage;
 	}
 
 	public void setBizMessage(String bizMessage) {
 		this.bizMessage = bizMessage;
+	}
+
+	public String getBizCode() {
+		return this.bizCode;
+	}
+
+	public void setBizCode(String bizCode) {
+		this.bizCode = bizCode;
 	}
 
 	@Override

@@ -31,17 +31,11 @@ public class OpsQueryGlobalBlackListAlarmCenterResponseUnmarshaller {
 		MonitorBlackList monitorBlackList = new MonitorBlackList();
 		monitorBlackList.setName(_ctx.stringValue("OpsQueryGlobalBlackListAlarmCenterResponse.MonitorBlackList.Name"));
 
-		List<String> zoneIds = new ArrayList<String>();
-		for (int i = 0; i < _ctx.lengthValue("OpsQueryGlobalBlackListAlarmCenterResponse.MonitorBlackList.ZoneIds.Length"); i++) {
-			zoneIds.add(_ctx.stringValue("OpsQueryGlobalBlackListAlarmCenterResponse.MonitorBlackList.ZoneIds["+ i +"]"));
+		List<String> clusterIds = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("OpsQueryGlobalBlackListAlarmCenterResponse.MonitorBlackList.ClusterIds.Length"); i++) {
+			clusterIds.add(_ctx.stringValue("OpsQueryGlobalBlackListAlarmCenterResponse.MonitorBlackList.ClusterIds["+ i +"]"));
 		}
-		monitorBlackList.setZoneIds(zoneIds);
-
-		List<String> regionIds = new ArrayList<String>();
-		for (int i = 0; i < _ctx.lengthValue("OpsQueryGlobalBlackListAlarmCenterResponse.MonitorBlackList.RegionIds.Length"); i++) {
-			regionIds.add(_ctx.stringValue("OpsQueryGlobalBlackListAlarmCenterResponse.MonitorBlackList.RegionIds["+ i +"]"));
-		}
-		monitorBlackList.setRegionIds(regionIds);
+		monitorBlackList.setClusterIds(clusterIds);
 
 		List<String> ncIps = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("OpsQueryGlobalBlackListAlarmCenterResponse.MonitorBlackList.NcIps.Length"); i++) {
@@ -55,45 +49,51 @@ public class OpsQueryGlobalBlackListAlarmCenterResponseUnmarshaller {
 		}
 		monitorBlackList.setInstanceIds(instanceIds);
 
-		List<String> clusterIds = new ArrayList<String>();
-		for (int i = 0; i < _ctx.lengthValue("OpsQueryGlobalBlackListAlarmCenterResponse.MonitorBlackList.ClusterIds.Length"); i++) {
-			clusterIds.add(_ctx.stringValue("OpsQueryGlobalBlackListAlarmCenterResponse.MonitorBlackList.ClusterIds["+ i +"]"));
+		List<String> regionIds = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("OpsQueryGlobalBlackListAlarmCenterResponse.MonitorBlackList.RegionIds.Length"); i++) {
+			regionIds.add(_ctx.stringValue("OpsQueryGlobalBlackListAlarmCenterResponse.MonitorBlackList.RegionIds["+ i +"]"));
 		}
-		monitorBlackList.setClusterIds(clusterIds);
+		monitorBlackList.setRegionIds(regionIds);
+
+		List<String> zoneIds = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("OpsQueryGlobalBlackListAlarmCenterResponse.MonitorBlackList.ZoneIds.Length"); i++) {
+			zoneIds.add(_ctx.stringValue("OpsQueryGlobalBlackListAlarmCenterResponse.MonitorBlackList.ZoneIds["+ i +"]"));
+		}
+		monitorBlackList.setZoneIds(zoneIds);
 		opsQueryGlobalBlackListAlarmCenterResponse.setMonitorBlackList(monitorBlackList);
 
 		OpsBlackList opsBlackList = new OpsBlackList();
 		opsBlackList.setName(_ctx.stringValue("OpsQueryGlobalBlackListAlarmCenterResponse.OpsBlackList.Name"));
 
-		List<String> zoneIds1 = new ArrayList<String>();
-		for (int i = 0; i < _ctx.lengthValue("OpsQueryGlobalBlackListAlarmCenterResponse.OpsBlackList.ZoneIds.Length"); i++) {
-			zoneIds1.add(_ctx.stringValue("OpsQueryGlobalBlackListAlarmCenterResponse.OpsBlackList.ZoneIds["+ i +"]"));
-		}
-		opsBlackList.setZoneIds1(zoneIds1);
-
-		List<String> regionIds2 = new ArrayList<String>();
-		for (int i = 0; i < _ctx.lengthValue("OpsQueryGlobalBlackListAlarmCenterResponse.OpsBlackList.RegionIds.Length"); i++) {
-			regionIds2.add(_ctx.stringValue("OpsQueryGlobalBlackListAlarmCenterResponse.OpsBlackList.RegionIds["+ i +"]"));
-		}
-		opsBlackList.setRegionIds2(regionIds2);
-
-		List<String> ncIps3 = new ArrayList<String>();
-		for (int i = 0; i < _ctx.lengthValue("OpsQueryGlobalBlackListAlarmCenterResponse.OpsBlackList.NcIps.Length"); i++) {
-			ncIps3.add(_ctx.stringValue("OpsQueryGlobalBlackListAlarmCenterResponse.OpsBlackList.NcIps["+ i +"]"));
-		}
-		opsBlackList.setNcIps3(ncIps3);
-
-		List<String> instanceIds4 = new ArrayList<String>();
-		for (int i = 0; i < _ctx.lengthValue("OpsQueryGlobalBlackListAlarmCenterResponse.OpsBlackList.InstanceIds.Length"); i++) {
-			instanceIds4.add(_ctx.stringValue("OpsQueryGlobalBlackListAlarmCenterResponse.OpsBlackList.InstanceIds["+ i +"]"));
-		}
-		opsBlackList.setInstanceIds4(instanceIds4);
-
-		List<String> clusterIds5 = new ArrayList<String>();
+		List<String> clusterIds1 = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("OpsQueryGlobalBlackListAlarmCenterResponse.OpsBlackList.ClusterIds.Length"); i++) {
-			clusterIds5.add(_ctx.stringValue("OpsQueryGlobalBlackListAlarmCenterResponse.OpsBlackList.ClusterIds["+ i +"]"));
+			clusterIds1.add(_ctx.stringValue("OpsQueryGlobalBlackListAlarmCenterResponse.OpsBlackList.ClusterIds["+ i +"]"));
 		}
-		opsBlackList.setClusterIds5(clusterIds5);
+		opsBlackList.setClusterIds1(clusterIds1);
+
+		List<String> ncIps2 = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("OpsQueryGlobalBlackListAlarmCenterResponse.OpsBlackList.NcIps.Length"); i++) {
+			ncIps2.add(_ctx.stringValue("OpsQueryGlobalBlackListAlarmCenterResponse.OpsBlackList.NcIps["+ i +"]"));
+		}
+		opsBlackList.setNcIps2(ncIps2);
+
+		List<String> instanceIds3 = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("OpsQueryGlobalBlackListAlarmCenterResponse.OpsBlackList.InstanceIds.Length"); i++) {
+			instanceIds3.add(_ctx.stringValue("OpsQueryGlobalBlackListAlarmCenterResponse.OpsBlackList.InstanceIds["+ i +"]"));
+		}
+		opsBlackList.setInstanceIds3(instanceIds3);
+
+		List<String> regionIds4 = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("OpsQueryGlobalBlackListAlarmCenterResponse.OpsBlackList.RegionIds.Length"); i++) {
+			regionIds4.add(_ctx.stringValue("OpsQueryGlobalBlackListAlarmCenterResponse.OpsBlackList.RegionIds["+ i +"]"));
+		}
+		opsBlackList.setRegionIds4(regionIds4);
+
+		List<String> zoneIds5 = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("OpsQueryGlobalBlackListAlarmCenterResponse.OpsBlackList.ZoneIds.Length"); i++) {
+			zoneIds5.add(_ctx.stringValue("OpsQueryGlobalBlackListAlarmCenterResponse.OpsBlackList.ZoneIds["+ i +"]"));
+		}
+		opsBlackList.setZoneIds5(zoneIds5);
 		opsQueryGlobalBlackListAlarmCenterResponse.setOpsBlackList(opsBlackList);
 	 
 	 	return opsQueryGlobalBlackListAlarmCenterResponse;

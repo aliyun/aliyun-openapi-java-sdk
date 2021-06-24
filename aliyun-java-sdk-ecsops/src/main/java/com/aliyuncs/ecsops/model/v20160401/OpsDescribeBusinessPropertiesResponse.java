@@ -47,29 +47,13 @@ public class OpsDescribeBusinessPropertiesResponse extends AcsResponse {
 
 	public static class BusinessPropertySet {
 
-		private Long id;
-
-		private Long businessId;
-
 		private String propertyCode;
 
 		private String propertyValue;
 
-		public Long getId() {
-			return this.id;
-		}
+		private Long id;
 
-		public void setId(Long id) {
-			this.id = id;
-		}
-
-		public Long getBusinessId() {
-			return this.businessId;
-		}
-
-		public void setBusinessId(Long businessId) {
-			this.businessId = businessId;
-		}
+		private Long businessId;
 
 		public String getPropertyCode() {
 			return this.propertyCode;
@@ -85,6 +69,22 @@ public class OpsDescribeBusinessPropertiesResponse extends AcsResponse {
 
 		public void setPropertyValue(String propertyValue) {
 			this.propertyValue = propertyValue;
+		}
+
+		public Long getId() {
+			return this.id;
+		}
+
+		public void setId(Long id) {
+			this.id = id;
+		}
+
+		public Long getBusinessId() {
+			return this.businessId;
+		}
+
+		public void setBusinessId(Long businessId) {
+			this.businessId = businessId;
 		}
 	}
 

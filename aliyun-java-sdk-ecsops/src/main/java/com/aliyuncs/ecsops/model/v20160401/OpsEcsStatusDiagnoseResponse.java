@@ -47,27 +47,19 @@ public class OpsEcsStatusDiagnoseResponse extends AcsResponse {
 
 	public static class EcsStatusDiagnose {
 
-		private String instanceId;
-
 		private String status;
-
-		private String houyiStatus;
-
-		private String statusOnNc;
-
-		private Boolean yaochiConsistent;
 
 		private Boolean houyiConsistent;
 
 		private String syncResult;
 
-		public String getInstanceId() {
-			return this.instanceId;
-		}
+		private String houyiStatus;
 
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
+		private String statusOnNc;
+
+		private String instanceId;
+
+		private Boolean yaochiConsistent;
 
 		public String getStatus() {
 			return this.status;
@@ -75,6 +67,22 @@ public class OpsEcsStatusDiagnoseResponse extends AcsResponse {
 
 		public void setStatus(String status) {
 			this.status = status;
+		}
+
+		public Boolean getHouyiConsistent() {
+			return this.houyiConsistent;
+		}
+
+		public void setHouyiConsistent(Boolean houyiConsistent) {
+			this.houyiConsistent = houyiConsistent;
+		}
+
+		public String getSyncResult() {
+			return this.syncResult;
+		}
+
+		public void setSyncResult(String syncResult) {
+			this.syncResult = syncResult;
 		}
 
 		public String getHouyiStatus() {
@@ -93,28 +101,20 @@ public class OpsEcsStatusDiagnoseResponse extends AcsResponse {
 			this.statusOnNc = statusOnNc;
 		}
 
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
 		public Boolean getYaochiConsistent() {
 			return this.yaochiConsistent;
 		}
 
 		public void setYaochiConsistent(Boolean yaochiConsistent) {
 			this.yaochiConsistent = yaochiConsistent;
-		}
-
-		public Boolean getHouyiConsistent() {
-			return this.houyiConsistent;
-		}
-
-		public void setHouyiConsistent(Boolean houyiConsistent) {
-			this.houyiConsistent = houyiConsistent;
-		}
-
-		public String getSyncResult() {
-			return this.syncResult;
-		}
-
-		public void setSyncResult(String syncResult) {
-			this.syncResult = syncResult;
 		}
 	}
 

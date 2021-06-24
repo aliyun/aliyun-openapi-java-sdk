@@ -28,23 +28,23 @@ public class OpsDescribeReservedInstancesResponseUnmarshaller {
 		
 		opsDescribeReservedInstancesResponse.setRequestId(_ctx.stringValue("OpsDescribeReservedInstancesResponse.RequestId"));
 		opsDescribeReservedInstancesResponse.setTotalCount(_ctx.integerValue("OpsDescribeReservedInstancesResponse.TotalCount"));
-		opsDescribeReservedInstancesResponse.setPageNumber(_ctx.integerValue("OpsDescribeReservedInstancesResponse.PageNumber"));
 		opsDescribeReservedInstancesResponse.setPageSize(_ctx.integerValue("OpsDescribeReservedInstancesResponse.PageSize"));
+		opsDescribeReservedInstancesResponse.setPageNumber(_ctx.integerValue("OpsDescribeReservedInstancesResponse.PageNumber"));
 
 		List<ReservedInstance> reservedInstances = new ArrayList<ReservedInstance>();
 		for (int i = 0; i < _ctx.lengthValue("OpsDescribeReservedInstancesResponse.ReservedInstances.Length"); i++) {
 			ReservedInstance reservedInstance = new ReservedInstance();
-			reservedInstance.setReservedInstanceId(_ctx.stringValue("OpsDescribeReservedInstancesResponse.ReservedInstances["+ i +"].ReservedInstanceId"));
-			reservedInstance.setRegionId(_ctx.stringValue("OpsDescribeReservedInstancesResponse.ReservedInstances["+ i +"].RegionId"));
-			reservedInstance.setZoneId(_ctx.stringValue("OpsDescribeReservedInstancesResponse.ReservedInstances["+ i +"].ZoneId"));
+			reservedInstance.setStatus(_ctx.stringValue("OpsDescribeReservedInstancesResponse.ReservedInstances["+ i +"].Status"));
 			reservedInstance.setReservedInstanceName(_ctx.stringValue("OpsDescribeReservedInstancesResponse.ReservedInstances["+ i +"].ReservedInstanceName"));
 			reservedInstance.setDescription(_ctx.stringValue("OpsDescribeReservedInstancesResponse.ReservedInstances["+ i +"].Description"));
-			reservedInstance.setInstanceType(_ctx.stringValue("OpsDescribeReservedInstancesResponse.ReservedInstances["+ i +"].InstanceType"));
-			reservedInstance.setScope(_ctx.stringValue("OpsDescribeReservedInstancesResponse.ReservedInstances["+ i +"].Scope"));
-			reservedInstance.setOfferingType(_ctx.stringValue("OpsDescribeReservedInstancesResponse.ReservedInstances["+ i +"].OfferingType"));
-			reservedInstance.setInstanceAmount(_ctx.integerValue("OpsDescribeReservedInstancesResponse.ReservedInstances["+ i +"].InstanceAmount"));
-			reservedInstance.setStatus(_ctx.stringValue("OpsDescribeReservedInstancesResponse.ReservedInstances["+ i +"].Status"));
 			reservedInstance.setResourceGroupId(_ctx.stringValue("OpsDescribeReservedInstancesResponse.ReservedInstances["+ i +"].ResourceGroupId"));
+			reservedInstance.setZoneId(_ctx.stringValue("OpsDescribeReservedInstancesResponse.ReservedInstances["+ i +"].ZoneId"));
+			reservedInstance.setReservedInstanceId(_ctx.stringValue("OpsDescribeReservedInstancesResponse.ReservedInstances["+ i +"].ReservedInstanceId"));
+			reservedInstance.setScope(_ctx.stringValue("OpsDescribeReservedInstancesResponse.ReservedInstances["+ i +"].Scope"));
+			reservedInstance.setInstanceType(_ctx.stringValue("OpsDescribeReservedInstancesResponse.ReservedInstances["+ i +"].InstanceType"));
+			reservedInstance.setInstanceAmount(_ctx.integerValue("OpsDescribeReservedInstancesResponse.ReservedInstances["+ i +"].InstanceAmount"));
+			reservedInstance.setOfferingType(_ctx.stringValue("OpsDescribeReservedInstancesResponse.ReservedInstances["+ i +"].OfferingType"));
+			reservedInstance.setRegionId(_ctx.stringValue("OpsDescribeReservedInstancesResponse.ReservedInstances["+ i +"].RegionId"));
 
 			reservedInstances.add(reservedInstance);
 		}

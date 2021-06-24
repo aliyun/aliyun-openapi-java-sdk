@@ -23,10 +23,10 @@ public class OpsAddScheduleTaskKeyValueConfigResponseUnmarshaller {
 	public static OpsAddScheduleTaskKeyValueConfigResponse unmarshall(OpsAddScheduleTaskKeyValueConfigResponse opsAddScheduleTaskKeyValueConfigResponse, UnmarshallerContext _ctx) {
 		
 		opsAddScheduleTaskKeyValueConfigResponse.setRequestId(_ctx.stringValue("OpsAddScheduleTaskKeyValueConfigResponse.RequestId"));
-		opsAddScheduleTaskKeyValueConfigResponse.setCode(_ctx.stringValue("OpsAddScheduleTaskKeyValueConfigResponse.Code"));
-		opsAddScheduleTaskKeyValueConfigResponse.setMessage(_ctx.stringValue("OpsAddScheduleTaskKeyValueConfigResponse.Message"));
-		opsAddScheduleTaskKeyValueConfigResponse.setSuccess(_ctx.stringValue("OpsAddScheduleTaskKeyValueConfigResponse.Success"));
 		opsAddScheduleTaskKeyValueConfigResponse.setExtendedCode(_ctx.stringValue("OpsAddScheduleTaskKeyValueConfigResponse.ExtendedCode"));
+		opsAddScheduleTaskKeyValueConfigResponse.setMessage(_ctx.stringValue("OpsAddScheduleTaskKeyValueConfigResponse.Message"));
+		opsAddScheduleTaskKeyValueConfigResponse.setCode(_ctx.stringValue("OpsAddScheduleTaskKeyValueConfigResponse.Code"));
+		opsAddScheduleTaskKeyValueConfigResponse.setSuccess(_ctx.stringValue("OpsAddScheduleTaskKeyValueConfigResponse.Success"));
 	 
 	 	return opsAddScheduleTaskKeyValueConfigResponse;
 	}

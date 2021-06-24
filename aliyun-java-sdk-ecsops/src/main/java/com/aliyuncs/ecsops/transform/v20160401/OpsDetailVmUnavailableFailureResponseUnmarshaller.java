@@ -29,66 +29,67 @@ public class OpsDetailVmUnavailableFailureResponseUnmarshaller {
 		
 		opsDetailVmUnavailableFailureResponse.setRequestId(_ctx.stringValue("OpsDetailVmUnavailableFailureResponse.RequestId"));
 		opsDetailVmUnavailableFailureResponse.setTotalCnt(_ctx.integerValue("OpsDetailVmUnavailableFailureResponse.TotalCnt"));
-		opsDetailVmUnavailableFailureResponse.setPageNumber(_ctx.integerValue("OpsDetailVmUnavailableFailureResponse.PageNumber"));
 		opsDetailVmUnavailableFailureResponse.setPageSize(_ctx.integerValue("OpsDetailVmUnavailableFailureResponse.PageSize"));
-
-		List<DetailNc> detailImpactNcs = new ArrayList<DetailNc>();
-		for (int i = 0; i < _ctx.lengthValue("OpsDetailVmUnavailableFailureResponse.DetailImpactNcs.Length"); i++) {
-			DetailNc detailNc = new DetailNc();
-			detailNc.setNcIp(_ctx.stringValue("OpsDetailVmUnavailableFailureResponse.DetailImpactNcs["+ i +"].NcIp"));
-			detailNc.setRegionId(_ctx.stringValue("OpsDetailVmUnavailableFailureResponse.DetailImpactNcs["+ i +"].RegionId"));
-			detailNc.setZoneId(_ctx.stringValue("OpsDetailVmUnavailableFailureResponse.DetailImpactNcs["+ i +"].ZoneId"));
-			detailNc.setClusterId(_ctx.stringValue("OpsDetailVmUnavailableFailureResponse.DetailImpactNcs["+ i +"].ClusterId"));
-			detailNc.setHouyiNcState(_ctx.stringValue("OpsDetailVmUnavailableFailureResponse.DetailImpactNcs["+ i +"].HouyiNcState"));
-			detailNc.setPingState(_ctx.booleanValue("OpsDetailVmUnavailableFailureResponse.DetailImpactNcs["+ i +"].PingState"));
-			detailNc.setSshState(_ctx.booleanValue("OpsDetailVmUnavailableFailureResponse.DetailImpactNcs["+ i +"].SshState"));
-			detailNc.setIsLocalDisk(_ctx.booleanValue("OpsDetailVmUnavailableFailureResponse.DetailImpactNcs["+ i +"].IsLocalDisk"));
-			detailNc.setExceptionTime(_ctx.stringValue("OpsDetailVmUnavailableFailureResponse.DetailImpactNcs["+ i +"].ExceptionTime"));
-			detailNc.setFirstExceptionTime(_ctx.stringValue("OpsDetailVmUnavailableFailureResponse.DetailImpactNcs["+ i +"].FirstExceptionTime"));
-			detailNc.setRecoverTime(_ctx.stringValue("OpsDetailVmUnavailableFailureResponse.DetailImpactNcs["+ i +"].RecoverTime"));
-			detailNc.setReason(_ctx.stringValue("OpsDetailVmUnavailableFailureResponse.DetailImpactNcs["+ i +"].Reason"));
-			detailNc.setFailureTypes(_ctx.stringValue("OpsDetailVmUnavailableFailureResponse.DetailImpactNcs["+ i +"].FailureTypes"));
-
-			detailImpactNcs.add(detailNc);
-		}
-		opsDetailVmUnavailableFailureResponse.setDetailImpactNcs(detailImpactNcs);
+		opsDetailVmUnavailableFailureResponse.setPageNumber(_ctx.integerValue("OpsDetailVmUnavailableFailureResponse.PageNumber"));
 
 		List<DetailVm> detailImpactVms = new ArrayList<DetailVm>();
 		for (int i = 0; i < _ctx.lengthValue("OpsDetailVmUnavailableFailureResponse.DetailImpactVms.Length"); i++) {
 			DetailVm detailVm = new DetailVm();
-			detailVm.setInstanceId(_ctx.stringValue("OpsDetailVmUnavailableFailureResponse.DetailImpactVms["+ i +"].InstanceId"));
-			detailVm.setTag(_ctx.stringValue("OpsDetailVmUnavailableFailureResponse.DetailImpactVms["+ i +"].Tag"));
-			detailVm.setVmCurrentNcIp(_ctx.stringValue("OpsDetailVmUnavailableFailureResponse.DetailImpactVms["+ i +"].VmCurrentNcIp"));
-			detailVm.setAliuid(_ctx.stringValue("OpsDetailVmUnavailableFailureResponse.DetailImpactVms["+ i +"].Aliuid"));
-			detailVm.setBid(_ctx.stringValue("OpsDetailVmUnavailableFailureResponse.DetailImpactVms["+ i +"].Bid"));
-			detailVm.setNcIp(_ctx.stringValue("OpsDetailVmUnavailableFailureResponse.DetailImpactVms["+ i +"].NcIp"));
-			detailVm.setCpu(_ctx.integerValue("OpsDetailVmUnavailableFailureResponse.DetailImpactVms["+ i +"].Cpu"));
 			detailVm.setGcLevel(_ctx.stringValue("OpsDetailVmUnavailableFailureResponse.DetailImpactVms["+ i +"].GcLevel"));
-			detailVm.setClusterId(_ctx.stringValue("OpsDetailVmUnavailableFailureResponse.DetailImpactVms["+ i +"].ClusterId"));
-			detailVm.setZoneId(_ctx.stringValue("OpsDetailVmUnavailableFailureResponse.DetailImpactVms["+ i +"].ZoneId"));
-			detailVm.setRegionId(_ctx.stringValue("OpsDetailVmUnavailableFailureResponse.DetailImpactVms["+ i +"].RegionId"));
-			detailVm.setIdc(_ctx.stringValue("OpsDetailVmUnavailableFailureResponse.DetailImpactVms["+ i +"].Idc"));
-			detailVm.setGocCores(_ctx.floatValue("OpsDetailVmUnavailableFailureResponse.DetailImpactVms["+ i +"].GocCores"));
-			detailVm.setVcpuMod(_ctx.stringValue("OpsDetailVmUnavailableFailureResponse.DetailImpactVms["+ i +"].VcpuMod"));
-			detailVm.setIsLocalDisk(_ctx.booleanValue("OpsDetailVmUnavailableFailureResponse.DetailImpactVms["+ i +"].IsLocalDisk"));
-			detailVm.setInstanceType(_ctx.stringValue("OpsDetailVmUnavailableFailureResponse.DetailImpactVms["+ i +"].InstanceType"));
-			detailVm.setHouyiVmState(_ctx.stringValue("OpsDetailVmUnavailableFailureResponse.DetailImpactVms["+ i +"].HouyiVmState"));
-			detailVm.setIsVmDownRecover(_ctx.booleanValue("OpsDetailVmUnavailableFailureResponse.DetailImpactVms["+ i +"].IsVmDownRecover"));
-			detailVm.setNetworkState(_ctx.stringValue("OpsDetailVmUnavailableFailureResponse.DetailImpactVms["+ i +"].NetworkState"));
-			detailVm.setStorageState(_ctx.stringValue("OpsDetailVmUnavailableFailureResponse.DetailImpactVms["+ i +"].StorageState"));
-			detailVm.setExceptionTime(_ctx.stringValue("OpsDetailVmUnavailableFailureResponse.DetailImpactVms["+ i +"].ExceptionTime"));
+			detailVm.setControllerRecoverTime(_ctx.stringValue("OpsDetailVmUnavailableFailureResponse.DetailImpactVms["+ i +"].ControllerRecoverTime"));
 			detailVm.setFirstExceptionTime(_ctx.stringValue("OpsDetailVmUnavailableFailureResponse.DetailImpactVms["+ i +"].FirstExceptionTime"));
+			detailVm.setIsVmDownRecover(_ctx.booleanValue("OpsDetailVmUnavailableFailureResponse.DetailImpactVms["+ i +"].IsVmDownRecover"));
+			detailVm.setTag(_ctx.stringValue("OpsDetailVmUnavailableFailureResponse.DetailImpactVms["+ i +"].Tag"));
+			detailVm.setNcIp(_ctx.stringValue("OpsDetailVmUnavailableFailureResponse.DetailImpactVms["+ i +"].NcIp"));
+			detailVm.setBid(_ctx.stringValue("OpsDetailVmUnavailableFailureResponse.DetailImpactVms["+ i +"].Bid"));
+			detailVm.setGocCores(_ctx.floatValue("OpsDetailVmUnavailableFailureResponse.DetailImpactVms["+ i +"].GocCores"));
 			detailVm.setMigrateRecoverTime(_ctx.stringValue("OpsDetailVmUnavailableFailureResponse.DetailImpactVms["+ i +"].MigrateRecoverTime"));
 			detailVm.setNetworkRecoverTime(_ctx.stringValue("OpsDetailVmUnavailableFailureResponse.DetailImpactVms["+ i +"].NetworkRecoverTime"));
-			detailVm.setStorageRecoverTime(_ctx.stringValue("OpsDetailVmUnavailableFailureResponse.DetailImpactVms["+ i +"].StorageRecoverTime"));
-			detailVm.setOverallRecoverTime(_ctx.stringValue("OpsDetailVmUnavailableFailureResponse.DetailImpactVms["+ i +"].OverallRecoverTime"));
-			detailVm.setControllerRecoverTime(_ctx.stringValue("OpsDetailVmUnavailableFailureResponse.DetailImpactVms["+ i +"].ControllerRecoverTime"));
-			detailVm.setReason(_ctx.stringValue("OpsDetailVmUnavailableFailureResponse.DetailImpactVms["+ i +"].Reason"));
+			detailVm.setExceptionTime(_ctx.stringValue("OpsDetailVmUnavailableFailureResponse.DetailImpactVms["+ i +"].ExceptionTime"));
+			detailVm.setIsLocalDisk(_ctx.booleanValue("OpsDetailVmUnavailableFailureResponse.DetailImpactVms["+ i +"].IsLocalDisk"));
+			detailVm.setIdc(_ctx.stringValue("OpsDetailVmUnavailableFailureResponse.DetailImpactVms["+ i +"].Idc"));
+			detailVm.setClusterId(_ctx.stringValue("OpsDetailVmUnavailableFailureResponse.DetailImpactVms["+ i +"].ClusterId"));
+			detailVm.setAliuid(_ctx.stringValue("OpsDetailVmUnavailableFailureResponse.DetailImpactVms["+ i +"].Aliuid"));
+			detailVm.setStorageState(_ctx.stringValue("OpsDetailVmUnavailableFailureResponse.DetailImpactVms["+ i +"].StorageState"));
 			detailVm.setFailureTypes(_ctx.stringValue("OpsDetailVmUnavailableFailureResponse.DetailImpactVms["+ i +"].FailureTypes"));
+			detailVm.setInstanceId(_ctx.stringValue("OpsDetailVmUnavailableFailureResponse.DetailImpactVms["+ i +"].InstanceId"));
+			detailVm.setOverallRecoverTime(_ctx.stringValue("OpsDetailVmUnavailableFailureResponse.DetailImpactVms["+ i +"].OverallRecoverTime"));
+			detailVm.setInstanceType(_ctx.stringValue("OpsDetailVmUnavailableFailureResponse.DetailImpactVms["+ i +"].InstanceType"));
+			detailVm.setRegionId(_ctx.stringValue("OpsDetailVmUnavailableFailureResponse.DetailImpactVms["+ i +"].RegionId"));
+			detailVm.setStorageRecoverTime(_ctx.stringValue("OpsDetailVmUnavailableFailureResponse.DetailImpactVms["+ i +"].StorageRecoverTime"));
+			detailVm.setCpu(_ctx.integerValue("OpsDetailVmUnavailableFailureResponse.DetailImpactVms["+ i +"].Cpu"));
+			detailVm.setHouyiVmState(_ctx.stringValue("OpsDetailVmUnavailableFailureResponse.DetailImpactVms["+ i +"].HouyiVmState"));
+			detailVm.setZoneId(_ctx.stringValue("OpsDetailVmUnavailableFailureResponse.DetailImpactVms["+ i +"].ZoneId"));
+			detailVm.setNetworkState(_ctx.stringValue("OpsDetailVmUnavailableFailureResponse.DetailImpactVms["+ i +"].NetworkState"));
+			detailVm.setVcpuMod(_ctx.stringValue("OpsDetailVmUnavailableFailureResponse.DetailImpactVms["+ i +"].VcpuMod"));
+			detailVm.setVmCurrentNcIp(_ctx.stringValue("OpsDetailVmUnavailableFailureResponse.DetailImpactVms["+ i +"].VmCurrentNcIp"));
+			detailVm.setReason(_ctx.stringValue("OpsDetailVmUnavailableFailureResponse.DetailImpactVms["+ i +"].Reason"));
+			detailVm.setAliProductName(_ctx.stringValue("OpsDetailVmUnavailableFailureResponse.DetailImpactVms["+ i +"].AliProductName"));
 
 			detailImpactVms.add(detailVm);
 		}
 		opsDetailVmUnavailableFailureResponse.setDetailImpactVms(detailImpactVms);
+
+		List<DetailNc> detailImpactNcs = new ArrayList<DetailNc>();
+		for (int i = 0; i < _ctx.lengthValue("OpsDetailVmUnavailableFailureResponse.DetailImpactNcs.Length"); i++) {
+			DetailNc detailNc = new DetailNc();
+			detailNc.setSshState(_ctx.booleanValue("OpsDetailVmUnavailableFailureResponse.DetailImpactNcs["+ i +"].SshState"));
+			detailNc.setRecoverTime(_ctx.stringValue("OpsDetailVmUnavailableFailureResponse.DetailImpactNcs["+ i +"].RecoverTime"));
+			detailNc.setFirstExceptionTime(_ctx.stringValue("OpsDetailVmUnavailableFailureResponse.DetailImpactNcs["+ i +"].FirstExceptionTime"));
+			detailNc.setFailureTypes(_ctx.stringValue("OpsDetailVmUnavailableFailureResponse.DetailImpactNcs["+ i +"].FailureTypes"));
+			detailNc.setNcIp(_ctx.stringValue("OpsDetailVmUnavailableFailureResponse.DetailImpactNcs["+ i +"].NcIp"));
+			detailNc.setHouyiNcState(_ctx.stringValue("OpsDetailVmUnavailableFailureResponse.DetailImpactNcs["+ i +"].HouyiNcState"));
+			detailNc.setRegionId(_ctx.stringValue("OpsDetailVmUnavailableFailureResponse.DetailImpactNcs["+ i +"].RegionId"));
+			detailNc.setZoneId(_ctx.stringValue("OpsDetailVmUnavailableFailureResponse.DetailImpactNcs["+ i +"].ZoneId"));
+			detailNc.setExceptionTime(_ctx.stringValue("OpsDetailVmUnavailableFailureResponse.DetailImpactNcs["+ i +"].ExceptionTime"));
+			detailNc.setPingState(_ctx.booleanValue("OpsDetailVmUnavailableFailureResponse.DetailImpactNcs["+ i +"].PingState"));
+			detailNc.setIsLocalDisk(_ctx.booleanValue("OpsDetailVmUnavailableFailureResponse.DetailImpactNcs["+ i +"].IsLocalDisk"));
+			detailNc.setReason(_ctx.stringValue("OpsDetailVmUnavailableFailureResponse.DetailImpactNcs["+ i +"].Reason"));
+			detailNc.setClusterId(_ctx.stringValue("OpsDetailVmUnavailableFailureResponse.DetailImpactNcs["+ i +"].ClusterId"));
+
+			detailImpactNcs.add(detailNc);
+		}
+		opsDetailVmUnavailableFailureResponse.setDetailImpactNcs(detailImpactNcs);
 	 
 	 	return opsDetailVmUnavailableFailureResponse;
 	}

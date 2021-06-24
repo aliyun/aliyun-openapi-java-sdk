@@ -26,14 +26,14 @@ public class OpsQueryWorkflowUserSpecificSettingsResponseUnmarshaller {
 		opsQueryWorkflowUserSpecificSettingsResponse.setRequestId(_ctx.stringValue("OpsQueryWorkflowUserSpecificSettingsResponse.RequestId"));
 
 		WorkflowUserSpecificSettings workflowUserSpecificSettings = new WorkflowUserSpecificSettings();
-		workflowUserSpecificSettings.setWildcard(_ctx.booleanValue("OpsQueryWorkflowUserSpecificSettingsResponse.WorkflowUserSpecificSettings.Wildcard"));
 		workflowUserSpecificSettings.setSize(_ctx.integerValue("OpsQueryWorkflowUserSpecificSettingsResponse.WorkflowUserSpecificSettings.Size"));
-		workflowUserSpecificSettings.setConcurrent(_ctx.integerValue("OpsQueryWorkflowUserSpecificSettingsResponse.WorkflowUserSpecificSettings.Concurrent"));
-		workflowUserSpecificSettings.setPendingTimeout(_ctx.integerValue("OpsQueryWorkflowUserSpecificSettingsResponse.WorkflowUserSpecificSettings.PendingTimeout"));
-		workflowUserSpecificSettings.setExecTimeout(_ctx.integerValue("OpsQueryWorkflowUserSpecificSettingsResponse.WorkflowUserSpecificSettings.ExecTimeout"));
-		workflowUserSpecificSettings.setCreateDate(_ctx.stringValue("OpsQueryWorkflowUserSpecificSettingsResponse.WorkflowUserSpecificSettings.CreateDate"));
-		workflowUserSpecificSettings.setModifyDate(_ctx.stringValue("OpsQueryWorkflowUserSpecificSettingsResponse.WorkflowUserSpecificSettings.ModifyDate"));
 		workflowUserSpecificSettings.setExpireDate(_ctx.stringValue("OpsQueryWorkflowUserSpecificSettingsResponse.WorkflowUserSpecificSettings.ExpireDate"));
+		workflowUserSpecificSettings.setPendingTimeout(_ctx.integerValue("OpsQueryWorkflowUserSpecificSettingsResponse.WorkflowUserSpecificSettings.PendingTimeout"));
+		workflowUserSpecificSettings.setConcurrent(_ctx.integerValue("OpsQueryWorkflowUserSpecificSettingsResponse.WorkflowUserSpecificSettings.Concurrent"));
+		workflowUserSpecificSettings.setExecTimeout(_ctx.integerValue("OpsQueryWorkflowUserSpecificSettingsResponse.WorkflowUserSpecificSettings.ExecTimeout"));
+		workflowUserSpecificSettings.setWildcard(_ctx.booleanValue("OpsQueryWorkflowUserSpecificSettingsResponse.WorkflowUserSpecificSettings.Wildcard"));
+		workflowUserSpecificSettings.setModifyDate(_ctx.stringValue("OpsQueryWorkflowUserSpecificSettingsResponse.WorkflowUserSpecificSettings.ModifyDate"));
+		workflowUserSpecificSettings.setCreateDate(_ctx.stringValue("OpsQueryWorkflowUserSpecificSettingsResponse.WorkflowUserSpecificSettings.CreateDate"));
 		opsQueryWorkflowUserSpecificSettingsResponse.setWorkflowUserSpecificSettings(workflowUserSpecificSettings);
 	 
 	 	return opsQueryWorkflowUserSpecificSettingsResponse;

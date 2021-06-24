@@ -28,24 +28,24 @@ public class OpsBatchRestartInstanceResponseUnmarshaller {
 	public static OpsBatchRestartInstanceResponse unmarshall(OpsBatchRestartInstanceResponse opsBatchRestartInstanceResponse, UnmarshallerContext _ctx) {
 		
 		opsBatchRestartInstanceResponse.setRequestId(_ctx.stringValue("OpsBatchRestartInstanceResponse.RequestId"));
-		opsBatchRestartInstanceResponse.setSuccess(_ctx.booleanValue("OpsBatchRestartInstanceResponse.Success"));
-		opsBatchRestartInstanceResponse.setCode(_ctx.stringValue("OpsBatchRestartInstanceResponse.Code"));
 		opsBatchRestartInstanceResponse.setMessage(_ctx.stringValue("OpsBatchRestartInstanceResponse.Message"));
+		opsBatchRestartInstanceResponse.setCode(_ctx.stringValue("OpsBatchRestartInstanceResponse.Code"));
+		opsBatchRestartInstanceResponse.setSuccess(_ctx.booleanValue("OpsBatchRestartInstanceResponse.Success"));
 
 		Data data = new Data();
-		data.setTaskId(_ctx.stringValue("OpsBatchRestartInstanceResponse.Data.TaskId"));
 		data.setHasFailed(_ctx.booleanValue("OpsBatchRestartInstanceResponse.Data.HasFailed"));
+		data.setTaskId(_ctx.stringValue("OpsBatchRestartInstanceResponse.Data.TaskId"));
 
 		List<OperateResponseModel> operateResponseModels = new ArrayList<OperateResponseModel>();
 		for (int i = 0; i < _ctx.lengthValue("OpsBatchRestartInstanceResponse.Data.OperateResponseModels.Length"); i++) {
 			OperateResponseModel operateResponseModel = new OperateResponseModel();
+			operateResponseModel.setCurrentStatus(_ctx.stringValue("OpsBatchRestartInstanceResponse.Data.OperateResponseModels["+ i +"].CurrentStatus"));
+			operateResponseModel.setEcsId(_ctx.longValue("OpsBatchRestartInstanceResponse.Data.OperateResponseModels["+ i +"].EcsId"));
+			operateResponseModel.setPreviousStatus(_ctx.stringValue("OpsBatchRestartInstanceResponse.Data.OperateResponseModels["+ i +"].PreviousStatus"));
 			operateResponseModel.setCode(_ctx.stringValue("OpsBatchRestartInstanceResponse.Data.OperateResponseModels["+ i +"].Code"));
 			operateResponseModel.setMessage(_ctx.stringValue("OpsBatchRestartInstanceResponse.Data.OperateResponseModels["+ i +"].Message"));
-			operateResponseModel.setEcsId(_ctx.longValue("OpsBatchRestartInstanceResponse.Data.OperateResponseModels["+ i +"].EcsId"));
 			operateResponseModel.setInstanceId(_ctx.stringValue("OpsBatchRestartInstanceResponse.Data.OperateResponseModels["+ i +"].InstanceId"));
 			operateResponseModel.setEcsAction(_ctx.stringValue("OpsBatchRestartInstanceResponse.Data.OperateResponseModels["+ i +"].EcsAction"));
-			operateResponseModel.setPreviousStatus(_ctx.stringValue("OpsBatchRestartInstanceResponse.Data.OperateResponseModels["+ i +"].PreviousStatus"));
-			operateResponseModel.setCurrentStatus(_ctx.stringValue("OpsBatchRestartInstanceResponse.Data.OperateResponseModels["+ i +"].CurrentStatus"));
 
 			operateResponseModels.add(operateResponseModel);
 		}

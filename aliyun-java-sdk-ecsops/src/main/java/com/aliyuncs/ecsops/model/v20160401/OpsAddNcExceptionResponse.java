@@ -24,25 +24,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsAddNcExceptionResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String status;
 
 	private Boolean finished;
 
-	private String token;
-
-	private String result;
+	private String requestId;
 
 	private String errorInfo;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
+	private String token;
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String result;
 
 	public String getStatus() {
 		return this.status;
@@ -60,6 +52,22 @@ public class OpsAddNcExceptionResponse extends AcsResponse {
 		this.finished = finished;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getErrorInfo() {
+		return this.errorInfo;
+	}
+
+	public void setErrorInfo(String errorInfo) {
+		this.errorInfo = errorInfo;
+	}
+
 	public String getToken() {
 		return this.token;
 	}
@@ -74,14 +82,6 @@ public class OpsAddNcExceptionResponse extends AcsResponse {
 
 	public void setResult(String result) {
 		this.result = result;
-	}
-
-	public String getErrorInfo() {
-		return this.errorInfo;
-	}
-
-	public void setErrorInfo(String errorInfo) {
-		this.errorInfo = errorInfo;
 	}
 
 	@Override

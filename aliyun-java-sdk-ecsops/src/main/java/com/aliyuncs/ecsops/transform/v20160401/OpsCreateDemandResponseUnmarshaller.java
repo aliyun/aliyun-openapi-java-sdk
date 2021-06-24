@@ -23,8 +23,8 @@ public class OpsCreateDemandResponseUnmarshaller {
 	public static OpsCreateDemandResponse unmarshall(OpsCreateDemandResponse opsCreateDemandResponse, UnmarshallerContext _ctx) {
 		
 		opsCreateDemandResponse.setRequestId(_ctx.stringValue("OpsCreateDemandResponse.RequestId"));
-		opsCreateDemandResponse.setCode(_ctx.stringValue("OpsCreateDemandResponse.Code"));
 		opsCreateDemandResponse.setMessage(_ctx.stringValue("OpsCreateDemandResponse.Message"));
+		opsCreateDemandResponse.setCode(_ctx.stringValue("OpsCreateDemandResponse.Code"));
 		opsCreateDemandResponse.setSuccess(_ctx.booleanValue("OpsCreateDemandResponse.Success"));
 	 
 	 	return opsCreateDemandResponse;

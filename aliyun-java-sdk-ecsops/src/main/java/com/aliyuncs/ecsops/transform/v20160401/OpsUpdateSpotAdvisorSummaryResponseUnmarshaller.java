@@ -23,10 +23,10 @@ public class OpsUpdateSpotAdvisorSummaryResponseUnmarshaller {
 	public static OpsUpdateSpotAdvisorSummaryResponse unmarshall(OpsUpdateSpotAdvisorSummaryResponse opsUpdateSpotAdvisorSummaryResponse, UnmarshallerContext _ctx) {
 		
 		opsUpdateSpotAdvisorSummaryResponse.setRequestId(_ctx.stringValue("OpsUpdateSpotAdvisorSummaryResponse.RequestId"));
-		opsUpdateSpotAdvisorSummaryResponse.setCode(_ctx.stringValue("OpsUpdateSpotAdvisorSummaryResponse.Code"));
 		opsUpdateSpotAdvisorSummaryResponse.setMessage(_ctx.stringValue("OpsUpdateSpotAdvisorSummaryResponse.Message"));
-		opsUpdateSpotAdvisorSummaryResponse.setSuccess(_ctx.stringValue("OpsUpdateSpotAdvisorSummaryResponse.Success"));
 		opsUpdateSpotAdvisorSummaryResponse.setData(_ctx.integerValue("OpsUpdateSpotAdvisorSummaryResponse.Data"));
+		opsUpdateSpotAdvisorSummaryResponse.setCode(_ctx.stringValue("OpsUpdateSpotAdvisorSummaryResponse.Code"));
+		opsUpdateSpotAdvisorSummaryResponse.setSuccess(_ctx.stringValue("OpsUpdateSpotAdvisorSummaryResponse.Success"));
 	 
 	 	return opsUpdateSpotAdvisorSummaryResponse;
 	}

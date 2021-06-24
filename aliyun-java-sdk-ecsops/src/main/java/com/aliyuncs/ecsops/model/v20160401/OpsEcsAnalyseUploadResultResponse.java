@@ -49,19 +49,19 @@ public class OpsEcsAnalyseUploadResultResponse extends AcsResponse {
 
 		private String status;
 
-		private String description;
-
 		private String officialResponse;
 
-		private String detail;
+		private String parameters;
 
-		private String solution;
+		private String description;
 
 		private String errorType;
 
 		private String name;
 
-		private String parameters;
+		private String solution;
+
+		private String detail;
 
 		public String getStatus() {
 			return this.status;
@@ -69,14 +69,6 @@ public class OpsEcsAnalyseUploadResultResponse extends AcsResponse {
 
 		public void setStatus(String status) {
 			this.status = status;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
 		}
 
 		public String getOfficialResponse() {
@@ -87,20 +79,20 @@ public class OpsEcsAnalyseUploadResultResponse extends AcsResponse {
 			this.officialResponse = officialResponse;
 		}
 
-		public String getDetail() {
-			return this.detail;
+		public String getParameters() {
+			return this.parameters;
 		}
 
-		public void setDetail(String detail) {
-			this.detail = detail;
+		public void setParameters(String parameters) {
+			this.parameters = parameters;
 		}
 
-		public String getSolution() {
-			return this.solution;
+		public String getDescription() {
+			return this.description;
 		}
 
-		public void setSolution(String solution) {
-			this.solution = solution;
+		public void setDescription(String description) {
+			this.description = description;
 		}
 
 		public String getErrorType() {
@@ -119,12 +111,20 @@ public class OpsEcsAnalyseUploadResultResponse extends AcsResponse {
 			this.name = name;
 		}
 
-		public String getParameters() {
-			return this.parameters;
+		public String getSolution() {
+			return this.solution;
 		}
 
-		public void setParameters(String parameters) {
-			this.parameters = parameters;
+		public void setSolution(String solution) {
+			this.solution = solution;
+		}
+
+		public String getDetail() {
+			return this.detail;
+		}
+
+		public void setDetail(String detail) {
+			this.detail = detail;
 		}
 	}
 

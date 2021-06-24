@@ -47,41 +47,57 @@ public class OpsDetailInstancesSimpleInfoResponse extends AcsResponse {
 
 	public static class Resource {
 
+		private String vpcId;
+
+		private String status;
+
 		private String aliUid;
 
 		private String instanceId;
 
-		private String instanceType;
-
 		private String networkType;
 
-		private String vpcId;
+		private String ncIp;
 
-		private String privateIpAddress;
+		private String instanceType;
 
 		private String publicIpAddress;
+
+		private String ncId;
+
+		private String gmtCreated;
 
 		private String eip;
 
 		private String osType;
 
-		private String osVersion;
-
-		private String ncId;
-
-		private String ncIp;
+		private String zoneId;
 
 		private String rackId;
 
-		private String zoneId;
+		private String asw;
+
+		private String osVersion;
+
+		private String privateIpAddress;
 
 		private String clusterId;
 
-		private String gmtCreated;
+		public String getVpcId() {
+			return this.vpcId;
+		}
 
-		private String asw;
+		public void setVpcId(String vpcId) {
+			this.vpcId = vpcId;
+		}
 
-		private String status;
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
 
 		public String getAliUid() {
 			return this.aliUid;
@@ -99,14 +115,6 @@ public class OpsDetailInstancesSimpleInfoResponse extends AcsResponse {
 			this.instanceId = instanceId;
 		}
 
-		public String getInstanceType() {
-			return this.instanceType;
-		}
-
-		public void setInstanceType(String instanceType) {
-			this.instanceType = instanceType;
-		}
-
 		public String getNetworkType() {
 			return this.networkType;
 		}
@@ -115,20 +123,20 @@ public class OpsDetailInstancesSimpleInfoResponse extends AcsResponse {
 			this.networkType = networkType;
 		}
 
-		public String getVpcId() {
-			return this.vpcId;
+		public String getNcIp() {
+			return this.ncIp;
 		}
 
-		public void setVpcId(String vpcId) {
-			this.vpcId = vpcId;
+		public void setNcIp(String ncIp) {
+			this.ncIp = ncIp;
 		}
 
-		public String getPrivateIpAddress() {
-			return this.privateIpAddress;
+		public String getInstanceType() {
+			return this.instanceType;
 		}
 
-		public void setPrivateIpAddress(String privateIpAddress) {
-			this.privateIpAddress = privateIpAddress;
+		public void setInstanceType(String instanceType) {
+			this.instanceType = instanceType;
 		}
 
 		public String getPublicIpAddress() {
@@ -137,6 +145,22 @@ public class OpsDetailInstancesSimpleInfoResponse extends AcsResponse {
 
 		public void setPublicIpAddress(String publicIpAddress) {
 			this.publicIpAddress = publicIpAddress;
+		}
+
+		public String getNcId() {
+			return this.ncId;
+		}
+
+		public void setNcId(String ncId) {
+			this.ncId = ncId;
+		}
+
+		public String getGmtCreated() {
+			return this.gmtCreated;
+		}
+
+		public void setGmtCreated(String gmtCreated) {
+			this.gmtCreated = gmtCreated;
 		}
 
 		public String getEip() {
@@ -155,28 +179,12 @@ public class OpsDetailInstancesSimpleInfoResponse extends AcsResponse {
 			this.osType = osType;
 		}
 
-		public String getOsVersion() {
-			return this.osVersion;
+		public String getZoneId() {
+			return this.zoneId;
 		}
 
-		public void setOsVersion(String osVersion) {
-			this.osVersion = osVersion;
-		}
-
-		public String getNcId() {
-			return this.ncId;
-		}
-
-		public void setNcId(String ncId) {
-			this.ncId = ncId;
-		}
-
-		public String getNcIp() {
-			return this.ncIp;
-		}
-
-		public void setNcIp(String ncIp) {
-			this.ncIp = ncIp;
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
 		}
 
 		public String getRackId() {
@@ -187,30 +195,6 @@ public class OpsDetailInstancesSimpleInfoResponse extends AcsResponse {
 			this.rackId = rackId;
 		}
 
-		public String getZoneId() {
-			return this.zoneId;
-		}
-
-		public void setZoneId(String zoneId) {
-			this.zoneId = zoneId;
-		}
-
-		public String getClusterId() {
-			return this.clusterId;
-		}
-
-		public void setClusterId(String clusterId) {
-			this.clusterId = clusterId;
-		}
-
-		public String getGmtCreated() {
-			return this.gmtCreated;
-		}
-
-		public void setGmtCreated(String gmtCreated) {
-			this.gmtCreated = gmtCreated;
-		}
-
 		public String getAsw() {
 			return this.asw;
 		}
@@ -219,12 +203,28 @@ public class OpsDetailInstancesSimpleInfoResponse extends AcsResponse {
 			this.asw = asw;
 		}
 
-		public String getStatus() {
-			return this.status;
+		public String getOsVersion() {
+			return this.osVersion;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
+		public void setOsVersion(String osVersion) {
+			this.osVersion = osVersion;
+		}
+
+		public String getPrivateIpAddress() {
+			return this.privateIpAddress;
+		}
+
+		public void setPrivateIpAddress(String privateIpAddress) {
+			this.privateIpAddress = privateIpAddress;
+		}
+
+		public String getClusterId() {
+			return this.clusterId;
+		}
+
+		public void setClusterId(String clusterId) {
+			this.clusterId = clusterId;
 		}
 	}
 

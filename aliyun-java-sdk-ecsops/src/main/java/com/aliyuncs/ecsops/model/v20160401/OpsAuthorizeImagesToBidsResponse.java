@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsAuthorizeImagesToBidsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
-
-	private Integer pageNumber;
 
 	private Integer pageSize;
 
+	private String requestId;
+
+	private Integer pageNumber;
+
 	private List<AuthorizeBid> authorizeBids;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -51,20 +43,28 @@ public class OpsAuthorizeImagesToBidsResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<AuthorizeBid> getAuthorizeBids() {
@@ -77,32 +77,24 @@ public class OpsAuthorizeImagesToBidsResponse extends AcsResponse {
 
 	public static class AuthorizeBid {
 
-		private String regionId;
-
-		private String osName;
+		private String hiddenImageId;
 
 		private String onlineImageId;
 
-		private String hiddenImageId;
+		private String osName;
 
 		private String offlineImageId;
 
+		private String regionId;
+
 		private List<String> bids;
 
-		public String getRegionId() {
-			return this.regionId;
+		public String getHiddenImageId() {
+			return this.hiddenImageId;
 		}
 
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		public String getOsName() {
-			return this.osName;
-		}
-
-		public void setOsName(String osName) {
-			this.osName = osName;
+		public void setHiddenImageId(String hiddenImageId) {
+			this.hiddenImageId = hiddenImageId;
 		}
 
 		public String getOnlineImageId() {
@@ -113,12 +105,12 @@ public class OpsAuthorizeImagesToBidsResponse extends AcsResponse {
 			this.onlineImageId = onlineImageId;
 		}
 
-		public String getHiddenImageId() {
-			return this.hiddenImageId;
+		public String getOsName() {
+			return this.osName;
 		}
 
-		public void setHiddenImageId(String hiddenImageId) {
-			this.hiddenImageId = hiddenImageId;
+		public void setOsName(String osName) {
+			this.osName = osName;
 		}
 
 		public String getOfflineImageId() {
@@ -127,6 +119,14 @@ public class OpsAuthorizeImagesToBidsResponse extends AcsResponse {
 
 		public void setOfflineImageId(String offlineImageId) {
 			this.offlineImageId = offlineImageId;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 
 		public List<String> getBids() {

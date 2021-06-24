@@ -29,22 +29,22 @@ public class OpsDescribeOfflineInventoryResponseUnmarshaller {
 		opsDescribeOfflineInventoryResponse.setRequestId(_ctx.stringValue("OpsDescribeOfflineInventoryResponse.RequestId"));
 		opsDescribeOfflineInventoryResponse.setTotalCount(_ctx.integerValue("OpsDescribeOfflineInventoryResponse.TotalCount"));
 		opsDescribeOfflineInventoryResponse.setNextToken(_ctx.stringValue("OpsDescribeOfflineInventoryResponse.NextToken"));
-		opsDescribeOfflineInventoryResponse.setPageNumber(_ctx.integerValue("OpsDescribeOfflineInventoryResponse.PageNumber"));
 		opsDescribeOfflineInventoryResponse.setPageSize(_ctx.integerValue("OpsDescribeOfflineInventoryResponse.PageSize"));
+		opsDescribeOfflineInventoryResponse.setPageNumber(_ctx.integerValue("OpsDescribeOfflineInventoryResponse.PageNumber"));
 
 		List<OfflineInventoryModel> offlineInventoryModels = new ArrayList<OfflineInventoryModel>();
 		for (int i = 0; i < _ctx.lengthValue("OpsDescribeOfflineInventoryResponse.OfflineInventoryModels.Length"); i++) {
 			OfflineInventoryModel offlineInventoryModel = new OfflineInventoryModel();
-			offlineInventoryModel.setRegionNo(_ctx.stringValue("OpsDescribeOfflineInventoryResponse.OfflineInventoryModels["+ i +"].RegionNo"));
-			offlineInventoryModel.setIzNo(_ctx.stringValue("OpsDescribeOfflineInventoryResponse.OfflineInventoryModels["+ i +"].IzNo"));
-			offlineInventoryModel.setInstanceType(_ctx.stringValue("OpsDescribeOfflineInventoryResponse.OfflineInventoryModels["+ i +"].InstanceType"));
-			offlineInventoryModel.setPeriodDay(_ctx.integerValue("OpsDescribeOfflineInventoryResponse.OfflineInventoryModels["+ i +"].PeriodDay"));
-			offlineInventoryModel.setNcType(_ctx.stringValue("OpsDescribeOfflineInventoryResponse.OfflineInventoryModels["+ i +"].NcType"));
 			offlineInventoryModel.setCapacity(_ctx.integerValue("OpsDescribeOfflineInventoryResponse.OfflineInventoryModels["+ i +"].Capacity"));
-			offlineInventoryModel.setIdc(_ctx.stringValue("OpsDescribeOfflineInventoryResponse.OfflineInventoryModels["+ i +"].Idc"));
-			offlineInventoryModel.setNetworkArch(_ctx.stringValue("OpsDescribeOfflineInventoryResponse.OfflineInventoryModels["+ i +"].NetworkArch"));
-			offlineInventoryModel.setVmCnt(_ctx.integerValue("OpsDescribeOfflineInventoryResponse.OfflineInventoryModels["+ i +"].VmCnt"));
 			offlineInventoryModel.setRackCnt(_ctx.integerValue("OpsDescribeOfflineInventoryResponse.OfflineInventoryModels["+ i +"].RackCnt"));
+			offlineInventoryModel.setRegionNo(_ctx.stringValue("OpsDescribeOfflineInventoryResponse.OfflineInventoryModels["+ i +"].RegionNo"));
+			offlineInventoryModel.setVmCnt(_ctx.integerValue("OpsDescribeOfflineInventoryResponse.OfflineInventoryModels["+ i +"].VmCnt"));
+			offlineInventoryModel.setNetworkArch(_ctx.stringValue("OpsDescribeOfflineInventoryResponse.OfflineInventoryModels["+ i +"].NetworkArch"));
+			offlineInventoryModel.setNcType(_ctx.stringValue("OpsDescribeOfflineInventoryResponse.OfflineInventoryModels["+ i +"].NcType"));
+			offlineInventoryModel.setPeriodDay(_ctx.integerValue("OpsDescribeOfflineInventoryResponse.OfflineInventoryModels["+ i +"].PeriodDay"));
+			offlineInventoryModel.setIdc(_ctx.stringValue("OpsDescribeOfflineInventoryResponse.OfflineInventoryModels["+ i +"].Idc"));
+			offlineInventoryModel.setInstanceType(_ctx.stringValue("OpsDescribeOfflineInventoryResponse.OfflineInventoryModels["+ i +"].InstanceType"));
+			offlineInventoryModel.setIzNo(_ctx.stringValue("OpsDescribeOfflineInventoryResponse.OfflineInventoryModels["+ i +"].IzNo"));
 
 			offlineInventoryModels.add(offlineInventoryModel);
 		}

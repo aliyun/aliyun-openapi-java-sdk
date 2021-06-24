@@ -16,7 +16,6 @@ package com.aliyuncs.ecsops.model.v20160401;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
-import com.aliyuncs.ecsops.Endpoint;
 
 /**
  * @author auto create
@@ -24,6 +23,8 @@ import com.aliyuncs.ecsops.Endpoint;
  */
 public class OpsDescribeCloudOpsDiskOpsEventsRequest extends RpcAcsRequest<OpsDescribeCloudOpsDiskOpsEventsResponse> {
 	   
+
+	private String channel;
 
 	private String endTimeStr;
 
@@ -37,12 +38,19 @@ public class OpsDescribeCloudOpsDiskOpsEventsRequest extends RpcAcsRequest<OpsDe
 
 	private String auditParamStr;
 	public OpsDescribeCloudOpsDiskOpsEventsRequest() {
-		super("Ecsops", "2016-04-01", "OpsDescribeCloudOpsDiskOpsEvents", "ecs");
+		super("Ecsops", "2016-04-01", "OpsDescribeCloudOpsDiskOpsEvents", "ecsops");
 		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
+	}
+
+	public String getChannel() {
+		return this.channel;
+	}
+
+	public void setChannel(String channel) {
+		this.channel = channel;
+		if(channel != null){
+			putQueryParameter("Channel", channel);
+		}
 	}
 
 	public String getEndTimeStr() {

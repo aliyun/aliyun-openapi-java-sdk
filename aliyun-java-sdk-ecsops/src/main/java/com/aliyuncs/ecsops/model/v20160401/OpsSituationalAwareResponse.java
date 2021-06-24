@@ -25,33 +25,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsSituationalAwareResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String status;
 
 	private Boolean finished;
 
+	private Integer validMachineIdCount;
+
+	private String requestId;
+
+	private String errorInfo;
+
 	private String token;
 
 	private Boolean iterationQuery;
-
-	private Integer validMachineIdCount;
-
-	private String errorInfo;
 
 	private List<RootCause> rootCauseList;
 
 	private List<String> iterationTokens;
 
 	private List<String> validMachineIds;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getStatus() {
 		return this.status;
@@ -69,6 +61,30 @@ public class OpsSituationalAwareResponse extends AcsResponse {
 		this.finished = finished;
 	}
 
+	public Integer getValidMachineIdCount() {
+		return this.validMachineIdCount;
+	}
+
+	public void setValidMachineIdCount(Integer validMachineIdCount) {
+		this.validMachineIdCount = validMachineIdCount;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getErrorInfo() {
+		return this.errorInfo;
+	}
+
+	public void setErrorInfo(String errorInfo) {
+		this.errorInfo = errorInfo;
+	}
+
 	public String getToken() {
 		return this.token;
 	}
@@ -83,22 +99,6 @@ public class OpsSituationalAwareResponse extends AcsResponse {
 
 	public void setIterationQuery(Boolean iterationQuery) {
 		this.iterationQuery = iterationQuery;
-	}
-
-	public Integer getValidMachineIdCount() {
-		return this.validMachineIdCount;
-	}
-
-	public void setValidMachineIdCount(Integer validMachineIdCount) {
-		this.validMachineIdCount = validMachineIdCount;
-	}
-
-	public String getErrorInfo() {
-		return this.errorInfo;
-	}
-
-	public void setErrorInfo(String errorInfo) {
-		this.errorInfo = errorInfo;
 	}
 
 	public List<RootCause> getRootCauseList() {
@@ -127,40 +127,48 @@ public class OpsSituationalAwareResponse extends AcsResponse {
 
 	public static class RootCause {
 
-		private String additionalInfo;
+		private String exceptionType;
+
+		private String message;
 
 		private String ncIp;
 
+		private String instanceType;
+
+		private String additionalInfo;
+
+		private String desc;
+
+		private String warningValue;
+
+		private String warningLevel;
+
 		private String exceptionTime;
+
+		private String exceptionName;
 
 		private Integer level;
 
 		private String machineId;
 
-		private String exceptionType;
-
-		private String instanceType;
-
 		private String reason;
-
-		private String exceptionName;
-
-		private String warningLevel;
-
-		private String warningValue;
-
-		private String message;
-
-		private String desc;
 
 		private List<String> supportTeams;
 
-		public String getAdditionalInfo() {
-			return this.additionalInfo;
+		public String getExceptionType() {
+			return this.exceptionType;
 		}
 
-		public void setAdditionalInfo(String additionalInfo) {
-			this.additionalInfo = additionalInfo;
+		public void setExceptionType(String exceptionType) {
+			this.exceptionType = exceptionType;
+		}
+
+		public String getMessage() {
+			return this.message;
+		}
+
+		public void setMessage(String message) {
+			this.message = message;
 		}
 
 		public String getNcIp() {
@@ -171,12 +179,60 @@ public class OpsSituationalAwareResponse extends AcsResponse {
 			this.ncIp = ncIp;
 		}
 
+		public String getInstanceType() {
+			return this.instanceType;
+		}
+
+		public void setInstanceType(String instanceType) {
+			this.instanceType = instanceType;
+		}
+
+		public String getAdditionalInfo() {
+			return this.additionalInfo;
+		}
+
+		public void setAdditionalInfo(String additionalInfo) {
+			this.additionalInfo = additionalInfo;
+		}
+
+		public String getDesc() {
+			return this.desc;
+		}
+
+		public void setDesc(String desc) {
+			this.desc = desc;
+		}
+
+		public String getWarningValue() {
+			return this.warningValue;
+		}
+
+		public void setWarningValue(String warningValue) {
+			this.warningValue = warningValue;
+		}
+
+		public String getWarningLevel() {
+			return this.warningLevel;
+		}
+
+		public void setWarningLevel(String warningLevel) {
+			this.warningLevel = warningLevel;
+		}
+
 		public String getExceptionTime() {
 			return this.exceptionTime;
 		}
 
 		public void setExceptionTime(String exceptionTime) {
 			this.exceptionTime = exceptionTime;
+		}
+
+		public String getExceptionName() {
+			return this.exceptionName;
+		}
+
+		public void setExceptionName(String exceptionName) {
+			this.exceptionName = exceptionName;
 		}
 
 		public Integer getLevel() {
@@ -195,68 +251,12 @@ public class OpsSituationalAwareResponse extends AcsResponse {
 			this.machineId = machineId;
 		}
 
-		public String getExceptionType() {
-			return this.exceptionType;
-		}
-
-		public void setExceptionType(String exceptionType) {
-			this.exceptionType = exceptionType;
-		}
-
-		public String getInstanceType() {
-			return this.instanceType;
-		}
-
-		public void setInstanceType(String instanceType) {
-			this.instanceType = instanceType;
-		}
-
 		public String getReason() {
 			return this.reason;
 		}
 
 		public void setReason(String reason) {
 			this.reason = reason;
-		}
-
-		public String getExceptionName() {
-			return this.exceptionName;
-		}
-
-		public void setExceptionName(String exceptionName) {
-			this.exceptionName = exceptionName;
-		}
-
-		public String getWarningLevel() {
-			return this.warningLevel;
-		}
-
-		public void setWarningLevel(String warningLevel) {
-			this.warningLevel = warningLevel;
-		}
-
-		public String getWarningValue() {
-			return this.warningValue;
-		}
-
-		public void setWarningValue(String warningValue) {
-			this.warningValue = warningValue;
-		}
-
-		public String getMessage() {
-			return this.message;
-		}
-
-		public void setMessage(String message) {
-			this.message = message;
-		}
-
-		public String getDesc() {
-			return this.desc;
-		}
-
-		public void setDesc(String desc) {
-			this.desc = desc;
 		}
 
 		public List<String> getSupportTeams() {

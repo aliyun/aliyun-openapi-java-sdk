@@ -29,9 +29,9 @@ public class OpsQueryServerListOfZoneResponse extends AcsResponse {
 
 	private Long pageSize;
 
-	private Long pageNo;
-
 	private Long total;
+
+	private Long pageNo;
 
 	private List<Server> servers;
 
@@ -51,20 +51,20 @@ public class OpsQueryServerListOfZoneResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public Long getPageNo() {
-		return this.pageNo;
-	}
-
-	public void setPageNo(Long pageNo) {
-		this.pageNo = pageNo;
-	}
-
 	public Long getTotal() {
 		return this.total;
 	}
 
 	public void setTotal(Long total) {
 		this.total = total;
+	}
+
+	public Long getPageNo() {
+		return this.pageNo;
+	}
+
+	public void setPageNo(Long pageNo) {
+		this.pageNo = pageNo;
 	}
 
 	public List<Server> getServers() {
@@ -77,28 +77,20 @@ public class OpsQueryServerListOfZoneResponse extends AcsResponse {
 
 	public static class Server {
 
-		private String hostname;
-
-		private String ip;
+		private String type;
 
 		private String status;
 
-		private String type;
+		private String ip;
 
-		public String getHostname() {
-			return this.hostname;
+		private String hostname;
+
+		public String getType() {
+			return this.type;
 		}
 
-		public void setHostname(String hostname) {
-			this.hostname = hostname;
-		}
-
-		public String getIp() {
-			return this.ip;
-		}
-
-		public void setIp(String ip) {
-			this.ip = ip;
+		public void setType(String type) {
+			this.type = type;
 		}
 
 		public String getStatus() {
@@ -109,12 +101,20 @@ public class OpsQueryServerListOfZoneResponse extends AcsResponse {
 			this.status = status;
 		}
 
-		public String getType() {
-			return this.type;
+		public String getIp() {
+			return this.ip;
 		}
 
-		public void setType(String type) {
-			this.type = type;
+		public void setIp(String ip) {
+			this.ip = ip;
+		}
+
+		public String getHostname() {
+			return this.hostname;
+		}
+
+		public void setHostname(String hostname) {
+			this.hostname = hostname;
 		}
 	}
 

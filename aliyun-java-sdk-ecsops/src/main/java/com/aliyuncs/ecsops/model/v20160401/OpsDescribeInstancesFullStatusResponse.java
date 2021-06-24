@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsDescribeInstancesFullStatusResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
-
-	private Integer pageNumber;
 
 	private Integer pageSize;
 
+	private String requestId;
+
+	private Integer pageNumber;
+
 	private List<InstanceFullStatusType> instanceFullStatusSet;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -51,20 +43,28 @@ public class OpsDescribeInstancesFullStatusResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<InstanceFullStatusType> getInstanceFullStatusSet() {
@@ -121,15 +121,15 @@ public class OpsDescribeInstancesFullStatusResponse extends AcsResponse {
 
 			private String eventId;
 
-			private String eventInitiateBy;
-
 			private String eventPublishTime;
 
 			private String notBefore;
 
-			private EventCycleStatus eventCycleStatus;
+			private String eventInitiateBy;
 
 			private EventType eventType;
+
+			private EventCycleStatus eventCycleStatus;
 
 			public String getEventId() {
 				return this.eventId;
@@ -137,14 +137,6 @@ public class OpsDescribeInstancesFullStatusResponse extends AcsResponse {
 
 			public void setEventId(String eventId) {
 				this.eventId = eventId;
-			}
-
-			public String getEventInitiateBy() {
-				return this.eventInitiateBy;
-			}
-
-			public void setEventInitiateBy(String eventInitiateBy) {
-				this.eventInitiateBy = eventInitiateBy;
 			}
 
 			public String getEventPublishTime() {
@@ -163,12 +155,12 @@ public class OpsDescribeInstancesFullStatusResponse extends AcsResponse {
 				this.notBefore = notBefore;
 			}
 
-			public EventCycleStatus getEventCycleStatus() {
-				return this.eventCycleStatus;
+			public String getEventInitiateBy() {
+				return this.eventInitiateBy;
 			}
 
-			public void setEventCycleStatus(EventCycleStatus eventCycleStatus) {
-				this.eventCycleStatus = eventCycleStatus;
+			public void setEventInitiateBy(String eventInitiateBy) {
+				this.eventInitiateBy = eventInitiateBy;
 			}
 
 			public EventType getEventType() {
@@ -179,7 +171,15 @@ public class OpsDescribeInstancesFullStatusResponse extends AcsResponse {
 				this.eventType = eventType;
 			}
 
-			public static class EventCycleStatus {
+			public EventCycleStatus getEventCycleStatus() {
+				return this.eventCycleStatus;
+			}
+
+			public void setEventCycleStatus(EventCycleStatus eventCycleStatus) {
+				this.eventCycleStatus = eventCycleStatus;
+			}
+
+			public static class EventType {
 
 				private Integer code;
 
@@ -202,7 +202,7 @@ public class OpsDescribeInstancesFullStatusResponse extends AcsResponse {
 				}
 			}
 
-			public static class EventType {
+			public static class EventCycleStatus {
 
 				private Integer code;
 

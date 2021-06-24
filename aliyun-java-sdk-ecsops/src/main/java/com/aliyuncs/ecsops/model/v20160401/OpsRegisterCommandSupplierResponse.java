@@ -24,21 +24,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsRegisterCommandSupplierResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String supplierId;
+
+	private String requestId;
 
 	private String displayName;
 
 	private String activeStatus;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getSupplierId() {
 		return this.supplierId;
@@ -46,6 +38,14 @@ public class OpsRegisterCommandSupplierResponse extends AcsResponse {
 
 	public void setSupplierId(String supplierId) {
 		this.supplierId = supplierId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getDisplayName() {

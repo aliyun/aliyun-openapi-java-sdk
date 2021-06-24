@@ -32,17 +32,17 @@ public class OpsConsistencyCheckServiceResponseUnmarshaller {
 		data.setConsist(_ctx.booleanValue("OpsConsistencyCheckServiceResponse.Data.Consist"));
 		data.setCheckCode(_ctx.stringValue("OpsConsistencyCheckServiceResponse.Data.CheckCode"));
 
-		List<String> dataFeatures = new ArrayList<String>();
-		for (int i = 0; i < _ctx.lengthValue("OpsConsistencyCheckServiceResponse.Data.DataFeatures.Length"); i++) {
-			dataFeatures.add(_ctx.stringValue("OpsConsistencyCheckServiceResponse.Data.DataFeatures["+ i +"]"));
-		}
-		data.setDataFeatures(dataFeatures);
-
 		List<String> abnormalAttrs = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("OpsConsistencyCheckServiceResponse.Data.AbnormalAttrs.Length"); i++) {
 			abnormalAttrs.add(_ctx.stringValue("OpsConsistencyCheckServiceResponse.Data.AbnormalAttrs["+ i +"]"));
 		}
 		data.setAbnormalAttrs(abnormalAttrs);
+
+		List<String> dataFeatures = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("OpsConsistencyCheckServiceResponse.Data.DataFeatures.Length"); i++) {
+			dataFeatures.add(_ctx.stringValue("OpsConsistencyCheckServiceResponse.Data.DataFeatures["+ i +"]"));
+		}
+		data.setDataFeatures(dataFeatures);
 		opsConsistencyCheckServiceResponse.setData(data);
 	 
 	 	return opsConsistencyCheckServiceResponse;

@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsQueryInstanceMigrateLogResponse extends AcsResponse {
 
+	private Integer pageSize;
+
 	private String requestId;
 
 	private Integer total;
 
 	private Integer pageNo;
 
-	private Integer pageSize;
-
 	private List<MigrateLog> migrateLogs;
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -59,14 +67,6 @@ public class OpsQueryInstanceMigrateLogResponse extends AcsResponse {
 		this.pageNo = pageNo;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-	}
-
 	public List<MigrateLog> getMigrateLogs() {
 		return this.migrateLogs;
 	}
@@ -77,36 +77,44 @@ public class OpsQueryInstanceMigrateLogResponse extends AcsResponse {
 
 	public static class MigrateLog {
 
-		private Long id;
+		private String status;
+
+		private String srcNcIp;
 
 		private String instanceId;
 
-		private String srcNcId;
-
 		private String destNcId;
 
-		private Long rate;
-
-		private String status;
-
-		private String createdTime;
+		private String srcNcId;
 
 		private String modifiedTime;
-
-		private String reason;
-
-		private String srcNcIp;
 
 		private String destNcIp;
 
 		private Long retCode;
 
-		public Long getId() {
-			return this.id;
+		private String createdTime;
+
+		private String reason;
+
+		private Long id;
+
+		private Long rate;
+
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setId(Long id) {
-			this.id = id;
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
+		public String getSrcNcIp() {
+			return this.srcNcIp;
+		}
+
+		public void setSrcNcIp(String srcNcIp) {
+			this.srcNcIp = srcNcIp;
 		}
 
 		public String getInstanceId() {
@@ -117,14 +125,6 @@ public class OpsQueryInstanceMigrateLogResponse extends AcsResponse {
 			this.instanceId = instanceId;
 		}
 
-		public String getSrcNcId() {
-			return this.srcNcId;
-		}
-
-		public void setSrcNcId(String srcNcId) {
-			this.srcNcId = srcNcId;
-		}
-
 		public String getDestNcId() {
 			return this.destNcId;
 		}
@@ -133,28 +133,12 @@ public class OpsQueryInstanceMigrateLogResponse extends AcsResponse {
 			this.destNcId = destNcId;
 		}
 
-		public Long getRate() {
-			return this.rate;
+		public String getSrcNcId() {
+			return this.srcNcId;
 		}
 
-		public void setRate(Long rate) {
-			this.rate = rate;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
-		public String getCreatedTime() {
-			return this.createdTime;
-		}
-
-		public void setCreatedTime(String createdTime) {
-			this.createdTime = createdTime;
+		public void setSrcNcId(String srcNcId) {
+			this.srcNcId = srcNcId;
 		}
 
 		public String getModifiedTime() {
@@ -163,22 +147,6 @@ public class OpsQueryInstanceMigrateLogResponse extends AcsResponse {
 
 		public void setModifiedTime(String modifiedTime) {
 			this.modifiedTime = modifiedTime;
-		}
-
-		public String getReason() {
-			return this.reason;
-		}
-
-		public void setReason(String reason) {
-			this.reason = reason;
-		}
-
-		public String getSrcNcIp() {
-			return this.srcNcIp;
-		}
-
-		public void setSrcNcIp(String srcNcIp) {
-			this.srcNcIp = srcNcIp;
 		}
 
 		public String getDestNcIp() {
@@ -195,6 +163,38 @@ public class OpsQueryInstanceMigrateLogResponse extends AcsResponse {
 
 		public void setRetCode(Long retCode) {
 			this.retCode = retCode;
+		}
+
+		public String getCreatedTime() {
+			return this.createdTime;
+		}
+
+		public void setCreatedTime(String createdTime) {
+			this.createdTime = createdTime;
+		}
+
+		public String getReason() {
+			return this.reason;
+		}
+
+		public void setReason(String reason) {
+			this.reason = reason;
+		}
+
+		public Long getId() {
+			return this.id;
+		}
+
+		public void setId(Long id) {
+			this.id = id;
+		}
+
+		public Long getRate() {
+			return this.rate;
+		}
+
+		public void setRate(Long rate) {
+			this.rate = rate;
 		}
 	}
 

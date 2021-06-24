@@ -34,24 +34,24 @@ public class OpsListCloudBoxSkusResponseUnmarshaller {
 		List<CloudBoxSkuSet> cloudBoxSkuSets = new ArrayList<CloudBoxSkuSet>();
 		for (int i = 0; i < _ctx.lengthValue("OpsListCloudBoxSkusResponse.CloudBoxSkuSets.Length"); i++) {
 			CloudBoxSkuSet cloudBoxSkuSet = new CloudBoxSkuSet();
-			cloudBoxSkuSet.setCloudBoxSkuId(_ctx.stringValue("OpsListCloudBoxSkusResponse.CloudBoxSkuSets["+ i +"].CloudBoxSkuId"));
-			cloudBoxSkuSet.setBizType(_ctx.stringValue("OpsListCloudBoxSkusResponse.CloudBoxSkuSets["+ i +"].BizType"));
-			cloudBoxSkuSet.setSkuType(_ctx.stringValue("OpsListCloudBoxSkusResponse.CloudBoxSkuSets["+ i +"].SkuType"));
-			cloudBoxSkuSet.setDescription(_ctx.stringValue("OpsListCloudBoxSkusResponse.CloudBoxSkuSets["+ i +"].Description"));
-			cloudBoxSkuSet.setBandwidth(_ctx.stringValue("OpsListCloudBoxSkusResponse.CloudBoxSkuSets["+ i +"].Bandwidth"));
-			cloudBoxSkuSet.setMinBlockStorage(_ctx.floatValue("OpsListCloudBoxSkusResponse.CloudBoxSkuSets["+ i +"].MinBlockStorage"));
-			cloudBoxSkuSet.setMaxBlockStorage(_ctx.floatValue("OpsListCloudBoxSkusResponse.CloudBoxSkuSets["+ i +"].MaxBlockStorage"));
-			cloudBoxSkuSet.setLength(_ctx.floatValue("OpsListCloudBoxSkusResponse.CloudBoxSkuSets["+ i +"].Length"));
-			cloudBoxSkuSet.setWidth(_ctx.floatValue("OpsListCloudBoxSkusResponse.CloudBoxSkuSets["+ i +"].Width"));
-			cloudBoxSkuSet.setHeight(_ctx.floatValue("OpsListCloudBoxSkusResponse.CloudBoxSkuSets["+ i +"].Height"));
-			cloudBoxSkuSet.setWeight(_ctx.floatValue("OpsListCloudBoxSkusResponse.CloudBoxSkuSets["+ i +"].Weight"));
 			cloudBoxSkuSet.setPowerConsumption(_ctx.floatValue("OpsListCloudBoxSkusResponse.CloudBoxSkuSets["+ i +"].PowerConsumption"));
+			cloudBoxSkuSet.setHeight(_ctx.floatValue("OpsListCloudBoxSkusResponse.CloudBoxSkuSets["+ i +"].Height"));
+			cloudBoxSkuSet.setMaxBlockStorage(_ctx.floatValue("OpsListCloudBoxSkusResponse.CloudBoxSkuSets["+ i +"].MaxBlockStorage"));
+			cloudBoxSkuSet.setSkuType(_ctx.stringValue("OpsListCloudBoxSkusResponse.CloudBoxSkuSets["+ i +"].SkuType"));
+			cloudBoxSkuSet.setMinBlockStorage(_ctx.floatValue("OpsListCloudBoxSkusResponse.CloudBoxSkuSets["+ i +"].MinBlockStorage"));
+			cloudBoxSkuSet.setBizType(_ctx.stringValue("OpsListCloudBoxSkusResponse.CloudBoxSkuSets["+ i +"].BizType"));
+			cloudBoxSkuSet.setWeight(_ctx.floatValue("OpsListCloudBoxSkusResponse.CloudBoxSkuSets["+ i +"].Weight"));
+			cloudBoxSkuSet.setBandwidth(_ctx.stringValue("OpsListCloudBoxSkusResponse.CloudBoxSkuSets["+ i +"].Bandwidth"));
+			cloudBoxSkuSet.setDescription(_ctx.stringValue("OpsListCloudBoxSkusResponse.CloudBoxSkuSets["+ i +"].Description"));
+			cloudBoxSkuSet.setCloudBoxSkuId(_ctx.stringValue("OpsListCloudBoxSkusResponse.CloudBoxSkuSets["+ i +"].CloudBoxSkuId"));
+			cloudBoxSkuSet.setWidth(_ctx.floatValue("OpsListCloudBoxSkusResponse.CloudBoxSkuSets["+ i +"].Width"));
+			cloudBoxSkuSet.setLength(_ctx.floatValue("OpsListCloudBoxSkusResponse.CloudBoxSkuSets["+ i +"].Length"));
 
 			List<InstanceTypeSet> instanceTypeSets = new ArrayList<InstanceTypeSet>();
 			for (int j = 0; j < _ctx.lengthValue("OpsListCloudBoxSkusResponse.CloudBoxSkuSets["+ i +"].InstanceTypeSets.Length"); j++) {
 				InstanceTypeSet instanceTypeSet = new InstanceTypeSet();
-				instanceTypeSet.setInstanceTypeName(_ctx.stringValue("OpsListCloudBoxSkusResponse.CloudBoxSkuSets["+ i +"].InstanceTypeSets["+ j +"].InstanceTypeName"));
 				instanceTypeSet.setInstanceTypeCount(_ctx.integerValue("OpsListCloudBoxSkusResponse.CloudBoxSkuSets["+ i +"].InstanceTypeSets["+ j +"].InstanceTypeCount"));
+				instanceTypeSet.setInstanceTypeName(_ctx.stringValue("OpsListCloudBoxSkusResponse.CloudBoxSkuSets["+ i +"].InstanceTypeSets["+ j +"].InstanceTypeName"));
 				instanceTypeSet.setInstanceTypeFamily(_ctx.stringValue("OpsListCloudBoxSkusResponse.CloudBoxSkuSets["+ i +"].InstanceTypeSets["+ j +"].InstanceTypeFamily"));
 
 				instanceTypeSets.add(instanceTypeSet);

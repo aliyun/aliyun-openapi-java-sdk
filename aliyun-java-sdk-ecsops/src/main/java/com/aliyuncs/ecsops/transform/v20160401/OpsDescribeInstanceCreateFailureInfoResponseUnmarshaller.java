@@ -27,18 +27,18 @@ public class OpsDescribeInstanceCreateFailureInfoResponseUnmarshaller {
 	public static OpsDescribeInstanceCreateFailureInfoResponse unmarshall(OpsDescribeInstanceCreateFailureInfoResponse opsDescribeInstanceCreateFailureInfoResponse, UnmarshallerContext _ctx) {
 		
 		opsDescribeInstanceCreateFailureInfoResponse.setRequestId(_ctx.stringValue("OpsDescribeInstanceCreateFailureInfoResponse.RequestId"));
+		opsDescribeInstanceCreateFailureInfoResponse.setTotalCount(_ctx.integerValue("OpsDescribeInstanceCreateFailureInfoResponse.TotalCount"));
 		opsDescribeInstanceCreateFailureInfoResponse.setNextToken(_ctx.stringValue("OpsDescribeInstanceCreateFailureInfoResponse.NextToken"));
 		opsDescribeInstanceCreateFailureInfoResponse.setPageSize(_ctx.integerValue("OpsDescribeInstanceCreateFailureInfoResponse.PageSize"));
-		opsDescribeInstanceCreateFailureInfoResponse.setTotalCount(_ctx.integerValue("OpsDescribeInstanceCreateFailureInfoResponse.TotalCount"));
 
 		List<Resource> resources = new ArrayList<Resource>();
 		for (int i = 0; i < _ctx.lengthValue("OpsDescribeInstanceCreateFailureInfoResponse.Resources.Length"); i++) {
 			Resource resource = new Resource();
+			resource.setGmtCreated(_ctx.stringValue("OpsDescribeInstanceCreateFailureInfoResponse.Resources["+ i +"].GmtCreated"));
+			resource.setSuggestAction(_ctx.stringValue("OpsDescribeInstanceCreateFailureInfoResponse.Resources["+ i +"].SuggestAction"));
 			resource.setAliUid(_ctx.stringValue("OpsDescribeInstanceCreateFailureInfoResponse.Resources["+ i +"].AliUid"));
 			resource.setInstanceId(_ctx.stringValue("OpsDescribeInstanceCreateFailureInfoResponse.Resources["+ i +"].InstanceId"));
 			resource.setFailureReason(_ctx.stringValue("OpsDescribeInstanceCreateFailureInfoResponse.Resources["+ i +"].FailureReason"));
-			resource.setSuggestAction(_ctx.stringValue("OpsDescribeInstanceCreateFailureInfoResponse.Resources["+ i +"].SuggestAction"));
-			resource.setGmtCreated(_ctx.stringValue("OpsDescribeInstanceCreateFailureInfoResponse.Resources["+ i +"].GmtCreated"));
 			resource.setFailureLevel(_ctx.stringValue("OpsDescribeInstanceCreateFailureInfoResponse.Resources["+ i +"].FailureLevel"));
 
 			resources.add(resource);

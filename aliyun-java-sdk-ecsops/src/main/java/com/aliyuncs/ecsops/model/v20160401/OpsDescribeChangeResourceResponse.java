@@ -25,21 +25,29 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsDescribeChangeResourceResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer totalCount;
 
-	private String code;
+	private String requestId;
 
 	private String message;
 
-	private Boolean success;
-
-	private Integer totalCount;
+	private Integer pageSize;
 
 	private Integer pageNumber;
 
-	private Integer pageSize;
+	private String code;
+
+	private Boolean success;
 
 	private List<ChangeResourceOpsModel> changeResourceOpsModels;
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -47,14 +55,6 @@ public class OpsDescribeChangeResourceResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
 	}
 
 	public String getMessage() {
@@ -65,20 +65,12 @@ public class OpsDescribeChangeResourceResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
 	}
 
 	public Integer getPageNumber() {
@@ -89,12 +81,20 @@ public class OpsDescribeChangeResourceResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<ChangeResourceOpsModel> getChangeResourceOpsModels() {
@@ -107,50 +107,26 @@ public class OpsDescribeChangeResourceResponse extends AcsResponse {
 
 	public static class ChangeResourceOpsModel {
 
-		private Long id;
-
-		private Long zoneId;
-
-		private String instanceId;
-
-		private String regionNo;
+		private Integer status;
 
 		private String resourceType;
 
 		private String changeTypeName;
 
-		private Integer status;
+		private String regionNo;
 
-		public Long getId() {
-			return this.id;
+		private Long zoneId;
+
+		private String instanceId;
+
+		private Long id;
+
+		public Integer getStatus() {
+			return this.status;
 		}
 
-		public void setId(Long id) {
-			this.id = id;
-		}
-
-		public Long getZoneId() {
-			return this.zoneId;
-		}
-
-		public void setZoneId(Long zoneId) {
-			this.zoneId = zoneId;
-		}
-
-		public String getInstanceId() {
-			return this.instanceId;
-		}
-
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
-
-		public String getRegionNo() {
-			return this.regionNo;
-		}
-
-		public void setRegionNo(String regionNo) {
-			this.regionNo = regionNo;
+		public void setStatus(Integer status) {
+			this.status = status;
 		}
 
 		public String getResourceType() {
@@ -169,12 +145,36 @@ public class OpsDescribeChangeResourceResponse extends AcsResponse {
 			this.changeTypeName = changeTypeName;
 		}
 
-		public Integer getStatus() {
-			return this.status;
+		public String getRegionNo() {
+			return this.regionNo;
 		}
 
-		public void setStatus(Integer status) {
-			this.status = status;
+		public void setRegionNo(String regionNo) {
+			this.regionNo = regionNo;
+		}
+
+		public Long getZoneId() {
+			return this.zoneId;
+		}
+
+		public void setZoneId(Long zoneId) {
+			this.zoneId = zoneId;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public Long getId() {
+			return this.id;
+		}
+
+		public void setId(Long id) {
+			this.id = id;
 		}
 	}
 

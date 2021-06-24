@@ -28,22 +28,22 @@ public class OpsDescribeResourcesResponseUnmarshaller {
 	public static OpsDescribeResourcesResponse unmarshall(OpsDescribeResourcesResponse opsDescribeResourcesResponse, UnmarshallerContext _ctx) {
 		
 		opsDescribeResourcesResponse.setRequestId(_ctx.stringValue("OpsDescribeResourcesResponse.RequestId"));
-		opsDescribeResourcesResponse.setMarker(_ctx.stringValue("OpsDescribeResourcesResponse.Marker"));
-		opsDescribeResourcesResponse.setTruncated(_ctx.booleanValue("OpsDescribeResourcesResponse.Truncated"));
 		opsDescribeResourcesResponse.setEstimatedTotal(_ctx.integerValue("OpsDescribeResourcesResponse.EstimatedTotal"));
+		opsDescribeResourcesResponse.setTruncated(_ctx.booleanValue("OpsDescribeResourcesResponse.Truncated"));
+		opsDescribeResourcesResponse.setMarker(_ctx.stringValue("OpsDescribeResourcesResponse.Marker"));
 
 		List<Resource> resources = new ArrayList<Resource>();
 		for (int i = 0; i < _ctx.lengthValue("OpsDescribeResourcesResponse.Resources.Length"); i++) {
 			Resource resource = new Resource();
-			resource.setProduct(_ctx.stringValue("OpsDescribeResourcesResponse.Resources["+ i +"].Product"));
-			resource.setResourceType(_ctx.stringValue("OpsDescribeResourcesResponse.Resources["+ i +"].ResourceType"));
-			resource.setResourceId(_ctx.stringValue("OpsDescribeResourcesResponse.Resources["+ i +"].ResourceId"));
-			resource.setResourceName(_ctx.stringValue("OpsDescribeResourcesResponse.Resources["+ i +"].ResourceName"));
-			resource.setCreateTime(_ctx.stringValue("OpsDescribeResourcesResponse.Resources["+ i +"].CreateTime"));
 			resource.setUpdateTime(_ctx.stringValue("OpsDescribeResourcesResponse.Resources["+ i +"].UpdateTime"));
-			resource.setRegionId(_ctx.stringValue("OpsDescribeResourcesResponse.Resources["+ i +"].RegionId"));
+			resource.setResourceType(_ctx.stringValue("OpsDescribeResourcesResponse.Resources["+ i +"].ResourceType"));
+			resource.setProduct(_ctx.stringValue("OpsDescribeResourcesResponse.Resources["+ i +"].Product"));
+			resource.setCreateTime(_ctx.stringValue("OpsDescribeResourcesResponse.Resources["+ i +"].CreateTime"));
 			resource.setMatchedAttributes(_ctx.mapValue("OpsDescribeResourcesResponse.Resources["+ i +"].MatchedAttributes"));
+			resource.setResourceId(_ctx.stringValue("OpsDescribeResourcesResponse.Resources["+ i +"].ResourceId"));
 			resource.setArn(_ctx.stringValue("OpsDescribeResourcesResponse.Resources["+ i +"].Arn"));
+			resource.setResourceName(_ctx.stringValue("OpsDescribeResourcesResponse.Resources["+ i +"].ResourceName"));
+			resource.setRegionId(_ctx.stringValue("OpsDescribeResourcesResponse.Resources["+ i +"].RegionId"));
 
 			resources.add(resource);
 		}

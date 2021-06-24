@@ -23,8 +23,8 @@ public class OpsDeleteInstanceTypeResponseUnmarshaller {
 	public static OpsDeleteInstanceTypeResponse unmarshall(OpsDeleteInstanceTypeResponse opsDeleteInstanceTypeResponse, UnmarshallerContext _ctx) {
 		
 		opsDeleteInstanceTypeResponse.setRequestId(_ctx.stringValue("OpsDeleteInstanceTypeResponse.RequestId"));
-		opsDeleteInstanceTypeResponse.setSuccess(_ctx.stringValue("OpsDeleteInstanceTypeResponse.Success"));
 		opsDeleteInstanceTypeResponse.setHttpStatusCode(_ctx.integerValue("OpsDeleteInstanceTypeResponse.HttpStatusCode"));
+		opsDeleteInstanceTypeResponse.setSuccess(_ctx.stringValue("OpsDeleteInstanceTypeResponse.Success"));
 	 
 	 	return opsDeleteInstanceTypeResponse;
 	}

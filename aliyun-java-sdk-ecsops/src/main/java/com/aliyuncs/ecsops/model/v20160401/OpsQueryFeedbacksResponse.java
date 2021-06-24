@@ -47,26 +47,34 @@ public class OpsQueryFeedbacksResponse extends AcsResponse {
 
 	public static class Feedback {
 
-		private Long aliUid;
+		private String suggestion;
+
+		private String functionName;
 
 		private String createTime;
 
-		private String modifyTime;
-
-		private String functionName;
+		private Long aliUid;
 
 		private String category;
 
 		private String feedback;
 
-		private String suggestion;
+		private String modifyTime;
 
-		public Long getAliUid() {
-			return this.aliUid;
+		public String getSuggestion() {
+			return this.suggestion;
 		}
 
-		public void setAliUid(Long aliUid) {
-			this.aliUid = aliUid;
+		public void setSuggestion(String suggestion) {
+			this.suggestion = suggestion;
+		}
+
+		public String getFunctionName() {
+			return this.functionName;
+		}
+
+		public void setFunctionName(String functionName) {
+			this.functionName = functionName;
 		}
 
 		public String getCreateTime() {
@@ -77,20 +85,12 @@ public class OpsQueryFeedbacksResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
-		public String getModifyTime() {
-			return this.modifyTime;
+		public Long getAliUid() {
+			return this.aliUid;
 		}
 
-		public void setModifyTime(String modifyTime) {
-			this.modifyTime = modifyTime;
-		}
-
-		public String getFunctionName() {
-			return this.functionName;
-		}
-
-		public void setFunctionName(String functionName) {
-			this.functionName = functionName;
+		public void setAliUid(Long aliUid) {
+			this.aliUid = aliUid;
 		}
 
 		public String getCategory() {
@@ -109,12 +109,12 @@ public class OpsQueryFeedbacksResponse extends AcsResponse {
 			this.feedback = feedback;
 		}
 
-		public String getSuggestion() {
-			return this.suggestion;
+		public String getModifyTime() {
+			return this.modifyTime;
 		}
 
-		public void setSuggestion(String suggestion) {
-			this.suggestion = suggestion;
+		public void setModifyTime(String modifyTime) {
+			this.modifyTime = modifyTime;
 		}
 	}
 

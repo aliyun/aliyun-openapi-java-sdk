@@ -23,8 +23,8 @@ public class OpsAddEcsResourceDisplayInfoResponseUnmarshaller {
 	public static OpsAddEcsResourceDisplayInfoResponse unmarshall(OpsAddEcsResourceDisplayInfoResponse opsAddEcsResourceDisplayInfoResponse, UnmarshallerContext _ctx) {
 		
 		opsAddEcsResourceDisplayInfoResponse.setRequestId(_ctx.stringValue("OpsAddEcsResourceDisplayInfoResponse.RequestId"));
-		opsAddEcsResourceDisplayInfoResponse.setCode(_ctx.stringValue("OpsAddEcsResourceDisplayInfoResponse.Code"));
 		opsAddEcsResourceDisplayInfoResponse.setMessage(_ctx.stringValue("OpsAddEcsResourceDisplayInfoResponse.Message"));
+		opsAddEcsResourceDisplayInfoResponse.setCode(_ctx.stringValue("OpsAddEcsResourceDisplayInfoResponse.Code"));
 		opsAddEcsResourceDisplayInfoResponse.setSuccess(_ctx.booleanValue("OpsAddEcsResourceDisplayInfoResponse.Success"));
 	 
 	 	return opsAddEcsResourceDisplayInfoResponse;

@@ -25,24 +25,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsListUserQuotaUsageResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer totalCount;
 
 	private String nextToken;
 
-	private Integer totalCount;
+	private Integer pageSize;
+
+	private String requestId;
 
 	private Integer pageNumber;
 
-	private Integer pageSize;
-
 	private List<EcsQuota> ecsQuotas;
 
-	public String getRequestId() {
-		return this.requestId;
+	public Integer getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public String getNextToken() {
@@ -53,12 +53,20 @@ public class OpsListUserQuotaUsageResponse extends AcsResponse {
 		this.nextToken = nextToken;
 	}
 
-	public Integer getTotalCount() {
-		return this.totalCount;
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getPageNumber() {
@@ -67,14 +75,6 @@ public class OpsListUserQuotaUsageResponse extends AcsResponse {
 
 	public void setPageNumber(Integer pageNumber) {
 		this.pageNumber = pageNumber;
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
 	}
 
 	public List<EcsQuota> getEcsQuotas() {
@@ -87,72 +87,40 @@ public class OpsListUserQuotaUsageResponse extends AcsResponse {
 
 	public static class EcsQuota {
 
-		private String regionId;
-
-		private String zoneId;
-
-		private String chargeType;
-
-		private String networkType;
-
-		private String quotaResourceType;
+		private Long baseQuota;
 
 		private String quotaResourceName;
 
 		private String quotaUnit;
 
+		private String quotaResourceType;
+
+		private String chargeType;
+
+		private String networkType;
+
 		private Long reservedQuota;
 
 		private Long reservedQuotaUsage;
 
-		private Long baseQuota;
-
-		private Long baseQuotaUsage;
-
-		private Long totalQuota;
+		private String regionId;
 
 		private Long totalQuotaUsage;
 
+		private Long baseQuotaUsage;
+
 		private String applicationStatus;
 
-		public String getRegionId() {
-			return this.regionId;
+		private String zoneId;
+
+		private Long totalQuota;
+
+		public Long getBaseQuota() {
+			return this.baseQuota;
 		}
 
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		public String getZoneId() {
-			return this.zoneId;
-		}
-
-		public void setZoneId(String zoneId) {
-			this.zoneId = zoneId;
-		}
-
-		public String getChargeType() {
-			return this.chargeType;
-		}
-
-		public void setChargeType(String chargeType) {
-			this.chargeType = chargeType;
-		}
-
-		public String getNetworkType() {
-			return this.networkType;
-		}
-
-		public void setNetworkType(String networkType) {
-			this.networkType = networkType;
-		}
-
-		public String getQuotaResourceType() {
-			return this.quotaResourceType;
-		}
-
-		public void setQuotaResourceType(String quotaResourceType) {
-			this.quotaResourceType = quotaResourceType;
+		public void setBaseQuota(Long baseQuota) {
+			this.baseQuota = baseQuota;
 		}
 
 		public String getQuotaResourceName() {
@@ -171,6 +139,30 @@ public class OpsListUserQuotaUsageResponse extends AcsResponse {
 			this.quotaUnit = quotaUnit;
 		}
 
+		public String getQuotaResourceType() {
+			return this.quotaResourceType;
+		}
+
+		public void setQuotaResourceType(String quotaResourceType) {
+			this.quotaResourceType = quotaResourceType;
+		}
+
+		public String getChargeType() {
+			return this.chargeType;
+		}
+
+		public void setChargeType(String chargeType) {
+			this.chargeType = chargeType;
+		}
+
+		public String getNetworkType() {
+			return this.networkType;
+		}
+
+		public void setNetworkType(String networkType) {
+			this.networkType = networkType;
+		}
+
 		public Long getReservedQuota() {
 			return this.reservedQuota;
 		}
@@ -187,28 +179,12 @@ public class OpsListUserQuotaUsageResponse extends AcsResponse {
 			this.reservedQuotaUsage = reservedQuotaUsage;
 		}
 
-		public Long getBaseQuota() {
-			return this.baseQuota;
+		public String getRegionId() {
+			return this.regionId;
 		}
 
-		public void setBaseQuota(Long baseQuota) {
-			this.baseQuota = baseQuota;
-		}
-
-		public Long getBaseQuotaUsage() {
-			return this.baseQuotaUsage;
-		}
-
-		public void setBaseQuotaUsage(Long baseQuotaUsage) {
-			this.baseQuotaUsage = baseQuotaUsage;
-		}
-
-		public Long getTotalQuota() {
-			return this.totalQuota;
-		}
-
-		public void setTotalQuota(Long totalQuota) {
-			this.totalQuota = totalQuota;
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 
 		public Long getTotalQuotaUsage() {
@@ -219,12 +195,36 @@ public class OpsListUserQuotaUsageResponse extends AcsResponse {
 			this.totalQuotaUsage = totalQuotaUsage;
 		}
 
+		public Long getBaseQuotaUsage() {
+			return this.baseQuotaUsage;
+		}
+
+		public void setBaseQuotaUsage(Long baseQuotaUsage) {
+			this.baseQuotaUsage = baseQuotaUsage;
+		}
+
 		public String getApplicationStatus() {
 			return this.applicationStatus;
 		}
 
 		public void setApplicationStatus(String applicationStatus) {
 			this.applicationStatus = applicationStatus;
+		}
+
+		public String getZoneId() {
+			return this.zoneId;
+		}
+
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
+		}
+
+		public Long getTotalQuota() {
+			return this.totalQuota;
+		}
+
+		public void setTotalQuota(Long totalQuota) {
+			this.totalQuota = totalQuota;
 		}
 	}
 

@@ -29,26 +29,26 @@ public class OpsActionTrailResponseUnmarshaller {
 		
 		opsActionTrailResponse.setRequestId(_ctx.stringValue("OpsActionTrailResponse.RequestId"));
 		opsActionTrailResponse.setTotalCount(_ctx.integerValue("OpsActionTrailResponse.TotalCount"));
-		opsActionTrailResponse.setPageNumber(_ctx.integerValue("OpsActionTrailResponse.PageNumber"));
 		opsActionTrailResponse.setPageSize(_ctx.integerValue("OpsActionTrailResponse.PageSize"));
+		opsActionTrailResponse.setPageNumber(_ctx.integerValue("OpsActionTrailResponse.PageNumber"));
 
 		List<Action> actions = new ArrayList<Action>();
 		for (int i = 0; i < _ctx.lengthValue("OpsActionTrailResponse.Actions.Length"); i++) {
 			Action action = new Action();
-			action.setAction(_ctx.stringValue("OpsActionTrailResponse.Actions["+ i +"].Action"));
-			action.setVersion(_ctx.stringValue("OpsActionTrailResponse.Actions["+ i +"].Version"));
 			action.setDomain(_ctx.stringValue("OpsActionTrailResponse.Actions["+ i +"].Domain"));
-			action.setRegionId(_ctx.stringValue("OpsActionTrailResponse.Actions["+ i +"].RegionId"));
-			action.setCallerUid(_ctx.longValue("OpsActionTrailResponse.Actions["+ i +"].CallerUid"));
-			action.setCallerBid(_ctx.stringValue("OpsActionTrailResponse.Actions["+ i +"].CallerBid"));
-			action.setSuccess(_ctx.stringValue("OpsActionTrailResponse.Actions["+ i +"].Success"));
-			action.setHttpCode(_ctx.stringValue("OpsActionTrailResponse.Actions["+ i +"].HttpCode"));
-			action.setRequestId(_ctx.stringValue("OpsActionTrailResponse.Actions["+ i +"].RequestId"));
-			action.setRequestTime(_ctx.stringValue("OpsActionTrailResponse.Actions["+ i +"].RequestTime"));
-			action.setErrorCode(_ctx.stringValue("OpsActionTrailResponse.Actions["+ i +"].ErrorCode"));
+			action.setAction(_ctx.stringValue("OpsActionTrailResponse.Actions["+ i +"].Action"));
 			action.setErrorMessage(_ctx.stringValue("OpsActionTrailResponse.Actions["+ i +"].ErrorMessage"));
-			action.setResourceId(_ctx.stringValue("OpsActionTrailResponse.Actions["+ i +"].ResourceId"));
+			action.setSuccess(_ctx.stringValue("OpsActionTrailResponse.Actions["+ i +"].Success"));
 			action.setRequestContent(_ctx.mapValue("OpsActionTrailResponse.Actions["+ i +"].RequestContent"));
+			action.setHttpCode(_ctx.stringValue("OpsActionTrailResponse.Actions["+ i +"].HttpCode"));
+			action.setCallerUid(_ctx.longValue("OpsActionTrailResponse.Actions["+ i +"].CallerUid"));
+			action.setRegionId(_ctx.stringValue("OpsActionTrailResponse.Actions["+ i +"].RegionId"));
+			action.setRequestId(_ctx.stringValue("OpsActionTrailResponse.Actions["+ i +"].RequestId"));
+			action.setErrorCode(_ctx.stringValue("OpsActionTrailResponse.Actions["+ i +"].ErrorCode"));
+			action.setCallerBid(_ctx.stringValue("OpsActionTrailResponse.Actions["+ i +"].CallerBid"));
+			action.setVersion(_ctx.stringValue("OpsActionTrailResponse.Actions["+ i +"].Version"));
+			action.setResourceId(_ctx.stringValue("OpsActionTrailResponse.Actions["+ i +"].ResourceId"));
+			action.setRequestTime(_ctx.stringValue("OpsActionTrailResponse.Actions["+ i +"].RequestTime"));
 
 			actions.add(action);
 		}

@@ -32,47 +32,47 @@ public class OpsSyncDemandResponseUnmarshaller {
 
 		DemandInfo demandInfo = new DemandInfo();
 		demandInfo.setRegionNo(_ctx.stringValue("OpsSyncDemandResponse.DemandInfo.RegionNo"));
-		demandInfo.setTotalCount(_ctx.integerValue("OpsSyncDemandResponse.DemandInfo.TotalCount"));
 		demandInfo.setPageNo(_ctx.integerValue("OpsSyncDemandResponse.DemandInfo.PageNo"));
 		demandInfo.setPageSize(_ctx.integerValue("OpsSyncDemandResponse.DemandInfo.PageSize"));
+		demandInfo.setTotalCount(_ctx.integerValue("OpsSyncDemandResponse.DemandInfo.TotalCount"));
 
 		List<DemandModel> demandModels = new ArrayList<DemandModel>();
 		for (int i = 0; i < _ctx.lengthValue("OpsSyncDemandResponse.DemandInfo.DemandModels.Length"); i++) {
 			DemandModel demandModel = new DemandModel();
-			demandModel.setDemandId(_ctx.stringValue("OpsSyncDemandResponse.DemandInfo.DemandModels["+ i +"].DemandId"));
-			demandModel.setSubDemandId(_ctx.stringValue("OpsSyncDemandResponse.DemandInfo.DemandModels["+ i +"].SubDemandId"));
-			demandModel.setDemandTime(_ctx.stringValue("OpsSyncDemandResponse.DemandInfo.DemandModels["+ i +"].DemandTime"));
-			demandModel.setCustomerUid(_ctx.longValue("OpsSyncDemandResponse.DemandInfo.DemandModels["+ i +"].CustomerUid"));
-			demandModel.setCustomerName(_ctx.stringValue("OpsSyncDemandResponse.DemandInfo.DemandModels["+ i +"].CustomerName"));
-			demandModel.setCbmUid(_ctx.longValue("OpsSyncDemandResponse.DemandInfo.DemandModels["+ i +"].CbmUid"));
-			demandModel.setCbmName(_ctx.stringValue("OpsSyncDemandResponse.DemandInfo.DemandModels["+ i +"].CbmName"));
-			demandModel.setAvailableZoneId(_ctx.stringValue("OpsSyncDemandResponse.DemandInfo.DemandModels["+ i +"].AvailableZoneId"));
-			demandModel.setInstanceType(_ctx.stringValue("OpsSyncDemandResponse.DemandInfo.DemandModels["+ i +"].InstanceType"));
-			demandModel.setInstanceTypeFamily(_ctx.stringValue("OpsSyncDemandResponse.DemandInfo.DemandModels["+ i +"].InstanceTypeFamily"));
-			demandModel.setNetworkType(_ctx.stringValue("OpsSyncDemandResponse.DemandInfo.DemandModels["+ i +"].NetworkType"));
-			demandModel.setIoOptimized(_ctx.booleanValue("OpsSyncDemandResponse.DemandInfo.DemandModels["+ i +"].IoOptimized"));
-			demandModel.setPayType(_ctx.stringValue("OpsSyncDemandResponse.DemandInfo.DemandModels["+ i +"].PayType"));
-			demandModel.setPayDuration(_ctx.stringValue("OpsSyncDemandResponse.DemandInfo.DemandModels["+ i +"].PayDuration"));
-			demandModel.setDurationUnit(_ctx.stringValue("OpsSyncDemandResponse.DemandInfo.DemandModels["+ i +"].DurationUnit"));
-			demandModel.setStartTime(_ctx.stringValue("OpsSyncDemandResponse.DemandInfo.DemandModels["+ i +"].StartTime"));
-			demandModel.setEndTime(_ctx.stringValue("OpsSyncDemandResponse.DemandInfo.DemandModels["+ i +"].EndTime"));
-			demandModel.setDemandStatus(_ctx.stringValue("OpsSyncDemandResponse.DemandInfo.DemandModels["+ i +"].DemandStatus"));
-			demandModel.setTotalCount(_ctx.integerValue("OpsSyncDemandResponse.DemandInfo.DemandModels["+ i +"].TotalCount"));
-			demandModel.setAvailableAmount(_ctx.integerValue("OpsSyncDemandResponse.DemandInfo.DemandModels["+ i +"].AvailableAmount"));
-			demandModel.setUsedAmount(_ctx.integerValue("OpsSyncDemandResponse.DemandInfo.DemandModels["+ i +"].UsedAmount"));
-			demandModel.setDeliveringAmount(_ctx.integerValue("OpsSyncDemandResponse.DemandInfo.DemandModels["+ i +"].DeliveringAmount"));
 			demandModel.setComment(_ctx.stringValue("OpsSyncDemandResponse.DemandInfo.DemandModels["+ i +"].Comment"));
+			demandModel.setDemandId(_ctx.stringValue("OpsSyncDemandResponse.DemandInfo.DemandModels["+ i +"].DemandId"));
+			demandModel.setCustomerUid(_ctx.longValue("OpsSyncDemandResponse.DemandInfo.DemandModels["+ i +"].CustomerUid"));
+			demandModel.setDemandTime(_ctx.stringValue("OpsSyncDemandResponse.DemandInfo.DemandModels["+ i +"].DemandTime"));
+			demandModel.setPayType(_ctx.stringValue("OpsSyncDemandResponse.DemandInfo.DemandModels["+ i +"].PayType"));
+			demandModel.setCbmName(_ctx.stringValue("OpsSyncDemandResponse.DemandInfo.DemandModels["+ i +"].CbmName"));
+			demandModel.setNetworkType(_ctx.stringValue("OpsSyncDemandResponse.DemandInfo.DemandModels["+ i +"].NetworkType"));
+			demandModel.setAvailableAmount(_ctx.integerValue("OpsSyncDemandResponse.DemandInfo.DemandModels["+ i +"].AvailableAmount"));
+			demandModel.setCustomerName(_ctx.stringValue("OpsSyncDemandResponse.DemandInfo.DemandModels["+ i +"].CustomerName"));
+			demandModel.setDurationUnit(_ctx.stringValue("OpsSyncDemandResponse.DemandInfo.DemandModels["+ i +"].DurationUnit"));
+			demandModel.setDeliveringAmount(_ctx.integerValue("OpsSyncDemandResponse.DemandInfo.DemandModels["+ i +"].DeliveringAmount"));
+			demandModel.setSubDemandId(_ctx.stringValue("OpsSyncDemandResponse.DemandInfo.DemandModels["+ i +"].SubDemandId"));
+			demandModel.setAvailableZoneId(_ctx.stringValue("OpsSyncDemandResponse.DemandInfo.DemandModels["+ i +"].AvailableZoneId"));
+			demandModel.setTotalCount(_ctx.integerValue("OpsSyncDemandResponse.DemandInfo.DemandModels["+ i +"].TotalCount"));
+			demandModel.setInstanceType(_ctx.stringValue("OpsSyncDemandResponse.DemandInfo.DemandModels["+ i +"].InstanceType"));
+			demandModel.setEndTime(_ctx.stringValue("OpsSyncDemandResponse.DemandInfo.DemandModels["+ i +"].EndTime"));
+			demandModel.setIoOptimized(_ctx.booleanValue("OpsSyncDemandResponse.DemandInfo.DemandModels["+ i +"].IoOptimized"));
+			demandModel.setStartTime(_ctx.stringValue("OpsSyncDemandResponse.DemandInfo.DemandModels["+ i +"].StartTime"));
+			demandModel.setCbmUid(_ctx.longValue("OpsSyncDemandResponse.DemandInfo.DemandModels["+ i +"].CbmUid"));
+			demandModel.setPayDuration(_ctx.stringValue("OpsSyncDemandResponse.DemandInfo.DemandModels["+ i +"].PayDuration"));
+			demandModel.setUsedAmount(_ctx.integerValue("OpsSyncDemandResponse.DemandInfo.DemandModels["+ i +"].UsedAmount"));
+			demandModel.setInstanceTypeFamily(_ctx.stringValue("OpsSyncDemandResponse.DemandInfo.DemandModels["+ i +"].InstanceTypeFamily"));
+			demandModel.setDemandStatus(_ctx.stringValue("OpsSyncDemandResponse.DemandInfo.DemandModels["+ i +"].DemandStatus"));
 
 			List<DemandSupply> demandSupplyList = new ArrayList<DemandSupply>();
 			for (int j = 0; j < _ctx.lengthValue("OpsSyncDemandResponse.DemandInfo.DemandModels["+ i +"].DemandSupplyList.Length"); j++) {
 				DemandSupply demandSupply = new DemandSupply();
-				demandSupply.setTotalAmount(_ctx.integerValue("OpsSyncDemandResponse.DemandInfo.DemandModels["+ i +"].DemandSupplyList["+ j +"].TotalAmount"));
-				demandSupply.setUsedAmount(_ctx.integerValue("OpsSyncDemandResponse.DemandInfo.DemandModels["+ i +"].DemandSupplyList["+ j +"].UsedAmount"));
-				demandSupply.setAvailableAmount(_ctx.integerValue("OpsSyncDemandResponse.DemandInfo.DemandModels["+ i +"].DemandSupplyList["+ j +"].AvailableAmount"));
-				demandSupply.setDeliveringAmount(_ctx.integerValue("OpsSyncDemandResponse.DemandInfo.DemandModels["+ i +"].DemandSupplyList["+ j +"].DeliveringAmount"));
-				demandSupply.setSupplyStatus(_ctx.stringValue("OpsSyncDemandResponse.DemandInfo.DemandModels["+ i +"].DemandSupplyList["+ j +"].SupplyStatus"));
-				demandSupply.setStartTime(_ctx.stringValue("OpsSyncDemandResponse.DemandInfo.DemandModels["+ i +"].DemandSupplyList["+ j +"].StartTime"));
 				demandSupply.setEndTime(_ctx.stringValue("OpsSyncDemandResponse.DemandInfo.DemandModels["+ i +"].DemandSupplyList["+ j +"].EndTime"));
+				demandSupply.setAvailableAmount(_ctx.integerValue("OpsSyncDemandResponse.DemandInfo.DemandModels["+ i +"].DemandSupplyList["+ j +"].AvailableAmount"));
+				demandSupply.setStartTime(_ctx.stringValue("OpsSyncDemandResponse.DemandInfo.DemandModels["+ i +"].DemandSupplyList["+ j +"].StartTime"));
+				demandSupply.setSupplyStatus(_ctx.stringValue("OpsSyncDemandResponse.DemandInfo.DemandModels["+ i +"].DemandSupplyList["+ j +"].SupplyStatus"));
+				demandSupply.setUsedAmount(_ctx.integerValue("OpsSyncDemandResponse.DemandInfo.DemandModels["+ i +"].DemandSupplyList["+ j +"].UsedAmount"));
+				demandSupply.setTotalAmount(_ctx.integerValue("OpsSyncDemandResponse.DemandInfo.DemandModels["+ i +"].DemandSupplyList["+ j +"].TotalAmount"));
+				demandSupply.setDeliveringAmount(_ctx.integerValue("OpsSyncDemandResponse.DemandInfo.DemandModels["+ i +"].DemandSupplyList["+ j +"].DeliveringAmount"));
 
 				demandSupplyList.add(demandSupply);
 			}

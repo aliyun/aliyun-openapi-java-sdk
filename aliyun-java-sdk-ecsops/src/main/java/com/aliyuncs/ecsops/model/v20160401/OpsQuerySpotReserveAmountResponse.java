@@ -47,9 +47,15 @@ public class OpsQuerySpotReserveAmountResponse extends AcsResponse {
 
 	public static class EcsSpotDurationReserveVmStock {
 
-		private Long id;
+		private Integer ioOptimized;
+
+		private String flavor;
+
+		private Integer spotDuration;
 
 		private String gmtCreate;
+
+		private Integer networkType;
 
 		private String gmtModified;
 
@@ -57,24 +63,34 @@ public class OpsQuerySpotReserveAmountResponse extends AcsResponse {
 
 		private String flavorFamily;
 
-		private String flavor;
-
-		private Integer networkType;
-
-		private Integer ioOptimized;
-
-		private Integer spotDuration;
-
-		private Integer reserveAmount;
+		private Long id;
 
 		private String bizHour;
 
-		public Long getId() {
-			return this.id;
+		private Integer reserveAmount;
+
+		public Integer getIoOptimized() {
+			return this.ioOptimized;
 		}
 
-		public void setId(Long id) {
-			this.id = id;
+		public void setIoOptimized(Integer ioOptimized) {
+			this.ioOptimized = ioOptimized;
+		}
+
+		public String getFlavor() {
+			return this.flavor;
+		}
+
+		public void setFlavor(String flavor) {
+			this.flavor = flavor;
+		}
+
+		public Integer getSpotDuration() {
+			return this.spotDuration;
+		}
+
+		public void setSpotDuration(Integer spotDuration) {
+			this.spotDuration = spotDuration;
 		}
 
 		public String getGmtCreate() {
@@ -83,6 +99,14 @@ public class OpsQuerySpotReserveAmountResponse extends AcsResponse {
 
 		public void setGmtCreate(String gmtCreate) {
 			this.gmtCreate = gmtCreate;
+		}
+
+		public Integer getNetworkType() {
+			return this.networkType;
+		}
+
+		public void setNetworkType(Integer networkType) {
+			this.networkType = networkType;
 		}
 
 		public String getGmtModified() {
@@ -109,44 +133,12 @@ public class OpsQuerySpotReserveAmountResponse extends AcsResponse {
 			this.flavorFamily = flavorFamily;
 		}
 
-		public String getFlavor() {
-			return this.flavor;
+		public Long getId() {
+			return this.id;
 		}
 
-		public void setFlavor(String flavor) {
-			this.flavor = flavor;
-		}
-
-		public Integer getNetworkType() {
-			return this.networkType;
-		}
-
-		public void setNetworkType(Integer networkType) {
-			this.networkType = networkType;
-		}
-
-		public Integer getIoOptimized() {
-			return this.ioOptimized;
-		}
-
-		public void setIoOptimized(Integer ioOptimized) {
-			this.ioOptimized = ioOptimized;
-		}
-
-		public Integer getSpotDuration() {
-			return this.spotDuration;
-		}
-
-		public void setSpotDuration(Integer spotDuration) {
-			this.spotDuration = spotDuration;
-		}
-
-		public Integer getReserveAmount() {
-			return this.reserveAmount;
-		}
-
-		public void setReserveAmount(Integer reserveAmount) {
-			this.reserveAmount = reserveAmount;
+		public void setId(Long id) {
+			this.id = id;
 		}
 
 		public String getBizHour() {
@@ -155,6 +147,14 @@ public class OpsQuerySpotReserveAmountResponse extends AcsResponse {
 
 		public void setBizHour(String bizHour) {
 			this.bizHour = bizHour;
+		}
+
+		public Integer getReserveAmount() {
+			return this.reserveAmount;
+		}
+
+		public void setReserveAmount(Integer reserveAmount) {
+			this.reserveAmount = reserveAmount;
 		}
 	}
 

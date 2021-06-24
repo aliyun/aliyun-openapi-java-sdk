@@ -28,20 +28,20 @@ public class OpsQueryUserQuotaCategoryRelationResponseUnmarshaller {
 		
 		opsQueryUserQuotaCategoryRelationResponse.setRequestId(_ctx.stringValue("OpsQueryUserQuotaCategoryRelationResponse.RequestId"));
 		opsQueryUserQuotaCategoryRelationResponse.setTotalCount(_ctx.integerValue("OpsQueryUserQuotaCategoryRelationResponse.TotalCount"));
-		opsQueryUserQuotaCategoryRelationResponse.setPageNumber(_ctx.integerValue("OpsQueryUserQuotaCategoryRelationResponse.PageNumber"));
-		opsQueryUserQuotaCategoryRelationResponse.setPageSize(_ctx.integerValue("OpsQueryUserQuotaCategoryRelationResponse.PageSize"));
 		opsQueryUserQuotaCategoryRelationResponse.setNextToken(_ctx.stringValue("OpsQueryUserQuotaCategoryRelationResponse.NextToken"));
+		opsQueryUserQuotaCategoryRelationResponse.setPageSize(_ctx.integerValue("OpsQueryUserQuotaCategoryRelationResponse.PageSize"));
+		opsQueryUserQuotaCategoryRelationResponse.setPageNumber(_ctx.integerValue("OpsQueryUserQuotaCategoryRelationResponse.PageNumber"));
 
 		List<CategoryRelation> categoryRelations = new ArrayList<CategoryRelation>();
 		for (int i = 0; i < _ctx.lengthValue("OpsQueryUserQuotaCategoryRelationResponse.CategoryRelations.Length"); i++) {
 			CategoryRelation categoryRelation = new CategoryRelation();
+			categoryRelation.setUidType(_ctx.integerValue("OpsQueryUserQuotaCategoryRelationResponse.CategoryRelations["+ i +"].UidType"));
+			categoryRelation.setGmtModifiedStr(_ctx.stringValue("OpsQueryUserQuotaCategoryRelationResponse.CategoryRelations["+ i +"].GmtModifiedStr"));
+			categoryRelation.setCategoryName(_ctx.stringValue("OpsQueryUserQuotaCategoryRelationResponse.CategoryRelations["+ i +"].CategoryName"));
+			categoryRelation.setCategoryType(_ctx.integerValue("OpsQueryUserQuotaCategoryRelationResponse.CategoryRelations["+ i +"].CategoryType"));
 			categoryRelation.setId(_ctx.longValue("OpsQueryUserQuotaCategoryRelationResponse.CategoryRelations["+ i +"].Id"));
 			categoryRelation.setGmtCreateStr(_ctx.stringValue("OpsQueryUserQuotaCategoryRelationResponse.CategoryRelations["+ i +"].GmtCreateStr"));
-			categoryRelation.setGmtModifiedStr(_ctx.stringValue("OpsQueryUserQuotaCategoryRelationResponse.CategoryRelations["+ i +"].GmtModifiedStr"));
 			categoryRelation.setUid(_ctx.longValue("OpsQueryUserQuotaCategoryRelationResponse.CategoryRelations["+ i +"].Uid"));
-			categoryRelation.setUidType(_ctx.integerValue("OpsQueryUserQuotaCategoryRelationResponse.CategoryRelations["+ i +"].UidType"));
-			categoryRelation.setCategoryType(_ctx.integerValue("OpsQueryUserQuotaCategoryRelationResponse.CategoryRelations["+ i +"].CategoryType"));
-			categoryRelation.setCategoryName(_ctx.stringValue("OpsQueryUserQuotaCategoryRelationResponse.CategoryRelations["+ i +"].CategoryName"));
 
 			categoryRelations.add(categoryRelation);
 		}

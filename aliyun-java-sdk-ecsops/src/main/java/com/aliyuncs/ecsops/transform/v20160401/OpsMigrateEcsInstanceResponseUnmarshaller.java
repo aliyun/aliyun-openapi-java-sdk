@@ -23,12 +23,12 @@ public class OpsMigrateEcsInstanceResponseUnmarshaller {
 	public static OpsMigrateEcsInstanceResponse unmarshall(OpsMigrateEcsInstanceResponse opsMigrateEcsInstanceResponse, UnmarshallerContext _ctx) {
 		
 		opsMigrateEcsInstanceResponse.setRequestId(_ctx.stringValue("OpsMigrateEcsInstanceResponse.RequestId"));
-		opsMigrateEcsInstanceResponse.setCode(_ctx.stringValue("OpsMigrateEcsInstanceResponse.Code"));
-		opsMigrateEcsInstanceResponse.setMessage(_ctx.stringValue("OpsMigrateEcsInstanceResponse.Message"));
-		opsMigrateEcsInstanceResponse.setSuccess(_ctx.stringValue("OpsMigrateEcsInstanceResponse.Success"));
-		opsMigrateEcsInstanceResponse.setInstanceId(_ctx.stringValue("OpsMigrateEcsInstanceResponse.InstanceId"));
 		opsMigrateEcsInstanceResponse.setStatus(_ctx.stringValue("OpsMigrateEcsInstanceResponse.Status"));
 		opsMigrateEcsInstanceResponse.setNcId(_ctx.stringValue("OpsMigrateEcsInstanceResponse.NcId"));
+		opsMigrateEcsInstanceResponse.setMessage(_ctx.stringValue("OpsMigrateEcsInstanceResponse.Message"));
+		opsMigrateEcsInstanceResponse.setInstanceId(_ctx.stringValue("OpsMigrateEcsInstanceResponse.InstanceId"));
+		opsMigrateEcsInstanceResponse.setCode(_ctx.stringValue("OpsMigrateEcsInstanceResponse.Code"));
+		opsMigrateEcsInstanceResponse.setSuccess(_ctx.stringValue("OpsMigrateEcsInstanceResponse.Success"));
 	 
 	 	return opsMigrateEcsInstanceResponse;
 	}

@@ -93,9 +93,9 @@ public class OpsQueryCloudBoxDeployInfoResponse extends AcsResponse {
 
 				private String cluster;
 
-				private List<String> sns;
-
 				private List<String> ags;
+
+				private List<String> sns;
 
 				public String getCluster() {
 					return this.cluster;
@@ -105,20 +105,20 @@ public class OpsQueryCloudBoxDeployInfoResponse extends AcsResponse {
 					this.cluster = cluster;
 				}
 
-				public List<String> getSns() {
-					return this.sns;
-				}
-
-				public void setSns(List<String> sns) {
-					this.sns = sns;
-				}
-
 				public List<String> getAgs() {
 					return this.ags;
 				}
 
 				public void setAgs(List<String> ags) {
 					this.ags = ags;
+				}
+
+				public List<String> getSns() {
+					return this.sns;
+				}
+
+				public void setSns(List<String> sns) {
+					this.sns = sns;
 				}
 			}
 		}

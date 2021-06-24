@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsDescribeImageGroupsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
-
-	private Integer pageNumber;
 
 	private Integer pageSize;
 
+	private String requestId;
+
+	private Integer pageNumber;
+
 	private List<ImageGroup> imageGroups;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -51,20 +43,28 @@ public class OpsDescribeImageGroupsResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<ImageGroup> getImageGroups() {
@@ -77,22 +77,22 @@ public class OpsDescribeImageGroupsResponse extends AcsResponse {
 
 	public static class ImageGroup {
 
-		private String imageGroup;
+		private String creationTime;
 
 		private String publishState;
 
-		private String publishTag;
+		private String imageGroup;
 
-		private String creationTime;
+		private String publishTag;
 
 		private String modifyTime;
 
-		public String getImageGroup() {
-			return this.imageGroup;
+		public String getCreationTime() {
+			return this.creationTime;
 		}
 
-		public void setImageGroup(String imageGroup) {
-			this.imageGroup = imageGroup;
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
 		}
 
 		public String getPublishState() {
@@ -103,20 +103,20 @@ public class OpsDescribeImageGroupsResponse extends AcsResponse {
 			this.publishState = publishState;
 		}
 
+		public String getImageGroup() {
+			return this.imageGroup;
+		}
+
+		public void setImageGroup(String imageGroup) {
+			this.imageGroup = imageGroup;
+		}
+
 		public String getPublishTag() {
 			return this.publishTag;
 		}
 
 		public void setPublishTag(String publishTag) {
 			this.publishTag = publishTag;
-		}
-
-		public String getCreationTime() {
-			return this.creationTime;
-		}
-
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
 		}
 
 		public String getModifyTime() {

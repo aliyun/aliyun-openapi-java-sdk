@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsRealtimeDetectByScriptResponse extends AcsResponse {
 
+	private String endTime;
+
 	private String requestId;
 
 	private String startTime;
 
-	private String endTime;
-
 	private List<DetectResult> detectResults;
 
 	private OverviewInfo overviewInfo;
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -49,14 +57,6 @@ public class OpsRealtimeDetectByScriptResponse extends AcsResponse {
 
 	public void setStartTime(String startTime) {
 		this.startTime = startTime;
-	}
-
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
 	}
 
 	public List<DetectResult> getDetectResults() {
@@ -79,13 +79,13 @@ public class OpsRealtimeDetectByScriptResponse extends AcsResponse {
 
 		private String status;
 
-		private String taskUid;
-
-		private Boolean success;
-
 		private String configName;
 
+		private String taskUid;
+
 		private String groupName;
+
+		private Boolean success;
 
 		private String message;
 
@@ -99,22 +99,6 @@ public class OpsRealtimeDetectByScriptResponse extends AcsResponse {
 			this.status = status;
 		}
 
-		public String getTaskUid() {
-			return this.taskUid;
-		}
-
-		public void setTaskUid(String taskUid) {
-			this.taskUid = taskUid;
-		}
-
-		public Boolean getSuccess() {
-			return this.success;
-		}
-
-		public void setSuccess(Boolean success) {
-			this.success = success;
-		}
-
 		public String getConfigName() {
 			return this.configName;
 		}
@@ -123,12 +107,28 @@ public class OpsRealtimeDetectByScriptResponse extends AcsResponse {
 			this.configName = configName;
 		}
 
+		public String getTaskUid() {
+			return this.taskUid;
+		}
+
+		public void setTaskUid(String taskUid) {
+			this.taskUid = taskUid;
+		}
+
 		public String getGroupName() {
 			return this.groupName;
 		}
 
 		public void setGroupName(String groupName) {
 			this.groupName = groupName;
+		}
+
+		public Boolean getSuccess() {
+			return this.success;
+		}
+
+		public void setSuccess(Boolean success) {
+			this.success = success;
 		}
 
 		public String getMessage() {
@@ -151,13 +151,13 @@ public class OpsRealtimeDetectByScriptResponse extends AcsResponse {
 
 			private String status;
 
-			private String message;
-
-			private String logFile;
-
 			private String itemName;
 
+			private String message;
+
 			private String fixScript;
+
+			private String logFile;
 
 			public String getStatus() {
 				return this.status;
@@ -165,22 +165,6 @@ public class OpsRealtimeDetectByScriptResponse extends AcsResponse {
 
 			public void setStatus(String status) {
 				this.status = status;
-			}
-
-			public String getMessage() {
-				return this.message;
-			}
-
-			public void setMessage(String message) {
-				this.message = message;
-			}
-
-			public String getLogFile() {
-				return this.logFile;
-			}
-
-			public void setLogFile(String logFile) {
-				this.logFile = logFile;
 			}
 
 			public String getItemName() {
@@ -191,6 +175,14 @@ public class OpsRealtimeDetectByScriptResponse extends AcsResponse {
 				this.itemName = itemName;
 			}
 
+			public String getMessage() {
+				return this.message;
+			}
+
+			public void setMessage(String message) {
+				this.message = message;
+			}
+
 			public String getFixScript() {
 				return this.fixScript;
 			}
@@ -198,72 +190,72 @@ public class OpsRealtimeDetectByScriptResponse extends AcsResponse {
 			public void setFixScript(String fixScript) {
 				this.fixScript = fixScript;
 			}
+
+			public String getLogFile() {
+				return this.logFile;
+			}
+
+			public void setLogFile(String logFile) {
+				this.logFile = logFile;
+			}
 		}
 	}
 
 	public static class OverviewInfo {
 
-		private Integer cpuCoreCount;
-
 		private String ncIp;
 
-		private String aliUid;
+		private String machineStatus;
 
-		private String availableZone;
+		private String stressComparisionStartTime;
 
-		private String machineId;
-
-		private String regionId;
-
-		private String hostname;
-
-		private String intranetIp;
-
-		private String extension;
-
-		private String instanceType;
-
-		private String clusterName;
+		private String canMigrateSla;
 
 		private String vips;
 
 		private Boolean isLocalDisk;
 
-		private String machineStatus;
+		private String stressComparisionResult;
 
-		private String machineType;
+		private String extension;
 
 		private String stressComparisionState;
 
-		private String stressComparisionResult;
+		private String productName;
 
-		private String stressComparisionStartTime;
+		private String machineType;
+
+		private String aliUid;
+
+		private String hostname;
+
+		private String availableZone;
 
 		private Integer stressComparisionTime;
 
-		private String riskTag;
+		private String instanceType;
 
-		private String productName;
+		private String intranetIp;
 
-		private String migrateStatus;
-
-		private String canMigrateSla;
+		private String regionId;
 
 		private String canMigrateBySlb;
 
+		private String riskTag;
+
+		private String clusterName;
+
 		private String canMigrateByType;
+
+		private Integer cpuCoreCount;
+
+		private String migrateStatus;
 
 		private String canMigrateByOthers;
 
+		private String machineId;
+
 		private List<SnNodeInfo> snNodeInfoList;
-
-		public Integer getCpuCoreCount() {
-			return this.cpuCoreCount;
-		}
-
-		public void setCpuCoreCount(Integer cpuCoreCount) {
-			this.cpuCoreCount = cpuCoreCount;
-		}
 
 		public String getNcIp() {
 			return this.ncIp;
@@ -273,76 +265,28 @@ public class OpsRealtimeDetectByScriptResponse extends AcsResponse {
 			this.ncIp = ncIp;
 		}
 
-		public String getAliUid() {
-			return this.aliUid;
+		public String getMachineStatus() {
+			return this.machineStatus;
 		}
 
-		public void setAliUid(String aliUid) {
-			this.aliUid = aliUid;
+		public void setMachineStatus(String machineStatus) {
+			this.machineStatus = machineStatus;
 		}
 
-		public String getAvailableZone() {
-			return this.availableZone;
+		public String getStressComparisionStartTime() {
+			return this.stressComparisionStartTime;
 		}
 
-		public void setAvailableZone(String availableZone) {
-			this.availableZone = availableZone;
+		public void setStressComparisionStartTime(String stressComparisionStartTime) {
+			this.stressComparisionStartTime = stressComparisionStartTime;
 		}
 
-		public String getMachineId() {
-			return this.machineId;
+		public String getCanMigrateSla() {
+			return this.canMigrateSla;
 		}
 
-		public void setMachineId(String machineId) {
-			this.machineId = machineId;
-		}
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		public String getHostname() {
-			return this.hostname;
-		}
-
-		public void setHostname(String hostname) {
-			this.hostname = hostname;
-		}
-
-		public String getIntranetIp() {
-			return this.intranetIp;
-		}
-
-		public void setIntranetIp(String intranetIp) {
-			this.intranetIp = intranetIp;
-		}
-
-		public String getExtension() {
-			return this.extension;
-		}
-
-		public void setExtension(String extension) {
-			this.extension = extension;
-		}
-
-		public String getInstanceType() {
-			return this.instanceType;
-		}
-
-		public void setInstanceType(String instanceType) {
-			this.instanceType = instanceType;
-		}
-
-		public String getClusterName() {
-			return this.clusterName;
-		}
-
-		public void setClusterName(String clusterName) {
-			this.clusterName = clusterName;
+		public void setCanMigrateSla(String canMigrateSla) {
+			this.canMigrateSla = canMigrateSla;
 		}
 
 		public String getVips() {
@@ -361,20 +305,20 @@ public class OpsRealtimeDetectByScriptResponse extends AcsResponse {
 			this.isLocalDisk = isLocalDisk;
 		}
 
-		public String getMachineStatus() {
-			return this.machineStatus;
+		public String getStressComparisionResult() {
+			return this.stressComparisionResult;
 		}
 
-		public void setMachineStatus(String machineStatus) {
-			this.machineStatus = machineStatus;
+		public void setStressComparisionResult(String stressComparisionResult) {
+			this.stressComparisionResult = stressComparisionResult;
 		}
 
-		public String getMachineType() {
-			return this.machineType;
+		public String getExtension() {
+			return this.extension;
 		}
 
-		public void setMachineType(String machineType) {
-			this.machineType = machineType;
+		public void setExtension(String extension) {
+			this.extension = extension;
 		}
 
 		public String getStressComparisionState() {
@@ -385,20 +329,44 @@ public class OpsRealtimeDetectByScriptResponse extends AcsResponse {
 			this.stressComparisionState = stressComparisionState;
 		}
 
-		public String getStressComparisionResult() {
-			return this.stressComparisionResult;
+		public String getProductName() {
+			return this.productName;
 		}
 
-		public void setStressComparisionResult(String stressComparisionResult) {
-			this.stressComparisionResult = stressComparisionResult;
+		public void setProductName(String productName) {
+			this.productName = productName;
 		}
 
-		public String getStressComparisionStartTime() {
-			return this.stressComparisionStartTime;
+		public String getMachineType() {
+			return this.machineType;
 		}
 
-		public void setStressComparisionStartTime(String stressComparisionStartTime) {
-			this.stressComparisionStartTime = stressComparisionStartTime;
+		public void setMachineType(String machineType) {
+			this.machineType = machineType;
+		}
+
+		public String getAliUid() {
+			return this.aliUid;
+		}
+
+		public void setAliUid(String aliUid) {
+			this.aliUid = aliUid;
+		}
+
+		public String getHostname() {
+			return this.hostname;
+		}
+
+		public void setHostname(String hostname) {
+			this.hostname = hostname;
+		}
+
+		public String getAvailableZone() {
+			return this.availableZone;
+		}
+
+		public void setAvailableZone(String availableZone) {
+			this.availableZone = availableZone;
 		}
 
 		public Integer getStressComparisionTime() {
@@ -409,36 +377,28 @@ public class OpsRealtimeDetectByScriptResponse extends AcsResponse {
 			this.stressComparisionTime = stressComparisionTime;
 		}
 
-		public String getRiskTag() {
-			return this.riskTag;
+		public String getInstanceType() {
+			return this.instanceType;
 		}
 
-		public void setRiskTag(String riskTag) {
-			this.riskTag = riskTag;
+		public void setInstanceType(String instanceType) {
+			this.instanceType = instanceType;
 		}
 
-		public String getProductName() {
-			return this.productName;
+		public String getIntranetIp() {
+			return this.intranetIp;
 		}
 
-		public void setProductName(String productName) {
-			this.productName = productName;
+		public void setIntranetIp(String intranetIp) {
+			this.intranetIp = intranetIp;
 		}
 
-		public String getMigrateStatus() {
-			return this.migrateStatus;
+		public String getRegionId() {
+			return this.regionId;
 		}
 
-		public void setMigrateStatus(String migrateStatus) {
-			this.migrateStatus = migrateStatus;
-		}
-
-		public String getCanMigrateSla() {
-			return this.canMigrateSla;
-		}
-
-		public void setCanMigrateSla(String canMigrateSla) {
-			this.canMigrateSla = canMigrateSla;
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 
 		public String getCanMigrateBySlb() {
@@ -449,6 +409,22 @@ public class OpsRealtimeDetectByScriptResponse extends AcsResponse {
 			this.canMigrateBySlb = canMigrateBySlb;
 		}
 
+		public String getRiskTag() {
+			return this.riskTag;
+		}
+
+		public void setRiskTag(String riskTag) {
+			this.riskTag = riskTag;
+		}
+
+		public String getClusterName() {
+			return this.clusterName;
+		}
+
+		public void setClusterName(String clusterName) {
+			this.clusterName = clusterName;
+		}
+
 		public String getCanMigrateByType() {
 			return this.canMigrateByType;
 		}
@@ -457,12 +433,36 @@ public class OpsRealtimeDetectByScriptResponse extends AcsResponse {
 			this.canMigrateByType = canMigrateByType;
 		}
 
+		public Integer getCpuCoreCount() {
+			return this.cpuCoreCount;
+		}
+
+		public void setCpuCoreCount(Integer cpuCoreCount) {
+			this.cpuCoreCount = cpuCoreCount;
+		}
+
+		public String getMigrateStatus() {
+			return this.migrateStatus;
+		}
+
+		public void setMigrateStatus(String migrateStatus) {
+			this.migrateStatus = migrateStatus;
+		}
+
 		public String getCanMigrateByOthers() {
 			return this.canMigrateByOthers;
 		}
 
 		public void setCanMigrateByOthers(String canMigrateByOthers) {
 			this.canMigrateByOthers = canMigrateByOthers;
+		}
+
+		public String getMachineId() {
+			return this.machineId;
+		}
+
+		public void setMachineId(String machineId) {
+			this.machineId = machineId;
 		}
 
 		public List<SnNodeInfo> getSnNodeInfoList() {
@@ -477,19 +477,19 @@ public class OpsRealtimeDetectByScriptResponse extends AcsResponse {
 
 			private String ncId;
 
-			private String cnSn;
-
-			private String machineStatus;
-
-			private String stressComparisionState;
-
 			private String stressComparisionResult;
 
 			private String stressComparisionStartTime;
 
-			private Integer stressComparisionTime;
+			private String stressComparisionState;
 
 			private String riskTag;
+
+			private Integer stressComparisionTime;
+
+			private String machineStatus;
+
+			private String cnSn;
 
 			public String getNcId() {
 				return this.ncId;
@@ -497,30 +497,6 @@ public class OpsRealtimeDetectByScriptResponse extends AcsResponse {
 
 			public void setNcId(String ncId) {
 				this.ncId = ncId;
-			}
-
-			public String getCnSn() {
-				return this.cnSn;
-			}
-
-			public void setCnSn(String cnSn) {
-				this.cnSn = cnSn;
-			}
-
-			public String getMachineStatus() {
-				return this.machineStatus;
-			}
-
-			public void setMachineStatus(String machineStatus) {
-				this.machineStatus = machineStatus;
-			}
-
-			public String getStressComparisionState() {
-				return this.stressComparisionState;
-			}
-
-			public void setStressComparisionState(String stressComparisionState) {
-				this.stressComparisionState = stressComparisionState;
 			}
 
 			public String getStressComparisionResult() {
@@ -539,12 +515,12 @@ public class OpsRealtimeDetectByScriptResponse extends AcsResponse {
 				this.stressComparisionStartTime = stressComparisionStartTime;
 			}
 
-			public Integer getStressComparisionTime() {
-				return this.stressComparisionTime;
+			public String getStressComparisionState() {
+				return this.stressComparisionState;
 			}
 
-			public void setStressComparisionTime(Integer stressComparisionTime) {
-				this.stressComparisionTime = stressComparisionTime;
+			public void setStressComparisionState(String stressComparisionState) {
+				this.stressComparisionState = stressComparisionState;
 			}
 
 			public String getRiskTag() {
@@ -553,6 +529,30 @@ public class OpsRealtimeDetectByScriptResponse extends AcsResponse {
 
 			public void setRiskTag(String riskTag) {
 				this.riskTag = riskTag;
+			}
+
+			public Integer getStressComparisionTime() {
+				return this.stressComparisionTime;
+			}
+
+			public void setStressComparisionTime(Integer stressComparisionTime) {
+				this.stressComparisionTime = stressComparisionTime;
+			}
+
+			public String getMachineStatus() {
+				return this.machineStatus;
+			}
+
+			public void setMachineStatus(String machineStatus) {
+				this.machineStatus = machineStatus;
+			}
+
+			public String getCnSn() {
+				return this.cnSn;
+			}
+
+			public void setCnSn(String cnSn) {
+				this.cnSn = cnSn;
 			}
 		}
 	}

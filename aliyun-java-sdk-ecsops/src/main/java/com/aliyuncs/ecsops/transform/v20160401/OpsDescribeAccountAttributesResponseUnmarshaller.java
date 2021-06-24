@@ -39,9 +39,9 @@ public class OpsDescribeAccountAttributesResponseUnmarshaller {
 				ValueItem valueItem = new ValueItem();
 				valueItem.setValue(_ctx.stringValue("OpsDescribeAccountAttributesResponse.AccountAttributeItems["+ i +"].AttributeValues["+ j +"].Value"));
 				valueItem.setZoneId(_ctx.stringValue("OpsDescribeAccountAttributesResponse.AccountAttributeItems["+ i +"].AttributeValues["+ j +"].ZoneId"));
-				valueItem.setInstanceChargeType(_ctx.stringValue("OpsDescribeAccountAttributesResponse.AccountAttributeItems["+ i +"].AttributeValues["+ j +"].InstanceChargeType"));
 				valueItem.setInstanceType(_ctx.stringValue("OpsDescribeAccountAttributesResponse.AccountAttributeItems["+ i +"].AttributeValues["+ j +"].InstanceType"));
 				valueItem.setCount(_ctx.integerValue("OpsDescribeAccountAttributesResponse.AccountAttributeItems["+ i +"].AttributeValues["+ j +"].Count"));
+				valueItem.setInstanceChargeType(_ctx.stringValue("OpsDescribeAccountAttributesResponse.AccountAttributeItems["+ i +"].AttributeValues["+ j +"].InstanceChargeType"));
 
 				attributeValues.add(valueItem);
 			}

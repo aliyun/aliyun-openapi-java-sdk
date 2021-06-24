@@ -26,10 +26,10 @@ public class OpsCheckGroupFirewallResponseUnmarshaller {
 		opsCheckGroupFirewallResponse.setRequestId(_ctx.stringValue("OpsCheckGroupFirewallResponse.RequestId"));
 
 		Data data = new Data();
+		data.setComment(_ctx.stringValue("OpsCheckGroupFirewallResponse.Data.Comment"));
+		data.setFailMessage(_ctx.stringValue("OpsCheckGroupFirewallResponse.Data.FailMessage"));
 		data.setConsistent(_ctx.booleanValue("OpsCheckGroupFirewallResponse.Data.Consistent"));
 		data.setFailCode(_ctx.stringValue("OpsCheckGroupFirewallResponse.Data.FailCode"));
-		data.setFailMessage(_ctx.stringValue("OpsCheckGroupFirewallResponse.Data.FailMessage"));
-		data.setComment(_ctx.stringValue("OpsCheckGroupFirewallResponse.Data.Comment"));
 		opsCheckGroupFirewallResponse.setData(data);
 	 
 	 	return opsCheckGroupFirewallResponse;

@@ -25,21 +25,29 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsDescribeMaliceEcsResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer totalCount;
 
-	private String code;
+	private String requestId;
 
 	private String message;
 
-	private Boolean success;
-
-	private Integer totalCount;
+	private Integer pageSize;
 
 	private Integer pageNo;
 
-	private Integer pageSize;
+	private String code;
+
+	private Boolean success;
 
 	private List<MaliceInstance> maliceInstances;
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -47,14 +55,6 @@ public class OpsDescribeMaliceEcsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
 	}
 
 	public String getMessage() {
@@ -65,20 +65,12 @@ public class OpsDescribeMaliceEcsResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
 	}
 
 	public Integer getPageNo() {
@@ -89,12 +81,20 @@ public class OpsDescribeMaliceEcsResponse extends AcsResponse {
 		this.pageNo = pageNo;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<MaliceInstance> getMaliceInstances() {
@@ -107,62 +107,46 @@ public class OpsDescribeMaliceEcsResponse extends AcsResponse {
 
 	public static class MaliceInstance {
 
-		private Long id;
+		private Boolean status;
 
-		private String instanceId;
-
-		private String internetIp;
-
-		private Integer bandWidth;
+		private String lockType;
 
 		private Boolean isLock;
 
-		private Boolean status;
+		private String internetIp;
 
-		private String operator;
+		private String instanceId;
 
-		private String reason;
+		private Integer bandWidth;
 
-		private String proof;
-
-		private String lockType;
+		private String gmtModified;
 
 		private String gmtCreated;
 
 		private String gmtUnlocked;
 
-		private String gmtModified;
+		private String operator;
 
-		public Long getId() {
-			return this.id;
+		private Long id;
+
+		private String proof;
+
+		private String reason;
+
+		public Boolean getStatus() {
+			return this.status;
 		}
 
-		public void setId(Long id) {
-			this.id = id;
+		public void setStatus(Boolean status) {
+			this.status = status;
 		}
 
-		public String getInstanceId() {
-			return this.instanceId;
+		public String getLockType() {
+			return this.lockType;
 		}
 
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
-
-		public String getInternetIp() {
-			return this.internetIp;
-		}
-
-		public void setInternetIp(String internetIp) {
-			this.internetIp = internetIp;
-		}
-
-		public Integer getBandWidth() {
-			return this.bandWidth;
-		}
-
-		public void setBandWidth(Integer bandWidth) {
-			this.bandWidth = bandWidth;
+		public void setLockType(String lockType) {
+			this.lockType = lockType;
 		}
 
 		public Boolean getIsLock() {
@@ -173,44 +157,36 @@ public class OpsDescribeMaliceEcsResponse extends AcsResponse {
 			this.isLock = isLock;
 		}
 
-		public Boolean getStatus() {
-			return this.status;
+		public String getInternetIp() {
+			return this.internetIp;
 		}
 
-		public void setStatus(Boolean status) {
-			this.status = status;
+		public void setInternetIp(String internetIp) {
+			this.internetIp = internetIp;
 		}
 
-		public String getOperator() {
-			return this.operator;
+		public String getInstanceId() {
+			return this.instanceId;
 		}
 
-		public void setOperator(String operator) {
-			this.operator = operator;
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
 		}
 
-		public String getReason() {
-			return this.reason;
+		public Integer getBandWidth() {
+			return this.bandWidth;
 		}
 
-		public void setReason(String reason) {
-			this.reason = reason;
+		public void setBandWidth(Integer bandWidth) {
+			this.bandWidth = bandWidth;
 		}
 
-		public String getProof() {
-			return this.proof;
+		public String getGmtModified() {
+			return this.gmtModified;
 		}
 
-		public void setProof(String proof) {
-			this.proof = proof;
-		}
-
-		public String getLockType() {
-			return this.lockType;
-		}
-
-		public void setLockType(String lockType) {
-			this.lockType = lockType;
+		public void setGmtModified(String gmtModified) {
+			this.gmtModified = gmtModified;
 		}
 
 		public String getGmtCreated() {
@@ -229,12 +205,36 @@ public class OpsDescribeMaliceEcsResponse extends AcsResponse {
 			this.gmtUnlocked = gmtUnlocked;
 		}
 
-		public String getGmtModified() {
-			return this.gmtModified;
+		public String getOperator() {
+			return this.operator;
 		}
 
-		public void setGmtModified(String gmtModified) {
-			this.gmtModified = gmtModified;
+		public void setOperator(String operator) {
+			this.operator = operator;
+		}
+
+		public Long getId() {
+			return this.id;
+		}
+
+		public void setId(Long id) {
+			this.id = id;
+		}
+
+		public String getProof() {
+			return this.proof;
+		}
+
+		public void setProof(String proof) {
+			this.proof = proof;
+		}
+
+		public String getReason() {
+			return this.reason;
+		}
+
+		public void setReason(String reason) {
+			this.reason = reason;
 		}
 	}
 

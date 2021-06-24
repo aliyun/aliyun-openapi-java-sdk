@@ -47,47 +47,39 @@ public class OpsQueryDedicatedHostTypeResponse extends AcsResponse {
 
 	public static class DedicatedHostType {
 
-		private Integer hostType;
-
 		private String status;
-
-		private String generation;
-
-		private String supportInstanceTypeFamily;
-
-		private Integer sockets;
-
-		private Integer cores;
-
-		private Integer physicalCores;
-
-		private Integer mem;
-
-		private Integer diskNum;
-
-		private Long diskSize;
 
 		private String dataDiskCategory;
 
-		private Integer flag;
+		private Integer cores;
+
+		private Long diskSize;
+
+		private Integer hostType;
+
+		private Integer mem;
 
 		private Integer physicalGpus;
 
-		private String gpuSpec;
+		private Integer diskNum;
 
-		private Integer vgpus;
+		private Integer flag;
+
+		private Integer physicalCores;
+
+		private String supportInstanceTypeFamily;
 
 		private Integer maxInstanceCount;
 
+		private Integer vgpus;
+
+		private String gpuSpec;
+
+		private Integer sockets;
+
+		private String generation;
+
 		private List<String> supportInstanceTypesList;
-
-		public Integer getHostType() {
-			return this.hostType;
-		}
-
-		public void setHostType(Integer hostType) {
-			this.hostType = hostType;
-		}
 
 		public String getStatus() {
 			return this.status;
@@ -95,70 +87,6 @@ public class OpsQueryDedicatedHostTypeResponse extends AcsResponse {
 
 		public void setStatus(String status) {
 			this.status = status;
-		}
-
-		public String getGeneration() {
-			return this.generation;
-		}
-
-		public void setGeneration(String generation) {
-			this.generation = generation;
-		}
-
-		public String getSupportInstanceTypeFamily() {
-			return this.supportInstanceTypeFamily;
-		}
-
-		public void setSupportInstanceTypeFamily(String supportInstanceTypeFamily) {
-			this.supportInstanceTypeFamily = supportInstanceTypeFamily;
-		}
-
-		public Integer getSockets() {
-			return this.sockets;
-		}
-
-		public void setSockets(Integer sockets) {
-			this.sockets = sockets;
-		}
-
-		public Integer getCores() {
-			return this.cores;
-		}
-
-		public void setCores(Integer cores) {
-			this.cores = cores;
-		}
-
-		public Integer getPhysicalCores() {
-			return this.physicalCores;
-		}
-
-		public void setPhysicalCores(Integer physicalCores) {
-			this.physicalCores = physicalCores;
-		}
-
-		public Integer getMem() {
-			return this.mem;
-		}
-
-		public void setMem(Integer mem) {
-			this.mem = mem;
-		}
-
-		public Integer getDiskNum() {
-			return this.diskNum;
-		}
-
-		public void setDiskNum(Integer diskNum) {
-			this.diskNum = diskNum;
-		}
-
-		public Long getDiskSize() {
-			return this.diskSize;
-		}
-
-		public void setDiskSize(Long diskSize) {
-			this.diskSize = diskSize;
 		}
 
 		public String getDataDiskCategory() {
@@ -169,12 +97,36 @@ public class OpsQueryDedicatedHostTypeResponse extends AcsResponse {
 			this.dataDiskCategory = dataDiskCategory;
 		}
 
-		public Integer getFlag() {
-			return this.flag;
+		public Integer getCores() {
+			return this.cores;
 		}
 
-		public void setFlag(Integer flag) {
-			this.flag = flag;
+		public void setCores(Integer cores) {
+			this.cores = cores;
+		}
+
+		public Long getDiskSize() {
+			return this.diskSize;
+		}
+
+		public void setDiskSize(Long diskSize) {
+			this.diskSize = diskSize;
+		}
+
+		public Integer getHostType() {
+			return this.hostType;
+		}
+
+		public void setHostType(Integer hostType) {
+			this.hostType = hostType;
+		}
+
+		public Integer getMem() {
+			return this.mem;
+		}
+
+		public void setMem(Integer mem) {
+			this.mem = mem;
 		}
 
 		public Integer getPhysicalGpus() {
@@ -185,12 +137,44 @@ public class OpsQueryDedicatedHostTypeResponse extends AcsResponse {
 			this.physicalGpus = physicalGpus;
 		}
 
-		public String getGpuSpec() {
-			return this.gpuSpec;
+		public Integer getDiskNum() {
+			return this.diskNum;
 		}
 
-		public void setGpuSpec(String gpuSpec) {
-			this.gpuSpec = gpuSpec;
+		public void setDiskNum(Integer diskNum) {
+			this.diskNum = diskNum;
+		}
+
+		public Integer getFlag() {
+			return this.flag;
+		}
+
+		public void setFlag(Integer flag) {
+			this.flag = flag;
+		}
+
+		public Integer getPhysicalCores() {
+			return this.physicalCores;
+		}
+
+		public void setPhysicalCores(Integer physicalCores) {
+			this.physicalCores = physicalCores;
+		}
+
+		public String getSupportInstanceTypeFamily() {
+			return this.supportInstanceTypeFamily;
+		}
+
+		public void setSupportInstanceTypeFamily(String supportInstanceTypeFamily) {
+			this.supportInstanceTypeFamily = supportInstanceTypeFamily;
+		}
+
+		public Integer getMaxInstanceCount() {
+			return this.maxInstanceCount;
+		}
+
+		public void setMaxInstanceCount(Integer maxInstanceCount) {
+			this.maxInstanceCount = maxInstanceCount;
 		}
 
 		public Integer getVgpus() {
@@ -201,12 +185,28 @@ public class OpsQueryDedicatedHostTypeResponse extends AcsResponse {
 			this.vgpus = vgpus;
 		}
 
-		public Integer getMaxInstanceCount() {
-			return this.maxInstanceCount;
+		public String getGpuSpec() {
+			return this.gpuSpec;
 		}
 
-		public void setMaxInstanceCount(Integer maxInstanceCount) {
-			this.maxInstanceCount = maxInstanceCount;
+		public void setGpuSpec(String gpuSpec) {
+			this.gpuSpec = gpuSpec;
+		}
+
+		public Integer getSockets() {
+			return this.sockets;
+		}
+
+		public void setSockets(Integer sockets) {
+			this.sockets = sockets;
+		}
+
+		public String getGeneration() {
+			return this.generation;
+		}
+
+		public void setGeneration(String generation) {
+			this.generation = generation;
 		}
 
 		public List<String> getSupportInstanceTypesList() {

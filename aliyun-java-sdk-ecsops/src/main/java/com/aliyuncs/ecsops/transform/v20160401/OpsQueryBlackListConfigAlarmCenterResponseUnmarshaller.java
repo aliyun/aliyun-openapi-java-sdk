@@ -29,33 +29,34 @@ public class OpsQueryBlackListConfigAlarmCenterResponseUnmarshaller {
 		
 		opsQueryBlackListConfigAlarmCenterResponse.setBlacklistDataType(_ctx.stringValue("OpsQueryBlackListConfigAlarmCenterResponse.BlacklistDataType"));
 
-		List<BlacklistDimension> blacklistDimensions = new ArrayList<BlacklistDimension>();
-		for (int i = 0; i < _ctx.lengthValue("OpsQueryBlackListConfigAlarmCenterResponse.BlacklistDimensions.Length"); i++) {
-			BlacklistDimension blacklistDimension = new BlacklistDimension();
-			blacklistDimension.setBlacklistDimensionId(_ctx.integerValue("OpsQueryBlackListConfigAlarmCenterResponse.BlacklistDimensions["+ i +"].BlacklistDimensionId"));
-			blacklistDimension.setBlacklistDimension(_ctx.stringValue("OpsQueryBlackListConfigAlarmCenterResponse.BlacklistDimensions["+ i +"].BlacklistDimension"));
-
-			blacklistDimensions.add(blacklistDimension);
-		}
-		opsQueryBlackListConfigAlarmCenterResponse.setBlacklistDimensions(blacklistDimensions);
-
 		List<BlacklistContent> blacklistContents = new ArrayList<BlacklistContent>();
 		for (int i = 0; i < _ctx.lengthValue("OpsQueryBlackListConfigAlarmCenterResponse.BlacklistContents.Length"); i++) {
 			BlacklistContent blacklistContent = new BlacklistContent();
-			blacklistContent.setBlacklistContentId(_ctx.integerValue("OpsQueryBlackListConfigAlarmCenterResponse.BlacklistContents["+ i +"].BlacklistContentId"));
+			blacklistContent.setGmtCreated(_ctx.stringValue("OpsQueryBlackListConfigAlarmCenterResponse.BlacklistContents["+ i +"].GmtCreated"));
+			blacklistContent.setExtension(_ctx.stringValue("OpsQueryBlackListConfigAlarmCenterResponse.BlacklistContents["+ i +"].Extension"));
+			blacklistContent.setStartDueTime(_ctx.stringValue("OpsQueryBlackListConfigAlarmCenterResponse.BlacklistContents["+ i +"].StartDueTime"));
+			blacklistContent.setBlackContent(_ctx.stringValue("OpsQueryBlackListConfigAlarmCenterResponse.BlacklistContents["+ i +"].BlackContent"));
+			blacklistContent.setDueTime(_ctx.stringValue("OpsQueryBlackListConfigAlarmCenterResponse.BlacklistContents["+ i +"].DueTime"));
+			blacklistContent.setBlacklistDimension(_ctx.stringValue("OpsQueryBlackListConfigAlarmCenterResponse.BlacklistContents["+ i +"].BlacklistDimension"));
 			blacklistContent.setMetaInfoId(_ctx.stringValue("OpsQueryBlackListConfigAlarmCenterResponse.BlacklistContents["+ i +"].MetaInfoId"));
 			blacklistContent.setStaffId(_ctx.stringValue("OpsQueryBlackListConfigAlarmCenterResponse.BlacklistContents["+ i +"].StaffId"));
 			blacklistContent.setNickname(_ctx.stringValue("OpsQueryBlackListConfigAlarmCenterResponse.BlacklistContents["+ i +"].Nickname"));
-			blacklistContent.setBlackContent(_ctx.stringValue("OpsQueryBlackListConfigAlarmCenterResponse.BlacklistContents["+ i +"].BlackContent"));
-			blacklistContent.setDueTime(_ctx.stringValue("OpsQueryBlackListConfigAlarmCenterResponse.BlacklistContents["+ i +"].DueTime"));
-			blacklistContent.setGmtCreated(_ctx.stringValue("OpsQueryBlackListConfigAlarmCenterResponse.BlacklistContents["+ i +"].GmtCreated"));
+			blacklistContent.setBlacklistContentId(_ctx.integerValue("OpsQueryBlackListConfigAlarmCenterResponse.BlacklistContents["+ i +"].BlacklistContentId"));
 			blacklistContent.setGmtModified(_ctx.stringValue("OpsQueryBlackListConfigAlarmCenterResponse.BlacklistContents["+ i +"].GmtModified"));
-			blacklistContent.setExtension(_ctx.stringValue("OpsQueryBlackListConfigAlarmCenterResponse.BlacklistContents["+ i +"].Extension"));
-			blacklistContent.setBlacklistDimension(_ctx.stringValue("OpsQueryBlackListConfigAlarmCenterResponse.BlacklistContents["+ i +"].BlacklistDimension"));
 
 			blacklistContents.add(blacklistContent);
 		}
 		opsQueryBlackListConfigAlarmCenterResponse.setBlacklistContents(blacklistContents);
+
+		List<BlacklistDimension> blacklistDimensions = new ArrayList<BlacklistDimension>();
+		for (int i = 0; i < _ctx.lengthValue("OpsQueryBlackListConfigAlarmCenterResponse.BlacklistDimensions.Length"); i++) {
+			BlacklistDimension blacklistDimension = new BlacklistDimension();
+			blacklistDimension.setBlacklistDimension(_ctx.stringValue("OpsQueryBlackListConfigAlarmCenterResponse.BlacklistDimensions["+ i +"].BlacklistDimension"));
+			blacklistDimension.setBlacklistDimensionId(_ctx.integerValue("OpsQueryBlackListConfigAlarmCenterResponse.BlacklistDimensions["+ i +"].BlacklistDimensionId"));
+
+			blacklistDimensions.add(blacklistDimension);
+		}
+		opsQueryBlackListConfigAlarmCenterResponse.setBlacklistDimensions(blacklistDimensions);
 	 
 	 	return opsQueryBlackListConfigAlarmCenterResponse;
 	}

@@ -17,7 +17,6 @@ package com.aliyuncs.ecsops.model.v20160401;
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
 import com.aliyuncs.http.MethodType;
-import com.aliyuncs.ecsops.Endpoint;
 
 /**
  * @author auto create
@@ -26,9 +25,9 @@ import com.aliyuncs.ecsops.Endpoint;
 public class OpsAuthorizeImagesToBidsRequest extends RpcAcsRequest<OpsAuthorizeImagesToBidsResponse> {
 	   
 
-	private List<String> imageIds;
-
 	private Boolean dryRun;
+
+	private List<String> imageIds;
 
 	private List<String> imageRegionIds;
 
@@ -44,12 +43,19 @@ public class OpsAuthorizeImagesToBidsRequest extends RpcAcsRequest<OpsAuthorizeI
 
 	private String auditParamStr;
 	public OpsAuthorizeImagesToBidsRequest() {
-		super("Ecsops", "2016-04-01", "OpsAuthorizeImagesToBids", "ecs");
+		super("Ecsops", "2016-04-01", "OpsAuthorizeImagesToBids", "ecsops");
 		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
+	}
+
+	public Boolean getDryRun() {
+		return this.dryRun;
+	}
+
+	public void setDryRun(Boolean dryRun) {
+		this.dryRun = dryRun;
+		if(dryRun != null){
+			putQueryParameter("DryRun", dryRun.toString());
+		}
 	}
 
 	public List<String> getImageIds() {
@@ -63,17 +69,6 @@ public class OpsAuthorizeImagesToBidsRequest extends RpcAcsRequest<OpsAuthorizeI
 				putQueryParameter("ImageId." + (i + 1) , imageIds.get(i));
 			}
 		}	
-	}
-
-	public Boolean getDryRun() {
-		return this.dryRun;
-	}
-
-	public void setDryRun(Boolean dryRun) {
-		this.dryRun = dryRun;
-		if(dryRun != null){
-			putQueryParameter("DryRun", dryRun.toString());
-		}
 	}
 
 	public List<String> getImageRegionIds() {

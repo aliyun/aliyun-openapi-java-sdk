@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsDescribeSnapshotPackageResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
-
-	private Integer pageNumber;
 
 	private Integer pageSize;
 
+	private String requestId;
+
+	private Integer pageNumber;
+
 	private List<SnapshotPackageModel> snapshotPackageModels;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -51,20 +43,28 @@ public class OpsDescribeSnapshotPackageResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<SnapshotPackageModel> getSnapshotPackageModels() {
@@ -77,22 +77,22 @@ public class OpsDescribeSnapshotPackageResponse extends AcsResponse {
 
 	public static class SnapshotPackageModel {
 
-		private String instanceName;
+		private String endTime;
 
 		private String displayName;
 
 		private String startTime;
 
-		private String endTime;
+		private String instanceName;
 
 		private Long initCapacity;
 
-		public String getInstanceName() {
-			return this.instanceName;
+		public String getEndTime() {
+			return this.endTime;
 		}
 
-		public void setInstanceName(String instanceName) {
-			this.instanceName = instanceName;
+		public void setEndTime(String endTime) {
+			this.endTime = endTime;
 		}
 
 		public String getDisplayName() {
@@ -111,12 +111,12 @@ public class OpsDescribeSnapshotPackageResponse extends AcsResponse {
 			this.startTime = startTime;
 		}
 
-		public String getEndTime() {
-			return this.endTime;
+		public String getInstanceName() {
+			return this.instanceName;
 		}
 
-		public void setEndTime(String endTime) {
-			this.endTime = endTime;
+		public void setInstanceName(String instanceName) {
+			this.instanceName = instanceName;
 		}
 
 		public Long getInitCapacity() {

@@ -31,11 +31,11 @@ public class OpsDescribeAxtVmResponseUnmarshaller {
 		List<CloudAssistantStatus> cloudAssistantStatusArray = new ArrayList<CloudAssistantStatus>();
 		for (int i = 0; i < _ctx.lengthValue("OpsDescribeAxtVmResponse.CloudAssistantStatusArray.Length"); i++) {
 			CloudAssistantStatus cloudAssistantStatus = new CloudAssistantStatus();
-			cloudAssistantStatus.setInstanceId(_ctx.stringValue("OpsDescribeAxtVmResponse.CloudAssistantStatusArray["+ i +"].InstanceId"));
-			cloudAssistantStatus.setStatus(_ctx.stringValue("OpsDescribeAxtVmResponse.CloudAssistantStatusArray["+ i +"].Status"));
 			cloudAssistantStatus.setAgentVersion(_ctx.stringValue("OpsDescribeAxtVmResponse.CloudAssistantStatusArray["+ i +"].AgentVersion"));
-			cloudAssistantStatus.setReportTime(_ctx.stringValue("OpsDescribeAxtVmResponse.CloudAssistantStatusArray["+ i +"].ReportTime"));
+			cloudAssistantStatus.setStatus(_ctx.stringValue("OpsDescribeAxtVmResponse.CloudAssistantStatusArray["+ i +"].Status"));
+			cloudAssistantStatus.setInstanceId(_ctx.stringValue("OpsDescribeAxtVmResponse.CloudAssistantStatusArray["+ i +"].InstanceId"));
 			cloudAssistantStatus.setAgentStatus(_ctx.stringValue("OpsDescribeAxtVmResponse.CloudAssistantStatusArray["+ i +"].AgentStatus"));
+			cloudAssistantStatus.setReportTime(_ctx.stringValue("OpsDescribeAxtVmResponse.CloudAssistantStatusArray["+ i +"].ReportTime"));
 
 			cloudAssistantStatusArray.add(cloudAssistantStatus);
 		}

@@ -31,17 +31,17 @@ public class OpsQueryIdempotenceResponseUnmarshaller {
 		List<IdempotenceModel> idempotenceModels = new ArrayList<IdempotenceModel>();
 		for (int i = 0; i < _ctx.lengthValue("OpsQueryIdempotenceResponse.IdempotenceModels.Length"); i++) {
 			IdempotenceModel idempotenceModel = new IdempotenceModel();
-			idempotenceModel.setId(_ctx.longValue("OpsQueryIdempotenceResponse.IdempotenceModels["+ i +"].Id"));
+			idempotenceModel.setGmtCreated(_ctx.stringValue("OpsQueryIdempotenceResponse.IdempotenceModels["+ i +"].GmtCreated"));
+			idempotenceModel.setStatus(_ctx.stringValue("OpsQueryIdempotenceResponse.IdempotenceModels["+ i +"].Status"));
+			idempotenceModel.setContinueAfterProcessingTimeout(_ctx.booleanValue("OpsQueryIdempotenceResponse.IdempotenceModels["+ i +"].ContinueAfterProcessingTimeout"));
+			idempotenceModel.setProcessingExpireDate(_ctx.stringValue("OpsQueryIdempotenceResponse.IdempotenceModels["+ i +"].ProcessingExpireDate"));
 			idempotenceModel.setToken(_ctx.stringValue("OpsQueryIdempotenceResponse.IdempotenceModels["+ i +"].Token"));
 			idempotenceModel.setVersion(_ctx.integerValue("OpsQueryIdempotenceResponse.IdempotenceModels["+ i +"].Version"));
-			idempotenceModel.setStatus(_ctx.stringValue("OpsQueryIdempotenceResponse.IdempotenceModels["+ i +"].Status"));
-			idempotenceModel.setGmtCreated(_ctx.stringValue("OpsQueryIdempotenceResponse.IdempotenceModels["+ i +"].GmtCreated"));
-			idempotenceModel.setGmtModified(_ctx.stringValue("OpsQueryIdempotenceResponse.IdempotenceModels["+ i +"].GmtModified"));
-			idempotenceModel.setDeleted(_ctx.booleanValue("OpsQueryIdempotenceResponse.IdempotenceModels["+ i +"].Deleted"));
-			idempotenceModel.setContinueAfterProcessingTimeout(_ctx.booleanValue("OpsQueryIdempotenceResponse.IdempotenceModels["+ i +"].ContinueAfterProcessingTimeout"));
 			idempotenceModel.setExpireDate(_ctx.stringValue("OpsQueryIdempotenceResponse.IdempotenceModels["+ i +"].ExpireDate"));
-			idempotenceModel.setProcessingExpireDate(_ctx.stringValue("OpsQueryIdempotenceResponse.IdempotenceModels["+ i +"].ProcessingExpireDate"));
+			idempotenceModel.setDeleted(_ctx.booleanValue("OpsQueryIdempotenceResponse.IdempotenceModels["+ i +"].Deleted"));
+			idempotenceModel.setGmtModified(_ctx.stringValue("OpsQueryIdempotenceResponse.IdempotenceModels["+ i +"].GmtModified"));
 			idempotenceModel.setLastResult(_ctx.stringValue("OpsQueryIdempotenceResponse.IdempotenceModels["+ i +"].LastResult"));
+			idempotenceModel.setId(_ctx.longValue("OpsQueryIdempotenceResponse.IdempotenceModels["+ i +"].Id"));
 
 			idempotenceModels.add(idempotenceModel);
 		}

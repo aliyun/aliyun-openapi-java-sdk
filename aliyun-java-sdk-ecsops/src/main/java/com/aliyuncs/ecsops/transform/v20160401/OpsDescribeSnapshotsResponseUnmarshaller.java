@@ -28,32 +28,32 @@ public class OpsDescribeSnapshotsResponseUnmarshaller {
 		
 		opsDescribeSnapshotsResponse.setRequestId(_ctx.stringValue("OpsDescribeSnapshotsResponse.RequestId"));
 		opsDescribeSnapshotsResponse.setTotalCount(_ctx.integerValue("OpsDescribeSnapshotsResponse.TotalCount"));
-		opsDescribeSnapshotsResponse.setPageNumber(_ctx.integerValue("OpsDescribeSnapshotsResponse.PageNumber"));
 		opsDescribeSnapshotsResponse.setPageSize(_ctx.integerValue("OpsDescribeSnapshotsResponse.PageSize"));
+		opsDescribeSnapshotsResponse.setPageNumber(_ctx.integerValue("OpsDescribeSnapshotsResponse.PageNumber"));
 
 		List<Snapshot> snapshots = new ArrayList<Snapshot>();
 		for (int i = 0; i < _ctx.lengthValue("OpsDescribeSnapshotsResponse.Snapshots.Length"); i++) {
 			Snapshot snapshot = new Snapshot();
-			snapshot.setSnapshotId(_ctx.stringValue("OpsDescribeSnapshotsResponse.Snapshots["+ i +"].SnapshotId"));
-			snapshot.setSnapshotName(_ctx.stringValue("OpsDescribeSnapshotsResponse.Snapshots["+ i +"].SnapshotName"));
-			snapshot.setBid(_ctx.stringValue("OpsDescribeSnapshotsResponse.Snapshots["+ i +"].Bid"));
-			snapshot.setResourceOwnerId(_ctx.longValue("OpsDescribeSnapshotsResponse.Snapshots["+ i +"].ResourceOwnerId"));
-			snapshot.setDescription(_ctx.stringValue("OpsDescribeSnapshotsResponse.Snapshots["+ i +"].Description"));
 			snapshot.setProgress(_ctx.stringValue("OpsDescribeSnapshotsResponse.Snapshots["+ i +"].Progress"));
-			snapshot.setSourceDiskId(_ctx.stringValue("OpsDescribeSnapshotsResponse.Snapshots["+ i +"].SourceDiskId"));
-			snapshot.setSourceDiskSize(_ctx.integerValue("OpsDescribeSnapshotsResponse.Snapshots["+ i +"].SourceDiskSize"));
-			snapshot.setSourceDiskType(_ctx.stringValue("OpsDescribeSnapshotsResponse.Snapshots["+ i +"].SourceDiskType"));
-			snapshot.setSnapshotType(_ctx.stringValue("OpsDescribeSnapshotsResponse.Snapshots["+ i +"].SnapshotType"));
-			snapshot.setHouyiSnapshotId(_ctx.stringValue("OpsDescribeSnapshotsResponse.Snapshots["+ i +"].HouyiSnapshotId"));
-			snapshot.setCreatedTime(_ctx.stringValue("OpsDescribeSnapshotsResponse.Snapshots["+ i +"].CreatedTime"));
-			snapshot.setModifiedTime(_ctx.stringValue("OpsDescribeSnapshotsResponse.Snapshots["+ i +"].ModifiedTime"));
-			snapshot.setImageId(_ctx.stringValue("OpsDescribeSnapshotsResponse.Snapshots["+ i +"].ImageId"));
-			snapshot.setRegionId(_ctx.stringValue("OpsDescribeSnapshotsResponse.Snapshots["+ i +"].RegionId"));
-			snapshot.setEcsSnapshotStatus(_ctx.stringValue("OpsDescribeSnapshotsResponse.Snapshots["+ i +"].EcsSnapshotStatus"));
-			snapshot.setEncrypted(_ctx.stringValue("OpsDescribeSnapshotsResponse.Snapshots["+ i +"].Encrypted"));
-			snapshot.setRetentionDays(_ctx.integerValue("OpsDescribeSnapshotsResponse.Snapshots["+ i +"].RetentionDays"));
 			snapshot.setInstantAccess(_ctx.booleanValue("OpsDescribeSnapshotsResponse.Snapshots["+ i +"].InstantAccess"));
+			snapshot.setSourceDiskSize(_ctx.integerValue("OpsDescribeSnapshotsResponse.Snapshots["+ i +"].SourceDiskSize"));
+			snapshot.setRetentionDays(_ctx.integerValue("OpsDescribeSnapshotsResponse.Snapshots["+ i +"].RetentionDays"));
+			snapshot.setSourceDiskType(_ctx.stringValue("OpsDescribeSnapshotsResponse.Snapshots["+ i +"].SourceDiskType"));
+			snapshot.setBid(_ctx.stringValue("OpsDescribeSnapshotsResponse.Snapshots["+ i +"].Bid"));
+			snapshot.setRegionId(_ctx.stringValue("OpsDescribeSnapshotsResponse.Snapshots["+ i +"].RegionId"));
+			snapshot.setEncrypted(_ctx.stringValue("OpsDescribeSnapshotsResponse.Snapshots["+ i +"].Encrypted"));
+			snapshot.setSourceDiskId(_ctx.stringValue("OpsDescribeSnapshotsResponse.Snapshots["+ i +"].SourceDiskId"));
+			snapshot.setSnapshotType(_ctx.stringValue("OpsDescribeSnapshotsResponse.Snapshots["+ i +"].SnapshotType"));
+			snapshot.setEcsSnapshotStatus(_ctx.stringValue("OpsDescribeSnapshotsResponse.Snapshots["+ i +"].EcsSnapshotStatus"));
+			snapshot.setSnapshotName(_ctx.stringValue("OpsDescribeSnapshotsResponse.Snapshots["+ i +"].SnapshotName"));
+			snapshot.setResourceOwnerId(_ctx.longValue("OpsDescribeSnapshotsResponse.Snapshots["+ i +"].ResourceOwnerId"));
+			snapshot.setModifiedTime(_ctx.stringValue("OpsDescribeSnapshotsResponse.Snapshots["+ i +"].ModifiedTime"));
+			snapshot.setDescription(_ctx.stringValue("OpsDescribeSnapshotsResponse.Snapshots["+ i +"].Description"));
+			snapshot.setSnapshotId(_ctx.stringValue("OpsDescribeSnapshotsResponse.Snapshots["+ i +"].SnapshotId"));
 			snapshot.setIaRetentionDays(_ctx.integerValue("OpsDescribeSnapshotsResponse.Snapshots["+ i +"].IaRetentionDays"));
+			snapshot.setImageId(_ctx.stringValue("OpsDescribeSnapshotsResponse.Snapshots["+ i +"].ImageId"));
+			snapshot.setCreatedTime(_ctx.stringValue("OpsDescribeSnapshotsResponse.Snapshots["+ i +"].CreatedTime"));
+			snapshot.setHouyiSnapshotId(_ctx.stringValue("OpsDescribeSnapshotsResponse.Snapshots["+ i +"].HouyiSnapshotId"));
 
 			snapshots.add(snapshot);
 		}

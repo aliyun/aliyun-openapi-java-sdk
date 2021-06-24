@@ -25,25 +25,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsDescribeOfflineInventoryResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
 
 	private String nextToken;
 
-	private Integer pageNumber;
-
 	private Integer pageSize;
 
+	private String requestId;
+
+	private Integer pageNumber;
+
 	private List<OfflineInventoryModel> offlineInventoryModels;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -61,20 +53,28 @@ public class OpsDescribeOfflineInventoryResponse extends AcsResponse {
 		this.nextToken = nextToken;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<OfflineInventoryModel> getOfflineInventoryModels() {
@@ -87,65 +87,25 @@ public class OpsDescribeOfflineInventoryResponse extends AcsResponse {
 
 	public static class OfflineInventoryModel {
 
-		private String regionNo;
-
-		private String izNo;
-
-		private String instanceType;
-
-		private Integer periodDay;
-
-		private String ncType;
-
 		private Integer capacity;
-
-		private String idc;
-
-		private String networkArch;
-
-		private Integer vmCnt;
 
 		private Integer rackCnt;
 
-		public String getRegionNo() {
-			return this.regionNo;
-		}
+		private String regionNo;
 
-		public void setRegionNo(String regionNo) {
-			this.regionNo = regionNo;
-		}
+		private Integer vmCnt;
 
-		public String getIzNo() {
-			return this.izNo;
-		}
+		private String networkArch;
 
-		public void setIzNo(String izNo) {
-			this.izNo = izNo;
-		}
+		private String ncType;
 
-		public String getInstanceType() {
-			return this.instanceType;
-		}
+		private Integer periodDay;
 
-		public void setInstanceType(String instanceType) {
-			this.instanceType = instanceType;
-		}
+		private String idc;
 
-		public Integer getPeriodDay() {
-			return this.periodDay;
-		}
+		private String instanceType;
 
-		public void setPeriodDay(Integer periodDay) {
-			this.periodDay = periodDay;
-		}
-
-		public String getNcType() {
-			return this.ncType;
-		}
-
-		public void setNcType(String ncType) {
-			this.ncType = ncType;
-		}
+		private String izNo;
 
 		public Integer getCapacity() {
 			return this.capacity;
@@ -155,20 +115,20 @@ public class OpsDescribeOfflineInventoryResponse extends AcsResponse {
 			this.capacity = capacity;
 		}
 
-		public String getIdc() {
-			return this.idc;
+		public Integer getRackCnt() {
+			return this.rackCnt;
 		}
 
-		public void setIdc(String idc) {
-			this.idc = idc;
+		public void setRackCnt(Integer rackCnt) {
+			this.rackCnt = rackCnt;
 		}
 
-		public String getNetworkArch() {
-			return this.networkArch;
+		public String getRegionNo() {
+			return this.regionNo;
 		}
 
-		public void setNetworkArch(String networkArch) {
-			this.networkArch = networkArch;
+		public void setRegionNo(String regionNo) {
+			this.regionNo = regionNo;
 		}
 
 		public Integer getVmCnt() {
@@ -179,12 +139,52 @@ public class OpsDescribeOfflineInventoryResponse extends AcsResponse {
 			this.vmCnt = vmCnt;
 		}
 
-		public Integer getRackCnt() {
-			return this.rackCnt;
+		public String getNetworkArch() {
+			return this.networkArch;
 		}
 
-		public void setRackCnt(Integer rackCnt) {
-			this.rackCnt = rackCnt;
+		public void setNetworkArch(String networkArch) {
+			this.networkArch = networkArch;
+		}
+
+		public String getNcType() {
+			return this.ncType;
+		}
+
+		public void setNcType(String ncType) {
+			this.ncType = ncType;
+		}
+
+		public Integer getPeriodDay() {
+			return this.periodDay;
+		}
+
+		public void setPeriodDay(Integer periodDay) {
+			this.periodDay = periodDay;
+		}
+
+		public String getIdc() {
+			return this.idc;
+		}
+
+		public void setIdc(String idc) {
+			this.idc = idc;
+		}
+
+		public String getInstanceType() {
+			return this.instanceType;
+		}
+
+		public void setInstanceType(String instanceType) {
+			this.instanceType = instanceType;
+		}
+
+		public String getIzNo() {
+			return this.izNo;
+		}
+
+		public void setIzNo(String izNo) {
+			this.izNo = izNo;
 		}
 	}
 

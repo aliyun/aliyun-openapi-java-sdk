@@ -47,50 +47,42 @@ public class OpsQueryOpsRulesResponse extends AcsResponse {
 
 	public static class OpsRuleConfig {
 
-		private String name;
-
-		private Boolean enable;
+		private String opsReason;
 
 		private Integer silent;
 
-		private String level;
-
 		private String desc;
-
-		private String opsType;
-
-		private String opsTargetType;
-
-		private String opsReason;
 
 		private Integer maxTimes;
 
+		private String opsType;
+
 		private Integer delayExec;
+
+		private String name;
+
+		private String level;
+
+		private Boolean enable;
+
+		private String opsTargetType;
+
+		private List<LinkedMonitor> linkedMonitors;
 
 		private List<LinkedFeature> linkedFeatures;
 
-		private List<LinkedMonitor> linkedMonitors;
+		private List<String> actions;
 
 		private List<String> exclusions;
 
 		private List<String> conditions;
 
-		private List<String> actions;
-
-		public String getName() {
-			return this.name;
+		public String getOpsReason() {
+			return this.opsReason;
 		}
 
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public Boolean getEnable() {
-			return this.enable;
-		}
-
-		public void setEnable(Boolean enable) {
-			this.enable = enable;
+		public void setOpsReason(String opsReason) {
+			this.opsReason = opsReason;
 		}
 
 		public Integer getSilent() {
@@ -101,44 +93,12 @@ public class OpsQueryOpsRulesResponse extends AcsResponse {
 			this.silent = silent;
 		}
 
-		public String getLevel() {
-			return this.level;
-		}
-
-		public void setLevel(String level) {
-			this.level = level;
-		}
-
 		public String getDesc() {
 			return this.desc;
 		}
 
 		public void setDesc(String desc) {
 			this.desc = desc;
-		}
-
-		public String getOpsType() {
-			return this.opsType;
-		}
-
-		public void setOpsType(String opsType) {
-			this.opsType = opsType;
-		}
-
-		public String getOpsTargetType() {
-			return this.opsTargetType;
-		}
-
-		public void setOpsTargetType(String opsTargetType) {
-			this.opsTargetType = opsTargetType;
-		}
-
-		public String getOpsReason() {
-			return this.opsReason;
-		}
-
-		public void setOpsReason(String opsReason) {
-			this.opsReason = opsReason;
 		}
 
 		public Integer getMaxTimes() {
@@ -149,12 +109,60 @@ public class OpsQueryOpsRulesResponse extends AcsResponse {
 			this.maxTimes = maxTimes;
 		}
 
+		public String getOpsType() {
+			return this.opsType;
+		}
+
+		public void setOpsType(String opsType) {
+			this.opsType = opsType;
+		}
+
 		public Integer getDelayExec() {
 			return this.delayExec;
 		}
 
 		public void setDelayExec(Integer delayExec) {
 			this.delayExec = delayExec;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getLevel() {
+			return this.level;
+		}
+
+		public void setLevel(String level) {
+			this.level = level;
+		}
+
+		public Boolean getEnable() {
+			return this.enable;
+		}
+
+		public void setEnable(Boolean enable) {
+			this.enable = enable;
+		}
+
+		public String getOpsTargetType() {
+			return this.opsTargetType;
+		}
+
+		public void setOpsTargetType(String opsTargetType) {
+			this.opsTargetType = opsTargetType;
+		}
+
+		public List<LinkedMonitor> getLinkedMonitors() {
+			return this.linkedMonitors;
+		}
+
+		public void setLinkedMonitors(List<LinkedMonitor> linkedMonitors) {
+			this.linkedMonitors = linkedMonitors;
 		}
 
 		public List<LinkedFeature> getLinkedFeatures() {
@@ -165,12 +173,12 @@ public class OpsQueryOpsRulesResponse extends AcsResponse {
 			this.linkedFeatures = linkedFeatures;
 		}
 
-		public List<LinkedMonitor> getLinkedMonitors() {
-			return this.linkedMonitors;
+		public List<String> getActions() {
+			return this.actions;
 		}
 
-		public void setLinkedMonitors(List<LinkedMonitor> linkedMonitors) {
-			this.linkedMonitors = linkedMonitors;
+		public void setActions(List<String> actions) {
+			this.actions = actions;
 		}
 
 		public List<String> getExclusions() {
@@ -189,34 +197,89 @@ public class OpsQueryOpsRulesResponse extends AcsResponse {
 			this.conditions = conditions;
 		}
 
-		public List<String> getActions() {
-			return this.actions;
-		}
+		public static class LinkedMonitor {
 
-		public void setActions(List<String> actions) {
-			this.actions = actions;
+			private String slsConfigName;
+
+			private Integer interval;
+
+			private Integer timeRange;
+
+			private String logstore;
+
+			private String monitorName;
+
+			private String defaultProject;
+
+			public String getSlsConfigName() {
+				return this.slsConfigName;
+			}
+
+			public void setSlsConfigName(String slsConfigName) {
+				this.slsConfigName = slsConfigName;
+			}
+
+			public Integer getInterval() {
+				return this.interval;
+			}
+
+			public void setInterval(Integer interval) {
+				this.interval = interval;
+			}
+
+			public Integer getTimeRange() {
+				return this.timeRange;
+			}
+
+			public void setTimeRange(Integer timeRange) {
+				this.timeRange = timeRange;
+			}
+
+			public String getLogstore() {
+				return this.logstore;
+			}
+
+			public void setLogstore(String logstore) {
+				this.logstore = logstore;
+			}
+
+			public String getMonitorName() {
+				return this.monitorName;
+			}
+
+			public void setMonitorName(String monitorName) {
+				this.monitorName = monitorName;
+			}
+
+			public String getDefaultProject() {
+				return this.defaultProject;
+			}
+
+			public void setDefaultProject(String defaultProject) {
+				this.defaultProject = defaultProject;
+			}
 		}
 
 		public static class LinkedFeature {
 
-			private String name;
+			private String type;
 
 			private Boolean exception;
 
 			private Integer validTimeRange;
 
-			private String type;
+			private String name;
 
 			private String desc;
 
 			private List<String> conditions1;
 
-			public String getName() {
-				return this.name;
+			public String getType() {
+				return this.type;
 			}
 
-			public void setName(String name) {
-				this.name = name;
+			public void setType(String type) {
+				this.type = type;
 			}
 
 			public Boolean getException() {
@@ -235,12 +298,12 @@ public class OpsQueryOpsRulesResponse extends AcsResponse {
 				this.validTimeRange = validTimeRange;
 			}
 
-			public String getType() {
-				return this.type;
+			public String getName() {
+				return this.name;
 			}
 
-			public void setType(String type) {
-				this.type = type;
+			public void setName(String name) {
+				this.name = name;
 			}
 
 			public String getDesc() {
@@ -257,69 +320,6 @@ public class OpsQueryOpsRulesResponse extends AcsResponse {
 
 			public void setConditions1(List<String> conditions1) {
 				this.conditions1 = conditions1;
-			}
-		}
-
-		public static class LinkedMonitor {
-
-			private String logstore;
-
-			private Integer timeRange;
-
-			private String monitorName;
-
-			private Integer interval;
-
-			private String slsConfigName;
-
-			private String defaultProject;
-
-			public String getLogstore() {
-				return this.logstore;
-			}
-
-			public void setLogstore(String logstore) {
-				this.logstore = logstore;
-			}
-
-			public Integer getTimeRange() {
-				return this.timeRange;
-			}
-
-			public void setTimeRange(Integer timeRange) {
-				this.timeRange = timeRange;
-			}
-
-			public String getMonitorName() {
-				return this.monitorName;
-			}
-
-			public void setMonitorName(String monitorName) {
-				this.monitorName = monitorName;
-			}
-
-			public Integer getInterval() {
-				return this.interval;
-			}
-
-			public void setInterval(Integer interval) {
-				this.interval = interval;
-			}
-
-			public String getSlsConfigName() {
-				return this.slsConfigName;
-			}
-
-			public void setSlsConfigName(String slsConfigName) {
-				this.slsConfigName = slsConfigName;
-			}
-
-			public String getDefaultProject() {
-				return this.defaultProject;
-			}
-
-			public void setDefaultProject(String defaultProject) {
-				this.defaultProject = defaultProject;
 			}
 		}
 	}

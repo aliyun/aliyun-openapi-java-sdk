@@ -24,8 +24,8 @@ public class OpsSgModifyZkConfigResponseUnmarshaller {
 	public static OpsSgModifyZkConfigResponse unmarshall(OpsSgModifyZkConfigResponse opsSgModifyZkConfigResponse, UnmarshallerContext _ctx) {
 		
 		opsSgModifyZkConfigResponse.setRequestId(_ctx.stringValue("OpsSgModifyZkConfigResponse.RequestId"));
-		opsSgModifyZkConfigResponse.setCode(_ctx.stringValue("OpsSgModifyZkConfigResponse.Code"));
 		opsSgModifyZkConfigResponse.setMessage(_ctx.stringValue("OpsSgModifyZkConfigResponse.Message"));
+		opsSgModifyZkConfigResponse.setCode(_ctx.stringValue("OpsSgModifyZkConfigResponse.Code"));
 		opsSgModifyZkConfigResponse.setSuccess(_ctx.booleanValue("OpsSgModifyZkConfigResponse.Success"));
 
 		Data data = new Data();

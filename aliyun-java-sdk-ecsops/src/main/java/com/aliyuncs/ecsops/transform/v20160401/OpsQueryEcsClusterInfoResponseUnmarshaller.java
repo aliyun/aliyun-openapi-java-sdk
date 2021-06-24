@@ -23,15 +23,17 @@ public class OpsQueryEcsClusterInfoResponseUnmarshaller {
 	public static OpsQueryEcsClusterInfoResponse unmarshall(OpsQueryEcsClusterInfoResponse opsQueryEcsClusterInfoResponse, UnmarshallerContext _ctx) {
 		
 		opsQueryEcsClusterInfoResponse.setRequestId(_ctx.stringValue("OpsQueryEcsClusterInfoResponse.RequestId"));
+		opsQueryEcsClusterInfoResponse.setSupportStorageType(_ctx.stringValue("OpsQueryEcsClusterInfoResponse.SupportStorageType"));
+		opsQueryEcsClusterInfoResponse.setNcCount(_ctx.integerValue("OpsQueryEcsClusterInfoResponse.NcCount"));
+		opsQueryEcsClusterInfoResponse.setDeployType(_ctx.stringValue("OpsQueryEcsClusterInfoResponse.DeployType"));
 		opsQueryEcsClusterInfoResponse.setNetworkArch(_ctx.stringValue("OpsQueryEcsClusterInfoResponse.NetworkArch"));
+		opsQueryEcsClusterInfoResponse.setAgIp(_ctx.stringValue("OpsQueryEcsClusterInfoResponse.AgIp"));
 		opsQueryEcsClusterInfoResponse.setZoneId(_ctx.stringValue("OpsQueryEcsClusterInfoResponse.ZoneId"));
 		opsQueryEcsClusterInfoResponse.setInstanceFamily(_ctx.stringValue("OpsQueryEcsClusterInfoResponse.InstanceFamily"));
 		opsQueryEcsClusterInfoResponse.setClusterName(_ctx.stringValue("OpsQueryEcsClusterInfoResponse.ClusterName"));
 		opsQueryEcsClusterInfoResponse.setClusterConfig(_ctx.integerValue("OpsQueryEcsClusterInfoResponse.ClusterConfig"));
-		opsQueryEcsClusterInfoResponse.setNcCount(_ctx.integerValue("OpsQueryEcsClusterInfoResponse.NcCount"));
-		opsQueryEcsClusterInfoResponse.setAgIp(_ctx.stringValue("OpsQueryEcsClusterInfoResponse.AgIp"));
-		opsQueryEcsClusterInfoResponse.setSupportStorageType(_ctx.stringValue("OpsQueryEcsClusterInfoResponse.SupportStorageType"));
-		opsQueryEcsClusterInfoResponse.setDeployType(_ctx.stringValue("OpsQueryEcsClusterInfoResponse.DeployType"));
+		opsQueryEcsClusterInfoResponse.setRegionName(_ctx.stringValue("OpsQueryEcsClusterInfoResponse.RegionName"));
+		opsQueryEcsClusterInfoResponse.setRegionNo(_ctx.stringValue("OpsQueryEcsClusterInfoResponse.RegionNo"));
 	 
 	 	return opsQueryEcsClusterInfoResponse;
 	}

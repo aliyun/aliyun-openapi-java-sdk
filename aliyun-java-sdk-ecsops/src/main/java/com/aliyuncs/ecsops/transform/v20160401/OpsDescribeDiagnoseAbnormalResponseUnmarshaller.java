@@ -28,22 +28,22 @@ public class OpsDescribeDiagnoseAbnormalResponseUnmarshaller {
 	public static OpsDescribeDiagnoseAbnormalResponse unmarshall(OpsDescribeDiagnoseAbnormalResponse opsDescribeDiagnoseAbnormalResponse, UnmarshallerContext _ctx) {
 		
 		opsDescribeDiagnoseAbnormalResponse.setRequestId(_ctx.stringValue("OpsDescribeDiagnoseAbnormalResponse.RequestId"));
-		opsDescribeDiagnoseAbnormalResponse.setCode(_ctx.stringValue("OpsDescribeDiagnoseAbnormalResponse.Code"));
 		opsDescribeDiagnoseAbnormalResponse.setMessage(_ctx.stringValue("OpsDescribeDiagnoseAbnormalResponse.Message"));
+		opsDescribeDiagnoseAbnormalResponse.setCode(_ctx.stringValue("OpsDescribeDiagnoseAbnormalResponse.Code"));
 		opsDescribeDiagnoseAbnormalResponse.setSuccess(_ctx.stringValue("OpsDescribeDiagnoseAbnormalResponse.Success"));
 
 		List<Event> events = new ArrayList<Event>();
 		for (int i = 0; i < _ctx.lengthValue("OpsDescribeDiagnoseAbnormalResponse.Events.Length"); i++) {
 			Event event = new Event();
-			event.setResourceId(_ctx.stringValue("OpsDescribeDiagnoseAbnormalResponse.Events["+ i +"].ResourceId"));
 			event.setResourceType(_ctx.stringValue("OpsDescribeDiagnoseAbnormalResponse.Events["+ i +"].ResourceType"));
+			event.setResourceId(_ctx.stringValue("OpsDescribeDiagnoseAbnormalResponse.Events["+ i +"].ResourceId"));
 
 			List<Item> items = new ArrayList<Item>();
 			for (int j = 0; j < _ctx.lengthValue("OpsDescribeDiagnoseAbnormalResponse.Events["+ i +"].Items.Length"); j++) {
 				Item item = new Item();
 				item.setItemCategory(_ctx.stringValue("OpsDescribeDiagnoseAbnormalResponse.Events["+ i +"].Items["+ j +"].ItemCategory"));
-				item.setItemCode(_ctx.stringValue("OpsDescribeDiagnoseAbnormalResponse.Events["+ i +"].Items["+ j +"].ItemCode"));
 				item.setMessage(_ctx.stringValue("OpsDescribeDiagnoseAbnormalResponse.Events["+ i +"].Items["+ j +"].Message"));
+				item.setItemCode(_ctx.stringValue("OpsDescribeDiagnoseAbnormalResponse.Events["+ i +"].Items["+ j +"].ItemCode"));
 
 				items.add(item);
 			}

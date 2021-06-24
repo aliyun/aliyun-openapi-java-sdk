@@ -25,21 +25,29 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsDescribeWhitelistResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer totalCount;
 
-	private String code;
+	private String requestId;
 
 	private String message;
 
-	private Boolean success;
-
-	private Integer totalCount;
+	private Integer pageSize;
 
 	private Integer pageNo;
 
-	private Integer pageSize;
+	private String code;
+
+	private Boolean success;
 
 	private List<EcsWhiteListModel> ecsWhiteListModels;
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -47,14 +55,6 @@ public class OpsDescribeWhitelistResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
 	}
 
 	public String getMessage() {
@@ -65,20 +65,12 @@ public class OpsDescribeWhitelistResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
 	}
 
 	public Integer getPageNo() {
@@ -89,12 +81,20 @@ public class OpsDescribeWhitelistResponse extends AcsResponse {
 		this.pageNo = pageNo;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<EcsWhiteListModel> getEcsWhiteListModels() {
@@ -107,35 +107,19 @@ public class OpsDescribeWhitelistResponse extends AcsResponse {
 
 	public static class EcsWhiteListModel {
 
-		private Long id;
-
-		private String userName;
-
 		private String type;
-
-		private Long aliUid;
-
-		private Integer quota;
 
 		private String gmtCreated;
 
+		private Integer quota;
+
+		private Long aliUid;
+
 		private String gmtModified;
 
-		public Long getId() {
-			return this.id;
-		}
+		private String userName;
 
-		public void setId(Long id) {
-			this.id = id;
-		}
-
-		public String getUserName() {
-			return this.userName;
-		}
-
-		public void setUserName(String userName) {
-			this.userName = userName;
-		}
+		private Long id;
 
 		public String getType() {
 			return this.type;
@@ -143,22 +127,6 @@ public class OpsDescribeWhitelistResponse extends AcsResponse {
 
 		public void setType(String type) {
 			this.type = type;
-		}
-
-		public Long getAliUid() {
-			return this.aliUid;
-		}
-
-		public void setAliUid(Long aliUid) {
-			this.aliUid = aliUid;
-		}
-
-		public Integer getQuota() {
-			return this.quota;
-		}
-
-		public void setQuota(Integer quota) {
-			this.quota = quota;
 		}
 
 		public String getGmtCreated() {
@@ -169,12 +137,44 @@ public class OpsDescribeWhitelistResponse extends AcsResponse {
 			this.gmtCreated = gmtCreated;
 		}
 
+		public Integer getQuota() {
+			return this.quota;
+		}
+
+		public void setQuota(Integer quota) {
+			this.quota = quota;
+		}
+
+		public Long getAliUid() {
+			return this.aliUid;
+		}
+
+		public void setAliUid(Long aliUid) {
+			this.aliUid = aliUid;
+		}
+
 		public String getGmtModified() {
 			return this.gmtModified;
 		}
 
 		public void setGmtModified(String gmtModified) {
 			this.gmtModified = gmtModified;
+		}
+
+		public String getUserName() {
+			return this.userName;
+		}
+
+		public void setUserName(String userName) {
+			this.userName = userName;
+		}
+
+		public Long getId() {
+			return this.id;
+		}
+
+		public void setId(Long id) {
+			this.id = id;
 		}
 	}
 

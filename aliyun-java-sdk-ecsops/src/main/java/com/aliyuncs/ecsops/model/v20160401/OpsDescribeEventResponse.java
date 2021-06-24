@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsDescribeEventResponse extends AcsResponse {
 
+	private String message;
+
 	private String requestId;
 
 	private String code;
 
-	private String message;
-
 	private String success;
 
 	private Event event;
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -49,14 +57,6 @@ public class OpsDescribeEventResponse extends AcsResponse {
 
 	public void setCode(String code) {
 		this.code = code;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
 	}
 
 	public String getSuccess() {
@@ -79,23 +79,23 @@ public class OpsDescribeEventResponse extends AcsResponse {
 
 		private String eventID;
 
-		private String eventType;
+		private String cloudEventsVersion;
 
 		private String eventTypeVersion;
 
-		private String cloudEventsVersion;
+		private String schemaURL;
 
-		private String source;
+		private Map<Object,Object> data;
 
 		private String eventTime;
 
-		private String schemaURL;
+		private String source;
 
 		private String contentType;
 
-		private Map<Object,Object> extensions;
+		private String eventType;
 
-		private Map<Object,Object> data;
+		private Map<Object,Object> extensions;
 
 		public String getEventID() {
 			return this.eventID;
@@ -103,22 +103,6 @@ public class OpsDescribeEventResponse extends AcsResponse {
 
 		public void setEventID(String eventID) {
 			this.eventID = eventID;
-		}
-
-		public String getEventType() {
-			return this.eventType;
-		}
-
-		public void setEventType(String eventType) {
-			this.eventType = eventType;
-		}
-
-		public String getEventTypeVersion() {
-			return this.eventTypeVersion;
-		}
-
-		public void setEventTypeVersion(String eventTypeVersion) {
-			this.eventTypeVersion = eventTypeVersion;
 		}
 
 		public String getCloudEventsVersion() {
@@ -129,20 +113,12 @@ public class OpsDescribeEventResponse extends AcsResponse {
 			this.cloudEventsVersion = cloudEventsVersion;
 		}
 
-		public String getSource() {
-			return this.source;
+		public String getEventTypeVersion() {
+			return this.eventTypeVersion;
 		}
 
-		public void setSource(String source) {
-			this.source = source;
-		}
-
-		public String getEventTime() {
-			return this.eventTime;
-		}
-
-		public void setEventTime(String eventTime) {
-			this.eventTime = eventTime;
+		public void setEventTypeVersion(String eventTypeVersion) {
+			this.eventTypeVersion = eventTypeVersion;
 		}
 
 		public String getSchemaURL() {
@@ -153,6 +129,30 @@ public class OpsDescribeEventResponse extends AcsResponse {
 			this.schemaURL = schemaURL;
 		}
 
+		public Map<Object,Object> getData() {
+			return this.data;
+		}
+
+		public void setData(Map<Object,Object> data) {
+			this.data = data;
+		}
+
+		public String getEventTime() {
+			return this.eventTime;
+		}
+
+		public void setEventTime(String eventTime) {
+			this.eventTime = eventTime;
+		}
+
+		public String getSource() {
+			return this.source;
+		}
+
+		public void setSource(String source) {
+			this.source = source;
+		}
+
 		public String getContentType() {
 			return this.contentType;
 		}
@@ -161,20 +161,20 @@ public class OpsDescribeEventResponse extends AcsResponse {
 			this.contentType = contentType;
 		}
 
+		public String getEventType() {
+			return this.eventType;
+		}
+
+		public void setEventType(String eventType) {
+			this.eventType = eventType;
+		}
+
 		public Map<Object,Object> getExtensions() {
 			return this.extensions;
 		}
 
 		public void setExtensions(Map<Object,Object> extensions) {
 			this.extensions = extensions;
-		}
-
-		public Map<Object,Object> getData() {
-			return this.data;
-		}
-
-		public void setData(Map<Object,Object> data) {
-			this.data = data;
 		}
 	}
 

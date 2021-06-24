@@ -39,25 +39,13 @@ public class OpsListManagedHostsResponseUnmarshaller {
 		List<ManagedHostSet> managedHostSets = new ArrayList<ManagedHostSet>();
 		for (int i = 0; i < _ctx.lengthValue("OpsListManagedHostsResponse.ManagedHostSets.Length"); i++) {
 			ManagedHostSet managedHostSet = new ManagedHostSet();
-			managedHostSet.setManagedHostId(_ctx.stringValue("OpsListManagedHostsResponse.ManagedHostSets["+ i +"].ManagedHostId"));
 			managedHostSet.setStatus(_ctx.stringValue("OpsListManagedHostsResponse.ManagedHostSets["+ i +"].Status"));
-			managedHostSet.setMode(_ctx.stringValue("OpsListManagedHostsResponse.ManagedHostSets["+ i +"].Mode"));
-			managedHostSet.setResourceGroupId(_ctx.stringValue("OpsListManagedHostsResponse.ManagedHostSets["+ i +"].ResourceGroupId"));
 			managedHostSet.setManagedRackId(_ctx.stringValue("OpsListManagedHostsResponse.ManagedHostSets["+ i +"].ManagedRackId"));
-			managedHostSet.setManagedRealRackId(_ctx.stringValue("OpsListManagedHostsResponse.ManagedHostSets["+ i +"].ManagedRealRackId"));
 			managedHostSet.setManagedHostType(_ctx.stringValue("OpsListManagedHostsResponse.ManagedHostSets["+ i +"].ManagedHostType"));
-
-			List<String> supportInstanceTypeFamilies = new ArrayList<String>();
-			for (int j = 0; j < _ctx.lengthValue("OpsListManagedHostsResponse.ManagedHostSets["+ i +"].SupportInstanceTypeFamilies.Length"); j++) {
-				supportInstanceTypeFamilies.add(_ctx.stringValue("OpsListManagedHostsResponse.ManagedHostSets["+ i +"].SupportInstanceTypeFamilies["+ j +"]"));
-			}
-			managedHostSet.setSupportInstanceTypeFamilies(supportInstanceTypeFamilies);
-
-			List<String> supportedCustomInstanceTypeFamilies = new ArrayList<String>();
-			for (int j = 0; j < _ctx.lengthValue("OpsListManagedHostsResponse.ManagedHostSets["+ i +"].SupportedCustomInstanceTypeFamilies.Length"); j++) {
-				supportedCustomInstanceTypeFamilies.add(_ctx.stringValue("OpsListManagedHostsResponse.ManagedHostSets["+ i +"].SupportedCustomInstanceTypeFamilies["+ j +"]"));
-			}
-			managedHostSet.setSupportedCustomInstanceTypeFamilies(supportedCustomInstanceTypeFamilies);
+			managedHostSet.setMode(_ctx.stringValue("OpsListManagedHostsResponse.ManagedHostSets["+ i +"].Mode"));
+			managedHostSet.setManagedRealRackId(_ctx.stringValue("OpsListManagedHostsResponse.ManagedHostSets["+ i +"].ManagedRealRackId"));
+			managedHostSet.setManagedHostId(_ctx.stringValue("OpsListManagedHostsResponse.ManagedHostSets["+ i +"].ManagedHostId"));
+			managedHostSet.setResourceGroupId(_ctx.stringValue("OpsListManagedHostsResponse.ManagedHostSets["+ i +"].ResourceGroupId"));
 
 			List<String> supportedInstanceTypes = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("OpsListManagedHostsResponse.ManagedHostSets["+ i +"].SupportedInstanceTypes.Length"); j++) {
@@ -65,11 +53,29 @@ public class OpsListManagedHostsResponseUnmarshaller {
 			}
 			managedHostSet.setSupportedInstanceTypes(supportedInstanceTypes);
 
+			List<String> supportedCustomInstanceTypeFamilies = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("OpsListManagedHostsResponse.ManagedHostSets["+ i +"].SupportedCustomInstanceTypeFamilies.Length"); j++) {
+				supportedCustomInstanceTypeFamilies.add(_ctx.stringValue("OpsListManagedHostsResponse.ManagedHostSets["+ i +"].SupportedCustomInstanceTypeFamilies["+ j +"]"));
+			}
+			managedHostSet.setSupportedCustomInstanceTypeFamilies(supportedCustomInstanceTypeFamilies);
+
+			List<String> supportInstanceTypeFamilies = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("OpsListManagedHostsResponse.ManagedHostSets["+ i +"].SupportInstanceTypeFamilies.Length"); j++) {
+				supportInstanceTypeFamilies.add(_ctx.stringValue("OpsListManagedHostsResponse.ManagedHostSets["+ i +"].SupportInstanceTypeFamilies["+ j +"]"));
+			}
+			managedHostSet.setSupportInstanceTypeFamilies(supportInstanceTypeFamilies);
+
+			List<String> sharedProductCodes = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("OpsListManagedHostsResponse.ManagedHostSets["+ i +"].SharedProductCodes.Length"); j++) {
+				sharedProductCodes.add(_ctx.stringValue("OpsListManagedHostsResponse.ManagedHostSets["+ i +"].SharedProductCodes["+ j +"]"));
+			}
+			managedHostSet.setSharedProductCodes(sharedProductCodes);
+
 			CapacityAttribute capacityAttribute = new CapacityAttribute();
 			capacityAttribute.setTotalVcpus(_ctx.integerValue("OpsListManagedHostsResponse.ManagedHostSets["+ i +"].CapacityAttribute.TotalVcpus"));
-			capacityAttribute.setTotalMemories(_ctx.integerValue("OpsListManagedHostsResponse.ManagedHostSets["+ i +"].CapacityAttribute.TotalMemories"));
-			capacityAttribute.setAvailableMemories(_ctx.integerValue("OpsListManagedHostsResponse.ManagedHostSets["+ i +"].CapacityAttribute.AvailableMemories"));
 			capacityAttribute.setAvailableVcpus(_ctx.integerValue("OpsListManagedHostsResponse.ManagedHostSets["+ i +"].CapacityAttribute.AvailableVcpus"));
+			capacityAttribute.setAvailableMemories(_ctx.integerValue("OpsListManagedHostsResponse.ManagedHostSets["+ i +"].CapacityAttribute.AvailableMemories"));
+			capacityAttribute.setTotalMemories(_ctx.integerValue("OpsListManagedHostsResponse.ManagedHostSets["+ i +"].CapacityAttribute.TotalMemories"));
 			managedHostSet.setCapacityAttribute(capacityAttribute);
 
 			NetworkAssociation networkAssociation = new NetworkAssociation();
@@ -85,10 +91,20 @@ public class OpsListManagedHostsResponseUnmarshaller {
 			managedHostSet.setNetworkAssociation(networkAssociation);
 
 			HostAttribute hostAttribute = new HostAttribute();
+			hostAttribute.setSerialNumber(_ctx.stringValue("OpsListManagedHostsResponse.ManagedHostSets["+ i +"].HostAttribute.SerialNumber"));
 			hostAttribute.setHostType(_ctx.stringValue("OpsListManagedHostsResponse.ManagedHostSets["+ i +"].HostAttribute.HostType"));
 			hostAttribute.setCpuModelName(_ctx.stringValue("OpsListManagedHostsResponse.ManagedHostSets["+ i +"].HostAttribute.CpuModelName"));
-			hostAttribute.setSerialNumber(_ctx.stringValue("OpsListManagedHostsResponse.ManagedHostSets["+ i +"].HostAttribute.SerialNumber"));
 			managedHostSet.setHostAttribute(hostAttribute);
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < _ctx.lengthValue("OpsListManagedHostsResponse.ManagedHostSets["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setTagValue(_ctx.stringValue("OpsListManagedHostsResponse.ManagedHostSets["+ i +"].Tags["+ j +"].TagValue"));
+				tag.setTagKey(_ctx.stringValue("OpsListManagedHostsResponse.ManagedHostSets["+ i +"].Tags["+ j +"].TagKey"));
+
+				tags.add(tag);
+			}
+			managedHostSet.setTags(tags);
 
 			List<InstanceSet> instanceSets = new ArrayList<InstanceSet>();
 			for (int j = 0; j < _ctx.lengthValue("OpsListManagedHostsResponse.ManagedHostSets["+ i +"].InstanceSets.Length"); j++) {
@@ -98,16 +114,6 @@ public class OpsListManagedHostsResponseUnmarshaller {
 				instanceSets.add(instanceSet);
 			}
 			managedHostSet.setInstanceSets(instanceSets);
-
-			List<Tag> tags = new ArrayList<Tag>();
-			for (int j = 0; j < _ctx.lengthValue("OpsListManagedHostsResponse.ManagedHostSets["+ i +"].Tags.Length"); j++) {
-				Tag tag = new Tag();
-				tag.setTagKey(_ctx.stringValue("OpsListManagedHostsResponse.ManagedHostSets["+ i +"].Tags["+ j +"].TagKey"));
-				tag.setTagValue(_ctx.stringValue("OpsListManagedHostsResponse.ManagedHostSets["+ i +"].Tags["+ j +"].TagValue"));
-
-				tags.add(tag);
-			}
-			managedHostSet.setTags(tags);
 
 			managedHostSets.add(managedHostSet);
 		}

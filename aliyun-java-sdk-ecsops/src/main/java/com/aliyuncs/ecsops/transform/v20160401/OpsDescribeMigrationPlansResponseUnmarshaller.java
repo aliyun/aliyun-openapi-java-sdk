@@ -27,23 +27,23 @@ public class OpsDescribeMigrationPlansResponseUnmarshaller {
 	public static OpsDescribeMigrationPlansResponse unmarshall(OpsDescribeMigrationPlansResponse opsDescribeMigrationPlansResponse, UnmarshallerContext _ctx) {
 		
 		opsDescribeMigrationPlansResponse.setRequestId(_ctx.stringValue("OpsDescribeMigrationPlansResponse.RequestId"));
-		opsDescribeMigrationPlansResponse.setTotal(_ctx.integerValue("OpsDescribeMigrationPlansResponse.Total"));
 		opsDescribeMigrationPlansResponse.setPageSize(_ctx.integerValue("OpsDescribeMigrationPlansResponse.PageSize"));
 		opsDescribeMigrationPlansResponse.setPageNumber(_ctx.integerValue("OpsDescribeMigrationPlansResponse.PageNumber"));
+		opsDescribeMigrationPlansResponse.setTotal(_ctx.integerValue("OpsDescribeMigrationPlansResponse.Total"));
 
 		List<Plan> planSet = new ArrayList<Plan>();
 		for (int i = 0; i < _ctx.lengthValue("OpsDescribeMigrationPlansResponse.PlanSet.Length"); i++) {
 			Plan plan = new Plan();
-			plan.setName(_ctx.stringValue("OpsDescribeMigrationPlansResponse.PlanSet["+ i +"].Name"));
-			plan.setMigrationPlanId(_ctx.stringValue("OpsDescribeMigrationPlansResponse.PlanSet["+ i +"].MigrationPlanId"));
-			plan.setType(_ctx.integerValue("OpsDescribeMigrationPlansResponse.PlanSet["+ i +"].Type"));
 			plan.setStatus(_ctx.integerValue("OpsDescribeMigrationPlansResponse.PlanSet["+ i +"].Status"));
+			plan.setType(_ctx.integerValue("OpsDescribeMigrationPlansResponse.PlanSet["+ i +"].Type"));
+			plan.setEnsureNetworkConnectivity(_ctx.booleanValue("OpsDescribeMigrationPlansResponse.PlanSet["+ i +"].EnsureNetworkConnectivity"));
+			plan.setMigrationPlanId(_ctx.stringValue("OpsDescribeMigrationPlansResponse.PlanSet["+ i +"].MigrationPlanId"));
+			plan.setRemainPublicMacAsPriority(_ctx.booleanValue("OpsDescribeMigrationPlansResponse.PlanSet["+ i +"].RemainPublicMacAsPriority"));
 			plan.setCreateTime(_ctx.stringValue("OpsDescribeMigrationPlansResponse.PlanSet["+ i +"].CreateTime"));
-			plan.setTotalVmCount(_ctx.integerValue("OpsDescribeMigrationPlansResponse.PlanSet["+ i +"].TotalVmCount"));
+			plan.setName(_ctx.stringValue("OpsDescribeMigrationPlansResponse.PlanSet["+ i +"].Name"));
 			plan.setFinishVmCount(_ctx.integerValue("OpsDescribeMigrationPlansResponse.PlanSet["+ i +"].FinishVmCount"));
 			plan.setKeepPrivateIp(_ctx.booleanValue("OpsDescribeMigrationPlansResponse.PlanSet["+ i +"].KeepPrivateIp"));
-			plan.setEnsureNetworkConnectivity(_ctx.booleanValue("OpsDescribeMigrationPlansResponse.PlanSet["+ i +"].EnsureNetworkConnectivity"));
-			plan.setRemainPublicMacAsPriority(_ctx.booleanValue("OpsDescribeMigrationPlansResponse.PlanSet["+ i +"].RemainPublicMacAsPriority"));
+			plan.setTotalVmCount(_ctx.integerValue("OpsDescribeMigrationPlansResponse.PlanSet["+ i +"].TotalVmCount"));
 
 			planSet.add(plan);
 		}

@@ -26,17 +26,17 @@ public class OpsDescribeGroupMultipleQueueInfoResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String scanInterval;
-
 	private String blackListScanInterval;
 
 	private String mode;
 
-	private String zkConfig;
-
 	private String dbConfig;
 
+	private String zkConfig;
+
 	private String recommendedConfig;
+
+	private String scanInterval;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -44,14 +44,6 @@ public class OpsDescribeGroupMultipleQueueInfoResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getScanInterval() {
-		return this.scanInterval;
-	}
-
-	public void setScanInterval(String scanInterval) {
-		this.scanInterval = scanInterval;
 	}
 
 	public String getBlackListScanInterval() {
@@ -70,14 +62,6 @@ public class OpsDescribeGroupMultipleQueueInfoResponse extends AcsResponse {
 		this.mode = mode;
 	}
 
-	public String getZkConfig() {
-		return this.zkConfig;
-	}
-
-	public void setZkConfig(String zkConfig) {
-		this.zkConfig = zkConfig;
-	}
-
 	public String getDbConfig() {
 		return this.dbConfig;
 	}
@@ -86,12 +70,28 @@ public class OpsDescribeGroupMultipleQueueInfoResponse extends AcsResponse {
 		this.dbConfig = dbConfig;
 	}
 
+	public String getZkConfig() {
+		return this.zkConfig;
+	}
+
+	public void setZkConfig(String zkConfig) {
+		this.zkConfig = zkConfig;
+	}
+
 	public String getRecommendedConfig() {
 		return this.recommendedConfig;
 	}
 
 	public void setRecommendedConfig(String recommendedConfig) {
 		this.recommendedConfig = recommendedConfig;
+	}
+
+	public String getScanInterval() {
+		return this.scanInterval;
+	}
+
+	public void setScanInterval(String scanInterval) {
+		this.scanInterval = scanInterval;
 	}
 
 	@Override

@@ -47,84 +47,92 @@ public class OpsHouyiQueryWorkflowListResponse extends AcsResponse {
 
 	public static class WorkflowInstance {
 
-		private String workflowId;
+		private String extColumn1;
 
-		private String parentId;
+		private Long updateTime;
 
-		private String workflowName;
+		private Long expireTime;
 
-		private Long version;
+		private String state;
 
-		private String bizType;
+		private Long createTime;
+
+		private String initAttributes;
 
 		private String bizId;
 
 		private Integer priority;
 
-		private String initAttributes;
+		private String tag;
 
-		private String state;
+		private String extColumn2;
+
+		private String bizType;
+
+		private String parentId;
+
+		private String extColumn3;
+
+		private Long version;
+
+		private Long endDateTime;
+
+		private String workflowId;
+
+		private Long duration;
 
 		private String executionNode;
 
 		private Long startDateTime;
 
-		private Long expireTime;
+		private String workflowName;
 
-		private Long endDateTime;
-
-		private Long duration;
-
-		private Long createTime;
-
-		private Long updateTime;
-
-		private String tag;
-
-		private String extColumn1;
-
-		private String extColumn2;
-
-		private String extColumn3;
-
-		public String getWorkflowId() {
-			return this.workflowId;
+		public String getExtColumn1() {
+			return this.extColumn1;
 		}
 
-		public void setWorkflowId(String workflowId) {
-			this.workflowId = workflowId;
+		public void setExtColumn1(String extColumn1) {
+			this.extColumn1 = extColumn1;
 		}
 
-		public String getParentId() {
-			return this.parentId;
+		public Long getUpdateTime() {
+			return this.updateTime;
 		}
 
-		public void setParentId(String parentId) {
-			this.parentId = parentId;
+		public void setUpdateTime(Long updateTime) {
+			this.updateTime = updateTime;
 		}
 
-		public String getWorkflowName() {
-			return this.workflowName;
+		public Long getExpireTime() {
+			return this.expireTime;
 		}
 
-		public void setWorkflowName(String workflowName) {
-			this.workflowName = workflowName;
+		public void setExpireTime(Long expireTime) {
+			this.expireTime = expireTime;
 		}
 
-		public Long getVersion() {
-			return this.version;
+		public String getState() {
+			return this.state;
 		}
 
-		public void setVersion(Long version) {
-			this.version = version;
+		public void setState(String state) {
+			this.state = state;
 		}
 
-		public String getBizType() {
-			return this.bizType;
+		public Long getCreateTime() {
+			return this.createTime;
 		}
 
-		public void setBizType(String bizType) {
-			this.bizType = bizType;
+		public void setCreateTime(Long createTime) {
+			this.createTime = createTime;
+		}
+
+		public String getInitAttributes() {
+			return this.initAttributes;
+		}
+
+		public void setInitAttributes(String initAttributes) {
+			this.initAttributes = initAttributes;
 		}
 
 		public String getBizId() {
@@ -143,20 +151,76 @@ public class OpsHouyiQueryWorkflowListResponse extends AcsResponse {
 			this.priority = priority;
 		}
 
-		public String getInitAttributes() {
-			return this.initAttributes;
+		public String getTag() {
+			return this.tag;
 		}
 
-		public void setInitAttributes(String initAttributes) {
-			this.initAttributes = initAttributes;
+		public void setTag(String tag) {
+			this.tag = tag;
 		}
 
-		public String getState() {
-			return this.state;
+		public String getExtColumn2() {
+			return this.extColumn2;
 		}
 
-		public void setState(String state) {
-			this.state = state;
+		public void setExtColumn2(String extColumn2) {
+			this.extColumn2 = extColumn2;
+		}
+
+		public String getBizType() {
+			return this.bizType;
+		}
+
+		public void setBizType(String bizType) {
+			this.bizType = bizType;
+		}
+
+		public String getParentId() {
+			return this.parentId;
+		}
+
+		public void setParentId(String parentId) {
+			this.parentId = parentId;
+		}
+
+		public String getExtColumn3() {
+			return this.extColumn3;
+		}
+
+		public void setExtColumn3(String extColumn3) {
+			this.extColumn3 = extColumn3;
+		}
+
+		public Long getVersion() {
+			return this.version;
+		}
+
+		public void setVersion(Long version) {
+			this.version = version;
+		}
+
+		public Long getEndDateTime() {
+			return this.endDateTime;
+		}
+
+		public void setEndDateTime(Long endDateTime) {
+			this.endDateTime = endDateTime;
+		}
+
+		public String getWorkflowId() {
+			return this.workflowId;
+		}
+
+		public void setWorkflowId(String workflowId) {
+			this.workflowId = workflowId;
+		}
+
+		public Long getDuration() {
+			return this.duration;
+		}
+
+		public void setDuration(Long duration) {
+			this.duration = duration;
 		}
 
 		public String getExecutionNode() {
@@ -175,76 +239,12 @@ public class OpsHouyiQueryWorkflowListResponse extends AcsResponse {
 			this.startDateTime = startDateTime;
 		}
 
-		public Long getExpireTime() {
-			return this.expireTime;
+		public String getWorkflowName() {
+			return this.workflowName;
 		}
 
-		public void setExpireTime(Long expireTime) {
-			this.expireTime = expireTime;
-		}
-
-		public Long getEndDateTime() {
-			return this.endDateTime;
-		}
-
-		public void setEndDateTime(Long endDateTime) {
-			this.endDateTime = endDateTime;
-		}
-
-		public Long getDuration() {
-			return this.duration;
-		}
-
-		public void setDuration(Long duration) {
-			this.duration = duration;
-		}
-
-		public Long getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(Long createTime) {
-			this.createTime = createTime;
-		}
-
-		public Long getUpdateTime() {
-			return this.updateTime;
-		}
-
-		public void setUpdateTime(Long updateTime) {
-			this.updateTime = updateTime;
-		}
-
-		public String getTag() {
-			return this.tag;
-		}
-
-		public void setTag(String tag) {
-			this.tag = tag;
-		}
-
-		public String getExtColumn1() {
-			return this.extColumn1;
-		}
-
-		public void setExtColumn1(String extColumn1) {
-			this.extColumn1 = extColumn1;
-		}
-
-		public String getExtColumn2() {
-			return this.extColumn2;
-		}
-
-		public void setExtColumn2(String extColumn2) {
-			this.extColumn2 = extColumn2;
-		}
-
-		public String getExtColumn3() {
-			return this.extColumn3;
-		}
-
-		public void setExtColumn3(String extColumn3) {
-			this.extColumn3 = extColumn3;
+		public void setWorkflowName(String workflowName) {
+			this.workflowName = workflowName;
 		}
 	}
 

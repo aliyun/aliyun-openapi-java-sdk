@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsDescribeInstanceHistoryEventsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
-
-	private Integer pageNumber;
 
 	private Integer pageSize;
 
+	private String requestId;
+
+	private Integer pageNumber;
+
 	private List<InstanceSystemEventType> instanceSystemEventSet;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -51,20 +43,28 @@ public class OpsDescribeInstanceHistoryEventsResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<InstanceSystemEventType> getInstanceSystemEventSet() {
@@ -77,29 +77,21 @@ public class OpsDescribeInstanceHistoryEventsResponse extends AcsResponse {
 
 	public static class InstanceSystemEventType {
 
-		private String instanceId;
-
 		private String eventId;
-
-		private String eventInitiateBy;
 
 		private String eventPublishTime;
 
+		private String eventFinishTime;
+
 		private String notBefore;
 
-		private String eventFinishTime;
+		private String instanceId;
+
+		private String eventInitiateBy;
 
 		private EventType eventType;
 
 		private EventCycleStatus eventCycleStatus;
-
-		public String getInstanceId() {
-			return this.instanceId;
-		}
-
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
 
 		public String getEventId() {
 			return this.eventId;
@@ -107,14 +99,6 @@ public class OpsDescribeInstanceHistoryEventsResponse extends AcsResponse {
 
 		public void setEventId(String eventId) {
 			this.eventId = eventId;
-		}
-
-		public String getEventInitiateBy() {
-			return this.eventInitiateBy;
-		}
-
-		public void setEventInitiateBy(String eventInitiateBy) {
-			this.eventInitiateBy = eventInitiateBy;
 		}
 
 		public String getEventPublishTime() {
@@ -125,6 +109,14 @@ public class OpsDescribeInstanceHistoryEventsResponse extends AcsResponse {
 			this.eventPublishTime = eventPublishTime;
 		}
 
+		public String getEventFinishTime() {
+			return this.eventFinishTime;
+		}
+
+		public void setEventFinishTime(String eventFinishTime) {
+			this.eventFinishTime = eventFinishTime;
+		}
+
 		public String getNotBefore() {
 			return this.notBefore;
 		}
@@ -133,12 +125,20 @@ public class OpsDescribeInstanceHistoryEventsResponse extends AcsResponse {
 			this.notBefore = notBefore;
 		}
 
-		public String getEventFinishTime() {
-			return this.eventFinishTime;
+		public String getInstanceId() {
+			return this.instanceId;
 		}
 
-		public void setEventFinishTime(String eventFinishTime) {
-			this.eventFinishTime = eventFinishTime;
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public String getEventInitiateBy() {
+			return this.eventInitiateBy;
+		}
+
+		public void setEventInitiateBy(String eventInitiateBy) {
+			this.eventInitiateBy = eventInitiateBy;
 		}
 
 		public EventType getEventType() {

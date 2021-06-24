@@ -27,14 +27,14 @@ public class OpsListPlanResourcesResponseUnmarshaller {
 	public static OpsListPlanResourcesResponse unmarshall(OpsListPlanResourcesResponse opsListPlanResourcesResponse, UnmarshallerContext _ctx) {
 		
 		opsListPlanResourcesResponse.setRequestId(_ctx.stringValue("OpsListPlanResourcesResponse.RequestId"));
-		opsListPlanResourcesResponse.setCode(_ctx.stringValue("OpsListPlanResourcesResponse.Code"));
 		opsListPlanResourcesResponse.setMessage(_ctx.stringValue("OpsListPlanResourcesResponse.Message"));
+		opsListPlanResourcesResponse.setCode(_ctx.stringValue("OpsListPlanResourcesResponse.Code"));
 		opsListPlanResourcesResponse.setSuccess(_ctx.stringValue("OpsListPlanResourcesResponse.Success"));
 
 		Data data = new Data();
+		data.setTotalSize(_ctx.integerValue("OpsListPlanResourcesResponse.Data.TotalSize"));
 		data.setPageNo(_ctx.integerValue("OpsListPlanResourcesResponse.Data.PageNo"));
 		data.setPageSize(_ctx.integerValue("OpsListPlanResourcesResponse.Data.PageSize"));
-		data.setTotalSize(_ctx.integerValue("OpsListPlanResourcesResponse.Data.TotalSize"));
 
 		List<String> resources = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("OpsListPlanResourcesResponse.Data.Resources.Length"); i++) {

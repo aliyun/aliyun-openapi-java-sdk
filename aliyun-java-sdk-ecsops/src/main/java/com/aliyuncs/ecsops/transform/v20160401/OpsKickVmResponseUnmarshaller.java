@@ -31,10 +31,10 @@ public class OpsKickVmResponseUnmarshaller {
 		List<KickVmResult> kickVmResultArrays = new ArrayList<KickVmResult>();
 		for (int i = 0; i < _ctx.lengthValue("OpsKickVmResponse.KickVmResultArrays.Length"); i++) {
 			KickVmResult kickVmResult = new KickVmResult();
-			kickVmResult.setInstanceId(_ctx.stringValue("OpsKickVmResponse.KickVmResultArrays["+ i +"].InstanceId"));
-			kickVmResult.setOutput(_ctx.stringValue("OpsKickVmResponse.KickVmResultArrays["+ i +"].Output"));
 			kickVmResult.setUsedTime(_ctx.longValue("OpsKickVmResponse.KickVmResultArrays["+ i +"].UsedTime"));
 			kickVmResult.setResult(_ctx.stringValue("OpsKickVmResponse.KickVmResultArrays["+ i +"].Result"));
+			kickVmResult.setInstanceId(_ctx.stringValue("OpsKickVmResponse.KickVmResultArrays["+ i +"].InstanceId"));
+			kickVmResult.setOutput(_ctx.stringValue("OpsKickVmResponse.KickVmResultArrays["+ i +"].Output"));
 
 			kickVmResultArrays.add(kickVmResult);
 		}

@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsModifyChangeResourceResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Boolean result;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public Boolean getResult() {
 		return this.result;
@@ -42,6 +34,14 @@ public class OpsModifyChangeResourceResponse extends AcsResponse {
 
 	public void setResult(Boolean result) {
 		this.result = result;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

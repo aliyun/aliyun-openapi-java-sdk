@@ -27,8 +27,8 @@ public class OpsRefreshDedicatedHostResourceResponseUnmarshaller {
 		
 		opsRefreshDedicatedHostResourceResponse.setRequestId(_ctx.stringValue("OpsRefreshDedicatedHostResourceResponse.RequestId"));
 		opsRefreshDedicatedHostResourceResponse.setTotalCount(_ctx.integerValue("OpsRefreshDedicatedHostResourceResponse.TotalCount"));
-		opsRefreshDedicatedHostResourceResponse.setPageNumber(_ctx.integerValue("OpsRefreshDedicatedHostResourceResponse.PageNumber"));
 		opsRefreshDedicatedHostResourceResponse.setPageSize(_ctx.integerValue("OpsRefreshDedicatedHostResourceResponse.PageSize"));
+		opsRefreshDedicatedHostResourceResponse.setPageNumber(_ctx.integerValue("OpsRefreshDedicatedHostResourceResponse.PageNumber"));
 
 		List<String> hostIds = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("OpsRefreshDedicatedHostResourceResponse.HostIds.Length"); i++) {

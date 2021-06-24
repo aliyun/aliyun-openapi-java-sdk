@@ -30,18 +30,18 @@ public class OpsDescribeInstanceHistoryEventsResponseUnmarshaller {
 		
 		opsDescribeInstanceHistoryEventsResponse.setRequestId(_ctx.stringValue("OpsDescribeInstanceHistoryEventsResponse.RequestId"));
 		opsDescribeInstanceHistoryEventsResponse.setTotalCount(_ctx.integerValue("OpsDescribeInstanceHistoryEventsResponse.TotalCount"));
-		opsDescribeInstanceHistoryEventsResponse.setPageNumber(_ctx.integerValue("OpsDescribeInstanceHistoryEventsResponse.PageNumber"));
 		opsDescribeInstanceHistoryEventsResponse.setPageSize(_ctx.integerValue("OpsDescribeInstanceHistoryEventsResponse.PageSize"));
+		opsDescribeInstanceHistoryEventsResponse.setPageNumber(_ctx.integerValue("OpsDescribeInstanceHistoryEventsResponse.PageNumber"));
 
 		List<InstanceSystemEventType> instanceSystemEventSet = new ArrayList<InstanceSystemEventType>();
 		for (int i = 0; i < _ctx.lengthValue("OpsDescribeInstanceHistoryEventsResponse.InstanceSystemEventSet.Length"); i++) {
 			InstanceSystemEventType instanceSystemEventType = new InstanceSystemEventType();
-			instanceSystemEventType.setInstanceId(_ctx.stringValue("OpsDescribeInstanceHistoryEventsResponse.InstanceSystemEventSet["+ i +"].InstanceId"));
 			instanceSystemEventType.setEventId(_ctx.stringValue("OpsDescribeInstanceHistoryEventsResponse.InstanceSystemEventSet["+ i +"].EventId"));
-			instanceSystemEventType.setEventInitiateBy(_ctx.stringValue("OpsDescribeInstanceHistoryEventsResponse.InstanceSystemEventSet["+ i +"].EventInitiateBy"));
 			instanceSystemEventType.setEventPublishTime(_ctx.stringValue("OpsDescribeInstanceHistoryEventsResponse.InstanceSystemEventSet["+ i +"].EventPublishTime"));
-			instanceSystemEventType.setNotBefore(_ctx.stringValue("OpsDescribeInstanceHistoryEventsResponse.InstanceSystemEventSet["+ i +"].NotBefore"));
 			instanceSystemEventType.setEventFinishTime(_ctx.stringValue("OpsDescribeInstanceHistoryEventsResponse.InstanceSystemEventSet["+ i +"].EventFinishTime"));
+			instanceSystemEventType.setNotBefore(_ctx.stringValue("OpsDescribeInstanceHistoryEventsResponse.InstanceSystemEventSet["+ i +"].NotBefore"));
+			instanceSystemEventType.setInstanceId(_ctx.stringValue("OpsDescribeInstanceHistoryEventsResponse.InstanceSystemEventSet["+ i +"].InstanceId"));
+			instanceSystemEventType.setEventInitiateBy(_ctx.stringValue("OpsDescribeInstanceHistoryEventsResponse.InstanceSystemEventSet["+ i +"].EventInitiateBy"));
 
 			EventType eventType = new EventType();
 			eventType.setCode(_ctx.integerValue("OpsDescribeInstanceHistoryEventsResponse.InstanceSystemEventSet["+ i +"].EventType.Code"));

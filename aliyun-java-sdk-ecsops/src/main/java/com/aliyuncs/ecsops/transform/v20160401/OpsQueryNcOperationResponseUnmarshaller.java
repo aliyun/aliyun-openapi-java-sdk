@@ -28,27 +28,27 @@ public class OpsQueryNcOperationResponseUnmarshaller {
 		
 		opsQueryNcOperationResponse.setRequestId(_ctx.stringValue("OpsQueryNcOperationResponse.RequestId"));
 		opsQueryNcOperationResponse.setTotalCnt(_ctx.integerValue("OpsQueryNcOperationResponse.TotalCnt"));
-		opsQueryNcOperationResponse.setPageNumber(_ctx.integerValue("OpsQueryNcOperationResponse.PageNumber"));
 		opsQueryNcOperationResponse.setPageSize(_ctx.integerValue("OpsQueryNcOperationResponse.PageSize"));
+		opsQueryNcOperationResponse.setPageNumber(_ctx.integerValue("OpsQueryNcOperationResponse.PageNumber"));
 
 		List<NcOpsDetail> ncOpsDetailList = new ArrayList<NcOpsDetail>();
 		for (int i = 0; i < _ctx.lengthValue("OpsQueryNcOperationResponse.NcOpsDetailList.Length"); i++) {
 			NcOpsDetail ncOpsDetail = new NcOpsDetail();
+			ncOpsDetail.setAction(_ctx.stringValue("OpsQueryNcOperationResponse.NcOpsDetailList["+ i +"].Action"));
+			ncOpsDetail.setFirstMatchTime(_ctx.stringValue("OpsQueryNcOperationResponse.NcOpsDetailList["+ i +"].FirstMatchTime"));
+			ncOpsDetail.setMachineType(_ctx.stringValue("OpsQueryNcOperationResponse.NcOpsDetailList["+ i +"].MachineType"));
+			ncOpsDetail.setFirstOpsTime(_ctx.stringValue("OpsQueryNcOperationResponse.NcOpsDetailList["+ i +"].FirstOpsTime"));
+			ncOpsDetail.setOpsRuleName(_ctx.stringValue("OpsQueryNcOperationResponse.NcOpsDetailList["+ i +"].OpsRuleName"));
 			ncOpsDetail.setNcIp(_ctx.stringValue("OpsQueryNcOperationResponse.NcOpsDetailList["+ i +"].NcIp"));
 			ncOpsDetail.setCnSn(_ctx.stringValue("OpsQueryNcOperationResponse.NcOpsDetailList["+ i +"].CnSn"));
+			ncOpsDetail.setIsRateLimited(_ctx.stringValue("OpsQueryNcOperationResponse.NcOpsDetailList["+ i +"].IsRateLimited"));
+			ncOpsDetail.setDescription(_ctx.stringValue("OpsQueryNcOperationResponse.NcOpsDetailList["+ i +"].Description"));
+			ncOpsDetail.setTargetFeatures(_ctx.stringValue("OpsQueryNcOperationResponse.NcOpsDetailList["+ i +"].TargetFeatures"));
 			ncOpsDetail.setRegion(_ctx.stringValue("OpsQueryNcOperationResponse.NcOpsDetailList["+ i +"].Region"));
 			ncOpsDetail.setClusterName(_ctx.stringValue("OpsQueryNcOperationResponse.NcOpsDetailList["+ i +"].ClusterName"));
-			ncOpsDetail.setMachineType(_ctx.stringValue("OpsQueryNcOperationResponse.NcOpsDetailList["+ i +"].MachineType"));
-			ncOpsDetail.setOpsRuleName(_ctx.stringValue("OpsQueryNcOperationResponse.NcOpsDetailList["+ i +"].OpsRuleName"));
-			ncOpsDetail.setDescription(_ctx.stringValue("OpsQueryNcOperationResponse.NcOpsDetailList["+ i +"].Description"));
-			ncOpsDetail.setFirstMatchTime(_ctx.stringValue("OpsQueryNcOperationResponse.NcOpsDetailList["+ i +"].FirstMatchTime"));
 			ncOpsDetail.setHitCnt(_ctx.integerValue("OpsQueryNcOperationResponse.NcOpsDetailList["+ i +"].HitCnt"));
-			ncOpsDetail.setAction(_ctx.stringValue("OpsQueryNcOperationResponse.NcOpsDetailList["+ i +"].Action"));
-			ncOpsDetail.setReason(_ctx.stringValue("OpsQueryNcOperationResponse.NcOpsDetailList["+ i +"].Reason"));
-			ncOpsDetail.setTargetFeatures(_ctx.stringValue("OpsQueryNcOperationResponse.NcOpsDetailList["+ i +"].TargetFeatures"));
-			ncOpsDetail.setIsRateLimited(_ctx.stringValue("OpsQueryNcOperationResponse.NcOpsDetailList["+ i +"].IsRateLimited"));
 			ncOpsDetail.setRateLimitedTime(_ctx.integerValue("OpsQueryNcOperationResponse.NcOpsDetailList["+ i +"].RateLimitedTime"));
-			ncOpsDetail.setFirstOpsTime(_ctx.stringValue("OpsQueryNcOperationResponse.NcOpsDetailList["+ i +"].FirstOpsTime"));
+			ncOpsDetail.setReason(_ctx.stringValue("OpsQueryNcOperationResponse.NcOpsDetailList["+ i +"].Reason"));
 
 			ncOpsDetailList.add(ncOpsDetail);
 		}

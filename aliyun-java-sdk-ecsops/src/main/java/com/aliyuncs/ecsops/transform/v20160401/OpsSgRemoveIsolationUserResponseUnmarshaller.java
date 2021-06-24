@@ -24,8 +24,8 @@ public class OpsSgRemoveIsolationUserResponseUnmarshaller {
 	public static OpsSgRemoveIsolationUserResponse unmarshall(OpsSgRemoveIsolationUserResponse opsSgRemoveIsolationUserResponse, UnmarshallerContext _ctx) {
 		
 		opsSgRemoveIsolationUserResponse.setRequestId(_ctx.stringValue("OpsSgRemoveIsolationUserResponse.RequestId"));
-		opsSgRemoveIsolationUserResponse.setCode(_ctx.stringValue("OpsSgRemoveIsolationUserResponse.Code"));
 		opsSgRemoveIsolationUserResponse.setMessage(_ctx.stringValue("OpsSgRemoveIsolationUserResponse.Message"));
+		opsSgRemoveIsolationUserResponse.setCode(_ctx.stringValue("OpsSgRemoveIsolationUserResponse.Code"));
 		opsSgRemoveIsolationUserResponse.setSuccess(_ctx.booleanValue("OpsSgRemoveIsolationUserResponse.Success"));
 
 		Data data = new Data();

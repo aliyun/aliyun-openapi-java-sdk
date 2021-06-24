@@ -24,8 +24,8 @@ public class OpsSgSwitchZkModeResponseUnmarshaller {
 	public static OpsSgSwitchZkModeResponse unmarshall(OpsSgSwitchZkModeResponse opsSgSwitchZkModeResponse, UnmarshallerContext _ctx) {
 		
 		opsSgSwitchZkModeResponse.setRequestId(_ctx.stringValue("OpsSgSwitchZkModeResponse.RequestId"));
-		opsSgSwitchZkModeResponse.setCode(_ctx.stringValue("OpsSgSwitchZkModeResponse.Code"));
 		opsSgSwitchZkModeResponse.setMessage(_ctx.stringValue("OpsSgSwitchZkModeResponse.Message"));
+		opsSgSwitchZkModeResponse.setCode(_ctx.stringValue("OpsSgSwitchZkModeResponse.Code"));
 		opsSgSwitchZkModeResponse.setSuccess(_ctx.booleanValue("OpsSgSwitchZkModeResponse.Success"));
 
 		Data data = new Data();

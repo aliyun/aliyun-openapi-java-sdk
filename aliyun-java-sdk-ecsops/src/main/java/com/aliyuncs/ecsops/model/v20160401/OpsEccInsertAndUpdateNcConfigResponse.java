@@ -24,19 +24,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsEccInsertAndUpdateNcConfigResponse extends AcsResponse {
 
-	private String data;
-
 	private String message;
 
 	private String requestId;
 
-	public String getData() {
-		return this.data;
-	}
-
-	public void setData(String data) {
-		this.data = data;
-	}
+	private String data;
 
 	public String getMessage() {
 		return this.message;
@@ -52,6 +44,14 @@ public class OpsEccInsertAndUpdateNcConfigResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getData() {
+		return this.data;
+	}
+
+	public void setData(String data) {
+		this.data = data;
 	}
 
 	@Override

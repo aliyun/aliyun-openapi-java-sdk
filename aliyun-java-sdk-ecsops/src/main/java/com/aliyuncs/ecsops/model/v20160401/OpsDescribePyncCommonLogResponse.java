@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsDescribePyncCommonLogResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
-
-	private Integer pageNumber;
 
 	private Integer pageSize;
 
+	private String requestId;
+
+	private Integer pageNumber;
+
 	private List<Log> logs;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -51,20 +43,28 @@ public class OpsDescribePyncCommonLogResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<Log> getLogs() {
@@ -77,33 +77,17 @@ public class OpsDescribePyncCommonLogResponse extends AcsResponse {
 
 	public static class Log {
 
-		private String logRequestId;
-
-		private String content;
-
 		private String time;
 
 		private String ms;
 
-		private String path;
-
 		private String topic;
 
-		public String getLogRequestId() {
-			return this.logRequestId;
-		}
+		private String path;
 
-		public void setLogRequestId(String logRequestId) {
-			this.logRequestId = logRequestId;
-		}
+		private String logRequestId;
 
-		public String getContent() {
-			return this.content;
-		}
-
-		public void setContent(String content) {
-			this.content = content;
-		}
+		private String content;
 
 		public String getTime() {
 			return this.time;
@@ -121,6 +105,14 @@ public class OpsDescribePyncCommonLogResponse extends AcsResponse {
 			this.ms = ms;
 		}
 
+		public String getTopic() {
+			return this.topic;
+		}
+
+		public void setTopic(String topic) {
+			this.topic = topic;
+		}
+
 		public String getPath() {
 			return this.path;
 		}
@@ -129,12 +121,20 @@ public class OpsDescribePyncCommonLogResponse extends AcsResponse {
 			this.path = path;
 		}
 
-		public String getTopic() {
-			return this.topic;
+		public String getLogRequestId() {
+			return this.logRequestId;
 		}
 
-		public void setTopic(String topic) {
-			this.topic = topic;
+		public void setLogRequestId(String logRequestId) {
+			this.logRequestId = logRequestId;
+		}
+
+		public String getContent() {
+			return this.content;
+		}
+
+		public void setContent(String content) {
+			this.content = content;
 		}
 	}
 

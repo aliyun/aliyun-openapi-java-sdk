@@ -28,24 +28,24 @@ public class OpsDescribeImageCopyingTasksResponseUnmarshaller {
 		
 		opsDescribeImageCopyingTasksResponse.setRequestId(_ctx.stringValue("OpsDescribeImageCopyingTasksResponse.RequestId"));
 		opsDescribeImageCopyingTasksResponse.setTotalCount(_ctx.integerValue("OpsDescribeImageCopyingTasksResponse.TotalCount"));
-		opsDescribeImageCopyingTasksResponse.setPageNumber(_ctx.integerValue("OpsDescribeImageCopyingTasksResponse.PageNumber"));
 		opsDescribeImageCopyingTasksResponse.setPageSize(_ctx.integerValue("OpsDescribeImageCopyingTasksResponse.PageSize"));
+		opsDescribeImageCopyingTasksResponse.setPageNumber(_ctx.integerValue("OpsDescribeImageCopyingTasksResponse.PageNumber"));
 
 		List<ImageTask> imageTasks = new ArrayList<ImageTask>();
 		for (int i = 0; i < _ctx.lengthValue("OpsDescribeImageCopyingTasksResponse.ImageTasks.Length"); i++) {
 			ImageTask imageTask = new ImageTask();
-			imageTask.setResourceOwnerId(_ctx.longValue("OpsDescribeImageCopyingTasksResponse.ImageTasks["+ i +"].ResourceOwnerId"));
-			imageTask.setTaskId(_ctx.stringValue("OpsDescribeImageCopyingTasksResponse.ImageTasks["+ i +"].TaskId"));
-			imageTask.setTaskType(_ctx.stringValue("OpsDescribeImageCopyingTasksResponse.ImageTasks["+ i +"].TaskType"));
 			imageTask.setStatus(_ctx.stringValue("OpsDescribeImageCopyingTasksResponse.ImageTasks["+ i +"].Status"));
-			imageTask.setCopiedBlock(_ctx.integerValue("OpsDescribeImageCopyingTasksResponse.ImageTasks["+ i +"].CopiedBlock"));
-			imageTask.setTotalBlock(_ctx.integerValue("OpsDescribeImageCopyingTasksResponse.ImageTasks["+ i +"].TotalBlock"));
-			imageTask.setSrcRegionId(_ctx.stringValue("OpsDescribeImageCopyingTasksResponse.ImageTasks["+ i +"].SrcRegionId"));
-			imageTask.setSrcInfo(_ctx.stringValue("OpsDescribeImageCopyingTasksResponse.ImageTasks["+ i +"].SrcInfo"));
-			imageTask.setDstRegionId(_ctx.stringValue("OpsDescribeImageCopyingTasksResponse.ImageTasks["+ i +"].DstRegionId"));
 			imageTask.setDstInfo(_ctx.stringValue("OpsDescribeImageCopyingTasksResponse.ImageTasks["+ i +"].DstInfo"));
-			imageTask.setCreatedTime(_ctx.longValue("OpsDescribeImageCopyingTasksResponse.ImageTasks["+ i +"].CreatedTime"));
+			imageTask.setSrcRegionId(_ctx.stringValue("OpsDescribeImageCopyingTasksResponse.ImageTasks["+ i +"].SrcRegionId"));
+			imageTask.setTotalBlock(_ctx.integerValue("OpsDescribeImageCopyingTasksResponse.ImageTasks["+ i +"].TotalBlock"));
+			imageTask.setTaskType(_ctx.stringValue("OpsDescribeImageCopyingTasksResponse.ImageTasks["+ i +"].TaskType"));
+			imageTask.setDstRegionId(_ctx.stringValue("OpsDescribeImageCopyingTasksResponse.ImageTasks["+ i +"].DstRegionId"));
+			imageTask.setResourceOwnerId(_ctx.longValue("OpsDescribeImageCopyingTasksResponse.ImageTasks["+ i +"].ResourceOwnerId"));
 			imageTask.setModifiedTime(_ctx.longValue("OpsDescribeImageCopyingTasksResponse.ImageTasks["+ i +"].ModifiedTime"));
+			imageTask.setSrcInfo(_ctx.stringValue("OpsDescribeImageCopyingTasksResponse.ImageTasks["+ i +"].SrcInfo"));
+			imageTask.setCopiedBlock(_ctx.integerValue("OpsDescribeImageCopyingTasksResponse.ImageTasks["+ i +"].CopiedBlock"));
+			imageTask.setCreatedTime(_ctx.longValue("OpsDescribeImageCopyingTasksResponse.ImageTasks["+ i +"].CreatedTime"));
+			imageTask.setTaskId(_ctx.stringValue("OpsDescribeImageCopyingTasksResponse.ImageTasks["+ i +"].TaskId"));
 
 			imageTasks.add(imageTask);
 		}

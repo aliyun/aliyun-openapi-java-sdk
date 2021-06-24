@@ -27,29 +27,28 @@ public class OpsQuerySpotPriceStrategyResponseUnmarshaller {
 	public static OpsQuerySpotPriceStrategyResponse unmarshall(OpsQuerySpotPriceStrategyResponse opsQuerySpotPriceStrategyResponse, UnmarshallerContext _ctx) {
 		
 		opsQuerySpotPriceStrategyResponse.setRequestId(_ctx.stringValue("OpsQuerySpotPriceStrategyResponse.RequestId"));
-		opsQuerySpotPriceStrategyResponse.setCode(_ctx.stringValue("OpsQuerySpotPriceStrategyResponse.Code"));
 		opsQuerySpotPriceStrategyResponse.setMessage(_ctx.stringValue("OpsQuerySpotPriceStrategyResponse.Message"));
+		opsQuerySpotPriceStrategyResponse.setCode(_ctx.stringValue("OpsQuerySpotPriceStrategyResponse.Code"));
 		opsQuerySpotPriceStrategyResponse.setSuccess(_ctx.stringValue("OpsQuerySpotPriceStrategyResponse.Success"));
 
 		List<SpotStrategy> spotStrategies = new ArrayList<SpotStrategy>();
 		for (int i = 0; i < _ctx.lengthValue("OpsQuerySpotPriceStrategyResponse.SpotStrategies.Length"); i++) {
 			SpotStrategy spotStrategy = new SpotStrategy();
-			spotStrategy.setId(_ctx.longValue("OpsQuerySpotPriceStrategyResponse.SpotStrategies["+ i +"].Id"));
-			spotStrategy.setGmtCreate(_ctx.stringValue("OpsQuerySpotPriceStrategyResponse.SpotStrategies["+ i +"].GmtCreate"));
-			spotStrategy.setGmtModified(_ctx.stringValue("OpsQuerySpotPriceStrategyResponse.SpotStrategies["+ i +"].GmtModified"));
-			spotStrategy.setGmtModified1(_ctx.stringValue("OpsQuerySpotPriceStrategyResponse.SpotStrategies["+ i +"].GmtModified"));
-			spotStrategy.setRegionNo(_ctx.stringValue("OpsQuerySpotPriceStrategyResponse.SpotStrategies["+ i +"].RegionNo"));
-			spotStrategy.setIzNo(_ctx.stringValue("OpsQuerySpotPriceStrategyResponse.SpotStrategies["+ i +"].IzNo"));
-			spotStrategy.setInstanceType(_ctx.stringValue("OpsQuerySpotPriceStrategyResponse.SpotStrategies["+ i +"].InstanceType"));
-			spotStrategy.setInstanceTypeFamily(_ctx.stringValue("OpsQuerySpotPriceStrategyResponse.SpotStrategies["+ i +"].InstanceTypeFamily"));
-			spotStrategy.setIoOptimized(_ctx.integerValue("OpsQuerySpotPriceStrategyResponse.SpotStrategies["+ i +"].IoOptimized"));
-			spotStrategy.setNetworkType(_ctx.stringValue("OpsQuerySpotPriceStrategyResponse.SpotStrategies["+ i +"].NetworkType"));
-			spotStrategy.setSpotDuration(_ctx.integerValue("OpsQuerySpotPriceStrategyResponse.SpotStrategies["+ i +"].SpotDuration"));
-			spotStrategy.setStartDate(_ctx.stringValue("OpsQuerySpotPriceStrategyResponse.SpotStrategies["+ i +"].StartDate"));
 			spotStrategy.setEndDate(_ctx.stringValue("OpsQuerySpotPriceStrategyResponse.SpotStrategies["+ i +"].EndDate"));
+			spotStrategy.setRegionNo(_ctx.stringValue("OpsQuerySpotPriceStrategyResponse.SpotStrategies["+ i +"].RegionNo"));
+			spotStrategy.setStartDate(_ctx.stringValue("OpsQuerySpotPriceStrategyResponse.SpotStrategies["+ i +"].StartDate"));
+			spotStrategy.setNetworkType(_ctx.stringValue("OpsQuerySpotPriceStrategyResponse.SpotStrategies["+ i +"].NetworkType"));
+			spotStrategy.setInstanceType(_ctx.stringValue("OpsQuerySpotPriceStrategyResponse.SpotStrategies["+ i +"].InstanceType"));
+			spotStrategy.setGmtModified(_ctx.stringValue("OpsQuerySpotPriceStrategyResponse.SpotStrategies["+ i +"].GmtModified"));
 			spotStrategy.setStrategyType(_ctx.integerValue("OpsQuerySpotPriceStrategyResponse.SpotStrategies["+ i +"].StrategyType"));
+			spotStrategy.setIoOptimized(_ctx.integerValue("OpsQuerySpotPriceStrategyResponse.SpotStrategies["+ i +"].IoOptimized"));
 			spotStrategy.setStrategyDetails(_ctx.stringValue("OpsQuerySpotPriceStrategyResponse.SpotStrategies["+ i +"].StrategyDetails"));
+			spotStrategy.setSpotDuration(_ctx.integerValue("OpsQuerySpotPriceStrategyResponse.SpotStrategies["+ i +"].SpotDuration"));
 			spotStrategy.setCreatedBy(_ctx.stringValue("OpsQuerySpotPriceStrategyResponse.SpotStrategies["+ i +"].CreatedBy"));
+			spotStrategy.setGmtCreate(_ctx.stringValue("OpsQuerySpotPriceStrategyResponse.SpotStrategies["+ i +"].GmtCreate"));
+			spotStrategy.setIzNo(_ctx.stringValue("OpsQuerySpotPriceStrategyResponse.SpotStrategies["+ i +"].IzNo"));
+			spotStrategy.setInstanceTypeFamily(_ctx.stringValue("OpsQuerySpotPriceStrategyResponse.SpotStrategies["+ i +"].InstanceTypeFamily"));
+			spotStrategy.setId(_ctx.longValue("OpsQuerySpotPriceStrategyResponse.SpotStrategies["+ i +"].Id"));
 
 			spotStrategies.add(spotStrategy);
 		}

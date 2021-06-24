@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsQueryNcOperationResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCnt;
-
-	private Integer pageNumber;
 
 	private Integer pageSize;
 
+	private String requestId;
+
+	private Integer pageNumber;
+
 	private List<NcOpsDetail> ncOpsDetailList;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalCnt() {
 		return this.totalCnt;
@@ -51,20 +43,28 @@ public class OpsQueryNcOperationResponse extends AcsResponse {
 		this.totalCnt = totalCnt;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<NcOpsDetail> getNcOpsDetailList() {
@@ -77,35 +77,75 @@ public class OpsQueryNcOperationResponse extends AcsResponse {
 
 	public static class NcOpsDetail {
 
+		private String action;
+
+		private String firstMatchTime;
+
+		private String machineType;
+
+		private String firstOpsTime;
+
+		private String opsRuleName;
+
 		private String ncIp;
 
 		private String cnSn;
+
+		private String isRateLimited;
+
+		private String description;
+
+		private String targetFeatures;
 
 		private String region;
 
 		private String clusterName;
 
-		private String machineType;
-
-		private String opsRuleName;
-
-		private String description;
-
-		private String firstMatchTime;
-
 		private Integer hitCnt;
-
-		private String action;
-
-		private String reason;
-
-		private String targetFeatures;
-
-		private String isRateLimited;
 
 		private Integer rateLimitedTime;
 
-		private String firstOpsTime;
+		private String reason;
+
+		public String getAction() {
+			return this.action;
+		}
+
+		public void setAction(String action) {
+			this.action = action;
+		}
+
+		public String getFirstMatchTime() {
+			return this.firstMatchTime;
+		}
+
+		public void setFirstMatchTime(String firstMatchTime) {
+			this.firstMatchTime = firstMatchTime;
+		}
+
+		public String getMachineType() {
+			return this.machineType;
+		}
+
+		public void setMachineType(String machineType) {
+			this.machineType = machineType;
+		}
+
+		public String getFirstOpsTime() {
+			return this.firstOpsTime;
+		}
+
+		public void setFirstOpsTime(String firstOpsTime) {
+			this.firstOpsTime = firstOpsTime;
+		}
+
+		public String getOpsRuleName() {
+			return this.opsRuleName;
+		}
+
+		public void setOpsRuleName(String opsRuleName) {
+			this.opsRuleName = opsRuleName;
+		}
 
 		public String getNcIp() {
 			return this.ncIp;
@@ -121,6 +161,30 @@ public class OpsQueryNcOperationResponse extends AcsResponse {
 
 		public void setCnSn(String cnSn) {
 			this.cnSn = cnSn;
+		}
+
+		public String getIsRateLimited() {
+			return this.isRateLimited;
+		}
+
+		public void setIsRateLimited(String isRateLimited) {
+			this.isRateLimited = isRateLimited;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getTargetFeatures() {
+			return this.targetFeatures;
+		}
+
+		public void setTargetFeatures(String targetFeatures) {
+			this.targetFeatures = targetFeatures;
 		}
 
 		public String getRegion() {
@@ -139,76 +203,12 @@ public class OpsQueryNcOperationResponse extends AcsResponse {
 			this.clusterName = clusterName;
 		}
 
-		public String getMachineType() {
-			return this.machineType;
-		}
-
-		public void setMachineType(String machineType) {
-			this.machineType = machineType;
-		}
-
-		public String getOpsRuleName() {
-			return this.opsRuleName;
-		}
-
-		public void setOpsRuleName(String opsRuleName) {
-			this.opsRuleName = opsRuleName;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
-		public String getFirstMatchTime() {
-			return this.firstMatchTime;
-		}
-
-		public void setFirstMatchTime(String firstMatchTime) {
-			this.firstMatchTime = firstMatchTime;
-		}
-
 		public Integer getHitCnt() {
 			return this.hitCnt;
 		}
 
 		public void setHitCnt(Integer hitCnt) {
 			this.hitCnt = hitCnt;
-		}
-
-		public String getAction() {
-			return this.action;
-		}
-
-		public void setAction(String action) {
-			this.action = action;
-		}
-
-		public String getReason() {
-			return this.reason;
-		}
-
-		public void setReason(String reason) {
-			this.reason = reason;
-		}
-
-		public String getTargetFeatures() {
-			return this.targetFeatures;
-		}
-
-		public void setTargetFeatures(String targetFeatures) {
-			this.targetFeatures = targetFeatures;
-		}
-
-		public String getIsRateLimited() {
-			return this.isRateLimited;
-		}
-
-		public void setIsRateLimited(String isRateLimited) {
-			this.isRateLimited = isRateLimited;
 		}
 
 		public Integer getRateLimitedTime() {
@@ -219,12 +219,12 @@ public class OpsQueryNcOperationResponse extends AcsResponse {
 			this.rateLimitedTime = rateLimitedTime;
 		}
 
-		public String getFirstOpsTime() {
-			return this.firstOpsTime;
+		public String getReason() {
+			return this.reason;
 		}
 
-		public void setFirstOpsTime(String firstOpsTime) {
-			this.firstOpsTime = firstOpsTime;
+		public void setReason(String reason) {
+			this.reason = reason;
 		}
 	}
 

@@ -37,10 +37,10 @@ public class OpsEccQuerySpecItemDiffNcsResponseUnmarshaller {
 		List<CompareResultItem> compareResult = new ArrayList<CompareResultItem>();
 		for (int i = 0; i < _ctx.lengthValue("OpsEccQuerySpecItemDiffNcsResponse.Data.CompareResult.Length"); i++) {
 			CompareResultItem compareResultItem = new CompareResultItem();
-			compareResultItem.setSn(_ctx.stringValue("OpsEccQuerySpecItemDiffNcsResponse.Data.CompareResult["+ i +"].Sn"));
-			compareResultItem.setNcIp(_ctx.stringValue("OpsEccQuerySpecItemDiffNcsResponse.Data.CompareResult["+ i +"].NcIp"));
 			compareResultItem.setConfigName(_ctx.stringValue("OpsEccQuerySpecItemDiffNcsResponse.Data.CompareResult["+ i +"].ConfigName"));
+			compareResultItem.setSn(_ctx.stringValue("OpsEccQuerySpecItemDiffNcsResponse.Data.CompareResult["+ i +"].Sn"));
 			compareResultItem.setConfigValue(_ctx.stringValue("OpsEccQuerySpecItemDiffNcsResponse.Data.CompareResult["+ i +"].ConfigValue"));
+			compareResultItem.setNcIp(_ctx.stringValue("OpsEccQuerySpecItemDiffNcsResponse.Data.CompareResult["+ i +"].NcIp"));
 			compareResultItem.setComparisonValue(_ctx.stringValue("OpsEccQuerySpecItemDiffNcsResponse.Data.CompareResult["+ i +"].ComparisonValue"));
 
 			compareResult.add(compareResultItem);

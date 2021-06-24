@@ -27,17 +27,17 @@ public class OpsListPlanStrategiesResponseUnmarshaller {
 	public static OpsListPlanStrategiesResponse unmarshall(OpsListPlanStrategiesResponse opsListPlanStrategiesResponse, UnmarshallerContext _ctx) {
 		
 		opsListPlanStrategiesResponse.setRequestId(_ctx.stringValue("OpsListPlanStrategiesResponse.RequestId"));
-		opsListPlanStrategiesResponse.setCode(_ctx.stringValue("OpsListPlanStrategiesResponse.Code"));
 		opsListPlanStrategiesResponse.setMessage(_ctx.stringValue("OpsListPlanStrategiesResponse.Message"));
+		opsListPlanStrategiesResponse.setCode(_ctx.stringValue("OpsListPlanStrategiesResponse.Code"));
 		opsListPlanStrategiesResponse.setSuccess(_ctx.stringValue("OpsListPlanStrategiesResponse.Success"));
 
 		List<PlanStrategy> planStrategies = new ArrayList<PlanStrategy>();
 		for (int i = 0; i < _ctx.lengthValue("OpsListPlanStrategiesResponse.PlanStrategies.Length"); i++) {
 			PlanStrategy planStrategy = new PlanStrategy();
-			planStrategy.setStrategyName(_ctx.stringValue("OpsListPlanStrategiesResponse.PlanStrategies["+ i +"].StrategyName"));
-			planStrategy.setDescription(_ctx.stringValue("OpsListPlanStrategiesResponse.PlanStrategies["+ i +"].Description"));
 			planStrategy.setStep(_ctx.stringValue("OpsListPlanStrategiesResponse.PlanStrategies["+ i +"].Step"));
 			planStrategy.setModel(_ctx.stringValue("OpsListPlanStrategiesResponse.PlanStrategies["+ i +"].Model"));
+			planStrategy.setStrategyName(_ctx.stringValue("OpsListPlanStrategiesResponse.PlanStrategies["+ i +"].StrategyName"));
+			planStrategy.setDescription(_ctx.stringValue("OpsListPlanStrategiesResponse.PlanStrategies["+ i +"].Description"));
 			planStrategy.setOrders(_ctx.stringValue("OpsListPlanStrategiesResponse.PlanStrategies["+ i +"].Orders"));
 			planStrategy.setForks(_ctx.integerValue("OpsListPlanStrategiesResponse.PlanStrategies["+ i +"].Forks"));
 

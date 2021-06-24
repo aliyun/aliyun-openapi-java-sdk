@@ -33,12 +33,12 @@ public class OpsQueryFunctionsResponseUnmarshaller {
 		List<FunctionGroup> functionGroupList = new ArrayList<FunctionGroup>();
 		for (int i = 0; i < _ctx.lengthValue("OpsQueryFunctionsResponse.FunctionGroupList.Length"); i++) {
 			FunctionGroup functionGroup = new FunctionGroup();
-			functionGroup.setId(_ctx.longValue("OpsQueryFunctionsResponse.FunctionGroupList["+ i +"].Id"));
+			functionGroup.setParentGroupId(_ctx.stringValue("OpsQueryFunctionsResponse.FunctionGroupList["+ i +"].ParentGroupId"));
 			functionGroup.setGroupId(_ctx.stringValue("OpsQueryFunctionsResponse.FunctionGroupList["+ i +"].GroupId"));
 			functionGroup.setGroupName(_ctx.stringValue("OpsQueryFunctionsResponse.FunctionGroupList["+ i +"].GroupName"));
-			functionGroup.setGroupCategory(_ctx.stringValue("OpsQueryFunctionsResponse.FunctionGroupList["+ i +"].GroupCategory"));
 			functionGroup.setPriority(_ctx.integerValue("OpsQueryFunctionsResponse.FunctionGroupList["+ i +"].Priority"));
-			functionGroup.setParentGroupId(_ctx.stringValue("OpsQueryFunctionsResponse.FunctionGroupList["+ i +"].ParentGroupId"));
+			functionGroup.setGroupCategory(_ctx.stringValue("OpsQueryFunctionsResponse.FunctionGroupList["+ i +"].GroupCategory"));
+			functionGroup.setId(_ctx.longValue("OpsQueryFunctionsResponse.FunctionGroupList["+ i +"].Id"));
 
 			functionGroupList.add(functionGroup);
 		}
@@ -47,14 +47,14 @@ public class OpsQueryFunctionsResponseUnmarshaller {
 		List<Function> functionList = new ArrayList<Function>();
 		for (int i = 0; i < _ctx.lengthValue("OpsQueryFunctionsResponse.FunctionList.Length"); i++) {
 			Function function = new Function();
-			function.setId(_ctx.longValue("OpsQueryFunctionsResponse.FunctionList["+ i +"].Id"));
 			function.setFunctionId(_ctx.stringValue("OpsQueryFunctionsResponse.FunctionList["+ i +"].FunctionId"));
-			function.setFunctionName(_ctx.stringValue("OpsQueryFunctionsResponse.FunctionList["+ i +"].FunctionName"));
 			function.setFunctionDescription(_ctx.stringValue("OpsQueryFunctionsResponse.FunctionList["+ i +"].FunctionDescription"));
-			function.setProductCode(_ctx.stringValue("OpsQueryFunctionsResponse.FunctionList["+ i +"].ProductCode"));
-			function.setPriority(_ctx.integerValue("OpsQueryFunctionsResponse.FunctionList["+ i +"].Priority"));
-			function.setFunctionViperFeature(_ctx.stringValue("OpsQueryFunctionsResponse.FunctionList["+ i +"].FunctionViperFeature"));
+			function.setFunctionName(_ctx.stringValue("OpsQueryFunctionsResponse.FunctionList["+ i +"].FunctionName"));
 			function.setGmtCreate(_ctx.stringValue("OpsQueryFunctionsResponse.FunctionList["+ i +"].GmtCreate"));
+			function.setFunctionViperFeature(_ctx.stringValue("OpsQueryFunctionsResponse.FunctionList["+ i +"].FunctionViperFeature"));
+			function.setPriority(_ctx.integerValue("OpsQueryFunctionsResponse.FunctionList["+ i +"].Priority"));
+			function.setId(_ctx.longValue("OpsQueryFunctionsResponse.FunctionList["+ i +"].Id"));
+			function.setProductCode(_ctx.stringValue("OpsQueryFunctionsResponse.FunctionList["+ i +"].ProductCode"));
 
 			List<String> functionGroupIdList = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("OpsQueryFunctionsResponse.FunctionList["+ i +"].FunctionGroupIdList.Length"); j++) {
@@ -65,10 +65,10 @@ public class OpsQueryFunctionsResponseUnmarshaller {
 			List<FunctionDoc> functionDocList = new ArrayList<FunctionDoc>();
 			for (int j = 0; j < _ctx.lengthValue("OpsQueryFunctionsResponse.FunctionList["+ i +"].FunctionDocList.Length"); j++) {
 				FunctionDoc functionDoc = new FunctionDoc();
-				functionDoc.setId(_ctx.longValue("OpsQueryFunctionsResponse.FunctionList["+ i +"].FunctionDocList["+ j +"].Id"));
 				functionDoc.setDocId(_ctx.stringValue("OpsQueryFunctionsResponse.FunctionList["+ i +"].FunctionDocList["+ j +"].DocId"));
-				functionDoc.setDocTitle(_ctx.stringValue("OpsQueryFunctionsResponse.FunctionList["+ i +"].FunctionDocList["+ j +"].DocTitle"));
 				functionDoc.setDocType(_ctx.stringValue("OpsQueryFunctionsResponse.FunctionList["+ i +"].FunctionDocList["+ j +"].DocType"));
+				functionDoc.setDocTitle(_ctx.stringValue("OpsQueryFunctionsResponse.FunctionList["+ i +"].FunctionDocList["+ j +"].DocTitle"));
+				functionDoc.setId(_ctx.longValue("OpsQueryFunctionsResponse.FunctionList["+ i +"].FunctionDocList["+ j +"].Id"));
 
 				functionDocList.add(functionDoc);
 			}

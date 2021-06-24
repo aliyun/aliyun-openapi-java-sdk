@@ -27,16 +27,16 @@ public class OpsListPlanGroupsResponseUnmarshaller {
 	public static OpsListPlanGroupsResponse unmarshall(OpsListPlanGroupsResponse opsListPlanGroupsResponse, UnmarshallerContext _ctx) {
 		
 		opsListPlanGroupsResponse.setRequestId(_ctx.stringValue("OpsListPlanGroupsResponse.RequestId"));
-		opsListPlanGroupsResponse.setCode(_ctx.stringValue("OpsListPlanGroupsResponse.Code"));
 		opsListPlanGroupsResponse.setMessage(_ctx.stringValue("OpsListPlanGroupsResponse.Message"));
+		opsListPlanGroupsResponse.setCode(_ctx.stringValue("OpsListPlanGroupsResponse.Code"));
 		opsListPlanGroupsResponse.setSuccess(_ctx.stringValue("OpsListPlanGroupsResponse.Success"));
 
 		List<PlanGroup> planGroups = new ArrayList<PlanGroup>();
 		for (int i = 0; i < _ctx.lengthValue("OpsListPlanGroupsResponse.PlanGroups.Length"); i++) {
 			PlanGroup planGroup = new PlanGroup();
+			planGroup.setRequired(_ctx.booleanValue("OpsListPlanGroupsResponse.PlanGroups["+ i +"].Required"));
 			planGroup.setGroupName(_ctx.stringValue("OpsListPlanGroupsResponse.PlanGroups["+ i +"].GroupName"));
 			planGroup.setDescription(_ctx.stringValue("OpsListPlanGroupsResponse.PlanGroups["+ i +"].Description"));
-			planGroup.setRequired(_ctx.booleanValue("OpsListPlanGroupsResponse.PlanGroups["+ i +"].Required"));
 			planGroup.setResourceLevel(_ctx.stringValue("OpsListPlanGroupsResponse.PlanGroups["+ i +"].ResourceLevel"));
 
 			planGroups.add(planGroup);

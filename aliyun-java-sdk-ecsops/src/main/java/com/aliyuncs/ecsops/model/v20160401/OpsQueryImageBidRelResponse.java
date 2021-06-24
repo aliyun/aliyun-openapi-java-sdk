@@ -24,6 +24,8 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsQueryImageBidRelResponse extends AcsResponse {
 
+	private String bid2PrivilegeJson;
+
 	private String requestId;
 
 	private String imageId;
@@ -32,7 +34,13 @@ public class OpsQueryImageBidRelResponse extends AcsResponse {
 
 	private Long resourceOwnerId;
 
-	private String bid2PrivilegeJson;
+	public String getBid2PrivilegeJson() {
+		return this.bid2PrivilegeJson;
+	}
+
+	public void setBid2PrivilegeJson(String bid2PrivilegeJson) {
+		this.bid2PrivilegeJson = bid2PrivilegeJson;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -64,14 +72,6 @@ public class OpsQueryImageBidRelResponse extends AcsResponse {
 
 	public void setResourceOwnerId(Long resourceOwnerId) {
 		this.resourceOwnerId = resourceOwnerId;
-	}
-
-	public String getBid2PrivilegeJson() {
-		return this.bid2PrivilegeJson;
-	}
-
-	public void setBid2PrivilegeJson(String bid2PrivilegeJson) {
-		this.bid2PrivilegeJson = bid2PrivilegeJson;
 	}
 
 	@Override

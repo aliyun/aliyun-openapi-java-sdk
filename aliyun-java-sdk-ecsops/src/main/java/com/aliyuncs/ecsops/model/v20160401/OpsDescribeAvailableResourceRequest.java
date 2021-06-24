@@ -16,7 +16,6 @@ package com.aliyuncs.ecsops.model.v20160401;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
-import com.aliyuncs.ecsops.Endpoint;
 
 /**
  * @author auto create
@@ -45,6 +44,8 @@ public class OpsDescribeAvailableResourceRequest extends RpcAcsRequest<OpsDescri
 
 	private Long aliUid;
 
+	private String dedicatedHostType;
+
 	private String instanceChargeType;
 
 	private String resourceOwnerAccount;
@@ -67,12 +68,8 @@ public class OpsDescribeAvailableResourceRequest extends RpcAcsRequest<OpsDescri
 
 	private String auditParamStr;
 	public OpsDescribeAvailableResourceRequest() {
-		super("Ecsops", "2016-04-01", "OpsDescribeAvailableResource", "ecs");
+		super("Ecsops", "2016-04-01", "OpsDescribeAvailableResource", "ecsops");
 		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
 	}
 
 	public Long getResourceOwnerId() {
@@ -182,6 +179,17 @@ public class OpsDescribeAvailableResourceRequest extends RpcAcsRequest<OpsDescri
 		this.aliUid = aliUid;
 		if(aliUid != null){
 			putQueryParameter("AliUid", aliUid.toString());
+		}
+	}
+
+	public String getDedicatedHostType() {
+		return this.dedicatedHostType;
+	}
+
+	public void setDedicatedHostType(String dedicatedHostType) {
+		this.dedicatedHostType = dedicatedHostType;
+		if(dedicatedHostType != null){
+			putQueryParameter("DedicatedHostType", dedicatedHostType);
 		}
 	}
 

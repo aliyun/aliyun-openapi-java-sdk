@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsDescribeDiagnoseAbnormalResponse extends AcsResponse {
 
+	private String message;
+
 	private String requestId;
 
 	private String code;
 
-	private String message;
-
 	private String success;
 
 	private List<Event> events;
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -49,14 +57,6 @@ public class OpsDescribeDiagnoseAbnormalResponse extends AcsResponse {
 
 	public void setCode(String code) {
 		this.code = code;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
 	}
 
 	public String getSuccess() {
@@ -77,19 +77,11 @@ public class OpsDescribeDiagnoseAbnormalResponse extends AcsResponse {
 
 	public static class Event {
 
-		private String resourceId;
-
 		private String resourceType;
 
+		private String resourceId;
+
 		private List<Item> items;
-
-		public String getResourceId() {
-			return this.resourceId;
-		}
-
-		public void setResourceId(String resourceId) {
-			this.resourceId = resourceId;
-		}
 
 		public String getResourceType() {
 			return this.resourceType;
@@ -97,6 +89,14 @@ public class OpsDescribeDiagnoseAbnormalResponse extends AcsResponse {
 
 		public void setResourceType(String resourceType) {
 			this.resourceType = resourceType;
+		}
+
+		public String getResourceId() {
+			return this.resourceId;
+		}
+
+		public void setResourceId(String resourceId) {
+			this.resourceId = resourceId;
 		}
 
 		public List<Item> getItems() {
@@ -111,9 +111,9 @@ public class OpsDescribeDiagnoseAbnormalResponse extends AcsResponse {
 
 			private String itemCategory;
 
-			private String itemCode;
-
 			private String message;
+
+			private String itemCode;
 
 			public String getItemCategory() {
 				return this.itemCategory;
@@ -123,20 +123,20 @@ public class OpsDescribeDiagnoseAbnormalResponse extends AcsResponse {
 				this.itemCategory = itemCategory;
 			}
 
-			public String getItemCode() {
-				return this.itemCode;
-			}
-
-			public void setItemCode(String itemCode) {
-				this.itemCode = itemCode;
-			}
-
 			public String getMessage() {
 				return this.message;
 			}
 
 			public void setMessage(String message) {
 				this.message = message;
+			}
+
+			public String getItemCode() {
+				return this.itemCode;
+			}
+
+			public void setItemCode(String itemCode) {
+				this.itemCode = itemCode;
 			}
 		}
 	}

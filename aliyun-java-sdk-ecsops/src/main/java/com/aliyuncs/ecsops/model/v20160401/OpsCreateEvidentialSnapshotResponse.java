@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpsCreateEvidentialSnapshotResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String snapshotId;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getSnapshotId() {
 		return this.snapshotId;
@@ -42,6 +34,14 @@ public class OpsCreateEvidentialSnapshotResponse extends AcsResponse {
 
 	public void setSnapshotId(String snapshotId) {
 		this.snapshotId = snapshotId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override
