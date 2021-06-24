@@ -33,6 +33,8 @@ public class ModifyAccessRuleRequest extends RpcAcsRequest<ModifyAccessRuleRespo
 
 	private String accessRuleId;
 
+	private String ipv6SourceCidrIp;
+
 	private String sourceCidrIp;
 
 	private Integer priority;
@@ -88,6 +90,17 @@ public class ModifyAccessRuleRequest extends RpcAcsRequest<ModifyAccessRuleRespo
 		this.accessRuleId = accessRuleId;
 		if(accessRuleId != null){
 			putQueryParameter("AccessRuleId", accessRuleId);
+		}
+	}
+
+	public String getIpv6SourceCidrIp() {
+		return this.ipv6SourceCidrIp;
+	}
+
+	public void setIpv6SourceCidrIp(String ipv6SourceCidrIp) {
+		this.ipv6SourceCidrIp = ipv6SourceCidrIp;
+		if(ipv6SourceCidrIp != null){
+			putQueryParameter("Ipv6SourceCidrIp", ipv6SourceCidrIp);
 		}
 	}
 

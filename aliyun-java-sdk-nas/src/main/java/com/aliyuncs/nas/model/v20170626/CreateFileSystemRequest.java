@@ -54,6 +54,8 @@ public class CreateFileSystemRequest extends RpcAcsRequest<CreateFileSystemRespo
 	private String protocolType;
 
 	private String chargeType;
+
+	private String kmsKeyId;
 	public CreateFileSystemRequest() {
 		super("NAS", "2017-06-26", "CreateFileSystem");
 		setMethod(MethodType.POST);
@@ -225,6 +227,17 @@ public class CreateFileSystemRequest extends RpcAcsRequest<CreateFileSystemRespo
 		this.chargeType = chargeType;
 		if(chargeType != null){
 			putQueryParameter("ChargeType", chargeType);
+		}
+	}
+
+	public String getKmsKeyId() {
+		return this.kmsKeyId;
+	}
+
+	public void setKmsKeyId(String kmsKeyId) {
+		this.kmsKeyId = kmsKeyId;
+		if(kmsKeyId != null){
+			putQueryParameter("KmsKeyId", kmsKeyId);
 		}
 	}
 

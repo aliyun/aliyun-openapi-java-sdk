@@ -39,6 +39,7 @@ public class DescribeAccessRulesResponseUnmarshaller {
 			accessRule.setAccessRuleId(_ctx.stringValue("DescribeAccessRulesResponse.AccessRules["+ i +"].AccessRuleId"));
 			accessRule.setRWAccess(_ctx.stringValue("DescribeAccessRulesResponse.AccessRules["+ i +"].RWAccess"));
 			accessRule.setUserAccess(_ctx.stringValue("DescribeAccessRulesResponse.AccessRules["+ i +"].UserAccess"));
+			accessRule.setIpv6SourceCidrIp(_ctx.stringValue("DescribeAccessRulesResponse.AccessRules["+ i +"].Ipv6SourceCidrIp"));
 
 			accessRules.add(accessRule);
 		}

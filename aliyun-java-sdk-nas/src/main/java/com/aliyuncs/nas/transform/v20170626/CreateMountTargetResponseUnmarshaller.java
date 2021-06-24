@@ -15,6 +15,7 @@
 package com.aliyuncs.nas.transform.v20170626;
 
 import com.aliyuncs.nas.model.v20170626.CreateMountTargetResponse;
+import com.aliyuncs.nas.model.v20170626.CreateMountTargetResponse.MountTargetExtra;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -24,6 +25,10 @@ public class CreateMountTargetResponseUnmarshaller {
 		
 		createMountTargetResponse.setRequestId(_ctx.stringValue("CreateMountTargetResponse.RequestId"));
 		createMountTargetResponse.setMountTargetDomain(_ctx.stringValue("CreateMountTargetResponse.MountTargetDomain"));
+
+		MountTargetExtra mountTargetExtra = new MountTargetExtra();
+		mountTargetExtra.setDualStackMountTargetDomain(_ctx.stringValue("CreateMountTargetResponse.MountTargetExtra.DualStackMountTargetDomain"));
+		createMountTargetResponse.setMountTargetExtra(mountTargetExtra);
 	 
 	 	return createMountTargetResponse;
 	}

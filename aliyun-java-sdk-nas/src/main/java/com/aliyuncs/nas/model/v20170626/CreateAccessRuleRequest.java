@@ -31,6 +31,8 @@ public class CreateAccessRuleRequest extends RpcAcsRequest<CreateAccessRuleRespo
 
 	private String fileSystemType;
 
+	private String ipv6SourceCidrIp;
+
 	private String sourceCidrIp;
 
 	private Integer priority;
@@ -75,6 +77,17 @@ public class CreateAccessRuleRequest extends RpcAcsRequest<CreateAccessRuleRespo
 		this.fileSystemType = fileSystemType;
 		if(fileSystemType != null){
 			putQueryParameter("FileSystemType", fileSystemType);
+		}
+	}
+
+	public String getIpv6SourceCidrIp() {
+		return this.ipv6SourceCidrIp;
+	}
+
+	public void setIpv6SourceCidrIp(String ipv6SourceCidrIp) {
+		this.ipv6SourceCidrIp = ipv6SourceCidrIp;
+		if(ipv6SourceCidrIp != null){
+			putQueryParameter("Ipv6SourceCidrIp", ipv6SourceCidrIp);
 		}
 	}
 

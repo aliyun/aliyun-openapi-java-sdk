@@ -87,6 +87,8 @@ public class DescribeAccessRulesResponse extends AcsResponse {
 
 		private String userAccess;
 
+		private String ipv6SourceCidrIp;
+
 		public String getSourceCidrIp() {
 			return this.sourceCidrIp;
 		}
@@ -125,6 +127,14 @@ public class DescribeAccessRulesResponse extends AcsResponse {
 
 		public void setUserAccess(String userAccess) {
 			this.userAccess = userAccess;
+		}
+
+		public String getIpv6SourceCidrIp() {
+			return this.ipv6SourceCidrIp;
+		}
+
+		public void setIpv6SourceCidrIp(String ipv6SourceCidrIp) {
+			this.ipv6SourceCidrIp = ipv6SourceCidrIp;
 		}
 	}
 
