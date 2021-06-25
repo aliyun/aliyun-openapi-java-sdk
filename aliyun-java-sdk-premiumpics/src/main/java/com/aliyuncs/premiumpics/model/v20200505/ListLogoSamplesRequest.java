@@ -21,17 +21,28 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class DeleteUserCollectionRequest extends RpcAcsRequest<DeleteUserCollectionResponse> {
+public class ListLogoSamplesRequest extends RpcAcsRequest<ListLogoSamplesResponse> {
 	   
+
+	private String goodsId;
 
 	private String userId;
 
-	private String bizType;
+	private Integer page;
+	public ListLogoSamplesRequest() {
+		super("Premiumpics", "2020-05-05", "ListLogoSamples");
+		setMethod(MethodType.GET);
+	}
 
-	private String unitId;
-	public DeleteUserCollectionRequest() {
-		super("Premiumpics", "2020-05-05", "DeleteUserCollection");
-		setMethod(MethodType.POST);
+	public String getGoodsId() {
+		return this.goodsId;
+	}
+
+	public void setGoodsId(String goodsId) {
+		this.goodsId = goodsId;
+		if(goodsId != null){
+			putQueryParameter("GoodsId", goodsId);
+		}
 	}
 
 	public String getUserId() {
@@ -45,31 +56,20 @@ public class DeleteUserCollectionRequest extends RpcAcsRequest<DeleteUserCollect
 		}
 	}
 
-	public String getBizType() {
-		return this.bizType;
+	public Integer getPage() {
+		return this.page;
 	}
 
-	public void setBizType(String bizType) {
-		this.bizType = bizType;
-		if(bizType != null){
-			putQueryParameter("BizType", bizType);
-		}
-	}
-
-	public String getUnitId() {
-		return this.unitId;
-	}
-
-	public void setUnitId(String unitId) {
-		this.unitId = unitId;
-		if(unitId != null){
-			putQueryParameter("UnitId", unitId);
+	public void setPage(Integer page) {
+		this.page = page;
+		if(page != null){
+			putQueryParameter("Page", page.toString());
 		}
 	}
 
 	@Override
-	public Class<DeleteUserCollectionResponse> getResponseClass() {
-		return DeleteUserCollectionResponse.class;
+	public Class<ListLogoSamplesResponse> getResponseClass() {
+		return ListLogoSamplesResponse.class;
 	}
 
 }

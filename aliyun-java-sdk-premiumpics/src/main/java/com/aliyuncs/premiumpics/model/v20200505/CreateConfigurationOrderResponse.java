@@ -12,27 +12,25 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.premiumpics.model.v20190619;
+package com.aliyuncs.premiumpics.model.v20200505;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.premiumpics.transform.v20190619.ConsumeImageResponseUnmarshaller;
+import com.aliyuncs.premiumpics.transform.v20200505.CreateConfigurationOrderResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ConsumeImageResponse extends AcsResponse {
+public class CreateConfigurationOrderResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
-
 	private String errorMsg;
 
-	private String errorCode;
+	private Long data;
 
-	private Integer status;
+	private Boolean success;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -40,14 +38,6 @@ public class ConsumeImageResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
 	}
 
 	public String getErrorMsg() {
@@ -58,25 +48,25 @@ public class ConsumeImageResponse extends AcsResponse {
 		this.errorMsg = errorMsg;
 	}
 
-	public String getErrorCode() {
-		return this.errorCode;
+	public Long getData() {
+		return this.data;
 	}
 
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
+	public void setData(Long data) {
+		this.data = data;
 	}
 
-	public Integer getStatus() {
-		return this.status;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setStatus(Integer status) {
-		this.status = status;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	@Override
-	public ConsumeImageResponse getInstance(UnmarshallerContext context) {
-		return	ConsumeImageResponseUnmarshaller.unmarshall(this, context);
+	public CreateConfigurationOrderResponse getInstance(UnmarshallerContext context) {
+		return	CreateConfigurationOrderResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

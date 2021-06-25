@@ -25,27 +25,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListUserProduceOperateLogsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer pageNum;
 
 	private Integer pageSize;
+
+	private String requestId;
+
+	private Boolean success;
 
 	private Integer totalItemNum;
 
 	private Integer totalPageNum;
 
-	private Boolean success;
-
 	private List<OpateLogs> data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getPageNum() {
 		return this.pageNum;
@@ -61,6 +53,22 @@ public class ListUserProduceOperateLogsResponse extends AcsResponse {
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Integer getTotalItemNum() {
@@ -79,14 +87,6 @@ public class ListUserProduceOperateLogsResponse extends AcsResponse {
 		this.totalPageNum = totalPageNum;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
 	public List<OpateLogs> getData() {
 		return this.data;
 	}
@@ -101,11 +101,11 @@ public class ListUserProduceOperateLogsResponse extends AcsResponse {
 
 		private String bizType;
 
+		private String operateName;
+
 		private Long operateTime;
 
 		private String operateUserType;
-
-		private String operateName;
 
 		public String getBizId() {
 			return this.bizId;
@@ -123,6 +123,14 @@ public class ListUserProduceOperateLogsResponse extends AcsResponse {
 			this.bizType = bizType;
 		}
 
+		public String getOperateName() {
+			return this.operateName;
+		}
+
+		public void setOperateName(String operateName) {
+			this.operateName = operateName;
+		}
+
 		public Long getOperateTime() {
 			return this.operateTime;
 		}
@@ -137,14 +145,6 @@ public class ListUserProduceOperateLogsResponse extends AcsResponse {
 
 		public void setOperateUserType(String operateUserType) {
 			this.operateUserType = operateUserType;
-		}
-
-		public String getOperateName() {
-			return this.operateName;
-		}
-
-		public void setOperateName(String operateName) {
-			this.operateName = operateName;
 		}
 	}
 

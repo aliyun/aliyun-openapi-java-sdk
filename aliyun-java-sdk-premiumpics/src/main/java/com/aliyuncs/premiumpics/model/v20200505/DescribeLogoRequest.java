@@ -21,17 +21,26 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class DeleteUserCollectionRequest extends RpcAcsRequest<DeleteUserCollectionResponse> {
+public class DescribeLogoRequest extends RpcAcsRequest<DescribeLogoResponse> {
 	   
 
+	private String goodsId;
+
 	private String userId;
+	public DescribeLogoRequest() {
+		super("Premiumpics", "2020-05-05", "DescribeLogo");
+		setMethod(MethodType.GET);
+	}
 
-	private String bizType;
+	public String getGoodsId() {
+		return this.goodsId;
+	}
 
-	private String unitId;
-	public DeleteUserCollectionRequest() {
-		super("Premiumpics", "2020-05-05", "DeleteUserCollection");
-		setMethod(MethodType.POST);
+	public void setGoodsId(String goodsId) {
+		this.goodsId = goodsId;
+		if(goodsId != null){
+			putQueryParameter("GoodsId", goodsId);
+		}
 	}
 
 	public String getUserId() {
@@ -45,31 +54,9 @@ public class DeleteUserCollectionRequest extends RpcAcsRequest<DeleteUserCollect
 		}
 	}
 
-	public String getBizType() {
-		return this.bizType;
-	}
-
-	public void setBizType(String bizType) {
-		this.bizType = bizType;
-		if(bizType != null){
-			putQueryParameter("BizType", bizType);
-		}
-	}
-
-	public String getUnitId() {
-		return this.unitId;
-	}
-
-	public void setUnitId(String unitId) {
-		this.unitId = unitId;
-		if(unitId != null){
-			putQueryParameter("UnitId", unitId);
-		}
-	}
-
 	@Override
-	public Class<DeleteUserCollectionResponse> getResponseClass() {
-		return DeleteUserCollectionResponse.class;
+	public Class<DescribeLogoResponse> getResponseClass() {
+		return DescribeLogoResponse.class;
 	}
 
 }

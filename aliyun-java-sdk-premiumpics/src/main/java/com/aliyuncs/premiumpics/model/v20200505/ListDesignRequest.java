@@ -21,18 +21,18 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class OperateProduceForPartnerRequest extends RpcAcsRequest<OperateProduceForPartnerResponse> {
+public class ListDesignRequest extends RpcAcsRequest<ListDesignResponse> {
 	   
 
 	private String extInfo;
 
-	private String bizType;
+	private String designVersion;
 
-	private String bizId;
+	private String designType;
 
-	private String operateType;
-	public OperateProduceForPartnerRequest() {
-		super("Premiumpics", "2020-05-05", "OperateProduceForPartner");
+	private Integer pageSize;
+	public ListDesignRequest() {
+		super("Premiumpics", "2020-05-05", "ListDesign");
 		setMethod(MethodType.POST);
 	}
 
@@ -47,42 +47,42 @@ public class OperateProduceForPartnerRequest extends RpcAcsRequest<OperateProduc
 		}
 	}
 
-	public String getBizType() {
-		return this.bizType;
+	public String getDesignVersion() {
+		return this.designVersion;
 	}
 
-	public void setBizType(String bizType) {
-		this.bizType = bizType;
-		if(bizType != null){
-			putQueryParameter("BizType", bizType);
+	public void setDesignVersion(String designVersion) {
+		this.designVersion = designVersion;
+		if(designVersion != null){
+			putQueryParameter("DesignVersion", designVersion);
 		}
 	}
 
-	public String getBizId() {
-		return this.bizId;
+	public String getDesignType() {
+		return this.designType;
 	}
 
-	public void setBizId(String bizId) {
-		this.bizId = bizId;
-		if(bizId != null){
-			putQueryParameter("BizId", bizId);
+	public void setDesignType(String designType) {
+		this.designType = designType;
+		if(designType != null){
+			putQueryParameter("DesignType", designType);
 		}
 	}
 
-	public String getOperateType() {
-		return this.operateType;
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setOperateType(String operateType) {
-		this.operateType = operateType;
-		if(operateType != null){
-			putQueryParameter("OperateType", operateType);
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
 	@Override
-	public Class<OperateProduceForPartnerResponse> getResponseClass() {
-		return OperateProduceForPartnerResponse.class;
+	public Class<ListDesignResponse> getResponseClass() {
+		return ListDesignResponse.class;
 	}
 
 }

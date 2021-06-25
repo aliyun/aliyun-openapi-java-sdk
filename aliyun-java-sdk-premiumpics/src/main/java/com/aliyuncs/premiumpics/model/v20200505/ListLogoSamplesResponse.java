@@ -12,43 +12,24 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.premiumpics.model.v20190619;
+package com.aliyuncs.premiumpics.model.v20200505;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.premiumpics.transform.v20190619.CreateUserCollectionResponseUnmarshaller;
+import com.aliyuncs.premiumpics.transform.v20200505.ListLogoSamplesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateUserCollectionResponse extends AcsResponse {
-
-	private String errorCode;
-
-	private String errorMsg;
+public class ListLogoSamplesResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean status;
-
 	private Boolean success;
 
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
-	}
-
-	public String getErrorMsg() {
-		return this.errorMsg;
-	}
-
-	public void setErrorMsg(String errorMsg) {
-		this.errorMsg = errorMsg;
-	}
+	private List<String> images;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -56,14 +37,6 @@ public class CreateUserCollectionResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Boolean getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(Boolean status) {
-		this.status = status;
 	}
 
 	public Boolean getSuccess() {
@@ -74,9 +47,17 @@ public class CreateUserCollectionResponse extends AcsResponse {
 		this.success = success;
 	}
 
+	public List<String> getImages() {
+		return this.images;
+	}
+
+	public void setImages(List<String> images) {
+		this.images = images;
+	}
+
 	@Override
-	public CreateUserCollectionResponse getInstance(UnmarshallerContext context) {
-		return	CreateUserCollectionResponseUnmarshaller.unmarshall(this, context);
+	public ListLogoSamplesResponse getInstance(UnmarshallerContext context) {
+		return	ListLogoSamplesResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

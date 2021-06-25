@@ -12,7 +12,7 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.premiumpics.model.v20190619;
+package com.aliyuncs.premiumpics.model.v20200505;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
@@ -21,42 +21,42 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class ConsumeImageRequest extends RpcAcsRequest<ConsumeImageResponse> {
+public class DescribePolicyRequest extends RpcAcsRequest<DescribePolicyResponse> {
 	   
 
-	private String imageId;
+	private String fileType;
 
-	private String authId;
-	public ConsumeImageRequest() {
-		super("Premiumpics", "2019-06-19", "ConsumeImage");
+	private String bizType;
+	public DescribePolicyRequest() {
+		super("Premiumpics", "2020-05-05", "DescribePolicy");
 		setMethod(MethodType.POST);
 	}
 
-	public String getImageId() {
-		return this.imageId;
+	public String getFileType() {
+		return this.fileType;
 	}
 
-	public void setImageId(String imageId) {
-		this.imageId = imageId;
-		if(imageId != null){
-			putQueryParameter("ImageId", imageId);
+	public void setFileType(String fileType) {
+		this.fileType = fileType;
+		if(fileType != null){
+			putQueryParameter("FileType", fileType);
 		}
 	}
 
-	public String getAuthId() {
-		return this.authId;
+	public String getBizType() {
+		return this.bizType;
 	}
 
-	public void setAuthId(String authId) {
-		this.authId = authId;
-		if(authId != null){
-			putQueryParameter("AuthId", authId);
+	public void setBizType(String bizType) {
+		this.bizType = bizType;
+		if(bizType != null){
+			putQueryParameter("BizType", bizType);
 		}
 	}
 
 	@Override
-	public Class<ConsumeImageResponse> getResponseClass() {
-		return ConsumeImageResponse.class;
+	public Class<DescribePolicyResponse> getResponseClass() {
+		return DescribePolicyResponse.class;
 	}
 
 }

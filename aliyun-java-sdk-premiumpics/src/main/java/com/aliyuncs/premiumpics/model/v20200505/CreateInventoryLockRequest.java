@@ -21,42 +21,42 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class DescribePartnerConfigRequest extends RpcAcsRequest<DescribePartnerConfigResponse> {
+public class CreateInventoryLockRequest extends RpcAcsRequest<CreateInventoryLockResponse> {
 	   
 
-	private String partnerCode;
+	private String goodsId;
 
-	private String bizType;
-	public DescribePartnerConfigRequest() {
-		super("Premiumpics", "2020-05-05", "DescribePartnerConfig");
+	private String userId;
+	public CreateInventoryLockRequest() {
+		super("Premiumpics", "2020-05-05", "CreateInventoryLock");
 		setMethod(MethodType.POST);
 	}
 
-	public String getPartnerCode() {
-		return this.partnerCode;
+	public String getGoodsId() {
+		return this.goodsId;
 	}
 
-	public void setPartnerCode(String partnerCode) {
-		this.partnerCode = partnerCode;
-		if(partnerCode != null){
-			putQueryParameter("PartnerCode", partnerCode);
+	public void setGoodsId(String goodsId) {
+		this.goodsId = goodsId;
+		if(goodsId != null){
+			putQueryParameter("GoodsId", goodsId);
 		}
 	}
 
-	public String getBizType() {
-		return this.bizType;
+	public String getUserId() {
+		return this.userId;
 	}
 
-	public void setBizType(String bizType) {
-		this.bizType = bizType;
-		if(bizType != null){
-			putQueryParameter("BizType", bizType);
+	public void setUserId(String userId) {
+		this.userId = userId;
+		if(userId != null){
+			putQueryParameter("UserId", userId);
 		}
 	}
 
 	@Override
-	public Class<DescribePartnerConfigResponse> getResponseClass() {
-		return DescribePartnerConfigResponse.class;
+	public Class<CreateInventoryLockResponse> getResponseClass() {
+		return CreateInventoryLockResponse.class;
 	}
 
 }

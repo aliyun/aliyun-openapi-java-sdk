@@ -12,29 +12,26 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.premiumpics.model.v20190619;
+package com.aliyuncs.premiumpics.model.v20200505;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.premiumpics.transform.v20190619.GetImageProduceSummaryResponseUnmarshaller;
+import com.aliyuncs.premiumpics.transform.v20200505.GetTextLogoListResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetImageProduceSummaryResponse extends AcsResponse {
+public class GetTextLogoListResponse extends AcsResponse {
 
 	private String requestId;
 
 	private Boolean success;
 
-	private String errorMsg;
+	private String logoVersion;
 
-	private String errorCode;
-
-	private Integer totalCount;
-
-	private Integer usedCount;
+	private List<LogosItem> logos;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -52,41 +49,48 @@ public class GetImageProduceSummaryResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public String getErrorMsg() {
-		return this.errorMsg;
+	public String getLogoVersion() {
+		return this.logoVersion;
 	}
 
-	public void setErrorMsg(String errorMsg) {
-		this.errorMsg = errorMsg;
+	public void setLogoVersion(String logoVersion) {
+		this.logoVersion = logoVersion;
 	}
 
-	public String getErrorCode() {
-		return this.errorCode;
+	public List<LogosItem> getLogos() {
+		return this.logos;
 	}
 
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
+	public void setLogos(List<LogosItem> logos) {
+		this.logos = logos;
 	}
 
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
+	public static class LogosItem {
 
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
-	}
+		private String goodsId;
 
-	public Integer getUsedCount() {
-		return this.usedCount;
-	}
+		private String url;
 
-	public void setUsedCount(Integer usedCount) {
-		this.usedCount = usedCount;
+		public String getGoodsId() {
+			return this.goodsId;
+		}
+
+		public void setGoodsId(String goodsId) {
+			this.goodsId = goodsId;
+		}
+
+		public String getUrl() {
+			return this.url;
+		}
+
+		public void setUrl(String url) {
+			this.url = url;
+		}
 	}
 
 	@Override
-	public GetImageProduceSummaryResponse getInstance(UnmarshallerContext context) {
-		return	GetImageProduceSummaryResponseUnmarshaller.unmarshall(this, context);
+	public GetTextLogoListResponse getInstance(UnmarshallerContext context) {
+		return	GetTextLogoListResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

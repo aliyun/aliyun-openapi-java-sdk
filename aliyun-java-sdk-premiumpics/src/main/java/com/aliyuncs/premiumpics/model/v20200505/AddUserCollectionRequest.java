@@ -12,7 +12,7 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.premiumpics.model.v20190619;
+package com.aliyuncs.premiumpics.model.v20200505;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
@@ -21,30 +21,17 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class CreateUserCollectionRequest extends RpcAcsRequest<CreateUserCollectionResponse> {
+public class AddUserCollectionRequest extends RpcAcsRequest<AddUserCollectionResponse> {
 	   
-
-	private String clientToken;
 
 	private String bizType;
 
 	private String unitName;
 
 	private String unitId;
-	public CreateUserCollectionRequest() {
-		super("Premiumpics", "2019-06-19", "CreateUserCollection");
+	public AddUserCollectionRequest() {
+		super("Premiumpics", "2020-05-05", "AddUserCollection");
 		setMethod(MethodType.POST);
-	}
-
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
-		}
 	}
 
 	public String getBizType() {
@@ -81,8 +68,8 @@ public class CreateUserCollectionRequest extends RpcAcsRequest<CreateUserCollect
 	}
 
 	@Override
-	public Class<CreateUserCollectionResponse> getResponseClass() {
-		return CreateUserCollectionResponse.class;
+	public Class<AddUserCollectionResponse> getResponseClass() {
+		return AddUserCollectionResponse.class;
 	}
 
 }

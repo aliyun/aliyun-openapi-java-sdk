@@ -24,16 +24,27 @@ import com.aliyuncs.http.MethodType;
 public class ListUserProduceOperateLogsRequest extends RpcAcsRequest<ListUserProduceOperateLogsResponse> {
 	   
 
+	private Integer pageNum;
+
 	private String bizType;
 
 	private String bizId;
 
 	private Integer pageSize;
-
-	private Integer pageNum;
 	public ListUserProduceOperateLogsRequest() {
 		super("Premiumpics", "2020-05-05", "ListUserProduceOperateLogs");
 		setMethod(MethodType.POST);
+	}
+
+	public Integer getPageNum() {
+		return this.pageNum;
+	}
+
+	public void setPageNum(Integer pageNum) {
+		this.pageNum = pageNum;
+		if(pageNum != null){
+			putQueryParameter("PageNum", pageNum.toString());
+		}
 	}
 
 	public String getBizType() {
@@ -66,17 +77,6 @@ public class ListUserProduceOperateLogsRequest extends RpcAcsRequest<ListUserPro
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public Integer getPageNum() {
-		return this.pageNum;
-	}
-
-	public void setPageNum(Integer pageNum) {
-		this.pageNum = pageNum;
-		if(pageNum != null){
-			putQueryParameter("PageNum", pageNum.toString());
 		}
 	}
 

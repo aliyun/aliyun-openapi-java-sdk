@@ -36,6 +36,9 @@ public class DescribeUserProduceResponseUnmarshaller {
 		describeUserProduceResponse.setStatus(_ctx.integerValue("DescribeUserProduceResponse.Status"));
 		describeUserProduceResponse.setSuccess(_ctx.booleanValue("DescribeUserProduceResponse.Success"));
 		describeUserProduceResponse.setUserId(_ctx.stringValue("DescribeUserProduceResponse.UserId"));
+		describeUserProduceResponse.setStartTime(_ctx.stringValue("DescribeUserProduceResponse.StartTime"));
+		describeUserProduceResponse.setEndTime(_ctx.stringValue("DescribeUserProduceResponse.EndTime"));
+		describeUserProduceResponse.setOrderInstanceId(_ctx.stringValue("DescribeUserProduceResponse.OrderInstanceId"));
 	 
 	 	return describeUserProduceResponse;
 	}

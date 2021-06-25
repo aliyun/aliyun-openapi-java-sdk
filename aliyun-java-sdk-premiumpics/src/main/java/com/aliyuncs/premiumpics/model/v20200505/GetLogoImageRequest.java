@@ -12,7 +12,7 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.premiumpics.model.v20190619;
+package com.aliyuncs.premiumpics.model.v20200505;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
@@ -21,29 +21,29 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class GetImageProduceSummaryRequest extends RpcAcsRequest<GetImageProduceSummaryResponse> {
+public class GetLogoImageRequest extends RpcAcsRequest<GetLogoImageResponse> {
 	   
 
-	private String authId;
-	public GetImageProduceSummaryRequest() {
-		super("Premiumpics", "2019-06-19", "GetImageProduceSummary");
+	private String goodsId;
+	public GetLogoImageRequest() {
+		super("Premiumpics", "2020-05-05", "GetLogoImage");
 		setMethod(MethodType.GET);
 	}
 
-	public String getAuthId() {
-		return this.authId;
+	public String getGoodsId() {
+		return this.goodsId;
 	}
 
-	public void setAuthId(String authId) {
-		this.authId = authId;
-		if(authId != null){
-			putQueryParameter("AuthId", authId);
+	public void setGoodsId(String goodsId) {
+		this.goodsId = goodsId;
+		if(goodsId != null){
+			putQueryParameter("GoodsId", goodsId);
 		}
 	}
 
 	@Override
-	public Class<GetImageProduceSummaryResponse> getResponseClass() {
-		return GetImageProduceSummaryResponse.class;
+	public Class<GetLogoImageResponse> getResponseClass() {
+		return GetLogoImageResponse.class;
 	}
 
 }
