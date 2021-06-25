@@ -22,34 +22,19 @@ import com.aliyuncs.outboundbot.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListMediaRequest extends RpcAcsRequest<ListMediaResponse> {
+public class DescribeJobDataParsingTaskProgressRequest extends RpcAcsRequest<DescribeJobDataParsingTaskProgressResponse> {
 	   
-
-	private Integer pageNumber;
 
 	private String instanceId;
 
-	private Integer pageSize;
-
-	private String namePrefix;
-	public ListMediaRequest() {
-		super("OutboundBot", "2019-12-26", "ListMedia", "outboundbot");
+	private String jobDataParsingTaskId;
+	public DescribeJobDataParsingTaskProgressRequest() {
+		super("OutboundBot", "2019-12-26", "DescribeJobDataParsingTaskProgress", "outboundbot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
 	}
 
 	public String getInstanceId() {
@@ -63,31 +48,20 @@ public class ListMediaRequest extends RpcAcsRequest<ListMediaResponse> {
 		}
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public String getJobDataParsingTaskId() {
+		return this.jobDataParsingTaskId;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public String getNamePrefix() {
-		return this.namePrefix;
-	}
-
-	public void setNamePrefix(String namePrefix) {
-		this.namePrefix = namePrefix;
-		if(namePrefix != null){
-			putQueryParameter("NamePrefix", namePrefix);
+	public void setJobDataParsingTaskId(String jobDataParsingTaskId) {
+		this.jobDataParsingTaskId = jobDataParsingTaskId;
+		if(jobDataParsingTaskId != null){
+			putQueryParameter("JobDataParsingTaskId", jobDataParsingTaskId);
 		}
 	}
 
 	@Override
-	public Class<ListMediaResponse> getResponseClass() {
-		return ListMediaResponse.class;
+	public Class<DescribeJobDataParsingTaskProgressResponse> getResponseClass() {
+		return DescribeJobDataParsingTaskProgressResponse.class;
 	}
 
 }

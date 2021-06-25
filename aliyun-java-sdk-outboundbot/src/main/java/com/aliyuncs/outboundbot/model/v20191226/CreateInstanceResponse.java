@@ -98,9 +98,17 @@ public class CreateInstanceResponse extends AcsResponse {
 
 		private Integer maxConcurrentConversation;
 
+		private String nluServiceType;
+
 		private String owner;
 
-		private String nluServiceType;
+		private Long creatorId;
+
+		private String creatorName;
+
+		private String ownerName;
+
+		private String resourceGroupId;
 
 		private NluProfile nluProfile;
 
@@ -152,6 +160,14 @@ public class CreateInstanceResponse extends AcsResponse {
 			this.maxConcurrentConversation = maxConcurrentConversation;
 		}
 
+		public String getNluServiceType() {
+			return this.nluServiceType;
+		}
+
+		public void setNluServiceType(String nluServiceType) {
+			this.nluServiceType = nluServiceType;
+		}
+
 		public String getOwner() {
 			return this.owner;
 		}
@@ -160,12 +176,36 @@ public class CreateInstanceResponse extends AcsResponse {
 			this.owner = owner;
 		}
 
-		public String getNluServiceType() {
-			return this.nluServiceType;
+		public Long getCreatorId() {
+			return this.creatorId;
 		}
 
-		public void setNluServiceType(String nluServiceType) {
-			this.nluServiceType = nluServiceType;
+		public void setCreatorId(Long creatorId) {
+			this.creatorId = creatorId;
+		}
+
+		public String getCreatorName() {
+			return this.creatorName;
+		}
+
+		public void setCreatorName(String creatorName) {
+			this.creatorName = creatorName;
+		}
+
+		public String getOwnerName() {
+			return this.ownerName;
+		}
+
+		public void setOwnerName(String ownerName) {
+			this.ownerName = ownerName;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
 		}
 
 		public NluProfile getNluProfile() {
@@ -178,19 +218,11 @@ public class CreateInstanceResponse extends AcsResponse {
 
 		public static class NluProfile {
 
-			private String endpoint;
-
 			private String accessKey;
 
+			private String endpoint;
+
 			private String secretKey;
-
-			public String getEndpoint() {
-				return this.endpoint;
-			}
-
-			public void setEndpoint(String endpoint) {
-				this.endpoint = endpoint;
-			}
 
 			public String getAccessKey() {
 				return this.accessKey;
@@ -198,6 +230,14 @@ public class CreateInstanceResponse extends AcsResponse {
 
 			public void setAccessKey(String accessKey) {
 				this.accessKey = accessKey;
+			}
+
+			public String getEndpoint() {
+				return this.endpoint;
+			}
+
+			public void setEndpoint(String endpoint) {
+				this.endpoint = endpoint;
 			}
 
 			public String getSecretKey() {

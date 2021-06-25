@@ -89,6 +89,8 @@ public class DescribeJobGroupResponse extends AcsResponse {
 
 		private Long creationTime;
 
+		private String jobDataParsingTaskId;
+
 		private String jobFilePath;
 
 		private String jobGroupDescription;
@@ -97,17 +99,27 @@ public class DescribeJobGroupResponse extends AcsResponse {
 
 		private String jobGroupName;
 
+		private String modifyTime;
+
 		private String scenarioId;
 
 		private String scriptId;
 
 		private String scriptName;
 
+		private String scriptVersion;
+
+		private String status;
+
 		private List<String> callingNumbers;
+
+		private ExportProgress exportProgress;
 
 		private Progress progress;
 
 		private Strategy strategy;
+
+		private Result result;
 
 		public Long getCreationTime() {
 			return this.creationTime;
@@ -115,6 +127,14 @@ public class DescribeJobGroupResponse extends AcsResponse {
 
 		public void setCreationTime(Long creationTime) {
 			this.creationTime = creationTime;
+		}
+
+		public String getJobDataParsingTaskId() {
+			return this.jobDataParsingTaskId;
+		}
+
+		public void setJobDataParsingTaskId(String jobDataParsingTaskId) {
+			this.jobDataParsingTaskId = jobDataParsingTaskId;
 		}
 
 		public String getJobFilePath() {
@@ -149,6 +169,14 @@ public class DescribeJobGroupResponse extends AcsResponse {
 			this.jobGroupName = jobGroupName;
 		}
 
+		public String getModifyTime() {
+			return this.modifyTime;
+		}
+
+		public void setModifyTime(String modifyTime) {
+			this.modifyTime = modifyTime;
+		}
+
 		public String getScenarioId() {
 			return this.scenarioId;
 		}
@@ -173,12 +201,36 @@ public class DescribeJobGroupResponse extends AcsResponse {
 			this.scriptName = scriptName;
 		}
 
+		public String getScriptVersion() {
+			return this.scriptVersion;
+		}
+
+		public void setScriptVersion(String scriptVersion) {
+			this.scriptVersion = scriptVersion;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
 		public List<String> getCallingNumbers() {
 			return this.callingNumbers;
 		}
 
 		public void setCallingNumbers(List<String> callingNumbers) {
 			this.callingNumbers = callingNumbers;
+		}
+
+		public ExportProgress getExportProgress() {
+			return this.exportProgress;
+		}
+
+		public void setExportProgress(ExportProgress exportProgress) {
+			this.exportProgress = exportProgress;
 		}
 
 		public Progress getProgress() {
@@ -195,6 +247,47 @@ public class DescribeJobGroupResponse extends AcsResponse {
 
 		public void setStrategy(Strategy strategy) {
 			this.strategy = strategy;
+		}
+
+		public Result getResult() {
+			return this.result;
+		}
+
+		public void setResult(Result result) {
+			this.result = result;
+		}
+
+		public static class ExportProgress {
+
+			private String fileHttpUrl;
+
+			private String progress;
+
+			private String status;
+
+			public String getFileHttpUrl() {
+				return this.fileHttpUrl;
+			}
+
+			public void setFileHttpUrl(String fileHttpUrl) {
+				this.fileHttpUrl = fileHttpUrl;
+			}
+
+			public String getProgress() {
+				return this.progress;
+			}
+
+			public void setProgress(String progress) {
+				this.progress = progress;
+			}
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
+			}
 		}
 
 		public static class Progress {
@@ -526,6 +619,59 @@ public class DescribeJobGroupResponse extends AcsResponse {
 				public void setEndTime(String endTime) {
 					this.endTime = endTime;
 				}
+			}
+		}
+
+		public static class Result {
+
+			private Integer noInteractNum;
+
+			private Integer finishedNum;
+
+			private Integer clientHangupNum;
+
+			private Integer timeoutHangupNum;
+
+			private Integer unrecognizedNum;
+
+			public Integer getNoInteractNum() {
+				return this.noInteractNum;
+			}
+
+			public void setNoInteractNum(Integer noInteractNum) {
+				this.noInteractNum = noInteractNum;
+			}
+
+			public Integer getFinishedNum() {
+				return this.finishedNum;
+			}
+
+			public void setFinishedNum(Integer finishedNum) {
+				this.finishedNum = finishedNum;
+			}
+
+			public Integer getClientHangupNum() {
+				return this.clientHangupNum;
+			}
+
+			public void setClientHangupNum(Integer clientHangupNum) {
+				this.clientHangupNum = clientHangupNum;
+			}
+
+			public Integer getTimeoutHangupNum() {
+				return this.timeoutHangupNum;
+			}
+
+			public void setTimeoutHangupNum(Integer timeoutHangupNum) {
+				this.timeoutHangupNum = timeoutHangupNum;
+			}
+
+			public Integer getUnrecognizedNum() {
+				return this.unrecognizedNum;
+			}
+
+			public void setUnrecognizedNum(Integer unrecognizedNum) {
+				this.unrecognizedNum = unrecognizedNum;
 			}
 		}
 	}

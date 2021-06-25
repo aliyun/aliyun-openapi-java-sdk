@@ -105,6 +105,18 @@ public class DescribeJobResponse extends AcsResponse {
 
 		private Integer systemPriority;
 
+		private String instanceId;
+
+		private String dsReport;
+
+		private Integer endReason;
+
+		private Long actualTime;
+
+		private String calledNumber;
+
+		private Long nextExecutionTime;
+
 		private List<Contact> contacts;
 
 		private List<KeyValuePair> extras;
@@ -185,6 +197,54 @@ public class DescribeJobResponse extends AcsResponse {
 
 		public void setSystemPriority(Integer systemPriority) {
 			this.systemPriority = systemPriority;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public String getDsReport() {
+			return this.dsReport;
+		}
+
+		public void setDsReport(String dsReport) {
+			this.dsReport = dsReport;
+		}
+
+		public Integer getEndReason() {
+			return this.endReason;
+		}
+
+		public void setEndReason(Integer endReason) {
+			this.endReason = endReason;
+		}
+
+		public Long getActualTime() {
+			return this.actualTime;
+		}
+
+		public void setActualTime(Long actualTime) {
+			this.actualTime = actualTime;
+		}
+
+		public String getCalledNumber() {
+			return this.calledNumber;
+		}
+
+		public void setCalledNumber(String calledNumber) {
+			this.calledNumber = calledNumber;
+		}
+
+		public Long getNextExecutionTime() {
+			return this.nextExecutionTime;
+		}
+
+		public void setNextExecutionTime(Long nextExecutionTime) {
+			this.nextExecutionTime = nextExecutionTime;
 		}
 
 		public List<Contact> getContacts() {
@@ -392,6 +452,8 @@ public class DescribeJobResponse extends AcsResponse {
 
 			private String taskId;
 
+			private Long endTime;
+
 			private List<ConversationDetail> conversation;
 
 			private Contact3 contact3;
@@ -492,6 +554,14 @@ public class DescribeJobResponse extends AcsResponse {
 				this.taskId = taskId;
 			}
 
+			public Long getEndTime() {
+				return this.endTime;
+			}
+
+			public void setEndTime(Long endTime) {
+				this.endTime = endTime;
+			}
+
 			public List<ConversationDetail> getConversation() {
 				return this.conversation;
 			}
@@ -515,6 +585,10 @@ public class DescribeJobResponse extends AcsResponse {
 				private String speaker;
 
 				private Long timestamp;
+
+				private String action;
+
+				private String actionParams;
 
 				private List<SummaryItem2> summary1;
 
@@ -540,6 +614,22 @@ public class DescribeJobResponse extends AcsResponse {
 
 				public void setTimestamp(Long timestamp) {
 					this.timestamp = timestamp;
+				}
+
+				public String getAction() {
+					return this.action;
+				}
+
+				public void setAction(String action) {
+					this.action = action;
+				}
+
+				public String getActionParams() {
+					return this.actionParams;
+				}
+
+				public void setActionParams(String actionParams) {
+					this.actionParams = actionParams;
 				}
 
 				public List<SummaryItem2> getSummary1() {

@@ -89,6 +89,8 @@ public class CreateJobGroupResponse extends AcsResponse {
 
 		private Long creationTime;
 
+		private String jobDataParsingTaskId;
+
 		private String jobFilePath;
 
 		private String jobGroupDescription;
@@ -97,9 +99,19 @@ public class CreateJobGroupResponse extends AcsResponse {
 
 		private String jobGroupName;
 
+		private String modifyTime;
+
 		private String scenarioId;
 
+		private String scriptName;
+
+		private String scriptVersion;
+
+		private String status;
+
 		private List<String> callingNumbers;
+
+		private ExportProgress exportProgress;
 
 		private Strategy strategy;
 
@@ -109,6 +121,14 @@ public class CreateJobGroupResponse extends AcsResponse {
 
 		public void setCreationTime(Long creationTime) {
 			this.creationTime = creationTime;
+		}
+
+		public String getJobDataParsingTaskId() {
+			return this.jobDataParsingTaskId;
+		}
+
+		public void setJobDataParsingTaskId(String jobDataParsingTaskId) {
+			this.jobDataParsingTaskId = jobDataParsingTaskId;
 		}
 
 		public String getJobFilePath() {
@@ -143,12 +163,44 @@ public class CreateJobGroupResponse extends AcsResponse {
 			this.jobGroupName = jobGroupName;
 		}
 
+		public String getModifyTime() {
+			return this.modifyTime;
+		}
+
+		public void setModifyTime(String modifyTime) {
+			this.modifyTime = modifyTime;
+		}
+
 		public String getScenarioId() {
 			return this.scenarioId;
 		}
 
 		public void setScenarioId(String scenarioId) {
 			this.scenarioId = scenarioId;
+		}
+
+		public String getScriptName() {
+			return this.scriptName;
+		}
+
+		public void setScriptName(String scriptName) {
+			this.scriptName = scriptName;
+		}
+
+		public String getScriptVersion() {
+			return this.scriptVersion;
+		}
+
+		public void setScriptVersion(String scriptVersion) {
+			this.scriptVersion = scriptVersion;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public List<String> getCallingNumbers() {
@@ -159,12 +211,53 @@ public class CreateJobGroupResponse extends AcsResponse {
 			this.callingNumbers = callingNumbers;
 		}
 
+		public ExportProgress getExportProgress() {
+			return this.exportProgress;
+		}
+
+		public void setExportProgress(ExportProgress exportProgress) {
+			this.exportProgress = exportProgress;
+		}
+
 		public Strategy getStrategy() {
 			return this.strategy;
 		}
 
 		public void setStrategy(Strategy strategy) {
 			this.strategy = strategy;
+		}
+
+		public static class ExportProgress {
+
+			private String fileHttpUrl;
+
+			private String progress;
+
+			private String status;
+
+			public String getFileHttpUrl() {
+				return this.fileHttpUrl;
+			}
+
+			public void setFileHttpUrl(String fileHttpUrl) {
+				this.fileHttpUrl = fileHttpUrl;
+			}
+
+			public String getProgress() {
+				return this.progress;
+			}
+
+			public void setProgress(String progress) {
+				this.progress = progress;
+			}
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
+			}
 		}
 
 		public static class Strategy {

@@ -14,6 +14,7 @@
 
 package com.aliyuncs.outboundbot.model.v20191226;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.outboundbot.transform.v20191226.AssignJobsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -35,6 +36,8 @@ public class AssignJobsResponse extends AcsResponse {
 	private String requestId;
 
 	private Boolean success;
+
+	private List<String> jobsId;
 
 	public String getCode() {
 		return this.code;
@@ -82,6 +85,14 @@ public class AssignJobsResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public List<String> getJobsId() {
+		return this.jobsId;
+	}
+
+	public void setJobsId(List<String> jobsId) {
+		this.jobsId = jobsId;
 	}
 
 	@Override

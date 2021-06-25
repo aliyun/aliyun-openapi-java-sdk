@@ -35,6 +35,8 @@ public class ListJobGroupsResponse extends AcsResponse {
 
 	private Boolean success;
 
+	private String asyncTaskId;
+
 	private JobGroups jobGroups;
 
 	public String getCode() {
@@ -75,6 +77,14 @@ public class ListJobGroupsResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getAsyncTaskId() {
+		return this.asyncTaskId;
+	}
+
+	public void setAsyncTaskId(String asyncTaskId) {
+		this.asyncTaskId = asyncTaskId;
 	}
 
 	public JobGroups getJobGroups() {
@@ -141,7 +151,17 @@ public class ListJobGroupsResponse extends AcsResponse {
 
 			private String scriptName;
 
+			private String jobDataParsingTaskId;
+
+			private String modifyTime;
+
+			private String scriptVersion;
+
+			private String status;
+
 			private Progress progress;
+
+			private ExportProgress exportProgress;
 
 			private Strategy strategy;
 
@@ -193,12 +213,52 @@ public class ListJobGroupsResponse extends AcsResponse {
 				this.scriptName = scriptName;
 			}
 
+			public String getJobDataParsingTaskId() {
+				return this.jobDataParsingTaskId;
+			}
+
+			public void setJobDataParsingTaskId(String jobDataParsingTaskId) {
+				this.jobDataParsingTaskId = jobDataParsingTaskId;
+			}
+
+			public String getModifyTime() {
+				return this.modifyTime;
+			}
+
+			public void setModifyTime(String modifyTime) {
+				this.modifyTime = modifyTime;
+			}
+
+			public String getScriptVersion() {
+				return this.scriptVersion;
+			}
+
+			public void setScriptVersion(String scriptVersion) {
+				this.scriptVersion = scriptVersion;
+			}
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
+			}
+
 			public Progress getProgress() {
 				return this.progress;
 			}
 
 			public void setProgress(Progress progress) {
 				this.progress = progress;
+			}
+
+			public ExportProgress getExportProgress() {
+				return this.exportProgress;
+			}
+
+			public void setExportProgress(ExportProgress exportProgress) {
+				this.exportProgress = exportProgress;
 			}
 
 			public Strategy getStrategy() {
@@ -222,6 +282,16 @@ public class ListJobGroupsResponse extends AcsResponse {
 				private Integer totalJobs;
 
 				private Integer totalNotAnswered;
+
+				private Integer cancelledNum;
+
+				private Integer failedNum;
+
+				private Integer scheduling;
+
+				private Integer pausedNum;
+
+				private Integer executingNum;
 
 				public Integer getDuration() {
 					return this.duration;
@@ -269,6 +339,79 @@ public class ListJobGroupsResponse extends AcsResponse {
 
 				public void setTotalNotAnswered(Integer totalNotAnswered) {
 					this.totalNotAnswered = totalNotAnswered;
+				}
+
+				public Integer getCancelledNum() {
+					return this.cancelledNum;
+				}
+
+				public void setCancelledNum(Integer cancelledNum) {
+					this.cancelledNum = cancelledNum;
+				}
+
+				public Integer getFailedNum() {
+					return this.failedNum;
+				}
+
+				public void setFailedNum(Integer failedNum) {
+					this.failedNum = failedNum;
+				}
+
+				public Integer getScheduling() {
+					return this.scheduling;
+				}
+
+				public void setScheduling(Integer scheduling) {
+					this.scheduling = scheduling;
+				}
+
+				public Integer getPausedNum() {
+					return this.pausedNum;
+				}
+
+				public void setPausedNum(Integer pausedNum) {
+					this.pausedNum = pausedNum;
+				}
+
+				public Integer getExecutingNum() {
+					return this.executingNum;
+				}
+
+				public void setExecutingNum(Integer executingNum) {
+					this.executingNum = executingNum;
+				}
+			}
+
+			public static class ExportProgress {
+
+				private String fileHttpUrl;
+
+				private String progress;
+
+				private String status;
+
+				public String getFileHttpUrl() {
+					return this.fileHttpUrl;
+				}
+
+				public void setFileHttpUrl(String fileHttpUrl) {
+					this.fileHttpUrl = fileHttpUrl;
+				}
+
+				public String getProgress() {
+					return this.progress;
+				}
+
+				public void setProgress(String progress) {
+					this.progress = progress;
+				}
+
+				public String getStatus() {
+					return this.status;
+				}
+
+				public void setStatus(String status) {
+					this.status = status;
 				}
 			}
 

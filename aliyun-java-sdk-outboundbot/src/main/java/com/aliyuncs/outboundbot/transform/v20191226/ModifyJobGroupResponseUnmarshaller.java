@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.outboundbot.model.v20191226.ModifyJobGroupResponse;
 import com.aliyuncs.outboundbot.model.v20191226.ModifyJobGroupResponse.JobGroup;
+import com.aliyuncs.outboundbot.model.v20191226.ModifyJobGroupResponse.JobGroup.ExportProgress;
 import com.aliyuncs.outboundbot.model.v20191226.ModifyJobGroupResponse.JobGroup.Strategy;
 import com.aliyuncs.outboundbot.model.v20191226.ModifyJobGroupResponse.JobGroup.Strategy.TimeFrame;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -36,17 +37,28 @@ public class ModifyJobGroupResponseUnmarshaller {
 
 		JobGroup jobGroup = new JobGroup();
 		jobGroup.setCreationTime(_ctx.longValue("ModifyJobGroupResponse.JobGroup.CreationTime"));
+		jobGroup.setJobDataParsingTaskId(_ctx.stringValue("ModifyJobGroupResponse.JobGroup.JobDataParsingTaskId"));
 		jobGroup.setJobFilePath(_ctx.stringValue("ModifyJobGroupResponse.JobGroup.JobFilePath"));
 		jobGroup.setJobGroupDescription(_ctx.stringValue("ModifyJobGroupResponse.JobGroup.JobGroupDescription"));
 		jobGroup.setJobGroupId(_ctx.stringValue("ModifyJobGroupResponse.JobGroup.JobGroupId"));
 		jobGroup.setJobGroupName(_ctx.stringValue("ModifyJobGroupResponse.JobGroup.JobGroupName"));
+		jobGroup.setModifyTime(_ctx.stringValue("ModifyJobGroupResponse.JobGroup.ModifyTime"));
 		jobGroup.setScenarioId(_ctx.stringValue("ModifyJobGroupResponse.JobGroup.ScenarioId"));
+		jobGroup.setScriptName(_ctx.stringValue("ModifyJobGroupResponse.JobGroup.ScriptName"));
+		jobGroup.setScriptVersion(_ctx.stringValue("ModifyJobGroupResponse.JobGroup.ScriptVersion"));
+		jobGroup.setStatus(_ctx.stringValue("ModifyJobGroupResponse.JobGroup.Status"));
 
 		List<String> callingNumbers = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("ModifyJobGroupResponse.JobGroup.CallingNumbers.Length"); i++) {
 			callingNumbers.add(_ctx.stringValue("ModifyJobGroupResponse.JobGroup.CallingNumbers["+ i +"]"));
 		}
 		jobGroup.setCallingNumbers(callingNumbers);
+
+		ExportProgress exportProgress = new ExportProgress();
+		exportProgress.setFileHttpUrl(_ctx.stringValue("ModifyJobGroupResponse.JobGroup.ExportProgress.FileHttpUrl"));
+		exportProgress.setProgress(_ctx.stringValue("ModifyJobGroupResponse.JobGroup.ExportProgress.Progress"));
+		exportProgress.setStatus(_ctx.stringValue("ModifyJobGroupResponse.JobGroup.ExportProgress.Status"));
+		jobGroup.setExportProgress(exportProgress);
 
 		Strategy strategy = new Strategy();
 		strategy.setCustomized(_ctx.stringValue("ModifyJobGroupResponse.JobGroup.Strategy.Customized"));

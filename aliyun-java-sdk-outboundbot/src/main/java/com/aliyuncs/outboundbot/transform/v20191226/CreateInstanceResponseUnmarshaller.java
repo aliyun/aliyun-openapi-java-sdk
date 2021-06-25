@@ -37,12 +37,16 @@ public class CreateInstanceResponseUnmarshaller {
 		instance.setInstanceId(_ctx.stringValue("CreateInstanceResponse.Instance.InstanceId"));
 		instance.setInstanceName(_ctx.stringValue("CreateInstanceResponse.Instance.InstanceName"));
 		instance.setMaxConcurrentConversation(_ctx.integerValue("CreateInstanceResponse.Instance.MaxConcurrentConversation"));
-		instance.setOwner(_ctx.stringValue("CreateInstanceResponse.Instance.Owner"));
 		instance.setNluServiceType(_ctx.stringValue("CreateInstanceResponse.Instance.NluServiceType"));
+		instance.setOwner(_ctx.stringValue("CreateInstanceResponse.Instance.Owner"));
+		instance.setCreatorId(_ctx.longValue("CreateInstanceResponse.Instance.CreatorId"));
+		instance.setCreatorName(_ctx.stringValue("CreateInstanceResponse.Instance.CreatorName"));
+		instance.setOwnerName(_ctx.stringValue("CreateInstanceResponse.Instance.OwnerName"));
+		instance.setResourceGroupId(_ctx.stringValue("CreateInstanceResponse.Instance.ResourceGroupId"));
 
 		NluProfile nluProfile = new NluProfile();
-		nluProfile.setEndpoint(_ctx.stringValue("CreateInstanceResponse.Instance.NluProfile.Endpoint"));
 		nluProfile.setAccessKey(_ctx.stringValue("CreateInstanceResponse.Instance.NluProfile.AccessKey"));
+		nluProfile.setEndpoint(_ctx.stringValue("CreateInstanceResponse.Instance.NluProfile.Endpoint"));
 		nluProfile.setSecretKey(_ctx.stringValue("CreateInstanceResponse.Instance.NluProfile.SecretKey"));
 		instance.setNluProfile(nluProfile);
 		createInstanceResponse.setInstance(instance);
