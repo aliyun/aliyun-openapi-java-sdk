@@ -33,6 +33,7 @@ import javax.net.ssl.*;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.rmi.ServerException;
 import java.security.KeyStore;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -296,6 +297,9 @@ public class ApacheHttpClient extends IHttpClient {
         if (existed) {
             // content type
             Header contentTypeHeader = httpResponse.getEntity().getContentType();
+            if (null == contentTypeHeader) {
+                throw new ServerException("contentType cannot be empty");
+            }
             ContentType contentType = ContentType.parse(contentTypeHeader.getValue());
             FormatType formatType = FormatType.mapAcceptToFormat(contentType.getMimeType());
             result.setHttpContentType(formatType);
