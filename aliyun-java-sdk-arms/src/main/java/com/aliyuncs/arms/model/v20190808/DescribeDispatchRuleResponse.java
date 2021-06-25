@@ -115,6 +115,8 @@ public class DescribeDispatchRuleResponse extends AcsResponse {
 
 			private Long groupInterval;
 
+			private Long repeatInterval;
+
 			private List<String> groupingFields;
 
 			public Long getGroupId() {
@@ -139,6 +141,14 @@ public class DescribeDispatchRuleResponse extends AcsResponse {
 
 			public void setGroupInterval(Long groupInterval) {
 				this.groupInterval = groupInterval;
+			}
+
+			public Long getRepeatInterval() {
+				return this.repeatInterval;
+			}
+
+			public void setRepeatInterval(Long repeatInterval) {
+				this.repeatInterval = repeatInterval;
 			}
 
 			public List<String> getGroupingFields() {

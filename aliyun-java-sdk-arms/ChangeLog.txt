@@ -1,3 +1,6 @@
+2021-06-25 Version: 2.7.26
+- Support repeat interval for dispatch rule.
+
 2021-06-23 Version: 2.7.25
 - Support alerts with new notification rules.
 

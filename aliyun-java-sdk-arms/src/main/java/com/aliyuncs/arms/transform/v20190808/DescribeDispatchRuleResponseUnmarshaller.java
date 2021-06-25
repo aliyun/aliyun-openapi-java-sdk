@@ -67,6 +67,7 @@ public class DescribeDispatchRuleResponseUnmarshaller {
 			groupRule.setGroupId(_ctx.longValue("DescribeDispatchRuleResponse.DispatchRule.GroupRules["+ i +"].GroupId"));
 			groupRule.setGroupWaitTime(_ctx.longValue("DescribeDispatchRuleResponse.DispatchRule.GroupRules["+ i +"].GroupWaitTime"));
 			groupRule.setGroupInterval(_ctx.longValue("DescribeDispatchRuleResponse.DispatchRule.GroupRules["+ i +"].GroupInterval"));
+			groupRule.setRepeatInterval(_ctx.longValue("DescribeDispatchRuleResponse.DispatchRule.GroupRules["+ i +"].RepeatInterval"));
 
 			List<String> groupingFields = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDispatchRuleResponse.DispatchRule.GroupRules["+ i +"].GroupingFields.Length"); j++) {
