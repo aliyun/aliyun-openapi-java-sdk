@@ -296,6 +296,9 @@ public class ApacheHttpClient extends IHttpClient {
         if (existed) {
             // content type
             Header contentTypeHeader = httpResponse.getEntity().getContentType();
+            if (null == contentTypeHeader) {
+                throw new RuntimeException("contentType cannot be empty");
+            }
             ContentType contentType = ContentType.parse(contentTypeHeader.getValue());
             FormatType formatType = FormatType.mapAcceptToFormat(contentType.getMimeType());
             result.setHttpContentType(formatType);
