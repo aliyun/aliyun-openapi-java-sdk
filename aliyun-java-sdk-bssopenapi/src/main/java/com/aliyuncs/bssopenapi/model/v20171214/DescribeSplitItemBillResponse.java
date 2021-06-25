@@ -241,6 +241,14 @@ public class DescribeSplitItemBillResponse extends AcsResponse {
 
 			private String splitBillingCycle;
 
+			private String splitBillingDate;
+
+			private String bizType;
+
+			private String billAccountID;
+
+			private String billAccountName;
+
 			public String getInstanceID() {
 				return this.instanceID;
 			}
@@ -607,6 +615,38 @@ public class DescribeSplitItemBillResponse extends AcsResponse {
 
 			public void setSplitBillingCycle(String splitBillingCycle) {
 				this.splitBillingCycle = splitBillingCycle;
+			}
+
+			public String getSplitBillingDate() {
+				return this.splitBillingDate;
+			}
+
+			public void setSplitBillingDate(String splitBillingDate) {
+				this.splitBillingDate = splitBillingDate;
+			}
+
+			public String getBizType() {
+				return this.bizType;
+			}
+
+			public void setBizType(String bizType) {
+				this.bizType = bizType;
+			}
+
+			public String getBillAccountID() {
+				return this.billAccountID;
+			}
+
+			public void setBillAccountID(String billAccountID) {
+				this.billAccountID = billAccountID;
+			}
+
+			public String getBillAccountName() {
+				return this.billAccountName;
+			}
+
+			public void setBillAccountName(String billAccountName) {
+				this.billAccountName = billAccountName;
 			}
 		}
 	}

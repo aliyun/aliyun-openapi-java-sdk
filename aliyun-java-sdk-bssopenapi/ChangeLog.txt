@@ -1,3 +1,6 @@
+2021-06-25 Version: 1.7.6
+- Update DescribeSplitItemBill to support daily report.
+
 2021-06-24 Version: 1.7.5
 - Update QueryBillOverview, QuerySettleBill, QueryAccountBill, DescribeInstanceBill and support trusteeship bill query.
 
