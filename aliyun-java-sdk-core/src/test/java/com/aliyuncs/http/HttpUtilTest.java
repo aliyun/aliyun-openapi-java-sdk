@@ -54,7 +54,9 @@ public class HttpUtilTest {
         requestHeaders.put("test2", "test2");
         Mockito.when(request.getSysHeaders()).thenReturn(requestHeaders);
         String exceptString = "> GET HTTP/1.1\n> Host : test.domain\n> test2 : test2\n> test1 : test1\n> "
-                + "Request URL : http://test.domain\n> \nrequest body";
+                + "Request URL : http://test.domain\n> " + "Request isIgnoreSSLCerts : false\n> "
+                + "Request connect timeout : 0\n> " + "Request read timeout : 0\n> "
+                + "Encoding : null\n> " + "\n" + "request body";
 
         HttpUtil.setIsHttpDebug(true);
         HttpUtil.setIsHttpContentDebug(true);
@@ -62,7 +64,9 @@ public class HttpUtilTest {
 
         HttpUtil.setIsHttpContentDebug(false);
         exceptString = "> GET HTTP/1.1\n> Host : test.domain\n> test2 : test2\n> test1 : test1\n> "
-                + "Request URL : http://test.domain\n> ";
+                + "Request URL : http://test.domain\n> " + "Request isIgnoreSSLCerts : false\n> "
+                + "Request connect timeout : 0\n> " + "Request read timeout : 0\n> "
+                + "Encoding : null\n> ";
         Assert.assertEquals(HttpUtil.debugHttpRequest(request), exceptString);
 
         HttpUtil.setIsHttpDebug(false);
@@ -116,17 +120,24 @@ public class HttpUtilTest {
         requestHeaders.put("test2", "test2");
         Mockito.when(request.getSysHeaders()).thenReturn(requestHeaders);
         String exceptString = "> GET httpss://test.domain/jdj\n> Host : httpss://test.domain/jdj\n> "
-                + "test2 : test2\n> test1 : test1\n> Request URL : httpss://test.domain/jdj\n> \nrequest body";
+                + "test2 : test2\n> test1 : test1\n> Request URL : httpss://test.domain/jdj\n> "
+                + "Request isIgnoreSSLCerts : false\n> "
+                + "Request connect timeout : 0\n> " + "Request read timeout : 0\n> "
+                + "Encoding : null\n>"
+                + " \nrequest body";
         HttpUtil.setIsHttpDebug(true);
         HttpUtil.setIsHttpContentDebug(true);
         Assert.assertEquals(HttpUtil.debugHttpRequest(request), exceptString);
-        
+
         Mockito.when(request.getSysUrl()).thenReturn("http://test.domain/jdj");
         Mockito.doThrow(ClientException.class).when(request).getHttpContentString();
         Mockito.when(request.getSysEncoding()).thenReturn("HHH");
         exceptString = "> GET HTTP/1.1\n> Host : test.domain\n> "
-                + "test2 : test2\n> test1 : test1\n> Request URL : http://test.domain/jdj\n> \n"
-                + "Can not parse response due to unsupported encoding : HHH";
+                + "test2 : test2\n> test1 : test1\n> Request URL : http://test.domain/jdj\n> "
+                + "Request isIgnoreSSLCerts : false\n> "
+                + "Request connect timeout : 0\n> " + "Request read timeout : 0\n> "
+                + "Encoding : HHH\n> "
+                + "\nCan not parse response due to unsupported encoding : HHH";
         Assert.assertEquals(HttpUtil.debugHttpRequest(request), exceptString);
         HttpUtil.setIsHttpDebug("sdk".equalsIgnoreCase(System.getenv("DEBUG")));
         HttpUtil.setIsHttpContentDebug("sdk".equalsIgnoreCase(System.getenv("DEBUG")));
