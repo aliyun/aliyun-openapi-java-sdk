@@ -28,7 +28,7 @@ public class GetMultipleTraceRequest extends RpcAcsRequest<GetMultipleTraceRespo
 
 	private List<String> traceIDss;
 	public GetMultipleTraceRequest() {
-		super("ARMS", "2019-08-08", "GetMultipleTrace");
+		super("ARMS", "2019-08-08", "GetMultipleTrace", "arms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -27,7 +27,7 @@ public class StartAlertRequest extends RpcAcsRequest<StartAlertResponse> {
 
 	private String alertId;
 	public StartAlertRequest() {
-		super("ARMS", "2019-08-08", "StartAlert");
+		super("ARMS", "2019-08-08", "StartAlert", "arms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -27,7 +27,7 @@ public class DeleteDispatchRuleRequest extends RpcAcsRequest<DeleteDispatchRuleR
 
 	private String id;
 	public DeleteDispatchRuleRequest() {
-		super("ARMS", "2019-08-08", "DeleteDispatchRule");
+		super("ARMS", "2019-08-08", "DeleteDispatchRule", "arms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

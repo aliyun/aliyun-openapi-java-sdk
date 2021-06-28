@@ -27,7 +27,7 @@ public class GetRetcodeShareUrlRequest extends RpcAcsRequest<GetRetcodeShareUrlR
 
 	private String pid;
 	public GetRetcodeShareUrlRequest() {
-		super("ARMS", "2019-08-08", "GetRetcodeShareUrl");
+		super("ARMS", "2019-08-08", "GetRetcodeShareUrl", "arms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

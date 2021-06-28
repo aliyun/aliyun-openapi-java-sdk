@@ -25,7 +25,7 @@ import com.aliyuncs.arms.Endpoint;
 public class GetArmsConsoleUrlRequest extends RpcAcsRequest<GetArmsConsoleUrlResponse> {
 	   
 	public GetArmsConsoleUrlRequest() {
-		super("ARMS", "2019-08-08", "GetArmsConsoleUrl");
+		super("ARMS", "2019-08-08", "GetArmsConsoleUrl", "arms");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -27,7 +27,7 @@ public class EnableAlertTemplateRequest extends RpcAcsRequest<EnableAlertTemplat
 
 	private Long id;
 	public EnableAlertTemplateRequest() {
-		super("ARMS", "2019-08-08", "EnableAlertTemplate");
+		super("ARMS", "2019-08-08", "EnableAlertTemplate", "arms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

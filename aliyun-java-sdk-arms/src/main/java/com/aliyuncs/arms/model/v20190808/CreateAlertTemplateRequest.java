@@ -43,7 +43,7 @@ public class CreateAlertTemplateRequest extends RpcAcsRequest<CreateAlertTemplat
 
 	private String matchExpressions;
 	public CreateAlertTemplateRequest() {
-		super("ARMS", "2019-08-08", "CreateAlertTemplate");
+		super("ARMS", "2019-08-08", "CreateAlertTemplate", "arms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

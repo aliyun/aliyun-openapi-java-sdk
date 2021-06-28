@@ -43,7 +43,7 @@ public class SearchEventsRequest extends RpcAcsRequest<SearchEventsResponse> {
 
 	private Long alertId;
 	public SearchEventsRequest() {
-		super("ARMS", "2019-08-08", "SearchEvents");
+		super("ARMS", "2019-08-08", "SearchEvents", "arms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

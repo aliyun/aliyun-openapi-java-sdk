@@ -25,7 +25,7 @@ import com.aliyuncs.arms.Endpoint;
 public class GetAgentDownloadUrlRequest extends RpcAcsRequest<GetAgentDownloadUrlResponse> {
 	   
 	public GetAgentDownloadUrlRequest() {
-		super("ARMS", "2019-08-08", "GetAgentDownloadUrl");
+		super("ARMS", "2019-08-08", "GetAgentDownloadUrl", "arms");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
