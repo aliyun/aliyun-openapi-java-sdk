@@ -53,6 +53,10 @@ public class DescribeDispatchRuleResponse extends AcsResponse {
 
 		private String state;
 
+		private String dispatchType;
+
+		private Boolean isRecover;
+
 		private List<GroupRule> groupRules;
 
 		private List<NotifyRule> notifyRules;
@@ -81,6 +85,22 @@ public class DescribeDispatchRuleResponse extends AcsResponse {
 
 		public void setState(String state) {
 			this.state = state;
+		}
+
+		public String getDispatchType() {
+			return this.dispatchType;
+		}
+
+		public void setDispatchType(String dispatchType) {
+			this.dispatchType = dispatchType;
+		}
+
+		public Boolean getIsRecover() {
+			return this.isRecover;
+		}
+
+		public void setIsRecover(Boolean isRecover) {
+			this.isRecover = isRecover;
 		}
 
 		public List<GroupRule> getGroupRules() {

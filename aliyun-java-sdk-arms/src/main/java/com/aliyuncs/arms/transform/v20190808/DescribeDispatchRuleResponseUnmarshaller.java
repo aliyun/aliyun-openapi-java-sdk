@@ -38,6 +38,8 @@ public class DescribeDispatchRuleResponseUnmarshaller {
 		dispatchRule.setRuleId(_ctx.longValue("DescribeDispatchRuleResponse.DispatchRule.RuleId"));
 		dispatchRule.setName(_ctx.stringValue("DescribeDispatchRuleResponse.DispatchRule.Name"));
 		dispatchRule.setState(_ctx.stringValue("DescribeDispatchRuleResponse.DispatchRule.State"));
+		dispatchRule.setDispatchType(_ctx.stringValue("DescribeDispatchRuleResponse.DispatchRule.DispatchType"));
+		dispatchRule.setIsRecover(_ctx.booleanValue("DescribeDispatchRuleResponse.DispatchRule.IsRecover"));
 
 		LabelMatchExpressionGrid labelMatchExpressionGrid = new LabelMatchExpressionGrid();
 
