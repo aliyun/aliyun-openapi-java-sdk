@@ -42,6 +42,9 @@ public class ListSQLReviewOriginSQLResponseUnmarshaller {
 			originSQLListItem.setCheckStatus(_ctx.stringValue("ListSQLReviewOriginSQLResponse.OriginSQLList["+ i +"].CheckStatus"));
 			originSQLListItem.setStatusDesc(_ctx.stringValue("ListSQLReviewOriginSQLResponse.OriginSQLList["+ i +"].StatusDesc"));
 			originSQLListItem.setCheckedTime(_ctx.stringValue("ListSQLReviewOriginSQLResponse.OriginSQLList["+ i +"].CheckedTime"));
+			originSQLListItem.setSqlHash(_ctx.stringValue("ListSQLReviewOriginSQLResponse.OriginSQLList["+ i +"].SqlHash"));
+			originSQLListItem.setReviewSummary(_ctx.stringValue("ListSQLReviewOriginSQLResponse.OriginSQLList["+ i +"].ReviewSummary"));
+			originSQLListItem.setSQLReviewQueryKey(_ctx.stringValue("ListSQLReviewOriginSQLResponse.OriginSQLList["+ i +"].SQLReviewQueryKey"));
 
 			originSQLList.add(originSQLListItem);
 		}

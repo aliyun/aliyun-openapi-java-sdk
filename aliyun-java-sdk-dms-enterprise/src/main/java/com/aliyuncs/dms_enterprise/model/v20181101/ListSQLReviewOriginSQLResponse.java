@@ -101,6 +101,12 @@ public class ListSQLReviewOriginSQLResponse extends AcsResponse {
 
 		private String checkedTime;
 
+		private String sqlHash;
+
+		private String reviewSummary;
+
+		private String sQLReviewQueryKey;
+
 		public Long getSQLId() {
 			return this.sQLId;
 		}
@@ -155,6 +161,30 @@ public class ListSQLReviewOriginSQLResponse extends AcsResponse {
 
 		public void setCheckedTime(String checkedTime) {
 			this.checkedTime = checkedTime;
+		}
+
+		public String getSqlHash() {
+			return this.sqlHash;
+		}
+
+		public void setSqlHash(String sqlHash) {
+			this.sqlHash = sqlHash;
+		}
+
+		public String getReviewSummary() {
+			return this.reviewSummary;
+		}
+
+		public void setReviewSummary(String reviewSummary) {
+			this.reviewSummary = reviewSummary;
+		}
+
+		public String getSQLReviewQueryKey() {
+			return this.sQLReviewQueryKey;
+		}
+
+		public void setSQLReviewQueryKey(String sQLReviewQueryKey) {
+			this.sQLReviewQueryKey = sQLReviewQueryKey;
 		}
 	}
 
