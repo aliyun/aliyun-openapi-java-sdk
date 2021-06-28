@@ -1,4 +1,9 @@
-﻿2021-06-22 Version:4.5.21
+﻿2021-06-28 Version:4.5.22
+1, Fix the NPE bug of ApacheHttpClient
+2, Add more HTTP request log tests
+3, Add ApachHttpClient NPE bug test
+
+2021-06-22 Version:4.5.21
 1, Add more HTTP request logs
 
 2021-03-29 Version:4.5.20
