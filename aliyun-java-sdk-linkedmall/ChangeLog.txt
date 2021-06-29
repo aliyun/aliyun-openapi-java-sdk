@@ -1,3 +1,6 @@
+2021-06-29 Version: 2.12.20
+- Add authorization APIs.
+
 2021-03-25 Version: 2.12.19
 - Update QueryBizItemList.
 - Add QueryItemInSubBizs.
