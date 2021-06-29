@@ -29,9 +29,9 @@ public class GetTaskListFilterResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String errorCode;
-
 	private String successful;
+
+	private String errorCode;
 
 	private Object object;
 
@@ -51,20 +51,20 @@ public class GetTaskListFilterResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
-	}
-
 	public String getSuccessful() {
 		return this.successful;
 	}
 
 	public void setSuccessful(String successful) {
 		this.successful = successful;
+	}
+
+	public String getErrorCode() {
+		return this.errorCode;
+	}
+
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
 	}
 
 	public Object getObject() {
@@ -109,103 +109,101 @@ public class GetTaskListFilterResponse extends AcsResponse {
 
 		public static class Task {
 
-			private String id;
-
-			private String creatorId;
+			private Boolean isFavorite;
 
 			private String executorId;
 
 			private String projectId;
 
-			private String taskListId;
-
-			private String organizationId;
-
-			private String stageId;
-
-			private String visible;
-
-			private String updated;
-
-			private String created;
-
-			private Boolean isArchived;
-
-			private Boolean isDone;
-
-			private Boolean isTopInProject;
-
 			private Integer priority;
 
-			private Integer pos;
-
-			private String startDate;
-
-			private String dueDate;
-
-			private String accomplished;
-
-			private String note;
-
-			private String content;
-
-			private String recurrence;
-
-			private String sourceId;
-
-			private String sourceDate;
-
-			private Integer commentsCount;
-
-			private Integer attachmentsCount;
-
-			private Integer likesCount;
-
-			private Integer objectlinksCount;
-
-			private Integer uniqueId;
-
-			private String storyPoint;
-
-			private Integer progress;
-
-			private Integer rating;
-
-			private Boolean isFavorite;
+			private Boolean isTopInProject;
 
 			private String scenariofFeldConfigId;
 
 			private Integer shareStatus;
 
-			private String sprintId;
+			private String accomplished;
+
+			private String taskListId;
+
+			private String note;
+
+			private String updated;
+
+			private Integer uniqueId;
+
+			private Boolean isArchived;
+
+			private String content;
+
+			private Integer rating;
+
+			private Integer commentsCount;
 
 			private String taskFlowStatusId;
 
+			private String recurrence;
+
 			private String objectType;
 
-			private String source;
+			private Integer progress;
 
 			private String untilDate;
 
-			private String taskId;
+			private String storyPoint;
+
+			private Integer objectlinksCount;
+
+			private String startDate;
 
 			private String sprint;
 
+			private String creatorId;
+
+			private String source;
+
+			private String sourceId;
+
+			private String sourceDate;
+
+			private String organizationId;
+
+			private Integer likesCount;
+
+			private String stageId;
+
+			private String visible;
+
+			private Boolean isDone;
+
 			private String parent;
+
+			private String sprintId;
+
+			private Integer attachmentsCount;
+
+			private String dueDate;
 
 			private String taskUniqueId;
 
+			private String created;
+
+			private String taskId;
+
+			private String id;
+
 			private List<Customfield> customfields;
-
-			private List<String> ancestorIds;
-
-			private List<String> labels;
-
-			private List<String> tagIds;
 
 			private List<String> involveMembers;
 
+			private List<String> tagIds;
+
+			private List<String> labels;
+
 			private List<String> divisions;
+
+			private List<String> ancestorIds;
 
 			private WorkTime workTime;
 
@@ -223,20 +221,12 @@ public class GetTaskListFilterResponse extends AcsResponse {
 
 			private TaskFlowStatus taskFlowStatus;
 
-			public String getId() {
-				return this.id;
+			public Boolean getIsFavorite() {
+				return this.isFavorite;
 			}
 
-			public void setId(String id) {
-				this.id = id;
-			}
-
-			public String getCreatorId() {
-				return this.creatorId;
-			}
-
-			public void setCreatorId(String creatorId) {
-				this.creatorId = creatorId;
+			public void setIsFavorite(Boolean isFavorite) {
+				this.isFavorite = isFavorite;
 			}
 
 			public String getExecutorId() {
@@ -255,78 +245,6 @@ public class GetTaskListFilterResponse extends AcsResponse {
 				this.projectId = projectId;
 			}
 
-			public String getTaskListId() {
-				return this.taskListId;
-			}
-
-			public void setTaskListId(String taskListId) {
-				this.taskListId = taskListId;
-			}
-
-			public String getOrganizationId() {
-				return this.organizationId;
-			}
-
-			public void setOrganizationId(String organizationId) {
-				this.organizationId = organizationId;
-			}
-
-			public String getStageId() {
-				return this.stageId;
-			}
-
-			public void setStageId(String stageId) {
-				this.stageId = stageId;
-			}
-
-			public String getVisible() {
-				return this.visible;
-			}
-
-			public void setVisible(String visible) {
-				this.visible = visible;
-			}
-
-			public String getUpdated() {
-				return this.updated;
-			}
-
-			public void setUpdated(String updated) {
-				this.updated = updated;
-			}
-
-			public String getCreated() {
-				return this.created;
-			}
-
-			public void setCreated(String created) {
-				this.created = created;
-			}
-
-			public Boolean getIsArchived() {
-				return this.isArchived;
-			}
-
-			public void setIsArchived(Boolean isArchived) {
-				this.isArchived = isArchived;
-			}
-
-			public Boolean getIsDone() {
-				return this.isDone;
-			}
-
-			public void setIsDone(Boolean isDone) {
-				this.isDone = isDone;
-			}
-
-			public Boolean getIsTopInProject() {
-				return this.isTopInProject;
-			}
-
-			public void setIsTopInProject(Boolean isTopInProject) {
-				this.isTopInProject = isTopInProject;
-			}
-
 			public Integer getPriority() {
 				return this.priority;
 			}
@@ -335,148 +253,12 @@ public class GetTaskListFilterResponse extends AcsResponse {
 				this.priority = priority;
 			}
 
-			public Integer getPos() {
-				return this.pos;
+			public Boolean getIsTopInProject() {
+				return this.isTopInProject;
 			}
 
-			public void setPos(Integer pos) {
-				this.pos = pos;
-			}
-
-			public String getStartDate() {
-				return this.startDate;
-			}
-
-			public void setStartDate(String startDate) {
-				this.startDate = startDate;
-			}
-
-			public String getDueDate() {
-				return this.dueDate;
-			}
-
-			public void setDueDate(String dueDate) {
-				this.dueDate = dueDate;
-			}
-
-			public String getAccomplished() {
-				return this.accomplished;
-			}
-
-			public void setAccomplished(String accomplished) {
-				this.accomplished = accomplished;
-			}
-
-			public String getNote() {
-				return this.note;
-			}
-
-			public void setNote(String note) {
-				this.note = note;
-			}
-
-			public String getContent() {
-				return this.content;
-			}
-
-			public void setContent(String content) {
-				this.content = content;
-			}
-
-			public String getRecurrence() {
-				return this.recurrence;
-			}
-
-			public void setRecurrence(String recurrence) {
-				this.recurrence = recurrence;
-			}
-
-			public String getSourceId() {
-				return this.sourceId;
-			}
-
-			public void setSourceId(String sourceId) {
-				this.sourceId = sourceId;
-			}
-
-			public String getSourceDate() {
-				return this.sourceDate;
-			}
-
-			public void setSourceDate(String sourceDate) {
-				this.sourceDate = sourceDate;
-			}
-
-			public Integer getCommentsCount() {
-				return this.commentsCount;
-			}
-
-			public void setCommentsCount(Integer commentsCount) {
-				this.commentsCount = commentsCount;
-			}
-
-			public Integer getAttachmentsCount() {
-				return this.attachmentsCount;
-			}
-
-			public void setAttachmentsCount(Integer attachmentsCount) {
-				this.attachmentsCount = attachmentsCount;
-			}
-
-			public Integer getLikesCount() {
-				return this.likesCount;
-			}
-
-			public void setLikesCount(Integer likesCount) {
-				this.likesCount = likesCount;
-			}
-
-			public Integer getObjectlinksCount() {
-				return this.objectlinksCount;
-			}
-
-			public void setObjectlinksCount(Integer objectlinksCount) {
-				this.objectlinksCount = objectlinksCount;
-			}
-
-			public Integer getUniqueId() {
-				return this.uniqueId;
-			}
-
-			public void setUniqueId(Integer uniqueId) {
-				this.uniqueId = uniqueId;
-			}
-
-			public String getStoryPoint() {
-				return this.storyPoint;
-			}
-
-			public void setStoryPoint(String storyPoint) {
-				this.storyPoint = storyPoint;
-			}
-
-			public Integer getProgress() {
-				return this.progress;
-			}
-
-			public void setProgress(Integer progress) {
-				this.progress = progress;
-			}
-
-			public Integer getRating() {
-				return this.rating;
-			}
-
-			public void setRating(Integer rating) {
-				this.rating = rating;
-			}
-
-			public Boolean getIsFavorite() {
-				return this.isFavorite;
-			}
-
-			public void setIsFavorite(Boolean isFavorite) {
-				this.isFavorite = isFavorite;
+			public void setIsTopInProject(Boolean isTopInProject) {
+				this.isTopInProject = isTopInProject;
 			}
 
 			public String getScenariofFeldConfigId() {
@@ -495,12 +277,76 @@ public class GetTaskListFilterResponse extends AcsResponse {
 				this.shareStatus = shareStatus;
 			}
 
-			public String getSprintId() {
-				return this.sprintId;
+			public String getAccomplished() {
+				return this.accomplished;
 			}
 
-			public void setSprintId(String sprintId) {
-				this.sprintId = sprintId;
+			public void setAccomplished(String accomplished) {
+				this.accomplished = accomplished;
+			}
+
+			public String getTaskListId() {
+				return this.taskListId;
+			}
+
+			public void setTaskListId(String taskListId) {
+				this.taskListId = taskListId;
+			}
+
+			public String getNote() {
+				return this.note;
+			}
+
+			public void setNote(String note) {
+				this.note = note;
+			}
+
+			public String getUpdated() {
+				return this.updated;
+			}
+
+			public void setUpdated(String updated) {
+				this.updated = updated;
+			}
+
+			public Integer getUniqueId() {
+				return this.uniqueId;
+			}
+
+			public void setUniqueId(Integer uniqueId) {
+				this.uniqueId = uniqueId;
+			}
+
+			public Boolean getIsArchived() {
+				return this.isArchived;
+			}
+
+			public void setIsArchived(Boolean isArchived) {
+				this.isArchived = isArchived;
+			}
+
+			public String getContent() {
+				return this.content;
+			}
+
+			public void setContent(String content) {
+				this.content = content;
+			}
+
+			public Integer getRating() {
+				return this.rating;
+			}
+
+			public void setRating(Integer rating) {
+				this.rating = rating;
+			}
+
+			public Integer getCommentsCount() {
+				return this.commentsCount;
+			}
+
+			public void setCommentsCount(Integer commentsCount) {
+				this.commentsCount = commentsCount;
 			}
 
 			public String getTaskFlowStatusId() {
@@ -511,6 +357,14 @@ public class GetTaskListFilterResponse extends AcsResponse {
 				this.taskFlowStatusId = taskFlowStatusId;
 			}
 
+			public String getRecurrence() {
+				return this.recurrence;
+			}
+
+			public void setRecurrence(String recurrence) {
+				this.recurrence = recurrence;
+			}
+
 			public String getObjectType() {
 				return this.objectType;
 			}
@@ -519,12 +373,12 @@ public class GetTaskListFilterResponse extends AcsResponse {
 				this.objectType = objectType;
 			}
 
-			public String getSource() {
-				return this.source;
+			public Integer getProgress() {
+				return this.progress;
 			}
 
-			public void setSource(String source) {
-				this.source = source;
+			public void setProgress(Integer progress) {
+				this.progress = progress;
 			}
 
 			public String getUntilDate() {
@@ -535,12 +389,28 @@ public class GetTaskListFilterResponse extends AcsResponse {
 				this.untilDate = untilDate;
 			}
 
-			public String getTaskId() {
-				return this.taskId;
+			public String getStoryPoint() {
+				return this.storyPoint;
 			}
 
-			public void setTaskId(String taskId) {
-				this.taskId = taskId;
+			public void setStoryPoint(String storyPoint) {
+				this.storyPoint = storyPoint;
+			}
+
+			public Integer getObjectlinksCount() {
+				return this.objectlinksCount;
+			}
+
+			public void setObjectlinksCount(Integer objectlinksCount) {
+				this.objectlinksCount = objectlinksCount;
+			}
+
+			public String getStartDate() {
+				return this.startDate;
+			}
+
+			public void setStartDate(String startDate) {
+				this.startDate = startDate;
 			}
 
 			public String getSprint() {
@@ -551,12 +421,108 @@ public class GetTaskListFilterResponse extends AcsResponse {
 				this.sprint = sprint;
 			}
 
+			public String getCreatorId() {
+				return this.creatorId;
+			}
+
+			public void setCreatorId(String creatorId) {
+				this.creatorId = creatorId;
+			}
+
+			public String getSource() {
+				return this.source;
+			}
+
+			public void setSource(String source) {
+				this.source = source;
+			}
+
+			public String getSourceId() {
+				return this.sourceId;
+			}
+
+			public void setSourceId(String sourceId) {
+				this.sourceId = sourceId;
+			}
+
+			public String getSourceDate() {
+				return this.sourceDate;
+			}
+
+			public void setSourceDate(String sourceDate) {
+				this.sourceDate = sourceDate;
+			}
+
+			public String getOrganizationId() {
+				return this.organizationId;
+			}
+
+			public void setOrganizationId(String organizationId) {
+				this.organizationId = organizationId;
+			}
+
+			public Integer getLikesCount() {
+				return this.likesCount;
+			}
+
+			public void setLikesCount(Integer likesCount) {
+				this.likesCount = likesCount;
+			}
+
+			public String getStageId() {
+				return this.stageId;
+			}
+
+			public void setStageId(String stageId) {
+				this.stageId = stageId;
+			}
+
+			public String getVisible() {
+				return this.visible;
+			}
+
+			public void setVisible(String visible) {
+				this.visible = visible;
+			}
+
+			public Boolean getIsDone() {
+				return this.isDone;
+			}
+
+			public void setIsDone(Boolean isDone) {
+				this.isDone = isDone;
+			}
+
 			public String getParent() {
 				return this.parent;
 			}
 
 			public void setParent(String parent) {
 				this.parent = parent;
+			}
+
+			public String getSprintId() {
+				return this.sprintId;
+			}
+
+			public void setSprintId(String sprintId) {
+				this.sprintId = sprintId;
+			}
+
+			public Integer getAttachmentsCount() {
+				return this.attachmentsCount;
+			}
+
+			public void setAttachmentsCount(Integer attachmentsCount) {
+				this.attachmentsCount = attachmentsCount;
+			}
+
+			public String getDueDate() {
+				return this.dueDate;
+			}
+
+			public void setDueDate(String dueDate) {
+				this.dueDate = dueDate;
 			}
 
 			public String getTaskUniqueId() {
@@ -567,36 +533,36 @@ public class GetTaskListFilterResponse extends AcsResponse {
 				this.taskUniqueId = taskUniqueId;
 			}
 
+			public String getCreated() {
+				return this.created;
+			}
+
+			public void setCreated(String created) {
+				this.created = created;
+			}
+
+			public String getTaskId() {
+				return this.taskId;
+			}
+
+			public void setTaskId(String taskId) {
+				this.taskId = taskId;
+			}
+
+			public String getId() {
+				return this.id;
+			}
+
+			public void setId(String id) {
+				this.id = id;
+			}
+
 			public List<Customfield> getCustomfields() {
 				return this.customfields;
 			}
 
 			public void setCustomfields(List<Customfield> customfields) {
 				this.customfields = customfields;
-			}
-
-			public List<String> getAncestorIds() {
-				return this.ancestorIds;
-			}
-
-			public void setAncestorIds(List<String> ancestorIds) {
-				this.ancestorIds = ancestorIds;
-			}
-
-			public List<String> getLabels() {
-				return this.labels;
-			}
-
-			public void setLabels(List<String> labels) {
-				this.labels = labels;
-			}
-
-			public List<String> getTagIds() {
-				return this.tagIds;
-			}
-
-			public void setTagIds(List<String> tagIds) {
-				this.tagIds = tagIds;
 			}
 
 			public List<String> getInvolveMembers() {
@@ -607,12 +573,36 @@ public class GetTaskListFilterResponse extends AcsResponse {
 				this.involveMembers = involveMembers;
 			}
 
+			public List<String> getTagIds() {
+				return this.tagIds;
+			}
+
+			public void setTagIds(List<String> tagIds) {
+				this.tagIds = tagIds;
+			}
+
+			public List<String> getLabels() {
+				return this.labels;
+			}
+
+			public void setLabels(List<String> labels) {
+				this.labels = labels;
+			}
+
 			public List<String> getDivisions() {
 				return this.divisions;
 			}
 
 			public void setDivisions(List<String> divisions) {
 				this.divisions = divisions;
+			}
+
+			public List<String> getAncestorIds() {
+				return this.ancestorIds;
+			}
+
+			public void setAncestorIds(List<String> ancestorIds) {
+				this.ancestorIds = ancestorIds;
 			}
 
 			public WorkTime getWorkTime() {
@@ -681,21 +671,13 @@ public class GetTaskListFilterResponse extends AcsResponse {
 
 			public static class Customfield {
 
-				private String customfieldId;
-
 				private String type;
+
+				private String customfieldId;
 
 				private String values;
 
 				private List<ValueItem> value;
-
-				public String getCustomfieldId() {
-					return this.customfieldId;
-				}
-
-				public void setCustomfieldId(String customfieldId) {
-					this.customfieldId = customfieldId;
-				}
 
 				public String getType() {
 					return this.type;
@@ -703,6 +685,14 @@ public class GetTaskListFilterResponse extends AcsResponse {
 
 				public void setType(String type) {
 					this.type = type;
+				}
+
+				public String getCustomfieldId() {
+					return this.customfieldId;
+				}
+
+				public void setCustomfieldId(String customfieldId) {
+					this.customfieldId = customfieldId;
 				}
 
 				public String getValues() {
@@ -747,19 +737,11 @@ public class GetTaskListFilterResponse extends AcsResponse {
 
 			public static class WorkTime {
 
-				private Integer totalTime;
-
 				private Integer usedTime;
 
+				private Integer totalTime;
+
 				private String unit;
-
-				public Integer getTotalTime() {
-					return this.totalTime;
-				}
-
-				public void setTotalTime(Integer totalTime) {
-					this.totalTime = totalTime;
-				}
 
 				public Integer getUsedTime() {
 					return this.usedTime;
@@ -767,6 +749,14 @@ public class GetTaskListFilterResponse extends AcsResponse {
 
 				public void setUsedTime(Integer usedTime) {
 					this.usedTime = usedTime;
+				}
+
+				public Integer getTotalTime() {
+					return this.totalTime;
+				}
+
+				public void setTotalTime(Integer totalTime) {
+					this.totalTime = totalTime;
 				}
 
 				public String getUnit() {
@@ -780,13 +770,21 @@ public class GetTaskListFilterResponse extends AcsResponse {
 
 			public static class Badges {
 
-				private Integer objectlinksCount;
+				private Integer likesCount;
 
-				private Integer commentsCount;
+				private Integer objectlinksCount;
 
 				private Integer attachmentsCount;
 
-				private Integer likesCount;
+				private Integer commentsCount;
+
+				public Integer getLikesCount() {
+					return this.likesCount;
+				}
+
+				public void setLikesCount(Integer likesCount) {
+					this.likesCount = likesCount;
+				}
 
 				public Integer getObjectlinksCount() {
 					return this.objectlinksCount;
@@ -794,14 +792,6 @@ public class GetTaskListFilterResponse extends AcsResponse {
 
 				public void setObjectlinksCount(Integer objectlinksCount) {
 					this.objectlinksCount = objectlinksCount;
-				}
-
-				public Integer getCommentsCount() {
-					return this.commentsCount;
-				}
-
-				public void setCommentsCount(Integer commentsCount) {
-					this.commentsCount = commentsCount;
 				}
 
 				public Integer getAttachmentsCount() {
@@ -812,28 +802,20 @@ public class GetTaskListFilterResponse extends AcsResponse {
 					this.attachmentsCount = attachmentsCount;
 				}
 
-				public Integer getLikesCount() {
-					return this.likesCount;
+				public Integer getCommentsCount() {
+					return this.commentsCount;
 				}
 
-				public void setLikesCount(Integer likesCount) {
-					this.likesCount = likesCount;
+				public void setCommentsCount(Integer commentsCount) {
+					this.commentsCount = commentsCount;
 				}
 			}
 
 			public static class SubtaskCount {
 
-				private Integer total;
-
 				private Integer done;
 
-				public Integer getTotal() {
-					return this.total;
-				}
-
-				public void setTotal(Integer total) {
-					this.total = total;
-				}
+				private Integer total;
 
 				public Integer getDone() {
 					return this.done;
@@ -841,6 +823,14 @@ public class GetTaskListFilterResponse extends AcsResponse {
 
 				public void setDone(Integer done) {
 					this.done = done;
+				}
+
+				public Integer getTotal() {
+					return this.total;
+				}
+
+				public void setTotal(Integer total) {
+					this.total = total;
 				}
 			}
 
@@ -899,19 +889,11 @@ public class GetTaskListFilterResponse extends AcsResponse {
 
 			public static class Creator {
 
-				private String id;
-
 				private String name;
 
 				private String avatarUrl;
 
-				public String getId() {
-					return this.id;
-				}
-
-				public void setId(String id) {
-					this.id = id;
-				}
+				private String id;
 
 				public String getName() {
 					return this.name;
@@ -927,22 +909,22 @@ public class GetTaskListFilterResponse extends AcsResponse {
 
 				public void setAvatarUrl(String avatarUrl) {
 					this.avatarUrl = avatarUrl;
+				}
+
+				public String getId() {
+					return this.id;
+				}
+
+				public void setId(String id) {
+					this.id = id;
 				}
 			}
 
 			public static class Stage {
 
-				private String id;
-
 				private String name;
 
-				public String getId() {
-					return this.id;
-				}
-
-				public void setId(String id) {
-					this.id = id;
-				}
+				private String id;
 
 				public String getName() {
 					return this.name;
@@ -951,15 +933,6 @@ public class GetTaskListFilterResponse extends AcsResponse {
 				public void setName(String name) {
 					this.name = name;
 				}
-			}
-
-			public static class Executor {
-
-				private String id;
-
-				private String name;
-
-				private String avatarUrl;
 
 				public String getId() {
 					return this.id;
@@ -968,6 +941,15 @@ public class GetTaskListFilterResponse extends AcsResponse {
 				public void setId(String id) {
 					this.id = id;
 				}
+			}
+
+			public static class Executor {
+
+				private String name;
+
+				private String avatarUrl;
+
+				private String id;
 
 				public String getName() {
 					return this.name;
@@ -984,19 +966,6 @@ public class GetTaskListFilterResponse extends AcsResponse {
 				public void setAvatarUrl(String avatarUrl) {
 					this.avatarUrl = avatarUrl;
 				}
-			}
-
-			public static class TaskFlowStatus {
-
-				private String id;
-
-				private String name;
-
-				private String kind;
-
-				private Integer pos;
-
-				private String taskFlowId;
 
 				public String getId() {
 					return this.id;
@@ -1005,6 +974,27 @@ public class GetTaskListFilterResponse extends AcsResponse {
 				public void setId(String id) {
 					this.id = id;
 				}
+			}
+
+			public static class TaskFlowStatus {
+
+				private String taskFlowId;
+
+				private String name;
+
+				private Integer pos;
+
+				private String kind;
+
+				private String id;
+
+				public String getTaskFlowId() {
+					return this.taskFlowId;
+				}
+
+				public void setTaskFlowId(String taskFlowId) {
+					this.taskFlowId = taskFlowId;
+				}
 
 				public String getName() {
 					return this.name;
@@ -1012,14 +1002,6 @@ public class GetTaskListFilterResponse extends AcsResponse {
 
 				public void setName(String name) {
 					this.name = name;
-				}
-
-				public String getKind() {
-					return this.kind;
-				}
-
-				public void setKind(String kind) {
-					this.kind = kind;
 				}
 
 				public Integer getPos() {
@@ -1030,12 +1012,20 @@ public class GetTaskListFilterResponse extends AcsResponse {
 					this.pos = pos;
 				}
 
-				public String getTaskFlowId() {
-					return this.taskFlowId;
+				public String getKind() {
+					return this.kind;
 				}
 
-				public void setTaskFlowId(String taskFlowId) {
-					this.taskFlowId = taskFlowId;
+				public void setKind(String kind) {
+					this.kind = kind;
+				}
+
+				public String getId() {
+					return this.id;
+				}
+
+				public void setId(String id) {
+					this.id = id;
 				}
 			}
 		}

@@ -28,9 +28,9 @@ public class ListDevopsProjectsResponseUnmarshaller {
 	public static ListDevopsProjectsResponse unmarshall(ListDevopsProjectsResponse listDevopsProjectsResponse, UnmarshallerContext _ctx) {
 		
 		listDevopsProjectsResponse.setRequestId(_ctx.stringValue("ListDevopsProjectsResponse.RequestId"));
+		listDevopsProjectsResponse.setErrorMsg(_ctx.stringValue("ListDevopsProjectsResponse.ErrorMsg"));
 		listDevopsProjectsResponse.setSuccessful(_ctx.booleanValue("ListDevopsProjectsResponse.Successful"));
 		listDevopsProjectsResponse.setErrorCode(_ctx.stringValue("ListDevopsProjectsResponse.ErrorCode"));
-		listDevopsProjectsResponse.setErrorMsg(_ctx.stringValue("ListDevopsProjectsResponse.ErrorMsg"));
 
 		Object object = new Object();
 		object.setNextPageToken(_ctx.stringValue("ListDevopsProjectsResponse.Object.NextPageToken"));
@@ -38,22 +38,22 @@ public class ListDevopsProjectsResponseUnmarshaller {
 		List<Project> result = new ArrayList<Project>();
 		for (int i = 0; i < _ctx.lengthValue("ListDevopsProjectsResponse.Object.Result.Length"); i++) {
 			Project project = new Project();
-			project.setRoleId(_ctx.integerValue("ListDevopsProjectsResponse.Object.Result["+ i +"].RoleId"));
-			project.setOrganizationId(_ctx.stringValue("ListDevopsProjectsResponse.Object.Result["+ i +"].OrganizationId"));
-			project.setId(_ctx.stringValue("ListDevopsProjectsResponse.Object.Result["+ i +"].Id"));
-			project.setCreatorId(_ctx.stringValue("ListDevopsProjectsResponse.Object.Result["+ i +"].CreatorId"));
-			project.setVisibility(_ctx.stringValue("ListDevopsProjectsResponse.Object.Result["+ i +"].Visibility"));
-			project.setUpdated(_ctx.stringValue("ListDevopsProjectsResponse.Object.Result["+ i +"].Updated"));
-			project.setTasksCount(_ctx.integerValue("ListDevopsProjectsResponse.Object.Result["+ i +"].TasksCount"));
-			project.setName(_ctx.stringValue("ListDevopsProjectsResponse.Object.Result["+ i +"].Name"));
-			project.setMembersCount(_ctx.integerValue("ListDevopsProjectsResponse.Object.Result["+ i +"].MembersCount"));
 			project.setLogo(_ctx.stringValue("ListDevopsProjectsResponse.Object.Result["+ i +"].Logo"));
-			project.setIsTemplate(_ctx.booleanValue("ListDevopsProjectsResponse.Object.Result["+ i +"].IsTemplate"));
 			project.setIsStar(_ctx.booleanValue("ListDevopsProjectsResponse.Object.Result["+ i +"].IsStar"));
-			project.setIsPublic(_ctx.booleanValue("ListDevopsProjectsResponse.Object.Result["+ i +"].IsPublic"));
-			project.setIsArchived(_ctx.booleanValue("ListDevopsProjectsResponse.Object.Result["+ i +"].IsArchived"));
+			project.setCreatorId(_ctx.stringValue("ListDevopsProjectsResponse.Object.Result["+ i +"].CreatorId"));
+			project.setMembersCount(_ctx.integerValue("ListDevopsProjectsResponse.Object.Result["+ i +"].MembersCount"));
+			project.setOrganizationId(_ctx.stringValue("ListDevopsProjectsResponse.Object.Result["+ i +"].OrganizationId"));
+			project.setVisibility(_ctx.stringValue("ListDevopsProjectsResponse.Object.Result["+ i +"].Visibility"));
+			project.setIsTemplate(_ctx.booleanValue("ListDevopsProjectsResponse.Object.Result["+ i +"].IsTemplate"));
 			project.setDescription(_ctx.stringValue("ListDevopsProjectsResponse.Object.Result["+ i +"].Description"));
+			project.setUpdated(_ctx.stringValue("ListDevopsProjectsResponse.Object.Result["+ i +"].Updated"));
 			project.setCreated(_ctx.stringValue("ListDevopsProjectsResponse.Object.Result["+ i +"].Created"));
+			project.setIsArchived(_ctx.booleanValue("ListDevopsProjectsResponse.Object.Result["+ i +"].IsArchived"));
+			project.setName(_ctx.stringValue("ListDevopsProjectsResponse.Object.Result["+ i +"].Name"));
+			project.setIsPublic(_ctx.booleanValue("ListDevopsProjectsResponse.Object.Result["+ i +"].IsPublic"));
+			project.setTasksCount(_ctx.integerValue("ListDevopsProjectsResponse.Object.Result["+ i +"].TasksCount"));
+			project.setRoleId(_ctx.stringValue("ListDevopsProjectsResponse.Object.Result["+ i +"].RoleId"));
+			project.setId(_ctx.stringValue("ListDevopsProjectsResponse.Object.Result["+ i +"].Id"));
 
 			result.add(project);
 		}

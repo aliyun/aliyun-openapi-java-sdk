@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListDevopsProjectsResponse extends AcsResponse {
 
-	private Boolean successful;
-
-	private String errorCode;
-
 	private String errorMsg;
 
 	private String requestId;
 
+	private Boolean successful;
+
+	private String errorCode;
+
 	private Object object;
-
-	public Boolean getSuccessful() {
-		return this.successful;
-	}
-
-	public void setSuccessful(Boolean successful) {
-		this.successful = successful;
-	}
-
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
-	}
 
 	public String getErrorMsg() {
 		return this.errorMsg;
@@ -65,6 +49,22 @@ public class ListDevopsProjectsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Boolean getSuccessful() {
+		return this.successful;
+	}
+
+	public void setSuccessful(Boolean successful) {
+		this.successful = successful;
+	}
+
+	public String getErrorCode() {
+		return this.errorCode;
+	}
+
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
 	}
 
 	public Object getObject() {
@@ -99,109 +99,37 @@ public class ListDevopsProjectsResponse extends AcsResponse {
 
 		public static class Project {
 
-			private Integer roleId;
-
-			private String organizationId;
-
-			private String id;
-
-			private String creatorId;
-
-			private String visibility;
-
-			private String updated;
-
-			private Integer tasksCount;
-
-			private String name;
-
-			private Integer membersCount;
-
 			private String logo;
-
-			private Boolean isTemplate;
 
 			private Boolean isStar;
 
-			private Boolean isPublic;
+			private String creatorId;
 
-			private Boolean isArchived;
+			private Integer membersCount;
+
+			private String organizationId;
+
+			private String visibility;
+
+			private Boolean isTemplate;
 
 			private String description;
 
+			private String updated;
+
 			private String created;
 
-			public Integer getRoleId() {
-				return this.roleId;
-			}
+			private Boolean isArchived;
 
-			public void setRoleId(Integer roleId) {
-				this.roleId = roleId;
-			}
+			private String name;
 
-			public String getOrganizationId() {
-				return this.organizationId;
-			}
+			private Boolean isPublic;
 
-			public void setOrganizationId(String organizationId) {
-				this.organizationId = organizationId;
-			}
+			private Integer tasksCount;
 
-			public String getId() {
-				return this.id;
-			}
+			private String roleId;
 
-			public void setId(String id) {
-				this.id = id;
-			}
-
-			public String getCreatorId() {
-				return this.creatorId;
-			}
-
-			public void setCreatorId(String creatorId) {
-				this.creatorId = creatorId;
-			}
-
-			public String getVisibility() {
-				return this.visibility;
-			}
-
-			public void setVisibility(String visibility) {
-				this.visibility = visibility;
-			}
-
-			public String getUpdated() {
-				return this.updated;
-			}
-
-			public void setUpdated(String updated) {
-				this.updated = updated;
-			}
-
-			public Integer getTasksCount() {
-				return this.tasksCount;
-			}
-
-			public void setTasksCount(Integer tasksCount) {
-				this.tasksCount = tasksCount;
-			}
-
-			public String getName() {
-				return this.name;
-			}
-
-			public void setName(String name) {
-				this.name = name;
-			}
-
-			public Integer getMembersCount() {
-				return this.membersCount;
-			}
-
-			public void setMembersCount(Integer membersCount) {
-				this.membersCount = membersCount;
-			}
+			private String id;
 
 			public String getLogo() {
 				return this.logo;
@@ -209,14 +137,6 @@ public class ListDevopsProjectsResponse extends AcsResponse {
 
 			public void setLogo(String logo) {
 				this.logo = logo;
-			}
-
-			public Boolean getIsTemplate() {
-				return this.isTemplate;
-			}
-
-			public void setIsTemplate(Boolean isTemplate) {
-				this.isTemplate = isTemplate;
 			}
 
 			public Boolean getIsStar() {
@@ -227,20 +147,44 @@ public class ListDevopsProjectsResponse extends AcsResponse {
 				this.isStar = isStar;
 			}
 
-			public Boolean getIsPublic() {
-				return this.isPublic;
+			public String getCreatorId() {
+				return this.creatorId;
 			}
 
-			public void setIsPublic(Boolean isPublic) {
-				this.isPublic = isPublic;
+			public void setCreatorId(String creatorId) {
+				this.creatorId = creatorId;
 			}
 
-			public Boolean getIsArchived() {
-				return this.isArchived;
+			public Integer getMembersCount() {
+				return this.membersCount;
 			}
 
-			public void setIsArchived(Boolean isArchived) {
-				this.isArchived = isArchived;
+			public void setMembersCount(Integer membersCount) {
+				this.membersCount = membersCount;
+			}
+
+			public String getOrganizationId() {
+				return this.organizationId;
+			}
+
+			public void setOrganizationId(String organizationId) {
+				this.organizationId = organizationId;
+			}
+
+			public String getVisibility() {
+				return this.visibility;
+			}
+
+			public void setVisibility(String visibility) {
+				this.visibility = visibility;
+			}
+
+			public Boolean getIsTemplate() {
+				return this.isTemplate;
+			}
+
+			public void setIsTemplate(Boolean isTemplate) {
+				this.isTemplate = isTemplate;
 			}
 
 			public String getDescription() {
@@ -251,12 +195,68 @@ public class ListDevopsProjectsResponse extends AcsResponse {
 				this.description = description;
 			}
 
+			public String getUpdated() {
+				return this.updated;
+			}
+
+			public void setUpdated(String updated) {
+				this.updated = updated;
+			}
+
 			public String getCreated() {
 				return this.created;
 			}
 
 			public void setCreated(String created) {
 				this.created = created;
+			}
+
+			public Boolean getIsArchived() {
+				return this.isArchived;
+			}
+
+			public void setIsArchived(Boolean isArchived) {
+				this.isArchived = isArchived;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
+
+			public Boolean getIsPublic() {
+				return this.isPublic;
+			}
+
+			public void setIsPublic(Boolean isPublic) {
+				this.isPublic = isPublic;
+			}
+
+			public Integer getTasksCount() {
+				return this.tasksCount;
+			}
+
+			public void setTasksCount(Integer tasksCount) {
+				this.tasksCount = tasksCount;
+			}
+
+			public String getRoleId() {
+				return this.roleId;
+			}
+
+			public void setRoleId(String roleId) {
+				this.roleId = roleId;
+			}
+
+			public String getId() {
+				return this.id;
+			}
+
+			public void setId(String id) {
+				this.id = id;
 			}
 		}
 	}
