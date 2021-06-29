@@ -25,21 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class AddDoubleVerificationGroupsResponse extends AcsResponse {
 
-	private String message;
-
 	private String requestId;
 
 	private String code;
 
+	private String message;
+
 	private List<ResultListItem> resultList;
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -57,6 +49,14 @@ public class AddDoubleVerificationGroupsResponse extends AcsResponse {
 		this.code = code;
 	}
 
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
 	public List<ResultListItem> getResultList() {
 		return this.resultList;
 	}
@@ -67,18 +67,18 @@ public class AddDoubleVerificationGroupsResponse extends AcsResponse {
 
 	public static class ResultListItem {
 
-		private String message;
+		private String groupId;
 
 		private String code;
 
-		private String groupId;
+		private String message;
 
-		public String getMessage() {
-			return this.message;
+		public String getGroupId() {
+			return this.groupId;
 		}
 
-		public void setMessage(String message) {
-			this.message = message;
+		public void setGroupId(String groupId) {
+			this.groupId = groupId;
 		}
 
 		public String getCode() {
@@ -89,12 +89,12 @@ public class AddDoubleVerificationGroupsResponse extends AcsResponse {
 			this.code = code;
 		}
 
-		public String getGroupId() {
-			return this.groupId;
+		public String getMessage() {
+			return this.message;
 		}
 
-		public void setGroupId(String groupId) {
-			this.groupId = groupId;
+		public void setMessage(String message) {
+			this.message = message;
 		}
 	}
 

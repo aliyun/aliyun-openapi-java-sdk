@@ -27,9 +27,9 @@ public class ListAlgorithmNamesByDeviceIdsResponseUnmarshaller {
 	public static ListAlgorithmNamesByDeviceIdsResponse unmarshall(ListAlgorithmNamesByDeviceIdsResponse listAlgorithmNamesByDeviceIdsResponse, UnmarshallerContext _ctx) {
 		
 		listAlgorithmNamesByDeviceIdsResponse.setRequestId(_ctx.stringValue("ListAlgorithmNamesByDeviceIdsResponse.RequestId"));
-		listAlgorithmNamesByDeviceIdsResponse.setMessage(_ctx.stringValue("ListAlgorithmNamesByDeviceIdsResponse.Message"));
-		listAlgorithmNamesByDeviceIdsResponse.setCode(_ctx.stringValue("ListAlgorithmNamesByDeviceIdsResponse.Code"));
 		listAlgorithmNamesByDeviceIdsResponse.setSuccess(_ctx.booleanValue("ListAlgorithmNamesByDeviceIdsResponse.Success"));
+		listAlgorithmNamesByDeviceIdsResponse.setCode(_ctx.stringValue("ListAlgorithmNamesByDeviceIdsResponse.Code"));
+		listAlgorithmNamesByDeviceIdsResponse.setMessage(_ctx.stringValue("ListAlgorithmNamesByDeviceIdsResponse.Message"));
 
 		List<Items> data = new ArrayList<Items>();
 		for (int i = 0; i < _ctx.lengthValue("ListAlgorithmNamesByDeviceIdsResponse.Data.Length"); i++) {

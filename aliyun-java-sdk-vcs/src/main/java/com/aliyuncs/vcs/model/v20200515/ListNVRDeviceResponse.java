@@ -27,9 +27,9 @@ public class ListNVRDeviceResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String total;
-
 	private Boolean success;
+
+	private String total;
 
 	private List<DataItem> data;
 
@@ -41,20 +41,20 @@ public class ListNVRDeviceResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getTotal() {
-		return this.total;
-	}
-
-	public void setTotal(String total) {
-		this.total = total;
-	}
-
 	public Boolean getSuccess() {
 		return this.success;
 	}
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getTotal() {
+		return this.total;
+	}
+
+	public void setTotal(String total) {
+		this.total = total;
 	}
 
 	public List<DataItem> getData() {
@@ -67,66 +67,58 @@ public class ListNVRDeviceResponse extends AcsResponse {
 
 	public static class DataItem {
 
-		private String corpId;
+		private String deviceCode;
 
-		private String projectName;
+		private String deviceName;
 
-		private String deviceSn;
-
-		private String channel;
+		private String deviceType;
 
 		private String datasourceType;
 
+		private String deviceStatus;
+
 		private String streamStatus;
+
+		private String comptureStatus;
+
+		private String regionName;
+
+		private String projectName;
 
 		private String registrationTime;
 
 		private String accessQuota;
 
-		private String deviceType;
+		private String channel;
+
+		private String deviceSn;
 
 		private String type;
 
-		private String regionName;
+		private String corpId;
 
-		private String deviceCode;
-
-		private String deviceStatus;
-
-		private String comptureStatus;
-
-		private String deviceName;
-
-		public String getCorpId() {
-			return this.corpId;
+		public String getDeviceCode() {
+			return this.deviceCode;
 		}
 
-		public void setCorpId(String corpId) {
-			this.corpId = corpId;
+		public void setDeviceCode(String deviceCode) {
+			this.deviceCode = deviceCode;
 		}
 
-		public String getProjectName() {
-			return this.projectName;
+		public String getDeviceName() {
+			return this.deviceName;
 		}
 
-		public void setProjectName(String projectName) {
-			this.projectName = projectName;
+		public void setDeviceName(String deviceName) {
+			this.deviceName = deviceName;
 		}
 
-		public String getDeviceSn() {
-			return this.deviceSn;
+		public String getDeviceType() {
+			return this.deviceType;
 		}
 
-		public void setDeviceSn(String deviceSn) {
-			this.deviceSn = deviceSn;
-		}
-
-		public String getChannel() {
-			return this.channel;
-		}
-
-		public void setChannel(String channel) {
-			this.channel = channel;
+		public void setDeviceType(String deviceType) {
+			this.deviceType = deviceType;
 		}
 
 		public String getDatasourceType() {
@@ -137,12 +129,44 @@ public class ListNVRDeviceResponse extends AcsResponse {
 			this.datasourceType = datasourceType;
 		}
 
+		public String getDeviceStatus() {
+			return this.deviceStatus;
+		}
+
+		public void setDeviceStatus(String deviceStatus) {
+			this.deviceStatus = deviceStatus;
+		}
+
 		public String getStreamStatus() {
 			return this.streamStatus;
 		}
 
 		public void setStreamStatus(String streamStatus) {
 			this.streamStatus = streamStatus;
+		}
+
+		public String getComptureStatus() {
+			return this.comptureStatus;
+		}
+
+		public void setComptureStatus(String comptureStatus) {
+			this.comptureStatus = comptureStatus;
+		}
+
+		public String getRegionName() {
+			return this.regionName;
+		}
+
+		public void setRegionName(String regionName) {
+			this.regionName = regionName;
+		}
+
+		public String getProjectName() {
+			return this.projectName;
+		}
+
+		public void setProjectName(String projectName) {
+			this.projectName = projectName;
 		}
 
 		public String getRegistrationTime() {
@@ -161,12 +185,20 @@ public class ListNVRDeviceResponse extends AcsResponse {
 			this.accessQuota = accessQuota;
 		}
 
-		public String getDeviceType() {
-			return this.deviceType;
+		public String getChannel() {
+			return this.channel;
 		}
 
-		public void setDeviceType(String deviceType) {
-			this.deviceType = deviceType;
+		public void setChannel(String channel) {
+			this.channel = channel;
+		}
+
+		public String getDeviceSn() {
+			return this.deviceSn;
+		}
+
+		public void setDeviceSn(String deviceSn) {
+			this.deviceSn = deviceSn;
 		}
 
 		public String getType() {
@@ -177,44 +209,12 @@ public class ListNVRDeviceResponse extends AcsResponse {
 			this.type = type;
 		}
 
-		public String getRegionName() {
-			return this.regionName;
+		public String getCorpId() {
+			return this.corpId;
 		}
 
-		public void setRegionName(String regionName) {
-			this.regionName = regionName;
-		}
-
-		public String getDeviceCode() {
-			return this.deviceCode;
-		}
-
-		public void setDeviceCode(String deviceCode) {
-			this.deviceCode = deviceCode;
-		}
-
-		public String getDeviceStatus() {
-			return this.deviceStatus;
-		}
-
-		public void setDeviceStatus(String deviceStatus) {
-			this.deviceStatus = deviceStatus;
-		}
-
-		public String getComptureStatus() {
-			return this.comptureStatus;
-		}
-
-		public void setComptureStatus(String comptureStatus) {
-			this.comptureStatus = comptureStatus;
-		}
-
-		public String getDeviceName() {
-			return this.deviceName;
-		}
-
-		public void setDeviceName(String deviceName) {
-			this.deviceName = deviceName;
+		public void setCorpId(String corpId) {
+			this.corpId = corpId;
 		}
 	}
 

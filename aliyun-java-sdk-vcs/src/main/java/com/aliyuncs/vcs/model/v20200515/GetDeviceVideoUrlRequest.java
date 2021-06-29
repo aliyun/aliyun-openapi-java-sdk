@@ -36,6 +36,8 @@ public class GetDeviceVideoUrlRequest extends RpcAcsRequest<GetDeviceVideoUrlRes
 	private Long startTime;
 
 	private String deviceId;
+
+	private String storageType;
 	public GetDeviceVideoUrlRequest() {
 		super("Vcs", "2020-05-15", "GetDeviceVideoUrl");
 		setMethod(MethodType.POST);
@@ -108,6 +110,17 @@ public class GetDeviceVideoUrlRequest extends RpcAcsRequest<GetDeviceVideoUrlRes
 		this.deviceId = deviceId;
 		if(deviceId != null){
 			putBodyParameter("DeviceId", deviceId);
+		}
+	}
+
+	public String getStorageType() {
+		return this.storageType;
+	}
+
+	public void setStorageType(String storageType) {
+		this.storageType = storageType;
+		if(storageType != null){
+			putBodyParameter("StorageType", storageType);
 		}
 	}
 

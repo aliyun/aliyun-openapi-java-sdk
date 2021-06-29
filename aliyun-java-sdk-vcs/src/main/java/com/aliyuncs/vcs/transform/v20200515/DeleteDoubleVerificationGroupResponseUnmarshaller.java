@@ -23,8 +23,8 @@ public class DeleteDoubleVerificationGroupResponseUnmarshaller {
 	public static DeleteDoubleVerificationGroupResponse unmarshall(DeleteDoubleVerificationGroupResponse deleteDoubleVerificationGroupResponse, UnmarshallerContext _ctx) {
 		
 		deleteDoubleVerificationGroupResponse.setRequestId(_ctx.stringValue("DeleteDoubleVerificationGroupResponse.RequestId"));
-		deleteDoubleVerificationGroupResponse.setMessage(_ctx.stringValue("DeleteDoubleVerificationGroupResponse.Message"));
 		deleteDoubleVerificationGroupResponse.setCode(_ctx.stringValue("DeleteDoubleVerificationGroupResponse.Code"));
+		deleteDoubleVerificationGroupResponse.setMessage(_ctx.stringValue("DeleteDoubleVerificationGroupResponse.Message"));
 	 
 	 	return deleteDoubleVerificationGroupResponse;
 	}

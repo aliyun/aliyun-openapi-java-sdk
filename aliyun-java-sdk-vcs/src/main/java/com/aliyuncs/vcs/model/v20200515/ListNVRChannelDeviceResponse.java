@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListNVRChannelDeviceResponse extends AcsResponse {
 
-	private String message;
-
 	private String requestId;
-
-	private String total;
 
 	private Boolean success;
 
+	private String total;
+
+	private String message;
+
 	private List<DataItem> data;
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -49,6 +41,14 @@ public class ListNVRChannelDeviceResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public String getTotal() {
@@ -59,12 +59,12 @@ public class ListNVRChannelDeviceResponse extends AcsResponse {
 		this.total = total;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public List<DataItem> getData() {
@@ -77,23 +77,13 @@ public class ListNVRChannelDeviceResponse extends AcsResponse {
 
 	public static class DataItem {
 
+		private String deviceCode;
+
+		private String deviceName;
+
 		private String deviceType;
 
-		private String sampleName;
-
-		private String corpId;
-
-		private String vap;
-
-		private String projectName;
-
-		private String regionName;
-
-		private String deviceSn;
-
 		private String datasourceType;
-
-		private String deviceCode;
 
 		private String deviceStatus;
 
@@ -101,7 +91,33 @@ public class ListNVRChannelDeviceResponse extends AcsResponse {
 
 		private String comptureStatus;
 
-		private String deviceName;
+		private String deviceSn;
+
+		private String sampleName;
+
+		private String regionName;
+
+		private String corpId;
+
+		private String vap;
+
+		private String projectName;
+
+		public String getDeviceCode() {
+			return this.deviceCode;
+		}
+
+		public void setDeviceCode(String deviceCode) {
+			this.deviceCode = deviceCode;
+		}
+
+		public String getDeviceName() {
+			return this.deviceName;
+		}
+
+		public void setDeviceName(String deviceName) {
+			this.deviceName = deviceName;
+		}
 
 		public String getDeviceType() {
 			return this.deviceType;
@@ -111,68 +127,12 @@ public class ListNVRChannelDeviceResponse extends AcsResponse {
 			this.deviceType = deviceType;
 		}
 
-		public String getSampleName() {
-			return this.sampleName;
-		}
-
-		public void setSampleName(String sampleName) {
-			this.sampleName = sampleName;
-		}
-
-		public String getCorpId() {
-			return this.corpId;
-		}
-
-		public void setCorpId(String corpId) {
-			this.corpId = corpId;
-		}
-
-		public String getVap() {
-			return this.vap;
-		}
-
-		public void setVap(String vap) {
-			this.vap = vap;
-		}
-
-		public String getProjectName() {
-			return this.projectName;
-		}
-
-		public void setProjectName(String projectName) {
-			this.projectName = projectName;
-		}
-
-		public String getRegionName() {
-			return this.regionName;
-		}
-
-		public void setRegionName(String regionName) {
-			this.regionName = regionName;
-		}
-
-		public String getDeviceSn() {
-			return this.deviceSn;
-		}
-
-		public void setDeviceSn(String deviceSn) {
-			this.deviceSn = deviceSn;
-		}
-
 		public String getDatasourceType() {
 			return this.datasourceType;
 		}
 
 		public void setDatasourceType(String datasourceType) {
 			this.datasourceType = datasourceType;
-		}
-
-		public String getDeviceCode() {
-			return this.deviceCode;
-		}
-
-		public void setDeviceCode(String deviceCode) {
-			this.deviceCode = deviceCode;
 		}
 
 		public String getDeviceStatus() {
@@ -199,12 +159,52 @@ public class ListNVRChannelDeviceResponse extends AcsResponse {
 			this.comptureStatus = comptureStatus;
 		}
 
-		public String getDeviceName() {
-			return this.deviceName;
+		public String getDeviceSn() {
+			return this.deviceSn;
 		}
 
-		public void setDeviceName(String deviceName) {
-			this.deviceName = deviceName;
+		public void setDeviceSn(String deviceSn) {
+			this.deviceSn = deviceSn;
+		}
+
+		public String getSampleName() {
+			return this.sampleName;
+		}
+
+		public void setSampleName(String sampleName) {
+			this.sampleName = sampleName;
+		}
+
+		public String getRegionName() {
+			return this.regionName;
+		}
+
+		public void setRegionName(String regionName) {
+			this.regionName = regionName;
+		}
+
+		public String getCorpId() {
+			return this.corpId;
+		}
+
+		public void setCorpId(String corpId) {
+			this.corpId = corpId;
+		}
+
+		public String getVap() {
+			return this.vap;
+		}
+
+		public void setVap(String vap) {
+			this.vap = vap;
+		}
+
+		public String getProjectName() {
+			return this.projectName;
+		}
+
+		public void setProjectName(String projectName) {
+			this.projectName = projectName;
 		}
 	}
 

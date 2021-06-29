@@ -28,8 +28,8 @@ public class ListEventAlgorithmDetailsResponseUnmarshaller {
 		
 		listEventAlgorithmDetailsResponse.setRequestId(_ctx.stringValue("ListEventAlgorithmDetailsResponse.RequestId"));
 		listEventAlgorithmDetailsResponse.setTotalCount(_ctx.integerValue("ListEventAlgorithmDetailsResponse.TotalCount"));
-		listEventAlgorithmDetailsResponse.setPageSize(_ctx.integerValue("ListEventAlgorithmDetailsResponse.PageSize"));
 		listEventAlgorithmDetailsResponse.setMessage(_ctx.stringValue("ListEventAlgorithmDetailsResponse.Message"));
+		listEventAlgorithmDetailsResponse.setPageSize(_ctx.integerValue("ListEventAlgorithmDetailsResponse.PageSize"));
 		listEventAlgorithmDetailsResponse.setPageNumber(_ctx.integerValue("ListEventAlgorithmDetailsResponse.PageNumber"));
 		listEventAlgorithmDetailsResponse.setCode(_ctx.stringValue("ListEventAlgorithmDetailsResponse.Code"));
 		listEventAlgorithmDetailsResponse.setSuccess(_ctx.stringValue("ListEventAlgorithmDetailsResponse.Success"));
@@ -37,27 +37,27 @@ public class ListEventAlgorithmDetailsResponseUnmarshaller {
 		List<Datas> data = new ArrayList<Datas>();
 		for (int i = 0; i < _ctx.lengthValue("ListEventAlgorithmDetailsResponse.Data.Length"); i++) {
 			Datas datas = new Datas();
-			datas.setEventValue(_ctx.stringValue("ListEventAlgorithmDetailsResponse.Data["+ i +"].EventValue"));
-			datas.setPicUrlPath(_ctx.stringValue("ListEventAlgorithmDetailsResponse.Data["+ i +"].PicUrlPath"));
-			datas.setUuidCode(_ctx.stringValue("ListEventAlgorithmDetailsResponse.Data["+ i +"].UuidCode"));
-			datas.setCorpId(_ctx.stringValue("ListEventAlgorithmDetailsResponse.Data["+ i +"].CorpId"));
-			datas.setEventType(_ctx.stringValue("ListEventAlgorithmDetailsResponse.Data["+ i +"].EventType"));
-			datas.setRightBottomX(_ctx.stringValue("ListEventAlgorithmDetailsResponse.Data["+ i +"].RightBottomX"));
-			datas.setTargetPicUrlPath(_ctx.stringValue("ListEventAlgorithmDetailsResponse.Data["+ i +"].TargetPicUrlPath"));
 			datas.setRightBottomY(_ctx.stringValue("ListEventAlgorithmDetailsResponse.Data["+ i +"].RightBottomY"));
-			datas.setSourceId(_ctx.stringValue("ListEventAlgorithmDetailsResponse.Data["+ i +"].SourceId"));
-			datas.setLeftTopY(_ctx.stringValue("ListEventAlgorithmDetailsResponse.Data["+ i +"].LeftTopY"));
-			datas.setLeftTopX(_ctx.stringValue("ListEventAlgorithmDetailsResponse.Data["+ i +"].LeftTopX"));
-			datas.setExtendValue(_ctx.stringValue("ListEventAlgorithmDetailsResponse.Data["+ i +"].ExtendValue"));
-			datas.setPointY(_ctx.stringValue("ListEventAlgorithmDetailsResponse.Data["+ i +"].PointY"));
-			datas.setPointX(_ctx.stringValue("ListEventAlgorithmDetailsResponse.Data["+ i +"].PointX"));
-			datas.setTagCode(_ctx.stringValue("ListEventAlgorithmDetailsResponse.Data["+ i +"].TagCode"));
-			datas.setShotTime(_ctx.stringValue("ListEventAlgorithmDetailsResponse.Data["+ i +"].ShotTime"));
-			datas.setRecordId(_ctx.stringValue("ListEventAlgorithmDetailsResponse.Data["+ i +"].RecordId"));
-			datas.setTagCodeReliability(_ctx.stringValue("ListEventAlgorithmDetailsResponse.Data["+ i +"].TagCodeReliability"));
-			datas.setFaceCount(_ctx.stringValue("ListEventAlgorithmDetailsResponse.Data["+ i +"].FaceCount"));
 			datas.setDataSourceId(_ctx.stringValue("ListEventAlgorithmDetailsResponse.Data["+ i +"].DataSourceId"));
+			datas.setPicUrlPath(_ctx.stringValue("ListEventAlgorithmDetailsResponse.Data["+ i +"].PicUrlPath"));
+			datas.setRecordId(_ctx.stringValue("ListEventAlgorithmDetailsResponse.Data["+ i +"].RecordId"));
+			datas.setExtendValue(_ctx.stringValue("ListEventAlgorithmDetailsResponse.Data["+ i +"].ExtendValue"));
+			datas.setFaceCount(_ctx.stringValue("ListEventAlgorithmDetailsResponse.Data["+ i +"].FaceCount"));
+			datas.setRightBottomX(_ctx.stringValue("ListEventAlgorithmDetailsResponse.Data["+ i +"].RightBottomX"));
+			datas.setSourceId(_ctx.stringValue("ListEventAlgorithmDetailsResponse.Data["+ i +"].SourceId"));
 			datas.setExtraExtendValue(_ctx.stringValue("ListEventAlgorithmDetailsResponse.Data["+ i +"].ExtraExtendValue"));
+			datas.setTargetPicUrlPath(_ctx.stringValue("ListEventAlgorithmDetailsResponse.Data["+ i +"].TargetPicUrlPath"));
+			datas.setEventType(_ctx.stringValue("ListEventAlgorithmDetailsResponse.Data["+ i +"].EventType"));
+			datas.setPointY(_ctx.stringValue("ListEventAlgorithmDetailsResponse.Data["+ i +"].PointY"));
+			datas.setLeftTopY(_ctx.stringValue("ListEventAlgorithmDetailsResponse.Data["+ i +"].LeftTopY"));
+			datas.setPointX(_ctx.stringValue("ListEventAlgorithmDetailsResponse.Data["+ i +"].PointX"));
+			datas.setCorpId(_ctx.stringValue("ListEventAlgorithmDetailsResponse.Data["+ i +"].CorpId"));
+			datas.setEventValue(_ctx.stringValue("ListEventAlgorithmDetailsResponse.Data["+ i +"].EventValue"));
+			datas.setShotTime(_ctx.stringValue("ListEventAlgorithmDetailsResponse.Data["+ i +"].ShotTime"));
+			datas.setLeftTopX(_ctx.stringValue("ListEventAlgorithmDetailsResponse.Data["+ i +"].LeftTopX"));
+			datas.setTagCode(_ctx.stringValue("ListEventAlgorithmDetailsResponse.Data["+ i +"].TagCode"));
+			datas.setTagCodeReliability(_ctx.stringValue("ListEventAlgorithmDetailsResponse.Data["+ i +"].TagCodeReliability"));
+			datas.setUuidCode(_ctx.stringValue("ListEventAlgorithmDetailsResponse.Data["+ i +"].UuidCode"));
 
 			data.add(datas);
 		}

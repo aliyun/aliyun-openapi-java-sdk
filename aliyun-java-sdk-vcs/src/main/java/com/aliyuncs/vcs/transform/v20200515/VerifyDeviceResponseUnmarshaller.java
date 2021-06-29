@@ -33,12 +33,12 @@ public class VerifyDeviceResponseUnmarshaller {
 		List<VerifyDeviceResult> data = new ArrayList<VerifyDeviceResult>();
 		for (int i = 0; i < _ctx.lengthValue("VerifyDeviceResponse.Data.Length"); i++) {
 			VerifyDeviceResult verifyDeviceResult = new VerifyDeviceResult();
-			verifyDeviceResult.setRowNumber(_ctx.longValue("VerifyDeviceResponse.Data["+ i +"].RowNumber"));
 			verifyDeviceResult.setOriginalGbId(_ctx.stringValue("VerifyDeviceResponse.Data["+ i +"].OriginalGbId"));
-			verifyDeviceResult.setMessage(_ctx.stringValue("VerifyDeviceResponse.Data["+ i +"].Message"));
 			verifyDeviceResult.setSuggestGbId(_ctx.stringValue("VerifyDeviceResponse.Data["+ i +"].SuggestGbId"));
-			verifyDeviceResult.setId(_ctx.stringValue("VerifyDeviceResponse.Data["+ i +"].Id"));
+			verifyDeviceResult.setMessage(_ctx.stringValue("VerifyDeviceResponse.Data["+ i +"].Message"));
 			verifyDeviceResult.setCode(_ctx.stringValue("VerifyDeviceResponse.Data["+ i +"].Code"));
+			verifyDeviceResult.setRowNumber(_ctx.longValue("VerifyDeviceResponse.Data["+ i +"].RowNumber"));
+			verifyDeviceResult.setId(_ctx.stringValue("VerifyDeviceResponse.Data["+ i +"].Id"));
 
 			data.add(verifyDeviceResult);
 		}

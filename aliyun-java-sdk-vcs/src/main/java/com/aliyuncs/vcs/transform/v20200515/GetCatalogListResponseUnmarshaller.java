@@ -33,11 +33,11 @@ public class GetCatalogListResponseUnmarshaller {
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetCatalogListResponse.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
+			dataItem.setCatalogId(_ctx.longValue("GetCatalogListResponse.Data["+ i +"].CatalogId"));
+			dataItem.setCatalogName(_ctx.stringValue("GetCatalogListResponse.Data["+ i +"].CatalogName"));
+			dataItem.setIsvSubId(_ctx.stringValue("GetCatalogListResponse.Data["+ i +"].IsvSubId"));
 			dataItem.setParentCatalogId(_ctx.longValue("GetCatalogListResponse.Data["+ i +"].ParentCatalogId"));
 			dataItem.setProfileCount(_ctx.longValue("GetCatalogListResponse.Data["+ i +"].ProfileCount"));
-			dataItem.setIsvSubId(_ctx.stringValue("GetCatalogListResponse.Data["+ i +"].IsvSubId"));
-			dataItem.setCatalogName(_ctx.stringValue("GetCatalogListResponse.Data["+ i +"].CatalogName"));
-			dataItem.setCatalogId(_ctx.longValue("GetCatalogListResponse.Data["+ i +"].CatalogId"));
 
 			data.add(dataItem);
 		}

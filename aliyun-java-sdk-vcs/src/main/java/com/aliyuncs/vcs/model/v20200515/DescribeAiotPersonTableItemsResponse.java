@@ -25,21 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeAiotPersonTableItemsResponse extends AcsResponse {
 
-	private String message;
-
 	private String requestId;
 
 	private String code;
 
+	private String message;
+
 	private PersonTableItems personTableItems;
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -57,6 +49,14 @@ public class DescribeAiotPersonTableItemsResponse extends AcsResponse {
 		this.code = code;
 	}
 
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
 	public PersonTableItems getPersonTableItems() {
 		return this.personTableItems;
 	}
@@ -67,20 +67,20 @@ public class DescribeAiotPersonTableItemsResponse extends AcsResponse {
 
 	public static class PersonTableItems {
 
-		private Long totalNum;
+		private Long pageNum;
 
 		private Long pageSize;
 
-		private Long pageNum;
+		private Long totalNum;
 
 		private List<PersonTableItemListItem> personTableItemList;
 
-		public Long getTotalNum() {
-			return this.totalNum;
+		public Long getPageNum() {
+			return this.pageNum;
 		}
 
-		public void setTotalNum(Long totalNum) {
-			this.totalNum = totalNum;
+		public void setPageNum(Long pageNum) {
+			this.pageNum = pageNum;
 		}
 
 		public Long getPageSize() {
@@ -91,12 +91,12 @@ public class DescribeAiotPersonTableItemsResponse extends AcsResponse {
 			this.pageSize = pageSize;
 		}
 
-		public Long getPageNum() {
-			return this.pageNum;
+		public Long getTotalNum() {
+			return this.totalNum;
 		}
 
-		public void setPageNum(Long pageNum) {
-			this.pageNum = pageNum;
+		public void setTotalNum(Long totalNum) {
+			this.totalNum = totalNum;
 		}
 
 		public List<PersonTableItemListItem> getPersonTableItemList() {
@@ -111,19 +111,19 @@ public class DescribeAiotPersonTableItemsResponse extends AcsResponse {
 
 			private String personTableId;
 
-			private Long identificationNum;
-
-			private String personName;
-
 			private String personId;
-
-			private String remarks;
-
-			private Long imageNum;
 
 			private String lastChange;
 
 			private String personCode;
+
+			private String personName;
+
+			private String remarks;
+
+			private Long identificationNum;
+
+			private Long imageNum;
 
 			private List<IdentificationType> identificationList;
 
@@ -137,44 +137,12 @@ public class DescribeAiotPersonTableItemsResponse extends AcsResponse {
 				this.personTableId = personTableId;
 			}
 
-			public Long getIdentificationNum() {
-				return this.identificationNum;
-			}
-
-			public void setIdentificationNum(Long identificationNum) {
-				this.identificationNum = identificationNum;
-			}
-
-			public String getPersonName() {
-				return this.personName;
-			}
-
-			public void setPersonName(String personName) {
-				this.personName = personName;
-			}
-
 			public String getPersonId() {
 				return this.personId;
 			}
 
 			public void setPersonId(String personId) {
 				this.personId = personId;
-			}
-
-			public String getRemarks() {
-				return this.remarks;
-			}
-
-			public void setRemarks(String remarks) {
-				this.remarks = remarks;
-			}
-
-			public Long getImageNum() {
-				return this.imageNum;
-			}
-
-			public void setImageNum(Long imageNum) {
-				this.imageNum = imageNum;
 			}
 
 			public String getLastChange() {
@@ -191,6 +159,38 @@ public class DescribeAiotPersonTableItemsResponse extends AcsResponse {
 
 			public void setPersonCode(String personCode) {
 				this.personCode = personCode;
+			}
+
+			public String getPersonName() {
+				return this.personName;
+			}
+
+			public void setPersonName(String personName) {
+				this.personName = personName;
+			}
+
+			public String getRemarks() {
+				return this.remarks;
+			}
+
+			public void setRemarks(String remarks) {
+				this.remarks = remarks;
+			}
+
+			public Long getIdentificationNum() {
+				return this.identificationNum;
+			}
+
+			public void setIdentificationNum(Long identificationNum) {
+				this.identificationNum = identificationNum;
+			}
+
+			public Long getImageNum() {
+				return this.imageNum;
+			}
+
+			public void setImageNum(Long imageNum) {
+				this.imageNum = imageNum;
 			}
 
 			public List<IdentificationType> getIdentificationList() {
@@ -234,36 +234,52 @@ public class DescribeAiotPersonTableItemsResponse extends AcsResponse {
 
 			public static class SubImageType {
 
-				private String type;
+				private String imageId;
+
+				private String eventSort;
+
+				private String deviceId;
 
 				private String storagePath;
 
 				private Long size;
 
-				private String deviceId;
-
-				private String imageId;
-
-				private String eventSort;
-
-				private String data;
-
-				private Long height;
-
-				private String shotTime;
+				private String type;
 
 				private String fileFormat;
 
+				private String shotTime;
+
 				private Long width;
+
+				private Long height;
+
+				private String data;
 
 				private FeatureInfo featureInfo;
 
-				public String getType() {
-					return this.type;
+				public String getImageId() {
+					return this.imageId;
 				}
 
-				public void setType(String type) {
-					this.type = type;
+				public void setImageId(String imageId) {
+					this.imageId = imageId;
+				}
+
+				public String getEventSort() {
+					return this.eventSort;
+				}
+
+				public void setEventSort(String eventSort) {
+					this.eventSort = eventSort;
+				}
+
+				public String getDeviceId() {
+					return this.deviceId;
+				}
+
+				public void setDeviceId(String deviceId) {
+					this.deviceId = deviceId;
 				}
 
 				public String getStoragePath() {
@@ -282,52 +298,12 @@ public class DescribeAiotPersonTableItemsResponse extends AcsResponse {
 					this.size = size;
 				}
 
-				public String getDeviceId() {
-					return this.deviceId;
+				public String getType() {
+					return this.type;
 				}
 
-				public void setDeviceId(String deviceId) {
-					this.deviceId = deviceId;
-				}
-
-				public String getImageId() {
-					return this.imageId;
-				}
-
-				public void setImageId(String imageId) {
-					this.imageId = imageId;
-				}
-
-				public String getEventSort() {
-					return this.eventSort;
-				}
-
-				public void setEventSort(String eventSort) {
-					this.eventSort = eventSort;
-				}
-
-				public String getData() {
-					return this.data;
-				}
-
-				public void setData(String data) {
-					this.data = data;
-				}
-
-				public Long getHeight() {
-					return this.height;
-				}
-
-				public void setHeight(Long height) {
-					this.height = height;
-				}
-
-				public String getShotTime() {
-					return this.shotTime;
-				}
-
-				public void setShotTime(String shotTime) {
-					this.shotTime = shotTime;
+				public void setType(String type) {
+					this.type = type;
 				}
 
 				public String getFileFormat() {
@@ -338,12 +314,36 @@ public class DescribeAiotPersonTableItemsResponse extends AcsResponse {
 					this.fileFormat = fileFormat;
 				}
 
+				public String getShotTime() {
+					return this.shotTime;
+				}
+
+				public void setShotTime(String shotTime) {
+					this.shotTime = shotTime;
+				}
+
 				public Long getWidth() {
 					return this.width;
 				}
 
 				public void setWidth(Long width) {
 					this.width = width;
+				}
+
+				public Long getHeight() {
+					return this.height;
+				}
+
+				public void setHeight(Long height) {
+					this.height = height;
+				}
+
+				public String getData() {
+					return this.data;
+				}
+
+				public void setData(String data) {
+					this.data = data;
 				}
 
 				public FeatureInfo getFeatureInfo() {
@@ -356,26 +356,34 @@ public class DescribeAiotPersonTableItemsResponse extends AcsResponse {
 
 				public static class FeatureInfo {
 
-					private String tableId;
+					private String vendor;
+
+					private String algorithmVersion;
 
 					private String algorithmType;
+
+					private String tableId;
 
 					private String objectId;
 
 					private String imageId;
 
-					private String algorithmVersion;
-
 					private String featureData;
 
-					private String vendor;
-
-					public String getTableId() {
-						return this.tableId;
+					public String getVendor() {
+						return this.vendor;
 					}
 
-					public void setTableId(String tableId) {
-						this.tableId = tableId;
+					public void setVendor(String vendor) {
+						this.vendor = vendor;
+					}
+
+					public String getAlgorithmVersion() {
+						return this.algorithmVersion;
+					}
+
+					public void setAlgorithmVersion(String algorithmVersion) {
+						this.algorithmVersion = algorithmVersion;
 					}
 
 					public String getAlgorithmType() {
@@ -384,6 +392,14 @@ public class DescribeAiotPersonTableItemsResponse extends AcsResponse {
 
 					public void setAlgorithmType(String algorithmType) {
 						this.algorithmType = algorithmType;
+					}
+
+					public String getTableId() {
+						return this.tableId;
+					}
+
+					public void setTableId(String tableId) {
+						this.tableId = tableId;
 					}
 
 					public String getObjectId() {
@@ -402,28 +418,12 @@ public class DescribeAiotPersonTableItemsResponse extends AcsResponse {
 						this.imageId = imageId;
 					}
 
-					public String getAlgorithmVersion() {
-						return this.algorithmVersion;
-					}
-
-					public void setAlgorithmVersion(String algorithmVersion) {
-						this.algorithmVersion = algorithmVersion;
-					}
-
 					public String getFeatureData() {
 						return this.featureData;
 					}
 
 					public void setFeatureData(String featureData) {
 						this.featureData = featureData;
-					}
-
-					public String getVendor() {
-						return this.vendor;
-					}
-
-					public void setVendor(String vendor) {
-						this.vendor = vendor;
 					}
 				}
 			}

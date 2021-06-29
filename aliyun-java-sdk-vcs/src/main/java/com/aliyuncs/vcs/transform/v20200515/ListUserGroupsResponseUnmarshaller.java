@@ -33,13 +33,13 @@ public class ListUserGroupsResponseUnmarshaller {
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListUserGroupsResponse.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
-			dataItem.setParentUserGroupId(_ctx.longValue("ListUserGroupsResponse.Data["+ i +"].ParentUserGroupId"));
-			dataItem.setUserCount(_ctx.longValue("ListUserGroupsResponse.Data["+ i +"].UserCount"));
-			dataItem.setUserGroupName(_ctx.stringValue("ListUserGroupsResponse.Data["+ i +"].UserGroupName"));
-			dataItem.setCreateTime(_ctx.stringValue("ListUserGroupsResponse.Data["+ i +"].CreateTime"));
-			dataItem.setUserGroupId(_ctx.longValue("ListUserGroupsResponse.Data["+ i +"].UserGroupId"));
 			dataItem.setUpdateTime(_ctx.stringValue("ListUserGroupsResponse.Data["+ i +"].UpdateTime"));
 			dataItem.setIsvSubId(_ctx.stringValue("ListUserGroupsResponse.Data["+ i +"].IsvSubId"));
+			dataItem.setUserGroupId(_ctx.longValue("ListUserGroupsResponse.Data["+ i +"].UserGroupId"));
+			dataItem.setCreateTime(_ctx.stringValue("ListUserGroupsResponse.Data["+ i +"].CreateTime"));
+			dataItem.setUserGroupName(_ctx.stringValue("ListUserGroupsResponse.Data["+ i +"].UserGroupName"));
+			dataItem.setUserCount(_ctx.longValue("ListUserGroupsResponse.Data["+ i +"].UserCount"));
+			dataItem.setParentUserGroupId(_ctx.longValue("ListUserGroupsResponse.Data["+ i +"].ParentUserGroupId"));
 			dataItem.setCreator(_ctx.stringValue("ListUserGroupsResponse.Data["+ i +"].Creator"));
 
 			data.add(dataItem);

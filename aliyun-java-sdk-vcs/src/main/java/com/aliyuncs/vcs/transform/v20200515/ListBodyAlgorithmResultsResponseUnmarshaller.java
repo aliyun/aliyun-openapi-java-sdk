@@ -32,36 +32,36 @@ public class ListBodyAlgorithmResultsResponseUnmarshaller {
 		listBodyAlgorithmResultsResponse.setCode(_ctx.stringValue("ListBodyAlgorithmResultsResponse.Code"));
 
 		Data data = new Data();
-		data.setTotalCount(_ctx.integerValue("ListBodyAlgorithmResultsResponse.Data.TotalCount"));
-		data.setPageSize(_ctx.integerValue("ListBodyAlgorithmResultsResponse.Data.PageSize"));
 		data.setTotalPage(_ctx.integerValue("ListBodyAlgorithmResultsResponse.Data.TotalPage"));
 		data.setPageNumber(_ctx.integerValue("ListBodyAlgorithmResultsResponse.Data.PageNumber"));
+		data.setPageSize(_ctx.integerValue("ListBodyAlgorithmResultsResponse.Data.PageSize"));
+		data.setTotalCount(_ctx.integerValue("ListBodyAlgorithmResultsResponse.Data.TotalCount"));
 
 		List<RecordsItem> records = new ArrayList<RecordsItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListBodyAlgorithmResultsResponse.Data.Records.Length"); i++) {
 			RecordsItem recordsItem = new RecordsItem();
-			recordsItem.setGenderCode(_ctx.stringValue("ListBodyAlgorithmResultsResponse.Data.Records["+ i +"].GenderCode"));
-			recordsItem.setPicUrlPath(_ctx.stringValue("ListBodyAlgorithmResultsResponse.Data.Records["+ i +"].PicUrlPath"));
-			recordsItem.setCorpId(_ctx.stringValue("ListBodyAlgorithmResultsResponse.Data.Records["+ i +"].CorpId"));
-			recordsItem.setRightBottomX(_ctx.floatValue("ListBodyAlgorithmResultsResponse.Data.Records["+ i +"].RightBottomX"));
-			recordsItem.setTargetPicUrlPath(_ctx.stringValue("ListBodyAlgorithmResultsResponse.Data.Records["+ i +"].TargetPicUrlPath"));
 			recordsItem.setRightBottomY(_ctx.floatValue("ListBodyAlgorithmResultsResponse.Data.Records["+ i +"].RightBottomY"));
+			recordsItem.setDataSourceId(_ctx.stringValue("ListBodyAlgorithmResultsResponse.Data.Records["+ i +"].DataSourceId"));
+			recordsItem.setPicUrlPath(_ctx.stringValue("ListBodyAlgorithmResultsResponse.Data.Records["+ i +"].PicUrlPath"));
+			recordsItem.setTrousersColor(_ctx.stringValue("ListBodyAlgorithmResultsResponse.Data.Records["+ i +"].TrousersColor"));
+			recordsItem.setRightBottomX(_ctx.floatValue("ListBodyAlgorithmResultsResponse.Data.Records["+ i +"].RightBottomX"));
+			recordsItem.setCoatColor(_ctx.stringValue("ListBodyAlgorithmResultsResponse.Data.Records["+ i +"].CoatColor"));
 			recordsItem.setSourceId(_ctx.stringValue("ListBodyAlgorithmResultsResponse.Data.Records["+ i +"].SourceId"));
 			recordsItem.setMaxAge(_ctx.stringValue("ListBodyAlgorithmResultsResponse.Data.Records["+ i +"].MaxAge"));
-			recordsItem.setLeftTopY(_ctx.floatValue("ListBodyAlgorithmResultsResponse.Data.Records["+ i +"].LeftTopY"));
-			recordsItem.setCapStyle(_ctx.stringValue("ListBodyAlgorithmResultsResponse.Data.Records["+ i +"].CapStyle"));
-			recordsItem.setLeftTopX(_ctx.floatValue("ListBodyAlgorithmResultsResponse.Data.Records["+ i +"].LeftTopX"));
-			recordsItem.setTrousersStyle(_ctx.stringValue("ListBodyAlgorithmResultsResponse.Data.Records["+ i +"].TrousersStyle"));
-			recordsItem.setCoatStyle(_ctx.stringValue("ListBodyAlgorithmResultsResponse.Data.Records["+ i +"].CoatStyle"));
-			recordsItem.setMinAge(_ctx.stringValue("ListBodyAlgorithmResultsResponse.Data.Records["+ i +"].MinAge"));
-			recordsItem.setTrousersLength(_ctx.stringValue("ListBodyAlgorithmResultsResponse.Data.Records["+ i +"].TrousersLength"));
-			recordsItem.setPersonId(_ctx.stringValue("ListBodyAlgorithmResultsResponse.Data.Records["+ i +"].PersonId"));
 			recordsItem.setCoatLength(_ctx.stringValue("ListBodyAlgorithmResultsResponse.Data.Records["+ i +"].CoatLength"));
-			recordsItem.setShotTime(_ctx.stringValue("ListBodyAlgorithmResultsResponse.Data.Records["+ i +"].ShotTime"));
-			recordsItem.setCoatColor(_ctx.stringValue("ListBodyAlgorithmResultsResponse.Data.Records["+ i +"].CoatColor"));
-			recordsItem.setTrousersColor(_ctx.stringValue("ListBodyAlgorithmResultsResponse.Data.Records["+ i +"].TrousersColor"));
-			recordsItem.setDataSourceId(_ctx.stringValue("ListBodyAlgorithmResultsResponse.Data.Records["+ i +"].DataSourceId"));
+			recordsItem.setTargetPicUrlPath(_ctx.stringValue("ListBodyAlgorithmResultsResponse.Data.Records["+ i +"].TargetPicUrlPath"));
 			recordsItem.setHairStyle(_ctx.stringValue("ListBodyAlgorithmResultsResponse.Data.Records["+ i +"].HairStyle"));
+			recordsItem.setCoatStyle(_ctx.stringValue("ListBodyAlgorithmResultsResponse.Data.Records["+ i +"].CoatStyle"));
+			recordsItem.setLeftTopY(_ctx.floatValue("ListBodyAlgorithmResultsResponse.Data.Records["+ i +"].LeftTopY"));
+			recordsItem.setMinAge(_ctx.stringValue("ListBodyAlgorithmResultsResponse.Data.Records["+ i +"].MinAge"));
+			recordsItem.setCorpId(_ctx.stringValue("ListBodyAlgorithmResultsResponse.Data.Records["+ i +"].CorpId"));
+			recordsItem.setTrousersLength(_ctx.stringValue("ListBodyAlgorithmResultsResponse.Data.Records["+ i +"].TrousersLength"));
+			recordsItem.setTrousersStyle(_ctx.stringValue("ListBodyAlgorithmResultsResponse.Data.Records["+ i +"].TrousersStyle"));
+			recordsItem.setShotTime(_ctx.stringValue("ListBodyAlgorithmResultsResponse.Data.Records["+ i +"].ShotTime"));
+			recordsItem.setLeftTopX(_ctx.floatValue("ListBodyAlgorithmResultsResponse.Data.Records["+ i +"].LeftTopX"));
+			recordsItem.setGenderCode(_ctx.stringValue("ListBodyAlgorithmResultsResponse.Data.Records["+ i +"].GenderCode"));
+			recordsItem.setPersonId(_ctx.stringValue("ListBodyAlgorithmResultsResponse.Data.Records["+ i +"].PersonId"));
+			recordsItem.setCapStyle(_ctx.stringValue("ListBodyAlgorithmResultsResponse.Data.Records["+ i +"].CapStyle"));
 
 			records.add(recordsItem);
 		}

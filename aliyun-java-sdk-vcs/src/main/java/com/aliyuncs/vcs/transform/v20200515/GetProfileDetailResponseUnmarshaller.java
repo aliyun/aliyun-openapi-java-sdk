@@ -28,19 +28,19 @@ public class GetProfileDetailResponseUnmarshaller {
 		getProfileDetailResponse.setCode(_ctx.stringValue("GetProfileDetailResponse.Code"));
 
 		Data data = new Data();
-		data.setSceneType(_ctx.stringValue("GetProfileDetailResponse.Data.SceneType"));
+		data.setCatalogId(_ctx.integerValue("GetProfileDetailResponse.Data.CatalogId"));
 		data.setProfileId(_ctx.integerValue("GetProfileDetailResponse.Data.ProfileId"));
-		data.setPersonId(_ctx.stringValue("GetProfileDetailResponse.Data.PersonId"));
-		data.setPhoneNo(_ctx.stringValue("GetProfileDetailResponse.Data.PhoneNo"));
-		data.setIdNumber(_ctx.stringValue("GetProfileDetailResponse.Data.IdNumber"));
 		data.setIsvSubId(_ctx.stringValue("GetProfileDetailResponse.Data.IsvSubId"));
 		data.setGender(_ctx.stringValue("GetProfileDetailResponse.Data.Gender"));
-		data.setPlateNo(_ctx.stringValue("GetProfileDetailResponse.Data.PlateNo"));
 		data.setBizId(_ctx.stringValue("GetProfileDetailResponse.Data.BizId"));
-		data.setCatalogId(_ctx.integerValue("GetProfileDetailResponse.Data.CatalogId"));
-		data.setLiveAddress(_ctx.stringValue("GetProfileDetailResponse.Data.LiveAddress"));
+		data.setIdNumber(_ctx.stringValue("GetProfileDetailResponse.Data.IdNumber"));
+		data.setSceneType(_ctx.stringValue("GetProfileDetailResponse.Data.SceneType"));
+		data.setPhoneNo(_ctx.stringValue("GetProfileDetailResponse.Data.PhoneNo"));
 		data.setFaceUrl(_ctx.stringValue("GetProfileDetailResponse.Data.FaceUrl"));
+		data.setLiveAddress(_ctx.stringValue("GetProfileDetailResponse.Data.LiveAddress"));
 		data.setName(_ctx.stringValue("GetProfileDetailResponse.Data.Name"));
+		data.setPersonId(_ctx.stringValue("GetProfileDetailResponse.Data.PersonId"));
+		data.setPlateNo(_ctx.stringValue("GetProfileDetailResponse.Data.PlateNo"));
 		getProfileDetailResponse.setData(data);
 	 
 	 	return getProfileDetailResponse;

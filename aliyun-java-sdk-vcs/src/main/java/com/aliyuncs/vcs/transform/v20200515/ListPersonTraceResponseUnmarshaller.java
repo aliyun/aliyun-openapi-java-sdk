@@ -28,8 +28,8 @@ public class ListPersonTraceResponseUnmarshaller {
 		
 		listPersonTraceResponse.setRequestId(_ctx.stringValue("ListPersonTraceResponse.RequestId"));
 		listPersonTraceResponse.setTotalCount(_ctx.integerValue("ListPersonTraceResponse.TotalCount"));
-		listPersonTraceResponse.setPageSize(_ctx.integerValue("ListPersonTraceResponse.PageSize"));
 		listPersonTraceResponse.setMessage(_ctx.stringValue("ListPersonTraceResponse.Message"));
+		listPersonTraceResponse.setPageSize(_ctx.integerValue("ListPersonTraceResponse.PageSize"));
 		listPersonTraceResponse.setPageNumber(_ctx.integerValue("ListPersonTraceResponse.PageNumber"));
 		listPersonTraceResponse.setCode(_ctx.stringValue("ListPersonTraceResponse.Code"));
 		listPersonTraceResponse.setSuccess(_ctx.stringValue("ListPersonTraceResponse.Success"));
@@ -37,17 +37,17 @@ public class ListPersonTraceResponseUnmarshaller {
 		List<Day> data = new ArrayList<Day>();
 		for (int i = 0; i < _ctx.lengthValue("ListPersonTraceResponse.Data.Length"); i++) {
 			Day day = new Day();
-			day.setStartTargetImage(_ctx.stringValue("ListPersonTraceResponse.Data["+ i +"].StartTargetImage"));
-			day.setStartSourceImage(_ctx.stringValue("ListPersonTraceResponse.Data["+ i +"].StartSourceImage"));
-			day.setCorpId(_ctx.stringValue("ListPersonTraceResponse.Data["+ i +"].CorpId"));
-			day.setPersonId(_ctx.stringValue("ListPersonTraceResponse.Data["+ i +"].PersonId"));
-			day.setDeviceId(_ctx.stringValue("ListPersonTraceResponse.Data["+ i +"].DeviceId"));
 			day.setEndTargetImage(_ctx.stringValue("ListPersonTraceResponse.Data["+ i +"].EndTargetImage"));
-			day.setEndSourceImage(_ctx.stringValue("ListPersonTraceResponse.Data["+ i +"].EndSourceImage"));
-			day.setStartTime(_ctx.stringValue("ListPersonTraceResponse.Data["+ i +"].StartTime"));
-			day.setDate(_ctx.stringValue("ListPersonTraceResponse.Data["+ i +"].Date"));
 			day.setLastTime(_ctx.stringValue("ListPersonTraceResponse.Data["+ i +"].LastTime"));
+			day.setStartTime(_ctx.stringValue("ListPersonTraceResponse.Data["+ i +"].StartTime"));
 			day.setGroupId(_ctx.stringValue("ListPersonTraceResponse.Data["+ i +"].GroupId"));
+			day.setDeviceId(_ctx.stringValue("ListPersonTraceResponse.Data["+ i +"].DeviceId"));
+			day.setEndSourceImage(_ctx.stringValue("ListPersonTraceResponse.Data["+ i +"].EndSourceImage"));
+			day.setCorpId(_ctx.stringValue("ListPersonTraceResponse.Data["+ i +"].CorpId"));
+			day.setStartSourceImage(_ctx.stringValue("ListPersonTraceResponse.Data["+ i +"].StartSourceImage"));
+			day.setDate(_ctx.stringValue("ListPersonTraceResponse.Data["+ i +"].Date"));
+			day.setPersonId(_ctx.stringValue("ListPersonTraceResponse.Data["+ i +"].PersonId"));
+			day.setStartTargetImage(_ctx.stringValue("ListPersonTraceResponse.Data["+ i +"].StartTargetImage"));
 
 			data.add(day);
 		}

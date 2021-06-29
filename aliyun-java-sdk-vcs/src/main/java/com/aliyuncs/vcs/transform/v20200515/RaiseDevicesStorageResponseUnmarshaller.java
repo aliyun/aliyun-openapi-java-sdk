@@ -23,10 +23,10 @@ public class RaiseDevicesStorageResponseUnmarshaller {
 	public static RaiseDevicesStorageResponse unmarshall(RaiseDevicesStorageResponse raiseDevicesStorageResponse, UnmarshallerContext _ctx) {
 		
 		raiseDevicesStorageResponse.setRequestId(_ctx.stringValue("RaiseDevicesStorageResponse.RequestId"));
+		raiseDevicesStorageResponse.setSuccess(_ctx.booleanValue("RaiseDevicesStorageResponse.Success"));
+		raiseDevicesStorageResponse.setCode(_ctx.stringValue("RaiseDevicesStorageResponse.Code"));
 		raiseDevicesStorageResponse.setMessage(_ctx.stringValue("RaiseDevicesStorageResponse.Message"));
 		raiseDevicesStorageResponse.setData(_ctx.booleanValue("RaiseDevicesStorageResponse.Data"));
-		raiseDevicesStorageResponse.setCode(_ctx.stringValue("RaiseDevicesStorageResponse.Code"));
-		raiseDevicesStorageResponse.setSuccess(_ctx.booleanValue("RaiseDevicesStorageResponse.Success"));
 	 
 	 	return raiseDevicesStorageResponse;
 	}

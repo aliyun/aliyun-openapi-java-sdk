@@ -24,20 +24,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetPictureUrlResponse extends AcsResponse {
 
-	private String requestId;
+	private String code;
 
 	private String message;
 
-	private String code;
-
 	private String url;
 
-	public String getRequestId() {
-		return this.requestId;
+	private String requestId;
+
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public String getMessage() {
@@ -48,20 +48,20 @@ public class GetPictureUrlResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
 	public String getUrl() {
 		return this.url;
 	}
 
 	public void setUrl(String url) {
 		this.url = url;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

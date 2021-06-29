@@ -29,8 +29,8 @@ public class CreateComputeInstanceResponseUnmarshaller {
 		createComputeInstanceResponse.setSuccess(_ctx.booleanValue("CreateComputeInstanceResponse.Success"));
 
 		Data data = new Data();
-		data.setInstanceId(_ctx.stringValue("CreateComputeInstanceResponse.Data.InstanceId"));
 		data.setAcuUsed(_ctx.longValue("CreateComputeInstanceResponse.Data.AcuUsed"));
+		data.setInstanceId(_ctx.stringValue("CreateComputeInstanceResponse.Data.InstanceId"));
 		createComputeInstanceResponse.setData(data);
 	 
 	 	return createComputeInstanceResponse;

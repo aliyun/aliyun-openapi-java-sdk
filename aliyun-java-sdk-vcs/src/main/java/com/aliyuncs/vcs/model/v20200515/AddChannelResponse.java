@@ -24,21 +24,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class AddChannelResponse extends AcsResponse {
 
-	private String message;
-
 	private String requestId;
 
-	private String data;
+	private String message;
 
 	private String code;
 
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
+	private String data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -48,12 +40,12 @@ public class AddChannelResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getData() {
-		return this.data;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setData(String data) {
-		this.data = data;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public String getCode() {
@@ -62,6 +54,14 @@ public class AddChannelResponse extends AcsResponse {
 
 	public void setCode(String code) {
 		this.code = code;
+	}
+
+	public String getData() {
+		return this.data;
+	}
+
+	public void setData(String data) {
+		this.data = data;
 	}
 
 	@Override

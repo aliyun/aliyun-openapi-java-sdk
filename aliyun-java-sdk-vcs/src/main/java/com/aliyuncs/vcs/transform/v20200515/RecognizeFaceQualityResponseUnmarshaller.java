@@ -29,18 +29,18 @@ public class RecognizeFaceQualityResponseUnmarshaller {
 		recognizeFaceQualityResponse.setCode(_ctx.stringValue("RecognizeFaceQualityResponse.Code"));
 
 		Data data = new Data();
-		data.setDescription(_ctx.stringValue("RecognizeFaceQualityResponse.Data.Description"));
 		data.setQualityScore(_ctx.stringValue("RecognizeFaceQualityResponse.Data.QualityScore"));
+		data.setDescription(_ctx.stringValue("RecognizeFaceQualityResponse.Data.Description"));
 
 		Attributes attributes = new Attributes();
-		attributes.setFaceQuality(_ctx.stringValue("RecognizeFaceQualityResponse.Data.Attributes.FaceQuality"));
-		attributes.setRightBottomX(_ctx.integerValue("RecognizeFaceQualityResponse.Data.Attributes.RightBottomX"));
-		attributes.setFaceStyle(_ctx.stringValue("RecognizeFaceQualityResponse.Data.Attributes.FaceStyle"));
+		attributes.setFaceScore(_ctx.stringValue("RecognizeFaceQualityResponse.Data.Attributes.FaceScore"));
 		attributes.setRightBottomY(_ctx.integerValue("RecognizeFaceQualityResponse.Data.Attributes.RightBottomY"));
 		attributes.setLeftTopY(_ctx.integerValue("RecognizeFaceQualityResponse.Data.Attributes.LeftTopY"));
-		attributes.setTargetImageStoragePath(_ctx.stringValue("RecognizeFaceQualityResponse.Data.Attributes.TargetImageStoragePath"));
+		attributes.setFaceStyle(_ctx.stringValue("RecognizeFaceQualityResponse.Data.Attributes.FaceStyle"));
+		attributes.setFaceQuality(_ctx.stringValue("RecognizeFaceQualityResponse.Data.Attributes.FaceQuality"));
 		attributes.setLeftTopX(_ctx.integerValue("RecognizeFaceQualityResponse.Data.Attributes.LeftTopX"));
-		attributes.setFaceScore(_ctx.stringValue("RecognizeFaceQualityResponse.Data.Attributes.FaceScore"));
+		attributes.setRightBottomX(_ctx.integerValue("RecognizeFaceQualityResponse.Data.Attributes.RightBottomX"));
+		attributes.setTargetImageStoragePath(_ctx.stringValue("RecognizeFaceQualityResponse.Data.Attributes.TargetImageStoragePath"));
 		data.setAttributes(attributes);
 		recognizeFaceQualityResponse.setData(data);
 	 

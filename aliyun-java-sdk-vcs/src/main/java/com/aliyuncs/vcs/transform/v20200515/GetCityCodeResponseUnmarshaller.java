@@ -33,8 +33,8 @@ public class GetCityCodeResponseUnmarshaller {
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetCityCodeResponse.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
-			dataItem.setCityCode(_ctx.stringValue("GetCityCodeResponse.Data["+ i +"].CityCode"));
 			dataItem.setCityAddress(_ctx.stringValue("GetCityCodeResponse.Data["+ i +"].CityAddress"));
+			dataItem.setCityCode(_ctx.stringValue("GetCityCodeResponse.Data["+ i +"].CityCode"));
 
 			data.add(dataItem);
 		}

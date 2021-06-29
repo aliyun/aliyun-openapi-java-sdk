@@ -28,19 +28,19 @@ public class GetUserDetailResponseUnmarshaller {
 		getUserDetailResponse.setCode(_ctx.stringValue("GetUserDetailResponse.Code"));
 
 		Data data = new Data();
-		data.setUserName(_ctx.stringValue("GetUserDetailResponse.Data.UserName"));
-		data.setAddress(_ctx.stringValue("GetUserDetailResponse.Data.Address"));
-		data.setPhoneNo(_ctx.stringValue("GetUserDetailResponse.Data.PhoneNo"));
-		data.setIdNumber(_ctx.stringValue("GetUserDetailResponse.Data.IdNumber"));
-		data.setUserId(_ctx.integerValue("GetUserDetailResponse.Data.UserId"));
-		data.setUserGroupId(_ctx.integerValue("GetUserDetailResponse.Data.UserGroupId"));
-		data.setIsvSubId(_ctx.stringValue("GetUserDetailResponse.Data.IsvSubId"));
-		data.setAttachment(_ctx.stringValue("GetUserDetailResponse.Data.Attachment"));
 		data.setGender(_ctx.stringValue("GetUserDetailResponse.Data.Gender"));
-		data.setPlateNo(_ctx.stringValue("GetUserDetailResponse.Data.PlateNo"));
-		data.setBizId(_ctx.stringValue("GetUserDetailResponse.Data.BizId"));
-		data.setAge(_ctx.stringValue("GetUserDetailResponse.Data.Age"));
 		data.setFaceImageUrl(_ctx.stringValue("GetUserDetailResponse.Data.FaceImageUrl"));
+		data.setIsvSubId(_ctx.stringValue("GetUserDetailResponse.Data.IsvSubId"));
+		data.setUserGroupId(_ctx.integerValue("GetUserDetailResponse.Data.UserGroupId"));
+		data.setUserId(_ctx.integerValue("GetUserDetailResponse.Data.UserId"));
+		data.setBizId(_ctx.stringValue("GetUserDetailResponse.Data.BizId"));
+		data.setAttachment(_ctx.stringValue("GetUserDetailResponse.Data.Attachment"));
+		data.setAge(_ctx.stringValue("GetUserDetailResponse.Data.Age"));
+		data.setIdNumber(_ctx.stringValue("GetUserDetailResponse.Data.IdNumber"));
+		data.setPhoneNo(_ctx.stringValue("GetUserDetailResponse.Data.PhoneNo"));
+		data.setAddress(_ctx.stringValue("GetUserDetailResponse.Data.Address"));
+		data.setUserName(_ctx.stringValue("GetUserDetailResponse.Data.UserName"));
+		data.setPlateNo(_ctx.stringValue("GetUserDetailResponse.Data.PlateNo"));
 		getUserDetailResponse.setData(data);
 	 
 	 	return getUserDetailResponse;

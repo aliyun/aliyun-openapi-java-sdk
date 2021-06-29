@@ -32,24 +32,24 @@ public class SearchFaceResponseUnmarshaller {
 		searchFaceResponse.setCode(_ctx.stringValue("SearchFaceResponse.Code"));
 
 		Data data = new Data();
-		data.setTotalCount(_ctx.integerValue("SearchFaceResponse.Data.TotalCount"));
-		data.setPageSize(_ctx.integerValue("SearchFaceResponse.Data.PageSize"));
-		data.setTotalPage(_ctx.integerValue("SearchFaceResponse.Data.TotalPage"));
 		data.setPageNo(_ctx.integerValue("SearchFaceResponse.Data.PageNo"));
+		data.setTotalPage(_ctx.integerValue("SearchFaceResponse.Data.TotalPage"));
+		data.setPageSize(_ctx.integerValue("SearchFaceResponse.Data.PageSize"));
+		data.setTotalCount(_ctx.integerValue("SearchFaceResponse.Data.TotalCount"));
 
 		List<Record> records = new ArrayList<Record>();
 		for (int i = 0; i < _ctx.lengthValue("SearchFaceResponse.Data.Records.Length"); i++) {
 			Record record = new Record();
-			record.setMatchSuggestion(_ctx.stringValue("SearchFaceResponse.Data.Records["+ i +"].MatchSuggestion"));
-			record.setTargetImageUrl(_ctx.stringValue("SearchFaceResponse.Data.Records["+ i +"].TargetImageUrl"));
-			record.setScore(_ctx.floatValue("SearchFaceResponse.Data.Records["+ i +"].Score"));
-			record.setRightBottomX(_ctx.floatValue("SearchFaceResponse.Data.Records["+ i +"].RightBottomX"));
-			record.setRightBottomY(_ctx.floatValue("SearchFaceResponse.Data.Records["+ i +"].RightBottomY"));
-			record.setSourceId(_ctx.stringValue("SearchFaceResponse.Data.Records["+ i +"].SourceId"));
 			record.setGbId(_ctx.stringValue("SearchFaceResponse.Data.Records["+ i +"].GbId"));
+			record.setTargetImageUrl(_ctx.stringValue("SearchFaceResponse.Data.Records["+ i +"].TargetImageUrl"));
+			record.setRightBottomY(_ctx.floatValue("SearchFaceResponse.Data.Records["+ i +"].RightBottomY"));
 			record.setImageUrl(_ctx.stringValue("SearchFaceResponse.Data.Records["+ i +"].ImageUrl"));
 			record.setLeftTopY(_ctx.floatValue("SearchFaceResponse.Data.Records["+ i +"].LeftTopY"));
+			record.setScore(_ctx.floatValue("SearchFaceResponse.Data.Records["+ i +"].Score"));
+			record.setSourceId(_ctx.stringValue("SearchFaceResponse.Data.Records["+ i +"].SourceId"));
+			record.setRightBottomX(_ctx.floatValue("SearchFaceResponse.Data.Records["+ i +"].RightBottomX"));
 			record.setLeftTopX(_ctx.floatValue("SearchFaceResponse.Data.Records["+ i +"].LeftTopX"));
+			record.setMatchSuggestion(_ctx.stringValue("SearchFaceResponse.Data.Records["+ i +"].MatchSuggestion"));
 
 			records.add(record);
 		}

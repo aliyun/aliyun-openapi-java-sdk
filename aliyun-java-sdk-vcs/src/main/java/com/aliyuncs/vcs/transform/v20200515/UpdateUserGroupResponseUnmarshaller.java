@@ -28,11 +28,11 @@ public class UpdateUserGroupResponseUnmarshaller {
 		updateUserGroupResponse.setCode(_ctx.stringValue("UpdateUserGroupResponse.Code"));
 
 		Data data = new Data();
-		data.setParentUserGroupId(_ctx.stringValue("UpdateUserGroupResponse.Data.ParentUserGroupId"));
-		data.setUserCount(_ctx.longValue("UpdateUserGroupResponse.Data.UserCount"));
-		data.setUserGroupName(_ctx.stringValue("UpdateUserGroupResponse.Data.UserGroupName"));
-		data.setUserGroupId(_ctx.longValue("UpdateUserGroupResponse.Data.UserGroupId"));
 		data.setIsvSubId(_ctx.stringValue("UpdateUserGroupResponse.Data.IsvSubId"));
+		data.setUserGroupId(_ctx.longValue("UpdateUserGroupResponse.Data.UserGroupId"));
+		data.setUserGroupName(_ctx.stringValue("UpdateUserGroupResponse.Data.UserGroupName"));
+		data.setUserCount(_ctx.longValue("UpdateUserGroupResponse.Data.UserCount"));
+		data.setParentUserGroupId(_ctx.stringValue("UpdateUserGroupResponse.Data.ParentUserGroupId"));
 		updateUserGroupResponse.setData(data);
 	 
 	 	return updateUserGroupResponse;

@@ -27,11 +27,11 @@ public class ListPersonTraceResponse extends AcsResponse {
 
 	private Integer totalCount;
 
-	private Integer pageSize;
+	private String requestId;
 
 	private String message;
 
-	private String requestId;
+	private Integer pageSize;
 
 	private Integer pageNumber;
 
@@ -49,12 +49,12 @@ public class ListPersonTraceResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getMessage() {
@@ -65,12 +65,12 @@ public class ListPersonTraceResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
 	}
 
 	public Integer getPageNumber() {
@@ -107,67 +107,27 @@ public class ListPersonTraceResponse extends AcsResponse {
 
 	public static class Day {
 
-		private String startTargetImage;
-
-		private String startSourceImage;
-
-		private String corpId;
-
-		private String personId;
-
-		private String deviceId;
-
 		private String endTargetImage;
-
-		private String endSourceImage;
-
-		private String startTime;
-
-		private String date;
 
 		private String lastTime;
 
+		private String startTime;
+
 		private String groupId;
 
-		public String getStartTargetImage() {
-			return this.startTargetImage;
-		}
+		private String deviceId;
 
-		public void setStartTargetImage(String startTargetImage) {
-			this.startTargetImage = startTargetImage;
-		}
+		private String endSourceImage;
 
-		public String getStartSourceImage() {
-			return this.startSourceImage;
-		}
+		private String corpId;
 
-		public void setStartSourceImage(String startSourceImage) {
-			this.startSourceImage = startSourceImage;
-		}
+		private String startSourceImage;
 
-		public String getCorpId() {
-			return this.corpId;
-		}
+		private String date;
 
-		public void setCorpId(String corpId) {
-			this.corpId = corpId;
-		}
+		private String personId;
 
-		public String getPersonId() {
-			return this.personId;
-		}
-
-		public void setPersonId(String personId) {
-			this.personId = personId;
-		}
-
-		public String getDeviceId() {
-			return this.deviceId;
-		}
-
-		public void setDeviceId(String deviceId) {
-			this.deviceId = deviceId;
-		}
+		private String startTargetImage;
 
 		public String getEndTargetImage() {
 			return this.endTargetImage;
@@ -175,30 +135,6 @@ public class ListPersonTraceResponse extends AcsResponse {
 
 		public void setEndTargetImage(String endTargetImage) {
 			this.endTargetImage = endTargetImage;
-		}
-
-		public String getEndSourceImage() {
-			return this.endSourceImage;
-		}
-
-		public void setEndSourceImage(String endSourceImage) {
-			this.endSourceImage = endSourceImage;
-		}
-
-		public String getStartTime() {
-			return this.startTime;
-		}
-
-		public void setStartTime(String startTime) {
-			this.startTime = startTime;
-		}
-
-		public String getDate() {
-			return this.date;
-		}
-
-		public void setDate(String date) {
-			this.date = date;
 		}
 
 		public String getLastTime() {
@@ -209,12 +145,76 @@ public class ListPersonTraceResponse extends AcsResponse {
 			this.lastTime = lastTime;
 		}
 
+		public String getStartTime() {
+			return this.startTime;
+		}
+
+		public void setStartTime(String startTime) {
+			this.startTime = startTime;
+		}
+
 		public String getGroupId() {
 			return this.groupId;
 		}
 
 		public void setGroupId(String groupId) {
 			this.groupId = groupId;
+		}
+
+		public String getDeviceId() {
+			return this.deviceId;
+		}
+
+		public void setDeviceId(String deviceId) {
+			this.deviceId = deviceId;
+		}
+
+		public String getEndSourceImage() {
+			return this.endSourceImage;
+		}
+
+		public void setEndSourceImage(String endSourceImage) {
+			this.endSourceImage = endSourceImage;
+		}
+
+		public String getCorpId() {
+			return this.corpId;
+		}
+
+		public void setCorpId(String corpId) {
+			this.corpId = corpId;
+		}
+
+		public String getStartSourceImage() {
+			return this.startSourceImage;
+		}
+
+		public void setStartSourceImage(String startSourceImage) {
+			this.startSourceImage = startSourceImage;
+		}
+
+		public String getDate() {
+			return this.date;
+		}
+
+		public void setDate(String date) {
+			this.date = date;
+		}
+
+		public String getPersonId() {
+			return this.personId;
+		}
+
+		public void setPersonId(String personId) {
+			this.personId = personId;
+		}
+
+		public String getStartTargetImage() {
+			return this.startTargetImage;
+		}
+
+		public void setStartTargetImage(String startTargetImage) {
+			this.startTargetImage = startTargetImage;
 		}
 	}
 

@@ -19,7 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.vcs.model.v20200515.CreateScanDeviceResponse;
 import com.aliyuncs.vcs.model.v20200515.CreateScanDeviceResponse.Data;
-import com.aliyuncs.vcs.model.v20200515.CreateScanDeviceResponse.Data.SubDeviceSipInfoItem;
+import com.aliyuncs.vcs.model.v20200515.CreateScanDeviceResponse.Data.SubDeviceInfoItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -32,31 +32,24 @@ public class CreateScanDeviceResponseUnmarshaller {
 		createScanDeviceResponse.setCode(_ctx.stringValue("CreateScanDeviceResponse.Code"));
 
 		Data data = new Data();
-		data.setSipReaml(_ctx.stringValue("CreateScanDeviceResponse.Data.SipReaml"));
-		data.setSipIp(_ctx.stringValue("CreateScanDeviceResponse.Data.SipIp"));
-		data.setCorpId(_ctx.stringValue("CreateScanDeviceResponse.Data.CorpId"));
-		data.setDeviceSn(_ctx.stringValue("CreateScanDeviceResponse.Data.DeviceSn"));
+		data.setServerIp(_ctx.stringValue("CreateScanDeviceResponse.Data.ServerIp"));
+		data.setServerRealm(_ctx.stringValue("CreateScanDeviceResponse.Data.ServerRealm"));
+		data.setServerPort(_ctx.stringValue("CreateScanDeviceResponse.Data.ServerPort"));
 		data.setSipDeviceGbId(_ctx.stringValue("CreateScanDeviceResponse.Data.SipDeviceGbId"));
-		data.setDeviceCode(_ctx.stringValue("CreateScanDeviceResponse.Data.DeviceCode"));
-		data.setSipPort(_ctx.stringValue("CreateScanDeviceResponse.Data.SipPort"));
-		data.setSipGbId(_ctx.stringValue("CreateScanDeviceResponse.Data.SipGbId"));
-		data.setSipPassword(_ctx.stringValue("CreateScanDeviceResponse.Data.SipPassword"));
+		data.setDeviceId(_ctx.stringValue("CreateScanDeviceResponse.Data.DeviceId"));
+		data.setServerId(_ctx.stringValue("CreateScanDeviceResponse.Data.ServerId"));
+		data.setPassword(_ctx.stringValue("CreateScanDeviceResponse.Data.Password"));
+		data.setDeviceSn(_ctx.stringValue("CreateScanDeviceResponse.Data.DeviceSn"));
+		data.setCorpId(_ctx.stringValue("CreateScanDeviceResponse.Data.CorpId"));
 
-		List<SubDeviceSipInfoItem> subDeviceSipInfo = new ArrayList<SubDeviceSipInfoItem>();
-		for (int i = 0; i < _ctx.lengthValue("CreateScanDeviceResponse.Data.SubDeviceSipInfo.Length"); i++) {
-			SubDeviceSipInfoItem subDeviceSipInfoItem = new SubDeviceSipInfoItem();
-			subDeviceSipInfoItem.setSundayCaptureStrategy(_ctx.stringValue("CreateScanDeviceResponse.Data.SubDeviceSipInfo["+ i +"].SundayCaptureStrategy"));
-			subDeviceSipInfoItem.setMondayCaptureStrategy(_ctx.stringValue("CreateScanDeviceResponse.Data.SubDeviceSipInfo["+ i +"].MondayCaptureStrategy"));
-			subDeviceSipInfoItem.setChannelGbId(_ctx.stringValue("CreateScanDeviceResponse.Data.SubDeviceSipInfo["+ i +"].ChannelGbId"));
-			subDeviceSipInfoItem.setFridayCaptureStrategy(_ctx.stringValue("CreateScanDeviceResponse.Data.SubDeviceSipInfo["+ i +"].FridayCaptureStrategy"));
-			subDeviceSipInfoItem.setTuesdayCaptureStrategy(_ctx.stringValue("CreateScanDeviceResponse.Data.SubDeviceSipInfo["+ i +"].TuesdayCaptureStrategy"));
-			subDeviceSipInfoItem.setWednesdayCaptureStrategy(_ctx.stringValue("CreateScanDeviceResponse.Data.SubDeviceSipInfo["+ i +"].WednesdayCaptureStrategy"));
-			subDeviceSipInfoItem.setThursdayCaptureStrategy(_ctx.stringValue("CreateScanDeviceResponse.Data.SubDeviceSipInfo["+ i +"].ThursdayCaptureStrategy"));
-			subDeviceSipInfoItem.setSaturdayCaptureStrategy(_ctx.stringValue("CreateScanDeviceResponse.Data.SubDeviceSipInfo["+ i +"].SaturdayCaptureStrategy"));
+		List<SubDeviceInfoItem> subDeviceInfo = new ArrayList<SubDeviceInfoItem>();
+		for (int i = 0; i < _ctx.lengthValue("CreateScanDeviceResponse.Data.SubDeviceInfo.Length"); i++) {
+			SubDeviceInfoItem subDeviceInfoItem = new SubDeviceInfoItem();
+			subDeviceInfoItem.setChannelDeviceId(_ctx.stringValue("CreateScanDeviceResponse.Data.SubDeviceInfo["+ i +"].ChannelDeviceId"));
 
-			subDeviceSipInfo.add(subDeviceSipInfoItem);
+			subDeviceInfo.add(subDeviceInfoItem);
 		}
-		data.setSubDeviceSipInfo(subDeviceSipInfo);
+		data.setSubDeviceInfo(subDeviceInfo);
 		createScanDeviceResponse.setData(data);
 	 
 	 	return createScanDeviceResponse;

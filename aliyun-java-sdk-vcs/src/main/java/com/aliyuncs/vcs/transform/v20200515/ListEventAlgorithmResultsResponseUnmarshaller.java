@@ -33,29 +33,29 @@ public class ListEventAlgorithmResultsResponseUnmarshaller {
 		listEventAlgorithmResultsResponse.setCode(_ctx.stringValue("ListEventAlgorithmResultsResponse.Code"));
 
 		Data data = new Data();
-		data.setTotalCount(_ctx.integerValue("ListEventAlgorithmResultsResponse.Data.TotalCount"));
-		data.setPageSize(_ctx.integerValue("ListEventAlgorithmResultsResponse.Data.PageSize"));
 		data.setTotalPage(_ctx.integerValue("ListEventAlgorithmResultsResponse.Data.TotalPage"));
 		data.setPageNumber(_ctx.integerValue("ListEventAlgorithmResultsResponse.Data.PageNumber"));
+		data.setPageSize(_ctx.integerValue("ListEventAlgorithmResultsResponse.Data.PageSize"));
+		data.setTotalCount(_ctx.integerValue("ListEventAlgorithmResultsResponse.Data.TotalCount"));
 
 		List<RecordsItem> records = new ArrayList<RecordsItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListEventAlgorithmResultsResponse.Data.Records.Length"); i++) {
 			RecordsItem recordsItem = new RecordsItem();
-			recordsItem.setPicUrlPath(_ctx.stringValue("ListEventAlgorithmResultsResponse.Data.Records["+ i +"].PicUrlPath"));
-			recordsItem.setUuidCode(_ctx.stringValue("ListEventAlgorithmResultsResponse.Data.Records["+ i +"].UuidCode"));
-			recordsItem.setCorpId(_ctx.stringValue("ListEventAlgorithmResultsResponse.Data.Records["+ i +"].CorpId"));
-			recordsItem.setEventType(_ctx.stringValue("ListEventAlgorithmResultsResponse.Data.Records["+ i +"].EventType"));
-			recordsItem.setExtendValueThree(_ctx.stringValue("ListEventAlgorithmResultsResponse.Data.Records["+ i +"].ExtendValueThree"));
-			recordsItem.setTargetPicUrlPath(_ctx.stringValue("ListEventAlgorithmResultsResponse.Data.Records["+ i +"].TargetPicUrlPath"));
-			recordsItem.setCapStyle(_ctx.stringValue("ListEventAlgorithmResultsResponse.Data.Records["+ i +"].CapStyle"));
-			recordsItem.setExtendValue(_ctx.stringValue("ListEventAlgorithmResultsResponse.Data.Records["+ i +"].ExtendValue"));
 			recordsItem.setExtendValueTwo(_ctx.stringValue("ListEventAlgorithmResultsResponse.Data.Records["+ i +"].ExtendValueTwo"));
-			recordsItem.setTagCode(_ctx.stringValue("ListEventAlgorithmResultsResponse.Data.Records["+ i +"].TagCode"));
-			recordsItem.setShotTime(_ctx.stringValue("ListEventAlgorithmResultsResponse.Data.Records["+ i +"].ShotTime"));
 			recordsItem.setRecordId(_ctx.stringValue("ListEventAlgorithmResultsResponse.Data.Records["+ i +"].RecordId"));
-			recordsItem.setTagCodeReliability(_ctx.stringValue("ListEventAlgorithmResultsResponse.Data.Records["+ i +"].TagCodeReliability"));
-			recordsItem.setFaceCount(_ctx.stringValue("ListEventAlgorithmResultsResponse.Data.Records["+ i +"].FaceCount"));
+			recordsItem.setPicUrlPath(_ctx.stringValue("ListEventAlgorithmResultsResponse.Data.Records["+ i +"].PicUrlPath"));
 			recordsItem.setDataSourceId(_ctx.stringValue("ListEventAlgorithmResultsResponse.Data.Records["+ i +"].DataSourceId"));
+			recordsItem.setExtendValue(_ctx.stringValue("ListEventAlgorithmResultsResponse.Data.Records["+ i +"].ExtendValue"));
+			recordsItem.setExtendValueThree(_ctx.stringValue("ListEventAlgorithmResultsResponse.Data.Records["+ i +"].ExtendValueThree"));
+			recordsItem.setFaceCount(_ctx.stringValue("ListEventAlgorithmResultsResponse.Data.Records["+ i +"].FaceCount"));
+			recordsItem.setTargetPicUrlPath(_ctx.stringValue("ListEventAlgorithmResultsResponse.Data.Records["+ i +"].TargetPicUrlPath"));
+			recordsItem.setEventType(_ctx.stringValue("ListEventAlgorithmResultsResponse.Data.Records["+ i +"].EventType"));
+			recordsItem.setCorpId(_ctx.stringValue("ListEventAlgorithmResultsResponse.Data.Records["+ i +"].CorpId"));
+			recordsItem.setShotTime(_ctx.stringValue("ListEventAlgorithmResultsResponse.Data.Records["+ i +"].ShotTime"));
+			recordsItem.setCapStyle(_ctx.stringValue("ListEventAlgorithmResultsResponse.Data.Records["+ i +"].CapStyle"));
+			recordsItem.setTagCode(_ctx.stringValue("ListEventAlgorithmResultsResponse.Data.Records["+ i +"].TagCode"));
+			recordsItem.setTagCodeReliability(_ctx.stringValue("ListEventAlgorithmResultsResponse.Data.Records["+ i +"].TagCodeReliability"));
+			recordsItem.setUuidCode(_ctx.stringValue("ListEventAlgorithmResultsResponse.Data.Records["+ i +"].UuidCode"));
 
 			records.add(recordsItem);
 		}

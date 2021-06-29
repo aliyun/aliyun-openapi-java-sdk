@@ -27,6 +27,8 @@ public class GetPictureUrlRequest extends RpcAcsRequest<GetPictureUrlResponse> {
 
 	private String expireTime;
 
+	private String protocol;
+
 	private String originUrl;
 	public GetPictureUrlRequest() {
 		super("Vcs", "2020-05-15", "GetPictureUrl");
@@ -45,6 +47,17 @@ public class GetPictureUrlRequest extends RpcAcsRequest<GetPictureUrlResponse> {
 		this.expireTime = expireTime;
 		if(expireTime != null){
 			putBodyParameter("ExpireTime", expireTime);
+		}
+	}
+
+	public String getBizProtocol() {
+		return this.protocol;
+	}
+
+	public void setBizProtocol(String protocol) {
+		this.protocol = protocol;
+		if(protocol != null){
+			putBodyParameter("Protocol", protocol);
 		}
 	}
 

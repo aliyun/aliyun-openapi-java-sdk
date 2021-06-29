@@ -25,8 +25,6 @@ import com.aliyuncs.vcs.Endpoint;
 public class CreateScanDeviceRequest extends RpcAcsRequest<CreateScanDeviceResponse> {
 	   
 
-	private String accessPointVendor;
-
 	private String deviceSite;
 
 	private String dataSourceType;
@@ -34,8 +32,6 @@ public class CreateScanDeviceRequest extends RpcAcsRequest<CreateScanDeviceRespo
 	private String corpId;
 
 	private String frameRate;
-
-	private String gbId;
 
 	private String oSDTimeEnable;
 
@@ -61,8 +57,6 @@ public class CreateScanDeviceRequest extends RpcAcsRequest<CreateScanDeviceRespo
 
 	private String deviceModel;
 
-	private String accessProtocolType;
-
 	private String audioEnable;
 
 	private String deviceDirection;
@@ -71,9 +65,13 @@ public class CreateScanDeviceRequest extends RpcAcsRequest<CreateScanDeviceRespo
 
 	private String govLength;
 
+	private String inProtocol;
+
 	private String deviceAddress;
 
 	private String deviceSn;
+
+	private String deviceId;
 
 	private String deviceName;
 
@@ -85,17 +83,6 @@ public class CreateScanDeviceRequest extends RpcAcsRequest<CreateScanDeviceRespo
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getAccessPointVendor() {
-		return this.accessPointVendor;
-	}
-
-	public void setAccessPointVendor(String accessPointVendor) {
-		this.accessPointVendor = accessPointVendor;
-		if(accessPointVendor != null){
-			putBodyParameter("AccessPointVendor", accessPointVendor);
-		}
 	}
 
 	public String getDeviceSite() {
@@ -139,17 +126,6 @@ public class CreateScanDeviceRequest extends RpcAcsRequest<CreateScanDeviceRespo
 		this.frameRate = frameRate;
 		if(frameRate != null){
 			putBodyParameter("FrameRate", frameRate);
-		}
-	}
-
-	public String getGbId() {
-		return this.gbId;
-	}
-
-	public void setGbId(String gbId) {
-		this.gbId = gbId;
-		if(gbId != null){
-			putBodyParameter("GbId", gbId);
 		}
 	}
 
@@ -285,17 +261,6 @@ public class CreateScanDeviceRequest extends RpcAcsRequest<CreateScanDeviceRespo
 		}
 	}
 
-	public String getAccessProtocolType() {
-		return this.accessProtocolType;
-	}
-
-	public void setAccessProtocolType(String accessProtocolType) {
-		this.accessProtocolType = accessProtocolType;
-		if(accessProtocolType != null){
-			putBodyParameter("AccessProtocolType", accessProtocolType);
-		}
-	}
-
 	public String getAudioEnable() {
 		return this.audioEnable;
 	}
@@ -340,6 +305,17 @@ public class CreateScanDeviceRequest extends RpcAcsRequest<CreateScanDeviceRespo
 		}
 	}
 
+	public String getInProtocol() {
+		return this.inProtocol;
+	}
+
+	public void setInProtocol(String inProtocol) {
+		this.inProtocol = inProtocol;
+		if(inProtocol != null){
+			putBodyParameter("InProtocol", inProtocol);
+		}
+	}
+
 	public String getDeviceAddress() {
 		return this.deviceAddress;
 	}
@@ -359,6 +335,17 @@ public class CreateScanDeviceRequest extends RpcAcsRequest<CreateScanDeviceRespo
 		this.deviceSn = deviceSn;
 		if(deviceSn != null){
 			putBodyParameter("DeviceSn", deviceSn);
+		}
+	}
+
+	public String getDeviceId() {
+		return this.deviceId;
+	}
+
+	public void setDeviceId(String deviceId) {
+		this.deviceId = deviceId;
+		if(deviceId != null){
+			putBodyParameter("DeviceId", deviceId);
 		}
 	}
 

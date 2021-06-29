@@ -24,21 +24,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetProfileDetailResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String message;
+
+	private String requestId;
 
 	private String code;
 
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getMessage() {
 		return this.message;
@@ -46,6 +38,14 @@ public class GetProfileDetailResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getCode() {
@@ -66,38 +66,38 @@ public class GetProfileDetailResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String sceneType;
+		private Integer catalogId;
 
 		private Integer profileId;
-
-		private String personId;
-
-		private String phoneNo;
-
-		private String idNumber;
 
 		private String isvSubId;
 
 		private String gender;
 
-		private String plateNo;
-
 		private String bizId;
 
-		private Integer catalogId;
+		private String idNumber;
 
-		private String liveAddress;
+		private String sceneType;
+
+		private String phoneNo;
 
 		private String faceUrl;
 
+		private String liveAddress;
+
 		private String name;
 
-		public String getSceneType() {
-			return this.sceneType;
+		private String personId;
+
+		private String plateNo;
+
+		public Integer getCatalogId() {
+			return this.catalogId;
 		}
 
-		public void setSceneType(String sceneType) {
-			this.sceneType = sceneType;
+		public void setCatalogId(Integer catalogId) {
+			this.catalogId = catalogId;
 		}
 
 		public Integer getProfileId() {
@@ -106,30 +106,6 @@ public class GetProfileDetailResponse extends AcsResponse {
 
 		public void setProfileId(Integer profileId) {
 			this.profileId = profileId;
-		}
-
-		public String getPersonId() {
-			return this.personId;
-		}
-
-		public void setPersonId(String personId) {
-			this.personId = personId;
-		}
-
-		public String getPhoneNo() {
-			return this.phoneNo;
-		}
-
-		public void setPhoneNo(String phoneNo) {
-			this.phoneNo = phoneNo;
-		}
-
-		public String getIdNumber() {
-			return this.idNumber;
-		}
-
-		public void setIdNumber(String idNumber) {
-			this.idNumber = idNumber;
 		}
 
 		public String getIsvSubId() {
@@ -148,14 +124,6 @@ public class GetProfileDetailResponse extends AcsResponse {
 			this.gender = gender;
 		}
 
-		public String getPlateNo() {
-			return this.plateNo;
-		}
-
-		public void setPlateNo(String plateNo) {
-			this.plateNo = plateNo;
-		}
-
 		public String getBizId() {
 			return this.bizId;
 		}
@@ -164,20 +132,28 @@ public class GetProfileDetailResponse extends AcsResponse {
 			this.bizId = bizId;
 		}
 
-		public Integer getCatalogId() {
-			return this.catalogId;
+		public String getIdNumber() {
+			return this.idNumber;
 		}
 
-		public void setCatalogId(Integer catalogId) {
-			this.catalogId = catalogId;
+		public void setIdNumber(String idNumber) {
+			this.idNumber = idNumber;
 		}
 
-		public String getLiveAddress() {
-			return this.liveAddress;
+		public String getSceneType() {
+			return this.sceneType;
 		}
 
-		public void setLiveAddress(String liveAddress) {
-			this.liveAddress = liveAddress;
+		public void setSceneType(String sceneType) {
+			this.sceneType = sceneType;
+		}
+
+		public String getPhoneNo() {
+			return this.phoneNo;
+		}
+
+		public void setPhoneNo(String phoneNo) {
+			this.phoneNo = phoneNo;
 		}
 
 		public String getFaceUrl() {
@@ -188,12 +164,36 @@ public class GetProfileDetailResponse extends AcsResponse {
 			this.faceUrl = faceUrl;
 		}
 
+		public String getLiveAddress() {
+			return this.liveAddress;
+		}
+
+		public void setLiveAddress(String liveAddress) {
+			this.liveAddress = liveAddress;
+		}
+
 		public String getName() {
 			return this.name;
 		}
 
 		public void setName(String name) {
 			this.name = name;
+		}
+
+		public String getPersonId() {
+			return this.personId;
+		}
+
+		public void setPersonId(String personId) {
+			this.personId = personId;
+		}
+
+		public String getPlateNo() {
+			return this.plateNo;
+		}
+
+		public void setPlateNo(String plateNo) {
+			this.plateNo = plateNo;
 		}
 	}
 

@@ -27,11 +27,11 @@ public class ListPersonTraceDetailsResponse extends AcsResponse {
 
 	private Long totalCount;
 
-	private Long pageSize;
+	private String requestId;
 
 	private String message;
 
-	private String requestId;
+	private Long pageSize;
 
 	private Long pageNumber;
 
@@ -47,12 +47,12 @@ public class ListPersonTraceDetailsResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public Long getPageSize() {
-		return this.pageSize;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setPageSize(Long pageSize) {
-		this.pageSize = pageSize;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getMessage() {
@@ -63,12 +63,12 @@ public class ListPersonTraceDetailsResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public Long getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setPageSize(Long pageSize) {
+		this.pageSize = pageSize;
 	}
 
 	public Long getPageNumber() {
@@ -97,42 +97,34 @@ public class ListPersonTraceDetailsResponse extends AcsResponse {
 
 	public static class Datas {
 
-		private String picUrlPath;
-
-		private String corpId;
+		private String targetPicUrlPath;
 
 		private String subId;
 
-		private String personId;
-
-		private String rightBottomX;
-
 		private String rightBottomY;
-
-		private String targetPicUrlPath;
-
-		private String shotTime;
 
 		private String leftTopY;
 
-		private String leftTopX;
+		private String picUrlPath;
 
 		private String dataSourceId;
 
-		public String getPicUrlPath() {
-			return this.picUrlPath;
+		private String corpId;
+
+		private String shotTime;
+
+		private String leftTopX;
+
+		private String rightBottomX;
+
+		private String personId;
+
+		public String getTargetPicUrlPath() {
+			return this.targetPicUrlPath;
 		}
 
-		public void setPicUrlPath(String picUrlPath) {
-			this.picUrlPath = picUrlPath;
-		}
-
-		public String getCorpId() {
-			return this.corpId;
-		}
-
-		public void setCorpId(String corpId) {
-			this.corpId = corpId;
+		public void setTargetPicUrlPath(String targetPicUrlPath) {
+			this.targetPicUrlPath = targetPicUrlPath;
 		}
 
 		public String getSubId() {
@@ -143,44 +135,12 @@ public class ListPersonTraceDetailsResponse extends AcsResponse {
 			this.subId = subId;
 		}
 
-		public String getPersonId() {
-			return this.personId;
-		}
-
-		public void setPersonId(String personId) {
-			this.personId = personId;
-		}
-
-		public String getRightBottomX() {
-			return this.rightBottomX;
-		}
-
-		public void setRightBottomX(String rightBottomX) {
-			this.rightBottomX = rightBottomX;
-		}
-
 		public String getRightBottomY() {
 			return this.rightBottomY;
 		}
 
 		public void setRightBottomY(String rightBottomY) {
 			this.rightBottomY = rightBottomY;
-		}
-
-		public String getTargetPicUrlPath() {
-			return this.targetPicUrlPath;
-		}
-
-		public void setTargetPicUrlPath(String targetPicUrlPath) {
-			this.targetPicUrlPath = targetPicUrlPath;
-		}
-
-		public String getShotTime() {
-			return this.shotTime;
-		}
-
-		public void setShotTime(String shotTime) {
-			this.shotTime = shotTime;
 		}
 
 		public String getLeftTopY() {
@@ -191,12 +151,12 @@ public class ListPersonTraceDetailsResponse extends AcsResponse {
 			this.leftTopY = leftTopY;
 		}
 
-		public String getLeftTopX() {
-			return this.leftTopX;
+		public String getPicUrlPath() {
+			return this.picUrlPath;
 		}
 
-		public void setLeftTopX(String leftTopX) {
-			this.leftTopX = leftTopX;
+		public void setPicUrlPath(String picUrlPath) {
+			this.picUrlPath = picUrlPath;
 		}
 
 		public String getDataSourceId() {
@@ -205,6 +165,46 @@ public class ListPersonTraceDetailsResponse extends AcsResponse {
 
 		public void setDataSourceId(String dataSourceId) {
 			this.dataSourceId = dataSourceId;
+		}
+
+		public String getCorpId() {
+			return this.corpId;
+		}
+
+		public void setCorpId(String corpId) {
+			this.corpId = corpId;
+		}
+
+		public String getShotTime() {
+			return this.shotTime;
+		}
+
+		public void setShotTime(String shotTime) {
+			this.shotTime = shotTime;
+		}
+
+		public String getLeftTopX() {
+			return this.leftTopX;
+		}
+
+		public void setLeftTopX(String leftTopX) {
+			this.leftTopX = leftTopX;
+		}
+
+		public String getRightBottomX() {
+			return this.rightBottomX;
+		}
+
+		public void setRightBottomX(String rightBottomX) {
+			this.rightBottomX = rightBottomX;
+		}
+
+		public String getPersonId() {
+			return this.personId;
+		}
+
+		public void setPersonId(String personId) {
+			this.personId = personId;
 		}
 	}
 

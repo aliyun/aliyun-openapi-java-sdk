@@ -27,18 +27,18 @@ public class UpdateAiotPersonTableResponseUnmarshaller {
 	public static UpdateAiotPersonTableResponse unmarshall(UpdateAiotPersonTableResponse updateAiotPersonTableResponse, UnmarshallerContext _ctx) {
 		
 		updateAiotPersonTableResponse.setRequestId(_ctx.stringValue("UpdateAiotPersonTableResponse.RequestId"));
-		updateAiotPersonTableResponse.setMessage(_ctx.stringValue("UpdateAiotPersonTableResponse.Message"));
 		updateAiotPersonTableResponse.setCode(_ctx.stringValue("UpdateAiotPersonTableResponse.Code"));
+		updateAiotPersonTableResponse.setMessage(_ctx.stringValue("UpdateAiotPersonTableResponse.Message"));
 
 		PersonTable personTable = new PersonTable();
 		personTable.setPersonTableId(_ctx.stringValue("UpdateAiotPersonTableResponse.PersonTable.PersonTableId"));
+		personTable.setName(_ctx.stringValue("UpdateAiotPersonTableResponse.PersonTable.Name"));
 		personTable.setType(_ctx.longValue("UpdateAiotPersonTableResponse.PersonTable.Type"));
-		personTable.setFaceNum(_ctx.longValue("UpdateAiotPersonTableResponse.PersonTable.FaceNum"));
-		personTable.setDeviceId(_ctx.stringValue("UpdateAiotPersonTableResponse.PersonTable.DeviceId"));
-		personTable.setLastChange(_ctx.stringValue("UpdateAiotPersonTableResponse.PersonTable.LastChange"));
 		personTable.setTotalPersonNum(_ctx.longValue("UpdateAiotPersonTableResponse.PersonTable.TotalPersonNum"));
 		personTable.setPersonNum(_ctx.longValue("UpdateAiotPersonTableResponse.PersonTable.PersonNum"));
-		personTable.setName(_ctx.stringValue("UpdateAiotPersonTableResponse.PersonTable.Name"));
+		personTable.setFaceNum(_ctx.longValue("UpdateAiotPersonTableResponse.PersonTable.FaceNum"));
+		personTable.setLastChange(_ctx.stringValue("UpdateAiotPersonTableResponse.PersonTable.LastChange"));
+		personTable.setDeviceId(_ctx.stringValue("UpdateAiotPersonTableResponse.PersonTable.DeviceId"));
 
 		List<Long> verificationModelList = new ArrayList<Long>();
 		for (int i = 0; i < _ctx.lengthValue("UpdateAiotPersonTableResponse.PersonTable.VerificationModelList.Length"); i++) {

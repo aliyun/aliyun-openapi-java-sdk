@@ -25,21 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class UploadFileResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String message;
+
+	private String requestId;
 
 	private String code;
 
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getMessage() {
 		return this.message;
@@ -47,6 +39,14 @@ public class UploadFileResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getCode() {
@@ -79,17 +79,9 @@ public class UploadFileResponse extends AcsResponse {
 
 		public static class OssPath {
 
-			private String sourceId;
-
 			private String ossPath;
 
-			public String getSourceId() {
-				return this.sourceId;
-			}
-
-			public void setSourceId(String sourceId) {
-				this.sourceId = sourceId;
-			}
+			private String sourceId;
 
 			public String getOssPath() {
 				return this.ossPath;
@@ -97,6 +89,14 @@ public class UploadFileResponse extends AcsResponse {
 
 			public void setOssPath(String ossPath) {
 				this.ossPath = ossPath;
+			}
+
+			public String getSourceId() {
+				return this.sourceId;
+			}
+
+			public void setSourceId(String sourceId) {
+				this.sourceId = sourceId;
 			}
 		}
 	}

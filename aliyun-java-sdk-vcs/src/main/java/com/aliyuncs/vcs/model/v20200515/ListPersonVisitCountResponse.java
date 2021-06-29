@@ -27,11 +27,11 @@ public class ListPersonVisitCountResponse extends AcsResponse {
 
 	private String totalCount;
 
-	private String pageSize;
+	private String requestId;
 
 	private String message;
 
-	private String requestId;
+	private String pageSize;
 
 	private String pageNo;
 
@@ -49,12 +49,12 @@ public class ListPersonVisitCountResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public String getPageSize() {
-		return this.pageSize;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setPageSize(String pageSize) {
-		this.pageSize = pageSize;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getMessage() {
@@ -65,12 +65,12 @@ public class ListPersonVisitCountResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setPageSize(String pageSize) {
+		this.pageSize = pageSize;
 	}
 
 	public String getPageNo() {
@@ -107,36 +107,36 @@ public class ListPersonVisitCountResponse extends AcsResponse {
 
 	public static class Datas {
 
-		private String corpId;
-
-		private String personId;
-
-		private String deviceId;
-
-		private String tagMetrics;
-
-		private String tagCode;
-
 		private String dayId;
-
-		private String hourId;
 
 		private String groupId;
 
-		public String getCorpId() {
-			return this.corpId;
+		private String deviceId;
+
+		private String tagCode;
+
+		private String corpId;
+
+		private String tagMetrics;
+
+		private String hourId;
+
+		private String personId;
+
+		public String getDayId() {
+			return this.dayId;
 		}
 
-		public void setCorpId(String corpId) {
-			this.corpId = corpId;
+		public void setDayId(String dayId) {
+			this.dayId = dayId;
 		}
 
-		public String getPersonId() {
-			return this.personId;
+		public String getGroupId() {
+			return this.groupId;
 		}
 
-		public void setPersonId(String personId) {
-			this.personId = personId;
+		public void setGroupId(String groupId) {
+			this.groupId = groupId;
 		}
 
 		public String getDeviceId() {
@@ -147,14 +147,6 @@ public class ListPersonVisitCountResponse extends AcsResponse {
 			this.deviceId = deviceId;
 		}
 
-		public String getTagMetrics() {
-			return this.tagMetrics;
-		}
-
-		public void setTagMetrics(String tagMetrics) {
-			this.tagMetrics = tagMetrics;
-		}
-
 		public String getTagCode() {
 			return this.tagCode;
 		}
@@ -163,12 +155,20 @@ public class ListPersonVisitCountResponse extends AcsResponse {
 			this.tagCode = tagCode;
 		}
 
-		public String getDayId() {
-			return this.dayId;
+		public String getCorpId() {
+			return this.corpId;
 		}
 
-		public void setDayId(String dayId) {
-			this.dayId = dayId;
+		public void setCorpId(String corpId) {
+			this.corpId = corpId;
+		}
+
+		public String getTagMetrics() {
+			return this.tagMetrics;
+		}
+
+		public void setTagMetrics(String tagMetrics) {
+			this.tagMetrics = tagMetrics;
 		}
 
 		public String getHourId() {
@@ -179,12 +179,12 @@ public class ListPersonVisitCountResponse extends AcsResponse {
 			this.hourId = hourId;
 		}
 
-		public String getGroupId() {
-			return this.groupId;
+		public String getPersonId() {
+			return this.personId;
 		}
 
-		public void setGroupId(String groupId) {
-			this.groupId = groupId;
+		public void setPersonId(String personId) {
+			this.personId = personId;
 		}
 	}
 

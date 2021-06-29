@@ -26,13 +26,13 @@ public class GetDeviceLiveUrlResponse extends AcsResponse {
 
 	private Integer streamType;
 
-	private String message;
-
 	private String requestId;
 
-	private String outProtocol;
+	private String message;
 
 	private String code;
+
+	private String outProtocol;
 
 	private String url;
 
@@ -44,14 +44,6 @@ public class GetDeviceLiveUrlResponse extends AcsResponse {
 		this.streamType = streamType;
 	}
 
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -60,12 +52,12 @@ public class GetDeviceLiveUrlResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getOutProtocol() {
-		return this.outProtocol;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setOutProtocol(String outProtocol) {
-		this.outProtocol = outProtocol;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public String getCode() {
@@ -74,6 +66,14 @@ public class GetDeviceLiveUrlResponse extends AcsResponse {
 
 	public void setCode(String code) {
 		this.code = code;
+	}
+
+	public String getOutProtocol() {
+		return this.outProtocol;
+	}
+
+	public void setOutProtocol(String outProtocol) {
+		this.outProtocol = outProtocol;
 	}
 
 	public String getUrl() {

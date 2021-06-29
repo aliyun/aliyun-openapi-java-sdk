@@ -25,21 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetMonitorResultResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String message;
+
+	private String requestId;
 
 	private String code;
 
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getMessage() {
 		return this.message;
@@ -47,6 +39,14 @@ public class GetMonitorResultResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getCode() {
@@ -89,36 +89,76 @@ public class GetMonitorResultResponse extends AcsResponse {
 
 		public static class RecordsItem {
 
-			private String leftUpX;
+			private String picUrl;
+
+			private String rightBottomY;
+
+			private String score;
+
+			private String monitorPicUrl;
+
+			private String rightBottomX;
+
+			private String gbId;
 
 			private String leftUpY;
 
-			private String score;
+			private String leftUpX;
+
+			private String shotTime;
 
 			private String taskId;
 
 			private String targetPicUrl;
 
-			private String rightBottomX;
-
-			private String rightBottomY;
-
-			private String gbId;
-
-			private String monitorPicUrl;
-
-			private String shotTime;
-
-			private String picUrl;
-
 			private ExtendInfo extendInfo;
 
-			public String getLeftUpX() {
-				return this.leftUpX;
+			public String getPicUrl() {
+				return this.picUrl;
 			}
 
-			public void setLeftUpX(String leftUpX) {
-				this.leftUpX = leftUpX;
+			public void setPicUrl(String picUrl) {
+				this.picUrl = picUrl;
+			}
+
+			public String getRightBottomY() {
+				return this.rightBottomY;
+			}
+
+			public void setRightBottomY(String rightBottomY) {
+				this.rightBottomY = rightBottomY;
+			}
+
+			public String getScore() {
+				return this.score;
+			}
+
+			public void setScore(String score) {
+				this.score = score;
+			}
+
+			public String getMonitorPicUrl() {
+				return this.monitorPicUrl;
+			}
+
+			public void setMonitorPicUrl(String monitorPicUrl) {
+				this.monitorPicUrl = monitorPicUrl;
+			}
+
+			public String getRightBottomX() {
+				return this.rightBottomX;
+			}
+
+			public void setRightBottomX(String rightBottomX) {
+				this.rightBottomX = rightBottomX;
+			}
+
+			public String getGbId() {
+				return this.gbId;
+			}
+
+			public void setGbId(String gbId) {
+				this.gbId = gbId;
 			}
 
 			public String getLeftUpY() {
@@ -129,12 +169,20 @@ public class GetMonitorResultResponse extends AcsResponse {
 				this.leftUpY = leftUpY;
 			}
 
-			public String getScore() {
-				return this.score;
+			public String getLeftUpX() {
+				return this.leftUpX;
 			}
 
-			public void setScore(String score) {
-				this.score = score;
+			public void setLeftUpX(String leftUpX) {
+				this.leftUpX = leftUpX;
+			}
+
+			public String getShotTime() {
+				return this.shotTime;
+			}
+
+			public void setShotTime(String shotTime) {
+				this.shotTime = shotTime;
 			}
 
 			public String getTaskId() {
@@ -151,54 +199,6 @@ public class GetMonitorResultResponse extends AcsResponse {
 
 			public void setTargetPicUrl(String targetPicUrl) {
 				this.targetPicUrl = targetPicUrl;
-			}
-
-			public String getRightBottomX() {
-				return this.rightBottomX;
-			}
-
-			public void setRightBottomX(String rightBottomX) {
-				this.rightBottomX = rightBottomX;
-			}
-
-			public String getRightBottomY() {
-				return this.rightBottomY;
-			}
-
-			public void setRightBottomY(String rightBottomY) {
-				this.rightBottomY = rightBottomY;
-			}
-
-			public String getGbId() {
-				return this.gbId;
-			}
-
-			public void setGbId(String gbId) {
-				this.gbId = gbId;
-			}
-
-			public String getMonitorPicUrl() {
-				return this.monitorPicUrl;
-			}
-
-			public void setMonitorPicUrl(String monitorPicUrl) {
-				this.monitorPicUrl = monitorPicUrl;
-			}
-
-			public String getShotTime() {
-				return this.shotTime;
-			}
-
-			public void setShotTime(String shotTime) {
-				this.shotTime = shotTime;
-			}
-
-			public String getPicUrl() {
-				return this.picUrl;
-			}
-
-			public void setPicUrl(String picUrl) {
-				this.picUrl = picUrl;
 			}
 
 			public ExtendInfo getExtendInfo() {

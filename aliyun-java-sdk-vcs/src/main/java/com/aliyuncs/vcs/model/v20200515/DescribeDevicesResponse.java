@@ -25,21 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDevicesResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String message;
+
+	private String requestId;
 
 	private String code;
 
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getMessage() {
 		return this.message;
@@ -47,6 +39,14 @@ public class DescribeDevicesResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getCode() {
@@ -67,30 +67,22 @@ public class DescribeDevicesResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Integer totalCount;
-
-		private Integer pageSize;
+		private Integer pageNum;
 
 		private Integer totalPage;
 
-		private Integer pageNum;
+		private Integer pageSize;
+
+		private Integer totalCount;
 
 		private List<Record> records;
 
-		public Integer getTotalCount() {
-			return this.totalCount;
+		public Integer getPageNum() {
+			return this.pageNum;
 		}
 
-		public void setTotalCount(Integer totalCount) {
-			this.totalCount = totalCount;
-		}
-
-		public Integer getPageSize() {
-			return this.pageSize;
-		}
-
-		public void setPageSize(Integer pageSize) {
-			this.pageSize = pageSize;
+		public void setPageNum(Integer pageNum) {
+			this.pageNum = pageNum;
 		}
 
 		public Integer getTotalPage() {
@@ -101,12 +93,20 @@ public class DescribeDevicesResponse extends AcsResponse {
 			this.totalPage = totalPage;
 		}
 
-		public Integer getPageNum() {
-			return this.pageNum;
+		public Integer getPageSize() {
+			return this.pageSize;
 		}
 
-		public void setPageNum(Integer pageNum) {
-			this.pageNum = pageNum;
+		public void setPageSize(Integer pageSize) {
+			this.pageSize = pageSize;
+		}
+
+		public Integer getTotalCount() {
+			return this.totalCount;
+		}
+
+		public void setTotalCount(Integer totalCount) {
+			this.totalCount = totalCount;
 		}
 
 		public List<Record> getRecords() {
@@ -119,37 +119,31 @@ public class DescribeDevicesResponse extends AcsResponse {
 
 		public static class Record {
 
-			private String inProtocol;
-
 			private String status;
+
+			private String deviceName;
 
 			private String deviceType;
 
-			private String corpId;
-
-			private String capturedPictureId;
+			private String deviceId;
 
 			private String deviceAddress;
 
-			private String deviceId;
-
 			private String createTime;
+
+			private String corpId;
+
+			private String longitude;
+
+			private String inProtocol;
 
 			private String latitude;
 
 			private String vendor;
 
-			private String longitude;
+			private String capturedPictureId;
 
-			private String deviceName;
-
-			public String getInProtocol() {
-				return this.inProtocol;
-			}
-
-			public void setInProtocol(String inProtocol) {
-				this.inProtocol = inProtocol;
-			}
+			private String password;
 
 			public String getStatus() {
 				return this.status;
@@ -157,6 +151,14 @@ public class DescribeDevicesResponse extends AcsResponse {
 
 			public void setStatus(String status) {
 				this.status = status;
+			}
+
+			public String getDeviceName() {
+				return this.deviceName;
+			}
+
+			public void setDeviceName(String deviceName) {
+				this.deviceName = deviceName;
 			}
 
 			public String getDeviceType() {
@@ -167,20 +169,12 @@ public class DescribeDevicesResponse extends AcsResponse {
 				this.deviceType = deviceType;
 			}
 
-			public String getCorpId() {
-				return this.corpId;
+			public String getDeviceId() {
+				return this.deviceId;
 			}
 
-			public void setCorpId(String corpId) {
-				this.corpId = corpId;
-			}
-
-			public String getCapturedPictureId() {
-				return this.capturedPictureId;
-			}
-
-			public void setCapturedPictureId(String capturedPictureId) {
-				this.capturedPictureId = capturedPictureId;
+			public void setDeviceId(String deviceId) {
+				this.deviceId = deviceId;
 			}
 
 			public String getDeviceAddress() {
@@ -191,20 +185,36 @@ public class DescribeDevicesResponse extends AcsResponse {
 				this.deviceAddress = deviceAddress;
 			}
 
-			public String getDeviceId() {
-				return this.deviceId;
-			}
-
-			public void setDeviceId(String deviceId) {
-				this.deviceId = deviceId;
-			}
-
 			public String getCreateTime() {
 				return this.createTime;
 			}
 
 			public void setCreateTime(String createTime) {
 				this.createTime = createTime;
+			}
+
+			public String getCorpId() {
+				return this.corpId;
+			}
+
+			public void setCorpId(String corpId) {
+				this.corpId = corpId;
+			}
+
+			public String getLongitude() {
+				return this.longitude;
+			}
+
+			public void setLongitude(String longitude) {
+				this.longitude = longitude;
+			}
+
+			public String getInProtocol() {
+				return this.inProtocol;
+			}
+
+			public void setInProtocol(String inProtocol) {
+				this.inProtocol = inProtocol;
 			}
 
 			public String getLatitude() {
@@ -223,20 +233,20 @@ public class DescribeDevicesResponse extends AcsResponse {
 				this.vendor = vendor;
 			}
 
-			public String getLongitude() {
-				return this.longitude;
+			public String getCapturedPictureId() {
+				return this.capturedPictureId;
 			}
 
-			public void setLongitude(String longitude) {
-				this.longitude = longitude;
+			public void setCapturedPictureId(String capturedPictureId) {
+				this.capturedPictureId = capturedPictureId;
 			}
 
-			public String getDeviceName() {
-				return this.deviceName;
+			public String getPassword() {
+				return this.password;
 			}
 
-			public void setDeviceName(String deviceName) {
-				this.deviceName = deviceName;
+			public void setPassword(String password) {
+				this.password = password;
 			}
 		}
 	}

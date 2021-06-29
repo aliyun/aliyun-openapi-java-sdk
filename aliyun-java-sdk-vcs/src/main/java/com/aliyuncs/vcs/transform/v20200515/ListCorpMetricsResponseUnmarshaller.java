@@ -28,8 +28,8 @@ public class ListCorpMetricsResponseUnmarshaller {
 		
 		listCorpMetricsResponse.setRequestId(_ctx.stringValue("ListCorpMetricsResponse.RequestId"));
 		listCorpMetricsResponse.setTotalCount(_ctx.integerValue("ListCorpMetricsResponse.TotalCount"));
-		listCorpMetricsResponse.setPageSize(_ctx.integerValue("ListCorpMetricsResponse.PageSize"));
 		listCorpMetricsResponse.setMessage(_ctx.stringValue("ListCorpMetricsResponse.Message"));
+		listCorpMetricsResponse.setPageSize(_ctx.integerValue("ListCorpMetricsResponse.PageSize"));
 		listCorpMetricsResponse.setPageNumber(_ctx.integerValue("ListCorpMetricsResponse.PageNumber"));
 		listCorpMetricsResponse.setCode(_ctx.stringValue("ListCorpMetricsResponse.Code"));
 		listCorpMetricsResponse.setSuccess(_ctx.stringValue("ListCorpMetricsResponse.Success"));
@@ -37,15 +37,15 @@ public class ListCorpMetricsResponseUnmarshaller {
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListCorpMetricsResponse.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
-			dataItem.setCorpId(_ctx.stringValue("ListCorpMetricsResponse.Data["+ i +"].CorpId"));
-			dataItem.setPersonId(_ctx.stringValue("ListCorpMetricsResponse.Data["+ i +"].PersonId"));
+			dataItem.setDateId(_ctx.stringValue("ListCorpMetricsResponse.Data["+ i +"].DateId"));
 			dataItem.setDeviceGroupId(_ctx.stringValue("ListCorpMetricsResponse.Data["+ i +"].DeviceGroupId"));
 			dataItem.setDeviceId(_ctx.stringValue("ListCorpMetricsResponse.Data["+ i +"].DeviceId"));
 			dataItem.setUserGroupId(_ctx.stringValue("ListCorpMetricsResponse.Data["+ i +"].UserGroupId"));
-			dataItem.setTagMetrics(_ctx.stringValue("ListCorpMetricsResponse.Data["+ i +"].TagMetrics"));
 			dataItem.setTagCode(_ctx.stringValue("ListCorpMetricsResponse.Data["+ i +"].TagCode"));
+			dataItem.setCorpId(_ctx.stringValue("ListCorpMetricsResponse.Data["+ i +"].CorpId"));
+			dataItem.setTagMetrics(_ctx.stringValue("ListCorpMetricsResponse.Data["+ i +"].TagMetrics"));
 			dataItem.setTagValue(_ctx.stringValue("ListCorpMetricsResponse.Data["+ i +"].TagValue"));
-			dataItem.setDateId(_ctx.stringValue("ListCorpMetricsResponse.Data["+ i +"].DateId"));
+			dataItem.setPersonId(_ctx.stringValue("ListCorpMetricsResponse.Data["+ i +"].PersonId"));
 
 			data.add(dataItem);
 		}

@@ -23,9 +23,9 @@ public class DeleteChannelResponseUnmarshaller {
 	public static DeleteChannelResponse unmarshall(DeleteChannelResponse deleteChannelResponse, UnmarshallerContext _ctx) {
 		
 		deleteChannelResponse.setRequestId(_ctx.stringValue("DeleteChannelResponse.RequestId"));
+		deleteChannelResponse.setCode(_ctx.stringValue("DeleteChannelResponse.Code"));
 		deleteChannelResponse.setMessage(_ctx.stringValue("DeleteChannelResponse.Message"));
 		deleteChannelResponse.setData(_ctx.stringValue("DeleteChannelResponse.Data"));
-		deleteChannelResponse.setCode(_ctx.stringValue("DeleteChannelResponse.Code"));
 	 
 	 	return deleteChannelResponse;
 	}

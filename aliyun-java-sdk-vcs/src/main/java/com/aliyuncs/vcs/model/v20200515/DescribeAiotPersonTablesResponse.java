@@ -25,21 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeAiotPersonTablesResponse extends AcsResponse {
 
-	private String message;
-
 	private String requestId;
+
+	private String message;
 
 	private String code;
 
 	private List<PersonTableType> personTableList;
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -47,6 +39,14 @@ public class DescribeAiotPersonTablesResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public String getCode() {
@@ -69,19 +69,19 @@ public class DescribeAiotPersonTablesResponse extends AcsResponse {
 
 		private String personTableId;
 
+		private String name;
+
 		private Long type;
-
-		private Long faceNum;
-
-		private String deviceId;
-
-		private String lastChange;
 
 		private Long totalPersonNum;
 
 		private Long personNum;
 
-		private String name;
+		private Long faceNum;
+
+		private String lastChange;
+
+		private String deviceId;
 
 		private List<Long> verificationModelList;
 
@@ -93,36 +93,20 @@ public class DescribeAiotPersonTablesResponse extends AcsResponse {
 			this.personTableId = personTableId;
 		}
 
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
 		public Long getType() {
 			return this.type;
 		}
 
 		public void setType(Long type) {
 			this.type = type;
-		}
-
-		public Long getFaceNum() {
-			return this.faceNum;
-		}
-
-		public void setFaceNum(Long faceNum) {
-			this.faceNum = faceNum;
-		}
-
-		public String getDeviceId() {
-			return this.deviceId;
-		}
-
-		public void setDeviceId(String deviceId) {
-			this.deviceId = deviceId;
-		}
-
-		public String getLastChange() {
-			return this.lastChange;
-		}
-
-		public void setLastChange(String lastChange) {
-			this.lastChange = lastChange;
 		}
 
 		public Long getTotalPersonNum() {
@@ -141,12 +125,28 @@ public class DescribeAiotPersonTablesResponse extends AcsResponse {
 			this.personNum = personNum;
 		}
 
-		public String getName() {
-			return this.name;
+		public Long getFaceNum() {
+			return this.faceNum;
 		}
 
-		public void setName(String name) {
-			this.name = name;
+		public void setFaceNum(Long faceNum) {
+			this.faceNum = faceNum;
+		}
+
+		public String getLastChange() {
+			return this.lastChange;
+		}
+
+		public void setLastChange(String lastChange) {
+			this.lastChange = lastChange;
+		}
+
+		public String getDeviceId() {
+			return this.deviceId;
+		}
+
+		public void setDeviceId(String deviceId) {
+			this.deviceId = deviceId;
 		}
 
 		public List<Long> getVerificationModelList() {

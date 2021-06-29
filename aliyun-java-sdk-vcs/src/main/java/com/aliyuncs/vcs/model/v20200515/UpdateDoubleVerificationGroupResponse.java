@@ -25,21 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class UpdateDoubleVerificationGroupResponse extends AcsResponse {
 
-	private String message;
-
 	private String requestId;
 
 	private String code;
 
+	private String message;
+
 	private DoubleVerificationGroup doubleVerificationGroup;
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -57,6 +49,14 @@ public class UpdateDoubleVerificationGroupResponse extends AcsResponse {
 		this.code = code;
 	}
 
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
 	public DoubleVerificationGroup getDoubleVerificationGroup() {
 		return this.doubleVerificationGroup;
 	}
@@ -67,7 +67,9 @@ public class UpdateDoubleVerificationGroupResponse extends AcsResponse {
 
 	public static class DoubleVerificationGroup {
 
-		private String deviceId;
+		private String groupId;
+
+		private Long interval;
 
 		private String lastChange;
 
@@ -75,18 +77,24 @@ public class UpdateDoubleVerificationGroupResponse extends AcsResponse {
 
 		private String enabled;
 
-		private Long interval;
-
-		private String groupId;
+		private String deviceId;
 
 		private List<PersonIdListItem> personIdList;
 
-		public String getDeviceId() {
-			return this.deviceId;
+		public String getGroupId() {
+			return this.groupId;
 		}
 
-		public void setDeviceId(String deviceId) {
-			this.deviceId = deviceId;
+		public void setGroupId(String groupId) {
+			this.groupId = groupId;
+		}
+
+		public Long getInterval() {
+			return this.interval;
+		}
+
+		public void setInterval(Long interval) {
+			this.interval = interval;
 		}
 
 		public String getLastChange() {
@@ -113,20 +121,12 @@ public class UpdateDoubleVerificationGroupResponse extends AcsResponse {
 			this.enabled = enabled;
 		}
 
-		public Long getInterval() {
-			return this.interval;
+		public String getDeviceId() {
+			return this.deviceId;
 		}
 
-		public void setInterval(Long interval) {
-			this.interval = interval;
-		}
-
-		public String getGroupId() {
-			return this.groupId;
-		}
-
-		public void setGroupId(String groupId) {
-			this.groupId = groupId;
+		public void setDeviceId(String deviceId) {
+			this.deviceId = deviceId;
 		}
 
 		public List<PersonIdListItem> getPersonIdList() {

@@ -25,21 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class UpdateAiotPersonTableItemResponse extends AcsResponse {
 
-	private String message;
-
 	private String requestId;
+
+	private String message;
 
 	private String code;
 
 	private PersonTableItem personTableItem;
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -47,6 +39,14 @@ public class UpdateAiotPersonTableItemResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public String getCode() {
@@ -69,19 +69,19 @@ public class UpdateAiotPersonTableItemResponse extends AcsResponse {
 
 		private String personTableId;
 
-		private Long identificationNum;
-
-		private String personName;
-
 		private String personId;
-
-		private String remarks;
-
-		private Long imageNum;
 
 		private String lastChange;
 
 		private String personCode;
+
+		private String personName;
+
+		private String remarks;
+
+		private Long identificationNum;
+
+		private Long imageNum;
 
 		private List<IdentificationListItem> identificationList;
 
@@ -95,44 +95,12 @@ public class UpdateAiotPersonTableItemResponse extends AcsResponse {
 			this.personTableId = personTableId;
 		}
 
-		public Long getIdentificationNum() {
-			return this.identificationNum;
-		}
-
-		public void setIdentificationNum(Long identificationNum) {
-			this.identificationNum = identificationNum;
-		}
-
-		public String getPersonName() {
-			return this.personName;
-		}
-
-		public void setPersonName(String personName) {
-			this.personName = personName;
-		}
-
 		public String getPersonId() {
 			return this.personId;
 		}
 
 		public void setPersonId(String personId) {
 			this.personId = personId;
-		}
-
-		public String getRemarks() {
-			return this.remarks;
-		}
-
-		public void setRemarks(String remarks) {
-			this.remarks = remarks;
-		}
-
-		public Long getImageNum() {
-			return this.imageNum;
-		}
-
-		public void setImageNum(Long imageNum) {
-			this.imageNum = imageNum;
 		}
 
 		public String getLastChange() {
@@ -149,6 +117,38 @@ public class UpdateAiotPersonTableItemResponse extends AcsResponse {
 
 		public void setPersonCode(String personCode) {
 			this.personCode = personCode;
+		}
+
+		public String getPersonName() {
+			return this.personName;
+		}
+
+		public void setPersonName(String personName) {
+			this.personName = personName;
+		}
+
+		public String getRemarks() {
+			return this.remarks;
+		}
+
+		public void setRemarks(String remarks) {
+			this.remarks = remarks;
+		}
+
+		public Long getIdentificationNum() {
+			return this.identificationNum;
+		}
+
+		public void setIdentificationNum(Long identificationNum) {
+			this.identificationNum = identificationNum;
+		}
+
+		public Long getImageNum() {
+			return this.imageNum;
+		}
+
+		public void setImageNum(Long imageNum) {
+			this.imageNum = imageNum;
 		}
 
 		public List<IdentificationListItem> getIdentificationList() {
@@ -192,36 +192,52 @@ public class UpdateAiotPersonTableItemResponse extends AcsResponse {
 
 		public static class ImageListItem {
 
-			private String type;
+			private String imageId;
+
+			private String eventSort;
+
+			private String deviceId;
 
 			private String storagePath;
 
 			private Long size;
 
-			private String deviceId;
-
-			private String imageId;
-
-			private String eventSort;
-
-			private String data;
-
-			private Long height;
-
-			private String shotTime;
+			private String type;
 
 			private String fileFormat;
 
+			private String shotTime;
+
 			private Long width;
+
+			private Long height;
+
+			private String data;
 
 			private FeatureInfo featureInfo;
 
-			public String getType() {
-				return this.type;
+			public String getImageId() {
+				return this.imageId;
 			}
 
-			public void setType(String type) {
-				this.type = type;
+			public void setImageId(String imageId) {
+				this.imageId = imageId;
+			}
+
+			public String getEventSort() {
+				return this.eventSort;
+			}
+
+			public void setEventSort(String eventSort) {
+				this.eventSort = eventSort;
+			}
+
+			public String getDeviceId() {
+				return this.deviceId;
+			}
+
+			public void setDeviceId(String deviceId) {
+				this.deviceId = deviceId;
 			}
 
 			public String getStoragePath() {
@@ -240,52 +256,12 @@ public class UpdateAiotPersonTableItemResponse extends AcsResponse {
 				this.size = size;
 			}
 
-			public String getDeviceId() {
-				return this.deviceId;
+			public String getType() {
+				return this.type;
 			}
 
-			public void setDeviceId(String deviceId) {
-				this.deviceId = deviceId;
-			}
-
-			public String getImageId() {
-				return this.imageId;
-			}
-
-			public void setImageId(String imageId) {
-				this.imageId = imageId;
-			}
-
-			public String getEventSort() {
-				return this.eventSort;
-			}
-
-			public void setEventSort(String eventSort) {
-				this.eventSort = eventSort;
-			}
-
-			public String getData() {
-				return this.data;
-			}
-
-			public void setData(String data) {
-				this.data = data;
-			}
-
-			public Long getHeight() {
-				return this.height;
-			}
-
-			public void setHeight(Long height) {
-				this.height = height;
-			}
-
-			public String getShotTime() {
-				return this.shotTime;
-			}
-
-			public void setShotTime(String shotTime) {
-				this.shotTime = shotTime;
+			public void setType(String type) {
+				this.type = type;
 			}
 
 			public String getFileFormat() {
@@ -296,12 +272,36 @@ public class UpdateAiotPersonTableItemResponse extends AcsResponse {
 				this.fileFormat = fileFormat;
 			}
 
+			public String getShotTime() {
+				return this.shotTime;
+			}
+
+			public void setShotTime(String shotTime) {
+				this.shotTime = shotTime;
+			}
+
 			public Long getWidth() {
 				return this.width;
 			}
 
 			public void setWidth(Long width) {
 				this.width = width;
+			}
+
+			public Long getHeight() {
+				return this.height;
+			}
+
+			public void setHeight(Long height) {
+				this.height = height;
+			}
+
+			public String getData() {
+				return this.data;
+			}
+
+			public void setData(String data) {
+				this.data = data;
 			}
 
 			public FeatureInfo getFeatureInfo() {
@@ -314,19 +314,35 @@ public class UpdateAiotPersonTableItemResponse extends AcsResponse {
 
 			public static class FeatureInfo {
 
+				private String vendor;
+
+				private String algorithmVersion;
+
 				private String algorithmType;
+
+				private String tabIed;
 
 				private String objectId;
 
 				private String imageId;
 
-				private String tabIed;
-
-				private String algorithmVersion;
-
 				private String featureData;
 
-				private String vendor;
+				public String getVendor() {
+					return this.vendor;
+				}
+
+				public void setVendor(String vendor) {
+					this.vendor = vendor;
+				}
+
+				public String getAlgorithmVersion() {
+					return this.algorithmVersion;
+				}
+
+				public void setAlgorithmVersion(String algorithmVersion) {
+					this.algorithmVersion = algorithmVersion;
+				}
 
 				public String getAlgorithmType() {
 					return this.algorithmType;
@@ -334,6 +350,14 @@ public class UpdateAiotPersonTableItemResponse extends AcsResponse {
 
 				public void setAlgorithmType(String algorithmType) {
 					this.algorithmType = algorithmType;
+				}
+
+				public String getTabIed() {
+					return this.tabIed;
+				}
+
+				public void setTabIed(String tabIed) {
+					this.tabIed = tabIed;
 				}
 
 				public String getObjectId() {
@@ -352,36 +376,12 @@ public class UpdateAiotPersonTableItemResponse extends AcsResponse {
 					this.imageId = imageId;
 				}
 
-				public String getTabIed() {
-					return this.tabIed;
-				}
-
-				public void setTabIed(String tabIed) {
-					this.tabIed = tabIed;
-				}
-
-				public String getAlgorithmVersion() {
-					return this.algorithmVersion;
-				}
-
-				public void setAlgorithmVersion(String algorithmVersion) {
-					this.algorithmVersion = algorithmVersion;
-				}
-
 				public String getFeatureData() {
 					return this.featureData;
 				}
 
 				public void setFeatureData(String featureData) {
 					this.featureData = featureData;
-				}
-
-				public String getVendor() {
-					return this.vendor;
-				}
-
-				public void setVendor(String vendor) {
-					this.vendor = vendor;
 				}
 			}
 		}

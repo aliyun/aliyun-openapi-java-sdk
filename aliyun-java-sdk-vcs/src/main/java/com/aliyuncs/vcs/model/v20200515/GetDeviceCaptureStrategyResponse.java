@@ -24,20 +24,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetDeviceCaptureStrategyResponse extends AcsResponse {
 
-	private String requestId;
+	private String code;
 
 	private String message;
 
-	private String code;
+	private String requestId;
 
 	private Data data;
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public String getMessage() {
@@ -48,12 +48,12 @@ public class GetDeviceCaptureStrategyResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getCode() {
-		return this.code;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Data getData() {
@@ -68,21 +68,21 @@ public class GetDeviceCaptureStrategyResponse extends AcsResponse {
 
 		private String deviceType;
 
-		private String sundayCaptureStrategy;
+		private String deviceCode;
 
 		private String mondayCaptureStrategy;
-
-		private String fridayCaptureStrategy;
 
 		private String tuesdayCaptureStrategy;
 
 		private String wednesdayCaptureStrategy;
 
-		private String deviceCode;
-
 		private String thursdayCaptureStrategy;
 
+		private String fridayCaptureStrategy;
+
 		private String saturdayCaptureStrategy;
+
+		private String sundayCaptureStrategy;
 
 		public String getDeviceType() {
 			return this.deviceType;
@@ -92,12 +92,12 @@ public class GetDeviceCaptureStrategyResponse extends AcsResponse {
 			this.deviceType = deviceType;
 		}
 
-		public String getSundayCaptureStrategy() {
-			return this.sundayCaptureStrategy;
+		public String getDeviceCode() {
+			return this.deviceCode;
 		}
 
-		public void setSundayCaptureStrategy(String sundayCaptureStrategy) {
-			this.sundayCaptureStrategy = sundayCaptureStrategy;
+		public void setDeviceCode(String deviceCode) {
+			this.deviceCode = deviceCode;
 		}
 
 		public String getMondayCaptureStrategy() {
@@ -106,14 +106,6 @@ public class GetDeviceCaptureStrategyResponse extends AcsResponse {
 
 		public void setMondayCaptureStrategy(String mondayCaptureStrategy) {
 			this.mondayCaptureStrategy = mondayCaptureStrategy;
-		}
-
-		public String getFridayCaptureStrategy() {
-			return this.fridayCaptureStrategy;
-		}
-
-		public void setFridayCaptureStrategy(String fridayCaptureStrategy) {
-			this.fridayCaptureStrategy = fridayCaptureStrategy;
 		}
 
 		public String getTuesdayCaptureStrategy() {
@@ -132,14 +124,6 @@ public class GetDeviceCaptureStrategyResponse extends AcsResponse {
 			this.wednesdayCaptureStrategy = wednesdayCaptureStrategy;
 		}
 
-		public String getDeviceCode() {
-			return this.deviceCode;
-		}
-
-		public void setDeviceCode(String deviceCode) {
-			this.deviceCode = deviceCode;
-		}
-
 		public String getThursdayCaptureStrategy() {
 			return this.thursdayCaptureStrategy;
 		}
@@ -148,12 +132,28 @@ public class GetDeviceCaptureStrategyResponse extends AcsResponse {
 			this.thursdayCaptureStrategy = thursdayCaptureStrategy;
 		}
 
+		public String getFridayCaptureStrategy() {
+			return this.fridayCaptureStrategy;
+		}
+
+		public void setFridayCaptureStrategy(String fridayCaptureStrategy) {
+			this.fridayCaptureStrategy = fridayCaptureStrategy;
+		}
+
 		public String getSaturdayCaptureStrategy() {
 			return this.saturdayCaptureStrategy;
 		}
 
 		public void setSaturdayCaptureStrategy(String saturdayCaptureStrategy) {
 			this.saturdayCaptureStrategy = saturdayCaptureStrategy;
+		}
+
+		public String getSundayCaptureStrategy() {
+			return this.sundayCaptureStrategy;
+		}
+
+		public void setSundayCaptureStrategy(String sundayCaptureStrategy) {
+			this.sundayCaptureStrategy = sundayCaptureStrategy;
 		}
 	}
 

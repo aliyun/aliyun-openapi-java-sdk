@@ -23,8 +23,8 @@ public class SetAiotStorageInfoResponseUnmarshaller {
 	public static SetAiotStorageInfoResponse unmarshall(SetAiotStorageInfoResponse setAiotStorageInfoResponse, UnmarshallerContext _ctx) {
 		
 		setAiotStorageInfoResponse.setRequestId(_ctx.stringValue("SetAiotStorageInfoResponse.RequestId"));
-		setAiotStorageInfoResponse.setMessage(_ctx.stringValue("SetAiotStorageInfoResponse.Message"));
 		setAiotStorageInfoResponse.setCode(_ctx.stringValue("SetAiotStorageInfoResponse.Code"));
+		setAiotStorageInfoResponse.setMessage(_ctx.stringValue("SetAiotStorageInfoResponse.Message"));
 	 
 	 	return setAiotStorageInfoResponse;
 	}

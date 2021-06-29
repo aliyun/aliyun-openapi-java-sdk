@@ -25,21 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListAccessNumberResponse extends AcsResponse {
 
-	private String message;
-
 	private String requestId;
 
 	private String code;
 
+	private String message;
+
 	private List<DataItem> data;
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -57,6 +49,14 @@ public class ListAccessNumberResponse extends AcsResponse {
 		this.code = code;
 	}
 
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
 	public List<DataItem> getData() {
 		return this.data;
 	}
@@ -69,9 +69,9 @@ public class ListAccessNumberResponse extends AcsResponse {
 
 		private String item;
 
-		private String percent;
-
 		private String count;
+
+		private String percent;
 
 		public String getItem() {
 			return this.item;
@@ -81,20 +81,20 @@ public class ListAccessNumberResponse extends AcsResponse {
 			this.item = item;
 		}
 
-		public String getPercent() {
-			return this.percent;
-		}
-
-		public void setPercent(String percent) {
-			this.percent = percent;
-		}
-
 		public String getCount() {
 			return this.count;
 		}
 
 		public void setCount(String count) {
 			this.count = count;
+		}
+
+		public String getPercent() {
+			return this.percent;
+		}
+
+		public void setPercent(String percent) {
+			this.percent = percent;
 		}
 	}
 

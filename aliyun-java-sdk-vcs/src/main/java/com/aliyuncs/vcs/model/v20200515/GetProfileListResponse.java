@@ -25,21 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetProfileListResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String message;
+
+	private String requestId;
 
 	private String code;
 
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getMessage() {
 		return this.message;
@@ -47,6 +39,14 @@ public class GetProfileListResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getCode() {
@@ -67,22 +67,22 @@ public class GetProfileListResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Long pageSize;
+		private Boolean success;
 
 		private Long pageNumber;
 
-		private Long total;
+		private Long pageSize;
 
-		private Boolean success;
+		private Long total;
 
 		private List<RecordsItem> records;
 
-		public Long getPageSize() {
-			return this.pageSize;
+		public Boolean getSuccess() {
+			return this.success;
 		}
 
-		public void setPageSize(Long pageSize) {
-			this.pageSize = pageSize;
+		public void setSuccess(Boolean success) {
+			this.success = success;
 		}
 
 		public Long getPageNumber() {
@@ -93,20 +93,20 @@ public class GetProfileListResponse extends AcsResponse {
 			this.pageNumber = pageNumber;
 		}
 
+		public Long getPageSize() {
+			return this.pageSize;
+		}
+
+		public void setPageSize(Long pageSize) {
+			this.pageSize = pageSize;
+		}
+
 		public Long getTotal() {
 			return this.total;
 		}
 
 		public void setTotal(Long total) {
 			this.total = total;
-		}
-
-		public Boolean getSuccess() {
-			return this.success;
-		}
-
-		public void setSuccess(Boolean success) {
-			this.success = success;
 		}
 
 		public List<RecordsItem> getRecords() {
@@ -119,34 +119,34 @@ public class GetProfileListResponse extends AcsResponse {
 
 		public static class RecordsItem {
 
-			private String sceneType;
+			private Integer catalogId;
 
 			private Integer profileId;
 
-			private String personId;
-
 			private String idNumber;
+
+			private String sceneType;
 
 			private String isvSubId;
 
-			private String searchMatchingRate;
-
 			private String gender;
-
-			private String bizId;
-
-			private Integer catalogId;
 
 			private String faceUrl;
 
+			private String bizId;
+
+			private String searchMatchingRate;
+
 			private String name;
 
-			public String getSceneType() {
-				return this.sceneType;
+			private String personId;
+
+			public Integer getCatalogId() {
+				return this.catalogId;
 			}
 
-			public void setSceneType(String sceneType) {
-				this.sceneType = sceneType;
+			public void setCatalogId(Integer catalogId) {
+				this.catalogId = catalogId;
 			}
 
 			public Integer getProfileId() {
@@ -157,20 +157,20 @@ public class GetProfileListResponse extends AcsResponse {
 				this.profileId = profileId;
 			}
 
-			public String getPersonId() {
-				return this.personId;
-			}
-
-			public void setPersonId(String personId) {
-				this.personId = personId;
-			}
-
 			public String getIdNumber() {
 				return this.idNumber;
 			}
 
 			public void setIdNumber(String idNumber) {
 				this.idNumber = idNumber;
+			}
+
+			public String getSceneType() {
+				return this.sceneType;
+			}
+
+			public void setSceneType(String sceneType) {
+				this.sceneType = sceneType;
 			}
 
 			public String getIsvSubId() {
@@ -181,36 +181,12 @@ public class GetProfileListResponse extends AcsResponse {
 				this.isvSubId = isvSubId;
 			}
 
-			public String getSearchMatchingRate() {
-				return this.searchMatchingRate;
-			}
-
-			public void setSearchMatchingRate(String searchMatchingRate) {
-				this.searchMatchingRate = searchMatchingRate;
-			}
-
 			public String getGender() {
 				return this.gender;
 			}
 
 			public void setGender(String gender) {
 				this.gender = gender;
-			}
-
-			public String getBizId() {
-				return this.bizId;
-			}
-
-			public void setBizId(String bizId) {
-				this.bizId = bizId;
-			}
-
-			public Integer getCatalogId() {
-				return this.catalogId;
-			}
-
-			public void setCatalogId(Integer catalogId) {
-				this.catalogId = catalogId;
 			}
 
 			public String getFaceUrl() {
@@ -221,12 +197,36 @@ public class GetProfileListResponse extends AcsResponse {
 				this.faceUrl = faceUrl;
 			}
 
+			public String getBizId() {
+				return this.bizId;
+			}
+
+			public void setBizId(String bizId) {
+				this.bizId = bizId;
+			}
+
+			public String getSearchMatchingRate() {
+				return this.searchMatchingRate;
+			}
+
+			public void setSearchMatchingRate(String searchMatchingRate) {
+				this.searchMatchingRate = searchMatchingRate;
+			}
+
 			public String getName() {
 				return this.name;
 			}
 
 			public void setName(String name) {
 				this.name = name;
+			}
+
+			public String getPersonId() {
+				return this.personId;
+			}
+
+			public void setPersonId(String personId) {
+				this.personId = personId;
 			}
 		}
 	}

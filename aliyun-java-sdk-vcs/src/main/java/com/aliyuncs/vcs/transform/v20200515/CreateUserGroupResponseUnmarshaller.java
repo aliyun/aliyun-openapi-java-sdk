@@ -28,9 +28,9 @@ public class CreateUserGroupResponseUnmarshaller {
 		createUserGroupResponse.setCode(_ctx.stringValue("CreateUserGroupResponse.Code"));
 
 		Data data = new Data();
-		data.setUserGroupName(_ctx.stringValue("CreateUserGroupResponse.Data.UserGroupName"));
-		data.setUserGroupId(_ctx.longValue("CreateUserGroupResponse.Data.UserGroupId"));
 		data.setIsvSubId(_ctx.stringValue("CreateUserGroupResponse.Data.IsvSubId"));
+		data.setUserGroupId(_ctx.longValue("CreateUserGroupResponse.Data.UserGroupId"));
+		data.setUserGroupName(_ctx.stringValue("CreateUserGroupResponse.Data.UserGroupName"));
 		createUserGroupResponse.setData(data);
 	 
 	 	return createUserGroupResponse;

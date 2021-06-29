@@ -33,23 +33,23 @@ public class ListPersonsResponseUnmarshaller {
 		listPersonsResponse.setCode(_ctx.stringValue("ListPersonsResponse.Code"));
 
 		Data data = new Data();
-		data.setTotalCount(_ctx.stringValue("ListPersonsResponse.Data.TotalCount"));
-		data.setPageSize(_ctx.stringValue("ListPersonsResponse.Data.PageSize"));
-		data.setTotalPage(_ctx.stringValue("ListPersonsResponse.Data.TotalPage"));
 		data.setPageNo(_ctx.stringValue("ListPersonsResponse.Data.PageNo"));
+		data.setTotalPage(_ctx.stringValue("ListPersonsResponse.Data.TotalPage"));
+		data.setPageSize(_ctx.stringValue("ListPersonsResponse.Data.PageSize"));
+		data.setTotalCount(_ctx.stringValue("ListPersonsResponse.Data.TotalCount"));
 
 		List<RecordsItem> records = new ArrayList<RecordsItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListPersonsResponse.Data.Records.Length"); i++) {
 			RecordsItem recordsItem = new RecordsItem();
+			recordsItem.setPicUrl(_ctx.stringValue("ListPersonsResponse.Data.Records["+ i +"].PicUrl"));
 			recordsItem.setFirstAppearTime(_ctx.stringValue("ListPersonsResponse.Data.Records["+ i +"].FirstAppearTime"));
 			recordsItem.setPersonId(_ctx.stringValue("ListPersonsResponse.Data.Records["+ i +"].PersonId"));
-			recordsItem.setPicUrl(_ctx.stringValue("ListPersonsResponse.Data.Records["+ i +"].PicUrl"));
 
 			List<TagListItem> tagList = new ArrayList<TagListItem>();
 			for (int j = 0; j < _ctx.lengthValue("ListPersonsResponse.Data.Records["+ i +"].TagList.Length"); j++) {
 				TagListItem tagListItem = new TagListItem();
-				tagListItem.setTagName(_ctx.stringValue("ListPersonsResponse.Data.Records["+ i +"].TagList["+ j +"].TagName"));
 				tagListItem.setTagValueId(_ctx.stringValue("ListPersonsResponse.Data.Records["+ i +"].TagList["+ j +"].TagValueId"));
+				tagListItem.setTagName(_ctx.stringValue("ListPersonsResponse.Data.Records["+ i +"].TagList["+ j +"].TagName"));
 				tagListItem.setTagCode(_ctx.stringValue("ListPersonsResponse.Data.Records["+ i +"].TagList["+ j +"].TagCode"));
 				tagListItem.setTagValue(_ctx.stringValue("ListPersonsResponse.Data.Records["+ i +"].TagList["+ j +"].TagValue"));
 

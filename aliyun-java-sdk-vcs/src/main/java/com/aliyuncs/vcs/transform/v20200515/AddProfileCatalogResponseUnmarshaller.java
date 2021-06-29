@@ -28,9 +28,9 @@ public class AddProfileCatalogResponseUnmarshaller {
 		addProfileCatalogResponse.setCode(_ctx.stringValue("AddProfileCatalogResponse.Code"));
 
 		Data data = new Data();
-		data.setIsvSubId(_ctx.stringValue("AddProfileCatalogResponse.Data.IsvSubId"));
-		data.setCatalogName(_ctx.stringValue("AddProfileCatalogResponse.Data.CatalogName"));
 		data.setCatalogId(_ctx.longValue("AddProfileCatalogResponse.Data.CatalogId"));
+		data.setCatalogName(_ctx.stringValue("AddProfileCatalogResponse.Data.CatalogName"));
+		data.setIsvSubId(_ctx.stringValue("AddProfileCatalogResponse.Data.IsvSubId"));
 		addProfileCatalogResponse.setData(data);
 	 
 	 	return addProfileCatalogResponse;

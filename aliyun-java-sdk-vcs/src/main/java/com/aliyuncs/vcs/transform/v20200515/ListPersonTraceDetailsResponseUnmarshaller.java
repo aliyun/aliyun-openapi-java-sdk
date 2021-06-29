@@ -28,25 +28,25 @@ public class ListPersonTraceDetailsResponseUnmarshaller {
 		
 		listPersonTraceDetailsResponse.setRequestId(_ctx.stringValue("ListPersonTraceDetailsResponse.RequestId"));
 		listPersonTraceDetailsResponse.setTotalCount(_ctx.longValue("ListPersonTraceDetailsResponse.TotalCount"));
-		listPersonTraceDetailsResponse.setPageSize(_ctx.longValue("ListPersonTraceDetailsResponse.PageSize"));
 		listPersonTraceDetailsResponse.setMessage(_ctx.stringValue("ListPersonTraceDetailsResponse.Message"));
+		listPersonTraceDetailsResponse.setPageSize(_ctx.longValue("ListPersonTraceDetailsResponse.PageSize"));
 		listPersonTraceDetailsResponse.setPageNumber(_ctx.longValue("ListPersonTraceDetailsResponse.PageNumber"));
 		listPersonTraceDetailsResponse.setCode(_ctx.stringValue("ListPersonTraceDetailsResponse.Code"));
 
 		List<Datas> data = new ArrayList<Datas>();
 		for (int i = 0; i < _ctx.lengthValue("ListPersonTraceDetailsResponse.Data.Length"); i++) {
 			Datas datas = new Datas();
-			datas.setPicUrlPath(_ctx.stringValue("ListPersonTraceDetailsResponse.Data["+ i +"].PicUrlPath"));
-			datas.setCorpId(_ctx.stringValue("ListPersonTraceDetailsResponse.Data["+ i +"].CorpId"));
-			datas.setSubId(_ctx.stringValue("ListPersonTraceDetailsResponse.Data["+ i +"].SubId"));
-			datas.setPersonId(_ctx.stringValue("ListPersonTraceDetailsResponse.Data["+ i +"].PersonId"));
-			datas.setRightBottomX(_ctx.stringValue("ListPersonTraceDetailsResponse.Data["+ i +"].RightBottomX"));
-			datas.setRightBottomY(_ctx.stringValue("ListPersonTraceDetailsResponse.Data["+ i +"].RightBottomY"));
 			datas.setTargetPicUrlPath(_ctx.stringValue("ListPersonTraceDetailsResponse.Data["+ i +"].TargetPicUrlPath"));
-			datas.setShotTime(_ctx.stringValue("ListPersonTraceDetailsResponse.Data["+ i +"].ShotTime"));
+			datas.setSubId(_ctx.stringValue("ListPersonTraceDetailsResponse.Data["+ i +"].SubId"));
+			datas.setRightBottomY(_ctx.stringValue("ListPersonTraceDetailsResponse.Data["+ i +"].RightBottomY"));
 			datas.setLeftTopY(_ctx.stringValue("ListPersonTraceDetailsResponse.Data["+ i +"].LeftTopY"));
-			datas.setLeftTopX(_ctx.stringValue("ListPersonTraceDetailsResponse.Data["+ i +"].LeftTopX"));
+			datas.setPicUrlPath(_ctx.stringValue("ListPersonTraceDetailsResponse.Data["+ i +"].PicUrlPath"));
 			datas.setDataSourceId(_ctx.stringValue("ListPersonTraceDetailsResponse.Data["+ i +"].DataSourceId"));
+			datas.setCorpId(_ctx.stringValue("ListPersonTraceDetailsResponse.Data["+ i +"].CorpId"));
+			datas.setShotTime(_ctx.stringValue("ListPersonTraceDetailsResponse.Data["+ i +"].ShotTime"));
+			datas.setLeftTopX(_ctx.stringValue("ListPersonTraceDetailsResponse.Data["+ i +"].LeftTopX"));
+			datas.setRightBottomX(_ctx.stringValue("ListPersonTraceDetailsResponse.Data["+ i +"].RightBottomX"));
+			datas.setPersonId(_ctx.stringValue("ListPersonTraceDetailsResponse.Data["+ i +"].PersonId"));
 
 			data.add(datas);
 		}

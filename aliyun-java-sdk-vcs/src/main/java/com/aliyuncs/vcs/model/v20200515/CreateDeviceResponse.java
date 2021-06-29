@@ -25,21 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateDeviceResponse extends AcsResponse {
 
-	private String message;
-
 	private String requestId;
 
 	private String code;
 
+	private String message;
+
 	private Data data;
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -57,6 +49,14 @@ public class CreateDeviceResponse extends AcsResponse {
 		this.code = code;
 	}
 
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -67,15 +67,15 @@ public class CreateDeviceResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String sipIp;
-
 		private String sipReaml;
+
+		private String sipIp;
 
 		private String sipDeviceGbId;
 
-		private String sipPort;
-
 		private String deviceCode;
+
+		private String sipPort;
 
 		private String sipGbId;
 
@@ -83,20 +83,20 @@ public class CreateDeviceResponse extends AcsResponse {
 
 		private List<SubDeviceSipInfoItem> subDeviceSipInfo;
 
-		public String getSipIp() {
-			return this.sipIp;
-		}
-
-		public void setSipIp(String sipIp) {
-			this.sipIp = sipIp;
-		}
-
 		public String getSipReaml() {
 			return this.sipReaml;
 		}
 
 		public void setSipReaml(String sipReaml) {
 			this.sipReaml = sipReaml;
+		}
+
+		public String getSipIp() {
+			return this.sipIp;
+		}
+
+		public void setSipIp(String sipIp) {
+			this.sipIp = sipIp;
 		}
 
 		public String getSipDeviceGbId() {
@@ -107,20 +107,20 @@ public class CreateDeviceResponse extends AcsResponse {
 			this.sipDeviceGbId = sipDeviceGbId;
 		}
 
-		public String getSipPort() {
-			return this.sipPort;
-		}
-
-		public void setSipPort(String sipPort) {
-			this.sipPort = sipPort;
-		}
-
 		public String getDeviceCode() {
 			return this.deviceCode;
 		}
 
 		public void setDeviceCode(String deviceCode) {
 			this.deviceCode = deviceCode;
+		}
+
+		public String getSipPort() {
+			return this.sipPort;
+		}
+
+		public void setSipPort(String sipPort) {
+			this.sipPort = sipPort;
 		}
 
 		public String getSipGbId() {
@@ -151,9 +151,9 @@ public class CreateDeviceResponse extends AcsResponse {
 
 			private String sundayCaptureStrategy;
 
-			private String channelGbId;
-
 			private String mondayCaptureStrategy;
+
+			private String channelGbId;
 
 			private String fridayCaptureStrategy;
 
@@ -173,20 +173,20 @@ public class CreateDeviceResponse extends AcsResponse {
 				this.sundayCaptureStrategy = sundayCaptureStrategy;
 			}
 
-			public String getChannelGbId() {
-				return this.channelGbId;
-			}
-
-			public void setChannelGbId(String channelGbId) {
-				this.channelGbId = channelGbId;
-			}
-
 			public String getMondayCaptureStrategy() {
 				return this.mondayCaptureStrategy;
 			}
 
 			public void setMondayCaptureStrategy(String mondayCaptureStrategy) {
 				this.mondayCaptureStrategy = mondayCaptureStrategy;
+			}
+
+			public String getChannelGbId() {
+				return this.channelGbId;
+			}
+
+			public void setChannelGbId(String channelGbId) {
+				this.channelGbId = channelGbId;
 			}
 
 			public String getFridayCaptureStrategy() {

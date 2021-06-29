@@ -28,8 +28,8 @@ public class ListCorpGroupMetricsResponseUnmarshaller {
 		
 		listCorpGroupMetricsResponse.setRequestId(_ctx.stringValue("ListCorpGroupMetricsResponse.RequestId"));
 		listCorpGroupMetricsResponse.setTotalCount(_ctx.integerValue("ListCorpGroupMetricsResponse.TotalCount"));
-		listCorpGroupMetricsResponse.setPageSize(_ctx.integerValue("ListCorpGroupMetricsResponse.PageSize"));
 		listCorpGroupMetricsResponse.setMessage(_ctx.stringValue("ListCorpGroupMetricsResponse.Message"));
+		listCorpGroupMetricsResponse.setPageSize(_ctx.integerValue("ListCorpGroupMetricsResponse.PageSize"));
 		listCorpGroupMetricsResponse.setPageNumber(_ctx.integerValue("ListCorpGroupMetricsResponse.PageNumber"));
 		listCorpGroupMetricsResponse.setCode(_ctx.stringValue("ListCorpGroupMetricsResponse.Code"));
 		listCorpGroupMetricsResponse.setSuccess(_ctx.stringValue("ListCorpGroupMetricsResponse.Success"));
@@ -37,16 +37,16 @@ public class ListCorpGroupMetricsResponseUnmarshaller {
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListCorpGroupMetricsResponse.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
-			dataItem.setCorpId(_ctx.stringValue("ListCorpGroupMetricsResponse.Data["+ i +"].CorpId"));
-			dataItem.setPersonID(_ctx.stringValue("ListCorpGroupMetricsResponse.Data["+ i +"].PersonID"));
-			dataItem.setCorpGroupId(_ctx.stringValue("ListCorpGroupMetricsResponse.Data["+ i +"].CorpGroupId"));
+			dataItem.setDateId(_ctx.stringValue("ListCorpGroupMetricsResponse.Data["+ i +"].DateId"));
 			dataItem.setDeviceGroupId(_ctx.stringValue("ListCorpGroupMetricsResponse.Data["+ i +"].DeviceGroupId"));
+			dataItem.setCorpGroupId(_ctx.stringValue("ListCorpGroupMetricsResponse.Data["+ i +"].CorpGroupId"));
 			dataItem.setDeviceId(_ctx.stringValue("ListCorpGroupMetricsResponse.Data["+ i +"].DeviceId"));
 			dataItem.setUserGroupId(_ctx.stringValue("ListCorpGroupMetricsResponse.Data["+ i +"].UserGroupId"));
-			dataItem.setTagMetrics(_ctx.stringValue("ListCorpGroupMetricsResponse.Data["+ i +"].TagMetrics"));
 			dataItem.setTagCode(_ctx.stringValue("ListCorpGroupMetricsResponse.Data["+ i +"].TagCode"));
+			dataItem.setCorpId(_ctx.stringValue("ListCorpGroupMetricsResponse.Data["+ i +"].CorpId"));
+			dataItem.setTagMetrics(_ctx.stringValue("ListCorpGroupMetricsResponse.Data["+ i +"].TagMetrics"));
 			dataItem.setTagValue(_ctx.stringValue("ListCorpGroupMetricsResponse.Data["+ i +"].TagValue"));
-			dataItem.setDateId(_ctx.stringValue("ListCorpGroupMetricsResponse.Data["+ i +"].DateId"));
+			dataItem.setPersonID(_ctx.stringValue("ListCorpGroupMetricsResponse.Data["+ i +"].PersonID"));
 
 			data.add(dataItem);
 		}

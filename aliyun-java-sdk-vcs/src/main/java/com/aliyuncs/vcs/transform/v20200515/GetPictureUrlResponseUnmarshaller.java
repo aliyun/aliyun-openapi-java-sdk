@@ -23,8 +23,8 @@ public class GetPictureUrlResponseUnmarshaller {
 	public static GetPictureUrlResponse unmarshall(GetPictureUrlResponse getPictureUrlResponse, UnmarshallerContext _ctx) {
 		
 		getPictureUrlResponse.setRequestId(_ctx.stringValue("GetPictureUrlResponse.RequestId"));
-		getPictureUrlResponse.setMessage(_ctx.stringValue("GetPictureUrlResponse.Message"));
 		getPictureUrlResponse.setCode(_ctx.stringValue("GetPictureUrlResponse.Code"));
+		getPictureUrlResponse.setMessage(_ctx.stringValue("GetPictureUrlResponse.Message"));
 		getPictureUrlResponse.setUrl(_ctx.stringValue("GetPictureUrlResponse.Url"));
 	 
 	 	return getPictureUrlResponse;

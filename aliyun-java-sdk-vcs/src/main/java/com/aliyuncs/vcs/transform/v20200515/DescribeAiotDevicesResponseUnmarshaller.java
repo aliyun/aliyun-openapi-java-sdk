@@ -32,40 +32,40 @@ public class DescribeAiotDevicesResponseUnmarshaller {
 		describeAiotDevicesResponse.setCode(_ctx.stringValue("DescribeAiotDevicesResponse.Code"));
 
 		AiotDevices aiotDevices = new AiotDevices();
-		aiotDevices.setTotalNum(_ctx.longValue("DescribeAiotDevicesResponse.AiotDevices.TotalNum"));
-		aiotDevices.setPageSize(_ctx.longValue("DescribeAiotDevicesResponse.AiotDevices.PageSize"));
 		aiotDevices.setPageNum(_ctx.longValue("DescribeAiotDevicesResponse.AiotDevices.PageNum"));
+		aiotDevices.setPageSize(_ctx.longValue("DescribeAiotDevicesResponse.AiotDevices.PageSize"));
+		aiotDevices.setTotalNum(_ctx.longValue("DescribeAiotDevicesResponse.AiotDevices.TotalNum"));
 
 		List<AiotDeviceType> aiotDeviceList = new ArrayList<AiotDeviceType>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeAiotDevicesResponse.AiotDevices.AiotDeviceList.Length"); i++) {
 			AiotDeviceType aiotDeviceType = new AiotDeviceType();
-			aiotDeviceType.setDeviceId(_ctx.stringValue("DescribeAiotDevicesResponse.AiotDevices.AiotDeviceList["+ i +"].DeviceId"));
-			aiotDeviceType.setPort(_ctx.longValue("DescribeAiotDevicesResponse.AiotDevices.AiotDeviceList["+ i +"].Port"));
-			aiotDeviceType.setPlaceCode(_ctx.stringValue("DescribeAiotDevicesResponse.AiotDevices.AiotDeviceList["+ i +"].PlaceCode"));
-			aiotDeviceType.setSerialNuber(_ctx.stringValue("DescribeAiotDevicesResponse.AiotDevices.AiotDeviceList["+ i +"].SerialNuber"));
-			aiotDeviceType.setLatitude(_ctx.floatValue("DescribeAiotDevicesResponse.AiotDevices.AiotDeviceList["+ i +"].Latitude"));
-			aiotDeviceType.setOwnerApsID(_ctx.stringValue("DescribeAiotDevicesResponse.AiotDevices.AiotDeviceList["+ i +"].OwnerApsID"));
-			aiotDeviceType.setIsOnline(_ctx.stringValue("DescribeAiotDevicesResponse.AiotDevices.AiotDeviceList["+ i +"].IsOnline"));
-			aiotDeviceType.setName(_ctx.stringValue("DescribeAiotDevicesResponse.AiotDevices.AiotDeviceList["+ i +"].Name"));
-			aiotDeviceType.setMonitorAreaDesc(_ctx.stringValue("DescribeAiotDevicesResponse.AiotDevices.AiotDeviceList["+ i +"].MonitorAreaDesc"));
-			aiotDeviceType.setManufacturer(_ctx.stringValue("DescribeAiotDevicesResponse.AiotDevices.AiotDeviceList["+ i +"].Manufacturer"));
-			aiotDeviceType.setMonitorDirection(_ctx.stringValue("DescribeAiotDevicesResponse.AiotDevices.AiotDeviceList["+ i +"].MonitorDirection"));
-			aiotDeviceType.setIPV6Addr(_ctx.stringValue("DescribeAiotDevicesResponse.AiotDevices.AiotDeviceList["+ i +"].IPV6Addr"));
-			aiotDeviceType.setPassword(_ctx.stringValue("DescribeAiotDevicesResponse.AiotDevices.AiotDeviceList["+ i +"].Password"));
-			aiotDeviceType.setIPAddr(_ctx.stringValue("DescribeAiotDevicesResponse.AiotDevices.AiotDeviceList["+ i +"].IPAddr"));
-			aiotDeviceType.setIPv4Netmask(_ctx.stringValue("DescribeAiotDevicesResponse.AiotDevices.AiotDeviceList["+ i +"].IPv4Netmask"));
 			aiotDeviceType.setCorpId(_ctx.stringValue("DescribeAiotDevicesResponse.AiotDevices.AiotDeviceList["+ i +"].CorpId"));
+			aiotDeviceType.setDeviceId(_ctx.stringValue("DescribeAiotDevicesResponse.AiotDevices.AiotDeviceList["+ i +"].DeviceId"));
+			aiotDeviceType.setName(_ctx.stringValue("DescribeAiotDevicesResponse.AiotDevices.AiotDeviceList["+ i +"].Name"));
+			aiotDeviceType.setModel(_ctx.stringValue("DescribeAiotDevicesResponse.AiotDevices.AiotDeviceList["+ i +"].Model"));
+			aiotDeviceType.setIPAddr(_ctx.stringValue("DescribeAiotDevicesResponse.AiotDevices.AiotDeviceList["+ i +"].IPAddr"));
+			aiotDeviceType.setIPV6Addr(_ctx.stringValue("DescribeAiotDevicesResponse.AiotDevices.AiotDeviceList["+ i +"].IPV6Addr"));
+			aiotDeviceType.setPort(_ctx.longValue("DescribeAiotDevicesResponse.AiotDevices.AiotDeviceList["+ i +"].Port"));
 			aiotDeviceType.setLongitude(_ctx.floatValue("DescribeAiotDevicesResponse.AiotDevices.AiotDeviceList["+ i +"].Longitude"));
-			aiotDeviceType.setFirmwareVersion(_ctx.stringValue("DescribeAiotDevicesResponse.AiotDevices.AiotDeviceList["+ i +"].FirmwareVersion"));
-			aiotDeviceType.setMAC(_ctx.stringValue("DescribeAiotDevicesResponse.AiotDevices.AiotDeviceList["+ i +"].MAC"));
-			aiotDeviceType.setDeviceType(_ctx.stringValue("DescribeAiotDevicesResponse.AiotDevices.AiotDeviceList["+ i +"].DeviceType"));
+			aiotDeviceType.setLatitude(_ctx.floatValue("DescribeAiotDevicesResponse.AiotDevices.AiotDeviceList["+ i +"].Latitude"));
+			aiotDeviceType.setPlaceCode(_ctx.stringValue("DescribeAiotDevicesResponse.AiotDevices.AiotDeviceList["+ i +"].PlaceCode"));
+			aiotDeviceType.setPlace(_ctx.stringValue("DescribeAiotDevicesResponse.AiotDevices.AiotDeviceList["+ i +"].Place"));
 			aiotDeviceType.setOrgCode(_ctx.stringValue("DescribeAiotDevicesResponse.AiotDevices.AiotDeviceList["+ i +"].OrgCode"));
 			aiotDeviceType.setCapDirection(_ctx.stringValue("DescribeAiotDevicesResponse.AiotDevices.AiotDeviceList["+ i +"].CapDirection"));
+			aiotDeviceType.setMonitorDirection(_ctx.stringValue("DescribeAiotDevicesResponse.AiotDevices.AiotDeviceList["+ i +"].MonitorDirection"));
+			aiotDeviceType.setMonitorAreaDesc(_ctx.stringValue("DescribeAiotDevicesResponse.AiotDevices.AiotDeviceList["+ i +"].MonitorAreaDesc"));
+			aiotDeviceType.setIsOnline(_ctx.stringValue("DescribeAiotDevicesResponse.AiotDevices.AiotDeviceList["+ i +"].IsOnline"));
+			aiotDeviceType.setOwnerApsID(_ctx.stringValue("DescribeAiotDevicesResponse.AiotDevices.AiotDeviceList["+ i +"].OwnerApsID"));
 			aiotDeviceType.setUserId(_ctx.stringValue("DescribeAiotDevicesResponse.AiotDevices.AiotDeviceList["+ i +"].UserId"));
-			aiotDeviceType.setModel(_ctx.stringValue("DescribeAiotDevicesResponse.AiotDevices.AiotDeviceList["+ i +"].Model"));
+			aiotDeviceType.setPassword(_ctx.stringValue("DescribeAiotDevicesResponse.AiotDevices.AiotDeviceList["+ i +"].Password"));
+			aiotDeviceType.setMAC(_ctx.stringValue("DescribeAiotDevicesResponse.AiotDevices.AiotDeviceList["+ i +"].MAC"));
+			aiotDeviceType.setIPv4Netmask(_ctx.stringValue("DescribeAiotDevicesResponse.AiotDevices.AiotDeviceList["+ i +"].IPv4Netmask"));
 			aiotDeviceType.setIPv4Gateway(_ctx.stringValue("DescribeAiotDevicesResponse.AiotDevices.AiotDeviceList["+ i +"].IPv4Gateway"));
+			aiotDeviceType.setDeviceType(_ctx.stringValue("DescribeAiotDevicesResponse.AiotDevices.AiotDeviceList["+ i +"].DeviceType"));
+			aiotDeviceType.setFirmwareVersion(_ctx.stringValue("DescribeAiotDevicesResponse.AiotDevices.AiotDeviceList["+ i +"].FirmwareVersion"));
+			aiotDeviceType.setSerialNuber(_ctx.stringValue("DescribeAiotDevicesResponse.AiotDevices.AiotDeviceList["+ i +"].SerialNuber"));
+			aiotDeviceType.setManufacturer(_ctx.stringValue("DescribeAiotDevicesResponse.AiotDevices.AiotDeviceList["+ i +"].Manufacturer"));
 			aiotDeviceType.setId(_ctx.stringValue("DescribeAiotDevicesResponse.AiotDevices.AiotDeviceList["+ i +"].Id"));
-			aiotDeviceType.setPlace(_ctx.stringValue("DescribeAiotDevicesResponse.AiotDevices.AiotDeviceList["+ i +"].Place"));
 
 			aiotDeviceList.add(aiotDeviceType);
 		}

@@ -25,21 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class VerifyDeviceResponse extends AcsResponse {
 
-	private String message;
-
 	private String requestId;
+
+	private String message;
 
 	private String code;
 
 	private List<VerifyDeviceResult> data;
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -47,6 +39,14 @@ public class VerifyDeviceResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public String getCode() {
@@ -67,25 +67,17 @@ public class VerifyDeviceResponse extends AcsResponse {
 
 	public static class VerifyDeviceResult {
 
-		private Long rowNumber;
-
 		private String originalGbId;
-
-		private String message;
 
 		private String suggestGbId;
 
-		private String id;
+		private String message;
 
 		private String code;
 
-		public Long getRowNumber() {
-			return this.rowNumber;
-		}
+		private Long rowNumber;
 
-		public void setRowNumber(Long rowNumber) {
-			this.rowNumber = rowNumber;
-		}
+		private String id;
 
 		public String getOriginalGbId() {
 			return this.originalGbId;
@@ -93,14 +85,6 @@ public class VerifyDeviceResponse extends AcsResponse {
 
 		public void setOriginalGbId(String originalGbId) {
 			this.originalGbId = originalGbId;
-		}
-
-		public String getMessage() {
-			return this.message;
-		}
-
-		public void setMessage(String message) {
-			this.message = message;
 		}
 
 		public String getSuggestGbId() {
@@ -111,12 +95,12 @@ public class VerifyDeviceResponse extends AcsResponse {
 			this.suggestGbId = suggestGbId;
 		}
 
-		public String getId() {
-			return this.id;
+		public String getMessage() {
+			return this.message;
 		}
 
-		public void setId(String id) {
-			this.id = id;
+		public void setMessage(String message) {
+			this.message = message;
 		}
 
 		public String getCode() {
@@ -125,6 +109,22 @@ public class VerifyDeviceResponse extends AcsResponse {
 
 		public void setCode(String code) {
 			this.code = code;
+		}
+
+		public Long getRowNumber() {
+			return this.rowNumber;
+		}
+
+		public void setRowNumber(Long rowNumber) {
+			this.rowNumber = rowNumber;
+		}
+
+		public String getId() {
+			return this.id;
+		}
+
+		public void setId(String id) {
+			this.id = id;
 		}
 	}
 

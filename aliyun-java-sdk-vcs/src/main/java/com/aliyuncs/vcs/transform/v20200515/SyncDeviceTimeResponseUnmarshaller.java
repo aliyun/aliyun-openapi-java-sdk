@@ -25,8 +25,8 @@ public class SyncDeviceTimeResponseUnmarshaller {
 		syncDeviceTimeResponse.setRequestId(_ctx.stringValue("SyncDeviceTimeResponse.RequestId"));
 		syncDeviceTimeResponse.setSyncInterval(_ctx.stringValue("SyncDeviceTimeResponse.SyncInterval"));
 		syncDeviceTimeResponse.setMessage(_ctx.stringValue("SyncDeviceTimeResponse.Message"));
-		syncDeviceTimeResponse.setNTPServer(_ctx.stringValue("SyncDeviceTimeResponse.NTPServer"));
 		syncDeviceTimeResponse.setRetryInterval(_ctx.stringValue("SyncDeviceTimeResponse.RetryInterval"));
+		syncDeviceTimeResponse.setNTPServer(_ctx.stringValue("SyncDeviceTimeResponse.NTPServer"));
 		syncDeviceTimeResponse.setCode(_ctx.stringValue("SyncDeviceTimeResponse.Code"));
 		syncDeviceTimeResponse.setTimeStamp(_ctx.stringValue("SyncDeviceTimeResponse.TimeStamp"));
 	 
