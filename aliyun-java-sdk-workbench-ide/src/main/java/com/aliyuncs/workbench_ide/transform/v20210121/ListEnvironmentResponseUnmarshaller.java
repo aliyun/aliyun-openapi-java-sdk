@@ -14,6 +14,9 @@
 
 package com.aliyuncs.workbench_ide.transform.v20210121;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.workbench_ide.model.v20210121.ListEnvironmentResponse;
 import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -25,8 +28,10 @@ public class ListEnvironmentResponseUnmarshaller {
 		
 		listEnvironmentResponse.setRequestId(_ctx.stringValue("ListEnvironmentResponse.RequestId"));
 		listEnvironmentResponse.setCode(_ctx.stringValue("ListEnvironmentResponse.Code"));
-		listEnvironmentResponse.setData(_ctx.mapValue("ListEnvironmentResponse.Data"));
 		listEnvironmentResponse.setMessage(_ctx.stringValue("ListEnvironmentResponse.Message"));
+
+		List<Map<Object, Object>> data = _ctx.listMapValue("ListEnvironmentResponse.Data");
+		listEnvironmentResponse.setData(data);
 	 
 	 	return listEnvironmentResponse;
 	}

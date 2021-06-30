@@ -14,6 +14,9 @@
 
 package com.aliyuncs.workbench_ide.transform.v20210121;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.workbench_ide.model.v20210121.ListLangSolutionResponse;
 import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -24,9 +27,11 @@ public class ListLangSolutionResponseUnmarshaller {
 	public static ListLangSolutionResponse unmarshall(ListLangSolutionResponse listLangSolutionResponse, UnmarshallerContext _ctx) {
 		
 		listLangSolutionResponse.setRequestId(_ctx.stringValue("ListLangSolutionResponse.RequestId"));
-		listLangSolutionResponse.setData(_ctx.mapValue("ListLangSolutionResponse.Data"));
 		listLangSolutionResponse.setMessage(_ctx.stringValue("ListLangSolutionResponse.Message"));
 		listLangSolutionResponse.setCode(_ctx.stringValue("ListLangSolutionResponse.Code"));
+
+		List<Map<Object, Object>> data = _ctx.listMapValue("ListLangSolutionResponse.Data");
+		listLangSolutionResponse.setData(data);
 	 
 	 	return listLangSolutionResponse;
 	}

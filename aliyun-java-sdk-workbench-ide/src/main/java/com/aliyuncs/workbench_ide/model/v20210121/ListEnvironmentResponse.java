@@ -14,6 +14,7 @@
 
 package com.aliyuncs.workbench_ide.model.v20210121;
 
+import java.util.List;
 import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.workbench_ide.transform.v20210121.ListEnvironmentResponseUnmarshaller;
@@ -27,11 +28,11 @@ public class ListEnvironmentResponse extends AcsResponse {
 
 	private String code;
 
-	private Map<Object,Object> data;
-
 	private String message;
 
 	private String requestId;
+
+	private List<Map<Object,Object>> data;
 
 	public String getCode() {
 		return this.code;
@@ -39,14 +40,6 @@ public class ListEnvironmentResponse extends AcsResponse {
 
 	public void setCode(String code) {
 		this.code = code;
-	}
-
-	public Map<Object,Object> getData() {
-		return this.data;
-	}
-
-	public void setData(Map<Object,Object> data) {
-		this.data = data;
 	}
 
 	public String getMessage() {
@@ -63,6 +56,14 @@ public class ListEnvironmentResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public List<Map<Object,Object>> getData() {
+		return this.data;
+	}
+
+	public void setData(List<Map<Object,Object>> data) {
+		this.data = data;
 	}
 
 	@Override

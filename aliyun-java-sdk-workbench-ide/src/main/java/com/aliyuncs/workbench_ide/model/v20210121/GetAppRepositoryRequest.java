@@ -21,27 +21,27 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class RemoveOrgMemberRequest extends RpcAcsRequest<RemoveOrgMemberResponse> {
+public class GetAppRepositoryRequest extends RpcAcsRequest<GetAppRepositoryResponse> {
 	   
 
-	private String uid;
+	private Long appId;
 
 	private String currentOrgId;
 
-	private String memberId;
-	public RemoveOrgMemberRequest() {
-		super("Workbench-ide", "2021-01-21", "RemoveOrgMember");
+	private String type;
+	public GetAppRepositoryRequest() {
+		super("Workbench-ide", "2021-01-21", "GetAppRepository");
 		setMethod(MethodType.POST);
 	}
 
-	public String getUid() {
-		return this.uid;
+	public Long getAppId() {
+		return this.appId;
 	}
 
-	public void setUid(String uid) {
-		this.uid = uid;
-		if(uid != null){
-			putQueryParameter("Uid", uid);
+	public void setAppId(Long appId) {
+		this.appId = appId;
+		if(appId != null){
+			putQueryParameter("AppId", appId.toString());
 		}
 	}
 
@@ -56,20 +56,20 @@ public class RemoveOrgMemberRequest extends RpcAcsRequest<RemoveOrgMemberRespons
 		}
 	}
 
-	public String getMemberId() {
-		return this.memberId;
+	public String getType() {
+		return this.type;
 	}
 
-	public void setMemberId(String memberId) {
-		this.memberId = memberId;
-		if(memberId != null){
-			putQueryParameter("MemberId", memberId);
+	public void setType(String type) {
+		this.type = type;
+		if(type != null){
+			putQueryParameter("Type", type);
 		}
 	}
 
 	@Override
-	public Class<RemoveOrgMemberResponse> getResponseClass() {
-		return RemoveOrgMemberResponse.class;
+	public Class<GetAppRepositoryResponse> getResponseClass() {
+		return GetAppRepositoryResponse.class;
 	}
 
 }

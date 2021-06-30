@@ -21,27 +21,25 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class RemoveOrgMemberRequest extends RpcAcsRequest<RemoveOrgMemberResponse> {
+public class GetAppApiGatewayGroupRequest extends RpcAcsRequest<GetAppApiGatewayGroupResponse> {
 	   
 
-	private String uid;
+	private Long appId;
 
 	private String currentOrgId;
-
-	private String memberId;
-	public RemoveOrgMemberRequest() {
-		super("Workbench-ide", "2021-01-21", "RemoveOrgMember");
+	public GetAppApiGatewayGroupRequest() {
+		super("Workbench-ide", "2021-01-21", "GetAppApiGatewayGroup");
 		setMethod(MethodType.POST);
 	}
 
-	public String getUid() {
-		return this.uid;
+	public Long getAppId() {
+		return this.appId;
 	}
 
-	public void setUid(String uid) {
-		this.uid = uid;
-		if(uid != null){
-			putQueryParameter("Uid", uid);
+	public void setAppId(Long appId) {
+		this.appId = appId;
+		if(appId != null){
+			putQueryParameter("AppId", appId.toString());
 		}
 	}
 
@@ -56,20 +54,9 @@ public class RemoveOrgMemberRequest extends RpcAcsRequest<RemoveOrgMemberRespons
 		}
 	}
 
-	public String getMemberId() {
-		return this.memberId;
-	}
-
-	public void setMemberId(String memberId) {
-		this.memberId = memberId;
-		if(memberId != null){
-			putQueryParameter("MemberId", memberId);
-		}
-	}
-
 	@Override
-	public Class<RemoveOrgMemberResponse> getResponseClass() {
-		return RemoveOrgMemberResponse.class;
+	public Class<GetAppApiGatewayGroupResponse> getResponseClass() {
+		return GetAppApiGatewayGroupResponse.class;
 	}
 
 }
