@@ -46,6 +46,7 @@ public class QueryOTAFirmwareResponseUnmarshaller {
 		firmwareInfo.setType(_ctx.integerValue("QueryOTAFirmwareResponse.FirmwareInfo.Type"));
 		firmwareInfo.setVerifyProgress(_ctx.integerValue("QueryOTAFirmwareResponse.FirmwareInfo.VerifyProgress"));
 		firmwareInfo.setModuleName(_ctx.stringValue("QueryOTAFirmwareResponse.FirmwareInfo.ModuleName"));
+		firmwareInfo.setUdi(_ctx.stringValue("QueryOTAFirmwareResponse.FirmwareInfo.Udi"));
 		queryOTAFirmwareResponse.setFirmwareInfo(firmwareInfo);
 	 
 	 	return queryOTAFirmwareResponse;

@@ -110,6 +110,8 @@ public class QueryOTAFirmwareResponse extends AcsResponse {
 
 		private String moduleName;
 
+		private String udi;
+
 		public String getFirmwareName() {
 			return this.firmwareName;
 		}
@@ -244,6 +246,14 @@ public class QueryOTAFirmwareResponse extends AcsResponse {
 
 		public void setModuleName(String moduleName) {
 			this.moduleName = moduleName;
+		}
+
+		public String getUdi() {
+			return this.udi;
+		}
+
+		public void setUdi(String udi) {
+			this.udi = udi;
 		}
 	}
 
