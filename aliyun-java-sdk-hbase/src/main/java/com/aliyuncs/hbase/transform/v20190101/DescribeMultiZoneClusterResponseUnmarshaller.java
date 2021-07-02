@@ -73,7 +73,7 @@ public class DescribeMultiZoneClusterResponseUnmarshaller {
 		describeMultiZoneClusterResponse.setArbiterVSwitchIds(_ctx.stringValue("DescribeMultiZoneClusterResponse.ArbiterVSwitchIds"));
 		describeMultiZoneClusterResponse.setVpcId(_ctx.stringValue("DescribeMultiZoneClusterResponse.VpcId"));
 		describeMultiZoneClusterResponse.setResourceGroupId(_ctx.stringValue("DescribeMultiZoneClusterResponse.ResourceGroupId"));
-		describeMultiZoneClusterResponse.setEncryptionType(_ctx.booleanValue("DescribeMultiZoneClusterResponse.EncryptionType"));
+		describeMultiZoneClusterResponse.setEncryptionType(_ctx.stringValue("DescribeMultiZoneClusterResponse.EncryptionType"));
 		describeMultiZoneClusterResponse.setEncryptionKey(_ctx.stringValue("DescribeMultiZoneClusterResponse.EncryptionKey"));
 
 		List<MultiZoneInstanceModel> multiZoneInstanceModels = new ArrayList<MultiZoneInstanceModel>();

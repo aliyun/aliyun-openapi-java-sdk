@@ -117,7 +117,7 @@ public class DescribeMultiZoneClusterResponse extends AcsResponse {
 
 	private String resourceGroupId;
 
-	private Boolean encryptionType;
+	private String encryptionType;
 
 	private String encryptionKey;
 
@@ -493,11 +493,11 @@ public class DescribeMultiZoneClusterResponse extends AcsResponse {
 		this.resourceGroupId = resourceGroupId;
 	}
 
-	public Boolean getEncryptionType() {
+	public String getEncryptionType() {
 		return this.encryptionType;
 	}
 
-	public void setEncryptionType(Boolean encryptionType) {
+	public void setEncryptionType(String encryptionType) {
 		this.encryptionType = encryptionType;
 	}
 
