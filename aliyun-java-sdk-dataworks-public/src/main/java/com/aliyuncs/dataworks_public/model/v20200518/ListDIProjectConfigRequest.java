@@ -22,14 +22,16 @@ import com.aliyuncs.dataworks_public.Endpoint;
  * @author auto create
  * @version 
  */
-public class QueryPublicModelEngineRequest extends RpcAcsRequest<QueryPublicModelEngineResponse> {
+public class ListDIProjectConfigRequest extends RpcAcsRequest<ListDIProjectConfigResponse> {
 	   
 
-	private String text;
+	private String destinationType;
 
-	private String projectId;
-	public QueryPublicModelEngineRequest() {
-		super("dataworks-public", "2020-05-18", "QueryPublicModelEngine");
+	private String sourceType;
+
+	private Long projectId;
+	public ListDIProjectConfigRequest() {
+		super("dataworks-public", "2020-05-18", "ListDIProjectConfig");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,31 +39,42 @@ public class QueryPublicModelEngineRequest extends RpcAcsRequest<QueryPublicMode
 		} catch (Exception e) {}
 	}
 
-	public String getText() {
-		return this.text;
+	public String getDestinationType() {
+		return this.destinationType;
 	}
 
-	public void setText(String text) {
-		this.text = text;
-		if(text != null){
-			putBodyParameter("Text", text);
+	public void setDestinationType(String destinationType) {
+		this.destinationType = destinationType;
+		if(destinationType != null){
+			putQueryParameter("DestinationType", destinationType);
 		}
 	}
 
-	public String getProjectId() {
+	public String getSourceType() {
+		return this.sourceType;
+	}
+
+	public void setSourceType(String sourceType) {
+		this.sourceType = sourceType;
+		if(sourceType != null){
+			putQueryParameter("SourceType", sourceType);
+		}
+	}
+
+	public Long getProjectId() {
 		return this.projectId;
 	}
 
-	public void setProjectId(String projectId) {
+	public void setProjectId(Long projectId) {
 		this.projectId = projectId;
 		if(projectId != null){
-			putBodyParameter("ProjectId", projectId);
+			putQueryParameter("ProjectId", projectId.toString());
 		}
 	}
 
 	@Override
-	public Class<QueryPublicModelEngineResponse> getResponseClass() {
-		return QueryPublicModelEngineResponse.class;
+	public Class<ListDIProjectConfigResponse> getResponseClass() {
+		return ListDIProjectConfigResponse.class;
 	}
 
 }

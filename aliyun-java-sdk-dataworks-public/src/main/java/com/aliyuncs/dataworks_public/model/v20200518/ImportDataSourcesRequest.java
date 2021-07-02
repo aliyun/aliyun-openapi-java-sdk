@@ -22,14 +22,14 @@ import com.aliyuncs.dataworks_public.Endpoint;
  * @author auto create
  * @version 
  */
-public class QueryPublicModelEngineRequest extends RpcAcsRequest<QueryPublicModelEngineResponse> {
+public class ImportDataSourcesRequest extends RpcAcsRequest<ImportDataSourcesResponse> {
 	   
 
-	private String text;
+	private String dataSources;
 
-	private String projectId;
-	public QueryPublicModelEngineRequest() {
-		super("dataworks-public", "2020-05-18", "QueryPublicModelEngine");
+	private Long projectId;
+	public ImportDataSourcesRequest() {
+		super("dataworks-public", "2020-05-18", "ImportDataSources");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,31 +37,31 @@ public class QueryPublicModelEngineRequest extends RpcAcsRequest<QueryPublicMode
 		} catch (Exception e) {}
 	}
 
-	public String getText() {
-		return this.text;
+	public String getDataSources() {
+		return this.dataSources;
 	}
 
-	public void setText(String text) {
-		this.text = text;
-		if(text != null){
-			putBodyParameter("Text", text);
+	public void setDataSources(String dataSources) {
+		this.dataSources = dataSources;
+		if(dataSources != null){
+			putQueryParameter("DataSources", dataSources);
 		}
 	}
 
-	public String getProjectId() {
+	public Long getProjectId() {
 		return this.projectId;
 	}
 
-	public void setProjectId(String projectId) {
+	public void setProjectId(Long projectId) {
 		this.projectId = projectId;
 		if(projectId != null){
-			putBodyParameter("ProjectId", projectId);
+			putQueryParameter("ProjectId", projectId.toString());
 		}
 	}
 
 	@Override
-	public Class<QueryPublicModelEngineResponse> getResponseClass() {
-		return QueryPublicModelEngineResponse.class;
+	public Class<ImportDataSourcesResponse> getResponseClass() {
+		return ImportDataSourcesResponse.class;
 	}
 
 }
