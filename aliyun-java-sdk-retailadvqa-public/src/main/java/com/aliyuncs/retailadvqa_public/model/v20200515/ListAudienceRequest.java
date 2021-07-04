@@ -24,7 +24,13 @@ import com.aliyuncs.http.MethodType;
 public class ListAudienceRequest extends RpcAcsRequest<ListAudienceResponse> {
 	   
 
+	private String pageNum;
+
+	private String columnName;
+
 	private String accessId;
+
+	private Boolean isPush;
 
 	private String name;
 
@@ -32,16 +38,34 @@ public class ListAudienceRequest extends RpcAcsRequest<ListAudienceResponse> {
 
 	private String tenantId;
 
-	private String pageNum;
-
-	private String columnName;
-
 	private String order;
 
 	private String workspaceId;
 	public ListAudienceRequest() {
 		super("retailadvqa-public", "2020-05-15", "ListAudience");
 		setMethod(MethodType.GET);
+	}
+
+	public String getPageNum() {
+		return this.pageNum;
+	}
+
+	public void setPageNum(String pageNum) {
+		this.pageNum = pageNum;
+		if(pageNum != null){
+			putQueryParameter("PageNum", pageNum);
+		}
+	}
+
+	public String getColumnName() {
+		return this.columnName;
+	}
+
+	public void setColumnName(String columnName) {
+		this.columnName = columnName;
+		if(columnName != null){
+			putQueryParameter("ColumnName", columnName);
+		}
 	}
 
 	public String getAccessId() {
@@ -52,6 +76,17 @@ public class ListAudienceRequest extends RpcAcsRequest<ListAudienceResponse> {
 		this.accessId = accessId;
 		if(accessId != null){
 			putQueryParameter("AccessId", accessId);
+		}
+	}
+
+	public Boolean getIsPush() {
+		return this.isPush;
+	}
+
+	public void setIsPush(Boolean isPush) {
+		this.isPush = isPush;
+		if(isPush != null){
+			putQueryParameter("IsPush", isPush.toString());
 		}
 	}
 
@@ -85,28 +120,6 @@ public class ListAudienceRequest extends RpcAcsRequest<ListAudienceResponse> {
 		this.tenantId = tenantId;
 		if(tenantId != null){
 			putQueryParameter("TenantId", tenantId);
-		}
-	}
-
-	public String getPageNum() {
-		return this.pageNum;
-	}
-
-	public void setPageNum(String pageNum) {
-		this.pageNum = pageNum;
-		if(pageNum != null){
-			putQueryParameter("PageNum", pageNum);
-		}
-	}
-
-	public String getColumnName() {
-		return this.columnName;
-	}
-
-	public void setColumnName(String columnName) {
-		this.columnName = columnName;
-		if(columnName != null){
-			putQueryParameter("ColumnName", columnName);
 		}
 	}
 
