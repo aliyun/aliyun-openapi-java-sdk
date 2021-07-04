@@ -23,11 +23,11 @@ public class RecreateTableResponseUnmarshaller {
 	public static RecreateTableResponse unmarshall(RecreateTableResponse recreateTableResponse, UnmarshallerContext _ctx) {
 		
 		recreateTableResponse.setRequestId(_ctx.stringValue("RecreateTableResponse.RequestId"));
-		recreateTableResponse.setErrorCode(_ctx.stringValue("RecreateTableResponse.ErrorCode"));
 		recreateTableResponse.setErrorDesc(_ctx.stringValue("RecreateTableResponse.ErrorDesc"));
-		recreateTableResponse.setData(_ctx.stringValue("RecreateTableResponse.Data"));
-		recreateTableResponse.setSuccess(_ctx.booleanValue("RecreateTableResponse.Success"));
 		recreateTableResponse.setTraceId(_ctx.stringValue("RecreateTableResponse.TraceId"));
+		recreateTableResponse.setData(_ctx.stringValue("RecreateTableResponse.Data"));
+		recreateTableResponse.setErrorCode(_ctx.stringValue("RecreateTableResponse.ErrorCode"));
+		recreateTableResponse.setSuccess(_ctx.booleanValue("RecreateTableResponse.Success"));
 	 
 	 	return recreateTableResponse;
 	}

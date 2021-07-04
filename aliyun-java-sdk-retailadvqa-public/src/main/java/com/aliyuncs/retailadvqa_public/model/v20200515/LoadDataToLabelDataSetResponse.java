@@ -24,19 +24,43 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class LoadDataToLabelDataSetResponse extends AcsResponse {
 
+	private String requestId;
+
+	private String errorDesc;
+
+	private String traceId;
+
 	private Boolean data;
 
 	private String errorCode;
-
-	private String errorDesc;
 
 	private String exStack;
 
 	private Boolean success;
 
-	private String traceId;
+	public String getRequestId() {
+		return this.requestId;
+	}
 
-	private String requestId;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getErrorDesc() {
+		return this.errorDesc;
+	}
+
+	public void setErrorDesc(String errorDesc) {
+		this.errorDesc = errorDesc;
+	}
+
+	public String getTraceId() {
+		return this.traceId;
+	}
+
+	public void setTraceId(String traceId) {
+		this.traceId = traceId;
+	}
 
 	public Boolean getData() {
 		return this.data;
@@ -54,14 +78,6 @@ public class LoadDataToLabelDataSetResponse extends AcsResponse {
 		this.errorCode = errorCode;
 	}
 
-	public String getErrorDesc() {
-		return this.errorDesc;
-	}
-
-	public void setErrorDesc(String errorDesc) {
-		this.errorDesc = errorDesc;
-	}
-
 	public String getExStack() {
 		return this.exStack;
 	}
@@ -76,22 +92,6 @@ public class LoadDataToLabelDataSetResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
-	}
-
-	public String getTraceId() {
-		return this.traceId;
-	}
-
-	public void setTraceId(String traceId) {
-		this.traceId = traceId;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
 	}
 
 	@Override

@@ -23,9 +23,9 @@ public class CheckResourcepackSlrResponseUnmarshaller {
 	public static CheckResourcepackSlrResponse unmarshall(CheckResourcepackSlrResponse checkResourcepackSlrResponse, UnmarshallerContext _ctx) {
 		
 		checkResourcepackSlrResponse.setRequestId(_ctx.stringValue("CheckResourcepackSlrResponse.RequestId"));
+		checkResourcepackSlrResponse.setData(_ctx.stringValue("CheckResourcepackSlrResponse.Data"));
 		checkResourcepackSlrResponse.setErrorCode(_ctx.stringValue("CheckResourcepackSlrResponse.ErrorCode"));
 		checkResourcepackSlrResponse.setSuccess(_ctx.stringValue("CheckResourcepackSlrResponse.Success"));
-		checkResourcepackSlrResponse.setData(_ctx.stringValue("CheckResourcepackSlrResponse.Data"));
 	 
 	 	return checkResourcepackSlrResponse;
 	}

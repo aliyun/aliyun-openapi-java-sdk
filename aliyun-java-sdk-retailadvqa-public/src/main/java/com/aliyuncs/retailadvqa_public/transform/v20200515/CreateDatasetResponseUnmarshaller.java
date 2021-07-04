@@ -24,10 +24,10 @@ public class CreateDatasetResponseUnmarshaller {
 	public static CreateDatasetResponse unmarshall(CreateDatasetResponse createDatasetResponse, UnmarshallerContext _ctx) {
 		
 		createDatasetResponse.setRequestId(_ctx.stringValue("CreateDatasetResponse.RequestId"));
-		createDatasetResponse.setErrorCode(_ctx.stringValue("CreateDatasetResponse.ErrorCode"));
 		createDatasetResponse.setErrorDesc(_ctx.stringValue("CreateDatasetResponse.ErrorDesc"));
-		createDatasetResponse.setSuccess(_ctx.booleanValue("CreateDatasetResponse.Success"));
 		createDatasetResponse.setTraceId(_ctx.stringValue("CreateDatasetResponse.TraceId"));
+		createDatasetResponse.setErrorCode(_ctx.stringValue("CreateDatasetResponse.ErrorCode"));
+		createDatasetResponse.setSuccess(_ctx.booleanValue("CreateDatasetResponse.Success"));
 
 		Data data = new Data();
 		data.setId(_ctx.stringValue("CreateDatasetResponse.Data.Id"));

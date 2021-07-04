@@ -29,6 +29,8 @@ public class ListDatasetRequest extends RpcAcsRequest<ListDatasetResponse> {
 	private String tenantId;
 
 	private String type;
+
+	private String workspaceId;
 	public ListDatasetRequest() {
 		super("retailadvqa-public", "2020-05-15", "ListDataset");
 		setMethod(MethodType.GET);
@@ -64,6 +66,17 @@ public class ListDatasetRequest extends RpcAcsRequest<ListDatasetResponse> {
 		this.type = type;
 		if(type != null){
 			putQueryParameter("Type", type);
+		}
+	}
+
+	public String getWorkspaceId() {
+		return this.workspaceId;
+	}
+
+	public void setWorkspaceId(String workspaceId) {
+		this.workspaceId = workspaceId;
+		if(workspaceId != null){
+			putQueryParameter("WorkspaceId", workspaceId);
 		}
 	}
 

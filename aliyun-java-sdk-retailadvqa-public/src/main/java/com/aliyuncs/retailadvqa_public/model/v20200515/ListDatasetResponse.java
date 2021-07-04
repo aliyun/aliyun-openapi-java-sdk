@@ -26,24 +26,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListDatasetResponse extends AcsResponse {
 
-	private String errorCode;
+	private String requestId;
 
 	private String errorDesc;
 
-	private Boolean success;
-
 	private String traceId;
 
-	private String requestId;
+	private String errorCode;
+
+	private Boolean success;
 
 	private List<DataItem> data;
 
-	public String getErrorCode() {
-		return this.errorCode;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getErrorDesc() {
@@ -54,14 +54,6 @@ public class ListDatasetResponse extends AcsResponse {
 		this.errorDesc = errorDesc;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
 	public String getTraceId() {
 		return this.traceId;
 	}
@@ -70,12 +62,20 @@ public class ListDatasetResponse extends AcsResponse {
 		this.traceId = traceId;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getErrorCode() {
+		return this.errorCode;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<DataItem> getData() {
@@ -88,36 +88,76 @@ public class ListDatasetResponse extends AcsResponse {
 
 	public static class DataItem {
 
-		private String id;
+		private Map<Object,Object> extMappingTypes;
+
+		private String uniqueFieldName;
+
+		private String gmtModified;
+
+		private String uniqueMappingType;
+
+		private String gmtCreate;
+
+		private String factTable;
 
 		private String name;
 
 		private Integer dataSetType;
 
-		private String factTable;
-
-		private String uniqueMappingType;
-
-		private String uniqueFieldName;
-
-		private Map<Object,Object> extMappingTypes;
-
-		private String gmtCreate;
-
-		private String gmtModified;
+		private String id;
 
 		private ExtRFM extRFM;
 
-		private ExtBehavior extBehavior;
-
 		private ExtLabel extLabel;
 
-		public String getId() {
-			return this.id;
+		private ExtBehavior extBehavior;
+
+		public Map<Object,Object> getExtMappingTypes() {
+			return this.extMappingTypes;
 		}
 
-		public void setId(String id) {
-			this.id = id;
+		public void setExtMappingTypes(Map<Object,Object> extMappingTypes) {
+			this.extMappingTypes = extMappingTypes;
+		}
+
+		public String getUniqueFieldName() {
+			return this.uniqueFieldName;
+		}
+
+		public void setUniqueFieldName(String uniqueFieldName) {
+			this.uniqueFieldName = uniqueFieldName;
+		}
+
+		public String getGmtModified() {
+			return this.gmtModified;
+		}
+
+		public void setGmtModified(String gmtModified) {
+			this.gmtModified = gmtModified;
+		}
+
+		public String getUniqueMappingType() {
+			return this.uniqueMappingType;
+		}
+
+		public void setUniqueMappingType(String uniqueMappingType) {
+			this.uniqueMappingType = uniqueMappingType;
+		}
+
+		public String getGmtCreate() {
+			return this.gmtCreate;
+		}
+
+		public void setGmtCreate(String gmtCreate) {
+			this.gmtCreate = gmtCreate;
+		}
+
+		public String getFactTable() {
+			return this.factTable;
+		}
+
+		public void setFactTable(String factTable) {
+			this.factTable = factTable;
 		}
 
 		public String getName() {
@@ -136,52 +176,12 @@ public class ListDatasetResponse extends AcsResponse {
 			this.dataSetType = dataSetType;
 		}
 
-		public String getFactTable() {
-			return this.factTable;
+		public String getId() {
+			return this.id;
 		}
 
-		public void setFactTable(String factTable) {
-			this.factTable = factTable;
-		}
-
-		public String getUniqueMappingType() {
-			return this.uniqueMappingType;
-		}
-
-		public void setUniqueMappingType(String uniqueMappingType) {
-			this.uniqueMappingType = uniqueMappingType;
-		}
-
-		public String getUniqueFieldName() {
-			return this.uniqueFieldName;
-		}
-
-		public void setUniqueFieldName(String uniqueFieldName) {
-			this.uniqueFieldName = uniqueFieldName;
-		}
-
-		public Map<Object,Object> getExtMappingTypes() {
-			return this.extMappingTypes;
-		}
-
-		public void setExtMappingTypes(Map<Object,Object> extMappingTypes) {
-			this.extMappingTypes = extMappingTypes;
-		}
-
-		public String getGmtCreate() {
-			return this.gmtCreate;
-		}
-
-		public void setGmtCreate(String gmtCreate) {
-			this.gmtCreate = gmtCreate;
-		}
-
-		public String getGmtModified() {
-			return this.gmtModified;
-		}
-
-		public void setGmtModified(String gmtModified) {
-			this.gmtModified = gmtModified;
+		public void setId(String id) {
+			this.id = id;
 		}
 
 		public ExtRFM getExtRFM() {
@@ -192,14 +192,6 @@ public class ListDatasetResponse extends AcsResponse {
 			this.extRFM = extRFM;
 		}
 
-		public ExtBehavior getExtBehavior() {
-			return this.extBehavior;
-		}
-
-		public void setExtBehavior(ExtBehavior extBehavior) {
-			this.extBehavior = extBehavior;
-		}
-
 		public ExtLabel getExtLabel() {
 			return this.extLabel;
 		}
@@ -208,33 +200,41 @@ public class ListDatasetResponse extends AcsResponse {
 			this.extLabel = extLabel;
 		}
 
+		public ExtBehavior getExtBehavior() {
+			return this.extBehavior;
+		}
+
+		public void setExtBehavior(ExtBehavior extBehavior) {
+			this.extBehavior = extBehavior;
+		}
+
 		public static class ExtRFM {
 
 			private String tradeDateField;
 
-			private String tradeFrequencyField;
-
-			private String tradeMoneyField;
-
-			private Integer tradeMoneyUnit;
-
 			private String dataFromType;
 
-			private Integer period;
+			private String tradeFrequencyField;
 
-			private Integer comparisonCalculateType;
-
-			private String recencyScoreCompareValue;
+			private Integer tradeMoneyUnit;
 
 			private String frequencyScoreCompareValue;
 
 			private String monetaryScoreCompareValue;
 
-			private List<RecencyScoreConfigItem> recencyScoreConfig;
+			private Integer period;
+
+			private String tradeMoneyField;
+
+			private Integer comparisonCalculateType;
+
+			private String recencyScoreCompareValue;
 
 			private List<FrequencyScoreConfigItem> frequencyScoreConfig;
 
 			private List<MonetaryScoreConfigItem> monetaryScoreConfig;
+
+			private List<RecencyScoreConfigItem> recencyScoreConfig;
 
 			public String getTradeDateField() {
 				return this.tradeDateField;
@@ -242,30 +242,6 @@ public class ListDatasetResponse extends AcsResponse {
 
 			public void setTradeDateField(String tradeDateField) {
 				this.tradeDateField = tradeDateField;
-			}
-
-			public String getTradeFrequencyField() {
-				return this.tradeFrequencyField;
-			}
-
-			public void setTradeFrequencyField(String tradeFrequencyField) {
-				this.tradeFrequencyField = tradeFrequencyField;
-			}
-
-			public String getTradeMoneyField() {
-				return this.tradeMoneyField;
-			}
-
-			public void setTradeMoneyField(String tradeMoneyField) {
-				this.tradeMoneyField = tradeMoneyField;
-			}
-
-			public Integer getTradeMoneyUnit() {
-				return this.tradeMoneyUnit;
-			}
-
-			public void setTradeMoneyUnit(Integer tradeMoneyUnit) {
-				this.tradeMoneyUnit = tradeMoneyUnit;
 			}
 
 			public String getDataFromType() {
@@ -276,28 +252,20 @@ public class ListDatasetResponse extends AcsResponse {
 				this.dataFromType = dataFromType;
 			}
 
-			public Integer getPeriod() {
-				return this.period;
+			public String getTradeFrequencyField() {
+				return this.tradeFrequencyField;
 			}
 
-			public void setPeriod(Integer period) {
-				this.period = period;
+			public void setTradeFrequencyField(String tradeFrequencyField) {
+				this.tradeFrequencyField = tradeFrequencyField;
 			}
 
-			public Integer getComparisonCalculateType() {
-				return this.comparisonCalculateType;
+			public Integer getTradeMoneyUnit() {
+				return this.tradeMoneyUnit;
 			}
 
-			public void setComparisonCalculateType(Integer comparisonCalculateType) {
-				this.comparisonCalculateType = comparisonCalculateType;
-			}
-
-			public String getRecencyScoreCompareValue() {
-				return this.recencyScoreCompareValue;
-			}
-
-			public void setRecencyScoreCompareValue(String recencyScoreCompareValue) {
-				this.recencyScoreCompareValue = recencyScoreCompareValue;
+			public void setTradeMoneyUnit(Integer tradeMoneyUnit) {
+				this.tradeMoneyUnit = tradeMoneyUnit;
 			}
 
 			public String getFrequencyScoreCompareValue() {
@@ -316,12 +284,36 @@ public class ListDatasetResponse extends AcsResponse {
 				this.monetaryScoreCompareValue = monetaryScoreCompareValue;
 			}
 
-			public List<RecencyScoreConfigItem> getRecencyScoreConfig() {
-				return this.recencyScoreConfig;
+			public Integer getPeriod() {
+				return this.period;
 			}
 
-			public void setRecencyScoreConfig(List<RecencyScoreConfigItem> recencyScoreConfig) {
-				this.recencyScoreConfig = recencyScoreConfig;
+			public void setPeriod(Integer period) {
+				this.period = period;
+			}
+
+			public String getTradeMoneyField() {
+				return this.tradeMoneyField;
+			}
+
+			public void setTradeMoneyField(String tradeMoneyField) {
+				this.tradeMoneyField = tradeMoneyField;
+			}
+
+			public Integer getComparisonCalculateType() {
+				return this.comparisonCalculateType;
+			}
+
+			public void setComparisonCalculateType(Integer comparisonCalculateType) {
+				this.comparisonCalculateType = comparisonCalculateType;
+			}
+
+			public String getRecencyScoreCompareValue() {
+				return this.recencyScoreCompareValue;
+			}
+
+			public void setRecencyScoreCompareValue(String recencyScoreCompareValue) {
+				this.recencyScoreCompareValue = recencyScoreCompareValue;
 			}
 
 			public List<FrequencyScoreConfigItem> getFrequencyScoreConfig() {
@@ -340,37 +332,12 @@ public class ListDatasetResponse extends AcsResponse {
 				this.monetaryScoreConfig = monetaryScoreConfig;
 			}
 
-			public static class RecencyScoreConfigItem {
+			public List<RecencyScoreConfigItem> getRecencyScoreConfig() {
+				return this.recencyScoreConfig;
+			}
 
-				private Integer start;
-
-				private Integer end;
-
-				private Integer score;
-
-				public Integer getStart() {
-					return this.start;
-				}
-
-				public void setStart(Integer start) {
-					this.start = start;
-				}
-
-				public Integer getEnd() {
-					return this.end;
-				}
-
-				public void setEnd(Integer end) {
-					this.end = end;
-				}
-
-				public Integer getScore() {
-					return this.score;
-				}
-
-				public void setScore(Integer score) {
-					this.score = score;
-				}
+			public void setRecencyScoreConfig(List<RecencyScoreConfigItem> recencyScoreConfig) {
+				this.recencyScoreConfig = recencyScoreConfig;
 			}
 
 			public static class FrequencyScoreConfigItem {
@@ -438,128 +405,38 @@ public class ListDatasetResponse extends AcsResponse {
 					this.score = score;
 				}
 			}
-		}
 
-		public static class ExtBehavior {
+			public static class RecencyScoreConfigItem {
 
-			private String behaviorDateField;
+				private Integer start;
 
-			private String behaviorTypeField;
+				private Integer end;
 
-			private String behaviorObjectTypeField;
+				private Integer score;
 
-			private String behaviorObjectValueField;
+				public Integer getStart() {
+					return this.start;
+				}
 
-			private String behaviorChannelField;
+				public void setStart(Integer start) {
+					this.start = start;
+				}
 
-			private String behaviorCountsField;
+				public Integer getEnd() {
+					return this.end;
+				}
 
-			private String behaviorAmountsField;
+				public void setEnd(Integer end) {
+					this.end = end;
+				}
 
-			private String channelDimTableName;
+				public Integer getScore() {
+					return this.score;
+				}
 
-			private String channelField;
-
-			private String typeDimTableName;
-
-			private String typeField;
-
-			private Map<Object,Object> objectTypeContext;
-
-			public String getBehaviorDateField() {
-				return this.behaviorDateField;
-			}
-
-			public void setBehaviorDateField(String behaviorDateField) {
-				this.behaviorDateField = behaviorDateField;
-			}
-
-			public String getBehaviorTypeField() {
-				return this.behaviorTypeField;
-			}
-
-			public void setBehaviorTypeField(String behaviorTypeField) {
-				this.behaviorTypeField = behaviorTypeField;
-			}
-
-			public String getBehaviorObjectTypeField() {
-				return this.behaviorObjectTypeField;
-			}
-
-			public void setBehaviorObjectTypeField(String behaviorObjectTypeField) {
-				this.behaviorObjectTypeField = behaviorObjectTypeField;
-			}
-
-			public String getBehaviorObjectValueField() {
-				return this.behaviorObjectValueField;
-			}
-
-			public void setBehaviorObjectValueField(String behaviorObjectValueField) {
-				this.behaviorObjectValueField = behaviorObjectValueField;
-			}
-
-			public String getBehaviorChannelField() {
-				return this.behaviorChannelField;
-			}
-
-			public void setBehaviorChannelField(String behaviorChannelField) {
-				this.behaviorChannelField = behaviorChannelField;
-			}
-
-			public String getBehaviorCountsField() {
-				return this.behaviorCountsField;
-			}
-
-			public void setBehaviorCountsField(String behaviorCountsField) {
-				this.behaviorCountsField = behaviorCountsField;
-			}
-
-			public String getBehaviorAmountsField() {
-				return this.behaviorAmountsField;
-			}
-
-			public void setBehaviorAmountsField(String behaviorAmountsField) {
-				this.behaviorAmountsField = behaviorAmountsField;
-			}
-
-			public String getChannelDimTableName() {
-				return this.channelDimTableName;
-			}
-
-			public void setChannelDimTableName(String channelDimTableName) {
-				this.channelDimTableName = channelDimTableName;
-			}
-
-			public String getChannelField() {
-				return this.channelField;
-			}
-
-			public void setChannelField(String channelField) {
-				this.channelField = channelField;
-			}
-
-			public String getTypeDimTableName() {
-				return this.typeDimTableName;
-			}
-
-			public void setTypeDimTableName(String typeDimTableName) {
-				this.typeDimTableName = typeDimTableName;
-			}
-
-			public String getTypeField() {
-				return this.typeField;
-			}
-
-			public void setTypeField(String typeField) {
-				this.typeField = typeField;
-			}
-
-			public Map<Object,Object> getObjectTypeContext() {
-				return this.objectTypeContext;
-			}
-
-			public void setObjectTypeContext(Map<Object,Object> objectTypeContext) {
-				this.objectTypeContext = objectTypeContext;
+				public void setScore(Integer score) {
+					this.score = score;
+				}
 			}
 		}
 
@@ -577,17 +454,25 @@ public class ListDatasetResponse extends AcsResponse {
 
 			public static class DatasetLabelListItem {
 
+				private String columnAlias;
+
 				private String columnName;
 
 				private String tableName;
-
-				private String columnAlias;
 
 				private String colType;
 
 				private String labelSeparator;
 
 				private String remark;
+
+				public String getColumnAlias() {
+					return this.columnAlias;
+				}
+
+				public void setColumnAlias(String columnAlias) {
+					this.columnAlias = columnAlias;
+				}
 
 				public String getColumnName() {
 					return this.columnName;
@@ -603,14 +488,6 @@ public class ListDatasetResponse extends AcsResponse {
 
 				public void setTableName(String tableName) {
 					this.tableName = tableName;
-				}
-
-				public String getColumnAlias() {
-					return this.columnAlias;
-				}
-
-				public void setColumnAlias(String columnAlias) {
-					this.columnAlias = columnAlias;
 				}
 
 				public String getColType() {
@@ -636,6 +513,129 @@ public class ListDatasetResponse extends AcsResponse {
 				public void setRemark(String remark) {
 					this.remark = remark;
 				}
+			}
+		}
+
+		public static class ExtBehavior {
+
+			private String behaviorObjectTypeField;
+
+			private String behaviorDateField;
+
+			private String typeField;
+
+			private String behaviorChannelField;
+
+			private String behaviorTypeField;
+
+			private String channelDimTableName;
+
+			private String behaviorCountsField;
+
+			private String typeDimTableName;
+
+			private String behaviorObjectValueField;
+
+			private String channelField;
+
+			private Map<Object,Object> objectTypeContext;
+
+			private String behaviorAmountsField;
+
+			public String getBehaviorObjectTypeField() {
+				return this.behaviorObjectTypeField;
+			}
+
+			public void setBehaviorObjectTypeField(String behaviorObjectTypeField) {
+				this.behaviorObjectTypeField = behaviorObjectTypeField;
+			}
+
+			public String getBehaviorDateField() {
+				return this.behaviorDateField;
+			}
+
+			public void setBehaviorDateField(String behaviorDateField) {
+				this.behaviorDateField = behaviorDateField;
+			}
+
+			public String getTypeField() {
+				return this.typeField;
+			}
+
+			public void setTypeField(String typeField) {
+				this.typeField = typeField;
+			}
+
+			public String getBehaviorChannelField() {
+				return this.behaviorChannelField;
+			}
+
+			public void setBehaviorChannelField(String behaviorChannelField) {
+				this.behaviorChannelField = behaviorChannelField;
+			}
+
+			public String getBehaviorTypeField() {
+				return this.behaviorTypeField;
+			}
+
+			public void setBehaviorTypeField(String behaviorTypeField) {
+				this.behaviorTypeField = behaviorTypeField;
+			}
+
+			public String getChannelDimTableName() {
+				return this.channelDimTableName;
+			}
+
+			public void setChannelDimTableName(String channelDimTableName) {
+				this.channelDimTableName = channelDimTableName;
+			}
+
+			public String getBehaviorCountsField() {
+				return this.behaviorCountsField;
+			}
+
+			public void setBehaviorCountsField(String behaviorCountsField) {
+				this.behaviorCountsField = behaviorCountsField;
+			}
+
+			public String getTypeDimTableName() {
+				return this.typeDimTableName;
+			}
+
+			public void setTypeDimTableName(String typeDimTableName) {
+				this.typeDimTableName = typeDimTableName;
+			}
+
+			public String getBehaviorObjectValueField() {
+				return this.behaviorObjectValueField;
+			}
+
+			public void setBehaviorObjectValueField(String behaviorObjectValueField) {
+				this.behaviorObjectValueField = behaviorObjectValueField;
+			}
+
+			public String getChannelField() {
+				return this.channelField;
+			}
+
+			public void setChannelField(String channelField) {
+				this.channelField = channelField;
+			}
+
+			public Map<Object,Object> getObjectTypeContext() {
+				return this.objectTypeContext;
+			}
+
+			public void setObjectTypeContext(Map<Object,Object> objectTypeContext) {
+				this.objectTypeContext = objectTypeContext;
+			}
+
+			public String getBehaviorAmountsField() {
+				return this.behaviorAmountsField;
+			}
+
+			public void setBehaviorAmountsField(String behaviorAmountsField) {
+				this.behaviorAmountsField = behaviorAmountsField;
 			}
 		}
 	}

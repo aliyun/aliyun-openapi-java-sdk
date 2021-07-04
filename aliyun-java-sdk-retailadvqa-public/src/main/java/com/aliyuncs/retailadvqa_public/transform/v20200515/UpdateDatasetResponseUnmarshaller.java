@@ -23,11 +23,11 @@ public class UpdateDatasetResponseUnmarshaller {
 	public static UpdateDatasetResponse unmarshall(UpdateDatasetResponse updateDatasetResponse, UnmarshallerContext _ctx) {
 		
 		updateDatasetResponse.setRequestId(_ctx.stringValue("UpdateDatasetResponse.RequestId"));
-		updateDatasetResponse.setErrorCode(_ctx.stringValue("UpdateDatasetResponse.ErrorCode"));
 		updateDatasetResponse.setErrorDesc(_ctx.stringValue("UpdateDatasetResponse.ErrorDesc"));
-		updateDatasetResponse.setSuccess(_ctx.booleanValue("UpdateDatasetResponse.Success"));
 		updateDatasetResponse.setTraceId(_ctx.stringValue("UpdateDatasetResponse.TraceId"));
 		updateDatasetResponse.setData(_ctx.stringValue("UpdateDatasetResponse.Data"));
+		updateDatasetResponse.setErrorCode(_ctx.stringValue("UpdateDatasetResponse.ErrorCode"));
+		updateDatasetResponse.setSuccess(_ctx.booleanValue("UpdateDatasetResponse.Success"));
 	 
 	 	return updateDatasetResponse;
 	}

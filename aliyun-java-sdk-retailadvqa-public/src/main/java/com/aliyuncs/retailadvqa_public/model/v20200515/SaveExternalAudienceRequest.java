@@ -15,7 +15,6 @@
 package com.aliyuncs.retailadvqa_public.model.v20200515;
 
 import com.aliyuncs.RpcAcsRequest;
-import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 
 /**
@@ -34,9 +33,12 @@ public class SaveExternalAudienceRequest extends RpcAcsRequest<SaveExternalAudie
 	private String dataSourceId;
 
 	private String audienceId;
+
+	private String parentId;
+
+	private String workspaceId;
 	public SaveExternalAudienceRequest() {
 		super("retailadvqa-public", "2020-05-15", "SaveExternalAudience");
-		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
 
@@ -92,6 +94,28 @@ public class SaveExternalAudienceRequest extends RpcAcsRequest<SaveExternalAudie
 		this.audienceId = audienceId;
 		if(audienceId != null){
 			putQueryParameter("AudienceId", audienceId);
+		}
+	}
+
+	public String getParentId() {
+		return this.parentId;
+	}
+
+	public void setParentId(String parentId) {
+		this.parentId = parentId;
+		if(parentId != null){
+			putQueryParameter("ParentId", parentId);
+		}
+	}
+
+	public String getWorkspaceId() {
+		return this.workspaceId;
+	}
+
+	public void setWorkspaceId(String workspaceId) {
+		this.workspaceId = workspaceId;
+		if(workspaceId != null){
+			putQueryParameter("WorkspaceId", workspaceId);
 		}
 	}
 

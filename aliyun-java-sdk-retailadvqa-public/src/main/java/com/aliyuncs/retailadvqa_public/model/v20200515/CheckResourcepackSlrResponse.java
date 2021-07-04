@@ -26,11 +26,11 @@ public class CheckResourcepackSlrResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String data;
+
 	private String errorCode;
 
 	private String success;
-
-	private String data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,6 +38,14 @@ public class CheckResourcepackSlrResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getData() {
+		return this.data;
+	}
+
+	public void setData(String data) {
+		this.data = data;
 	}
 
 	public String getErrorCode() {
@@ -54,14 +62,6 @@ public class CheckResourcepackSlrResponse extends AcsResponse {
 
 	public void setSuccess(String success) {
 		this.success = success;
-	}
-
-	public String getData() {
-		return this.data;
-	}
-
-	public void setData(String data) {
-		this.data = data;
 	}
 
 	@Override

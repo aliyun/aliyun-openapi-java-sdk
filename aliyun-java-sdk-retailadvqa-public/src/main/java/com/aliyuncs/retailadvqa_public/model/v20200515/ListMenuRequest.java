@@ -29,6 +29,8 @@ public class ListMenuRequest extends RpcAcsRequest<ListMenuResponse> {
 	private String tenantId;
 
 	private String roleSign;
+
+	private String workspaceId;
 	public ListMenuRequest() {
 		super("retailadvqa-public", "2020-05-15", "ListMenu");
 		setMethod(MethodType.POST);
@@ -64,6 +66,17 @@ public class ListMenuRequest extends RpcAcsRequest<ListMenuResponse> {
 		this.roleSign = roleSign;
 		if(roleSign != null){
 			putQueryParameter("RoleSign", roleSign);
+		}
+	}
+
+	public String getWorkspaceId() {
+		return this.workspaceId;
+	}
+
+	public void setWorkspaceId(String workspaceId) {
+		this.workspaceId = workspaceId;
+		if(workspaceId != null){
+			putQueryParameter("WorkspaceId", workspaceId);
 		}
 	}
 

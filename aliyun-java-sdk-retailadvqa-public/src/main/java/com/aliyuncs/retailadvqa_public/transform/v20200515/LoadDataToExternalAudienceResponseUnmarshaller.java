@@ -23,11 +23,11 @@ public class LoadDataToExternalAudienceResponseUnmarshaller {
 	public static LoadDataToExternalAudienceResponse unmarshall(LoadDataToExternalAudienceResponse loadDataToExternalAudienceResponse, UnmarshallerContext _ctx) {
 		
 		loadDataToExternalAudienceResponse.setRequestId(_ctx.stringValue("LoadDataToExternalAudienceResponse.RequestId"));
-		loadDataToExternalAudienceResponse.setErrorCode(_ctx.stringValue("LoadDataToExternalAudienceResponse.ErrorCode"));
 		loadDataToExternalAudienceResponse.setErrorDesc(_ctx.stringValue("LoadDataToExternalAudienceResponse.ErrorDesc"));
+		loadDataToExternalAudienceResponse.setTraceId(_ctx.stringValue("LoadDataToExternalAudienceResponse.TraceId"));
+		loadDataToExternalAudienceResponse.setErrorCode(_ctx.stringValue("LoadDataToExternalAudienceResponse.ErrorCode"));
 		loadDataToExternalAudienceResponse.setExStack(_ctx.stringValue("LoadDataToExternalAudienceResponse.ExStack"));
 		loadDataToExternalAudienceResponse.setSuccess(_ctx.stringValue("LoadDataToExternalAudienceResponse.Success"));
-		loadDataToExternalAudienceResponse.setTraceId(_ctx.stringValue("LoadDataToExternalAudienceResponse.TraceId"));
 	 
 	 	return loadDataToExternalAudienceResponse;
 	}

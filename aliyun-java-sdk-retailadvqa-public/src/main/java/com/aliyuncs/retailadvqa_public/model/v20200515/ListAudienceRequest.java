@@ -15,7 +15,6 @@
 package com.aliyuncs.retailadvqa_public.model.v20200515;
 
 import com.aliyuncs.RpcAcsRequest;
-import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 
 /**
@@ -38,9 +37,10 @@ public class ListAudienceRequest extends RpcAcsRequest<ListAudienceResponse> {
 	private String columnName;
 
 	private String order;
+
+	private String workspaceId;
 	public ListAudienceRequest() {
 		super("retailadvqa-public", "2020-05-15", "ListAudience");
-		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.GET);
 	}
 
@@ -118,6 +118,17 @@ public class ListAudienceRequest extends RpcAcsRequest<ListAudienceResponse> {
 		this.order = order;
 		if(order != null){
 			putQueryParameter("Order", order);
+		}
+	}
+
+	public String getWorkspaceId() {
+		return this.workspaceId;
+	}
+
+	public void setWorkspaceId(String workspaceId) {
+		this.workspaceId = workspaceId;
+		if(workspaceId != null){
+			putQueryParameter("WorkspaceId", workspaceId);
 		}
 	}
 

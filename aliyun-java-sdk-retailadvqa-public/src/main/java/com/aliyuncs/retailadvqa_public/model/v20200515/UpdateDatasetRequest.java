@@ -35,6 +35,8 @@ public class UpdateDatasetRequest extends RpcAcsRequest<UpdateDatasetResponse> {
 	private String type;
 
 	private String dataSet;
+
+	private String workspaceId;
 	public UpdateDatasetRequest() {
 		super("retailadvqa-public", "2020-05-15", "UpdateDataset");
 		setMethod(MethodType.POST);
@@ -103,6 +105,17 @@ public class UpdateDatasetRequest extends RpcAcsRequest<UpdateDatasetResponse> {
 		this.dataSet = dataSet;
 		if(dataSet != null){
 			putBodyParameter("DataSet", dataSet);
+		}
+	}
+
+	public String getWorkspaceId() {
+		return this.workspaceId;
+	}
+
+	public void setWorkspaceId(String workspaceId) {
+		this.workspaceId = workspaceId;
+		if(workspaceId != null){
+			putBodyParameter("WorkspaceId", workspaceId);
 		}
 	}
 

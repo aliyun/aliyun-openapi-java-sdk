@@ -68,13 +68,17 @@ public class GetMediaResourcePackageResponse extends AcsResponse {
 
 		private Integer currentPage;
 
+		private Boolean slrGrantedFlag;
+
+		private Boolean effectiveInstanceFlag;
+
 		private Integer pageSize;
 
-		private Integer pageCount;
+		private String bagsInfo;
 
 		private Integer totalCount;
 
-		private String bagsInfo;
+		private Integer pageCount;
 
 		public Integer getCurrentPage() {
 			return this.currentPage;
@@ -82,6 +86,22 @@ public class GetMediaResourcePackageResponse extends AcsResponse {
 
 		public void setCurrentPage(Integer currentPage) {
 			this.currentPage = currentPage;
+		}
+
+		public Boolean getSlrGrantedFlag() {
+			return this.slrGrantedFlag;
+		}
+
+		public void setSlrGrantedFlag(Boolean slrGrantedFlag) {
+			this.slrGrantedFlag = slrGrantedFlag;
+		}
+
+		public Boolean getEffectiveInstanceFlag() {
+			return this.effectiveInstanceFlag;
+		}
+
+		public void setEffectiveInstanceFlag(Boolean effectiveInstanceFlag) {
+			this.effectiveInstanceFlag = effectiveInstanceFlag;
 		}
 
 		public Integer getPageSize() {
@@ -92,12 +112,12 @@ public class GetMediaResourcePackageResponse extends AcsResponse {
 			this.pageSize = pageSize;
 		}
 
-		public Integer getPageCount() {
-			return this.pageCount;
+		public String getBagsInfo() {
+			return this.bagsInfo;
 		}
 
-		public void setPageCount(Integer pageCount) {
-			this.pageCount = pageCount;
+		public void setBagsInfo(String bagsInfo) {
+			this.bagsInfo = bagsInfo;
 		}
 
 		public Integer getTotalCount() {
@@ -108,12 +128,12 @@ public class GetMediaResourcePackageResponse extends AcsResponse {
 			this.totalCount = totalCount;
 		}
 
-		public String getBagsInfo() {
-			return this.bagsInfo;
+		public Integer getPageCount() {
+			return this.pageCount;
 		}
 
-		public void setBagsInfo(String bagsInfo) {
-			this.bagsInfo = bagsInfo;
+		public void setPageCount(Integer pageCount) {
+			this.pageCount = pageCount;
 		}
 	}
 

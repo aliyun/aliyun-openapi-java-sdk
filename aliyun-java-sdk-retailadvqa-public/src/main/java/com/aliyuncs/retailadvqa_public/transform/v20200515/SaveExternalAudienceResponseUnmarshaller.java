@@ -24,10 +24,10 @@ public class SaveExternalAudienceResponseUnmarshaller {
 	public static SaveExternalAudienceResponse unmarshall(SaveExternalAudienceResponse saveExternalAudienceResponse, UnmarshallerContext _ctx) {
 		
 		saveExternalAudienceResponse.setRequestId(_ctx.stringValue("SaveExternalAudienceResponse.RequestId"));
-		saveExternalAudienceResponse.setErrorCode(_ctx.stringValue("SaveExternalAudienceResponse.ErrorCode"));
 		saveExternalAudienceResponse.setErrorDesc(_ctx.stringValue("SaveExternalAudienceResponse.ErrorDesc"));
-		saveExternalAudienceResponse.setSuccess(_ctx.stringValue("SaveExternalAudienceResponse.Success"));
 		saveExternalAudienceResponse.setTraceId(_ctx.stringValue("SaveExternalAudienceResponse.TraceId"));
+		saveExternalAudienceResponse.setErrorCode(_ctx.stringValue("SaveExternalAudienceResponse.ErrorCode"));
+		saveExternalAudienceResponse.setSuccess(_ctx.booleanValue("SaveExternalAudienceResponse.Success"));
 
 		Data data = new Data();
 		data.setAudienceId(_ctx.stringValue("SaveExternalAudienceResponse.Data.AudienceId"));

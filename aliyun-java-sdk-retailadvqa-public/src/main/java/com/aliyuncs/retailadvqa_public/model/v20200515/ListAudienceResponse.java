@@ -25,24 +25,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListAudienceResponse extends AcsResponse {
 
-	private String errorCode;
+	private String requestId;
 
 	private String errorDesc;
 
-	private Boolean success;
-
 	private String traceId;
 
-	private String requestId;
+	private String errorCode;
+
+	private Boolean success;
 
 	private Data data;
 
-	public String getErrorCode() {
-		return this.errorCode;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getErrorDesc() {
@@ -53,14 +53,6 @@ public class ListAudienceResponse extends AcsResponse {
 		this.errorDesc = errorDesc;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
 	public String getTraceId() {
 		return this.traceId;
 	}
@@ -69,12 +61,20 @@ public class ListAudienceResponse extends AcsResponse {
 		this.traceId = traceId;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getErrorCode() {
+		return this.errorCode;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Data getData() {
@@ -87,21 +87,13 @@ public class ListAudienceResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String totalNum;
-
 		private String pageNum;
 
 		private String pageSize;
 
+		private String totalNum;
+
 		private List<ContentItem> content;
-
-		public String getTotalNum() {
-			return this.totalNum;
-		}
-
-		public void setTotalNum(String totalNum) {
-			this.totalNum = totalNum;
-		}
 
 		public String getPageNum() {
 			return this.pageNum;
@@ -119,6 +111,14 @@ public class ListAudienceResponse extends AcsResponse {
 			this.pageSize = pageSize;
 		}
 
+		public String getTotalNum() {
+			return this.totalNum;
+		}
+
+		public void setTotalNum(String totalNum) {
+			this.totalNum = totalNum;
+		}
+
 		public List<ContentItem> getContent() {
 			return this.content;
 		}
@@ -129,38 +129,56 @@ public class ListAudienceResponse extends AcsResponse {
 
 		public static class ContentItem {
 
-			private String id;
+			private String latestDataModifyStatus;
 
-			private String name;
+			private String errorMessage;
+
+			private String numberOfAudiences;
+
+			private String latestDataModifyTime;
 
 			private String gmtCreate;
 
 			private String gmtModified;
 
-			private String latestDataModifyTime;
+			private String name;
 
-			private String latestDataModifyStatus;
+			private Boolean isDynamic;
 
-			private String numberOfAudiences;
-
-			private String errorMessage;
+			private String id;
 
 			private List<String> mappingTypes;
 
-			public String getId() {
-				return this.id;
+			public String getLatestDataModifyStatus() {
+				return this.latestDataModifyStatus;
 			}
 
-			public void setId(String id) {
-				this.id = id;
+			public void setLatestDataModifyStatus(String latestDataModifyStatus) {
+				this.latestDataModifyStatus = latestDataModifyStatus;
 			}
 
-			public String getName() {
-				return this.name;
+			public String getErrorMessage() {
+				return this.errorMessage;
 			}
 
-			public void setName(String name) {
-				this.name = name;
+			public void setErrorMessage(String errorMessage) {
+				this.errorMessage = errorMessage;
+			}
+
+			public String getNumberOfAudiences() {
+				return this.numberOfAudiences;
+			}
+
+			public void setNumberOfAudiences(String numberOfAudiences) {
+				this.numberOfAudiences = numberOfAudiences;
+			}
+
+			public String getLatestDataModifyTime() {
+				return this.latestDataModifyTime;
+			}
+
+			public void setLatestDataModifyTime(String latestDataModifyTime) {
+				this.latestDataModifyTime = latestDataModifyTime;
 			}
 
 			public String getGmtCreate() {
@@ -179,36 +197,28 @@ public class ListAudienceResponse extends AcsResponse {
 				this.gmtModified = gmtModified;
 			}
 
-			public String getLatestDataModifyTime() {
-				return this.latestDataModifyTime;
+			public String getName() {
+				return this.name;
 			}
 
-			public void setLatestDataModifyTime(String latestDataModifyTime) {
-				this.latestDataModifyTime = latestDataModifyTime;
+			public void setName(String name) {
+				this.name = name;
 			}
 
-			public String getLatestDataModifyStatus() {
-				return this.latestDataModifyStatus;
+			public Boolean getIsDynamic() {
+				return this.isDynamic;
 			}
 
-			public void setLatestDataModifyStatus(String latestDataModifyStatus) {
-				this.latestDataModifyStatus = latestDataModifyStatus;
+			public void setIsDynamic(Boolean isDynamic) {
+				this.isDynamic = isDynamic;
 			}
 
-			public String getNumberOfAudiences() {
-				return this.numberOfAudiences;
+			public String getId() {
+				return this.id;
 			}
 
-			public void setNumberOfAudiences(String numberOfAudiences) {
-				this.numberOfAudiences = numberOfAudiences;
-			}
-
-			public String getErrorMessage() {
-				return this.errorMessage;
-			}
-
-			public void setErrorMessage(String errorMessage) {
-				this.errorMessage = errorMessage;
+			public void setId(String id) {
+				this.id = id;
 			}
 
 			public List<String> getMappingTypes() {
