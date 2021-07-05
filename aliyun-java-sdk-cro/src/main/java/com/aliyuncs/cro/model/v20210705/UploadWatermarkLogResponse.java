@@ -12,33 +12,27 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.cro.model.v20200102;
+package com.aliyuncs.cro.model.v20210705;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cro.transform.v20200102.AccountRiskReportResponseUnmarshaller;
+import com.aliyuncs.cro.transform.v20210705.UploadWatermarkLogResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class AccountRiskReportResponse extends AcsResponse {
-
-	private Integer code;
+public class UploadWatermarkLogResponse extends AcsResponse {
 
 	private Boolean success;
 
-	private String message;
+	private String errorCode;
+
+	private String errorMsg;
+
+	private String domain;
 
 	private String requestId;
-
-	public Integer getCode() {
-		return this.code;
-	}
-
-	public void setCode(Integer code) {
-		this.code = code;
-	}
 
 	public Boolean getSuccess() {
 		return this.success;
@@ -48,12 +42,28 @@ public class AccountRiskReportResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public String getErrorCode() {
+		return this.errorCode;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
+	}
+
+	public String getErrorMsg() {
+		return this.errorMsg;
+	}
+
+	public void setErrorMsg(String errorMsg) {
+		this.errorMsg = errorMsg;
+	}
+
+	public String getDomain() {
+		return this.domain;
+	}
+
+	public void setDomain(String domain) {
+		this.domain = domain;
 	}
 
 	public String getRequestId() {
@@ -65,8 +75,8 @@ public class AccountRiskReportResponse extends AcsResponse {
 	}
 
 	@Override
-	public AccountRiskReportResponse getInstance(UnmarshallerContext context) {
-		return	AccountRiskReportResponseUnmarshaller.unmarshall(this, context);
+	public UploadWatermarkLogResponse getInstance(UnmarshallerContext context) {
+		return	UploadWatermarkLogResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

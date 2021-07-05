@@ -12,59 +12,58 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.cro.model.v20200102;
+package com.aliyuncs.cro.model.v20210705;
 
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cro.transform.v20200102.ScanOpenSourceComplianceResponseUnmarshaller;
+import com.aliyuncs.cro.transform.v20210705.ApplyWatermarkLicenseResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ScanOpenSourceComplianceResponse extends AcsResponse {
+public class ApplyWatermarkLicenseResponse extends AcsResponse {
 
-	private Integer code;
+	private Boolean success;
 
-	private String message;
+	private String errorCode;
 
-	private Integer status;
+	private String errorMsg;
 
-	private Map<Object,Object> data;
+	private String domain;
 
 	private String requestId;
 
-	public Integer getCode() {
-		return this.code;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setCode(Integer code) {
-		this.code = code;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public String getErrorCode() {
+		return this.errorCode;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
 	}
 
-	public Integer getStatus() {
-		return this.status;
+	public String getErrorMsg() {
+		return this.errorMsg;
 	}
 
-	public void setStatus(Integer status) {
-		this.status = status;
+	public void setErrorMsg(String errorMsg) {
+		this.errorMsg = errorMsg;
 	}
 
-	public Map<Object,Object> getData() {
-		return this.data;
+	public String getDomain() {
+		return this.domain;
 	}
 
-	public void setData(Map<Object,Object> data) {
-		this.data = data;
+	public void setDomain(String domain) {
+		this.domain = domain;
 	}
 
 	public String getRequestId() {
@@ -76,8 +75,8 @@ public class ScanOpenSourceComplianceResponse extends AcsResponse {
 	}
 
 	@Override
-	public ScanOpenSourceComplianceResponse getInstance(UnmarshallerContext context) {
-		return	ScanOpenSourceComplianceResponseUnmarshaller.unmarshall(this, context);
+	public ApplyWatermarkLicenseResponse getInstance(UnmarshallerContext context) {
+		return	ApplyWatermarkLicenseResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override
