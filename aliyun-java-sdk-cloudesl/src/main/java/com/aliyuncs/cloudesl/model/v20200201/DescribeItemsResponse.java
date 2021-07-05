@@ -263,6 +263,8 @@ public class DescribeItemsResponse extends AcsResponse {
 
 		private Boolean beMember;
 
+		private String templateSceneId;
+
 		public String getCategoryName() {
 			return this.categoryName;
 		}
@@ -685,6 +687,14 @@ public class DescribeItemsResponse extends AcsResponse {
 
 		public void setBeMember(Boolean beMember) {
 			this.beMember = beMember;
+		}
+
+		public String getTemplateSceneId() {
+			return this.templateSceneId;
+		}
+
+		public void setTemplateSceneId(String templateSceneId) {
+			this.templateSceneId = templateSceneId;
 		}
 	}
 

@@ -51,6 +51,7 @@ public class DescribeEslDevicesResponseUnmarshaller {
 			eslDeviceInfo.setBatteryLevel(_ctx.integerValue("DescribeEslDevicesResponse.EslDevices["+ i +"].BatteryLevel"));
 			eslDeviceInfo.setScreenWidth(_ctx.integerValue("DescribeEslDevicesResponse.EslDevices["+ i +"].ScreenWidth"));
 			eslDeviceInfo.setScreenHeight(_ctx.integerValue("DescribeEslDevicesResponse.EslDevices["+ i +"].ScreenHeight"));
+			eslDeviceInfo.setEslSignal(_ctx.integerValue("DescribeEslDevicesResponse.EslDevices["+ i +"].EslSignal"));
 
 			eslDevices.add(eslDeviceInfo);
 		}

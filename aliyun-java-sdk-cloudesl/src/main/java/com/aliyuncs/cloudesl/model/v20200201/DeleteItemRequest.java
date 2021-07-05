@@ -22,36 +22,21 @@ import com.aliyuncs.cloudesl.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribePlanogramEslDevicesRequest extends RpcAcsRequest<DescribePlanogramEslDevicesResponse> {
+public class DeleteItemRequest extends RpcAcsRequest<DeleteItemResponse> {
 	   
-
-	private String extraParams;
 
 	private String storeId;
 
-	private Integer layer;
+	private String itemBarCode;
 
-	private String eslBarCode;
-
-	private String shelf;
-	public DescribePlanogramEslDevicesRequest() {
-		super("cloudesl", "2020-02-01", "DescribePlanogramEslDevices", "cloudesl");
+	private Boolean unbindEslDevice;
+	public DeleteItemRequest() {
+		super("cloudesl", "2020-02-01", "DeleteItem", "cloudesl");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getExtraParams() {
-		return this.extraParams;
-	}
-
-	public void setExtraParams(String extraParams) {
-		this.extraParams = extraParams;
-		if(extraParams != null){
-			putBodyParameter("ExtraParams", extraParams);
-		}
 	}
 
 	public String getStoreId() {
@@ -65,42 +50,31 @@ public class DescribePlanogramEslDevicesRequest extends RpcAcsRequest<DescribePl
 		}
 	}
 
-	public Integer getLayer() {
-		return this.layer;
+	public String getItemBarCode() {
+		return this.itemBarCode;
 	}
 
-	public void setLayer(Integer layer) {
-		this.layer = layer;
-		if(layer != null){
-			putBodyParameter("Layer", layer.toString());
+	public void setItemBarCode(String itemBarCode) {
+		this.itemBarCode = itemBarCode;
+		if(itemBarCode != null){
+			putBodyParameter("ItemBarCode", itemBarCode);
 		}
 	}
 
-	public String getEslBarCode() {
-		return this.eslBarCode;
+	public Boolean getUnbindEslDevice() {
+		return this.unbindEslDevice;
 	}
 
-	public void setEslBarCode(String eslBarCode) {
-		this.eslBarCode = eslBarCode;
-		if(eslBarCode != null){
-			putBodyParameter("EslBarCode", eslBarCode);
-		}
-	}
-
-	public String getShelf() {
-		return this.shelf;
-	}
-
-	public void setShelf(String shelf) {
-		this.shelf = shelf;
-		if(shelf != null){
-			putBodyParameter("Shelf", shelf);
+	public void setUnbindEslDevice(Boolean unbindEslDevice) {
+		this.unbindEslDevice = unbindEslDevice;
+		if(unbindEslDevice != null){
+			putBodyParameter("UnbindEslDevice", unbindEslDevice.toString());
 		}
 	}
 
 	@Override
-	public Class<DescribePlanogramEslDevicesResponse> getResponseClass() {
-		return DescribePlanogramEslDevicesResponse.class;
+	public Class<DeleteItemResponse> getResponseClass() {
+		return DeleteItemResponse.class;
 	}
 
 }

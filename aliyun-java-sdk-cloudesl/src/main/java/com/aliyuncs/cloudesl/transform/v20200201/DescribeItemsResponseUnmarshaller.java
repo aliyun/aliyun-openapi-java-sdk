@@ -95,6 +95,7 @@ public class DescribeItemsResponseUnmarshaller {
 			itemInfo.setGmtCreate(_ctx.stringValue("DescribeItemsResponse.Items["+ i +"].GmtCreate"));
 			itemInfo.setGmtModified(_ctx.stringValue("DescribeItemsResponse.Items["+ i +"].GmtModified"));
 			itemInfo.setBeMember(_ctx.booleanValue("DescribeItemsResponse.Items["+ i +"].BeMember"));
+			itemInfo.setTemplateSceneId(_ctx.stringValue("DescribeItemsResponse.Items["+ i +"].TemplateSceneId"));
 
 			items.add(itemInfo);
 		}
