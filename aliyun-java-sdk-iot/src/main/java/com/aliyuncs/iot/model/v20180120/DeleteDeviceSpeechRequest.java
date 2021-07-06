@@ -23,38 +23,21 @@ import com.aliyuncs.iot.Endpoint;
  * @author auto create
  * @version 
  */
-public class SpeechByCombinationRequest extends RpcAcsRequest<SpeechByCombinationResponse> {
+public class DeleteDeviceSpeechRequest extends RpcAcsRequest<DeleteDeviceSpeechResponse> {
 	   
-
-	private String audioFormat;
 
 	private String iotId;
 
-	private List<String> combinationLists;
-
 	private String iotInstanceId;
 
-	private String productKey;
-
-	private String deviceName;
-	public SpeechByCombinationRequest() {
-		super("Iot", "2018-01-20", "SpeechByCombination", "iot");
+	private List<DeviceSpeechList> deviceSpeechLists;
+	public DeleteDeviceSpeechRequest() {
+		super("Iot", "2018-01-20", "DeleteDeviceSpeech", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getAudioFormat() {
-		return this.audioFormat;
-	}
-
-	public void setAudioFormat(String audioFormat) {
-		this.audioFormat = audioFormat;
-		if(audioFormat != null){
-			putBodyParameter("AudioFormat", audioFormat);
-		}
 	}
 
 	public String getIotId() {
@@ -68,19 +51,6 @@ public class SpeechByCombinationRequest extends RpcAcsRequest<SpeechByCombinatio
 		}
 	}
 
-	public List<String> getCombinationLists() {
-		return this.combinationLists;
-	}
-
-	public void setCombinationLists(List<String> combinationLists) {
-		this.combinationLists = combinationLists;	
-		if (combinationLists != null) {
-			for (int i = 0; i < combinationLists.size(); i++) {
-				putBodyParameter("CombinationList." + (i + 1) , combinationLists.get(i));
-			}
-		}	
-	}
-
 	public String getIotInstanceId() {
 		return this.iotInstanceId;
 	}
@@ -92,31 +62,46 @@ public class SpeechByCombinationRequest extends RpcAcsRequest<SpeechByCombinatio
 		}
 	}
 
-	public String getProductKey() {
-		return this.productKey;
+	public List<DeviceSpeechList> getDeviceSpeechLists() {
+		return this.deviceSpeechLists;
 	}
 
-	public void setProductKey(String productKey) {
-		this.productKey = productKey;
-		if(productKey != null){
-			putBodyParameter("ProductKey", productKey);
+	public void setDeviceSpeechLists(List<DeviceSpeechList> deviceSpeechLists) {
+		this.deviceSpeechLists = deviceSpeechLists;	
+		if (deviceSpeechLists != null) {
+			for (int depth1 = 0; depth1 < deviceSpeechLists.size(); depth1++) {
+				putBodyParameter("DeviceSpeechList." + (depth1 + 1) + ".BizCode" , deviceSpeechLists.get(depth1).getBizCode());
+				putBodyParameter("DeviceSpeechList." + (depth1 + 1) + ".AudioFormat" , deviceSpeechLists.get(depth1).getAudioFormat());
+			}
+		}	
+	}
+
+	public static class DeviceSpeechList {
+
+		private String bizCode;
+
+		private String audioFormat;
+
+		public String getBizCode() {
+			return this.bizCode;
 		}
-	}
 
-	public String getDeviceName() {
-		return this.deviceName;
-	}
+		public void setBizCode(String bizCode) {
+			this.bizCode = bizCode;
+		}
 
-	public void setDeviceName(String deviceName) {
-		this.deviceName = deviceName;
-		if(deviceName != null){
-			putBodyParameter("DeviceName", deviceName);
+		public String getAudioFormat() {
+			return this.audioFormat;
+		}
+
+		public void setAudioFormat(String audioFormat) {
+			this.audioFormat = audioFormat;
 		}
 	}
 
 	@Override
-	public Class<SpeechByCombinationResponse> getResponseClass() {
-		return SpeechByCombinationResponse.class;
+	public Class<DeleteDeviceSpeechResponse> getResponseClass() {
+		return DeleteDeviceSpeechResponse.class;
 	}
 
 }

@@ -29,6 +29,8 @@ public class CreateSpeechRequest extends RpcAcsRequest<CreateSpeechResponse> {
 
 	private String projectCode;
 
+	private String audioFormat;
+
 	private String iotInstanceId;
 
 	private String text;
@@ -68,6 +70,17 @@ public class CreateSpeechRequest extends RpcAcsRequest<CreateSpeechResponse> {
 		this.projectCode = projectCode;
 		if(projectCode != null){
 			putBodyParameter("ProjectCode", projectCode);
+		}
+	}
+
+	public String getAudioFormat() {
+		return this.audioFormat;
+	}
+
+	public void setAudioFormat(String audioFormat) {
+		this.audioFormat = audioFormat;
+		if(audioFormat != null){
+			putBodyParameter("AudioFormat", audioFormat);
 		}
 	}
 

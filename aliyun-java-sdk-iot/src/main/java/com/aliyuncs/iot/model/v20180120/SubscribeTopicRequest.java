@@ -23,62 +23,23 @@ import com.aliyuncs.iot.Endpoint;
  * @author auto create
  * @version 
  */
-public class SpeechByCombinationRequest extends RpcAcsRequest<SpeechByCombinationResponse> {
+public class SubscribeTopicRequest extends RpcAcsRequest<SubscribeTopicResponse> {
 	   
-
-	private String audioFormat;
-
-	private String iotId;
-
-	private List<String> combinationLists;
 
 	private String iotInstanceId;
 
 	private String productKey;
 
+	private List<String> topics;
+
 	private String deviceName;
-	public SpeechByCombinationRequest() {
-		super("Iot", "2018-01-20", "SpeechByCombination", "iot");
+	public SubscribeTopicRequest() {
+		super("Iot", "2018-01-20", "SubscribeTopic", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getAudioFormat() {
-		return this.audioFormat;
-	}
-
-	public void setAudioFormat(String audioFormat) {
-		this.audioFormat = audioFormat;
-		if(audioFormat != null){
-			putBodyParameter("AudioFormat", audioFormat);
-		}
-	}
-
-	public String getIotId() {
-		return this.iotId;
-	}
-
-	public void setIotId(String iotId) {
-		this.iotId = iotId;
-		if(iotId != null){
-			putBodyParameter("IotId", iotId);
-		}
-	}
-
-	public List<String> getCombinationLists() {
-		return this.combinationLists;
-	}
-
-	public void setCombinationLists(List<String> combinationLists) {
-		this.combinationLists = combinationLists;	
-		if (combinationLists != null) {
-			for (int i = 0; i < combinationLists.size(); i++) {
-				putBodyParameter("CombinationList." + (i + 1) , combinationLists.get(i));
-			}
-		}	
 	}
 
 	public String getIotInstanceId() {
@@ -88,7 +49,7 @@ public class SpeechByCombinationRequest extends RpcAcsRequest<SpeechByCombinatio
 	public void setIotInstanceId(String iotInstanceId) {
 		this.iotInstanceId = iotInstanceId;
 		if(iotInstanceId != null){
-			putBodyParameter("IotInstanceId", iotInstanceId);
+			putQueryParameter("IotInstanceId", iotInstanceId);
 		}
 	}
 
@@ -99,8 +60,21 @@ public class SpeechByCombinationRequest extends RpcAcsRequest<SpeechByCombinatio
 	public void setProductKey(String productKey) {
 		this.productKey = productKey;
 		if(productKey != null){
-			putBodyParameter("ProductKey", productKey);
+			putQueryParameter("ProductKey", productKey);
 		}
+	}
+
+	public List<String> getTopics() {
+		return this.topics;
+	}
+
+	public void setTopics(List<String> topics) {
+		this.topics = topics;	
+		if (topics != null) {
+			for (int i = 0; i < topics.size(); i++) {
+				putQueryParameter("Topic." + (i + 1) , topics.get(i));
+			}
+		}	
 	}
 
 	public String getDeviceName() {
@@ -110,13 +84,13 @@ public class SpeechByCombinationRequest extends RpcAcsRequest<SpeechByCombinatio
 	public void setDeviceName(String deviceName) {
 		this.deviceName = deviceName;
 		if(deviceName != null){
-			putBodyParameter("DeviceName", deviceName);
+			putQueryParameter("DeviceName", deviceName);
 		}
 	}
 
 	@Override
-	public Class<SpeechByCombinationResponse> getResponseClass() {
-		return SpeechByCombinationResponse.class;
+	public Class<SubscribeTopicResponse> getResponseClass() {
+		return SubscribeTopicResponse.class;
 	}
 
 }

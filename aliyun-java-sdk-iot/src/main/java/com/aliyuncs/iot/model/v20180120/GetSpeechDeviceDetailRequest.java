@@ -22,20 +22,14 @@ import com.aliyuncs.iot.Endpoint;
  * @author auto create
  * @version 
  */
-public class QuerySpeechListRequest extends RpcAcsRequest<QuerySpeechListResponse> {
+public class GetSpeechDeviceDetailRequest extends RpcAcsRequest<GetSpeechDeviceDetailResponse> {
 	   
 
-	private String projectCode;
-
-	private Integer pageId;
-
-	private String audioFormat;
+	private String iotId;
 
 	private String iotInstanceId;
-
-	private Integer pageSize;
-	public QuerySpeechListRequest() {
-		super("Iot", "2018-01-20", "QuerySpeechList", "iot");
+	public GetSpeechDeviceDetailRequest() {
+		super("Iot", "2018-01-20", "GetSpeechDeviceDetail", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -43,36 +37,14 @@ public class QuerySpeechListRequest extends RpcAcsRequest<QuerySpeechListRespons
 		} catch (Exception e) {}
 	}
 
-	public String getProjectCode() {
-		return this.projectCode;
+	public String getIotId() {
+		return this.iotId;
 	}
 
-	public void setProjectCode(String projectCode) {
-		this.projectCode = projectCode;
-		if(projectCode != null){
-			putBodyParameter("ProjectCode", projectCode);
-		}
-	}
-
-	public Integer getPageId() {
-		return this.pageId;
-	}
-
-	public void setPageId(Integer pageId) {
-		this.pageId = pageId;
-		if(pageId != null){
-			putBodyParameter("PageId", pageId.toString());
-		}
-	}
-
-	public String getAudioFormat() {
-		return this.audioFormat;
-	}
-
-	public void setAudioFormat(String audioFormat) {
-		this.audioFormat = audioFormat;
-		if(audioFormat != null){
-			putBodyParameter("AudioFormat", audioFormat);
+	public void setIotId(String iotId) {
+		this.iotId = iotId;
+		if(iotId != null){
+			putBodyParameter("IotId", iotId);
 		}
 	}
 
@@ -87,20 +59,9 @@ public class QuerySpeechListRequest extends RpcAcsRequest<QuerySpeechListRespons
 		}
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putBodyParameter("PageSize", pageSize.toString());
-		}
-	}
-
 	@Override
-	public Class<QuerySpeechListResponse> getResponseClass() {
-		return QuerySpeechListResponse.class;
+	public Class<GetSpeechDeviceDetailResponse> getResponseClass() {
+		return GetSpeechDeviceDetailResponse.class;
 	}
 
 }

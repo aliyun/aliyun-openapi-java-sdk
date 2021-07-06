@@ -16,14 +16,14 @@ package com.aliyuncs.iot.model.v20180120;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.iot.transform.v20180120.QuerySpeechListResponseUnmarshaller;
+import com.aliyuncs.iot.transform.v20180120.QuerySpeechDeviceResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class QuerySpeechListResponse extends AcsResponse {
+public class QuerySpeechDeviceResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -119,123 +119,50 @@ public class QuerySpeechListResponse extends AcsResponse {
 
 		public static class Items {
 
-			private String speechCode;
+			private String productKey;
 
-			private String bizCode;
+			private String deviceName;
 
-			private String text;
+			private String iotId;
 
-			private String voice;
+			private Float availableSpace;
 
-			private String speechType;
-
-			private String audioFormat;
-
-			private List<Items1> speechList;
-
-			public String getSpeechCode() {
-				return this.speechCode;
+			public String getProductKey() {
+				return this.productKey;
 			}
 
-			public void setSpeechCode(String speechCode) {
-				this.speechCode = speechCode;
+			public void setProductKey(String productKey) {
+				this.productKey = productKey;
 			}
 
-			public String getBizCode() {
-				return this.bizCode;
+			public String getDeviceName() {
+				return this.deviceName;
 			}
 
-			public void setBizCode(String bizCode) {
-				this.bizCode = bizCode;
+			public void setDeviceName(String deviceName) {
+				this.deviceName = deviceName;
 			}
 
-			public String getText() {
-				return this.text;
+			public String getIotId() {
+				return this.iotId;
 			}
 
-			public void setText(String text) {
-				this.text = text;
+			public void setIotId(String iotId) {
+				this.iotId = iotId;
 			}
 
-			public String getVoice() {
-				return this.voice;
+			public Float getAvailableSpace() {
+				return this.availableSpace;
 			}
 
-			public void setVoice(String voice) {
-				this.voice = voice;
-			}
-
-			public String getSpeechType() {
-				return this.speechType;
-			}
-
-			public void setSpeechType(String speechType) {
-				this.speechType = speechType;
-			}
-
-			public String getAudioFormat() {
-				return this.audioFormat;
-			}
-
-			public void setAudioFormat(String audioFormat) {
-				this.audioFormat = audioFormat;
-			}
-
-			public List<Items1> getSpeechList() {
-				return this.speechList;
-			}
-
-			public void setSpeechList(List<Items1> speechList) {
-				this.speechList = speechList;
-			}
-
-			public static class Items1 {
-
-				private String speechCode;
-
-				private String bizCode;
-
-				private String text;
-
-				private String voice;
-
-				public String getSpeechCode() {
-					return this.speechCode;
-				}
-
-				public void setSpeechCode(String speechCode) {
-					this.speechCode = speechCode;
-				}
-
-				public String getBizCode() {
-					return this.bizCode;
-				}
-
-				public void setBizCode(String bizCode) {
-					this.bizCode = bizCode;
-				}
-
-				public String getText() {
-					return this.text;
-				}
-
-				public void setText(String text) {
-					this.text = text;
-				}
-
-				public String getVoice() {
-					return this.voice;
-				}
-
-				public void setVoice(String voice) {
-					this.voice = voice;
-				}
+			public void setAvailableSpace(Float availableSpace) {
+				this.availableSpace = availableSpace;
 			}
 		}
 	}
 
 	@Override
-	public QuerySpeechListResponse getInstance(UnmarshallerContext context) {
-		return	QuerySpeechListResponseUnmarshaller.unmarshall(this, context);
+	public QuerySpeechDeviceResponse getInstance(UnmarshallerContext context) {
+		return	QuerySpeechDeviceResponseUnmarshaller.unmarshall(this, context);
 	}
 }
