@@ -22,30 +22,22 @@ import com.aliyuncs.r_kvstore.Endpoint;
  * @author auto create
  * @version 
  */
-public class RestoreInstanceRequest extends RpcAcsRequest<RestoreInstanceResponse> {
+public class RemoveSubInstanceRequest extends RpcAcsRequest<RemoveSubInstanceResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String filterKey;
-
 	private String securityToken;
-
-	private String restoreTime;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private String backupId;
-
 	private Long ownerId;
 
-	private String restoreType;
-
 	private String instanceId;
-	public RestoreInstanceRequest() {
-		super("R-kvstore", "2015-01-01", "RestoreInstance", "redisa");
+	public RemoveSubInstanceRequest() {
+		super("R-kvstore", "2015-01-01", "RemoveSubInstance", "redisa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -64,17 +56,6 @@ public class RestoreInstanceRequest extends RpcAcsRequest<RestoreInstanceRespons
 		}
 	}
 
-	public String getFilterKey() {
-		return this.filterKey;
-	}
-
-	public void setFilterKey(String filterKey) {
-		this.filterKey = filterKey;
-		if(filterKey != null){
-			putQueryParameter("FilterKey", filterKey);
-		}
-	}
-
 	public String getSecurityToken() {
 		return this.securityToken;
 	}
@@ -83,17 +64,6 @@ public class RestoreInstanceRequest extends RpcAcsRequest<RestoreInstanceRespons
 		this.securityToken = securityToken;
 		if(securityToken != null){
 			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	public String getRestoreTime() {
-		return this.restoreTime;
-	}
-
-	public void setRestoreTime(String restoreTime) {
-		this.restoreTime = restoreTime;
-		if(restoreTime != null){
-			putQueryParameter("RestoreTime", restoreTime);
 		}
 	}
 
@@ -119,17 +89,6 @@ public class RestoreInstanceRequest extends RpcAcsRequest<RestoreInstanceRespons
 		}
 	}
 
-	public String getBackupId() {
-		return this.backupId;
-	}
-
-	public void setBackupId(String backupId) {
-		this.backupId = backupId;
-		if(backupId != null){
-			putQueryParameter("BackupId", backupId);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -138,17 +97,6 @@ public class RestoreInstanceRequest extends RpcAcsRequest<RestoreInstanceRespons
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getRestoreType() {
-		return this.restoreType;
-	}
-
-	public void setRestoreType(String restoreType) {
-		this.restoreType = restoreType;
-		if(restoreType != null){
-			putQueryParameter("RestoreType", restoreType);
 		}
 	}
 
@@ -164,8 +112,8 @@ public class RestoreInstanceRequest extends RpcAcsRequest<RestoreInstanceRespons
 	}
 
 	@Override
-	public Class<RestoreInstanceResponse> getResponseClass() {
-		return RestoreInstanceResponse.class;
+	public Class<RemoveSubInstanceResponse> getResponseClass() {
+		return RemoveSubInstanceResponse.class;
 	}
 
 }

@@ -27,6 +27,8 @@ public class CreateTairInstanceRequest extends RpcAcsRequest<CreateTairInstanceR
 
 	private Long resourceOwnerId;
 
+	private String secondaryZoneId;
+
 	private String couponNo;
 
 	private String engineVersion;
@@ -99,6 +101,17 @@ public class CreateTairInstanceRequest extends RpcAcsRequest<CreateTairInstanceR
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getSecondaryZoneId() {
+		return this.secondaryZoneId;
+	}
+
+	public void setSecondaryZoneId(String secondaryZoneId) {
+		this.secondaryZoneId = secondaryZoneId;
+		if(secondaryZoneId != null){
+			putQueryParameter("SecondaryZoneId", secondaryZoneId);
 		}
 	}
 

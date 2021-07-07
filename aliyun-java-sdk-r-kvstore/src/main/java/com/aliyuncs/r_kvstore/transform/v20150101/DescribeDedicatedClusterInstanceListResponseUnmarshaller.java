@@ -35,7 +35,7 @@ public class DescribeDedicatedClusterInstanceListResponseUnmarshaller {
 		List<InstancesItem> instances = new ArrayList<InstancesItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDedicatedClusterInstanceListResponse.Instances.Length"); i++) {
 			InstancesItem instancesItem = new InstancesItem();
-			instancesItem.setCharacterType(_ctx.integerValue("DescribeDedicatedClusterInstanceListResponse.Instances["+ i +"].CharacterType"));
+			instancesItem.setCharacterType(_ctx.stringValue("DescribeDedicatedClusterInstanceListResponse.Instances["+ i +"].CharacterType"));
 			instancesItem.setClusterId(_ctx.stringValue("DescribeDedicatedClusterInstanceListResponse.Instances["+ i +"].ClusterId"));
 			instancesItem.setClusterName(_ctx.stringValue("DescribeDedicatedClusterInstanceListResponse.Instances["+ i +"].ClusterName"));
 			instancesItem.setEngineVersion(_ctx.stringValue("DescribeDedicatedClusterInstanceListResponse.Instances["+ i +"].EngineVersion"));
@@ -57,6 +57,7 @@ public class DescribeDedicatedClusterInstanceListResponseUnmarshaller {
 			instancesItem.setShardCount(_ctx.integerValue("DescribeDedicatedClusterInstanceListResponse.Instances["+ i +"].ShardCount"));
 			instancesItem.setCurrentBandWidth(_ctx.longValue("DescribeDedicatedClusterInstanceListResponse.Instances["+ i +"].CurrentBandWidth"));
 			instancesItem.setBandWidth(_ctx.longValue("DescribeDedicatedClusterInstanceListResponse.Instances["+ i +"].BandWidth"));
+			instancesItem.setProxyCount(_ctx.integerValue("DescribeDedicatedClusterInstanceListResponse.Instances["+ i +"].ProxyCount"));
 
 			List<InstanceNodes> instanceNodeList = new ArrayList<InstanceNodes>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDedicatedClusterInstanceListResponse.Instances["+ i +"].InstanceNodeList.Length"); j++) {

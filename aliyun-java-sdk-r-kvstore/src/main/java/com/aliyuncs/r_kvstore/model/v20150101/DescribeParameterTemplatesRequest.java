@@ -41,6 +41,8 @@ public class DescribeParameterTemplatesRequest extends RpcAcsRequest<DescribePar
 
 	private Long ownerId;
 
+	private String instanceId;
+
 	private String characterType;
 	public DescribeParameterTemplatesRequest() {
 		super("R-kvstore", "2015-01-01", "DescribeParameterTemplates", "redisa");
@@ -136,6 +138,17 @@ public class DescribeParameterTemplatesRequest extends RpcAcsRequest<DescribePar
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 

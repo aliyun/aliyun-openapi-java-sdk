@@ -71,6 +71,8 @@ public class DescribeInstancesResponseUnmarshaller {
 			kVStoreInstance.setResourceGroupId(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].ResourceGroupId"));
 			kVStoreInstance.setShardCount(_ctx.integerValue("DescribeInstancesResponse.Instances["+ i +"].ShardCount"));
 			kVStoreInstance.setProxyCount(_ctx.integerValue("DescribeInstancesResponse.Instances["+ i +"].ProxyCount"));
+			kVStoreInstance.setSecondaryZoneId(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].SecondaryZoneId"));
+			kVStoreInstance.setGlobalInstanceId(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].GlobalInstanceId"));
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeInstancesResponse.Instances["+ i +"].Tags.Length"); j++) {

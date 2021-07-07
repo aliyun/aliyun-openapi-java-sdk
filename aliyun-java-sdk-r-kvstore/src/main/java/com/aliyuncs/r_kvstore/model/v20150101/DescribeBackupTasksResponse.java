@@ -69,6 +69,8 @@ public class DescribeBackupTasksResponse extends AcsResponse {
 
 		private String taskAction;
 
+		private String nodeId;
+
 		public Integer getBackupJobID() {
 			return this.backupJobID;
 		}
@@ -115,6 +117,14 @@ public class DescribeBackupTasksResponse extends AcsResponse {
 
 		public void setTaskAction(String taskAction) {
 			this.taskAction = taskAction;
+		}
+
+		public String getNodeId() {
+			return this.nodeId;
+		}
+
+		public void setNodeId(String nodeId) {
+			this.nodeId = nodeId;
 		}
 	}
 
