@@ -47,7 +47,7 @@ public class EvaluateResourceRequest extends RpcAcsRequest<EvaluateResourceRespo
 
 	private String zoneId;
 	public EvaluateResourceRequest() {
-		super("Dds", "2015-12-01", "EvaluateResource");
+		super("Dds", "2015-12-01", "EvaluateResource", "Dds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -43,7 +43,7 @@ public class ModifyParametersRequest extends RpcAcsRequest<ModifyParametersRespo
 
 	private String characterType;
 	public ModifyParametersRequest() {
-		super("Dds", "2015-12-01", "ModifyParameters");
+		super("Dds", "2015-12-01", "ModifyParameters", "Dds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

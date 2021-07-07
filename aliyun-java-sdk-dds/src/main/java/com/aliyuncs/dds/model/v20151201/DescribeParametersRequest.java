@@ -41,7 +41,7 @@ public class DescribeParametersRequest extends RpcAcsRequest<DescribeParametersR
 
 	private String characterType;
 	public DescribeParametersRequest() {
-		super("Dds", "2015-12-01", "DescribeParameters");
+		super("Dds", "2015-12-01", "DescribeParameters", "Dds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

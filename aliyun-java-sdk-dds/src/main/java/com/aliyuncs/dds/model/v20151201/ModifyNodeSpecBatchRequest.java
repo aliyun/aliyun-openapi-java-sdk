@@ -22,34 +22,38 @@ import com.aliyuncs.dds.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeBackupsRequest extends RpcAcsRequest<DescribeBackupsResponse> {
+public class ModifyNodeSpecBatchRequest extends RpcAcsRequest<ModifyNodeSpecBatchResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String startTime;
+	private String clientToken;
 
-	private Integer pageNumber;
+	private String nodesInfo;
+
+	private String couponNo;
 
 	private String securityToken;
 
-	private Integer pageSize;
+	private String effectiveTime;
 
 	private String dBInstanceId;
 
-	private String nodeId;
+	private String businessInfo;
+
+	private Boolean autoPay;
+
+	private String fromApp;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private String backupId;
-
-	private String endTime;
-
 	private Long ownerId;
-	public DescribeBackupsRequest() {
-		super("Dds", "2015-12-01", "DescribeBackups", "Dds");
+
+	private String orderType;
+	public ModifyNodeSpecBatchRequest() {
+		super("Dds", "2015-12-01", "ModifyNodeSpecBatch", "Dds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -68,25 +72,36 @@ public class DescribeBackupsRequest extends RpcAcsRequest<DescribeBackupsRespons
 		}
 	}
 
-	public String getStartTime() {
-		return this.startTime;
+	public String getClientToken() {
+		return this.clientToken;
 	}
 
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public String getNodesInfo() {
+		return this.nodesInfo;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
+	public void setNodesInfo(String nodesInfo) {
+		this.nodesInfo = nodesInfo;
+		if(nodesInfo != null){
+			putQueryParameter("NodesInfo", nodesInfo);
+		}
+	}
+
+	public String getCouponNo() {
+		return this.couponNo;
+	}
+
+	public void setCouponNo(String couponNo) {
+		this.couponNo = couponNo;
+		if(couponNo != null){
+			putQueryParameter("CouponNo", couponNo);
 		}
 	}
 
@@ -101,14 +116,14 @@ public class DescribeBackupsRequest extends RpcAcsRequest<DescribeBackupsRespons
 		}
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public String getEffectiveTime() {
+		return this.effectiveTime;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
+	public void setEffectiveTime(String effectiveTime) {
+		this.effectiveTime = effectiveTime;
+		if(effectiveTime != null){
+			putQueryParameter("EffectiveTime", effectiveTime);
 		}
 	}
 
@@ -123,14 +138,36 @@ public class DescribeBackupsRequest extends RpcAcsRequest<DescribeBackupsRespons
 		}
 	}
 
-	public String getNodeId() {
-		return this.nodeId;
+	public String getBusinessInfo() {
+		return this.businessInfo;
 	}
 
-	public void setNodeId(String nodeId) {
-		this.nodeId = nodeId;
-		if(nodeId != null){
-			putQueryParameter("NodeId", nodeId);
+	public void setBusinessInfo(String businessInfo) {
+		this.businessInfo = businessInfo;
+		if(businessInfo != null){
+			putQueryParameter("BusinessInfo", businessInfo);
+		}
+	}
+
+	public Boolean getAutoPay() {
+		return this.autoPay;
+	}
+
+	public void setAutoPay(Boolean autoPay) {
+		this.autoPay = autoPay;
+		if(autoPay != null){
+			putQueryParameter("AutoPay", autoPay.toString());
+		}
+	}
+
+	public String getFromApp() {
+		return this.fromApp;
+	}
+
+	public void setFromApp(String fromApp) {
+		this.fromApp = fromApp;
+		if(fromApp != null){
+			putQueryParameter("FromApp", fromApp);
 		}
 	}
 
@@ -156,28 +193,6 @@ public class DescribeBackupsRequest extends RpcAcsRequest<DescribeBackupsRespons
 		}
 	}
 
-	public String getBackupId() {
-		return this.backupId;
-	}
-
-	public void setBackupId(String backupId) {
-		this.backupId = backupId;
-		if(backupId != null){
-			putQueryParameter("BackupId", backupId);
-		}
-	}
-
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -189,9 +204,20 @@ public class DescribeBackupsRequest extends RpcAcsRequest<DescribeBackupsRespons
 		}
 	}
 
+	public String getOrderType() {
+		return this.orderType;
+	}
+
+	public void setOrderType(String orderType) {
+		this.orderType = orderType;
+		if(orderType != null){
+			putQueryParameter("OrderType", orderType);
+		}
+	}
+
 	@Override
-	public Class<DescribeBackupsResponse> getResponseClass() {
-		return DescribeBackupsResponse.class;
+	public Class<ModifyNodeSpecBatchResponse> getResponseClass() {
+		return ModifyNodeSpecBatchResponse.class;
 	}
 
 }

@@ -22,34 +22,24 @@ import com.aliyuncs.dds.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeBackupsRequest extends RpcAcsRequest<DescribeBackupsResponse> {
+public class ModifyResourceGroupRequest extends RpcAcsRequest<ModifyResourceGroupResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String startTime;
-
-	private Integer pageNumber;
+	private String resourceGroupId;
 
 	private String securityToken;
 
-	private Integer pageSize;
-
 	private String dBInstanceId;
-
-	private String nodeId;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private String backupId;
-
-	private String endTime;
-
 	private Long ownerId;
-	public DescribeBackupsRequest() {
-		super("Dds", "2015-12-01", "DescribeBackups", "Dds");
+	public ModifyResourceGroupRequest() {
+		super("Dds", "2015-12-01", "ModifyResourceGroup", "Dds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -68,25 +58,14 @@ public class DescribeBackupsRequest extends RpcAcsRequest<DescribeBackupsRespons
 		}
 	}
 
-	public String getStartTime() {
-		return this.startTime;
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
 	}
 
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
-		}
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 
@@ -101,17 +80,6 @@ public class DescribeBackupsRequest extends RpcAcsRequest<DescribeBackupsRespons
 		}
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
 	public String getDBInstanceId() {
 		return this.dBInstanceId;
 	}
@@ -120,17 +88,6 @@ public class DescribeBackupsRequest extends RpcAcsRequest<DescribeBackupsRespons
 		this.dBInstanceId = dBInstanceId;
 		if(dBInstanceId != null){
 			putQueryParameter("DBInstanceId", dBInstanceId);
-		}
-	}
-
-	public String getNodeId() {
-		return this.nodeId;
-	}
-
-	public void setNodeId(String nodeId) {
-		this.nodeId = nodeId;
-		if(nodeId != null){
-			putQueryParameter("NodeId", nodeId);
 		}
 	}
 
@@ -156,28 +113,6 @@ public class DescribeBackupsRequest extends RpcAcsRequest<DescribeBackupsRespons
 		}
 	}
 
-	public String getBackupId() {
-		return this.backupId;
-	}
-
-	public void setBackupId(String backupId) {
-		this.backupId = backupId;
-		if(backupId != null){
-			putQueryParameter("BackupId", backupId);
-		}
-	}
-
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -190,8 +125,8 @@ public class DescribeBackupsRequest extends RpcAcsRequest<DescribeBackupsRespons
 	}
 
 	@Override
-	public Class<DescribeBackupsResponse> getResponseClass() {
-		return DescribeBackupsResponse.class;
+	public Class<ModifyResourceGroupResponse> getResponseClass() {
+		return ModifyResourceGroupResponse.class;
 	}
 
 }
