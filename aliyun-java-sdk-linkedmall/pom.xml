@@ -4,7 +4,7 @@
   <groupId>com.aliyun</groupId>
   <artifactId>aliyun-java-sdk-linkedmall</artifactId>
   <packaging>jar</packaging>
-  <version>2.12.20</version>
+  <version>2.12.21</version>
   <name>aliyun-java-sdk-linkedmall</name>
   <url>http://www.aliyun.com</url>
   <description>Aliyun Open API SDK for Java

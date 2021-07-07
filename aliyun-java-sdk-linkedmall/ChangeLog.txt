@@ -1,3 +1,6 @@
+2021-07-07 Version: 2.12.21
+- Add QueryGuideItemGroupWithOutInventory.
+
 2021-06-29 Version: 2.12.20
 - Add authorization APIs.
 
