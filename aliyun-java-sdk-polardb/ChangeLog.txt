@@ -1,3 +1,6 @@
+2021-07-07 Version: 1.8.9
+- Supported DescribeGlobalDatabaseNetworks set pages.
+
 2021-06-22 Version: 1.8.8
 - Supported CreateGlobalDatabaseNetwork for PolarDB Global Database Network.
 - Supported ModifyGlobalDatabaseNetwork for PolarDB Global Database Network.
