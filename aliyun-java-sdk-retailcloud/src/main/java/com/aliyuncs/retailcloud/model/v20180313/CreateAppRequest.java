@@ -36,6 +36,8 @@ public class CreateAppRequest extends RpcAcsRequest<CreateAppResponse> {
 
 	private String title;
 
+	private String groupName;
+
 	private List<Integer> middleWareIdLists;
 
 	private Integer stateType;
@@ -108,6 +110,17 @@ public class CreateAppRequest extends RpcAcsRequest<CreateAppResponse> {
 		this.title = title;
 		if(title != null){
 			putBodyParameter("Title", title);
+		}
+	}
+
+	public String getGroupName() {
+		return this.groupName;
+	}
+
+	public void setGroupName(String groupName) {
+		this.groupName = groupName;
+		if(groupName != null){
+			putBodyParameter("GroupName", groupName);
 		}
 	}
 
