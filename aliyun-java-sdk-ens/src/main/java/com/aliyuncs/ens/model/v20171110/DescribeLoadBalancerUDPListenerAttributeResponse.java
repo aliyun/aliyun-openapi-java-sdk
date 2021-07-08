@@ -42,11 +42,11 @@ public class DescribeLoadBalancerUDPListenerAttributeResponse extends AcsRespons
 
 	private Integer healthCheckConnectTimeout;
 
-	private Integer healthCheckConnectPort;
-
 	private Integer healthCheckInterval;
 
 	private String description;
+
+	private Integer backendServerPort;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -120,14 +120,6 @@ public class DescribeLoadBalancerUDPListenerAttributeResponse extends AcsRespons
 		this.healthCheckConnectTimeout = healthCheckConnectTimeout;
 	}
 
-	public Integer getHealthCheckConnectPort() {
-		return this.healthCheckConnectPort;
-	}
-
-	public void setHealthCheckConnectPort(Integer healthCheckConnectPort) {
-		this.healthCheckConnectPort = healthCheckConnectPort;
-	}
-
 	public Integer getHealthCheckInterval() {
 		return this.healthCheckInterval;
 	}
@@ -142,6 +134,14 @@ public class DescribeLoadBalancerUDPListenerAttributeResponse extends AcsRespons
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+
+	public Integer getBackendServerPort() {
+		return this.backendServerPort;
+	}
+
+	public void setBackendServerPort(Integer backendServerPort) {
+		this.backendServerPort = backendServerPort;
 	}
 
 	@Override

@@ -36,6 +36,8 @@ public class CreateLoadBalancerTCPListenerRequest extends RpcAcsRequest<CreateLo
 
 	private Integer healthCheckInterval;
 
+	private Integer backendServerPort;
+
 	private Integer healthCheckConnectTimeout;
 
 	private String description;
@@ -49,8 +51,6 @@ public class CreateLoadBalancerTCPListenerRequest extends RpcAcsRequest<CreateLo
 	private Integer listenerPort;
 
 	private String healthCheckType;
-
-	private Integer healthCheckConnectPort;
 
 	private String healthCheckHttpCode;
 	public CreateLoadBalancerTCPListenerRequest() {
@@ -121,6 +121,17 @@ public class CreateLoadBalancerTCPListenerRequest extends RpcAcsRequest<CreateLo
 		this.healthCheckInterval = healthCheckInterval;
 		if(healthCheckInterval != null){
 			putQueryParameter("HealthCheckInterval", healthCheckInterval.toString());
+		}
+	}
+
+	public Integer getBackendServerPort() {
+		return this.backendServerPort;
+	}
+
+	public void setBackendServerPort(Integer backendServerPort) {
+		this.backendServerPort = backendServerPort;
+		if(backendServerPort != null){
+			putQueryParameter("BackendServerPort", backendServerPort.toString());
 		}
 	}
 
@@ -198,17 +209,6 @@ public class CreateLoadBalancerTCPListenerRequest extends RpcAcsRequest<CreateLo
 		this.healthCheckType = healthCheckType;
 		if(healthCheckType != null){
 			putQueryParameter("HealthCheckType", healthCheckType);
-		}
-	}
-
-	public Integer getHealthCheckConnectPort() {
-		return this.healthCheckConnectPort;
-	}
-
-	public void setHealthCheckConnectPort(Integer healthCheckConnectPort) {
-		this.healthCheckConnectPort = healthCheckConnectPort;
-		if(healthCheckConnectPort != null){
-			putQueryParameter("HealthCheckConnectPort", healthCheckConnectPort.toString());
 		}
 	}
 

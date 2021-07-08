@@ -14,18 +14,16 @@
 
 package com.aliyuncs.ens.transform.v20171110;
 
-import com.aliyuncs.ens.model.v20171110.CreateImageResponse;
+import com.aliyuncs.ens.model.v20171110.DeleteEnsLoadBalancerInnerResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class CreateImageResponseUnmarshaller {
+public class DeleteEnsLoadBalancerInnerResponseUnmarshaller {
 
-	public static CreateImageResponse unmarshall(CreateImageResponse createImageResponse, UnmarshallerContext _ctx) {
+	public static DeleteEnsLoadBalancerInnerResponse unmarshall(DeleteEnsLoadBalancerInnerResponse deleteEnsLoadBalancerInnerResponse, UnmarshallerContext _ctx) {
 		
-		createImageResponse.setRequestId(_ctx.stringValue("CreateImageResponse.RequestId"));
-		createImageResponse.setCode(_ctx.integerValue("CreateImageResponse.Code"));
-		createImageResponse.setImageId(_ctx.stringValue("CreateImageResponse.ImageId"));
+		deleteEnsLoadBalancerInnerResponse.setRequestId(_ctx.stringValue("DeleteEnsLoadBalancerInnerResponse.RequestId"));
 	 
-	 	return createImageResponse;
+	 	return deleteEnsLoadBalancerInnerResponse;
 	}
 }

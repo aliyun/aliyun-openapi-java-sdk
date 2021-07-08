@@ -24,6 +24,8 @@ import com.aliyuncs.http.MethodType;
 public class MigrateVmRequest extends RpcAcsRequest<MigrateVmResponse> {
 	   
 
+	private String instances;
+
 	private String groupUuid;
 
 	private String tenant;
@@ -32,6 +34,17 @@ public class MigrateVmRequest extends RpcAcsRequest<MigrateVmResponse> {
 	public MigrateVmRequest() {
 		super("Ens", "2017-11-10", "MigrateVm", "ens");
 		setMethod(MethodType.POST);
+	}
+
+	public String getInstances() {
+		return this.instances;
+	}
+
+	public void setInstances(String instances) {
+		this.instances = instances;
+		if(instances != null){
+			putBodyParameter("Instances", instances);
+		}
 	}
 
 	public String getGroupUuid() {

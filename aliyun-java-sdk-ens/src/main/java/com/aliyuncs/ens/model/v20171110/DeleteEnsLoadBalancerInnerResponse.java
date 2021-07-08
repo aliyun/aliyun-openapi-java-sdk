@@ -15,20 +15,16 @@
 package com.aliyuncs.ens.model.v20171110;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ens.transform.v20171110.CreateImageResponseUnmarshaller;
+import com.aliyuncs.ens.transform.v20171110.DeleteEnsLoadBalancerInnerResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateImageResponse extends AcsResponse {
+public class DeleteEnsLoadBalancerInnerResponse extends AcsResponse {
 
 	private String requestId;
-
-	private Integer code;
-
-	private String imageId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,24 +34,13 @@ public class CreateImageResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Integer getCode() {
-		return this.code;
-	}
-
-	public void setCode(Integer code) {
-		this.code = code;
-	}
-
-	public String getImageId() {
-		return this.imageId;
-	}
-
-	public void setImageId(String imageId) {
-		this.imageId = imageId;
+	@Override
+	public DeleteEnsLoadBalancerInnerResponse getInstance(UnmarshallerContext context) {
+		return	DeleteEnsLoadBalancerInnerResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override
-	public CreateImageResponse getInstance(UnmarshallerContext context) {
-		return	CreateImageResponseUnmarshaller.unmarshall(this, context);
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }
