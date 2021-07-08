@@ -22,40 +22,27 @@ import com.aliyuncs.live.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeLiveRealtimeDeliveryAccRequest extends RpcAcsRequest<DescribeLiveRealtimeDeliveryAccResponse> {
+public class DescribeToutiaoLivePlayRequest extends RpcAcsRequest<DescribeToutiaoLivePlayResponse> {
 	   
-
-	private String project;
 
 	private String startTime;
 
-	private String domainName;
+	private String stream;
+
+	private String app;
 
 	private String endTime;
 
 	private Long ownerId;
 
-	private String interval;
-
-	private String logStore;
-	public DescribeLiveRealtimeDeliveryAccRequest() {
-		super("live", "2016-11-01", "DescribeLiveRealtimeDeliveryAcc", "live");
+	private String domain;
+	public DescribeToutiaoLivePlayRequest() {
+		super("live", "2016-11-01", "DescribeToutiaoLivePlay", "live");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getProject() {
-		return this.project;
-	}
-
-	public void setProject(String project) {
-		this.project = project;
-		if(project != null){
-			putQueryParameter("Project", project);
-		}
 	}
 
 	public String getStartTime() {
@@ -69,14 +56,25 @@ public class DescribeLiveRealtimeDeliveryAccRequest extends RpcAcsRequest<Descri
 		}
 	}
 
-	public String getDomainName() {
-		return this.domainName;
+	public String getStream() {
+		return this.stream;
 	}
 
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		if(domainName != null){
-			putQueryParameter("DomainName", domainName);
+	public void setStream(String stream) {
+		this.stream = stream;
+		if(stream != null){
+			putQueryParameter("Stream", stream);
+		}
+	}
+
+	public String getApp() {
+		return this.app;
+	}
+
+	public void setApp(String app) {
+		this.app = app;
+		if(app != null){
+			putQueryParameter("App", app);
 		}
 	}
 
@@ -102,31 +100,20 @@ public class DescribeLiveRealtimeDeliveryAccRequest extends RpcAcsRequest<Descri
 		}
 	}
 
-	public String getInterval() {
-		return this.interval;
+	public String getDomain() {
+		return this.domain;
 	}
 
-	public void setInterval(String interval) {
-		this.interval = interval;
-		if(interval != null){
-			putQueryParameter("Interval", interval);
-		}
-	}
-
-	public String getLogStore() {
-		return this.logStore;
-	}
-
-	public void setLogStore(String logStore) {
-		this.logStore = logStore;
-		if(logStore != null){
-			putQueryParameter("LogStore", logStore);
+	public void setDomain(String domain) {
+		this.domain = domain;
+		if(domain != null){
+			putQueryParameter("Domain", domain);
 		}
 	}
 
 	@Override
-	public Class<DescribeLiveRealtimeDeliveryAccResponse> getResponseClass() {
-		return DescribeLiveRealtimeDeliveryAccResponse.class;
+	public Class<DescribeToutiaoLivePlayResponse> getResponseClass() {
+		return DescribeToutiaoLivePlayResponse.class;
 	}
 
 }

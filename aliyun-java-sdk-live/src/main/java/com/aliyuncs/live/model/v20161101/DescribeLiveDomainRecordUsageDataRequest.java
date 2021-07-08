@@ -22,40 +22,25 @@ import com.aliyuncs.live.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeLiveRealtimeDeliveryAccRequest extends RpcAcsRequest<DescribeLiveRealtimeDeliveryAccResponse> {
+public class DescribeLiveDomainRecordUsageDataRequest extends RpcAcsRequest<DescribeLiveDomainRecordUsageDataResponse> {
 	   
 
-	private String project;
-
 	private String startTime;
+
+	private String splitBy;
 
 	private String domainName;
 
 	private String endTime;
 
 	private Long ownerId;
-
-	private String interval;
-
-	private String logStore;
-	public DescribeLiveRealtimeDeliveryAccRequest() {
-		super("live", "2016-11-01", "DescribeLiveRealtimeDeliveryAcc", "live");
+	public DescribeLiveDomainRecordUsageDataRequest() {
+		super("live", "2016-11-01", "DescribeLiveDomainRecordUsageData", "live");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getProject() {
-		return this.project;
-	}
-
-	public void setProject(String project) {
-		this.project = project;
-		if(project != null){
-			putQueryParameter("Project", project);
-		}
 	}
 
 	public String getStartTime() {
@@ -66,6 +51,17 @@ public class DescribeLiveRealtimeDeliveryAccRequest extends RpcAcsRequest<Descri
 		this.startTime = startTime;
 		if(startTime != null){
 			putQueryParameter("StartTime", startTime);
+		}
+	}
+
+	public String getSplitBy() {
+		return this.splitBy;
+	}
+
+	public void setSplitBy(String splitBy) {
+		this.splitBy = splitBy;
+		if(splitBy != null){
+			putQueryParameter("SplitBy", splitBy);
 		}
 	}
 
@@ -102,31 +98,9 @@ public class DescribeLiveRealtimeDeliveryAccRequest extends RpcAcsRequest<Descri
 		}
 	}
 
-	public String getInterval() {
-		return this.interval;
-	}
-
-	public void setInterval(String interval) {
-		this.interval = interval;
-		if(interval != null){
-			putQueryParameter("Interval", interval);
-		}
-	}
-
-	public String getLogStore() {
-		return this.logStore;
-	}
-
-	public void setLogStore(String logStore) {
-		this.logStore = logStore;
-		if(logStore != null){
-			putQueryParameter("LogStore", logStore);
-		}
-	}
-
 	@Override
-	public Class<DescribeLiveRealtimeDeliveryAccResponse> getResponseClass() {
-		return DescribeLiveRealtimeDeliveryAccResponse.class;
+	public Class<DescribeLiveDomainRecordUsageDataResponse> getResponseClass() {
+		return DescribeLiveDomainRecordUsageDataResponse.class;
 	}
 
 }

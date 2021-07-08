@@ -22,12 +22,14 @@ import com.aliyuncs.live.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeLiveRealtimeDeliveryAccRequest extends RpcAcsRequest<DescribeLiveRealtimeDeliveryAccResponse> {
+public class UpdateLivePullStreamInfoConfigRequest extends RpcAcsRequest<UpdateLivePullStreamInfoConfigResponse> {
 	   
 
-	private String project;
-
 	private String startTime;
+
+	private String appName;
+
+	private String streamName;
 
 	private String domainName;
 
@@ -35,27 +37,14 @@ public class DescribeLiveRealtimeDeliveryAccRequest extends RpcAcsRequest<Descri
 
 	private Long ownerId;
 
-	private String interval;
-
-	private String logStore;
-	public DescribeLiveRealtimeDeliveryAccRequest() {
-		super("live", "2016-11-01", "DescribeLiveRealtimeDeliveryAcc", "live");
-		setMethod(MethodType.POST);
+	private String sourceUrl;
+	public UpdateLivePullStreamInfoConfigRequest() {
+		super("live", "2016-11-01", "UpdateLivePullStreamInfoConfig", "live");
+		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getProject() {
-		return this.project;
-	}
-
-	public void setProject(String project) {
-		this.project = project;
-		if(project != null){
-			putQueryParameter("Project", project);
-		}
 	}
 
 	public String getStartTime() {
@@ -66,6 +55,28 @@ public class DescribeLiveRealtimeDeliveryAccRequest extends RpcAcsRequest<Descri
 		this.startTime = startTime;
 		if(startTime != null){
 			putQueryParameter("StartTime", startTime);
+		}
+	}
+
+	public String getAppName() {
+		return this.appName;
+	}
+
+	public void setAppName(String appName) {
+		this.appName = appName;
+		if(appName != null){
+			putQueryParameter("AppName", appName);
+		}
+	}
+
+	public String getStreamName() {
+		return this.streamName;
+	}
+
+	public void setStreamName(String streamName) {
+		this.streamName = streamName;
+		if(streamName != null){
+			putQueryParameter("StreamName", streamName);
 		}
 	}
 
@@ -102,31 +113,20 @@ public class DescribeLiveRealtimeDeliveryAccRequest extends RpcAcsRequest<Descri
 		}
 	}
 
-	public String getInterval() {
-		return this.interval;
+	public String getSourceUrl() {
+		return this.sourceUrl;
 	}
 
-	public void setInterval(String interval) {
-		this.interval = interval;
-		if(interval != null){
-			putQueryParameter("Interval", interval);
-		}
-	}
-
-	public String getLogStore() {
-		return this.logStore;
-	}
-
-	public void setLogStore(String logStore) {
-		this.logStore = logStore;
-		if(logStore != null){
-			putQueryParameter("LogStore", logStore);
+	public void setSourceUrl(String sourceUrl) {
+		this.sourceUrl = sourceUrl;
+		if(sourceUrl != null){
+			putQueryParameter("SourceUrl", sourceUrl);
 		}
 	}
 
 	@Override
-	public Class<DescribeLiveRealtimeDeliveryAccResponse> getResponseClass() {
-		return DescribeLiveRealtimeDeliveryAccResponse.class;
+	public Class<UpdateLivePullStreamInfoConfigResponse> getResponseClass() {
+		return UpdateLivePullStreamInfoConfigResponse.class;
 	}
 
 }

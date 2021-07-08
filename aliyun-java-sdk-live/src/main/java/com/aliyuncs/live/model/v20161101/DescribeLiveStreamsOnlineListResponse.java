@@ -107,6 +107,8 @@ public class DescribeLiveStreamsOnlineListResponse extends AcsResponse {
 
 		private String transcodeId;
 
+		private String transcodeDrm;
+
 		private String serverIp;
 
 		private String clientIp;
@@ -203,6 +205,14 @@ public class DescribeLiveStreamsOnlineListResponse extends AcsResponse {
 
 		public void setTranscodeId(String transcodeId) {
 			this.transcodeId = transcodeId;
+		}
+
+		public String getTranscodeDrm() {
+			return this.transcodeDrm;
+		}
+
+		public void setTranscodeDrm(String transcodeDrm) {
+			this.transcodeDrm = transcodeDrm;
 		}
 
 		public String getServerIp() {
