@@ -30,6 +30,9 @@ public class RegisterDeviceResponseUnmarshaller {
 
 		Data data = new Data();
 		data.setRid(_ctx.stringValue("RegisterDeviceResponse.Data.Rid"));
+		data.setLicense(_ctx.stringValue("RegisterDeviceResponse.Data.License"));
+		data.setSignature(_ctx.stringValue("RegisterDeviceResponse.Data.Signature"));
+		data.setPublicKey(_ctx.stringValue("RegisterDeviceResponse.Data.PublicKey"));
 		registerDeviceResponse.setData(data);
 	 
 	 	return registerDeviceResponse;

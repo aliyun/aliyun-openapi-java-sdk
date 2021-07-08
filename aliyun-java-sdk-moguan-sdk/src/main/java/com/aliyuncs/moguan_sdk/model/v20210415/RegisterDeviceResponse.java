@@ -78,12 +78,42 @@ public class RegisterDeviceResponse extends AcsResponse {
 
 		private String rid;
 
+		private String license;
+
+		private String signature;
+
+		private String publicKey;
+
 		public String getRid() {
 			return this.rid;
 		}
 
 		public void setRid(String rid) {
 			this.rid = rid;
+		}
+
+		public String getLicense() {
+			return this.license;
+		}
+
+		public void setLicense(String license) {
+			this.license = license;
+		}
+
+		public String getSignature() {
+			return this.signature;
+		}
+
+		public void setSignature(String signature) {
+			this.signature = signature;
+		}
+
+		public String getPublicKey() {
+			return this.publicKey;
+		}
+
+		public void setPublicKey(String publicKey) {
+			this.publicKey = publicKey;
 		}
 	}
 

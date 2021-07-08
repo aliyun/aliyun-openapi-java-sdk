@@ -1,3 +1,6 @@
+2021-07-08 Version: 1.1.0
+- Support APP auth.
+
 2021-05-11 Version: 1.0.1
 - SDK device authorization API.
 
