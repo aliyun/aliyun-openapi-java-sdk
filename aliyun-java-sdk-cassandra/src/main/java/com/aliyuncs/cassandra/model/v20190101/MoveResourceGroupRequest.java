@@ -22,43 +22,19 @@ import com.aliyuncs.cassandra.Endpoint;
  * @author auto create
  * @version 
  */
-public class AllocatePublicContactPointsRequest extends RpcAcsRequest<AllocatePublicContactPointsResponse> {
+public class MoveResourceGroupRequest extends RpcAcsRequest<MoveResourceGroupResponse> {
 	   
 
-	private String clientToken;
-
-	private String dataCenterId;
-
 	private String clusterId;
-	public AllocatePublicContactPointsRequest() {
-		super("Cassandra", "2019-01-01", "AllocatePublicContactPoints", "Cassandra");
+
+	private String newResourceGroupId;
+	public MoveResourceGroupRequest() {
+		super("Cassandra", "2019-01-01", "MoveResourceGroup", "Cassandra");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
-		}
-	}
-
-	public String getDataCenterId() {
-		return this.dataCenterId;
-	}
-
-	public void setDataCenterId(String dataCenterId) {
-		this.dataCenterId = dataCenterId;
-		if(dataCenterId != null){
-			putQueryParameter("DataCenterId", dataCenterId);
-		}
 	}
 
 	public String getClusterId() {
@@ -72,9 +48,20 @@ public class AllocatePublicContactPointsRequest extends RpcAcsRequest<AllocatePu
 		}
 	}
 
+	public String getNewResourceGroupId() {
+		return this.newResourceGroupId;
+	}
+
+	public void setNewResourceGroupId(String newResourceGroupId) {
+		this.newResourceGroupId = newResourceGroupId;
+		if(newResourceGroupId != null){
+			putQueryParameter("NewResourceGroupId", newResourceGroupId);
+		}
+	}
+
 	@Override
-	public Class<AllocatePublicContactPointsResponse> getResponseClass() {
-		return AllocatePublicContactPointsResponse.class;
+	public Class<MoveResourceGroupResponse> getResponseClass() {
+		return MoveResourceGroupResponse.class;
 	}
 
 }

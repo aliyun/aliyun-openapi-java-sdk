@@ -45,6 +45,7 @@ public class DescribeClusterResponseUnmarshaller {
 		cluster.setLockMode(_ctx.stringValue("DescribeClusterResponse.Cluster.LockMode"));
 		cluster.setAutoRenewal(_ctx.booleanValue("DescribeClusterResponse.Cluster.AutoRenewal"));
 		cluster.setAutoRenewPeriod(_ctx.integerValue("DescribeClusterResponse.Cluster.AutoRenewPeriod"));
+		cluster.setResourceGroupId(_ctx.stringValue("DescribeClusterResponse.Cluster.ResourceGroupId"));
 
 		List<Tag> tags = new ArrayList<Tag>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeClusterResponse.Cluster.Tags.Length"); i++) {
