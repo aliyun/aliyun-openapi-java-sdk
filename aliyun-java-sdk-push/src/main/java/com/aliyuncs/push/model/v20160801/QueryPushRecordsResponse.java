@@ -31,6 +31,10 @@ public class QueryPushRecordsResponse extends AcsResponse {
 
 	private Integer pageSize;
 
+	private Integer page;
+
+	private Integer total;
+
 	private List<PushInfo> pushInfos;
 
 	public String getRequestId() {
@@ -55,6 +59,22 @@ public class QueryPushRecordsResponse extends AcsResponse {
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public Integer getPage() {
+		return this.page;
+	}
+
+	public void setPage(Integer page) {
+		this.page = page;
+	}
+
+	public Integer getTotal() {
+		return this.total;
+	}
+
+	public void setTotal(Integer total) {
+		this.total = total;
 	}
 
 	public List<PushInfo> getPushInfos() {

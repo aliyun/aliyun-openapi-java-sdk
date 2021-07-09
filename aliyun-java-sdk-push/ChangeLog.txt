@@ -1,3 +1,7 @@
+2021-07-09 Version: 3.13.7
+- Add `CheckCertificate` Api.
+- Supported AndroidRenderStyle, AndroidBigTitle, AndroidBigBody, AndroidXiaomiBigPictureUrl for Push and MassPush.
+
 2020-10-17 Version: 3.13.6
 - Supported AndroidNotificationNotifyId for Push and MassPush.
 - Supported iOSNotificationCollapseId for Push and MassPush.

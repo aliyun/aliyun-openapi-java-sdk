@@ -49,6 +49,7 @@ public class MassPushRequest extends RpcAcsRequest<MassPushResponse> {
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidNotificationBarType" , pushTasks.get(depth1).getAndroidNotificationBarType());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidExtParameters" , pushTasks.get(depth1).getAndroidExtParameters());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".iOSBadge" , pushTasks.get(depth1).getIOSBadge());
+				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidBigBody" , pushTasks.get(depth1).getAndroidBigBody());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".iOSBadgeAutoIncrement" , pushTasks.get(depth1).getIOSBadgeAutoIncrement());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidOpenType" , pushTasks.get(depth1).getAndroidOpenType());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".Title" , pushTasks.get(depth1).getTitle());
@@ -59,6 +60,7 @@ public class MassPushRequest extends RpcAcsRequest<MassPushResponse> {
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidNotificationHuaweiChannel" , pushTasks.get(depth1).getAndroidNotificationHuaweiChannel());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidPopupActivity" , pushTasks.get(depth1).getAndroidPopupActivity());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".iOSRemindBody" , pushTasks.get(depth1).getIOSRemindBody());
+				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidRenderStyle" , pushTasks.get(depth1).getAndroidRenderStyle());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".iOSExtParameters" , pushTasks.get(depth1).getIOSExtParameters());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidNotifyType" , pushTasks.get(depth1).getAndroidNotifyType());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidPopupTitle" , pushTasks.get(depth1).getAndroidPopupTitle());
@@ -75,12 +77,14 @@ public class MassPushRequest extends RpcAcsRequest<MassPushResponse> {
 				putBodyParameter("PushTask." + (depth1 + 1) + ".iOSSilentNotification" , pushTasks.get(depth1).getIOSSilentNotification());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".JobKey" , pushTasks.get(depth1).getJobKey());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".Target" , pushTasks.get(depth1).getTarget());
+				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidBigTitle" , pushTasks.get(depth1).getAndroidBigTitle());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidOpenUrl" , pushTasks.get(depth1).getAndroidOpenUrl());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidNotificationChannel" , pushTasks.get(depth1).getAndroidNotificationChannel());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidRemind" , pushTasks.get(depth1).getAndroidRemind());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidActivity" , pushTasks.get(depth1).getAndroidActivity());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidXiaoMiNotifyBody" , pushTasks.get(depth1).getAndroidXiaoMiNotifyBody());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".iOSSubtitle" , pushTasks.get(depth1).getIOSSubtitle());
+				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidXiaomiBigPictureUrl" , pushTasks.get(depth1).getAndroidXiaomiBigPictureUrl());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".iOSRemind" , pushTasks.get(depth1).getIOSRemind());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidNotificationNotifyId" , pushTasks.get(depth1).getAndroidNotificationNotifyId());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".TargetValue" , pushTasks.get(depth1).getTargetValue());
@@ -112,6 +116,8 @@ public class MassPushRequest extends RpcAcsRequest<MassPushResponse> {
 
 		private Integer iOSBadge;
 
+		private String androidBigBody;
+
 		private Boolean iOSBadgeAutoIncrement;
 
 		private String androidOpenType;
@@ -131,6 +137,8 @@ public class MassPushRequest extends RpcAcsRequest<MassPushResponse> {
 		private String androidPopupActivity;
 
 		private String iOSRemindBody;
+
+		private String androidRenderStyle;
 
 		private String iOSExtParameters;
 
@@ -164,6 +172,8 @@ public class MassPushRequest extends RpcAcsRequest<MassPushResponse> {
 
 		private String target;
 
+		private String androidBigTitle;
+
 		private String androidOpenUrl;
 
 		private String androidNotificationChannel;
@@ -175,6 +185,8 @@ public class MassPushRequest extends RpcAcsRequest<MassPushResponse> {
 		private String androidXiaoMiNotifyBody;
 
 		private String iOSSubtitle;
+
+		private String androidXiaomiBigPictureUrl;
 
 		private Boolean iOSRemind;
 
@@ -214,6 +226,14 @@ public class MassPushRequest extends RpcAcsRequest<MassPushResponse> {
 
 		public void setIOSBadge(Integer iOSBadge) {
 			this.iOSBadge = iOSBadge;
+		}
+
+		public String getAndroidBigBody() {
+			return this.androidBigBody;
+		}
+
+		public void setAndroidBigBody(String androidBigBody) {
+			this.androidBigBody = androidBigBody;
 		}
 
 		public Boolean getIOSBadgeAutoIncrement() {
@@ -294,6 +314,14 @@ public class MassPushRequest extends RpcAcsRequest<MassPushResponse> {
 
 		public void setIOSRemindBody(String iOSRemindBody) {
 			this.iOSRemindBody = iOSRemindBody;
+		}
+
+		public String getAndroidRenderStyle() {
+			return this.androidRenderStyle;
+		}
+
+		public void setAndroidRenderStyle(String androidRenderStyle) {
+			this.androidRenderStyle = androidRenderStyle;
 		}
 
 		public String getIOSExtParameters() {
@@ -424,6 +452,14 @@ public class MassPushRequest extends RpcAcsRequest<MassPushResponse> {
 			this.target = target;
 		}
 
+		public String getAndroidBigTitle() {
+			return this.androidBigTitle;
+		}
+
+		public void setAndroidBigTitle(String androidBigTitle) {
+			this.androidBigTitle = androidBigTitle;
+		}
+
 		public String getAndroidOpenUrl() {
 			return this.androidOpenUrl;
 		}
@@ -470,6 +506,14 @@ public class MassPushRequest extends RpcAcsRequest<MassPushResponse> {
 
 		public void setIOSSubtitle(String iOSSubtitle) {
 			this.iOSSubtitle = iOSSubtitle;
+		}
+
+		public String getAndroidXiaomiBigPictureUrl() {
+			return this.androidXiaomiBigPictureUrl;
+		}
+
+		public void setAndroidXiaomiBigPictureUrl(String androidXiaomiBigPictureUrl) {
+			this.androidXiaomiBigPictureUrl = androidXiaomiBigPictureUrl;
 		}
 
 		public Boolean getIOSRemind() {

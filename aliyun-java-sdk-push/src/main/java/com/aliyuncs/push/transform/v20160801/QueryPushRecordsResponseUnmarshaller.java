@@ -29,6 +29,8 @@ public class QueryPushRecordsResponseUnmarshaller {
 		queryPushRecordsResponse.setRequestId(_ctx.stringValue("QueryPushRecordsResponse.RequestId"));
 		queryPushRecordsResponse.setNextToken(_ctx.stringValue("QueryPushRecordsResponse.NextToken"));
 		queryPushRecordsResponse.setPageSize(_ctx.integerValue("QueryPushRecordsResponse.PageSize"));
+		queryPushRecordsResponse.setPage(_ctx.integerValue("QueryPushRecordsResponse.Page"));
+		queryPushRecordsResponse.setTotal(_ctx.integerValue("QueryPushRecordsResponse.Total"));
 
 		List<PushInfo> pushInfos = new ArrayList<PushInfo>();
 		for (int i = 0; i < _ctx.lengthValue("QueryPushRecordsResponse.PushInfos.Length"); i++) {
