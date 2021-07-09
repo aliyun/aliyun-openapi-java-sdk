@@ -25,30 +25,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class TransferPipelineOwnerResponse extends AcsResponse {
 
-	private Boolean success;
-
-	private String errorCode;
+	private String requestId;
 
 	private String errorMessage;
 
-	private String requestId;
-
 	private Map<Object,Object> object;
 
-	public Boolean getSuccess() {
-		return this.success;
+	private String errorCode;
+
+	private Boolean success;
+
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getErrorMessage() {
@@ -59,20 +51,28 @@ public class TransferPipelineOwnerResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public Map<Object,Object> getObject() {
 		return this.object;
 	}
 
 	public void setObject(Map<Object,Object> object) {
 		this.object = object;
+	}
+
+	public String getErrorCode() {
+		return this.errorCode;
+	}
+
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	@Override

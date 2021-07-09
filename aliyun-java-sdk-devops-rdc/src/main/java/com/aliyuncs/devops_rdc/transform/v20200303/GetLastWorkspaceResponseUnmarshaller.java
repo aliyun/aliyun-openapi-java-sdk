@@ -23,10 +23,10 @@ public class GetLastWorkspaceResponseUnmarshaller {
 	public static GetLastWorkspaceResponse unmarshall(GetLastWorkspaceResponse getLastWorkspaceResponse, UnmarshallerContext _ctx) {
 		
 		getLastWorkspaceResponse.setRequestId(_ctx.stringValue("GetLastWorkspaceResponse.RequestId"));
-		getLastWorkspaceResponse.setErrorCode(_ctx.stringValue("GetLastWorkspaceResponse.ErrorCode"));
 		getLastWorkspaceResponse.setErrorMessage(_ctx.stringValue("GetLastWorkspaceResponse.ErrorMessage"));
-		getLastWorkspaceResponse.setSuccess(_ctx.booleanValue("GetLastWorkspaceResponse.Success"));
 		getLastWorkspaceResponse.setObject(_ctx.stringValue("GetLastWorkspaceResponse.Object"));
+		getLastWorkspaceResponse.setSuccess(_ctx.booleanValue("GetLastWorkspaceResponse.Success"));
+		getLastWorkspaceResponse.setErrorCode(_ctx.stringValue("GetLastWorkspaceResponse.ErrorCode"));
 	 
 	 	return getLastWorkspaceResponse;
 	}

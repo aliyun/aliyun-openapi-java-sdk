@@ -23,10 +23,10 @@ public class GetUserNameResponseUnmarshaller {
 	public static GetUserNameResponse unmarshall(GetUserNameResponse getUserNameResponse, UnmarshallerContext _ctx) {
 		
 		getUserNameResponse.setRequestId(_ctx.stringValue("GetUserNameResponse.RequestId"));
-		getUserNameResponse.setSuccessful(_ctx.booleanValue("GetUserNameResponse.Successful"));
-		getUserNameResponse.setErrorCode(_ctx.stringValue("GetUserNameResponse.ErrorCode"));
 		getUserNameResponse.setErrorMsg(_ctx.stringValue("GetUserNameResponse.ErrorMsg"));
 		getUserNameResponse.setObject(_ctx.stringValue("GetUserNameResponse.Object"));
+		getUserNameResponse.setSuccessful(_ctx.booleanValue("GetUserNameResponse.Successful"));
+		getUserNameResponse.setErrorCode(_ctx.stringValue("GetUserNameResponse.ErrorCode"));
 	 
 	 	return getUserNameResponse;
 	}

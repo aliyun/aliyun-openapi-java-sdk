@@ -24,9 +24,9 @@ public class DeleteCommonGroupResponseUnmarshaller {
 	public static DeleteCommonGroupResponse unmarshall(DeleteCommonGroupResponse deleteCommonGroupResponse, UnmarshallerContext _ctx) {
 		
 		deleteCommonGroupResponse.setRequestId(_ctx.stringValue("DeleteCommonGroupResponse.RequestId"));
+		deleteCommonGroupResponse.setErrorMsg(_ctx.stringValue("DeleteCommonGroupResponse.ErrorMsg"));
 		deleteCommonGroupResponse.setSuccessful(_ctx.booleanValue("DeleteCommonGroupResponse.Successful"));
 		deleteCommonGroupResponse.setErrorCode(_ctx.stringValue("DeleteCommonGroupResponse.ErrorCode"));
-		deleteCommonGroupResponse.setErrorMsg(_ctx.stringValue("DeleteCommonGroupResponse.ErrorMsg"));
 
 		Object object = new Object();
 		object.setId(_ctx.stringValue("DeleteCommonGroupResponse.Object.Id"));

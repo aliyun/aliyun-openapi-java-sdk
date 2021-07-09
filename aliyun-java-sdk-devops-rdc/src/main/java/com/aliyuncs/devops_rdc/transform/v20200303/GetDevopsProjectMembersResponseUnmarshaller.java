@@ -27,21 +27,21 @@ public class GetDevopsProjectMembersResponseUnmarshaller {
 	public static GetDevopsProjectMembersResponse unmarshall(GetDevopsProjectMembersResponse getDevopsProjectMembersResponse, UnmarshallerContext _ctx) {
 		
 		getDevopsProjectMembersResponse.setRequestId(_ctx.stringValue("GetDevopsProjectMembersResponse.RequestId"));
-		getDevopsProjectMembersResponse.setSuccessful(_ctx.booleanValue("GetDevopsProjectMembersResponse.Successful"));
+		getDevopsProjectMembersResponse.setNextPageToken(_ctx.stringValue("GetDevopsProjectMembersResponse.NextPageToken"));
 		getDevopsProjectMembersResponse.setErrorCode(_ctx.stringValue("GetDevopsProjectMembersResponse.ErrorCode"));
 		getDevopsProjectMembersResponse.setErrorMsg(_ctx.stringValue("GetDevopsProjectMembersResponse.ErrorMsg"));
+		getDevopsProjectMembersResponse.setSuccessful(_ctx.booleanValue("GetDevopsProjectMembersResponse.Successful"));
 		getDevopsProjectMembersResponse.setTotal(_ctx.integerValue("GetDevopsProjectMembersResponse.Total"));
-		getDevopsProjectMembersResponse.setNextPageToken(_ctx.stringValue("GetDevopsProjectMembersResponse.NextPageToken"));
 
 		List<Member> object = new ArrayList<Member>();
 		for (int i = 0; i < _ctx.lengthValue("GetDevopsProjectMembersResponse.Object.Length"); i++) {
 			Member member = new Member();
-			member.setMemberId(_ctx.stringValue("GetDevopsProjectMembersResponse.Object["+ i +"].MemberId"));
+			member.setEmail(_ctx.stringValue("GetDevopsProjectMembersResponse.Object["+ i +"].Email"));
+			member.setAvatarUrl(_ctx.stringValue("GetDevopsProjectMembersResponse.Object["+ i +"].AvatarUrl"));
 			member.setUserId(_ctx.stringValue("GetDevopsProjectMembersResponse.Object["+ i +"].UserId"));
+			member.setMemberId(_ctx.stringValue("GetDevopsProjectMembersResponse.Object["+ i +"].MemberId"));
 			member.setRole(_ctx.integerValue("GetDevopsProjectMembersResponse.Object["+ i +"].Role"));
 			member.setName(_ctx.stringValue("GetDevopsProjectMembersResponse.Object["+ i +"].Name"));
-			member.setAvatarUrl(_ctx.stringValue("GetDevopsProjectMembersResponse.Object["+ i +"].AvatarUrl"));
-			member.setEmail(_ctx.stringValue("GetDevopsProjectMembersResponse.Object["+ i +"].Email"));
 			member.setPhone(_ctx.stringValue("GetDevopsProjectMembersResponse.Object["+ i +"].Phone"));
 
 			object.add(member);

@@ -26,32 +26,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetTaskDetailActivityResponse extends AcsResponse {
 
-	private Boolean successful;
-
-	private String errorCode;
+	private Integer httpStatusCode;
 
 	private String errorMsg;
 
 	private String requestId;
 
-	private Integer httpStatusCode;
+	private Boolean successful;
+
+	private String errorCode;
 
 	private List<Activity> object;
 
-	public Boolean getSuccessful() {
-		return this.successful;
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
 	}
 
-	public void setSuccessful(Boolean successful) {
-		this.successful = successful;
-	}
-
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
 	}
 
 	public String getErrorMsg() {
@@ -70,12 +62,20 @@ public class GetTaskDetailActivityResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Integer getHttpStatusCode() {
-		return this.httpStatusCode;
+	public Boolean getSuccessful() {
+		return this.successful;
 	}
 
-	public void setHttpStatusCode(Integer httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
+	public void setSuccessful(Boolean successful) {
+		this.successful = successful;
+	}
+
+	public String getErrorCode() {
+		return this.errorCode;
+	}
+
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
 	}
 
 	public List<Activity> getObject() {
@@ -88,30 +88,22 @@ public class GetTaskDetailActivityResponse extends AcsResponse {
 
 	public static class Activity {
 
-		private String created;
-
-		private String title;
+		private String updated;
 
 		private String action;
 
-		private String updated;
+		private String title;
+
+		private String created;
 
 		private Map<Object,Object> content;
 
-		public String getCreated() {
-			return this.created;
+		public String getUpdated() {
+			return this.updated;
 		}
 
-		public void setCreated(String created) {
-			this.created = created;
-		}
-
-		public String getTitle() {
-			return this.title;
-		}
-
-		public void setTitle(String title) {
-			this.title = title;
+		public void setUpdated(String updated) {
+			this.updated = updated;
 		}
 
 		public String getAction() {
@@ -122,12 +114,20 @@ public class GetTaskDetailActivityResponse extends AcsResponse {
 			this.action = action;
 		}
 
-		public String getUpdated() {
-			return this.updated;
+		public String getTitle() {
+			return this.title;
 		}
 
-		public void setUpdated(String updated) {
-			this.updated = updated;
+		public void setTitle(String title) {
+			this.title = title;
+		}
+
+		public String getCreated() {
+			return this.created;
+		}
+
+		public void setCreated(String created) {
+			this.created = created;
 		}
 
 		public Map<Object,Object> getContent() {

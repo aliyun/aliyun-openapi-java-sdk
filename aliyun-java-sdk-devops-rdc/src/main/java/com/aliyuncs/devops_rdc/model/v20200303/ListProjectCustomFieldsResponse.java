@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListProjectCustomFieldsResponse extends AcsResponse {
 
-	private Boolean successful;
-
-	private String errorCode;
-
 	private String errorMsg;
 
 	private String requestId;
 
+	private Boolean successful;
+
+	private String errorCode;
+
 	private List<CustomField> object;
-
-	public Boolean getSuccessful() {
-		return this.successful;
-	}
-
-	public void setSuccessful(Boolean successful) {
-		this.successful = successful;
-	}
-
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
-	}
 
 	public String getErrorMsg() {
 		return this.errorMsg;
@@ -67,6 +51,22 @@ public class ListProjectCustomFieldsResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public Boolean getSuccessful() {
+		return this.successful;
+	}
+
+	public void setSuccessful(Boolean successful) {
+		this.successful = successful;
+	}
+
+	public String getErrorCode() {
+		return this.errorCode;
+	}
+
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
+	}
+
 	public List<CustomField> getObject() {
 		return this.object;
 	}
@@ -77,9 +77,9 @@ public class ListProjectCustomFieldsResponse extends AcsResponse {
 
 	public static class CustomField {
 
-		private String customFieldId;
-
 		private String type;
+
+		private String customFieldId;
 
 		private String subtype;
 
@@ -87,20 +87,20 @@ public class ListProjectCustomFieldsResponse extends AcsResponse {
 
 		private List<Value> values;
 
-		public String getCustomFieldId() {
-			return this.customFieldId;
-		}
-
-		public void setCustomFieldId(String customFieldId) {
-			this.customFieldId = customFieldId;
-		}
-
 		public String getType() {
 			return this.type;
 		}
 
 		public void setType(String type) {
 			this.type = type;
+		}
+
+		public String getCustomFieldId() {
+			return this.customFieldId;
+		}
+
+		public void setCustomFieldId(String customFieldId) {
+			this.customFieldId = customFieldId;
 		}
 
 		public String getSubtype() {
@@ -129,17 +129,9 @@ public class ListProjectCustomFieldsResponse extends AcsResponse {
 
 		public static class Value {
 
-			private String id;
-
 			private String value;
 
-			public String getId() {
-				return this.id;
-			}
-
-			public void setId(String id) {
-				this.id = id;
-			}
+			private String id;
 
 			public String getValue() {
 				return this.value;
@@ -147,6 +139,14 @@ public class ListProjectCustomFieldsResponse extends AcsResponse {
 
 			public void setValue(String value) {
 				this.value = value;
+			}
+
+			public String getId() {
+				return this.id;
+			}
+
+			public void setId(String id) {
+				this.id = id;
 			}
 		}
 	}

@@ -24,31 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetUserByAliyunUidResponse extends AcsResponse {
 
-	private Boolean successful;
-
-	private String errorCode;
-
 	private String errorMsg;
 
 	private String requestId;
 
+	private Boolean successful;
+
+	private String errorCode;
+
 	private Object object;
-
-	public Boolean getSuccessful() {
-		return this.successful;
-	}
-
-	public void setSuccessful(Boolean successful) {
-		this.successful = successful;
-	}
-
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
-	}
 
 	public String getErrorMsg() {
 		return this.errorMsg;
@@ -66,6 +50,22 @@ public class GetUserByAliyunUidResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public Boolean getSuccessful() {
+		return this.successful;
+	}
+
+	public void setSuccessful(Boolean successful) {
+		this.successful = successful;
+	}
+
+	public String getErrorCode() {
+		return this.errorCode;
+	}
+
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
+	}
+
 	public Object getObject() {
 		return this.object;
 	}
@@ -76,17 +76,41 @@ public class GetUserByAliyunUidResponse extends AcsResponse {
 
 	public static class Object {
 
+		private String aliyunPk;
+
+		private String email;
+
+		private String avatarUrl;
+
 		private String name;
 
 		private String id;
 
-		private String aliyunPk;
-
-		private String avatarUrl;
-
-		private String email;
-
 		private String phone;
+
+		public String getAliyunPk() {
+			return this.aliyunPk;
+		}
+
+		public void setAliyunPk(String aliyunPk) {
+			this.aliyunPk = aliyunPk;
+		}
+
+		public String getEmail() {
+			return this.email;
+		}
+
+		public void setEmail(String email) {
+			this.email = email;
+		}
+
+		public String getAvatarUrl() {
+			return this.avatarUrl;
+		}
+
+		public void setAvatarUrl(String avatarUrl) {
+			this.avatarUrl = avatarUrl;
+		}
 
 		public String getName() {
 			return this.name;
@@ -102,30 +126,6 @@ public class GetUserByAliyunUidResponse extends AcsResponse {
 
 		public void setId(String id) {
 			this.id = id;
-		}
-
-		public String getAliyunPk() {
-			return this.aliyunPk;
-		}
-
-		public void setAliyunPk(String aliyunPk) {
-			this.aliyunPk = aliyunPk;
-		}
-
-		public String getAvatarUrl() {
-			return this.avatarUrl;
-		}
-
-		public void setAvatarUrl(String avatarUrl) {
-			this.avatarUrl = avatarUrl;
-		}
-
-		public String getEmail() {
-			return this.email;
-		}
-
-		public void setEmail(String email) {
-			this.email = email;
 		}
 
 		public String getPhone() {

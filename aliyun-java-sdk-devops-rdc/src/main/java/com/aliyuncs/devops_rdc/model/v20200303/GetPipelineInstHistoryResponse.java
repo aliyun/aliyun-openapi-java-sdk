@@ -26,15 +26,31 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetPipelineInstHistoryResponse extends AcsResponse {
 
+	private String requestId;
+
+	private String errorMessage;
+
 	private Boolean success;
 
 	private String errorCode;
 
-	private String errorMessage;
-
-	private String requestId;
-
 	private Data data;
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
 
 	public Boolean getSuccess() {
 		return this.success;
@@ -50,22 +66,6 @@ public class GetPipelineInstHistoryResponse extends AcsResponse {
 
 	public void setErrorCode(String errorCode) {
 		this.errorCode = errorCode;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
 	}
 
 	public Data getData() {
@@ -100,66 +100,42 @@ public class GetPipelineInstHistoryResponse extends AcsResponse {
 
 		public static class PipelineInst {
 
-			private String creator;
-
-			private Long modifyTime;
-
-			private Integer pipelineConfigId;
-
-			private String modifier;
+			private String status;
 
 			private Long createTime;
 
-			private String packages;
-
-			private Integer pipelineId;
-
-			private Integer flowInstId;
-
-			private Integer instNumber;
-
-			private String deletion;
-
 			private String statusName;
-
-			private Integer id;
 
 			private Integer triggerMode;
 
-			private String status;
+			private Integer pipelineConfigId;
+
+			private String deletion;
+
+			private String creator;
+
+			private Integer instNumber;
+
+			private String modifier;
+
+			private String packages;
+
+			private Integer flowInstId;
+
+			private Integer pipelineId;
+
+			private Integer id;
+
+			private Long modifyTime;
 
 			private FlowInstance flowInstance;
 
-			public String getCreator() {
-				return this.creator;
+			public String getStatus() {
+				return this.status;
 			}
 
-			public void setCreator(String creator) {
-				this.creator = creator;
-			}
-
-			public Long getModifyTime() {
-				return this.modifyTime;
-			}
-
-			public void setModifyTime(Long modifyTime) {
-				this.modifyTime = modifyTime;
-			}
-
-			public Integer getPipelineConfigId() {
-				return this.pipelineConfigId;
-			}
-
-			public void setPipelineConfigId(Integer pipelineConfigId) {
-				this.pipelineConfigId = pipelineConfigId;
-			}
-
-			public String getModifier() {
-				return this.modifier;
-			}
-
-			public void setModifier(String modifier) {
-				this.modifier = modifier;
+			public void setStatus(String status) {
+				this.status = status;
 			}
 
 			public Long getCreateTime() {
@@ -170,60 +146,12 @@ public class GetPipelineInstHistoryResponse extends AcsResponse {
 				this.createTime = createTime;
 			}
 
-			public String getPackages() {
-				return this.packages;
-			}
-
-			public void setPackages(String packages) {
-				this.packages = packages;
-			}
-
-			public Integer getPipelineId() {
-				return this.pipelineId;
-			}
-
-			public void setPipelineId(Integer pipelineId) {
-				this.pipelineId = pipelineId;
-			}
-
-			public Integer getFlowInstId() {
-				return this.flowInstId;
-			}
-
-			public void setFlowInstId(Integer flowInstId) {
-				this.flowInstId = flowInstId;
-			}
-
-			public Integer getInstNumber() {
-				return this.instNumber;
-			}
-
-			public void setInstNumber(Integer instNumber) {
-				this.instNumber = instNumber;
-			}
-
-			public String getDeletion() {
-				return this.deletion;
-			}
-
-			public void setDeletion(String deletion) {
-				this.deletion = deletion;
-			}
-
 			public String getStatusName() {
 				return this.statusName;
 			}
 
 			public void setStatusName(String statusName) {
 				this.statusName = statusName;
-			}
-
-			public Integer getId() {
-				return this.id;
-			}
-
-			public void setId(Integer id) {
-				this.id = id;
 			}
 
 			public Integer getTriggerMode() {
@@ -234,12 +162,84 @@ public class GetPipelineInstHistoryResponse extends AcsResponse {
 				this.triggerMode = triggerMode;
 			}
 
-			public String getStatus() {
-				return this.status;
+			public Integer getPipelineConfigId() {
+				return this.pipelineConfigId;
 			}
 
-			public void setStatus(String status) {
-				this.status = status;
+			public void setPipelineConfigId(Integer pipelineConfigId) {
+				this.pipelineConfigId = pipelineConfigId;
+			}
+
+			public String getDeletion() {
+				return this.deletion;
+			}
+
+			public void setDeletion(String deletion) {
+				this.deletion = deletion;
+			}
+
+			public String getCreator() {
+				return this.creator;
+			}
+
+			public void setCreator(String creator) {
+				this.creator = creator;
+			}
+
+			public Integer getInstNumber() {
+				return this.instNumber;
+			}
+
+			public void setInstNumber(Integer instNumber) {
+				this.instNumber = instNumber;
+			}
+
+			public String getModifier() {
+				return this.modifier;
+			}
+
+			public void setModifier(String modifier) {
+				this.modifier = modifier;
+			}
+
+			public String getPackages() {
+				return this.packages;
+			}
+
+			public void setPackages(String packages) {
+				this.packages = packages;
+			}
+
+			public Integer getFlowInstId() {
+				return this.flowInstId;
+			}
+
+			public void setFlowInstId(Integer flowInstId) {
+				this.flowInstId = flowInstId;
+			}
+
+			public Integer getPipelineId() {
+				return this.pipelineId;
+			}
+
+			public void setPipelineId(Integer pipelineId) {
+				this.pipelineId = pipelineId;
+			}
+
+			public Integer getId() {
+				return this.id;
+			}
+
+			public void setId(Integer id) {
+				this.id = id;
+			}
+
+			public Long getModifyTime() {
+				return this.modifyTime;
+			}
+
+			public void setModifyTime(Long modifyTime) {
+				this.modifyTime = modifyTime;
 			}
 
 			public FlowInstance getFlowInstance() {
@@ -252,11 +252,17 @@ public class GetPipelineInstHistoryResponse extends AcsResponse {
 
 			public static class FlowInstance {
 
+				private String status;
+
+				private Map<Object,Object> stages;
+
+				private Long createTime;
+
+				private String statusName;
+
+				private String runningStatus;
+
 				private String creator;
-
-				private Long modifyTime;
-
-				private String systemId;
 
 				private String stageTopo;
 
@@ -264,25 +270,59 @@ public class GetPipelineInstHistoryResponse extends AcsResponse {
 
 				private Boolean autoDrivenStatus;
 
-				private Long createTime;
-
 				private String resultStatus;
-
-				private String runningStatus;
-
-				private String systemCode;
-
-				private Map<Object,Object> stages;
-
-				private String statusName;
 
 				private Integer id;
 
-				private String status;
+				private String systemCode;
+
+				private Long modifyTime;
+
+				private String systemId;
 
 				private List<Group> groups;
 
 				private Result result;
+
+				public String getStatus() {
+					return this.status;
+				}
+
+				public void setStatus(String status) {
+					this.status = status;
+				}
+
+				public Map<Object,Object> getStages() {
+					return this.stages;
+				}
+
+				public void setStages(Map<Object,Object> stages) {
+					this.stages = stages;
+				}
+
+				public Long getCreateTime() {
+					return this.createTime;
+				}
+
+				public void setCreateTime(Long createTime) {
+					this.createTime = createTime;
+				}
+
+				public String getStatusName() {
+					return this.statusName;
+				}
+
+				public void setStatusName(String statusName) {
+					this.statusName = statusName;
+				}
+
+				public String getRunningStatus() {
+					return this.runningStatus;
+				}
+
+				public void setRunningStatus(String runningStatus) {
+					this.runningStatus = runningStatus;
+				}
 
 				public String getCreator() {
 					return this.creator;
@@ -290,22 +330,6 @@ public class GetPipelineInstHistoryResponse extends AcsResponse {
 
 				public void setCreator(String creator) {
 					this.creator = creator;
-				}
-
-				public Long getModifyTime() {
-					return this.modifyTime;
-				}
-
-				public void setModifyTime(Long modifyTime) {
-					this.modifyTime = modifyTime;
-				}
-
-				public String getSystemId() {
-					return this.systemId;
-				}
-
-				public void setSystemId(String systemId) {
-					this.systemId = systemId;
 				}
 
 				public String getStageTopo() {
@@ -332,52 +356,12 @@ public class GetPipelineInstHistoryResponse extends AcsResponse {
 					this.autoDrivenStatus = autoDrivenStatus;
 				}
 
-				public Long getCreateTime() {
-					return this.createTime;
-				}
-
-				public void setCreateTime(Long createTime) {
-					this.createTime = createTime;
-				}
-
 				public String getResultStatus() {
 					return this.resultStatus;
 				}
 
 				public void setResultStatus(String resultStatus) {
 					this.resultStatus = resultStatus;
-				}
-
-				public String getRunningStatus() {
-					return this.runningStatus;
-				}
-
-				public void setRunningStatus(String runningStatus) {
-					this.runningStatus = runningStatus;
-				}
-
-				public String getSystemCode() {
-					return this.systemCode;
-				}
-
-				public void setSystemCode(String systemCode) {
-					this.systemCode = systemCode;
-				}
-
-				public Map<Object,Object> getStages() {
-					return this.stages;
-				}
-
-				public void setStages(Map<Object,Object> stages) {
-					this.stages = stages;
-				}
-
-				public String getStatusName() {
-					return this.statusName;
-				}
-
-				public void setStatusName(String statusName) {
-					this.statusName = statusName;
 				}
 
 				public Integer getId() {
@@ -388,12 +372,28 @@ public class GetPipelineInstHistoryResponse extends AcsResponse {
 					this.id = id;
 				}
 
-				public String getStatus() {
-					return this.status;
+				public String getSystemCode() {
+					return this.systemCode;
 				}
 
-				public void setStatus(String status) {
-					this.status = status;
+				public void setSystemCode(String systemCode) {
+					this.systemCode = systemCode;
+				}
+
+				public Long getModifyTime() {
+					return this.modifyTime;
+				}
+
+				public void setModifyTime(Long modifyTime) {
+					this.modifyTime = modifyTime;
+				}
+
+				public String getSystemId() {
+					return this.systemId;
+				}
+
+				public void setSystemId(String systemId) {
+					this.systemId = systemId;
 				}
 
 				public List<Group> getGroups() {
@@ -414,54 +414,38 @@ public class GetPipelineInstHistoryResponse extends AcsResponse {
 
 				public static class Group {
 
-					private String creator;
-
-					private Long modifyTime;
-
-					private String modifier;
+					private String status;
 
 					private Long createTime;
 
-					private Integer flowInstId;
-
-					private String resultStatus;
-
 					private String deleteStatus;
-
-					private String name;
-
-					private Long startTime;
-
-					private Long endTime;
-
-					private Integer id;
 
 					private Integer idExtent;
 
-					private String status;
+					private String creator;
 
-					public String getCreator() {
-						return this.creator;
+					private Long endTime;
+
+					private Long startTime;
+
+					private String modifier;
+
+					private String resultStatus;
+
+					private Integer flowInstId;
+
+					private String name;
+
+					private Integer id;
+
+					private Long modifyTime;
+
+					public String getStatus() {
+						return this.status;
 					}
 
-					public void setCreator(String creator) {
-						this.creator = creator;
-					}
-
-					public Long getModifyTime() {
-						return this.modifyTime;
-					}
-
-					public void setModifyTime(Long modifyTime) {
-						this.modifyTime = modifyTime;
-					}
-
-					public String getModifier() {
-						return this.modifier;
-					}
-
-					public void setModifier(String modifier) {
-						this.modifier = modifier;
+					public void setStatus(String status) {
+						this.status = status;
 					}
 
 					public Long getCreateTime() {
@@ -472,60 +456,12 @@ public class GetPipelineInstHistoryResponse extends AcsResponse {
 						this.createTime = createTime;
 					}
 
-					public Integer getFlowInstId() {
-						return this.flowInstId;
-					}
-
-					public void setFlowInstId(Integer flowInstId) {
-						this.flowInstId = flowInstId;
-					}
-
-					public String getResultStatus() {
-						return this.resultStatus;
-					}
-
-					public void setResultStatus(String resultStatus) {
-						this.resultStatus = resultStatus;
-					}
-
 					public String getDeleteStatus() {
 						return this.deleteStatus;
 					}
 
 					public void setDeleteStatus(String deleteStatus) {
 						this.deleteStatus = deleteStatus;
-					}
-
-					public String getName() {
-						return this.name;
-					}
-
-					public void setName(String name) {
-						this.name = name;
-					}
-
-					public Long getStartTime() {
-						return this.startTime;
-					}
-
-					public void setStartTime(Long startTime) {
-						this.startTime = startTime;
-					}
-
-					public Long getEndTime() {
-						return this.endTime;
-					}
-
-					public void setEndTime(Long endTime) {
-						this.endTime = endTime;
-					}
-
-					public Integer getId() {
-						return this.id;
-					}
-
-					public void setId(Integer id) {
-						this.id = id;
 					}
 
 					public Integer getIdExtent() {
@@ -536,59 +472,107 @@ public class GetPipelineInstHistoryResponse extends AcsResponse {
 						this.idExtent = idExtent;
 					}
 
-					public String getStatus() {
-						return this.status;
+					public String getCreator() {
+						return this.creator;
 					}
 
-					public void setStatus(String status) {
-						this.status = status;
+					public void setCreator(String creator) {
+						this.creator = creator;
+					}
+
+					public Long getEndTime() {
+						return this.endTime;
+					}
+
+					public void setEndTime(Long endTime) {
+						this.endTime = endTime;
+					}
+
+					public Long getStartTime() {
+						return this.startTime;
+					}
+
+					public void setStartTime(Long startTime) {
+						this.startTime = startTime;
+					}
+
+					public String getModifier() {
+						return this.modifier;
+					}
+
+					public void setModifier(String modifier) {
+						this.modifier = modifier;
+					}
+
+					public String getResultStatus() {
+						return this.resultStatus;
+					}
+
+					public void setResultStatus(String resultStatus) {
+						this.resultStatus = resultStatus;
+					}
+
+					public Integer getFlowInstId() {
+						return this.flowInstId;
+					}
+
+					public void setFlowInstId(Integer flowInstId) {
+						this.flowInstId = flowInstId;
+					}
+
+					public String getName() {
+						return this.name;
+					}
+
+					public void setName(String name) {
+						this.name = name;
+					}
+
+					public Integer getId() {
+						return this.id;
+					}
+
+					public void setId(Integer id) {
+						this.id = id;
+					}
+
+					public Long getModifyTime() {
+						return this.modifyTime;
+					}
+
+					public void setModifyTime(Long modifyTime) {
+						this.modifyTime = modifyTime;
 					}
 				}
 
 				public static class Result {
 
-					private String sources;
-
-					private String caches;
-
-					private Integer enginePipelineId;
+					private Integer enginePipelineNumber;
 
 					private String mixFlowInstId;
 
 					private String enginePipelineName;
 
-					private Integer enginePipelineNumber;
+					private Integer enginePipelineId;
 
-					private String dateTime;
+					private Integer enginePipelineInstId;
 
 					private String timeStamp;
 
 					private String triggerMode;
 
-					private Integer enginePipelineInstId;
+					private String sources;
 
-					public String getSources() {
-						return this.sources;
+					private String caches;
+
+					private String dateTime;
+
+					public Integer getEnginePipelineNumber() {
+						return this.enginePipelineNumber;
 					}
 
-					public void setSources(String sources) {
-						this.sources = sources;
-					}
-
-					public String getCaches() {
-						return this.caches;
-					}
-
-					public void setCaches(String caches) {
-						this.caches = caches;
-					}
-
-					public Integer getEnginePipelineId() {
-						return this.enginePipelineId;
-					}
-
-					public void setEnginePipelineId(Integer enginePipelineId) {
-						this.enginePipelineId = enginePipelineId;
+					public void setEnginePipelineNumber(Integer enginePipelineNumber) {
+						this.enginePipelineNumber = enginePipelineNumber;
 					}
 
 					public String getMixFlowInstId() {
@@ -607,20 +591,20 @@ public class GetPipelineInstHistoryResponse extends AcsResponse {
 						this.enginePipelineName = enginePipelineName;
 					}
 
-					public Integer getEnginePipelineNumber() {
-						return this.enginePipelineNumber;
+					public Integer getEnginePipelineId() {
+						return this.enginePipelineId;
 					}
 
-					public void setEnginePipelineNumber(Integer enginePipelineNumber) {
-						this.enginePipelineNumber = enginePipelineNumber;
+					public void setEnginePipelineId(Integer enginePipelineId) {
+						this.enginePipelineId = enginePipelineId;
 					}
 
-					public String getDateTime() {
-						return this.dateTime;
+					public Integer getEnginePipelineInstId() {
+						return this.enginePipelineInstId;
 					}
 
-					public void setDateTime(String dateTime) {
-						this.dateTime = dateTime;
+					public void setEnginePipelineInstId(Integer enginePipelineInstId) {
+						this.enginePipelineInstId = enginePipelineInstId;
 					}
 
 					public String getTimeStamp() {
@@ -639,12 +623,28 @@ public class GetPipelineInstHistoryResponse extends AcsResponse {
 						this.triggerMode = triggerMode;
 					}
 
-					public Integer getEnginePipelineInstId() {
-						return this.enginePipelineInstId;
+					public String getSources() {
+						return this.sources;
 					}
 
-					public void setEnginePipelineInstId(Integer enginePipelineInstId) {
-						this.enginePipelineInstId = enginePipelineInstId;
+					public void setSources(String sources) {
+						this.sources = sources;
+					}
+
+					public String getCaches() {
+						return this.caches;
+					}
+
+					public void setCaches(String caches) {
+						this.caches = caches;
+					}
+
+					public String getDateTime() {
+						return this.dateTime;
+					}
+
+					public void setDateTime(String dateTime) {
+						this.dateTime = dateTime;
 					}
 				}
 			}

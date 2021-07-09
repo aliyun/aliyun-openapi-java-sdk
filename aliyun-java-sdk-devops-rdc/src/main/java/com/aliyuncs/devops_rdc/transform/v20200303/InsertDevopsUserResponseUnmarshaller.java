@@ -23,10 +23,10 @@ public class InsertDevopsUserResponseUnmarshaller {
 	public static InsertDevopsUserResponse unmarshall(InsertDevopsUserResponse insertDevopsUserResponse, UnmarshallerContext _ctx) {
 		
 		insertDevopsUserResponse.setRequestId(_ctx.stringValue("InsertDevopsUserResponse.RequestId"));
-		insertDevopsUserResponse.setErrorCode(_ctx.stringValue("InsertDevopsUserResponse.ErrorCode"));
 		insertDevopsUserResponse.setErrorMessage(_ctx.stringValue("InsertDevopsUserResponse.ErrorMessage"));
-		insertDevopsUserResponse.setSuccess(_ctx.booleanValue("InsertDevopsUserResponse.Success"));
 		insertDevopsUserResponse.setObject(_ctx.stringValue("InsertDevopsUserResponse.Object"));
+		insertDevopsUserResponse.setSuccess(_ctx.booleanValue("InsertDevopsUserResponse.Success"));
+		insertDevopsUserResponse.setErrorCode(_ctx.stringValue("InsertDevopsUserResponse.ErrorCode"));
 	 
 	 	return insertDevopsUserResponse;
 	}

@@ -25,15 +25,31 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetPipelineLogResponse extends AcsResponse {
 
+	private String requestId;
+
+	private String errorMessage;
+
 	private Boolean success;
 
 	private String errorCode;
 
-	private String errorMessage;
-
-	private String requestId;
-
 	private List<Job> object;
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
 
 	public Boolean getSuccess() {
 		return this.success;
@@ -51,22 +67,6 @@ public class GetPipelineLogResponse extends AcsResponse {
 		this.errorCode = errorCode;
 	}
 
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public List<Job> getObject() {
 		return this.object;
 	}
@@ -77,21 +77,13 @@ public class GetPipelineLogResponse extends AcsResponse {
 
 	public static class Job {
 
-		private Long jobId;
-
 		private String actionName;
 
 		private String startTime;
 
+		private Long jobId;
+
 		private List<BuildProcessNode> buildProcessNodes;
-
-		public Long getJobId() {
-			return this.jobId;
-		}
-
-		public void setJobId(Long jobId) {
-			this.jobId = jobId;
-		}
 
 		public String getActionName() {
 			return this.actionName;
@@ -109,6 +101,14 @@ public class GetPipelineLogResponse extends AcsResponse {
 			this.startTime = startTime;
 		}
 
+		public Long getJobId() {
+			return this.jobId;
+		}
+
+		public void setJobId(Long jobId) {
+			this.jobId = jobId;
+		}
+
 		public List<BuildProcessNode> getBuildProcessNodes() {
 			return this.buildProcessNodes;
 		}
@@ -119,18 +119,18 @@ public class GetPipelineLogResponse extends AcsResponse {
 
 		public static class BuildProcessNode {
 
-			private String nodeName;
+			private String status;
 
 			private Integer nodeIndex;
 
-			private String status;
+			private String nodeName;
 
-			public String getNodeName() {
-				return this.nodeName;
+			public String getStatus() {
+				return this.status;
 			}
 
-			public void setNodeName(String nodeName) {
-				this.nodeName = nodeName;
+			public void setStatus(String status) {
+				this.status = status;
 			}
 
 			public Integer getNodeIndex() {
@@ -141,12 +141,12 @@ public class GetPipelineLogResponse extends AcsResponse {
 				this.nodeIndex = nodeIndex;
 			}
 
-			public String getStatus() {
-				return this.status;
+			public String getNodeName() {
+				return this.nodeName;
 			}
 
-			public void setStatus(String status) {
-				this.status = status;
+			public void setNodeName(String nodeName) {
+				this.nodeName = nodeName;
 			}
 		}
 	}

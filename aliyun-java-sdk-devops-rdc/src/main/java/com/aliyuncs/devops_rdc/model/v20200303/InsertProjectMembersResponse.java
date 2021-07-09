@@ -24,15 +24,39 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class InsertProjectMembersResponse extends AcsResponse {
 
+	private String errorMsg;
+
+	private String requestId;
+
+	private Boolean object;
+
 	private Boolean successful;
 
 	private String errorCode;
 
-	private String errorMsg;
+	public String getErrorMsg() {
+		return this.errorMsg;
+	}
 
-	private Boolean object;
+	public void setErrorMsg(String errorMsg) {
+		this.errorMsg = errorMsg;
+	}
 
-	private String requestId;
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getObject() {
+		return this.object;
+	}
+
+	public void setObject(Boolean object) {
+		this.object = object;
+	}
 
 	public Boolean getSuccessful() {
 		return this.successful;
@@ -48,30 +72,6 @@ public class InsertProjectMembersResponse extends AcsResponse {
 
 	public void setErrorCode(String errorCode) {
 		this.errorCode = errorCode;
-	}
-
-	public String getErrorMsg() {
-		return this.errorMsg;
-	}
-
-	public void setErrorMsg(String errorMsg) {
-		this.errorMsg = errorMsg;
-	}
-
-	public Boolean getObject() {
-		return this.object;
-	}
-
-	public void setObject(Boolean object) {
-		this.object = object;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
 	}
 
 	@Override

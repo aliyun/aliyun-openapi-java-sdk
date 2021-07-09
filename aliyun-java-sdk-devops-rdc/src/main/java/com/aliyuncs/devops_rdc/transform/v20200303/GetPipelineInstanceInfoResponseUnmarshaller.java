@@ -27,28 +27,28 @@ public class GetPipelineInstanceInfoResponseUnmarshaller {
 	public static GetPipelineInstanceInfoResponse unmarshall(GetPipelineInstanceInfoResponse getPipelineInstanceInfoResponse, UnmarshallerContext _ctx) {
 		
 		getPipelineInstanceInfoResponse.setRequestId(_ctx.stringValue("GetPipelineInstanceInfoResponse.RequestId"));
-		getPipelineInstanceInfoResponse.setErrorCode(_ctx.stringValue("GetPipelineInstanceInfoResponse.ErrorCode"));
 		getPipelineInstanceInfoResponse.setErrorMessage(_ctx.stringValue("GetPipelineInstanceInfoResponse.ErrorMessage"));
 		getPipelineInstanceInfoResponse.setSuccess(_ctx.booleanValue("GetPipelineInstanceInfoResponse.Success"));
+		getPipelineInstanceInfoResponse.setErrorCode(_ctx.stringValue("GetPipelineInstanceInfoResponse.ErrorCode"));
 
 		Object object = new Object();
+		object.setEmployeeId(_ctx.stringValue("GetPipelineInstanceInfoResponse.Object.EmployeeId"));
+		object.setEndTime(_ctx.longValue("GetPipelineInstanceInfoResponse.Object.EndTime"));
 		object.setStatus(_ctx.stringValue("GetPipelineInstanceInfoResponse.Object.Status"));
 		object.setStartTime(_ctx.longValue("GetPipelineInstanceInfoResponse.Object.StartTime"));
-		object.setEndTime(_ctx.longValue("GetPipelineInstanceInfoResponse.Object.EndTime"));
 		object.setSources(_ctx.stringValue("GetPipelineInstanceInfoResponse.Object.Sources"));
-		object.setEmployeeId(_ctx.stringValue("GetPipelineInstanceInfoResponse.Object.EmployeeId"));
-
-		List<String> packageDownloadUrls = new ArrayList<String>();
-		for (int i = 0; i < _ctx.lengthValue("GetPipelineInstanceInfoResponse.Object.PackageDownloadUrls.Length"); i++) {
-			packageDownloadUrls.add(_ctx.stringValue("GetPipelineInstanceInfoResponse.Object.PackageDownloadUrls["+ i +"]"));
-		}
-		object.setPackageDownloadUrls(packageDownloadUrls);
 
 		List<String> dockerImages = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("GetPipelineInstanceInfoResponse.Object.DockerImages.Length"); i++) {
 			dockerImages.add(_ctx.stringValue("GetPipelineInstanceInfoResponse.Object.DockerImages["+ i +"]"));
 		}
 		object.setDockerImages(dockerImages);
+
+		List<String> packageDownloadUrls = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("GetPipelineInstanceInfoResponse.Object.PackageDownloadUrls.Length"); i++) {
+			packageDownloadUrls.add(_ctx.stringValue("GetPipelineInstanceInfoResponse.Object.PackageDownloadUrls["+ i +"]"));
+		}
+		object.setPackageDownloadUrls(packageDownloadUrls);
 		getPipelineInstanceInfoResponse.setObject(object);
 	 
 	 	return getPipelineInstanceInfoResponse;

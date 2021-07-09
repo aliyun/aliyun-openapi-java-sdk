@@ -27,21 +27,21 @@ public class ListDevopsProjectTasksResponseUnmarshaller {
 	public static ListDevopsProjectTasksResponse unmarshall(ListDevopsProjectTasksResponse listDevopsProjectTasksResponse, UnmarshallerContext _ctx) {
 		
 		listDevopsProjectTasksResponse.setRequestId(_ctx.stringValue("ListDevopsProjectTasksResponse.RequestId"));
+		listDevopsProjectTasksResponse.setErrorMsg(_ctx.stringValue("ListDevopsProjectTasksResponse.ErrorMsg"));
 		listDevopsProjectTasksResponse.setSuccessful(_ctx.booleanValue("ListDevopsProjectTasksResponse.Successful"));
 		listDevopsProjectTasksResponse.setErrorCode(_ctx.stringValue("ListDevopsProjectTasksResponse.ErrorCode"));
-		listDevopsProjectTasksResponse.setErrorMsg(_ctx.stringValue("ListDevopsProjectTasksResponse.ErrorMsg"));
 
 		List<Task> object = new ArrayList<Task>();
 		for (int i = 0; i < _ctx.lengthValue("ListDevopsProjectTasksResponse.Object.Length"); i++) {
 			Task task = new Task();
+			task.setTaskgroupId(_ctx.stringValue("ListDevopsProjectTasksResponse.Object["+ i +"].TaskgroupId"));
 			task.setTasklistId(_ctx.stringValue("ListDevopsProjectTasksResponse.Object["+ i +"].TasklistId"));
 			task.setProjectId(_ctx.stringValue("ListDevopsProjectTasksResponse.Object["+ i +"].ProjectId"));
-			task.setTaskgroupId(_ctx.stringValue("ListDevopsProjectTasksResponse.Object["+ i +"].TaskgroupId"));
-			task.setName(_ctx.stringValue("ListDevopsProjectTasksResponse.Object["+ i +"].Name"));
-			task.setCreatorId(_ctx.stringValue("ListDevopsProjectTasksResponse.Object["+ i +"].CreatorId"));
-			task.setCreated(_ctx.stringValue("ListDevopsProjectTasksResponse.Object["+ i +"].Created"));
 			task.setModifierId(_ctx.stringValue("ListDevopsProjectTasksResponse.Object["+ i +"].ModifierId"));
 			task.setUpdated(_ctx.stringValue("ListDevopsProjectTasksResponse.Object["+ i +"].Updated"));
+			task.setCreatorId(_ctx.stringValue("ListDevopsProjectTasksResponse.Object["+ i +"].CreatorId"));
+			task.setCreated(_ctx.stringValue("ListDevopsProjectTasksResponse.Object["+ i +"].Created"));
+			task.setName(_ctx.stringValue("ListDevopsProjectTasksResponse.Object["+ i +"].Name"));
 			task.setId(_ctx.stringValue("ListDevopsProjectTasksResponse.Object["+ i +"].Id"));
 
 			object.add(task);

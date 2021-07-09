@@ -23,10 +23,10 @@ public class CreateServiceConnectionResponseUnmarshaller {
 	public static CreateServiceConnectionResponse unmarshall(CreateServiceConnectionResponse createServiceConnectionResponse, UnmarshallerContext _ctx) {
 		
 		createServiceConnectionResponse.setRequestId(_ctx.stringValue("CreateServiceConnectionResponse.RequestId"));
-		createServiceConnectionResponse.setErrorCode(_ctx.stringValue("CreateServiceConnectionResponse.ErrorCode"));
 		createServiceConnectionResponse.setErrorMessage(_ctx.stringValue("CreateServiceConnectionResponse.ErrorMessage"));
-		createServiceConnectionResponse.setSuccess(_ctx.booleanValue("CreateServiceConnectionResponse.Success"));
 		createServiceConnectionResponse.setObject(_ctx.longValue("CreateServiceConnectionResponse.Object"));
+		createServiceConnectionResponse.setSuccess(_ctx.booleanValue("CreateServiceConnectionResponse.Success"));
+		createServiceConnectionResponse.setErrorCode(_ctx.stringValue("CreateServiceConnectionResponse.ErrorCode"));
 	 
 	 	return createServiceConnectionResponse;
 	}

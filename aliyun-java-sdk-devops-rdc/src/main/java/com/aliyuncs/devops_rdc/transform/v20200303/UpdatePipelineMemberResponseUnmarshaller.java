@@ -23,10 +23,10 @@ public class UpdatePipelineMemberResponseUnmarshaller {
 	public static UpdatePipelineMemberResponse unmarshall(UpdatePipelineMemberResponse updatePipelineMemberResponse, UnmarshallerContext _ctx) {
 		
 		updatePipelineMemberResponse.setRequestId(_ctx.stringValue("UpdatePipelineMemberResponse.RequestId"));
-		updatePipelineMemberResponse.setSuccess(_ctx.booleanValue("UpdatePipelineMemberResponse.Success"));
-		updatePipelineMemberResponse.setErrorCode(_ctx.stringValue("UpdatePipelineMemberResponse.ErrorCode"));
 		updatePipelineMemberResponse.setErrorMessage(_ctx.stringValue("UpdatePipelineMemberResponse.ErrorMessage"));
 		updatePipelineMemberResponse.setObject(_ctx.booleanValue("UpdatePipelineMemberResponse.Object"));
+		updatePipelineMemberResponse.setErrorCode(_ctx.stringValue("UpdatePipelineMemberResponse.ErrorCode"));
+		updatePipelineMemberResponse.setSuccess(_ctx.booleanValue("UpdatePipelineMemberResponse.Success"));
 	 
 	 	return updatePipelineMemberResponse;
 	}

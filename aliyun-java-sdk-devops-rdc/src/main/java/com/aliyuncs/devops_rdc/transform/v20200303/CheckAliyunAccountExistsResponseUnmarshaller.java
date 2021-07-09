@@ -23,10 +23,10 @@ public class CheckAliyunAccountExistsResponseUnmarshaller {
 	public static CheckAliyunAccountExistsResponse unmarshall(CheckAliyunAccountExistsResponse checkAliyunAccountExistsResponse, UnmarshallerContext _ctx) {
 		
 		checkAliyunAccountExistsResponse.setRequestId(_ctx.stringValue("CheckAliyunAccountExistsResponse.RequestId"));
-		checkAliyunAccountExistsResponse.setSuccessful(_ctx.booleanValue("CheckAliyunAccountExistsResponse.Successful"));
-		checkAliyunAccountExistsResponse.setErrorCode(_ctx.stringValue("CheckAliyunAccountExistsResponse.ErrorCode"));
 		checkAliyunAccountExistsResponse.setErrorMsg(_ctx.stringValue("CheckAliyunAccountExistsResponse.ErrorMsg"));
 		checkAliyunAccountExistsResponse.setObject(_ctx.booleanValue("CheckAliyunAccountExistsResponse.Object"));
+		checkAliyunAccountExistsResponse.setSuccessful(_ctx.booleanValue("CheckAliyunAccountExistsResponse.Successful"));
+		checkAliyunAccountExistsResponse.setErrorCode(_ctx.stringValue("CheckAliyunAccountExistsResponse.ErrorCode"));
 	 
 	 	return checkAliyunAccountExistsResponse;
 	}

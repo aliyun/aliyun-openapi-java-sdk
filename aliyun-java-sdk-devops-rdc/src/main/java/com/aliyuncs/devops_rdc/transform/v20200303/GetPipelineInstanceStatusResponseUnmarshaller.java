@@ -23,10 +23,10 @@ public class GetPipelineInstanceStatusResponseUnmarshaller {
 	public static GetPipelineInstanceStatusResponse unmarshall(GetPipelineInstanceStatusResponse getPipelineInstanceStatusResponse, UnmarshallerContext _ctx) {
 		
 		getPipelineInstanceStatusResponse.setRequestId(_ctx.stringValue("GetPipelineInstanceStatusResponse.RequestId"));
-		getPipelineInstanceStatusResponse.setSuccess(_ctx.booleanValue("GetPipelineInstanceStatusResponse.Success"));
-		getPipelineInstanceStatusResponse.setErrorCode(_ctx.stringValue("GetPipelineInstanceStatusResponse.ErrorCode"));
 		getPipelineInstanceStatusResponse.setErrorMessage(_ctx.stringValue("GetPipelineInstanceStatusResponse.ErrorMessage"));
 		getPipelineInstanceStatusResponse.setObject(_ctx.stringValue("GetPipelineInstanceStatusResponse.Object"));
+		getPipelineInstanceStatusResponse.setErrorCode(_ctx.stringValue("GetPipelineInstanceStatusResponse.ErrorCode"));
+		getPipelineInstanceStatusResponse.setSuccess(_ctx.booleanValue("GetPipelineInstanceStatusResponse.Success"));
 	 
 	 	return getPipelineInstanceStatusResponse;
 	}

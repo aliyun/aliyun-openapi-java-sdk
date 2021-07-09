@@ -24,9 +24,9 @@ public class GetPipelineStepLogResponseUnmarshaller {
 	public static GetPipelineStepLogResponse unmarshall(GetPipelineStepLogResponse getPipelineStepLogResponse, UnmarshallerContext _ctx) {
 		
 		getPipelineStepLogResponse.setRequestId(_ctx.stringValue("GetPipelineStepLogResponse.RequestId"));
+		getPipelineStepLogResponse.setErrorMessage(_ctx.stringValue("GetPipelineStepLogResponse.ErrorMessage"));
 		getPipelineStepLogResponse.setSuccess(_ctx.booleanValue("GetPipelineStepLogResponse.Success"));
 		getPipelineStepLogResponse.setErrorCode(_ctx.stringValue("GetPipelineStepLogResponse.ErrorCode"));
-		getPipelineStepLogResponse.setErrorMessage(_ctx.stringValue("GetPipelineStepLogResponse.ErrorMessage"));
 
 		Object object = new Object();
 		object.setLast(_ctx.integerValue("GetPipelineStepLogResponse.Object.Last"));

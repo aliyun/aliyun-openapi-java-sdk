@@ -24,16 +24,16 @@ public class GetUserByAliyunUidResponseUnmarshaller {
 	public static GetUserByAliyunUidResponse unmarshall(GetUserByAliyunUidResponse getUserByAliyunUidResponse, UnmarshallerContext _ctx) {
 		
 		getUserByAliyunUidResponse.setRequestId(_ctx.stringValue("GetUserByAliyunUidResponse.RequestId"));
+		getUserByAliyunUidResponse.setErrorMsg(_ctx.stringValue("GetUserByAliyunUidResponse.ErrorMsg"));
 		getUserByAliyunUidResponse.setSuccessful(_ctx.booleanValue("GetUserByAliyunUidResponse.Successful"));
 		getUserByAliyunUidResponse.setErrorCode(_ctx.stringValue("GetUserByAliyunUidResponse.ErrorCode"));
-		getUserByAliyunUidResponse.setErrorMsg(_ctx.stringValue("GetUserByAliyunUidResponse.ErrorMsg"));
 
 		Object object = new Object();
+		object.setAliyunPk(_ctx.stringValue("GetUserByAliyunUidResponse.Object.AliyunPk"));
+		object.setEmail(_ctx.stringValue("GetUserByAliyunUidResponse.Object.Email"));
+		object.setAvatarUrl(_ctx.stringValue("GetUserByAliyunUidResponse.Object.AvatarUrl"));
 		object.setName(_ctx.stringValue("GetUserByAliyunUidResponse.Object.Name"));
 		object.setId(_ctx.stringValue("GetUserByAliyunUidResponse.Object.Id"));
-		object.setAliyunPk(_ctx.stringValue("GetUserByAliyunUidResponse.Object.AliyunPk"));
-		object.setAvatarUrl(_ctx.stringValue("GetUserByAliyunUidResponse.Object.AvatarUrl"));
-		object.setEmail(_ctx.stringValue("GetUserByAliyunUidResponse.Object.Email"));
 		object.setPhone(_ctx.stringValue("GetUserByAliyunUidResponse.Object.Phone"));
 		getUserByAliyunUidResponse.setObject(object);
 	 

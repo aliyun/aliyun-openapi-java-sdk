@@ -27,9 +27,9 @@ public class ListCredentialsResponseUnmarshaller {
 	public static ListCredentialsResponse unmarshall(ListCredentialsResponse listCredentialsResponse, UnmarshallerContext _ctx) {
 		
 		listCredentialsResponse.setRequestId(_ctx.stringValue("ListCredentialsResponse.RequestId"));
-		listCredentialsResponse.setErrorCode(_ctx.stringValue("ListCredentialsResponse.ErrorCode"));
 		listCredentialsResponse.setErrorMessage(_ctx.stringValue("ListCredentialsResponse.ErrorMessage"));
 		listCredentialsResponse.setSuccess(_ctx.booleanValue("ListCredentialsResponse.Success"));
+		listCredentialsResponse.setErrorCode(_ctx.stringValue("ListCredentialsResponse.ErrorCode"));
 
 		List<Map<Object, Object>> object = _ctx.listMapValue("ListCredentialsResponse.Object");
 		listCredentialsResponse.setObject(object);

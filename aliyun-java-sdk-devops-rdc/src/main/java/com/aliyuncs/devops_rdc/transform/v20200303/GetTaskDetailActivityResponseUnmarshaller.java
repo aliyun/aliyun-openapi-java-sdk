@@ -28,18 +28,18 @@ public class GetTaskDetailActivityResponseUnmarshaller {
 	public static GetTaskDetailActivityResponse unmarshall(GetTaskDetailActivityResponse getTaskDetailActivityResponse, UnmarshallerContext _ctx) {
 		
 		getTaskDetailActivityResponse.setRequestId(_ctx.stringValue("GetTaskDetailActivityResponse.RequestId"));
+		getTaskDetailActivityResponse.setHttpStatusCode(_ctx.integerValue("GetTaskDetailActivityResponse.HttpStatusCode"));
+		getTaskDetailActivityResponse.setErrorMsg(_ctx.stringValue("GetTaskDetailActivityResponse.ErrorMsg"));
 		getTaskDetailActivityResponse.setSuccessful(_ctx.booleanValue("GetTaskDetailActivityResponse.Successful"));
 		getTaskDetailActivityResponse.setErrorCode(_ctx.stringValue("GetTaskDetailActivityResponse.ErrorCode"));
-		getTaskDetailActivityResponse.setErrorMsg(_ctx.stringValue("GetTaskDetailActivityResponse.ErrorMsg"));
-		getTaskDetailActivityResponse.setHttpStatusCode(_ctx.integerValue("GetTaskDetailActivityResponse.HttpStatusCode"));
 
 		List<Activity> object = new ArrayList<Activity>();
 		for (int i = 0; i < _ctx.lengthValue("GetTaskDetailActivityResponse.Object.Length"); i++) {
 			Activity activity = new Activity();
-			activity.setCreated(_ctx.stringValue("GetTaskDetailActivityResponse.Object["+ i +"].Created"));
-			activity.setTitle(_ctx.stringValue("GetTaskDetailActivityResponse.Object["+ i +"].Title"));
-			activity.setAction(_ctx.stringValue("GetTaskDetailActivityResponse.Object["+ i +"].Action"));
 			activity.setUpdated(_ctx.stringValue("GetTaskDetailActivityResponse.Object["+ i +"].Updated"));
+			activity.setAction(_ctx.stringValue("GetTaskDetailActivityResponse.Object["+ i +"].Action"));
+			activity.setTitle(_ctx.stringValue("GetTaskDetailActivityResponse.Object["+ i +"].Title"));
+			activity.setCreated(_ctx.stringValue("GetTaskDetailActivityResponse.Object["+ i +"].Created"));
 			activity.setContent(_ctx.mapValue("GetTaskDetailActivityResponse.Object["+ i +"].Content"));
 
 			object.add(activity);

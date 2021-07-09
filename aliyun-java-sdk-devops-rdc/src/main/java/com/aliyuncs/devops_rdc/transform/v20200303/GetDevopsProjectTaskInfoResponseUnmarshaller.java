@@ -27,32 +27,32 @@ public class GetDevopsProjectTaskInfoResponseUnmarshaller {
 	public static GetDevopsProjectTaskInfoResponse unmarshall(GetDevopsProjectTaskInfoResponse getDevopsProjectTaskInfoResponse, UnmarshallerContext _ctx) {
 		
 		getDevopsProjectTaskInfoResponse.setRequestId(_ctx.stringValue("GetDevopsProjectTaskInfoResponse.RequestId"));
+		getDevopsProjectTaskInfoResponse.setErrorMsg(_ctx.stringValue("GetDevopsProjectTaskInfoResponse.ErrorMsg"));
 		getDevopsProjectTaskInfoResponse.setSuccessful(_ctx.booleanValue("GetDevopsProjectTaskInfoResponse.Successful"));
 		getDevopsProjectTaskInfoResponse.setErrorCode(_ctx.stringValue("GetDevopsProjectTaskInfoResponse.ErrorCode"));
-		getDevopsProjectTaskInfoResponse.setErrorMsg(_ctx.stringValue("GetDevopsProjectTaskInfoResponse.ErrorMsg"));
 
 		Object object = new Object();
-		object.setTasklistId(_ctx.stringValue("GetDevopsProjectTaskInfoResponse.Object.TasklistId"));
-		object.setTaskflowstatusId(_ctx.stringValue("GetDevopsProjectTaskInfoResponse.Object.TaskflowstatusId"));
-		object.setTaskType(_ctx.stringValue("GetDevopsProjectTaskInfoResponse.Object.TaskType"));
-		object.setIsDeleted(_ctx.booleanValue("GetDevopsProjectTaskInfoResponse.Object.IsDeleted"));
-		object.setCreatorId(_ctx.stringValue("GetDevopsProjectTaskInfoResponse.Object.CreatorId"));
-		object.setIsTopInProject(_ctx.booleanValue("GetDevopsProjectTaskInfoResponse.Object.IsTopInProject"));
 		object.setExecutorId(_ctx.stringValue("GetDevopsProjectTaskInfoResponse.Object.ExecutorId"));
-		object.setStoryPoint(_ctx.stringValue("GetDevopsProjectTaskInfoResponse.Object.StoryPoint"));
-		object.setCreated(_ctx.stringValue("GetDevopsProjectTaskInfoResponse.Object.Created"));
-		object.setOrganizationId(_ctx.stringValue("GetDevopsProjectTaskInfoResponse.Object.OrganizationId"));
-		object.setIsDone(_ctx.booleanValue("GetDevopsProjectTaskInfoResponse.Object.IsDone"));
-		object.setId(_ctx.stringValue("GetDevopsProjectTaskInfoResponse.Object.Id"));
-		object.setUpdated(_ctx.stringValue("GetDevopsProjectTaskInfoResponse.Object.Updated"));
-		object.setSprintId(_ctx.stringValue("GetDevopsProjectTaskInfoResponse.Object.SprintId"));
 		object.setProjectId(_ctx.stringValue("GetDevopsProjectTaskInfoResponse.Object.ProjectId"));
-		object.setContent(_ctx.stringValue("GetDevopsProjectTaskInfoResponse.Object.Content"));
-		object.setNote(_ctx.stringValue("GetDevopsProjectTaskInfoResponse.Object.Note"));
-		object.setDueDate(_ctx.stringValue("GetDevopsProjectTaskInfoResponse.Object.DueDate"));
 		object.setStartDate(_ctx.stringValue("GetDevopsProjectTaskInfoResponse.Object.StartDate"));
-		object.setVisible(_ctx.stringValue("GetDevopsProjectTaskInfoResponse.Object.Visible"));
+		object.setStoryPoint(_ctx.stringValue("GetDevopsProjectTaskInfoResponse.Object.StoryPoint"));
 		object.setPriority(_ctx.stringValue("GetDevopsProjectTaskInfoResponse.Object.Priority"));
+		object.setIsTopInProject(_ctx.booleanValue("GetDevopsProjectTaskInfoResponse.Object.IsTopInProject"));
+		object.setCreatorId(_ctx.stringValue("GetDevopsProjectTaskInfoResponse.Object.CreatorId"));
+		object.setOrganizationId(_ctx.stringValue("GetDevopsProjectTaskInfoResponse.Object.OrganizationId"));
+		object.setTaskType(_ctx.stringValue("GetDevopsProjectTaskInfoResponse.Object.TaskType"));
+		object.setVisible(_ctx.stringValue("GetDevopsProjectTaskInfoResponse.Object.Visible"));
+		object.setTasklistId(_ctx.stringValue("GetDevopsProjectTaskInfoResponse.Object.TasklistId"));
+		object.setIsDone(_ctx.booleanValue("GetDevopsProjectTaskInfoResponse.Object.IsDone"));
+		object.setIsDeleted(_ctx.booleanValue("GetDevopsProjectTaskInfoResponse.Object.IsDeleted"));
+		object.setTaskflowstatusId(_ctx.stringValue("GetDevopsProjectTaskInfoResponse.Object.TaskflowstatusId"));
+		object.setNote(_ctx.stringValue("GetDevopsProjectTaskInfoResponse.Object.Note"));
+		object.setSprintId(_ctx.stringValue("GetDevopsProjectTaskInfoResponse.Object.SprintId"));
+		object.setUpdated(_ctx.stringValue("GetDevopsProjectTaskInfoResponse.Object.Updated"));
+		object.setDueDate(_ctx.stringValue("GetDevopsProjectTaskInfoResponse.Object.DueDate"));
+		object.setCreated(_ctx.stringValue("GetDevopsProjectTaskInfoResponse.Object.Created"));
+		object.setContent(_ctx.stringValue("GetDevopsProjectTaskInfoResponse.Object.Content"));
+		object.setId(_ctx.stringValue("GetDevopsProjectTaskInfoResponse.Object.Id"));
 
 		List<String> involveMembers = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("GetDevopsProjectTaskInfoResponse.Object.InvolveMembers.Length"); i++) {

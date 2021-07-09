@@ -25,27 +25,27 @@ public class GetDevopsProjectSprintInfoResponseUnmarshaller {
 	public static GetDevopsProjectSprintInfoResponse unmarshall(GetDevopsProjectSprintInfoResponse getDevopsProjectSprintInfoResponse, UnmarshallerContext _ctx) {
 		
 		getDevopsProjectSprintInfoResponse.setRequestId(_ctx.stringValue("GetDevopsProjectSprintInfoResponse.RequestId"));
+		getDevopsProjectSprintInfoResponse.setErrorMsg(_ctx.stringValue("GetDevopsProjectSprintInfoResponse.ErrorMsg"));
 		getDevopsProjectSprintInfoResponse.setSuccessful(_ctx.booleanValue("GetDevopsProjectSprintInfoResponse.Successful"));
 		getDevopsProjectSprintInfoResponse.setErrorCode(_ctx.stringValue("GetDevopsProjectSprintInfoResponse.ErrorCode"));
-		getDevopsProjectSprintInfoResponse.setErrorMsg(_ctx.stringValue("GetDevopsProjectSprintInfoResponse.ErrorMsg"));
 
 		Object object = new Object();
+		object.setStatus(_ctx.stringValue("GetDevopsProjectSprintInfoResponse.Object.Status"));
 		object.setAccomplished(_ctx.stringValue("GetDevopsProjectSprintInfoResponse.Object.Accomplished"));
+		object.setProjectId(_ctx.stringValue("GetDevopsProjectSprintInfoResponse.Object.ProjectId"));
 		object.setIsDeleted(_ctx.booleanValue("GetDevopsProjectSprintInfoResponse.Object.IsDeleted"));
-		object.setCreated(_ctx.stringValue("GetDevopsProjectSprintInfoResponse.Object.Created"));
+		object.setStartDate(_ctx.stringValue("GetDevopsProjectSprintInfoResponse.Object.StartDate"));
+		object.setUpdated(_ctx.stringValue("GetDevopsProjectSprintInfoResponse.Object.Updated"));
+		object.setCreatorId(_ctx.stringValue("GetDevopsProjectSprintInfoResponse.Object.CreatorId"));
 		object.setDueDate(_ctx.stringValue("GetDevopsProjectSprintInfoResponse.Object.DueDate"));
 		object.setName(_ctx.stringValue("GetDevopsProjectSprintInfoResponse.Object.Name"));
-		object.setCreatorId(_ctx.stringValue("GetDevopsProjectSprintInfoResponse.Object.CreatorId"));
+		object.setCreated(_ctx.stringValue("GetDevopsProjectSprintInfoResponse.Object.Created"));
 		object.setId(_ctx.stringValue("GetDevopsProjectSprintInfoResponse.Object.Id"));
-		object.setUpdated(_ctx.stringValue("GetDevopsProjectSprintInfoResponse.Object.Updated"));
-		object.setStartDate(_ctx.stringValue("GetDevopsProjectSprintInfoResponse.Object.StartDate"));
-		object.setStatus(_ctx.stringValue("GetDevopsProjectSprintInfoResponse.Object.Status"));
-		object.setProjectId(_ctx.stringValue("GetDevopsProjectSprintInfoResponse.Object.ProjectId"));
 
 		PlanToDo planToDo = new PlanToDo();
-		planToDo.setStoryPoints(_ctx.integerValue("GetDevopsProjectSprintInfoResponse.Object.PlanToDo.StoryPoints"));
-		planToDo.setWorkTimes(_ctx.integerValue("GetDevopsProjectSprintInfoResponse.Object.PlanToDo.WorkTimes"));
 		planToDo.setTasks(_ctx.integerValue("GetDevopsProjectSprintInfoResponse.Object.PlanToDo.Tasks"));
+		planToDo.setWorkTimes(_ctx.integerValue("GetDevopsProjectSprintInfoResponse.Object.PlanToDo.WorkTimes"));
+		planToDo.setStoryPoints(_ctx.integerValue("GetDevopsProjectSprintInfoResponse.Object.PlanToDo.StoryPoints"));
 		object.setPlanToDo(planToDo);
 		getDevopsProjectSprintInfoResponse.setObject(object);
 	 

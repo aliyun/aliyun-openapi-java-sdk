@@ -25,26 +25,34 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetDevopsProjectMembersResponse extends AcsResponse {
 
-	private Boolean successful;
+	private String requestId;
+
+	private String nextPageToken;
 
 	private String errorCode;
 
 	private String errorMsg;
 
-	private String requestId;
+	private Boolean successful;
 
 	private Integer total;
 
-	private String nextPageToken;
-
 	private List<Member> object;
 
-	public Boolean getSuccessful() {
-		return this.successful;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setSuccessful(Boolean successful) {
-		this.successful = successful;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getNextPageToken() {
+		return this.nextPageToken;
+	}
+
+	public void setNextPageToken(String nextPageToken) {
+		this.nextPageToken = nextPageToken;
 	}
 
 	public String getErrorCode() {
@@ -63,12 +71,12 @@ public class GetDevopsProjectMembersResponse extends AcsResponse {
 		this.errorMsg = errorMsg;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public Boolean getSuccessful() {
+		return this.successful;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setSuccessful(Boolean successful) {
+		this.successful = successful;
 	}
 
 	public Integer getTotal() {
@@ -77,14 +85,6 @@ public class GetDevopsProjectMembersResponse extends AcsResponse {
 
 	public void setTotal(Integer total) {
 		this.total = total;
-	}
-
-	public String getNextPageToken() {
-		return this.nextPageToken;
-	}
-
-	public void setNextPageToken(String nextPageToken) {
-		this.nextPageToken = nextPageToken;
 	}
 
 	public List<Member> getObject() {
@@ -97,26 +97,34 @@ public class GetDevopsProjectMembersResponse extends AcsResponse {
 
 	public static class Member {
 
-		private String memberId;
+		private String email;
+
+		private String avatarUrl;
 
 		private String userId;
+
+		private String memberId;
 
 		private Integer role;
 
 		private String name;
 
-		private String avatarUrl;
-
-		private String email;
-
 		private String phone;
 
-		public String getMemberId() {
-			return this.memberId;
+		public String getEmail() {
+			return this.email;
 		}
 
-		public void setMemberId(String memberId) {
-			this.memberId = memberId;
+		public void setEmail(String email) {
+			this.email = email;
+		}
+
+		public String getAvatarUrl() {
+			return this.avatarUrl;
+		}
+
+		public void setAvatarUrl(String avatarUrl) {
+			this.avatarUrl = avatarUrl;
 		}
 
 		public String getUserId() {
@@ -125,6 +133,14 @@ public class GetDevopsProjectMembersResponse extends AcsResponse {
 
 		public void setUserId(String userId) {
 			this.userId = userId;
+		}
+
+		public String getMemberId() {
+			return this.memberId;
+		}
+
+		public void setMemberId(String memberId) {
+			this.memberId = memberId;
 		}
 
 		public Integer getRole() {
@@ -141,22 +157,6 @@ public class GetDevopsProjectMembersResponse extends AcsResponse {
 
 		public void setName(String name) {
 			this.name = name;
-		}
-
-		public String getAvatarUrl() {
-			return this.avatarUrl;
-		}
-
-		public void setAvatarUrl(String avatarUrl) {
-			this.avatarUrl = avatarUrl;
-		}
-
-		public String getEmail() {
-			return this.email;
-		}
-
-		public void setEmail(String email) {
-			this.email = email;
 		}
 
 		public String getPhone() {

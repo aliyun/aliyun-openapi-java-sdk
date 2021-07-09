@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetPipelineInstanceInfoResponse extends AcsResponse {
 
-	private String errorCode;
-
 	private String errorMessage;
 
 	private String requestId;
 
 	private Boolean success;
 
+	private String errorCode;
+
 	private Object object;
-
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
-	}
 
 	public String getErrorMessage() {
 		return this.errorMessage;
@@ -67,6 +59,14 @@ public class GetPipelineInstanceInfoResponse extends AcsResponse {
 		this.success = success;
 	}
 
+	public String getErrorCode() {
+		return this.errorCode;
+	}
+
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
+	}
+
 	public Object getObject() {
 		return this.object;
 	}
@@ -77,19 +77,35 @@ public class GetPipelineInstanceInfoResponse extends AcsResponse {
 
 	public static class Object {
 
+		private String employeeId;
+
+		private Long endTime;
+
 		private String status;
 
 		private Long startTime;
 
-		private Long endTime;
-
 		private String sources;
 
-		private String employeeId;
+		private List<String> dockerImages;
 
 		private List<String> packageDownloadUrls;
 
-		private List<String> dockerImages;
+		public String getEmployeeId() {
+			return this.employeeId;
+		}
+
+		public void setEmployeeId(String employeeId) {
+			this.employeeId = employeeId;
+		}
+
+		public Long getEndTime() {
+			return this.endTime;
+		}
+
+		public void setEndTime(Long endTime) {
+			this.endTime = endTime;
+		}
 
 		public String getStatus() {
 			return this.status;
@@ -107,14 +123,6 @@ public class GetPipelineInstanceInfoResponse extends AcsResponse {
 			this.startTime = startTime;
 		}
 
-		public Long getEndTime() {
-			return this.endTime;
-		}
-
-		public void setEndTime(Long endTime) {
-			this.endTime = endTime;
-		}
-
 		public String getSources() {
 			return this.sources;
 		}
@@ -123,12 +131,12 @@ public class GetPipelineInstanceInfoResponse extends AcsResponse {
 			this.sources = sources;
 		}
 
-		public String getEmployeeId() {
-			return this.employeeId;
+		public List<String> getDockerImages() {
+			return this.dockerImages;
 		}
 
-		public void setEmployeeId(String employeeId) {
-			this.employeeId = employeeId;
+		public void setDockerImages(List<String> dockerImages) {
+			this.dockerImages = dockerImages;
 		}
 
 		public List<String> getPackageDownloadUrls() {
@@ -137,14 +145,6 @@ public class GetPipelineInstanceInfoResponse extends AcsResponse {
 
 		public void setPackageDownloadUrls(List<String> packageDownloadUrls) {
 			this.packageDownloadUrls = packageDownloadUrls;
-		}
-
-		public List<String> getDockerImages() {
-			return this.dockerImages;
-		}
-
-		public void setDockerImages(List<String> dockerImages) {
-			this.dockerImages = dockerImages;
 		}
 	}
 

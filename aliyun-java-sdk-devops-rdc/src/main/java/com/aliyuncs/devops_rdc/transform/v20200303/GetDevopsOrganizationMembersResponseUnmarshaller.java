@@ -27,19 +27,19 @@ public class GetDevopsOrganizationMembersResponseUnmarshaller {
 	public static GetDevopsOrganizationMembersResponse unmarshall(GetDevopsOrganizationMembersResponse getDevopsOrganizationMembersResponse, UnmarshallerContext _ctx) {
 		
 		getDevopsOrganizationMembersResponse.setRequestId(_ctx.stringValue("GetDevopsOrganizationMembersResponse.RequestId"));
+		getDevopsOrganizationMembersResponse.setErrorMsg(_ctx.stringValue("GetDevopsOrganizationMembersResponse.ErrorMsg"));
 		getDevopsOrganizationMembersResponse.setSuccessful(_ctx.booleanValue("GetDevopsOrganizationMembersResponse.Successful"));
 		getDevopsOrganizationMembersResponse.setErrorCode(_ctx.stringValue("GetDevopsOrganizationMembersResponse.ErrorCode"));
-		getDevopsOrganizationMembersResponse.setErrorMsg(_ctx.stringValue("GetDevopsOrganizationMembersResponse.ErrorMsg"));
 
 		List<Member> object = new ArrayList<Member>();
 		for (int i = 0; i < _ctx.lengthValue("GetDevopsOrganizationMembersResponse.Object.Length"); i++) {
 			Member member = new Member();
-			member.setMemberId(_ctx.stringValue("GetDevopsOrganizationMembersResponse.Object["+ i +"].MemberId"));
+			member.setEmail(_ctx.stringValue("GetDevopsOrganizationMembersResponse.Object["+ i +"].Email"));
+			member.setAvatarUrl(_ctx.stringValue("GetDevopsOrganizationMembersResponse.Object["+ i +"].AvatarUrl"));
 			member.setUserId(_ctx.stringValue("GetDevopsOrganizationMembersResponse.Object["+ i +"].UserId"));
+			member.setMemberId(_ctx.stringValue("GetDevopsOrganizationMembersResponse.Object["+ i +"].MemberId"));
 			member.setRole(_ctx.integerValue("GetDevopsOrganizationMembersResponse.Object["+ i +"].Role"));
 			member.setName(_ctx.stringValue("GetDevopsOrganizationMembersResponse.Object["+ i +"].Name"));
-			member.setAvatarUrl(_ctx.stringValue("GetDevopsOrganizationMembersResponse.Object["+ i +"].AvatarUrl"));
-			member.setEmail(_ctx.stringValue("GetDevopsOrganizationMembersResponse.Object["+ i +"].Email"));
 			member.setPhone(_ctx.stringValue("GetDevopsOrganizationMembersResponse.Object["+ i +"].Phone"));
 
 			object.add(member);

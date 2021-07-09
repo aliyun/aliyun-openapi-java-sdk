@@ -28,9 +28,9 @@ public class ListDevopsProjectTaskListResponseUnmarshaller {
 	public static ListDevopsProjectTaskListResponse unmarshall(ListDevopsProjectTaskListResponse listDevopsProjectTaskListResponse, UnmarshallerContext _ctx) {
 		
 		listDevopsProjectTaskListResponse.setRequestId(_ctx.stringValue("ListDevopsProjectTaskListResponse.RequestId"));
+		listDevopsProjectTaskListResponse.setErrorMsg(_ctx.stringValue("ListDevopsProjectTaskListResponse.ErrorMsg"));
 		listDevopsProjectTaskListResponse.setSuccessful(_ctx.booleanValue("ListDevopsProjectTaskListResponse.Successful"));
 		listDevopsProjectTaskListResponse.setErrorCode(_ctx.stringValue("ListDevopsProjectTaskListResponse.ErrorCode"));
-		listDevopsProjectTaskListResponse.setErrorMsg(_ctx.stringValue("ListDevopsProjectTaskListResponse.ErrorMsg"));
 
 		Object object = new Object();
 

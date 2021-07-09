@@ -23,10 +23,10 @@ public class CreatePipelineResponseUnmarshaller {
 	public static CreatePipelineResponse unmarshall(CreatePipelineResponse createPipelineResponse, UnmarshallerContext _ctx) {
 		
 		createPipelineResponse.setRequestId(_ctx.stringValue("CreatePipelineResponse.RequestId"));
-		createPipelineResponse.setErrorCode(_ctx.stringValue("CreatePipelineResponse.ErrorCode"));
 		createPipelineResponse.setErrorMessage(_ctx.stringValue("CreatePipelineResponse.ErrorMessage"));
-		createPipelineResponse.setSuccess(_ctx.booleanValue("CreatePipelineResponse.Success"));
 		createPipelineResponse.setObject(_ctx.longValue("CreatePipelineResponse.Object"));
+		createPipelineResponse.setSuccess(_ctx.booleanValue("CreatePipelineResponse.Success"));
+		createPipelineResponse.setErrorCode(_ctx.stringValue("CreatePipelineResponse.ErrorCode"));
 	 
 	 	return createPipelineResponse;
 	}

@@ -27,15 +27,15 @@ public class ListSmartGroupResponseUnmarshaller {
 	public static ListSmartGroupResponse unmarshall(ListSmartGroupResponse listSmartGroupResponse, UnmarshallerContext _ctx) {
 		
 		listSmartGroupResponse.setRequestId(_ctx.stringValue("ListSmartGroupResponse.RequestId"));
+		listSmartGroupResponse.setErrorMsg(_ctx.stringValue("ListSmartGroupResponse.ErrorMsg"));
 		listSmartGroupResponse.setSuccessful(_ctx.booleanValue("ListSmartGroupResponse.Successful"));
 		listSmartGroupResponse.setErrorCode(_ctx.stringValue("ListSmartGroupResponse.ErrorCode"));
-		listSmartGroupResponse.setErrorMsg(_ctx.stringValue("ListSmartGroupResponse.ErrorMsg"));
 
 		List<SmartGroup> object = new ArrayList<SmartGroup>();
 		for (int i = 0; i < _ctx.lengthValue("ListSmartGroupResponse.Object.Length"); i++) {
 			SmartGroup smartGroup = new SmartGroup();
-			smartGroup.setId(_ctx.stringValue("ListSmartGroupResponse.Object["+ i +"].Id"));
 			smartGroup.setType(_ctx.stringValue("ListSmartGroupResponse.Object["+ i +"].Type"));
+			smartGroup.setId(_ctx.stringValue("ListSmartGroupResponse.Object["+ i +"].Id"));
 
 			object.add(smartGroup);
 		}

@@ -23,10 +23,10 @@ public class UpdateDevopsProjectResponseUnmarshaller {
 	public static UpdateDevopsProjectResponse unmarshall(UpdateDevopsProjectResponse updateDevopsProjectResponse, UnmarshallerContext _ctx) {
 		
 		updateDevopsProjectResponse.setRequestId(_ctx.stringValue("UpdateDevopsProjectResponse.RequestId"));
-		updateDevopsProjectResponse.setErrorCode(_ctx.stringValue("UpdateDevopsProjectResponse.ErrorCode"));
 		updateDevopsProjectResponse.setErrorMessage(_ctx.stringValue("UpdateDevopsProjectResponse.ErrorMessage"));
-		updateDevopsProjectResponse.setSuccess(_ctx.booleanValue("UpdateDevopsProjectResponse.Success"));
 		updateDevopsProjectResponse.setObject(_ctx.stringValue("UpdateDevopsProjectResponse.Object"));
+		updateDevopsProjectResponse.setSuccess(_ctx.booleanValue("UpdateDevopsProjectResponse.Success"));
+		updateDevopsProjectResponse.setErrorCode(_ctx.stringValue("UpdateDevopsProjectResponse.ErrorCode"));
 	 
 	 	return updateDevopsProjectResponse;
 	}

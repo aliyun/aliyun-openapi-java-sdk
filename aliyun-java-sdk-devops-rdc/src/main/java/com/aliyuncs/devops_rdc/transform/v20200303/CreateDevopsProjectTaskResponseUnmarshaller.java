@@ -24,36 +24,36 @@ public class CreateDevopsProjectTaskResponseUnmarshaller {
 	public static CreateDevopsProjectTaskResponse unmarshall(CreateDevopsProjectTaskResponse createDevopsProjectTaskResponse, UnmarshallerContext _ctx) {
 		
 		createDevopsProjectTaskResponse.setRequestId(_ctx.stringValue("CreateDevopsProjectTaskResponse.RequestId"));
+		createDevopsProjectTaskResponse.setErrorMsg(_ctx.stringValue("CreateDevopsProjectTaskResponse.ErrorMsg"));
 		createDevopsProjectTaskResponse.setSuccessful(_ctx.booleanValue("CreateDevopsProjectTaskResponse.Successful"));
 		createDevopsProjectTaskResponse.setErrorCode(_ctx.stringValue("CreateDevopsProjectTaskResponse.ErrorCode"));
-		createDevopsProjectTaskResponse.setErrorMsg(_ctx.stringValue("CreateDevopsProjectTaskResponse.ErrorMsg"));
 
 		Object object = new Object();
-		object.setNote(_ctx.stringValue("CreateDevopsProjectTaskResponse.Object.Note"));
-		object.setTasklistId(_ctx.stringValue("CreateDevopsProjectTaskResponse.Object.TasklistId"));
-		object.setDueDate(_ctx.stringValue("CreateDevopsProjectTaskResponse.Object.DueDate"));
-		object.setRating(_ctx.integerValue("CreateDevopsProjectTaskResponse.Object.Rating"));
-		object.setSource(_ctx.stringValue("CreateDevopsProjectTaskResponse.Object.Source"));
-		object.setContent(_ctx.stringValue("CreateDevopsProjectTaskResponse.Object.Content"));
-		object.setTaskflowstatusId(_ctx.stringValue("CreateDevopsProjectTaskResponse.Object.TaskflowstatusId"));
-		object.setTaskType(_ctx.stringValue("CreateDevopsProjectTaskResponse.Object.TaskType"));
-		object.setScenarioFieldConfigId(_ctx.stringValue("CreateDevopsProjectTaskResponse.Object.ScenarioFieldConfigId"));
-		object.setPos(_ctx.integerValue("CreateDevopsProjectTaskResponse.Object.Pos"));
-		object.setAncestorIds(_ctx.stringValue("CreateDevopsProjectTaskResponse.Object.AncestorIds"));
-		object.setCreatorId(_ctx.stringValue("CreateDevopsProjectTaskResponse.Object.CreatorId"));
-		object.setVisible(_ctx.stringValue("CreateDevopsProjectTaskResponse.Object.Visible"));
 		object.setExecutorId(_ctx.stringValue("CreateDevopsProjectTaskResponse.Object.ExecutorId"));
-		object.setStoryPoint(_ctx.stringValue("CreateDevopsProjectTaskResponse.Object.StoryPoint"));
-		object.setCreated(_ctx.stringValue("CreateDevopsProjectTaskResponse.Object.Created"));
-		object.setOrganizationId(_ctx.stringValue("CreateDevopsProjectTaskResponse.Object.OrganizationId"));
+		object.setProjectId(_ctx.stringValue("CreateDevopsProjectTaskResponse.Object.ProjectId"));
 		object.setPriority(_ctx.integerValue("CreateDevopsProjectTaskResponse.Object.Priority"));
-		object.setIsDone(_ctx.booleanValue("CreateDevopsProjectTaskResponse.Object.IsDone"));
-		object.setId(_ctx.stringValue("CreateDevopsProjectTaskResponse.Object.Id"));
+		object.setScenarioFieldConfigId(_ctx.stringValue("CreateDevopsProjectTaskResponse.Object.ScenarioFieldConfigId"));
+		object.setAncestorIds(_ctx.stringValue("CreateDevopsProjectTaskResponse.Object.AncestorIds"));
+		object.setTaskType(_ctx.stringValue("CreateDevopsProjectTaskResponse.Object.TaskType"));
+		object.setTasklistId(_ctx.stringValue("CreateDevopsProjectTaskResponse.Object.TasklistId"));
+		object.setTaskflowstatusId(_ctx.stringValue("CreateDevopsProjectTaskResponse.Object.TaskflowstatusId"));
+		object.setNote(_ctx.stringValue("CreateDevopsProjectTaskResponse.Object.Note"));
 		object.setUpdated(_ctx.stringValue("CreateDevopsProjectTaskResponse.Object.Updated"));
 		object.setUniqueId(_ctx.integerValue("CreateDevopsProjectTaskResponse.Object.UniqueId"));
+		object.setContent(_ctx.stringValue("CreateDevopsProjectTaskResponse.Object.Content"));
+		object.setRating(_ctx.integerValue("CreateDevopsProjectTaskResponse.Object.Rating"));
+		object.setPos(_ctx.integerValue("CreateDevopsProjectTaskResponse.Object.Pos"));
+		object.setStoryPoint(_ctx.stringValue("CreateDevopsProjectTaskResponse.Object.StoryPoint"));
 		object.setStartDate(_ctx.stringValue("CreateDevopsProjectTaskResponse.Object.StartDate"));
+		object.setCreatorId(_ctx.stringValue("CreateDevopsProjectTaskResponse.Object.CreatorId"));
+		object.setSource(_ctx.stringValue("CreateDevopsProjectTaskResponse.Object.Source"));
+		object.setOrganizationId(_ctx.stringValue("CreateDevopsProjectTaskResponse.Object.OrganizationId"));
+		object.setVisible(_ctx.stringValue("CreateDevopsProjectTaskResponse.Object.Visible"));
+		object.setIsDone(_ctx.booleanValue("CreateDevopsProjectTaskResponse.Object.IsDone"));
 		object.setSprintId(_ctx.stringValue("CreateDevopsProjectTaskResponse.Object.SprintId"));
-		object.setProjectId(_ctx.stringValue("CreateDevopsProjectTaskResponse.Object.ProjectId"));
+		object.setDueDate(_ctx.stringValue("CreateDevopsProjectTaskResponse.Object.DueDate"));
+		object.setCreated(_ctx.stringValue("CreateDevopsProjectTaskResponse.Object.Created"));
+		object.setId(_ctx.stringValue("CreateDevopsProjectTaskResponse.Object.Id"));
 		createDevopsProjectTaskResponse.setObject(object);
 	 
 	 	return createDevopsProjectTaskResponse;

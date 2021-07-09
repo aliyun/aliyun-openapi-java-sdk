@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListDevopsProjectTaskFlowStatusResponse extends AcsResponse {
 
-	private Boolean successful;
-
-	private String errorCode;
-
 	private String errorMsg;
 
 	private String requestId;
 
+	private Boolean successful;
+
+	private String errorCode;
+
 	private List<TaskflowStatus> object;
-
-	public Boolean getSuccessful() {
-		return this.successful;
-	}
-
-	public void setSuccessful(Boolean successful) {
-		this.successful = successful;
-	}
-
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
-	}
 
 	public String getErrorMsg() {
 		return this.errorMsg;
@@ -67,6 +51,22 @@ public class ListDevopsProjectTaskFlowStatusResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public Boolean getSuccessful() {
+		return this.successful;
+	}
+
+	public void setSuccessful(Boolean successful) {
+		this.successful = successful;
+	}
+
+	public String getErrorCode() {
+		return this.errorCode;
+	}
+
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
+	}
+
 	public List<TaskflowStatus> getObject() {
 		return this.object;
 	}
@@ -77,48 +77,32 @@ public class ListDevopsProjectTaskFlowStatusResponse extends AcsResponse {
 
 	public static class TaskflowStatus {
 
-		private Boolean isDeleted;
-
-		private String rejectStatusIds;
-
-		private Integer pos;
+		private String taskflowId;
 
 		private String kind;
 
-		private String created;
+		private Integer pos;
 
-		private String taskflowId;
-
-		private String name;
-
-		private String creatorId;
-
-		private String id;
+		private Boolean isDeleted;
 
 		private String updated;
 
-		public Boolean getIsDeleted() {
-			return this.isDeleted;
+		private String creatorId;
+
+		private String name;
+
+		private String created;
+
+		private String rejectStatusIds;
+
+		private String id;
+
+		public String getTaskflowId() {
+			return this.taskflowId;
 		}
 
-		public void setIsDeleted(Boolean isDeleted) {
-			this.isDeleted = isDeleted;
-		}
-
-		public String getRejectStatusIds() {
-			return this.rejectStatusIds;
-		}
-
-		public void setRejectStatusIds(String rejectStatusIds) {
-			this.rejectStatusIds = rejectStatusIds;
-		}
-
-		public Integer getPos() {
-			return this.pos;
-		}
-
-		public void setPos(Integer pos) {
-			this.pos = pos;
+		public void setTaskflowId(String taskflowId) {
+			this.taskflowId = taskflowId;
 		}
 
 		public String getKind() {
@@ -129,28 +113,28 @@ public class ListDevopsProjectTaskFlowStatusResponse extends AcsResponse {
 			this.kind = kind;
 		}
 
-		public String getCreated() {
-			return this.created;
+		public Integer getPos() {
+			return this.pos;
 		}
 
-		public void setCreated(String created) {
-			this.created = created;
+		public void setPos(Integer pos) {
+			this.pos = pos;
 		}
 
-		public String getTaskflowId() {
-			return this.taskflowId;
+		public Boolean getIsDeleted() {
+			return this.isDeleted;
 		}
 
-		public void setTaskflowId(String taskflowId) {
-			this.taskflowId = taskflowId;
+		public void setIsDeleted(Boolean isDeleted) {
+			this.isDeleted = isDeleted;
 		}
 
-		public String getName() {
-			return this.name;
+		public String getUpdated() {
+			return this.updated;
 		}
 
-		public void setName(String name) {
-			this.name = name;
+		public void setUpdated(String updated) {
+			this.updated = updated;
 		}
 
 		public String getCreatorId() {
@@ -161,20 +145,36 @@ public class ListDevopsProjectTaskFlowStatusResponse extends AcsResponse {
 			this.creatorId = creatorId;
 		}
 
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getCreated() {
+			return this.created;
+		}
+
+		public void setCreated(String created) {
+			this.created = created;
+		}
+
+		public String getRejectStatusIds() {
+			return this.rejectStatusIds;
+		}
+
+		public void setRejectStatusIds(String rejectStatusIds) {
+			this.rejectStatusIds = rejectStatusIds;
+		}
+
 		public String getId() {
 			return this.id;
 		}
 
 		public void setId(String id) {
 			this.id = id;
-		}
-
-		public String getUpdated() {
-			return this.updated;
-		}
-
-		public void setUpdated(String updated) {
-			this.updated = updated;
 		}
 	}
 
