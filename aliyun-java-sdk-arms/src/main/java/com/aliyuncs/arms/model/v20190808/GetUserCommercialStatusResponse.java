@@ -26,7 +26,7 @@ public class GetUserCommercialStatusResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Integer data;
+	private String data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -36,11 +36,11 @@ public class GetUserCommercialStatusResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Integer getData() {
+	public String getData() {
 		return this.data;
 	}
 
-	public void setData(Integer data) {
+	public void setData(String data) {
 		this.data = data;
 	}
 

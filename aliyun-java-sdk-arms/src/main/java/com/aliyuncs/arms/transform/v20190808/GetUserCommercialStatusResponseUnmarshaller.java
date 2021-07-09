@@ -23,7 +23,7 @@ public class GetUserCommercialStatusResponseUnmarshaller {
 	public static GetUserCommercialStatusResponse unmarshall(GetUserCommercialStatusResponse getUserCommercialStatusResponse, UnmarshallerContext _ctx) {
 		
 		getUserCommercialStatusResponse.setRequestId(_ctx.stringValue("GetUserCommercialStatusResponse.RequestId"));
-		getUserCommercialStatusResponse.setData(_ctx.integerValue("GetUserCommercialStatusResponse.Data"));
+		getUserCommercialStatusResponse.setData(_ctx.stringValue("GetUserCommercialStatusResponse.Data"));
 	 
 	 	return getUserCommercialStatusResponse;
 	}
