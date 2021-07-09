@@ -1,3 +1,6 @@
+2021-07-09 Version: 2.7.31
+- Mod GetUserCommercialStatus.
+
 2021-07-09 Version: 2.7.30
 - Mod GetUserCommercialStatus.
 
