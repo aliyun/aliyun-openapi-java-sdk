@@ -35,7 +35,7 @@ public class QueryFpFileDeleteJobListRequest extends RpcAcsRequest<QueryFpFileDe
 
 	private String jobIds;
 	public QueryFpFileDeleteJobListRequest() {
-		super("Mts", "2014-06-18", "QueryFpFileDeleteJobList");
+		super("Mts", "2014-06-18", "QueryFpFileDeleteJobList", "mts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

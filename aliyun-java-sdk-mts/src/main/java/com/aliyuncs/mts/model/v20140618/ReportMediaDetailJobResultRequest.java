@@ -39,7 +39,7 @@ public class ReportMediaDetailJobResultRequest extends RpcAcsRequest<ReportMedia
 
 	private Long ownerId;
 	public ReportMediaDetailJobResultRequest() {
-		super("Mts", "2014-06-18", "ReportMediaDetailJobResult");
+		super("Mts", "2014-06-18", "ReportMediaDetailJobResult", "mts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

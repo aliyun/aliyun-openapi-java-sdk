@@ -41,7 +41,7 @@ public class SubmitMediaFpDeleteJobRequest extends RpcAcsRequest<SubmitMediaFpDe
 
 	private String pipelineId;
 	public SubmitMediaFpDeleteJobRequest() {
-		super("Mts", "2014-06-18", "SubmitMediaFpDeleteJob");
+		super("Mts", "2014-06-18", "SubmitMediaFpDeleteJob", "mts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

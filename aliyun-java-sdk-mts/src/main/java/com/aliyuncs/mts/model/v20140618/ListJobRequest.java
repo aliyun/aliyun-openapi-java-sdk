@@ -45,7 +45,7 @@ public class ListJobRequest extends RpcAcsRequest<ListJobResponse> {
 
 	private String pipelineId;
 	public ListJobRequest() {
-		super("Mts", "2014-06-18", "ListJob");
+		super("Mts", "2014-06-18", "ListJob", "mts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

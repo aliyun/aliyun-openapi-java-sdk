@@ -35,7 +35,7 @@ public class CancelJobRequest extends RpcAcsRequest<CancelJobResponse> {
 
 	private String jobId;
 	public CancelJobRequest() {
-		super("Mts", "2014-06-18", "CancelJob");
+		super("Mts", "2014-06-18", "CancelJob", "mts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

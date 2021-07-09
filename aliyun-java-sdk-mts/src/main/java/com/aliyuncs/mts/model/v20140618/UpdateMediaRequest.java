@@ -45,7 +45,7 @@ public class UpdateMediaRequest extends RpcAcsRequest<UpdateMediaResponse> {
 
 	private String tags;
 	public UpdateMediaRequest() {
-		super("Mts", "2014-06-18", "UpdateMedia");
+		super("Mts", "2014-06-18", "UpdateMedia", "mts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -25,11 +25,13 @@ import com.aliyuncs.mts.Endpoint;
 public class ListInferenceJobRequest extends RpcAcsRequest<ListInferenceJobResponse> {
 	   
 
-	private Long userId;
+	private Long maxPageSize;
+
+	private Long pageNumber;
 
 	private String serverName;
 	public ListInferenceJobRequest() {
-		super("Mts", "2014-06-18", "ListInferenceJob");
+		super("Mts", "2014-06-18", "ListInferenceJob", "mts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,14 +39,25 @@ public class ListInferenceJobRequest extends RpcAcsRequest<ListInferenceJobRespo
 		} catch (Exception e) {}
 	}
 
-	public Long getUserId() {
-		return this.userId;
+	public Long getMaxPageSize() {
+		return this.maxPageSize;
 	}
 
-	public void setUserId(Long userId) {
-		this.userId = userId;
-		if(userId != null){
-			putQueryParameter("UserId", userId.toString());
+	public void setMaxPageSize(Long maxPageSize) {
+		this.maxPageSize = maxPageSize;
+		if(maxPageSize != null){
+			putQueryParameter("MaxPageSize", maxPageSize.toString());
+		}
+	}
+
+	public Long getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Long pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 

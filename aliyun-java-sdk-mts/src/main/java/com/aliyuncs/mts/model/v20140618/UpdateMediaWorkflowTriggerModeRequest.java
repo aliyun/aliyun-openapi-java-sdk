@@ -37,7 +37,7 @@ public class UpdateMediaWorkflowTriggerModeRequest extends RpcAcsRequest<UpdateM
 
 	private String triggerMode;
 	public UpdateMediaWorkflowTriggerModeRequest() {
-		super("Mts", "2014-06-18", "UpdateMediaWorkflowTriggerMode");
+		super("Mts", "2014-06-18", "UpdateMediaWorkflowTriggerMode", "mts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

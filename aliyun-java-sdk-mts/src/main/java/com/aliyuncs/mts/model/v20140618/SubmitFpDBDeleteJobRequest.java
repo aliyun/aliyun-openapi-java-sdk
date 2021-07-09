@@ -41,7 +41,7 @@ public class SubmitFpDBDeleteJobRequest extends RpcAcsRequest<SubmitFpDBDeleteJo
 
 	private String delType;
 	public SubmitFpDBDeleteJobRequest() {
-		super("Mts", "2014-06-18", "SubmitFpDBDeleteJob");
+		super("Mts", "2014-06-18", "SubmitFpDBDeleteJob", "mts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

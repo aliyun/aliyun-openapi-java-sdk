@@ -35,7 +35,7 @@ public class DeleteSmarttagTemplateRequest extends RpcAcsRequest<DeleteSmarttagT
 
 	private String templateId;
 	public DeleteSmarttagTemplateRequest() {
-		super("Mts", "2014-06-18", "DeleteSmarttagTemplate");
+		super("Mts", "2014-06-18", "DeleteSmarttagTemplate", "mts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

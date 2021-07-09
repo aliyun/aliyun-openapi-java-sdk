@@ -35,7 +35,7 @@ public class QuerySmarttagTemplateListRequest extends RpcAcsRequest<QuerySmartta
 
 	private String templateId;
 	public QuerySmarttagTemplateListRequest() {
-		super("Mts", "2014-06-18", "QuerySmarttagTemplateList");
+		super("Mts", "2014-06-18", "QuerySmarttagTemplateList", "mts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

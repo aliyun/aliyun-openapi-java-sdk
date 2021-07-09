@@ -39,7 +39,7 @@ public class ListCensorPipelineRequest extends RpcAcsRequest<ListCensorPipelineR
 
 	private Long ownerId;
 	public ListCensorPipelineRequest() {
-		super("Mts", "2014-06-18", "ListCensorPipeline");
+		super("Mts", "2014-06-18", "ListCensorPipeline", "mts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

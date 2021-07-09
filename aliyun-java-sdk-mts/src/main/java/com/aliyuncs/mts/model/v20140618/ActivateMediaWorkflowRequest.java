@@ -35,7 +35,7 @@ public class ActivateMediaWorkflowRequest extends RpcAcsRequest<ActivateMediaWor
 
 	private String mediaWorkflowId;
 	public ActivateMediaWorkflowRequest() {
-		super("Mts", "2014-06-18", "ActivateMediaWorkflow");
+		super("Mts", "2014-06-18", "ActivateMediaWorkflow", "mts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -39,7 +39,7 @@ public class UnregisterCustomFaceRequest extends RpcAcsRequest<UnregisterCustomF
 
 	private Long ownerId;
 	public UnregisterCustomFaceRequest() {
-		super("Mts", "2014-06-18", "UnregisterCustomFace");
+		super("Mts", "2014-06-18", "UnregisterCustomFace", "mts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

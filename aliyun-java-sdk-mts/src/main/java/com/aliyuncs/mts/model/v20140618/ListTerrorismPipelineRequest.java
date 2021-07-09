@@ -39,7 +39,7 @@ public class ListTerrorismPipelineRequest extends RpcAcsRequest<ListTerrorismPip
 
 	private Long ownerId;
 	public ListTerrorismPipelineRequest() {
-		super("Mts", "2014-06-18", "ListTerrorismPipeline");
+		super("Mts", "2014-06-18", "ListTerrorismPipeline", "mts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

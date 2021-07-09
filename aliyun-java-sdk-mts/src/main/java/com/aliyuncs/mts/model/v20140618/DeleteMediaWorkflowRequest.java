@@ -35,7 +35,7 @@ public class DeleteMediaWorkflowRequest extends RpcAcsRequest<DeleteMediaWorkflo
 
 	private String mediaWorkflowId;
 	public DeleteMediaWorkflowRequest() {
-		super("Mts", "2014-06-18", "DeleteMediaWorkflow");
+		super("Mts", "2014-06-18", "DeleteMediaWorkflow", "mts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

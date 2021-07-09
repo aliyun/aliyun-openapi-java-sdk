@@ -43,7 +43,7 @@ public class GetLicenseRequest extends RpcAcsRequest<GetLicenseResponse> {
 
 	private String licenseUrl;
 	public GetLicenseRequest() {
-		super("Mts", "2014-06-18", "GetLicense");
+		super("Mts", "2014-06-18", "GetLicense", "mts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

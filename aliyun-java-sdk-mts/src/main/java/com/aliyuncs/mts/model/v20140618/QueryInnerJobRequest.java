@@ -33,7 +33,7 @@ public class QueryInnerJobRequest extends RpcAcsRequest<QueryInnerJobResponse> {
 
 	private String jobId;
 	public QueryInnerJobRequest() {
-		super("Mts", "2014-06-18", "QueryInnerJob");
+		super("Mts", "2014-06-18", "QueryInnerJob", "mts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

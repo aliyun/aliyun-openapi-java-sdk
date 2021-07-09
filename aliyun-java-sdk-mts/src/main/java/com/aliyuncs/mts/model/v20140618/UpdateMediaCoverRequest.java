@@ -37,7 +37,7 @@ public class UpdateMediaCoverRequest extends RpcAcsRequest<UpdateMediaCoverRespo
 
 	private String mediaId;
 	public UpdateMediaCoverRequest() {
-		super("Mts", "2014-06-18", "UpdateMediaCover");
+		super("Mts", "2014-06-18", "UpdateMediaCover", "mts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

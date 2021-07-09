@@ -39,7 +39,7 @@ public class SearchMediaWorkflowRequest extends RpcAcsRequest<SearchMediaWorkflo
 
 	private Long ownerId;
 	public SearchMediaWorkflowRequest() {
-		super("Mts", "2014-06-18", "SearchMediaWorkflow");
+		super("Mts", "2014-06-18", "SearchMediaWorkflow", "mts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

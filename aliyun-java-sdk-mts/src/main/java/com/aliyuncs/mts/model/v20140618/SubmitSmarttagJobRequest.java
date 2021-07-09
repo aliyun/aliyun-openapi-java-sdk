@@ -53,7 +53,7 @@ public class SubmitSmarttagJobRequest extends RpcAcsRequest<SubmitSmarttagJobRes
 
 	private String contentAddr;
 	public SubmitSmarttagJobRequest() {
-		super("Mts", "2014-06-18", "SubmitSmarttagJob");
+		super("Mts", "2014-06-18", "SubmitSmarttagJob", "mts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -39,7 +39,7 @@ public class AddTerrorismPipelineRequest extends RpcAcsRequest<AddTerrorismPipel
 
 	private String name;
 	public AddTerrorismPipelineRequest() {
-		super("Mts", "2014-06-18", "AddTerrorismPipeline");
+		super("Mts", "2014-06-18", "AddTerrorismPipeline", "mts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

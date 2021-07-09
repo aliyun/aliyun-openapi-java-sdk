@@ -37,7 +37,7 @@ public class DeleteMediaTagRequest extends RpcAcsRequest<DeleteMediaTagResponse>
 
 	private String mediaId;
 	public DeleteMediaTagRequest() {
-		super("Mts", "2014-06-18", "DeleteMediaTag");
+		super("Mts", "2014-06-18", "DeleteMediaTag", "mts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

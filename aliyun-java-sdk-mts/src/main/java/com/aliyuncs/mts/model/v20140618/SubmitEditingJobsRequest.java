@@ -31,6 +31,10 @@ public class SubmitEditingJobsRequest extends RpcAcsRequest<SubmitEditingJobsRes
 
 	private String editingInputs;
 
+	private String editingJobURL;
+
+	private Long editingJobOssFileUid;
+
 	private String editingJobOutputs;
 
 	private String resourceOwnerAccount;
@@ -42,8 +46,10 @@ public class SubmitEditingJobsRequest extends RpcAcsRequest<SubmitEditingJobsRes
 	private String pipelineId;
 
 	private String outputBucket;
+
+	private String editingJobOssFileRoleArn;
 	public SubmitEditingJobsRequest() {
-		super("Mts", "2014-06-18", "SubmitEditingJobs");
+		super("Mts", "2014-06-18", "SubmitEditingJobs", "mts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -81,6 +87,28 @@ public class SubmitEditingJobsRequest extends RpcAcsRequest<SubmitEditingJobsRes
 		this.editingInputs = editingInputs;
 		if(editingInputs != null){
 			putQueryParameter("EditingInputs", editingInputs);
+		}
+	}
+
+	public String getEditingJobURL() {
+		return this.editingJobURL;
+	}
+
+	public void setEditingJobURL(String editingJobURL) {
+		this.editingJobURL = editingJobURL;
+		if(editingJobURL != null){
+			putQueryParameter("EditingJobURL", editingJobURL);
+		}
+	}
+
+	public Long getEditingJobOssFileUid() {
+		return this.editingJobOssFileUid;
+	}
+
+	public void setEditingJobOssFileUid(Long editingJobOssFileUid) {
+		this.editingJobOssFileUid = editingJobOssFileUid;
+		if(editingJobOssFileUid != null){
+			putQueryParameter("EditingJobOssFileUid", editingJobOssFileUid.toString());
 		}
 	}
 
@@ -147,6 +175,17 @@ public class SubmitEditingJobsRequest extends RpcAcsRequest<SubmitEditingJobsRes
 		this.outputBucket = outputBucket;
 		if(outputBucket != null){
 			putQueryParameter("OutputBucket", outputBucket);
+		}
+	}
+
+	public String getEditingJobOssFileRoleArn() {
+		return this.editingJobOssFileRoleArn;
+	}
+
+	public void setEditingJobOssFileRoleArn(String editingJobOssFileRoleArn) {
+		this.editingJobOssFileRoleArn = editingJobOssFileRoleArn;
+		if(editingJobOssFileRoleArn != null){
+			putQueryParameter("EditingJobOssFileRoleArn", editingJobOssFileRoleArn);
 		}
 	}
 

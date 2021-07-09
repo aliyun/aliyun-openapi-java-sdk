@@ -51,7 +51,7 @@ public class SubmitIProductionJobRequest extends RpcAcsRequest<SubmitIProduction
 
 	private String scheduleParams;
 	public SubmitIProductionJobRequest() {
-		super("Mts", "2014-06-18", "SubmitIProductionJob");
+		super("Mts", "2014-06-18", "SubmitIProductionJob", "mts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -35,7 +35,7 @@ public class CreateMcuTemplateRequest extends RpcAcsRequest<CreateMcuTemplateRes
 
 	private Long ownerId;
 	public CreateMcuTemplateRequest() {
-		super("Mts", "2014-06-18", "CreateMcuTemplate");
+		super("Mts", "2014-06-18", "CreateMcuTemplate", "mts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

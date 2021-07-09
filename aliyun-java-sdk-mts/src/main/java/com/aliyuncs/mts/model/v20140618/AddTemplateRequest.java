@@ -45,7 +45,7 @@ public class AddTemplateRequest extends RpcAcsRequest<AddTemplateResponse> {
 
 	private String name;
 	public AddTemplateRequest() {
-		super("Mts", "2014-06-18", "AddTemplate");
+		super("Mts", "2014-06-18", "AddTemplate", "mts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

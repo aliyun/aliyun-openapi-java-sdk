@@ -41,7 +41,7 @@ public class SubmitVideoSplitJobRequest extends RpcAcsRequest<SubmitVideoSplitJo
 
 	private String input;
 	public SubmitVideoSplitJobRequest() {
-		super("Mts", "2014-06-18", "SubmitVideoSplitJob");
+		super("Mts", "2014-06-18", "SubmitVideoSplitJob", "mts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

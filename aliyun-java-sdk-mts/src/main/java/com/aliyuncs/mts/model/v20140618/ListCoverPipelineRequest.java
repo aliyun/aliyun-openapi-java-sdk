@@ -39,7 +39,7 @@ public class ListCoverPipelineRequest extends RpcAcsRequest<ListCoverPipelineRes
 
 	private Long ownerId;
 	public ListCoverPipelineRequest() {
-		super("Mts", "2014-06-18", "ListCoverPipeline");
+		super("Mts", "2014-06-18", "ListCoverPipeline", "mts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

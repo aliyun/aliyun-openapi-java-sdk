@@ -39,7 +39,7 @@ public class RegisterCustomFaceRequest extends RpcAcsRequest<RegisterCustomFaceR
 
 	private String imageUrl;
 	public RegisterCustomFaceRequest() {
-		super("Mts", "2014-06-18", "RegisterCustomFace");
+		super("Mts", "2014-06-18", "RegisterCustomFace", "mts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
