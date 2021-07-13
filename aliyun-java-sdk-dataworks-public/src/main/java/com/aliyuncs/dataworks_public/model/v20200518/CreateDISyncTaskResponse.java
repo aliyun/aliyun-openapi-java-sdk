@@ -58,12 +58,32 @@ public class CreateDISyncTaskResponse extends AcsResponse {
 
 		private Long fileId;
 
+		private String status;
+
+		private String message;
+
 		public Long getFileId() {
 			return this.fileId;
 		}
 
 		public void setFileId(Long fileId) {
 			this.fileId = fileId;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
+		public String getMessage() {
+			return this.message;
+		}
+
+		public void setMessage(String message) {
+			this.message = message;
 		}
 	}
 
