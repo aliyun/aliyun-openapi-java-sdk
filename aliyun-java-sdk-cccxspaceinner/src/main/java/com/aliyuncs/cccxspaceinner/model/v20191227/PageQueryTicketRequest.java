@@ -36,6 +36,8 @@ public class PageQueryTicketRequest extends RpcAcsRequest<PageQueryTicketRespons
 
 	private Integer ticketType;
 
+	private Long templateId;
+
 	private Long startDate;
 
 	private Long ticketId;
@@ -109,6 +111,17 @@ public class PageQueryTicketRequest extends RpcAcsRequest<PageQueryTicketRespons
 		this.ticketType = ticketType;
 		if(ticketType != null){
 			putQueryParameter("TicketType", ticketType.toString());
+		}
+	}
+
+	public Long getTemplateId() {
+		return this.templateId;
+	}
+
+	public void setTemplateId(Long templateId) {
+		this.templateId = templateId;
+		if(templateId != null){
+			putQueryParameter("TemplateId", templateId.toString());
 		}
 	}
 

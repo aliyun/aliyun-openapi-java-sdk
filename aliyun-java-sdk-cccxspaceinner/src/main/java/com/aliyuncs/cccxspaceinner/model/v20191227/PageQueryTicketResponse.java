@@ -69,9 +69,9 @@ public class PageQueryTicketResponse extends AcsResponse {
 
 		private Integer totalResults;
 
-		private Integer currentPage;
+		private Integer pageSize;
 
-		private Long pageSize;
+		private Integer currentPage;
 
 		private List<ListItem> list;
 
@@ -83,20 +83,20 @@ public class PageQueryTicketResponse extends AcsResponse {
 			this.totalResults = totalResults;
 		}
 
+		public Integer getPageSize() {
+			return this.pageSize;
+		}
+
+		public void setPageSize(Integer pageSize) {
+			this.pageSize = pageSize;
+		}
+
 		public Integer getCurrentPage() {
 			return this.currentPage;
 		}
 
 		public void setCurrentPage(Integer currentPage) {
 			this.currentPage = currentPage;
-		}
-
-		public Long getPageSize() {
-			return this.pageSize;
-		}
-
-		public void setPageSize(Long pageSize) {
-			this.pageSize = pageSize;
 		}
 
 		public List<ListItem> getList() {
@@ -113,17 +113,31 @@ public class PageQueryTicketResponse extends AcsResponse {
 
 			private Long gmtCreate;
 
-			private String srType;
-
 			private Long gmtModified;
 
+			private String templateId;
+
+			private String title;
+
 			private String questionInfo;
+
+			private String bizId;
+
+			private String memberId;
+
+			private String memberName;
+
+			private Long servicerId;
+
+			private String servicerName;
+
+			private Long ownerId;
+
+			private String ownerName;
 
 			private String caseStatus;
 
 			private String extAttrs;
-
-			private Long id;
 
 			public Long getCaseId() {
 				return this.caseId;
@@ -141,14 +155,6 @@ public class PageQueryTicketResponse extends AcsResponse {
 				this.gmtCreate = gmtCreate;
 			}
 
-			public String getSrType() {
-				return this.srType;
-			}
-
-			public void setSrType(String srType) {
-				this.srType = srType;
-			}
-
 			public Long getGmtModified() {
 				return this.gmtModified;
 			}
@@ -157,12 +163,84 @@ public class PageQueryTicketResponse extends AcsResponse {
 				this.gmtModified = gmtModified;
 			}
 
+			public String getTemplateId() {
+				return this.templateId;
+			}
+
+			public void setTemplateId(String templateId) {
+				this.templateId = templateId;
+			}
+
+			public String getTitle() {
+				return this.title;
+			}
+
+			public void setTitle(String title) {
+				this.title = title;
+			}
+
 			public String getQuestionInfo() {
 				return this.questionInfo;
 			}
 
 			public void setQuestionInfo(String questionInfo) {
 				this.questionInfo = questionInfo;
+			}
+
+			public String getBizId() {
+				return this.bizId;
+			}
+
+			public void setBizId(String bizId) {
+				this.bizId = bizId;
+			}
+
+			public String getMemberId() {
+				return this.memberId;
+			}
+
+			public void setMemberId(String memberId) {
+				this.memberId = memberId;
+			}
+
+			public String getMemberName() {
+				return this.memberName;
+			}
+
+			public void setMemberName(String memberName) {
+				this.memberName = memberName;
+			}
+
+			public Long getServicerId() {
+				return this.servicerId;
+			}
+
+			public void setServicerId(Long servicerId) {
+				this.servicerId = servicerId;
+			}
+
+			public String getServicerName() {
+				return this.servicerName;
+			}
+
+			public void setServicerName(String servicerName) {
+				this.servicerName = servicerName;
+			}
+
+			public Long getOwnerId() {
+				return this.ownerId;
+			}
+
+			public void setOwnerId(Long ownerId) {
+				this.ownerId = ownerId;
+			}
+
+			public String getOwnerName() {
+				return this.ownerName;
+			}
+
+			public void setOwnerName(String ownerName) {
+				this.ownerName = ownerName;
 			}
 
 			public String getCaseStatus() {
@@ -179,14 +257,6 @@ public class PageQueryTicketResponse extends AcsResponse {
 
 			public void setExtAttrs(String extAttrs) {
 				this.extAttrs = extAttrs;
-			}
-
-			public Long getId() {
-				return this.id;
-			}
-
-			public void setId(Long id) {
-				this.id = id;
 			}
 		}
 	}

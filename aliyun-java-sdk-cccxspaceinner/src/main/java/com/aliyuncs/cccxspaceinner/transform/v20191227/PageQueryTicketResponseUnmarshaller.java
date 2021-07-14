@@ -33,20 +33,27 @@ public class PageQueryTicketResponseUnmarshaller {
 
 		Data data = new Data();
 		data.setTotalResults(_ctx.integerValue("PageQueryTicketResponse.Data.TotalResults"));
+		data.setPageSize(_ctx.integerValue("PageQueryTicketResponse.Data.PageSize"));
 		data.setCurrentPage(_ctx.integerValue("PageQueryTicketResponse.Data.CurrentPage"));
-		data.setPageSize(_ctx.longValue("PageQueryTicketResponse.Data.PageSize"));
 
 		List<ListItem> list = new ArrayList<ListItem>();
 		for (int i = 0; i < _ctx.lengthValue("PageQueryTicketResponse.Data.List.Length"); i++) {
 			ListItem listItem = new ListItem();
 			listItem.setCaseId(_ctx.longValue("PageQueryTicketResponse.Data.List["+ i +"].CaseId"));
 			listItem.setGmtCreate(_ctx.longValue("PageQueryTicketResponse.Data.List["+ i +"].GmtCreate"));
-			listItem.setSrType(_ctx.stringValue("PageQueryTicketResponse.Data.List["+ i +"].SrType"));
 			listItem.setGmtModified(_ctx.longValue("PageQueryTicketResponse.Data.List["+ i +"].GmtModified"));
+			listItem.setTemplateId(_ctx.stringValue("PageQueryTicketResponse.Data.List["+ i +"].TemplateId"));
+			listItem.setTitle(_ctx.stringValue("PageQueryTicketResponse.Data.List["+ i +"].Title"));
 			listItem.setQuestionInfo(_ctx.stringValue("PageQueryTicketResponse.Data.List["+ i +"].QuestionInfo"));
+			listItem.setBizId(_ctx.stringValue("PageQueryTicketResponse.Data.List["+ i +"].BizId"));
+			listItem.setMemberId(_ctx.stringValue("PageQueryTicketResponse.Data.List["+ i +"].MemberId"));
+			listItem.setMemberName(_ctx.stringValue("PageQueryTicketResponse.Data.List["+ i +"].MemberName"));
+			listItem.setServicerId(_ctx.longValue("PageQueryTicketResponse.Data.List["+ i +"].ServicerId"));
+			listItem.setServicerName(_ctx.stringValue("PageQueryTicketResponse.Data.List["+ i +"].ServicerName"));
+			listItem.setOwnerId(_ctx.longValue("PageQueryTicketResponse.Data.List["+ i +"].OwnerId"));
+			listItem.setOwnerName(_ctx.stringValue("PageQueryTicketResponse.Data.List["+ i +"].OwnerName"));
 			listItem.setCaseStatus(_ctx.stringValue("PageQueryTicketResponse.Data.List["+ i +"].CaseStatus"));
 			listItem.setExtAttrs(_ctx.stringValue("PageQueryTicketResponse.Data.List["+ i +"].ExtAttrs"));
-			listItem.setId(_ctx.longValue("PageQueryTicketResponse.Data.List["+ i +"].Id"));
 
 			list.add(listItem);
 		}
