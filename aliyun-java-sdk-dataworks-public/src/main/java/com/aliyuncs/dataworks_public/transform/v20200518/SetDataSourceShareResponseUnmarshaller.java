@@ -28,6 +28,7 @@ public class SetDataSourceShareResponseUnmarshaller {
 
 		Data data = new Data();
 		data.setStatus(_ctx.stringValue("SetDataSourceShareResponse.Data.Status"));
+		data.setMessage(_ctx.stringValue("SetDataSourceShareResponse.Data.Message"));
 		setDataSourceShareResponse.setData(data);
 	 
 	 	return setDataSourceShareResponse;

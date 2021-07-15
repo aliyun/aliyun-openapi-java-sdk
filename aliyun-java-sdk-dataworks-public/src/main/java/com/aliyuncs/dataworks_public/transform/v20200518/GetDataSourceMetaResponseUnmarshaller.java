@@ -28,6 +28,8 @@ public class GetDataSourceMetaResponseUnmarshaller {
 
 		Data data = new Data();
 		data.setMeta(_ctx.stringValue("GetDataSourceMetaResponse.Data.Meta"));
+		data.setStatus(_ctx.stringValue("GetDataSourceMetaResponse.Data.Status"));
+		data.setMessage(_ctx.stringValue("GetDataSourceMetaResponse.Data.Message"));
 		getDataSourceMetaResponse.setData(data);
 	 
 	 	return getDataSourceMetaResponse;

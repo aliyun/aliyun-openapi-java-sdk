@@ -28,6 +28,7 @@ public class UpdateDISyncTaskResponseUnmarshaller {
 
 		Data data = new Data();
 		data.setStatus(_ctx.stringValue("UpdateDISyncTaskResponse.Data.Status"));
+		data.setMessage(_ctx.stringValue("UpdateDISyncTaskResponse.Data.Message"));
 		updateDISyncTaskResponse.setData(data);
 	 
 	 	return updateDISyncTaskResponse;

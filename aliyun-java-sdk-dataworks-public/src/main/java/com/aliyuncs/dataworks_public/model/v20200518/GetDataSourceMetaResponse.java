@@ -58,12 +58,32 @@ public class GetDataSourceMetaResponse extends AcsResponse {
 
 		private String meta;
 
+		private String status;
+
+		private String message;
+
 		public String getMeta() {
 			return this.meta;
 		}
 
 		public void setMeta(String meta) {
 			this.meta = meta;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
+		public String getMessage() {
+			return this.message;
+		}
+
+		public void setMessage(String message) {
+			this.message = message;
 		}
 	}
 
