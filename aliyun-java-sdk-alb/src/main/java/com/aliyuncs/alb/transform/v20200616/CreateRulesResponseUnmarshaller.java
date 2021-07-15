@@ -33,6 +33,7 @@ public class CreateRulesResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("CreateRulesResponse.RuleIds.Length"); i++) {
 			RuleId ruleId = new RuleId();
 			ruleId.setRuleId(_ctx.stringValue("CreateRulesResponse.RuleIds["+ i +"].RuleId"));
+			ruleId.setPriority(_ctx.integerValue("CreateRulesResponse.RuleIds["+ i +"].Priority"));
 
 			ruleIds.add(ruleId);
 		}

@@ -14,30 +14,19 @@
 
 package com.aliyuncs.alb.model.v20200616;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.alb.transform.v20200616.CreateRulesResponseUnmarshaller;
+import com.aliyuncs.alb.transform.v20200616.UpdateRulesAttributeResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateRulesResponse extends AcsResponse {
-
-	private String jobId;
+public class UpdateRulesAttributeResponse extends AcsResponse {
 
 	private String requestId;
 
-	private List<RuleId> ruleIds;
-
-	public String getJobId() {
-		return this.jobId;
-	}
-
-	public void setJobId(String jobId) {
-		this.jobId = jobId;
-	}
+	private String jobId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -47,40 +36,17 @@ public class CreateRulesResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<RuleId> getRuleIds() {
-		return this.ruleIds;
+	public String getJobId() {
+		return this.jobId;
 	}
 
-	public void setRuleIds(List<RuleId> ruleIds) {
-		this.ruleIds = ruleIds;
-	}
-
-	public static class RuleId {
-
-		private String ruleId;
-
-		private Integer priority;
-
-		public String getRuleId() {
-			return this.ruleId;
-		}
-
-		public void setRuleId(String ruleId) {
-			this.ruleId = ruleId;
-		}
-
-		public Integer getPriority() {
-			return this.priority;
-		}
-
-		public void setPriority(Integer priority) {
-			this.priority = priority;
-		}
+	public void setJobId(String jobId) {
+		this.jobId = jobId;
 	}
 
 	@Override
-	public CreateRulesResponse getInstance(UnmarshallerContext context) {
-		return	CreateRulesResponseUnmarshaller.unmarshall(this, context);
+	public UpdateRulesAttributeResponse getInstance(UnmarshallerContext context) {
+		return	UpdateRulesAttributeResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

@@ -91,6 +91,8 @@ public class ListServerGroupServersResponse extends AcsResponse {
 
 		private Integer weight;
 
+		private String serverGroupId;
+
 		public String getDescription() {
 			return this.description;
 		}
@@ -145,6 +147,14 @@ public class ListServerGroupServersResponse extends AcsResponse {
 
 		public void setWeight(Integer weight) {
 			this.weight = weight;
+		}
+
+		public String getServerGroupId() {
+			return this.serverGroupId;
+		}
+
+		public void setServerGroupId(String serverGroupId) {
+			this.serverGroupId = serverGroupId;
 		}
 	}
 

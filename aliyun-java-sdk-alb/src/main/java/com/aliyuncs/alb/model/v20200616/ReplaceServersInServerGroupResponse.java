@@ -14,22 +14,19 @@
 
 package com.aliyuncs.alb.model.v20200616;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.alb.transform.v20200616.CreateRulesResponseUnmarshaller;
+import com.aliyuncs.alb.transform.v20200616.ReplaceServersInServerGroupResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateRulesResponse extends AcsResponse {
+public class ReplaceServersInServerGroupResponse extends AcsResponse {
 
 	private String jobId;
 
 	private String requestId;
-
-	private List<RuleId> ruleIds;
 
 	public String getJobId() {
 		return this.jobId;
@@ -47,40 +44,9 @@ public class CreateRulesResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<RuleId> getRuleIds() {
-		return this.ruleIds;
-	}
-
-	public void setRuleIds(List<RuleId> ruleIds) {
-		this.ruleIds = ruleIds;
-	}
-
-	public static class RuleId {
-
-		private String ruleId;
-
-		private Integer priority;
-
-		public String getRuleId() {
-			return this.ruleId;
-		}
-
-		public void setRuleId(String ruleId) {
-			this.ruleId = ruleId;
-		}
-
-		public Integer getPriority() {
-			return this.priority;
-		}
-
-		public void setPriority(Integer priority) {
-			this.priority = priority;
-		}
-	}
-
 	@Override
-	public CreateRulesResponse getInstance(UnmarshallerContext context) {
-		return	CreateRulesResponseUnmarshaller.unmarshall(this, context);
+	public ReplaceServersInServerGroupResponse getInstance(UnmarshallerContext context) {
+		return	ReplaceServersInServerGroupResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

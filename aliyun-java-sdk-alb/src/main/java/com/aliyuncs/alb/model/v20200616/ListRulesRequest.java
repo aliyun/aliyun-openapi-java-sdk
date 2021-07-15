@@ -26,6 +26,8 @@ import com.aliyuncs.alb.Endpoint;
 public class ListRulesRequest extends RpcAcsRequest<ListRulesResponse> {
 	   
 
+	private List<String> loadBalancerIds;
+
 	private String nextToken;
 
 	private List<String> ruleIds;
@@ -40,6 +42,19 @@ public class ListRulesRequest extends RpcAcsRequest<ListRulesResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public List<String> getLoadBalancerIds() {
+		return this.loadBalancerIds;
+	}
+
+	public void setLoadBalancerIds(List<String> loadBalancerIds) {
+		this.loadBalancerIds = loadBalancerIds;	
+		if (loadBalancerIds != null) {
+			for (int depth1 = 0; depth1 < loadBalancerIds.size(); depth1++) {
+				putQueryParameter("LoadBalancerIds." + (depth1 + 1) , loadBalancerIds.get(depth1));
+			}
+		}	
 	}
 
 	public String getNextToken() {

@@ -21,6 +21,7 @@ import com.aliyuncs.alb.model.v20200616.ListServerGroupsResponse;
 import com.aliyuncs.alb.model.v20200616.ListServerGroupsResponse.ServerGroup;
 import com.aliyuncs.alb.model.v20200616.ListServerGroupsResponse.ServerGroup.HealthCheckConfig;
 import com.aliyuncs.alb.model.v20200616.ListServerGroupsResponse.ServerGroup.StickySessionConfig;
+import com.aliyuncs.alb.model.v20200616.ListServerGroupsResponse.ServerGroup.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -70,6 +71,16 @@ public class ListServerGroupsResponseUnmarshaller {
 			stickySessionConfig.setStickySessionEnabled(_ctx.booleanValue("ListServerGroupsResponse.ServerGroups["+ i +"].StickySessionConfig.StickySessionEnabled"));
 			stickySessionConfig.setStickySessionType(_ctx.stringValue("ListServerGroupsResponse.ServerGroups["+ i +"].StickySessionConfig.StickySessionType"));
 			serverGroup.setStickySessionConfig(stickySessionConfig);
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < _ctx.lengthValue("ListServerGroupsResponse.ServerGroups["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setKey(_ctx.stringValue("ListServerGroupsResponse.ServerGroups["+ i +"].Tags["+ j +"].Key"));
+				tag.setValue(_ctx.stringValue("ListServerGroupsResponse.ServerGroups["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tag);
+			}
+			serverGroup.setTags(tags);
 
 			serverGroups.add(serverGroup);
 		}

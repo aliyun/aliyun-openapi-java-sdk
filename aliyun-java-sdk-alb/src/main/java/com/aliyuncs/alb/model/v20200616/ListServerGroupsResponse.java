@@ -91,6 +91,8 @@ public class ListServerGroupsResponse extends AcsResponse {
 
 		private String vpcId;
 
+		private List<Tag> tags;
+
 		private HealthCheckConfig healthCheckConfig;
 
 		private StickySessionConfig stickySessionConfig;
@@ -151,6 +153,14 @@ public class ListServerGroupsResponse extends AcsResponse {
 			this.vpcId = vpcId;
 		}
 
+		public List<Tag> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<Tag> tags) {
+			this.tags = tags;
+		}
+
 		public HealthCheckConfig getHealthCheckConfig() {
 			return this.healthCheckConfig;
 		}
@@ -165,6 +175,29 @@ public class ListServerGroupsResponse extends AcsResponse {
 
 		public void setStickySessionConfig(StickySessionConfig stickySessionConfig) {
 			this.stickySessionConfig = stickySessionConfig;
+		}
+
+		public static class Tag {
+
+			private String key;
+
+			private String value;
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
+			}
 		}
 
 		public static class HealthCheckConfig {

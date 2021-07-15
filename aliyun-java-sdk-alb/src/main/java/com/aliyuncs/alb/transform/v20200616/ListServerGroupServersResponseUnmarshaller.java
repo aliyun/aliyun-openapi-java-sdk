@@ -41,6 +41,7 @@ public class ListServerGroupServersResponseUnmarshaller {
 			backendServer.setServerType(_ctx.stringValue("ListServerGroupServersResponse.Servers["+ i +"].ServerType"));
 			backendServer.setStatus(_ctx.stringValue("ListServerGroupServersResponse.Servers["+ i +"].Status"));
 			backendServer.setWeight(_ctx.integerValue("ListServerGroupServersResponse.Servers["+ i +"].Weight"));
+			backendServer.setServerGroupId(_ctx.stringValue("ListServerGroupServersResponse.Servers["+ i +"].ServerGroupId"));
 
 			servers.add(backendServer);
 		}
