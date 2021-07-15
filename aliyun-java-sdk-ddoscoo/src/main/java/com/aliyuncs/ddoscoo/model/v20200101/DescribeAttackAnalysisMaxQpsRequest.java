@@ -22,45 +22,19 @@ import com.aliyuncs.ddoscoo.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeDomainStatusCodeCountRequest extends RpcAcsRequest<DescribeDomainStatusCodeCountResponse> {
+public class DescribeAttackAnalysisMaxQpsRequest extends RpcAcsRequest<DescribeAttackAnalysisMaxQpsResponse> {
 	   
-
-	private Long startTime;
-
-	private String resourceGroupId;
 
 	private Long endTime;
 
-	private String domain;
-	public DescribeDomainStatusCodeCountRequest() {
-		super("ddoscoo", "2020-01-01", "DescribeDomainStatusCodeCount");
+	private Long startTime;
+	public DescribeAttackAnalysisMaxQpsRequest() {
+		super("ddoscoo", "2020-01-01", "DescribeAttackAnalysisMaxQps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Long getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(Long startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime.toString());
-		}
-	}
-
-	public String getResourceGroupId() {
-		return this.resourceGroupId;
-	}
-
-	public void setResourceGroupId(String resourceGroupId) {
-		this.resourceGroupId = resourceGroupId;
-		if(resourceGroupId != null){
-			putQueryParameter("ResourceGroupId", resourceGroupId);
-		}
 	}
 
 	public Long getEndTime() {
@@ -74,20 +48,20 @@ public class DescribeDomainStatusCodeCountRequest extends RpcAcsRequest<Describe
 		}
 	}
 
-	public String getDomain() {
-		return this.domain;
+	public Long getStartTime() {
+		return this.startTime;
 	}
 
-	public void setDomain(String domain) {
-		this.domain = domain;
-		if(domain != null){
-			putQueryParameter("Domain", domain);
+	public void setStartTime(Long startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime.toString());
 		}
 	}
 
 	@Override
-	public Class<DescribeDomainStatusCodeCountResponse> getResponseClass() {
-		return DescribeDomainStatusCodeCountResponse.class;
+	public Class<DescribeAttackAnalysisMaxQpsResponse> getResponseClass() {
+		return DescribeAttackAnalysisMaxQpsResponse.class;
 	}
 
 }

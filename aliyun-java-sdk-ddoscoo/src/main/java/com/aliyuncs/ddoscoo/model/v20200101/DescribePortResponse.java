@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribePortResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Long totalCount;
 
+	private String requestId;
+
 	private List<NetworkRule> networkRules;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Long getTotalCount() {
 		return this.totalCount;
@@ -45,6 +37,14 @@ public class DescribePortResponse extends AcsResponse {
 
 	public void setTotalCount(Long totalCount) {
 		this.totalCount = totalCount;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<NetworkRule> getNetworkRules() {
@@ -57,24 +57,32 @@ public class DescribePortResponse extends AcsResponse {
 
 	public static class NetworkRule {
 
-		private String instanceId;
-
-		private String frontendProtocol;
-
 		private Integer frontendPort;
-
-		private Integer backendPort;
 
 		private Boolean isAutoCreate;
 
+		private String frontendProtocol;
+
+		private String instanceId;
+
+		private Integer backendPort;
+
 		private List<String> realServers;
 
-		public String getInstanceId() {
-			return this.instanceId;
+		public Integer getFrontendPort() {
+			return this.frontendPort;
 		}
 
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
+		public void setFrontendPort(Integer frontendPort) {
+			this.frontendPort = frontendPort;
+		}
+
+		public Boolean getIsAutoCreate() {
+			return this.isAutoCreate;
+		}
+
+		public void setIsAutoCreate(Boolean isAutoCreate) {
+			this.isAutoCreate = isAutoCreate;
 		}
 
 		public String getFrontendProtocol() {
@@ -85,12 +93,12 @@ public class DescribePortResponse extends AcsResponse {
 			this.frontendProtocol = frontendProtocol;
 		}
 
-		public Integer getFrontendPort() {
-			return this.frontendPort;
+		public String getInstanceId() {
+			return this.instanceId;
 		}
 
-		public void setFrontendPort(Integer frontendPort) {
-			this.frontendPort = frontendPort;
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
 		}
 
 		public Integer getBackendPort() {
@@ -99,14 +107,6 @@ public class DescribePortResponse extends AcsResponse {
 
 		public void setBackendPort(Integer backendPort) {
 			this.backendPort = backendPort;
-		}
-
-		public Boolean getIsAutoCreate() {
-			return this.isAutoCreate;
-		}
-
-		public void setIsAutoCreate(Boolean isAutoCreate) {
-			this.isAutoCreate = isAutoCreate;
 		}
 
 		public List<String> getRealServers() {

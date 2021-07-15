@@ -49,6 +49,28 @@ public class DescribeDomainStatusCodeListResponseUnmarshaller {
 			statusCodeList.add(statusCode);
 		}
 		describeDomainStatusCodeListResponse.setStatusCodeList(statusCodeList);
+
+		List<StatusCode> statusCodeList1 = new ArrayList<StatusCode>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeDomainStatusCodeListResponse.StatusCodeList.Length"); i++) {
+			StatusCode statusCode_ = new StatusCode();
+			statusCode_.setIndex(_ctx.integerValue("DescribeDomainStatusCodeListResponse.StatusCodeList["+ i +"].Index"));
+			statusCode_.setTime(_ctx.longValue("DescribeDomainStatusCodeListResponse.StatusCodeList["+ i +"].Time"));
+			statusCode_.setStatus2XX(_ctx.longValue("DescribeDomainStatusCodeListResponse.StatusCodeList["+ i +"].Status2XX"));
+			statusCode_.setStatus501(_ctx.longValue("DescribeDomainStatusCodeListResponse.StatusCodeList["+ i +"].Status501"));
+			statusCode_.setStatus502(_ctx.longValue("DescribeDomainStatusCodeListResponse.StatusCodeList["+ i +"].Status502"));
+			statusCode_.setStatus503(_ctx.longValue("DescribeDomainStatusCodeListResponse.StatusCodeList["+ i +"].Status503"));
+			statusCode_.setStatus504(_ctx.longValue("DescribeDomainStatusCodeListResponse.StatusCodeList["+ i +"].Status504"));
+			statusCode_.setStatus200(_ctx.longValue("DescribeDomainStatusCodeListResponse.StatusCodeList["+ i +"].Status200"));
+			statusCode_.setStatus405(_ctx.longValue("DescribeDomainStatusCodeListResponse.StatusCodeList["+ i +"].Status405"));
+			statusCode_.setStatus5XX(_ctx.longValue("DescribeDomainStatusCodeListResponse.StatusCodeList["+ i +"].Status5XX"));
+			statusCode_.setStatus4XX(_ctx.longValue("DescribeDomainStatusCodeListResponse.StatusCodeList["+ i +"].Status4XX"));
+			statusCode_.setStatus403(_ctx.longValue("DescribeDomainStatusCodeListResponse.StatusCodeList["+ i +"].Status403"));
+			statusCode_.setStatus404(_ctx.longValue("DescribeDomainStatusCodeListResponse.StatusCodeList["+ i +"].Status404"));
+			statusCode_.setStatus3XX(_ctx.longValue("DescribeDomainStatusCodeListResponse.StatusCodeList["+ i +"].Status3XX"));
+
+			statusCodeList1.add(statusCode_);
+		}
+		describeDomainStatusCodeListResponse.setStatusCodeList1(statusCodeList1);
 	 
 	 	return describeDomainStatusCodeListResponse;
 	}

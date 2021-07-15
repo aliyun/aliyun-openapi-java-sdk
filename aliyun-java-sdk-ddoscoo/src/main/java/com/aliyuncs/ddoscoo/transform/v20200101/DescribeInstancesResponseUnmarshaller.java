@@ -41,6 +41,8 @@ public class DescribeInstancesResponseUnmarshaller {
 			instance.setEdition(_ctx.integerValue("DescribeInstancesResponse.Instances["+ i +"].Edition"));
 			instance.setEnabled(_ctx.integerValue("DescribeInstancesResponse.Instances["+ i +"].Enabled"));
 			instance.setConnInstanceId(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].ConnInstanceId"));
+			instance.setIpVersion(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].IpVersion"));
+			instance.setIpMode(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].IpMode"));
 
 			instances.add(instance);
 		}

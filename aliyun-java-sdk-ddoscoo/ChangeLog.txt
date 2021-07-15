@@ -1,3 +1,6 @@
+2021-07-15 Version: 1.0.3
+- Generated 2020-01-01 for `ddoscoo`.
+
 2021-05-13 Version: 1.0.2
 - Generated 2020-01-01 for `ddoscoo`.
 

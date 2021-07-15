@@ -40,6 +40,8 @@ public class DescribeInstanceDetailsResponseUnmarshaller {
 				EipInfo eipInfo = new EipInfo();
 				eipInfo.setEip(_ctx.stringValue("DescribeInstanceDetailsResponse.InstanceDetails["+ i +"].EipInfos["+ j +"].Eip"));
 				eipInfo.setStatus(_ctx.stringValue("DescribeInstanceDetailsResponse.InstanceDetails["+ i +"].EipInfos["+ j +"].Status"));
+				eipInfo.setIpVersion(_ctx.stringValue("DescribeInstanceDetailsResponse.InstanceDetails["+ i +"].EipInfos["+ j +"].IpVersion"));
+				eipInfo.setIpMode(_ctx.stringValue("DescribeInstanceDetailsResponse.InstanceDetails["+ i +"].EipInfos["+ j +"].IpMode"));
 
 				eipInfos.add(eipInfo);
 			}

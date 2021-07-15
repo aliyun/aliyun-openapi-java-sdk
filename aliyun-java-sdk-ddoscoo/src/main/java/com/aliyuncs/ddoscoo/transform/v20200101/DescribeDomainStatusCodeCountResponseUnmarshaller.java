@@ -35,6 +35,18 @@ public class DescribeDomainStatusCodeCountResponseUnmarshaller {
 		describeDomainStatusCodeCountResponse.setStatus403(_ctx.longValue("DescribeDomainStatusCodeCountResponse.Status403"));
 		describeDomainStatusCodeCountResponse.setStatus404(_ctx.longValue("DescribeDomainStatusCodeCountResponse.Status404"));
 		describeDomainStatusCodeCountResponse.setStatus3XX(_ctx.longValue("DescribeDomainStatusCodeCountResponse.Status3XX"));
+		describeDomainStatusCodeCountResponse.setStatus2XX1(_ctx.longValue("DescribeDomainStatusCodeCountResponse.Status2XX"));
+		describeDomainStatusCodeCountResponse.setStatus5012(_ctx.longValue("DescribeDomainStatusCodeCountResponse.Status501"));
+		describeDomainStatusCodeCountResponse.setStatus5023(_ctx.longValue("DescribeDomainStatusCodeCountResponse.Status502"));
+		describeDomainStatusCodeCountResponse.setStatus5034(_ctx.longValue("DescribeDomainStatusCodeCountResponse.Status503"));
+		describeDomainStatusCodeCountResponse.setStatus5045(_ctx.longValue("DescribeDomainStatusCodeCountResponse.Status504"));
+		describeDomainStatusCodeCountResponse.setStatus2006(_ctx.longValue("DescribeDomainStatusCodeCountResponse.Status200"));
+		describeDomainStatusCodeCountResponse.setStatus4057(_ctx.longValue("DescribeDomainStatusCodeCountResponse.Status405"));
+		describeDomainStatusCodeCountResponse.setStatus5XX8(_ctx.longValue("DescribeDomainStatusCodeCountResponse.Status5XX"));
+		describeDomainStatusCodeCountResponse.setStatus4XX9(_ctx.longValue("DescribeDomainStatusCodeCountResponse.Status4XX"));
+		describeDomainStatusCodeCountResponse.setStatus40310(_ctx.longValue("DescribeDomainStatusCodeCountResponse.Status403"));
+		describeDomainStatusCodeCountResponse.setStatus40411(_ctx.longValue("DescribeDomainStatusCodeCountResponse.Status404"));
+		describeDomainStatusCodeCountResponse.setStatus3XX12(_ctx.longValue("DescribeDomainStatusCodeCountResponse.Status3XX"));
 	 
 	 	return describeDomainStatusCodeCountResponse;
 	}
