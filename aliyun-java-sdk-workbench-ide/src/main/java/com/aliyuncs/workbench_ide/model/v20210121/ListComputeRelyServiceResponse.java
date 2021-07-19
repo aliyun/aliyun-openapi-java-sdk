@@ -17,14 +17,14 @@ package com.aliyuncs.workbench_ide.model.v20210121;
 import java.util.List;
 import java.util.Map;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.workbench_ide.transform.v20210121.SetAppFcRouteResponseUnmarshaller;
+import com.aliyuncs.workbench_ide.transform.v20210121.ListComputeRelyServiceResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class SetAppFcRouteResponse extends AcsResponse {
+public class ListComputeRelyServiceResponse extends AcsResponse {
 
 	private String code;
 
@@ -67,8 +67,8 @@ public class SetAppFcRouteResponse extends AcsResponse {
 	}
 
 	@Override
-	public SetAppFcRouteResponse getInstance(UnmarshallerContext context) {
-		return	SetAppFcRouteResponseUnmarshaller.unmarshall(this, context);
+	public ListComputeRelyServiceResponse getInstance(UnmarshallerContext context) {
+		return	ListComputeRelyServiceResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

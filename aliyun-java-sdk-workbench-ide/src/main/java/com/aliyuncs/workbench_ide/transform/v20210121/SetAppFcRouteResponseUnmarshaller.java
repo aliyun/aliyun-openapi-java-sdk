@@ -14,6 +14,9 @@
 
 package com.aliyuncs.workbench_ide.transform.v20210121;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.workbench_ide.model.v20210121.SetAppFcRouteResponse;
 import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -25,8 +28,10 @@ public class SetAppFcRouteResponseUnmarshaller {
 		
 		setAppFcRouteResponse.setRequestId(_ctx.stringValue("SetAppFcRouteResponse.RequestId"));
 		setAppFcRouteResponse.setCode(_ctx.stringValue("SetAppFcRouteResponse.Code"));
-		setAppFcRouteResponse.setData(_ctx.mapValue("SetAppFcRouteResponse.Data"));
 		setAppFcRouteResponse.setMessage(_ctx.stringValue("SetAppFcRouteResponse.Message"));
+
+		List<Map<Object, Object>> data = _ctx.listMapValue("SetAppFcRouteResponse.Data");
+		setAppFcRouteResponse.setData(data);
 	 
 	 	return setAppFcRouteResponse;
 	}
