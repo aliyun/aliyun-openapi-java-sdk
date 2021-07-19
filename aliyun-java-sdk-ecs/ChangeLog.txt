@@ -1,3 +1,6 @@
+2021-07-19 Version: 4.24.4
+- CreateNetworkInterface supports to allocate Ipv6.
+
 2021-06-08 Version: 4.24.3
 - Support input parameter LaunchConfigurationHostNames and MinTargetCapacity for CreateAutoProvisioningGroup.
 

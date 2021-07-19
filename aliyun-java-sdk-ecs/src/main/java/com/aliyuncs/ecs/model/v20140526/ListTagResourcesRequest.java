@@ -142,12 +142,12 @@ public class ListTagResourcesRequest extends RpcAcsRequest<ListTagResourcesRespo
 		this.tagFilters = tagFilters;	
 		if (tagFilters != null) {
 			for (int depth1 = 0; depth1 < tagFilters.size(); depth1++) {
-				putQueryParameter("TagFilter." + (depth1 + 1) + ".TagKey" , tagFilters.get(depth1).getTagKey());
 				if (tagFilters.get(depth1).getTagValuess() != null) {
 					for (int i = 0; i < tagFilters.get(depth1).getTagValuess().size(); i++) {
 						putQueryParameter("TagFilter." + (depth1 + 1) + ".TagValues." + (i + 1) , tagFilters.get(depth1).getTagValuess().get(i));
 					}
 				}
+				putQueryParameter("TagFilter." + (depth1 + 1) + ".TagKey" , tagFilters.get(depth1).getTagKey());
 			}
 		}	
 	}
@@ -188,17 +188,9 @@ public class ListTagResourcesRequest extends RpcAcsRequest<ListTagResourcesRespo
 
 	public static class TagFilter {
 
-		private String tagKey;
-
 		private List<String> tagValuess;
 
-		public String getTagKey() {
-			return this.tagKey;
-		}
-
-		public void setTagKey(String tagKey) {
-			this.tagKey = tagKey;
-		}
+		private String tagKey;
 
 		public List<String> getTagValuess() {
 			return this.tagValuess;
@@ -206,6 +198,14 @@ public class ListTagResourcesRequest extends RpcAcsRequest<ListTagResourcesRespo
 
 		public void setTagValuess(List<String> tagValuess) {
 			this.tagValuess = tagValuess;
+		}
+
+		public String getTagKey() {
+			return this.tagKey;
+		}
+
+		public void setTagKey(String tagKey) {
+			this.tagKey = tagKey;
 		}
 	}
 

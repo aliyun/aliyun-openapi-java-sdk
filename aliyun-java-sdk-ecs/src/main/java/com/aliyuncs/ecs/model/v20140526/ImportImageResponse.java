@@ -26,11 +26,11 @@ public class ImportImageResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String imageId;
+
 	private String taskId;
 
 	private String regionId;
-
-	private String imageId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,6 +38,14 @@ public class ImportImageResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getImageId() {
+		return this.imageId;
+	}
+
+	public void setImageId(String imageId) {
+		this.imageId = imageId;
 	}
 
 	public String getTaskId() {
@@ -54,14 +62,6 @@ public class ImportImageResponse extends AcsResponse {
 
 	public void setRegionId(String regionId) {
 		this.regionId = regionId;
-	}
-
-	public String getImageId() {
-		return this.imageId;
-	}
-
-	public void setImageId(String imageId) {
-		this.imageId = imageId;
 	}
 
 	@Override

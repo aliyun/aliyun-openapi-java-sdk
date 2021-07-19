@@ -30,33 +30,33 @@ public class DescribeCapacityReservationsResponseUnmarshaller {
 		
 		describeCapacityReservationsResponse.setRequestId(_ctx.stringValue("DescribeCapacityReservationsResponse.RequestId"));
 		describeCapacityReservationsResponse.setNextToken(_ctx.stringValue("DescribeCapacityReservationsResponse.NextToken"));
-		describeCapacityReservationsResponse.setMaxResults(_ctx.integerValue("DescribeCapacityReservationsResponse.MaxResults"));
 		describeCapacityReservationsResponse.setTotalCount(_ctx.integerValue("DescribeCapacityReservationsResponse.TotalCount"));
+		describeCapacityReservationsResponse.setMaxResults(_ctx.integerValue("DescribeCapacityReservationsResponse.MaxResults"));
 
 		List<CapacityReservationItem> capacityReservationSet = new ArrayList<CapacityReservationItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeCapacityReservationsResponse.CapacityReservationSet.Length"); i++) {
 			CapacityReservationItem capacityReservationItem = new CapacityReservationItem();
+			capacityReservationItem.setStatus(_ctx.stringValue("DescribeCapacityReservationsResponse.CapacityReservationSet["+ i +"].Status"));
+			capacityReservationItem.setTimeSlot(_ctx.stringValue("DescribeCapacityReservationsResponse.CapacityReservationSet["+ i +"].TimeSlot"));
+			capacityReservationItem.setPrivatePoolOptionsMatchCriteria(_ctx.stringValue("DescribeCapacityReservationsResponse.CapacityReservationSet["+ i +"].PrivatePoolOptionsMatchCriteria"));
 			capacityReservationItem.setPrivatePoolOptionsId(_ctx.stringValue("DescribeCapacityReservationsResponse.CapacityReservationSet["+ i +"].PrivatePoolOptionsId"));
 			capacityReservationItem.setPrivatePoolOptionsName(_ctx.stringValue("DescribeCapacityReservationsResponse.CapacityReservationSet["+ i +"].PrivatePoolOptionsName"));
-			capacityReservationItem.setDescription(_ctx.stringValue("DescribeCapacityReservationsResponse.CapacityReservationSet["+ i +"].Description"));
 			capacityReservationItem.setRegionId(_ctx.stringValue("DescribeCapacityReservationsResponse.CapacityReservationSet["+ i +"].RegionId"));
-			capacityReservationItem.setPrivatePoolOptionsMatchCriteria(_ctx.stringValue("DescribeCapacityReservationsResponse.CapacityReservationSet["+ i +"].PrivatePoolOptionsMatchCriteria"));
-			capacityReservationItem.setStatus(_ctx.stringValue("DescribeCapacityReservationsResponse.CapacityReservationSet["+ i +"].Status"));
-			capacityReservationItem.setStartTime(_ctx.stringValue("DescribeCapacityReservationsResponse.CapacityReservationSet["+ i +"].StartTime"));
-			capacityReservationItem.setEndTime(_ctx.stringValue("DescribeCapacityReservationsResponse.CapacityReservationSet["+ i +"].EndTime"));
-			capacityReservationItem.setEndTimeType(_ctx.stringValue("DescribeCapacityReservationsResponse.CapacityReservationSet["+ i +"].EndTimeType"));
 			capacityReservationItem.setInstanceChargeType(_ctx.stringValue("DescribeCapacityReservationsResponse.CapacityReservationSet["+ i +"].InstanceChargeType"));
-			capacityReservationItem.setPlatform(_ctx.stringValue("DescribeCapacityReservationsResponse.CapacityReservationSet["+ i +"].Platform"));
-			capacityReservationItem.setTimeSlot(_ctx.stringValue("DescribeCapacityReservationsResponse.CapacityReservationSet["+ i +"].TimeSlot"));
+			capacityReservationItem.setEndTime(_ctx.stringValue("DescribeCapacityReservationsResponse.CapacityReservationSet["+ i +"].EndTime"));
+			capacityReservationItem.setStartTime(_ctx.stringValue("DescribeCapacityReservationsResponse.CapacityReservationSet["+ i +"].StartTime"));
+			capacityReservationItem.setDescription(_ctx.stringValue("DescribeCapacityReservationsResponse.CapacityReservationSet["+ i +"].Description"));
+			capacityReservationItem.setEndTimeType(_ctx.stringValue("DescribeCapacityReservationsResponse.CapacityReservationSet["+ i +"].EndTimeType"));
 			capacityReservationItem.setResourceGroupId(_ctx.stringValue("DescribeCapacityReservationsResponse.CapacityReservationSet["+ i +"].ResourceGroupId"));
+			capacityReservationItem.setPlatform(_ctx.stringValue("DescribeCapacityReservationsResponse.CapacityReservationSet["+ i +"].Platform"));
 
 			List<AllocatedResource> allocatedResources = new ArrayList<AllocatedResource>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeCapacityReservationsResponse.CapacityReservationSet["+ i +"].AllocatedResources.Length"); j++) {
 				AllocatedResource allocatedResource = new AllocatedResource();
+				allocatedResource.setUsedAmount(_ctx.integerValue("DescribeCapacityReservationsResponse.CapacityReservationSet["+ i +"].AllocatedResources["+ j +"].UsedAmount"));
+				allocatedResource.setTotalAmount(_ctx.integerValue("DescribeCapacityReservationsResponse.CapacityReservationSet["+ i +"].AllocatedResources["+ j +"].TotalAmount"));
 				allocatedResource.setZoneId(_ctx.stringValue("DescribeCapacityReservationsResponse.CapacityReservationSet["+ i +"].AllocatedResources["+ j +"].zoneId"));
 				allocatedResource.setInstanceType(_ctx.stringValue("DescribeCapacityReservationsResponse.CapacityReservationSet["+ i +"].AllocatedResources["+ j +"].InstanceType"));
-				allocatedResource.setTotalAmount(_ctx.integerValue("DescribeCapacityReservationsResponse.CapacityReservationSet["+ i +"].AllocatedResources["+ j +"].TotalAmount"));
-				allocatedResource.setUsedAmount(_ctx.integerValue("DescribeCapacityReservationsResponse.CapacityReservationSet["+ i +"].AllocatedResources["+ j +"].UsedAmount"));
 
 				allocatedResources.add(allocatedResource);
 			}
@@ -65,8 +65,8 @@ public class DescribeCapacityReservationsResponseUnmarshaller {
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeCapacityReservationsResponse.CapacityReservationSet["+ i +"].Tags.Length"); j++) {
 				Tag tag = new Tag();
-				tag.setTagKey(_ctx.stringValue("DescribeCapacityReservationsResponse.CapacityReservationSet["+ i +"].Tags["+ j +"].TagKey"));
 				tag.setTagValue(_ctx.stringValue("DescribeCapacityReservationsResponse.CapacityReservationSet["+ i +"].Tags["+ j +"].TagValue"));
+				tag.setTagKey(_ctx.stringValue("DescribeCapacityReservationsResponse.CapacityReservationSet["+ i +"].Tags["+ j +"].TagKey"));
 
 				tags.add(tag);
 			}

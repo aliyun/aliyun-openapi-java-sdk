@@ -33,8 +33,8 @@ public class ModifyInstanceChargeTypeResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("ModifyInstanceChargeTypeResponse.FeeOfInstances.Length"); i++) {
 			FeeOfInstance feeOfInstance = new FeeOfInstance();
 			feeOfInstance.setInstanceId(_ctx.stringValue("ModifyInstanceChargeTypeResponse.FeeOfInstances["+ i +"].InstanceId"));
-			feeOfInstance.setFee(_ctx.stringValue("ModifyInstanceChargeTypeResponse.FeeOfInstances["+ i +"].Fee"));
 			feeOfInstance.setCurrency(_ctx.stringValue("ModifyInstanceChargeTypeResponse.FeeOfInstances["+ i +"].Currency"));
+			feeOfInstance.setFee(_ctx.stringValue("ModifyInstanceChargeTypeResponse.FeeOfInstances["+ i +"].Fee"));
 
 			feeOfInstances.add(feeOfInstance);
 		}

@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDedicatedHostsResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer pageSize;
 
-	private Integer totalCount;
+	private String requestId;
 
 	private Integer pageNumber;
 
-	private Integer pageSize;
+	private Integer totalCount;
 
 	private List<DedicatedHost> dedicatedHosts;
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class DescribeDedicatedHostsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
 	}
 
 	public Integer getPageNumber() {
@@ -59,12 +59,12 @@ public class DescribeDedicatedHostsResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public Integer getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<DedicatedHost> getDedicatedHosts() {
@@ -77,49 +77,49 @@ public class DescribeDedicatedHostsResponse extends AcsResponse {
 
 	public static class DedicatedHost {
 
-		private String dedicatedHostId;
-
-		private String autoPlacement;
-
-		private String regionId;
-
-		private String zoneId;
-
-		private String dedicatedHostName;
-
-		private String machineId;
-
-		private String description;
-
-		private String dedicatedHostType;
-
-		private Integer sockets;
-
-		private Integer cores;
-
-		private Integer physicalGpus;
-
-		private String gPUSpec;
-
-		private String actionOnMaintenance;
+		private String creationTime;
 
 		private String status;
 
-		private String creationTime;
+		private Integer cores;
 
-		private String chargeType;
+		private String autoPlacement;
 
-		private String saleCycle;
-
-		private String expiredTime;
+		private String gPUSpec;
 
 		private String autoReleaseTime;
 
-		private String resourceGroupId;
+		private String chargeType;
+
+		private Float cpuOverCommitRatio;
+
+		private String actionOnMaintenance;
+
+		private String saleCycle;
+
+		private Integer physicalGpus;
+
+		private String regionId;
+
+		private String dedicatedHostName;
+
+		private String description;
 
 		private String dedicatedHostClusterId;
 
-		private Float cpuOverCommitRatio;
+		private String expiredTime;
+
+		private String dedicatedHostType;
+
+		private String resourceGroupId;
+
+		private String zoneId;
+
+		private String dedicatedHostId;
+
+		private Integer sockets;
+
+		private String machineId;
 
 		private List<Instance> instances;
 
@@ -139,108 +139,12 @@ public class DescribeDedicatedHostsResponse extends AcsResponse {
 
 		private HostDetailInfo hostDetailInfo;
 
-		public String getDedicatedHostId() {
-			return this.dedicatedHostId;
+		public String getCreationTime() {
+			return this.creationTime;
 		}
 
-		public void setDedicatedHostId(String dedicatedHostId) {
-			this.dedicatedHostId = dedicatedHostId;
-		}
-
-		public String getAutoPlacement() {
-			return this.autoPlacement;
-		}
-
-		public void setAutoPlacement(String autoPlacement) {
-			this.autoPlacement = autoPlacement;
-		}
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		public String getZoneId() {
-			return this.zoneId;
-		}
-
-		public void setZoneId(String zoneId) {
-			this.zoneId = zoneId;
-		}
-
-		public String getDedicatedHostName() {
-			return this.dedicatedHostName;
-		}
-
-		public void setDedicatedHostName(String dedicatedHostName) {
-			this.dedicatedHostName = dedicatedHostName;
-		}
-
-		public String getMachineId() {
-			return this.machineId;
-		}
-
-		public void setMachineId(String machineId) {
-			this.machineId = machineId;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
-		public String getDedicatedHostType() {
-			return this.dedicatedHostType;
-		}
-
-		public void setDedicatedHostType(String dedicatedHostType) {
-			this.dedicatedHostType = dedicatedHostType;
-		}
-
-		public Integer getSockets() {
-			return this.sockets;
-		}
-
-		public void setSockets(Integer sockets) {
-			this.sockets = sockets;
-		}
-
-		public Integer getCores() {
-			return this.cores;
-		}
-
-		public void setCores(Integer cores) {
-			this.cores = cores;
-		}
-
-		public Integer getPhysicalGpus() {
-			return this.physicalGpus;
-		}
-
-		public void setPhysicalGpus(Integer physicalGpus) {
-			this.physicalGpus = physicalGpus;
-		}
-
-		public String getGPUSpec() {
-			return this.gPUSpec;
-		}
-
-		public void setGPUSpec(String gPUSpec) {
-			this.gPUSpec = gPUSpec;
-		}
-
-		public String getActionOnMaintenance() {
-			return this.actionOnMaintenance;
-		}
-
-		public void setActionOnMaintenance(String actionOnMaintenance) {
-			this.actionOnMaintenance = actionOnMaintenance;
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
 		}
 
 		public String getStatus() {
@@ -251,36 +155,28 @@ public class DescribeDedicatedHostsResponse extends AcsResponse {
 			this.status = status;
 		}
 
-		public String getCreationTime() {
-			return this.creationTime;
+		public Integer getCores() {
+			return this.cores;
 		}
 
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
+		public void setCores(Integer cores) {
+			this.cores = cores;
 		}
 
-		public String getChargeType() {
-			return this.chargeType;
+		public String getAutoPlacement() {
+			return this.autoPlacement;
 		}
 
-		public void setChargeType(String chargeType) {
-			this.chargeType = chargeType;
+		public void setAutoPlacement(String autoPlacement) {
+			this.autoPlacement = autoPlacement;
 		}
 
-		public String getSaleCycle() {
-			return this.saleCycle;
+		public String getGPUSpec() {
+			return this.gPUSpec;
 		}
 
-		public void setSaleCycle(String saleCycle) {
-			this.saleCycle = saleCycle;
-		}
-
-		public String getExpiredTime() {
-			return this.expiredTime;
-		}
-
-		public void setExpiredTime(String expiredTime) {
-			this.expiredTime = expiredTime;
+		public void setGPUSpec(String gPUSpec) {
+			this.gPUSpec = gPUSpec;
 		}
 
 		public String getAutoReleaseTime() {
@@ -291,12 +187,68 @@ public class DescribeDedicatedHostsResponse extends AcsResponse {
 			this.autoReleaseTime = autoReleaseTime;
 		}
 
-		public String getResourceGroupId() {
-			return this.resourceGroupId;
+		public String getChargeType() {
+			return this.chargeType;
 		}
 
-		public void setResourceGroupId(String resourceGroupId) {
-			this.resourceGroupId = resourceGroupId;
+		public void setChargeType(String chargeType) {
+			this.chargeType = chargeType;
+		}
+
+		public Float getCpuOverCommitRatio() {
+			return this.cpuOverCommitRatio;
+		}
+
+		public void setCpuOverCommitRatio(Float cpuOverCommitRatio) {
+			this.cpuOverCommitRatio = cpuOverCommitRatio;
+		}
+
+		public String getActionOnMaintenance() {
+			return this.actionOnMaintenance;
+		}
+
+		public void setActionOnMaintenance(String actionOnMaintenance) {
+			this.actionOnMaintenance = actionOnMaintenance;
+		}
+
+		public String getSaleCycle() {
+			return this.saleCycle;
+		}
+
+		public void setSaleCycle(String saleCycle) {
+			this.saleCycle = saleCycle;
+		}
+
+		public Integer getPhysicalGpus() {
+			return this.physicalGpus;
+		}
+
+		public void setPhysicalGpus(Integer physicalGpus) {
+			this.physicalGpus = physicalGpus;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		public String getDedicatedHostName() {
+			return this.dedicatedHostName;
+		}
+
+		public void setDedicatedHostName(String dedicatedHostName) {
+			this.dedicatedHostName = dedicatedHostName;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
 		}
 
 		public String getDedicatedHostClusterId() {
@@ -307,12 +259,60 @@ public class DescribeDedicatedHostsResponse extends AcsResponse {
 			this.dedicatedHostClusterId = dedicatedHostClusterId;
 		}
 
-		public Float getCpuOverCommitRatio() {
-			return this.cpuOverCommitRatio;
+		public String getExpiredTime() {
+			return this.expiredTime;
 		}
 
-		public void setCpuOverCommitRatio(Float cpuOverCommitRatio) {
-			this.cpuOverCommitRatio = cpuOverCommitRatio;
+		public void setExpiredTime(String expiredTime) {
+			this.expiredTime = expiredTime;
+		}
+
+		public String getDedicatedHostType() {
+			return this.dedicatedHostType;
+		}
+
+		public void setDedicatedHostType(String dedicatedHostType) {
+			this.dedicatedHostType = dedicatedHostType;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
+		public String getZoneId() {
+			return this.zoneId;
+		}
+
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
+		}
+
+		public String getDedicatedHostId() {
+			return this.dedicatedHostId;
+		}
+
+		public void setDedicatedHostId(String dedicatedHostId) {
+			this.dedicatedHostId = dedicatedHostId;
+		}
+
+		public Integer getSockets() {
+			return this.sockets;
+		}
+
+		public void setSockets(Integer sockets) {
+			this.sockets = sockets;
+		}
+
+		public String getMachineId() {
+			return this.machineId;
+		}
+
+		public void setMachineId(String machineId) {
+			this.machineId = machineId;
 		}
 
 		public List<Instance> getInstances() {
@@ -389,17 +389,9 @@ public class DescribeDedicatedHostsResponse extends AcsResponse {
 
 		public static class Instance {
 
-			private String instanceId;
-
 			private String instanceType;
 
-			public String getInstanceId() {
-				return this.instanceId;
-			}
-
-			public void setInstanceId(String instanceId) {
-				this.instanceId = instanceId;
-			}
+			private String instanceId;
 
 			public String getInstanceType() {
 				return this.instanceType;
@@ -407,6 +399,14 @@ public class DescribeDedicatedHostsResponse extends AcsResponse {
 
 			public void setInstanceType(String instanceType) {
 				this.instanceType = instanceType;
+			}
+
+			public String getInstanceId() {
+				return this.instanceId;
+			}
+
+			public void setInstanceId(String instanceId) {
+				this.instanceId = instanceId;
 			}
 		}
 
@@ -425,17 +425,9 @@ public class DescribeDedicatedHostsResponse extends AcsResponse {
 
 		public static class Tag {
 
-			private String tagKey;
-
 			private String tagValue;
 
-			public String getTagKey() {
-				return this.tagKey;
-			}
-
-			public void setTagKey(String tagKey) {
-				this.tagKey = tagKey;
-			}
+			private String tagKey;
 
 			public String getTagValue() {
 				return this.tagValue;
@@ -444,58 +436,50 @@ public class DescribeDedicatedHostsResponse extends AcsResponse {
 			public void setTagValue(String tagValue) {
 				this.tagValue = tagValue;
 			}
+
+			public String getTagKey() {
+				return this.tagKey;
+			}
+
+			public void setTagKey(String tagKey) {
+				this.tagKey = tagKey;
+			}
 		}
 
 		public static class Capacity {
 
-			private Integer totalVcpus;
-
-			private Integer availableVcpus;
-
-			private Integer totalVgpus;
-
-			private Integer availableVgpus;
-
-			private Float totalMemory;
-
 			private Float availableMemory;
-
-			private Integer totalLocalStorage;
-
-			private Integer availableLocalStorage;
 
 			private String localStorageCategory;
 
-			public Integer getTotalVcpus() {
-				return this.totalVcpus;
+			private Float totalMemory;
+
+			private Integer totalLocalStorage;
+
+			private Integer totalVcpus;
+
+			private Integer totalVgpus;
+
+			private Integer availableLocalStorage;
+
+			private Integer availableVcpus;
+
+			private Integer availableVgpus;
+
+			public Float getAvailableMemory() {
+				return this.availableMemory;
 			}
 
-			public void setTotalVcpus(Integer totalVcpus) {
-				this.totalVcpus = totalVcpus;
+			public void setAvailableMemory(Float availableMemory) {
+				this.availableMemory = availableMemory;
 			}
 
-			public Integer getAvailableVcpus() {
-				return this.availableVcpus;
+			public String getLocalStorageCategory() {
+				return this.localStorageCategory;
 			}
 
-			public void setAvailableVcpus(Integer availableVcpus) {
-				this.availableVcpus = availableVcpus;
-			}
-
-			public Integer getTotalVgpus() {
-				return this.totalVgpus;
-			}
-
-			public void setTotalVgpus(Integer totalVgpus) {
-				this.totalVgpus = totalVgpus;
-			}
-
-			public Integer getAvailableVgpus() {
-				return this.availableVgpus;
-			}
-
-			public void setAvailableVgpus(Integer availableVgpus) {
-				this.availableVgpus = availableVgpus;
+			public void setLocalStorageCategory(String localStorageCategory) {
+				this.localStorageCategory = localStorageCategory;
 			}
 
 			public Float getTotalMemory() {
@@ -506,20 +490,28 @@ public class DescribeDedicatedHostsResponse extends AcsResponse {
 				this.totalMemory = totalMemory;
 			}
 
-			public Float getAvailableMemory() {
-				return this.availableMemory;
-			}
-
-			public void setAvailableMemory(Float availableMemory) {
-				this.availableMemory = availableMemory;
-			}
-
 			public Integer getTotalLocalStorage() {
 				return this.totalLocalStorage;
 			}
 
 			public void setTotalLocalStorage(Integer totalLocalStorage) {
 				this.totalLocalStorage = totalLocalStorage;
+			}
+
+			public Integer getTotalVcpus() {
+				return this.totalVcpus;
+			}
+
+			public void setTotalVcpus(Integer totalVcpus) {
+				this.totalVcpus = totalVcpus;
+			}
+
+			public Integer getTotalVgpus() {
+				return this.totalVgpus;
+			}
+
+			public void setTotalVgpus(Integer totalVgpus) {
+				this.totalVgpus = totalVgpus;
 			}
 
 			public Integer getAvailableLocalStorage() {
@@ -530,28 +522,28 @@ public class DescribeDedicatedHostsResponse extends AcsResponse {
 				this.availableLocalStorage = availableLocalStorage;
 			}
 
-			public String getLocalStorageCategory() {
-				return this.localStorageCategory;
+			public Integer getAvailableVcpus() {
+				return this.availableVcpus;
 			}
 
-			public void setLocalStorageCategory(String localStorageCategory) {
-				this.localStorageCategory = localStorageCategory;
+			public void setAvailableVcpus(Integer availableVcpus) {
+				this.availableVcpus = availableVcpus;
+			}
+
+			public Integer getAvailableVgpus() {
+				return this.availableVgpus;
+			}
+
+			public void setAvailableVgpus(Integer availableVgpus) {
+				this.availableVgpus = availableVgpus;
 			}
 		}
 
 		public static class NetworkAttributes {
 
-			private Integer slbUdpTimeout;
-
 			private Integer udpTimeout;
 
-			public Integer getSlbUdpTimeout() {
-				return this.slbUdpTimeout;
-			}
-
-			public void setSlbUdpTimeout(Integer slbUdpTimeout) {
-				this.slbUdpTimeout = slbUdpTimeout;
-			}
+			private Integer slbUdpTimeout;
 
 			public Integer getUdpTimeout() {
 				return this.udpTimeout;
@@ -559,6 +551,14 @@ public class DescribeDedicatedHostsResponse extends AcsResponse {
 
 			public void setUdpTimeout(Integer udpTimeout) {
 				this.udpTimeout = udpTimeout;
+			}
+
+			public Integer getSlbUdpTimeout() {
+				return this.slbUdpTimeout;
+			}
+
+			public void setSlbUdpTimeout(Integer slbUdpTimeout) {
+				this.slbUdpTimeout = slbUdpTimeout;
 			}
 		}
 

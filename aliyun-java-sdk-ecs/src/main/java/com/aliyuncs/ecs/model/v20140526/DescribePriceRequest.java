@@ -48,7 +48,11 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 
 	private Integer instanceCpuCoreCount;
 
+	private String spotStrategy;
+
 	private String internetChargeType;
+
+	private String zoneId;
 
 	private String instanceNetworkType;
 
@@ -93,6 +97,8 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 	private String ownerAccount;
 
 	private Integer dataDisk2Size;
+
+	private Integer spotDuration;
 
 	private String resourceType;
 
@@ -233,6 +239,17 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 		}
 	}
 
+	public String getSpotStrategy() {
+		return this.spotStrategy;
+	}
+
+	public void setSpotStrategy(String spotStrategy) {
+		this.spotStrategy = spotStrategy;
+		if(spotStrategy != null){
+			putQueryParameter("SpotStrategy", spotStrategy);
+		}
+	}
+
 	public String getInternetChargeType() {
 		return this.internetChargeType;
 	}
@@ -241,6 +258,17 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 		this.internetChargeType = internetChargeType;
 		if(internetChargeType != null){
 			putQueryParameter("InternetChargeType", internetChargeType);
+		}
+	}
+
+	public String getZoneId() {
+		return this.zoneId;
+	}
+
+	public void setZoneId(String zoneId) {
+		this.zoneId = zoneId;
+		if(zoneId != null){
+			putQueryParameter("ZoneId", zoneId);
 		}
 	}
 
@@ -485,6 +513,17 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 		this.dataDisk2Size = dataDisk2Size;
 		if(dataDisk2Size != null){
 			putQueryParameter("DataDisk.2.Size", dataDisk2Size.toString());
+		}
+	}
+
+	public Integer getSpotDuration() {
+		return this.spotDuration;
+	}
+
+	public void setSpotDuration(Integer spotDuration) {
+		this.spotDuration = spotDuration;
+		if(spotDuration != null){
+			putQueryParameter("SpotDuration", spotDuration.toString());
 		}
 	}
 

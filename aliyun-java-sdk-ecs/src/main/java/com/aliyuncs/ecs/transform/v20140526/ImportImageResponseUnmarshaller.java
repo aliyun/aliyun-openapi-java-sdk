@@ -23,9 +23,9 @@ public class ImportImageResponseUnmarshaller {
 	public static ImportImageResponse unmarshall(ImportImageResponse importImageResponse, UnmarshallerContext _ctx) {
 		
 		importImageResponse.setRequestId(_ctx.stringValue("ImportImageResponse.RequestId"));
+		importImageResponse.setImageId(_ctx.stringValue("ImportImageResponse.ImageId"));
 		importImageResponse.setTaskId(_ctx.stringValue("ImportImageResponse.TaskId"));
 		importImageResponse.setRegionId(_ctx.stringValue("ImportImageResponse.RegionId"));
-		importImageResponse.setImageId(_ctx.stringValue("ImportImageResponse.ImageId"));
 	 
 	 	return importImageResponse;
 	}

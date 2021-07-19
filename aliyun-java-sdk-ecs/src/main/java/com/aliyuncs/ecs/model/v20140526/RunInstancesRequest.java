@@ -142,6 +142,8 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 
 	private List<String> ipv6Addresss;
 
+	private String securityOptionsConfidentialComputingMode;
+
 	private String clientToken;
 
 	private Integer internetMaxBandwidthOut;
@@ -843,6 +845,17 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 				putQueryParameter("Ipv6Address." + (i + 1) , ipv6Addresss.get(i));
 			}
 		}	
+	}
+
+	public String getSecurityOptionsConfidentialComputingMode() {
+		return this.securityOptionsConfidentialComputingMode;
+	}
+
+	public void setSecurityOptionsConfidentialComputingMode(String securityOptionsConfidentialComputingMode) {
+		this.securityOptionsConfidentialComputingMode = securityOptionsConfidentialComputingMode;
+		if(securityOptionsConfidentialComputingMode != null){
+			putQueryParameter("SecurityOptions.ConfidentialComputingMode", securityOptionsConfidentialComputingMode);
+		}
 	}
 
 	public String getClientToken() {

@@ -14,6 +14,7 @@
 
 package com.aliyuncs.ecs.model.v20140526;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.ecs.transform.v20140526.AssignIpv6AddressesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -26,12 +27,32 @@ public class AssignIpv6AddressesResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String networkInterfaceId;
+
+	private List<String> ipv6Sets;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getNetworkInterfaceId() {
+		return this.networkInterfaceId;
+	}
+
+	public void setNetworkInterfaceId(String networkInterfaceId) {
+		this.networkInterfaceId = networkInterfaceId;
+	}
+
+	public List<String> getIpv6Sets() {
+		return this.ipv6Sets;
+	}
+
+	public void setIpv6Sets(List<String> ipv6Sets) {
+		this.ipv6Sets = ipv6Sets;
 	}
 
 	@Override

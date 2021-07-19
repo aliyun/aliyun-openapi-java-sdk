@@ -38,6 +38,8 @@ public class DescribeDedicatedHostsRequest extends RpcAcsRequest<DescribeDedicat
 
 	private Integer pageSize;
 
+	private String dedicatedHostClusterId;
+
 	private String dedicatedHostType;
 
 	private List<Tag> tags;
@@ -125,6 +127,17 @@ public class DescribeDedicatedHostsRequest extends RpcAcsRequest<DescribeDedicat
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getDedicatedHostClusterId() {
+		return this.dedicatedHostClusterId;
+	}
+
+	public void setDedicatedHostClusterId(String dedicatedHostClusterId) {
+		this.dedicatedHostClusterId = dedicatedHostClusterId;
+		if(dedicatedHostClusterId != null){
+			putQueryParameter("DedicatedHostClusterId", dedicatedHostClusterId);
 		}
 	}
 

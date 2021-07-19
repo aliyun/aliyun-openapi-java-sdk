@@ -52,6 +52,8 @@ public class CreateNetworkInterfaceRequest extends RpcAcsRequest<CreateNetworkIn
 
 	private String resourceOwnerAccount;
 
+	private Integer ipv6AddressCount;
+
 	private String ownerAccount;
 
 	private Integer queuePairNumber;
@@ -67,6 +69,8 @@ public class CreateNetworkInterfaceRequest extends RpcAcsRequest<CreateNetworkIn
 	private List<String> privateIpAddresss;
 
 	private String primaryIpAddress;
+
+	private List<String> ipv6Addresss;
 	public CreateNetworkInterfaceRequest() {
 		super("Ecs", "2014-05-26", "CreateNetworkInterface", "ecs");
 		setMethod(MethodType.POST);
@@ -222,6 +226,17 @@ public class CreateNetworkInterfaceRequest extends RpcAcsRequest<CreateNetworkIn
 		}
 	}
 
+	public Integer getIpv6AddressCount() {
+		return this.ipv6AddressCount;
+	}
+
+	public void setIpv6AddressCount(Integer ipv6AddressCount) {
+		this.ipv6AddressCount = ipv6AddressCount;
+		if(ipv6AddressCount != null){
+			putQueryParameter("Ipv6AddressCount", ipv6AddressCount.toString());
+		}
+	}
+
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -312,6 +327,19 @@ public class CreateNetworkInterfaceRequest extends RpcAcsRequest<CreateNetworkIn
 		if(primaryIpAddress != null){
 			putQueryParameter("PrimaryIpAddress", primaryIpAddress);
 		}
+	}
+
+	public List<String> getIpv6Addresss() {
+		return this.ipv6Addresss;
+	}
+
+	public void setIpv6Addresss(List<String> ipv6Addresss) {
+		this.ipv6Addresss = ipv6Addresss;	
+		if (ipv6Addresss != null) {
+			for (int i = 0; i < ipv6Addresss.size(); i++) {
+				putQueryParameter("Ipv6Address." + (i + 1) , ipv6Addresss.get(i));
+			}
+		}	
 	}
 
 	public static class Tag {
