@@ -1,3 +1,7 @@
+2021-07-19 Version: 3.3.19-inner
+- SubmitVideoQualityJob.
+- QueryVideoQualityJob.
+
 2021-07-09 Version: 3.3.18-inner
 - PAIAPI.
 
