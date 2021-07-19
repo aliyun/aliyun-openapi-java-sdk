@@ -1,3 +1,6 @@
+2021-07-19 Version: 1.0.14
+- Support for Batch Prepared for join meeting.
+
 2021-01-13 Version: 1.0.13
 - Support for Device New Status Update.
 - Support for Return Device Startup Picture.

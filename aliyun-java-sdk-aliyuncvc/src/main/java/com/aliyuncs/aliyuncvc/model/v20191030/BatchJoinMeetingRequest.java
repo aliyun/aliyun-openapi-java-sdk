@@ -12,7 +12,7 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.aliyuncvc.model.v20200330;
+package com.aliyuncs.aliyuncvc.model.v20191030;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
@@ -22,14 +22,18 @@ import com.aliyuncs.aliyuncvc.Endpoint;
  * @author auto create
  * @version 
  */
-public class ActiveMeetingRequest extends RpcAcsRequest<ActiveMeetingResponse> {
+public class BatchJoinMeetingRequest extends RpcAcsRequest<BatchJoinMeetingResponse> {
 	   
 
-	private String meetingUUID;
+	private String rtcEngine;
+
+	private String userId;
+
+	private String password;
 
 	private String meetingCode;
-	public ActiveMeetingRequest() {
-		super("aliyuncvc", "2020-03-30", "ActiveMeeting", "aliyuncvc");
+	public BatchJoinMeetingRequest() {
+		super("aliyuncvc", "2019-10-30", "BatchJoinMeeting", "aliyuncvc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,14 +41,36 @@ public class ActiveMeetingRequest extends RpcAcsRequest<ActiveMeetingResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getMeetingUUID() {
-		return this.meetingUUID;
+	public String getRtcEngine() {
+		return this.rtcEngine;
 	}
 
-	public void setMeetingUUID(String meetingUUID) {
-		this.meetingUUID = meetingUUID;
-		if(meetingUUID != null){
-			putQueryParameter("MeetingUUID", meetingUUID);
+	public void setRtcEngine(String rtcEngine) {
+		this.rtcEngine = rtcEngine;
+		if(rtcEngine != null){
+			putBodyParameter("RtcEngine", rtcEngine);
+		}
+	}
+
+	public String getUserId() {
+		return this.userId;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
+		if(userId != null){
+			putBodyParameter("UserId", userId);
+		}
+	}
+
+	public String getPassword() {
+		return this.password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+		if(password != null){
+			putBodyParameter("Password", password);
 		}
 	}
 
@@ -55,13 +81,13 @@ public class ActiveMeetingRequest extends RpcAcsRequest<ActiveMeetingResponse> {
 	public void setMeetingCode(String meetingCode) {
 		this.meetingCode = meetingCode;
 		if(meetingCode != null){
-			putQueryParameter("MeetingCode", meetingCode);
+			putBodyParameter("MeetingCode", meetingCode);
 		}
 	}
 
 	@Override
-	public Class<ActiveMeetingResponse> getResponseClass() {
-		return ActiveMeetingResponse.class;
+	public Class<BatchJoinMeetingResponse> getResponseClass() {
+		return BatchJoinMeetingResponse.class;
 	}
 
 }

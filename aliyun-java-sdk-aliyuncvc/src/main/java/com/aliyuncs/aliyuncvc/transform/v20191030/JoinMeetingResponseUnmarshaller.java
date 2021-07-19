@@ -25,18 +25,18 @@ public class JoinMeetingResponseUnmarshaller {
 	public static JoinMeetingResponse unmarshall(JoinMeetingResponse joinMeetingResponse, UnmarshallerContext _ctx) {
 		
 		joinMeetingResponse.setRequestId(_ctx.stringValue("JoinMeetingResponse.RequestId"));
+		joinMeetingResponse.setMessage(_ctx.stringValue("JoinMeetingResponse.Message"));
 		joinMeetingResponse.setErrorCode(_ctx.integerValue("JoinMeetingResponse.ErrorCode"));
 		joinMeetingResponse.setSuccess(_ctx.booleanValue("JoinMeetingResponse.Success"));
-		joinMeetingResponse.setMessage(_ctx.stringValue("JoinMeetingResponse.Message"));
 
 		MeetingInfo meetingInfo = new MeetingInfo();
-		meetingInfo.setMeetingDomain(_ctx.stringValue("JoinMeetingResponse.MeetingInfo.MeetingDomain"));
-		meetingInfo.setMeetingToken(_ctx.stringValue("JoinMeetingResponse.MeetingInfo.MeetingToken"));
-		meetingInfo.setMeetingCode(_ctx.stringValue("JoinMeetingResponse.MeetingInfo.MeetingCode"));
-		meetingInfo.setMemberUUID(_ctx.stringValue("JoinMeetingResponse.MeetingInfo.MemberUUID"));
-		meetingInfo.setClientAppId(_ctx.stringValue("JoinMeetingResponse.MeetingInfo.ClientAppId"));
-		meetingInfo.setMeetingUUID(_ctx.stringValue("JoinMeetingResponse.MeetingInfo.MeetingUUID"));
 		meetingInfo.setMeetingAppId(_ctx.stringValue("JoinMeetingResponse.MeetingInfo.MeetingAppId"));
+		meetingInfo.setMemberUUID(_ctx.stringValue("JoinMeetingResponse.MeetingInfo.MemberUUID"));
+		meetingInfo.setMeetingUUID(_ctx.stringValue("JoinMeetingResponse.MeetingInfo.MeetingUUID"));
+		meetingInfo.setMeetingToken(_ctx.stringValue("JoinMeetingResponse.MeetingInfo.MeetingToken"));
+		meetingInfo.setMeetingDomain(_ctx.stringValue("JoinMeetingResponse.MeetingInfo.MeetingDomain"));
+		meetingInfo.setClientAppId(_ctx.stringValue("JoinMeetingResponse.MeetingInfo.ClientAppId"));
+		meetingInfo.setMeetingCode(_ctx.stringValue("JoinMeetingResponse.MeetingInfo.MeetingCode"));
 
 		SlsInfo slsInfo = new SlsInfo();
 		slsInfo.setLogServiceEndpoint(_ctx.stringValue("JoinMeetingResponse.MeetingInfo.SlsInfo.LogServiceEndpoint"));

@@ -24,19 +24,19 @@ public class GetDeviceInfoResponseUnmarshaller {
 	public static GetDeviceInfoResponse unmarshall(GetDeviceInfoResponse getDeviceInfoResponse, UnmarshallerContext _ctx) {
 		
 		getDeviceInfoResponse.setRequestId(_ctx.stringValue("GetDeviceInfoResponse.RequestId"));
-		getDeviceInfoResponse.setErrorCode(_ctx.integerValue("GetDeviceInfoResponse.ErrorCode"));
 		getDeviceInfoResponse.setMessage(_ctx.stringValue("GetDeviceInfoResponse.Message"));
+		getDeviceInfoResponse.setErrorCode(_ctx.integerValue("GetDeviceInfoResponse.ErrorCode"));
 		getDeviceInfoResponse.setSuccess(_ctx.booleanValue("GetDeviceInfoResponse.Success"));
 
 		Device device = new Device();
-		device.setActivationCode(_ctx.stringValue("GetDeviceInfoResponse.Device.ActivationCode"));
-		device.setCastScreenCode(_ctx.stringValue("GetDeviceInfoResponse.Device.CastScreenCode"));
-		device.setSn(_ctx.stringValue("GetDeviceInfoResponse.Device.Sn"));
 		device.setStatus(_ctx.integerValue("GetDeviceInfoResponse.Device.Status"));
+		device.setCastScreenCode(_ctx.stringValue("GetDeviceInfoResponse.Device.CastScreenCode"));
 		device.setIP(_ctx.stringValue("GetDeviceInfoResponse.Device.IP"));
-		device.setMac(_ctx.stringValue("GetDeviceInfoResponse.Device.Mac"));
-		device.setSsid(_ctx.stringValue("GetDeviceInfoResponse.Device.Ssid"));
 		device.setPort(_ctx.stringValue("GetDeviceInfoResponse.Device.Port"));
+		device.setSn(_ctx.stringValue("GetDeviceInfoResponse.Device.Sn"));
+		device.setSsid(_ctx.stringValue("GetDeviceInfoResponse.Device.Ssid"));
+		device.setActivationCode(_ctx.stringValue("GetDeviceInfoResponse.Device.ActivationCode"));
+		device.setMac(_ctx.stringValue("GetDeviceInfoResponse.Device.Mac"));
 		getDeviceInfoResponse.setDevice(device);
 	 
 	 	return getDeviceInfoResponse;

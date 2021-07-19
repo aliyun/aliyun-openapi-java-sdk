@@ -14,15 +14,16 @@
 
 package com.aliyuncs.aliyuncvc.model.v20191030;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.aliyuncvc.transform.v20191030.JoinMeetingResponseUnmarshaller;
+import com.aliyuncs.aliyuncvc.transform.v20191030.BatchJoinMeetingInternationalResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class JoinMeetingResponse extends AcsResponse {
+public class BatchJoinMeetingInternationalResponse extends AcsResponse {
 
 	private String message;
 
@@ -78,8 +79,6 @@ public class JoinMeetingResponse extends AcsResponse {
 
 		private String meetingAppId;
 
-		private String memberUUID;
-
 		private String meetingUUID;
 
 		private String meetingToken;
@@ -90,6 +89,8 @@ public class JoinMeetingResponse extends AcsResponse {
 
 		private String meetingCode;
 
+		private List<Member> memberList;
+
 		private SlsInfo slsInfo;
 
 		public String getMeetingAppId() {
@@ -98,14 +99,6 @@ public class JoinMeetingResponse extends AcsResponse {
 
 		public void setMeetingAppId(String meetingAppId) {
 			this.meetingAppId = meetingAppId;
-		}
-
-		public String getMemberUUID() {
-			return this.memberUUID;
-		}
-
-		public void setMemberUUID(String memberUUID) {
-			this.memberUUID = memberUUID;
 		}
 
 		public String getMeetingUUID() {
@@ -148,12 +141,53 @@ public class JoinMeetingResponse extends AcsResponse {
 			this.meetingCode = meetingCode;
 		}
 
+		public List<Member> getMemberList() {
+			return this.memberList;
+		}
+
+		public void setMemberList(List<Member> memberList) {
+			this.memberList = memberList;
+		}
+
 		public SlsInfo getSlsInfo() {
 			return this.slsInfo;
 		}
 
 		public void setSlsInfo(SlsInfo slsInfo) {
 			this.slsInfo = slsInfo;
+		}
+
+		public static class Member {
+
+			private String memberUUID;
+
+			private String meetingToken;
+
+			private String userId;
+
+			public String getMemberUUID() {
+				return this.memberUUID;
+			}
+
+			public void setMemberUUID(String memberUUID) {
+				this.memberUUID = memberUUID;
+			}
+
+			public String getMeetingToken() {
+				return this.meetingToken;
+			}
+
+			public void setMeetingToken(String meetingToken) {
+				this.meetingToken = meetingToken;
+			}
+
+			public String getUserId() {
+				return this.userId;
+			}
+
+			public void setUserId(String userId) {
+				this.userId = userId;
+			}
 		}
 
 		public static class SlsInfo {
@@ -191,8 +225,8 @@ public class JoinMeetingResponse extends AcsResponse {
 	}
 
 	@Override
-	public JoinMeetingResponse getInstance(UnmarshallerContext context) {
-		return	JoinMeetingResponseUnmarshaller.unmarshall(this, context);
+	public BatchJoinMeetingInternationalResponse getInstance(UnmarshallerContext context) {
+		return	BatchJoinMeetingInternationalResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

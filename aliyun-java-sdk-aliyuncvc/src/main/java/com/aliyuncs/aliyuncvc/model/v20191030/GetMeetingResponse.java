@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetMeetingResponse extends AcsResponse {
 
-	private Integer errorCode;
-
 	private String message;
-
-	private Boolean success;
 
 	private String requestId;
 
+	private Integer errorCode;
+
+	private Boolean success;
+
 	private MeetingInfo meetingInfo;
-
-	public Integer getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(Integer errorCode) {
-		this.errorCode = errorCode;
-	}
 
 	public String getMessage() {
 		return this.message;
@@ -51,20 +43,28 @@ public class GetMeetingResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Integer getErrorCode() {
+		return this.errorCode;
+	}
+
+	public void setErrorCode(Integer errorCode) {
+		this.errorCode = errorCode;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public MeetingInfo getMeetingInfo() {
@@ -77,60 +77,28 @@ public class GetMeetingResponse extends AcsResponse {
 
 	public static class MeetingInfo {
 
-		private String meetingName;
-
-		private Long validTime;
-
-		private String meetingCode;
-
-		private Long createTime;
-
-		private String userId;
+		private String password;
 
 		private String meetingUUID;
 
-		private String password;
+		private Long validTime;
+
+		private Long createTime;
+
+		private String meetingName;
+
+		private String userId;
+
+		private String meetingCode;
 
 		private List<MemberListItem> memberList;
 
-		public String getMeetingName() {
-			return this.meetingName;
+		public String getPassword() {
+			return this.password;
 		}
 
-		public void setMeetingName(String meetingName) {
-			this.meetingName = meetingName;
-		}
-
-		public Long getValidTime() {
-			return this.validTime;
-		}
-
-		public void setValidTime(Long validTime) {
-			this.validTime = validTime;
-		}
-
-		public String getMeetingCode() {
-			return this.meetingCode;
-		}
-
-		public void setMeetingCode(String meetingCode) {
-			this.meetingCode = meetingCode;
-		}
-
-		public Long getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(Long createTime) {
-			this.createTime = createTime;
-		}
-
-		public String getUserId() {
-			return this.userId;
-		}
-
-		public void setUserId(String userId) {
-			this.userId = userId;
+		public void setPassword(String password) {
+			this.password = password;
 		}
 
 		public String getMeetingUUID() {
@@ -141,12 +109,44 @@ public class GetMeetingResponse extends AcsResponse {
 			this.meetingUUID = meetingUUID;
 		}
 
-		public String getPassword() {
-			return this.password;
+		public Long getValidTime() {
+			return this.validTime;
 		}
 
-		public void setPassword(String password) {
-			this.password = password;
+		public void setValidTime(Long validTime) {
+			this.validTime = validTime;
+		}
+
+		public Long getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(Long createTime) {
+			this.createTime = createTime;
+		}
+
+		public String getMeetingName() {
+			return this.meetingName;
+		}
+
+		public void setMeetingName(String meetingName) {
+			this.meetingName = meetingName;
+		}
+
+		public String getUserId() {
+			return this.userId;
+		}
+
+		public void setUserId(String userId) {
+			this.userId = userId;
+		}
+
+		public String getMeetingCode() {
+			return this.meetingCode;
+		}
+
+		public void setMeetingCode(String meetingCode) {
+			this.meetingCode = meetingCode;
 		}
 
 		public List<MemberListItem> getMemberList() {
@@ -159,22 +159,22 @@ public class GetMeetingResponse extends AcsResponse {
 
 		public static class MemberListItem {
 
-			private String userAvatarUrl;
+			private String status;
 
 			private String memberUUID;
 
-			private String userName;
+			private String userAvatarUrl;
 
 			private String userId;
 
-			private String status;
+			private String userName;
 
-			public String getUserAvatarUrl() {
-				return this.userAvatarUrl;
+			public String getStatus() {
+				return this.status;
 			}
 
-			public void setUserAvatarUrl(String userAvatarUrl) {
-				this.userAvatarUrl = userAvatarUrl;
+			public void setStatus(String status) {
+				this.status = status;
 			}
 
 			public String getMemberUUID() {
@@ -185,12 +185,12 @@ public class GetMeetingResponse extends AcsResponse {
 				this.memberUUID = memberUUID;
 			}
 
-			public String getUserName() {
-				return this.userName;
+			public String getUserAvatarUrl() {
+				return this.userAvatarUrl;
 			}
 
-			public void setUserName(String userName) {
-				this.userName = userName;
+			public void setUserAvatarUrl(String userAvatarUrl) {
+				this.userAvatarUrl = userAvatarUrl;
 			}
 
 			public String getUserId() {
@@ -201,12 +201,12 @@ public class GetMeetingResponse extends AcsResponse {
 				this.userId = userId;
 			}
 
-			public String getStatus() {
-				return this.status;
+			public String getUserName() {
+				return this.userName;
 			}
 
-			public void setStatus(String status) {
-				this.status = status;
+			public void setUserName(String userName) {
+				this.userName = userName;
 			}
 		}
 	}

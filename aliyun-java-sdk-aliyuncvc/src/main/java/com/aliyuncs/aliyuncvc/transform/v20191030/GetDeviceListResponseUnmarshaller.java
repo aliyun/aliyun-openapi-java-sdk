@@ -27,20 +27,20 @@ public class GetDeviceListResponseUnmarshaller {
 	public static GetDeviceListResponse unmarshall(GetDeviceListResponse getDeviceListResponse, UnmarshallerContext _ctx) {
 		
 		getDeviceListResponse.setRequestId(_ctx.stringValue("GetDeviceListResponse.RequestId"));
-		getDeviceListResponse.setErrorCode(_ctx.integerValue("GetDeviceListResponse.ErrorCode"));
 		getDeviceListResponse.setMessage(_ctx.stringValue("GetDeviceListResponse.Message"));
+		getDeviceListResponse.setErrorCode(_ctx.integerValue("GetDeviceListResponse.ErrorCode"));
 		getDeviceListResponse.setSuccess(_ctx.booleanValue("GetDeviceListResponse.Success"));
 
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetDeviceListResponse.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
-			dataItem.setActivationCode(_ctx.stringValue("GetDeviceListResponse.Data["+ i +"].ActivationCode"));
+			dataItem.setStatus(_ctx.integerValue("GetDeviceListResponse.Data["+ i +"].Status"));
 			dataItem.setCastScreenCode(_ctx.stringValue("GetDeviceListResponse.Data["+ i +"].CastScreenCode"));
 			dataItem.setIP(_ctx.stringValue("GetDeviceListResponse.Data["+ i +"].IP"));
-			dataItem.setMac(_ctx.stringValue("GetDeviceListResponse.Data["+ i +"].Mac"));
-			dataItem.setSN(_ctx.stringValue("GetDeviceListResponse.Data["+ i +"].SN"));
-			dataItem.setStatus(_ctx.integerValue("GetDeviceListResponse.Data["+ i +"].Status"));
 			dataItem.setPort(_ctx.stringValue("GetDeviceListResponse.Data["+ i +"].Port"));
+			dataItem.setSN(_ctx.stringValue("GetDeviceListResponse.Data["+ i +"].SN"));
+			dataItem.setActivationCode(_ctx.stringValue("GetDeviceListResponse.Data["+ i +"].ActivationCode"));
+			dataItem.setMac(_ctx.stringValue("GetDeviceListResponse.Data["+ i +"].Mac"));
 
 			data.add(dataItem);
 		}

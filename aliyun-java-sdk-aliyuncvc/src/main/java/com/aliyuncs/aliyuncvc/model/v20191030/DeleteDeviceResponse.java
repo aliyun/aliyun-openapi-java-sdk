@@ -24,21 +24,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DeleteDeviceResponse extends AcsResponse {
 
-	private Integer errorCode;
-
 	private String message;
-
-	private Boolean success;
 
 	private String requestId;
 
-	public Integer getErrorCode() {
-		return this.errorCode;
-	}
+	private Integer errorCode;
 
-	public void setErrorCode(Integer errorCode) {
-		this.errorCode = errorCode;
-	}
+	private Boolean success;
 
 	public String getMessage() {
 		return this.message;
@@ -48,20 +40,28 @@ public class DeleteDeviceResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Integer getErrorCode() {
+		return this.errorCode;
+	}
+
+	public void setErrorCode(Integer errorCode) {
+		this.errorCode = errorCode;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	@Override

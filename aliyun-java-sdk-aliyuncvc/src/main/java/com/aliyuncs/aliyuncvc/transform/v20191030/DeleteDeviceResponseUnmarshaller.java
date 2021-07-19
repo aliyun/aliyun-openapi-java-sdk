@@ -23,8 +23,8 @@ public class DeleteDeviceResponseUnmarshaller {
 	public static DeleteDeviceResponse unmarshall(DeleteDeviceResponse deleteDeviceResponse, UnmarshallerContext _ctx) {
 		
 		deleteDeviceResponse.setRequestId(_ctx.stringValue("DeleteDeviceResponse.RequestId"));
-		deleteDeviceResponse.setErrorCode(_ctx.integerValue("DeleteDeviceResponse.ErrorCode"));
 		deleteDeviceResponse.setMessage(_ctx.stringValue("DeleteDeviceResponse.Message"));
+		deleteDeviceResponse.setErrorCode(_ctx.integerValue("DeleteDeviceResponse.ErrorCode"));
 		deleteDeviceResponse.setSuccess(_ctx.booleanValue("DeleteDeviceResponse.Success"));
 	 
 	 	return deleteDeviceResponse;

@@ -12,7 +12,7 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.aliyuncvc.model.v20200330;
+package com.aliyuncs.aliyuncvc.model.v20191030;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
@@ -22,14 +22,16 @@ import com.aliyuncs.aliyuncvc.Endpoint;
  * @author auto create
  * @version 
  */
-public class JoinMeetingRequest extends RpcAcsRequest<JoinMeetingResponse> {
+public class BatchJoinMeetingInternationalRequest extends RpcAcsRequest<BatchJoinMeetingInternationalResponse> {
 	   
 
 	private String userId;
 
+	private String password;
+
 	private String meetingCode;
-	public JoinMeetingRequest() {
-		super("aliyuncvc", "2020-03-30", "JoinMeeting", "aliyuncvc");
+	public BatchJoinMeetingInternationalRequest() {
+		super("aliyuncvc", "2019-10-30", "BatchJoinMeetingInternational", "aliyuncvc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -48,6 +50,17 @@ public class JoinMeetingRequest extends RpcAcsRequest<JoinMeetingResponse> {
 		}
 	}
 
+	public String getPassword() {
+		return this.password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+		if(password != null){
+			putBodyParameter("Password", password);
+		}
+	}
+
 	public String getMeetingCode() {
 		return this.meetingCode;
 	}
@@ -60,8 +73,8 @@ public class JoinMeetingRequest extends RpcAcsRequest<JoinMeetingResponse> {
 	}
 
 	@Override
-	public Class<JoinMeetingResponse> getResponseClass() {
-		return JoinMeetingResponse.class;
+	public Class<BatchJoinMeetingInternationalResponse> getResponseClass() {
+		return BatchJoinMeetingInternationalResponse.class;
 	}
 
 }
