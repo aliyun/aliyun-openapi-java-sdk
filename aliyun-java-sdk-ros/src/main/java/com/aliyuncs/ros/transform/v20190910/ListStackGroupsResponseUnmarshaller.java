@@ -27,19 +27,20 @@ public class ListStackGroupsResponseUnmarshaller {
 	public static ListStackGroupsResponse unmarshall(ListStackGroupsResponse listStackGroupsResponse, UnmarshallerContext _ctx) {
 		
 		listStackGroupsResponse.setRequestId(_ctx.stringValue("ListStackGroupsResponse.RequestId"));
-		listStackGroupsResponse.setPageNumber(_ctx.integerValue("ListStackGroupsResponse.PageNumber"));
-		listStackGroupsResponse.setPageSize(_ctx.integerValue("ListStackGroupsResponse.PageSize"));
 		listStackGroupsResponse.setTotalCount(_ctx.integerValue("ListStackGroupsResponse.TotalCount"));
+		listStackGroupsResponse.setPageSize(_ctx.integerValue("ListStackGroupsResponse.PageSize"));
+		listStackGroupsResponse.setPageNumber(_ctx.integerValue("ListStackGroupsResponse.PageNumber"));
 
 		List<StackGroup> stackGroups = new ArrayList<StackGroup>();
 		for (int i = 0; i < _ctx.lengthValue("ListStackGroupsResponse.StackGroups.Length"); i++) {
 			StackGroup stackGroup = new StackGroup();
-			stackGroup.setStackGroupName(_ctx.stringValue("ListStackGroupsResponse.StackGroups["+ i +"].StackGroupName"));
-			stackGroup.setStackGroupId(_ctx.stringValue("ListStackGroupsResponse.StackGroups["+ i +"].StackGroupId"));
 			stackGroup.setStatus(_ctx.stringValue("ListStackGroupsResponse.StackGroups["+ i +"].Status"));
-			stackGroup.setDescription(_ctx.stringValue("ListStackGroupsResponse.StackGroups["+ i +"].Description"));
-			stackGroup.setDriftDetectionTime(_ctx.stringValue("ListStackGroupsResponse.StackGroups["+ i +"].DriftDetectionTime"));
 			stackGroup.setStackGroupDriftStatus(_ctx.stringValue("ListStackGroupsResponse.StackGroups["+ i +"].StackGroupDriftStatus"));
+			stackGroup.setDescription(_ctx.stringValue("ListStackGroupsResponse.StackGroups["+ i +"].Description"));
+			stackGroup.setResourceGroupId(_ctx.stringValue("ListStackGroupsResponse.StackGroups["+ i +"].ResourceGroupId"));
+			stackGroup.setStackGroupName(_ctx.stringValue("ListStackGroupsResponse.StackGroups["+ i +"].StackGroupName"));
+			stackGroup.setDriftDetectionTime(_ctx.stringValue("ListStackGroupsResponse.StackGroups["+ i +"].DriftDetectionTime"));
+			stackGroup.setStackGroupId(_ctx.stringValue("ListStackGroupsResponse.StackGroups["+ i +"].StackGroupId"));
 
 			stackGroups.add(stackGroup);
 		}

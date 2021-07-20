@@ -26,6 +26,16 @@ import com.aliyuncs.ros.Endpoint;
 public class CreateStackGroupRequest extends RpcAcsRequest<CreateStackGroupResponse> {
 	   
 
+	private String resourceGroupId;
+
+	private String templateVersion;
+
+	private String stackGroupName;
+
+	private String templateId;
+
+	private List<Parameters> parameterss;
+
 	private String clientToken;
 
 	private String templateBody;
@@ -36,14 +46,6 @@ public class CreateStackGroupRequest extends RpcAcsRequest<CreateStackGroupRespo
 
 	private String templateURL;
 
-	private String templateVersion;
-
-	private String stackGroupName;
-
-	private String templateId;
-
-	private List<Parameters> parameterss;
-
 	private String administrationRoleName;
 	public CreateStackGroupRequest() {
 		super("ROS", "2019-09-10", "CreateStackGroup", "ros");
@@ -52,6 +54,64 @@ public class CreateStackGroupRequest extends RpcAcsRequest<CreateStackGroupRespo
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public String getTemplateVersion() {
+		return this.templateVersion;
+	}
+
+	public void setTemplateVersion(String templateVersion) {
+		this.templateVersion = templateVersion;
+		if(templateVersion != null){
+			putQueryParameter("TemplateVersion", templateVersion);
+		}
+	}
+
+	public String getStackGroupName() {
+		return this.stackGroupName;
+	}
+
+	public void setStackGroupName(String stackGroupName) {
+		this.stackGroupName = stackGroupName;
+		if(stackGroupName != null){
+			putQueryParameter("StackGroupName", stackGroupName);
+		}
+	}
+
+	public String getTemplateId() {
+		return this.templateId;
+	}
+
+	public void setTemplateId(String templateId) {
+		this.templateId = templateId;
+		if(templateId != null){
+			putQueryParameter("TemplateId", templateId);
+		}
+	}
+
+	public List<Parameters> getParameterss() {
+		return this.parameterss;
+	}
+
+	public void setParameterss(List<Parameters> parameterss) {
+		this.parameterss = parameterss;	
+		if (parameterss != null) {
+			for (int depth1 = 0; depth1 < parameterss.size(); depth1++) {
+				putQueryParameter("Parameters." + (depth1 + 1) + ".ParameterValue" , parameterss.get(depth1).getParameterValue());
+				putQueryParameter("Parameters." + (depth1 + 1) + ".ParameterKey" , parameterss.get(depth1).getParameterKey());
+			}
+		}	
 	}
 
 	public String getClientToken() {
@@ -107,53 +167,6 @@ public class CreateStackGroupRequest extends RpcAcsRequest<CreateStackGroupRespo
 		if(templateURL != null){
 			putQueryParameter("TemplateURL", templateURL);
 		}
-	}
-
-	public String getTemplateVersion() {
-		return this.templateVersion;
-	}
-
-	public void setTemplateVersion(String templateVersion) {
-		this.templateVersion = templateVersion;
-		if(templateVersion != null){
-			putQueryParameter("TemplateVersion", templateVersion);
-		}
-	}
-
-	public String getStackGroupName() {
-		return this.stackGroupName;
-	}
-
-	public void setStackGroupName(String stackGroupName) {
-		this.stackGroupName = stackGroupName;
-		if(stackGroupName != null){
-			putQueryParameter("StackGroupName", stackGroupName);
-		}
-	}
-
-	public String getTemplateId() {
-		return this.templateId;
-	}
-
-	public void setTemplateId(String templateId) {
-		this.templateId = templateId;
-		if(templateId != null){
-			putQueryParameter("TemplateId", templateId);
-		}
-	}
-
-	public List<Parameters> getParameterss() {
-		return this.parameterss;
-	}
-
-	public void setParameterss(List<Parameters> parameterss) {
-		this.parameterss = parameterss;	
-		if (parameterss != null) {
-			for (int depth1 = 0; depth1 < parameterss.size(); depth1++) {
-				putQueryParameter("Parameters." + (depth1 + 1) + ".ParameterValue" , parameterss.get(depth1).getParameterValue());
-				putQueryParameter("Parameters." + (depth1 + 1) + ".ParameterKey" , parameterss.get(depth1).getParameterKey());
-			}
-		}	
 	}
 
 	public String getAdministrationRoleName() {

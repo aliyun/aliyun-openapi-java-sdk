@@ -47,39 +47,25 @@ public class GetStackGroupResponse extends AcsResponse {
 
 	public static class StackGroup {
 
-		private String stackGroupName;
-
-		private String stackGroupId;
-
 		private String status;
 
 		private String description;
 
-		private String templateBody;
+		private String resourceGroupId;
+
+		private String stackGroupName;
 
 		private String executionRoleName;
 
 		private String administrationRoleName;
 
+		private String stackGroupId;
+
+		private String templateBody;
+
 		private List<Parameter> parameters;
 
 		private StackGroupDriftDetectionDetail stackGroupDriftDetectionDetail;
-
-		public String getStackGroupName() {
-			return this.stackGroupName;
-		}
-
-		public void setStackGroupName(String stackGroupName) {
-			this.stackGroupName = stackGroupName;
-		}
-
-		public String getStackGroupId() {
-			return this.stackGroupId;
-		}
-
-		public void setStackGroupId(String stackGroupId) {
-			this.stackGroupId = stackGroupId;
-		}
 
 		public String getStatus() {
 			return this.status;
@@ -97,12 +83,20 @@ public class GetStackGroupResponse extends AcsResponse {
 			this.description = description;
 		}
 
-		public String getTemplateBody() {
-			return this.templateBody;
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
 		}
 
-		public void setTemplateBody(String templateBody) {
-			this.templateBody = templateBody;
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
+		public String getStackGroupName() {
+			return this.stackGroupName;
+		}
+
+		public void setStackGroupName(String stackGroupName) {
+			this.stackGroupName = stackGroupName;
 		}
 
 		public String getExecutionRoleName() {
@@ -119,6 +113,22 @@ public class GetStackGroupResponse extends AcsResponse {
 
 		public void setAdministrationRoleName(String administrationRoleName) {
 			this.administrationRoleName = administrationRoleName;
+		}
+
+		public String getStackGroupId() {
+			return this.stackGroupId;
+		}
+
+		public void setStackGroupId(String stackGroupId) {
+			this.stackGroupId = stackGroupId;
+		}
+
+		public String getTemplateBody() {
+			return this.templateBody;
+		}
+
+		public void setTemplateBody(String templateBody) {
+			this.templateBody = templateBody;
 		}
 
 		public List<Parameter> getParameters() {
@@ -139,17 +149,9 @@ public class GetStackGroupResponse extends AcsResponse {
 
 		public static class Parameter {
 
-			private String parameterKey;
-
 			private String parameterValue;
 
-			public String getParameterKey() {
-				return this.parameterKey;
-			}
-
-			public void setParameterKey(String parameterKey) {
-				this.parameterKey = parameterKey;
-			}
+			private String parameterKey;
 
 			public String getParameterValue() {
 				return this.parameterValue;
@@ -158,51 +160,35 @@ public class GetStackGroupResponse extends AcsResponse {
 			public void setParameterValue(String parameterValue) {
 				this.parameterValue = parameterValue;
 			}
+
+			public String getParameterKey() {
+				return this.parameterKey;
+			}
+
+			public void setParameterKey(String parameterKey) {
+				this.parameterKey = parameterKey;
+			}
 		}
 
 		public static class StackGroupDriftDetectionDetail {
 
-			private String driftDetectionTime;
-
-			private String stackGroupDriftStatus;
-
-			private String driftDetectionStatus;
-
 			private Integer driftedStackInstancesCount;
 
-			private Integer failedStackInstancesCount;
-
-			private Integer cancelledStackInstancesCount;
-
-			private Integer inProgressStackInstancesCount;
+			private String stackGroupDriftStatus;
 
 			private Integer inSyncStackInstancesCount;
 
 			private Integer totalStackInstancesCount;
 
-			public String getDriftDetectionTime() {
-				return this.driftDetectionTime;
-			}
+			private String driftDetectionTime;
 
-			public void setDriftDetectionTime(String driftDetectionTime) {
-				this.driftDetectionTime = driftDetectionTime;
-			}
+			private Integer inProgressStackInstancesCount;
 
-			public String getStackGroupDriftStatus() {
-				return this.stackGroupDriftStatus;
-			}
+			private Integer cancelledStackInstancesCount;
 
-			public void setStackGroupDriftStatus(String stackGroupDriftStatus) {
-				this.stackGroupDriftStatus = stackGroupDriftStatus;
-			}
+			private String driftDetectionStatus;
 
-			public String getDriftDetectionStatus() {
-				return this.driftDetectionStatus;
-			}
-
-			public void setDriftDetectionStatus(String driftDetectionStatus) {
-				this.driftDetectionStatus = driftDetectionStatus;
-			}
+			private Integer failedStackInstancesCount;
 
 			public Integer getDriftedStackInstancesCount() {
 				return this.driftedStackInstancesCount;
@@ -212,28 +198,12 @@ public class GetStackGroupResponse extends AcsResponse {
 				this.driftedStackInstancesCount = driftedStackInstancesCount;
 			}
 
-			public Integer getFailedStackInstancesCount() {
-				return this.failedStackInstancesCount;
+			public String getStackGroupDriftStatus() {
+				return this.stackGroupDriftStatus;
 			}
 
-			public void setFailedStackInstancesCount(Integer failedStackInstancesCount) {
-				this.failedStackInstancesCount = failedStackInstancesCount;
-			}
-
-			public Integer getCancelledStackInstancesCount() {
-				return this.cancelledStackInstancesCount;
-			}
-
-			public void setCancelledStackInstancesCount(Integer cancelledStackInstancesCount) {
-				this.cancelledStackInstancesCount = cancelledStackInstancesCount;
-			}
-
-			public Integer getInProgressStackInstancesCount() {
-				return this.inProgressStackInstancesCount;
-			}
-
-			public void setInProgressStackInstancesCount(Integer inProgressStackInstancesCount) {
-				this.inProgressStackInstancesCount = inProgressStackInstancesCount;
+			public void setStackGroupDriftStatus(String stackGroupDriftStatus) {
+				this.stackGroupDriftStatus = stackGroupDriftStatus;
 			}
 
 			public Integer getInSyncStackInstancesCount() {
@@ -250,6 +220,46 @@ public class GetStackGroupResponse extends AcsResponse {
 
 			public void setTotalStackInstancesCount(Integer totalStackInstancesCount) {
 				this.totalStackInstancesCount = totalStackInstancesCount;
+			}
+
+			public String getDriftDetectionTime() {
+				return this.driftDetectionTime;
+			}
+
+			public void setDriftDetectionTime(String driftDetectionTime) {
+				this.driftDetectionTime = driftDetectionTime;
+			}
+
+			public Integer getInProgressStackInstancesCount() {
+				return this.inProgressStackInstancesCount;
+			}
+
+			public void setInProgressStackInstancesCount(Integer inProgressStackInstancesCount) {
+				this.inProgressStackInstancesCount = inProgressStackInstancesCount;
+			}
+
+			public Integer getCancelledStackInstancesCount() {
+				return this.cancelledStackInstancesCount;
+			}
+
+			public void setCancelledStackInstancesCount(Integer cancelledStackInstancesCount) {
+				this.cancelledStackInstancesCount = cancelledStackInstancesCount;
+			}
+
+			public String getDriftDetectionStatus() {
+				return this.driftDetectionStatus;
+			}
+
+			public void setDriftDetectionStatus(String driftDetectionStatus) {
+				this.driftDetectionStatus = driftDetectionStatus;
+			}
+
+			public Integer getFailedStackInstancesCount() {
+				return this.failedStackInstancesCount;
+			}
+
+			public void setFailedStackInstancesCount(Integer failedStackInstancesCount) {
+				this.failedStackInstancesCount = failedStackInstancesCount;
 			}
 		}
 	}

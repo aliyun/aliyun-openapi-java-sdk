@@ -27,6 +27,8 @@ public class ListStackGroupsRequest extends RpcAcsRequest<ListStackGroupsRespons
 
 	private Long pageNumber;
 
+	private String resourceGroupId;
+
 	private Long pageSize;
 
 	private String status;
@@ -47,6 +49,17 @@ public class ListStackGroupsRequest extends RpcAcsRequest<ListStackGroupsRespons
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

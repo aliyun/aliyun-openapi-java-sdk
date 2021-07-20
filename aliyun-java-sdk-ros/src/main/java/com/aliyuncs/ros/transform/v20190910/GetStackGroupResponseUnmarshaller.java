@@ -31,31 +31,32 @@ public class GetStackGroupResponseUnmarshaller {
 		getStackGroupResponse.setRequestId(_ctx.stringValue("GetStackGroupResponse.RequestId"));
 
 		StackGroup stackGroup = new StackGroup();
-		stackGroup.setStackGroupName(_ctx.stringValue("GetStackGroupResponse.StackGroup.StackGroupName"));
-		stackGroup.setStackGroupId(_ctx.stringValue("GetStackGroupResponse.StackGroup.StackGroupId"));
 		stackGroup.setStatus(_ctx.stringValue("GetStackGroupResponse.StackGroup.Status"));
 		stackGroup.setDescription(_ctx.stringValue("GetStackGroupResponse.StackGroup.Description"));
-		stackGroup.setTemplateBody(_ctx.stringValue("GetStackGroupResponse.StackGroup.TemplateBody"));
+		stackGroup.setResourceGroupId(_ctx.stringValue("GetStackGroupResponse.StackGroup.ResourceGroupId"));
+		stackGroup.setStackGroupName(_ctx.stringValue("GetStackGroupResponse.StackGroup.StackGroupName"));
 		stackGroup.setExecutionRoleName(_ctx.stringValue("GetStackGroupResponse.StackGroup.ExecutionRoleName"));
 		stackGroup.setAdministrationRoleName(_ctx.stringValue("GetStackGroupResponse.StackGroup.AdministrationRoleName"));
+		stackGroup.setStackGroupId(_ctx.stringValue("GetStackGroupResponse.StackGroup.StackGroupId"));
+		stackGroup.setTemplateBody(_ctx.stringValue("GetStackGroupResponse.StackGroup.TemplateBody"));
 
 		StackGroupDriftDetectionDetail stackGroupDriftDetectionDetail = new StackGroupDriftDetectionDetail();
-		stackGroupDriftDetectionDetail.setDriftDetectionTime(_ctx.stringValue("GetStackGroupResponse.StackGroup.StackGroupDriftDetectionDetail.DriftDetectionTime"));
-		stackGroupDriftDetectionDetail.setStackGroupDriftStatus(_ctx.stringValue("GetStackGroupResponse.StackGroup.StackGroupDriftDetectionDetail.StackGroupDriftStatus"));
-		stackGroupDriftDetectionDetail.setDriftDetectionStatus(_ctx.stringValue("GetStackGroupResponse.StackGroup.StackGroupDriftDetectionDetail.DriftDetectionStatus"));
 		stackGroupDriftDetectionDetail.setDriftedStackInstancesCount(_ctx.integerValue("GetStackGroupResponse.StackGroup.StackGroupDriftDetectionDetail.DriftedStackInstancesCount"));
-		stackGroupDriftDetectionDetail.setFailedStackInstancesCount(_ctx.integerValue("GetStackGroupResponse.StackGroup.StackGroupDriftDetectionDetail.FailedStackInstancesCount"));
-		stackGroupDriftDetectionDetail.setCancelledStackInstancesCount(_ctx.integerValue("GetStackGroupResponse.StackGroup.StackGroupDriftDetectionDetail.CancelledStackInstancesCount"));
-		stackGroupDriftDetectionDetail.setInProgressStackInstancesCount(_ctx.integerValue("GetStackGroupResponse.StackGroup.StackGroupDriftDetectionDetail.InProgressStackInstancesCount"));
+		stackGroupDriftDetectionDetail.setStackGroupDriftStatus(_ctx.stringValue("GetStackGroupResponse.StackGroup.StackGroupDriftDetectionDetail.StackGroupDriftStatus"));
 		stackGroupDriftDetectionDetail.setInSyncStackInstancesCount(_ctx.integerValue("GetStackGroupResponse.StackGroup.StackGroupDriftDetectionDetail.InSyncStackInstancesCount"));
 		stackGroupDriftDetectionDetail.setTotalStackInstancesCount(_ctx.integerValue("GetStackGroupResponse.StackGroup.StackGroupDriftDetectionDetail.TotalStackInstancesCount"));
+		stackGroupDriftDetectionDetail.setDriftDetectionTime(_ctx.stringValue("GetStackGroupResponse.StackGroup.StackGroupDriftDetectionDetail.DriftDetectionTime"));
+		stackGroupDriftDetectionDetail.setInProgressStackInstancesCount(_ctx.integerValue("GetStackGroupResponse.StackGroup.StackGroupDriftDetectionDetail.InProgressStackInstancesCount"));
+		stackGroupDriftDetectionDetail.setCancelledStackInstancesCount(_ctx.integerValue("GetStackGroupResponse.StackGroup.StackGroupDriftDetectionDetail.CancelledStackInstancesCount"));
+		stackGroupDriftDetectionDetail.setDriftDetectionStatus(_ctx.stringValue("GetStackGroupResponse.StackGroup.StackGroupDriftDetectionDetail.DriftDetectionStatus"));
+		stackGroupDriftDetectionDetail.setFailedStackInstancesCount(_ctx.integerValue("GetStackGroupResponse.StackGroup.StackGroupDriftDetectionDetail.FailedStackInstancesCount"));
 		stackGroup.setStackGroupDriftDetectionDetail(stackGroupDriftDetectionDetail);
 
 		List<Parameter> parameters = new ArrayList<Parameter>();
 		for (int i = 0; i < _ctx.lengthValue("GetStackGroupResponse.StackGroup.Parameters.Length"); i++) {
 			Parameter parameter = new Parameter();
-			parameter.setParameterKey(_ctx.stringValue("GetStackGroupResponse.StackGroup.Parameters["+ i +"].ParameterKey"));
 			parameter.setParameterValue(_ctx.stringValue("GetStackGroupResponse.StackGroup.Parameters["+ i +"].ParameterValue"));
+			parameter.setParameterKey(_ctx.stringValue("GetStackGroupResponse.StackGroup.Parameters["+ i +"].ParameterKey"));
 
 			parameters.add(parameter);
 		}

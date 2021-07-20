@@ -32,6 +32,8 @@ public class ListStacksRequest extends RpcAcsRequest<ListStacksResponse> {
 
 	private Long pageNumber;
 
+	private String resourceGroupId;
+
 	private Long pageSize;
 
 	private List<String> stackNames;
@@ -80,6 +82,17 @@ public class ListStacksRequest extends RpcAcsRequest<ListStacksResponse> {
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

@@ -25,100 +25,46 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetTemplateResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String templateBody;
-
-	private String stackId;
-
-	private String templateId;
-
-	private String stackGroupName;
-
-	private String changeSetId;
-
-	private String regionId;
-
-	private String createTime;
+	private String templateARN;
 
 	private String description;
 
-	private String templateName;
+	private String resourceGroupId;
 
-	private String updateTime;
+	private String requestId;
+
+	private String stackGroupName;
+
+	private String createTime;
 
 	private String templateVersion;
 
-	private String shareType;
+	private String templateBody;
+
+	private String changeSetId;
 
 	private String ownerId;
 
-	private String templateARN;
+	private String updateTime;
+
+	private String templateName;
+
+	private String regionId;
+
+	private String templateId;
+
+	private String shareType;
+
+	private String stackId;
 
 	private List<Permission> permissions;
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getTemplateARN() {
+		return this.templateARN;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getTemplateBody() {
-		return this.templateBody;
-	}
-
-	public void setTemplateBody(String templateBody) {
-		this.templateBody = templateBody;
-	}
-
-	public String getStackId() {
-		return this.stackId;
-	}
-
-	public void setStackId(String stackId) {
-		this.stackId = stackId;
-	}
-
-	public String getTemplateId() {
-		return this.templateId;
-	}
-
-	public void setTemplateId(String templateId) {
-		this.templateId = templateId;
-	}
-
-	public String getStackGroupName() {
-		return this.stackGroupName;
-	}
-
-	public void setStackGroupName(String stackGroupName) {
-		this.stackGroupName = stackGroupName;
-	}
-
-	public String getChangeSetId() {
-		return this.changeSetId;
-	}
-
-	public void setChangeSetId(String changeSetId) {
-		this.changeSetId = changeSetId;
-	}
-
-	public String getRegionId() {
-		return this.regionId;
-	}
-
-	public void setRegionId(String regionId) {
-		this.regionId = regionId;
-	}
-
-	public String getCreateTime() {
-		return this.createTime;
-	}
-
-	public void setCreateTime(String createTime) {
-		this.createTime = createTime;
+	public void setTemplateARN(String templateARN) {
+		this.templateARN = templateARN;
 	}
 
 	public String getDescription() {
@@ -129,20 +75,36 @@ public class GetTemplateResponse extends AcsResponse {
 		this.description = description;
 	}
 
-	public String getTemplateName() {
-		return this.templateName;
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
 	}
 
-	public void setTemplateName(String templateName) {
-		this.templateName = templateName;
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
 	}
 
-	public String getUpdateTime() {
-		return this.updateTime;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setUpdateTime(String updateTime) {
-		this.updateTime = updateTime;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getStackGroupName() {
+		return this.stackGroupName;
+	}
+
+	public void setStackGroupName(String stackGroupName) {
+		this.stackGroupName = stackGroupName;
+	}
+
+	public String getCreateTime() {
+		return this.createTime;
+	}
+
+	public void setCreateTime(String createTime) {
+		this.createTime = createTime;
 	}
 
 	public String getTemplateVersion() {
@@ -153,12 +115,20 @@ public class GetTemplateResponse extends AcsResponse {
 		this.templateVersion = templateVersion;
 	}
 
-	public String getShareType() {
-		return this.shareType;
+	public String getTemplateBody() {
+		return this.templateBody;
 	}
 
-	public void setShareType(String shareType) {
-		this.shareType = shareType;
+	public void setTemplateBody(String templateBody) {
+		this.templateBody = templateBody;
+	}
+
+	public String getChangeSetId() {
+		return this.changeSetId;
+	}
+
+	public void setChangeSetId(String changeSetId) {
+		this.changeSetId = changeSetId;
 	}
 
 	public String getOwnerId() {
@@ -169,12 +139,52 @@ public class GetTemplateResponse extends AcsResponse {
 		this.ownerId = ownerId;
 	}
 
-	public String getTemplateARN() {
-		return this.templateARN;
+	public String getUpdateTime() {
+		return this.updateTime;
 	}
 
-	public void setTemplateARN(String templateARN) {
-		this.templateARN = templateARN;
+	public void setUpdateTime(String updateTime) {
+		this.updateTime = updateTime;
+	}
+
+	public String getTemplateName() {
+		return this.templateName;
+	}
+
+	public void setTemplateName(String templateName) {
+		this.templateName = templateName;
+	}
+
+	public String getRegionId() {
+		return this.regionId;
+	}
+
+	public void setRegionId(String regionId) {
+		this.regionId = regionId;
+	}
+
+	public String getTemplateId() {
+		return this.templateId;
+	}
+
+	public void setTemplateId(String templateId) {
+		this.templateId = templateId;
+	}
+
+	public String getShareType() {
+		return this.shareType;
+	}
+
+	public void setShareType(String shareType) {
+		this.shareType = shareType;
+	}
+
+	public String getStackId() {
+		return this.stackId;
+	}
+
+	public void setStackId(String stackId) {
+		this.stackId = stackId;
 	}
 
 	public List<Permission> getPermissions() {
@@ -189,11 +199,11 @@ public class GetTemplateResponse extends AcsResponse {
 
 		private String shareOption;
 
-		private String versionOption;
+		private String accountId;
 
 		private String templateVersion;
 
-		private String accountId;
+		private String versionOption;
 
 		public String getShareOption() {
 			return this.shareOption;
@@ -203,12 +213,12 @@ public class GetTemplateResponse extends AcsResponse {
 			this.shareOption = shareOption;
 		}
 
-		public String getVersionOption() {
-			return this.versionOption;
+		public String getAccountId() {
+			return this.accountId;
 		}
 
-		public void setVersionOption(String versionOption) {
-			this.versionOption = versionOption;
+		public void setAccountId(String accountId) {
+			this.accountId = accountId;
 		}
 
 		public String getTemplateVersion() {
@@ -219,12 +229,12 @@ public class GetTemplateResponse extends AcsResponse {
 			this.templateVersion = templateVersion;
 		}
 
-		public String getAccountId() {
-			return this.accountId;
+		public String getVersionOption() {
+			return this.versionOption;
 		}
 
-		public void setAccountId(String accountId) {
-			this.accountId = accountId;
+		public void setVersionOption(String versionOption) {
+			this.versionOption = versionOption;
 		}
 	}
 

@@ -28,13 +28,15 @@ public class ListTemplatesRequest extends RpcAcsRequest<ListTemplatesResponse> {
 
 	private Long pageNumber;
 
+	private String resourceGroupId;
+
 	private Long pageSize;
 
 	private String templateName;
 
-	private List<Tag> tags;
-
 	private String shareType;
+
+	private List<Tag> tags;
 	public ListTemplatesRequest() {
 		super("ROS", "2019-09-10", "ListTemplates", "ros");
 		setMethod(MethodType.POST);
@@ -52,6 +54,17 @@ public class ListTemplatesRequest extends RpcAcsRequest<ListTemplatesResponse> {
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 
@@ -77,6 +90,17 @@ public class ListTemplatesRequest extends RpcAcsRequest<ListTemplatesResponse> {
 		}
 	}
 
+	public String getShareType() {
+		return this.shareType;
+	}
+
+	public void setShareType(String shareType) {
+		this.shareType = shareType;
+		if(shareType != null){
+			putQueryParameter("ShareType", shareType);
+		}
+	}
+
 	public List<Tag> getTags() {
 		return this.tags;
 	}
@@ -89,17 +113,6 @@ public class ListTemplatesRequest extends RpcAcsRequest<ListTemplatesResponse> {
 				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
 			}
 		}	
-	}
-
-	public String getShareType() {
-		return this.shareType;
-	}
-
-	public void setShareType(String shareType) {
-		this.shareType = shareType;
-		if(shareType != null){
-			putQueryParameter("ShareType", shareType);
-		}
 	}
 
 	public static class Tag {
