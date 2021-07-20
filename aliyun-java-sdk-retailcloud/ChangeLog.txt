@@ -1,3 +1,7 @@
+2021-07-20 Version: 2.0.16
+- Supported lite-container deploy.
+- Supported deploy use appGroup default packet.
+
 2021-07-08 Version: 2.0.15
 - Support app group.
 
