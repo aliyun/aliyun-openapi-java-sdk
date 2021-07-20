@@ -35,7 +35,7 @@ public class CreateMcubeWhitelistRequest extends RpcAcsRequest<CreateMcubeWhitel
 
 	private String workspaceId;
 	public CreateMcubeWhitelistRequest() {
-		super("mPaaS", "2020-07-10", "CreateMcubeWhitelist");
+		super("mPaaS", "2020-07-10", "CreateMcubeWhitelist", "mpaas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

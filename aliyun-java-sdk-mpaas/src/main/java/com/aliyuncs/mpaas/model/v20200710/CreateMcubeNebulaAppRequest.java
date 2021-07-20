@@ -35,7 +35,7 @@ public class CreateMcubeNebulaAppRequest extends RpcAcsRequest<CreateMcubeNebula
 
 	private String workspaceId;
 	public CreateMcubeNebulaAppRequest() {
-		super("mPaaS", "2020-07-10", "CreateMcubeNebulaApp");
+		super("mPaaS", "2020-07-10", "CreateMcubeNebulaApp", "mpaas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -29,7 +29,7 @@ public class MssOpenApiCreateSingleDataRequest extends RpcAcsRequest<MssOpenApiC
 
 	private String instanceId;
 	public MssOpenApiCreateSingleDataRequest() {
-		super("mPaaS", "2020-07-10", "MssOpenApiCreateSingleData");
+		super("mPaaS", "2020-07-10", "MssOpenApiCreateSingleData", "mpaas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

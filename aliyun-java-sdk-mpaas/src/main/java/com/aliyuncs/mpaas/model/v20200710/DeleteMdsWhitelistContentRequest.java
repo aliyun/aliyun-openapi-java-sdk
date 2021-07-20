@@ -35,7 +35,7 @@ public class DeleteMdsWhitelistContentRequest extends RpcAcsRequest<DeleteMdsWhi
 
 	private String whitelistId;
 	public DeleteMdsWhitelistContentRequest() {
-		super("mPaaS", "2020-07-10", "DeleteMdsWhitelistContent");
+		super("mPaaS", "2020-07-10", "DeleteMdsWhitelistContent", "mpaas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

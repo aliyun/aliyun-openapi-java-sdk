@@ -73,7 +73,7 @@ public class UploadMcubeMiniPackageRequest extends RpcAcsRequest<UploadMcubeMini
 
 	private String appId;
 	public UploadMcubeMiniPackageRequest() {
-		super("mPaaS", "2020-07-10", "UploadMcubeMiniPackage");
+		super("mPaaS", "2020-07-10", "UploadMcubeMiniPackage", "mpaas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -48,7 +48,7 @@ public class PushMultipleRequest extends RpcAcsRequest<PushMultipleResponse> {
 
 	private String workspaceId;
 	public PushMultipleRequest() {
-		super("mPaaS", "2020-07-10", "PushMultiple");
+		super("mPaaS", "2020-07-10", "PushMultiple", "mpaas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -33,7 +33,7 @@ public class CreateMcubeVhostRequest extends RpcAcsRequest<CreateMcubeVhostRespo
 
 	private String workspaceId;
 	public CreateMcubeVhostRequest() {
-		super("mPaaS", "2020-07-10", "CreateMcubeVhost");
+		super("mPaaS", "2020-07-10", "CreateMcubeVhost", "mpaas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
