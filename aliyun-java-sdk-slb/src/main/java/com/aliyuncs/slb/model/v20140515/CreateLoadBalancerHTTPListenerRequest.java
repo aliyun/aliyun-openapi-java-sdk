@@ -47,6 +47,8 @@ public class CreateLoadBalancerHTTPListenerRequest extends RpcAcsRequest<CreateL
 
 	private String cookie;
 
+	private String healthCheckMethod;
+
 	private String healthCheckDomain;
 
 	private Integer requestTimeout;
@@ -223,6 +225,17 @@ public class CreateLoadBalancerHTTPListenerRequest extends RpcAcsRequest<CreateL
 		this.cookie = cookie;
 		if(cookie != null){
 			putQueryParameter("Cookie", cookie);
+		}
+	}
+
+	public String getHealthCheckMethod() {
+		return this.healthCheckMethod;
+	}
+
+	public void setHealthCheckMethod(String healthCheckMethod) {
+		this.healthCheckMethod = healthCheckMethod;
+		if(healthCheckMethod != null){
+			putQueryParameter("HealthCheckMethod", healthCheckMethod);
 		}
 	}
 

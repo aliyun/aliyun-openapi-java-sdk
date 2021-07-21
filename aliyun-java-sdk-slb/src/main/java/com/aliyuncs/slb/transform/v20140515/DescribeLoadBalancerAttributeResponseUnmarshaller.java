@@ -72,6 +72,8 @@ public class DescribeLoadBalancerAttributeResponseUnmarshaller {
 		describeLoadBalancerAttributeResponse.setBusinessStatus(_ctx.stringValue("DescribeLoadBalancerAttributeResponse.BusinessStatus"));
 		describeLoadBalancerAttributeResponse.setModificationProtectionStatus(_ctx.stringValue("DescribeLoadBalancerAttributeResponse.ModificationProtectionStatus"));
 		describeLoadBalancerAttributeResponse.setModificationProtectionReason(_ctx.stringValue("DescribeLoadBalancerAttributeResponse.ModificationProtectionReason"));
+		describeLoadBalancerAttributeResponse.setSpecBpsFlag(_ctx.booleanValue("DescribeLoadBalancerAttributeResponse.SpecBpsFlag"));
+		describeLoadBalancerAttributeResponse.setSpecType(_ctx.stringValue("DescribeLoadBalancerAttributeResponse.SpecType"));
 
 		List<Integer> listenerPorts = new ArrayList<Integer>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeLoadBalancerAttributeResponse.ListenerPorts.Length"); i++) {

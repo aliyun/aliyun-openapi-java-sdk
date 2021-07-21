@@ -113,6 +113,10 @@ public class DescribeLoadBalancerAttributeResponse extends AcsResponse {
 
 	private String modificationProtectionReason;
 
+	private Boolean specBpsFlag;
+
+	private String specType;
+
 	private List<ListenerPortAndProtocal> listenerPortsAndProtocal;
 
 	private List<ListenerPortAndProtocol> listenerPortsAndProtocol;
@@ -473,6 +477,22 @@ public class DescribeLoadBalancerAttributeResponse extends AcsResponse {
 
 	public void setModificationProtectionReason(String modificationProtectionReason) {
 		this.modificationProtectionReason = modificationProtectionReason;
+	}
+
+	public Boolean getSpecBpsFlag() {
+		return this.specBpsFlag;
+	}
+
+	public void setSpecBpsFlag(Boolean specBpsFlag) {
+		this.specBpsFlag = specBpsFlag;
+	}
+
+	public String getSpecType() {
+		return this.specType;
+	}
+
+	public void setSpecType(String specType) {
+		this.specType = specType;
 	}
 
 	public List<ListenerPortAndProtocal> getListenerPortsAndProtocal() {
