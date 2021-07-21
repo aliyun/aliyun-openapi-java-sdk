@@ -137,13 +137,19 @@ public class DescribeAlertLogListResponse extends AcsResponse {
 
 		private String message;
 
+		private String blackListUUID;
+
+		private String blackListName;
+
+		private String blackListDetail;
+
 		private List<ExtInfo> extendedInfo;
 
 		private List<DimensionsItem> dimensions;
 
-		private List<String> contactGroups;
+		private List<WebhookListItem> webhookList;
 
-		private List<String> webhookList;
+		private List<String> contactGroups;
 
 		private List<String> contactALIIWWList;
 
@@ -279,6 +285,30 @@ public class DescribeAlertLogListResponse extends AcsResponse {
 			this.message = message;
 		}
 
+		public String getBlackListUUID() {
+			return this.blackListUUID;
+		}
+
+		public void setBlackListUUID(String blackListUUID) {
+			this.blackListUUID = blackListUUID;
+		}
+
+		public String getBlackListName() {
+			return this.blackListName;
+		}
+
+		public void setBlackListName(String blackListName) {
+			this.blackListName = blackListName;
+		}
+
+		public String getBlackListDetail() {
+			return this.blackListDetail;
+		}
+
+		public void setBlackListDetail(String blackListDetail) {
+			this.blackListDetail = blackListDetail;
+		}
+
 		public List<ExtInfo> getExtendedInfo() {
 			return this.extendedInfo;
 		}
@@ -295,20 +325,20 @@ public class DescribeAlertLogListResponse extends AcsResponse {
 			this.dimensions = dimensions;
 		}
 
+		public List<WebhookListItem> getWebhookList() {
+			return this.webhookList;
+		}
+
+		public void setWebhookList(List<WebhookListItem> webhookList) {
+			this.webhookList = webhookList;
+		}
+
 		public List<String> getContactGroups() {
 			return this.contactGroups;
 		}
 
 		public void setContactGroups(List<String> contactGroups) {
 			this.contactGroups = contactGroups;
-		}
-
-		public List<String> getWebhookList() {
-			return this.webhookList;
-		}
-
-		public void setWebhookList(List<String> webhookList) {
-			this.webhookList = webhookList;
 		}
 
 		public List<String> getContactALIIWWList() {
@@ -410,6 +440,39 @@ public class DescribeAlertLogListResponse extends AcsResponse {
 
 			public void setValue(String value) {
 				this.value = value;
+			}
+		}
+
+		public static class WebhookListItem {
+
+			private String url;
+
+			private String code;
+
+			private String message;
+
+			public String getUrl() {
+				return this.url;
+			}
+
+			public void setUrl(String url) {
+				this.url = url;
+			}
+
+			public String getCode() {
+				return this.code;
+			}
+
+			public void setCode(String code) {
+				this.code = code;
+			}
+
+			public String getMessage() {
+				return this.message;
+			}
+
+			public void setMessage(String message) {
+				this.message = message;
 			}
 		}
 

@@ -41,6 +41,9 @@ public class DescribeMetricRuleTemplateAttributeResponseUnmarshaller {
 		resource.setTemplateId(_ctx.stringValue("DescribeMetricRuleTemplateAttributeResponse.Resource.TemplateId"));
 		resource.setRestVersion(_ctx.stringValue("DescribeMetricRuleTemplateAttributeResponse.Resource.RestVersion"));
 		resource.setDescription(_ctx.stringValue("DescribeMetricRuleTemplateAttributeResponse.Resource.Description"));
+		resource.setSystemEventTemplates(_ctx.stringValue("DescribeMetricRuleTemplateAttributeResponse.Resource.SystemEventTemplates"));
+		resource.setProcessMonitorTemplates(_ctx.stringValue("DescribeMetricRuleTemplateAttributeResponse.Resource.ProcessMonitorTemplates"));
+		resource.setHostAvailabilityTemplates(_ctx.stringValue("DescribeMetricRuleTemplateAttributeResponse.Resource.HostAvailabilityTemplates"));
 
 		List<AlertTemplate> alertTemplates = new ArrayList<AlertTemplate>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeMetricRuleTemplateAttributeResponse.Resource.AlertTemplates.Length"); i++) {

@@ -85,6 +85,12 @@ public class DescribeMetricRuleTemplateAttributeResponse extends AcsResponse {
 
 		private String description;
 
+		private String systemEventTemplates;
+
+		private String processMonitorTemplates;
+
+		private String hostAvailabilityTemplates;
+
 		private List<AlertTemplate> alertTemplates;
 
 		public String getName() {
@@ -117,6 +123,30 @@ public class DescribeMetricRuleTemplateAttributeResponse extends AcsResponse {
 
 		public void setDescription(String description) {
 			this.description = description;
+		}
+
+		public String getSystemEventTemplates() {
+			return this.systemEventTemplates;
+		}
+
+		public void setSystemEventTemplates(String systemEventTemplates) {
+			this.systemEventTemplates = systemEventTemplates;
+		}
+
+		public String getProcessMonitorTemplates() {
+			return this.processMonitorTemplates;
+		}
+
+		public void setProcessMonitorTemplates(String processMonitorTemplates) {
+			this.processMonitorTemplates = processMonitorTemplates;
+		}
+
+		public String getHostAvailabilityTemplates() {
+			return this.hostAvailabilityTemplates;
+		}
+
+		public void setHostAvailabilityTemplates(String hostAvailabilityTemplates) {
+			this.hostAvailabilityTemplates = hostAvailabilityTemplates;
 		}
 
 		public List<AlertTemplate> getAlertTemplates() {

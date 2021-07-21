@@ -24,14 +24,29 @@ import com.aliyuncs.http.MethodType;
 public class DescribeDynamicTagRuleListRequest extends RpcAcsRequest<DescribeDynamicTagRuleListResponse> {
 	   
 
+	private String tagValue;
+
 	private String pageNumber;
 
 	private String pageSize;
 
 	private String tagKey;
+
+	private String tagRegionId;
 	public DescribeDynamicTagRuleListRequest() {
 		super("Cms", "2019-01-01", "DescribeDynamicTagRuleList", "cms");
 		setMethod(MethodType.POST);
+	}
+
+	public String getTagValue() {
+		return this.tagValue;
+	}
+
+	public void setTagValue(String tagValue) {
+		this.tagValue = tagValue;
+		if(tagValue != null){
+			putQueryParameter("TagValue", tagValue);
+		}
 	}
 
 	public String getPageNumber() {
@@ -64,6 +79,17 @@ public class DescribeDynamicTagRuleListRequest extends RpcAcsRequest<DescribeDyn
 		this.tagKey = tagKey;
 		if(tagKey != null){
 			putQueryParameter("TagKey", tagKey);
+		}
+	}
+
+	public String getTagRegionId() {
+		return this.tagRegionId;
+	}
+
+	public void setTagRegionId(String tagRegionId) {
+		this.tagRegionId = tagRegionId;
+		if(tagRegionId != null){
+			putQueryParameter("TagRegionId", tagRegionId);
 		}
 	}
 

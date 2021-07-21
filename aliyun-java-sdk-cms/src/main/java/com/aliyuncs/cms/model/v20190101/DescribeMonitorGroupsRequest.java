@@ -35,9 +35,13 @@ public class DescribeMonitorGroupsRequest extends RpcAcsRequest<DescribeMonitorG
 
 	private Integer pageNumber;
 
+	private String groupFounderTagKey;
+
 	private Integer pageSize;
 
 	private List<Tag> tags;
+
+	private String groupFounderTagValue;
 
 	private String keyword;
 
@@ -106,6 +110,17 @@ public class DescribeMonitorGroupsRequest extends RpcAcsRequest<DescribeMonitorG
 		}
 	}
 
+	public String getGroupFounderTagKey() {
+		return this.groupFounderTagKey;
+	}
+
+	public void setGroupFounderTagKey(String groupFounderTagKey) {
+		this.groupFounderTagKey = groupFounderTagKey;
+		if(groupFounderTagKey != null){
+			putQueryParameter("GroupFounderTagKey", groupFounderTagKey);
+		}
+	}
+
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
@@ -129,6 +144,17 @@ public class DescribeMonitorGroupsRequest extends RpcAcsRequest<DescribeMonitorG
 				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
 			}
 		}	
+	}
+
+	public String getGroupFounderTagValue() {
+		return this.groupFounderTagValue;
+	}
+
+	public void setGroupFounderTagValue(String groupFounderTagValue) {
+		this.groupFounderTagValue = groupFounderTagValue;
+		if(groupFounderTagValue != null){
+			putQueryParameter("GroupFounderTagValue", groupFounderTagValue);
+		}
 	}
 
 	public String getKeyword() {
