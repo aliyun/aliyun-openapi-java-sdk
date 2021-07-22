@@ -22,35 +22,22 @@ import com.aliyuncs.elasticsearch.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListInstanceIndicesRequest extends RoaAcsRequest<ListInstanceIndicesResponse> {
+public class CreateVpcEndpointRequest extends RoaAcsRequest<CreateVpcEndpointResponse> {
 	   
-
-	private Boolean all;
 
 	private String instanceId;
 
-	private Boolean isManaged;
+	private Boolean dryRun;
 
-	private String name;
-	public ListInstanceIndicesRequest() {
-		super("elasticsearch", "2017-06-13", "ListInstanceIndices", "elasticsearch");
-		setUriPattern("/openapi/instances/[InstanceId]/indices");
-		setMethod(MethodType.GET);
+	private String clientToken;
+	public CreateVpcEndpointRequest() {
+		super("elasticsearch", "2017-06-13", "CreateVpcEndpoint", "elasticsearch");
+		setUriPattern("/openapi/instances/[InstanceId]/vpc-endpoints");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Boolean getAll() {
-		return this.all;
-	}
-
-	public void setAll(Boolean all) {
-		this.all = all;
-		if(all != null){
-			putQueryParameter("all", all.toString());
-		}
 	}
 
 	public String getInstanceId() {
@@ -64,31 +51,31 @@ public class ListInstanceIndicesRequest extends RoaAcsRequest<ListInstanceIndice
 		}
 	}
 
-	public Boolean getIsManaged() {
-		return this.isManaged;
+	public Boolean getDryRun() {
+		return this.dryRun;
 	}
 
-	public void setIsManaged(Boolean isManaged) {
-		this.isManaged = isManaged;
-		if(isManaged != null){
-			putQueryParameter("isManaged", isManaged.toString());
+	public void setDryRun(Boolean dryRun) {
+		this.dryRun = dryRun;
+		if(dryRun != null){
+			putQueryParameter("dryRun", dryRun.toString());
 		}
 	}
 
-	public String getName() {
-		return this.name;
+	public String getClientToken() {
+		return this.clientToken;
 	}
 
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("name", name);
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 
 	@Override
-	public Class<ListInstanceIndicesResponse> getResponseClass() {
-		return ListInstanceIndicesResponse.class;
+	public Class<CreateVpcEndpointResponse> getResponseClass() {
+		return CreateVpcEndpointResponse.class;
 	}
 
 }

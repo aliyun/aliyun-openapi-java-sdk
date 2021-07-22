@@ -82,6 +82,10 @@ public class ListInstanceResponse extends AcsResponse {
 
 		private String postpaidServiceStatus;
 
+		private String isNewDeployment;
+
+		private Boolean serviceVpc;
+
 		private List<Tag> tags;
 
 		private List<Map<Object,Object>> extendConfigs;
@@ -192,6 +196,22 @@ public class ListInstanceResponse extends AcsResponse {
 
 		public void setPostpaidServiceStatus(String postpaidServiceStatus) {
 			this.postpaidServiceStatus = postpaidServiceStatus;
+		}
+
+		public String getIsNewDeployment() {
+			return this.isNewDeployment;
+		}
+
+		public void setIsNewDeployment(String isNewDeployment) {
+			this.isNewDeployment = isNewDeployment;
+		}
+
+		public Boolean getServiceVpc() {
+			return this.serviceVpc;
+		}
+
+		public void setServiceVpc(Boolean serviceVpc) {
+			this.serviceVpc = serviceVpc;
 		}
 
 		public List<Tag> getTags() {

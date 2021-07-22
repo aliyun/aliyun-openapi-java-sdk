@@ -22,19 +22,15 @@ import com.aliyuncs.elasticsearch.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListInstanceIndicesRequest extends RoaAcsRequest<ListInstanceIndicesResponse> {
+public class ListShardRecoveriesRequest extends RoaAcsRequest<ListShardRecoveriesResponse> {
 	   
 
-	private Boolean all;
+	private Boolean activeOnly;
 
 	private String instanceId;
-
-	private Boolean isManaged;
-
-	private String name;
-	public ListInstanceIndicesRequest() {
-		super("elasticsearch", "2017-06-13", "ListInstanceIndices", "elasticsearch");
-		setUriPattern("/openapi/instances/[InstanceId]/indices");
+	public ListShardRecoveriesRequest() {
+		super("elasticsearch", "2017-06-13", "ListShardRecoveries", "elasticsearch");
+		setUriPattern("/openapi/instances/[InstanceId]/cat-recovery");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -42,14 +38,14 @@ public class ListInstanceIndicesRequest extends RoaAcsRequest<ListInstanceIndice
 		} catch (Exception e) {}
 	}
 
-	public Boolean getAll() {
-		return this.all;
+	public Boolean getActiveOnly() {
+		return this.activeOnly;
 	}
 
-	public void setAll(Boolean all) {
-		this.all = all;
-		if(all != null){
-			putQueryParameter("all", all.toString());
+	public void setActiveOnly(Boolean activeOnly) {
+		this.activeOnly = activeOnly;
+		if(activeOnly != null){
+			putQueryParameter("activeOnly", activeOnly.toString());
 		}
 	}
 
@@ -64,31 +60,9 @@ public class ListInstanceIndicesRequest extends RoaAcsRequest<ListInstanceIndice
 		}
 	}
 
-	public Boolean getIsManaged() {
-		return this.isManaged;
-	}
-
-	public void setIsManaged(Boolean isManaged) {
-		this.isManaged = isManaged;
-		if(isManaged != null){
-			putQueryParameter("isManaged", isManaged.toString());
-		}
-	}
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("name", name);
-		}
-	}
-
 	@Override
-	public Class<ListInstanceIndicesResponse> getResponseClass() {
-		return ListInstanceIndicesResponse.class;
+	public Class<ListShardRecoveriesResponse> getResponseClass() {
+		return ListShardRecoveriesResponse.class;
 	}
 
 }

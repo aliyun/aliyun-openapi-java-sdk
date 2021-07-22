@@ -22,35 +22,22 @@ import com.aliyuncs.elasticsearch.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListInstanceIndicesRequest extends RoaAcsRequest<ListInstanceIndicesResponse> {
+public class ListDictsRequest extends RoaAcsRequest<ListDictsResponse> {
 	   
-
-	private Boolean all;
 
 	private String instanceId;
 
-	private Boolean isManaged;
+	private String analyzerType;
 
 	private String name;
-	public ListInstanceIndicesRequest() {
-		super("elasticsearch", "2017-06-13", "ListInstanceIndices", "elasticsearch");
-		setUriPattern("/openapi/instances/[InstanceId]/indices");
+	public ListDictsRequest() {
+		super("elasticsearch", "2017-06-13", "ListDicts", "elasticsearch");
+		setUriPattern("/openapi/instances/[InstanceId]/dicts");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Boolean getAll() {
-		return this.all;
-	}
-
-	public void setAll(Boolean all) {
-		this.all = all;
-		if(all != null){
-			putQueryParameter("all", all.toString());
-		}
 	}
 
 	public String getInstanceId() {
@@ -64,14 +51,14 @@ public class ListInstanceIndicesRequest extends RoaAcsRequest<ListInstanceIndice
 		}
 	}
 
-	public Boolean getIsManaged() {
-		return this.isManaged;
+	public String getAnalyzerType() {
+		return this.analyzerType;
 	}
 
-	public void setIsManaged(Boolean isManaged) {
-		this.isManaged = isManaged;
-		if(isManaged != null){
-			putQueryParameter("isManaged", isManaged.toString());
+	public void setAnalyzerType(String analyzerType) {
+		this.analyzerType = analyzerType;
+		if(analyzerType != null){
+			putQueryParameter("analyzerType", analyzerType);
 		}
 	}
 
@@ -87,8 +74,8 @@ public class ListInstanceIndicesRequest extends RoaAcsRequest<ListInstanceIndice
 	}
 
 	@Override
-	public Class<ListInstanceIndicesResponse> getResponseClass() {
-		return ListInstanceIndicesResponse.class;
+	public Class<ListDictsResponse> getResponseClass() {
+		return ListDictsResponse.class;
 	}
 
 }

@@ -14,16 +14,15 @@
 
 package com.aliyuncs.elasticsearch.model.v20170613;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.elasticsearch.transform.v20170613.UpdateKibanaWhiteIpsResponseUnmarshaller;
+import com.aliyuncs.elasticsearch.transform.v20170613.CreateVpcEndpointResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class UpdateKibanaWhiteIpsResponse extends AcsResponse {
+public class CreateVpcEndpointResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -47,30 +46,50 @@ public class UpdateKibanaWhiteIpsResponse extends AcsResponse {
 
 	public static class Result {
 
-		private List<String> kibanaIPWhitelist;
+		private String endpointId;
 
-		private List<String> kibanaPrivateIPWhitelist;
+		private String endpointName;
 
-		public List<String> getKibanaIPWhitelist() {
-			return this.kibanaIPWhitelist;
+		private String serviceId;
+
+		private String endpointDomain;
+
+		public String getEndpointId() {
+			return this.endpointId;
 		}
 
-		public void setKibanaIPWhitelist(List<String> kibanaIPWhitelist) {
-			this.kibanaIPWhitelist = kibanaIPWhitelist;
+		public void setEndpointId(String endpointId) {
+			this.endpointId = endpointId;
 		}
 
-		public List<String> getKibanaPrivateIPWhitelist() {
-			return this.kibanaPrivateIPWhitelist;
+		public String getEndpointName() {
+			return this.endpointName;
 		}
 
-		public void setKibanaPrivateIPWhitelist(List<String> kibanaPrivateIPWhitelist) {
-			this.kibanaPrivateIPWhitelist = kibanaPrivateIPWhitelist;
+		public void setEndpointName(String endpointName) {
+			this.endpointName = endpointName;
+		}
+
+		public String getServiceId() {
+			return this.serviceId;
+		}
+
+		public void setServiceId(String serviceId) {
+			this.serviceId = serviceId;
+		}
+
+		public String getEndpointDomain() {
+			return this.endpointDomain;
+		}
+
+		public void setEndpointDomain(String endpointDomain) {
+			this.endpointDomain = endpointDomain;
 		}
 	}
 
 	@Override
-	public UpdateKibanaWhiteIpsResponse getInstance(UnmarshallerContext context) {
-		return	UpdateKibanaWhiteIpsResponseUnmarshaller.unmarshall(this, context);
+	public CreateVpcEndpointResponse getInstance(UnmarshallerContext context) {
+		return	CreateVpcEndpointResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

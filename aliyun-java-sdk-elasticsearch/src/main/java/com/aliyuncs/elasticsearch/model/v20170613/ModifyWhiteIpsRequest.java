@@ -25,6 +25,8 @@ import com.aliyuncs.elasticsearch.Endpoint;
 public class ModifyWhiteIpsRequest extends RoaAcsRequest<ModifyWhiteIpsResponse> {
 	   
 
+	private String modifyMode;
+
 	private String instanceId;
 
 	private String nodeType;
@@ -40,6 +42,17 @@ public class ModifyWhiteIpsRequest extends RoaAcsRequest<ModifyWhiteIpsResponse>
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getModifyMode() {
+		return this.modifyMode;
+	}
+
+	public void setModifyMode(String modifyMode) {
+		this.modifyMode = modifyMode;
+		if(modifyMode != null){
+			putBodyParameter("modifyMode", modifyMode);
+		}
 	}
 
 	public String getInstanceId() {

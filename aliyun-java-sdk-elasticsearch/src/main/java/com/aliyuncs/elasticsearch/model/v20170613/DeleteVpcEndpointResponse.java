@@ -14,20 +14,19 @@
 
 package com.aliyuncs.elasticsearch.model.v20170613;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.elasticsearch.transform.v20170613.UpdateKibanaWhiteIpsResponseUnmarshaller;
+import com.aliyuncs.elasticsearch.transform.v20170613.DeleteVpcEndpointResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class UpdateKibanaWhiteIpsResponse extends AcsResponse {
+public class DeleteVpcEndpointResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Result result;
+	private Boolean result;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -37,40 +36,17 @@ public class UpdateKibanaWhiteIpsResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Result getResult() {
+	public Boolean getResult() {
 		return this.result;
 	}
 
-	public void setResult(Result result) {
+	public void setResult(Boolean result) {
 		this.result = result;
 	}
 
-	public static class Result {
-
-		private List<String> kibanaIPWhitelist;
-
-		private List<String> kibanaPrivateIPWhitelist;
-
-		public List<String> getKibanaIPWhitelist() {
-			return this.kibanaIPWhitelist;
-		}
-
-		public void setKibanaIPWhitelist(List<String> kibanaIPWhitelist) {
-			this.kibanaIPWhitelist = kibanaIPWhitelist;
-		}
-
-		public List<String> getKibanaPrivateIPWhitelist() {
-			return this.kibanaPrivateIPWhitelist;
-		}
-
-		public void setKibanaPrivateIPWhitelist(List<String> kibanaPrivateIPWhitelist) {
-			this.kibanaPrivateIPWhitelist = kibanaPrivateIPWhitelist;
-		}
-	}
-
 	@Override
-	public UpdateKibanaWhiteIpsResponse getInstance(UnmarshallerContext context) {
-		return	UpdateKibanaWhiteIpsResponseUnmarshaller.unmarshall(this, context);
+	public DeleteVpcEndpointResponse getInstance(UnmarshallerContext context) {
+		return	DeleteVpcEndpointResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

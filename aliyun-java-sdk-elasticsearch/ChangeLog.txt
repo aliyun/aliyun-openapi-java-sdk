@@ -1,3 +1,9 @@
+2021-07-22 Version: 3.0.24
+- Add private-link support.
+- Add download dicts.
+- Add whiteIpGroup support.
+- Add recovery infos support.
+
 2021-06-04 Version: 3.0.23
 - Add Emon-Service support.
 - Remove Deprecated Interfaces.

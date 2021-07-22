@@ -22,35 +22,22 @@ import com.aliyuncs.elasticsearch.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListInstanceIndicesRequest extends RoaAcsRequest<ListInstanceIndicesResponse> {
+public class DeleteVpcEndpointRequest extends RoaAcsRequest<DeleteVpcEndpointResponse> {
 	   
-
-	private Boolean all;
 
 	private String instanceId;
 
-	private Boolean isManaged;
+	private String clientToken;
 
-	private String name;
-	public ListInstanceIndicesRequest() {
-		super("elasticsearch", "2017-06-13", "ListInstanceIndices", "elasticsearch");
-		setUriPattern("/openapi/instances/[InstanceId]/indices");
-		setMethod(MethodType.GET);
+	private String endpointId;
+	public DeleteVpcEndpointRequest() {
+		super("elasticsearch", "2017-06-13", "DeleteVpcEndpoint", "elasticsearch");
+		setUriPattern("/openapi/instances/[InstanceId]/vpc-endpoints/[EndpointId]");
+		setMethod(MethodType.DELETE);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Boolean getAll() {
-		return this.all;
-	}
-
-	public void setAll(Boolean all) {
-		this.all = all;
-		if(all != null){
-			putQueryParameter("all", all.toString());
-		}
 	}
 
 	public String getInstanceId() {
@@ -64,31 +51,31 @@ public class ListInstanceIndicesRequest extends RoaAcsRequest<ListInstanceIndice
 		}
 	}
 
-	public Boolean getIsManaged() {
-		return this.isManaged;
+	public String getClientToken() {
+		return this.clientToken;
 	}
 
-	public void setIsManaged(Boolean isManaged) {
-		this.isManaged = isManaged;
-		if(isManaged != null){
-			putQueryParameter("isManaged", isManaged.toString());
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 
-	public String getName() {
-		return this.name;
+	public String getEndpointId() {
+		return this.endpointId;
 	}
 
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("name", name);
+	public void setEndpointId(String endpointId) {
+		this.endpointId = endpointId;
+		if(endpointId != null){
+			putPathParameter("EndpointId", endpointId);
 		}
 	}
 
 	@Override
-	public Class<ListInstanceIndicesResponse> getResponseClass() {
-		return ListInstanceIndicesResponse.class;
+	public Class<DeleteVpcEndpointResponse> getResponseClass() {
+		return DeleteVpcEndpointResponse.class;
 	}
 
 }
