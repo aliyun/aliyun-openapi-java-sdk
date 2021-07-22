@@ -12,7 +12,7 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.dataworks_public.model.v20200518;
+package com.aliyuncs.dataworks_public.model.v20180601;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
@@ -22,20 +22,16 @@ import com.aliyuncs.dataworks_public.Endpoint;
  * @author auto create
  * @version 
  */
-public class UpdateDISyncTaskRequest extends RpcAcsRequest<UpdateDISyncTaskResponse> {
+public class TerminateDISyncInstanceRequest extends RpcAcsRequest<TerminateDISyncInstanceResponse> {
 	   
 
 	private String taskType;
 
-	private String taskParam;
-
-	private String taskContent;
-
 	private Long projectId;
 
 	private Long fileId;
-	public UpdateDISyncTaskRequest() {
-		super("dataworks-public", "2020-05-18", "UpdateDISyncTask");
+	public TerminateDISyncInstanceRequest() {
+		super("dataworks-public", "2018-06-01", "TerminateDISyncInstance");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -51,28 +47,6 @@ public class UpdateDISyncTaskRequest extends RpcAcsRequest<UpdateDISyncTaskRespo
 		this.taskType = taskType;
 		if(taskType != null){
 			putQueryParameter("TaskType", taskType);
-		}
-	}
-
-	public String getTaskParam() {
-		return this.taskParam;
-	}
-
-	public void setTaskParam(String taskParam) {
-		this.taskParam = taskParam;
-		if(taskParam != null){
-			putQueryParameter("TaskParam", taskParam);
-		}
-	}
-
-	public String getTaskContent() {
-		return this.taskContent;
-	}
-
-	public void setTaskContent(String taskContent) {
-		this.taskContent = taskContent;
-		if(taskContent != null){
-			putQueryParameter("TaskContent", taskContent);
 		}
 	}
 
@@ -99,8 +73,8 @@ public class UpdateDISyncTaskRequest extends RpcAcsRequest<UpdateDISyncTaskRespo
 	}
 
 	@Override
-	public Class<UpdateDISyncTaskResponse> getResponseClass() {
-		return UpdateDISyncTaskResponse.class;
+	public Class<TerminateDISyncInstanceResponse> getResponseClass() {
+		return TerminateDISyncInstanceResponse.class;
 	}
 
 }

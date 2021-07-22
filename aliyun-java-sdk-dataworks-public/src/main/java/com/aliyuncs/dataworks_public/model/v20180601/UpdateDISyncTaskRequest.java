@@ -12,7 +12,7 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.dataworks_public.model.v20200518;
+package com.aliyuncs.dataworks_public.model.v20180601;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
@@ -35,7 +35,7 @@ public class UpdateDISyncTaskRequest extends RpcAcsRequest<UpdateDISyncTaskRespo
 
 	private Long fileId;
 	public UpdateDISyncTaskRequest() {
-		super("dataworks-public", "2020-05-18", "UpdateDISyncTask");
+		super("dataworks-public", "2018-06-01", "UpdateDISyncTask");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

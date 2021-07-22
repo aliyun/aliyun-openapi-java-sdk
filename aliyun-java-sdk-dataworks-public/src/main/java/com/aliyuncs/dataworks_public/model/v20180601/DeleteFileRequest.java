@@ -12,7 +12,7 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.dataworks_public.model.v20200518;
+package com.aliyuncs.dataworks_public.model.v20180601;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
@@ -22,58 +22,21 @@ import com.aliyuncs.dataworks_public.Endpoint;
  * @author auto create
  * @version 
  */
-public class UpdateDISyncTaskRequest extends RpcAcsRequest<UpdateDISyncTaskResponse> {
+public class DeleteFileRequest extends RpcAcsRequest<DeleteFileResponse> {
 	   
-
-	private String taskType;
-
-	private String taskParam;
-
-	private String taskContent;
 
 	private Long projectId;
 
+	private String projectIdentifier;
+
 	private Long fileId;
-	public UpdateDISyncTaskRequest() {
-		super("dataworks-public", "2020-05-18", "UpdateDISyncTask");
+	public DeleteFileRequest() {
+		super("dataworks-public", "2018-06-01", "DeleteFile");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getTaskType() {
-		return this.taskType;
-	}
-
-	public void setTaskType(String taskType) {
-		this.taskType = taskType;
-		if(taskType != null){
-			putQueryParameter("TaskType", taskType);
-		}
-	}
-
-	public String getTaskParam() {
-		return this.taskParam;
-	}
-
-	public void setTaskParam(String taskParam) {
-		this.taskParam = taskParam;
-		if(taskParam != null){
-			putQueryParameter("TaskParam", taskParam);
-		}
-	}
-
-	public String getTaskContent() {
-		return this.taskContent;
-	}
-
-	public void setTaskContent(String taskContent) {
-		this.taskContent = taskContent;
-		if(taskContent != null){
-			putQueryParameter("TaskContent", taskContent);
-		}
 	}
 
 	public Long getProjectId() {
@@ -83,7 +46,18 @@ public class UpdateDISyncTaskRequest extends RpcAcsRequest<UpdateDISyncTaskRespo
 	public void setProjectId(Long projectId) {
 		this.projectId = projectId;
 		if(projectId != null){
-			putQueryParameter("ProjectId", projectId.toString());
+			putBodyParameter("ProjectId", projectId.toString());
+		}
+	}
+
+	public String getProjectIdentifier() {
+		return this.projectIdentifier;
+	}
+
+	public void setProjectIdentifier(String projectIdentifier) {
+		this.projectIdentifier = projectIdentifier;
+		if(projectIdentifier != null){
+			putBodyParameter("ProjectIdentifier", projectIdentifier);
 		}
 	}
 
@@ -94,13 +68,13 @@ public class UpdateDISyncTaskRequest extends RpcAcsRequest<UpdateDISyncTaskRespo
 	public void setFileId(Long fileId) {
 		this.fileId = fileId;
 		if(fileId != null){
-			putQueryParameter("FileId", fileId.toString());
+			putBodyParameter("FileId", fileId.toString());
 		}
 	}
 
 	@Override
-	public Class<UpdateDISyncTaskResponse> getResponseClass() {
-		return UpdateDISyncTaskResponse.class;
+	public Class<DeleteFileResponse> getResponseClass() {
+		return DeleteFileResponse.class;
 	}
 
 }

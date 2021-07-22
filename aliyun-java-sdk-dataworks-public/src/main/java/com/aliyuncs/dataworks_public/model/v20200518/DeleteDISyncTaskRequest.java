@@ -22,20 +22,16 @@ import com.aliyuncs.dataworks_public.Endpoint;
  * @author auto create
  * @version 
  */
-public class UpdateDISyncTaskRequest extends RpcAcsRequest<UpdateDISyncTaskResponse> {
+public class DeleteDISyncTaskRequest extends RpcAcsRequest<DeleteDISyncTaskResponse> {
 	   
 
 	private String taskType;
 
-	private String taskParam;
-
-	private String taskContent;
-
 	private Long projectId;
 
 	private Long fileId;
-	public UpdateDISyncTaskRequest() {
-		super("dataworks-public", "2020-05-18", "UpdateDISyncTask");
+	public DeleteDISyncTaskRequest() {
+		super("dataworks-public", "2020-05-18", "DeleteDISyncTask");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -51,28 +47,6 @@ public class UpdateDISyncTaskRequest extends RpcAcsRequest<UpdateDISyncTaskRespo
 		this.taskType = taskType;
 		if(taskType != null){
 			putQueryParameter("TaskType", taskType);
-		}
-	}
-
-	public String getTaskParam() {
-		return this.taskParam;
-	}
-
-	public void setTaskParam(String taskParam) {
-		this.taskParam = taskParam;
-		if(taskParam != null){
-			putQueryParameter("TaskParam", taskParam);
-		}
-	}
-
-	public String getTaskContent() {
-		return this.taskContent;
-	}
-
-	public void setTaskContent(String taskContent) {
-		this.taskContent = taskContent;
-		if(taskContent != null){
-			putQueryParameter("TaskContent", taskContent);
 		}
 	}
 
@@ -99,8 +73,8 @@ public class UpdateDISyncTaskRequest extends RpcAcsRequest<UpdateDISyncTaskRespo
 	}
 
 	@Override
-	public Class<UpdateDISyncTaskResponse> getResponseClass() {
-		return UpdateDISyncTaskResponse.class;
+	public Class<DeleteDISyncTaskResponse> getResponseClass() {
+		return DeleteDISyncTaskResponse.class;
 	}
 
 }

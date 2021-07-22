@@ -12,7 +12,7 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.dataworks_public.model.v20200518;
+package com.aliyuncs.dataworks_public.model.v20180601;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
@@ -22,20 +22,18 @@ import com.aliyuncs.dataworks_public.Endpoint;
  * @author auto create
  * @version 
  */
-public class UpdateDISyncTaskRequest extends RpcAcsRequest<UpdateDISyncTaskResponse> {
+public class StartDISyncInstanceRequest extends RpcAcsRequest<StartDISyncInstanceResponse> {
 	   
 
 	private String taskType;
 
-	private String taskParam;
-
-	private String taskContent;
+	private String startParam;
 
 	private Long projectId;
 
 	private Long fileId;
-	public UpdateDISyncTaskRequest() {
-		super("dataworks-public", "2020-05-18", "UpdateDISyncTask");
+	public StartDISyncInstanceRequest() {
+		super("dataworks-public", "2018-06-01", "StartDISyncInstance");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -54,25 +52,14 @@ public class UpdateDISyncTaskRequest extends RpcAcsRequest<UpdateDISyncTaskRespo
 		}
 	}
 
-	public String getTaskParam() {
-		return this.taskParam;
+	public String getStartParam() {
+		return this.startParam;
 	}
 
-	public void setTaskParam(String taskParam) {
-		this.taskParam = taskParam;
-		if(taskParam != null){
-			putQueryParameter("TaskParam", taskParam);
-		}
-	}
-
-	public String getTaskContent() {
-		return this.taskContent;
-	}
-
-	public void setTaskContent(String taskContent) {
-		this.taskContent = taskContent;
-		if(taskContent != null){
-			putQueryParameter("TaskContent", taskContent);
+	public void setStartParam(String startParam) {
+		this.startParam = startParam;
+		if(startParam != null){
+			putQueryParameter("StartParam", startParam);
 		}
 	}
 
@@ -99,8 +86,8 @@ public class UpdateDISyncTaskRequest extends RpcAcsRequest<UpdateDISyncTaskRespo
 	}
 
 	@Override
-	public Class<UpdateDISyncTaskResponse> getResponseClass() {
-		return UpdateDISyncTaskResponse.class;
+	public Class<StartDISyncInstanceResponse> getResponseClass() {
+		return StartDISyncInstanceResponse.class;
 	}
 
 }
