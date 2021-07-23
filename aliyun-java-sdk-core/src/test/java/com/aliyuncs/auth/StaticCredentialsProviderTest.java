@@ -44,11 +44,4 @@ public class StaticCredentialsProviderTest {
         Assert.assertTrue(provider.getCredentials() instanceof BasicSessionCredentials);
     }
 
-    @Test
-    public void testNullCredential() {
-        DefaultProfile profile = DefaultProfile.getProfile("cn-hangzhou");
-        DefaultAcsClient client = new DefaultAcsClient(profile);
-        Assert.assertTrue(client != null);
-    }
-
 }

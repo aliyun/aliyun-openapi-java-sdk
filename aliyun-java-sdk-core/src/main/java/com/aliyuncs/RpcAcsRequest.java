@@ -116,7 +116,7 @@ public abstract class RpcAcsRequest<T extends AcsResponse> extends AcsRequest<T>
                                    ProductDomain domain) throws InvalidKeyException, IllegalStateException, UnsupportedEncodingException {
 
         Map<String, String> imutableMap = new HashMap<String, String>(this.getSysQueryParameters());
-        if (null != signer && null != credentials) {
+        if (null != signer && null != credentials && !(credentials instanceof AnonymousCredentials)) {
             String accessKeyId = credentials.getAccessKeyId();
             String accessSecret = credentials.getAccessKeySecret();
             if (credentials instanceof BasicSessionCredentials) {

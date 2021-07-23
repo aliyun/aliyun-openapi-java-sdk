@@ -25,7 +25,7 @@ public class AcsURLEncoder {
     public final static String URL_ENCODING = "UTF-8";
 
     public static String encode(String value) throws UnsupportedEncodingException {
-        return URLEncoder.encode(value, URL_ENCODING);
+        return URLEncoder.encode(value, URL_ENCODING).replace("+", "%20");
     }
 
     public static String percentEncode(String value) throws UnsupportedEncodingException {

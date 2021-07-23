@@ -148,7 +148,7 @@ public abstract class RoaAcsRequest<T extends AcsResponse> extends AcsRequest<T>
         }
 
         Map<String, String> imutableMap = new HashMap<String, String>(this.getSysHeaders());
-        if (null != signer && null != credentials) {
+        if (null != signer && null != credentials && !(credentials instanceof AnonymousCredentials)) {
             String accessKeyId = credentials.getAccessKeyId();
             imutableMap = this.composer.refreshSignParameters(this.getSysHeaders(), signer, accessKeyId, format);
             if (imutableMap.get("RegionId") == null) {

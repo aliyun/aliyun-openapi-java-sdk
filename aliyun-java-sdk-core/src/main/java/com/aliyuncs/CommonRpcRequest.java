@@ -1,7 +1,5 @@
 package com.aliyuncs;
 
-import com.aliyuncs.http.FormatType;
-
 public class CommonRpcRequest extends RpcAcsRequest<CommonResponse> {
 
     public CommonRpcRequest(String product) {
