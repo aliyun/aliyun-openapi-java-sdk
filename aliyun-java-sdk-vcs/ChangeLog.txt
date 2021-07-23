@@ -1,3 +1,6 @@
+2021-07-23 Version: 3.0.7
+- Add BatchDeleteInstances API.
+
 2021-07-07 Version: 3.0.6
 - Add UpdateDevicesStorage interface.
 
