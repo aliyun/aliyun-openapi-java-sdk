@@ -50,15 +50,21 @@ public class ListCallDetailRecordsResponseUnmarshaller {
 			callDetailRecord.setContactType(_ctx.stringValue("ListCallDetailRecordsResponse.Data.List["+ i +"].ContactType"));
 			callDetailRecord.setEstablishedTime(_ctx.longValue("ListCallDetailRecordsResponse.Data.List["+ i +"].EstablishedTime"));
 			callDetailRecord.setInstanceId(_ctx.stringValue("ListCallDetailRecordsResponse.Data.List["+ i +"].InstanceId"));
+			callDetailRecord.setIvrTime(_ctx.longValue("ListCallDetailRecordsResponse.Data.List["+ i +"].IvrTime"));
+			callDetailRecord.setQueueTime(_ctx.longValue("ListCallDetailRecordsResponse.Data.List["+ i +"].QueueTime"));
+			callDetailRecord.setRecordingDuration(_ctx.longValue("ListCallDetailRecordsResponse.Data.List["+ i +"].RecordingDuration"));
 			callDetailRecord.setRecordingReady(_ctx.booleanValue("ListCallDetailRecordsResponse.Data.List["+ i +"].RecordingReady"));
 			callDetailRecord.setReleaseInitiator(_ctx.stringValue("ListCallDetailRecordsResponse.Data.List["+ i +"].ReleaseInitiator"));
 			callDetailRecord.setReleaseTime(_ctx.longValue("ListCallDetailRecordsResponse.Data.List["+ i +"].ReleaseTime"));
-			callDetailRecord.setSatisfaction(_ctx.integerValue("ListCallDetailRecordsResponse.Data.List["+ i +"].Satisfaction"));
+			callDetailRecord.setRingTime(_ctx.longValue("ListCallDetailRecordsResponse.Data.List["+ i +"].RingTime"));
+			callDetailRecord.setSatisfactionDescription(_ctx.stringValue("ListCallDetailRecordsResponse.Data.List["+ i +"].SatisfactionDescription"));
+			callDetailRecord.setSatisfactionIndex(_ctx.integerValue("ListCallDetailRecordsResponse.Data.List["+ i +"].SatisfactionIndex"));
 			callDetailRecord.setSatisfactionSurveyChannel(_ctx.stringValue("ListCallDetailRecordsResponse.Data.List["+ i +"].SatisfactionSurveyChannel"));
 			callDetailRecord.setSatisfactionSurveyOffered(_ctx.booleanValue("ListCallDetailRecordsResponse.Data.List["+ i +"].SatisfactionSurveyOffered"));
 			callDetailRecord.setSkillGroupIds(_ctx.stringValue("ListCallDetailRecordsResponse.Data.List["+ i +"].SkillGroupIds"));
 			callDetailRecord.setSkillGroupNames(_ctx.stringValue("ListCallDetailRecordsResponse.Data.List["+ i +"].SkillGroupNames"));
 			callDetailRecord.setStartTime(_ctx.longValue("ListCallDetailRecordsResponse.Data.List["+ i +"].StartTime"));
+			callDetailRecord.setWaitTime(_ctx.longValue("ListCallDetailRecordsResponse.Data.List["+ i +"].WaitTime"));
 
 			list.add(callDetailRecord);
 		}

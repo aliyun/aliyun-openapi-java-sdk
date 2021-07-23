@@ -27,6 +27,8 @@ public class ListCallDetailRecordsRequest extends RpcAcsRequest<ListCallDetailRe
 
 	private String contactId;
 
+	private String criteria;
+
 	private String orderByField;
 
 	private Long startTime;
@@ -40,6 +42,8 @@ public class ListCallDetailRecordsRequest extends RpcAcsRequest<ListCallDetailRe
 	private Integer pageSize;
 
 	private String sortOrder;
+
+	private String satisfactionDescriptionList;
 
 	private String agentId;
 
@@ -73,6 +77,17 @@ public class ListCallDetailRecordsRequest extends RpcAcsRequest<ListCallDetailRe
 		this.contactId = contactId;
 		if(contactId != null){
 			putQueryParameter("ContactId", contactId);
+		}
+	}
+
+	public String getCriteria() {
+		return this.criteria;
+	}
+
+	public void setCriteria(String criteria) {
+		this.criteria = criteria;
+		if(criteria != null){
+			putQueryParameter("Criteria", criteria);
 		}
 	}
 
@@ -150,6 +165,17 @@ public class ListCallDetailRecordsRequest extends RpcAcsRequest<ListCallDetailRe
 		this.sortOrder = sortOrder;
 		if(sortOrder != null){
 			putQueryParameter("SortOrder", sortOrder);
+		}
+	}
+
+	public String getSatisfactionDescriptionList() {
+		return this.satisfactionDescriptionList;
+	}
+
+	public void setSatisfactionDescriptionList(String satisfactionDescriptionList) {
+		this.satisfactionDescriptionList = satisfactionDescriptionList;
+		if(satisfactionDescriptionList != null){
+			putQueryParameter("SatisfactionDescriptionList", satisfactionDescriptionList);
 		}
 	}
 

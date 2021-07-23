@@ -179,6 +179,8 @@ public class ListHistoricalSkillGroupReportResponse extends AcsResponse {
 
 				private Float averageAbandonedInRingTime;
 
+				private Float averageHoldTime;
+
 				private Float averageRingTime;
 
 				private Float averageTalkTime;
@@ -191,9 +193,15 @@ public class ListHistoricalSkillGroupReportResponse extends AcsResponse {
 
 				private Long callsAbandonedInQueue;
 
-				private Long callsAbandonedInRinging;
+				private Long callsAbandonedInRing;
 
-				private Long callsConsulted;
+				private Long callsAttendedTransferIn;
+
+				private Long callsAttendedTransferOut;
+
+				private Long callsBlindTransferIn;
+
+				private Long callsBlindTransferOut;
 
 				private Long callsHandled;
 
@@ -201,11 +209,13 @@ public class ListHistoricalSkillGroupReportResponse extends AcsResponse {
 
 				private Long callsOffered;
 
+				private Long callsOverflow;
+
 				private Long callsQueued;
 
 				private Long callsRinged;
 
-				private Long callsTransferred;
+				private Long callsTimeout;
 
 				private Float handleRate;
 
@@ -214,6 +224,8 @@ public class ListHistoricalSkillGroupReportResponse extends AcsResponse {
 				private Long maxAbandonedInQueueTime;
 
 				private Long maxAbandonedInRingTime;
+
+				private Long maxHoldTime;
 
 				private Long maxRingTime;
 
@@ -224,6 +236,8 @@ public class ListHistoricalSkillGroupReportResponse extends AcsResponse {
 				private Long maxWorkTime;
 
 				private Float satisfactionIndex;
+
+				private Float satisfactionRate;
 
 				private Long satisfactionSurveysOffered;
 
@@ -279,6 +293,14 @@ public class ListHistoricalSkillGroupReportResponse extends AcsResponse {
 					this.averageAbandonedInRingTime = averageAbandonedInRingTime;
 				}
 
+				public Float getAverageHoldTime() {
+					return this.averageHoldTime;
+				}
+
+				public void setAverageHoldTime(Float averageHoldTime) {
+					this.averageHoldTime = averageHoldTime;
+				}
+
 				public Float getAverageRingTime() {
 					return this.averageRingTime;
 				}
@@ -327,20 +349,44 @@ public class ListHistoricalSkillGroupReportResponse extends AcsResponse {
 					this.callsAbandonedInQueue = callsAbandonedInQueue;
 				}
 
-				public Long getCallsAbandonedInRinging() {
-					return this.callsAbandonedInRinging;
+				public Long getCallsAbandonedInRing() {
+					return this.callsAbandonedInRing;
 				}
 
-				public void setCallsAbandonedInRinging(Long callsAbandonedInRinging) {
-					this.callsAbandonedInRinging = callsAbandonedInRinging;
+				public void setCallsAbandonedInRing(Long callsAbandonedInRing) {
+					this.callsAbandonedInRing = callsAbandonedInRing;
 				}
 
-				public Long getCallsConsulted() {
-					return this.callsConsulted;
+				public Long getCallsAttendedTransferIn() {
+					return this.callsAttendedTransferIn;
 				}
 
-				public void setCallsConsulted(Long callsConsulted) {
-					this.callsConsulted = callsConsulted;
+				public void setCallsAttendedTransferIn(Long callsAttendedTransferIn) {
+					this.callsAttendedTransferIn = callsAttendedTransferIn;
+				}
+
+				public Long getCallsAttendedTransferOut() {
+					return this.callsAttendedTransferOut;
+				}
+
+				public void setCallsAttendedTransferOut(Long callsAttendedTransferOut) {
+					this.callsAttendedTransferOut = callsAttendedTransferOut;
+				}
+
+				public Long getCallsBlindTransferIn() {
+					return this.callsBlindTransferIn;
+				}
+
+				public void setCallsBlindTransferIn(Long callsBlindTransferIn) {
+					this.callsBlindTransferIn = callsBlindTransferIn;
+				}
+
+				public Long getCallsBlindTransferOut() {
+					return this.callsBlindTransferOut;
+				}
+
+				public void setCallsBlindTransferOut(Long callsBlindTransferOut) {
+					this.callsBlindTransferOut = callsBlindTransferOut;
 				}
 
 				public Long getCallsHandled() {
@@ -367,6 +413,14 @@ public class ListHistoricalSkillGroupReportResponse extends AcsResponse {
 					this.callsOffered = callsOffered;
 				}
 
+				public Long getCallsOverflow() {
+					return this.callsOverflow;
+				}
+
+				public void setCallsOverflow(Long callsOverflow) {
+					this.callsOverflow = callsOverflow;
+				}
+
 				public Long getCallsQueued() {
 					return this.callsQueued;
 				}
@@ -383,12 +437,12 @@ public class ListHistoricalSkillGroupReportResponse extends AcsResponse {
 					this.callsRinged = callsRinged;
 				}
 
-				public Long getCallsTransferred() {
-					return this.callsTransferred;
+				public Long getCallsTimeout() {
+					return this.callsTimeout;
 				}
 
-				public void setCallsTransferred(Long callsTransferred) {
-					this.callsTransferred = callsTransferred;
+				public void setCallsTimeout(Long callsTimeout) {
+					this.callsTimeout = callsTimeout;
 				}
 
 				public Float getHandleRate() {
@@ -421,6 +475,14 @@ public class ListHistoricalSkillGroupReportResponse extends AcsResponse {
 
 				public void setMaxAbandonedInRingTime(Long maxAbandonedInRingTime) {
 					this.maxAbandonedInRingTime = maxAbandonedInRingTime;
+				}
+
+				public Long getMaxHoldTime() {
+					return this.maxHoldTime;
+				}
+
+				public void setMaxHoldTime(Long maxHoldTime) {
+					this.maxHoldTime = maxHoldTime;
 				}
 
 				public Long getMaxRingTime() {
@@ -461,6 +523,14 @@ public class ListHistoricalSkillGroupReportResponse extends AcsResponse {
 
 				public void setSatisfactionIndex(Float satisfactionIndex) {
 					this.satisfactionIndex = satisfactionIndex;
+				}
+
+				public Float getSatisfactionRate() {
+					return this.satisfactionRate;
+				}
+
+				public void setSatisfactionRate(Float satisfactionRate) {
+					this.satisfactionRate = satisfactionRate;
 				}
 
 				public Long getSatisfactionSurveysOffered() {
@@ -558,21 +628,43 @@ public class ListHistoricalSkillGroupReportResponse extends AcsResponse {
 
 				private Float averageDialingTime;
 
+				private Float averageHoldTime;
+
+				private Float averageRingTime;
+
 				private Float averageTalkTime;
 
 				private Float averageWorkTime;
 
 				private Long callsAnswered;
 
+				private Long callsAttendedTransferIn;
+
+				private Long callsAttendedTransferOut;
+
+				private Long callsBlindTransferIn;
+
+				private Long callsBlindTransferOut;
+
 				private Long callsDialed;
 
+				private Long callsHold;
+
+				private Long callsRinged;
+
 				private Long maxDialingTime;
+
+				private Long maxHoldTime;
+
+				private Long maxRingTime;
 
 				private Long maxTalkTime;
 
 				private Long maxWorkTime;
 
 				private Float satisfactionIndex;
+
+				private Float satisfactionRate;
 
 				private Long satisfactionSurveysOffered;
 
@@ -581,6 +673,8 @@ public class ListHistoricalSkillGroupReportResponse extends AcsResponse {
 				private Long totalDialingTime;
 
 				private Long totalHoldTime;
+
+				private Long totalRingTime;
 
 				private Long totalTalkTime;
 
@@ -600,6 +694,22 @@ public class ListHistoricalSkillGroupReportResponse extends AcsResponse {
 
 				public void setAverageDialingTime(Float averageDialingTime) {
 					this.averageDialingTime = averageDialingTime;
+				}
+
+				public Float getAverageHoldTime() {
+					return this.averageHoldTime;
+				}
+
+				public void setAverageHoldTime(Float averageHoldTime) {
+					this.averageHoldTime = averageHoldTime;
+				}
+
+				public Float getAverageRingTime() {
+					return this.averageRingTime;
+				}
+
+				public void setAverageRingTime(Float averageRingTime) {
+					this.averageRingTime = averageRingTime;
 				}
 
 				public Float getAverageTalkTime() {
@@ -626,6 +736,38 @@ public class ListHistoricalSkillGroupReportResponse extends AcsResponse {
 					this.callsAnswered = callsAnswered;
 				}
 
+				public Long getCallsAttendedTransferIn() {
+					return this.callsAttendedTransferIn;
+				}
+
+				public void setCallsAttendedTransferIn(Long callsAttendedTransferIn) {
+					this.callsAttendedTransferIn = callsAttendedTransferIn;
+				}
+
+				public Long getCallsAttendedTransferOut() {
+					return this.callsAttendedTransferOut;
+				}
+
+				public void setCallsAttendedTransferOut(Long callsAttendedTransferOut) {
+					this.callsAttendedTransferOut = callsAttendedTransferOut;
+				}
+
+				public Long getCallsBlindTransferIn() {
+					return this.callsBlindTransferIn;
+				}
+
+				public void setCallsBlindTransferIn(Long callsBlindTransferIn) {
+					this.callsBlindTransferIn = callsBlindTransferIn;
+				}
+
+				public Long getCallsBlindTransferOut() {
+					return this.callsBlindTransferOut;
+				}
+
+				public void setCallsBlindTransferOut(Long callsBlindTransferOut) {
+					this.callsBlindTransferOut = callsBlindTransferOut;
+				}
+
 				public Long getCallsDialed() {
 					return this.callsDialed;
 				}
@@ -634,12 +776,44 @@ public class ListHistoricalSkillGroupReportResponse extends AcsResponse {
 					this.callsDialed = callsDialed;
 				}
 
+				public Long getCallsHold() {
+					return this.callsHold;
+				}
+
+				public void setCallsHold(Long callsHold) {
+					this.callsHold = callsHold;
+				}
+
+				public Long getCallsRinged() {
+					return this.callsRinged;
+				}
+
+				public void setCallsRinged(Long callsRinged) {
+					this.callsRinged = callsRinged;
+				}
+
 				public Long getMaxDialingTime() {
 					return this.maxDialingTime;
 				}
 
 				public void setMaxDialingTime(Long maxDialingTime) {
 					this.maxDialingTime = maxDialingTime;
+				}
+
+				public Long getMaxHoldTime() {
+					return this.maxHoldTime;
+				}
+
+				public void setMaxHoldTime(Long maxHoldTime) {
+					this.maxHoldTime = maxHoldTime;
+				}
+
+				public Long getMaxRingTime() {
+					return this.maxRingTime;
+				}
+
+				public void setMaxRingTime(Long maxRingTime) {
+					this.maxRingTime = maxRingTime;
 				}
 
 				public Long getMaxTalkTime() {
@@ -664,6 +838,14 @@ public class ListHistoricalSkillGroupReportResponse extends AcsResponse {
 
 				public void setSatisfactionIndex(Float satisfactionIndex) {
 					this.satisfactionIndex = satisfactionIndex;
+				}
+
+				public Float getSatisfactionRate() {
+					return this.satisfactionRate;
+				}
+
+				public void setSatisfactionRate(Float satisfactionRate) {
+					this.satisfactionRate = satisfactionRate;
 				}
 
 				public Long getSatisfactionSurveysOffered() {
@@ -698,6 +880,14 @@ public class ListHistoricalSkillGroupReportResponse extends AcsResponse {
 					this.totalHoldTime = totalHoldTime;
 				}
 
+				public Long getTotalRingTime() {
+					return this.totalRingTime;
+				}
+
+				public void setTotalRingTime(Long totalRingTime) {
+					this.totalRingTime = totalRingTime;
+				}
+
 				public Long getTotalTalkTime() {
 					return this.totalTalkTime;
 				}
@@ -719,6 +909,8 @@ public class ListHistoricalSkillGroupReportResponse extends AcsResponse {
 
 				private Float averageBreakTime;
 
+				private Float averageHoldTime;
+
 				private Float averageReadyTime;
 
 				private Float averageTalkTime;
@@ -726,6 +918,8 @@ public class ListHistoricalSkillGroupReportResponse extends AcsResponse {
 				private Float averageWorkTime;
 
 				private Long maxBreakTime;
+
+				private Long maxHoldTime;
 
 				private Long maxReadyTime;
 
@@ -736,6 +930,8 @@ public class ListHistoricalSkillGroupReportResponse extends AcsResponse {
 				private Float occupancyRate;
 
 				private Float satisfactionIndex;
+
+				private Float satisfactionRate;
 
 				private Long satisfactionSurveysOffered;
 
@@ -761,6 +957,14 @@ public class ListHistoricalSkillGroupReportResponse extends AcsResponse {
 
 				public void setAverageBreakTime(Float averageBreakTime) {
 					this.averageBreakTime = averageBreakTime;
+				}
+
+				public Float getAverageHoldTime() {
+					return this.averageHoldTime;
+				}
+
+				public void setAverageHoldTime(Float averageHoldTime) {
+					this.averageHoldTime = averageHoldTime;
 				}
 
 				public Float getAverageReadyTime() {
@@ -793,6 +997,14 @@ public class ListHistoricalSkillGroupReportResponse extends AcsResponse {
 
 				public void setMaxBreakTime(Long maxBreakTime) {
 					this.maxBreakTime = maxBreakTime;
+				}
+
+				public Long getMaxHoldTime() {
+					return this.maxHoldTime;
+				}
+
+				public void setMaxHoldTime(Long maxHoldTime) {
+					this.maxHoldTime = maxHoldTime;
 				}
 
 				public Long getMaxReadyTime() {
@@ -833,6 +1045,14 @@ public class ListHistoricalSkillGroupReportResponse extends AcsResponse {
 
 				public void setSatisfactionIndex(Float satisfactionIndex) {
 					this.satisfactionIndex = satisfactionIndex;
+				}
+
+				public Float getSatisfactionRate() {
+					return this.satisfactionRate;
+				}
+
+				public void setSatisfactionRate(Float satisfactionRate) {
+					this.satisfactionRate = satisfactionRate;
 				}
 
 				public Long getSatisfactionSurveysOffered() {

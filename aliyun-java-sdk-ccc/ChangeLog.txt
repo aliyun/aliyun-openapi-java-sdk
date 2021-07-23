@@ -1,3 +1,6 @@
+2021-07-23 Version: 2.0.14
+- Export instance relative API.
+
 2021-06-08 Version: 2.0.13
 - Refine API response for GetCallDetailRecord.
 

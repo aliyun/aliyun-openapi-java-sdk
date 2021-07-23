@@ -40,7 +40,7 @@ public class GetInstanceTrendingReportResponseUnmarshaller {
 			InboundItem inboundItem = new InboundItem();
 			inboundItem.setCallsAbandonedInIVR(_ctx.longValue("GetInstanceTrendingReportResponse.Data.Inbound["+ i +"].CallsAbandonedInIVR"));
 			inboundItem.setCallsAbandonedInQueue(_ctx.longValue("GetInstanceTrendingReportResponse.Data.Inbound["+ i +"].CallsAbandonedInQueue"));
-			inboundItem.setCallsAbandonedInRinging(_ctx.longValue("GetInstanceTrendingReportResponse.Data.Inbound["+ i +"].CallsAbandonedInRinging"));
+			inboundItem.setCallsAbandonedInRing(_ctx.longValue("GetInstanceTrendingReportResponse.Data.Inbound["+ i +"].CallsAbandonedInRing"));
 			inboundItem.setCallsHandled(_ctx.longValue("GetInstanceTrendingReportResponse.Data.Inbound["+ i +"].CallsHandled"));
 			inboundItem.setCallsQueued(_ctx.longValue("GetInstanceTrendingReportResponse.Data.Inbound["+ i +"].CallsQueued"));
 			inboundItem.setStatsTime(_ctx.longValue("GetInstanceTrendingReportResponse.Data.Inbound["+ i +"].StatsTime"));

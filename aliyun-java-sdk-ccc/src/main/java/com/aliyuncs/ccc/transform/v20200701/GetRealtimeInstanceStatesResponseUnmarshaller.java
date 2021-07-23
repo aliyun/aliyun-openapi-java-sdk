@@ -33,7 +33,7 @@ public class GetRealtimeInstanceStatesResponseUnmarshaller {
 		data.setInstanceId(_ctx.stringValue("GetRealtimeInstanceStatesResponse.Data.InstanceId"));
 		data.setInteractiveCalls(_ctx.longValue("GetRealtimeInstanceStatesResponse.Data.InteractiveCalls"));
 		data.setLoggedInAgents(_ctx.longValue("GetRealtimeInstanceStatesResponse.Data.LoggedInAgents"));
-		data.setLongestCall(_ctx.longValue("GetRealtimeInstanceStatesResponse.Data.LongestCall"));
+		data.setLongestWaitingTime(_ctx.longValue("GetRealtimeInstanceStatesResponse.Data.LongestWaitingTime"));
 		data.setReadyAgents(_ctx.longValue("GetRealtimeInstanceStatesResponse.Data.ReadyAgents"));
 		data.setTalkingAgents(_ctx.longValue("GetRealtimeInstanceStatesResponse.Data.TalkingAgents"));
 		data.setTotalAgents(_ctx.longValue("GetRealtimeInstanceStatesResponse.Data.TotalAgents"));

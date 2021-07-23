@@ -45,6 +45,7 @@ public class GetLoginDetailsResponseUnmarshaller {
 		data.setSipServerUrl(_ctx.stringValue("GetLoginDetailsResponse.Data.SipServerUrl"));
 		data.setUserId(_ctx.stringValue("GetLoginDetailsResponse.Data.UserId"));
 		data.setUserKey(_ctx.stringValue("GetLoginDetailsResponse.Data.UserKey"));
+		data.setAgentServerUrl(_ctx.stringValue("GetLoginDetailsResponse.Data.AgentServerUrl"));
 		getLoginDetailsResponse.setData(data);
 	 
 	 	return getLoginDetailsResponse;

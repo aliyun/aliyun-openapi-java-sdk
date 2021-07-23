@@ -84,7 +84,7 @@ public class GetRealtimeInstanceStatesResponse extends AcsResponse {
 
 		private Long loggedInAgents;
 
-		private Long longestCall;
+		private Long longestWaitingTime;
 
 		private Long readyAgents;
 
@@ -128,12 +128,12 @@ public class GetRealtimeInstanceStatesResponse extends AcsResponse {
 			this.loggedInAgents = loggedInAgents;
 		}
 
-		public Long getLongestCall() {
-			return this.longestCall;
+		public Long getLongestWaitingTime() {
+			return this.longestWaitingTime;
 		}
 
-		public void setLongestCall(Long longestCall) {
-			this.longestCall = longestCall;
+		public void setLongestWaitingTime(Long longestWaitingTime) {
+			this.longestWaitingTime = longestWaitingTime;
 		}
 
 		public Long getReadyAgents() {

@@ -103,7 +103,7 @@ public class GetInstanceTrendingReportResponse extends AcsResponse {
 
 			private Long callsAbandonedInQueue;
 
-			private Long callsAbandonedInRinging;
+			private Long callsAbandonedInRing;
 
 			private Long callsHandled;
 
@@ -129,12 +129,12 @@ public class GetInstanceTrendingReportResponse extends AcsResponse {
 				this.callsAbandonedInQueue = callsAbandonedInQueue;
 			}
 
-			public Long getCallsAbandonedInRinging() {
-				return this.callsAbandonedInRinging;
+			public Long getCallsAbandonedInRing() {
+				return this.callsAbandonedInRing;
 			}
 
-			public void setCallsAbandonedInRinging(Long callsAbandonedInRinging) {
-				this.callsAbandonedInRinging = callsAbandonedInRinging;
+			public void setCallsAbandonedInRing(Long callsAbandonedInRing) {
+				this.callsAbandonedInRing = callsAbandonedInRing;
 			}
 
 			public Long getCallsHandled() {

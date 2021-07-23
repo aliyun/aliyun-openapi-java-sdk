@@ -145,9 +145,11 @@ public class ListIntervalInstanceReportResponse extends AcsResponse {
 
 			private Long callsAbandonedInQueue;
 
-			private Long callsAbandonedInRinging;
+			private Long callsAbandonedInRing;
 
-			private Long callsConsulted;
+			private Long callsAttendedTransferred;
+
+			private Long callsBlindTransferred;
 
 			private Long callsHandled;
 
@@ -158,8 +160,6 @@ public class ListIntervalInstanceReportResponse extends AcsResponse {
 			private Long callsQueued;
 
 			private Long callsRinged;
-
-			private Long callsTransferred;
 
 			private Float handleRate;
 
@@ -182,6 +182,8 @@ public class ListIntervalInstanceReportResponse extends AcsResponse {
 			private Long maxWorkTime;
 
 			private Float satisfactionIndex;
+
+			private Float satisfactionRate;
 
 			private Long satisfactionSurveysOffered;
 
@@ -311,20 +313,28 @@ public class ListIntervalInstanceReportResponse extends AcsResponse {
 				this.callsAbandonedInQueue = callsAbandonedInQueue;
 			}
 
-			public Long getCallsAbandonedInRinging() {
-				return this.callsAbandonedInRinging;
+			public Long getCallsAbandonedInRing() {
+				return this.callsAbandonedInRing;
 			}
 
-			public void setCallsAbandonedInRinging(Long callsAbandonedInRinging) {
-				this.callsAbandonedInRinging = callsAbandonedInRinging;
+			public void setCallsAbandonedInRing(Long callsAbandonedInRing) {
+				this.callsAbandonedInRing = callsAbandonedInRing;
 			}
 
-			public Long getCallsConsulted() {
-				return this.callsConsulted;
+			public Long getCallsAttendedTransferred() {
+				return this.callsAttendedTransferred;
 			}
 
-			public void setCallsConsulted(Long callsConsulted) {
-				this.callsConsulted = callsConsulted;
+			public void setCallsAttendedTransferred(Long callsAttendedTransferred) {
+				this.callsAttendedTransferred = callsAttendedTransferred;
+			}
+
+			public Long getCallsBlindTransferred() {
+				return this.callsBlindTransferred;
+			}
+
+			public void setCallsBlindTransferred(Long callsBlindTransferred) {
+				this.callsBlindTransferred = callsBlindTransferred;
 			}
 
 			public Long getCallsHandled() {
@@ -365,14 +375,6 @@ public class ListIntervalInstanceReportResponse extends AcsResponse {
 
 			public void setCallsRinged(Long callsRinged) {
 				this.callsRinged = callsRinged;
-			}
-
-			public Long getCallsTransferred() {
-				return this.callsTransferred;
-			}
-
-			public void setCallsTransferred(Long callsTransferred) {
-				this.callsTransferred = callsTransferred;
 			}
 
 			public Float getHandleRate() {
@@ -461,6 +463,14 @@ public class ListIntervalInstanceReportResponse extends AcsResponse {
 
 			public void setSatisfactionIndex(Float satisfactionIndex) {
 				this.satisfactionIndex = satisfactionIndex;
+			}
+
+			public Float getSatisfactionRate() {
+				return this.satisfactionRate;
+			}
+
+			public void setSatisfactionRate(Float satisfactionRate) {
+				this.satisfactionRate = satisfactionRate;
 			}
 
 			public Long getSatisfactionSurveysOffered() {
@@ -566,23 +576,39 @@ public class ListIntervalInstanceReportResponse extends AcsResponse {
 
 			private Float averageDialingTime;
 
+			private Float averageHoldTime;
+
+			private Float averageRingTime;
+
 			private Float averageTalkTime;
 
 			private Float averageWorkTime;
 
 			private Long callsAnswered;
 
+			private Long callsAttendedTransferred;
+
+			private Long callsBlindTransferred;
+
 			private Long callsDialed;
 
-			private Long callsDialedSuccess;
+			private Long callsHold;
+
+			private Long callsRinged;
 
 			private Long maxDialingTime;
+
+			private Long maxHoldTime;
+
+			private Long maxRingTime;
 
 			private Long maxTalkTime;
 
 			private Long maxWorkTime;
 
 			private Float satisfactionIndex;
+
+			private Float satisfactionRate;
 
 			private Long satisfactionSurveysOffered;
 
@@ -591,6 +617,8 @@ public class ListIntervalInstanceReportResponse extends AcsResponse {
 			private Long totalDialingTime;
 
 			private Long totalHoldTime;
+
+			private Long totalRingTime;
 
 			private Long totalTalkTime;
 
@@ -610,6 +638,22 @@ public class ListIntervalInstanceReportResponse extends AcsResponse {
 
 			public void setAverageDialingTime(Float averageDialingTime) {
 				this.averageDialingTime = averageDialingTime;
+			}
+
+			public Float getAverageHoldTime() {
+				return this.averageHoldTime;
+			}
+
+			public void setAverageHoldTime(Float averageHoldTime) {
+				this.averageHoldTime = averageHoldTime;
+			}
+
+			public Float getAverageRingTime() {
+				return this.averageRingTime;
+			}
+
+			public void setAverageRingTime(Float averageRingTime) {
+				this.averageRingTime = averageRingTime;
 			}
 
 			public Float getAverageTalkTime() {
@@ -636,6 +680,22 @@ public class ListIntervalInstanceReportResponse extends AcsResponse {
 				this.callsAnswered = callsAnswered;
 			}
 
+			public Long getCallsAttendedTransferred() {
+				return this.callsAttendedTransferred;
+			}
+
+			public void setCallsAttendedTransferred(Long callsAttendedTransferred) {
+				this.callsAttendedTransferred = callsAttendedTransferred;
+			}
+
+			public Long getCallsBlindTransferred() {
+				return this.callsBlindTransferred;
+			}
+
+			public void setCallsBlindTransferred(Long callsBlindTransferred) {
+				this.callsBlindTransferred = callsBlindTransferred;
+			}
+
 			public Long getCallsDialed() {
 				return this.callsDialed;
 			}
@@ -644,12 +704,20 @@ public class ListIntervalInstanceReportResponse extends AcsResponse {
 				this.callsDialed = callsDialed;
 			}
 
-			public Long getCallsDialedSuccess() {
-				return this.callsDialedSuccess;
+			public Long getCallsHold() {
+				return this.callsHold;
 			}
 
-			public void setCallsDialedSuccess(Long callsDialedSuccess) {
-				this.callsDialedSuccess = callsDialedSuccess;
+			public void setCallsHold(Long callsHold) {
+				this.callsHold = callsHold;
+			}
+
+			public Long getCallsRinged() {
+				return this.callsRinged;
+			}
+
+			public void setCallsRinged(Long callsRinged) {
+				this.callsRinged = callsRinged;
 			}
 
 			public Long getMaxDialingTime() {
@@ -658,6 +726,22 @@ public class ListIntervalInstanceReportResponse extends AcsResponse {
 
 			public void setMaxDialingTime(Long maxDialingTime) {
 				this.maxDialingTime = maxDialingTime;
+			}
+
+			public Long getMaxHoldTime() {
+				return this.maxHoldTime;
+			}
+
+			public void setMaxHoldTime(Long maxHoldTime) {
+				this.maxHoldTime = maxHoldTime;
+			}
+
+			public Long getMaxRingTime() {
+				return this.maxRingTime;
+			}
+
+			public void setMaxRingTime(Long maxRingTime) {
+				this.maxRingTime = maxRingTime;
 			}
 
 			public Long getMaxTalkTime() {
@@ -682,6 +766,14 @@ public class ListIntervalInstanceReportResponse extends AcsResponse {
 
 			public void setSatisfactionIndex(Float satisfactionIndex) {
 				this.satisfactionIndex = satisfactionIndex;
+			}
+
+			public Float getSatisfactionRate() {
+				return this.satisfactionRate;
+			}
+
+			public void setSatisfactionRate(Float satisfactionRate) {
+				this.satisfactionRate = satisfactionRate;
 			}
 
 			public Long getSatisfactionSurveysOffered() {
@@ -714,6 +806,14 @@ public class ListIntervalInstanceReportResponse extends AcsResponse {
 
 			public void setTotalHoldTime(Long totalHoldTime) {
 				this.totalHoldTime = totalHoldTime;
+			}
+
+			public Long getTotalRingTime() {
+				return this.totalRingTime;
+			}
+
+			public void setTotalRingTime(Long totalRingTime) {
+				this.totalRingTime = totalRingTime;
 			}
 
 			public Long getTotalTalkTime() {
@@ -758,6 +858,8 @@ public class ListIntervalInstanceReportResponse extends AcsResponse {
 			private Float occupancyRate;
 
 			private Float satisfactionIndex;
+
+			private Float satisfactionRate;
 
 			private Long satisfactionSurveysOffered;
 
@@ -871,6 +973,14 @@ public class ListIntervalInstanceReportResponse extends AcsResponse {
 
 			public void setSatisfactionIndex(Float satisfactionIndex) {
 				this.satisfactionIndex = satisfactionIndex;
+			}
+
+			public Float getSatisfactionRate() {
+				return this.satisfactionRate;
+			}
+
+			public void setSatisfactionRate(Float satisfactionRate) {
+				this.satisfactionRate = satisfactionRate;
 			}
 
 			public Long getSatisfactionSurveysOffered() {

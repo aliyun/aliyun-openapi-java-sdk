@@ -139,13 +139,23 @@ public class ListCallDetailRecordsResponse extends AcsResponse {
 
 			private String instanceId;
 
+			private Long ivrTime;
+
+			private Long queueTime;
+
+			private Long recordingDuration;
+
 			private Boolean recordingReady;
 
 			private String releaseInitiator;
 
 			private Long releaseTime;
 
-			private Integer satisfaction;
+			private Long ringTime;
+
+			private String satisfactionDescription;
+
+			private Integer satisfactionIndex;
 
 			private String satisfactionSurveyChannel;
 
@@ -156,6 +166,8 @@ public class ListCallDetailRecordsResponse extends AcsResponse {
 			private String skillGroupNames;
 
 			private Long startTime;
+
+			private Long waitTime;
 
 			public String getAgentIds() {
 				return this.agentIds;
@@ -237,6 +249,30 @@ public class ListCallDetailRecordsResponse extends AcsResponse {
 				this.instanceId = instanceId;
 			}
 
+			public Long getIvrTime() {
+				return this.ivrTime;
+			}
+
+			public void setIvrTime(Long ivrTime) {
+				this.ivrTime = ivrTime;
+			}
+
+			public Long getQueueTime() {
+				return this.queueTime;
+			}
+
+			public void setQueueTime(Long queueTime) {
+				this.queueTime = queueTime;
+			}
+
+			public Long getRecordingDuration() {
+				return this.recordingDuration;
+			}
+
+			public void setRecordingDuration(Long recordingDuration) {
+				this.recordingDuration = recordingDuration;
+			}
+
 			public Boolean getRecordingReady() {
 				return this.recordingReady;
 			}
@@ -261,12 +297,28 @@ public class ListCallDetailRecordsResponse extends AcsResponse {
 				this.releaseTime = releaseTime;
 			}
 
-			public Integer getSatisfaction() {
-				return this.satisfaction;
+			public Long getRingTime() {
+				return this.ringTime;
 			}
 
-			public void setSatisfaction(Integer satisfaction) {
-				this.satisfaction = satisfaction;
+			public void setRingTime(Long ringTime) {
+				this.ringTime = ringTime;
+			}
+
+			public String getSatisfactionDescription() {
+				return this.satisfactionDescription;
+			}
+
+			public void setSatisfactionDescription(String satisfactionDescription) {
+				this.satisfactionDescription = satisfactionDescription;
+			}
+
+			public Integer getSatisfactionIndex() {
+				return this.satisfactionIndex;
+			}
+
+			public void setSatisfactionIndex(Integer satisfactionIndex) {
+				this.satisfactionIndex = satisfactionIndex;
 			}
 
 			public String getSatisfactionSurveyChannel() {
@@ -307,6 +359,14 @@ public class ListCallDetailRecordsResponse extends AcsResponse {
 
 			public void setStartTime(Long startTime) {
 				this.startTime = startTime;
+			}
+
+			public Long getWaitTime() {
+				return this.waitTime;
+			}
+
+			public void setWaitTime(Long waitTime) {
+				this.waitTime = waitTime;
 			}
 		}
 	}

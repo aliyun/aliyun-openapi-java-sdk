@@ -101,6 +101,8 @@ public class GetLoginDetailsResponse extends AcsResponse {
 
 		private String userKey;
 
+		private String agentServerUrl;
+
 		public String getDeviceId() {
 			return this.deviceId;
 		}
@@ -155,6 +157,14 @@ public class GetLoginDetailsResponse extends AcsResponse {
 
 		public void setUserKey(String userKey) {
 			this.userKey = userKey;
+		}
+
+		public String getAgentServerUrl() {
+			return this.agentServerUrl;
+		}
+
+		public void setAgentServerUrl(String agentServerUrl) {
+			this.agentServerUrl = agentServerUrl;
 		}
 	}
 
