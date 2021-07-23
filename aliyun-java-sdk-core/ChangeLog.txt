@@ -1,4 +1,7 @@
-﻿2021-06-28 Version:4.5.23
+﻿2021-07-23 Version:4.5.24
+1, fix bugs for anonymous credentials
+
+2021-06-28 Version:4.5.23
 1, add anonymous credentials
 
 2021-06-28 Version:4.5.22
