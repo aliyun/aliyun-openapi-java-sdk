@@ -154,10 +154,10 @@ public abstract class RoaAcsRequest<T extends AcsResponse> extends AcsRequest<T>
         }
         if (null != signer && null != credentials && !(credentials instanceof AnonymousCredentials)) {
             String accessKeyId = credentials.getAccessKeyId();
-            imutableMap.put("x-acs-accesskey-id", accessKeyId);
             if (credentials instanceof BasicSessionCredentials) {
                 String sessionToken = ((BasicSessionCredentials) credentials).getSessionToken();
                 if (null != sessionToken) {
+                    imutableMap.put("x-acs-accesskey-id", accessKeyId);
                     imutableMap.put("x-acs-security-token", sessionToken);
                 }
             }

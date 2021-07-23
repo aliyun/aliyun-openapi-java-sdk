@@ -115,9 +115,26 @@ public abstract class RpcAcsRequest<T extends AcsResponse> extends AcsRequest<T>
     public HttpRequest signRequest(Signer signer, AlibabaCloudCredentials credentials, FormatType format,
                                    ProductDomain domain) throws InvalidKeyException, IllegalStateException, UnsupportedEncodingException {
 
+        Map<String, String> bodyParams = this.getSysBodyParameters();
+        if (bodyParams != null && !bodyParams.isEmpty()) {
+            byte[] data;
+            if (FormatType.JSON == this.getHttpContentType()) {
+                data = ParameterHelper.getJsonData(bodyParams);
+            } else if (FormatType.XML == this.getHttpContentType()) {
+                data = ParameterHelper.getXmlData(bodyParams);
+            } else {
+                // For contentType RAW and Form, the actual data format will be form
+                data = ParameterHelper.getFormData(bodyParams);
+            }
+            this.setHttpContent(data, "UTF-8", null);
+        }
         Map<String, String> imutableMap = this.composer.refreshSignParameters(this.getSysQueryParameters(), signer, null,
                 format);
-        Map<String, String> bodyParams = this.getSysBodyParameters();
+        if (imutableMap.get("RegionId") == null && this.getSysRegionId() != null && !this.getSysRegionId().equals("")) {
+            if ((bodyParams == null || bodyParams.get("RegionId") == null)) {
+                imutableMap.put("RegionId", getSysRegionId());
+            }
+        }
         if (null != credentials && !(credentials instanceof AnonymousCredentials)) {
             String accessKeyId = credentials.getAccessKeyId();
             String accessSecret = credentials.getAccessKeySecret();
@@ -134,22 +151,9 @@ public abstract class RpcAcsRequest<T extends AcsResponse> extends AcsRequest<T>
                 }
             }
             Map<String, String> paramsToSign = new HashMap<String, String>();
-            if (bodyParams != null && !bodyParams.isEmpty()) {
-                byte[] data;
-                if (FormatType.JSON == this.getHttpContentType()) {
-                    data = ParameterHelper.getJsonData(bodyParams);
-                } else if (FormatType.XML == this.getHttpContentType()) {
-                    data = ParameterHelper.getXmlData(bodyParams);
-                } else {
-                    // For contentType RAW and Form, the actual data format will be form
-                    data = ParameterHelper.getFormData(bodyParams);
-                }
-                this.setHttpContent(data, "UTF-8", null);
-                paramsToSign.putAll(bodyParams);
-            }
+            paramsToSign.putAll(bodyParams);
             imutableMap.put("AccessKeyId", accessKeyId);
             paramsToSign.putAll(imutableMap);
-
             String strToSign = this.composer.composeStringToSign(
                     this.getSysMethod(), null, signer, paramsToSign, null, null);
             String signature;
@@ -160,11 +164,6 @@ public abstract class RpcAcsRequest<T extends AcsResponse> extends AcsRequest<T>
             }
             imutableMap.put("Signature", signature);
             this.strToSign = strToSign;
-        }
-        if (imutableMap.get("RegionId") == null && this.getSysRegionId() != null && !this.getSysRegionId().equals("")) {
-            if ((bodyParams == null || bodyParams.get("RegionId") == null)) {
-                imutableMap.put("RegionId", getSysRegionId());
-            }
         }
         setSysUrl(this.composeUrl(domain.getDomainName(), imutableMap));
         return this;
