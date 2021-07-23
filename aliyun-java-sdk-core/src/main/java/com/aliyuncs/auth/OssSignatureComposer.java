@@ -48,7 +48,7 @@ public class OssSignatureComposer extends RoaSignatureComposer {
 
     @Override
     public String composeStringToSign(MethodType method, String uriPattern, Signer signer, Map<String, String> queries,
-            Map<String, String> headers, Map<String, String> paths) {
+                                      Map<String, String> headers, Map<String, String> paths) {
         StringBuilder sb = new StringBuilder();
         sb.append(method).append(HEADER_SEPARATOR);
         if (headers.get("Content-MD5") != null) {

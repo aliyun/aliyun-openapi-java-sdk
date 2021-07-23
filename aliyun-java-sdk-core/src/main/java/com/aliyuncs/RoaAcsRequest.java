@@ -147,14 +147,14 @@ public abstract class RoaAcsRequest<T extends AcsResponse> extends AcsRequest<T>
             this.setHttpContent(data, "UTF-8", null);
         }
 
-        Map<String, String> imutableMap = new HashMap<String, String>(this.getSysHeaders());
+        Map<String, String> imutableMap = this.composer.refreshSignParameters(this.getSysHeaders(), signer, null,
+                format);
+        if (imutableMap.get("RegionId") == null) {
+            imutableMap.put("RegionId", getSysRegionId());
+        }
         if (null != signer && null != credentials && !(credentials instanceof AnonymousCredentials)) {
             String accessKeyId = credentials.getAccessKeyId();
-            imutableMap = this.composer.refreshSignParameters(this.getSysHeaders(), signer, accessKeyId, format);
-            if (imutableMap.get("RegionId") == null) {
-                imutableMap.put("RegionId", getSysRegionId());
-            }
-
+            imutableMap.put("x-acs-accesskey-id", accessKeyId);
             if (credentials instanceof BasicSessionCredentials) {
                 String sessionToken = ((BasicSessionCredentials) credentials).getSessionToken();
                 if (null != sessionToken) {

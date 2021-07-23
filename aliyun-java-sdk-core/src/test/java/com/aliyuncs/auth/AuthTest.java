@@ -39,10 +39,10 @@ public class AuthTest {
         AcsRequest request = new DescribeRegionsRequest();
 
         ISignatureComposer composer = RpcSignatureComposer.getComposer();
-        Map<String, String> immune = composer.refreshSignParameters(request.getSysQueryParameters(), signer, "testid",
+        Map<String, String> immune = composer.refreshSignParameters(request.getSysQueryParameters(), signer, null,
                 FormatType.XML);
         String strToSign = composer.composeStringToSign(request.getSysMethod(), null, signer, immune, null, null);
-        assertEquals(0, strToSign.indexOf("GET&%2F&AccessKeyId%3Dtestid%26Action%3DDescribeRegions%26Format%3DXML%26"));
+        assertEquals(0, strToSign.indexOf("GET&%2F&Action%3DDescribeRegions%26Format%3DXML%26"));
         assertEquals(true, strToSign.endsWith("Version%3D2014-05-26"));
     }
 
@@ -53,13 +53,15 @@ public class AuthTest {
         RoaAcsRequest request = new GetRegionsRequest();
 
         ISignatureComposer composer = RoaSignatureComposer.getComposer();
-        Map<String, String> immune = composer.refreshSignParameters(request.getSysHeaders(), signer, "testid",
+        Map<String, String> immune = composer.refreshSignParameters(request.getSysHeaders(), signer, null,
                 FormatType.XML);
         String strToSign = composer.composeStringToSign(request.getSysMethod(), request.getSysUriPattern(), signer,
                 request.getSysQueryParameters(), immune, request.getPathParameters());
         assertEquals(0, strToSign.indexOf("GET\napplication/xml\n"));
+        assertEquals(109, strToSign.indexOf("x-acs-signature-method:HMAC-SHA1\n"));
+        assertEquals(142, strToSign.indexOf("x-acs-signature-nonce:"));
         assertEquals(true, strToSign.endsWith(
-                "\nx-acs-signature-method:HMAC-SHA1\nx-acs-signature-version:1.0\nx-acs-version:2015-01-01\n/"));
+                "\nx-acs-signature-version:1.0\nx-acs-version:2015-01-01\n/"));
     }
 
 

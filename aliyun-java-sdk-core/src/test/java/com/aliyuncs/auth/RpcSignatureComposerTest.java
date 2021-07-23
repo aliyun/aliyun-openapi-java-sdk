@@ -62,12 +62,10 @@ public class RpcSignatureComposerTest {
         when(signer.getSignerName()).thenReturn("signerName1");
         when(signer.getSignerVersion()).thenReturn("signerVersion1");
         when(signer.getSignerType()).thenReturn("signerType1");
-        String accessKeyId = "ak";
         FormatType formatType = FormatType.XML;
-        Map<String, String> res = composer.refreshSignParameters(parameters, signer, accessKeyId, formatType);
+        Map<String, String> res = composer.refreshSignParameters(parameters, signer, null, formatType);
         Assert.assertEquals("paraValue1", res.get("paraKey1"));
         Assert.assertEquals("signerVersion1", res.get("SignatureVersion"));
-        Assert.assertEquals("ak", res.get("AccessKeyId"));
         Assert.assertEquals(FormatType.XML.name(), res.get("Format"));
         Assert.assertEquals("signerType1", res.get("SignatureType"));
 
