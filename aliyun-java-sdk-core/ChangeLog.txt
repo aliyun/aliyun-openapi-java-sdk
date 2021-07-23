@@ -1,4 +1,7 @@
-﻿2021-06-28 Version:4.5.22
+﻿2021-06-28 Version:4.5.23
+1, add anonymous credentials
+
+2021-06-28 Version:4.5.22
 1, Fix the NPE bug of ApacheHttpClient
 2, Add more HTTP request log tests
 3, Add ApachHttpClient NPE bug test
