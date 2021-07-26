@@ -33,14 +33,14 @@ public class ListUsersResponseUnmarshaller {
 		List<User> users = new ArrayList<User>();
 		for (int i = 0; i < _ctx.lengthValue("ListUsersResponse.Users.Length"); i++) {
 			User user = new User();
-			user.setUserId(_ctx.stringValue("ListUsersResponse.Users["+ i +"].UserId"));
-			user.setUserName(_ctx.stringValue("ListUsersResponse.Users["+ i +"].UserName"));
 			user.setDisplayName(_ctx.stringValue("ListUsersResponse.Users["+ i +"].DisplayName"));
-			user.setMobilePhone(_ctx.stringValue("ListUsersResponse.Users["+ i +"].MobilePhone"));
 			user.setEmail(_ctx.stringValue("ListUsersResponse.Users["+ i +"].Email"));
+			user.setUpdateDate(_ctx.stringValue("ListUsersResponse.Users["+ i +"].UpdateDate"));
+			user.setMobilePhone(_ctx.stringValue("ListUsersResponse.Users["+ i +"].MobilePhone"));
+			user.setUserId(_ctx.stringValue("ListUsersResponse.Users["+ i +"].UserId"));
 			user.setComments(_ctx.stringValue("ListUsersResponse.Users["+ i +"].Comments"));
 			user.setCreateDate(_ctx.stringValue("ListUsersResponse.Users["+ i +"].CreateDate"));
-			user.setUpdateDate(_ctx.stringValue("ListUsersResponse.Users["+ i +"].UpdateDate"));
+			user.setUserName(_ctx.stringValue("ListUsersResponse.Users["+ i +"].UserName"));
 
 			users.add(user);
 		}

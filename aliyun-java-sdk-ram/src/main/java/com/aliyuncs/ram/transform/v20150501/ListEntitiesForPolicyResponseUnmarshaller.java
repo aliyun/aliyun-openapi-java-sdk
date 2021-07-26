@@ -41,30 +41,30 @@ public class ListEntitiesForPolicyResponseUnmarshaller {
 		}
 		listEntitiesForPolicyResponse.setGroups(groups);
 
+		List<Role> roles = new ArrayList<Role>();
+		for (int i = 0; i < _ctx.lengthValue("ListEntitiesForPolicyResponse.Roles.Length"); i++) {
+			Role role = new Role();
+			role.setDescription(_ctx.stringValue("ListEntitiesForPolicyResponse.Roles["+ i +"].Description"));
+			role.setRoleName(_ctx.stringValue("ListEntitiesForPolicyResponse.Roles["+ i +"].RoleName"));
+			role.setAttachDate(_ctx.stringValue("ListEntitiesForPolicyResponse.Roles["+ i +"].AttachDate"));
+			role.setArn(_ctx.stringValue("ListEntitiesForPolicyResponse.Roles["+ i +"].Arn"));
+			role.setRoleId(_ctx.stringValue("ListEntitiesForPolicyResponse.Roles["+ i +"].RoleId"));
+
+			roles.add(role);
+		}
+		listEntitiesForPolicyResponse.setRoles(roles);
+
 		List<User> users = new ArrayList<User>();
 		for (int i = 0; i < _ctx.lengthValue("ListEntitiesForPolicyResponse.Users.Length"); i++) {
 			User user = new User();
+			user.setDisplayName(_ctx.stringValue("ListEntitiesForPolicyResponse.Users["+ i +"].DisplayName"));
 			user.setUserId(_ctx.stringValue("ListEntitiesForPolicyResponse.Users["+ i +"].UserId"));
 			user.setUserName(_ctx.stringValue("ListEntitiesForPolicyResponse.Users["+ i +"].UserName"));
-			user.setDisplayName(_ctx.stringValue("ListEntitiesForPolicyResponse.Users["+ i +"].DisplayName"));
 			user.setAttachDate(_ctx.stringValue("ListEntitiesForPolicyResponse.Users["+ i +"].AttachDate"));
 
 			users.add(user);
 		}
 		listEntitiesForPolicyResponse.setUsers(users);
-
-		List<Role> roles = new ArrayList<Role>();
-		for (int i = 0; i < _ctx.lengthValue("ListEntitiesForPolicyResponse.Roles.Length"); i++) {
-			Role role = new Role();
-			role.setRoleId(_ctx.stringValue("ListEntitiesForPolicyResponse.Roles["+ i +"].RoleId"));
-			role.setRoleName(_ctx.stringValue("ListEntitiesForPolicyResponse.Roles["+ i +"].RoleName"));
-			role.setArn(_ctx.stringValue("ListEntitiesForPolicyResponse.Roles["+ i +"].Arn"));
-			role.setDescription(_ctx.stringValue("ListEntitiesForPolicyResponse.Roles["+ i +"].Description"));
-			role.setAttachDate(_ctx.stringValue("ListEntitiesForPolicyResponse.Roles["+ i +"].AttachDate"));
-
-			roles.add(role);
-		}
-		listEntitiesForPolicyResponse.setRoles(roles);
 	 
 	 	return listEntitiesForPolicyResponse;
 	}

@@ -26,11 +26,11 @@ import com.aliyuncs.ram.Endpoint;
 public class BindMFADeviceRequest extends RpcAcsRequest<BindMFADeviceResponse> {
 	   
 
-	private String serialNumber;
-
 	private String authenticationCode2;
 
 	private String authenticationCode1;
+
+	private String serialNumber;
 
 	private String userName;
 	public BindMFADeviceRequest() {
@@ -41,17 +41,6 @@ public class BindMFADeviceRequest extends RpcAcsRequest<BindMFADeviceResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getSerialNumber() {
-		return this.serialNumber;
-	}
-
-	public void setSerialNumber(String serialNumber) {
-		this.serialNumber = serialNumber;
-		if(serialNumber != null){
-			putQueryParameter("SerialNumber", serialNumber);
-		}
 	}
 
 	public String getAuthenticationCode2() {
@@ -73,6 +62,17 @@ public class BindMFADeviceRequest extends RpcAcsRequest<BindMFADeviceResponse> {
 		this.authenticationCode1 = authenticationCode1;
 		if(authenticationCode1 != null){
 			putQueryParameter("AuthenticationCode1", authenticationCode1);
+		}
+	}
+
+	public String getSerialNumber() {
+		return this.serialNumber;
+	}
+
+	public void setSerialNumber(String serialNumber) {
+		this.serialNumber = serialNumber;
+		if(serialNumber != null){
+			putQueryParameter("SerialNumber", serialNumber);
 		}
 	}
 

@@ -47,30 +47,22 @@ public class ListPoliciesForUserResponse extends AcsResponse {
 
 	public static class Policy {
 
-		private String policyName;
-
-		private String policyType;
+		private String defaultVersion;
 
 		private String description;
 
-		private String defaultVersion;
+		private String policyName;
 
 		private String attachDate;
 
-		public String getPolicyName() {
-			return this.policyName;
+		private String policyType;
+
+		public String getDefaultVersion() {
+			return this.defaultVersion;
 		}
 
-		public void setPolicyName(String policyName) {
-			this.policyName = policyName;
-		}
-
-		public String getPolicyType() {
-			return this.policyType;
-		}
-
-		public void setPolicyType(String policyType) {
-			this.policyType = policyType;
+		public void setDefaultVersion(String defaultVersion) {
+			this.defaultVersion = defaultVersion;
 		}
 
 		public String getDescription() {
@@ -81,12 +73,12 @@ public class ListPoliciesForUserResponse extends AcsResponse {
 			this.description = description;
 		}
 
-		public String getDefaultVersion() {
-			return this.defaultVersion;
+		public String getPolicyName() {
+			return this.policyName;
 		}
 
-		public void setDefaultVersion(String defaultVersion) {
-			this.defaultVersion = defaultVersion;
+		public void setPolicyName(String policyName) {
+			this.policyName = policyName;
 		}
 
 		public String getAttachDate() {
@@ -95,6 +87,14 @@ public class ListPoliciesForUserResponse extends AcsResponse {
 
 		public void setAttachDate(String attachDate) {
 			this.attachDate = attachDate;
+		}
+
+		public String getPolicyType() {
+			return this.policyType;
+		}
+
+		public void setPolicyType(String policyType) {
+			this.policyType = policyType;
 		}
 	}
 

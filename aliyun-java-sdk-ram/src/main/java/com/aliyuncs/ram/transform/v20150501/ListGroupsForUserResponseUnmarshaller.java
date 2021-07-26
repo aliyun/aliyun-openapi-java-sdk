@@ -31,6 +31,7 @@ public class ListGroupsForUserResponseUnmarshaller {
 		List<Group> groups = new ArrayList<Group>();
 		for (int i = 0; i < _ctx.lengthValue("ListGroupsForUserResponse.Groups.Length"); i++) {
 			Group group = new Group();
+			group.setGroupId(_ctx.stringValue("ListGroupsForUserResponse.Groups["+ i +"].GroupId"));
 			group.setGroupName(_ctx.stringValue("ListGroupsForUserResponse.Groups["+ i +"].GroupName"));
 			group.setComments(_ctx.stringValue("ListGroupsForUserResponse.Groups["+ i +"].Comments"));
 			group.setJoinDate(_ctx.stringValue("ListGroupsForUserResponse.Groups["+ i +"].JoinDate"));

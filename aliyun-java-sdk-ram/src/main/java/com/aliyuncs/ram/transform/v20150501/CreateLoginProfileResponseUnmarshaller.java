@@ -26,10 +26,10 @@ public class CreateLoginProfileResponseUnmarshaller {
 		createLoginProfileResponse.setRequestId(_ctx.stringValue("CreateLoginProfileResponse.RequestId"));
 
 		LoginProfile loginProfile = new LoginProfile();
-		loginProfile.setUserName(_ctx.stringValue("CreateLoginProfileResponse.LoginProfile.UserName"));
 		loginProfile.setPasswordResetRequired(_ctx.booleanValue("CreateLoginProfileResponse.LoginProfile.PasswordResetRequired"));
-		loginProfile.setMFABindRequired(_ctx.booleanValue("CreateLoginProfileResponse.LoginProfile.MFABindRequired"));
 		loginProfile.setCreateDate(_ctx.stringValue("CreateLoginProfileResponse.LoginProfile.CreateDate"));
+		loginProfile.setUserName(_ctx.stringValue("CreateLoginProfileResponse.LoginProfile.UserName"));
+		loginProfile.setMFABindRequired(_ctx.booleanValue("CreateLoginProfileResponse.LoginProfile.MFABindRequired"));
 		createLoginProfileResponse.setLoginProfile(loginProfile);
 	 
 	 	return createLoginProfileResponse;

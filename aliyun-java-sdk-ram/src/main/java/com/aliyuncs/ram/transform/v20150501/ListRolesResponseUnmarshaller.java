@@ -33,13 +33,13 @@ public class ListRolesResponseUnmarshaller {
 		List<Role> roles = new ArrayList<Role>();
 		for (int i = 0; i < _ctx.lengthValue("ListRolesResponse.Roles.Length"); i++) {
 			Role role = new Role();
-			role.setRoleId(_ctx.stringValue("ListRolesResponse.Roles["+ i +"].RoleId"));
-			role.setRoleName(_ctx.stringValue("ListRolesResponse.Roles["+ i +"].RoleName"));
-			role.setArn(_ctx.stringValue("ListRolesResponse.Roles["+ i +"].Arn"));
 			role.setDescription(_ctx.stringValue("ListRolesResponse.Roles["+ i +"].Description"));
-			role.setCreateDate(_ctx.stringValue("ListRolesResponse.Roles["+ i +"].CreateDate"));
 			role.setUpdateDate(_ctx.stringValue("ListRolesResponse.Roles["+ i +"].UpdateDate"));
 			role.setMaxSessionDuration(_ctx.longValue("ListRolesResponse.Roles["+ i +"].MaxSessionDuration"));
+			role.setRoleName(_ctx.stringValue("ListRolesResponse.Roles["+ i +"].RoleName"));
+			role.setCreateDate(_ctx.stringValue("ListRolesResponse.Roles["+ i +"].CreateDate"));
+			role.setRoleId(_ctx.stringValue("ListRolesResponse.Roles["+ i +"].RoleId"));
+			role.setArn(_ctx.stringValue("ListRolesResponse.Roles["+ i +"].Arn"));
 
 			roles.add(role);
 		}

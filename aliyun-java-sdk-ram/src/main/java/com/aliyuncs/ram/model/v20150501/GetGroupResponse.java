@@ -46,13 +46,31 @@ public class GetGroupResponse extends AcsResponse {
 
 	public static class Group {
 
+		private String groupId;
+
+		private String updateDate;
+
 		private String groupName;
 
 		private String comments;
 
 		private String createDate;
 
-		private String updateDate;
+		public String getGroupId() {
+			return this.groupId;
+		}
+
+		public void setGroupId(String groupId) {
+			this.groupId = groupId;
+		}
+
+		public String getUpdateDate() {
+			return this.updateDate;
+		}
+
+		public void setUpdateDate(String updateDate) {
+			this.updateDate = updateDate;
+		}
 
 		public String getGroupName() {
 			return this.groupName;
@@ -76,14 +94,6 @@ public class GetGroupResponse extends AcsResponse {
 
 		public void setCreateDate(String createDate) {
 			this.createDate = createDate;
-		}
-
-		public String getUpdateDate() {
-			return this.updateDate;
-		}
-
-		public void setUpdateDate(String updateDate) {
-			this.updateDate = updateDate;
 		}
 	}
 

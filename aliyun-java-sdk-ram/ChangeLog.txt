@@ -1,3 +1,6 @@
+2021-07-26 Version: 3.3.0
+- RAM group support GroupId.
+
 2020-03-19 Version: 3.2.0
 - RAM role support MaxSessionDuration.
 

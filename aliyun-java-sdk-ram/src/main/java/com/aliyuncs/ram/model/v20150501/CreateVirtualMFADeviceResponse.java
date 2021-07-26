@@ -48,9 +48,9 @@ public class CreateVirtualMFADeviceResponse extends AcsResponse {
 
 		private String serialNumber;
 
-		private String base32StringSeed;
-
 		private String qRCodePNG;
+
+		private String base32StringSeed;
 
 		public String getSerialNumber() {
 			return this.serialNumber;
@@ -60,20 +60,20 @@ public class CreateVirtualMFADeviceResponse extends AcsResponse {
 			this.serialNumber = serialNumber;
 		}
 
-		public String getBase32StringSeed() {
-			return this.base32StringSeed;
-		}
-
-		public void setBase32StringSeed(String base32StringSeed) {
-			this.base32StringSeed = base32StringSeed;
-		}
-
 		public String getQRCodePNG() {
 			return this.qRCodePNG;
 		}
 
 		public void setQRCodePNG(String qRCodePNG) {
 			this.qRCodePNG = qRCodePNG;
+		}
+
+		public String getBase32StringSeed() {
+			return this.base32StringSeed;
+		}
+
+		public void setBase32StringSeed(String base32StringSeed) {
+			this.base32StringSeed = base32StringSeed;
 		}
 	}
 

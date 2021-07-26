@@ -46,37 +46,21 @@ public class UpdateUserResponse extends AcsResponse {
 
 	public static class User {
 
-		private String userId;
-
-		private String userName;
-
 		private String displayName;
+
+		private String email;
+
+		private String updateDate;
 
 		private String mobilePhone;
 
-		private String email;
+		private String userId;
 
 		private String comments;
 
 		private String createDate;
 
-		private String updateDate;
-
-		public String getUserId() {
-			return this.userId;
-		}
-
-		public void setUserId(String userId) {
-			this.userId = userId;
-		}
-
-		public String getUserName() {
-			return this.userName;
-		}
-
-		public void setUserName(String userName) {
-			this.userName = userName;
-		}
+		private String userName;
 
 		public String getDisplayName() {
 			return this.displayName;
@@ -84,6 +68,22 @@ public class UpdateUserResponse extends AcsResponse {
 
 		public void setDisplayName(String displayName) {
 			this.displayName = displayName;
+		}
+
+		public String getEmail() {
+			return this.email;
+		}
+
+		public void setEmail(String email) {
+			this.email = email;
+		}
+
+		public String getUpdateDate() {
+			return this.updateDate;
+		}
+
+		public void setUpdateDate(String updateDate) {
+			this.updateDate = updateDate;
 		}
 
 		public String getMobilePhone() {
@@ -94,12 +94,12 @@ public class UpdateUserResponse extends AcsResponse {
 			this.mobilePhone = mobilePhone;
 		}
 
-		public String getEmail() {
-			return this.email;
+		public String getUserId() {
+			return this.userId;
 		}
 
-		public void setEmail(String email) {
-			this.email = email;
+		public void setUserId(String userId) {
+			this.userId = userId;
 		}
 
 		public String getComments() {
@@ -118,12 +118,12 @@ public class UpdateUserResponse extends AcsResponse {
 			this.createDate = createDate;
 		}
 
-		public String getUpdateDate() {
-			return this.updateDate;
+		public String getUserName() {
+			return this.userName;
 		}
 
-		public void setUpdateDate(String updateDate) {
-			this.updateDate = updateDate;
+		public void setUserName(String userName) {
+			this.userName = userName;
 		}
 	}
 

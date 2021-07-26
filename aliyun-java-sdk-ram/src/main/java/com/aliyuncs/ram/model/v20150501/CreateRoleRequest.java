@@ -26,13 +26,13 @@ import com.aliyuncs.ram.Endpoint;
 public class CreateRoleRequest extends RpcAcsRequest<CreateRoleResponse> {
 	   
 
-	private Long maxSessionDuration;
-
-	private String roleName;
-
 	private String description;
 
 	private String assumeRolePolicyDocument;
+
+	private Long maxSessionDuration;
+
+	private String roleName;
 	public CreateRoleRequest() {
 		super("Ram", "2015-05-01", "CreateRole", "Ram");
 		setProtocol(ProtocolType.HTTPS);
@@ -41,28 +41,6 @@ public class CreateRoleRequest extends RpcAcsRequest<CreateRoleResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Long getMaxSessionDuration() {
-		return this.maxSessionDuration;
-	}
-
-	public void setMaxSessionDuration(Long maxSessionDuration) {
-		this.maxSessionDuration = maxSessionDuration;
-		if(maxSessionDuration != null){
-			putQueryParameter("MaxSessionDuration", maxSessionDuration.toString());
-		}
-	}
-
-	public String getRoleName() {
-		return this.roleName;
-	}
-
-	public void setRoleName(String roleName) {
-		this.roleName = roleName;
-		if(roleName != null){
-			putQueryParameter("RoleName", roleName);
-		}
 	}
 
 	public String getDescription() {
@@ -84,6 +62,28 @@ public class CreateRoleRequest extends RpcAcsRequest<CreateRoleResponse> {
 		this.assumeRolePolicyDocument = assumeRolePolicyDocument;
 		if(assumeRolePolicyDocument != null){
 			putQueryParameter("AssumeRolePolicyDocument", assumeRolePolicyDocument);
+		}
+	}
+
+	public Long getMaxSessionDuration() {
+		return this.maxSessionDuration;
+	}
+
+	public void setMaxSessionDuration(Long maxSessionDuration) {
+		this.maxSessionDuration = maxSessionDuration;
+		if(maxSessionDuration != null){
+			putQueryParameter("MaxSessionDuration", maxSessionDuration.toString());
+		}
+	}
+
+	public String getRoleName() {
+		return this.roleName;
+	}
+
+	public void setRoleName(String roleName) {
+		this.roleName = roleName;
+		if(roleName != null){
+			putQueryParameter("RoleName", roleName);
 		}
 	}
 

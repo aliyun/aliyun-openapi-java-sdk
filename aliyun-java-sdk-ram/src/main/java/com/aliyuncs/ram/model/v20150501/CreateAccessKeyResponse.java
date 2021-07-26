@@ -46,20 +46,20 @@ public class CreateAccessKeyResponse extends AcsResponse {
 
 	public static class AccessKey {
 
-		private String accessKeyId;
+		private String status;
 
 		private String accessKeySecret;
 
-		private String status;
-
 		private String createDate;
 
-		public String getAccessKeyId() {
-			return this.accessKeyId;
+		private String accessKeyId;
+
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setAccessKeyId(String accessKeyId) {
-			this.accessKeyId = accessKeyId;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public String getAccessKeySecret() {
@@ -70,20 +70,20 @@ public class CreateAccessKeyResponse extends AcsResponse {
 			this.accessKeySecret = accessKeySecret;
 		}
 
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
 		public String getCreateDate() {
 			return this.createDate;
 		}
 
 		public void setCreateDate(String createDate) {
 			this.createDate = createDate;
+		}
+
+		public String getAccessKeyId() {
+			return this.accessKeyId;
+		}
+
+		public void setAccessKeyId(String accessKeyId) {
+			this.accessKeyId = accessKeyId;
 		}
 	}
 

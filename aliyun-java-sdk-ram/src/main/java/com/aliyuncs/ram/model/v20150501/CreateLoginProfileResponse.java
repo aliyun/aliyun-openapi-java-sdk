@@ -46,21 +46,13 @@ public class CreateLoginProfileResponse extends AcsResponse {
 
 	public static class LoginProfile {
 
-		private String userName;
-
 		private Boolean passwordResetRequired;
-
-		private Boolean mFABindRequired;
 
 		private String createDate;
 
-		public String getUserName() {
-			return this.userName;
-		}
+		private String userName;
 
-		public void setUserName(String userName) {
-			this.userName = userName;
-		}
+		private Boolean mFABindRequired;
 
 		public Boolean getPasswordResetRequired() {
 			return this.passwordResetRequired;
@@ -70,20 +62,28 @@ public class CreateLoginProfileResponse extends AcsResponse {
 			this.passwordResetRequired = passwordResetRequired;
 		}
 
-		public Boolean getMFABindRequired() {
-			return this.mFABindRequired;
-		}
-
-		public void setMFABindRequired(Boolean mFABindRequired) {
-			this.mFABindRequired = mFABindRequired;
-		}
-
 		public String getCreateDate() {
 			return this.createDate;
 		}
 
 		public void setCreateDate(String createDate) {
 			this.createDate = createDate;
+		}
+
+		public String getUserName() {
+			return this.userName;
+		}
+
+		public void setUserName(String userName) {
+			this.userName = userName;
+		}
+
+		public Boolean getMFABindRequired() {
+			return this.mFABindRequired;
+		}
+
+		public void setMFABindRequired(Boolean mFABindRequired) {
+			this.mFABindRequired = mFABindRequired;
 		}
 	}
 

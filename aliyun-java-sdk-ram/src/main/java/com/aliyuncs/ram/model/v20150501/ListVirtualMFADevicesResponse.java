@@ -79,11 +79,19 @@ public class ListVirtualMFADevicesResponse extends AcsResponse {
 
 		public static class User {
 
+			private String displayName;
+
 			private String userId;
 
 			private String userName;
 
-			private String displayName;
+			public String getDisplayName() {
+				return this.displayName;
+			}
+
+			public void setDisplayName(String displayName) {
+				this.displayName = displayName;
+			}
 
 			public String getUserId() {
 				return this.userId;
@@ -99,14 +107,6 @@ public class ListVirtualMFADevicesResponse extends AcsResponse {
 
 			public void setUserName(String userName) {
 				this.userName = userName;
-			}
-
-			public String getDisplayName() {
-				return this.displayName;
-			}
-
-			public void setDisplayName(String displayName) {
-				this.displayName = displayName;
 			}
 		}
 	}
