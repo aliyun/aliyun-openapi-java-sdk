@@ -33,7 +33,7 @@ public class GetMcubeUpgradeTaskInfoRequest extends RpcAcsRequest<GetMcubeUpgrad
 
 	private String workspaceId;
 	public GetMcubeUpgradeTaskInfoRequest() {
-		super("mPaaS", "2020-07-10", "GetMcubeUpgradeTaskInfo", "mpaas");
+		super("mPaaS", "2020-07-10", "GetMcubeUpgradeTaskInfo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

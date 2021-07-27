@@ -31,7 +31,7 @@ public class ExistMcubeRsaKeyRequest extends RpcAcsRequest<ExistMcubeRsaKeyRespo
 
 	private String workspaceId;
 	public ExistMcubeRsaKeyRequest() {
-		super("mPaaS", "2020-07-10", "ExistMcubeRsaKey", "mpaas");
+		super("mPaaS", "2020-07-10", "ExistMcubeRsaKey");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

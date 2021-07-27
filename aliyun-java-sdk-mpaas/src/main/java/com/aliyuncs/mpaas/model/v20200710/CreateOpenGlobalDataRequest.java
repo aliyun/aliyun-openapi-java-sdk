@@ -53,7 +53,7 @@ public class CreateOpenGlobalDataRequest extends RpcAcsRequest<CreateOpenGlobalD
 
 	private String workspaceId;
 	public CreateOpenGlobalDataRequest() {
-		super("mPaaS", "2020-07-10", "CreateOpenGlobalData", "mpaas");
+		super("mPaaS", "2020-07-10", "CreateOpenGlobalData");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

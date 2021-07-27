@@ -31,7 +31,7 @@ public class ListMcubeMiniAppsRequest extends RpcAcsRequest<ListMcubeMiniAppsRes
 
 	private String workspaceId;
 	public ListMcubeMiniAppsRequest() {
-		super("mPaaS", "2020-07-10", "ListMcubeMiniApps", "mpaas");
+		super("mPaaS", "2020-07-10", "ListMcubeMiniApps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

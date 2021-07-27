@@ -33,7 +33,7 @@ public class GetMcubeFileTokenRequest extends RpcAcsRequest<GetMcubeFileTokenRes
 
 	private String workspaceId;
 	public GetMcubeFileTokenRequest() {
-		super("mPaaS", "2020-07-10", "GetMcubeFileToken", "mpaas");
+		super("mPaaS", "2020-07-10", "GetMcubeFileToken");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

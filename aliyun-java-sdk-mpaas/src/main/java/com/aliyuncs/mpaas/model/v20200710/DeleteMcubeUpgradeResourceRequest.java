@@ -35,7 +35,7 @@ public class DeleteMcubeUpgradeResourceRequest extends RpcAcsRequest<DeleteMcube
 
 	private String workspaceId;
 	public DeleteMcubeUpgradeResourceRequest() {
-		super("mPaaS", "2020-07-10", "DeleteMcubeUpgradeResource", "mpaas");
+		super("mPaaS", "2020-07-10", "DeleteMcubeUpgradeResource");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

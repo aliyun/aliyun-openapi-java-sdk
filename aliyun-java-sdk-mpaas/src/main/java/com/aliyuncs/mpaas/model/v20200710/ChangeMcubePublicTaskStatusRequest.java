@@ -35,7 +35,7 @@ public class ChangeMcubePublicTaskStatusRequest extends RpcAcsRequest<ChangeMcub
 
 	private String workspaceId;
 	public ChangeMcubePublicTaskStatusRequest() {
-		super("mPaaS", "2020-07-10", "ChangeMcubePublicTaskStatus", "mpaas");
+		super("mPaaS", "2020-07-10", "ChangeMcubePublicTaskStatus");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

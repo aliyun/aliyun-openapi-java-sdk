@@ -51,7 +51,7 @@ public class CreateOpenSingleDataRequest extends RpcAcsRequest<CreateOpenSingleD
 
 	private String workspaceId;
 	public CreateOpenSingleDataRequest() {
-		super("mPaaS", "2020-07-10", "CreateOpenSingleData", "mpaas");
+		super("mPaaS", "2020-07-10", "CreateOpenSingleData");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

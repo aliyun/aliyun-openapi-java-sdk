@@ -57,7 +57,7 @@ public class PushSimpleRequest extends RpcAcsRequest<PushSimpleResponse> {
 
 	private String workspaceId;
 	public PushSimpleRequest() {
-		super("mPaaS", "2020-07-10", "PushSimple", "mpaas");
+		super("mPaaS", "2020-07-10", "PushSimple");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -33,7 +33,7 @@ public class ListMcubeUpgradeTasksRequest extends RpcAcsRequest<ListMcubeUpgrade
 
 	private String workspaceId;
 	public ListMcubeUpgradeTasksRequest() {
-		super("mPaaS", "2020-07-10", "ListMcubeUpgradeTasks", "mpaas");
+		super("mPaaS", "2020-07-10", "ListMcubeUpgradeTasks");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -35,7 +35,7 @@ public class UploadMcubeRsaKeyRequest extends RpcAcsRequest<UploadMcubeRsaKeyRes
 
 	private String workspaceId;
 	public UploadMcubeRsaKeyRequest() {
-		super("mPaaS", "2020-07-10", "UploadMcubeRsaKey", "mpaas");
+		super("mPaaS", "2020-07-10", "UploadMcubeRsaKey");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

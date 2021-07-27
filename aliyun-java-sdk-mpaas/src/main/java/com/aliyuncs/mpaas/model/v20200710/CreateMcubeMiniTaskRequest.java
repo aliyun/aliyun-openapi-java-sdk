@@ -47,7 +47,7 @@ public class CreateMcubeMiniTaskRequest extends RpcAcsRequest<CreateMcubeMiniTas
 
 	private String workspaceId;
 	public CreateMcubeMiniTaskRequest() {
-		super("mPaaS", "2020-07-10", "CreateMcubeMiniTask", "mpaas");
+		super("mPaaS", "2020-07-10", "CreateMcubeMiniTask");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
