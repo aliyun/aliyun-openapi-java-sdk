@@ -24,40 +24,72 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateTairInstanceResponse extends AcsResponse {
 
-	private String requestId;
+	private Long bandwidth;
+
+	private String chargeType;
+
+	private String config;
+
+	private String connectionDomain;
+
+	private Long connections;
 
 	private String instanceId;
 
 	private String instanceName;
 
-	private String connectionDomain;
+	private String instanceStatus;
 
 	private Integer port;
 
-	private String instanceStatus;
+	private Long qPS;
 
 	private String regionId;
 
-	private Long qPS;
-
-	private Long bandwidth;
-
-	private Long connections;
-
-	private String zoneId;
-
-	private String config;
-
-	private String chargeType;
+	private String requestId;
 
 	private String taskId;
 
-	public String getRequestId() {
-		return this.requestId;
+	private String zoneId;
+
+	public Long getBandwidth() {
+		return this.bandwidth;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setBandwidth(Long bandwidth) {
+		this.bandwidth = bandwidth;
+	}
+
+	public String getChargeType() {
+		return this.chargeType;
+	}
+
+	public void setChargeType(String chargeType) {
+		this.chargeType = chargeType;
+	}
+
+	public String getConfig() {
+		return this.config;
+	}
+
+	public void setConfig(String config) {
+		this.config = config;
+	}
+
+	public String getConnectionDomain() {
+		return this.connectionDomain;
+	}
+
+	public void setConnectionDomain(String connectionDomain) {
+		this.connectionDomain = connectionDomain;
+	}
+
+	public Long getConnections() {
+		return this.connections;
+	}
+
+	public void setConnections(Long connections) {
+		this.connections = connections;
 	}
 
 	public String getInstanceId() {
@@ -76,12 +108,12 @@ public class CreateTairInstanceResponse extends AcsResponse {
 		this.instanceName = instanceName;
 	}
 
-	public String getConnectionDomain() {
-		return this.connectionDomain;
+	public String getInstanceStatus() {
+		return this.instanceStatus;
 	}
 
-	public void setConnectionDomain(String connectionDomain) {
-		this.connectionDomain = connectionDomain;
+	public void setInstanceStatus(String instanceStatus) {
+		this.instanceStatus = instanceStatus;
 	}
 
 	public Integer getPort() {
@@ -92,12 +124,12 @@ public class CreateTairInstanceResponse extends AcsResponse {
 		this.port = port;
 	}
 
-	public String getInstanceStatus() {
-		return this.instanceStatus;
+	public Long getQPS() {
+		return this.qPS;
 	}
 
-	public void setInstanceStatus(String instanceStatus) {
-		this.instanceStatus = instanceStatus;
+	public void setQPS(Long qPS) {
+		this.qPS = qPS;
 	}
 
 	public String getRegionId() {
@@ -108,52 +140,12 @@ public class CreateTairInstanceResponse extends AcsResponse {
 		this.regionId = regionId;
 	}
 
-	public Long getQPS() {
-		return this.qPS;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setQPS(Long qPS) {
-		this.qPS = qPS;
-	}
-
-	public Long getBandwidth() {
-		return this.bandwidth;
-	}
-
-	public void setBandwidth(Long bandwidth) {
-		this.bandwidth = bandwidth;
-	}
-
-	public Long getConnections() {
-		return this.connections;
-	}
-
-	public void setConnections(Long connections) {
-		this.connections = connections;
-	}
-
-	public String getZoneId() {
-		return this.zoneId;
-	}
-
-	public void setZoneId(String zoneId) {
-		this.zoneId = zoneId;
-	}
-
-	public String getConfig() {
-		return this.config;
-	}
-
-	public void setConfig(String config) {
-		this.config = config;
-	}
-
-	public String getChargeType() {
-		return this.chargeType;
-	}
-
-	public void setChargeType(String chargeType) {
-		this.chargeType = chargeType;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getTaskId() {
@@ -162,6 +154,14 @@ public class CreateTairInstanceResponse extends AcsResponse {
 
 	public void setTaskId(String taskId) {
 		this.taskId = taskId;
+	}
+
+	public String getZoneId() {
+		return this.zoneId;
+	}
+
+	public void setZoneId(String zoneId) {
+		this.zoneId = zoneId;
 	}
 
 	@Override
