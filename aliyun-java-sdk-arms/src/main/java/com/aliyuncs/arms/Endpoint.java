@@ -19,21 +19,44 @@ import java.util.HashMap;
 public class Endpoint {
     public static HashMap<String, String> endpointMap = new HashMap<String, String>() {
         {
-            put("ap-south-1", "arms.ap-southeast-1.aliyuncs.com");
-            put("eu-west-1", "arms.ap-southeast-1.aliyuncs.com");
-            put("ap-northeast-1", "arms.ap-southeast-1.aliyuncs.com");
-            put("cn-shenzhen-finance-1", "arms.aliyuncs.com");
-            put("me-east-1", "arms.ap-southeast-1.aliyuncs.com");
+            put("cn-shanghai-internal-test-1", "arms.aliyuncs.com");
+            put("cn-beijing-gov-1", "arms.aliyuncs.com");
+            put("cn-shenzhen-su18-b01", "arms.aliyuncs.com");
+            put("cn-wulanchabu", "arms.aliyuncs.com");
+            put("cn-shanghai-inner", "arms.aliyuncs.com");
+            put("cn-shenzhen-st4-d01", "arms.aliyuncs.com");
+            put("cn-haidian-cm12-c01", "arms.aliyuncs.com");
+            put("cn-hangzhou-internal-prod-1", "arms.aliyuncs.com");
+            put("cn-yushanfang", "arms.aliyuncs.com");
+            put("cn-hongkong-finance-pop", "arms.aliyuncs.com");
+            put("cn-qingdao-nebula", "arms.aliyuncs.com");
+            put("cn-beijing-finance-pop", "arms.aliyuncs.com");
+            put("cn-wuhan", "arms.aliyuncs.com");
+            put("cn-zhangbei", "arms.aliyuncs.com");
+            put("cn-zhengzhou-nebula-1", "arms.aliyuncs.com");
+            put("rus-west-1-pop", "arms.aliyuncs.com");
+            put("cn-shanghai-et15-b01", "arms.aliyuncs.com");
+            put("cn-hangzhou-bj-b01", "arms.aliyuncs.com");
+            put("cn-hangzhou-internal-test-1", "arms.aliyuncs.com");
+            put("eu-west-1-oxs", "arms.aliyuncs.com");
+            put("cn-zhangbei-na61-b01", "arms.aliyuncs.com");
+            put("cn-beijing-finance-1", "arms.aliyuncs.com");
+            put("cn-hangzhou-internal-test-3", "arms.aliyuncs.com");
+            put("cn-hangzhou-internal-test-2", "arms.aliyuncs.com");
+            put("me-east-1", "arms.aliyuncs.com");
             put("cn-chengdu", "arms.aliyuncs.com");
-            put("cn-north-2-gov-1", "arms.aliyuncs.com");
-            put("cn-shanghai-finance-1", "arms.aliyuncs.com");
-            put("cn-hangzhou-finance", "arms.aliyuncs.com");
-            put("ap-southeast-2", "arms.ap-southeast-1.aliyuncs.com");
-            put("ap-southeast-3", "arms.ap-southeast-1.aliyuncs.com");
-            put("eu-central-1", "arms.ap-southeast-1.aliyuncs.com");
+            put("cn-hangzhou-test-306", "arms.aliyuncs.com");
+            put("cn-huhehaote-nebula-1", "arms.aliyuncs.com");
+            put("cn-shanghai-et2-b01", "arms.aliyuncs.com");
+            put("cn-beijing-nu16-b01", "arms.aliyuncs.com");
+            put("cn-edge-1", "arms.aliyuncs.com");
+            put("ap-southeast-2", "arms.aliyuncs.com");
+            put("ap-southeast-3", "arms.aliyuncs.com");
             put("cn-huhehaote", "arms.aliyuncs.com");
-            put("ap-southeast-5", "arms.ap-southeast-1.aliyuncs.com");
-            put("us-east-1", "arms.ap-southeast-1.aliyuncs.com");
+            put("cn-fujian", "arms.aliyuncs.com");
+            put("ap-northeast-2-pop", "arms.aliyuncs.com");
+            put("cn-shenzhen-inner", "arms.aliyuncs.com");
+            put("cn-zhangjiakou-na62-a01", "arms.aliyuncs.com");
         }
     };
 
