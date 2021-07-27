@@ -1,3 +1,7 @@
+2021-07-27 Version: 2.1.4
+- Supported revoke for push.
+- Supported scheduler for push.
+
 2021-07-27 Version: 2.1.3
 - Supported revoke for push.
 - Supported scheduler for push.
