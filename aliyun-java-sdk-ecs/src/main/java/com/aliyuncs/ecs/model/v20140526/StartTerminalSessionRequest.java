@@ -23,16 +23,10 @@ import com.aliyuncs.ecs.Endpoint;
  * @author auto create
  * @version 
  */
-public class ModifyImageSharePermissionRequest extends RpcAcsRequest<ModifyImageSharePermissionResponse> {
+public class StartTerminalSessionRequest extends RpcAcsRequest<StartTerminalSessionResponse> {
 	   
 
 	private Long resourceOwnerId;
-
-	private String imageId;
-
-	private Boolean isPublic;
-
-	private String launchPermission;
 
 	private String resourceOwnerAccount;
 
@@ -40,11 +34,9 @@ public class ModifyImageSharePermissionRequest extends RpcAcsRequest<ModifyImage
 
 	private Long ownerId;
 
-	private List<String> addAccounts;
-
-	private List<String> removeAccounts;
-	public ModifyImageSharePermissionRequest() {
-		super("Ecs", "2014-05-26", "ModifyImageSharePermission", "ecs");
+	private List<String> instanceIds;
+	public StartTerminalSessionRequest() {
+		super("Ecs", "2014-05-26", "StartTerminalSession", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -60,39 +52,6 @@ public class ModifyImageSharePermissionRequest extends RpcAcsRequest<ModifyImage
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getImageId() {
-		return this.imageId;
-	}
-
-	public void setImageId(String imageId) {
-		this.imageId = imageId;
-		if(imageId != null){
-			putQueryParameter("ImageId", imageId);
-		}
-	}
-
-	public Boolean getIsPublic() {
-		return this.isPublic;
-	}
-
-	public void setIsPublic(Boolean isPublic) {
-		this.isPublic = isPublic;
-		if(isPublic != null){
-			putQueryParameter("IsPublic", isPublic.toString());
-		}
-	}
-
-	public String getLaunchPermission() {
-		return this.launchPermission;
-	}
-
-	public void setLaunchPermission(String launchPermission) {
-		this.launchPermission = launchPermission;
-		if(launchPermission != null){
-			putQueryParameter("LaunchPermission", launchPermission);
 		}
 	}
 
@@ -129,35 +88,22 @@ public class ModifyImageSharePermissionRequest extends RpcAcsRequest<ModifyImage
 		}
 	}
 
-	public List<String> getAddAccounts() {
-		return this.addAccounts;
+	public List<String> getInstanceIds() {
+		return this.instanceIds;
 	}
 
-	public void setAddAccounts(List<String> addAccounts) {
-		this.addAccounts = addAccounts;	
-		if (addAccounts != null) {
-			for (int i = 0; i < addAccounts.size(); i++) {
-				putQueryParameter("AddAccount." + (i + 1) , addAccounts.get(i));
-			}
-		}	
-	}
-
-	public List<String> getRemoveAccounts() {
-		return this.removeAccounts;
-	}
-
-	public void setRemoveAccounts(List<String> removeAccounts) {
-		this.removeAccounts = removeAccounts;	
-		if (removeAccounts != null) {
-			for (int i = 0; i < removeAccounts.size(); i++) {
-				putQueryParameter("RemoveAccount." + (i + 1) , removeAccounts.get(i));
+	public void setInstanceIds(List<String> instanceIds) {
+		this.instanceIds = instanceIds;	
+		if (instanceIds != null) {
+			for (int i = 0; i < instanceIds.size(); i++) {
+				putQueryParameter("InstanceId." + (i + 1) , instanceIds.get(i));
 			}
 		}	
 	}
 
 	@Override
-	public Class<ModifyImageSharePermissionResponse> getResponseClass() {
-		return ModifyImageSharePermissionResponse.class;
+	public Class<StartTerminalSessionResponse> getResponseClass() {
+		return StartTerminalSessionResponse.class;
 	}
 
 }

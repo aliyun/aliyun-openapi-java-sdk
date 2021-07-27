@@ -15,26 +15,22 @@
 package com.aliyuncs.ecs.model.v20140526;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ecs.transform.v20140526.AllocatePublicIpAddressResponseUnmarshaller;
+import com.aliyuncs.ecs.transform.v20140526.StartTerminalSessionResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class AllocatePublicIpAddressResponse extends AcsResponse {
-
-	private String ipAddress;
+public class StartTerminalSessionResponse extends AcsResponse {
 
 	private String requestId;
 
-	public String getIpAddress() {
-		return this.ipAddress;
-	}
+	private String sessionId;
 
-	public void setIpAddress(String ipAddress) {
-		this.ipAddress = ipAddress;
-	}
+	private String securityToken;
+
+	private String webSocketUrl;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -44,8 +40,32 @@ public class AllocatePublicIpAddressResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public String getSessionId() {
+		return this.sessionId;
+	}
+
+	public void setSessionId(String sessionId) {
+		this.sessionId = sessionId;
+	}
+
+	public String getSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+	}
+
+	public String getWebSocketUrl() {
+		return this.webSocketUrl;
+	}
+
+	public void setWebSocketUrl(String webSocketUrl) {
+		this.webSocketUrl = webSocketUrl;
+	}
+
 	@Override
-	public AllocatePublicIpAddressResponse getInstance(UnmarshallerContext context) {
-		return	AllocatePublicIpAddressResponseUnmarshaller.unmarshall(this, context);
+	public StartTerminalSessionResponse getInstance(UnmarshallerContext context) {
+		return	StartTerminalSessionResponseUnmarshaller.unmarshall(this, context);
 	}
 }

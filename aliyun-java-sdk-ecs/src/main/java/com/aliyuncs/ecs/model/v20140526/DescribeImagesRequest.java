@@ -28,6 +28,8 @@ public class DescribeImagesRequest extends RpcAcsRequest<DescribeImagesResponse>
 
 	private String actionType;
 
+	private Long imageOwnerId;
+
 	private Long resourceOwnerId;
 
 	private String imageId;
@@ -47,6 +49,8 @@ public class DescribeImagesRequest extends RpcAcsRequest<DescribeImagesResponse>
 	private String imageName;
 
 	private Boolean isSupportCloudinit;
+
+	private Boolean isPublic;
 
 	private Integer pageSize;
 
@@ -90,6 +94,17 @@ public class DescribeImagesRequest extends RpcAcsRequest<DescribeImagesResponse>
 		this.actionType = actionType;
 		if(actionType != null){
 			putQueryParameter("ActionType", actionType);
+		}
+	}
+
+	public Long getImageOwnerId() {
+		return this.imageOwnerId;
+	}
+
+	public void setImageOwnerId(Long imageOwnerId) {
+		this.imageOwnerId = imageOwnerId;
+		if(imageOwnerId != null){
+			putQueryParameter("ImageOwnerId", imageOwnerId.toString());
 		}
 	}
 
@@ -200,6 +215,17 @@ public class DescribeImagesRequest extends RpcAcsRequest<DescribeImagesResponse>
 		this.isSupportCloudinit = isSupportCloudinit;
 		if(isSupportCloudinit != null){
 			putQueryParameter("IsSupportCloudinit", isSupportCloudinit.toString());
+		}
+	}
+
+	public Boolean getIsPublic() {
+		return this.isPublic;
+	}
+
+	public void setIsPublic(Boolean isPublic) {
+		this.isPublic = isPublic;
+		if(isPublic != null){
+			putQueryParameter("IsPublic", isPublic.toString());
 		}
 	}
 

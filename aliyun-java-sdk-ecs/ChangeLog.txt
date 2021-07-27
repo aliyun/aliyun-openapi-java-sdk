@@ -1,3 +1,6 @@
+2021-07-27 Version: 4.24.5
+- Add StartTerminalSession.
+
 2021-07-19 Version: 4.24.4
 - CreateNetworkInterface supports to allocate Ipv6.
 

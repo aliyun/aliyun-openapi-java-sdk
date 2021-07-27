@@ -35,15 +35,15 @@ public class DescribeInstanceModificationPriceResponseUnmarshaller {
 		Price price = new Price();
 		price.setOriginalPrice(_ctx.floatValue("DescribeInstanceModificationPriceResponse.PriceInfo.Price.OriginalPrice"));
 		price.setDiscountPrice(_ctx.floatValue("DescribeInstanceModificationPriceResponse.PriceInfo.Price.DiscountPrice"));
-		price.setTradePrice(_ctx.floatValue("DescribeInstanceModificationPriceResponse.PriceInfo.Price.TradePrice"));
 		price.setCurrency(_ctx.stringValue("DescribeInstanceModificationPriceResponse.PriceInfo.Price.Currency"));
+		price.setTradePrice(_ctx.floatValue("DescribeInstanceModificationPriceResponse.PriceInfo.Price.TradePrice"));
 		priceInfo.setPrice(price);
 
 		List<Rule> rules = new ArrayList<Rule>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeInstanceModificationPriceResponse.PriceInfo.Rules.Length"); i++) {
 			Rule rule = new Rule();
-			rule.setRuleId(_ctx.longValue("DescribeInstanceModificationPriceResponse.PriceInfo.Rules["+ i +"].RuleId"));
 			rule.setDescription(_ctx.stringValue("DescribeInstanceModificationPriceResponse.PriceInfo.Rules["+ i +"].Description"));
+			rule.setRuleId(_ctx.longValue("DescribeInstanceModificationPriceResponse.PriceInfo.Rules["+ i +"].RuleId"));
 
 			rules.add(rule);
 		}

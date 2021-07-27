@@ -133,6 +133,10 @@ public class DescribeImagesResponse extends AcsResponse {
 
 		private String architecture;
 
+		private Boolean isPublic;
+
+		private Long imageOwnerId;
+
 		private List<DiskDeviceMapping> diskDeviceMappings;
 
 		private List<Tag> tags;
@@ -319,6 +323,22 @@ public class DescribeImagesResponse extends AcsResponse {
 
 		public void setArchitecture(String architecture) {
 			this.architecture = architecture;
+		}
+
+		public Boolean getIsPublic() {
+			return this.isPublic;
+		}
+
+		public void setIsPublic(Boolean isPublic) {
+			this.isPublic = isPublic;
+		}
+
+		public Long getImageOwnerId() {
+			return this.imageOwnerId;
+		}
+
+		public void setImageOwnerId(Long imageOwnerId) {
+			this.imageOwnerId = imageOwnerId;
 		}
 
 		public List<DiskDeviceMapping> getDiskDeviceMappings() {
