@@ -72,6 +72,8 @@ public class CreateFileRequest extends RpcAcsRequest<CreateFileResponse> {
 	private String fileDescription;
 
 	private Boolean autoParsing;
+
+	private String schedulerType;
 	public CreateFileRequest() {
 		super("dataworks-public", "2020-05-18", "CreateFile");
 		setMethod(MethodType.POST);
@@ -342,6 +344,17 @@ public class CreateFileRequest extends RpcAcsRequest<CreateFileResponse> {
 		this.autoParsing = autoParsing;
 		if(autoParsing != null){
 			putBodyParameter("AutoParsing", autoParsing.toString());
+		}
+	}
+
+	public String getSchedulerType() {
+		return this.schedulerType;
+	}
+
+	public void setSchedulerType(String schedulerType) {
+		this.schedulerType = schedulerType;
+		if(schedulerType != null){
+			putBodyParameter("SchedulerType", schedulerType);
 		}
 	}
 

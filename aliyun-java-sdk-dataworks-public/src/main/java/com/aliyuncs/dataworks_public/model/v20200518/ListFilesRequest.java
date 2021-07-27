@@ -42,6 +42,8 @@ public class ListFilesRequest extends RpcAcsRequest<ListFilesResponse> {
 	private Long projectId;
 
 	private String useType;
+
+	private Long nodeId;
 	public ListFilesRequest() {
 		super("dataworks-public", "2020-05-18", "ListFiles");
 		setMethod(MethodType.POST);
@@ -147,6 +149,17 @@ public class ListFilesRequest extends RpcAcsRequest<ListFilesResponse> {
 		this.useType = useType;
 		if(useType != null){
 			putBodyParameter("UseType", useType);
+		}
+	}
+
+	public Long getNodeId() {
+		return this.nodeId;
+	}
+
+	public void setNodeId(Long nodeId) {
+		this.nodeId = nodeId;
+		if(nodeId != null){
+			putBodyParameter("NodeId", nodeId.toString());
 		}
 	}
 
