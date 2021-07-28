@@ -22,21 +22,34 @@ import com.aliyuncs.retailcloud.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeJobLogRequest extends RpcAcsRequest<DescribeJobLogResponse> {
+public class DescribePodContainerLogListRequest extends RpcAcsRequest<DescribePodContainerLogListResponse> {
 	   
+
+	private Integer line;
 
 	private Long appId;
 
 	private String podName;
 
 	private Long envId;
-	public DescribeJobLogRequest() {
-		super("retailcloud", "2018-03-13", "DescribeJobLog", "retailcloud");
-		setMethod(MethodType.GET);
+	public DescribePodContainerLogListRequest() {
+		super("retailcloud", "2018-03-13", "DescribePodContainerLogList", "retailcloud");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Integer getLine() {
+		return this.line;
+	}
+
+	public void setLine(Integer line) {
+		this.line = line;
+		if(line != null){
+			putQueryParameter("Line", line.toString());
+		}
 	}
 
 	public Long getAppId() {
@@ -73,8 +86,8 @@ public class DescribeJobLogRequest extends RpcAcsRequest<DescribeJobLogResponse>
 	}
 
 	@Override
-	public Class<DescribeJobLogResponse> getResponseClass() {
-		return DescribeJobLogResponse.class;
+	public Class<DescribePodContainerLogListResponse> getResponseClass() {
+		return DescribePodContainerLogListResponse.class;
 	}
 
 }

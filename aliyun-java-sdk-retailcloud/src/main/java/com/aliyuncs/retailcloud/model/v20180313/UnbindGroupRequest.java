@@ -31,7 +31,7 @@ public class UnbindGroupRequest extends RpcAcsRequest<UnbindGroupResponse> {
 
 	private String name;
 	public UnbindGroupRequest() {
-		super("retailcloud", "2018-03-13", "UnbindGroup");
+		super("retailcloud", "2018-03-13", "UnbindGroup", "retailcloud");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

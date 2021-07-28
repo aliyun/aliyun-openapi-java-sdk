@@ -42,7 +42,7 @@ public class UpdateAppRequest extends RpcAcsRequest<UpdateAppResponse> {
 
 	private List<Integer> middleWareIdLists;
 	public UpdateAppRequest() {
-		super("retailcloud", "2018-03-13", "UpdateApp");
+		super("retailcloud", "2018-03-13", "UpdateApp", "retailcloud");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -22,21 +22,53 @@ import com.aliyuncs.retailcloud.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeJobLogRequest extends RpcAcsRequest<DescribeJobLogResponse> {
+public class DescribeAppMonitorMetricRequest extends RpcAcsRequest<DescribeAppMonitorMetricResponse> {
 	   
+
+	private String deployOrderId;
+
+	private String metric;
 
 	private Long appId;
 
 	private String podName;
 
+	private Long endTime;
+
 	private Long envId;
-	public DescribeJobLogRequest() {
-		super("retailcloud", "2018-03-13", "DescribeJobLog", "retailcloud");
-		setMethod(MethodType.GET);
+
+	private Long startTime;
+
+	private String type;
+	public DescribeAppMonitorMetricRequest() {
+		super("retailcloud", "2018-03-13", "DescribeAppMonitorMetric", "retailcloud");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getDeployOrderId() {
+		return this.deployOrderId;
+	}
+
+	public void setDeployOrderId(String deployOrderId) {
+		this.deployOrderId = deployOrderId;
+		if(deployOrderId != null){
+			putQueryParameter("DeployOrderId", deployOrderId);
+		}
+	}
+
+	public String getMetric() {
+		return this.metric;
+	}
+
+	public void setMetric(String metric) {
+		this.metric = metric;
+		if(metric != null){
+			putQueryParameter("Metric", metric);
+		}
 	}
 
 	public Long getAppId() {
@@ -61,6 +93,17 @@ public class DescribeJobLogRequest extends RpcAcsRequest<DescribeJobLogResponse>
 		}
 	}
 
+	public Long getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(Long endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime.toString());
+		}
+	}
+
 	public Long getEnvId() {
 		return this.envId;
 	}
@@ -72,9 +115,31 @@ public class DescribeJobLogRequest extends RpcAcsRequest<DescribeJobLogResponse>
 		}
 	}
 
+	public Long getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(Long startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime.toString());
+		}
+	}
+
+	public String getType() {
+		return this.type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+		if(type != null){
+			putQueryParameter("Type", type);
+		}
+	}
+
 	@Override
-	public Class<DescribeJobLogResponse> getResponseClass() {
-		return DescribeJobLogResponse.class;
+	public Class<DescribeAppMonitorMetricResponse> getResponseClass() {
+		return DescribeAppMonitorMetricResponse.class;
 	}
 
 }

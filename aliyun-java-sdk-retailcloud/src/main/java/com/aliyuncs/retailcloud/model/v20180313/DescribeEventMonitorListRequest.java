@@ -15,7 +15,6 @@
 package com.aliyuncs.retailcloud.model.v20180313;
 
 import com.aliyuncs.RpcAcsRequest;
-import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.retailcloud.Endpoint;
 
@@ -23,26 +22,28 @@ import com.aliyuncs.retailcloud.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListSlbAPsRequest extends RpcAcsRequest<ListSlbAPsResponse> {
+public class DescribeEventMonitorListRequest extends RpcAcsRequest<DescribeEventMonitorListResponse> {
 	   
 
-	private List<String> protocolLists;
-
-	private String slbId;
+	private String eventLevel;
 
 	private Long appId;
 
-	private String name;
-
 	private Integer pageSize;
+
+	private String podName;
+
+	private Long endTime;
+
+	private String eventType;
 
 	private Long envId;
 
-	private String networkMode;
+	private Long startTime;
 
-	private Integer pageNumber;
-	public ListSlbAPsRequest() {
-		super("retailcloud", "2018-03-13", "ListSlbAPs", "retailcloud");
+	private Integer pageNum;
+	public DescribeEventMonitorListRequest() {
+		super("retailcloud", "2018-03-13", "DescribeEventMonitorList", "retailcloud");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -50,27 +51,14 @@ public class ListSlbAPsRequest extends RpcAcsRequest<ListSlbAPsResponse> {
 		} catch (Exception e) {}
 	}
 
-	public List<String> getProtocolLists() {
-		return this.protocolLists;
+	public String getEventLevel() {
+		return this.eventLevel;
 	}
 
-	public void setProtocolLists(List<String> protocolLists) {
-		this.protocolLists = protocolLists;	
-		if (protocolLists != null) {
-			for (int i = 0; i < protocolLists.size(); i++) {
-				putBodyParameter("ProtocolList." + (i + 1) , protocolLists.get(i));
-			}
-		}	
-	}
-
-	public String getSlbId() {
-		return this.slbId;
-	}
-
-	public void setSlbId(String slbId) {
-		this.slbId = slbId;
-		if(slbId != null){
-			putQueryParameter("SlbId", slbId);
+	public void setEventLevel(String eventLevel) {
+		this.eventLevel = eventLevel;
+		if(eventLevel != null){
+			putQueryParameter("EventLevel", eventLevel);
 		}
 	}
 
@@ -85,17 +73,6 @@ public class ListSlbAPsRequest extends RpcAcsRequest<ListSlbAPsResponse> {
 		}
 	}
 
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
-		}
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
@@ -104,6 +81,39 @@ public class ListSlbAPsRequest extends RpcAcsRequest<ListSlbAPsResponse> {
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getPodName() {
+		return this.podName;
+	}
+
+	public void setPodName(String podName) {
+		this.podName = podName;
+		if(podName != null){
+			putQueryParameter("PodName", podName);
+		}
+	}
+
+	public Long getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(Long endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime.toString());
+		}
+	}
+
+	public String getEventType() {
+		return this.eventType;
+	}
+
+	public void setEventType(String eventType) {
+		this.eventType = eventType;
+		if(eventType != null){
+			putQueryParameter("EventType", eventType);
 		}
 	}
 
@@ -118,31 +128,31 @@ public class ListSlbAPsRequest extends RpcAcsRequest<ListSlbAPsResponse> {
 		}
 	}
 
-	public String getNetworkMode() {
-		return this.networkMode;
+	public Long getStartTime() {
+		return this.startTime;
 	}
 
-	public void setNetworkMode(String networkMode) {
-		this.networkMode = networkMode;
-		if(networkMode != null){
-			putQueryParameter("NetworkMode", networkMode);
+	public void setStartTime(Long startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime.toString());
 		}
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public Integer getPageNum() {
+		return this.pageNum;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
+	public void setPageNum(Integer pageNum) {
+		this.pageNum = pageNum;
+		if(pageNum != null){
+			putQueryParameter("PageNum", pageNum.toString());
 		}
 	}
 
 	@Override
-	public Class<ListSlbAPsResponse> getResponseClass() {
-		return ListSlbAPsResponse.class;
+	public Class<DescribeEventMonitorListResponse> getResponseClass() {
+		return DescribeEventMonitorListResponse.class;
 	}
 
 }

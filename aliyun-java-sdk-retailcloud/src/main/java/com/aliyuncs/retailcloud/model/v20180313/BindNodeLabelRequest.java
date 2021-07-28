@@ -33,7 +33,7 @@ public class BindNodeLabelRequest extends RpcAcsRequest<BindNodeLabelResponse> {
 
 	private String clusterId;
 	public BindNodeLabelRequest() {
-		super("retailcloud", "2018-03-13", "BindNodeLabel");
+		super("retailcloud", "2018-03-13", "BindNodeLabel", "retailcloud");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

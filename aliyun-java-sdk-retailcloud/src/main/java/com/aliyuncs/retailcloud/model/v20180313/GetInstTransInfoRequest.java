@@ -31,7 +31,7 @@ public class GetInstTransInfoRequest extends RpcAcsRequest<GetInstTransInfoRespo
 
 	private String aliyunCommodityCode;
 	public GetInstTransInfoRequest() {
-		super("retailcloud", "2018-03-13", "GetInstTransInfo");
+		super("retailcloud", "2018-03-13", "GetInstTransInfo", "retailcloud");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

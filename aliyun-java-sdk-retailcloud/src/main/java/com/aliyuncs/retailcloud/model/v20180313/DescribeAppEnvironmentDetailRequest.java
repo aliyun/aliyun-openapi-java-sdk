@@ -29,7 +29,7 @@ public class DescribeAppEnvironmentDetailRequest extends RpcAcsRequest<DescribeA
 
 	private Long envId;
 	public DescribeAppEnvironmentDetailRequest() {
-		super("retailcloud", "2018-03-13", "DescribeAppEnvironmentDetail");
+		super("retailcloud", "2018-03-13", "DescribeAppEnvironmentDetail", "retailcloud");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

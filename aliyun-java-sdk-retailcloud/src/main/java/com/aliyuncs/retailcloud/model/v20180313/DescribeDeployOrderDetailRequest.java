@@ -27,7 +27,7 @@ public class DescribeDeployOrderDetailRequest extends RpcAcsRequest<DescribeDepl
 
 	private Long deployOrderId;
 	public DescribeDeployOrderDetailRequest() {
-		super("retailcloud", "2018-03-13", "DescribeDeployOrderDetail");
+		super("retailcloud", "2018-03-13", "DescribeDeployOrderDetail", "retailcloud");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -36,7 +36,7 @@ public class CreateAppMonitorsRequest extends RpcAcsRequest<CreateAppMonitorsRes
 
 	private String silenceTime;
 	public CreateAppMonitorsRequest() {
-		super("retailcloud", "2018-03-13", "CreateAppMonitors");
+		super("retailcloud", "2018-03-13", "CreateAppMonitors", "retailcloud");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

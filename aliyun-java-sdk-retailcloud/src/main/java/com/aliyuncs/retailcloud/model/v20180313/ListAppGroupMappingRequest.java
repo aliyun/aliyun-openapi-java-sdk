@@ -33,7 +33,7 @@ public class ListAppGroupMappingRequest extends RpcAcsRequest<ListAppGroupMappin
 
 	private Integer pageNumber;
 	public ListAppGroupMappingRequest() {
-		super("retailcloud", "2018-03-13", "ListAppGroupMapping");
+		super("retailcloud", "2018-03-13", "ListAppGroupMapping", "retailcloud");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

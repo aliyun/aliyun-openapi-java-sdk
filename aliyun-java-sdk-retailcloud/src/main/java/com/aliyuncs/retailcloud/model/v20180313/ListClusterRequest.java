@@ -33,7 +33,7 @@ public class ListClusterRequest extends RpcAcsRequest<ListClusterResponse> {
 
 	private Integer pageNum;
 	public ListClusterRequest() {
-		super("retailcloud", "2018-03-13", "ListCluster");
+		super("retailcloud", "2018-03-13", "ListCluster", "retailcloud");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

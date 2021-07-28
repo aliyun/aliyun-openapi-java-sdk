@@ -29,7 +29,7 @@ public class CreateAppGroupRequest extends RpcAcsRequest<CreateAppGroupResponse>
 
 	private String name;
 	public CreateAppGroupRequest() {
-		super("retailcloud", "2018-03-13", "CreateAppGroup");
+		super("retailcloud", "2018-03-13", "CreateAppGroup", "retailcloud");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

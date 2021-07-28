@@ -35,7 +35,7 @@ public class ListJobHistoriesRequest extends RpcAcsRequest<ListJobHistoriesRespo
 
 	private String status;
 	public ListJobHistoriesRequest() {
-		super("retailcloud", "2018-03-13", "ListJobHistories");
+		super("retailcloud", "2018-03-13", "ListJobHistories", "retailcloud");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
