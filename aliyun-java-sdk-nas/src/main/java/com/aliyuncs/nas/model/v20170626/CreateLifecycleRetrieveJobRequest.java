@@ -30,7 +30,7 @@ public class CreateLifecycleRetrieveJobRequest extends RpcAcsRequest<CreateLifec
 
 	private List<String> pathss;
 	public CreateLifecycleRetrieveJobRequest() {
-		super("NAS", "2017-06-26", "CreateLifecycleRetrieveJob");
+		super("NAS", "2017-06-26", "CreateLifecycleRetrieveJob", "nas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -31,7 +31,7 @@ public class RemoveClientFromBlackListRequest extends RpcAcsRequest<RemoveClient
 
 	private String fileSystemId;
 	public RemoveClientFromBlackListRequest() {
-		super("NAS", "2017-06-26", "RemoveClientFromBlackList");
+		super("NAS", "2017-06-26", "RemoveClientFromBlackList", "nas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

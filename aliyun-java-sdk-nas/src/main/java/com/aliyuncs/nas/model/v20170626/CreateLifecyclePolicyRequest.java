@@ -38,7 +38,7 @@ public class CreateLifecyclePolicyRequest extends RpcAcsRequest<CreateLifecycleP
 
 	private List<String> pathss;
 	public CreateLifecyclePolicyRequest() {
-		super("NAS", "2017-06-26", "CreateLifecyclePolicy");
+		super("NAS", "2017-06-26", "CreateLifecyclePolicy", "nas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

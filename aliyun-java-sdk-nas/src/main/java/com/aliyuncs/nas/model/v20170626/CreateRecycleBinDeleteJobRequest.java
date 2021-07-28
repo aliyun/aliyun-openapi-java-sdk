@@ -31,7 +31,7 @@ public class CreateRecycleBinDeleteJobRequest extends RpcAcsRequest<CreateRecycl
 
 	private String fileId;
 	public CreateRecycleBinDeleteJobRequest() {
-		super("NAS", "2017-06-26", "CreateRecycleBinDeleteJob");
+		super("NAS", "2017-06-26", "CreateRecycleBinDeleteJob", "nas");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

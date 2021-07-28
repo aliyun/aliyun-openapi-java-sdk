@@ -38,7 +38,7 @@ public class DescribeFileSystemsRequest extends RpcAcsRequest<DescribeFileSystem
 
 	private String vpcId;
 	public DescribeFileSystemsRequest() {
-		super("NAS", "2017-06-26", "DescribeFileSystems");
+		super("NAS", "2017-06-26", "DescribeFileSystems", "nas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

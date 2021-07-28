@@ -39,7 +39,7 @@ public class SetDirQuotaRequest extends RpcAcsRequest<SetDirQuotaResponse> {
 
 	private String userType;
 	public SetDirQuotaRequest() {
-		super("NAS", "2017-06-26", "SetDirQuota");
+		super("NAS", "2017-06-26", "SetDirQuota", "nas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

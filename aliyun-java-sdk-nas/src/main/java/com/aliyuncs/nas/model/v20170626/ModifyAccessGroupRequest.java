@@ -31,7 +31,7 @@ public class ModifyAccessGroupRequest extends RpcAcsRequest<ModifyAccessGroupRes
 
 	private String accessGroupName;
 	public ModifyAccessGroupRequest() {
-		super("NAS", "2017-06-26", "ModifyAccessGroup");
+		super("NAS", "2017-06-26", "ModifyAccessGroup", "nas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

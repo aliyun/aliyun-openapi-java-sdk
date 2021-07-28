@@ -33,7 +33,7 @@ public class CancelDirQuotaRequest extends RpcAcsRequest<CancelDirQuotaResponse>
 
 	private String userType;
 	public CancelDirQuotaRequest() {
-		super("NAS", "2017-06-26", "CancelDirQuota");
+		super("NAS", "2017-06-26", "CancelDirQuota", "nas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

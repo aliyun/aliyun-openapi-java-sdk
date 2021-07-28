@@ -27,7 +27,7 @@ public class GetRecycleBinAttributeRequest extends RpcAcsRequest<GetRecycleBinAt
 
 	private String fileSystemId;
 	public GetRecycleBinAttributeRequest() {
-		super("NAS", "2017-06-26", "GetRecycleBinAttribute");
+		super("NAS", "2017-06-26", "GetRecycleBinAttribute", "nas");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

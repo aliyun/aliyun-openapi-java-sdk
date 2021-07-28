@@ -57,7 +57,7 @@ public class CreateFileSystemRequest extends RpcAcsRequest<CreateFileSystemRespo
 
 	private String kmsKeyId;
 	public CreateFileSystemRequest() {
-		super("NAS", "2017-06-26", "CreateFileSystem");
+		super("NAS", "2017-06-26", "CreateFileSystem", "nas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

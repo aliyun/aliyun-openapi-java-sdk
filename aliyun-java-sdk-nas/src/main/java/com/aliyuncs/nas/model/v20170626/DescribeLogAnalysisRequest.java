@@ -29,7 +29,7 @@ public class DescribeLogAnalysisRequest extends RpcAcsRequest<DescribeLogAnalysi
 
 	private Integer pageSize;
 	public DescribeLogAnalysisRequest() {
-		super("NAS", "2017-06-26", "DescribeLogAnalysis");
+		super("NAS", "2017-06-26", "DescribeLogAnalysis", "nas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

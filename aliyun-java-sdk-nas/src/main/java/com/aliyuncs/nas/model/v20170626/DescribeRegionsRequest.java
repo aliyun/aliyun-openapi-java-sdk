@@ -31,7 +31,7 @@ public class DescribeRegionsRequest extends RpcAcsRequest<DescribeRegionsRespons
 
 	private Integer pageSize;
 	public DescribeRegionsRequest() {
-		super("NAS", "2017-06-26", "DescribeRegions");
+		super("NAS", "2017-06-26", "DescribeRegions", "nas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

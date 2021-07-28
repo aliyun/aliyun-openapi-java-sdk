@@ -30,7 +30,7 @@ public class RemoveTagsRequest extends RpcAcsRequest<RemoveTagsResponse> {
 
 	private String fileSystemId;
 	public RemoveTagsRequest() {
-		super("NAS", "2017-06-26", "RemoveTags");
+		super("NAS", "2017-06-26", "RemoveTags", "nas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

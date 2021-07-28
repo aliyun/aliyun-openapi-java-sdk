@@ -27,7 +27,7 @@ public class CancelRecycleBinJobRequest extends RpcAcsRequest<CancelRecycleBinJo
 
 	private String jobId;
 	public CancelRecycleBinJobRequest() {
-		super("NAS", "2017-06-26", "CancelRecycleBinJob");
+		super("NAS", "2017-06-26", "CancelRecycleBinJob", "nas");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

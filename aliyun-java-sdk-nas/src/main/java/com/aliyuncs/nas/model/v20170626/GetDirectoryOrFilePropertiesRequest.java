@@ -29,7 +29,7 @@ public class GetDirectoryOrFilePropertiesRequest extends RpcAcsRequest<GetDirect
 
 	private String fileSystemId;
 	public GetDirectoryOrFilePropertiesRequest() {
-		super("NAS", "2017-06-26", "GetDirectoryOrFileProperties");
+		super("NAS", "2017-06-26", "GetDirectoryOrFileProperties", "nas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

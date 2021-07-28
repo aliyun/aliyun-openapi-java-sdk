@@ -35,7 +35,7 @@ public class ListRecycleBinJobsRequest extends RpcAcsRequest<ListRecycleBinJobsR
 
 	private String status;
 	public ListRecycleBinJobsRequest() {
-		super("NAS", "2017-06-26", "ListRecycleBinJobs");
+		super("NAS", "2017-06-26", "ListRecycleBinJobs", "nas");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

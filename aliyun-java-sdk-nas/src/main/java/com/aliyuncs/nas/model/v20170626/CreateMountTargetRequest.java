@@ -41,7 +41,7 @@ public class CreateMountTargetRequest extends RpcAcsRequest<CreateMountTargetRes
 
 	private String vpcId;
 	public CreateMountTargetRequest() {
-		super("NAS", "2017-06-26", "CreateMountTarget");
+		super("NAS", "2017-06-26", "CreateMountTarget", "nas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

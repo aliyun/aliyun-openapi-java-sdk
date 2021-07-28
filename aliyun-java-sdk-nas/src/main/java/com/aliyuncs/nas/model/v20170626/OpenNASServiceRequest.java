@@ -25,7 +25,7 @@ import com.aliyuncs.nas.Endpoint;
 public class OpenNASServiceRequest extends RpcAcsRequest<OpenNASServiceResponse> {
 	   
 	public OpenNASServiceRequest() {
-		super("NAS", "2017-06-26", "OpenNASService");
+		super("NAS", "2017-06-26", "OpenNASService", "nas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

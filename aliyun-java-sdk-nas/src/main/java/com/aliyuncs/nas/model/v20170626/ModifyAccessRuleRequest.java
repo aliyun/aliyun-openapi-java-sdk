@@ -41,7 +41,7 @@ public class ModifyAccessRuleRequest extends RpcAcsRequest<ModifyAccessRuleRespo
 
 	private String accessGroupName;
 	public ModifyAccessRuleRequest() {
-		super("NAS", "2017-06-26", "ModifyAccessRule");
+		super("NAS", "2017-06-26", "ModifyAccessRule", "nas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

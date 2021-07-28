@@ -27,7 +27,7 @@ public class CancelLifecycleRetrieveJobRequest extends RpcAcsRequest<CancelLifec
 
 	private String jobId;
 	public CancelLifecycleRetrieveJobRequest() {
-		super("NAS", "2017-06-26", "CancelLifecycleRetrieveJob");
+		super("NAS", "2017-06-26", "CancelLifecycleRetrieveJob", "nas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
