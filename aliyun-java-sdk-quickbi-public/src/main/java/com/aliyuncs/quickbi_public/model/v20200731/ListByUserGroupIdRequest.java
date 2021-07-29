@@ -12,7 +12,7 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.quickbi_public.model.v20200801;
+package com.aliyuncs.quickbi_public.model.v20200731;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
@@ -22,14 +22,12 @@ import com.aliyuncs.quickbi_public.Endpoint;
  * @author auto create
  * @version 
  */
-public class DeleteUserRequest extends RpcAcsRequest<DeleteUserResponse> {
+public class ListByUserGroupIdRequest extends RpcAcsRequest<ListByUserGroupIdResponse> {
 	   
 
-	private String transferUserId;
-
-	private String userId;
-	public DeleteUserRequest() {
-		super("quickbi-public", "2020-08-01", "DeleteUser", "quickbi");
+	private String userGroupIds;
+	public ListByUserGroupIdRequest() {
+		super("quickbi-public", "2020-07-31", "ListByUserGroupId", "quickbi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,31 +35,20 @@ public class DeleteUserRequest extends RpcAcsRequest<DeleteUserResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getTransferUserId() {
-		return this.transferUserId;
+	public String getUserGroupIds() {
+		return this.userGroupIds;
 	}
 
-	public void setTransferUserId(String transferUserId) {
-		this.transferUserId = transferUserId;
-		if(transferUserId != null){
-			putQueryParameter("TransferUserId", transferUserId);
-		}
-	}
-
-	public String getUserId() {
-		return this.userId;
-	}
-
-	public void setUserId(String userId) {
-		this.userId = userId;
-		if(userId != null){
-			putQueryParameter("UserId", userId);
+	public void setUserGroupIds(String userGroupIds) {
+		this.userGroupIds = userGroupIds;
+		if(userGroupIds != null){
+			putQueryParameter("UserGroupIds", userGroupIds);
 		}
 	}
 
 	@Override
-	public Class<DeleteUserResponse> getResponseClass() {
-		return DeleteUserResponse.class;
+	public Class<ListByUserGroupIdResponse> getResponseClass() {
+		return ListByUserGroupIdResponse.class;
 	}
 
 }
