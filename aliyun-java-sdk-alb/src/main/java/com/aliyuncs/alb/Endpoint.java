@@ -17,25 +17,7 @@ package com.aliyuncs.alb;
 import java.util.HashMap;
 
 public class Endpoint {
-    public static HashMap<String, String> endpointMap = new HashMap<String, String>() {
-        {
-            put("cn-shenzhen", "alb.cn-shenzhen.aliyuncs.com");
-            put("cn-beijing", "alb.cn-beijing.aliyuncs.com");
-            put("cn-wulanchabu", "alb.cn-wulanchabu.aliyuncs.com");
-            put("ap-south-1", "alb.ap-south-1.aliyuncs.com");
-            put("ap-northeast-1", "alb.ap-northeast-1.aliyuncs.com");
-            put("cn-chengdu", "alb.cn-chengdu.aliyuncs.com");
-            put("cn-shanghai", "alb.cn-shanghai.aliyuncs.com");
-            put("cn-hongkong", "alb.cn-hongkong.aliyuncs.com");
-            put("ap-southeast-1", "alb.ap-southeast-1.aliyuncs.com");
-            put("ap-southeast-2", "alb.ap-southeast-2.aliyuncs.com");
-            put("eu-central-1", "alb.eu-central-1.aliyuncs.com");
-            put("ap-southeast-5", "alb.ap-southeast-5.aliyuncs.com");
-            put("us-east-1", "alb.us-east-1.aliyuncs.com");
-            put("cn-zhangjiakou", "alb.cn-zhangjiakou.aliyuncs.com");
-            put("cn-hangzhou", "alb.cn-hangzhou.aliyuncs.com");
-        }
-    };
+    public static HashMap<String, String> endpointMap = new HashMap<String, String>() {};
 
-    public static String endpointRegionalType = "central";
+    public static String endpointRegionalType = "regional";
 }
