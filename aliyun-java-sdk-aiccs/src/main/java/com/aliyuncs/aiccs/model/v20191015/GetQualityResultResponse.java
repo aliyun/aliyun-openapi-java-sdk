@@ -25,25 +25,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetQualityResultResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String message;
+
+	private String requestId;
 
 	private String code;
 
-	private Boolean success;
-
 	private String channelTypeName;
 
+	private Boolean success;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getMessage() {
 		return this.message;
@@ -51,6 +43,14 @@ public class GetQualityResultResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getCode() {
@@ -61,20 +61,20 @@ public class GetQualityResultResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
 	public String getChannelTypeName() {
 		return this.channelTypeName;
 	}
 
 	public void setChannelTypeName(String channelTypeName) {
 		this.channelTypeName = channelTypeName;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Data getData() {
@@ -87,20 +87,20 @@ public class GetQualityResultResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Integer totalNum;
+		private Integer pageNo;
 
 		private Integer pageSize;
 
-		private Integer pageNo;
+		private Integer totalNum;
 
 		private List<QualityResultResponseListItem> qualityResultResponseList;
 
-		public Integer getTotalNum() {
-			return this.totalNum;
+		public Integer getPageNo() {
+			return this.pageNo;
 		}
 
-		public void setTotalNum(Integer totalNum) {
-			this.totalNum = totalNum;
+		public void setPageNo(Integer pageNo) {
+			this.pageNo = pageNo;
 		}
 
 		public Integer getPageSize() {
@@ -111,12 +111,12 @@ public class GetQualityResultResponse extends AcsResponse {
 			this.pageSize = pageSize;
 		}
 
-		public Integer getPageNo() {
-			return this.pageNo;
+		public Integer getTotalNum() {
+			return this.totalNum;
 		}
 
-		public void setPageNo(Integer pageNo) {
-			this.pageNo = pageNo;
+		public void setTotalNum(Integer totalNum) {
+			this.totalNum = totalNum;
 		}
 
 		public List<QualityResultResponseListItem> getQualityResultResponseList() {
@@ -129,60 +129,60 @@ public class GetQualityResultResponse extends AcsResponse {
 
 		public static class QualityResultResponseListItem {
 
-			private String groupName;
+			private String touchId;
 
-			private Boolean hitStatus;
+			private String servicerName;
 
-			private String touchStartTime;
+			private String memberName;
 
 			private String projectName;
 
-			private String ruleId;
-
 			private String projectId;
+
+			private String channelType;
 
 			private String channelTypeName;
 
-			private String touchId;
+			private String touchStartTime;
+
+			private String servicerId;
+
+			private String ruleName;
+
+			private String ruleId;
+
+			private String groupName;
 
 			private String groupId;
 
 			private String instanceName;
 
-			private String servicerName;
+			private Boolean hitStatus;
 
 			private String hitDetail;
 
-			private String memberName;
-
-			private String servicerId;
-
-			private String channelType;
-
-			private String ruleName;
-
-			public String getGroupName() {
-				return this.groupName;
+			public String getTouchId() {
+				return this.touchId;
 			}
 
-			public void setGroupName(String groupName) {
-				this.groupName = groupName;
+			public void setTouchId(String touchId) {
+				this.touchId = touchId;
 			}
 
-			public Boolean getHitStatus() {
-				return this.hitStatus;
+			public String getServicerName() {
+				return this.servicerName;
 			}
 
-			public void setHitStatus(Boolean hitStatus) {
-				this.hitStatus = hitStatus;
+			public void setServicerName(String servicerName) {
+				this.servicerName = servicerName;
 			}
 
-			public String getTouchStartTime() {
-				return this.touchStartTime;
+			public String getMemberName() {
+				return this.memberName;
 			}
 
-			public void setTouchStartTime(String touchStartTime) {
-				this.touchStartTime = touchStartTime;
+			public void setMemberName(String memberName) {
+				this.memberName = memberName;
 			}
 
 			public String getProjectName() {
@@ -193,20 +193,20 @@ public class GetQualityResultResponse extends AcsResponse {
 				this.projectName = projectName;
 			}
 
-			public String getRuleId() {
-				return this.ruleId;
-			}
-
-			public void setRuleId(String ruleId) {
-				this.ruleId = ruleId;
-			}
-
 			public String getProjectId() {
 				return this.projectId;
 			}
 
 			public void setProjectId(String projectId) {
 				this.projectId = projectId;
+			}
+
+			public String getChannelType() {
+				return this.channelType;
+			}
+
+			public void setChannelType(String channelType) {
+				this.channelType = channelType;
 			}
 
 			public String getChannelTypeName() {
@@ -217,12 +217,44 @@ public class GetQualityResultResponse extends AcsResponse {
 				this.channelTypeName = channelTypeName;
 			}
 
-			public String getTouchId() {
-				return this.touchId;
+			public String getTouchStartTime() {
+				return this.touchStartTime;
 			}
 
-			public void setTouchId(String touchId) {
-				this.touchId = touchId;
+			public void setTouchStartTime(String touchStartTime) {
+				this.touchStartTime = touchStartTime;
+			}
+
+			public String getServicerId() {
+				return this.servicerId;
+			}
+
+			public void setServicerId(String servicerId) {
+				this.servicerId = servicerId;
+			}
+
+			public String getRuleName() {
+				return this.ruleName;
+			}
+
+			public void setRuleName(String ruleName) {
+				this.ruleName = ruleName;
+			}
+
+			public String getRuleId() {
+				return this.ruleId;
+			}
+
+			public void setRuleId(String ruleId) {
+				this.ruleId = ruleId;
+			}
+
+			public String getGroupName() {
+				return this.groupName;
+			}
+
+			public void setGroupName(String groupName) {
+				this.groupName = groupName;
 			}
 
 			public String getGroupId() {
@@ -241,12 +273,12 @@ public class GetQualityResultResponse extends AcsResponse {
 				this.instanceName = instanceName;
 			}
 
-			public String getServicerName() {
-				return this.servicerName;
+			public Boolean getHitStatus() {
+				return this.hitStatus;
 			}
 
-			public void setServicerName(String servicerName) {
-				this.servicerName = servicerName;
+			public void setHitStatus(Boolean hitStatus) {
+				this.hitStatus = hitStatus;
 			}
 
 			public String getHitDetail() {
@@ -255,38 +287,6 @@ public class GetQualityResultResponse extends AcsResponse {
 
 			public void setHitDetail(String hitDetail) {
 				this.hitDetail = hitDetail;
-			}
-
-			public String getMemberName() {
-				return this.memberName;
-			}
-
-			public void setMemberName(String memberName) {
-				this.memberName = memberName;
-			}
-
-			public String getServicerId() {
-				return this.servicerId;
-			}
-
-			public void setServicerId(String servicerId) {
-				this.servicerId = servicerId;
-			}
-
-			public String getChannelType() {
-				return this.channelType;
-			}
-
-			public void setChannelType(String channelType) {
-				this.channelType = channelType;
-			}
-
-			public String getRuleName() {
-				return this.ruleName;
-			}
-
-			public void setRuleName(String ruleName) {
-				this.ruleName = ruleName;
 			}
 		}
 	}

@@ -32,30 +32,31 @@ public class GetOutbounNumListResponseUnmarshaller {
 		getOutbounNumListResponse.setMessage(_ctx.stringValue("GetOutbounNumListResponse.Message"));
 		getOutbounNumListResponse.setCode(_ctx.stringValue("GetOutbounNumListResponse.Code"));
 		getOutbounNumListResponse.setSuccess(_ctx.booleanValue("GetOutbounNumListResponse.Success"));
+		getOutbounNumListResponse.setHttpStatusCode(_ctx.longValue("GetOutbounNumListResponse.HttpStatusCode"));
 
 		Data data = new Data();
-
-		List<NumItem> num = new ArrayList<NumItem>();
-		for (int i = 0; i < _ctx.lengthValue("GetOutbounNumListResponse.Data.Num.Length"); i++) {
-			NumItem numItem = new NumItem();
-			numItem.setType(_ctx.integerValue("GetOutbounNumListResponse.Data.Num["+ i +"].Type"));
-			numItem.setDescription(_ctx.stringValue("GetOutbounNumListResponse.Data.Num["+ i +"].Description"));
-			numItem.setValue(_ctx.stringValue("GetOutbounNumListResponse.Data.Num["+ i +"].Value"));
-
-			num.add(numItem);
-		}
-		data.setNum(num);
 
 		List<NumGroupItem> numGroup = new ArrayList<NumGroupItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetOutbounNumListResponse.Data.NumGroup.Length"); i++) {
 			NumGroupItem numGroupItem = new NumGroupItem();
 			numGroupItem.setType(_ctx.integerValue("GetOutbounNumListResponse.Data.NumGroup["+ i +"].Type"));
-			numGroupItem.setDescription(_ctx.stringValue("GetOutbounNumListResponse.Data.NumGroup["+ i +"].Description"));
 			numGroupItem.setValue(_ctx.stringValue("GetOutbounNumListResponse.Data.NumGroup["+ i +"].Value"));
+			numGroupItem.setDescription(_ctx.stringValue("GetOutbounNumListResponse.Data.NumGroup["+ i +"].Description"));
 
 			numGroup.add(numGroupItem);
 		}
 		data.setNumGroup(numGroup);
+
+		List<NumItem> num = new ArrayList<NumItem>();
+		for (int i = 0; i < _ctx.lengthValue("GetOutbounNumListResponse.Data.Num.Length"); i++) {
+			NumItem numItem = new NumItem();
+			numItem.setType(_ctx.integerValue("GetOutbounNumListResponse.Data.Num["+ i +"].Type"));
+			numItem.setValue(_ctx.stringValue("GetOutbounNumListResponse.Data.Num["+ i +"].Value"));
+			numItem.setDescription(_ctx.stringValue("GetOutbounNumListResponse.Data.Num["+ i +"].Description"));
+
+			num.add(numItem);
+		}
+		data.setNum(num);
 		getOutbounNumListResponse.setData(data);
 	 
 	 	return getOutbounNumListResponse;

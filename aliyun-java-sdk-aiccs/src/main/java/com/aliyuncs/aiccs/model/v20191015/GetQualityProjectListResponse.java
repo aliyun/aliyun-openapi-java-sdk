@@ -25,9 +25,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetQualityProjectListResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String message;
+
+	private String requestId;
 
 	private String code;
 
@@ -35,20 +35,20 @@ public class GetQualityProjectListResponse extends AcsResponse {
 
 	private Data data;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public String getMessage() {
 		return this.message;
 	}
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getCode() {
@@ -77,13 +77,21 @@ public class GetQualityProjectListResponse extends AcsResponse {
 
 	public static class Data {
 
+		private Integer pageNo;
+
 		private Integer pageSize;
 
 		private Long total;
 
-		private Integer pageNo;
-
 		private List<QualityProjectListItem> qualityProjectList;
+
+		public Integer getPageNo() {
+			return this.pageNo;
+		}
+
+		public void setPageNo(Integer pageNo) {
+			this.pageNo = pageNo;
+		}
 
 		public Integer getPageSize() {
 			return this.pageSize;
@@ -101,14 +109,6 @@ public class GetQualityProjectListResponse extends AcsResponse {
 			this.total = total;
 		}
 
-		public Integer getPageNo() {
-			return this.pageNo;
-		}
-
-		public void setPageNo(Integer pageNo) {
-			this.pageNo = pageNo;
-		}
-
 		public List<QualityProjectListItem> getQualityProjectList() {
 			return this.qualityProjectList;
 		}
@@ -121,27 +121,27 @@ public class GetQualityProjectListResponse extends AcsResponse {
 
 			private Integer status;
 
-			private String modifyTime;
-
 			private Integer qualityType;
-
-			private Integer version;
-
-			private String projectName;
 
 			private String createTime;
 
-			private Long id;
+			private String projectName;
 
 			private Integer checkFreqType;
 
-			private List<Long> servicerList;
+			private Integer version;
+
+			private Long id;
+
+			private String modifyTime;
+
+			private List<Long> qualityRuleIds;
 
 			private List<Long> depList;
 
-			private List<Long> groupList;
+			private List<Long> servicerList;
 
-			private List<Long> qualityRuleIds;
+			private List<Long> groupList;
 
 			public Integer getStatus() {
 				return this.status;
@@ -149,14 +149,6 @@ public class GetQualityProjectListResponse extends AcsResponse {
 
 			public void setStatus(Integer status) {
 				this.status = status;
-			}
-
-			public String getModifyTime() {
-				return this.modifyTime;
-			}
-
-			public void setModifyTime(String modifyTime) {
-				this.modifyTime = modifyTime;
 			}
 
 			public Integer getQualityType() {
@@ -167,12 +159,12 @@ public class GetQualityProjectListResponse extends AcsResponse {
 				this.qualityType = qualityType;
 			}
 
-			public Integer getVersion() {
-				return this.version;
+			public String getCreateTime() {
+				return this.createTime;
 			}
 
-			public void setVersion(Integer version) {
-				this.version = version;
+			public void setCreateTime(String createTime) {
+				this.createTime = createTime;
 			}
 
 			public String getProjectName() {
@@ -183,12 +175,20 @@ public class GetQualityProjectListResponse extends AcsResponse {
 				this.projectName = projectName;
 			}
 
-			public String getCreateTime() {
-				return this.createTime;
+			public Integer getCheckFreqType() {
+				return this.checkFreqType;
 			}
 
-			public void setCreateTime(String createTime) {
-				this.createTime = createTime;
+			public void setCheckFreqType(Integer checkFreqType) {
+				this.checkFreqType = checkFreqType;
+			}
+
+			public Integer getVersion() {
+				return this.version;
+			}
+
+			public void setVersion(Integer version) {
+				this.version = version;
 			}
 
 			public Long getId() {
@@ -199,20 +199,20 @@ public class GetQualityProjectListResponse extends AcsResponse {
 				this.id = id;
 			}
 
-			public Integer getCheckFreqType() {
-				return this.checkFreqType;
+			public String getModifyTime() {
+				return this.modifyTime;
 			}
 
-			public void setCheckFreqType(Integer checkFreqType) {
-				this.checkFreqType = checkFreqType;
+			public void setModifyTime(String modifyTime) {
+				this.modifyTime = modifyTime;
 			}
 
-			public List<Long> getServicerList() {
-				return this.servicerList;
+			public List<Long> getQualityRuleIds() {
+				return this.qualityRuleIds;
 			}
 
-			public void setServicerList(List<Long> servicerList) {
-				this.servicerList = servicerList;
+			public void setQualityRuleIds(List<Long> qualityRuleIds) {
+				this.qualityRuleIds = qualityRuleIds;
 			}
 
 			public List<Long> getDepList() {
@@ -223,20 +223,20 @@ public class GetQualityProjectListResponse extends AcsResponse {
 				this.depList = depList;
 			}
 
+			public List<Long> getServicerList() {
+				return this.servicerList;
+			}
+
+			public void setServicerList(List<Long> servicerList) {
+				this.servicerList = servicerList;
+			}
+
 			public List<Long> getGroupList() {
 				return this.groupList;
 			}
 
 			public void setGroupList(List<Long> groupList) {
 				this.groupList = groupList;
-			}
-
-			public List<Long> getQualityRuleIds() {
-				return this.qualityRuleIds;
-			}
-
-			public void setQualityRuleIds(List<Long> qualityRuleIds) {
-				this.qualityRuleIds = qualityRuleIds;
 			}
 		}
 	}

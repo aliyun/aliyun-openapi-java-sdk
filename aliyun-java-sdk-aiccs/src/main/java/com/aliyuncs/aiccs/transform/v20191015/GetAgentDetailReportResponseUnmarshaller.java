@@ -29,9 +29,9 @@ public class GetAgentDetailReportResponseUnmarshaller {
 		getAgentDetailReportResponse.setSuccess(_ctx.stringValue("GetAgentDetailReportResponse.Success"));
 
 		Data data = new Data();
-		data.setTotalNum(_ctx.longValue("GetAgentDetailReportResponse.Data.TotalNum"));
-		data.setPageSize(_ctx.longValue("GetAgentDetailReportResponse.Data.PageSize"));
 		data.setPageNum(_ctx.longValue("GetAgentDetailReportResponse.Data.PageNum"));
+		data.setPageSize(_ctx.longValue("GetAgentDetailReportResponse.Data.PageSize"));
+		data.setTotalNum(_ctx.longValue("GetAgentDetailReportResponse.Data.TotalNum"));
 		data.setRows(_ctx.stringValue("GetAgentDetailReportResponse.Data.Rows"));
 		getAgentDetailReportResponse.setData(data);
 	 

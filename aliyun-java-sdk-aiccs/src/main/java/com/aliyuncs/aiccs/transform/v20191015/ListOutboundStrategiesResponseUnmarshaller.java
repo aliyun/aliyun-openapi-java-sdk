@@ -34,27 +34,27 @@ public class ListOutboundStrategiesResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("ListOutboundStrategiesResponse.OutboundStrategies.Length"); i++) {
 			OutboundStrategy outboundStrategy = new OutboundStrategy();
 			outboundStrategy.setStatus(_ctx.integerValue("ListOutboundStrategiesResponse.OutboundStrategies["+ i +"].Status"));
-			outboundStrategy.setRobotType(_ctx.integerValue("ListOutboundStrategiesResponse.OutboundStrategies["+ i +"].RobotType"));
-			outboundStrategy.setOutboundStrategyId(_ctx.longValue("ListOutboundStrategiesResponse.OutboundStrategies["+ i +"].OutboundStrategyId"));
-			outboundStrategy.setCreatorId(_ctx.longValue("ListOutboundStrategiesResponse.OutboundStrategies["+ i +"].CreatorId"));
-			outboundStrategy.setOutboundNum(_ctx.stringValue("ListOutboundStrategiesResponse.OutboundStrategies["+ i +"].OutboundNum"));
-			outboundStrategy.setRobotId(_ctx.stringValue("ListOutboundStrategiesResponse.OutboundStrategies["+ i +"].RobotId"));
-			outboundStrategy.setExtAttr(_ctx.stringValue("ListOutboundStrategiesResponse.OutboundStrategies["+ i +"].ExtAttr"));
-			outboundStrategy.setModifierName(_ctx.stringValue("ListOutboundStrategiesResponse.OutboundStrategies["+ i +"].ModifierName"));
-			outboundStrategy.setProcess(_ctx.integerValue("ListOutboundStrategiesResponse.OutboundStrategies["+ i +"].Process"));
 			outboundStrategy.setSuccessRate(_ctx.integerValue("ListOutboundStrategiesResponse.OutboundStrategies["+ i +"].SuccessRate"));
-			outboundStrategy.setResourceAllocation(_ctx.integerValue("ListOutboundStrategiesResponse.OutboundStrategies["+ i +"].ResourceAllocation"));
-			outboundStrategy.setGmtCreateStr(_ctx.stringValue("ListOutboundStrategiesResponse.OutboundStrategies["+ i +"].GmtCreateStr"));
-			outboundStrategy.setOutboundStrategyName(_ctx.stringValue("ListOutboundStrategiesResponse.OutboundStrategies["+ i +"].OutboundStrategyName"));
+			outboundStrategy.setProcess(_ctx.integerValue("ListOutboundStrategiesResponse.OutboundStrategies["+ i +"].Process"));
 			outboundStrategy.setGmtModifiedStr(_ctx.stringValue("ListOutboundStrategiesResponse.OutboundStrategies["+ i +"].GmtModifiedStr"));
-			outboundStrategy.setBuId(_ctx.longValue("ListOutboundStrategiesResponse.OutboundStrategies["+ i +"].BuId"));
-			outboundStrategy.setSceneName(_ctx.stringValue("ListOutboundStrategiesResponse.OutboundStrategies["+ i +"].SceneName"));
-			outboundStrategy.setNumType(_ctx.integerValue("ListOutboundStrategiesResponse.OutboundStrategies["+ i +"].NumType"));
-			outboundStrategy.setRobotName(_ctx.stringValue("ListOutboundStrategiesResponse.OutboundStrategies["+ i +"].RobotName"));
-			outboundStrategy.setDepartmentId(_ctx.longValue("ListOutboundStrategiesResponse.OutboundStrategies["+ i +"].DepartmentId"));
-			outboundStrategy.setRuleCode(_ctx.longValue("ListOutboundStrategiesResponse.OutboundStrategies["+ i +"].RuleCode"));
-			outboundStrategy.setCreatorName(_ctx.stringValue("ListOutboundStrategiesResponse.OutboundStrategies["+ i +"].CreatorName"));
+			outboundStrategy.setOutboundNum(_ctx.stringValue("ListOutboundStrategiesResponse.OutboundStrategies["+ i +"].OutboundNum"));
 			outboundStrategy.setModifierId(_ctx.longValue("ListOutboundStrategiesResponse.OutboundStrategies["+ i +"].ModifierId"));
+			outboundStrategy.setOutboundStrategyName(_ctx.stringValue("ListOutboundStrategiesResponse.OutboundStrategies["+ i +"].OutboundStrategyName"));
+			outboundStrategy.setOutboundStrategyId(_ctx.longValue("ListOutboundStrategiesResponse.OutboundStrategies["+ i +"].OutboundStrategyId"));
+			outboundStrategy.setSceneName(_ctx.stringValue("ListOutboundStrategiesResponse.OutboundStrategies["+ i +"].SceneName"));
+			outboundStrategy.setCreatorId(_ctx.longValue("ListOutboundStrategiesResponse.OutboundStrategies["+ i +"].CreatorId"));
+			outboundStrategy.setRobotName(_ctx.stringValue("ListOutboundStrategiesResponse.OutboundStrategies["+ i +"].RobotName"));
+			outboundStrategy.setModifierName(_ctx.stringValue("ListOutboundStrategiesResponse.OutboundStrategies["+ i +"].ModifierName"));
+			outboundStrategy.setResourceAllocation(_ctx.integerValue("ListOutboundStrategiesResponse.OutboundStrategies["+ i +"].ResourceAllocation"));
+			outboundStrategy.setExtAttr(_ctx.stringValue("ListOutboundStrategiesResponse.OutboundStrategies["+ i +"].ExtAttr"));
+			outboundStrategy.setNumType(_ctx.integerValue("ListOutboundStrategiesResponse.OutboundStrategies["+ i +"].NumType"));
+			outboundStrategy.setBuId(_ctx.longValue("ListOutboundStrategiesResponse.OutboundStrategies["+ i +"].BuId"));
+			outboundStrategy.setRobotId(_ctx.stringValue("ListOutboundStrategiesResponse.OutboundStrategies["+ i +"].RobotId"));
+			outboundStrategy.setCreatorName(_ctx.stringValue("ListOutboundStrategiesResponse.OutboundStrategies["+ i +"].CreatorName"));
+			outboundStrategy.setDepartmentId(_ctx.longValue("ListOutboundStrategiesResponse.OutboundStrategies["+ i +"].DepartmentId"));
+			outboundStrategy.setRobotType(_ctx.integerValue("ListOutboundStrategiesResponse.OutboundStrategies["+ i +"].RobotType"));
+			outboundStrategy.setRuleCode(_ctx.longValue("ListOutboundStrategiesResponse.OutboundStrategies["+ i +"].RuleCode"));
+			outboundStrategy.setGmtCreateStr(_ctx.stringValue("ListOutboundStrategiesResponse.OutboundStrategies["+ i +"].GmtCreateStr"));
 
 			outboundStrategies.add(outboundStrategy);
 		}

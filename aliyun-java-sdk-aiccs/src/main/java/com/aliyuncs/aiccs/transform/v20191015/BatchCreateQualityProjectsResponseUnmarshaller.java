@@ -34,9 +34,9 @@ public class BatchCreateQualityProjectsResponseUnmarshaller {
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("BatchCreateQualityProjectsResponse.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
-			dataItem.setInstanceId(_ctx.stringValue("BatchCreateQualityProjectsResponse.Data["+ i +"].InstanceId"));
 			dataItem.setVersion(_ctx.integerValue("BatchCreateQualityProjectsResponse.Data["+ i +"].Version"));
 			dataItem.setProjectId(_ctx.longValue("BatchCreateQualityProjectsResponse.Data["+ i +"].ProjectId"));
+			dataItem.setInstanceId(_ctx.stringValue("BatchCreateQualityProjectsResponse.Data["+ i +"].InstanceId"));
 
 			data.add(dataItem);
 		}

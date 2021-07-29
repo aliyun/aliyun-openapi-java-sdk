@@ -44,8 +44,8 @@ public class GetAgentIndexRealTimeResponseUnmarshaller {
 		List<ColumnsItem> columns = new ArrayList<ColumnsItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetAgentIndexRealTimeResponse.Data.Columns.Length"); i++) {
 			ColumnsItem columnsItem = new ColumnsItem();
-			columnsItem.setTitle(_ctx.stringValue("GetAgentIndexRealTimeResponse.Data.Columns["+ i +"].Title"));
 			columnsItem.setKey(_ctx.stringValue("GetAgentIndexRealTimeResponse.Data.Columns["+ i +"].Key"));
+			columnsItem.setTitle(_ctx.stringValue("GetAgentIndexRealTimeResponse.Data.Columns["+ i +"].Title"));
 
 			columns.add(columnsItem);
 		}

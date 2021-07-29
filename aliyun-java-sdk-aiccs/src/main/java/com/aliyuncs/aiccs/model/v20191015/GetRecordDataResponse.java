@@ -24,23 +24,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetRecordDataResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String message;
+
+	private String requestId;
 
 	private String code;
 
 	private Boolean success;
 
+	private Long httpStatusCode;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getMessage() {
 		return this.message;
@@ -48,6 +42,14 @@ public class GetRecordDataResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getCode() {
@@ -66,6 +68,14 @@ public class GetRecordDataResponse extends AcsResponse {
 		this.success = success;
 	}
 
+	public Long getHttpStatusCode() {
+		return this.httpStatusCode;
+	}
+
+	public void setHttpStatusCode(Long httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -76,17 +86,9 @@ public class GetRecordDataResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String acid;
-
 		private String ossLink;
 
-		public String getAcid() {
-			return this.acid;
-		}
-
-		public void setAcid(String acid) {
-			this.acid = acid;
-		}
+		private String acid;
 
 		public String getOssLink() {
 			return this.ossLink;
@@ -94,6 +96,14 @@ public class GetRecordDataResponse extends AcsResponse {
 
 		public void setOssLink(String ossLink) {
 			this.ossLink = ossLink;
+		}
+
+		public String getAcid() {
+			return this.acid;
+		}
+
+		public void setAcid(String acid) {
+			this.acid = acid;
 		}
 	}
 

@@ -24,9 +24,9 @@ public class MakeDoubleCallResponseUnmarshaller {
 	public static MakeDoubleCallResponse unmarshall(MakeDoubleCallResponse makeDoubleCallResponse, UnmarshallerContext _ctx) {
 		
 		makeDoubleCallResponse.setRequestId(_ctx.stringValue("MakeDoubleCallResponse.RequestId"));
-		makeDoubleCallResponse.setMessage(_ctx.stringValue("MakeDoubleCallResponse.Message"));
-		makeDoubleCallResponse.setCode(_ctx.stringValue("MakeDoubleCallResponse.Code"));
 		makeDoubleCallResponse.setSuccess(_ctx.booleanValue("MakeDoubleCallResponse.Success"));
+		makeDoubleCallResponse.setCode(_ctx.stringValue("MakeDoubleCallResponse.Code"));
+		makeDoubleCallResponse.setMessage(_ctx.stringValue("MakeDoubleCallResponse.Message"));
 
 		Data data = new Data();
 		data.setAcid(_ctx.stringValue("MakeDoubleCallResponse.Data.Acid"));

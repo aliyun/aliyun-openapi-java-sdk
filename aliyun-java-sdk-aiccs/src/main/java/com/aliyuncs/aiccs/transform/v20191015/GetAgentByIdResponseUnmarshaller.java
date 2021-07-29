@@ -29,13 +29,13 @@ public class GetAgentByIdResponseUnmarshaller {
 		getAgentByIdResponse.setSuccess(_ctx.booleanValue("GetAgentByIdResponse.Success"));
 
 		Data data = new Data();
-		data.setForeignNick(_ctx.stringValue("GetAgentByIdResponse.Data.ForeignNick"));
-		data.setServicerType(_ctx.integerValue("GetAgentByIdResponse.Data.ServicerType"));
-		data.setAgentId(_ctx.integerValue("GetAgentByIdResponse.Data.AgentId"));
-		data.setRealName(_ctx.stringValue("GetAgentByIdResponse.Data.RealName"));
-		data.setForeignKey(_ctx.stringValue("GetAgentByIdResponse.Data.ForeignKey"));
-		data.setCreateUserName(_ctx.stringValue("GetAgentByIdResponse.Data.CreateUserName"));
 		data.setShowName(_ctx.stringValue("GetAgentByIdResponse.Data.ShowName"));
+		data.setForeignKey(_ctx.stringValue("GetAgentByIdResponse.Data.ForeignKey"));
+		data.setServicerType(_ctx.integerValue("GetAgentByIdResponse.Data.ServicerType"));
+		data.setRealName(_ctx.stringValue("GetAgentByIdResponse.Data.RealName"));
+		data.setCreateUserName(_ctx.stringValue("GetAgentByIdResponse.Data.CreateUserName"));
+		data.setAgentId(_ctx.integerValue("GetAgentByIdResponse.Data.AgentId"));
+		data.setForeignNick(_ctx.stringValue("GetAgentByIdResponse.Data.ForeignNick"));
 		getAgentByIdResponse.setData(data);
 	 
 	 	return getAgentByIdResponse;

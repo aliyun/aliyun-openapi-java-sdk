@@ -29,9 +29,9 @@ public class GetAgentBasisStatusResponseUnmarshaller {
 		getAgentBasisStatusResponse.setSuccess(_ctx.stringValue("GetAgentBasisStatusResponse.Success"));
 
 		Data data = new Data();
-		data.setTotalNum(_ctx.integerValue("GetAgentBasisStatusResponse.Data.TotalNum"));
-		data.setPageSize(_ctx.integerValue("GetAgentBasisStatusResponse.Data.PageSize"));
 		data.setPageNum(_ctx.integerValue("GetAgentBasisStatusResponse.Data.PageNum"));
+		data.setPageSize(_ctx.integerValue("GetAgentBasisStatusResponse.Data.PageSize"));
+		data.setTotalNum(_ctx.integerValue("GetAgentBasisStatusResponse.Data.TotalNum"));
 		data.setRows(_ctx.stringValue("GetAgentBasisStatusResponse.Data.Rows"));
 		getAgentBasisStatusResponse.setData(data);
 	 

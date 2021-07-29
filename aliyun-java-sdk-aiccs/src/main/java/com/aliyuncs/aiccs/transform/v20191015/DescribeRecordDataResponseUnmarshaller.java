@@ -25,8 +25,8 @@ public class DescribeRecordDataResponseUnmarshaller {
 		describeRecordDataResponse.setRequestId(_ctx.stringValue("DescribeRecordDataResponse.RequestId"));
 		describeRecordDataResponse.setAcid(_ctx.stringValue("DescribeRecordDataResponse.Acid"));
 		describeRecordDataResponse.setMessage(_ctx.stringValue("DescribeRecordDataResponse.Message"));
-		describeRecordDataResponse.setAgentId(_ctx.stringValue("DescribeRecordDataResponse.AgentId"));
 		describeRecordDataResponse.setOssLink(_ctx.stringValue("DescribeRecordDataResponse.OssLink"));
+		describeRecordDataResponse.setAgentId(_ctx.stringValue("DescribeRecordDataResponse.AgentId"));
 		describeRecordDataResponse.setCode(_ctx.stringValue("DescribeRecordDataResponse.Code"));
 	 
 	 	return describeRecordDataResponse;

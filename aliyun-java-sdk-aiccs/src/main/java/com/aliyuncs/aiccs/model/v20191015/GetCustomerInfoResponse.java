@@ -25,9 +25,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetCustomerInfoResponse extends AcsResponse {
 
-	private String message;
-
 	private String requestId;
+
+	private String message;
 
 	private String code;
 
@@ -35,20 +35,20 @@ public class GetCustomerInfoResponse extends AcsResponse {
 
 	private Data data;
 
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public String getCode() {
@@ -77,33 +77,17 @@ public class GetCustomerInfoResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String outerId;
-
-		private Long userId;
-
 		private String nick;
-
-		private Map<Object,Object> customizeFields;
 
 		private String photo;
 
+		private Long userId;
+
 		private String realName;
 
-		public String getOuterId() {
-			return this.outerId;
-		}
+		private String outerId;
 
-		public void setOuterId(String outerId) {
-			this.outerId = outerId;
-		}
-
-		public Long getUserId() {
-			return this.userId;
-		}
-
-		public void setUserId(Long userId) {
-			this.userId = userId;
-		}
+		private Map<Object,Object> customizeFields;
 
 		public String getNick() {
 			return this.nick;
@@ -111,14 +95,6 @@ public class GetCustomerInfoResponse extends AcsResponse {
 
 		public void setNick(String nick) {
 			this.nick = nick;
-		}
-
-		public Map<Object,Object> getCustomizeFields() {
-			return this.customizeFields;
-		}
-
-		public void setCustomizeFields(Map<Object,Object> customizeFields) {
-			this.customizeFields = customizeFields;
 		}
 
 		public String getPhoto() {
@@ -129,12 +105,36 @@ public class GetCustomerInfoResponse extends AcsResponse {
 			this.photo = photo;
 		}
 
+		public Long getUserId() {
+			return this.userId;
+		}
+
+		public void setUserId(Long userId) {
+			this.userId = userId;
+		}
+
 		public String getRealName() {
 			return this.realName;
 		}
 
 		public void setRealName(String realName) {
 			this.realName = realName;
+		}
+
+		public String getOuterId() {
+			return this.outerId;
+		}
+
+		public void setOuterId(String outerId) {
+			this.outerId = outerId;
+		}
+
+		public Map<Object,Object> getCustomizeFields() {
+			return this.customizeFields;
+		}
+
+		public void setCustomizeFields(Map<Object,Object> customizeFields) {
+			this.customizeFields = customizeFields;
 		}
 	}
 

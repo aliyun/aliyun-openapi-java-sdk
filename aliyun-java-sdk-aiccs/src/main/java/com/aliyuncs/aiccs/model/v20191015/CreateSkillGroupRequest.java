@@ -31,6 +31,8 @@ public class CreateSkillGroupRequest extends RpcAcsRequest<CreateSkillGroupRespo
 
 	private String displayName;
 
+	private Long departmentId;
+
 	private Integer channelType;
 
 	private String skillGroupName;
@@ -75,6 +77,17 @@ public class CreateSkillGroupRequest extends RpcAcsRequest<CreateSkillGroupRespo
 		this.displayName = displayName;
 		if(displayName != null){
 			putBodyParameter("DisplayName", displayName);
+		}
+	}
+
+	public Long getDepartmentId() {
+		return this.departmentId;
+	}
+
+	public void setDepartmentId(Long departmentId) {
+		this.departmentId = departmentId;
+		if(departmentId != null){
+			putBodyParameter("DepartmentId", departmentId.toString());
 		}
 	}
 

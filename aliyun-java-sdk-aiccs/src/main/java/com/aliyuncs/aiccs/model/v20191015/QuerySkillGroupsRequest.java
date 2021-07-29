@@ -31,7 +31,11 @@ public class QuerySkillGroupsRequest extends RpcAcsRequest<QuerySkillGroupsRespo
 
 	private Integer pageNo;
 
+	private Long departmentId;
+
 	private Integer pageSize;
+
+	private Integer channelType;
 	public QuerySkillGroupsRequest() {
 		super("aiccs", "2019-10-15", "QuerySkillGroups");
 		setMethod(MethodType.POST);
@@ -74,6 +78,17 @@ public class QuerySkillGroupsRequest extends RpcAcsRequest<QuerySkillGroupsRespo
 		}
 	}
 
+	public Long getDepartmentId() {
+		return this.departmentId;
+	}
+
+	public void setDepartmentId(Long departmentId) {
+		this.departmentId = departmentId;
+		if(departmentId != null){
+			putQueryParameter("DepartmentId", departmentId.toString());
+		}
+	}
+
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
@@ -82,6 +97,17 @@ public class QuerySkillGroupsRequest extends RpcAcsRequest<QuerySkillGroupsRespo
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public Integer getChannelType() {
+		return this.channelType;
+	}
+
+	public void setChannelType(Integer channelType) {
+		this.channelType = channelType;
+		if(channelType != null){
+			putQueryParameter("ChannelType", channelType.toString());
 		}
 	}
 

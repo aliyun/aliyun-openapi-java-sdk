@@ -35,11 +35,11 @@ public class QuerySkillGroupsResponseUnmarshaller {
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("QuerySkillGroupsResponse.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
-			dataItem.setSkillGroupName(_ctx.stringValue("QuerySkillGroupsResponse.Data["+ i +"].SkillGroupName"));
-			dataItem.setDescription(_ctx.stringValue("QuerySkillGroupsResponse.Data["+ i +"].Description"));
 			dataItem.setDisplayName(_ctx.stringValue("QuerySkillGroupsResponse.Data["+ i +"].DisplayName"));
-			dataItem.setSkillGroupId(_ctx.longValue("QuerySkillGroupsResponse.Data["+ i +"].SkillGroupId"));
+			dataItem.setDescription(_ctx.stringValue("QuerySkillGroupsResponse.Data["+ i +"].Description"));
 			dataItem.setChannelType(_ctx.integerValue("QuerySkillGroupsResponse.Data["+ i +"].ChannelType"));
+			dataItem.setSkillGroupName(_ctx.stringValue("QuerySkillGroupsResponse.Data["+ i +"].SkillGroupName"));
+			dataItem.setSkillGroupId(_ctx.longValue("QuerySkillGroupsResponse.Data["+ i +"].SkillGroupId"));
 
 			data.add(dataItem);
 		}

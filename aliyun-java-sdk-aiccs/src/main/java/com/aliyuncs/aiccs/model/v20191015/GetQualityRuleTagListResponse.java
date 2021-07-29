@@ -25,9 +25,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetQualityRuleTagListResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String message;
+
+	private String requestId;
 
 	private String code;
 
@@ -35,20 +35,20 @@ public class GetQualityRuleTagListResponse extends AcsResponse {
 
 	private List<DataItem> data;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public String getMessage() {
 		return this.message;
 	}
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getCode() {
@@ -77,17 +77,9 @@ public class GetQualityRuleTagListResponse extends AcsResponse {
 
 	public static class DataItem {
 
-		private String ruleTagName;
-
 		private Long ruleTagId;
 
-		public String getRuleTagName() {
-			return this.ruleTagName;
-		}
-
-		public void setRuleTagName(String ruleTagName) {
-			this.ruleTagName = ruleTagName;
-		}
+		private String ruleTagName;
 
 		public Long getRuleTagId() {
 			return this.ruleTagId;
@@ -95,6 +87,14 @@ public class GetQualityRuleTagListResponse extends AcsResponse {
 
 		public void setRuleTagId(Long ruleTagId) {
 			this.ruleTagId = ruleTagId;
+		}
+
+		public String getRuleTagName() {
+			return this.ruleTagName;
+		}
+
+		public void setRuleTagName(String ruleTagName) {
+			this.ruleTagName = ruleTagName;
 		}
 	}
 

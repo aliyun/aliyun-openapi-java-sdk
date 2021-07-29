@@ -24,13 +24,13 @@ public class GetRtcTokenResponseUnmarshaller {
 	public static GetRtcTokenResponse unmarshall(GetRtcTokenResponse getRtcTokenResponse, UnmarshallerContext _ctx) {
 		
 		getRtcTokenResponse.setRequestId(_ctx.stringValue("GetRtcTokenResponse.RequestId"));
-		getRtcTokenResponse.setMessage(_ctx.stringValue("GetRtcTokenResponse.Message"));
-		getRtcTokenResponse.setCode(_ctx.stringValue("GetRtcTokenResponse.Code"));
 		getRtcTokenResponse.setSuccess(_ctx.booleanValue("GetRtcTokenResponse.Success"));
+		getRtcTokenResponse.setCode(_ctx.stringValue("GetRtcTokenResponse.Code"));
+		getRtcTokenResponse.setMessage(_ctx.stringValue("GetRtcTokenResponse.Message"));
 
 		Data data = new Data();
-		data.setRtcId(_ctx.stringValue("GetRtcTokenResponse.Data.RtcId"));
 		data.setToken(_ctx.stringValue("GetRtcTokenResponse.Data.Token"));
+		data.setRtcId(_ctx.stringValue("GetRtcTokenResponse.Data.RtcId"));
 		data.setAccountName(_ctx.stringValue("GetRtcTokenResponse.Data.AccountName"));
 		getRtcTokenResponse.setData(data);
 	 

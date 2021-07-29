@@ -29,9 +29,9 @@ public class GetSkillGroupStatusTotalResponseUnmarshaller {
 		getSkillGroupStatusTotalResponse.setSuccess(_ctx.stringValue("GetSkillGroupStatusTotalResponse.Success"));
 
 		Data data = new Data();
-		data.setTotalNum(_ctx.longValue("GetSkillGroupStatusTotalResponse.Data.TotalNum"));
-		data.setPageSize(_ctx.longValue("GetSkillGroupStatusTotalResponse.Data.PageSize"));
 		data.setPageNum(_ctx.longValue("GetSkillGroupStatusTotalResponse.Data.PageNum"));
+		data.setPageSize(_ctx.longValue("GetSkillGroupStatusTotalResponse.Data.PageSize"));
+		data.setTotalNum(_ctx.longValue("GetSkillGroupStatusTotalResponse.Data.TotalNum"));
 		data.setRows(_ctx.stringValue("GetSkillGroupStatusTotalResponse.Data.Rows"));
 		getSkillGroupStatusTotalResponse.setData(data);
 	 

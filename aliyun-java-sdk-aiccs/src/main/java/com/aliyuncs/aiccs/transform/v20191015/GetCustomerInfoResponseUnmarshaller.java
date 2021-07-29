@@ -30,12 +30,12 @@ public class GetCustomerInfoResponseUnmarshaller {
 		getCustomerInfoResponse.setSuccess(_ctx.booleanValue("GetCustomerInfoResponse.Success"));
 
 		Data data = new Data();
-		data.setOuterId(_ctx.stringValue("GetCustomerInfoResponse.Data.OuterId"));
-		data.setUserId(_ctx.longValue("GetCustomerInfoResponse.Data.UserId"));
 		data.setNick(_ctx.stringValue("GetCustomerInfoResponse.Data.Nick"));
-		data.setCustomizeFields(_ctx.mapValue("GetCustomerInfoResponse.Data.CustomizeFields"));
 		data.setPhoto(_ctx.stringValue("GetCustomerInfoResponse.Data.Photo"));
+		data.setUserId(_ctx.longValue("GetCustomerInfoResponse.Data.UserId"));
 		data.setRealName(_ctx.stringValue("GetCustomerInfoResponse.Data.RealName"));
+		data.setOuterId(_ctx.stringValue("GetCustomerInfoResponse.Data.OuterId"));
+		data.setCustomizeFields(_ctx.mapValue("GetCustomerInfoResponse.Data.CustomizeFields"));
 		getCustomerInfoResponse.setData(data);
 	 
 	 	return getCustomerInfoResponse;

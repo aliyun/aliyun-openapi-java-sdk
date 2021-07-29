@@ -25,9 +25,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryTaskDetailResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String message;
+
+	private String requestId;
 
 	private String httpStatusCode;
 
@@ -37,20 +37,20 @@ public class QueryTaskDetailResponse extends AcsResponse {
 
 	private Data data;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public String getMessage() {
 		return this.message;
 	}
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getHttpStatusCode() {
@@ -87,20 +87,20 @@ public class QueryTaskDetailResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String pageSize;
+		private String totalResults;
 
 		private String currentPage;
 
-		private String totalResults;
+		private String pageSize;
 
 		private List<ListItem> list;
 
-		public String getPageSize() {
-			return this.pageSize;
+		public String getTotalResults() {
+			return this.totalResults;
 		}
 
-		public void setPageSize(String pageSize) {
-			this.pageSize = pageSize;
+		public void setTotalResults(String totalResults) {
+			this.totalResults = totalResults;
 		}
 
 		public String getCurrentPage() {
@@ -111,12 +111,12 @@ public class QueryTaskDetailResponse extends AcsResponse {
 			this.currentPage = currentPage;
 		}
 
-		public String getTotalResults() {
-			return this.totalResults;
+		public String getPageSize() {
+			return this.pageSize;
 		}
 
-		public void setTotalResults(String totalResults) {
-			this.totalResults = totalResults;
+		public void setPageSize(String pageSize) {
+			this.pageSize = pageSize;
 		}
 
 		public List<ListItem> getList() {
@@ -131,41 +131,41 @@ public class QueryTaskDetailResponse extends AcsResponse {
 
 			private Integer status;
 
-			private Integer skillGroup;
-
-			private Long outboundTaskId;
-
-			private Integer priority;
-
-			private Integer outboundNum;
-
-			private Long gmtModified;
-
-			private Long memberId;
-
-			private Long buId;
-
-			private Long gmtCreate;
-
-			private Integer endReason;
+			private String memberName;
 
 			private String servicerName;
 
+			private Integer outboundNum;
+
+			private String retryTime;
+
+			private Integer priority;
+
+			private Long gmtModified;
+
 			private String dnis;
+
+			private Long servicerId;
+
+			private Long outboundTaskId;
+
+			private Long buId;
+
+			private Integer endReason;
+
+			private Long gmtCreate;
+
+			private Long departmentId;
+
+			private String ani;
+
+			private Long memberId;
+
+			private Integer skillGroup;
 
 			private String extAttrs;
 
 			private Integer id;
-
-			private Long departmentId;
-
-			private String retryTime;
-
-			private String memberName;
-
-			private Long servicerId;
-
-			private String ani;
 
 			public Integer getStatus() {
 				return this.status;
@@ -175,76 +175,12 @@ public class QueryTaskDetailResponse extends AcsResponse {
 				this.status = status;
 			}
 
-			public Integer getSkillGroup() {
-				return this.skillGroup;
+			public String getMemberName() {
+				return this.memberName;
 			}
 
-			public void setSkillGroup(Integer skillGroup) {
-				this.skillGroup = skillGroup;
-			}
-
-			public Long getOutboundTaskId() {
-				return this.outboundTaskId;
-			}
-
-			public void setOutboundTaskId(Long outboundTaskId) {
-				this.outboundTaskId = outboundTaskId;
-			}
-
-			public Integer getPriority() {
-				return this.priority;
-			}
-
-			public void setPriority(Integer priority) {
-				this.priority = priority;
-			}
-
-			public Integer getOutboundNum() {
-				return this.outboundNum;
-			}
-
-			public void setOutboundNum(Integer outboundNum) {
-				this.outboundNum = outboundNum;
-			}
-
-			public Long getGmtModified() {
-				return this.gmtModified;
-			}
-
-			public void setGmtModified(Long gmtModified) {
-				this.gmtModified = gmtModified;
-			}
-
-			public Long getMemberId() {
-				return this.memberId;
-			}
-
-			public void setMemberId(Long memberId) {
-				this.memberId = memberId;
-			}
-
-			public Long getBuId() {
-				return this.buId;
-			}
-
-			public void setBuId(Long buId) {
-				this.buId = buId;
-			}
-
-			public Long getGmtCreate() {
-				return this.gmtCreate;
-			}
-
-			public void setGmtCreate(Long gmtCreate) {
-				this.gmtCreate = gmtCreate;
-			}
-
-			public Integer getEndReason() {
-				return this.endReason;
-			}
-
-			public void setEndReason(Integer endReason) {
-				this.endReason = endReason;
+			public void setMemberName(String memberName) {
+				this.memberName = memberName;
 			}
 
 			public String getServicerName() {
@@ -255,12 +191,116 @@ public class QueryTaskDetailResponse extends AcsResponse {
 				this.servicerName = servicerName;
 			}
 
+			public Integer getOutboundNum() {
+				return this.outboundNum;
+			}
+
+			public void setOutboundNum(Integer outboundNum) {
+				this.outboundNum = outboundNum;
+			}
+
+			public String getRetryTime() {
+				return this.retryTime;
+			}
+
+			public void setRetryTime(String retryTime) {
+				this.retryTime = retryTime;
+			}
+
+			public Integer getPriority() {
+				return this.priority;
+			}
+
+			public void setPriority(Integer priority) {
+				this.priority = priority;
+			}
+
+			public Long getGmtModified() {
+				return this.gmtModified;
+			}
+
+			public void setGmtModified(Long gmtModified) {
+				this.gmtModified = gmtModified;
+			}
+
 			public String getDnis() {
 				return this.dnis;
 			}
 
 			public void setDnis(String dnis) {
 				this.dnis = dnis;
+			}
+
+			public Long getServicerId() {
+				return this.servicerId;
+			}
+
+			public void setServicerId(Long servicerId) {
+				this.servicerId = servicerId;
+			}
+
+			public Long getOutboundTaskId() {
+				return this.outboundTaskId;
+			}
+
+			public void setOutboundTaskId(Long outboundTaskId) {
+				this.outboundTaskId = outboundTaskId;
+			}
+
+			public Long getBuId() {
+				return this.buId;
+			}
+
+			public void setBuId(Long buId) {
+				this.buId = buId;
+			}
+
+			public Integer getEndReason() {
+				return this.endReason;
+			}
+
+			public void setEndReason(Integer endReason) {
+				this.endReason = endReason;
+			}
+
+			public Long getGmtCreate() {
+				return this.gmtCreate;
+			}
+
+			public void setGmtCreate(Long gmtCreate) {
+				this.gmtCreate = gmtCreate;
+			}
+
+			public Long getDepartmentId() {
+				return this.departmentId;
+			}
+
+			public void setDepartmentId(Long departmentId) {
+				this.departmentId = departmentId;
+			}
+
+			public String getAni() {
+				return this.ani;
+			}
+
+			public void setAni(String ani) {
+				this.ani = ani;
+			}
+
+			public Long getMemberId() {
+				return this.memberId;
+			}
+
+			public void setMemberId(Long memberId) {
+				this.memberId = memberId;
+			}
+
+			public Integer getSkillGroup() {
+				return this.skillGroup;
+			}
+
+			public void setSkillGroup(Integer skillGroup) {
+				this.skillGroup = skillGroup;
 			}
 
 			public String getExtAttrs() {
@@ -277,46 +317,6 @@ public class QueryTaskDetailResponse extends AcsResponse {
 
 			public void setId(Integer id) {
 				this.id = id;
-			}
-
-			public Long getDepartmentId() {
-				return this.departmentId;
-			}
-
-			public void setDepartmentId(Long departmentId) {
-				this.departmentId = departmentId;
-			}
-
-			public String getRetryTime() {
-				return this.retryTime;
-			}
-
-			public void setRetryTime(String retryTime) {
-				this.retryTime = retryTime;
-			}
-
-			public String getMemberName() {
-				return this.memberName;
-			}
-
-			public void setMemberName(String memberName) {
-				this.memberName = memberName;
-			}
-
-			public Long getServicerId() {
-				return this.servicerId;
-			}
-
-			public void setServicerId(Long servicerId) {
-				this.servicerId = servicerId;
-			}
-
-			public String getAni() {
-				return this.ani;
-			}
-
-			public void setAni(String ani) {
-				this.ani = ani;
 			}
 		}
 	}

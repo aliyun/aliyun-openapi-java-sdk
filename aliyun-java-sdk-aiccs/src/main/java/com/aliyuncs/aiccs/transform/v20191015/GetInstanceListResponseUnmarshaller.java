@@ -28,8 +28,8 @@ public class GetInstanceListResponseUnmarshaller {
 		
 		getInstanceListResponse.setRequestId(_ctx.stringValue("GetInstanceListResponse.RequestId"));
 		getInstanceListResponse.setTotalCount(_ctx.integerValue("GetInstanceListResponse.TotalCount"));
-		getInstanceListResponse.setPageSize(_ctx.integerValue("GetInstanceListResponse.PageSize"));
 		getInstanceListResponse.setMessage(_ctx.stringValue("GetInstanceListResponse.Message"));
+		getInstanceListResponse.setPageSize(_ctx.integerValue("GetInstanceListResponse.PageSize"));
 		getInstanceListResponse.setPageNumber(_ctx.integerValue("GetInstanceListResponse.PageNumber"));
 		getInstanceListResponse.setHttpStatusCode(_ctx.integerValue("GetInstanceListResponse.HttpStatusCode"));
 		getInstanceListResponse.setCode(_ctx.stringValue("GetInstanceListResponse.Code"));

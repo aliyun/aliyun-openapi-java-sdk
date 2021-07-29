@@ -25,21 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListOutboundStrategiesResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String message;
+
+	private String requestId;
 
 	private String code;
 
 	private List<OutboundStrategy> outboundStrategies;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getMessage() {
 		return this.message;
@@ -47,6 +39,14 @@ public class ListOutboundStrategiesResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getCode() {
@@ -69,47 +69,47 @@ public class ListOutboundStrategiesResponse extends AcsResponse {
 
 		private Integer status;
 
-		private Integer robotType;
-
-		private Long outboundStrategyId;
-
-		private Long creatorId;
-
-		private String outboundNum;
-
-		private String robotId;
-
-		private String extAttr;
-
-		private String modifierName;
+		private Integer successRate;
 
 		private Integer process;
 
-		private Integer successRate;
+		private String gmtModifiedStr;
 
-		private Integer resourceAllocation;
+		private String outboundNum;
 
-		private String gmtCreateStr;
+		private Long modifierId;
 
 		private String outboundStrategyName;
 
-		private String gmtModifiedStr;
-
-		private Long buId;
+		private Long outboundStrategyId;
 
 		private String sceneName;
 
-		private Integer numType;
+		private Long creatorId;
 
 		private String robotName;
 
-		private Long departmentId;
+		private String modifierName;
 
-		private Long ruleCode;
+		private Integer resourceAllocation;
+
+		private String extAttr;
+
+		private Integer numType;
+
+		private Long buId;
+
+		private String robotId;
 
 		private String creatorName;
 
-		private Long modifierId;
+		private Long departmentId;
+
+		private Integer robotType;
+
+		private Long ruleCode;
+
+		private String gmtCreateStr;
 
 		public Integer getStatus() {
 			return this.status;
@@ -117,70 +117,6 @@ public class ListOutboundStrategiesResponse extends AcsResponse {
 
 		public void setStatus(Integer status) {
 			this.status = status;
-		}
-
-		public Integer getRobotType() {
-			return this.robotType;
-		}
-
-		public void setRobotType(Integer robotType) {
-			this.robotType = robotType;
-		}
-
-		public Long getOutboundStrategyId() {
-			return this.outboundStrategyId;
-		}
-
-		public void setOutboundStrategyId(Long outboundStrategyId) {
-			this.outboundStrategyId = outboundStrategyId;
-		}
-
-		public Long getCreatorId() {
-			return this.creatorId;
-		}
-
-		public void setCreatorId(Long creatorId) {
-			this.creatorId = creatorId;
-		}
-
-		public String getOutboundNum() {
-			return this.outboundNum;
-		}
-
-		public void setOutboundNum(String outboundNum) {
-			this.outboundNum = outboundNum;
-		}
-
-		public String getRobotId() {
-			return this.robotId;
-		}
-
-		public void setRobotId(String robotId) {
-			this.robotId = robotId;
-		}
-
-		public String getExtAttr() {
-			return this.extAttr;
-		}
-
-		public void setExtAttr(String extAttr) {
-			this.extAttr = extAttr;
-		}
-
-		public String getModifierName() {
-			return this.modifierName;
-		}
-
-		public void setModifierName(String modifierName) {
-			this.modifierName = modifierName;
-		}
-
-		public Integer getProcess() {
-			return this.process;
-		}
-
-		public void setProcess(Integer process) {
-			this.process = process;
 		}
 
 		public Integer getSuccessRate() {
@@ -191,28 +127,12 @@ public class ListOutboundStrategiesResponse extends AcsResponse {
 			this.successRate = successRate;
 		}
 
-		public Integer getResourceAllocation() {
-			return this.resourceAllocation;
+		public Integer getProcess() {
+			return this.process;
 		}
 
-		public void setResourceAllocation(Integer resourceAllocation) {
-			this.resourceAllocation = resourceAllocation;
-		}
-
-		public String getGmtCreateStr() {
-			return this.gmtCreateStr;
-		}
-
-		public void setGmtCreateStr(String gmtCreateStr) {
-			this.gmtCreateStr = gmtCreateStr;
-		}
-
-		public String getOutboundStrategyName() {
-			return this.outboundStrategyName;
-		}
-
-		public void setOutboundStrategyName(String outboundStrategyName) {
-			this.outboundStrategyName = outboundStrategyName;
+		public void setProcess(Integer process) {
+			this.process = process;
 		}
 
 		public String getGmtModifiedStr() {
@@ -223,12 +143,36 @@ public class ListOutboundStrategiesResponse extends AcsResponse {
 			this.gmtModifiedStr = gmtModifiedStr;
 		}
 
-		public Long getBuId() {
-			return this.buId;
+		public String getOutboundNum() {
+			return this.outboundNum;
 		}
 
-		public void setBuId(Long buId) {
-			this.buId = buId;
+		public void setOutboundNum(String outboundNum) {
+			this.outboundNum = outboundNum;
+		}
+
+		public Long getModifierId() {
+			return this.modifierId;
+		}
+
+		public void setModifierId(Long modifierId) {
+			this.modifierId = modifierId;
+		}
+
+		public String getOutboundStrategyName() {
+			return this.outboundStrategyName;
+		}
+
+		public void setOutboundStrategyName(String outboundStrategyName) {
+			this.outboundStrategyName = outboundStrategyName;
+		}
+
+		public Long getOutboundStrategyId() {
+			return this.outboundStrategyId;
+		}
+
+		public void setOutboundStrategyId(Long outboundStrategyId) {
+			this.outboundStrategyId = outboundStrategyId;
 		}
 
 		public String getSceneName() {
@@ -239,12 +183,12 @@ public class ListOutboundStrategiesResponse extends AcsResponse {
 			this.sceneName = sceneName;
 		}
 
-		public Integer getNumType() {
-			return this.numType;
+		public Long getCreatorId() {
+			return this.creatorId;
 		}
 
-		public void setNumType(Integer numType) {
-			this.numType = numType;
+		public void setCreatorId(Long creatorId) {
+			this.creatorId = creatorId;
 		}
 
 		public String getRobotName() {
@@ -255,20 +199,52 @@ public class ListOutboundStrategiesResponse extends AcsResponse {
 			this.robotName = robotName;
 		}
 
-		public Long getDepartmentId() {
-			return this.departmentId;
+		public String getModifierName() {
+			return this.modifierName;
 		}
 
-		public void setDepartmentId(Long departmentId) {
-			this.departmentId = departmentId;
+		public void setModifierName(String modifierName) {
+			this.modifierName = modifierName;
 		}
 
-		public Long getRuleCode() {
-			return this.ruleCode;
+		public Integer getResourceAllocation() {
+			return this.resourceAllocation;
 		}
 
-		public void setRuleCode(Long ruleCode) {
-			this.ruleCode = ruleCode;
+		public void setResourceAllocation(Integer resourceAllocation) {
+			this.resourceAllocation = resourceAllocation;
+		}
+
+		public String getExtAttr() {
+			return this.extAttr;
+		}
+
+		public void setExtAttr(String extAttr) {
+			this.extAttr = extAttr;
+		}
+
+		public Integer getNumType() {
+			return this.numType;
+		}
+
+		public void setNumType(Integer numType) {
+			this.numType = numType;
+		}
+
+		public Long getBuId() {
+			return this.buId;
+		}
+
+		public void setBuId(Long buId) {
+			this.buId = buId;
+		}
+
+		public String getRobotId() {
+			return this.robotId;
+		}
+
+		public void setRobotId(String robotId) {
+			this.robotId = robotId;
 		}
 
 		public String getCreatorName() {
@@ -279,12 +255,36 @@ public class ListOutboundStrategiesResponse extends AcsResponse {
 			this.creatorName = creatorName;
 		}
 
-		public Long getModifierId() {
-			return this.modifierId;
+		public Long getDepartmentId() {
+			return this.departmentId;
 		}
 
-		public void setModifierId(Long modifierId) {
-			this.modifierId = modifierId;
+		public void setDepartmentId(Long departmentId) {
+			this.departmentId = departmentId;
+		}
+
+		public Integer getRobotType() {
+			return this.robotType;
+		}
+
+		public void setRobotType(Integer robotType) {
+			this.robotType = robotType;
+		}
+
+		public Long getRuleCode() {
+			return this.ruleCode;
+		}
+
+		public void setRuleCode(Long ruleCode) {
+			this.ruleCode = ruleCode;
+		}
+
+		public String getGmtCreateStr() {
+			return this.gmtCreateStr;
+		}
+
+		public void setGmtCreateStr(String gmtCreateStr) {
+			this.gmtCreateStr = gmtCreateStr;
 		}
 	}
 

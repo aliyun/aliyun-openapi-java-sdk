@@ -34,10 +34,10 @@ public class ListHotlineRecordResponseUnmarshaller {
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListHotlineRecordResponse.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
-			dataItem.setConnectionId(_ctx.stringValue("ListHotlineRecordResponse.Data["+ i +"].ConnectionId"));
 			dataItem.setEndTime(_ctx.longValue("ListHotlineRecordResponse.Data["+ i +"].EndTime"));
-			dataItem.setCallId(_ctx.stringValue("ListHotlineRecordResponse.Data["+ i +"].CallId"));
 			dataItem.setStartTime(_ctx.longValue("ListHotlineRecordResponse.Data["+ i +"].StartTime"));
+			dataItem.setConnectionId(_ctx.stringValue("ListHotlineRecordResponse.Data["+ i +"].ConnectionId"));
+			dataItem.setCallId(_ctx.stringValue("ListHotlineRecordResponse.Data["+ i +"].CallId"));
 			dataItem.setUrl(_ctx.stringValue("ListHotlineRecordResponse.Data["+ i +"].Url"));
 
 			data.add(dataItem);

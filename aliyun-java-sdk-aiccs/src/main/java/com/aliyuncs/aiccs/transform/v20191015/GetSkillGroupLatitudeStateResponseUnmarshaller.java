@@ -29,9 +29,9 @@ public class GetSkillGroupLatitudeStateResponseUnmarshaller {
 		getSkillGroupLatitudeStateResponse.setSuccess(_ctx.stringValue("GetSkillGroupLatitudeStateResponse.Success"));
 
 		Data data = new Data();
-		data.setTotalNum(_ctx.integerValue("GetSkillGroupLatitudeStateResponse.Data.TotalNum"));
-		data.setPageSize(_ctx.integerValue("GetSkillGroupLatitudeStateResponse.Data.PageSize"));
 		data.setPageNum(_ctx.integerValue("GetSkillGroupLatitudeStateResponse.Data.PageNum"));
+		data.setPageSize(_ctx.integerValue("GetSkillGroupLatitudeStateResponse.Data.PageSize"));
+		data.setTotalNum(_ctx.integerValue("GetSkillGroupLatitudeStateResponse.Data.TotalNum"));
 		data.setRows(_ctx.stringValue("GetSkillGroupLatitudeStateResponse.Data.Rows"));
 		getSkillGroupLatitudeStateResponse.setData(data);
 	 
