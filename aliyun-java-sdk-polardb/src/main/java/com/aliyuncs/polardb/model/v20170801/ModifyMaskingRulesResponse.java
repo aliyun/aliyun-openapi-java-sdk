@@ -15,18 +15,20 @@
 package com.aliyuncs.polardb.model.v20170801;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.polardb.transform.v20170801.CreateParameterGroupResponseUnmarshaller;
+import com.aliyuncs.polardb.transform.v20170801.ModifyMaskingRulesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateParameterGroupResponse extends AcsResponse {
+public class ModifyMaskingRulesResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String parameterGroupId;
+	private String message;
+
+	private Boolean success;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -36,17 +38,25 @@ public class CreateParameterGroupResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getParameterGroupId() {
-		return this.parameterGroupId;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setParameterGroupId(String parameterGroupId) {
-		this.parameterGroupId = parameterGroupId;
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	@Override
-	public CreateParameterGroupResponse getInstance(UnmarshallerContext context) {
-		return	CreateParameterGroupResponseUnmarshaller.unmarshall(this, context);
+	public ModifyMaskingRulesResponse getInstance(UnmarshallerContext context) {
+		return	ModifyMaskingRulesResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

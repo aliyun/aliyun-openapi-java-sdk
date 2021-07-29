@@ -1,3 +1,8 @@
+2021-07-29 Version: 1.8.10
+- Supported DescribeMaskingRules.
+- ModifyMaskingRules.
+- DeleteMaskingRules.
+
 2021-07-07 Version: 1.8.9
 - Supported DescribeGlobalDatabaseNetworks set pages.
 

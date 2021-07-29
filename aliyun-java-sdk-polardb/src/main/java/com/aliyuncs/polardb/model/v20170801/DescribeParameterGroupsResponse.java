@@ -47,23 +47,31 @@ public class DescribeParameterGroupsResponse extends AcsResponse {
 
 	public static class ParameterGroupsItem {
 
+		private String dBType;
+
 		private String dBVersion;
-
-		private String parameterGroupId;
-
-		private String forceRestart;
 
 		private String parameterGroupName;
 
-		private String createTime;
-
-		private String parameterGroupDesc;
+		private String forceRestart;
 
 		private String parameterGroupType;
 
 		private Long parameterCounts;
 
-		private String dBType;
+		private String parameterGroupDesc;
+
+		private String createTime;
+
+		private String parameterGroupId;
+
+		public String getDBType() {
+			return this.dBType;
+		}
+
+		public void setDBType(String dBType) {
+			this.dBType = dBType;
+		}
 
 		public String getDBVersion() {
 			return this.dBVersion;
@@ -71,22 +79,6 @@ public class DescribeParameterGroupsResponse extends AcsResponse {
 
 		public void setDBVersion(String dBVersion) {
 			this.dBVersion = dBVersion;
-		}
-
-		public String getParameterGroupId() {
-			return this.parameterGroupId;
-		}
-
-		public void setParameterGroupId(String parameterGroupId) {
-			this.parameterGroupId = parameterGroupId;
-		}
-
-		public String getForceRestart() {
-			return this.forceRestart;
-		}
-
-		public void setForceRestart(String forceRestart) {
-			this.forceRestart = forceRestart;
 		}
 
 		public String getParameterGroupName() {
@@ -97,20 +89,12 @@ public class DescribeParameterGroupsResponse extends AcsResponse {
 			this.parameterGroupName = parameterGroupName;
 		}
 
-		public String getCreateTime() {
-			return this.createTime;
+		public String getForceRestart() {
+			return this.forceRestart;
 		}
 
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
-		}
-
-		public String getParameterGroupDesc() {
-			return this.parameterGroupDesc;
-		}
-
-		public void setParameterGroupDesc(String parameterGroupDesc) {
-			this.parameterGroupDesc = parameterGroupDesc;
+		public void setForceRestart(String forceRestart) {
+			this.forceRestart = forceRestart;
 		}
 
 		public String getParameterGroupType() {
@@ -129,12 +113,28 @@ public class DescribeParameterGroupsResponse extends AcsResponse {
 			this.parameterCounts = parameterCounts;
 		}
 
-		public String getDBType() {
-			return this.dBType;
+		public String getParameterGroupDesc() {
+			return this.parameterGroupDesc;
 		}
 
-		public void setDBType(String dBType) {
-			this.dBType = dBType;
+		public void setParameterGroupDesc(String parameterGroupDesc) {
+			this.parameterGroupDesc = parameterGroupDesc;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
+
+		public String getParameterGroupId() {
+			return this.parameterGroupId;
+		}
+
+		public void setParameterGroupId(String parameterGroupId) {
+			this.parameterGroupId = parameterGroupId;
 		}
 	}
 

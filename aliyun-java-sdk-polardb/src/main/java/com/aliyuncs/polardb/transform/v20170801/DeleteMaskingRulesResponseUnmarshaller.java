@@ -14,17 +14,18 @@
 
 package com.aliyuncs.polardb.transform.v20170801;
 
-import com.aliyuncs.polardb.model.v20170801.CreateParameterGroupResponse;
+import com.aliyuncs.polardb.model.v20170801.DeleteMaskingRulesResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class CreateParameterGroupResponseUnmarshaller {
+public class DeleteMaskingRulesResponseUnmarshaller {
 
-	public static CreateParameterGroupResponse unmarshall(CreateParameterGroupResponse createParameterGroupResponse, UnmarshallerContext _ctx) {
+	public static DeleteMaskingRulesResponse unmarshall(DeleteMaskingRulesResponse deleteMaskingRulesResponse, UnmarshallerContext _ctx) {
 		
-		createParameterGroupResponse.setRequestId(_ctx.stringValue("CreateParameterGroupResponse.RequestId"));
-		createParameterGroupResponse.setParameterGroupId(_ctx.stringValue("CreateParameterGroupResponse.ParameterGroupId"));
+		deleteMaskingRulesResponse.setRequestId(_ctx.stringValue("DeleteMaskingRulesResponse.RequestId"));
+		deleteMaskingRulesResponse.setMessage(_ctx.stringValue("DeleteMaskingRulesResponse.Message"));
+		deleteMaskingRulesResponse.setSuccess(_ctx.booleanValue("DeleteMaskingRulesResponse.Success"));
 	 
-	 	return createParameterGroupResponse;
+	 	return deleteMaskingRulesResponse;
 	}
 }

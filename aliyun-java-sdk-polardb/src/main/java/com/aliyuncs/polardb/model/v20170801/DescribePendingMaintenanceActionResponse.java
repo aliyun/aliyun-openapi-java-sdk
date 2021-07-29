@@ -25,9 +25,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribePendingMaintenanceActionResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalRecordCount;
+
+	private String requestId;
 
 	private Integer pageSize;
 
@@ -35,20 +35,20 @@ public class DescribePendingMaintenanceActionResponse extends AcsResponse {
 
 	private List<ItemsItem> items;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public Integer getTotalRecordCount() {
 		return this.totalRecordCount;
 	}
 
 	public void setTotalRecordCount(Integer totalRecordCount) {
 		this.totalRecordCount = totalRecordCount;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getPageSize() {
@@ -77,81 +77,33 @@ public class DescribePendingMaintenanceActionResponse extends AcsResponse {
 
 	public static class ItemsItem {
 
-		private Integer id;
-
-		private String dBClusterId;
-
-		private String dBType;
-
-		private String startTime;
-
-		private String switchTime;
-
-		private String deadline;
-
 		private Integer status;
-
-		private String createdTime;
-
-		private String modifiedTime;
-
-		private String resultInfo;
 
 		private String prepareInterval;
 
+		private String deadline;
+
+		private String dBType;
+
 		private String taskType;
+
+		private String startTime;
 
 		private String dBVersion;
 
+		private String modifiedTime;
+
+		private String dBClusterId;
+
 		private String region;
 
-		public Integer getId() {
-			return this.id;
-		}
+		private String resultInfo;
 
-		public void setId(Integer id) {
-			this.id = id;
-		}
+		private String createdTime;
 
-		public String getDBClusterId() {
-			return this.dBClusterId;
-		}
+		private Integer id;
 
-		public void setDBClusterId(String dBClusterId) {
-			this.dBClusterId = dBClusterId;
-		}
-
-		public String getDBType() {
-			return this.dBType;
-		}
-
-		public void setDBType(String dBType) {
-			this.dBType = dBType;
-		}
-
-		public String getStartTime() {
-			return this.startTime;
-		}
-
-		public void setStartTime(String startTime) {
-			this.startTime = startTime;
-		}
-
-		public String getSwitchTime() {
-			return this.switchTime;
-		}
-
-		public void setSwitchTime(String switchTime) {
-			this.switchTime = switchTime;
-		}
-
-		public String getDeadline() {
-			return this.deadline;
-		}
-
-		public void setDeadline(String deadline) {
-			this.deadline = deadline;
-		}
+		private String switchTime;
 
 		public Integer getStatus() {
 			return this.status;
@@ -159,30 +111,6 @@ public class DescribePendingMaintenanceActionResponse extends AcsResponse {
 
 		public void setStatus(Integer status) {
 			this.status = status;
-		}
-
-		public String getCreatedTime() {
-			return this.createdTime;
-		}
-
-		public void setCreatedTime(String createdTime) {
-			this.createdTime = createdTime;
-		}
-
-		public String getModifiedTime() {
-			return this.modifiedTime;
-		}
-
-		public void setModifiedTime(String modifiedTime) {
-			this.modifiedTime = modifiedTime;
-		}
-
-		public String getResultInfo() {
-			return this.resultInfo;
-		}
-
-		public void setResultInfo(String resultInfo) {
-			this.resultInfo = resultInfo;
 		}
 
 		public String getPrepareInterval() {
@@ -193,12 +121,36 @@ public class DescribePendingMaintenanceActionResponse extends AcsResponse {
 			this.prepareInterval = prepareInterval;
 		}
 
+		public String getDeadline() {
+			return this.deadline;
+		}
+
+		public void setDeadline(String deadline) {
+			this.deadline = deadline;
+		}
+
+		public String getDBType() {
+			return this.dBType;
+		}
+
+		public void setDBType(String dBType) {
+			this.dBType = dBType;
+		}
+
 		public String getTaskType() {
 			return this.taskType;
 		}
 
 		public void setTaskType(String taskType) {
 			this.taskType = taskType;
+		}
+
+		public String getStartTime() {
+			return this.startTime;
+		}
+
+		public void setStartTime(String startTime) {
+			this.startTime = startTime;
 		}
 
 		public String getDBVersion() {
@@ -209,12 +161,60 @@ public class DescribePendingMaintenanceActionResponse extends AcsResponse {
 			this.dBVersion = dBVersion;
 		}
 
+		public String getModifiedTime() {
+			return this.modifiedTime;
+		}
+
+		public void setModifiedTime(String modifiedTime) {
+			this.modifiedTime = modifiedTime;
+		}
+
+		public String getDBClusterId() {
+			return this.dBClusterId;
+		}
+
+		public void setDBClusterId(String dBClusterId) {
+			this.dBClusterId = dBClusterId;
+		}
+
 		public String getRegion() {
 			return this.region;
 		}
 
 		public void setRegion(String region) {
 			this.region = region;
+		}
+
+		public String getResultInfo() {
+			return this.resultInfo;
+		}
+
+		public void setResultInfo(String resultInfo) {
+			this.resultInfo = resultInfo;
+		}
+
+		public String getCreatedTime() {
+			return this.createdTime;
+		}
+
+		public void setCreatedTime(String createdTime) {
+			this.createdTime = createdTime;
+		}
+
+		public Integer getId() {
+			return this.id;
+		}
+
+		public void setId(Integer id) {
+			this.id = id;
+		}
+
+		public String getSwitchTime() {
+			return this.switchTime;
+		}
+
+		public void setSwitchTime(String switchTime) {
+			this.switchTime = switchTime;
 		}
 	}
 
