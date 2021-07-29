@@ -33,7 +33,7 @@ public class DescribePodContainerLogListRequest extends RpcAcsRequest<DescribePo
 
 	private Long envId;
 	public DescribePodContainerLogListRequest() {
-		super("retailcloud", "2018-03-13", "DescribePodContainerLogList", "retailcloud");
+		super("retailcloud", "2018-03-13", "DescribePodContainerLogList");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

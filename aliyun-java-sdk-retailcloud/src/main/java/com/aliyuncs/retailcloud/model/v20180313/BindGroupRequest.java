@@ -31,7 +31,7 @@ public class BindGroupRequest extends RpcAcsRequest<BindGroupResponse> {
 
 	private String name;
 	public BindGroupRequest() {
-		super("retailcloud", "2018-03-13", "BindGroup", "retailcloud");
+		super("retailcloud", "2018-03-13", "BindGroup");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

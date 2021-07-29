@@ -41,7 +41,7 @@ public class DescribeAppMonitorMetricRequest extends RpcAcsRequest<DescribeAppMo
 
 	private String type;
 	public DescribeAppMonitorMetricRequest() {
-		super("retailcloud", "2018-03-13", "DescribeAppMonitorMetric", "retailcloud");
+		super("retailcloud", "2018-03-13", "DescribeAppMonitorMetric");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

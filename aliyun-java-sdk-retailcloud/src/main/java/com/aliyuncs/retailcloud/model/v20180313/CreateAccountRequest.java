@@ -33,7 +33,7 @@ public class CreateAccountRequest extends RpcAcsRequest<CreateAccountResponse> {
 
 	private String dbInstanceId;
 	public CreateAccountRequest() {
-		super("retailcloud", "2018-03-13", "CreateAccount", "retailcloud");
+		super("retailcloud", "2018-03-13", "CreateAccount");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

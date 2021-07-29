@@ -43,7 +43,7 @@ public class DescribeEventMonitorListRequest extends RpcAcsRequest<DescribeEvent
 
 	private Integer pageNum;
 	public DescribeEventMonitorListRequest() {
-		super("retailcloud", "2018-03-13", "DescribeEventMonitorList", "retailcloud");
+		super("retailcloud", "2018-03-13", "DescribeEventMonitorList");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

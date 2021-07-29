@@ -29,7 +29,7 @@ public class DeleteAppGroupRequest extends RpcAcsRequest<DeleteAppGroupResponse>
 
 	private Boolean force;
 	public DeleteAppGroupRequest() {
-		super("retailcloud", "2018-03-13", "DeleteAppGroup", "retailcloud");
+		super("retailcloud", "2018-03-13", "DeleteAppGroup");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

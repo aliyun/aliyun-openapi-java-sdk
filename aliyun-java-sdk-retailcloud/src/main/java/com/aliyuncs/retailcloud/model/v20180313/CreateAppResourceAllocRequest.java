@@ -31,7 +31,7 @@ public class CreateAppResourceAllocRequest extends RpcAcsRequest<CreateAppResour
 
 	private String clusterId;
 	public CreateAppResourceAllocRequest() {
-		super("retailcloud", "2018-03-13", "CreateAppResourceAlloc", "retailcloud");
+		super("retailcloud", "2018-03-13", "CreateAppResourceAlloc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
