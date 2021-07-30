@@ -24,136 +24,49 @@ import com.aliyuncs.http.MethodType;
 public class PushDetectDataRequest extends RpcAcsRequest<PushDetectDataResponse> {
 	   
 
-	private String errorMessage;
+	private String detectInfo;
 
-	private String schema;
-
-	private String caseOwner;
-
-	private Long regionCode;
-
-	private Long detectId;
-
-	private String endTime;
-
-	private String remark;
-
-	private String startTime;
-
-	private String env;
+	private String environment;
 
 	private String appName;
 
-	private Long processId;
+	private Long detectId;
 
 	private String requestId;
+
+	private String caseId;
+
+	private String remark;
 
 	private String api;
 
 	private String detailUrl;
 
-	private String errorCode;
+	private String caseName;
 	public PushDetectDataRequest() {
 		super("Xingzhen", "2019-11-21", "PushDetectData");
 		setMethod(MethodType.POST);
 	}
 
-	public String getErrorMessage() {
-		return this.errorMessage;
+	public String getDetectInfo() {
+		return this.detectInfo;
 	}
 
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-		if(errorMessage != null){
-			putQueryParameter("ErrorMessage", errorMessage);
+	public void setDetectInfo(String detectInfo) {
+		this.detectInfo = detectInfo;
+		if(detectInfo != null){
+			putBodyParameter("DetectInfo", detectInfo);
 		}
 	}
 
-	public String getSchema() {
-		return this.schema;
+	public String getEnvironment() {
+		return this.environment;
 	}
 
-	public void setSchema(String schema) {
-		this.schema = schema;
-		if(schema != null){
-			putQueryParameter("Schema", schema);
-		}
-	}
-
-	public String getCaseOwner() {
-		return this.caseOwner;
-	}
-
-	public void setCaseOwner(String caseOwner) {
-		this.caseOwner = caseOwner;
-		if(caseOwner != null){
-			putQueryParameter("CaseOwner", caseOwner);
-		}
-	}
-
-	public Long getRegionCode() {
-		return this.regionCode;
-	}
-
-	public void setRegionCode(Long regionCode) {
-		this.regionCode = regionCode;
-		if(regionCode != null){
-			putQueryParameter("RegionCode", regionCode.toString());
-		}
-	}
-
-	public Long getDetectId() {
-		return this.detectId;
-	}
-
-	public void setDetectId(Long detectId) {
-		this.detectId = detectId;
-		if(detectId != null){
-			putQueryParameter("DetectId", detectId.toString());
-		}
-	}
-
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime);
-		}
-	}
-
-	public String getRemark() {
-		return this.remark;
-	}
-
-	public void setRemark(String remark) {
-		this.remark = remark;
-		if(remark != null){
-			putQueryParameter("Remark", remark);
-		}
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
-		}
-	}
-
-	public String getEnv() {
-		return this.env;
-	}
-
-	public void setEnv(String env) {
-		this.env = env;
-		if(env != null){
-			putQueryParameter("Env", env);
+	public void setEnvironment(String environment) {
+		this.environment = environment;
+		if(environment != null){
+			putQueryParameter("Environment", environment);
 		}
 	}
 
@@ -168,14 +81,14 @@ public class PushDetectDataRequest extends RpcAcsRequest<PushDetectDataResponse>
 		}
 	}
 
-	public Long getProcessId() {
-		return this.processId;
+	public Long getDetectId() {
+		return this.detectId;
 	}
 
-	public void setProcessId(Long processId) {
-		this.processId = processId;
-		if(processId != null){
-			putQueryParameter("ProcessId", processId.toString());
+	public void setDetectId(Long detectId) {
+		this.detectId = detectId;
+		if(detectId != null){
+			putQueryParameter("DetectId", detectId.toString());
 		}
 	}
 
@@ -187,6 +100,28 @@ public class PushDetectDataRequest extends RpcAcsRequest<PushDetectDataResponse>
 		this.requestId = requestId;
 		if(requestId != null){
 			putQueryParameter("RequestId", requestId);
+		}
+	}
+
+	public String getCaseId() {
+		return this.caseId;
+	}
+
+	public void setCaseId(String caseId) {
+		this.caseId = caseId;
+		if(caseId != null){
+			putQueryParameter("CaseId", caseId);
+		}
+	}
+
+	public String getRemark() {
+		return this.remark;
+	}
+
+	public void setRemark(String remark) {
+		this.remark = remark;
+		if(remark != null){
+			putQueryParameter("Remark", remark);
 		}
 	}
 
@@ -212,14 +147,14 @@ public class PushDetectDataRequest extends RpcAcsRequest<PushDetectDataResponse>
 		}
 	}
 
-	public String getErrorCode() {
-		return this.errorCode;
+	public String getCaseName() {
+		return this.caseName;
 	}
 
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
-		if(errorCode != null){
-			putQueryParameter("ErrorCode", errorCode);
+	public void setCaseName(String caseName) {
+		this.caseName = caseName;
+		if(caseName != null){
+			putQueryParameter("CaseName", caseName);
 		}
 	}
 
