@@ -28,6 +28,12 @@ public class QueryRobotTaskListResponse extends AcsResponse {
 
 	private String data;
 
+	private String pageSize;
+
+	private String pageNo;
+
+	private String totalCount;
+
 	private String code;
 
 	private String message;
@@ -46,6 +52,30 @@ public class QueryRobotTaskListResponse extends AcsResponse {
 
 	public void setData(String data) {
 		this.data = data;
+	}
+
+	public String getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(String pageSize) {
+		this.pageSize = pageSize;
+	}
+
+	public String getPageNo() {
+		return this.pageNo;
+	}
+
+	public void setPageNo(String pageNo) {
+		this.pageNo = pageNo;
+	}
+
+	public String getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(String totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public String getCode() {

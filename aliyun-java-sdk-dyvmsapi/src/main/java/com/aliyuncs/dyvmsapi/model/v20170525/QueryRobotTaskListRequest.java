@@ -16,6 +16,7 @@ package com.aliyuncs.dyvmsapi.model.v20170525;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.dyvmsapi.Endpoint;
 
 /**
  * @author auto create
@@ -42,6 +43,10 @@ public class QueryRobotTaskListRequest extends RpcAcsRequest<QueryRobotTaskListR
 	public QueryRobotTaskListRequest() {
 		super("Dyvmsapi", "2017-05-25", "QueryRobotTaskList", "dyvms");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getResourceOwnerId() {
