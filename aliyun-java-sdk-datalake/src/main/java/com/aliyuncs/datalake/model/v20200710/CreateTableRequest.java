@@ -24,6 +24,8 @@ import com.aliyuncs.datalake.Endpoint;
  */
 public class CreateTableRequest extends RoaAcsRequest<CreateTableResponse> {
 	   
+
+	private String body;
 	public CreateTableRequest() {
 		super("DataLake", "2020-07-10", "CreateTable");
 		setUriPattern("/api/metastore/catalogs/databases/tables");
@@ -32,6 +34,17 @@ public class CreateTableRequest extends RoaAcsRequest<CreateTableResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getBody() {
+		return this.body;
+	}
+
+	public void setBody(String body) {
+		this.body = body;
+		if(body != null){
+			putBodyParameter("Body", body);
+		}
 	}
 
 	@Override

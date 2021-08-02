@@ -1,3 +1,6 @@
+2021-08-02 Version: 1.1.8-SNAPSHOT
+- Update.
+
 2021-04-16 Version: 1.1.7-SNAPSHOT
 - Add connectivity check.
 
