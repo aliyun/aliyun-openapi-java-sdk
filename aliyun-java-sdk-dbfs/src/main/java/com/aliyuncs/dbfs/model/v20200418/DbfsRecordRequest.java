@@ -25,11 +25,11 @@ import com.aliyuncs.dbfs.Endpoint;
 public class DbfsRecordRequest extends RpcAcsRequest<DbfsRecordResponse> {
 	   
 
+	private String data;
+
 	private Integer pageNumber;
 
 	private Integer pageSize;
-
-	private String batchStrategyNo;
 	public DbfsRecordRequest() {
 		super("DBFS", "2020-04-18", "DbfsRecord");
 		setMethod(MethodType.POST);
@@ -37,6 +37,17 @@ public class DbfsRecordRequest extends RpcAcsRequest<DbfsRecordResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getData() {
+		return this.data;
+	}
+
+	public void setData(String data) {
+		this.data = data;
+		if(data != null){
+			putQueryParameter("Data", data);
+		}
 	}
 
 	public Integer getPageNumber() {
@@ -58,17 +69,6 @@ public class DbfsRecordRequest extends RpcAcsRequest<DbfsRecordResponse> {
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public String getBatchStrategyNo() {
-		return this.batchStrategyNo;
-	}
-
-	public void setBatchStrategyNo(String batchStrategyNo) {
-		this.batchStrategyNo = batchStrategyNo;
-		if(batchStrategyNo != null){
-			putQueryParameter("BatchStrategyNo", batchStrategyNo);
 		}
 	}
 

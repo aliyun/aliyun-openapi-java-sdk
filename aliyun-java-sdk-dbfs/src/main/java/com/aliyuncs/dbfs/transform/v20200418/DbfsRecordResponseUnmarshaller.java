@@ -27,6 +27,9 @@ public class DbfsRecordResponseUnmarshaller {
 	public static DbfsRecordResponse unmarshall(DbfsRecordResponse dbfsRecordResponse, UnmarshallerContext _ctx) {
 		
 		dbfsRecordResponse.setRequestId(_ctx.stringValue("DbfsRecordResponse.RequestId"));
+		dbfsRecordResponse.setPageNo(_ctx.longValue("DbfsRecordResponse.PageNo"));
+		dbfsRecordResponse.setPageSize(_ctx.longValue("DbfsRecordResponse.PageSize"));
+		dbfsRecordResponse.setTotal(_ctx.longValue("DbfsRecordResponse.Total"));
 
 		List<RecordsItem> records = new ArrayList<RecordsItem>();
 		for (int i = 0; i < _ctx.lengthValue("DbfsRecordResponse.Records.Length"); i++) {
