@@ -34,8 +34,8 @@ public class RecognizeSceneResponseUnmarshaller {
 		List<Tag> tags = new ArrayList<Tag>();
 		for (int i = 0; i < _ctx.lengthValue("RecognizeSceneResponse.Data.Tags.Length"); i++) {
 			Tag tag = new Tag();
-			tag.setConfidence(_ctx.floatValue("RecognizeSceneResponse.Data.Tags["+ i +"].Confidence"));
 			tag.setValue(_ctx.stringValue("RecognizeSceneResponse.Data.Tags["+ i +"].Value"));
+			tag.setConfidence(_ctx.floatValue("RecognizeSceneResponse.Data.Tags["+ i +"].Confidence"));
 
 			tags.add(tag);
 		}

@@ -1,3 +1,6 @@
+2021-08-02 Version: 1.0.13
+- Update TaggingImage.
+
 2021-02-04 Version: 1.0.12
 - Update TaggingImage.
 

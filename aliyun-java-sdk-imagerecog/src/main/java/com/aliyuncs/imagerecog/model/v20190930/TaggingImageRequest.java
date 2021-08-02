@@ -25,7 +25,7 @@ import com.aliyuncs.imagerecog.Endpoint;
 public class TaggingImageRequest extends RpcAcsRequest<TaggingImageResponse> {
 	   
 
-	private Boolean async;
+	private String mode;
 
 	private String imageURL;
 	public TaggingImageRequest() {
@@ -37,14 +37,14 @@ public class TaggingImageRequest extends RpcAcsRequest<TaggingImageResponse> {
 		} catch (Exception e) {}
 	}
 
-	public Boolean getAsync() {
-		return this.async;
+	public String getMode() {
+		return this.mode;
 	}
 
-	public void setAsync(Boolean async) {
-		this.async = async;
-		if(async != null){
-			putBodyParameter("Async", async.toString());
+	public void setMode(String mode) {
+		this.mode = mode;
+		if(mode != null){
+			putBodyParameter("Mode", mode);
 		}
 	}
 

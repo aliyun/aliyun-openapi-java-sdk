@@ -28,17 +28,17 @@ public class RecognizeFoodResponseUnmarshaller {
 	public static RecognizeFoodResponse unmarshall(RecognizeFoodResponse recognizeFoodResponse, UnmarshallerContext _ctx) {
 		
 		recognizeFoodResponse.setRequestId(_ctx.stringValue("RecognizeFoodResponse.RequestId"));
-		recognizeFoodResponse.setMessage(_ctx.stringValue("RecognizeFoodResponse.Message"));
 		recognizeFoodResponse.setCode(_ctx.stringValue("RecognizeFoodResponse.Code"));
+		recognizeFoodResponse.setMessage(_ctx.stringValue("RecognizeFoodResponse.Message"));
 
 		Data data = new Data();
 
 		List<TopFivesItem> topFives = new ArrayList<TopFivesItem>();
 		for (int i = 0; i < _ctx.lengthValue("RecognizeFoodResponse.Data.TopFives.Length"); i++) {
 			TopFivesItem topFivesItem = new TopFivesItem();
-			topFivesItem.setCalorie(_ctx.stringValue("RecognizeFoodResponse.Data.TopFives["+ i +"].Calorie"));
-			topFivesItem.setScore(_ctx.floatValue("RecognizeFoodResponse.Data.TopFives["+ i +"].Score"));
 			topFivesItem.setCategory(_ctx.stringValue("RecognizeFoodResponse.Data.TopFives["+ i +"].Category"));
+			topFivesItem.setScore(_ctx.floatValue("RecognizeFoodResponse.Data.TopFives["+ i +"].Score"));
+			topFivesItem.setCalorie(_ctx.stringValue("RecognizeFoodResponse.Data.TopFives["+ i +"].Calorie"));
 
 			topFives.add(topFivesItem);
 		}
