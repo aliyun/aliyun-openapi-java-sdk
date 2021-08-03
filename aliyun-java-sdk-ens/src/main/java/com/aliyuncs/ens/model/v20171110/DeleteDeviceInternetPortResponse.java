@@ -15,16 +15,18 @@
 package com.aliyuncs.ens.model.v20171110;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ens.transform.v20171110.DeleteLoadBalancerResponseUnmarshaller;
+import com.aliyuncs.ens.transform.v20171110.DeleteDeviceInternetPortResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DeleteLoadBalancerResponse extends AcsResponse {
+public class DeleteDeviceInternetPortResponse extends AcsResponse {
 
 	private String requestId;
+
+	private String ruleId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -34,9 +36,17 @@ public class DeleteLoadBalancerResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public String getRuleId() {
+		return this.ruleId;
+	}
+
+	public void setRuleId(String ruleId) {
+		this.ruleId = ruleId;
+	}
+
 	@Override
-	public DeleteLoadBalancerResponse getInstance(UnmarshallerContext context) {
-		return	DeleteLoadBalancerResponseUnmarshaller.unmarshall(this, context);
+	public DeleteDeviceInternetPortResponse getInstance(UnmarshallerContext context) {
+		return	DeleteDeviceInternetPortResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

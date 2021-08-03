@@ -24,29 +24,24 @@ import com.aliyuncs.http.MethodType;
 public class RescaleDeviceServiceRequest extends RpcAcsRequest<RescaleDeviceServiceResponse> {
 	   
 
-	private String rescaleType;
-
 	private String resourceSelector;
+
+	private String rescaleType;
 
 	private Long timeout;
 
 	private String rescaleLevel;
 
+	private String resourceSpec;
+
+	private Integer ipType;
+
 	private String appId;
+
+	private String serviceId;
 	public RescaleDeviceServiceRequest() {
 		super("Ens", "2017-11-10", "RescaleDeviceService", "ens");
 		setMethod(MethodType.POST);
-	}
-
-	public String getRescaleType() {
-		return this.rescaleType;
-	}
-
-	public void setRescaleType(String rescaleType) {
-		this.rescaleType = rescaleType;
-		if(rescaleType != null){
-			putQueryParameter("RescaleType", rescaleType);
-		}
 	}
 
 	public String getResourceSelector() {
@@ -57,6 +52,17 @@ public class RescaleDeviceServiceRequest extends RpcAcsRequest<RescaleDeviceServ
 		this.resourceSelector = resourceSelector;
 		if(resourceSelector != null){
 			putBodyParameter("ResourceSelector", resourceSelector);
+		}
+	}
+
+	public String getRescaleType() {
+		return this.rescaleType;
+	}
+
+	public void setRescaleType(String rescaleType) {
+		this.rescaleType = rescaleType;
+		if(rescaleType != null){
+			putQueryParameter("RescaleType", rescaleType);
 		}
 	}
 
@@ -82,6 +88,28 @@ public class RescaleDeviceServiceRequest extends RpcAcsRequest<RescaleDeviceServ
 		}
 	}
 
+	public String getResourceSpec() {
+		return this.resourceSpec;
+	}
+
+	public void setResourceSpec(String resourceSpec) {
+		this.resourceSpec = resourceSpec;
+		if(resourceSpec != null){
+			putQueryParameter("ResourceSpec", resourceSpec);
+		}
+	}
+
+	public Integer getIpType() {
+		return this.ipType;
+	}
+
+	public void setIpType(Integer ipType) {
+		this.ipType = ipType;
+		if(ipType != null){
+			putQueryParameter("IpType", ipType.toString());
+		}
+	}
+
 	public String getAppId() {
 		return this.appId;
 	}
@@ -90,6 +118,17 @@ public class RescaleDeviceServiceRequest extends RpcAcsRequest<RescaleDeviceServ
 		this.appId = appId;
 		if(appId != null){
 			putQueryParameter("AppId", appId);
+		}
+	}
+
+	public String getServiceId() {
+		return this.serviceId;
+	}
+
+	public void setServiceId(String serviceId) {
+		this.serviceId = serviceId;
+		if(serviceId != null){
+			putQueryParameter("ServiceId", serviceId);
 		}
 	}
 

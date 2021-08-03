@@ -28,6 +28,12 @@ public class RescaleDeviceServiceResponseUnmarshaller {
 		
 		rescaleDeviceServiceResponse.setRequestId(_ctx.stringValue("RescaleDeviceServiceResponse.RequestId"));
 
+		List<String> deviceIds = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("RescaleDeviceServiceResponse.DeviceIds.Length"); i++) {
+			deviceIds.add(_ctx.stringValue("RescaleDeviceServiceResponse.DeviceIds["+ i +"]"));
+		}
+		rescaleDeviceServiceResponse.setDeviceIds(deviceIds);
+
 		List<ResourceDetailInfo> resourceDetailInfos = new ArrayList<ResourceDetailInfo>();
 		for (int i = 0; i < _ctx.lengthValue("RescaleDeviceServiceResponse.ResourceDetailInfos.Length"); i++) {
 			ResourceDetailInfo resourceDetailInfo = new ResourceDetailInfo();

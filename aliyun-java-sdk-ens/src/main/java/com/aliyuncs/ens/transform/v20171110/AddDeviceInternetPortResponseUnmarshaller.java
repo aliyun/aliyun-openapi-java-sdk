@@ -14,16 +14,17 @@
 
 package com.aliyuncs.ens.transform.v20171110;
 
-import com.aliyuncs.ens.model.v20171110.DeleteLoadBalancerResponse;
+import com.aliyuncs.ens.model.v20171110.AddDeviceInternetPortResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class DeleteLoadBalancerResponseUnmarshaller {
+public class AddDeviceInternetPortResponseUnmarshaller {
 
-	public static DeleteLoadBalancerResponse unmarshall(DeleteLoadBalancerResponse deleteLoadBalancerResponse, UnmarshallerContext _ctx) {
+	public static AddDeviceInternetPortResponse unmarshall(AddDeviceInternetPortResponse addDeviceInternetPortResponse, UnmarshallerContext _ctx) {
 		
-		deleteLoadBalancerResponse.setRequestId(_ctx.stringValue("DeleteLoadBalancerResponse.RequestId"));
+		addDeviceInternetPortResponse.setRequestId(_ctx.stringValue("AddDeviceInternetPortResponse.RequestId"));
+		addDeviceInternetPortResponse.setRuleId(_ctx.stringValue("AddDeviceInternetPortResponse.RuleId"));
 	 
-	 	return deleteLoadBalancerResponse;
+	 	return addDeviceInternetPortResponse;
 	}
 }

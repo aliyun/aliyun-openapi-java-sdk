@@ -28,9 +28,9 @@ public class DescribeEnsRegionIdResourceRequest extends RpcAcsRequest<DescribeEn
 
 	private String startTime;
 
-	private String orderByParams;
-
 	private Integer pageNumber;
+
+	private String orderByParams;
 
 	private String pageSize;
 
@@ -62,17 +62,6 @@ public class DescribeEnsRegionIdResourceRequest extends RpcAcsRequest<DescribeEn
 		}
 	}
 
-	public String getOrderByParams() {
-		return this.orderByParams;
-	}
-
-	public void setOrderByParams(String orderByParams) {
-		this.orderByParams = orderByParams;
-		if(orderByParams != null){
-			putQueryParameter("OrderByParams", orderByParams);
-		}
-	}
-
 	public Integer getPageNumber() {
 		return this.pageNumber;
 	}
@@ -81,6 +70,17 @@ public class DescribeEnsRegionIdResourceRequest extends RpcAcsRequest<DescribeEn
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getOrderByParams() {
+		return this.orderByParams;
+	}
+
+	public void setOrderByParams(String orderByParams) {
+		this.orderByParams = orderByParams;
+		if(orderByParams != null){
+			putQueryParameter("OrderByParams", orderByParams);
 		}
 	}
 

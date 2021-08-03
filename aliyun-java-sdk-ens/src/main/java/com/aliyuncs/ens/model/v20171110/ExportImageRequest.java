@@ -24,6 +24,8 @@ import com.aliyuncs.http.MethodType;
 public class ExportImageRequest extends RpcAcsRequest<ExportImageResponse> {
 	   
 
+	private String imageId;
+
 	private String oSSRegionId;
 
 	private String oSSBucket;
@@ -31,11 +33,20 @@ public class ExportImageRequest extends RpcAcsRequest<ExportImageResponse> {
 	private String roleName;
 
 	private String oSSPrefix;
-
-	private String imageId;
 	public ExportImageRequest() {
 		super("Ens", "2017-11-10", "ExportImage", "ens");
 		setMethod(MethodType.POST);
+	}
+
+	public String getImageId() {
+		return this.imageId;
+	}
+
+	public void setImageId(String imageId) {
+		this.imageId = imageId;
+		if(imageId != null){
+			putQueryParameter("ImageId", imageId);
+		}
 	}
 
 	public String getOSSRegionId() {
@@ -79,17 +90,6 @@ public class ExportImageRequest extends RpcAcsRequest<ExportImageResponse> {
 		this.oSSPrefix = oSSPrefix;
 		if(oSSPrefix != null){
 			putQueryParameter("OSSPrefix", oSSPrefix);
-		}
-	}
-
-	public String getImageId() {
-		return this.imageId;
-	}
-
-	public void setImageId(String imageId) {
-		this.imageId = imageId;
-		if(imageId != null){
-			putQueryParameter("ImageId", imageId);
 		}
 	}
 

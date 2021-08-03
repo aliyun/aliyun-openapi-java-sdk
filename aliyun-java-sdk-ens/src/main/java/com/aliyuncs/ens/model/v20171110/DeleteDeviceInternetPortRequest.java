@@ -21,17 +21,28 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class DescribeDeviceServiceRequest extends RpcAcsRequest<DescribeDeviceServiceResponse> {
+public class DeleteDeviceInternetPortRequest extends RpcAcsRequest<DeleteDeviceInternetPortResponse> {
 	   
+
+	private String natType;
 
 	private String instanceId;
 
-	private String appId;
-
-	private String serviceId;
-	public DescribeDeviceServiceRequest() {
-		super("Ens", "2017-11-10", "DescribeDeviceService", "ens");
+	private String ruleId;
+	public DeleteDeviceInternetPortRequest() {
+		super("Ens", "2017-11-10", "DeleteDeviceInternetPort", "ens");
 		setMethod(MethodType.GET);
+	}
+
+	public String getNatType() {
+		return this.natType;
+	}
+
+	public void setNatType(String natType) {
+		this.natType = natType;
+		if(natType != null){
+			putQueryParameter("NatType", natType);
+		}
 	}
 
 	public String getInstanceId() {
@@ -45,31 +56,20 @@ public class DescribeDeviceServiceRequest extends RpcAcsRequest<DescribeDeviceSe
 		}
 	}
 
-	public String getAppId() {
-		return this.appId;
+	public String getRuleId() {
+		return this.ruleId;
 	}
 
-	public void setAppId(String appId) {
-		this.appId = appId;
-		if(appId != null){
-			putQueryParameter("AppId", appId);
-		}
-	}
-
-	public String getServiceId() {
-		return this.serviceId;
-	}
-
-	public void setServiceId(String serviceId) {
-		this.serviceId = serviceId;
-		if(serviceId != null){
-			putQueryParameter("ServiceId", serviceId);
+	public void setRuleId(String ruleId) {
+		this.ruleId = ruleId;
+		if(ruleId != null){
+			putQueryParameter("RuleId", ruleId);
 		}
 	}
 
 	@Override
-	public Class<DescribeDeviceServiceResponse> getResponseClass() {
-		return DescribeDeviceServiceResponse.class;
+	public Class<DeleteDeviceInternetPortResponse> getResponseClass() {
+		return DeleteDeviceInternetPortResponse.class;
 	}
 
 }

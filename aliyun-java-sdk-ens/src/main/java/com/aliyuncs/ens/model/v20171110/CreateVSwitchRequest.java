@@ -24,40 +24,18 @@ import com.aliyuncs.http.MethodType;
 public class CreateVSwitchRequest extends RpcAcsRequest<CreateVSwitchResponse> {
 	   
 
-	private String ensRegionId;
-
-	private String networkId;
-
 	private String description;
+
+	private String ensRegionId;
 
 	private String vSwitchName;
 
 	private String cidrBlock;
+
+	private String networkId;
 	public CreateVSwitchRequest() {
 		super("Ens", "2017-11-10", "CreateVSwitch", "ens");
 		setMethod(MethodType.POST);
-	}
-
-	public String getEnsRegionId() {
-		return this.ensRegionId;
-	}
-
-	public void setEnsRegionId(String ensRegionId) {
-		this.ensRegionId = ensRegionId;
-		if(ensRegionId != null){
-			putQueryParameter("EnsRegionId", ensRegionId);
-		}
-	}
-
-	public String getNetworkId() {
-		return this.networkId;
-	}
-
-	public void setNetworkId(String networkId) {
-		this.networkId = networkId;
-		if(networkId != null){
-			putQueryParameter("NetworkId", networkId);
-		}
 	}
 
 	public String getDescription() {
@@ -68,6 +46,17 @@ public class CreateVSwitchRequest extends RpcAcsRequest<CreateVSwitchResponse> {
 		this.description = description;
 		if(description != null){
 			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getEnsRegionId() {
+		return this.ensRegionId;
+	}
+
+	public void setEnsRegionId(String ensRegionId) {
+		this.ensRegionId = ensRegionId;
+		if(ensRegionId != null){
+			putQueryParameter("EnsRegionId", ensRegionId);
 		}
 	}
 
@@ -90,6 +79,17 @@ public class CreateVSwitchRequest extends RpcAcsRequest<CreateVSwitchResponse> {
 		this.cidrBlock = cidrBlock;
 		if(cidrBlock != null){
 			putQueryParameter("CidrBlock", cidrBlock);
+		}
+	}
+
+	public String getNetworkId() {
+		return this.networkId;
+	}
+
+	public void setNetworkId(String networkId) {
+		this.networkId = networkId;
+		if(networkId != null){
+			putQueryParameter("NetworkId", networkId);
 		}
 	}
 
