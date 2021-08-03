@@ -22,12 +22,12 @@ import com.aliyuncs.dataworks_public.Endpoint;
  * @author auto create
  * @version 
  */
-public class TopTenElapsedTimeInstanceRequest extends RpcAcsRequest<TopTenElapsedTimeInstanceResponse> {
+public class ListProjectIdsRequest extends RpcAcsRequest<ListProjectIdsResponse> {
 	   
 
-	private Long projectId;
-	public TopTenElapsedTimeInstanceRequest() {
-		super("dataworks-public", "2020-05-18", "TopTenElapsedTimeInstance");
+	private String userId;
+	public ListProjectIdsRequest() {
+		super("dataworks-public", "2020-05-18", "ListProjectIds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -35,20 +35,20 @@ public class TopTenElapsedTimeInstanceRequest extends RpcAcsRequest<TopTenElapse
 		} catch (Exception e) {}
 	}
 
-	public Long getProjectId() {
-		return this.projectId;
+	public String getUserId() {
+		return this.userId;
 	}
 
-	public void setProjectId(Long projectId) {
-		this.projectId = projectId;
-		if(projectId != null){
-			putBodyParameter("ProjectId", projectId.toString());
+	public void setUserId(String userId) {
+		this.userId = userId;
+		if(userId != null){
+			putQueryParameter("UserId", userId);
 		}
 	}
 
 	@Override
-	public Class<TopTenElapsedTimeInstanceResponse> getResponseClass() {
-		return TopTenElapsedTimeInstanceResponse.class;
+	public Class<ListProjectIdsResponse> getResponseClass() {
+		return ListProjectIdsResponse.class;
 	}
 
 }
