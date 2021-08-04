@@ -37,7 +37,7 @@ public class ResumeVsStreamRequest extends RpcAcsRequest<ResumeVsStreamResponse>
 
 	private Long ownerId;
 	public ResumeVsStreamRequest() {
-		super("vs", "2018-12-12", "ResumeVsStream", "vs");
+		super("vs", "2018-12-12", "ResumeVsStream");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

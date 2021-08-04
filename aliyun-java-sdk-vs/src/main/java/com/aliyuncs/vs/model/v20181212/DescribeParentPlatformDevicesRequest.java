@@ -37,7 +37,7 @@ public class DescribeParentPlatformDevicesRequest extends RpcAcsRequest<Describe
 
 	private String sortBy;
 	public DescribeParentPlatformDevicesRequest() {
-		super("vs", "2018-12-12", "DescribeParentPlatformDevices", "vs");
+		super("vs", "2018-12-12", "DescribeParentPlatformDevices");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

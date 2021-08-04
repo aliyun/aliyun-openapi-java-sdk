@@ -33,7 +33,7 @@ public class BindPurchasedDeviceRequest extends RpcAcsRequest<BindPurchasedDevic
 
 	private String region;
 	public BindPurchasedDeviceRequest() {
-		super("vs", "2018-12-12", "BindPurchasedDevice", "vs");
+		super("vs", "2018-12-12", "BindPurchasedDevice");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

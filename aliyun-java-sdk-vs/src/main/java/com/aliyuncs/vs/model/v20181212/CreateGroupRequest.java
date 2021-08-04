@@ -57,7 +57,7 @@ public class CreateGroupRequest extends RpcAcsRequest<CreateGroupResponse> {
 
 	private String captureOssBucket;
 	public CreateGroupRequest() {
-		super("vs", "2018-12-12", "CreateGroup", "vs");
+		super("vs", "2018-12-12", "CreateGroup");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

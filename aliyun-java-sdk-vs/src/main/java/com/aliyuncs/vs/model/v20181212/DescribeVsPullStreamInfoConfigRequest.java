@@ -29,7 +29,7 @@ public class DescribeVsPullStreamInfoConfigRequest extends RpcAcsRequest<Describ
 
 	private Long ownerId;
 	public DescribeVsPullStreamInfoConfigRequest() {
-		super("vs", "2018-12-12", "DescribeVsPullStreamInfoConfig", "vs");
+		super("vs", "2018-12-12", "DescribeVsPullStreamInfoConfig");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

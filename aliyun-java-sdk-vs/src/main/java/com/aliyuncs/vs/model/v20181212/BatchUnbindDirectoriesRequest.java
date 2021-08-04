@@ -31,7 +31,7 @@ public class BatchUnbindDirectoriesRequest extends RpcAcsRequest<BatchUnbindDire
 
 	private String deviceId;
 	public BatchUnbindDirectoriesRequest() {
-		super("vs", "2018-12-12", "BatchUnbindDirectories", "vs");
+		super("vs", "2018-12-12", "BatchUnbindDirectories");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -47,7 +47,7 @@ public class ModifyParentPlatformRequest extends RpcAcsRequest<ModifyParentPlatf
 
 	private String clientUsername;
 	public ModifyParentPlatformRequest() {
-		super("vs", "2018-12-12", "ModifyParentPlatform", "vs");
+		super("vs", "2018-12-12", "ModifyParentPlatform");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

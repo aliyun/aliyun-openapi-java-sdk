@@ -29,7 +29,7 @@ public class DescribeVsUserResourcePackageRequest extends RpcAcsRequest<Describe
 
 	private String securityToken;
 	public DescribeVsUserResourcePackageRequest() {
-		super("vs", "2018-12-12", "DescribeVsUserResourcePackage", "vs");
+		super("vs", "2018-12-12", "DescribeVsUserResourcePackage");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

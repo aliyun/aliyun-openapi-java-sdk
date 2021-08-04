@@ -35,7 +35,7 @@ public class UnbindTemplateRequest extends RpcAcsRequest<UnbindTemplateResponse>
 
 	private String instanceId;
 	public UnbindTemplateRequest() {
-		super("vs", "2018-12-12", "UnbindTemplate", "vs");
+		super("vs", "2018-12-12", "UnbindTemplate");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

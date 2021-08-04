@@ -29,7 +29,7 @@ public class DescribeAccountStatRequest extends RpcAcsRequest<DescribeAccountSta
 
 	private Long ownerId;
 	public DescribeAccountStatRequest() {
-		super("vs", "2018-12-12", "DescribeAccountStat", "vs");
+		super("vs", "2018-12-12", "DescribeAccountStat");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -33,7 +33,7 @@ public class DescribeDeviceRequest extends RpcAcsRequest<DescribeDeviceResponse>
 
 	private Long ownerId;
 	public DescribeDeviceRequest() {
-		super("vs", "2018-12-12", "DescribeDevice", "vs");
+		super("vs", "2018-12-12", "DescribeDevice");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

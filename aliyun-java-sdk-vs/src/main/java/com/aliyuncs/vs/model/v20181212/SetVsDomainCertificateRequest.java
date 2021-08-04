@@ -43,7 +43,7 @@ public class SetVsDomainCertificateRequest extends RpcAcsRequest<SetVsDomainCert
 
 	private String region;
 	public SetVsDomainCertificateRequest() {
-		super("vs", "2018-12-12", "SetVsDomainCertificate", "vs");
+		super("vs", "2018-12-12", "SetVsDomainCertificate");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

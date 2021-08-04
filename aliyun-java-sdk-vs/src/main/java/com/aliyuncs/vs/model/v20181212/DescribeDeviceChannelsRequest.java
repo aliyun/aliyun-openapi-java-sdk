@@ -33,7 +33,7 @@ public class DescribeDeviceChannelsRequest extends RpcAcsRequest<DescribeDeviceC
 
 	private Long ownerId;
 	public DescribeDeviceChannelsRequest() {
-		super("vs", "2018-12-12", "DescribeDeviceChannels", "vs");
+		super("vs", "2018-12-12", "DescribeDeviceChannels");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

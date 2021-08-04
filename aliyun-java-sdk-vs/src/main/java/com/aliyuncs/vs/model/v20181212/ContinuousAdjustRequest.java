@@ -27,13 +27,15 @@ public class ContinuousAdjustRequest extends RpcAcsRequest<ContinuousAdjustRespo
 
 	private String focus;
 
+	private String subProtocol;
+
 	private String id;
 
 	private String iris;
 
 	private Long ownerId;
 	public ContinuousAdjustRequest() {
-		super("vs", "2018-12-12", "ContinuousAdjust", "vs");
+		super("vs", "2018-12-12", "ContinuousAdjust");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -49,6 +51,17 @@ public class ContinuousAdjustRequest extends RpcAcsRequest<ContinuousAdjustRespo
 		this.focus = focus;
 		if(focus != null){
 			putQueryParameter("Focus", focus);
+		}
+	}
+
+	public String getSubProtocol() {
+		return this.subProtocol;
+	}
+
+	public void setSubProtocol(String subProtocol) {
+		this.subProtocol = subProtocol;
+		if(subProtocol != null){
+			putQueryParameter("SubProtocol", subProtocol);
 		}
 	}
 

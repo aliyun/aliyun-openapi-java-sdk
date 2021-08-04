@@ -31,7 +31,7 @@ public class BatchDeleteVsDomainConfigsRequest extends RpcAcsRequest<BatchDelete
 
 	private Long ownerId;
 	public BatchDeleteVsDomainConfigsRequest() {
-		super("vs", "2018-12-12", "BatchDeleteVsDomainConfigs", "vs");
+		super("vs", "2018-12-12", "BatchDeleteVsDomainConfigs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

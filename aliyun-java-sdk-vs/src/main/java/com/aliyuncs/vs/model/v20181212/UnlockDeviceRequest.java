@@ -29,7 +29,7 @@ public class UnlockDeviceRequest extends RpcAcsRequest<UnlockDeviceResponse> {
 
 	private Long ownerId;
 	public UnlockDeviceRequest() {
-		super("vs", "2018-12-12", "UnlockDevice", "vs");
+		super("vs", "2018-12-12", "UnlockDevice");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -33,7 +33,7 @@ public class DescribeDeviceGatewayRequest extends RpcAcsRequest<DescribeDeviceGa
 
 	private Long expire;
 	public DescribeDeviceGatewayRequest() {
-		super("vs", "2018-12-12", "DescribeDeviceGateway", "vs");
+		super("vs", "2018-12-12", "DescribeDeviceGateway");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

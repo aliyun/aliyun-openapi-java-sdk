@@ -31,7 +31,7 @@ public class UnbindDirectoryRequest extends RpcAcsRequest<UnbindDirectoryRespons
 
 	private String deviceId;
 	public UnbindDirectoryRequest() {
-		super("vs", "2018-12-12", "UnbindDirectory", "vs");
+		super("vs", "2018-12-12", "UnbindDirectory");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

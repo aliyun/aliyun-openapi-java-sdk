@@ -29,7 +29,7 @@ public class BatchUnbindPurchasedDevicesRequest extends RpcAcsRequest<BatchUnbin
 
 	private String deviceId;
 	public BatchUnbindPurchasedDevicesRequest() {
-		super("vs", "2018-12-12", "BatchUnbindPurchasedDevices", "vs");
+		super("vs", "2018-12-12", "BatchUnbindPurchasedDevices");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

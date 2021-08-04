@@ -27,6 +27,8 @@ public class StopMoveRequest extends RpcAcsRequest<StopMoveResponse> {
 
 	private Boolean tilt;
 
+	private String subProtocol;
+
 	private String id;
 
 	private Boolean pan;
@@ -35,7 +37,7 @@ public class StopMoveRequest extends RpcAcsRequest<StopMoveResponse> {
 
 	private Long ownerId;
 	public StopMoveRequest() {
-		super("vs", "2018-12-12", "StopMove", "vs");
+		super("vs", "2018-12-12", "StopMove");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -51,6 +53,17 @@ public class StopMoveRequest extends RpcAcsRequest<StopMoveResponse> {
 		this.tilt = tilt;
 		if(tilt != null){
 			putQueryParameter("Tilt", tilt.toString());
+		}
+	}
+
+	public String getSubProtocol() {
+		return this.subProtocol;
+	}
+
+	public void setSubProtocol(String subProtocol) {
+		this.subProtocol = subProtocol;
+		if(subProtocol != null){
+			putQueryParameter("SubProtocol", subProtocol);
 		}
 	}
 

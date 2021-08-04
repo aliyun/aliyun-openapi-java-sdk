@@ -41,7 +41,7 @@ public class DescribeDirectoriesRequest extends RpcAcsRequest<DescribeDirectorie
 
 	private String sortBy;
 	public DescribeDirectoriesRequest() {
-		super("vs", "2018-12-12", "DescribeDirectories", "vs");
+		super("vs", "2018-12-12", "DescribeDirectories");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
