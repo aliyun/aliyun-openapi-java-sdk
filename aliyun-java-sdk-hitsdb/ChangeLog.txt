@@ -1,3 +1,6 @@
+2021-08-04 Version: 2.0.0
+- Create Lindorm Open api.
+
 2021-07-21 Version: 1.7.12
 - Create Lindorm Open api.
 
