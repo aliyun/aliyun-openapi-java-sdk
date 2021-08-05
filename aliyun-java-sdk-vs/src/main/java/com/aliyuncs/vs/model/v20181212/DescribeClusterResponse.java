@@ -101,7 +101,7 @@ public class DescribeClusterResponse extends AcsResponse {
 
 		private String ipProtocol;
 
-		private String port;
+		private List<String> port;
 
 		public String getPlatform() {
 			return this.platform;
@@ -119,11 +119,11 @@ public class DescribeClusterResponse extends AcsResponse {
 			this.ipProtocol = ipProtocol;
 		}
 
-		public String getPort() {
+		public List<String> getPort() {
 			return this.port;
 		}
 
-		public void setPort(String port) {
+		public void setPort(List<String> port) {
 			this.port = port;
 		}
 	}

@@ -19,7 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.vs.model.v20181212.DescribeClustersResponse;
 import com.aliyuncs.vs.model.v20181212.DescribeClustersResponse.Cluster;
-import com.aliyuncs.vs.model.v20181212.DescribeClustersResponse.Cluster.InternalPortsItem;
+import com.aliyuncs.vs.model.v20181212.DescribeClustersResponse.Cluster.InternalPort;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -39,14 +39,19 @@ public class DescribeClustersResponseUnmarshaller {
 			cluster.setMaintainTime(_ctx.stringValue("DescribeClustersResponse.Clusters["+ i +"].MaintainTime"));
 			cluster.setStatus(_ctx.stringValue("DescribeClustersResponse.Clusters["+ i +"].Status"));
 
-			List<InternalPortsItem> internalPorts = new ArrayList<InternalPortsItem>();
+			List<InternalPort> internalPorts = new ArrayList<InternalPort>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeClustersResponse.Clusters["+ i +"].InternalPorts.Length"); j++) {
-				InternalPortsItem internalPortsItem = new InternalPortsItem();
-				internalPortsItem.setPlatform(_ctx.stringValue("DescribeClustersResponse.Clusters["+ i +"].InternalPorts["+ j +"].Platform"));
-				internalPortsItem.setIpProtocol(_ctx.stringValue("DescribeClustersResponse.Clusters["+ i +"].InternalPorts["+ j +"].IpProtocol"));
-				internalPortsItem.setPort(_ctx.stringValue("DescribeClustersResponse.Clusters["+ i +"].InternalPorts["+ j +"].Port"));
+				InternalPort internalPort = new InternalPort();
+				internalPort.setPlatform(_ctx.stringValue("DescribeClustersResponse.Clusters["+ i +"].InternalPorts["+ j +"].Platform"));
+				internalPort.setIpProtocol(_ctx.stringValue("DescribeClustersResponse.Clusters["+ i +"].InternalPorts["+ j +"].IpProtocol"));
 
-				internalPorts.add(internalPortsItem);
+				List<String> port = new ArrayList<String>();
+				for (int k = 0; k < _ctx.lengthValue("DescribeClustersResponse.Clusters["+ i +"].InternalPorts["+ j +"].Port.Length"); k++) {
+					port.add(_ctx.stringValue("DescribeClustersResponse.Clusters["+ i +"].InternalPorts["+ j +"].Port["+ k +"]"));
+				}
+				internalPort.setPort(port);
+
+				internalPorts.add(internalPort);
 			}
 			cluster.setInternalPorts(internalPorts);
 
