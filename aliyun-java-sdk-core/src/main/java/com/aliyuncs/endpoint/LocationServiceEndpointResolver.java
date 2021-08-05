@@ -48,7 +48,7 @@ public class LocationServiceEndpointResolver extends EndpointResolverBase {
             return null;
         }
 
-        if (invalidRegionIds.contains(request.regionId)) {
+        if (invalidRegionIds.contains(makeRegionIdKey(request))) {
             return null;
         }
 
