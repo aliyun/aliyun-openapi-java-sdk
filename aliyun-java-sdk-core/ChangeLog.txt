@@ -1,4 +1,7 @@
-﻿2021-07-23 Version:4.5.24
+﻿2021-08-05 Version:4.5.25
+1, Fix regionId conflict among different products in LocationServiceEndpointResolver.
+
+2021-07-23 Version:4.5.24
 1, fix bugs for anonymous credentials
 
 2021-06-28 Version:4.5.23
