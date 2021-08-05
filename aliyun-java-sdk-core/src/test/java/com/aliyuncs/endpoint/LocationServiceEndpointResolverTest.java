@@ -44,7 +44,7 @@ public class LocationServiceEndpointResolverTest {
         ResolveEndpointRequest request = mock(ResolveEndpointRequest.class);
         LocationServiceEndpointResolver resolver = new LocationServiceEndpointResolver(client);
 
-        assertFalse(resolver.isRegionIdValid(request));
+        assertTrue(resolver.isRegionIdValid(request));
 
         request.locationServiceCode = "locationServiceCode";
         request.regionId = "cn-hangzhou";
@@ -92,7 +92,7 @@ public class LocationServiceEndpointResolverTest {
         assertTrue(resolver.isRegionIdValid(request2));
         assertNull(resolver.resolve(request2));
         assertNull(resolver.resolve(request2));
-        assertFalse(resolver.isRegionIdValid(request2));
+        assertTrue(resolver.isRegionIdValid(request2));
 
         assertTrue(resolver.isRegionIdValid(request1));
     }

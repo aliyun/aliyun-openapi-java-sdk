@@ -23,13 +23,11 @@ public class LocationServiceEndpointResolver extends EndpointResolverBase {
     private IAcsClient client;
     private Set<String> invalidProductCodes;
     private Set<String> validProductCodes;
-    private Set<String> invalidRegionIds;
     private Set<String> validRegionIds;
 
     public LocationServiceEndpointResolver(IAcsClient client) {
         this.client = client;
         invalidProductCodes = new HashSet<String>();
-        invalidRegionIds = new HashSet<String>();
         validProductCodes = new HashSet<String>();
         validRegionIds = new HashSet<String>();
     }
@@ -45,10 +43,6 @@ public class LocationServiceEndpointResolver extends EndpointResolverBase {
         }
 
         if (invalidProductCodes.contains(request.productCodeLower)) {
-            return null;
-        }
-
-        if (invalidRegionIds.contains(request.regionId)) {
             return null;
         }
 
@@ -93,7 +87,6 @@ public class LocationServiceEndpointResolver extends EndpointResolverBase {
             if ("InvalidRegionId".equals(e.getErrCode())
                     && "The specified region does not exist.".equals(e.getErrMsg())) {
                 // No such region
-                invalidRegionIds.add(makeRegionIdKey(request));
                 putEndpointEntry(key, null);
                 return;
             } else if ("Illegal Parameter".equals(e.getErrCode())
@@ -139,10 +132,7 @@ public class LocationServiceEndpointResolver extends EndpointResolverBase {
 
     @Override
     public boolean isRegionIdValid(ResolveEndpointRequest request) {
-        if (request.locationServiceCode != null) {
-            return !invalidRegionIds.contains(makeRegionIdKey(request));
-        }
-        return false;
+        return true;
     }
 
     @Override
