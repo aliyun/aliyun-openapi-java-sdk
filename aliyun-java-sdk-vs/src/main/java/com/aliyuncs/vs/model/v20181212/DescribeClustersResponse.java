@@ -67,7 +67,7 @@ public class DescribeClustersResponse extends AcsResponse {
 
 		private String status;
 
-		private List<InternalPortsItem> internalPorts;
+		private List<InternalPort> internalPorts;
 
 		public String getClusterId() {
 			return this.clusterId;
@@ -109,21 +109,21 @@ public class DescribeClustersResponse extends AcsResponse {
 			this.status = status;
 		}
 
-		public List<InternalPortsItem> getInternalPorts() {
+		public List<InternalPort> getInternalPorts() {
 			return this.internalPorts;
 		}
 
-		public void setInternalPorts(List<InternalPortsItem> internalPorts) {
+		public void setInternalPorts(List<InternalPort> internalPorts) {
 			this.internalPorts = internalPorts;
 		}
 
-		public static class InternalPortsItem {
+		public static class InternalPort {
 
 			private String platform;
 
 			private String ipProtocol;
 
-			private String port;
+			private List<String> port;
 
 			public String getPlatform() {
 				return this.platform;
@@ -141,11 +141,11 @@ public class DescribeClustersResponse extends AcsResponse {
 				this.ipProtocol = ipProtocol;
 			}
 
-			public String getPort() {
+			public List<String> getPort() {
 				return this.port;
 			}
 
-			public void setPort(String port) {
+			public void setPort(List<String> port) {
 				this.port = port;
 			}
 		}

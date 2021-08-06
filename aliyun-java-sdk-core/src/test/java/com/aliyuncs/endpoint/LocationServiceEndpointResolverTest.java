@@ -95,6 +95,8 @@ public class LocationServiceEndpointResolverTest {
         assertTrue(resolver.isRegionIdValid(request2));
 
         assertTrue(resolver.isRegionIdValid(request1));
+        assertNull(resolver.resolve(request1));
+        assertFalse(resolver.isRegionIdValid(request1));
     }
 
     @Test

@@ -38,7 +38,12 @@ public class DescribeClusterResponseUnmarshaller {
 			InternalPort internalPort = new InternalPort();
 			internalPort.setPlatform(_ctx.stringValue("DescribeClusterResponse.InternalPorts["+ i +"].Platform"));
 			internalPort.setIpProtocol(_ctx.stringValue("DescribeClusterResponse.InternalPorts["+ i +"].IpProtocol"));
-			internalPort.setPort(_ctx.stringValue("DescribeClusterResponse.InternalPorts["+ i +"].Port"));
+
+			List<String> port = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeClusterResponse.InternalPorts["+ i +"].Port.Length"); j++) {
+				port.add(_ctx.stringValue("DescribeClusterResponse.InternalPorts["+ i +"].Port["+ j +"]"));
+			}
+			internalPort.setPort(port);
 
 			internalPorts.add(internalPort);
 		}
