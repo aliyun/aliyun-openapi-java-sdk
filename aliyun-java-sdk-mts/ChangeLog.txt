@@ -1,3 +1,6 @@
+2021-08-06 Version: 3.3.20
+- SubmitURLUploadJob.
+
 2021-07-19 Version: 3.3.19-inner
 - SubmitVideoQualityJob.
 - QueryVideoQualityJob.
