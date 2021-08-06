@@ -36,6 +36,8 @@ public class DetachLoadBalancersRequest extends RpcAcsRequest<DetachLoadBalancer
 
 	private Long ownerId;
 
+	private Boolean async;
+
 	private Boolean forceDetach;
 	public DetachLoadBalancersRequest() {
 		super("Ess", "2014-08-28", "DetachLoadBalancers", "ess");
@@ -100,6 +102,17 @@ public class DetachLoadBalancersRequest extends RpcAcsRequest<DetachLoadBalancer
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public Boolean getAsync() {
+		return this.async;
+	}
+
+	public void setAsync(Boolean async) {
+		this.async = async;
+		if(async != null){
+			putQueryParameter("Async", async.toString());
 		}
 	}
 

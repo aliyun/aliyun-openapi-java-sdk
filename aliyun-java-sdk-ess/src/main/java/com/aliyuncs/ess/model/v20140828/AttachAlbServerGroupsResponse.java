@@ -15,16 +15,18 @@
 package com.aliyuncs.ess.model.v20140828;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ess.transform.v20140828.SuspendProcessesResponseUnmarshaller;
+import com.aliyuncs.ess.transform.v20140828.AttachAlbServerGroupsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class SuspendProcessesResponse extends AcsResponse {
+public class AttachAlbServerGroupsResponse extends AcsResponse {
 
 	private String requestId;
+
+	private String scalingActivityId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -34,8 +36,21 @@ public class SuspendProcessesResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public String getScalingActivityId() {
+		return this.scalingActivityId;
+	}
+
+	public void setScalingActivityId(String scalingActivityId) {
+		this.scalingActivityId = scalingActivityId;
+	}
+
 	@Override
-	public SuspendProcessesResponse getInstance(UnmarshallerContext context) {
-		return	SuspendProcessesResponseUnmarshaller.unmarshall(this, context);
+	public AttachAlbServerGroupsResponse getInstance(UnmarshallerContext context) {
+		return	AttachAlbServerGroupsResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

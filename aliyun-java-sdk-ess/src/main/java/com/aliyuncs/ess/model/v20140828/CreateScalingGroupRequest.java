@@ -42,11 +42,15 @@ public class CreateScalingGroupRequest extends RpcAcsRequest<CreateScalingGroupR
 
 	private Integer desiredCapacity;
 
+	private List<LaunchTemplateOverride> launchTemplateOverrides;
+
 	private Boolean compensateWithOnDemand;
 
 	private Integer minSize;
 
 	private Long ownerId;
+
+	private List<AlbServerGroup> albServerGroups;
 
 	private String vSwitchId;
 
@@ -99,7 +103,7 @@ public class CreateScalingGroupRequest extends RpcAcsRequest<CreateScalingGroupR
 	}
 
 	public void setVSwitchIds(List<String> vSwitchIds) {
-		this.vSwitchIds = vSwitchIds;
+		this.vSwitchIds = vSwitchIds;	
 		if (vSwitchIds != null) {
 			for (int i = 0; i < vSwitchIds.size(); i++) {
 				putQueryParameter("VSwitchIds." + (i + 1) , vSwitchIds.get(i));
@@ -187,6 +191,20 @@ public class CreateScalingGroupRequest extends RpcAcsRequest<CreateScalingGroupR
 		}
 	}
 
+	public List<LaunchTemplateOverride> getLaunchTemplateOverrides() {
+		return this.launchTemplateOverrides;
+	}
+
+	public void setLaunchTemplateOverrides(List<LaunchTemplateOverride> launchTemplateOverrides) {
+		this.launchTemplateOverrides = launchTemplateOverrides;	
+		if (launchTemplateOverrides != null) {
+			for (int depth1 = 0; depth1 < launchTemplateOverrides.size(); depth1++) {
+				putQueryParameter("LaunchTemplateOverride." + (depth1 + 1) + ".WeightedCapacity" , launchTemplateOverrides.get(depth1).getWeightedCapacity());
+				putQueryParameter("LaunchTemplateOverride." + (depth1 + 1) + ".InstanceType" , launchTemplateOverrides.get(depth1).getInstanceType());
+			}
+		}	
+	}
+
 	public Boolean getCompensateWithOnDemand() {
 		return this.compensateWithOnDemand;
 	}
@@ -218,6 +236,21 @@ public class CreateScalingGroupRequest extends RpcAcsRequest<CreateScalingGroupR
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
 		}
+	}
+
+	public List<AlbServerGroup> getAlbServerGroups() {
+		return this.albServerGroups;
+	}
+
+	public void setAlbServerGroups(List<AlbServerGroup> albServerGroups) {
+		this.albServerGroups = albServerGroups;	
+		if (albServerGroups != null) {
+			for (int depth1 = 0; depth1 < albServerGroups.size(); depth1++) {
+				putQueryParameter("AlbServerGroup." + (depth1 + 1) + ".AlbServerGroupId" , albServerGroups.get(depth1).getAlbServerGroupId());
+				putQueryParameter("AlbServerGroup." + (depth1 + 1) + ".Port" , albServerGroups.get(depth1).getPort());
+				putQueryParameter("AlbServerGroup." + (depth1 + 1) + ".Weight" , albServerGroups.get(depth1).getWeight());
+			}
+		}	
 	}
 
 	public String getVSwitchId() {
@@ -465,6 +498,62 @@ public class CreateScalingGroupRequest extends RpcAcsRequest<CreateScalingGroupR
 
 		public void setKey(String key) {
 			this.key = key;
+		}
+	}
+
+	public static class LaunchTemplateOverride {
+
+		private Integer weightedCapacity;
+
+		private String instanceType;
+
+		public Integer getWeightedCapacity() {
+			return this.weightedCapacity;
+		}
+
+		public void setWeightedCapacity(Integer weightedCapacity) {
+			this.weightedCapacity = weightedCapacity;
+		}
+
+		public String getInstanceType() {
+			return this.instanceType;
+		}
+
+		public void setInstanceType(String instanceType) {
+			this.instanceType = instanceType;
+		}
+	}
+
+	public static class AlbServerGroup {
+
+		private String albServerGroupId;
+
+		private Integer port;
+
+		private Integer weight;
+
+		public String getAlbServerGroupId() {
+			return this.albServerGroupId;
+		}
+
+		public void setAlbServerGroupId(String albServerGroupId) {
+			this.albServerGroupId = albServerGroupId;
+		}
+
+		public Integer getPort() {
+			return this.port;
+		}
+
+		public void setPort(Integer port) {
+			this.port = port;
+		}
+
+		public Integer getWeight() {
+			return this.weight;
+		}
+
+		public void setWeight(Integer weight) {
+			this.weight = weight;
 		}
 	}
 

@@ -31,6 +31,8 @@ public class VerifyAuthenticationRequest extends RpcAcsRequest<VerifyAuthenticat
 
 	private Long ownerId;
 
+	private Boolean onlyCheck;
+
 	private Long uid;
 	public VerifyAuthenticationRequest() {
 		super("Ess", "2014-08-28", "VerifyAuthentication", "ess");
@@ -71,6 +73,17 @@ public class VerifyAuthenticationRequest extends RpcAcsRequest<VerifyAuthenticat
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public Boolean getOnlyCheck() {
+		return this.onlyCheck;
+	}
+
+	public void setOnlyCheck(Boolean onlyCheck) {
+		this.onlyCheck = onlyCheck;
+		if(onlyCheck != null){
+			putQueryParameter("OnlyCheck", onlyCheck.toString());
 		}
 	}
 

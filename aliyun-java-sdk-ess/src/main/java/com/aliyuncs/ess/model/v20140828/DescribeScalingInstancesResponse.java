@@ -27,6 +27,8 @@ public class DescribeScalingInstancesResponse extends AcsResponse {
 
 	private Integer totalCount;
 
+	private Integer totalSpotCount;
+
 	private Integer pageNumber;
 
 	private Integer pageSize;
@@ -41,6 +43,14 @@ public class DescribeScalingInstancesResponse extends AcsResponse {
 
 	public void setTotalCount(Integer totalCount) {
 		this.totalCount = totalCount;
+	}
+
+	public Integer getTotalSpotCount() {
+		return this.totalSpotCount;
+	}
+
+	public void setTotalSpotCount(Integer totalSpotCount) {
+		this.totalSpotCount = totalSpotCount;
 	}
 
 	public Integer getPageNumber() {
@@ -101,7 +111,15 @@ public class DescribeScalingInstancesResponse extends AcsResponse {
 
 		private Boolean entrusted;
 
+		private Integer weightedCapacity;
+
 		private String createdTime;
+
+		private String spotStrategy;
+
+		private String zoneId;
+
+		private String scalingActivityId;
 
 		public String getInstanceId() {
 			return this.instanceId;
@@ -199,12 +217,44 @@ public class DescribeScalingInstancesResponse extends AcsResponse {
 			this.entrusted = entrusted;
 		}
 
+		public Integer getWeightedCapacity() {
+			return this.weightedCapacity;
+		}
+
+		public void setWeightedCapacity(Integer weightedCapacity) {
+			this.weightedCapacity = weightedCapacity;
+		}
+
 		public String getCreatedTime() {
 			return this.createdTime;
 		}
 
 		public void setCreatedTime(String createdTime) {
 			this.createdTime = createdTime;
+		}
+
+		public String getSpotStrategy() {
+			return this.spotStrategy;
+		}
+
+		public void setSpotStrategy(String spotStrategy) {
+			this.spotStrategy = spotStrategy;
+		}
+
+		public String getZoneId() {
+			return this.zoneId;
+		}
+
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
+		}
+
+		public String getScalingActivityId() {
+			return this.scalingActivityId;
+		}
+
+		public void setScalingActivityId(String scalingActivityId) {
+			this.scalingActivityId = scalingActivityId;
 		}
 	}
 

@@ -23,24 +23,22 @@ import com.aliyuncs.ess.Endpoint;
  * @author auto create
  * @version 
  */
-public class AttachLoadBalancersRequest extends RpcAcsRequest<AttachLoadBalancersResponse> {
+public class DetachAlbServerGroupsRequest extends RpcAcsRequest<DetachAlbServerGroupsResponse> {
 	   
 
 	private String clientToken;
 
 	private String scalingGroupId;
 
-	private Boolean forceAttach;
-
-	private List<String> loadBalancers;
-
 	private String resourceOwnerAccount;
 
 	private Long ownerId;
 
-	private Boolean async;
-	public AttachLoadBalancersRequest() {
-		super("Ess", "2014-08-28", "AttachLoadBalancers", "ess");
+	private List<AlbServerGroup> albServerGroups;
+
+	private Boolean forceDetach;
+	public DetachAlbServerGroupsRequest() {
+		super("Ess", "2014-08-28", "DetachAlbServerGroups", "ess");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -70,30 +68,6 @@ public class AttachLoadBalancersRequest extends RpcAcsRequest<AttachLoadBalancer
 		}
 	}
 
-	public Boolean getForceAttach() {
-		return this.forceAttach;
-	}
-
-	public void setForceAttach(Boolean forceAttach) {
-		this.forceAttach = forceAttach;
-		if(forceAttach != null){
-			putQueryParameter("ForceAttach", forceAttach.toString());
-		}
-	}
-
-	public List<String> getLoadBalancers() {
-		return this.loadBalancers;
-	}
-
-	public void setLoadBalancers(List<String> loadBalancers) {
-		this.loadBalancers = loadBalancers;	
-		if (loadBalancers != null) {
-			for (int i = 0; i < loadBalancers.size(); i++) {
-				putQueryParameter("LoadBalancer." + (i + 1) , loadBalancers.get(i));
-			}
-		}	
-	}
-
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -116,20 +90,57 @@ public class AttachLoadBalancersRequest extends RpcAcsRequest<AttachLoadBalancer
 		}
 	}
 
-	public Boolean getAsync() {
-		return this.async;
+	public List<AlbServerGroup> getAlbServerGroups() {
+		return this.albServerGroups;
 	}
 
-	public void setAsync(Boolean async) {
-		this.async = async;
-		if(async != null){
-			putQueryParameter("Async", async.toString());
+	public void setAlbServerGroups(List<AlbServerGroup> albServerGroups) {
+		this.albServerGroups = albServerGroups;	
+		if (albServerGroups != null) {
+			for (int depth1 = 0; depth1 < albServerGroups.size(); depth1++) {
+				putQueryParameter("AlbServerGroup." + (depth1 + 1) + ".AlbServerGroupId" , albServerGroups.get(depth1).getAlbServerGroupId());
+				putQueryParameter("AlbServerGroup." + (depth1 + 1) + ".Port" , albServerGroups.get(depth1).getPort());
+			}
+		}	
+	}
+
+	public Boolean getForceDetach() {
+		return this.forceDetach;
+	}
+
+	public void setForceDetach(Boolean forceDetach) {
+		this.forceDetach = forceDetach;
+		if(forceDetach != null){
+			putQueryParameter("ForceDetach", forceDetach.toString());
+		}
+	}
+
+	public static class AlbServerGroup {
+
+		private String albServerGroupId;
+
+		private Integer port;
+
+		public String getAlbServerGroupId() {
+			return this.albServerGroupId;
+		}
+
+		public void setAlbServerGroupId(String albServerGroupId) {
+			this.albServerGroupId = albServerGroupId;
+		}
+
+		public Integer getPort() {
+			return this.port;
+		}
+
+		public void setPort(Integer port) {
+			this.port = port;
 		}
 	}
 
 	@Override
-	public Class<AttachLoadBalancersResponse> getResponseClass() {
-		return AttachLoadBalancersResponse.class;
+	public Class<DetachAlbServerGroupsResponse> getResponseClass() {
+		return DetachAlbServerGroupsResponse.class;
 	}
 
 }

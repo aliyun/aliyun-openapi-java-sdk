@@ -23,6 +23,7 @@ public class DetachLoadBalancersResponseUnmarshaller {
 	public static DetachLoadBalancersResponse unmarshall(DetachLoadBalancersResponse detachLoadBalancersResponse, UnmarshallerContext _ctx) {
 		
 		detachLoadBalancersResponse.setRequestId(_ctx.stringValue("DetachLoadBalancersResponse.RequestId"));
+		detachLoadBalancersResponse.setScalingActivityId(_ctx.stringValue("DetachLoadBalancersResponse.ScalingActivityId"));
 	 
 	 	return detachLoadBalancersResponse;
 	}

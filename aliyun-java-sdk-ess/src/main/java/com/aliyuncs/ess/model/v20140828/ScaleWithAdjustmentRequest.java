@@ -15,7 +15,6 @@
 package com.aliyuncs.ess.model.v20140828;
 
 import com.aliyuncs.RpcAcsRequest;
-import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.ess.Endpoint;
 
@@ -23,29 +22,40 @@ import com.aliyuncs.ess.Endpoint;
  * @author auto create
  * @version 
  */
-public class AttachLoadBalancersRequest extends RpcAcsRequest<AttachLoadBalancersResponse> {
+public class ScaleWithAdjustmentRequest extends RpcAcsRequest<ScaleWithAdjustmentResponse> {
 	   
+
+	private Integer adjustmentValue;
 
 	private String clientToken;
 
+	private String resourceOwnerAccount;
+
 	private String scalingGroupId;
 
-	private Boolean forceAttach;
-
-	private List<String> loadBalancers;
-
-	private String resourceOwnerAccount;
+	private String adjustmentType;
 
 	private Long ownerId;
 
-	private Boolean async;
-	public AttachLoadBalancersRequest() {
-		super("Ess", "2014-08-28", "AttachLoadBalancers", "ess");
+	private Integer minAdjustmentMagnitude;
+	public ScaleWithAdjustmentRequest() {
+		super("Ess", "2014-08-28", "ScaleWithAdjustment", "ess");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Integer getAdjustmentValue() {
+		return this.adjustmentValue;
+	}
+
+	public void setAdjustmentValue(Integer adjustmentValue) {
+		this.adjustmentValue = adjustmentValue;
+		if(adjustmentValue != null){
+			putQueryParameter("AdjustmentValue", adjustmentValue.toString());
+		}
 	}
 
 	public String getClientToken() {
@@ -56,6 +66,17 @@ public class AttachLoadBalancersRequest extends RpcAcsRequest<AttachLoadBalancer
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 
@@ -70,38 +91,14 @@ public class AttachLoadBalancersRequest extends RpcAcsRequest<AttachLoadBalancer
 		}
 	}
 
-	public Boolean getForceAttach() {
-		return this.forceAttach;
+	public String getAdjustmentType() {
+		return this.adjustmentType;
 	}
 
-	public void setForceAttach(Boolean forceAttach) {
-		this.forceAttach = forceAttach;
-		if(forceAttach != null){
-			putQueryParameter("ForceAttach", forceAttach.toString());
-		}
-	}
-
-	public List<String> getLoadBalancers() {
-		return this.loadBalancers;
-	}
-
-	public void setLoadBalancers(List<String> loadBalancers) {
-		this.loadBalancers = loadBalancers;	
-		if (loadBalancers != null) {
-			for (int i = 0; i < loadBalancers.size(); i++) {
-				putQueryParameter("LoadBalancer." + (i + 1) , loadBalancers.get(i));
-			}
-		}	
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	public void setAdjustmentType(String adjustmentType) {
+		this.adjustmentType = adjustmentType;
+		if(adjustmentType != null){
+			putQueryParameter("AdjustmentType", adjustmentType);
 		}
 	}
 
@@ -116,20 +113,20 @@ public class AttachLoadBalancersRequest extends RpcAcsRequest<AttachLoadBalancer
 		}
 	}
 
-	public Boolean getAsync() {
-		return this.async;
+	public Integer getMinAdjustmentMagnitude() {
+		return this.minAdjustmentMagnitude;
 	}
 
-	public void setAsync(Boolean async) {
-		this.async = async;
-		if(async != null){
-			putQueryParameter("Async", async.toString());
+	public void setMinAdjustmentMagnitude(Integer minAdjustmentMagnitude) {
+		this.minAdjustmentMagnitude = minAdjustmentMagnitude;
+		if(minAdjustmentMagnitude != null){
+			putQueryParameter("MinAdjustmentMagnitude", minAdjustmentMagnitude.toString());
 		}
 	}
 
 	@Override
-	public Class<AttachLoadBalancersResponse> getResponseClass() {
-		return AttachLoadBalancersResponse.class;
+	public Class<ScaleWithAdjustmentResponse> getResponseClass() {
+		return ScaleWithAdjustmentResponse.class;
 	}
 
 }
