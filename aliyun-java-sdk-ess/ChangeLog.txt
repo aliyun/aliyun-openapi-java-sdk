@@ -1,0 +1,80 @@
+2021-08-06 Version: 2.3.6
+1. add new OpenAPI ScaleWithAdjustment
+2. add new OpenAPI AttachAlbServerGroups
+
+2020-10-21 Version: 2.3.5
+1, Support Private Pool Options.
+2, Support mps option.
+
+2020-08-31 Version: 2.3.4
+1, Support ScaleInEvaluationCount, ScaleOutEvaluationCount for target tracking scaling rule;
+2, Support CompensateWithOnDemand for CostOptimized scaling group.
+
+2020-02-17 Version: 2.3.3
+1. Deprecated version.
+
+2019-06-25 Version: 2.3.2
+1, Enhencement for CostOptimized scaling group.
+
+2019-06-19 Version: 2.3.1
+1, Support predict scaling rule.
+
+2019-04-04 Version: 2.3.0
+1, ScalingConf systemDisk add DiskName and Description  parameters.
+2, ScalingConf dataDisk add DiskName & Description & Encrypted & KMSKeyId  parameters.
+
+2019-01-28 Version: 2.2.9
+1, Support modify vSwitch of scalingGroup.
+2, Support new target tracking scaling rule.
+
+2018-12-05 Version: 2.2.8
+1, Scaling group support vServerGroup.
+
+2018-12-03 Version: 2.2.7
+1,  Add a parameter to RemoveInstances.
+
+2018-09-06 Version: 2.2.6
+1, AutoScaling support launchTemplate.
+
+2018-08-27 Version: 2.2.5
+1, add Ess alarm task api, CreateAlarm, DeleteAlarm, DescribeAlarms, DeleteAlarm, EnableAlarm, DisableAlarm
+
+
+2018-08-16 Version: 2.2.4
+1, ModifyScalingConfiguration add imageName.
+2, CreateScalingConfiguration add imageName.
+
+2018-07-11 Version: 2.2.2
+1, new function: Attach and Detach Rds instance of scalingGroup.
+
+
+2018-07-05 Version: 2.2.1
+1, new function, attach/detach load balancer of scalingGroup
+
+2018-06-28 Version: 2.2.0
+1, ScalingConfiguration support hostName and passwordInherit
+2, ScalingConfiguration support modify
+
+2018-06-13 Version: 2.1.6
+1, Add lifecycleHook.
+
+2018-05-07 Version: 2.1.5
+1, Remove DescribeAccountAttributes.
+
+2018-04-23 Version: 2.1.4
+1, Add notificationConfiguration.
+2, Add standby status.
+
+2017-11-30 Version: 2.1.2
+1, Add multi zones in scalingGroup.
+2, Add multi instanceTypes in scalingConfiguration.
+
+2017-11-14 Version: 2.1.1
+1, 重新开放DescribeScalingActivities接口。
+
+
+2017-10-26 Version: 2.1.0
+1, ESS支持蚂蚁金融云。
+2, 调整ScalingConfiguration组件，新增userData，keyPairName，ramRoleName，deploymentSetId，securityEnhancementStrategy，tags共6个字段，增强伸缩组的弹性能力。
+3, SDK接入日本、德国、迪拜、澳洲等地域，Region化的区域也可以使用当前版本SDK。
+
