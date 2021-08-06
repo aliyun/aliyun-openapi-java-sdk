@@ -12,30 +12,19 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.ess.model.v20140828;
+package com.aliyuncs.ess.transform.v20140828;
 
-import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ess.transform.v20140828.UntagResourcesResponseUnmarshaller;
+import com.aliyuncs.ess.model.v20140828.DetachAlbServerGroupsResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
-/**
- * @author auto create
- * @version 
- */
-public class UntagResourcesResponse extends AcsResponse {
 
-	private String requestId;
+public class DetachAlbServerGroupsResponseUnmarshaller {
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	@Override
-	public UntagResourcesResponse getInstance(UnmarshallerContext context) {
-		return	UntagResourcesResponseUnmarshaller.unmarshall(this, context);
+	public static DetachAlbServerGroupsResponse unmarshall(DetachAlbServerGroupsResponse detachAlbServerGroupsResponse, UnmarshallerContext _ctx) {
+		
+		detachAlbServerGroupsResponse.setRequestId(_ctx.stringValue("DetachAlbServerGroupsResponse.RequestId"));
+		detachAlbServerGroupsResponse.setScalingActivityId(_ctx.stringValue("DetachAlbServerGroupsResponse.ScalingActivityId"));
+	 
+	 	return detachAlbServerGroupsResponse;
 	}
 }

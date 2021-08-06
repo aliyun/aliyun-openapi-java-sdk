@@ -26,12 +26,22 @@ public class DetachLoadBalancersResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String scalingActivityId;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getScalingActivityId() {
+		return this.scalingActivityId;
+	}
+
+	public void setScalingActivityId(String scalingActivityId) {
+		this.scalingActivityId = scalingActivityId;
 	}
 
 	@Override

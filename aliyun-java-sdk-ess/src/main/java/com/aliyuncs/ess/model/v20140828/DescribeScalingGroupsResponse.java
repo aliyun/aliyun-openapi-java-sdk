@@ -143,7 +143,19 @@ public class DescribeScalingGroupsResponse extends AcsResponse {
 
 		private Boolean groupDeletionProtection;
 
+		private Boolean scaleOutAmountCheck;
+
+		private Boolean weighted;
+
+		private Integer totalInstanceCount;
+
+		private String currentHostName;
+
 		private List<VServerGroup> vServerGroups;
+
+		private List<LaunchTemplateOverride> launchTemplateOverrides;
+
+		private List<AlbServerGroup> albServerGroups;
 
 		private List<String> vSwitchIds;
 
@@ -419,12 +431,60 @@ public class DescribeScalingGroupsResponse extends AcsResponse {
 			this.groupDeletionProtection = groupDeletionProtection;
 		}
 
+		public Boolean getScaleOutAmountCheck() {
+			return this.scaleOutAmountCheck;
+		}
+
+		public void setScaleOutAmountCheck(Boolean scaleOutAmountCheck) {
+			this.scaleOutAmountCheck = scaleOutAmountCheck;
+		}
+
+		public Boolean getWeighted() {
+			return this.weighted;
+		}
+
+		public void setWeighted(Boolean weighted) {
+			this.weighted = weighted;
+		}
+
+		public Integer getTotalInstanceCount() {
+			return this.totalInstanceCount;
+		}
+
+		public void setTotalInstanceCount(Integer totalInstanceCount) {
+			this.totalInstanceCount = totalInstanceCount;
+		}
+
+		public String getCurrentHostName() {
+			return this.currentHostName;
+		}
+
+		public void setCurrentHostName(String currentHostName) {
+			this.currentHostName = currentHostName;
+		}
+
 		public List<VServerGroup> getVServerGroups() {
 			return this.vServerGroups;
 		}
 
 		public void setVServerGroups(List<VServerGroup> vServerGroups) {
 			this.vServerGroups = vServerGroups;
+		}
+
+		public List<LaunchTemplateOverride> getLaunchTemplateOverrides() {
+			return this.launchTemplateOverrides;
+		}
+
+		public void setLaunchTemplateOverrides(List<LaunchTemplateOverride> launchTemplateOverrides) {
+			this.launchTemplateOverrides = launchTemplateOverrides;
+		}
+
+		public List<AlbServerGroup> getAlbServerGroups() {
+			return this.albServerGroups;
+		}
+
+		public void setAlbServerGroups(List<AlbServerGroup> albServerGroups) {
+			this.albServerGroups = albServerGroups;
 		}
 
 		public List<String> getVSwitchIds() {
@@ -520,6 +580,62 @@ public class DescribeScalingGroupsResponse extends AcsResponse {
 				public void setWeight(Integer weight) {
 					this.weight = weight;
 				}
+			}
+		}
+
+		public static class LaunchTemplateOverride {
+
+			private String instanceType;
+
+			private Integer weightedCapacity;
+
+			public String getInstanceType() {
+				return this.instanceType;
+			}
+
+			public void setInstanceType(String instanceType) {
+				this.instanceType = instanceType;
+			}
+
+			public Integer getWeightedCapacity() {
+				return this.weightedCapacity;
+			}
+
+			public void setWeightedCapacity(Integer weightedCapacity) {
+				this.weightedCapacity = weightedCapacity;
+			}
+		}
+
+		public static class AlbServerGroup {
+
+			private String albServerGroupId;
+
+			private Integer port;
+
+			private Integer weight;
+
+			public String getAlbServerGroupId() {
+				return this.albServerGroupId;
+			}
+
+			public void setAlbServerGroupId(String albServerGroupId) {
+				this.albServerGroupId = albServerGroupId;
+			}
+
+			public Integer getPort() {
+				return this.port;
+			}
+
+			public void setPort(Integer port) {
+				this.port = port;
+			}
+
+			public Integer getWeight() {
+				return this.weight;
+			}
+
+			public void setWeight(Integer weight) {
+				this.weight = weight;
 			}
 		}
 	}

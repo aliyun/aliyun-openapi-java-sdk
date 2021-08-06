@@ -19,6 +19,8 @@ import java.util.List;
 
 import com.aliyuncs.ess.model.v20140828.DescribeScalingGroupsResponse;
 import com.aliyuncs.ess.model.v20140828.DescribeScalingGroupsResponse.ScalingGroup;
+import com.aliyuncs.ess.model.v20140828.DescribeScalingGroupsResponse.ScalingGroup.AlbServerGroup;
+import com.aliyuncs.ess.model.v20140828.DescribeScalingGroupsResponse.ScalingGroup.LaunchTemplateOverride;
 import com.aliyuncs.ess.model.v20140828.DescribeScalingGroupsResponse.ScalingGroup.VServerGroup;
 import com.aliyuncs.ess.model.v20140828.DescribeScalingGroupsResponse.ScalingGroup.VServerGroup.VServerGroupAttribute;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -69,6 +71,10 @@ public class DescribeScalingGroupsResponseUnmarshaller {
 			scalingGroup.setSpotInstancePools(_ctx.integerValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].SpotInstancePools"));
 			scalingGroup.setDesiredCapacity(_ctx.integerValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].DesiredCapacity"));
 			scalingGroup.setGroupDeletionProtection(_ctx.booleanValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].GroupDeletionProtection"));
+			scalingGroup.setScaleOutAmountCheck(_ctx.booleanValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].ScaleOutAmountCheck"));
+			scalingGroup.setWeighted(_ctx.booleanValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].Weighted"));
+			scalingGroup.setTotalInstanceCount(_ctx.integerValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].TotalInstanceCount"));
+			scalingGroup.setCurrentHostName(_ctx.stringValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].CurrentHostName"));
 
 			List<String> vSwitchIds = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].VSwitchIds.Length"); j++) {
@@ -119,6 +125,27 @@ public class DescribeScalingGroupsResponseUnmarshaller {
 				vServerGroups.add(vServerGroup);
 			}
 			scalingGroup.setVServerGroups(vServerGroups);
+
+			List<LaunchTemplateOverride> launchTemplateOverrides = new ArrayList<LaunchTemplateOverride>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].LaunchTemplateOverrides.Length"); j++) {
+				LaunchTemplateOverride launchTemplateOverride = new LaunchTemplateOverride();
+				launchTemplateOverride.setInstanceType(_ctx.stringValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].LaunchTemplateOverrides["+ j +"].InstanceType"));
+				launchTemplateOverride.setWeightedCapacity(_ctx.integerValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].LaunchTemplateOverrides["+ j +"].WeightedCapacity"));
+
+				launchTemplateOverrides.add(launchTemplateOverride);
+			}
+			scalingGroup.setLaunchTemplateOverrides(launchTemplateOverrides);
+
+			List<AlbServerGroup> albServerGroups = new ArrayList<AlbServerGroup>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].AlbServerGroups.Length"); j++) {
+				AlbServerGroup albServerGroup = new AlbServerGroup();
+				albServerGroup.setAlbServerGroupId(_ctx.stringValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].AlbServerGroups["+ j +"].AlbServerGroupId"));
+				albServerGroup.setPort(_ctx.integerValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].AlbServerGroups["+ j +"].Port"));
+				albServerGroup.setWeight(_ctx.integerValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].AlbServerGroups["+ j +"].Weight"));
+
+				albServerGroups.add(albServerGroup);
+			}
+			scalingGroup.setAlbServerGroups(albServerGroups);
 
 			scalingGroups.add(scalingGroup);
 		}

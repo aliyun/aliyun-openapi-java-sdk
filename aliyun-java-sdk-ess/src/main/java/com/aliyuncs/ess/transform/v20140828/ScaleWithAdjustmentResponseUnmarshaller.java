@@ -12,30 +12,19 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.ess.model.v20140828;
+package com.aliyuncs.ess.transform.v20140828;
 
-import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ess.transform.v20140828.UntagResourcesResponseUnmarshaller;
+import com.aliyuncs.ess.model.v20140828.ScaleWithAdjustmentResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
-/**
- * @author auto create
- * @version 
- */
-public class UntagResourcesResponse extends AcsResponse {
 
-	private String requestId;
+public class ScaleWithAdjustmentResponseUnmarshaller {
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	@Override
-	public UntagResourcesResponse getInstance(UnmarshallerContext context) {
-		return	UntagResourcesResponseUnmarshaller.unmarshall(this, context);
+	public static ScaleWithAdjustmentResponse unmarshall(ScaleWithAdjustmentResponse scaleWithAdjustmentResponse, UnmarshallerContext _ctx) {
+		
+		scaleWithAdjustmentResponse.setRequestId(_ctx.stringValue("ScaleWithAdjustmentResponse.RequestId"));
+		scaleWithAdjustmentResponse.setScalingActivityId(_ctx.stringValue("ScaleWithAdjustmentResponse.ScalingActivityId"));
+	 
+	 	return scaleWithAdjustmentResponse;
 	}
 }

@@ -22,6 +22,7 @@ public class DescribeLimitationResponseUnmarshaller {
 
 	public static DescribeLimitationResponse unmarshall(DescribeLimitationResponse describeLimitationResponse, UnmarshallerContext _ctx) {
 		
+		describeLimitationResponse.setRequestId(_ctx.stringValue("DescribeLimitationResponse.RequestId"));
 		describeLimitationResponse.setMaxNumberOfScalingGroups(_ctx.integerValue("DescribeLimitationResponse.MaxNumberOfScalingGroups"));
 		describeLimitationResponse.setMaxNumberOfScalingConfigurations(_ctx.integerValue("DescribeLimitationResponse.MaxNumberOfScalingConfigurations"));
 		describeLimitationResponse.setMaxNumberOfScalingRules(_ctx.integerValue("DescribeLimitationResponse.MaxNumberOfScalingRules"));
@@ -34,6 +35,7 @@ public class DescribeLimitationResponseUnmarshaller {
 		describeLimitationResponse.setMaxNumberOfVServerGroups(_ctx.integerValue("DescribeLimitationResponse.MaxNumberOfVServerGroups"));
 		describeLimitationResponse.setMaxNumberOfLifecycleHooks(_ctx.integerValue("DescribeLimitationResponse.MaxNumberOfLifecycleHooks"));
 		describeLimitationResponse.setMaxNumberOfNotificationConfigurations(_ctx.integerValue("DescribeLimitationResponse.MaxNumberOfNotificationConfigurations"));
+		describeLimitationResponse.setMaxNumberOfAlbServerGroup(_ctx.integerValue("DescribeLimitationResponse.MaxNumberOfAlbServerGroup"));
 	 
 	 	return describeLimitationResponse;
 	}
