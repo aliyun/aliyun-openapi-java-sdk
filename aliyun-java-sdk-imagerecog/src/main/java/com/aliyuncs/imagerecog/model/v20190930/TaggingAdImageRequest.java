@@ -25,8 +25,6 @@ import com.aliyuncs.imagerecog.Endpoint;
 public class TaggingAdImageRequest extends RpcAcsRequest<TaggingAdImageResponse> {
 	   
 
-	private Integer imageType;
-
 	private String imageURL;
 	public TaggingAdImageRequest() {
 		super("imagerecog", "2019-09-30", "TaggingAdImage", "imagerecog");
@@ -35,17 +33,6 @@ public class TaggingAdImageRequest extends RpcAcsRequest<TaggingAdImageResponse>
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Integer getImageType() {
-		return this.imageType;
-	}
-
-	public void setImageType(Integer imageType) {
-		this.imageType = imageType;
-		if(imageType != null){
-			putBodyParameter("ImageType", imageType.toString());
-		}
 	}
 
 	public String getImageURL() {
