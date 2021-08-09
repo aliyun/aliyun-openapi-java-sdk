@@ -34,6 +34,8 @@ public class DescribePreCheckStatusRequest extends RpcAcsRequest<DescribePreChec
 	private String jobCode;
 
 	private String dtsJobId;
+
+	private String structPhase;
 	public DescribePreCheckStatusRequest() {
 		super("Dts", "2020-01-01", "DescribePreCheckStatus", "dts");
 		setMethod(MethodType.POST);
@@ -95,6 +97,17 @@ public class DescribePreCheckStatusRequest extends RpcAcsRequest<DescribePreChec
 		this.dtsJobId = dtsJobId;
 		if(dtsJobId != null){
 			putQueryParameter("DtsJobId", dtsJobId);
+		}
+	}
+
+	public String getStructPhase() {
+		return this.structPhase;
+	}
+
+	public void setStructPhase(String structPhase) {
+		this.structPhase = structPhase;
+		if(structPhase != null){
+			putQueryParameter("StructPhase", structPhase);
 		}
 	}
 

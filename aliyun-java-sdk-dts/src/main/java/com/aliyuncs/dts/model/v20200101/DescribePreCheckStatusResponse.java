@@ -43,6 +43,12 @@ public class DescribePreCheckStatusResponse extends AcsResponse {
 
 	private String jobId;
 
+	private Long pageNumber;
+
+	private Long pageRecordCount;
+
+	private Long totalRecordCount;
+
 	private List<ProgressInfo> jobProgress;
 
 	private List<SubDistributedJobStatusItem> subDistributedJobStatus;
@@ -117,6 +123,30 @@ public class DescribePreCheckStatusResponse extends AcsResponse {
 
 	public void setJobId(String jobId) {
 		this.jobId = jobId;
+	}
+
+	public Long getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Long pageNumber) {
+		this.pageNumber = pageNumber;
+	}
+
+	public Long getPageRecordCount() {
+		return this.pageRecordCount;
+	}
+
+	public void setPageRecordCount(Long pageRecordCount) {
+		this.pageRecordCount = pageRecordCount;
+	}
+
+	public Long getTotalRecordCount() {
+		return this.totalRecordCount;
+	}
+
+	public void setTotalRecordCount(Long totalRecordCount) {
+		this.totalRecordCount = totalRecordCount;
 	}
 
 	public List<ProgressInfo> getJobProgress() {
