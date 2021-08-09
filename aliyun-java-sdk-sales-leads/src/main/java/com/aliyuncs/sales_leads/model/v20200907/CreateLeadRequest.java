@@ -15,6 +15,7 @@
 package com.aliyuncs.sales_leads.model.v20200907;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 
 /**
@@ -37,6 +38,8 @@ public class CreateLeadRequest extends RpcAcsRequest<CreateLeadResponse> {
 	private Long constructStrategyId;
 
 	private String customerSource;
+
+	private List<RuleFactor> ruleFactors;
 
 	private String remark;
 
@@ -137,6 +140,23 @@ public class CreateLeadRequest extends RpcAcsRequest<CreateLeadResponse> {
 		}
 	}
 
+	public List<RuleFactor> getRuleFactors() {
+		return this.ruleFactors;
+	}
+
+	public void setRuleFactors(List<RuleFactor> ruleFactors) {
+		this.ruleFactors = ruleFactors;	
+		if (ruleFactors != null) {
+			for (int depth1 = 0; depth1 < ruleFactors.size(); depth1++) {
+				putQueryParameter("RuleFactor." + (depth1 + 1) + ".RuleCode" , ruleFactors.get(depth1).getRuleCode());
+				putQueryParameter("RuleFactor." + (depth1 + 1) + ".Reason" , ruleFactors.get(depth1).getReason());
+				putQueryParameter("RuleFactor." + (depth1 + 1) + ".ProductCodes" , ruleFactors.get(depth1).getProductCodes());
+				putQueryParameter("RuleFactor." + (depth1 + 1) + ".FactorCode" , ruleFactors.get(depth1).getFactorCode());
+				putQueryParameter("RuleFactor." + (depth1 + 1) + ".UserId" , ruleFactors.get(depth1).getUserId());
+			}
+		}	
+	}
+
 	public String getRemark() {
 		return this.remark;
 	}
@@ -233,6 +253,59 @@ public class CreateLeadRequest extends RpcAcsRequest<CreateLeadResponse> {
 		this.cid = cid;
 		if(cid != null){
 			putQueryParameter("Cid", cid.toString());
+		}
+	}
+
+	public static class RuleFactor {
+
+		private String ruleCode;
+
+		private String reason;
+
+		private String productCodes;
+
+		private String factorCode;
+
+		private Long userId;
+
+		public String getRuleCode() {
+			return this.ruleCode;
+		}
+
+		public void setRuleCode(String ruleCode) {
+			this.ruleCode = ruleCode;
+		}
+
+		public String getReason() {
+			return this.reason;
+		}
+
+		public void setReason(String reason) {
+			this.reason = reason;
+		}
+
+		public String getProductCodes() {
+			return this.productCodes;
+		}
+
+		public void setProductCodes(String productCodes) {
+			this.productCodes = productCodes;
+		}
+
+		public String getFactorCode() {
+			return this.factorCode;
+		}
+
+		public void setFactorCode(String factorCode) {
+			this.factorCode = factorCode;
+		}
+
+		public Long getUserId() {
+			return this.userId;
+		}
+
+		public void setUserId(Long userId) {
+			this.userId = userId;
 		}
 	}
 
