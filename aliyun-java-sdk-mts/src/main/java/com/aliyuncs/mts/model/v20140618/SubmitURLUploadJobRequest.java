@@ -35,6 +35,8 @@ public class SubmitURLUploadJobRequest extends RpcAcsRequest<SubmitURLUploadJobR
 	private String notify;
 
 	private String userData;
+
+	private String region;
 	public SubmitURLUploadJobRequest() {
 		super("Mts", "2014-06-18", "SubmitURLUploadJob", "mts");
 		setMethod(MethodType.POST);
@@ -85,6 +87,17 @@ public class SubmitURLUploadJobRequest extends RpcAcsRequest<SubmitURLUploadJobR
 		this.userData = userData;
 		if(userData != null){
 			putQueryParameter("UserData", userData);
+		}
+	}
+
+	public String getRegion() {
+		return this.region;
+	}
+
+	public void setRegion(String region) {
+		this.region = region;
+		if(region != null){
+			putQueryParameter("Region", region);
 		}
 	}
 
