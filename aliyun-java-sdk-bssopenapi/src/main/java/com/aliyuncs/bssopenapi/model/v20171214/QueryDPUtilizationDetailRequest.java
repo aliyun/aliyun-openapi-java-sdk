@@ -31,6 +31,8 @@ public class QueryDPUtilizationDetailRequest extends RpcAcsRequest<QueryDPUtiliz
 
 	private String instanceSpec;
 
+	private String prodCode;
+
 	private String endTime;
 
 	private Boolean includeShare;
@@ -81,6 +83,17 @@ public class QueryDPUtilizationDetailRequest extends RpcAcsRequest<QueryDPUtiliz
 		this.instanceSpec = instanceSpec;
 		if(instanceSpec != null){
 			putQueryParameter("InstanceSpec", instanceSpec);
+		}
+	}
+
+	public String getProdCode() {
+		return this.prodCode;
+	}
+
+	public void setProdCode(String prodCode) {
+		this.prodCode = prodCode;
+		if(prodCode != null){
+			putQueryParameter("ProdCode", prodCode);
 		}
 	}
 

@@ -1,3 +1,9 @@
+2021-08-10 Version: 1.7.7
+- Supported DescribeSavingsPlansUsageTotal.
+- Supported DescribeSavingsPlansUsageDetail.
+- Supported DescribeSavingsPlansCoverageTotal.
+- Supported DescribeSavingsPlansCoverageDetail.
+
 2021-06-25 Version: 1.7.6
 - Update DescribeSplitItemBill to support daily report.
 
