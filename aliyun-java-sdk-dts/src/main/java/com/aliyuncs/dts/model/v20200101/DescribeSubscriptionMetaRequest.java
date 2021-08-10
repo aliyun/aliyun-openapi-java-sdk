@@ -22,20 +22,18 @@ import com.aliyuncs.dts.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeConsumerChannelRequest extends RpcAcsRequest<DescribeConsumerChannelResponse> {
+public class DescribeSubscriptionMetaRequest extends RpcAcsRequest<DescribeSubscriptionMetaResponse> {
 	   
 
-	private Integer pageNumber;
+	private String topics;
 
-	private String parentChannelId;
+	private String sid;
 
-	private Integer pageSize;
-
-	private String dtsJobId;
+	private String subMigrationJobIds;
 
 	private String dtsInstanceId;
-	public DescribeConsumerChannelRequest() {
-		super("Dts", "2020-01-01", "DescribeConsumerChannel", "dts");
+	public DescribeSubscriptionMetaRequest() {
+		super("Dts", "2020-01-01", "DescribeSubscriptionMeta", "dts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -43,47 +41,36 @@ public class DescribeConsumerChannelRequest extends RpcAcsRequest<DescribeConsum
 		} catch (Exception e) {}
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public String getTopics() {
+		return this.topics;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
+	public void setTopics(String topics) {
+		this.topics = topics;
+		if(topics != null){
+			putQueryParameter("Topics", topics);
 		}
 	}
 
-	public String getParentChannelId() {
-		return this.parentChannelId;
+	public String getSid() {
+		return this.sid;
 	}
 
-	public void setParentChannelId(String parentChannelId) {
-		this.parentChannelId = parentChannelId;
-		if(parentChannelId != null){
-			putQueryParameter("ParentChannelId", parentChannelId);
+	public void setSid(String sid) {
+		this.sid = sid;
+		if(sid != null){
+			putQueryParameter("Sid", sid);
 		}
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public String getSubMigrationJobIds() {
+		return this.subMigrationJobIds;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public String getDtsJobId() {
-		return this.dtsJobId;
-	}
-
-	public void setDtsJobId(String dtsJobId) {
-		this.dtsJobId = dtsJobId;
-		if(dtsJobId != null){
-			putQueryParameter("DtsJobId", dtsJobId);
+	public void setSubMigrationJobIds(String subMigrationJobIds) {
+		this.subMigrationJobIds = subMigrationJobIds;
+		if(subMigrationJobIds != null){
+			putQueryParameter("SubMigrationJobIds", subMigrationJobIds);
 		}
 	}
 
@@ -99,8 +86,8 @@ public class DescribeConsumerChannelRequest extends RpcAcsRequest<DescribeConsum
 	}
 
 	@Override
-	public Class<DescribeConsumerChannelResponse> getResponseClass() {
-		return DescribeConsumerChannelResponse.class;
+	public Class<DescribeSubscriptionMetaResponse> getResponseClass() {
+		return DescribeSubscriptionMetaResponse.class;
 	}
 
 }

@@ -29,6 +29,8 @@ public class ModifyDtsJobRequest extends RpcAcsRequest<ModifyDtsJobResponse> {
 
 	private String clientToken;
 
+	private String reserve;
+
 	private String dtsInstanceId;
 
 	private String synchronizationDirection;
@@ -60,6 +62,17 @@ public class ModifyDtsJobRequest extends RpcAcsRequest<ModifyDtsJobResponse> {
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getReserve() {
+		return this.reserve;
+	}
+
+	public void setReserve(String reserve) {
+		this.reserve = reserve;
+		if(reserve != null){
+			putBodyParameter("Reserve", reserve);
 		}
 	}
 
