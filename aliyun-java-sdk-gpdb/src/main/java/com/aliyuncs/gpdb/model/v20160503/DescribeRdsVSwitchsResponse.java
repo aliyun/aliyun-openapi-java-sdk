@@ -59,82 +59,34 @@ public class DescribeRdsVSwitchsResponse extends AcsResponse {
 
 		public static class VSwitchItem {
 
-			private String vSwitchId;
-
-			private String vSwitchName;
-
-			private String izNo;
-
-			private String bid;
-
-			private String aliUid;
-
-			private String regionNo;
-
-			private String cidrBlock;
+			private String status;
 
 			private Boolean isDefault;
 
-			private String status;
+			private String vSwitchId;
+
+			private String cidrBlock;
+
+			private String regionNo;
 
 			private String gmtCreate;
 
+			private String aliUid;
+
 			private String gmtModified;
 
-			public String getVSwitchId() {
-				return this.vSwitchId;
+			private String bid;
+
+			private String izNo;
+
+			private String vSwitchName;
+
+			public String getStatus() {
+				return this.status;
 			}
 
-			public void setVSwitchId(String vSwitchId) {
-				this.vSwitchId = vSwitchId;
-			}
-
-			public String getVSwitchName() {
-				return this.vSwitchName;
-			}
-
-			public void setVSwitchName(String vSwitchName) {
-				this.vSwitchName = vSwitchName;
-			}
-
-			public String getIzNo() {
-				return this.izNo;
-			}
-
-			public void setIzNo(String izNo) {
-				this.izNo = izNo;
-			}
-
-			public String getBid() {
-				return this.bid;
-			}
-
-			public void setBid(String bid) {
-				this.bid = bid;
-			}
-
-			public String getAliUid() {
-				return this.aliUid;
-			}
-
-			public void setAliUid(String aliUid) {
-				this.aliUid = aliUid;
-			}
-
-			public String getRegionNo() {
-				return this.regionNo;
-			}
-
-			public void setRegionNo(String regionNo) {
-				this.regionNo = regionNo;
-			}
-
-			public String getCidrBlock() {
-				return this.cidrBlock;
-			}
-
-			public void setCidrBlock(String cidrBlock) {
-				this.cidrBlock = cidrBlock;
+			public void setStatus(String status) {
+				this.status = status;
 			}
 
 			public Boolean getIsDefault() {
@@ -145,12 +97,28 @@ public class DescribeRdsVSwitchsResponse extends AcsResponse {
 				this.isDefault = isDefault;
 			}
 
-			public String getStatus() {
-				return this.status;
+			public String getVSwitchId() {
+				return this.vSwitchId;
 			}
 
-			public void setStatus(String status) {
-				this.status = status;
+			public void setVSwitchId(String vSwitchId) {
+				this.vSwitchId = vSwitchId;
+			}
+
+			public String getCidrBlock() {
+				return this.cidrBlock;
+			}
+
+			public void setCidrBlock(String cidrBlock) {
+				this.cidrBlock = cidrBlock;
+			}
+
+			public String getRegionNo() {
+				return this.regionNo;
+			}
+
+			public void setRegionNo(String regionNo) {
+				this.regionNo = regionNo;
 			}
 
 			public String getGmtCreate() {
@@ -161,12 +129,44 @@ public class DescribeRdsVSwitchsResponse extends AcsResponse {
 				this.gmtCreate = gmtCreate;
 			}
 
+			public String getAliUid() {
+				return this.aliUid;
+			}
+
+			public void setAliUid(String aliUid) {
+				this.aliUid = aliUid;
+			}
+
 			public String getGmtModified() {
 				return this.gmtModified;
 			}
 
 			public void setGmtModified(String gmtModified) {
 				this.gmtModified = gmtModified;
+			}
+
+			public String getBid() {
+				return this.bid;
+			}
+
+			public void setBid(String bid) {
+				this.bid = bid;
+			}
+
+			public String getIzNo() {
+				return this.izNo;
+			}
+
+			public void setIzNo(String izNo) {
+				this.izNo = izNo;
+			}
+
+			public String getVSwitchName() {
+				return this.vSwitchName;
+			}
+
+			public void setVSwitchName(String vSwitchName) {
+				this.vSwitchName = vSwitchName;
 			}
 		}
 	}

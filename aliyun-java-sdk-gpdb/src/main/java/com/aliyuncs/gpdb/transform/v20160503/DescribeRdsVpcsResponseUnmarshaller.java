@@ -35,28 +35,28 @@ public class DescribeRdsVpcsResponseUnmarshaller {
 		List<VpcItem> vpc = new ArrayList<VpcItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeRdsVpcsResponse.Vpcs.Vpc.Length"); i++) {
 			VpcItem vpcItem = new VpcItem();
-			vpcItem.setVpcId(_ctx.stringValue("DescribeRdsVpcsResponse.Vpcs.Vpc["+ i +"].VpcId"));
-			vpcItem.setVpcName(_ctx.stringValue("DescribeRdsVpcsResponse.Vpcs.Vpc["+ i +"].VpcName"));
-			vpcItem.setBid(_ctx.stringValue("DescribeRdsVpcsResponse.Vpcs.Vpc["+ i +"].Bid"));
-			vpcItem.setAliUid(_ctx.stringValue("DescribeRdsVpcsResponse.Vpcs.Vpc["+ i +"].AliUid"));
-			vpcItem.setRegionNo(_ctx.stringValue("DescribeRdsVpcsResponse.Vpcs.Vpc["+ i +"].RegionNo"));
-			vpcItem.setCidrBlock(_ctx.stringValue("DescribeRdsVpcsResponse.Vpcs.Vpc["+ i +"].CidrBlock"));
-			vpcItem.setIsDefault(_ctx.booleanValue("DescribeRdsVpcsResponse.Vpcs.Vpc["+ i +"].IsDefault"));
 			vpcItem.setStatus(_ctx.stringValue("DescribeRdsVpcsResponse.Vpcs.Vpc["+ i +"].Status"));
+			vpcItem.setVpcName(_ctx.stringValue("DescribeRdsVpcsResponse.Vpcs.Vpc["+ i +"].VpcName"));
+			vpcItem.setVpcId(_ctx.stringValue("DescribeRdsVpcsResponse.Vpcs.Vpc["+ i +"].VpcId"));
+			vpcItem.setIsDefault(_ctx.booleanValue("DescribeRdsVpcsResponse.Vpcs.Vpc["+ i +"].IsDefault"));
+			vpcItem.setCidrBlock(_ctx.stringValue("DescribeRdsVpcsResponse.Vpcs.Vpc["+ i +"].CidrBlock"));
+			vpcItem.setRegionNo(_ctx.stringValue("DescribeRdsVpcsResponse.Vpcs.Vpc["+ i +"].RegionNo"));
 			vpcItem.setGmtCreate(_ctx.stringValue("DescribeRdsVpcsResponse.Vpcs.Vpc["+ i +"].GmtCreate"));
+			vpcItem.setAliUid(_ctx.stringValue("DescribeRdsVpcsResponse.Vpcs.Vpc["+ i +"].AliUid"));
 			vpcItem.setGmtModified(_ctx.stringValue("DescribeRdsVpcsResponse.Vpcs.Vpc["+ i +"].GmtModified"));
+			vpcItem.setBid(_ctx.stringValue("DescribeRdsVpcsResponse.Vpcs.Vpc["+ i +"].Bid"));
 
 			List<VSwitch> vSwitchs = new ArrayList<VSwitch>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeRdsVpcsResponse.Vpcs.Vpc["+ i +"].VSwitchs.Length"); j++) {
 				VSwitch vSwitch = new VSwitch();
-				vSwitch.setVSwitchId(_ctx.stringValue("DescribeRdsVpcsResponse.Vpcs.Vpc["+ i +"].VSwitchs["+ j +"].VSwitchId"));
-				vSwitch.setVSwitchName(_ctx.stringValue("DescribeRdsVpcsResponse.Vpcs.Vpc["+ i +"].VSwitchs["+ j +"].VSwitchName"));
-				vSwitch.setIzNo(_ctx.stringValue("DescribeRdsVpcsResponse.Vpcs.Vpc["+ i +"].VSwitchs["+ j +"].IzNo"));
-				vSwitch.setCidrBlock(_ctx.stringValue("DescribeRdsVpcsResponse.Vpcs.Vpc["+ i +"].VSwitchs["+ j +"].CidrBlock"));
-				vSwitch.setIsDefault(_ctx.booleanValue("DescribeRdsVpcsResponse.Vpcs.Vpc["+ i +"].VSwitchs["+ j +"].IsDefault"));
 				vSwitch.setStatus(_ctx.stringValue("DescribeRdsVpcsResponse.Vpcs.Vpc["+ i +"].VSwitchs["+ j +"].Status"));
+				vSwitch.setVSwitchId(_ctx.stringValue("DescribeRdsVpcsResponse.Vpcs.Vpc["+ i +"].VSwitchs["+ j +"].VSwitchId"));
+				vSwitch.setIsDefault(_ctx.booleanValue("DescribeRdsVpcsResponse.Vpcs.Vpc["+ i +"].VSwitchs["+ j +"].IsDefault"));
+				vSwitch.setCidrBlock(_ctx.stringValue("DescribeRdsVpcsResponse.Vpcs.Vpc["+ i +"].VSwitchs["+ j +"].CidrBlock"));
 				vSwitch.setGmtCreate(_ctx.stringValue("DescribeRdsVpcsResponse.Vpcs.Vpc["+ i +"].VSwitchs["+ j +"].GmtCreate"));
 				vSwitch.setGmtModified(_ctx.stringValue("DescribeRdsVpcsResponse.Vpcs.Vpc["+ i +"].VSwitchs["+ j +"].GmtModified"));
+				vSwitch.setIzNo(_ctx.stringValue("DescribeRdsVpcsResponse.Vpcs.Vpc["+ i +"].VSwitchs["+ j +"].IzNo"));
+				vSwitch.setVSwitchName(_ctx.stringValue("DescribeRdsVpcsResponse.Vpcs.Vpc["+ i +"].VSwitchs["+ j +"].VSwitchName"));
 
 				vSwitchs.add(vSwitch);
 			}
