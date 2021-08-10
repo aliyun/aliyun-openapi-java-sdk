@@ -15,6 +15,7 @@
 package com.aliyuncs.imagerecog.model.v20190930;
 
 import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.imagerecog.transform.v20190930.TaggingAdImageResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -67,17 +68,27 @@ public class TaggingAdImageResponse extends AcsResponse {
 
 	public static class Data {
 
-		private List<Tag> tags;
+		private Map<Object,Object> tagInfo;
 
-		public List<Tag> getTags() {
+		private List<TagsItem> tags;
+
+		public Map<Object,Object> getTagInfo() {
+			return this.tagInfo;
+		}
+
+		public void setTagInfo(Map<Object,Object> tagInfo) {
+			this.tagInfo = tagInfo;
+		}
+
+		public List<TagsItem> getTags() {
 			return this.tags;
 		}
 
-		public void setTags(List<Tag> tags) {
+		public void setTags(List<TagsItem> tags) {
 			this.tags = tags;
 		}
 
-		public static class Tag {
+		public static class TagsItem {
 
 			private String value;
 

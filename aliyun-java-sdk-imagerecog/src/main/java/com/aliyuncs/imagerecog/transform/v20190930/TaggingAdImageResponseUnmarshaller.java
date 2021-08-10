@@ -19,7 +19,8 @@ import java.util.List;
 
 import com.aliyuncs.imagerecog.model.v20190930.TaggingAdImageResponse;
 import com.aliyuncs.imagerecog.model.v20190930.TaggingAdImageResponse.Data;
-import com.aliyuncs.imagerecog.model.v20190930.TaggingAdImageResponse.Data.Tag;
+import com.aliyuncs.imagerecog.model.v20190930.TaggingAdImageResponse.Data.TagsItem;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -32,14 +33,15 @@ public class TaggingAdImageResponseUnmarshaller {
 		taggingAdImageResponse.setMessage(_ctx.stringValue("TaggingAdImageResponse.Message"));
 
 		Data data = new Data();
+		data.setTagInfo(_ctx.mapValue("TaggingAdImageResponse.Data.TagInfo"));
 
-		List<Tag> tags = new ArrayList<Tag>();
+		List<TagsItem> tags = new ArrayList<TagsItem>();
 		for (int i = 0; i < _ctx.lengthValue("TaggingAdImageResponse.Data.Tags.Length"); i++) {
-			Tag tag = new Tag();
-			tag.setValue(_ctx.stringValue("TaggingAdImageResponse.Data.Tags["+ i +"].Value"));
-			tag.setConfidence(_ctx.floatValue("TaggingAdImageResponse.Data.Tags["+ i +"].Confidence"));
+			TagsItem tagsItem = new TagsItem();
+			tagsItem.setValue(_ctx.stringValue("TaggingAdImageResponse.Data.Tags["+ i +"].Value"));
+			tagsItem.setConfidence(_ctx.floatValue("TaggingAdImageResponse.Data.Tags["+ i +"].Confidence"));
 
-			tags.add(tag);
+			tags.add(tagsItem);
 		}
 		data.setTags(tags);
 		taggingAdImageResponse.setData(data);
