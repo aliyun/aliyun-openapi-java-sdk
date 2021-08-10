@@ -42,6 +42,7 @@ public class PollUserStatusResponseUnmarshaller {
 		pollUserStatusResponse.setParams(params);
 
 		Data data = new Data();
+		data.setContextId(_ctx.longValue("PollUserStatusResponse.Data.ContextId"));
 
 		CallContext callContext = new CallContext();
 		callContext.setCallType(_ctx.stringValue("PollUserStatusResponse.Data.CallContext.CallType"));

@@ -88,9 +88,19 @@ public class PollUserStatusResponse extends AcsResponse {
 
 	public static class Data {
 
+		private Long contextId;
+
 		private CallContext callContext;
 
 		private UserContext userContext;
+
+		public Long getContextId() {
+			return this.contextId;
+		}
+
+		public void setContextId(Long contextId) {
+			this.contextId = contextId;
+		}
 
 		public CallContext getCallContext() {
 			return this.callContext;

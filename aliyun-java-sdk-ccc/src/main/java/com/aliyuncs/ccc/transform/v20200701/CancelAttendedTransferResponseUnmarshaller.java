@@ -42,6 +42,7 @@ public class CancelAttendedTransferResponseUnmarshaller {
 		cancelAttendedTransferResponse.setParams(params);
 
 		Data data = new Data();
+		data.setContextId(_ctx.longValue("CancelAttendedTransferResponse.Data.ContextId"));
 
 		CallContext callContext = new CallContext();
 		callContext.setCallType(_ctx.stringValue("CancelAttendedTransferResponse.Data.CallContext.CallType"));

@@ -42,6 +42,7 @@ public class AnswerCallResponseUnmarshaller {
 		answerCallResponse.setParams(params);
 
 		Data data = new Data();
+		data.setContextId(_ctx.longValue("AnswerCallResponse.Data.ContextId"));
 
 		CallContext callContext = new CallContext();
 		callContext.setInstanceId(_ctx.stringValue("AnswerCallResponse.Data.CallContext.InstanceId"));

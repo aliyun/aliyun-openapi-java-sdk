@@ -42,6 +42,7 @@ public class CompleteAttendedTransferResponseUnmarshaller {
 		completeAttendedTransferResponse.setParams(params);
 
 		Data data = new Data();
+		data.setContextId(_ctx.longValue("CompleteAttendedTransferResponse.Data.ContextId"));
 
 		CallContext callContext = new CallContext();
 		callContext.setCallType(_ctx.stringValue("CompleteAttendedTransferResponse.Data.CallContext.CallType"));

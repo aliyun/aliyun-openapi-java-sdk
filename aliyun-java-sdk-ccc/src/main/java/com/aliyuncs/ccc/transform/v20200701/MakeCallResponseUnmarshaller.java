@@ -42,6 +42,7 @@ public class MakeCallResponseUnmarshaller {
 		makeCallResponse.setParams(params);
 
 		Data data = new Data();
+		data.setContextId(_ctx.longValue("MakeCallResponse.Data.ContextId"));
 
 		CallContext callContext = new CallContext();
 		callContext.setCallType(_ctx.stringValue("MakeCallResponse.Data.CallContext.CallType"));
