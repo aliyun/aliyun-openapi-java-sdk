@@ -1,3 +1,6 @@
+2021-08-11 Version: 1.0.9
+- Support CEN latest Apis.
+
 2021-07-08 Version: 1.0.8
 - Support CEN TransiteRouter latest Apis.
 

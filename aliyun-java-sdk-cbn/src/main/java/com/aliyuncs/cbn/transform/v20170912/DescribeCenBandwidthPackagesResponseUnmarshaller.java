@@ -56,6 +56,7 @@ public class DescribeCenBandwidthPackagesResponseUnmarshaller {
 			cenBandwidthPackage.setReservationInternetChargeType(_ctx.stringValue("DescribeCenBandwidthPackagesResponse.CenBandwidthPackages["+ i +"].ReservationInternetChargeType"));
 			cenBandwidthPackage.setReservationActiveTime(_ctx.stringValue("DescribeCenBandwidthPackagesResponse.CenBandwidthPackages["+ i +"].ReservationActiveTime"));
 			cenBandwidthPackage.setReservationOrderType(_ctx.stringValue("DescribeCenBandwidthPackagesResponse.CenBandwidthPackages["+ i +"].ReservationOrderType"));
+			cenBandwidthPackage.setResourceGroupId(_ctx.stringValue("DescribeCenBandwidthPackagesResponse.CenBandwidthPackages["+ i +"].ResourceGroupId"));
 
 			List<String> cenIds = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeCenBandwidthPackagesResponse.CenBandwidthPackages["+ i +"].CenIds.Length"); j++) {

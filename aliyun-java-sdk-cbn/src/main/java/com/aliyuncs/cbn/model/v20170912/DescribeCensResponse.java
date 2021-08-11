@@ -91,6 +91,8 @@ public class DescribeCensResponse extends AcsResponse {
 
 		private String ipv6Level;
 
+		private String resourceGroupId;
+
 		private List<Tag> tags;
 
 		private List<String> cenBandwidthPackageIds;
@@ -149,6 +151,14 @@ public class DescribeCensResponse extends AcsResponse {
 
 		public void setIpv6Level(String ipv6Level) {
 			this.ipv6Level = ipv6Level;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
 		}
 
 		public List<Tag> getTags() {

@@ -97,6 +97,8 @@ public class ListTransitRouterVbrAttachmentsResponse extends AcsResponse {
 
 		private Boolean autoPublishRouteEnabled;
 
+		private String transitRouterId;
+
 		public String getTransitRouterAttachmentId() {
 			return this.transitRouterAttachmentId;
 		}
@@ -175,6 +177,14 @@ public class ListTransitRouterVbrAttachmentsResponse extends AcsResponse {
 
 		public void setAutoPublishRouteEnabled(Boolean autoPublishRouteEnabled) {
 			this.autoPublishRouteEnabled = autoPublishRouteEnabled;
+		}
+
+		public String getTransitRouterId() {
+			return this.transitRouterId;
+		}
+
+		public void setTransitRouterId(String transitRouterId) {
+			this.transitRouterId = transitRouterId;
 		}
 	}
 

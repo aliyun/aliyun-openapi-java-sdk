@@ -52,6 +52,7 @@ public class DescribeCenRouteMapsResponseUnmarshaller {
 			routeMap.setDestinationInstanceIdsReverseMatch(_ctx.booleanValue("DescribeCenRouteMapsResponse.RouteMaps["+ i +"].DestinationInstanceIdsReverseMatch"));
 			routeMap.setGatewayZoneId(_ctx.stringValue("DescribeCenRouteMapsResponse.RouteMaps["+ i +"].GatewayZoneId"));
 			routeMap.setMatchAddressType(_ctx.stringValue("DescribeCenRouteMapsResponse.RouteMaps["+ i +"].MatchAddressType"));
+			routeMap.setTransitRouterRouteTableId(_ctx.stringValue("DescribeCenRouteMapsResponse.RouteMaps["+ i +"].TransitRouterRouteTableId"));
 
 			List<String> sourceInstanceIds = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeCenRouteMapsResponse.RouteMaps["+ i +"].SourceInstanceIds.Length"); j++) {

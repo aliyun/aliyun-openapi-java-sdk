@@ -95,6 +95,8 @@ public class ListTransitRouterVpcAttachmentsResponse extends AcsResponse {
 
 		private String creationTime;
 
+		private String transitRouterId;
+
 		private List<ZoneMapping> zoneMappings;
 
 		public String getTransitRouterAttachmentId() {
@@ -167,6 +169,14 @@ public class ListTransitRouterVpcAttachmentsResponse extends AcsResponse {
 
 		public void setCreationTime(String creationTime) {
 			this.creationTime = creationTime;
+		}
+
+		public String getTransitRouterId() {
+			return this.transitRouterId;
+		}
+
+		public void setTransitRouterId(String transitRouterId) {
+			this.transitRouterId = transitRouterId;
 		}
 
 		public List<ZoneMapping> getZoneMappings() {

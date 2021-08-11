@@ -44,6 +44,7 @@ public class ListTransitRouterVbrAttachmentsResponseUnmarshaller {
 			transitRouterAttachment.setTransitRouterAttachmentDescription(_ctx.stringValue("ListTransitRouterVbrAttachmentsResponse.TransitRouterAttachments["+ i +"].TransitRouterAttachmentDescription"));
 			transitRouterAttachment.setCreationTime(_ctx.stringValue("ListTransitRouterVbrAttachmentsResponse.TransitRouterAttachments["+ i +"].CreationTime"));
 			transitRouterAttachment.setAutoPublishRouteEnabled(_ctx.booleanValue("ListTransitRouterVbrAttachmentsResponse.TransitRouterAttachments["+ i +"].AutoPublishRouteEnabled"));
+			transitRouterAttachment.setTransitRouterId(_ctx.stringValue("ListTransitRouterVbrAttachmentsResponse.TransitRouterAttachments["+ i +"].TransitRouterId"));
 
 			transitRouterAttachments.add(transitRouterAttachment);
 		}
