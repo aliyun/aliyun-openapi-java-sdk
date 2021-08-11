@@ -25,9 +25,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetQualityRuleDetailResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String message;
+
+	private String requestId;
 
 	private String code;
 
@@ -35,20 +35,20 @@ public class GetQualityRuleDetailResponse extends AcsResponse {
 
 	private Data data;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public String getMessage() {
 		return this.message;
 	}
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getCode() {
@@ -77,24 +77,24 @@ public class GetQualityRuleDetailResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String ruleCreateTime;
+		private Integer ruleTag;
 
 		private Integer matchType;
 
-		private Long ruleId;
-
-		private Integer ruleTag;
-
 		private String name;
+
+		private String ruleCreateTime;
+
+		private Long ruleId;
 
 		private List<String> keyWords;
 
-		public String getRuleCreateTime() {
-			return this.ruleCreateTime;
+		public Integer getRuleTag() {
+			return this.ruleTag;
 		}
 
-		public void setRuleCreateTime(String ruleCreateTime) {
-			this.ruleCreateTime = ruleCreateTime;
+		public void setRuleTag(Integer ruleTag) {
+			this.ruleTag = ruleTag;
 		}
 
 		public Integer getMatchType() {
@@ -105,28 +105,28 @@ public class GetQualityRuleDetailResponse extends AcsResponse {
 			this.matchType = matchType;
 		}
 
-		public Long getRuleId() {
-			return this.ruleId;
-		}
-
-		public void setRuleId(Long ruleId) {
-			this.ruleId = ruleId;
-		}
-
-		public Integer getRuleTag() {
-			return this.ruleTag;
-		}
-
-		public void setRuleTag(Integer ruleTag) {
-			this.ruleTag = ruleTag;
-		}
-
 		public String getName() {
 			return this.name;
 		}
 
 		public void setName(String name) {
 			this.name = name;
+		}
+
+		public String getRuleCreateTime() {
+			return this.ruleCreateTime;
+		}
+
+		public void setRuleCreateTime(String ruleCreateTime) {
+			this.ruleCreateTime = ruleCreateTime;
+		}
+
+		public Long getRuleId() {
+			return this.ruleId;
+		}
+
+		public void setRuleId(Long ruleId) {
+			this.ruleId = ruleId;
 		}
 
 		public List<String> getKeyWords() {

@@ -73,6 +73,9 @@ public class QuerySettleBillResponseUnmarshaller {
 			item.setSubOrderId(_ctx.stringValue("QuerySettleBillResponse.Data.Items["+ i +"].SubOrderId"));
 			item.setPipCode(_ctx.stringValue("QuerySettleBillResponse.Data.Items["+ i +"].PipCode"));
 			item.setCommodityCode(_ctx.stringValue("QuerySettleBillResponse.Data.Items["+ i +"].CommodityCode"));
+			item.setBillAccountID(_ctx.stringValue("QuerySettleBillResponse.Data.Items["+ i +"].BillAccountID"));
+			item.setBillAccountName(_ctx.stringValue("QuerySettleBillResponse.Data.Items["+ i +"].BillAccountName"));
+			item.setBizType(_ctx.stringValue("QuerySettleBillResponse.Data.Items["+ i +"].BizType"));
 
 			items.add(item);
 		}

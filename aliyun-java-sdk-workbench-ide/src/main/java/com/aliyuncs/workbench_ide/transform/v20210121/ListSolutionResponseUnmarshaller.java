@@ -14,6 +14,9 @@
 
 package com.aliyuncs.workbench_ide.transform.v20210121;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.workbench_ide.model.v20210121.ListSolutionResponse;
 import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -24,13 +27,15 @@ public class ListSolutionResponseUnmarshaller {
 	public static ListSolutionResponse unmarshall(ListSolutionResponse listSolutionResponse, UnmarshallerContext _ctx) {
 		
 		listSolutionResponse.setRequestId(_ctx.stringValue("ListSolutionResponse.RequestId"));
-		listSolutionResponse.setData(_ctx.mapValue("ListSolutionResponse.Data"));
 		listSolutionResponse.setMessage(_ctx.stringValue("ListSolutionResponse.Message"));
 		listSolutionResponse.setCode(_ctx.stringValue("ListSolutionResponse.Code"));
 		listSolutionResponse.setPageSize(_ctx.integerValue("ListSolutionResponse.PageSize"));
 		listSolutionResponse.setPage(_ctx.integerValue("ListSolutionResponse.Page"));
 		listSolutionResponse.setTotal(_ctx.integerValue("ListSolutionResponse.Total"));
 		listSolutionResponse.setTotalPage(_ctx.integerValue("ListSolutionResponse.TotalPage"));
+
+		List<Map<Object, Object>> data = _ctx.listMapValue("ListSolutionResponse.Data");
+		listSolutionResponse.setData(data);
 	 
 	 	return listSolutionResponse;
 	}

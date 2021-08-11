@@ -30,6 +30,8 @@ public class ValidateTemplateResponse extends AcsResponse {
 
 	private String requestId;
 
+	private List<Output> outputs;
+
 	private List<Map<Object,Object>> parameters;
 
 	public String getDescription() {
@@ -48,12 +50,43 @@ public class ValidateTemplateResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public List<Output> getOutputs() {
+		return this.outputs;
+	}
+
+	public void setOutputs(List<Output> outputs) {
+		this.outputs = outputs;
+	}
+
 	public List<Map<Object,Object>> getParameters() {
 		return this.parameters;
 	}
 
 	public void setParameters(List<Map<Object,Object>> parameters) {
 		this.parameters = parameters;
+	}
+
+	public static class Output {
+
+		private String outputKey;
+
+		private String description;
+
+		public String getOutputKey() {
+			return this.outputKey;
+		}
+
+		public void setOutputKey(String outputKey) {
+			this.outputKey = outputKey;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
 	}
 
 	@Override

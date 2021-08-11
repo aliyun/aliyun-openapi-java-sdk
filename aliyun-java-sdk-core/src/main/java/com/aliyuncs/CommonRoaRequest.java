@@ -1,7 +1,5 @@
 package com.aliyuncs;
 
-import com.aliyuncs.http.FormatType;
-
 public class CommonRoaRequest extends RoaAcsRequest<CommonResponse> {
 
     public CommonRoaRequest(String product) {

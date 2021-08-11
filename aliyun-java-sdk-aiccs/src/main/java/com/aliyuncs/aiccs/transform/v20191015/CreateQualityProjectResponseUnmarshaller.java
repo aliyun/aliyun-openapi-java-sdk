@@ -29,9 +29,9 @@ public class CreateQualityProjectResponseUnmarshaller {
 		createQualityProjectResponse.setSuccess(_ctx.booleanValue("CreateQualityProjectResponse.Success"));
 
 		Data data = new Data();
-		data.setInstanceId(_ctx.stringValue("CreateQualityProjectResponse.Data.InstanceId"));
 		data.setVersion(_ctx.integerValue("CreateQualityProjectResponse.Data.Version"));
 		data.setProjectId(_ctx.longValue("CreateQualityProjectResponse.Data.ProjectId"));
+		data.setInstanceId(_ctx.stringValue("CreateQualityProjectResponse.Data.InstanceId"));
 		createQualityProjectResponse.setData(data);
 	 
 	 	return createQualityProjectResponse;

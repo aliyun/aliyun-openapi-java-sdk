@@ -23,6 +23,7 @@ public class CreateParameterGroupResponseUnmarshaller {
 	public static CreateParameterGroupResponse unmarshall(CreateParameterGroupResponse createParameterGroupResponse, UnmarshallerContext _ctx) {
 		
 		createParameterGroupResponse.setRequestId(_ctx.stringValue("CreateParameterGroupResponse.RequestId"));
+		createParameterGroupResponse.setParameterGroupId(_ctx.stringValue("CreateParameterGroupResponse.ParameterGroupId"));
 	 
 	 	return createParameterGroupResponse;
 	}

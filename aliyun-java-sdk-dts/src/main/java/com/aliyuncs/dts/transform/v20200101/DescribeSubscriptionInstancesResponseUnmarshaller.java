@@ -52,6 +52,8 @@ public class DescribeSubscriptionInstancesResponseUnmarshaller {
 			subscriptionInstance.setSubscribeTopic(_ctx.stringValue("DescribeSubscriptionInstancesResponse.SubscriptionInstances["+ i +"].SubscribeTopic"));
 			subscriptionInstance.setSubscriptionInstanceID(_ctx.stringValue("DescribeSubscriptionInstancesResponse.SubscriptionInstances["+ i +"].SubscriptionInstanceID"));
 			subscriptionInstance.setSubscriptionInstanceName(_ctx.stringValue("DescribeSubscriptionInstancesResponse.SubscriptionInstances["+ i +"].SubscriptionInstanceName"));
+			subscriptionInstance.setJobCreateTime(_ctx.stringValue("DescribeSubscriptionInstancesResponse.SubscriptionInstances["+ i +"].JobCreateTime"));
+			subscriptionInstance.setInstanceCreateTime(_ctx.stringValue("DescribeSubscriptionInstancesResponse.SubscriptionInstances["+ i +"].InstanceCreateTime"));
 
 			SourceEndpoint sourceEndpoint = new SourceEndpoint();
 			sourceEndpoint.setInstanceID(_ctx.stringValue("DescribeSubscriptionInstancesResponse.SubscriptionInstances["+ i +"].SourceEndpoint.InstanceID"));

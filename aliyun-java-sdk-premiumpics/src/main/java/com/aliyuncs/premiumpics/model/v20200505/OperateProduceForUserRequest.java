@@ -24,9 +24,9 @@ import com.aliyuncs.http.MethodType;
 public class OperateProduceForUserRequest extends RpcAcsRequest<OperateProduceForUserResponse> {
 	   
 
-	private String bizType;
-
 	private String extInfo;
+
+	private String bizType;
 
 	private String bizId;
 
@@ -34,17 +34,6 @@ public class OperateProduceForUserRequest extends RpcAcsRequest<OperateProduceFo
 	public OperateProduceForUserRequest() {
 		super("Premiumpics", "2020-05-05", "OperateProduceForUser");
 		setMethod(MethodType.POST);
-	}
-
-	public String getBizType() {
-		return this.bizType;
-	}
-
-	public void setBizType(String bizType) {
-		this.bizType = bizType;
-		if(bizType != null){
-			putQueryParameter("BizType", bizType);
-		}
 	}
 
 	public String getExtInfo() {
@@ -55,6 +44,17 @@ public class OperateProduceForUserRequest extends RpcAcsRequest<OperateProduceFo
 		this.extInfo = extInfo;
 		if(extInfo != null){
 			putQueryParameter("ExtInfo", extInfo);
+		}
+	}
+
+	public String getBizType() {
+		return this.bizType;
+	}
+
+	public void setBizType(String bizType) {
+		this.bizType = bizType;
+		if(bizType != null){
+			putQueryParameter("BizType", bizType);
 		}
 	}
 

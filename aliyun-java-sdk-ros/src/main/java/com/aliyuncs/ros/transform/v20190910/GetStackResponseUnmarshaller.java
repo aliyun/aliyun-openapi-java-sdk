@@ -19,6 +19,8 @@ import java.util.List;
 
 import com.aliyuncs.ros.model.v20190910.GetStackResponse;
 import com.aliyuncs.ros.model.v20190910.GetStackResponse.Parameter;
+import com.aliyuncs.ros.model.v20190910.GetStackResponse.ResourceProgress;
+import com.aliyuncs.ros.model.v20190910.GetStackResponse.ResourceProgress.InProgressResourceDetail;
 import com.aliyuncs.ros.model.v20190910.GetStackResponse.Tag;
 import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -29,24 +31,25 @@ public class GetStackResponseUnmarshaller {
 	public static GetStackResponse unmarshall(GetStackResponse getStackResponse, UnmarshallerContext _ctx) {
 		
 		getStackResponse.setRequestId(_ctx.stringValue("GetStackResponse.RequestId"));
-		getStackResponse.setCreateTime(_ctx.stringValue("GetStackResponse.CreateTime"));
-		getStackResponse.setDescription(_ctx.stringValue("GetStackResponse.Description"));
-		getStackResponse.setDisableRollback(_ctx.booleanValue("GetStackResponse.DisableRollback"));
-		getStackResponse.setRegionId(_ctx.stringValue("GetStackResponse.RegionId"));
-		getStackResponse.setStackId(_ctx.stringValue("GetStackResponse.StackId"));
-		getStackResponse.setStackName(_ctx.stringValue("GetStackResponse.StackName"));
 		getStackResponse.setStatus(_ctx.stringValue("GetStackResponse.Status"));
+		getStackResponse.setDescription(_ctx.stringValue("GetStackResponse.Description"));
 		getStackResponse.setStatusReason(_ctx.stringValue("GetStackResponse.StatusReason"));
-		getStackResponse.setTemplateDescription(_ctx.stringValue("GetStackResponse.TemplateDescription"));
-		getStackResponse.setTimeoutInMinutes(_ctx.integerValue("GetStackResponse.TimeoutInMinutes"));
-		getStackResponse.setUpdateTime(_ctx.stringValue("GetStackResponse.UpdateTime"));
 		getStackResponse.setParentStackId(_ctx.stringValue("GetStackResponse.ParentStackId"));
-		getStackResponse.setStackDriftStatus(_ctx.stringValue("GetStackResponse.StackDriftStatus"));
-		getStackResponse.setDriftDetectionTime(_ctx.stringValue("GetStackResponse.DriftDetectionTime"));
-		getStackResponse.setRamRoleName(_ctx.stringValue("GetStackResponse.RamRoleName"));
+		getStackResponse.setCreateTime(_ctx.stringValue("GetStackResponse.CreateTime"));
 		getStackResponse.setDeletionProtection(_ctx.stringValue("GetStackResponse.DeletionProtection"));
 		getStackResponse.setRootStackId(_ctx.stringValue("GetStackResponse.RootStackId"));
+		getStackResponse.setTemplateDescription(_ctx.stringValue("GetStackResponse.TemplateDescription"));
 		getStackResponse.setStackType(_ctx.stringValue("GetStackResponse.StackType"));
+		getStackResponse.setRamRoleName(_ctx.stringValue("GetStackResponse.RamRoleName"));
+		getStackResponse.setUpdateTime(_ctx.stringValue("GetStackResponse.UpdateTime"));
+		getStackResponse.setDriftDetectionTime(_ctx.stringValue("GetStackResponse.DriftDetectionTime"));
+		getStackResponse.setRegionId(_ctx.stringValue("GetStackResponse.RegionId"));
+		getStackResponse.setStackDriftStatus(_ctx.stringValue("GetStackResponse.StackDriftStatus"));
+		getStackResponse.setDisableRollback(_ctx.booleanValue("GetStackResponse.DisableRollback"));
+		getStackResponse.setStackName(_ctx.stringValue("GetStackResponse.StackName"));
+		getStackResponse.setTimeoutInMinutes(_ctx.integerValue("GetStackResponse.TimeoutInMinutes"));
+		getStackResponse.setStackId(_ctx.stringValue("GetStackResponse.StackId"));
+		getStackResponse.setResourceGroupId(_ctx.stringValue("GetStackResponse.ResourceGroupId"));
 
 		List<Map<Object, Object>> outputs = _ctx.listMapValue("GetStackResponse.Outputs");
 		getStackResponse.setOutputs(outputs);
@@ -56,6 +59,26 @@ public class GetStackResponseUnmarshaller {
 			notificationURLs.add(_ctx.stringValue("GetStackResponse.NotificationURLs["+ i +"]"));
 		}
 		getStackResponse.setNotificationURLs(notificationURLs);
+
+		ResourceProgress resourceProgress = new ResourceProgress();
+		resourceProgress.setTotalResourceCount(_ctx.integerValue("GetStackResponse.ResourceProgress.TotalResourceCount"));
+		resourceProgress.setSuccessResourceCount(_ctx.integerValue("GetStackResponse.ResourceProgress.SuccessResourceCount"));
+		resourceProgress.setFailedResourceCount(_ctx.integerValue("GetStackResponse.ResourceProgress.FailedResourceCount"));
+		resourceProgress.setInProgressResourceCount(_ctx.integerValue("GetStackResponse.ResourceProgress.InProgressResourceCount"));
+		resourceProgress.setPendingResourceCount(_ctx.integerValue("GetStackResponse.ResourceProgress.PendingResourceCount"));
+
+		List<InProgressResourceDetail> inProgressResourceDetails = new ArrayList<InProgressResourceDetail>();
+		for (int i = 0; i < _ctx.lengthValue("GetStackResponse.ResourceProgress.InProgressResourceDetails.Length"); i++) {
+			InProgressResourceDetail inProgressResourceDetail = new InProgressResourceDetail();
+			inProgressResourceDetail.setResourceName(_ctx.stringValue("GetStackResponse.ResourceProgress.InProgressResourceDetails["+ i +"].ResourceName"));
+			inProgressResourceDetail.setResourceType(_ctx.stringValue("GetStackResponse.ResourceProgress.InProgressResourceDetails["+ i +"].ResourceType"));
+			inProgressResourceDetail.setProgressValue(_ctx.floatValue("GetStackResponse.ResourceProgress.InProgressResourceDetails["+ i +"].ProgressValue"));
+			inProgressResourceDetail.setProgressTargetValue(_ctx.floatValue("GetStackResponse.ResourceProgress.InProgressResourceDetails["+ i +"].ProgressTargetValue"));
+
+			inProgressResourceDetails.add(inProgressResourceDetail);
+		}
+		resourceProgress.setInProgressResourceDetails(inProgressResourceDetails);
+		getStackResponse.setResourceProgress(resourceProgress);
 
 		List<Parameter> parameters = new ArrayList<Parameter>();
 		for (int i = 0; i < _ctx.lengthValue("GetStackResponse.Parameters.Length"); i++) {

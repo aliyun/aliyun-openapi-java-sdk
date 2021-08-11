@@ -23,10 +23,10 @@ public class CreateCredentialResponseUnmarshaller {
 	public static CreateCredentialResponse unmarshall(CreateCredentialResponse createCredentialResponse, UnmarshallerContext _ctx) {
 		
 		createCredentialResponse.setRequestId(_ctx.stringValue("CreateCredentialResponse.RequestId"));
-		createCredentialResponse.setErrorCode(_ctx.stringValue("CreateCredentialResponse.ErrorCode"));
 		createCredentialResponse.setErrorMessage(_ctx.stringValue("CreateCredentialResponse.ErrorMessage"));
-		createCredentialResponse.setSuccess(_ctx.booleanValue("CreateCredentialResponse.Success"));
 		createCredentialResponse.setObject(_ctx.longValue("CreateCredentialResponse.Object"));
+		createCredentialResponse.setSuccess(_ctx.booleanValue("CreateCredentialResponse.Success"));
+		createCredentialResponse.setErrorCode(_ctx.stringValue("CreateCredentialResponse.ErrorCode"));
 	 
 	 	return createCredentialResponse;
 	}

@@ -42,6 +42,8 @@ public class QueryLiveStreamingRequest extends RpcAcsRequest<QueryLiveStreamingR
 	private Boolean shouldEncrypt;
 
 	private Integer streamType;
+
+	private Integer urlValidDuration;
 	public QueryLiveStreamingRequest() {
 		super("Linkvisual", "2018-01-20", "QueryLiveStreaming", "Linkvisual");
 		setMethod(MethodType.POST);
@@ -147,6 +149,17 @@ public class QueryLiveStreamingRequest extends RpcAcsRequest<QueryLiveStreamingR
 		this.streamType = streamType;
 		if(streamType != null){
 			putQueryParameter("StreamType", streamType.toString());
+		}
+	}
+
+	public Integer getUrlValidDuration() {
+		return this.urlValidDuration;
+	}
+
+	public void setUrlValidDuration(Integer urlValidDuration) {
+		this.urlValidDuration = urlValidDuration;
+		if(urlValidDuration != null){
+			putQueryParameter("UrlValidDuration", urlValidDuration.toString());
 		}
 	}
 

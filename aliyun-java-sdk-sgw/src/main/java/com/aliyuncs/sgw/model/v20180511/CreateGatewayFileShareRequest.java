@@ -31,6 +31,8 @@ public class CreateGatewayFileShareRequest extends RpcAcsRequest<CreateGatewayFi
 
 	private String readWriteClientList;
 
+	private Boolean bypassCacheRead;
+
 	private Integer backendLimit;
 
 	private String squash;
@@ -82,6 +84,8 @@ public class CreateGatewayFileShareRequest extends RpcAcsRequest<CreateGatewayFi
 	private String readWriteUserList;
 
 	private Integer pollingInterval;
+
+	private String serverSideAlgorithm;
 
 	private String serverSideCmk;
 
@@ -139,6 +143,17 @@ public class CreateGatewayFileShareRequest extends RpcAcsRequest<CreateGatewayFi
 		this.readWriteClientList = readWriteClientList;
 		if(readWriteClientList != null){
 			putQueryParameter("ReadWriteClientList", readWriteClientList);
+		}
+	}
+
+	public Boolean getBypassCacheRead() {
+		return this.bypassCacheRead;
+	}
+
+	public void setBypassCacheRead(Boolean bypassCacheRead) {
+		this.bypassCacheRead = bypassCacheRead;
+		if(bypassCacheRead != null){
+			putQueryParameter("BypassCacheRead", bypassCacheRead.toString());
 		}
 	}
 
@@ -425,6 +440,17 @@ public class CreateGatewayFileShareRequest extends RpcAcsRequest<CreateGatewayFi
 		this.pollingInterval = pollingInterval;
 		if(pollingInterval != null){
 			putQueryParameter("PollingInterval", pollingInterval.toString());
+		}
+	}
+
+	public String getServerSideAlgorithm() {
+		return this.serverSideAlgorithm;
+	}
+
+	public void setServerSideAlgorithm(String serverSideAlgorithm) {
+		this.serverSideAlgorithm = serverSideAlgorithm;
+		if(serverSideAlgorithm != null){
+			putQueryParameter("ServerSideAlgorithm", serverSideAlgorithm);
 		}
 	}
 

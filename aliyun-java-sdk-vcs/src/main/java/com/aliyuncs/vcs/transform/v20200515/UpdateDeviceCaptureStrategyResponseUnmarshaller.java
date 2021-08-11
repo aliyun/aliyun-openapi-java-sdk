@@ -23,8 +23,8 @@ public class UpdateDeviceCaptureStrategyResponseUnmarshaller {
 	public static UpdateDeviceCaptureStrategyResponse unmarshall(UpdateDeviceCaptureStrategyResponse updateDeviceCaptureStrategyResponse, UnmarshallerContext _ctx) {
 		
 		updateDeviceCaptureStrategyResponse.setRequestId(_ctx.stringValue("UpdateDeviceCaptureStrategyResponse.RequestId"));
-		updateDeviceCaptureStrategyResponse.setMessage(_ctx.stringValue("UpdateDeviceCaptureStrategyResponse.Message"));
 		updateDeviceCaptureStrategyResponse.setCode(_ctx.stringValue("UpdateDeviceCaptureStrategyResponse.Code"));
+		updateDeviceCaptureStrategyResponse.setMessage(_ctx.stringValue("UpdateDeviceCaptureStrategyResponse.Message"));
 	 
 	 	return updateDeviceCaptureStrategyResponse;
 	}

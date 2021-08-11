@@ -15,7 +15,6 @@
 package com.aliyuncs.retailadvqa_public.model.v20200515;
 
 import com.aliyuncs.RpcAcsRequest;
-import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 
 /**
@@ -44,9 +43,12 @@ public class CreateDataSourceRequest extends RpcAcsRequest<CreateDataSourceRespo
 	private String databaseName;
 
 	private String dataSourceId;
+
+	private String createType;
+
+	private String workspaceId;
 	public CreateDataSourceRequest() {
 		super("retailadvqa-public", "2020-05-15", "CreateDataSource");
-		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
 
@@ -157,6 +159,28 @@ public class CreateDataSourceRequest extends RpcAcsRequest<CreateDataSourceRespo
 		this.dataSourceId = dataSourceId;
 		if(dataSourceId != null){
 			putQueryParameter("DataSourceId", dataSourceId);
+		}
+	}
+
+	public String getCreateType() {
+		return this.createType;
+	}
+
+	public void setCreateType(String createType) {
+		this.createType = createType;
+		if(createType != null){
+			putQueryParameter("CreateType", createType);
+		}
+	}
+
+	public String getWorkspaceId() {
+		return this.workspaceId;
+	}
+
+	public void setWorkspaceId(String workspaceId) {
+		this.workspaceId = workspaceId;
+		if(workspaceId != null){
+			putQueryParameter("WorkspaceId", workspaceId);
 		}
 	}
 

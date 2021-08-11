@@ -48,6 +48,8 @@ public class GetLindormInstanceListResponseUnmarshaller {
 			lindormInstanceSummary.setEngineType(_ctx.stringValue("GetLindormInstanceListResponse.InstanceList["+ i +"].EngineType"));
 			lindormInstanceSummary.setAliUid(_ctx.longValue("GetLindormInstanceListResponse.InstanceList["+ i +"].AliUid"));
 			lindormInstanceSummary.setVpcId(_ctx.stringValue("GetLindormInstanceListResponse.InstanceList["+ i +"].VpcId"));
+			lindormInstanceSummary.setCreateMilliseconds(_ctx.longValue("GetLindormInstanceListResponse.InstanceList["+ i +"].CreateMilliseconds"));
+			lindormInstanceSummary.setExpiredMilliseconds(_ctx.longValue("GetLindormInstanceListResponse.InstanceList["+ i +"].ExpiredMilliseconds"));
 
 			instanceList.add(lindormInstanceSummary);
 		}

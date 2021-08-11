@@ -36,9 +36,9 @@ public class ListVirtualMFADevicesResponseUnmarshaller {
 			virtualMFADevice.setActivateDate(_ctx.stringValue("ListVirtualMFADevicesResponse.VirtualMFADevices["+ i +"].ActivateDate"));
 
 			User user = new User();
+			user.setDisplayName(_ctx.stringValue("ListVirtualMFADevicesResponse.VirtualMFADevices["+ i +"].User.DisplayName"));
 			user.setUserId(_ctx.stringValue("ListVirtualMFADevicesResponse.VirtualMFADevices["+ i +"].User.UserId"));
 			user.setUserName(_ctx.stringValue("ListVirtualMFADevicesResponse.VirtualMFADevices["+ i +"].User.UserName"));
-			user.setDisplayName(_ctx.stringValue("ListVirtualMFADevicesResponse.VirtualMFADevices["+ i +"].User.DisplayName"));
 			virtualMFADevice.setUser(user);
 
 			virtualMFADevices.add(virtualMFADevice);

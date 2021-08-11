@@ -27,16 +27,16 @@ public class ListDevopsProjectTaskFlowResponseUnmarshaller {
 	public static ListDevopsProjectTaskFlowResponse unmarshall(ListDevopsProjectTaskFlowResponse listDevopsProjectTaskFlowResponse, UnmarshallerContext _ctx) {
 		
 		listDevopsProjectTaskFlowResponse.setRequestId(_ctx.stringValue("ListDevopsProjectTaskFlowResponse.RequestId"));
+		listDevopsProjectTaskFlowResponse.setErrorMsg(_ctx.stringValue("ListDevopsProjectTaskFlowResponse.ErrorMsg"));
 		listDevopsProjectTaskFlowResponse.setSuccessful(_ctx.booleanValue("ListDevopsProjectTaskFlowResponse.Successful"));
 		listDevopsProjectTaskFlowResponse.setErrorCode(_ctx.stringValue("ListDevopsProjectTaskFlowResponse.ErrorCode"));
-		listDevopsProjectTaskFlowResponse.setErrorMsg(_ctx.stringValue("ListDevopsProjectTaskFlowResponse.ErrorMsg"));
 
 		List<Taskflow> object = new ArrayList<Taskflow>();
 		for (int i = 0; i < _ctx.lengthValue("ListDevopsProjectTaskFlowResponse.Object.Length"); i++) {
 			Taskflow taskflow = new Taskflow();
-			taskflow.setId(_ctx.stringValue("ListDevopsProjectTaskFlowResponse.Object["+ i +"].Id"));
 			taskflow.setType(_ctx.stringValue("ListDevopsProjectTaskFlowResponse.Object["+ i +"].Type"));
 			taskflow.setName(_ctx.stringValue("ListDevopsProjectTaskFlowResponse.Object["+ i +"].Name"));
+			taskflow.setId(_ctx.stringValue("ListDevopsProjectTaskFlowResponse.Object["+ i +"].Id"));
 
 			object.add(taskflow);
 		}

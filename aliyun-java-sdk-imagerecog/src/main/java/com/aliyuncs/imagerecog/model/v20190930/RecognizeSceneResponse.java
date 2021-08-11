@@ -59,17 +59,9 @@ public class RecognizeSceneResponse extends AcsResponse {
 
 		public static class Tag {
 
-			private Float confidence;
-
 			private String value;
 
-			public Float getConfidence() {
-				return this.confidence;
-			}
-
-			public void setConfidence(Float confidence) {
-				this.confidence = confidence;
-			}
+			private Float confidence;
 
 			public String getValue() {
 				return this.value;
@@ -77,6 +69,14 @@ public class RecognizeSceneResponse extends AcsResponse {
 
 			public void setValue(String value) {
 				this.value = value;
+			}
+
+			public Float getConfidence() {
+				return this.confidence;
+			}
+
+			public void setConfidence(Float confidence) {
+				this.confidence = confidence;
 			}
 		}
 	}

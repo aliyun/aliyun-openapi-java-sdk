@@ -27,15 +27,15 @@ public class ListAccessNumberResponseUnmarshaller {
 	public static ListAccessNumberResponse unmarshall(ListAccessNumberResponse listAccessNumberResponse, UnmarshallerContext _ctx) {
 		
 		listAccessNumberResponse.setRequestId(_ctx.stringValue("ListAccessNumberResponse.RequestId"));
-		listAccessNumberResponse.setMessage(_ctx.stringValue("ListAccessNumberResponse.Message"));
 		listAccessNumberResponse.setCode(_ctx.stringValue("ListAccessNumberResponse.Code"));
+		listAccessNumberResponse.setMessage(_ctx.stringValue("ListAccessNumberResponse.Message"));
 
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListAccessNumberResponse.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
 			dataItem.setItem(_ctx.stringValue("ListAccessNumberResponse.Data["+ i +"].Item"));
-			dataItem.setPercent(_ctx.stringValue("ListAccessNumberResponse.Data["+ i +"].Percent"));
 			dataItem.setCount(_ctx.stringValue("ListAccessNumberResponse.Data["+ i +"].Count"));
+			dataItem.setPercent(_ctx.stringValue("ListAccessNumberResponse.Data["+ i +"].Percent"));
 
 			data.add(dataItem);
 		}

@@ -25,11 +25,11 @@ import com.aliyuncs.ddoscoo.Endpoint;
 public class DescribeDomainStatusCodeCountRequest extends RpcAcsRequest<DescribeDomainStatusCodeCountResponse> {
 	   
 
-	private Long endTime;
-
 	private Long startTime;
 
 	private String resourceGroupId;
+
+	private Long endTime;
 
 	private String domain;
 	public DescribeDomainStatusCodeCountRequest() {
@@ -39,17 +39,6 @@ public class DescribeDomainStatusCodeCountRequest extends RpcAcsRequest<Describe
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Long getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(Long endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime.toString());
-		}
 	}
 
 	public Long getStartTime() {
@@ -71,6 +60,17 @@ public class DescribeDomainStatusCodeCountRequest extends RpcAcsRequest<Describe
 		this.resourceGroupId = resourceGroupId;
 		if(resourceGroupId != null){
 			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public Long getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(Long endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime.toString());
 		}
 	}
 

@@ -31,9 +31,11 @@ public class ModifyMountTargetRequest extends RpcAcsRequest<ModifyMountTargetRes
 
 	private String accessGroupName;
 
+	private String dualStackMountTargetDomain;
+
 	private String status;
 	public ModifyMountTargetRequest() {
-		super("NAS", "2017-06-26", "ModifyMountTarget");
+		super("NAS", "2017-06-26", "ModifyMountTarget", "nas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -71,6 +73,17 @@ public class ModifyMountTargetRequest extends RpcAcsRequest<ModifyMountTargetRes
 		this.accessGroupName = accessGroupName;
 		if(accessGroupName != null){
 			putQueryParameter("AccessGroupName", accessGroupName);
+		}
+	}
+
+	public String getDualStackMountTargetDomain() {
+		return this.dualStackMountTargetDomain;
+	}
+
+	public void setDualStackMountTargetDomain(String dualStackMountTargetDomain) {
+		this.dualStackMountTargetDomain = dualStackMountTargetDomain;
+		if(dualStackMountTargetDomain != null){
+			putQueryParameter("DualStackMountTargetDomain", dualStackMountTargetDomain);
 		}
 	}
 

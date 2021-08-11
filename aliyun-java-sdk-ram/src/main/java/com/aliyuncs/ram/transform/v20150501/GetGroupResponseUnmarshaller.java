@@ -26,10 +26,11 @@ public class GetGroupResponseUnmarshaller {
 		getGroupResponse.setRequestId(_ctx.stringValue("GetGroupResponse.RequestId"));
 
 		Group group = new Group();
+		group.setGroupId(_ctx.stringValue("GetGroupResponse.Group.GroupId"));
+		group.setUpdateDate(_ctx.stringValue("GetGroupResponse.Group.UpdateDate"));
 		group.setGroupName(_ctx.stringValue("GetGroupResponse.Group.GroupName"));
 		group.setComments(_ctx.stringValue("GetGroupResponse.Group.Comments"));
 		group.setCreateDate(_ctx.stringValue("GetGroupResponse.Group.CreateDate"));
-		group.setUpdateDate(_ctx.stringValue("GetGroupResponse.Group.UpdateDate"));
 		getGroupResponse.setGroup(group);
 	 
 	 	return getGroupResponse;

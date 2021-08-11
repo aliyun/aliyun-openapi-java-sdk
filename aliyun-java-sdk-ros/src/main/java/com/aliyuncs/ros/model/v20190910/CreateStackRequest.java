@@ -30,6 +30,8 @@ public class CreateStackRequest extends RpcAcsRequest<CreateStackResponse> {
 
 	private String deletionProtection;
 
+	private String resourceGroupId;
+
 	private String templateVersion;
 
 	private String stackName;
@@ -85,6 +87,17 @@ public class CreateStackRequest extends RpcAcsRequest<CreateStackResponse> {
 		this.deletionProtection = deletionProtection;
 		if(deletionProtection != null){
 			putQueryParameter("DeletionProtection", deletionProtection);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

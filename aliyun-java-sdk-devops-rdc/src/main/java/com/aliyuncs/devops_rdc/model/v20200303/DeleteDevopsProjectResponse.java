@@ -24,22 +24,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DeleteDevopsProjectResponse extends AcsResponse {
 
-	private String errorCode;
+	private String requestId;
 
 	private String errorMessage;
 
 	private String object;
 
-	private String requestId;
-
 	private Boolean success;
 
-	public String getErrorCode() {
-		return this.errorCode;
+	private String errorCode;
+
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getErrorMessage() {
@@ -58,20 +58,20 @@ public class DeleteDevopsProjectResponse extends AcsResponse {
 		this.object = object;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public Boolean getSuccess() {
 		return this.success;
 	}
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getErrorCode() {
+		return this.errorCode;
+	}
+
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
 	}
 
 	@Override

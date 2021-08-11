@@ -26,11 +26,11 @@ public class GetStructSyncExecSqlDetailResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String errorCode;
+	private Boolean success;
 
 	private String errorMessage;
 
-	private Boolean success;
+	private String errorCode;
 
 	private StructSyncExecSqlDetail structSyncExecSqlDetail;
 
@@ -42,12 +42,12 @@ public class GetStructSyncExecSqlDetailResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getErrorCode() {
-		return this.errorCode;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public String getErrorMessage() {
@@ -58,12 +58,12 @@ public class GetStructSyncExecSqlDetailResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getErrorCode() {
+		return this.errorCode;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
 	}
 
 	public StructSyncExecSqlDetail getStructSyncExecSqlDetail() {
@@ -76,17 +76,9 @@ public class GetStructSyncExecSqlDetailResponse extends AcsResponse {
 
 	public static class StructSyncExecSqlDetail {
 
-		private String execSql;
-
 		private Long totalSqlCount;
 
-		public String getExecSql() {
-			return this.execSql;
-		}
-
-		public void setExecSql(String execSql) {
-			this.execSql = execSql;
-		}
+		private String execSql;
 
 		public Long getTotalSqlCount() {
 			return this.totalSqlCount;
@@ -94,6 +86,14 @@ public class GetStructSyncExecSqlDetailResponse extends AcsResponse {
 
 		public void setTotalSqlCount(Long totalSqlCount) {
 			this.totalSqlCount = totalSqlCount;
+		}
+
+		public String getExecSql() {
+			return this.execSql;
+		}
+
+		public void setExecSql(String execSql) {
+			this.execSql = execSql;
 		}
 	}
 

@@ -25,27 +25,14 @@ import com.aliyuncs.mts.Endpoint;
 public class QueryInferenceJobRequest extends RpcAcsRequest<QueryInferenceJobResponse> {
 	   
 
-	private Long userId;
-
 	private String jobId;
 	public QueryInferenceJobRequest() {
-		super("Mts", "2014-06-18", "QueryInferenceJob");
+		super("Mts", "2014-06-18", "QueryInferenceJob", "mts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Long getUserId() {
-		return this.userId;
-	}
-
-	public void setUserId(Long userId) {
-		this.userId = userId;
-		if(userId != null){
-			putQueryParameter("UserId", userId.toString());
-		}
 	}
 
 	public String getJobId() {

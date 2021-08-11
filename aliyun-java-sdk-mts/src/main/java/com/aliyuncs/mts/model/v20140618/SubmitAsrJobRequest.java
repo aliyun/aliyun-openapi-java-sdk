@@ -41,7 +41,7 @@ public class SubmitAsrJobRequest extends RpcAcsRequest<SubmitAsrJobResponse> {
 
 	private String input;
 	public SubmitAsrJobRequest() {
-		super("Mts", "2014-06-18", "SubmitAsrJob");
+		super("Mts", "2014-06-18", "SubmitAsrJob", "mts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

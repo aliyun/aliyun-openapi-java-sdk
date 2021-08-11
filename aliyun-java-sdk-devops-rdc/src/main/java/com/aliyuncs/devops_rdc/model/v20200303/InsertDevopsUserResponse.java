@@ -24,22 +24,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class InsertDevopsUserResponse extends AcsResponse {
 
-	private String errorCode;
+	private String requestId;
 
 	private String errorMessage;
 
-	private String requestId;
+	private String object;
 
 	private Boolean success;
 
-	private String object;
+	private String errorCode;
 
-	public String getErrorCode() {
-		return this.errorCode;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getErrorMessage() {
@@ -50,12 +50,12 @@ public class InsertDevopsUserResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getObject() {
+		return this.object;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setObject(String object) {
+		this.object = object;
 	}
 
 	public Boolean getSuccess() {
@@ -66,12 +66,12 @@ public class InsertDevopsUserResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public String getObject() {
-		return this.object;
+	public String getErrorCode() {
+		return this.errorCode;
 	}
 
-	public void setObject(String object) {
-		this.object = object;
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
 	}
 
 	@Override

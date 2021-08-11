@@ -69,7 +69,7 @@ public class ModifyDeviceRequest extends RpcAcsRequest<ModifyDeviceResponse> {
 
 	private Boolean autoPos;
 	public ModifyDeviceRequest() {
-		super("vs", "2018-12-12", "ModifyDevice", "vs");
+		super("vs", "2018-12-12", "ModifyDevice");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

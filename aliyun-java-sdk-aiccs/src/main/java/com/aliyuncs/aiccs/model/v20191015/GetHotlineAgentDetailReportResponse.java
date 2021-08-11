@@ -26,23 +26,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetHotlineAgentDetailReportResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String message;
+
+	private String requestId;
 
 	private String code;
 
 	private String success;
 
+	private Long httpStatusCode;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getMessage() {
 		return this.message;
@@ -50,6 +44,14 @@ public class GetHotlineAgentDetailReportResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getCode() {
@@ -66,6 +68,14 @@ public class GetHotlineAgentDetailReportResponse extends AcsResponse {
 
 	public void setSuccess(String success) {
 		this.success = success;
+	}
+
+	public Long getHttpStatusCode() {
+		return this.httpStatusCode;
+	}
+
+	public void setHttpStatusCode(Long httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
 	}
 
 	public Data getData() {
@@ -130,17 +140,9 @@ public class GetHotlineAgentDetailReportResponse extends AcsResponse {
 
 		public static class ColumnsItem {
 
-			private String title;
-
 			private String key;
 
-			public String getTitle() {
-				return this.title;
-			}
-
-			public void setTitle(String title) {
-				this.title = title;
-			}
+			private String title;
 
 			public String getKey() {
 				return this.key;
@@ -148,6 +150,14 @@ public class GetHotlineAgentDetailReportResponse extends AcsResponse {
 
 			public void setKey(String key) {
 				this.key = key;
+			}
+
+			public String getTitle() {
+				return this.title;
+			}
+
+			public void setTitle(String title) {
+				this.title = title;
 			}
 		}
 	}

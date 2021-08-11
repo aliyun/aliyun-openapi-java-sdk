@@ -1,3 +1,10 @@
+2021-08-05 Version: 1.11.1
+- Add cloud-rendering-service API.
+- Fix bugs.
+
+2021-08-04 Version: 1.11.0
+- Add cloud-rendering-service API.
+
 2020-10-13 Version: 1.10.2
 - Generated 2018-12-12 for `vs`.
 

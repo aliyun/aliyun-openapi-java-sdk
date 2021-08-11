@@ -25,21 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeAiotDevicesResponse extends AcsResponse {
 
-	private String message;
-
 	private String requestId;
+
+	private String message;
 
 	private String code;
 
 	private AiotDevices aiotDevices;
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -47,6 +39,14 @@ public class DescribeAiotDevicesResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public String getCode() {
@@ -67,20 +67,20 @@ public class DescribeAiotDevicesResponse extends AcsResponse {
 
 	public static class AiotDevices {
 
-		private Long totalNum;
+		private Long pageNum;
 
 		private Long pageSize;
 
-		private Long pageNum;
+		private Long totalNum;
 
 		private List<AiotDeviceType> aiotDeviceList;
 
-		public Long getTotalNum() {
-			return this.totalNum;
+		public Long getPageNum() {
+			return this.pageNum;
 		}
 
-		public void setTotalNum(Long totalNum) {
-			this.totalNum = totalNum;
+		public void setPageNum(Long pageNum) {
+			this.pageNum = pageNum;
 		}
 
 		public Long getPageSize() {
@@ -91,12 +91,12 @@ public class DescribeAiotDevicesResponse extends AcsResponse {
 			this.pageSize = pageSize;
 		}
 
-		public Long getPageNum() {
-			return this.pageNum;
+		public Long getTotalNum() {
+			return this.totalNum;
 		}
 
-		public void setPageNum(Long pageNum) {
-			this.pageNum = pageNum;
+		public void setTotalNum(Long totalNum) {
+			this.totalNum = totalNum;
 		}
 
 		public List<AiotDeviceType> getAiotDeviceList() {
@@ -109,59 +109,67 @@ public class DescribeAiotDevicesResponse extends AcsResponse {
 
 		public static class AiotDeviceType {
 
+			private String corpId;
+
 			private String deviceId;
-
-			private Long port;
-
-			private String placeCode;
-
-			private String serialNuber;
-
-			private Float latitude;
-
-			private String ownerApsID;
-
-			private String isOnline;
 
 			private String name;
 
-			private String monitorAreaDesc;
-
-			private String manufacturer;
-
-			private String monitorDirection;
-
-			private String iPV6Addr;
-
-			private String password;
+			private String model;
 
 			private String iPAddr;
 
-			private String iPv4Netmask;
+			private String iPV6Addr;
 
-			private String corpId;
+			private Long port;
 
 			private Float longitude;
 
-			private String firmwareVersion;
+			private Float latitude;
 
-			private String mAC;
+			private String placeCode;
 
-			private String deviceType;
+			private String place;
 
 			private String orgCode;
 
 			private String capDirection;
 
+			private String monitorDirection;
+
+			private String monitorAreaDesc;
+
+			private String isOnline;
+
+			private String ownerApsID;
+
 			private String userId;
 
-			private String model;
+			private String password;
+
+			private String mAC;
+
+			private String iPv4Netmask;
 
 			private String iPv4Gateway;
 
+			private String deviceType;
+
+			private String firmwareVersion;
+
+			private String serialNuber;
+
+			private String manufacturer;
+
 			private String id;
 
-			private String place;
+			public String getCorpId() {
+				return this.corpId;
+			}
+
+			public void setCorpId(String corpId) {
+				this.corpId = corpId;
+			}
 
 			public String getDeviceId() {
 				return this.deviceId;
@@ -169,54 +177,6 @@ public class DescribeAiotDevicesResponse extends AcsResponse {
 
 			public void setDeviceId(String deviceId) {
 				this.deviceId = deviceId;
-			}
-
-			public Long getPort() {
-				return this.port;
-			}
-
-			public void setPort(Long port) {
-				this.port = port;
-			}
-
-			public String getPlaceCode() {
-				return this.placeCode;
-			}
-
-			public void setPlaceCode(String placeCode) {
-				this.placeCode = placeCode;
-			}
-
-			public String getSerialNuber() {
-				return this.serialNuber;
-			}
-
-			public void setSerialNuber(String serialNuber) {
-				this.serialNuber = serialNuber;
-			}
-
-			public Float getLatitude() {
-				return this.latitude;
-			}
-
-			public void setLatitude(Float latitude) {
-				this.latitude = latitude;
-			}
-
-			public String getOwnerApsID() {
-				return this.ownerApsID;
-			}
-
-			public void setOwnerApsID(String ownerApsID) {
-				this.ownerApsID = ownerApsID;
-			}
-
-			public String getIsOnline() {
-				return this.isOnline;
-			}
-
-			public void setIsOnline(String isOnline) {
-				this.isOnline = isOnline;
 			}
 
 			public String getName() {
@@ -227,44 +187,12 @@ public class DescribeAiotDevicesResponse extends AcsResponse {
 				this.name = name;
 			}
 
-			public String getMonitorAreaDesc() {
-				return this.monitorAreaDesc;
+			public String getModel() {
+				return this.model;
 			}
 
-			public void setMonitorAreaDesc(String monitorAreaDesc) {
-				this.monitorAreaDesc = monitorAreaDesc;
-			}
-
-			public String getManufacturer() {
-				return this.manufacturer;
-			}
-
-			public void setManufacturer(String manufacturer) {
-				this.manufacturer = manufacturer;
-			}
-
-			public String getMonitorDirection() {
-				return this.monitorDirection;
-			}
-
-			public void setMonitorDirection(String monitorDirection) {
-				this.monitorDirection = monitorDirection;
-			}
-
-			public String getIPV6Addr() {
-				return this.iPV6Addr;
-			}
-
-			public void setIPV6Addr(String iPV6Addr) {
-				this.iPV6Addr = iPV6Addr;
-			}
-
-			public String getPassword() {
-				return this.password;
-			}
-
-			public void setPassword(String password) {
-				this.password = password;
+			public void setModel(String model) {
+				this.model = model;
 			}
 
 			public String getIPAddr() {
@@ -275,20 +203,20 @@ public class DescribeAiotDevicesResponse extends AcsResponse {
 				this.iPAddr = iPAddr;
 			}
 
-			public String getIPv4Netmask() {
-				return this.iPv4Netmask;
+			public String getIPV6Addr() {
+				return this.iPV6Addr;
 			}
 
-			public void setIPv4Netmask(String iPv4Netmask) {
-				this.iPv4Netmask = iPv4Netmask;
+			public void setIPV6Addr(String iPV6Addr) {
+				this.iPV6Addr = iPV6Addr;
 			}
 
-			public String getCorpId() {
-				return this.corpId;
+			public Long getPort() {
+				return this.port;
 			}
 
-			public void setCorpId(String corpId) {
-				this.corpId = corpId;
+			public void setPort(Long port) {
+				this.port = port;
 			}
 
 			public Float getLongitude() {
@@ -299,28 +227,28 @@ public class DescribeAiotDevicesResponse extends AcsResponse {
 				this.longitude = longitude;
 			}
 
-			public String getFirmwareVersion() {
-				return this.firmwareVersion;
+			public Float getLatitude() {
+				return this.latitude;
 			}
 
-			public void setFirmwareVersion(String firmwareVersion) {
-				this.firmwareVersion = firmwareVersion;
+			public void setLatitude(Float latitude) {
+				this.latitude = latitude;
 			}
 
-			public String getMAC() {
-				return this.mAC;
+			public String getPlaceCode() {
+				return this.placeCode;
 			}
 
-			public void setMAC(String mAC) {
-				this.mAC = mAC;
+			public void setPlaceCode(String placeCode) {
+				this.placeCode = placeCode;
 			}
 
-			public String getDeviceType() {
-				return this.deviceType;
+			public String getPlace() {
+				return this.place;
 			}
 
-			public void setDeviceType(String deviceType) {
-				this.deviceType = deviceType;
+			public void setPlace(String place) {
+				this.place = place;
 			}
 
 			public String getOrgCode() {
@@ -339,6 +267,38 @@ public class DescribeAiotDevicesResponse extends AcsResponse {
 				this.capDirection = capDirection;
 			}
 
+			public String getMonitorDirection() {
+				return this.monitorDirection;
+			}
+
+			public void setMonitorDirection(String monitorDirection) {
+				this.monitorDirection = monitorDirection;
+			}
+
+			public String getMonitorAreaDesc() {
+				return this.monitorAreaDesc;
+			}
+
+			public void setMonitorAreaDesc(String monitorAreaDesc) {
+				this.monitorAreaDesc = monitorAreaDesc;
+			}
+
+			public String getIsOnline() {
+				return this.isOnline;
+			}
+
+			public void setIsOnline(String isOnline) {
+				this.isOnline = isOnline;
+			}
+
+			public String getOwnerApsID() {
+				return this.ownerApsID;
+			}
+
+			public void setOwnerApsID(String ownerApsID) {
+				this.ownerApsID = ownerApsID;
+			}
+
 			public String getUserId() {
 				return this.userId;
 			}
@@ -347,12 +307,28 @@ public class DescribeAiotDevicesResponse extends AcsResponse {
 				this.userId = userId;
 			}
 
-			public String getModel() {
-				return this.model;
+			public String getPassword() {
+				return this.password;
 			}
 
-			public void setModel(String model) {
-				this.model = model;
+			public void setPassword(String password) {
+				this.password = password;
+			}
+
+			public String getMAC() {
+				return this.mAC;
+			}
+
+			public void setMAC(String mAC) {
+				this.mAC = mAC;
+			}
+
+			public String getIPv4Netmask() {
+				return this.iPv4Netmask;
+			}
+
+			public void setIPv4Netmask(String iPv4Netmask) {
+				this.iPv4Netmask = iPv4Netmask;
 			}
 
 			public String getIPv4Gateway() {
@@ -363,20 +339,44 @@ public class DescribeAiotDevicesResponse extends AcsResponse {
 				this.iPv4Gateway = iPv4Gateway;
 			}
 
+			public String getDeviceType() {
+				return this.deviceType;
+			}
+
+			public void setDeviceType(String deviceType) {
+				this.deviceType = deviceType;
+			}
+
+			public String getFirmwareVersion() {
+				return this.firmwareVersion;
+			}
+
+			public void setFirmwareVersion(String firmwareVersion) {
+				this.firmwareVersion = firmwareVersion;
+			}
+
+			public String getSerialNuber() {
+				return this.serialNuber;
+			}
+
+			public void setSerialNuber(String serialNuber) {
+				this.serialNuber = serialNuber;
+			}
+
+			public String getManufacturer() {
+				return this.manufacturer;
+			}
+
+			public void setManufacturer(String manufacturer) {
+				this.manufacturer = manufacturer;
+			}
+
 			public String getId() {
 				return this.id;
 			}
 
 			public void setId(String id) {
 				this.id = id;
-			}
-
-			public String getPlace() {
-				return this.place;
-			}
-
-			public void setPlace(String place) {
-				this.place = place;
 			}
 		}
 	}

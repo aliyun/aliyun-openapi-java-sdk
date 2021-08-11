@@ -77,6 +77,7 @@ public class DescribeInstanceAttributeResponseUnmarshaller {
 			dBInstanceAttribute.setGlobalInstanceId(_ctx.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].GlobalInstanceId"));
 			dBInstanceAttribute.setSecondaryZoneId(_ctx.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].SecondaryZoneId"));
 			dBInstanceAttribute.setZoneType(_ctx.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].ZoneType"));
+			dBInstanceAttribute.setBackupLogStartTime(_ctx.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].BackupLogStartTime"));
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeInstanceAttributeResponse.Instances["+ i +"].Tags.Length"); j++) {

@@ -34,20 +34,20 @@ public class DescribePendingMaintenanceActionResponseUnmarshaller {
 		List<ItemsItem> items = new ArrayList<ItemsItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribePendingMaintenanceActionResponse.Items.Length"); i++) {
 			ItemsItem itemsItem = new ItemsItem();
-			itemsItem.setId(_ctx.integerValue("DescribePendingMaintenanceActionResponse.Items["+ i +"].Id"));
-			itemsItem.setDBClusterId(_ctx.stringValue("DescribePendingMaintenanceActionResponse.Items["+ i +"].DBClusterId"));
-			itemsItem.setDBType(_ctx.stringValue("DescribePendingMaintenanceActionResponse.Items["+ i +"].DBType"));
-			itemsItem.setStartTime(_ctx.stringValue("DescribePendingMaintenanceActionResponse.Items["+ i +"].StartTime"));
-			itemsItem.setSwitchTime(_ctx.stringValue("DescribePendingMaintenanceActionResponse.Items["+ i +"].SwitchTime"));
-			itemsItem.setDeadline(_ctx.stringValue("DescribePendingMaintenanceActionResponse.Items["+ i +"].Deadline"));
 			itemsItem.setStatus(_ctx.integerValue("DescribePendingMaintenanceActionResponse.Items["+ i +"].Status"));
-			itemsItem.setCreatedTime(_ctx.stringValue("DescribePendingMaintenanceActionResponse.Items["+ i +"].CreatedTime"));
-			itemsItem.setModifiedTime(_ctx.stringValue("DescribePendingMaintenanceActionResponse.Items["+ i +"].ModifiedTime"));
-			itemsItem.setResultInfo(_ctx.stringValue("DescribePendingMaintenanceActionResponse.Items["+ i +"].ResultInfo"));
 			itemsItem.setPrepareInterval(_ctx.stringValue("DescribePendingMaintenanceActionResponse.Items["+ i +"].PrepareInterval"));
+			itemsItem.setDeadline(_ctx.stringValue("DescribePendingMaintenanceActionResponse.Items["+ i +"].Deadline"));
+			itemsItem.setDBType(_ctx.stringValue("DescribePendingMaintenanceActionResponse.Items["+ i +"].DBType"));
 			itemsItem.setTaskType(_ctx.stringValue("DescribePendingMaintenanceActionResponse.Items["+ i +"].TaskType"));
+			itemsItem.setStartTime(_ctx.stringValue("DescribePendingMaintenanceActionResponse.Items["+ i +"].StartTime"));
 			itemsItem.setDBVersion(_ctx.stringValue("DescribePendingMaintenanceActionResponse.Items["+ i +"].DBVersion"));
+			itemsItem.setModifiedTime(_ctx.stringValue("DescribePendingMaintenanceActionResponse.Items["+ i +"].ModifiedTime"));
+			itemsItem.setDBClusterId(_ctx.stringValue("DescribePendingMaintenanceActionResponse.Items["+ i +"].DBClusterId"));
 			itemsItem.setRegion(_ctx.stringValue("DescribePendingMaintenanceActionResponse.Items["+ i +"].Region"));
+			itemsItem.setResultInfo(_ctx.stringValue("DescribePendingMaintenanceActionResponse.Items["+ i +"].ResultInfo"));
+			itemsItem.setCreatedTime(_ctx.stringValue("DescribePendingMaintenanceActionResponse.Items["+ i +"].CreatedTime"));
+			itemsItem.setId(_ctx.integerValue("DescribePendingMaintenanceActionResponse.Items["+ i +"].Id"));
+			itemsItem.setSwitchTime(_ctx.stringValue("DescribePendingMaintenanceActionResponse.Items["+ i +"].SwitchTime"));
 
 			items.add(itemsItem);
 		}

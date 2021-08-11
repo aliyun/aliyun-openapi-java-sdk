@@ -25,21 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class SearchFaceResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String message;
+
+	private String requestId;
 
 	private String code;
 
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getMessage() {
 		return this.message;
@@ -47,6 +39,14 @@ public class SearchFaceResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getCode() {
@@ -67,30 +67,22 @@ public class SearchFaceResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Integer totalCount;
-
-		private Integer pageSize;
+		private Integer pageNo;
 
 		private Integer totalPage;
 
-		private Integer pageNo;
+		private Integer pageSize;
+
+		private Integer totalCount;
 
 		private List<Record> records;
 
-		public Integer getTotalCount() {
-			return this.totalCount;
+		public Integer getPageNo() {
+			return this.pageNo;
 		}
 
-		public void setTotalCount(Integer totalCount) {
-			this.totalCount = totalCount;
-		}
-
-		public Integer getPageSize() {
-			return this.pageSize;
-		}
-
-		public void setPageSize(Integer pageSize) {
-			this.pageSize = pageSize;
+		public void setPageNo(Integer pageNo) {
+			this.pageNo = pageNo;
 		}
 
 		public Integer getTotalPage() {
@@ -101,12 +93,20 @@ public class SearchFaceResponse extends AcsResponse {
 			this.totalPage = totalPage;
 		}
 
-		public Integer getPageNo() {
-			return this.pageNo;
+		public Integer getPageSize() {
+			return this.pageSize;
 		}
 
-		public void setPageNo(Integer pageNo) {
-			this.pageNo = pageNo;
+		public void setPageSize(Integer pageSize) {
+			this.pageSize = pageSize;
+		}
+
+		public Integer getTotalCount() {
+			return this.totalCount;
+		}
+
+		public void setTotalCount(Integer totalCount) {
+			this.totalCount = totalCount;
 		}
 
 		public List<Record> getRecords() {
@@ -119,32 +119,32 @@ public class SearchFaceResponse extends AcsResponse {
 
 		public static class Record {
 
-			private String matchSuggestion;
+			private String gbId;
 
 			private String targetImageUrl;
 
-			private Float score;
-
-			private Float rightBottomX;
-
 			private Float rightBottomY;
-
-			private String sourceId;
-
-			private String gbId;
 
 			private String imageUrl;
 
 			private Float leftTopY;
 
+			private Float score;
+
+			private String sourceId;
+
+			private Float rightBottomX;
+
 			private Float leftTopX;
 
-			public String getMatchSuggestion() {
-				return this.matchSuggestion;
+			private String matchSuggestion;
+
+			public String getGbId() {
+				return this.gbId;
 			}
 
-			public void setMatchSuggestion(String matchSuggestion) {
-				this.matchSuggestion = matchSuggestion;
+			public void setGbId(String gbId) {
+				this.gbId = gbId;
 			}
 
 			public String getTargetImageUrl() {
@@ -155,44 +155,12 @@ public class SearchFaceResponse extends AcsResponse {
 				this.targetImageUrl = targetImageUrl;
 			}
 
-			public Float getScore() {
-				return this.score;
-			}
-
-			public void setScore(Float score) {
-				this.score = score;
-			}
-
-			public Float getRightBottomX() {
-				return this.rightBottomX;
-			}
-
-			public void setRightBottomX(Float rightBottomX) {
-				this.rightBottomX = rightBottomX;
-			}
-
 			public Float getRightBottomY() {
 				return this.rightBottomY;
 			}
 
 			public void setRightBottomY(Float rightBottomY) {
 				this.rightBottomY = rightBottomY;
-			}
-
-			public String getSourceId() {
-				return this.sourceId;
-			}
-
-			public void setSourceId(String sourceId) {
-				this.sourceId = sourceId;
-			}
-
-			public String getGbId() {
-				return this.gbId;
-			}
-
-			public void setGbId(String gbId) {
-				this.gbId = gbId;
 			}
 
 			public String getImageUrl() {
@@ -211,12 +179,44 @@ public class SearchFaceResponse extends AcsResponse {
 				this.leftTopY = leftTopY;
 			}
 
+			public Float getScore() {
+				return this.score;
+			}
+
+			public void setScore(Float score) {
+				this.score = score;
+			}
+
+			public String getSourceId() {
+				return this.sourceId;
+			}
+
+			public void setSourceId(String sourceId) {
+				this.sourceId = sourceId;
+			}
+
+			public Float getRightBottomX() {
+				return this.rightBottomX;
+			}
+
+			public void setRightBottomX(Float rightBottomX) {
+				this.rightBottomX = rightBottomX;
+			}
+
 			public Float getLeftTopX() {
 				return this.leftTopX;
 			}
 
 			public void setLeftTopX(Float leftTopX) {
 				this.leftTopX = leftTopX;
+			}
+
+			public String getMatchSuggestion() {
+				return this.matchSuggestion;
+			}
+
+			public void setMatchSuggestion(String matchSuggestion) {
+				this.matchSuggestion = matchSuggestion;
 			}
 		}
 	}

@@ -32,8 +32,10 @@ public class DescribeMountTargetsRequest extends RpcAcsRequest<DescribeMountTarg
 	private String fileSystemId;
 
 	private String mountTargetDomain;
+
+	private String dualStackMountTargetDomain;
 	public DescribeMountTargetsRequest() {
-		super("NAS", "2017-06-26", "DescribeMountTargets");
+		super("NAS", "2017-06-26", "DescribeMountTargets", "nas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -82,6 +84,17 @@ public class DescribeMountTargetsRequest extends RpcAcsRequest<DescribeMountTarg
 		this.mountTargetDomain = mountTargetDomain;
 		if(mountTargetDomain != null){
 			putQueryParameter("MountTargetDomain", mountTargetDomain);
+		}
+	}
+
+	public String getDualStackMountTargetDomain() {
+		return this.dualStackMountTargetDomain;
+	}
+
+	public void setDualStackMountTargetDomain(String dualStackMountTargetDomain) {
+		this.dualStackMountTargetDomain = dualStackMountTargetDomain;
+		if(dualStackMountTargetDomain != null){
+			putQueryParameter("DualStackMountTargetDomain", dualStackMountTargetDomain);
 		}
 	}
 

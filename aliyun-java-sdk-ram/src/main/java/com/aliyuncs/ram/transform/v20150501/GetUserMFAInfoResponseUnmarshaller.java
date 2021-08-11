@@ -27,6 +27,7 @@ public class GetUserMFAInfoResponseUnmarshaller {
 
 		MFADevice mFADevice = new MFADevice();
 		mFADevice.setSerialNumber(_ctx.stringValue("GetUserMFAInfoResponse.MFADevice.SerialNumber"));
+		mFADevice.setType(_ctx.stringValue("GetUserMFAInfoResponse.MFADevice.Type"));
 		getUserMFAInfoResponse.setMFADevice(mFADevice);
 	 
 	 	return getUserMFAInfoResponse;

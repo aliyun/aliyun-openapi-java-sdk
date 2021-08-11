@@ -50,6 +50,30 @@ public class DescribeDomainStatusCodeCountResponse extends AcsResponse {
 
 	private Long status3XX;
 
+	private Long status2XX1;
+
+	private Long status5012;
+
+	private Long status5023;
+
+	private Long status5034;
+
+	private Long status5045;
+
+	private Long status2006;
+
+	private Long status4057;
+
+	private Long status5XX8;
+
+	private Long status4XX9;
+
+	private Long status40310;
+
+	private Long status40411;
+
+	private Long status3XX12;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -152,6 +176,102 @@ public class DescribeDomainStatusCodeCountResponse extends AcsResponse {
 
 	public void setStatus3XX(Long status3XX) {
 		this.status3XX = status3XX;
+	}
+
+	public Long getStatus2XX1() {
+		return this.status2XX1;
+	}
+
+	public void setStatus2XX1(Long status2XX1) {
+		this.status2XX1 = status2XX1;
+	}
+
+	public Long getStatus5012() {
+		return this.status5012;
+	}
+
+	public void setStatus5012(Long status5012) {
+		this.status5012 = status5012;
+	}
+
+	public Long getStatus5023() {
+		return this.status5023;
+	}
+
+	public void setStatus5023(Long status5023) {
+		this.status5023 = status5023;
+	}
+
+	public Long getStatus5034() {
+		return this.status5034;
+	}
+
+	public void setStatus5034(Long status5034) {
+		this.status5034 = status5034;
+	}
+
+	public Long getStatus5045() {
+		return this.status5045;
+	}
+
+	public void setStatus5045(Long status5045) {
+		this.status5045 = status5045;
+	}
+
+	public Long getStatus2006() {
+		return this.status2006;
+	}
+
+	public void setStatus2006(Long status2006) {
+		this.status2006 = status2006;
+	}
+
+	public Long getStatus4057() {
+		return this.status4057;
+	}
+
+	public void setStatus4057(Long status4057) {
+		this.status4057 = status4057;
+	}
+
+	public Long getStatus5XX8() {
+		return this.status5XX8;
+	}
+
+	public void setStatus5XX8(Long status5XX8) {
+		this.status5XX8 = status5XX8;
+	}
+
+	public Long getStatus4XX9() {
+		return this.status4XX9;
+	}
+
+	public void setStatus4XX9(Long status4XX9) {
+		this.status4XX9 = status4XX9;
+	}
+
+	public Long getStatus40310() {
+		return this.status40310;
+	}
+
+	public void setStatus40310(Long status40310) {
+		this.status40310 = status40310;
+	}
+
+	public Long getStatus40411() {
+		return this.status40411;
+	}
+
+	public void setStatus40411(Long status40411) {
+		this.status40411 = status40411;
+	}
+
+	public Long getStatus3XX12() {
+		return this.status3XX12;
+	}
+
+	public void setStatus3XX12(Long status3XX12) {
+		this.status3XX12 = status3XX12;
 	}
 
 	@Override

@@ -28,6 +28,8 @@ public class DescribeImagesRequest extends RpcAcsRequest<DescribeImagesResponse>
 
 	private String actionType;
 
+	private Long imageOwnerId;
+
 	private Long resourceOwnerId;
 
 	private String imageId;
@@ -47,6 +49,8 @@ public class DescribeImagesRequest extends RpcAcsRequest<DescribeImagesResponse>
 	private String imageName;
 
 	private Boolean isSupportCloudinit;
+
+	private Boolean isPublic;
 
 	private Integer pageSize;
 
@@ -90,6 +94,17 @@ public class DescribeImagesRequest extends RpcAcsRequest<DescribeImagesResponse>
 		this.actionType = actionType;
 		if(actionType != null){
 			putQueryParameter("ActionType", actionType);
+		}
+	}
+
+	public Long getImageOwnerId() {
+		return this.imageOwnerId;
+	}
+
+	public void setImageOwnerId(Long imageOwnerId) {
+		this.imageOwnerId = imageOwnerId;
+		if(imageOwnerId != null){
+			putQueryParameter("ImageOwnerId", imageOwnerId.toString());
 		}
 	}
 
@@ -203,6 +218,17 @@ public class DescribeImagesRequest extends RpcAcsRequest<DescribeImagesResponse>
 		}
 	}
 
+	public Boolean getIsPublic() {
+		return this.isPublic;
+	}
+
+	public void setIsPublic(Boolean isPublic) {
+		this.isPublic = isPublic;
+		if(isPublic != null){
+			putQueryParameter("IsPublic", isPublic.toString());
+		}
+	}
+
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
@@ -233,7 +259,7 @@ public class DescribeImagesRequest extends RpcAcsRequest<DescribeImagesResponse>
 		this.tags = tags;	
 		if (tags != null) {
 			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
-				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".value" , tags.get(depth1).getValue());
 				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
 			}
 		}	

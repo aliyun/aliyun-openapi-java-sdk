@@ -218,8 +218,7 @@ public class CommonRpcRequestTest {
         when(domain.getDomainName()).thenReturn("testDomain");
         Signer signer = mock(Signer.class);
         BasicSessionCredentials credentials = mock(BasicSessionCredentials.class);
-        commonRpcRequest.signRequest(null, null, FormatType.JSON, domain);
-        commonRpcRequest.signRequest(null, credentials, FormatType.JSON, domain);
+        commonRpcRequest.signRequest(signer, credentials, FormatType.JSON, domain);
         commonRpcRequest.signRequest(signer, null, FormatType.JSON, domain);
         Assert.assertTrue(commonRpcRequest.getSysUrl().contains("testDomain"));
 

@@ -26,14 +26,14 @@ public class UpdateUserResponseUnmarshaller {
 		updateUserResponse.setRequestId(_ctx.stringValue("UpdateUserResponse.RequestId"));
 
 		User user = new User();
-		user.setUserId(_ctx.stringValue("UpdateUserResponse.User.UserId"));
-		user.setUserName(_ctx.stringValue("UpdateUserResponse.User.UserName"));
 		user.setDisplayName(_ctx.stringValue("UpdateUserResponse.User.DisplayName"));
-		user.setMobilePhone(_ctx.stringValue("UpdateUserResponse.User.MobilePhone"));
 		user.setEmail(_ctx.stringValue("UpdateUserResponse.User.Email"));
+		user.setUpdateDate(_ctx.stringValue("UpdateUserResponse.User.UpdateDate"));
+		user.setMobilePhone(_ctx.stringValue("UpdateUserResponse.User.MobilePhone"));
+		user.setUserId(_ctx.stringValue("UpdateUserResponse.User.UserId"));
 		user.setComments(_ctx.stringValue("UpdateUserResponse.User.Comments"));
 		user.setCreateDate(_ctx.stringValue("UpdateUserResponse.User.CreateDate"));
-		user.setUpdateDate(_ctx.stringValue("UpdateUserResponse.User.UpdateDate"));
+		user.setUserName(_ctx.stringValue("UpdateUserResponse.User.UserName"));
 		updateUserResponse.setUser(user);
 	 
 	 	return updateUserResponse;

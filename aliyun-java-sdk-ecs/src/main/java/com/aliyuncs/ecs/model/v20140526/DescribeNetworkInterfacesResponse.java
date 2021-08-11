@@ -25,17 +25,41 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeNetworkInterfacesResponse extends AcsResponse {
 
+	private String nextToken;
+
+	private Integer pageSize;
+
+	private Integer pageNumber;
+
 	private String requestId;
 
 	private Integer totalCount;
 
-	private Integer pageNumber;
-
-	private Integer pageSize;
-
-	private String nextToken;
-
 	private List<NetworkInterfaceSet> networkInterfaceSets;
+
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -53,30 +77,6 @@ public class DescribeNetworkInterfacesResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-	}
-
-	public String getNextToken() {
-		return this.nextToken;
-	}
-
-	public void setNextToken(String nextToken) {
-		this.nextToken = nextToken;
-	}
-
 	public List<NetworkInterfaceSet> getNetworkInterfaceSets() {
 		return this.networkInterfaceSets;
 	}
@@ -87,43 +87,43 @@ public class DescribeNetworkInterfacesResponse extends AcsResponse {
 
 	public static class NetworkInterfaceSet {
 
-		private String networkInterfaceId;
-
-		private String status;
-
-		private String type;
+		private String creationTime;
 
 		private String vpcId;
 
+		private String type;
+
+		private String status;
+
+		private String networkInterfaceTrafficMode;
+
+		private String networkInterfaceName;
+
+		private String macAddress;
+
+		private Integer queuePairNumber;
+
+		private String networkInterfaceId;
+
+		private Long serviceID;
+
+		private String instanceId;
+
+		private String ownerId;
+
+		private Boolean serviceManaged;
+
 		private String vSwitchId;
+
+		private String description;
+
+		private String resourceGroupId;
 
 		private String zoneId;
 
 		private String privateIpAddress;
 
-		private String macAddress;
-
-		private String networkInterfaceName;
-
-		private String description;
-
-		private String instanceId;
-
-		private String creationTime;
-
-		private String resourceGroupId;
-
-		private Long serviceID;
-
-		private Boolean serviceManaged;
-
 		private Integer queueNumber;
-
-		private String ownerId;
-
-		private String networkInterfaceTrafficMode;
-
-		private Integer queuePairNumber;
 
 		private List<PrivateIpSet> privateIpSets;
 
@@ -137,28 +137,12 @@ public class DescribeNetworkInterfacesResponse extends AcsResponse {
 
 		private Attachment attachment;
 
-		public String getNetworkInterfaceId() {
-			return this.networkInterfaceId;
+		public String getCreationTime() {
+			return this.creationTime;
 		}
 
-		public void setNetworkInterfaceId(String networkInterfaceId) {
-			this.networkInterfaceId = networkInterfaceId;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
-		public String getType() {
-			return this.type;
-		}
-
-		public void setType(String type) {
-			this.type = type;
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
 		}
 
 		public String getVpcId() {
@@ -169,12 +153,116 @@ public class DescribeNetworkInterfacesResponse extends AcsResponse {
 			this.vpcId = vpcId;
 		}
 
+		public String getType() {
+			return this.type;
+		}
+
+		public void setType(String type) {
+			this.type = type;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
+		public String getNetworkInterfaceTrafficMode() {
+			return this.networkInterfaceTrafficMode;
+		}
+
+		public void setNetworkInterfaceTrafficMode(String networkInterfaceTrafficMode) {
+			this.networkInterfaceTrafficMode = networkInterfaceTrafficMode;
+		}
+
+		public String getNetworkInterfaceName() {
+			return this.networkInterfaceName;
+		}
+
+		public void setNetworkInterfaceName(String networkInterfaceName) {
+			this.networkInterfaceName = networkInterfaceName;
+		}
+
+		public String getMacAddress() {
+			return this.macAddress;
+		}
+
+		public void setMacAddress(String macAddress) {
+			this.macAddress = macAddress;
+		}
+
+		public Integer getQueuePairNumber() {
+			return this.queuePairNumber;
+		}
+
+		public void setQueuePairNumber(Integer queuePairNumber) {
+			this.queuePairNumber = queuePairNumber;
+		}
+
+		public String getNetworkInterfaceId() {
+			return this.networkInterfaceId;
+		}
+
+		public void setNetworkInterfaceId(String networkInterfaceId) {
+			this.networkInterfaceId = networkInterfaceId;
+		}
+
+		public Long getServiceID() {
+			return this.serviceID;
+		}
+
+		public void setServiceID(Long serviceID) {
+			this.serviceID = serviceID;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public String getOwnerId() {
+			return this.ownerId;
+		}
+
+		public void setOwnerId(String ownerId) {
+			this.ownerId = ownerId;
+		}
+
+		public Boolean getServiceManaged() {
+			return this.serviceManaged;
+		}
+
+		public void setServiceManaged(Boolean serviceManaged) {
+			this.serviceManaged = serviceManaged;
+		}
+
 		public String getVSwitchId() {
 			return this.vSwitchId;
 		}
 
 		public void setVSwitchId(String vSwitchId) {
 			this.vSwitchId = vSwitchId;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
 		}
 
 		public String getZoneId() {
@@ -193,100 +281,12 @@ public class DescribeNetworkInterfacesResponse extends AcsResponse {
 			this.privateIpAddress = privateIpAddress;
 		}
 
-		public String getMacAddress() {
-			return this.macAddress;
-		}
-
-		public void setMacAddress(String macAddress) {
-			this.macAddress = macAddress;
-		}
-
-		public String getNetworkInterfaceName() {
-			return this.networkInterfaceName;
-		}
-
-		public void setNetworkInterfaceName(String networkInterfaceName) {
-			this.networkInterfaceName = networkInterfaceName;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
-		public String getInstanceId() {
-			return this.instanceId;
-		}
-
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
-
-		public String getCreationTime() {
-			return this.creationTime;
-		}
-
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
-		}
-
-		public String getResourceGroupId() {
-			return this.resourceGroupId;
-		}
-
-		public void setResourceGroupId(String resourceGroupId) {
-			this.resourceGroupId = resourceGroupId;
-		}
-
-		public Long getServiceID() {
-			return this.serviceID;
-		}
-
-		public void setServiceID(Long serviceID) {
-			this.serviceID = serviceID;
-		}
-
-		public Boolean getServiceManaged() {
-			return this.serviceManaged;
-		}
-
-		public void setServiceManaged(Boolean serviceManaged) {
-			this.serviceManaged = serviceManaged;
-		}
-
 		public Integer getQueueNumber() {
 			return this.queueNumber;
 		}
 
 		public void setQueueNumber(Integer queueNumber) {
 			this.queueNumber = queueNumber;
-		}
-
-		public String getOwnerId() {
-			return this.ownerId;
-		}
-
-		public void setOwnerId(String ownerId) {
-			this.ownerId = ownerId;
-		}
-
-		public String getNetworkInterfaceTrafficMode() {
-			return this.networkInterfaceTrafficMode;
-		}
-
-		public void setNetworkInterfaceTrafficMode(String networkInterfaceTrafficMode) {
-			this.networkInterfaceTrafficMode = networkInterfaceTrafficMode;
-		}
-
-		public Integer getQueuePairNumber() {
-			return this.queuePairNumber;
-		}
-
-		public void setQueuePairNumber(Integer queuePairNumber) {
-			this.queuePairNumber = queuePairNumber;
 		}
 
 		public List<PrivateIpSet> getPrivateIpSets() {
@@ -408,17 +408,9 @@ public class DescribeNetworkInterfacesResponse extends AcsResponse {
 
 		public static class Tag {
 
-			private String tagKey;
-
 			private String tagValue;
 
-			public String getTagKey() {
-				return this.tagKey;
-			}
-
-			public void setTagKey(String tagKey) {
-				this.tagKey = tagKey;
-			}
+			private String tagKey;
 
 			public String getTagValue() {
 				return this.tagValue;
@@ -426,6 +418,14 @@ public class DescribeNetworkInterfacesResponse extends AcsResponse {
 
 			public void setTagValue(String tagValue) {
 				this.tagValue = tagValue;
+			}
+
+			public String getTagKey() {
+				return this.tagKey;
+			}
+
+			public void setTagKey(String tagKey) {
+				this.tagKey = tagKey;
 			}
 		}
 
@@ -454,11 +454,19 @@ public class DescribeNetworkInterfacesResponse extends AcsResponse {
 
 		public static class Attachment {
 
+			private Integer deviceIndex;
+
 			private String instanceId;
 
 			private String trunkNetworkInterfaceId;
 
-			private Integer deviceIndex;
+			public Integer getDeviceIndex() {
+				return this.deviceIndex;
+			}
+
+			public void setDeviceIndex(Integer deviceIndex) {
+				this.deviceIndex = deviceIndex;
+			}
 
 			public String getInstanceId() {
 				return this.instanceId;
@@ -474,14 +482,6 @@ public class DescribeNetworkInterfacesResponse extends AcsResponse {
 
 			public void setTrunkNetworkInterfaceId(String trunkNetworkInterfaceId) {
 				this.trunkNetworkInterfaceId = trunkNetworkInterfaceId;
-			}
-
-			public Integer getDeviceIndex() {
-				return this.deviceIndex;
-			}
-
-			public void setDeviceIndex(Integer deviceIndex) {
-				this.deviceIndex = deviceIndex;
 			}
 		}
 	}

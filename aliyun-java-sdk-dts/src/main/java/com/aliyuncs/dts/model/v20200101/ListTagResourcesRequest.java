@@ -34,7 +34,7 @@ public class ListTagResourcesRequest extends RpcAcsRequest<ListTagResourcesRespo
 
 	private String resourceType;
 	public ListTagResourcesRequest() {
-		super("Dts", "2020-01-01", "ListTagResources");
+		super("Dts", "2020-01-01", "ListTagResources", "dts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

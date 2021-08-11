@@ -15,6 +15,9 @@
 package com.aliyuncs.vcs.model.v20200515;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.vcs.Endpoint;
 
@@ -25,7 +28,8 @@ import com.aliyuncs.vcs.Endpoint;
 public class BatchDeleteInstanceRequest extends RpcAcsRequest<BatchDeleteInstanceResponse> {
 	   
 
-	private String instanceIds;
+	@SerializedName("instanceIds")
+	private List<String> instanceIds;
 
 	private String projectId;
 	public BatchDeleteInstanceRequest() {
@@ -37,15 +41,15 @@ public class BatchDeleteInstanceRequest extends RpcAcsRequest<BatchDeleteInstanc
 		} catch (Exception e) {}
 	}
 
-	public String getInstanceIds() {
+	public List<String> getInstanceIds() {
 		return this.instanceIds;
 	}
 
-	public void setInstanceIds(String instanceIds) {
-		this.instanceIds = instanceIds;
-		if(instanceIds != null){
-			putBodyParameter("InstanceIds", instanceIds);
-		}
+	public void setInstanceIds(List<String> instanceIds) {
+		this.instanceIds = instanceIds;	
+		if (instanceIds != null) {
+			putBodyParameter("InstanceIds" , new Gson().toJson(instanceIds));
+		}	
 	}
 
 	public String getProjectId() {

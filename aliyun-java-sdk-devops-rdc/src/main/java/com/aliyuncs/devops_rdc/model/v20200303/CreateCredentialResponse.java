@@ -24,15 +24,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateCredentialResponse extends AcsResponse {
 
+	private String errorMessage;
+
 	private String requestId;
 
-	private String errorCode;
-
-	private String errorMessage;
+	private Long object;
 
 	private Boolean success;
 
-	private Long object;
+	private String errorCode;
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -42,20 +50,12 @@ public class CreateCredentialResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getErrorCode() {
-		return this.errorCode;
+	public Long getObject() {
+		return this.object;
 	}
 
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
+	public void setObject(Long object) {
+		this.object = object;
 	}
 
 	public Boolean getSuccess() {
@@ -66,12 +66,12 @@ public class CreateCredentialResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public Long getObject() {
-		return this.object;
+	public String getErrorCode() {
+		return this.errorCode;
 	}
 
-	public void setObject(Long object) {
-		this.object = object;
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
 	}
 
 	@Override

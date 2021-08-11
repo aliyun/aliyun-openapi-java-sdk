@@ -82,6 +82,9 @@ public class DescribeInstanceBillResponseUnmarshaller {
 			item.setServicePeriodUnit(_ctx.stringValue("DescribeInstanceBillResponse.Data.Items["+ i +"].ServicePeriodUnit"));
 			item.setPipCode(_ctx.stringValue("DescribeInstanceBillResponse.Data.Items["+ i +"].PipCode"));
 			item.setCommodityCode(_ctx.stringValue("DescribeInstanceBillResponse.Data.Items["+ i +"].CommodityCode"));
+			item.setBillAccountID(_ctx.stringValue("DescribeInstanceBillResponse.Data.Items["+ i +"].BillAccountID"));
+			item.setBillAccountName(_ctx.stringValue("DescribeInstanceBillResponse.Data.Items["+ i +"].BillAccountName"));
+			item.setBizType(_ctx.stringValue("DescribeInstanceBillResponse.Data.Items["+ i +"].BizType"));
 
 			items.add(item);
 		}

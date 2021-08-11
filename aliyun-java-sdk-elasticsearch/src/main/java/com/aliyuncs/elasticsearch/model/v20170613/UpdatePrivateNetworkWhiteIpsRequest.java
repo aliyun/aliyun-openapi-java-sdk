@@ -25,6 +25,8 @@ import com.aliyuncs.elasticsearch.Endpoint;
 public class UpdatePrivateNetworkWhiteIpsRequest extends RoaAcsRequest<UpdatePrivateNetworkWhiteIpsResponse> {
 	   
 
+	private String modifyMode;
+
 	private String instanceId;
 
 	private String clientToken;
@@ -36,6 +38,17 @@ public class UpdatePrivateNetworkWhiteIpsRequest extends RoaAcsRequest<UpdatePri
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getModifyMode() {
+		return this.modifyMode;
+	}
+
+	public void setModifyMode(String modifyMode) {
+		this.modifyMode = modifyMode;
+		if(modifyMode != null){
+			putQueryParameter("modifyMode", modifyMode);
+		}
 	}
 
 	public String getInstanceId() {

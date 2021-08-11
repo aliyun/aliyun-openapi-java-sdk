@@ -33,7 +33,7 @@ public class ModifyConsumptionTimestampRequest extends RpcAcsRequest<ModifyConsu
 
 	private String accountId;
 	public ModifyConsumptionTimestampRequest() {
-		super("Dts", "2020-01-01", "ModifyConsumptionTimestamp");
+		super("Dts", "2020-01-01", "ModifyConsumptionTimestamp", "dts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

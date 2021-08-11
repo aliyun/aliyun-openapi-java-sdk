@@ -27,7 +27,7 @@ public class DeleteLDAPConfigRequest extends RpcAcsRequest<DeleteLDAPConfigRespo
 
 	private String fileSystemId;
 	public DeleteLDAPConfigRequest() {
-		super("NAS", "2017-06-26", "DeleteLDAPConfig");
+		super("NAS", "2017-06-26", "DeleteLDAPConfig", "nas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

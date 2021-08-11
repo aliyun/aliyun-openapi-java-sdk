@@ -21,6 +21,7 @@ import com.aliyuncs.nas.model.v20170626.DescribeFileSystemsResponse;
 import com.aliyuncs.nas.model.v20170626.DescribeFileSystemsResponse.FileSystem;
 import com.aliyuncs.nas.model.v20170626.DescribeFileSystemsResponse.FileSystem.Ldap;
 import com.aliyuncs.nas.model.v20170626.DescribeFileSystemsResponse.FileSystem.MountTarget;
+import com.aliyuncs.nas.model.v20170626.DescribeFileSystemsResponse.FileSystem.MountTarget.ClientMasterNode;
 import com.aliyuncs.nas.model.v20170626.DescribeFileSystemsResponse.FileSystem.MountTarget.Tag;
 import com.aliyuncs.nas.model.v20170626.DescribeFileSystemsResponse.FileSystem.Tag2;
 import com.aliyuncs.nas.model.v20170626.DescribeFileSystemsResponse.FileSystem._Package;
@@ -82,6 +83,18 @@ public class DescribeFileSystemsResponseUnmarshaller {
 				mountTarget.setVswId(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].MountTargets["+ j +"].VswId"));
 				mountTarget.setAccessGroupName(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].MountTargets["+ j +"].AccessGroupName"));
 				mountTarget.setStatus(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].MountTargets["+ j +"].Status"));
+				mountTarget.setDualStackMountTargetDomain(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].MountTargets["+ j +"].DualStackMountTargetDomain"));
+
+				List<ClientMasterNode> clientMasterNodes = new ArrayList<ClientMasterNode>();
+				for (int k = 0; k < _ctx.lengthValue("DescribeFileSystemsResponse.FileSystems["+ i +"].MountTargets["+ j +"].ClientMasterNodes.Length"); k++) {
+					ClientMasterNode clientMasterNode = new ClientMasterNode();
+					clientMasterNode.setEcsId(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].MountTargets["+ j +"].ClientMasterNodes["+ k +"].EcsId"));
+					clientMasterNode.setEcsIp(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].MountTargets["+ j +"].ClientMasterNodes["+ k +"].EcsIp"));
+					clientMasterNode.setDefaultPasswd(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].MountTargets["+ j +"].ClientMasterNodes["+ k +"].DefaultPasswd"));
+
+					clientMasterNodes.add(clientMasterNode);
+				}
+				mountTarget.setClientMasterNodes(clientMasterNodes);
 
 				List<Tag> tags1 = new ArrayList<Tag>();
 				for (int k = 0; k < _ctx.lengthValue("DescribeFileSystemsResponse.FileSystems["+ i +"].MountTargets["+ j +"].Tags.Length"); k++) {

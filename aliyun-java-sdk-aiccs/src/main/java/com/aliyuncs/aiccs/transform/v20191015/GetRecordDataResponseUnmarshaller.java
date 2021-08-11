@@ -27,10 +27,11 @@ public class GetRecordDataResponseUnmarshaller {
 		getRecordDataResponse.setMessage(_ctx.stringValue("GetRecordDataResponse.Message"));
 		getRecordDataResponse.setCode(_ctx.stringValue("GetRecordDataResponse.Code"));
 		getRecordDataResponse.setSuccess(_ctx.booleanValue("GetRecordDataResponse.Success"));
+		getRecordDataResponse.setHttpStatusCode(_ctx.longValue("GetRecordDataResponse.HttpStatusCode"));
 
 		Data data = new Data();
-		data.setAcid(_ctx.stringValue("GetRecordDataResponse.Data.Acid"));
 		data.setOssLink(_ctx.stringValue("GetRecordDataResponse.Data.OssLink"));
+		data.setAcid(_ctx.stringValue("GetRecordDataResponse.Data.Acid"));
 		getRecordDataResponse.setData(data);
 	 
 	 	return getRecordDataResponse;

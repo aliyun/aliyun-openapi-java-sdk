@@ -24,20 +24,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class UpdateTableResponse extends AcsResponse {
 
-	private String requestId;
+	private String code;
 
 	private String message;
 
-	private String code;
+	private String requestId;
 
 	private Boolean success;
 
-	public String getRequestId() {
-		return this.requestId;
+	private String taskId;
+
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public String getMessage() {
@@ -48,12 +50,12 @@ public class UpdateTableResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getCode() {
-		return this.code;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Boolean getSuccess() {
@@ -62,6 +64,14 @@ public class UpdateTableResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getTaskId() {
+		return this.taskId;
+	}
+
+	public void setTaskId(String taskId) {
+		this.taskId = taskId;
 	}
 
 	@Override

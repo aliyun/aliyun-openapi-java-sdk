@@ -124,9 +124,9 @@ public class DescribeInstanceModificationPriceRequest extends RpcAcsRequest<Desc
 		this.dataDisks = dataDisks;	
 		if (dataDisks != null) {
 			for (int depth1 = 0; depth1 < dataDisks.size(); depth1++) {
+				putQueryParameter("DataDisk." + (depth1 + 1) + ".PerformanceLevel" , dataDisks.get(depth1).getPerformanceLevel());
 				putQueryParameter("DataDisk." + (depth1 + 1) + ".Size" , dataDisks.get(depth1).getSize());
 				putQueryParameter("DataDisk." + (depth1 + 1) + ".Category" , dataDisks.get(depth1).getCategory());
-				putQueryParameter("DataDisk." + (depth1 + 1) + ".PerformanceLevel" , dataDisks.get(depth1).getPerformanceLevel());
 			}
 		}	
 	}
@@ -144,11 +144,19 @@ public class DescribeInstanceModificationPriceRequest extends RpcAcsRequest<Desc
 
 	public static class DataDisk {
 
+		private String performanceLevel;
+
 		private Integer size;
 
 		private String category;
 
-		private String performanceLevel;
+		public String getPerformanceLevel() {
+			return this.performanceLevel;
+		}
+
+		public void setPerformanceLevel(String performanceLevel) {
+			this.performanceLevel = performanceLevel;
+		}
 
 		public Integer getSize() {
 			return this.size;
@@ -164,14 +172,6 @@ public class DescribeInstanceModificationPriceRequest extends RpcAcsRequest<Desc
 
 		public void setCategory(String category) {
 			this.category = category;
-		}
-
-		public String getPerformanceLevel() {
-			return this.performanceLevel;
-		}
-
-		public void setPerformanceLevel(String performanceLevel) {
-			this.performanceLevel = performanceLevel;
 		}
 	}
 

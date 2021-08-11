@@ -24,9 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetSkillGroupServiceStatusResponse extends AcsResponse {
 
-	private String message;
-
 	private String requestId;
+
+	private String message;
 
 	private String code;
 
@@ -34,20 +34,20 @@ public class GetSkillGroupServiceStatusResponse extends AcsResponse {
 
 	private Data data;
 
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public String getCode() {
@@ -76,29 +76,13 @@ public class GetSkillGroupServiceStatusResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Integer totalNum;
-
-		private Integer pageNum;
-
 		private Integer pageSize;
+
+		private Integer totalNum;
 
 		private String rows;
 
-		public Integer getTotalNum() {
-			return this.totalNum;
-		}
-
-		public void setTotalNum(Integer totalNum) {
-			this.totalNum = totalNum;
-		}
-
-		public Integer getPageNum() {
-			return this.pageNum;
-		}
-
-		public void setPageNum(Integer pageNum) {
-			this.pageNum = pageNum;
-		}
+		private Integer pageNum;
 
 		public Integer getPageSize() {
 			return this.pageSize;
@@ -108,12 +92,28 @@ public class GetSkillGroupServiceStatusResponse extends AcsResponse {
 			this.pageSize = pageSize;
 		}
 
+		public Integer getTotalNum() {
+			return this.totalNum;
+		}
+
+		public void setTotalNum(Integer totalNum) {
+			this.totalNum = totalNum;
+		}
+
 		public String getRows() {
 			return this.rows;
 		}
 
 		public void setRows(String rows) {
 			this.rows = rows;
+		}
+
+		public Integer getPageNum() {
+			return this.pageNum;
+		}
+
+		public void setPageNum(Integer pageNum) {
+			this.pageNum = pageNum;
 		}
 	}
 

@@ -25,21 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetCityCodeResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String message;
 
 	private String code;
 
+	private String requestId;
+
 	private List<DataItem> data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getMessage() {
 		return this.message;
@@ -57,6 +49,14 @@ public class GetCityCodeResponse extends AcsResponse {
 		this.code = code;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	public List<DataItem> getData() {
 		return this.data;
 	}
@@ -67,17 +67,9 @@ public class GetCityCodeResponse extends AcsResponse {
 
 	public static class DataItem {
 
-		private String cityCode;
-
 		private String cityAddress;
 
-		public String getCityCode() {
-			return this.cityCode;
-		}
-
-		public void setCityCode(String cityCode) {
-			this.cityCode = cityCode;
-		}
+		private String cityCode;
 
 		public String getCityAddress() {
 			return this.cityAddress;
@@ -85,6 +77,14 @@ public class GetCityCodeResponse extends AcsResponse {
 
 		public void setCityAddress(String cityAddress) {
 			this.cityAddress = cityAddress;
+		}
+
+		public String getCityCode() {
+			return this.cityCode;
+		}
+
+		public void setCityCode(String cityCode) {
+			this.cityCode = cityCode;
 		}
 	}
 

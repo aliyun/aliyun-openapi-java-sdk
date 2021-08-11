@@ -26,43 +26,45 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetStackResponse extends AcsResponse {
 
-	private String createTime;
+	private String status;
 
 	private String description;
 
-	private Boolean disableRollback;
-
-	private String regionId;
-
 	private String requestId;
-
-	private String stackId;
-
-	private String stackName;
-
-	private String status;
 
 	private String statusReason;
 
-	private String templateDescription;
-
-	private Integer timeoutInMinutes;
-
-	private String updateTime;
-
 	private String parentStackId;
 
-	private String stackDriftStatus;
-
-	private String driftDetectionTime;
-
-	private String ramRoleName;
+	private String createTime;
 
 	private String deletionProtection;
 
 	private String rootStackId;
 
+	private String templateDescription;
+
 	private String stackType;
+
+	private String ramRoleName;
+
+	private String updateTime;
+
+	private String driftDetectionTime;
+
+	private String regionId;
+
+	private String stackDriftStatus;
+
+	private Boolean disableRollback;
+
+	private String stackName;
+
+	private Integer timeoutInMinutes;
+
+	private String stackId;
+
+	private String resourceGroupId;
 
 	private List<Parameter> parameters;
 
@@ -72,12 +74,14 @@ public class GetStackResponse extends AcsResponse {
 
 	private List<String> notificationURLs;
 
-	public String getCreateTime() {
-		return this.createTime;
+	private ResourceProgress resourceProgress;
+
+	public String getStatus() {
+		return this.status;
 	}
 
-	public void setCreateTime(String createTime) {
-		this.createTime = createTime;
+	public void setStatus(String status) {
+		this.status = status;
 	}
 
 	public String getDescription() {
@@ -88,52 +92,12 @@ public class GetStackResponse extends AcsResponse {
 		this.description = description;
 	}
 
-	public Boolean getDisableRollback() {
-		return this.disableRollback;
-	}
-
-	public void setDisableRollback(Boolean disableRollback) {
-		this.disableRollback = disableRollback;
-	}
-
-	public String getRegionId() {
-		return this.regionId;
-	}
-
-	public void setRegionId(String regionId) {
-		this.regionId = regionId;
-	}
-
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getStackId() {
-		return this.stackId;
-	}
-
-	public void setStackId(String stackId) {
-		this.stackId = stackId;
-	}
-
-	public String getStackName() {
-		return this.stackName;
-	}
-
-	public void setStackName(String stackName) {
-		this.stackName = stackName;
-	}
-
-	public String getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
 	}
 
 	public String getStatusReason() {
@@ -144,30 +108,6 @@ public class GetStackResponse extends AcsResponse {
 		this.statusReason = statusReason;
 	}
 
-	public String getTemplateDescription() {
-		return this.templateDescription;
-	}
-
-	public void setTemplateDescription(String templateDescription) {
-		this.templateDescription = templateDescription;
-	}
-
-	public Integer getTimeoutInMinutes() {
-		return this.timeoutInMinutes;
-	}
-
-	public void setTimeoutInMinutes(Integer timeoutInMinutes) {
-		this.timeoutInMinutes = timeoutInMinutes;
-	}
-
-	public String getUpdateTime() {
-		return this.updateTime;
-	}
-
-	public void setUpdateTime(String updateTime) {
-		this.updateTime = updateTime;
-	}
-
 	public String getParentStackId() {
 		return this.parentStackId;
 	}
@@ -176,28 +116,12 @@ public class GetStackResponse extends AcsResponse {
 		this.parentStackId = parentStackId;
 	}
 
-	public String getStackDriftStatus() {
-		return this.stackDriftStatus;
+	public String getCreateTime() {
+		return this.createTime;
 	}
 
-	public void setStackDriftStatus(String stackDriftStatus) {
-		this.stackDriftStatus = stackDriftStatus;
-	}
-
-	public String getDriftDetectionTime() {
-		return this.driftDetectionTime;
-	}
-
-	public void setDriftDetectionTime(String driftDetectionTime) {
-		this.driftDetectionTime = driftDetectionTime;
-	}
-
-	public String getRamRoleName() {
-		return this.ramRoleName;
-	}
-
-	public void setRamRoleName(String ramRoleName) {
-		this.ramRoleName = ramRoleName;
+	public void setCreateTime(String createTime) {
+		this.createTime = createTime;
 	}
 
 	public String getDeletionProtection() {
@@ -216,12 +140,100 @@ public class GetStackResponse extends AcsResponse {
 		this.rootStackId = rootStackId;
 	}
 
+	public String getTemplateDescription() {
+		return this.templateDescription;
+	}
+
+	public void setTemplateDescription(String templateDescription) {
+		this.templateDescription = templateDescription;
+	}
+
 	public String getStackType() {
 		return this.stackType;
 	}
 
 	public void setStackType(String stackType) {
 		this.stackType = stackType;
+	}
+
+	public String getRamRoleName() {
+		return this.ramRoleName;
+	}
+
+	public void setRamRoleName(String ramRoleName) {
+		this.ramRoleName = ramRoleName;
+	}
+
+	public String getUpdateTime() {
+		return this.updateTime;
+	}
+
+	public void setUpdateTime(String updateTime) {
+		this.updateTime = updateTime;
+	}
+
+	public String getDriftDetectionTime() {
+		return this.driftDetectionTime;
+	}
+
+	public void setDriftDetectionTime(String driftDetectionTime) {
+		this.driftDetectionTime = driftDetectionTime;
+	}
+
+	public String getRegionId() {
+		return this.regionId;
+	}
+
+	public void setRegionId(String regionId) {
+		this.regionId = regionId;
+	}
+
+	public String getStackDriftStatus() {
+		return this.stackDriftStatus;
+	}
+
+	public void setStackDriftStatus(String stackDriftStatus) {
+		this.stackDriftStatus = stackDriftStatus;
+	}
+
+	public Boolean getDisableRollback() {
+		return this.disableRollback;
+	}
+
+	public void setDisableRollback(Boolean disableRollback) {
+		this.disableRollback = disableRollback;
+	}
+
+	public String getStackName() {
+		return this.stackName;
+	}
+
+	public void setStackName(String stackName) {
+		this.stackName = stackName;
+	}
+
+	public Integer getTimeoutInMinutes() {
+		return this.timeoutInMinutes;
+	}
+
+	public void setTimeoutInMinutes(Integer timeoutInMinutes) {
+		this.timeoutInMinutes = timeoutInMinutes;
+	}
+
+	public String getStackId() {
+		return this.stackId;
+	}
+
+	public void setStackId(String stackId) {
+		this.stackId = stackId;
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
 	}
 
 	public List<Parameter> getParameters() {
@@ -254,6 +266,14 @@ public class GetStackResponse extends AcsResponse {
 
 	public void setNotificationURLs(List<String> notificationURLs) {
 		this.notificationURLs = notificationURLs;
+	}
+
+	public ResourceProgress getResourceProgress() {
+		return this.resourceProgress;
+	}
+
+	public void setResourceProgress(ResourceProgress resourceProgress) {
+		this.resourceProgress = resourceProgress;
 	}
 
 	public static class Parameter {
@@ -299,6 +319,112 @@ public class GetStackResponse extends AcsResponse {
 
 		public void setValue(String value) {
 			this.value = value;
+		}
+	}
+
+	public static class ResourceProgress {
+
+		private Integer totalResourceCount;
+
+		private Integer successResourceCount;
+
+		private Integer failedResourceCount;
+
+		private Integer inProgressResourceCount;
+
+		private Integer pendingResourceCount;
+
+		private List<InProgressResourceDetail> inProgressResourceDetails;
+
+		public Integer getTotalResourceCount() {
+			return this.totalResourceCount;
+		}
+
+		public void setTotalResourceCount(Integer totalResourceCount) {
+			this.totalResourceCount = totalResourceCount;
+		}
+
+		public Integer getSuccessResourceCount() {
+			return this.successResourceCount;
+		}
+
+		public void setSuccessResourceCount(Integer successResourceCount) {
+			this.successResourceCount = successResourceCount;
+		}
+
+		public Integer getFailedResourceCount() {
+			return this.failedResourceCount;
+		}
+
+		public void setFailedResourceCount(Integer failedResourceCount) {
+			this.failedResourceCount = failedResourceCount;
+		}
+
+		public Integer getInProgressResourceCount() {
+			return this.inProgressResourceCount;
+		}
+
+		public void setInProgressResourceCount(Integer inProgressResourceCount) {
+			this.inProgressResourceCount = inProgressResourceCount;
+		}
+
+		public Integer getPendingResourceCount() {
+			return this.pendingResourceCount;
+		}
+
+		public void setPendingResourceCount(Integer pendingResourceCount) {
+			this.pendingResourceCount = pendingResourceCount;
+		}
+
+		public List<InProgressResourceDetail> getInProgressResourceDetails() {
+			return this.inProgressResourceDetails;
+		}
+
+		public void setInProgressResourceDetails(List<InProgressResourceDetail> inProgressResourceDetails) {
+			this.inProgressResourceDetails = inProgressResourceDetails;
+		}
+
+		public static class InProgressResourceDetail {
+
+			private String resourceName;
+
+			private String resourceType;
+
+			private Float progressValue;
+
+			private Float progressTargetValue;
+
+			public String getResourceName() {
+				return this.resourceName;
+			}
+
+			public void setResourceName(String resourceName) {
+				this.resourceName = resourceName;
+			}
+
+			public String getResourceType() {
+				return this.resourceType;
+			}
+
+			public void setResourceType(String resourceType) {
+				this.resourceType = resourceType;
+			}
+
+			public Float getProgressValue() {
+				return this.progressValue;
+			}
+
+			public void setProgressValue(Float progressValue) {
+				this.progressValue = progressValue;
+			}
+
+			public Float getProgressTargetValue() {
+				return this.progressTargetValue;
+			}
+
+			public void setProgressTargetValue(Float progressTargetValue) {
+				this.progressTargetValue = progressTargetValue;
+			}
 		}
 	}
 

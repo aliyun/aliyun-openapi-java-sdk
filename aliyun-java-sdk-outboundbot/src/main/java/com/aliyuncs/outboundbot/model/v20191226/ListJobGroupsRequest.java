@@ -25,6 +25,10 @@ import com.aliyuncs.outboundbot.Endpoint;
 public class ListJobGroupsRequest extends RpcAcsRequest<ListJobGroupsResponse> {
 	   
 
+	private Boolean asyncQuery;
+
+	private String searchText;
+
 	private Long endTime;
 
 	private Long startTime;
@@ -32,6 +36,8 @@ public class ListJobGroupsRequest extends RpcAcsRequest<ListJobGroupsResponse> {
 	private Integer pageNumber;
 
 	private String instanceId;
+
+	private String jobGroupStatusFilter;
 
 	private Integer pageSize;
 	public ListJobGroupsRequest() {
@@ -41,6 +47,28 @@ public class ListJobGroupsRequest extends RpcAcsRequest<ListJobGroupsResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Boolean getAsyncQuery() {
+		return this.asyncQuery;
+	}
+
+	public void setAsyncQuery(Boolean asyncQuery) {
+		this.asyncQuery = asyncQuery;
+		if(asyncQuery != null){
+			putQueryParameter("AsyncQuery", asyncQuery.toString());
+		}
+	}
+
+	public String getSearchText() {
+		return this.searchText;
+	}
+
+	public void setSearchText(String searchText) {
+		this.searchText = searchText;
+		if(searchText != null){
+			putQueryParameter("SearchText", searchText);
+		}
 	}
 
 	public Long getEndTime() {
@@ -84,6 +112,17 @@ public class ListJobGroupsRequest extends RpcAcsRequest<ListJobGroupsResponse> {
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getJobGroupStatusFilter() {
+		return this.jobGroupStatusFilter;
+	}
+
+	public void setJobGroupStatusFilter(String jobGroupStatusFilter) {
+		this.jobGroupStatusFilter = jobGroupStatusFilter;
+		if(jobGroupStatusFilter != null){
+			putQueryParameter("JobGroupStatusFilter", jobGroupStatusFilter);
 		}
 	}
 

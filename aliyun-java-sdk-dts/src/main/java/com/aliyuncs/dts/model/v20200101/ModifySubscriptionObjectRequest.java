@@ -33,7 +33,7 @@ public class ModifySubscriptionObjectRequest extends RpcAcsRequest<ModifySubscri
 
 	private String subscriptionObject;
 	public ModifySubscriptionObjectRequest() {
-		super("Dts", "2020-01-01", "ModifySubscriptionObject");
+		super("Dts", "2020-01-01", "ModifySubscriptionObject", "dts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

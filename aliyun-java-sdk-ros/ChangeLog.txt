@@ -1,3 +1,7 @@
+2021-07-20 Version: 3.6.1
+- GetStack supports resource progress.
+- ValidateTemplate supports Outputs.
+
 2021-01-21 Version: 3.6.0
 - The creation and update APIs of the stack supports specifing tags, and the query and list APIs supports obtaining tags.
 

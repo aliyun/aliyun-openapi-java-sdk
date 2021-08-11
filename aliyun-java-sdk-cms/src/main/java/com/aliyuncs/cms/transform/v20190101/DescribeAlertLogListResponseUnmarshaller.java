@@ -22,6 +22,7 @@ import com.aliyuncs.cms.model.v20190101.DescribeAlertLogListResponse.Alarm;
 import com.aliyuncs.cms.model.v20190101.DescribeAlertLogListResponse.Alarm.DimensionsItem;
 import com.aliyuncs.cms.model.v20190101.DescribeAlertLogListResponse.Alarm.Escalation;
 import com.aliyuncs.cms.model.v20190101.DescribeAlertLogListResponse.Alarm.ExtInfo;
+import com.aliyuncs.cms.model.v20190101.DescribeAlertLogListResponse.Alarm.WebhookListItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -55,18 +56,15 @@ public class DescribeAlertLogListResponseUnmarshaller {
 			alarm.setSendStatus(_ctx.stringValue("DescribeAlertLogListResponse.AlertLogList["+ i +"].SendStatus"));
 			alarm.setAlertTime(_ctx.stringValue("DescribeAlertLogListResponse.AlertLogList["+ i +"].AlertTime"));
 			alarm.setMessage(_ctx.stringValue("DescribeAlertLogListResponse.AlertLogList["+ i +"].Message"));
+			alarm.setBlackListUUID(_ctx.stringValue("DescribeAlertLogListResponse.AlertLogList["+ i +"].BlackListUUID"));
+			alarm.setBlackListName(_ctx.stringValue("DescribeAlertLogListResponse.AlertLogList["+ i +"].BlackListName"));
+			alarm.setBlackListDetail(_ctx.stringValue("DescribeAlertLogListResponse.AlertLogList["+ i +"].BlackListDetail"));
 
 			List<String> contactGroups = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeAlertLogListResponse.AlertLogList["+ i +"].ContactGroups.Length"); j++) {
 				contactGroups.add(_ctx.stringValue("DescribeAlertLogListResponse.AlertLogList["+ i +"].ContactGroups["+ j +"]"));
 			}
 			alarm.setContactGroups(contactGroups);
-
-			List<String> webhookList = new ArrayList<String>();
-			for (int j = 0; j < _ctx.lengthValue("DescribeAlertLogListResponse.AlertLogList["+ i +"].WebhookList.Length"); j++) {
-				webhookList.add(_ctx.stringValue("DescribeAlertLogListResponse.AlertLogList["+ i +"].WebhookList["+ j +"]"));
-			}
-			alarm.setWebhookList(webhookList);
 
 			List<String> contactALIIWWList = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeAlertLogListResponse.AlertLogList["+ i +"].ContactALIIWWList.Length"); j++) {
@@ -129,6 +127,17 @@ public class DescribeAlertLogListResponseUnmarshaller {
 				dimensions.add(dimensionsItem);
 			}
 			alarm.setDimensions(dimensions);
+
+			List<WebhookListItem> webhookList = new ArrayList<WebhookListItem>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeAlertLogListResponse.AlertLogList["+ i +"].WebhookList.Length"); j++) {
+				WebhookListItem webhookListItem = new WebhookListItem();
+				webhookListItem.setUrl(_ctx.stringValue("DescribeAlertLogListResponse.AlertLogList["+ i +"].WebhookList["+ j +"].url"));
+				webhookListItem.setCode(_ctx.stringValue("DescribeAlertLogListResponse.AlertLogList["+ i +"].WebhookList["+ j +"].code"));
+				webhookListItem.setMessage(_ctx.stringValue("DescribeAlertLogListResponse.AlertLogList["+ i +"].WebhookList["+ j +"].message"));
+
+				webhookList.add(webhookListItem);
+			}
+			alarm.setWebhookList(webhookList);
 
 			alertLogList.add(alarm);
 		}

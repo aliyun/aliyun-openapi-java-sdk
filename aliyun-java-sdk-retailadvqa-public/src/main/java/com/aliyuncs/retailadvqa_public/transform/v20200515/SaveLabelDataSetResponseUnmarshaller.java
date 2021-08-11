@@ -24,10 +24,10 @@ public class SaveLabelDataSetResponseUnmarshaller {
 	public static SaveLabelDataSetResponse unmarshall(SaveLabelDataSetResponse saveLabelDataSetResponse, UnmarshallerContext _ctx) {
 		
 		saveLabelDataSetResponse.setRequestId(_ctx.stringValue("SaveLabelDataSetResponse.RequestId"));
-		saveLabelDataSetResponse.setErrorCode(_ctx.stringValue("SaveLabelDataSetResponse.ErrorCode"));
 		saveLabelDataSetResponse.setErrorDesc(_ctx.stringValue("SaveLabelDataSetResponse.ErrorDesc"));
-		saveLabelDataSetResponse.setSuccess(_ctx.stringValue("SaveLabelDataSetResponse.Success"));
 		saveLabelDataSetResponse.setTraceId(_ctx.stringValue("SaveLabelDataSetResponse.TraceId"));
+		saveLabelDataSetResponse.setErrorCode(_ctx.stringValue("SaveLabelDataSetResponse.ErrorCode"));
+		saveLabelDataSetResponse.setSuccess(_ctx.stringValue("SaveLabelDataSetResponse.Success"));
 
 		Data data = new Data();
 		data.setCubeId(_ctx.stringValue("SaveLabelDataSetResponse.Data.CubeId"));

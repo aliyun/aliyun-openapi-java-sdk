@@ -33,10 +33,11 @@ public class ListGroupsResponseUnmarshaller {
 		List<Group> groups = new ArrayList<Group>();
 		for (int i = 0; i < _ctx.lengthValue("ListGroupsResponse.Groups.Length"); i++) {
 			Group group = new Group();
+			group.setGroupId(_ctx.stringValue("ListGroupsResponse.Groups["+ i +"].GroupId"));
+			group.setUpdateDate(_ctx.stringValue("ListGroupsResponse.Groups["+ i +"].UpdateDate"));
 			group.setGroupName(_ctx.stringValue("ListGroupsResponse.Groups["+ i +"].GroupName"));
 			group.setComments(_ctx.stringValue("ListGroupsResponse.Groups["+ i +"].Comments"));
 			group.setCreateDate(_ctx.stringValue("ListGroupsResponse.Groups["+ i +"].CreateDate"));
-			group.setUpdateDate(_ctx.stringValue("ListGroupsResponse.Groups["+ i +"].UpdateDate"));
 
 			groups.add(group);
 		}

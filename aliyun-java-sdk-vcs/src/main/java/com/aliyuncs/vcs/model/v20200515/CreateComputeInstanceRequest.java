@@ -15,6 +15,9 @@
 package com.aliyuncs.vcs.model.v20200515;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.vcs.Endpoint;
 
@@ -25,17 +28,16 @@ import com.aliyuncs.vcs.Endpoint;
 public class CreateComputeInstanceRequest extends RpcAcsRequest<CreateComputeInstanceResponse> {
 	   
 
-	private String algorithms;
-
 	private String datasourceType;
+
+	@SerializedName("algorithms")
+	private List<Algorithms> algorithms;
 
 	private String scheduleType;
 
 	private Long acuUsed;
 
 	private String storageUsed;
-
-	private String clientToken;
 
 	private String computePictureValue;
 
@@ -57,7 +59,8 @@ public class CreateComputeInstanceRequest extends RpcAcsRequest<CreateComputeIns
 
 	private String algorithmType;
 
-	private String devices;
+	@SerializedName("devices")
+	private List<Devices> devices;
 
 	private String scheduleTimes;
 
@@ -79,17 +82,6 @@ public class CreateComputeInstanceRequest extends RpcAcsRequest<CreateComputeIns
 		} catch (Exception e) {}
 	}
 
-	public String getAlgorithms() {
-		return this.algorithms;
-	}
-
-	public void setAlgorithms(String algorithms) {
-		this.algorithms = algorithms;
-		if(algorithms != null){
-			putBodyParameter("Algorithms", algorithms);
-		}
-	}
-
 	public String getDatasourceType() {
 		return this.datasourceType;
 	}
@@ -99,6 +91,17 @@ public class CreateComputeInstanceRequest extends RpcAcsRequest<CreateComputeIns
 		if(datasourceType != null){
 			putBodyParameter("DatasourceType", datasourceType);
 		}
+	}
+
+	public List<Algorithms> getAlgorithms() {
+		return this.algorithms;
+	}
+
+	public void setAlgorithms(List<Algorithms> algorithms) {
+		this.algorithms = algorithms;	
+		if (algorithms != null) {
+			putBodyParameter("Algorithms" , new Gson().toJson(algorithms));
+		}	
 	}
 
 	public String getScheduleType() {
@@ -131,17 +134,6 @@ public class CreateComputeInstanceRequest extends RpcAcsRequest<CreateComputeIns
 		this.storageUsed = storageUsed;
 		if(storageUsed != null){
 			putBodyParameter("StorageUsed", storageUsed);
-		}
-	}
-
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putBodyParameter("ClientToken", clientToken);
 		}
 	}
 
@@ -255,15 +247,15 @@ public class CreateComputeInstanceRequest extends RpcAcsRequest<CreateComputeIns
 		}
 	}
 
-	public String getDevices() {
+	public List<Devices> getDevices() {
 		return this.devices;
 	}
 
-	public void setDevices(String devices) {
-		this.devices = devices;
-		if(devices != null){
-			putBodyParameter("Devices", devices);
-		}
+	public void setDevices(List<Devices> devices) {
+		this.devices = devices;	
+		if (devices != null) {
+			putBodyParameter("Devices" , new Gson().toJson(devices));
+		}	
 	}
 
 	public String getScheduleTimes() {
@@ -329,6 +321,100 @@ public class CreateComputeInstanceRequest extends RpcAcsRequest<CreateComputeIns
 		this.scheduleCycleDate = scheduleCycleDate;
 		if(scheduleCycleDate != null){
 			putBodyParameter("ScheduleCycleDate", scheduleCycleDate);
+		}
+	}
+
+	public static class Algorithms {
+
+		@SerializedName("AlgorithmName")
+		private String algorithmName;
+
+		@SerializedName("AlgorithmId")
+		private String algorithmId;
+
+		public String getAlgorithmName() {
+			return this.algorithmName;
+		}
+
+		public void setAlgorithmName(String algorithmName) {
+			this.algorithmName = algorithmName;
+		}
+
+		public String getAlgorithmId() {
+			return this.algorithmId;
+		}
+
+		public void setAlgorithmId(String algorithmId) {
+			this.algorithmId = algorithmId;
+		}
+	}
+
+	public static class Devices {
+
+		@SerializedName("CodingFormat")
+		private String codingFormat;
+
+		@SerializedName("ResolvingPower")
+		private String resolvingPower;
+
+		@SerializedName("RegionId")
+		private String regionId;
+
+		@SerializedName("BitRate")
+		private String bitRate;
+
+		@SerializedName("DeviceId")
+		private String deviceId;
+
+		@SerializedName("StartStream")
+		private Boolean startStream;
+
+		public String getCodingFormat() {
+			return this.codingFormat;
+		}
+
+		public void setCodingFormat(String codingFormat) {
+			this.codingFormat = codingFormat;
+		}
+
+		public String getResolvingPower() {
+			return this.resolvingPower;
+		}
+
+		public void setResolvingPower(String resolvingPower) {
+			this.resolvingPower = resolvingPower;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		public String getBitRate() {
+			return this.bitRate;
+		}
+
+		public void setBitRate(String bitRate) {
+			this.bitRate = bitRate;
+		}
+
+		public String getDeviceId() {
+			return this.deviceId;
+		}
+
+		public void setDeviceId(String deviceId) {
+			this.deviceId = deviceId;
+		}
+
+		public Boolean getStartStream() {
+			return this.startStream;
+		}
+
+		public void setStartStream(Boolean startStream) {
+			this.startStream = startStream;
 		}
 	}
 

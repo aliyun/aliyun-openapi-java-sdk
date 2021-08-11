@@ -27,13 +27,13 @@ public class DescribeBackupMachineStatusRequest extends RpcAcsRequest<DescribeBa
 
 	private Long resourceOwnerId;
 
-	private String policyVersion;
-
 	private String uuid;
 
 	private String sourceIp;
 
 	private Long policyId;
+
+	private String policyVersion;
 	public DescribeBackupMachineStatusRequest() {
 		super("Sas", "2018-12-03", "DescribeBackupMachineStatus", "sas");
 		setMethod(MethodType.POST);
@@ -51,17 +51,6 @@ public class DescribeBackupMachineStatusRequest extends RpcAcsRequest<DescribeBa
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getPolicyVersion() {
-		return this.policyVersion;
-	}
-
-	public void setPolicyVersion(String policyVersion) {
-		this.policyVersion = policyVersion;
-		if(policyVersion != null){
-			putQueryParameter("PolicyVersion", policyVersion);
 		}
 	}
 
@@ -95,6 +84,17 @@ public class DescribeBackupMachineStatusRequest extends RpcAcsRequest<DescribeBa
 		this.policyId = policyId;
 		if(policyId != null){
 			putQueryParameter("PolicyId", policyId.toString());
+		}
+	}
+
+	public String getPolicyVersion() {
+		return this.policyVersion;
+	}
+
+	public void setPolicyVersion(String policyVersion) {
+		this.policyVersion = policyVersion;
+		if(policyVersion != null){
+			putQueryParameter("PolicyVersion", policyVersion);
 		}
 	}
 

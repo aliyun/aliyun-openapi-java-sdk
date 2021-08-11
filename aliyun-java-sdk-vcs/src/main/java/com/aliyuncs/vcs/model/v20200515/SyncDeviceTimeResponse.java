@@ -26,13 +26,13 @@ public class SyncDeviceTimeResponse extends AcsResponse {
 
 	private String syncInterval;
 
-	private String message;
-
 	private String requestId;
 
-	private String nTPServer;
+	private String message;
 
 	private String retryInterval;
+
+	private String nTPServer;
 
 	private String code;
 
@@ -46,14 +46,6 @@ public class SyncDeviceTimeResponse extends AcsResponse {
 		this.syncInterval = syncInterval;
 	}
 
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -62,12 +54,12 @@ public class SyncDeviceTimeResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getNTPServer() {
-		return this.nTPServer;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setNTPServer(String nTPServer) {
-		this.nTPServer = nTPServer;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public String getRetryInterval() {
@@ -76,6 +68,14 @@ public class SyncDeviceTimeResponse extends AcsResponse {
 
 	public void setRetryInterval(String retryInterval) {
 		this.retryInterval = retryInterval;
+	}
+
+	public String getNTPServer() {
+		return this.nTPServer;
+	}
+
+	public void setNTPServer(String nTPServer) {
+		this.nTPServer = nTPServer;
 	}
 
 	public String getCode() {

@@ -72,6 +72,14 @@ public class DescribeFieldStatisticsResponse extends AcsResponse {
 
 		private Integer exposedInstanceCount;
 
+		private Integer aliYunInstanceCount;
+
+		private Integer idcInstanceCount;
+
+		private Integer tencentInstanceCount;
+
+		private Integer instanceSyncTaskCount;
+
 		public Integer getRiskInstanceCount() {
 			return this.riskInstanceCount;
 		}
@@ -174,6 +182,38 @@ public class DescribeFieldStatisticsResponse extends AcsResponse {
 
 		public void setExposedInstanceCount(Integer exposedInstanceCount) {
 			this.exposedInstanceCount = exposedInstanceCount;
+		}
+
+		public Integer getAliYunInstanceCount() {
+			return this.aliYunInstanceCount;
+		}
+
+		public void setAliYunInstanceCount(Integer aliYunInstanceCount) {
+			this.aliYunInstanceCount = aliYunInstanceCount;
+		}
+
+		public Integer getIdcInstanceCount() {
+			return this.idcInstanceCount;
+		}
+
+		public void setIdcInstanceCount(Integer idcInstanceCount) {
+			this.idcInstanceCount = idcInstanceCount;
+		}
+
+		public Integer getTencentInstanceCount() {
+			return this.tencentInstanceCount;
+		}
+
+		public void setTencentInstanceCount(Integer tencentInstanceCount) {
+			this.tencentInstanceCount = tencentInstanceCount;
+		}
+
+		public Integer getInstanceSyncTaskCount() {
+			return this.instanceSyncTaskCount;
+		}
+
+		public void setInstanceSyncTaskCount(Integer instanceSyncTaskCount) {
+			this.instanceSyncTaskCount = instanceSyncTaskCount;
 		}
 	}
 

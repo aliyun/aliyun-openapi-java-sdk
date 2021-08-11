@@ -18,7 +18,6 @@ import com.aliyuncs.transform.UnmarshallerContext;
 import com.aliyuncs.unmarshaller.Unmarshaller;
 import com.aliyuncs.unmarshaller.UnmarshallerFactory;
 import com.aliyuncs.utils.*;
-import io.opentracing.Scope;
 import io.opentracing.Span;
 import io.opentracing.Tracer;
 import io.opentracing.propagation.Format;
@@ -28,14 +27,9 @@ import org.slf4j.Logger;
 
 import javax.xml.bind.annotation.XmlRootElement;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.io.StringWriter;
 import java.net.SocketTimeoutException;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -50,7 +44,6 @@ public class DefaultAcsClient implements IAcsClient {
     private boolean autoRetry = true;
     private IClientProfile clientProfile = null;
     private AlibabaCloudCredentialsProvider credentialsProvider;
-    private DefaultCredentialsProvider defaultCredentialsProvider;
 
     private IHttpClient httpClient;
     private EndpointResolver endpointResolver;
@@ -69,7 +62,7 @@ public class DefaultAcsClient implements IAcsClient {
     public DefaultAcsClient(String regionId) throws ClientException {
         this.clientProfile = DefaultProfile.getProfile(regionId);
         this.httpClient = HttpClientFactory.buildClient(this.clientProfile);
-        this.defaultCredentialsProvider = new DefaultCredentialsProvider();
+        this.credentialsProvider = new DefaultCredentialsProvider();
         this.endpointResolver = new DefaultEndpointResolver(this);
         this.appendUserAgent("HTTPClient", this.httpClient.getClass().getSimpleName());
     }
@@ -194,7 +187,7 @@ public class DefaultAcsClient implements IAcsClient {
         }
         AlibabaCloudCredentials credentials;
         if (null == credentialsProvider) {
-            credentials = this.defaultCredentialsProvider.getCredentials();
+            credentials = new AnonymousCredentials();
         } else {
             credentials = this.credentialsProvider.getCredentials();
         }
@@ -336,7 +329,7 @@ public class DefaultAcsClient implements IAcsClient {
             }
             try {
                 HttpRequest httpRequest = request.signRequest(signer, credentials, format, domain);
-                HttpUtil.debugHttpRequest(request);
+                HttpUtil.debugHttpRequest(httpRequest);
                 startTime = LogUtils.localeNow();
                 long start = System.nanoTime();
 
@@ -523,6 +516,10 @@ public class DefaultAcsClient implements IAcsClient {
 
     public void setHttpClient(IHttpClient httpClient) {
         this.httpClient = httpClient;
+    }
+
+    public AlibabaCloudCredentialsProvider getCredentialsProvider() {
+        return credentialsProvider;
     }
 
 }

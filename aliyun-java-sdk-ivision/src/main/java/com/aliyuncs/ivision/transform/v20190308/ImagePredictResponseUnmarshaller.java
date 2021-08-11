@@ -27,12 +27,12 @@ public class ImagePredictResponseUnmarshaller {
 
 		ImagePredict imagePredict = new ImagePredict();
 		imagePredict.setStatus(_ctx.stringValue("ImagePredictResponse.ImagePredict.Status"));
-		imagePredict.setMessage(_ctx.stringValue("ImagePredictResponse.ImagePredict.Message"));
 		imagePredict.setPredictResult(_ctx.stringValue("ImagePredictResponse.ImagePredict.PredictResult"));
-		imagePredict.setDataUrl(_ctx.stringValue("ImagePredictResponse.ImagePredict.DataUrl"));
-		imagePredict.setPredictTime(_ctx.stringValue("ImagePredictResponse.ImagePredict.PredictTime"));
-		imagePredict.setCode(_ctx.stringValue("ImagePredictResponse.ImagePredict.Code"));
 		imagePredict.setPredictId(_ctx.stringValue("ImagePredictResponse.ImagePredict.PredictId"));
+		imagePredict.setPredictTime(_ctx.stringValue("ImagePredictResponse.ImagePredict.PredictTime"));
+		imagePredict.setDataUrl(_ctx.stringValue("ImagePredictResponse.ImagePredict.DataUrl"));
+		imagePredict.setCode(_ctx.stringValue("ImagePredictResponse.ImagePredict.Code"));
+		imagePredict.setMessage(_ctx.stringValue("ImagePredictResponse.ImagePredict.Message"));
 		imagePredict.setModelId(_ctx.stringValue("ImagePredictResponse.ImagePredict.ModelId"));
 		imagePredictResponse.setImagePredict(imagePredict);
 	 

@@ -35,6 +35,8 @@ public class DescribeStoresRequest extends RpcAcsRequest<DescribeStoresResponse>
 
 	private String fromDate;
 
+	private String templateVersion;
+
 	private String toDate;
 
 	private Integer pageSize;
@@ -101,6 +103,17 @@ public class DescribeStoresRequest extends RpcAcsRequest<DescribeStoresResponse>
 		this.fromDate = fromDate;
 		if(fromDate != null){
 			putBodyParameter("FromDate", fromDate);
+		}
+	}
+
+	public String getTemplateVersion() {
+		return this.templateVersion;
+	}
+
+	public void setTemplateVersion(String templateVersion) {
+		this.templateVersion = templateVersion;
+		if(templateVersion != null){
+			putBodyParameter("TemplateVersion", templateVersion);
 		}
 	}
 

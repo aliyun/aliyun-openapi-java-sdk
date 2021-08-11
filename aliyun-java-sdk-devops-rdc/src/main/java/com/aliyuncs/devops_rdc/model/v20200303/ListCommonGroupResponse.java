@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListCommonGroupResponse extends AcsResponse {
 
-	private Boolean successful;
-
-	private String errorCode;
-
 	private String errorMsg;
 
 	private String requestId;
 
+	private Boolean successful;
+
+	private String errorCode;
+
 	private List<CommonGroup> object;
-
-	public Boolean getSuccessful() {
-		return this.successful;
-	}
-
-	public void setSuccessful(Boolean successful) {
-		this.successful = successful;
-	}
-
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
-	}
 
 	public String getErrorMsg() {
 		return this.errorMsg;
@@ -67,6 +51,22 @@ public class ListCommonGroupResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public Boolean getSuccessful() {
+		return this.successful;
+	}
+
+	public void setSuccessful(Boolean successful) {
+		this.successful = successful;
+	}
+
+	public String getErrorCode() {
+		return this.errorCode;
+	}
+
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
+	}
+
 	public List<CommonGroup> getObject() {
 		return this.object;
 	}
@@ -77,47 +77,23 @@ public class ListCommonGroupResponse extends AcsResponse {
 
 	public static class CommonGroup {
 
-		private String pinyin;
-
-		private Boolean isRoot;
-
-		private Integer pos;
-
 		private Integer resourceCount;
-
-		private String name;
-
-		private String creatorId;
 
 		private String smartGroupId;
 
+		private Integer pos;
+
 		private String projectId;
 
+		private Boolean isRoot;
+
+		private String pinyin;
+
+		private String creatorId;
+
+		private String name;
+
 		private String id;
-
-		public String getPinyin() {
-			return this.pinyin;
-		}
-
-		public void setPinyin(String pinyin) {
-			this.pinyin = pinyin;
-		}
-
-		public Boolean getIsRoot() {
-			return this.isRoot;
-		}
-
-		public void setIsRoot(Boolean isRoot) {
-			this.isRoot = isRoot;
-		}
-
-		public Integer getPos() {
-			return this.pos;
-		}
-
-		public void setPos(Integer pos) {
-			this.pos = pos;
-		}
 
 		public Integer getResourceCount() {
 			return this.resourceCount;
@@ -125,22 +101,6 @@ public class ListCommonGroupResponse extends AcsResponse {
 
 		public void setResourceCount(Integer resourceCount) {
 			this.resourceCount = resourceCount;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getCreatorId() {
-			return this.creatorId;
-		}
-
-		public void setCreatorId(String creatorId) {
-			this.creatorId = creatorId;
 		}
 
 		public String getSmartGroupId() {
@@ -151,12 +111,52 @@ public class ListCommonGroupResponse extends AcsResponse {
 			this.smartGroupId = smartGroupId;
 		}
 
+		public Integer getPos() {
+			return this.pos;
+		}
+
+		public void setPos(Integer pos) {
+			this.pos = pos;
+		}
+
 		public String getProjectId() {
 			return this.projectId;
 		}
 
 		public void setProjectId(String projectId) {
 			this.projectId = projectId;
+		}
+
+		public Boolean getIsRoot() {
+			return this.isRoot;
+		}
+
+		public void setIsRoot(Boolean isRoot) {
+			this.isRoot = isRoot;
+		}
+
+		public String getPinyin() {
+			return this.pinyin;
+		}
+
+		public void setPinyin(String pinyin) {
+			this.pinyin = pinyin;
+		}
+
+		public String getCreatorId() {
+			return this.creatorId;
+		}
+
+		public void setCreatorId(String creatorId) {
+			this.creatorId = creatorId;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
 		}
 
 		public String getId() {

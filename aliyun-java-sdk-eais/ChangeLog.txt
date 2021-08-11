@@ -1,3 +1,7 @@
+2021-07-28 Version: 2.0.3
+- DesccribeEais api adds PageNumber, PageSize parameters.
+- The api frequency of DescribeEais is set to 100.
+
 2021-03-22 Version: 2.0.2
 - CreateEai api adds SecurityGroupId, VSwitchId parameters.
 

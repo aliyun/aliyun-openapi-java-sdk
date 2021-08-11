@@ -35,46 +35,35 @@ public class ListDatasetResponseUnmarshaller {
 	public static ListDatasetResponse unmarshall(ListDatasetResponse listDatasetResponse, UnmarshallerContext _ctx) {
 		
 		listDatasetResponse.setRequestId(_ctx.stringValue("ListDatasetResponse.RequestId"));
-		listDatasetResponse.setErrorCode(_ctx.stringValue("ListDatasetResponse.ErrorCode"));
 		listDatasetResponse.setErrorDesc(_ctx.stringValue("ListDatasetResponse.ErrorDesc"));
-		listDatasetResponse.setSuccess(_ctx.booleanValue("ListDatasetResponse.Success"));
 		listDatasetResponse.setTraceId(_ctx.stringValue("ListDatasetResponse.TraceId"));
+		listDatasetResponse.setErrorCode(_ctx.stringValue("ListDatasetResponse.ErrorCode"));
+		listDatasetResponse.setSuccess(_ctx.booleanValue("ListDatasetResponse.Success"));
 
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListDatasetResponse.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
-			dataItem.setId(_ctx.stringValue("ListDatasetResponse.Data["+ i +"].Id"));
+			dataItem.setExtMappingTypes(_ctx.mapValue("ListDatasetResponse.Data["+ i +"].ExtMappingTypes"));
+			dataItem.setUniqueFieldName(_ctx.stringValue("ListDatasetResponse.Data["+ i +"].UniqueFieldName"));
+			dataItem.setGmtModified(_ctx.stringValue("ListDatasetResponse.Data["+ i +"].GmtModified"));
+			dataItem.setUniqueMappingType(_ctx.stringValue("ListDatasetResponse.Data["+ i +"].UniqueMappingType"));
+			dataItem.setGmtCreate(_ctx.stringValue("ListDatasetResponse.Data["+ i +"].GmtCreate"));
+			dataItem.setFactTable(_ctx.stringValue("ListDatasetResponse.Data["+ i +"].FactTable"));
 			dataItem.setName(_ctx.stringValue("ListDatasetResponse.Data["+ i +"].Name"));
 			dataItem.setDataSetType(_ctx.integerValue("ListDatasetResponse.Data["+ i +"].DataSetType"));
-			dataItem.setFactTable(_ctx.stringValue("ListDatasetResponse.Data["+ i +"].FactTable"));
-			dataItem.setUniqueMappingType(_ctx.stringValue("ListDatasetResponse.Data["+ i +"].UniqueMappingType"));
-			dataItem.setUniqueFieldName(_ctx.stringValue("ListDatasetResponse.Data["+ i +"].UniqueFieldName"));
-			dataItem.setExtMappingTypes(_ctx.mapValue("ListDatasetResponse.Data["+ i +"].ExtMappingTypes"));
-			dataItem.setGmtCreate(_ctx.stringValue("ListDatasetResponse.Data["+ i +"].GmtCreate"));
-			dataItem.setGmtModified(_ctx.stringValue("ListDatasetResponse.Data["+ i +"].GmtModified"));
+			dataItem.setId(_ctx.stringValue("ListDatasetResponse.Data["+ i +"].Id"));
 
 			ExtRFM extRFM = new ExtRFM();
 			extRFM.setTradeDateField(_ctx.stringValue("ListDatasetResponse.Data["+ i +"].ExtRFM.TradeDateField"));
-			extRFM.setTradeFrequencyField(_ctx.stringValue("ListDatasetResponse.Data["+ i +"].ExtRFM.TradeFrequencyField"));
-			extRFM.setTradeMoneyField(_ctx.stringValue("ListDatasetResponse.Data["+ i +"].ExtRFM.TradeMoneyField"));
-			extRFM.setTradeMoneyUnit(_ctx.integerValue("ListDatasetResponse.Data["+ i +"].ExtRFM.TradeMoneyUnit"));
 			extRFM.setDataFromType(_ctx.stringValue("ListDatasetResponse.Data["+ i +"].ExtRFM.DataFromType"));
-			extRFM.setPeriod(_ctx.integerValue("ListDatasetResponse.Data["+ i +"].ExtRFM.Period"));
-			extRFM.setComparisonCalculateType(_ctx.integerValue("ListDatasetResponse.Data["+ i +"].ExtRFM.ComparisonCalculateType"));
-			extRFM.setRecencyScoreCompareValue(_ctx.stringValue("ListDatasetResponse.Data["+ i +"].ExtRFM.RecencyScoreCompareValue"));
+			extRFM.setTradeFrequencyField(_ctx.stringValue("ListDatasetResponse.Data["+ i +"].ExtRFM.TradeFrequencyField"));
+			extRFM.setTradeMoneyUnit(_ctx.integerValue("ListDatasetResponse.Data["+ i +"].ExtRFM.TradeMoneyUnit"));
 			extRFM.setFrequencyScoreCompareValue(_ctx.stringValue("ListDatasetResponse.Data["+ i +"].ExtRFM.FrequencyScoreCompareValue"));
 			extRFM.setMonetaryScoreCompareValue(_ctx.stringValue("ListDatasetResponse.Data["+ i +"].ExtRFM.MonetaryScoreCompareValue"));
-
-			List<RecencyScoreConfigItem> recencyScoreConfig = new ArrayList<RecencyScoreConfigItem>();
-			for (int j = 0; j < _ctx.lengthValue("ListDatasetResponse.Data["+ i +"].ExtRFM.RecencyScoreConfig.Length"); j++) {
-				RecencyScoreConfigItem recencyScoreConfigItem = new RecencyScoreConfigItem();
-				recencyScoreConfigItem.setStart(_ctx.integerValue("ListDatasetResponse.Data["+ i +"].ExtRFM.RecencyScoreConfig["+ j +"].Start"));
-				recencyScoreConfigItem.setEnd(_ctx.integerValue("ListDatasetResponse.Data["+ i +"].ExtRFM.RecencyScoreConfig["+ j +"].End"));
-				recencyScoreConfigItem.setScore(_ctx.integerValue("ListDatasetResponse.Data["+ i +"].ExtRFM.RecencyScoreConfig["+ j +"].Score"));
-
-				recencyScoreConfig.add(recencyScoreConfigItem);
-			}
-			extRFM.setRecencyScoreConfig(recencyScoreConfig);
+			extRFM.setPeriod(_ctx.integerValue("ListDatasetResponse.Data["+ i +"].ExtRFM.Period"));
+			extRFM.setTradeMoneyField(_ctx.stringValue("ListDatasetResponse.Data["+ i +"].ExtRFM.TradeMoneyField"));
+			extRFM.setComparisonCalculateType(_ctx.integerValue("ListDatasetResponse.Data["+ i +"].ExtRFM.ComparisonCalculateType"));
+			extRFM.setRecencyScoreCompareValue(_ctx.stringValue("ListDatasetResponse.Data["+ i +"].ExtRFM.RecencyScoreCompareValue"));
 
 			List<FrequencyScoreConfigItem> frequencyScoreConfig = new ArrayList<FrequencyScoreConfigItem>();
 			for (int j = 0; j < _ctx.lengthValue("ListDatasetResponse.Data["+ i +"].ExtRFM.FrequencyScoreConfig.Length"); j++) {
@@ -97,31 +86,27 @@ public class ListDatasetResponseUnmarshaller {
 				monetaryScoreConfig.add(monetaryScoreConfigItem);
 			}
 			extRFM.setMonetaryScoreConfig(monetaryScoreConfig);
-			dataItem.setExtRFM(extRFM);
 
-			ExtBehavior extBehavior = new ExtBehavior();
-			extBehavior.setBehaviorDateField(_ctx.stringValue("ListDatasetResponse.Data["+ i +"].ExtBehavior.BehaviorDateField"));
-			extBehavior.setBehaviorTypeField(_ctx.stringValue("ListDatasetResponse.Data["+ i +"].ExtBehavior.BehaviorTypeField"));
-			extBehavior.setBehaviorObjectTypeField(_ctx.stringValue("ListDatasetResponse.Data["+ i +"].ExtBehavior.BehaviorObjectTypeField"));
-			extBehavior.setBehaviorObjectValueField(_ctx.stringValue("ListDatasetResponse.Data["+ i +"].ExtBehavior.BehaviorObjectValueField"));
-			extBehavior.setBehaviorChannelField(_ctx.stringValue("ListDatasetResponse.Data["+ i +"].ExtBehavior.BehaviorChannelField"));
-			extBehavior.setBehaviorCountsField(_ctx.stringValue("ListDatasetResponse.Data["+ i +"].ExtBehavior.BehaviorCountsField"));
-			extBehavior.setBehaviorAmountsField(_ctx.stringValue("ListDatasetResponse.Data["+ i +"].ExtBehavior.BehaviorAmountsField"));
-			extBehavior.setChannelDimTableName(_ctx.stringValue("ListDatasetResponse.Data["+ i +"].ExtBehavior.ChannelDimTableName"));
-			extBehavior.setChannelField(_ctx.stringValue("ListDatasetResponse.Data["+ i +"].ExtBehavior.ChannelField"));
-			extBehavior.setTypeDimTableName(_ctx.stringValue("ListDatasetResponse.Data["+ i +"].ExtBehavior.TypeDimTableName"));
-			extBehavior.setTypeField(_ctx.stringValue("ListDatasetResponse.Data["+ i +"].ExtBehavior.TypeField"));
-			extBehavior.setObjectTypeContext(_ctx.mapValue("ListDatasetResponse.Data["+ i +"].ExtBehavior.ObjectTypeContext"));
-			dataItem.setExtBehavior(extBehavior);
+			List<RecencyScoreConfigItem> recencyScoreConfig = new ArrayList<RecencyScoreConfigItem>();
+			for (int j = 0; j < _ctx.lengthValue("ListDatasetResponse.Data["+ i +"].ExtRFM.RecencyScoreConfig.Length"); j++) {
+				RecencyScoreConfigItem recencyScoreConfigItem = new RecencyScoreConfigItem();
+				recencyScoreConfigItem.setStart(_ctx.integerValue("ListDatasetResponse.Data["+ i +"].ExtRFM.RecencyScoreConfig["+ j +"].Start"));
+				recencyScoreConfigItem.setEnd(_ctx.integerValue("ListDatasetResponse.Data["+ i +"].ExtRFM.RecencyScoreConfig["+ j +"].End"));
+				recencyScoreConfigItem.setScore(_ctx.integerValue("ListDatasetResponse.Data["+ i +"].ExtRFM.RecencyScoreConfig["+ j +"].Score"));
+
+				recencyScoreConfig.add(recencyScoreConfigItem);
+			}
+			extRFM.setRecencyScoreConfig(recencyScoreConfig);
+			dataItem.setExtRFM(extRFM);
 
 			ExtLabel extLabel = new ExtLabel();
 
 			List<DatasetLabelListItem> datasetLabelList = new ArrayList<DatasetLabelListItem>();
 			for (int j = 0; j < _ctx.lengthValue("ListDatasetResponse.Data["+ i +"].ExtLabel.DatasetLabelList.Length"); j++) {
 				DatasetLabelListItem datasetLabelListItem = new DatasetLabelListItem();
+				datasetLabelListItem.setColumnAlias(_ctx.stringValue("ListDatasetResponse.Data["+ i +"].ExtLabel.DatasetLabelList["+ j +"].ColumnAlias"));
 				datasetLabelListItem.setColumnName(_ctx.stringValue("ListDatasetResponse.Data["+ i +"].ExtLabel.DatasetLabelList["+ j +"].ColumnName"));
 				datasetLabelListItem.setTableName(_ctx.stringValue("ListDatasetResponse.Data["+ i +"].ExtLabel.DatasetLabelList["+ j +"].TableName"));
-				datasetLabelListItem.setColumnAlias(_ctx.stringValue("ListDatasetResponse.Data["+ i +"].ExtLabel.DatasetLabelList["+ j +"].ColumnAlias"));
 				datasetLabelListItem.setColType(_ctx.stringValue("ListDatasetResponse.Data["+ i +"].ExtLabel.DatasetLabelList["+ j +"].ColType"));
 				datasetLabelListItem.setLabelSeparator(_ctx.stringValue("ListDatasetResponse.Data["+ i +"].ExtLabel.DatasetLabelList["+ j +"].LabelSeparator"));
 				datasetLabelListItem.setRemark(_ctx.stringValue("ListDatasetResponse.Data["+ i +"].ExtLabel.DatasetLabelList["+ j +"].Remark"));
@@ -130,6 +115,21 @@ public class ListDatasetResponseUnmarshaller {
 			}
 			extLabel.setDatasetLabelList(datasetLabelList);
 			dataItem.setExtLabel(extLabel);
+
+			ExtBehavior extBehavior = new ExtBehavior();
+			extBehavior.setBehaviorObjectTypeField(_ctx.stringValue("ListDatasetResponse.Data["+ i +"].ExtBehavior.BehaviorObjectTypeField"));
+			extBehavior.setBehaviorDateField(_ctx.stringValue("ListDatasetResponse.Data["+ i +"].ExtBehavior.BehaviorDateField"));
+			extBehavior.setTypeField(_ctx.stringValue("ListDatasetResponse.Data["+ i +"].ExtBehavior.TypeField"));
+			extBehavior.setBehaviorChannelField(_ctx.stringValue("ListDatasetResponse.Data["+ i +"].ExtBehavior.BehaviorChannelField"));
+			extBehavior.setBehaviorTypeField(_ctx.stringValue("ListDatasetResponse.Data["+ i +"].ExtBehavior.BehaviorTypeField"));
+			extBehavior.setChannelDimTableName(_ctx.stringValue("ListDatasetResponse.Data["+ i +"].ExtBehavior.ChannelDimTableName"));
+			extBehavior.setBehaviorCountsField(_ctx.stringValue("ListDatasetResponse.Data["+ i +"].ExtBehavior.BehaviorCountsField"));
+			extBehavior.setTypeDimTableName(_ctx.stringValue("ListDatasetResponse.Data["+ i +"].ExtBehavior.TypeDimTableName"));
+			extBehavior.setBehaviorObjectValueField(_ctx.stringValue("ListDatasetResponse.Data["+ i +"].ExtBehavior.BehaviorObjectValueField"));
+			extBehavior.setChannelField(_ctx.stringValue("ListDatasetResponse.Data["+ i +"].ExtBehavior.ChannelField"));
+			extBehavior.setObjectTypeContext(_ctx.mapValue("ListDatasetResponse.Data["+ i +"].ExtBehavior.ObjectTypeContext"));
+			extBehavior.setBehaviorAmountsField(_ctx.stringValue("ListDatasetResponse.Data["+ i +"].ExtBehavior.BehaviorAmountsField"));
+			dataItem.setExtBehavior(extBehavior);
 
 			data.add(dataItem);
 		}

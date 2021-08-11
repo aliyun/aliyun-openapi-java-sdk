@@ -23,10 +23,10 @@ public class CreateDevopsOrganizationResponseUnmarshaller {
 	public static CreateDevopsOrganizationResponse unmarshall(CreateDevopsOrganizationResponse createDevopsOrganizationResponse, UnmarshallerContext _ctx) {
 		
 		createDevopsOrganizationResponse.setRequestId(_ctx.stringValue("CreateDevopsOrganizationResponse.RequestId"));
-		createDevopsOrganizationResponse.setErrorCode(_ctx.stringValue("CreateDevopsOrganizationResponse.ErrorCode"));
 		createDevopsOrganizationResponse.setErrorMessage(_ctx.stringValue("CreateDevopsOrganizationResponse.ErrorMessage"));
-		createDevopsOrganizationResponse.setSuccess(_ctx.booleanValue("CreateDevopsOrganizationResponse.Success"));
 		createDevopsOrganizationResponse.setObject(_ctx.stringValue("CreateDevopsOrganizationResponse.Object"));
+		createDevopsOrganizationResponse.setSuccess(_ctx.booleanValue("CreateDevopsOrganizationResponse.Success"));
+		createDevopsOrganizationResponse.setErrorCode(_ctx.stringValue("CreateDevopsOrganizationResponse.ErrorCode"));
 	 
 	 	return createDevopsOrganizationResponse;
 	}

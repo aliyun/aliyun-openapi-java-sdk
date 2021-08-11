@@ -34,32 +34,32 @@ public class QueryTaskDetailResponseUnmarshaller {
 		queryTaskDetailResponse.setSuccess(_ctx.stringValue("QueryTaskDetailResponse.Success"));
 
 		Data data = new Data();
-		data.setPageSize(_ctx.stringValue("QueryTaskDetailResponse.Data.PageSize"));
-		data.setCurrentPage(_ctx.stringValue("QueryTaskDetailResponse.Data.CurrentPage"));
 		data.setTotalResults(_ctx.stringValue("QueryTaskDetailResponse.Data.TotalResults"));
+		data.setCurrentPage(_ctx.stringValue("QueryTaskDetailResponse.Data.CurrentPage"));
+		data.setPageSize(_ctx.stringValue("QueryTaskDetailResponse.Data.PageSize"));
 
 		List<ListItem> list = new ArrayList<ListItem>();
 		for (int i = 0; i < _ctx.lengthValue("QueryTaskDetailResponse.Data.List.Length"); i++) {
 			ListItem listItem = new ListItem();
 			listItem.setStatus(_ctx.integerValue("QueryTaskDetailResponse.Data.List["+ i +"].Status"));
-			listItem.setSkillGroup(_ctx.integerValue("QueryTaskDetailResponse.Data.List["+ i +"].SkillGroup"));
-			listItem.setOutboundTaskId(_ctx.longValue("QueryTaskDetailResponse.Data.List["+ i +"].OutboundTaskId"));
-			listItem.setPriority(_ctx.integerValue("QueryTaskDetailResponse.Data.List["+ i +"].Priority"));
-			listItem.setOutboundNum(_ctx.integerValue("QueryTaskDetailResponse.Data.List["+ i +"].OutboundNum"));
-			listItem.setGmtModified(_ctx.longValue("QueryTaskDetailResponse.Data.List["+ i +"].GmtModified"));
-			listItem.setMemberId(_ctx.longValue("QueryTaskDetailResponse.Data.List["+ i +"].MemberId"));
-			listItem.setBuId(_ctx.longValue("QueryTaskDetailResponse.Data.List["+ i +"].BuId"));
-			listItem.setGmtCreate(_ctx.longValue("QueryTaskDetailResponse.Data.List["+ i +"].GmtCreate"));
-			listItem.setEndReason(_ctx.integerValue("QueryTaskDetailResponse.Data.List["+ i +"].EndReason"));
+			listItem.setMemberName(_ctx.stringValue("QueryTaskDetailResponse.Data.List["+ i +"].MemberName"));
 			listItem.setServicerName(_ctx.stringValue("QueryTaskDetailResponse.Data.List["+ i +"].ServicerName"));
+			listItem.setOutboundNum(_ctx.integerValue("QueryTaskDetailResponse.Data.List["+ i +"].OutboundNum"));
+			listItem.setRetryTime(_ctx.stringValue("QueryTaskDetailResponse.Data.List["+ i +"].RetryTime"));
+			listItem.setPriority(_ctx.integerValue("QueryTaskDetailResponse.Data.List["+ i +"].Priority"));
+			listItem.setGmtModified(_ctx.longValue("QueryTaskDetailResponse.Data.List["+ i +"].GmtModified"));
 			listItem.setDnis(_ctx.stringValue("QueryTaskDetailResponse.Data.List["+ i +"].Dnis"));
+			listItem.setServicerId(_ctx.longValue("QueryTaskDetailResponse.Data.List["+ i +"].ServicerId"));
+			listItem.setOutboundTaskId(_ctx.longValue("QueryTaskDetailResponse.Data.List["+ i +"].OutboundTaskId"));
+			listItem.setBuId(_ctx.longValue("QueryTaskDetailResponse.Data.List["+ i +"].BuId"));
+			listItem.setEndReason(_ctx.integerValue("QueryTaskDetailResponse.Data.List["+ i +"].EndReason"));
+			listItem.setGmtCreate(_ctx.longValue("QueryTaskDetailResponse.Data.List["+ i +"].GmtCreate"));
+			listItem.setDepartmentId(_ctx.longValue("QueryTaskDetailResponse.Data.List["+ i +"].DepartmentId"));
+			listItem.setAni(_ctx.stringValue("QueryTaskDetailResponse.Data.List["+ i +"].Ani"));
+			listItem.setMemberId(_ctx.longValue("QueryTaskDetailResponse.Data.List["+ i +"].MemberId"));
+			listItem.setSkillGroup(_ctx.integerValue("QueryTaskDetailResponse.Data.List["+ i +"].SkillGroup"));
 			listItem.setExtAttrs(_ctx.stringValue("QueryTaskDetailResponse.Data.List["+ i +"].ExtAttrs"));
 			listItem.setId(_ctx.integerValue("QueryTaskDetailResponse.Data.List["+ i +"].Id"));
-			listItem.setDepartmentId(_ctx.longValue("QueryTaskDetailResponse.Data.List["+ i +"].DepartmentId"));
-			listItem.setRetryTime(_ctx.stringValue("QueryTaskDetailResponse.Data.List["+ i +"].RetryTime"));
-			listItem.setMemberName(_ctx.stringValue("QueryTaskDetailResponse.Data.List["+ i +"].MemberName"));
-			listItem.setServicerId(_ctx.longValue("QueryTaskDetailResponse.Data.List["+ i +"].ServicerId"));
-			listItem.setAni(_ctx.stringValue("QueryTaskDetailResponse.Data.List["+ i +"].Ani"));
 
 			list.add(listItem);
 		}

@@ -77,36 +77,16 @@ public class QueryDPUtilizationDetailResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Long pageNum;
-
-		private Long pageSize;
-
-		private Long totalCount;
+		private String nextToken;
 
 		private List<DetailListItem> detailList;
 
-		public Long getPageNum() {
-			return this.pageNum;
+		public String getNextToken() {
+			return this.nextToken;
 		}
 
-		public void setPageNum(Long pageNum) {
-			this.pageNum = pageNum;
-		}
-
-		public Long getPageSize() {
-			return this.pageSize;
-		}
-
-		public void setPageSize(Long pageSize) {
-			this.pageSize = pageSize;
-		}
-
-		public Long getTotalCount() {
-			return this.totalCount;
-		}
-
-		public void setTotalCount(Long totalCount) {
-			this.totalCount = totalCount;
+		public void setNextToken(String nextToken) {
+			this.nextToken = nextToken;
 		}
 
 		public List<DetailListItem> getDetailList() {
@@ -139,11 +119,13 @@ public class QueryDPUtilizationDetailResponse extends AcsResponse {
 
 			private Float deductMeasure;
 
-			private String deductHours;
+			private Float deductHours;
 
 			private Float deductFactorTotal;
 
 			private String region;
+
+			private Long shareUid;
 
 			public Long getUid() {
 				return this.uid;
@@ -225,11 +207,11 @@ public class QueryDPUtilizationDetailResponse extends AcsResponse {
 				this.deductMeasure = deductMeasure;
 			}
 
-			public String getDeductHours() {
+			public Float getDeductHours() {
 				return this.deductHours;
 			}
 
-			public void setDeductHours(String deductHours) {
+			public void setDeductHours(Float deductHours) {
 				this.deductHours = deductHours;
 			}
 
@@ -247,6 +229,14 @@ public class QueryDPUtilizationDetailResponse extends AcsResponse {
 
 			public void setRegion(String region) {
 				this.region = region;
+			}
+
+			public Long getShareUid() {
+				return this.shareUid;
+			}
+
+			public void setShareUid(Long shareUid) {
+				this.shareUid = shareUid;
 			}
 		}
 	}

@@ -77,6 +77,8 @@ public class DescribeClusterResponse extends AcsResponse {
 
 		private Integer autoRenewPeriod;
 
+		private String resourceGroupId;
+
 		private List<Tag> tags;
 
 		public String getClusterId() {
@@ -197,6 +199,14 @@ public class DescribeClusterResponse extends AcsResponse {
 
 		public void setAutoRenewPeriod(Integer autoRenewPeriod) {
 			this.autoRenewPeriod = autoRenewPeriod;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
 		}
 
 		public List<Tag> getTags() {

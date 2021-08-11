@@ -23,9 +23,9 @@ public class AddAiotPersonTableResponseUnmarshaller {
 	public static AddAiotPersonTableResponse unmarshall(AddAiotPersonTableResponse addAiotPersonTableResponse, UnmarshallerContext _ctx) {
 		
 		addAiotPersonTableResponse.setRequestId(_ctx.stringValue("AddAiotPersonTableResponse.RequestId"));
-		addAiotPersonTableResponse.setPersonTableId(_ctx.stringValue("AddAiotPersonTableResponse.PersonTableId"));
-		addAiotPersonTableResponse.setMessage(_ctx.stringValue("AddAiotPersonTableResponse.Message"));
 		addAiotPersonTableResponse.setCode(_ctx.stringValue("AddAiotPersonTableResponse.Code"));
+		addAiotPersonTableResponse.setMessage(_ctx.stringValue("AddAiotPersonTableResponse.Message"));
+		addAiotPersonTableResponse.setPersonTableId(_ctx.stringValue("AddAiotPersonTableResponse.PersonTableId"));
 	 
 	 	return addAiotPersonTableResponse;
 	}

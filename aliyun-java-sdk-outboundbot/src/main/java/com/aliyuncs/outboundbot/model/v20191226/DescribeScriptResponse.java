@@ -136,6 +136,12 @@ public class DescribeScriptResponse extends AcsResponse {
 
 		private Long updateTime;
 
+		private String chatbotId;
+
+		private String asrConfig;
+
+		private String ttsConfig;
+
 		public String getDebugStatus() {
 			return this.debugStatus;
 		}
@@ -214,6 +220,30 @@ public class DescribeScriptResponse extends AcsResponse {
 
 		public void setUpdateTime(Long updateTime) {
 			this.updateTime = updateTime;
+		}
+
+		public String getChatbotId() {
+			return this.chatbotId;
+		}
+
+		public void setChatbotId(String chatbotId) {
+			this.chatbotId = chatbotId;
+		}
+
+		public String getAsrConfig() {
+			return this.asrConfig;
+		}
+
+		public void setAsrConfig(String asrConfig) {
+			this.asrConfig = asrConfig;
+		}
+
+		public String getTtsConfig() {
+			return this.ttsConfig;
+		}
+
+		public void setTtsConfig(String ttsConfig) {
+			this.ttsConfig = ttsConfig;
 		}
 	}
 

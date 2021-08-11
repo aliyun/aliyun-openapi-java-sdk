@@ -26,14 +26,14 @@ public class GetPasswordPolicyResponseUnmarshaller {
 		getPasswordPolicyResponse.setRequestId(_ctx.stringValue("GetPasswordPolicyResponse.RequestId"));
 
 		PasswordPolicy passwordPolicy = new PasswordPolicy();
-		passwordPolicy.setMinimumPasswordLength(_ctx.integerValue("GetPasswordPolicyResponse.PasswordPolicy.MinimumPasswordLength"));
-		passwordPolicy.setRequireLowercaseCharacters(_ctx.booleanValue("GetPasswordPolicyResponse.PasswordPolicy.RequireLowercaseCharacters"));
-		passwordPolicy.setRequireUppercaseCharacters(_ctx.booleanValue("GetPasswordPolicyResponse.PasswordPolicy.RequireUppercaseCharacters"));
 		passwordPolicy.setRequireNumbers(_ctx.booleanValue("GetPasswordPolicyResponse.PasswordPolicy.RequireNumbers"));
-		passwordPolicy.setRequireSymbols(_ctx.booleanValue("GetPasswordPolicyResponse.PasswordPolicy.RequireSymbols"));
+		passwordPolicy.setRequireLowercaseCharacters(_ctx.booleanValue("GetPasswordPolicyResponse.PasswordPolicy.RequireLowercaseCharacters"));
 		passwordPolicy.setHardExpiry(_ctx.booleanValue("GetPasswordPolicyResponse.PasswordPolicy.HardExpiry"));
-		passwordPolicy.setMaxPasswordAge(_ctx.integerValue("GetPasswordPolicyResponse.PasswordPolicy.MaxPasswordAge"));
 		passwordPolicy.setPasswordReusePrevention(_ctx.integerValue("GetPasswordPolicyResponse.PasswordPolicy.PasswordReusePrevention"));
+		passwordPolicy.setRequireSymbols(_ctx.booleanValue("GetPasswordPolicyResponse.PasswordPolicy.RequireSymbols"));
+		passwordPolicy.setMaxPasswordAge(_ctx.integerValue("GetPasswordPolicyResponse.PasswordPolicy.MaxPasswordAge"));
+		passwordPolicy.setMinimumPasswordLength(_ctx.integerValue("GetPasswordPolicyResponse.PasswordPolicy.MinimumPasswordLength"));
+		passwordPolicy.setRequireUppercaseCharacters(_ctx.booleanValue("GetPasswordPolicyResponse.PasswordPolicy.RequireUppercaseCharacters"));
 		passwordPolicy.setMaxLoginAttemps(_ctx.integerValue("GetPasswordPolicyResponse.PasswordPolicy.MaxLoginAttemps"));
 		getPasswordPolicyResponse.setPasswordPolicy(passwordPolicy);
 	 

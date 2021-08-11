@@ -26,11 +26,11 @@ import com.aliyuncs.ddoscoo.Endpoint;
 public class ConfigWebIpSetRequest extends RpcAcsRequest<ConfigWebIpSetResponse> {
 	   
 
+	private String resourceGroupId;
+
 	private List<String> blackLists;
 
 	private List<String> whiteLists;
-
-	private String resourceGroupId;
 
 	private String domain;
 	public ConfigWebIpSetRequest() {
@@ -40,6 +40,17 @@ public class ConfigWebIpSetRequest extends RpcAcsRequest<ConfigWebIpSetResponse>
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
 	}
 
 	public List<String> getBlackLists() {
@@ -66,17 +77,6 @@ public class ConfigWebIpSetRequest extends RpcAcsRequest<ConfigWebIpSetResponse>
 				putQueryParameter("WhiteList." + (i + 1) , whiteLists.get(i));
 			}
 		}	
-	}
-
-	public String getResourceGroupId() {
-		return this.resourceGroupId;
-	}
-
-	public void setResourceGroupId(String resourceGroupId) {
-		this.resourceGroupId = resourceGroupId;
-		if(resourceGroupId != null){
-			putQueryParameter("ResourceGroupId", resourceGroupId);
-		}
 	}
 
 	public String getDomain() {

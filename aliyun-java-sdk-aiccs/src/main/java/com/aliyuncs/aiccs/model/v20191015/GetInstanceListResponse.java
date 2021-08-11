@@ -27,11 +27,11 @@ public class GetInstanceListResponse extends AcsResponse {
 
 	private Integer totalCount;
 
-	private Integer pageSize;
+	private String requestId;
 
 	private String message;
 
-	private String requestId;
+	private Integer pageSize;
 
 	private Integer pageNumber;
 
@@ -51,12 +51,12 @@ public class GetInstanceListResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getMessage() {
@@ -67,12 +67,12 @@ public class GetInstanceListResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
 	}
 
 	public Integer getPageNumber() {

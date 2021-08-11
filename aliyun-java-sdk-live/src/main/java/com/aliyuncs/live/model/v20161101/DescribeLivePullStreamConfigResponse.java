@@ -55,6 +55,8 @@ public class DescribeLivePullStreamConfigResponse extends AcsResponse {
 
 		private String sourceUrl;
 
+		private String sourceUsing;
+
 		private String startTime;
 
 		private String endTime;
@@ -89,6 +91,14 @@ public class DescribeLivePullStreamConfigResponse extends AcsResponse {
 
 		public void setSourceUrl(String sourceUrl) {
 			this.sourceUrl = sourceUrl;
+		}
+
+		public String getSourceUsing() {
+			return this.sourceUsing;
+		}
+
+		public void setSourceUsing(String sourceUsing) {
+			this.sourceUsing = sourceUsing;
 		}
 
 		public String getStartTime() {

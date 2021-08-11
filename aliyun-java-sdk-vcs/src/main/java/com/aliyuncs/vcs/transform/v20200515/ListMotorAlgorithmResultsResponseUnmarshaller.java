@@ -32,35 +32,35 @@ public class ListMotorAlgorithmResultsResponseUnmarshaller {
 		listMotorAlgorithmResultsResponse.setCode(_ctx.stringValue("ListMotorAlgorithmResultsResponse.Code"));
 
 		Data data = new Data();
-		data.setTotalCount(_ctx.integerValue("ListMotorAlgorithmResultsResponse.Data.TotalCount"));
-		data.setPageSize(_ctx.integerValue("ListMotorAlgorithmResultsResponse.Data.PageSize"));
 		data.setTotalPage(_ctx.integerValue("ListMotorAlgorithmResultsResponse.Data.TotalPage"));
 		data.setPageNumber(_ctx.integerValue("ListMotorAlgorithmResultsResponse.Data.PageNumber"));
+		data.setPageSize(_ctx.integerValue("ListMotorAlgorithmResultsResponse.Data.PageSize"));
+		data.setTotalCount(_ctx.integerValue("ListMotorAlgorithmResultsResponse.Data.TotalCount"));
 
 		List<RecordsItem> records = new ArrayList<RecordsItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListMotorAlgorithmResultsResponse.Data.Records.Length"); i++) {
 			RecordsItem recordsItem = new RecordsItem();
+			recordsItem.setMotorClass(_ctx.stringValue("ListMotorAlgorithmResultsResponse.Data.Records["+ i +"].MotorClass"));
+			recordsItem.setRightBottomY(_ctx.floatValue("ListMotorAlgorithmResultsResponse.Data.Records["+ i +"].RightBottomY"));
+			recordsItem.setDataSourceId(_ctx.stringValue("ListMotorAlgorithmResultsResponse.Data.Records["+ i +"].DataSourceId"));
 			recordsItem.setPicUrlPath(_ctx.stringValue("ListMotorAlgorithmResultsResponse.Data.Records["+ i +"].PicUrlPath"));
+			recordsItem.setPlateClass(_ctx.stringValue("ListMotorAlgorithmResultsResponse.Data.Records["+ i +"].PlateClass"));
+			recordsItem.setPlateColor(_ctx.stringValue("ListMotorAlgorithmResultsResponse.Data.Records["+ i +"].PlateColor"));
+			recordsItem.setRightBottomX(_ctx.floatValue("ListMotorAlgorithmResultsResponse.Data.Records["+ i +"].RightBottomX"));
+			recordsItem.setSourceId(_ctx.stringValue("ListMotorAlgorithmResultsResponse.Data.Records["+ i +"].SourceId"));
+			recordsItem.setSafetyBelt(_ctx.stringValue("ListMotorAlgorithmResultsResponse.Data.Records["+ i +"].SafetyBelt"));
+			recordsItem.setMotorStyle(_ctx.stringValue("ListMotorAlgorithmResultsResponse.Data.Records["+ i +"].MotorStyle"));
+			recordsItem.setTargetPicUrlPath(_ctx.stringValue("ListMotorAlgorithmResultsResponse.Data.Records["+ i +"].TargetPicUrlPath"));
+			recordsItem.setLeftTopY(_ctx.floatValue("ListMotorAlgorithmResultsResponse.Data.Records["+ i +"].LeftTopY"));
+			recordsItem.setMotorColor(_ctx.stringValue("ListMotorAlgorithmResultsResponse.Data.Records["+ i +"].MotorColor"));
 			recordsItem.setPlateNumber(_ctx.stringValue("ListMotorAlgorithmResultsResponse.Data.Records["+ i +"].PlateNumber"));
 			recordsItem.setCorpId(_ctx.stringValue("ListMotorAlgorithmResultsResponse.Data.Records["+ i +"].CorpId"));
-			recordsItem.setMotorColor(_ctx.stringValue("ListMotorAlgorithmResultsResponse.Data.Records["+ i +"].MotorColor"));
-			recordsItem.setRightBottomX(_ctx.floatValue("ListMotorAlgorithmResultsResponse.Data.Records["+ i +"].RightBottomX"));
-			recordsItem.setTargetPicUrlPath(_ctx.stringValue("ListMotorAlgorithmResultsResponse.Data.Records["+ i +"].TargetPicUrlPath"));
-			recordsItem.setRightBottomY(_ctx.floatValue("ListMotorAlgorithmResultsResponse.Data.Records["+ i +"].RightBottomY"));
-			recordsItem.setSourceId(_ctx.stringValue("ListMotorAlgorithmResultsResponse.Data.Records["+ i +"].SourceId"));
-			recordsItem.setCalling(_ctx.stringValue("ListMotorAlgorithmResultsResponse.Data.Records["+ i +"].Calling"));
-			recordsItem.setMotorClass(_ctx.stringValue("ListMotorAlgorithmResultsResponse.Data.Records["+ i +"].MotorClass"));
-			recordsItem.setMotorModel(_ctx.stringValue("ListMotorAlgorithmResultsResponse.Data.Records["+ i +"].MotorModel"));
-			recordsItem.setLeftTopY(_ctx.floatValue("ListMotorAlgorithmResultsResponse.Data.Records["+ i +"].LeftTopY"));
-			recordsItem.setMotorBrand(_ctx.stringValue("ListMotorAlgorithmResultsResponse.Data.Records["+ i +"].MotorBrand"));
-			recordsItem.setLeftTopX(_ctx.floatValue("ListMotorAlgorithmResultsResponse.Data.Records["+ i +"].LeftTopX"));
-			recordsItem.setMotorId(_ctx.stringValue("ListMotorAlgorithmResultsResponse.Data.Records["+ i +"].MotorId"));
-			recordsItem.setPlateClass(_ctx.stringValue("ListMotorAlgorithmResultsResponse.Data.Records["+ i +"].PlateClass"));
-			recordsItem.setMotorStyle(_ctx.stringValue("ListMotorAlgorithmResultsResponse.Data.Records["+ i +"].MotorStyle"));
-			recordsItem.setSafetyBelt(_ctx.stringValue("ListMotorAlgorithmResultsResponse.Data.Records["+ i +"].SafetyBelt"));
-			recordsItem.setPlateColor(_ctx.stringValue("ListMotorAlgorithmResultsResponse.Data.Records["+ i +"].PlateColor"));
 			recordsItem.setShotTime(_ctx.stringValue("ListMotorAlgorithmResultsResponse.Data.Records["+ i +"].ShotTime"));
-			recordsItem.setDataSourceId(_ctx.stringValue("ListMotorAlgorithmResultsResponse.Data.Records["+ i +"].DataSourceId"));
+			recordsItem.setCalling(_ctx.stringValue("ListMotorAlgorithmResultsResponse.Data.Records["+ i +"].Calling"));
+			recordsItem.setLeftTopX(_ctx.floatValue("ListMotorAlgorithmResultsResponse.Data.Records["+ i +"].LeftTopX"));
+			recordsItem.setMotorBrand(_ctx.stringValue("ListMotorAlgorithmResultsResponse.Data.Records["+ i +"].MotorBrand"));
+			recordsItem.setMotorModel(_ctx.stringValue("ListMotorAlgorithmResultsResponse.Data.Records["+ i +"].MotorModel"));
+			recordsItem.setMotorId(_ctx.stringValue("ListMotorAlgorithmResultsResponse.Data.Records["+ i +"].MotorId"));
 
 			records.add(recordsItem);
 		}

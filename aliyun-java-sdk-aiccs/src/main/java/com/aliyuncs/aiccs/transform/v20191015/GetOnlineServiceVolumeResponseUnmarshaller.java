@@ -29,9 +29,9 @@ public class GetOnlineServiceVolumeResponseUnmarshaller {
 		getOnlineServiceVolumeResponse.setSuccess(_ctx.stringValue("GetOnlineServiceVolumeResponse.Success"));
 
 		Data data = new Data();
-		data.setTotalNum(_ctx.integerValue("GetOnlineServiceVolumeResponse.Data.TotalNum"));
-		data.setPageSize(_ctx.integerValue("GetOnlineServiceVolumeResponse.Data.PageSize"));
 		data.setPageNum(_ctx.integerValue("GetOnlineServiceVolumeResponse.Data.PageNum"));
+		data.setPageSize(_ctx.integerValue("GetOnlineServiceVolumeResponse.Data.PageSize"));
+		data.setTotalNum(_ctx.integerValue("GetOnlineServiceVolumeResponse.Data.TotalNum"));
 		data.setRows(_ctx.stringValue("GetOnlineServiceVolumeResponse.Data.Rows"));
 		getOnlineServiceVolumeResponse.setData(data);
 	 

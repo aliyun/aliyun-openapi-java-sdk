@@ -49,11 +49,15 @@ public class PushSimpleRequest extends RpcAcsRequest<PushSimpleResponse> {
 
 	private Long silent;
 
+	private String strategyContent;
+
 	private String uri;
 
 	private Long expiredSeconds;
 
 	private String appId;
+
+	private Integer strategyType;
 
 	private String workspaceId;
 	public PushSimpleRequest() {
@@ -197,6 +201,17 @@ public class PushSimpleRequest extends RpcAcsRequest<PushSimpleResponse> {
 		}
 	}
 
+	public String getStrategyContent() {
+		return this.strategyContent;
+	}
+
+	public void setStrategyContent(String strategyContent) {
+		this.strategyContent = strategyContent;
+		if(strategyContent != null){
+			putBodyParameter("StrategyContent", strategyContent);
+		}
+	}
+
 	public String getUri() {
 		return this.uri;
 	}
@@ -227,6 +242,17 @@ public class PushSimpleRequest extends RpcAcsRequest<PushSimpleResponse> {
 		this.appId = appId;
 		if(appId != null){
 			putBodyParameter("AppId", appId);
+		}
+	}
+
+	public Integer getStrategyType() {
+		return this.strategyType;
+	}
+
+	public void setStrategyType(Integer strategyType) {
+		this.strategyType = strategyType;
+		if(strategyType != null){
+			putBodyParameter("StrategyType", strategyType.toString());
 		}
 	}
 

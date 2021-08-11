@@ -25,21 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class SearchObjectResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String message;
+
+	private String requestId;
 
 	private String code;
 
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getMessage() {
 		return this.message;
@@ -47,6 +39,14 @@ public class SearchObjectResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getCode() {
@@ -67,31 +67,15 @@ public class SearchObjectResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Integer totalCount;
-
-		private Integer pageSize;
-
 		private Integer totalPage;
 
 		private Integer pageNumber;
 
+		private Integer pageSize;
+
+		private Integer totalCount;
+
 		private List<RecordsItem> records;
-
-		public Integer getTotalCount() {
-			return this.totalCount;
-		}
-
-		public void setTotalCount(Integer totalCount) {
-			this.totalCount = totalCount;
-		}
-
-		public Integer getPageSize() {
-			return this.pageSize;
-		}
-
-		public void setPageSize(Integer pageSize) {
-			this.pageSize = pageSize;
-		}
 
 		public Integer getTotalPage() {
 			return this.totalPage;
@@ -109,6 +93,22 @@ public class SearchObjectResponse extends AcsResponse {
 			this.pageNumber = pageNumber;
 		}
 
+		public Integer getPageSize() {
+			return this.pageSize;
+		}
+
+		public void setPageSize(Integer pageSize) {
+			this.pageSize = pageSize;
+		}
+
+		public Integer getTotalCount() {
+			return this.totalCount;
+		}
+
+		public void setTotalCount(Integer totalCount) {
+			this.totalCount = totalCount;
+		}
+
 		public List<RecordsItem> getRecords() {
 			return this.records;
 		}
@@ -119,38 +119,54 @@ public class SearchObjectResponse extends AcsResponse {
 
 		public static class RecordsItem {
 
-			private String targetImageUrl;
+			private String deviceID;
+
+			private String compareResult;
+
+			private Integer rightBtmX;
 
 			private Float score;
 
-			private String deviceID;
+			private String sourceImageUrl;
 
 			private String sourceID;
 
 			private Integer rightBtmY;
 
-			private Long shotTime;
-
-			private Integer rightBtmX;
-
-			private String sourceImagePath;
-
-			private String targetImagePath;
-
-			private String sourceImageUrl;
+			private String targetImageUrl;
 
 			private Integer leftTopY;
 
+			private String targetImagePath;
+
+			private Long shotTime;
+
 			private Integer leftTopX;
 
-			private String compareResult;
+			private String sourceImagePath;
 
-			public String getTargetImageUrl() {
-				return this.targetImageUrl;
+			public String getDeviceID() {
+				return this.deviceID;
 			}
 
-			public void setTargetImageUrl(String targetImageUrl) {
-				this.targetImageUrl = targetImageUrl;
+			public void setDeviceID(String deviceID) {
+				this.deviceID = deviceID;
+			}
+
+			public String getCompareResult() {
+				return this.compareResult;
+			}
+
+			public void setCompareResult(String compareResult) {
+				this.compareResult = compareResult;
+			}
+
+			public Integer getRightBtmX() {
+				return this.rightBtmX;
+			}
+
+			public void setRightBtmX(Integer rightBtmX) {
+				this.rightBtmX = rightBtmX;
 			}
 
 			public Float getScore() {
@@ -161,12 +177,12 @@ public class SearchObjectResponse extends AcsResponse {
 				this.score = score;
 			}
 
-			public String getDeviceID() {
-				return this.deviceID;
+			public String getSourceImageUrl() {
+				return this.sourceImageUrl;
 			}
 
-			public void setDeviceID(String deviceID) {
-				this.deviceID = deviceID;
+			public void setSourceImageUrl(String sourceImageUrl) {
+				this.sourceImageUrl = sourceImageUrl;
 			}
 
 			public String getSourceID() {
@@ -185,44 +201,12 @@ public class SearchObjectResponse extends AcsResponse {
 				this.rightBtmY = rightBtmY;
 			}
 
-			public Long getShotTime() {
-				return this.shotTime;
+			public String getTargetImageUrl() {
+				return this.targetImageUrl;
 			}
 
-			public void setShotTime(Long shotTime) {
-				this.shotTime = shotTime;
-			}
-
-			public Integer getRightBtmX() {
-				return this.rightBtmX;
-			}
-
-			public void setRightBtmX(Integer rightBtmX) {
-				this.rightBtmX = rightBtmX;
-			}
-
-			public String getSourceImagePath() {
-				return this.sourceImagePath;
-			}
-
-			public void setSourceImagePath(String sourceImagePath) {
-				this.sourceImagePath = sourceImagePath;
-			}
-
-			public String getTargetImagePath() {
-				return this.targetImagePath;
-			}
-
-			public void setTargetImagePath(String targetImagePath) {
-				this.targetImagePath = targetImagePath;
-			}
-
-			public String getSourceImageUrl() {
-				return this.sourceImageUrl;
-			}
-
-			public void setSourceImageUrl(String sourceImageUrl) {
-				this.sourceImageUrl = sourceImageUrl;
+			public void setTargetImageUrl(String targetImageUrl) {
+				this.targetImageUrl = targetImageUrl;
 			}
 
 			public Integer getLeftTopY() {
@@ -233,6 +217,22 @@ public class SearchObjectResponse extends AcsResponse {
 				this.leftTopY = leftTopY;
 			}
 
+			public String getTargetImagePath() {
+				return this.targetImagePath;
+			}
+
+			public void setTargetImagePath(String targetImagePath) {
+				this.targetImagePath = targetImagePath;
+			}
+
+			public Long getShotTime() {
+				return this.shotTime;
+			}
+
+			public void setShotTime(Long shotTime) {
+				this.shotTime = shotTime;
+			}
+
 			public Integer getLeftTopX() {
 				return this.leftTopX;
 			}
@@ -241,12 +241,12 @@ public class SearchObjectResponse extends AcsResponse {
 				this.leftTopX = leftTopX;
 			}
 
-			public String getCompareResult() {
-				return this.compareResult;
+			public String getSourceImagePath() {
+				return this.sourceImagePath;
 			}
 
-			public void setCompareResult(String compareResult) {
-				this.compareResult = compareResult;
+			public void setSourceImagePath(String sourceImagePath) {
+				this.sourceImagePath = sourceImagePath;
 			}
 		}
 	}

@@ -23,6 +23,7 @@ public class CreateRouteEntryResponseUnmarshaller {
 	public static CreateRouteEntryResponse unmarshall(CreateRouteEntryResponse createRouteEntryResponse, UnmarshallerContext _ctx) {
 		
 		createRouteEntryResponse.setRequestId(_ctx.stringValue("CreateRouteEntryResponse.RequestId"));
+		createRouteEntryResponse.setRouteEntryId(_ctx.stringValue("CreateRouteEntryResponse.RouteEntryId"));
 	 
 	 	return createRouteEntryResponse;
 	}

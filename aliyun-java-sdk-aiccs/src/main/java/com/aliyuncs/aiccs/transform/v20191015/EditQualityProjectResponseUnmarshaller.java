@@ -34,9 +34,9 @@ public class EditQualityProjectResponseUnmarshaller {
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("EditQualityProjectResponse.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
-			dataItem.setInstanceId(_ctx.stringValue("EditQualityProjectResponse.Data["+ i +"].InstanceId"));
 			dataItem.setVersion(_ctx.integerValue("EditQualityProjectResponse.Data["+ i +"].Version"));
 			dataItem.setProjectId(_ctx.longValue("EditQualityProjectResponse.Data["+ i +"].ProjectId"));
+			dataItem.setInstanceId(_ctx.stringValue("EditQualityProjectResponse.Data["+ i +"].InstanceId"));
 
 			data.add(dataItem);
 		}

@@ -23,9 +23,9 @@ public class DescribePartnerConfigResponseUnmarshaller {
 	public static DescribePartnerConfigResponse unmarshall(DescribePartnerConfigResponse describePartnerConfigResponse, UnmarshallerContext _ctx) {
 		
 		describePartnerConfigResponse.setRequestId(_ctx.stringValue("DescribePartnerConfigResponse.RequestId"));
-		describePartnerConfigResponse.setPartnerName(_ctx.stringValue("DescribePartnerConfigResponse.PartnerName"));
-		describePartnerConfigResponse.setPartnerCode(_ctx.stringValue("DescribePartnerConfigResponse.PartnerCode"));
 		describePartnerConfigResponse.setContact(_ctx.stringValue("DescribePartnerConfigResponse.Contact"));
+		describePartnerConfigResponse.setPartnerCode(_ctx.stringValue("DescribePartnerConfigResponse.PartnerCode"));
+		describePartnerConfigResponse.setPartnerName(_ctx.stringValue("DescribePartnerConfigResponse.PartnerName"));
 	 
 	 	return describePartnerConfigResponse;
 	}

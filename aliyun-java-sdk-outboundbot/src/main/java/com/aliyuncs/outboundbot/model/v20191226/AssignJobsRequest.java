@@ -32,9 +32,15 @@ public class AssignJobsRequest extends RpcAcsRequest<AssignJobsResponse> {
 
 	private String instanceId;
 
+	private String rosterType;
+
+	private String jobDataParsingTaskId;
+
 	private String strategyJson;
 
 	private String jobGroupId;
+
+	private Boolean isAsynchrony;
 	public AssignJobsRequest() {
 		super("OutboundBot", "2019-12-26", "AssignJobs", "outboundbot");
 		setMethod(MethodType.POST);
@@ -81,6 +87,28 @@ public class AssignJobsRequest extends RpcAcsRequest<AssignJobsResponse> {
 		}
 	}
 
+	public String getRosterType() {
+		return this.rosterType;
+	}
+
+	public void setRosterType(String rosterType) {
+		this.rosterType = rosterType;
+		if(rosterType != null){
+			putQueryParameter("RosterType", rosterType);
+		}
+	}
+
+	public String getJobDataParsingTaskId() {
+		return this.jobDataParsingTaskId;
+	}
+
+	public void setJobDataParsingTaskId(String jobDataParsingTaskId) {
+		this.jobDataParsingTaskId = jobDataParsingTaskId;
+		if(jobDataParsingTaskId != null){
+			putQueryParameter("JobDataParsingTaskId", jobDataParsingTaskId);
+		}
+	}
+
 	public String getStrategyJson() {
 		return this.strategyJson;
 	}
@@ -100,6 +128,17 @@ public class AssignJobsRequest extends RpcAcsRequest<AssignJobsResponse> {
 		this.jobGroupId = jobGroupId;
 		if(jobGroupId != null){
 			putQueryParameter("JobGroupId", jobGroupId);
+		}
+	}
+
+	public Boolean getIsAsynchrony() {
+		return this.isAsynchrony;
+	}
+
+	public void setIsAsynchrony(Boolean isAsynchrony) {
+		this.isAsynchrony = isAsynchrony;
+		if(isAsynchrony != null){
+			putQueryParameter("IsAsynchrony", isAsynchrony.toString());
 		}
 	}
 

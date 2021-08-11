@@ -25,25 +25,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetDataCronClearTaskDetailListResponse extends AcsResponse {
 
-	private Long totalCount;
-
 	private String requestId;
-
-	private String errorCode;
-
-	private String errorMessage;
 
 	private Boolean success;
 
+	private String errorMessage;
+
+	private String errorCode;
+
+	private Long totalCount;
+
 	private List<DataCronClearTaskDetail> dataCronClearTaskDetailList;
-
-	public Long getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Long totalCount) {
-		this.totalCount = totalCount;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -53,12 +45,12 @@ public class GetDataCronClearTaskDetailListResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getErrorCode() {
-		return this.errorCode;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public String getErrorMessage() {
@@ -69,12 +61,20 @@ public class GetDataCronClearTaskDetailListResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getErrorCode() {
+		return this.errorCode;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
+	}
+
+	public Long getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Long totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<DataCronClearTaskDetail> getDataCronClearTaskDetailList() {
@@ -87,13 +87,21 @@ public class GetDataCronClearTaskDetailListResponse extends AcsResponse {
 
 	public static class DataCronClearTaskDetail {
 
-		private String jobStatus;
+		private Long dBTaskGroupId;
 
-		private String createTime;
+		private String jobStatus;
 
 		private Long actualAffectRows;
 
-		private Long dBTaskGroupId;
+		private String createTime;
+
+		public Long getDBTaskGroupId() {
+			return this.dBTaskGroupId;
+		}
+
+		public void setDBTaskGroupId(Long dBTaskGroupId) {
+			this.dBTaskGroupId = dBTaskGroupId;
+		}
 
 		public String getJobStatus() {
 			return this.jobStatus;
@@ -101,14 +109,6 @@ public class GetDataCronClearTaskDetailListResponse extends AcsResponse {
 
 		public void setJobStatus(String jobStatus) {
 			this.jobStatus = jobStatus;
-		}
-
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
 		}
 
 		public Long getActualAffectRows() {
@@ -119,12 +119,12 @@ public class GetDataCronClearTaskDetailListResponse extends AcsResponse {
 			this.actualAffectRows = actualAffectRows;
 		}
 
-		public Long getDBTaskGroupId() {
-			return this.dBTaskGroupId;
+		public String getCreateTime() {
+			return this.createTime;
 		}
 
-		public void setDBTaskGroupId(Long dBTaskGroupId) {
-			this.dBTaskGroupId = dBTaskGroupId;
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
 		}
 	}
 

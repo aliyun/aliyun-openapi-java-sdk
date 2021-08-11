@@ -39,8 +39,8 @@ public class GetAlgorithmHistogramsResponseUnmarshaller {
 		List<HistogramsItem> histograms = new ArrayList<HistogramsItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetAlgorithmHistogramsResponse.Data.Histograms.Length"); i++) {
 			HistogramsItem histogramsItem = new HistogramsItem();
-			histogramsItem.setFailureCount(_ctx.integerValue("GetAlgorithmHistogramsResponse.Data.Histograms["+ i +"].FailureCount"));
 			histogramsItem.setTime(_ctx.stringValue("GetAlgorithmHistogramsResponse.Data.Histograms["+ i +"].Time"));
+			histogramsItem.setFailureCount(_ctx.integerValue("GetAlgorithmHistogramsResponse.Data.Histograms["+ i +"].FailureCount"));
 			histogramsItem.setSuccessCount(_ctx.integerValue("GetAlgorithmHistogramsResponse.Data.Histograms["+ i +"].SuccessCount"));
 
 			histograms.add(histogramsItem);

@@ -23,10 +23,10 @@ public class UpdateGatewayFileShareResponseUnmarshaller {
 	public static UpdateGatewayFileShareResponse unmarshall(UpdateGatewayFileShareResponse updateGatewayFileShareResponse, UnmarshallerContext _ctx) {
 		
 		updateGatewayFileShareResponse.setRequestId(_ctx.stringValue("UpdateGatewayFileShareResponse.RequestId"));
-		updateGatewayFileShareResponse.setSuccess(_ctx.booleanValue("UpdateGatewayFileShareResponse.Success"));
-		updateGatewayFileShareResponse.setCode(_ctx.stringValue("UpdateGatewayFileShareResponse.Code"));
-		updateGatewayFileShareResponse.setMessage(_ctx.stringValue("UpdateGatewayFileShareResponse.Message"));
 		updateGatewayFileShareResponse.setTaskId(_ctx.stringValue("UpdateGatewayFileShareResponse.TaskId"));
+		updateGatewayFileShareResponse.setMessage(_ctx.stringValue("UpdateGatewayFileShareResponse.Message"));
+		updateGatewayFileShareResponse.setCode(_ctx.stringValue("UpdateGatewayFileShareResponse.Code"));
+		updateGatewayFileShareResponse.setSuccess(_ctx.booleanValue("UpdateGatewayFileShareResponse.Success"));
 	 
 	 	return updateGatewayFileShareResponse;
 	}

@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class AllocatePublicIpAddressResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String ipAddress;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getIpAddress() {
 		return this.ipAddress;
@@ -42,6 +34,14 @@ public class AllocatePublicIpAddressResponse extends AcsResponse {
 
 	public void setIpAddress(String ipAddress) {
 		this.ipAddress = ipAddress;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

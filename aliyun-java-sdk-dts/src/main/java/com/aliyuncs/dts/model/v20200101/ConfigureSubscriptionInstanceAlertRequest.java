@@ -41,7 +41,7 @@ public class ConfigureSubscriptionInstanceAlertRequest extends RpcAcsRequest<Con
 
 	private String errorAlertStatus;
 	public ConfigureSubscriptionInstanceAlertRequest() {
-		super("Dts", "2020-01-01", "ConfigureSubscriptionInstanceAlert");
+		super("Dts", "2020-01-01", "ConfigureSubscriptionInstanceAlert", "dts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

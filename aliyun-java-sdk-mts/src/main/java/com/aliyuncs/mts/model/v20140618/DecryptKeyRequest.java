@@ -37,7 +37,7 @@ public class DecryptKeyRequest extends RpcAcsRequest<DecryptKeyResponse> {
 
 	private String ownerId;
 	public DecryptKeyRequest() {
-		super("Mts", "2014-06-18", "DecryptKey");
+		super("Mts", "2014-06-18", "DecryptKey", "mts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

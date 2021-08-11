@@ -1,3 +1,9 @@
+2021-07-05 Version: 2.0.6
+- Supported deleteItem for sdk.
+
+2021-06-18 Version: 2.0.5
+- Supported 20210618 version for sdk.
+
 2020-10-27 Version: 1.0.1
 - Fix bug.
 

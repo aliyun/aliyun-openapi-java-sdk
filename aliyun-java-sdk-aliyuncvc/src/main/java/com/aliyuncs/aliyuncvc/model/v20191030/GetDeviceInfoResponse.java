@@ -24,22 +24,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetDeviceInfoResponse extends AcsResponse {
 
-	private Integer errorCode;
+	private String requestId;
 
 	private String message;
 
-	private Boolean success;
+	private Integer errorCode;
 
-	private String requestId;
+	private Boolean success;
 
 	private Device device;
 
-	public Integer getErrorCode() {
-		return this.errorCode;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setErrorCode(Integer errorCode) {
-		this.errorCode = errorCode;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getMessage() {
@@ -50,20 +50,20 @@ public class GetDeviceInfoResponse extends AcsResponse {
 		this.message = message;
 	}
 
+	public Integer getErrorCode() {
+		return this.errorCode;
+	}
+
+	public void setErrorCode(Integer errorCode) {
+		this.errorCode = errorCode;
+	}
+
 	public Boolean getSuccess() {
 		return this.success;
 	}
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
 	}
 
 	public Device getDevice() {
@@ -76,28 +76,28 @@ public class GetDeviceInfoResponse extends AcsResponse {
 
 	public static class Device {
 
-		private String activationCode;
+		private Integer status;
 
 		private String castScreenCode;
 
-		private String sn;
-
-		private Integer status;
-
 		private String iP;
-
-		private String mac;
-
-		private String ssid;
 
 		private String port;
 
-		public String getActivationCode() {
-			return this.activationCode;
+		private String sn;
+
+		private String ssid;
+
+		private String activationCode;
+
+		private String mac;
+
+		public Integer getStatus() {
+			return this.status;
 		}
 
-		public void setActivationCode(String activationCode) {
-			this.activationCode = activationCode;
+		public void setStatus(Integer status) {
+			this.status = status;
 		}
 
 		public String getCastScreenCode() {
@@ -108,22 +108,6 @@ public class GetDeviceInfoResponse extends AcsResponse {
 			this.castScreenCode = castScreenCode;
 		}
 
-		public String getSn() {
-			return this.sn;
-		}
-
-		public void setSn(String sn) {
-			this.sn = sn;
-		}
-
-		public Integer getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(Integer status) {
-			this.status = status;
-		}
-
 		public String getIP() {
 			return this.iP;
 		}
@@ -132,12 +116,20 @@ public class GetDeviceInfoResponse extends AcsResponse {
 			this.iP = iP;
 		}
 
-		public String getMac() {
-			return this.mac;
+		public String getPort() {
+			return this.port;
 		}
 
-		public void setMac(String mac) {
-			this.mac = mac;
+		public void setPort(String port) {
+			this.port = port;
+		}
+
+		public String getSn() {
+			return this.sn;
+		}
+
+		public void setSn(String sn) {
+			this.sn = sn;
 		}
 
 		public String getSsid() {
@@ -148,12 +140,20 @@ public class GetDeviceInfoResponse extends AcsResponse {
 			this.ssid = ssid;
 		}
 
-		public String getPort() {
-			return this.port;
+		public String getActivationCode() {
+			return this.activationCode;
 		}
 
-		public void setPort(String port) {
-			this.port = port;
+		public void setActivationCode(String activationCode) {
+			this.activationCode = activationCode;
+		}
+
+		public String getMac() {
+			return this.mac;
+		}
+
+		public void setMac(String mac) {
+			this.mac = mac;
 		}
 	}
 

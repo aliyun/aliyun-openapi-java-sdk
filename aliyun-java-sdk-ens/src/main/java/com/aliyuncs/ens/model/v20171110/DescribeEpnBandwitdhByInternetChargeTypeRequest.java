@@ -24,18 +24,29 @@ import com.aliyuncs.http.MethodType;
 public class DescribeEpnBandwitdhByInternetChargeTypeRequest extends RpcAcsRequest<DescribeEpnBandwitdhByInternetChargeTypeResponse> {
 	   
 
+	private String networkingModel;
+
 	private String isp;
 
 	private String startTime;
 
 	private String ensRegionId;
 
-	private String networkingModel;
-
 	private String endTime;
 	public DescribeEpnBandwitdhByInternetChargeTypeRequest() {
 		super("Ens", "2017-11-10", "DescribeEpnBandwitdhByInternetChargeType", "ens");
 		setMethod(MethodType.POST);
+	}
+
+	public String getNetworkingModel() {
+		return this.networkingModel;
+	}
+
+	public void setNetworkingModel(String networkingModel) {
+		this.networkingModel = networkingModel;
+		if(networkingModel != null){
+			putQueryParameter("NetworkingModel", networkingModel);
+		}
 	}
 
 	public String getIsp() {
@@ -68,17 +79,6 @@ public class DescribeEpnBandwitdhByInternetChargeTypeRequest extends RpcAcsReque
 		this.ensRegionId = ensRegionId;
 		if(ensRegionId != null){
 			putQueryParameter("EnsRegionId", ensRegionId);
-		}
-	}
-
-	public String getNetworkingModel() {
-		return this.networkingModel;
-	}
-
-	public void setNetworkingModel(String networkingModel) {
-		this.networkingModel = networkingModel;
-		if(networkingModel != null){
-			putQueryParameter("NetworkingModel", networkingModel);
 		}
 	}
 

@@ -27,13 +27,15 @@ public class DescribeBackupPoliciesRequest extends RpcAcsRequest<DescribeBackupP
 
 	private Long resourceOwnerId;
 
-	private Integer currentPage;
-
 	private String sourceIp;
 
-	private String name;
+	private String machineRemark;
 
 	private Integer pageSize;
+
+	private Integer currentPage;
+
+	private String name;
 
 	private String status;
 	public DescribeBackupPoliciesRequest() {
@@ -56,17 +58,6 @@ public class DescribeBackupPoliciesRequest extends RpcAcsRequest<DescribeBackupP
 		}
 	}
 
-	public Integer getCurrentPage() {
-		return this.currentPage;
-	}
-
-	public void setCurrentPage(Integer currentPage) {
-		this.currentPage = currentPage;
-		if(currentPage != null){
-			putQueryParameter("CurrentPage", currentPage.toString());
-		}
-	}
-
 	public String getSourceIp() {
 		return this.sourceIp;
 	}
@@ -78,14 +69,14 @@ public class DescribeBackupPoliciesRequest extends RpcAcsRequest<DescribeBackupP
 		}
 	}
 
-	public String getName() {
-		return this.name;
+	public String getMachineRemark() {
+		return this.machineRemark;
 	}
 
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
+	public void setMachineRemark(String machineRemark) {
+		this.machineRemark = machineRemark;
+		if(machineRemark != null){
+			putQueryParameter("MachineRemark", machineRemark);
 		}
 	}
 
@@ -97,6 +88,28 @@ public class DescribeBackupPoliciesRequest extends RpcAcsRequest<DescribeBackupP
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public Integer getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
+		if(currentPage != null){
+			putQueryParameter("CurrentPage", currentPage.toString());
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
 		}
 	}
 

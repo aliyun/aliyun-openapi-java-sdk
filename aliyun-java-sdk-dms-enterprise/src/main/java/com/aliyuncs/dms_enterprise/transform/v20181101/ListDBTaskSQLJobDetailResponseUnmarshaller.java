@@ -27,23 +27,23 @@ public class ListDBTaskSQLJobDetailResponseUnmarshaller {
 	public static ListDBTaskSQLJobDetailResponse unmarshall(ListDBTaskSQLJobDetailResponse listDBTaskSQLJobDetailResponse, UnmarshallerContext _ctx) {
 		
 		listDBTaskSQLJobDetailResponse.setRequestId(_ctx.stringValue("ListDBTaskSQLJobDetailResponse.RequestId"));
-		listDBTaskSQLJobDetailResponse.setTotalCount(_ctx.longValue("ListDBTaskSQLJobDetailResponse.TotalCount"));
-		listDBTaskSQLJobDetailResponse.setErrorCode(_ctx.stringValue("ListDBTaskSQLJobDetailResponse.ErrorCode"));
-		listDBTaskSQLJobDetailResponse.setErrorMessage(_ctx.stringValue("ListDBTaskSQLJobDetailResponse.ErrorMessage"));
 		listDBTaskSQLJobDetailResponse.setSuccess(_ctx.booleanValue("ListDBTaskSQLJobDetailResponse.Success"));
+		listDBTaskSQLJobDetailResponse.setErrorMessage(_ctx.stringValue("ListDBTaskSQLJobDetailResponse.ErrorMessage"));
+		listDBTaskSQLJobDetailResponse.setErrorCode(_ctx.stringValue("ListDBTaskSQLJobDetailResponse.ErrorCode"));
+		listDBTaskSQLJobDetailResponse.setTotalCount(_ctx.longValue("ListDBTaskSQLJobDetailResponse.TotalCount"));
 
 		List<DBTaskSQLJobDetail> dBTaskSQLJobDetailList = new ArrayList<DBTaskSQLJobDetail>();
 		for (int i = 0; i < _ctx.lengthValue("ListDBTaskSQLJobDetailResponse.DBTaskSQLJobDetailList.Length"); i++) {
 			DBTaskSQLJobDetail dBTaskSQLJobDetail = new DBTaskSQLJobDetail();
-			dBTaskSQLJobDetail.setStatus(_ctx.stringValue("ListDBTaskSQLJobDetailResponse.DBTaskSQLJobDetailList["+ i +"].Status"));
-			dBTaskSQLJobDetail.setSkip(_ctx.booleanValue("ListDBTaskSQLJobDetailResponse.DBTaskSQLJobDetailList["+ i +"].Skip"));
-			dBTaskSQLJobDetail.setDbId(_ctx.longValue("ListDBTaskSQLJobDetailResponse.DBTaskSQLJobDetailList["+ i +"].DbId"));
-			dBTaskSQLJobDetail.setSqlType(_ctx.stringValue("ListDBTaskSQLJobDetailResponse.DBTaskSQLJobDetailList["+ i +"].SqlType"));
-			dBTaskSQLJobDetail.setExecuteCount(_ctx.longValue("ListDBTaskSQLJobDetailResponse.DBTaskSQLJobDetailList["+ i +"].ExecuteCount"));
-			dBTaskSQLJobDetail.setLogic(_ctx.booleanValue("ListDBTaskSQLJobDetailResponse.DBTaskSQLJobDetailList["+ i +"].Logic"));
-			dBTaskSQLJobDetail.setCurrentSql(_ctx.stringValue("ListDBTaskSQLJobDetailResponse.DBTaskSQLJobDetailList["+ i +"].CurrentSql"));
 			dBTaskSQLJobDetail.setJobDetailId(_ctx.longValue("ListDBTaskSQLJobDetailResponse.DBTaskSQLJobDetailList["+ i +"].JobDetailId"));
+			dBTaskSQLJobDetail.setCurrentSql(_ctx.stringValue("ListDBTaskSQLJobDetailResponse.DBTaskSQLJobDetailList["+ i +"].CurrentSql"));
+			dBTaskSQLJobDetail.setExecuteCount(_ctx.longValue("ListDBTaskSQLJobDetailResponse.DBTaskSQLJobDetailList["+ i +"].ExecuteCount"));
 			dBTaskSQLJobDetail.setJobId(_ctx.longValue("ListDBTaskSQLJobDetailResponse.DBTaskSQLJobDetailList["+ i +"].JobId"));
+			dBTaskSQLJobDetail.setDbId(_ctx.longValue("ListDBTaskSQLJobDetailResponse.DBTaskSQLJobDetailList["+ i +"].DbId"));
+			dBTaskSQLJobDetail.setLogic(_ctx.booleanValue("ListDBTaskSQLJobDetailResponse.DBTaskSQLJobDetailList["+ i +"].Logic"));
+			dBTaskSQLJobDetail.setSkip(_ctx.booleanValue("ListDBTaskSQLJobDetailResponse.DBTaskSQLJobDetailList["+ i +"].Skip"));
+			dBTaskSQLJobDetail.setSqlType(_ctx.stringValue("ListDBTaskSQLJobDetailResponse.DBTaskSQLJobDetailList["+ i +"].SqlType"));
+			dBTaskSQLJobDetail.setStatus(_ctx.stringValue("ListDBTaskSQLJobDetailResponse.DBTaskSQLJobDetailList["+ i +"].Status"));
 
 			dBTaskSQLJobDetailList.add(dBTaskSQLJobDetail);
 		}

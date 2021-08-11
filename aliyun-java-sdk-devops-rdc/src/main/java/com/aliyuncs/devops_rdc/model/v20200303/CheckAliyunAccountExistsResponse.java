@@ -24,31 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CheckAliyunAccountExistsResponse extends AcsResponse {
 
-	private Boolean successful;
-
-	private String errorCode;
-
 	private String errorMsg;
 
 	private String requestId;
 
 	private Boolean object;
 
-	public Boolean getSuccessful() {
-		return this.successful;
-	}
+	private Boolean successful;
 
-	public void setSuccessful(Boolean successful) {
-		this.successful = successful;
-	}
-
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
-	}
+	private String errorCode;
 
 	public String getErrorMsg() {
 		return this.errorMsg;
@@ -72,6 +56,22 @@ public class CheckAliyunAccountExistsResponse extends AcsResponse {
 
 	public void setObject(Boolean object) {
 		this.object = object;
+	}
+
+	public Boolean getSuccessful() {
+		return this.successful;
+	}
+
+	public void setSuccessful(Boolean successful) {
+		this.successful = successful;
+	}
+
+	public String getErrorCode() {
+		return this.errorCode;
+	}
+
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
 	}
 
 	@Override

@@ -31,7 +31,7 @@ public class AddClientToBlackListRequest extends RpcAcsRequest<AddClientToBlackL
 
 	private String fileSystemId;
 	public AddClientToBlackListRequest() {
-		super("NAS", "2017-06-26", "AddClientToBlackList");
+		super("NAS", "2017-06-26", "AddClientToBlackList", "nas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

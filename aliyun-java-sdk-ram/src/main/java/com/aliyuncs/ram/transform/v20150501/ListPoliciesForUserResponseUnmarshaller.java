@@ -31,11 +31,11 @@ public class ListPoliciesForUserResponseUnmarshaller {
 		List<Policy> policies = new ArrayList<Policy>();
 		for (int i = 0; i < _ctx.lengthValue("ListPoliciesForUserResponse.Policies.Length"); i++) {
 			Policy policy = new Policy();
-			policy.setPolicyName(_ctx.stringValue("ListPoliciesForUserResponse.Policies["+ i +"].PolicyName"));
-			policy.setPolicyType(_ctx.stringValue("ListPoliciesForUserResponse.Policies["+ i +"].PolicyType"));
-			policy.setDescription(_ctx.stringValue("ListPoliciesForUserResponse.Policies["+ i +"].Description"));
 			policy.setDefaultVersion(_ctx.stringValue("ListPoliciesForUserResponse.Policies["+ i +"].DefaultVersion"));
+			policy.setDescription(_ctx.stringValue("ListPoliciesForUserResponse.Policies["+ i +"].Description"));
+			policy.setPolicyName(_ctx.stringValue("ListPoliciesForUserResponse.Policies["+ i +"].PolicyName"));
 			policy.setAttachDate(_ctx.stringValue("ListPoliciesForUserResponse.Policies["+ i +"].AttachDate"));
+			policy.setPolicyType(_ctx.stringValue("ListPoliciesForUserResponse.Policies["+ i +"].PolicyType"));
 
 			policies.add(policy);
 		}

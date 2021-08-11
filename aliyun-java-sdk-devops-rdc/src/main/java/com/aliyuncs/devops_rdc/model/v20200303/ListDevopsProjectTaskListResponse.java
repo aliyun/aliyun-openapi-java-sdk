@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListDevopsProjectTaskListResponse extends AcsResponse {
 
-	private Boolean successful;
-
-	private String errorCode;
-
 	private String errorMsg;
 
 	private String requestId;
 
+	private Boolean successful;
+
+	private String errorCode;
+
 	private Object object;
-
-	public Boolean getSuccessful() {
-		return this.successful;
-	}
-
-	public void setSuccessful(Boolean successful) {
-		this.successful = successful;
-	}
-
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
-	}
 
 	public String getErrorMsg() {
 		return this.errorMsg;
@@ -65,6 +49,22 @@ public class ListDevopsProjectTaskListResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Boolean getSuccessful() {
+		return this.successful;
+	}
+
+	public void setSuccessful(Boolean successful) {
+		this.successful = successful;
+	}
+
+	public String getErrorCode() {
+		return this.errorCode;
+	}
+
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
 	}
 
 	public Object getObject() {

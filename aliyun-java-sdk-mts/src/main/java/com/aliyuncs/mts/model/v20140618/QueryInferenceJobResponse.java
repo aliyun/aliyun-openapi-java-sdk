@@ -78,6 +78,8 @@ public class QueryInferenceJobResponse extends AcsResponse {
 
 		private Long jobTime;
 
+		private String jobParams;
+
 		public String getStatus() {
 			return this.status;
 		}
@@ -124,6 +126,14 @@ public class QueryInferenceJobResponse extends AcsResponse {
 
 		public void setJobTime(Long jobTime) {
 			this.jobTime = jobTime;
+		}
+
+		public String getJobParams() {
+			return this.jobParams;
+		}
+
+		public void setJobParams(String jobParams) {
+			this.jobParams = jobParams;
 		}
 	}
 

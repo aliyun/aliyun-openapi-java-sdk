@@ -26,11 +26,11 @@ public class GetUserUploadFileJobResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String errorCode;
+	private Boolean success;
 
 	private String errorMessage;
 
-	private Boolean success;
+	private String errorCode;
 
 	private UploadFileJobDetail uploadFileJobDetail;
 
@@ -42,12 +42,12 @@ public class GetUserUploadFileJobResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getErrorCode() {
-		return this.errorCode;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public String getErrorMessage() {
@@ -58,12 +58,12 @@ public class GetUserUploadFileJobResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getErrorCode() {
+		return this.errorCode;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
 	}
 
 	public UploadFileJobDetail getUploadFileJobDetail() {
@@ -76,43 +76,27 @@ public class GetUserUploadFileJobResponse extends AcsResponse {
 
 	public static class UploadFileJobDetail {
 
-		private String jobStatus;
-
-		private String attachmentKey;
-
 		private String jobKey;
+
+		private String fileName;
+
+		private Long fileSize;
+
+		private String fileSource;
+
+		private String uploadType;
 
 		private String uploadURL;
 
 		private Long uploadedSize;
 
+		private String jobStatus;
+
 		private String jobStatusDesc;
 
-		private String fileSource;
-
-		private String fileName;
-
-		private String uploadType;
-
-		private Long fileSize;
+		private String attachmentKey;
 
 		private UploadOSSParam uploadOSSParam;
-
-		public String getJobStatus() {
-			return this.jobStatus;
-		}
-
-		public void setJobStatus(String jobStatus) {
-			this.jobStatus = jobStatus;
-		}
-
-		public String getAttachmentKey() {
-			return this.attachmentKey;
-		}
-
-		public void setAttachmentKey(String attachmentKey) {
-			this.attachmentKey = attachmentKey;
-		}
 
 		public String getJobKey() {
 			return this.jobKey;
@@ -120,6 +104,38 @@ public class GetUserUploadFileJobResponse extends AcsResponse {
 
 		public void setJobKey(String jobKey) {
 			this.jobKey = jobKey;
+		}
+
+		public String getFileName() {
+			return this.fileName;
+		}
+
+		public void setFileName(String fileName) {
+			this.fileName = fileName;
+		}
+
+		public Long getFileSize() {
+			return this.fileSize;
+		}
+
+		public void setFileSize(Long fileSize) {
+			this.fileSize = fileSize;
+		}
+
+		public String getFileSource() {
+			return this.fileSource;
+		}
+
+		public void setFileSource(String fileSource) {
+			this.fileSource = fileSource;
+		}
+
+		public String getUploadType() {
+			return this.uploadType;
+		}
+
+		public void setUploadType(String uploadType) {
+			this.uploadType = uploadType;
 		}
 
 		public String getUploadURL() {
@@ -138,6 +154,14 @@ public class GetUserUploadFileJobResponse extends AcsResponse {
 			this.uploadedSize = uploadedSize;
 		}
 
+		public String getJobStatus() {
+			return this.jobStatus;
+		}
+
+		public void setJobStatus(String jobStatus) {
+			this.jobStatus = jobStatus;
+		}
+
 		public String getJobStatusDesc() {
 			return this.jobStatusDesc;
 		}
@@ -146,36 +170,12 @@ public class GetUserUploadFileJobResponse extends AcsResponse {
 			this.jobStatusDesc = jobStatusDesc;
 		}
 
-		public String getFileSource() {
-			return this.fileSource;
+		public String getAttachmentKey() {
+			return this.attachmentKey;
 		}
 
-		public void setFileSource(String fileSource) {
-			this.fileSource = fileSource;
-		}
-
-		public String getFileName() {
-			return this.fileName;
-		}
-
-		public void setFileName(String fileName) {
-			this.fileName = fileName;
-		}
-
-		public String getUploadType() {
-			return this.uploadType;
-		}
-
-		public void setUploadType(String uploadType) {
-			this.uploadType = uploadType;
-		}
-
-		public Long getFileSize() {
-			return this.fileSize;
-		}
-
-		public void setFileSize(Long fileSize) {
-			this.fileSize = fileSize;
+		public void setAttachmentKey(String attachmentKey) {
+			this.attachmentKey = attachmentKey;
 		}
 
 		public UploadOSSParam getUploadOSSParam() {
@@ -188,19 +188,11 @@ public class GetUserUploadFileJobResponse extends AcsResponse {
 
 		public static class UploadOSSParam {
 
-			private String bucketName;
-
 			private String endpoint;
 
+			private String bucketName;
+
 			private String objectName;
-
-			public String getBucketName() {
-				return this.bucketName;
-			}
-
-			public void setBucketName(String bucketName) {
-				this.bucketName = bucketName;
-			}
 
 			public String getEndpoint() {
 				return this.endpoint;
@@ -208,6 +200,14 @@ public class GetUserUploadFileJobResponse extends AcsResponse {
 
 			public void setEndpoint(String endpoint) {
 				this.endpoint = endpoint;
+			}
+
+			public String getBucketName() {
+				return this.bucketName;
+			}
+
+			public void setBucketName(String bucketName) {
+				this.bucketName = bucketName;
 			}
 
 			public String getObjectName() {

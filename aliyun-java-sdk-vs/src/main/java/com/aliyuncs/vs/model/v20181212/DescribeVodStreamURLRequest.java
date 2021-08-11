@@ -31,7 +31,7 @@ public class DescribeVodStreamURLRequest extends RpcAcsRequest<DescribeVodStream
 
 	private String url;
 	public DescribeVodStreamURLRequest() {
-		super("vs", "2018-12-12", "DescribeVodStreamURL", "vs");
+		super("vs", "2018-12-12", "DescribeVodStreamURL");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

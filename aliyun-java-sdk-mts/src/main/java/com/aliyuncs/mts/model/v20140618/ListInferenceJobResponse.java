@@ -31,6 +31,8 @@ public class ListInferenceJobResponse extends AcsResponse {
 
 	private String code;
 
+	private Long totalSize;
+
 	private List<JobsItem> jobs;
 
 	public String getMessage() {
@@ -57,6 +59,14 @@ public class ListInferenceJobResponse extends AcsResponse {
 		this.code = code;
 	}
 
+	public Long getTotalSize() {
+		return this.totalSize;
+	}
+
+	public void setTotalSize(Long totalSize) {
+		this.totalSize = totalSize;
+	}
+
 	public List<JobsItem> getJobs() {
 		return this.jobs;
 	}
@@ -78,6 +88,8 @@ public class ListInferenceJobResponse extends AcsResponse {
 		private String message;
 
 		private Long jobTime;
+
+		private String jobParams;
 
 		public String getStatus() {
 			return this.status;
@@ -125,6 +137,14 @@ public class ListInferenceJobResponse extends AcsResponse {
 
 		public void setJobTime(Long jobTime) {
 			this.jobTime = jobTime;
+		}
+
+		public String getJobParams() {
+			return this.jobParams;
+		}
+
+		public void setJobParams(String jobParams) {
+			this.jobParams = jobParams;
 		}
 	}
 

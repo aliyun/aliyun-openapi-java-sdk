@@ -29,23 +29,23 @@ public class DescribesDoubleVerificationGroupsResponseUnmarshaller {
 	public static DescribesDoubleVerificationGroupsResponse unmarshall(DescribesDoubleVerificationGroupsResponse describesDoubleVerificationGroupsResponse, UnmarshallerContext _ctx) {
 		
 		describesDoubleVerificationGroupsResponse.setRequestId(_ctx.stringValue("DescribesDoubleVerificationGroupsResponse.RequestId"));
-		describesDoubleVerificationGroupsResponse.setMessage(_ctx.stringValue("DescribesDoubleVerificationGroupsResponse.Message"));
 		describesDoubleVerificationGroupsResponse.setCode(_ctx.stringValue("DescribesDoubleVerificationGroupsResponse.Code"));
+		describesDoubleVerificationGroupsResponse.setMessage(_ctx.stringValue("DescribesDoubleVerificationGroupsResponse.Message"));
 
 		DoubleVerificationGroups doubleVerificationGroups = new DoubleVerificationGroups();
-		doubleVerificationGroups.setTotalNum(_ctx.longValue("DescribesDoubleVerificationGroupsResponse.DoubleVerificationGroups.TotalNum"));
-		doubleVerificationGroups.setPageSize(_ctx.longValue("DescribesDoubleVerificationGroupsResponse.DoubleVerificationGroups.PageSize"));
 		doubleVerificationGroups.setPageNum(_ctx.longValue("DescribesDoubleVerificationGroupsResponse.DoubleVerificationGroups.PageNum"));
+		doubleVerificationGroups.setPageSize(_ctx.longValue("DescribesDoubleVerificationGroupsResponse.DoubleVerificationGroups.PageSize"));
+		doubleVerificationGroups.setTotalNum(_ctx.longValue("DescribesDoubleVerificationGroupsResponse.DoubleVerificationGroups.TotalNum"));
 
 		List<DoubleVerificationGroupListItem> doubleVerificationGroupList = new ArrayList<DoubleVerificationGroupListItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribesDoubleVerificationGroupsResponse.DoubleVerificationGroups.DoubleVerificationGroupList.Length"); i++) {
 			DoubleVerificationGroupListItem doubleVerificationGroupListItem = new DoubleVerificationGroupListItem();
-			doubleVerificationGroupListItem.setDeviceId(_ctx.stringValue("DescribesDoubleVerificationGroupsResponse.DoubleVerificationGroups.DoubleVerificationGroupList["+ i +"].DeviceId"));
+			doubleVerificationGroupListItem.setGroupId(_ctx.stringValue("DescribesDoubleVerificationGroupsResponse.DoubleVerificationGroups.DoubleVerificationGroupList["+ i +"].GroupId"));
+			doubleVerificationGroupListItem.setInterval(_ctx.longValue("DescribesDoubleVerificationGroupsResponse.DoubleVerificationGroups.DoubleVerificationGroupList["+ i +"].Interval"));
 			doubleVerificationGroupListItem.setLastChange(_ctx.stringValue("DescribesDoubleVerificationGroupsResponse.DoubleVerificationGroups.DoubleVerificationGroupList["+ i +"].LastChange"));
 			doubleVerificationGroupListItem.setMemberNumber(_ctx.longValue("DescribesDoubleVerificationGroupsResponse.DoubleVerificationGroups.DoubleVerificationGroupList["+ i +"].MemberNumber"));
 			doubleVerificationGroupListItem.setEnabled(_ctx.stringValue("DescribesDoubleVerificationGroupsResponse.DoubleVerificationGroups.DoubleVerificationGroupList["+ i +"].Enabled"));
-			doubleVerificationGroupListItem.setInterval(_ctx.longValue("DescribesDoubleVerificationGroupsResponse.DoubleVerificationGroups.DoubleVerificationGroupList["+ i +"].Interval"));
-			doubleVerificationGroupListItem.setGroupId(_ctx.stringValue("DescribesDoubleVerificationGroupsResponse.DoubleVerificationGroups.DoubleVerificationGroupList["+ i +"].GroupId"));
+			doubleVerificationGroupListItem.setDeviceId(_ctx.stringValue("DescribesDoubleVerificationGroupsResponse.DoubleVerificationGroups.DoubleVerificationGroupList["+ i +"].DeviceId"));
 
 			List<PersonIdListItem> personIdList = new ArrayList<PersonIdListItem>();
 			for (int j = 0; j < _ctx.lengthValue("DescribesDoubleVerificationGroupsResponse.DoubleVerificationGroups.DoubleVerificationGroupList["+ i +"].PersonIdList.Length"); j++) {

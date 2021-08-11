@@ -41,6 +41,7 @@ public class DescribeSiteMonitorAttributeResponseUnmarshaller {
 		siteMonitors.setTaskName(_ctx.stringValue("DescribeSiteMonitorAttributeResponse.SiteMonitors.TaskName"));
 		siteMonitors.setInterval(_ctx.stringValue("DescribeSiteMonitorAttributeResponse.SiteMonitors.Interval"));
 		siteMonitors.setTaskId(_ctx.stringValue("DescribeSiteMonitorAttributeResponse.SiteMonitors.TaskId"));
+		siteMonitors.setEndTime(_ctx.stringValue("DescribeSiteMonitorAttributeResponse.SiteMonitors.EndTime"));
 
 		OptionJson optionJson = new OptionJson();
 		optionJson.setDns_type(_ctx.stringValue("DescribeSiteMonitorAttributeResponse.SiteMonitors.OptionJson.dns_type"));
@@ -62,6 +63,11 @@ public class DescribeSiteMonitorAttributeResponseUnmarshaller {
 		optionJson.setPort(_ctx.integerValue("DescribeSiteMonitorAttributeResponse.SiteMonitors.OptionJson.port"));
 		optionJson.setAuthentication(_ctx.integerValue("DescribeSiteMonitorAttributeResponse.SiteMonitors.OptionJson.authentication"));
 		optionJson.setTraceroute(_ctx.longValue("DescribeSiteMonitorAttributeResponse.SiteMonitors.OptionJson.traceroute"));
+		optionJson.setCert_verify(_ctx.booleanValue("DescribeSiteMonitorAttributeResponse.SiteMonitors.OptionJson.cert_verify"));
+		optionJson.setUnfollow_redirect(_ctx.booleanValue("DescribeSiteMonitorAttributeResponse.SiteMonitors.OptionJson.unfollow_redirect"));
+		optionJson.setProxy_protocol(_ctx.booleanValue("DescribeSiteMonitorAttributeResponse.SiteMonitors.OptionJson.proxy_protocol"));
+		optionJson.setAcceptable_response_code(_ctx.stringValue("DescribeSiteMonitorAttributeResponse.SiteMonitors.OptionJson.acceptable_response_code"));
+		optionJson.setIpv6_task(_ctx.stringValue("DescribeSiteMonitorAttributeResponse.SiteMonitors.OptionJson.ipv6_task"));
 		siteMonitors.setOptionJson(optionJson);
 
 		List<IspCity> ispCities = new ArrayList<IspCity>();

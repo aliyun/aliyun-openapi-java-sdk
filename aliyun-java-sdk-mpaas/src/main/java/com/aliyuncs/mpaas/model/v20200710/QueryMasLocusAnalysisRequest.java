@@ -1,0 +1,184 @@
+/*
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package com.aliyuncs.mpaas.model.v20200710;
+
+import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.mpaas.Endpoint;
+
+/**
+ * @author auto create
+ * @version 
+ */
+public class QueryMasLocusAnalysisRequest extends RpcAcsRequest<QueryMasLocusAnalysisResponse> {
+	   
+
+	private String behaviorEndDateTime;
+
+	private String userId;
+
+	private String autoStartDateTime;
+
+	private String autoEndDateTime;
+
+	private String tenantId;
+
+	private Long pageSize;
+
+	private String behaviorStartDateTime;
+
+	private String utdid;
+
+	private Long pageNo;
+
+	private String appId;
+
+	private String workspaceId;
+	public QueryMasLocusAnalysisRequest() {
+		super("mPaaS", "2020-07-10", "QueryMasLocusAnalysis");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
+
+	public String getBehaviorEndDateTime() {
+		return this.behaviorEndDateTime;
+	}
+
+	public void setBehaviorEndDateTime(String behaviorEndDateTime) {
+		this.behaviorEndDateTime = behaviorEndDateTime;
+		if(behaviorEndDateTime != null){
+			putBodyParameter("BehaviorEndDateTime", behaviorEndDateTime);
+		}
+	}
+
+	public String getUserId() {
+		return this.userId;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
+		if(userId != null){
+			putBodyParameter("UserId", userId);
+		}
+	}
+
+	public String getAutoStartDateTime() {
+		return this.autoStartDateTime;
+	}
+
+	public void setAutoStartDateTime(String autoStartDateTime) {
+		this.autoStartDateTime = autoStartDateTime;
+		if(autoStartDateTime != null){
+			putBodyParameter("AutoStartDateTime", autoStartDateTime);
+		}
+	}
+
+	public String getAutoEndDateTime() {
+		return this.autoEndDateTime;
+	}
+
+	public void setAutoEndDateTime(String autoEndDateTime) {
+		this.autoEndDateTime = autoEndDateTime;
+		if(autoEndDateTime != null){
+			putBodyParameter("AutoEndDateTime", autoEndDateTime);
+		}
+	}
+
+	public String getTenantId() {
+		return this.tenantId;
+	}
+
+	public void setTenantId(String tenantId) {
+		this.tenantId = tenantId;
+		if(tenantId != null){
+			putBodyParameter("TenantId", tenantId);
+		}
+	}
+
+	public Long getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Long pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putBodyParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getBehaviorStartDateTime() {
+		return this.behaviorStartDateTime;
+	}
+
+	public void setBehaviorStartDateTime(String behaviorStartDateTime) {
+		this.behaviorStartDateTime = behaviorStartDateTime;
+		if(behaviorStartDateTime != null){
+			putBodyParameter("BehaviorStartDateTime", behaviorStartDateTime);
+		}
+	}
+
+	public String getUtdid() {
+		return this.utdid;
+	}
+
+	public void setUtdid(String utdid) {
+		this.utdid = utdid;
+		if(utdid != null){
+			putBodyParameter("Utdid", utdid);
+		}
+	}
+
+	public Long getPageNo() {
+		return this.pageNo;
+	}
+
+	public void setPageNo(Long pageNo) {
+		this.pageNo = pageNo;
+		if(pageNo != null){
+			putBodyParameter("PageNo", pageNo.toString());
+		}
+	}
+
+	public String getAppId() {
+		return this.appId;
+	}
+
+	public void setAppId(String appId) {
+		this.appId = appId;
+		if(appId != null){
+			putBodyParameter("AppId", appId);
+		}
+	}
+
+	public String getWorkspaceId() {
+		return this.workspaceId;
+	}
+
+	public void setWorkspaceId(String workspaceId) {
+		this.workspaceId = workspaceId;
+		if(workspaceId != null){
+			putBodyParameter("WorkspaceId", workspaceId);
+		}
+	}
+
+	@Override
+	public Class<QueryMasLocusAnalysisResponse> getResponseClass() {
+		return QueryMasLocusAnalysisResponse.class;
+	}
+
+}

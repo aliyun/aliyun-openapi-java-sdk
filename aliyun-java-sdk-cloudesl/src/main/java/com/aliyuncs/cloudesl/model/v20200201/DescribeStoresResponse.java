@@ -163,6 +163,8 @@ public class DescribeStoresResponse extends AcsResponse {
 
 		private String level;
 
+		private String templateVersion;
+
 		public String getStoreName() {
 			return this.storeName;
 		}
@@ -225,6 +227,14 @@ public class DescribeStoresResponse extends AcsResponse {
 
 		public void setLevel(String level) {
 			this.level = level;
+		}
+
+		public String getTemplateVersion() {
+			return this.templateVersion;
+		}
+
+		public void setTemplateVersion(String templateVersion) {
+			this.templateVersion = templateVersion;
 		}
 	}
 

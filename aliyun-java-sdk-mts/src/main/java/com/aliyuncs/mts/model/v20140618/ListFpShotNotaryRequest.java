@@ -43,7 +43,7 @@ public class ListFpShotNotaryRequest extends RpcAcsRequest<ListFpShotNotaryRespo
 
 	private Long ownerId;
 	public ListFpShotNotaryRequest() {
-		super("Mts", "2014-06-18", "ListFpShotNotary");
+		super("Mts", "2014-06-18", "ListFpShotNotary", "mts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

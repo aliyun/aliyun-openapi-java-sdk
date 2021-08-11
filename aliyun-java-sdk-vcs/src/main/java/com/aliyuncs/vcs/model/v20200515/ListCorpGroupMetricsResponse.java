@@ -27,11 +27,11 @@ public class ListCorpGroupMetricsResponse extends AcsResponse {
 
 	private Integer totalCount;
 
-	private Integer pageSize;
+	private String requestId;
 
 	private String message;
 
-	private String requestId;
+	private Integer pageSize;
 
 	private Integer pageNumber;
 
@@ -49,12 +49,12 @@ public class ListCorpGroupMetricsResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getMessage() {
@@ -65,12 +65,12 @@ public class ListCorpGroupMetricsResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
 	}
 
 	public Integer getPageNumber() {
@@ -107,48 +107,32 @@ public class ListCorpGroupMetricsResponse extends AcsResponse {
 
 	public static class DataItem {
 
-		private String corpId;
-
-		private String personID;
-
-		private String corpGroupId;
+		private String dateId;
 
 		private String deviceGroupId;
+
+		private String corpGroupId;
 
 		private String deviceId;
 
 		private String userGroupId;
 
-		private String tagMetrics;
-
 		private String tagCode;
+
+		private String corpId;
+
+		private String tagMetrics;
 
 		private String tagValue;
 
-		private String dateId;
+		private String personID;
 
-		public String getCorpId() {
-			return this.corpId;
+		public String getDateId() {
+			return this.dateId;
 		}
 
-		public void setCorpId(String corpId) {
-			this.corpId = corpId;
-		}
-
-		public String getPersonID() {
-			return this.personID;
-		}
-
-		public void setPersonID(String personID) {
-			this.personID = personID;
-		}
-
-		public String getCorpGroupId() {
-			return this.corpGroupId;
-		}
-
-		public void setCorpGroupId(String corpGroupId) {
-			this.corpGroupId = corpGroupId;
+		public void setDateId(String dateId) {
+			this.dateId = dateId;
 		}
 
 		public String getDeviceGroupId() {
@@ -157,6 +141,14 @@ public class ListCorpGroupMetricsResponse extends AcsResponse {
 
 		public void setDeviceGroupId(String deviceGroupId) {
 			this.deviceGroupId = deviceGroupId;
+		}
+
+		public String getCorpGroupId() {
+			return this.corpGroupId;
+		}
+
+		public void setCorpGroupId(String corpGroupId) {
+			this.corpGroupId = corpGroupId;
 		}
 
 		public String getDeviceId() {
@@ -175,20 +167,28 @@ public class ListCorpGroupMetricsResponse extends AcsResponse {
 			this.userGroupId = userGroupId;
 		}
 
-		public String getTagMetrics() {
-			return this.tagMetrics;
-		}
-
-		public void setTagMetrics(String tagMetrics) {
-			this.tagMetrics = tagMetrics;
-		}
-
 		public String getTagCode() {
 			return this.tagCode;
 		}
 
 		public void setTagCode(String tagCode) {
 			this.tagCode = tagCode;
+		}
+
+		public String getCorpId() {
+			return this.corpId;
+		}
+
+		public void setCorpId(String corpId) {
+			this.corpId = corpId;
+		}
+
+		public String getTagMetrics() {
+			return this.tagMetrics;
+		}
+
+		public void setTagMetrics(String tagMetrics) {
+			this.tagMetrics = tagMetrics;
 		}
 
 		public String getTagValue() {
@@ -199,12 +199,12 @@ public class ListCorpGroupMetricsResponse extends AcsResponse {
 			this.tagValue = tagValue;
 		}
 
-		public String getDateId() {
-			return this.dateId;
+		public String getPersonID() {
+			return this.personID;
 		}
 
-		public void setDateId(String dateId) {
-			this.dateId = dateId;
+		public void setPersonID(String personID) {
+			this.personID = personID;
 		}
 	}
 

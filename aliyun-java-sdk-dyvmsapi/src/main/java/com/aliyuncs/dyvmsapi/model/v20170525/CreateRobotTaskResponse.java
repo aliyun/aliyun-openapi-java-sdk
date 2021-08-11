@@ -68,4 +68,9 @@ public class CreateRobotTaskResponse extends AcsResponse {
 	public CreateRobotTaskResponse getInstance(UnmarshallerContext context) {
 		return	CreateRobotTaskResponseUnmarshaller.unmarshall(this, context);
 	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
+	}
 }

@@ -31,7 +31,7 @@ public class WhiteIpListRequest extends RpcAcsRequest<WhiteIpListResponse> {
 
 	private String region;
 	public WhiteIpListRequest() {
-		super("Dts", "2020-01-01", "WhiteIpList");
+		super("Dts", "2020-01-01", "WhiteIpList", "dts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

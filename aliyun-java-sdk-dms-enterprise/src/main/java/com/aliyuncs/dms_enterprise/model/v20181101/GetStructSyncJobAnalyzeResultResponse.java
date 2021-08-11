@@ -27,11 +27,11 @@ public class GetStructSyncJobAnalyzeResultResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String errorCode;
+	private Boolean success;
 
 	private String errorMessage;
 
-	private Boolean success;
+	private String errorCode;
 
 	private StructSyncJobAnalyzeResult structSyncJobAnalyzeResult;
 
@@ -43,12 +43,12 @@ public class GetStructSyncJobAnalyzeResultResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getErrorCode() {
-		return this.errorCode;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public String getErrorMessage() {
@@ -59,12 +59,12 @@ public class GetStructSyncJobAnalyzeResultResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getErrorCode() {
+		return this.errorCode;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
 	}
 
 	public StructSyncJobAnalyzeResult getStructSyncJobAnalyzeResult() {
@@ -77,17 +77,9 @@ public class GetStructSyncJobAnalyzeResultResponse extends AcsResponse {
 
 	public static class StructSyncJobAnalyzeResult {
 
-		private List<Result> resultList;
-
 		private List<Summary> summaryList;
 
-		public List<Result> getResultList() {
-			return this.resultList;
-		}
-
-		public void setResultList(List<Result> resultList) {
-			this.resultList = resultList;
-		}
+		private List<Result> resultList;
 
 		public List<Summary> getSummaryList() {
 			return this.summaryList;
@@ -97,37 +89,12 @@ public class GetStructSyncJobAnalyzeResultResponse extends AcsResponse {
 			this.summaryList = summaryList;
 		}
 
-		public static class Result {
+		public List<Result> getResultList() {
+			return this.resultList;
+		}
 
-			private String sourceTableName;
-
-			private String script;
-
-			private String targetTableName;
-
-			public String getSourceTableName() {
-				return this.sourceTableName;
-			}
-
-			public void setSourceTableName(String sourceTableName) {
-				this.sourceTableName = sourceTableName;
-			}
-
-			public String getScript() {
-				return this.script;
-			}
-
-			public void setScript(String script) {
-				this.script = script;
-			}
-
-			public String getTargetTableName() {
-				return this.targetTableName;
-			}
-
-			public void setTargetTableName(String targetTableName) {
-				this.targetTableName = targetTableName;
-			}
+		public void setResultList(List<Result> resultList) {
+			this.resultList = resultList;
 		}
 
 		public static class Summary {
@@ -150,6 +117,39 @@ public class GetStructSyncJobAnalyzeResultResponse extends AcsResponse {
 
 			public void setCount(Long count) {
 				this.count = count;
+			}
+		}
+
+		public static class Result {
+
+			private String sourceTableName;
+
+			private String targetTableName;
+
+			private String script;
+
+			public String getSourceTableName() {
+				return this.sourceTableName;
+			}
+
+			public void setSourceTableName(String sourceTableName) {
+				this.sourceTableName = sourceTableName;
+			}
+
+			public String getTargetTableName() {
+				return this.targetTableName;
+			}
+
+			public void setTargetTableName(String targetTableName) {
+				this.targetTableName = targetTableName;
+			}
+
+			public String getScript() {
+				return this.script;
+			}
+
+			public void setScript(String script) {
+				this.script = script;
 			}
 		}
 	}

@@ -16,7 +16,6 @@ package com.aliyuncs.retailadvqa_public.model.v20200515;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
-import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 
 /**
@@ -37,9 +36,10 @@ public class SaveLabelDataSetRequest extends RpcAcsRequest<SaveLabelDataSetRespo
 	private String tableName;
 
 	private String cubeId;
+
+	private String workspaceId;
 	public SaveLabelDataSetRequest() {
 		super("retailadvqa-public", "2020-05-15", "SaveLabelDataSet");
-		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
 
@@ -113,6 +113,17 @@ public class SaveLabelDataSetRequest extends RpcAcsRequest<SaveLabelDataSetRespo
 		this.cubeId = cubeId;
 		if(cubeId != null){
 			putQueryParameter("CubeId", cubeId);
+		}
+	}
+
+	public String getWorkspaceId() {
+		return this.workspaceId;
+	}
+
+	public void setWorkspaceId(String workspaceId) {
+		this.workspaceId = workspaceId;
+		if(workspaceId != null){
+			putQueryParameter("WorkspaceId", workspaceId);
 		}
 	}
 

@@ -54,6 +54,9 @@ public class DescribeAssetDetailByUuidResponseUnmarshaller {
 		assetDetail.setVpcInstanceId(_ctx.stringValue("DescribeAssetDetailByUuidResponse.AssetDetail.VpcInstanceId"));
 		assetDetail.setInstanceStatus(_ctx.stringValue("DescribeAssetDetailByUuidResponse.AssetDetail.InstanceStatus"));
 		assetDetail.setCreateTime(_ctx.longValue("DescribeAssetDetailByUuidResponse.AssetDetail.CreateTime"));
+		assetDetail.setAuthVersion(_ctx.integerValue("DescribeAssetDetailByUuidResponse.AssetDetail.AuthVersion"));
+		assetDetail.setBind(_ctx.booleanValue("DescribeAssetDetailByUuidResponse.AssetDetail.Bind"));
+		assetDetail.setAuthModifyTime(_ctx.longValue("DescribeAssetDetailByUuidResponse.AssetDetail.AuthModifyTime"));
 
 		List<String> ipList = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeAssetDetailByUuidResponse.AssetDetail.IpList.Length"); i++) {

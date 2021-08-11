@@ -29,7 +29,7 @@ public class ModifyFileSystemRequest extends RpcAcsRequest<ModifyFileSystemRespo
 
 	private String fileSystemId;
 	public ModifyFileSystemRequest() {
-		super("NAS", "2017-06-26", "ModifyFileSystem");
+		super("NAS", "2017-06-26", "ModifyFileSystem", "nas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

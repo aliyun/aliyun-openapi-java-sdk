@@ -29,7 +29,7 @@ public class ShieldPrecheckRequest extends RpcAcsRequest<ShieldPrecheckResponse>
 
 	private String dtsInstanceId;
 	public ShieldPrecheckRequest() {
-		super("Dts", "2020-01-01", "ShieldPrecheck");
+		super("Dts", "2020-01-01", "ShieldPrecheck", "dts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

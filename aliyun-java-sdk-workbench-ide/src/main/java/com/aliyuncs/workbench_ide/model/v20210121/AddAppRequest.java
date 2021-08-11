@@ -30,6 +30,8 @@ public class AddAppRequest extends RpcAcsRequest<AddAppResponse> {
 
 	private String currentOrgId;
 
+	private String computeType;
+
 	private String appDescription;
 
 	private String appName;
@@ -72,6 +74,17 @@ public class AddAppRequest extends RpcAcsRequest<AddAppResponse> {
 		this.currentOrgId = currentOrgId;
 		if(currentOrgId != null){
 			putQueryParameter("CurrentOrgId", currentOrgId);
+		}
+	}
+
+	public String getComputeType() {
+		return this.computeType;
+	}
+
+	public void setComputeType(String computeType) {
+		this.computeType = computeType;
+		if(computeType != null){
+			putQueryParameter("ComputeType", computeType);
 		}
 	}
 

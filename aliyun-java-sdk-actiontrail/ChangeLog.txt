@@ -1,3 +1,6 @@
+2021-06-15 Version: 1.0.6
+- Support API for Trail.
+
 2020-11-26 Version: 1.0.5
 - Generated 2020-07-06, 2017-12-04 for `Actiontrail`.
 

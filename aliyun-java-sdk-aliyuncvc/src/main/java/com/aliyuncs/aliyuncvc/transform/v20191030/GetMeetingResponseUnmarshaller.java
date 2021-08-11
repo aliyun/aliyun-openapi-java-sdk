@@ -28,27 +28,27 @@ public class GetMeetingResponseUnmarshaller {
 	public static GetMeetingResponse unmarshall(GetMeetingResponse getMeetingResponse, UnmarshallerContext _ctx) {
 		
 		getMeetingResponse.setRequestId(_ctx.stringValue("GetMeetingResponse.RequestId"));
-		getMeetingResponse.setErrorCode(_ctx.integerValue("GetMeetingResponse.ErrorCode"));
 		getMeetingResponse.setMessage(_ctx.stringValue("GetMeetingResponse.Message"));
+		getMeetingResponse.setErrorCode(_ctx.integerValue("GetMeetingResponse.ErrorCode"));
 		getMeetingResponse.setSuccess(_ctx.booleanValue("GetMeetingResponse.Success"));
 
 		MeetingInfo meetingInfo = new MeetingInfo();
-		meetingInfo.setMeetingName(_ctx.stringValue("GetMeetingResponse.MeetingInfo.MeetingName"));
-		meetingInfo.setValidTime(_ctx.longValue("GetMeetingResponse.MeetingInfo.ValidTime"));
-		meetingInfo.setMeetingCode(_ctx.stringValue("GetMeetingResponse.MeetingInfo.MeetingCode"));
-		meetingInfo.setCreateTime(_ctx.longValue("GetMeetingResponse.MeetingInfo.CreateTime"));
-		meetingInfo.setUserId(_ctx.stringValue("GetMeetingResponse.MeetingInfo.UserId"));
-		meetingInfo.setMeetingUUID(_ctx.stringValue("GetMeetingResponse.MeetingInfo.MeetingUUID"));
 		meetingInfo.setPassword(_ctx.stringValue("GetMeetingResponse.MeetingInfo.Password"));
+		meetingInfo.setMeetingUUID(_ctx.stringValue("GetMeetingResponse.MeetingInfo.MeetingUUID"));
+		meetingInfo.setValidTime(_ctx.longValue("GetMeetingResponse.MeetingInfo.ValidTime"));
+		meetingInfo.setCreateTime(_ctx.longValue("GetMeetingResponse.MeetingInfo.CreateTime"));
+		meetingInfo.setMeetingName(_ctx.stringValue("GetMeetingResponse.MeetingInfo.MeetingName"));
+		meetingInfo.setUserId(_ctx.stringValue("GetMeetingResponse.MeetingInfo.UserId"));
+		meetingInfo.setMeetingCode(_ctx.stringValue("GetMeetingResponse.MeetingInfo.MeetingCode"));
 
 		List<MemberListItem> memberList = new ArrayList<MemberListItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetMeetingResponse.MeetingInfo.MemberList.Length"); i++) {
 			MemberListItem memberListItem = new MemberListItem();
-			memberListItem.setUserAvatarUrl(_ctx.stringValue("GetMeetingResponse.MeetingInfo.MemberList["+ i +"].UserAvatarUrl"));
-			memberListItem.setMemberUUID(_ctx.stringValue("GetMeetingResponse.MeetingInfo.MemberList["+ i +"].MemberUUID"));
-			memberListItem.setUserName(_ctx.stringValue("GetMeetingResponse.MeetingInfo.MemberList["+ i +"].UserName"));
-			memberListItem.setUserId(_ctx.stringValue("GetMeetingResponse.MeetingInfo.MemberList["+ i +"].UserId"));
 			memberListItem.setStatus(_ctx.stringValue("GetMeetingResponse.MeetingInfo.MemberList["+ i +"].Status"));
+			memberListItem.setMemberUUID(_ctx.stringValue("GetMeetingResponse.MeetingInfo.MemberList["+ i +"].MemberUUID"));
+			memberListItem.setUserAvatarUrl(_ctx.stringValue("GetMeetingResponse.MeetingInfo.MemberList["+ i +"].UserAvatarUrl"));
+			memberListItem.setUserId(_ctx.stringValue("GetMeetingResponse.MeetingInfo.MemberList["+ i +"].UserId"));
+			memberListItem.setUserName(_ctx.stringValue("GetMeetingResponse.MeetingInfo.MemberList["+ i +"].UserName"));
 
 			memberList.add(memberListItem);
 		}

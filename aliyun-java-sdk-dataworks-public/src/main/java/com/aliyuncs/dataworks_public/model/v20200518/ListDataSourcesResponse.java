@@ -143,6 +143,8 @@ public class ListDataSourcesResponse extends AcsResponse {
 
 			private Integer status;
 
+			private String content;
+
 			public Boolean getShared() {
 				return this.shared;
 			}
@@ -277,6 +279,14 @@ public class ListDataSourcesResponse extends AcsResponse {
 
 			public void setStatus(Integer status) {
 				this.status = status;
+			}
+
+			public String getContent() {
+				return this.content;
+			}
+
+			public void setContent(String content) {
+				this.content = content;
 			}
 		}
 	}

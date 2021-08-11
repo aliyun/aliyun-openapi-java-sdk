@@ -125,6 +125,12 @@ public class DescribeLoadBalancersResponse extends AcsResponse {
 
 		private String loadBalancerSpec;
 
+		private String deleteProtection;
+
+		private Boolean specBpsFlag;
+
+		private String specType;
+
 		private List<Tag> tags;
 
 		public String getLoadBalancerId() {
@@ -317,6 +323,30 @@ public class DescribeLoadBalancersResponse extends AcsResponse {
 
 		public void setLoadBalancerSpec(String loadBalancerSpec) {
 			this.loadBalancerSpec = loadBalancerSpec;
+		}
+
+		public String getDeleteProtection() {
+			return this.deleteProtection;
+		}
+
+		public void setDeleteProtection(String deleteProtection) {
+			this.deleteProtection = deleteProtection;
+		}
+
+		public Boolean getSpecBpsFlag() {
+			return this.specBpsFlag;
+		}
+
+		public void setSpecBpsFlag(Boolean specBpsFlag) {
+			this.specBpsFlag = specBpsFlag;
+		}
+
+		public String getSpecType() {
+			return this.specType;
+		}
+
+		public void setSpecType(String specType) {
+			this.specType = specType;
 		}
 
 		public List<Tag> getTags() {

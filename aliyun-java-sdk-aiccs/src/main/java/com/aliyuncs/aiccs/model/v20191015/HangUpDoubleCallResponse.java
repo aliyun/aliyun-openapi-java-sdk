@@ -24,21 +24,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class HangUpDoubleCallResponse extends AcsResponse {
 
-	private String message;
-
 	private String requestId;
-
-	private String code;
 
 	private Boolean success;
 
-	public String getMessage() {
-		return this.message;
-	}
+	private String code;
 
-	public void setMessage(String message) {
-		this.message = message;
-	}
+	private String message;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -46,6 +38,14 @@ public class HangUpDoubleCallResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public String getCode() {
@@ -56,12 +56,12 @@ public class HangUpDoubleCallResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	@Override

@@ -33,7 +33,7 @@ public class DescribeSynchronizationObjectModifyStatusRequest extends RpcAcsRequ
 
 	private String taskId;
 	public DescribeSynchronizationObjectModifyStatusRequest() {
-		super("Dts", "2020-01-01", "DescribeSynchronizationObjectModifyStatus");
+		super("Dts", "2020-01-01", "DescribeSynchronizationObjectModifyStatus", "dts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

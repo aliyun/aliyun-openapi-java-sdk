@@ -27,11 +27,11 @@ public class ModifyBackupPolicyStatusRequest extends RpcAcsRequest<ModifyBackupP
 
 	private Long resourceOwnerId;
 
-	private String policyVersion;
-
 	private String sourceIp;
 
 	private Long id;
+
+	private String policyVersion;
 
 	private String status;
 	public ModifyBackupPolicyStatusRequest() {
@@ -54,17 +54,6 @@ public class ModifyBackupPolicyStatusRequest extends RpcAcsRequest<ModifyBackupP
 		}
 	}
 
-	public String getPolicyVersion() {
-		return this.policyVersion;
-	}
-
-	public void setPolicyVersion(String policyVersion) {
-		this.policyVersion = policyVersion;
-		if(policyVersion != null){
-			putQueryParameter("PolicyVersion", policyVersion);
-		}
-	}
-
 	public String getSourceIp() {
 		return this.sourceIp;
 	}
@@ -84,6 +73,17 @@ public class ModifyBackupPolicyStatusRequest extends RpcAcsRequest<ModifyBackupP
 		this.id = id;
 		if(id != null){
 			putQueryParameter("Id", id.toString());
+		}
+	}
+
+	public String getPolicyVersion() {
+		return this.policyVersion;
+	}
+
+	public void setPolicyVersion(String policyVersion) {
+		this.policyVersion = policyVersion;
+		if(policyVersion != null){
+			putQueryParameter("PolicyVersion", policyVersion);
 		}
 	}
 

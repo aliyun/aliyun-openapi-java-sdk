@@ -53,6 +53,10 @@ public class DescribeBackupPolicyResponse extends AcsResponse {
 
 		private String policy;
 
+		private String policyVersion;
+
+		private String regionId;
+
 		private String status;
 
 		private String clientStatus;
@@ -81,6 +85,22 @@ public class DescribeBackupPolicyResponse extends AcsResponse {
 
 		public void setPolicy(String policy) {
 			this.policy = policy;
+		}
+
+		public String getPolicyVersion() {
+			return this.policyVersion;
+		}
+
+		public void setPolicyVersion(String policyVersion) {
+			this.policyVersion = policyVersion;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 
 		public String getStatus() {

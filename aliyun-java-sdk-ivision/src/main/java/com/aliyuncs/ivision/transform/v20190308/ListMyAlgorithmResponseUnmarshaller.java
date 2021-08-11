@@ -33,20 +33,20 @@ public class ListMyAlgorithmResponseUnmarshaller {
 		listMyAlgorithmResponse.setSuccess(_ctx.booleanValue("ListMyAlgorithmResponse.Success"));
 
 		Data data = new Data();
-		data.setTotalCount(_ctx.integerValue("ListMyAlgorithmResponse.Data.TotalCount"));
 		data.setPageSize(_ctx.integerValue("ListMyAlgorithmResponse.Data.PageSize"));
 		data.setPageNumber(_ctx.integerValue("ListMyAlgorithmResponse.Data.PageNumber"));
+		data.setTotalCount(_ctx.integerValue("ListMyAlgorithmResponse.Data.TotalCount"));
 
 		List<AlgorithmListItem> algorithmList = new ArrayList<AlgorithmListItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListMyAlgorithmResponse.Data.AlgorithmList.Length"); i++) {
 			AlgorithmListItem algorithmListItem = new AlgorithmListItem();
-			algorithmListItem.setAlgorithmOrder(_ctx.integerValue("ListMyAlgorithmResponse.Data.AlgorithmList["+ i +"].AlgorithmOrder"));
-			algorithmListItem.setYesterdayCount(_ctx.integerValue("ListMyAlgorithmResponse.Data.AlgorithmList["+ i +"].YesterdayCount"));
-			algorithmListItem.setApiDocUrl(_ctx.stringValue("ListMyAlgorithmResponse.Data.AlgorithmList["+ i +"].ApiDocUrl"));
+			algorithmListItem.setAlgorithmName(_ctx.stringValue("ListMyAlgorithmResponse.Data.AlgorithmList["+ i +"].AlgorithmName"));
 			algorithmListItem.setDeployRegion(_ctx.stringValue("ListMyAlgorithmResponse.Data.AlgorithmList["+ i +"].DeployRegion"));
 			algorithmListItem.setCurrentMonthCount(_ctx.integerValue("ListMyAlgorithmResponse.Data.AlgorithmList["+ i +"].CurrentMonthCount"));
-			algorithmListItem.setAlgorithmName(_ctx.stringValue("ListMyAlgorithmResponse.Data.AlgorithmList["+ i +"].AlgorithmName"));
 			algorithmListItem.setAlgorithmCode(_ctx.stringValue("ListMyAlgorithmResponse.Data.AlgorithmList["+ i +"].AlgorithmCode"));
+			algorithmListItem.setApiDocUrl(_ctx.stringValue("ListMyAlgorithmResponse.Data.AlgorithmList["+ i +"].ApiDocUrl"));
+			algorithmListItem.setYesterdayCount(_ctx.integerValue("ListMyAlgorithmResponse.Data.AlgorithmList["+ i +"].YesterdayCount"));
+			algorithmListItem.setAlgorithmOrder(_ctx.integerValue("ListMyAlgorithmResponse.Data.AlgorithmList["+ i +"].AlgorithmOrder"));
 
 			algorithmList.add(algorithmListItem);
 		}

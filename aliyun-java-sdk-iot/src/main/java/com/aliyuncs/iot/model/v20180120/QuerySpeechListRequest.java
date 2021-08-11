@@ -29,6 +29,8 @@ public class QuerySpeechListRequest extends RpcAcsRequest<QuerySpeechListRespons
 
 	private Integer pageId;
 
+	private String audioFormat;
+
 	private String iotInstanceId;
 
 	private Integer pageSize;
@@ -60,6 +62,17 @@ public class QuerySpeechListRequest extends RpcAcsRequest<QuerySpeechListRespons
 		this.pageId = pageId;
 		if(pageId != null){
 			putBodyParameter("PageId", pageId.toString());
+		}
+	}
+
+	public String getAudioFormat() {
+		return this.audioFormat;
+	}
+
+	public void setAudioFormat(String audioFormat) {
+		this.audioFormat = audioFormat;
+		if(audioFormat != null){
+			putBodyParameter("AudioFormat", audioFormat);
 		}
 	}
 

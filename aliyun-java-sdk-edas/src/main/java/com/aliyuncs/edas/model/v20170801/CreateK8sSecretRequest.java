@@ -33,7 +33,11 @@ public class CreateK8sSecretRequest extends RoaAcsRequest<CreateK8sSecretRespons
 
 	private String clusterId;
 
+	private String certId;
+
 	private String type;
+
+	private String certRegionId;
 	public CreateK8sSecretRequest() {
 		super("Edas", "2017-08-01", "CreateK8sSecret", "Edas");
 		setUriPattern("/pop/v5/k8s/acs/k8s_secret");
@@ -88,6 +92,17 @@ public class CreateK8sSecretRequest extends RoaAcsRequest<CreateK8sSecretRespons
 		}
 	}
 
+	public String getCertId() {
+		return this.certId;
+	}
+
+	public void setCertId(String certId) {
+		this.certId = certId;
+		if(certId != null){
+			putBodyParameter("CertId", certId);
+		}
+	}
+
 	public String getType() {
 		return this.type;
 	}
@@ -96,6 +111,17 @@ public class CreateK8sSecretRequest extends RoaAcsRequest<CreateK8sSecretRespons
 		this.type = type;
 		if(type != null){
 			putBodyParameter("Type", type);
+		}
+	}
+
+	public String getCertRegionId() {
+		return this.certRegionId;
+	}
+
+	public void setCertRegionId(String certRegionId) {
+		this.certRegionId = certRegionId;
+		if(certRegionId != null){
+			putBodyParameter("CertRegionId", certRegionId);
 		}
 	}
 

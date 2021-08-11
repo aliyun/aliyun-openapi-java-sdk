@@ -33,7 +33,7 @@ public class StartStreamRequest extends RpcAcsRequest<StartStreamResponse> {
 
 	private Long ownerId;
 	public StartStreamRequest() {
-		super("vs", "2018-12-12", "StartStream", "vs");
+		super("vs", "2018-12-12", "StartStream");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

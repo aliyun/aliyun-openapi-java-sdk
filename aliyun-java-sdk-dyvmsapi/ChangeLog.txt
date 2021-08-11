@@ -1,3 +1,6 @@
+2021-07-30 Version: 3.1.0
+- Update Dyvmsapi SDK.
+
 2019-11-20 Version: 3.0.2
 - Add API ReportVoipProblems.
 - Add API QueryVoipNumberBindINfos.

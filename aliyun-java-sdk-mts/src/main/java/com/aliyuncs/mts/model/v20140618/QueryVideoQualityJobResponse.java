@@ -131,4 +131,9 @@ public class QueryVideoQualityJobResponse extends AcsResponse {
 	public QueryVideoQualityJobResponse getInstance(UnmarshallerContext context) {
 		return	QueryVideoQualityJobResponseUnmarshaller.unmarshall(this, context);
 	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
+	}
 }

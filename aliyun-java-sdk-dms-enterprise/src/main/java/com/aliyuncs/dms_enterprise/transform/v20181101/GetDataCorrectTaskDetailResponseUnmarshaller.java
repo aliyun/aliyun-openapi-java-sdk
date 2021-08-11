@@ -24,15 +24,15 @@ public class GetDataCorrectTaskDetailResponseUnmarshaller {
 	public static GetDataCorrectTaskDetailResponse unmarshall(GetDataCorrectTaskDetailResponse getDataCorrectTaskDetailResponse, UnmarshallerContext _ctx) {
 		
 		getDataCorrectTaskDetailResponse.setRequestId(_ctx.stringValue("GetDataCorrectTaskDetailResponse.RequestId"));
-		getDataCorrectTaskDetailResponse.setErrorCode(_ctx.stringValue("GetDataCorrectTaskDetailResponse.ErrorCode"));
-		getDataCorrectTaskDetailResponse.setErrorMessage(_ctx.stringValue("GetDataCorrectTaskDetailResponse.ErrorMessage"));
 		getDataCorrectTaskDetailResponse.setSuccess(_ctx.booleanValue("GetDataCorrectTaskDetailResponse.Success"));
+		getDataCorrectTaskDetailResponse.setErrorMessage(_ctx.stringValue("GetDataCorrectTaskDetailResponse.ErrorMessage"));
+		getDataCorrectTaskDetailResponse.setErrorCode(_ctx.stringValue("GetDataCorrectTaskDetailResponse.ErrorCode"));
 
 		DataCorrectTaskDetail dataCorrectTaskDetail = new DataCorrectTaskDetail();
-		dataCorrectTaskDetail.setJobStatus(_ctx.stringValue("GetDataCorrectTaskDetailResponse.DataCorrectTaskDetail.jobStatus"));
-		dataCorrectTaskDetail.setCreateTime(_ctx.stringValue("GetDataCorrectTaskDetailResponse.DataCorrectTaskDetail.CreateTime"));
-		dataCorrectTaskDetail.setActualAffectRows(_ctx.longValue("GetDataCorrectTaskDetailResponse.DataCorrectTaskDetail.ActualAffectRows"));
 		dataCorrectTaskDetail.setDBTaskGroupId(_ctx.longValue("GetDataCorrectTaskDetailResponse.DataCorrectTaskDetail.DBTaskGroupId"));
+		dataCorrectTaskDetail.setJobStatus(_ctx.stringValue("GetDataCorrectTaskDetailResponse.DataCorrectTaskDetail.jobStatus"));
+		dataCorrectTaskDetail.setActualAffectRows(_ctx.longValue("GetDataCorrectTaskDetailResponse.DataCorrectTaskDetail.ActualAffectRows"));
+		dataCorrectTaskDetail.setCreateTime(_ctx.stringValue("GetDataCorrectTaskDetailResponse.DataCorrectTaskDetail.CreateTime"));
 		getDataCorrectTaskDetailResponse.setDataCorrectTaskDetail(dataCorrectTaskDetail);
 	 
 	 	return getDataCorrectTaskDetailResponse;

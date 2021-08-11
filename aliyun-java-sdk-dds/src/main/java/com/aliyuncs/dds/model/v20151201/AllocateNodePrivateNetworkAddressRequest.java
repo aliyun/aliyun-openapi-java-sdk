@@ -45,7 +45,7 @@ public class AllocateNodePrivateNetworkAddressRequest extends RpcAcsRequest<Allo
 
 	private String zoneId;
 	public AllocateNodePrivateNetworkAddressRequest() {
-		super("Dds", "2015-12-01", "AllocateNodePrivateNetworkAddress");
+		super("Dds", "2015-12-01", "AllocateNodePrivateNetworkAddress", "Dds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -46,30 +46,30 @@ public class SetPasswordPolicyResponse extends AcsResponse {
 
 	public static class PasswordPolicy {
 
-		private Integer minimumPasswordLength;
+		private Boolean requireNumbers;
 
 		private Boolean requireLowercaseCharacters;
 
-		private Boolean requireUppercaseCharacters;
-
-		private Boolean requireNumbers;
-
-		private Boolean requireSymbols;
-
 		private Boolean hardExpiry;
-
-		private Integer maxPasswordAge;
 
 		private Integer passwordReusePrevention;
 
+		private Boolean requireSymbols;
+
+		private Integer maxPasswordAge;
+
+		private Integer minimumPasswordLength;
+
+		private Boolean requireUppercaseCharacters;
+
 		private Integer maxLoginAttemps;
 
-		public Integer getMinimumPasswordLength() {
-			return this.minimumPasswordLength;
+		public Boolean getRequireNumbers() {
+			return this.requireNumbers;
 		}
 
-		public void setMinimumPasswordLength(Integer minimumPasswordLength) {
-			this.minimumPasswordLength = minimumPasswordLength;
+		public void setRequireNumbers(Boolean requireNumbers) {
+			this.requireNumbers = requireNumbers;
 		}
 
 		public Boolean getRequireLowercaseCharacters() {
@@ -80,20 +80,20 @@ public class SetPasswordPolicyResponse extends AcsResponse {
 			this.requireLowercaseCharacters = requireLowercaseCharacters;
 		}
 
-		public Boolean getRequireUppercaseCharacters() {
-			return this.requireUppercaseCharacters;
+		public Boolean getHardExpiry() {
+			return this.hardExpiry;
 		}
 
-		public void setRequireUppercaseCharacters(Boolean requireUppercaseCharacters) {
-			this.requireUppercaseCharacters = requireUppercaseCharacters;
+		public void setHardExpiry(Boolean hardExpiry) {
+			this.hardExpiry = hardExpiry;
 		}
 
-		public Boolean getRequireNumbers() {
-			return this.requireNumbers;
+		public Integer getPasswordReusePrevention() {
+			return this.passwordReusePrevention;
 		}
 
-		public void setRequireNumbers(Boolean requireNumbers) {
-			this.requireNumbers = requireNumbers;
+		public void setPasswordReusePrevention(Integer passwordReusePrevention) {
+			this.passwordReusePrevention = passwordReusePrevention;
 		}
 
 		public Boolean getRequireSymbols() {
@@ -104,14 +104,6 @@ public class SetPasswordPolicyResponse extends AcsResponse {
 			this.requireSymbols = requireSymbols;
 		}
 
-		public Boolean getHardExpiry() {
-			return this.hardExpiry;
-		}
-
-		public void setHardExpiry(Boolean hardExpiry) {
-			this.hardExpiry = hardExpiry;
-		}
-
 		public Integer getMaxPasswordAge() {
 			return this.maxPasswordAge;
 		}
@@ -120,12 +112,20 @@ public class SetPasswordPolicyResponse extends AcsResponse {
 			this.maxPasswordAge = maxPasswordAge;
 		}
 
-		public Integer getPasswordReusePrevention() {
-			return this.passwordReusePrevention;
+		public Integer getMinimumPasswordLength() {
+			return this.minimumPasswordLength;
 		}
 
-		public void setPasswordReusePrevention(Integer passwordReusePrevention) {
-			this.passwordReusePrevention = passwordReusePrevention;
+		public void setMinimumPasswordLength(Integer minimumPasswordLength) {
+			this.minimumPasswordLength = minimumPasswordLength;
+		}
+
+		public Boolean getRequireUppercaseCharacters() {
+			return this.requireUppercaseCharacters;
+		}
+
+		public void setRequireUppercaseCharacters(Boolean requireUppercaseCharacters) {
+			this.requireUppercaseCharacters = requireUppercaseCharacters;
 		}
 
 		public Integer getMaxLoginAttemps() {

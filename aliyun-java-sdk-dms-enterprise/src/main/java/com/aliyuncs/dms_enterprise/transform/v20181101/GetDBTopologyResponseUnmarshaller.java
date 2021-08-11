@@ -28,31 +28,31 @@ public class GetDBTopologyResponseUnmarshaller {
 	public static GetDBTopologyResponse unmarshall(GetDBTopologyResponse getDBTopologyResponse, UnmarshallerContext _ctx) {
 		
 		getDBTopologyResponse.setRequestId(_ctx.stringValue("GetDBTopologyResponse.RequestId"));
-		getDBTopologyResponse.setErrorCode(_ctx.stringValue("GetDBTopologyResponse.ErrorCode"));
-		getDBTopologyResponse.setErrorMessage(_ctx.stringValue("GetDBTopologyResponse.ErrorMessage"));
 		getDBTopologyResponse.setSuccess(_ctx.booleanValue("GetDBTopologyResponse.Success"));
+		getDBTopologyResponse.setErrorMessage(_ctx.stringValue("GetDBTopologyResponse.ErrorMessage"));
+		getDBTopologyResponse.setErrorCode(_ctx.stringValue("GetDBTopologyResponse.ErrorCode"));
 
 		DBTopology dBTopology = new DBTopology();
 		dBTopology.setLogicDbId(_ctx.longValue("GetDBTopologyResponse.DBTopology.LogicDbId"));
+		dBTopology.setLogicDbName(_ctx.stringValue("GetDBTopologyResponse.DBTopology.LogicDbName"));
 		dBTopology.setSearchName(_ctx.stringValue("GetDBTopologyResponse.DBTopology.SearchName"));
 		dBTopology.setAlias(_ctx.stringValue("GetDBTopologyResponse.DBTopology.Alias"));
-		dBTopology.setLogicDbName(_ctx.stringValue("GetDBTopologyResponse.DBTopology.LogicDbName"));
-		dBTopology.setEnvType(_ctx.stringValue("GetDBTopologyResponse.DBTopology.EnvType"));
 		dBTopology.setDbType(_ctx.stringValue("GetDBTopologyResponse.DBTopology.DbType"));
+		dBTopology.setEnvType(_ctx.stringValue("GetDBTopologyResponse.DBTopology.EnvType"));
 
 		List<DBTopologyInfo> dBTopologyInfoList = new ArrayList<DBTopologyInfo>();
 		for (int i = 0; i < _ctx.lengthValue("GetDBTopologyResponse.DBTopology.DBTopologyInfoList.Length"); i++) {
 			DBTopologyInfo dBTopologyInfo = new DBTopologyInfo();
-			dBTopologyInfo.setInstanceSource(_ctx.stringValue("GetDBTopologyResponse.DBTopology.DBTopologyInfoList["+ i +"].InstanceSource"));
-			dBTopologyInfo.setInstanceResourceId(_ctx.stringValue("GetDBTopologyResponse.DBTopology.DBTopologyInfoList["+ i +"].InstanceResourceId"));
-			dBTopologyInfo.setInstanceId(_ctx.longValue("GetDBTopologyResponse.DBTopology.DBTopologyInfoList["+ i +"].InstanceId"));
-			dBTopologyInfo.setSearchName(_ctx.stringValue("GetDBTopologyResponse.DBTopology.DBTopologyInfoList["+ i +"].SearchName"));
 			dBTopologyInfo.setDbId(_ctx.longValue("GetDBTopologyResponse.DBTopology.DBTopologyInfoList["+ i +"].DbId"));
-			dBTopologyInfo.setCatalogName(_ctx.stringValue("GetDBTopologyResponse.DBTopology.DBTopologyInfoList["+ i +"].CatalogName"));
-			dBTopologyInfo.setRegionId(_ctx.stringValue("GetDBTopologyResponse.DBTopology.DBTopologyInfoList["+ i +"].RegionId"));
-			dBTopologyInfo.setEnvType(_ctx.stringValue("GetDBTopologyResponse.DBTopology.DBTopologyInfoList["+ i +"].EnvType"));
-			dBTopologyInfo.setDbType(_ctx.stringValue("GetDBTopologyResponse.DBTopology.DBTopologyInfoList["+ i +"].DbType"));
 			dBTopologyInfo.setSchemaName(_ctx.stringValue("GetDBTopologyResponse.DBTopology.DBTopologyInfoList["+ i +"].SchemaName"));
+			dBTopologyInfo.setCatalogName(_ctx.stringValue("GetDBTopologyResponse.DBTopology.DBTopologyInfoList["+ i +"].CatalogName"));
+			dBTopologyInfo.setSearchName(_ctx.stringValue("GetDBTopologyResponse.DBTopology.DBTopologyInfoList["+ i +"].SearchName"));
+			dBTopologyInfo.setDbType(_ctx.stringValue("GetDBTopologyResponse.DBTopology.DBTopologyInfoList["+ i +"].DbType"));
+			dBTopologyInfo.setEnvType(_ctx.stringValue("GetDBTopologyResponse.DBTopology.DBTopologyInfoList["+ i +"].EnvType"));
+			dBTopologyInfo.setInstanceId(_ctx.longValue("GetDBTopologyResponse.DBTopology.DBTopologyInfoList["+ i +"].InstanceId"));
+			dBTopologyInfo.setRegionId(_ctx.stringValue("GetDBTopologyResponse.DBTopology.DBTopologyInfoList["+ i +"].RegionId"));
+			dBTopologyInfo.setInstanceResourceId(_ctx.stringValue("GetDBTopologyResponse.DBTopology.DBTopologyInfoList["+ i +"].InstanceResourceId"));
+			dBTopologyInfo.setInstanceSource(_ctx.stringValue("GetDBTopologyResponse.DBTopology.DBTopologyInfoList["+ i +"].InstanceSource"));
 
 			dBTopologyInfoList.add(dBTopologyInfo);
 		}

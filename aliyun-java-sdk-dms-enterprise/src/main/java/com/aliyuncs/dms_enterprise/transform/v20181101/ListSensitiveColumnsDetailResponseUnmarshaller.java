@@ -34,16 +34,16 @@ public class ListSensitiveColumnsDetailResponseUnmarshaller {
 		List<SensitiveColumnsDetail> sensitiveColumnsDetailList = new ArrayList<SensitiveColumnsDetail>();
 		for (int i = 0; i < _ctx.lengthValue("ListSensitiveColumnsDetailResponse.SensitiveColumnsDetailList.Length"); i++) {
 			SensitiveColumnsDetail sensitiveColumnsDetail = new SensitiveColumnsDetail();
-			sensitiveColumnsDetail.setTableName(_ctx.stringValue("ListSensitiveColumnsDetailResponse.SensitiveColumnsDetailList["+ i +"].TableName"));
-			sensitiveColumnsDetail.setColumnName(_ctx.stringValue("ListSensitiveColumnsDetailResponse.SensitiveColumnsDetailList["+ i +"].ColumnName"));
-			sensitiveColumnsDetail.setColumnType(_ctx.stringValue("ListSensitiveColumnsDetailResponse.SensitiveColumnsDetailList["+ i +"].ColumnType"));
-			sensitiveColumnsDetail.setSearchName(_ctx.stringValue("ListSensitiveColumnsDetailResponse.SensitiveColumnsDetailList["+ i +"].SearchName"));
-			sensitiveColumnsDetail.setColumnDescription(_ctx.stringValue("ListSensitiveColumnsDetailResponse.SensitiveColumnsDetailList["+ i +"].ColumnDescription"));
 			sensitiveColumnsDetail.setDbId(_ctx.longValue("ListSensitiveColumnsDetailResponse.SensitiveColumnsDetailList["+ i +"].DbId"));
-			sensitiveColumnsDetail.setLogic(_ctx.booleanValue("ListSensitiveColumnsDetailResponse.SensitiveColumnsDetailList["+ i +"].Logic"));
-			sensitiveColumnsDetail.setEnvType(_ctx.stringValue("ListSensitiveColumnsDetailResponse.SensitiveColumnsDetailList["+ i +"].EnvType"));
-			sensitiveColumnsDetail.setSchemaName(_ctx.stringValue("ListSensitiveColumnsDetailResponse.SensitiveColumnsDetailList["+ i +"].SchemaName"));
+			sensitiveColumnsDetail.setColumnName(_ctx.stringValue("ListSensitiveColumnsDetailResponse.SensitiveColumnsDetailList["+ i +"].ColumnName"));
+			sensitiveColumnsDetail.setColumnDescription(_ctx.stringValue("ListSensitiveColumnsDetailResponse.SensitiveColumnsDetailList["+ i +"].ColumnDescription"));
+			sensitiveColumnsDetail.setTableName(_ctx.stringValue("ListSensitiveColumnsDetailResponse.SensitiveColumnsDetailList["+ i +"].TableName"));
 			sensitiveColumnsDetail.setDbType(_ctx.stringValue("ListSensitiveColumnsDetailResponse.SensitiveColumnsDetailList["+ i +"].DbType"));
+			sensitiveColumnsDetail.setColumnType(_ctx.stringValue("ListSensitiveColumnsDetailResponse.SensitiveColumnsDetailList["+ i +"].ColumnType"));
+			sensitiveColumnsDetail.setLogic(_ctx.booleanValue("ListSensitiveColumnsDetailResponse.SensitiveColumnsDetailList["+ i +"].Logic"));
+			sensitiveColumnsDetail.setSchemaName(_ctx.stringValue("ListSensitiveColumnsDetailResponse.SensitiveColumnsDetailList["+ i +"].SchemaName"));
+			sensitiveColumnsDetail.setSearchName(_ctx.stringValue("ListSensitiveColumnsDetailResponse.SensitiveColumnsDetailList["+ i +"].SearchName"));
+			sensitiveColumnsDetail.setEnvType(_ctx.stringValue("ListSensitiveColumnsDetailResponse.SensitiveColumnsDetailList["+ i +"].EnvType"));
 
 			sensitiveColumnsDetailList.add(sensitiveColumnsDetail);
 		}

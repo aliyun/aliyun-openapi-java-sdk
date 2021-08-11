@@ -10,7 +10,7 @@ public class AcsURLEncoderTest {
     public void encode() throws UnsupportedEncodingException {
         String value = "123abc!@#$%^&*()-=_+ ~|\\/";
         String res = AcsURLEncoder.encode(value);
-        Assert.assertEquals("123abc%21%40%23%24%25%5E%26*%28%29-%3D_%2B+%7E%7C%5C%2F", res);
+        Assert.assertEquals("123abc%21%40%23%24%25%5E%26*%28%29-%3D_%2B%20%7E%7C%5C%2F", res);
     }
 
     @Test

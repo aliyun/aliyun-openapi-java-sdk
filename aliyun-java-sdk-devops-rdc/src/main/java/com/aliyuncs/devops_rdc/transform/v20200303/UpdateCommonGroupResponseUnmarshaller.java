@@ -24,9 +24,9 @@ public class UpdateCommonGroupResponseUnmarshaller {
 	public static UpdateCommonGroupResponse unmarshall(UpdateCommonGroupResponse updateCommonGroupResponse, UnmarshallerContext _ctx) {
 		
 		updateCommonGroupResponse.setRequestId(_ctx.stringValue("UpdateCommonGroupResponse.RequestId"));
+		updateCommonGroupResponse.setErrorMsg(_ctx.stringValue("UpdateCommonGroupResponse.ErrorMsg"));
 		updateCommonGroupResponse.setSuccessful(_ctx.booleanValue("UpdateCommonGroupResponse.Successful"));
 		updateCommonGroupResponse.setErrorCode(_ctx.stringValue("UpdateCommonGroupResponse.ErrorCode"));
-		updateCommonGroupResponse.setErrorMsg(_ctx.stringValue("UpdateCommonGroupResponse.ErrorMsg"));
 
 		Object object = new Object();
 		object.setId(_ctx.stringValue("UpdateCommonGroupResponse.Object.Id"));

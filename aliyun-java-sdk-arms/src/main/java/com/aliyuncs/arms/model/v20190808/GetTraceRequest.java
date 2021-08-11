@@ -26,6 +26,10 @@ public class GetTraceRequest extends RpcAcsRequest<GetTraceResponse> {
 	   
 
 	private String traceID;
+
+	private Long endTime;
+
+	private Long startTime;
 	public GetTraceRequest() {
 		super("ARMS", "2019-08-08", "GetTrace", "arms");
 		setMethod(MethodType.POST);
@@ -43,6 +47,28 @@ public class GetTraceRequest extends RpcAcsRequest<GetTraceResponse> {
 		this.traceID = traceID;
 		if(traceID != null){
 			putQueryParameter("TraceID", traceID);
+		}
+	}
+
+	public Long getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(Long endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime.toString());
+		}
+	}
+
+	public Long getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(Long startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime.toString());
 		}
 	}
 

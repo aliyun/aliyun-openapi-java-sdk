@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDomainResourceResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Long totalCount;
 
+	private String requestId;
+
 	private List<WebRule> webRules;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Long getTotalCount() {
 		return this.totalCount;
@@ -45,6 +37,14 @@ public class DescribeDomainResourceResponse extends AcsResponse {
 
 	public void setTotalCount(Long totalCount) {
 		this.totalCount = totalCount;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<WebRule> getWebRules() {
@@ -59,49 +59,49 @@ public class DescribeDomainResourceResponse extends AcsResponse {
 
 		private String domain;
 
-		private Integer rsType;
-
-		private Boolean ccEnabled;
-
-		private Boolean ccRuleEnabled;
-
-		private String ccTemplate;
+		private Boolean http2HttpsEnable;
 
 		private String sslProtocols;
 
+		private Integer punishReason;
+
+		private String ccTemplate;
+
+		private Boolean ccEnabled;
+
 		private String sslCiphers;
-
-		private Boolean http2Enable;
-
-		private Boolean http2HttpsEnable;
-
-		private Boolean https2HttpEnable;
-
-		private String policyMode;
-
-		private Boolean proxyEnabled;
 
 		private Boolean ssl13Enabled;
 
+		private Boolean ccRuleEnabled;
+
 		private Boolean punishStatus;
 
-		private Integer punishReason;
+		private Integer rsType;
+
+		private Boolean proxyEnabled;
+
+		private String certName;
+
+		private String policyMode;
 
 		private String cname;
 
-		private String certName;
+		private Boolean http2Enable;
+
+		private Boolean https2HttpEnable;
 
 		private String httpsExt;
 
 		private List<ProxyConfig> proxyTypes;
 
-		private List<String> realServers;
+		private List<String> blackList;
 
 		private List<String> whiteList;
 
-		private List<String> blackList;
-
 		private List<String> customCiphers;
+
+		private List<String> realServers;
 
 		private List<String> instanceIds;
 
@@ -113,36 +113,12 @@ public class DescribeDomainResourceResponse extends AcsResponse {
 			this.domain = domain;
 		}
 
-		public Integer getRsType() {
-			return this.rsType;
+		public Boolean getHttp2HttpsEnable() {
+			return this.http2HttpsEnable;
 		}
 
-		public void setRsType(Integer rsType) {
-			this.rsType = rsType;
-		}
-
-		public Boolean getCcEnabled() {
-			return this.ccEnabled;
-		}
-
-		public void setCcEnabled(Boolean ccEnabled) {
-			this.ccEnabled = ccEnabled;
-		}
-
-		public Boolean getCcRuleEnabled() {
-			return this.ccRuleEnabled;
-		}
-
-		public void setCcRuleEnabled(Boolean ccRuleEnabled) {
-			this.ccRuleEnabled = ccRuleEnabled;
-		}
-
-		public String getCcTemplate() {
-			return this.ccTemplate;
-		}
-
-		public void setCcTemplate(String ccTemplate) {
-			this.ccTemplate = ccTemplate;
+		public void setHttp2HttpsEnable(Boolean http2HttpsEnable) {
+			this.http2HttpsEnable = http2HttpsEnable;
 		}
 
 		public String getSslProtocols() {
@@ -153,52 +129,36 @@ public class DescribeDomainResourceResponse extends AcsResponse {
 			this.sslProtocols = sslProtocols;
 		}
 
+		public Integer getPunishReason() {
+			return this.punishReason;
+		}
+
+		public void setPunishReason(Integer punishReason) {
+			this.punishReason = punishReason;
+		}
+
+		public String getCcTemplate() {
+			return this.ccTemplate;
+		}
+
+		public void setCcTemplate(String ccTemplate) {
+			this.ccTemplate = ccTemplate;
+		}
+
+		public Boolean getCcEnabled() {
+			return this.ccEnabled;
+		}
+
+		public void setCcEnabled(Boolean ccEnabled) {
+			this.ccEnabled = ccEnabled;
+		}
+
 		public String getSslCiphers() {
 			return this.sslCiphers;
 		}
 
 		public void setSslCiphers(String sslCiphers) {
 			this.sslCiphers = sslCiphers;
-		}
-
-		public Boolean getHttp2Enable() {
-			return this.http2Enable;
-		}
-
-		public void setHttp2Enable(Boolean http2Enable) {
-			this.http2Enable = http2Enable;
-		}
-
-		public Boolean getHttp2HttpsEnable() {
-			return this.http2HttpsEnable;
-		}
-
-		public void setHttp2HttpsEnable(Boolean http2HttpsEnable) {
-			this.http2HttpsEnable = http2HttpsEnable;
-		}
-
-		public Boolean getHttps2HttpEnable() {
-			return this.https2HttpEnable;
-		}
-
-		public void setHttps2HttpEnable(Boolean https2HttpEnable) {
-			this.https2HttpEnable = https2HttpEnable;
-		}
-
-		public String getPolicyMode() {
-			return this.policyMode;
-		}
-
-		public void setPolicyMode(String policyMode) {
-			this.policyMode = policyMode;
-		}
-
-		public Boolean getProxyEnabled() {
-			return this.proxyEnabled;
-		}
-
-		public void setProxyEnabled(Boolean proxyEnabled) {
-			this.proxyEnabled = proxyEnabled;
 		}
 
 		public Boolean getSsl13Enabled() {
@@ -209,6 +169,14 @@ public class DescribeDomainResourceResponse extends AcsResponse {
 			this.ssl13Enabled = ssl13Enabled;
 		}
 
+		public Boolean getCcRuleEnabled() {
+			return this.ccRuleEnabled;
+		}
+
+		public void setCcRuleEnabled(Boolean ccRuleEnabled) {
+			this.ccRuleEnabled = ccRuleEnabled;
+		}
+
 		public Boolean getPunishStatus() {
 			return this.punishStatus;
 		}
@@ -217,12 +185,36 @@ public class DescribeDomainResourceResponse extends AcsResponse {
 			this.punishStatus = punishStatus;
 		}
 
-		public Integer getPunishReason() {
-			return this.punishReason;
+		public Integer getRsType() {
+			return this.rsType;
 		}
 
-		public void setPunishReason(Integer punishReason) {
-			this.punishReason = punishReason;
+		public void setRsType(Integer rsType) {
+			this.rsType = rsType;
+		}
+
+		public Boolean getProxyEnabled() {
+			return this.proxyEnabled;
+		}
+
+		public void setProxyEnabled(Boolean proxyEnabled) {
+			this.proxyEnabled = proxyEnabled;
+		}
+
+		public String getCertName() {
+			return this.certName;
+		}
+
+		public void setCertName(String certName) {
+			this.certName = certName;
+		}
+
+		public String getPolicyMode() {
+			return this.policyMode;
+		}
+
+		public void setPolicyMode(String policyMode) {
+			this.policyMode = policyMode;
 		}
 
 		public String getCname() {
@@ -233,12 +225,20 @@ public class DescribeDomainResourceResponse extends AcsResponse {
 			this.cname = cname;
 		}
 
-		public String getCertName() {
-			return this.certName;
+		public Boolean getHttp2Enable() {
+			return this.http2Enable;
 		}
 
-		public void setCertName(String certName) {
-			this.certName = certName;
+		public void setHttp2Enable(Boolean http2Enable) {
+			this.http2Enable = http2Enable;
+		}
+
+		public Boolean getHttps2HttpEnable() {
+			return this.https2HttpEnable;
+		}
+
+		public void setHttps2HttpEnable(Boolean https2HttpEnable) {
+			this.https2HttpEnable = https2HttpEnable;
 		}
 
 		public String getHttpsExt() {
@@ -257,12 +257,12 @@ public class DescribeDomainResourceResponse extends AcsResponse {
 			this.proxyTypes = proxyTypes;
 		}
 
-		public List<String> getRealServers() {
-			return this.realServers;
+		public List<String> getBlackList() {
+			return this.blackList;
 		}
 
-		public void setRealServers(List<String> realServers) {
-			this.realServers = realServers;
+		public void setBlackList(List<String> blackList) {
+			this.blackList = blackList;
 		}
 
 		public List<String> getWhiteList() {
@@ -273,20 +273,20 @@ public class DescribeDomainResourceResponse extends AcsResponse {
 			this.whiteList = whiteList;
 		}
 
-		public List<String> getBlackList() {
-			return this.blackList;
-		}
-
-		public void setBlackList(List<String> blackList) {
-			this.blackList = blackList;
-		}
-
 		public List<String> getCustomCiphers() {
 			return this.customCiphers;
 		}
 
 		public void setCustomCiphers(List<String> customCiphers) {
 			this.customCiphers = customCiphers;
+		}
+
+		public List<String> getRealServers() {
+			return this.realServers;
+		}
+
+		public void setRealServers(List<String> realServers) {
+			this.realServers = realServers;
 		}
 
 		public List<String> getInstanceIds() {

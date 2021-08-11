@@ -25,25 +25,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListDBTaskSQLJobResponse extends AcsResponse {
 
-	private Long totalCount;
-
 	private String requestId;
-
-	private String errorCode;
-
-	private String errorMessage;
 
 	private Boolean success;
 
+	private String errorMessage;
+
+	private String errorCode;
+
+	private Long totalCount;
+
 	private List<DBTaskSQLJob> dBTaskSQLJobList;
-
-	public Long getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Long totalCount) {
-		this.totalCount = totalCount;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -53,12 +45,12 @@ public class ListDBTaskSQLJobResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getErrorCode() {
-		return this.errorCode;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public String getErrorMessage() {
@@ -69,12 +61,20 @@ public class ListDBTaskSQLJobResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getErrorCode() {
+		return this.errorCode;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
+	}
+
+	public Long getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Long totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<DBTaskSQLJob> getDBTaskSQLJobList() {
@@ -87,58 +87,34 @@ public class ListDBTaskSQLJobResponse extends AcsResponse {
 
 	public static class DBTaskSQLJob {
 
-		private String status;
-
-		private String comment;
-
-		private String lastExecTime;
-
-		private String dbSearchName;
+		private Long jobId;
 
 		private String jobType;
 
-		private String createTime;
+		private String comment;
 
-		private Long dbTaskGroupId;
+		private String dbSearchName;
 
 		private Long dbId;
 
 		private Boolean logic;
 
-		private Long jobId;
+		private String createTime;
+
+		private String lastExecTime;
+
+		private Long dbTaskGroupId;
+
+		private String status;
 
 		private Boolean transactional;
 
-		public String getStatus() {
-			return this.status;
+		public Long getJobId() {
+			return this.jobId;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
-		public String getComment() {
-			return this.comment;
-		}
-
-		public void setComment(String comment) {
-			this.comment = comment;
-		}
-
-		public String getLastExecTime() {
-			return this.lastExecTime;
-		}
-
-		public void setLastExecTime(String lastExecTime) {
-			this.lastExecTime = lastExecTime;
-		}
-
-		public String getDbSearchName() {
-			return this.dbSearchName;
-		}
-
-		public void setDbSearchName(String dbSearchName) {
-			this.dbSearchName = dbSearchName;
+		public void setJobId(Long jobId) {
+			this.jobId = jobId;
 		}
 
 		public String getJobType() {
@@ -149,20 +125,20 @@ public class ListDBTaskSQLJobResponse extends AcsResponse {
 			this.jobType = jobType;
 		}
 
-		public String getCreateTime() {
-			return this.createTime;
+		public String getComment() {
+			return this.comment;
 		}
 
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
+		public void setComment(String comment) {
+			this.comment = comment;
 		}
 
-		public Long getDbTaskGroupId() {
-			return this.dbTaskGroupId;
+		public String getDbSearchName() {
+			return this.dbSearchName;
 		}
 
-		public void setDbTaskGroupId(Long dbTaskGroupId) {
-			this.dbTaskGroupId = dbTaskGroupId;
+		public void setDbSearchName(String dbSearchName) {
+			this.dbSearchName = dbSearchName;
 		}
 
 		public Long getDbId() {
@@ -181,12 +157,36 @@ public class ListDBTaskSQLJobResponse extends AcsResponse {
 			this.logic = logic;
 		}
 
-		public Long getJobId() {
-			return this.jobId;
+		public String getCreateTime() {
+			return this.createTime;
 		}
 
-		public void setJobId(Long jobId) {
-			this.jobId = jobId;
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
+
+		public String getLastExecTime() {
+			return this.lastExecTime;
+		}
+
+		public void setLastExecTime(String lastExecTime) {
+			this.lastExecTime = lastExecTime;
+		}
+
+		public Long getDbTaskGroupId() {
+			return this.dbTaskGroupId;
+		}
+
+		public void setDbTaskGroupId(Long dbTaskGroupId) {
+			this.dbTaskGroupId = dbTaskGroupId;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public Boolean getTransactional() {

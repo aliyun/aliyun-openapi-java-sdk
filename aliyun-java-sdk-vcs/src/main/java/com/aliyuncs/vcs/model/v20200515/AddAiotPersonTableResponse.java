@@ -24,29 +24,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class AddAiotPersonTableResponse extends AcsResponse {
 
-	private String personTableId;
-
-	private String message;
-
 	private String requestId;
 
 	private String code;
 
-	public String getPersonTableId() {
-		return this.personTableId;
-	}
+	private String message;
 
-	public void setPersonTableId(String personTableId) {
-		this.personTableId = personTableId;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
+	private String personTableId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -62,6 +46,22 @@ public class AddAiotPersonTableResponse extends AcsResponse {
 
 	public void setCode(String code) {
 		this.code = code;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	public String getPersonTableId() {
+		return this.personTableId;
+	}
+
+	public void setPersonTableId(String personTableId) {
+		this.personTableId = personTableId;
 	}
 
 	@Override

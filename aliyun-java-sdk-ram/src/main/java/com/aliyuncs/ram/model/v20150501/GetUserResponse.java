@@ -46,39 +46,23 @@ public class GetUserResponse extends AcsResponse {
 
 	public static class User {
 
-		private String userId;
-
-		private String userName;
-
 		private String displayName;
-
-		private String mobilePhone;
 
 		private String email;
 
-		private String comments;
-
-		private String createDate;
-
 		private String updateDate;
+
+		private String mobilePhone;
+
+		private String userId;
+
+		private String comments;
 
 		private String lastLoginDate;
 
-		public String getUserId() {
-			return this.userId;
-		}
+		private String createDate;
 
-		public void setUserId(String userId) {
-			this.userId = userId;
-		}
-
-		public String getUserName() {
-			return this.userName;
-		}
-
-		public void setUserName(String userName) {
-			this.userName = userName;
-		}
+		private String userName;
 
 		public String getDisplayName() {
 			return this.displayName;
@@ -86,14 +70,6 @@ public class GetUserResponse extends AcsResponse {
 
 		public void setDisplayName(String displayName) {
 			this.displayName = displayName;
-		}
-
-		public String getMobilePhone() {
-			return this.mobilePhone;
-		}
-
-		public void setMobilePhone(String mobilePhone) {
-			this.mobilePhone = mobilePhone;
 		}
 
 		public String getEmail() {
@@ -104,12 +80,44 @@ public class GetUserResponse extends AcsResponse {
 			this.email = email;
 		}
 
+		public String getUpdateDate() {
+			return this.updateDate;
+		}
+
+		public void setUpdateDate(String updateDate) {
+			this.updateDate = updateDate;
+		}
+
+		public String getMobilePhone() {
+			return this.mobilePhone;
+		}
+
+		public void setMobilePhone(String mobilePhone) {
+			this.mobilePhone = mobilePhone;
+		}
+
+		public String getUserId() {
+			return this.userId;
+		}
+
+		public void setUserId(String userId) {
+			this.userId = userId;
+		}
+
 		public String getComments() {
 			return this.comments;
 		}
 
 		public void setComments(String comments) {
 			this.comments = comments;
+		}
+
+		public String getLastLoginDate() {
+			return this.lastLoginDate;
+		}
+
+		public void setLastLoginDate(String lastLoginDate) {
+			this.lastLoginDate = lastLoginDate;
 		}
 
 		public String getCreateDate() {
@@ -120,20 +128,12 @@ public class GetUserResponse extends AcsResponse {
 			this.createDate = createDate;
 		}
 
-		public String getUpdateDate() {
-			return this.updateDate;
+		public String getUserName() {
+			return this.userName;
 		}
 
-		public void setUpdateDate(String updateDate) {
-			this.updateDate = updateDate;
-		}
-
-		public String getLastLoginDate() {
-			return this.lastLoginDate;
-		}
-
-		public void setLastLoginDate(String lastLoginDate) {
-			this.lastLoginDate = lastLoginDate;
+		public void setUserName(String userName) {
+			this.userName = userName;
 		}
 	}
 

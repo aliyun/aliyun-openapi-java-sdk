@@ -29,7 +29,7 @@ public class SubmitSparkSQLRequest extends RpcAcsRequest<SubmitSparkSQLResponse>
 
 	private String vcName;
 	public SubmitSparkSQLRequest() {
-		super("openanalytics-open", "2018-06-19", "SubmitSparkSQL", "openanalytics-cap");
+		super("openanalytics-open", "2018-06-19", "SubmitSparkSQL", "openanalytics");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

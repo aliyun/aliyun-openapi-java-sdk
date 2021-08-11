@@ -27,7 +27,7 @@ public class ReleaseInstanceRequest extends RpcAcsRequest<ReleaseInstanceRespons
 
 	private String instanceId;
 	public ReleaseInstanceRequest() {
-		super("openanalytics-open", "2018-06-19", "ReleaseInstance", "openanalytics-cap");
+		super("openanalytics-open", "2018-06-19", "ReleaseInstance", "openanalytics");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

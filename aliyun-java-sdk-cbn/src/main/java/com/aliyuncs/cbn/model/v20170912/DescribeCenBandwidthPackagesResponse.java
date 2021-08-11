@@ -117,6 +117,8 @@ public class DescribeCenBandwidthPackagesResponse extends AcsResponse {
 
 		private String reservationOrderType;
 
+		private String resourceGroupId;
+
 		private List<OrginInterRegionBandwidthLimit> orginInterRegionBandwidthLimits;
 
 		private List<Tag> tags;
@@ -281,6 +283,14 @@ public class DescribeCenBandwidthPackagesResponse extends AcsResponse {
 
 		public void setReservationOrderType(String reservationOrderType) {
 			this.reservationOrderType = reservationOrderType;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
 		}
 
 		public List<OrginInterRegionBandwidthLimit> getOrginInterRegionBandwidthLimits() {

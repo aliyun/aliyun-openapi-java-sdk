@@ -14,6 +14,9 @@
 
 package com.aliyuncs.workbench_ide.transform.v20210121;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.workbench_ide.model.v20210121.ListAppResponse;
 import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -24,13 +27,15 @@ public class ListAppResponseUnmarshaller {
 	public static ListAppResponse unmarshall(ListAppResponse listAppResponse, UnmarshallerContext _ctx) {
 		
 		listAppResponse.setRequestId(_ctx.stringValue("ListAppResponse.RequestId"));
-		listAppResponse.setData(_ctx.mapValue("ListAppResponse.Data"));
 		listAppResponse.setMessage(_ctx.stringValue("ListAppResponse.Message"));
 		listAppResponse.setCode(_ctx.stringValue("ListAppResponse.Code"));
 		listAppResponse.setPageSize(_ctx.integerValue("ListAppResponse.PageSize"));
 		listAppResponse.setPage(_ctx.integerValue("ListAppResponse.Page"));
 		listAppResponse.setTotal(_ctx.integerValue("ListAppResponse.Total"));
 		listAppResponse.setTotalPage(_ctx.integerValue("ListAppResponse.TotalPage"));
+
+		List<Map<Object, Object>> data = _ctx.listMapValue("ListAppResponse.Data");
+		listAppResponse.setData(data);
 	 
 	 	return listAppResponse;
 	}

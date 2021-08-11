@@ -1,3 +1,27 @@
+2021-07-29 Version: 1.8.10
+- Supported DescribeMaskingRules.
+- ModifyMaskingRules.
+- DeleteMaskingRules.
+
+2021-07-07 Version: 1.8.9
+- Supported DescribeGlobalDatabaseNetworks set pages.
+
+2021-06-22 Version: 1.8.8
+- Supported CreateGlobalDatabaseNetwork for PolarDB Global Database Network.
+- Supported ModifyGlobalDatabaseNetwork for PolarDB Global Database Network.
+- Supported DeleteGlobalDatabaseNetwork for PolarDB Global Database Network.
+- Supported DescribeGlobalDatabaseNetworks for PolarDB Global Database Network.
+- Supported DescribeGlobalDatabaseNetwork for PolarDB Global Database Network.
+- Supported RemoveDBClusterFromGDN for PolarDB Global Database Network.
+- Supported parameter SSLEnabled for ModifyDBClusterSSL changed to non-required.
+
+2021-06-15 Version: 1.8.7
+- Supported EncryptNewTables for ModifyDBClusterTDE.
+- Supported SSLAutoRotate for ModifyDBClusterSSL.
+
+2021-05-24 Version: 1.8.6
+- Support TransformDBClusterPayType.
+
 2021-05-06 Version: 1.8.5
 - Support DescribePolarSQLCollectorPolicy.
 

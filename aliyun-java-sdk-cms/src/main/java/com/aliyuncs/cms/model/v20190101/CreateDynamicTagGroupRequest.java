@@ -38,6 +38,8 @@ public class CreateDynamicTagGroupRequest extends RpcAcsRequest<CreateDynamicTag
 	private List<String> templateIdLists;
 
 	private String tagKey;
+
+	private String tagRegionId;
 	public CreateDynamicTagGroupRequest() {
 		super("Cms", "2019-01-01", "CreateDynamicTagGroup", "cms");
 		setMethod(MethodType.POST);
@@ -124,6 +126,17 @@ public class CreateDynamicTagGroupRequest extends RpcAcsRequest<CreateDynamicTag
 		this.tagKey = tagKey;
 		if(tagKey != null){
 			putQueryParameter("TagKey", tagKey);
+		}
+	}
+
+	public String getTagRegionId() {
+		return this.tagRegionId;
+	}
+
+	public void setTagRegionId(String tagRegionId) {
+		this.tagRegionId = tagRegionId;
+		if(tagRegionId != null){
+			putQueryParameter("TagRegionId", tagRegionId);
 		}
 	}
 

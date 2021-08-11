@@ -109,22 +109,22 @@ public class GetTableDBTopologyResponse extends AcsResponse {
 
 		public static class DataSource {
 
-			private Integer port;
+			private String sid;
 
 			private String host;
 
 			private String dbType;
 
-			private String sid;
+			private Integer port;
 
 			private List<Database> databaseList;
 
-			public Integer getPort() {
-				return this.port;
+			public String getSid() {
+				return this.sid;
 			}
 
-			public void setPort(Integer port) {
-				this.port = port;
+			public void setSid(String sid) {
+				this.sid = sid;
 			}
 
 			public String getHost() {
@@ -143,12 +143,12 @@ public class GetTableDBTopologyResponse extends AcsResponse {
 				this.dbType = dbType;
 			}
 
-			public String getSid() {
-				return this.sid;
+			public Integer getPort() {
+				return this.port;
 			}
 
-			public void setSid(String sid) {
-				this.sid = sid;
+			public void setPort(Integer port) {
+				this.port = port;
 			}
 
 			public List<Database> getDatabaseList() {
@@ -165,9 +165,9 @@ public class GetTableDBTopologyResponse extends AcsResponse {
 
 				private String dbName;
 
-				private String envType;
-
 				private String dbType;
+
+				private String envType;
 
 				private List<Table> tableList;
 
@@ -187,20 +187,20 @@ public class GetTableDBTopologyResponse extends AcsResponse {
 					this.dbName = dbName;
 				}
 
-				public String getEnvType() {
-					return this.envType;
-				}
-
-				public void setEnvType(String envType) {
-					this.envType = envType;
-				}
-
 				public String getDbType() {
 					return this.dbType;
 				}
 
 				public void setDbType(String dbType) {
 					this.dbType = dbType;
+				}
+
+				public String getEnvType() {
+					return this.envType;
+				}
+
+				public void setEnvType(String envType) {
+					this.envType = envType;
 				}
 
 				public List<Table> getTableList() {
@@ -213,19 +213,11 @@ public class GetTableDBTopologyResponse extends AcsResponse {
 
 				public static class Table {
 
-					private String tableId;
-
 					private String tableName;
 
 					private String tableType;
 
-					public String getTableId() {
-						return this.tableId;
-					}
-
-					public void setTableId(String tableId) {
-						this.tableId = tableId;
-					}
+					private String tableId;
 
 					public String getTableName() {
 						return this.tableName;
@@ -241,6 +233,14 @@ public class GetTableDBTopologyResponse extends AcsResponse {
 
 					public void setTableType(String tableType) {
 						this.tableType = tableType;
+					}
+
+					public String getTableId() {
+						return this.tableId;
+					}
+
+					public void setTableId(String tableId) {
+						this.tableId = tableId;
 					}
 				}
 			}

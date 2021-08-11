@@ -25,9 +25,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListInstancesResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String message;
+
+	private String requestId;
 
 	private String code;
 
@@ -35,20 +35,20 @@ public class ListInstancesResponse extends AcsResponse {
 
 	private Data data;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public String getMessage() {
 		return this.message;
 	}
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getCode() {
@@ -77,20 +77,20 @@ public class ListInstancesResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Integer totalCount;
+		private Integer currentPage;
 
 		private Integer pageSize;
 
-		private Integer currentPage;
+		private Integer totalCount;
 
 		private List<ItemsItem> items;
 
-		public Integer getTotalCount() {
-			return this.totalCount;
+		public Integer getCurrentPage() {
+			return this.currentPage;
 		}
 
-		public void setTotalCount(Integer totalCount) {
-			this.totalCount = totalCount;
+		public void setCurrentPage(Integer currentPage) {
+			this.currentPage = currentPage;
 		}
 
 		public Integer getPageSize() {
@@ -101,12 +101,12 @@ public class ListInstancesResponse extends AcsResponse {
 			this.pageSize = pageSize;
 		}
 
-		public Integer getCurrentPage() {
-			return this.currentPage;
+		public Integer getTotalCount() {
+			return this.totalCount;
 		}
 
-		public void setCurrentPage(Integer currentPage) {
-			this.currentPage = currentPage;
+		public void setTotalCount(Integer totalCount) {
+			this.totalCount = totalCount;
 		}
 
 		public List<ItemsItem> getItems() {
@@ -119,19 +119,27 @@ public class ListInstancesResponse extends AcsResponse {
 
 		public static class ItemsItem {
 
+			private String status;
+
 			private String instanceName;
 
-			private String status;
+			private Long createTime;
 
 			private Integer deviceNumber;
 
 			private String instanceId;
 
-			private Long createTime;
-
 			private Integer acuUsed;
 
 			private List<AlgorithmsItem> algorithms;
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
+			}
 
 			public String getInstanceName() {
 				return this.instanceName;
@@ -141,12 +149,12 @@ public class ListInstancesResponse extends AcsResponse {
 				this.instanceName = instanceName;
 			}
 
-			public String getStatus() {
-				return this.status;
+			public Long getCreateTime() {
+				return this.createTime;
 			}
 
-			public void setStatus(String status) {
-				this.status = status;
+			public void setCreateTime(Long createTime) {
+				this.createTime = createTime;
 			}
 
 			public Integer getDeviceNumber() {
@@ -163,14 +171,6 @@ public class ListInstancesResponse extends AcsResponse {
 
 			public void setInstanceId(String instanceId) {
 				this.instanceId = instanceId;
-			}
-
-			public Long getCreateTime() {
-				return this.createTime;
-			}
-
-			public void setCreateTime(Long createTime) {
-				this.createTime = createTime;
 			}
 
 			public Integer getAcuUsed() {
@@ -191,17 +191,9 @@ public class ListInstancesResponse extends AcsResponse {
 
 			public static class AlgorithmsItem {
 
-				private String algorithmId;
-
 				private String algorithmName;
 
-				public String getAlgorithmId() {
-					return this.algorithmId;
-				}
-
-				public void setAlgorithmId(String algorithmId) {
-					this.algorithmId = algorithmId;
-				}
+				private String algorithmId;
 
 				public String getAlgorithmName() {
 					return this.algorithmName;
@@ -209,6 +201,14 @@ public class ListInstancesResponse extends AcsResponse {
 
 				public void setAlgorithmName(String algorithmName) {
 					this.algorithmName = algorithmName;
+				}
+
+				public String getAlgorithmId() {
+					return this.algorithmId;
+				}
+
+				public void setAlgorithmId(String algorithmId) {
+					this.algorithmId = algorithmId;
 				}
 			}
 		}

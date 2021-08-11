@@ -97,6 +97,12 @@ public class DescribeAssetDetailByUuidResponse extends AcsResponse {
 
 		private Long createTime;
 
+		private Integer authVersion;
+
+		private Boolean bind;
+
+		private Long authModifyTime;
+
 		private List<String> ipList;
 
 		private List<String> macList;
@@ -301,6 +307,30 @@ public class DescribeAssetDetailByUuidResponse extends AcsResponse {
 
 		public void setCreateTime(Long createTime) {
 			this.createTime = createTime;
+		}
+
+		public Integer getAuthVersion() {
+			return this.authVersion;
+		}
+
+		public void setAuthVersion(Integer authVersion) {
+			this.authVersion = authVersion;
+		}
+
+		public Boolean getBind() {
+			return this.bind;
+		}
+
+		public void setBind(Boolean bind) {
+			this.bind = bind;
+		}
+
+		public Long getAuthModifyTime() {
+			return this.authModifyTime;
+		}
+
+		public void setAuthModifyTime(Long authModifyTime) {
+			this.authModifyTime = authModifyTime;
 		}
 
 		public List<String> getIpList() {

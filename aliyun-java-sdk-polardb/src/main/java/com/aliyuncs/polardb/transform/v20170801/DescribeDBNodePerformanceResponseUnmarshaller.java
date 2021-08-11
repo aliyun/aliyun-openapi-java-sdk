@@ -28,12 +28,12 @@ public class DescribeDBNodePerformanceResponseUnmarshaller {
 	public static DescribeDBNodePerformanceResponse unmarshall(DescribeDBNodePerformanceResponse describeDBNodePerformanceResponse, UnmarshallerContext _ctx) {
 		
 		describeDBNodePerformanceResponse.setRequestId(_ctx.stringValue("DescribeDBNodePerformanceResponse.RequestId"));
+		describeDBNodePerformanceResponse.setDBVersion(_ctx.stringValue("DescribeDBNodePerformanceResponse.DBVersion"));
+		describeDBNodePerformanceResponse.setEndTime(_ctx.stringValue("DescribeDBNodePerformanceResponse.EndTime"));
+		describeDBNodePerformanceResponse.setStartTime(_ctx.stringValue("DescribeDBNodePerformanceResponse.StartTime"));
+		describeDBNodePerformanceResponse.setDBType(_ctx.stringValue("DescribeDBNodePerformanceResponse.DBType"));
 		describeDBNodePerformanceResponse.setDBNodeId(_ctx.stringValue("DescribeDBNodePerformanceResponse.DBNodeId"));
 		describeDBNodePerformanceResponse.setEngine(_ctx.stringValue("DescribeDBNodePerformanceResponse.Engine"));
-		describeDBNodePerformanceResponse.setDBType(_ctx.stringValue("DescribeDBNodePerformanceResponse.DBType"));
-		describeDBNodePerformanceResponse.setDBVersion(_ctx.stringValue("DescribeDBNodePerformanceResponse.DBVersion"));
-		describeDBNodePerformanceResponse.setStartTime(_ctx.stringValue("DescribeDBNodePerformanceResponse.StartTime"));
-		describeDBNodePerformanceResponse.setEndTime(_ctx.stringValue("DescribeDBNodePerformanceResponse.EndTime"));
 
 		List<PerformanceItem> performanceKeys = new ArrayList<PerformanceItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDBNodePerformanceResponse.PerformanceKeys.Length"); i++) {

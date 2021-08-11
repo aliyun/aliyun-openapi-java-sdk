@@ -34,10 +34,10 @@ public class ListSkillGroupResponseUnmarshaller {
 		List<SkillGroups> data = new ArrayList<SkillGroups>();
 		for (int i = 0; i < _ctx.lengthValue("ListSkillGroupResponse.Data.Length"); i++) {
 			SkillGroups skillGroups = new SkillGroups();
-			skillGroups.setDescription(_ctx.stringValue("ListSkillGroupResponse.Data["+ i +"].Description"));
 			skillGroups.setDisplayName(_ctx.stringValue("ListSkillGroupResponse.Data["+ i +"].DisplayName"));
-			skillGroups.setSkillGroupId(_ctx.longValue("ListSkillGroupResponse.Data["+ i +"].SkillGroupId"));
+			skillGroups.setDescription(_ctx.stringValue("ListSkillGroupResponse.Data["+ i +"].Description"));
 			skillGroups.setChannelType(_ctx.integerValue("ListSkillGroupResponse.Data["+ i +"].ChannelType"));
+			skillGroups.setSkillGroupId(_ctx.longValue("ListSkillGroupResponse.Data["+ i +"].SkillGroupId"));
 			skillGroups.setName(_ctx.stringValue("ListSkillGroupResponse.Data["+ i +"].Name"));
 
 			data.add(skillGroups);

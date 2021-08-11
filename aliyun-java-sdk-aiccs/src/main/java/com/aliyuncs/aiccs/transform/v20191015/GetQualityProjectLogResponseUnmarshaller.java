@@ -34,11 +34,11 @@ public class GetQualityProjectLogResponseUnmarshaller {
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetQualityProjectLogResponse.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
-			dataItem.setActionTime(_ctx.stringValue("GetQualityProjectLogResponse.Data["+ i +"].ActionTime"));
 			dataItem.setActionType(_ctx.stringValue("GetQualityProjectLogResponse.Data["+ i +"].ActionType"));
-			dataItem.setProjectCreateTime(_ctx.stringValue("GetQualityProjectLogResponse.Data["+ i +"].ProjectCreateTime"));
-			dataItem.setProjectId(_ctx.longValue("GetQualityProjectLogResponse.Data["+ i +"].ProjectId"));
 			dataItem.setActionData(_ctx.stringValue("GetQualityProjectLogResponse.Data["+ i +"].ActionData"));
+			dataItem.setProjectId(_ctx.longValue("GetQualityProjectLogResponse.Data["+ i +"].ProjectId"));
+			dataItem.setProjectCreateTime(_ctx.stringValue("GetQualityProjectLogResponse.Data["+ i +"].ProjectCreateTime"));
+			dataItem.setActionTime(_ctx.stringValue("GetQualityProjectLogResponse.Data["+ i +"].ActionTime"));
 
 			data.add(dataItem);
 		}

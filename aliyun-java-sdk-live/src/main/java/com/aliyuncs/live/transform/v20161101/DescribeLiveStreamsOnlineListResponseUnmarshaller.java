@@ -45,6 +45,7 @@ public class DescribeLiveStreamsOnlineListResponseUnmarshaller {
 			liveStreamOnlineInfo.setPublishType(_ctx.stringValue("DescribeLiveStreamsOnlineListResponse.OnlineInfo["+ i +"].PublishType"));
 			liveStreamOnlineInfo.setTranscoded(_ctx.stringValue("DescribeLiveStreamsOnlineListResponse.OnlineInfo["+ i +"].Transcoded"));
 			liveStreamOnlineInfo.setTranscodeId(_ctx.stringValue("DescribeLiveStreamsOnlineListResponse.OnlineInfo["+ i +"].TranscodeId"));
+			liveStreamOnlineInfo.setTranscodeDrm(_ctx.stringValue("DescribeLiveStreamsOnlineListResponse.OnlineInfo["+ i +"].TranscodeDrm"));
 			liveStreamOnlineInfo.setServerIp(_ctx.stringValue("DescribeLiveStreamsOnlineListResponse.OnlineInfo["+ i +"].ServerIp"));
 			liveStreamOnlineInfo.setClientIp(_ctx.stringValue("DescribeLiveStreamsOnlineListResponse.OnlineInfo["+ i +"].ClientIp"));
 			liveStreamOnlineInfo.setVideoCodecId(_ctx.integerValue("DescribeLiveStreamsOnlineListResponse.OnlineInfo["+ i +"].VideoCodecId"));

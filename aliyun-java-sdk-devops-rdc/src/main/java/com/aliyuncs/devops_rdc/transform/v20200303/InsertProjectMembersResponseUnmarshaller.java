@@ -23,10 +23,10 @@ public class InsertProjectMembersResponseUnmarshaller {
 	public static InsertProjectMembersResponse unmarshall(InsertProjectMembersResponse insertProjectMembersResponse, UnmarshallerContext _ctx) {
 		
 		insertProjectMembersResponse.setRequestId(_ctx.stringValue("InsertProjectMembersResponse.RequestId"));
-		insertProjectMembersResponse.setSuccessful(_ctx.booleanValue("InsertProjectMembersResponse.Successful"));
-		insertProjectMembersResponse.setErrorCode(_ctx.stringValue("InsertProjectMembersResponse.ErrorCode"));
 		insertProjectMembersResponse.setErrorMsg(_ctx.stringValue("InsertProjectMembersResponse.ErrorMsg"));
 		insertProjectMembersResponse.setObject(_ctx.booleanValue("InsertProjectMembersResponse.Object"));
+		insertProjectMembersResponse.setSuccessful(_ctx.booleanValue("InsertProjectMembersResponse.Successful"));
+		insertProjectMembersResponse.setErrorCode(_ctx.stringValue("InsertProjectMembersResponse.ErrorCode"));
 	 
 	 	return insertProjectMembersResponse;
 	}

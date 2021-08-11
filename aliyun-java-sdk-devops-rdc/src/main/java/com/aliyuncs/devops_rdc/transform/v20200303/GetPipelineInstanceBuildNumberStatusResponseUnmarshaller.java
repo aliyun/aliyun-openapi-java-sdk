@@ -30,9 +30,9 @@ public class GetPipelineInstanceBuildNumberStatusResponseUnmarshaller {
 	public static GetPipelineInstanceBuildNumberStatusResponse unmarshall(GetPipelineInstanceBuildNumberStatusResponse getPipelineInstanceBuildNumberStatusResponse, UnmarshallerContext _ctx) {
 		
 		getPipelineInstanceBuildNumberStatusResponse.setRequestId(_ctx.stringValue("GetPipelineInstanceBuildNumberStatusResponse.RequestId"));
+		getPipelineInstanceBuildNumberStatusResponse.setErrorMessage(_ctx.stringValue("GetPipelineInstanceBuildNumberStatusResponse.ErrorMessage"));
 		getPipelineInstanceBuildNumberStatusResponse.setSuccess(_ctx.booleanValue("GetPipelineInstanceBuildNumberStatusResponse.Success"));
 		getPipelineInstanceBuildNumberStatusResponse.setErrorCode(_ctx.stringValue("GetPipelineInstanceBuildNumberStatusResponse.ErrorCode"));
-		getPipelineInstanceBuildNumberStatusResponse.setErrorMessage(_ctx.stringValue("GetPipelineInstanceBuildNumberStatusResponse.ErrorMessage"));
 
 		Object object = new Object();
 		object.setStatus(_ctx.stringValue("GetPipelineInstanceBuildNumberStatusResponse.Object.Status"));
@@ -40,8 +40,8 @@ public class GetPipelineInstanceBuildNumberStatusResponseUnmarshaller {
 		List<Group> groups = new ArrayList<Group>();
 		for (int i = 0; i < _ctx.lengthValue("GetPipelineInstanceBuildNumberStatusResponse.Object.Groups.Length"); i++) {
 			Group group = new Group();
-			group.setName(_ctx.stringValue("GetPipelineInstanceBuildNumberStatusResponse.Object.Groups["+ i +"].Name"));
 			group.setStatus(_ctx.stringValue("GetPipelineInstanceBuildNumberStatusResponse.Object.Groups["+ i +"].Status"));
+			group.setName(_ctx.stringValue("GetPipelineInstanceBuildNumberStatusResponse.Object.Groups["+ i +"].Name"));
 
 			List<Stage> stages = new ArrayList<Stage>();
 			for (int j = 0; j < _ctx.lengthValue("GetPipelineInstanceBuildNumberStatusResponse.Object.Groups["+ i +"].Stages.Length"); j++) {
@@ -52,8 +52,8 @@ public class GetPipelineInstanceBuildNumberStatusResponseUnmarshaller {
 				List<Component> components = new ArrayList<Component>();
 				for (int k = 0; k < _ctx.lengthValue("GetPipelineInstanceBuildNumberStatusResponse.Object.Groups["+ i +"].Stages["+ j +"].Components.Length"); k++) {
 					Component component = new Component();
-					component.setName(_ctx.stringValue("GetPipelineInstanceBuildNumberStatusResponse.Object.Groups["+ i +"].Stages["+ j +"].Components["+ k +"].Name"));
 					component.setStatus(_ctx.stringValue("GetPipelineInstanceBuildNumberStatusResponse.Object.Groups["+ i +"].Stages["+ j +"].Components["+ k +"].Status"));
+					component.setName(_ctx.stringValue("GetPipelineInstanceBuildNumberStatusResponse.Object.Groups["+ i +"].Stages["+ j +"].Components["+ k +"].Name"));
 					component.setJobId(_ctx.longValue("GetPipelineInstanceBuildNumberStatusResponse.Object.Groups["+ i +"].Stages["+ j +"].Components["+ k +"].JobId"));
 
 					components.add(component);

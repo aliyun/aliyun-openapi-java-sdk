@@ -25,13 +25,13 @@ import com.aliyuncs.elasticsearch.Endpoint;
 public class ListInstanceIndicesRequest extends RoaAcsRequest<ListInstanceIndicesResponse> {
 	   
 
+	private Boolean all;
+
 	private String instanceId;
 
 	private Boolean isManaged;
 
 	private String name;
-
-	private String lang;
 	public ListInstanceIndicesRequest() {
 		super("elasticsearch", "2017-06-13", "ListInstanceIndices", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/indices");
@@ -40,6 +40,17 @@ public class ListInstanceIndicesRequest extends RoaAcsRequest<ListInstanceIndice
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Boolean getAll() {
+		return this.all;
+	}
+
+	public void setAll(Boolean all) {
+		this.all = all;
+		if(all != null){
+			putQueryParameter("all", all.toString());
+		}
 	}
 
 	public String getInstanceId() {
@@ -72,17 +83,6 @@ public class ListInstanceIndicesRequest extends RoaAcsRequest<ListInstanceIndice
 		this.name = name;
 		if(name != null){
 			putQueryParameter("name", name);
-		}
-	}
-
-	public String getLang() {
-		return this.lang;
-	}
-
-	public void setLang(String lang) {
-		this.lang = lang;
-		if(lang != null){
-			putQueryParameter("lang", lang);
 		}
 	}
 

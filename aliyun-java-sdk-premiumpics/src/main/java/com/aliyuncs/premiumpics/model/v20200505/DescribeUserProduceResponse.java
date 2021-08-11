@@ -52,6 +52,12 @@ public class DescribeUserProduceResponse extends AcsResponse {
 
 	private String userId;
 
+	private String startTime;
+
+	private String endTime;
+
+	private String orderInstanceId;
+
 	public String getBizId() {
 		return this.bizId;
 	}
@@ -162,6 +168,30 @@ public class DescribeUserProduceResponse extends AcsResponse {
 
 	public void setUserId(String userId) {
 		this.userId = userId;
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+	}
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+	}
+
+	public String getOrderInstanceId() {
+		return this.orderInstanceId;
+	}
+
+	public void setOrderInstanceId(String orderInstanceId) {
+		this.orderInstanceId = orderInstanceId;
 	}
 
 	@Override

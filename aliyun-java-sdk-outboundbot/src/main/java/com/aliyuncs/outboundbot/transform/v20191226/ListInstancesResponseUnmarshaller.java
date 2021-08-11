@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.outboundbot.model.v20191226.ListInstancesResponse;
 import com.aliyuncs.outboundbot.model.v20191226.ListInstancesResponse.Instance;
 import com.aliyuncs.outboundbot.model.v20191226.ListInstancesResponse.Instance.NluProfile;
+import com.aliyuncs.outboundbot.model.v20191226.ListInstancesResponse.Instance.ResourceTag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -43,14 +44,28 @@ public class ListInstancesResponseUnmarshaller {
 			instance.setInstanceName(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].InstanceName"));
 			instance.setIsTemplateContainer(_ctx.booleanValue("ListInstancesResponse.Instances["+ i +"].IsTemplateContainer"));
 			instance.setMaxConcurrentConversation(_ctx.integerValue("ListInstancesResponse.Instances["+ i +"].MaxConcurrentConversation"));
-			instance.setOwner(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].Owner"));
+			instance.setOwnerName(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].OwnerName"));
+			instance.setCreatorId(_ctx.longValue("ListInstancesResponse.Instances["+ i +"].CreatorId"));
+			instance.setCreatorName(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].CreatorName"));
 			instance.setNluServiceType(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].NluServiceType"));
+			instance.setOwner(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].Owner"));
+			instance.setResourceGroupId(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].ResourceGroupId"));
 
 			NluProfile nluProfile = new NluProfile();
-			nluProfile.setEndpoint(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].NluProfile.Endpoint"));
 			nluProfile.setAccessKey(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].NluProfile.AccessKey"));
+			nluProfile.setEndpoint(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].NluProfile.Endpoint"));
 			nluProfile.setSecretKey(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].NluProfile.SecretKey"));
 			instance.setNluProfile(nluProfile);
+
+			List<ResourceTag> resourceTags = new ArrayList<ResourceTag>();
+			for (int j = 0; j < _ctx.lengthValue("ListInstancesResponse.Instances["+ i +"].ResourceTags.Length"); j++) {
+				ResourceTag resourceTag = new ResourceTag();
+				resourceTag.setKey(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].ResourceTags["+ j +"].Key"));
+				resourceTag.setValue(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].ResourceTags["+ j +"].Value"));
+
+				resourceTags.add(resourceTag);
+			}
+			instance.setResourceTags(resourceTags);
 
 			instances.add(instance);
 		}

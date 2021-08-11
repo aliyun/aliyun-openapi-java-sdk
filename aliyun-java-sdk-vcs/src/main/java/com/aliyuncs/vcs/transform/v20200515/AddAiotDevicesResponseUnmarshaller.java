@@ -27,25 +27,25 @@ public class AddAiotDevicesResponseUnmarshaller {
 	public static AddAiotDevicesResponse unmarshall(AddAiotDevicesResponse addAiotDevicesResponse, UnmarshallerContext _ctx) {
 		
 		addAiotDevicesResponse.setRequestId(_ctx.stringValue("AddAiotDevicesResponse.RequestId"));
-		addAiotDevicesResponse.setMessage(_ctx.stringValue("AddAiotDevicesResponse.Message"));
 		addAiotDevicesResponse.setCode(_ctx.stringValue("AddAiotDevicesResponse.Code"));
+		addAiotDevicesResponse.setMessage(_ctx.stringValue("AddAiotDevicesResponse.Message"));
 
 		List<AddAiotDeviceResultType> resultList = new ArrayList<AddAiotDeviceResultType>();
 		for (int i = 0; i < _ctx.lengthValue("AddAiotDevicesResponse.ResultList.Length"); i++) {
 			AddAiotDeviceResultType addAiotDeviceResultType = new AddAiotDeviceResultType();
-			addAiotDeviceResultType.setServerId(_ctx.stringValue("AddAiotDevicesResponse.ResultList["+ i +"].ServerId"));
-			addAiotDeviceResultType.setServerHostInternal(_ctx.stringValue("AddAiotDevicesResponse.ResultList["+ i +"].ServerHostInternal"));
-			addAiotDeviceResultType.setMessage(_ctx.stringValue("AddAiotDevicesResponse.ResultList["+ i +"].Message"));
-			addAiotDeviceResultType.setUserId(_ctx.stringValue("AddAiotDevicesResponse.ResultList["+ i +"].UserId"));
-			addAiotDeviceResultType.setDeviceId(_ctx.stringValue("AddAiotDevicesResponse.ResultList["+ i +"].DeviceId"));
-			addAiotDeviceResultType.setServerIp(_ctx.stringValue("AddAiotDevicesResponse.ResultList["+ i +"].ServerIp"));
-			addAiotDeviceResultType.setServerIpInternal(_ctx.stringValue("AddAiotDevicesResponse.ResultList["+ i +"].ServerIpInternal"));
-			addAiotDeviceResultType.setServerWssPort(_ctx.stringValue("AddAiotDevicesResponse.ResultList["+ i +"].ServerWssPort"));
 			addAiotDeviceResultType.setId(_ctx.stringValue("AddAiotDevicesResponse.ResultList["+ i +"].Id"));
+			addAiotDeviceResultType.setServerId(_ctx.stringValue("AddAiotDevicesResponse.ResultList["+ i +"].ServerId"));
+			addAiotDeviceResultType.setServerIp(_ctx.stringValue("AddAiotDevicesResponse.ResultList["+ i +"].ServerIp"));
 			addAiotDeviceResultType.setServerHost(_ctx.stringValue("AddAiotDevicesResponse.ResultList["+ i +"].ServerHost"));
-			addAiotDeviceResultType.setCode(_ctx.stringValue("AddAiotDevicesResponse.ResultList["+ i +"].Code"));
 			addAiotDeviceResultType.setServerPort(_ctx.stringValue("AddAiotDevicesResponse.ResultList["+ i +"].ServerPort"));
+			addAiotDeviceResultType.setServerWssPort(_ctx.stringValue("AddAiotDevicesResponse.ResultList["+ i +"].ServerWssPort"));
+			addAiotDeviceResultType.setDeviceId(_ctx.stringValue("AddAiotDevicesResponse.ResultList["+ i +"].DeviceId"));
+			addAiotDeviceResultType.setUserId(_ctx.stringValue("AddAiotDevicesResponse.ResultList["+ i +"].UserId"));
 			addAiotDeviceResultType.setPassword(_ctx.stringValue("AddAiotDevicesResponse.ResultList["+ i +"].Password"));
+			addAiotDeviceResultType.setCode(_ctx.stringValue("AddAiotDevicesResponse.ResultList["+ i +"].Code"));
+			addAiotDeviceResultType.setMessage(_ctx.stringValue("AddAiotDevicesResponse.ResultList["+ i +"].Message"));
+			addAiotDeviceResultType.setServerIpInternal(_ctx.stringValue("AddAiotDevicesResponse.ResultList["+ i +"].ServerIpInternal"));
+			addAiotDeviceResultType.setServerHostInternal(_ctx.stringValue("AddAiotDevicesResponse.ResultList["+ i +"].ServerHostInternal"));
 
 			resultList.add(addAiotDeviceResultType);
 		}

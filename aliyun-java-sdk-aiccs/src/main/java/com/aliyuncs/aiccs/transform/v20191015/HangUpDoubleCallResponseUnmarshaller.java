@@ -23,9 +23,9 @@ public class HangUpDoubleCallResponseUnmarshaller {
 	public static HangUpDoubleCallResponse unmarshall(HangUpDoubleCallResponse hangUpDoubleCallResponse, UnmarshallerContext _ctx) {
 		
 		hangUpDoubleCallResponse.setRequestId(_ctx.stringValue("HangUpDoubleCallResponse.RequestId"));
-		hangUpDoubleCallResponse.setMessage(_ctx.stringValue("HangUpDoubleCallResponse.Message"));
-		hangUpDoubleCallResponse.setCode(_ctx.stringValue("HangUpDoubleCallResponse.Code"));
 		hangUpDoubleCallResponse.setSuccess(_ctx.booleanValue("HangUpDoubleCallResponse.Success"));
+		hangUpDoubleCallResponse.setCode(_ctx.stringValue("HangUpDoubleCallResponse.Code"));
+		hangUpDoubleCallResponse.setMessage(_ctx.stringValue("HangUpDoubleCallResponse.Message"));
 	 
 	 	return hangUpDoubleCallResponse;
 	}

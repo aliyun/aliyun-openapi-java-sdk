@@ -71,7 +71,7 @@ public class SuspendProcessesRequest extends RpcAcsRequest<SuspendProcessesRespo
 	}
 
 	public void setProcesses(List<String> processes) {
-		this.processes = processes;
+		this.processes = processes;	
 		if (processes != null) {
 			for (int i = 0; i < processes.size(); i++) {
 				putQueryParameter("Process." + (i + 1) , processes.get(i));

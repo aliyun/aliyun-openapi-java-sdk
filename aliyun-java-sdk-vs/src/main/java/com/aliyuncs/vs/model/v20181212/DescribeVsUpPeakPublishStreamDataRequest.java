@@ -35,7 +35,7 @@ public class DescribeVsUpPeakPublishStreamDataRequest extends RpcAcsRequest<Desc
 
 	private String domainSwitch;
 	public DescribeVsUpPeakPublishStreamDataRequest() {
-		super("vs", "2018-12-12", "DescribeVsUpPeakPublishStreamData", "vs");
+		super("vs", "2018-12-12", "DescribeVsUpPeakPublishStreamData");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

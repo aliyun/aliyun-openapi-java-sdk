@@ -25,21 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListBodyAlgorithmResultsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String message;
+
+	private String requestId;
 
 	private String code;
 
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getMessage() {
 		return this.message;
@@ -47,6 +39,14 @@ public class ListBodyAlgorithmResultsResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getCode() {
@@ -67,31 +67,15 @@ public class ListBodyAlgorithmResultsResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Integer totalCount;
-
-		private Integer pageSize;
-
 		private Integer totalPage;
 
 		private Integer pageNumber;
 
+		private Integer pageSize;
+
+		private Integer totalCount;
+
 		private List<RecordsItem> records;
-
-		public Integer getTotalCount() {
-			return this.totalCount;
-		}
-
-		public void setTotalCount(Integer totalCount) {
-			this.totalCount = totalCount;
-		}
-
-		public Integer getPageSize() {
-			return this.pageSize;
-		}
-
-		public void setPageSize(Integer pageSize) {
-			this.pageSize = pageSize;
-		}
 
 		public Integer getTotalPage() {
 			return this.totalPage;
@@ -109,6 +93,22 @@ public class ListBodyAlgorithmResultsResponse extends AcsResponse {
 			this.pageNumber = pageNumber;
 		}
 
+		public Integer getPageSize() {
+			return this.pageSize;
+		}
+
+		public void setPageSize(Integer pageSize) {
+			this.pageSize = pageSize;
+		}
+
+		public Integer getTotalCount() {
+			return this.totalCount;
+		}
+
+		public void setTotalCount(Integer totalCount) {
+			this.totalCount = totalCount;
+		}
+
 		public List<RecordsItem> getRecords() {
 			return this.records;
 		}
@@ -119,56 +119,64 @@ public class ListBodyAlgorithmResultsResponse extends AcsResponse {
 
 		public static class RecordsItem {
 
-			private String genderCode;
+			private Float rightBottomY;
+
+			private String dataSourceId;
 
 			private String picUrlPath;
 
-			private String corpId;
+			private String trousersColor;
 
 			private Float rightBottomX;
 
-			private String targetPicUrlPath;
-
-			private Float rightBottomY;
+			private String coatColor;
 
 			private String sourceId;
 
 			private String maxAge;
 
-			private Float leftTopY;
-
-			private String capStyle;
-
-			private Float leftTopX;
-
-			private String trousersStyle;
-
-			private String coatStyle;
-
-			private String minAge;
-
-			private String trousersLength;
-
-			private String personId;
-
 			private String coatLength;
 
-			private String shotTime;
-
-			private String coatColor;
-
-			private String trousersColor;
-
-			private String dataSourceId;
+			private String targetPicUrlPath;
 
 			private String hairStyle;
 
-			public String getGenderCode() {
-				return this.genderCode;
+			private String coatStyle;
+
+			private Float leftTopY;
+
+			private String minAge;
+
+			private String corpId;
+
+			private String trousersLength;
+
+			private String trousersStyle;
+
+			private String shotTime;
+
+			private Float leftTopX;
+
+			private String genderCode;
+
+			private String personId;
+
+			private String capStyle;
+
+			public Float getRightBottomY() {
+				return this.rightBottomY;
 			}
 
-			public void setGenderCode(String genderCode) {
-				this.genderCode = genderCode;
+			public void setRightBottomY(Float rightBottomY) {
+				this.rightBottomY = rightBottomY;
+			}
+
+			public String getDataSourceId() {
+				return this.dataSourceId;
+			}
+
+			public void setDataSourceId(String dataSourceId) {
+				this.dataSourceId = dataSourceId;
 			}
 
 			public String getPicUrlPath() {
@@ -179,12 +187,12 @@ public class ListBodyAlgorithmResultsResponse extends AcsResponse {
 				this.picUrlPath = picUrlPath;
 			}
 
-			public String getCorpId() {
-				return this.corpId;
+			public String getTrousersColor() {
+				return this.trousersColor;
 			}
 
-			public void setCorpId(String corpId) {
-				this.corpId = corpId;
+			public void setTrousersColor(String trousersColor) {
+				this.trousersColor = trousersColor;
 			}
 
 			public Float getRightBottomX() {
@@ -195,20 +203,12 @@ public class ListBodyAlgorithmResultsResponse extends AcsResponse {
 				this.rightBottomX = rightBottomX;
 			}
 
-			public String getTargetPicUrlPath() {
-				return this.targetPicUrlPath;
+			public String getCoatColor() {
+				return this.coatColor;
 			}
 
-			public void setTargetPicUrlPath(String targetPicUrlPath) {
-				this.targetPicUrlPath = targetPicUrlPath;
-			}
-
-			public Float getRightBottomY() {
-				return this.rightBottomY;
-			}
-
-			public void setRightBottomY(Float rightBottomY) {
-				this.rightBottomY = rightBottomY;
+			public void setCoatColor(String coatColor) {
+				this.coatColor = coatColor;
 			}
 
 			public String getSourceId() {
@@ -227,36 +227,28 @@ public class ListBodyAlgorithmResultsResponse extends AcsResponse {
 				this.maxAge = maxAge;
 			}
 
-			public Float getLeftTopY() {
-				return this.leftTopY;
+			public String getCoatLength() {
+				return this.coatLength;
 			}
 
-			public void setLeftTopY(Float leftTopY) {
-				this.leftTopY = leftTopY;
+			public void setCoatLength(String coatLength) {
+				this.coatLength = coatLength;
 			}
 
-			public String getCapStyle() {
-				return this.capStyle;
+			public String getTargetPicUrlPath() {
+				return this.targetPicUrlPath;
 			}
 
-			public void setCapStyle(String capStyle) {
-				this.capStyle = capStyle;
+			public void setTargetPicUrlPath(String targetPicUrlPath) {
+				this.targetPicUrlPath = targetPicUrlPath;
 			}
 
-			public Float getLeftTopX() {
-				return this.leftTopX;
+			public String getHairStyle() {
+				return this.hairStyle;
 			}
 
-			public void setLeftTopX(Float leftTopX) {
-				this.leftTopX = leftTopX;
-			}
-
-			public String getTrousersStyle() {
-				return this.trousersStyle;
-			}
-
-			public void setTrousersStyle(String trousersStyle) {
-				this.trousersStyle = trousersStyle;
+			public void setHairStyle(String hairStyle) {
+				this.hairStyle = hairStyle;
 			}
 
 			public String getCoatStyle() {
@@ -267,12 +259,28 @@ public class ListBodyAlgorithmResultsResponse extends AcsResponse {
 				this.coatStyle = coatStyle;
 			}
 
+			public Float getLeftTopY() {
+				return this.leftTopY;
+			}
+
+			public void setLeftTopY(Float leftTopY) {
+				this.leftTopY = leftTopY;
+			}
+
 			public String getMinAge() {
 				return this.minAge;
 			}
 
 			public void setMinAge(String minAge) {
 				this.minAge = minAge;
+			}
+
+			public String getCorpId() {
+				return this.corpId;
+			}
+
+			public void setCorpId(String corpId) {
+				this.corpId = corpId;
 			}
 
 			public String getTrousersLength() {
@@ -283,20 +291,12 @@ public class ListBodyAlgorithmResultsResponse extends AcsResponse {
 				this.trousersLength = trousersLength;
 			}
 
-			public String getPersonId() {
-				return this.personId;
+			public String getTrousersStyle() {
+				return this.trousersStyle;
 			}
 
-			public void setPersonId(String personId) {
-				this.personId = personId;
-			}
-
-			public String getCoatLength() {
-				return this.coatLength;
-			}
-
-			public void setCoatLength(String coatLength) {
-				this.coatLength = coatLength;
+			public void setTrousersStyle(String trousersStyle) {
+				this.trousersStyle = trousersStyle;
 			}
 
 			public String getShotTime() {
@@ -307,36 +307,36 @@ public class ListBodyAlgorithmResultsResponse extends AcsResponse {
 				this.shotTime = shotTime;
 			}
 
-			public String getCoatColor() {
-				return this.coatColor;
+			public Float getLeftTopX() {
+				return this.leftTopX;
 			}
 
-			public void setCoatColor(String coatColor) {
-				this.coatColor = coatColor;
+			public void setLeftTopX(Float leftTopX) {
+				this.leftTopX = leftTopX;
 			}
 
-			public String getTrousersColor() {
-				return this.trousersColor;
+			public String getGenderCode() {
+				return this.genderCode;
 			}
 
-			public void setTrousersColor(String trousersColor) {
-				this.trousersColor = trousersColor;
+			public void setGenderCode(String genderCode) {
+				this.genderCode = genderCode;
 			}
 
-			public String getDataSourceId() {
-				return this.dataSourceId;
+			public String getPersonId() {
+				return this.personId;
 			}
 
-			public void setDataSourceId(String dataSourceId) {
-				this.dataSourceId = dataSourceId;
+			public void setPersonId(String personId) {
+				this.personId = personId;
 			}
 
-			public String getHairStyle() {
-				return this.hairStyle;
+			public String getCapStyle() {
+				return this.capStyle;
 			}
 
-			public void setHairStyle(String hairStyle) {
-				this.hairStyle = hairStyle;
+			public void setCapStyle(String capStyle) {
+				this.capStyle = capStyle;
 			}
 		}
 	}

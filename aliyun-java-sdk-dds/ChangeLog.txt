@@ -1,3 +1,6 @@
+2021-07-07 Version: 3.5.4
+- Add ModifyResourceGroup API.
+
 2021-05-20 Version: 3.5.3
 - Upgrade mongodb sdk.
 

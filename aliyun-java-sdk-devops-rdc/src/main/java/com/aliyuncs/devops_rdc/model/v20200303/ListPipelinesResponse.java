@@ -25,30 +25,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListPipelinesResponse extends AcsResponse {
 
-	private Boolean success;
-
-	private String errorCode;
+	private String requestId;
 
 	private String errorMessage;
 
 	private Map<Object,Object> object;
 
-	private String requestId;
+	private String errorCode;
 
-	public Boolean getSuccess() {
-		return this.success;
+	private Boolean success;
+
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getErrorMessage() {
@@ -67,12 +59,20 @@ public class ListPipelinesResponse extends AcsResponse {
 		this.object = object;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getErrorCode() {
+		return this.errorCode;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	@Override

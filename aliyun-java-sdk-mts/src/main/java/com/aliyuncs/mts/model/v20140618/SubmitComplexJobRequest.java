@@ -47,7 +47,7 @@ public class SubmitComplexJobRequest extends RpcAcsRequest<SubmitComplexJobRespo
 
 	private String complexConfigs;
 	public SubmitComplexJobRequest() {
-		super("Mts", "2014-06-18", "SubmitComplexJob");
+		super("Mts", "2014-06-18", "SubmitComplexJob", "mts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

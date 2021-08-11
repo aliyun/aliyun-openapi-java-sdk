@@ -31,8 +31,8 @@ public class ListAccessKeysResponseUnmarshaller {
 		List<AccessKey> accessKeys = new ArrayList<AccessKey>();
 		for (int i = 0; i < _ctx.lengthValue("ListAccessKeysResponse.AccessKeys.Length"); i++) {
 			AccessKey accessKey = new AccessKey();
-			accessKey.setAccessKeyId(_ctx.stringValue("ListAccessKeysResponse.AccessKeys["+ i +"].AccessKeyId"));
 			accessKey.setStatus(_ctx.stringValue("ListAccessKeysResponse.AccessKeys["+ i +"].Status"));
+			accessKey.setAccessKeyId(_ctx.stringValue("ListAccessKeysResponse.AccessKeys["+ i +"].AccessKeyId"));
 			accessKey.setCreateDate(_ctx.stringValue("ListAccessKeysResponse.AccessKeys["+ i +"].CreateDate"));
 
 			accessKeys.add(accessKey);

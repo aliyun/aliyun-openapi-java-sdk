@@ -24,38 +24,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class UpdateGatewayFileShareResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
-	private String code;
+	private String taskId;
 
 	private String message;
 
-	private String taskId;
+	private String requestId;
 
-	public String getRequestId() {
-		return this.requestId;
+	private String code;
+
+	private Boolean success;
+
+	public String getTaskId() {
+		return this.taskId;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
+	public void setTaskId(String taskId) {
+		this.taskId = taskId;
 	}
 
 	public String getMessage() {
@@ -66,12 +50,28 @@ public class UpdateGatewayFileShareResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getTaskId() {
-		return this.taskId;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setTaskId(String taskId) {
-		this.taskId = taskId;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	@Override

@@ -25,24 +25,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListMenuResponse extends AcsResponse {
 
-	private String errorCode;
+	private String requestId;
 
 	private String errorDesc;
 
-	private Boolean success;
-
 	private String traceId;
 
-	private String requestId;
+	private String errorCode;
+
+	private Boolean success;
 
 	private List<DataItem> data;
 
-	public String getErrorCode() {
-		return this.errorCode;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getErrorDesc() {
@@ -53,14 +53,6 @@ public class ListMenuResponse extends AcsResponse {
 		this.errorDesc = errorDesc;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
 	public String getTraceId() {
 		return this.traceId;
 	}
@@ -69,12 +61,20 @@ public class ListMenuResponse extends AcsResponse {
 		this.traceId = traceId;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getErrorCode() {
+		return this.errorCode;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<DataItem> getData() {
@@ -87,18 +87,18 @@ public class ListMenuResponse extends AcsResponse {
 
 	public static class DataItem {
 
-		private String name;
+		private String key;
 
 		private String url;
 
-		private String key;
+		private String name;
 
-		public String getName() {
-			return this.name;
+		public String getKey() {
+			return this.key;
 		}
 
-		public void setName(String name) {
-			this.name = name;
+		public void setKey(String key) {
+			this.key = key;
 		}
 
 		public String getUrl() {
@@ -109,12 +109,12 @@ public class ListMenuResponse extends AcsResponse {
 			this.url = url;
 		}
 
-		public String getKey() {
-			return this.key;
+		public String getName() {
+			return this.name;
 		}
 
-		public void setKey(String key) {
-			this.key = key;
+		public void setName(String name) {
+			this.name = name;
 		}
 	}
 

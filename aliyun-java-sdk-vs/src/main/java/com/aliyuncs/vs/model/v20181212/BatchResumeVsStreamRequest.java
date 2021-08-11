@@ -35,7 +35,7 @@ public class BatchResumeVsStreamRequest extends RpcAcsRequest<BatchResumeVsStrea
 
 	private Long ownerId;
 	public BatchResumeVsStreamRequest() {
-		super("vs", "2018-12-12", "BatchResumeVsStream", "vs");
+		super("vs", "2018-12-12", "BatchResumeVsStream");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

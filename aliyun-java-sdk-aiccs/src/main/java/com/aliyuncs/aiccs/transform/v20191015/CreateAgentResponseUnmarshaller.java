@@ -27,6 +27,7 @@ public class CreateAgentResponseUnmarshaller {
 		createAgentResponse.setData(_ctx.longValue("CreateAgentResponse.Data"));
 		createAgentResponse.setCode(_ctx.stringValue("CreateAgentResponse.Code"));
 		createAgentResponse.setSuccess(_ctx.booleanValue("CreateAgentResponse.Success"));
+		createAgentResponse.setHttpStatusCode(_ctx.longValue("CreateAgentResponse.HttpStatusCode"));
 	 
 	 	return createAgentResponse;
 	}

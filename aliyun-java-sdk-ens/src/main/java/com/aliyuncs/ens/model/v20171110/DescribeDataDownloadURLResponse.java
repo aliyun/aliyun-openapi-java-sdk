@@ -71,7 +71,7 @@ public class DescribeDataDownloadURLResponse extends AcsResponse {
 
 		private String expireTime;
 
-		private List<文件服务器列表> serverList;
+		private List<ServerListItem> serverList;
 
 		public String getUrl() {
 			return this.url;
@@ -89,15 +89,15 @@ public class DescribeDataDownloadURLResponse extends AcsResponse {
 			this.expireTime = expireTime;
 		}
 
-		public List<文件服务器列表> getServerList() {
+		public List<ServerListItem> getServerList() {
 			return this.serverList;
 		}
 
-		public void setServerList(List<文件服务器列表> serverList) {
+		public void setServerList(List<ServerListItem> serverList) {
 			this.serverList = serverList;
 		}
 
-		public static class 文件服务器列表 {
+		public static class ServerListItem {
 
 			private String host;
 

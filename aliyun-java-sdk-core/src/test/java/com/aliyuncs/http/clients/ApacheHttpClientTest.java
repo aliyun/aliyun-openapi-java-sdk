@@ -1,6 +1,7 @@
 package com.aliyuncs.http.clients;
 
 import com.aliyuncs.exceptions.ClientException;
+import com.aliyuncs.exceptions.ServerException;
 import com.aliyuncs.http.*;
 import org.apache.http.Header;
 import org.apache.http.HttpEntity;
@@ -414,6 +415,38 @@ public class ApacheHttpClientTest {
     }
 
     @Test
+    public void testSyncInvokeNullHttpResponseEntityGetContentType() throws ClientException, IOException, NoSuchFieldException,
+            SecurityException, IllegalArgumentException, IllegalAccessException {
+        HttpClientConfig config = this.getMockHttpClientConfigWithFalseIgnoreSSLCerts();
+        ApacheHttpClient apacheHttpClient = ApacheHttpClient.getInstance();
+        apacheHttpClient.init(config);
+        HttpRequest apiRequest = this.getMockHttpRequest();
+        Mockito.when(apiRequest.getSysMethod()).thenReturn(MethodType.PUT);
+        Mockito.when(apiRequest.getHeaderValue(Mockito.anyString())).thenReturn("contentType");
+        CloseableHttpResponse closeableHttpResponse = this.getMockHttpResponse();
+        Mockito.when(closeableHttpResponse.getEntity().isChunked()).thenReturn(true);
+        Mockito.when(closeableHttpResponse.getEntity().getContentType()).thenReturn(null);
+        Header contentTypeHeader = Mockito.mock(Header.class);
+        Mockito.when(contentTypeHeader.getValue()).thenReturn("value");
+        Mockito.when(closeableHttpResponse.getFirstHeader(Mockito.anyString())).thenReturn(contentTypeHeader);
+
+        Field httpClientReflect = ApacheHttpClient.class.getDeclaredField("httpClient");
+        httpClientReflect.setAccessible(true);
+        CloseableHttpClient closeableHttpClient = Mockito.mock(CloseableHttpClient.class);
+        httpClientReflect.set(apacheHttpClient, closeableHttpClient);
+        Mockito.doReturn(closeableHttpResponse).when(closeableHttpClient).execute(Mockito.any(HttpUriRequest.class));
+        try {
+            Assert.assertTrue(apacheHttpClient.syncInvoke(apiRequest) instanceof HttpResponse);
+        } catch (Exception e) {
+            Assert.assertEquals("contentType cannot be empty", e.getMessage());
+        } finally {
+            apacheHttpClient.close();
+        }
+
+
+    }
+
+    @Test
     public void testSyncInvokeNotNullHttpResponseEntity() throws ClientException, IOException, NoSuchFieldException,
             SecurityException, IllegalArgumentException, IllegalAccessException {
         HttpClientConfig config = this.getMockHttpClientConfigWithFalseIgnoreSSLCerts();
@@ -591,7 +624,7 @@ public class ApacheHttpClientTest {
     }
 
     @Test
-    public void createSSLConnectionSocketFactoryTest() throws Exception{
+    public void createSSLConnectionSocketFactoryTest() throws Exception {
         Method createSSLConnectionSocketFactory = ApacheHttpClient.class.getDeclaredMethod("createSSLConnectionSocketFactory");
         createSSLConnectionSocketFactory.setAccessible(true);
         HttpClientConfig httpClientConfig = HttpClientConfig.getDefault();

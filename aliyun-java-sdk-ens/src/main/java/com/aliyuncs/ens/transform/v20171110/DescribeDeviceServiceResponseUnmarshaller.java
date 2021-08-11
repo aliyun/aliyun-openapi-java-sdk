@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.ens.model.v20171110.DescribeDeviceServiceResponse;
-import com.aliyuncs.ens.model.v20171110.DescribeDeviceServiceResponse.ResourceDetailInfo;
+import com.aliyuncs.ens.model.v20171110.DescribeDeviceServiceResponse.DeviceInfo;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -28,17 +28,19 @@ public class DescribeDeviceServiceResponseUnmarshaller {
 		
 		describeDeviceServiceResponse.setRequestId(_ctx.stringValue("DescribeDeviceServiceResponse.RequestId"));
 
-		List<ResourceDetailInfo> resourceDetailInfos = new ArrayList<ResourceDetailInfo>();
+		List<DeviceInfo> resourceDetailInfos = new ArrayList<DeviceInfo>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDeviceServiceResponse.ResourceDetailInfos.Length"); i++) {
-			ResourceDetailInfo resourceDetailInfo = new ResourceDetailInfo();
-			resourceDetailInfo.setRegionID(_ctx.stringValue("DescribeDeviceServiceResponse.ResourceDetailInfos["+ i +"].RegionID"));
-			resourceDetailInfo.setID(_ctx.stringValue("DescribeDeviceServiceResponse.ResourceDetailInfos["+ i +"].ID"));
-			resourceDetailInfo.setIP(_ctx.stringValue("DescribeDeviceServiceResponse.ResourceDetailInfos["+ i +"].IP"));
-			resourceDetailInfo.setServer(_ctx.stringValue("DescribeDeviceServiceResponse.ResourceDetailInfos["+ i +"].Server"));
-			resourceDetailInfo.setStatus(_ctx.stringValue("DescribeDeviceServiceResponse.ResourceDetailInfos["+ i +"].Status"));
-			resourceDetailInfo.setType(_ctx.stringValue("DescribeDeviceServiceResponse.ResourceDetailInfos["+ i +"].Type"));
+			DeviceInfo deviceInfo = new DeviceInfo();
+			deviceInfo.setRegionID(_ctx.stringValue("DescribeDeviceServiceResponse.ResourceDetailInfos["+ i +"].RegionID"));
+			deviceInfo.setID(_ctx.stringValue("DescribeDeviceServiceResponse.ResourceDetailInfos["+ i +"].ID"));
+			deviceInfo.setIP(_ctx.stringValue("DescribeDeviceServiceResponse.ResourceDetailInfos["+ i +"].IP"));
+			deviceInfo.setServer(_ctx.stringValue("DescribeDeviceServiceResponse.ResourceDetailInfos["+ i +"].Server"));
+			deviceInfo.setStatus(_ctx.stringValue("DescribeDeviceServiceResponse.ResourceDetailInfos["+ i +"].Status"));
+			deviceInfo.setType(_ctx.stringValue("DescribeDeviceServiceResponse.ResourceDetailInfos["+ i +"].Type"));
+			deviceInfo.setMac(_ctx.stringValue("DescribeDeviceServiceResponse.ResourceDetailInfos["+ i +"].Mac"));
+			deviceInfo.setISP(_ctx.stringValue("DescribeDeviceServiceResponse.ResourceDetailInfos["+ i +"].ISP"));
 
-			resourceDetailInfos.add(resourceDetailInfo);
+			resourceDetailInfos.add(deviceInfo);
 		}
 		describeDeviceServiceResponse.setResourceDetailInfos(resourceDetailInfos);
 	 

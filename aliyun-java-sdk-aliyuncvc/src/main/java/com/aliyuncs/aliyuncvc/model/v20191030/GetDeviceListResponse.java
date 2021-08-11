@@ -25,22 +25,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetDeviceListResponse extends AcsResponse {
 
-	private Integer errorCode;
+	private String requestId;
 
 	private String message;
 
-	private Boolean success;
+	private Integer errorCode;
 
-	private String requestId;
+	private Boolean success;
 
 	private List<DataItem> data;
 
-	public Integer getErrorCode() {
-		return this.errorCode;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setErrorCode(Integer errorCode) {
-		this.errorCode = errorCode;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getMessage() {
@@ -51,20 +51,20 @@ public class GetDeviceListResponse extends AcsResponse {
 		this.message = message;
 	}
 
+	public Integer getErrorCode() {
+		return this.errorCode;
+	}
+
+	public void setErrorCode(Integer errorCode) {
+		this.errorCode = errorCode;
+	}
+
 	public Boolean getSuccess() {
 		return this.success;
 	}
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
 	}
 
 	public List<DataItem> getData() {
@@ -77,26 +77,26 @@ public class GetDeviceListResponse extends AcsResponse {
 
 	public static class DataItem {
 
-		private String activationCode;
+		private Integer status;
 
 		private String castScreenCode;
 
 		private String iP;
 
-		private String mac;
+		private String port;
 
 		private String sN;
 
-		private Integer status;
+		private String activationCode;
 
-		private String port;
+		private String mac;
 
-		public String getActivationCode() {
-			return this.activationCode;
+		public Integer getStatus() {
+			return this.status;
 		}
 
-		public void setActivationCode(String activationCode) {
-			this.activationCode = activationCode;
+		public void setStatus(Integer status) {
+			this.status = status;
 		}
 
 		public String getCastScreenCode() {
@@ -115,12 +115,12 @@ public class GetDeviceListResponse extends AcsResponse {
 			this.iP = iP;
 		}
 
-		public String getMac() {
-			return this.mac;
+		public String getPort() {
+			return this.port;
 		}
 
-		public void setMac(String mac) {
-			this.mac = mac;
+		public void setPort(String port) {
+			this.port = port;
 		}
 
 		public String getSN() {
@@ -131,20 +131,20 @@ public class GetDeviceListResponse extends AcsResponse {
 			this.sN = sN;
 		}
 
-		public Integer getStatus() {
-			return this.status;
+		public String getActivationCode() {
+			return this.activationCode;
 		}
 
-		public void setStatus(Integer status) {
-			this.status = status;
+		public void setActivationCode(String activationCode) {
+			this.activationCode = activationCode;
 		}
 
-		public String getPort() {
-			return this.port;
+		public String getMac() {
+			return this.mac;
 		}
 
-		public void setPort(String port) {
-			this.port = port;
+		public void setMac(String mac) {
+			this.mac = mac;
 		}
 	}
 

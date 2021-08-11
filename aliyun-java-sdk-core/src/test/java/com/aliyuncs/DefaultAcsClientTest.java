@@ -1,9 +1,6 @@
 package com.aliyuncs;
 
-import com.aliyuncs.auth.AlibabaCloudCredentials;
-import com.aliyuncs.auth.Credential;
-import com.aliyuncs.auth.LegacyCredentials;
-import com.aliyuncs.auth.Signer;
+import com.aliyuncs.auth.*;
 import com.aliyuncs.auth.sts.AssumeRoleRequest;
 import com.aliyuncs.ecs.v20140526.model.DescribeRegionsResponse;
 import com.aliyuncs.endpoint.DefaultEndpointResolver;
@@ -44,8 +41,6 @@ import java.lang.reflect.Method;
 import java.net.SocketTimeoutException;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
-import java.util.Iterator;
-import java.util.Map;
 
 import static org.mockito.ArgumentMatchers.isNull;
 import static org.mockito.Matchers.any;
@@ -68,6 +63,9 @@ public class DefaultAcsClientTest {
         Assert.assertEquals("cn-test", client.getProfile().getRegionId());
         Assert.assertEquals("ApacheHttpClient",
                 client.getUserAgentConfig().getSysUserAgentsMap().get("HTTPClient"));
+        DefaultProfile profile = DefaultProfile.getProfile("cn-test");
+        client = new DefaultAcsClient(profile);
+        Assert.assertTrue(client.getCredentialsProvider().getCredentials() instanceof AnonymousCredentials);
     }
 
     @SuppressWarnings("deprecation")
@@ -911,5 +909,4 @@ public class DefaultAcsClientTest {
         };
         return tracer;
     }
-
 }

@@ -28,13 +28,13 @@ public class InstallBackupClientRequest extends RpcAcsRequest<InstallBackupClien
 
 	private Long resourceOwnerId;
 
-	private String policyVersion;
-
 	private String uuid;
 
 	private String sourceIp;
 
 	private List<String> uuidLists;
+
+	private String policyVersion;
 	public InstallBackupClientRequest() {
 		super("Sas", "2018-12-03", "InstallBackupClient", "sas");
 		setMethod(MethodType.POST);
@@ -52,17 +52,6 @@ public class InstallBackupClientRequest extends RpcAcsRequest<InstallBackupClien
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getPolicyVersion() {
-		return this.policyVersion;
-	}
-
-	public void setPolicyVersion(String policyVersion) {
-		this.policyVersion = policyVersion;
-		if(policyVersion != null){
-			putQueryParameter("PolicyVersion", policyVersion);
 		}
 	}
 
@@ -99,6 +88,17 @@ public class InstallBackupClientRequest extends RpcAcsRequest<InstallBackupClien
 				putQueryParameter("UuidList." + (i + 1) , uuidLists.get(i));
 			}
 		}	
+	}
+
+	public String getPolicyVersion() {
+		return this.policyVersion;
+	}
+
+	public void setPolicyVersion(String policyVersion) {
+		this.policyVersion = policyVersion;
+		if(policyVersion != null){
+			putQueryParameter("PolicyVersion", policyVersion);
+		}
 	}
 
 	@Override

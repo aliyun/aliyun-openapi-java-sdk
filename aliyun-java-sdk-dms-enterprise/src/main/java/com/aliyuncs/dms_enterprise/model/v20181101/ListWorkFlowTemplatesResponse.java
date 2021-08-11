@@ -77,19 +77,27 @@ public class ListWorkFlowTemplatesResponse extends AcsResponse {
 
 	public static class WorkFlowTemplate {
 
+		private Integer isSystem;
+
 		private String comment;
-
-		private Long createUserId;
-
-		private String templateName;
 
 		private String enabled;
 
-		private Integer isSystem;
+		private String templateName;
 
 		private Long templateId;
 
+		private Long createUserId;
+
 		private List<WorkflowNode> workflowNodes;
+
+		public Integer getIsSystem() {
+			return this.isSystem;
+		}
+
+		public void setIsSystem(Integer isSystem) {
+			this.isSystem = isSystem;
+		}
 
 		public String getComment() {
 			return this.comment;
@@ -97,22 +105,6 @@ public class ListWorkFlowTemplatesResponse extends AcsResponse {
 
 		public void setComment(String comment) {
 			this.comment = comment;
-		}
-
-		public Long getCreateUserId() {
-			return this.createUserId;
-		}
-
-		public void setCreateUserId(Long createUserId) {
-			this.createUserId = createUserId;
-		}
-
-		public String getTemplateName() {
-			return this.templateName;
-		}
-
-		public void setTemplateName(String templateName) {
-			this.templateName = templateName;
 		}
 
 		public String getEnabled() {
@@ -123,12 +115,12 @@ public class ListWorkFlowTemplatesResponse extends AcsResponse {
 			this.enabled = enabled;
 		}
 
-		public Integer getIsSystem() {
-			return this.isSystem;
+		public String getTemplateName() {
+			return this.templateName;
 		}
 
-		public void setIsSystem(Integer isSystem) {
-			this.isSystem = isSystem;
+		public void setTemplateName(String templateName) {
+			this.templateName = templateName;
 		}
 
 		public Long getTemplateId() {
@@ -137,6 +129,14 @@ public class ListWorkFlowTemplatesResponse extends AcsResponse {
 
 		public void setTemplateId(Long templateId) {
 			this.templateId = templateId;
+		}
+
+		public Long getCreateUserId() {
+			return this.createUserId;
+		}
+
+		public void setCreateUserId(Long createUserId) {
+			this.createUserId = createUserId;
 		}
 
 		public List<WorkflowNode> getWorkflowNodes() {
@@ -151,17 +151,17 @@ public class ListWorkFlowTemplatesResponse extends AcsResponse {
 
 			private String comment;
 
-			private Integer position;
+			private String nodeType;
 
 			private String nodeName;
 
-			private String nodeType;
-
-			private Long nodeId;
+			private Integer position;
 
 			private Long createUserId;
 
 			private Long templateId;
+
+			private Long nodeId;
 
 			public String getComment() {
 				return this.comment;
@@ -169,22 +169,6 @@ public class ListWorkFlowTemplatesResponse extends AcsResponse {
 
 			public void setComment(String comment) {
 				this.comment = comment;
-			}
-
-			public Integer getPosition() {
-				return this.position;
-			}
-
-			public void setPosition(Integer position) {
-				this.position = position;
-			}
-
-			public String getNodeName() {
-				return this.nodeName;
-			}
-
-			public void setNodeName(String nodeName) {
-				this.nodeName = nodeName;
 			}
 
 			public String getNodeType() {
@@ -195,12 +179,20 @@ public class ListWorkFlowTemplatesResponse extends AcsResponse {
 				this.nodeType = nodeType;
 			}
 
-			public Long getNodeId() {
-				return this.nodeId;
+			public String getNodeName() {
+				return this.nodeName;
 			}
 
-			public void setNodeId(Long nodeId) {
-				this.nodeId = nodeId;
+			public void setNodeName(String nodeName) {
+				this.nodeName = nodeName;
+			}
+
+			public Integer getPosition() {
+				return this.position;
+			}
+
+			public void setPosition(Integer position) {
+				this.position = position;
 			}
 
 			public Long getCreateUserId() {
@@ -217,6 +209,14 @@ public class ListWorkFlowTemplatesResponse extends AcsResponse {
 
 			public void setTemplateId(Long templateId) {
 				this.templateId = templateId;
+			}
+
+			public Long getNodeId() {
+				return this.nodeId;
+			}
+
+			public void setNodeId(Long nodeId) {
+				this.nodeId = nodeId;
 			}
 		}
 	}

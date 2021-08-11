@@ -34,25 +34,25 @@ public class ListInstancesResponseUnmarshaller {
 		listInstancesResponse.setSuccess(_ctx.booleanValue("ListInstancesResponse.Success"));
 
 		Data data = new Data();
-		data.setTotalCount(_ctx.integerValue("ListInstancesResponse.Data.TotalCount"));
-		data.setPageSize(_ctx.integerValue("ListInstancesResponse.Data.PageSize"));
 		data.setCurrentPage(_ctx.integerValue("ListInstancesResponse.Data.CurrentPage"));
+		data.setPageSize(_ctx.integerValue("ListInstancesResponse.Data.PageSize"));
+		data.setTotalCount(_ctx.integerValue("ListInstancesResponse.Data.TotalCount"));
 
 		List<ItemsItem> items = new ArrayList<ItemsItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListInstancesResponse.Data.Items.Length"); i++) {
 			ItemsItem itemsItem = new ItemsItem();
-			itemsItem.setInstanceName(_ctx.stringValue("ListInstancesResponse.Data.Items["+ i +"].InstanceName"));
 			itemsItem.setStatus(_ctx.stringValue("ListInstancesResponse.Data.Items["+ i +"].Status"));
+			itemsItem.setInstanceName(_ctx.stringValue("ListInstancesResponse.Data.Items["+ i +"].InstanceName"));
+			itemsItem.setCreateTime(_ctx.longValue("ListInstancesResponse.Data.Items["+ i +"].CreateTime"));
 			itemsItem.setDeviceNumber(_ctx.integerValue("ListInstancesResponse.Data.Items["+ i +"].DeviceNumber"));
 			itemsItem.setInstanceId(_ctx.stringValue("ListInstancesResponse.Data.Items["+ i +"].InstanceId"));
-			itemsItem.setCreateTime(_ctx.longValue("ListInstancesResponse.Data.Items["+ i +"].CreateTime"));
 			itemsItem.setAcuUsed(_ctx.integerValue("ListInstancesResponse.Data.Items["+ i +"].AcuUsed"));
 
 			List<AlgorithmsItem> algorithms = new ArrayList<AlgorithmsItem>();
 			for (int j = 0; j < _ctx.lengthValue("ListInstancesResponse.Data.Items["+ i +"].Algorithms.Length"); j++) {
 				AlgorithmsItem algorithmsItem = new AlgorithmsItem();
-				algorithmsItem.setAlgorithmId(_ctx.stringValue("ListInstancesResponse.Data.Items["+ i +"].Algorithms["+ j +"].AlgorithmId"));
 				algorithmsItem.setAlgorithmName(_ctx.stringValue("ListInstancesResponse.Data.Items["+ i +"].Algorithms["+ j +"].AlgorithmName"));
+				algorithmsItem.setAlgorithmId(_ctx.stringValue("ListInstancesResponse.Data.Items["+ i +"].Algorithms["+ j +"].AlgorithmId"));
 
 				algorithms.add(algorithmsItem);
 			}

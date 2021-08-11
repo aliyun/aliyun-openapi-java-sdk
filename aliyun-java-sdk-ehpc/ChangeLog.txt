@@ -1,3 +1,6 @@
+2021-05-21 Version: 1.14.3
+- Support StrictResourceProvision in ApplyNodes.
+
 2021-05-18 Version: 1.14.2
 - Support MinCount for AddNodes.
 - Support HostNamePreffix and HostNameSuffix for ListNodes.

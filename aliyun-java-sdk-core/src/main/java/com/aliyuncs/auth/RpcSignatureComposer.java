@@ -52,7 +52,6 @@ public class RpcSignatureComposer implements ISignatureComposer {
         immutableMap.put("SignatureMethod", signer.getSignerName());
         immutableMap.put("SignatureVersion", signer.getSignerVersion());
         immutableMap.put("SignatureNonce", ParameterHelper.getUniqueNonce());
-        immutableMap.put("AccessKeyId", accessKeyId);
         if (null != format) {
             immutableMap.put("Format", format.toString());
         }

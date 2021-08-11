@@ -48,12 +48,22 @@ public class GetUserMFAInfoResponse extends AcsResponse {
 
 		private String serialNumber;
 
+		private String type;
+
 		public String getSerialNumber() {
 			return this.serialNumber;
 		}
 
 		public void setSerialNumber(String serialNumber) {
 			this.serialNumber = serialNumber;
+		}
+
+		public String getType() {
+			return this.type;
+		}
+
+		public void setType(String type) {
+			this.type = type;
 		}
 	}
 

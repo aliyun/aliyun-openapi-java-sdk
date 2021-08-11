@@ -31,10 +31,10 @@ public class ListCorpGroupsResponseUnmarshaller {
 		listCorpGroupsResponse.setCode(_ctx.stringValue("ListCorpGroupsResponse.Code"));
 
 		Data data = new Data();
-		data.setTotalCount(_ctx.longValue("ListCorpGroupsResponse.Data.TotalCount"));
-		data.setPageSize(_ctx.longValue("ListCorpGroupsResponse.Data.PageSize"));
 		data.setTotalPage(_ctx.longValue("ListCorpGroupsResponse.Data.TotalPage"));
 		data.setPageNumber(_ctx.longValue("ListCorpGroupsResponse.Data.PageNumber"));
+		data.setPageSize(_ctx.longValue("ListCorpGroupsResponse.Data.PageSize"));
+		data.setTotalCount(_ctx.longValue("ListCorpGroupsResponse.Data.TotalCount"));
 
 		List<String> records = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("ListCorpGroupsResponse.Data.Records.Length"); i++) {

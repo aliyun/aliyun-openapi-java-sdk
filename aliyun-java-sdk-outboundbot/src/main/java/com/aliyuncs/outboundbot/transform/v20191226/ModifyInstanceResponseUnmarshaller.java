@@ -37,12 +37,15 @@ public class ModifyInstanceResponseUnmarshaller {
 		instance.setInstanceId(_ctx.stringValue("ModifyInstanceResponse.Instance.InstanceId"));
 		instance.setInstanceName(_ctx.stringValue("ModifyInstanceResponse.Instance.InstanceName"));
 		instance.setMaxConcurrentConversation(_ctx.integerValue("ModifyInstanceResponse.Instance.MaxConcurrentConversation"));
-		instance.setOwner(_ctx.stringValue("ModifyInstanceResponse.Instance.Owner"));
 		instance.setNluServiceType(_ctx.stringValue("ModifyInstanceResponse.Instance.NluServiceType"));
+		instance.setOwner(_ctx.stringValue("ModifyInstanceResponse.Instance.Owner"));
+		instance.setCreatorId(_ctx.longValue("ModifyInstanceResponse.Instance.CreatorId"));
+		instance.setCreatorName(_ctx.stringValue("ModifyInstanceResponse.Instance.CreatorName"));
+		instance.setOwnerName(_ctx.stringValue("ModifyInstanceResponse.Instance.OwnerName"));
 
 		NluProfile nluProfile = new NluProfile();
-		nluProfile.setEndpoint(_ctx.stringValue("ModifyInstanceResponse.Instance.NluProfile.Endpoint"));
 		nluProfile.setAccessKey(_ctx.stringValue("ModifyInstanceResponse.Instance.NluProfile.AccessKey"));
+		nluProfile.setEndpoint(_ctx.stringValue("ModifyInstanceResponse.Instance.NluProfile.Endpoint"));
 		nluProfile.setSecretKey(_ctx.stringValue("ModifyInstanceResponse.Instance.NluProfile.SecretKey"));
 		instance.setNluProfile(nluProfile);
 		modifyInstanceResponse.setInstance(instance);

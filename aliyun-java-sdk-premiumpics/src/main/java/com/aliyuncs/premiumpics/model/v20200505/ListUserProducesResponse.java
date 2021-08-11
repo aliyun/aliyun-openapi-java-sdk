@@ -105,9 +105,13 @@ public class ListUserProducesResponse extends AcsResponse {
 
 		private String intentionBizId;
 
+		private String modifyTime;
+
 		private String orderId;
 
 		private String orderPrice;
+
+		private String orderTime;
 
 		private String partnerCode;
 
@@ -117,9 +121,7 @@ public class ListUserProducesResponse extends AcsResponse {
 
 		private String userId;
 
-		private String orderTime;
-
-		private String modifyTime;
+		private String orderInstanceId;
 
 		public String getBizId() {
 			return this.bizId;
@@ -153,6 +155,14 @@ public class ListUserProducesResponse extends AcsResponse {
 			this.intentionBizId = intentionBizId;
 		}
 
+		public String getModifyTime() {
+			return this.modifyTime;
+		}
+
+		public void setModifyTime(String modifyTime) {
+			this.modifyTime = modifyTime;
+		}
+
 		public String getOrderId() {
 			return this.orderId;
 		}
@@ -167,6 +177,14 @@ public class ListUserProducesResponse extends AcsResponse {
 
 		public void setOrderPrice(String orderPrice) {
 			this.orderPrice = orderPrice;
+		}
+
+		public String getOrderTime() {
+			return this.orderTime;
+		}
+
+		public void setOrderTime(String orderTime) {
+			this.orderTime = orderTime;
 		}
 
 		public String getPartnerCode() {
@@ -201,20 +219,12 @@ public class ListUserProducesResponse extends AcsResponse {
 			this.userId = userId;
 		}
 
-		public String getOrderTime() {
-			return this.orderTime;
+		public String getOrderInstanceId() {
+			return this.orderInstanceId;
 		}
 
-		public void setOrderTime(String orderTime) {
-			this.orderTime = orderTime;
-		}
-
-		public String getModifyTime() {
-			return this.modifyTime;
-		}
-
-		public void setModifyTime(String modifyTime) {
-			this.modifyTime = modifyTime;
+		public void setOrderInstanceId(String orderInstanceId) {
+			this.orderInstanceId = orderInstanceId;
 		}
 	}
 

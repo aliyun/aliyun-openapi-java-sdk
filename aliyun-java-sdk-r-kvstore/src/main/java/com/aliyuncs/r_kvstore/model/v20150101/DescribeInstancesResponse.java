@@ -149,6 +149,10 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		private Integer proxyCount;
 
+		private String secondaryZoneId;
+
+		private String globalInstanceId;
+
 		private List<Tag> tags;
 
 		public String getReplacateId() {
@@ -437,6 +441,22 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		public void setProxyCount(Integer proxyCount) {
 			this.proxyCount = proxyCount;
+		}
+
+		public String getSecondaryZoneId() {
+			return this.secondaryZoneId;
+		}
+
+		public void setSecondaryZoneId(String secondaryZoneId) {
+			this.secondaryZoneId = secondaryZoneId;
+		}
+
+		public String getGlobalInstanceId() {
+			return this.globalInstanceId;
+		}
+
+		public void setGlobalInstanceId(String globalInstanceId) {
+			this.globalInstanceId = globalInstanceId;
 		}
 
 		public List<Tag> getTags() {

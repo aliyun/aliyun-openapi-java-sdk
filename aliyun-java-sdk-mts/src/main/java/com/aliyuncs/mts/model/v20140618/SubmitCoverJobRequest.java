@@ -41,7 +41,7 @@ public class SubmitCoverJobRequest extends RpcAcsRequest<SubmitCoverJobResponse>
 
 	private String input;
 	public SubmitCoverJobRequest() {
-		super("Mts", "2014-06-18", "SubmitCoverJob");
+		super("Mts", "2014-06-18", "SubmitCoverJob", "mts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

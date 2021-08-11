@@ -45,6 +45,7 @@ public class DescribeGatewayCachesResponseUnmarshaller {
 			cache.setExpireStatus(_ctx.integerValue("DescribeGatewayCachesResponse.Caches["+ i +"].ExpireStatus"));
 			cache.setPerformanceLevel(_ctx.stringValue("DescribeGatewayCachesResponse.Caches["+ i +"].PerformanceLevel"));
 			cache.setBuyURL(_ctx.stringValue("DescribeGatewayCachesResponse.Caches["+ i +"].BuyURL"));
+			cache.setSubscriptionInstanceId(_ctx.stringValue("DescribeGatewayCachesResponse.Caches["+ i +"].SubscriptionInstanceId"));
 
 			caches.add(cache);
 		}

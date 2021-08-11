@@ -25,21 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListCorpsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String message;
+
+	private String requestId;
 
 	private String code;
 
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getMessage() {
 		return this.message;
@@ -47,6 +39,14 @@ public class ListCorpsResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getCode() {
@@ -67,31 +67,15 @@ public class ListCorpsResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Integer totalCount;
-
-		private Integer pageSize;
-
 		private Integer totalPage;
 
 		private Integer pageNumber;
 
+		private Integer pageSize;
+
+		private Integer totalCount;
+
 		private List<Record> records;
-
-		public Integer getTotalCount() {
-			return this.totalCount;
-		}
-
-		public void setTotalCount(Integer totalCount) {
-			this.totalCount = totalCount;
-		}
-
-		public Integer getPageSize() {
-			return this.pageSize;
-		}
-
-		public void setPageSize(Integer pageSize) {
-			this.pageSize = pageSize;
-		}
 
 		public Integer getTotalPage() {
 			return this.totalPage;
@@ -109,6 +93,22 @@ public class ListCorpsResponse extends AcsResponse {
 			this.pageNumber = pageNumber;
 		}
 
+		public Integer getPageSize() {
+			return this.pageSize;
+		}
+
+		public void setPageSize(Integer pageSize) {
+			this.pageSize = pageSize;
+		}
+
+		public Integer getTotalCount() {
+			return this.totalCount;
+		}
+
+		public void setTotalCount(Integer totalCount) {
+			this.totalCount = totalCount;
+		}
+
 		public List<Record> getRecords() {
 			return this.records;
 		}
@@ -119,49 +119,25 @@ public class ListCorpsResponse extends AcsResponse {
 
 		public static class Record {
 
-			private String iconPath;
-
-			private String corpId;
-
-			private String description;
-
 			private String parentCorpId;
-
-			private String isvSubId;
-
-			private String createDate;
-
-			private Integer acuUsed;
-
-			private Integer deviceCount;
-
-			private String corpName;
 
 			private String appName;
 
-			public String getIconPath() {
-				return this.iconPath;
-			}
+			private String isvSubId;
 
-			public void setIconPath(String iconPath) {
-				this.iconPath = iconPath;
-			}
+			private String description;
 
-			public String getCorpId() {
-				return this.corpId;
-			}
+			private String corpName;
 
-			public void setCorpId(String corpId) {
-				this.corpId = corpId;
-			}
+			private String corpId;
 
-			public String getDescription() {
-				return this.description;
-			}
+			private Integer acuUsed;
 
-			public void setDescription(String description) {
-				this.description = description;
-			}
+			private String createDate;
+
+			private String iconPath;
+
+			private Integer deviceCount;
 
 			public String getParentCorpId() {
 				return this.parentCorpId;
@@ -169,6 +145,14 @@ public class ListCorpsResponse extends AcsResponse {
 
 			public void setParentCorpId(String parentCorpId) {
 				this.parentCorpId = parentCorpId;
+			}
+
+			public String getAppName() {
+				return this.appName;
+			}
+
+			public void setAppName(String appName) {
+				this.appName = appName;
 			}
 
 			public String getIsvSubId() {
@@ -179,28 +163,12 @@ public class ListCorpsResponse extends AcsResponse {
 				this.isvSubId = isvSubId;
 			}
 
-			public String getCreateDate() {
-				return this.createDate;
+			public String getDescription() {
+				return this.description;
 			}
 
-			public void setCreateDate(String createDate) {
-				this.createDate = createDate;
-			}
-
-			public Integer getAcuUsed() {
-				return this.acuUsed;
-			}
-
-			public void setAcuUsed(Integer acuUsed) {
-				this.acuUsed = acuUsed;
-			}
-
-			public Integer getDeviceCount() {
-				return this.deviceCount;
-			}
-
-			public void setDeviceCount(Integer deviceCount) {
-				this.deviceCount = deviceCount;
+			public void setDescription(String description) {
+				this.description = description;
 			}
 
 			public String getCorpName() {
@@ -211,12 +179,44 @@ public class ListCorpsResponse extends AcsResponse {
 				this.corpName = corpName;
 			}
 
-			public String getAppName() {
-				return this.appName;
+			public String getCorpId() {
+				return this.corpId;
 			}
 
-			public void setAppName(String appName) {
-				this.appName = appName;
+			public void setCorpId(String corpId) {
+				this.corpId = corpId;
+			}
+
+			public Integer getAcuUsed() {
+				return this.acuUsed;
+			}
+
+			public void setAcuUsed(Integer acuUsed) {
+				this.acuUsed = acuUsed;
+			}
+
+			public String getCreateDate() {
+				return this.createDate;
+			}
+
+			public void setCreateDate(String createDate) {
+				this.createDate = createDate;
+			}
+
+			public String getIconPath() {
+				return this.iconPath;
+			}
+
+			public void setIconPath(String iconPath) {
+				this.iconPath = iconPath;
+			}
+
+			public Integer getDeviceCount() {
+				return this.deviceCount;
+			}
+
+			public void setDeviceCount(Integer deviceCount) {
+				this.deviceCount = deviceCount;
 			}
 		}
 	}

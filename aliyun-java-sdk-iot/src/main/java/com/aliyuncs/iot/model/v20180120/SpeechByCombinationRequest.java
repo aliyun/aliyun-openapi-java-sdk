@@ -26,6 +26,8 @@ import com.aliyuncs.iot.Endpoint;
 public class SpeechByCombinationRequest extends RpcAcsRequest<SpeechByCombinationResponse> {
 	   
 
+	private String audioFormat;
+
 	private String iotId;
 
 	private List<String> combinationLists;
@@ -42,6 +44,17 @@ public class SpeechByCombinationRequest extends RpcAcsRequest<SpeechByCombinatio
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getAudioFormat() {
+		return this.audioFormat;
+	}
+
+	public void setAudioFormat(String audioFormat) {
+		this.audioFormat = audioFormat;
+		if(audioFormat != null){
+			putBodyParameter("AudioFormat", audioFormat);
+		}
 	}
 
 	public String getIotId() {

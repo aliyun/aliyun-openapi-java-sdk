@@ -135,6 +135,20 @@ public class DescribeCloudCenterInstancesResponse extends AcsResponse {
 
 		private Integer autoSnapshotsLevel;
 
+		private Integer exposedCount;
+
+		private Integer vendor;
+
+		private String vendorName;
+
+		private Integer cores;
+
+		private Integer authVersion;
+
+		private Boolean bind;
+
+		private Long authModifyTime;
+
 		public String getInternetIp() {
 			return this.internetIp;
 		}
@@ -405,6 +419,62 @@ public class DescribeCloudCenterInstancesResponse extends AcsResponse {
 
 		public void setAutoSnapshotsLevel(Integer autoSnapshotsLevel) {
 			this.autoSnapshotsLevel = autoSnapshotsLevel;
+		}
+
+		public Integer getExposedCount() {
+			return this.exposedCount;
+		}
+
+		public void setExposedCount(Integer exposedCount) {
+			this.exposedCount = exposedCount;
+		}
+
+		public Integer getVendor() {
+			return this.vendor;
+		}
+
+		public void setVendor(Integer vendor) {
+			this.vendor = vendor;
+		}
+
+		public String getVendorName() {
+			return this.vendorName;
+		}
+
+		public void setVendorName(String vendorName) {
+			this.vendorName = vendorName;
+		}
+
+		public Integer getCores() {
+			return this.cores;
+		}
+
+		public void setCores(Integer cores) {
+			this.cores = cores;
+		}
+
+		public Integer getAuthVersion() {
+			return this.authVersion;
+		}
+
+		public void setAuthVersion(Integer authVersion) {
+			this.authVersion = authVersion;
+		}
+
+		public Boolean getBind() {
+			return this.bind;
+		}
+
+		public void setBind(Boolean bind) {
+			this.bind = bind;
+		}
+
+		public Long getAuthModifyTime() {
+			return this.authModifyTime;
+		}
+
+		public void setAuthModifyTime(Long authModifyTime) {
+			this.authModifyTime = authModifyTime;
 		}
 	}
 

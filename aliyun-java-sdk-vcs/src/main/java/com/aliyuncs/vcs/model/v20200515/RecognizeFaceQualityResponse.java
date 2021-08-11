@@ -24,21 +24,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class RecognizeFaceQualityResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String message;
+
+	private String requestId;
 
 	private String code;
 
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getMessage() {
 		return this.message;
@@ -46,6 +38,14 @@ public class RecognizeFaceQualityResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getCode() {
@@ -66,19 +66,11 @@ public class RecognizeFaceQualityResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String description;
-
 		private String qualityScore;
 
+		private String description;
+
 		private Attributes attributes;
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
 
 		public String getQualityScore() {
 			return this.qualityScore;
@@ -86,6 +78,14 @@ public class RecognizeFaceQualityResponse extends AcsResponse {
 
 		public void setQualityScore(String qualityScore) {
 			this.qualityScore = qualityScore;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
 		}
 
 		public Attributes getAttributes() {
@@ -98,44 +98,28 @@ public class RecognizeFaceQualityResponse extends AcsResponse {
 
 		public static class Attributes {
 
-			private String faceQuality;
-
-			private Integer rightBottomX;
-
-			private String faceStyle;
+			private String faceScore;
 
 			private Integer rightBottomY;
 
 			private Integer leftTopY;
 
-			private String targetImageStoragePath;
+			private String faceStyle;
+
+			private String faceQuality;
 
 			private Integer leftTopX;
 
-			private String faceScore;
+			private Integer rightBottomX;
 
-			public String getFaceQuality() {
-				return this.faceQuality;
+			private String targetImageStoragePath;
+
+			public String getFaceScore() {
+				return this.faceScore;
 			}
 
-			public void setFaceQuality(String faceQuality) {
-				this.faceQuality = faceQuality;
-			}
-
-			public Integer getRightBottomX() {
-				return this.rightBottomX;
-			}
-
-			public void setRightBottomX(Integer rightBottomX) {
-				this.rightBottomX = rightBottomX;
-			}
-
-			public String getFaceStyle() {
-				return this.faceStyle;
-			}
-
-			public void setFaceStyle(String faceStyle) {
-				this.faceStyle = faceStyle;
+			public void setFaceScore(String faceScore) {
+				this.faceScore = faceScore;
 			}
 
 			public Integer getRightBottomY() {
@@ -154,12 +138,20 @@ public class RecognizeFaceQualityResponse extends AcsResponse {
 				this.leftTopY = leftTopY;
 			}
 
-			public String getTargetImageStoragePath() {
-				return this.targetImageStoragePath;
+			public String getFaceStyle() {
+				return this.faceStyle;
 			}
 
-			public void setTargetImageStoragePath(String targetImageStoragePath) {
-				this.targetImageStoragePath = targetImageStoragePath;
+			public void setFaceStyle(String faceStyle) {
+				this.faceStyle = faceStyle;
+			}
+
+			public String getFaceQuality() {
+				return this.faceQuality;
+			}
+
+			public void setFaceQuality(String faceQuality) {
+				this.faceQuality = faceQuality;
 			}
 
 			public Integer getLeftTopX() {
@@ -170,12 +162,20 @@ public class RecognizeFaceQualityResponse extends AcsResponse {
 				this.leftTopX = leftTopX;
 			}
 
-			public String getFaceScore() {
-				return this.faceScore;
+			public Integer getRightBottomX() {
+				return this.rightBottomX;
 			}
 
-			public void setFaceScore(String faceScore) {
-				this.faceScore = faceScore;
+			public void setRightBottomX(Integer rightBottomX) {
+				this.rightBottomX = rightBottomX;
+			}
+
+			public String getTargetImageStoragePath() {
+				return this.targetImageStoragePath;
+			}
+
+			public void setTargetImageStoragePath(String targetImageStoragePath) {
+				this.targetImageStoragePath = targetImageStoragePath;
 			}
 		}
 	}

@@ -113,6 +113,8 @@ public class DescribeCenRouteMapsResponse extends AcsResponse {
 
 		private String matchAddressType;
 
+		private String transitRouterRouteTableId;
+
 		private List<String> sourceInstanceIds;
 
 		private List<String> destinationInstanceIds;
@@ -287,6 +289,14 @@ public class DescribeCenRouteMapsResponse extends AcsResponse {
 
 		public void setMatchAddressType(String matchAddressType) {
 			this.matchAddressType = matchAddressType;
+		}
+
+		public String getTransitRouterRouteTableId() {
+			return this.transitRouterRouteTableId;
+		}
+
+		public void setTransitRouterRouteTableId(String transitRouterRouteTableId) {
+			this.transitRouterRouteTableId = transitRouterRouteTableId;
 		}
 
 		public List<String> getSourceInstanceIds() {

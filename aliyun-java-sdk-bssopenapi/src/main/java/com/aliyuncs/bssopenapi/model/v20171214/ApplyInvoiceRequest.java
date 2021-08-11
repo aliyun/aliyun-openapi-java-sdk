@@ -43,6 +43,8 @@ public class ApplyInvoiceRequest extends RpcAcsRequest<ApplyInvoiceResponse> {
 	private Long customerId;
 
 	private List<Long> selectedIdss;
+
+	private String userRemark;
 	public ApplyInvoiceRequest() {
 		super("BssOpenApi", "2017-12-14", "ApplyInvoice");
 		setMethod(MethodType.POST);
@@ -151,6 +153,17 @@ public class ApplyInvoiceRequest extends RpcAcsRequest<ApplyInvoiceResponse> {
 				putQueryParameter("SelectedIds." + (i + 1) , selectedIdss.get(i));
 			}
 		}	
+	}
+
+	public String getUserRemark() {
+		return this.userRemark;
+	}
+
+	public void setUserRemark(String userRemark) {
+		this.userRemark = userRemark;
+		if(userRemark != null){
+			putQueryParameter("UserRemark", userRemark);
+		}
 	}
 
 	@Override

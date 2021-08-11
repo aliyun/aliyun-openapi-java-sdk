@@ -24,19 +24,27 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeGatewayCapacityLimitResponse extends AcsResponse {
 
+	private Long fileSystemSizeInTB;
+
 	private String requestId;
-
-	private Boolean success;
-
-	private String code;
 
 	private String message;
 
+	private Boolean isMetadataSeparate;
+
 	private Long fileNumber;
 
-	private Long fileSystemSizeInTB;
+	private String code;
 
-	private Boolean isMetadataSeparate;
+	private Boolean success;
+
+	public Long getFileSystemSizeInTB() {
+		return this.fileSystemSizeInTB;
+	}
+
+	public void setFileSystemSizeInTB(Long fileSystemSizeInTB) {
+		this.fileSystemSizeInTB = fileSystemSizeInTB;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -44,22 +52,6 @@ public class DescribeGatewayCapacityLimitResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
 	}
 
 	public String getMessage() {
@@ -70,6 +62,14 @@ public class DescribeGatewayCapacityLimitResponse extends AcsResponse {
 		this.message = message;
 	}
 
+	public Boolean getIsMetadataSeparate() {
+		return this.isMetadataSeparate;
+	}
+
+	public void setIsMetadataSeparate(Boolean isMetadataSeparate) {
+		this.isMetadataSeparate = isMetadataSeparate;
+	}
+
 	public Long getFileNumber() {
 		return this.fileNumber;
 	}
@@ -78,20 +78,20 @@ public class DescribeGatewayCapacityLimitResponse extends AcsResponse {
 		this.fileNumber = fileNumber;
 	}
 
-	public Long getFileSystemSizeInTB() {
-		return this.fileSystemSizeInTB;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setFileSystemSizeInTB(Long fileSystemSizeInTB) {
-		this.fileSystemSizeInTB = fileSystemSizeInTB;
+	public void setCode(String code) {
+		this.code = code;
 	}
 
-	public Boolean getIsMetadataSeparate() {
-		return this.isMetadataSeparate;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setIsMetadataSeparate(Boolean isMetadataSeparate) {
-		this.isMetadataSeparate = isMetadataSeparate;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	@Override

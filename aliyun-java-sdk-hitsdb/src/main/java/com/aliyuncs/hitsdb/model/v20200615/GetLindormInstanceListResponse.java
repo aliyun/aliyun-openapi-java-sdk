@@ -105,6 +105,10 @@ public class GetLindormInstanceListResponse extends AcsResponse {
 
 		private String vpcId;
 
+		private Long createMilliseconds;
+
+		private Long expiredMilliseconds;
+
 		public String getInstanceId() {
 			return this.instanceId;
 		}
@@ -215,6 +219,22 @@ public class GetLindormInstanceListResponse extends AcsResponse {
 
 		public void setVpcId(String vpcId) {
 			this.vpcId = vpcId;
+		}
+
+		public Long getCreateMilliseconds() {
+			return this.createMilliseconds;
+		}
+
+		public void setCreateMilliseconds(Long createMilliseconds) {
+			this.createMilliseconds = createMilliseconds;
+		}
+
+		public Long getExpiredMilliseconds() {
+			return this.expiredMilliseconds;
+		}
+
+		public void setExpiredMilliseconds(Long expiredMilliseconds) {
+			this.expiredMilliseconds = expiredMilliseconds;
 		}
 	}
 

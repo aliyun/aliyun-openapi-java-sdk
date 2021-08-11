@@ -115,47 +115,45 @@ public abstract class RpcAcsRequest<T extends AcsResponse> extends AcsRequest<T>
     public HttpRequest signRequest(Signer signer, AlibabaCloudCredentials credentials, FormatType format,
                                    ProductDomain domain) throws InvalidKeyException, IllegalStateException, UnsupportedEncodingException {
 
-        Map<String, String> imutableMap = new HashMap<String, String>(this.getSysQueryParameters());
-        if (null != signer && null != credentials) {
+        Map<String, String> bodyParams = this.getSysBodyParameters();
+        if (bodyParams != null && !bodyParams.isEmpty()) {
+            byte[] data;
+            if (FormatType.JSON == this.getHttpContentType()) {
+                data = ParameterHelper.getJsonData(bodyParams);
+            } else if (FormatType.XML == this.getHttpContentType()) {
+                data = ParameterHelper.getXmlData(bodyParams);
+            } else {
+                // For contentType RAW and Form, the actual data format will be form
+                data = ParameterHelper.getFormData(bodyParams);
+            }
+            this.setHttpContent(data, "UTF-8", null);
+        }
+        Map<String, String> imutableMap = this.composer.refreshSignParameters(this.getSysQueryParameters(), signer, null,
+                format);
+        if (imutableMap.get("RegionId") == null && this.getSysRegionId() != null && !this.getSysRegionId().equals("")) {
+            if ((bodyParams == null || bodyParams.get("RegionId") == null)) {
+                imutableMap.put("RegionId", getSysRegionId());
+            }
+        }
+        if (null != credentials && !(credentials instanceof AnonymousCredentials)) {
             String accessKeyId = credentials.getAccessKeyId();
             String accessSecret = credentials.getAccessKeySecret();
             if (credentials instanceof BasicSessionCredentials) {
                 String sessionToken = ((BasicSessionCredentials) credentials).getSessionToken();
                 if (null != sessionToken) {
-                    this.putQueryParameter("SecurityToken", sessionToken);
+                    imutableMap.put("SecurityToken", sessionToken);
                 }
             }
             if (credentials instanceof BearerTokenCredentials) {
                 String bearerToken = ((BearerTokenCredentials) credentials).getBearerToken();
                 if (null != ((BearerTokenCredentials) credentials).getBearerToken()) {
-                    this.putQueryParameter("BearerToken", bearerToken);
+                    imutableMap.put("BearerToken", bearerToken);
                 }
             }
-
             Map<String, String> paramsToSign = new HashMap<String, String>();
-            Map<String, String> bodyParams = this.getSysBodyParameters();
-            if (bodyParams != null && !bodyParams.isEmpty()) {
-                byte[] data;
-                if (FormatType.JSON == this.getHttpContentType()) {
-                    data = ParameterHelper.getJsonData(bodyParams);
-                } else if (FormatType.XML == this.getHttpContentType()) {
-                    data = ParameterHelper.getXmlData(bodyParams);
-                } else {
-                    // For contentType RAW and Form, the actual data format will be form
-                    data = ParameterHelper.getFormData(bodyParams);
-                }
-                this.setHttpContent(data, "UTF-8", null);
-                paramsToSign.putAll(bodyParams);
-            }
-
-            imutableMap = this.composer.refreshSignParameters(this.getSysQueryParameters(), signer, accessKeyId, format);
-            if (imutableMap.get("RegionId") == null && this.getSysRegionId() != null && !this.getSysRegionId().equals("")) {
-                if ((bodyParams == null || bodyParams.get("RegionId") == null)) {
-                    imutableMap.put("RegionId", getSysRegionId());
-                }
-            }
+            paramsToSign.putAll(bodyParams);
+            imutableMap.put("AccessKeyId", accessKeyId);
             paramsToSign.putAll(imutableMap);
-
             String strToSign = this.composer.composeStringToSign(
                     this.getSysMethod(), null, signer, paramsToSign, null, null);
             String signature;

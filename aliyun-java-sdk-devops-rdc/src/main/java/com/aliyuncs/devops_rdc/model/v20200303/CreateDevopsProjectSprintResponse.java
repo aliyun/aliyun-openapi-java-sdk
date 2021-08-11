@@ -24,31 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateDevopsProjectSprintResponse extends AcsResponse {
 
-	private Boolean successful;
-
-	private String errorCode;
-
 	private String errorMsg;
 
 	private String requestId;
 
+	private Boolean successful;
+
+	private String errorCode;
+
 	private Object object;
-
-	public Boolean getSuccessful() {
-		return this.successful;
-	}
-
-	public void setSuccessful(Boolean successful) {
-		this.successful = successful;
-	}
-
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
-	}
 
 	public String getErrorMsg() {
 		return this.errorMsg;
@@ -66,6 +50,22 @@ public class CreateDevopsProjectSprintResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public Boolean getSuccessful() {
+		return this.successful;
+	}
+
+	public void setSuccessful(Boolean successful) {
+		this.successful = successful;
+	}
+
+	public String getErrorCode() {
+		return this.errorCode;
+	}
+
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
+	}
+
 	public Object getObject() {
 		return this.object;
 	}
@@ -76,9 +76,15 @@ public class CreateDevopsProjectSprintResponse extends AcsResponse {
 
 	public static class Object {
 
-		private String created;
+		private String status;
 
-		private String dueDate;
+		private String projectId;
+
+		private String startDate;
+
+		private String creatorId;
+
+		private String executor;
 
 		private String description;
 
@@ -86,38 +92,56 @@ public class CreateDevopsProjectSprintResponse extends AcsResponse {
 
 		private Boolean isDeleted;
 
-		private String executor;
+		private String updated;
+
+		private String dueDate;
+
+		private String created;
 
 		private String name;
 
-		private String creatorId;
-
 		private String id;
-
-		private String updated;
-
-		private String startDate;
-
-		private String status;
-
-		private String projectId;
 
 		private PlanToDo planToDo;
 
-		public String getCreated() {
-			return this.created;
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setCreated(String created) {
-			this.created = created;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
-		public String getDueDate() {
-			return this.dueDate;
+		public String getProjectId() {
+			return this.projectId;
 		}
 
-		public void setDueDate(String dueDate) {
-			this.dueDate = dueDate;
+		public void setProjectId(String projectId) {
+			this.projectId = projectId;
+		}
+
+		public String getStartDate() {
+			return this.startDate;
+		}
+
+		public void setStartDate(String startDate) {
+			this.startDate = startDate;
+		}
+
+		public String getCreatorId() {
+			return this.creatorId;
+		}
+
+		public void setCreatorId(String creatorId) {
+			this.creatorId = creatorId;
+		}
+
+		public String getExecutor() {
+			return this.executor;
+		}
+
+		public void setExecutor(String executor) {
+			this.executor = executor;
 		}
 
 		public String getDescription() {
@@ -144,12 +168,28 @@ public class CreateDevopsProjectSprintResponse extends AcsResponse {
 			this.isDeleted = isDeleted;
 		}
 
-		public String getExecutor() {
-			return this.executor;
+		public String getUpdated() {
+			return this.updated;
 		}
 
-		public void setExecutor(String executor) {
-			this.executor = executor;
+		public void setUpdated(String updated) {
+			this.updated = updated;
+		}
+
+		public String getDueDate() {
+			return this.dueDate;
+		}
+
+		public void setDueDate(String dueDate) {
+			this.dueDate = dueDate;
+		}
+
+		public String getCreated() {
+			return this.created;
+		}
+
+		public void setCreated(String created) {
+			this.created = created;
 		}
 
 		public String getName() {
@@ -160,52 +200,12 @@ public class CreateDevopsProjectSprintResponse extends AcsResponse {
 			this.name = name;
 		}
 
-		public String getCreatorId() {
-			return this.creatorId;
-		}
-
-		public void setCreatorId(String creatorId) {
-			this.creatorId = creatorId;
-		}
-
 		public String getId() {
 			return this.id;
 		}
 
 		public void setId(String id) {
 			this.id = id;
-		}
-
-		public String getUpdated() {
-			return this.updated;
-		}
-
-		public void setUpdated(String updated) {
-			this.updated = updated;
-		}
-
-		public String getStartDate() {
-			return this.startDate;
-		}
-
-		public void setStartDate(String startDate) {
-			this.startDate = startDate;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
-		public String getProjectId() {
-			return this.projectId;
-		}
-
-		public void setProjectId(String projectId) {
-			this.projectId = projectId;
 		}
 
 		public PlanToDo getPlanToDo() {
@@ -218,18 +218,18 @@ public class CreateDevopsProjectSprintResponse extends AcsResponse {
 
 		public static class PlanToDo {
 
-			private Integer storyPoints;
+			private Integer tasks;
 
 			private Integer workTimes;
 
-			private Integer tasks;
+			private Integer storyPoints;
 
-			public Integer getStoryPoints() {
-				return this.storyPoints;
+			public Integer getTasks() {
+				return this.tasks;
 			}
 
-			public void setStoryPoints(Integer storyPoints) {
-				this.storyPoints = storyPoints;
+			public void setTasks(Integer tasks) {
+				this.tasks = tasks;
 			}
 
 			public Integer getWorkTimes() {
@@ -240,12 +240,12 @@ public class CreateDevopsProjectSprintResponse extends AcsResponse {
 				this.workTimes = workTimes;
 			}
 
-			public Integer getTasks() {
-				return this.tasks;
+			public Integer getStoryPoints() {
+				return this.storyPoints;
 			}
 
-			public void setTasks(Integer tasks) {
-				this.tasks = tasks;
+			public void setStoryPoints(Integer storyPoints) {
+				this.storyPoints = storyPoints;
 			}
 		}
 	}

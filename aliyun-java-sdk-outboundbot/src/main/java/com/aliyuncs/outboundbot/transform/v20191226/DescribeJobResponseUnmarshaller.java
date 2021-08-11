@@ -49,6 +49,12 @@ public class DescribeJobResponseUnmarshaller {
 		job.setStatus(_ctx.stringValue("DescribeJobResponse.Job.Status"));
 		job.setStrategyId(_ctx.stringValue("DescribeJobResponse.Job.StrategyId"));
 		job.setSystemPriority(_ctx.integerValue("DescribeJobResponse.Job.SystemPriority"));
+		job.setInstanceId(_ctx.stringValue("DescribeJobResponse.Job.InstanceId"));
+		job.setDsReport(_ctx.stringValue("DescribeJobResponse.Job.DsReport"));
+		job.setEndReason(_ctx.integerValue("DescribeJobResponse.Job.EndReason"));
+		job.setActualTime(_ctx.longValue("DescribeJobResponse.Job.ActualTime"));
+		job.setCalledNumber(_ctx.stringValue("DescribeJobResponse.Job.CalledNumber"));
+		job.setNextExecutionTime(_ctx.longValue("DescribeJobResponse.Job.NextExecutionTime"));
 
 		List<String> callingNumbers = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeJobResponse.Job.CallingNumbers.Length"); i++) {
@@ -108,6 +114,7 @@ public class DescribeJobResponseUnmarshaller {
 			task.setScenarioId(_ctx.stringValue("DescribeJobResponse.Job.Tasks["+ i +"].ScenarioId"));
 			task.setStatus(_ctx.stringValue("DescribeJobResponse.Job.Tasks["+ i +"].Status"));
 			task.setTaskId(_ctx.stringValue("DescribeJobResponse.Job.Tasks["+ i +"].TaskId"));
+			task.setEndTime(_ctx.longValue("DescribeJobResponse.Job.Tasks["+ i +"].EndTime"));
 
 			Contact3 contact3 = new Contact3();
 			contact3.setContactId(_ctx.stringValue("DescribeJobResponse.Job.Tasks["+ i +"].Contact.ContactId"));
@@ -126,6 +133,8 @@ public class DescribeJobResponseUnmarshaller {
 				conversationDetail.setScript(_ctx.stringValue("DescribeJobResponse.Job.Tasks["+ i +"].Conversation["+ j +"].Script"));
 				conversationDetail.setSpeaker(_ctx.stringValue("DescribeJobResponse.Job.Tasks["+ i +"].Conversation["+ j +"].Speaker"));
 				conversationDetail.setTimestamp(_ctx.longValue("DescribeJobResponse.Job.Tasks["+ i +"].Conversation["+ j +"].Timestamp"));
+				conversationDetail.setAction(_ctx.stringValue("DescribeJobResponse.Job.Tasks["+ i +"].Conversation["+ j +"].Action"));
+				conversationDetail.setActionParams(_ctx.stringValue("DescribeJobResponse.Job.Tasks["+ i +"].Conversation["+ j +"].ActionParams"));
 
 				List<SummaryItem2> summary1 = new ArrayList<SummaryItem2>();
 				for (int k = 0; k < _ctx.lengthValue("DescribeJobResponse.Job.Tasks["+ i +"].Conversation["+ j +"].Summary.Length"); k++) {

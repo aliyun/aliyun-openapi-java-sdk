@@ -19,7 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.ens.model.v20171110.DescribeDataDownloadURLResponse;
 import com.aliyuncs.ens.model.v20171110.DescribeDataDownloadURLResponse.Data;
-import com.aliyuncs.ens.model.v20171110.DescribeDataDownloadURLResponse.Data.文件服务器列表;
+import com.aliyuncs.ens.model.v20171110.DescribeDataDownloadURLResponse.Data.ServerListItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -35,13 +35,13 @@ public class DescribeDataDownloadURLResponseUnmarshaller {
 		data.setUrl(_ctx.stringValue("DescribeDataDownloadURLResponse.Data.Url"));
 		data.setExpireTime(_ctx.stringValue("DescribeDataDownloadURLResponse.Data.ExpireTime"));
 
-		List<文件服务器列表> serverList = new ArrayList<文件服务器列表>();
+		List<ServerListItem> serverList = new ArrayList<ServerListItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDataDownloadURLResponse.Data.ServerList.Length"); i++) {
-			文件服务器列表 文件服务器列表 = new 文件服务器列表();
-			文件服务器列表.setHost(_ctx.stringValue("DescribeDataDownloadURLResponse.Data.ServerList["+ i +"].Host"));
-			文件服务器列表.setRegionId(_ctx.stringValue("DescribeDataDownloadURLResponse.Data.ServerList["+ i +"].RegionId"));
+			ServerListItem serverListItem = new ServerListItem();
+			serverListItem.setHost(_ctx.stringValue("DescribeDataDownloadURLResponse.Data.ServerList["+ i +"].Host"));
+			serverListItem.setRegionId(_ctx.stringValue("DescribeDataDownloadURLResponse.Data.ServerList["+ i +"].RegionId"));
 
-			serverList.add(文件服务器列表);
+			serverList.add(serverListItem);
 		}
 		data.setServerList(serverList);
 		describeDataDownloadURLResponse.setData(data);

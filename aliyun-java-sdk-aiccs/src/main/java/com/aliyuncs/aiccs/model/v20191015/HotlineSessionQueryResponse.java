@@ -25,9 +25,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class HotlineSessionQueryResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String message;
+
+	private String requestId;
 
 	private String code;
 
@@ -35,20 +35,20 @@ public class HotlineSessionQueryResponse extends AcsResponse {
 
 	private Data data;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public String getMessage() {
 		return this.message;
 	}
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getCode() {
@@ -77,21 +77,13 @@ public class HotlineSessionQueryResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Integer totalCount;
-
 		private Integer pageSize;
 
 		private Integer pageNumber;
 
+		private Integer totalCount;
+
 		private List<CallDetailRecordItem> callDetailRecord;
-
-		public Integer getTotalCount() {
-			return this.totalCount;
-		}
-
-		public void setTotalCount(Integer totalCount) {
-			this.totalCount = totalCount;
-		}
 
 		public Integer getPageSize() {
 			return this.pageSize;
@@ -109,6 +101,14 @@ public class HotlineSessionQueryResponse extends AcsResponse {
 			this.pageNumber = pageNumber;
 		}
 
+		public Integer getTotalCount() {
+			return this.totalCount;
+		}
+
+		public void setTotalCount(Integer totalCount) {
+			this.totalCount = totalCount;
+		}
+
 		public List<CallDetailRecordItem> getCallDetailRecord() {
 			return this.callDetailRecord;
 		}
@@ -119,87 +119,63 @@ public class HotlineSessionQueryResponse extends AcsResponse {
 
 		public static class CallDetailRecordItem {
 
-			private String groupName;
-
-			private String acid;
-
-			private String calledNumber;
-
 			private String callResult;
-
-			private Integer callType;
-
-			private Integer queueUpContinueTime;
-
-			private String callingNumber;
-
-			private String passiveTransferId;
-
-			private String memberId;
-
-			private String outQueueTime;
-
-			private String servicerName;
-
-			private String ringEndTime;
-
-			private String pickUpTime;
-
-			private Integer evaluationLevel;
-
-			private String passiveTransferIdType;
-
-			private Integer ringContinueTime;
-
-			private Integer evaluationScore;
-
-			private String createTime;
-
-			private String hangUpTime;
-
-			private Long groupId;
-
-			private String inQueueTime;
-
-			private String ringStartTime;
-
-			private String hangUpRole;
-
-			private String activeTransferId;
-
-			private Integer callContinueTime;
-
-			private String id;
-
-			private String memberName;
-
-			private String servicerId;
 
 			private String trunkCall;
 
-			public String getGroupName() {
-				return this.groupName;
-			}
+			private String servicerName;
 
-			public void setGroupName(String groupName) {
-				this.groupName = groupName;
-			}
+			private String outQueueTime;
 
-			public String getAcid() {
-				return this.acid;
-			}
+			private Integer callContinueTime;
 
-			public void setAcid(String acid) {
-				this.acid = acid;
-			}
+			private String createTime;
 
-			public String getCalledNumber() {
-				return this.calledNumber;
-			}
+			private String pickUpTime;
 
-			public void setCalledNumber(String calledNumber) {
-				this.calledNumber = calledNumber;
-			}
+			private Integer ringContinueTime;
+
+			private String calledNumber;
+
+			private String servicerId;
+
+			private String hangUpTime;
+
+			private Integer evaluationLevel;
+
+			private String passiveTransferId;
+
+			private String activeTransferId;
+
+			private String hangUpRole;
+
+			private String passiveTransferIdType;
+
+			private String memberName;
+
+			private Integer evaluationScore;
+
+			private String acid;
+
+			private String ringStartTime;
+
+			private Integer callType;
+
+			private String groupName;
+
+			private Long groupId;
+
+			private String ringEndTime;
+
+			private String callingNumber;
+
+			private String inQueueTime;
+
+			private String memberId;
+
+			private String id;
+
+			private Integer queueUpContinueTime;
 
 			public String getCallResult() {
 				return this.callResult;
@@ -209,52 +185,12 @@ public class HotlineSessionQueryResponse extends AcsResponse {
 				this.callResult = callResult;
 			}
 
-			public Integer getCallType() {
-				return this.callType;
+			public String getTrunkCall() {
+				return this.trunkCall;
 			}
 
-			public void setCallType(Integer callType) {
-				this.callType = callType;
-			}
-
-			public Integer getQueueUpContinueTime() {
-				return this.queueUpContinueTime;
-			}
-
-			public void setQueueUpContinueTime(Integer queueUpContinueTime) {
-				this.queueUpContinueTime = queueUpContinueTime;
-			}
-
-			public String getCallingNumber() {
-				return this.callingNumber;
-			}
-
-			public void setCallingNumber(String callingNumber) {
-				this.callingNumber = callingNumber;
-			}
-
-			public String getPassiveTransferId() {
-				return this.passiveTransferId;
-			}
-
-			public void setPassiveTransferId(String passiveTransferId) {
-				this.passiveTransferId = passiveTransferId;
-			}
-
-			public String getMemberId() {
-				return this.memberId;
-			}
-
-			public void setMemberId(String memberId) {
-				this.memberId = memberId;
-			}
-
-			public String getOutQueueTime() {
-				return this.outQueueTime;
-			}
-
-			public void setOutQueueTime(String outQueueTime) {
-				this.outQueueTime = outQueueTime;
+			public void setTrunkCall(String trunkCall) {
+				this.trunkCall = trunkCall;
 			}
 
 			public String getServicerName() {
@@ -265,108 +201,12 @@ public class HotlineSessionQueryResponse extends AcsResponse {
 				this.servicerName = servicerName;
 			}
 
-			public String getRingEndTime() {
-				return this.ringEndTime;
+			public String getOutQueueTime() {
+				return this.outQueueTime;
 			}
 
-			public void setRingEndTime(String ringEndTime) {
-				this.ringEndTime = ringEndTime;
-			}
-
-			public String getPickUpTime() {
-				return this.pickUpTime;
-			}
-
-			public void setPickUpTime(String pickUpTime) {
-				this.pickUpTime = pickUpTime;
-			}
-
-			public Integer getEvaluationLevel() {
-				return this.evaluationLevel;
-			}
-
-			public void setEvaluationLevel(Integer evaluationLevel) {
-				this.evaluationLevel = evaluationLevel;
-			}
-
-			public String getPassiveTransferIdType() {
-				return this.passiveTransferIdType;
-			}
-
-			public void setPassiveTransferIdType(String passiveTransferIdType) {
-				this.passiveTransferIdType = passiveTransferIdType;
-			}
-
-			public Integer getRingContinueTime() {
-				return this.ringContinueTime;
-			}
-
-			public void setRingContinueTime(Integer ringContinueTime) {
-				this.ringContinueTime = ringContinueTime;
-			}
-
-			public Integer getEvaluationScore() {
-				return this.evaluationScore;
-			}
-
-			public void setEvaluationScore(Integer evaluationScore) {
-				this.evaluationScore = evaluationScore;
-			}
-
-			public String getCreateTime() {
-				return this.createTime;
-			}
-
-			public void setCreateTime(String createTime) {
-				this.createTime = createTime;
-			}
-
-			public String getHangUpTime() {
-				return this.hangUpTime;
-			}
-
-			public void setHangUpTime(String hangUpTime) {
-				this.hangUpTime = hangUpTime;
-			}
-
-			public Long getGroupId() {
-				return this.groupId;
-			}
-
-			public void setGroupId(Long groupId) {
-				this.groupId = groupId;
-			}
-
-			public String getInQueueTime() {
-				return this.inQueueTime;
-			}
-
-			public void setInQueueTime(String inQueueTime) {
-				this.inQueueTime = inQueueTime;
-			}
-
-			public String getRingStartTime() {
-				return this.ringStartTime;
-			}
-
-			public void setRingStartTime(String ringStartTime) {
-				this.ringStartTime = ringStartTime;
-			}
-
-			public String getHangUpRole() {
-				return this.hangUpRole;
-			}
-
-			public void setHangUpRole(String hangUpRole) {
-				this.hangUpRole = hangUpRole;
-			}
-
-			public String getActiveTransferId() {
-				return this.activeTransferId;
-			}
-
-			public void setActiveTransferId(String activeTransferId) {
-				this.activeTransferId = activeTransferId;
+			public void setOutQueueTime(String outQueueTime) {
+				this.outQueueTime = outQueueTime;
 			}
 
 			public Integer getCallContinueTime() {
@@ -377,20 +217,36 @@ public class HotlineSessionQueryResponse extends AcsResponse {
 				this.callContinueTime = callContinueTime;
 			}
 
-			public String getId() {
-				return this.id;
+			public String getCreateTime() {
+				return this.createTime;
 			}
 
-			public void setId(String id) {
-				this.id = id;
+			public void setCreateTime(String createTime) {
+				this.createTime = createTime;
 			}
 
-			public String getMemberName() {
-				return this.memberName;
+			public String getPickUpTime() {
+				return this.pickUpTime;
 			}
 
-			public void setMemberName(String memberName) {
-				this.memberName = memberName;
+			public void setPickUpTime(String pickUpTime) {
+				this.pickUpTime = pickUpTime;
+			}
+
+			public Integer getRingContinueTime() {
+				return this.ringContinueTime;
+			}
+
+			public void setRingContinueTime(Integer ringContinueTime) {
+				this.ringContinueTime = ringContinueTime;
+			}
+
+			public String getCalledNumber() {
+				return this.calledNumber;
+			}
+
+			public void setCalledNumber(String calledNumber) {
+				this.calledNumber = calledNumber;
 			}
 
 			public String getServicerId() {
@@ -401,12 +257,156 @@ public class HotlineSessionQueryResponse extends AcsResponse {
 				this.servicerId = servicerId;
 			}
 
-			public String getTrunkCall() {
-				return this.trunkCall;
+			public String getHangUpTime() {
+				return this.hangUpTime;
 			}
 
-			public void setTrunkCall(String trunkCall) {
-				this.trunkCall = trunkCall;
+			public void setHangUpTime(String hangUpTime) {
+				this.hangUpTime = hangUpTime;
+			}
+
+			public Integer getEvaluationLevel() {
+				return this.evaluationLevel;
+			}
+
+			public void setEvaluationLevel(Integer evaluationLevel) {
+				this.evaluationLevel = evaluationLevel;
+			}
+
+			public String getPassiveTransferId() {
+				return this.passiveTransferId;
+			}
+
+			public void setPassiveTransferId(String passiveTransferId) {
+				this.passiveTransferId = passiveTransferId;
+			}
+
+			public String getActiveTransferId() {
+				return this.activeTransferId;
+			}
+
+			public void setActiveTransferId(String activeTransferId) {
+				this.activeTransferId = activeTransferId;
+			}
+
+			public String getHangUpRole() {
+				return this.hangUpRole;
+			}
+
+			public void setHangUpRole(String hangUpRole) {
+				this.hangUpRole = hangUpRole;
+			}
+
+			public String getPassiveTransferIdType() {
+				return this.passiveTransferIdType;
+			}
+
+			public void setPassiveTransferIdType(String passiveTransferIdType) {
+				this.passiveTransferIdType = passiveTransferIdType;
+			}
+
+			public String getMemberName() {
+				return this.memberName;
+			}
+
+			public void setMemberName(String memberName) {
+				this.memberName = memberName;
+			}
+
+			public Integer getEvaluationScore() {
+				return this.evaluationScore;
+			}
+
+			public void setEvaluationScore(Integer evaluationScore) {
+				this.evaluationScore = evaluationScore;
+			}
+
+			public String getAcid() {
+				return this.acid;
+			}
+
+			public void setAcid(String acid) {
+				this.acid = acid;
+			}
+
+			public String getRingStartTime() {
+				return this.ringStartTime;
+			}
+
+			public void setRingStartTime(String ringStartTime) {
+				this.ringStartTime = ringStartTime;
+			}
+
+			public Integer getCallType() {
+				return this.callType;
+			}
+
+			public void setCallType(Integer callType) {
+				this.callType = callType;
+			}
+
+			public String getGroupName() {
+				return this.groupName;
+			}
+
+			public void setGroupName(String groupName) {
+				this.groupName = groupName;
+			}
+
+			public Long getGroupId() {
+				return this.groupId;
+			}
+
+			public void setGroupId(Long groupId) {
+				this.groupId = groupId;
+			}
+
+			public String getRingEndTime() {
+				return this.ringEndTime;
+			}
+
+			public void setRingEndTime(String ringEndTime) {
+				this.ringEndTime = ringEndTime;
+			}
+
+			public String getCallingNumber() {
+				return this.callingNumber;
+			}
+
+			public void setCallingNumber(String callingNumber) {
+				this.callingNumber = callingNumber;
+			}
+
+			public String getInQueueTime() {
+				return this.inQueueTime;
+			}
+
+			public void setInQueueTime(String inQueueTime) {
+				this.inQueueTime = inQueueTime;
+			}
+
+			public String getMemberId() {
+				return this.memberId;
+			}
+
+			public void setMemberId(String memberId) {
+				this.memberId = memberId;
+			}
+
+			public String getId() {
+				return this.id;
+			}
+
+			public void setId(String id) {
+				this.id = id;
+			}
+
+			public Integer getQueueUpContinueTime() {
+				return this.queueUpContinueTime;
+			}
+
+			public void setQueueUpContinueTime(Integer queueUpContinueTime) {
+				this.queueUpContinueTime = queueUpContinueTime;
 			}
 		}
 	}

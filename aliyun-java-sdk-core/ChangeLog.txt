@@ -1,4 +1,21 @@
-﻿2021-03-29 Version:4.5.20
+﻿2021-08-05 Version:4.5.25
+1, Fix regionId conflict among different products in LocationServiceEndpointResolver.
+
+2021-07-23 Version:4.5.24
+1, fix bugs for anonymous credentials
+
+2021-06-28 Version:4.5.23
+1, add anonymous credentials
+
+2021-06-28 Version:4.5.22
+1, Fix the NPE bug of ApacheHttpClient
+2, Add more HTTP request log tests
+3, Add ApachHttpClient NPE bug test
+
+2021-06-22 Version:4.5.21
+1, Add more HTTP request logs
+
+2021-03-29 Version:4.5.20
 1, Fix signature error when RegionId null
 
 2021-03-23 Version:4.5.19

@@ -27,15 +27,15 @@ public class AddAiotPersonTableItemsResponseUnmarshaller {
 	public static AddAiotPersonTableItemsResponse unmarshall(AddAiotPersonTableItemsResponse addAiotPersonTableItemsResponse, UnmarshallerContext _ctx) {
 		
 		addAiotPersonTableItemsResponse.setRequestId(_ctx.stringValue("AddAiotPersonTableItemsResponse.RequestId"));
-		addAiotPersonTableItemsResponse.setMessage(_ctx.stringValue("AddAiotPersonTableItemsResponse.Message"));
 		addAiotPersonTableItemsResponse.setCode(_ctx.stringValue("AddAiotPersonTableItemsResponse.Code"));
+		addAiotPersonTableItemsResponse.setMessage(_ctx.stringValue("AddAiotPersonTableItemsResponse.Message"));
 
 		List<ResultListItem> resultList = new ArrayList<ResultListItem>();
 		for (int i = 0; i < _ctx.lengthValue("AddAiotPersonTableItemsResponse.ResultList.Length"); i++) {
 			ResultListItem resultListItem = new ResultListItem();
 			resultListItem.setPersonTableItemId(_ctx.stringValue("AddAiotPersonTableItemsResponse.ResultList["+ i +"].PersonTableItemId"));
-			resultListItem.setMessage(_ctx.stringValue("AddAiotPersonTableItemsResponse.ResultList["+ i +"].Message"));
 			resultListItem.setCode(_ctx.stringValue("AddAiotPersonTableItemsResponse.ResultList["+ i +"].Code"));
+			resultListItem.setMessage(_ctx.stringValue("AddAiotPersonTableItemsResponse.ResultList["+ i +"].Message"));
 
 			resultList.add(resultListItem);
 		}

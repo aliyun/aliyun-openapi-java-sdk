@@ -32,11 +32,11 @@ public class DescribePortResponseUnmarshaller {
 		List<NetworkRule> networkRules = new ArrayList<NetworkRule>();
 		for (int i = 0; i < _ctx.lengthValue("DescribePortResponse.NetworkRules.Length"); i++) {
 			NetworkRule networkRule = new NetworkRule();
-			networkRule.setInstanceId(_ctx.stringValue("DescribePortResponse.NetworkRules["+ i +"].InstanceId"));
-			networkRule.setFrontendProtocol(_ctx.stringValue("DescribePortResponse.NetworkRules["+ i +"].FrontendProtocol"));
 			networkRule.setFrontendPort(_ctx.integerValue("DescribePortResponse.NetworkRules["+ i +"].FrontendPort"));
-			networkRule.setBackendPort(_ctx.integerValue("DescribePortResponse.NetworkRules["+ i +"].BackendPort"));
 			networkRule.setIsAutoCreate(_ctx.booleanValue("DescribePortResponse.NetworkRules["+ i +"].IsAutoCreate"));
+			networkRule.setFrontendProtocol(_ctx.stringValue("DescribePortResponse.NetworkRules["+ i +"].FrontendProtocol"));
+			networkRule.setInstanceId(_ctx.stringValue("DescribePortResponse.NetworkRules["+ i +"].InstanceId"));
+			networkRule.setBackendPort(_ctx.integerValue("DescribePortResponse.NetworkRules["+ i +"].BackendPort"));
 
 			List<String> realServers = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribePortResponse.NetworkRules["+ i +"].RealServers.Length"); j++) {

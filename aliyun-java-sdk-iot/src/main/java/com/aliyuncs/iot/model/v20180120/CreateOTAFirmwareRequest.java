@@ -49,6 +49,8 @@ public class CreateOTAFirmwareRequest extends RpcAcsRequest<CreateOTAFirmwareRes
 
 	private String srcVersion;
 
+	private String udi;
+
 	private String destVersion;
 	public CreateOTAFirmwareRequest() {
 		super("Iot", "2018-01-20", "CreateOTAFirmware", "iot");
@@ -188,6 +190,17 @@ public class CreateOTAFirmwareRequest extends RpcAcsRequest<CreateOTAFirmwareRes
 		this.srcVersion = srcVersion;
 		if(srcVersion != null){
 			putQueryParameter("SrcVersion", srcVersion);
+		}
+	}
+
+	public String getUdi() {
+		return this.udi;
+	}
+
+	public void setUdi(String udi) {
+		this.udi = udi;
+		if(udi != null){
+			putQueryParameter("Udi", udi);
 		}
 	}
 

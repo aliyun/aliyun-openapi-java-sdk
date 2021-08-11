@@ -87,31 +87,23 @@ public class ListOrdersResponse extends AcsResponse {
 
 	public static class Order {
 
-		private String statusDesc;
-
 		private String comment;
+
+		private String lastModifyTime;
+
+		private String statusCode;
 
 		private String createTime;
 
 		private String committer;
 
-		private Long orderId;
+		private Long committerId;
 
-		private String lastModifyTime;
+		private String statusDesc;
 
 		private String pluginType;
 
-		private Long committerId;
-
-		private String statusCode;
-
-		public String getStatusDesc() {
-			return this.statusDesc;
-		}
-
-		public void setStatusDesc(String statusDesc) {
-			this.statusDesc = statusDesc;
-		}
+		private Long orderId;
 
 		public String getComment() {
 			return this.comment;
@@ -119,6 +111,22 @@ public class ListOrdersResponse extends AcsResponse {
 
 		public void setComment(String comment) {
 			this.comment = comment;
+		}
+
+		public String getLastModifyTime() {
+			return this.lastModifyTime;
+		}
+
+		public void setLastModifyTime(String lastModifyTime) {
+			this.lastModifyTime = lastModifyTime;
+		}
+
+		public String getStatusCode() {
+			return this.statusCode;
+		}
+
+		public void setStatusCode(String statusCode) {
+			this.statusCode = statusCode;
 		}
 
 		public String getCreateTime() {
@@ -137,20 +145,20 @@ public class ListOrdersResponse extends AcsResponse {
 			this.committer = committer;
 		}
 
-		public Long getOrderId() {
-			return this.orderId;
+		public Long getCommitterId() {
+			return this.committerId;
 		}
 
-		public void setOrderId(Long orderId) {
-			this.orderId = orderId;
+		public void setCommitterId(Long committerId) {
+			this.committerId = committerId;
 		}
 
-		public String getLastModifyTime() {
-			return this.lastModifyTime;
+		public String getStatusDesc() {
+			return this.statusDesc;
 		}
 
-		public void setLastModifyTime(String lastModifyTime) {
-			this.lastModifyTime = lastModifyTime;
+		public void setStatusDesc(String statusDesc) {
+			this.statusDesc = statusDesc;
 		}
 
 		public String getPluginType() {
@@ -161,20 +169,12 @@ public class ListOrdersResponse extends AcsResponse {
 			this.pluginType = pluginType;
 		}
 
-		public Long getCommitterId() {
-			return this.committerId;
+		public Long getOrderId() {
+			return this.orderId;
 		}
 
-		public void setCommitterId(Long committerId) {
-			this.committerId = committerId;
-		}
-
-		public String getStatusCode() {
-			return this.statusCode;
-		}
-
-		public void setStatusCode(String statusCode) {
-			this.statusCode = statusCode;
+		public void setOrderId(Long orderId) {
+			this.orderId = orderId;
 		}
 	}
 

@@ -29,23 +29,23 @@ public class GetHotlineCallActionResponseUnmarshaller {
 		getHotlineCallActionResponse.setSuccess(_ctx.booleanValue("GetHotlineCallActionResponse.Success"));
 
 		Data data = new Data();
-		data.setTaskId(_ctx.longValue("GetHotlineCallActionResponse.Data.TaskId"));
-		data.setSubTouchId(_ctx.longValue("GetHotlineCallActionResponse.Data.SubTouchId"));
-		data.setMemberList(_ctx.stringValue("GetHotlineCallActionResponse.Data.MemberList"));
+		data.setTouchId(_ctx.longValue("GetHotlineCallActionResponse.Data.TouchId"));
 		data.setDepId(_ctx.longValue("GetHotlineCallActionResponse.Data.DepId"));
+		data.setMemberName(_ctx.stringValue("GetHotlineCallActionResponse.Data.MemberName"));
+		data.setServicerName(_ctx.stringValue("GetHotlineCallActionResponse.Data.ServicerName"));
+		data.setChannelType(_ctx.longValue("GetHotlineCallActionResponse.Data.ChannelType"));
+		data.setActionId(_ctx.longValue("GetHotlineCallActionResponse.Data.ActionId"));
+		data.setCalloutName(_ctx.stringValue("GetHotlineCallActionResponse.Data.CalloutName"));
+		data.setSubTouchId(_ctx.longValue("GetHotlineCallActionResponse.Data.SubTouchId"));
+		data.setServicerId(_ctx.longValue("GetHotlineCallActionResponse.Data.ServicerId"));
+		data.setBuId(_ctx.longValue("GetHotlineCallActionResponse.Data.BuId"));
+		data.setCalloutId(_ctx.longValue("GetHotlineCallActionResponse.Data.CalloutId"));
 		data.setCaseId(_ctx.longValue("GetHotlineCallActionResponse.Data.CaseId"));
 		data.setChannelId(_ctx.stringValue("GetHotlineCallActionResponse.Data.ChannelId"));
-		data.setTouchId(_ctx.longValue("GetHotlineCallActionResponse.Data.TouchId"));
-		data.setMemberId(_ctx.longValue("GetHotlineCallActionResponse.Data.MemberId"));
-		data.setCalloutId(_ctx.longValue("GetHotlineCallActionResponse.Data.CalloutId"));
-		data.setBuId(_ctx.longValue("GetHotlineCallActionResponse.Data.BuId"));
-		data.setActionId(_ctx.longValue("GetHotlineCallActionResponse.Data.ActionId"));
-		data.setServicerName(_ctx.stringValue("GetHotlineCallActionResponse.Data.ServicerName"));
-		data.setCalloutName(_ctx.stringValue("GetHotlineCallActionResponse.Data.CalloutName"));
 		data.setIsTransfer(_ctx.stringValue("GetHotlineCallActionResponse.Data.IsTransfer"));
-		data.setMemberName(_ctx.stringValue("GetHotlineCallActionResponse.Data.MemberName"));
-		data.setServicerId(_ctx.longValue("GetHotlineCallActionResponse.Data.ServicerId"));
-		data.setChannelType(_ctx.longValue("GetHotlineCallActionResponse.Data.ChannelType"));
+		data.setMemberId(_ctx.longValue("GetHotlineCallActionResponse.Data.MemberId"));
+		data.setTaskId(_ctx.longValue("GetHotlineCallActionResponse.Data.TaskId"));
+		data.setMemberList(_ctx.stringValue("GetHotlineCallActionResponse.Data.MemberList"));
 		getHotlineCallActionResponse.setData(data);
 	 
 	 	return getHotlineCallActionResponse;

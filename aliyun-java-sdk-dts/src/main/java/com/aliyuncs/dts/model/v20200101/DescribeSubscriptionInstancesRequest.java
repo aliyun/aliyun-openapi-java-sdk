@@ -40,7 +40,7 @@ public class DescribeSubscriptionInstancesRequest extends RpcAcsRequest<Describe
 
 	private List<Tag> tags;
 	public DescribeSubscriptionInstancesRequest() {
-		super("Dts", "2020-01-01", "DescribeSubscriptionInstances");
+		super("Dts", "2020-01-01", "DescribeSubscriptionInstances", "dts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

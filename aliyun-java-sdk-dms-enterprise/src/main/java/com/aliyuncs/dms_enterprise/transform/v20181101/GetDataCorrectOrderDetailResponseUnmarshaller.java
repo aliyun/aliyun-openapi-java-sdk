@@ -38,42 +38,42 @@ public class GetDataCorrectOrderDetailResponseUnmarshaller {
 		dataCorrectOrderDetail.setStatus(_ctx.stringValue("GetDataCorrectOrderDetailResponse.DataCorrectOrderDetail.Status"));
 
 		OrderDetail orderDetail = new OrderDetail();
-		orderDetail.setEstimateAffectRows(_ctx.longValue("GetDataCorrectOrderDetailResponse.DataCorrectOrderDetail.OrderDetail.EstimateAffectRows"));
-		orderDetail.setIgnoreAffectRows(_ctx.booleanValue("GetDataCorrectOrderDetailResponse.DataCorrectOrderDetail.OrderDetail.IgnoreAffectRows"));
-		orderDetail.setExeSQL(_ctx.stringValue("GetDataCorrectOrderDetailResponse.DataCorrectOrderDetail.OrderDetail.ExeSQL"));
+		orderDetail.setRbSQL(_ctx.stringValue("GetDataCorrectOrderDetailResponse.DataCorrectOrderDetail.OrderDetail.RbSQL"));
+		orderDetail.setRbAttachmentName(_ctx.stringValue("GetDataCorrectOrderDetailResponse.DataCorrectOrderDetail.OrderDetail.RbAttachmentName"));
 		orderDetail.setClassify(_ctx.stringValue("GetDataCorrectOrderDetailResponse.DataCorrectOrderDetail.OrderDetail.Classify"));
-		orderDetail.setIgnoreAffectRowsReason(_ctx.stringValue("GetDataCorrectOrderDetailResponse.DataCorrectOrderDetail.OrderDetail.IgnoreAffectRowsReason"));
-		orderDetail.setAttachmentName(_ctx.stringValue("GetDataCorrectOrderDetailResponse.DataCorrectOrderDetail.OrderDetail.AttachmentName"));
-		orderDetail.setSqlType(_ctx.stringValue("GetDataCorrectOrderDetailResponse.DataCorrectOrderDetail.OrderDetail.SqlType"));
+		orderDetail.setExeSQL(_ctx.stringValue("GetDataCorrectOrderDetailResponse.DataCorrectOrderDetail.OrderDetail.ExeSQL"));
+		orderDetail.setEstimateAffectRows(_ctx.longValue("GetDataCorrectOrderDetailResponse.DataCorrectOrderDetail.OrderDetail.EstimateAffectRows"));
 		orderDetail.setRbSQLType(_ctx.stringValue("GetDataCorrectOrderDetailResponse.DataCorrectOrderDetail.OrderDetail.RbSQLType"));
 		orderDetail.setActualAffectRows(_ctx.longValue("GetDataCorrectOrderDetailResponse.DataCorrectOrderDetail.OrderDetail.ActualAffectRows"));
-		orderDetail.setRbAttachmentName(_ctx.stringValue("GetDataCorrectOrderDetailResponse.DataCorrectOrderDetail.OrderDetail.RbAttachmentName"));
-		orderDetail.setRbSQL(_ctx.stringValue("GetDataCorrectOrderDetailResponse.DataCorrectOrderDetail.OrderDetail.RbSQL"));
+		orderDetail.setIgnoreAffectRows(_ctx.booleanValue("GetDataCorrectOrderDetailResponse.DataCorrectOrderDetail.OrderDetail.IgnoreAffectRows"));
+		orderDetail.setAttachmentName(_ctx.stringValue("GetDataCorrectOrderDetailResponse.DataCorrectOrderDetail.OrderDetail.AttachmentName"));
+		orderDetail.setSqlType(_ctx.stringValue("GetDataCorrectOrderDetailResponse.DataCorrectOrderDetail.OrderDetail.SqlType"));
+		orderDetail.setIgnoreAffectRowsReason(_ctx.stringValue("GetDataCorrectOrderDetailResponse.DataCorrectOrderDetail.OrderDetail.IgnoreAffectRowsReason"));
 		dataCorrectOrderDetail.setOrderDetail(orderDetail);
-
-		List<Database> databaseList = new ArrayList<Database>();
-		for (int i = 0; i < _ctx.lengthValue("GetDataCorrectOrderDetailResponse.DataCorrectOrderDetail.DatabaseList.Length"); i++) {
-			Database database = new Database();
-			database.setSearchName(_ctx.stringValue("GetDataCorrectOrderDetailResponse.DataCorrectOrderDetail.DatabaseList["+ i +"].SearchName"));
-			database.setDbId(_ctx.integerValue("GetDataCorrectOrderDetailResponse.DataCorrectOrderDetail.DatabaseList["+ i +"].DbId"));
-			database.setLogic(_ctx.booleanValue("GetDataCorrectOrderDetailResponse.DataCorrectOrderDetail.DatabaseList["+ i +"].Logic"));
-			database.setEnvType(_ctx.stringValue("GetDataCorrectOrderDetailResponse.DataCorrectOrderDetail.DatabaseList["+ i +"].EnvType"));
-			database.setDbType(_ctx.stringValue("GetDataCorrectOrderDetailResponse.DataCorrectOrderDetail.DatabaseList["+ i +"].DbType"));
-
-			databaseList.add(database);
-		}
-		dataCorrectOrderDetail.setDatabaseList(databaseList);
 
 		List<TaskCheckDO> preCheckDetail = new ArrayList<TaskCheckDO>();
 		for (int i = 0; i < _ctx.lengthValue("GetDataCorrectOrderDetailResponse.DataCorrectOrderDetail.PreCheckDetail.Length"); i++) {
 			TaskCheckDO taskCheckDO = new TaskCheckDO();
 			taskCheckDO.setUserTip(_ctx.stringValue("GetDataCorrectOrderDetailResponse.DataCorrectOrderDetail.PreCheckDetail["+ i +"].UserTip"));
-			taskCheckDO.setCheckStep(_ctx.stringValue("GetDataCorrectOrderDetailResponse.DataCorrectOrderDetail.PreCheckDetail["+ i +"].CheckStep"));
 			taskCheckDO.setCheckStatus(_ctx.stringValue("GetDataCorrectOrderDetailResponse.DataCorrectOrderDetail.PreCheckDetail["+ i +"].CheckStatus"));
+			taskCheckDO.setCheckStep(_ctx.stringValue("GetDataCorrectOrderDetailResponse.DataCorrectOrderDetail.PreCheckDetail["+ i +"].CheckStep"));
 
 			preCheckDetail.add(taskCheckDO);
 		}
 		dataCorrectOrderDetail.setPreCheckDetail(preCheckDetail);
+
+		List<Database> databaseList = new ArrayList<Database>();
+		for (int i = 0; i < _ctx.lengthValue("GetDataCorrectOrderDetailResponse.DataCorrectOrderDetail.DatabaseList.Length"); i++) {
+			Database database = new Database();
+			database.setDbId(_ctx.integerValue("GetDataCorrectOrderDetailResponse.DataCorrectOrderDetail.DatabaseList["+ i +"].DbId"));
+			database.setDbType(_ctx.stringValue("GetDataCorrectOrderDetailResponse.DataCorrectOrderDetail.DatabaseList["+ i +"].DbType"));
+			database.setLogic(_ctx.booleanValue("GetDataCorrectOrderDetailResponse.DataCorrectOrderDetail.DatabaseList["+ i +"].Logic"));
+			database.setSearchName(_ctx.stringValue("GetDataCorrectOrderDetailResponse.DataCorrectOrderDetail.DatabaseList["+ i +"].SearchName"));
+			database.setEnvType(_ctx.stringValue("GetDataCorrectOrderDetailResponse.DataCorrectOrderDetail.DatabaseList["+ i +"].EnvType"));
+
+			databaseList.add(database);
+		}
+		dataCorrectOrderDetail.setDatabaseList(databaseList);
 		getDataCorrectOrderDetailResponse.setDataCorrectOrderDetail(dataCorrectOrderDetail);
 	 
 	 	return getDataCorrectOrderDetailResponse;

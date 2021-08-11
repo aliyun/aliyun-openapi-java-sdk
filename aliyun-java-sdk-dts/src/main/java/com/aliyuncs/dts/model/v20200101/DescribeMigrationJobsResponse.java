@@ -117,6 +117,10 @@ public class DescribeMigrationJobsResponse extends AcsResponse {
 
 		private String payType;
 
+		private String jobCreateTime;
+
+		private String instanceCreateTime;
+
 		private List<SynchronousObject> migrationObject;
 
 		private List<Tag> tags;
@@ -173,6 +177,22 @@ public class DescribeMigrationJobsResponse extends AcsResponse {
 
 		public void setPayType(String payType) {
 			this.payType = payType;
+		}
+
+		public String getJobCreateTime() {
+			return this.jobCreateTime;
+		}
+
+		public void setJobCreateTime(String jobCreateTime) {
+			this.jobCreateTime = jobCreateTime;
+		}
+
+		public String getInstanceCreateTime() {
+			return this.instanceCreateTime;
+		}
+
+		public void setInstanceCreateTime(String instanceCreateTime) {
+			this.instanceCreateTime = instanceCreateTime;
 		}
 
 		public List<SynchronousObject> getMigrationObject() {

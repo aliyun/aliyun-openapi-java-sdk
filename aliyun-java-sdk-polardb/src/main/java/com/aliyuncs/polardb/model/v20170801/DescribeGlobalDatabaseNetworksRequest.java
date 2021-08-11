@@ -27,7 +27,11 @@ public class DescribeGlobalDatabaseNetworksRequest extends RpcAcsRequest<Describ
 
 	private Long resourceOwnerId;
 
+	private Integer pageNumber;
+
 	private String securityToken;
+
+	private Integer pageSize;
 
 	private String resourceOwnerAccount;
 
@@ -56,6 +60,17 @@ public class DescribeGlobalDatabaseNetworksRequest extends RpcAcsRequest<Describ
 		}
 	}
 
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
 	public String getSecurityToken() {
 		return this.securityToken;
 	}
@@ -64,6 +79,17 @@ public class DescribeGlobalDatabaseNetworksRequest extends RpcAcsRequest<Describ
 		this.securityToken = securityToken;
 		if(securityToken != null){
 			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 

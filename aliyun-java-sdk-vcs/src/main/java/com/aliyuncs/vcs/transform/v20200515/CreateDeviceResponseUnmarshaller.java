@@ -28,15 +28,15 @@ public class CreateDeviceResponseUnmarshaller {
 	public static CreateDeviceResponse unmarshall(CreateDeviceResponse createDeviceResponse, UnmarshallerContext _ctx) {
 		
 		createDeviceResponse.setRequestId(_ctx.stringValue("CreateDeviceResponse.RequestId"));
-		createDeviceResponse.setMessage(_ctx.stringValue("CreateDeviceResponse.Message"));
 		createDeviceResponse.setCode(_ctx.stringValue("CreateDeviceResponse.Code"));
+		createDeviceResponse.setMessage(_ctx.stringValue("CreateDeviceResponse.Message"));
 
 		Data data = new Data();
-		data.setSipIp(_ctx.stringValue("CreateDeviceResponse.Data.SipIp"));
 		data.setSipReaml(_ctx.stringValue("CreateDeviceResponse.Data.SipReaml"));
+		data.setSipIp(_ctx.stringValue("CreateDeviceResponse.Data.SipIp"));
 		data.setSipDeviceGbId(_ctx.stringValue("CreateDeviceResponse.Data.SipDeviceGbId"));
-		data.setSipPort(_ctx.stringValue("CreateDeviceResponse.Data.SipPort"));
 		data.setDeviceCode(_ctx.stringValue("CreateDeviceResponse.Data.DeviceCode"));
+		data.setSipPort(_ctx.stringValue("CreateDeviceResponse.Data.SipPort"));
 		data.setSipGbId(_ctx.stringValue("CreateDeviceResponse.Data.SipGbId"));
 		data.setSipPassword(_ctx.stringValue("CreateDeviceResponse.Data.SipPassword"));
 
@@ -44,8 +44,8 @@ public class CreateDeviceResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("CreateDeviceResponse.Data.SubDeviceSipInfo.Length"); i++) {
 			SubDeviceSipInfoItem subDeviceSipInfoItem = new SubDeviceSipInfoItem();
 			subDeviceSipInfoItem.setSundayCaptureStrategy(_ctx.stringValue("CreateDeviceResponse.Data.SubDeviceSipInfo["+ i +"].SundayCaptureStrategy"));
-			subDeviceSipInfoItem.setChannelGbId(_ctx.stringValue("CreateDeviceResponse.Data.SubDeviceSipInfo["+ i +"].ChannelGbId"));
 			subDeviceSipInfoItem.setMondayCaptureStrategy(_ctx.stringValue("CreateDeviceResponse.Data.SubDeviceSipInfo["+ i +"].MondayCaptureStrategy"));
+			subDeviceSipInfoItem.setChannelGbId(_ctx.stringValue("CreateDeviceResponse.Data.SubDeviceSipInfo["+ i +"].ChannelGbId"));
 			subDeviceSipInfoItem.setFridayCaptureStrategy(_ctx.stringValue("CreateDeviceResponse.Data.SubDeviceSipInfo["+ i +"].FridayCaptureStrategy"));
 			subDeviceSipInfoItem.setTuesdayCaptureStrategy(_ctx.stringValue("CreateDeviceResponse.Data.SubDeviceSipInfo["+ i +"].TuesdayCaptureStrategy"));
 			subDeviceSipInfoItem.setWednesdayCaptureStrategy(_ctx.stringValue("CreateDeviceResponse.Data.SubDeviceSipInfo["+ i +"].WednesdayCaptureStrategy"));

@@ -23,12 +23,12 @@ public class LoadDataToLabelDataSetResponseUnmarshaller {
 	public static LoadDataToLabelDataSetResponse unmarshall(LoadDataToLabelDataSetResponse loadDataToLabelDataSetResponse, UnmarshallerContext _ctx) {
 		
 		loadDataToLabelDataSetResponse.setRequestId(_ctx.stringValue("LoadDataToLabelDataSetResponse.RequestId"));
+		loadDataToLabelDataSetResponse.setErrorDesc(_ctx.stringValue("LoadDataToLabelDataSetResponse.ErrorDesc"));
+		loadDataToLabelDataSetResponse.setTraceId(_ctx.stringValue("LoadDataToLabelDataSetResponse.TraceId"));
 		loadDataToLabelDataSetResponse.setData(_ctx.booleanValue("LoadDataToLabelDataSetResponse.Data"));
 		loadDataToLabelDataSetResponse.setErrorCode(_ctx.stringValue("LoadDataToLabelDataSetResponse.ErrorCode"));
-		loadDataToLabelDataSetResponse.setErrorDesc(_ctx.stringValue("LoadDataToLabelDataSetResponse.ErrorDesc"));
 		loadDataToLabelDataSetResponse.setExStack(_ctx.stringValue("LoadDataToLabelDataSetResponse.ExStack"));
 		loadDataToLabelDataSetResponse.setSuccess(_ctx.booleanValue("LoadDataToLabelDataSetResponse.Success"));
-		loadDataToLabelDataSetResponse.setTraceId(_ctx.stringValue("LoadDataToLabelDataSetResponse.TraceId"));
 	 
 	 	return loadDataToLabelDataSetResponse;
 	}

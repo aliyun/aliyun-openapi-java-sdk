@@ -27,7 +27,7 @@ public class DescribeDeviceServiceResponse extends AcsResponse {
 
 	private String requestId;
 
-	private List<ResourceDetailInfo> resourceDetailInfos;
+	private List<DeviceInfo> resourceDetailInfos;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -37,15 +37,15 @@ public class DescribeDeviceServiceResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<ResourceDetailInfo> getResourceDetailInfos() {
+	public List<DeviceInfo> getResourceDetailInfos() {
 		return this.resourceDetailInfos;
 	}
 
-	public void setResourceDetailInfos(List<ResourceDetailInfo> resourceDetailInfos) {
+	public void setResourceDetailInfos(List<DeviceInfo> resourceDetailInfos) {
 		this.resourceDetailInfos = resourceDetailInfos;
 	}
 
-	public static class ResourceDetailInfo {
+	public static class DeviceInfo {
 
 		private String regionID;
 
@@ -58,6 +58,10 @@ public class DescribeDeviceServiceResponse extends AcsResponse {
 		private String status;
 
 		private String type;
+
+		private String mac;
+
+		private String iSP;
 
 		public String getRegionID() {
 			return this.regionID;
@@ -105,6 +109,22 @@ public class DescribeDeviceServiceResponse extends AcsResponse {
 
 		public void setType(String type) {
 			this.type = type;
+		}
+
+		public String getMac() {
+			return this.mac;
+		}
+
+		public void setMac(String mac) {
+			this.mac = mac;
+		}
+
+		public String getISP() {
+			return this.iSP;
+		}
+
+		public void setISP(String iSP) {
+			this.iSP = iSP;
 		}
 	}
 

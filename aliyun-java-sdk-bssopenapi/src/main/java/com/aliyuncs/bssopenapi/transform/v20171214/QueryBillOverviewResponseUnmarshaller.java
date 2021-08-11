@@ -62,6 +62,10 @@ public class QueryBillOverviewResponseUnmarshaller {
 			item.setRoundDownDiscount(_ctx.stringValue("QueryBillOverviewResponse.Data.Items["+ i +"].RoundDownDiscount"));
 			item.setPipCode(_ctx.stringValue("QueryBillOverviewResponse.Data.Items["+ i +"].PipCode"));
 			item.setCommodityCode(_ctx.stringValue("QueryBillOverviewResponse.Data.Items["+ i +"].CommodityCode"));
+			item.setBillAccountID(_ctx.stringValue("QueryBillOverviewResponse.Data.Items["+ i +"].BillAccountID"));
+			item.setBillAccountName(_ctx.stringValue("QueryBillOverviewResponse.Data.Items["+ i +"].BillAccountName"));
+			item.setBizType(_ctx.stringValue("QueryBillOverviewResponse.Data.Items["+ i +"].BizType"));
+			item.setOwnerID(_ctx.stringValue("QueryBillOverviewResponse.Data.Items["+ i +"].OwnerID"));
 
 			items.add(item);
 		}

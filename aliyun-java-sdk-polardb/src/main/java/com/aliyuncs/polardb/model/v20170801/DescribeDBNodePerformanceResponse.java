@@ -25,21 +25,37 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDBNodePerformanceResponse extends AcsResponse {
 
+	private String dBVersion;
+
+	private String endTime;
+
 	private String requestId;
+
+	private String startTime;
+
+	private String dBType;
 
 	private String dBNodeId;
 
 	private String engine;
 
-	private String dBType;
-
-	private String dBVersion;
-
-	private String startTime;
-
-	private String endTime;
-
 	private List<PerformanceItem> performanceKeys;
+
+	public String getDBVersion() {
+		return this.dBVersion;
+	}
+
+	public void setDBVersion(String dBVersion) {
+		this.dBVersion = dBVersion;
+	}
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -47,6 +63,22 @@ public class DescribeDBNodePerformanceResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+	}
+
+	public String getDBType() {
+		return this.dBType;
+	}
+
+	public void setDBType(String dBType) {
+		this.dBType = dBType;
 	}
 
 	public String getDBNodeId() {
@@ -63,38 +95,6 @@ public class DescribeDBNodePerformanceResponse extends AcsResponse {
 
 	public void setEngine(String engine) {
 		this.engine = engine;
-	}
-
-	public String getDBType() {
-		return this.dBType;
-	}
-
-	public void setDBType(String dBType) {
-		this.dBType = dBType;
-	}
-
-	public String getDBVersion() {
-		return this.dBVersion;
-	}
-
-	public void setDBVersion(String dBVersion) {
-		this.dBVersion = dBVersion;
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-	}
-
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
 	}
 
 	public List<PerformanceItem> getPerformanceKeys() {

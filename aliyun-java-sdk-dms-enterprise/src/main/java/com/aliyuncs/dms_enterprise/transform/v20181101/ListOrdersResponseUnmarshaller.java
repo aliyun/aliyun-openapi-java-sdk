@@ -35,15 +35,15 @@ public class ListOrdersResponseUnmarshaller {
 		List<Order> orders = new ArrayList<Order>();
 		for (int i = 0; i < _ctx.lengthValue("ListOrdersResponse.Orders.Length"); i++) {
 			Order order = new Order();
-			order.setStatusDesc(_ctx.stringValue("ListOrdersResponse.Orders["+ i +"].StatusDesc"));
 			order.setComment(_ctx.stringValue("ListOrdersResponse.Orders["+ i +"].Comment"));
+			order.setLastModifyTime(_ctx.stringValue("ListOrdersResponse.Orders["+ i +"].LastModifyTime"));
+			order.setStatusCode(_ctx.stringValue("ListOrdersResponse.Orders["+ i +"].StatusCode"));
 			order.setCreateTime(_ctx.stringValue("ListOrdersResponse.Orders["+ i +"].CreateTime"));
 			order.setCommitter(_ctx.stringValue("ListOrdersResponse.Orders["+ i +"].Committer"));
-			order.setOrderId(_ctx.longValue("ListOrdersResponse.Orders["+ i +"].OrderId"));
-			order.setLastModifyTime(_ctx.stringValue("ListOrdersResponse.Orders["+ i +"].LastModifyTime"));
-			order.setPluginType(_ctx.stringValue("ListOrdersResponse.Orders["+ i +"].PluginType"));
 			order.setCommitterId(_ctx.longValue("ListOrdersResponse.Orders["+ i +"].CommitterId"));
-			order.setStatusCode(_ctx.stringValue("ListOrdersResponse.Orders["+ i +"].StatusCode"));
+			order.setStatusDesc(_ctx.stringValue("ListOrdersResponse.Orders["+ i +"].StatusDesc"));
+			order.setPluginType(_ctx.stringValue("ListOrdersResponse.Orders["+ i +"].PluginType"));
+			order.setOrderId(_ctx.longValue("ListOrdersResponse.Orders["+ i +"].OrderId"));
 
 			orders.add(order);
 		}

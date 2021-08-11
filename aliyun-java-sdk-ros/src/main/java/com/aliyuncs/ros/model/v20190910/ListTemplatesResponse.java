@@ -25,30 +25,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListTemplatesResponse extends AcsResponse {
 
-	private Integer pageNumber;
-
-	private Integer pageSize;
+	private Integer totalCount;
 
 	private String requestId;
 
-	private Integer totalCount;
+	private Integer pageSize;
+
+	private Integer pageNumber;
 
 	private List<Template> templates;
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public Integer getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public String getRequestId() {
@@ -59,12 +51,20 @@ public class ListTemplatesResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Integer getTotalCount() {
-		return this.totalCount;
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<Template> getTemplates() {
@@ -77,30 +77,32 @@ public class ListTemplatesResponse extends AcsResponse {
 
 	public static class Template {
 
-		private String createTime;
+		private String templateARN;
 
 		private String description;
 
-		private String templateId;
+		private String resourceGroupId;
 
-		private String templateName;
+		private String ownerId;
+
+		private String createTime;
 
 		private String updateTime;
 
 		private String templateVersion;
 
+		private String templateName;
+
+		private String templateId;
+
 		private String shareType;
 
-		private String ownerId;
-
-		private String templateARN;
-
-		public String getCreateTime() {
-			return this.createTime;
+		public String getTemplateARN() {
+			return this.templateARN;
 		}
 
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
+		public void setTemplateARN(String templateARN) {
+			this.templateARN = templateARN;
 		}
 
 		public String getDescription() {
@@ -111,20 +113,28 @@ public class ListTemplatesResponse extends AcsResponse {
 			this.description = description;
 		}
 
-		public String getTemplateId() {
-			return this.templateId;
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
 		}
 
-		public void setTemplateId(String templateId) {
-			this.templateId = templateId;
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
 		}
 
-		public String getTemplateName() {
-			return this.templateName;
+		public String getOwnerId() {
+			return this.ownerId;
 		}
 
-		public void setTemplateName(String templateName) {
-			this.templateName = templateName;
+		public void setOwnerId(String ownerId) {
+			this.ownerId = ownerId;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
 		}
 
 		public String getUpdateTime() {
@@ -143,28 +153,28 @@ public class ListTemplatesResponse extends AcsResponse {
 			this.templateVersion = templateVersion;
 		}
 
+		public String getTemplateName() {
+			return this.templateName;
+		}
+
+		public void setTemplateName(String templateName) {
+			this.templateName = templateName;
+		}
+
+		public String getTemplateId() {
+			return this.templateId;
+		}
+
+		public void setTemplateId(String templateId) {
+			this.templateId = templateId;
+		}
+
 		public String getShareType() {
 			return this.shareType;
 		}
 
 		public void setShareType(String shareType) {
 			this.shareType = shareType;
-		}
-
-		public String getOwnerId() {
-			return this.ownerId;
-		}
-
-		public void setOwnerId(String ownerId) {
-			this.ownerId = ownerId;
-		}
-
-		public String getTemplateARN() {
-			return this.templateARN;
-		}
-
-		public void setTemplateARN(String templateARN) {
-			this.templateARN = templateARN;
 		}
 	}
 

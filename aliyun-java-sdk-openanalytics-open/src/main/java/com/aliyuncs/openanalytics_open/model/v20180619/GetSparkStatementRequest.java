@@ -29,7 +29,7 @@ public class GetSparkStatementRequest extends RpcAcsRequest<GetSparkStatementRes
 
 	private Integer statementId;
 	public GetSparkStatementRequest() {
-		super("openanalytics-open", "2018-06-19", "GetSparkStatement", "openanalytics-cap");
+		super("openanalytics-open", "2018-06-19", "GetSparkStatement", "openanalytics");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

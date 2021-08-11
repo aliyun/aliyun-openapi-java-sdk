@@ -333,6 +333,8 @@ public class DescribeScalingRulesResponse extends AcsResponse {
 
 			private Integer evaluationCount;
 
+			private String metricType;
+
 			private List<Dimension> dimensions;
 
 			public String getAlarmTaskName() {
@@ -389,6 +391,14 @@ public class DescribeScalingRulesResponse extends AcsResponse {
 
 			public void setEvaluationCount(Integer evaluationCount) {
 				this.evaluationCount = evaluationCount;
+			}
+
+			public String getMetricType() {
+				return this.metricType;
+			}
+
+			public void setMetricType(String metricType) {
+				this.metricType = metricType;
 			}
 
 			public List<Dimension> getDimensions() {

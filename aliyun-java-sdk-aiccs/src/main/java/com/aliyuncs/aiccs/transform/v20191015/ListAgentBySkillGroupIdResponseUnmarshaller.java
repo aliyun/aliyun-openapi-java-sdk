@@ -35,10 +35,10 @@ public class ListAgentBySkillGroupIdResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("ListAgentBySkillGroupIdResponse.Data.Length"); i++) {
 			Agents agents = new Agents();
 			agents.setStatus(_ctx.integerValue("ListAgentBySkillGroupIdResponse.Data["+ i +"].Status"));
-			agents.setTenantId(_ctx.longValue("ListAgentBySkillGroupIdResponse.Data["+ i +"].TenantId"));
 			agents.setDisplayName(_ctx.stringValue("ListAgentBySkillGroupIdResponse.Data["+ i +"].DisplayName"));
 			agents.setAgentId(_ctx.longValue("ListAgentBySkillGroupIdResponse.Data["+ i +"].AgentId"));
 			agents.setAccountName(_ctx.stringValue("ListAgentBySkillGroupIdResponse.Data["+ i +"].AccountName"));
+			agents.setTenantId(_ctx.longValue("ListAgentBySkillGroupIdResponse.Data["+ i +"].TenantId"));
 
 			data.add(agents);
 		}

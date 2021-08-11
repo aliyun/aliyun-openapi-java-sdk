@@ -36,8 +36,8 @@ public class UploadFileResponseUnmarshaller {
 		List<OssPath> records = new ArrayList<OssPath>();
 		for (int i = 0; i < _ctx.lengthValue("UploadFileResponse.Data.Records.Length"); i++) {
 			OssPath ossPath = new OssPath();
-			ossPath.setSourceId(_ctx.stringValue("UploadFileResponse.Data.Records["+ i +"].SourceId"));
 			ossPath.setOssPath(_ctx.stringValue("UploadFileResponse.Data.Records["+ i +"].OssPath"));
+			ossPath.setSourceId(_ctx.stringValue("UploadFileResponse.Data.Records["+ i +"].SourceId"));
 
 			records.add(ossPath);
 		}

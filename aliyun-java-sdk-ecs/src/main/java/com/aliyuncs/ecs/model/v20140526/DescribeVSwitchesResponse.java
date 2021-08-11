@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeVSwitchesResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer pageSize;
 
-	private Integer totalCount;
+	private String requestId;
 
 	private Integer pageNumber;
 
-	private Integer pageSize;
+	private Integer totalCount;
 
 	private List<VSwitch> vSwitches;
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class DescribeVSwitchesResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
 	}
 
 	public Integer getPageNumber() {
@@ -59,12 +59,12 @@ public class DescribeVSwitchesResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public Integer getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<VSwitch> getVSwitches() {
@@ -77,42 +77,34 @@ public class DescribeVSwitchesResponse extends AcsResponse {
 
 	public static class VSwitch {
 
-		private String vSwitchId;
-
-		private String vpcId;
+		private String creationTime;
 
 		private String status;
 
-		private String cidrBlock;
-
-		private String zoneId;
-
-		private Long availableIpAddressCount;
-
-		private String description;
-
-		private String vSwitchName;
-
-		private String creationTime;
+		private String vpcId;
 
 		private Boolean isDefault;
 
+		private String vSwitchId;
+
+		private String cidrBlock;
+
+		private String description;
+
+		private Long availableIpAddressCount;
+
 		private String resourceGroupId;
 
-		public String getVSwitchId() {
-			return this.vSwitchId;
+		private String zoneId;
+
+		private String vSwitchName;
+
+		public String getCreationTime() {
+			return this.creationTime;
 		}
 
-		public void setVSwitchId(String vSwitchId) {
-			this.vSwitchId = vSwitchId;
-		}
-
-		public String getVpcId() {
-			return this.vpcId;
-		}
-
-		public void setVpcId(String vpcId) {
-			this.vpcId = vpcId;
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
 		}
 
 		public String getStatus() {
@@ -123,52 +115,12 @@ public class DescribeVSwitchesResponse extends AcsResponse {
 			this.status = status;
 		}
 
-		public String getCidrBlock() {
-			return this.cidrBlock;
+		public String getVpcId() {
+			return this.vpcId;
 		}
 
-		public void setCidrBlock(String cidrBlock) {
-			this.cidrBlock = cidrBlock;
-		}
-
-		public String getZoneId() {
-			return this.zoneId;
-		}
-
-		public void setZoneId(String zoneId) {
-			this.zoneId = zoneId;
-		}
-
-		public Long getAvailableIpAddressCount() {
-			return this.availableIpAddressCount;
-		}
-
-		public void setAvailableIpAddressCount(Long availableIpAddressCount) {
-			this.availableIpAddressCount = availableIpAddressCount;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
-		public String getVSwitchName() {
-			return this.vSwitchName;
-		}
-
-		public void setVSwitchName(String vSwitchName) {
-			this.vSwitchName = vSwitchName;
-		}
-
-		public String getCreationTime() {
-			return this.creationTime;
-		}
-
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
+		public void setVpcId(String vpcId) {
+			this.vpcId = vpcId;
 		}
 
 		public Boolean getIsDefault() {
@@ -179,12 +131,60 @@ public class DescribeVSwitchesResponse extends AcsResponse {
 			this.isDefault = isDefault;
 		}
 
+		public String getVSwitchId() {
+			return this.vSwitchId;
+		}
+
+		public void setVSwitchId(String vSwitchId) {
+			this.vSwitchId = vSwitchId;
+		}
+
+		public String getCidrBlock() {
+			return this.cidrBlock;
+		}
+
+		public void setCidrBlock(String cidrBlock) {
+			this.cidrBlock = cidrBlock;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public Long getAvailableIpAddressCount() {
+			return this.availableIpAddressCount;
+		}
+
+		public void setAvailableIpAddressCount(Long availableIpAddressCount) {
+			this.availableIpAddressCount = availableIpAddressCount;
+		}
+
 		public String getResourceGroupId() {
 			return this.resourceGroupId;
 		}
 
 		public void setResourceGroupId(String resourceGroupId) {
 			this.resourceGroupId = resourceGroupId;
+		}
+
+		public String getZoneId() {
+			return this.zoneId;
+		}
+
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
+		}
+
+		public String getVSwitchName() {
+			return this.vSwitchName;
+		}
+
+		public void setVSwitchName(String vSwitchName) {
+			this.vSwitchName = vSwitchName;
 		}
 	}
 

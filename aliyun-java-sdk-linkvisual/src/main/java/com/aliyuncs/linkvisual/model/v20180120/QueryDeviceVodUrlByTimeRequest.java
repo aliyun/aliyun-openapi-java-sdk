@@ -42,6 +42,8 @@ public class QueryDeviceVodUrlByTimeRequest extends RpcAcsRequest<QueryDeviceVod
 	private Integer beginTime;
 
 	private Integer seekTime;
+
+	private Integer urlValidDuration;
 	public QueryDeviceVodUrlByTimeRequest() {
 		super("Linkvisual", "2018-01-20", "QueryDeviceVodUrlByTime", "Linkvisual");
 		setMethod(MethodType.POST);
@@ -147,6 +149,17 @@ public class QueryDeviceVodUrlByTimeRequest extends RpcAcsRequest<QueryDeviceVod
 		this.seekTime = seekTime;
 		if(seekTime != null){
 			putQueryParameter("SeekTime", seekTime.toString());
+		}
+	}
+
+	public Integer getUrlValidDuration() {
+		return this.urlValidDuration;
+	}
+
+	public void setUrlValidDuration(Integer urlValidDuration) {
+		this.urlValidDuration = urlValidDuration;
+		if(urlValidDuration != null){
+			putQueryParameter("UrlValidDuration", urlValidDuration.toString());
 		}
 	}
 

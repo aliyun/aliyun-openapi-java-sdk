@@ -25,6 +25,8 @@ import com.aliyuncs.iot.Endpoint;
 public class QueryDeviceRequest extends RpcAcsRequest<QueryDeviceResponse> {
 	   
 
+	private String nextToken;
+
 	private String iotInstanceId;
 
 	private Integer pageSize;
@@ -39,6 +41,17 @@ public class QueryDeviceRequest extends RpcAcsRequest<QueryDeviceResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+		if(nextToken != null){
+			putQueryParameter("NextToken", nextToken);
+		}
 	}
 
 	public String getIotInstanceId() {

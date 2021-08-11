@@ -29,7 +29,7 @@ public class UpgradeTwoWayRequest extends RpcAcsRequest<UpgradeTwoWayResponse> {
 
 	private String instanceId;
 	public UpgradeTwoWayRequest() {
-		super("Dts", "2020-01-01", "UpgradeTwoWay");
+		super("Dts", "2020-01-01", "UpgradeTwoWay", "dts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

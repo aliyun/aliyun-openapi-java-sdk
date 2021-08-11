@@ -26,6 +26,7 @@ public class CreateGroupResponseUnmarshaller {
 		createGroupResponse.setRequestId(_ctx.stringValue("CreateGroupResponse.RequestId"));
 
 		Group group = new Group();
+		group.setGroupId(_ctx.stringValue("CreateGroupResponse.Group.GroupId"));
 		group.setGroupName(_ctx.stringValue("CreateGroupResponse.Group.GroupName"));
 		group.setComments(_ctx.stringValue("CreateGroupResponse.Group.Comments"));
 		group.setCreateDate(_ctx.stringValue("CreateGroupResponse.Group.CreateDate"));

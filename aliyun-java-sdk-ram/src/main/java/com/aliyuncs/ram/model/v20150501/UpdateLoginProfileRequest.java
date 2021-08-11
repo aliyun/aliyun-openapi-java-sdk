@@ -26,11 +26,11 @@ import com.aliyuncs.ram.Endpoint;
 public class UpdateLoginProfileRequest extends RpcAcsRequest<UpdateLoginProfileResponse> {
 	   
 
-	private Boolean passwordResetRequired;
-
 	private String password;
 
 	private Boolean mFABindRequired;
+
+	private Boolean passwordResetRequired;
 
 	private String userName;
 	public UpdateLoginProfileRequest() {
@@ -41,17 +41,6 @@ public class UpdateLoginProfileRequest extends RpcAcsRequest<UpdateLoginProfileR
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Boolean getPasswordResetRequired() {
-		return this.passwordResetRequired;
-	}
-
-	public void setPasswordResetRequired(Boolean passwordResetRequired) {
-		this.passwordResetRequired = passwordResetRequired;
-		if(passwordResetRequired != null){
-			putQueryParameter("PasswordResetRequired", passwordResetRequired.toString());
-		}
 	}
 
 	public String getPassword() {
@@ -73,6 +62,17 @@ public class UpdateLoginProfileRequest extends RpcAcsRequest<UpdateLoginProfileR
 		this.mFABindRequired = mFABindRequired;
 		if(mFABindRequired != null){
 			putQueryParameter("MFABindRequired", mFABindRequired.toString());
+		}
+	}
+
+	public Boolean getPasswordResetRequired() {
+		return this.passwordResetRequired;
+	}
+
+	public void setPasswordResetRequired(Boolean passwordResetRequired) {
+		this.passwordResetRequired = passwordResetRequired;
+		if(passwordResetRequired != null){
+			putQueryParameter("PasswordResetRequired", passwordResetRequired.toString());
 		}
 	}
 

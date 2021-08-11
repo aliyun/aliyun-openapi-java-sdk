@@ -27,26 +27,26 @@ public class ListNVRChannelDeviceResponseUnmarshaller {
 	public static ListNVRChannelDeviceResponse unmarshall(ListNVRChannelDeviceResponse listNVRChannelDeviceResponse, UnmarshallerContext _ctx) {
 		
 		listNVRChannelDeviceResponse.setRequestId(_ctx.stringValue("ListNVRChannelDeviceResponse.RequestId"));
-		listNVRChannelDeviceResponse.setMessage(_ctx.stringValue("ListNVRChannelDeviceResponse.Message"));
-		listNVRChannelDeviceResponse.setTotal(_ctx.stringValue("ListNVRChannelDeviceResponse.Total"));
 		listNVRChannelDeviceResponse.setSuccess(_ctx.booleanValue("ListNVRChannelDeviceResponse.Success"));
+		listNVRChannelDeviceResponse.setTotal(_ctx.stringValue("ListNVRChannelDeviceResponse.Total"));
+		listNVRChannelDeviceResponse.setMessage(_ctx.stringValue("ListNVRChannelDeviceResponse.Message"));
 
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListNVRChannelDeviceResponse.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
-			dataItem.setDeviceType(_ctx.stringValue("ListNVRChannelDeviceResponse.Data["+ i +"].DeviceType"));
-			dataItem.setSampleName(_ctx.stringValue("ListNVRChannelDeviceResponse.Data["+ i +"].SampleName"));
-			dataItem.setCorpId(_ctx.stringValue("ListNVRChannelDeviceResponse.Data["+ i +"].CorpId"));
-			dataItem.setVap(_ctx.stringValue("ListNVRChannelDeviceResponse.Data["+ i +"].Vap"));
-			dataItem.setProjectName(_ctx.stringValue("ListNVRChannelDeviceResponse.Data["+ i +"].ProjectName"));
-			dataItem.setRegionName(_ctx.stringValue("ListNVRChannelDeviceResponse.Data["+ i +"].RegionName"));
-			dataItem.setDeviceSn(_ctx.stringValue("ListNVRChannelDeviceResponse.Data["+ i +"].DeviceSn"));
-			dataItem.setDatasourceType(_ctx.stringValue("ListNVRChannelDeviceResponse.Data["+ i +"].DatasourceType"));
 			dataItem.setDeviceCode(_ctx.stringValue("ListNVRChannelDeviceResponse.Data["+ i +"].DeviceCode"));
+			dataItem.setDeviceName(_ctx.stringValue("ListNVRChannelDeviceResponse.Data["+ i +"].DeviceName"));
+			dataItem.setDeviceType(_ctx.stringValue("ListNVRChannelDeviceResponse.Data["+ i +"].DeviceType"));
+			dataItem.setDatasourceType(_ctx.stringValue("ListNVRChannelDeviceResponse.Data["+ i +"].DatasourceType"));
 			dataItem.setDeviceStatus(_ctx.stringValue("ListNVRChannelDeviceResponse.Data["+ i +"].DeviceStatus"));
 			dataItem.setStreamStatus(_ctx.stringValue("ListNVRChannelDeviceResponse.Data["+ i +"].StreamStatus"));
 			dataItem.setComptureStatus(_ctx.stringValue("ListNVRChannelDeviceResponse.Data["+ i +"].ComptureStatus"));
-			dataItem.setDeviceName(_ctx.stringValue("ListNVRChannelDeviceResponse.Data["+ i +"].DeviceName"));
+			dataItem.setDeviceSn(_ctx.stringValue("ListNVRChannelDeviceResponse.Data["+ i +"].DeviceSn"));
+			dataItem.setSampleName(_ctx.stringValue("ListNVRChannelDeviceResponse.Data["+ i +"].SampleName"));
+			dataItem.setRegionName(_ctx.stringValue("ListNVRChannelDeviceResponse.Data["+ i +"].RegionName"));
+			dataItem.setCorpId(_ctx.stringValue("ListNVRChannelDeviceResponse.Data["+ i +"].CorpId"));
+			dataItem.setVap(_ctx.stringValue("ListNVRChannelDeviceResponse.Data["+ i +"].Vap"));
+			dataItem.setProjectName(_ctx.stringValue("ListNVRChannelDeviceResponse.Data["+ i +"].ProjectName"));
 
 			data.add(dataItem);
 		}

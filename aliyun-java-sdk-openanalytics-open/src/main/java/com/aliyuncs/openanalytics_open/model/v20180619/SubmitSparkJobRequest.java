@@ -29,7 +29,7 @@ public class SubmitSparkJobRequest extends RpcAcsRequest<SubmitSparkJobResponse>
 
 	private String vcName;
 	public SubmitSparkJobRequest() {
-		super("openanalytics-open", "2018-06-19", "SubmitSparkJob", "openanalytics-cap");
+		super("openanalytics-open", "2018-06-19", "SubmitSparkJob", "openanalytics");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

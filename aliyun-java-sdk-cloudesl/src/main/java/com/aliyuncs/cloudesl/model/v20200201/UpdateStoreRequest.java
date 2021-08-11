@@ -31,6 +31,8 @@ public class UpdateStoreRequest extends RpcAcsRequest<UpdateStoreResponse> {
 
 	private String storeId;
 
+	private String templateVersion;
+
 	private String userStoreCode;
 
 	private String phone;
@@ -73,6 +75,17 @@ public class UpdateStoreRequest extends RpcAcsRequest<UpdateStoreResponse> {
 		this.storeId = storeId;
 		if(storeId != null){
 			putBodyParameter("StoreId", storeId);
+		}
+	}
+
+	public String getTemplateVersion() {
+		return this.templateVersion;
+	}
+
+	public void setTemplateVersion(String templateVersion) {
+		this.templateVersion = templateVersion;
+		if(templateVersion != null){
+			putBodyParameter("TemplateVersion", templateVersion);
 		}
 	}
 

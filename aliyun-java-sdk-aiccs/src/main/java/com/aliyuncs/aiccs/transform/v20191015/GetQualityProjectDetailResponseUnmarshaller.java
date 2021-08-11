@@ -33,19 +33,19 @@ public class GetQualityProjectDetailResponseUnmarshaller {
 
 		Data data = new Data();
 		data.setStatus(_ctx.integerValue("GetQualityProjectDetailResponse.Data.Status"));
-		data.setModifyTime(_ctx.stringValue("GetQualityProjectDetailResponse.Data.ModifyTime"));
 		data.setQualityType(_ctx.integerValue("GetQualityProjectDetailResponse.Data.QualityType"));
-		data.setVersion(_ctx.integerValue("GetQualityProjectDetailResponse.Data.Version"));
-		data.setProjectName(_ctx.stringValue("GetQualityProjectDetailResponse.Data.ProjectName"));
 		data.setCreateTime(_ctx.stringValue("GetQualityProjectDetailResponse.Data.CreateTime"));
-		data.setId(_ctx.longValue("GetQualityProjectDetailResponse.Data.Id"));
+		data.setProjectName(_ctx.stringValue("GetQualityProjectDetailResponse.Data.ProjectName"));
 		data.setCheckFreqType(_ctx.integerValue("GetQualityProjectDetailResponse.Data.CheckFreqType"));
+		data.setVersion(_ctx.integerValue("GetQualityProjectDetailResponse.Data.Version"));
+		data.setId(_ctx.longValue("GetQualityProjectDetailResponse.Data.Id"));
+		data.setModifyTime(_ctx.stringValue("GetQualityProjectDetailResponse.Data.ModifyTime"));
 
-		List<Long> servicerList = new ArrayList<Long>();
-		for (int i = 0; i < _ctx.lengthValue("GetQualityProjectDetailResponse.Data.ServicerList.Length"); i++) {
-			servicerList.add(_ctx.longValue("GetQualityProjectDetailResponse.Data.ServicerList["+ i +"]"));
+		List<Long> qualityRuleIds = new ArrayList<Long>();
+		for (int i = 0; i < _ctx.lengthValue("GetQualityProjectDetailResponse.Data.QualityRuleIds.Length"); i++) {
+			qualityRuleIds.add(_ctx.longValue("GetQualityProjectDetailResponse.Data.QualityRuleIds["+ i +"]"));
 		}
-		data.setServicerList(servicerList);
+		data.setQualityRuleIds(qualityRuleIds);
 
 		List<Long> depList = new ArrayList<Long>();
 		for (int i = 0; i < _ctx.lengthValue("GetQualityProjectDetailResponse.Data.DepList.Length"); i++) {
@@ -53,17 +53,17 @@ public class GetQualityProjectDetailResponseUnmarshaller {
 		}
 		data.setDepList(depList);
 
+		List<Long> servicerList = new ArrayList<Long>();
+		for (int i = 0; i < _ctx.lengthValue("GetQualityProjectDetailResponse.Data.ServicerList.Length"); i++) {
+			servicerList.add(_ctx.longValue("GetQualityProjectDetailResponse.Data.ServicerList["+ i +"]"));
+		}
+		data.setServicerList(servicerList);
+
 		List<Long> groupList = new ArrayList<Long>();
 		for (int i = 0; i < _ctx.lengthValue("GetQualityProjectDetailResponse.Data.GroupList.Length"); i++) {
 			groupList.add(_ctx.longValue("GetQualityProjectDetailResponse.Data.GroupList["+ i +"]"));
 		}
 		data.setGroupList(groupList);
-
-		List<Long> qualityRuleIds = new ArrayList<Long>();
-		for (int i = 0; i < _ctx.lengthValue("GetQualityProjectDetailResponse.Data.QualityRuleIds.Length"); i++) {
-			qualityRuleIds.add(_ctx.longValue("GetQualityProjectDetailResponse.Data.QualityRuleIds["+ i +"]"));
-		}
-		data.setQualityRuleIds(qualityRuleIds);
 		getQualityProjectDetailResponse.setData(data);
 	 
 	 	return getQualityProjectDetailResponse;

@@ -37,6 +37,8 @@ public class AttachLoadBalancersRequest extends RpcAcsRequest<AttachLoadBalancer
 	private String resourceOwnerAccount;
 
 	private Long ownerId;
+
+	private Boolean async;
 	public AttachLoadBalancersRequest() {
 		super("Ess", "2014-08-28", "AttachLoadBalancers", "ess");
 		setMethod(MethodType.POST);
@@ -111,6 +113,17 @@ public class AttachLoadBalancersRequest extends RpcAcsRequest<AttachLoadBalancer
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public Boolean getAsync() {
+		return this.async;
+	}
+
+	public void setAsync(Boolean async) {
+		this.async = async;
+		if(async != null){
+			putQueryParameter("Async", async.toString());
 		}
 	}
 

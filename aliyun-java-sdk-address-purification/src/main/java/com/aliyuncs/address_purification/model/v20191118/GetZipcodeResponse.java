@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetZipcodeResponse extends AcsResponse {
 
-	private String data;
-
 	private String requestId;
 
-	public String getData() {
-		return this.data;
-	}
-
-	public void setData(String data) {
-		this.data = data;
-	}
+	private String data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -42,6 +34,14 @@ public class GetZipcodeResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getData() {
+		return this.data;
+	}
+
+	public void setData(String data) {
+		this.data = data;
 	}
 
 	@Override

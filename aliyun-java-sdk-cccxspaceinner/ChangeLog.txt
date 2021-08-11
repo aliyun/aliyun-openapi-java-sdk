@@ -1,6 +1,0 @@
-2021-05-19 Version: 1.0.14
-- Add QueryServicerByPage api.
-
-2021-03-16 Version: 1.0.10
-- Add getAgentBusinessUnitByBuId API.
-

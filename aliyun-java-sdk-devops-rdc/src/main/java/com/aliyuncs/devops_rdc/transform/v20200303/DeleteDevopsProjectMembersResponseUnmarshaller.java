@@ -23,10 +23,10 @@ public class DeleteDevopsProjectMembersResponseUnmarshaller {
 	public static DeleteDevopsProjectMembersResponse unmarshall(DeleteDevopsProjectMembersResponse deleteDevopsProjectMembersResponse, UnmarshallerContext _ctx) {
 		
 		deleteDevopsProjectMembersResponse.setRequestId(_ctx.stringValue("DeleteDevopsProjectMembersResponse.RequestId"));
-		deleteDevopsProjectMembersResponse.setSuccessful(_ctx.booleanValue("DeleteDevopsProjectMembersResponse.Successful"));
-		deleteDevopsProjectMembersResponse.setErrorCode(_ctx.stringValue("DeleteDevopsProjectMembersResponse.ErrorCode"));
 		deleteDevopsProjectMembersResponse.setErrorMsg(_ctx.stringValue("DeleteDevopsProjectMembersResponse.ErrorMsg"));
 		deleteDevopsProjectMembersResponse.setObject(_ctx.booleanValue("DeleteDevopsProjectMembersResponse.Object"));
+		deleteDevopsProjectMembersResponse.setSuccessful(_ctx.booleanValue("DeleteDevopsProjectMembersResponse.Successful"));
+		deleteDevopsProjectMembersResponse.setErrorCode(_ctx.stringValue("DeleteDevopsProjectMembersResponse.ErrorCode"));
 	 
 	 	return deleteDevopsProjectMembersResponse;
 	}

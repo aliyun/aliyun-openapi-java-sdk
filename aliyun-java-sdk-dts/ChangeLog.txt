@@ -1,3 +1,27 @@
+2021-08-10 Version: 5.1.17
+- Supported DescribeSubscriptionMeta for distributed subscription.
+- Supported ParentChannelId for DescribeConsumerChannel.
+- Supported Reserve for ModifyDtsJob.
+
+2021-08-10 Version: 5.1.1
+- Supported DescribeSubscriptionMeta for distributed subscription.
+- Supported ParentChannelId for DescribeConsumerChannel.
+- Supported Reserve for ModifyDtsJob.
+
+2021-08-09 Version: 5.1.16
+- Supported DescribeSubscriptionMeta for distributed subscription.
+- Supported ParentChannelId for DescribeConsumerChannel.
+- Supported Reserve for ModifyDtsJob.
+
+2021-08-09 Version: 5.1.15
+- Support Job Status With Phase.
+
+2021-06-24 Version: 5.1.14
+- DescribeSynchronizationJobs, DescribeSubscriptionInstances, DescribeMigrationJobs, Add InstanceCreateTime and JobCreateTime.
+
+2021-05-24 Version: 5.1.13
+- Support a2a openapi.
+
 2021-05-18 Version: 1.8.4
 - Support openapi test.
 

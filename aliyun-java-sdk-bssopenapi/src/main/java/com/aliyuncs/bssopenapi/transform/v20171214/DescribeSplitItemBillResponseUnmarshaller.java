@@ -89,6 +89,10 @@ public class DescribeSplitItemBillResponseUnmarshaller {
 			item.setSplitAccountID(_ctx.stringValue("DescribeSplitItemBillResponse.Data.Items["+ i +"].SplitAccountID"));
 			item.setSplitAccountName(_ctx.stringValue("DescribeSplitItemBillResponse.Data.Items["+ i +"].SplitAccountName"));
 			item.setSplitBillingCycle(_ctx.stringValue("DescribeSplitItemBillResponse.Data.Items["+ i +"].SplitBillingCycle"));
+			item.setSplitBillingDate(_ctx.stringValue("DescribeSplitItemBillResponse.Data.Items["+ i +"].SplitBillingDate"));
+			item.setBizType(_ctx.stringValue("DescribeSplitItemBillResponse.Data.Items["+ i +"].BizType"));
+			item.setBillAccountID(_ctx.stringValue("DescribeSplitItemBillResponse.Data.Items["+ i +"].BillAccountID"));
+			item.setBillAccountName(_ctx.stringValue("DescribeSplitItemBillResponse.Data.Items["+ i +"].BillAccountName"));
 
 			items.add(item);
 		}

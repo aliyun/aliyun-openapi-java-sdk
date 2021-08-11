@@ -24,6 +24,9 @@ public class QueryRobotTaskListResponseUnmarshaller {
 		
 		queryRobotTaskListResponse.setRequestId(_ctx.stringValue("QueryRobotTaskListResponse.RequestId"));
 		queryRobotTaskListResponse.setData(_ctx.stringValue("QueryRobotTaskListResponse.Data"));
+		queryRobotTaskListResponse.setPageSize(_ctx.stringValue("QueryRobotTaskListResponse.PageSize"));
+		queryRobotTaskListResponse.setPageNo(_ctx.stringValue("QueryRobotTaskListResponse.PageNo"));
+		queryRobotTaskListResponse.setTotalCount(_ctx.stringValue("QueryRobotTaskListResponse.TotalCount"));
 		queryRobotTaskListResponse.setCode(_ctx.stringValue("QueryRobotTaskListResponse.Code"));
 		queryRobotTaskListResponse.setMessage(_ctx.stringValue("QueryRobotTaskListResponse.Message"));
 	 

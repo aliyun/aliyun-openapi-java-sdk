@@ -25,21 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetCatalogListResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String message;
+
+	private String requestId;
 
 	private String code;
 
 	private List<DataItem> data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getMessage() {
 		return this.message;
@@ -47,6 +39,14 @@ public class GetCatalogListResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getCode() {
@@ -67,15 +67,39 @@ public class GetCatalogListResponse extends AcsResponse {
 
 	public static class DataItem {
 
+		private Long catalogId;
+
+		private String catalogName;
+
+		private String isvSubId;
+
 		private Long parentCatalogId;
 
 		private Long profileCount;
 
-		private String isvSubId;
+		public Long getCatalogId() {
+			return this.catalogId;
+		}
 
-		private String catalogName;
+		public void setCatalogId(Long catalogId) {
+			this.catalogId = catalogId;
+		}
 
-		private Long catalogId;
+		public String getCatalogName() {
+			return this.catalogName;
+		}
+
+		public void setCatalogName(String catalogName) {
+			this.catalogName = catalogName;
+		}
+
+		public String getIsvSubId() {
+			return this.isvSubId;
+		}
+
+		public void setIsvSubId(String isvSubId) {
+			this.isvSubId = isvSubId;
+		}
 
 		public Long getParentCatalogId() {
 			return this.parentCatalogId;
@@ -91,30 +115,6 @@ public class GetCatalogListResponse extends AcsResponse {
 
 		public void setProfileCount(Long profileCount) {
 			this.profileCount = profileCount;
-		}
-
-		public String getIsvSubId() {
-			return this.isvSubId;
-		}
-
-		public void setIsvSubId(String isvSubId) {
-			this.isvSubId = isvSubId;
-		}
-
-		public String getCatalogName() {
-			return this.catalogName;
-		}
-
-		public void setCatalogName(String catalogName) {
-			this.catalogName = catalogName;
-		}
-
-		public Long getCatalogId() {
-			return this.catalogId;
-		}
-
-		public void setCatalogId(Long catalogId) {
-			this.catalogId = catalogId;
 		}
 	}
 

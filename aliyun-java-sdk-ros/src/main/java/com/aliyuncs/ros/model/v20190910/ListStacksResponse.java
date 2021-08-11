@@ -25,30 +25,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListStacksResponse extends AcsResponse {
 
-	private Integer pageNumber;
-
-	private Integer pageSize;
+	private Integer totalCount;
 
 	private String requestId;
 
-	private Integer totalCount;
+	private Integer pageSize;
+
+	private Integer pageNumber;
 
 	private List<Stack> stacks;
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public Integer getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public String getRequestId() {
@@ -59,12 +51,20 @@ public class ListStacksResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Integer getTotalCount() {
-		return this.totalCount;
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<Stack> getStacks() {
@@ -77,73 +77,35 @@ public class ListStacksResponse extends AcsResponse {
 
 	public static class Stack {
 
-		private String createTime;
-
-		private Boolean disableRollback;
-
-		private String regionId;
-
-		private String stackId;
-
-		private String stackName;
-
 		private String status;
 
-		private String statusReason;
-
-		private Integer timeoutInMinutes;
+		private String resourceGroupId;
 
 		private String parentStackId;
 
-		private String updateTime;
+		private String statusReason;
 
-		private String stackDriftStatus;
-
-		private String driftDetectionTime;
+		private String createTime;
 
 		private String stackType;
 
+		private String updateTime;
+
+		private String driftDetectionTime;
+
+		private String regionId;
+
+		private String stackDriftStatus;
+
+		private String stackName;
+
+		private Boolean disableRollback;
+
+		private String stackId;
+
+		private Integer timeoutInMinutes;
+
 		private List<Tag> tags;
-
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
-		}
-
-		public Boolean getDisableRollback() {
-			return this.disableRollback;
-		}
-
-		public void setDisableRollback(Boolean disableRollback) {
-			this.disableRollback = disableRollback;
-		}
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		public String getStackId() {
-			return this.stackId;
-		}
-
-		public void setStackId(String stackId) {
-			this.stackId = stackId;
-		}
-
-		public String getStackName() {
-			return this.stackName;
-		}
-
-		public void setStackName(String stackName) {
-			this.stackName = stackName;
-		}
 
 		public String getStatus() {
 			return this.status;
@@ -153,20 +115,12 @@ public class ListStacksResponse extends AcsResponse {
 			this.status = status;
 		}
 
-		public String getStatusReason() {
-			return this.statusReason;
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
 		}
 
-		public void setStatusReason(String statusReason) {
-			this.statusReason = statusReason;
-		}
-
-		public Integer getTimeoutInMinutes() {
-			return this.timeoutInMinutes;
-		}
-
-		public void setTimeoutInMinutes(Integer timeoutInMinutes) {
-			this.timeoutInMinutes = timeoutInMinutes;
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
 		}
 
 		public String getParentStackId() {
@@ -177,20 +131,36 @@ public class ListStacksResponse extends AcsResponse {
 			this.parentStackId = parentStackId;
 		}
 
+		public String getStatusReason() {
+			return this.statusReason;
+		}
+
+		public void setStatusReason(String statusReason) {
+			this.statusReason = statusReason;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
+
+		public String getStackType() {
+			return this.stackType;
+		}
+
+		public void setStackType(String stackType) {
+			this.stackType = stackType;
+		}
+
 		public String getUpdateTime() {
 			return this.updateTime;
 		}
 
 		public void setUpdateTime(String updateTime) {
 			this.updateTime = updateTime;
-		}
-
-		public String getStackDriftStatus() {
-			return this.stackDriftStatus;
-		}
-
-		public void setStackDriftStatus(String stackDriftStatus) {
-			this.stackDriftStatus = stackDriftStatus;
 		}
 
 		public String getDriftDetectionTime() {
@@ -201,12 +171,52 @@ public class ListStacksResponse extends AcsResponse {
 			this.driftDetectionTime = driftDetectionTime;
 		}
 
-		public String getStackType() {
-			return this.stackType;
+		public String getRegionId() {
+			return this.regionId;
 		}
 
-		public void setStackType(String stackType) {
-			this.stackType = stackType;
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		public String getStackDriftStatus() {
+			return this.stackDriftStatus;
+		}
+
+		public void setStackDriftStatus(String stackDriftStatus) {
+			this.stackDriftStatus = stackDriftStatus;
+		}
+
+		public String getStackName() {
+			return this.stackName;
+		}
+
+		public void setStackName(String stackName) {
+			this.stackName = stackName;
+		}
+
+		public Boolean getDisableRollback() {
+			return this.disableRollback;
+		}
+
+		public void setDisableRollback(Boolean disableRollback) {
+			this.disableRollback = disableRollback;
+		}
+
+		public String getStackId() {
+			return this.stackId;
+		}
+
+		public void setStackId(String stackId) {
+			this.stackId = stackId;
+		}
+
+		public Integer getTimeoutInMinutes() {
+			return this.timeoutInMinutes;
+		}
+
+		public void setTimeoutInMinutes(Integer timeoutInMinutes) {
+			this.timeoutInMinutes = timeoutInMinutes;
 		}
 
 		public List<Tag> getTags() {
@@ -219,17 +229,9 @@ public class ListStacksResponse extends AcsResponse {
 
 		public static class Tag {
 
-			private String key;
-
 			private String value;
 
-			public String getKey() {
-				return this.key;
-			}
-
-			public void setKey(String key) {
-				this.key = key;
-			}
+			private String key;
 
 			public String getValue() {
 				return this.value;
@@ -237,6 +239,14 @@ public class ListStacksResponse extends AcsResponse {
 
 			public void setValue(String value) {
 				this.value = value;
+			}
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
 			}
 		}
 	}

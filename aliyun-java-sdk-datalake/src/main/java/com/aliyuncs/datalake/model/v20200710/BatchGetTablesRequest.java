@@ -24,6 +24,8 @@ import com.aliyuncs.datalake.Endpoint;
  */
 public class BatchGetTablesRequest extends RoaAcsRequest<BatchGetTablesResponse> {
 	   
+
+	private String body;
 	public BatchGetTablesRequest() {
 		super("DataLake", "2020-07-10", "BatchGetTables");
 		setUriPattern("/api/metastore/catalogs/databases/tables/batchget");
@@ -32,6 +34,17 @@ public class BatchGetTablesRequest extends RoaAcsRequest<BatchGetTablesResponse>
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getBody() {
+		return this.body;
+	}
+
+	public void setBody(String body) {
+		this.body = body;
+		if(body != null){
+			putBodyParameter("Body", body);
+		}
 	}
 
 	@Override

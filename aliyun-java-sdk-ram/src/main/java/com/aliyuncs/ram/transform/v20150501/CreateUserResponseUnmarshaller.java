@@ -26,13 +26,13 @@ public class CreateUserResponseUnmarshaller {
 		createUserResponse.setRequestId(_ctx.stringValue("CreateUserResponse.RequestId"));
 
 		User user = new User();
-		user.setUserId(_ctx.stringValue("CreateUserResponse.User.UserId"));
-		user.setUserName(_ctx.stringValue("CreateUserResponse.User.UserName"));
 		user.setDisplayName(_ctx.stringValue("CreateUserResponse.User.DisplayName"));
-		user.setMobilePhone(_ctx.stringValue("CreateUserResponse.User.MobilePhone"));
 		user.setEmail(_ctx.stringValue("CreateUserResponse.User.Email"));
+		user.setMobilePhone(_ctx.stringValue("CreateUserResponse.User.MobilePhone"));
+		user.setUserId(_ctx.stringValue("CreateUserResponse.User.UserId"));
 		user.setComments(_ctx.stringValue("CreateUserResponse.User.Comments"));
 		user.setCreateDate(_ctx.stringValue("CreateUserResponse.User.CreateDate"));
+		user.setUserName(_ctx.stringValue("CreateUserResponse.User.UserName"));
 		createUserResponse.setUser(user);
 	 
 	 	return createUserResponse;

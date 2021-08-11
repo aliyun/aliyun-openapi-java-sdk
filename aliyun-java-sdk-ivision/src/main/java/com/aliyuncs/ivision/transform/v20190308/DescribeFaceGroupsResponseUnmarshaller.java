@@ -36,8 +36,8 @@ public class DescribeFaceGroupsResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("DescribeFaceGroupsResponse.Groups.Length"); i++) {
 			Group group = new Group();
 			group.setCreationTime(_ctx.stringValue("DescribeFaceGroupsResponse.Groups["+ i +"].CreationTime"));
-			group.setName(_ctx.stringValue("DescribeFaceGroupsResponse.Groups["+ i +"].Name"));
 			group.setGroupId(_ctx.stringValue("DescribeFaceGroupsResponse.Groups["+ i +"].GroupId"));
+			group.setName(_ctx.stringValue("DescribeFaceGroupsResponse.Groups["+ i +"].Name"));
 
 			groups.add(group);
 		}

@@ -2,6 +2,8 @@ package com.aliyuncs.auth;
 
 import static org.mockito.Mockito.mock;
 
+import com.aliyuncs.DefaultAcsClient;
+import com.aliyuncs.profile.DefaultProfile;
 import org.junit.Assert;
 import org.junit.Test;
 import org.mockito.Mockito;

@@ -57,7 +57,7 @@ public class DescribeRunningLogRecordsRequest extends RpcAcsRequest<DescribeRunn
 
 	private String orderType;
 	public DescribeRunningLogRecordsRequest() {
-		super("Dds", "2015-12-01", "DescribeRunningLogRecords");
+		super("Dds", "2015-12-01", "DescribeRunningLogRecords", "Dds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

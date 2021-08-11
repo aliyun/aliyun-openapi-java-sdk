@@ -27,21 +27,21 @@ public class ListCommonGroupResponseUnmarshaller {
 	public static ListCommonGroupResponse unmarshall(ListCommonGroupResponse listCommonGroupResponse, UnmarshallerContext _ctx) {
 		
 		listCommonGroupResponse.setRequestId(_ctx.stringValue("ListCommonGroupResponse.RequestId"));
+		listCommonGroupResponse.setErrorMsg(_ctx.stringValue("ListCommonGroupResponse.ErrorMsg"));
 		listCommonGroupResponse.setSuccessful(_ctx.booleanValue("ListCommonGroupResponse.Successful"));
 		listCommonGroupResponse.setErrorCode(_ctx.stringValue("ListCommonGroupResponse.ErrorCode"));
-		listCommonGroupResponse.setErrorMsg(_ctx.stringValue("ListCommonGroupResponse.ErrorMsg"));
 
 		List<CommonGroup> object = new ArrayList<CommonGroup>();
 		for (int i = 0; i < _ctx.lengthValue("ListCommonGroupResponse.Object.Length"); i++) {
 			CommonGroup commonGroup = new CommonGroup();
-			commonGroup.setPinyin(_ctx.stringValue("ListCommonGroupResponse.Object["+ i +"].Pinyin"));
-			commonGroup.setIsRoot(_ctx.booleanValue("ListCommonGroupResponse.Object["+ i +"].IsRoot"));
-			commonGroup.setPos(_ctx.integerValue("ListCommonGroupResponse.Object["+ i +"].Pos"));
 			commonGroup.setResourceCount(_ctx.integerValue("ListCommonGroupResponse.Object["+ i +"].ResourceCount"));
-			commonGroup.setName(_ctx.stringValue("ListCommonGroupResponse.Object["+ i +"].Name"));
-			commonGroup.setCreatorId(_ctx.stringValue("ListCommonGroupResponse.Object["+ i +"].CreatorId"));
 			commonGroup.setSmartGroupId(_ctx.stringValue("ListCommonGroupResponse.Object["+ i +"].SmartGroupId"));
+			commonGroup.setPos(_ctx.integerValue("ListCommonGroupResponse.Object["+ i +"].Pos"));
 			commonGroup.setProjectId(_ctx.stringValue("ListCommonGroupResponse.Object["+ i +"].ProjectId"));
+			commonGroup.setIsRoot(_ctx.booleanValue("ListCommonGroupResponse.Object["+ i +"].IsRoot"));
+			commonGroup.setPinyin(_ctx.stringValue("ListCommonGroupResponse.Object["+ i +"].Pinyin"));
+			commonGroup.setCreatorId(_ctx.stringValue("ListCommonGroupResponse.Object["+ i +"].CreatorId"));
+			commonGroup.setName(_ctx.stringValue("ListCommonGroupResponse.Object["+ i +"].Name"));
 			commonGroup.setId(_ctx.stringValue("ListCommonGroupResponse.Object["+ i +"].id"));
 
 			object.add(commonGroup);

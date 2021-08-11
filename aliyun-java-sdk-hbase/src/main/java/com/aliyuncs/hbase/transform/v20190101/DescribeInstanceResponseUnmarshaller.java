@@ -70,6 +70,8 @@ public class DescribeInstanceResponseUnmarshaller {
 		describeInstanceResponse.setDuration(_ctx.integerValue("DescribeInstanceResponse.Duration"));
 		describeInstanceResponse.setColdStorageSize(_ctx.integerValue("DescribeInstanceResponse.ColdStorageSize"));
 		describeInstanceResponse.setResourceGroupId(_ctx.stringValue("DescribeInstanceResponse.ResourceGroupId"));
+		describeInstanceResponse.setEncryptionType(_ctx.stringValue("DescribeInstanceResponse.EncryptionType"));
+		describeInstanceResponse.setEncryptionKey(_ctx.stringValue("DescribeInstanceResponse.EncryptionKey"));
 
 		List<Tag> tags = new ArrayList<Tag>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeInstanceResponse.Tags.Length"); i++) {

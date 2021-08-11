@@ -85,6 +85,8 @@ public class InsertK8sApplicationRequest extends RoaAcsRequest<InsertK8sApplicat
 
 	private Integer timeout;
 
+	private String envFroms;
+
 	private Integer limitMem;
 
 	private Integer limitmCpu;
@@ -469,6 +471,17 @@ public class InsertK8sApplicationRequest extends RoaAcsRequest<InsertK8sApplicat
 		this.timeout = timeout;
 		if(timeout != null){
 			putQueryParameter("Timeout", timeout.toString());
+		}
+	}
+
+	public String getEnvFroms() {
+		return this.envFroms;
+	}
+
+	public void setEnvFroms(String envFroms) {
+		this.envFroms = envFroms;
+		if(envFroms != null){
+			putQueryParameter("EnvFroms", envFroms);
 		}
 	}
 

@@ -24,6 +24,7 @@ public class CreateImageResponseUnmarshaller {
 		
 		createImageResponse.setRequestId(_ctx.stringValue("CreateImageResponse.RequestId"));
 		createImageResponse.setCode(_ctx.integerValue("CreateImageResponse.Code"));
+		createImageResponse.setImageId(_ctx.stringValue("CreateImageResponse.ImageId"));
 	 
 	 	return createImageResponse;
 	}

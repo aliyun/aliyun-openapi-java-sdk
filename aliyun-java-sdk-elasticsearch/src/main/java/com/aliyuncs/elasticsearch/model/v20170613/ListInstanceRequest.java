@@ -29,8 +29,6 @@ public class ListInstanceRequest extends RoaAcsRequest<ListInstanceResponse> {
 
 	private String instanceCategory;
 
-	private String ownerId;
-
 	private String tags;
 
 	private String resourceGroupId;
@@ -77,17 +75,6 @@ public class ListInstanceRequest extends RoaAcsRequest<ListInstanceResponse> {
 		this.instanceCategory = instanceCategory;
 		if(instanceCategory != null){
 			putQueryParameter("instanceCategory", instanceCategory);
-		}
-	}
-
-	public String getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(String ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("ownerId", ownerId);
 		}
 	}
 

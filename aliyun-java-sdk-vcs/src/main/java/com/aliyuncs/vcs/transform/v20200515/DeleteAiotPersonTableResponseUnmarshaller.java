@@ -23,8 +23,8 @@ public class DeleteAiotPersonTableResponseUnmarshaller {
 	public static DeleteAiotPersonTableResponse unmarshall(DeleteAiotPersonTableResponse deleteAiotPersonTableResponse, UnmarshallerContext _ctx) {
 		
 		deleteAiotPersonTableResponse.setRequestId(_ctx.stringValue("DeleteAiotPersonTableResponse.RequestId"));
-		deleteAiotPersonTableResponse.setMessage(_ctx.stringValue("DeleteAiotPersonTableResponse.Message"));
 		deleteAiotPersonTableResponse.setCode(_ctx.stringValue("DeleteAiotPersonTableResponse.Code"));
+		deleteAiotPersonTableResponse.setMessage(_ctx.stringValue("DeleteAiotPersonTableResponse.Message"));
 	 
 	 	return deleteAiotPersonTableResponse;
 	}

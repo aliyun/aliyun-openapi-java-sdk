@@ -28,23 +28,23 @@ public class ListProjectCustomFieldsResponseUnmarshaller {
 	public static ListProjectCustomFieldsResponse unmarshall(ListProjectCustomFieldsResponse listProjectCustomFieldsResponse, UnmarshallerContext _ctx) {
 		
 		listProjectCustomFieldsResponse.setRequestId(_ctx.stringValue("ListProjectCustomFieldsResponse.RequestId"));
+		listProjectCustomFieldsResponse.setErrorMsg(_ctx.stringValue("ListProjectCustomFieldsResponse.ErrorMsg"));
 		listProjectCustomFieldsResponse.setSuccessful(_ctx.booleanValue("ListProjectCustomFieldsResponse.Successful"));
 		listProjectCustomFieldsResponse.setErrorCode(_ctx.stringValue("ListProjectCustomFieldsResponse.ErrorCode"));
-		listProjectCustomFieldsResponse.setErrorMsg(_ctx.stringValue("ListProjectCustomFieldsResponse.ErrorMsg"));
 
 		List<CustomField> object = new ArrayList<CustomField>();
 		for (int i = 0; i < _ctx.lengthValue("ListProjectCustomFieldsResponse.Object.Length"); i++) {
 			CustomField customField = new CustomField();
-			customField.setCustomFieldId(_ctx.stringValue("ListProjectCustomFieldsResponse.Object["+ i +"].CustomFieldId"));
 			customField.setType(_ctx.stringValue("ListProjectCustomFieldsResponse.Object["+ i +"].Type"));
+			customField.setCustomFieldId(_ctx.stringValue("ListProjectCustomFieldsResponse.Object["+ i +"].CustomFieldId"));
 			customField.setSubtype(_ctx.stringValue("ListProjectCustomFieldsResponse.Object["+ i +"].Subtype"));
 			customField.setName(_ctx.stringValue("ListProjectCustomFieldsResponse.Object["+ i +"].Name"));
 
 			List<Value> values = new ArrayList<Value>();
 			for (int j = 0; j < _ctx.lengthValue("ListProjectCustomFieldsResponse.Object["+ i +"].Values.Length"); j++) {
 				Value value = new Value();
-				value.setId(_ctx.stringValue("ListProjectCustomFieldsResponse.Object["+ i +"].Values["+ j +"].Id"));
 				value.setValue(_ctx.stringValue("ListProjectCustomFieldsResponse.Object["+ i +"].Values["+ j +"].Value"));
+				value.setId(_ctx.stringValue("ListProjectCustomFieldsResponse.Object["+ i +"].Values["+ j +"].Id"));
 
 				values.add(value);
 			}

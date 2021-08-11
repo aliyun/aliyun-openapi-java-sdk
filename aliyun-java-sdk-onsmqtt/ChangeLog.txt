@@ -1,3 +1,6 @@
+2021-05-27 Version: 1.0.8
+- Supported mqtt trace for lastest.
+
 2021-05-19 Version: 1.0.7
 - Supported the trace.
 

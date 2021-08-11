@@ -35,6 +35,8 @@ public class DescribeAlarmsRequest extends RpcAcsRequest<DescribeAlarmsResponse>
 
 	private String state;
 
+	private String metricName;
+
 	private String resourceOwnerAccount;
 
 	private Long ownerId;
@@ -103,6 +105,17 @@ public class DescribeAlarmsRequest extends RpcAcsRequest<DescribeAlarmsResponse>
 		this.state = state;
 		if(state != null){
 			putQueryParameter("State", state);
+		}
+	}
+
+	public String getMetricName() {
+		return this.metricName;
+	}
+
+	public void setMetricName(String metricName) {
+		this.metricName = metricName;
+		if(metricName != null){
+			putQueryParameter("MetricName", metricName);
 		}
 	}
 

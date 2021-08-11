@@ -27,19 +27,23 @@ public class QueryDPUtilizationDetailRequest extends RpcAcsRequest<QueryDPUtiliz
 
 	private String deductedInstanceId;
 
+	private String lastToken;
+
 	private String instanceSpec;
 
+	private String prodCode;
+
 	private String endTime;
+
+	private Boolean includeShare;
 
 	private String commodityCode;
 
 	private String startTime;
 
-	private Integer pageNum;
-
 	private String instanceId;
 
-	private Integer pageSize;
+	private Integer limit;
 	public QueryDPUtilizationDetailRequest() {
 		super("BssOpenApi", "2017-12-14", "QueryDPUtilizationDetail");
 		setMethod(MethodType.POST);
@@ -60,6 +64,17 @@ public class QueryDPUtilizationDetailRequest extends RpcAcsRequest<QueryDPUtiliz
 		}
 	}
 
+	public String getLastToken() {
+		return this.lastToken;
+	}
+
+	public void setLastToken(String lastToken) {
+		this.lastToken = lastToken;
+		if(lastToken != null){
+			putQueryParameter("LastToken", lastToken);
+		}
+	}
+
 	public String getInstanceSpec() {
 		return this.instanceSpec;
 	}
@@ -71,6 +86,17 @@ public class QueryDPUtilizationDetailRequest extends RpcAcsRequest<QueryDPUtiliz
 		}
 	}
 
+	public String getProdCode() {
+		return this.prodCode;
+	}
+
+	public void setProdCode(String prodCode) {
+		this.prodCode = prodCode;
+		if(prodCode != null){
+			putQueryParameter("ProdCode", prodCode);
+		}
+	}
+
 	public String getEndTime() {
 		return this.endTime;
 	}
@@ -79,6 +105,17 @@ public class QueryDPUtilizationDetailRequest extends RpcAcsRequest<QueryDPUtiliz
 		this.endTime = endTime;
 		if(endTime != null){
 			putQueryParameter("EndTime", endTime);
+		}
+	}
+
+	public Boolean getIncludeShare() {
+		return this.includeShare;
+	}
+
+	public void setIncludeShare(Boolean includeShare) {
+		this.includeShare = includeShare;
+		if(includeShare != null){
+			putQueryParameter("IncludeShare", includeShare.toString());
 		}
 	}
 
@@ -104,17 +141,6 @@ public class QueryDPUtilizationDetailRequest extends RpcAcsRequest<QueryDPUtiliz
 		}
 	}
 
-	public Integer getPageNum() {
-		return this.pageNum;
-	}
-
-	public void setPageNum(Integer pageNum) {
-		this.pageNum = pageNum;
-		if(pageNum != null){
-			putQueryParameter("PageNum", pageNum.toString());
-		}
-	}
-
 	public String getInstanceId() {
 		return this.instanceId;
 	}
@@ -126,14 +152,14 @@ public class QueryDPUtilizationDetailRequest extends RpcAcsRequest<QueryDPUtiliz
 		}
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public Integer getLimit() {
+		return this.limit;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
+	public void setLimit(Integer limit) {
+		this.limit = limit;
+		if(limit != null){
+			putQueryParameter("Limit", limit.toString());
 		}
 	}
 

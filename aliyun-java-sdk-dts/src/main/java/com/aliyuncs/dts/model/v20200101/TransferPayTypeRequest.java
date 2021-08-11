@@ -29,13 +29,11 @@ public class TransferPayTypeRequest extends RpcAcsRequest<TransferPayTypeRespons
 
 	private String buyCount;
 
-	private String instanceClass;
-
 	private String dtsJobId;
 
 	private String chargeType;
 	public TransferPayTypeRequest() {
-		super("Dts", "2020-01-01", "TransferPayType");
+		super("Dts", "2020-01-01", "TransferPayType", "dts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -62,17 +60,6 @@ public class TransferPayTypeRequest extends RpcAcsRequest<TransferPayTypeRespons
 		this.buyCount = buyCount;
 		if(buyCount != null){
 			putQueryParameter("BuyCount", buyCount);
-		}
-	}
-
-	public String getInstanceClass() {
-		return this.instanceClass;
-	}
-
-	public void setInstanceClass(String instanceClass) {
-		this.instanceClass = instanceClass;
-		if(instanceClass != null){
-			putQueryParameter("InstanceClass", instanceClass);
 		}
 	}
 

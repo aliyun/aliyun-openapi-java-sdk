@@ -29,6 +29,7 @@ public class QueryInferenceServerResponseUnmarshaller {
 		queryInferenceServerResponse.setRequestId(_ctx.stringValue("QueryInferenceServerResponse.RequestId"));
 		queryInferenceServerResponse.setMessage(_ctx.stringValue("QueryInferenceServerResponse.Message"));
 		queryInferenceServerResponse.setCode(_ctx.stringValue("QueryInferenceServerResponse.Code"));
+		queryInferenceServerResponse.setTotalSize(_ctx.longValue("QueryInferenceServerResponse.TotalSize"));
 
 		List<FunctionsItem> functions = new ArrayList<FunctionsItem>();
 		for (int i = 0; i < _ctx.lengthValue("QueryInferenceServerResponse.Functions.Length"); i++) {

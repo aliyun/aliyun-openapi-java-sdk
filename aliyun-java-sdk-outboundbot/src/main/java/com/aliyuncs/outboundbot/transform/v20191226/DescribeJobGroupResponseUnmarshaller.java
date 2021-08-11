@@ -19,8 +19,10 @@ import java.util.List;
 
 import com.aliyuncs.outboundbot.model.v20191226.DescribeJobGroupResponse;
 import com.aliyuncs.outboundbot.model.v20191226.DescribeJobGroupResponse.JobGroup;
+import com.aliyuncs.outboundbot.model.v20191226.DescribeJobGroupResponse.JobGroup.ExportProgress;
 import com.aliyuncs.outboundbot.model.v20191226.DescribeJobGroupResponse.JobGroup.Progress;
 import com.aliyuncs.outboundbot.model.v20191226.DescribeJobGroupResponse.JobGroup.Progress.KeyValuePair;
+import com.aliyuncs.outboundbot.model.v20191226.DescribeJobGroupResponse.JobGroup.Result;
 import com.aliyuncs.outboundbot.model.v20191226.DescribeJobGroupResponse.JobGroup.Strategy;
 import com.aliyuncs.outboundbot.model.v20191226.DescribeJobGroupResponse.JobGroup.Strategy.TimeFrame;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -38,19 +40,29 @@ public class DescribeJobGroupResponseUnmarshaller {
 
 		JobGroup jobGroup = new JobGroup();
 		jobGroup.setCreationTime(_ctx.longValue("DescribeJobGroupResponse.JobGroup.CreationTime"));
+		jobGroup.setJobDataParsingTaskId(_ctx.stringValue("DescribeJobGroupResponse.JobGroup.JobDataParsingTaskId"));
 		jobGroup.setJobFilePath(_ctx.stringValue("DescribeJobGroupResponse.JobGroup.JobFilePath"));
 		jobGroup.setJobGroupDescription(_ctx.stringValue("DescribeJobGroupResponse.JobGroup.JobGroupDescription"));
 		jobGroup.setJobGroupId(_ctx.stringValue("DescribeJobGroupResponse.JobGroup.JobGroupId"));
 		jobGroup.setJobGroupName(_ctx.stringValue("DescribeJobGroupResponse.JobGroup.JobGroupName"));
+		jobGroup.setModifyTime(_ctx.stringValue("DescribeJobGroupResponse.JobGroup.ModifyTime"));
 		jobGroup.setScenarioId(_ctx.stringValue("DescribeJobGroupResponse.JobGroup.ScenarioId"));
 		jobGroup.setScriptId(_ctx.stringValue("DescribeJobGroupResponse.JobGroup.ScriptId"));
 		jobGroup.setScriptName(_ctx.stringValue("DescribeJobGroupResponse.JobGroup.ScriptName"));
+		jobGroup.setScriptVersion(_ctx.stringValue("DescribeJobGroupResponse.JobGroup.ScriptVersion"));
+		jobGroup.setStatus(_ctx.stringValue("DescribeJobGroupResponse.JobGroup.Status"));
 
 		List<String> callingNumbers = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeJobGroupResponse.JobGroup.CallingNumbers.Length"); i++) {
 			callingNumbers.add(_ctx.stringValue("DescribeJobGroupResponse.JobGroup.CallingNumbers["+ i +"]"));
 		}
 		jobGroup.setCallingNumbers(callingNumbers);
+
+		ExportProgress exportProgress = new ExportProgress();
+		exportProgress.setFileHttpUrl(_ctx.stringValue("DescribeJobGroupResponse.JobGroup.ExportProgress.FileHttpUrl"));
+		exportProgress.setProgress(_ctx.stringValue("DescribeJobGroupResponse.JobGroup.ExportProgress.Progress"));
+		exportProgress.setStatus(_ctx.stringValue("DescribeJobGroupResponse.JobGroup.ExportProgress.Status"));
+		jobGroup.setExportProgress(exportProgress);
 
 		Progress progress = new Progress();
 		progress.setCancelled(_ctx.integerValue("DescribeJobGroupResponse.JobGroup.Progress.Cancelled"));
@@ -117,6 +129,14 @@ public class DescribeJobGroupResponseUnmarshaller {
 		}
 		strategy.setWorkingTime(workingTime);
 		jobGroup.setStrategy(strategy);
+
+		Result result = new Result();
+		result.setNoInteractNum(_ctx.integerValue("DescribeJobGroupResponse.JobGroup.Result.NoInteractNum"));
+		result.setFinishedNum(_ctx.integerValue("DescribeJobGroupResponse.JobGroup.Result.FinishedNum"));
+		result.setClientHangupNum(_ctx.integerValue("DescribeJobGroupResponse.JobGroup.Result.ClientHangupNum"));
+		result.setTimeoutHangupNum(_ctx.integerValue("DescribeJobGroupResponse.JobGroup.Result.TimeoutHangupNum"));
+		result.setUnrecognizedNum(_ctx.integerValue("DescribeJobGroupResponse.JobGroup.Result.UnrecognizedNum"));
+		jobGroup.setResult(result);
 		describeJobGroupResponse.setJobGroup(jobGroup);
 	 
 	 	return describeJobGroupResponse;

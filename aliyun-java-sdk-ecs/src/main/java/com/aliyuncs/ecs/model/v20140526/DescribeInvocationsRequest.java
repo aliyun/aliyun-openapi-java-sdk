@@ -37,6 +37,8 @@ public class DescribeInvocationsRequest extends RpcAcsRequest<DescribeInvocation
 
 	private String contentEncoding;
 
+	private String repeatMode;
+
 	private Long pageSize;
 
 	private String invokeId;
@@ -126,6 +128,17 @@ public class DescribeInvocationsRequest extends RpcAcsRequest<DescribeInvocation
 		this.contentEncoding = contentEncoding;
 		if(contentEncoding != null){
 			putQueryParameter("ContentEncoding", contentEncoding);
+		}
+	}
+
+	public String getRepeatMode() {
+		return this.repeatMode;
+	}
+
+	public void setRepeatMode(String repeatMode) {
+		this.repeatMode = repeatMode;
+		if(repeatMode != null){
+			putQueryParameter("RepeatMode", repeatMode);
 		}
 	}
 

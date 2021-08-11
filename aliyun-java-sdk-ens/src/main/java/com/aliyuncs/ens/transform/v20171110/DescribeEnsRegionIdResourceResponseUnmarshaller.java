@@ -40,7 +40,7 @@ public class DescribeEnsRegionIdResourceResponseUnmarshaller {
 			ensRegionIdResource.setEnsRegionId(_ctx.stringValue("DescribeEnsRegionIdResourceResponse.EnsRegionIdResources["+ i +"].EnsRegionId"));
 			ensRegionIdResource.setEnsRegionIdName(_ctx.stringValue("DescribeEnsRegionIdResourceResponse.EnsRegionIdResources["+ i +"].EnsRegionIdName"));
 			ensRegionIdResource.setInstanceCount(_ctx.integerValue("DescribeEnsRegionIdResourceResponse.EnsRegionIdResources["+ i +"].InstanceCount"));
-			ensRegionIdResource.setInternetBandwidth(_ctx.integerValue("DescribeEnsRegionIdResourceResponse.EnsRegionIdResources["+ i +"].InternetBandwidth"));
+			ensRegionIdResource.setInternetBandwidth(_ctx.longValue("DescribeEnsRegionIdResourceResponse.EnsRegionIdResources["+ i +"].InternetBandwidth"));
 			ensRegionIdResource.setIsp(_ctx.stringValue("DescribeEnsRegionIdResourceResponse.EnsRegionIdResources["+ i +"].Isp"));
 			ensRegionIdResource.setVCpu(_ctx.integerValue("DescribeEnsRegionIdResourceResponse.EnsRegionIdResources["+ i +"].VCpu"));
 

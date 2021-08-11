@@ -34,17 +34,17 @@ public class DescribeRdsVSwitchsResponseUnmarshaller {
 		List<VSwitchItem> vSwitch = new ArrayList<VSwitchItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeRdsVSwitchsResponse.VSwitches.VSwitch.Length"); i++) {
 			VSwitchItem vSwitchItem = new VSwitchItem();
-			vSwitchItem.setVSwitchId(_ctx.stringValue("DescribeRdsVSwitchsResponse.VSwitches.VSwitch["+ i +"].VSwitchId"));
-			vSwitchItem.setVSwitchName(_ctx.stringValue("DescribeRdsVSwitchsResponse.VSwitches.VSwitch["+ i +"].VSwitchName"));
-			vSwitchItem.setIzNo(_ctx.stringValue("DescribeRdsVSwitchsResponse.VSwitches.VSwitch["+ i +"].IzNo"));
-			vSwitchItem.setBid(_ctx.stringValue("DescribeRdsVSwitchsResponse.VSwitches.VSwitch["+ i +"].Bid"));
-			vSwitchItem.setAliUid(_ctx.stringValue("DescribeRdsVSwitchsResponse.VSwitches.VSwitch["+ i +"].AliUid"));
-			vSwitchItem.setRegionNo(_ctx.stringValue("DescribeRdsVSwitchsResponse.VSwitches.VSwitch["+ i +"].RegionNo"));
-			vSwitchItem.setCidrBlock(_ctx.stringValue("DescribeRdsVSwitchsResponse.VSwitches.VSwitch["+ i +"].CidrBlock"));
-			vSwitchItem.setIsDefault(_ctx.booleanValue("DescribeRdsVSwitchsResponse.VSwitches.VSwitch["+ i +"].IsDefault"));
 			vSwitchItem.setStatus(_ctx.stringValue("DescribeRdsVSwitchsResponse.VSwitches.VSwitch["+ i +"].Status"));
+			vSwitchItem.setIsDefault(_ctx.booleanValue("DescribeRdsVSwitchsResponse.VSwitches.VSwitch["+ i +"].IsDefault"));
+			vSwitchItem.setVSwitchId(_ctx.stringValue("DescribeRdsVSwitchsResponse.VSwitches.VSwitch["+ i +"].VSwitchId"));
+			vSwitchItem.setCidrBlock(_ctx.stringValue("DescribeRdsVSwitchsResponse.VSwitches.VSwitch["+ i +"].CidrBlock"));
+			vSwitchItem.setRegionNo(_ctx.stringValue("DescribeRdsVSwitchsResponse.VSwitches.VSwitch["+ i +"].RegionNo"));
 			vSwitchItem.setGmtCreate(_ctx.stringValue("DescribeRdsVSwitchsResponse.VSwitches.VSwitch["+ i +"].GmtCreate"));
+			vSwitchItem.setAliUid(_ctx.stringValue("DescribeRdsVSwitchsResponse.VSwitches.VSwitch["+ i +"].AliUid"));
 			vSwitchItem.setGmtModified(_ctx.stringValue("DescribeRdsVSwitchsResponse.VSwitches.VSwitch["+ i +"].GmtModified"));
+			vSwitchItem.setBid(_ctx.stringValue("DescribeRdsVSwitchsResponse.VSwitches.VSwitch["+ i +"].Bid"));
+			vSwitchItem.setIzNo(_ctx.stringValue("DescribeRdsVSwitchsResponse.VSwitches.VSwitch["+ i +"].IzNo"));
+			vSwitchItem.setVSwitchName(_ctx.stringValue("DescribeRdsVSwitchsResponse.VSwitches.VSwitch["+ i +"].VSwitchName"));
 
 			vSwitch.add(vSwitchItem);
 		}

@@ -41,7 +41,7 @@ public class SubmitPornJobRequest extends RpcAcsRequest<SubmitPornJobResponse> {
 
 	private String pornConfig;
 	public SubmitPornJobRequest() {
-		super("Mts", "2014-06-18", "SubmitPornJob");
+		super("Mts", "2014-06-18", "SubmitPornJob", "mts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

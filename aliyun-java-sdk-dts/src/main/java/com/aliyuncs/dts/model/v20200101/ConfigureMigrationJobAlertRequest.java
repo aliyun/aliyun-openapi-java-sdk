@@ -41,7 +41,7 @@ public class ConfigureMigrationJobAlertRequest extends RpcAcsRequest<ConfigureMi
 
 	private String errorAlertStatus;
 	public ConfigureMigrationJobAlertRequest() {
-		super("Dts", "2020-01-01", "ConfigureMigrationJobAlert");
+		super("Dts", "2020-01-01", "ConfigureMigrationJobAlert", "dts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

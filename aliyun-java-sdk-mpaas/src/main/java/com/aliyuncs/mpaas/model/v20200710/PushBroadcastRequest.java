@@ -41,6 +41,8 @@ public class PushBroadcastRequest extends RpcAcsRequest<PushBroadcastResponse> {
 
 	private Long silent;
 
+	private String strategyContent;
+
 	private Long pushStatus;
 
 	private Long unBindPeriod;
@@ -50,6 +52,8 @@ public class PushBroadcastRequest extends RpcAcsRequest<PushBroadcastResponse> {
 	private String appId;
 
 	private String msgkey;
+
+	private Integer strategyType;
 
 	private String workspaceId;
 	public PushBroadcastRequest() {
@@ -149,6 +153,17 @@ public class PushBroadcastRequest extends RpcAcsRequest<PushBroadcastResponse> {
 		}
 	}
 
+	public String getStrategyContent() {
+		return this.strategyContent;
+	}
+
+	public void setStrategyContent(String strategyContent) {
+		this.strategyContent = strategyContent;
+		if(strategyContent != null){
+			putBodyParameter("StrategyContent", strategyContent);
+		}
+	}
+
 	public Long getPushStatus() {
 		return this.pushStatus;
 	}
@@ -201,6 +216,17 @@ public class PushBroadcastRequest extends RpcAcsRequest<PushBroadcastResponse> {
 		this.msgkey = msgkey;
 		if(msgkey != null){
 			putBodyParameter("Msgkey", msgkey);
+		}
+	}
+
+	public Integer getStrategyType() {
+		return this.strategyType;
+	}
+
+	public void setStrategyType(Integer strategyType) {
+		this.strategyType = strategyType;
+		if(strategyType != null){
+			putBodyParameter("StrategyType", strategyType.toString());
 		}
 	}
 

@@ -26,13 +26,13 @@ public class DescribeRecordDataResponse extends AcsResponse {
 
 	private String acid;
 
-	private String message;
-
 	private String requestId;
 
-	private String agentId;
+	private String message;
 
 	private String ossLink;
+
+	private String agentId;
 
 	private String code;
 
@@ -44,14 +44,6 @@ public class DescribeRecordDataResponse extends AcsResponse {
 		this.acid = acid;
 	}
 
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -60,12 +52,12 @@ public class DescribeRecordDataResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getAgentId() {
-		return this.agentId;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setAgentId(String agentId) {
-		this.agentId = agentId;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public String getOssLink() {
@@ -74,6 +66,14 @@ public class DescribeRecordDataResponse extends AcsResponse {
 
 	public void setOssLink(String ossLink) {
 		this.ossLink = ossLink;
+	}
+
+	public String getAgentId() {
+		return this.agentId;
+	}
+
+	public void setAgentId(String agentId) {
+		this.agentId = agentId;
 	}
 
 	public String getCode() {

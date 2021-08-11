@@ -29,12 +29,12 @@ public class GetAlgorithmDetailResponseUnmarshaller {
 		getAlgorithmDetailResponse.setSuccess(_ctx.booleanValue("GetAlgorithmDetailResponse.Success"));
 
 		Data data = new Data();
-		data.setCurrentMonthSuccessCount(_ctx.integerValue("GetAlgorithmDetailResponse.Data.CurrentMonthSuccessCount"));
-		data.setApiDocUrl(_ctx.stringValue("GetAlgorithmDetailResponse.Data.ApiDocUrl"));
+		data.setAlgorithmName(_ctx.stringValue("GetAlgorithmDetailResponse.Data.AlgorithmName"));
 		data.setDeployRegion(_ctx.stringValue("GetAlgorithmDetailResponse.Data.DeployRegion"));
 		data.setCurrentMonthCount(_ctx.integerValue("GetAlgorithmDetailResponse.Data.CurrentMonthCount"));
-		data.setAlgorithmName(_ctx.stringValue("GetAlgorithmDetailResponse.Data.AlgorithmName"));
 		data.setAlgorithmCode(_ctx.stringValue("GetAlgorithmDetailResponse.Data.AlgorithmCode"));
+		data.setApiDocUrl(_ctx.stringValue("GetAlgorithmDetailResponse.Data.ApiDocUrl"));
+		data.setCurrentMonthSuccessCount(_ctx.integerValue("GetAlgorithmDetailResponse.Data.CurrentMonthSuccessCount"));
 		getAlgorithmDetailResponse.setData(data);
 	 
 	 	return getAlgorithmDetailResponse;

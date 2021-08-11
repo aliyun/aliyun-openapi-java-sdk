@@ -42,12 +42,18 @@ public class DescribeVersionConfigResponseUnmarshaller {
 		describeVersionConfigResponse.setAppWhiteListAuthCount(_ctx.longValue("DescribeVersionConfigResponse.AppWhiteListAuthCount"));
 		describeVersionConfigResponse.setAppWhiteList(_ctx.integerValue("DescribeVersionConfigResponse.AppWhiteList"));
 		describeVersionConfigResponse.setSlsCapacity(_ctx.longValue("DescribeVersionConfigResponse.SlsCapacity"));
+		describeVersionConfigResponse.setGmtCreate(_ctx.longValue("DescribeVersionConfigResponse.GmtCreate"));
+		describeVersionConfigResponse.setLastInstanceReleaseTime(_ctx.longValue("DescribeVersionConfigResponse.LastInstanceReleaseTime"));
 		describeVersionConfigResponse.setIsOverBalance(_ctx.booleanValue("DescribeVersionConfigResponse.IsOverBalance"));
 		describeVersionConfigResponse.setLastTrailEndTime(_ctx.longValue("DescribeVersionConfigResponse.LastTrailEndTime"));
 		describeVersionConfigResponse.setHoneypotCapacity(_ctx.longValue("DescribeVersionConfigResponse.HoneypotCapacity"));
 		describeVersionConfigResponse.setImageScanCapacity(_ctx.longValue("DescribeVersionConfigResponse.ImageScanCapacity"));
 		describeVersionConfigResponse.setVmCores(_ctx.integerValue("DescribeVersionConfigResponse.VmCores"));
 		describeVersionConfigResponse.setIsPaidUser(_ctx.booleanValue("DescribeVersionConfigResponse.IsPaidUser"));
+		describeVersionConfigResponse.setHighestVersion(_ctx.integerValue("DescribeVersionConfigResponse.HighestVersion"));
+		describeVersionConfigResponse.setMVAuthCount(_ctx.integerValue("DescribeVersionConfigResponse.MVAuthCount"));
+		describeVersionConfigResponse.setMVUnusedAuthCount(_ctx.integerValue("DescribeVersionConfigResponse.MVUnusedAuthCount"));
+		describeVersionConfigResponse.setAllowPartialBuy(_ctx.integerValue("DescribeVersionConfigResponse.AllowPartialBuy"));
 	 
 	 	return describeVersionConfigResponse;
 	}

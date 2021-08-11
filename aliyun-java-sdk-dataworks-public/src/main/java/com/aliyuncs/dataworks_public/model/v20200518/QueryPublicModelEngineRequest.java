@@ -25,8 +25,6 @@ import com.aliyuncs.dataworks_public.Endpoint;
 public class QueryPublicModelEngineRequest extends RpcAcsRequest<QueryPublicModelEngineResponse> {
 	   
 
-	private String tenantId;
-
 	private String text;
 
 	private String projectId;
@@ -37,17 +35,6 @@ public class QueryPublicModelEngineRequest extends RpcAcsRequest<QueryPublicMode
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getTenantId() {
-		return this.tenantId;
-	}
-
-	public void setTenantId(String tenantId) {
-		this.tenantId = tenantId;
-		if(tenantId != null){
-			putBodyParameter("TenantId", tenantId);
-		}
 	}
 
 	public String getText() {

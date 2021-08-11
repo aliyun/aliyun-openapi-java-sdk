@@ -46,10 +46,12 @@ public class DescribeSiteMonitorListResponseUnmarshaller {
 			siteMonitor.setTaskName(_ctx.stringValue("DescribeSiteMonitorListResponse.SiteMonitors["+ i +"].TaskName"));
 			siteMonitor.setInterval(_ctx.stringValue("DescribeSiteMonitorListResponse.SiteMonitors["+ i +"].Interval"));
 			siteMonitor.setUpdateTime(_ctx.stringValue("DescribeSiteMonitorListResponse.SiteMonitors["+ i +"].UpdateTime"));
+			siteMonitor.setEndTime(_ctx.stringValue("DescribeSiteMonitorListResponse.SiteMonitors["+ i +"].EndTime"));
 
 			OptionsJson optionsJson = new OptionsJson();
 			optionsJson.setDns_type(_ctx.stringValue("DescribeSiteMonitorListResponse.SiteMonitors["+ i +"].OptionsJson.dns_type"));
 			optionsJson.setDns_server(_ctx.stringValue("DescribeSiteMonitorListResponse.SiteMonitors["+ i +"].OptionsJson.dns_server"));
+			optionsJson.setGroup_id(_ctx.stringValue("DescribeSiteMonitorListResponse.SiteMonitors["+ i +"].OptionsJson.group_id"));
 			optionsJson.setExpect_value(_ctx.stringValue("DescribeSiteMonitorListResponse.SiteMonitors["+ i +"].OptionsJson.expect_value"));
 			optionsJson.setHttp_method(_ctx.stringValue("DescribeSiteMonitorListResponse.SiteMonitors["+ i +"].OptionsJson.http_method"));
 			optionsJson.setResponse_content(_ctx.stringValue("DescribeSiteMonitorListResponse.SiteMonitors["+ i +"].OptionsJson.response_content"));

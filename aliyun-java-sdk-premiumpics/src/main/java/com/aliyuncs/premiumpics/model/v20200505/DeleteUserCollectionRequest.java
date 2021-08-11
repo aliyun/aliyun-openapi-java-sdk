@@ -24,14 +24,25 @@ import com.aliyuncs.http.MethodType;
 public class DeleteUserCollectionRequest extends RpcAcsRequest<DeleteUserCollectionResponse> {
 	   
 
+	private String userId;
+
 	private String bizType;
 
 	private String unitId;
-
-	private String userId;
 	public DeleteUserCollectionRequest() {
 		super("Premiumpics", "2020-05-05", "DeleteUserCollection");
 		setMethod(MethodType.POST);
+	}
+
+	public String getUserId() {
+		return this.userId;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
+		if(userId != null){
+			putQueryParameter("UserId", userId);
+		}
 	}
 
 	public String getBizType() {
@@ -53,17 +64,6 @@ public class DeleteUserCollectionRequest extends RpcAcsRequest<DeleteUserCollect
 		this.unitId = unitId;
 		if(unitId != null){
 			putQueryParameter("UnitId", unitId);
-		}
-	}
-
-	public String getUserId() {
-		return this.userId;
-	}
-
-	public void setUserId(String userId) {
-		this.userId = userId;
-		if(userId != null){
-			putQueryParameter("UserId", userId);
 		}
 	}
 

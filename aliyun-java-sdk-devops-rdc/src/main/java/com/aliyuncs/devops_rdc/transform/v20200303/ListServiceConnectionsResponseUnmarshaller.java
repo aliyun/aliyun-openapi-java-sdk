@@ -27,9 +27,9 @@ public class ListServiceConnectionsResponseUnmarshaller {
 	public static ListServiceConnectionsResponse unmarshall(ListServiceConnectionsResponse listServiceConnectionsResponse, UnmarshallerContext _ctx) {
 		
 		listServiceConnectionsResponse.setRequestId(_ctx.stringValue("ListServiceConnectionsResponse.RequestId"));
-		listServiceConnectionsResponse.setErrorCode(_ctx.stringValue("ListServiceConnectionsResponse.ErrorCode"));
 		listServiceConnectionsResponse.setErrorMessage(_ctx.stringValue("ListServiceConnectionsResponse.ErrorMessage"));
 		listServiceConnectionsResponse.setSuccess(_ctx.booleanValue("ListServiceConnectionsResponse.Success"));
+		listServiceConnectionsResponse.setErrorCode(_ctx.stringValue("ListServiceConnectionsResponse.ErrorCode"));
 
 		List<Map<Object, Object>> object = _ctx.listMapValue("ListServiceConnectionsResponse.Object");
 		listServiceConnectionsResponse.setObject(object);

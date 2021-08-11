@@ -71,7 +71,7 @@ public class ModifyTemplateRequest extends RpcAcsRequest<ModifyTemplateResponse>
 
 	private String region;
 	public ModifyTemplateRequest() {
-		super("vs", "2018-12-12", "ModifyTemplate", "vs");
+		super("vs", "2018-12-12", "ModifyTemplate");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -29,7 +29,7 @@ public class DeleteMountTargetRequest extends RpcAcsRequest<DeleteMountTargetRes
 
 	private String mountTargetDomain;
 	public DeleteMountTargetRequest() {
-		super("NAS", "2017-06-26", "DeleteMountTarget");
+		super("NAS", "2017-06-26", "DeleteMountTarget", "nas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

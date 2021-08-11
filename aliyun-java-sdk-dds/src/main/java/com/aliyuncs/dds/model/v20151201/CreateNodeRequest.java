@@ -33,11 +33,15 @@ public class CreateNodeRequest extends RpcAcsRequest<CreateNodeResponse> {
 
 	private Integer readonlyReplicas;
 
+	private String couponNo;
+
 	private String nodeClass;
 
 	private String securityToken;
 
 	private String dBInstanceId;
+
+	private String businessInfo;
 
 	private Boolean autoPay;
 
@@ -51,7 +55,7 @@ public class CreateNodeRequest extends RpcAcsRequest<CreateNodeResponse> {
 
 	private Long ownerId;
 	public CreateNodeRequest() {
-		super("Dds", "2015-12-01", "CreateNode");
+		super("Dds", "2015-12-01", "CreateNode", "Dds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -103,6 +107,17 @@ public class CreateNodeRequest extends RpcAcsRequest<CreateNodeResponse> {
 		}
 	}
 
+	public String getCouponNo() {
+		return this.couponNo;
+	}
+
+	public void setCouponNo(String couponNo) {
+		this.couponNo = couponNo;
+		if(couponNo != null){
+			putQueryParameter("CouponNo", couponNo);
+		}
+	}
+
 	public String getNodeClass() {
 		return this.nodeClass;
 	}
@@ -133,6 +148,17 @@ public class CreateNodeRequest extends RpcAcsRequest<CreateNodeResponse> {
 		this.dBInstanceId = dBInstanceId;
 		if(dBInstanceId != null){
 			putQueryParameter("DBInstanceId", dBInstanceId);
+		}
+	}
+
+	public String getBusinessInfo() {
+		return this.businessInfo;
+	}
+
+	public void setBusinessInfo(String businessInfo) {
+		this.businessInfo = businessInfo;
+		if(businessInfo != null){
+			putQueryParameter("BusinessInfo", businessInfo);
 		}
 	}
 

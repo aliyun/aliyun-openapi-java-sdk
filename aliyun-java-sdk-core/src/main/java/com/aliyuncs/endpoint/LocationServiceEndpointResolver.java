@@ -48,7 +48,7 @@ public class LocationServiceEndpointResolver extends EndpointResolverBase {
             return null;
         }
 
-        if (invalidRegionIds.contains(request.regionId)) {
+        if (invalidRegionIds.contains(makeRegionIdKey(request))) {
             return null;
         }
 
@@ -93,7 +93,7 @@ public class LocationServiceEndpointResolver extends EndpointResolverBase {
             if ("InvalidRegionId".equals(e.getErrCode())
                     && "The specified region does not exist.".equals(e.getErrMsg())) {
                 // No such region
-                invalidRegionIds.add(request.regionId);
+                invalidRegionIds.add(makeRegionIdKey(request));
                 putEndpointEntry(key, null);
                 return;
             } else if ("Illegal Parameter".equals(e.getErrCode())
@@ -140,7 +140,7 @@ public class LocationServiceEndpointResolver extends EndpointResolverBase {
     @Override
     public boolean isRegionIdValid(ResolveEndpointRequest request) {
         if (request.locationServiceCode != null) {
-            return !invalidRegionIds.contains(request.regionId);
+            return !invalidRegionIds.contains(makeRegionIdKey(request));
         }
         return false;
     }
@@ -151,6 +151,10 @@ public class LocationServiceEndpointResolver extends EndpointResolverBase {
                 request.productCode, request.locationServiceCode,
                 request.regionId, request.endpointType
         );
+    }
+
+    public String makeRegionIdKey(ResolveEndpointRequest request) {
+        return request.locationServiceCode + "." + request.regionId + "." + request.endpointType;
     }
 
     public String makeEndpointKey(String productCode, String locationServiceCode, String regionId,

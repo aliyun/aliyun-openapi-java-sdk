@@ -24,13 +24,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDBClusterTDEResponse extends AcsResponse {
 
+	private String tDEStatus;
+
 	private String requestId;
 
 	private String dBClusterId;
 
-	private String tDEStatus;
-
 	private String encryptionKey;
+
+	private String encryptNewTables;
+
+	public String getTDEStatus() {
+		return this.tDEStatus;
+	}
+
+	public void setTDEStatus(String tDEStatus) {
+		this.tDEStatus = tDEStatus;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -48,20 +58,20 @@ public class DescribeDBClusterTDEResponse extends AcsResponse {
 		this.dBClusterId = dBClusterId;
 	}
 
-	public String getTDEStatus() {
-		return this.tDEStatus;
-	}
-
-	public void setTDEStatus(String tDEStatus) {
-		this.tDEStatus = tDEStatus;
-	}
-
 	public String getEncryptionKey() {
 		return this.encryptionKey;
 	}
 
 	public void setEncryptionKey(String encryptionKey) {
 		this.encryptionKey = encryptionKey;
+	}
+
+	public String getEncryptNewTables() {
+		return this.encryptNewTables;
+	}
+
+	public void setEncryptNewTables(String encryptNewTables) {
+		this.encryptNewTables = encryptNewTables;
 	}
 
 	@Override

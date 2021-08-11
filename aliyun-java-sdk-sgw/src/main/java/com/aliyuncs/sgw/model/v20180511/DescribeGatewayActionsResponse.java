@@ -91,6 +91,8 @@ public class DescribeGatewayActionsResponse extends AcsResponse {
 
 		private String adLdap;
 
+		private String target;
+
 		public String getGatewayId() {
 			return this.gatewayId;
 		}
@@ -145,6 +147,14 @@ public class DescribeGatewayActionsResponse extends AcsResponse {
 
 		public void setAdLdap(String adLdap) {
 			this.adLdap = adLdap;
+		}
+
+		public String getTarget() {
+			return this.target;
+		}
+
+		public void setTarget(String target) {
+			this.target = target;
 		}
 	}
 

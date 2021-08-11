@@ -33,7 +33,7 @@ public class DescribeVsTopDomainsByFlowRequest extends RpcAcsRequest<DescribeVsT
 
 	private Long ownerId;
 	public DescribeVsTopDomainsByFlowRequest() {
-		super("vs", "2018-12-12", "DescribeVsTopDomainsByFlow", "vs");
+		super("vs", "2018-12-12", "DescribeVsTopDomainsByFlow");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

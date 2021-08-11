@@ -25,21 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class AddAiotDevicesResponse extends AcsResponse {
 
-	private String message;
-
 	private String requestId;
 
 	private String code;
 
+	private String message;
+
 	private List<AddAiotDeviceResultType> resultList;
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -57,6 +49,14 @@ public class AddAiotDevicesResponse extends AcsResponse {
 		this.code = code;
 	}
 
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
 	public List<AddAiotDeviceResultType> getResultList() {
 		return this.resultList;
 	}
@@ -67,31 +67,39 @@ public class AddAiotDevicesResponse extends AcsResponse {
 
 	public static class AddAiotDeviceResultType {
 
+		private String id;
+
 		private String serverId;
-
-		private String serverHostInternal;
-
-		private String message;
-
-		private String userId;
-
-		private String deviceId;
 
 		private String serverIp;
 
-		private String serverIpInternal;
-
-		private String serverWssPort;
-
-		private String id;
-
 		private String serverHost;
-
-		private String code;
 
 		private String serverPort;
 
+		private String serverWssPort;
+
+		private String deviceId;
+
+		private String userId;
+
 		private String password;
+
+		private String code;
+
+		private String message;
+
+		private String serverIpInternal;
+
+		private String serverHostInternal;
+
+		public String getId() {
+			return this.id;
+		}
+
+		public void setId(String id) {
+			this.id = id;
+		}
 
 		public String getServerId() {
 			return this.serverId;
@@ -99,38 +107,6 @@ public class AddAiotDevicesResponse extends AcsResponse {
 
 		public void setServerId(String serverId) {
 			this.serverId = serverId;
-		}
-
-		public String getServerHostInternal() {
-			return this.serverHostInternal;
-		}
-
-		public void setServerHostInternal(String serverHostInternal) {
-			this.serverHostInternal = serverHostInternal;
-		}
-
-		public String getMessage() {
-			return this.message;
-		}
-
-		public void setMessage(String message) {
-			this.message = message;
-		}
-
-		public String getUserId() {
-			return this.userId;
-		}
-
-		public void setUserId(String userId) {
-			this.userId = userId;
-		}
-
-		public String getDeviceId() {
-			return this.deviceId;
-		}
-
-		public void setDeviceId(String deviceId) {
-			this.deviceId = deviceId;
 		}
 
 		public String getServerIp() {
@@ -141,44 +117,12 @@ public class AddAiotDevicesResponse extends AcsResponse {
 			this.serverIp = serverIp;
 		}
 
-		public String getServerIpInternal() {
-			return this.serverIpInternal;
-		}
-
-		public void setServerIpInternal(String serverIpInternal) {
-			this.serverIpInternal = serverIpInternal;
-		}
-
-		public String getServerWssPort() {
-			return this.serverWssPort;
-		}
-
-		public void setServerWssPort(String serverWssPort) {
-			this.serverWssPort = serverWssPort;
-		}
-
-		public String getId() {
-			return this.id;
-		}
-
-		public void setId(String id) {
-			this.id = id;
-		}
-
 		public String getServerHost() {
 			return this.serverHost;
 		}
 
 		public void setServerHost(String serverHost) {
 			this.serverHost = serverHost;
-		}
-
-		public String getCode() {
-			return this.code;
-		}
-
-		public void setCode(String code) {
-			this.code = code;
 		}
 
 		public String getServerPort() {
@@ -189,12 +133,68 @@ public class AddAiotDevicesResponse extends AcsResponse {
 			this.serverPort = serverPort;
 		}
 
+		public String getServerWssPort() {
+			return this.serverWssPort;
+		}
+
+		public void setServerWssPort(String serverWssPort) {
+			this.serverWssPort = serverWssPort;
+		}
+
+		public String getDeviceId() {
+			return this.deviceId;
+		}
+
+		public void setDeviceId(String deviceId) {
+			this.deviceId = deviceId;
+		}
+
+		public String getUserId() {
+			return this.userId;
+		}
+
+		public void setUserId(String userId) {
+			this.userId = userId;
+		}
+
 		public String getPassword() {
 			return this.password;
 		}
 
 		public void setPassword(String password) {
 			this.password = password;
+		}
+
+		public String getCode() {
+			return this.code;
+		}
+
+		public void setCode(String code) {
+			this.code = code;
+		}
+
+		public String getMessage() {
+			return this.message;
+		}
+
+		public void setMessage(String message) {
+			this.message = message;
+		}
+
+		public String getServerIpInternal() {
+			return this.serverIpInternal;
+		}
+
+		public void setServerIpInternal(String serverIpInternal) {
+			this.serverIpInternal = serverIpInternal;
+		}
+
+		public String getServerHostInternal() {
+			return this.serverHostInternal;
+		}
+
+		public void setServerHostInternal(String serverHostInternal) {
+			this.serverHostInternal = serverHostInternal;
 		}
 	}
 

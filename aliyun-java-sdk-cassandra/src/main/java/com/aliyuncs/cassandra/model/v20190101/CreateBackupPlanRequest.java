@@ -25,6 +25,8 @@ import com.aliyuncs.cassandra.Endpoint;
 public class CreateBackupPlanRequest extends RpcAcsRequest<CreateBackupPlanResponse> {
 	   
 
+	private String clientToken;
+
 	private Integer retentionPeriod;
 
 	private String dataCenterId;
@@ -43,6 +45,17 @@ public class CreateBackupPlanRequest extends RpcAcsRequest<CreateBackupPlanRespo
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
 	}
 
 	public Integer getRetentionPeriod() {

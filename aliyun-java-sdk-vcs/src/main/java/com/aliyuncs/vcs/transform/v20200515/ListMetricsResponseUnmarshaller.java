@@ -32,10 +32,10 @@ public class ListMetricsResponseUnmarshaller {
 		listMetricsResponse.setCode(_ctx.stringValue("ListMetricsResponse.Code"));
 
 		Data data = new Data();
-		data.setTotalCount(_ctx.integerValue("ListMetricsResponse.Data.TotalCount"));
-		data.setPageSize(_ctx.integerValue("ListMetricsResponse.Data.PageSize"));
 		data.setTotalPage(_ctx.integerValue("ListMetricsResponse.Data.TotalPage"));
 		data.setPageNumber(_ctx.integerValue("ListMetricsResponse.Data.PageNumber"));
+		data.setPageSize(_ctx.integerValue("ListMetricsResponse.Data.PageSize"));
+		data.setTotalCount(_ctx.integerValue("ListMetricsResponse.Data.TotalCount"));
 
 		List<RecordsItem> records = new ArrayList<RecordsItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListMetricsResponse.Data.Records.Length"); i++) {

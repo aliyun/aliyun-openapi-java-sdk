@@ -33,13 +33,13 @@ public class ListPoliciesResponseUnmarshaller {
 		List<Policy> policies = new ArrayList<Policy>();
 		for (int i = 0; i < _ctx.lengthValue("ListPoliciesResponse.Policies.Length"); i++) {
 			Policy policy = new Policy();
-			policy.setPolicyName(_ctx.stringValue("ListPoliciesResponse.Policies["+ i +"].PolicyName"));
-			policy.setPolicyType(_ctx.stringValue("ListPoliciesResponse.Policies["+ i +"].PolicyType"));
-			policy.setDescription(_ctx.stringValue("ListPoliciesResponse.Policies["+ i +"].Description"));
 			policy.setDefaultVersion(_ctx.stringValue("ListPoliciesResponse.Policies["+ i +"].DefaultVersion"));
-			policy.setCreateDate(_ctx.stringValue("ListPoliciesResponse.Policies["+ i +"].CreateDate"));
+			policy.setDescription(_ctx.stringValue("ListPoliciesResponse.Policies["+ i +"].Description"));
 			policy.setUpdateDate(_ctx.stringValue("ListPoliciesResponse.Policies["+ i +"].UpdateDate"));
 			policy.setAttachmentCount(_ctx.integerValue("ListPoliciesResponse.Policies["+ i +"].AttachmentCount"));
+			policy.setPolicyName(_ctx.stringValue("ListPoliciesResponse.Policies["+ i +"].PolicyName"));
+			policy.setCreateDate(_ctx.stringValue("ListPoliciesResponse.Policies["+ i +"].CreateDate"));
+			policy.setPolicyType(_ctx.stringValue("ListPoliciesResponse.Policies["+ i +"].PolicyType"));
 
 			policies.add(policy);
 		}

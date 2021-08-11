@@ -34,7 +34,7 @@ public class DescribeTagsRequest extends RpcAcsRequest<DescribeTagsResponse> {
 
 	private String fileSystemId;
 	public DescribeTagsRequest() {
-		super("NAS", "2017-06-26", "DescribeTags");
+		super("NAS", "2017-06-26", "DescribeTags", "nas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

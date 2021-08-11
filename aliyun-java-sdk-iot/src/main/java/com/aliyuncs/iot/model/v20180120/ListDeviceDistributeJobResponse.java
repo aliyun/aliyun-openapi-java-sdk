@@ -79,6 +79,8 @@ public class ListDeviceDistributeJobResponse extends AcsResponse {
 
 		private Integer total;
 
+		private String nextToken;
+
 		private List<Items> jobInfo;
 
 		public Integer getTotal() {
@@ -87,6 +89,14 @@ public class ListDeviceDistributeJobResponse extends AcsResponse {
 
 		public void setTotal(Integer total) {
 			this.total = total;
+		}
+
+		public String getNextToken() {
+			return this.nextToken;
+		}
+
+		public void setNextToken(String nextToken) {
+			this.nextToken = nextToken;
 		}
 
 		public List<Items> getJobInfo() {

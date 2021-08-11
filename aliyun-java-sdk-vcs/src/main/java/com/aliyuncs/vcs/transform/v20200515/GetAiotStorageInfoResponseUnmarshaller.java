@@ -14,9 +14,6 @@
 
 package com.aliyuncs.vcs.transform.v20200515;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.aliyuncs.vcs.model.v20200515.GetAiotStorageInfoResponse;
 import com.aliyuncs.vcs.model.v20200515.GetAiotStorageInfoResponse.AiotStorageInfo;
 import com.aliyuncs.vcs.model.v20200515.GetAiotStorageInfoResponse.AiotStorageInfo.EventAlarmMq;
@@ -29,35 +26,28 @@ public class GetAiotStorageInfoResponseUnmarshaller {
 	public static GetAiotStorageInfoResponse unmarshall(GetAiotStorageInfoResponse getAiotStorageInfoResponse, UnmarshallerContext _ctx) {
 		
 		getAiotStorageInfoResponse.setRequestId(_ctx.stringValue("GetAiotStorageInfoResponse.RequestId"));
-		getAiotStorageInfoResponse.setMessage(_ctx.stringValue("GetAiotStorageInfoResponse.Message"));
 		getAiotStorageInfoResponse.setCode(_ctx.stringValue("GetAiotStorageInfoResponse.Code"));
+		getAiotStorageInfoResponse.setMessage(_ctx.stringValue("GetAiotStorageInfoResponse.Message"));
 
 		AiotStorageInfo aiotStorageInfo = new AiotStorageInfo();
 
+		EventAlarmMq eventAlarmMq = new EventAlarmMq();
+		eventAlarmMq.setMqType(_ctx.stringValue("GetAiotStorageInfoResponse.AiotStorageInfo.EventAlarmMq.MqType"));
+		eventAlarmMq.setAlarmTopic(_ctx.stringValue("GetAiotStorageInfoResponse.AiotStorageInfo.EventAlarmMq.AlarmTopic"));
+		eventAlarmMq.setEventTopic(_ctx.stringValue("GetAiotStorageInfoResponse.AiotStorageInfo.EventAlarmMq.EventTopic"));
+		eventAlarmMq.setInstanceId(_ctx.stringValue("GetAiotStorageInfoResponse.AiotStorageInfo.EventAlarmMq.InstanceId"));
+		eventAlarmMq.setRegionId(_ctx.stringValue("GetAiotStorageInfoResponse.AiotStorageInfo.EventAlarmMq.RegionId"));
+		eventAlarmMq.setRamArnRole(_ctx.stringValue("GetAiotStorageInfoResponse.AiotStorageInfo.EventAlarmMq.RamArnRole"));
+		aiotStorageInfo.setEventAlarmMq(eventAlarmMq);
+
 		EventAlarmPictureStorage eventAlarmPictureStorage = new EventAlarmPictureStorage();
-		eventAlarmPictureStorage.setPath(_ctx.stringValue("GetAiotStorageInfoResponse.AiotStorageInfo.EventAlarmPictureStorage.Path"));
-		eventAlarmPictureStorage.setRamArnRole(_ctx.stringValue("GetAiotStorageInfoResponse.AiotStorageInfo.EventAlarmPictureStorage.RamArnRole"));
 		eventAlarmPictureStorage.setStorageType(_ctx.stringValue("GetAiotStorageInfoResponse.AiotStorageInfo.EventAlarmPictureStorage.StorageType"));
 		eventAlarmPictureStorage.setEndpoint(_ctx.stringValue("GetAiotStorageInfoResponse.AiotStorageInfo.EventAlarmPictureStorage.Endpoint"));
 		eventAlarmPictureStorage.setBucket(_ctx.stringValue("GetAiotStorageInfoResponse.AiotStorageInfo.EventAlarmPictureStorage.Bucket"));
+		eventAlarmPictureStorage.setPath(_ctx.stringValue("GetAiotStorageInfoResponse.AiotStorageInfo.EventAlarmPictureStorage.Path"));
+		eventAlarmPictureStorage.setRamArnRole(_ctx.stringValue("GetAiotStorageInfoResponse.AiotStorageInfo.EventAlarmPictureStorage.RamArnRole"));
+		eventAlarmPictureStorage.setProxy(_ctx.stringValue("GetAiotStorageInfoResponse.AiotStorageInfo.EventAlarmPictureStorage.Proxy"));
 		aiotStorageInfo.setEventAlarmPictureStorage(eventAlarmPictureStorage);
-
-		EventAlarmMq eventAlarmMq = new EventAlarmMq();
-		eventAlarmMq.setRamArnRole(_ctx.stringValue("GetAiotStorageInfoResponse.AiotStorageInfo.EventAlarmMq.RamArnRole"));
-		eventAlarmMq.setVersion(_ctx.stringValue("GetAiotStorageInfoResponse.AiotStorageInfo.EventAlarmMq.Version"));
-		eventAlarmMq.setInstanceId(_ctx.stringValue("GetAiotStorageInfoResponse.AiotStorageInfo.EventAlarmMq.InstanceId"));
-		eventAlarmMq.setEventTopic(_ctx.stringValue("GetAiotStorageInfoResponse.AiotStorageInfo.EventAlarmMq.EventTopic"));
-		eventAlarmMq.setRegionId(_ctx.stringValue("GetAiotStorageInfoResponse.AiotStorageInfo.EventAlarmMq.RegionId"));
-		eventAlarmMq.setMqType(_ctx.stringValue("GetAiotStorageInfoResponse.AiotStorageInfo.EventAlarmMq.MqType"));
-		eventAlarmMq.setDomain(_ctx.stringValue("GetAiotStorageInfoResponse.AiotStorageInfo.EventAlarmMq.Domain"));
-		eventAlarmMq.setAlarmTopic(_ctx.stringValue("GetAiotStorageInfoResponse.AiotStorageInfo.EventAlarmMq.AlarmTopic"));
-
-		List<String> brokers = new ArrayList<String>();
-		for (int i = 0; i < _ctx.lengthValue("GetAiotStorageInfoResponse.AiotStorageInfo.EventAlarmMq.Brokers.Length"); i++) {
-			brokers.add(_ctx.stringValue("GetAiotStorageInfoResponse.AiotStorageInfo.EventAlarmMq.Brokers["+ i +"]"));
-		}
-		eventAlarmMq.setBrokers(brokers);
-		aiotStorageInfo.setEventAlarmMq(eventAlarmMq);
 		getAiotStorageInfoResponse.setAiotStorageInfo(aiotStorageInfo);
 	 
 	 	return getAiotStorageInfoResponse;

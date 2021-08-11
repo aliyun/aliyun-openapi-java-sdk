@@ -25,24 +25,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListTableResponse extends AcsResponse {
 
-	private String errorCode;
+	private String requestId;
 
 	private String errorDesc;
 
-	private Boolean success;
-
 	private String traceId;
 
-	private String requestId;
+	private String errorCode;
+
+	private Boolean success;
 
 	private List<DataItem> data;
 
-	public String getErrorCode() {
-		return this.errorCode;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getErrorDesc() {
@@ -53,14 +53,6 @@ public class ListTableResponse extends AcsResponse {
 		this.errorDesc = errorDesc;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
 	public String getTraceId() {
 		return this.traceId;
 	}
@@ -69,12 +61,20 @@ public class ListTableResponse extends AcsResponse {
 		this.traceId = traceId;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getErrorCode() {
+		return this.errorCode;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<DataItem> getData() {
@@ -109,18 +109,18 @@ public class ListTableResponse extends AcsResponse {
 
 		public static class Column {
 
-			private String name;
+			private String comment;
 
 			private String columnType;
 
-			private String comment;
+			private String name;
 
-			public String getName() {
-				return this.name;
+			public String getComment() {
+				return this.comment;
 			}
 
-			public void setName(String name) {
-				this.name = name;
+			public void setComment(String comment) {
+				this.comment = comment;
 			}
 
 			public String getColumnType() {
@@ -131,12 +131,12 @@ public class ListTableResponse extends AcsResponse {
 				this.columnType = columnType;
 			}
 
-			public String getComment() {
-				return this.comment;
+			public String getName() {
+				return this.name;
 			}
 
-			public void setComment(String comment) {
-				this.comment = comment;
+			public void setName(String name) {
+				this.name = name;
 			}
 		}
 	}

@@ -24,19 +24,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateDiskResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String diskId;
 
+	private String requestId;
+
 	private String orderId;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getDiskId() {
 		return this.diskId;
@@ -44,6 +36,14 @@ public class CreateDiskResponse extends AcsResponse {
 
 	public void setDiskId(String diskId) {
 		this.diskId = diskId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getOrderId() {

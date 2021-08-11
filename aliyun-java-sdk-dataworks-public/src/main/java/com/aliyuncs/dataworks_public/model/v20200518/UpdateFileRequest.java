@@ -72,6 +72,8 @@ public class UpdateFileRequest extends RpcAcsRequest<UpdateFileResponse> {
 	private String fileDescription;
 
 	private Boolean autoParsing;
+
+	private String schedulerType;
 	public UpdateFileRequest() {
 		super("dataworks-public", "2020-05-18", "UpdateFile");
 		setMethod(MethodType.POST);
@@ -342,6 +344,17 @@ public class UpdateFileRequest extends RpcAcsRequest<UpdateFileResponse> {
 		this.autoParsing = autoParsing;
 		if(autoParsing != null){
 			putBodyParameter("AutoParsing", autoParsing.toString());
+		}
+	}
+
+	public String getSchedulerType() {
+		return this.schedulerType;
+	}
+
+	public void setSchedulerType(String schedulerType) {
+		this.schedulerType = schedulerType;
+		if(schedulerType != null){
+			putBodyParameter("SchedulerType", schedulerType);
 		}
 	}
 

@@ -37,8 +37,6 @@ public class CreateOrderRequest extends RpcAcsRequest<CreateOrderResponse> {
 
 	private String idempotentCode;
 
-	private String gameIdList;
-
 	private String buyerAccountId;
 
 	private String skuId;
@@ -114,17 +112,6 @@ public class CreateOrderRequest extends RpcAcsRequest<CreateOrderResponse> {
 		this.idempotentCode = idempotentCode;
 		if(idempotentCode != null){
 			putQueryParameter("IdempotentCode", idempotentCode);
-		}
-	}
-
-	public String getGameIdList() {
-		return this.gameIdList;
-	}
-
-	public void setGameIdList(String gameIdList) {
-		this.gameIdList = gameIdList;
-		if(gameIdList != null){
-			putQueryParameter("GameIdList", gameIdList);
 		}
 	}
 

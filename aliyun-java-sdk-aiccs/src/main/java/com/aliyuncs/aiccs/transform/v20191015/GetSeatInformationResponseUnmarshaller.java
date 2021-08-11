@@ -29,9 +29,9 @@ public class GetSeatInformationResponseUnmarshaller {
 		getSeatInformationResponse.setSuccess(_ctx.stringValue("GetSeatInformationResponse.Success"));
 
 		Data data = new Data();
-		data.setTotalNum(_ctx.integerValue("GetSeatInformationResponse.Data.TotalNum"));
-		data.setPageSize(_ctx.integerValue("GetSeatInformationResponse.Data.PageSize"));
 		data.setPageNum(_ctx.integerValue("GetSeatInformationResponse.Data.PageNum"));
+		data.setPageSize(_ctx.integerValue("GetSeatInformationResponse.Data.PageSize"));
+		data.setTotalNum(_ctx.integerValue("GetSeatInformationResponse.Data.TotalNum"));
 		data.setRowr(_ctx.stringValue("GetSeatInformationResponse.Data.Rowr"));
 		getSeatInformationResponse.setData(data);
 	 

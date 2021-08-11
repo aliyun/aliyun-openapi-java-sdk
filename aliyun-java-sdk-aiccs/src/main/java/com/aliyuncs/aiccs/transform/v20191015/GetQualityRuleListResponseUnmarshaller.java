@@ -33,18 +33,18 @@ public class GetQualityRuleListResponseUnmarshaller {
 		getQualityRuleListResponse.setSuccess(_ctx.booleanValue("GetQualityRuleListResponse.Success"));
 
 		Data data = new Data();
+		data.setPageNo(_ctx.integerValue("GetQualityRuleListResponse.Data.PageNo"));
 		data.setPageSize(_ctx.integerValue("GetQualityRuleListResponse.Data.PageSize"));
 		data.setTotal(_ctx.longValue("GetQualityRuleListResponse.Data.Total"));
-		data.setPageNo(_ctx.integerValue("GetQualityRuleListResponse.Data.PageNo"));
 
 		List<QualityRuleListItem> qualityRuleList = new ArrayList<QualityRuleListItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetQualityRuleListResponse.Data.QualityRuleList.Length"); i++) {
 			QualityRuleListItem qualityRuleListItem = new QualityRuleListItem();
-			qualityRuleListItem.setRuleCreateTime(_ctx.stringValue("GetQualityRuleListResponse.Data.QualityRuleList["+ i +"].RuleCreateTime"));
-			qualityRuleListItem.setMatchType(_ctx.integerValue("GetQualityRuleListResponse.Data.QualityRuleList["+ i +"].MatchType"));
-			qualityRuleListItem.setRuleId(_ctx.longValue("GetQualityRuleListResponse.Data.QualityRuleList["+ i +"].RuleId"));
 			qualityRuleListItem.setRuleTag(_ctx.integerValue("GetQualityRuleListResponse.Data.QualityRuleList["+ i +"].RuleTag"));
+			qualityRuleListItem.setMatchType(_ctx.integerValue("GetQualityRuleListResponse.Data.QualityRuleList["+ i +"].MatchType"));
 			qualityRuleListItem.setName(_ctx.stringValue("GetQualityRuleListResponse.Data.QualityRuleList["+ i +"].Name"));
+			qualityRuleListItem.setRuleCreateTime(_ctx.stringValue("GetQualityRuleListResponse.Data.QualityRuleList["+ i +"].RuleCreateTime"));
+			qualityRuleListItem.setRuleId(_ctx.longValue("GetQualityRuleListResponse.Data.QualityRuleList["+ i +"].RuleId"));
 
 			List<String> keyWords = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("GetQualityRuleListResponse.Data.QualityRuleList["+ i +"].KeyWords.Length"); j++) {

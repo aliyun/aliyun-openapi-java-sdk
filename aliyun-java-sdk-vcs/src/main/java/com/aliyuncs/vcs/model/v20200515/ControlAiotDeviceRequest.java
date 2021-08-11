@@ -25,9 +25,15 @@ import com.aliyuncs.vcs.Endpoint;
 public class ControlAiotDeviceRequest extends RpcAcsRequest<ControlAiotDeviceResponse> {
 	   
 
+	private String checkEnabled;
+
 	private String superPassword;
 
+	private String identityNumber;
+
 	private String associatedVerificationEnable;
+
+	private MiFareCard miFareCard;
 
 	private Long associatedPort;
 
@@ -41,7 +47,7 @@ public class ControlAiotDeviceRequest extends RpcAcsRequest<ControlAiotDeviceRes
 
 	private Long commandType;
 
-	private String associatedDeviceID;
+	private String associatedDeviceId;
 
 	private String associatedIPAddr;
 
@@ -61,6 +67,17 @@ public class ControlAiotDeviceRequest extends RpcAcsRequest<ControlAiotDeviceRes
 		} catch (Exception e) {}
 	}
 
+	public String getCheckEnabled() {
+		return this.checkEnabled;
+	}
+
+	public void setCheckEnabled(String checkEnabled) {
+		this.checkEnabled = checkEnabled;
+		if(checkEnabled != null){
+			putBodyParameter("CheckEnabled", checkEnabled);
+		}
+	}
+
 	public String getSuperPassword() {
 		return this.superPassword;
 	}
@@ -69,6 +86,17 @@ public class ControlAiotDeviceRequest extends RpcAcsRequest<ControlAiotDeviceRes
 		this.superPassword = superPassword;
 		if(superPassword != null){
 			putBodyParameter("SuperPassword", superPassword);
+		}
+	}
+
+	public String getIdentityNumber() {
+		return this.identityNumber;
+	}
+
+	public void setIdentityNumber(String identityNumber) {
+		this.identityNumber = identityNumber;
+		if(identityNumber != null){
+			putBodyParameter("IdentityNumber", identityNumber);
 		}
 	}
 
@@ -81,6 +109,24 @@ public class ControlAiotDeviceRequest extends RpcAcsRequest<ControlAiotDeviceRes
 		if(associatedVerificationEnable != null){
 			putBodyParameter("AssociatedVerificationEnable", associatedVerificationEnable);
 		}
+	}
+
+	public MiFareCard getMiFareCard() {
+		return this.miFareCard;
+	}
+
+	public void setMiFareCard(MiFareCard miFareCard) {
+		this.miFareCard = miFareCard;	
+		if (miFareCard != null) {
+			
+				putBodyParameter("MiFareCard.SecretKey" , miFareCard.getSecretKey());
+				putBodyParameter("MiFareCard.AreaDeviate" , miFareCard.getAreaDeviate());
+				putBodyParameter("MiFareCard.AreaLen" , miFareCard.getAreaLen());
+				putBodyParameter("MiFareCard.KeyType" , miFareCard.getKeyType());
+				putBodyParameter("MiFareCard.LastChange" , miFareCard.getLastChange());
+				putBodyParameter("MiFareCard.AreaCode" , miFareCard.getAreaCode());
+				putBodyParameter("MiFareCard.Enabled" , miFareCard.getEnabled());
+		}	
 	}
 
 	public Long getAssociatedPort() {
@@ -149,14 +195,14 @@ public class ControlAiotDeviceRequest extends RpcAcsRequest<ControlAiotDeviceRes
 		}
 	}
 
-	public String getAssociatedDeviceID() {
-		return this.associatedDeviceID;
+	public String getAssociatedDeviceId() {
+		return this.associatedDeviceId;
 	}
 
-	public void setAssociatedDeviceID(String associatedDeviceID) {
-		this.associatedDeviceID = associatedDeviceID;
-		if(associatedDeviceID != null){
-			putBodyParameter("AssociatedDeviceID", associatedDeviceID);
+	public void setAssociatedDeviceId(String associatedDeviceId) {
+		this.associatedDeviceId = associatedDeviceId;
+		if(associatedDeviceId != null){
+			putBodyParameter("AssociatedDeviceId", associatedDeviceId);
 		}
 	}
 
@@ -212,6 +258,79 @@ public class ControlAiotDeviceRequest extends RpcAcsRequest<ControlAiotDeviceRes
 		this.singleInterval = singleInterval;
 		if(singleInterval != null){
 			putBodyParameter("SingleInterval", singleInterval.toString());
+		}
+	}
+
+	public static class MiFareCard {
+
+		private String secretKey;
+
+		private Long areaDeviate;
+
+		private Long areaLen;
+
+		private Long keyType;
+
+		private String lastChange;
+
+		private Long areaCode;
+
+		private String enabled;
+
+		public String getSecretKey() {
+			return this.secretKey;
+		}
+
+		public void setSecretKey(String secretKey) {
+			this.secretKey = secretKey;
+		}
+
+		public Long getAreaDeviate() {
+			return this.areaDeviate;
+		}
+
+		public void setAreaDeviate(Long areaDeviate) {
+			this.areaDeviate = areaDeviate;
+		}
+
+		public Long getAreaLen() {
+			return this.areaLen;
+		}
+
+		public void setAreaLen(Long areaLen) {
+			this.areaLen = areaLen;
+		}
+
+		public Long getKeyType() {
+			return this.keyType;
+		}
+
+		public void setKeyType(Long keyType) {
+			this.keyType = keyType;
+		}
+
+		public String getLastChange() {
+			return this.lastChange;
+		}
+
+		public void setLastChange(String lastChange) {
+			this.lastChange = lastChange;
+		}
+
+		public Long getAreaCode() {
+			return this.areaCode;
+		}
+
+		public void setAreaCode(Long areaCode) {
+			this.areaCode = areaCode;
+		}
+
+		public String getEnabled() {
+			return this.enabled;
+		}
+
+		public void setEnabled(String enabled) {
+			this.enabled = enabled;
 		}
 	}
 

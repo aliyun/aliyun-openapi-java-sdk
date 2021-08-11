@@ -59,6 +59,9 @@ public class DescribeLoadBalancersResponseUnmarshaller {
 			loadBalancer.setBandwidth(_ctx.integerValue("DescribeLoadBalancersResponse.LoadBalancers["+ i +"].Bandwidth"));
 			loadBalancer.setInternetChargeTypeAlias(_ctx.stringValue("DescribeLoadBalancersResponse.LoadBalancers["+ i +"].InternetChargeTypeAlias"));
 			loadBalancer.setLoadBalancerSpec(_ctx.stringValue("DescribeLoadBalancersResponse.LoadBalancers["+ i +"].LoadBalancerSpec"));
+			loadBalancer.setDeleteProtection(_ctx.stringValue("DescribeLoadBalancersResponse.LoadBalancers["+ i +"].DeleteProtection"));
+			loadBalancer.setSpecBpsFlag(_ctx.booleanValue("DescribeLoadBalancersResponse.LoadBalancers["+ i +"].SpecBpsFlag"));
+			loadBalancer.setSpecType(_ctx.stringValue("DescribeLoadBalancersResponse.LoadBalancers["+ i +"].SpecType"));
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeLoadBalancersResponse.LoadBalancers["+ i +"].Tags.Length"); j++) {

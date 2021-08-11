@@ -38,6 +38,8 @@ public class DescribeDispatchRuleResponseUnmarshaller {
 		dispatchRule.setRuleId(_ctx.longValue("DescribeDispatchRuleResponse.DispatchRule.RuleId"));
 		dispatchRule.setName(_ctx.stringValue("DescribeDispatchRuleResponse.DispatchRule.Name"));
 		dispatchRule.setState(_ctx.stringValue("DescribeDispatchRuleResponse.DispatchRule.State"));
+		dispatchRule.setDispatchType(_ctx.stringValue("DescribeDispatchRuleResponse.DispatchRule.DispatchType"));
+		dispatchRule.setIsRecover(_ctx.booleanValue("DescribeDispatchRuleResponse.DispatchRule.IsRecover"));
 
 		LabelMatchExpressionGrid labelMatchExpressionGrid = new LabelMatchExpressionGrid();
 
@@ -67,6 +69,7 @@ public class DescribeDispatchRuleResponseUnmarshaller {
 			groupRule.setGroupId(_ctx.longValue("DescribeDispatchRuleResponse.DispatchRule.GroupRules["+ i +"].GroupId"));
 			groupRule.setGroupWaitTime(_ctx.longValue("DescribeDispatchRuleResponse.DispatchRule.GroupRules["+ i +"].GroupWaitTime"));
 			groupRule.setGroupInterval(_ctx.longValue("DescribeDispatchRuleResponse.DispatchRule.GroupRules["+ i +"].GroupInterval"));
+			groupRule.setRepeatInterval(_ctx.longValue("DescribeDispatchRuleResponse.DispatchRule.GroupRules["+ i +"].RepeatInterval"));
 
 			List<String> groupingFields = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDispatchRuleResponse.DispatchRule.GroupRules["+ i +"].GroupingFields.Length"); j++) {

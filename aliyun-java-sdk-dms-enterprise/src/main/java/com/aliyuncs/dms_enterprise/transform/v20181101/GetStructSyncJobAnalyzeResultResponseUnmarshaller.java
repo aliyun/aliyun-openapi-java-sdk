@@ -29,22 +29,11 @@ public class GetStructSyncJobAnalyzeResultResponseUnmarshaller {
 	public static GetStructSyncJobAnalyzeResultResponse unmarshall(GetStructSyncJobAnalyzeResultResponse getStructSyncJobAnalyzeResultResponse, UnmarshallerContext _ctx) {
 		
 		getStructSyncJobAnalyzeResultResponse.setRequestId(_ctx.stringValue("GetStructSyncJobAnalyzeResultResponse.RequestId"));
-		getStructSyncJobAnalyzeResultResponse.setErrorCode(_ctx.stringValue("GetStructSyncJobAnalyzeResultResponse.ErrorCode"));
-		getStructSyncJobAnalyzeResultResponse.setErrorMessage(_ctx.stringValue("GetStructSyncJobAnalyzeResultResponse.ErrorMessage"));
 		getStructSyncJobAnalyzeResultResponse.setSuccess(_ctx.booleanValue("GetStructSyncJobAnalyzeResultResponse.Success"));
+		getStructSyncJobAnalyzeResultResponse.setErrorMessage(_ctx.stringValue("GetStructSyncJobAnalyzeResultResponse.ErrorMessage"));
+		getStructSyncJobAnalyzeResultResponse.setErrorCode(_ctx.stringValue("GetStructSyncJobAnalyzeResultResponse.ErrorCode"));
 
 		StructSyncJobAnalyzeResult structSyncJobAnalyzeResult = new StructSyncJobAnalyzeResult();
-
-		List<Result> resultList = new ArrayList<Result>();
-		for (int i = 0; i < _ctx.lengthValue("GetStructSyncJobAnalyzeResultResponse.StructSyncJobAnalyzeResult.ResultList.Length"); i++) {
-			Result result = new Result();
-			result.setSourceTableName(_ctx.stringValue("GetStructSyncJobAnalyzeResultResponse.StructSyncJobAnalyzeResult.ResultList["+ i +"].SourceTableName"));
-			result.setScript(_ctx.stringValue("GetStructSyncJobAnalyzeResultResponse.StructSyncJobAnalyzeResult.ResultList["+ i +"].Script"));
-			result.setTargetTableName(_ctx.stringValue("GetStructSyncJobAnalyzeResultResponse.StructSyncJobAnalyzeResult.ResultList["+ i +"].TargetTableName"));
-
-			resultList.add(result);
-		}
-		structSyncJobAnalyzeResult.setResultList(resultList);
 
 		List<Summary> summaryList = new ArrayList<Summary>();
 		for (int i = 0; i < _ctx.lengthValue("GetStructSyncJobAnalyzeResultResponse.StructSyncJobAnalyzeResult.SummaryList.Length"); i++) {
@@ -55,6 +44,17 @@ public class GetStructSyncJobAnalyzeResultResponseUnmarshaller {
 			summaryList.add(summary);
 		}
 		structSyncJobAnalyzeResult.setSummaryList(summaryList);
+
+		List<Result> resultList = new ArrayList<Result>();
+		for (int i = 0; i < _ctx.lengthValue("GetStructSyncJobAnalyzeResultResponse.StructSyncJobAnalyzeResult.ResultList.Length"); i++) {
+			Result result = new Result();
+			result.setSourceTableName(_ctx.stringValue("GetStructSyncJobAnalyzeResultResponse.StructSyncJobAnalyzeResult.ResultList["+ i +"].SourceTableName"));
+			result.setTargetTableName(_ctx.stringValue("GetStructSyncJobAnalyzeResultResponse.StructSyncJobAnalyzeResult.ResultList["+ i +"].TargetTableName"));
+			result.setScript(_ctx.stringValue("GetStructSyncJobAnalyzeResultResponse.StructSyncJobAnalyzeResult.ResultList["+ i +"].Script"));
+
+			resultList.add(result);
+		}
+		structSyncJobAnalyzeResult.setResultList(resultList);
 		getStructSyncJobAnalyzeResultResponse.setStructSyncJobAnalyzeResult(structSyncJobAnalyzeResult);
 	 
 	 	return getStructSyncJobAnalyzeResultResponse;

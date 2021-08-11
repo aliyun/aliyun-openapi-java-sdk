@@ -137,6 +137,8 @@ public class DescribeInstanceAttributeResponse extends AcsResponse {
 
 		private String zoneType;
 
+		private String backupLogStartTime;
+
 		private List<Tag> tags;
 
 		public String getInstanceId() {
@@ -497,6 +499,14 @@ public class DescribeInstanceAttributeResponse extends AcsResponse {
 
 		public void setZoneType(String zoneType) {
 			this.zoneType = zoneType;
+		}
+
+		public String getBackupLogStartTime() {
+			return this.backupLogStartTime;
+		}
+
+		public void setBackupLogStartTime(String backupLogStartTime) {
+			this.backupLogStartTime = backupLogStartTime;
 		}
 
 		public List<Tag> getTags() {

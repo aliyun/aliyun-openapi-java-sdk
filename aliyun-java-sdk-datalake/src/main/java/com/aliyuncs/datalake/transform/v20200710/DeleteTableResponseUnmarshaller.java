@@ -23,8 +23,8 @@ public class DeleteTableResponseUnmarshaller {
 	public static DeleteTableResponse unmarshall(DeleteTableResponse deleteTableResponse, UnmarshallerContext _ctx) {
 		
 		deleteTableResponse.setRequestId(_ctx.stringValue("DeleteTableResponse.RequestId"));
-		deleteTableResponse.setMessage(_ctx.stringValue("DeleteTableResponse.Message"));
 		deleteTableResponse.setCode(_ctx.stringValue("DeleteTableResponse.Code"));
+		deleteTableResponse.setMessage(_ctx.stringValue("DeleteTableResponse.Message"));
 		deleteTableResponse.setSuccess(_ctx.booleanValue("DeleteTableResponse.Success"));
 	 
 	 	return deleteTableResponse;

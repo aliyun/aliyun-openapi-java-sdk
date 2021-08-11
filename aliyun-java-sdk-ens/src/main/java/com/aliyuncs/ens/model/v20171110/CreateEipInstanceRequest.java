@@ -28,13 +28,13 @@ public class CreateEipInstanceRequest extends RpcAcsRequest<CreateEipInstanceRes
 
 	private String ensRegionId;
 
-	private String internetChargeType;
-
-	private String name;
-
 	private String instanceChargeType;
 
 	private Long bandwidth;
+
+	private String internetChargeType;
+
+	private String name;
 	public CreateEipInstanceRequest() {
 		super("Ens", "2017-11-10", "CreateEipInstance", "ens");
 		setMethod(MethodType.POST);
@@ -62,28 +62,6 @@ public class CreateEipInstanceRequest extends RpcAcsRequest<CreateEipInstanceRes
 		}
 	}
 
-	public String getInternetChargeType() {
-		return this.internetChargeType;
-	}
-
-	public void setInternetChargeType(String internetChargeType) {
-		this.internetChargeType = internetChargeType;
-		if(internetChargeType != null){
-			putQueryParameter("InternetChargeType", internetChargeType);
-		}
-	}
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
-		}
-	}
-
 	public String getInstanceChargeType() {
 		return this.instanceChargeType;
 	}
@@ -103,6 +81,28 @@ public class CreateEipInstanceRequest extends RpcAcsRequest<CreateEipInstanceRes
 		this.bandwidth = bandwidth;
 		if(bandwidth != null){
 			putQueryParameter("Bandwidth", bandwidth.toString());
+		}
+	}
+
+	public String getInternetChargeType() {
+		return this.internetChargeType;
+	}
+
+	public void setInternetChargeType(String internetChargeType) {
+		this.internetChargeType = internetChargeType;
+		if(internetChargeType != null){
+			putQueryParameter("InternetChargeType", internetChargeType);
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
 		}
 	}
 

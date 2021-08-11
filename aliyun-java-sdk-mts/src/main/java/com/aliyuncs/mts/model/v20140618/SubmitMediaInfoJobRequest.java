@@ -41,7 +41,7 @@ public class SubmitMediaInfoJobRequest extends RpcAcsRequest<SubmitMediaInfoJobR
 
 	private Boolean async;
 	public SubmitMediaInfoJobRequest() {
-		super("Mts", "2014-06-18", "SubmitMediaInfoJob");
+		super("Mts", "2014-06-18", "SubmitMediaInfoJob", "mts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

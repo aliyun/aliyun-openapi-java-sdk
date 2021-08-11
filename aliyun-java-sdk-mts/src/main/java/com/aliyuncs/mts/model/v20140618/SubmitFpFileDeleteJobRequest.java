@@ -41,7 +41,7 @@ public class SubmitFpFileDeleteJobRequest extends RpcAcsRequest<SubmitFpFileDele
 
 	private String fileIds;
 	public SubmitFpFileDeleteJobRequest() {
-		super("Mts", "2014-06-18", "SubmitFpFileDeleteJob");
+		super("Mts", "2014-06-18", "SubmitFpFileDeleteJob", "mts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

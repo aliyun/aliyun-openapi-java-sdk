@@ -29,7 +29,7 @@ public class CancelSparkStatementRequest extends RpcAcsRequest<CancelSparkStatem
 
 	private String statementId;
 	public CancelSparkStatementRequest() {
-		super("openanalytics-open", "2018-06-19", "CancelSparkStatement", "openanalytics-cap");
+		super("openanalytics-open", "2018-06-19", "CancelSparkStatement", "openanalytics");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

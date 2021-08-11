@@ -28,16 +28,16 @@ public class UpdateDoubleVerificationGroupResponseUnmarshaller {
 	public static UpdateDoubleVerificationGroupResponse unmarshall(UpdateDoubleVerificationGroupResponse updateDoubleVerificationGroupResponse, UnmarshallerContext _ctx) {
 		
 		updateDoubleVerificationGroupResponse.setRequestId(_ctx.stringValue("UpdateDoubleVerificationGroupResponse.RequestId"));
-		updateDoubleVerificationGroupResponse.setMessage(_ctx.stringValue("UpdateDoubleVerificationGroupResponse.Message"));
 		updateDoubleVerificationGroupResponse.setCode(_ctx.stringValue("UpdateDoubleVerificationGroupResponse.Code"));
+		updateDoubleVerificationGroupResponse.setMessage(_ctx.stringValue("UpdateDoubleVerificationGroupResponse.Message"));
 
 		DoubleVerificationGroup doubleVerificationGroup = new DoubleVerificationGroup();
-		doubleVerificationGroup.setDeviceId(_ctx.stringValue("UpdateDoubleVerificationGroupResponse.DoubleVerificationGroup.DeviceId"));
+		doubleVerificationGroup.setGroupId(_ctx.stringValue("UpdateDoubleVerificationGroupResponse.DoubleVerificationGroup.GroupId"));
+		doubleVerificationGroup.setInterval(_ctx.longValue("UpdateDoubleVerificationGroupResponse.DoubleVerificationGroup.Interval"));
 		doubleVerificationGroup.setLastChange(_ctx.stringValue("UpdateDoubleVerificationGroupResponse.DoubleVerificationGroup.LastChange"));
 		doubleVerificationGroup.setMemberNumber(_ctx.longValue("UpdateDoubleVerificationGroupResponse.DoubleVerificationGroup.MemberNumber"));
 		doubleVerificationGroup.setEnabled(_ctx.stringValue("UpdateDoubleVerificationGroupResponse.DoubleVerificationGroup.Enabled"));
-		doubleVerificationGroup.setInterval(_ctx.longValue("UpdateDoubleVerificationGroupResponse.DoubleVerificationGroup.Interval"));
-		doubleVerificationGroup.setGroupId(_ctx.stringValue("UpdateDoubleVerificationGroupResponse.DoubleVerificationGroup.GroupId"));
+		doubleVerificationGroup.setDeviceId(_ctx.stringValue("UpdateDoubleVerificationGroupResponse.DoubleVerificationGroup.DeviceId"));
 
 		List<PersonIdListItem> personIdList = new ArrayList<PersonIdListItem>();
 		for (int i = 0; i < _ctx.lengthValue("UpdateDoubleVerificationGroupResponse.DoubleVerificationGroup.PersonIdList.Length"); i++) {

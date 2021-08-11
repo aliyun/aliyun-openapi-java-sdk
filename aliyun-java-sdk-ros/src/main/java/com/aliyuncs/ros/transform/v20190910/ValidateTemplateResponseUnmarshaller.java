@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.ros.model.v20190910.ValidateTemplateResponse;
+import com.aliyuncs.ros.model.v20190910.ValidateTemplateResponse.Output;
 import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -31,6 +32,16 @@ public class ValidateTemplateResponseUnmarshaller {
 
 		List<Map<Object, Object>> parameters = _ctx.listMapValue("ValidateTemplateResponse.Parameters");
 		validateTemplateResponse.setParameters(parameters);
+
+		List<Output> outputs = new ArrayList<Output>();
+		for (int i = 0; i < _ctx.lengthValue("ValidateTemplateResponse.Outputs.Length"); i++) {
+			Output output = new Output();
+			output.setOutputKey(_ctx.stringValue("ValidateTemplateResponse.Outputs["+ i +"].OutputKey"));
+			output.setDescription(_ctx.stringValue("ValidateTemplateResponse.Outputs["+ i +"].Description"));
+
+			outputs.add(output);
+		}
+		validateTemplateResponse.setOutputs(outputs);
 	 
 	 	return validateTemplateResponse;
 	}

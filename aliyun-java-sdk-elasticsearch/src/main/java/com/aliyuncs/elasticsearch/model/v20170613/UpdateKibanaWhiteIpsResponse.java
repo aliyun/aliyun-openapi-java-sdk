@@ -49,12 +49,22 @@ public class UpdateKibanaWhiteIpsResponse extends AcsResponse {
 
 		private List<String> kibanaIPWhitelist;
 
+		private List<String> kibanaPrivateIPWhitelist;
+
 		public List<String> getKibanaIPWhitelist() {
 			return this.kibanaIPWhitelist;
 		}
 
 		public void setKibanaIPWhitelist(List<String> kibanaIPWhitelist) {
 			this.kibanaIPWhitelist = kibanaIPWhitelist;
+		}
+
+		public List<String> getKibanaPrivateIPWhitelist() {
+			return this.kibanaPrivateIPWhitelist;
+		}
+
+		public void setKibanaPrivateIPWhitelist(List<String> kibanaPrivateIPWhitelist) {
+			this.kibanaPrivateIPWhitelist = kibanaPrivateIPWhitelist;
 		}
 	}
 

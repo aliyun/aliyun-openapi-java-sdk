@@ -23,11 +23,11 @@ public class CreateExportTaskResponseUnmarshaller {
 	public static CreateExportTaskResponse unmarshall(CreateExportTaskResponse createExportTaskResponse, UnmarshallerContext _ctx) {
 		
 		createExportTaskResponse.setRequestId(_ctx.stringValue("CreateExportTaskResponse.RequestId"));
-		createExportTaskResponse.setErrorCode(_ctx.stringValue("CreateExportTaskResponse.ErrorCode"));
 		createExportTaskResponse.setErrorDesc(_ctx.stringValue("CreateExportTaskResponse.ErrorDesc"));
-		createExportTaskResponse.setSuccess(_ctx.booleanValue("CreateExportTaskResponse.Success"));
 		createExportTaskResponse.setTraceId(_ctx.stringValue("CreateExportTaskResponse.TraceId"));
 		createExportTaskResponse.setData(_ctx.stringValue("CreateExportTaskResponse.Data"));
+		createExportTaskResponse.setErrorCode(_ctx.stringValue("CreateExportTaskResponse.ErrorCode"));
+		createExportTaskResponse.setSuccess(_ctx.booleanValue("CreateExportTaskResponse.Success"));
 	 
 	 	return createExportTaskResponse;
 	}

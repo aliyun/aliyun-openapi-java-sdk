@@ -41,7 +41,7 @@ public class ReleaseNodePrivateNetworkAddressRequest extends RpcAcsRequest<Relea
 
 	private Long ownerId;
 	public ReleaseNodePrivateNetworkAddressRequest() {
-		super("Dds", "2015-12-01", "ReleaseNodePrivateNetworkAddress");
+		super("Dds", "2015-12-01", "ReleaseNodePrivateNetworkAddress", "Dds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

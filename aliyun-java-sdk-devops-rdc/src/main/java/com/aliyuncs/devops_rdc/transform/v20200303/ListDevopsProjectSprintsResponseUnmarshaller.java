@@ -28,29 +28,30 @@ public class ListDevopsProjectSprintsResponseUnmarshaller {
 	public static ListDevopsProjectSprintsResponse unmarshall(ListDevopsProjectSprintsResponse listDevopsProjectSprintsResponse, UnmarshallerContext _ctx) {
 		
 		listDevopsProjectSprintsResponse.setRequestId(_ctx.stringValue("ListDevopsProjectSprintsResponse.RequestId"));
+		listDevopsProjectSprintsResponse.setErrorMsg(_ctx.stringValue("ListDevopsProjectSprintsResponse.ErrorMsg"));
 		listDevopsProjectSprintsResponse.setSuccessful(_ctx.booleanValue("ListDevopsProjectSprintsResponse.Successful"));
 		listDevopsProjectSprintsResponse.setErrorCode(_ctx.stringValue("ListDevopsProjectSprintsResponse.ErrorCode"));
-		listDevopsProjectSprintsResponse.setErrorMsg(_ctx.stringValue("ListDevopsProjectSprintsResponse.ErrorMsg"));
+		listDevopsProjectSprintsResponse.setNextPageToken(_ctx.stringValue("ListDevopsProjectSprintsResponse.NextPageToken"));
 
 		List<Sprint> object = new ArrayList<Sprint>();
 		for (int i = 0; i < _ctx.lengthValue("ListDevopsProjectSprintsResponse.Object.Length"); i++) {
 			Sprint sprint = new Sprint();
+			sprint.setStatus(_ctx.stringValue("ListDevopsProjectSprintsResponse.Object["+ i +"].Status"));
 			sprint.setAccomplished(_ctx.stringValue("ListDevopsProjectSprintsResponse.Object["+ i +"].Accomplished"));
+			sprint.setProjectId(_ctx.stringValue("ListDevopsProjectSprintsResponse.Object["+ i +"].ProjectId"));
 			sprint.setIsDeleted(_ctx.booleanValue("ListDevopsProjectSprintsResponse.Object["+ i +"].IsDeleted"));
-			sprint.setCreated(_ctx.stringValue("ListDevopsProjectSprintsResponse.Object["+ i +"].Created"));
+			sprint.setStartDate(_ctx.stringValue("ListDevopsProjectSprintsResponse.Object["+ i +"].StartDate"));
+			sprint.setUpdated(_ctx.stringValue("ListDevopsProjectSprintsResponse.Object["+ i +"].Updated"));
+			sprint.setCreatorId(_ctx.stringValue("ListDevopsProjectSprintsResponse.Object["+ i +"].CreatorId"));
 			sprint.setDueDate(_ctx.stringValue("ListDevopsProjectSprintsResponse.Object["+ i +"].DueDate"));
 			sprint.setName(_ctx.stringValue("ListDevopsProjectSprintsResponse.Object["+ i +"].Name"));
-			sprint.setCreatorId(_ctx.stringValue("ListDevopsProjectSprintsResponse.Object["+ i +"].CreatorId"));
+			sprint.setCreated(_ctx.stringValue("ListDevopsProjectSprintsResponse.Object["+ i +"].Created"));
 			sprint.setId(_ctx.stringValue("ListDevopsProjectSprintsResponse.Object["+ i +"].Id"));
-			sprint.setUpdated(_ctx.stringValue("ListDevopsProjectSprintsResponse.Object["+ i +"].Updated"));
-			sprint.setStartDate(_ctx.stringValue("ListDevopsProjectSprintsResponse.Object["+ i +"].StartDate"));
-			sprint.setStatus(_ctx.stringValue("ListDevopsProjectSprintsResponse.Object["+ i +"].Status"));
-			sprint.setProjectId(_ctx.stringValue("ListDevopsProjectSprintsResponse.Object["+ i +"].ProjectId"));
 
 			PlanToDo planToDo = new PlanToDo();
-			planToDo.setStoryPoints(_ctx.integerValue("ListDevopsProjectSprintsResponse.Object["+ i +"].PlanToDo.StoryPoints"));
-			planToDo.setWorkTimes(_ctx.integerValue("ListDevopsProjectSprintsResponse.Object["+ i +"].PlanToDo.WorkTimes"));
 			planToDo.setTasks(_ctx.integerValue("ListDevopsProjectSprintsResponse.Object["+ i +"].PlanToDo.Tasks"));
+			planToDo.setWorkTimes(_ctx.integerValue("ListDevopsProjectSprintsResponse.Object["+ i +"].PlanToDo.WorkTimes"));
+			planToDo.setStoryPoints(_ctx.integerValue("ListDevopsProjectSprintsResponse.Object["+ i +"].PlanToDo.StoryPoints"));
 			sprint.setPlanToDo(planToDo);
 
 			object.add(sprint);

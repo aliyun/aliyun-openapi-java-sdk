@@ -67,6 +67,8 @@ public class DescribeBackupPoliciesResponse extends AcsResponse {
 
 		private String policyVersion;
 
+		private String policyRegionId;
+
 		private String clientStatus;
 
 		private Integer clientErrorCount;
@@ -76,6 +78,8 @@ public class DescribeBackupPoliciesResponse extends AcsResponse {
 		private Integer healthClientCount;
 
 		private List<String> uuidList;
+
+		private List<String> remarkedUuidList;
 
 		private List<String> clientErrorUuidList;
 
@@ -123,6 +127,14 @@ public class DescribeBackupPoliciesResponse extends AcsResponse {
 			this.policyVersion = policyVersion;
 		}
 
+		public String getPolicyRegionId() {
+			return this.policyRegionId;
+		}
+
+		public void setPolicyRegionId(String policyRegionId) {
+			this.policyRegionId = policyRegionId;
+		}
+
 		public String getClientStatus() {
 			return this.clientStatus;
 		}
@@ -161,6 +173,14 @@ public class DescribeBackupPoliciesResponse extends AcsResponse {
 
 		public void setUuidList(List<String> uuidList) {
 			this.uuidList = uuidList;
+		}
+
+		public List<String> getRemarkedUuidList() {
+			return this.remarkedUuidList;
+		}
+
+		public void setRemarkedUuidList(List<String> remarkedUuidList) {
+			this.remarkedUuidList = remarkedUuidList;
 		}
 
 		public List<String> getClientErrorUuidList() {

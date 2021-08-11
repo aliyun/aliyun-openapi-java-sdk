@@ -34,6 +34,8 @@ public class AddApDeviceRequest extends RpcAcsRequest<AddApDeviceResponse> {
 	private String apMac;
 
 	private String storeId;
+
+	private String serialNumber;
 	public AddApDeviceRequest() {
 		super("cloudesl", "2020-02-01", "AddApDevice", "cloudesl");
 		setMethod(MethodType.POST);
@@ -95,6 +97,17 @@ public class AddApDeviceRequest extends RpcAcsRequest<AddApDeviceResponse> {
 		this.storeId = storeId;
 		if(storeId != null){
 			putBodyParameter("StoreId", storeId);
+		}
+	}
+
+	public String getSerialNumber() {
+		return this.serialNumber;
+	}
+
+	public void setSerialNumber(String serialNumber) {
+		this.serialNumber = serialNumber;
+		if(serialNumber != null){
+			putBodyParameter("SerialNumber", serialNumber);
 		}
 	}
 

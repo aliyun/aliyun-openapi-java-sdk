@@ -27,9 +27,9 @@ public class DescribeStreamPredictsResponse extends AcsResponse {
 
 	private Long totalNum;
 
-	private String requestId;
-
 	private Long pageSize;
+
+	private String requestId;
 
 	private Long currentPage;
 
@@ -45,20 +45,20 @@ public class DescribeStreamPredictsResponse extends AcsResponse {
 		this.totalNum = totalNum;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public Long getPageSize() {
 		return this.pageSize;
 	}
 
 	public void setPageSize(Long pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Long getCurrentPage() {
@@ -87,35 +87,43 @@ public class DescribeStreamPredictsResponse extends AcsResponse {
 
 	public static class StreamPredict {
 
+		private String creationTime;
+
 		private String status;
-
-		private String streamType;
-
-		private String probabilityThresholds;
-
-		private String streamId;
-
-		private String userData;
 
 		private String notify;
 
 		private String predictId;
 
-		private String detectIntervals;
-
 		private String modelUserData;
-
-		private String predictTemplateId;
 
 		private String output;
 
-		private String creationTime;
+		private String predictTemplateId;
+
+		private String streamId;
+
+		private String autoStart;
+
+		private String probabilityThresholds;
+
+		private String detectIntervals;
+
+		private String streamType;
+
+		private String userData;
 
 		private String modelIds;
 
 		private String faceGroupId;
 
-		private String autoStart;
+		public String getCreationTime() {
+			return this.creationTime;
+		}
+
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
+		}
 
 		public String getStatus() {
 			return this.status;
@@ -123,38 +131,6 @@ public class DescribeStreamPredictsResponse extends AcsResponse {
 
 		public void setStatus(String status) {
 			this.status = status;
-		}
-
-		public String getStreamType() {
-			return this.streamType;
-		}
-
-		public void setStreamType(String streamType) {
-			this.streamType = streamType;
-		}
-
-		public String getProbabilityThresholds() {
-			return this.probabilityThresholds;
-		}
-
-		public void setProbabilityThresholds(String probabilityThresholds) {
-			this.probabilityThresholds = probabilityThresholds;
-		}
-
-		public String getStreamId() {
-			return this.streamId;
-		}
-
-		public void setStreamId(String streamId) {
-			this.streamId = streamId;
-		}
-
-		public String getUserData() {
-			return this.userData;
-		}
-
-		public void setUserData(String userData) {
-			this.userData = userData;
 		}
 
 		public String getNotify() {
@@ -173,28 +149,12 @@ public class DescribeStreamPredictsResponse extends AcsResponse {
 			this.predictId = predictId;
 		}
 
-		public String getDetectIntervals() {
-			return this.detectIntervals;
-		}
-
-		public void setDetectIntervals(String detectIntervals) {
-			this.detectIntervals = detectIntervals;
-		}
-
 		public String getModelUserData() {
 			return this.modelUserData;
 		}
 
 		public void setModelUserData(String modelUserData) {
 			this.modelUserData = modelUserData;
-		}
-
-		public String getPredictTemplateId() {
-			return this.predictTemplateId;
-		}
-
-		public void setPredictTemplateId(String predictTemplateId) {
-			this.predictTemplateId = predictTemplateId;
 		}
 
 		public String getOutput() {
@@ -205,12 +165,60 @@ public class DescribeStreamPredictsResponse extends AcsResponse {
 			this.output = output;
 		}
 
-		public String getCreationTime() {
-			return this.creationTime;
+		public String getPredictTemplateId() {
+			return this.predictTemplateId;
 		}
 
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
+		public void setPredictTemplateId(String predictTemplateId) {
+			this.predictTemplateId = predictTemplateId;
+		}
+
+		public String getStreamId() {
+			return this.streamId;
+		}
+
+		public void setStreamId(String streamId) {
+			this.streamId = streamId;
+		}
+
+		public String getAutoStart() {
+			return this.autoStart;
+		}
+
+		public void setAutoStart(String autoStart) {
+			this.autoStart = autoStart;
+		}
+
+		public String getProbabilityThresholds() {
+			return this.probabilityThresholds;
+		}
+
+		public void setProbabilityThresholds(String probabilityThresholds) {
+			this.probabilityThresholds = probabilityThresholds;
+		}
+
+		public String getDetectIntervals() {
+			return this.detectIntervals;
+		}
+
+		public void setDetectIntervals(String detectIntervals) {
+			this.detectIntervals = detectIntervals;
+		}
+
+		public String getStreamType() {
+			return this.streamType;
+		}
+
+		public void setStreamType(String streamType) {
+			this.streamType = streamType;
+		}
+
+		public String getUserData() {
+			return this.userData;
+		}
+
+		public void setUserData(String userData) {
+			this.userData = userData;
 		}
 
 		public String getModelIds() {
@@ -227,14 +235,6 @@ public class DescribeStreamPredictsResponse extends AcsResponse {
 
 		public void setFaceGroupId(String faceGroupId) {
 			this.faceGroupId = faceGroupId;
-		}
-
-		public String getAutoStart() {
-			return this.autoStart;
-		}
-
-		public void setAutoStart(String autoStart) {
-			this.autoStart = autoStart;
 		}
 	}
 

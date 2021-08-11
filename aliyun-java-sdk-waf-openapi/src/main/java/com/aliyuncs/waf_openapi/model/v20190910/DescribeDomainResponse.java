@@ -59,6 +59,8 @@ public class DescribeDomainResponse extends AcsResponse {
 
 		private Integer isAccessProduct;
 
+		private Integer accessHeaderMode;
+
 		private Long version;
 
 		private Integer clusterType;
@@ -82,6 +84,8 @@ public class DescribeDomainResponse extends AcsResponse {
 		private List<String> http2Port;
 
 		private List<String> httpPort;
+
+		private List<String> accessHeaders;
 
 		private List<String> httpsPort;
 
@@ -131,6 +135,14 @@ public class DescribeDomainResponse extends AcsResponse {
 
 		public void setIsAccessProduct(Integer isAccessProduct) {
 			this.isAccessProduct = isAccessProduct;
+		}
+
+		public Integer getAccessHeaderMode() {
+			return this.accessHeaderMode;
+		}
+
+		public void setAccessHeaderMode(Integer accessHeaderMode) {
+			this.accessHeaderMode = accessHeaderMode;
 		}
 
 		public Long getVersion() {
@@ -229,6 +241,14 @@ public class DescribeDomainResponse extends AcsResponse {
 			this.httpPort = httpPort;
 		}
 
+		public List<String> getAccessHeaders() {
+			return this.accessHeaders;
+		}
+
+		public void setAccessHeaders(List<String> accessHeaders) {
+			this.accessHeaders = accessHeaders;
+		}
+
 		public List<String> getHttpsPort() {
 			return this.httpsPort;
 		}
@@ -264,6 +284,8 @@ public class DescribeDomainResponse extends AcsResponse {
 
 			private String cloudNativeProductName;
 
+			private String redirectionTypeName;
+
 			private String instanceId;
 
 			private String iPAddressList;
@@ -276,6 +298,14 @@ public class DescribeDomainResponse extends AcsResponse {
 
 			public void setCloudNativeProductName(String cloudNativeProductName) {
 				this.cloudNativeProductName = cloudNativeProductName;
+			}
+
+			public String getRedirectionTypeName() {
+				return this.redirectionTypeName;
+			}
+
+			public void setRedirectionTypeName(String redirectionTypeName) {
+				this.redirectionTypeName = redirectionTypeName;
 			}
 
 			public String getInstanceId() {

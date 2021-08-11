@@ -27,7 +27,7 @@ public class DescribeLDAPConfigRequest extends RpcAcsRequest<DescribeLDAPConfigR
 
 	private String fileSystemId;
 	public DescribeLDAPConfigRequest() {
-		super("NAS", "2017-06-26", "DescribeLDAPConfig");
+		super("NAS", "2017-06-26", "DescribeLDAPConfig", "nas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

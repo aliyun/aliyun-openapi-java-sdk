@@ -67,6 +67,10 @@ public class HttpUtil {
                 debugString.append(entry.getKey() + " : " + entry.getValue() + "\n> ");
             }
             debugString.append("Request URL : " + sysUrl + "\n> ");
+            debugString.append("Request isIgnoreSSLCerts : " + request.isIgnoreSSLCerts() + "\n> ");
+            debugString.append("Request connect timeout : " + request.getSysConnectTimeout() + "\n> ");
+            debugString.append("Request read timeout : " + request.getSysReadTimeout() + "\n> ");
+            debugString.append("Encoding : " + request.getSysEncoding() + "\n> ");
             if (isHttpContentDebug) {
                 try {
                     debugString.append("\n" + request.getHttpContentString());

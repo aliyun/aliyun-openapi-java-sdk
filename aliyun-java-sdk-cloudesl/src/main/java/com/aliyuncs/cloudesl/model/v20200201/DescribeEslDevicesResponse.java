@@ -167,6 +167,8 @@ public class DescribeEslDevicesResponse extends AcsResponse {
 
 		private Integer screenHeight;
 
+		private Integer eslSignal;
+
 		public String getLastCommunicateTime() {
 			return this.lastCommunicateTime;
 		}
@@ -245,6 +247,14 @@ public class DescribeEslDevicesResponse extends AcsResponse {
 
 		public void setScreenHeight(Integer screenHeight) {
 			this.screenHeight = screenHeight;
+		}
+
+		public Integer getEslSignal() {
+			return this.eslSignal;
+		}
+
+		public void setEslSignal(Integer eslSignal) {
+			this.eslSignal = eslSignal;
 		}
 	}
 

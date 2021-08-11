@@ -25,15 +25,31 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetPipelineInstanceBuildNumberStatusResponse extends AcsResponse {
 
+	private String requestId;
+
+	private String errorMessage;
+
 	private Boolean success;
 
 	private String errorCode;
 
-	private String errorMessage;
-
-	private String requestId;
-
 	private Object object;
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
 
 	public Boolean getSuccess() {
 		return this.success;
@@ -49,22 +65,6 @@ public class GetPipelineInstanceBuildNumberStatusResponse extends AcsResponse {
 
 	public void setErrorCode(String errorCode) {
 		this.errorCode = errorCode;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
 	}
 
 	public Object getObject() {
@@ -99,19 +99,11 @@ public class GetPipelineInstanceBuildNumberStatusResponse extends AcsResponse {
 
 		public static class Group {
 
-			private String name;
-
 			private String status;
 
+			private String name;
+
 			private List<Stage> stages;
-
-			public String getName() {
-				return this.name;
-			}
-
-			public void setName(String name) {
-				this.name = name;
-			}
 
 			public String getStatus() {
 				return this.status;
@@ -119,6 +111,14 @@ public class GetPipelineInstanceBuildNumberStatusResponse extends AcsResponse {
 
 			public void setStatus(String status) {
 				this.status = status;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
 			}
 
 			public List<Stage> getStages() {
@@ -163,19 +163,11 @@ public class GetPipelineInstanceBuildNumberStatusResponse extends AcsResponse {
 
 				public static class Component {
 
-					private String name;
-
 					private String status;
 
+					private String name;
+
 					private Long jobId;
-
-					public String getName() {
-						return this.name;
-					}
-
-					public void setName(String name) {
-						this.name = name;
-					}
 
 					public String getStatus() {
 						return this.status;
@@ -183,6 +175,14 @@ public class GetPipelineInstanceBuildNumberStatusResponse extends AcsResponse {
 
 					public void setStatus(String status) {
 						this.status = status;
+					}
+
+					public String getName() {
+						return this.name;
+					}
+
+					public void setName(String name) {
+						this.name = name;
 					}
 
 					public Long getJobId() {

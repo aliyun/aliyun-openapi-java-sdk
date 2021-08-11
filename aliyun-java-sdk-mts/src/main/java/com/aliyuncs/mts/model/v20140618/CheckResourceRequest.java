@@ -53,7 +53,7 @@ public class CheckResourceRequest extends RpcAcsRequest<CheckResourceResponse> {
 
 	private String taskIdentifier;
 	public CheckResourceRequest() {
-		super("Mts", "2014-06-18", "CheckResource");
+		super("Mts", "2014-06-18", "CheckResource", "mts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

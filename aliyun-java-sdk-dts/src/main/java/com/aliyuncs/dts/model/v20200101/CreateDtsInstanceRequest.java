@@ -57,7 +57,7 @@ public class CreateDtsInstanceRequest extends RpcAcsRequest<CreateDtsInstanceRes
 
 	private String sourceEndpointEngineName;
 	public CreateDtsInstanceRequest() {
-		super("Dts", "2020-01-01", "CreateDtsInstance");
+		super("Dts", "2020-01-01", "CreateDtsInstance", "dts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

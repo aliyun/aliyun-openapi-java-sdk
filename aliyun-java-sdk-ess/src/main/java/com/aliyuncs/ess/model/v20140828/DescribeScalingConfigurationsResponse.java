@@ -119,6 +119,8 @@ public class DescribeScalingConfigurationsResponse extends AcsResponse {
 
 		private String systemDiskAutoSnapshotPolicyId;
 
+		private String systemDiskPerformanceLevel;
+
 		private String lifecycleState;
 
 		private String creationTime;
@@ -161,6 +163,10 @@ public class DescribeScalingConfigurationsResponse extends AcsResponse {
 
 		private String privatePoolOptionsId;
 
+		private String spotInterruptionBehavior;
+
+		private Integer spotDuration;
+
 		private Integer ipv6AddressCount;
 
 		private List<DataDisk> dataDisks;
@@ -169,9 +175,15 @@ public class DescribeScalingConfigurationsResponse extends AcsResponse {
 
 		private List<SpotPriceModel> spotPriceLimit;
 
+		private List<InstancePatternInfo> instancePatternInfos;
+
 		private List<String> instanceTypes;
 
+		private List<String> weightedCapacities;
+
 		private List<String> securityGroupIds;
+
+		private List<String> systemDiskCategories;
 
 		private SchedulerOptions schedulerOptions;
 
@@ -343,6 +355,14 @@ public class DescribeScalingConfigurationsResponse extends AcsResponse {
 			this.systemDiskAutoSnapshotPolicyId = systemDiskAutoSnapshotPolicyId;
 		}
 
+		public String getSystemDiskPerformanceLevel() {
+			return this.systemDiskPerformanceLevel;
+		}
+
+		public void setSystemDiskPerformanceLevel(String systemDiskPerformanceLevel) {
+			this.systemDiskPerformanceLevel = systemDiskPerformanceLevel;
+		}
+
 		public String getLifecycleState() {
 			return this.lifecycleState;
 		}
@@ -511,6 +531,22 @@ public class DescribeScalingConfigurationsResponse extends AcsResponse {
 			this.privatePoolOptionsId = privatePoolOptionsId;
 		}
 
+		public String getSpotInterruptionBehavior() {
+			return this.spotInterruptionBehavior;
+		}
+
+		public void setSpotInterruptionBehavior(String spotInterruptionBehavior) {
+			this.spotInterruptionBehavior = spotInterruptionBehavior;
+		}
+
+		public Integer getSpotDuration() {
+			return this.spotDuration;
+		}
+
+		public void setSpotDuration(Integer spotDuration) {
+			this.spotDuration = spotDuration;
+		}
+
 		public Integer getIpv6AddressCount() {
 			return this.ipv6AddressCount;
 		}
@@ -543,6 +579,14 @@ public class DescribeScalingConfigurationsResponse extends AcsResponse {
 			this.spotPriceLimit = spotPriceLimit;
 		}
 
+		public List<InstancePatternInfo> getInstancePatternInfos() {
+			return this.instancePatternInfos;
+		}
+
+		public void setInstancePatternInfos(List<InstancePatternInfo> instancePatternInfos) {
+			this.instancePatternInfos = instancePatternInfos;
+		}
+
 		public List<String> getInstanceTypes() {
 			return this.instanceTypes;
 		}
@@ -551,12 +595,28 @@ public class DescribeScalingConfigurationsResponse extends AcsResponse {
 			this.instanceTypes = instanceTypes;
 		}
 
+		public List<String> getWeightedCapacities() {
+			return this.weightedCapacities;
+		}
+
+		public void setWeightedCapacities(List<String> weightedCapacities) {
+			this.weightedCapacities = weightedCapacities;
+		}
+
 		public List<String> getSecurityGroupIds() {
 			return this.securityGroupIds;
 		}
 
 		public void setSecurityGroupIds(List<String> securityGroupIds) {
 			this.securityGroupIds = securityGroupIds;
+		}
+
+		public List<String> getSystemDiskCategories() {
+			return this.systemDiskCategories;
+		}
+
+		public void setSystemDiskCategories(List<String> systemDiskCategories) {
+			this.systemDiskCategories = systemDiskCategories;
 		}
 
 		public SchedulerOptions getSchedulerOptions() {
@@ -588,6 +648,10 @@ public class DescribeScalingConfigurationsResponse extends AcsResponse {
 			private String description;
 
 			private String autoSnapshotPolicyId;
+
+			private String performanceLevel;
+
+			private List<String> categories;
 
 			public Integer getSize() {
 				return this.size;
@@ -668,6 +732,22 @@ public class DescribeScalingConfigurationsResponse extends AcsResponse {
 			public void setAutoSnapshotPolicyId(String autoSnapshotPolicyId) {
 				this.autoSnapshotPolicyId = autoSnapshotPolicyId;
 			}
+
+			public String getPerformanceLevel() {
+				return this.performanceLevel;
+			}
+
+			public void setPerformanceLevel(String performanceLevel) {
+				this.performanceLevel = performanceLevel;
+			}
+
+			public List<String> getCategories() {
+				return this.categories;
+			}
+
+			public void setCategories(List<String> categories) {
+				this.categories = categories;
+			}
 		}
 
 		public static class Tag {
@@ -713,6 +793,49 @@ public class DescribeScalingConfigurationsResponse extends AcsResponse {
 
 			public void setPriceLimit(Float priceLimit) {
 				this.priceLimit = priceLimit;
+			}
+		}
+
+		public static class InstancePatternInfo {
+
+			private Integer cores;
+
+			private Float memory;
+
+			private Float maxPrice;
+
+			private String instanceFamilyLevel;
+
+			public Integer getCores() {
+				return this.cores;
+			}
+
+			public void setCores(Integer cores) {
+				this.cores = cores;
+			}
+
+			public Float getMemory() {
+				return this.memory;
+			}
+
+			public void setMemory(Float memory) {
+				this.memory = memory;
+			}
+
+			public Float getMaxPrice() {
+				return this.maxPrice;
+			}
+
+			public void setMaxPrice(Float maxPrice) {
+				this.maxPrice = maxPrice;
+			}
+
+			public String getInstanceFamilyLevel() {
+				return this.instanceFamilyLevel;
+			}
+
+			public void setInstanceFamilyLevel(String instanceFamilyLevel) {
+				this.instanceFamilyLevel = instanceFamilyLevel;
 			}
 		}
 

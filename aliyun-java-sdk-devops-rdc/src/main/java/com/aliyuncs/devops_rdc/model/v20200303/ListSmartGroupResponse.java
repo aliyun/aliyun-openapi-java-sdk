@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListSmartGroupResponse extends AcsResponse {
 
-	private Boolean successful;
-
-	private String errorCode;
-
 	private String errorMsg;
 
 	private String requestId;
 
+	private Boolean successful;
+
+	private String errorCode;
+
 	private List<SmartGroup> object;
-
-	public Boolean getSuccessful() {
-		return this.successful;
-	}
-
-	public void setSuccessful(Boolean successful) {
-		this.successful = successful;
-	}
-
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
-	}
 
 	public String getErrorMsg() {
 		return this.errorMsg;
@@ -67,6 +51,22 @@ public class ListSmartGroupResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public Boolean getSuccessful() {
+		return this.successful;
+	}
+
+	public void setSuccessful(Boolean successful) {
+		this.successful = successful;
+	}
+
+	public String getErrorCode() {
+		return this.errorCode;
+	}
+
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
+	}
+
 	public List<SmartGroup> getObject() {
 		return this.object;
 	}
@@ -77,17 +77,9 @@ public class ListSmartGroupResponse extends AcsResponse {
 
 	public static class SmartGroup {
 
-		private String id;
-
 		private String type;
 
-		public String getId() {
-			return this.id;
-		}
-
-		public void setId(String id) {
-			this.id = id;
-		}
+		private String id;
 
 		public String getType() {
 			return this.type;
@@ -95,6 +87,14 @@ public class ListSmartGroupResponse extends AcsResponse {
 
 		public void setType(String type) {
 			this.type = type;
+		}
+
+		public String getId() {
+			return this.id;
+		}
+
+		public void setId(String id) {
+			this.id = id;
 		}
 	}
 

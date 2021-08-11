@@ -33,25 +33,25 @@ public class GetPersonListResponseUnmarshaller {
 		getPersonListResponse.setCode(_ctx.stringValue("GetPersonListResponse.Code"));
 
 		Data data = new Data();
-		data.setTotalCount(_ctx.longValue("GetPersonListResponse.Data.TotalCount"));
-		data.setPageSize(_ctx.longValue("GetPersonListResponse.Data.PageSize"));
 		data.setPageNumber(_ctx.longValue("GetPersonListResponse.Data.PageNumber"));
+		data.setPageSize(_ctx.longValue("GetPersonListResponse.Data.PageSize"));
+		data.setTotalCount(_ctx.longValue("GetPersonListResponse.Data.TotalCount"));
 
 		List<RecordsItem> records = new ArrayList<RecordsItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetPersonListResponse.Data.Records.Length"); i++) {
 			RecordsItem recordsItem = new RecordsItem();
-			recordsItem.setFirstShotTime(_ctx.longValue("GetPersonListResponse.Data.Records["+ i +"].FirstShotTime"));
-			recordsItem.setPersonId(_ctx.stringValue("GetPersonListResponse.Data.Records["+ i +"].PersonId"));
-			recordsItem.setSearchMatchingRate(_ctx.stringValue("GetPersonListResponse.Data.Records["+ i +"].SearchMatchingRate"));
 			recordsItem.setFaceUrl(_ctx.stringValue("GetPersonListResponse.Data.Records["+ i +"].FaceUrl"));
+			recordsItem.setSearchMatchingRate(_ctx.stringValue("GetPersonListResponse.Data.Records["+ i +"].SearchMatchingRate"));
+			recordsItem.setPersonId(_ctx.stringValue("GetPersonListResponse.Data.Records["+ i +"].PersonId"));
 			recordsItem.setLastShotTime(_ctx.longValue("GetPersonListResponse.Data.Records["+ i +"].LastShotTime"));
+			recordsItem.setFirstShotTime(_ctx.longValue("GetPersonListResponse.Data.Records["+ i +"].FirstShotTime"));
 
 			List<TagList> propertyTagList = new ArrayList<TagList>();
 			for (int j = 0; j < _ctx.lengthValue("GetPersonListResponse.Data.Records["+ i +"].PropertyTagList.Length"); j++) {
 				TagList tagList = new TagList();
-				tagList.setTagCodeName(_ctx.stringValue("GetPersonListResponse.Data.Records["+ i +"].PropertyTagList["+ j +"].TagCodeName"));
-				tagList.setTagName(_ctx.stringValue("GetPersonListResponse.Data.Records["+ i +"].PropertyTagList["+ j +"].TagName"));
 				tagList.setValue(_ctx.stringValue("GetPersonListResponse.Data.Records["+ i +"].PropertyTagList["+ j +"].Value"));
+				tagList.setTagName(_ctx.stringValue("GetPersonListResponse.Data.Records["+ i +"].PropertyTagList["+ j +"].TagName"));
+				tagList.setTagCodeName(_ctx.stringValue("GetPersonListResponse.Data.Records["+ i +"].PropertyTagList["+ j +"].TagCodeName"));
 				tagList.setCode(_ctx.stringValue("GetPersonListResponse.Data.Records["+ i +"].PropertyTagList["+ j +"].Code"));
 
 				propertyTagList.add(tagList);

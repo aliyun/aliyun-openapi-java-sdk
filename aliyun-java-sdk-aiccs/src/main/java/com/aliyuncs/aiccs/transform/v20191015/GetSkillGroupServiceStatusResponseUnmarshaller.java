@@ -29,10 +29,10 @@ public class GetSkillGroupServiceStatusResponseUnmarshaller {
 		getSkillGroupServiceStatusResponse.setSuccess(_ctx.stringValue("GetSkillGroupServiceStatusResponse.Success"));
 
 		Data data = new Data();
-		data.setTotalNum(_ctx.integerValue("GetSkillGroupServiceStatusResponse.Data.TotalNum"));
-		data.setPageNum(_ctx.integerValue("GetSkillGroupServiceStatusResponse.Data.PageNum"));
 		data.setPageSize(_ctx.integerValue("GetSkillGroupServiceStatusResponse.Data.PageSize"));
+		data.setTotalNum(_ctx.integerValue("GetSkillGroupServiceStatusResponse.Data.TotalNum"));
 		data.setRows(_ctx.stringValue("GetSkillGroupServiceStatusResponse.Data.Rows"));
+		data.setPageNum(_ctx.integerValue("GetSkillGroupServiceStatusResponse.Data.PageNum"));
 		getSkillGroupServiceStatusResponse.setData(data);
 	 
 	 	return getSkillGroupServiceStatusResponse;

@@ -27,17 +27,17 @@ public class ListMenuResponseUnmarshaller {
 	public static ListMenuResponse unmarshall(ListMenuResponse listMenuResponse, UnmarshallerContext _ctx) {
 		
 		listMenuResponse.setRequestId(_ctx.stringValue("ListMenuResponse.RequestId"));
-		listMenuResponse.setErrorCode(_ctx.stringValue("ListMenuResponse.ErrorCode"));
 		listMenuResponse.setErrorDesc(_ctx.stringValue("ListMenuResponse.ErrorDesc"));
-		listMenuResponse.setSuccess(_ctx.booleanValue("ListMenuResponse.Success"));
 		listMenuResponse.setTraceId(_ctx.stringValue("ListMenuResponse.TraceId"));
+		listMenuResponse.setErrorCode(_ctx.stringValue("ListMenuResponse.ErrorCode"));
+		listMenuResponse.setSuccess(_ctx.booleanValue("ListMenuResponse.Success"));
 
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListMenuResponse.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
-			dataItem.setName(_ctx.stringValue("ListMenuResponse.Data["+ i +"].Name"));
-			dataItem.setUrl(_ctx.stringValue("ListMenuResponse.Data["+ i +"].Url"));
 			dataItem.setKey(_ctx.stringValue("ListMenuResponse.Data["+ i +"].Key"));
+			dataItem.setUrl(_ctx.stringValue("ListMenuResponse.Data["+ i +"].Url"));
+			dataItem.setName(_ctx.stringValue("ListMenuResponse.Data["+ i +"].Name"));
 
 			data.add(dataItem);
 		}

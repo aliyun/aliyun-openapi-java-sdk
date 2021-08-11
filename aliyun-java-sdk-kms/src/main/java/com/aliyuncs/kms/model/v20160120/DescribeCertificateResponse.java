@@ -34,8 +34,6 @@ public class DescribeCertificateResponse extends AcsResponse {
 
 	private String keySpec;
 
-	private String protectionLevel;
-
 	private String status;
 
 	private String createdAt;
@@ -59,6 +57,10 @@ public class DescribeCertificateResponse extends AcsResponse {
 	private String subjectKeyIdentifier;
 
 	private Map<Object,Object> tags;
+
+	private Boolean exportablePrivateKey;
+
+	private String protectionLevel;
 
 	private List<String> subjectAlternativeNames;
 
@@ -92,14 +94,6 @@ public class DescribeCertificateResponse extends AcsResponse {
 
 	public void setKeySpec(String keySpec) {
 		this.keySpec = keySpec;
-	}
-
-	public String getProtectionLevel() {
-		return this.protectionLevel;
-	}
-
-	public void setProtectionLevel(String protectionLevel) {
-		this.protectionLevel = protectionLevel;
 	}
 
 	public String getStatus() {
@@ -196,6 +190,22 @@ public class DescribeCertificateResponse extends AcsResponse {
 
 	public void setTags(Map<Object,Object> tags) {
 		this.tags = tags;
+	}
+
+	public Boolean getExportablePrivateKey() {
+		return this.exportablePrivateKey;
+	}
+
+	public void setExportablePrivateKey(Boolean exportablePrivateKey) {
+		this.exportablePrivateKey = exportablePrivateKey;
+	}
+
+	public String getProtectionLevel() {
+		return this.protectionLevel;
+	}
+
+	public void setProtectionLevel(String protectionLevel) {
+		this.protectionLevel = protectionLevel;
 	}
 
 	public List<String> getSubjectAlternativeNames() {

@@ -27,15 +27,17 @@ public class GetProjectOptionResponseUnmarshaller {
 	public static GetProjectOptionResponse unmarshall(GetProjectOptionResponse getProjectOptionResponse, UnmarshallerContext _ctx) {
 		
 		getProjectOptionResponse.setRequestId(_ctx.stringValue("GetProjectOptionResponse.RequestId"));
+		getProjectOptionResponse.setErrorMsg(_ctx.stringValue("GetProjectOptionResponse.ErrorMsg"));
 		getProjectOptionResponse.setSuccessful(_ctx.booleanValue("GetProjectOptionResponse.Successful"));
 		getProjectOptionResponse.setErrorCode(_ctx.stringValue("GetProjectOptionResponse.ErrorCode"));
-		getProjectOptionResponse.setErrorMsg(_ctx.stringValue("GetProjectOptionResponse.ErrorMsg"));
 
 		List<Option> object = new ArrayList<Option>();
 		for (int i = 0; i < _ctx.lengthValue("GetProjectOptionResponse.Object.Length"); i++) {
 			Option option = new Option();
-			option.setName(_ctx.stringValue("GetProjectOptionResponse.Object["+ i +"].Name"));
 			option.setValue(_ctx.stringValue("GetProjectOptionResponse.Object["+ i +"].Value"));
+			option.setName(_ctx.stringValue("GetProjectOptionResponse.Object["+ i +"].Name"));
+			option.setScopeName(_ctx.stringValue("GetProjectOptionResponse.Object["+ i +"].ScopeName"));
+			option.setKind(_ctx.stringValue("GetProjectOptionResponse.Object["+ i +"].Kind"));
 
 			object.add(option);
 		}

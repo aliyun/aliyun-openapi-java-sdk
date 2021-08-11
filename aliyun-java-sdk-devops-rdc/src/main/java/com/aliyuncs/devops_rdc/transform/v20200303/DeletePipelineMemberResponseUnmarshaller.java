@@ -23,10 +23,10 @@ public class DeletePipelineMemberResponseUnmarshaller {
 	public static DeletePipelineMemberResponse unmarshall(DeletePipelineMemberResponse deletePipelineMemberResponse, UnmarshallerContext _ctx) {
 		
 		deletePipelineMemberResponse.setRequestId(_ctx.stringValue("DeletePipelineMemberResponse.RequestId"));
-		deletePipelineMemberResponse.setSuccess(_ctx.booleanValue("DeletePipelineMemberResponse.Success"));
-		deletePipelineMemberResponse.setErrorCode(_ctx.stringValue("DeletePipelineMemberResponse.ErrorCode"));
 		deletePipelineMemberResponse.setErrorMessage(_ctx.stringValue("DeletePipelineMemberResponse.ErrorMessage"));
 		deletePipelineMemberResponse.setObject(_ctx.booleanValue("DeletePipelineMemberResponse.Object"));
+		deletePipelineMemberResponse.setErrorCode(_ctx.stringValue("DeletePipelineMemberResponse.ErrorCode"));
+		deletePipelineMemberResponse.setSuccess(_ctx.booleanValue("DeletePipelineMemberResponse.Success"));
 	 
 	 	return deletePipelineMemberResponse;
 	}

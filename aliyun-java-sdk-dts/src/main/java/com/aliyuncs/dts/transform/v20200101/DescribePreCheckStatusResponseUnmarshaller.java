@@ -39,6 +39,9 @@ public class DescribePreCheckStatusResponseUnmarshaller {
 		describePreCheckStatusResponse.setSuccess(_ctx.booleanValue("DescribePreCheckStatusResponse.Success"));
 		describePreCheckStatusResponse.setTotal(_ctx.integerValue("DescribePreCheckStatusResponse.Total"));
 		describePreCheckStatusResponse.setJobId(_ctx.stringValue("DescribePreCheckStatusResponse.JobId"));
+		describePreCheckStatusResponse.setPageNumber(_ctx.longValue("DescribePreCheckStatusResponse.PageNumber"));
+		describePreCheckStatusResponse.setPageRecordCount(_ctx.longValue("DescribePreCheckStatusResponse.PageRecordCount"));
+		describePreCheckStatusResponse.setTotalRecordCount(_ctx.longValue("DescribePreCheckStatusResponse.TotalRecordCount"));
 
 		List<ProgressInfo> jobProgress = new ArrayList<ProgressInfo>();
 		for (int i = 0; i < _ctx.lengthValue("DescribePreCheckStatusResponse.JobProgress.Length"); i++) {

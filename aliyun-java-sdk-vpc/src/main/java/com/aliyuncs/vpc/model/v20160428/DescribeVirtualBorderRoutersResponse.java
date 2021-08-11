@@ -137,6 +137,8 @@ public class DescribeVirtualBorderRoutersResponse extends AcsResponse {
 
 		private Boolean enableIpv6;
 
+		private String cloudBoxInstanceId;
+
 		private List<AssociatedPhysicalConnection> associatedPhysicalConnections;
 
 		private List<AssociatedCen> associatedCens;
@@ -379,6 +381,14 @@ public class DescribeVirtualBorderRoutersResponse extends AcsResponse {
 
 		public void setEnableIpv6(Boolean enableIpv6) {
 			this.enableIpv6 = enableIpv6;
+		}
+
+		public String getCloudBoxInstanceId() {
+			return this.cloudBoxInstanceId;
+		}
+
+		public void setCloudBoxInstanceId(String cloudBoxInstanceId) {
+			this.cloudBoxInstanceId = cloudBoxInstanceId;
 		}
 
 		public List<AssociatedPhysicalConnection> getAssociatedPhysicalConnections() {

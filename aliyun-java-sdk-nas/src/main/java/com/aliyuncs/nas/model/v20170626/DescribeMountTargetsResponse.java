@@ -89,6 +89,10 @@ public class DescribeMountTargetsResponse extends AcsResponse {
 
 		private String status;
 
+		private String dualStackMountTargetDomain;
+
+		private List<ClientMasterNode> clientMasterNodes;
+
 		private List<Tag> tags;
 
 		public String getMountTargetDomain() {
@@ -139,12 +143,61 @@ public class DescribeMountTargetsResponse extends AcsResponse {
 			this.status = status;
 		}
 
+		public String getDualStackMountTargetDomain() {
+			return this.dualStackMountTargetDomain;
+		}
+
+		public void setDualStackMountTargetDomain(String dualStackMountTargetDomain) {
+			this.dualStackMountTargetDomain = dualStackMountTargetDomain;
+		}
+
+		public List<ClientMasterNode> getClientMasterNodes() {
+			return this.clientMasterNodes;
+		}
+
+		public void setClientMasterNodes(List<ClientMasterNode> clientMasterNodes) {
+			this.clientMasterNodes = clientMasterNodes;
+		}
+
 		public List<Tag> getTags() {
 			return this.tags;
 		}
 
 		public void setTags(List<Tag> tags) {
 			this.tags = tags;
+		}
+
+		public static class ClientMasterNode {
+
+			private String ecsId;
+
+			private String ecsIp;
+
+			private String defaultPasswd;
+
+			public String getEcsId() {
+				return this.ecsId;
+			}
+
+			public void setEcsId(String ecsId) {
+				this.ecsId = ecsId;
+			}
+
+			public String getEcsIp() {
+				return this.ecsIp;
+			}
+
+			public void setEcsIp(String ecsIp) {
+				this.ecsIp = ecsIp;
+			}
+
+			public String getDefaultPasswd() {
+				return this.defaultPasswd;
+			}
+
+			public void setDefaultPasswd(String defaultPasswd) {
+				this.defaultPasswd = defaultPasswd;
+			}
 		}
 
 		public static class Tag {

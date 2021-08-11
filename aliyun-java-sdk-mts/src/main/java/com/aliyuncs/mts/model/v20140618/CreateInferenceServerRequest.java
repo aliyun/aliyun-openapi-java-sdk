@@ -25,8 +25,6 @@ import com.aliyuncs.mts.Endpoint;
 public class CreateInferenceServerRequest extends RpcAcsRequest<CreateInferenceServerResponse> {
 	   
 
-	private Long userId;
-
 	private String pipelineId;
 
 	private String userData;
@@ -39,23 +37,12 @@ public class CreateInferenceServerRequest extends RpcAcsRequest<CreateInferenceS
 
 	private String modelPath;
 	public CreateInferenceServerRequest() {
-		super("Mts", "2014-06-18", "CreateInferenceServer");
+		super("Mts", "2014-06-18", "CreateInferenceServer", "mts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Long getUserId() {
-		return this.userId;
-	}
-
-	public void setUserId(Long userId) {
-		this.userId = userId;
-		if(userId != null){
-			putQueryParameter("UserId", userId.toString());
-		}
 	}
 
 	public String getPipelineId() {

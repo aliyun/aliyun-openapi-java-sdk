@@ -26,25 +26,29 @@ import com.aliyuncs.bssopenapi.Endpoint;
 public class DescribeSplitItemBillRequest extends RpcAcsRequest<DescribeSplitItemBillResponse> {
 	   
 
-	private String splitItemID;
-
 	private String productCode;
 
 	private String subscriptionType;
+
+	private Long billOwnerId;
+
+	private String productType;
+
+	private String nextToken;
+
+	private String splitItemID;
 
 	private String billingCycle;
 
 	private Long ownerId;
 
-	private Long billOwnerId;
-
 	private List<TagFilter> tagFilters;
 
-	private String productType;
+	private String billingDate;
 
 	private String instanceID;
 
-	private String nextToken;
+	private String granularity;
 
 	private Integer maxResults;
 	public DescribeSplitItemBillRequest() {
@@ -54,17 +58,6 @@ public class DescribeSplitItemBillRequest extends RpcAcsRequest<DescribeSplitIte
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getSplitItemID() {
-		return this.splitItemID;
-	}
-
-	public void setSplitItemID(String splitItemID) {
-		this.splitItemID = splitItemID;
-		if(splitItemID != null){
-			putQueryParameter("SplitItemID", splitItemID);
-		}
 	}
 
 	public String getProductCode() {
@@ -86,6 +79,50 @@ public class DescribeSplitItemBillRequest extends RpcAcsRequest<DescribeSplitIte
 		this.subscriptionType = subscriptionType;
 		if(subscriptionType != null){
 			putQueryParameter("SubscriptionType", subscriptionType);
+		}
+	}
+
+	public Long getBillOwnerId() {
+		return this.billOwnerId;
+	}
+
+	public void setBillOwnerId(Long billOwnerId) {
+		this.billOwnerId = billOwnerId;
+		if(billOwnerId != null){
+			putQueryParameter("BillOwnerId", billOwnerId.toString());
+		}
+	}
+
+	public String getProductType() {
+		return this.productType;
+	}
+
+	public void setProductType(String productType) {
+		this.productType = productType;
+		if(productType != null){
+			putQueryParameter("ProductType", productType);
+		}
+	}
+
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+		if(nextToken != null){
+			putQueryParameter("NextToken", nextToken);
+		}
+	}
+
+	public String getSplitItemID() {
+		return this.splitItemID;
+	}
+
+	public void setSplitItemID(String splitItemID) {
+		this.splitItemID = splitItemID;
+		if(splitItemID != null){
+			putQueryParameter("SplitItemID", splitItemID);
 		}
 	}
 
@@ -111,17 +148,6 @@ public class DescribeSplitItemBillRequest extends RpcAcsRequest<DescribeSplitIte
 		}
 	}
 
-	public Long getBillOwnerId() {
-		return this.billOwnerId;
-	}
-
-	public void setBillOwnerId(Long billOwnerId) {
-		this.billOwnerId = billOwnerId;
-		if(billOwnerId != null){
-			putQueryParameter("BillOwnerId", billOwnerId.toString());
-		}
-	}
-
 	public List<TagFilter> getTagFilters() {
 		return this.tagFilters;
 	}
@@ -140,14 +166,14 @@ public class DescribeSplitItemBillRequest extends RpcAcsRequest<DescribeSplitIte
 		}	
 	}
 
-	public String getProductType() {
-		return this.productType;
+	public String getBillingDate() {
+		return this.billingDate;
 	}
 
-	public void setProductType(String productType) {
-		this.productType = productType;
-		if(productType != null){
-			putQueryParameter("ProductType", productType);
+	public void setBillingDate(String billingDate) {
+		this.billingDate = billingDate;
+		if(billingDate != null){
+			putQueryParameter("BillingDate", billingDate);
 		}
 	}
 
@@ -162,14 +188,14 @@ public class DescribeSplitItemBillRequest extends RpcAcsRequest<DescribeSplitIte
 		}
 	}
 
-	public String getNextToken() {
-		return this.nextToken;
+	public String getGranularity() {
+		return this.granularity;
 	}
 
-	public void setNextToken(String nextToken) {
-		this.nextToken = nextToken;
-		if(nextToken != null){
-			putQueryParameter("NextToken", nextToken);
+	public void setGranularity(String granularity) {
+		this.granularity = granularity;
+		if(granularity != null){
+			putQueryParameter("Granularity", granularity);
 		}
 	}
 

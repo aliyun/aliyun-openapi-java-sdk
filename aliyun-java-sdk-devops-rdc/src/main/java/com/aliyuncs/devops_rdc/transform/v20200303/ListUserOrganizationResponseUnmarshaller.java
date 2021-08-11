@@ -27,9 +27,9 @@ public class ListUserOrganizationResponseUnmarshaller {
 	public static ListUserOrganizationResponse unmarshall(ListUserOrganizationResponse listUserOrganizationResponse, UnmarshallerContext _ctx) {
 		
 		listUserOrganizationResponse.setRequestId(_ctx.stringValue("ListUserOrganizationResponse.RequestId"));
+		listUserOrganizationResponse.setErrorMessage(_ctx.stringValue("ListUserOrganizationResponse.ErrorMessage"));
 		listUserOrganizationResponse.setSuccess(_ctx.booleanValue("ListUserOrganizationResponse.Success"));
 		listUserOrganizationResponse.setErrorCode(_ctx.stringValue("ListUserOrganizationResponse.ErrorCode"));
-		listUserOrganizationResponse.setErrorMessage(_ctx.stringValue("ListUserOrganizationResponse.ErrorMessage"));
 
 		List<Organization> object = new ArrayList<Organization>();
 		for (int i = 0; i < _ctx.lengthValue("ListUserOrganizationResponse.Object.Length"); i++) {

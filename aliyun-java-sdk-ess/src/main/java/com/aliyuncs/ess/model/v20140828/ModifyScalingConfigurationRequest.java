@@ -21,7 +21,6 @@ import com.google.gson.Gson;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.ess.Endpoint;
 
-
 /**
  * @author auto create
  * @version 
@@ -40,6 +39,8 @@ public class ModifyScalingConfigurationRequest extends RpcAcsRequest<ModifyScali
 	private String privatePoolOptionsMatchCriteria;
 
 	private String hostName;
+
+	private List<String> systemDiskCategorys;
 
 	private String instanceDescription;
 
@@ -67,11 +68,15 @@ public class ModifyScalingConfigurationRequest extends RpcAcsRequest<ModifyScali
 
 	private String zoneId;
 
+	private List<InstancePatternInfo> instancePatternInfos;
+
 	private String affinity;
 
 	private String imageId;
 
 	private Integer memory;
+
+	private String spotInterruptionBehavior;
 
 	private String ioOptimized;
 
@@ -82,6 +87,8 @@ public class ModifyScalingConfigurationRequest extends RpcAcsRequest<ModifyScali
 	private String securityGroupId;
 
 	private String systemDiskCategory;
+
+	private String systemDiskPerformanceLevel;
 
 	private String userData;
 
@@ -111,7 +118,11 @@ public class ModifyScalingConfigurationRequest extends RpcAcsRequest<ModifyScali
 
 	private List<String> securityGroupIds;
 
+	private Integer spotDuration;
+
 	private List<DataDisk> dataDisks;
+
+	private List<InstanceTypeOverride> instanceTypeOverrides;
 
 	private Integer loadBalancerWeight;
 
@@ -196,6 +207,19 @@ public class ModifyScalingConfigurationRequest extends RpcAcsRequest<ModifyScali
 		if(hostName != null){
 			putQueryParameter("HostName", hostName);
 		}
+	}
+
+	public List<String> getSystemDiskCategorys() {
+		return this.systemDiskCategorys;
+	}
+
+	public void setSystemDiskCategorys(List<String> systemDiskCategorys) {
+		this.systemDiskCategorys = systemDiskCategorys;	
+		if (systemDiskCategorys != null) {
+			for (int i = 0; i < systemDiskCategorys.size(); i++) {
+				putQueryParameter("SystemDiskCategory." + (i + 1) , systemDiskCategorys.get(i));
+			}
+		}	
 	}
 
 	public String getInstanceDescription() {
@@ -341,6 +365,22 @@ public class ModifyScalingConfigurationRequest extends RpcAcsRequest<ModifyScali
 		}
 	}
 
+	public List<InstancePatternInfo> getInstancePatternInfos() {
+		return this.instancePatternInfos;
+	}
+
+	public void setInstancePatternInfos(List<InstancePatternInfo> instancePatternInfos) {
+		this.instancePatternInfos = instancePatternInfos;	
+		if (instancePatternInfos != null) {
+			for (int depth1 = 0; depth1 < instancePatternInfos.size(); depth1++) {
+				putQueryParameter("InstancePatternInfo." + (depth1 + 1) + ".Cores" , instancePatternInfos.get(depth1).getCores());
+				putQueryParameter("InstancePatternInfo." + (depth1 + 1) + ".Memory" , instancePatternInfos.get(depth1).getMemory());
+				putQueryParameter("InstancePatternInfo." + (depth1 + 1) + ".InstanceFamilyLevel" , instancePatternInfos.get(depth1).getInstanceFamilyLevel());
+				putQueryParameter("InstancePatternInfo." + (depth1 + 1) + ".MaxPrice" , instancePatternInfos.get(depth1).getMaxPrice());
+			}
+		}	
+	}
+
 	public String getAffinity() {
 		return this.affinity;
 	}
@@ -374,6 +414,17 @@ public class ModifyScalingConfigurationRequest extends RpcAcsRequest<ModifyScali
 		}
 	}
 
+	public String getSpotInterruptionBehavior() {
+		return this.spotInterruptionBehavior;
+	}
+
+	public void setSpotInterruptionBehavior(String spotInterruptionBehavior) {
+		this.spotInterruptionBehavior = spotInterruptionBehavior;
+		if(spotInterruptionBehavior != null){
+			putQueryParameter("SpotInterruptionBehavior", spotInterruptionBehavior);
+		}
+	}
+
 	public String getIoOptimized() {
 		return this.ioOptimized;
 	}
@@ -390,7 +441,7 @@ public class ModifyScalingConfigurationRequest extends RpcAcsRequest<ModifyScali
 	}
 
 	public void setInstanceTypes(List<String> instanceTypes) {
-		this.instanceTypes = instanceTypes;
+		this.instanceTypes = instanceTypes;	
 		if (instanceTypes != null) {
 			for (int i = 0; i < instanceTypes.size(); i++) {
 				putQueryParameter("InstanceTypes." + (i + 1) , instanceTypes.get(i));
@@ -428,6 +479,17 @@ public class ModifyScalingConfigurationRequest extends RpcAcsRequest<ModifyScali
 		this.systemDiskCategory = systemDiskCategory;
 		if(systemDiskCategory != null){
 			putQueryParameter("SystemDisk.Category", systemDiskCategory);
+		}
+	}
+
+	public String getSystemDiskPerformanceLevel() {
+		return this.systemDiskPerformanceLevel;
+	}
+
+	public void setSystemDiskPerformanceLevel(String systemDiskPerformanceLevel) {
+		this.systemDiskPerformanceLevel = systemDiskPerformanceLevel;
+		if(systemDiskPerformanceLevel != null){
+			putQueryParameter("SystemDisk.PerformanceLevel", systemDiskPerformanceLevel);
 		}
 	}
 
@@ -579,12 +641,23 @@ public class ModifyScalingConfigurationRequest extends RpcAcsRequest<ModifyScali
 	}
 
 	public void setSecurityGroupIds(List<String> securityGroupIds) {
-		this.securityGroupIds = securityGroupIds;
+		this.securityGroupIds = securityGroupIds;	
 		if (securityGroupIds != null) {
 			for (int i = 0; i < securityGroupIds.size(); i++) {
 				putQueryParameter("SecurityGroupIds." + (i + 1) , securityGroupIds.get(i));
 			}
 		}	
+	}
+
+	public Integer getSpotDuration() {
+		return this.spotDuration;
+	}
+
+	public void setSpotDuration(Integer spotDuration) {
+		this.spotDuration = spotDuration;
+		if(spotDuration != null){
+			putQueryParameter("SpotDuration", spotDuration.toString());
+		}
 	}
 
 	public List<DataDisk> getDataDisks() {
@@ -596,15 +669,35 @@ public class ModifyScalingConfigurationRequest extends RpcAcsRequest<ModifyScali
 		if (dataDisks != null) {
 			for (int depth1 = 0; depth1 < dataDisks.size(); depth1++) {
 				putQueryParameter("DataDisk." + (depth1 + 1) + ".DiskName" , dataDisks.get(depth1).getDiskName());
+				if (dataDisks.get(depth1).getCategoryss() != null) {
+					for (int i = 0; i < dataDisks.get(depth1).getCategoryss().size(); i++) {
+						putQueryParameter("DataDisk." + (depth1 + 1) + ".Categorys." + (i + 1) , dataDisks.get(depth1).getCategoryss().get(i));
+					}
+				}
 				putQueryParameter("DataDisk." + (depth1 + 1) + ".SnapshotId" , dataDisks.get(depth1).getSnapshotId());
 				putQueryParameter("DataDisk." + (depth1 + 1) + ".Size" , dataDisks.get(depth1).getSize());
 				putQueryParameter("DataDisk." + (depth1 + 1) + ".Encrypted" , dataDisks.get(depth1).getEncrypted());
+				putQueryParameter("DataDisk." + (depth1 + 1) + ".PerformanceLevel" , dataDisks.get(depth1).getPerformanceLevel());
 				putQueryParameter("DataDisk." + (depth1 + 1) + ".AutoSnapshotPolicyId" , dataDisks.get(depth1).getAutoSnapshotPolicyId());
 				putQueryParameter("DataDisk." + (depth1 + 1) + ".Description" , dataDisks.get(depth1).getDescription());
 				putQueryParameter("DataDisk." + (depth1 + 1) + ".Category" , dataDisks.get(depth1).getCategory());
 				putQueryParameter("DataDisk." + (depth1 + 1) + ".KMSKeyId" , dataDisks.get(depth1).getKMSKeyId());
 				putQueryParameter("DataDisk." + (depth1 + 1) + ".Device" , dataDisks.get(depth1).getDevice());
 				putQueryParameter("DataDisk." + (depth1 + 1) + ".DeleteWithInstance" , dataDisks.get(depth1).getDeleteWithInstance());
+			}
+		}	
+	}
+
+	public List<InstanceTypeOverride> getInstanceTypeOverrides() {
+		return this.instanceTypeOverrides;
+	}
+
+	public void setInstanceTypeOverrides(List<InstanceTypeOverride> instanceTypeOverrides) {
+		this.instanceTypeOverrides = instanceTypeOverrides;	
+		if (instanceTypeOverrides != null) {
+			for (int depth1 = 0; depth1 < instanceTypeOverrides.size(); depth1++) {
+				putQueryParameter("InstanceTypeOverride." + (depth1 + 1) + ".WeightedCapacity" , instanceTypeOverrides.get(depth1).getWeightedCapacity());
+				putQueryParameter("InstanceTypeOverride." + (depth1 + 1) + ".InstanceType" , instanceTypeOverrides.get(depth1).getInstanceType());
 			}
 		}	
 	}
@@ -676,15 +769,62 @@ public class ModifyScalingConfigurationRequest extends RpcAcsRequest<ModifyScali
 		}
 	}
 
+	public static class InstancePatternInfo {
+
+		private Integer cores;
+
+		private Float memory;
+
+		private String instanceFamilyLevel;
+
+		private Float maxPrice;
+
+		public Integer getCores() {
+			return this.cores;
+		}
+
+		public void setCores(Integer cores) {
+			this.cores = cores;
+		}
+
+		public Float getMemory() {
+			return this.memory;
+		}
+
+		public void setMemory(Float memory) {
+			this.memory = memory;
+		}
+
+		public String getInstanceFamilyLevel() {
+			return this.instanceFamilyLevel;
+		}
+
+		public void setInstanceFamilyLevel(String instanceFamilyLevel) {
+			this.instanceFamilyLevel = instanceFamilyLevel;
+		}
+
+		public Float getMaxPrice() {
+			return this.maxPrice;
+		}
+
+		public void setMaxPrice(Float maxPrice) {
+			this.maxPrice = maxPrice;
+		}
+	}
+
 	public static class DataDisk {
 
 		private String diskName;
+
+		private List<String> categoryss;
 
 		private String snapshotId;
 
 		private Integer size;
 
 		private String encrypted;
+
+		private String performanceLevel;
 
 		private String autoSnapshotPolicyId;
 
@@ -704,6 +844,14 @@ public class ModifyScalingConfigurationRequest extends RpcAcsRequest<ModifyScali
 
 		public void setDiskName(String diskName) {
 			this.diskName = diskName;
+		}
+
+		public List<String> getCategoryss() {
+			return this.categoryss;
+		}
+
+		public void setCategoryss(List<String> categoryss) {
+			this.categoryss = categoryss;
 		}
 
 		public String getSnapshotId() {
@@ -728,6 +876,14 @@ public class ModifyScalingConfigurationRequest extends RpcAcsRequest<ModifyScali
 
 		public void setEncrypted(String encrypted) {
 			this.encrypted = encrypted;
+		}
+
+		public String getPerformanceLevel() {
+			return this.performanceLevel;
+		}
+
+		public void setPerformanceLevel(String performanceLevel) {
+			this.performanceLevel = performanceLevel;
 		}
 
 		public String getAutoSnapshotPolicyId() {
@@ -776,6 +932,29 @@ public class ModifyScalingConfigurationRequest extends RpcAcsRequest<ModifyScali
 
 		public void setDeleteWithInstance(Boolean deleteWithInstance) {
 			this.deleteWithInstance = deleteWithInstance;
+		}
+	}
+
+	public static class InstanceTypeOverride {
+
+		private Integer weightedCapacity;
+
+		private String instanceType;
+
+		public Integer getWeightedCapacity() {
+			return this.weightedCapacity;
+		}
+
+		public void setWeightedCapacity(Integer weightedCapacity) {
+			this.weightedCapacity = weightedCapacity;
+		}
+
+		public String getInstanceType() {
+			return this.instanceType;
+		}
+
+		public void setInstanceType(String instanceType) {
+			this.instanceType = instanceType;
 		}
 	}
 

@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.ess.model.v20140828.DescribeScalingConfigurationsResponse;
 import com.aliyuncs.ess.model.v20140828.DescribeScalingConfigurationsResponse.ScalingConfiguration;
 import com.aliyuncs.ess.model.v20140828.DescribeScalingConfigurationsResponse.ScalingConfiguration.DataDisk;
+import com.aliyuncs.ess.model.v20140828.DescribeScalingConfigurationsResponse.ScalingConfiguration.InstancePatternInfo;
 import com.aliyuncs.ess.model.v20140828.DescribeScalingConfigurationsResponse.ScalingConfiguration.SchedulerOptions;
 import com.aliyuncs.ess.model.v20140828.DescribeScalingConfigurationsResponse.ScalingConfiguration.SpotPriceModel;
 import com.aliyuncs.ess.model.v20140828.DescribeScalingConfigurationsResponse.ScalingConfiguration.Tag;
@@ -59,6 +60,7 @@ public class DescribeScalingConfigurationsResponseUnmarshaller {
 			scalingConfiguration.setSystemDiskName(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].SystemDiskName"));
 			scalingConfiguration.setSystemDiskDescription(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].SystemDiskDescription"));
 			scalingConfiguration.setSystemDiskAutoSnapshotPolicyId(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].SystemDiskAutoSnapshotPolicyId"));
+			scalingConfiguration.setSystemDiskPerformanceLevel(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].SystemDiskPerformanceLevel"));
 			scalingConfiguration.setLifecycleState(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].LifecycleState"));
 			scalingConfiguration.setCreationTime(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].CreationTime"));
 			scalingConfiguration.setLoadBalancerWeight(_ctx.integerValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].LoadBalancerWeight"));
@@ -80,6 +82,8 @@ public class DescribeScalingConfigurationsResponseUnmarshaller {
 			scalingConfiguration.setTenancy(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].Tenancy"));
 			scalingConfiguration.setPrivatePoolOptionsMatchCriteria(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].PrivatePoolOptions.MatchCriteria"));
 			scalingConfiguration.setPrivatePoolOptionsId(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].PrivatePoolOptions.Id"));
+			scalingConfiguration.setSpotInterruptionBehavior(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].SpotInterruptionBehavior"));
+			scalingConfiguration.setSpotDuration(_ctx.integerValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].SpotDuration"));
 			scalingConfiguration.setIpv6AddressCount(_ctx.integerValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].Ipv6AddressCount"));
 
 			List<String> instanceTypes = new ArrayList<String>();
@@ -88,11 +92,23 @@ public class DescribeScalingConfigurationsResponseUnmarshaller {
 			}
 			scalingConfiguration.setInstanceTypes(instanceTypes);
 
+			List<String> weightedCapacities = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].WeightedCapacities.Length"); j++) {
+				weightedCapacities.add(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].WeightedCapacities["+ j +"]"));
+			}
+			scalingConfiguration.setWeightedCapacities(weightedCapacities);
+
 			List<String> securityGroupIds = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].SecurityGroupIds.Length"); j++) {
 				securityGroupIds.add(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].SecurityGroupIds["+ j +"]"));
 			}
 			scalingConfiguration.setSecurityGroupIds(securityGroupIds);
+
+			List<String> systemDiskCategories = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].SystemDiskCategories.Length"); j++) {
+				systemDiskCategories.add(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].SystemDiskCategories["+ j +"]"));
+			}
+			scalingConfiguration.setSystemDiskCategories(systemDiskCategories);
 
 			SchedulerOptions schedulerOptions = new SchedulerOptions();
 			schedulerOptions.setManagedPrivateSpaceId(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].SchedulerOptions.ManagedPrivateSpaceId"));
@@ -111,6 +127,13 @@ public class DescribeScalingConfigurationsResponseUnmarshaller {
 				dataDisk.setDiskName(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].DataDisks["+ j +"].DiskName"));
 				dataDisk.setDescription(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].DataDisks["+ j +"].Description"));
 				dataDisk.setAutoSnapshotPolicyId(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].DataDisks["+ j +"].AutoSnapshotPolicyId"));
+				dataDisk.setPerformanceLevel(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].DataDisks["+ j +"].PerformanceLevel"));
+
+				List<String> categories = new ArrayList<String>();
+				for (int k = 0; k < _ctx.lengthValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].DataDisks["+ j +"].Categories.Length"); k++) {
+					categories.add(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].DataDisks["+ j +"].Categories["+ k +"]"));
+				}
+				dataDisk.setCategories(categories);
 
 				dataDisks.add(dataDisk);
 			}
@@ -135,6 +158,18 @@ public class DescribeScalingConfigurationsResponseUnmarshaller {
 				spotPriceLimit.add(spotPriceModel);
 			}
 			scalingConfiguration.setSpotPriceLimit(spotPriceLimit);
+
+			List<InstancePatternInfo> instancePatternInfos = new ArrayList<InstancePatternInfo>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].InstancePatternInfos.Length"); j++) {
+				InstancePatternInfo instancePatternInfo = new InstancePatternInfo();
+				instancePatternInfo.setCores(_ctx.integerValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].InstancePatternInfos["+ j +"].Cores"));
+				instancePatternInfo.setMemory(_ctx.floatValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].InstancePatternInfos["+ j +"].Memory"));
+				instancePatternInfo.setMaxPrice(_ctx.floatValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].InstancePatternInfos["+ j +"].MaxPrice"));
+				instancePatternInfo.setInstanceFamilyLevel(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].InstancePatternInfos["+ j +"].InstanceFamilyLevel"));
+
+				instancePatternInfos.add(instancePatternInfo);
+			}
+			scalingConfiguration.setInstancePatternInfos(instancePatternInfos);
 
 			scalingConfigurations.add(scalingConfiguration);
 		}

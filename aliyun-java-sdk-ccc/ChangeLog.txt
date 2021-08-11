@@ -1,3 +1,18 @@
+2021-08-10 Version: 2.0.15
+- Export instance relative API.
+
+2021-07-23 Version: 2.0.14
+- Export instance relative API.
+
+2021-06-08 Version: 2.0.13
+- Refine API response for GetCallDetailRecord.
+
+2021-05-25 Version: 2.0.12
+- Export new API for IVR tracking.
+
+2021-05-24 Version: 2.0.11
+- Export new API for report.
+
 2021-05-17 Version: 1.0.28
 - Export new API for predictive dialer.
 

@@ -45,7 +45,7 @@ public class SubmitVideoQualityJobRequest extends RpcAcsRequest<SubmitVideoQuali
 
 	private String scheduleParams;
 	public SubmitVideoQualityJobRequest() {
-		super("Mts", "2014-06-18", "SubmitVideoQualityJob");
+		super("Mts", "2014-06-18", "SubmitVideoQualityJob", "mts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

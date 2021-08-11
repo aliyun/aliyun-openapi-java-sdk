@@ -65,7 +65,7 @@ public class ConfigureSubscriptionInstanceRequest extends RpcAcsRequest<Configur
 
 	private String subscriptionInstanceName;
 	public ConfigureSubscriptionInstanceRequest() {
-		super("Dts", "2020-01-01", "ConfigureSubscriptionInstance");
+		super("Dts", "2020-01-01", "ConfigureSubscriptionInstance", "dts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

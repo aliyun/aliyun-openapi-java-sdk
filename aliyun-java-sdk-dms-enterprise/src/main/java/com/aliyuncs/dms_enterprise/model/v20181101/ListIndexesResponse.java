@@ -77,23 +77,15 @@ public class ListIndexesResponse extends AcsResponse {
 
 	public static class Index {
 
-		private String tableId;
-
 		private String indexName;
+
+		private String indexType;
+
+		private String tableId;
 
 		private String indexId;
 
 		private String indexComment;
-
-		private String indexType;
-
-		public String getTableId() {
-			return this.tableId;
-		}
-
-		public void setTableId(String tableId) {
-			this.tableId = tableId;
-		}
 
 		public String getIndexName() {
 			return this.indexName;
@@ -101,6 +93,22 @@ public class ListIndexesResponse extends AcsResponse {
 
 		public void setIndexName(String indexName) {
 			this.indexName = indexName;
+		}
+
+		public String getIndexType() {
+			return this.indexType;
+		}
+
+		public void setIndexType(String indexType) {
+			this.indexType = indexType;
+		}
+
+		public String getTableId() {
+			return this.tableId;
+		}
+
+		public void setTableId(String tableId) {
+			this.tableId = tableId;
 		}
 
 		public String getIndexId() {
@@ -117,14 +125,6 @@ public class ListIndexesResponse extends AcsResponse {
 
 		public void setIndexComment(String indexComment) {
 			this.indexComment = indexComment;
-		}
-
-		public String getIndexType() {
-			return this.indexType;
-		}
-
-		public void setIndexType(String indexType) {
-			this.indexType = indexType;
 		}
 	}
 

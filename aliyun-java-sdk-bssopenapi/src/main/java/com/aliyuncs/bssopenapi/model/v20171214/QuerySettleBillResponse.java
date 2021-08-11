@@ -209,6 +209,12 @@ public class QuerySettleBillResponse extends AcsResponse {
 
 			private String commodityCode;
 
+			private String billAccountID;
+
+			private String billAccountName;
+
+			private String bizType;
+
 			public String getRecordID() {
 				return this.recordID;
 			}
@@ -447,6 +453,30 @@ public class QuerySettleBillResponse extends AcsResponse {
 
 			public void setCommodityCode(String commodityCode) {
 				this.commodityCode = commodityCode;
+			}
+
+			public String getBillAccountID() {
+				return this.billAccountID;
+			}
+
+			public void setBillAccountID(String billAccountID) {
+				this.billAccountID = billAccountID;
+			}
+
+			public String getBillAccountName() {
+				return this.billAccountName;
+			}
+
+			public void setBillAccountName(String billAccountName) {
+				this.billAccountName = billAccountName;
+			}
+
+			public String getBizType() {
+				return this.bizType;
+			}
+
+			public void setBizType(String bizType) {
+				this.bizType = bizType;
 			}
 		}
 	}

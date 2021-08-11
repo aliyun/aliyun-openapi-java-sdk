@@ -32,6 +32,10 @@ public class CreateOTADynamicUpgradeJobRequest extends RpcAcsRequest<CreateOTADy
 
 	private Integer timeoutInMinutes;
 
+	private Boolean needConfirm;
+
+	private Boolean needPush;
+
 	private String iotInstanceId;
 
 	private List<Tag> tags;
@@ -86,6 +90,28 @@ public class CreateOTADynamicUpgradeJobRequest extends RpcAcsRequest<CreateOTADy
 		this.timeoutInMinutes = timeoutInMinutes;
 		if(timeoutInMinutes != null){
 			putQueryParameter("TimeoutInMinutes", timeoutInMinutes.toString());
+		}
+	}
+
+	public Boolean getNeedConfirm() {
+		return this.needConfirm;
+	}
+
+	public void setNeedConfirm(Boolean needConfirm) {
+		this.needConfirm = needConfirm;
+		if(needConfirm != null){
+			putQueryParameter("NeedConfirm", needConfirm.toString());
+		}
+	}
+
+	public Boolean getNeedPush() {
+		return this.needPush;
+	}
+
+	public void setNeedPush(Boolean needPush) {
+		this.needPush = needPush;
+		if(needPush != null){
+			putQueryParameter("NeedPush", needPush.toString());
 		}
 	}
 

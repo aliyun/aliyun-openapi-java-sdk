@@ -34,6 +34,8 @@ public class ModifySiteMonitorRequest extends RpcAcsRequest<ModifySiteMonitorRes
 
 	private String alertIds;
 
+	private String intervalUnit;
+
 	private String interval;
 
 	private String taskId;
@@ -94,6 +96,17 @@ public class ModifySiteMonitorRequest extends RpcAcsRequest<ModifySiteMonitorRes
 		this.alertIds = alertIds;
 		if(alertIds != null){
 			putQueryParameter("AlertIds", alertIds);
+		}
+	}
+
+	public String getIntervalUnit() {
+		return this.intervalUnit;
+	}
+
+	public void setIntervalUnit(String intervalUnit) {
+		this.intervalUnit = intervalUnit;
+		if(intervalUnit != null){
+			putQueryParameter("IntervalUnit", intervalUnit);
 		}
 	}
 

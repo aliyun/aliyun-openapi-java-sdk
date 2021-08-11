@@ -31,6 +31,8 @@ public class QueryInferenceServerResponse extends AcsResponse {
 
 	private String code;
 
+	private Long totalSize;
+
 	private List<FunctionsItem> functions;
 
 	public String getMessage() {
@@ -55,6 +57,14 @@ public class QueryInferenceServerResponse extends AcsResponse {
 
 	public void setCode(String code) {
 		this.code = code;
+	}
+
+	public Long getTotalSize() {
+		return this.totalSize;
+	}
+
+	public void setTotalSize(Long totalSize) {
+		this.totalSize = totalSize;
 	}
 
 	public List<FunctionsItem> getFunctions() {
@@ -141,5 +151,10 @@ public class QueryInferenceServerResponse extends AcsResponse {
 	@Override
 	public QueryInferenceServerResponse getInstance(UnmarshallerContext context) {
 		return	QueryInferenceServerResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

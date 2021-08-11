@@ -39,21 +39,21 @@ public class ListDeviceGroupsResponseUnmarshaller {
 			List<ListItem> list = new ArrayList<ListItem>();
 			for (int j = 0; j < _ctx.lengthValue("ListDeviceGroupsResponse.Data["+ i +"].List.Length"); j++) {
 				ListItem listItem = new ListItem();
-				listItem.setInstallAddress(_ctx.stringValue("ListDeviceGroupsResponse.Data["+ i +"].List["+ j +"].InstallAddress"));
-				listItem.setDeviceComputeStatus(_ctx.stringValue("ListDeviceGroupsResponse.Data["+ i +"].List["+ j +"].DeviceComputeStatus"));
-				listItem.setDeviceSn(_ctx.stringValue("ListDeviceGroupsResponse.Data["+ i +"].List["+ j +"].DeviceSn"));
 				listItem.setDeviceStreamStatus(_ctx.stringValue("ListDeviceGroupsResponse.Data["+ i +"].List["+ j +"].DeviceStreamStatus"));
-				listItem.setDeviceGroup(_ctx.stringValue("ListDeviceGroupsResponse.Data["+ i +"].List["+ j +"].DeviceGroup"));
-				listItem.setCodingFormat(_ctx.stringValue("ListDeviceGroupsResponse.Data["+ i +"].List["+ j +"].CodingFormat"));
-				listItem.setType(_ctx.stringValue("ListDeviceGroupsResponse.Data["+ i +"].List["+ j +"].Type"));
-				listItem.setRegionName(_ctx.stringValue("ListDeviceGroupsResponse.Data["+ i +"].List["+ j +"].RegionName"));
-				listItem.setDataSourceType(_ctx.stringValue("ListDeviceGroupsResponse.Data["+ i +"].List["+ j +"].DataSourceType"));
-				listItem.setDeviceCode(_ctx.stringValue("ListDeviceGroupsResponse.Data["+ i +"].List["+ j +"].DeviceCode"));
+				listItem.setDeviceName(_ctx.stringValue("ListDeviceGroupsResponse.Data["+ i +"].List["+ j +"].DeviceName"));
 				listItem.setDeviceStatus(_ctx.stringValue("ListDeviceGroupsResponse.Data["+ i +"].List["+ j +"].DeviceStatus"));
 				listItem.setRegionId(_ctx.stringValue("ListDeviceGroupsResponse.Data["+ i +"].List["+ j +"].RegionId"));
-				listItem.setBitRate(_ctx.stringValue("ListDeviceGroupsResponse.Data["+ i +"].List["+ j +"].BitRate"));
+				listItem.setDeviceSn(_ctx.stringValue("ListDeviceGroupsResponse.Data["+ i +"].List["+ j +"].DeviceSn"));
+				listItem.setDeviceComputeStatus(_ctx.stringValue("ListDeviceGroupsResponse.Data["+ i +"].List["+ j +"].DeviceComputeStatus"));
+				listItem.setInstallAddress(_ctx.stringValue("ListDeviceGroupsResponse.Data["+ i +"].List["+ j +"].InstallAddress"));
+				listItem.setDeviceGroup(_ctx.stringValue("ListDeviceGroupsResponse.Data["+ i +"].List["+ j +"].DeviceGroup"));
+				listItem.setRegionName(_ctx.stringValue("ListDeviceGroupsResponse.Data["+ i +"].List["+ j +"].RegionName"));
+				listItem.setDataSourceType(_ctx.stringValue("ListDeviceGroupsResponse.Data["+ i +"].List["+ j +"].DataSourceType"));
 				listItem.setResolvingPower(_ctx.stringValue("ListDeviceGroupsResponse.Data["+ i +"].List["+ j +"].ResolvingPower"));
-				listItem.setDeviceName(_ctx.stringValue("ListDeviceGroupsResponse.Data["+ i +"].List["+ j +"].DeviceName"));
+				listItem.setDeviceCode(_ctx.stringValue("ListDeviceGroupsResponse.Data["+ i +"].List["+ j +"].DeviceCode"));
+				listItem.setBitRate(_ctx.stringValue("ListDeviceGroupsResponse.Data["+ i +"].List["+ j +"].BitRate"));
+				listItem.setCodingFormat(_ctx.stringValue("ListDeviceGroupsResponse.Data["+ i +"].List["+ j +"].CodingFormat"));
+				listItem.setType(_ctx.stringValue("ListDeviceGroupsResponse.Data["+ i +"].List["+ j +"].Type"));
 
 				list.add(listItem);
 			}

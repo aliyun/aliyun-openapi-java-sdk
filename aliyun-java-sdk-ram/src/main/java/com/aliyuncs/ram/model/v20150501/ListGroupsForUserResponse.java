@@ -47,11 +47,21 @@ public class ListGroupsForUserResponse extends AcsResponse {
 
 	public static class Group {
 
+		private String groupId;
+
 		private String groupName;
 
 		private String comments;
 
 		private String joinDate;
+
+		public String getGroupId() {
+			return this.groupId;
+		}
+
+		public void setGroupId(String groupId) {
+			this.groupId = groupId;
+		}
 
 		public String getGroupName() {
 			return this.groupName;

@@ -34,14 +34,14 @@ public class ListRolesResponseUnmarshaller {
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListRolesResponse.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
-			dataItem.setRoleGroupId(_ctx.longValue("ListRolesResponse.Data["+ i +"].RoleGroupId"));
-			dataItem.setBuId(_ctx.longValue("ListRolesResponse.Data["+ i +"].BuId"));
-			dataItem.setDescription(_ctx.stringValue("ListRolesResponse.Data["+ i +"].Description"));
-			dataItem.setCreateTime(_ctx.stringValue("ListRolesResponse.Data["+ i +"].CreateTime"));
-			dataItem.setTitle(_ctx.stringValue("ListRolesResponse.Data["+ i +"].Title"));
-			dataItem.setRoleGroupName(_ctx.stringValue("ListRolesResponse.Data["+ i +"].RoleGroupName"));
-			dataItem.setCode(_ctx.stringValue("ListRolesResponse.Data["+ i +"].Code"));
 			dataItem.setRoleId(_ctx.longValue("ListRolesResponse.Data["+ i +"].RoleId"));
+			dataItem.setCreateTime(_ctx.stringValue("ListRolesResponse.Data["+ i +"].CreateTime"));
+			dataItem.setBuId(_ctx.longValue("ListRolesResponse.Data["+ i +"].BuId"));
+			dataItem.setTitle(_ctx.stringValue("ListRolesResponse.Data["+ i +"].Title"));
+			dataItem.setCode(_ctx.stringValue("ListRolesResponse.Data["+ i +"].Code"));
+			dataItem.setDescription(_ctx.stringValue("ListRolesResponse.Data["+ i +"].Description"));
+			dataItem.setRoleGroupId(_ctx.longValue("ListRolesResponse.Data["+ i +"].RoleGroupId"));
+			dataItem.setRoleGroupName(_ctx.stringValue("ListRolesResponse.Data["+ i +"].RoleGroupName"));
 
 			data.add(dataItem);
 		}

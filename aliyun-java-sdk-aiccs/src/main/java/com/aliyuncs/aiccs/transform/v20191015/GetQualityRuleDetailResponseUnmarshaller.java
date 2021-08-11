@@ -32,11 +32,11 @@ public class GetQualityRuleDetailResponseUnmarshaller {
 		getQualityRuleDetailResponse.setSuccess(_ctx.booleanValue("GetQualityRuleDetailResponse.Success"));
 
 		Data data = new Data();
-		data.setRuleCreateTime(_ctx.stringValue("GetQualityRuleDetailResponse.Data.RuleCreateTime"));
-		data.setMatchType(_ctx.integerValue("GetQualityRuleDetailResponse.Data.MatchType"));
-		data.setRuleId(_ctx.longValue("GetQualityRuleDetailResponse.Data.RuleId"));
 		data.setRuleTag(_ctx.integerValue("GetQualityRuleDetailResponse.Data.RuleTag"));
+		data.setMatchType(_ctx.integerValue("GetQualityRuleDetailResponse.Data.MatchType"));
 		data.setName(_ctx.stringValue("GetQualityRuleDetailResponse.Data.Name"));
+		data.setRuleCreateTime(_ctx.stringValue("GetQualityRuleDetailResponse.Data.RuleCreateTime"));
+		data.setRuleId(_ctx.longValue("GetQualityRuleDetailResponse.Data.RuleId"));
 
 		List<String> keyWords = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("GetQualityRuleDetailResponse.Data.KeyWords.Length"); i++) {

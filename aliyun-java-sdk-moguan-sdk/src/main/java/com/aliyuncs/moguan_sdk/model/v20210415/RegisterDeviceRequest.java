@@ -35,7 +35,7 @@ public class RegisterDeviceRequest extends RpcAcsRequest<RegisterDeviceResponse>
 
 	private String deviceId;
 	public RegisterDeviceRequest() {
-		super("moguan-sdk", "2021-04-15", "RegisterDevice", "visionai");
+		super("moguan-sdk", "2021-04-15", "RegisterDevice");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

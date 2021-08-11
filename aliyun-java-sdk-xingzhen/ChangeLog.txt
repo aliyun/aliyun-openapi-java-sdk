@@ -1,3 +1,6 @@
+2021-07-30 Version: 1.4.0
+- Version update.
+
 2020-09-14 Version: 1.0.0
 - Support app tree.
 

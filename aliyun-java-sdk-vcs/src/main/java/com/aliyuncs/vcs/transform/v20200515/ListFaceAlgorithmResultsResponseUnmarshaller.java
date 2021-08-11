@@ -32,30 +32,30 @@ public class ListFaceAlgorithmResultsResponseUnmarshaller {
 		listFaceAlgorithmResultsResponse.setCode(_ctx.stringValue("ListFaceAlgorithmResultsResponse.Code"));
 
 		Data data = new Data();
-		data.setTotalCount(_ctx.integerValue("ListFaceAlgorithmResultsResponse.Data.TotalCount"));
-		data.setPageSize(_ctx.integerValue("ListFaceAlgorithmResultsResponse.Data.PageSize"));
 		data.setTotalPage(_ctx.integerValue("ListFaceAlgorithmResultsResponse.Data.TotalPage"));
 		data.setPageNumber(_ctx.integerValue("ListFaceAlgorithmResultsResponse.Data.PageNumber"));
+		data.setPageSize(_ctx.integerValue("ListFaceAlgorithmResultsResponse.Data.PageSize"));
+		data.setTotalCount(_ctx.integerValue("ListFaceAlgorithmResultsResponse.Data.TotalCount"));
 
 		List<RecordsItem> records = new ArrayList<RecordsItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListFaceAlgorithmResultsResponse.Data.Records.Length"); i++) {
 			RecordsItem recordsItem = new RecordsItem();
-			recordsItem.setGenderCode(_ctx.stringValue("ListFaceAlgorithmResultsResponse.Data.Records["+ i +"].GenderCode"));
-			recordsItem.setFaceId(_ctx.stringValue("ListFaceAlgorithmResultsResponse.Data.Records["+ i +"].FaceId"));
-			recordsItem.setPicUrlPath(_ctx.stringValue("ListFaceAlgorithmResultsResponse.Data.Records["+ i +"].PicUrlPath"));
-			recordsItem.setCorpId(_ctx.stringValue("ListFaceAlgorithmResultsResponse.Data.Records["+ i +"].CorpId"));
-			recordsItem.setRightBottomX(_ctx.floatValue("ListFaceAlgorithmResultsResponse.Data.Records["+ i +"].RightBottomX"));
-			recordsItem.setTargetPicUrlPath(_ctx.stringValue("ListFaceAlgorithmResultsResponse.Data.Records["+ i +"].TargetPicUrlPath"));
 			recordsItem.setRightBottomY(_ctx.floatValue("ListFaceAlgorithmResultsResponse.Data.Records["+ i +"].RightBottomY"));
+			recordsItem.setDataSourceId(_ctx.stringValue("ListFaceAlgorithmResultsResponse.Data.Records["+ i +"].DataSourceId"));
+			recordsItem.setPicUrlPath(_ctx.stringValue("ListFaceAlgorithmResultsResponse.Data.Records["+ i +"].PicUrlPath"));
+			recordsItem.setFaceId(_ctx.stringValue("ListFaceAlgorithmResultsResponse.Data.Records["+ i +"].FaceId"));
+			recordsItem.setRightBottomX(_ctx.floatValue("ListFaceAlgorithmResultsResponse.Data.Records["+ i +"].RightBottomX"));
 			recordsItem.setSourceId(_ctx.stringValue("ListFaceAlgorithmResultsResponse.Data.Records["+ i +"].SourceId"));
 			recordsItem.setMaxAge(_ctx.stringValue("ListFaceAlgorithmResultsResponse.Data.Records["+ i +"].MaxAge"));
-			recordsItem.setLeftTopY(_ctx.floatValue("ListFaceAlgorithmResultsResponse.Data.Records["+ i +"].LeftTopY"));
-			recordsItem.setLeftTopX(_ctx.floatValue("ListFaceAlgorithmResultsResponse.Data.Records["+ i +"].LeftTopX"));
-			recordsItem.setCapStyle(_ctx.stringValue("ListFaceAlgorithmResultsResponse.Data.Records["+ i +"].CapStyle"));
-			recordsItem.setMinAge(_ctx.stringValue("ListFaceAlgorithmResultsResponse.Data.Records["+ i +"].MinAge"));
-			recordsItem.setShotTime(_ctx.stringValue("ListFaceAlgorithmResultsResponse.Data.Records["+ i +"].ShotTime"));
-			recordsItem.setDataSourceId(_ctx.stringValue("ListFaceAlgorithmResultsResponse.Data.Records["+ i +"].DataSourceId"));
+			recordsItem.setTargetPicUrlPath(_ctx.stringValue("ListFaceAlgorithmResultsResponse.Data.Records["+ i +"].TargetPicUrlPath"));
 			recordsItem.setHairStyle(_ctx.stringValue("ListFaceAlgorithmResultsResponse.Data.Records["+ i +"].HairStyle"));
+			recordsItem.setLeftTopY(_ctx.floatValue("ListFaceAlgorithmResultsResponse.Data.Records["+ i +"].LeftTopY"));
+			recordsItem.setMinAge(_ctx.stringValue("ListFaceAlgorithmResultsResponse.Data.Records["+ i +"].MinAge"));
+			recordsItem.setCorpId(_ctx.stringValue("ListFaceAlgorithmResultsResponse.Data.Records["+ i +"].CorpId"));
+			recordsItem.setShotTime(_ctx.stringValue("ListFaceAlgorithmResultsResponse.Data.Records["+ i +"].ShotTime"));
+			recordsItem.setGenderCode(_ctx.stringValue("ListFaceAlgorithmResultsResponse.Data.Records["+ i +"].GenderCode"));
+			recordsItem.setCapStyle(_ctx.stringValue("ListFaceAlgorithmResultsResponse.Data.Records["+ i +"].CapStyle"));
+			recordsItem.setLeftTopX(_ctx.floatValue("ListFaceAlgorithmResultsResponse.Data.Records["+ i +"].LeftTopX"));
 
 			records.add(recordsItem);
 		}

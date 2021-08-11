@@ -25,15 +25,31 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListStackGroupsResponse extends AcsResponse {
 
+	private Integer totalCount;
+
+	private Integer pageSize;
+
 	private String requestId;
 
 	private Integer pageNumber;
 
-	private Integer pageSize;
-
-	private Integer totalCount;
-
 	private List<StackGroup> stackGroups;
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -51,22 +67,6 @@ public class ListStackGroupsResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
-	}
-
 	public List<StackGroup> getStackGroups() {
 		return this.stackGroups;
 	}
@@ -77,33 +77,19 @@ public class ListStackGroupsResponse extends AcsResponse {
 
 	public static class StackGroup {
 
-		private String stackGroupName;
-
-		private String stackGroupId;
-
 		private String status;
-
-		private String description;
-
-		private String driftDetectionTime;
 
 		private String stackGroupDriftStatus;
 
-		public String getStackGroupName() {
-			return this.stackGroupName;
-		}
+		private String description;
 
-		public void setStackGroupName(String stackGroupName) {
-			this.stackGroupName = stackGroupName;
-		}
+		private String resourceGroupId;
 
-		public String getStackGroupId() {
-			return this.stackGroupId;
-		}
+		private String stackGroupName;
 
-		public void setStackGroupId(String stackGroupId) {
-			this.stackGroupId = stackGroupId;
-		}
+		private String driftDetectionTime;
+
+		private String stackGroupId;
 
 		public String getStatus() {
 			return this.status;
@@ -111,6 +97,14 @@ public class ListStackGroupsResponse extends AcsResponse {
 
 		public void setStatus(String status) {
 			this.status = status;
+		}
+
+		public String getStackGroupDriftStatus() {
+			return this.stackGroupDriftStatus;
+		}
+
+		public void setStackGroupDriftStatus(String stackGroupDriftStatus) {
+			this.stackGroupDriftStatus = stackGroupDriftStatus;
 		}
 
 		public String getDescription() {
@@ -121,6 +115,22 @@ public class ListStackGroupsResponse extends AcsResponse {
 			this.description = description;
 		}
 
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
+		public String getStackGroupName() {
+			return this.stackGroupName;
+		}
+
+		public void setStackGroupName(String stackGroupName) {
+			this.stackGroupName = stackGroupName;
+		}
+
 		public String getDriftDetectionTime() {
 			return this.driftDetectionTime;
 		}
@@ -129,12 +139,12 @@ public class ListStackGroupsResponse extends AcsResponse {
 			this.driftDetectionTime = driftDetectionTime;
 		}
 
-		public String getStackGroupDriftStatus() {
-			return this.stackGroupDriftStatus;
+		public String getStackGroupId() {
+			return this.stackGroupId;
 		}
 
-		public void setStackGroupDriftStatus(String stackGroupDriftStatus) {
-			this.stackGroupDriftStatus = stackGroupDriftStatus;
+		public void setStackGroupId(String stackGroupId) {
+			this.stackGroupId = stackGroupId;
 		}
 	}
 

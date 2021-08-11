@@ -27,8 +27,8 @@ public class CreateVirtualMFADeviceResponseUnmarshaller {
 
 		VirtualMFADevice virtualMFADevice = new VirtualMFADevice();
 		virtualMFADevice.setSerialNumber(_ctx.stringValue("CreateVirtualMFADeviceResponse.VirtualMFADevice.SerialNumber"));
-		virtualMFADevice.setBase32StringSeed(_ctx.stringValue("CreateVirtualMFADeviceResponse.VirtualMFADevice.Base32StringSeed"));
 		virtualMFADevice.setQRCodePNG(_ctx.stringValue("CreateVirtualMFADeviceResponse.VirtualMFADevice.QRCodePNG"));
+		virtualMFADevice.setBase32StringSeed(_ctx.stringValue("CreateVirtualMFADeviceResponse.VirtualMFADevice.Base32StringSeed"));
 		createVirtualMFADeviceResponse.setVirtualMFADevice(virtualMFADevice);
 	 
 	 	return createVirtualMFADeviceResponse;

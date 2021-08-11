@@ -103,7 +103,7 @@ public class ConfigureDtsJobRequest extends RpcAcsRequest<ConfigureDtsJobRespons
 
 	private String sourceEndpointEngineName;
 	public ConfigureDtsJobRequest() {
-		super("Dts", "2020-01-01", "ConfigureDtsJob");
+		super("Dts", "2020-01-01", "ConfigureDtsJob", "dts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

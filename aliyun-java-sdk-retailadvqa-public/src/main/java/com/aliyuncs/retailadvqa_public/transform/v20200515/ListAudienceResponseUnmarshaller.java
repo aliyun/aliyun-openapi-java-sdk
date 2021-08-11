@@ -28,27 +28,28 @@ public class ListAudienceResponseUnmarshaller {
 	public static ListAudienceResponse unmarshall(ListAudienceResponse listAudienceResponse, UnmarshallerContext _ctx) {
 		
 		listAudienceResponse.setRequestId(_ctx.stringValue("ListAudienceResponse.RequestId"));
-		listAudienceResponse.setErrorCode(_ctx.stringValue("ListAudienceResponse.ErrorCode"));
 		listAudienceResponse.setErrorDesc(_ctx.stringValue("ListAudienceResponse.ErrorDesc"));
-		listAudienceResponse.setSuccess(_ctx.booleanValue("ListAudienceResponse.Success"));
 		listAudienceResponse.setTraceId(_ctx.stringValue("ListAudienceResponse.TraceId"));
+		listAudienceResponse.setErrorCode(_ctx.stringValue("ListAudienceResponse.ErrorCode"));
+		listAudienceResponse.setSuccess(_ctx.booleanValue("ListAudienceResponse.Success"));
 
 		Data data = new Data();
-		data.setTotalNum(_ctx.stringValue("ListAudienceResponse.Data.TotalNum"));
 		data.setPageNum(_ctx.stringValue("ListAudienceResponse.Data.PageNum"));
 		data.setPageSize(_ctx.stringValue("ListAudienceResponse.Data.PageSize"));
+		data.setTotalNum(_ctx.stringValue("ListAudienceResponse.Data.TotalNum"));
 
 		List<ContentItem> content = new ArrayList<ContentItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListAudienceResponse.Data.Content.Length"); i++) {
 			ContentItem contentItem = new ContentItem();
-			contentItem.setId(_ctx.stringValue("ListAudienceResponse.Data.Content["+ i +"].Id"));
-			contentItem.setName(_ctx.stringValue("ListAudienceResponse.Data.Content["+ i +"].Name"));
+			contentItem.setLatestDataModifyStatus(_ctx.stringValue("ListAudienceResponse.Data.Content["+ i +"].LatestDataModifyStatus"));
+			contentItem.setErrorMessage(_ctx.stringValue("ListAudienceResponse.Data.Content["+ i +"].ErrorMessage"));
+			contentItem.setNumberOfAudiences(_ctx.stringValue("ListAudienceResponse.Data.Content["+ i +"].NumberOfAudiences"));
+			contentItem.setLatestDataModifyTime(_ctx.stringValue("ListAudienceResponse.Data.Content["+ i +"].LatestDataModifyTime"));
 			contentItem.setGmtCreate(_ctx.stringValue("ListAudienceResponse.Data.Content["+ i +"].GmtCreate"));
 			contentItem.setGmtModified(_ctx.stringValue("ListAudienceResponse.Data.Content["+ i +"].GmtModified"));
-			contentItem.setLatestDataModifyTime(_ctx.stringValue("ListAudienceResponse.Data.Content["+ i +"].LatestDataModifyTime"));
-			contentItem.setLatestDataModifyStatus(_ctx.stringValue("ListAudienceResponse.Data.Content["+ i +"].LatestDataModifyStatus"));
-			contentItem.setNumberOfAudiences(_ctx.stringValue("ListAudienceResponse.Data.Content["+ i +"].NumberOfAudiences"));
-			contentItem.setErrorMessage(_ctx.stringValue("ListAudienceResponse.Data.Content["+ i +"].ErrorMessage"));
+			contentItem.setName(_ctx.stringValue("ListAudienceResponse.Data.Content["+ i +"].Name"));
+			contentItem.setIsDynamic(_ctx.booleanValue("ListAudienceResponse.Data.Content["+ i +"].IsDynamic"));
+			contentItem.setId(_ctx.stringValue("ListAudienceResponse.Data.Content["+ i +"].Id"));
 
 			List<String> mappingTypes = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("ListAudienceResponse.Data.Content["+ i +"].MappingTypes.Length"); j++) {

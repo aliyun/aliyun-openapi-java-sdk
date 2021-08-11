@@ -24,19 +24,19 @@ public class GetDeviceCaptureStrategyResponseUnmarshaller {
 	public static GetDeviceCaptureStrategyResponse unmarshall(GetDeviceCaptureStrategyResponse getDeviceCaptureStrategyResponse, UnmarshallerContext _ctx) {
 		
 		getDeviceCaptureStrategyResponse.setRequestId(_ctx.stringValue("GetDeviceCaptureStrategyResponse.RequestId"));
-		getDeviceCaptureStrategyResponse.setMessage(_ctx.stringValue("GetDeviceCaptureStrategyResponse.Message"));
 		getDeviceCaptureStrategyResponse.setCode(_ctx.stringValue("GetDeviceCaptureStrategyResponse.Code"));
+		getDeviceCaptureStrategyResponse.setMessage(_ctx.stringValue("GetDeviceCaptureStrategyResponse.Message"));
 
 		Data data = new Data();
 		data.setDeviceType(_ctx.stringValue("GetDeviceCaptureStrategyResponse.Data.DeviceType"));
-		data.setSundayCaptureStrategy(_ctx.stringValue("GetDeviceCaptureStrategyResponse.Data.SundayCaptureStrategy"));
+		data.setDeviceCode(_ctx.stringValue("GetDeviceCaptureStrategyResponse.Data.DeviceCode"));
 		data.setMondayCaptureStrategy(_ctx.stringValue("GetDeviceCaptureStrategyResponse.Data.MondayCaptureStrategy"));
-		data.setFridayCaptureStrategy(_ctx.stringValue("GetDeviceCaptureStrategyResponse.Data.FridayCaptureStrategy"));
 		data.setTuesdayCaptureStrategy(_ctx.stringValue("GetDeviceCaptureStrategyResponse.Data.TuesdayCaptureStrategy"));
 		data.setWednesdayCaptureStrategy(_ctx.stringValue("GetDeviceCaptureStrategyResponse.Data.WednesdayCaptureStrategy"));
-		data.setDeviceCode(_ctx.stringValue("GetDeviceCaptureStrategyResponse.Data.DeviceCode"));
 		data.setThursdayCaptureStrategy(_ctx.stringValue("GetDeviceCaptureStrategyResponse.Data.ThursdayCaptureStrategy"));
+		data.setFridayCaptureStrategy(_ctx.stringValue("GetDeviceCaptureStrategyResponse.Data.FridayCaptureStrategy"));
 		data.setSaturdayCaptureStrategy(_ctx.stringValue("GetDeviceCaptureStrategyResponse.Data.SaturdayCaptureStrategy"));
+		data.setSundayCaptureStrategy(_ctx.stringValue("GetDeviceCaptureStrategyResponse.Data.SundayCaptureStrategy"));
 		getDeviceCaptureStrategyResponse.setData(data);
 	 
 	 	return getDeviceCaptureStrategyResponse;

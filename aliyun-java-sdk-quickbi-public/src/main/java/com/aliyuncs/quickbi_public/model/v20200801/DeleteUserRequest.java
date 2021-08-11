@@ -25,6 +25,8 @@ import com.aliyuncs.quickbi_public.Endpoint;
 public class DeleteUserRequest extends RpcAcsRequest<DeleteUserResponse> {
 	   
 
+	private String transferUserId;
+
 	private String userId;
 	public DeleteUserRequest() {
 		super("quickbi-public", "2020-08-01", "DeleteUser", "quickbi");
@@ -33,6 +35,17 @@ public class DeleteUserRequest extends RpcAcsRequest<DeleteUserResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getTransferUserId() {
+		return this.transferUserId;
+	}
+
+	public void setTransferUserId(String transferUserId) {
+		this.transferUserId = transferUserId;
+		if(transferUserId != null){
+			putQueryParameter("TransferUserId", transferUserId);
+		}
 	}
 
 	public String getUserId() {

@@ -83,6 +83,10 @@ public class DescribeInstanceDetailsResponse extends AcsResponse {
 
 			private String status;
 
+			private String ipVersion;
+
+			private String ipMode;
+
 			public String getEip() {
 				return this.eip;
 			}
@@ -97,6 +101,22 @@ public class DescribeInstanceDetailsResponse extends AcsResponse {
 
 			public void setStatus(String status) {
 				this.status = status;
+			}
+
+			public String getIpVersion() {
+				return this.ipVersion;
+			}
+
+			public void setIpVersion(String ipVersion) {
+				this.ipVersion = ipVersion;
+			}
+
+			public String getIpMode() {
+				return this.ipMode;
+			}
+
+			public void setIpMode(String ipMode) {
+				this.ipMode = ipMode;
 			}
 		}
 	}

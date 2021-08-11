@@ -47,7 +47,7 @@ public class QueryMediaCensorJobListRequest extends RpcAcsRequest<QueryMediaCens
 
 	private String pipelineId;
 	public QueryMediaCensorJobListRequest() {
-		super("Mts", "2014-06-18", "QueryMediaCensorJobList");
+		super("Mts", "2014-06-18", "QueryMediaCensorJobList", "mts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

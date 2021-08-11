@@ -33,6 +33,8 @@ public class BatchStopGameSessionsRequest extends RpcAcsRequest<BatchStopGameSes
 
 	private String token;
 
+	private String tags;
+
 	private String trackInfo;
 	public BatchStopGameSessionsRequest() {
 		super("CloudGameAPI", "2020-07-28", "BatchStopGameSessions");
@@ -84,6 +86,17 @@ public class BatchStopGameSessionsRequest extends RpcAcsRequest<BatchStopGameSes
 		this.token = token;
 		if(token != null){
 			putQueryParameter("Token", token);
+		}
+	}
+
+	public String getTags() {
+		return this.tags;
+	}
+
+	public void setTags(String tags) {
+		this.tags = tags;
+		if(tags != null){
+			putQueryParameter("Tags", tags);
 		}
 	}
 

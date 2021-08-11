@@ -29,7 +29,7 @@ public class QueryAccountListRequest extends RpcAcsRequest<QueryAccountListRespo
 
 	private Integer pageNumber;
 	public QueryAccountListRequest() {
-		super("openanalytics-open", "2018-06-19", "QueryAccountList", "openanalytics-cap");
+		super("openanalytics-open", "2018-06-19", "QueryAccountList", "openanalytics");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

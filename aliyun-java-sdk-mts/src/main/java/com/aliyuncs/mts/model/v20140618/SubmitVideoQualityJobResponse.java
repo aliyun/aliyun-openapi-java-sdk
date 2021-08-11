@@ -68,4 +68,9 @@ public class SubmitVideoQualityJobResponse extends AcsResponse {
 	public SubmitVideoQualityJobResponse getInstance(UnmarshallerContext context) {
 		return	SubmitVideoQualityJobResponseUnmarshaller.unmarshall(this, context);
 	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
+	}
 }

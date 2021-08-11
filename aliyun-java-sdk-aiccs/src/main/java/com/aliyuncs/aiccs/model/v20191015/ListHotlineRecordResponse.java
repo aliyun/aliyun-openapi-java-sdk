@@ -25,9 +25,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListHotlineRecordResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String message;
+
+	private String requestId;
 
 	private String code;
 
@@ -35,20 +35,20 @@ public class ListHotlineRecordResponse extends AcsResponse {
 
 	private List<DataItem> data;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public String getMessage() {
 		return this.message;
 	}
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getCode() {
@@ -77,23 +77,15 @@ public class ListHotlineRecordResponse extends AcsResponse {
 
 	public static class DataItem {
 
-		private String connectionId;
-
 		private Long endTime;
-
-		private String callId;
 
 		private Long startTime;
 
+		private String connectionId;
+
+		private String callId;
+
 		private String url;
-
-		public String getConnectionId() {
-			return this.connectionId;
-		}
-
-		public void setConnectionId(String connectionId) {
-			this.connectionId = connectionId;
-		}
 
 		public Long getEndTime() {
 			return this.endTime;
@@ -103,20 +95,28 @@ public class ListHotlineRecordResponse extends AcsResponse {
 			this.endTime = endTime;
 		}
 
-		public String getCallId() {
-			return this.callId;
-		}
-
-		public void setCallId(String callId) {
-			this.callId = callId;
-		}
-
 		public Long getStartTime() {
 			return this.startTime;
 		}
 
 		public void setStartTime(Long startTime) {
 			this.startTime = startTime;
+		}
+
+		public String getConnectionId() {
+			return this.connectionId;
+		}
+
+		public void setConnectionId(String connectionId) {
+			this.connectionId = connectionId;
+		}
+
+		public String getCallId() {
+			return this.callId;
+		}
+
+		public void setCallId(String callId) {
+			this.callId = callId;
 		}
 
 		public String getUrl() {

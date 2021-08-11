@@ -34,8 +34,8 @@ public class TaggingImageResponseUnmarshaller {
 		List<Tag> tags = new ArrayList<Tag>();
 		for (int i = 0; i < _ctx.lengthValue("TaggingImageResponse.Data.Tags.Length"); i++) {
 			Tag tag = new Tag();
-			tag.setConfidence(_ctx.floatValue("TaggingImageResponse.Data.Tags["+ i +"].Confidence"));
 			tag.setValue(_ctx.stringValue("TaggingImageResponse.Data.Tags["+ i +"].Value"));
+			tag.setConfidence(_ctx.floatValue("TaggingImageResponse.Data.Tags["+ i +"].Confidence"));
 
 			tags.add(tag);
 		}

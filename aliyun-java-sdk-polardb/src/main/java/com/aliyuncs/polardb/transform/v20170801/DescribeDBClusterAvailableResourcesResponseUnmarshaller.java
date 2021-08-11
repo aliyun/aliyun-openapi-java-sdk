@@ -33,8 +33,8 @@ public class DescribeDBClusterAvailableResourcesResponseUnmarshaller {
 		List<AvailableZone> availableZones = new ArrayList<AvailableZone>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDBClusterAvailableResourcesResponse.AvailableZones.Length"); i++) {
 			AvailableZone availableZone = new AvailableZone();
-			availableZone.setRegionId(_ctx.stringValue("DescribeDBClusterAvailableResourcesResponse.AvailableZones["+ i +"].RegionId"));
 			availableZone.setZoneId(_ctx.stringValue("DescribeDBClusterAvailableResourcesResponse.AvailableZones["+ i +"].ZoneId"));
+			availableZone.setRegionId(_ctx.stringValue("DescribeDBClusterAvailableResourcesResponse.AvailableZones["+ i +"].RegionId"));
 
 			List<SupportedEngine> supportedEngines = new ArrayList<SupportedEngine>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDBClusterAvailableResourcesResponse.AvailableZones["+ i +"].SupportedEngines.Length"); j++) {

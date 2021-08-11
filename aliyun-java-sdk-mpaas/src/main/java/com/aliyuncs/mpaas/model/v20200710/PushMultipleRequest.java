@@ -40,11 +40,15 @@ public class PushMultipleRequest extends RpcAcsRequest<PushMultipleResponse> {
 
 	private Long silent;
 
+	private String strategyContent;
+
 	private Long expiredSeconds;
 
 	private List<TargetMsg> targetMsgs;
 
 	private String appId;
+
+	private Integer strategyType;
 
 	private String workspaceId;
 	public PushMultipleRequest() {
@@ -133,6 +137,17 @@ public class PushMultipleRequest extends RpcAcsRequest<PushMultipleResponse> {
 		}
 	}
 
+	public String getStrategyContent() {
+		return this.strategyContent;
+	}
+
+	public void setStrategyContent(String strategyContent) {
+		this.strategyContent = strategyContent;
+		if(strategyContent != null){
+			putBodyParameter("StrategyContent", strategyContent);
+		}
+	}
+
 	public Long getExpiredSeconds() {
 		return this.expiredSeconds;
 	}
@@ -168,6 +183,17 @@ public class PushMultipleRequest extends RpcAcsRequest<PushMultipleResponse> {
 		this.appId = appId;
 		if(appId != null){
 			putBodyParameter("AppId", appId);
+		}
+	}
+
+	public Integer getStrategyType() {
+		return this.strategyType;
+	}
+
+	public void setStrategyType(Integer strategyType) {
+		this.strategyType = strategyType;
+		if(strategyType != null){
+			putBodyParameter("StrategyType", strategyType.toString());
 		}
 	}
 

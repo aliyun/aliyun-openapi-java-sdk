@@ -38,7 +38,7 @@ public class DescribeMigrationJobsRequest extends RpcAcsRequest<DescribeMigratio
 
 	private List<Tag> tags;
 	public DescribeMigrationJobsRequest() {
-		super("Dts", "2020-01-01", "DescribeMigrationJobs");
+		super("Dts", "2020-01-01", "DescribeMigrationJobs", "dts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

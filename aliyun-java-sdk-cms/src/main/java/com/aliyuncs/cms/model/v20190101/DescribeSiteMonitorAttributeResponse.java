@@ -262,6 +262,8 @@ public class DescribeSiteMonitorAttributeResponse extends AcsResponse {
 
 		private String taskId;
 
+		private String endTime;
+
 		private List<IspCity> ispCities;
 
 		private OptionJson optionJson;
@@ -312,6 +314,14 @@ public class DescribeSiteMonitorAttributeResponse extends AcsResponse {
 
 		public void setTaskId(String taskId) {
 			this.taskId = taskId;
+		}
+
+		public String getEndTime() {
+			return this.endTime;
+		}
+
+		public void setEndTime(String endTime) {
+			this.endTime = endTime;
 		}
 
 		public List<IspCity> getIspCities() {
@@ -412,6 +422,16 @@ public class DescribeSiteMonitorAttributeResponse extends AcsResponse {
 			private Integer authentication;
 
 			private Long traceroute;
+
+			private Boolean cert_verify;
+
+			private Boolean unfollow_redirect;
+
+			private Boolean proxy_protocol;
+
+			private String acceptable_response_code;
+
+			private String ipv6_task;
 
 			public String getDns_type() {
 				return this.dns_type;
@@ -563,6 +583,46 @@ public class DescribeSiteMonitorAttributeResponse extends AcsResponse {
 
 			public void setTraceroute(Long traceroute) {
 				this.traceroute = traceroute;
+			}
+
+			public Boolean getCert_verify() {
+				return this.cert_verify;
+			}
+
+			public void setCert_verify(Boolean cert_verify) {
+				this.cert_verify = cert_verify;
+			}
+
+			public Boolean getUnfollow_redirect() {
+				return this.unfollow_redirect;
+			}
+
+			public void setUnfollow_redirect(Boolean unfollow_redirect) {
+				this.unfollow_redirect = unfollow_redirect;
+			}
+
+			public Boolean getProxy_protocol() {
+				return this.proxy_protocol;
+			}
+
+			public void setProxy_protocol(Boolean proxy_protocol) {
+				this.proxy_protocol = proxy_protocol;
+			}
+
+			public String getAcceptable_response_code() {
+				return this.acceptable_response_code;
+			}
+
+			public void setAcceptable_response_code(String acceptable_response_code) {
+				this.acceptable_response_code = acceptable_response_code;
+			}
+
+			public String getIpv6_task() {
+				return this.ipv6_task;
+			}
+
+			public void setIpv6_task(String ipv6_task) {
+				this.ipv6_task = ipv6_task;
 			}
 		}
 	}

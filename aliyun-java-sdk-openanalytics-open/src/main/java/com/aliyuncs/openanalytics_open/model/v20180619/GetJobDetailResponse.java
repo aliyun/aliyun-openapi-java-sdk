@@ -76,6 +76,8 @@ public class GetJobDetailResponse extends AcsResponse {
 
 		private String executorInstances;
 
+		private String lastJobAttemptId;
+
 		public String getJobId() {
 			return this.jobId;
 		}
@@ -194,6 +196,14 @@ public class GetJobDetailResponse extends AcsResponse {
 
 		public void setExecutorInstances(String executorInstances) {
 			this.executorInstances = executorInstances;
+		}
+
+		public String getLastJobAttemptId() {
+			return this.lastJobAttemptId;
+		}
+
+		public void setLastJobAttemptId(String lastJobAttemptId) {
+			this.lastJobAttemptId = lastJobAttemptId;
 		}
 	}
 

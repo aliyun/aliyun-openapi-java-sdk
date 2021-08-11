@@ -39,6 +39,8 @@ public class ModifyHostAvailabilityRequest extends RpcAcsRequest<ModifyHostAvail
 
 	private Boolean taskOptionHttpNegative;
 
+	private Integer taskOptionInterval;
+
 	private Integer alertConfigNotifyType;
 
 	private String taskOptionTelnetOrPingHost;
@@ -147,6 +149,17 @@ public class ModifyHostAvailabilityRequest extends RpcAcsRequest<ModifyHostAvail
 		this.taskOptionHttpNegative = taskOptionHttpNegative;
 		if(taskOptionHttpNegative != null){
 			putQueryParameter("TaskOption.HttpNegative", taskOptionHttpNegative.toString());
+		}
+	}
+
+	public Integer getTaskOptionInterval() {
+		return this.taskOptionInterval;
+	}
+
+	public void setTaskOptionInterval(Integer taskOptionInterval) {
+		this.taskOptionInterval = taskOptionInterval;
+		if(taskOptionInterval != null){
+			putQueryParameter("TaskOption.Interval", taskOptionInterval.toString());
 		}
 	}
 

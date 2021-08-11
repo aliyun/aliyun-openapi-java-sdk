@@ -16,7 +16,6 @@ package com.aliyuncs.retailadvqa_public.model.v20200515;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
-import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 
 /**
@@ -37,7 +36,6 @@ public class LoadDataToLabelDataSetRequest extends RpcAcsRequest<LoadDataToLabel
 	private List<String> colNameLists;
 	public LoadDataToLabelDataSetRequest() {
 		super("retailadvqa-public", "2020-05-15", "LoadDataToLabelDataSet");
-		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
 

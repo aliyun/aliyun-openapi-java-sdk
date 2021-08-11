@@ -24,15 +24,31 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class JoinMeetingResponse extends AcsResponse {
 
+	private String message;
+
+	private String requestId;
+
 	private Integer errorCode;
 
 	private Boolean success;
 
-	private String requestId;
-
-	private String message;
-
 	private MeetingInfo meetingInfo;
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
 
 	public Integer getErrorCode() {
 		return this.errorCode;
@@ -50,22 +66,6 @@ public class JoinMeetingResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
 	public MeetingInfo getMeetingInfo() {
 		return this.meetingInfo;
 	}
@@ -76,44 +76,28 @@ public class JoinMeetingResponse extends AcsResponse {
 
 	public static class MeetingInfo {
 
-		private String meetingDomain;
-
-		private String meetingToken;
-
-		private String meetingCode;
+		private String meetingAppId;
 
 		private String memberUUID;
 
-		private String clientAppId;
-
 		private String meetingUUID;
 
-		private String meetingAppId;
+		private String meetingToken;
+
+		private String meetingDomain;
+
+		private String clientAppId;
+
+		private String meetingCode;
 
 		private SlsInfo slsInfo;
 
-		public String getMeetingDomain() {
-			return this.meetingDomain;
+		public String getMeetingAppId() {
+			return this.meetingAppId;
 		}
 
-		public void setMeetingDomain(String meetingDomain) {
-			this.meetingDomain = meetingDomain;
-		}
-
-		public String getMeetingToken() {
-			return this.meetingToken;
-		}
-
-		public void setMeetingToken(String meetingToken) {
-			this.meetingToken = meetingToken;
-		}
-
-		public String getMeetingCode() {
-			return this.meetingCode;
-		}
-
-		public void setMeetingCode(String meetingCode) {
-			this.meetingCode = meetingCode;
+		public void setMeetingAppId(String meetingAppId) {
+			this.meetingAppId = meetingAppId;
 		}
 
 		public String getMemberUUID() {
@@ -124,14 +108,6 @@ public class JoinMeetingResponse extends AcsResponse {
 			this.memberUUID = memberUUID;
 		}
 
-		public String getClientAppId() {
-			return this.clientAppId;
-		}
-
-		public void setClientAppId(String clientAppId) {
-			this.clientAppId = clientAppId;
-		}
-
 		public String getMeetingUUID() {
 			return this.meetingUUID;
 		}
@@ -140,12 +116,36 @@ public class JoinMeetingResponse extends AcsResponse {
 			this.meetingUUID = meetingUUID;
 		}
 
-		public String getMeetingAppId() {
-			return this.meetingAppId;
+		public String getMeetingToken() {
+			return this.meetingToken;
 		}
 
-		public void setMeetingAppId(String meetingAppId) {
-			this.meetingAppId = meetingAppId;
+		public void setMeetingToken(String meetingToken) {
+			this.meetingToken = meetingToken;
+		}
+
+		public String getMeetingDomain() {
+			return this.meetingDomain;
+		}
+
+		public void setMeetingDomain(String meetingDomain) {
+			this.meetingDomain = meetingDomain;
+		}
+
+		public String getClientAppId() {
+			return this.clientAppId;
+		}
+
+		public void setClientAppId(String clientAppId) {
+			this.clientAppId = clientAppId;
+		}
+
+		public String getMeetingCode() {
+			return this.meetingCode;
+		}
+
+		public void setMeetingCode(String meetingCode) {
+			this.meetingCode = meetingCode;
 		}
 
 		public SlsInfo getSlsInfo() {

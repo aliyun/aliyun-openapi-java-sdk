@@ -34,13 +34,13 @@ public class DescribeAiotPersonTablesResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("DescribeAiotPersonTablesResponse.PersonTableList.Length"); i++) {
 			PersonTableType personTableType = new PersonTableType();
 			personTableType.setPersonTableId(_ctx.stringValue("DescribeAiotPersonTablesResponse.PersonTableList["+ i +"].PersonTableId"));
+			personTableType.setName(_ctx.stringValue("DescribeAiotPersonTablesResponse.PersonTableList["+ i +"].Name"));
 			personTableType.setType(_ctx.longValue("DescribeAiotPersonTablesResponse.PersonTableList["+ i +"].Type"));
-			personTableType.setFaceNum(_ctx.longValue("DescribeAiotPersonTablesResponse.PersonTableList["+ i +"].FaceNum"));
-			personTableType.setDeviceId(_ctx.stringValue("DescribeAiotPersonTablesResponse.PersonTableList["+ i +"].DeviceId"));
-			personTableType.setLastChange(_ctx.stringValue("DescribeAiotPersonTablesResponse.PersonTableList["+ i +"].LastChange"));
 			personTableType.setTotalPersonNum(_ctx.longValue("DescribeAiotPersonTablesResponse.PersonTableList["+ i +"].TotalPersonNum"));
 			personTableType.setPersonNum(_ctx.longValue("DescribeAiotPersonTablesResponse.PersonTableList["+ i +"].PersonNum"));
-			personTableType.setName(_ctx.stringValue("DescribeAiotPersonTablesResponse.PersonTableList["+ i +"].Name"));
+			personTableType.setFaceNum(_ctx.longValue("DescribeAiotPersonTablesResponse.PersonTableList["+ i +"].FaceNum"));
+			personTableType.setLastChange(_ctx.stringValue("DescribeAiotPersonTablesResponse.PersonTableList["+ i +"].LastChange"));
+			personTableType.setDeviceId(_ctx.stringValue("DescribeAiotPersonTablesResponse.PersonTableList["+ i +"].DeviceId"));
 
 			List<Long> verificationModelList = new ArrayList<Long>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeAiotPersonTablesResponse.PersonTableList["+ i +"].VerificationModelList.Length"); j++) {

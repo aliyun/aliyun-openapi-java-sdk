@@ -81,13 +81,13 @@ public class ListWorkFlowNodesResponse extends AcsResponse {
 
 		private String createUserNickName;
 
-		private String nodeName;
-
 		private String nodeType;
 
-		private Long nodeId;
+		private String nodeName;
 
 		private Long createUserId;
+
+		private Long nodeId;
 
 		private List<AuditUser> auditUsers;
 
@@ -107,14 +107,6 @@ public class ListWorkFlowNodesResponse extends AcsResponse {
 			this.createUserNickName = createUserNickName;
 		}
 
-		public String getNodeName() {
-			return this.nodeName;
-		}
-
-		public void setNodeName(String nodeName) {
-			this.nodeName = nodeName;
-		}
-
 		public String getNodeType() {
 			return this.nodeType;
 		}
@@ -123,12 +115,12 @@ public class ListWorkFlowNodesResponse extends AcsResponse {
 			this.nodeType = nodeType;
 		}
 
-		public Long getNodeId() {
-			return this.nodeId;
+		public String getNodeName() {
+			return this.nodeName;
 		}
 
-		public void setNodeId(Long nodeId) {
-			this.nodeId = nodeId;
+		public void setNodeName(String nodeName) {
+			this.nodeName = nodeName;
 		}
 
 		public Long getCreateUserId() {
@@ -137,6 +129,14 @@ public class ListWorkFlowNodesResponse extends AcsResponse {
 
 		public void setCreateUserId(Long createUserId) {
 			this.createUserId = createUserId;
+		}
+
+		public Long getNodeId() {
+			return this.nodeId;
+		}
+
+		public void setNodeId(Long nodeId) {
+			this.nodeId = nodeId;
 		}
 
 		public List<AuditUser> getAuditUsers() {
@@ -149,19 +149,11 @@ public class ListWorkFlowNodesResponse extends AcsResponse {
 
 		public static class AuditUser {
 
-			private Long userId;
-
 			private String realName;
 
+			private Long userId;
+
 			private String nickName;
-
-			public Long getUserId() {
-				return this.userId;
-			}
-
-			public void setUserId(Long userId) {
-				this.userId = userId;
-			}
 
 			public String getRealName() {
 				return this.realName;
@@ -169,6 +161,14 @@ public class ListWorkFlowNodesResponse extends AcsResponse {
 
 			public void setRealName(String realName) {
 				this.realName = realName;
+			}
+
+			public Long getUserId() {
+				return this.userId;
+			}
+
+			public void setUserId(Long userId) {
+				this.userId = userId;
 			}
 
 			public String getNickName() {

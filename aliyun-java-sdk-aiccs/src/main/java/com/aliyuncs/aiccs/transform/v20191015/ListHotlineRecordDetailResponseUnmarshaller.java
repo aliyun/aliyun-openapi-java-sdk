@@ -34,18 +34,18 @@ public class ListHotlineRecordDetailResponseUnmarshaller {
 		listHotlineRecordDetailResponse.setSuccess(_ctx.booleanValue("ListHotlineRecordDetailResponse.Success"));
 
 		ResultData resultData = new ResultData();
-		resultData.setOnePageSize(_ctx.longValue("ListHotlineRecordDetailResponse.ResultData.OnePageSize"));
-		resultData.setTotalPage(_ctx.longValue("ListHotlineRecordDetailResponse.ResultData.TotalPage"));
 		resultData.setCurrentPage(_ctx.longValue("ListHotlineRecordDetailResponse.ResultData.CurrentPage"));
 		resultData.setTotalResults(_ctx.longValue("ListHotlineRecordDetailResponse.ResultData.TotalResults"));
+		resultData.setTotalPage(_ctx.longValue("ListHotlineRecordDetailResponse.ResultData.TotalPage"));
+		resultData.setOnePageSize(_ctx.longValue("ListHotlineRecordDetailResponse.ResultData.OnePageSize"));
 
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListHotlineRecordDetailResponse.ResultData.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
 			dataItem.setServicerName(_ctx.stringValue("ListHotlineRecordDetailResponse.ResultData.Data["+ i +"].ServicerName"));
+			dataItem.setStartTime(_ctx.longValue("ListHotlineRecordDetailResponse.ResultData.Data["+ i +"].StartTime"));
 			dataItem.setEndTime(_ctx.longValue("ListHotlineRecordDetailResponse.ResultData.Data["+ i +"].EndTime"));
 			dataItem.setOssUrl(_ctx.stringValue("ListHotlineRecordDetailResponse.ResultData.Data["+ i +"].OssUrl"));
-			dataItem.setStartTime(_ctx.longValue("ListHotlineRecordDetailResponse.ResultData.Data["+ i +"].StartTime"));
 
 			data.add(dataItem);
 		}

@@ -34,8 +34,8 @@ public class GetQualityRuleTagListResponseUnmarshaller {
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetQualityRuleTagListResponse.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
-			dataItem.setRuleTagName(_ctx.stringValue("GetQualityRuleTagListResponse.Data["+ i +"].RuleTagName"));
 			dataItem.setRuleTagId(_ctx.longValue("GetQualityRuleTagListResponse.Data["+ i +"].RuleTagId"));
+			dataItem.setRuleTagName(_ctx.stringValue("GetQualityRuleTagListResponse.Data["+ i +"].RuleTagName"));
 
 			data.add(dataItem);
 		}

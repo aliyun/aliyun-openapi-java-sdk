@@ -32,6 +32,8 @@ public class DescribeBackupPolicyResponseUnmarshaller {
 		backupPolicyDetail.setId(_ctx.longValue("DescribeBackupPolicyResponse.BackupPolicyDetail.Id"));
 		backupPolicyDetail.setName(_ctx.stringValue("DescribeBackupPolicyResponse.BackupPolicyDetail.Name"));
 		backupPolicyDetail.setPolicy(_ctx.stringValue("DescribeBackupPolicyResponse.BackupPolicyDetail.Policy"));
+		backupPolicyDetail.setPolicyVersion(_ctx.stringValue("DescribeBackupPolicyResponse.BackupPolicyDetail.PolicyVersion"));
+		backupPolicyDetail.setRegionId(_ctx.stringValue("DescribeBackupPolicyResponse.BackupPolicyDetail.RegionId"));
 		backupPolicyDetail.setStatus(_ctx.stringValue("DescribeBackupPolicyResponse.BackupPolicyDetail.Status"));
 		backupPolicyDetail.setClientStatus(_ctx.stringValue("DescribeBackupPolicyResponse.BackupPolicyDetail.ClientStatus"));
 

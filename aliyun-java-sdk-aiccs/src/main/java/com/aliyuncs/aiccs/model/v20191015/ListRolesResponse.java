@@ -25,9 +25,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListRolesResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String message;
+
+	private String requestId;
 
 	private Integer httpStatusCode;
 
@@ -35,20 +35,20 @@ public class ListRolesResponse extends AcsResponse {
 
 	private List<DataItem> data;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public String getMessage() {
 		return this.message;
 	}
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getHttpStatusCode() {
@@ -77,44 +77,28 @@ public class ListRolesResponse extends AcsResponse {
 
 	public static class DataItem {
 
-		private Long roleGroupId;
-
-		private Long buId;
-
-		private String description;
+		private Long roleId;
 
 		private String createTime;
 
-		private String title;
+		private Long buId;
 
-		private String roleGroupName;
+		private String title;
 
 		private String code;
 
-		private Long roleId;
+		private String description;
 
-		public Long getRoleGroupId() {
-			return this.roleGroupId;
+		private Long roleGroupId;
+
+		private String roleGroupName;
+
+		public Long getRoleId() {
+			return this.roleId;
 		}
 
-		public void setRoleGroupId(Long roleGroupId) {
-			this.roleGroupId = roleGroupId;
-		}
-
-		public Long getBuId() {
-			return this.buId;
-		}
-
-		public void setBuId(Long buId) {
-			this.buId = buId;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
+		public void setRoleId(Long roleId) {
+			this.roleId = roleId;
 		}
 
 		public String getCreateTime() {
@@ -125,20 +109,20 @@ public class ListRolesResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
+		public Long getBuId() {
+			return this.buId;
+		}
+
+		public void setBuId(Long buId) {
+			this.buId = buId;
+		}
+
 		public String getTitle() {
 			return this.title;
 		}
 
 		public void setTitle(String title) {
 			this.title = title;
-		}
-
-		public String getRoleGroupName() {
-			return this.roleGroupName;
-		}
-
-		public void setRoleGroupName(String roleGroupName) {
-			this.roleGroupName = roleGroupName;
 		}
 
 		public String getCode() {
@@ -149,12 +133,28 @@ public class ListRolesResponse extends AcsResponse {
 			this.code = code;
 		}
 
-		public Long getRoleId() {
-			return this.roleId;
+		public String getDescription() {
+			return this.description;
 		}
 
-		public void setRoleId(Long roleId) {
-			this.roleId = roleId;
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public Long getRoleGroupId() {
+			return this.roleGroupId;
+		}
+
+		public void setRoleGroupId(Long roleGroupId) {
+			this.roleGroupId = roleGroupId;
+		}
+
+		public String getRoleGroupName() {
+			return this.roleGroupName;
+		}
+
+		public void setRoleGroupName(String roleGroupName) {
+			this.roleGroupName = roleGroupName;
 		}
 	}
 

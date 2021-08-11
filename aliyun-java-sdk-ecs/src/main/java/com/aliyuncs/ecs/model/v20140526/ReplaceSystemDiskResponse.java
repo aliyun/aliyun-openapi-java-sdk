@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ReplaceSystemDiskResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String diskId;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getDiskId() {
 		return this.diskId;
@@ -42,6 +34,14 @@ public class ReplaceSystemDiskResponse extends AcsResponse {
 
 	public void setDiskId(String diskId) {
 		this.diskId = diskId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

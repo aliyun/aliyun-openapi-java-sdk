@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.nas.model.v20170626.DescribeMountTargetsResponse;
 import com.aliyuncs.nas.model.v20170626.DescribeMountTargetsResponse.MountTarget;
+import com.aliyuncs.nas.model.v20170626.DescribeMountTargetsResponse.MountTarget.ClientMasterNode;
 import com.aliyuncs.nas.model.v20170626.DescribeMountTargetsResponse.MountTarget.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -41,6 +42,18 @@ public class DescribeMountTargetsResponseUnmarshaller {
 			mountTarget.setVswId(_ctx.stringValue("DescribeMountTargetsResponse.MountTargets["+ i +"].VswId"));
 			mountTarget.setAccessGroup(_ctx.stringValue("DescribeMountTargetsResponse.MountTargets["+ i +"].AccessGroup"));
 			mountTarget.setStatus(_ctx.stringValue("DescribeMountTargetsResponse.MountTargets["+ i +"].Status"));
+			mountTarget.setDualStackMountTargetDomain(_ctx.stringValue("DescribeMountTargetsResponse.MountTargets["+ i +"].DualStackMountTargetDomain"));
+
+			List<ClientMasterNode> clientMasterNodes = new ArrayList<ClientMasterNode>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeMountTargetsResponse.MountTargets["+ i +"].ClientMasterNodes.Length"); j++) {
+				ClientMasterNode clientMasterNode = new ClientMasterNode();
+				clientMasterNode.setEcsId(_ctx.stringValue("DescribeMountTargetsResponse.MountTargets["+ i +"].ClientMasterNodes["+ j +"].EcsId"));
+				clientMasterNode.setEcsIp(_ctx.stringValue("DescribeMountTargetsResponse.MountTargets["+ i +"].ClientMasterNodes["+ j +"].EcsIp"));
+				clientMasterNode.setDefaultPasswd(_ctx.stringValue("DescribeMountTargetsResponse.MountTargets["+ i +"].ClientMasterNodes["+ j +"].DefaultPasswd"));
+
+				clientMasterNodes.add(clientMasterNode);
+			}
+			mountTarget.setClientMasterNodes(clientMasterNodes);
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeMountTargetsResponse.MountTargets["+ i +"].Tags.Length"); j++) {

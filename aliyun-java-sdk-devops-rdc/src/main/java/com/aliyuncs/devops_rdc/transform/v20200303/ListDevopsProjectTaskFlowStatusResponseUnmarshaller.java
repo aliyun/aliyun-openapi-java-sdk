@@ -27,23 +27,23 @@ public class ListDevopsProjectTaskFlowStatusResponseUnmarshaller {
 	public static ListDevopsProjectTaskFlowStatusResponse unmarshall(ListDevopsProjectTaskFlowStatusResponse listDevopsProjectTaskFlowStatusResponse, UnmarshallerContext _ctx) {
 		
 		listDevopsProjectTaskFlowStatusResponse.setRequestId(_ctx.stringValue("ListDevopsProjectTaskFlowStatusResponse.RequestId"));
+		listDevopsProjectTaskFlowStatusResponse.setErrorMsg(_ctx.stringValue("ListDevopsProjectTaskFlowStatusResponse.ErrorMsg"));
 		listDevopsProjectTaskFlowStatusResponse.setSuccessful(_ctx.booleanValue("ListDevopsProjectTaskFlowStatusResponse.Successful"));
 		listDevopsProjectTaskFlowStatusResponse.setErrorCode(_ctx.stringValue("ListDevopsProjectTaskFlowStatusResponse.ErrorCode"));
-		listDevopsProjectTaskFlowStatusResponse.setErrorMsg(_ctx.stringValue("ListDevopsProjectTaskFlowStatusResponse.ErrorMsg"));
 
 		List<TaskflowStatus> object = new ArrayList<TaskflowStatus>();
 		for (int i = 0; i < _ctx.lengthValue("ListDevopsProjectTaskFlowStatusResponse.Object.Length"); i++) {
 			TaskflowStatus taskflowStatus = new TaskflowStatus();
-			taskflowStatus.setIsDeleted(_ctx.booleanValue("ListDevopsProjectTaskFlowStatusResponse.Object["+ i +"].IsDeleted"));
-			taskflowStatus.setRejectStatusIds(_ctx.stringValue("ListDevopsProjectTaskFlowStatusResponse.Object["+ i +"].RejectStatusIds"));
-			taskflowStatus.setPos(_ctx.integerValue("ListDevopsProjectTaskFlowStatusResponse.Object["+ i +"].Pos"));
-			taskflowStatus.setKind(_ctx.stringValue("ListDevopsProjectTaskFlowStatusResponse.Object["+ i +"].Kind"));
-			taskflowStatus.setCreated(_ctx.stringValue("ListDevopsProjectTaskFlowStatusResponse.Object["+ i +"].Created"));
 			taskflowStatus.setTaskflowId(_ctx.stringValue("ListDevopsProjectTaskFlowStatusResponse.Object["+ i +"].TaskflowId"));
-			taskflowStatus.setName(_ctx.stringValue("ListDevopsProjectTaskFlowStatusResponse.Object["+ i +"].Name"));
-			taskflowStatus.setCreatorId(_ctx.stringValue("ListDevopsProjectTaskFlowStatusResponse.Object["+ i +"].CreatorId"));
-			taskflowStatus.setId(_ctx.stringValue("ListDevopsProjectTaskFlowStatusResponse.Object["+ i +"].Id"));
+			taskflowStatus.setKind(_ctx.stringValue("ListDevopsProjectTaskFlowStatusResponse.Object["+ i +"].Kind"));
+			taskflowStatus.setPos(_ctx.integerValue("ListDevopsProjectTaskFlowStatusResponse.Object["+ i +"].Pos"));
+			taskflowStatus.setIsDeleted(_ctx.booleanValue("ListDevopsProjectTaskFlowStatusResponse.Object["+ i +"].IsDeleted"));
 			taskflowStatus.setUpdated(_ctx.stringValue("ListDevopsProjectTaskFlowStatusResponse.Object["+ i +"].Updated"));
+			taskflowStatus.setCreatorId(_ctx.stringValue("ListDevopsProjectTaskFlowStatusResponse.Object["+ i +"].CreatorId"));
+			taskflowStatus.setName(_ctx.stringValue("ListDevopsProjectTaskFlowStatusResponse.Object["+ i +"].Name"));
+			taskflowStatus.setCreated(_ctx.stringValue("ListDevopsProjectTaskFlowStatusResponse.Object["+ i +"].Created"));
+			taskflowStatus.setRejectStatusIds(_ctx.stringValue("ListDevopsProjectTaskFlowStatusResponse.Object["+ i +"].RejectStatusIds"));
+			taskflowStatus.setId(_ctx.stringValue("ListDevopsProjectTaskFlowStatusResponse.Object["+ i +"].Id"));
 
 			object.add(taskflowStatus);
 		}

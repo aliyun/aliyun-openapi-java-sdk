@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDBClustersResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Integer pageNumber;
-
 	private Integer totalRecordCount;
 
 	private Integer pageRecordCount;
 
+	private String requestId;
+
+	private Integer pageNumber;
+
 	private List<DBCluster> items;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
 
 	public Integer getTotalRecordCount() {
 		return this.totalRecordCount;
@@ -67,6 +51,22 @@ public class DescribeDBClustersResponse extends AcsResponse {
 		this.pageRecordCount = pageRecordCount;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+	}
+
 	public List<DBCluster> getItems() {
 		return this.items;
 	}
@@ -77,96 +77,56 @@ public class DescribeDBClustersResponse extends AcsResponse {
 
 	public static class DBCluster {
 
-		private String dBClusterId;
-
-		private String dBClusterDescription;
-
-		private String payType;
-
-		private String dBClusterNetworkType;
-
-		private String regionId;
-
-		private String zoneId;
+		private String vpcId;
 
 		private String expireTime;
 
 		private String expired;
 
-		private String dBClusterStatus;
-
-		private String engine;
-
-		private String dBType;
-
-		private String dBVersion;
-
-		private String lockMode;
-
-		private Integer deletionLock;
+		private Integer dBNodeNumber;
 
 		private String createTime;
 
-		private String vpcId;
-
-		private Integer dBNodeNumber;
+		private String payType;
 
 		private String dBNodeClass;
 
-		private Long storageUsed;
+		private String dBType;
+
+		private String lockMode;
+
+		private String regionId;
+
+		private Integer deletionLock;
+
+		private String dBVersion;
+
+		private String dBClusterId;
+
+		private String dBClusterStatus;
 
 		private String resourceGroupId;
 
-		private List<DBNode> dBNodes;
+		private Long storageUsed;
+
+		private String dBClusterNetworkType;
+
+		private String dBClusterDescription;
+
+		private String zoneId;
+
+		private String engine;
 
 		private List<Tag> tags;
 
-		public String getDBClusterId() {
-			return this.dBClusterId;
+		private List<DBNode> dBNodes;
+
+		public String getVpcId() {
+			return this.vpcId;
 		}
 
-		public void setDBClusterId(String dBClusterId) {
-			this.dBClusterId = dBClusterId;
-		}
-
-		public String getDBClusterDescription() {
-			return this.dBClusterDescription;
-		}
-
-		public void setDBClusterDescription(String dBClusterDescription) {
-			this.dBClusterDescription = dBClusterDescription;
-		}
-
-		public String getPayType() {
-			return this.payType;
-		}
-
-		public void setPayType(String payType) {
-			this.payType = payType;
-		}
-
-		public String getDBClusterNetworkType() {
-			return this.dBClusterNetworkType;
-		}
-
-		public void setDBClusterNetworkType(String dBClusterNetworkType) {
-			this.dBClusterNetworkType = dBClusterNetworkType;
-		}
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		public String getZoneId() {
-			return this.zoneId;
-		}
-
-		public void setZoneId(String zoneId) {
-			this.zoneId = zoneId;
+		public void setVpcId(String vpcId) {
+			this.vpcId = vpcId;
 		}
 
 		public String getExpireTime() {
@@ -185,52 +145,12 @@ public class DescribeDBClustersResponse extends AcsResponse {
 			this.expired = expired;
 		}
 
-		public String getDBClusterStatus() {
-			return this.dBClusterStatus;
+		public Integer getDBNodeNumber() {
+			return this.dBNodeNumber;
 		}
 
-		public void setDBClusterStatus(String dBClusterStatus) {
-			this.dBClusterStatus = dBClusterStatus;
-		}
-
-		public String getEngine() {
-			return this.engine;
-		}
-
-		public void setEngine(String engine) {
-			this.engine = engine;
-		}
-
-		public String getDBType() {
-			return this.dBType;
-		}
-
-		public void setDBType(String dBType) {
-			this.dBType = dBType;
-		}
-
-		public String getDBVersion() {
-			return this.dBVersion;
-		}
-
-		public void setDBVersion(String dBVersion) {
-			this.dBVersion = dBVersion;
-		}
-
-		public String getLockMode() {
-			return this.lockMode;
-		}
-
-		public void setLockMode(String lockMode) {
-			this.lockMode = lockMode;
-		}
-
-		public Integer getDeletionLock() {
-			return this.deletionLock;
-		}
-
-		public void setDeletionLock(Integer deletionLock) {
-			this.deletionLock = deletionLock;
+		public void setDBNodeNumber(Integer dBNodeNumber) {
+			this.dBNodeNumber = dBNodeNumber;
 		}
 
 		public String getCreateTime() {
@@ -241,20 +161,12 @@ public class DescribeDBClustersResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
-		public String getVpcId() {
-			return this.vpcId;
+		public String getPayType() {
+			return this.payType;
 		}
 
-		public void setVpcId(String vpcId) {
-			this.vpcId = vpcId;
-		}
-
-		public Integer getDBNodeNumber() {
-			return this.dBNodeNumber;
-		}
-
-		public void setDBNodeNumber(Integer dBNodeNumber) {
-			this.dBNodeNumber = dBNodeNumber;
+		public void setPayType(String payType) {
+			this.payType = payType;
 		}
 
 		public String getDBNodeClass() {
@@ -265,12 +177,60 @@ public class DescribeDBClustersResponse extends AcsResponse {
 			this.dBNodeClass = dBNodeClass;
 		}
 
-		public Long getStorageUsed() {
-			return this.storageUsed;
+		public String getDBType() {
+			return this.dBType;
 		}
 
-		public void setStorageUsed(Long storageUsed) {
-			this.storageUsed = storageUsed;
+		public void setDBType(String dBType) {
+			this.dBType = dBType;
+		}
+
+		public String getLockMode() {
+			return this.lockMode;
+		}
+
+		public void setLockMode(String lockMode) {
+			this.lockMode = lockMode;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		public Integer getDeletionLock() {
+			return this.deletionLock;
+		}
+
+		public void setDeletionLock(Integer deletionLock) {
+			this.deletionLock = deletionLock;
+		}
+
+		public String getDBVersion() {
+			return this.dBVersion;
+		}
+
+		public void setDBVersion(String dBVersion) {
+			this.dBVersion = dBVersion;
+		}
+
+		public String getDBClusterId() {
+			return this.dBClusterId;
+		}
+
+		public void setDBClusterId(String dBClusterId) {
+			this.dBClusterId = dBClusterId;
+		}
+
+		public String getDBClusterStatus() {
+			return this.dBClusterStatus;
+		}
+
+		public void setDBClusterStatus(String dBClusterStatus) {
+			this.dBClusterStatus = dBClusterStatus;
 		}
 
 		public String getResourceGroupId() {
@@ -281,12 +241,44 @@ public class DescribeDBClustersResponse extends AcsResponse {
 			this.resourceGroupId = resourceGroupId;
 		}
 
-		public List<DBNode> getDBNodes() {
-			return this.dBNodes;
+		public Long getStorageUsed() {
+			return this.storageUsed;
 		}
 
-		public void setDBNodes(List<DBNode> dBNodes) {
-			this.dBNodes = dBNodes;
+		public void setStorageUsed(Long storageUsed) {
+			this.storageUsed = storageUsed;
+		}
+
+		public String getDBClusterNetworkType() {
+			return this.dBClusterNetworkType;
+		}
+
+		public void setDBClusterNetworkType(String dBClusterNetworkType) {
+			this.dBClusterNetworkType = dBClusterNetworkType;
+		}
+
+		public String getDBClusterDescription() {
+			return this.dBClusterDescription;
+		}
+
+		public void setDBClusterDescription(String dBClusterDescription) {
+			this.dBClusterDescription = dBClusterDescription;
+		}
+
+		public String getZoneId() {
+			return this.zoneId;
+		}
+
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
+		}
+
+		public String getEngine() {
+			return this.engine;
+		}
+
+		public void setEngine(String engine) {
+			this.engine = engine;
 		}
 
 		public List<Tag> getTags() {
@@ -297,57 +289,12 @@ public class DescribeDBClustersResponse extends AcsResponse {
 			this.tags = tags;
 		}
 
-		public static class DBNode {
+		public List<DBNode> getDBNodes() {
+			return this.dBNodes;
+		}
 
-			private String dBNodeId;
-
-			private String dBNodeClass;
-
-			private String dBNodeRole;
-
-			private String regionId;
-
-			private String zoneId;
-
-			public String getDBNodeId() {
-				return this.dBNodeId;
-			}
-
-			public void setDBNodeId(String dBNodeId) {
-				this.dBNodeId = dBNodeId;
-			}
-
-			public String getDBNodeClass() {
-				return this.dBNodeClass;
-			}
-
-			public void setDBNodeClass(String dBNodeClass) {
-				this.dBNodeClass = dBNodeClass;
-			}
-
-			public String getDBNodeRole() {
-				return this.dBNodeRole;
-			}
-
-			public void setDBNodeRole(String dBNodeRole) {
-				this.dBNodeRole = dBNodeRole;
-			}
-
-			public String getRegionId() {
-				return this.regionId;
-			}
-
-			public void setRegionId(String regionId) {
-				this.regionId = regionId;
-			}
-
-			public String getZoneId() {
-				return this.zoneId;
-			}
-
-			public void setZoneId(String zoneId) {
-				this.zoneId = zoneId;
-			}
+		public void setDBNodes(List<DBNode> dBNodes) {
+			this.dBNodes = dBNodes;
 		}
 
 		public static class Tag {
@@ -370,6 +317,59 @@ public class DescribeDBClustersResponse extends AcsResponse {
 
 			public void setValue(String value) {
 				this.value = value;
+			}
+		}
+
+		public static class DBNode {
+
+			private String dBNodeClass;
+
+			private String zoneId;
+
+			private String dBNodeRole;
+
+			private String dBNodeId;
+
+			private String regionId;
+
+			public String getDBNodeClass() {
+				return this.dBNodeClass;
+			}
+
+			public void setDBNodeClass(String dBNodeClass) {
+				this.dBNodeClass = dBNodeClass;
+			}
+
+			public String getZoneId() {
+				return this.zoneId;
+			}
+
+			public void setZoneId(String zoneId) {
+				this.zoneId = zoneId;
+			}
+
+			public String getDBNodeRole() {
+				return this.dBNodeRole;
+			}
+
+			public void setDBNodeRole(String dBNodeRole) {
+				this.dBNodeRole = dBNodeRole;
+			}
+
+			public String getDBNodeId() {
+				return this.dBNodeId;
+			}
+
+			public void setDBNodeId(String dBNodeId) {
+				this.dBNodeId = dBNodeId;
+			}
+
+			public String getRegionId() {
+				return this.regionId;
+			}
+
+			public void setRegionId(String regionId) {
+				this.regionId = regionId;
 			}
 		}
 	}

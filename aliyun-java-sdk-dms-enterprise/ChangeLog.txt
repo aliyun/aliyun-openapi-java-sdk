@@ -1,3 +1,12 @@
+2021-07-06 Version: 1.20.0
+- Support ListDataCorrectPreCheckDB,ListDataCorrectPreCheckSQL Order API.
+
+2021-06-28 Version: 1.19.0
+- Support GetSQLReviewOptimizeDetail,ListSQLReviewOriginSQL Order API.
+
+2021-06-10 Version: 1.18.0
+- Support SQLReview Order API.
+
 2021-04-22 Version: 1.17.0
 - Support GetPhysicalDatabase API.
 

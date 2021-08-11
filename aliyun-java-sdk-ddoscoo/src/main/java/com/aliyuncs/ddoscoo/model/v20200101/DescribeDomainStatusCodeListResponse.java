@@ -29,6 +29,8 @@ public class DescribeDomainStatusCodeListResponse extends AcsResponse {
 
 	private List<StatusCode> statusCodeList;
 
+	private List<StatusCode> statusCodeList1;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -43,6 +45,14 @@ public class DescribeDomainStatusCodeListResponse extends AcsResponse {
 
 	public void setStatusCodeList(List<StatusCode> statusCodeList) {
 		this.statusCodeList = statusCodeList;
+	}
+
+	public List<StatusCode> getStatusCodeList1() {
+		return this.statusCodeList1;
+	}
+
+	public void setStatusCodeList1(List<StatusCode> statusCodeList1) {
+		this.statusCodeList1 = statusCodeList1;
 	}
 
 	public static class StatusCode {

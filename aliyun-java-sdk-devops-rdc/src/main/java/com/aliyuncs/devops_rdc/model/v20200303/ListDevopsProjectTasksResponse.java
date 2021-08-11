@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListDevopsProjectTasksResponse extends AcsResponse {
 
-	private Boolean successful;
-
-	private String errorCode;
-
 	private String errorMsg;
 
 	private String requestId;
 
+	private Boolean successful;
+
+	private String errorCode;
+
 	private List<Task> object;
-
-	public Boolean getSuccessful() {
-		return this.successful;
-	}
-
-	public void setSuccessful(Boolean successful) {
-		this.successful = successful;
-	}
-
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
-	}
 
 	public String getErrorMsg() {
 		return this.errorMsg;
@@ -67,6 +51,22 @@ public class ListDevopsProjectTasksResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public Boolean getSuccessful() {
+		return this.successful;
+	}
+
+	public void setSuccessful(Boolean successful) {
+		this.successful = successful;
+	}
+
+	public String getErrorCode() {
+		return this.errorCode;
+	}
+
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
+	}
+
 	public List<Task> getObject() {
 		return this.object;
 	}
@@ -77,23 +77,31 @@ public class ListDevopsProjectTasksResponse extends AcsResponse {
 
 	public static class Task {
 
+		private String taskgroupId;
+
 		private String tasklistId;
 
 		private String projectId;
-
-		private String taskgroupId;
-
-		private String name;
-
-		private String creatorId;
-
-		private String created;
 
 		private String modifierId;
 
 		private String updated;
 
+		private String creatorId;
+
+		private String created;
+
+		private String name;
+
 		private String id;
+
+		public String getTaskgroupId() {
+			return this.taskgroupId;
+		}
+
+		public void setTaskgroupId(String taskgroupId) {
+			this.taskgroupId = taskgroupId;
+		}
 
 		public String getTasklistId() {
 			return this.tasklistId;
@@ -111,20 +119,20 @@ public class ListDevopsProjectTasksResponse extends AcsResponse {
 			this.projectId = projectId;
 		}
 
-		public String getTaskgroupId() {
-			return this.taskgroupId;
+		public String getModifierId() {
+			return this.modifierId;
 		}
 
-		public void setTaskgroupId(String taskgroupId) {
-			this.taskgroupId = taskgroupId;
+		public void setModifierId(String modifierId) {
+			this.modifierId = modifierId;
 		}
 
-		public String getName() {
-			return this.name;
+		public String getUpdated() {
+			return this.updated;
 		}
 
-		public void setName(String name) {
-			this.name = name;
+		public void setUpdated(String updated) {
+			this.updated = updated;
 		}
 
 		public String getCreatorId() {
@@ -143,20 +151,12 @@ public class ListDevopsProjectTasksResponse extends AcsResponse {
 			this.created = created;
 		}
 
-		public String getModifierId() {
-			return this.modifierId;
+		public String getName() {
+			return this.name;
 		}
 
-		public void setModifierId(String modifierId) {
-			this.modifierId = modifierId;
-		}
-
-		public String getUpdated() {
-			return this.updated;
-		}
-
-		public void setUpdated(String updated) {
-			this.updated = updated;
+		public void setName(String name) {
+			this.name = name;
 		}
 
 		public String getId() {

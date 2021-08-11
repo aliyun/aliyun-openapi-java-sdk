@@ -32,25 +32,25 @@ public class GetProfileListResponseUnmarshaller {
 		getProfileListResponse.setCode(_ctx.stringValue("GetProfileListResponse.Code"));
 
 		Data data = new Data();
-		data.setPageSize(_ctx.longValue("GetProfileListResponse.Data.PageSize"));
-		data.setPageNumber(_ctx.longValue("GetProfileListResponse.Data.PageNumber"));
-		data.setTotal(_ctx.longValue("GetProfileListResponse.Data.Total"));
 		data.setSuccess(_ctx.booleanValue("GetProfileListResponse.Data.Success"));
+		data.setPageNumber(_ctx.longValue("GetProfileListResponse.Data.PageNumber"));
+		data.setPageSize(_ctx.longValue("GetProfileListResponse.Data.PageSize"));
+		data.setTotal(_ctx.longValue("GetProfileListResponse.Data.Total"));
 
 		List<RecordsItem> records = new ArrayList<RecordsItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetProfileListResponse.Data.Records.Length"); i++) {
 			RecordsItem recordsItem = new RecordsItem();
-			recordsItem.setSceneType(_ctx.stringValue("GetProfileListResponse.Data.Records["+ i +"].SceneType"));
-			recordsItem.setProfileId(_ctx.integerValue("GetProfileListResponse.Data.Records["+ i +"].ProfileId"));
-			recordsItem.setPersonId(_ctx.stringValue("GetProfileListResponse.Data.Records["+ i +"].PersonId"));
-			recordsItem.setIdNumber(_ctx.stringValue("GetProfileListResponse.Data.Records["+ i +"].IdNumber"));
-			recordsItem.setIsvSubId(_ctx.stringValue("GetProfileListResponse.Data.Records["+ i +"].IsvSubId"));
-			recordsItem.setSearchMatchingRate(_ctx.stringValue("GetProfileListResponse.Data.Records["+ i +"].SearchMatchingRate"));
-			recordsItem.setGender(_ctx.stringValue("GetProfileListResponse.Data.Records["+ i +"].Gender"));
-			recordsItem.setBizId(_ctx.stringValue("GetProfileListResponse.Data.Records["+ i +"].BizId"));
 			recordsItem.setCatalogId(_ctx.integerValue("GetProfileListResponse.Data.Records["+ i +"].CatalogId"));
+			recordsItem.setProfileId(_ctx.integerValue("GetProfileListResponse.Data.Records["+ i +"].ProfileId"));
+			recordsItem.setIdNumber(_ctx.stringValue("GetProfileListResponse.Data.Records["+ i +"].IdNumber"));
+			recordsItem.setSceneType(_ctx.stringValue("GetProfileListResponse.Data.Records["+ i +"].SceneType"));
+			recordsItem.setIsvSubId(_ctx.stringValue("GetProfileListResponse.Data.Records["+ i +"].IsvSubId"));
+			recordsItem.setGender(_ctx.stringValue("GetProfileListResponse.Data.Records["+ i +"].Gender"));
 			recordsItem.setFaceUrl(_ctx.stringValue("GetProfileListResponse.Data.Records["+ i +"].FaceUrl"));
+			recordsItem.setBizId(_ctx.stringValue("GetProfileListResponse.Data.Records["+ i +"].BizId"));
+			recordsItem.setSearchMatchingRate(_ctx.stringValue("GetProfileListResponse.Data.Records["+ i +"].SearchMatchingRate"));
 			recordsItem.setName(_ctx.stringValue("GetProfileListResponse.Data.Records["+ i +"].Name"));
+			recordsItem.setPersonId(_ctx.stringValue("GetProfileListResponse.Data.Records["+ i +"].PersonId"));
 
 			records.add(recordsItem);
 		}

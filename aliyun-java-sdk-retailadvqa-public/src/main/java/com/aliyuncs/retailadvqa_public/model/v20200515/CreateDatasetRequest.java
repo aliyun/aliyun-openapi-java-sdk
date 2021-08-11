@@ -33,6 +33,8 @@ public class CreateDatasetRequest extends RpcAcsRequest<CreateDatasetResponse> {
 	private String type;
 
 	private String dataSet;
+
+	private String workspaceId;
 	public CreateDatasetRequest() {
 		super("retailadvqa-public", "2020-05-15", "CreateDataset");
 		setMethod(MethodType.POST);
@@ -90,6 +92,17 @@ public class CreateDatasetRequest extends RpcAcsRequest<CreateDatasetResponse> {
 		this.dataSet = dataSet;
 		if(dataSet != null){
 			putBodyParameter("DataSet", dataSet);
+		}
+	}
+
+	public String getWorkspaceId() {
+		return this.workspaceId;
+	}
+
+	public void setWorkspaceId(String workspaceId) {
+		this.workspaceId = workspaceId;
+		if(workspaceId != null){
+			putBodyParameter("WorkspaceId", workspaceId);
 		}
 	}
 

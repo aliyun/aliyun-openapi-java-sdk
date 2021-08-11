@@ -1,3 +1,11 @@
+2021-07-27 Version: 2.20.0
+- Add DescribeAuditLogConfig API.
+
+2021-07-07 Version: 2.19.0
+- Support FilterKey for RestoreInstance.
+- DescribeInstanceAttribute add return argument BackupLogStartTime.
+- Add RemoveSubInstance for Global Distributed Cache.
+
 2021-05-14 Version: 2.18.1
 - EnableAdditionalBandwidth add AutoRenew,AutoRenewPeriod parameter.
 

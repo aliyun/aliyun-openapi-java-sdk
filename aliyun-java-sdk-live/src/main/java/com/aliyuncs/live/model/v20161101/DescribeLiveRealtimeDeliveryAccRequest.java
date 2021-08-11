@@ -29,6 +29,8 @@ public class DescribeLiveRealtimeDeliveryAccRequest extends RpcAcsRequest<Descri
 
 	private String startTime;
 
+	private String domainName;
+
 	private String endTime;
 
 	private Long ownerId;
@@ -64,6 +66,17 @@ public class DescribeLiveRealtimeDeliveryAccRequest extends RpcAcsRequest<Descri
 		this.startTime = startTime;
 		if(startTime != null){
 			putQueryParameter("StartTime", startTime);
+		}
+	}
+
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
 		}
 	}
 

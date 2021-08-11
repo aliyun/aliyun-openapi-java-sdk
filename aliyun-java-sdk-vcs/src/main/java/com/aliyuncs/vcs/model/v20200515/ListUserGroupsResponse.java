@@ -25,21 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListUserGroupsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String message;
+
+	private String requestId;
 
 	private String code;
 
 	private List<DataItem> data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getMessage() {
 		return this.message;
@@ -47,6 +39,14 @@ public class ListUserGroupsResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getCode() {
@@ -67,61 +67,21 @@ public class ListUserGroupsResponse extends AcsResponse {
 
 	public static class DataItem {
 
-		private Long parentUserGroupId;
-
-		private Long userCount;
-
-		private String userGroupName;
-
-		private String createTime;
-
-		private Long userGroupId;
-
 		private String updateTime;
 
 		private String isvSubId;
 
+		private Long userGroupId;
+
+		private String createTime;
+
+		private String userGroupName;
+
+		private Long userCount;
+
+		private Long parentUserGroupId;
+
 		private String creator;
-
-		public Long getParentUserGroupId() {
-			return this.parentUserGroupId;
-		}
-
-		public void setParentUserGroupId(Long parentUserGroupId) {
-			this.parentUserGroupId = parentUserGroupId;
-		}
-
-		public Long getUserCount() {
-			return this.userCount;
-		}
-
-		public void setUserCount(Long userCount) {
-			this.userCount = userCount;
-		}
-
-		public String getUserGroupName() {
-			return this.userGroupName;
-		}
-
-		public void setUserGroupName(String userGroupName) {
-			this.userGroupName = userGroupName;
-		}
-
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
-		}
-
-		public Long getUserGroupId() {
-			return this.userGroupId;
-		}
-
-		public void setUserGroupId(Long userGroupId) {
-			this.userGroupId = userGroupId;
-		}
 
 		public String getUpdateTime() {
 			return this.updateTime;
@@ -137,6 +97,46 @@ public class ListUserGroupsResponse extends AcsResponse {
 
 		public void setIsvSubId(String isvSubId) {
 			this.isvSubId = isvSubId;
+		}
+
+		public Long getUserGroupId() {
+			return this.userGroupId;
+		}
+
+		public void setUserGroupId(Long userGroupId) {
+			this.userGroupId = userGroupId;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
+
+		public String getUserGroupName() {
+			return this.userGroupName;
+		}
+
+		public void setUserGroupName(String userGroupName) {
+			this.userGroupName = userGroupName;
+		}
+
+		public Long getUserCount() {
+			return this.userCount;
+		}
+
+		public void setUserCount(Long userCount) {
+			this.userCount = userCount;
+		}
+
+		public Long getParentUserGroupId() {
+			return this.parentUserGroupId;
+		}
+
+		public void setParentUserGroupId(Long parentUserGroupId) {
+			this.parentUserGroupId = parentUserGroupId;
 		}
 
 		public String getCreator() {

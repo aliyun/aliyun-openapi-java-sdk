@@ -45,6 +45,7 @@ public class DescribeAssetDetailByUuidsResponseUnmarshaller {
 			asset.setRegionName(_ctx.stringValue("DescribeAssetDetailByUuidsResponse.AssetList["+ i +"].RegionName"));
 			asset.setVpcInstanceId(_ctx.stringValue("DescribeAssetDetailByUuidsResponse.AssetList["+ i +"].VpcInstanceId"));
 			asset.setOsName(_ctx.stringValue("DescribeAssetDetailByUuidsResponse.AssetList["+ i +"].OsName"));
+			asset.setFlag(_ctx.integerValue("DescribeAssetDetailByUuidsResponse.AssetList["+ i +"].Flag"));
 
 			assetList.add(asset);
 		}

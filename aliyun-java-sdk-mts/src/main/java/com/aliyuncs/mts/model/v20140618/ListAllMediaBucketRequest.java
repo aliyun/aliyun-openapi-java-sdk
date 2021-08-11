@@ -37,7 +37,7 @@ public class ListAllMediaBucketRequest extends RpcAcsRequest<ListAllMediaBucketR
 
 	private Long ownerId;
 	public ListAllMediaBucketRequest() {
-		super("Mts", "2014-06-18", "ListAllMediaBucket");
+		super("Mts", "2014-06-18", "ListAllMediaBucket", "mts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

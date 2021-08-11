@@ -14,6 +14,9 @@
 
 package com.aliyuncs.ecs.transform.v20140526;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.ecs.model.v20140526.AssignIpv6AddressesResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -23,6 +26,13 @@ public class AssignIpv6AddressesResponseUnmarshaller {
 	public static AssignIpv6AddressesResponse unmarshall(AssignIpv6AddressesResponse assignIpv6AddressesResponse, UnmarshallerContext _ctx) {
 		
 		assignIpv6AddressesResponse.setRequestId(_ctx.stringValue("AssignIpv6AddressesResponse.RequestId"));
+		assignIpv6AddressesResponse.setNetworkInterfaceId(_ctx.stringValue("AssignIpv6AddressesResponse.NetworkInterfaceId"));
+
+		List<String> ipv6Sets = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("AssignIpv6AddressesResponse.Ipv6Sets.Length"); i++) {
+			ipv6Sets.add(_ctx.stringValue("AssignIpv6AddressesResponse.Ipv6Sets["+ i +"]"));
+		}
+		assignIpv6AddressesResponse.setIpv6Sets(ipv6Sets);
 	 
 	 	return assignIpv6AddressesResponse;
 	}

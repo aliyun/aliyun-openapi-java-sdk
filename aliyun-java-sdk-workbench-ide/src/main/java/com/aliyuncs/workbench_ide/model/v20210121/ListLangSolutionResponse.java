@@ -14,6 +14,7 @@
 
 package com.aliyuncs.workbench_ide.model.v20210121;
 
+import java.util.List;
 import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.workbench_ide.transform.v20210121.ListLangSolutionResponseUnmarshaller;
@@ -27,11 +28,11 @@ public class ListLangSolutionResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Map<Object,Object> data;
-
 	private String message;
 
 	private String code;
+
+	private List<Map<Object,Object>> data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -39,14 +40,6 @@ public class ListLangSolutionResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Map<Object,Object> getData() {
-		return this.data;
-	}
-
-	public void setData(Map<Object,Object> data) {
-		this.data = data;
 	}
 
 	public String getMessage() {
@@ -63,6 +56,14 @@ public class ListLangSolutionResponse extends AcsResponse {
 
 	public void setCode(String code) {
 		this.code = code;
+	}
+
+	public List<Map<Object,Object>> getData() {
+		return this.data;
+	}
+
+	public void setData(List<Map<Object,Object>> data) {
+		this.data = data;
 	}
 
 	@Override

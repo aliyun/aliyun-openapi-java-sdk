@@ -35,13 +35,13 @@ public class UpdateAiotPersonTableItemResponseUnmarshaller {
 
 		PersonTableItem personTableItem = new PersonTableItem();
 		personTableItem.setPersonTableId(_ctx.stringValue("UpdateAiotPersonTableItemResponse.PersonTableItem.PersonTableId"));
-		personTableItem.setIdentificationNum(_ctx.longValue("UpdateAiotPersonTableItemResponse.PersonTableItem.IdentificationNum"));
-		personTableItem.setPersonName(_ctx.stringValue("UpdateAiotPersonTableItemResponse.PersonTableItem.PersonName"));
 		personTableItem.setPersonId(_ctx.stringValue("UpdateAiotPersonTableItemResponse.PersonTableItem.PersonId"));
-		personTableItem.setRemarks(_ctx.stringValue("UpdateAiotPersonTableItemResponse.PersonTableItem.Remarks"));
-		personTableItem.setImageNum(_ctx.longValue("UpdateAiotPersonTableItemResponse.PersonTableItem.ImageNum"));
 		personTableItem.setLastChange(_ctx.stringValue("UpdateAiotPersonTableItemResponse.PersonTableItem.LastChange"));
 		personTableItem.setPersonCode(_ctx.stringValue("UpdateAiotPersonTableItemResponse.PersonTableItem.PersonCode"));
+		personTableItem.setPersonName(_ctx.stringValue("UpdateAiotPersonTableItemResponse.PersonTableItem.PersonName"));
+		personTableItem.setRemarks(_ctx.stringValue("UpdateAiotPersonTableItemResponse.PersonTableItem.Remarks"));
+		personTableItem.setIdentificationNum(_ctx.longValue("UpdateAiotPersonTableItemResponse.PersonTableItem.IdentificationNum"));
+		personTableItem.setImageNum(_ctx.longValue("UpdateAiotPersonTableItemResponse.PersonTableItem.ImageNum"));
 
 		List<IdentificationListItem> identificationList = new ArrayList<IdentificationListItem>();
 		for (int i = 0; i < _ctx.lengthValue("UpdateAiotPersonTableItemResponse.PersonTableItem.IdentificationList.Length"); i++) {
@@ -56,26 +56,26 @@ public class UpdateAiotPersonTableItemResponseUnmarshaller {
 		List<ImageListItem> imageList = new ArrayList<ImageListItem>();
 		for (int i = 0; i < _ctx.lengthValue("UpdateAiotPersonTableItemResponse.PersonTableItem.ImageList.Length"); i++) {
 			ImageListItem imageListItem = new ImageListItem();
-			imageListItem.setType(_ctx.stringValue("UpdateAiotPersonTableItemResponse.PersonTableItem.ImageList["+ i +"].Type"));
-			imageListItem.setStoragePath(_ctx.stringValue("UpdateAiotPersonTableItemResponse.PersonTableItem.ImageList["+ i +"].StoragePath"));
-			imageListItem.setSize(_ctx.longValue("UpdateAiotPersonTableItemResponse.PersonTableItem.ImageList["+ i +"].Size"));
-			imageListItem.setDeviceId(_ctx.stringValue("UpdateAiotPersonTableItemResponse.PersonTableItem.ImageList["+ i +"].DeviceId"));
 			imageListItem.setImageId(_ctx.stringValue("UpdateAiotPersonTableItemResponse.PersonTableItem.ImageList["+ i +"].ImageId"));
 			imageListItem.setEventSort(_ctx.stringValue("UpdateAiotPersonTableItemResponse.PersonTableItem.ImageList["+ i +"].EventSort"));
-			imageListItem.setData(_ctx.stringValue("UpdateAiotPersonTableItemResponse.PersonTableItem.ImageList["+ i +"].Data"));
-			imageListItem.setHeight(_ctx.longValue("UpdateAiotPersonTableItemResponse.PersonTableItem.ImageList["+ i +"].Height"));
-			imageListItem.setShotTime(_ctx.stringValue("UpdateAiotPersonTableItemResponse.PersonTableItem.ImageList["+ i +"].ShotTime"));
+			imageListItem.setDeviceId(_ctx.stringValue("UpdateAiotPersonTableItemResponse.PersonTableItem.ImageList["+ i +"].DeviceId"));
+			imageListItem.setStoragePath(_ctx.stringValue("UpdateAiotPersonTableItemResponse.PersonTableItem.ImageList["+ i +"].StoragePath"));
+			imageListItem.setSize(_ctx.longValue("UpdateAiotPersonTableItemResponse.PersonTableItem.ImageList["+ i +"].Size"));
+			imageListItem.setType(_ctx.stringValue("UpdateAiotPersonTableItemResponse.PersonTableItem.ImageList["+ i +"].Type"));
 			imageListItem.setFileFormat(_ctx.stringValue("UpdateAiotPersonTableItemResponse.PersonTableItem.ImageList["+ i +"].FileFormat"));
+			imageListItem.setShotTime(_ctx.stringValue("UpdateAiotPersonTableItemResponse.PersonTableItem.ImageList["+ i +"].ShotTime"));
 			imageListItem.setWidth(_ctx.longValue("UpdateAiotPersonTableItemResponse.PersonTableItem.ImageList["+ i +"].Width"));
+			imageListItem.setHeight(_ctx.longValue("UpdateAiotPersonTableItemResponse.PersonTableItem.ImageList["+ i +"].Height"));
+			imageListItem.setData(_ctx.stringValue("UpdateAiotPersonTableItemResponse.PersonTableItem.ImageList["+ i +"].Data"));
 
 			FeatureInfo featureInfo = new FeatureInfo();
+			featureInfo.setVendor(_ctx.stringValue("UpdateAiotPersonTableItemResponse.PersonTableItem.ImageList["+ i +"].FeatureInfo.Vendor"));
+			featureInfo.setAlgorithmVersion(_ctx.stringValue("UpdateAiotPersonTableItemResponse.PersonTableItem.ImageList["+ i +"].FeatureInfo.AlgorithmVersion"));
 			featureInfo.setAlgorithmType(_ctx.stringValue("UpdateAiotPersonTableItemResponse.PersonTableItem.ImageList["+ i +"].FeatureInfo.AlgorithmType"));
+			featureInfo.setTabIed(_ctx.stringValue("UpdateAiotPersonTableItemResponse.PersonTableItem.ImageList["+ i +"].FeatureInfo.TabIed"));
 			featureInfo.setObjectId(_ctx.stringValue("UpdateAiotPersonTableItemResponse.PersonTableItem.ImageList["+ i +"].FeatureInfo.ObjectId"));
 			featureInfo.setImageId(_ctx.stringValue("UpdateAiotPersonTableItemResponse.PersonTableItem.ImageList["+ i +"].FeatureInfo.ImageId"));
-			featureInfo.setTabIed(_ctx.stringValue("UpdateAiotPersonTableItemResponse.PersonTableItem.ImageList["+ i +"].FeatureInfo.TabIed"));
-			featureInfo.setAlgorithmVersion(_ctx.stringValue("UpdateAiotPersonTableItemResponse.PersonTableItem.ImageList["+ i +"].FeatureInfo.AlgorithmVersion"));
 			featureInfo.setFeatureData(_ctx.stringValue("UpdateAiotPersonTableItemResponse.PersonTableItem.ImageList["+ i +"].FeatureInfo.FeatureData"));
-			featureInfo.setVendor(_ctx.stringValue("UpdateAiotPersonTableItemResponse.PersonTableItem.ImageList["+ i +"].FeatureInfo.Vendor"));
 			imageListItem.setFeatureInfo(featureInfo);
 
 			imageList.add(imageListItem);

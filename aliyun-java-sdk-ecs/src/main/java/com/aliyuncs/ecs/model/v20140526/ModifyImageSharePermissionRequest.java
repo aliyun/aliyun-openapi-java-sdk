@@ -30,6 +30,8 @@ public class ModifyImageSharePermissionRequest extends RpcAcsRequest<ModifyImage
 
 	private String imageId;
 
+	private Boolean isPublic;
+
 	private String launchPermission;
 
 	private String resourceOwnerAccount;
@@ -69,6 +71,17 @@ public class ModifyImageSharePermissionRequest extends RpcAcsRequest<ModifyImage
 		this.imageId = imageId;
 		if(imageId != null){
 			putQueryParameter("ImageId", imageId);
+		}
+	}
+
+	public Boolean getIsPublic() {
+		return this.isPublic;
+	}
+
+	public void setIsPublic(Boolean isPublic) {
+		this.isPublic = isPublic;
+		if(isPublic != null){
+			putQueryParameter("IsPublic", isPublic.toString());
 		}
 	}
 

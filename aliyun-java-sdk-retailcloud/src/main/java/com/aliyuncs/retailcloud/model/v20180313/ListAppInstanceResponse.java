@@ -117,6 +117,8 @@ public class ListAppInstanceResponse extends AcsResponse {
 
 		private String version;
 
+		private String status;
+
 		public String getAppInstanceId() {
 			return this.appInstanceId;
 		}
@@ -195,6 +197,14 @@ public class ListAppInstanceResponse extends AcsResponse {
 
 		public void setVersion(String version) {
 			this.version = version;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
 		}
 	}
 

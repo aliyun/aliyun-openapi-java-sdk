@@ -73,6 +73,10 @@ public class ListDashboardsResponse extends AcsResponse {
 
 		private Boolean needUpdate;
 
+		private String httpUrl;
+
+		private String httpsUrl;
+
 		private List<String> tags;
 
 		public String getId() {
@@ -177,6 +181,22 @@ public class ListDashboardsResponse extends AcsResponse {
 
 		public void setNeedUpdate(Boolean needUpdate) {
 			this.needUpdate = needUpdate;
+		}
+
+		public String getHttpUrl() {
+			return this.httpUrl;
+		}
+
+		public void setHttpUrl(String httpUrl) {
+			this.httpUrl = httpUrl;
+		}
+
+		public String getHttpsUrl() {
+			return this.httpsUrl;
+		}
+
+		public void setHttpsUrl(String httpsUrl) {
+			this.httpsUrl = httpsUrl;
 		}
 
 		public List<String> getTags() {

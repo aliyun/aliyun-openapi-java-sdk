@@ -25,17 +25,41 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeInstancesResponse extends AcsResponse {
 
+	private String nextToken;
+
+	private Integer pageSize;
+
+	private Integer pageNumber;
+
 	private String requestId;
 
 	private Integer totalCount;
 
-	private Integer pageNumber;
-
-	private Integer pageSize;
-
-	private String nextToken;
-
 	private List<Instance> instances;
+
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -53,30 +77,6 @@ public class DescribeInstancesResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-	}
-
-	public String getNextToken() {
-		return this.nextToken;
-	}
-
-	public void setNextToken(String nextToken) {
-		this.nextToken = nextToken;
-	}
-
 	public List<Instance> getInstances() {
 		return this.instances;
 	}
@@ -87,99 +87,99 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 	public static class Instance {
 
-		private String instanceId;
-
-		private String instanceName;
-
-		private String description;
-
-		private String imageId;
-
-		private String oSName;
-
-		private String oSNameEn;
-
-		private String oSType;
-
-		private String regionId;
-
-		private String zoneId;
-
-		private String clusterId;
-
-		private String instanceType;
-
-		private Integer cpu;
-
-		private Integer memory;
-
-		private String hostName;
-
-		private String deploymentSetId;
-
-		private Integer deploymentSetGroupNo;
-
-		private String status;
+		private String creationTime;
 
 		private String serialNumber;
 
-		private String internetChargeType;
+		private String status;
 
-		private Integer internetMaxBandwidthIn;
-
-		private Integer internetMaxBandwidthOut;
-
-		private String vlanId;
-
-		private String creationTime;
-
-		private String startTime;
-
-		private String instanceNetworkType;
-
-		private String instanceChargeType;
-
-		private String saleCycle;
-
-		private String expiredTime;
-
-		private String autoReleaseTime;
-
-		private Boolean ioOptimized;
-
-		private Boolean deviceAvailable;
-
-		private String instanceTypeFamily;
-
-		private Long localStorageCapacity;
-
-		private Integer localStorageAmount;
-
-		private Integer gPUAmount;
-
-		private String gPUSpec;
-
-		private String spotStrategy;
-
-		private Float spotPriceLimit;
-
-		private Integer spotDuration;
-
-		private String resourceGroupId;
+		private String deploymentSetId;
 
 		private String keyPairName;
 
-		private Boolean recyclable;
+		private String saleCycle;
+
+		private String spotStrategy;
+
+		private Boolean deviceAvailable;
+
+		private Long localStorageCapacity;
+
+		private String description;
+
+		private Integer spotDuration;
+
+		private String instanceNetworkType;
+
+		private String instanceName;
+
+		private String oSNameEn;
 
 		private String hpcClusterId;
 
-		private String stoppedMode;
+		private Float spotPriceLimit;
 
-		private String creditSpecification;
+		private Integer memory;
+
+		private String oSName;
+
+		private Integer deploymentSetGroupNo;
+
+		private String imageId;
+
+		private String vlanId;
+
+		private String clusterId;
+
+		private String gPUSpec;
+
+		private String autoReleaseTime;
 
 		private Boolean deletionProtection;
 
+		private String stoppedMode;
+
+		private Integer gPUAmount;
+
+		private String hostName;
+
+		private String instanceId;
+
+		private Integer internetMaxBandwidthOut;
+
+		private Integer internetMaxBandwidthIn;
+
+		private String instanceType;
+
+		private String instanceChargeType;
+
+		private String regionId;
+
+		private Boolean ioOptimized;
+
+		private String startTime;
+
+		private Integer cpu;
+
+		private Integer localStorageAmount;
+
+		private String expiredTime;
+
+		private String resourceGroupId;
+
+		private String internetChargeType;
+
+		private String zoneId;
+
+		private Boolean recyclable;
+
 		private String iSP;
+
+		private String creditSpecification;
+
+		private String instanceTypeFamily;
+
+		private String oSType;
 
 		private List<NetworkInterface> networkInterfaces;
 
@@ -187,13 +187,13 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		private List<Tag> tags;
 
+		private List<String> rdmaIpAddress;
+
 		private List<String> securityGroupIds;
 
 		private List<String> publicIpAddress;
 
 		private List<String> innerIpAddress;
-
-		private List<String> rdmaIpAddress;
 
 		private VpcAttributes vpcAttributes;
 
@@ -211,140 +211,12 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		private MetadataOptions metadataOptions;
 
-		public String getInstanceId() {
-			return this.instanceId;
+		public String getCreationTime() {
+			return this.creationTime;
 		}
 
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
-
-		public String getInstanceName() {
-			return this.instanceName;
-		}
-
-		public void setInstanceName(String instanceName) {
-			this.instanceName = instanceName;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
-		public String getImageId() {
-			return this.imageId;
-		}
-
-		public void setImageId(String imageId) {
-			this.imageId = imageId;
-		}
-
-		public String getOSName() {
-			return this.oSName;
-		}
-
-		public void setOSName(String oSName) {
-			this.oSName = oSName;
-		}
-
-		public String getOSNameEn() {
-			return this.oSNameEn;
-		}
-
-		public void setOSNameEn(String oSNameEn) {
-			this.oSNameEn = oSNameEn;
-		}
-
-		public String getOSType() {
-			return this.oSType;
-		}
-
-		public void setOSType(String oSType) {
-			this.oSType = oSType;
-		}
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		public String getZoneId() {
-			return this.zoneId;
-		}
-
-		public void setZoneId(String zoneId) {
-			this.zoneId = zoneId;
-		}
-
-		public String getClusterId() {
-			return this.clusterId;
-		}
-
-		public void setClusterId(String clusterId) {
-			this.clusterId = clusterId;
-		}
-
-		public String getInstanceType() {
-			return this.instanceType;
-		}
-
-		public void setInstanceType(String instanceType) {
-			this.instanceType = instanceType;
-		}
-
-		public Integer getCpu() {
-			return this.cpu;
-		}
-
-		public void setCpu(Integer cpu) {
-			this.cpu = cpu;
-		}
-
-		public Integer getMemory() {
-			return this.memory;
-		}
-
-		public void setMemory(Integer memory) {
-			this.memory = memory;
-		}
-
-		public String getHostName() {
-			return this.hostName;
-		}
-
-		public void setHostName(String hostName) {
-			this.hostName = hostName;
-		}
-
-		public String getDeploymentSetId() {
-			return this.deploymentSetId;
-		}
-
-		public void setDeploymentSetId(String deploymentSetId) {
-			this.deploymentSetId = deploymentSetId;
-		}
-
-		public Integer getDeploymentSetGroupNo() {
-			return this.deploymentSetGroupNo;
-		}
-
-		public void setDeploymentSetGroupNo(Integer deploymentSetGroupNo) {
-			this.deploymentSetGroupNo = deploymentSetGroupNo;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
 		}
 
 		public String getSerialNumber() {
@@ -355,180 +227,20 @@ public class DescribeInstancesResponse extends AcsResponse {
 			this.serialNumber = serialNumber;
 		}
 
-		public String getInternetChargeType() {
-			return this.internetChargeType;
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setInternetChargeType(String internetChargeType) {
-			this.internetChargeType = internetChargeType;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
-		public Integer getInternetMaxBandwidthIn() {
-			return this.internetMaxBandwidthIn;
+		public String getDeploymentSetId() {
+			return this.deploymentSetId;
 		}
 
-		public void setInternetMaxBandwidthIn(Integer internetMaxBandwidthIn) {
-			this.internetMaxBandwidthIn = internetMaxBandwidthIn;
-		}
-
-		public Integer getInternetMaxBandwidthOut() {
-			return this.internetMaxBandwidthOut;
-		}
-
-		public void setInternetMaxBandwidthOut(Integer internetMaxBandwidthOut) {
-			this.internetMaxBandwidthOut = internetMaxBandwidthOut;
-		}
-
-		public String getVlanId() {
-			return this.vlanId;
-		}
-
-		public void setVlanId(String vlanId) {
-			this.vlanId = vlanId;
-		}
-
-		public String getCreationTime() {
-			return this.creationTime;
-		}
-
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
-		}
-
-		public String getStartTime() {
-			return this.startTime;
-		}
-
-		public void setStartTime(String startTime) {
-			this.startTime = startTime;
-		}
-
-		public String getInstanceNetworkType() {
-			return this.instanceNetworkType;
-		}
-
-		public void setInstanceNetworkType(String instanceNetworkType) {
-			this.instanceNetworkType = instanceNetworkType;
-		}
-
-		public String getInstanceChargeType() {
-			return this.instanceChargeType;
-		}
-
-		public void setInstanceChargeType(String instanceChargeType) {
-			this.instanceChargeType = instanceChargeType;
-		}
-
-		public String getSaleCycle() {
-			return this.saleCycle;
-		}
-
-		public void setSaleCycle(String saleCycle) {
-			this.saleCycle = saleCycle;
-		}
-
-		public String getExpiredTime() {
-			return this.expiredTime;
-		}
-
-		public void setExpiredTime(String expiredTime) {
-			this.expiredTime = expiredTime;
-		}
-
-		public String getAutoReleaseTime() {
-			return this.autoReleaseTime;
-		}
-
-		public void setAutoReleaseTime(String autoReleaseTime) {
-			this.autoReleaseTime = autoReleaseTime;
-		}
-
-		public Boolean getIoOptimized() {
-			return this.ioOptimized;
-		}
-
-		public void setIoOptimized(Boolean ioOptimized) {
-			this.ioOptimized = ioOptimized;
-		}
-
-		public Boolean getDeviceAvailable() {
-			return this.deviceAvailable;
-		}
-
-		public void setDeviceAvailable(Boolean deviceAvailable) {
-			this.deviceAvailable = deviceAvailable;
-		}
-
-		public String getInstanceTypeFamily() {
-			return this.instanceTypeFamily;
-		}
-
-		public void setInstanceTypeFamily(String instanceTypeFamily) {
-			this.instanceTypeFamily = instanceTypeFamily;
-		}
-
-		public Long getLocalStorageCapacity() {
-			return this.localStorageCapacity;
-		}
-
-		public void setLocalStorageCapacity(Long localStorageCapacity) {
-			this.localStorageCapacity = localStorageCapacity;
-		}
-
-		public Integer getLocalStorageAmount() {
-			return this.localStorageAmount;
-		}
-
-		public void setLocalStorageAmount(Integer localStorageAmount) {
-			this.localStorageAmount = localStorageAmount;
-		}
-
-		public Integer getGPUAmount() {
-			return this.gPUAmount;
-		}
-
-		public void setGPUAmount(Integer gPUAmount) {
-			this.gPUAmount = gPUAmount;
-		}
-
-		public String getGPUSpec() {
-			return this.gPUSpec;
-		}
-
-		public void setGPUSpec(String gPUSpec) {
-			this.gPUSpec = gPUSpec;
-		}
-
-		public String getSpotStrategy() {
-			return this.spotStrategy;
-		}
-
-		public void setSpotStrategy(String spotStrategy) {
-			this.spotStrategy = spotStrategy;
-		}
-
-		public Float getSpotPriceLimit() {
-			return this.spotPriceLimit;
-		}
-
-		public void setSpotPriceLimit(Float spotPriceLimit) {
-			this.spotPriceLimit = spotPriceLimit;
-		}
-
-		public Integer getSpotDuration() {
-			return this.spotDuration;
-		}
-
-		public void setSpotDuration(Integer spotDuration) {
-			this.spotDuration = spotDuration;
-		}
-
-		public String getResourceGroupId() {
-			return this.resourceGroupId;
-		}
-
-		public void setResourceGroupId(String resourceGroupId) {
-			this.resourceGroupId = resourceGroupId;
+		public void setDeploymentSetId(String deploymentSetId) {
+			this.deploymentSetId = deploymentSetId;
 		}
 
 		public String getKeyPairName() {
@@ -539,12 +251,76 @@ public class DescribeInstancesResponse extends AcsResponse {
 			this.keyPairName = keyPairName;
 		}
 
-		public Boolean getRecyclable() {
-			return this.recyclable;
+		public String getSaleCycle() {
+			return this.saleCycle;
 		}
 
-		public void setRecyclable(Boolean recyclable) {
-			this.recyclable = recyclable;
+		public void setSaleCycle(String saleCycle) {
+			this.saleCycle = saleCycle;
+		}
+
+		public String getSpotStrategy() {
+			return this.spotStrategy;
+		}
+
+		public void setSpotStrategy(String spotStrategy) {
+			this.spotStrategy = spotStrategy;
+		}
+
+		public Boolean getDeviceAvailable() {
+			return this.deviceAvailable;
+		}
+
+		public void setDeviceAvailable(Boolean deviceAvailable) {
+			this.deviceAvailable = deviceAvailable;
+		}
+
+		public Long getLocalStorageCapacity() {
+			return this.localStorageCapacity;
+		}
+
+		public void setLocalStorageCapacity(Long localStorageCapacity) {
+			this.localStorageCapacity = localStorageCapacity;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public Integer getSpotDuration() {
+			return this.spotDuration;
+		}
+
+		public void setSpotDuration(Integer spotDuration) {
+			this.spotDuration = spotDuration;
+		}
+
+		public String getInstanceNetworkType() {
+			return this.instanceNetworkType;
+		}
+
+		public void setInstanceNetworkType(String instanceNetworkType) {
+			this.instanceNetworkType = instanceNetworkType;
+		}
+
+		public String getInstanceName() {
+			return this.instanceName;
+		}
+
+		public void setInstanceName(String instanceName) {
+			this.instanceName = instanceName;
+		}
+
+		public String getOSNameEn() {
+			return this.oSNameEn;
+		}
+
+		public void setOSNameEn(String oSNameEn) {
+			this.oSNameEn = oSNameEn;
 		}
 
 		public String getHpcClusterId() {
@@ -555,20 +331,76 @@ public class DescribeInstancesResponse extends AcsResponse {
 			this.hpcClusterId = hpcClusterId;
 		}
 
-		public String getStoppedMode() {
-			return this.stoppedMode;
+		public Float getSpotPriceLimit() {
+			return this.spotPriceLimit;
 		}
 
-		public void setStoppedMode(String stoppedMode) {
-			this.stoppedMode = stoppedMode;
+		public void setSpotPriceLimit(Float spotPriceLimit) {
+			this.spotPriceLimit = spotPriceLimit;
 		}
 
-		public String getCreditSpecification() {
-			return this.creditSpecification;
+		public Integer getMemory() {
+			return this.memory;
 		}
 
-		public void setCreditSpecification(String creditSpecification) {
-			this.creditSpecification = creditSpecification;
+		public void setMemory(Integer memory) {
+			this.memory = memory;
+		}
+
+		public String getOSName() {
+			return this.oSName;
+		}
+
+		public void setOSName(String oSName) {
+			this.oSName = oSName;
+		}
+
+		public Integer getDeploymentSetGroupNo() {
+			return this.deploymentSetGroupNo;
+		}
+
+		public void setDeploymentSetGroupNo(Integer deploymentSetGroupNo) {
+			this.deploymentSetGroupNo = deploymentSetGroupNo;
+		}
+
+		public String getImageId() {
+			return this.imageId;
+		}
+
+		public void setImageId(String imageId) {
+			this.imageId = imageId;
+		}
+
+		public String getVlanId() {
+			return this.vlanId;
+		}
+
+		public void setVlanId(String vlanId) {
+			this.vlanId = vlanId;
+		}
+
+		public String getClusterId() {
+			return this.clusterId;
+		}
+
+		public void setClusterId(String clusterId) {
+			this.clusterId = clusterId;
+		}
+
+		public String getGPUSpec() {
+			return this.gPUSpec;
+		}
+
+		public void setGPUSpec(String gPUSpec) {
+			this.gPUSpec = gPUSpec;
+		}
+
+		public String getAutoReleaseTime() {
+			return this.autoReleaseTime;
+		}
+
+		public void setAutoReleaseTime(String autoReleaseTime) {
+			this.autoReleaseTime = autoReleaseTime;
 		}
 
 		public Boolean getDeletionProtection() {
@@ -579,12 +411,180 @@ public class DescribeInstancesResponse extends AcsResponse {
 			this.deletionProtection = deletionProtection;
 		}
 
+		public String getStoppedMode() {
+			return this.stoppedMode;
+		}
+
+		public void setStoppedMode(String stoppedMode) {
+			this.stoppedMode = stoppedMode;
+		}
+
+		public Integer getGPUAmount() {
+			return this.gPUAmount;
+		}
+
+		public void setGPUAmount(Integer gPUAmount) {
+			this.gPUAmount = gPUAmount;
+		}
+
+		public String getHostName() {
+			return this.hostName;
+		}
+
+		public void setHostName(String hostName) {
+			this.hostName = hostName;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public Integer getInternetMaxBandwidthOut() {
+			return this.internetMaxBandwidthOut;
+		}
+
+		public void setInternetMaxBandwidthOut(Integer internetMaxBandwidthOut) {
+			this.internetMaxBandwidthOut = internetMaxBandwidthOut;
+		}
+
+		public Integer getInternetMaxBandwidthIn() {
+			return this.internetMaxBandwidthIn;
+		}
+
+		public void setInternetMaxBandwidthIn(Integer internetMaxBandwidthIn) {
+			this.internetMaxBandwidthIn = internetMaxBandwidthIn;
+		}
+
+		public String getInstanceType() {
+			return this.instanceType;
+		}
+
+		public void setInstanceType(String instanceType) {
+			this.instanceType = instanceType;
+		}
+
+		public String getInstanceChargeType() {
+			return this.instanceChargeType;
+		}
+
+		public void setInstanceChargeType(String instanceChargeType) {
+			this.instanceChargeType = instanceChargeType;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		public Boolean getIoOptimized() {
+			return this.ioOptimized;
+		}
+
+		public void setIoOptimized(Boolean ioOptimized) {
+			this.ioOptimized = ioOptimized;
+		}
+
+		public String getStartTime() {
+			return this.startTime;
+		}
+
+		public void setStartTime(String startTime) {
+			this.startTime = startTime;
+		}
+
+		public Integer getCpu() {
+			return this.cpu;
+		}
+
+		public void setCpu(Integer cpu) {
+			this.cpu = cpu;
+		}
+
+		public Integer getLocalStorageAmount() {
+			return this.localStorageAmount;
+		}
+
+		public void setLocalStorageAmount(Integer localStorageAmount) {
+			this.localStorageAmount = localStorageAmount;
+		}
+
+		public String getExpiredTime() {
+			return this.expiredTime;
+		}
+
+		public void setExpiredTime(String expiredTime) {
+			this.expiredTime = expiredTime;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
+		public String getInternetChargeType() {
+			return this.internetChargeType;
+		}
+
+		public void setInternetChargeType(String internetChargeType) {
+			this.internetChargeType = internetChargeType;
+		}
+
+		public String getZoneId() {
+			return this.zoneId;
+		}
+
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
+		}
+
+		public Boolean getRecyclable() {
+			return this.recyclable;
+		}
+
+		public void setRecyclable(Boolean recyclable) {
+			this.recyclable = recyclable;
+		}
+
 		public String getISP() {
 			return this.iSP;
 		}
 
 		public void setISP(String iSP) {
 			this.iSP = iSP;
+		}
+
+		public String getCreditSpecification() {
+			return this.creditSpecification;
+		}
+
+		public void setCreditSpecification(String creditSpecification) {
+			this.creditSpecification = creditSpecification;
+		}
+
+		public String getInstanceTypeFamily() {
+			return this.instanceTypeFamily;
+		}
+
+		public void setInstanceTypeFamily(String instanceTypeFamily) {
+			this.instanceTypeFamily = instanceTypeFamily;
+		}
+
+		public String getOSType() {
+			return this.oSType;
+		}
+
+		public void setOSType(String oSType) {
+			this.oSType = oSType;
 		}
 
 		public List<NetworkInterface> getNetworkInterfaces() {
@@ -611,6 +611,14 @@ public class DescribeInstancesResponse extends AcsResponse {
 			this.tags = tags;
 		}
 
+		public List<String> getRdmaIpAddress() {
+			return this.rdmaIpAddress;
+		}
+
+		public void setRdmaIpAddress(List<String> rdmaIpAddress) {
+			this.rdmaIpAddress = rdmaIpAddress;
+		}
+
 		public List<String> getSecurityGroupIds() {
 			return this.securityGroupIds;
 		}
@@ -633,14 +641,6 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		public void setInnerIpAddress(List<String> innerIpAddress) {
 			this.innerIpAddress = innerIpAddress;
-		}
-
-		public List<String> getRdmaIpAddress() {
-			return this.rdmaIpAddress;
-		}
-
-		public void setRdmaIpAddress(List<String> rdmaIpAddress) {
-			this.rdmaIpAddress = rdmaIpAddress;
 		}
 
 		public VpcAttributes getVpcAttributes() {
@@ -709,24 +709,24 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		public static class NetworkInterface {
 
-			private String networkInterfaceId;
+			private String type;
 
 			private String macAddress;
 
 			private String primaryIpAddress;
 
-			private String type;
+			private String networkInterfaceId;
 
 			private List<PrivateIpSet> privateIpSets;
 
 			private List<Ipv6Set> ipv6Sets;
 
-			public String getNetworkInterfaceId() {
-				return this.networkInterfaceId;
+			public String getType() {
+				return this.type;
 			}
 
-			public void setNetworkInterfaceId(String networkInterfaceId) {
-				this.networkInterfaceId = networkInterfaceId;
+			public void setType(String type) {
+				this.type = type;
 			}
 
 			public String getMacAddress() {
@@ -745,12 +745,12 @@ public class DescribeInstancesResponse extends AcsResponse {
 				this.primaryIpAddress = primaryIpAddress;
 			}
 
-			public String getType() {
-				return this.type;
+			public String getNetworkInterfaceId() {
+				return this.networkInterfaceId;
 			}
 
-			public void setType(String type) {
-				this.type = type;
+			public void setNetworkInterfaceId(String networkInterfaceId) {
+				this.networkInterfaceId = networkInterfaceId;
 			}
 
 			public List<PrivateIpSet> getPrivateIpSets() {
@@ -808,17 +808,9 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		public static class LockReason {
 
-			private String lockReason;
-
 			private String lockMsg;
 
-			public String getLockReason() {
-				return this.lockReason;
-			}
-
-			public void setLockReason(String lockReason) {
-				this.lockReason = lockReason;
-			}
+			private String lockReason;
 
 			public String getLockMsg() {
 				return this.lockMsg;
@@ -827,21 +819,21 @@ public class DescribeInstancesResponse extends AcsResponse {
 			public void setLockMsg(String lockMsg) {
 				this.lockMsg = lockMsg;
 			}
+
+			public String getLockReason() {
+				return this.lockReason;
+			}
+
+			public void setLockReason(String lockReason) {
+				this.lockReason = lockReason;
+			}
 		}
 
 		public static class Tag {
 
-			private String tagKey;
-
 			private String tagValue;
 
-			public String getTagKey() {
-				return this.tagKey;
-			}
-
-			public void setTagKey(String tagKey) {
-				this.tagKey = tagKey;
-			}
+			private String tagKey;
 
 			public String getTagValue() {
 				return this.tagValue;
@@ -850,15 +842,23 @@ public class DescribeInstancesResponse extends AcsResponse {
 			public void setTagValue(String tagValue) {
 				this.tagValue = tagValue;
 			}
+
+			public String getTagKey() {
+				return this.tagKey;
+			}
+
+			public void setTagKey(String tagKey) {
+				this.tagKey = tagKey;
+			}
 		}
 
 		public static class VpcAttributes {
 
 			private String vpcId;
 
-			private String vSwitchId;
-
 			private String natIpAddress;
+
+			private String vSwitchId;
 
 			private List<String> privateIpAddress;
 
@@ -870,20 +870,20 @@ public class DescribeInstancesResponse extends AcsResponse {
 				this.vpcId = vpcId;
 			}
 
-			public String getVSwitchId() {
-				return this.vSwitchId;
-			}
-
-			public void setVSwitchId(String vSwitchId) {
-				this.vSwitchId = vSwitchId;
-			}
-
 			public String getNatIpAddress() {
 				return this.natIpAddress;
 			}
 
 			public void setNatIpAddress(String natIpAddress) {
 				this.natIpAddress = natIpAddress;
+			}
+
+			public String getVSwitchId() {
+				return this.vSwitchId;
+			}
+
+			public void setVSwitchId(String vSwitchId) {
+				this.vSwitchId = vSwitchId;
 			}
 
 			public List<String> getPrivateIpAddress() {
@@ -897,22 +897,30 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		public static class EipAddress {
 
-			private String allocationId;
+			private Boolean isSupportUnassociate;
+
+			private String internetChargeType;
 
 			private String ipAddress;
 
 			private Integer bandwidth;
 
-			private String internetChargeType;
+			private String allocationId;
 
-			private Boolean isSupportUnassociate;
-
-			public String getAllocationId() {
-				return this.allocationId;
+			public Boolean getIsSupportUnassociate() {
+				return this.isSupportUnassociate;
 			}
 
-			public void setAllocationId(String allocationId) {
-				this.allocationId = allocationId;
+			public void setIsSupportUnassociate(Boolean isSupportUnassociate) {
+				this.isSupportUnassociate = isSupportUnassociate;
+			}
+
+			public String getInternetChargeType() {
+				return this.internetChargeType;
+			}
+
+			public void setInternetChargeType(String internetChargeType) {
+				this.internetChargeType = internetChargeType;
 			}
 
 			public String getIpAddress() {
@@ -931,20 +939,12 @@ public class DescribeInstancesResponse extends AcsResponse {
 				this.bandwidth = bandwidth;
 			}
 
-			public String getInternetChargeType() {
-				return this.internetChargeType;
+			public String getAllocationId() {
+				return this.allocationId;
 			}
 
-			public void setInternetChargeType(String internetChargeType) {
-				this.internetChargeType = internetChargeType;
-			}
-
-			public Boolean getIsSupportUnassociate() {
-				return this.isSupportUnassociate;
-			}
-
-			public void setIsSupportUnassociate(Boolean isSupportUnassociate) {
-				this.isSupportUnassociate = isSupportUnassociate;
+			public void setAllocationId(String allocationId) {
+				this.allocationId = allocationId;
 			}
 		}
 
@@ -996,17 +996,9 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		public static class EcsCapacityReservationAttr {
 
-			private String capacityReservationId;
-
 			private String capacityReservationPreference;
 
-			public String getCapacityReservationId() {
-				return this.capacityReservationId;
-			}
-
-			public void setCapacityReservationId(String capacityReservationId) {
-				this.capacityReservationId = capacityReservationId;
-			}
+			private String capacityReservationId;
 
 			public String getCapacityReservationPreference() {
 				return this.capacityReservationPreference;
@@ -1015,21 +1007,21 @@ public class DescribeInstancesResponse extends AcsResponse {
 			public void setCapacityReservationPreference(String capacityReservationPreference) {
 				this.capacityReservationPreference = capacityReservationPreference;
 			}
+
+			public String getCapacityReservationId() {
+				return this.capacityReservationId;
+			}
+
+			public void setCapacityReservationId(String capacityReservationId) {
+				this.capacityReservationId = capacityReservationId;
+			}
 		}
 
 		public static class DedicatedInstanceAttribute {
 
-			private String tenancy;
-
 			private String affinity;
 
-			public String getTenancy() {
-				return this.tenancy;
-			}
-
-			public void setTenancy(String tenancy) {
-				this.tenancy = tenancy;
-			}
+			private String tenancy;
 
 			public String getAffinity() {
 				return this.affinity;
@@ -1038,15 +1030,31 @@ public class DescribeInstancesResponse extends AcsResponse {
 			public void setAffinity(String affinity) {
 				this.affinity = affinity;
 			}
+
+			public String getTenancy() {
+				return this.tenancy;
+			}
+
+			public void setTenancy(String tenancy) {
+				this.tenancy = tenancy;
+			}
 		}
 
 		public static class CpuOptions {
+
+			private String numa;
 
 			private Integer coreCount;
 
 			private Integer threadsPerCore;
 
-			private String numa;
+			public String getNuma() {
+				return this.numa;
+			}
+
+			public void setNuma(String numa) {
+				this.numa = numa;
+			}
 
 			public Integer getCoreCount() {
 				return this.coreCount;
@@ -1063,23 +1071,15 @@ public class DescribeInstancesResponse extends AcsResponse {
 			public void setThreadsPerCore(Integer threadsPerCore) {
 				this.threadsPerCore = threadsPerCore;
 			}
-
-			public String getNuma() {
-				return this.numa;
-			}
-
-			public void setNuma(String numa) {
-				this.numa = numa;
-			}
 		}
 
 		public static class MetadataOptions {
 
 			private String httpEndpoint;
 
-			private String httpTokens;
-
 			private Integer httpPutResponseHopLimit;
+
+			private String httpTokens;
 
 			public String getHttpEndpoint() {
 				return this.httpEndpoint;
@@ -1089,20 +1089,20 @@ public class DescribeInstancesResponse extends AcsResponse {
 				this.httpEndpoint = httpEndpoint;
 			}
 
-			public String getHttpTokens() {
-				return this.httpTokens;
-			}
-
-			public void setHttpTokens(String httpTokens) {
-				this.httpTokens = httpTokens;
-			}
-
 			public Integer getHttpPutResponseHopLimit() {
 				return this.httpPutResponseHopLimit;
 			}
 
 			public void setHttpPutResponseHopLimit(Integer httpPutResponseHopLimit) {
 				this.httpPutResponseHopLimit = httpPutResponseHopLimit;
+			}
+
+			public String getHttpTokens() {
+				return this.httpTokens;
+			}
+
+			public void setHttpTokens(String httpTokens) {
+				this.httpTokens = httpTokens;
 			}
 		}
 	}

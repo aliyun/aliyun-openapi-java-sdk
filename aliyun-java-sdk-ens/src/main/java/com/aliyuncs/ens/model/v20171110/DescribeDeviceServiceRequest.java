@@ -27,6 +27,8 @@ public class DescribeDeviceServiceRequest extends RpcAcsRequest<DescribeDeviceSe
 	private String instanceId;
 
 	private String appId;
+
+	private String serviceId;
 	public DescribeDeviceServiceRequest() {
 		super("Ens", "2017-11-10", "DescribeDeviceService", "ens");
 		setMethod(MethodType.GET);
@@ -51,6 +53,17 @@ public class DescribeDeviceServiceRequest extends RpcAcsRequest<DescribeDeviceSe
 		this.appId = appId;
 		if(appId != null){
 			putQueryParameter("AppId", appId);
+		}
+	}
+
+	public String getServiceId() {
+		return this.serviceId;
+	}
+
+	public void setServiceId(String serviceId) {
+		this.serviceId = serviceId;
+		if(serviceId != null){
+			putQueryParameter("ServiceId", serviceId);
 		}
 	}
 

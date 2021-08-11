@@ -24,24 +24,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class LoadDataToExternalAudienceResponse extends AcsResponse {
 
-	private String errorCode;
+	private String requestId;
 
 	private String errorDesc;
+
+	private String traceId;
+
+	private String errorCode;
 
 	private String exStack;
 
 	private String success;
 
-	private String traceId;
-
-	private String requestId;
-
-	public String getErrorCode() {
-		return this.errorCode;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getErrorDesc() {
@@ -50,6 +50,22 @@ public class LoadDataToExternalAudienceResponse extends AcsResponse {
 
 	public void setErrorDesc(String errorDesc) {
 		this.errorDesc = errorDesc;
+	}
+
+	public String getTraceId() {
+		return this.traceId;
+	}
+
+	public void setTraceId(String traceId) {
+		this.traceId = traceId;
+	}
+
+	public String getErrorCode() {
+		return this.errorCode;
+	}
+
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
 	}
 
 	public String getExStack() {
@@ -66,22 +82,6 @@ public class LoadDataToExternalAudienceResponse extends AcsResponse {
 
 	public void setSuccess(String success) {
 		this.success = success;
-	}
-
-	public String getTraceId() {
-		return this.traceId;
-	}
-
-	public void setTraceId(String traceId) {
-		this.traceId = traceId;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
 	}
 
 	@Override

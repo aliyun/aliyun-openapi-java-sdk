@@ -129,6 +129,8 @@ public class QuerySpeechListResponse extends AcsResponse {
 
 			private String speechType;
 
+			private String audioFormat;
+
 			private List<Items1> speechList;
 
 			public String getSpeechCode() {
@@ -169,6 +171,14 @@ public class QuerySpeechListResponse extends AcsResponse {
 
 			public void setSpeechType(String speechType) {
 				this.speechType = speechType;
+			}
+
+			public String getAudioFormat() {
+				return this.audioFormat;
+			}
+
+			public void setAudioFormat(String audioFormat) {
+				this.audioFormat = audioFormat;
 			}
 
 			public List<Items1> getSpeechList() {

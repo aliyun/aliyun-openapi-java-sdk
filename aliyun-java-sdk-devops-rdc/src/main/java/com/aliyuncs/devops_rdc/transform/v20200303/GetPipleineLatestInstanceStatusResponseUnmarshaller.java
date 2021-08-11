@@ -30,9 +30,9 @@ public class GetPipleineLatestInstanceStatusResponseUnmarshaller {
 	public static GetPipleineLatestInstanceStatusResponse unmarshall(GetPipleineLatestInstanceStatusResponse getPipleineLatestInstanceStatusResponse, UnmarshallerContext _ctx) {
 		
 		getPipleineLatestInstanceStatusResponse.setRequestId(_ctx.stringValue("GetPipleineLatestInstanceStatusResponse.RequestId"));
+		getPipleineLatestInstanceStatusResponse.setErrorMessage(_ctx.stringValue("GetPipleineLatestInstanceStatusResponse.ErrorMessage"));
 		getPipleineLatestInstanceStatusResponse.setSuccess(_ctx.booleanValue("GetPipleineLatestInstanceStatusResponse.Success"));
 		getPipleineLatestInstanceStatusResponse.setErrorCode(_ctx.stringValue("GetPipleineLatestInstanceStatusResponse.ErrorCode"));
-		getPipleineLatestInstanceStatusResponse.setErrorMessage(_ctx.stringValue("GetPipleineLatestInstanceStatusResponse.ErrorMessage"));
 
 		Object object = new Object();
 		object.setStatus(_ctx.stringValue("GetPipleineLatestInstanceStatusResponse.Object.Status"));
@@ -40,8 +40,8 @@ public class GetPipleineLatestInstanceStatusResponseUnmarshaller {
 		List<Group> groups = new ArrayList<Group>();
 		for (int i = 0; i < _ctx.lengthValue("GetPipleineLatestInstanceStatusResponse.Object.Groups.Length"); i++) {
 			Group group = new Group();
-			group.setName(_ctx.stringValue("GetPipleineLatestInstanceStatusResponse.Object.Groups["+ i +"].Name"));
 			group.setStatus(_ctx.stringValue("GetPipleineLatestInstanceStatusResponse.Object.Groups["+ i +"].Status"));
+			group.setName(_ctx.stringValue("GetPipleineLatestInstanceStatusResponse.Object.Groups["+ i +"].Name"));
 
 			List<Stage> stages = new ArrayList<Stage>();
 			for (int j = 0; j < _ctx.lengthValue("GetPipleineLatestInstanceStatusResponse.Object.Groups["+ i +"].Stages.Length"); j++) {
@@ -52,8 +52,8 @@ public class GetPipleineLatestInstanceStatusResponseUnmarshaller {
 				List<Component> components = new ArrayList<Component>();
 				for (int k = 0; k < _ctx.lengthValue("GetPipleineLatestInstanceStatusResponse.Object.Groups["+ i +"].Stages["+ j +"].Components.Length"); k++) {
 					Component component = new Component();
-					component.setName(_ctx.stringValue("GetPipleineLatestInstanceStatusResponse.Object.Groups["+ i +"].Stages["+ j +"].Components["+ k +"].Name"));
 					component.setStatus(_ctx.stringValue("GetPipleineLatestInstanceStatusResponse.Object.Groups["+ i +"].Stages["+ j +"].Components["+ k +"].Status"));
+					component.setName(_ctx.stringValue("GetPipleineLatestInstanceStatusResponse.Object.Groups["+ i +"].Stages["+ j +"].Components["+ k +"].Name"));
 					component.setJobId(_ctx.longValue("GetPipleineLatestInstanceStatusResponse.Object.Groups["+ i +"].Stages["+ j +"].Components["+ k +"].JobId"));
 
 					components.add(component);

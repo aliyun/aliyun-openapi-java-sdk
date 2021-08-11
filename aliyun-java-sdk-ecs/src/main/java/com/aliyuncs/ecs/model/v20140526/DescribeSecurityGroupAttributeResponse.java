@@ -121,6 +121,10 @@ public class DescribeSecurityGroupAttributeResponse extends AcsResponse {
 
 		private String ipv6SourceCidrIp;
 
+		private String sourcePrefixListId;
+
+		private String sourcePrefixListName;
+
 		private String policy;
 
 		private String nicType;
@@ -134,6 +138,10 @@ public class DescribeSecurityGroupAttributeResponse extends AcsResponse {
 		private String destCidrIp;
 
 		private String ipv6DestCidrIp;
+
+		private String destPrefixListId;
+
+		private String destPrefixListName;
 
 		private String destGroupOwnerAccount;
 
@@ -201,6 +209,22 @@ public class DescribeSecurityGroupAttributeResponse extends AcsResponse {
 			this.ipv6SourceCidrIp = ipv6SourceCidrIp;
 		}
 
+		public String getSourcePrefixListId() {
+			return this.sourcePrefixListId;
+		}
+
+		public void setSourcePrefixListId(String sourcePrefixListId) {
+			this.sourcePrefixListId = sourcePrefixListId;
+		}
+
+		public String getSourcePrefixListName() {
+			return this.sourcePrefixListName;
+		}
+
+		public void setSourcePrefixListName(String sourcePrefixListName) {
+			this.sourcePrefixListName = sourcePrefixListName;
+		}
+
 		public String getPolicy() {
 			return this.policy;
 		}
@@ -255,6 +279,22 @@ public class DescribeSecurityGroupAttributeResponse extends AcsResponse {
 
 		public void setIpv6DestCidrIp(String ipv6DestCidrIp) {
 			this.ipv6DestCidrIp = ipv6DestCidrIp;
+		}
+
+		public String getDestPrefixListId() {
+			return this.destPrefixListId;
+		}
+
+		public void setDestPrefixListId(String destPrefixListId) {
+			this.destPrefixListId = destPrefixListId;
+		}
+
+		public String getDestPrefixListName() {
+			return this.destPrefixListName;
+		}
+
+		public void setDestPrefixListName(String destPrefixListName) {
+			this.destPrefixListName = destPrefixListName;
 		}
 
 		public String getDestGroupOwnerAccount() {

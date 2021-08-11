@@ -26,9 +26,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetIndexCurrentValueResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String message;
+
+	private String requestId;
 
 	private String code;
 
@@ -36,20 +36,20 @@ public class GetIndexCurrentValueResponse extends AcsResponse {
 
 	private List<Map<Object,Object>> data;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public String getMessage() {
 		return this.message;
 	}
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getCode() {

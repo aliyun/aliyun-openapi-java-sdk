@@ -56,6 +56,7 @@ public class ListDataSourcesResponseUnmarshaller {
 			dataSourcesItem.setId(_ctx.integerValue("ListDataSourcesResponse.Data.DataSources["+ i +"].Id"));
 			dataSourcesItem.setProjectId(_ctx.integerValue("ListDataSourcesResponse.Data.DataSources["+ i +"].ProjectId"));
 			dataSourcesItem.setStatus(_ctx.integerValue("ListDataSourcesResponse.Data.DataSources["+ i +"].Status"));
+			dataSourcesItem.setContent(_ctx.stringValue("ListDataSourcesResponse.Data.DataSources["+ i +"].Content"));
 
 			dataSources.add(dataSourcesItem);
 		}

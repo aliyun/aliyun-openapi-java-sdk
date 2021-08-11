@@ -4,7 +4,7 @@
   <groupId>com.aliyun</groupId>
   <artifactId>aliyun-java-sdk-marketing_event</artifactId>
   <packaging>jar</packaging>
-  <version>1.0.8</version>
+  <version>1.0.7</version>
   <name>aliyun-java-sdk-marketing_event</name>
   <url>http://www.aliyun.com</url>
   <description>Aliyun Open API SDK for Java

@@ -39,7 +39,7 @@ public class ReportVideoSplitJobResultRequest extends RpcAcsRequest<ReportVideoS
 
 	private Long ownerId;
 	public ReportVideoSplitJobResultRequest() {
-		super("Mts", "2014-06-18", "ReportVideoSplitJobResult");
+		super("Mts", "2014-06-18", "ReportVideoSplitJobResult", "mts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

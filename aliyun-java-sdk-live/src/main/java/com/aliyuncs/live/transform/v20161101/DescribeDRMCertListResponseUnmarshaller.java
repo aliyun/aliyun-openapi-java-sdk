@@ -38,6 +38,7 @@ public class DescribeDRMCertListResponseUnmarshaller {
 			certInfo.setPassphrase(_ctx.stringValue("DescribeDRMCertListResponse.DRMCertInfoListList["+ i +"].Passphrase"));
 			certInfo.setAsk(_ctx.stringValue("DescribeDRMCertListResponse.DRMCertInfoListList["+ i +"].Ask"));
 			certInfo.setDescription(_ctx.stringValue("DescribeDRMCertListResponse.DRMCertInfoListList["+ i +"].Description"));
+			certInfo.setCreateDate(_ctx.stringValue("DescribeDRMCertListResponse.DRMCertInfoListList["+ i +"].CreateDate"));
 
 			dRMCertInfoListList.add(certInfo);
 		}

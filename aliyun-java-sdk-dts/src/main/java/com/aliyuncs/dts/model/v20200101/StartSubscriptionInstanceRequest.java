@@ -31,7 +31,7 @@ public class StartSubscriptionInstanceRequest extends RpcAcsRequest<StartSubscri
 
 	private String accountId;
 	public StartSubscriptionInstanceRequest() {
-		super("Dts", "2020-01-01", "StartSubscriptionInstance");
+		super("Dts", "2020-01-01", "StartSubscriptionInstance", "dts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

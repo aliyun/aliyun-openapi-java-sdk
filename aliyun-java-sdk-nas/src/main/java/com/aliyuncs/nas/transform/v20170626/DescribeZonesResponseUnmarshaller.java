@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.nas.model.v20170626.DescribeZonesResponse;
 import com.aliyuncs.nas.model.v20170626.DescribeZonesResponse.Zone;
+import com.aliyuncs.nas.model.v20170626.DescribeZonesResponse.Zone.InstanceType;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -33,17 +34,27 @@ public class DescribeZonesResponseUnmarshaller {
 			Zone zone = new Zone();
 			zone.setZoneId(_ctx.stringValue("DescribeZonesResponse.Zones["+ i +"].ZoneId"));
 
+			List<String> performance = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeZonesResponse.Zones["+ i +"].Performance.Length"); j++) {
+				performance.add(_ctx.stringValue("DescribeZonesResponse.Zones["+ i +"].Performance["+ j +"]"));
+			}
+			zone.setPerformance(performance);
+
 			List<String> capacity = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeZonesResponse.Zones["+ i +"].Capacity.Length"); j++) {
 				capacity.add(_ctx.stringValue("DescribeZonesResponse.Zones["+ i +"].Capacity["+ j +"]"));
 			}
 			zone.setCapacity(capacity);
 
-			List<String> performance = new ArrayList<String>();
-			for (int j = 0; j < _ctx.lengthValue("DescribeZonesResponse.Zones["+ i +"].Performance.Length"); j++) {
-				performance.add(_ctx.stringValue("DescribeZonesResponse.Zones["+ i +"].Performance["+ j +"]"));
+			List<InstanceType> instanceTypes = new ArrayList<InstanceType>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeZonesResponse.Zones["+ i +"].InstanceTypes.Length"); j++) {
+				InstanceType instanceType = new InstanceType();
+				instanceType.setStorageType(_ctx.stringValue("DescribeZonesResponse.Zones["+ i +"].InstanceTypes["+ j +"].StorageType"));
+				instanceType.setProtocolType(_ctx.stringValue("DescribeZonesResponse.Zones["+ i +"].InstanceTypes["+ j +"].ProtocolType"));
+
+				instanceTypes.add(instanceType);
 			}
-			zone.setPerformance(performance);
+			zone.setInstanceTypes(instanceTypes);
 
 			zones.add(zone);
 		}

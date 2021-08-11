@@ -29,7 +29,7 @@ public class StartDeviceRequest extends RpcAcsRequest<StartDeviceResponse> {
 
 	private Long ownerId;
 	public StartDeviceRequest() {
-		super("vs", "2018-12-12", "StartDevice", "vs");
+		super("vs", "2018-12-12", "StartDevice");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

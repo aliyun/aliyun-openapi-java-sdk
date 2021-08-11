@@ -37,6 +37,8 @@ public class CreateVpcRequest extends RpcAcsRequest<CreateVpcResponse> {
 
 	private String resourceGroupId;
 
+	private String ipv6Isp;
+
 	private String userCidr;
 
 	private Boolean dryRun;
@@ -122,6 +124,17 @@ public class CreateVpcRequest extends RpcAcsRequest<CreateVpcResponse> {
 		this.resourceGroupId = resourceGroupId;
 		if(resourceGroupId != null){
 			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public String getIpv6Isp() {
+		return this.ipv6Isp;
+	}
+
+	public void setIpv6Isp(String ipv6Isp) {
+		this.ipv6Isp = ipv6Isp;
+		if(ipv6Isp != null){
+			putQueryParameter("Ipv6Isp", ipv6Isp);
 		}
 	}
 

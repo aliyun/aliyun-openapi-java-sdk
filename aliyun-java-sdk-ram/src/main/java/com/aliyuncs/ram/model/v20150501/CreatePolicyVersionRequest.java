@@ -28,11 +28,11 @@ public class CreatePolicyVersionRequest extends RpcAcsRequest<CreatePolicyVersio
 
 	private Boolean setAsDefault;
 
+	private String rotateStrategy;
+
 	private String policyName;
 
 	private String policyDocument;
-
-	private String rotateStrategy;
 	public CreatePolicyVersionRequest() {
 		super("Ram", "2015-05-01", "CreatePolicyVersion", "Ram");
 		setProtocol(ProtocolType.HTTPS);
@@ -51,6 +51,17 @@ public class CreatePolicyVersionRequest extends RpcAcsRequest<CreatePolicyVersio
 		this.setAsDefault = setAsDefault;
 		if(setAsDefault != null){
 			putQueryParameter("SetAsDefault", setAsDefault.toString());
+		}
+	}
+
+	public String getRotateStrategy() {
+		return this.rotateStrategy;
+	}
+
+	public void setRotateStrategy(String rotateStrategy) {
+		this.rotateStrategy = rotateStrategy;
+		if(rotateStrategy != null){
+			putQueryParameter("RotateStrategy", rotateStrategy);
 		}
 	}
 
@@ -73,17 +84,6 @@ public class CreatePolicyVersionRequest extends RpcAcsRequest<CreatePolicyVersio
 		this.policyDocument = policyDocument;
 		if(policyDocument != null){
 			putQueryParameter("PolicyDocument", policyDocument);
-		}
-	}
-
-	public String getRotateStrategy() {
-		return this.rotateStrategy;
-	}
-
-	public void setRotateStrategy(String rotateStrategy) {
-		this.rotateStrategy = rotateStrategy;
-		if(rotateStrategy != null){
-			putQueryParameter("RotateStrategy", rotateStrategy);
 		}
 	}
 

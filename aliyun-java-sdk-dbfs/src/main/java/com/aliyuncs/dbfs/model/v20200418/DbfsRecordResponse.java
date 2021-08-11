@@ -27,6 +27,12 @@ public class DbfsRecordResponse extends AcsResponse {
 
 	private String requestId;
 
+	private Long pageNo;
+
+	private Long pageSize;
+
+	private Long total;
+
 	private List<RecordsItem> records;
 
 	public String getRequestId() {
@@ -35,6 +41,30 @@ public class DbfsRecordResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Long getPageNo() {
+		return this.pageNo;
+	}
+
+	public void setPageNo(Long pageNo) {
+		this.pageNo = pageNo;
+	}
+
+	public Long getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Long pageSize) {
+		this.pageSize = pageSize;
+	}
+
+	public Long getTotal() {
+		return this.total;
+	}
+
+	public void setTotal(Long total) {
+		this.total = total;
 	}
 
 	public List<RecordsItem> getRecords() {

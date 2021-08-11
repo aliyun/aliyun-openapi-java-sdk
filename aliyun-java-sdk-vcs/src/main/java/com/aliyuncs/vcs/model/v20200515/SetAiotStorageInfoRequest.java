@@ -15,7 +15,6 @@
 package com.aliyuncs.vcs.model.v20200515;
 
 import com.aliyuncs.RpcAcsRequest;
-import java.util.List;
 import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
@@ -72,23 +71,14 @@ public class SetAiotStorageInfoRequest extends RpcAcsRequest<SetAiotStorageInfoR
 		@SerializedName("InstanceId")
 		private String instanceId;
 
-		@SerializedName("Brokers")
-		private List<String> brokers;
-
 		@SerializedName("EventTopic")
 		private String eventTopic;
 
 		@SerializedName("RegionId")
 		private String regionId;
 
-		@SerializedName("Domain")
-		private String domain;
-
 		@SerializedName("AlarmTopic")
 		private String alarmTopic;
-
-		@SerializedName("Version")
-		private String version;
 
 		@SerializedName("RamArnRole")
 		private String ramArnRole;
@@ -109,14 +99,6 @@ public class SetAiotStorageInfoRequest extends RpcAcsRequest<SetAiotStorageInfoR
 			this.instanceId = instanceId;
 		}
 
-		public List<String> getBrokers() {
-			return this.brokers;
-		}
-
-		public void setBrokers(List<String> brokers) {
-			this.brokers = brokers;
-		}
-
 		public String getEventTopic() {
 			return this.eventTopic;
 		}
@@ -133,28 +115,12 @@ public class SetAiotStorageInfoRequest extends RpcAcsRequest<SetAiotStorageInfoR
 			this.regionId = regionId;
 		}
 
-		public String getDomain() {
-			return this.domain;
-		}
-
-		public void setDomain(String domain) {
-			this.domain = domain;
-		}
-
 		public String getAlarmTopic() {
 			return this.alarmTopic;
 		}
 
 		public void setAlarmTopic(String alarmTopic) {
 			this.alarmTopic = alarmTopic;
-		}
-
-		public String getVersion() {
-			return this.version;
-		}
-
-		public void setVersion(String version) {
-			this.version = version;
 		}
 
 		public String getRamArnRole() {
@@ -173,6 +139,9 @@ public class SetAiotStorageInfoRequest extends RpcAcsRequest<SetAiotStorageInfoR
 
 		@SerializedName("Path")
 		private String path;
+
+		@SerializedName("Proxy")
+		private String proxy;
 
 		@SerializedName("Endpoint")
 		private String endpoint;
@@ -197,6 +166,14 @@ public class SetAiotStorageInfoRequest extends RpcAcsRequest<SetAiotStorageInfoR
 
 		public void setPath(String path) {
 			this.path = path;
+		}
+
+		public String getProxy() {
+			return this.proxy;
+		}
+
+		public void setProxy(String proxy) {
+			this.proxy = proxy;
 		}
 
 		public String getEndpoint() {

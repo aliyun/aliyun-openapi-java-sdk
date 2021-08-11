@@ -24,9 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetAgentByIdResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String message;
+
+	private String requestId;
 
 	private String code;
 
@@ -34,20 +34,20 @@ public class GetAgentByIdResponse extends AcsResponse {
 
 	private Data data;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public String getMessage() {
 		return this.message;
 	}
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getCode() {
@@ -76,50 +76,26 @@ public class GetAgentByIdResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String foreignNick;
-
-		private Integer servicerType;
-
-		private Integer agentId;
-
-		private String realName;
+		private String showName;
 
 		private String foreignKey;
 
+		private Integer servicerType;
+
+		private String realName;
+
 		private String createUserName;
 
-		private String showName;
+		private Integer agentId;
 
-		public String getForeignNick() {
-			return this.foreignNick;
+		private String foreignNick;
+
+		public String getShowName() {
+			return this.showName;
 		}
 
-		public void setForeignNick(String foreignNick) {
-			this.foreignNick = foreignNick;
-		}
-
-		public Integer getServicerType() {
-			return this.servicerType;
-		}
-
-		public void setServicerType(Integer servicerType) {
-			this.servicerType = servicerType;
-		}
-
-		public Integer getAgentId() {
-			return this.agentId;
-		}
-
-		public void setAgentId(Integer agentId) {
-			this.agentId = agentId;
-		}
-
-		public String getRealName() {
-			return this.realName;
-		}
-
-		public void setRealName(String realName) {
-			this.realName = realName;
+		public void setShowName(String showName) {
+			this.showName = showName;
 		}
 
 		public String getForeignKey() {
@@ -130,6 +106,22 @@ public class GetAgentByIdResponse extends AcsResponse {
 			this.foreignKey = foreignKey;
 		}
 
+		public Integer getServicerType() {
+			return this.servicerType;
+		}
+
+		public void setServicerType(Integer servicerType) {
+			this.servicerType = servicerType;
+		}
+
+		public String getRealName() {
+			return this.realName;
+		}
+
+		public void setRealName(String realName) {
+			this.realName = realName;
+		}
+
 		public String getCreateUserName() {
 			return this.createUserName;
 		}
@@ -138,12 +130,20 @@ public class GetAgentByIdResponse extends AcsResponse {
 			this.createUserName = createUserName;
 		}
 
-		public String getShowName() {
-			return this.showName;
+		public Integer getAgentId() {
+			return this.agentId;
 		}
 
-		public void setShowName(String showName) {
-			this.showName = showName;
+		public void setAgentId(Integer agentId) {
+			this.agentId = agentId;
+		}
+
+		public String getForeignNick() {
+			return this.foreignNick;
+		}
+
+		public void setForeignNick(String foreignNick) {
+			this.foreignNick = foreignNick;
 		}
 	}
 

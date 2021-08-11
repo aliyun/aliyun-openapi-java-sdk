@@ -31,11 +31,11 @@ public class StartInstancesResponseUnmarshaller {
 		List<InstanceResponse> instanceResponses = new ArrayList<InstanceResponse>();
 		for (int i = 0; i < _ctx.lengthValue("StartInstancesResponse.InstanceResponses.Length"); i++) {
 			InstanceResponse instanceResponse = new InstanceResponse();
-			instanceResponse.setInstanceId(_ctx.stringValue("StartInstancesResponse.InstanceResponses["+ i +"].InstanceId"));
-			instanceResponse.setPreviousStatus(_ctx.stringValue("StartInstancesResponse.InstanceResponses["+ i +"].PreviousStatus"));
-			instanceResponse.setCurrentStatus(_ctx.stringValue("StartInstancesResponse.InstanceResponses["+ i +"].CurrentStatus"));
 			instanceResponse.setCode(_ctx.stringValue("StartInstancesResponse.InstanceResponses["+ i +"].Code"));
 			instanceResponse.setMessage(_ctx.stringValue("StartInstancesResponse.InstanceResponses["+ i +"].Message"));
+			instanceResponse.setInstanceId(_ctx.stringValue("StartInstancesResponse.InstanceResponses["+ i +"].InstanceId"));
+			instanceResponse.setCurrentStatus(_ctx.stringValue("StartInstancesResponse.InstanceResponses["+ i +"].CurrentStatus"));
+			instanceResponse.setPreviousStatus(_ctx.stringValue("StartInstancesResponse.InstanceResponses["+ i +"].PreviousStatus"));
 
 			instanceResponses.add(instanceResponse);
 		}

@@ -25,21 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class AddAiotPersonTableItemsResponse extends AcsResponse {
 
-	private String message;
-
 	private String requestId;
 
 	private String code;
 
+	private String message;
+
 	private List<ResultListItem> resultList;
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -57,6 +49,14 @@ public class AddAiotPersonTableItemsResponse extends AcsResponse {
 		this.code = code;
 	}
 
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
 	public List<ResultListItem> getResultList() {
 		return this.resultList;
 	}
@@ -69,9 +69,9 @@ public class AddAiotPersonTableItemsResponse extends AcsResponse {
 
 		private String personTableItemId;
 
-		private String message;
-
 		private String code;
+
+		private String message;
 
 		public String getPersonTableItemId() {
 			return this.personTableItemId;
@@ -81,20 +81,20 @@ public class AddAiotPersonTableItemsResponse extends AcsResponse {
 			this.personTableItemId = personTableItemId;
 		}
 
-		public String getMessage() {
-			return this.message;
-		}
-
-		public void setMessage(String message) {
-			this.message = message;
-		}
-
 		public String getCode() {
 			return this.code;
 		}
 
 		public void setCode(String code) {
 			this.code = code;
+		}
+
+		public String getMessage() {
+			return this.message;
+		}
+
+		public void setMessage(String message) {
+			this.message = message;
 		}
 	}
 

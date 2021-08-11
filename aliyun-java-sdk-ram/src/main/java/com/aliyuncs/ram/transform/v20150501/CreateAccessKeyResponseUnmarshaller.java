@@ -26,10 +26,10 @@ public class CreateAccessKeyResponseUnmarshaller {
 		createAccessKeyResponse.setRequestId(_ctx.stringValue("CreateAccessKeyResponse.RequestId"));
 
 		AccessKey accessKey = new AccessKey();
-		accessKey.setAccessKeyId(_ctx.stringValue("CreateAccessKeyResponse.AccessKey.AccessKeyId"));
-		accessKey.setAccessKeySecret(_ctx.stringValue("CreateAccessKeyResponse.AccessKey.AccessKeySecret"));
 		accessKey.setStatus(_ctx.stringValue("CreateAccessKeyResponse.AccessKey.Status"));
+		accessKey.setAccessKeySecret(_ctx.stringValue("CreateAccessKeyResponse.AccessKey.AccessKeySecret"));
 		accessKey.setCreateDate(_ctx.stringValue("CreateAccessKeyResponse.AccessKey.CreateDate"));
+		accessKey.setAccessKeyId(_ctx.stringValue("CreateAccessKeyResponse.AccessKey.AccessKeyId"));
 		createAccessKeyResponse.setAccessKey(accessKey);
 	 
 	 	return createAccessKeyResponse;

@@ -48,6 +48,10 @@ public class DescribeLimitationResponse extends AcsResponse {
 
 	private Integer maxNumberOfNotificationConfigurations;
 
+	private Integer maxNumberOfAlbServerGroup;
+
+	private String requestId;
+
 	public Integer getMaxNumberOfScalingGroups() {
 		return this.maxNumberOfScalingGroups;
 	}
@@ -142,6 +146,22 @@ public class DescribeLimitationResponse extends AcsResponse {
 
 	public void setMaxNumberOfNotificationConfigurations(Integer maxNumberOfNotificationConfigurations) {
 		this.maxNumberOfNotificationConfigurations = maxNumberOfNotificationConfigurations;
+	}
+
+	public Integer getMaxNumberOfAlbServerGroup() {
+		return this.maxNumberOfAlbServerGroup;
+	}
+
+	public void setMaxNumberOfAlbServerGroup(Integer maxNumberOfAlbServerGroup) {
+		this.maxNumberOfAlbServerGroup = maxNumberOfAlbServerGroup;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

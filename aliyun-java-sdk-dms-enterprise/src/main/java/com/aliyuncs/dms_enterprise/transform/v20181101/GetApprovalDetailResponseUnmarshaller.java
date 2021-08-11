@@ -34,12 +34,12 @@ public class GetApprovalDetailResponseUnmarshaller {
 		getApprovalDetailResponse.setSuccess(_ctx.booleanValue("GetApprovalDetailResponse.Success"));
 
 		ApprovalDetail approvalDetail = new ApprovalDetail();
-		approvalDetail.setOrderType(_ctx.stringValue("GetApprovalDetailResponse.ApprovalDetail.OrderType"));
 		approvalDetail.setDescription(_ctx.stringValue("GetApprovalDetailResponse.ApprovalDetail.Description"));
-		approvalDetail.setWorkflowInsCode(_ctx.stringValue("GetApprovalDetailResponse.ApprovalDetail.WorkflowInsCode"));
-		approvalDetail.setAuditId(_ctx.longValue("GetApprovalDetailResponse.ApprovalDetail.AuditId"));
+		approvalDetail.setOrderType(_ctx.stringValue("GetApprovalDetailResponse.ApprovalDetail.OrderType"));
 		approvalDetail.setTitle(_ctx.stringValue("GetApprovalDetailResponse.ApprovalDetail.Title"));
+		approvalDetail.setAuditId(_ctx.longValue("GetApprovalDetailResponse.ApprovalDetail.AuditId"));
 		approvalDetail.setOrderId(_ctx.longValue("GetApprovalDetailResponse.ApprovalDetail.OrderId"));
+		approvalDetail.setWorkflowInsCode(_ctx.stringValue("GetApprovalDetailResponse.ApprovalDetail.WorkflowInsCode"));
 
 		List<String> reasonList = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("GetApprovalDetailResponse.ApprovalDetail.ReasonList.Length"); i++) {
@@ -47,24 +47,14 @@ public class GetApprovalDetailResponseUnmarshaller {
 		}
 		approvalDetail.setReasonList(reasonList);
 
-		List<CurrentHandler> currentHandlers = new ArrayList<CurrentHandler>();
-		for (int i = 0; i < _ctx.lengthValue("GetApprovalDetailResponse.ApprovalDetail.CurrentHandlers.Length"); i++) {
-			CurrentHandler currentHandler = new CurrentHandler();
-			currentHandler.setId(_ctx.longValue("GetApprovalDetailResponse.ApprovalDetail.CurrentHandlers["+ i +"].Id"));
-			currentHandler.setNickName(_ctx.stringValue("GetApprovalDetailResponse.ApprovalDetail.CurrentHandlers["+ i +"].NickName"));
-
-			currentHandlers.add(currentHandler);
-		}
-		approvalDetail.setCurrentHandlers(currentHandlers);
-
 		List<WorkflowNode> workflowNodes = new ArrayList<WorkflowNode>();
 		for (int i = 0; i < _ctx.lengthValue("GetApprovalDetailResponse.ApprovalDetail.WorkflowNodes.Length"); i++) {
 			WorkflowNode workflowNode = new WorkflowNode();
 			workflowNode.setOperateTime(_ctx.stringValue("GetApprovalDetailResponse.ApprovalDetail.WorkflowNodes["+ i +"].OperateTime"));
-			workflowNode.setWorkflowInsCode(_ctx.stringValue("GetApprovalDetailResponse.ApprovalDetail.WorkflowNodes["+ i +"].WorkflowInsCode"));
+			workflowNode.setOperatorId(_ctx.longValue("GetApprovalDetailResponse.ApprovalDetail.WorkflowNodes["+ i +"].OperatorId"));
 			workflowNode.setNodeName(_ctx.stringValue("GetApprovalDetailResponse.ApprovalDetail.WorkflowNodes["+ i +"].NodeName"));
 			workflowNode.setOperateComment(_ctx.stringValue("GetApprovalDetailResponse.ApprovalDetail.WorkflowNodes["+ i +"].OperateComment"));
-			workflowNode.setOperatorId(_ctx.longValue("GetApprovalDetailResponse.ApprovalDetail.WorkflowNodes["+ i +"].OperatorId"));
+			workflowNode.setWorkflowInsCode(_ctx.stringValue("GetApprovalDetailResponse.ApprovalDetail.WorkflowNodes["+ i +"].WorkflowInsCode"));
 
 			List<String> auditUserIdList = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("GetApprovalDetailResponse.ApprovalDetail.WorkflowNodes["+ i +"].AuditUserIdList.Length"); j++) {
@@ -75,6 +65,16 @@ public class GetApprovalDetailResponseUnmarshaller {
 			workflowNodes.add(workflowNode);
 		}
 		approvalDetail.setWorkflowNodes(workflowNodes);
+
+		List<CurrentHandler> currentHandlers = new ArrayList<CurrentHandler>();
+		for (int i = 0; i < _ctx.lengthValue("GetApprovalDetailResponse.ApprovalDetail.CurrentHandlers.Length"); i++) {
+			CurrentHandler currentHandler = new CurrentHandler();
+			currentHandler.setNickName(_ctx.stringValue("GetApprovalDetailResponse.ApprovalDetail.CurrentHandlers["+ i +"].NickName"));
+			currentHandler.setId(_ctx.longValue("GetApprovalDetailResponse.ApprovalDetail.CurrentHandlers["+ i +"].Id"));
+
+			currentHandlers.add(currentHandler);
+		}
+		approvalDetail.setCurrentHandlers(currentHandlers);
 		getApprovalDetailResponse.setApprovalDetail(approvalDetail);
 	 
 	 	return getApprovalDetailResponse;

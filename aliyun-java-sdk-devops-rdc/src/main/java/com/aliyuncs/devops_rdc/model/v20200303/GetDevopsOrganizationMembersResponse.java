@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetDevopsOrganizationMembersResponse extends AcsResponse {
 
-	private Boolean successful;
-
-	private String errorCode;
-
 	private String errorMsg;
 
 	private String requestId;
 
+	private Boolean successful;
+
+	private String errorCode;
+
 	private List<Member> object;
-
-	public Boolean getSuccessful() {
-		return this.successful;
-	}
-
-	public void setSuccessful(Boolean successful) {
-		this.successful = successful;
-	}
-
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
-	}
 
 	public String getErrorMsg() {
 		return this.errorMsg;
@@ -67,6 +51,22 @@ public class GetDevopsOrganizationMembersResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public Boolean getSuccessful() {
+		return this.successful;
+	}
+
+	public void setSuccessful(Boolean successful) {
+		this.successful = successful;
+	}
+
+	public String getErrorCode() {
+		return this.errorCode;
+	}
+
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
+	}
+
 	public List<Member> getObject() {
 		return this.object;
 	}
@@ -77,26 +77,34 @@ public class GetDevopsOrganizationMembersResponse extends AcsResponse {
 
 	public static class Member {
 
-		private String memberId;
+		private String email;
+
+		private String avatarUrl;
 
 		private String userId;
+
+		private String memberId;
 
 		private Integer role;
 
 		private String name;
 
-		private String avatarUrl;
-
-		private String email;
-
 		private String phone;
 
-		public String getMemberId() {
-			return this.memberId;
+		public String getEmail() {
+			return this.email;
 		}
 
-		public void setMemberId(String memberId) {
-			this.memberId = memberId;
+		public void setEmail(String email) {
+			this.email = email;
+		}
+
+		public String getAvatarUrl() {
+			return this.avatarUrl;
+		}
+
+		public void setAvatarUrl(String avatarUrl) {
+			this.avatarUrl = avatarUrl;
 		}
 
 		public String getUserId() {
@@ -105,6 +113,14 @@ public class GetDevopsOrganizationMembersResponse extends AcsResponse {
 
 		public void setUserId(String userId) {
 			this.userId = userId;
+		}
+
+		public String getMemberId() {
+			return this.memberId;
+		}
+
+		public void setMemberId(String memberId) {
+			this.memberId = memberId;
 		}
 
 		public Integer getRole() {
@@ -121,22 +137,6 @@ public class GetDevopsOrganizationMembersResponse extends AcsResponse {
 
 		public void setName(String name) {
 			this.name = name;
-		}
-
-		public String getAvatarUrl() {
-			return this.avatarUrl;
-		}
-
-		public void setAvatarUrl(String avatarUrl) {
-			this.avatarUrl = avatarUrl;
-		}
-
-		public String getEmail() {
-			return this.email;
-		}
-
-		public void setEmail(String email) {
-			this.email = email;
 		}
 
 		public String getPhone() {

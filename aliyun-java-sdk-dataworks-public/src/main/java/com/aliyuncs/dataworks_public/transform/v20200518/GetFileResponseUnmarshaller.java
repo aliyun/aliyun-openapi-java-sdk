@@ -75,6 +75,7 @@ public class GetFileResponseUnmarshaller {
 		nodeConfiguration.setDependentType(_ctx.stringValue("GetFileResponse.Data.NodeConfiguration.DependentType"));
 		nodeConfiguration.setDependentNodeIdList(_ctx.stringValue("GetFileResponse.Data.NodeConfiguration.DependentNodeIdList"));
 		nodeConfiguration.setResourceGroupId(_ctx.longValue("GetFileResponse.Data.NodeConfiguration.ResourceGroupId"));
+		nodeConfiguration.setSchedulerType(_ctx.stringValue("GetFileResponse.Data.NodeConfiguration.SchedulerType"));
 
 		List<NodeInputOutput> inputList = new ArrayList<NodeInputOutput>();
 		for (int i = 0; i < _ctx.lengthValue("GetFileResponse.Data.NodeConfiguration.InputList.Length"); i++) {

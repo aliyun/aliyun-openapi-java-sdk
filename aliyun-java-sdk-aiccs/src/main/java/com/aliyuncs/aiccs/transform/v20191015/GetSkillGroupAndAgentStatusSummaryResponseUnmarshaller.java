@@ -29,9 +29,9 @@ public class GetSkillGroupAndAgentStatusSummaryResponseUnmarshaller {
 		getSkillGroupAndAgentStatusSummaryResponse.setSuccess(_ctx.stringValue("GetSkillGroupAndAgentStatusSummaryResponse.Success"));
 
 		Data data = new Data();
-		data.setTotalNum(_ctx.integerValue("GetSkillGroupAndAgentStatusSummaryResponse.Data.TotalNum"));
-		data.setPageSize(_ctx.integerValue("GetSkillGroupAndAgentStatusSummaryResponse.Data.PageSize"));
 		data.setPageNum(_ctx.integerValue("GetSkillGroupAndAgentStatusSummaryResponse.Data.PageNum"));
+		data.setPageSize(_ctx.integerValue("GetSkillGroupAndAgentStatusSummaryResponse.Data.PageSize"));
+		data.setTotalNum(_ctx.integerValue("GetSkillGroupAndAgentStatusSummaryResponse.Data.TotalNum"));
 		data.setRows(_ctx.stringValue("GetSkillGroupAndAgentStatusSummaryResponse.Data.Rows"));
 		getSkillGroupAndAgentStatusSummaryResponse.setData(data);
 	 

@@ -1,3 +1,6 @@
+2021-07-08 Version: 2.0.34
+- Release V5 SDK.
+
 2021-03-15 Version: 2.0.33
 - Add priceInfo to DescribeProducts.
 

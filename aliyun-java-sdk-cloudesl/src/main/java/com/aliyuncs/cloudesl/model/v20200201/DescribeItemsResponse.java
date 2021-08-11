@@ -47,6 +47,8 @@ public class DescribeItemsResponse extends AcsResponse {
 
 	private Boolean success;
 
+	private String templateSceneId;
+
 	private List<ItemInfo> items;
 
 	public String getErrorMessage() {
@@ -135,6 +137,14 @@ public class DescribeItemsResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getTemplateSceneId() {
+		return this.templateSceneId;
+	}
+
+	public void setTemplateSceneId(String templateSceneId) {
+		this.templateSceneId = templateSceneId;
 	}
 
 	public List<ItemInfo> getItems() {
@@ -250,6 +260,10 @@ public class DescribeItemsResponse extends AcsResponse {
 		private String gmtCreate;
 
 		private String gmtModified;
+
+		private Boolean beMember;
+
+		private String templateSceneId;
 
 		public String getCategoryName() {
 			return this.categoryName;
@@ -665,6 +679,22 @@ public class DescribeItemsResponse extends AcsResponse {
 
 		public void setGmtModified(String gmtModified) {
 			this.gmtModified = gmtModified;
+		}
+
+		public Boolean getBeMember() {
+			return this.beMember;
+		}
+
+		public void setBeMember(Boolean beMember) {
+			this.beMember = beMember;
+		}
+
+		public String getTemplateSceneId() {
+			return this.templateSceneId;
+		}
+
+		public void setTemplateSceneId(String templateSceneId) {
+			this.templateSceneId = templateSceneId;
 		}
 	}
 

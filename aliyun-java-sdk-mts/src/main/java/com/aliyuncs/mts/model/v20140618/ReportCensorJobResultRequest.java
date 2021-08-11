@@ -39,7 +39,7 @@ public class ReportCensorJobResultRequest extends RpcAcsRequest<ReportCensorJobR
 
 	private String detail;
 	public ReportCensorJobResultRequest() {
-		super("Mts", "2014-06-18", "ReportCensorJobResult");
+		super("Mts", "2014-06-18", "ReportCensorJobResult", "mts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

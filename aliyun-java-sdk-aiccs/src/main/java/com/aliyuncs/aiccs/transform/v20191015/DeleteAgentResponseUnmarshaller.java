@@ -26,6 +26,7 @@ public class DeleteAgentResponseUnmarshaller {
 		deleteAgentResponse.setMessage(_ctx.stringValue("DeleteAgentResponse.Message"));
 		deleteAgentResponse.setCode(_ctx.stringValue("DeleteAgentResponse.Code"));
 		deleteAgentResponse.setSuccess(_ctx.booleanValue("DeleteAgentResponse.Success"));
+		deleteAgentResponse.setHttpStatusCode(_ctx.longValue("DeleteAgentResponse.HttpStatusCode"));
 	 
 	 	return deleteAgentResponse;
 	}

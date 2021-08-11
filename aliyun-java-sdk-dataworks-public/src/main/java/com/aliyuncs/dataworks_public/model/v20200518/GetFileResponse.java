@@ -346,6 +346,8 @@ public class GetFileResponse extends AcsResponse {
 
 			private Long resourceGroupId;
 
+			private String schedulerType;
+
 			private List<NodeInputOutput> inputList;
 
 			private List<NodeInputOutput1> outputList;
@@ -444,6 +446,14 @@ public class GetFileResponse extends AcsResponse {
 
 			public void setResourceGroupId(Long resourceGroupId) {
 				this.resourceGroupId = resourceGroupId;
+			}
+
+			public String getSchedulerType() {
+				return this.schedulerType;
+			}
+
+			public void setSchedulerType(String schedulerType) {
+				this.schedulerType = schedulerType;
 			}
 
 			public List<NodeInputOutput> getInputList() {

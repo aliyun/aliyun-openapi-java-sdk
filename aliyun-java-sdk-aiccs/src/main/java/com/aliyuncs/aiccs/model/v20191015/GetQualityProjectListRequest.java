@@ -29,6 +29,8 @@ public class GetQualityProjectListRequest extends RpcAcsRequest<GetQualityProjec
 
 	private String instanceId;
 
+	private Long checkFreqType;
+
 	private Integer pageNo;
 
 	private Integer pageSize;
@@ -64,6 +66,17 @@ public class GetQualityProjectListRequest extends RpcAcsRequest<GetQualityProjec
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public Long getCheckFreqType() {
+		return this.checkFreqType;
+	}
+
+	public void setCheckFreqType(Long checkFreqType) {
+		this.checkFreqType = checkFreqType;
+		if(checkFreqType != null){
+			putQueryParameter("checkFreqType", checkFreqType.toString());
 		}
 	}
 

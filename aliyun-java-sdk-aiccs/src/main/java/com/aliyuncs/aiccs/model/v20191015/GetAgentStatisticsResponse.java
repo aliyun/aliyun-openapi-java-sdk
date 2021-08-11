@@ -24,9 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetAgentStatisticsResponse extends AcsResponse {
 
-	private String message;
-
 	private String requestId;
+
+	private String message;
 
 	private String code;
 
@@ -34,20 +34,20 @@ public class GetAgentStatisticsResponse extends AcsResponse {
 
 	private Data data;
 
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public String getCode() {
@@ -76,20 +76,20 @@ public class GetAgentStatisticsResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Integer totalNum;
+		private Integer pageNum;
 
 		private Integer pageSize;
 
-		private Integer pageNum;
+		private Integer totalNum;
 
 		private String rows;
 
-		public Integer getTotalNum() {
-			return this.totalNum;
+		public Integer getPageNum() {
+			return this.pageNum;
 		}
 
-		public void setTotalNum(Integer totalNum) {
-			this.totalNum = totalNum;
+		public void setPageNum(Integer pageNum) {
+			this.pageNum = pageNum;
 		}
 
 		public Integer getPageSize() {
@@ -100,12 +100,12 @@ public class GetAgentStatisticsResponse extends AcsResponse {
 			this.pageSize = pageSize;
 		}
 
-		public Integer getPageNum() {
-			return this.pageNum;
+		public Integer getTotalNum() {
+			return this.totalNum;
 		}
 
-		public void setPageNum(Integer pageNum) {
-			this.pageNum = pageNum;
+		public void setTotalNum(Integer totalNum) {
+			this.totalNum = totalNum;
 		}
 
 		public String getRows() {

@@ -102,6 +102,12 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 		private Boolean enableKibanaPrivateNetwork;
 
+		private Boolean isNewDeployment;
+
+		private String postpaidServiceStatus;
+
+		private Boolean serviceVpc;
+
 		private List<DictListItem> dictList;
 
 		private List<SynonymsDictsItem> synonymsDicts;
@@ -356,6 +362,30 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 		public void setEnableKibanaPrivateNetwork(Boolean enableKibanaPrivateNetwork) {
 			this.enableKibanaPrivateNetwork = enableKibanaPrivateNetwork;
+		}
+
+		public Boolean getIsNewDeployment() {
+			return this.isNewDeployment;
+		}
+
+		public void setIsNewDeployment(Boolean isNewDeployment) {
+			this.isNewDeployment = isNewDeployment;
+		}
+
+		public String getPostpaidServiceStatus() {
+			return this.postpaidServiceStatus;
+		}
+
+		public void setPostpaidServiceStatus(String postpaidServiceStatus) {
+			this.postpaidServiceStatus = postpaidServiceStatus;
+		}
+
+		public Boolean getServiceVpc() {
+			return this.serviceVpc;
+		}
+
+		public void setServiceVpc(Boolean serviceVpc) {
+			this.serviceVpc = serviceVpc;
 		}
 
 		public List<DictListItem> getDictList() {
@@ -746,6 +776,8 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 			private String vsArea;
 
+			private List<WhiteIpGroupListItem> whiteIpGroupList;
+
 			public String getType() {
 				return this.type;
 			}
@@ -776,6 +808,47 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 			public void setVsArea(String vsArea) {
 				this.vsArea = vsArea;
+			}
+
+			public List<WhiteIpGroupListItem> getWhiteIpGroupList() {
+				return this.whiteIpGroupList;
+			}
+
+			public void setWhiteIpGroupList(List<WhiteIpGroupListItem> whiteIpGroupList) {
+				this.whiteIpGroupList = whiteIpGroupList;
+			}
+
+			public static class WhiteIpGroupListItem {
+
+				private String groupName;
+
+				private String whiteIpType;
+
+				private List<String> ips;
+
+				public String getGroupName() {
+					return this.groupName;
+				}
+
+				public void setGroupName(String groupName) {
+					this.groupName = groupName;
+				}
+
+				public String getWhiteIpType() {
+					return this.whiteIpType;
+				}
+
+				public void setWhiteIpType(String whiteIpType) {
+					this.whiteIpType = whiteIpType;
+				}
+
+				public List<String> getIps() {
+					return this.ips;
+				}
+
+				public void setIps(List<String> ips) {
+					this.ips = ips;
+				}
 			}
 		}
 

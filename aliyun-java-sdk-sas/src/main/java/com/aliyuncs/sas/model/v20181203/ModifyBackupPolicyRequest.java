@@ -38,6 +38,8 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 
 	private String policyVersion;
 
+	private String policyRegionId;
+
 	private String name;
 	public ModifyBackupPolicyRequest() {
 		super("Sas", "2018-12-03", "ModifyBackupPolicy", "sas");
@@ -113,6 +115,17 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 		this.policyVersion = policyVersion;
 		if(policyVersion != null){
 			putQueryParameter("PolicyVersion", policyVersion);
+		}
+	}
+
+	public String getPolicyRegionId() {
+		return this.policyRegionId;
+	}
+
+	public void setPolicyRegionId(String policyRegionId) {
+		this.policyRegionId = policyRegionId;
+		if(policyRegionId != null){
+			putQueryParameter("PolicyRegionId", policyRegionId);
 		}
 	}
 

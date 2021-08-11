@@ -47,19 +47,11 @@ public class DescribeDBClusterAvailableResourcesResponse extends AcsResponse {
 
 	public static class AvailableZone {
 
-		private String regionId;
-
 		private String zoneId;
 
+		private String regionId;
+
 		private List<SupportedEngine> supportedEngines;
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
 
 		public String getZoneId() {
 			return this.zoneId;
@@ -67,6 +59,14 @@ public class DescribeDBClusterAvailableResourcesResponse extends AcsResponse {
 
 		public void setZoneId(String zoneId) {
 			this.zoneId = zoneId;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 
 		public List<SupportedEngine> getSupportedEngines() {

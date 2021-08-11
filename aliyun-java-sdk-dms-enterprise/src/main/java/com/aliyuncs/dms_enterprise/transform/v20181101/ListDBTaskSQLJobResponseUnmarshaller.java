@@ -27,24 +27,24 @@ public class ListDBTaskSQLJobResponseUnmarshaller {
 	public static ListDBTaskSQLJobResponse unmarshall(ListDBTaskSQLJobResponse listDBTaskSQLJobResponse, UnmarshallerContext _ctx) {
 		
 		listDBTaskSQLJobResponse.setRequestId(_ctx.stringValue("ListDBTaskSQLJobResponse.RequestId"));
-		listDBTaskSQLJobResponse.setTotalCount(_ctx.longValue("ListDBTaskSQLJobResponse.TotalCount"));
-		listDBTaskSQLJobResponse.setErrorCode(_ctx.stringValue("ListDBTaskSQLJobResponse.ErrorCode"));
-		listDBTaskSQLJobResponse.setErrorMessage(_ctx.stringValue("ListDBTaskSQLJobResponse.ErrorMessage"));
 		listDBTaskSQLJobResponse.setSuccess(_ctx.booleanValue("ListDBTaskSQLJobResponse.Success"));
+		listDBTaskSQLJobResponse.setErrorMessage(_ctx.stringValue("ListDBTaskSQLJobResponse.ErrorMessage"));
+		listDBTaskSQLJobResponse.setErrorCode(_ctx.stringValue("ListDBTaskSQLJobResponse.ErrorCode"));
+		listDBTaskSQLJobResponse.setTotalCount(_ctx.longValue("ListDBTaskSQLJobResponse.TotalCount"));
 
 		List<DBTaskSQLJob> dBTaskSQLJobList = new ArrayList<DBTaskSQLJob>();
 		for (int i = 0; i < _ctx.lengthValue("ListDBTaskSQLJobResponse.DBTaskSQLJobList.Length"); i++) {
 			DBTaskSQLJob dBTaskSQLJob = new DBTaskSQLJob();
-			dBTaskSQLJob.setStatus(_ctx.stringValue("ListDBTaskSQLJobResponse.DBTaskSQLJobList["+ i +"].Status"));
-			dBTaskSQLJob.setComment(_ctx.stringValue("ListDBTaskSQLJobResponse.DBTaskSQLJobList["+ i +"].Comment"));
-			dBTaskSQLJob.setLastExecTime(_ctx.stringValue("ListDBTaskSQLJobResponse.DBTaskSQLJobList["+ i +"].LastExecTime"));
-			dBTaskSQLJob.setDbSearchName(_ctx.stringValue("ListDBTaskSQLJobResponse.DBTaskSQLJobList["+ i +"].DbSearchName"));
+			dBTaskSQLJob.setJobId(_ctx.longValue("ListDBTaskSQLJobResponse.DBTaskSQLJobList["+ i +"].JobId"));
 			dBTaskSQLJob.setJobType(_ctx.stringValue("ListDBTaskSQLJobResponse.DBTaskSQLJobList["+ i +"].JobType"));
-			dBTaskSQLJob.setCreateTime(_ctx.stringValue("ListDBTaskSQLJobResponse.DBTaskSQLJobList["+ i +"].CreateTime"));
-			dBTaskSQLJob.setDbTaskGroupId(_ctx.longValue("ListDBTaskSQLJobResponse.DBTaskSQLJobList["+ i +"].DbTaskGroupId"));
+			dBTaskSQLJob.setComment(_ctx.stringValue("ListDBTaskSQLJobResponse.DBTaskSQLJobList["+ i +"].Comment"));
+			dBTaskSQLJob.setDbSearchName(_ctx.stringValue("ListDBTaskSQLJobResponse.DBTaskSQLJobList["+ i +"].DbSearchName"));
 			dBTaskSQLJob.setDbId(_ctx.longValue("ListDBTaskSQLJobResponse.DBTaskSQLJobList["+ i +"].DbId"));
 			dBTaskSQLJob.setLogic(_ctx.booleanValue("ListDBTaskSQLJobResponse.DBTaskSQLJobList["+ i +"].Logic"));
-			dBTaskSQLJob.setJobId(_ctx.longValue("ListDBTaskSQLJobResponse.DBTaskSQLJobList["+ i +"].JobId"));
+			dBTaskSQLJob.setCreateTime(_ctx.stringValue("ListDBTaskSQLJobResponse.DBTaskSQLJobList["+ i +"].CreateTime"));
+			dBTaskSQLJob.setLastExecTime(_ctx.stringValue("ListDBTaskSQLJobResponse.DBTaskSQLJobList["+ i +"].LastExecTime"));
+			dBTaskSQLJob.setDbTaskGroupId(_ctx.longValue("ListDBTaskSQLJobResponse.DBTaskSQLJobList["+ i +"].DbTaskGroupId"));
+			dBTaskSQLJob.setStatus(_ctx.stringValue("ListDBTaskSQLJobResponse.DBTaskSQLJobList["+ i +"].Status"));
 			dBTaskSQLJob.setTransactional(_ctx.booleanValue("ListDBTaskSQLJobResponse.DBTaskSQLJobList["+ i +"].Transactional"));
 
 			dBTaskSQLJobList.add(dBTaskSQLJob);

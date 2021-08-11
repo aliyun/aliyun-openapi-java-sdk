@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetProjectOptionResponse extends AcsResponse {
 
-	private Boolean successful;
-
-	private String errorCode;
-
 	private String errorMsg;
 
 	private String requestId;
 
+	private Boolean successful;
+
+	private String errorCode;
+
 	private List<Option> object;
-
-	public Boolean getSuccessful() {
-		return this.successful;
-	}
-
-	public void setSuccessful(Boolean successful) {
-		this.successful = successful;
-	}
-
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
-	}
 
 	public String getErrorMsg() {
 		return this.errorMsg;
@@ -67,6 +51,22 @@ public class GetProjectOptionResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public Boolean getSuccessful() {
+		return this.successful;
+	}
+
+	public void setSuccessful(Boolean successful) {
+		this.successful = successful;
+	}
+
+	public String getErrorCode() {
+		return this.errorCode;
+	}
+
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
+	}
+
 	public List<Option> getObject() {
 		return this.object;
 	}
@@ -77,9 +77,21 @@ public class GetProjectOptionResponse extends AcsResponse {
 
 	public static class Option {
 
+		private String value;
+
 		private String name;
 
-		private String value;
+		private String scopeName;
+
+		private String kind;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
 
 		public String getName() {
 			return this.name;
@@ -89,12 +101,20 @@ public class GetProjectOptionResponse extends AcsResponse {
 			this.name = name;
 		}
 
-		public String getValue() {
-			return this.value;
+		public String getScopeName() {
+			return this.scopeName;
 		}
 
-		public void setValue(String value) {
-			this.value = value;
+		public void setScopeName(String scopeName) {
+			this.scopeName = scopeName;
+		}
+
+		public String getKind() {
+			return this.kind;
+		}
+
+		public void setKind(String kind) {
+			this.kind = kind;
 		}
 	}
 

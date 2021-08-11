@@ -27,15 +27,16 @@ public class ListDevopsScenarioFieldConfigResponseUnmarshaller {
 	public static ListDevopsScenarioFieldConfigResponse unmarshall(ListDevopsScenarioFieldConfigResponse listDevopsScenarioFieldConfigResponse, UnmarshallerContext _ctx) {
 		
 		listDevopsScenarioFieldConfigResponse.setRequestId(_ctx.stringValue("ListDevopsScenarioFieldConfigResponse.RequestId"));
+		listDevopsScenarioFieldConfigResponse.setErrorMsg(_ctx.stringValue("ListDevopsScenarioFieldConfigResponse.ErrorMsg"));
 		listDevopsScenarioFieldConfigResponse.setSuccessful(_ctx.booleanValue("ListDevopsScenarioFieldConfigResponse.Successful"));
 		listDevopsScenarioFieldConfigResponse.setErrorCode(_ctx.stringValue("ListDevopsScenarioFieldConfigResponse.ErrorCode"));
-		listDevopsScenarioFieldConfigResponse.setErrorMsg(_ctx.stringValue("ListDevopsScenarioFieldConfigResponse.ErrorMsg"));
 
 		List<ScenarioFieldConfig> object = new ArrayList<ScenarioFieldConfig>();
 		for (int i = 0; i < _ctx.lengthValue("ListDevopsScenarioFieldConfigResponse.Object.Length"); i++) {
 			ScenarioFieldConfig scenarioFieldConfig = new ScenarioFieldConfig();
-			scenarioFieldConfig.setId(_ctx.stringValue("ListDevopsScenarioFieldConfigResponse.Object["+ i +"].Id"));
 			scenarioFieldConfig.setType(_ctx.stringValue("ListDevopsScenarioFieldConfigResponse.Object["+ i +"].Type"));
+			scenarioFieldConfig.setName(_ctx.stringValue("ListDevopsScenarioFieldConfigResponse.Object["+ i +"].Name"));
+			scenarioFieldConfig.setId(_ctx.stringValue("ListDevopsScenarioFieldConfigResponse.Object["+ i +"].Id"));
 
 			object.add(scenarioFieldConfig);
 		}

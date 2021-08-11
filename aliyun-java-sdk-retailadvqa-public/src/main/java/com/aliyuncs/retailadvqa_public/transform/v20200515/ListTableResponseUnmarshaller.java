@@ -28,10 +28,10 @@ public class ListTableResponseUnmarshaller {
 	public static ListTableResponse unmarshall(ListTableResponse listTableResponse, UnmarshallerContext _ctx) {
 		
 		listTableResponse.setRequestId(_ctx.stringValue("ListTableResponse.RequestId"));
-		listTableResponse.setErrorCode(_ctx.stringValue("ListTableResponse.ErrorCode"));
 		listTableResponse.setErrorDesc(_ctx.stringValue("ListTableResponse.ErrorDesc"));
-		listTableResponse.setSuccess(_ctx.booleanValue("ListTableResponse.Success"));
 		listTableResponse.setTraceId(_ctx.stringValue("ListTableResponse.TraceId"));
+		listTableResponse.setErrorCode(_ctx.stringValue("ListTableResponse.ErrorCode"));
+		listTableResponse.setSuccess(_ctx.booleanValue("ListTableResponse.Success"));
 
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListTableResponse.Data.Length"); i++) {
@@ -41,9 +41,9 @@ public class ListTableResponseUnmarshaller {
 			List<Column> columns = new ArrayList<Column>();
 			for (int j = 0; j < _ctx.lengthValue("ListTableResponse.Data["+ i +"].Columns.Length"); j++) {
 				Column column = new Column();
-				column.setName(_ctx.stringValue("ListTableResponse.Data["+ i +"].Columns["+ j +"].Name"));
-				column.setColumnType(_ctx.stringValue("ListTableResponse.Data["+ i +"].Columns["+ j +"].ColumnType"));
 				column.setComment(_ctx.stringValue("ListTableResponse.Data["+ i +"].Columns["+ j +"].Comment"));
+				column.setColumnType(_ctx.stringValue("ListTableResponse.Data["+ i +"].Columns["+ j +"].ColumnType"));
+				column.setName(_ctx.stringValue("ListTableResponse.Data["+ i +"].Columns["+ j +"].Name"));
 
 				columns.add(column);
 			}

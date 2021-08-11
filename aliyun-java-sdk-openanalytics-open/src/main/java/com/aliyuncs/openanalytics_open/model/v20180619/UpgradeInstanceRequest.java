@@ -33,7 +33,7 @@ public class UpgradeInstanceRequest extends RpcAcsRequest<UpgradeInstanceRespons
 
 	private String component;
 	public UpgradeInstanceRequest() {
-		super("openanalytics-open", "2018-06-19", "UpgradeInstance", "openanalytics-cap");
+		super("openanalytics-open", "2018-06-19", "UpgradeInstance", "openanalytics");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

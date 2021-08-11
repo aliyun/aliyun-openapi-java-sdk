@@ -28,6 +28,8 @@ public class CreateMountTargetResponse extends AcsResponse {
 
 	private String mountTargetDomain;
 
+	private MountTargetExtra mountTargetExtra;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -42,6 +44,27 @@ public class CreateMountTargetResponse extends AcsResponse {
 
 	public void setMountTargetDomain(String mountTargetDomain) {
 		this.mountTargetDomain = mountTargetDomain;
+	}
+
+	public MountTargetExtra getMountTargetExtra() {
+		return this.mountTargetExtra;
+	}
+
+	public void setMountTargetExtra(MountTargetExtra mountTargetExtra) {
+		this.mountTargetExtra = mountTargetExtra;
+	}
+
+	public static class MountTargetExtra {
+
+		private String dualStackMountTargetDomain;
+
+		public String getDualStackMountTargetDomain() {
+			return this.dualStackMountTargetDomain;
+		}
+
+		public void setDualStackMountTargetDomain(String dualStackMountTargetDomain) {
+			this.dualStackMountTargetDomain = dualStackMountTargetDomain;
+		}
 	}
 
 	@Override

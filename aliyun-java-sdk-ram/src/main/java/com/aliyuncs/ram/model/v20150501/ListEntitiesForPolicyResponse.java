@@ -29,9 +29,9 @@ public class ListEntitiesForPolicyResponse extends AcsResponse {
 
 	private List<Group> groups;
 
-	private List<User> users;
-
 	private List<Role> roles;
+
+	private List<User> users;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -49,20 +49,20 @@ public class ListEntitiesForPolicyResponse extends AcsResponse {
 		this.groups = groups;
 	}
 
-	public List<User> getUsers() {
-		return this.users;
-	}
-
-	public void setUsers(List<User> users) {
-		this.users = users;
-	}
-
 	public List<Role> getRoles() {
 		return this.roles;
 	}
 
 	public void setRoles(List<Role> roles) {
 		this.roles = roles;
+	}
+
+	public List<User> getUsers() {
+		return this.users;
+	}
+
+	public void setUsers(List<User> users) {
+		this.users = users;
 	}
 
 	public static class Group {
@@ -98,15 +98,76 @@ public class ListEntitiesForPolicyResponse extends AcsResponse {
 		}
 	}
 
+	public static class Role {
+
+		private String description;
+
+		private String roleName;
+
+		private String attachDate;
+
+		private String arn;
+
+		private String roleId;
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getRoleName() {
+			return this.roleName;
+		}
+
+		public void setRoleName(String roleName) {
+			this.roleName = roleName;
+		}
+
+		public String getAttachDate() {
+			return this.attachDate;
+		}
+
+		public void setAttachDate(String attachDate) {
+			this.attachDate = attachDate;
+		}
+
+		public String getArn() {
+			return this.arn;
+		}
+
+		public void setArn(String arn) {
+			this.arn = arn;
+		}
+
+		public String getRoleId() {
+			return this.roleId;
+		}
+
+		public void setRoleId(String roleId) {
+			this.roleId = roleId;
+		}
+	}
+
 	public static class User {
+
+		private String displayName;
 
 		private String userId;
 
 		private String userName;
 
-		private String displayName;
-
 		private String attachDate;
+
+		public String getDisplayName() {
+			return this.displayName;
+		}
+
+		public void setDisplayName(String displayName) {
+			this.displayName = displayName;
+		}
 
 		public String getUserId() {
 			return this.userId;
@@ -122,67 +183,6 @@ public class ListEntitiesForPolicyResponse extends AcsResponse {
 
 		public void setUserName(String userName) {
 			this.userName = userName;
-		}
-
-		public String getDisplayName() {
-			return this.displayName;
-		}
-
-		public void setDisplayName(String displayName) {
-			this.displayName = displayName;
-		}
-
-		public String getAttachDate() {
-			return this.attachDate;
-		}
-
-		public void setAttachDate(String attachDate) {
-			this.attachDate = attachDate;
-		}
-	}
-
-	public static class Role {
-
-		private String roleId;
-
-		private String roleName;
-
-		private String arn;
-
-		private String description;
-
-		private String attachDate;
-
-		public String getRoleId() {
-			return this.roleId;
-		}
-
-		public void setRoleId(String roleId) {
-			this.roleId = roleId;
-		}
-
-		public String getRoleName() {
-			return this.roleName;
-		}
-
-		public void setRoleName(String roleName) {
-			this.roleName = roleName;
-		}
-
-		public String getArn() {
-			return this.arn;
-		}
-
-		public void setArn(String arn) {
-			this.arn = arn;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
 		}
 
 		public String getAttachDate() {

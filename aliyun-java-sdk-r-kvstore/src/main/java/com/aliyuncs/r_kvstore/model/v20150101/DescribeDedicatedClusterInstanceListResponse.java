@@ -77,7 +77,7 @@ public class DescribeDedicatedClusterInstanceListResponse extends AcsResponse {
 
 	public static class InstancesItem {
 
-		private Integer characterType;
+		private String characterType;
 
 		private String clusterId;
 
@@ -121,13 +121,15 @@ public class DescribeDedicatedClusterInstanceListResponse extends AcsResponse {
 
 		private Long bandWidth;
 
+		private Integer proxyCount;
+
 		private List<InstanceNodes> instanceNodeList;
 
-		public Integer getCharacterType() {
+		public String getCharacterType() {
 			return this.characterType;
 		}
 
-		public void setCharacterType(Integer characterType) {
+		public void setCharacterType(String characterType) {
 			this.characterType = characterType;
 		}
 
@@ -297,6 +299,14 @@ public class DescribeDedicatedClusterInstanceListResponse extends AcsResponse {
 
 		public void setBandWidth(Long bandWidth) {
 			this.bandWidth = bandWidth;
+		}
+
+		public Integer getProxyCount() {
+			return this.proxyCount;
+		}
+
+		public void setProxyCount(Integer proxyCount) {
+			this.proxyCount = proxyCount;
 		}
 
 		public List<InstanceNodes> getInstanceNodeList() {

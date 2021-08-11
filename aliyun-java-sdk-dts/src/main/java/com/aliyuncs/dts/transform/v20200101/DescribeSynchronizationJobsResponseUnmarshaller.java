@@ -58,6 +58,8 @@ public class DescribeSynchronizationJobsResponseUnmarshaller {
 			synchronizationInstance.setSynchronizationJobClass(_ctx.stringValue("DescribeSynchronizationJobsResponse.SynchronizationInstances["+ i +"].SynchronizationJobClass"));
 			synchronizationInstance.setSynchronizationJobId(_ctx.stringValue("DescribeSynchronizationJobsResponse.SynchronizationInstances["+ i +"].SynchronizationJobId"));
 			synchronizationInstance.setSynchronizationJobName(_ctx.stringValue("DescribeSynchronizationJobsResponse.SynchronizationInstances["+ i +"].SynchronizationJobName"));
+			synchronizationInstance.setJobCreateTime(_ctx.stringValue("DescribeSynchronizationJobsResponse.SynchronizationInstances["+ i +"].JobCreateTime"));
+			synchronizationInstance.setInstanceCreateTime(_ctx.stringValue("DescribeSynchronizationJobsResponse.SynchronizationInstances["+ i +"].InstanceCreateTime"));
 
 			DataInitializationStatus dataInitializationStatus = new DataInitializationStatus();
 			dataInitializationStatus.setErrorMessage(_ctx.stringValue("DescribeSynchronizationJobsResponse.SynchronizationInstances["+ i +"].DataInitializationStatus.ErrorMessage"));

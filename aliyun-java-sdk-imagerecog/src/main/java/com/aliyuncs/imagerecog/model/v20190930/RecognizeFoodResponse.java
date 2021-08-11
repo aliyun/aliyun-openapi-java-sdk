@@ -25,21 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class RecognizeFoodResponse extends AcsResponse {
 
-	private String message;
-
 	private String requestId;
 
 	private String code;
 
+	private String message;
+
 	private Data data;
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -55,6 +47,14 @@ public class RecognizeFoodResponse extends AcsResponse {
 
 	public void setCode(String code) {
 		this.code = code;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Data getData() {
@@ -79,18 +79,18 @@ public class RecognizeFoodResponse extends AcsResponse {
 
 		public static class TopFivesItem {
 
-			private String calorie;
+			private String category;
 
 			private Float score;
 
-			private String category;
+			private String calorie;
 
-			public String getCalorie() {
-				return this.calorie;
+			public String getCategory() {
+				return this.category;
 			}
 
-			public void setCalorie(String calorie) {
-				this.calorie = calorie;
+			public void setCategory(String category) {
+				this.category = category;
 			}
 
 			public Float getScore() {
@@ -101,12 +101,12 @@ public class RecognizeFoodResponse extends AcsResponse {
 				this.score = score;
 			}
 
-			public String getCategory() {
-				return this.category;
+			public String getCalorie() {
+				return this.calorie;
 			}
 
-			public void setCategory(String category) {
-				this.category = category;
+			public void setCalorie(String calorie) {
+				this.calorie = calorie;
 			}
 		}
 	}

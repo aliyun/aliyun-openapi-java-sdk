@@ -65,6 +65,20 @@ public class DescribeGatewaysResponseUnmarshaller {
 			gateway.setExpireStatus(_ctx.integerValue("DescribeGatewaysResponse.Gateways["+ i +"].ExpireStatus"));
 			gateway.setCommonBuyInstanceId(_ctx.stringValue("DescribeGatewaysResponse.Gateways["+ i +"].CommonBuyInstanceId"));
 			gateway.setPublicNetworkBandwidth(_ctx.integerValue("DescribeGatewaysResponse.Gateways["+ i +"].PublicNetworkBandwidth"));
+			gateway.setGatewayType(_ctx.stringValue("DescribeGatewaysResponse.Gateways["+ i +"].GatewayType"));
+			gateway.setElasticGateway(_ctx.booleanValue("DescribeGatewaysResponse.Gateways["+ i +"].ElasticGateway"));
+			gateway.setMaxThroughput(_ctx.integerValue("DescribeGatewaysResponse.Gateways["+ i +"].MaxThroughput"));
+			gateway.setCapacity(_ctx.integerValue("DescribeGatewaysResponse.Gateways["+ i +"].Capacity"));
+			gateway.setDataLoadType(_ctx.stringValue("DescribeGatewaysResponse.Gateways["+ i +"].DataLoadType"));
+			gateway.setDataLoadInterval(_ctx.integerValue("DescribeGatewaysResponse.Gateways["+ i +"].DataLoadInterval"));
+			gateway.setLastErrorKey(_ctx.stringValue("DescribeGatewaysResponse.Gateways["+ i +"].LastErrorKey"));
+			gateway.setInnerIpv6Ip(_ctx.stringValue("DescribeGatewaysResponse.Gateways["+ i +"].InnerIpv6Ip"));
+
+			List<String> elasticNodes = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeGatewaysResponse.Gateways["+ i +"].ElasticNodes.Length"); j++) {
+				elasticNodes.add(_ctx.stringValue("DescribeGatewaysResponse.Gateways["+ i +"].ElasticNodes["+ j +"]"));
+			}
+			gateway.setElasticNodes(elasticNodes);
 
 			gateways.add(gateway);
 		}

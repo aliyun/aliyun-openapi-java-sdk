@@ -47,20 +47,20 @@ public class ResetDisksResponse extends AcsResponse {
 
 	public static class OperationProgress {
 
-		private String operationStatus;
+		private String errorMsg;
 
 		private String errorCode;
 
-		private String errorMsg;
+		private String operationStatus;
 
 		private List<RelatedItem> relatedItemSet;
 
-		public String getOperationStatus() {
-			return this.operationStatus;
+		public String getErrorMsg() {
+			return this.errorMsg;
 		}
 
-		public void setOperationStatus(String operationStatus) {
-			this.operationStatus = operationStatus;
+		public void setErrorMsg(String errorMsg) {
+			this.errorMsg = errorMsg;
 		}
 
 		public String getErrorCode() {
@@ -71,12 +71,12 @@ public class ResetDisksResponse extends AcsResponse {
 			this.errorCode = errorCode;
 		}
 
-		public String getErrorMsg() {
-			return this.errorMsg;
+		public String getOperationStatus() {
+			return this.operationStatus;
 		}
 
-		public void setErrorMsg(String errorMsg) {
-			this.errorMsg = errorMsg;
+		public void setOperationStatus(String operationStatus) {
+			this.operationStatus = operationStatus;
 		}
 
 		public List<RelatedItem> getRelatedItemSet() {

@@ -43,6 +43,9 @@ public class DescribeScriptResponseUnmarshaller {
 		script.setScriptName(_ctx.stringValue("DescribeScriptResponse.Script.ScriptName"));
 		script.setStatus(_ctx.stringValue("DescribeScriptResponse.Script.Status"));
 		script.setUpdateTime(_ctx.longValue("DescribeScriptResponse.Script.UpdateTime"));
+		script.setChatbotId(_ctx.stringValue("DescribeScriptResponse.Script.ChatbotId"));
+		script.setAsrConfig(_ctx.stringValue("DescribeScriptResponse.Script.AsrConfig"));
+		script.setTtsConfig(_ctx.stringValue("DescribeScriptResponse.Script.TtsConfig"));
 		describeScriptResponse.setScript(script);
 	 
 	 	return describeScriptResponse;

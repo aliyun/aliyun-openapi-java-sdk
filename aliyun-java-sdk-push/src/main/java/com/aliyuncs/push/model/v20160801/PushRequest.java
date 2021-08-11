@@ -75,6 +75,8 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 
 	private String iOSSubtitle;
 
+	private String androidXiaomiBigPictureUrl;
+
 	private Boolean iOSRemind;
 
 	private String androidMusic;
@@ -87,6 +89,8 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 
 	private Integer iOSBadge;
 
+	private String androidBigBody;
+
 	private Boolean iOSBadgeAutoIncrement;
 
 	private String androidOpenType;
@@ -94,6 +98,8 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 	private String title;
 
 	private Integer smsDelaySecs;
+
+	private Integer androidRenderStyle;
 
 	private String iOSExtParameters;
 
@@ -104,6 +110,8 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 	private Boolean iOSSilentNotification;
 
 	private String target;
+
+	private String androidBigTitle;
 
 	private String androidNotificationChannel;
 
@@ -406,6 +414,17 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 		}
 	}
 
+	public String getAndroidXiaomiBigPictureUrl() {
+		return this.androidXiaomiBigPictureUrl;
+	}
+
+	public void setAndroidXiaomiBigPictureUrl(String androidXiaomiBigPictureUrl) {
+		this.androidXiaomiBigPictureUrl = androidXiaomiBigPictureUrl;
+		if(androidXiaomiBigPictureUrl != null){
+			putQueryParameter("AndroidXiaomiBigPictureUrl", androidXiaomiBigPictureUrl);
+		}
+	}
+
 	public Boolean getIOSRemind() {
 		return this.iOSRemind;
 	}
@@ -472,6 +491,17 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 		}
 	}
 
+	public String getAndroidBigBody() {
+		return this.androidBigBody;
+	}
+
+	public void setAndroidBigBody(String androidBigBody) {
+		this.androidBigBody = androidBigBody;
+		if(androidBigBody != null){
+			putQueryParameter("AndroidBigBody", androidBigBody);
+		}
+	}
+
 	public Boolean getIOSBadgeAutoIncrement() {
 		return this.iOSBadgeAutoIncrement;
 	}
@@ -513,6 +543,17 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 		this.smsDelaySecs = smsDelaySecs;
 		if(smsDelaySecs != null){
 			putQueryParameter("SmsDelaySecs", smsDelaySecs.toString());
+		}
+	}
+
+	public Integer getAndroidRenderStyle() {
+		return this.androidRenderStyle;
+	}
+
+	public void setAndroidRenderStyle(Integer androidRenderStyle) {
+		this.androidRenderStyle = androidRenderStyle;
+		if(androidRenderStyle != null){
+			putQueryParameter("AndroidRenderStyle", androidRenderStyle.toString());
 		}
 	}
 
@@ -568,6 +609,17 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 		this.target = target;
 		if(target != null){
 			putQueryParameter("Target", target);
+		}
+	}
+
+	public String getAndroidBigTitle() {
+		return this.androidBigTitle;
+	}
+
+	public void setAndroidBigTitle(String androidBigTitle) {
+		this.androidBigTitle = androidBigTitle;
+		if(androidBigTitle != null){
+			putQueryParameter("AndroidBigTitle", androidBigTitle);
 		}
 	}
 

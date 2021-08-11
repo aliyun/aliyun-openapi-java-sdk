@@ -26,12 +26,22 @@ public class CreateRouteEntryResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String routeEntryId;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getRouteEntryId() {
+		return this.routeEntryId;
+	}
+
+	public void setRouteEntryId(String routeEntryId) {
+		this.routeEntryId = routeEntryId;
 	}
 
 	@Override

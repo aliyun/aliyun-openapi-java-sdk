@@ -29,6 +29,7 @@ public class ListInferenceJobResponseUnmarshaller {
 		listInferenceJobResponse.setRequestId(_ctx.stringValue("ListInferenceJobResponse.RequestId"));
 		listInferenceJobResponse.setMessage(_ctx.stringValue("ListInferenceJobResponse.Message"));
 		listInferenceJobResponse.setCode(_ctx.stringValue("ListInferenceJobResponse.Code"));
+		listInferenceJobResponse.setTotalSize(_ctx.longValue("ListInferenceJobResponse.TotalSize"));
 
 		List<JobsItem> jobs = new ArrayList<JobsItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListInferenceJobResponse.Jobs.Length"); i++) {
@@ -39,6 +40,7 @@ public class ListInferenceJobResponseUnmarshaller {
 			jobsItem.setUserId(_ctx.longValue("ListInferenceJobResponse.Jobs["+ i +"].UserId"));
 			jobsItem.setMessage(_ctx.stringValue("ListInferenceJobResponse.Jobs["+ i +"].Message"));
 			jobsItem.setJobTime(_ctx.longValue("ListInferenceJobResponse.Jobs["+ i +"].JobTime"));
+			jobsItem.setJobParams(_ctx.stringValue("ListInferenceJobResponse.Jobs["+ i +"].JobParams"));
 
 			jobs.add(jobsItem);
 		}

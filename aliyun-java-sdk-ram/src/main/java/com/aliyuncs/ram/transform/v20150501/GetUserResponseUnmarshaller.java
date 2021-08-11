@@ -26,15 +26,15 @@ public class GetUserResponseUnmarshaller {
 		getUserResponse.setRequestId(_ctx.stringValue("GetUserResponse.RequestId"));
 
 		User user = new User();
-		user.setUserId(_ctx.stringValue("GetUserResponse.User.UserId"));
-		user.setUserName(_ctx.stringValue("GetUserResponse.User.UserName"));
 		user.setDisplayName(_ctx.stringValue("GetUserResponse.User.DisplayName"));
-		user.setMobilePhone(_ctx.stringValue("GetUserResponse.User.MobilePhone"));
 		user.setEmail(_ctx.stringValue("GetUserResponse.User.Email"));
-		user.setComments(_ctx.stringValue("GetUserResponse.User.Comments"));
-		user.setCreateDate(_ctx.stringValue("GetUserResponse.User.CreateDate"));
 		user.setUpdateDate(_ctx.stringValue("GetUserResponse.User.UpdateDate"));
+		user.setMobilePhone(_ctx.stringValue("GetUserResponse.User.MobilePhone"));
+		user.setUserId(_ctx.stringValue("GetUserResponse.User.UserId"));
+		user.setComments(_ctx.stringValue("GetUserResponse.User.Comments"));
 		user.setLastLoginDate(_ctx.stringValue("GetUserResponse.User.LastLoginDate"));
+		user.setCreateDate(_ctx.stringValue("GetUserResponse.User.CreateDate"));
+		user.setUserName(_ctx.stringValue("GetUserResponse.User.UserName"));
 		getUserResponse.setUser(user);
 	 
 	 	return getUserResponse;

@@ -28,23 +28,23 @@ public class GetPipelineLogResponseUnmarshaller {
 	public static GetPipelineLogResponse unmarshall(GetPipelineLogResponse getPipelineLogResponse, UnmarshallerContext _ctx) {
 		
 		getPipelineLogResponse.setRequestId(_ctx.stringValue("GetPipelineLogResponse.RequestId"));
+		getPipelineLogResponse.setErrorMessage(_ctx.stringValue("GetPipelineLogResponse.ErrorMessage"));
 		getPipelineLogResponse.setSuccess(_ctx.booleanValue("GetPipelineLogResponse.Success"));
 		getPipelineLogResponse.setErrorCode(_ctx.stringValue("GetPipelineLogResponse.ErrorCode"));
-		getPipelineLogResponse.setErrorMessage(_ctx.stringValue("GetPipelineLogResponse.ErrorMessage"));
 
 		List<Job> object = new ArrayList<Job>();
 		for (int i = 0; i < _ctx.lengthValue("GetPipelineLogResponse.Object.Length"); i++) {
 			Job job = new Job();
-			job.setJobId(_ctx.longValue("GetPipelineLogResponse.Object["+ i +"].JobId"));
 			job.setActionName(_ctx.stringValue("GetPipelineLogResponse.Object["+ i +"].ActionName"));
 			job.setStartTime(_ctx.stringValue("GetPipelineLogResponse.Object["+ i +"].StartTime"));
+			job.setJobId(_ctx.longValue("GetPipelineLogResponse.Object["+ i +"].JobId"));
 
 			List<BuildProcessNode> buildProcessNodes = new ArrayList<BuildProcessNode>();
 			for (int j = 0; j < _ctx.lengthValue("GetPipelineLogResponse.Object["+ i +"].BuildProcessNodes.Length"); j++) {
 				BuildProcessNode buildProcessNode = new BuildProcessNode();
-				buildProcessNode.setNodeName(_ctx.stringValue("GetPipelineLogResponse.Object["+ i +"].BuildProcessNodes["+ j +"].NodeName"));
-				buildProcessNode.setNodeIndex(_ctx.integerValue("GetPipelineLogResponse.Object["+ i +"].BuildProcessNodes["+ j +"].NodeIndex"));
 				buildProcessNode.setStatus(_ctx.stringValue("GetPipelineLogResponse.Object["+ i +"].BuildProcessNodes["+ j +"].Status"));
+				buildProcessNode.setNodeIndex(_ctx.integerValue("GetPipelineLogResponse.Object["+ i +"].BuildProcessNodes["+ j +"].NodeIndex"));
+				buildProcessNode.setNodeName(_ctx.stringValue("GetPipelineLogResponse.Object["+ i +"].BuildProcessNodes["+ j +"].NodeName"));
 
 				buildProcessNodes.add(buildProcessNode);
 			}

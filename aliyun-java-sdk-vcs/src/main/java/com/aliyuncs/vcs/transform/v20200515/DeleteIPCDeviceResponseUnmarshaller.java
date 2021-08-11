@@ -23,9 +23,9 @@ public class DeleteIPCDeviceResponseUnmarshaller {
 	public static DeleteIPCDeviceResponse unmarshall(DeleteIPCDeviceResponse deleteIPCDeviceResponse, UnmarshallerContext _ctx) {
 		
 		deleteIPCDeviceResponse.setRequestId(_ctx.stringValue("DeleteIPCDeviceResponse.RequestId"));
+		deleteIPCDeviceResponse.setCode(_ctx.stringValue("DeleteIPCDeviceResponse.Code"));
 		deleteIPCDeviceResponse.setMessage(_ctx.stringValue("DeleteIPCDeviceResponse.Message"));
 		deleteIPCDeviceResponse.setData(_ctx.stringValue("DeleteIPCDeviceResponse.Data"));
-		deleteIPCDeviceResponse.setCode(_ctx.stringValue("DeleteIPCDeviceResponse.Code"));
 	 
 	 	return deleteIPCDeviceResponse;
 	}

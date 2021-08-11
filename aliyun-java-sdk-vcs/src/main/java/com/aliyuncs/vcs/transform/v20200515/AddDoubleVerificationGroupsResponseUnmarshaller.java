@@ -27,15 +27,15 @@ public class AddDoubleVerificationGroupsResponseUnmarshaller {
 	public static AddDoubleVerificationGroupsResponse unmarshall(AddDoubleVerificationGroupsResponse addDoubleVerificationGroupsResponse, UnmarshallerContext _ctx) {
 		
 		addDoubleVerificationGroupsResponse.setRequestId(_ctx.stringValue("AddDoubleVerificationGroupsResponse.RequestId"));
-		addDoubleVerificationGroupsResponse.setMessage(_ctx.stringValue("AddDoubleVerificationGroupsResponse.Message"));
 		addDoubleVerificationGroupsResponse.setCode(_ctx.stringValue("AddDoubleVerificationGroupsResponse.Code"));
+		addDoubleVerificationGroupsResponse.setMessage(_ctx.stringValue("AddDoubleVerificationGroupsResponse.Message"));
 
 		List<ResultListItem> resultList = new ArrayList<ResultListItem>();
 		for (int i = 0; i < _ctx.lengthValue("AddDoubleVerificationGroupsResponse.ResultList.Length"); i++) {
 			ResultListItem resultListItem = new ResultListItem();
-			resultListItem.setMessage(_ctx.stringValue("AddDoubleVerificationGroupsResponse.ResultList["+ i +"].Message"));
-			resultListItem.setCode(_ctx.stringValue("AddDoubleVerificationGroupsResponse.ResultList["+ i +"].Code"));
 			resultListItem.setGroupId(_ctx.stringValue("AddDoubleVerificationGroupsResponse.ResultList["+ i +"].GroupId"));
+			resultListItem.setCode(_ctx.stringValue("AddDoubleVerificationGroupsResponse.ResultList["+ i +"].Code"));
+			resultListItem.setMessage(_ctx.stringValue("AddDoubleVerificationGroupsResponse.ResultList["+ i +"].Message"));
 
 			resultList.add(resultListItem);
 		}

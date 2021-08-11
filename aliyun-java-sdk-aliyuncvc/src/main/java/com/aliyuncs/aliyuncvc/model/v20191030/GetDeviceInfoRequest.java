@@ -27,6 +27,8 @@ public class GetDeviceInfoRequest extends RpcAcsRequest<GetDeviceInfoResponse> {
 
 	private String castScreenCode;
 
+	private String groupId;
+
 	private String sn;
 	public GetDeviceInfoRequest() {
 		super("aliyuncvc", "2019-10-30", "GetDeviceInfo", "aliyuncvc");
@@ -44,7 +46,18 @@ public class GetDeviceInfoRequest extends RpcAcsRequest<GetDeviceInfoResponse> {
 	public void setCastScreenCode(String castScreenCode) {
 		this.castScreenCode = castScreenCode;
 		if(castScreenCode != null){
-			putBodyParameter("CastScreenCode", castScreenCode);
+			putQueryParameter("CastScreenCode", castScreenCode);
+		}
+	}
+
+	public String getGroupId() {
+		return this.groupId;
+	}
+
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
+		if(groupId != null){
+			putQueryParameter("GroupId", groupId);
 		}
 	}
 
@@ -55,7 +68,7 @@ public class GetDeviceInfoRequest extends RpcAcsRequest<GetDeviceInfoResponse> {
 	public void setSn(String sn) {
 		this.sn = sn;
 		if(sn != null){
-			putBodyParameter("Sn", sn);
+			putQueryParameter("Sn", sn);
 		}
 	}
 

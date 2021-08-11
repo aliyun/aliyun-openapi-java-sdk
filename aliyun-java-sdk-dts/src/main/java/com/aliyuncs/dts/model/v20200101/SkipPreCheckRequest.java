@@ -32,8 +32,10 @@ public class SkipPreCheckRequest extends RpcAcsRequest<SkipPreCheckResponse> {
 	private String jobId;
 
 	private String skipPreCheckNames;
+
+	private String dtsJobId;
 	public SkipPreCheckRequest() {
-		super("Dts", "2020-01-01", "SkipPreCheck");
+		super("Dts", "2020-01-01", "SkipPreCheck", "dts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -82,6 +84,17 @@ public class SkipPreCheckRequest extends RpcAcsRequest<SkipPreCheckResponse> {
 		this.skipPreCheckNames = skipPreCheckNames;
 		if(skipPreCheckNames != null){
 			putQueryParameter("SkipPreCheckNames", skipPreCheckNames);
+		}
+	}
+
+	public String getDtsJobId() {
+		return this.dtsJobId;
+	}
+
+	public void setDtsJobId(String dtsJobId) {
+		this.dtsJobId = dtsJobId;
+		if(dtsJobId != null){
+			putQueryParameter("DtsJobId", dtsJobId);
 		}
 	}
 

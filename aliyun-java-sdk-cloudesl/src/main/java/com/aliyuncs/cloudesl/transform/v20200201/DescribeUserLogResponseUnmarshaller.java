@@ -59,6 +59,7 @@ public class DescribeUserLogResponseUnmarshaller {
 			userLogInfo.setItemBarCode(_ctx.stringValue("DescribeUserLogResponse.UserLogs["+ i +"].ItemBarCode"));
 			userLogInfo.setBePromotion(_ctx.booleanValue("DescribeUserLogResponse.UserLogs["+ i +"].BePromotion"));
 			userLogInfo.setUserId(_ctx.stringValue("DescribeUserLogResponse.UserLogs["+ i +"].UserId"));
+			userLogInfo.setEslSignal(_ctx.integerValue("DescribeUserLogResponse.UserLogs["+ i +"].EslSignal"));
 
 			userLogs.add(userLogInfo);
 		}

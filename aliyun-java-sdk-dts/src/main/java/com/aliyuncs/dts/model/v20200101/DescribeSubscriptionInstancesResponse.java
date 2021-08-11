@@ -127,6 +127,10 @@ public class DescribeSubscriptionInstancesResponse extends AcsResponse {
 
 		private String subscriptionInstanceName;
 
+		private String jobCreateTime;
+
+		private String instanceCreateTime;
+
 		private List<SynchronousObject> subscriptionObject;
 
 		private List<Tag> tags;
@@ -215,6 +219,22 @@ public class DescribeSubscriptionInstancesResponse extends AcsResponse {
 
 		public void setSubscriptionInstanceName(String subscriptionInstanceName) {
 			this.subscriptionInstanceName = subscriptionInstanceName;
+		}
+
+		public String getJobCreateTime() {
+			return this.jobCreateTime;
+		}
+
+		public void setJobCreateTime(String jobCreateTime) {
+			this.jobCreateTime = jobCreateTime;
+		}
+
+		public String getInstanceCreateTime() {
+			return this.instanceCreateTime;
+		}
+
+		public void setInstanceCreateTime(String instanceCreateTime) {
+			this.instanceCreateTime = instanceCreateTime;
 		}
 
 		public List<SynchronousObject> getSubscriptionObject() {

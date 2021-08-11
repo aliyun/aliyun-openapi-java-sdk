@@ -41,7 +41,7 @@ public class SubmitSnapshotJobRequest extends RpcAcsRequest<SubmitSnapshotJobRes
 
 	private String input;
 	public SubmitSnapshotJobRequest() {
-		super("Mts", "2014-06-18", "SubmitSnapshotJob");
+		super("Mts", "2014-06-18", "SubmitSnapshotJob", "mts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

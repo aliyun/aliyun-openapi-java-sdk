@@ -29,11 +29,13 @@ public class ModifyDtsJobRequest extends RpcAcsRequest<ModifyDtsJobResponse> {
 
 	private String clientToken;
 
+	private String reserve;
+
 	private String dtsInstanceId;
 
 	private String synchronizationDirection;
 	public ModifyDtsJobRequest() {
-		super("Dts", "2020-01-01", "ModifyDtsJob");
+		super("Dts", "2020-01-01", "ModifyDtsJob", "dts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -60,6 +62,17 @@ public class ModifyDtsJobRequest extends RpcAcsRequest<ModifyDtsJobResponse> {
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getReserve() {
+		return this.reserve;
+	}
+
+	public void setReserve(String reserve) {
+		this.reserve = reserve;
+		if(reserve != null){
+			putBodyParameter("Reserve", reserve);
 		}
 	}
 

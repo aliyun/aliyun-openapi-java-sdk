@@ -1,3 +1,6 @@
+2021-05-28 Version: 1.0.1
+- Add TriggerRemoteSync api.
+
 2020-06-05 Version: 1.0.0
 - Cloud Storage Gateway openapi sdk is released.
 

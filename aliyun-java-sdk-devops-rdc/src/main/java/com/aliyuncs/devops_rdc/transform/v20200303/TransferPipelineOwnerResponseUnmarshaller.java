@@ -24,10 +24,10 @@ public class TransferPipelineOwnerResponseUnmarshaller {
 	public static TransferPipelineOwnerResponse unmarshall(TransferPipelineOwnerResponse transferPipelineOwnerResponse, UnmarshallerContext _ctx) {
 		
 		transferPipelineOwnerResponse.setRequestId(_ctx.stringValue("TransferPipelineOwnerResponse.RequestId"));
-		transferPipelineOwnerResponse.setSuccess(_ctx.booleanValue("TransferPipelineOwnerResponse.Success"));
-		transferPipelineOwnerResponse.setErrorCode(_ctx.stringValue("TransferPipelineOwnerResponse.ErrorCode"));
 		transferPipelineOwnerResponse.setErrorMessage(_ctx.stringValue("TransferPipelineOwnerResponse.ErrorMessage"));
 		transferPipelineOwnerResponse.setObject(_ctx.mapValue("TransferPipelineOwnerResponse.Object"));
+		transferPipelineOwnerResponse.setErrorCode(_ctx.stringValue("TransferPipelineOwnerResponse.ErrorCode"));
+		transferPipelineOwnerResponse.setSuccess(_ctx.booleanValue("TransferPipelineOwnerResponse.Success"));
 	 
 	 	return transferPipelineOwnerResponse;
 	}

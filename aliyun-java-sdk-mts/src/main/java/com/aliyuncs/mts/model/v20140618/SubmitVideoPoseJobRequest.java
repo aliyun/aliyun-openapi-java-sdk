@@ -41,7 +41,7 @@ public class SubmitVideoPoseJobRequest extends RpcAcsRequest<SubmitVideoPoseJobR
 
 	private String input;
 	public SubmitVideoPoseJobRequest() {
-		super("Mts", "2014-06-18", "SubmitVideoPoseJob");
+		super("Mts", "2014-06-18", "SubmitVideoPoseJob", "mts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

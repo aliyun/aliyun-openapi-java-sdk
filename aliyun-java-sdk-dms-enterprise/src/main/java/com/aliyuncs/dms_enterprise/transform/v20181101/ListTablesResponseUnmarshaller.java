@@ -35,29 +35,29 @@ public class ListTablesResponseUnmarshaller {
 		List<Table> tableList = new ArrayList<Table>();
 		for (int i = 0; i < _ctx.lengthValue("ListTablesResponse.TableList.Length"); i++) {
 			Table table = new Table();
-			table.setTableId(_ctx.stringValue("ListTablesResponse.TableList["+ i +"].TableId"));
-			table.setTableName(_ctx.stringValue("ListTablesResponse.TableList["+ i +"].TableName"));
-			table.setTableGuid(_ctx.stringValue("ListTablesResponse.TableList["+ i +"].TableGuid"));
-			table.setTableType(_ctx.stringValue("ListTablesResponse.TableList["+ i +"].TableType"));
-			table.setDescription(_ctx.stringValue("ListTablesResponse.TableList["+ i +"].Description"));
-			table.setTableSchemaName(_ctx.stringValue("ListTablesResponse.TableList["+ i +"].TableSchemaName"));
-			table.setEncoding(_ctx.stringValue("ListTablesResponse.TableList["+ i +"].Encoding"));
 			table.setDatabaseId(_ctx.stringValue("ListTablesResponse.TableList["+ i +"].DatabaseId"));
-			table.setNumRows(_ctx.longValue("ListTablesResponse.TableList["+ i +"].NumRows"));
+			table.setTableName(_ctx.stringValue("ListTablesResponse.TableList["+ i +"].TableName"));
 			table.setStoreCapacity(_ctx.longValue("ListTablesResponse.TableList["+ i +"].StoreCapacity"));
+			table.setDescription(_ctx.stringValue("ListTablesResponse.TableList["+ i +"].Description"));
+			table.setEncoding(_ctx.stringValue("ListTablesResponse.TableList["+ i +"].Encoding"));
+			table.setTableSchemaName(_ctx.stringValue("ListTablesResponse.TableList["+ i +"].TableSchemaName"));
+			table.setTableType(_ctx.stringValue("ListTablesResponse.TableList["+ i +"].TableType"));
+			table.setTableGuid(_ctx.stringValue("ListTablesResponse.TableList["+ i +"].TableGuid"));
 			table.setEngine(_ctx.stringValue("ListTablesResponse.TableList["+ i +"].Engine"));
-
-			List<String> ownerNameList = new ArrayList<String>();
-			for (int j = 0; j < _ctx.lengthValue("ListTablesResponse.TableList["+ i +"].OwnerNameList.Length"); j++) {
-				ownerNameList.add(_ctx.stringValue("ListTablesResponse.TableList["+ i +"].OwnerNameList["+ j +"]"));
-			}
-			table.setOwnerNameList(ownerNameList);
+			table.setNumRows(_ctx.longValue("ListTablesResponse.TableList["+ i +"].NumRows"));
+			table.setTableId(_ctx.stringValue("ListTablesResponse.TableList["+ i +"].TableId"));
 
 			List<String> ownerIdList = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("ListTablesResponse.TableList["+ i +"].OwnerIdList.Length"); j++) {
 				ownerIdList.add(_ctx.stringValue("ListTablesResponse.TableList["+ i +"].OwnerIdList["+ j +"]"));
 			}
 			table.setOwnerIdList(ownerIdList);
+
+			List<String> ownerNameList = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("ListTablesResponse.TableList["+ i +"].OwnerNameList.Length"); j++) {
+				ownerNameList.add(_ctx.stringValue("ListTablesResponse.TableList["+ i +"].OwnerNameList["+ j +"]"));
+			}
+			table.setOwnerNameList(ownerNameList);
 
 			tableList.add(table);
 		}

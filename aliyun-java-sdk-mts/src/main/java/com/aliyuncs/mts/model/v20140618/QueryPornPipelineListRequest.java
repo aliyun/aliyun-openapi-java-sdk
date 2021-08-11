@@ -35,7 +35,7 @@ public class QueryPornPipelineListRequest extends RpcAcsRequest<QueryPornPipelin
 
 	private String pipelineIds;
 	public QueryPornPipelineListRequest() {
-		super("Mts", "2014-06-18", "QueryPornPipelineList");
+		super("Mts", "2014-06-18", "QueryPornPipelineList", "mts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -35,7 +35,7 @@ public class DescribeInitializationStatusRequest extends RpcAcsRequest<DescribeI
 
 	private Integer pageSize;
 	public DescribeInitializationStatusRequest() {
-		super("Dts", "2020-01-01", "DescribeInitializationStatus");
+		super("Dts", "2020-01-01", "DescribeInitializationStatus", "dts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

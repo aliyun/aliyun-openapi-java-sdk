@@ -75,6 +75,10 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		private String connInstanceId;
 
+		private String ipVersion;
+
+		private String ipMode;
+
 		public String getInstanceId() {
 			return this.instanceId;
 		}
@@ -145,6 +149,22 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		public void setConnInstanceId(String connInstanceId) {
 			this.connInstanceId = connInstanceId;
+		}
+
+		public String getIpVersion() {
+			return this.ipVersion;
+		}
+
+		public void setIpVersion(String ipVersion) {
+			this.ipVersion = ipVersion;
+		}
+
+		public String getIpMode() {
+			return this.ipMode;
+		}
+
+		public void setIpMode(String ipMode) {
+			this.ipMode = ipMode;
 		}
 	}
 

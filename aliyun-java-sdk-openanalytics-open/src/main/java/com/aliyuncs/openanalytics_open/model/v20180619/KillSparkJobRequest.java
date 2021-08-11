@@ -29,7 +29,7 @@ public class KillSparkJobRequest extends RpcAcsRequest<KillSparkJobResponse> {
 
 	private String vcName;
 	public KillSparkJobRequest() {
-		super("openanalytics-open", "2018-06-19", "KillSparkJob", "openanalytics-cap");
+		super("openanalytics-open", "2018-06-19", "KillSparkJob", "openanalytics");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -87,35 +87,123 @@ public class ListUserPermissionsResponse extends AcsResponse {
 
 	public static class UserPermission {
 
+		private String dbId;
+
+		private String tableName;
+
+		private String userId;
+
+		private String schemaName;
+
+		private Boolean logic;
+
+		private String userNickName;
+
+		private String instanceId;
+
+		private String envType;
+
+		private String columnName;
+
+		private String dbType;
+
+		private String dsType;
+
 		private String tableId;
 
 		private String searchName;
 
-		private String instanceId;
-
-		private String dbType;
-
-		private String envType;
-
-		private String dsType;
-
-		private String columnName;
-
-		private String tableName;
-
-		private String userNickName;
-
 		private String alias;
 
-		private String userId;
-
-		private String dbId;
-
-		private Boolean logic;
-
-		private String schemaName;
-
 		private List<PermDetail> permDetails;
+
+		public String getDbId() {
+			return this.dbId;
+		}
+
+		public void setDbId(String dbId) {
+			this.dbId = dbId;
+		}
+
+		public String getTableName() {
+			return this.tableName;
+		}
+
+		public void setTableName(String tableName) {
+			this.tableName = tableName;
+		}
+
+		public String getUserId() {
+			return this.userId;
+		}
+
+		public void setUserId(String userId) {
+			this.userId = userId;
+		}
+
+		public String getSchemaName() {
+			return this.schemaName;
+		}
+
+		public void setSchemaName(String schemaName) {
+			this.schemaName = schemaName;
+		}
+
+		public Boolean getLogic() {
+			return this.logic;
+		}
+
+		public void setLogic(Boolean logic) {
+			this.logic = logic;
+		}
+
+		public String getUserNickName() {
+			return this.userNickName;
+		}
+
+		public void setUserNickName(String userNickName) {
+			this.userNickName = userNickName;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public String getEnvType() {
+			return this.envType;
+		}
+
+		public void setEnvType(String envType) {
+			this.envType = envType;
+		}
+
+		public String getColumnName() {
+			return this.columnName;
+		}
+
+		public void setColumnName(String columnName) {
+			this.columnName = columnName;
+		}
+
+		public String getDbType() {
+			return this.dbType;
+		}
+
+		public void setDbType(String dbType) {
+			this.dbType = dbType;
+		}
+
+		public String getDsType() {
+			return this.dsType;
+		}
+
+		public void setDsType(String dsType) {
+			this.dsType = dsType;
+		}
 
 		public String getTableId() {
 			return this.tableId;
@@ -133,100 +221,12 @@ public class ListUserPermissionsResponse extends AcsResponse {
 			this.searchName = searchName;
 		}
 
-		public String getInstanceId() {
-			return this.instanceId;
-		}
-
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
-
-		public String getDbType() {
-			return this.dbType;
-		}
-
-		public void setDbType(String dbType) {
-			this.dbType = dbType;
-		}
-
-		public String getEnvType() {
-			return this.envType;
-		}
-
-		public void setEnvType(String envType) {
-			this.envType = envType;
-		}
-
-		public String getDsType() {
-			return this.dsType;
-		}
-
-		public void setDsType(String dsType) {
-			this.dsType = dsType;
-		}
-
-		public String getColumnName() {
-			return this.columnName;
-		}
-
-		public void setColumnName(String columnName) {
-			this.columnName = columnName;
-		}
-
-		public String getTableName() {
-			return this.tableName;
-		}
-
-		public void setTableName(String tableName) {
-			this.tableName = tableName;
-		}
-
-		public String getUserNickName() {
-			return this.userNickName;
-		}
-
-		public void setUserNickName(String userNickName) {
-			this.userNickName = userNickName;
-		}
-
 		public String getAlias() {
 			return this.alias;
 		}
 
 		public void setAlias(String alias) {
 			this.alias = alias;
-		}
-
-		public String getUserId() {
-			return this.userId;
-		}
-
-		public void setUserId(String userId) {
-			this.userId = userId;
-		}
-
-		public String getDbId() {
-			return this.dbId;
-		}
-
-		public void setDbId(String dbId) {
-			this.dbId = dbId;
-		}
-
-		public Boolean getLogic() {
-			return this.logic;
-		}
-
-		public void setLogic(Boolean logic) {
-			this.logic = logic;
-		}
-
-		public String getSchemaName() {
-			return this.schemaName;
-		}
-
-		public void setSchemaName(String schemaName) {
-			this.schemaName = schemaName;
 		}
 
 		public List<PermDetail> getPermDetails() {
@@ -239,24 +239,24 @@ public class ListUserPermissionsResponse extends AcsResponse {
 
 		public static class PermDetail {
 
-			private String expireDate;
+			private String originFrom;
 
 			private String permType;
 
-			private String extraData;
+			private String expireDate;
 
 			private String createDate;
 
-			private String originFrom;
-
 			private String userAccessId;
 
-			public String getExpireDate() {
-				return this.expireDate;
+			private String extraData;
+
+			public String getOriginFrom() {
+				return this.originFrom;
 			}
 
-			public void setExpireDate(String expireDate) {
-				this.expireDate = expireDate;
+			public void setOriginFrom(String originFrom) {
+				this.originFrom = originFrom;
 			}
 
 			public String getPermType() {
@@ -267,12 +267,12 @@ public class ListUserPermissionsResponse extends AcsResponse {
 				this.permType = permType;
 			}
 
-			public String getExtraData() {
-				return this.extraData;
+			public String getExpireDate() {
+				return this.expireDate;
 			}
 
-			public void setExtraData(String extraData) {
-				this.extraData = extraData;
+			public void setExpireDate(String expireDate) {
+				this.expireDate = expireDate;
 			}
 
 			public String getCreateDate() {
@@ -283,20 +283,20 @@ public class ListUserPermissionsResponse extends AcsResponse {
 				this.createDate = createDate;
 			}
 
-			public String getOriginFrom() {
-				return this.originFrom;
-			}
-
-			public void setOriginFrom(String originFrom) {
-				this.originFrom = originFrom;
-			}
-
 			public String getUserAccessId() {
 				return this.userAccessId;
 			}
 
 			public void setUserAccessId(String userAccessId) {
 				this.userAccessId = userAccessId;
+			}
+
+			public String getExtraData() {
+				return this.extraData;
+			}
+
+			public void setExtraData(String extraData) {
+				this.extraData = extraData;
 			}
 		}
 	}

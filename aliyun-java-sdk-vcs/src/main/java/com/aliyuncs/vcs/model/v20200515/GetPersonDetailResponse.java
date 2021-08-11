@@ -25,21 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetPersonDetailResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String message;
+
+	private String requestId;
 
 	private String code;
 
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getMessage() {
 		return this.message;
@@ -47,6 +39,14 @@ public class GetPersonDetailResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getCode() {
@@ -67,19 +67,11 @@ public class GetPersonDetailResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String personId;
-
 		private String picUrl;
 
+		private String personId;
+
 		private List<TagListItem> tagList;
-
-		public String getPersonId() {
-			return this.personId;
-		}
-
-		public void setPersonId(String personId) {
-			this.personId = personId;
-		}
 
 		public String getPicUrl() {
 			return this.picUrl;
@@ -87,6 +79,14 @@ public class GetPersonDetailResponse extends AcsResponse {
 
 		public void setPicUrl(String picUrl) {
 			this.picUrl = picUrl;
+		}
+
+		public String getPersonId() {
+			return this.personId;
+		}
+
+		public void setPersonId(String personId) {
+			this.personId = personId;
 		}
 
 		public List<TagListItem> getTagList() {
@@ -99,21 +99,13 @@ public class GetPersonDetailResponse extends AcsResponse {
 
 		public static class TagListItem {
 
-			private String tagName;
-
 			private String tagValueId;
+
+			private String tagName;
 
 			private String tagCode;
 
 			private String tagValue;
-
-			public String getTagName() {
-				return this.tagName;
-			}
-
-			public void setTagName(String tagName) {
-				this.tagName = tagName;
-			}
 
 			public String getTagValueId() {
 				return this.tagValueId;
@@ -121,6 +113,14 @@ public class GetPersonDetailResponse extends AcsResponse {
 
 			public void setTagValueId(String tagValueId) {
 				this.tagValueId = tagValueId;
+			}
+
+			public String getTagName() {
+				return this.tagName;
+			}
+
+			public void setTagName(String tagName) {
+				this.tagName = tagName;
 			}
 
 			public String getTagCode() {

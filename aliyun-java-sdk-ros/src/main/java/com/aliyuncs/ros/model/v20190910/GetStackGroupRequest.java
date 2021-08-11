@@ -25,6 +25,8 @@ import com.aliyuncs.ros.Endpoint;
 public class GetStackGroupRequest extends RpcAcsRequest<GetStackGroupResponse> {
 	   
 
+	private String stackGroupId;
+
 	private String stackGroupName;
 	public GetStackGroupRequest() {
 		super("ROS", "2019-09-10", "GetStackGroup", "ros");
@@ -33,6 +35,17 @@ public class GetStackGroupRequest extends RpcAcsRequest<GetStackGroupResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getStackGroupId() {
+		return this.stackGroupId;
+	}
+
+	public void setStackGroupId(String stackGroupId) {
+		this.stackGroupId = stackGroupId;
+		if(stackGroupId != null){
+			putQueryParameter("StackGroupId", stackGroupId);
+		}
 	}
 
 	public String getStackGroupName() {

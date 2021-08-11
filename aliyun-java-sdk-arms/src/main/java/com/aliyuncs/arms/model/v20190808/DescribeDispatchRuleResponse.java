@@ -53,6 +53,10 @@ public class DescribeDispatchRuleResponse extends AcsResponse {
 
 		private String state;
 
+		private String dispatchType;
+
+		private Boolean isRecover;
+
 		private List<GroupRule> groupRules;
 
 		private List<NotifyRule> notifyRules;
@@ -81,6 +85,22 @@ public class DescribeDispatchRuleResponse extends AcsResponse {
 
 		public void setState(String state) {
 			this.state = state;
+		}
+
+		public String getDispatchType() {
+			return this.dispatchType;
+		}
+
+		public void setDispatchType(String dispatchType) {
+			this.dispatchType = dispatchType;
+		}
+
+		public Boolean getIsRecover() {
+			return this.isRecover;
+		}
+
+		public void setIsRecover(Boolean isRecover) {
+			this.isRecover = isRecover;
 		}
 
 		public List<GroupRule> getGroupRules() {
@@ -115,6 +135,8 @@ public class DescribeDispatchRuleResponse extends AcsResponse {
 
 			private Long groupInterval;
 
+			private Long repeatInterval;
+
 			private List<String> groupingFields;
 
 			public Long getGroupId() {
@@ -139,6 +161,14 @@ public class DescribeDispatchRuleResponse extends AcsResponse {
 
 			public void setGroupInterval(Long groupInterval) {
 				this.groupInterval = groupInterval;
+			}
+
+			public Long getRepeatInterval() {
+				return this.repeatInterval;
+			}
+
+			public void setRepeatInterval(Long repeatInterval) {
+				this.repeatInterval = repeatInterval;
 			}
 
 			public List<String> getGroupingFields() {

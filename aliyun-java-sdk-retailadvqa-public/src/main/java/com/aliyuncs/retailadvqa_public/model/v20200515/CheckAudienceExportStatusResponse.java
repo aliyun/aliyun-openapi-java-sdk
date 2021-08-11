@@ -24,24 +24,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CheckAudienceExportStatusResponse extends AcsResponse {
 
-	private String errorCode;
+	private String requestId;
 
 	private String errorDesc;
 
-	private Boolean success;
-
 	private String traceId;
-
-	private String requestId;
 
 	private String data;
 
-	public String getErrorCode() {
-		return this.errorCode;
+	private String errorCode;
+
+	private Boolean success;
+
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getErrorDesc() {
@@ -52,14 +52,6 @@ public class CheckAudienceExportStatusResponse extends AcsResponse {
 		this.errorDesc = errorDesc;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
 	public String getTraceId() {
 		return this.traceId;
 	}
@@ -68,20 +60,28 @@ public class CheckAudienceExportStatusResponse extends AcsResponse {
 		this.traceId = traceId;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public String getData() {
 		return this.data;
 	}
 
 	public void setData(String data) {
 		this.data = data;
+	}
+
+	public String getErrorCode() {
+		return this.errorCode;
+	}
+
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	@Override

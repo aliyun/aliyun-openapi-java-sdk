@@ -1,3 +1,6 @@
+2021-06-02 Version: 2.15.0
+- Support key deletion protection.
+
 2020-12-18 Version: 2.14.0
 - Release Full Managed Credentials for Aliyun RDS.
 

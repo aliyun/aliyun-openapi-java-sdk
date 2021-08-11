@@ -41,6 +41,8 @@ public class ModifyVSwitchAttributeRequest extends RpcAcsRequest<ModifyVSwitchAt
 
 	private String vSwitchId;
 
+	private String vpcIpv6CidrBlock;
+
 	private String vSwitchName;
 	public ModifyVSwitchAttributeRequest() {
 		super("Vpc", "2016-04-28", "ModifyVSwitchAttribute", "vpc");
@@ -136,6 +138,17 @@ public class ModifyVSwitchAttributeRequest extends RpcAcsRequest<ModifyVSwitchAt
 		this.vSwitchId = vSwitchId;
 		if(vSwitchId != null){
 			putQueryParameter("VSwitchId", vSwitchId);
+		}
+	}
+
+	public String getVpcIpv6CidrBlock() {
+		return this.vpcIpv6CidrBlock;
+	}
+
+	public void setVpcIpv6CidrBlock(String vpcIpv6CidrBlock) {
+		this.vpcIpv6CidrBlock = vpcIpv6CidrBlock;
+		if(vpcIpv6CidrBlock != null){
+			putQueryParameter("VpcIpv6CidrBlock", vpcIpv6CidrBlock);
 		}
 	}
 

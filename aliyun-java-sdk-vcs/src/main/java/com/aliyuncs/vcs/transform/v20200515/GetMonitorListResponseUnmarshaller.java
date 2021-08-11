@@ -32,29 +32,29 @@ public class GetMonitorListResponseUnmarshaller {
 		getMonitorListResponse.setCode(_ctx.stringValue("GetMonitorListResponse.Code"));
 
 		Data data = new Data();
-		data.setTotalCount(_ctx.integerValue("GetMonitorListResponse.Data.TotalCount"));
-		data.setPageSize(_ctx.integerValue("GetMonitorListResponse.Data.PageSize"));
-		data.setTotalPage(_ctx.integerValue("GetMonitorListResponse.Data.TotalPage"));
 		data.setPageNumber(_ctx.integerValue("GetMonitorListResponse.Data.PageNumber"));
+		data.setTotalPage(_ctx.integerValue("GetMonitorListResponse.Data.TotalPage"));
+		data.setPageSize(_ctx.integerValue("GetMonitorListResponse.Data.PageSize"));
+		data.setTotalCount(_ctx.integerValue("GetMonitorListResponse.Data.TotalCount"));
 
 		List<Record> records = new ArrayList<Record>();
 		for (int i = 0; i < _ctx.lengthValue("GetMonitorListResponse.Data.Records.Length"); i++) {
 			Record record = new Record();
 			record.setStatus(_ctx.stringValue("GetMonitorListResponse.Data.Records["+ i +"].Status"));
-			record.setTaskId(_ctx.stringValue("GetMonitorListResponse.Data.Records["+ i +"].TaskId"));
-			record.setDescription(_ctx.stringValue("GetMonitorListResponse.Data.Records["+ i +"].Description"));
-			record.setMonitorType(_ctx.stringValue("GetMonitorListResponse.Data.Records["+ i +"].MonitorType"));
-			record.setNotifierExtendValues(_ctx.stringValue("GetMonitorListResponse.Data.Records["+ i +"].NotifierExtendValues"));
+			record.setRuleExpression(_ctx.stringValue("GetMonitorListResponse.Data.Records["+ i +"].RuleExpression"));
 			record.setImageMatch(_ctx.stringValue("GetMonitorListResponse.Data.Records["+ i +"].ImageMatch"));
+			record.setMonitorType(_ctx.stringValue("GetMonitorListResponse.Data.Records["+ i +"].MonitorType"));
+			record.setCreateDate(_ctx.stringValue("GetMonitorListResponse.Data.Records["+ i +"].CreateDate"));
+			record.setRuleName(_ctx.stringValue("GetMonitorListResponse.Data.Records["+ i +"].RuleName"));
+			record.setNotifierType(_ctx.stringValue("GetMonitorListResponse.Data.Records["+ i +"].NotifierType"));
+			record.setDescription(_ctx.stringValue("GetMonitorListResponse.Data.Records["+ i +"].Description"));
+			record.setExpression(_ctx.stringValue("GetMonitorListResponse.Data.Records["+ i +"].Expression"));
+			record.setNotifierExtendValues(_ctx.stringValue("GetMonitorListResponse.Data.Records["+ i +"].NotifierExtendValues"));
 			record.setAttributes(_ctx.stringValue("GetMonitorListResponse.Data.Records["+ i +"].Attributes"));
 			record.setDeviceList(_ctx.stringValue("GetMonitorListResponse.Data.Records["+ i +"].DeviceList"));
+			record.setTaskId(_ctx.stringValue("GetMonitorListResponse.Data.Records["+ i +"].TaskId"));
 			record.setModifiedDate(_ctx.stringValue("GetMonitorListResponse.Data.Records["+ i +"].ModifiedDate"));
-			record.setCreateDate(_ctx.stringValue("GetMonitorListResponse.Data.Records["+ i +"].CreateDate"));
-			record.setNotifierType(_ctx.stringValue("GetMonitorListResponse.Data.Records["+ i +"].NotifierType"));
-			record.setRuleExpression(_ctx.stringValue("GetMonitorListResponse.Data.Records["+ i +"].RuleExpression"));
 			record.setAlgorithmVendor(_ctx.stringValue("GetMonitorListResponse.Data.Records["+ i +"].AlgorithmVendor"));
-			record.setExpression(_ctx.stringValue("GetMonitorListResponse.Data.Records["+ i +"].Expression"));
-			record.setRuleName(_ctx.stringValue("GetMonitorListResponse.Data.Records["+ i +"].RuleName"));
 
 			records.add(record);
 		}

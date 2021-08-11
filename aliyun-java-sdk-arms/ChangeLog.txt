@@ -1,3 +1,39 @@
+2021-07-28 Version: 2.7.35
+- Update QueryPromInstallStatus.
+- Update UninstallPromCluster.
+
+2021-07-27 Version: 2.7.34
+- Update OpenVCluster.
+- Update CheckServiceStatus.
+
+2021-07-27 Version: 2.7.33
+- Add ENDPOINT.
+
+2021-07-09 Version: 2.7.31
+- Mod GetUserCommercialStatus.
+
+2021-07-09 Version: 2.7.30
+- Mod GetUserCommercialStatus.
+
+2021-07-09 Version: 2.7.29
+- Add GetUserCommercialStatus.
+
+2021-06-28 Version: 2.7.28
+- Edit ListRetcodeApps.
+- Edit SearchRetcodeAppByPage.
+
+2021-06-28 Version: 2.7.27
+- Support dispatch type for describe dispatch rule.
+
+2021-06-25 Version: 2.7.26
+- Support repeat interval for dispatch rule.
+
+2021-06-23 Version: 2.7.25
+- Support alerts with new notification rules.
+
+2021-06-09 Version: 2.7.24
+- Edit GetTrace.
+
 2021-04-30 Version: 2.7.23
 - Add OpenArmsServiceSecondVersion.
 

@@ -41,7 +41,7 @@ public class SubmitAnnotationJobRequest extends RpcAcsRequest<SubmitAnnotationJo
 
 	private String input;
 	public SubmitAnnotationJobRequest() {
-		super("Mts", "2014-06-18", "SubmitAnnotationJob");
+		super("Mts", "2014-06-18", "SubmitAnnotationJob", "mts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

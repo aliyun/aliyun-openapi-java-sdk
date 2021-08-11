@@ -26,9 +26,9 @@ public class CreateDataCronClearOrderResponseUnmarshaller {
 	public static CreateDataCronClearOrderResponse unmarshall(CreateDataCronClearOrderResponse createDataCronClearOrderResponse, UnmarshallerContext _ctx) {
 		
 		createDataCronClearOrderResponse.setRequestId(_ctx.stringValue("CreateDataCronClearOrderResponse.RequestId"));
-		createDataCronClearOrderResponse.setErrorCode(_ctx.stringValue("CreateDataCronClearOrderResponse.ErrorCode"));
-		createDataCronClearOrderResponse.setErrorMessage(_ctx.stringValue("CreateDataCronClearOrderResponse.ErrorMessage"));
 		createDataCronClearOrderResponse.setSuccess(_ctx.booleanValue("CreateDataCronClearOrderResponse.Success"));
+		createDataCronClearOrderResponse.setErrorMessage(_ctx.stringValue("CreateDataCronClearOrderResponse.ErrorMessage"));
+		createDataCronClearOrderResponse.setErrorCode(_ctx.stringValue("CreateDataCronClearOrderResponse.ErrorCode"));
 
 		List<Long> createOrderResult = new ArrayList<Long>();
 		for (int i = 0; i < _ctx.lengthValue("CreateDataCronClearOrderResponse.CreateOrderResult.Length"); i++) {

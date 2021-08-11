@@ -27,6 +27,8 @@ public class DeleteAppRequest extends RpcAcsRequest<DeleteAppResponse> {
 	private Long appId;
 
 	private String currentOrgId;
+
+	private Boolean isCleanCodeRepo;
 	public DeleteAppRequest() {
 		super("Workbench-ide", "2021-01-21", "DeleteApp");
 		setMethod(MethodType.POST);
@@ -51,6 +53,17 @@ public class DeleteAppRequest extends RpcAcsRequest<DeleteAppResponse> {
 		this.currentOrgId = currentOrgId;
 		if(currentOrgId != null){
 			putQueryParameter("CurrentOrgId", currentOrgId);
+		}
+	}
+
+	public Boolean getIsCleanCodeRepo() {
+		return this.isCleanCodeRepo;
+	}
+
+	public void setIsCleanCodeRepo(Boolean isCleanCodeRepo) {
+		this.isCleanCodeRepo = isCleanCodeRepo;
+		if(isCleanCodeRepo != null){
+			putQueryParameter("IsCleanCodeRepo", isCleanCodeRepo.toString());
 		}
 	}
 

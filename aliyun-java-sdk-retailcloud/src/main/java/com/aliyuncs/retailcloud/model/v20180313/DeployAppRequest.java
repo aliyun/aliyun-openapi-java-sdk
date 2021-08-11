@@ -46,6 +46,8 @@ public class DeployAppRequest extends RpcAcsRequest<DeployAppResponse> {
 
 	private List<String> initContainerImageLists;
 
+	private String defaultPacketOfAppGroup;
+
 	private Boolean armsFlag;
 	public DeployAppRequest() {
 		super("retailcloud", "2018-03-13", "DeployApp");
@@ -168,6 +170,17 @@ public class DeployAppRequest extends RpcAcsRequest<DeployAppResponse> {
 				putQueryParameter("InitContainerImageList." + (i + 1) , initContainerImageLists.get(i));
 			}
 		}	
+	}
+
+	public String getDefaultPacketOfAppGroup() {
+		return this.defaultPacketOfAppGroup;
+	}
+
+	public void setDefaultPacketOfAppGroup(String defaultPacketOfAppGroup) {
+		this.defaultPacketOfAppGroup = defaultPacketOfAppGroup;
+		if(defaultPacketOfAppGroup != null){
+			putQueryParameter("DefaultPacketOfAppGroup", defaultPacketOfAppGroup);
+		}
 	}
 
 	public Boolean getArmsFlag() {

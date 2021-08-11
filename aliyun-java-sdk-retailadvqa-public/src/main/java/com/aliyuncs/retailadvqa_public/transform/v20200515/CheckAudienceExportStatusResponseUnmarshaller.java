@@ -23,11 +23,11 @@ public class CheckAudienceExportStatusResponseUnmarshaller {
 	public static CheckAudienceExportStatusResponse unmarshall(CheckAudienceExportStatusResponse checkAudienceExportStatusResponse, UnmarshallerContext _ctx) {
 		
 		checkAudienceExportStatusResponse.setRequestId(_ctx.stringValue("CheckAudienceExportStatusResponse.RequestId"));
-		checkAudienceExportStatusResponse.setErrorCode(_ctx.stringValue("CheckAudienceExportStatusResponse.ErrorCode"));
 		checkAudienceExportStatusResponse.setErrorDesc(_ctx.stringValue("CheckAudienceExportStatusResponse.ErrorDesc"));
-		checkAudienceExportStatusResponse.setSuccess(_ctx.booleanValue("CheckAudienceExportStatusResponse.Success"));
 		checkAudienceExportStatusResponse.setTraceId(_ctx.stringValue("CheckAudienceExportStatusResponse.TraceId"));
 		checkAudienceExportStatusResponse.setData(_ctx.stringValue("CheckAudienceExportStatusResponse.Data"));
+		checkAudienceExportStatusResponse.setErrorCode(_ctx.stringValue("CheckAudienceExportStatusResponse.ErrorCode"));
+		checkAudienceExportStatusResponse.setSuccess(_ctx.booleanValue("CheckAudienceExportStatusResponse.Success"));
 	 
 	 	return checkAudienceExportStatusResponse;
 	}

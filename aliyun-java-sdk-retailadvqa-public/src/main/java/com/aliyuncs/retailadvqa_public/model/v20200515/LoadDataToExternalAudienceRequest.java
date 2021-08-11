@@ -15,7 +15,6 @@
 package com.aliyuncs.retailadvqa_public.model.v20200515;
 
 import com.aliyuncs.RpcAcsRequest;
-import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 
 /**
@@ -32,7 +31,6 @@ public class LoadDataToExternalAudienceRequest extends RpcAcsRequest<LoadDataToE
 	private String ossPath;
 	public LoadDataToExternalAudienceRequest() {
 		super("retailadvqa-public", "2020-05-15", "LoadDataToExternalAudience");
-		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
 

@@ -34,6 +34,7 @@ public class QueryInferenceJobResponseUnmarshaller {
 		job.setUserId(_ctx.longValue("QueryInferenceJobResponse.Job.UserId"));
 		job.setMessage(_ctx.stringValue("QueryInferenceJobResponse.Job.Message"));
 		job.setJobTime(_ctx.longValue("QueryInferenceJobResponse.Job.JobTime"));
+		job.setJobParams(_ctx.stringValue("QueryInferenceJobResponse.Job.JobParams"));
 		queryInferenceJobResponse.setJob(job);
 	 
 	 	return queryInferenceJobResponse;

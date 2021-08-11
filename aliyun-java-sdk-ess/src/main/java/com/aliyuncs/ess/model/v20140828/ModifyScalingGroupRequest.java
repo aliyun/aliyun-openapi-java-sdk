@@ -46,6 +46,8 @@ public class ModifyScalingGroupRequest extends RpcAcsRequest<ModifyScalingGroupR
 
 	private String removalPolicy2;
 
+	private String multiAZPolicy;
+
 	private String healthCheckType;
 
 	private String launchTemplateId;
@@ -55,6 +57,8 @@ public class ModifyScalingGroupRequest extends RpcAcsRequest<ModifyScalingGroupR
 	private String resourceOwnerAccount;
 
 	private String scalingGroupName;
+
+	private List<LaunchTemplateOverride> launchTemplateOverrides;
 
 	private String ownerAccount;
 
@@ -107,7 +111,7 @@ public class ModifyScalingGroupRequest extends RpcAcsRequest<ModifyScalingGroupR
 	}
 
 	public void setVSwitchIds(List<String> vSwitchIds) {
-		this.vSwitchIds = vSwitchIds;
+		this.vSwitchIds = vSwitchIds;	
 		if (vSwitchIds != null) {
 			for (int i = 0; i < vSwitchIds.size(); i++) {
 				putQueryParameter("VSwitchIds." + (i + 1) , vSwitchIds.get(i));
@@ -192,6 +196,17 @@ public class ModifyScalingGroupRequest extends RpcAcsRequest<ModifyScalingGroupR
 		}
 	}
 
+	public String getMultiAZPolicy() {
+		return this.multiAZPolicy;
+	}
+
+	public void setMultiAZPolicy(String multiAZPolicy) {
+		this.multiAZPolicy = multiAZPolicy;
+		if(multiAZPolicy != null){
+			putQueryParameter("MultiAZPolicy", multiAZPolicy);
+		}
+	}
+
 	public String getHealthCheckType() {
 		return this.healthCheckType;
 	}
@@ -245,6 +260,20 @@ public class ModifyScalingGroupRequest extends RpcAcsRequest<ModifyScalingGroupR
 		if(scalingGroupName != null){
 			putQueryParameter("ScalingGroupName", scalingGroupName);
 		}
+	}
+
+	public List<LaunchTemplateOverride> getLaunchTemplateOverrides() {
+		return this.launchTemplateOverrides;
+	}
+
+	public void setLaunchTemplateOverrides(List<LaunchTemplateOverride> launchTemplateOverrides) {
+		this.launchTemplateOverrides = launchTemplateOverrides;	
+		if (launchTemplateOverrides != null) {
+			for (int depth1 = 0; depth1 < launchTemplateOverrides.size(); depth1++) {
+				putQueryParameter("LaunchTemplateOverride." + (depth1 + 1) + ".WeightedCapacity" , launchTemplateOverrides.get(depth1).getWeightedCapacity());
+				putQueryParameter("LaunchTemplateOverride." + (depth1 + 1) + ".InstanceType" , launchTemplateOverrides.get(depth1).getInstanceType());
+			}
+		}	
 	}
 
 	public String getOwnerAccount() {
@@ -332,6 +361,29 @@ public class ModifyScalingGroupRequest extends RpcAcsRequest<ModifyScalingGroupR
 		this.maxSize = maxSize;
 		if(maxSize != null){
 			putQueryParameter("MaxSize", maxSize.toString());
+		}
+	}
+
+	public static class LaunchTemplateOverride {
+
+		private Integer weightedCapacity;
+
+		private String instanceType;
+
+		public Integer getWeightedCapacity() {
+			return this.weightedCapacity;
+		}
+
+		public void setWeightedCapacity(Integer weightedCapacity) {
+			this.weightedCapacity = weightedCapacity;
+		}
+
+		public String getInstanceType() {
+			return this.instanceType;
+		}
+
+		public void setInstanceType(String instanceType) {
+			this.instanceType = instanceType;
 		}
 	}
 

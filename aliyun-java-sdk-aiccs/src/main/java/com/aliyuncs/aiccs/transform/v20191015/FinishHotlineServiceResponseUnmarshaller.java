@@ -26,6 +26,7 @@ public class FinishHotlineServiceResponseUnmarshaller {
 		finishHotlineServiceResponse.setMessage(_ctx.stringValue("FinishHotlineServiceResponse.Message"));
 		finishHotlineServiceResponse.setCode(_ctx.stringValue("FinishHotlineServiceResponse.Code"));
 		finishHotlineServiceResponse.setSuccess(_ctx.booleanValue("FinishHotlineServiceResponse.Success"));
+		finishHotlineServiceResponse.setHttpStatusCode(_ctx.longValue("FinishHotlineServiceResponse.HttpStatusCode"));
 	 
 	 	return finishHotlineServiceResponse;
 	}

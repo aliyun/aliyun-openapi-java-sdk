@@ -41,7 +41,7 @@ public class UpdateVsPullStreamInfoConfigRequest extends RpcAcsRequest<UpdateVsP
 
 	private String sourceUrl;
 	public UpdateVsPullStreamInfoConfigRequest() {
-		super("vs", "2018-12-12", "UpdateVsPullStreamInfoConfig", "vs");
+		super("vs", "2018-12-12", "UpdateVsPullStreamInfoConfig");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

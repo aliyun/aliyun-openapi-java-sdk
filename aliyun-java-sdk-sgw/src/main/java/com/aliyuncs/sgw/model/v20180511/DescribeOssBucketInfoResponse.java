@@ -44,6 +44,8 @@ public class DescribeOssBucketInfoResponse extends AcsResponse {
 
 	private Long storageSize;
 
+	private Boolean isVersioning;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -122,6 +124,14 @@ public class DescribeOssBucketInfoResponse extends AcsResponse {
 
 	public void setStorageSize(Long storageSize) {
 		this.storageSize = storageSize;
+	}
+
+	public Boolean getIsVersioning() {
+		return this.isVersioning;
+	}
+
+	public void setIsVersioning(Boolean isVersioning) {
+		this.isVersioning = isVersioning;
 	}
 
 	@Override

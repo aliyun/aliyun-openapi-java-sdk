@@ -25,9 +25,13 @@ import com.aliyuncs.sgw.Endpoint;
 public class DeleteGatewayRequest extends RpcAcsRequest<DeleteGatewayResponse> {
 	   
 
+	private String reasonDetail;
+
 	private String securityToken;
 
 	private String gatewayId;
+
+	private String reasonType;
 	public DeleteGatewayRequest() {
 		super("sgw", "2018-05-11", "DeleteGateway", "hcs_sgw");
 		setMethod(MethodType.POST);
@@ -35,6 +39,17 @@ public class DeleteGatewayRequest extends RpcAcsRequest<DeleteGatewayResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getReasonDetail() {
+		return this.reasonDetail;
+	}
+
+	public void setReasonDetail(String reasonDetail) {
+		this.reasonDetail = reasonDetail;
+		if(reasonDetail != null){
+			putQueryParameter("ReasonDetail", reasonDetail);
+		}
 	}
 
 	public String getSecurityToken() {
@@ -56,6 +71,17 @@ public class DeleteGatewayRequest extends RpcAcsRequest<DeleteGatewayResponse> {
 		this.gatewayId = gatewayId;
 		if(gatewayId != null){
 			putQueryParameter("GatewayId", gatewayId);
+		}
+	}
+
+	public String getReasonType() {
+		return this.reasonType;
+	}
+
+	public void setReasonType(String reasonType) {
+		this.reasonType = reasonType;
+		if(reasonType != null){
+			putQueryParameter("ReasonType", reasonType);
 		}
 	}
 

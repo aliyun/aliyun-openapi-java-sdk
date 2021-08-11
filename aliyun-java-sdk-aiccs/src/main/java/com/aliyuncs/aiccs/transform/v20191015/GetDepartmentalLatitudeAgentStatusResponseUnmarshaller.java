@@ -29,9 +29,9 @@ public class GetDepartmentalLatitudeAgentStatusResponseUnmarshaller {
 		getDepartmentalLatitudeAgentStatusResponse.setSuccess(_ctx.booleanValue("GetDepartmentalLatitudeAgentStatusResponse.Success"));
 
 		Data data = new Data();
-		data.setTotalNum(_ctx.integerValue("GetDepartmentalLatitudeAgentStatusResponse.Data.TotalNum"));
-		data.setPageSize(_ctx.integerValue("GetDepartmentalLatitudeAgentStatusResponse.Data.PageSize"));
 		data.setPageNum(_ctx.integerValue("GetDepartmentalLatitudeAgentStatusResponse.Data.PageNum"));
+		data.setPageSize(_ctx.integerValue("GetDepartmentalLatitudeAgentStatusResponse.Data.PageSize"));
+		data.setTotalNum(_ctx.integerValue("GetDepartmentalLatitudeAgentStatusResponse.Data.TotalNum"));
 		data.setRows(_ctx.stringValue("GetDepartmentalLatitudeAgentStatusResponse.Data.Rows"));
 		getDepartmentalLatitudeAgentStatusResponse.setData(data);
 	 

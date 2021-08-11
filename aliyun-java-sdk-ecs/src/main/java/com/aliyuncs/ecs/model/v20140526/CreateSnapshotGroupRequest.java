@@ -28,9 +28,9 @@ public class CreateSnapshotGroupRequest extends RpcAcsRequest<CreateSnapshotGrou
 
 	private Long resourceOwnerId;
 
-	private List<String> excludeDiskIds;
-
 	private Boolean instantAccess;
+
+	private List<String> excludeDiskIds;
 
 	private String description;
 
@@ -65,6 +65,17 @@ public class CreateSnapshotGroupRequest extends RpcAcsRequest<CreateSnapshotGrou
 		}
 	}
 
+	public Boolean getInstantAccess() {
+		return this.instantAccess;
+	}
+
+	public void setInstantAccess(Boolean instantAccess) {
+		this.instantAccess = instantAccess;
+		if(instantAccess != null){
+			putQueryParameter("InstantAccess", instantAccess.toString());
+		}
+	}
+
 	public List<String> getExcludeDiskIds() {
 		return this.excludeDiskIds;
 	}
@@ -76,17 +87,6 @@ public class CreateSnapshotGroupRequest extends RpcAcsRequest<CreateSnapshotGrou
 				putQueryParameter("ExcludeDiskId." + (i + 1) , excludeDiskIds.get(i));
 			}
 		}	
-	}
-
-	public Boolean getInstantAccess() {
-		return this.instantAccess;
-	}
-
-	public void setInstantAccess(Boolean instantAccess) {
-		this.instantAccess = instantAccess;
-		if(instantAccess != null){
-			putQueryParameter("InstantAccess", instantAccess.toString());
-		}
 	}
 
 	public String getDescription() {

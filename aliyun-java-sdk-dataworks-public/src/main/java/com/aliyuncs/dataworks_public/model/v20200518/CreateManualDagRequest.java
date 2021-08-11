@@ -29,11 +29,15 @@ public class CreateManualDagRequest extends RpcAcsRequest<CreateManualDagRespons
 
 	private String projectName;
 
+	private String dagParameters;
+
+	private String includeNodeIds;
+
 	private String bizDate;
 
-	private String flowName;
+	private String excludeNodeIds;
 
-	private String dagParameters;
+	private String flowName;
 
 	private String nodeParameters;
 	public CreateManualDagRequest() {
@@ -67,6 +71,28 @@ public class CreateManualDagRequest extends RpcAcsRequest<CreateManualDagRespons
 		}
 	}
 
+	public String getDagParameters() {
+		return this.dagParameters;
+	}
+
+	public void setDagParameters(String dagParameters) {
+		this.dagParameters = dagParameters;
+		if(dagParameters != null){
+			putBodyParameter("DagParameters", dagParameters);
+		}
+	}
+
+	public String getIncludeNodeIds() {
+		return this.includeNodeIds;
+	}
+
+	public void setIncludeNodeIds(String includeNodeIds) {
+		this.includeNodeIds = includeNodeIds;
+		if(includeNodeIds != null){
+			putBodyParameter("IncludeNodeIds", includeNodeIds);
+		}
+	}
+
 	public String getBizDate() {
 		return this.bizDate;
 	}
@@ -78,6 +104,17 @@ public class CreateManualDagRequest extends RpcAcsRequest<CreateManualDagRespons
 		}
 	}
 
+	public String getExcludeNodeIds() {
+		return this.excludeNodeIds;
+	}
+
+	public void setExcludeNodeIds(String excludeNodeIds) {
+		this.excludeNodeIds = excludeNodeIds;
+		if(excludeNodeIds != null){
+			putBodyParameter("ExcludeNodeIds", excludeNodeIds);
+		}
+	}
+
 	public String getFlowName() {
 		return this.flowName;
 	}
@@ -86,17 +123,6 @@ public class CreateManualDagRequest extends RpcAcsRequest<CreateManualDagRespons
 		this.flowName = flowName;
 		if(flowName != null){
 			putBodyParameter("FlowName", flowName);
-		}
-	}
-
-	public String getDagParameters() {
-		return this.dagParameters;
-	}
-
-	public void setDagParameters(String dagParameters) {
-		this.dagParameters = dagParameters;
-		if(dagParameters != null){
-			putBodyParameter("DagParameters", dagParameters);
 		}
 	}
 

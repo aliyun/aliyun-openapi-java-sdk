@@ -24,10 +24,10 @@ public class ListPipelinesResponseUnmarshaller {
 	public static ListPipelinesResponse unmarshall(ListPipelinesResponse listPipelinesResponse, UnmarshallerContext _ctx) {
 		
 		listPipelinesResponse.setRequestId(_ctx.stringValue("ListPipelinesResponse.RequestId"));
-		listPipelinesResponse.setSuccess(_ctx.booleanValue("ListPipelinesResponse.Success"));
-		listPipelinesResponse.setErrorCode(_ctx.stringValue("ListPipelinesResponse.ErrorCode"));
 		listPipelinesResponse.setErrorMessage(_ctx.stringValue("ListPipelinesResponse.ErrorMessage"));
 		listPipelinesResponse.setObject(_ctx.mapValue("ListPipelinesResponse.Object"));
+		listPipelinesResponse.setErrorCode(_ctx.stringValue("ListPipelinesResponse.ErrorCode"));
+		listPipelinesResponse.setSuccess(_ctx.booleanValue("ListPipelinesResponse.Success"));
 	 
 	 	return listPipelinesResponse;
 	}

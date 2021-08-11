@@ -27,7 +27,11 @@ public class RestoreInstanceRequest extends RpcAcsRequest<RestoreInstanceRespons
 
 	private Long resourceOwnerId;
 
+	private String filterKey;
+
 	private String securityToken;
+
+	private String restoreTime;
 
 	private String resourceOwnerAccount;
 
@@ -36,6 +40,8 @@ public class RestoreInstanceRequest extends RpcAcsRequest<RestoreInstanceRespons
 	private String backupId;
 
 	private Long ownerId;
+
+	private String restoreType;
 
 	private String instanceId;
 	public RestoreInstanceRequest() {
@@ -58,6 +64,17 @@ public class RestoreInstanceRequest extends RpcAcsRequest<RestoreInstanceRespons
 		}
 	}
 
+	public String getFilterKey() {
+		return this.filterKey;
+	}
+
+	public void setFilterKey(String filterKey) {
+		this.filterKey = filterKey;
+		if(filterKey != null){
+			putQueryParameter("FilterKey", filterKey);
+		}
+	}
+
 	public String getSecurityToken() {
 		return this.securityToken;
 	}
@@ -66,6 +83,17 @@ public class RestoreInstanceRequest extends RpcAcsRequest<RestoreInstanceRespons
 		this.securityToken = securityToken;
 		if(securityToken != null){
 			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public String getRestoreTime() {
+		return this.restoreTime;
+	}
+
+	public void setRestoreTime(String restoreTime) {
+		this.restoreTime = restoreTime;
+		if(restoreTime != null){
+			putQueryParameter("RestoreTime", restoreTime);
 		}
 	}
 
@@ -110,6 +138,17 @@ public class RestoreInstanceRequest extends RpcAcsRequest<RestoreInstanceRespons
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getRestoreType() {
+		return this.restoreType;
+	}
+
+	public void setRestoreType(String restoreType) {
+		this.restoreType = restoreType;
+		if(restoreType != null){
+			putQueryParameter("RestoreType", restoreType);
 		}
 	}
 

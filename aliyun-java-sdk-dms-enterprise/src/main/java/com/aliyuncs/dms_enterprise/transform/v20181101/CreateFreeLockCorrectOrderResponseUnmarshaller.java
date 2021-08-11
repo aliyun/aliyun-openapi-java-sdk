@@ -26,9 +26,9 @@ public class CreateFreeLockCorrectOrderResponseUnmarshaller {
 	public static CreateFreeLockCorrectOrderResponse unmarshall(CreateFreeLockCorrectOrderResponse createFreeLockCorrectOrderResponse, UnmarshallerContext _ctx) {
 		
 		createFreeLockCorrectOrderResponse.setRequestId(_ctx.stringValue("CreateFreeLockCorrectOrderResponse.RequestId"));
-		createFreeLockCorrectOrderResponse.setErrorCode(_ctx.stringValue("CreateFreeLockCorrectOrderResponse.ErrorCode"));
-		createFreeLockCorrectOrderResponse.setErrorMessage(_ctx.stringValue("CreateFreeLockCorrectOrderResponse.ErrorMessage"));
 		createFreeLockCorrectOrderResponse.setSuccess(_ctx.booleanValue("CreateFreeLockCorrectOrderResponse.Success"));
+		createFreeLockCorrectOrderResponse.setErrorMessage(_ctx.stringValue("CreateFreeLockCorrectOrderResponse.ErrorMessage"));
+		createFreeLockCorrectOrderResponse.setErrorCode(_ctx.stringValue("CreateFreeLockCorrectOrderResponse.ErrorCode"));
 
 		List<Long> createOrderResult = new ArrayList<Long>();
 		for (int i = 0; i < _ctx.lengthValue("CreateFreeLockCorrectOrderResponse.CreateOrderResult.Length"); i++) {

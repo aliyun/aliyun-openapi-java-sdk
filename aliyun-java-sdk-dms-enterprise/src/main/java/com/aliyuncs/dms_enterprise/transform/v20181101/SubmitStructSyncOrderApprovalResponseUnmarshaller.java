@@ -23,10 +23,10 @@ public class SubmitStructSyncOrderApprovalResponseUnmarshaller {
 	public static SubmitStructSyncOrderApprovalResponse unmarshall(SubmitStructSyncOrderApprovalResponse submitStructSyncOrderApprovalResponse, UnmarshallerContext _ctx) {
 		
 		submitStructSyncOrderApprovalResponse.setRequestId(_ctx.stringValue("SubmitStructSyncOrderApprovalResponse.RequestId"));
-		submitStructSyncOrderApprovalResponse.setWorkflowInstanceId(_ctx.longValue("SubmitStructSyncOrderApprovalResponse.WorkflowInstanceId"));
-		submitStructSyncOrderApprovalResponse.setErrorCode(_ctx.stringValue("SubmitStructSyncOrderApprovalResponse.ErrorCode"));
-		submitStructSyncOrderApprovalResponse.setErrorMessage(_ctx.stringValue("SubmitStructSyncOrderApprovalResponse.ErrorMessage"));
 		submitStructSyncOrderApprovalResponse.setSuccess(_ctx.booleanValue("SubmitStructSyncOrderApprovalResponse.Success"));
+		submitStructSyncOrderApprovalResponse.setErrorMessage(_ctx.stringValue("SubmitStructSyncOrderApprovalResponse.ErrorMessage"));
+		submitStructSyncOrderApprovalResponse.setErrorCode(_ctx.stringValue("SubmitStructSyncOrderApprovalResponse.ErrorCode"));
+		submitStructSyncOrderApprovalResponse.setWorkflowInstanceId(_ctx.longValue("SubmitStructSyncOrderApprovalResponse.WorkflowInstanceId"));
 	 
 	 	return submitStructSyncOrderApprovalResponse;
 	}

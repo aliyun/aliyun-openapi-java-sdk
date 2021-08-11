@@ -38,6 +38,8 @@ public class ApplyNodesRequest extends RpcAcsRequest<ApplyNodesResponse> {
 
 	private String resourceAmountType;
 
+	private Boolean strictResourceProvision;
+
 	private String systemDiskType;
 
 	private Integer cores;
@@ -141,6 +143,17 @@ public class ApplyNodesRequest extends RpcAcsRequest<ApplyNodesResponse> {
 		this.resourceAmountType = resourceAmountType;
 		if(resourceAmountType != null){
 			putQueryParameter("ResourceAmountType", resourceAmountType);
+		}
+	}
+
+	public Boolean getStrictResourceProvision() {
+		return this.strictResourceProvision;
+	}
+
+	public void setStrictResourceProvision(Boolean strictResourceProvision) {
+		this.strictResourceProvision = strictResourceProvision;
+		if(strictResourceProvision != null){
+			putQueryParameter("StrictResourceProvision", strictResourceProvision.toString());
 		}
 	}
 

@@ -34,6 +34,7 @@ public class ListRetcodeAppsResponseUnmarshaller {
 			retcodeApp.setAppId(_ctx.longValue("ListRetcodeAppsResponse.RetcodeApps["+ i +"].AppId"));
 			retcodeApp.setPid(_ctx.stringValue("ListRetcodeAppsResponse.RetcodeApps["+ i +"].Pid"));
 			retcodeApp.setAppName(_ctx.stringValue("ListRetcodeAppsResponse.RetcodeApps["+ i +"].AppName"));
+			retcodeApp.setRetcodeAppType(_ctx.stringValue("ListRetcodeAppsResponse.RetcodeApps["+ i +"].RetcodeAppType"));
 
 			retcodeApps.add(retcodeApp);
 		}

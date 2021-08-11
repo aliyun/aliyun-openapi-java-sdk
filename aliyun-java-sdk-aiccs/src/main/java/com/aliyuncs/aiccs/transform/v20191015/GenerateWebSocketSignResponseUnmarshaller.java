@@ -27,6 +27,7 @@ public class GenerateWebSocketSignResponseUnmarshaller {
 		generateWebSocketSignResponse.setData(_ctx.stringValue("GenerateWebSocketSignResponse.Data"));
 		generateWebSocketSignResponse.setCode(_ctx.stringValue("GenerateWebSocketSignResponse.Code"));
 		generateWebSocketSignResponse.setSuccess(_ctx.booleanValue("GenerateWebSocketSignResponse.Success"));
+		generateWebSocketSignResponse.setHttpStatusCode(_ctx.longValue("GenerateWebSocketSignResponse.HttpStatusCode"));
 	 
 	 	return generateWebSocketSignResponse;
 	}

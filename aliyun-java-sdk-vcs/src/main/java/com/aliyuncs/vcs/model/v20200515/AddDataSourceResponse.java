@@ -28,6 +28,8 @@ public class AddDataSourceResponse extends AcsResponse {
 
 	private String code;
 
+	private String requestId;
+
 	private Data data;
 
 	public String getMessage() {
@@ -46,6 +48,14 @@ public class AddDataSourceResponse extends AcsResponse {
 		this.code = code;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -56,19 +66,11 @@ public class AddDataSourceResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String ossPath;
-
 		private String kafkaTopic;
 
 		private String dataSourceId;
 
-		public String getOssPath() {
-			return this.ossPath;
-		}
-
-		public void setOssPath(String ossPath) {
-			this.ossPath = ossPath;
-		}
+		private String ossPath;
 
 		public String getKafkaTopic() {
 			return this.kafkaTopic;
@@ -84,6 +86,14 @@ public class AddDataSourceResponse extends AcsResponse {
 
 		public void setDataSourceId(String dataSourceId) {
 			this.dataSourceId = dataSourceId;
+		}
+
+		public String getOssPath() {
+			return this.ossPath;
+		}
+
+		public void setOssPath(String ossPath) {
+			this.ossPath = ossPath;
 		}
 	}
 

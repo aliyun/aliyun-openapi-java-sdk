@@ -17,15 +17,7 @@ package com.aliyuncs.quickbi_public;
 import java.util.HashMap;
 
 public class Endpoint {
-    public static HashMap<String, String> endpointMap = new HashMap<String, String>() {
-        {
-            put("cn-hongkong", "quickbi-public-share.aliyuncs.com");
-            put("ap-southeast-1", "quickbi-public-share.aliyuncs.com");
-            put("ap-southeast-3", "quickbi-public-share.aliyuncs.com");
-            put("eu-central-1", "quickbi-public-share.aliyuncs.com");
-            put("cn-hangzhou", "quickbi-public-share.aliyuncs.com");
-        }
-    };
+    public static HashMap<String, String> endpointMap = new HashMap<String, String>() {};
 
     public static String endpointRegionalType = "central";
 }

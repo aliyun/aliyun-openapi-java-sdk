@@ -14,6 +14,9 @@
 
 package com.aliyuncs.outboundbot.transform.v20191226;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.outboundbot.model.v20191226.AssignJobsResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -28,6 +31,12 @@ public class AssignJobsResponseUnmarshaller {
 		assignJobsResponse.setJobGroupId(_ctx.stringValue("AssignJobsResponse.JobGroupId"));
 		assignJobsResponse.setMessage(_ctx.stringValue("AssignJobsResponse.Message"));
 		assignJobsResponse.setSuccess(_ctx.booleanValue("AssignJobsResponse.Success"));
+
+		List<String> jobsId = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("AssignJobsResponse.JobsId.Length"); i++) {
+			jobsId.add(_ctx.stringValue("AssignJobsResponse.JobsId["+ i +"]"));
+		}
+		assignJobsResponse.setJobsId(jobsId);
 	 
 	 	return assignJobsResponse;
 	}

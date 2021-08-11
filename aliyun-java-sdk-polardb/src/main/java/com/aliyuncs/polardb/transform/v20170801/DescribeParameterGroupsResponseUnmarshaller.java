@@ -31,15 +31,15 @@ public class DescribeParameterGroupsResponseUnmarshaller {
 		List<ParameterGroupsItem> parameterGroups = new ArrayList<ParameterGroupsItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeParameterGroupsResponse.ParameterGroups.Length"); i++) {
 			ParameterGroupsItem parameterGroupsItem = new ParameterGroupsItem();
+			parameterGroupsItem.setDBType(_ctx.stringValue("DescribeParameterGroupsResponse.ParameterGroups["+ i +"].DBType"));
 			parameterGroupsItem.setDBVersion(_ctx.stringValue("DescribeParameterGroupsResponse.ParameterGroups["+ i +"].DBVersion"));
-			parameterGroupsItem.setParameterGroupId(_ctx.stringValue("DescribeParameterGroupsResponse.ParameterGroups["+ i +"].ParameterGroupId"));
-			parameterGroupsItem.setForceRestart(_ctx.stringValue("DescribeParameterGroupsResponse.ParameterGroups["+ i +"].ForceRestart"));
 			parameterGroupsItem.setParameterGroupName(_ctx.stringValue("DescribeParameterGroupsResponse.ParameterGroups["+ i +"].ParameterGroupName"));
-			parameterGroupsItem.setCreateTime(_ctx.stringValue("DescribeParameterGroupsResponse.ParameterGroups["+ i +"].CreateTime"));
-			parameterGroupsItem.setParameterGroupDesc(_ctx.stringValue("DescribeParameterGroupsResponse.ParameterGroups["+ i +"].ParameterGroupDesc"));
+			parameterGroupsItem.setForceRestart(_ctx.stringValue("DescribeParameterGroupsResponse.ParameterGroups["+ i +"].ForceRestart"));
 			parameterGroupsItem.setParameterGroupType(_ctx.stringValue("DescribeParameterGroupsResponse.ParameterGroups["+ i +"].ParameterGroupType"));
 			parameterGroupsItem.setParameterCounts(_ctx.longValue("DescribeParameterGroupsResponse.ParameterGroups["+ i +"].ParameterCounts"));
-			parameterGroupsItem.setDBType(_ctx.stringValue("DescribeParameterGroupsResponse.ParameterGroups["+ i +"].DBType"));
+			parameterGroupsItem.setParameterGroupDesc(_ctx.stringValue("DescribeParameterGroupsResponse.ParameterGroups["+ i +"].ParameterGroupDesc"));
+			parameterGroupsItem.setCreateTime(_ctx.stringValue("DescribeParameterGroupsResponse.ParameterGroups["+ i +"].CreateTime"));
+			parameterGroupsItem.setParameterGroupId(_ctx.stringValue("DescribeParameterGroupsResponse.ParameterGroups["+ i +"].ParameterGroupId"));
 
 			parameterGroups.add(parameterGroupsItem);
 		}

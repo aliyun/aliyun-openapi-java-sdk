@@ -35,31 +35,31 @@ public class SearchTableResponseUnmarshaller {
 		List<SearchTable> searchTableList = new ArrayList<SearchTable>();
 		for (int i = 0; i < _ctx.lengthValue("SearchTableResponse.SearchTableList.Length"); i++) {
 			SearchTable searchTable = new SearchTable();
-			searchTable.setTableId(_ctx.stringValue("SearchTableResponse.SearchTableList["+ i +"].TableId"));
-			searchTable.setTableName(_ctx.stringValue("SearchTableResponse.SearchTableList["+ i +"].TableName"));
-			searchTable.setTableGuid(_ctx.stringValue("SearchTableResponse.SearchTableList["+ i +"].TableGuid"));
-			searchTable.setDescription(_ctx.stringValue("SearchTableResponse.SearchTableList["+ i +"].Description"));
-			searchTable.setTableSchemaName(_ctx.stringValue("SearchTableResponse.SearchTableList["+ i +"].TableSchemaName"));
-			searchTable.setEncoding(_ctx.stringValue("SearchTableResponse.SearchTableList["+ i +"].Encoding"));
-			searchTable.setDbName(_ctx.stringValue("SearchTableResponse.SearchTableList["+ i +"].DbName"));
 			searchTable.setDatabaseId(_ctx.stringValue("SearchTableResponse.SearchTableList["+ i +"].DatabaseId"));
-			searchTable.setLogic(_ctx.booleanValue("SearchTableResponse.SearchTableList["+ i +"].Logic"));
+			searchTable.setTableName(_ctx.stringValue("SearchTableResponse.SearchTableList["+ i +"].TableName"));
 			searchTable.setDBSearchName(_ctx.stringValue("SearchTableResponse.SearchTableList["+ i +"].DBSearchName"));
-			searchTable.setEngine(_ctx.stringValue("SearchTableResponse.SearchTableList["+ i +"].Engine"));
-			searchTable.setDbType(_ctx.stringValue("SearchTableResponse.SearchTableList["+ i +"].DbType"));
+			searchTable.setLogic(_ctx.booleanValue("SearchTableResponse.SearchTableList["+ i +"].Logic"));
 			searchTable.setEnvType(_ctx.stringValue("SearchTableResponse.SearchTableList["+ i +"].EnvType"));
-
-			List<String> ownerNameList = new ArrayList<String>();
-			for (int j = 0; j < _ctx.lengthValue("SearchTableResponse.SearchTableList["+ i +"].OwnerNameList.Length"); j++) {
-				ownerNameList.add(_ctx.stringValue("SearchTableResponse.SearchTableList["+ i +"].OwnerNameList["+ j +"]"));
-			}
-			searchTable.setOwnerNameList(ownerNameList);
+			searchTable.setDbName(_ctx.stringValue("SearchTableResponse.SearchTableList["+ i +"].DbName"));
+			searchTable.setDescription(_ctx.stringValue("SearchTableResponse.SearchTableList["+ i +"].Description"));
+			searchTable.setEncoding(_ctx.stringValue("SearchTableResponse.SearchTableList["+ i +"].Encoding"));
+			searchTable.setDbType(_ctx.stringValue("SearchTableResponse.SearchTableList["+ i +"].DbType"));
+			searchTable.setTableSchemaName(_ctx.stringValue("SearchTableResponse.SearchTableList["+ i +"].TableSchemaName"));
+			searchTable.setTableGuid(_ctx.stringValue("SearchTableResponse.SearchTableList["+ i +"].TableGuid"));
+			searchTable.setEngine(_ctx.stringValue("SearchTableResponse.SearchTableList["+ i +"].Engine"));
+			searchTable.setTableId(_ctx.stringValue("SearchTableResponse.SearchTableList["+ i +"].TableId"));
 
 			List<String> ownerIdList = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("SearchTableResponse.SearchTableList["+ i +"].OwnerIdList.Length"); j++) {
 				ownerIdList.add(_ctx.stringValue("SearchTableResponse.SearchTableList["+ i +"].OwnerIdList["+ j +"]"));
 			}
 			searchTable.setOwnerIdList(ownerIdList);
+
+			List<String> ownerNameList = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("SearchTableResponse.SearchTableList["+ i +"].OwnerNameList.Length"); j++) {
+				ownerNameList.add(_ctx.stringValue("SearchTableResponse.SearchTableList["+ i +"].OwnerNameList["+ j +"]"));
+			}
+			searchTable.setOwnerNameList(ownerNameList);
 
 			searchTableList.add(searchTable);
 		}

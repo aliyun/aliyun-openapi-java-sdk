@@ -109,6 +109,8 @@ public class SearchAlertContactResponse extends AcsResponse {
 
 			private String webhook;
 
+			private String content;
+
 			public Long getContactId() {
 				return this.contactId;
 			}
@@ -187,6 +189,14 @@ public class SearchAlertContactResponse extends AcsResponse {
 
 			public void setWebhook(String webhook) {
 				this.webhook = webhook;
+			}
+
+			public String getContent() {
+				return this.content;
+			}
+
+			public void setContent(String content) {
+				this.content = content;
 			}
 		}
 	}

@@ -35,7 +35,7 @@ public class SetVsStreamsNotifyUrlConfigRequest extends RpcAcsRequest<SetVsStrea
 
 	private Long ownerId;
 	public SetVsStreamsNotifyUrlConfigRequest() {
-		super("vs", "2018-12-12", "SetVsStreamsNotifyUrlConfig", "vs");
+		super("vs", "2018-12-12", "SetVsStreamsNotifyUrlConfig");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

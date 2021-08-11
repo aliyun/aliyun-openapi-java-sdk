@@ -39,7 +39,7 @@ public class AddCensorPipelineRequest extends RpcAcsRequest<AddCensorPipelineRes
 
 	private String name;
 	public AddCensorPipelineRequest() {
-		super("Mts", "2014-06-18", "AddCensorPipeline");
+		super("Mts", "2014-06-18", "AddCensorPipeline", "mts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -24,23 +24,12 @@ import com.aliyuncs.http.MethodType;
 public class DescribePartnerConfigRequest extends RpcAcsRequest<DescribePartnerConfigResponse> {
 	   
 
-	private String bizType;
-
 	private String partnerCode;
+
+	private String bizType;
 	public DescribePartnerConfigRequest() {
 		super("Premiumpics", "2020-05-05", "DescribePartnerConfig");
 		setMethod(MethodType.POST);
-	}
-
-	public String getBizType() {
-		return this.bizType;
-	}
-
-	public void setBizType(String bizType) {
-		this.bizType = bizType;
-		if(bizType != null){
-			putQueryParameter("BizType", bizType);
-		}
 	}
 
 	public String getPartnerCode() {
@@ -51,6 +40,17 @@ public class DescribePartnerConfigRequest extends RpcAcsRequest<DescribePartnerC
 		this.partnerCode = partnerCode;
 		if(partnerCode != null){
 			putQueryParameter("PartnerCode", partnerCode);
+		}
+	}
+
+	public String getBizType() {
+		return this.bizType;
+	}
+
+	public void setBizType(String bizType) {
+		this.bizType = bizType;
+		if(bizType != null){
+			putQueryParameter("BizType", bizType);
 		}
 	}
 

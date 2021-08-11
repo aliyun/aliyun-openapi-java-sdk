@@ -53,6 +53,10 @@ public class DescribeInstanceIdsResponse extends AcsResponse {
 
 		private Integer edition;
 
+		private String ipVersion;
+
+		private String ipMode;
+
 		public String getInstanceId() {
 			return this.instanceId;
 		}
@@ -75,6 +79,22 @@ public class DescribeInstanceIdsResponse extends AcsResponse {
 
 		public void setEdition(Integer edition) {
 			this.edition = edition;
+		}
+
+		public String getIpVersion() {
+			return this.ipVersion;
+		}
+
+		public void setIpVersion(String ipVersion) {
+			this.ipVersion = ipVersion;
+		}
+
+		public String getIpMode() {
+			return this.ipMode;
+		}
+
+		public void setIpMode(String ipMode) {
+			this.ipMode = ipMode;
 		}
 	}
 

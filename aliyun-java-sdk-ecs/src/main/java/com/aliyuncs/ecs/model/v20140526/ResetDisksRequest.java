@@ -96,25 +96,17 @@ public class ResetDisksRequest extends RpcAcsRequest<ResetDisksResponse> {
 		this.disks = disks;	
 		if (disks != null) {
 			for (int depth1 = 0; depth1 < disks.size(); depth1++) {
-				putQueryParameter("Disk." + (depth1 + 1) + ".DiskId" , disks.get(depth1).getDiskId());
 				putQueryParameter("Disk." + (depth1 + 1) + ".SnapshotId" , disks.get(depth1).getSnapshotId());
+				putQueryParameter("Disk." + (depth1 + 1) + ".DiskId" , disks.get(depth1).getDiskId());
 			}
 		}	
 	}
 
 	public static class Disk {
 
-		private String diskId;
-
 		private String snapshotId;
 
-		public String getDiskId() {
-			return this.diskId;
-		}
-
-		public void setDiskId(String diskId) {
-			this.diskId = diskId;
-		}
+		private String diskId;
 
 		public String getSnapshotId() {
 			return this.snapshotId;
@@ -122,6 +114,14 @@ public class ResetDisksRequest extends RpcAcsRequest<ResetDisksResponse> {
 
 		public void setSnapshotId(String snapshotId) {
 			this.snapshotId = snapshotId;
+		}
+
+		public String getDiskId() {
+			return this.diskId;
+		}
+
+		public void setDiskId(String diskId) {
+			this.diskId = diskId;
 		}
 	}
 

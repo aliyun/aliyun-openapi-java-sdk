@@ -28,7 +28,7 @@ import com.aliyuncs.kms.Endpoint;
 public class CreateCertificateRequest extends RpcAcsRequest<CreateCertificateResponse> {
 	   
 
-	private String protectionLevel;
+	private Boolean exportablePrivateKey;
 
 	private String subject;
 
@@ -45,14 +45,14 @@ public class CreateCertificateRequest extends RpcAcsRequest<CreateCertificateRes
 		} catch (Exception e) {}
 	}
 
-	public String getProtectionLevel() {
-		return this.protectionLevel;
+	public Boolean getExportablePrivateKey() {
+		return this.exportablePrivateKey;
 	}
 
-	public void setProtectionLevel(String protectionLevel) {
-		this.protectionLevel = protectionLevel;
-		if(protectionLevel != null){
-			putQueryParameter("ProtectionLevel", protectionLevel);
+	public void setExportablePrivateKey(Boolean exportablePrivateKey) {
+		this.exportablePrivateKey = exportablePrivateKey;
+		if(exportablePrivateKey != null){
+			putQueryParameter("ExportablePrivateKey", exportablePrivateKey.toString());
 		}
 	}
 

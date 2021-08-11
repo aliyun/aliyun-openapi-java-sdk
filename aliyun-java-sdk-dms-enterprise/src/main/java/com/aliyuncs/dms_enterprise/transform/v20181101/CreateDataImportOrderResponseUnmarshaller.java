@@ -26,9 +26,9 @@ public class CreateDataImportOrderResponseUnmarshaller {
 	public static CreateDataImportOrderResponse unmarshall(CreateDataImportOrderResponse createDataImportOrderResponse, UnmarshallerContext _ctx) {
 		
 		createDataImportOrderResponse.setRequestId(_ctx.stringValue("CreateDataImportOrderResponse.RequestId"));
-		createDataImportOrderResponse.setErrorCode(_ctx.stringValue("CreateDataImportOrderResponse.ErrorCode"));
-		createDataImportOrderResponse.setErrorMessage(_ctx.stringValue("CreateDataImportOrderResponse.ErrorMessage"));
 		createDataImportOrderResponse.setSuccess(_ctx.booleanValue("CreateDataImportOrderResponse.Success"));
+		createDataImportOrderResponse.setErrorMessage(_ctx.stringValue("CreateDataImportOrderResponse.ErrorMessage"));
+		createDataImportOrderResponse.setErrorCode(_ctx.stringValue("CreateDataImportOrderResponse.ErrorCode"));
 
 		List<Long> createOrderResult = new ArrayList<Long>();
 		for (int i = 0; i < _ctx.lengthValue("CreateDataImportOrderResponse.CreateOrderResult.Length"); i++) {

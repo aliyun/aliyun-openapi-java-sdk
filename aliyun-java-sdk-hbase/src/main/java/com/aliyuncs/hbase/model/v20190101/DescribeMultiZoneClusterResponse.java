@@ -117,6 +117,10 @@ public class DescribeMultiZoneClusterResponse extends AcsResponse {
 
 	private String resourceGroupId;
 
+	private String encryptionType;
+
+	private String encryptionKey;
+
 	private List<MultiZoneInstanceModel> multiZoneInstanceModels;
 
 	private List<Tag> tags;
@@ -487,6 +491,22 @@ public class DescribeMultiZoneClusterResponse extends AcsResponse {
 
 	public void setResourceGroupId(String resourceGroupId) {
 		this.resourceGroupId = resourceGroupId;
+	}
+
+	public String getEncryptionType() {
+		return this.encryptionType;
+	}
+
+	public void setEncryptionType(String encryptionType) {
+		this.encryptionType = encryptionType;
+	}
+
+	public String getEncryptionKey() {
+		return this.encryptionKey;
+	}
+
+	public void setEncryptionKey(String encryptionKey) {
+		this.encryptionKey = encryptionKey;
 	}
 
 	public List<MultiZoneInstanceModel> getMultiZoneInstanceModels() {

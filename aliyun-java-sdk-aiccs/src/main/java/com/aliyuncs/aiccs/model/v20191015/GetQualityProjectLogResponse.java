@@ -25,9 +25,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetQualityProjectLogResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String message;
+
+	private String requestId;
 
 	private String code;
 
@@ -35,20 +35,20 @@ public class GetQualityProjectLogResponse extends AcsResponse {
 
 	private List<DataItem> data;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public String getMessage() {
 		return this.message;
 	}
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getCode() {
@@ -77,23 +77,15 @@ public class GetQualityProjectLogResponse extends AcsResponse {
 
 	public static class DataItem {
 
-		private String actionTime;
-
 		private String actionType;
-
-		private String projectCreateTime;
-
-		private Long projectId;
 
 		private String actionData;
 
-		public String getActionTime() {
-			return this.actionTime;
-		}
+		private Long projectId;
 
-		public void setActionTime(String actionTime) {
-			this.actionTime = actionTime;
-		}
+		private String projectCreateTime;
+
+		private String actionTime;
 
 		public String getActionType() {
 			return this.actionType;
@@ -103,12 +95,12 @@ public class GetQualityProjectLogResponse extends AcsResponse {
 			this.actionType = actionType;
 		}
 
-		public String getProjectCreateTime() {
-			return this.projectCreateTime;
+		public String getActionData() {
+			return this.actionData;
 		}
 
-		public void setProjectCreateTime(String projectCreateTime) {
-			this.projectCreateTime = projectCreateTime;
+		public void setActionData(String actionData) {
+			this.actionData = actionData;
 		}
 
 		public Long getProjectId() {
@@ -119,12 +111,20 @@ public class GetQualityProjectLogResponse extends AcsResponse {
 			this.projectId = projectId;
 		}
 
-		public String getActionData() {
-			return this.actionData;
+		public String getProjectCreateTime() {
+			return this.projectCreateTime;
 		}
 
-		public void setActionData(String actionData) {
-			this.actionData = actionData;
+		public void setProjectCreateTime(String projectCreateTime) {
+			this.projectCreateTime = projectCreateTime;
+		}
+
+		public String getActionTime() {
+			return this.actionTime;
+		}
+
+		public void setActionTime(String actionTime) {
+			this.actionTime = actionTime;
 		}
 	}
 

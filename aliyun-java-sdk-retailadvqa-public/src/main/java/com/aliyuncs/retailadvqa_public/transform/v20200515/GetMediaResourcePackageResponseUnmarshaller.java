@@ -29,10 +29,12 @@ public class GetMediaResourcePackageResponseUnmarshaller {
 
 		Data data = new Data();
 		data.setCurrentPage(_ctx.integerValue("GetMediaResourcePackageResponse.Data.CurrentPage"));
+		data.setSlrGrantedFlag(_ctx.booleanValue("GetMediaResourcePackageResponse.Data.SlrGrantedFlag"));
+		data.setEffectiveInstanceFlag(_ctx.booleanValue("GetMediaResourcePackageResponse.Data.EffectiveInstanceFlag"));
 		data.setPageSize(_ctx.integerValue("GetMediaResourcePackageResponse.Data.PageSize"));
-		data.setPageCount(_ctx.integerValue("GetMediaResourcePackageResponse.Data.PageCount"));
-		data.setTotalCount(_ctx.integerValue("GetMediaResourcePackageResponse.Data.TotalCount"));
 		data.setBagsInfo(_ctx.stringValue("GetMediaResourcePackageResponse.Data.BagsInfo"));
+		data.setTotalCount(_ctx.integerValue("GetMediaResourcePackageResponse.Data.TotalCount"));
+		data.setPageCount(_ctx.integerValue("GetMediaResourcePackageResponse.Data.PageCount"));
 		getMediaResourcePackageResponse.setData(data);
 	 
 	 	return getMediaResourcePackageResponse;

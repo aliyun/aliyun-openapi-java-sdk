@@ -27,22 +27,23 @@ public class ListTemplatesResponseUnmarshaller {
 	public static ListTemplatesResponse unmarshall(ListTemplatesResponse listTemplatesResponse, UnmarshallerContext _ctx) {
 		
 		listTemplatesResponse.setRequestId(_ctx.stringValue("ListTemplatesResponse.RequestId"));
-		listTemplatesResponse.setPageNumber(_ctx.integerValue("ListTemplatesResponse.PageNumber"));
-		listTemplatesResponse.setPageSize(_ctx.integerValue("ListTemplatesResponse.PageSize"));
 		listTemplatesResponse.setTotalCount(_ctx.integerValue("ListTemplatesResponse.TotalCount"));
+		listTemplatesResponse.setPageSize(_ctx.integerValue("ListTemplatesResponse.PageSize"));
+		listTemplatesResponse.setPageNumber(_ctx.integerValue("ListTemplatesResponse.PageNumber"));
 
 		List<Template> templates = new ArrayList<Template>();
 		for (int i = 0; i < _ctx.lengthValue("ListTemplatesResponse.Templates.Length"); i++) {
 			Template template = new Template();
-			template.setCreateTime(_ctx.stringValue("ListTemplatesResponse.Templates["+ i +"].CreateTime"));
+			template.setTemplateARN(_ctx.stringValue("ListTemplatesResponse.Templates["+ i +"].TemplateARN"));
 			template.setDescription(_ctx.stringValue("ListTemplatesResponse.Templates["+ i +"].Description"));
-			template.setTemplateId(_ctx.stringValue("ListTemplatesResponse.Templates["+ i +"].TemplateId"));
-			template.setTemplateName(_ctx.stringValue("ListTemplatesResponse.Templates["+ i +"].TemplateName"));
+			template.setResourceGroupId(_ctx.stringValue("ListTemplatesResponse.Templates["+ i +"].ResourceGroupId"));
+			template.setOwnerId(_ctx.stringValue("ListTemplatesResponse.Templates["+ i +"].OwnerId"));
+			template.setCreateTime(_ctx.stringValue("ListTemplatesResponse.Templates["+ i +"].CreateTime"));
 			template.setUpdateTime(_ctx.stringValue("ListTemplatesResponse.Templates["+ i +"].UpdateTime"));
 			template.setTemplateVersion(_ctx.stringValue("ListTemplatesResponse.Templates["+ i +"].TemplateVersion"));
+			template.setTemplateName(_ctx.stringValue("ListTemplatesResponse.Templates["+ i +"].TemplateName"));
+			template.setTemplateId(_ctx.stringValue("ListTemplatesResponse.Templates["+ i +"].TemplateId"));
 			template.setShareType(_ctx.stringValue("ListTemplatesResponse.Templates["+ i +"].ShareType"));
-			template.setOwnerId(_ctx.stringValue("ListTemplatesResponse.Templates["+ i +"].OwnerId"));
-			template.setTemplateARN(_ctx.stringValue("ListTemplatesResponse.Templates["+ i +"].TemplateARN"));
 
 			templates.add(template);
 		}

@@ -25,57 +25,43 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateNetworkInterfaceResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String networkInterfaceId;
-
 	private String status;
 
 	private String type;
 
 	private String vpcId;
 
-	private String vSwitchId;
-
-	private String zoneId;
-
-	private String privateIpAddress;
+	private String networkInterfaceName;
 
 	private String macAddress;
 
-	private String networkInterfaceName;
+	private String networkInterfaceId;
+
+	private Long serviceID;
+
+	private String ownerId;
+
+	private Boolean serviceManaged;
+
+	private String vSwitchId;
+
+	private String requestId;
 
 	private String description;
 
 	private String resourceGroupId;
 
-	private Long serviceID;
+	private String zoneId;
 
-	private Boolean serviceManaged;
-
-	private String ownerId;
+	private String privateIpAddress;
 
 	private List<PrivateIpSet> privateIpSets;
 
 	private List<Tag> tags;
 
+	private List<Ipv6Set> ipv6Sets;
+
 	private List<String> securityGroupIds;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getNetworkInterfaceId() {
-		return this.networkInterfaceId;
-	}
-
-	public void setNetworkInterfaceId(String networkInterfaceId) {
-		this.networkInterfaceId = networkInterfaceId;
-	}
 
 	public String getStatus() {
 		return this.status;
@@ -101,28 +87,12 @@ public class CreateNetworkInterfaceResponse extends AcsResponse {
 		this.vpcId = vpcId;
 	}
 
-	public String getVSwitchId() {
-		return this.vSwitchId;
+	public String getNetworkInterfaceName() {
+		return this.networkInterfaceName;
 	}
 
-	public void setVSwitchId(String vSwitchId) {
-		this.vSwitchId = vSwitchId;
-	}
-
-	public String getZoneId() {
-		return this.zoneId;
-	}
-
-	public void setZoneId(String zoneId) {
-		this.zoneId = zoneId;
-	}
-
-	public String getPrivateIpAddress() {
-		return this.privateIpAddress;
-	}
-
-	public void setPrivateIpAddress(String privateIpAddress) {
-		this.privateIpAddress = privateIpAddress;
+	public void setNetworkInterfaceName(String networkInterfaceName) {
+		this.networkInterfaceName = networkInterfaceName;
 	}
 
 	public String getMacAddress() {
@@ -133,12 +103,52 @@ public class CreateNetworkInterfaceResponse extends AcsResponse {
 		this.macAddress = macAddress;
 	}
 
-	public String getNetworkInterfaceName() {
-		return this.networkInterfaceName;
+	public String getNetworkInterfaceId() {
+		return this.networkInterfaceId;
 	}
 
-	public void setNetworkInterfaceName(String networkInterfaceName) {
-		this.networkInterfaceName = networkInterfaceName;
+	public void setNetworkInterfaceId(String networkInterfaceId) {
+		this.networkInterfaceId = networkInterfaceId;
+	}
+
+	public Long getServiceID() {
+		return this.serviceID;
+	}
+
+	public void setServiceID(Long serviceID) {
+		this.serviceID = serviceID;
+	}
+
+	public String getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(String ownerId) {
+		this.ownerId = ownerId;
+	}
+
+	public Boolean getServiceManaged() {
+		return this.serviceManaged;
+	}
+
+	public void setServiceManaged(Boolean serviceManaged) {
+		this.serviceManaged = serviceManaged;
+	}
+
+	public String getVSwitchId() {
+		return this.vSwitchId;
+	}
+
+	public void setVSwitchId(String vSwitchId) {
+		this.vSwitchId = vSwitchId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getDescription() {
@@ -157,28 +167,20 @@ public class CreateNetworkInterfaceResponse extends AcsResponse {
 		this.resourceGroupId = resourceGroupId;
 	}
 
-	public Long getServiceID() {
-		return this.serviceID;
+	public String getZoneId() {
+		return this.zoneId;
 	}
 
-	public void setServiceID(Long serviceID) {
-		this.serviceID = serviceID;
+	public void setZoneId(String zoneId) {
+		this.zoneId = zoneId;
 	}
 
-	public Boolean getServiceManaged() {
-		return this.serviceManaged;
+	public String getPrivateIpAddress() {
+		return this.privateIpAddress;
 	}
 
-	public void setServiceManaged(Boolean serviceManaged) {
-		this.serviceManaged = serviceManaged;
-	}
-
-	public String getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(String ownerId) {
-		this.ownerId = ownerId;
+	public void setPrivateIpAddress(String privateIpAddress) {
+		this.privateIpAddress = privateIpAddress;
 	}
 
 	public List<PrivateIpSet> getPrivateIpSets() {
@@ -195,6 +197,14 @@ public class CreateNetworkInterfaceResponse extends AcsResponse {
 
 	public void setTags(List<Tag> tags) {
 		this.tags = tags;
+	}
+
+	public List<Ipv6Set> getIpv6Sets() {
+		return this.ipv6Sets;
+	}
+
+	public void setIpv6Sets(List<Ipv6Set> ipv6Sets) {
+		this.ipv6Sets = ipv6Sets;
 	}
 
 	public List<String> getSecurityGroupIds() {
@@ -230,9 +240,17 @@ public class CreateNetworkInterfaceResponse extends AcsResponse {
 
 	public static class Tag {
 
+		private String tagValue;
+
 		private String tagKey;
 
-		private String tagValue;
+		public String getTagValue() {
+			return this.tagValue;
+		}
+
+		public void setTagValue(String tagValue) {
+			this.tagValue = tagValue;
+		}
 
 		public String getTagKey() {
 			return this.tagKey;
@@ -241,13 +259,18 @@ public class CreateNetworkInterfaceResponse extends AcsResponse {
 		public void setTagKey(String tagKey) {
 			this.tagKey = tagKey;
 		}
+	}
 
-		public String getTagValue() {
-			return this.tagValue;
+	public static class Ipv6Set {
+
+		private String ipv6Address;
+
+		public String getIpv6Address() {
+			return this.ipv6Address;
 		}
 
-		public void setTagValue(String tagValue) {
-			this.tagValue = tagValue;
+		public void setIpv6Address(String ipv6Address) {
+			this.ipv6Address = ipv6Address;
 		}
 	}
 

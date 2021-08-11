@@ -28,11 +28,11 @@ public class ListServiceConnectionsResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String errorCode;
-
 	private String errorMessage;
 
 	private Boolean success;
+
+	private String errorCode;
 
 	private List<Map<Object,Object>> object;
 
@@ -42,14 +42,6 @@ public class ListServiceConnectionsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
 	}
 
 	public String getErrorMessage() {
@@ -66,6 +58,14 @@ public class ListServiceConnectionsResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getErrorCode() {
+		return this.errorCode;
+	}
+
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
 	}
 
 	public List<Map<Object,Object>> getObject() {

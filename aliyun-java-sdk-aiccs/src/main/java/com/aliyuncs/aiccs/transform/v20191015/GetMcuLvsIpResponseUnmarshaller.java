@@ -23,10 +23,10 @@ public class GetMcuLvsIpResponseUnmarshaller {
 	public static GetMcuLvsIpResponse unmarshall(GetMcuLvsIpResponse getMcuLvsIpResponse, UnmarshallerContext _ctx) {
 		
 		getMcuLvsIpResponse.setRequestId(_ctx.stringValue("GetMcuLvsIpResponse.RequestId"));
+		getMcuLvsIpResponse.setSuccess(_ctx.booleanValue("GetMcuLvsIpResponse.Success"));
+		getMcuLvsIpResponse.setCode(_ctx.stringValue("GetMcuLvsIpResponse.Code"));
 		getMcuLvsIpResponse.setMessage(_ctx.stringValue("GetMcuLvsIpResponse.Message"));
 		getMcuLvsIpResponse.setData(_ctx.stringValue("GetMcuLvsIpResponse.Data"));
-		getMcuLvsIpResponse.setCode(_ctx.stringValue("GetMcuLvsIpResponse.Code"));
-		getMcuLvsIpResponse.setSuccess(_ctx.booleanValue("GetMcuLvsIpResponse.Success"));
 	 
 	 	return getMcuLvsIpResponse;
 	}

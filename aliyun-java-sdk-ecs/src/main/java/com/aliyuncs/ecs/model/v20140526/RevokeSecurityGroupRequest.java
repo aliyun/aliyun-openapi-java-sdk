@@ -29,6 +29,8 @@ public class RevokeSecurityGroupRequest extends RpcAcsRequest<RevokeSecurityGrou
 
 	private Long resourceOwnerId;
 
+	private String sourcePrefixListId;
+
 	private String sourcePortRange;
 
 	private String clientToken;
@@ -92,6 +94,17 @@ public class RevokeSecurityGroupRequest extends RpcAcsRequest<RevokeSecurityGrou
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getSourcePrefixListId() {
+		return this.sourcePrefixListId;
+	}
+
+	public void setSourcePrefixListId(String sourcePrefixListId) {
+		this.sourcePrefixListId = sourcePrefixListId;
+		if(sourcePrefixListId != null){
+			putQueryParameter("SourcePrefixListId", sourcePrefixListId);
 		}
 	}
 

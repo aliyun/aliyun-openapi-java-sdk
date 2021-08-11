@@ -29,9 +29,9 @@ public class GetHotlineServiceStatisticsResponseUnmarshaller {
 		getHotlineServiceStatisticsResponse.setSuccess(_ctx.stringValue("GetHotlineServiceStatisticsResponse.Success"));
 
 		Data data = new Data();
-		data.setTotalNum(_ctx.integerValue("GetHotlineServiceStatisticsResponse.Data.TotalNum"));
-		data.setPageSize(_ctx.integerValue("GetHotlineServiceStatisticsResponse.Data.PageSize"));
 		data.setPageNum(_ctx.integerValue("GetHotlineServiceStatisticsResponse.Data.PageNum"));
+		data.setPageSize(_ctx.integerValue("GetHotlineServiceStatisticsResponse.Data.PageSize"));
+		data.setTotalNum(_ctx.integerValue("GetHotlineServiceStatisticsResponse.Data.TotalNum"));
 		data.setRows(_ctx.stringValue("GetHotlineServiceStatisticsResponse.Data.Rows"));
 		getHotlineServiceStatisticsResponse.setData(data);
 	 

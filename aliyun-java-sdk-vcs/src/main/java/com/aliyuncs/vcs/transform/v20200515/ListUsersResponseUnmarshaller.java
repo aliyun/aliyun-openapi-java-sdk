@@ -32,26 +32,26 @@ public class ListUsersResponseUnmarshaller {
 		listUsersResponse.setCode(_ctx.stringValue("ListUsersResponse.Code"));
 
 		Data data = new Data();
-		data.setPageSize(_ctx.longValue("ListUsersResponse.Data.PageSize"));
-		data.setPageNumber(_ctx.longValue("ListUsersResponse.Data.PageNumber"));
-		data.setTotal(_ctx.longValue("ListUsersResponse.Data.Total"));
 		data.setSuccess(_ctx.longValue("ListUsersResponse.Data.Success"));
+		data.setPageNumber(_ctx.longValue("ListUsersResponse.Data.PageNumber"));
+		data.setPageSize(_ctx.longValue("ListUsersResponse.Data.PageSize"));
+		data.setTotal(_ctx.longValue("ListUsersResponse.Data.Total"));
 
 		List<RecordsItem> records = new ArrayList<RecordsItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListUsersResponse.Data.Records.Length"); i++) {
 			RecordsItem recordsItem = new RecordsItem();
-			recordsItem.setUserName(_ctx.stringValue("ListUsersResponse.Data.Records["+ i +"].UserName"));
-			recordsItem.setPersonId(_ctx.stringValue("ListUsersResponse.Data.Records["+ i +"].PersonId"));
-			recordsItem.setIdNumber(_ctx.stringValue("ListUsersResponse.Data.Records["+ i +"].IdNumber"));
-			recordsItem.setUserId(_ctx.integerValue("ListUsersResponse.Data.Records["+ i +"].UserId"));
-			recordsItem.setUserGroupId(_ctx.integerValue("ListUsersResponse.Data.Records["+ i +"].UserGroupId"));
-			recordsItem.setMatchingRate(_ctx.stringValue("ListUsersResponse.Data.Records["+ i +"].MatchingRate"));
 			recordsItem.setIsvSubId(_ctx.stringValue("ListUsersResponse.Data.Records["+ i +"].IsvSubId"));
-			recordsItem.setAttachment(_ctx.stringValue("ListUsersResponse.Data.Records["+ i +"].Attachment"));
 			recordsItem.setGender(_ctx.stringValue("ListUsersResponse.Data.Records["+ i +"].Gender"));
-			recordsItem.setBizId(_ctx.stringValue("ListUsersResponse.Data.Records["+ i +"].BizId"));
-			recordsItem.setAge(_ctx.stringValue("ListUsersResponse.Data.Records["+ i +"].Age"));
 			recordsItem.setFaceImageUrl(_ctx.stringValue("ListUsersResponse.Data.Records["+ i +"].FaceImageUrl"));
+			recordsItem.setUserGroupId(_ctx.integerValue("ListUsersResponse.Data.Records["+ i +"].UserGroupId"));
+			recordsItem.setUserId(_ctx.integerValue("ListUsersResponse.Data.Records["+ i +"].UserId"));
+			recordsItem.setMatchingRate(_ctx.stringValue("ListUsersResponse.Data.Records["+ i +"].MatchingRate"));
+			recordsItem.setBizId(_ctx.stringValue("ListUsersResponse.Data.Records["+ i +"].BizId"));
+			recordsItem.setAttachment(_ctx.stringValue("ListUsersResponse.Data.Records["+ i +"].Attachment"));
+			recordsItem.setAge(_ctx.stringValue("ListUsersResponse.Data.Records["+ i +"].Age"));
+			recordsItem.setIdNumber(_ctx.stringValue("ListUsersResponse.Data.Records["+ i +"].IdNumber"));
+			recordsItem.setPersonId(_ctx.stringValue("ListUsersResponse.Data.Records["+ i +"].PersonId"));
+			recordsItem.setUserName(_ctx.stringValue("ListUsersResponse.Data.Records["+ i +"].UserName"));
 
 			records.add(recordsItem);
 		}

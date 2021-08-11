@@ -39,7 +39,7 @@ public class SubmitImageQualityJobRequest extends RpcAcsRequest<SubmitImageQuali
 
 	private String input;
 	public SubmitImageQualityJobRequest() {
-		super("Mts", "2014-06-18", "SubmitImageQualityJob");
+		super("Mts", "2014-06-18", "SubmitImageQualityJob", "mts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -15,6 +15,7 @@
 package com.aliyuncs.nas.model.v20170626;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.nas.Endpoint;
 
@@ -34,8 +35,10 @@ public class CreateLifecyclePolicyRequest extends RpcAcsRequest<CreateLifecycleP
 	private String fileSystemId;
 
 	private String lifecycleRuleName;
+
+	private List<String> pathss;
 	public CreateLifecyclePolicyRequest() {
-		super("NAS", "2017-06-26", "CreateLifecyclePolicy");
+		super("NAS", "2017-06-26", "CreateLifecyclePolicy", "nas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -96,6 +99,19 @@ public class CreateLifecyclePolicyRequest extends RpcAcsRequest<CreateLifecycleP
 		if(lifecycleRuleName != null){
 			putQueryParameter("LifecycleRuleName", lifecycleRuleName);
 		}
+	}
+
+	public List<String> getPathss() {
+		return this.pathss;
+	}
+
+	public void setPathss(List<String> pathss) {
+		this.pathss = pathss;	
+		if (pathss != null) {
+			for (int i = 0; i < pathss.size(); i++) {
+				putQueryParameter("Paths." + (i + 1) , pathss.get(i));
+			}
+		}	
 	}
 
 	@Override

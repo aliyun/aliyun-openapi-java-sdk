@@ -183,6 +183,8 @@ public class DescribeUserLogResponse extends AcsResponse {
 
 		private String userId;
 
+		private Integer eslSignal;
+
 		public String getResultCode() {
 			return this.resultCode;
 		}
@@ -325,6 +327,14 @@ public class DescribeUserLogResponse extends AcsResponse {
 
 		public void setUserId(String userId) {
 			this.userId = userId;
+		}
+
+		public Integer getEslSignal() {
+			return this.eslSignal;
+		}
+
+		public void setEslSignal(Integer eslSignal) {
+			this.eslSignal = eslSignal;
 		}
 	}
 

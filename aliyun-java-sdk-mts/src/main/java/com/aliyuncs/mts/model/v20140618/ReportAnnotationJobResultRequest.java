@@ -39,7 +39,7 @@ public class ReportAnnotationJobResultRequest extends RpcAcsRequest<ReportAnnota
 
 	private Long ownerId;
 	public ReportAnnotationJobResultRequest() {
-		super("Mts", "2014-06-18", "ReportAnnotationJobResult");
+		super("Mts", "2014-06-18", "ReportAnnotationJobResult", "mts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

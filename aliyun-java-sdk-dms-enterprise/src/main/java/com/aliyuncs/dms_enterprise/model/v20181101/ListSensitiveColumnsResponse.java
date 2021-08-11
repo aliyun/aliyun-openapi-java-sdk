@@ -87,25 +87,17 @@ public class ListSensitiveColumnsResponse extends AcsResponse {
 
 	public static class SensitiveColumn {
 
-		private String tableName;
-
 		private String columnName;
 
-		private Long columnCount;
-
-		private String functionType;
+		private String tableName;
 
 		private String securityLevel;
 
+		private Long columnCount;
+
 		private String schemaName;
 
-		public String getTableName() {
-			return this.tableName;
-		}
-
-		public void setTableName(String tableName) {
-			this.tableName = tableName;
-		}
+		private String functionType;
 
 		public String getColumnName() {
 			return this.columnName;
@@ -115,20 +107,12 @@ public class ListSensitiveColumnsResponse extends AcsResponse {
 			this.columnName = columnName;
 		}
 
-		public Long getColumnCount() {
-			return this.columnCount;
+		public String getTableName() {
+			return this.tableName;
 		}
 
-		public void setColumnCount(Long columnCount) {
-			this.columnCount = columnCount;
-		}
-
-		public String getFunctionType() {
-			return this.functionType;
-		}
-
-		public void setFunctionType(String functionType) {
-			this.functionType = functionType;
+		public void setTableName(String tableName) {
+			this.tableName = tableName;
 		}
 
 		public String getSecurityLevel() {
@@ -139,12 +123,28 @@ public class ListSensitiveColumnsResponse extends AcsResponse {
 			this.securityLevel = securityLevel;
 		}
 
+		public Long getColumnCount() {
+			return this.columnCount;
+		}
+
+		public void setColumnCount(Long columnCount) {
+			this.columnCount = columnCount;
+		}
+
 		public String getSchemaName() {
 			return this.schemaName;
 		}
 
 		public void setSchemaName(String schemaName) {
 			this.schemaName = schemaName;
+		}
+
+		public String getFunctionType() {
+			return this.functionType;
+		}
+
+		public void setFunctionType(String functionType) {
+			this.functionType = functionType;
 		}
 	}
 

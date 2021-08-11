@@ -47,7 +47,7 @@ public class DescribePurchasedDevicesRequest extends RpcAcsRequest<DescribePurch
 
 	private String sortBy;
 	public DescribePurchasedDevicesRequest() {
-		super("vs", "2018-12-12", "DescribePurchasedDevices", "vs");
+		super("vs", "2018-12-12", "DescribePurchasedDevices");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

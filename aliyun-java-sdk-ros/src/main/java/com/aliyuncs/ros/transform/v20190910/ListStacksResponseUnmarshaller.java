@@ -28,32 +28,33 @@ public class ListStacksResponseUnmarshaller {
 	public static ListStacksResponse unmarshall(ListStacksResponse listStacksResponse, UnmarshallerContext _ctx) {
 		
 		listStacksResponse.setRequestId(_ctx.stringValue("ListStacksResponse.RequestId"));
-		listStacksResponse.setPageNumber(_ctx.integerValue("ListStacksResponse.PageNumber"));
-		listStacksResponse.setPageSize(_ctx.integerValue("ListStacksResponse.PageSize"));
 		listStacksResponse.setTotalCount(_ctx.integerValue("ListStacksResponse.TotalCount"));
+		listStacksResponse.setPageSize(_ctx.integerValue("ListStacksResponse.PageSize"));
+		listStacksResponse.setPageNumber(_ctx.integerValue("ListStacksResponse.PageNumber"));
 
 		List<Stack> stacks = new ArrayList<Stack>();
 		for (int i = 0; i < _ctx.lengthValue("ListStacksResponse.Stacks.Length"); i++) {
 			Stack stack = new Stack();
-			stack.setCreateTime(_ctx.stringValue("ListStacksResponse.Stacks["+ i +"].CreateTime"));
-			stack.setDisableRollback(_ctx.booleanValue("ListStacksResponse.Stacks["+ i +"].DisableRollback"));
-			stack.setRegionId(_ctx.stringValue("ListStacksResponse.Stacks["+ i +"].RegionId"));
-			stack.setStackId(_ctx.stringValue("ListStacksResponse.Stacks["+ i +"].StackId"));
-			stack.setStackName(_ctx.stringValue("ListStacksResponse.Stacks["+ i +"].StackName"));
 			stack.setStatus(_ctx.stringValue("ListStacksResponse.Stacks["+ i +"].Status"));
-			stack.setStatusReason(_ctx.stringValue("ListStacksResponse.Stacks["+ i +"].StatusReason"));
-			stack.setTimeoutInMinutes(_ctx.integerValue("ListStacksResponse.Stacks["+ i +"].TimeoutInMinutes"));
+			stack.setResourceGroupId(_ctx.stringValue("ListStacksResponse.Stacks["+ i +"].ResourceGroupId"));
 			stack.setParentStackId(_ctx.stringValue("ListStacksResponse.Stacks["+ i +"].ParentStackId"));
-			stack.setUpdateTime(_ctx.stringValue("ListStacksResponse.Stacks["+ i +"].UpdateTime"));
-			stack.setStackDriftStatus(_ctx.stringValue("ListStacksResponse.Stacks["+ i +"].StackDriftStatus"));
-			stack.setDriftDetectionTime(_ctx.stringValue("ListStacksResponse.Stacks["+ i +"].DriftDetectionTime"));
+			stack.setStatusReason(_ctx.stringValue("ListStacksResponse.Stacks["+ i +"].StatusReason"));
+			stack.setCreateTime(_ctx.stringValue("ListStacksResponse.Stacks["+ i +"].CreateTime"));
 			stack.setStackType(_ctx.stringValue("ListStacksResponse.Stacks["+ i +"].StackType"));
+			stack.setUpdateTime(_ctx.stringValue("ListStacksResponse.Stacks["+ i +"].UpdateTime"));
+			stack.setDriftDetectionTime(_ctx.stringValue("ListStacksResponse.Stacks["+ i +"].DriftDetectionTime"));
+			stack.setRegionId(_ctx.stringValue("ListStacksResponse.Stacks["+ i +"].RegionId"));
+			stack.setStackDriftStatus(_ctx.stringValue("ListStacksResponse.Stacks["+ i +"].StackDriftStatus"));
+			stack.setStackName(_ctx.stringValue("ListStacksResponse.Stacks["+ i +"].StackName"));
+			stack.setDisableRollback(_ctx.booleanValue("ListStacksResponse.Stacks["+ i +"].DisableRollback"));
+			stack.setStackId(_ctx.stringValue("ListStacksResponse.Stacks["+ i +"].StackId"));
+			stack.setTimeoutInMinutes(_ctx.integerValue("ListStacksResponse.Stacks["+ i +"].TimeoutInMinutes"));
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("ListStacksResponse.Stacks["+ i +"].Tags.Length"); j++) {
 				Tag tag = new Tag();
-				tag.setKey(_ctx.stringValue("ListStacksResponse.Stacks["+ i +"].Tags["+ j +"].Key"));
 				tag.setValue(_ctx.stringValue("ListStacksResponse.Stacks["+ i +"].Tags["+ j +"].Value"));
+				tag.setKey(_ctx.stringValue("ListStacksResponse.Stacks["+ i +"].Tags["+ j +"].Key"));
 
 				tags.add(tag);
 			}

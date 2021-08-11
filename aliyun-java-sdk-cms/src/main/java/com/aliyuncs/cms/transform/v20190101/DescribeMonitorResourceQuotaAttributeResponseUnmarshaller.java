@@ -18,6 +18,7 @@ import com.aliyuncs.cms.model.v20190101.DescribeMonitorResourceQuotaAttributeRes
 import com.aliyuncs.cms.model.v20190101.DescribeMonitorResourceQuotaAttributeResponse.ResourceQuota;
 import com.aliyuncs.cms.model.v20190101.DescribeMonitorResourceQuotaAttributeResponse.ResourceQuota.Api;
 import com.aliyuncs.cms.model.v20190101.DescribeMonitorResourceQuotaAttributeResponse.ResourceQuota.CustomMonitor;
+import com.aliyuncs.cms.model.v20190101.DescribeMonitorResourceQuotaAttributeResponse.ResourceQuota.EnterpriseQuota;
 import com.aliyuncs.cms.model.v20190101.DescribeMonitorResourceQuotaAttributeResponse.ResourceQuota.EventMonitor;
 import com.aliyuncs.cms.model.v20190101.DescribeMonitorResourceQuotaAttributeResponse.ResourceQuota.LogMonitor;
 import com.aliyuncs.cms.model.v20190101.DescribeMonitorResourceQuotaAttributeResponse.ResourceQuota.Phone;
@@ -39,6 +40,7 @@ public class DescribeMonitorResourceQuotaAttributeResponseUnmarshaller {
 		ResourceQuota resourceQuota = new ResourceQuota();
 		resourceQuota.setExpireTime(_ctx.stringValue("DescribeMonitorResourceQuotaAttributeResponse.ResourceQuota.ExpireTime"));
 		resourceQuota.setSuitInfo(_ctx.stringValue("DescribeMonitorResourceQuotaAttributeResponse.ResourceQuota.SuitInfo"));
+		resourceQuota.setCRMType(_ctx.stringValue("DescribeMonitorResourceQuotaAttributeResponse.ResourceQuota.CRMType"));
 		resourceQuota.setInstanceId(_ctx.stringValue("DescribeMonitorResourceQuotaAttributeResponse.ResourceQuota.InstanceId"));
 
 		SiteMonitorEcsProbe siteMonitorEcsProbe = new SiteMonitorEcsProbe();
@@ -94,6 +96,11 @@ public class DescribeMonitorResourceQuotaAttributeResponseUnmarshaller {
 		phone.setQuotaPackage(_ctx.integerValue("DescribeMonitorResourceQuotaAttributeResponse.ResourceQuota.Phone.QuotaPackage"));
 		phone.setQuotaUsed(_ctx.integerValue("DescribeMonitorResourceQuotaAttributeResponse.ResourceQuota.Phone.QuotaUsed"));
 		resourceQuota.setPhone(phone);
+
+		EnterpriseQuota enterpriseQuota = new EnterpriseQuota();
+		enterpriseQuota.setSuitInfo(_ctx.stringValue("DescribeMonitorResourceQuotaAttributeResponse.ResourceQuota.EnterpriseQuota.SuitInfo"));
+		enterpriseQuota.setInstanceId(_ctx.stringValue("DescribeMonitorResourceQuotaAttributeResponse.ResourceQuota.EnterpriseQuota.InstanceId"));
+		resourceQuota.setEnterpriseQuota(enterpriseQuota);
 		describeMonitorResourceQuotaAttributeResponse.setResourceQuota(resourceQuota);
 	 
 	 	return describeMonitorResourceQuotaAttributeResponse;

@@ -89,7 +89,7 @@ public class DescribeEnsRegionIdResourceResponse extends AcsResponse {
 
 		private Integer instanceCount;
 
-		private Integer internetBandwidth;
+		private Long internetBandwidth;
 
 		private String isp;
 
@@ -143,11 +143,11 @@ public class DescribeEnsRegionIdResourceResponse extends AcsResponse {
 			this.instanceCount = instanceCount;
 		}
 
-		public Integer getInternetBandwidth() {
+		public Long getInternetBandwidth() {
 			return this.internetBandwidth;
 		}
 
-		public void setInternetBandwidth(Integer internetBandwidth) {
+		public void setInternetBandwidth(Long internetBandwidth) {
 			this.internetBandwidth = internetBandwidth;
 		}
 

@@ -25,9 +25,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListHotlineRecordDetailResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String message;
+
+	private String requestId;
 
 	private Integer httpStatusCode;
 
@@ -37,20 +37,20 @@ public class ListHotlineRecordDetailResponse extends AcsResponse {
 
 	private ResultData resultData;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public String getMessage() {
 		return this.message;
 	}
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getHttpStatusCode() {
@@ -87,31 +87,15 @@ public class ListHotlineRecordDetailResponse extends AcsResponse {
 
 	public static class ResultData {
 
-		private Long onePageSize;
-
-		private Long totalPage;
-
 		private Long currentPage;
 
 		private Long totalResults;
 
+		private Long totalPage;
+
+		private Long onePageSize;
+
 		private List<DataItem> data;
-
-		public Long getOnePageSize() {
-			return this.onePageSize;
-		}
-
-		public void setOnePageSize(Long onePageSize) {
-			this.onePageSize = onePageSize;
-		}
-
-		public Long getTotalPage() {
-			return this.totalPage;
-		}
-
-		public void setTotalPage(Long totalPage) {
-			this.totalPage = totalPage;
-		}
 
 		public Long getCurrentPage() {
 			return this.currentPage;
@@ -129,6 +113,22 @@ public class ListHotlineRecordDetailResponse extends AcsResponse {
 			this.totalResults = totalResults;
 		}
 
+		public Long getTotalPage() {
+			return this.totalPage;
+		}
+
+		public void setTotalPage(Long totalPage) {
+			this.totalPage = totalPage;
+		}
+
+		public Long getOnePageSize() {
+			return this.onePageSize;
+		}
+
+		public void setOnePageSize(Long onePageSize) {
+			this.onePageSize = onePageSize;
+		}
+
 		public List<DataItem> getData() {
 			return this.data;
 		}
@@ -141,11 +141,11 @@ public class ListHotlineRecordDetailResponse extends AcsResponse {
 
 			private String servicerName;
 
+			private Long startTime;
+
 			private Long endTime;
 
 			private String ossUrl;
-
-			private Long startTime;
 
 			public String getServicerName() {
 				return this.servicerName;
@@ -153,6 +153,14 @@ public class ListHotlineRecordDetailResponse extends AcsResponse {
 
 			public void setServicerName(String servicerName) {
 				this.servicerName = servicerName;
+			}
+
+			public Long getStartTime() {
+				return this.startTime;
+			}
+
+			public void setStartTime(Long startTime) {
+				this.startTime = startTime;
 			}
 
 			public Long getEndTime() {
@@ -169,14 +177,6 @@ public class ListHotlineRecordDetailResponse extends AcsResponse {
 
 			public void setOssUrl(String ossUrl) {
 				this.ossUrl = ossUrl;
-			}
-
-			public Long getStartTime() {
-				return this.startTime;
-			}
-
-			public void setStartTime(Long startTime) {
-				this.startTime = startTime;
 			}
 		}
 	}

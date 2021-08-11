@@ -41,7 +41,7 @@ public class ForbidVsStreamRequest extends RpcAcsRequest<ForbidVsStreamResponse>
 
 	private String oneshot;
 	public ForbidVsStreamRequest() {
-		super("vs", "2018-12-12", "ForbidVsStream", "vs");
+		super("vs", "2018-12-12", "ForbidVsStream");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

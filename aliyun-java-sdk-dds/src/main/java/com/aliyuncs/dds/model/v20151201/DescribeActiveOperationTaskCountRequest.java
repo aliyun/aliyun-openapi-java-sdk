@@ -37,7 +37,7 @@ public class DescribeActiveOperationTaskCountRequest extends RpcAcsRequest<Descr
 
 	private Long ownerId;
 	public DescribeActiveOperationTaskCountRequest() {
-		super("Dds", "2015-12-01", "DescribeActiveOperationTaskCount");
+		super("Dds", "2015-12-01", "DescribeActiveOperationTaskCount", "Dds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

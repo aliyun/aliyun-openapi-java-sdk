@@ -28,19 +28,19 @@ public class CreateUserResponseUnmarshaller {
 		createUserResponse.setCode(_ctx.stringValue("CreateUserResponse.Code"));
 
 		Data data = new Data();
-		data.setUserName(_ctx.stringValue("CreateUserResponse.Data.UserName"));
-		data.setAddress(_ctx.stringValue("CreateUserResponse.Data.Address"));
-		data.setPhoneNo(_ctx.stringValue("CreateUserResponse.Data.PhoneNo"));
-		data.setIdNumber(_ctx.stringValue("CreateUserResponse.Data.IdNumber"));
-		data.setUserId(_ctx.integerValue("CreateUserResponse.Data.UserId"));
-		data.setUserGroupId(_ctx.integerValue("CreateUserResponse.Data.UserGroupId"));
-		data.setIsvSubId(_ctx.stringValue("CreateUserResponse.Data.IsvSubId"));
-		data.setAttachment(_ctx.stringValue("CreateUserResponse.Data.Attachment"));
 		data.setGender(_ctx.stringValue("CreateUserResponse.Data.Gender"));
-		data.setPlateNo(_ctx.stringValue("CreateUserResponse.Data.PlateNo"));
-		data.setBizId(_ctx.stringValue("CreateUserResponse.Data.BizId"));
-		data.setAge(_ctx.stringValue("CreateUserResponse.Data.Age"));
 		data.setFaceImageUrl(_ctx.stringValue("CreateUserResponse.Data.FaceImageUrl"));
+		data.setIsvSubId(_ctx.stringValue("CreateUserResponse.Data.IsvSubId"));
+		data.setUserGroupId(_ctx.integerValue("CreateUserResponse.Data.UserGroupId"));
+		data.setUserId(_ctx.integerValue("CreateUserResponse.Data.UserId"));
+		data.setBizId(_ctx.stringValue("CreateUserResponse.Data.BizId"));
+		data.setAttachment(_ctx.stringValue("CreateUserResponse.Data.Attachment"));
+		data.setAge(_ctx.stringValue("CreateUserResponse.Data.Age"));
+		data.setIdNumber(_ctx.stringValue("CreateUserResponse.Data.IdNumber"));
+		data.setPhoneNo(_ctx.stringValue("CreateUserResponse.Data.PhoneNo"));
+		data.setAddress(_ctx.stringValue("CreateUserResponse.Data.Address"));
+		data.setUserName(_ctx.stringValue("CreateUserResponse.Data.UserName"));
+		data.setPlateNo(_ctx.stringValue("CreateUserResponse.Data.PlateNo"));
 		createUserResponse.setData(data);
 	 
 	 	return createUserResponse;

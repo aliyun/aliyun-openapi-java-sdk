@@ -163,6 +163,24 @@ public class DescribeGatewaysResponse extends AcsResponse {
 
 		private Integer publicNetworkBandwidth;
 
+		private String gatewayType;
+
+		private Boolean elasticGateway;
+
+		private Integer maxThroughput;
+
+		private Integer capacity;
+
+		private String dataLoadType;
+
+		private Integer dataLoadInterval;
+
+		private String lastErrorKey;
+
+		private String innerIpv6Ip;
+
+		private List<String> elasticNodes;
+
 		public String getGatewayId() {
 			return this.gatewayId;
 		}
@@ -385,6 +403,78 @@ public class DescribeGatewaysResponse extends AcsResponse {
 
 		public void setPublicNetworkBandwidth(Integer publicNetworkBandwidth) {
 			this.publicNetworkBandwidth = publicNetworkBandwidth;
+		}
+
+		public String getGatewayType() {
+			return this.gatewayType;
+		}
+
+		public void setGatewayType(String gatewayType) {
+			this.gatewayType = gatewayType;
+		}
+
+		public Boolean getElasticGateway() {
+			return this.elasticGateway;
+		}
+
+		public void setElasticGateway(Boolean elasticGateway) {
+			this.elasticGateway = elasticGateway;
+		}
+
+		public Integer getMaxThroughput() {
+			return this.maxThroughput;
+		}
+
+		public void setMaxThroughput(Integer maxThroughput) {
+			this.maxThroughput = maxThroughput;
+		}
+
+		public Integer getCapacity() {
+			return this.capacity;
+		}
+
+		public void setCapacity(Integer capacity) {
+			this.capacity = capacity;
+		}
+
+		public String getDataLoadType() {
+			return this.dataLoadType;
+		}
+
+		public void setDataLoadType(String dataLoadType) {
+			this.dataLoadType = dataLoadType;
+		}
+
+		public Integer getDataLoadInterval() {
+			return this.dataLoadInterval;
+		}
+
+		public void setDataLoadInterval(Integer dataLoadInterval) {
+			this.dataLoadInterval = dataLoadInterval;
+		}
+
+		public String getLastErrorKey() {
+			return this.lastErrorKey;
+		}
+
+		public void setLastErrorKey(String lastErrorKey) {
+			this.lastErrorKey = lastErrorKey;
+		}
+
+		public String getInnerIpv6Ip() {
+			return this.innerIpv6Ip;
+		}
+
+		public void setInnerIpv6Ip(String innerIpv6Ip) {
+			this.innerIpv6Ip = innerIpv6Ip;
+		}
+
+		public List<String> getElasticNodes() {
+			return this.elasticNodes;
+		}
+
+		public void setElasticNodes(List<String> elasticNodes) {
+			this.elasticNodes = elasticNodes;
 		}
 	}
 

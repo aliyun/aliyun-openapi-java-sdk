@@ -27,7 +27,7 @@ public class DescribeJobMonitorRuleRequest extends RpcAcsRequest<DescribeJobMoni
 
 	private String dtsJobId;
 	public DescribeJobMonitorRuleRequest() {
-		super("Dts", "2020-01-01", "DescribeJobMonitorRule");
+		super("Dts", "2020-01-01", "DescribeJobMonitorRule", "dts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

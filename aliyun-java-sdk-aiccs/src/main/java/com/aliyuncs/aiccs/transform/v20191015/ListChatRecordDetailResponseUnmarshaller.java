@@ -35,25 +35,25 @@ public class ListChatRecordDetailResponseUnmarshaller {
 		listChatRecordDetailResponse.setSuccess(_ctx.booleanValue("ListChatRecordDetailResponse.Success"));
 
 		ResultData resultData = new ResultData();
-		resultData.setOnePageSize(_ctx.longValue("ListChatRecordDetailResponse.ResultData.OnePageSize"));
-		resultData.setTotalPage(_ctx.longValue("ListChatRecordDetailResponse.ResultData.TotalPage"));
 		resultData.setCurrentPage(_ctx.longValue("ListChatRecordDetailResponse.ResultData.CurrentPage"));
 		resultData.setTotalResults(_ctx.longValue("ListChatRecordDetailResponse.ResultData.TotalResults"));
+		resultData.setTotalPage(_ctx.longValue("ListChatRecordDetailResponse.ResultData.TotalPage"));
+		resultData.setOnePageSize(_ctx.longValue("ListChatRecordDetailResponse.ResultData.OnePageSize"));
 
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListChatRecordDetailResponse.ResultData.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
 			dataItem.setServicerName(_ctx.stringValue("ListChatRecordDetailResponse.ResultData.Data["+ i +"].ServicerName"));
-			dataItem.setEndTime(_ctx.longValue("ListChatRecordDetailResponse.ResultData.Data["+ i +"].EndTime"));
 			dataItem.setStartTime(_ctx.longValue("ListChatRecordDetailResponse.ResultData.Data["+ i +"].StartTime"));
+			dataItem.setEndTime(_ctx.longValue("ListChatRecordDetailResponse.ResultData.Data["+ i +"].EndTime"));
 
 			List<MessageListItem> messageList = new ArrayList<MessageListItem>();
 			for (int j = 0; j < _ctx.lengthValue("ListChatRecordDetailResponse.ResultData.Data["+ i +"].MessageList.Length"); j++) {
 				MessageListItem messageListItem = new MessageListItem();
 				messageListItem.setSenderName(_ctx.stringValue("ListChatRecordDetailResponse.ResultData.Data["+ i +"].MessageList["+ j +"].SenderName"));
 				messageListItem.setContent(_ctx.stringValue("ListChatRecordDetailResponse.ResultData.Data["+ i +"].MessageList["+ j +"].Content"));
-				messageListItem.setCreateTime(_ctx.longValue("ListChatRecordDetailResponse.ResultData.Data["+ i +"].MessageList["+ j +"].CreateTime"));
 				messageListItem.setSenderType(_ctx.longValue("ListChatRecordDetailResponse.ResultData.Data["+ i +"].MessageList["+ j +"].SenderType"));
+				messageListItem.setCreateTime(_ctx.longValue("ListChatRecordDetailResponse.ResultData.Data["+ i +"].MessageList["+ j +"].CreateTime"));
 				messageListItem.setMsgType(_ctx.stringValue("ListChatRecordDetailResponse.ResultData.Data["+ i +"].MessageList["+ j +"].MsgType"));
 
 				messageList.add(messageListItem);

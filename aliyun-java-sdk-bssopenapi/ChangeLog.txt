@@ -1,3 +1,15 @@
+2021-08-10 Version: 1.7.7
+- Supported DescribeSavingsPlansUsageTotal.
+- Supported DescribeSavingsPlansUsageDetail.
+- Supported DescribeSavingsPlansCoverageTotal.
+- Supported DescribeSavingsPlansCoverageDetail.
+
+2021-06-25 Version: 1.7.6
+- Update DescribeSplitItemBill to support daily report.
+
+2021-06-24 Version: 1.7.5
+- Update QueryBillOverview, QuerySettleBill, QueryAccountBill, DescribeInstanceBill and support trusteeship bill query.
+
 2021-05-08 Version: 1.7.3
 - Support Coverage.
 - Support Usage.

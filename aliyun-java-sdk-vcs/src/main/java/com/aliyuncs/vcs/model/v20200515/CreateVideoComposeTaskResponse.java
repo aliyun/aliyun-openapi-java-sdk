@@ -26,9 +26,9 @@ public class CreateVideoComposeTaskResponse extends AcsResponse {
 
 	private String bucketName;
 
-	private String requestId;
-
 	private String message;
+
+	private String requestId;
 
 	private String domainName;
 
@@ -42,20 +42,20 @@ public class CreateVideoComposeTaskResponse extends AcsResponse {
 		this.bucketName = bucketName;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public String getMessage() {
 		return this.message;
 	}
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getDomainName() {

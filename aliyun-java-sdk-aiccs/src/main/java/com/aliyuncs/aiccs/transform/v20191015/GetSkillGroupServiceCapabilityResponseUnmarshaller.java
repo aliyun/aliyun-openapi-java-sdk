@@ -29,9 +29,9 @@ public class GetSkillGroupServiceCapabilityResponseUnmarshaller {
 		getSkillGroupServiceCapabilityResponse.setSuccess(_ctx.stringValue("GetSkillGroupServiceCapabilityResponse.Success"));
 
 		Data data = new Data();
-		data.setTotalNum(_ctx.longValue("GetSkillGroupServiceCapabilityResponse.Data.TotalNum"));
-		data.setPageSize(_ctx.integerValue("GetSkillGroupServiceCapabilityResponse.Data.PageSize"));
 		data.setPageNum(_ctx.integerValue("GetSkillGroupServiceCapabilityResponse.Data.PageNum"));
+		data.setPageSize(_ctx.integerValue("GetSkillGroupServiceCapabilityResponse.Data.PageSize"));
+		data.setTotalNum(_ctx.longValue("GetSkillGroupServiceCapabilityResponse.Data.TotalNum"));
 		data.setRows(_ctx.stringValue("GetSkillGroupServiceCapabilityResponse.Data.Rows"));
 		getSkillGroupServiceCapabilityResponse.setData(data);
 	 

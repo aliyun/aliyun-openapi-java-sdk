@@ -53,6 +53,8 @@ public class ListRetcodeAppsResponse extends AcsResponse {
 
 		private String appName;
 
+		private String retcodeAppType;
+
 		public Long getAppId() {
 			return this.appId;
 		}
@@ -75,6 +77,14 @@ public class ListRetcodeAppsResponse extends AcsResponse {
 
 		public void setAppName(String appName) {
 			this.appName = appName;
+		}
+
+		public String getRetcodeAppType() {
+			return this.retcodeAppType;
+		}
+
+		public void setRetcodeAppType(String retcodeAppType) {
+			this.retcodeAppType = retcodeAppType;
 		}
 	}
 

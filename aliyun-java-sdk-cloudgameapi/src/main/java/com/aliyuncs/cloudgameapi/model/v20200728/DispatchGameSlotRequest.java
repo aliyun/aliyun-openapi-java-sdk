@@ -45,6 +45,8 @@ public class DispatchGameSlotRequest extends RpcAcsRequest<DispatchGameSlotRespo
 
 	private String gameCommand;
 
+	private String tags;
+
 	private String bizParam;
 
 	private String gameStartParam;
@@ -164,6 +166,17 @@ public class DispatchGameSlotRequest extends RpcAcsRequest<DispatchGameSlotRespo
 		this.gameCommand = gameCommand;
 		if(gameCommand != null){
 			putBodyParameter("GameCommand", gameCommand);
+		}
+	}
+
+	public String getTags() {
+		return this.tags;
+	}
+
+	public void setTags(String tags) {
+		this.tags = tags;
+		if(tags != null){
+			putBodyParameter("Tags", tags);
 		}
 	}
 

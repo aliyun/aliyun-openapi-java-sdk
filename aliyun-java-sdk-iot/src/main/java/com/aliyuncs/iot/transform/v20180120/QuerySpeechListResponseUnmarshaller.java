@@ -46,6 +46,7 @@ public class QuerySpeechListResponseUnmarshaller {
 			items.setText(_ctx.stringValue("QuerySpeechListResponse.Data.List["+ i +"].Text"));
 			items.setVoice(_ctx.stringValue("QuerySpeechListResponse.Data.List["+ i +"].Voice"));
 			items.setSpeechType(_ctx.stringValue("QuerySpeechListResponse.Data.List["+ i +"].SpeechType"));
+			items.setAudioFormat(_ctx.stringValue("QuerySpeechListResponse.Data.List["+ i +"].AudioFormat"));
 
 			List<Items1> speechList = new ArrayList<Items1>();
 			for (int j = 0; j < _ctx.lengthValue("QuerySpeechListResponse.Data.List["+ i +"].SpeechList.Length"); j++) {

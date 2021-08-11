@@ -24,6 +24,8 @@ import com.aliyuncs.datalake.Endpoint;
  */
 public class BatchGetPartitionsRequest extends RoaAcsRequest<BatchGetPartitionsResponse> {
 	   
+
+	private String body;
 	public BatchGetPartitionsRequest() {
 		super("DataLake", "2020-07-10", "BatchGetPartitions");
 		setUriPattern("/api/metastore/catalogs/databases/tables/partitions/batchget");
@@ -32,6 +34,17 @@ public class BatchGetPartitionsRequest extends RoaAcsRequest<BatchGetPartitionsR
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getBody() {
+		return this.body;
+	}
+
+	public void setBody(String body) {
+		this.body = body;
+		if(body != null){
+			putBodyParameter("Body", body);
+		}
 	}
 
 	@Override

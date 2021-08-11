@@ -25,11 +25,11 @@ import com.aliyuncs.ddoscoo.Endpoint;
 public class DescribeDomainOverviewRequest extends RpcAcsRequest<DescribeDomainOverviewResponse> {
 	   
 
-	private Long endTime;
-
 	private Long startTime;
 
 	private String resourceGroupId;
+
+	private Long endTime;
 
 	private String domain;
 	public DescribeDomainOverviewRequest() {
@@ -39,17 +39,6 @@ public class DescribeDomainOverviewRequest extends RpcAcsRequest<DescribeDomainO
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Long getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(Long endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime.toString());
-		}
 	}
 
 	public Long getStartTime() {
@@ -71,6 +60,17 @@ public class DescribeDomainOverviewRequest extends RpcAcsRequest<DescribeDomainO
 		this.resourceGroupId = resourceGroupId;
 		if(resourceGroupId != null){
 			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public Long getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(Long endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime.toString());
 		}
 	}
 

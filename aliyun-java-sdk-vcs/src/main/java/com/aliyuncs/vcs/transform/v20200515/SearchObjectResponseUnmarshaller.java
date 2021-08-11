@@ -32,27 +32,27 @@ public class SearchObjectResponseUnmarshaller {
 		searchObjectResponse.setCode(_ctx.stringValue("SearchObjectResponse.Code"));
 
 		Data data = new Data();
-		data.setTotalCount(_ctx.integerValue("SearchObjectResponse.Data.TotalCount"));
-		data.setPageSize(_ctx.integerValue("SearchObjectResponse.Data.PageSize"));
 		data.setTotalPage(_ctx.integerValue("SearchObjectResponse.Data.TotalPage"));
 		data.setPageNumber(_ctx.integerValue("SearchObjectResponse.Data.PageNumber"));
+		data.setPageSize(_ctx.integerValue("SearchObjectResponse.Data.PageSize"));
+		data.setTotalCount(_ctx.integerValue("SearchObjectResponse.Data.TotalCount"));
 
 		List<RecordsItem> records = new ArrayList<RecordsItem>();
 		for (int i = 0; i < _ctx.lengthValue("SearchObjectResponse.Data.Records.Length"); i++) {
 			RecordsItem recordsItem = new RecordsItem();
-			recordsItem.setTargetImageUrl(_ctx.stringValue("SearchObjectResponse.Data.Records["+ i +"].TargetImageUrl"));
-			recordsItem.setScore(_ctx.floatValue("SearchObjectResponse.Data.Records["+ i +"].Score"));
 			recordsItem.setDeviceID(_ctx.stringValue("SearchObjectResponse.Data.Records["+ i +"].DeviceID"));
+			recordsItem.setCompareResult(_ctx.stringValue("SearchObjectResponse.Data.Records["+ i +"].CompareResult"));
+			recordsItem.setRightBtmX(_ctx.integerValue("SearchObjectResponse.Data.Records["+ i +"].RightBtmX"));
+			recordsItem.setScore(_ctx.floatValue("SearchObjectResponse.Data.Records["+ i +"].Score"));
+			recordsItem.setSourceImageUrl(_ctx.stringValue("SearchObjectResponse.Data.Records["+ i +"].SourceImageUrl"));
 			recordsItem.setSourceID(_ctx.stringValue("SearchObjectResponse.Data.Records["+ i +"].SourceID"));
 			recordsItem.setRightBtmY(_ctx.integerValue("SearchObjectResponse.Data.Records["+ i +"].RightBtmY"));
-			recordsItem.setShotTime(_ctx.longValue("SearchObjectResponse.Data.Records["+ i +"].ShotTime"));
-			recordsItem.setRightBtmX(_ctx.integerValue("SearchObjectResponse.Data.Records["+ i +"].RightBtmX"));
-			recordsItem.setSourceImagePath(_ctx.stringValue("SearchObjectResponse.Data.Records["+ i +"].SourceImagePath"));
-			recordsItem.setTargetImagePath(_ctx.stringValue("SearchObjectResponse.Data.Records["+ i +"].TargetImagePath"));
-			recordsItem.setSourceImageUrl(_ctx.stringValue("SearchObjectResponse.Data.Records["+ i +"].SourceImageUrl"));
+			recordsItem.setTargetImageUrl(_ctx.stringValue("SearchObjectResponse.Data.Records["+ i +"].TargetImageUrl"));
 			recordsItem.setLeftTopY(_ctx.integerValue("SearchObjectResponse.Data.Records["+ i +"].LeftTopY"));
+			recordsItem.setTargetImagePath(_ctx.stringValue("SearchObjectResponse.Data.Records["+ i +"].TargetImagePath"));
+			recordsItem.setShotTime(_ctx.longValue("SearchObjectResponse.Data.Records["+ i +"].ShotTime"));
 			recordsItem.setLeftTopX(_ctx.integerValue("SearchObjectResponse.Data.Records["+ i +"].LeftTopX"));
-			recordsItem.setCompareResult(_ctx.stringValue("SearchObjectResponse.Data.Records["+ i +"].CompareResult"));
+			recordsItem.setSourceImagePath(_ctx.stringValue("SearchObjectResponse.Data.Records["+ i +"].SourceImagePath"));
 
 			records.add(recordsItem);
 		}

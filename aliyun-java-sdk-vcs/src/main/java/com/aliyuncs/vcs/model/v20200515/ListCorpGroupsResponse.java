@@ -25,21 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListCorpGroupsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String message;
+
+	private String requestId;
 
 	private String code;
 
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getMessage() {
 		return this.message;
@@ -47,6 +39,14 @@ public class ListCorpGroupsResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getCode() {
@@ -67,31 +67,15 @@ public class ListCorpGroupsResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Long totalCount;
-
-		private Long pageSize;
-
 		private Long totalPage;
 
 		private Long pageNumber;
 
+		private Long pageSize;
+
+		private Long totalCount;
+
 		private List<String> records;
-
-		public Long getTotalCount() {
-			return this.totalCount;
-		}
-
-		public void setTotalCount(Long totalCount) {
-			this.totalCount = totalCount;
-		}
-
-		public Long getPageSize() {
-			return this.pageSize;
-		}
-
-		public void setPageSize(Long pageSize) {
-			this.pageSize = pageSize;
-		}
 
 		public Long getTotalPage() {
 			return this.totalPage;
@@ -107,6 +91,22 @@ public class ListCorpGroupsResponse extends AcsResponse {
 
 		public void setPageNumber(Long pageNumber) {
 			this.pageNumber = pageNumber;
+		}
+
+		public Long getPageSize() {
+			return this.pageSize;
+		}
+
+		public void setPageSize(Long pageSize) {
+			this.pageSize = pageSize;
+		}
+
+		public Long getTotalCount() {
+			return this.totalCount;
+		}
+
+		public void setTotalCount(Long totalCount) {
+			this.totalCount = totalCount;
 		}
 
 		public List<String> getRecords() {

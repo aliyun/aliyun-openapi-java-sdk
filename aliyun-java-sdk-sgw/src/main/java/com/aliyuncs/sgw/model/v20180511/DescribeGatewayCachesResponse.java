@@ -99,6 +99,8 @@ public class DescribeGatewayCachesResponse extends AcsResponse {
 
 		private String buyURL;
 
+		private String subscriptionInstanceId;
+
 		public Long getSizeInGB() {
 			return this.sizeInGB;
 		}
@@ -185,6 +187,14 @@ public class DescribeGatewayCachesResponse extends AcsResponse {
 
 		public void setBuyURL(String buyURL) {
 			this.buyURL = buyURL;
+		}
+
+		public String getSubscriptionInstanceId() {
+			return this.subscriptionInstanceId;
+		}
+
+		public void setSubscriptionInstanceId(String subscriptionInstanceId) {
+			this.subscriptionInstanceId = subscriptionInstanceId;
 		}
 	}
 

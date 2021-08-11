@@ -38,6 +38,7 @@ public class DescribeBackupTasksResponseUnmarshaller {
 			backupJob.setProcess(_ctx.stringValue("DescribeBackupTasksResponse.BackupJobs["+ i +"].Process"));
 			backupJob.setStartTime(_ctx.stringValue("DescribeBackupTasksResponse.BackupJobs["+ i +"].StartTime"));
 			backupJob.setTaskAction(_ctx.stringValue("DescribeBackupTasksResponse.BackupJobs["+ i +"].TaskAction"));
+			backupJob.setNodeId(_ctx.stringValue("DescribeBackupTasksResponse.BackupJobs["+ i +"].NodeId"));
 
 			backupJobs.add(backupJob);
 		}

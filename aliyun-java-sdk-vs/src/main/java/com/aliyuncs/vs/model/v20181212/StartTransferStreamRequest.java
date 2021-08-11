@@ -33,7 +33,7 @@ public class StartTransferStreamRequest extends RpcAcsRequest<StartTransferStrea
 
 	private String url;
 	public StartTransferStreamRequest() {
-		super("vs", "2018-12-12", "StartTransferStream", "vs");
+		super("vs", "2018-12-12", "StartTransferStream");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

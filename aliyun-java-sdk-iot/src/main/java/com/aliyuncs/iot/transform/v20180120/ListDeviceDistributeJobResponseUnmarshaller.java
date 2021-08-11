@@ -35,6 +35,7 @@ public class ListDeviceDistributeJobResponseUnmarshaller {
 
 		Data data = new Data();
 		data.setTotal(_ctx.integerValue("ListDeviceDistributeJobResponse.Data.Total"));
+		data.setNextToken(_ctx.stringValue("ListDeviceDistributeJobResponse.Data.NextToken"));
 
 		List<Items> jobInfo = new ArrayList<Items>();
 		for (int i = 0; i < _ctx.lengthValue("ListDeviceDistributeJobResponse.Data.JobInfo.Length"); i++) {

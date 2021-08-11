@@ -41,6 +41,8 @@ public class QueryPushRecordsRequest extends RpcAcsRequest<QueryPushRecordsRespo
 
 	private Long appKey;
 
+	private Integer page;
+
 	private String pushType;
 	public QueryPushRecordsRequest() {
 		super("Push", "2016-08-01", "QueryPushRecords");
@@ -136,6 +138,17 @@ public class QueryPushRecordsRequest extends RpcAcsRequest<QueryPushRecordsRespo
 		this.appKey = appKey;
 		if(appKey != null){
 			putQueryParameter("AppKey", appKey.toString());
+		}
+	}
+
+	public Integer getPage() {
+		return this.page;
+	}
+
+	public void setPage(Integer page) {
+		this.page = page;
+		if(page != null){
+			putQueryParameter("Page", page.toString());
 		}
 	}
 

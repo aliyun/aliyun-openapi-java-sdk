@@ -41,6 +41,8 @@ public class QueryDeviceResponse extends AcsResponse {
 
 	private Integer page;
 
+	private String nextToken;
+
 	private List<DeviceInfo> data;
 
 	public String getRequestId() {
@@ -105,6 +107,14 @@ public class QueryDeviceResponse extends AcsResponse {
 
 	public void setPage(Integer page) {
 		this.page = page;
+	}
+
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
 	}
 
 	public List<DeviceInfo> getData() {

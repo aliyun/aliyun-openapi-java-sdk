@@ -25,8 +25,6 @@ import com.aliyuncs.dataworks_public.Endpoint;
 public class TopTenElapsedTimeInstanceRequest extends RpcAcsRequest<TopTenElapsedTimeInstanceResponse> {
 	   
 
-	private String businessDate;
-
 	private Long projectId;
 	public TopTenElapsedTimeInstanceRequest() {
 		super("dataworks-public", "2020-05-18", "TopTenElapsedTimeInstance");
@@ -35,17 +33,6 @@ public class TopTenElapsedTimeInstanceRequest extends RpcAcsRequest<TopTenElapse
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getBusinessDate() {
-		return this.businessDate;
-	}
-
-	public void setBusinessDate(String businessDate) {
-		this.businessDate = businessDate;
-		if(businessDate != null){
-			putBodyParameter("BusinessDate", businessDate);
-		}
 	}
 
 	public Long getProjectId() {

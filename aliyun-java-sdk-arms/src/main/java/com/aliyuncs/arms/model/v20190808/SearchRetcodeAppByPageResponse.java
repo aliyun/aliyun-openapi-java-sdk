@@ -105,6 +105,8 @@ public class SearchRetcodeAppByPageResponse extends AcsResponse {
 
 			private Long updateTime;
 
+			private String retcodeAppType;
+
 			public Long getAppId() {
 				return this.appId;
 			}
@@ -167,6 +169,14 @@ public class SearchRetcodeAppByPageResponse extends AcsResponse {
 
 			public void setUpdateTime(Long updateTime) {
 				this.updateTime = updateTime;
+			}
+
+			public String getRetcodeAppType() {
+				return this.retcodeAppType;
+			}
+
+			public void setRetcodeAppType(String retcodeAppType) {
+				this.retcodeAppType = retcodeAppType;
 			}
 		}
 	}

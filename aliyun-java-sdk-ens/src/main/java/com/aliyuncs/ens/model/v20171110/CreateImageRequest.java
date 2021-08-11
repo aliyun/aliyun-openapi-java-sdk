@@ -24,27 +24,16 @@ import com.aliyuncs.http.MethodType;
 public class CreateImageRequest extends RpcAcsRequest<CreateImageResponse> {
 	   
 
-	private String instanceId;
-
 	private String deleteAfterImageUpload;
 
 	private String imageName;
 
 	private String product;
+
+	private String instanceId;
 	public CreateImageRequest() {
 		super("Ens", "2017-11-10", "CreateImage", "ens");
 		setMethod(MethodType.POST);
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
 	}
 
 	public String getDeleteAfterImageUpload() {
@@ -77,6 +66,17 @@ public class CreateImageRequest extends RpcAcsRequest<CreateImageResponse> {
 		this.product = product;
 		if(product != null){
 			putQueryParameter("product", product);
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 

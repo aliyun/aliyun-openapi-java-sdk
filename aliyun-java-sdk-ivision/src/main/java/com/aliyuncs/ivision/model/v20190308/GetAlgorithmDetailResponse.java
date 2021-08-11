@@ -24,9 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetAlgorithmDetailResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String message;
+
+	private String requestId;
 
 	private String code;
 
@@ -34,20 +34,20 @@ public class GetAlgorithmDetailResponse extends AcsResponse {
 
 	private Data data;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public String getMessage() {
 		return this.message;
 	}
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getCode() {
@@ -76,32 +76,24 @@ public class GetAlgorithmDetailResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Integer currentMonthSuccessCount;
-
-		private String apiDocUrl;
+		private String algorithmName;
 
 		private String deployRegion;
 
 		private Integer currentMonthCount;
 
-		private String algorithmName;
-
 		private String algorithmCode;
 
-		public Integer getCurrentMonthSuccessCount() {
-			return this.currentMonthSuccessCount;
+		private String apiDocUrl;
+
+		private Integer currentMonthSuccessCount;
+
+		public String getAlgorithmName() {
+			return this.algorithmName;
 		}
 
-		public void setCurrentMonthSuccessCount(Integer currentMonthSuccessCount) {
-			this.currentMonthSuccessCount = currentMonthSuccessCount;
-		}
-
-		public String getApiDocUrl() {
-			return this.apiDocUrl;
-		}
-
-		public void setApiDocUrl(String apiDocUrl) {
-			this.apiDocUrl = apiDocUrl;
+		public void setAlgorithmName(String algorithmName) {
+			this.algorithmName = algorithmName;
 		}
 
 		public String getDeployRegion() {
@@ -120,20 +112,28 @@ public class GetAlgorithmDetailResponse extends AcsResponse {
 			this.currentMonthCount = currentMonthCount;
 		}
 
-		public String getAlgorithmName() {
-			return this.algorithmName;
-		}
-
-		public void setAlgorithmName(String algorithmName) {
-			this.algorithmName = algorithmName;
-		}
-
 		public String getAlgorithmCode() {
 			return this.algorithmCode;
 		}
 
 		public void setAlgorithmCode(String algorithmCode) {
 			this.algorithmCode = algorithmCode;
+		}
+
+		public String getApiDocUrl() {
+			return this.apiDocUrl;
+		}
+
+		public void setApiDocUrl(String apiDocUrl) {
+			this.apiDocUrl = apiDocUrl;
+		}
+
+		public Integer getCurrentMonthSuccessCount() {
+			return this.currentMonthSuccessCount;
+		}
+
+		public void setCurrentMonthSuccessCount(Integer currentMonthSuccessCount) {
+			this.currentMonthSuccessCount = currentMonthSuccessCount;
 		}
 	}
 

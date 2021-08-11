@@ -46,21 +46,13 @@ public class SetSecurityPreferenceResponse extends AcsResponse {
 
 	public static class SecurityPreference {
 
-		private LoginProfilePreference loginProfilePreference;
-
 		private AccessKeyPreference accessKeyPreference;
-
-		private PublicKeyPreference publicKeyPreference;
 
 		private MFAPreference mFAPreference;
 
-		public LoginProfilePreference getLoginProfilePreference() {
-			return this.loginProfilePreference;
-		}
+		private LoginProfilePreference loginProfilePreference;
 
-		public void setLoginProfilePreference(LoginProfilePreference loginProfilePreference) {
-			this.loginProfilePreference = loginProfilePreference;
-		}
+		private PublicKeyPreference publicKeyPreference;
 
 		public AccessKeyPreference getAccessKeyPreference() {
 			return this.accessKeyPreference;
@@ -68,14 +60,6 @@ public class SetSecurityPreferenceResponse extends AcsResponse {
 
 		public void setAccessKeyPreference(AccessKeyPreference accessKeyPreference) {
 			this.accessKeyPreference = accessKeyPreference;
-		}
-
-		public PublicKeyPreference getPublicKeyPreference() {
-			return this.publicKeyPreference;
-		}
-
-		public void setPublicKeyPreference(PublicKeyPreference publicKeyPreference) {
-			this.publicKeyPreference = publicKeyPreference;
 		}
 
 		public MFAPreference getMFAPreference() {
@@ -86,15 +70,57 @@ public class SetSecurityPreferenceResponse extends AcsResponse {
 			this.mFAPreference = mFAPreference;
 		}
 
+		public LoginProfilePreference getLoginProfilePreference() {
+			return this.loginProfilePreference;
+		}
+
+		public void setLoginProfilePreference(LoginProfilePreference loginProfilePreference) {
+			this.loginProfilePreference = loginProfilePreference;
+		}
+
+		public PublicKeyPreference getPublicKeyPreference() {
+			return this.publicKeyPreference;
+		}
+
+		public void setPublicKeyPreference(PublicKeyPreference publicKeyPreference) {
+			this.publicKeyPreference = publicKeyPreference;
+		}
+
+		public static class AccessKeyPreference {
+
+			private Boolean allowUserToManageAccessKeys;
+
+			public Boolean getAllowUserToManageAccessKeys() {
+				return this.allowUserToManageAccessKeys;
+			}
+
+			public void setAllowUserToManageAccessKeys(Boolean allowUserToManageAccessKeys) {
+				this.allowUserToManageAccessKeys = allowUserToManageAccessKeys;
+			}
+		}
+
+		public static class MFAPreference {
+
+			private Boolean allowUserToManageMFADevices;
+
+			public Boolean getAllowUserToManageMFADevices() {
+				return this.allowUserToManageMFADevices;
+			}
+
+			public void setAllowUserToManageMFADevices(Boolean allowUserToManageMFADevices) {
+				this.allowUserToManageMFADevices = allowUserToManageMFADevices;
+			}
+		}
+
 		public static class LoginProfilePreference {
 
 			private Boolean enableSaveMFATicket;
 
-			private Boolean allowUserToChangePassword;
-
 			private Integer loginSessionDuration;
 
 			private String loginNetworkMasks;
+
+			private Boolean allowUserToChangePassword;
 
 			public Boolean getEnableSaveMFATicket() {
 				return this.enableSaveMFATicket;
@@ -102,14 +128,6 @@ public class SetSecurityPreferenceResponse extends AcsResponse {
 
 			public void setEnableSaveMFATicket(Boolean enableSaveMFATicket) {
 				this.enableSaveMFATicket = enableSaveMFATicket;
-			}
-
-			public Boolean getAllowUserToChangePassword() {
-				return this.allowUserToChangePassword;
-			}
-
-			public void setAllowUserToChangePassword(Boolean allowUserToChangePassword) {
-				this.allowUserToChangePassword = allowUserToChangePassword;
 			}
 
 			public Integer getLoginSessionDuration() {
@@ -127,18 +145,13 @@ public class SetSecurityPreferenceResponse extends AcsResponse {
 			public void setLoginNetworkMasks(String loginNetworkMasks) {
 				this.loginNetworkMasks = loginNetworkMasks;
 			}
-		}
 
-		public static class AccessKeyPreference {
-
-			private Boolean allowUserToManageAccessKeys;
-
-			public Boolean getAllowUserToManageAccessKeys() {
-				return this.allowUserToManageAccessKeys;
+			public Boolean getAllowUserToChangePassword() {
+				return this.allowUserToChangePassword;
 			}
 
-			public void setAllowUserToManageAccessKeys(Boolean allowUserToManageAccessKeys) {
-				this.allowUserToManageAccessKeys = allowUserToManageAccessKeys;
+			public void setAllowUserToChangePassword(Boolean allowUserToChangePassword) {
+				this.allowUserToChangePassword = allowUserToChangePassword;
 			}
 		}
 
@@ -152,19 +165,6 @@ public class SetSecurityPreferenceResponse extends AcsResponse {
 
 			public void setAllowUserToManagePublicKeys(Boolean allowUserToManagePublicKeys) {
 				this.allowUserToManagePublicKeys = allowUserToManagePublicKeys;
-			}
-		}
-
-		public static class MFAPreference {
-
-			private Boolean allowUserToManageMFADevices;
-
-			public Boolean getAllowUserToManageMFADevices() {
-				return this.allowUserToManageMFADevices;
-			}
-
-			public void setAllowUserToManageMFADevices(Boolean allowUserToManageMFADevices) {
-				this.allowUserToManageMFADevices = allowUserToManageMFADevices;
 			}
 		}
 	}

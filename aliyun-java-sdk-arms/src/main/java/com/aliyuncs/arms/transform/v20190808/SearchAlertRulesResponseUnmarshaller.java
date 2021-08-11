@@ -59,6 +59,7 @@ public class SearchAlertRulesResponseUnmarshaller {
 			alertRuleEntity.setUserId(_ctx.stringValue("SearchAlertRulesResponse.PageBean.AlertRules["+ i +"].UserId"));
 			alertRuleEntity.setTitle(_ctx.stringValue("SearchAlertRulesResponse.PageBean.AlertRules["+ i +"].Title"));
 			alertRuleEntity.setContactGroupIds(_ctx.stringValue("SearchAlertRulesResponse.PageBean.AlertRules["+ i +"].ContactGroupIds"));
+			alertRuleEntity.setHostByAlertManager(_ctx.booleanValue("SearchAlertRulesResponse.PageBean.AlertRules["+ i +"].HostByAlertManager"));
 
 			List<String> alertWays = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("SearchAlertRulesResponse.PageBean.AlertRules["+ i +"].AlertWays.Length"); j++) {

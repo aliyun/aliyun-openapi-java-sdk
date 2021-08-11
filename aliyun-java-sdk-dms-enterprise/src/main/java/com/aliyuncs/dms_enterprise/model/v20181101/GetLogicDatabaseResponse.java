@@ -77,29 +77,21 @@ public class GetLogicDatabaseResponse extends AcsResponse {
 
 	public static class LogicDatabase {
 
-		private String searchName;
-
 		private String databaseId;
-
-		private Boolean logic;
-
-		private String envType;
-
-		private String schemaName;
 
 		private String dbType;
 
-		private List<String> ownerNameList;
+		private Boolean logic;
+
+		private String schemaName;
+
+		private String searchName;
+
+		private String envType;
 
 		private List<String> ownerIdList;
 
-		public String getSearchName() {
-			return this.searchName;
-		}
-
-		public void setSearchName(String searchName) {
-			this.searchName = searchName;
-		}
+		private List<String> ownerNameList;
 
 		public String getDatabaseId() {
 			return this.databaseId;
@@ -107,30 +99,6 @@ public class GetLogicDatabaseResponse extends AcsResponse {
 
 		public void setDatabaseId(String databaseId) {
 			this.databaseId = databaseId;
-		}
-
-		public Boolean getLogic() {
-			return this.logic;
-		}
-
-		public void setLogic(Boolean logic) {
-			this.logic = logic;
-		}
-
-		public String getEnvType() {
-			return this.envType;
-		}
-
-		public void setEnvType(String envType) {
-			this.envType = envType;
-		}
-
-		public String getSchemaName() {
-			return this.schemaName;
-		}
-
-		public void setSchemaName(String schemaName) {
-			this.schemaName = schemaName;
 		}
 
 		public String getDbType() {
@@ -141,12 +109,36 @@ public class GetLogicDatabaseResponse extends AcsResponse {
 			this.dbType = dbType;
 		}
 
-		public List<String> getOwnerNameList() {
-			return this.ownerNameList;
+		public Boolean getLogic() {
+			return this.logic;
 		}
 
-		public void setOwnerNameList(List<String> ownerNameList) {
-			this.ownerNameList = ownerNameList;
+		public void setLogic(Boolean logic) {
+			this.logic = logic;
+		}
+
+		public String getSchemaName() {
+			return this.schemaName;
+		}
+
+		public void setSchemaName(String schemaName) {
+			this.schemaName = schemaName;
+		}
+
+		public String getSearchName() {
+			return this.searchName;
+		}
+
+		public void setSearchName(String searchName) {
+			this.searchName = searchName;
+		}
+
+		public String getEnvType() {
+			return this.envType;
+		}
+
+		public void setEnvType(String envType) {
+			this.envType = envType;
 		}
 
 		public List<String> getOwnerIdList() {
@@ -155,6 +147,14 @@ public class GetLogicDatabaseResponse extends AcsResponse {
 
 		public void setOwnerIdList(List<String> ownerIdList) {
 			this.ownerIdList = ownerIdList;
+		}
+
+		public List<String> getOwnerNameList() {
+			return this.ownerNameList;
+		}
+
+		public void setOwnerNameList(List<String> ownerNameList) {
+			this.ownerNameList = ownerNameList;
 		}
 	}
 

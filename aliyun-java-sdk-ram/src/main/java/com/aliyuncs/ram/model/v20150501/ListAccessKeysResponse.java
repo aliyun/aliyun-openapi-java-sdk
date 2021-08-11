@@ -47,19 +47,11 @@ public class ListAccessKeysResponse extends AcsResponse {
 
 	public static class AccessKey {
 
-		private String accessKeyId;
-
 		private String status;
 
+		private String accessKeyId;
+
 		private String createDate;
-
-		public String getAccessKeyId() {
-			return this.accessKeyId;
-		}
-
-		public void setAccessKeyId(String accessKeyId) {
-			this.accessKeyId = accessKeyId;
-		}
 
 		public String getStatus() {
 			return this.status;
@@ -67,6 +59,14 @@ public class ListAccessKeysResponse extends AcsResponse {
 
 		public void setStatus(String status) {
 			this.status = status;
+		}
+
+		public String getAccessKeyId() {
+			return this.accessKeyId;
+		}
+
+		public void setAccessKeyId(String accessKeyId) {
+			this.accessKeyId = accessKeyId;
 		}
 
 		public String getCreateDate() {

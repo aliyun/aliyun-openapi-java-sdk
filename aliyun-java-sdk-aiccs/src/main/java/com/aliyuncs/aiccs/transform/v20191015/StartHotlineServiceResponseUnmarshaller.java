@@ -27,6 +27,7 @@ public class StartHotlineServiceResponseUnmarshaller {
 		startHotlineServiceResponse.setData(_ctx.stringValue("StartHotlineServiceResponse.Data"));
 		startHotlineServiceResponse.setCode(_ctx.stringValue("StartHotlineServiceResponse.Code"));
 		startHotlineServiceResponse.setSuccess(_ctx.booleanValue("StartHotlineServiceResponse.Success"));
+		startHotlineServiceResponse.setHttpStatusCode(_ctx.longValue("StartHotlineServiceResponse.HttpStatusCode"));
 	 
 	 	return startHotlineServiceResponse;
 	}

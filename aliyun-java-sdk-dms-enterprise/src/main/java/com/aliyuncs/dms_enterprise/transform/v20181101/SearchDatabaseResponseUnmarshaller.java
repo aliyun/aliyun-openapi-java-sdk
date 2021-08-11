@@ -35,31 +35,31 @@ public class SearchDatabaseResponseUnmarshaller {
 		List<SearchDatabase> searchDatabaseList = new ArrayList<SearchDatabase>();
 		for (int i = 0; i < _ctx.lengthValue("SearchDatabaseResponse.SearchDatabaseList.Length"); i++) {
 			SearchDatabase searchDatabase = new SearchDatabase();
+			searchDatabase.setDatabaseId(_ctx.stringValue("SearchDatabaseResponse.SearchDatabaseList["+ i +"].DatabaseId"));
+			searchDatabase.setHost(_ctx.stringValue("SearchDatabaseResponse.SearchDatabaseList["+ i +"].Host"));
 			searchDatabase.setDbaId(_ctx.stringValue("SearchDatabaseResponse.SearchDatabaseList["+ i +"].DbaId"));
+			searchDatabase.setSchemaName(_ctx.stringValue("SearchDatabaseResponse.SearchDatabaseList["+ i +"].SchemaName"));
+			searchDatabase.setLogic(_ctx.booleanValue("SearchDatabaseResponse.SearchDatabaseList["+ i +"].Logic"));
+			searchDatabase.setDatalinkName(_ctx.stringValue("SearchDatabaseResponse.SearchDatabaseList["+ i +"].DatalinkName"));
+			searchDatabase.setPort(_ctx.integerValue("SearchDatabaseResponse.SearchDatabaseList["+ i +"].Port"));
+			searchDatabase.setEnvType(_ctx.stringValue("SearchDatabaseResponse.SearchDatabaseList["+ i +"].EnvType"));
+			searchDatabase.setSid(_ctx.stringValue("SearchDatabaseResponse.SearchDatabaseList["+ i +"].Sid"));
+			searchDatabase.setEncoding(_ctx.stringValue("SearchDatabaseResponse.SearchDatabaseList["+ i +"].Encoding"));
+			searchDatabase.setDbType(_ctx.stringValue("SearchDatabaseResponse.SearchDatabaseList["+ i +"].DbType"));
 			searchDatabase.setSearchName(_ctx.stringValue("SearchDatabaseResponse.SearchDatabaseList["+ i +"].SearchName"));
 			searchDatabase.setAlias(_ctx.stringValue("SearchDatabaseResponse.SearchDatabaseList["+ i +"].Alias"));
-			searchDatabase.setPort(_ctx.integerValue("SearchDatabaseResponse.SearchDatabaseList["+ i +"].Port"));
-			searchDatabase.setDatalinkName(_ctx.stringValue("SearchDatabaseResponse.SearchDatabaseList["+ i +"].DatalinkName"));
-			searchDatabase.setEncoding(_ctx.stringValue("SearchDatabaseResponse.SearchDatabaseList["+ i +"].Encoding"));
-			searchDatabase.setHost(_ctx.stringValue("SearchDatabaseResponse.SearchDatabaseList["+ i +"].Host"));
-			searchDatabase.setDatabaseId(_ctx.stringValue("SearchDatabaseResponse.SearchDatabaseList["+ i +"].DatabaseId"));
-			searchDatabase.setLogic(_ctx.booleanValue("SearchDatabaseResponse.SearchDatabaseList["+ i +"].Logic"));
-			searchDatabase.setDbType(_ctx.stringValue("SearchDatabaseResponse.SearchDatabaseList["+ i +"].DbType"));
-			searchDatabase.setEnvType(_ctx.stringValue("SearchDatabaseResponse.SearchDatabaseList["+ i +"].EnvType"));
-			searchDatabase.setSchemaName(_ctx.stringValue("SearchDatabaseResponse.SearchDatabaseList["+ i +"].SchemaName"));
-			searchDatabase.setSid(_ctx.stringValue("SearchDatabaseResponse.SearchDatabaseList["+ i +"].Sid"));
-
-			List<String> ownerNameList = new ArrayList<String>();
-			for (int j = 0; j < _ctx.lengthValue("SearchDatabaseResponse.SearchDatabaseList["+ i +"].OwnerNameList.Length"); j++) {
-				ownerNameList.add(_ctx.stringValue("SearchDatabaseResponse.SearchDatabaseList["+ i +"].OwnerNameList["+ j +"]"));
-			}
-			searchDatabase.setOwnerNameList(ownerNameList);
 
 			List<String> ownerIdList = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("SearchDatabaseResponse.SearchDatabaseList["+ i +"].OwnerIdList.Length"); j++) {
 				ownerIdList.add(_ctx.stringValue("SearchDatabaseResponse.SearchDatabaseList["+ i +"].OwnerIdList["+ j +"]"));
 			}
 			searchDatabase.setOwnerIdList(ownerIdList);
+
+			List<String> ownerNameList = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("SearchDatabaseResponse.SearchDatabaseList["+ i +"].OwnerNameList.Length"); j++) {
+				ownerNameList.add(_ctx.stringValue("SearchDatabaseResponse.SearchDatabaseList["+ i +"].OwnerNameList["+ j +"]"));
+			}
+			searchDatabase.setOwnerNameList(ownerNameList);
 
 			searchDatabaseList.add(searchDatabase);
 		}

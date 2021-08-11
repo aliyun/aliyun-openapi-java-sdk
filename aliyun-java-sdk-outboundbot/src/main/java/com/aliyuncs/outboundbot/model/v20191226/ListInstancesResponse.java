@@ -101,9 +101,19 @@ public class ListInstancesResponse extends AcsResponse {
 
 		private Integer maxConcurrentConversation;
 
-		private String owner;
+		private String ownerName;
+
+		private Long creatorId;
+
+		private String creatorName;
 
 		private String nluServiceType;
+
+		private String owner;
+
+		private String resourceGroupId;
+
+		private List<ResourceTag> resourceTags;
 
 		private NluProfile nluProfile;
 
@@ -163,12 +173,28 @@ public class ListInstancesResponse extends AcsResponse {
 			this.maxConcurrentConversation = maxConcurrentConversation;
 		}
 
-		public String getOwner() {
-			return this.owner;
+		public String getOwnerName() {
+			return this.ownerName;
 		}
 
-		public void setOwner(String owner) {
-			this.owner = owner;
+		public void setOwnerName(String ownerName) {
+			this.ownerName = ownerName;
+		}
+
+		public Long getCreatorId() {
+			return this.creatorId;
+		}
+
+		public void setCreatorId(Long creatorId) {
+			this.creatorId = creatorId;
+		}
+
+		public String getCreatorName() {
+			return this.creatorName;
+		}
+
+		public void setCreatorName(String creatorName) {
+			this.creatorName = creatorName;
 		}
 
 		public String getNluServiceType() {
@@ -179,6 +205,30 @@ public class ListInstancesResponse extends AcsResponse {
 			this.nluServiceType = nluServiceType;
 		}
 
+		public String getOwner() {
+			return this.owner;
+		}
+
+		public void setOwner(String owner) {
+			this.owner = owner;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
+		public List<ResourceTag> getResourceTags() {
+			return this.resourceTags;
+		}
+
+		public void setResourceTags(List<ResourceTag> resourceTags) {
+			this.resourceTags = resourceTags;
+		}
+
 		public NluProfile getNluProfile() {
 			return this.nluProfile;
 		}
@@ -187,21 +237,36 @@ public class ListInstancesResponse extends AcsResponse {
 			this.nluProfile = nluProfile;
 		}
 
-		public static class NluProfile {
+		public static class ResourceTag {
 
-			private String endpoint;
+			private String key;
+
+			private String value;
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
+			}
+		}
+
+		public static class NluProfile {
 
 			private String accessKey;
 
+			private String endpoint;
+
 			private String secretKey;
-
-			public String getEndpoint() {
-				return this.endpoint;
-			}
-
-			public void setEndpoint(String endpoint) {
-				this.endpoint = endpoint;
-			}
 
 			public String getAccessKey() {
 				return this.accessKey;
@@ -209,6 +274,14 @@ public class ListInstancesResponse extends AcsResponse {
 
 			public void setAccessKey(String accessKey) {
 				this.accessKey = accessKey;
+			}
+
+			public String getEndpoint() {
+				return this.endpoint;
+			}
+
+			public void setEndpoint(String endpoint) {
+				this.endpoint = endpoint;
 			}
 
 			public String getSecretKey() {

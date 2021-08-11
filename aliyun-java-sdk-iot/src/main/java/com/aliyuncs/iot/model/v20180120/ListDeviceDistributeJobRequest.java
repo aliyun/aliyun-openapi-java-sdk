@@ -27,6 +27,8 @@ public class ListDeviceDistributeJobRequest extends RpcAcsRequest<ListDeviceDist
 
 	private String jobId;
 
+	private String nextToken;
+
 	private Integer pageSize;
 
 	private Integer currentPage;
@@ -51,6 +53,17 @@ public class ListDeviceDistributeJobRequest extends RpcAcsRequest<ListDeviceDist
 		this.jobId = jobId;
 		if(jobId != null){
 			putBodyParameter("JobId", jobId);
+		}
+	}
+
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+		if(nextToken != null){
+			putQueryParameter("NextToken", nextToken);
 		}
 	}
 

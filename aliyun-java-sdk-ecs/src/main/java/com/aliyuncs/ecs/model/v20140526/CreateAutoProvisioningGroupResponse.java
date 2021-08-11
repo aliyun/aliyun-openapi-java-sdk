@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateAutoProvisioningGroupResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String autoProvisioningGroupId;
 
+	private String requestId;
+
 	private List<LaunchResult> launchResults;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getAutoProvisioningGroupId() {
 		return this.autoProvisioningGroupId;
@@ -45,6 +37,14 @@ public class CreateAutoProvisioningGroupResponse extends AcsResponse {
 
 	public void setAutoProvisioningGroupId(String autoProvisioningGroupId) {
 		this.autoProvisioningGroupId = autoProvisioningGroupId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<LaunchResult> getLaunchResults() {
@@ -57,24 +57,32 @@ public class CreateAutoProvisioningGroupResponse extends AcsResponse {
 
 	public static class LaunchResult {
 
-		private String spotStrategy;
-
-		private String instanceType;
-
 		private String zoneId;
-
-		private String errorCode;
 
 		private String errorMsg;
 
+		private String instanceType;
+
+		private String errorCode;
+
+		private String spotStrategy;
+
 		private List<String> instanceIds;
 
-		public String getSpotStrategy() {
-			return this.spotStrategy;
+		public String getZoneId() {
+			return this.zoneId;
 		}
 
-		public void setSpotStrategy(String spotStrategy) {
-			this.spotStrategy = spotStrategy;
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
+		}
+
+		public String getErrorMsg() {
+			return this.errorMsg;
+		}
+
+		public void setErrorMsg(String errorMsg) {
+			this.errorMsg = errorMsg;
 		}
 
 		public String getInstanceType() {
@@ -85,14 +93,6 @@ public class CreateAutoProvisioningGroupResponse extends AcsResponse {
 			this.instanceType = instanceType;
 		}
 
-		public String getZoneId() {
-			return this.zoneId;
-		}
-
-		public void setZoneId(String zoneId) {
-			this.zoneId = zoneId;
-		}
-
 		public String getErrorCode() {
 			return this.errorCode;
 		}
@@ -101,12 +101,12 @@ public class CreateAutoProvisioningGroupResponse extends AcsResponse {
 			this.errorCode = errorCode;
 		}
 
-		public String getErrorMsg() {
-			return this.errorMsg;
+		public String getSpotStrategy() {
+			return this.spotStrategy;
 		}
 
-		public void setErrorMsg(String errorMsg) {
-			this.errorMsg = errorMsg;
+		public void setSpotStrategy(String spotStrategy) {
+			this.spotStrategy = spotStrategy;
 		}
 
 		public List<String> getInstanceIds() {

@@ -23,10 +23,10 @@ public class CancelPipelineResponseUnmarshaller {
 	public static CancelPipelineResponse unmarshall(CancelPipelineResponse cancelPipelineResponse, UnmarshallerContext _ctx) {
 		
 		cancelPipelineResponse.setRequestId(_ctx.stringValue("CancelPipelineResponse.RequestId"));
-		cancelPipelineResponse.setSuccess(_ctx.booleanValue("CancelPipelineResponse.Success"));
-		cancelPipelineResponse.setErrorCode(_ctx.stringValue("CancelPipelineResponse.ErrorCode"));
 		cancelPipelineResponse.setErrorMessage(_ctx.stringValue("CancelPipelineResponse.ErrorMessage"));
 		cancelPipelineResponse.setObject(_ctx.booleanValue("CancelPipelineResponse.Object"));
+		cancelPipelineResponse.setErrorCode(_ctx.stringValue("CancelPipelineResponse.ErrorCode"));
+		cancelPipelineResponse.setSuccess(_ctx.booleanValue("CancelPipelineResponse.Success"));
 	 
 	 	return cancelPipelineResponse;
 	}

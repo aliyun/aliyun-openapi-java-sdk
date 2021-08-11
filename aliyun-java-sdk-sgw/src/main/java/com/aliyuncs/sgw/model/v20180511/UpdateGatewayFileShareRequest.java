@@ -37,6 +37,8 @@ public class UpdateGatewayFileShareRequest extends RpcAcsRequest<UpdateGatewayFi
 
 	private String readWriteClientList;
 
+	private Boolean bypassCacheRead;
+
 	private Integer backendLimit;
 
 	private String squash;
@@ -158,6 +160,17 @@ public class UpdateGatewayFileShareRequest extends RpcAcsRequest<UpdateGatewayFi
 		this.readWriteClientList = readWriteClientList;
 		if(readWriteClientList != null){
 			putQueryParameter("ReadWriteClientList", readWriteClientList);
+		}
+	}
+
+	public Boolean getBypassCacheRead() {
+		return this.bypassCacheRead;
+	}
+
+	public void setBypassCacheRead(Boolean bypassCacheRead) {
+		this.bypassCacheRead = bypassCacheRead;
+		if(bypassCacheRead != null){
+			putQueryParameter("BypassCacheRead", bypassCacheRead.toString());
 		}
 	}
 

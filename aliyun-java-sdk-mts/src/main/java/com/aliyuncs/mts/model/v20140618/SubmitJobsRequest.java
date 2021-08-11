@@ -43,7 +43,7 @@ public class SubmitJobsRequest extends RpcAcsRequest<SubmitJobsResponse> {
 
 	private String outputBucket;
 	public SubmitJobsRequest() {
-		super("Mts", "2014-06-18", "SubmitJobs");
+		super("Mts", "2014-06-18", "SubmitJobs", "mts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

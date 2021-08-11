@@ -27,11 +27,11 @@ public class GetDBTopologyResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String errorCode;
+	private Boolean success;
 
 	private String errorMessage;
 
-	private Boolean success;
+	private String errorCode;
 
 	private DBTopology dBTopology;
 
@@ -43,12 +43,12 @@ public class GetDBTopologyResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getErrorCode() {
-		return this.errorCode;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public String getErrorMessage() {
@@ -59,12 +59,12 @@ public class GetDBTopologyResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getErrorCode() {
+		return this.errorCode;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
 	}
 
 	public DBTopology getDBTopology() {
@@ -79,15 +79,15 @@ public class GetDBTopologyResponse extends AcsResponse {
 
 		private Long logicDbId;
 
+		private String logicDbName;
+
 		private String searchName;
 
 		private String alias;
 
-		private String logicDbName;
+		private String dbType;
 
 		private String envType;
-
-		private String dbType;
 
 		private List<DBTopologyInfo> dBTopologyInfoList;
 
@@ -97,6 +97,14 @@ public class GetDBTopologyResponse extends AcsResponse {
 
 		public void setLogicDbId(Long logicDbId) {
 			this.logicDbId = logicDbId;
+		}
+
+		public String getLogicDbName() {
+			return this.logicDbName;
+		}
+
+		public void setLogicDbName(String logicDbName) {
+			this.logicDbName = logicDbName;
 		}
 
 		public String getSearchName() {
@@ -115,12 +123,12 @@ public class GetDBTopologyResponse extends AcsResponse {
 			this.alias = alias;
 		}
 
-		public String getLogicDbName() {
-			return this.logicDbName;
+		public String getDbType() {
+			return this.dbType;
 		}
 
-		public void setLogicDbName(String logicDbName) {
-			this.logicDbName = logicDbName;
+		public void setDbType(String dbType) {
+			this.dbType = dbType;
 		}
 
 		public String getEnvType() {
@@ -129,14 +137,6 @@ public class GetDBTopologyResponse extends AcsResponse {
 
 		public void setEnvType(String envType) {
 			this.envType = envType;
-		}
-
-		public String getDbType() {
-			return this.dbType;
-		}
-
-		public void setDbType(String dbType) {
-			this.dbType = dbType;
 		}
 
 		public List<DBTopologyInfo> getDBTopologyInfoList() {
@@ -149,57 +149,25 @@ public class GetDBTopologyResponse extends AcsResponse {
 
 		public static class DBTopologyInfo {
 
-			private String instanceSource;
-
-			private String instanceResourceId;
-
-			private Long instanceId;
-
-			private String searchName;
-
 			private Long dbId;
-
-			private String catalogName;
-
-			private String regionId;
-
-			private String envType;
-
-			private String dbType;
 
 			private String schemaName;
 
-			public String getInstanceSource() {
-				return this.instanceSource;
-			}
+			private String catalogName;
 
-			public void setInstanceSource(String instanceSource) {
-				this.instanceSource = instanceSource;
-			}
+			private String searchName;
 
-			public String getInstanceResourceId() {
-				return this.instanceResourceId;
-			}
+			private String dbType;
 
-			public void setInstanceResourceId(String instanceResourceId) {
-				this.instanceResourceId = instanceResourceId;
-			}
+			private String envType;
 
-			public Long getInstanceId() {
-				return this.instanceId;
-			}
+			private Long instanceId;
 
-			public void setInstanceId(Long instanceId) {
-				this.instanceId = instanceId;
-			}
+			private String regionId;
 
-			public String getSearchName() {
-				return this.searchName;
-			}
+			private String instanceResourceId;
 
-			public void setSearchName(String searchName) {
-				this.searchName = searchName;
-			}
+			private String instanceSource;
 
 			public Long getDbId() {
 				return this.dbId;
@@ -207,6 +175,14 @@ public class GetDBTopologyResponse extends AcsResponse {
 
 			public void setDbId(Long dbId) {
 				this.dbId = dbId;
+			}
+
+			public String getSchemaName() {
+				return this.schemaName;
+			}
+
+			public void setSchemaName(String schemaName) {
+				this.schemaName = schemaName;
 			}
 
 			public String getCatalogName() {
@@ -217,20 +193,12 @@ public class GetDBTopologyResponse extends AcsResponse {
 				this.catalogName = catalogName;
 			}
 
-			public String getRegionId() {
-				return this.regionId;
+			public String getSearchName() {
+				return this.searchName;
 			}
 
-			public void setRegionId(String regionId) {
-				this.regionId = regionId;
-			}
-
-			public String getEnvType() {
-				return this.envType;
-			}
-
-			public void setEnvType(String envType) {
-				this.envType = envType;
+			public void setSearchName(String searchName) {
+				this.searchName = searchName;
 			}
 
 			public String getDbType() {
@@ -241,12 +209,44 @@ public class GetDBTopologyResponse extends AcsResponse {
 				this.dbType = dbType;
 			}
 
-			public String getSchemaName() {
-				return this.schemaName;
+			public String getEnvType() {
+				return this.envType;
 			}
 
-			public void setSchemaName(String schemaName) {
-				this.schemaName = schemaName;
+			public void setEnvType(String envType) {
+				this.envType = envType;
+			}
+
+			public Long getInstanceId() {
+				return this.instanceId;
+			}
+
+			public void setInstanceId(Long instanceId) {
+				this.instanceId = instanceId;
+			}
+
+			public String getRegionId() {
+				return this.regionId;
+			}
+
+			public void setRegionId(String regionId) {
+				this.regionId = regionId;
+			}
+
+			public String getInstanceResourceId() {
+				return this.instanceResourceId;
+			}
+
+			public void setInstanceResourceId(String instanceResourceId) {
+				this.instanceResourceId = instanceResourceId;
+			}
+
+			public String getInstanceSource() {
+				return this.instanceSource;
+			}
+
+			public void setInstanceSource(String instanceSource) {
+				this.instanceSource = instanceSource;
 			}
 		}
 	}

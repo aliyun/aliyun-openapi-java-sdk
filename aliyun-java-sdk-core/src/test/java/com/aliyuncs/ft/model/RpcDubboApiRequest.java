@@ -53,11 +53,11 @@ public class RpcDubboApiRequest extends RpcAcsRequest<RpcDubboApiResponse> {
         Map<String, String> imutableMap = new HashMap<String, String>(this.getSysQueryParameters());
         if (null != signer && null != credentials) {
             String accessKeyId = credentials.getAccessKeyId();
-
+            imutableMap.put("AccessKeyId", accessKeyId);
             if (credentials instanceof BasicSessionCredentials) {
                 BasicSessionCredentials basicSessionCredentials = (BasicSessionCredentials) credentials;
                 if (basicSessionCredentials.getSessionToken() != null) {
-                    this.putQueryParameter("SecurityToken", basicSessionCredentials.getSessionToken());
+                    imutableMap.put("SecurityToken", basicSessionCredentials.getSessionToken());
                 }
             }
             imutableMap = this.composer.refreshSignParameters(this.getSysQueryParameters(), signer, accessKeyId, format);

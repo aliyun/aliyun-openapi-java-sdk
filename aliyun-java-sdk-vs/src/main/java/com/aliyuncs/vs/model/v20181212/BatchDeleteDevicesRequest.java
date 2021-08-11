@@ -29,7 +29,7 @@ public class BatchDeleteDevicesRequest extends RpcAcsRequest<BatchDeleteDevicesR
 
 	private Long ownerId;
 	public BatchDeleteDevicesRequest() {
-		super("vs", "2018-12-12", "BatchDeleteDevices", "vs");
+		super("vs", "2018-12-12", "BatchDeleteDevices");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

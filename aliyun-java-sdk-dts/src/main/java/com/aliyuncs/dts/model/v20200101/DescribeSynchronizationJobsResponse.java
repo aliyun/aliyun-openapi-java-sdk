@@ -101,6 +101,10 @@ public class DescribeSynchronizationJobsResponse extends AcsResponse {
 
 		private String synchronizationJobName;
 
+		private String jobCreateTime;
+
+		private String instanceCreateTime;
+
 		private List<Tag> tags;
 
 		private List<SynchronizationObject> synchronizationObjects;
@@ -213,6 +217,22 @@ public class DescribeSynchronizationJobsResponse extends AcsResponse {
 
 		public void setSynchronizationJobName(String synchronizationJobName) {
 			this.synchronizationJobName = synchronizationJobName;
+		}
+
+		public String getJobCreateTime() {
+			return this.jobCreateTime;
+		}
+
+		public void setJobCreateTime(String jobCreateTime) {
+			this.jobCreateTime = jobCreateTime;
+		}
+
+		public String getInstanceCreateTime() {
+			return this.instanceCreateTime;
+		}
+
+		public void setInstanceCreateTime(String instanceCreateTime) {
+			this.instanceCreateTime = instanceCreateTime;
 		}
 
 		public List<Tag> getTags() {

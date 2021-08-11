@@ -29,6 +29,8 @@ public class RescaleDeviceServiceResponse extends AcsResponse {
 
 	private List<ResourceDetailInfo> resourceDetailInfos;
 
+	private List<String> deviceIds;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -45,6 +47,14 @@ public class RescaleDeviceServiceResponse extends AcsResponse {
 		this.resourceDetailInfos = resourceDetailInfos;
 	}
 
+	public List<String> getDeviceIds() {
+		return this.deviceIds;
+	}
+
+	public void setDeviceIds(List<String> deviceIds) {
+		this.deviceIds = deviceIds;
+	}
+
 	public static class ResourceDetailInfo {
 
 		private String regionID;
@@ -58,6 +68,10 @@ public class RescaleDeviceServiceResponse extends AcsResponse {
 		private String type;
 
 		private String status;
+
+		private String mac;
+
+		private String iSP;
 
 		public String getRegionID() {
 			return this.regionID;
@@ -105,6 +119,22 @@ public class RescaleDeviceServiceResponse extends AcsResponse {
 
 		public void setStatus(String status) {
 			this.status = status;
+		}
+
+		public String getMac() {
+			return this.mac;
+		}
+
+		public void setMac(String mac) {
+			this.mac = mac;
+		}
+
+		public String getISP() {
+			return this.iSP;
+		}
+
+		public void setISP(String iSP) {
+			this.iSP = iSP;
 		}
 	}
 

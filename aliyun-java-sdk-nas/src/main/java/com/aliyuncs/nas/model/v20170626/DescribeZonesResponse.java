@@ -49,9 +49,11 @@ public class DescribeZonesResponse extends AcsResponse {
 
 		private String zoneId;
 
-		private List<String> capacity;
+		private List<InstanceType> instanceTypes;
 
 		private List<String> performance;
+
+		private List<String> capacity;
 
 		public String getZoneId() {
 			return this.zoneId;
@@ -59,6 +61,22 @@ public class DescribeZonesResponse extends AcsResponse {
 
 		public void setZoneId(String zoneId) {
 			this.zoneId = zoneId;
+		}
+
+		public List<InstanceType> getInstanceTypes() {
+			return this.instanceTypes;
+		}
+
+		public void setInstanceTypes(List<InstanceType> instanceTypes) {
+			this.instanceTypes = instanceTypes;
+		}
+
+		public List<String> getPerformance() {
+			return this.performance;
+		}
+
+		public void setPerformance(List<String> performance) {
+			this.performance = performance;
 		}
 
 		public List<String> getCapacity() {
@@ -69,12 +87,27 @@ public class DescribeZonesResponse extends AcsResponse {
 			this.capacity = capacity;
 		}
 
-		public List<String> getPerformance() {
-			return this.performance;
-		}
+		public static class InstanceType {
 
-		public void setPerformance(List<String> performance) {
-			this.performance = performance;
+			private String storageType;
+
+			private String protocolType;
+
+			public String getStorageType() {
+				return this.storageType;
+			}
+
+			public void setStorageType(String storageType) {
+				this.storageType = storageType;
+			}
+
+			public String getProtocolType() {
+				return this.protocolType;
+			}
+
+			public void setProtocolType(String protocolType) {
+				this.protocolType = protocolType;
+			}
 		}
 	}
 

@@ -59,34 +59,26 @@ public class GetInventoryResponse extends AcsResponse {
 
 		public static class ResultObjectItem {
 
-			private String buyerId;
-
-			private String instanceId;
+			private String commodityCode;
 
 			private String currentInventory;
 
-			private String validEndTime;
+			private String inventoryId;
 
-			private String commodityCode;
+			private String instanceId;
+
+			private String buyerId;
 
 			private String validStartTime;
 
-			private String inventoryId;
+			private String validEndTime;
 
-			public String getBuyerId() {
-				return this.buyerId;
+			public String getCommodityCode() {
+				return this.commodityCode;
 			}
 
-			public void setBuyerId(String buyerId) {
-				this.buyerId = buyerId;
-			}
-
-			public String getInstanceId() {
-				return this.instanceId;
-			}
-
-			public void setInstanceId(String instanceId) {
-				this.instanceId = instanceId;
+			public void setCommodityCode(String commodityCode) {
+				this.commodityCode = commodityCode;
 			}
 
 			public String getCurrentInventory() {
@@ -97,20 +89,28 @@ public class GetInventoryResponse extends AcsResponse {
 				this.currentInventory = currentInventory;
 			}
 
-			public String getValidEndTime() {
-				return this.validEndTime;
+			public String getInventoryId() {
+				return this.inventoryId;
 			}
 
-			public void setValidEndTime(String validEndTime) {
-				this.validEndTime = validEndTime;
+			public void setInventoryId(String inventoryId) {
+				this.inventoryId = inventoryId;
 			}
 
-			public String getCommodityCode() {
-				return this.commodityCode;
+			public String getInstanceId() {
+				return this.instanceId;
 			}
 
-			public void setCommodityCode(String commodityCode) {
-				this.commodityCode = commodityCode;
+			public void setInstanceId(String instanceId) {
+				this.instanceId = instanceId;
+			}
+
+			public String getBuyerId() {
+				return this.buyerId;
+			}
+
+			public void setBuyerId(String buyerId) {
+				this.buyerId = buyerId;
 			}
 
 			public String getValidStartTime() {
@@ -121,12 +121,12 @@ public class GetInventoryResponse extends AcsResponse {
 				this.validStartTime = validStartTime;
 			}
 
-			public String getInventoryId() {
-				return this.inventoryId;
+			public String getValidEndTime() {
+				return this.validEndTime;
 			}
 
-			public void setInventoryId(String inventoryId) {
-				this.inventoryId = inventoryId;
+			public void setValidEndTime(String validEndTime) {
+				this.validEndTime = validEndTime;
 			}
 		}
 	}

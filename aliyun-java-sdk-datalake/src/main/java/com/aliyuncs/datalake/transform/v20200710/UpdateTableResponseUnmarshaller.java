@@ -23,9 +23,10 @@ public class UpdateTableResponseUnmarshaller {
 	public static UpdateTableResponse unmarshall(UpdateTableResponse updateTableResponse, UnmarshallerContext _ctx) {
 		
 		updateTableResponse.setRequestId(_ctx.stringValue("UpdateTableResponse.RequestId"));
-		updateTableResponse.setMessage(_ctx.stringValue("UpdateTableResponse.Message"));
 		updateTableResponse.setCode(_ctx.stringValue("UpdateTableResponse.Code"));
+		updateTableResponse.setMessage(_ctx.stringValue("UpdateTableResponse.Message"));
 		updateTableResponse.setSuccess(_ctx.booleanValue("UpdateTableResponse.Success"));
+		updateTableResponse.setTaskId(_ctx.stringValue("UpdateTableResponse.TaskId"));
 	 
 	 	return updateTableResponse;
 	}

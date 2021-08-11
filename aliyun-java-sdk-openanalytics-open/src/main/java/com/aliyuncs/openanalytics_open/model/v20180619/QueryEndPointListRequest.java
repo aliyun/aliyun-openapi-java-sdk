@@ -25,7 +25,7 @@ import com.aliyuncs.openanalytics_open.Endpoint;
 public class QueryEndPointListRequest extends RpcAcsRequest<QueryEndPointListResponse> {
 	   
 	public QueryEndPointListRequest() {
-		super("openanalytics-open", "2018-06-19", "QueryEndPointList", "openanalytics-cap");
+		super("openanalytics-open", "2018-06-19", "QueryEndPointList", "openanalytics");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -136,6 +136,8 @@ public class GetMetaTableBasicInfoResponse extends AcsResponse {
 
 		private Boolean isView;
 
+		private Integer columnCount;
+
 		public String getTableName() {
 			return this.tableName;
 		}
@@ -334,6 +336,14 @@ public class GetMetaTableBasicInfoResponse extends AcsResponse {
 
 		public void setIsView(Boolean isView) {
 			this.isView = isView;
+		}
+
+		public Integer getColumnCount() {
+			return this.columnCount;
+		}
+
+		public void setColumnCount(Integer columnCount) {
+			this.columnCount = columnCount;
 		}
 	}
 

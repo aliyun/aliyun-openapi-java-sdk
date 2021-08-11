@@ -33,7 +33,7 @@ public class ModifyDtsJobPasswordRequest extends RpcAcsRequest<ModifyDtsJobPassw
 
 	private String userName;
 	public ModifyDtsJobPasswordRequest() {
-		super("Dts", "2020-01-01", "ModifyDtsJobPassword");
+		super("Dts", "2020-01-01", "ModifyDtsJobPassword", "dts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

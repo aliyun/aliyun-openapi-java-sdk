@@ -69,17 +69,9 @@ public class DescribeInstanceModificationPriceResponse extends AcsResponse {
 
 		public static class Rule {
 
-			private Long ruleId;
-
 			private String description;
 
-			public Long getRuleId() {
-				return this.ruleId;
-			}
-
-			public void setRuleId(Long ruleId) {
-				this.ruleId = ruleId;
-			}
+			private Long ruleId;
 
 			public String getDescription() {
 				return this.description;
@@ -87,6 +79,14 @@ public class DescribeInstanceModificationPriceResponse extends AcsResponse {
 
 			public void setDescription(String description) {
 				this.description = description;
+			}
+
+			public Long getRuleId() {
+				return this.ruleId;
+			}
+
+			public void setRuleId(Long ruleId) {
+				this.ruleId = ruleId;
 			}
 		}
 
@@ -96,9 +96,9 @@ public class DescribeInstanceModificationPriceResponse extends AcsResponse {
 
 			private Float discountPrice;
 
-			private Float tradePrice;
-
 			private String currency;
+
+			private Float tradePrice;
 
 			public Float getOriginalPrice() {
 				return this.originalPrice;
@@ -116,20 +116,20 @@ public class DescribeInstanceModificationPriceResponse extends AcsResponse {
 				this.discountPrice = discountPrice;
 			}
 
-			public Float getTradePrice() {
-				return this.tradePrice;
-			}
-
-			public void setTradePrice(Float tradePrice) {
-				this.tradePrice = tradePrice;
-			}
-
 			public String getCurrency() {
 				return this.currency;
 			}
 
 			public void setCurrency(String currency) {
 				this.currency = currency;
+			}
+
+			public Float getTradePrice() {
+				return this.tradePrice;
+			}
+
+			public void setTradePrice(Float tradePrice) {
+				this.tradePrice = tradePrice;
 			}
 		}
 	}

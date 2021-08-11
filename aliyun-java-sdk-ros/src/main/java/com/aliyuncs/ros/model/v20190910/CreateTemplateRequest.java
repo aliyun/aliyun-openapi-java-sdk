@@ -31,6 +31,8 @@ public class CreateTemplateRequest extends RpcAcsRequest<CreateTemplateResponse>
 
 	private String templateURL;
 
+	private String resourceGroupId;
+
 	private String templateName;
 	public CreateTemplateRequest() {
 		super("ROS", "2019-09-10", "CreateTemplate", "ros");
@@ -71,6 +73,17 @@ public class CreateTemplateRequest extends RpcAcsRequest<CreateTemplateResponse>
 		this.templateURL = templateURL;
 		if(templateURL != null){
 			putQueryParameter("TemplateURL", templateURL);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

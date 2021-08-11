@@ -24,8 +24,8 @@ public class AddChannelResponseUnmarshaller {
 		
 		addChannelResponse.setRequestId(_ctx.stringValue("AddChannelResponse.RequestId"));
 		addChannelResponse.setMessage(_ctx.stringValue("AddChannelResponse.Message"));
-		addChannelResponse.setData(_ctx.stringValue("AddChannelResponse.Data"));
 		addChannelResponse.setCode(_ctx.stringValue("AddChannelResponse.Code"));
+		addChannelResponse.setData(_ctx.stringValue("AddChannelResponse.Data"));
 	 
 	 	return addChannelResponse;
 	}

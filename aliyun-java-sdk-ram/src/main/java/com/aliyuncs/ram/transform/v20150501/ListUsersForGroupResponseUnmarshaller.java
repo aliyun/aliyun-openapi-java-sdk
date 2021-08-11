@@ -33,9 +33,9 @@ public class ListUsersForGroupResponseUnmarshaller {
 		List<User> users = new ArrayList<User>();
 		for (int i = 0; i < _ctx.lengthValue("ListUsersForGroupResponse.Users.Length"); i++) {
 			User user = new User();
-			user.setUserName(_ctx.stringValue("ListUsersForGroupResponse.Users["+ i +"].UserName"));
 			user.setDisplayName(_ctx.stringValue("ListUsersForGroupResponse.Users["+ i +"].DisplayName"));
 			user.setJoinDate(_ctx.stringValue("ListUsersForGroupResponse.Users["+ i +"].JoinDate"));
+			user.setUserName(_ctx.stringValue("ListUsersForGroupResponse.Users["+ i +"].UserName"));
 
 			users.add(user);
 		}
