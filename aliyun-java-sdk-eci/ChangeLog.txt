@@ -1,5 +1,6 @@
 2021-08-10 Version: 1.2.7
 1、support BatchCreateContainerGroups API
+2、imageCache support acrRegistryInfos
 
 2021-06-09 Version: 1.2.6
 1, support spot duration
