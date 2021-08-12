@@ -19,7 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.vcs.model.v20200515.CreateDeviceResponse;
 import com.aliyuncs.vcs.model.v20200515.CreateDeviceResponse.Data;
-import com.aliyuncs.vcs.model.v20200515.CreateDeviceResponse.Data.SubDeviceSipInfoItem;
+import com.aliyuncs.vcs.model.v20200515.CreateDeviceResponse.Data.SubDeviceInfoItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -32,29 +32,21 @@ public class CreateDeviceResponseUnmarshaller {
 		createDeviceResponse.setMessage(_ctx.stringValue("CreateDeviceResponse.Message"));
 
 		Data data = new Data();
-		data.setSipReaml(_ctx.stringValue("CreateDeviceResponse.Data.SipReaml"));
-		data.setSipIp(_ctx.stringValue("CreateDeviceResponse.Data.SipIp"));
-		data.setSipDeviceGbId(_ctx.stringValue("CreateDeviceResponse.Data.SipDeviceGbId"));
-		data.setDeviceCode(_ctx.stringValue("CreateDeviceResponse.Data.DeviceCode"));
-		data.setSipPort(_ctx.stringValue("CreateDeviceResponse.Data.SipPort"));
-		data.setSipGbId(_ctx.stringValue("CreateDeviceResponse.Data.SipGbId"));
-		data.setSipPassword(_ctx.stringValue("CreateDeviceResponse.Data.SipPassword"));
+		data.setServerId(_ctx.stringValue("CreateDeviceResponse.Data.ServerId"));
+		data.setServerIp(_ctx.stringValue("CreateDeviceResponse.Data.ServerIp"));
+		data.setServerRealm(_ctx.stringValue("CreateDeviceResponse.Data.ServerRealm"));
+		data.setServerPort(_ctx.stringValue("CreateDeviceResponse.Data.ServerPort"));
+		data.setDeviceId(_ctx.stringValue("CreateDeviceResponse.Data.DeviceId"));
+		data.setPassword(_ctx.stringValue("CreateDeviceResponse.Data.Password"));
 
-		List<SubDeviceSipInfoItem> subDeviceSipInfo = new ArrayList<SubDeviceSipInfoItem>();
-		for (int i = 0; i < _ctx.lengthValue("CreateDeviceResponse.Data.SubDeviceSipInfo.Length"); i++) {
-			SubDeviceSipInfoItem subDeviceSipInfoItem = new SubDeviceSipInfoItem();
-			subDeviceSipInfoItem.setSundayCaptureStrategy(_ctx.stringValue("CreateDeviceResponse.Data.SubDeviceSipInfo["+ i +"].SundayCaptureStrategy"));
-			subDeviceSipInfoItem.setMondayCaptureStrategy(_ctx.stringValue("CreateDeviceResponse.Data.SubDeviceSipInfo["+ i +"].MondayCaptureStrategy"));
-			subDeviceSipInfoItem.setChannelGbId(_ctx.stringValue("CreateDeviceResponse.Data.SubDeviceSipInfo["+ i +"].ChannelGbId"));
-			subDeviceSipInfoItem.setFridayCaptureStrategy(_ctx.stringValue("CreateDeviceResponse.Data.SubDeviceSipInfo["+ i +"].FridayCaptureStrategy"));
-			subDeviceSipInfoItem.setTuesdayCaptureStrategy(_ctx.stringValue("CreateDeviceResponse.Data.SubDeviceSipInfo["+ i +"].TuesdayCaptureStrategy"));
-			subDeviceSipInfoItem.setWednesdayCaptureStrategy(_ctx.stringValue("CreateDeviceResponse.Data.SubDeviceSipInfo["+ i +"].WednesdayCaptureStrategy"));
-			subDeviceSipInfoItem.setThursdayCaptureStrategy(_ctx.stringValue("CreateDeviceResponse.Data.SubDeviceSipInfo["+ i +"].ThursdayCaptureStrategy"));
-			subDeviceSipInfoItem.setSaturdayCaptureStrategy(_ctx.stringValue("CreateDeviceResponse.Data.SubDeviceSipInfo["+ i +"].SaturdayCaptureStrategy"));
+		List<SubDeviceInfoItem> subDeviceInfo = new ArrayList<SubDeviceInfoItem>();
+		for (int i = 0; i < _ctx.lengthValue("CreateDeviceResponse.Data.SubDeviceInfo.Length"); i++) {
+			SubDeviceInfoItem subDeviceInfoItem = new SubDeviceInfoItem();
+			subDeviceInfoItem.setSubDeviceId(_ctx.stringValue("CreateDeviceResponse.Data.SubDeviceInfo["+ i +"].SubDeviceId"));
 
-			subDeviceSipInfo.add(subDeviceSipInfoItem);
+			subDeviceInfo.add(subDeviceInfoItem);
 		}
-		data.setSubDeviceSipInfo(subDeviceSipInfo);
+		data.setSubDeviceInfo(subDeviceInfo);
 		createDeviceResponse.setData(data);
 	 
 	 	return createDeviceResponse;

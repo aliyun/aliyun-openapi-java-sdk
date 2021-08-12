@@ -71,6 +71,8 @@ public class DeleteDevicesResponse extends AcsResponse {
 
 		private String description;
 
+		private String code;
+
 		public String getDeviceId() {
 			return this.deviceId;
 		}
@@ -85,6 +87,14 @@ public class DeleteDevicesResponse extends AcsResponse {
 
 		public void setDescription(String description) {
 			this.description = description;
+		}
+
+		public String getCode() {
+			return this.code;
+		}
+
+		public void setCode(String code) {
+			this.code = code;
 		}
 	}
 

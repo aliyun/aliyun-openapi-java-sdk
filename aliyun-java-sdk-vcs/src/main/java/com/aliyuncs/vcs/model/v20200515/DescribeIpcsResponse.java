@@ -145,7 +145,7 @@ public class DescribeIpcsResponse extends AcsResponse {
 
 			private String streamAction;
 
-			private String deviceVendor;
+			private String vendor;
 
 			private String serverId;
 
@@ -155,7 +155,11 @@ public class DescribeIpcsResponse extends AcsResponse {
 
 			private String serverIp;
 
+			private String serverRealm;
+
 			private String deviceSite;
+
+			private String deviceDirection;
 
 			private String deviceResolution;
 
@@ -167,13 +171,31 @@ public class DescribeIpcsResponse extends AcsResponse {
 
 			private String datasourceType;
 
-			private String projectName;
-
 			private String regionName;
 
 			private String vap;
 
-			private String cameraType;
+			private String deviceSubType;
+
+			private String frameRate;
+
+			private String govLength;
+
+			private String encodeFormat;
+
+			private String audioEnable;
+
+			private String oSDTimeEnable;
+
+			private String oSDTimeType;
+
+			private String oSDTimeX;
+
+			private String oSDTimeY;
+
+			private String deviceSn;
+
+			private String deviceIp;
 
 			public String getCorpId() {
 				return this.corpId;
@@ -279,12 +301,12 @@ public class DescribeIpcsResponse extends AcsResponse {
 				this.streamAction = streamAction;
 			}
 
-			public String getDeviceVendor() {
-				return this.deviceVendor;
+			public String getVendor() {
+				return this.vendor;
 			}
 
-			public void setDeviceVendor(String deviceVendor) {
-				this.deviceVendor = deviceVendor;
+			public void setVendor(String vendor) {
+				this.vendor = vendor;
 			}
 
 			public String getServerId() {
@@ -319,12 +341,28 @@ public class DescribeIpcsResponse extends AcsResponse {
 				this.serverIp = serverIp;
 			}
 
+			public String getServerRealm() {
+				return this.serverRealm;
+			}
+
+			public void setServerRealm(String serverRealm) {
+				this.serverRealm = serverRealm;
+			}
+
 			public String getDeviceSite() {
 				return this.deviceSite;
 			}
 
 			public void setDeviceSite(String deviceSite) {
 				this.deviceSite = deviceSite;
+			}
+
+			public String getDeviceDirection() {
+				return this.deviceDirection;
+			}
+
+			public void setDeviceDirection(String deviceDirection) {
+				this.deviceDirection = deviceDirection;
 			}
 
 			public String getDeviceResolution() {
@@ -367,14 +405,6 @@ public class DescribeIpcsResponse extends AcsResponse {
 				this.datasourceType = datasourceType;
 			}
 
-			public String getProjectName() {
-				return this.projectName;
-			}
-
-			public void setProjectName(String projectName) {
-				this.projectName = projectName;
-			}
-
 			public String getRegionName() {
 				return this.regionName;
 			}
@@ -391,12 +421,92 @@ public class DescribeIpcsResponse extends AcsResponse {
 				this.vap = vap;
 			}
 
-			public String getCameraType() {
-				return this.cameraType;
+			public String getDeviceSubType() {
+				return this.deviceSubType;
 			}
 
-			public void setCameraType(String cameraType) {
-				this.cameraType = cameraType;
+			public void setDeviceSubType(String deviceSubType) {
+				this.deviceSubType = deviceSubType;
+			}
+
+			public String getFrameRate() {
+				return this.frameRate;
+			}
+
+			public void setFrameRate(String frameRate) {
+				this.frameRate = frameRate;
+			}
+
+			public String getGovLength() {
+				return this.govLength;
+			}
+
+			public void setGovLength(String govLength) {
+				this.govLength = govLength;
+			}
+
+			public String getEncodeFormat() {
+				return this.encodeFormat;
+			}
+
+			public void setEncodeFormat(String encodeFormat) {
+				this.encodeFormat = encodeFormat;
+			}
+
+			public String getAudioEnable() {
+				return this.audioEnable;
+			}
+
+			public void setAudioEnable(String audioEnable) {
+				this.audioEnable = audioEnable;
+			}
+
+			public String getOSDTimeEnable() {
+				return this.oSDTimeEnable;
+			}
+
+			public void setOSDTimeEnable(String oSDTimeEnable) {
+				this.oSDTimeEnable = oSDTimeEnable;
+			}
+
+			public String getOSDTimeType() {
+				return this.oSDTimeType;
+			}
+
+			public void setOSDTimeType(String oSDTimeType) {
+				this.oSDTimeType = oSDTimeType;
+			}
+
+			public String getOSDTimeX() {
+				return this.oSDTimeX;
+			}
+
+			public void setOSDTimeX(String oSDTimeX) {
+				this.oSDTimeX = oSDTimeX;
+			}
+
+			public String getOSDTimeY() {
+				return this.oSDTimeY;
+			}
+
+			public void setOSDTimeY(String oSDTimeY) {
+				this.oSDTimeY = oSDTimeY;
+			}
+
+			public String getDeviceSn() {
+				return this.deviceSn;
+			}
+
+			public void setDeviceSn(String deviceSn) {
+				this.deviceSn = deviceSn;
+			}
+
+			public String getDeviceIp() {
+				return this.deviceIp;
+			}
+
+			public void setDeviceIp(String deviceIp) {
+				this.deviceIp = deviceIp;
 			}
 		}
 	}

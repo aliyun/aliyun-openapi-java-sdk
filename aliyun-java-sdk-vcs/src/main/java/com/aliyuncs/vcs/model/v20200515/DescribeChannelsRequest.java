@@ -22,24 +22,20 @@ import com.aliyuncs.vcs.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeIpcsRequest extends RpcAcsRequest<DescribeIpcsResponse> {
+public class DescribeChannelsRequest extends RpcAcsRequest<DescribeChannelsResponse> {
 	   
 
-	private String parentDeviceType;
+	private String nvrId;
 
 	private Long pageNum;
 
-	private String corpIdList;
+	private Long showUnConfig;
 
 	private String deviceFilter;
 
 	private Long pageSize;
-
-	private String deviceIdList;
-
-	private String nvrIdList;
-	public DescribeIpcsRequest() {
-		super("Vcs", "2020-05-15", "DescribeIpcs");
+	public DescribeChannelsRequest() {
+		super("Vcs", "2020-05-15", "DescribeChannels");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -47,14 +43,14 @@ public class DescribeIpcsRequest extends RpcAcsRequest<DescribeIpcsResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getParentDeviceType() {
-		return this.parentDeviceType;
+	public String getNvrId() {
+		return this.nvrId;
 	}
 
-	public void setParentDeviceType(String parentDeviceType) {
-		this.parentDeviceType = parentDeviceType;
-		if(parentDeviceType != null){
-			putBodyParameter("ParentDeviceType", parentDeviceType);
+	public void setNvrId(String nvrId) {
+		this.nvrId = nvrId;
+		if(nvrId != null){
+			putBodyParameter("NvrId", nvrId);
 		}
 	}
 
@@ -69,14 +65,14 @@ public class DescribeIpcsRequest extends RpcAcsRequest<DescribeIpcsResponse> {
 		}
 	}
 
-	public String getCorpIdList() {
-		return this.corpIdList;
+	public Long getShowUnConfig() {
+		return this.showUnConfig;
 	}
 
-	public void setCorpIdList(String corpIdList) {
-		this.corpIdList = corpIdList;
-		if(corpIdList != null){
-			putBodyParameter("CorpIdList", corpIdList);
+	public void setShowUnConfig(Long showUnConfig) {
+		this.showUnConfig = showUnConfig;
+		if(showUnConfig != null){
+			putBodyParameter("ShowUnConfig", showUnConfig.toString());
 		}
 	}
 
@@ -102,31 +98,9 @@ public class DescribeIpcsRequest extends RpcAcsRequest<DescribeIpcsResponse> {
 		}
 	}
 
-	public String getDeviceIdList() {
-		return this.deviceIdList;
-	}
-
-	public void setDeviceIdList(String deviceIdList) {
-		this.deviceIdList = deviceIdList;
-		if(deviceIdList != null){
-			putBodyParameter("DeviceIdList", deviceIdList);
-		}
-	}
-
-	public String getNvrIdList() {
-		return this.nvrIdList;
-	}
-
-	public void setNvrIdList(String nvrIdList) {
-		this.nvrIdList = nvrIdList;
-		if(nvrIdList != null){
-			putBodyParameter("NvrIdList", nvrIdList);
-		}
-	}
-
 	@Override
-	public Class<DescribeIpcsResponse> getResponseClass() {
-		return DescribeIpcsResponse.class;
+	public Class<DescribeChannelsResponse> getResponseClass() {
+		return DescribeChannelsResponse.class;
 	}
 
 }

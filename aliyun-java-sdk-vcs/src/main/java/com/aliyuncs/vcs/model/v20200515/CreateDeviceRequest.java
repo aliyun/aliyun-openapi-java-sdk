@@ -25,31 +25,59 @@ import com.aliyuncs.vcs.Endpoint;
 public class CreateDeviceRequest extends RpcAcsRequest<CreateDeviceResponse> {
 	   
 
+	private String deviceSite;
+
 	private String dataSourceType;
 
 	private String corpId;
 
-	private String gbId;
+	private String frameRate;
+
+	private String oSDTimeEnable;
 
 	private String latitude;
 
-	private String deviceVendor;
+	private String oSDTimeY;
+
+	private String oSDTimeX;
 
 	private String deviceType;
 
+	private String deviceResolution;
+
 	private String cityCode;
 
-	private String filePath;
+	private String encodeFormat;
 
-	private String longitude;
+	private String vendor;
+
+	private String oSDTimeType;
 
 	private String deviceModel;
 
+	private String longitude;
+
+	private String audioEnable;
+
+	private String subDeviceIdList;
+
+	private String parentDeviceId;
+
+	private String deviceDirection;
+
+	private String deviceRate;
+
+	private String inProtocol;
+
+	private String govLength;
+
 	private String deviceAddress;
 
-	private String deviceName;
+	private String deviceSn;
 
-	private String deviceGroupName;
+	private String deviceId;
+
+	private String deviceName;
 
 	private Long subDeviceCount;
 	public CreateDeviceRequest() {
@@ -59,6 +87,17 @@ public class CreateDeviceRequest extends RpcAcsRequest<CreateDeviceResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getDeviceSite() {
+		return this.deviceSite;
+	}
+
+	public void setDeviceSite(String deviceSite) {
+		this.deviceSite = deviceSite;
+		if(deviceSite != null){
+			putBodyParameter("DeviceSite", deviceSite);
+		}
 	}
 
 	public String getDataSourceType() {
@@ -83,14 +122,25 @@ public class CreateDeviceRequest extends RpcAcsRequest<CreateDeviceResponse> {
 		}
 	}
 
-	public String getGbId() {
-		return this.gbId;
+	public String getFrameRate() {
+		return this.frameRate;
 	}
 
-	public void setGbId(String gbId) {
-		this.gbId = gbId;
-		if(gbId != null){
-			putBodyParameter("GbId", gbId);
+	public void setFrameRate(String frameRate) {
+		this.frameRate = frameRate;
+		if(frameRate != null){
+			putBodyParameter("FrameRate", frameRate);
+		}
+	}
+
+	public String getOSDTimeEnable() {
+		return this.oSDTimeEnable;
+	}
+
+	public void setOSDTimeEnable(String oSDTimeEnable) {
+		this.oSDTimeEnable = oSDTimeEnable;
+		if(oSDTimeEnable != null){
+			putBodyParameter("OSDTimeEnable", oSDTimeEnable);
 		}
 	}
 
@@ -105,14 +155,25 @@ public class CreateDeviceRequest extends RpcAcsRequest<CreateDeviceResponse> {
 		}
 	}
 
-	public String getDeviceVendor() {
-		return this.deviceVendor;
+	public String getOSDTimeY() {
+		return this.oSDTimeY;
 	}
 
-	public void setDeviceVendor(String deviceVendor) {
-		this.deviceVendor = deviceVendor;
-		if(deviceVendor != null){
-			putBodyParameter("DeviceVendor", deviceVendor);
+	public void setOSDTimeY(String oSDTimeY) {
+		this.oSDTimeY = oSDTimeY;
+		if(oSDTimeY != null){
+			putBodyParameter("OSDTimeY", oSDTimeY);
+		}
+	}
+
+	public String getOSDTimeX() {
+		return this.oSDTimeX;
+	}
+
+	public void setOSDTimeX(String oSDTimeX) {
+		this.oSDTimeX = oSDTimeX;
+		if(oSDTimeX != null){
+			putBodyParameter("OSDTimeX", oSDTimeX);
 		}
 	}
 
@@ -127,6 +188,17 @@ public class CreateDeviceRequest extends RpcAcsRequest<CreateDeviceResponse> {
 		}
 	}
 
+	public String getDeviceResolution() {
+		return this.deviceResolution;
+	}
+
+	public void setDeviceResolution(String deviceResolution) {
+		this.deviceResolution = deviceResolution;
+		if(deviceResolution != null){
+			putBodyParameter("DeviceResolution", deviceResolution);
+		}
+	}
+
 	public String getCityCode() {
 		return this.cityCode;
 	}
@@ -138,25 +210,36 @@ public class CreateDeviceRequest extends RpcAcsRequest<CreateDeviceResponse> {
 		}
 	}
 
-	public String getFilePath() {
-		return this.filePath;
+	public String getEncodeFormat() {
+		return this.encodeFormat;
 	}
 
-	public void setFilePath(String filePath) {
-		this.filePath = filePath;
-		if(filePath != null){
-			putBodyParameter("FilePath", filePath);
+	public void setEncodeFormat(String encodeFormat) {
+		this.encodeFormat = encodeFormat;
+		if(encodeFormat != null){
+			putBodyParameter("EncodeFormat", encodeFormat);
 		}
 	}
 
-	public String getLongitude() {
-		return this.longitude;
+	public String getVendor() {
+		return this.vendor;
 	}
 
-	public void setLongitude(String longitude) {
-		this.longitude = longitude;
-		if(longitude != null){
-			putBodyParameter("Longitude", longitude);
+	public void setVendor(String vendor) {
+		this.vendor = vendor;
+		if(vendor != null){
+			putBodyParameter("Vendor", vendor);
+		}
+	}
+
+	public String getOSDTimeType() {
+		return this.oSDTimeType;
+	}
+
+	public void setOSDTimeType(String oSDTimeType) {
+		this.oSDTimeType = oSDTimeType;
+		if(oSDTimeType != null){
+			putBodyParameter("OSDTimeType", oSDTimeType);
 		}
 	}
 
@@ -171,6 +254,94 @@ public class CreateDeviceRequest extends RpcAcsRequest<CreateDeviceResponse> {
 		}
 	}
 
+	public String getLongitude() {
+		return this.longitude;
+	}
+
+	public void setLongitude(String longitude) {
+		this.longitude = longitude;
+		if(longitude != null){
+			putBodyParameter("Longitude", longitude);
+		}
+	}
+
+	public String getAudioEnable() {
+		return this.audioEnable;
+	}
+
+	public void setAudioEnable(String audioEnable) {
+		this.audioEnable = audioEnable;
+		if(audioEnable != null){
+			putBodyParameter("AudioEnable", audioEnable);
+		}
+	}
+
+	public String getSubDeviceIdList() {
+		return this.subDeviceIdList;
+	}
+
+	public void setSubDeviceIdList(String subDeviceIdList) {
+		this.subDeviceIdList = subDeviceIdList;
+		if(subDeviceIdList != null){
+			putBodyParameter("SubDeviceIdList", subDeviceIdList);
+		}
+	}
+
+	public String getParentDeviceId() {
+		return this.parentDeviceId;
+	}
+
+	public void setParentDeviceId(String parentDeviceId) {
+		this.parentDeviceId = parentDeviceId;
+		if(parentDeviceId != null){
+			putBodyParameter("ParentDeviceId", parentDeviceId);
+		}
+	}
+
+	public String getDeviceDirection() {
+		return this.deviceDirection;
+	}
+
+	public void setDeviceDirection(String deviceDirection) {
+		this.deviceDirection = deviceDirection;
+		if(deviceDirection != null){
+			putBodyParameter("DeviceDirection", deviceDirection);
+		}
+	}
+
+	public String getDeviceRate() {
+		return this.deviceRate;
+	}
+
+	public void setDeviceRate(String deviceRate) {
+		this.deviceRate = deviceRate;
+		if(deviceRate != null){
+			putBodyParameter("DeviceRate", deviceRate);
+		}
+	}
+
+	public String getInProtocol() {
+		return this.inProtocol;
+	}
+
+	public void setInProtocol(String inProtocol) {
+		this.inProtocol = inProtocol;
+		if(inProtocol != null){
+			putBodyParameter("InProtocol", inProtocol);
+		}
+	}
+
+	public String getGovLength() {
+		return this.govLength;
+	}
+
+	public void setGovLength(String govLength) {
+		this.govLength = govLength;
+		if(govLength != null){
+			putBodyParameter("GovLength", govLength);
+		}
+	}
+
 	public String getDeviceAddress() {
 		return this.deviceAddress;
 	}
@@ -182,6 +353,28 @@ public class CreateDeviceRequest extends RpcAcsRequest<CreateDeviceResponse> {
 		}
 	}
 
+	public String getDeviceSn() {
+		return this.deviceSn;
+	}
+
+	public void setDeviceSn(String deviceSn) {
+		this.deviceSn = deviceSn;
+		if(deviceSn != null){
+			putBodyParameter("DeviceSn", deviceSn);
+		}
+	}
+
+	public String getDeviceId() {
+		return this.deviceId;
+	}
+
+	public void setDeviceId(String deviceId) {
+		this.deviceId = deviceId;
+		if(deviceId != null){
+			putBodyParameter("DeviceId", deviceId);
+		}
+	}
+
 	public String getDeviceName() {
 		return this.deviceName;
 	}
@@ -190,17 +383,6 @@ public class CreateDeviceRequest extends RpcAcsRequest<CreateDeviceResponse> {
 		this.deviceName = deviceName;
 		if(deviceName != null){
 			putBodyParameter("DeviceName", deviceName);
-		}
-	}
-
-	public String getDeviceGroupName() {
-		return this.deviceGroupName;
-	}
-
-	public void setDeviceGroupName(String deviceGroupName) {
-		this.deviceGroupName = deviceGroupName;
-		if(deviceGroupName != null){
-			putBodyParameter("DeviceGroupName", deviceGroupName);
 		}
 	}
 

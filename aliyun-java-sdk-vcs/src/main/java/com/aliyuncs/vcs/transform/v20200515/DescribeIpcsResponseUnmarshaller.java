@@ -53,21 +53,32 @@ public class DescribeIpcsResponseUnmarshaller {
 			recordsItem.setDeviceStatus(_ctx.stringValue("DescribeIpcsResponse.Data.Records["+ i +"].DeviceStatus"));
 			recordsItem.setStreamStatus(_ctx.stringValue("DescribeIpcsResponse.Data.Records["+ i +"].StreamStatus"));
 			recordsItem.setStreamAction(_ctx.stringValue("DescribeIpcsResponse.Data.Records["+ i +"].StreamAction"));
-			recordsItem.setDeviceVendor(_ctx.stringValue("DescribeIpcsResponse.Data.Records["+ i +"].DeviceVendor"));
+			recordsItem.setVendor(_ctx.stringValue("DescribeIpcsResponse.Data.Records["+ i +"].Vendor"));
 			recordsItem.setServerId(_ctx.stringValue("DescribeIpcsResponse.Data.Records["+ i +"].ServerId"));
 			recordsItem.setPassword(_ctx.stringValue("DescribeIpcsResponse.Data.Records["+ i +"].Password"));
 			recordsItem.setServerPort(_ctx.stringValue("DescribeIpcsResponse.Data.Records["+ i +"].ServerPort"));
 			recordsItem.setServerIp(_ctx.stringValue("DescribeIpcsResponse.Data.Records["+ i +"].ServerIp"));
+			recordsItem.setServerRealm(_ctx.stringValue("DescribeIpcsResponse.Data.Records["+ i +"].ServerRealm"));
 			recordsItem.setDeviceSite(_ctx.stringValue("DescribeIpcsResponse.Data.Records["+ i +"].DeviceSite"));
+			recordsItem.setDeviceDirection(_ctx.stringValue("DescribeIpcsResponse.Data.Records["+ i +"].DeviceDirection"));
 			recordsItem.setDeviceResolution(_ctx.stringValue("DescribeIpcsResponse.Data.Records["+ i +"].DeviceResolution"));
 			recordsItem.setDeviceRate(_ctx.stringValue("DescribeIpcsResponse.Data.Records["+ i +"].DeviceRate"));
 			recordsItem.setParentDeviceId(_ctx.stringValue("DescribeIpcsResponse.Data.Records["+ i +"].ParentDeviceId"));
 			recordsItem.setDeviceModel(_ctx.stringValue("DescribeIpcsResponse.Data.Records["+ i +"].DeviceModel"));
 			recordsItem.setDatasourceType(_ctx.stringValue("DescribeIpcsResponse.Data.Records["+ i +"].DatasourceType"));
-			recordsItem.setProjectName(_ctx.stringValue("DescribeIpcsResponse.Data.Records["+ i +"].ProjectName"));
 			recordsItem.setRegionName(_ctx.stringValue("DescribeIpcsResponse.Data.Records["+ i +"].RegionName"));
 			recordsItem.setVap(_ctx.stringValue("DescribeIpcsResponse.Data.Records["+ i +"].Vap"));
-			recordsItem.setCameraType(_ctx.stringValue("DescribeIpcsResponse.Data.Records["+ i +"].CameraType"));
+			recordsItem.setDeviceSubType(_ctx.stringValue("DescribeIpcsResponse.Data.Records["+ i +"].DeviceSubType"));
+			recordsItem.setFrameRate(_ctx.stringValue("DescribeIpcsResponse.Data.Records["+ i +"].FrameRate"));
+			recordsItem.setGovLength(_ctx.stringValue("DescribeIpcsResponse.Data.Records["+ i +"].GovLength"));
+			recordsItem.setEncodeFormat(_ctx.stringValue("DescribeIpcsResponse.Data.Records["+ i +"].EncodeFormat"));
+			recordsItem.setAudioEnable(_ctx.stringValue("DescribeIpcsResponse.Data.Records["+ i +"].AudioEnable"));
+			recordsItem.setOSDTimeEnable(_ctx.stringValue("DescribeIpcsResponse.Data.Records["+ i +"].OSDTimeEnable"));
+			recordsItem.setOSDTimeType(_ctx.stringValue("DescribeIpcsResponse.Data.Records["+ i +"].OSDTimeType"));
+			recordsItem.setOSDTimeX(_ctx.stringValue("DescribeIpcsResponse.Data.Records["+ i +"].OSDTimeX"));
+			recordsItem.setOSDTimeY(_ctx.stringValue("DescribeIpcsResponse.Data.Records["+ i +"].OSDTimeY"));
+			recordsItem.setDeviceSn(_ctx.stringValue("DescribeIpcsResponse.Data.Records["+ i +"].DeviceSn"));
+			recordsItem.setDeviceIp(_ctx.stringValue("DescribeIpcsResponse.Data.Records["+ i +"].DeviceIp"));
 
 			records.add(recordsItem);
 		}

@@ -67,166 +67,86 @@ public class CreateDeviceResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String sipReaml;
+		private String serverId;
 
-		private String sipIp;
+		private String serverIp;
 
-		private String sipDeviceGbId;
+		private String serverRealm;
 
-		private String deviceCode;
+		private String serverPort;
 
-		private String sipPort;
+		private String deviceId;
 
-		private String sipGbId;
+		private String password;
 
-		private String sipPassword;
+		private List<SubDeviceInfoItem> subDeviceInfo;
 
-		private List<SubDeviceSipInfoItem> subDeviceSipInfo;
-
-		public String getSipReaml() {
-			return this.sipReaml;
+		public String getServerId() {
+			return this.serverId;
 		}
 
-		public void setSipReaml(String sipReaml) {
-			this.sipReaml = sipReaml;
+		public void setServerId(String serverId) {
+			this.serverId = serverId;
 		}
 
-		public String getSipIp() {
-			return this.sipIp;
+		public String getServerIp() {
+			return this.serverIp;
 		}
 
-		public void setSipIp(String sipIp) {
-			this.sipIp = sipIp;
+		public void setServerIp(String serverIp) {
+			this.serverIp = serverIp;
 		}
 
-		public String getSipDeviceGbId() {
-			return this.sipDeviceGbId;
+		public String getServerRealm() {
+			return this.serverRealm;
 		}
 
-		public void setSipDeviceGbId(String sipDeviceGbId) {
-			this.sipDeviceGbId = sipDeviceGbId;
+		public void setServerRealm(String serverRealm) {
+			this.serverRealm = serverRealm;
 		}
 
-		public String getDeviceCode() {
-			return this.deviceCode;
+		public String getServerPort() {
+			return this.serverPort;
 		}
 
-		public void setDeviceCode(String deviceCode) {
-			this.deviceCode = deviceCode;
+		public void setServerPort(String serverPort) {
+			this.serverPort = serverPort;
 		}
 
-		public String getSipPort() {
-			return this.sipPort;
+		public String getDeviceId() {
+			return this.deviceId;
 		}
 
-		public void setSipPort(String sipPort) {
-			this.sipPort = sipPort;
+		public void setDeviceId(String deviceId) {
+			this.deviceId = deviceId;
 		}
 
-		public String getSipGbId() {
-			return this.sipGbId;
+		public String getPassword() {
+			return this.password;
 		}
 
-		public void setSipGbId(String sipGbId) {
-			this.sipGbId = sipGbId;
+		public void setPassword(String password) {
+			this.password = password;
 		}
 
-		public String getSipPassword() {
-			return this.sipPassword;
+		public List<SubDeviceInfoItem> getSubDeviceInfo() {
+			return this.subDeviceInfo;
 		}
 
-		public void setSipPassword(String sipPassword) {
-			this.sipPassword = sipPassword;
+		public void setSubDeviceInfo(List<SubDeviceInfoItem> subDeviceInfo) {
+			this.subDeviceInfo = subDeviceInfo;
 		}
 
-		public List<SubDeviceSipInfoItem> getSubDeviceSipInfo() {
-			return this.subDeviceSipInfo;
-		}
+		public static class SubDeviceInfoItem {
 
-		public void setSubDeviceSipInfo(List<SubDeviceSipInfoItem> subDeviceSipInfo) {
-			this.subDeviceSipInfo = subDeviceSipInfo;
-		}
+			private String subDeviceId;
 
-		public static class SubDeviceSipInfoItem {
-
-			private String sundayCaptureStrategy;
-
-			private String mondayCaptureStrategy;
-
-			private String channelGbId;
-
-			private String fridayCaptureStrategy;
-
-			private String tuesdayCaptureStrategy;
-
-			private String wednesdayCaptureStrategy;
-
-			private String thursdayCaptureStrategy;
-
-			private String saturdayCaptureStrategy;
-
-			public String getSundayCaptureStrategy() {
-				return this.sundayCaptureStrategy;
+			public String getSubDeviceId() {
+				return this.subDeviceId;
 			}
 
-			public void setSundayCaptureStrategy(String sundayCaptureStrategy) {
-				this.sundayCaptureStrategy = sundayCaptureStrategy;
-			}
-
-			public String getMondayCaptureStrategy() {
-				return this.mondayCaptureStrategy;
-			}
-
-			public void setMondayCaptureStrategy(String mondayCaptureStrategy) {
-				this.mondayCaptureStrategy = mondayCaptureStrategy;
-			}
-
-			public String getChannelGbId() {
-				return this.channelGbId;
-			}
-
-			public void setChannelGbId(String channelGbId) {
-				this.channelGbId = channelGbId;
-			}
-
-			public String getFridayCaptureStrategy() {
-				return this.fridayCaptureStrategy;
-			}
-
-			public void setFridayCaptureStrategy(String fridayCaptureStrategy) {
-				this.fridayCaptureStrategy = fridayCaptureStrategy;
-			}
-
-			public String getTuesdayCaptureStrategy() {
-				return this.tuesdayCaptureStrategy;
-			}
-
-			public void setTuesdayCaptureStrategy(String tuesdayCaptureStrategy) {
-				this.tuesdayCaptureStrategy = tuesdayCaptureStrategy;
-			}
-
-			public String getWednesdayCaptureStrategy() {
-				return this.wednesdayCaptureStrategy;
-			}
-
-			public void setWednesdayCaptureStrategy(String wednesdayCaptureStrategy) {
-				this.wednesdayCaptureStrategy = wednesdayCaptureStrategy;
-			}
-
-			public String getThursdayCaptureStrategy() {
-				return this.thursdayCaptureStrategy;
-			}
-
-			public void setThursdayCaptureStrategy(String thursdayCaptureStrategy) {
-				this.thursdayCaptureStrategy = thursdayCaptureStrategy;
-			}
-
-			public String getSaturdayCaptureStrategy() {
-				return this.saturdayCaptureStrategy;
-			}
-
-			public void setSaturdayCaptureStrategy(String saturdayCaptureStrategy) {
-				this.saturdayCaptureStrategy = saturdayCaptureStrategy;
+			public void setSubDeviceId(String subDeviceId) {
+				this.subDeviceId = subDeviceId;
 			}
 		}
 	}

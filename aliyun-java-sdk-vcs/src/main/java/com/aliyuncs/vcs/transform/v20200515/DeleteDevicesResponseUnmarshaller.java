@@ -35,6 +35,7 @@ public class DeleteDevicesResponseUnmarshaller {
 			DataItem dataItem = new DataItem();
 			dataItem.setDeviceId(_ctx.stringValue("DeleteDevicesResponse.Data["+ i +"].DeviceId"));
 			dataItem.setDescription(_ctx.stringValue("DeleteDevicesResponse.Data["+ i +"].Description"));
+			dataItem.setCode(_ctx.stringValue("DeleteDevicesResponse.Data["+ i +"].Code"));
 
 			data.add(dataItem);
 		}

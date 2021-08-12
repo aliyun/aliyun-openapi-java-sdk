@@ -27,27 +27,45 @@ public class ModifyDeviceRequest extends RpcAcsRequest<ModifyDeviceResponse> {
 
 	private String deviceSite;
 
+	private String frameRate;
+
+	private String oSDTimeEnable;
+
 	private String latitude;
+
+	private String oSDTimeY;
+
+	private String oSDTimeX;
 
 	private String deviceResolution;
 
 	private String password;
 
+	private String encodeFormat;
+
 	private String vendor;
+
+	private String oSDTimeType;
 
 	private String longitude;
 
 	private String deviceModel;
 
-	private String ip;
+	private String audioEnable;
+
+	private String deviceIp;
 
 	private String deviceDirection;
 
 	private String deviceRate;
 
+	private String govLength;
+
 	private String deviceId;
 
 	private String deviceAddress;
+
+	private String deviceSubType;
 
 	private String deviceName;
 	public ModifyDeviceRequest() {
@@ -70,6 +88,28 @@ public class ModifyDeviceRequest extends RpcAcsRequest<ModifyDeviceResponse> {
 		}
 	}
 
+	public String getFrameRate() {
+		return this.frameRate;
+	}
+
+	public void setFrameRate(String frameRate) {
+		this.frameRate = frameRate;
+		if(frameRate != null){
+			putBodyParameter("FrameRate", frameRate);
+		}
+	}
+
+	public String getOSDTimeEnable() {
+		return this.oSDTimeEnable;
+	}
+
+	public void setOSDTimeEnable(String oSDTimeEnable) {
+		this.oSDTimeEnable = oSDTimeEnable;
+		if(oSDTimeEnable != null){
+			putBodyParameter("OSDTimeEnable", oSDTimeEnable);
+		}
+	}
+
 	public String getLatitude() {
 		return this.latitude;
 	}
@@ -78,6 +118,28 @@ public class ModifyDeviceRequest extends RpcAcsRequest<ModifyDeviceResponse> {
 		this.latitude = latitude;
 		if(latitude != null){
 			putBodyParameter("Latitude", latitude);
+		}
+	}
+
+	public String getOSDTimeY() {
+		return this.oSDTimeY;
+	}
+
+	public void setOSDTimeY(String oSDTimeY) {
+		this.oSDTimeY = oSDTimeY;
+		if(oSDTimeY != null){
+			putBodyParameter("OSDTimeY", oSDTimeY);
+		}
+	}
+
+	public String getOSDTimeX() {
+		return this.oSDTimeX;
+	}
+
+	public void setOSDTimeX(String oSDTimeX) {
+		this.oSDTimeX = oSDTimeX;
+		if(oSDTimeX != null){
+			putBodyParameter("OSDTimeX", oSDTimeX);
 		}
 	}
 
@@ -103,6 +165,17 @@ public class ModifyDeviceRequest extends RpcAcsRequest<ModifyDeviceResponse> {
 		}
 	}
 
+	public String getEncodeFormat() {
+		return this.encodeFormat;
+	}
+
+	public void setEncodeFormat(String encodeFormat) {
+		this.encodeFormat = encodeFormat;
+		if(encodeFormat != null){
+			putBodyParameter("EncodeFormat", encodeFormat);
+		}
+	}
+
 	public String getVendor() {
 		return this.vendor;
 	}
@@ -111,6 +184,17 @@ public class ModifyDeviceRequest extends RpcAcsRequest<ModifyDeviceResponse> {
 		this.vendor = vendor;
 		if(vendor != null){
 			putBodyParameter("Vendor", vendor);
+		}
+	}
+
+	public String getOSDTimeType() {
+		return this.oSDTimeType;
+	}
+
+	public void setOSDTimeType(String oSDTimeType) {
+		this.oSDTimeType = oSDTimeType;
+		if(oSDTimeType != null){
+			putBodyParameter("OSDTimeType", oSDTimeType);
 		}
 	}
 
@@ -136,14 +220,25 @@ public class ModifyDeviceRequest extends RpcAcsRequest<ModifyDeviceResponse> {
 		}
 	}
 
-	public String getIp() {
-		return this.ip;
+	public String getAudioEnable() {
+		return this.audioEnable;
 	}
 
-	public void setIp(String ip) {
-		this.ip = ip;
-		if(ip != null){
-			putBodyParameter("Ip", ip);
+	public void setAudioEnable(String audioEnable) {
+		this.audioEnable = audioEnable;
+		if(audioEnable != null){
+			putBodyParameter("AudioEnable", audioEnable);
+		}
+	}
+
+	public String getDeviceIp() {
+		return this.deviceIp;
+	}
+
+	public void setDeviceIp(String deviceIp) {
+		this.deviceIp = deviceIp;
+		if(deviceIp != null){
+			putBodyParameter("DeviceIp", deviceIp);
 		}
 	}
 
@@ -169,6 +264,17 @@ public class ModifyDeviceRequest extends RpcAcsRequest<ModifyDeviceResponse> {
 		}
 	}
 
+	public String getGovLength() {
+		return this.govLength;
+	}
+
+	public void setGovLength(String govLength) {
+		this.govLength = govLength;
+		if(govLength != null){
+			putBodyParameter("GovLength", govLength);
+		}
+	}
+
 	public String getDeviceId() {
 		return this.deviceId;
 	}
@@ -188,6 +294,17 @@ public class ModifyDeviceRequest extends RpcAcsRequest<ModifyDeviceResponse> {
 		this.deviceAddress = deviceAddress;
 		if(deviceAddress != null){
 			putBodyParameter("DeviceAddress", deviceAddress);
+		}
+	}
+
+	public String getDeviceSubType() {
+		return this.deviceSubType;
+	}
+
+	public void setDeviceSubType(String deviceSubType) {
+		this.deviceSubType = deviceSubType;
+		if(deviceSubType != null){
+			putBodyParameter("DeviceSubType", deviceSubType);
 		}
 	}
 

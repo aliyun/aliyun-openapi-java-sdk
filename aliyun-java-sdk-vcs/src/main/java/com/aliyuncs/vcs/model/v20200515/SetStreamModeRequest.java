@@ -22,16 +22,14 @@ import com.aliyuncs.vcs.Endpoint;
  * @author auto create
  * @version 
  */
-public class VerifyDeviceRequest extends RpcAcsRequest<VerifyDeviceResponse> {
+public class SetStreamModeRequest extends RpcAcsRequest<SetStreamModeResponse> {
 	   
 
-	private String deviceAddress;
+	private String streamMode;
 
-	private String filePath;
-
-	private Long nvrExisted;
-	public VerifyDeviceRequest() {
-		super("Vcs", "2020-05-15", "VerifyDevice");
+	private String deviceIdList;
+	public SetStreamModeRequest() {
+		super("Vcs", "2020-05-15", "SetStreamMode");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -39,42 +37,31 @@ public class VerifyDeviceRequest extends RpcAcsRequest<VerifyDeviceResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getDeviceAddress() {
-		return this.deviceAddress;
+	public String getStreamMode() {
+		return this.streamMode;
 	}
 
-	public void setDeviceAddress(String deviceAddress) {
-		this.deviceAddress = deviceAddress;
-		if(deviceAddress != null){
-			putBodyParameter("DeviceAddress", deviceAddress);
+	public void setStreamMode(String streamMode) {
+		this.streamMode = streamMode;
+		if(streamMode != null){
+			putBodyParameter("StreamMode", streamMode);
 		}
 	}
 
-	public String getFilePath() {
-		return this.filePath;
+	public String getDeviceIdList() {
+		return this.deviceIdList;
 	}
 
-	public void setFilePath(String filePath) {
-		this.filePath = filePath;
-		if(filePath != null){
-			putBodyParameter("FilePath", filePath);
-		}
-	}
-
-	public Long getNvrExisted() {
-		return this.nvrExisted;
-	}
-
-	public void setNvrExisted(Long nvrExisted) {
-		this.nvrExisted = nvrExisted;
-		if(nvrExisted != null){
-			putBodyParameter("NvrExisted", nvrExisted.toString());
+	public void setDeviceIdList(String deviceIdList) {
+		this.deviceIdList = deviceIdList;
+		if(deviceIdList != null){
+			putBodyParameter("DeviceIdList", deviceIdList);
 		}
 	}
 
 	@Override
-	public Class<VerifyDeviceResponse> getResponseClass() {
-		return VerifyDeviceResponse.class;
+	public Class<SetStreamModeResponse> getResponseClass() {
+		return SetStreamModeResponse.class;
 	}
 
 }

@@ -22,10 +22,10 @@ import com.aliyuncs.vcs.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeIpcsRequest extends RpcAcsRequest<DescribeIpcsResponse> {
+public class DescribeNvrsRequest extends RpcAcsRequest<DescribeNvrsResponse> {
 	   
 
-	private String parentDeviceType;
+	private String nvrDeviceIdList;
 
 	private Long pageNum;
 
@@ -34,12 +34,8 @@ public class DescribeIpcsRequest extends RpcAcsRequest<DescribeIpcsResponse> {
 	private String deviceFilter;
 
 	private Long pageSize;
-
-	private String deviceIdList;
-
-	private String nvrIdList;
-	public DescribeIpcsRequest() {
-		super("Vcs", "2020-05-15", "DescribeIpcs");
+	public DescribeNvrsRequest() {
+		super("Vcs", "2020-05-15", "DescribeNvrs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -47,14 +43,14 @@ public class DescribeIpcsRequest extends RpcAcsRequest<DescribeIpcsResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getParentDeviceType() {
-		return this.parentDeviceType;
+	public String getNvrDeviceIdList() {
+		return this.nvrDeviceIdList;
 	}
 
-	public void setParentDeviceType(String parentDeviceType) {
-		this.parentDeviceType = parentDeviceType;
-		if(parentDeviceType != null){
-			putBodyParameter("ParentDeviceType", parentDeviceType);
+	public void setNvrDeviceIdList(String nvrDeviceIdList) {
+		this.nvrDeviceIdList = nvrDeviceIdList;
+		if(nvrDeviceIdList != null){
+			putBodyParameter("NvrDeviceIdList", nvrDeviceIdList);
 		}
 	}
 
@@ -102,31 +98,9 @@ public class DescribeIpcsRequest extends RpcAcsRequest<DescribeIpcsResponse> {
 		}
 	}
 
-	public String getDeviceIdList() {
-		return this.deviceIdList;
-	}
-
-	public void setDeviceIdList(String deviceIdList) {
-		this.deviceIdList = deviceIdList;
-		if(deviceIdList != null){
-			putBodyParameter("DeviceIdList", deviceIdList);
-		}
-	}
-
-	public String getNvrIdList() {
-		return this.nvrIdList;
-	}
-
-	public void setNvrIdList(String nvrIdList) {
-		this.nvrIdList = nvrIdList;
-		if(nvrIdList != null){
-			putBodyParameter("NvrIdList", nvrIdList);
-		}
-	}
-
 	@Override
-	public Class<DescribeIpcsResponse> getResponseClass() {
-		return DescribeIpcsResponse.class;
+	public Class<DescribeNvrsResponse> getResponseClass() {
+		return DescribeNvrsResponse.class;
 	}
 
 }
