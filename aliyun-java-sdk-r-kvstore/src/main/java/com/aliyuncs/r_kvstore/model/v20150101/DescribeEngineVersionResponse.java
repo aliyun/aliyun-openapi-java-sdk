@@ -38,6 +38,12 @@ public class DescribeEngineVersionResponse extends AcsResponse {
 
 	private Boolean enableUpgradeMajorVersion;
 
+	private String proxyMinorVersion;
+
+	private String dBVersionRelease;
+
+	private String proxyVersionRelease;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -92,6 +98,30 @@ public class DescribeEngineVersionResponse extends AcsResponse {
 
 	public void setEnableUpgradeMajorVersion(Boolean enableUpgradeMajorVersion) {
 		this.enableUpgradeMajorVersion = enableUpgradeMajorVersion;
+	}
+
+	public String getProxyMinorVersion() {
+		return this.proxyMinorVersion;
+	}
+
+	public void setProxyMinorVersion(String proxyMinorVersion) {
+		this.proxyMinorVersion = proxyMinorVersion;
+	}
+
+	public String getDBVersionRelease() {
+		return this.dBVersionRelease;
+	}
+
+	public void setDBVersionRelease(String dBVersionRelease) {
+		this.dBVersionRelease = dBVersionRelease;
+	}
+
+	public String getProxyVersionRelease() {
+		return this.proxyVersionRelease;
+	}
+
+	public void setProxyVersionRelease(String proxyVersionRelease) {
+		this.proxyVersionRelease = proxyVersionRelease;
 	}
 
 	@Override

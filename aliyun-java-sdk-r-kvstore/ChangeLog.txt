@@ -1,3 +1,7 @@
+2021-08-12 Version: 2.20.1
+- DescirbeAvailableResource add NodeId input parameter.
+- CreateTairInstance add GlobalInstanceId input paramter.
+
 2021-07-27 Version: 2.20.0
 - Add DescribeAuditLogConfig API.
 

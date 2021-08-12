@@ -81,6 +81,8 @@ public class CreateTairInstanceRequest extends RpcAcsRequest<CreateTairInstanceR
 
 	private String ownerAccount;
 
+	private String globalInstanceId;
+
 	private String vpcId;
 
 	private String chargeType;
@@ -398,6 +400,17 @@ public class CreateTairInstanceRequest extends RpcAcsRequest<CreateTairInstanceR
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getGlobalInstanceId() {
+		return this.globalInstanceId;
+	}
+
+	public void setGlobalInstanceId(String globalInstanceId) {
+		this.globalInstanceId = globalInstanceId;
+		if(globalInstanceId != null){
+			putQueryParameter("GlobalInstanceId", globalInstanceId);
 		}
 	}
 
