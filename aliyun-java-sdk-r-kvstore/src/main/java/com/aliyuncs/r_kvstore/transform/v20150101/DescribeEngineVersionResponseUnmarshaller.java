@@ -29,6 +29,9 @@ public class DescribeEngineVersionResponseUnmarshaller {
 		describeEngineVersionResponse.setEnableUpgradeMinorVersion(_ctx.booleanValue("DescribeEngineVersionResponse.EnableUpgradeMinorVersion"));
 		describeEngineVersionResponse.setMajorVersion(_ctx.stringValue("DescribeEngineVersionResponse.MajorVersion"));
 		describeEngineVersionResponse.setEnableUpgradeMajorVersion(_ctx.booleanValue("DescribeEngineVersionResponse.EnableUpgradeMajorVersion"));
+		describeEngineVersionResponse.setProxyMinorVersion(_ctx.stringValue("DescribeEngineVersionResponse.ProxyMinorVersion"));
+		describeEngineVersionResponse.setDBVersionRelease(_ctx.stringValue("DescribeEngineVersionResponse.DBVersionRelease"));
+		describeEngineVersionResponse.setProxyVersionRelease(_ctx.stringValue("DescribeEngineVersionResponse.ProxyVersionRelease"));
 	 
 	 	return describeEngineVersionResponse;
 	}

@@ -267,6 +267,8 @@ public class DescribeAvailableResourceResponse extends AcsResponse {
 
 										private String instanceClassRemark;
 
+										private Long capacity;
+
 										public String getInstanceClass() {
 											return this.instanceClass;
 										}
@@ -281,6 +283,14 @@ public class DescribeAvailableResourceResponse extends AcsResponse {
 
 										public void setInstanceClassRemark(String instanceClassRemark) {
 											this.instanceClassRemark = instanceClassRemark;
+										}
+
+										public Long getCapacity() {
+											return this.capacity;
+										}
+
+										public void setCapacity(Long capacity) {
+											this.capacity = capacity;
 										}
 									}
 								}
