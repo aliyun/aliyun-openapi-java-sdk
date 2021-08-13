@@ -29,9 +29,9 @@ public class AddACLRuleResponse extends AcsResponse {
 
 	private String description;
 
-	private String sourcePortRange;
-
 	private String requestId;
+
+	private String sourcePortRange;
 
 	private String sourceCidr;
 
@@ -47,17 +47,17 @@ public class AddACLRuleResponse extends AcsResponse {
 
 	private String name;
 
-	private Long gmtCreate;
-
 	private String type;
+
+	private Long gmtCreate;
 
 	private String destCidr;
 
 	private String ipProtocol;
 
-	private List<String> dpiSignatureIds;
-
 	private List<String> dpiGroupIds;
+
+	private List<String> dpiSignatureIds;
 
 	public String getPolicy() {
 		return this.policy;
@@ -75,20 +75,20 @@ public class AddACLRuleResponse extends AcsResponse {
 		this.description = description;
 	}
 
-	public String getSourcePortRange() {
-		return this.sourcePortRange;
-	}
-
-	public void setSourcePortRange(String sourcePortRange) {
-		this.sourcePortRange = sourcePortRange;
-	}
-
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getSourcePortRange() {
+		return this.sourcePortRange;
+	}
+
+	public void setSourcePortRange(String sourcePortRange) {
+		this.sourcePortRange = sourcePortRange;
 	}
 
 	public String getSourceCidr() {
@@ -147,20 +147,20 @@ public class AddACLRuleResponse extends AcsResponse {
 		this.name = name;
 	}
 
-	public Long getGmtCreate() {
-		return this.gmtCreate;
-	}
-
-	public void setGmtCreate(Long gmtCreate) {
-		this.gmtCreate = gmtCreate;
-	}
-
 	public String getType() {
 		return this.type;
 	}
 
 	public void setType(String type) {
 		this.type = type;
+	}
+
+	public Long getGmtCreate() {
+		return this.gmtCreate;
+	}
+
+	public void setGmtCreate(Long gmtCreate) {
+		this.gmtCreate = gmtCreate;
 	}
 
 	public String getDestCidr() {
@@ -179,20 +179,20 @@ public class AddACLRuleResponse extends AcsResponse {
 		this.ipProtocol = ipProtocol;
 	}
 
-	public List<String> getDpiSignatureIds() {
-		return this.dpiSignatureIds;
-	}
-
-	public void setDpiSignatureIds(List<String> dpiSignatureIds) {
-		this.dpiSignatureIds = dpiSignatureIds;
-	}
-
 	public List<String> getDpiGroupIds() {
 		return this.dpiGroupIds;
 	}
 
 	public void setDpiGroupIds(List<String> dpiGroupIds) {
 		this.dpiGroupIds = dpiGroupIds;
+	}
+
+	public List<String> getDpiSignatureIds() {
+		return this.dpiSignatureIds;
+	}
+
+	public void setDpiSignatureIds(List<String> dpiSignatureIds) {
+		this.dpiSignatureIds = dpiSignatureIds;
 	}
 
 	@Override

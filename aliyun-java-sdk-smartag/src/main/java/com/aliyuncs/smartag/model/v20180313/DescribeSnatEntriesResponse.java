@@ -27,9 +27,9 @@ public class DescribeSnatEntriesResponse extends AcsResponse {
 
 	private Integer totalCount;
 
-	private String requestId;
-
 	private Integer pageSize;
+
+	private String requestId;
 
 	private Integer pageNumber;
 
@@ -43,20 +43,20 @@ public class DescribeSnatEntriesResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getPageNumber() {
@@ -77,20 +77,20 @@ public class DescribeSnatEntriesResponse extends AcsResponse {
 
 	public static class SnatEntry {
 
-		private String instanceId;
+		private String cidrBlock;
 
 		private Long createTime;
 
-		private String cidrBlock;
+		private String instanceId;
 
 		private String snatIp;
 
-		public String getInstanceId() {
-			return this.instanceId;
+		public String getCidrBlock() {
+			return this.cidrBlock;
 		}
 
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
+		public void setCidrBlock(String cidrBlock) {
+			this.cidrBlock = cidrBlock;
 		}
 
 		public Long getCreateTime() {
@@ -101,12 +101,12 @@ public class DescribeSnatEntriesResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
-		public String getCidrBlock() {
-			return this.cidrBlock;
+		public String getInstanceId() {
+			return this.instanceId;
 		}
 
-		public void setCidrBlock(String cidrBlock) {
-			this.cidrBlock = cidrBlock;
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
 		}
 
 		public String getSnatIp() {

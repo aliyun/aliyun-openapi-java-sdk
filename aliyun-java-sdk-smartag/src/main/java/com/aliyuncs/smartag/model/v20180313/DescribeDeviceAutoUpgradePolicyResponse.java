@@ -28,9 +28,9 @@ public class DescribeDeviceAutoUpgradePolicyResponse extends AcsResponse {
 
 	private String timeZone;
 
-	private String requestId;
-
 	private String serialNumber;
+
+	private String requestId;
 
 	private String jitter;
 
@@ -56,20 +56,20 @@ public class DescribeDeviceAutoUpgradePolicyResponse extends AcsResponse {
 		this.timeZone = timeZone;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public String getSerialNumber() {
 		return this.serialNumber;
 	}
 
 	public void setSerialNumber(String serialNumber) {
 		this.serialNumber = serialNumber;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getJitter() {

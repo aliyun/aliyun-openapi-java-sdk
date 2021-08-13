@@ -27,9 +27,9 @@ public class DescribeSmartAccessGatewayClientUsersResponse extends AcsResponse {
 
 	private Integer totalCount;
 
-	private String requestId;
-
 	private Integer pageSize;
+
+	private String requestId;
 
 	private Integer pageNumber;
 
@@ -43,20 +43,20 @@ public class DescribeSmartAccessGatewayClientUsersResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getPageNumber() {
@@ -77,15 +77,41 @@ public class DescribeSmartAccessGatewayClientUsersResponse extends AcsResponse {
 
 	public static class User {
 
+		private Integer bandwidth;
+
+		private Integer state;
+
+		private String clientIp;
+
 		private String userName;
 
 		private String userMail;
 
-		private Integer state;
+		private Long accelerateBandwidth;
 
-		private Integer bandwidth;
+		public Integer getBandwidth() {
+			return this.bandwidth;
+		}
 
-		private String clientIp;
+		public void setBandwidth(Integer bandwidth) {
+			this.bandwidth = bandwidth;
+		}
+
+		public Integer getState() {
+			return this.state;
+		}
+
+		public void setState(Integer state) {
+			this.state = state;
+		}
+
+		public String getClientIp() {
+			return this.clientIp;
+		}
+
+		public void setClientIp(String clientIp) {
+			this.clientIp = clientIp;
+		}
 
 		public String getUserName() {
 			return this.userName;
@@ -103,28 +129,12 @@ public class DescribeSmartAccessGatewayClientUsersResponse extends AcsResponse {
 			this.userMail = userMail;
 		}
 
-		public Integer getState() {
-			return this.state;
+		public Long getAccelerateBandwidth() {
+			return this.accelerateBandwidth;
 		}
 
-		public void setState(Integer state) {
-			this.state = state;
-		}
-
-		public Integer getBandwidth() {
-			return this.bandwidth;
-		}
-
-		public void setBandwidth(Integer bandwidth) {
-			this.bandwidth = bandwidth;
-		}
-
-		public String getClientIp() {
-			return this.clientIp;
-		}
-
-		public void setClientIp(String clientIp) {
-			this.clientIp = clientIp;
+		public void setAccelerateBandwidth(Long accelerateBandwidth) {
+			this.accelerateBandwidth = accelerateBandwidth;
 		}
 	}
 

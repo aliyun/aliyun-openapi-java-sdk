@@ -25,21 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeSagUserDnsResponse extends AcsResponse {
 
-	private String slaveDns;
-
 	private String requestId;
+
+	private String slaveDns;
 
 	private String masterDns;
 
 	private List<TaskState> taskStates;
-
-	public String getSlaveDns() {
-		return this.slaveDns;
-	}
-
-	public void setSlaveDns(String slaveDns) {
-		this.slaveDns = slaveDns;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -47,6 +39,14 @@ public class DescribeSagUserDnsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getSlaveDns() {
+		return this.slaveDns;
+	}
+
+	public void setSlaveDns(String slaveDns) {
+		this.slaveDns = slaveDns;
 	}
 
 	public String getMasterDns() {
@@ -67,13 +67,21 @@ public class DescribeSagUserDnsResponse extends AcsResponse {
 
 	public static class TaskState {
 
-		private String state;
+		private String errorMessage;
 
-		private String createTime;
+		private String state;
 
 		private String errorCode;
 
-		private String errorMessage;
+		private String createTime;
+
+		public String getErrorMessage() {
+			return this.errorMessage;
+		}
+
+		public void setErrorMessage(String errorMessage) {
+			this.errorMessage = errorMessage;
+		}
 
 		public String getState() {
 			return this.state;
@@ -81,14 +89,6 @@ public class DescribeSagUserDnsResponse extends AcsResponse {
 
 		public void setState(String state) {
 			this.state = state;
-		}
-
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
 		}
 
 		public String getErrorCode() {
@@ -99,12 +99,12 @@ public class DescribeSagUserDnsResponse extends AcsResponse {
 			this.errorCode = errorCode;
 		}
 
-		public String getErrorMessage() {
-			return this.errorMessage;
+		public String getCreateTime() {
+			return this.createTime;
 		}
 
-		public void setErrorMessage(String errorMessage) {
-			this.errorMessage = errorMessage;
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
 		}
 	}
 

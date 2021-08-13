@@ -36,34 +36,34 @@ public class DiscribeSmartAccessGatewayDiagnosisReportResponseUnmarshaller {
 		discribeSmartAccessGatewayDiagnosisReportResponse.setRequestId(_ctx.stringValue("DiscribeSmartAccessGatewayDiagnosisReportResponse.RequestId"));
 
 		DiagnoseResult diagnoseResult = new DiagnoseResult();
-		diagnoseResult.setParameters(_ctx.stringValue("DiscribeSmartAccessGatewayDiagnosisReportResponse.DiagnoseResult.Parameters"));
-		diagnoseResult.setEndTime(_ctx.integerValue("DiscribeSmartAccessGatewayDiagnosisReportResponse.DiagnoseResult.EndTime"));
-		diagnoseResult.setInstanceId(_ctx.stringValue("DiscribeSmartAccessGatewayDiagnosisReportResponse.DiagnoseResult.InstanceId"));
-		diagnoseResult.setUserLevel(_ctx.stringValue("DiscribeSmartAccessGatewayDiagnosisReportResponse.DiagnoseResult.UserLevel"));
 		diagnoseResult.setPercent(_ctx.integerValue("DiscribeSmartAccessGatewayDiagnosisReportResponse.DiagnoseResult.Percent"));
-		diagnoseResult.setStartTime(_ctx.integerValue("DiscribeSmartAccessGatewayDiagnosisReportResponse.DiagnoseResult.StartTime"));
-		diagnoseResult.setFinishedNumber(_ctx.integerValue("DiscribeSmartAccessGatewayDiagnosisReportResponse.DiagnoseResult.FinishedNumber"));
-		diagnoseResult.setBoxType(_ctx.stringValue("DiscribeSmartAccessGatewayDiagnosisReportResponse.DiagnoseResult.BoxType"));
-		diagnoseResult.setStoreType(_ctx.stringValue("DiscribeSmartAccessGatewayDiagnosisReportResponse.DiagnoseResult.StoreType"));
-		diagnoseResult.setMonitorVersion(_ctx.stringValue("DiscribeSmartAccessGatewayDiagnosisReportResponse.DiagnoseResult.MonitorVersion"));
-		diagnoseResult.setUId(_ctx.stringValue("DiscribeSmartAccessGatewayDiagnosisReportResponse.DiagnoseResult.UId"));
-		diagnoseResult.setReportSLSSuccess(_ctx.integerValue("DiscribeSmartAccessGatewayDiagnosisReportResponse.DiagnoseResult.ReportSLSSuccess"));
-		diagnoseResult.setState(_ctx.stringValue("DiscribeSmartAccessGatewayDiagnosisReportResponse.DiagnoseResult.State"));
-		diagnoseResult.setDiagnoseId(_ctx.stringValue("DiscribeSmartAccessGatewayDiagnosisReportResponse.DiagnoseResult.DiagnoseId"));
-		diagnoseResult.setTotalNumber(_ctx.integerValue("DiscribeSmartAccessGatewayDiagnosisReportResponse.DiagnoseResult.TotalNumber"));
-		diagnoseResult.setBoxVersion(_ctx.stringValue("DiscribeSmartAccessGatewayDiagnosisReportResponse.DiagnoseResult.BoxVersion"));
 		diagnoseResult.setSN(_ctx.stringValue("DiscribeSmartAccessGatewayDiagnosisReportResponse.DiagnoseResult.SN"));
+		diagnoseResult.setDiagnoseId(_ctx.stringValue("DiscribeSmartAccessGatewayDiagnosisReportResponse.DiagnoseResult.DiagnoseId"));
+		diagnoseResult.setState(_ctx.stringValue("DiscribeSmartAccessGatewayDiagnosisReportResponse.DiagnoseResult.State"));
+		diagnoseResult.setUserLevel(_ctx.stringValue("DiscribeSmartAccessGatewayDiagnosisReportResponse.DiagnoseResult.UserLevel"));
+		diagnoseResult.setBoxVersion(_ctx.stringValue("DiscribeSmartAccessGatewayDiagnosisReportResponse.DiagnoseResult.BoxVersion"));
+		diagnoseResult.setInstanceId(_ctx.stringValue("DiscribeSmartAccessGatewayDiagnosisReportResponse.DiagnoseResult.InstanceId"));
+		diagnoseResult.setBoxType(_ctx.stringValue("DiscribeSmartAccessGatewayDiagnosisReportResponse.DiagnoseResult.BoxType"));
+		diagnoseResult.setMonitorVersion(_ctx.stringValue("DiscribeSmartAccessGatewayDiagnosisReportResponse.DiagnoseResult.MonitorVersion"));
+		diagnoseResult.setFinishedNumber(_ctx.integerValue("DiscribeSmartAccessGatewayDiagnosisReportResponse.DiagnoseResult.FinishedNumber"));
+		diagnoseResult.setUId(_ctx.stringValue("DiscribeSmartAccessGatewayDiagnosisReportResponse.DiagnoseResult.UId"));
+		diagnoseResult.setEndTime(_ctx.integerValue("DiscribeSmartAccessGatewayDiagnosisReportResponse.DiagnoseResult.EndTime"));
+		diagnoseResult.setStartTime(_ctx.integerValue("DiscribeSmartAccessGatewayDiagnosisReportResponse.DiagnoseResult.StartTime"));
+		diagnoseResult.setParameters(_ctx.stringValue("DiscribeSmartAccessGatewayDiagnosisReportResponse.DiagnoseResult.Parameters"));
+		diagnoseResult.setStoreType(_ctx.stringValue("DiscribeSmartAccessGatewayDiagnosisReportResponse.DiagnoseResult.StoreType"));
+		diagnoseResult.setReportSLSSuccess(_ctx.integerValue("DiscribeSmartAccessGatewayDiagnosisReportResponse.DiagnoseResult.ReportSLSSuccess"));
+		diagnoseResult.setTotalNumber(_ctx.integerValue("DiscribeSmartAccessGatewayDiagnosisReportResponse.DiagnoseResult.TotalNumber"));
 
 		Level level = new Level();
-		level.setBiz(_ctx.stringValue("DiscribeSmartAccessGatewayDiagnosisReportResponse.DiagnoseResult.Level.Biz"));
 		level.setConfiguration(_ctx.stringValue("DiscribeSmartAccessGatewayDiagnosisReportResponse.DiagnoseResult.Level.Configuration"));
 		level.setTotal(_ctx.stringValue("DiscribeSmartAccessGatewayDiagnosisReportResponse.DiagnoseResult.Level.Total"));
+		level.setBiz(_ctx.stringValue("DiscribeSmartAccessGatewayDiagnosisReportResponse.DiagnoseResult.Level.Biz"));
 		diagnoseResult.setLevel(level);
 
 		Statistics statistics = new Statistics();
 		statistics.setWarning(_ctx.integerValue("DiscribeSmartAccessGatewayDiagnosisReportResponse.DiagnoseResult.Statistics.Warning"));
-		statistics.setTotal(_ctx.integerValue("DiscribeSmartAccessGatewayDiagnosisReportResponse.DiagnoseResult.Statistics.Total"));
 		statistics.setError(_ctx.integerValue("DiscribeSmartAccessGatewayDiagnosisReportResponse.DiagnoseResult.Statistics.Error"));
+		statistics.setTotal(_ctx.integerValue("DiscribeSmartAccessGatewayDiagnosisReportResponse.DiagnoseResult.Statistics.Total"));
 		statistics.setInfo(_ctx.integerValue("DiscribeSmartAccessGatewayDiagnosisReportResponse.DiagnoseResult.Statistics.Info"));
 		diagnoseResult.setStatistics(statistics);
 
@@ -74,8 +74,8 @@ public class DiscribeSmartAccessGatewayDiagnosisReportResponseUnmarshaller {
 
 			Statistics1 statistics1 = new Statistics1();
 			statistics1.setWarning(_ctx.integerValue("DiscribeSmartAccessGatewayDiagnosisReportResponse.DiagnoseResult.Details["+ i +"].Statistics.Warning"));
-			statistics1.setTotal(_ctx.integerValue("DiscribeSmartAccessGatewayDiagnosisReportResponse.DiagnoseResult.Details["+ i +"].Statistics.Total"));
 			statistics1.setError(_ctx.integerValue("DiscribeSmartAccessGatewayDiagnosisReportResponse.DiagnoseResult.Details["+ i +"].Statistics.Error"));
+			statistics1.setTotal(_ctx.integerValue("DiscribeSmartAccessGatewayDiagnosisReportResponse.DiagnoseResult.Details["+ i +"].Statistics.Total"));
 			statistics1.setInfo(_ctx.integerValue("DiscribeSmartAccessGatewayDiagnosisReportResponse.DiagnoseResult.Details["+ i +"].Statistics.Info"));
 			detail.setStatistics1(statistics1);
 
@@ -88,41 +88,41 @@ public class DiscribeSmartAccessGatewayDiagnosisReportResponseUnmarshaller {
 				item.setItemName(_ctx.stringValue("DiscribeSmartAccessGatewayDiagnosisReportResponse.DiagnoseResult.Details["+ i +"].Items["+ j +"].ItemName"));
 				item.setLevel(_ctx.stringValue("DiscribeSmartAccessGatewayDiagnosisReportResponse.DiagnoseResult.Details["+ i +"].Items["+ j +"].Level"));
 
-				EN eN = new EN();
-				eN.setItemLevel(_ctx.stringValue("DiscribeSmartAccessGatewayDiagnosisReportResponse.DiagnoseResult.Details["+ i +"].Items["+ j +"].EN.ItemLevel"));
-				eN.setItemType(_ctx.stringValue("DiscribeSmartAccessGatewayDiagnosisReportResponse.DiagnoseResult.Details["+ i +"].Items["+ j +"].EN.ItemType"));
-				eN.setItemName(_ctx.stringValue("DiscribeSmartAccessGatewayDiagnosisReportResponse.DiagnoseResult.Details["+ i +"].Items["+ j +"].EN.ItemName"));
-
-				List<String> details2 = new ArrayList<String>();
-				for (int k = 0; k < _ctx.lengthValue("DiscribeSmartAccessGatewayDiagnosisReportResponse.DiagnoseResult.Details["+ i +"].Items["+ j +"].EN.Details.Length"); k++) {
-					details2.add(_ctx.stringValue("DiscribeSmartAccessGatewayDiagnosisReportResponse.DiagnoseResult.Details["+ i +"].Items["+ j +"].EN.Details["+ k +"]"));
-				}
-				eN.setDetails2(details2);
-
-				List<String> advice = new ArrayList<String>();
-				for (int k = 0; k < _ctx.lengthValue("DiscribeSmartAccessGatewayDiagnosisReportResponse.DiagnoseResult.Details["+ i +"].Items["+ j +"].EN.Advice.Length"); k++) {
-					advice.add(_ctx.stringValue("DiscribeSmartAccessGatewayDiagnosisReportResponse.DiagnoseResult.Details["+ i +"].Items["+ j +"].EN.Advice["+ k +"]"));
-				}
-				eN.setAdvice(advice);
-				item.setEN(eN);
-
 				CN cN = new CN();
+				cN.setItemName(_ctx.stringValue("DiscribeSmartAccessGatewayDiagnosisReportResponse.DiagnoseResult.Details["+ i +"].Items["+ j +"].CN.ItemName"));
 				cN.setItemLevel(_ctx.stringValue("DiscribeSmartAccessGatewayDiagnosisReportResponse.DiagnoseResult.Details["+ i +"].Items["+ j +"].CN.ItemLevel"));
 				cN.setItemType(_ctx.stringValue("DiscribeSmartAccessGatewayDiagnosisReportResponse.DiagnoseResult.Details["+ i +"].Items["+ j +"].CN.ItemType"));
-				cN.setItemName(_ctx.stringValue("DiscribeSmartAccessGatewayDiagnosisReportResponse.DiagnoseResult.Details["+ i +"].Items["+ j +"].CN.ItemName"));
 
-				List<String> details3 = new ArrayList<String>();
-				for (int k = 0; k < _ctx.lengthValue("DiscribeSmartAccessGatewayDiagnosisReportResponse.DiagnoseResult.Details["+ i +"].Items["+ j +"].CN.Details.Length"); k++) {
-					details3.add(_ctx.stringValue("DiscribeSmartAccessGatewayDiagnosisReportResponse.DiagnoseResult.Details["+ i +"].Items["+ j +"].CN.Details["+ k +"]"));
-				}
-				cN.setDetails3(details3);
-
-				List<String> advice4 = new ArrayList<String>();
+				List<String> advice = new ArrayList<String>();
 				for (int k = 0; k < _ctx.lengthValue("DiscribeSmartAccessGatewayDiagnosisReportResponse.DiagnoseResult.Details["+ i +"].Items["+ j +"].CN.Advice.Length"); k++) {
-					advice4.add(_ctx.stringValue("DiscribeSmartAccessGatewayDiagnosisReportResponse.DiagnoseResult.Details["+ i +"].Items["+ j +"].CN.Advice["+ k +"]"));
+					advice.add(_ctx.stringValue("DiscribeSmartAccessGatewayDiagnosisReportResponse.DiagnoseResult.Details["+ i +"].Items["+ j +"].CN.Advice["+ k +"]"));
 				}
-				cN.setAdvice4(advice4);
+				cN.setAdvice(advice);
+
+				List<String> details2 = new ArrayList<String>();
+				for (int k = 0; k < _ctx.lengthValue("DiscribeSmartAccessGatewayDiagnosisReportResponse.DiagnoseResult.Details["+ i +"].Items["+ j +"].CN.Details.Length"); k++) {
+					details2.add(_ctx.stringValue("DiscribeSmartAccessGatewayDiagnosisReportResponse.DiagnoseResult.Details["+ i +"].Items["+ j +"].CN.Details["+ k +"]"));
+				}
+				cN.setDetails2(details2);
 				item.setCN(cN);
+
+				EN eN = new EN();
+				eN.setItemName(_ctx.stringValue("DiscribeSmartAccessGatewayDiagnosisReportResponse.DiagnoseResult.Details["+ i +"].Items["+ j +"].EN.ItemName"));
+				eN.setItemLevel(_ctx.stringValue("DiscribeSmartAccessGatewayDiagnosisReportResponse.DiagnoseResult.Details["+ i +"].Items["+ j +"].EN.ItemLevel"));
+				eN.setItemType(_ctx.stringValue("DiscribeSmartAccessGatewayDiagnosisReportResponse.DiagnoseResult.Details["+ i +"].Items["+ j +"].EN.ItemType"));
+
+				List<String> advice3 = new ArrayList<String>();
+				for (int k = 0; k < _ctx.lengthValue("DiscribeSmartAccessGatewayDiagnosisReportResponse.DiagnoseResult.Details["+ i +"].Items["+ j +"].EN.Advice.Length"); k++) {
+					advice3.add(_ctx.stringValue("DiscribeSmartAccessGatewayDiagnosisReportResponse.DiagnoseResult.Details["+ i +"].Items["+ j +"].EN.Advice["+ k +"]"));
+				}
+				eN.setAdvice3(advice3);
+
+				List<String> details4 = new ArrayList<String>();
+				for (int k = 0; k < _ctx.lengthValue("DiscribeSmartAccessGatewayDiagnosisReportResponse.DiagnoseResult.Details["+ i +"].Items["+ j +"].EN.Details.Length"); k++) {
+					details4.add(_ctx.stringValue("DiscribeSmartAccessGatewayDiagnosisReportResponse.DiagnoseResult.Details["+ i +"].Items["+ j +"].EN.Details["+ k +"]"));
+				}
+				eN.setDetails4(details4);
+				item.setEN(eN);
 
 				items.add(item);
 			}

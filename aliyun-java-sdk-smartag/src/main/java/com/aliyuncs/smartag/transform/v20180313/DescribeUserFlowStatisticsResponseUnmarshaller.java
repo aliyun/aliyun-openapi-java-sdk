@@ -31,8 +31,8 @@ public class DescribeUserFlowStatisticsResponseUnmarshaller {
 		List<Statistics> sagStatistics = new ArrayList<Statistics>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeUserFlowStatisticsResponse.SagStatistics.Length"); i++) {
 			Statistics statistics = new Statistics();
-			statistics.setUserName(_ctx.stringValue("DescribeUserFlowStatisticsResponse.SagStatistics["+ i +"].UserName"));
 			statistics.setTotalBytes(_ctx.stringValue("DescribeUserFlowStatisticsResponse.SagStatistics["+ i +"].TotalBytes"));
+			statistics.setUserName(_ctx.stringValue("DescribeUserFlowStatisticsResponse.SagStatistics["+ i +"].UserName"));
 
 			sagStatistics.add(statistics);
 		}

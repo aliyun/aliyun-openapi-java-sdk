@@ -27,9 +27,9 @@ public class DescribeACLsResponse extends AcsResponse {
 
 	private Integer totalCount;
 
-	private String requestId;
-
 	private Integer pageSize;
+
+	private String requestId;
 
 	private Integer pageNumber;
 
@@ -43,20 +43,20 @@ public class DescribeACLsResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getPageNumber() {
@@ -83,6 +83,8 @@ public class DescribeACLsResponse extends AcsResponse {
 
 		private String name;
 
+		private String resourceGroupId;
+
 		public String getSagCount() {
 			return this.sagCount;
 		}
@@ -105,6 +107,14 @@ public class DescribeACLsResponse extends AcsResponse {
 
 		public void setName(String name) {
 			this.name = name;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
 		}
 	}
 

@@ -28,6 +28,8 @@ public class CreateACLResponse extends AcsResponse {
 
 	private String aclId;
 
+	private String resourceGroupId;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -42,6 +44,14 @@ public class CreateACLResponse extends AcsResponse {
 
 	public void setAclId(String aclId) {
 		this.aclId = aclId;
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
 	}
 
 	@Override

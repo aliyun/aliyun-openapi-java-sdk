@@ -33,9 +33,9 @@ public class DescribeSagRouteProtocolOspfResponse extends AcsResponse {
 
 	private String areaId;
 
-	private Integer helloTime;
-
 	private String routerId;
+
+	private Integer helloTime;
 
 	private String areaType;
 
@@ -77,20 +77,20 @@ public class DescribeSagRouteProtocolOspfResponse extends AcsResponse {
 		this.areaId = areaId;
 	}
 
-	public Integer getHelloTime() {
-		return this.helloTime;
-	}
-
-	public void setHelloTime(Integer helloTime) {
-		this.helloTime = helloTime;
-	}
-
 	public String getRouterId() {
 		return this.routerId;
 	}
 
 	public void setRouterId(String routerId) {
 		this.routerId = routerId;
+	}
+
+	public Integer getHelloTime() {
+		return this.helloTime;
+	}
+
+	public void setHelloTime(Integer helloTime) {
+		this.helloTime = helloTime;
 	}
 
 	public String getAreaType() {
@@ -127,13 +127,21 @@ public class DescribeSagRouteProtocolOspfResponse extends AcsResponse {
 
 	public static class TaskState {
 
-		private String state;
+		private String errorMessage;
 
-		private String createTime;
+		private String state;
 
 		private String errorCode;
 
-		private String errorMessage;
+		private String createTime;
+
+		public String getErrorMessage() {
+			return this.errorMessage;
+		}
+
+		public void setErrorMessage(String errorMessage) {
+			this.errorMessage = errorMessage;
+		}
 
 		public String getState() {
 			return this.state;
@@ -141,14 +149,6 @@ public class DescribeSagRouteProtocolOspfResponse extends AcsResponse {
 
 		public void setState(String state) {
 			this.state = state;
-		}
-
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
 		}
 
 		public String getErrorCode() {
@@ -159,12 +159,12 @@ public class DescribeSagRouteProtocolOspfResponse extends AcsResponse {
 			this.errorCode = errorCode;
 		}
 
-		public String getErrorMessage() {
-			return this.errorMessage;
+		public String getCreateTime() {
+			return this.createTime;
 		}
 
-		public void setErrorMessage(String errorMessage) {
-			this.errorMessage = errorMessage;
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
 		}
 	}
 

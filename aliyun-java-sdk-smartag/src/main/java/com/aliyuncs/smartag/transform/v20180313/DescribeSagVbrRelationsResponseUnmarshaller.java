@@ -32,8 +32,8 @@ public class DescribeSagVbrRelationsResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("DescribeSagVbrRelationsResponse.SagVbrRelations.Length"); i++) {
 			SagVbrRelation sagVbrRelation = new SagVbrRelation();
 			sagVbrRelation.setVbrInstanceId(_ctx.stringValue("DescribeSagVbrRelationsResponse.SagVbrRelations["+ i +"].VbrInstanceId"));
-			sagVbrRelation.setSagInstanceId(_ctx.stringValue("DescribeSagVbrRelationsResponse.SagVbrRelations["+ i +"].SagInstanceId"));
 			sagVbrRelation.setSagUid(_ctx.stringValue("DescribeSagVbrRelationsResponse.SagVbrRelations["+ i +"].SagUid"));
+			sagVbrRelation.setSagInstanceId(_ctx.stringValue("DescribeSagVbrRelationsResponse.SagVbrRelations["+ i +"].SagInstanceId"));
 
 			sagVbrRelations.add(sagVbrRelation);
 		}

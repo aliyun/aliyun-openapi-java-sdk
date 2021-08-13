@@ -47,17 +47,9 @@ public class DescribeUserOnlineClientStatisticsResponse extends AcsResponse {
 
 	public static class Statistics {
 
-		private String userName;
-
 		private String onlineCount;
 
-		public String getUserName() {
-			return this.userName;
-		}
-
-		public void setUserName(String userName) {
-			this.userName = userName;
-		}
+		private String userName;
 
 		public String getOnlineCount() {
 			return this.onlineCount;
@@ -65,6 +57,14 @@ public class DescribeUserOnlineClientStatisticsResponse extends AcsResponse {
 
 		public void setOnlineCount(String onlineCount) {
 			this.onlineCount = onlineCount;
+		}
+
+		public String getUserName() {
+			return this.userName;
+		}
+
+		public void setUserName(String userName) {
+			this.userName = userName;
 		}
 	}
 

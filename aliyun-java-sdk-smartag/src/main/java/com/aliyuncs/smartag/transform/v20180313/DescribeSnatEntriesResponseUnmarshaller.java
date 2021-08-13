@@ -34,9 +34,9 @@ public class DescribeSnatEntriesResponseUnmarshaller {
 		List<SnatEntry> snatEntries = new ArrayList<SnatEntry>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSnatEntriesResponse.SnatEntries.Length"); i++) {
 			SnatEntry snatEntry = new SnatEntry();
-			snatEntry.setInstanceId(_ctx.stringValue("DescribeSnatEntriesResponse.SnatEntries["+ i +"].InstanceId"));
-			snatEntry.setCreateTime(_ctx.longValue("DescribeSnatEntriesResponse.SnatEntries["+ i +"].CreateTime"));
 			snatEntry.setCidrBlock(_ctx.stringValue("DescribeSnatEntriesResponse.SnatEntries["+ i +"].CidrBlock"));
+			snatEntry.setCreateTime(_ctx.longValue("DescribeSnatEntriesResponse.SnatEntries["+ i +"].CreateTime"));
+			snatEntry.setInstanceId(_ctx.stringValue("DescribeSnatEntriesResponse.SnatEntries["+ i +"].InstanceId"));
 			snatEntry.setSnatIp(_ctx.stringValue("DescribeSnatEntriesResponse.SnatEntries["+ i +"].SnatIp"));
 
 			snatEntries.add(snatEntry);

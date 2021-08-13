@@ -47,21 +47,13 @@ public class DescribeSmartAccessGatewayVersionsResponse extends AcsResponse {
 
 	public static class SmartAGVersion {
 
-		private String versionCode;
-
 		private String type;
 
 		private Long createTime;
 
 		private String versionName;
 
-		public String getVersionCode() {
-			return this.versionCode;
-		}
-
-		public void setVersionCode(String versionCode) {
-			this.versionCode = versionCode;
-		}
+		private String versionCode;
 
 		public String getType() {
 			return this.type;
@@ -85,6 +77,14 @@ public class DescribeSmartAccessGatewayVersionsResponse extends AcsResponse {
 
 		public void setVersionName(String versionName) {
 			this.versionName = versionName;
+		}
+
+		public String getVersionCode() {
+			return this.versionCode;
+		}
+
+		public void setVersionCode(String versionCode) {
+			this.versionCode = versionCode;
 		}
 	}
 

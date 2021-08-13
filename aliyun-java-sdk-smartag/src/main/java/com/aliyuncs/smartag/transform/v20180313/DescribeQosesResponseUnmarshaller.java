@@ -34,11 +34,12 @@ public class DescribeQosesResponseUnmarshaller {
 		List<Qos> qoses = new ArrayList<Qos>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeQosesResponse.Qoses.Length"); i++) {
 			Qos qos = new Qos();
-			qos.setSagCount(_ctx.stringValue("DescribeQosesResponse.Qoses["+ i +"].SagCount"));
-			qos.setQosId(_ctx.stringValue("DescribeQosesResponse.Qoses["+ i +"].QosId"));
-			qos.setSmartAGIds(_ctx.stringValue("DescribeQosesResponse.Qoses["+ i +"].SmartAGIds"));
-			qos.setQosName(_ctx.stringValue("DescribeQosesResponse.Qoses["+ i +"].QosName"));
 			qos.setQosDescription(_ctx.stringValue("DescribeQosesResponse.Qoses["+ i +"].QosDescription"));
+			qos.setSagCount(_ctx.stringValue("DescribeQosesResponse.Qoses["+ i +"].SagCount"));
+			qos.setSmartAGIds(_ctx.stringValue("DescribeQosesResponse.Qoses["+ i +"].SmartAGIds"));
+			qos.setQosId(_ctx.stringValue("DescribeQosesResponse.Qoses["+ i +"].QosId"));
+			qos.setQosName(_ctx.stringValue("DescribeQosesResponse.Qoses["+ i +"].QosName"));
+			qos.setResourceGroupId(_ctx.stringValue("DescribeQosesResponse.Qoses["+ i +"].ResourceGroupId"));
 
 			qoses.add(qos);
 		}

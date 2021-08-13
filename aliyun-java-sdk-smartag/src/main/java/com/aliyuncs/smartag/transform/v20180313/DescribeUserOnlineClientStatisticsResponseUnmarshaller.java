@@ -31,8 +31,8 @@ public class DescribeUserOnlineClientStatisticsResponseUnmarshaller {
 		List<Statistics> userStatistics = new ArrayList<Statistics>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeUserOnlineClientStatisticsResponse.UserStatistics.Length"); i++) {
 			Statistics statistics = new Statistics();
-			statistics.setUserName(_ctx.stringValue("DescribeUserOnlineClientStatisticsResponse.UserStatistics["+ i +"].UserName"));
 			statistics.setOnlineCount(_ctx.stringValue("DescribeUserOnlineClientStatisticsResponse.UserStatistics["+ i +"].OnlineCount"));
+			statistics.setUserName(_ctx.stringValue("DescribeUserOnlineClientStatisticsResponse.UserStatistics["+ i +"].UserName"));
 
 			userStatistics.add(statistics);
 		}

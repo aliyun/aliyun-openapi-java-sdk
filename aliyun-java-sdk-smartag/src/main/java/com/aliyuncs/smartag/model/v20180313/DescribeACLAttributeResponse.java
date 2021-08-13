@@ -27,9 +27,9 @@ public class DescribeACLAttributeResponse extends AcsResponse {
 
 	private Integer totalCount;
 
-	private String requestId;
-
 	private Integer pageSize;
+
+	private String requestId;
 
 	private Integer pageNumber;
 
@@ -43,20 +43,20 @@ public class DescribeACLAttributeResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getPageNumber() {
@@ -77,68 +77,60 @@ public class DescribeACLAttributeResponse extends AcsResponse {
 
 	public static class Acr {
 
-		private String policy;
+		private String direction;
 
-		private String description;
+		private String type;
 
-		private String sourcePortRange;
-
-		private String sourceCidr;
+		private String ipProtocol;
 
 		private Integer priority;
 
 		private String aclId;
 
-		private String acrId;
+		private String policy;
 
-		private String destPortRange;
-
-		private String direction;
-
-		private String name;
+		private String description;
 
 		private Long gmtCreate;
 
-		private String type;
-
 		private String destCidr;
 
-		private String ipProtocol;
+		private String destPortRange;
+
+		private String name;
+
+		private String acrId;
+
+		private String sourceCidr;
+
+		private String sourcePortRange;
 
 		private List<String> dpiSignatureIds;
 
 		private List<String> dpiGroupIds;
 
-		public String getPolicy() {
-			return this.policy;
+		public String getDirection() {
+			return this.direction;
 		}
 
-		public void setPolicy(String policy) {
-			this.policy = policy;
+		public void setDirection(String direction) {
+			this.direction = direction;
 		}
 
-		public String getDescription() {
-			return this.description;
+		public String getType() {
+			return this.type;
 		}
 
-		public void setDescription(String description) {
-			this.description = description;
+		public void setType(String type) {
+			this.type = type;
 		}
 
-		public String getSourcePortRange() {
-			return this.sourcePortRange;
+		public String getIpProtocol() {
+			return this.ipProtocol;
 		}
 
-		public void setSourcePortRange(String sourcePortRange) {
-			this.sourcePortRange = sourcePortRange;
-		}
-
-		public String getSourceCidr() {
-			return this.sourceCidr;
-		}
-
-		public void setSourceCidr(String sourceCidr) {
-			this.sourceCidr = sourceCidr;
+		public void setIpProtocol(String ipProtocol) {
+			this.ipProtocol = ipProtocol;
 		}
 
 		public Integer getPriority() {
@@ -157,36 +149,20 @@ public class DescribeACLAttributeResponse extends AcsResponse {
 			this.aclId = aclId;
 		}
 
-		public String getAcrId() {
-			return this.acrId;
+		public String getPolicy() {
+			return this.policy;
 		}
 
-		public void setAcrId(String acrId) {
-			this.acrId = acrId;
+		public void setPolicy(String policy) {
+			this.policy = policy;
 		}
 
-		public String getDestPortRange() {
-			return this.destPortRange;
+		public String getDescription() {
+			return this.description;
 		}
 
-		public void setDestPortRange(String destPortRange) {
-			this.destPortRange = destPortRange;
-		}
-
-		public String getDirection() {
-			return this.direction;
-		}
-
-		public void setDirection(String direction) {
-			this.direction = direction;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
+		public void setDescription(String description) {
+			this.description = description;
 		}
 
 		public Long getGmtCreate() {
@@ -197,14 +173,6 @@ public class DescribeACLAttributeResponse extends AcsResponse {
 			this.gmtCreate = gmtCreate;
 		}
 
-		public String getType() {
-			return this.type;
-		}
-
-		public void setType(String type) {
-			this.type = type;
-		}
-
 		public String getDestCidr() {
 			return this.destCidr;
 		}
@@ -213,12 +181,44 @@ public class DescribeACLAttributeResponse extends AcsResponse {
 			this.destCidr = destCidr;
 		}
 
-		public String getIpProtocol() {
-			return this.ipProtocol;
+		public String getDestPortRange() {
+			return this.destPortRange;
 		}
 
-		public void setIpProtocol(String ipProtocol) {
-			this.ipProtocol = ipProtocol;
+		public void setDestPortRange(String destPortRange) {
+			this.destPortRange = destPortRange;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getAcrId() {
+			return this.acrId;
+		}
+
+		public void setAcrId(String acrId) {
+			this.acrId = acrId;
+		}
+
+		public String getSourceCidr() {
+			return this.sourceCidr;
+		}
+
+		public void setSourceCidr(String sourceCidr) {
+			this.sourceCidr = sourceCidr;
+		}
+
+		public String getSourcePortRange() {
+			return this.sourcePortRange;
+		}
+
+		public void setSourcePortRange(String sourcePortRange) {
+			this.sourcePortRange = sourcePortRange;
 		}
 
 		public List<String> getDpiSignatureIds() {

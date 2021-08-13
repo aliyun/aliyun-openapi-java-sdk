@@ -28,6 +28,8 @@ public class CreateFlowLogResponse extends AcsResponse {
 
 	private String flowLogId;
 
+	private String resourceGroupId;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -42,6 +44,14 @@ public class CreateFlowLogResponse extends AcsResponse {
 
 	public void setFlowLogId(String flowLogId) {
 		this.flowLogId = flowLogId;
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
 	}
 
 	@Override

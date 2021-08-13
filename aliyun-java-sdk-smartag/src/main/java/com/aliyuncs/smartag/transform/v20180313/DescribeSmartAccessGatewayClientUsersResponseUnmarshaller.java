@@ -34,11 +34,12 @@ public class DescribeSmartAccessGatewayClientUsersResponseUnmarshaller {
 		List<User> users = new ArrayList<User>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSmartAccessGatewayClientUsersResponse.Users.Length"); i++) {
 			User user = new User();
+			user.setBandwidth(_ctx.integerValue("DescribeSmartAccessGatewayClientUsersResponse.Users["+ i +"].Bandwidth"));
+			user.setState(_ctx.integerValue("DescribeSmartAccessGatewayClientUsersResponse.Users["+ i +"].State"));
+			user.setClientIp(_ctx.stringValue("DescribeSmartAccessGatewayClientUsersResponse.Users["+ i +"].ClientIp"));
 			user.setUserName(_ctx.stringValue("DescribeSmartAccessGatewayClientUsersResponse.Users["+ i +"].UserName"));
 			user.setUserMail(_ctx.stringValue("DescribeSmartAccessGatewayClientUsersResponse.Users["+ i +"].UserMail"));
-			user.setState(_ctx.integerValue("DescribeSmartAccessGatewayClientUsersResponse.Users["+ i +"].State"));
-			user.setBandwidth(_ctx.integerValue("DescribeSmartAccessGatewayClientUsersResponse.Users["+ i +"].Bandwidth"));
-			user.setClientIp(_ctx.stringValue("DescribeSmartAccessGatewayClientUsersResponse.Users["+ i +"].ClientIp"));
+			user.setAccelerateBandwidth(_ctx.longValue("DescribeSmartAccessGatewayClientUsersResponse.Users["+ i +"].AccelerateBandwidth"));
 
 			users.add(user);
 		}

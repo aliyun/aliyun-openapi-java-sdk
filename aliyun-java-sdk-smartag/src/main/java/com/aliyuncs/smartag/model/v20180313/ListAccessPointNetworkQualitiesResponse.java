@@ -47,19 +47,11 @@ public class ListAccessPointNetworkQualitiesResponse extends AcsResponse {
 
 	public static class AccessPointNetworkQuality {
 
-		private String rtt;
-
 		private String loss;
 
+		private String rtt;
+
 		private Integer id;
-
-		public String getRtt() {
-			return this.rtt;
-		}
-
-		public void setRtt(String rtt) {
-			this.rtt = rtt;
-		}
 
 		public String getLoss() {
 			return this.loss;
@@ -67,6 +59,14 @@ public class ListAccessPointNetworkQualitiesResponse extends AcsResponse {
 
 		public void setLoss(String loss) {
 			this.loss = loss;
+		}
+
+		public String getRtt() {
+			return this.rtt;
+		}
+
+		public void setRtt(String rtt) {
+			this.rtt = rtt;
 		}
 
 		public Integer getId() {

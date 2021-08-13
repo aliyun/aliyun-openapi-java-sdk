@@ -27,9 +27,9 @@ public class DescribeCloudConnectNetworksResponse extends AcsResponse {
 
 	private Integer totalCount;
 
-	private String requestId;
-
 	private Integer pageSize;
+
+	private String requestId;
 
 	private Integer pageNumber;
 
@@ -43,20 +43,20 @@ public class DescribeCloudConnectNetworksResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getPageNumber() {
@@ -79,27 +79,29 @@ public class DescribeCloudConnectNetworksResponse extends AcsResponse {
 
 		private Boolean isDefault;
 
-		private String description;
-
-		private String interworkingStatus;
-
-		private String availableCloudBoxCount;
-
-		private String ccnId;
-
 		private Long createTime;
-
-		private String cidrBlock;
 
 		private String associatedCenOwnerId;
 
-		private String associatedCenId;
+		private String associatedCloudBoxCount;
+
+		private String interworkingStatus;
+
+		private String ccnId;
+
+		private String availableCloudBoxCount;
+
+		private String cidrBlock;
+
+		private String description;
 
 		private String snatCidrBlock;
 
-		private String associatedCloudBoxCount;
+		private String associatedCenId;
 
 		private String name;
+
+		private String resourceGroupId;
 
 		private List<Tag> tags;
 
@@ -111,52 +113,12 @@ public class DescribeCloudConnectNetworksResponse extends AcsResponse {
 			this.isDefault = isDefault;
 		}
 
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
-		public String getInterworkingStatus() {
-			return this.interworkingStatus;
-		}
-
-		public void setInterworkingStatus(String interworkingStatus) {
-			this.interworkingStatus = interworkingStatus;
-		}
-
-		public String getAvailableCloudBoxCount() {
-			return this.availableCloudBoxCount;
-		}
-
-		public void setAvailableCloudBoxCount(String availableCloudBoxCount) {
-			this.availableCloudBoxCount = availableCloudBoxCount;
-		}
-
-		public String getCcnId() {
-			return this.ccnId;
-		}
-
-		public void setCcnId(String ccnId) {
-			this.ccnId = ccnId;
-		}
-
 		public Long getCreateTime() {
 			return this.createTime;
 		}
 
 		public void setCreateTime(Long createTime) {
 			this.createTime = createTime;
-		}
-
-		public String getCidrBlock() {
-			return this.cidrBlock;
-		}
-
-		public void setCidrBlock(String cidrBlock) {
-			this.cidrBlock = cidrBlock;
 		}
 
 		public String getAssociatedCenOwnerId() {
@@ -167,12 +129,52 @@ public class DescribeCloudConnectNetworksResponse extends AcsResponse {
 			this.associatedCenOwnerId = associatedCenOwnerId;
 		}
 
-		public String getAssociatedCenId() {
-			return this.associatedCenId;
+		public String getAssociatedCloudBoxCount() {
+			return this.associatedCloudBoxCount;
 		}
 
-		public void setAssociatedCenId(String associatedCenId) {
-			this.associatedCenId = associatedCenId;
+		public void setAssociatedCloudBoxCount(String associatedCloudBoxCount) {
+			this.associatedCloudBoxCount = associatedCloudBoxCount;
+		}
+
+		public String getInterworkingStatus() {
+			return this.interworkingStatus;
+		}
+
+		public void setInterworkingStatus(String interworkingStatus) {
+			this.interworkingStatus = interworkingStatus;
+		}
+
+		public String getCcnId() {
+			return this.ccnId;
+		}
+
+		public void setCcnId(String ccnId) {
+			this.ccnId = ccnId;
+		}
+
+		public String getAvailableCloudBoxCount() {
+			return this.availableCloudBoxCount;
+		}
+
+		public void setAvailableCloudBoxCount(String availableCloudBoxCount) {
+			this.availableCloudBoxCount = availableCloudBoxCount;
+		}
+
+		public String getCidrBlock() {
+			return this.cidrBlock;
+		}
+
+		public void setCidrBlock(String cidrBlock) {
+			this.cidrBlock = cidrBlock;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
 		}
 
 		public String getSnatCidrBlock() {
@@ -183,12 +185,12 @@ public class DescribeCloudConnectNetworksResponse extends AcsResponse {
 			this.snatCidrBlock = snatCidrBlock;
 		}
 
-		public String getAssociatedCloudBoxCount() {
-			return this.associatedCloudBoxCount;
+		public String getAssociatedCenId() {
+			return this.associatedCenId;
 		}
 
-		public void setAssociatedCloudBoxCount(String associatedCloudBoxCount) {
-			this.associatedCloudBoxCount = associatedCloudBoxCount;
+		public void setAssociatedCenId(String associatedCenId) {
+			this.associatedCenId = associatedCenId;
 		}
 
 		public String getName() {
@@ -197,6 +199,14 @@ public class DescribeCloudConnectNetworksResponse extends AcsResponse {
 
 		public void setName(String name) {
 			this.name = name;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
 		}
 
 		public List<Tag> getTags() {
@@ -209,17 +219,9 @@ public class DescribeCloudConnectNetworksResponse extends AcsResponse {
 
 		public static class Tag {
 
-			private String value;
-
 			private String key;
 
-			public String getValue() {
-				return this.value;
-			}
-
-			public void setValue(String value) {
-				this.value = value;
-			}
+			private String value;
 
 			public String getKey() {
 				return this.key;
@@ -227,6 +229,14 @@ public class DescribeCloudConnectNetworksResponse extends AcsResponse {
 
 			public void setKey(String key) {
 				this.key = key;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
 			}
 		}
 	}

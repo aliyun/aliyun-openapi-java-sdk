@@ -47,25 +47,17 @@ public class DescribeSagRouteListResponse extends AcsResponse {
 
 	public static class Route {
 
-		private String routeProtocol;
-
 		private String nextHop;
-
-		private String portName;
-
-		private String cost;
 
 		private String destinationCidr;
 
+		private String cost;
+
+		private String portName;
+
+		private String routeProtocol;
+
 		private List<String> conflictCidrs;
-
-		public String getRouteProtocol() {
-			return this.routeProtocol;
-		}
-
-		public void setRouteProtocol(String routeProtocol) {
-			this.routeProtocol = routeProtocol;
-		}
 
 		public String getNextHop() {
 			return this.nextHop;
@@ -75,12 +67,12 @@ public class DescribeSagRouteListResponse extends AcsResponse {
 			this.nextHop = nextHop;
 		}
 
-		public String getPortName() {
-			return this.portName;
+		public String getDestinationCidr() {
+			return this.destinationCidr;
 		}
 
-		public void setPortName(String portName) {
-			this.portName = portName;
+		public void setDestinationCidr(String destinationCidr) {
+			this.destinationCidr = destinationCidr;
 		}
 
 		public String getCost() {
@@ -91,12 +83,20 @@ public class DescribeSagRouteListResponse extends AcsResponse {
 			this.cost = cost;
 		}
 
-		public String getDestinationCidr() {
-			return this.destinationCidr;
+		public String getPortName() {
+			return this.portName;
 		}
 
-		public void setDestinationCidr(String destinationCidr) {
-			this.destinationCidr = destinationCidr;
+		public void setPortName(String portName) {
+			this.portName = portName;
+		}
+
+		public String getRouteProtocol() {
+			return this.routeProtocol;
+		}
+
+		public void setRouteProtocol(String routeProtocol) {
+			this.routeProtocol = routeProtocol;
 		}
 
 		public List<String> getConflictCidrs() {

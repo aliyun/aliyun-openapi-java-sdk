@@ -28,18 +28,18 @@ public class DescribeSagRouteProtocolBgpResponseUnmarshaller {
 		
 		describeSagRouteProtocolBgpResponse.setRequestId(_ctx.stringValue("DescribeSagRouteProtocolBgpResponse.RequestId"));
 		describeSagRouteProtocolBgpResponse.setHoldTime(_ctx.integerValue("DescribeSagRouteProtocolBgpResponse.HoldTime"));
-		describeSagRouteProtocolBgpResponse.setAdvertiseIps(_ctx.stringValue("DescribeSagRouteProtocolBgpResponse.AdvertiseIps"));
 		describeSagRouteProtocolBgpResponse.setKeepAlive(_ctx.integerValue("DescribeSagRouteProtocolBgpResponse.KeepAlive"));
-		describeSagRouteProtocolBgpResponse.setRouterId(_ctx.stringValue("DescribeSagRouteProtocolBgpResponse.RouterId"));
 		describeSagRouteProtocolBgpResponse.setLocalAs(_ctx.integerValue("DescribeSagRouteProtocolBgpResponse.LocalAs"));
+		describeSagRouteProtocolBgpResponse.setRouterId(_ctx.stringValue("DescribeSagRouteProtocolBgpResponse.RouterId"));
+		describeSagRouteProtocolBgpResponse.setAdvertiseIps(_ctx.stringValue("DescribeSagRouteProtocolBgpResponse.AdvertiseIps"));
 
 		List<TaskState> taskStates = new ArrayList<TaskState>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSagRouteProtocolBgpResponse.TaskStates.Length"); i++) {
 			TaskState taskState = new TaskState();
-			taskState.setState(_ctx.stringValue("DescribeSagRouteProtocolBgpResponse.TaskStates["+ i +"].State"));
-			taskState.setCreateTime(_ctx.stringValue("DescribeSagRouteProtocolBgpResponse.TaskStates["+ i +"].CreateTime"));
-			taskState.setErrorCode(_ctx.stringValue("DescribeSagRouteProtocolBgpResponse.TaskStates["+ i +"].ErrorCode"));
 			taskState.setErrorMessage(_ctx.stringValue("DescribeSagRouteProtocolBgpResponse.TaskStates["+ i +"].ErrorMessage"));
+			taskState.setState(_ctx.stringValue("DescribeSagRouteProtocolBgpResponse.TaskStates["+ i +"].State"));
+			taskState.setErrorCode(_ctx.stringValue("DescribeSagRouteProtocolBgpResponse.TaskStates["+ i +"].ErrorCode"));
+			taskState.setCreateTime(_ctx.stringValue("DescribeSagRouteProtocolBgpResponse.TaskStates["+ i +"].CreateTime"));
 
 			taskStates.add(taskState);
 		}

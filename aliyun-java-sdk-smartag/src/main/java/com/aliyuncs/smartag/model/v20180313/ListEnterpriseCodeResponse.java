@@ -27,9 +27,9 @@ public class ListEnterpriseCodeResponse extends AcsResponse {
 
 	private Integer totalCount;
 
-	private String requestId;
-
 	private String nextToken;
+
+	private String requestId;
 
 	private Integer maxResults;
 
@@ -43,20 +43,20 @@ public class ListEnterpriseCodeResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public String getNextToken() {
 		return this.nextToken;
 	}
 
 	public void setNextToken(String nextToken) {
 		this.nextToken = nextToken;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getMaxResults() {
@@ -79,9 +79,9 @@ public class ListEnterpriseCodeResponse extends AcsResponse {
 
 		private Boolean isDefault;
 
-		private String enterpriseCode;
-
 		private Integer smartAGCount;
+
+		private String enterpriseCode;
 
 		public Boolean getIsDefault() {
 			return this.isDefault;
@@ -91,20 +91,20 @@ public class ListEnterpriseCodeResponse extends AcsResponse {
 			this.isDefault = isDefault;
 		}
 
-		public String getEnterpriseCode() {
-			return this.enterpriseCode;
-		}
-
-		public void setEnterpriseCode(String enterpriseCode) {
-			this.enterpriseCode = enterpriseCode;
-		}
-
 		public Integer getSmartAGCount() {
 			return this.smartAGCount;
 		}
 
 		public void setSmartAGCount(Integer smartAGCount) {
 			this.smartAGCount = smartAGCount;
+		}
+
+		public String getEnterpriseCode() {
+			return this.enterpriseCode;
+		}
+
+		public void setEnterpriseCode(String enterpriseCode) {
+			this.enterpriseCode = enterpriseCode;
 		}
 	}
 

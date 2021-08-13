@@ -40,17 +40,17 @@ public class ModifyACLRuleResponseUnmarshaller {
 		modifyACLRuleResponse.setDestCidr(_ctx.stringValue("ModifyACLRuleResponse.DestCidr"));
 		modifyACLRuleResponse.setIpProtocol(_ctx.stringValue("ModifyACLRuleResponse.IpProtocol"));
 
-		List<String> dpiSignatureIds = new ArrayList<String>();
-		for (int i = 0; i < _ctx.lengthValue("ModifyACLRuleResponse.DpiSignatureIds.Length"); i++) {
-			dpiSignatureIds.add(_ctx.stringValue("ModifyACLRuleResponse.DpiSignatureIds["+ i +"]"));
-		}
-		modifyACLRuleResponse.setDpiSignatureIds(dpiSignatureIds);
-
 		List<String> dpiGroupIds = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("ModifyACLRuleResponse.DpiGroupIds.Length"); i++) {
 			dpiGroupIds.add(_ctx.stringValue("ModifyACLRuleResponse.DpiGroupIds["+ i +"]"));
 		}
 		modifyACLRuleResponse.setDpiGroupIds(dpiGroupIds);
+
+		List<String> dpiSignatureIds = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("ModifyACLRuleResponse.DpiSignatureIds.Length"); i++) {
+			dpiSignatureIds.add(_ctx.stringValue("ModifyACLRuleResponse.DpiSignatureIds["+ i +"]"));
+		}
+		modifyACLRuleResponse.setDpiSignatureIds(dpiSignatureIds);
 	 
 	 	return modifyACLRuleResponse;
 	}

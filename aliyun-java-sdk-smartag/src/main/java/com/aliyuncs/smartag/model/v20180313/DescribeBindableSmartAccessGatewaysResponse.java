@@ -27,9 +27,9 @@ public class DescribeBindableSmartAccessGatewaysResponse extends AcsResponse {
 
 	private Integer totalCount;
 
-	private String requestId;
-
 	private Integer pageSize;
+
+	private String requestId;
 
 	private Integer pageNumber;
 
@@ -43,20 +43,20 @@ public class DescribeBindableSmartAccessGatewaysResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getPageNumber() {
@@ -77,19 +77,11 @@ public class DescribeBindableSmartAccessGatewaysResponse extends AcsResponse {
 
 	public static class SmartAccessGateway {
 
-		private Long smartAGUid;
-
 		private String smartAGId;
 
 		private String name;
 
-		public Long getSmartAGUid() {
-			return this.smartAGUid;
-		}
-
-		public void setSmartAGUid(Long smartAGUid) {
-			this.smartAGUid = smartAGUid;
-		}
+		private Long smartAGUid;
 
 		public String getSmartAGId() {
 			return this.smartAGId;
@@ -105,6 +97,14 @@ public class DescribeBindableSmartAccessGatewaysResponse extends AcsResponse {
 
 		public void setName(String name) {
 			this.name = name;
+		}
+
+		public Long getSmartAGUid() {
+			return this.smartAGUid;
+		}
+
+		public void setSmartAGUid(Long smartAGUid) {
+			this.smartAGUid = smartAGUid;
 		}
 	}
 

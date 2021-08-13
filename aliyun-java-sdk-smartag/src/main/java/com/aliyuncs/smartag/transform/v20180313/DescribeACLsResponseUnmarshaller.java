@@ -37,6 +37,7 @@ public class DescribeACLsResponseUnmarshaller {
 			acl.setSagCount(_ctx.stringValue("DescribeACLsResponse.Acls["+ i +"].SagCount"));
 			acl.setAclId(_ctx.stringValue("DescribeACLsResponse.Acls["+ i +"].AclId"));
 			acl.setName(_ctx.stringValue("DescribeACLsResponse.Acls["+ i +"].Name"));
+			acl.setResourceGroupId(_ctx.stringValue("DescribeACLsResponse.Acls["+ i +"].ResourceGroupId"));
 
 			acls.add(acl);
 		}

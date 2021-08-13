@@ -24,9 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateHealthCheckResponse extends AcsResponse {
 
-	private String description;
-
 	private Integer srcPort;
+
+	private String description;
 
 	private String requestId;
 
@@ -50,9 +50,9 @@ public class CreateHealthCheckResponse extends AcsResponse {
 
 	private Integer rttThreshold;
 
-	private Integer probeInterval;
-
 	private String regionId;
+
+	private Integer probeInterval;
 
 	private String smartAGId;
 
@@ -60,20 +60,20 @@ public class CreateHealthCheckResponse extends AcsResponse {
 
 	private String dstIpAddr;
 
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-	}
-
 	public Integer getSrcPort() {
 		return this.srcPort;
 	}
 
 	public void setSrcPort(Integer srcPort) {
 		this.srcPort = srcPort;
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
 	public String getRequestId() {
@@ -164,20 +164,20 @@ public class CreateHealthCheckResponse extends AcsResponse {
 		this.rttThreshold = rttThreshold;
 	}
 
-	public Integer getProbeInterval() {
-		return this.probeInterval;
-	}
-
-	public void setProbeInterval(Integer probeInterval) {
-		this.probeInterval = probeInterval;
-	}
-
 	public String getRegionId() {
 		return this.regionId;
 	}
 
 	public void setRegionId(String regionId) {
 		this.regionId = regionId;
+	}
+
+	public Integer getProbeInterval() {
+		return this.probeInterval;
+	}
+
+	public void setProbeInterval(Integer probeInterval) {
+		this.probeInterval = probeInterval;
 	}
 
 	public String getSmartAGId() {

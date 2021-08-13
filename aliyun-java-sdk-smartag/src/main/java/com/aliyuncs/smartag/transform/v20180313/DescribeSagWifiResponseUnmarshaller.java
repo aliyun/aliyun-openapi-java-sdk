@@ -28,21 +28,21 @@ public class DescribeSagWifiResponseUnmarshaller {
 		
 		describeSagWifiResponse.setRequestId(_ctx.stringValue("DescribeSagWifiResponse.RequestId"));
 		describeSagWifiResponse.setIsEnable(_ctx.stringValue("DescribeSagWifiResponse.IsEnable"));
-		describeSagWifiResponse.setChannel(_ctx.stringValue("DescribeSagWifiResponse.Channel"));
-		describeSagWifiResponse.setBandwidth(_ctx.stringValue("DescribeSagWifiResponse.Bandwidth"));
 		describeSagWifiResponse.setIsAuth(_ctx.stringValue("DescribeSagWifiResponse.IsAuth"));
+		describeSagWifiResponse.setBandwidth(_ctx.stringValue("DescribeSagWifiResponse.Bandwidth"));
+		describeSagWifiResponse.setChannel(_ctx.stringValue("DescribeSagWifiResponse.Channel"));
 		describeSagWifiResponse.setSsid(_ctx.stringValue("DescribeSagWifiResponse.Ssid"));
-		describeSagWifiResponse.setIsBroadcast(_ctx.stringValue("DescribeSagWifiResponse.IsBroadcast"));
-		describeSagWifiResponse.setEncryptAlgorithm(_ctx.stringValue("DescribeSagWifiResponse.EncryptAlgorithm"));
 		describeSagWifiResponse.setAuthenticationType(_ctx.stringValue("DescribeSagWifiResponse.AuthenticationType"));
+		describeSagWifiResponse.setEncryptAlgorithm(_ctx.stringValue("DescribeSagWifiResponse.EncryptAlgorithm"));
+		describeSagWifiResponse.setIsBroadcast(_ctx.stringValue("DescribeSagWifiResponse.IsBroadcast"));
 
 		List<TaskState> taskStates = new ArrayList<TaskState>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSagWifiResponse.TaskStates.Length"); i++) {
 			TaskState taskState = new TaskState();
-			taskState.setState(_ctx.stringValue("DescribeSagWifiResponse.TaskStates["+ i +"].State"));
-			taskState.setCreateTime(_ctx.stringValue("DescribeSagWifiResponse.TaskStates["+ i +"].CreateTime"));
-			taskState.setErrorCode(_ctx.stringValue("DescribeSagWifiResponse.TaskStates["+ i +"].ErrorCode"));
 			taskState.setErrorMessage(_ctx.stringValue("DescribeSagWifiResponse.TaskStates["+ i +"].ErrorMessage"));
+			taskState.setState(_ctx.stringValue("DescribeSagWifiResponse.TaskStates["+ i +"].State"));
+			taskState.setErrorCode(_ctx.stringValue("DescribeSagWifiResponse.TaskStates["+ i +"].ErrorCode"));
+			taskState.setCreateTime(_ctx.stringValue("DescribeSagWifiResponse.TaskStates["+ i +"].CreateTime"));
 
 			taskStates.add(taskState);
 		}

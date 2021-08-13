@@ -33,10 +33,10 @@ public class DescribeSagUserDnsResponseUnmarshaller {
 		List<TaskState> taskStates = new ArrayList<TaskState>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSagUserDnsResponse.TaskStates.Length"); i++) {
 			TaskState taskState = new TaskState();
-			taskState.setState(_ctx.stringValue("DescribeSagUserDnsResponse.TaskStates["+ i +"].State"));
-			taskState.setCreateTime(_ctx.stringValue("DescribeSagUserDnsResponse.TaskStates["+ i +"].CreateTime"));
-			taskState.setErrorCode(_ctx.stringValue("DescribeSagUserDnsResponse.TaskStates["+ i +"].ErrorCode"));
 			taskState.setErrorMessage(_ctx.stringValue("DescribeSagUserDnsResponse.TaskStates["+ i +"].ErrorMessage"));
+			taskState.setState(_ctx.stringValue("DescribeSagUserDnsResponse.TaskStates["+ i +"].State"));
+			taskState.setErrorCode(_ctx.stringValue("DescribeSagUserDnsResponse.TaskStates["+ i +"].ErrorCode"));
+			taskState.setCreateTime(_ctx.stringValue("DescribeSagUserDnsResponse.TaskStates["+ i +"].CreateTime"));
 
 			taskStates.add(taskState);
 		}

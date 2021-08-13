@@ -34,9 +34,9 @@ public class DescribeSagWan4GResponse extends AcsResponse {
 
 	private String ip;
 
-	private String mac;
-
 	private String strength;
+
+	private String mac;
 
 	public String getStatus() {
 		return this.status;
@@ -78,20 +78,20 @@ public class DescribeSagWan4GResponse extends AcsResponse {
 		this.ip = ip;
 	}
 
-	public String getMac() {
-		return this.mac;
-	}
-
-	public void setMac(String mac) {
-		this.mac = mac;
-	}
-
 	public String getStrength() {
 		return this.strength;
 	}
 
 	public void setStrength(String strength) {
 		this.strength = strength;
+	}
+
+	public String getMac() {
+		return this.mac;
+	}
+
+	public void setMac(String mac) {
+		this.mac = mac;
 	}
 
 	@Override

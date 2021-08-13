@@ -57,27 +57,19 @@ public class DescribeSagPortRouteProtocolListResponse extends AcsResponse {
 
 	public static class Port {
 
-		private String remoteAs;
-
 		private String status;
-
-		private String routeProtocol;
 
 		private String remoteIp;
 
-		private String neighborIp;
-
-		private String vlan;
-
 		private String portName;
 
-		public String getRemoteAs() {
-			return this.remoteAs;
-		}
+		private String neighborIp;
 
-		public void setRemoteAs(String remoteAs) {
-			this.remoteAs = remoteAs;
-		}
+		private String routeProtocol;
+
+		private String remoteAs;
+
+		private String vlan;
 
 		public String getStatus() {
 			return this.status;
@@ -85,14 +77,6 @@ public class DescribeSagPortRouteProtocolListResponse extends AcsResponse {
 
 		public void setStatus(String status) {
 			this.status = status;
-		}
-
-		public String getRouteProtocol() {
-			return this.routeProtocol;
-		}
-
-		public void setRouteProtocol(String routeProtocol) {
-			this.routeProtocol = routeProtocol;
 		}
 
 		public String getRemoteIp() {
@@ -103,12 +87,36 @@ public class DescribeSagPortRouteProtocolListResponse extends AcsResponse {
 			this.remoteIp = remoteIp;
 		}
 
+		public String getPortName() {
+			return this.portName;
+		}
+
+		public void setPortName(String portName) {
+			this.portName = portName;
+		}
+
 		public String getNeighborIp() {
 			return this.neighborIp;
 		}
 
 		public void setNeighborIp(String neighborIp) {
 			this.neighborIp = neighborIp;
+		}
+
+		public String getRouteProtocol() {
+			return this.routeProtocol;
+		}
+
+		public void setRouteProtocol(String routeProtocol) {
+			this.routeProtocol = routeProtocol;
+		}
+
+		public String getRemoteAs() {
+			return this.remoteAs;
+		}
+
+		public void setRemoteAs(String remoteAs) {
+			this.remoteAs = remoteAs;
 		}
 
 		public String getVlan() {
@@ -118,25 +126,25 @@ public class DescribeSagPortRouteProtocolListResponse extends AcsResponse {
 		public void setVlan(String vlan) {
 			this.vlan = vlan;
 		}
-
-		public String getPortName() {
-			return this.portName;
-		}
-
-		public void setPortName(String portName) {
-			this.portName = portName;
-		}
 	}
 
 	public static class TaskState {
 
-		private String state;
+		private String errorMessage;
 
-		private String createTime;
+		private String state;
 
 		private String errorCode;
 
-		private String errorMessage;
+		private String createTime;
+
+		public String getErrorMessage() {
+			return this.errorMessage;
+		}
+
+		public void setErrorMessage(String errorMessage) {
+			this.errorMessage = errorMessage;
+		}
 
 		public String getState() {
 			return this.state;
@@ -144,14 +152,6 @@ public class DescribeSagPortRouteProtocolListResponse extends AcsResponse {
 
 		public void setState(String state) {
 			this.state = state;
-		}
-
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
 		}
 
 		public String getErrorCode() {
@@ -162,12 +162,12 @@ public class DescribeSagPortRouteProtocolListResponse extends AcsResponse {
 			this.errorCode = errorCode;
 		}
 
-		public String getErrorMessage() {
-			return this.errorMessage;
+		public String getCreateTime() {
+			return this.createTime;
 		}
 
-		public void setErrorMessage(String errorMessage) {
-			this.errorMessage = errorMessage;
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
 		}
 	}
 

@@ -34,14 +34,14 @@ public class DescribeDnatEntriesResponseUnmarshaller {
 		List<DnatEntry> dnatEntries = new ArrayList<DnatEntry>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDnatEntriesResponse.DnatEntries.Length"); i++) {
 			DnatEntry dnatEntry = new DnatEntry();
-			dnatEntry.setExternalPort(_ctx.stringValue("DescribeDnatEntriesResponse.DnatEntries["+ i +"].ExternalPort"));
 			dnatEntry.setType(_ctx.stringValue("DescribeDnatEntriesResponse.DnatEntries["+ i +"].Type"));
-			dnatEntry.setExternalIp(_ctx.stringValue("DescribeDnatEntriesResponse.DnatEntries["+ i +"].ExternalIp"));
-			dnatEntry.setIpProtocol(_ctx.stringValue("DescribeDnatEntriesResponse.DnatEntries["+ i +"].IpProtocol"));
-			dnatEntry.setInternalPort(_ctx.stringValue("DescribeDnatEntriesResponse.DnatEntries["+ i +"].InternalPort"));
 			dnatEntry.setSagId(_ctx.stringValue("DescribeDnatEntriesResponse.DnatEntries["+ i +"].SagId"));
 			dnatEntry.setInternalIp(_ctx.stringValue("DescribeDnatEntriesResponse.DnatEntries["+ i +"].InternalIp"));
+			dnatEntry.setInternalPort(_ctx.stringValue("DescribeDnatEntriesResponse.DnatEntries["+ i +"].InternalPort"));
+			dnatEntry.setIpProtocol(_ctx.stringValue("DescribeDnatEntriesResponse.DnatEntries["+ i +"].IpProtocol"));
+			dnatEntry.setExternalPort(_ctx.stringValue("DescribeDnatEntriesResponse.DnatEntries["+ i +"].ExternalPort"));
 			dnatEntry.setDnatEntryId(_ctx.stringValue("DescribeDnatEntriesResponse.DnatEntries["+ i +"].DnatEntryId"));
+			dnatEntry.setExternalIp(_ctx.stringValue("DescribeDnatEntriesResponse.DnatEntries["+ i +"].ExternalIp"));
 
 			dnatEntries.add(dnatEntry);
 		}

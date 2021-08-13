@@ -32,13 +32,13 @@ public class DescribeSagPortRouteProtocolListResponseUnmarshaller {
 		List<Port> ports = new ArrayList<Port>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSagPortRouteProtocolListResponse.Ports.Length"); i++) {
 			Port port = new Port();
-			port.setRemoteAs(_ctx.stringValue("DescribeSagPortRouteProtocolListResponse.Ports["+ i +"].RemoteAs"));
 			port.setStatus(_ctx.stringValue("DescribeSagPortRouteProtocolListResponse.Ports["+ i +"].Status"));
-			port.setRouteProtocol(_ctx.stringValue("DescribeSagPortRouteProtocolListResponse.Ports["+ i +"].RouteProtocol"));
 			port.setRemoteIp(_ctx.stringValue("DescribeSagPortRouteProtocolListResponse.Ports["+ i +"].RemoteIp"));
-			port.setNeighborIp(_ctx.stringValue("DescribeSagPortRouteProtocolListResponse.Ports["+ i +"].NeighborIp"));
-			port.setVlan(_ctx.stringValue("DescribeSagPortRouteProtocolListResponse.Ports["+ i +"].Vlan"));
 			port.setPortName(_ctx.stringValue("DescribeSagPortRouteProtocolListResponse.Ports["+ i +"].PortName"));
+			port.setNeighborIp(_ctx.stringValue("DescribeSagPortRouteProtocolListResponse.Ports["+ i +"].NeighborIp"));
+			port.setRouteProtocol(_ctx.stringValue("DescribeSagPortRouteProtocolListResponse.Ports["+ i +"].RouteProtocol"));
+			port.setRemoteAs(_ctx.stringValue("DescribeSagPortRouteProtocolListResponse.Ports["+ i +"].RemoteAs"));
+			port.setVlan(_ctx.stringValue("DescribeSagPortRouteProtocolListResponse.Ports["+ i +"].Vlan"));
 
 			ports.add(port);
 		}
@@ -47,10 +47,10 @@ public class DescribeSagPortRouteProtocolListResponseUnmarshaller {
 		List<TaskState> taskStates = new ArrayList<TaskState>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSagPortRouteProtocolListResponse.TaskStates.Length"); i++) {
 			TaskState taskState = new TaskState();
-			taskState.setState(_ctx.stringValue("DescribeSagPortRouteProtocolListResponse.TaskStates["+ i +"].State"));
-			taskState.setCreateTime(_ctx.stringValue("DescribeSagPortRouteProtocolListResponse.TaskStates["+ i +"].CreateTime"));
-			taskState.setErrorCode(_ctx.stringValue("DescribeSagPortRouteProtocolListResponse.TaskStates["+ i +"].ErrorCode"));
 			taskState.setErrorMessage(_ctx.stringValue("DescribeSagPortRouteProtocolListResponse.TaskStates["+ i +"].ErrorMessage"));
+			taskState.setState(_ctx.stringValue("DescribeSagPortRouteProtocolListResponse.TaskStates["+ i +"].State"));
+			taskState.setErrorCode(_ctx.stringValue("DescribeSagPortRouteProtocolListResponse.TaskStates["+ i +"].ErrorCode"));
+			taskState.setCreateTime(_ctx.stringValue("DescribeSagPortRouteProtocolListResponse.TaskStates["+ i +"].CreateTime"));
 
 			taskStates.add(taskState);
 		}

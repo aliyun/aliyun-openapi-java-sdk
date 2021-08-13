@@ -27,9 +27,9 @@ public class DescribeSmartAccessGatewaysResponse extends AcsResponse {
 
 	private Integer totalCount;
 
-	private String requestId;
-
 	private Integer pageSize;
+
+	private String requestId;
 
 	private Integer pageNumber;
 
@@ -43,20 +43,20 @@ public class DescribeSmartAccessGatewaysResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getPageNumber() {
@@ -77,254 +77,90 @@ public class DescribeSmartAccessGatewaysResponse extends AcsResponse {
 
 	public static class SmartAccessGateway {
 
-		private String description;
-
-		private Integer upBandwidth4G;
-
-		private String resourceGroupId;
-
-		private Long endTime;
-
-		private Integer userCount;
-
-		private String vpnStatus;
-
-		private String maxBandwidth;
-
-		private String associatedCcnName;
-
-		private String dpiMonitorStatus;
-
-		private String cidrBlock;
-
-		private String qosIds;
-
-		private Integer upBandwidthWan;
-
-		private String name;
-
-		private String ipsecStatus;
-
-		private String routingStrategy;
-
-		private String associatedCcnId;
-
-		private String backupSoftwareVersion;
-
-		private String smartAGId;
-
-		private String dpiStatus;
-
-		private String enterpriseCode;
-
-		private Integer securityLockThreshold;
-
-		private String resellerUid;
+		private String serialNumber;
 
 		private String status;
 
-		private String idaasId;
-
-		private String idaasApplicationId;
-
-		private Long createTime;
-
-		private Long dataPlan;
-
-		private String city;
-
-		private String hardwareVersion;
-
-		private Long smartAGUid;
-
-		private String resellerInstanceId;
-
-		private String softwareVersion;
-
-		private String serialNumber;
-
-		private String accessPointId;
-
-		private String aclIds;
+		private Integer upBandwidth4G;
 
 		private String backupStatus;
 
+		private String idaasApplicationId;
+
+		private String softwareVersion;
+
+		private Long createTime;
+
+		private String smartAGId;
+
+		private Integer upBandwidthWan;
+
+		private String city;
+
+		private String aclIds;
+
+		private String qosIds;
+
+		private String cidrBlock;
+
+		private String description;
+
+		private String ipsecStatus;
+
+		private String enterpriseCode;
+
+		private String dpiStatus;
+
+		private String associatedCcnId;
+
+		private String name;
+
+		private String hardwareVersion;
+
+		private String idaasId;
+
+		private Long dataPlan;
+
+		private String associatedCcnName;
+
+		private String resellerUid;
+
+		private String dpiMonitorStatus;
+
+		private String maxBandwidth;
+
+		private Long smartAGUid;
+
+		private String backupSoftwareVersion;
+
+		private Long endTime;
+
+		private String resellerInstanceId;
+
+		private String vpnStatus;
+
+		private String routingStrategy;
+
+		private Integer securityLockThreshold;
+
+		private String resourceGroupId;
+
+		private Integer userCount;
+
+		private String accessPointId;
+
+		private String applicationBandwidthPackageId;
+
+		private Long accelerateBandwidth;
+
 		private List<Link> links;
 
-		public String getDescription() {
-			return this.description;
+		public String getSerialNumber() {
+			return this.serialNumber;
 		}
 
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
-		public Integer getUpBandwidth4G() {
-			return this.upBandwidth4G;
-		}
-
-		public void setUpBandwidth4G(Integer upBandwidth4G) {
-			this.upBandwidth4G = upBandwidth4G;
-		}
-
-		public String getResourceGroupId() {
-			return this.resourceGroupId;
-		}
-
-		public void setResourceGroupId(String resourceGroupId) {
-			this.resourceGroupId = resourceGroupId;
-		}
-
-		public Long getEndTime() {
-			return this.endTime;
-		}
-
-		public void setEndTime(Long endTime) {
-			this.endTime = endTime;
-		}
-
-		public Integer getUserCount() {
-			return this.userCount;
-		}
-
-		public void setUserCount(Integer userCount) {
-			this.userCount = userCount;
-		}
-
-		public String getVpnStatus() {
-			return this.vpnStatus;
-		}
-
-		public void setVpnStatus(String vpnStatus) {
-			this.vpnStatus = vpnStatus;
-		}
-
-		public String getMaxBandwidth() {
-			return this.maxBandwidth;
-		}
-
-		public void setMaxBandwidth(String maxBandwidth) {
-			this.maxBandwidth = maxBandwidth;
-		}
-
-		public String getAssociatedCcnName() {
-			return this.associatedCcnName;
-		}
-
-		public void setAssociatedCcnName(String associatedCcnName) {
-			this.associatedCcnName = associatedCcnName;
-		}
-
-		public String getDpiMonitorStatus() {
-			return this.dpiMonitorStatus;
-		}
-
-		public void setDpiMonitorStatus(String dpiMonitorStatus) {
-			this.dpiMonitorStatus = dpiMonitorStatus;
-		}
-
-		public String getCidrBlock() {
-			return this.cidrBlock;
-		}
-
-		public void setCidrBlock(String cidrBlock) {
-			this.cidrBlock = cidrBlock;
-		}
-
-		public String getQosIds() {
-			return this.qosIds;
-		}
-
-		public void setQosIds(String qosIds) {
-			this.qosIds = qosIds;
-		}
-
-		public Integer getUpBandwidthWan() {
-			return this.upBandwidthWan;
-		}
-
-		public void setUpBandwidthWan(Integer upBandwidthWan) {
-			this.upBandwidthWan = upBandwidthWan;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getIpsecStatus() {
-			return this.ipsecStatus;
-		}
-
-		public void setIpsecStatus(String ipsecStatus) {
-			this.ipsecStatus = ipsecStatus;
-		}
-
-		public String getRoutingStrategy() {
-			return this.routingStrategy;
-		}
-
-		public void setRoutingStrategy(String routingStrategy) {
-			this.routingStrategy = routingStrategy;
-		}
-
-		public String getAssociatedCcnId() {
-			return this.associatedCcnId;
-		}
-
-		public void setAssociatedCcnId(String associatedCcnId) {
-			this.associatedCcnId = associatedCcnId;
-		}
-
-		public String getBackupSoftwareVersion() {
-			return this.backupSoftwareVersion;
-		}
-
-		public void setBackupSoftwareVersion(String backupSoftwareVersion) {
-			this.backupSoftwareVersion = backupSoftwareVersion;
-		}
-
-		public String getSmartAGId() {
-			return this.smartAGId;
-		}
-
-		public void setSmartAGId(String smartAGId) {
-			this.smartAGId = smartAGId;
-		}
-
-		public String getDpiStatus() {
-			return this.dpiStatus;
-		}
-
-		public void setDpiStatus(String dpiStatus) {
-			this.dpiStatus = dpiStatus;
-		}
-
-		public String getEnterpriseCode() {
-			return this.enterpriseCode;
-		}
-
-		public void setEnterpriseCode(String enterpriseCode) {
-			this.enterpriseCode = enterpriseCode;
-		}
-
-		public Integer getSecurityLockThreshold() {
-			return this.securityLockThreshold;
-		}
-
-		public void setSecurityLockThreshold(Integer securityLockThreshold) {
-			this.securityLockThreshold = securityLockThreshold;
-		}
-
-		public String getResellerUid() {
-			return this.resellerUid;
-		}
-
-		public void setResellerUid(String resellerUid) {
-			this.resellerUid = resellerUid;
+		public void setSerialNumber(String serialNumber) {
+			this.serialNumber = serialNumber;
 		}
 
 		public String getStatus() {
@@ -335,12 +171,20 @@ public class DescribeSmartAccessGatewaysResponse extends AcsResponse {
 			this.status = status;
 		}
 
-		public String getIdaasId() {
-			return this.idaasId;
+		public Integer getUpBandwidth4G() {
+			return this.upBandwidth4G;
 		}
 
-		public void setIdaasId(String idaasId) {
-			this.idaasId = idaasId;
+		public void setUpBandwidth4G(Integer upBandwidth4G) {
+			this.upBandwidth4G = upBandwidth4G;
+		}
+
+		public String getBackupStatus() {
+			return this.backupStatus;
+		}
+
+		public void setBackupStatus(String backupStatus) {
+			this.backupStatus = backupStatus;
 		}
 
 		public String getIdaasApplicationId() {
@@ -351,6 +195,14 @@ public class DescribeSmartAccessGatewaysResponse extends AcsResponse {
 			this.idaasApplicationId = idaasApplicationId;
 		}
 
+		public String getSoftwareVersion() {
+			return this.softwareVersion;
+		}
+
+		public void setSoftwareVersion(String softwareVersion) {
+			this.softwareVersion = softwareVersion;
+		}
+
 		public Long getCreateTime() {
 			return this.createTime;
 		}
@@ -359,12 +211,20 @@ public class DescribeSmartAccessGatewaysResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
-		public Long getDataPlan() {
-			return this.dataPlan;
+		public String getSmartAGId() {
+			return this.smartAGId;
 		}
 
-		public void setDataPlan(Long dataPlan) {
-			this.dataPlan = dataPlan;
+		public void setSmartAGId(String smartAGId) {
+			this.smartAGId = smartAGId;
+		}
+
+		public Integer getUpBandwidthWan() {
+			return this.upBandwidthWan;
+		}
+
+		public void setUpBandwidthWan(Integer upBandwidthWan) {
+			this.upBandwidthWan = upBandwidthWan;
 		}
 
 		public String getCity() {
@@ -375,12 +235,132 @@ public class DescribeSmartAccessGatewaysResponse extends AcsResponse {
 			this.city = city;
 		}
 
+		public String getAclIds() {
+			return this.aclIds;
+		}
+
+		public void setAclIds(String aclIds) {
+			this.aclIds = aclIds;
+		}
+
+		public String getQosIds() {
+			return this.qosIds;
+		}
+
+		public void setQosIds(String qosIds) {
+			this.qosIds = qosIds;
+		}
+
+		public String getCidrBlock() {
+			return this.cidrBlock;
+		}
+
+		public void setCidrBlock(String cidrBlock) {
+			this.cidrBlock = cidrBlock;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getIpsecStatus() {
+			return this.ipsecStatus;
+		}
+
+		public void setIpsecStatus(String ipsecStatus) {
+			this.ipsecStatus = ipsecStatus;
+		}
+
+		public String getEnterpriseCode() {
+			return this.enterpriseCode;
+		}
+
+		public void setEnterpriseCode(String enterpriseCode) {
+			this.enterpriseCode = enterpriseCode;
+		}
+
+		public String getDpiStatus() {
+			return this.dpiStatus;
+		}
+
+		public void setDpiStatus(String dpiStatus) {
+			this.dpiStatus = dpiStatus;
+		}
+
+		public String getAssociatedCcnId() {
+			return this.associatedCcnId;
+		}
+
+		public void setAssociatedCcnId(String associatedCcnId) {
+			this.associatedCcnId = associatedCcnId;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
 		public String getHardwareVersion() {
 			return this.hardwareVersion;
 		}
 
 		public void setHardwareVersion(String hardwareVersion) {
 			this.hardwareVersion = hardwareVersion;
+		}
+
+		public String getIdaasId() {
+			return this.idaasId;
+		}
+
+		public void setIdaasId(String idaasId) {
+			this.idaasId = idaasId;
+		}
+
+		public Long getDataPlan() {
+			return this.dataPlan;
+		}
+
+		public void setDataPlan(Long dataPlan) {
+			this.dataPlan = dataPlan;
+		}
+
+		public String getAssociatedCcnName() {
+			return this.associatedCcnName;
+		}
+
+		public void setAssociatedCcnName(String associatedCcnName) {
+			this.associatedCcnName = associatedCcnName;
+		}
+
+		public String getResellerUid() {
+			return this.resellerUid;
+		}
+
+		public void setResellerUid(String resellerUid) {
+			this.resellerUid = resellerUid;
+		}
+
+		public String getDpiMonitorStatus() {
+			return this.dpiMonitorStatus;
+		}
+
+		public void setDpiMonitorStatus(String dpiMonitorStatus) {
+			this.dpiMonitorStatus = dpiMonitorStatus;
+		}
+
+		public String getMaxBandwidth() {
+			return this.maxBandwidth;
+		}
+
+		public void setMaxBandwidth(String maxBandwidth) {
+			this.maxBandwidth = maxBandwidth;
 		}
 
 		public Long getSmartAGUid() {
@@ -391,6 +371,22 @@ public class DescribeSmartAccessGatewaysResponse extends AcsResponse {
 			this.smartAGUid = smartAGUid;
 		}
 
+		public String getBackupSoftwareVersion() {
+			return this.backupSoftwareVersion;
+		}
+
+		public void setBackupSoftwareVersion(String backupSoftwareVersion) {
+			this.backupSoftwareVersion = backupSoftwareVersion;
+		}
+
+		public Long getEndTime() {
+			return this.endTime;
+		}
+
+		public void setEndTime(Long endTime) {
+			this.endTime = endTime;
+		}
+
 		public String getResellerInstanceId() {
 			return this.resellerInstanceId;
 		}
@@ -399,20 +395,44 @@ public class DescribeSmartAccessGatewaysResponse extends AcsResponse {
 			this.resellerInstanceId = resellerInstanceId;
 		}
 
-		public String getSoftwareVersion() {
-			return this.softwareVersion;
+		public String getVpnStatus() {
+			return this.vpnStatus;
 		}
 
-		public void setSoftwareVersion(String softwareVersion) {
-			this.softwareVersion = softwareVersion;
+		public void setVpnStatus(String vpnStatus) {
+			this.vpnStatus = vpnStatus;
 		}
 
-		public String getSerialNumber() {
-			return this.serialNumber;
+		public String getRoutingStrategy() {
+			return this.routingStrategy;
 		}
 
-		public void setSerialNumber(String serialNumber) {
-			this.serialNumber = serialNumber;
+		public void setRoutingStrategy(String routingStrategy) {
+			this.routingStrategy = routingStrategy;
+		}
+
+		public Integer getSecurityLockThreshold() {
+			return this.securityLockThreshold;
+		}
+
+		public void setSecurityLockThreshold(Integer securityLockThreshold) {
+			this.securityLockThreshold = securityLockThreshold;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
+		public Integer getUserCount() {
+			return this.userCount;
+		}
+
+		public void setUserCount(Integer userCount) {
+			this.userCount = userCount;
 		}
 
 		public String getAccessPointId() {
@@ -423,20 +443,20 @@ public class DescribeSmartAccessGatewaysResponse extends AcsResponse {
 			this.accessPointId = accessPointId;
 		}
 
-		public String getAclIds() {
-			return this.aclIds;
+		public String getApplicationBandwidthPackageId() {
+			return this.applicationBandwidthPackageId;
 		}
 
-		public void setAclIds(String aclIds) {
-			this.aclIds = aclIds;
+		public void setApplicationBandwidthPackageId(String applicationBandwidthPackageId) {
+			this.applicationBandwidthPackageId = applicationBandwidthPackageId;
 		}
 
-		public String getBackupStatus() {
-			return this.backupStatus;
+		public Long getAccelerateBandwidth() {
+			return this.accelerateBandwidth;
 		}
 
-		public void setBackupStatus(String backupStatus) {
-			this.backupStatus = backupStatus;
+		public void setAccelerateBandwidth(Long accelerateBandwidth) {
+			this.accelerateBandwidth = accelerateBandwidth;
 		}
 
 		public List<Link> getLinks() {
@@ -449,29 +469,21 @@ public class DescribeSmartAccessGatewaysResponse extends AcsResponse {
 
 		public static class Link {
 
-			private String status;
-
 			private String type;
+
+			private String status;
 
 			private Long endTime;
 
-			private String instanceId;
-
-			private String relateInstanceId;
-
 			private String bandwidth;
-
-			private String commodityType;
 
 			private String relateInstanceRegionId;
 
-			public String getStatus() {
-				return this.status;
-			}
+			private String relateInstanceId;
 
-			public void setStatus(String status) {
-				this.status = status;
-			}
+			private String instanceId;
+
+			private String commodityType;
 
 			public String getType() {
 				return this.type;
@@ -479,6 +491,14 @@ public class DescribeSmartAccessGatewaysResponse extends AcsResponse {
 
 			public void setType(String type) {
 				this.type = type;
+			}
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
 			}
 
 			public Long getEndTime() {
@@ -489,12 +509,20 @@ public class DescribeSmartAccessGatewaysResponse extends AcsResponse {
 				this.endTime = endTime;
 			}
 
-			public String getInstanceId() {
-				return this.instanceId;
+			public String getBandwidth() {
+				return this.bandwidth;
 			}
 
-			public void setInstanceId(String instanceId) {
-				this.instanceId = instanceId;
+			public void setBandwidth(String bandwidth) {
+				this.bandwidth = bandwidth;
+			}
+
+			public String getRelateInstanceRegionId() {
+				return this.relateInstanceRegionId;
+			}
+
+			public void setRelateInstanceRegionId(String relateInstanceRegionId) {
+				this.relateInstanceRegionId = relateInstanceRegionId;
 			}
 
 			public String getRelateInstanceId() {
@@ -505,12 +533,12 @@ public class DescribeSmartAccessGatewaysResponse extends AcsResponse {
 				this.relateInstanceId = relateInstanceId;
 			}
 
-			public String getBandwidth() {
-				return this.bandwidth;
+			public String getInstanceId() {
+				return this.instanceId;
 			}
 
-			public void setBandwidth(String bandwidth) {
-				this.bandwidth = bandwidth;
+			public void setInstanceId(String instanceId) {
+				this.instanceId = instanceId;
 			}
 
 			public String getCommodityType() {
@@ -519,14 +547,6 @@ public class DescribeSmartAccessGatewaysResponse extends AcsResponse {
 
 			public void setCommodityType(String commodityType) {
 				this.commodityType = commodityType;
-			}
-
-			public String getRelateInstanceRegionId() {
-				return this.relateInstanceRegionId;
-			}
-
-			public void setRelateInstanceRegionId(String relateInstanceRegionId) {
-				this.relateInstanceRegionId = relateInstanceRegionId;
 			}
 		}
 	}

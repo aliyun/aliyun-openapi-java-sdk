@@ -24,9 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeHealthCheckAttributeResponse extends AcsResponse {
 
-	private String description;
-
 	private Integer srcPort;
+
+	private String description;
 
 	private String requestId;
 
@@ -58,20 +58,20 @@ public class DescribeHealthCheckAttributeResponse extends AcsResponse {
 
 	private String dstIpAddr;
 
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-	}
-
 	public Integer getSrcPort() {
 		return this.srcPort;
 	}
 
 	public void setSrcPort(Integer srcPort) {
 		this.srcPort = srcPort;
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
 	public String getRequestId() {

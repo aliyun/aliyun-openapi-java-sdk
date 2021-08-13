@@ -28,15 +28,15 @@ public class CreateQosCarResponse extends AcsResponse {
 
 	private String description;
 
-	private String qosCarId;
-
 	private String requestId;
 
-	private Integer priority;
+	private String qosCarId;
+
+	private Integer maxBandwidthAbs;
 
 	private Integer maxBandwidthPercent;
 
-	private Integer maxBandwidthAbs;
+	private Integer priority;
 
 	private String qosId;
 
@@ -62,14 +62,6 @@ public class CreateQosCarResponse extends AcsResponse {
 		this.description = description;
 	}
 
-	public String getQosCarId() {
-		return this.qosCarId;
-	}
-
-	public void setQosCarId(String qosCarId) {
-		this.qosCarId = qosCarId;
-	}
-
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -78,12 +70,20 @@ public class CreateQosCarResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Integer getPriority() {
-		return this.priority;
+	public String getQosCarId() {
+		return this.qosCarId;
 	}
 
-	public void setPriority(Integer priority) {
-		this.priority = priority;
+	public void setQosCarId(String qosCarId) {
+		this.qosCarId = qosCarId;
+	}
+
+	public Integer getMaxBandwidthAbs() {
+		return this.maxBandwidthAbs;
+	}
+
+	public void setMaxBandwidthAbs(Integer maxBandwidthAbs) {
+		this.maxBandwidthAbs = maxBandwidthAbs;
 	}
 
 	public Integer getMaxBandwidthPercent() {
@@ -94,12 +94,12 @@ public class CreateQosCarResponse extends AcsResponse {
 		this.maxBandwidthPercent = maxBandwidthPercent;
 	}
 
-	public Integer getMaxBandwidthAbs() {
-		return this.maxBandwidthAbs;
+	public Integer getPriority() {
+		return this.priority;
 	}
 
-	public void setMaxBandwidthAbs(Integer maxBandwidthAbs) {
-		this.maxBandwidthAbs = maxBandwidthAbs;
+	public void setPriority(Integer priority) {
+		this.priority = priority;
 	}
 
 	public String getQosId() {

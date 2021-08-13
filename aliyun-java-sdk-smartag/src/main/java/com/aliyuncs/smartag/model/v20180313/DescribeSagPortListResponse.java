@@ -57,23 +57,15 @@ public class DescribeSagPortListResponse extends AcsResponse {
 
 	public static class Port {
 
-		private String role;
-
 		private String status;
-
-		private String vlan;
 
 		private String portName;
 
+		private String role;
+
 		private String mac;
 
-		public String getRole() {
-			return this.role;
-		}
-
-		public void setRole(String role) {
-			this.role = role;
-		}
+		private String vlan;
 
 		public String getStatus() {
 			return this.status;
@@ -81,14 +73,6 @@ public class DescribeSagPortListResponse extends AcsResponse {
 
 		public void setStatus(String status) {
 			this.status = status;
-		}
-
-		public String getVlan() {
-			return this.vlan;
-		}
-
-		public void setVlan(String vlan) {
-			this.vlan = vlan;
 		}
 
 		public String getPortName() {
@@ -99,6 +83,14 @@ public class DescribeSagPortListResponse extends AcsResponse {
 			this.portName = portName;
 		}
 
+		public String getRole() {
+			return this.role;
+		}
+
+		public void setRole(String role) {
+			this.role = role;
+		}
+
 		public String getMac() {
 			return this.mac;
 		}
@@ -106,17 +98,33 @@ public class DescribeSagPortListResponse extends AcsResponse {
 		public void setMac(String mac) {
 			this.mac = mac;
 		}
+
+		public String getVlan() {
+			return this.vlan;
+		}
+
+		public void setVlan(String vlan) {
+			this.vlan = vlan;
+		}
 	}
 
 	public static class TaskState {
 
-		private String state;
+		private String errorMessage;
 
-		private String createTime;
+		private String state;
 
 		private String errorCode;
 
-		private String errorMessage;
+		private String createTime;
+
+		public String getErrorMessage() {
+			return this.errorMessage;
+		}
+
+		public void setErrorMessage(String errorMessage) {
+			this.errorMessage = errorMessage;
+		}
 
 		public String getState() {
 			return this.state;
@@ -124,14 +132,6 @@ public class DescribeSagPortListResponse extends AcsResponse {
 
 		public void setState(String state) {
 			this.state = state;
-		}
-
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
 		}
 
 		public String getErrorCode() {
@@ -142,12 +142,12 @@ public class DescribeSagPortListResponse extends AcsResponse {
 			this.errorCode = errorCode;
 		}
 
-		public String getErrorMessage() {
-			return this.errorMessage;
+		public String getCreateTime() {
+			return this.createTime;
 		}
 
-		public void setErrorMessage(String errorMessage) {
-			this.errorMessage = errorMessage;
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
 		}
 	}
 

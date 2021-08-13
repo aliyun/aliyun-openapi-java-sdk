@@ -36,22 +36,22 @@ public class AddACLRuleResponseUnmarshaller {
 		addACLRuleResponse.setDestPortRange(_ctx.stringValue("AddACLRuleResponse.DestPortRange"));
 		addACLRuleResponse.setDirection(_ctx.stringValue("AddACLRuleResponse.Direction"));
 		addACLRuleResponse.setName(_ctx.stringValue("AddACLRuleResponse.Name"));
-		addACLRuleResponse.setGmtCreate(_ctx.longValue("AddACLRuleResponse.GmtCreate"));
 		addACLRuleResponse.setType(_ctx.stringValue("AddACLRuleResponse.Type"));
+		addACLRuleResponse.setGmtCreate(_ctx.longValue("AddACLRuleResponse.GmtCreate"));
 		addACLRuleResponse.setDestCidr(_ctx.stringValue("AddACLRuleResponse.DestCidr"));
 		addACLRuleResponse.setIpProtocol(_ctx.stringValue("AddACLRuleResponse.IpProtocol"));
-
-		List<String> dpiSignatureIds = new ArrayList<String>();
-		for (int i = 0; i < _ctx.lengthValue("AddACLRuleResponse.DpiSignatureIds.Length"); i++) {
-			dpiSignatureIds.add(_ctx.stringValue("AddACLRuleResponse.DpiSignatureIds["+ i +"]"));
-		}
-		addACLRuleResponse.setDpiSignatureIds(dpiSignatureIds);
 
 		List<String> dpiGroupIds = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("AddACLRuleResponse.DpiGroupIds.Length"); i++) {
 			dpiGroupIds.add(_ctx.stringValue("AddACLRuleResponse.DpiGroupIds["+ i +"]"));
 		}
 		addACLRuleResponse.setDpiGroupIds(dpiGroupIds);
+
+		List<String> dpiSignatureIds = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("AddACLRuleResponse.DpiSignatureIds.Length"); i++) {
+			dpiSignatureIds.add(_ctx.stringValue("AddACLRuleResponse.DpiSignatureIds["+ i +"]"));
+		}
+		addACLRuleResponse.setDpiSignatureIds(dpiSignatureIds);
 	 
 	 	return addACLRuleResponse;
 	}

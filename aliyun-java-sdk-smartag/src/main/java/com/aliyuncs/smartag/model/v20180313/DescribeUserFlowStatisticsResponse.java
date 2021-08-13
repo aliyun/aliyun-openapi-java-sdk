@@ -47,17 +47,9 @@ public class DescribeUserFlowStatisticsResponse extends AcsResponse {
 
 	public static class Statistics {
 
-		private String userName;
-
 		private String totalBytes;
 
-		public String getUserName() {
-			return this.userName;
-		}
-
-		public void setUserName(String userName) {
-			this.userName = userName;
-		}
+		private String userName;
 
 		public String getTotalBytes() {
 			return this.totalBytes;
@@ -65,6 +57,14 @@ public class DescribeUserFlowStatisticsResponse extends AcsResponse {
 
 		public void setTotalBytes(String totalBytes) {
 			this.totalBytes = totalBytes;
+		}
+
+		public String getUserName() {
+			return this.userName;
+		}
+
+		public void setUserName(String userName) {
+			this.userName = userName;
 		}
 	}
 

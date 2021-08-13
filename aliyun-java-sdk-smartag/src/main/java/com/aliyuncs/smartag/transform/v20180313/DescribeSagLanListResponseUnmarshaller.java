@@ -32,10 +32,10 @@ public class DescribeSagLanListResponseUnmarshaller {
 		List<TaskState> taskStates = new ArrayList<TaskState>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSagLanListResponse.TaskStates.Length"); i++) {
 			TaskState taskState = new TaskState();
-			taskState.setState(_ctx.stringValue("DescribeSagLanListResponse.TaskStates["+ i +"].State"));
-			taskState.setCreateTime(_ctx.stringValue("DescribeSagLanListResponse.TaskStates["+ i +"].CreateTime"));
-			taskState.setErrorCode(_ctx.stringValue("DescribeSagLanListResponse.TaskStates["+ i +"].ErrorCode"));
 			taskState.setErrorMessage(_ctx.stringValue("DescribeSagLanListResponse.TaskStates["+ i +"].ErrorMessage"));
+			taskState.setState(_ctx.stringValue("DescribeSagLanListResponse.TaskStates["+ i +"].State"));
+			taskState.setErrorCode(_ctx.stringValue("DescribeSagLanListResponse.TaskStates["+ i +"].ErrorCode"));
+			taskState.setCreateTime(_ctx.stringValue("DescribeSagLanListResponse.TaskStates["+ i +"].CreateTime"));
 
 			taskStates.add(taskState);
 		}
@@ -44,13 +44,13 @@ public class DescribeSagLanListResponseUnmarshaller {
 		List<Lan> lans = new ArrayList<Lan>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSagLanListResponse.Lans.Length"); i++) {
 			Lan lan = new Lan();
-			lan.setIPType(_ctx.stringValue("DescribeSagLanListResponse.Lans["+ i +"].IPType"));
 			lan.setLease(_ctx.stringValue("DescribeSagLanListResponse.Lans["+ i +"].Lease"));
-			lan.setIP(_ctx.stringValue("DescribeSagLanListResponse.Lans["+ i +"].IP"));
 			lan.setMask(_ctx.stringValue("DescribeSagLanListResponse.Lans["+ i +"].Mask"));
-			lan.setStartIp(_ctx.stringValue("DescribeSagLanListResponse.Lans["+ i +"].StartIp"));
-			lan.setPortName(_ctx.stringValue("DescribeSagLanListResponse.Lans["+ i +"].PortName"));
 			lan.setEndIp(_ctx.stringValue("DescribeSagLanListResponse.Lans["+ i +"].EndIp"));
+			lan.setPortName(_ctx.stringValue("DescribeSagLanListResponse.Lans["+ i +"].PortName"));
+			lan.setStartIp(_ctx.stringValue("DescribeSagLanListResponse.Lans["+ i +"].StartIp"));
+			lan.setIPType(_ctx.stringValue("DescribeSagLanListResponse.Lans["+ i +"].IPType"));
+			lan.setIP(_ctx.stringValue("DescribeSagLanListResponse.Lans["+ i +"].IP"));
 
 			lans.add(lan);
 		}

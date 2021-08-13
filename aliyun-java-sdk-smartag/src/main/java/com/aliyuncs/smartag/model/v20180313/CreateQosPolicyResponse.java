@@ -25,17 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateQosPolicyResponse extends AcsResponse {
 
-	private String destCidr;
-
 	private String description;
 
-	private String sourcePortRange;
-
-	private String qosPolicyId;
+	private String endTime;
 
 	private String requestId;
 
-	private String endTime;
+	private String qosPolicyId;
+
+	private String sourcePortRange;
 
 	private String sourceCidr;
 
@@ -43,25 +41,19 @@ public class CreateQosPolicyResponse extends AcsResponse {
 
 	private String startTime;
 
-	private String ipProtocol;
-
-	private String qosId;
-
 	private String destPortRange;
 
 	private String name;
 
-	private List<String> dpiSignatureIds;
+	private String destCidr;
+
+	private String qosId;
+
+	private String ipProtocol;
 
 	private List<String> dpiGroupIds;
 
-	public String getDestCidr() {
-		return this.destCidr;
-	}
-
-	public void setDestCidr(String destCidr) {
-		this.destCidr = destCidr;
-	}
+	private List<String> dpiSignatureIds;
 
 	public String getDescription() {
 		return this.description;
@@ -71,20 +63,12 @@ public class CreateQosPolicyResponse extends AcsResponse {
 		this.description = description;
 	}
 
-	public String getSourcePortRange() {
-		return this.sourcePortRange;
+	public String getEndTime() {
+		return this.endTime;
 	}
 
-	public void setSourcePortRange(String sourcePortRange) {
-		this.sourcePortRange = sourcePortRange;
-	}
-
-	public String getQosPolicyId() {
-		return this.qosPolicyId;
-	}
-
-	public void setQosPolicyId(String qosPolicyId) {
-		this.qosPolicyId = qosPolicyId;
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
 	}
 
 	public String getRequestId() {
@@ -95,12 +79,20 @@ public class CreateQosPolicyResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getEndTime() {
-		return this.endTime;
+	public String getQosPolicyId() {
+		return this.qosPolicyId;
 	}
 
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
+	public void setQosPolicyId(String qosPolicyId) {
+		this.qosPolicyId = qosPolicyId;
+	}
+
+	public String getSourcePortRange() {
+		return this.sourcePortRange;
+	}
+
+	public void setSourcePortRange(String sourcePortRange) {
+		this.sourcePortRange = sourcePortRange;
 	}
 
 	public String getSourceCidr() {
@@ -127,22 +119,6 @@ public class CreateQosPolicyResponse extends AcsResponse {
 		this.startTime = startTime;
 	}
 
-	public String getIpProtocol() {
-		return this.ipProtocol;
-	}
-
-	public void setIpProtocol(String ipProtocol) {
-		this.ipProtocol = ipProtocol;
-	}
-
-	public String getQosId() {
-		return this.qosId;
-	}
-
-	public void setQosId(String qosId) {
-		this.qosId = qosId;
-	}
-
 	public String getDestPortRange() {
 		return this.destPortRange;
 	}
@@ -159,12 +135,28 @@ public class CreateQosPolicyResponse extends AcsResponse {
 		this.name = name;
 	}
 
-	public List<String> getDpiSignatureIds() {
-		return this.dpiSignatureIds;
+	public String getDestCidr() {
+		return this.destCidr;
 	}
 
-	public void setDpiSignatureIds(List<String> dpiSignatureIds) {
-		this.dpiSignatureIds = dpiSignatureIds;
+	public void setDestCidr(String destCidr) {
+		this.destCidr = destCidr;
+	}
+
+	public String getQosId() {
+		return this.qosId;
+	}
+
+	public void setQosId(String qosId) {
+		this.qosId = qosId;
+	}
+
+	public String getIpProtocol() {
+		return this.ipProtocol;
+	}
+
+	public void setIpProtocol(String ipProtocol) {
+		this.ipProtocol = ipProtocol;
 	}
 
 	public List<String> getDpiGroupIds() {
@@ -173,6 +165,14 @@ public class CreateQosPolicyResponse extends AcsResponse {
 
 	public void setDpiGroupIds(List<String> dpiGroupIds) {
 		this.dpiGroupIds = dpiGroupIds;
+	}
+
+	public List<String> getDpiSignatureIds() {
+		return this.dpiSignatureIds;
+	}
+
+	public void setDpiSignatureIds(List<String> dpiSignatureIds) {
+		this.dpiSignatureIds = dpiSignatureIds;
 	}
 
 	@Override

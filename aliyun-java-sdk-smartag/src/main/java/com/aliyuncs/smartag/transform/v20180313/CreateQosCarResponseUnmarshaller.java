@@ -26,9 +26,9 @@ public class CreateQosCarResponseUnmarshaller {
 		createQosCarResponse.setMinBandwidthAbs(_ctx.integerValue("CreateQosCarResponse.MinBandwidthAbs"));
 		createQosCarResponse.setDescription(_ctx.stringValue("CreateQosCarResponse.Description"));
 		createQosCarResponse.setQosCarId(_ctx.stringValue("CreateQosCarResponse.QosCarId"));
-		createQosCarResponse.setPriority(_ctx.integerValue("CreateQosCarResponse.Priority"));
-		createQosCarResponse.setMaxBandwidthPercent(_ctx.integerValue("CreateQosCarResponse.MaxBandwidthPercent"));
 		createQosCarResponse.setMaxBandwidthAbs(_ctx.integerValue("CreateQosCarResponse.MaxBandwidthAbs"));
+		createQosCarResponse.setMaxBandwidthPercent(_ctx.integerValue("CreateQosCarResponse.MaxBandwidthPercent"));
+		createQosCarResponse.setPriority(_ctx.integerValue("CreateQosCarResponse.Priority"));
 		createQosCarResponse.setQosId(_ctx.stringValue("CreateQosCarResponse.QosId"));
 		createQosCarResponse.setPercentSourceType(_ctx.stringValue("CreateQosCarResponse.PercentSourceType"));
 		createQosCarResponse.setMinBandwidthPercent(_ctx.integerValue("CreateQosCarResponse.MinBandwidthPercent"));

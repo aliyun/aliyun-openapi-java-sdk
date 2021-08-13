@@ -47,29 +47,13 @@ public class DescribeSagDropTopNResponse extends AcsResponse {
 
 	public static class DropTopNItem {
 
-		private String instanceId;
-
-		private String regionId;
-
 		private String dropRate;
+
+		private String instanceId;
 
 		private String name;
 
-		public String getInstanceId() {
-			return this.instanceId;
-		}
-
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
+		private String regionId;
 
 		public String getDropRate() {
 			return this.dropRate;
@@ -79,12 +63,28 @@ public class DescribeSagDropTopNResponse extends AcsResponse {
 			this.dropRate = dropRate;
 		}
 
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
 		public String getName() {
 			return this.name;
 		}
 
 		public void setName(String name) {
 			this.name = name;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 	}
 

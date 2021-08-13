@@ -32,13 +32,13 @@ public class ListSmartAGByAccessPointResponseUnmarshaller {
 		List<SmartAccessGateway> smartAccessGateways = new ArrayList<SmartAccessGateway>();
 		for (int i = 0; i < _ctx.lengthValue("ListSmartAGByAccessPointResponse.SmartAccessGateways.Length"); i++) {
 			SmartAccessGateway smartAccessGateway = new SmartAccessGateway();
-			smartAccessGateway.setSmartAGName(_ctx.stringValue("ListSmartAGByAccessPointResponse.SmartAccessGateways["+ i +"].SmartAGName"));
-			smartAccessGateway.setSmartAGStatus(_ctx.stringValue("ListSmartAGByAccessPointResponse.SmartAccessGateways["+ i +"].SmartAGStatus"));
 			smartAccessGateway.setRoutingStrategy(_ctx.stringValue("ListSmartAGByAccessPointResponse.SmartAccessGateways["+ i +"].RoutingStrategy"));
-			smartAccessGateway.setAssociatedCcnId(_ctx.stringValue("ListSmartAGByAccessPointResponse.SmartAccessGateways["+ i +"].AssociatedCcnId"));
+			smartAccessGateway.setSmartAGName(_ctx.stringValue("ListSmartAGByAccessPointResponse.SmartAccessGateways["+ i +"].SmartAGName"));
 			smartAccessGateway.setSmartAGId(_ctx.stringValue("ListSmartAGByAccessPointResponse.SmartAccessGateways["+ i +"].SmartAGId"));
-			smartAccessGateway.setHardwareVersion(_ctx.stringValue("ListSmartAGByAccessPointResponse.SmartAccessGateways["+ i +"].HardwareVersion"));
+			smartAccessGateway.setSmartAGStatus(_ctx.stringValue("ListSmartAGByAccessPointResponse.SmartAccessGateways["+ i +"].SmartAGStatus"));
 			smartAccessGateway.setSmartAGDescription(_ctx.stringValue("ListSmartAGByAccessPointResponse.SmartAccessGateways["+ i +"].SmartAGDescription"));
+			smartAccessGateway.setAssociatedCcnId(_ctx.stringValue("ListSmartAGByAccessPointResponse.SmartAccessGateways["+ i +"].AssociatedCcnId"));
+			smartAccessGateway.setHardwareVersion(_ctx.stringValue("ListSmartAGByAccessPointResponse.SmartAccessGateways["+ i +"].HardwareVersion"));
 
 			smartAccessGateways.add(smartAccessGateway);
 		}

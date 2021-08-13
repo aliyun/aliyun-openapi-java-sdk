@@ -27,9 +27,9 @@ public class DescribeGrantSagRulesResponse extends AcsResponse {
 
 	private Integer totalCount;
 
-	private String requestId;
-
 	private Integer pageSize;
+
+	private String requestId;
 
 	private Integer pageNumber;
 
@@ -43,20 +43,20 @@ public class DescribeGrantSagRulesResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getPageNumber() {
@@ -77,24 +77,32 @@ public class DescribeGrantSagRulesResponse extends AcsResponse {
 
 	public static class GrantRule {
 
-		private String instanceId;
-
-		private Boolean grantTrafficService;
-
-		private String ccnInstanceId;
-
 		private Long createTime;
-
-		private Long ccnUid;
 
 		private String smartAGId;
 
-		public String getInstanceId() {
-			return this.instanceId;
+		private Boolean grantTrafficService;
+
+		private String instanceId;
+
+		private Long ccnUid;
+
+		private String ccnInstanceId;
+
+		public Long getCreateTime() {
+			return this.createTime;
 		}
 
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
+		public void setCreateTime(Long createTime) {
+			this.createTime = createTime;
+		}
+
+		public String getSmartAGId() {
+			return this.smartAGId;
+		}
+
+		public void setSmartAGId(String smartAGId) {
+			this.smartAGId = smartAGId;
 		}
 
 		public Boolean getGrantTrafficService() {
@@ -105,20 +113,12 @@ public class DescribeGrantSagRulesResponse extends AcsResponse {
 			this.grantTrafficService = grantTrafficService;
 		}
 
-		public String getCcnInstanceId() {
-			return this.ccnInstanceId;
+		public String getInstanceId() {
+			return this.instanceId;
 		}
 
-		public void setCcnInstanceId(String ccnInstanceId) {
-			this.ccnInstanceId = ccnInstanceId;
-		}
-
-		public Long getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(Long createTime) {
-			this.createTime = createTime;
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
 		}
 
 		public Long getCcnUid() {
@@ -129,12 +129,12 @@ public class DescribeGrantSagRulesResponse extends AcsResponse {
 			this.ccnUid = ccnUid;
 		}
 
-		public String getSmartAGId() {
-			return this.smartAGId;
+		public String getCcnInstanceId() {
+			return this.ccnInstanceId;
 		}
 
-		public void setSmartAGId(String smartAGId) {
-			this.smartAGId = smartAGId;
+		public void setCcnInstanceId(String ccnInstanceId) {
+			this.ccnInstanceId = ccnInstanceId;
 		}
 	}
 

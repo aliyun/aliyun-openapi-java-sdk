@@ -24,6 +24,7 @@ public class CreateQosResponseUnmarshaller {
 		
 		createQosResponse.setRequestId(_ctx.stringValue("CreateQosResponse.RequestId"));
 		createQosResponse.setQosId(_ctx.stringValue("CreateQosResponse.QosId"));
+		createQosResponse.setResourceGroupId(_ctx.stringValue("CreateQosResponse.ResourceGroupId"));
 	 
 	 	return createQosResponse;
 	}

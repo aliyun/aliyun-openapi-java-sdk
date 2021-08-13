@@ -27,9 +27,9 @@ public class DescribeQosPoliciesResponse extends AcsResponse {
 
 	private Integer totalCount;
 
-	private String requestId;
-
 	private Integer pageSize;
+
+	private String requestId;
 
 	private Integer pageNumber;
 
@@ -43,20 +43,20 @@ public class DescribeQosPoliciesResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getPageNumber() {
@@ -77,96 +77,40 @@ public class DescribeQosPoliciesResponse extends AcsResponse {
 
 	public static class QosPolicy {
 
-		private String destCidr;
-
-		private String description;
-
-		private String sourcePortRange;
-
-		private String qosPolicyId;
-
-		private String endTime;
-
-		private String sourceCidr;
-
-		private Integer priority;
-
-		private String startTime;
+		private String ipProtocol;
 
 		private String qosId;
 
-		private String ipProtocol;
+		private Integer priority;
+
+		private String endTime;
+
+		private String startTime;
+
+		private String description;
+
+		private String destCidr;
 
 		private String destPortRange;
 
+		private String qosPolicyId;
+
 		private String name;
+
+		private String sourceCidr;
+
+		private String sourcePortRange;
 
 		private List<String> dpiSignatureIds;
 
 		private List<String> dpiGroupIds;
 
-		public String getDestCidr() {
-			return this.destCidr;
+		public String getIpProtocol() {
+			return this.ipProtocol;
 		}
 
-		public void setDestCidr(String destCidr) {
-			this.destCidr = destCidr;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
-		public String getSourcePortRange() {
-			return this.sourcePortRange;
-		}
-
-		public void setSourcePortRange(String sourcePortRange) {
-			this.sourcePortRange = sourcePortRange;
-		}
-
-		public String getQosPolicyId() {
-			return this.qosPolicyId;
-		}
-
-		public void setQosPolicyId(String qosPolicyId) {
-			this.qosPolicyId = qosPolicyId;
-		}
-
-		public String getEndTime() {
-			return this.endTime;
-		}
-
-		public void setEndTime(String endTime) {
-			this.endTime = endTime;
-		}
-
-		public String getSourceCidr() {
-			return this.sourceCidr;
-		}
-
-		public void setSourceCidr(String sourceCidr) {
-			this.sourceCidr = sourceCidr;
-		}
-
-		public Integer getPriority() {
-			return this.priority;
-		}
-
-		public void setPriority(Integer priority) {
-			this.priority = priority;
-		}
-
-		public String getStartTime() {
-			return this.startTime;
-		}
-
-		public void setStartTime(String startTime) {
-			this.startTime = startTime;
+		public void setIpProtocol(String ipProtocol) {
+			this.ipProtocol = ipProtocol;
 		}
 
 		public String getQosId() {
@@ -177,12 +121,44 @@ public class DescribeQosPoliciesResponse extends AcsResponse {
 			this.qosId = qosId;
 		}
 
-		public String getIpProtocol() {
-			return this.ipProtocol;
+		public Integer getPriority() {
+			return this.priority;
 		}
 
-		public void setIpProtocol(String ipProtocol) {
-			this.ipProtocol = ipProtocol;
+		public void setPriority(Integer priority) {
+			this.priority = priority;
+		}
+
+		public String getEndTime() {
+			return this.endTime;
+		}
+
+		public void setEndTime(String endTime) {
+			this.endTime = endTime;
+		}
+
+		public String getStartTime() {
+			return this.startTime;
+		}
+
+		public void setStartTime(String startTime) {
+			this.startTime = startTime;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getDestCidr() {
+			return this.destCidr;
+		}
+
+		public void setDestCidr(String destCidr) {
+			this.destCidr = destCidr;
 		}
 
 		public String getDestPortRange() {
@@ -193,12 +169,36 @@ public class DescribeQosPoliciesResponse extends AcsResponse {
 			this.destPortRange = destPortRange;
 		}
 
+		public String getQosPolicyId() {
+			return this.qosPolicyId;
+		}
+
+		public void setQosPolicyId(String qosPolicyId) {
+			this.qosPolicyId = qosPolicyId;
+		}
+
 		public String getName() {
 			return this.name;
 		}
 
 		public void setName(String name) {
 			this.name = name;
+		}
+
+		public String getSourceCidr() {
+			return this.sourceCidr;
+		}
+
+		public void setSourceCidr(String sourceCidr) {
+			this.sourceCidr = sourceCidr;
+		}
+
+		public String getSourcePortRange() {
+			return this.sourcePortRange;
+		}
+
+		public void setSourcePortRange(String sourcePortRange) {
+			this.sourcePortRange = sourcePortRange;
 		}
 
 		public List<String> getDpiSignatureIds() {

@@ -35,8 +35,8 @@ public class ListEnterpriseCodeResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("ListEnterpriseCodeResponse.EnterpriseCodes.Length"); i++) {
 			EnterpriseCode enterpriseCode = new EnterpriseCode();
 			enterpriseCode.setIsDefault(_ctx.booleanValue("ListEnterpriseCodeResponse.EnterpriseCodes["+ i +"].IsDefault"));
-			enterpriseCode.setEnterpriseCode(_ctx.stringValue("ListEnterpriseCodeResponse.EnterpriseCodes["+ i +"].EnterpriseCode"));
 			enterpriseCode.setSmartAGCount(_ctx.integerValue("ListEnterpriseCodeResponse.EnterpriseCodes["+ i +"].SmartAGCount"));
+			enterpriseCode.setEnterpriseCode(_ctx.stringValue("ListEnterpriseCodeResponse.EnterpriseCodes["+ i +"].EnterpriseCode"));
 
 			enterpriseCodes.add(enterpriseCode);
 		}

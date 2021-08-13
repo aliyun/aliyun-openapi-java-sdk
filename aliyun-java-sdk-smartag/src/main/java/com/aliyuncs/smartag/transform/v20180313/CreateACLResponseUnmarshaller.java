@@ -24,6 +24,7 @@ public class CreateACLResponseUnmarshaller {
 		
 		createACLResponse.setRequestId(_ctx.stringValue("CreateACLResponse.RequestId"));
 		createACLResponse.setAclId(_ctx.stringValue("CreateACLResponse.AclId"));
+		createACLResponse.setResourceGroupId(_ctx.stringValue("CreateACLResponse.ResourceGroupId"));
 	 
 	 	return createACLResponse;
 	}

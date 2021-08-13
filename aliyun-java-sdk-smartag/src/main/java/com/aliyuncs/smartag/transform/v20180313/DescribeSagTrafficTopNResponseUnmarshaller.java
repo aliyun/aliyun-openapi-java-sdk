@@ -31,10 +31,10 @@ public class DescribeSagTrafficTopNResponseUnmarshaller {
 		List<TrafficTopNItem> trafficTopN = new ArrayList<TrafficTopNItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSagTrafficTopNResponse.TrafficTopN.Length"); i++) {
 			TrafficTopNItem trafficTopNItem = new TrafficTopNItem();
-			trafficTopNItem.setInstanceId(_ctx.stringValue("DescribeSagTrafficTopNResponse.TrafficTopN["+ i +"].InstanceId"));
 			trafficTopNItem.setTrafficRate(_ctx.stringValue("DescribeSagTrafficTopNResponse.TrafficTopN["+ i +"].TrafficRate"));
-			trafficTopNItem.setRegionId(_ctx.stringValue("DescribeSagTrafficTopNResponse.TrafficTopN["+ i +"].RegionId"));
+			trafficTopNItem.setInstanceId(_ctx.stringValue("DescribeSagTrafficTopNResponse.TrafficTopN["+ i +"].InstanceId"));
 			trafficTopNItem.setName(_ctx.stringValue("DescribeSagTrafficTopNResponse.TrafficTopN["+ i +"].Name"));
+			trafficTopNItem.setRegionId(_ctx.stringValue("DescribeSagTrafficTopNResponse.TrafficTopN["+ i +"].RegionId"));
 
 			trafficTopN.add(trafficTopNItem);
 		}

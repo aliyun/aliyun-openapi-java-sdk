@@ -36,23 +36,24 @@ public class DescribeCloudConnectNetworksResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("DescribeCloudConnectNetworksResponse.CloudConnectNetworks.Length"); i++) {
 			CloudConnectNetwork cloudConnectNetwork = new CloudConnectNetwork();
 			cloudConnectNetwork.setIsDefault(_ctx.booleanValue("DescribeCloudConnectNetworksResponse.CloudConnectNetworks["+ i +"].IsDefault"));
-			cloudConnectNetwork.setDescription(_ctx.stringValue("DescribeCloudConnectNetworksResponse.CloudConnectNetworks["+ i +"].Description"));
-			cloudConnectNetwork.setInterworkingStatus(_ctx.stringValue("DescribeCloudConnectNetworksResponse.CloudConnectNetworks["+ i +"].InterworkingStatus"));
-			cloudConnectNetwork.setAvailableCloudBoxCount(_ctx.stringValue("DescribeCloudConnectNetworksResponse.CloudConnectNetworks["+ i +"].AvailableCloudBoxCount"));
-			cloudConnectNetwork.setCcnId(_ctx.stringValue("DescribeCloudConnectNetworksResponse.CloudConnectNetworks["+ i +"].CcnId"));
 			cloudConnectNetwork.setCreateTime(_ctx.longValue("DescribeCloudConnectNetworksResponse.CloudConnectNetworks["+ i +"].CreateTime"));
-			cloudConnectNetwork.setCidrBlock(_ctx.stringValue("DescribeCloudConnectNetworksResponse.CloudConnectNetworks["+ i +"].CidrBlock"));
 			cloudConnectNetwork.setAssociatedCenOwnerId(_ctx.stringValue("DescribeCloudConnectNetworksResponse.CloudConnectNetworks["+ i +"].AssociatedCenOwnerId"));
-			cloudConnectNetwork.setAssociatedCenId(_ctx.stringValue("DescribeCloudConnectNetworksResponse.CloudConnectNetworks["+ i +"].AssociatedCenId"));
-			cloudConnectNetwork.setSnatCidrBlock(_ctx.stringValue("DescribeCloudConnectNetworksResponse.CloudConnectNetworks["+ i +"].SnatCidrBlock"));
 			cloudConnectNetwork.setAssociatedCloudBoxCount(_ctx.stringValue("DescribeCloudConnectNetworksResponse.CloudConnectNetworks["+ i +"].AssociatedCloudBoxCount"));
+			cloudConnectNetwork.setInterworkingStatus(_ctx.stringValue("DescribeCloudConnectNetworksResponse.CloudConnectNetworks["+ i +"].InterworkingStatus"));
+			cloudConnectNetwork.setCcnId(_ctx.stringValue("DescribeCloudConnectNetworksResponse.CloudConnectNetworks["+ i +"].CcnId"));
+			cloudConnectNetwork.setAvailableCloudBoxCount(_ctx.stringValue("DescribeCloudConnectNetworksResponse.CloudConnectNetworks["+ i +"].AvailableCloudBoxCount"));
+			cloudConnectNetwork.setCidrBlock(_ctx.stringValue("DescribeCloudConnectNetworksResponse.CloudConnectNetworks["+ i +"].CidrBlock"));
+			cloudConnectNetwork.setDescription(_ctx.stringValue("DescribeCloudConnectNetworksResponse.CloudConnectNetworks["+ i +"].Description"));
+			cloudConnectNetwork.setSnatCidrBlock(_ctx.stringValue("DescribeCloudConnectNetworksResponse.CloudConnectNetworks["+ i +"].SnatCidrBlock"));
+			cloudConnectNetwork.setAssociatedCenId(_ctx.stringValue("DescribeCloudConnectNetworksResponse.CloudConnectNetworks["+ i +"].AssociatedCenId"));
 			cloudConnectNetwork.setName(_ctx.stringValue("DescribeCloudConnectNetworksResponse.CloudConnectNetworks["+ i +"].Name"));
+			cloudConnectNetwork.setResourceGroupId(_ctx.stringValue("DescribeCloudConnectNetworksResponse.CloudConnectNetworks["+ i +"].ResourceGroupId"));
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeCloudConnectNetworksResponse.CloudConnectNetworks["+ i +"].Tags.Length"); j++) {
 				Tag tag = new Tag();
-				tag.setValue(_ctx.stringValue("DescribeCloudConnectNetworksResponse.CloudConnectNetworks["+ i +"].Tags["+ j +"].Value"));
 				tag.setKey(_ctx.stringValue("DescribeCloudConnectNetworksResponse.CloudConnectNetworks["+ i +"].Tags["+ j +"].Key"));
+				tag.setValue(_ctx.stringValue("DescribeCloudConnectNetworksResponse.CloudConnectNetworks["+ i +"].Tags["+ j +"].Value"));
 
 				tags.add(tag);
 			}

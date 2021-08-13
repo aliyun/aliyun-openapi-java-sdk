@@ -23,8 +23,9 @@ public class CreateSmartAccessGatewaySoftwareResponseUnmarshaller {
 	public static CreateSmartAccessGatewaySoftwareResponse unmarshall(CreateSmartAccessGatewaySoftwareResponse createSmartAccessGatewaySoftwareResponse, UnmarshallerContext _ctx) {
 		
 		createSmartAccessGatewaySoftwareResponse.setRequestId(_ctx.stringValue("CreateSmartAccessGatewaySoftwareResponse.RequestId"));
-		createSmartAccessGatewaySoftwareResponse.setSmartAGId(_ctx.stringValue("CreateSmartAccessGatewaySoftwareResponse.SmartAGId"));
 		createSmartAccessGatewaySoftwareResponse.setOrderId(_ctx.stringValue("CreateSmartAccessGatewaySoftwareResponse.OrderId"));
+		createSmartAccessGatewaySoftwareResponse.setSmartAGId(_ctx.stringValue("CreateSmartAccessGatewaySoftwareResponse.SmartAGId"));
+		createSmartAccessGatewaySoftwareResponse.setResourceGroupId(_ctx.stringValue("CreateSmartAccessGatewaySoftwareResponse.ResourceGroupId"));
 	 
 	 	return createSmartAccessGatewaySoftwareResponse;
 	}

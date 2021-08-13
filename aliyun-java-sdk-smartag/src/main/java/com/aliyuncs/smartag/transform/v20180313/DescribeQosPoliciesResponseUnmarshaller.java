@@ -34,18 +34,18 @@ public class DescribeQosPoliciesResponseUnmarshaller {
 		List<QosPolicy> qosPolicies = new ArrayList<QosPolicy>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeQosPoliciesResponse.QosPolicies.Length"); i++) {
 			QosPolicy qosPolicy = new QosPolicy();
-			qosPolicy.setDestCidr(_ctx.stringValue("DescribeQosPoliciesResponse.QosPolicies["+ i +"].DestCidr"));
-			qosPolicy.setDescription(_ctx.stringValue("DescribeQosPoliciesResponse.QosPolicies["+ i +"].Description"));
-			qosPolicy.setSourcePortRange(_ctx.stringValue("DescribeQosPoliciesResponse.QosPolicies["+ i +"].SourcePortRange"));
-			qosPolicy.setQosPolicyId(_ctx.stringValue("DescribeQosPoliciesResponse.QosPolicies["+ i +"].QosPolicyId"));
-			qosPolicy.setEndTime(_ctx.stringValue("DescribeQosPoliciesResponse.QosPolicies["+ i +"].EndTime"));
-			qosPolicy.setSourceCidr(_ctx.stringValue("DescribeQosPoliciesResponse.QosPolicies["+ i +"].SourceCidr"));
-			qosPolicy.setPriority(_ctx.integerValue("DescribeQosPoliciesResponse.QosPolicies["+ i +"].Priority"));
-			qosPolicy.setStartTime(_ctx.stringValue("DescribeQosPoliciesResponse.QosPolicies["+ i +"].StartTime"));
-			qosPolicy.setQosId(_ctx.stringValue("DescribeQosPoliciesResponse.QosPolicies["+ i +"].QosId"));
 			qosPolicy.setIpProtocol(_ctx.stringValue("DescribeQosPoliciesResponse.QosPolicies["+ i +"].IpProtocol"));
+			qosPolicy.setQosId(_ctx.stringValue("DescribeQosPoliciesResponse.QosPolicies["+ i +"].QosId"));
+			qosPolicy.setPriority(_ctx.integerValue("DescribeQosPoliciesResponse.QosPolicies["+ i +"].Priority"));
+			qosPolicy.setEndTime(_ctx.stringValue("DescribeQosPoliciesResponse.QosPolicies["+ i +"].EndTime"));
+			qosPolicy.setStartTime(_ctx.stringValue("DescribeQosPoliciesResponse.QosPolicies["+ i +"].StartTime"));
+			qosPolicy.setDescription(_ctx.stringValue("DescribeQosPoliciesResponse.QosPolicies["+ i +"].Description"));
+			qosPolicy.setDestCidr(_ctx.stringValue("DescribeQosPoliciesResponse.QosPolicies["+ i +"].DestCidr"));
 			qosPolicy.setDestPortRange(_ctx.stringValue("DescribeQosPoliciesResponse.QosPolicies["+ i +"].DestPortRange"));
+			qosPolicy.setQosPolicyId(_ctx.stringValue("DescribeQosPoliciesResponse.QosPolicies["+ i +"].QosPolicyId"));
 			qosPolicy.setName(_ctx.stringValue("DescribeQosPoliciesResponse.QosPolicies["+ i +"].Name"));
+			qosPolicy.setSourceCidr(_ctx.stringValue("DescribeQosPoliciesResponse.QosPolicies["+ i +"].SourceCidr"));
+			qosPolicy.setSourcePortRange(_ctx.stringValue("DescribeQosPoliciesResponse.QosPolicies["+ i +"].SourcePortRange"));
 
 			List<String> dpiSignatureIds = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeQosPoliciesResponse.QosPolicies["+ i +"].DpiSignatureIds.Length"); j++) {

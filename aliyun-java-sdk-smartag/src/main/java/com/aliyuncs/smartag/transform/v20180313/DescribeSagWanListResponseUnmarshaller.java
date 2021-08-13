@@ -32,21 +32,21 @@ public class DescribeSagWanListResponseUnmarshaller {
 		List<Wan> wans = new ArrayList<Wan>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSagWanListResponse.Wans.Length"); i++) {
 			Wan wan = new Wan();
-			wan.setIPType(_ctx.stringValue("DescribeSagWanListResponse.Wans["+ i +"].IPType"));
-			wan.setTrafficState(_ctx.stringValue("DescribeSagWanListResponse.Wans["+ i +"].TrafficState"));
-			wan.setPriority(_ctx.integerValue("DescribeSagWanListResponse.Wans["+ i +"].Priority"));
-			wan.setSourceIps(_ctx.stringValue("DescribeSagWanListResponse.Wans["+ i +"].SourceIps"));
-			wan.setISP(_ctx.stringValue("DescribeSagWanListResponse.Wans["+ i +"].ISP"));
-			wan.setIP(_ctx.stringValue("DescribeSagWanListResponse.Wans["+ i +"].IP"));
-			wan.setMask(_ctx.stringValue("DescribeSagWanListResponse.Wans["+ i +"].Mask"));
-			wan.setStartIp(_ctx.stringValue("DescribeSagWanListResponse.Wans["+ i +"].StartIp"));
-			wan.setVlan(_ctx.stringValue("DescribeSagWanListResponse.Wans["+ i +"].Vlan"));
-			wan.setPortName(_ctx.stringValue("DescribeSagWanListResponse.Wans["+ i +"].PortName"));
 			wan.setWeight(_ctx.integerValue("DescribeSagWanListResponse.Wans["+ i +"].Weight"));
-			wan.setStopIp(_ctx.stringValue("DescribeSagWanListResponse.Wans["+ i +"].StopIp"));
-			wan.setBandWidth(_ctx.integerValue("DescribeSagWanListResponse.Wans["+ i +"].BandWidth"));
-			wan.setUsername(_ctx.stringValue("DescribeSagWanListResponse.Wans["+ i +"].Username"));
+			wan.setMask(_ctx.stringValue("DescribeSagWanListResponse.Wans["+ i +"].Mask"));
 			wan.setGateway(_ctx.stringValue("DescribeSagWanListResponse.Wans["+ i +"].Gateway"));
+			wan.setPortName(_ctx.stringValue("DescribeSagWanListResponse.Wans["+ i +"].PortName"));
+			wan.setIPType(_ctx.stringValue("DescribeSagWanListResponse.Wans["+ i +"].IPType"));
+			wan.setPriority(_ctx.integerValue("DescribeSagWanListResponse.Wans["+ i +"].Priority"));
+			wan.setBandWidth(_ctx.integerValue("DescribeSagWanListResponse.Wans["+ i +"].BandWidth"));
+			wan.setTrafficState(_ctx.stringValue("DescribeSagWanListResponse.Wans["+ i +"].TrafficState"));
+			wan.setIP(_ctx.stringValue("DescribeSagWanListResponse.Wans["+ i +"].IP"));
+			wan.setISP(_ctx.stringValue("DescribeSagWanListResponse.Wans["+ i +"].ISP"));
+			wan.setUsername(_ctx.stringValue("DescribeSagWanListResponse.Wans["+ i +"].Username"));
+			wan.setVlan(_ctx.stringValue("DescribeSagWanListResponse.Wans["+ i +"].Vlan"));
+			wan.setSourceIps(_ctx.stringValue("DescribeSagWanListResponse.Wans["+ i +"].SourceIps"));
+			wan.setStartIp(_ctx.stringValue("DescribeSagWanListResponse.Wans["+ i +"].StartIp"));
+			wan.setStopIp(_ctx.stringValue("DescribeSagWanListResponse.Wans["+ i +"].StopIp"));
 
 			wans.add(wan);
 		}
@@ -55,10 +55,10 @@ public class DescribeSagWanListResponseUnmarshaller {
 		List<TaskState> taskStates = new ArrayList<TaskState>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSagWanListResponse.TaskStates.Length"); i++) {
 			TaskState taskState = new TaskState();
-			taskState.setState(_ctx.stringValue("DescribeSagWanListResponse.TaskStates["+ i +"].State"));
-			taskState.setCreateTime(_ctx.stringValue("DescribeSagWanListResponse.TaskStates["+ i +"].CreateTime"));
-			taskState.setErrorCode(_ctx.stringValue("DescribeSagWanListResponse.TaskStates["+ i +"].ErrorCode"));
 			taskState.setErrorMessage(_ctx.stringValue("DescribeSagWanListResponse.TaskStates["+ i +"].ErrorMessage"));
+			taskState.setState(_ctx.stringValue("DescribeSagWanListResponse.TaskStates["+ i +"].State"));
+			taskState.setErrorCode(_ctx.stringValue("DescribeSagWanListResponse.TaskStates["+ i +"].ErrorCode"));
+			taskState.setCreateTime(_ctx.stringValue("DescribeSagWanListResponse.TaskStates["+ i +"].CreateTime"));
 
 			taskStates.add(taskState);
 		}

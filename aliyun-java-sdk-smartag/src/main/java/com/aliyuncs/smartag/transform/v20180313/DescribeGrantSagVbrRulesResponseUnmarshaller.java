@@ -34,14 +34,14 @@ public class DescribeGrantSagVbrRulesResponseUnmarshaller {
 		List<GrantRule> grantRules = new ArrayList<GrantRule>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeGrantSagVbrRulesResponse.GrantRules.Length"); i++) {
 			GrantRule grantRule = new GrantRule();
-			grantRule.setVbrUid(_ctx.longValue("DescribeGrantSagVbrRulesResponse.GrantRules["+ i +"].VbrUid"));
-			grantRule.setSmartAGUid(_ctx.longValue("DescribeGrantSagVbrRulesResponse.GrantRules["+ i +"].SmartAGUid"));
 			grantRule.setVbrInstanceId(_ctx.stringValue("DescribeGrantSagVbrRulesResponse.GrantRules["+ i +"].VbrInstanceId"));
-			grantRule.setInstanceId(_ctx.stringValue("DescribeGrantSagVbrRulesResponse.GrantRules["+ i +"].InstanceId"));
-			grantRule.setCreateTime(_ctx.longValue("DescribeGrantSagVbrRulesResponse.GrantRules["+ i +"].CreateTime"));
-			grantRule.setBound(_ctx.booleanValue("DescribeGrantSagVbrRulesResponse.GrantRules["+ i +"].Bound"));
+			grantRule.setVbrUid(_ctx.longValue("DescribeGrantSagVbrRulesResponse.GrantRules["+ i +"].VbrUid"));
 			grantRule.setVbrRegionId(_ctx.stringValue("DescribeGrantSagVbrRulesResponse.GrantRules["+ i +"].VbrRegionId"));
+			grantRule.setCreateTime(_ctx.longValue("DescribeGrantSagVbrRulesResponse.GrantRules["+ i +"].CreateTime"));
 			grantRule.setSmartAGId(_ctx.stringValue("DescribeGrantSagVbrRulesResponse.GrantRules["+ i +"].SmartAGId"));
+			grantRule.setBound(_ctx.booleanValue("DescribeGrantSagVbrRulesResponse.GrantRules["+ i +"].Bound"));
+			grantRule.setInstanceId(_ctx.stringValue("DescribeGrantSagVbrRulesResponse.GrantRules["+ i +"].InstanceId"));
+			grantRule.setSmartAGUid(_ctx.longValue("DescribeGrantSagVbrRulesResponse.GrantRules["+ i +"].SmartAGUid"));
 
 			grantRules.add(grantRule);
 		}

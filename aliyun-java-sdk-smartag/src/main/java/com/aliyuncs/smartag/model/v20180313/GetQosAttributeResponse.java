@@ -87,41 +87,25 @@ public class GetQosAttributeResponse extends AcsResponse {
 
 	public static class QosPolicy {
 
-		private String destCidr;
-
-		private String sourcePortRange;
-
 		private Long endTime;
-
-		private String sourceCidr;
-
-		private Integer priority;
-
-		private String qosPolicieName;
-
-		private String qosPolicieDescription;
 
 		private Long startTime;
 
-		private String ipProtocol;
+		private String destCidr;
 
 		private String destPortRange;
 
-		public String getDestCidr() {
-			return this.destCidr;
-		}
+		private String ipProtocol;
 
-		public void setDestCidr(String destCidr) {
-			this.destCidr = destCidr;
-		}
+		private Integer priority;
 
-		public String getSourcePortRange() {
-			return this.sourcePortRange;
-		}
+		private String qosPolicieDescription;
 
-		public void setSourcePortRange(String sourcePortRange) {
-			this.sourcePortRange = sourcePortRange;
-		}
+		private String sourceCidr;
+
+		private String qosPolicieName;
+
+		private String sourcePortRange;
 
 		public Long getEndTime() {
 			return this.endTime;
@@ -129,38 +113,6 @@ public class GetQosAttributeResponse extends AcsResponse {
 
 		public void setEndTime(Long endTime) {
 			this.endTime = endTime;
-		}
-
-		public String getSourceCidr() {
-			return this.sourceCidr;
-		}
-
-		public void setSourceCidr(String sourceCidr) {
-			this.sourceCidr = sourceCidr;
-		}
-
-		public Integer getPriority() {
-			return this.priority;
-		}
-
-		public void setPriority(Integer priority) {
-			this.priority = priority;
-		}
-
-		public String getQosPolicieName() {
-			return this.qosPolicieName;
-		}
-
-		public void setQosPolicieName(String qosPolicieName) {
-			this.qosPolicieName = qosPolicieName;
-		}
-
-		public String getQosPolicieDescription() {
-			return this.qosPolicieDescription;
-		}
-
-		public void setQosPolicieDescription(String qosPolicieDescription) {
-			this.qosPolicieDescription = qosPolicieDescription;
 		}
 
 		public Long getStartTime() {
@@ -171,12 +123,12 @@ public class GetQosAttributeResponse extends AcsResponse {
 			this.startTime = startTime;
 		}
 
-		public String getIpProtocol() {
-			return this.ipProtocol;
+		public String getDestCidr() {
+			return this.destCidr;
 		}
 
-		public void setIpProtocol(String ipProtocol) {
-			this.ipProtocol = ipProtocol;
+		public void setDestCidr(String destCidr) {
+			this.destCidr = destCidr;
 		}
 
 		public String getDestPortRange() {
@@ -186,44 +138,13 @@ public class GetQosAttributeResponse extends AcsResponse {
 		public void setDestPortRange(String destPortRange) {
 			this.destPortRange = destPortRange;
 		}
-	}
 
-	public static class QosCar {
-
-		private Integer minBandwidthAbs;
-
-		private String qosCarId;
-
-		private Integer priority;
-
-		private String qosCarDescription;
-
-		private Integer maxBandwidthPercent;
-
-		private Integer maxBandwidthAbs;
-
-		private String qosCarName;
-
-		private String percentSourceType;
-
-		private Integer minBandwidthPercent;
-
-		private String limitType;
-
-		public Integer getMinBandwidthAbs() {
-			return this.minBandwidthAbs;
+		public String getIpProtocol() {
+			return this.ipProtocol;
 		}
 
-		public void setMinBandwidthAbs(Integer minBandwidthAbs) {
-			this.minBandwidthAbs = minBandwidthAbs;
-		}
-
-		public String getQosCarId() {
-			return this.qosCarId;
-		}
-
-		public void setQosCarId(String qosCarId) {
-			this.qosCarId = qosCarId;
+		public void setIpProtocol(String ipProtocol) {
+			this.ipProtocol = ipProtocol;
 		}
 
 		public Integer getPriority() {
@@ -234,21 +155,60 @@ public class GetQosAttributeResponse extends AcsResponse {
 			this.priority = priority;
 		}
 
-		public String getQosCarDescription() {
-			return this.qosCarDescription;
+		public String getQosPolicieDescription() {
+			return this.qosPolicieDescription;
 		}
 
-		public void setQosCarDescription(String qosCarDescription) {
-			this.qosCarDescription = qosCarDescription;
+		public void setQosPolicieDescription(String qosPolicieDescription) {
+			this.qosPolicieDescription = qosPolicieDescription;
 		}
 
-		public Integer getMaxBandwidthPercent() {
-			return this.maxBandwidthPercent;
+		public String getSourceCidr() {
+			return this.sourceCidr;
 		}
 
-		public void setMaxBandwidthPercent(Integer maxBandwidthPercent) {
-			this.maxBandwidthPercent = maxBandwidthPercent;
+		public void setSourceCidr(String sourceCidr) {
+			this.sourceCidr = sourceCidr;
 		}
+
+		public String getQosPolicieName() {
+			return this.qosPolicieName;
+		}
+
+		public void setQosPolicieName(String qosPolicieName) {
+			this.qosPolicieName = qosPolicieName;
+		}
+
+		public String getSourcePortRange() {
+			return this.sourcePortRange;
+		}
+
+		public void setSourcePortRange(String sourcePortRange) {
+			this.sourcePortRange = sourcePortRange;
+		}
+	}
+
+	public static class QosCar {
+
+		private Integer maxBandwidthAbs;
+
+		private String qosCarName;
+
+		private String percentSourceType;
+
+		private Integer minBandwidthAbs;
+
+		private Integer maxBandwidthPercent;
+
+		private String qosCarDescription;
+
+		private String limitType;
+
+		private Integer priority;
+
+		private Integer minBandwidthPercent;
+
+		private String qosCarId;
 
 		public Integer getMaxBandwidthAbs() {
 			return this.maxBandwidthAbs;
@@ -274,12 +234,28 @@ public class GetQosAttributeResponse extends AcsResponse {
 			this.percentSourceType = percentSourceType;
 		}
 
-		public Integer getMinBandwidthPercent() {
-			return this.minBandwidthPercent;
+		public Integer getMinBandwidthAbs() {
+			return this.minBandwidthAbs;
 		}
 
-		public void setMinBandwidthPercent(Integer minBandwidthPercent) {
-			this.minBandwidthPercent = minBandwidthPercent;
+		public void setMinBandwidthAbs(Integer minBandwidthAbs) {
+			this.minBandwidthAbs = minBandwidthAbs;
+		}
+
+		public Integer getMaxBandwidthPercent() {
+			return this.maxBandwidthPercent;
+		}
+
+		public void setMaxBandwidthPercent(Integer maxBandwidthPercent) {
+			this.maxBandwidthPercent = maxBandwidthPercent;
+		}
+
+		public String getQosCarDescription() {
+			return this.qosCarDescription;
+		}
+
+		public void setQosCarDescription(String qosCarDescription) {
+			this.qosCarDescription = qosCarDescription;
 		}
 
 		public String getLimitType() {
@@ -288,6 +264,30 @@ public class GetQosAttributeResponse extends AcsResponse {
 
 		public void setLimitType(String limitType) {
 			this.limitType = limitType;
+		}
+
+		public Integer getPriority() {
+			return this.priority;
+		}
+
+		public void setPriority(Integer priority) {
+			this.priority = priority;
+		}
+
+		public Integer getMinBandwidthPercent() {
+			return this.minBandwidthPercent;
+		}
+
+		public void setMinBandwidthPercent(Integer minBandwidthPercent) {
+			this.minBandwidthPercent = minBandwidthPercent;
+		}
+
+		public String getQosCarId() {
+			return this.qosCarId;
+		}
+
+		public void setQosCarId(String qosCarId) {
+			this.qosCarId = qosCarId;
 		}
 	}
 

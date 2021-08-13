@@ -31,10 +31,10 @@ public class DescribeSmartAccessGatewayVersionsResponseUnmarshaller {
 		List<SmartAGVersion> smartAGVersions = new ArrayList<SmartAGVersion>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSmartAccessGatewayVersionsResponse.SmartAGVersions.Length"); i++) {
 			SmartAGVersion smartAGVersion = new SmartAGVersion();
-			smartAGVersion.setVersionCode(_ctx.stringValue("DescribeSmartAccessGatewayVersionsResponse.SmartAGVersions["+ i +"].VersionCode"));
 			smartAGVersion.setType(_ctx.stringValue("DescribeSmartAccessGatewayVersionsResponse.SmartAGVersions["+ i +"].Type"));
 			smartAGVersion.setCreateTime(_ctx.longValue("DescribeSmartAccessGatewayVersionsResponse.SmartAGVersions["+ i +"].CreateTime"));
 			smartAGVersion.setVersionName(_ctx.stringValue("DescribeSmartAccessGatewayVersionsResponse.SmartAGVersions["+ i +"].VersionName"));
+			smartAGVersion.setVersionCode(_ctx.stringValue("DescribeSmartAccessGatewayVersionsResponse.SmartAGVersions["+ i +"].VersionCode"));
 
 			smartAGVersions.add(smartAGVersion);
 		}

@@ -35,17 +35,17 @@ public class DescribeRouteDistributionStrategiesResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("DescribeRouteDistributionStrategiesResponse.Strategies.Length"); i++) {
 			Strategy strategy = new Strategy();
 			strategy.setStatus(_ctx.stringValue("DescribeRouteDistributionStrategiesResponse.Strategies["+ i +"].Status"));
+			strategy.setStrategyPublishStatus(_ctx.stringValue("DescribeRouteDistributionStrategiesResponse.Strategies["+ i +"].StrategyPublishStatus"));
+			strategy.setRouteDistribution(_ctx.stringValue("DescribeRouteDistributionStrategiesResponse.Strategies["+ i +"].RouteDistribution"));
+			strategy.setCreateTime(_ctx.longValue("DescribeRouteDistributionStrategiesResponse.Strategies["+ i +"].CreateTime"));
+			strategy.setSmartAGId(_ctx.stringValue("DescribeRouteDistributionStrategiesResponse.Strategies["+ i +"].SmartAGId"));
+			strategy.setSourceType(_ctx.stringValue("DescribeRouteDistributionStrategiesResponse.Strategies["+ i +"].SourceType"));
+			strategy.setIsConflict(_ctx.booleanValue("DescribeRouteDistributionStrategiesResponse.Strategies["+ i +"].IsConflict"));
 			strategy.setInstanceId(_ctx.stringValue("DescribeRouteDistributionStrategiesResponse.Strategies["+ i +"].InstanceId"));
+			strategy.setDestCidrBlock(_ctx.stringValue("DescribeRouteDistributionStrategiesResponse.Strategies["+ i +"].DestCidrBlock"));
+			strategy.setConflictInfo(_ctx.stringValue("DescribeRouteDistributionStrategiesResponse.Strategies["+ i +"].ConflictInfo"));
 			strategy.setHcInstanceId(_ctx.stringValue("DescribeRouteDistributionStrategiesResponse.Strategies["+ i +"].HcInstanceId"));
 			strategy.setRouteSource(_ctx.stringValue("DescribeRouteDistributionStrategiesResponse.Strategies["+ i +"].RouteSource"));
-			strategy.setSourceType(_ctx.stringValue("DescribeRouteDistributionStrategiesResponse.Strategies["+ i +"].SourceType"));
-			strategy.setCreateTime(_ctx.longValue("DescribeRouteDistributionStrategiesResponse.Strategies["+ i +"].CreateTime"));
-			strategy.setRouteDistribution(_ctx.stringValue("DescribeRouteDistributionStrategiesResponse.Strategies["+ i +"].RouteDistribution"));
-			strategy.setIsConflict(_ctx.booleanValue("DescribeRouteDistributionStrategiesResponse.Strategies["+ i +"].IsConflict"));
-			strategy.setSmartAGId(_ctx.stringValue("DescribeRouteDistributionStrategiesResponse.Strategies["+ i +"].SmartAGId"));
-			strategy.setStrategyPublishStatus(_ctx.stringValue("DescribeRouteDistributionStrategiesResponse.Strategies["+ i +"].StrategyPublishStatus"));
-			strategy.setConflictInfo(_ctx.stringValue("DescribeRouteDistributionStrategiesResponse.Strategies["+ i +"].ConflictInfo"));
-			strategy.setDestCidrBlock(_ctx.stringValue("DescribeRouteDistributionStrategiesResponse.Strategies["+ i +"].DestCidrBlock"));
 
 			strategies.add(strategy);
 		}

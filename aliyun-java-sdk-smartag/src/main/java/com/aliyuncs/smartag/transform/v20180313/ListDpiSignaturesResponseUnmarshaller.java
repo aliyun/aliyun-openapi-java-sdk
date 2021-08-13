@@ -33,11 +33,11 @@ public class ListDpiSignaturesResponseUnmarshaller {
 		List<DpiSignatureItem> dpiSignature = new ArrayList<DpiSignatureItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListDpiSignaturesResponse.DpiSignature.Length"); i++) {
 			DpiSignatureItem dpiSignatureItem = new DpiSignatureItem();
-			dpiSignatureItem.setMinEngineVersion(_ctx.stringValue("ListDpiSignaturesResponse.DpiSignature["+ i +"].MinEngineVersion"));
-			dpiSignatureItem.setMinSignatureDbVersion(_ctx.stringValue("ListDpiSignaturesResponse.DpiSignature["+ i +"].MinSignatureDbVersion"));
 			dpiSignatureItem.setDpiSignatureId(_ctx.stringValue("ListDpiSignaturesResponse.DpiSignature["+ i +"].DpiSignatureId"));
-			dpiSignatureItem.setDpiSignatureName(_ctx.stringValue("ListDpiSignaturesResponse.DpiSignature["+ i +"].DpiSignatureName"));
+			dpiSignatureItem.setMinSignatureDbVersion(_ctx.stringValue("ListDpiSignaturesResponse.DpiSignature["+ i +"].MinSignatureDbVersion"));
 			dpiSignatureItem.setDpiGroupId(_ctx.stringValue("ListDpiSignaturesResponse.DpiSignature["+ i +"].DpiGroupId"));
+			dpiSignatureItem.setMinEngineVersion(_ctx.stringValue("ListDpiSignaturesResponse.DpiSignature["+ i +"].MinEngineVersion"));
+			dpiSignatureItem.setDpiSignatureName(_ctx.stringValue("ListDpiSignaturesResponse.DpiSignature["+ i +"].DpiSignatureName"));
 
 			dpiSignature.add(dpiSignatureItem);
 		}

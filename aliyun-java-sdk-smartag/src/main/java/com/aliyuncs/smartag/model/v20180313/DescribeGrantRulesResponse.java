@@ -27,9 +27,9 @@ public class DescribeGrantRulesResponse extends AcsResponse {
 
 	private Integer totalCount;
 
-	private String requestId;
-
 	private Integer pageSize;
+
+	private String requestId;
 
 	private Integer pageNumber;
 
@@ -43,20 +43,20 @@ public class DescribeGrantRulesResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getPageNumber() {
@@ -77,17 +77,15 @@ public class DescribeGrantRulesResponse extends AcsResponse {
 
 	public static class GrantRule {
 
-		private Long gmtCreate;
+		private String cenInstanceId;
 
 		private Long cenUid;
 
-		private Boolean grantTrafficService;
-
-		private String ccnInstanceId;
+		private Long gmtCreate;
 
 		private String grantRuleId;
 
-		private String cenInstanceId;
+		private Boolean grantTrafficService;
 
 		private Long gmtModified;
 
@@ -95,12 +93,14 @@ public class DescribeGrantRulesResponse extends AcsResponse {
 
 		private String regionId;
 
-		public Long getGmtCreate() {
-			return this.gmtCreate;
+		private String ccnInstanceId;
+
+		public String getCenInstanceId() {
+			return this.cenInstanceId;
 		}
 
-		public void setGmtCreate(Long gmtCreate) {
-			this.gmtCreate = gmtCreate;
+		public void setCenInstanceId(String cenInstanceId) {
+			this.cenInstanceId = cenInstanceId;
 		}
 
 		public Long getCenUid() {
@@ -111,20 +111,12 @@ public class DescribeGrantRulesResponse extends AcsResponse {
 			this.cenUid = cenUid;
 		}
 
-		public Boolean getGrantTrafficService() {
-			return this.grantTrafficService;
+		public Long getGmtCreate() {
+			return this.gmtCreate;
 		}
 
-		public void setGrantTrafficService(Boolean grantTrafficService) {
-			this.grantTrafficService = grantTrafficService;
-		}
-
-		public String getCcnInstanceId() {
-			return this.ccnInstanceId;
-		}
-
-		public void setCcnInstanceId(String ccnInstanceId) {
-			this.ccnInstanceId = ccnInstanceId;
+		public void setGmtCreate(Long gmtCreate) {
+			this.gmtCreate = gmtCreate;
 		}
 
 		public String getGrantRuleId() {
@@ -135,12 +127,12 @@ public class DescribeGrantRulesResponse extends AcsResponse {
 			this.grantRuleId = grantRuleId;
 		}
 
-		public String getCenInstanceId() {
-			return this.cenInstanceId;
+		public Boolean getGrantTrafficService() {
+			return this.grantTrafficService;
 		}
 
-		public void setCenInstanceId(String cenInstanceId) {
-			this.cenInstanceId = cenInstanceId;
+		public void setGrantTrafficService(Boolean grantTrafficService) {
+			this.grantTrafficService = grantTrafficService;
 		}
 
 		public Long getGmtModified() {
@@ -165,6 +157,14 @@ public class DescribeGrantRulesResponse extends AcsResponse {
 
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
+		}
+
+		public String getCcnInstanceId() {
+			return this.ccnInstanceId;
+		}
+
+		public void setCcnInstanceId(String ccnInstanceId) {
+			this.ccnInstanceId = ccnInstanceId;
 		}
 	}
 

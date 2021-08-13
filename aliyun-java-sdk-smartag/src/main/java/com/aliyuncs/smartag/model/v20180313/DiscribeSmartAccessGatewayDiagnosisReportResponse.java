@@ -47,77 +47,45 @@ public class DiscribeSmartAccessGatewayDiagnosisReportResponse extends AcsRespon
 
 	public static class DiagnoseResult {
 
-		private String parameters;
-
-		private Integer endTime;
-
-		private String instanceId;
-
-		private String userLevel;
-
 		private Integer percent;
 
-		private Integer startTime;
-
-		private Integer finishedNumber;
-
-		private String boxType;
-
-		private String storeType;
-
-		private String monitorVersion;
-
-		private String uId;
-
-		private Integer reportSLSSuccess;
-
-		private String state;
+		private String sN;
 
 		private String diagnoseId;
 
-		private Integer totalNumber;
+		private String state;
+
+		private String userLevel;
 
 		private String boxVersion;
 
-		private String sN;
+		private String instanceId;
+
+		private String boxType;
+
+		private String monitorVersion;
+
+		private Integer finishedNumber;
+
+		private String uId;
+
+		private Integer endTime;
+
+		private Integer startTime;
+
+		private String parameters;
+
+		private String storeType;
+
+		private Integer reportSLSSuccess;
+
+		private Integer totalNumber;
 
 		private List<Detail> details;
 
 		private Level level;
 
 		private Statistics statistics;
-
-		public String getParameters() {
-			return this.parameters;
-		}
-
-		public void setParameters(String parameters) {
-			this.parameters = parameters;
-		}
-
-		public Integer getEndTime() {
-			return this.endTime;
-		}
-
-		public void setEndTime(Integer endTime) {
-			this.endTime = endTime;
-		}
-
-		public String getInstanceId() {
-			return this.instanceId;
-		}
-
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
-
-		public String getUserLevel() {
-			return this.userLevel;
-		}
-
-		public void setUserLevel(String userLevel) {
-			this.userLevel = userLevel;
-		}
 
 		public Integer getPercent() {
 			return this.percent;
@@ -127,68 +95,12 @@ public class DiscribeSmartAccessGatewayDiagnosisReportResponse extends AcsRespon
 			this.percent = percent;
 		}
 
-		public Integer getStartTime() {
-			return this.startTime;
+		public String getSN() {
+			return this.sN;
 		}
 
-		public void setStartTime(Integer startTime) {
-			this.startTime = startTime;
-		}
-
-		public Integer getFinishedNumber() {
-			return this.finishedNumber;
-		}
-
-		public void setFinishedNumber(Integer finishedNumber) {
-			this.finishedNumber = finishedNumber;
-		}
-
-		public String getBoxType() {
-			return this.boxType;
-		}
-
-		public void setBoxType(String boxType) {
-			this.boxType = boxType;
-		}
-
-		public String getStoreType() {
-			return this.storeType;
-		}
-
-		public void setStoreType(String storeType) {
-			this.storeType = storeType;
-		}
-
-		public String getMonitorVersion() {
-			return this.monitorVersion;
-		}
-
-		public void setMonitorVersion(String monitorVersion) {
-			this.monitorVersion = monitorVersion;
-		}
-
-		public String getUId() {
-			return this.uId;
-		}
-
-		public void setUId(String uId) {
-			this.uId = uId;
-		}
-
-		public Integer getReportSLSSuccess() {
-			return this.reportSLSSuccess;
-		}
-
-		public void setReportSLSSuccess(Integer reportSLSSuccess) {
-			this.reportSLSSuccess = reportSLSSuccess;
-		}
-
-		public String getState() {
-			return this.state;
-		}
-
-		public void setState(String state) {
-			this.state = state;
+		public void setSN(String sN) {
+			this.sN = sN;
 		}
 
 		public String getDiagnoseId() {
@@ -199,12 +111,20 @@ public class DiscribeSmartAccessGatewayDiagnosisReportResponse extends AcsRespon
 			this.diagnoseId = diagnoseId;
 		}
 
-		public Integer getTotalNumber() {
-			return this.totalNumber;
+		public String getState() {
+			return this.state;
 		}
 
-		public void setTotalNumber(Integer totalNumber) {
-			this.totalNumber = totalNumber;
+		public void setState(String state) {
+			this.state = state;
+		}
+
+		public String getUserLevel() {
+			return this.userLevel;
+		}
+
+		public void setUserLevel(String userLevel) {
+			this.userLevel = userLevel;
 		}
 
 		public String getBoxVersion() {
@@ -215,12 +135,92 @@ public class DiscribeSmartAccessGatewayDiagnosisReportResponse extends AcsRespon
 			this.boxVersion = boxVersion;
 		}
 
-		public String getSN() {
-			return this.sN;
+		public String getInstanceId() {
+			return this.instanceId;
 		}
 
-		public void setSN(String sN) {
-			this.sN = sN;
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public String getBoxType() {
+			return this.boxType;
+		}
+
+		public void setBoxType(String boxType) {
+			this.boxType = boxType;
+		}
+
+		public String getMonitorVersion() {
+			return this.monitorVersion;
+		}
+
+		public void setMonitorVersion(String monitorVersion) {
+			this.monitorVersion = monitorVersion;
+		}
+
+		public Integer getFinishedNumber() {
+			return this.finishedNumber;
+		}
+
+		public void setFinishedNumber(Integer finishedNumber) {
+			this.finishedNumber = finishedNumber;
+		}
+
+		public String getUId() {
+			return this.uId;
+		}
+
+		public void setUId(String uId) {
+			this.uId = uId;
+		}
+
+		public Integer getEndTime() {
+			return this.endTime;
+		}
+
+		public void setEndTime(Integer endTime) {
+			this.endTime = endTime;
+		}
+
+		public Integer getStartTime() {
+			return this.startTime;
+		}
+
+		public void setStartTime(Integer startTime) {
+			this.startTime = startTime;
+		}
+
+		public String getParameters() {
+			return this.parameters;
+		}
+
+		public void setParameters(String parameters) {
+			this.parameters = parameters;
+		}
+
+		public String getStoreType() {
+			return this.storeType;
+		}
+
+		public void setStoreType(String storeType) {
+			this.storeType = storeType;
+		}
+
+		public Integer getReportSLSSuccess() {
+			return this.reportSLSSuccess;
+		}
+
+		public void setReportSLSSuccess(Integer reportSLSSuccess) {
+			this.reportSLSSuccess = reportSLSSuccess;
+		}
+
+		public Integer getTotalNumber() {
+			return this.totalNumber;
+		}
+
+		public void setTotalNumber(Integer totalNumber) {
+			this.totalNumber = totalNumber;
 		}
 
 		public List<Detail> getDetails() {
@@ -291,9 +291,9 @@ public class DiscribeSmartAccessGatewayDiagnosisReportResponse extends AcsRespon
 
 				private String level;
 
-				private EN eN;
-
 				private CN cN;
+
+				private EN eN;
 
 				public String getType() {
 					return this.type;
@@ -335,14 +335,6 @@ public class DiscribeSmartAccessGatewayDiagnosisReportResponse extends AcsRespon
 					this.level = level;
 				}
 
-				public EN getEN() {
-					return this.eN;
-				}
-
-				public void setEN(EN eN) {
-					this.eN = eN;
-				}
-
 				public CN getCN() {
 					return this.cN;
 				}
@@ -351,17 +343,33 @@ public class DiscribeSmartAccessGatewayDiagnosisReportResponse extends AcsRespon
 					this.cN = cN;
 				}
 
-				public static class EN {
+				public EN getEN() {
+					return this.eN;
+				}
+
+				public void setEN(EN eN) {
+					this.eN = eN;
+				}
+
+				public static class CN {
+
+					private String itemName;
 
 					private String itemLevel;
 
 					private String itemType;
 
-					private String itemName;
+					private List<String> advice;
 
 					private List<String> details2;
 
-					private List<String> advice;
+					public String getItemName() {
+						return this.itemName;
+					}
+
+					public void setItemName(String itemName) {
+						this.itemName = itemName;
+					}
 
 					public String getItemLevel() {
 						return this.itemLevel;
@@ -377,22 +385,6 @@ public class DiscribeSmartAccessGatewayDiagnosisReportResponse extends AcsRespon
 
 					public void setItemType(String itemType) {
 						this.itemType = itemType;
-					}
-
-					public String getItemName() {
-						return this.itemName;
-					}
-
-					public void setItemName(String itemName) {
-						this.itemName = itemName;
-					}
-
-					public List<String> getDetails2() {
-						return this.details2;
-					}
-
-					public void setDetails2(List<String> details2) {
-						this.details2 = details2;
 					}
 
 					public List<String> getAdvice() {
@@ -402,19 +394,35 @@ public class DiscribeSmartAccessGatewayDiagnosisReportResponse extends AcsRespon
 					public void setAdvice(List<String> advice) {
 						this.advice = advice;
 					}
+
+					public List<String> getDetails2() {
+						return this.details2;
+					}
+
+					public void setDetails2(List<String> details2) {
+						this.details2 = details2;
+					}
 				}
 
-				public static class CN {
+				public static class EN {
+
+					private String itemName;
 
 					private String itemLevel;
 
 					private String itemType;
 
-					private String itemName;
+					private List<String> advice3;
 
-					private List<String> details3;
+					private List<String> details4;
 
-					private List<String> advice4;
+					public String getItemName() {
+						return this.itemName;
+					}
+
+					public void setItemName(String itemName) {
+						this.itemName = itemName;
+					}
 
 					public String getItemLevel() {
 						return this.itemLevel;
@@ -432,28 +440,20 @@ public class DiscribeSmartAccessGatewayDiagnosisReportResponse extends AcsRespon
 						this.itemType = itemType;
 					}
 
-					public String getItemName() {
-						return this.itemName;
+					public List<String> getAdvice3() {
+						return this.advice3;
 					}
 
-					public void setItemName(String itemName) {
-						this.itemName = itemName;
+					public void setAdvice3(List<String> advice3) {
+						this.advice3 = advice3;
 					}
 
-					public List<String> getDetails3() {
-						return this.details3;
+					public List<String> getDetails4() {
+						return this.details4;
 					}
 
-					public void setDetails3(List<String> details3) {
-						this.details3 = details3;
-					}
-
-					public List<String> getAdvice4() {
-						return this.advice4;
-					}
-
-					public void setAdvice4(List<String> advice4) {
-						this.advice4 = advice4;
+					public void setDetails4(List<String> details4) {
+						this.details4 = details4;
 					}
 				}
 			}
@@ -462,9 +462,9 @@ public class DiscribeSmartAccessGatewayDiagnosisReportResponse extends AcsRespon
 
 				private Integer warning;
 
-				private Integer total;
-
 				private Integer error;
+
+				private Integer total;
 
 				private Integer info;
 
@@ -476,20 +476,20 @@ public class DiscribeSmartAccessGatewayDiagnosisReportResponse extends AcsRespon
 					this.warning = warning;
 				}
 
-				public Integer getTotal() {
-					return this.total;
-				}
-
-				public void setTotal(Integer total) {
-					this.total = total;
-				}
-
 				public Integer getError() {
 					return this.error;
 				}
 
 				public void setError(Integer error) {
 					this.error = error;
+				}
+
+				public Integer getTotal() {
+					return this.total;
+				}
+
+				public void setTotal(Integer total) {
+					this.total = total;
 				}
 
 				public Integer getInfo() {
@@ -504,19 +504,11 @@ public class DiscribeSmartAccessGatewayDiagnosisReportResponse extends AcsRespon
 
 		public static class Level {
 
-			private String biz;
-
 			private String configuration;
 
 			private String total;
 
-			public String getBiz() {
-				return this.biz;
-			}
-
-			public void setBiz(String biz) {
-				this.biz = biz;
-			}
+			private String biz;
 
 			public String getConfiguration() {
 				return this.configuration;
@@ -533,15 +525,23 @@ public class DiscribeSmartAccessGatewayDiagnosisReportResponse extends AcsRespon
 			public void setTotal(String total) {
 				this.total = total;
 			}
+
+			public String getBiz() {
+				return this.biz;
+			}
+
+			public void setBiz(String biz) {
+				this.biz = biz;
+			}
 		}
 
 		public static class Statistics {
 
 			private Integer warning;
 
-			private Integer total;
-
 			private Integer error;
+
+			private Integer total;
 
 			private Integer info;
 
@@ -553,20 +553,20 @@ public class DiscribeSmartAccessGatewayDiagnosisReportResponse extends AcsRespon
 				this.warning = warning;
 			}
 
-			public Integer getTotal() {
-				return this.total;
-			}
-
-			public void setTotal(Integer total) {
-				this.total = total;
-			}
-
 			public Integer getError() {
 				return this.error;
 			}
 
 			public void setError(Integer error) {
 				this.error = error;
+			}
+
+			public Integer getTotal() {
+				return this.total;
+			}
+
+			public void setTotal(Integer total) {
+				this.total = total;
 			}
 
 			public Integer getInfo() {

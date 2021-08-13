@@ -27,9 +27,9 @@ public class DescribeQosesResponse extends AcsResponse {
 
 	private Integer totalCount;
 
-	private String requestId;
-
 	private Integer pageSize;
+
+	private String requestId;
 
 	private Integer pageNumber;
 
@@ -43,20 +43,20 @@ public class DescribeQosesResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getPageNumber() {
@@ -77,15 +77,25 @@ public class DescribeQosesResponse extends AcsResponse {
 
 	public static class Qos {
 
-		private String sagCount;
+		private String qosDescription;
 
-		private String qosId;
+		private String sagCount;
 
 		private String smartAGIds;
 
+		private String qosId;
+
 		private String qosName;
 
-		private String qosDescription;
+		private String resourceGroupId;
+
+		public String getQosDescription() {
+			return this.qosDescription;
+		}
+
+		public void setQosDescription(String qosDescription) {
+			this.qosDescription = qosDescription;
+		}
 
 		public String getSagCount() {
 			return this.sagCount;
@@ -93,14 +103,6 @@ public class DescribeQosesResponse extends AcsResponse {
 
 		public void setSagCount(String sagCount) {
 			this.sagCount = sagCount;
-		}
-
-		public String getQosId() {
-			return this.qosId;
-		}
-
-		public void setQosId(String qosId) {
-			this.qosId = qosId;
 		}
 
 		public String getSmartAGIds() {
@@ -111,6 +113,14 @@ public class DescribeQosesResponse extends AcsResponse {
 			this.smartAGIds = smartAGIds;
 		}
 
+		public String getQosId() {
+			return this.qosId;
+		}
+
+		public void setQosId(String qosId) {
+			this.qosId = qosId;
+		}
+
 		public String getQosName() {
 			return this.qosName;
 		}
@@ -119,12 +129,12 @@ public class DescribeQosesResponse extends AcsResponse {
 			this.qosName = qosName;
 		}
 
-		public String getQosDescription() {
-			return this.qosDescription;
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
 		}
 
-		public void setQosDescription(String qosDescription) {
-			this.qosDescription = qosDescription;
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
 		}
 	}
 

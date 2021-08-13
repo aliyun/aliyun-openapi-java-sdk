@@ -27,9 +27,9 @@ public class DescribeQosCarsResponse extends AcsResponse {
 
 	private Integer totalCount;
 
-	private String requestId;
-
 	private Integer pageSize;
+
+	private String requestId;
 
 	private Integer pageNumber;
 
@@ -43,20 +43,20 @@ public class DescribeQosCarsResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getPageNumber() {
@@ -77,67 +77,27 @@ public class DescribeQosCarsResponse extends AcsResponse {
 
 	public static class QosCar {
 
-		private Integer minBandwidthAbs;
-
-		private String description;
-
-		private String qosCarId;
-
-		private Integer priority;
-
-		private Integer maxBandwidthPercent;
-
 		private Integer maxBandwidthAbs;
-
-		private String qosId;
 
 		private String percentSourceType;
 
-		private Integer minBandwidthPercent;
+		private Integer minBandwidthAbs;
+
+		private Integer maxBandwidthPercent;
+
+		private String description;
+
+		private String qosId;
 
 		private String limitType;
 
+		private Integer priority;
+
 		private String name;
 
-		public Integer getMinBandwidthAbs() {
-			return this.minBandwidthAbs;
-		}
+		private Integer minBandwidthPercent;
 
-		public void setMinBandwidthAbs(Integer minBandwidthAbs) {
-			this.minBandwidthAbs = minBandwidthAbs;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
-		public String getQosCarId() {
-			return this.qosCarId;
-		}
-
-		public void setQosCarId(String qosCarId) {
-			this.qosCarId = qosCarId;
-		}
-
-		public Integer getPriority() {
-			return this.priority;
-		}
-
-		public void setPriority(Integer priority) {
-			this.priority = priority;
-		}
-
-		public Integer getMaxBandwidthPercent() {
-			return this.maxBandwidthPercent;
-		}
-
-		public void setMaxBandwidthPercent(Integer maxBandwidthPercent) {
-			this.maxBandwidthPercent = maxBandwidthPercent;
-		}
+		private String qosCarId;
 
 		public Integer getMaxBandwidthAbs() {
 			return this.maxBandwidthAbs;
@@ -145,14 +105,6 @@ public class DescribeQosCarsResponse extends AcsResponse {
 
 		public void setMaxBandwidthAbs(Integer maxBandwidthAbs) {
 			this.maxBandwidthAbs = maxBandwidthAbs;
-		}
-
-		public String getQosId() {
-			return this.qosId;
-		}
-
-		public void setQosId(String qosId) {
-			this.qosId = qosId;
 		}
 
 		public String getPercentSourceType() {
@@ -163,12 +115,36 @@ public class DescribeQosCarsResponse extends AcsResponse {
 			this.percentSourceType = percentSourceType;
 		}
 
-		public Integer getMinBandwidthPercent() {
-			return this.minBandwidthPercent;
+		public Integer getMinBandwidthAbs() {
+			return this.minBandwidthAbs;
 		}
 
-		public void setMinBandwidthPercent(Integer minBandwidthPercent) {
-			this.minBandwidthPercent = minBandwidthPercent;
+		public void setMinBandwidthAbs(Integer minBandwidthAbs) {
+			this.minBandwidthAbs = minBandwidthAbs;
+		}
+
+		public Integer getMaxBandwidthPercent() {
+			return this.maxBandwidthPercent;
+		}
+
+		public void setMaxBandwidthPercent(Integer maxBandwidthPercent) {
+			this.maxBandwidthPercent = maxBandwidthPercent;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getQosId() {
+			return this.qosId;
+		}
+
+		public void setQosId(String qosId) {
+			this.qosId = qosId;
 		}
 
 		public String getLimitType() {
@@ -179,12 +155,36 @@ public class DescribeQosCarsResponse extends AcsResponse {
 			this.limitType = limitType;
 		}
 
+		public Integer getPriority() {
+			return this.priority;
+		}
+
+		public void setPriority(Integer priority) {
+			this.priority = priority;
+		}
+
 		public String getName() {
 			return this.name;
 		}
 
 		public void setName(String name) {
 			this.name = name;
+		}
+
+		public Integer getMinBandwidthPercent() {
+			return this.minBandwidthPercent;
+		}
+
+		public void setMinBandwidthPercent(Integer minBandwidthPercent) {
+			this.minBandwidthPercent = minBandwidthPercent;
+		}
+
+		public String getQosCarId() {
+			return this.qosCarId;
+		}
+
+		public void setQosCarId(String qosCarId) {
+			this.qosCarId = qosCarId;
 		}
 	}
 

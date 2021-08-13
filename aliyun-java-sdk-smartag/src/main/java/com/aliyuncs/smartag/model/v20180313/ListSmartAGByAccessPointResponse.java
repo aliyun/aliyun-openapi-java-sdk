@@ -57,35 +57,19 @@ public class ListSmartAGByAccessPointResponse extends AcsResponse {
 
 	public static class SmartAccessGateway {
 
-		private String smartAGName;
-
-		private String smartAGStatus;
-
 		private String routingStrategy;
 
-		private String associatedCcnId;
+		private String smartAGName;
 
 		private String smartAGId;
 
-		private String hardwareVersion;
+		private String smartAGStatus;
 
 		private String smartAGDescription;
 
-		public String getSmartAGName() {
-			return this.smartAGName;
-		}
+		private String associatedCcnId;
 
-		public void setSmartAGName(String smartAGName) {
-			this.smartAGName = smartAGName;
-		}
-
-		public String getSmartAGStatus() {
-			return this.smartAGStatus;
-		}
-
-		public void setSmartAGStatus(String smartAGStatus) {
-			this.smartAGStatus = smartAGStatus;
-		}
+		private String hardwareVersion;
 
 		public String getRoutingStrategy() {
 			return this.routingStrategy;
@@ -95,12 +79,12 @@ public class ListSmartAGByAccessPointResponse extends AcsResponse {
 			this.routingStrategy = routingStrategy;
 		}
 
-		public String getAssociatedCcnId() {
-			return this.associatedCcnId;
+		public String getSmartAGName() {
+			return this.smartAGName;
 		}
 
-		public void setAssociatedCcnId(String associatedCcnId) {
-			this.associatedCcnId = associatedCcnId;
+		public void setSmartAGName(String smartAGName) {
+			this.smartAGName = smartAGName;
 		}
 
 		public String getSmartAGId() {
@@ -111,12 +95,12 @@ public class ListSmartAGByAccessPointResponse extends AcsResponse {
 			this.smartAGId = smartAGId;
 		}
 
-		public String getHardwareVersion() {
-			return this.hardwareVersion;
+		public String getSmartAGStatus() {
+			return this.smartAGStatus;
 		}
 
-		public void setHardwareVersion(String hardwareVersion) {
-			this.hardwareVersion = hardwareVersion;
+		public void setSmartAGStatus(String smartAGStatus) {
+			this.smartAGStatus = smartAGStatus;
 		}
 
 		public String getSmartAGDescription() {
@@ -125,6 +109,22 @@ public class ListSmartAGByAccessPointResponse extends AcsResponse {
 
 		public void setSmartAGDescription(String smartAGDescription) {
 			this.smartAGDescription = smartAGDescription;
+		}
+
+		public String getAssociatedCcnId() {
+			return this.associatedCcnId;
+		}
+
+		public void setAssociatedCcnId(String associatedCcnId) {
+			this.associatedCcnId = associatedCcnId;
+		}
+
+		public String getHardwareVersion() {
+			return this.hardwareVersion;
+		}
+
+		public void setHardwareVersion(String hardwareVersion) {
+			this.hardwareVersion = hardwareVersion;
 		}
 	}
 

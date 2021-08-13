@@ -34,20 +34,20 @@ public class DescribeACLAttributeResponseUnmarshaller {
 		List<Acr> acrs = new ArrayList<Acr>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeACLAttributeResponse.Acrs.Length"); i++) {
 			Acr acr = new Acr();
-			acr.setPolicy(_ctx.stringValue("DescribeACLAttributeResponse.Acrs["+ i +"].Policy"));
-			acr.setDescription(_ctx.stringValue("DescribeACLAttributeResponse.Acrs["+ i +"].Description"));
-			acr.setSourcePortRange(_ctx.stringValue("DescribeACLAttributeResponse.Acrs["+ i +"].SourcePortRange"));
-			acr.setSourceCidr(_ctx.stringValue("DescribeACLAttributeResponse.Acrs["+ i +"].SourceCidr"));
+			acr.setDirection(_ctx.stringValue("DescribeACLAttributeResponse.Acrs["+ i +"].Direction"));
+			acr.setType(_ctx.stringValue("DescribeACLAttributeResponse.Acrs["+ i +"].Type"));
+			acr.setIpProtocol(_ctx.stringValue("DescribeACLAttributeResponse.Acrs["+ i +"].IpProtocol"));
 			acr.setPriority(_ctx.integerValue("DescribeACLAttributeResponse.Acrs["+ i +"].Priority"));
 			acr.setAclId(_ctx.stringValue("DescribeACLAttributeResponse.Acrs["+ i +"].AclId"));
-			acr.setAcrId(_ctx.stringValue("DescribeACLAttributeResponse.Acrs["+ i +"].AcrId"));
-			acr.setDestPortRange(_ctx.stringValue("DescribeACLAttributeResponse.Acrs["+ i +"].DestPortRange"));
-			acr.setDirection(_ctx.stringValue("DescribeACLAttributeResponse.Acrs["+ i +"].Direction"));
-			acr.setName(_ctx.stringValue("DescribeACLAttributeResponse.Acrs["+ i +"].Name"));
+			acr.setPolicy(_ctx.stringValue("DescribeACLAttributeResponse.Acrs["+ i +"].Policy"));
+			acr.setDescription(_ctx.stringValue("DescribeACLAttributeResponse.Acrs["+ i +"].Description"));
 			acr.setGmtCreate(_ctx.longValue("DescribeACLAttributeResponse.Acrs["+ i +"].GmtCreate"));
-			acr.setType(_ctx.stringValue("DescribeACLAttributeResponse.Acrs["+ i +"].Type"));
 			acr.setDestCidr(_ctx.stringValue("DescribeACLAttributeResponse.Acrs["+ i +"].DestCidr"));
-			acr.setIpProtocol(_ctx.stringValue("DescribeACLAttributeResponse.Acrs["+ i +"].IpProtocol"));
+			acr.setDestPortRange(_ctx.stringValue("DescribeACLAttributeResponse.Acrs["+ i +"].DestPortRange"));
+			acr.setName(_ctx.stringValue("DescribeACLAttributeResponse.Acrs["+ i +"].Name"));
+			acr.setAcrId(_ctx.stringValue("DescribeACLAttributeResponse.Acrs["+ i +"].AcrId"));
+			acr.setSourceCidr(_ctx.stringValue("DescribeACLAttributeResponse.Acrs["+ i +"].SourceCidr"));
+			acr.setSourcePortRange(_ctx.stringValue("DescribeACLAttributeResponse.Acrs["+ i +"].SourcePortRange"));
 
 			List<String> dpiSignatureIds = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeACLAttributeResponse.Acrs["+ i +"].DpiSignatureIds.Length"); j++) {

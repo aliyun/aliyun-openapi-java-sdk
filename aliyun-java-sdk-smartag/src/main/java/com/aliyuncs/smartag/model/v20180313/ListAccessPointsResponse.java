@@ -57,22 +57,22 @@ public class ListAccessPointsResponse extends AcsResponse {
 
 	public static class AccessPoint {
 
-		private Integer accessPointId;
+		private String longitude;
 
 		private Integer activeSmartAGCount;
 
-		private String latitude;
-
 		private Integer inactiveSmartAGCount;
 
-		private String longitude;
+		private String latitude;
 
-		public Integer getAccessPointId() {
-			return this.accessPointId;
+		private Integer accessPointId;
+
+		public String getLongitude() {
+			return this.longitude;
 		}
 
-		public void setAccessPointId(Integer accessPointId) {
-			this.accessPointId = accessPointId;
+		public void setLongitude(String longitude) {
+			this.longitude = longitude;
 		}
 
 		public Integer getActiveSmartAGCount() {
@@ -83,14 +83,6 @@ public class ListAccessPointsResponse extends AcsResponse {
 			this.activeSmartAGCount = activeSmartAGCount;
 		}
 
-		public String getLatitude() {
-			return this.latitude;
-		}
-
-		public void setLatitude(String latitude) {
-			this.latitude = latitude;
-		}
-
 		public Integer getInactiveSmartAGCount() {
 			return this.inactiveSmartAGCount;
 		}
@@ -99,12 +91,20 @@ public class ListAccessPointsResponse extends AcsResponse {
 			this.inactiveSmartAGCount = inactiveSmartAGCount;
 		}
 
-		public String getLongitude() {
-			return this.longitude;
+		public String getLatitude() {
+			return this.latitude;
 		}
 
-		public void setLongitude(String longitude) {
-			this.longitude = longitude;
+		public void setLatitude(String latitude) {
+			this.latitude = latitude;
+		}
+
+		public Integer getAccessPointId() {
+			return this.accessPointId;
+		}
+
+		public void setAccessPointId(Integer accessPointId) {
+			this.accessPointId = accessPointId;
 		}
 	}
 

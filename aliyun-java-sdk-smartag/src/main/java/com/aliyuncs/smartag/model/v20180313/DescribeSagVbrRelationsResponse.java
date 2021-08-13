@@ -49,9 +49,9 @@ public class DescribeSagVbrRelationsResponse extends AcsResponse {
 
 		private String vbrInstanceId;
 
-		private String sagInstanceId;
-
 		private String sagUid;
+
+		private String sagInstanceId;
 
 		public String getVbrInstanceId() {
 			return this.vbrInstanceId;
@@ -61,20 +61,20 @@ public class DescribeSagVbrRelationsResponse extends AcsResponse {
 			this.vbrInstanceId = vbrInstanceId;
 		}
 
-		public String getSagInstanceId() {
-			return this.sagInstanceId;
-		}
-
-		public void setSagInstanceId(String sagInstanceId) {
-			this.sagInstanceId = sagInstanceId;
-		}
-
 		public String getSagUid() {
 			return this.sagUid;
 		}
 
 		public void setSagUid(String sagUid) {
 			this.sagUid = sagUid;
+		}
+
+		public String getSagInstanceId() {
+			return this.sagInstanceId;
+		}
+
+		public void setSagInstanceId(String sagInstanceId) {
+			this.sagInstanceId = sagInstanceId;
 		}
 	}
 

@@ -29,15 +29,15 @@ public class ListDpiConfigErrorResponseUnmarshaller {
 		
 		listDpiConfigErrorResponse.setRequestId(_ctx.stringValue("ListDpiConfigErrorResponse.RequestId"));
 		listDpiConfigErrorResponse.setNextToken(_ctx.stringValue("ListDpiConfigErrorResponse.NextToken"));
-		listDpiConfigErrorResponse.setMaxResults(_ctx.integerValue("ListDpiConfigErrorResponse.MaxResults"));
 		listDpiConfigErrorResponse.setTotal(_ctx.integerValue("ListDpiConfigErrorResponse.Total"));
+		listDpiConfigErrorResponse.setMaxResults(_ctx.integerValue("ListDpiConfigErrorResponse.MaxResults"));
 
 		List<DpiConfigErrorItem> dpiConfigError = new ArrayList<DpiConfigErrorItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListDpiConfigErrorResponse.DpiConfigError.Length"); i++) {
 			DpiConfigErrorItem dpiConfigErrorItem = new DpiConfigErrorItem();
-			dpiConfigErrorItem.setErrorType(_ctx.stringValue("ListDpiConfigErrorResponse.DpiConfigError["+ i +"].ErrorType"));
 			dpiConfigErrorItem.setSN(_ctx.stringValue("ListDpiConfigErrorResponse.DpiConfigError["+ i +"].SN"));
 			dpiConfigErrorItem.setSmartAGId(_ctx.stringValue("ListDpiConfigErrorResponse.DpiConfigError["+ i +"].SmartAGId"));
+			dpiConfigErrorItem.setErrorType(_ctx.stringValue("ListDpiConfigErrorResponse.DpiConfigError["+ i +"].ErrorType"));
 
 			List<RuleConfigErrorListItem> ruleConfigErrorList = new ArrayList<RuleConfigErrorListItem>();
 			for (int j = 0; j < _ctx.lengthValue("ListDpiConfigErrorResponse.DpiConfigError["+ i +"].RuleConfigErrorList.Length"); j++) {

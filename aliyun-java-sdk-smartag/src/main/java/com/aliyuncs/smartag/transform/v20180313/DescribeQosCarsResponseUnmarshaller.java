@@ -34,17 +34,17 @@ public class DescribeQosCarsResponseUnmarshaller {
 		List<QosCar> qosCars = new ArrayList<QosCar>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeQosCarsResponse.QosCars.Length"); i++) {
 			QosCar qosCar = new QosCar();
-			qosCar.setMinBandwidthAbs(_ctx.integerValue("DescribeQosCarsResponse.QosCars["+ i +"].MinBandwidthAbs"));
-			qosCar.setDescription(_ctx.stringValue("DescribeQosCarsResponse.QosCars["+ i +"].Description"));
-			qosCar.setQosCarId(_ctx.stringValue("DescribeQosCarsResponse.QosCars["+ i +"].QosCarId"));
-			qosCar.setPriority(_ctx.integerValue("DescribeQosCarsResponse.QosCars["+ i +"].Priority"));
-			qosCar.setMaxBandwidthPercent(_ctx.integerValue("DescribeQosCarsResponse.QosCars["+ i +"].MaxBandwidthPercent"));
 			qosCar.setMaxBandwidthAbs(_ctx.integerValue("DescribeQosCarsResponse.QosCars["+ i +"].MaxBandwidthAbs"));
-			qosCar.setQosId(_ctx.stringValue("DescribeQosCarsResponse.QosCars["+ i +"].QosId"));
 			qosCar.setPercentSourceType(_ctx.stringValue("DescribeQosCarsResponse.QosCars["+ i +"].PercentSourceType"));
-			qosCar.setMinBandwidthPercent(_ctx.integerValue("DescribeQosCarsResponse.QosCars["+ i +"].MinBandwidthPercent"));
+			qosCar.setMinBandwidthAbs(_ctx.integerValue("DescribeQosCarsResponse.QosCars["+ i +"].MinBandwidthAbs"));
+			qosCar.setMaxBandwidthPercent(_ctx.integerValue("DescribeQosCarsResponse.QosCars["+ i +"].MaxBandwidthPercent"));
+			qosCar.setDescription(_ctx.stringValue("DescribeQosCarsResponse.QosCars["+ i +"].Description"));
+			qosCar.setQosId(_ctx.stringValue("DescribeQosCarsResponse.QosCars["+ i +"].QosId"));
 			qosCar.setLimitType(_ctx.stringValue("DescribeQosCarsResponse.QosCars["+ i +"].LimitType"));
+			qosCar.setPriority(_ctx.integerValue("DescribeQosCarsResponse.QosCars["+ i +"].Priority"));
 			qosCar.setName(_ctx.stringValue("DescribeQosCarsResponse.QosCars["+ i +"].Name"));
+			qosCar.setMinBandwidthPercent(_ctx.integerValue("DescribeQosCarsResponse.QosCars["+ i +"].MinBandwidthPercent"));
+			qosCar.setQosCarId(_ctx.stringValue("DescribeQosCarsResponse.QosCars["+ i +"].QosCarId"));
 
 			qosCars.add(qosCar);
 		}

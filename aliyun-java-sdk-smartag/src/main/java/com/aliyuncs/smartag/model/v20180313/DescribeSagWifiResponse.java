@@ -29,19 +29,19 @@ public class DescribeSagWifiResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String channel;
+	private String isAuth;
 
 	private String bandwidth;
 
-	private String isAuth;
+	private String channel;
 
 	private String ssid;
 
-	private String isBroadcast;
+	private String authenticationType;
 
 	private String encryptAlgorithm;
 
-	private String authenticationType;
+	private String isBroadcast;
 
 	private List<TaskState> taskStates;
 
@@ -61,12 +61,12 @@ public class DescribeSagWifiResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getChannel() {
-		return this.channel;
+	public String getIsAuth() {
+		return this.isAuth;
 	}
 
-	public void setChannel(String channel) {
-		this.channel = channel;
+	public void setIsAuth(String isAuth) {
+		this.isAuth = isAuth;
 	}
 
 	public String getBandwidth() {
@@ -77,12 +77,12 @@ public class DescribeSagWifiResponse extends AcsResponse {
 		this.bandwidth = bandwidth;
 	}
 
-	public String getIsAuth() {
-		return this.isAuth;
+	public String getChannel() {
+		return this.channel;
 	}
 
-	public void setIsAuth(String isAuth) {
-		this.isAuth = isAuth;
+	public void setChannel(String channel) {
+		this.channel = channel;
 	}
 
 	public String getSsid() {
@@ -93,12 +93,12 @@ public class DescribeSagWifiResponse extends AcsResponse {
 		this.ssid = ssid;
 	}
 
-	public String getIsBroadcast() {
-		return this.isBroadcast;
+	public String getAuthenticationType() {
+		return this.authenticationType;
 	}
 
-	public void setIsBroadcast(String isBroadcast) {
-		this.isBroadcast = isBroadcast;
+	public void setAuthenticationType(String authenticationType) {
+		this.authenticationType = authenticationType;
 	}
 
 	public String getEncryptAlgorithm() {
@@ -109,12 +109,12 @@ public class DescribeSagWifiResponse extends AcsResponse {
 		this.encryptAlgorithm = encryptAlgorithm;
 	}
 
-	public String getAuthenticationType() {
-		return this.authenticationType;
+	public String getIsBroadcast() {
+		return this.isBroadcast;
 	}
 
-	public void setAuthenticationType(String authenticationType) {
-		this.authenticationType = authenticationType;
+	public void setIsBroadcast(String isBroadcast) {
+		this.isBroadcast = isBroadcast;
 	}
 
 	public List<TaskState> getTaskStates() {
@@ -127,13 +127,21 @@ public class DescribeSagWifiResponse extends AcsResponse {
 
 	public static class TaskState {
 
-		private String state;
+		private String errorMessage;
 
-		private String createTime;
+		private String state;
 
 		private String errorCode;
 
-		private String errorMessage;
+		private String createTime;
+
+		public String getErrorMessage() {
+			return this.errorMessage;
+		}
+
+		public void setErrorMessage(String errorMessage) {
+			this.errorMessage = errorMessage;
+		}
 
 		public String getState() {
 			return this.state;
@@ -141,14 +149,6 @@ public class DescribeSagWifiResponse extends AcsResponse {
 
 		public void setState(String state) {
 			this.state = state;
-		}
-
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
 		}
 
 		public String getErrorCode() {
@@ -159,12 +159,12 @@ public class DescribeSagWifiResponse extends AcsResponse {
 			this.errorCode = errorCode;
 		}
 
-		public String getErrorMessage() {
-			return this.errorMessage;
+		public String getCreateTime() {
+			return this.createTime;
 		}
 
-		public void setErrorMessage(String errorMessage) {
-			this.errorMessage = errorMessage;
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
 		}
 	}
 

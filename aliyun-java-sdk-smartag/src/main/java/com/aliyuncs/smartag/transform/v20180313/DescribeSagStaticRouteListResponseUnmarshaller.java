@@ -29,29 +29,29 @@ public class DescribeSagStaticRouteListResponseUnmarshaller {
 		
 		describeSagStaticRouteListResponse.setRequestId(_ctx.stringValue("DescribeSagStaticRouteListResponse.RequestId"));
 
-		List<TaskState> taskStates = new ArrayList<TaskState>();
-		for (int i = 0; i < _ctx.lengthValue("DescribeSagStaticRouteListResponse.TaskStates.Length"); i++) {
-			TaskState taskState = new TaskState();
-			taskState.setState(_ctx.stringValue("DescribeSagStaticRouteListResponse.TaskStates["+ i +"].State"));
-			taskState.setCreateTime(_ctx.stringValue("DescribeSagStaticRouteListResponse.TaskStates["+ i +"].CreateTime"));
-			taskState.setErrorCode(_ctx.stringValue("DescribeSagStaticRouteListResponse.TaskStates["+ i +"].ErrorCode"));
-			taskState.setErrorMessage(_ctx.stringValue("DescribeSagStaticRouteListResponse.TaskStates["+ i +"].ErrorMessage"));
-
-			taskStates.add(taskState);
-		}
-		describeSagStaticRouteListResponse.setTaskStates(taskStates);
-
 		List<StaticRoute> staticRoutes = new ArrayList<StaticRoute>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSagStaticRouteListResponse.StaticRoutes.Length"); i++) {
 			StaticRoute staticRoute = new StaticRoute();
 			staticRoute.setNextHop(_ctx.stringValue("DescribeSagStaticRouteListResponse.StaticRoutes["+ i +"].NextHop"));
-			staticRoute.setVlan(_ctx.stringValue("DescribeSagStaticRouteListResponse.StaticRoutes["+ i +"].Vlan"));
-			staticRoute.setPortName(_ctx.stringValue("DescribeSagStaticRouteListResponse.StaticRoutes["+ i +"].PortName"));
 			staticRoute.setDestinationCidr(_ctx.stringValue("DescribeSagStaticRouteListResponse.StaticRoutes["+ i +"].DestinationCidr"));
+			staticRoute.setPortName(_ctx.stringValue("DescribeSagStaticRouteListResponse.StaticRoutes["+ i +"].PortName"));
+			staticRoute.setVlan(_ctx.stringValue("DescribeSagStaticRouteListResponse.StaticRoutes["+ i +"].Vlan"));
 
 			staticRoutes.add(staticRoute);
 		}
 		describeSagStaticRouteListResponse.setStaticRoutes(staticRoutes);
+
+		List<TaskState> taskStates = new ArrayList<TaskState>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeSagStaticRouteListResponse.TaskStates.Length"); i++) {
+			TaskState taskState = new TaskState();
+			taskState.setErrorMessage(_ctx.stringValue("DescribeSagStaticRouteListResponse.TaskStates["+ i +"].ErrorMessage"));
+			taskState.setState(_ctx.stringValue("DescribeSagStaticRouteListResponse.TaskStates["+ i +"].State"));
+			taskState.setErrorCode(_ctx.stringValue("DescribeSagStaticRouteListResponse.TaskStates["+ i +"].ErrorCode"));
+			taskState.setCreateTime(_ctx.stringValue("DescribeSagStaticRouteListResponse.TaskStates["+ i +"].CreateTime"));
+
+			taskStates.add(taskState);
+		}
+		describeSagStaticRouteListResponse.setTaskStates(taskStates);
 	 
 	 	return describeSagStaticRouteListResponse;
 	}

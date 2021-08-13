@@ -47,21 +47,13 @@ public class DescribeSagTrafficTopNResponse extends AcsResponse {
 
 	public static class TrafficTopNItem {
 
-		private String instanceId;
-
 		private String trafficRate;
 
-		private String regionId;
+		private String instanceId;
 
 		private String name;
 
-		public String getInstanceId() {
-			return this.instanceId;
-		}
-
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
+		private String regionId;
 
 		public String getTrafficRate() {
 			return this.trafficRate;
@@ -71,12 +63,12 @@ public class DescribeSagTrafficTopNResponse extends AcsResponse {
 			this.trafficRate = trafficRate;
 		}
 
-		public String getRegionId() {
-			return this.regionId;
+		public String getInstanceId() {
+			return this.instanceId;
 		}
 
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
 		}
 
 		public String getName() {
@@ -85,6 +77,14 @@ public class DescribeSagTrafficTopNResponse extends AcsResponse {
 
 		public void setName(String name) {
 			this.name = name;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 	}
 

@@ -31,8 +31,8 @@ public class ListAccessPointNetworkQualitiesResponseUnmarshaller {
 		List<AccessPointNetworkQuality> accessPointNetworkQualities = new ArrayList<AccessPointNetworkQuality>();
 		for (int i = 0; i < _ctx.lengthValue("ListAccessPointNetworkQualitiesResponse.AccessPointNetworkQualities.Length"); i++) {
 			AccessPointNetworkQuality accessPointNetworkQuality = new AccessPointNetworkQuality();
-			accessPointNetworkQuality.setRtt(_ctx.stringValue("ListAccessPointNetworkQualitiesResponse.AccessPointNetworkQualities["+ i +"].Rtt"));
 			accessPointNetworkQuality.setLoss(_ctx.stringValue("ListAccessPointNetworkQualitiesResponse.AccessPointNetworkQualities["+ i +"].Loss"));
+			accessPointNetworkQuality.setRtt(_ctx.stringValue("ListAccessPointNetworkQualitiesResponse.AccessPointNetworkQualities["+ i +"].Rtt"));
 			accessPointNetworkQuality.setId(_ctx.integerValue("ListAccessPointNetworkQualitiesResponse.AccessPointNetworkQualities["+ i +"].Id"));
 
 			accessPointNetworkQualities.add(accessPointNetworkQuality);

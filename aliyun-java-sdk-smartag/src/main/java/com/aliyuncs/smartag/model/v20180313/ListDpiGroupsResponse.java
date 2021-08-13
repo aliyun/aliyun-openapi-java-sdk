@@ -27,9 +27,9 @@ public class ListDpiGroupsResponse extends AcsResponse {
 
 	private Integer totalCount;
 
-	private String requestId;
-
 	private String nextToken;
+
+	private String requestId;
 
 	private List<DpiGroupItem> dpiGroup;
 
@@ -41,20 +41,20 @@ public class ListDpiGroupsResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public String getNextToken() {
 		return this.nextToken;
 	}
 
 	public void setNextToken(String nextToken) {
 		this.nextToken = nextToken;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<DpiGroupItem> getDpiGroup() {
@@ -67,20 +67,20 @@ public class ListDpiGroupsResponse extends AcsResponse {
 
 	public static class DpiGroupItem {
 
-		private String minEngineVersion;
+		private String minSignatureDbVersion;
 
 		private String dpiGroupName;
 
-		private String minSignatureDbVersion;
-
 		private String dpiGroupId;
 
-		public String getMinEngineVersion() {
-			return this.minEngineVersion;
+		private String minEngineVersion;
+
+		public String getMinSignatureDbVersion() {
+			return this.minSignatureDbVersion;
 		}
 
-		public void setMinEngineVersion(String minEngineVersion) {
-			this.minEngineVersion = minEngineVersion;
+		public void setMinSignatureDbVersion(String minSignatureDbVersion) {
+			this.minSignatureDbVersion = minSignatureDbVersion;
 		}
 
 		public String getDpiGroupName() {
@@ -91,20 +91,20 @@ public class ListDpiGroupsResponse extends AcsResponse {
 			this.dpiGroupName = dpiGroupName;
 		}
 
-		public String getMinSignatureDbVersion() {
-			return this.minSignatureDbVersion;
-		}
-
-		public void setMinSignatureDbVersion(String minSignatureDbVersion) {
-			this.minSignatureDbVersion = minSignatureDbVersion;
-		}
-
 		public String getDpiGroupId() {
 			return this.dpiGroupId;
 		}
 
 		public void setDpiGroupId(String dpiGroupId) {
 			this.dpiGroupId = dpiGroupId;
+		}
+
+		public String getMinEngineVersion() {
+			return this.minEngineVersion;
+		}
+
+		public void setMinEngineVersion(String minEngineVersion) {
+			this.minEngineVersion = minEngineVersion;
 		}
 	}
 

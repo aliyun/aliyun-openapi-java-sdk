@@ -24,15 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeSAGDeviceInfoResponse extends AcsResponse {
 
-	private String controllerState;
-
 	private String serviceIP;
 
-	private String smartAGType;
+	private String controllerState;
+
+	private String requestId;
 
 	private String synStatus;
 
-	private String requestId;
+	private String smartAGType;
 
 	private String version;
 
@@ -42,13 +42,7 @@ public class DescribeSAGDeviceInfoResponse extends AcsResponse {
 
 	private String lastConnectedControllerTime;
 
-	public String getControllerState() {
-		return this.controllerState;
-	}
-
-	public void setControllerState(String controllerState) {
-		this.controllerState = controllerState;
-	}
+	private String resettableStatus;
 
 	public String getServiceIP() {
 		return this.serviceIP;
@@ -58,12 +52,20 @@ public class DescribeSAGDeviceInfoResponse extends AcsResponse {
 		this.serviceIP = serviceIP;
 	}
 
-	public String getSmartAGType() {
-		return this.smartAGType;
+	public String getControllerState() {
+		return this.controllerState;
 	}
 
-	public void setSmartAGType(String smartAGType) {
-		this.smartAGType = smartAGType;
+	public void setControllerState(String controllerState) {
+		this.controllerState = controllerState;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getSynStatus() {
@@ -74,12 +76,12 @@ public class DescribeSAGDeviceInfoResponse extends AcsResponse {
 		this.synStatus = synStatus;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getSmartAGType() {
+		return this.smartAGType;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setSmartAGType(String smartAGType) {
+		this.smartAGType = smartAGType;
 	}
 
 	public String getVersion() {
@@ -112,6 +114,14 @@ public class DescribeSAGDeviceInfoResponse extends AcsResponse {
 
 	public void setLastConnectedControllerTime(String lastConnectedControllerTime) {
 		this.lastConnectedControllerTime = lastConnectedControllerTime;
+	}
+
+	public String getResettableStatus() {
+		return this.resettableStatus;
+	}
+
+	public void setResettableStatus(String resettableStatus) {
+		this.resettableStatus = resettableStatus;
 	}
 
 	@Override

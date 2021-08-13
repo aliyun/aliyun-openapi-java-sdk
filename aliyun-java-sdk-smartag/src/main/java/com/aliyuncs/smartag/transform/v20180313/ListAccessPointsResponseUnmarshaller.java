@@ -32,11 +32,11 @@ public class ListAccessPointsResponseUnmarshaller {
 		List<AccessPoint> accessPoints = new ArrayList<AccessPoint>();
 		for (int i = 0; i < _ctx.lengthValue("ListAccessPointsResponse.AccessPoints.Length"); i++) {
 			AccessPoint accessPoint = new AccessPoint();
-			accessPoint.setAccessPointId(_ctx.integerValue("ListAccessPointsResponse.AccessPoints["+ i +"].AccessPointId"));
-			accessPoint.setActiveSmartAGCount(_ctx.integerValue("ListAccessPointsResponse.AccessPoints["+ i +"].ActiveSmartAGCount"));
-			accessPoint.setLatitude(_ctx.stringValue("ListAccessPointsResponse.AccessPoints["+ i +"].Latitude"));
-			accessPoint.setInactiveSmartAGCount(_ctx.integerValue("ListAccessPointsResponse.AccessPoints["+ i +"].InactiveSmartAGCount"));
 			accessPoint.setLongitude(_ctx.stringValue("ListAccessPointsResponse.AccessPoints["+ i +"].Longitude"));
+			accessPoint.setActiveSmartAGCount(_ctx.integerValue("ListAccessPointsResponse.AccessPoints["+ i +"].ActiveSmartAGCount"));
+			accessPoint.setInactiveSmartAGCount(_ctx.integerValue("ListAccessPointsResponse.AccessPoints["+ i +"].InactiveSmartAGCount"));
+			accessPoint.setLatitude(_ctx.stringValue("ListAccessPointsResponse.AccessPoints["+ i +"].Latitude"));
+			accessPoint.setAccessPointId(_ctx.integerValue("ListAccessPointsResponse.AccessPoints["+ i +"].AccessPointId"));
 
 			accessPoints.add(accessPoint);
 		}

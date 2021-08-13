@@ -28,6 +28,8 @@ public class CreateQosResponse extends AcsResponse {
 
 	private String qosId;
 
+	private String resourceGroupId;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -42,6 +44,14 @@ public class CreateQosResponse extends AcsResponse {
 
 	public void setQosId(String qosId) {
 		this.qosId = qosId;
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
 	}
 
 	@Override

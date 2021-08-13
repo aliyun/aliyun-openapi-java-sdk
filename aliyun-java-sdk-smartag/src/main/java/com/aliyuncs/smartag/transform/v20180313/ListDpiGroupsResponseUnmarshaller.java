@@ -33,10 +33,10 @@ public class ListDpiGroupsResponseUnmarshaller {
 		List<DpiGroupItem> dpiGroup = new ArrayList<DpiGroupItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListDpiGroupsResponse.DpiGroup.Length"); i++) {
 			DpiGroupItem dpiGroupItem = new DpiGroupItem();
-			dpiGroupItem.setMinEngineVersion(_ctx.stringValue("ListDpiGroupsResponse.DpiGroup["+ i +"].MinEngineVersion"));
-			dpiGroupItem.setDpiGroupName(_ctx.stringValue("ListDpiGroupsResponse.DpiGroup["+ i +"].DpiGroupName"));
 			dpiGroupItem.setMinSignatureDbVersion(_ctx.stringValue("ListDpiGroupsResponse.DpiGroup["+ i +"].MinSignatureDbVersion"));
+			dpiGroupItem.setDpiGroupName(_ctx.stringValue("ListDpiGroupsResponse.DpiGroup["+ i +"].DpiGroupName"));
 			dpiGroupItem.setDpiGroupId(_ctx.stringValue("ListDpiGroupsResponse.DpiGroup["+ i +"].DpiGroupId"));
+			dpiGroupItem.setMinEngineVersion(_ctx.stringValue("ListDpiGroupsResponse.DpiGroup["+ i +"].MinEngineVersion"));
 
 			dpiGroup.add(dpiGroupItem);
 		}

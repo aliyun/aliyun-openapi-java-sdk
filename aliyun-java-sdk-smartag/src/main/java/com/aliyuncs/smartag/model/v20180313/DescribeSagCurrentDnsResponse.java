@@ -24,19 +24,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeSagCurrentDnsResponse extends AcsResponse {
 
-	private String slaveDns;
-
 	private String requestId;
 
+	private String slaveDns;
+
 	private String masterDns;
-
-	public String getSlaveDns() {
-		return this.slaveDns;
-	}
-
-	public void setSlaveDns(String slaveDns) {
-		this.slaveDns = slaveDns;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -44,6 +36,14 @@ public class DescribeSagCurrentDnsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getSlaveDns() {
+		return this.slaveDns;
+	}
+
+	public void setSlaveDns(String slaveDns) {
+		this.slaveDns = slaveDns;
 	}
 
 	public String getMasterDns() {

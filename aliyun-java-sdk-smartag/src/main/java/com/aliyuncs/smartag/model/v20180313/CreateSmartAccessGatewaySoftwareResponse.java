@@ -26,9 +26,11 @@ public class CreateSmartAccessGatewaySoftwareResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String orderId;
+
 	private String smartAGId;
 
-	private String orderId;
+	private String resourceGroupId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -36,6 +38,14 @@ public class CreateSmartAccessGatewaySoftwareResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getOrderId() {
+		return this.orderId;
+	}
+
+	public void setOrderId(String orderId) {
+		this.orderId = orderId;
 	}
 
 	public String getSmartAGId() {
@@ -46,12 +56,12 @@ public class CreateSmartAccessGatewaySoftwareResponse extends AcsResponse {
 		this.smartAGId = smartAGId;
 	}
 
-	public String getOrderId() {
-		return this.orderId;
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
 	}
 
-	public void setOrderId(String orderId) {
-		this.orderId = orderId;
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
 	}
 
 	@Override

@@ -27,9 +27,9 @@ public class DescribeGrantSagVbrRulesResponse extends AcsResponse {
 
 	private Integer totalCount;
 
-	private String requestId;
-
 	private Integer pageSize;
+
+	private String requestId;
 
 	private Integer pageNumber;
 
@@ -43,20 +43,20 @@ public class DescribeGrantSagVbrRulesResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getPageNumber() {
@@ -77,37 +77,21 @@ public class DescribeGrantSagVbrRulesResponse extends AcsResponse {
 
 	public static class GrantRule {
 
-		private Long vbrUid;
-
-		private Long smartAGUid;
-
 		private String vbrInstanceId;
 
-		private String instanceId;
-
-		private Long createTime;
-
-		private Boolean bound;
+		private Long vbrUid;
 
 		private String vbrRegionId;
 
+		private Long createTime;
+
 		private String smartAGId;
 
-		public Long getVbrUid() {
-			return this.vbrUid;
-		}
+		private Boolean bound;
 
-		public void setVbrUid(Long vbrUid) {
-			this.vbrUid = vbrUid;
-		}
+		private String instanceId;
 
-		public Long getSmartAGUid() {
-			return this.smartAGUid;
-		}
-
-		public void setSmartAGUid(Long smartAGUid) {
-			this.smartAGUid = smartAGUid;
-		}
+		private Long smartAGUid;
 
 		public String getVbrInstanceId() {
 			return this.vbrInstanceId;
@@ -117,28 +101,12 @@ public class DescribeGrantSagVbrRulesResponse extends AcsResponse {
 			this.vbrInstanceId = vbrInstanceId;
 		}
 
-		public String getInstanceId() {
-			return this.instanceId;
+		public Long getVbrUid() {
+			return this.vbrUid;
 		}
 
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
-
-		public Long getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(Long createTime) {
-			this.createTime = createTime;
-		}
-
-		public Boolean getBound() {
-			return this.bound;
-		}
-
-		public void setBound(Boolean bound) {
-			this.bound = bound;
+		public void setVbrUid(Long vbrUid) {
+			this.vbrUid = vbrUid;
 		}
 
 		public String getVbrRegionId() {
@@ -149,12 +117,44 @@ public class DescribeGrantSagVbrRulesResponse extends AcsResponse {
 			this.vbrRegionId = vbrRegionId;
 		}
 
+		public Long getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(Long createTime) {
+			this.createTime = createTime;
+		}
+
 		public String getSmartAGId() {
 			return this.smartAGId;
 		}
 
 		public void setSmartAGId(String smartAGId) {
 			this.smartAGId = smartAGId;
+		}
+
+		public Boolean getBound() {
+			return this.bound;
+		}
+
+		public void setBound(Boolean bound) {
+			this.bound = bound;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public Long getSmartAGUid() {
+			return this.smartAGUid;
+		}
+
+		public void setSmartAGUid(Long smartAGUid) {
+			this.smartAGUid = smartAGUid;
 		}
 	}
 

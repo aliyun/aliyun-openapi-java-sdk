@@ -27,9 +27,9 @@ public class DescribeSagStaticRouteListResponse extends AcsResponse {
 
 	private String requestId;
 
-	private List<TaskState> taskStates;
-
 	private List<StaticRoute> staticRoutes;
+
+	private List<TaskState> taskStates;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -37,14 +37,6 @@ public class DescribeSagStaticRouteListResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public List<TaskState> getTaskStates() {
-		return this.taskStates;
-	}
-
-	public void setTaskStates(List<TaskState> taskStates) {
-		this.taskStates = taskStates;
 	}
 
 	public List<StaticRoute> getStaticRoutes() {
@@ -55,58 +47,23 @@ public class DescribeSagStaticRouteListResponse extends AcsResponse {
 		this.staticRoutes = staticRoutes;
 	}
 
-	public static class TaskState {
+	public List<TaskState> getTaskStates() {
+		return this.taskStates;
+	}
 
-		private String state;
-
-		private String createTime;
-
-		private String errorCode;
-
-		private String errorMessage;
-
-		public String getState() {
-			return this.state;
-		}
-
-		public void setState(String state) {
-			this.state = state;
-		}
-
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
-		}
-
-		public String getErrorCode() {
-			return this.errorCode;
-		}
-
-		public void setErrorCode(String errorCode) {
-			this.errorCode = errorCode;
-		}
-
-		public String getErrorMessage() {
-			return this.errorMessage;
-		}
-
-		public void setErrorMessage(String errorMessage) {
-			this.errorMessage = errorMessage;
-		}
+	public void setTaskStates(List<TaskState> taskStates) {
+		this.taskStates = taskStates;
 	}
 
 	public static class StaticRoute {
 
 		private String nextHop;
 
-		private String vlan;
+		private String destinationCidr;
 
 		private String portName;
 
-		private String destinationCidr;
+		private String vlan;
 
 		public String getNextHop() {
 			return this.nextHop;
@@ -116,12 +73,12 @@ public class DescribeSagStaticRouteListResponse extends AcsResponse {
 			this.nextHop = nextHop;
 		}
 
-		public String getVlan() {
-			return this.vlan;
+		public String getDestinationCidr() {
+			return this.destinationCidr;
 		}
 
-		public void setVlan(String vlan) {
-			this.vlan = vlan;
+		public void setDestinationCidr(String destinationCidr) {
+			this.destinationCidr = destinationCidr;
 		}
 
 		public String getPortName() {
@@ -132,12 +89,55 @@ public class DescribeSagStaticRouteListResponse extends AcsResponse {
 			this.portName = portName;
 		}
 
-		public String getDestinationCidr() {
-			return this.destinationCidr;
+		public String getVlan() {
+			return this.vlan;
 		}
 
-		public void setDestinationCidr(String destinationCidr) {
-			this.destinationCidr = destinationCidr;
+		public void setVlan(String vlan) {
+			this.vlan = vlan;
+		}
+	}
+
+	public static class TaskState {
+
+		private String errorMessage;
+
+		private String state;
+
+		private String errorCode;
+
+		private String createTime;
+
+		public String getErrorMessage() {
+			return this.errorMessage;
+		}
+
+		public void setErrorMessage(String errorMessage) {
+			this.errorMessage = errorMessage;
+		}
+
+		public String getState() {
+			return this.state;
+		}
+
+		public void setState(String state) {
+			this.state = state;
+		}
+
+		public String getErrorCode() {
+			return this.errorCode;
+		}
+
+		public void setErrorCode(String errorCode) {
+			this.errorCode = errorCode;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
 		}
 	}
 

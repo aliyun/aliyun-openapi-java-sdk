@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListDpiConfigErrorResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String nextToken;
 
-	private Integer maxResults;
+	private String requestId;
 
 	private Integer total;
 
+	private Integer maxResults;
+
 	private List<DpiConfigErrorItem> dpiConfigError;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getNextToken() {
 		return this.nextToken;
@@ -51,12 +43,12 @@ public class ListDpiConfigErrorResponse extends AcsResponse {
 		this.nextToken = nextToken;
 	}
 
-	public Integer getMaxResults() {
-		return this.maxResults;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setMaxResults(Integer maxResults) {
-		this.maxResults = maxResults;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getTotal() {
@@ -65,6 +57,14 @@ public class ListDpiConfigErrorResponse extends AcsResponse {
 
 	public void setTotal(Integer total) {
 		this.total = total;
+	}
+
+	public Integer getMaxResults() {
+		return this.maxResults;
+	}
+
+	public void setMaxResults(Integer maxResults) {
+		this.maxResults = maxResults;
 	}
 
 	public List<DpiConfigErrorItem> getDpiConfigError() {
@@ -77,21 +77,13 @@ public class ListDpiConfigErrorResponse extends AcsResponse {
 
 	public static class DpiConfigErrorItem {
 
-		private String errorType;
-
 		private String sN;
 
 		private String smartAGId;
 
+		private String errorType;
+
 		private List<RuleConfigErrorListItem> ruleConfigErrorList;
-
-		public String getErrorType() {
-			return this.errorType;
-		}
-
-		public void setErrorType(String errorType) {
-			this.errorType = errorType;
-		}
 
 		public String getSN() {
 			return this.sN;
@@ -107,6 +99,14 @@ public class ListDpiConfigErrorResponse extends AcsResponse {
 
 		public void setSmartAGId(String smartAGId) {
 			this.smartAGId = smartAGId;
+		}
+
+		public String getErrorType() {
+			return this.errorType;
+		}
+
+		public void setErrorType(String errorType) {
+			this.errorType = errorType;
 		}
 
 		public List<RuleConfigErrorListItem> getRuleConfigErrorList() {

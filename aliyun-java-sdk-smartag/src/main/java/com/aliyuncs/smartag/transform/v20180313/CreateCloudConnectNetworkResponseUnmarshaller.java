@@ -29,6 +29,7 @@ public class CreateCloudConnectNetworkResponseUnmarshaller {
 		createCloudConnectNetworkResponse.setCidrBlock(_ctx.stringValue("CreateCloudConnectNetworkResponse.CidrBlock"));
 		createCloudConnectNetworkResponse.setSnatCidrBlock(_ctx.stringValue("CreateCloudConnectNetworkResponse.SnatCidrBlock"));
 		createCloudConnectNetworkResponse.setName(_ctx.stringValue("CreateCloudConnectNetworkResponse.Name"));
+		createCloudConnectNetworkResponse.setResourceGroupId(_ctx.stringValue("CreateCloudConnectNetworkResponse.ResourceGroupId"));
 	 
 	 	return createCloudConnectNetworkResponse;
 	}

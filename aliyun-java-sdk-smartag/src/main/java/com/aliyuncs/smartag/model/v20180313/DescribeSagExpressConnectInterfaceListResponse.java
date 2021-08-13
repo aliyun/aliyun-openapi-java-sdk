@@ -57,19 +57,11 @@ public class DescribeSagExpressConnectInterfaceListResponse extends AcsResponse 
 
 	public static class _Interface {
 
-		private String iP;
-
 		private String mask;
 
 		private String vlan;
 
-		public String getIP() {
-			return this.iP;
-		}
-
-		public void setIP(String iP) {
-			this.iP = iP;
-		}
+		private String iP;
 
 		public String getMask() {
 			return this.mask;
@@ -86,17 +78,33 @@ public class DescribeSagExpressConnectInterfaceListResponse extends AcsResponse 
 		public void setVlan(String vlan) {
 			this.vlan = vlan;
 		}
+
+		public String getIP() {
+			return this.iP;
+		}
+
+		public void setIP(String iP) {
+			this.iP = iP;
+		}
 	}
 
 	public static class TaskState {
 
-		private String state;
+		private String errorMessage;
 
-		private String createTime;
+		private String state;
 
 		private String errorCode;
 
-		private String errorMessage;
+		private String createTime;
+
+		public String getErrorMessage() {
+			return this.errorMessage;
+		}
+
+		public void setErrorMessage(String errorMessage) {
+			this.errorMessage = errorMessage;
+		}
 
 		public String getState() {
 			return this.state;
@@ -104,14 +112,6 @@ public class DescribeSagExpressConnectInterfaceListResponse extends AcsResponse 
 
 		public void setState(String state) {
 			this.state = state;
-		}
-
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
 		}
 
 		public String getErrorCode() {
@@ -122,12 +122,12 @@ public class DescribeSagExpressConnectInterfaceListResponse extends AcsResponse 
 			this.errorCode = errorCode;
 		}
 
-		public String getErrorMessage() {
-			return this.errorMessage;
+		public String getCreateTime() {
+			return this.createTime;
 		}
 
-		public void setErrorMessage(String errorMessage) {
-			this.errorMessage = errorMessage;
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
 		}
 	}
 

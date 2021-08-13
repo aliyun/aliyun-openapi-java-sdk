@@ -35,16 +35,16 @@ public class GetQosAttributeResponseUnmarshaller {
 		List<QosPolicy> qosPolicies = new ArrayList<QosPolicy>();
 		for (int i = 0; i < _ctx.lengthValue("GetQosAttributeResponse.QosPolicies.Length"); i++) {
 			QosPolicy qosPolicy = new QosPolicy();
-			qosPolicy.setDestCidr(_ctx.stringValue("GetQosAttributeResponse.QosPolicies["+ i +"].DestCidr"));
-			qosPolicy.setSourcePortRange(_ctx.stringValue("GetQosAttributeResponse.QosPolicies["+ i +"].SourcePortRange"));
 			qosPolicy.setEndTime(_ctx.longValue("GetQosAttributeResponse.QosPolicies["+ i +"].EndTime"));
-			qosPolicy.setSourceCidr(_ctx.stringValue("GetQosAttributeResponse.QosPolicies["+ i +"].SourceCidr"));
-			qosPolicy.setPriority(_ctx.integerValue("GetQosAttributeResponse.QosPolicies["+ i +"].Priority"));
-			qosPolicy.setQosPolicieName(_ctx.stringValue("GetQosAttributeResponse.QosPolicies["+ i +"].QosPolicieName"));
-			qosPolicy.setQosPolicieDescription(_ctx.stringValue("GetQosAttributeResponse.QosPolicies["+ i +"].QosPolicieDescription"));
 			qosPolicy.setStartTime(_ctx.longValue("GetQosAttributeResponse.QosPolicies["+ i +"].StartTime"));
-			qosPolicy.setIpProtocol(_ctx.stringValue("GetQosAttributeResponse.QosPolicies["+ i +"].IpProtocol"));
+			qosPolicy.setDestCidr(_ctx.stringValue("GetQosAttributeResponse.QosPolicies["+ i +"].DestCidr"));
 			qosPolicy.setDestPortRange(_ctx.stringValue("GetQosAttributeResponse.QosPolicies["+ i +"].DestPortRange"));
+			qosPolicy.setIpProtocol(_ctx.stringValue("GetQosAttributeResponse.QosPolicies["+ i +"].IpProtocol"));
+			qosPolicy.setPriority(_ctx.integerValue("GetQosAttributeResponse.QosPolicies["+ i +"].Priority"));
+			qosPolicy.setQosPolicieDescription(_ctx.stringValue("GetQosAttributeResponse.QosPolicies["+ i +"].QosPolicieDescription"));
+			qosPolicy.setSourceCidr(_ctx.stringValue("GetQosAttributeResponse.QosPolicies["+ i +"].SourceCidr"));
+			qosPolicy.setQosPolicieName(_ctx.stringValue("GetQosAttributeResponse.QosPolicies["+ i +"].QosPolicieName"));
+			qosPolicy.setSourcePortRange(_ctx.stringValue("GetQosAttributeResponse.QosPolicies["+ i +"].SourcePortRange"));
 
 			qosPolicies.add(qosPolicy);
 		}
@@ -53,16 +53,16 @@ public class GetQosAttributeResponseUnmarshaller {
 		List<QosCar> qosCars = new ArrayList<QosCar>();
 		for (int i = 0; i < _ctx.lengthValue("GetQosAttributeResponse.QosCars.Length"); i++) {
 			QosCar qosCar = new QosCar();
-			qosCar.setMinBandwidthAbs(_ctx.integerValue("GetQosAttributeResponse.QosCars["+ i +"].MinBandwidthAbs"));
-			qosCar.setQosCarId(_ctx.stringValue("GetQosAttributeResponse.QosCars["+ i +"].QosCarId"));
-			qosCar.setPriority(_ctx.integerValue("GetQosAttributeResponse.QosCars["+ i +"].Priority"));
-			qosCar.setQosCarDescription(_ctx.stringValue("GetQosAttributeResponse.QosCars["+ i +"].QosCarDescription"));
-			qosCar.setMaxBandwidthPercent(_ctx.integerValue("GetQosAttributeResponse.QosCars["+ i +"].MaxBandwidthPercent"));
 			qosCar.setMaxBandwidthAbs(_ctx.integerValue("GetQosAttributeResponse.QosCars["+ i +"].MaxBandwidthAbs"));
 			qosCar.setQosCarName(_ctx.stringValue("GetQosAttributeResponse.QosCars["+ i +"].QosCarName"));
 			qosCar.setPercentSourceType(_ctx.stringValue("GetQosAttributeResponse.QosCars["+ i +"].PercentSourceType"));
-			qosCar.setMinBandwidthPercent(_ctx.integerValue("GetQosAttributeResponse.QosCars["+ i +"].MinBandwidthPercent"));
+			qosCar.setMinBandwidthAbs(_ctx.integerValue("GetQosAttributeResponse.QosCars["+ i +"].MinBandwidthAbs"));
+			qosCar.setMaxBandwidthPercent(_ctx.integerValue("GetQosAttributeResponse.QosCars["+ i +"].MaxBandwidthPercent"));
+			qosCar.setQosCarDescription(_ctx.stringValue("GetQosAttributeResponse.QosCars["+ i +"].QosCarDescription"));
 			qosCar.setLimitType(_ctx.stringValue("GetQosAttributeResponse.QosCars["+ i +"].LimitType"));
+			qosCar.setPriority(_ctx.integerValue("GetQosAttributeResponse.QosCars["+ i +"].Priority"));
+			qosCar.setMinBandwidthPercent(_ctx.integerValue("GetQosAttributeResponse.QosCars["+ i +"].MinBandwidthPercent"));
+			qosCar.setQosCarId(_ctx.stringValue("GetQosAttributeResponse.QosCars["+ i +"].QosCarId"));
 
 			qosCars.add(qosCar);
 		}

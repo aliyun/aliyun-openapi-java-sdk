@@ -24,11 +24,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ModifySagRemoteAccessResponse extends AcsResponse {
 
-	private String message;
+	private String serialNumber;
 
 	private String requestId;
 
-	private String serialNumber;
+	private String message;
 
 	private String remoteAccessIp;
 
@@ -36,12 +36,12 @@ public class ModifySagRemoteAccessResponse extends AcsResponse {
 
 	private Boolean success;
 
-	public String getMessage() {
-		return this.message;
+	public String getSerialNumber() {
+		return this.serialNumber;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSerialNumber(String serialNumber) {
+		this.serialNumber = serialNumber;
 	}
 
 	public String getRequestId() {
@@ -52,12 +52,12 @@ public class ModifySagRemoteAccessResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getSerialNumber() {
-		return this.serialNumber;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSerialNumber(String serialNumber) {
-		this.serialNumber = serialNumber;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public String getRemoteAccessIp() {

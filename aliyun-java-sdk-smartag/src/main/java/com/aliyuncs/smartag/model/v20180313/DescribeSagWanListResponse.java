@@ -57,82 +57,42 @@ public class DescribeSagWanListResponse extends AcsResponse {
 
 	public static class Wan {
 
-		private String iPType;
-
-		private String trafficState;
-
-		private Integer priority;
-
-		private String sourceIps;
-
-		private String iSP;
-
-		private String iP;
+		private Integer weight;
 
 		private String mask;
 
-		private String startIp;
-
-		private String vlan;
+		private String gateway;
 
 		private String portName;
 
-		private Integer weight;
+		private String iPType;
 
-		private String stopIp;
+		private Integer priority;
 
 		private Integer bandWidth;
 
+		private String trafficState;
+
+		private String iP;
+
+		private String iSP;
+
 		private String username;
 
-		private String gateway;
+		private String vlan;
 
-		public String getIPType() {
-			return this.iPType;
+		private String sourceIps;
+
+		private String startIp;
+
+		private String stopIp;
+
+		public Integer getWeight() {
+			return this.weight;
 		}
 
-		public void setIPType(String iPType) {
-			this.iPType = iPType;
-		}
-
-		public String getTrafficState() {
-			return this.trafficState;
-		}
-
-		public void setTrafficState(String trafficState) {
-			this.trafficState = trafficState;
-		}
-
-		public Integer getPriority() {
-			return this.priority;
-		}
-
-		public void setPriority(Integer priority) {
-			this.priority = priority;
-		}
-
-		public String getSourceIps() {
-			return this.sourceIps;
-		}
-
-		public void setSourceIps(String sourceIps) {
-			this.sourceIps = sourceIps;
-		}
-
-		public String getISP() {
-			return this.iSP;
-		}
-
-		public void setISP(String iSP) {
-			this.iSP = iSP;
-		}
-
-		public String getIP() {
-			return this.iP;
-		}
-
-		public void setIP(String iP) {
-			this.iP = iP;
+		public void setWeight(Integer weight) {
+			this.weight = weight;
 		}
 
 		public String getMask() {
@@ -143,20 +103,12 @@ public class DescribeSagWanListResponse extends AcsResponse {
 			this.mask = mask;
 		}
 
-		public String getStartIp() {
-			return this.startIp;
+		public String getGateway() {
+			return this.gateway;
 		}
 
-		public void setStartIp(String startIp) {
-			this.startIp = startIp;
-		}
-
-		public String getVlan() {
-			return this.vlan;
-		}
-
-		public void setVlan(String vlan) {
-			this.vlan = vlan;
+		public void setGateway(String gateway) {
+			this.gateway = gateway;
 		}
 
 		public String getPortName() {
@@ -167,20 +119,20 @@ public class DescribeSagWanListResponse extends AcsResponse {
 			this.portName = portName;
 		}
 
-		public Integer getWeight() {
-			return this.weight;
+		public String getIPType() {
+			return this.iPType;
 		}
 
-		public void setWeight(Integer weight) {
-			this.weight = weight;
+		public void setIPType(String iPType) {
+			this.iPType = iPType;
 		}
 
-		public String getStopIp() {
-			return this.stopIp;
+		public Integer getPriority() {
+			return this.priority;
 		}
 
-		public void setStopIp(String stopIp) {
-			this.stopIp = stopIp;
+		public void setPriority(Integer priority) {
+			this.priority = priority;
 		}
 
 		public Integer getBandWidth() {
@@ -191,6 +143,30 @@ public class DescribeSagWanListResponse extends AcsResponse {
 			this.bandWidth = bandWidth;
 		}
 
+		public String getTrafficState() {
+			return this.trafficState;
+		}
+
+		public void setTrafficState(String trafficState) {
+			this.trafficState = trafficState;
+		}
+
+		public String getIP() {
+			return this.iP;
+		}
+
+		public void setIP(String iP) {
+			this.iP = iP;
+		}
+
+		public String getISP() {
+			return this.iSP;
+		}
+
+		public void setISP(String iSP) {
+			this.iSP = iSP;
+		}
+
 		public String getUsername() {
 			return this.username;
 		}
@@ -199,24 +175,56 @@ public class DescribeSagWanListResponse extends AcsResponse {
 			this.username = username;
 		}
 
-		public String getGateway() {
-			return this.gateway;
+		public String getVlan() {
+			return this.vlan;
 		}
 
-		public void setGateway(String gateway) {
-			this.gateway = gateway;
+		public void setVlan(String vlan) {
+			this.vlan = vlan;
+		}
+
+		public String getSourceIps() {
+			return this.sourceIps;
+		}
+
+		public void setSourceIps(String sourceIps) {
+			this.sourceIps = sourceIps;
+		}
+
+		public String getStartIp() {
+			return this.startIp;
+		}
+
+		public void setStartIp(String startIp) {
+			this.startIp = startIp;
+		}
+
+		public String getStopIp() {
+			return this.stopIp;
+		}
+
+		public void setStopIp(String stopIp) {
+			this.stopIp = stopIp;
 		}
 	}
 
 	public static class TaskState {
 
-		private String state;
+		private String errorMessage;
 
-		private String createTime;
+		private String state;
 
 		private String errorCode;
 
-		private String errorMessage;
+		private String createTime;
+
+		public String getErrorMessage() {
+			return this.errorMessage;
+		}
+
+		public void setErrorMessage(String errorMessage) {
+			this.errorMessage = errorMessage;
+		}
 
 		public String getState() {
 			return this.state;
@@ -224,14 +232,6 @@ public class DescribeSagWanListResponse extends AcsResponse {
 
 		public void setState(String state) {
 			this.state = state;
-		}
-
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
 		}
 
 		public String getErrorCode() {
@@ -242,12 +242,12 @@ public class DescribeSagWanListResponse extends AcsResponse {
 			this.errorCode = errorCode;
 		}
 
-		public String getErrorMessage() {
-			return this.errorMessage;
+		public String getCreateTime() {
+			return this.createTime;
 		}
 
-		public void setErrorMessage(String errorMessage) {
-			this.errorMessage = errorMessage;
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
 		}
 	}
 

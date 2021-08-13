@@ -29,9 +29,9 @@ public class ModifyACLRuleResponse extends AcsResponse {
 
 	private String description;
 
-	private String sourcePortRange;
-
 	private String requestId;
+
+	private String sourcePortRange;
 
 	private String sourceCidr;
 
@@ -53,9 +53,9 @@ public class ModifyACLRuleResponse extends AcsResponse {
 
 	private String ipProtocol;
 
-	private List<String> dpiSignatureIds;
-
 	private List<String> dpiGroupIds;
+
+	private List<String> dpiSignatureIds;
 
 	public String getPolicy() {
 		return this.policy;
@@ -73,20 +73,20 @@ public class ModifyACLRuleResponse extends AcsResponse {
 		this.description = description;
 	}
 
-	public String getSourcePortRange() {
-		return this.sourcePortRange;
-	}
-
-	public void setSourcePortRange(String sourcePortRange) {
-		this.sourcePortRange = sourcePortRange;
-	}
-
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getSourcePortRange() {
+		return this.sourcePortRange;
+	}
+
+	public void setSourcePortRange(String sourcePortRange) {
+		this.sourcePortRange = sourcePortRange;
 	}
 
 	public String getSourceCidr() {
@@ -169,20 +169,20 @@ public class ModifyACLRuleResponse extends AcsResponse {
 		this.ipProtocol = ipProtocol;
 	}
 
-	public List<String> getDpiSignatureIds() {
-		return this.dpiSignatureIds;
-	}
-
-	public void setDpiSignatureIds(List<String> dpiSignatureIds) {
-		this.dpiSignatureIds = dpiSignatureIds;
-	}
-
 	public List<String> getDpiGroupIds() {
 		return this.dpiGroupIds;
 	}
 
 	public void setDpiGroupIds(List<String> dpiGroupIds) {
 		this.dpiGroupIds = dpiGroupIds;
+	}
+
+	public List<String> getDpiSignatureIds() {
+		return this.dpiSignatureIds;
+	}
+
+	public void setDpiSignatureIds(List<String> dpiSignatureIds) {
+		this.dpiSignatureIds = dpiSignatureIds;
 	}
 
 	@Override

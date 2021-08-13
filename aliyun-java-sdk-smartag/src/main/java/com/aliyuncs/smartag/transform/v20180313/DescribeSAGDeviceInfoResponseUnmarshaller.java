@@ -23,14 +23,15 @@ public class DescribeSAGDeviceInfoResponseUnmarshaller {
 	public static DescribeSAGDeviceInfoResponse unmarshall(DescribeSAGDeviceInfoResponse describeSAGDeviceInfoResponse, UnmarshallerContext _ctx) {
 		
 		describeSAGDeviceInfoResponse.setRequestId(_ctx.stringValue("DescribeSAGDeviceInfoResponse.RequestId"));
-		describeSAGDeviceInfoResponse.setControllerState(_ctx.stringValue("DescribeSAGDeviceInfoResponse.ControllerState"));
 		describeSAGDeviceInfoResponse.setServiceIP(_ctx.stringValue("DescribeSAGDeviceInfoResponse.ServiceIP"));
-		describeSAGDeviceInfoResponse.setSmartAGType(_ctx.stringValue("DescribeSAGDeviceInfoResponse.SmartAGType"));
+		describeSAGDeviceInfoResponse.setControllerState(_ctx.stringValue("DescribeSAGDeviceInfoResponse.ControllerState"));
 		describeSAGDeviceInfoResponse.setSynStatus(_ctx.stringValue("DescribeSAGDeviceInfoResponse.SynStatus"));
+		describeSAGDeviceInfoResponse.setSmartAGType(_ctx.stringValue("DescribeSAGDeviceInfoResponse.SmartAGType"));
 		describeSAGDeviceInfoResponse.setVersion(_ctx.stringValue("DescribeSAGDeviceInfoResponse.Version"));
 		describeSAGDeviceInfoResponse.setVpnState(_ctx.stringValue("DescribeSAGDeviceInfoResponse.VpnState"));
 		describeSAGDeviceInfoResponse.setStartupTime(_ctx.stringValue("DescribeSAGDeviceInfoResponse.StartupTime"));
 		describeSAGDeviceInfoResponse.setLastConnectedControllerTime(_ctx.stringValue("DescribeSAGDeviceInfoResponse.LastConnectedControllerTime"));
+		describeSAGDeviceInfoResponse.setResettableStatus(_ctx.stringValue("DescribeSAGDeviceInfoResponse.ResettableStatus"));
 	 
 	 	return describeSAGDeviceInfoResponse;
 	}

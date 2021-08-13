@@ -67,17 +67,9 @@ public class DescribeSagHaResponse extends AcsResponse {
 
 	public static class Port {
 
-		private String virtualIp;
-
 		private String portName;
 
-		public String getVirtualIp() {
-			return this.virtualIp;
-		}
-
-		public void setVirtualIp(String virtualIp) {
-			this.virtualIp = virtualIp;
-		}
+		private String virtualIp;
 
 		public String getPortName() {
 			return this.portName;
@@ -86,17 +78,33 @@ public class DescribeSagHaResponse extends AcsResponse {
 		public void setPortName(String portName) {
 			this.portName = portName;
 		}
+
+		public String getVirtualIp() {
+			return this.virtualIp;
+		}
+
+		public void setVirtualIp(String virtualIp) {
+			this.virtualIp = virtualIp;
+		}
 	}
 
 	public static class TaskState {
 
-		private String state;
+		private String errorMessage;
 
-		private String createTime;
+		private String state;
 
 		private String errorCode;
 
-		private String errorMessage;
+		private String createTime;
+
+		public String getErrorMessage() {
+			return this.errorMessage;
+		}
+
+		public void setErrorMessage(String errorMessage) {
+			this.errorMessage = errorMessage;
+		}
 
 		public String getState() {
 			return this.state;
@@ -104,14 +112,6 @@ public class DescribeSagHaResponse extends AcsResponse {
 
 		public void setState(String state) {
 			this.state = state;
-		}
-
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
 		}
 
 		public String getErrorCode() {
@@ -122,12 +122,12 @@ public class DescribeSagHaResponse extends AcsResponse {
 			this.errorCode = errorCode;
 		}
 
-		public String getErrorMessage() {
-			return this.errorMessage;
+		public String getCreateTime() {
+			return this.createTime;
 		}
 
-		public void setErrorMessage(String errorMessage) {
-			this.errorMessage = errorMessage;
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
 		}
 	}
 

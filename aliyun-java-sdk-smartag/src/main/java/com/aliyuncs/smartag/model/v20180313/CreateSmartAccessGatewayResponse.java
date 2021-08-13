@@ -28,11 +28,13 @@ public class CreateSmartAccessGatewayResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String smartAGId;
-
 	private String orderId;
 
+	private String smartAGId;
+
 	private String name;
+
+	private String resourceGroupId;
 
 	public String getDescription() {
 		return this.description;
@@ -50,14 +52,6 @@ public class CreateSmartAccessGatewayResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getSmartAGId() {
-		return this.smartAGId;
-	}
-
-	public void setSmartAGId(String smartAGId) {
-		this.smartAGId = smartAGId;
-	}
-
 	public String getOrderId() {
 		return this.orderId;
 	}
@@ -66,12 +60,28 @@ public class CreateSmartAccessGatewayResponse extends AcsResponse {
 		this.orderId = orderId;
 	}
 
+	public String getSmartAGId() {
+		return this.smartAGId;
+	}
+
+	public void setSmartAGId(String smartAGId) {
+		this.smartAGId = smartAGId;
+	}
+
 	public String getName() {
 		return this.name;
 	}
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
 	}
 
 	@Override

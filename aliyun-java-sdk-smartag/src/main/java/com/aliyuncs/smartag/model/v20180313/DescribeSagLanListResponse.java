@@ -57,13 +57,21 @@ public class DescribeSagLanListResponse extends AcsResponse {
 
 	public static class TaskState {
 
-		private String state;
+		private String errorMessage;
 
-		private String createTime;
+		private String state;
 
 		private String errorCode;
 
-		private String errorMessage;
+		private String createTime;
+
+		public String getErrorMessage() {
+			return this.errorMessage;
+		}
+
+		public void setErrorMessage(String errorMessage) {
+			this.errorMessage = errorMessage;
+		}
 
 		public String getState() {
 			return this.state;
@@ -71,14 +79,6 @@ public class DescribeSagLanListResponse extends AcsResponse {
 
 		public void setState(String state) {
 			this.state = state;
-		}
-
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
 		}
 
 		public String getErrorCode() {
@@ -89,38 +89,30 @@ public class DescribeSagLanListResponse extends AcsResponse {
 			this.errorCode = errorCode;
 		}
 
-		public String getErrorMessage() {
-			return this.errorMessage;
+		public String getCreateTime() {
+			return this.createTime;
 		}
 
-		public void setErrorMessage(String errorMessage) {
-			this.errorMessage = errorMessage;
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
 		}
 	}
 
 	public static class Lan {
 
-		private String iPType;
-
 		private String lease;
-
-		private String iP;
 
 		private String mask;
 
-		private String startIp;
+		private String endIp;
 
 		private String portName;
 
-		private String endIp;
+		private String startIp;
 
-		public String getIPType() {
-			return this.iPType;
-		}
+		private String iPType;
 
-		public void setIPType(String iPType) {
-			this.iPType = iPType;
-		}
+		private String iP;
 
 		public String getLease() {
 			return this.lease;
@@ -128,14 +120,6 @@ public class DescribeSagLanListResponse extends AcsResponse {
 
 		public void setLease(String lease) {
 			this.lease = lease;
-		}
-
-		public String getIP() {
-			return this.iP;
-		}
-
-		public void setIP(String iP) {
-			this.iP = iP;
 		}
 
 		public String getMask() {
@@ -146,12 +130,12 @@ public class DescribeSagLanListResponse extends AcsResponse {
 			this.mask = mask;
 		}
 
-		public String getStartIp() {
-			return this.startIp;
+		public String getEndIp() {
+			return this.endIp;
 		}
 
-		public void setStartIp(String startIp) {
-			this.startIp = startIp;
+		public void setEndIp(String endIp) {
+			this.endIp = endIp;
 		}
 
 		public String getPortName() {
@@ -162,12 +146,28 @@ public class DescribeSagLanListResponse extends AcsResponse {
 			this.portName = portName;
 		}
 
-		public String getEndIp() {
-			return this.endIp;
+		public String getStartIp() {
+			return this.startIp;
 		}
 
-		public void setEndIp(String endIp) {
-			this.endIp = endIp;
+		public void setStartIp(String startIp) {
+			this.startIp = startIp;
+		}
+
+		public String getIPType() {
+			return this.iPType;
+		}
+
+		public void setIPType(String iPType) {
+			this.iPType = iPType;
+		}
+
+		public String getIP() {
+			return this.iP;
+		}
+
+		public void setIP(String iP) {
+			this.iP = iP;
 		}
 	}
 

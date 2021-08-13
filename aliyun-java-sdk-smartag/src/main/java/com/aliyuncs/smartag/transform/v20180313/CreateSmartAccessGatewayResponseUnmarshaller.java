@@ -24,9 +24,10 @@ public class CreateSmartAccessGatewayResponseUnmarshaller {
 		
 		createSmartAccessGatewayResponse.setRequestId(_ctx.stringValue("CreateSmartAccessGatewayResponse.RequestId"));
 		createSmartAccessGatewayResponse.setDescription(_ctx.stringValue("CreateSmartAccessGatewayResponse.Description"));
-		createSmartAccessGatewayResponse.setSmartAGId(_ctx.stringValue("CreateSmartAccessGatewayResponse.SmartAGId"));
 		createSmartAccessGatewayResponse.setOrderId(_ctx.stringValue("CreateSmartAccessGatewayResponse.OrderId"));
+		createSmartAccessGatewayResponse.setSmartAGId(_ctx.stringValue("CreateSmartAccessGatewayResponse.SmartAGId"));
 		createSmartAccessGatewayResponse.setName(_ctx.stringValue("CreateSmartAccessGatewayResponse.Name"));
+		createSmartAccessGatewayResponse.setResourceGroupId(_ctx.stringValue("CreateSmartAccessGatewayResponse.ResourceGroupId"));
 	 
 	 	return createSmartAccessGatewayResponse;
 	}
