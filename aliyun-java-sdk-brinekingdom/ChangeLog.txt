@@ -1,3 +1,6 @@
+2021-08-13 Version: 1.0.7
+- Add Exchange interface.
+
 2021-08-12 Version: 1.0.6
 - Add Exchange interface.
 
