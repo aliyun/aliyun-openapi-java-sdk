@@ -22,20 +22,20 @@ import com.aliyuncs.dts.Endpoint;
  * @author auto create
  * @version 
  */
-public class ModifyDtsJobRequest extends RpcAcsRequest<ModifyDtsJobResponse> {
+public class IgnoreJobDetailRequest extends RpcAcsRequest<IgnoreJobDetailResponse> {
 	   
 
-	private String dbList;
+	private String jobCode;
 
-	private String clientToken;
+	private String dtsJobId;
 
-	private String etlOperatorColumnReference;
+	private String id;
 
 	private String dtsInstanceId;
 
 	private String synchronizationDirection;
-	public ModifyDtsJobRequest() {
-		super("Dts", "2020-01-01", "ModifyDtsJob", "dts");
+	public IgnoreJobDetailRequest() {
+		super("Dts", "2020-01-01", "IgnoreJobDetail", "dts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -43,36 +43,36 @@ public class ModifyDtsJobRequest extends RpcAcsRequest<ModifyDtsJobResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getDbList() {
-		return this.dbList;
+	public String getJobCode() {
+		return this.jobCode;
 	}
 
-	public void setDbList(String dbList) {
-		this.dbList = dbList;
-		if(dbList != null){
-			putBodyParameter("DbList", dbList);
+	public void setJobCode(String jobCode) {
+		this.jobCode = jobCode;
+		if(jobCode != null){
+			putQueryParameter("JobCode", jobCode);
 		}
 	}
 
-	public String getClientToken() {
-		return this.clientToken;
+	public String getDtsJobId() {
+		return this.dtsJobId;
 	}
 
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
+	public void setDtsJobId(String dtsJobId) {
+		this.dtsJobId = dtsJobId;
+		if(dtsJobId != null){
+			putQueryParameter("DtsJobId", dtsJobId);
 		}
 	}
 
-	public String getEtlOperatorColumnReference() {
-		return this.etlOperatorColumnReference;
+	public String getId() {
+		return this.id;
 	}
 
-	public void setEtlOperatorColumnReference(String etlOperatorColumnReference) {
-		this.etlOperatorColumnReference = etlOperatorColumnReference;
-		if(etlOperatorColumnReference != null){
-			putBodyParameter("EtlOperatorColumnReference", etlOperatorColumnReference);
+	public void setId(String id) {
+		this.id = id;
+		if(id != null){
+			putQueryParameter("Id", id);
 		}
 	}
 
@@ -99,8 +99,8 @@ public class ModifyDtsJobRequest extends RpcAcsRequest<ModifyDtsJobResponse> {
 	}
 
 	@Override
-	public Class<ModifyDtsJobResponse> getResponseClass() {
-		return ModifyDtsJobResponse.class;
+	public Class<IgnoreJobDetailResponse> getResponseClass() {
+		return IgnoreJobDetailResponse.class;
 	}
 
 }

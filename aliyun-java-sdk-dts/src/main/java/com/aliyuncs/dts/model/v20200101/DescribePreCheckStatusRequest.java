@@ -33,6 +33,8 @@ public class DescribePreCheckStatusRequest extends RpcAcsRequest<DescribePreChec
 
 	private String jobCode;
 
+	private String name;
+
 	private String dtsJobId;
 
 	private String structPhase;
@@ -86,6 +88,17 @@ public class DescribePreCheckStatusRequest extends RpcAcsRequest<DescribePreChec
 		this.jobCode = jobCode;
 		if(jobCode != null){
 			putQueryParameter("JobCode", jobCode);
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
 		}
 	}
 

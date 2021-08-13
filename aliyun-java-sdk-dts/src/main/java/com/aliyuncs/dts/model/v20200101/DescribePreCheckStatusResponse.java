@@ -211,6 +211,8 @@ public class DescribePreCheckStatusResponse extends AcsResponse {
 
 		private String ddlSql;
 
+		private String id;
+
 		private List<JobLog> logs;
 
 		public Boolean getSkip() {
@@ -389,6 +391,14 @@ public class DescribePreCheckStatusResponse extends AcsResponse {
 			this.ddlSql = ddlSql;
 		}
 
+		public String getId() {
+			return this.id;
+		}
+
+		public void setId(String id) {
+			this.id = id;
+		}
+
 		public List<JobLog> getLogs() {
 			return this.logs;
 		}
@@ -558,6 +568,8 @@ public class DescribePreCheckStatusResponse extends AcsResponse {
 			private String errDetail;
 
 			private String ddlSql;
+
+			private String id;
 
 			private List<JobLog4> logs3;
 
@@ -735,6 +747,14 @@ public class DescribePreCheckStatusResponse extends AcsResponse {
 
 			public void setDdlSql(String ddlSql) {
 				this.ddlSql = ddlSql;
+			}
+
+			public String getId() {
+				return this.id;
+			}
+
+			public void setId(String id) {
+				this.id = id;
 			}
 
 			public List<JobLog4> getLogs3() {

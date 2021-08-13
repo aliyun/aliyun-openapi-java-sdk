@@ -68,6 +68,7 @@ public class DescribePreCheckStatusResponseUnmarshaller {
 			progressInfo.setDestSchema(_ctx.stringValue("DescribePreCheckStatusResponse.JobProgress["+ i +"].DestSchema"));
 			progressInfo.setErrDetail(_ctx.stringValue("DescribePreCheckStatusResponse.JobProgress["+ i +"].ErrDetail"));
 			progressInfo.setDdlSql(_ctx.stringValue("DescribePreCheckStatusResponse.JobProgress["+ i +"].DdlSql"));
+			progressInfo.setId(_ctx.stringValue("DescribePreCheckStatusResponse.JobProgress["+ i +"].Id"));
 
 			List<JobLog> logs = new ArrayList<JobLog>();
 			for (int j = 0; j < _ctx.lengthValue("DescribePreCheckStatusResponse.JobProgress["+ i +"].Logs.Length"); j++) {
@@ -120,6 +121,7 @@ public class DescribePreCheckStatusResponseUnmarshaller {
 				progressInfo2.setDestSchema(_ctx.stringValue("DescribePreCheckStatusResponse.SubDistributedJobStatus["+ i +"].JobProgress["+ j +"].DestSchema"));
 				progressInfo2.setErrDetail(_ctx.stringValue("DescribePreCheckStatusResponse.SubDistributedJobStatus["+ i +"].JobProgress["+ j +"].ErrDetail"));
 				progressInfo2.setDdlSql(_ctx.stringValue("DescribePreCheckStatusResponse.SubDistributedJobStatus["+ i +"].JobProgress["+ j +"].DdlSql"));
+				progressInfo2.setId(_ctx.stringValue("DescribePreCheckStatusResponse.SubDistributedJobStatus["+ i +"].JobProgress["+ j +"].Id"));
 
 				List<JobLog4> logs3 = new ArrayList<JobLog4>();
 				for (int k = 0; k < _ctx.lengthValue("DescribePreCheckStatusResponse.SubDistributedJobStatus["+ i +"].JobProgress["+ j +"].Logs.Length"); k++) {
