@@ -23,10 +23,10 @@ public class UpdateAutoResourceOptimizeConfigResponseUnmarshaller {
 	public static UpdateAutoResourceOptimizeConfigResponse unmarshall(UpdateAutoResourceOptimizeConfigResponse updateAutoResourceOptimizeConfigResponse, UnmarshallerContext _ctx) {
 		
 		updateAutoResourceOptimizeConfigResponse.setRequestId(_ctx.stringValue("UpdateAutoResourceOptimizeConfigResponse.RequestId"));
-		updateAutoResourceOptimizeConfigResponse.setCode(_ctx.stringValue("UpdateAutoResourceOptimizeConfigResponse.Code"));
-		updateAutoResourceOptimizeConfigResponse.setData(_ctx.stringValue("UpdateAutoResourceOptimizeConfigResponse.Data"));
 		updateAutoResourceOptimizeConfigResponse.setMessage(_ctx.stringValue("UpdateAutoResourceOptimizeConfigResponse.Message"));
 		updateAutoResourceOptimizeConfigResponse.setSynchro(_ctx.stringValue("UpdateAutoResourceOptimizeConfigResponse.Synchro"));
+		updateAutoResourceOptimizeConfigResponse.setData(_ctx.stringValue("UpdateAutoResourceOptimizeConfigResponse.Data"));
+		updateAutoResourceOptimizeConfigResponse.setCode(_ctx.stringValue("UpdateAutoResourceOptimizeConfigResponse.Code"));
 		updateAutoResourceOptimizeConfigResponse.setSuccess(_ctx.stringValue("UpdateAutoResourceOptimizeConfigResponse.Success"));
 	 
 	 	return updateAutoResourceOptimizeConfigResponse;

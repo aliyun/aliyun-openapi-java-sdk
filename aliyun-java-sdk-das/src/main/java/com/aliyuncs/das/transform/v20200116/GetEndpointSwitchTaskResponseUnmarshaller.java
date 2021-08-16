@@ -24,19 +24,19 @@ public class GetEndpointSwitchTaskResponseUnmarshaller {
 	public static GetEndpointSwitchTaskResponse unmarshall(GetEndpointSwitchTaskResponse getEndpointSwitchTaskResponse, UnmarshallerContext _ctx) {
 		
 		getEndpointSwitchTaskResponse.setRequestId(_ctx.stringValue("GetEndpointSwitchTaskResponse.RequestId"));
-		getEndpointSwitchTaskResponse.setCode(_ctx.stringValue("GetEndpointSwitchTaskResponse.Code"));
 		getEndpointSwitchTaskResponse.setMessage(_ctx.stringValue("GetEndpointSwitchTaskResponse.Message"));
-		getEndpointSwitchTaskResponse.setSuccess(_ctx.stringValue("GetEndpointSwitchTaskResponse.Success"));
 		getEndpointSwitchTaskResponse.setSynchro(_ctx.stringValue("GetEndpointSwitchTaskResponse.Synchro"));
+		getEndpointSwitchTaskResponse.setCode(_ctx.stringValue("GetEndpointSwitchTaskResponse.Code"));
+		getEndpointSwitchTaskResponse.setSuccess(_ctx.stringValue("GetEndpointSwitchTaskResponse.Success"));
 
 		Data data = new Data();
-		data.setAccountId(_ctx.stringValue("GetEndpointSwitchTaskResponse.Data.AccountId"));
-		data.setDbLinkId(_ctx.longValue("GetEndpointSwitchTaskResponse.Data.DbLinkId"));
-		data.setTaskId(_ctx.stringValue("GetEndpointSwitchTaskResponse.Data.TaskId"));
 		data.setStatus(_ctx.stringValue("GetEndpointSwitchTaskResponse.Data.Status"));
-		data.setOriUuid(_ctx.stringValue("GetEndpointSwitchTaskResponse.Data.OriUuid"));
+		data.setTaskId(_ctx.stringValue("GetEndpointSwitchTaskResponse.Data.TaskId"));
+		data.setAccountId(_ctx.stringValue("GetEndpointSwitchTaskResponse.Data.AccountId"));
 		data.setUuid(_ctx.stringValue("GetEndpointSwitchTaskResponse.Data.Uuid"));
 		data.setErrMsg(_ctx.stringValue("GetEndpointSwitchTaskResponse.Data.ErrMsg"));
+		data.setOriUuid(_ctx.stringValue("GetEndpointSwitchTaskResponse.Data.OriUuid"));
+		data.setDbLinkId(_ctx.longValue("GetEndpointSwitchTaskResponse.Data.DbLinkId"));
 		getEndpointSwitchTaskResponse.setData(data);
 	 
 	 	return getEndpointSwitchTaskResponse;

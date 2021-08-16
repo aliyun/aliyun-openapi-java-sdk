@@ -23,10 +23,10 @@ public class GetResourceOptimizeHistoryListResponseUnmarshaller {
 	public static GetResourceOptimizeHistoryListResponse unmarshall(GetResourceOptimizeHistoryListResponse getResourceOptimizeHistoryListResponse, UnmarshallerContext _ctx) {
 		
 		getResourceOptimizeHistoryListResponse.setRequestId(_ctx.stringValue("GetResourceOptimizeHistoryListResponse.RequestId"));
-		getResourceOptimizeHistoryListResponse.setCode(_ctx.stringValue("GetResourceOptimizeHistoryListResponse.Code"));
-		getResourceOptimizeHistoryListResponse.setData(_ctx.stringValue("GetResourceOptimizeHistoryListResponse.Data"));
 		getResourceOptimizeHistoryListResponse.setMessage(_ctx.stringValue("GetResourceOptimizeHistoryListResponse.Message"));
 		getResourceOptimizeHistoryListResponse.setSynchro(_ctx.stringValue("GetResourceOptimizeHistoryListResponse.Synchro"));
+		getResourceOptimizeHistoryListResponse.setData(_ctx.stringValue("GetResourceOptimizeHistoryListResponse.Data"));
+		getResourceOptimizeHistoryListResponse.setCode(_ctx.stringValue("GetResourceOptimizeHistoryListResponse.Code"));
 		getResourceOptimizeHistoryListResponse.setSuccess(_ctx.stringValue("GetResourceOptimizeHistoryListResponse.Success"));
 	 
 	 	return getResourceOptimizeHistoryListResponse;

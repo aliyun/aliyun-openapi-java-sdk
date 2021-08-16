@@ -23,11 +23,11 @@ public class AccessHDMInstanceResponseUnmarshaller {
 	public static AccessHDMInstanceResponse unmarshall(AccessHDMInstanceResponse accessHDMInstanceResponse, UnmarshallerContext _ctx) {
 		
 		accessHDMInstanceResponse.setRequestId(_ctx.stringValue("AccessHDMInstanceResponse.RequestId"));
-		accessHDMInstanceResponse.setCode(_ctx.stringValue("AccessHDMInstanceResponse.Code"));
-		accessHDMInstanceResponse.setData(_ctx.stringValue("AccessHDMInstanceResponse.Data"));
 		accessHDMInstanceResponse.setMessage(_ctx.stringValue("AccessHDMInstanceResponse.Message"));
-		accessHDMInstanceResponse.setSuccess(_ctx.stringValue("AccessHDMInstanceResponse.Success"));
 		accessHDMInstanceResponse.setSynchro(_ctx.stringValue("AccessHDMInstanceResponse.Synchro"));
+		accessHDMInstanceResponse.setData(_ctx.stringValue("AccessHDMInstanceResponse.Data"));
+		accessHDMInstanceResponse.setCode(_ctx.stringValue("AccessHDMInstanceResponse.Code"));
+		accessHDMInstanceResponse.setSuccess(_ctx.stringValue("AccessHDMInstanceResponse.Success"));
 	 
 	 	return accessHDMInstanceResponse;
 	}

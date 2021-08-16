@@ -23,10 +23,10 @@ public class TurnOffAutoResourceOptimizeResponseUnmarshaller {
 	public static TurnOffAutoResourceOptimizeResponse unmarshall(TurnOffAutoResourceOptimizeResponse turnOffAutoResourceOptimizeResponse, UnmarshallerContext _ctx) {
 		
 		turnOffAutoResourceOptimizeResponse.setRequestId(_ctx.stringValue("TurnOffAutoResourceOptimizeResponse.RequestId"));
-		turnOffAutoResourceOptimizeResponse.setCode(_ctx.stringValue("TurnOffAutoResourceOptimizeResponse.Code"));
-		turnOffAutoResourceOptimizeResponse.setData(_ctx.stringValue("TurnOffAutoResourceOptimizeResponse.Data"));
 		turnOffAutoResourceOptimizeResponse.setMessage(_ctx.stringValue("TurnOffAutoResourceOptimizeResponse.Message"));
 		turnOffAutoResourceOptimizeResponse.setSynchro(_ctx.stringValue("TurnOffAutoResourceOptimizeResponse.Synchro"));
+		turnOffAutoResourceOptimizeResponse.setData(_ctx.stringValue("TurnOffAutoResourceOptimizeResponse.Data"));
+		turnOffAutoResourceOptimizeResponse.setCode(_ctx.stringValue("TurnOffAutoResourceOptimizeResponse.Code"));
 		turnOffAutoResourceOptimizeResponse.setSuccess(_ctx.stringValue("TurnOffAutoResourceOptimizeResponse.Success"));
 	 
 	 	return turnOffAutoResourceOptimizeResponse;

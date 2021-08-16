@@ -24,31 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetAutonomousNotifyEventDetailResponse extends AcsResponse {
 
-	private String code;
-
-	private String data;
-
 	private String message;
 
 	private String requestId;
 
+	private String data;
+
+	private String code;
+
 	private String success;
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getData() {
-		return this.data;
-	}
-
-	public void setData(String data) {
-		this.data = data;
-	}
 
 	public String getMessage() {
 		return this.message;
@@ -64,6 +48,22 @@ public class GetAutonomousNotifyEventDetailResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getData() {
+		return this.data;
+	}
+
+	public void setData(String data) {
+		this.data = data;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public String getSuccess() {

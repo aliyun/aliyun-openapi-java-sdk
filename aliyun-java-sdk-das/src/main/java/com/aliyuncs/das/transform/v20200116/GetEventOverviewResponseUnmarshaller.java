@@ -23,9 +23,9 @@ public class GetEventOverviewResponseUnmarshaller {
 	public static GetEventOverviewResponse unmarshall(GetEventOverviewResponse getEventOverviewResponse, UnmarshallerContext _ctx) {
 		
 		getEventOverviewResponse.setRequestId(_ctx.stringValue("GetEventOverviewResponse.RequestId"));
-		getEventOverviewResponse.setCode(_ctx.stringValue("GetEventOverviewResponse.Code"));
-		getEventOverviewResponse.setData(_ctx.stringValue("GetEventOverviewResponse.Data"));
 		getEventOverviewResponse.setMessage(_ctx.stringValue("GetEventOverviewResponse.Message"));
+		getEventOverviewResponse.setData(_ctx.stringValue("GetEventOverviewResponse.Data"));
+		getEventOverviewResponse.setCode(_ctx.stringValue("GetEventOverviewResponse.Code"));
 		getEventOverviewResponse.setSuccess(_ctx.stringValue("GetEventOverviewResponse.Success"));
 	 
 	 	return getEventOverviewResponse;

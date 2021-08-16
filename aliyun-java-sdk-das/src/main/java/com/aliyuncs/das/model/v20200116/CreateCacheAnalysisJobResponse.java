@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateCacheAnalysisJobResponse extends AcsResponse {
 
-	private String code;
-
 	private String message;
 
 	private String requestId;
 
+	private String code;
+
 	private String success;
 
 	private Data data;
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
 
 	public String getMessage() {
 		return this.message;
@@ -57,6 +49,14 @@ public class CreateCacheAnalysisJobResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public String getSuccess() {
@@ -77,17 +77,25 @@ public class CreateCacheAnalysisJobResponse extends AcsResponse {
 
 	public static class Data {
 
+		private String taskState;
+
 		private String jobId;
+
+		private String message;
 
 		private String instanceId;
 
 		private String nodeId;
 
-		private String taskState;
-
-		private String message;
-
 		private List<KeyInfo> bigKeys;
+
+		public String getTaskState() {
+			return this.taskState;
+		}
+
+		public void setTaskState(String taskState) {
+			this.taskState = taskState;
+		}
 
 		public String getJobId() {
 			return this.jobId;
@@ -95,6 +103,14 @@ public class CreateCacheAnalysisJobResponse extends AcsResponse {
 
 		public void setJobId(String jobId) {
 			this.jobId = jobId;
+		}
+
+		public String getMessage() {
+			return this.message;
+		}
+
+		public void setMessage(String message) {
+			this.message = message;
 		}
 
 		public String getInstanceId() {
@@ -113,22 +129,6 @@ public class CreateCacheAnalysisJobResponse extends AcsResponse {
 			this.nodeId = nodeId;
 		}
 
-		public String getTaskState() {
-			return this.taskState;
-		}
-
-		public void setTaskState(String taskState) {
-			this.taskState = taskState;
-		}
-
-		public String getMessage() {
-			return this.message;
-		}
-
-		public void setMessage(String message) {
-			this.message = message;
-		}
-
 		public List<KeyInfo> getBigKeys() {
 			return this.bigKeys;
 		}
@@ -139,36 +139,28 @@ public class CreateCacheAnalysisJobResponse extends AcsResponse {
 
 		public static class KeyInfo {
 
-			private Long count;
-
-			private Long bytes;
+			private String type;
 
 			private Integer db;
-
-			private String encoding;
 
 			private Long expirationTimeMillis;
 
 			private String key;
 
+			private String encoding;
+
+			private Long bytes;
+
 			private String nodeId;
 
-			private String type;
+			private Long count;
 
-			public Long getCount() {
-				return this.count;
+			public String getType() {
+				return this.type;
 			}
 
-			public void setCount(Long count) {
-				this.count = count;
-			}
-
-			public Long getBytes() {
-				return this.bytes;
-			}
-
-			public void setBytes(Long bytes) {
-				this.bytes = bytes;
+			public void setType(String type) {
+				this.type = type;
 			}
 
 			public Integer getDb() {
@@ -177,14 +169,6 @@ public class CreateCacheAnalysisJobResponse extends AcsResponse {
 
 			public void setDb(Integer db) {
 				this.db = db;
-			}
-
-			public String getEncoding() {
-				return this.encoding;
-			}
-
-			public void setEncoding(String encoding) {
-				this.encoding = encoding;
 			}
 
 			public Long getExpirationTimeMillis() {
@@ -203,6 +187,22 @@ public class CreateCacheAnalysisJobResponse extends AcsResponse {
 				this.key = key;
 			}
 
+			public String getEncoding() {
+				return this.encoding;
+			}
+
+			public void setEncoding(String encoding) {
+				this.encoding = encoding;
+			}
+
+			public Long getBytes() {
+				return this.bytes;
+			}
+
+			public void setBytes(Long bytes) {
+				this.bytes = bytes;
+			}
+
 			public String getNodeId() {
 				return this.nodeId;
 			}
@@ -211,12 +211,12 @@ public class CreateCacheAnalysisJobResponse extends AcsResponse {
 				this.nodeId = nodeId;
 			}
 
-			public String getType() {
-				return this.type;
+			public Long getCount() {
+				return this.count;
 			}
 
-			public void setType(String type) {
-				this.type = type;
+			public void setCount(Long count) {
+				this.count = count;
 			}
 		}
 	}

@@ -23,11 +23,11 @@ public class SyncHDMAliyunResourceResponseUnmarshaller {
 	public static SyncHDMAliyunResourceResponse unmarshall(SyncHDMAliyunResourceResponse syncHDMAliyunResourceResponse, UnmarshallerContext _ctx) {
 		
 		syncHDMAliyunResourceResponse.setRequestId(_ctx.stringValue("SyncHDMAliyunResourceResponse.RequestId"));
-		syncHDMAliyunResourceResponse.setCode(_ctx.stringValue("SyncHDMAliyunResourceResponse.Code"));
-		syncHDMAliyunResourceResponse.setData(_ctx.stringValue("SyncHDMAliyunResourceResponse.Data"));
 		syncHDMAliyunResourceResponse.setMessage(_ctx.stringValue("SyncHDMAliyunResourceResponse.Message"));
-		syncHDMAliyunResourceResponse.setSuccess(_ctx.stringValue("SyncHDMAliyunResourceResponse.Success"));
 		syncHDMAliyunResourceResponse.setSynchro(_ctx.stringValue("SyncHDMAliyunResourceResponse.Synchro"));
+		syncHDMAliyunResourceResponse.setData(_ctx.stringValue("SyncHDMAliyunResourceResponse.Data"));
+		syncHDMAliyunResourceResponse.setCode(_ctx.stringValue("SyncHDMAliyunResourceResponse.Code"));
+		syncHDMAliyunResourceResponse.setSuccess(_ctx.stringValue("SyncHDMAliyunResourceResponse.Success"));
 	 
 	 	return syncHDMAliyunResourceResponse;
 	}

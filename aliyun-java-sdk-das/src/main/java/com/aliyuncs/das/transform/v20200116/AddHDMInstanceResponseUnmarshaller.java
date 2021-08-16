@@ -24,23 +24,23 @@ public class AddHDMInstanceResponseUnmarshaller {
 	public static AddHDMInstanceResponse unmarshall(AddHDMInstanceResponse addHDMInstanceResponse, UnmarshallerContext _ctx) {
 		
 		addHDMInstanceResponse.setRequestId(_ctx.stringValue("AddHDMInstanceResponse.RequestId"));
-		addHDMInstanceResponse.setCode(_ctx.stringValue("AddHDMInstanceResponse.Code"));
 		addHDMInstanceResponse.setMessage(_ctx.stringValue("AddHDMInstanceResponse.Message"));
-		addHDMInstanceResponse.setSuccess(_ctx.stringValue("AddHDMInstanceResponse.Success"));
 		addHDMInstanceResponse.setSynchro(_ctx.stringValue("AddHDMInstanceResponse.Synchro"));
+		addHDMInstanceResponse.setCode(_ctx.stringValue("AddHDMInstanceResponse.Code"));
+		addHDMInstanceResponse.setSuccess(_ctx.stringValue("AddHDMInstanceResponse.Success"));
 
 		Data data = new Data();
-		data.setInstanceId(_ctx.stringValue("AddHDMInstanceResponse.Data.InstanceId"));
-		data.setVpcId(_ctx.stringValue("AddHDMInstanceResponse.Data.VpcId"));
-		data.setIp(_ctx.stringValue("AddHDMInstanceResponse.Data.Ip"));
-		data.setPort(_ctx.integerValue("AddHDMInstanceResponse.Data.Port"));
-		data.setUuid(_ctx.stringValue("AddHDMInstanceResponse.Data.Uuid"));
 		data.setRole(_ctx.stringValue("AddHDMInstanceResponse.Data.Role"));
-		data.setCode(_ctx.integerValue("AddHDMInstanceResponse.Data.Code"));
-		data.setError(_ctx.stringValue("AddHDMInstanceResponse.Data.Error"));
 		data.setTenantId(_ctx.stringValue("AddHDMInstanceResponse.Data.TenantId"));
+		data.setUuid(_ctx.stringValue("AddHDMInstanceResponse.Data.Uuid"));
 		data.setOwnerId(_ctx.stringValue("AddHDMInstanceResponse.Data.OwnerId"));
+		data.setVpcId(_ctx.stringValue("AddHDMInstanceResponse.Data.VpcId"));
+		data.setInstanceId(_ctx.stringValue("AddHDMInstanceResponse.Data.InstanceId"));
+		data.setPort(_ctx.integerValue("AddHDMInstanceResponse.Data.Port"));
+		data.setIp(_ctx.stringValue("AddHDMInstanceResponse.Data.Ip"));
+		data.setError(_ctx.stringValue("AddHDMInstanceResponse.Data.Error"));
 		data.setToken(_ctx.stringValue("AddHDMInstanceResponse.Data.Token"));
+		data.setCode(_ctx.integerValue("AddHDMInstanceResponse.Data.Code"));
 		data.setCallerUid(_ctx.stringValue("AddHDMInstanceResponse.Data.CallerUid"));
 		addHDMInstanceResponse.setData(data);
 	 

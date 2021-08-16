@@ -27,15 +27,15 @@ public class GetAutonomousNotifyEventsInRangeResponseUnmarshaller {
 	public static GetAutonomousNotifyEventsInRangeResponse unmarshall(GetAutonomousNotifyEventsInRangeResponse getAutonomousNotifyEventsInRangeResponse, UnmarshallerContext _ctx) {
 		
 		getAutonomousNotifyEventsInRangeResponse.setRequestId(_ctx.stringValue("GetAutonomousNotifyEventsInRangeResponse.RequestId"));
-		getAutonomousNotifyEventsInRangeResponse.setCode(_ctx.stringValue("GetAutonomousNotifyEventsInRangeResponse.Code"));
 		getAutonomousNotifyEventsInRangeResponse.setMessage(_ctx.stringValue("GetAutonomousNotifyEventsInRangeResponse.Message"));
+		getAutonomousNotifyEventsInRangeResponse.setCode(_ctx.stringValue("GetAutonomousNotifyEventsInRangeResponse.Code"));
 		getAutonomousNotifyEventsInRangeResponse.setSuccess(_ctx.stringValue("GetAutonomousNotifyEventsInRangeResponse.Success"));
 
 		Data data = new Data();
-		data.setTotal(_ctx.longValue("GetAutonomousNotifyEventsInRangeResponse.Data.Total"));
 		data.setPageNo(_ctx.longValue("GetAutonomousNotifyEventsInRangeResponse.Data.PageNo"));
 		data.setPageSize(_ctx.longValue("GetAutonomousNotifyEventsInRangeResponse.Data.PageSize"));
 		data.setExtra(_ctx.stringValue("GetAutonomousNotifyEventsInRangeResponse.Data.Extra"));
+		data.setTotal(_ctx.longValue("GetAutonomousNotifyEventsInRangeResponse.Data.Total"));
 
 		List<String> list = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("GetAutonomousNotifyEventsInRangeResponse.Data.List.Length"); i++) {

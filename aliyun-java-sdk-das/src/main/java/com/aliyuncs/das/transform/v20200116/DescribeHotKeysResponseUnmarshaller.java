@@ -27,17 +27,17 @@ public class DescribeHotKeysResponseUnmarshaller {
 	public static DescribeHotKeysResponse unmarshall(DescribeHotKeysResponse describeHotKeysResponse, UnmarshallerContext _ctx) {
 		
 		describeHotKeysResponse.setRequestId(_ctx.stringValue("DescribeHotKeysResponse.RequestId"));
-		describeHotKeysResponse.setCode(_ctx.stringValue("DescribeHotKeysResponse.Code"));
 		describeHotKeysResponse.setMessage(_ctx.stringValue("DescribeHotKeysResponse.Message"));
+		describeHotKeysResponse.setCode(_ctx.stringValue("DescribeHotKeysResponse.Code"));
 		describeHotKeysResponse.setSuccess(_ctx.stringValue("DescribeHotKeysResponse.Success"));
 
 		List<HotKey> data = new ArrayList<HotKey>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeHotKeysResponse.Data.Length"); i++) {
 			HotKey hotKey = new HotKey();
-			hotKey.setDb(_ctx.integerValue("DescribeHotKeysResponse.Data["+ i +"].Db"));
 			hotKey.setKeyType(_ctx.stringValue("DescribeHotKeysResponse.Data["+ i +"].KeyType"));
 			hotKey.setSize(_ctx.longValue("DescribeHotKeysResponse.Data["+ i +"].Size"));
 			hotKey.setHot(_ctx.stringValue("DescribeHotKeysResponse.Data["+ i +"].Hot"));
+			hotKey.setDb(_ctx.integerValue("DescribeHotKeysResponse.Data["+ i +"].Db"));
 			hotKey.setKey(_ctx.stringValue("DescribeHotKeysResponse.Data["+ i +"].Key"));
 
 			data.add(hotKey);

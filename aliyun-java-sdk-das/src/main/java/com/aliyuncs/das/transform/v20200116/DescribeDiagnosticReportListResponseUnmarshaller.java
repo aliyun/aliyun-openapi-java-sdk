@@ -23,11 +23,11 @@ public class DescribeDiagnosticReportListResponseUnmarshaller {
 	public static DescribeDiagnosticReportListResponse unmarshall(DescribeDiagnosticReportListResponse describeDiagnosticReportListResponse, UnmarshallerContext _ctx) {
 		
 		describeDiagnosticReportListResponse.setRequestId(_ctx.stringValue("DescribeDiagnosticReportListResponse.RequestId"));
-		describeDiagnosticReportListResponse.setCode(_ctx.stringValue("DescribeDiagnosticReportListResponse.Code"));
-		describeDiagnosticReportListResponse.setData(_ctx.stringValue("DescribeDiagnosticReportListResponse.Data"));
 		describeDiagnosticReportListResponse.setMessage(_ctx.stringValue("DescribeDiagnosticReportListResponse.Message"));
-		describeDiagnosticReportListResponse.setSuccess(_ctx.stringValue("DescribeDiagnosticReportListResponse.Success"));
 		describeDiagnosticReportListResponse.setSynchro(_ctx.stringValue("DescribeDiagnosticReportListResponse.Synchro"));
+		describeDiagnosticReportListResponse.setData(_ctx.stringValue("DescribeDiagnosticReportListResponse.Data"));
+		describeDiagnosticReportListResponse.setCode(_ctx.stringValue("DescribeDiagnosticReportListResponse.Code"));
+		describeDiagnosticReportListResponse.setSuccess(_ctx.stringValue("DescribeDiagnosticReportListResponse.Success"));
 	 
 	 	return describeDiagnosticReportListResponse;
 	}

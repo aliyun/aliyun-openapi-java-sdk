@@ -25,22 +25,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeHotKeysResponse extends AcsResponse {
 
-	private String code;
+	private String requestId;
 
 	private String message;
 
-	private String requestId;
+	private String code;
 
 	private String success;
 
 	private List<HotKey> data;
 
-	public String getCode() {
-		return this.code;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getMessage() {
@@ -51,12 +51,12 @@ public class DescribeHotKeysResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public String getSuccess() {
@@ -77,23 +77,15 @@ public class DescribeHotKeysResponse extends AcsResponse {
 
 	public static class HotKey {
 
-		private Integer db;
-
 		private String keyType;
 
 		private Long size;
 
 		private String hot;
 
+		private Integer db;
+
 		private String key;
-
-		public Integer getDb() {
-			return this.db;
-		}
-
-		public void setDb(Integer db) {
-			this.db = db;
-		}
 
 		public String getKeyType() {
 			return this.keyType;
@@ -117,6 +109,14 @@ public class DescribeHotKeysResponse extends AcsResponse {
 
 		public void setHot(String hot) {
 			this.hot = hot;
+		}
+
+		public Integer getDb() {
+			return this.db;
+		}
+
+		public void setDb(Integer db) {
+			this.db = db;
 		}
 
 		public String getKey() {

@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetAutonomousNotifyEventsInRangeResponse extends AcsResponse {
 
-	private String code;
-
 	private String message;
 
 	private String requestId;
 
+	private String code;
+
 	private String success;
 
 	private Data data;
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
 
 	public String getMessage() {
 		return this.message;
@@ -57,6 +49,14 @@ public class GetAutonomousNotifyEventsInRangeResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public String getSuccess() {
@@ -77,23 +77,15 @@ public class GetAutonomousNotifyEventsInRangeResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Long total;
-
 		private Long pageNo;
 
 		private Long pageSize;
 
 		private String extra;
 
+		private Long total;
+
 		private List<String> list;
-
-		public Long getTotal() {
-			return this.total;
-		}
-
-		public void setTotal(Long total) {
-			this.total = total;
-		}
 
 		public Long getPageNo() {
 			return this.pageNo;
@@ -117,6 +109,14 @@ public class GetAutonomousNotifyEventsInRangeResponse extends AcsResponse {
 
 		public void setExtra(String extra) {
 			this.extra = extra;
+		}
+
+		public Long getTotal() {
+			return this.total;
+		}
+
+		public void setTotal(Long total) {
+			this.total = total;
 		}
 
 		public List<String> getList() {

@@ -28,28 +28,28 @@ public class CreateCacheAnalysisJobResponseUnmarshaller {
 	public static CreateCacheAnalysisJobResponse unmarshall(CreateCacheAnalysisJobResponse createCacheAnalysisJobResponse, UnmarshallerContext _ctx) {
 		
 		createCacheAnalysisJobResponse.setRequestId(_ctx.stringValue("CreateCacheAnalysisJobResponse.RequestId"));
-		createCacheAnalysisJobResponse.setCode(_ctx.stringValue("CreateCacheAnalysisJobResponse.Code"));
 		createCacheAnalysisJobResponse.setMessage(_ctx.stringValue("CreateCacheAnalysisJobResponse.Message"));
+		createCacheAnalysisJobResponse.setCode(_ctx.stringValue("CreateCacheAnalysisJobResponse.Code"));
 		createCacheAnalysisJobResponse.setSuccess(_ctx.stringValue("CreateCacheAnalysisJobResponse.Success"));
 
 		Data data = new Data();
+		data.setTaskState(_ctx.stringValue("CreateCacheAnalysisJobResponse.Data.TaskState"));
 		data.setJobId(_ctx.stringValue("CreateCacheAnalysisJobResponse.Data.JobId"));
+		data.setMessage(_ctx.stringValue("CreateCacheAnalysisJobResponse.Data.Message"));
 		data.setInstanceId(_ctx.stringValue("CreateCacheAnalysisJobResponse.Data.InstanceId"));
 		data.setNodeId(_ctx.stringValue("CreateCacheAnalysisJobResponse.Data.NodeId"));
-		data.setTaskState(_ctx.stringValue("CreateCacheAnalysisJobResponse.Data.TaskState"));
-		data.setMessage(_ctx.stringValue("CreateCacheAnalysisJobResponse.Data.Message"));
 
 		List<KeyInfo> bigKeys = new ArrayList<KeyInfo>();
 		for (int i = 0; i < _ctx.lengthValue("CreateCacheAnalysisJobResponse.Data.BigKeys.Length"); i++) {
 			KeyInfo keyInfo = new KeyInfo();
-			keyInfo.setCount(_ctx.longValue("CreateCacheAnalysisJobResponse.Data.BigKeys["+ i +"].Count"));
-			keyInfo.setBytes(_ctx.longValue("CreateCacheAnalysisJobResponse.Data.BigKeys["+ i +"].Bytes"));
+			keyInfo.setType(_ctx.stringValue("CreateCacheAnalysisJobResponse.Data.BigKeys["+ i +"].Type"));
 			keyInfo.setDb(_ctx.integerValue("CreateCacheAnalysisJobResponse.Data.BigKeys["+ i +"].Db"));
-			keyInfo.setEncoding(_ctx.stringValue("CreateCacheAnalysisJobResponse.Data.BigKeys["+ i +"].Encoding"));
 			keyInfo.setExpirationTimeMillis(_ctx.longValue("CreateCacheAnalysisJobResponse.Data.BigKeys["+ i +"].ExpirationTimeMillis"));
 			keyInfo.setKey(_ctx.stringValue("CreateCacheAnalysisJobResponse.Data.BigKeys["+ i +"].Key"));
+			keyInfo.setEncoding(_ctx.stringValue("CreateCacheAnalysisJobResponse.Data.BigKeys["+ i +"].Encoding"));
+			keyInfo.setBytes(_ctx.longValue("CreateCacheAnalysisJobResponse.Data.BigKeys["+ i +"].Bytes"));
 			keyInfo.setNodeId(_ctx.stringValue("CreateCacheAnalysisJobResponse.Data.BigKeys["+ i +"].NodeId"));
-			keyInfo.setType(_ctx.stringValue("CreateCacheAnalysisJobResponse.Data.BigKeys["+ i +"].Type"));
+			keyInfo.setCount(_ctx.longValue("CreateCacheAnalysisJobResponse.Data.BigKeys["+ i +"].Count"));
 
 			bigKeys.add(keyInfo);
 		}

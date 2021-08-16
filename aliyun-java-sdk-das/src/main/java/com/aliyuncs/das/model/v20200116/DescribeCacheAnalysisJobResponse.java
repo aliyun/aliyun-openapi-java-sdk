@@ -25,22 +25,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeCacheAnalysisJobResponse extends AcsResponse {
 
-	private String code;
+	private String requestId;
 
 	private String message;
 
-	private String requestId;
+	private String code;
 
 	private String success;
 
 	private Data data;
 
-	public String getCode() {
-		return this.code;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getMessage() {
@@ -51,12 +51,12 @@ public class DescribeCacheAnalysisJobResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public String getSuccess() {
@@ -77,7 +77,7 @@ public class DescribeCacheAnalysisJobResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String jobId;
+		private String message;
 
 		private String instanceId;
 
@@ -85,18 +85,18 @@ public class DescribeCacheAnalysisJobResponse extends AcsResponse {
 
 		private String taskState;
 
-		private String message;
-
-		private List<KeyInfo> bigKeys;
+		private String jobId;
 
 		private List<Prefix> keyPrefixes;
 
-		public String getJobId() {
-			return this.jobId;
+		private List<KeyInfo> bigKeys;
+
+		public String getMessage() {
+			return this.message;
 		}
 
-		public void setJobId(String jobId) {
-			this.jobId = jobId;
+		public void setMessage(String message) {
+			this.message = message;
 		}
 
 		public String getInstanceId() {
@@ -123,20 +123,12 @@ public class DescribeCacheAnalysisJobResponse extends AcsResponse {
 			this.taskState = taskState;
 		}
 
-		public String getMessage() {
-			return this.message;
+		public String getJobId() {
+			return this.jobId;
 		}
 
-		public void setMessage(String message) {
-			this.message = message;
-		}
-
-		public List<KeyInfo> getBigKeys() {
-			return this.bigKeys;
-		}
-
-		public void setBigKeys(List<KeyInfo> bigKeys) {
-			this.bigKeys = bigKeys;
+		public void setJobId(String jobId) {
+			this.jobId = jobId;
 		}
 
 		public List<Prefix> getKeyPrefixes() {
@@ -147,107 +139,32 @@ public class DescribeCacheAnalysisJobResponse extends AcsResponse {
 			this.keyPrefixes = keyPrefixes;
 		}
 
-		public static class KeyInfo {
+		public List<KeyInfo> getBigKeys() {
+			return this.bigKeys;
+		}
 
-			private Long count;
-
-			private Long bytes;
-
-			private Integer db;
-
-			private String encoding;
-
-			private Long expirationTimeMillis;
-
-			private String key;
-
-			private String nodeId;
-
-			private String type;
-
-			public Long getCount() {
-				return this.count;
-			}
-
-			public void setCount(Long count) {
-				this.count = count;
-			}
-
-			public Long getBytes() {
-				return this.bytes;
-			}
-
-			public void setBytes(Long bytes) {
-				this.bytes = bytes;
-			}
-
-			public Integer getDb() {
-				return this.db;
-			}
-
-			public void setDb(Integer db) {
-				this.db = db;
-			}
-
-			public String getEncoding() {
-				return this.encoding;
-			}
-
-			public void setEncoding(String encoding) {
-				this.encoding = encoding;
-			}
-
-			public Long getExpirationTimeMillis() {
-				return this.expirationTimeMillis;
-			}
-
-			public void setExpirationTimeMillis(Long expirationTimeMillis) {
-				this.expirationTimeMillis = expirationTimeMillis;
-			}
-
-			public String getKey() {
-				return this.key;
-			}
-
-			public void setKey(String key) {
-				this.key = key;
-			}
-
-			public String getNodeId() {
-				return this.nodeId;
-			}
-
-			public void setNodeId(String nodeId) {
-				this.nodeId = nodeId;
-			}
-
-			public String getType() {
-				return this.type;
-			}
-
-			public void setType(String type) {
-				this.type = type;
-			}
+		public void setBigKeys(List<KeyInfo> bigKeys) {
+			this.bigKeys = bigKeys;
 		}
 
 		public static class Prefix {
 
-			private String prefix;
+			private Long bytes;
 
 			private String type;
-
-			private Long bytes;
 
 			private Long keyNum;
 
 			private Long count;
 
-			public String getPrefix() {
-				return this.prefix;
+			private String prefix;
+
+			public Long getBytes() {
+				return this.bytes;
 			}
 
-			public void setPrefix(String prefix) {
-				this.prefix = prefix;
+			public void setBytes(Long bytes) {
+				this.bytes = bytes;
 			}
 
 			public String getType() {
@@ -256,14 +173,6 @@ public class DescribeCacheAnalysisJobResponse extends AcsResponse {
 
 			public void setType(String type) {
 				this.type = type;
-			}
-
-			public Long getBytes() {
-				return this.bytes;
-			}
-
-			public void setBytes(Long bytes) {
-				this.bytes = bytes;
 			}
 
 			public Long getKeyNum() {
@@ -280,6 +189,97 @@ public class DescribeCacheAnalysisJobResponse extends AcsResponse {
 
 			public void setCount(Long count) {
 				this.count = count;
+			}
+
+			public String getPrefix() {
+				return this.prefix;
+			}
+
+			public void setPrefix(String prefix) {
+				this.prefix = prefix;
+			}
+		}
+
+		public static class KeyInfo {
+
+			private Long bytes;
+
+			private String type;
+
+			private String nodeId;
+
+			private Long expirationTimeMillis;
+
+			private String encoding;
+
+			private Long count;
+
+			private String key;
+
+			private Integer db;
+
+			public Long getBytes() {
+				return this.bytes;
+			}
+
+			public void setBytes(Long bytes) {
+				this.bytes = bytes;
+			}
+
+			public String getType() {
+				return this.type;
+			}
+
+			public void setType(String type) {
+				this.type = type;
+			}
+
+			public String getNodeId() {
+				return this.nodeId;
+			}
+
+			public void setNodeId(String nodeId) {
+				this.nodeId = nodeId;
+			}
+
+			public Long getExpirationTimeMillis() {
+				return this.expirationTimeMillis;
+			}
+
+			public void setExpirationTimeMillis(Long expirationTimeMillis) {
+				this.expirationTimeMillis = expirationTimeMillis;
+			}
+
+			public String getEncoding() {
+				return this.encoding;
+			}
+
+			public void setEncoding(String encoding) {
+				this.encoding = encoding;
+			}
+
+			public Long getCount() {
+				return this.count;
+			}
+
+			public void setCount(Long count) {
+				this.count = count;
+			}
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
+
+			public Integer getDb() {
+				return this.db;
+			}
+
+			public void setDb(Integer db) {
+				this.db = db;
 			}
 		}
 	}

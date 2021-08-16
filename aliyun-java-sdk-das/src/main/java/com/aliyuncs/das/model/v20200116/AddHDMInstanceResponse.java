@@ -24,24 +24,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class AddHDMInstanceResponse extends AcsResponse {
 
-	private String code;
+	private String requestId;
 
 	private String message;
 
-	private String requestId;
+	private String synchro;
+
+	private String code;
 
 	private String success;
 
-	private String synchro;
-
 	private Data data;
 
-	public String getCode() {
-		return this.code;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getMessage() {
@@ -52,12 +52,20 @@ public class AddHDMInstanceResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getSynchro() {
+		return this.synchro;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setSynchro(String synchro) {
+		this.synchro = synchro;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public String getSuccess() {
@@ -66,14 +74,6 @@ public class AddHDMInstanceResponse extends AcsResponse {
 
 	public void setSuccess(String success) {
 		this.success = success;
-	}
-
-	public String getSynchro() {
-		return this.synchro;
-	}
-
-	public void setSynchro(String synchro) {
-		this.synchro = synchro;
 	}
 
 	public Data getData() {
@@ -86,69 +86,29 @@ public class AddHDMInstanceResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String instanceId;
-
-		private String vpcId;
-
-		private String ip;
-
-		private Integer port;
-
-		private String uuid;
-
 		private String role;
-
-		private Integer code;
-
-		private String error;
 
 		private String tenantId;
 
+		private String uuid;
+
 		private String ownerId;
+
+		private String vpcId;
+
+		private String instanceId;
+
+		private Integer port;
+
+		private String ip;
+
+		private String error;
 
 		private String token;
 
+		private Integer code;
+
 		private String callerUid;
-
-		public String getInstanceId() {
-			return this.instanceId;
-		}
-
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
-
-		public String getVpcId() {
-			return this.vpcId;
-		}
-
-		public void setVpcId(String vpcId) {
-			this.vpcId = vpcId;
-		}
-
-		public String getIp() {
-			return this.ip;
-		}
-
-		public void setIp(String ip) {
-			this.ip = ip;
-		}
-
-		public Integer getPort() {
-			return this.port;
-		}
-
-		public void setPort(Integer port) {
-			this.port = port;
-		}
-
-		public String getUuid() {
-			return this.uuid;
-		}
-
-		public void setUuid(String uuid) {
-			this.uuid = uuid;
-		}
 
 		public String getRole() {
 			return this.role;
@@ -156,22 +116,6 @@ public class AddHDMInstanceResponse extends AcsResponse {
 
 		public void setRole(String role) {
 			this.role = role;
-		}
-
-		public Integer getCode() {
-			return this.code;
-		}
-
-		public void setCode(Integer code) {
-			this.code = code;
-		}
-
-		public String getError() {
-			return this.error;
-		}
-
-		public void setError(String error) {
-			this.error = error;
 		}
 
 		public String getTenantId() {
@@ -182,6 +126,14 @@ public class AddHDMInstanceResponse extends AcsResponse {
 			this.tenantId = tenantId;
 		}
 
+		public String getUuid() {
+			return this.uuid;
+		}
+
+		public void setUuid(String uuid) {
+			this.uuid = uuid;
+		}
+
 		public String getOwnerId() {
 			return this.ownerId;
 		}
@@ -190,12 +142,60 @@ public class AddHDMInstanceResponse extends AcsResponse {
 			this.ownerId = ownerId;
 		}
 
+		public String getVpcId() {
+			return this.vpcId;
+		}
+
+		public void setVpcId(String vpcId) {
+			this.vpcId = vpcId;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public Integer getPort() {
+			return this.port;
+		}
+
+		public void setPort(Integer port) {
+			this.port = port;
+		}
+
+		public String getIp() {
+			return this.ip;
+		}
+
+		public void setIp(String ip) {
+			this.ip = ip;
+		}
+
+		public String getError() {
+			return this.error;
+		}
+
+		public void setError(String error) {
+			this.error = error;
+		}
+
 		public String getToken() {
 			return this.token;
 		}
 
 		public void setToken(String token) {
 			this.token = token;
+		}
+
+		public Integer getCode() {
+			return this.code;
+		}
+
+		public void setCode(Integer code) {
+			this.code = code;
 		}
 
 		public String getCallerUid() {

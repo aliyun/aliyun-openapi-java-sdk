@@ -24,17 +24,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class UpdateAutoResourceOptimizeConfigResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String code;
-
-	private String data;
-
 	private String message;
+
+	private String requestId;
 
 	private String synchro;
 
+	private String data;
+
+	private String code;
+
 	private String success;
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -44,12 +52,12 @@ public class UpdateAutoResourceOptimizeConfigResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getCode() {
-		return this.code;
+	public String getSynchro() {
+		return this.synchro;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
+	public void setSynchro(String synchro) {
+		this.synchro = synchro;
 	}
 
 	public String getData() {
@@ -60,20 +68,12 @@ public class UpdateAutoResourceOptimizeConfigResponse extends AcsResponse {
 		this.data = data;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
-	public String getSynchro() {
-		return this.synchro;
-	}
-
-	public void setSynchro(String synchro) {
-		this.synchro = synchro;
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public String getSuccess() {

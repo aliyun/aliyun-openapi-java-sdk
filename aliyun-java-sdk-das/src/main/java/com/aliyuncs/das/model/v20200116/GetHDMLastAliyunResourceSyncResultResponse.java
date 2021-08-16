@@ -25,24 +25,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetHDMLastAliyunResourceSyncResultResponse extends AcsResponse {
 
-	private String code;
+	private String requestId;
 
 	private String message;
 
-	private String requestId;
+	private String synchro;
+
+	private String code;
 
 	private String success;
 
-	private String synchro;
-
 	private Data data;
 
-	public String getCode() {
-		return this.code;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getMessage() {
@@ -53,12 +53,20 @@ public class GetHDMLastAliyunResourceSyncResultResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getSynchro() {
+		return this.synchro;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setSynchro(String synchro) {
+		this.synchro = synchro;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public String getSuccess() {
@@ -67,14 +75,6 @@ public class GetHDMLastAliyunResourceSyncResultResponse extends AcsResponse {
 
 	public void setSuccess(String success) {
 		this.success = success;
-	}
-
-	public String getSynchro() {
-		return this.synchro;
-	}
-
-	public void setSynchro(String synchro) {
-		this.synchro = synchro;
 	}
 
 	public Data getData() {
@@ -87,20 +87,20 @@ public class GetHDMLastAliyunResourceSyncResultResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String syncStatus;
+		private String results;
 
 		private String errorMsg;
 
-		private String results;
+		private String syncStatus;
 
 		private List<ResourceSyncSubResult> subResults;
 
-		public String getSyncStatus() {
-			return this.syncStatus;
+		public String getResults() {
+			return this.results;
 		}
 
-		public void setSyncStatus(String syncStatus) {
-			this.syncStatus = syncStatus;
+		public void setResults(String results) {
+			this.results = results;
 		}
 
 		public String getErrorMsg() {
@@ -111,12 +111,12 @@ public class GetHDMLastAliyunResourceSyncResultResponse extends AcsResponse {
 			this.errorMsg = errorMsg;
 		}
 
-		public String getResults() {
-			return this.results;
+		public String getSyncStatus() {
+			return this.syncStatus;
 		}
 
-		public void setResults(String results) {
-			this.results = results;
+		public void setSyncStatus(String syncStatus) {
+			this.syncStatus = syncStatus;
 		}
 
 		public List<ResourceSyncSubResult> getSubResults() {
@@ -129,13 +129,21 @@ public class GetHDMLastAliyunResourceSyncResultResponse extends AcsResponse {
 
 		public static class ResourceSyncSubResult {
 
+			private String errMsg;
+
 			private String resourceType;
 
 			private Integer syncCount;
 
 			private Boolean success;
 
-			private String errMsg;
+			public String getErrMsg() {
+				return this.errMsg;
+			}
+
+			public void setErrMsg(String errMsg) {
+				this.errMsg = errMsg;
+			}
 
 			public String getResourceType() {
 				return this.resourceType;
@@ -159,14 +167,6 @@ public class GetHDMLastAliyunResourceSyncResultResponse extends AcsResponse {
 
 			public void setSuccess(Boolean success) {
 				this.success = success;
-			}
-
-			public String getErrMsg() {
-				return this.errMsg;
-			}
-
-			public void setErrMsg(String errMsg) {
-				this.errMsg = errMsg;
 			}
 		}
 	}

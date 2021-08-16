@@ -23,9 +23,9 @@ public class GetAutonomousNotifyEventsResponseUnmarshaller {
 	public static GetAutonomousNotifyEventsResponse unmarshall(GetAutonomousNotifyEventsResponse getAutonomousNotifyEventsResponse, UnmarshallerContext _ctx) {
 		
 		getAutonomousNotifyEventsResponse.setRequestId(_ctx.stringValue("GetAutonomousNotifyEventsResponse.RequestId"));
-		getAutonomousNotifyEventsResponse.setCode(_ctx.stringValue("GetAutonomousNotifyEventsResponse.Code"));
-		getAutonomousNotifyEventsResponse.setData(_ctx.stringValue("GetAutonomousNotifyEventsResponse.Data"));
 		getAutonomousNotifyEventsResponse.setMessage(_ctx.stringValue("GetAutonomousNotifyEventsResponse.Message"));
+		getAutonomousNotifyEventsResponse.setData(_ctx.stringValue("GetAutonomousNotifyEventsResponse.Data"));
+		getAutonomousNotifyEventsResponse.setCode(_ctx.stringValue("GetAutonomousNotifyEventsResponse.Code"));
 		getAutonomousNotifyEventsResponse.setSuccess(_ctx.stringValue("GetAutonomousNotifyEventsResponse.Success"));
 	 
 	 	return getAutonomousNotifyEventsResponse;

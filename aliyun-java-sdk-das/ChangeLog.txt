@@ -1,3 +1,6 @@
+2021-08-16 Version: 1.0.6
+- Add SQL throttle APIs for MySQL and PolarDB MySQL.
+
 2021-03-03 Version: 1.0.3
 - Support Redis CacheAnalysis using backupset.
 - Support Instance Inspection API.

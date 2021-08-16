@@ -23,10 +23,10 @@ public class StopOrRollbackOptimizeTaskResponseUnmarshaller {
 	public static StopOrRollbackOptimizeTaskResponse unmarshall(StopOrRollbackOptimizeTaskResponse stopOrRollbackOptimizeTaskResponse, UnmarshallerContext _ctx) {
 		
 		stopOrRollbackOptimizeTaskResponse.setRequestId(_ctx.stringValue("StopOrRollbackOptimizeTaskResponse.RequestId"));
-		stopOrRollbackOptimizeTaskResponse.setCode(_ctx.stringValue("StopOrRollbackOptimizeTaskResponse.Code"));
-		stopOrRollbackOptimizeTaskResponse.setData(_ctx.stringValue("StopOrRollbackOptimizeTaskResponse.Data"));
 		stopOrRollbackOptimizeTaskResponse.setMessage(_ctx.stringValue("StopOrRollbackOptimizeTaskResponse.Message"));
 		stopOrRollbackOptimizeTaskResponse.setSynchro(_ctx.stringValue("StopOrRollbackOptimizeTaskResponse.Synchro"));
+		stopOrRollbackOptimizeTaskResponse.setData(_ctx.stringValue("StopOrRollbackOptimizeTaskResponse.Data"));
+		stopOrRollbackOptimizeTaskResponse.setCode(_ctx.stringValue("StopOrRollbackOptimizeTaskResponse.Code"));
 		stopOrRollbackOptimizeTaskResponse.setSuccess(_ctx.stringValue("StopOrRollbackOptimizeTaskResponse.Success"));
 	 
 	 	return stopOrRollbackOptimizeTaskResponse;

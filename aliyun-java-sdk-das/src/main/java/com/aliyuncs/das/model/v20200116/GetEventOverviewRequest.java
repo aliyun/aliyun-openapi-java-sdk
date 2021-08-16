@@ -29,9 +29,13 @@ public class GetEventOverviewRequest extends RpcAcsRequest<GetEventOverviewRespo
 
 	private String startTime;
 
+	private String tags;
+
 	private String instanceId;
 
 	private String minLevel;
+
+	private String ticketId;
 	public GetEventOverviewRequest() {
 		super("DAS", "2020-01-16", "GetEventOverview", "das");
 		setMethod(MethodType.POST);
@@ -63,6 +67,17 @@ public class GetEventOverviewRequest extends RpcAcsRequest<GetEventOverviewRespo
 		}
 	}
 
+	public String getTags() {
+		return this.tags;
+	}
+
+	public void setTags(String tags) {
+		this.tags = tags;
+		if(tags != null){
+			putQueryParameter("Tags", tags);
+		}
+	}
+
 	public String getInstanceId() {
 		return this.instanceId;
 	}
@@ -82,6 +97,17 @@ public class GetEventOverviewRequest extends RpcAcsRequest<GetEventOverviewRespo
 		this.minLevel = minLevel;
 		if(minLevel != null){
 			putQueryParameter("MinLevel", minLevel);
+		}
+	}
+
+	public String getTicketId() {
+		return this.ticketId;
+	}
+
+	public void setTicketId(String ticketId) {
+		this.ticketId = ticketId;
+		if(ticketId != null){
+			putQueryParameter("TicketId", ticketId);
 		}
 	}
 
