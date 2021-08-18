@@ -42,6 +42,10 @@ public class ExecContainerCommandRequest extends RpcAcsRequest<ExecContainerComm
 
 	private Boolean tty;
 
+	private Boolean stdin;
+
+	private Boolean sync;
+
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
 	}
@@ -127,6 +131,28 @@ public class ExecContainerCommandRequest extends RpcAcsRequest<ExecContainerComm
 		this.tty = tty;
 		if(tty != null){
 			putQueryParameter("TTY", tty);
+		}
+	}
+
+	public Boolean getStdin() {
+		return this.stdin;
+	}
+
+	public void setStdin(Boolean stdin) {
+		this.stdin = stdin;
+		if (stdin != null) {
+			putQueryParameter("Stdin", stdin);
+		}
+	}
+
+	public Boolean getSync() {
+		return this.sync;
+	}
+
+	public void setSync(Boolean sync) {
+		this.sync = sync;
+		if (sync != null) {
+			putQueryParameter("Sync", sync);
 		}
 	}
 
