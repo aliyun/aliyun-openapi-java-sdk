@@ -1,3 +1,6 @@
+2021-08-18 Version: 1.2.8
+1、ExecCommand Api update syncResponse
+
 2021-08-10 Version: 1.2.7
 1、support BatchCreateContainerGroups API
 2、imageCache support acrRegistryInfos
