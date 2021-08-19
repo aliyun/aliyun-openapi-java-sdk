@@ -34,6 +34,8 @@ public class CreateAutoSnapshotPolicyRequest extends RpcAcsRequest<CreateAutoSna
 
 	private String repeatWeekdays;
 
+	private String resourceGroupId;
+
 	private List<Tag> tags;
 
 	private Boolean enableCrossRegionCopy;
@@ -97,6 +99,17 @@ public class CreateAutoSnapshotPolicyRequest extends RpcAcsRequest<CreateAutoSna
 		this.repeatWeekdays = repeatWeekdays;
 		if(repeatWeekdays != null){
 			putQueryParameter("repeatWeekdays", repeatWeekdays);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

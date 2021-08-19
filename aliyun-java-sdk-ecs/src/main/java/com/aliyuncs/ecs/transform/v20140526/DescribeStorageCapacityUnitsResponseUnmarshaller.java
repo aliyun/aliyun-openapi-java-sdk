@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.ecs.model.v20140526.DescribeStorageCapacityUnitsResponse;
 import com.aliyuncs.ecs.model.v20140526.DescribeStorageCapacityUnitsResponse.StorageCapacityUnit;
+import com.aliyuncs.ecs.model.v20140526.DescribeStorageCapacityUnitsResponse.StorageCapacityUnit.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -27,23 +28,33 @@ public class DescribeStorageCapacityUnitsResponseUnmarshaller {
 	public static DescribeStorageCapacityUnitsResponse unmarshall(DescribeStorageCapacityUnitsResponse describeStorageCapacityUnitsResponse, UnmarshallerContext _ctx) {
 		
 		describeStorageCapacityUnitsResponse.setRequestId(_ctx.stringValue("DescribeStorageCapacityUnitsResponse.RequestId"));
-		describeStorageCapacityUnitsResponse.setTotalCount(_ctx.integerValue("DescribeStorageCapacityUnitsResponse.TotalCount"));
-		describeStorageCapacityUnitsResponse.setPageNumber(_ctx.integerValue("DescribeStorageCapacityUnitsResponse.PageNumber"));
 		describeStorageCapacityUnitsResponse.setPageSize(_ctx.integerValue("DescribeStorageCapacityUnitsResponse.PageSize"));
+		describeStorageCapacityUnitsResponse.setPageNumber(_ctx.integerValue("DescribeStorageCapacityUnitsResponse.PageNumber"));
+		describeStorageCapacityUnitsResponse.setTotalCount(_ctx.integerValue("DescribeStorageCapacityUnitsResponse.TotalCount"));
 
 		List<StorageCapacityUnit> storageCapacityUnits = new ArrayList<StorageCapacityUnit>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeStorageCapacityUnitsResponse.StorageCapacityUnits.Length"); i++) {
 			StorageCapacityUnit storageCapacityUnit = new StorageCapacityUnit();
-			storageCapacityUnit.setRegionId(_ctx.stringValue("DescribeStorageCapacityUnitsResponse.StorageCapacityUnits["+ i +"].RegionId"));
-			storageCapacityUnit.setStorageCapacityUnitId(_ctx.stringValue("DescribeStorageCapacityUnitsResponse.StorageCapacityUnits["+ i +"].StorageCapacityUnitId"));
-			storageCapacityUnit.setName(_ctx.stringValue("DescribeStorageCapacityUnitsResponse.StorageCapacityUnits["+ i +"].Name"));
-			storageCapacityUnit.setCapacity(_ctx.integerValue("DescribeStorageCapacityUnitsResponse.StorageCapacityUnits["+ i +"].Capacity"));
-			storageCapacityUnit.setStatus(_ctx.stringValue("DescribeStorageCapacityUnitsResponse.StorageCapacityUnits["+ i +"].Status"));
 			storageCapacityUnit.setCreationTime(_ctx.stringValue("DescribeStorageCapacityUnitsResponse.StorageCapacityUnits["+ i +"].CreationTime"));
-			storageCapacityUnit.setExpiredTime(_ctx.stringValue("DescribeStorageCapacityUnitsResponse.StorageCapacityUnits["+ i +"].ExpiredTime"));
+			storageCapacityUnit.setStatus(_ctx.stringValue("DescribeStorageCapacityUnitsResponse.StorageCapacityUnits["+ i +"].Status"));
 			storageCapacityUnit.setStartTime(_ctx.stringValue("DescribeStorageCapacityUnitsResponse.StorageCapacityUnits["+ i +"].StartTime"));
+			storageCapacityUnit.setCapacity(_ctx.integerValue("DescribeStorageCapacityUnitsResponse.StorageCapacityUnits["+ i +"].Capacity"));
 			storageCapacityUnit.setDescription(_ctx.stringValue("DescribeStorageCapacityUnitsResponse.StorageCapacityUnits["+ i +"].Description"));
 			storageCapacityUnit.setAllocationStatus(_ctx.stringValue("DescribeStorageCapacityUnitsResponse.StorageCapacityUnits["+ i +"].AllocationStatus"));
+			storageCapacityUnit.setExpiredTime(_ctx.stringValue("DescribeStorageCapacityUnitsResponse.StorageCapacityUnits["+ i +"].ExpiredTime"));
+			storageCapacityUnit.setStorageCapacityUnitId(_ctx.stringValue("DescribeStorageCapacityUnitsResponse.StorageCapacityUnits["+ i +"].StorageCapacityUnitId"));
+			storageCapacityUnit.setName(_ctx.stringValue("DescribeStorageCapacityUnitsResponse.StorageCapacityUnits["+ i +"].Name"));
+			storageCapacityUnit.setRegionId(_ctx.stringValue("DescribeStorageCapacityUnitsResponse.StorageCapacityUnits["+ i +"].RegionId"));
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeStorageCapacityUnitsResponse.StorageCapacityUnits["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setTagValue(_ctx.stringValue("DescribeStorageCapacityUnitsResponse.StorageCapacityUnits["+ i +"].Tags["+ j +"].TagValue"));
+				tag.setTagKey(_ctx.stringValue("DescribeStorageCapacityUnitsResponse.StorageCapacityUnits["+ i +"].Tags["+ j +"].TagKey"));
+
+				tags.add(tag);
+			}
+			storageCapacityUnit.setTags(tags);
 
 			storageCapacityUnits.add(storageCapacityUnit);
 		}

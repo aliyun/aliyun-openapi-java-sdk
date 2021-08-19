@@ -24,19 +24,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateDedicatedBlockStorageClusterResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String dedicatedBlockStorageClusterOrderId;
 
+	private String requestId;
+
 	private String dedicatedBlockStorageClusterId;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getDedicatedBlockStorageClusterOrderId() {
 		return this.dedicatedBlockStorageClusterOrderId;
@@ -44,6 +36,14 @@ public class CreateDedicatedBlockStorageClusterResponse extends AcsResponse {
 
 	public void setDedicatedBlockStorageClusterOrderId(String dedicatedBlockStorageClusterOrderId) {
 		this.dedicatedBlockStorageClusterOrderId = dedicatedBlockStorageClusterOrderId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getDedicatedBlockStorageClusterId() {

@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeCloudAssistantStatusResponse extends AcsResponse {
 
-	private String requestId;
+	private Long pageSize;
 
-	private Long totalCount;
+	private String requestId;
 
 	private Long pageNumber;
 
-	private Long pageSize;
+	private Long totalCount;
 
 	private List<InstanceCloudAssistantStatus> instanceCloudAssistantStatusSet;
+
+	public Long getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Long pageSize) {
+		this.pageSize = pageSize;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class DescribeCloudAssistantStatusResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Long getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Long totalCount) {
-		this.totalCount = totalCount;
 	}
 
 	public Long getPageNumber() {
@@ -59,12 +59,12 @@ public class DescribeCloudAssistantStatusResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Long getPageSize() {
-		return this.pageSize;
+	public Long getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setPageSize(Long pageSize) {
-		this.pageSize = pageSize;
+	public void setTotalCount(Long totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<InstanceCloudAssistantStatus> getInstanceCloudAssistantStatusSet() {
@@ -77,37 +77,23 @@ public class DescribeCloudAssistantStatusResponse extends AcsResponse {
 
 	public static class InstanceCloudAssistantStatus {
 
-		private String instanceId;
-
-		private String oSType;
-
 		private String cloudAssistantStatus;
-
-		private String cloudAssistantVersion;
-
-		private Long invocationCount;
-
-		private Long activeTaskCount;
 
 		private String lastInvokedTime;
 
+		private String cloudAssistantVersion;
+
+		private Long activeTaskCount;
+
+		private Long invocationCount;
+
+		private String instanceId;
+
 		private String lastHeartbeatTime;
 
-		public String getInstanceId() {
-			return this.instanceId;
-		}
+		private String oSType;
 
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
-
-		public String getOSType() {
-			return this.oSType;
-		}
-
-		public void setOSType(String oSType) {
-			this.oSType = oSType;
-		}
+		private Boolean supportSessionManager;
 
 		public String getCloudAssistantStatus() {
 			return this.cloudAssistantStatus;
@@ -115,30 +101,6 @@ public class DescribeCloudAssistantStatusResponse extends AcsResponse {
 
 		public void setCloudAssistantStatus(String cloudAssistantStatus) {
 			this.cloudAssistantStatus = cloudAssistantStatus;
-		}
-
-		public String getCloudAssistantVersion() {
-			return this.cloudAssistantVersion;
-		}
-
-		public void setCloudAssistantVersion(String cloudAssistantVersion) {
-			this.cloudAssistantVersion = cloudAssistantVersion;
-		}
-
-		public Long getInvocationCount() {
-			return this.invocationCount;
-		}
-
-		public void setInvocationCount(Long invocationCount) {
-			this.invocationCount = invocationCount;
-		}
-
-		public Long getActiveTaskCount() {
-			return this.activeTaskCount;
-		}
-
-		public void setActiveTaskCount(Long activeTaskCount) {
-			this.activeTaskCount = activeTaskCount;
 		}
 
 		public String getLastInvokedTime() {
@@ -149,12 +111,60 @@ public class DescribeCloudAssistantStatusResponse extends AcsResponse {
 			this.lastInvokedTime = lastInvokedTime;
 		}
 
+		public String getCloudAssistantVersion() {
+			return this.cloudAssistantVersion;
+		}
+
+		public void setCloudAssistantVersion(String cloudAssistantVersion) {
+			this.cloudAssistantVersion = cloudAssistantVersion;
+		}
+
+		public Long getActiveTaskCount() {
+			return this.activeTaskCount;
+		}
+
+		public void setActiveTaskCount(Long activeTaskCount) {
+			this.activeTaskCount = activeTaskCount;
+		}
+
+		public Long getInvocationCount() {
+			return this.invocationCount;
+		}
+
+		public void setInvocationCount(Long invocationCount) {
+			this.invocationCount = invocationCount;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
 		public String getLastHeartbeatTime() {
 			return this.lastHeartbeatTime;
 		}
 
 		public void setLastHeartbeatTime(String lastHeartbeatTime) {
 			this.lastHeartbeatTime = lastHeartbeatTime;
+		}
+
+		public String getOSType() {
+			return this.oSType;
+		}
+
+		public void setOSType(String oSType) {
+			this.oSType = oSType;
+		}
+
+		public Boolean getSupportSessionManager() {
+			return this.supportSessionManager;
+		}
+
+		public void setSupportSessionManager(Boolean supportSessionManager) {
+			this.supportSessionManager = supportSessionManager;
 		}
 	}
 

@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeStorageCapacityUnitsResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer pageSize;
 
-	private Integer totalCount;
+	private String requestId;
 
 	private Integer pageNumber;
 
-	private Integer pageSize;
+	private Integer totalCount;
 
 	private List<StorageCapacityUnit> storageCapacityUnits;
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class DescribeStorageCapacityUnitsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
 	}
 
 	public Integer getPageNumber() {
@@ -59,12 +59,12 @@ public class DescribeStorageCapacityUnitsResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public Integer getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<StorageCapacityUnit> getStorageCapacityUnits() {
@@ -77,32 +77,82 @@ public class DescribeStorageCapacityUnitsResponse extends AcsResponse {
 
 	public static class StorageCapacityUnit {
 
-		private String regionId;
-
-		private String storageCapacityUnitId;
-
-		private String name;
-
-		private Integer capacity;
+		private String creationTime;
 
 		private String status;
 
-		private String creationTime;
-
-		private String expiredTime;
-
 		private String startTime;
+
+		private Integer capacity;
 
 		private String description;
 
 		private String allocationStatus;
 
-		public String getRegionId() {
-			return this.regionId;
+		private String expiredTime;
+
+		private String storageCapacityUnitId;
+
+		private String name;
+
+		private String regionId;
+
+		private List<Tag> tags;
+
+		public String getCreationTime() {
+			return this.creationTime;
 		}
 
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
+		public String getStartTime() {
+			return this.startTime;
+		}
+
+		public void setStartTime(String startTime) {
+			this.startTime = startTime;
+		}
+
+		public Integer getCapacity() {
+			return this.capacity;
+		}
+
+		public void setCapacity(Integer capacity) {
+			this.capacity = capacity;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getAllocationStatus() {
+			return this.allocationStatus;
+		}
+
+		public void setAllocationStatus(String allocationStatus) {
+			this.allocationStatus = allocationStatus;
+		}
+
+		public String getExpiredTime() {
+			return this.expiredTime;
+		}
+
+		public void setExpiredTime(String expiredTime) {
+			this.expiredTime = expiredTime;
 		}
 
 		public String getStorageCapacityUnitId() {
@@ -121,60 +171,43 @@ public class DescribeStorageCapacityUnitsResponse extends AcsResponse {
 			this.name = name;
 		}
 
-		public Integer getCapacity() {
-			return this.capacity;
+		public String getRegionId() {
+			return this.regionId;
 		}
 
-		public void setCapacity(Integer capacity) {
-			this.capacity = capacity;
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 
-		public String getStatus() {
-			return this.status;
+		public List<Tag> getTags() {
+			return this.tags;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
+		public void setTags(List<Tag> tags) {
+			this.tags = tags;
 		}
 
-		public String getCreationTime() {
-			return this.creationTime;
-		}
+		public static class Tag {
 
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
-		}
+			private String tagValue;
 
-		public String getExpiredTime() {
-			return this.expiredTime;
-		}
+			private String tagKey;
 
-		public void setExpiredTime(String expiredTime) {
-			this.expiredTime = expiredTime;
-		}
+			public String getTagValue() {
+				return this.tagValue;
+			}
 
-		public String getStartTime() {
-			return this.startTime;
-		}
+			public void setTagValue(String tagValue) {
+				this.tagValue = tagValue;
+			}
 
-		public void setStartTime(String startTime) {
-			this.startTime = startTime;
-		}
+			public String getTagKey() {
+				return this.tagKey;
+			}
 
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
-		public String getAllocationStatus() {
-			return this.allocationStatus;
-		}
-
-		public void setAllocationStatus(String allocationStatus) {
-			this.allocationStatus = allocationStatus;
+			public void setTagKey(String tagKey) {
+				this.tagKey = tagKey;
+			}
 		}
 	}
 

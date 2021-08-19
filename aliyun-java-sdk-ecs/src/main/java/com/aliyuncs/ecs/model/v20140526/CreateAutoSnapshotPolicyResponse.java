@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateAutoSnapshotPolicyResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String autoSnapshotPolicyId;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getAutoSnapshotPolicyId() {
 		return this.autoSnapshotPolicyId;
@@ -42,6 +34,14 @@ public class CreateAutoSnapshotPolicyResponse extends AcsResponse {
 
 	public void setAutoSnapshotPolicyId(String autoSnapshotPolicyId) {
 		this.autoSnapshotPolicyId = autoSnapshotPolicyId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

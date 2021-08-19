@@ -30,6 +30,8 @@ public class DescribeInstanceTypesRequest extends RpcAcsRequest<DescribeInstance
 
 	private List<String> instanceTypess;
 
+	private String nextToken;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -37,6 +39,8 @@ public class DescribeInstanceTypesRequest extends RpcAcsRequest<DescribeInstance
 	private String instanceTypeFamily;
 
 	private Long ownerId;
+
+	private Long maxResults;
 	public DescribeInstanceTypesRequest() {
 		super("Ecs", "2014-05-26", "DescribeInstanceTypes", "ecs");
 		setMethod(MethodType.POST);
@@ -68,6 +72,17 @@ public class DescribeInstanceTypesRequest extends RpcAcsRequest<DescribeInstance
 				putQueryParameter("InstanceTypes." + (i + 1) , instanceTypess.get(i));
 			}
 		}	
+	}
+
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+		if(nextToken != null){
+			putQueryParameter("NextToken", nextToken);
+		}
 	}
 
 	public String getResourceOwnerAccount() {
@@ -111,6 +126,17 @@ public class DescribeInstanceTypesRequest extends RpcAcsRequest<DescribeInstance
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public Long getMaxResults() {
+		return this.maxResults;
+	}
+
+	public void setMaxResults(Long maxResults) {
+		this.maxResults = maxResults;
+		if(maxResults != null){
+			putQueryParameter("MaxResults", maxResults.toString());
 		}
 	}
 

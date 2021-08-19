@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateCapacityReservationResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String privatePoolOptionsId;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getPrivatePoolOptionsId() {
 		return this.privatePoolOptionsId;
@@ -42,6 +34,14 @@ public class CreateCapacityReservationResponse extends AcsResponse {
 
 	public void setPrivatePoolOptionsId(String privatePoolOptionsId) {
 		this.privatePoolOptionsId = privatePoolOptionsId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override
