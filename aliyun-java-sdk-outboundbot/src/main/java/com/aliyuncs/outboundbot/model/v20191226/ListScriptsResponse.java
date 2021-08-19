@@ -153,6 +153,8 @@ public class ListScriptsResponse extends AcsResponse {
 
 			private String rejectReason;
 
+			private Boolean miniPlaybackEnabled;
+
 			public String getDebugStatus() {
 				return this.debugStatus;
 			}
@@ -247,6 +249,14 @@ public class ListScriptsResponse extends AcsResponse {
 
 			public void setRejectReason(String rejectReason) {
 				this.rejectReason = rejectReason;
+			}
+
+			public Boolean getMiniPlaybackEnabled() {
+				return this.miniPlaybackEnabled;
+			}
+
+			public void setMiniPlaybackEnabled(Boolean miniPlaybackEnabled) {
+				this.miniPlaybackEnabled = miniPlaybackEnabled;
 			}
 		}
 	}

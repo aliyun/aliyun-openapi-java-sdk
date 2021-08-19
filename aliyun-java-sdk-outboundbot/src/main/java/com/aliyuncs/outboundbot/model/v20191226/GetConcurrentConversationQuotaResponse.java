@@ -14,30 +14,29 @@
 
 package com.aliyuncs.outboundbot.model.v20191226;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.outboundbot.transform.v20191226.StartJobResponseUnmarshaller;
+import com.aliyuncs.outboundbot.transform.v20191226.GetConcurrentConversationQuotaResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class StartJobResponse extends AcsResponse {
+public class GetConcurrentConversationQuotaResponse extends AcsResponse {
 
 	private String code;
 
 	private Integer httpStatusCode;
 
+	private Integer maxConcurrent;
+
 	private String message;
+
+	private Integer remainingConcurrent;
 
 	private String requestId;
 
 	private Boolean success;
-
-	private List<KeyValuePair> taskIds;
-
-	private List<KeyValuePair> callIds;
 
 	public String getCode() {
 		return this.code;
@@ -55,12 +54,28 @@ public class StartJobResponse extends AcsResponse {
 		this.httpStatusCode = httpStatusCode;
 	}
 
+	public Integer getMaxConcurrent() {
+		return this.maxConcurrent;
+	}
+
+	public void setMaxConcurrent(Integer maxConcurrent) {
+		this.maxConcurrent = maxConcurrent;
+	}
+
 	public String getMessage() {
 		return this.message;
 	}
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public Integer getRemainingConcurrent() {
+		return this.remainingConcurrent;
+	}
+
+	public void setRemainingConcurrent(Integer remainingConcurrent) {
+		this.remainingConcurrent = remainingConcurrent;
 	}
 
 	public String getRequestId() {
@@ -79,48 +94,9 @@ public class StartJobResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public List<KeyValuePair> getTaskIds() {
-		return this.taskIds;
-	}
-
-	public void setTaskIds(List<KeyValuePair> taskIds) {
-		this.taskIds = taskIds;
-	}
-
-	public List<KeyValuePair> getCallIds() {
-		return this.callIds;
-	}
-
-	public void setCallIds(List<KeyValuePair> callIds) {
-		this.callIds = callIds;
-	}
-
-	public static class KeyValuePair {
-
-		private String key;
-
-		private String value;
-
-		public String getKey() {
-			return this.key;
-		}
-
-		public void setKey(String key) {
-			this.key = key;
-		}
-
-		public String getValue() {
-			return this.value;
-		}
-
-		public void setValue(String value) {
-			this.value = value;
-		}
-	}
-
 	@Override
-	public StartJobResponse getInstance(UnmarshallerContext context) {
-		return	StartJobResponseUnmarshaller.unmarshall(this, context);
+	public GetConcurrentConversationQuotaResponse getInstance(UnmarshallerContext context) {
+		return	GetConcurrentConversationQuotaResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

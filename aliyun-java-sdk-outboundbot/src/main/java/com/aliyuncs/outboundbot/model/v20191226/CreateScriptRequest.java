@@ -15,6 +15,7 @@
 package com.aliyuncs.outboundbot.model.v20191226;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.outboundbot.Endpoint;
 
@@ -25,15 +26,25 @@ import com.aliyuncs.outboundbot.Endpoint;
 public class CreateScriptRequest extends RpcAcsRequest<CreateScriptResponse> {
 	   
 
+	private String ttsConfig;
+
 	private String industry;
 
 	private String scriptName;
 
 	private String scene;
 
+	private String chatbotId;
+
 	private String instanceId;
 
+	private List<String> scriptWaveforms;
+
+	private String asrConfig;
+
 	private String scriptDescription;
+
+	private List<String> scriptContents;
 	public CreateScriptRequest() {
 		super("OutboundBot", "2019-12-26", "CreateScript", "outboundbot");
 		setMethod(MethodType.POST);
@@ -41,6 +52,17 @@ public class CreateScriptRequest extends RpcAcsRequest<CreateScriptResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getTtsConfig() {
+		return this.ttsConfig;
+	}
+
+	public void setTtsConfig(String ttsConfig) {
+		this.ttsConfig = ttsConfig;
+		if(ttsConfig != null){
+			putQueryParameter("TtsConfig", ttsConfig);
+		}
 	}
 
 	public String getIndustry() {
@@ -76,6 +98,17 @@ public class CreateScriptRequest extends RpcAcsRequest<CreateScriptResponse> {
 		}
 	}
 
+	public String getChatbotId() {
+		return this.chatbotId;
+	}
+
+	public void setChatbotId(String chatbotId) {
+		this.chatbotId = chatbotId;
+		if(chatbotId != null){
+			putQueryParameter("ChatbotId", chatbotId);
+		}
+	}
+
 	public String getInstanceId() {
 		return this.instanceId;
 	}
@@ -84,6 +117,30 @@ public class CreateScriptRequest extends RpcAcsRequest<CreateScriptResponse> {
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public List<String> getScriptWaveforms() {
+		return this.scriptWaveforms;
+	}
+
+	public void setScriptWaveforms(List<String> scriptWaveforms) {
+		this.scriptWaveforms = scriptWaveforms;	
+		if (scriptWaveforms != null) {
+			for (int i = 0; i < scriptWaveforms.size(); i++) {
+				putQueryParameter("ScriptWaveform." + (i + 1) , scriptWaveforms.get(i));
+			}
+		}	
+	}
+
+	public String getAsrConfig() {
+		return this.asrConfig;
+	}
+
+	public void setAsrConfig(String asrConfig) {
+		this.asrConfig = asrConfig;
+		if(asrConfig != null){
+			putQueryParameter("AsrConfig", asrConfig);
 		}
 	}
 
@@ -96,6 +153,19 @@ public class CreateScriptRequest extends RpcAcsRequest<CreateScriptResponse> {
 		if(scriptDescription != null){
 			putQueryParameter("ScriptDescription", scriptDescription);
 		}
+	}
+
+	public List<String> getScriptContents() {
+		return this.scriptContents;
+	}
+
+	public void setScriptContents(List<String> scriptContents) {
+		this.scriptContents = scriptContents;	
+		if (scriptContents != null) {
+			for (int i = 0; i < scriptContents.size(); i++) {
+				putQueryParameter("ScriptContent." + (i + 1) , scriptContents.get(i));
+			}
+		}	
 	}
 
 	@Override

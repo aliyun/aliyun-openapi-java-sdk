@@ -15,6 +15,7 @@
 package com.aliyuncs.outboundbot.model.v20191226;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.outboundbot.Endpoint;
 
@@ -29,9 +30,13 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 
 	private String resourceGroupId;
 
+	private List<String> callingNumbers;
+
 	private String instanceName;
 
 	private String instanceDescription;
+
+	private String nluServiceType;
 	public CreateInstanceRequest() {
 		super("OutboundBot", "2019-12-26", "CreateInstance", "outboundbot");
 		setMethod(MethodType.POST);
@@ -63,6 +68,19 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 		}
 	}
 
+	public List<String> getCallingNumbers() {
+		return this.callingNumbers;
+	}
+
+	public void setCallingNumbers(List<String> callingNumbers) {
+		this.callingNumbers = callingNumbers;	
+		if (callingNumbers != null) {
+			for (int i = 0; i < callingNumbers.size(); i++) {
+				putQueryParameter("CallingNumber." + (i + 1) , callingNumbers.get(i));
+			}
+		}	
+	}
+
 	public String getInstanceName() {
 		return this.instanceName;
 	}
@@ -82,6 +100,17 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 		this.instanceDescription = instanceDescription;
 		if(instanceDescription != null){
 			putQueryParameter("InstanceDescription", instanceDescription);
+		}
+	}
+
+	public String getNluServiceType() {
+		return this.nluServiceType;
+	}
+
+	public void setNluServiceType(String nluServiceType) {
+		this.nluServiceType = nluServiceType;
+		if(nluServiceType != null){
+			putQueryParameter("NluServiceType", nluServiceType);
 		}
 	}
 

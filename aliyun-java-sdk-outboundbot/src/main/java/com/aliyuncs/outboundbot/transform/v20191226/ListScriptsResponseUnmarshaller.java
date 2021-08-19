@@ -53,6 +53,7 @@ public class ListScriptsResponseUnmarshaller {
 			script.setStatus(_ctx.stringValue("ListScriptsResponse.Scripts.List["+ i +"].Status"));
 			script.setUpdateTime(_ctx.longValue("ListScriptsResponse.Scripts.List["+ i +"].UpdateTime"));
 			script.setRejectReason(_ctx.stringValue("ListScriptsResponse.Scripts.List["+ i +"].RejectReason"));
+			script.setMiniPlaybackEnabled(_ctx.booleanValue("ListScriptsResponse.Scripts.List["+ i +"].MiniPlaybackEnabled"));
 
 			list.add(script);
 		}

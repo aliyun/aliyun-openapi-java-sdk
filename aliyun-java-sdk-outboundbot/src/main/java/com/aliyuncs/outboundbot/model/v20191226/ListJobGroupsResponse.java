@@ -159,6 +159,8 @@ public class ListJobGroupsResponse extends AcsResponse {
 
 			private String status;
 
+			private Integer totalCallNum;
+
 			private Progress progress;
 
 			private ExportProgress exportProgress;
@@ -243,6 +245,14 @@ public class ListJobGroupsResponse extends AcsResponse {
 
 			public void setStatus(String status) {
 				this.status = status;
+			}
+
+			public Integer getTotalCallNum() {
+				return this.totalCallNum;
+			}
+
+			public void setTotalCallNum(Integer totalCallNum) {
+				this.totalCallNum = totalCallNum;
 			}
 
 			public Progress getProgress() {

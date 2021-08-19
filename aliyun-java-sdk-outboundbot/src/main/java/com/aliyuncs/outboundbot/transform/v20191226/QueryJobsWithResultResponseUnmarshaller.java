@@ -23,6 +23,7 @@ import com.aliyuncs.outboundbot.model.v20191226.QueryJobsWithResultResponse.Jobs
 import com.aliyuncs.outboundbot.model.v20191226.QueryJobsWithResultResponse.Jobs.Job.LatestTask;
 import com.aliyuncs.outboundbot.model.v20191226.QueryJobsWithResultResponse.Jobs.Job.LatestTask.Contact;
 import com.aliyuncs.outboundbot.model.v20191226.QueryJobsWithResultResponse.Jobs.Job.LatestTask.Extra;
+import com.aliyuncs.outboundbot.model.v20191226.QueryJobsWithResultResponse.Jobs.Job.LatestTask.TagHit;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -89,6 +90,16 @@ public class QueryJobsWithResultResponseUnmarshaller {
 				extras.add(extra);
 			}
 			latestTask.setExtras(extras);
+
+			List<TagHit> tagHits = new ArrayList<TagHit>();
+			for (int j = 0; j < _ctx.lengthValue("QueryJobsWithResultResponse.Jobs.List["+ i +"].LatestTask.TagHits.Length"); j++) {
+				TagHit tagHit = new TagHit();
+				tagHit.setTagGroup(_ctx.stringValue("QueryJobsWithResultResponse.Jobs.List["+ i +"].LatestTask.TagHits["+ j +"].TagGroup"));
+				tagHit.setTagName(_ctx.stringValue("QueryJobsWithResultResponse.Jobs.List["+ i +"].LatestTask.TagHits["+ j +"].TagName"));
+
+				tagHits.add(tagHit);
+			}
+			latestTask.setTagHits(tagHits);
 			job.setLatestTask(latestTask);
 
 			list.add(job);

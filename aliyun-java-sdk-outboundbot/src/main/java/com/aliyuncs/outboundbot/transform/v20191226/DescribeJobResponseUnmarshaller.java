@@ -115,6 +115,7 @@ public class DescribeJobResponseUnmarshaller {
 			task.setStatus(_ctx.stringValue("DescribeJobResponse.Job.Tasks["+ i +"].Status"));
 			task.setTaskId(_ctx.stringValue("DescribeJobResponse.Job.Tasks["+ i +"].TaskId"));
 			task.setEndTime(_ctx.longValue("DescribeJobResponse.Job.Tasks["+ i +"].EndTime"));
+			task.setEndReason(_ctx.stringValue("DescribeJobResponse.Job.Tasks["+ i +"].EndReason"));
 
 			Contact3 contact3 = new Contact3();
 			contact3.setContactId(_ctx.stringValue("DescribeJobResponse.Job.Tasks["+ i +"].Contact.ContactId"));

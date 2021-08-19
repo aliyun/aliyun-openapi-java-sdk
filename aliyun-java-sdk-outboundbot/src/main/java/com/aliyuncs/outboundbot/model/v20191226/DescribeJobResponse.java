@@ -454,6 +454,8 @@ public class DescribeJobResponse extends AcsResponse {
 
 			private Long endTime;
 
+			private String endReason;
+
 			private List<ConversationDetail> conversation;
 
 			private Contact3 contact3;
@@ -560,6 +562,14 @@ public class DescribeJobResponse extends AcsResponse {
 
 			public void setEndTime(Long endTime) {
 				this.endTime = endTime;
+			}
+
+			public String getEndReason() {
+				return this.endReason;
+			}
+
+			public void setEndReason(String endReason) {
+				this.endReason = endReason;
 			}
 
 			public List<ConversationDetail> getConversation() {

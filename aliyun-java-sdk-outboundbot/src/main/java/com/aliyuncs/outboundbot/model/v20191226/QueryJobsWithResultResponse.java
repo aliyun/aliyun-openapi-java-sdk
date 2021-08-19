@@ -221,6 +221,8 @@ public class QueryJobsWithResultResponse extends AcsResponse {
 
 				private List<Extra> extras;
 
+				private List<TagHit> tagHits;
+
 				private Contact contact;
 
 				public String getTaskEndReason() {
@@ -303,6 +305,14 @@ public class QueryJobsWithResultResponse extends AcsResponse {
 					this.extras = extras;
 				}
 
+				public List<TagHit> getTagHits() {
+					return this.tagHits;
+				}
+
+				public void setTagHits(List<TagHit> tagHits) {
+					this.tagHits = tagHits;
+				}
+
 				public Contact getContact() {
 					return this.contact;
 				}
@@ -331,6 +341,29 @@ public class QueryJobsWithResultResponse extends AcsResponse {
 
 					public void setValue(String value) {
 						this.value = value;
+					}
+				}
+
+				public static class TagHit {
+
+					private String tagGroup;
+
+					private String tagName;
+
+					public String getTagGroup() {
+						return this.tagGroup;
+					}
+
+					public void setTagGroup(String tagGroup) {
+						this.tagGroup = tagGroup;
+					}
+
+					public String getTagName() {
+						return this.tagName;
+					}
+
+					public void setTagName(String tagName) {
+						this.tagName = tagName;
 					}
 				}
 

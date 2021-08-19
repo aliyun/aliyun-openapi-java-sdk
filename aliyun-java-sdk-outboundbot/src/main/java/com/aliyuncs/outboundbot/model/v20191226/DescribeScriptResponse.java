@@ -142,6 +142,8 @@ public class DescribeScriptResponse extends AcsResponse {
 
 		private String ttsConfig;
 
+		private Boolean miniPlaybackConfigEnabled;
+
 		public String getDebugStatus() {
 			return this.debugStatus;
 		}
@@ -244,6 +246,14 @@ public class DescribeScriptResponse extends AcsResponse {
 
 		public void setTtsConfig(String ttsConfig) {
 			this.ttsConfig = ttsConfig;
+		}
+
+		public Boolean getMiniPlaybackConfigEnabled() {
+			return this.miniPlaybackConfigEnabled;
+		}
+
+		public void setMiniPlaybackConfigEnabled(Boolean miniPlaybackConfigEnabled) {
+			this.miniPlaybackConfigEnabled = miniPlaybackConfigEnabled;
 		}
 	}
 

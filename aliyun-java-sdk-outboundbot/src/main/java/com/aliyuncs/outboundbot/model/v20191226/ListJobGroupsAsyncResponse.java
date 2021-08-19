@@ -157,6 +157,8 @@ public class ListJobGroupsAsyncResponse extends AcsResponse {
 
 		private String scriptVersion;
 
+		private Integer totalCallNum;
+
 		private Strategy strategy;
 
 		private Progress progress;
@@ -241,6 +243,14 @@ public class ListJobGroupsAsyncResponse extends AcsResponse {
 
 		public void setScriptVersion(String scriptVersion) {
 			this.scriptVersion = scriptVersion;
+		}
+
+		public Integer getTotalCallNum() {
+			return this.totalCallNum;
+		}
+
+		public void setTotalCallNum(Integer totalCallNum) {
+			this.totalCallNum = totalCallNum;
 		}
 
 		public Strategy getStrategy() {

@@ -46,6 +46,7 @@ public class DescribeScriptResponseUnmarshaller {
 		script.setChatbotId(_ctx.stringValue("DescribeScriptResponse.Script.ChatbotId"));
 		script.setAsrConfig(_ctx.stringValue("DescribeScriptResponse.Script.AsrConfig"));
 		script.setTtsConfig(_ctx.stringValue("DescribeScriptResponse.Script.TtsConfig"));
+		script.setMiniPlaybackConfigEnabled(_ctx.booleanValue("DescribeScriptResponse.Script.MiniPlaybackConfigEnabled"));
 		describeScriptResponse.setScript(script);
 	 
 	 	return describeScriptResponse;

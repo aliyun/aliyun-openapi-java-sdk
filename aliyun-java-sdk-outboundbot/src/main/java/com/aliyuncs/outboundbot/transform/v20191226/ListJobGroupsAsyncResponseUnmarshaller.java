@@ -53,6 +53,7 @@ public class ListJobGroupsAsyncResponseUnmarshaller {
 			jobGroup.setJobDataParsingTaskId(_ctx.stringValue("ListJobGroupsAsyncResponse.JobGroups["+ i +"].JobDataParsingTaskId"));
 			jobGroup.setModifyTime(_ctx.stringValue("ListJobGroupsAsyncResponse.JobGroups["+ i +"].ModifyTime"));
 			jobGroup.setScriptVersion(_ctx.stringValue("ListJobGroupsAsyncResponse.JobGroups["+ i +"].ScriptVersion"));
+			jobGroup.setTotalCallNum(_ctx.integerValue("ListJobGroupsAsyncResponse.JobGroups["+ i +"].TotalCallNum"));
 
 			Strategy strategy = new Strategy();
 			strategy.setStartTime(_ctx.longValue("ListJobGroupsAsyncResponse.JobGroups["+ i +"].Strategy.StartTime"));

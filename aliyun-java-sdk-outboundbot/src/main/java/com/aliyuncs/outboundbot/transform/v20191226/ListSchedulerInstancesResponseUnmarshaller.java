@@ -39,6 +39,7 @@ public class ListSchedulerInstancesResponseUnmarshaller {
 			schedulerInstance.setInstanceId(_ctx.stringValue("ListSchedulerInstancesResponse.SchedulerInstances["+ i +"].InstanceId"));
 			schedulerInstance.setBusiness(_ctx.stringValue("ListSchedulerInstancesResponse.SchedulerInstances["+ i +"].Business"));
 			schedulerInstance.setMaxConcurrency(_ctx.integerValue("ListSchedulerInstancesResponse.SchedulerInstances["+ i +"].MaxConcurrency"));
+			schedulerInstance.setBaseStrategy(_ctx.stringValue("ListSchedulerInstancesResponse.SchedulerInstances["+ i +"].BaseStrategy"));
 
 			schedulerInstances.add(schedulerInstance);
 		}

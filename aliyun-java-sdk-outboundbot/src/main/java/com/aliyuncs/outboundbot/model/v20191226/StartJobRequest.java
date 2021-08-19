@@ -30,6 +30,8 @@ public class StartJobRequest extends RpcAcsRequest<StartJobResponse> {
 
 	private List<String> callingNumbers;
 
+	private String scriptId;
+
 	private String instanceId;
 
 	private String jobGroupId;
@@ -66,6 +68,17 @@ public class StartJobRequest extends RpcAcsRequest<StartJobResponse> {
 				putQueryParameter("CallingNumber." + (i + 1) , callingNumbers.get(i));
 			}
 		}	
+	}
+
+	public String getScriptId() {
+		return this.scriptId;
+	}
+
+	public void setScriptId(String scriptId) {
+		this.scriptId = scriptId;
+		if(scriptId != null){
+			putQueryParameter("ScriptId", scriptId);
+		}
 	}
 
 	public String getInstanceId() {

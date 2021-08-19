@@ -14,16 +14,15 @@
 
 package com.aliyuncs.outboundbot.model.v20191226;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.outboundbot.transform.v20191226.ListSchedulerInstancesResponseUnmarshaller;
+import com.aliyuncs.outboundbot.transform.v20191226.GetCurrentConcurrencyResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ListSchedulerInstancesResponse extends AcsResponse {
+public class GetCurrentConcurrencyResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -35,7 +34,11 @@ public class ListSchedulerInstancesResponse extends AcsResponse {
 
 	private Integer httpStatusCode;
 
-	private List<SchedulerInstance> schedulerInstances;
+	private Integer maxConcurrentConversation;
+
+	private Integer currentConcurrency;
+
+	private String instanceId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -77,70 +80,33 @@ public class ListSchedulerInstancesResponse extends AcsResponse {
 		this.httpStatusCode = httpStatusCode;
 	}
 
-	public List<SchedulerInstance> getSchedulerInstances() {
-		return this.schedulerInstances;
+	public Integer getMaxConcurrentConversation() {
+		return this.maxConcurrentConversation;
 	}
 
-	public void setSchedulerInstances(List<SchedulerInstance> schedulerInstances) {
-		this.schedulerInstances = schedulerInstances;
+	public void setMaxConcurrentConversation(Integer maxConcurrentConversation) {
+		this.maxConcurrentConversation = maxConcurrentConversation;
 	}
 
-	public static class SchedulerInstance {
+	public Integer getCurrentConcurrency() {
+		return this.currentConcurrency;
+	}
 
-		private String ownerId;
+	public void setCurrentConcurrency(Integer currentConcurrency) {
+		this.currentConcurrency = currentConcurrency;
+	}
 
-		private String instanceId;
+	public String getInstanceId() {
+		return this.instanceId;
+	}
 
-		private String business;
-
-		private Integer maxConcurrency;
-
-		private String baseStrategy;
-
-		public String getOwnerId() {
-			return this.ownerId;
-		}
-
-		public void setOwnerId(String ownerId) {
-			this.ownerId = ownerId;
-		}
-
-		public String getInstanceId() {
-			return this.instanceId;
-		}
-
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
-
-		public String getBusiness() {
-			return this.business;
-		}
-
-		public void setBusiness(String business) {
-			this.business = business;
-		}
-
-		public Integer getMaxConcurrency() {
-			return this.maxConcurrency;
-		}
-
-		public void setMaxConcurrency(Integer maxConcurrency) {
-			this.maxConcurrency = maxConcurrency;
-		}
-
-		public String getBaseStrategy() {
-			return this.baseStrategy;
-		}
-
-		public void setBaseStrategy(String baseStrategy) {
-			this.baseStrategy = baseStrategy;
-		}
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
 	}
 
 	@Override
-	public ListSchedulerInstancesResponse getInstance(UnmarshallerContext context) {
-		return	ListSchedulerInstancesResponseUnmarshaller.unmarshall(this, context);
+	public GetCurrentConcurrencyResponse getInstance(UnmarshallerContext context) {
+		return	GetCurrentConcurrencyResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

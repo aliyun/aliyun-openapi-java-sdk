@@ -14,16 +14,15 @@
 
 package com.aliyuncs.outboundbot.model.v20191226;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.outboundbot.transform.v20191226.ListSchedulerInstancesResponseUnmarshaller;
+import com.aliyuncs.outboundbot.transform.v20191226.TerminateCallResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ListSchedulerInstancesResponse extends AcsResponse {
+public class TerminateCallResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -34,8 +33,6 @@ public class ListSchedulerInstancesResponse extends AcsResponse {
 	private String message;
 
 	private Integer httpStatusCode;
-
-	private List<SchedulerInstance> schedulerInstances;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -77,70 +74,9 @@ public class ListSchedulerInstancesResponse extends AcsResponse {
 		this.httpStatusCode = httpStatusCode;
 	}
 
-	public List<SchedulerInstance> getSchedulerInstances() {
-		return this.schedulerInstances;
-	}
-
-	public void setSchedulerInstances(List<SchedulerInstance> schedulerInstances) {
-		this.schedulerInstances = schedulerInstances;
-	}
-
-	public static class SchedulerInstance {
-
-		private String ownerId;
-
-		private String instanceId;
-
-		private String business;
-
-		private Integer maxConcurrency;
-
-		private String baseStrategy;
-
-		public String getOwnerId() {
-			return this.ownerId;
-		}
-
-		public void setOwnerId(String ownerId) {
-			this.ownerId = ownerId;
-		}
-
-		public String getInstanceId() {
-			return this.instanceId;
-		}
-
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
-
-		public String getBusiness() {
-			return this.business;
-		}
-
-		public void setBusiness(String business) {
-			this.business = business;
-		}
-
-		public Integer getMaxConcurrency() {
-			return this.maxConcurrency;
-		}
-
-		public void setMaxConcurrency(Integer maxConcurrency) {
-			this.maxConcurrency = maxConcurrency;
-		}
-
-		public String getBaseStrategy() {
-			return this.baseStrategy;
-		}
-
-		public void setBaseStrategy(String baseStrategy) {
-			this.baseStrategy = baseStrategy;
-		}
-	}
-
 	@Override
-	public ListSchedulerInstancesResponse getInstance(UnmarshallerContext context) {
-		return	ListSchedulerInstancesResponseUnmarshaller.unmarshall(this, context);
+	public TerminateCallResponse getInstance(UnmarshallerContext context) {
+		return	TerminateCallResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override
