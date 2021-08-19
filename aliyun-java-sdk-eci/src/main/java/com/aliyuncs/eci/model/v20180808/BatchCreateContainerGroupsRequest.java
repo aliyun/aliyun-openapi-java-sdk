@@ -59,7 +59,7 @@ public class BatchCreateContainerGroupsRequest extends RpcAcsRequest<BatchCreate
 
     private String ramRoleName;
 
-    private String terminationGracePeriodSeconds;
+    private Long terminationGracePeriodSeconds;
 
     private Boolean autoMatchImageCache;
 
@@ -290,14 +290,14 @@ public class BatchCreateContainerGroupsRequest extends RpcAcsRequest<BatchCreate
         }
     }
 
-    public String getTerminationGracePeriodSeconds() {
+    public Long getTerminationGracePeriodSeconds() {
         return this.terminationGracePeriodSeconds;
     }
 
-    public void setTerminationGracePeriodSeconds(String terminationGracePeriodSeconds) {
+    public void setTerminationGracePeriodSeconds(Long terminationGracePeriodSeconds) {
         this.terminationGracePeriodSeconds = terminationGracePeriodSeconds;
         if (terminationGracePeriodSeconds != null) {
-            putQueryParameter("TerminationGracePeriodSeconds", terminationGracePeriodSeconds);
+            putQueryParameter("TerminationGracePeriodSeconds", terminationGracePeriodSeconds.toString());
         }
     }
 
