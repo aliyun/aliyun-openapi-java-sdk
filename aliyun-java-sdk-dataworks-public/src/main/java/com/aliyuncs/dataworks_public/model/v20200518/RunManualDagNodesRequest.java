@@ -29,11 +29,17 @@ public class RunManualDagNodesRequest extends RpcAcsRequest<RunManualDagNodesRes
 
 	private String projectName;
 
+	private String dagParameters;
+
+	private String includeNodeIds;
+
 	private String bizDate;
+
+	private String excludeNodeIds;
 
 	private String flowName;
 
-	private String dagParameters;
+	private Long projectId;
 
 	private String nodeParameters;
 	public RunManualDagNodesRequest() {
@@ -67,6 +73,28 @@ public class RunManualDagNodesRequest extends RpcAcsRequest<RunManualDagNodesRes
 		}
 	}
 
+	public String getDagParameters() {
+		return this.dagParameters;
+	}
+
+	public void setDagParameters(String dagParameters) {
+		this.dagParameters = dagParameters;
+		if(dagParameters != null){
+			putBodyParameter("DagParameters", dagParameters);
+		}
+	}
+
+	public String getIncludeNodeIds() {
+		return this.includeNodeIds;
+	}
+
+	public void setIncludeNodeIds(String includeNodeIds) {
+		this.includeNodeIds = includeNodeIds;
+		if(includeNodeIds != null){
+			putBodyParameter("IncludeNodeIds", includeNodeIds);
+		}
+	}
+
 	public String getBizDate() {
 		return this.bizDate;
 	}
@@ -75,6 +103,17 @@ public class RunManualDagNodesRequest extends RpcAcsRequest<RunManualDagNodesRes
 		this.bizDate = bizDate;
 		if(bizDate != null){
 			putBodyParameter("BizDate", bizDate);
+		}
+	}
+
+	public String getExcludeNodeIds() {
+		return this.excludeNodeIds;
+	}
+
+	public void setExcludeNodeIds(String excludeNodeIds) {
+		this.excludeNodeIds = excludeNodeIds;
+		if(excludeNodeIds != null){
+			putBodyParameter("ExcludeNodeIds", excludeNodeIds);
 		}
 	}
 
@@ -89,14 +128,14 @@ public class RunManualDagNodesRequest extends RpcAcsRequest<RunManualDagNodesRes
 		}
 	}
 
-	public String getDagParameters() {
-		return this.dagParameters;
+	public Long getProjectId() {
+		return this.projectId;
 	}
 
-	public void setDagParameters(String dagParameters) {
-		this.dagParameters = dagParameters;
-		if(dagParameters != null){
-			putBodyParameter("DagParameters", dagParameters);
+	public void setProjectId(Long projectId) {
+		this.projectId = projectId;
+		if(projectId != null){
+			putBodyParameter("ProjectId", projectId.toString());
 		}
 	}
 
