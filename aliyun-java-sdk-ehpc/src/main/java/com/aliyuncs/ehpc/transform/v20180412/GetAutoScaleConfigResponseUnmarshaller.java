@@ -58,6 +58,11 @@ public class GetAutoScaleConfigResponseUnmarshaller {
 			queueInfo.setMaxNodesInQueue(_ctx.integerValue("GetAutoScaleConfigResponse.Queues["+ i +"].MaxNodesInQueue"));
 			queueInfo.setMinNodesInQueue(_ctx.integerValue("GetAutoScaleConfigResponse.Queues["+ i +"].MinNodesInQueue"));
 			queueInfo.setQueueImageId(_ctx.stringValue("GetAutoScaleConfigResponse.Queues["+ i +"].QueueImageId"));
+			queueInfo.setHostNamePrefix(_ctx.stringValue("GetAutoScaleConfigResponse.Queues["+ i +"].HostNamePrefix"));
+			queueInfo.setHostNameSuffix(_ctx.stringValue("GetAutoScaleConfigResponse.Queues["+ i +"].HostNameSuffix"));
+			queueInfo.setSystemDiskSize(_ctx.integerValue("GetAutoScaleConfigResponse.Queues["+ i +"].SystemDiskSize"));
+			queueInfo.setSystemDiskCategory(_ctx.stringValue("GetAutoScaleConfigResponse.Queues["+ i +"].SystemDiskCategory"));
+			queueInfo.setSystemDiskLevel(_ctx.stringValue("GetAutoScaleConfigResponse.Queues["+ i +"].SystemDiskLevel"));
 
 			List<InstanceTypeInfo> instanceTypes = new ArrayList<InstanceTypeInfo>();
 			for (int j = 0; j < _ctx.lengthValue("GetAutoScaleConfigResponse.Queues["+ i +"].InstanceTypes.Length"); j++) {

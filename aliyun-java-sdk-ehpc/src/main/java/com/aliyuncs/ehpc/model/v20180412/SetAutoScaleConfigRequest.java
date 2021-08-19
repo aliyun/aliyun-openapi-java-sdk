@@ -204,25 +204,29 @@ public class SetAutoScaleConfigRequest extends RpcAcsRequest<SetAutoScaleConfigR
 		this.queuess = queuess;	
 		if (queuess != null) {
 			for (int depth1 = 0; depth1 < queuess.size(); depth1++) {
-				putQueryParameter("Queues." + (depth1 + 1) + ".SpotStrategy" , queuess.get(depth1).getSpotStrategy());
 				putQueryParameter("Queues." + (depth1 + 1) + ".QueueName" , queuess.get(depth1).getQueueName());
-				putQueryParameter("Queues." + (depth1 + 1) + ".MinNodesInQueue" , queuess.get(depth1).getMinNodesInQueue());
+				putQueryParameter("Queues." + (depth1 + 1) + ".SystemDiskLevel" , queuess.get(depth1).getSystemDiskLevel());
 				if (queuess.get(depth1).getInstanceTypess() != null) {
 					for (int depth2 = 0; depth2 < queuess.get(depth1).getInstanceTypess().size(); depth2++) {
 						putQueryParameter("Queues." + (depth1 + 1) + ".InstanceTypes." + (depth2 + 1) + ".SpotStrategy" , queuess.get(depth1).getInstanceTypess().get(depth2).getSpotStrategy());
 						putQueryParameter("Queues." + (depth1 + 1) + ".InstanceTypes." + (depth2 + 1) + ".VSwitchId" , queuess.get(depth1).getInstanceTypess().get(depth2).getVSwitchId());
 						putQueryParameter("Queues." + (depth1 + 1) + ".InstanceTypes." + (depth2 + 1) + ".InstanceType" , queuess.get(depth1).getInstanceTypess().get(depth2).getInstanceType());
 						putQueryParameter("Queues." + (depth1 + 1) + ".InstanceTypes." + (depth2 + 1) + ".ZoneId" , queuess.get(depth1).getInstanceTypess().get(depth2).getZoneId());
-						putQueryParameter("Queues." + (depth1 + 1) + ".InstanceTypes." + (depth2 + 1) + ".HostNamePrefix" , queuess.get(depth1).getInstanceTypess().get(depth2).getHostNamePrefix());
 						putQueryParameter("Queues." + (depth1 + 1) + ".InstanceTypes." + (depth2 + 1) + ".SpotPriceLimit" , queuess.get(depth1).getInstanceTypess().get(depth2).getSpotPriceLimit());
 					}
 				}
-				putQueryParameter("Queues." + (depth1 + 1) + ".MaxNodesInQueue" , queuess.get(depth1).getMaxNodesInQueue());
-				putQueryParameter("Queues." + (depth1 + 1) + ".InstanceType" , queuess.get(depth1).getInstanceType());
-				putQueryParameter("Queues." + (depth1 + 1) + ".QueueImageId" , queuess.get(depth1).getQueueImageId());
 				putQueryParameter("Queues." + (depth1 + 1) + ".EnableAutoGrow" , queuess.get(depth1).getEnableAutoGrow());
 				putQueryParameter("Queues." + (depth1 + 1) + ".SpotPriceLimit" , queuess.get(depth1).getSpotPriceLimit());
+				putQueryParameter("Queues." + (depth1 + 1) + ".HostNameSuffix" , queuess.get(depth1).getHostNameSuffix());
 				putQueryParameter("Queues." + (depth1 + 1) + ".EnableAutoShrink" , queuess.get(depth1).getEnableAutoShrink());
+				putQueryParameter("Queues." + (depth1 + 1) + ".SpotStrategy" , queuess.get(depth1).getSpotStrategy());
+				putQueryParameter("Queues." + (depth1 + 1) + ".MinNodesInQueue" , queuess.get(depth1).getMinNodesInQueue());
+				putQueryParameter("Queues." + (depth1 + 1) + ".SystemDiskCategory" , queuess.get(depth1).getSystemDiskCategory());
+				putQueryParameter("Queues." + (depth1 + 1) + ".MaxNodesInQueue" , queuess.get(depth1).getMaxNodesInQueue());
+				putQueryParameter("Queues." + (depth1 + 1) + ".SystemDiskSize" , queuess.get(depth1).getSystemDiskSize());
+				putQueryParameter("Queues." + (depth1 + 1) + ".InstanceType" , queuess.get(depth1).getInstanceType());
+				putQueryParameter("Queues." + (depth1 + 1) + ".QueueImageId" , queuess.get(depth1).getQueueImageId());
+				putQueryParameter("Queues." + (depth1 + 1) + ".HostNamePrefix" , queuess.get(depth1).getHostNamePrefix());
 			}
 		}	
 	}
@@ -251,33 +255,35 @@ public class SetAutoScaleConfigRequest extends RpcAcsRequest<SetAutoScaleConfigR
 
 	public static class Queues {
 
-		private String spotStrategy;
-
 		private String queueName;
 
-		private Integer minNodesInQueue;
+		private String systemDiskLevel;
 
 		private List<InstanceTypes> instanceTypess;
-
-		private Integer maxNodesInQueue;
-
-		private String instanceType;
-
-		private String queueImageId;
 
 		private Boolean enableAutoGrow;
 
 		private Float spotPriceLimit;
 
+		private String hostNameSuffix;
+
 		private Boolean enableAutoShrink;
 
-		public String getSpotStrategy() {
-			return this.spotStrategy;
-		}
+		private String spotStrategy;
 
-		public void setSpotStrategy(String spotStrategy) {
-			this.spotStrategy = spotStrategy;
-		}
+		private Integer minNodesInQueue;
+
+		private String systemDiskCategory;
+
+		private Integer maxNodesInQueue;
+
+		private Integer systemDiskSize;
+
+		private String instanceType;
+
+		private String queueImageId;
+
+		private String hostNamePrefix;
 
 		public String getQueueName() {
 			return this.queueName;
@@ -287,12 +293,12 @@ public class SetAutoScaleConfigRequest extends RpcAcsRequest<SetAutoScaleConfigR
 			this.queueName = queueName;
 		}
 
-		public Integer getMinNodesInQueue() {
-			return this.minNodesInQueue;
+		public String getSystemDiskLevel() {
+			return this.systemDiskLevel;
 		}
 
-		public void setMinNodesInQueue(Integer minNodesInQueue) {
-			this.minNodesInQueue = minNodesInQueue;
+		public void setSystemDiskLevel(String systemDiskLevel) {
+			this.systemDiskLevel = systemDiskLevel;
 		}
 
 		public List<InstanceTypes> getInstanceTypess() {
@@ -301,30 +307,6 @@ public class SetAutoScaleConfigRequest extends RpcAcsRequest<SetAutoScaleConfigR
 
 		public void setInstanceTypess(List<InstanceTypes> instanceTypess) {
 			this.instanceTypess = instanceTypess;
-		}
-
-		public Integer getMaxNodesInQueue() {
-			return this.maxNodesInQueue;
-		}
-
-		public void setMaxNodesInQueue(Integer maxNodesInQueue) {
-			this.maxNodesInQueue = maxNodesInQueue;
-		}
-
-		public String getInstanceType() {
-			return this.instanceType;
-		}
-
-		public void setInstanceType(String instanceType) {
-			this.instanceType = instanceType;
-		}
-
-		public String getQueueImageId() {
-			return this.queueImageId;
-		}
-
-		public void setQueueImageId(String queueImageId) {
-			this.queueImageId = queueImageId;
 		}
 
 		public Boolean getEnableAutoGrow() {
@@ -343,12 +325,84 @@ public class SetAutoScaleConfigRequest extends RpcAcsRequest<SetAutoScaleConfigR
 			this.spotPriceLimit = spotPriceLimit;
 		}
 
+		public String getHostNameSuffix() {
+			return this.hostNameSuffix;
+		}
+
+		public void setHostNameSuffix(String hostNameSuffix) {
+			this.hostNameSuffix = hostNameSuffix;
+		}
+
 		public Boolean getEnableAutoShrink() {
 			return this.enableAutoShrink;
 		}
 
 		public void setEnableAutoShrink(Boolean enableAutoShrink) {
 			this.enableAutoShrink = enableAutoShrink;
+		}
+
+		public String getSpotStrategy() {
+			return this.spotStrategy;
+		}
+
+		public void setSpotStrategy(String spotStrategy) {
+			this.spotStrategy = spotStrategy;
+		}
+
+		public Integer getMinNodesInQueue() {
+			return this.minNodesInQueue;
+		}
+
+		public void setMinNodesInQueue(Integer minNodesInQueue) {
+			this.minNodesInQueue = minNodesInQueue;
+		}
+
+		public String getSystemDiskCategory() {
+			return this.systemDiskCategory;
+		}
+
+		public void setSystemDiskCategory(String systemDiskCategory) {
+			this.systemDiskCategory = systemDiskCategory;
+		}
+
+		public Integer getMaxNodesInQueue() {
+			return this.maxNodesInQueue;
+		}
+
+		public void setMaxNodesInQueue(Integer maxNodesInQueue) {
+			this.maxNodesInQueue = maxNodesInQueue;
+		}
+
+		public Integer getSystemDiskSize() {
+			return this.systemDiskSize;
+		}
+
+		public void setSystemDiskSize(Integer systemDiskSize) {
+			this.systemDiskSize = systemDiskSize;
+		}
+
+		public String getInstanceType() {
+			return this.instanceType;
+		}
+
+		public void setInstanceType(String instanceType) {
+			this.instanceType = instanceType;
+		}
+
+		public String getQueueImageId() {
+			return this.queueImageId;
+		}
+
+		public void setQueueImageId(String queueImageId) {
+			this.queueImageId = queueImageId;
+		}
+
+		public String getHostNamePrefix() {
+			return this.hostNamePrefix;
+		}
+
+		public void setHostNamePrefix(String hostNamePrefix) {
+			this.hostNamePrefix = hostNamePrefix;
 		}
 
 		public static class InstanceTypes {
@@ -360,8 +414,6 @@ public class SetAutoScaleConfigRequest extends RpcAcsRequest<SetAutoScaleConfigR
 			private String instanceType;
 
 			private String zoneId;
-
-			private String hostNamePrefix;
 
 			private Float spotPriceLimit;
 
@@ -395,14 +447,6 @@ public class SetAutoScaleConfigRequest extends RpcAcsRequest<SetAutoScaleConfigR
 
 			public void setZoneId(String zoneId) {
 				this.zoneId = zoneId;
-			}
-
-			public String getHostNamePrefix() {
-				return this.hostNamePrefix;
-			}
-
-			public void setHostNamePrefix(String hostNamePrefix) {
-				this.hostNamePrefix = hostNamePrefix;
 			}
 
 			public Float getSpotPriceLimit() {

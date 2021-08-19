@@ -110,6 +110,8 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 
 	private String osTag;
 
+	private String clusterVersion;
+
 	private Boolean isComputeEss;
 
 	private List<Application> applications;
@@ -612,6 +614,17 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 		this.osTag = osTag;
 		if(osTag != null){
 			putQueryParameter("OsTag", osTag);
+		}
+	}
+
+	public String getClusterVersion() {
+		return this.clusterVersion;
+	}
+
+	public void setClusterVersion(String clusterVersion) {
+		this.clusterVersion = clusterVersion;
+		if(clusterVersion != null){
+			putQueryParameter("ClusterVersion", clusterVersion);
 		}
 	}
 

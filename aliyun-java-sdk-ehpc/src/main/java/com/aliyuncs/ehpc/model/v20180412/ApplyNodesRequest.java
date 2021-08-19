@@ -62,7 +62,11 @@ public class ApplyNodesRequest extends RpcAcsRequest<ApplyNodesResponse> {
 
 	private String instanceFamilyLevel;
 
+	private Integer round;
+
 	private String internetChargeType;
+
+	private Integer interval;
 
 	private List<InstanceTypeModel> instanceTypeModels;
 
@@ -281,6 +285,17 @@ public class ApplyNodesRequest extends RpcAcsRequest<ApplyNodesResponse> {
 		}
 	}
 
+	public Integer getRound() {
+		return this.round;
+	}
+
+	public void setRound(Integer round) {
+		this.round = round;
+		if(round != null){
+			putQueryParameter("Round", round.toString());
+		}
+	}
+
 	public String getInternetChargeType() {
 		return this.internetChargeType;
 	}
@@ -289,6 +304,17 @@ public class ApplyNodesRequest extends RpcAcsRequest<ApplyNodesResponse> {
 		this.internetChargeType = internetChargeType;
 		if(internetChargeType != null){
 			putQueryParameter("InternetChargeType", internetChargeType);
+		}
+	}
+
+	public Integer getInterval() {
+		return this.interval;
+	}
+
+	public void setInterval(Integer interval) {
+		this.interval = interval;
+		if(interval != null){
+			putQueryParameter("Interval", interval.toString());
 		}
 	}
 

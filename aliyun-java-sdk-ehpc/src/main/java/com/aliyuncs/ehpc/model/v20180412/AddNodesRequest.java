@@ -63,6 +63,8 @@ public class AddNodesRequest extends RpcAcsRequest<AddNodesResponse> {
 
 	private String hostNameSuffix;
 
+	private Boolean sync;
+
 	private String vSwitchId;
 
 	private String periodUnit;
@@ -295,6 +297,17 @@ public class AddNodesRequest extends RpcAcsRequest<AddNodesResponse> {
 		this.hostNameSuffix = hostNameSuffix;
 		if(hostNameSuffix != null){
 			putQueryParameter("HostNameSuffix", hostNameSuffix);
+		}
+	}
+
+	public Boolean getSync() {
+		return this.sync;
+	}
+
+	public void setSync(Boolean sync) {
+		this.sync = sync;
+		if(sync != null){
+			putQueryParameter("Sync", sync.toString());
 		}
 	}
 

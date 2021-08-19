@@ -23,7 +23,6 @@ public class CreateJobFileResponseUnmarshaller {
 	public static CreateJobFileResponse unmarshall(CreateJobFileResponse createJobFileResponse, UnmarshallerContext _ctx) {
 		
 		createJobFileResponse.setRequestId(_ctx.stringValue("CreateJobFileResponse.RequestId"));
-		createJobFileResponse.setTemplateId(_ctx.stringValue("CreateJobFileResponse.TemplateId"));
 	 
 	 	return createJobFileResponse;
 	}

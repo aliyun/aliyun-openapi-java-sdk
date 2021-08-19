@@ -14,16 +14,17 @@
 
 package com.aliyuncs.ehpc.transform.v20180412;
 
-import com.aliyuncs.ehpc.model.v20180412.BindAccountToClusterUserResponse;
+import com.aliyuncs.ehpc.model.v20180412.SetSchedulerInfoResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class BindAccountToClusterUserResponseUnmarshaller {
+public class SetSchedulerInfoResponseUnmarshaller {
 
-	public static BindAccountToClusterUserResponse unmarshall(BindAccountToClusterUserResponse bindAccountToClusterUserResponse, UnmarshallerContext _ctx) {
+	public static SetSchedulerInfoResponse unmarshall(SetSchedulerInfoResponse setSchedulerInfoResponse, UnmarshallerContext _ctx) {
 		
-		bindAccountToClusterUserResponse.setRequestId(_ctx.stringValue("BindAccountToClusterUserResponse.RequestId"));
+		setSchedulerInfoResponse.setRequestId(_ctx.stringValue("SetSchedulerInfoResponse.RequestId"));
+		setSchedulerInfoResponse.setMessage(_ctx.stringValue("SetSchedulerInfoResponse.Message"));
 	 
-	 	return bindAccountToClusterUserResponse;
+	 	return setSchedulerInfoResponse;
 	}
 }

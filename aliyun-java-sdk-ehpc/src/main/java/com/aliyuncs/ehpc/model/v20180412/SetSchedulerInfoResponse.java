@@ -15,16 +15,18 @@
 package com.aliyuncs.ehpc.model.v20180412;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ehpc.transform.v20180412.BindAccountToClusterUserResponseUnmarshaller;
+import com.aliyuncs.ehpc.transform.v20180412.SetSchedulerInfoResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class BindAccountToClusterUserResponse extends AcsResponse {
+public class SetSchedulerInfoResponse extends AcsResponse {
 
 	private String requestId;
+
+	private String message;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -34,8 +36,21 @@ public class BindAccountToClusterUserResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
 	@Override
-	public BindAccountToClusterUserResponse getInstance(UnmarshallerContext context) {
-		return	BindAccountToClusterUserResponseUnmarshaller.unmarshall(this, context);
+	public SetSchedulerInfoResponse getInstance(UnmarshallerContext context) {
+		return	SetSchedulerInfoResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

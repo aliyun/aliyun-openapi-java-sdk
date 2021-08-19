@@ -26,22 +26,12 @@ public class CreateJobFileResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String templateId;
-
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getTemplateId() {
-		return this.templateId;
-	}
-
-	public void setTemplateId(String templateId) {
-		this.templateId = templateId;
 	}
 
 	@Override
