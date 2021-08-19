@@ -738,6 +738,8 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 				putQueryParameter("Volume." + (depth1 + 1) + ".FlexVolume.FsType", volumes.get(depth1).getFlexVolumeFsType());
 				putQueryParameter("Volume." + (depth1 + 1) + ".FlexVolume.Options", volumes.get(depth1).getFlexVolumeOptions());
 				putQueryParameter("Volume." + (depth1 + 1) + ".FlexVolume.Driver", volumes.get(depth1).getFlexVolumeDriver());
+				putQueryParameter("Volume." + (depth1 + 1) + ".HostPathVolume.Path", volumes.get(depth1).getHostPathVolumePath());
+				putQueryParameter("Volume." + (depth1 + 1) + ".HostPathVolume.Type", volumes.get(depth1).getHostPathVolumeType());
 			}
 		}
 	}
@@ -1698,6 +1700,10 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 
 		private String flexVolumeDriver;
 
+		private String hostPathVolumePath;
+
+		private String hostPathVolumeType;
+
 		private String type;
 
 		public String getName() {
@@ -1802,6 +1808,22 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 
 		public void setFlexVolumeDriver(String flexVolumeDriver) {
 			this.flexVolumeDriver = flexVolumeDriver;
+		}
+
+		public String getHostPathVolumePath() {
+			return this.hostPathVolumePath;
+		}
+
+		public void setHostPathVolumePath(String hostPathVolumePath) {
+			this.hostPathVolumePath = hostPathVolumePath;
+		}
+
+		public String getHostPathVolumeType() {
+			return this.hostPathVolumeType;
+		}
+
+		public void setHostPathVolumeType(String hostPathVolumeType) {
+			this.hostPathVolumeType = hostPathVolumeType;
 		}
 
 		public String getType() {

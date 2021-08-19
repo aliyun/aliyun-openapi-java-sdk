@@ -741,6 +741,8 @@ public class BatchCreateContainerGroupsRequest extends RpcAcsRequest<BatchCreate
                 putQueryParameter("Volume." + (depth1 + 1) + ".FlexVolume.FsType", volumes.get(depth1).getFlexVolumeFsType());
                 putQueryParameter("Volume." + (depth1 + 1) + ".FlexVolume.Options", volumes.get(depth1).getFlexVolumeOptions());
                 putQueryParameter("Volume." + (depth1 + 1) + ".FlexVolume.Driver", volumes.get(depth1).getFlexVolumeDriver());
+                putQueryParameter("Volume." + (depth1 + 1) + ".HostPathVolume.Path", volumes.get(depth1).getHostPathVolumePath());
+                putQueryParameter("Volume." + (depth1 + 1) + ".HostPathVolume.Type", volumes.get(depth1).getHostPathVolumeType());
             }
         }
     }
