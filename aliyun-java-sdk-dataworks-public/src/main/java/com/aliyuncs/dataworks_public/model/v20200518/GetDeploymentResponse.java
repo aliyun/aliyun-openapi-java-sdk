@@ -116,6 +116,8 @@ public class GetDeploymentResponse extends AcsResponse {
 
 			private String errorMessage;
 
+			private Integer checkingStatus;
+
 			public String getName() {
 				return this.name;
 			}
@@ -186,6 +188,14 @@ public class GetDeploymentResponse extends AcsResponse {
 
 			public void setErrorMessage(String errorMessage) {
 				this.errorMessage = errorMessage;
+			}
+
+			public Integer getCheckingStatus() {
+				return this.checkingStatus;
+			}
+
+			public void setCheckingStatus(Integer checkingStatus) {
+				this.checkingStatus = checkingStatus;
 			}
 		}
 	}

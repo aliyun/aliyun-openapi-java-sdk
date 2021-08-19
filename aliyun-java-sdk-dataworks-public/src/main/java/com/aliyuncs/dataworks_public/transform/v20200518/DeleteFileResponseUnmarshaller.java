@@ -27,6 +27,7 @@ public class DeleteFileResponseUnmarshaller {
 		deleteFileResponse.setErrorCode(_ctx.stringValue("DeleteFileResponse.ErrorCode"));
 		deleteFileResponse.setErrorMessage(_ctx.stringValue("DeleteFileResponse.ErrorMessage"));
 		deleteFileResponse.setHttpStatusCode(_ctx.integerValue("DeleteFileResponse.HttpStatusCode"));
+		deleteFileResponse.setDeploymentId(_ctx.longValue("DeleteFileResponse.DeploymentId"));
 	 
 	 	return deleteFileResponse;
 	}

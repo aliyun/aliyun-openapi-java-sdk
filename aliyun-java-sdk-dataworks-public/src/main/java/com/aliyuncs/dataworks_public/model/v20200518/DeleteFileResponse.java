@@ -34,6 +34,8 @@ public class DeleteFileResponse extends AcsResponse {
 
 	private Integer httpStatusCode;
 
+	private Long deploymentId;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -72,6 +74,14 @@ public class DeleteFileResponse extends AcsResponse {
 
 	public void setHttpStatusCode(Integer httpStatusCode) {
 		this.httpStatusCode = httpStatusCode;
+	}
+
+	public Long getDeploymentId() {
+		return this.deploymentId;
+	}
+
+	public void setDeploymentId(Long deploymentId) {
+		this.deploymentId = deploymentId;
 	}
 
 	@Override

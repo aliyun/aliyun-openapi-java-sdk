@@ -42,6 +42,7 @@ public class GetDeploymentResponseUnmarshaller {
 		deployment.setFromEnvironment(_ctx.integerValue("GetDeploymentResponse.Data.Deployment.FromEnvironment"));
 		deployment.setToEnvironment(_ctx.integerValue("GetDeploymentResponse.Data.Deployment.ToEnvironment"));
 		deployment.setErrorMessage(_ctx.stringValue("GetDeploymentResponse.Data.Deployment.ErrorMessage"));
+		deployment.setCheckingStatus(_ctx.integerValue("GetDeploymentResponse.Data.Deployment.CheckingStatus"));
 		data.setDeployment(deployment);
 		getDeploymentResponse.setData(data);
 	 

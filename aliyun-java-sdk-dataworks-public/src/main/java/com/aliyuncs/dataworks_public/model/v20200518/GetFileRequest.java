@@ -27,6 +27,8 @@ public class GetFileRequest extends RpcAcsRequest<GetFileResponse> {
 
 	private Long projectId;
 
+	private Long nodeId;
+
 	private String projectIdentifier;
 
 	private Long fileId;
@@ -47,6 +49,17 @@ public class GetFileRequest extends RpcAcsRequest<GetFileResponse> {
 		this.projectId = projectId;
 		if(projectId != null){
 			putBodyParameter("ProjectId", projectId.toString());
+		}
+	}
+
+	public Long getNodeId() {
+		return this.nodeId;
+	}
+
+	public void setNodeId(Long nodeId) {
+		this.nodeId = nodeId;
+		if(nodeId != null){
+			putBodyParameter("NodeId", nodeId.toString());
 		}
 	}
 
