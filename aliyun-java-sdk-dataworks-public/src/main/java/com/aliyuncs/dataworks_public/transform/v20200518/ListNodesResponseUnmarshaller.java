@@ -59,6 +59,7 @@ public class ListNodesResponseUnmarshaller {
 			nodesItem.setDqcType(_ctx.integerValue("ListNodesResponse.Data.Nodes["+ i +"].DqcType"));
 			nodesItem.setDqcDescription(_ctx.stringValue("ListNodesResponse.Data.Nodes["+ i +"].DqcDescription"));
 			nodesItem.setRelatedFlowId(_ctx.longValue("ListNodesResponse.Data.Nodes["+ i +"].RelatedFlowId"));
+			nodesItem.setBusinessId(_ctx.longValue("ListNodesResponse.Data.Nodes["+ i +"].BusinessId"));
 
 			nodes.add(nodesItem);
 		}

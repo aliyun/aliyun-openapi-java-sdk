@@ -48,6 +48,7 @@ public class GetNodeResponseUnmarshaller {
 		data.setDqcType(_ctx.integerValue("GetNodeResponse.Data.DqcType"));
 		data.setDqcDescription(_ctx.stringValue("GetNodeResponse.Data.DqcDescription"));
 		data.setRelatedFlowId(_ctx.longValue("GetNodeResponse.Data.RelatedFlowId"));
+		data.setBusinessId(_ctx.longValue("GetNodeResponse.Data.BusinessId"));
 		getNodeResponse.setData(data);
 	 
 	 	return getNodeResponse;

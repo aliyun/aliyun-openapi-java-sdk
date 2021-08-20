@@ -56,6 +56,7 @@ public class GetInstanceResponseUnmarshaller {
 		data.setRelatedFlowId(_ctx.longValue("GetInstanceResponse.Data.RelatedFlowId"));
 		data.setTaskType(_ctx.stringValue("GetInstanceResponse.Data.TaskType"));
 		data.setTaskRerunTime(_ctx.integerValue("GetInstanceResponse.Data.TaskRerunTime"));
+		data.setBusinessId(_ctx.longValue("GetInstanceResponse.Data.BusinessId"));
 		getInstanceResponse.setData(data);
 	 
 	 	return getInstanceResponse;

@@ -165,6 +165,8 @@ public class ListNodesResponse extends AcsResponse {
 
 			private Long relatedFlowId;
 
+			private Long businessId;
+
 			public Long getNodeId() {
 				return this.nodeId;
 			}
@@ -307,6 +309,14 @@ public class ListNodesResponse extends AcsResponse {
 
 			public void setRelatedFlowId(Long relatedFlowId) {
 				this.relatedFlowId = relatedFlowId;
+			}
+
+			public Long getBusinessId() {
+				return this.businessId;
+			}
+
+			public void setBusinessId(Long businessId) {
+				this.businessId = businessId;
 			}
 		}
 	}

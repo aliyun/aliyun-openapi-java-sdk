@@ -138,6 +138,8 @@ public class GetInstanceResponse extends AcsResponse {
 
 		private Integer taskRerunTime;
 
+		private Long businessId;
+
 		public Long getNodeId() {
 			return this.nodeId;
 		}
@@ -344,6 +346,14 @@ public class GetInstanceResponse extends AcsResponse {
 
 		public void setTaskRerunTime(Integer taskRerunTime) {
 			this.taskRerunTime = taskRerunTime;
+		}
+
+		public Long getBusinessId() {
+			return this.businessId;
+		}
+
+		public void setBusinessId(Long businessId) {
+			this.businessId = businessId;
 		}
 	}
 
