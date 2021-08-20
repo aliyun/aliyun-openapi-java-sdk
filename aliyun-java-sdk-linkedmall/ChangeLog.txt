@@ -1,3 +1,6 @@
+2021-08-20 Version: 2.12.22
+- Add modifyReceiveAddress interface.
+
 2021-07-07 Version: 2.12.21
 - Add QueryGuideItemGroupWithOutInventory.
 
