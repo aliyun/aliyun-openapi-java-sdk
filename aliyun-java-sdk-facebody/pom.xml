@@ -4,7 +4,7 @@
   <groupId>com.aliyun</groupId>
   <artifactId>aliyun-java-sdk-facebody</artifactId>
   <packaging>jar</packaging>
-  <version>1.2.20</version>
+  <version>1.2.21</version>
   <name>aliyun-java-sdk-facebody</name>
   <url>http://www.aliyun.com</url>
   <description>Aliyun Open API SDK for Java
