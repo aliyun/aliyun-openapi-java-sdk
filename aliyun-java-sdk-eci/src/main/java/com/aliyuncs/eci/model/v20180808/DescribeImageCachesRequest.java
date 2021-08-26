@@ -32,8 +32,6 @@ public class DescribeImageCachesRequest extends RpcAcsRequest<DescribeImageCache
 
 	private String imageCacheName;
 
-	private String image;
-
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -99,17 +97,6 @@ public class DescribeImageCachesRequest extends RpcAcsRequest<DescribeImageCache
 		this.imageCacheName = imageCacheName;
 		if(imageCacheName != null){
 			putQueryParameter("ImageCacheName", imageCacheName);
-		}
-	}
-
-	public String getImage() {
-		return this.image;
-	}
-
-	public void setImage(String image) {
-		this.image = image;
-		if(image != null){
-			putQueryParameter("Image", image);
 		}
 	}
 
