@@ -29,7 +29,7 @@ public class ModifyNetworkPackageEnabledRequest extends RpcAcsRequest<ModifyNetw
 
 	private Boolean enabled;
 	public ModifyNetworkPackageEnabledRequest() {
-		super("ecd", "2020-09-30", "ModifyNetworkPackageEnabled", "gwsecd");
+		super("ecd", "2020-09-30", "ModifyNetworkPackageEnabled");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

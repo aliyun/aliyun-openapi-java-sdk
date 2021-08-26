@@ -26,9 +26,9 @@ public class DescribeScanTaskProgressResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String createTime;
-
 	private String taskStatus;
+
+	private String createTime;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,20 +38,20 @@ public class DescribeScanTaskProgressResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getCreateTime() {
-		return this.createTime;
-	}
-
-	public void setCreateTime(String createTime) {
-		this.createTime = createTime;
-	}
-
 	public String getTaskStatus() {
 		return this.taskStatus;
 	}
 
 	public void setTaskStatus(String taskStatus) {
 		this.taskStatus = taskStatus;
+	}
+
+	public String getCreateTime() {
+		return this.createTime;
+	}
+
+	public void setCreateTime(String createTime) {
+		this.createTime = createTime;
 	}
 
 	@Override

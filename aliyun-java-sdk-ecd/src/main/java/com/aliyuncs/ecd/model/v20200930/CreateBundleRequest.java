@@ -30,6 +30,8 @@ public class CreateBundleRequest extends RpcAcsRequest<CreateBundleResponse> {
 
 	private String description;
 
+	private String language;
+
 	private String bundleName;
 
 	private List<Integer> userDiskSizeGibs;
@@ -38,7 +40,7 @@ public class CreateBundleRequest extends RpcAcsRequest<CreateBundleResponse> {
 
 	private Integer rootDiskSizeGib;
 	public CreateBundleRequest() {
-		super("ecd", "2020-09-30", "CreateBundle", "gwsecd");
+		super("ecd", "2020-09-30", "CreateBundle");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -65,6 +67,17 @@ public class CreateBundleRequest extends RpcAcsRequest<CreateBundleResponse> {
 		this.description = description;
 		if(description != null){
 			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getLanguage() {
+		return this.language;
+	}
+
+	public void setLanguage(String language) {
+		this.language = language;
+		if(language != null){
+			putQueryParameter("Language", language);
 		}
 	}
 

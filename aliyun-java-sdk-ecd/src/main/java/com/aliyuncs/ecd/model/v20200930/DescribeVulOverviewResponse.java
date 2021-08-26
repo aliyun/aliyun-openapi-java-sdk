@@ -24,13 +24,29 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeVulOverviewResponse extends AcsResponse {
 
+	private Integer nntfCount;
+
+	private Integer laterCount;
+
 	private String requestId;
 
 	private Integer asapCount;
 
-	private Integer laterCount;
+	public Integer getNntfCount() {
+		return this.nntfCount;
+	}
 
-	private Integer nntfCount;
+	public void setNntfCount(Integer nntfCount) {
+		this.nntfCount = nntfCount;
+	}
+
+	public Integer getLaterCount() {
+		return this.laterCount;
+	}
+
+	public void setLaterCount(Integer laterCount) {
+		this.laterCount = laterCount;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -46,22 +62,6 @@ public class DescribeVulOverviewResponse extends AcsResponse {
 
 	public void setAsapCount(Integer asapCount) {
 		this.asapCount = asapCount;
-	}
-
-	public Integer getLaterCount() {
-		return this.laterCount;
-	}
-
-	public void setLaterCount(Integer laterCount) {
-		this.laterCount = laterCount;
-	}
-
-	public Integer getNntfCount() {
-		return this.nntfCount;
-	}
-
-	public void setNntfCount(Integer nntfCount) {
-		this.nntfCount = nntfCount;
 	}
 
 	@Override

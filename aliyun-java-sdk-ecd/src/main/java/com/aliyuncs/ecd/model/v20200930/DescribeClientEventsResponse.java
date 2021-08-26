@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeClientEventsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String nextToken;
 
+	private String requestId;
+
 	private List<Event> events;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getNextToken() {
 		return this.nextToken;
@@ -45,6 +37,14 @@ public class DescribeClientEventsResponse extends AcsResponse {
 
 	public void setNextToken(String nextToken) {
 		this.nextToken = nextToken;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<Event> getEvents() {
@@ -57,168 +57,48 @@ public class DescribeClientEventsResponse extends AcsResponse {
 
 	public static class Event {
 
-		private String eventId;
-
-		private String eventType;
-
-		private String eventTime;
-
-		private String regionId;
-
-		private String aliUid;
-
-		private String endUserId;
-
-		private String desktopId;
-
-		private String desktopIp;
-
-		private String directoryId;
-
-		private String officeSiteId;
-
-		private String directoryType;
-
-		private String officeSiteType;
-
-		private String clientOS;
-
-		private String clientVersion;
-
-		private String clientIp;
-
-		private String bytesSend;
+		private String status;
 
 		private String bytesReceived;
 
-		private String status;
+		private String desktopIp;
 
-		public String getEventId() {
-			return this.eventId;
+		private String eventTime;
+
+		private String bytesSend;
+
+		private String officeSiteId;
+
+		private String aliUid;
+
+		private String desktopId;
+
+		private String regionId;
+
+		private String eventId;
+
+		private String directoryType;
+
+		private String eventType;
+
+		private String endUserId;
+
+		private String clientIp;
+
+		private String clientOS;
+
+		private String officeSiteType;
+
+		private String directoryId;
+
+		private String clientVersion;
+
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setEventId(String eventId) {
-			this.eventId = eventId;
-		}
-
-		public String getEventType() {
-			return this.eventType;
-		}
-
-		public void setEventType(String eventType) {
-			this.eventType = eventType;
-		}
-
-		public String getEventTime() {
-			return this.eventTime;
-		}
-
-		public void setEventTime(String eventTime) {
-			this.eventTime = eventTime;
-		}
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		public String getAliUid() {
-			return this.aliUid;
-		}
-
-		public void setAliUid(String aliUid) {
-			this.aliUid = aliUid;
-		}
-
-		public String getEndUserId() {
-			return this.endUserId;
-		}
-
-		public void setEndUserId(String endUserId) {
-			this.endUserId = endUserId;
-		}
-
-		public String getDesktopId() {
-			return this.desktopId;
-		}
-
-		public void setDesktopId(String desktopId) {
-			this.desktopId = desktopId;
-		}
-
-		public String getDesktopIp() {
-			return this.desktopIp;
-		}
-
-		public void setDesktopIp(String desktopIp) {
-			this.desktopIp = desktopIp;
-		}
-
-		public String getDirectoryId() {
-			return this.directoryId;
-		}
-
-		public void setDirectoryId(String directoryId) {
-			this.directoryId = directoryId;
-		}
-
-		public String getOfficeSiteId() {
-			return this.officeSiteId;
-		}
-
-		public void setOfficeSiteId(String officeSiteId) {
-			this.officeSiteId = officeSiteId;
-		}
-
-		public String getDirectoryType() {
-			return this.directoryType;
-		}
-
-		public void setDirectoryType(String directoryType) {
-			this.directoryType = directoryType;
-		}
-
-		public String getOfficeSiteType() {
-			return this.officeSiteType;
-		}
-
-		public void setOfficeSiteType(String officeSiteType) {
-			this.officeSiteType = officeSiteType;
-		}
-
-		public String getClientOS() {
-			return this.clientOS;
-		}
-
-		public void setClientOS(String clientOS) {
-			this.clientOS = clientOS;
-		}
-
-		public String getClientVersion() {
-			return this.clientVersion;
-		}
-
-		public void setClientVersion(String clientVersion) {
-			this.clientVersion = clientVersion;
-		}
-
-		public String getClientIp() {
-			return this.clientIp;
-		}
-
-		public void setClientIp(String clientIp) {
-			this.clientIp = clientIp;
-		}
-
-		public String getBytesSend() {
-			return this.bytesSend;
-		}
-
-		public void setBytesSend(String bytesSend) {
-			this.bytesSend = bytesSend;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public String getBytesReceived() {
@@ -229,12 +109,132 @@ public class DescribeClientEventsResponse extends AcsResponse {
 			this.bytesReceived = bytesReceived;
 		}
 
-		public String getStatus() {
-			return this.status;
+		public String getDesktopIp() {
+			return this.desktopIp;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
+		public void setDesktopIp(String desktopIp) {
+			this.desktopIp = desktopIp;
+		}
+
+		public String getEventTime() {
+			return this.eventTime;
+		}
+
+		public void setEventTime(String eventTime) {
+			this.eventTime = eventTime;
+		}
+
+		public String getBytesSend() {
+			return this.bytesSend;
+		}
+
+		public void setBytesSend(String bytesSend) {
+			this.bytesSend = bytesSend;
+		}
+
+		public String getOfficeSiteId() {
+			return this.officeSiteId;
+		}
+
+		public void setOfficeSiteId(String officeSiteId) {
+			this.officeSiteId = officeSiteId;
+		}
+
+		public String getAliUid() {
+			return this.aliUid;
+		}
+
+		public void setAliUid(String aliUid) {
+			this.aliUid = aliUid;
+		}
+
+		public String getDesktopId() {
+			return this.desktopId;
+		}
+
+		public void setDesktopId(String desktopId) {
+			this.desktopId = desktopId;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		public String getEventId() {
+			return this.eventId;
+		}
+
+		public void setEventId(String eventId) {
+			this.eventId = eventId;
+		}
+
+		public String getDirectoryType() {
+			return this.directoryType;
+		}
+
+		public void setDirectoryType(String directoryType) {
+			this.directoryType = directoryType;
+		}
+
+		public String getEventType() {
+			return this.eventType;
+		}
+
+		public void setEventType(String eventType) {
+			this.eventType = eventType;
+		}
+
+		public String getEndUserId() {
+			return this.endUserId;
+		}
+
+		public void setEndUserId(String endUserId) {
+			this.endUserId = endUserId;
+		}
+
+		public String getClientIp() {
+			return this.clientIp;
+		}
+
+		public void setClientIp(String clientIp) {
+			this.clientIp = clientIp;
+		}
+
+		public String getClientOS() {
+			return this.clientOS;
+		}
+
+		public void setClientOS(String clientOS) {
+			this.clientOS = clientOS;
+		}
+
+		public String getOfficeSiteType() {
+			return this.officeSiteType;
+		}
+
+		public void setOfficeSiteType(String officeSiteType) {
+			this.officeSiteType = officeSiteType;
+		}
+
+		public String getDirectoryId() {
+			return this.directoryId;
+		}
+
+		public void setDirectoryId(String directoryId) {
+			this.directoryId = directoryId;
+		}
+
+		public String getClientVersion() {
+			return this.clientVersion;
+		}
+
+		public void setClientVersion(String clientVersion) {
+			this.clientVersion = clientVersion;
 		}
 	}
 

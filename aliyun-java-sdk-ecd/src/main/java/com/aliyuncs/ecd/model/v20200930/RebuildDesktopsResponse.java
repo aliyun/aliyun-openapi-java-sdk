@@ -47,19 +47,11 @@ public class RebuildDesktopsResponse extends AcsResponse {
 
 	public static class RebuildResult {
 
-		private String desktopId;
-
 		private String code;
 
 		private String message;
 
-		public String getDesktopId() {
-			return this.desktopId;
-		}
-
-		public void setDesktopId(String desktopId) {
-			this.desktopId = desktopId;
-		}
+		private String desktopId;
 
 		public String getCode() {
 			return this.code;
@@ -75,6 +67,14 @@ public class RebuildDesktopsResponse extends AcsResponse {
 
 		public void setMessage(String message) {
 			this.message = message;
+		}
+
+		public String getDesktopId() {
+			return this.desktopId;
+		}
+
+		public void setDesktopId(String desktopId) {
+			this.desktopId = desktopId;
 		}
 	}
 

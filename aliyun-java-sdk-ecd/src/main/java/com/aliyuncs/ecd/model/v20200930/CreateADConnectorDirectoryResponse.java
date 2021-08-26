@@ -25,20 +25,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateADConnectorDirectoryResponse extends AcsResponse {
 
-	private String directoryId;
+	private String trustPassword;
 
 	private String requestId;
 
-	private String trustPassword;
+	private String directoryId;
 
 	private List<AdConnector> adConnectors;
 
-	public String getDirectoryId() {
-		return this.directoryId;
+	public String getTrustPassword() {
+		return this.trustPassword;
 	}
 
-	public void setDirectoryId(String directoryId) {
-		this.directoryId = directoryId;
+	public void setTrustPassword(String trustPassword) {
+		this.trustPassword = trustPassword;
 	}
 
 	public String getRequestId() {
@@ -49,12 +49,12 @@ public class CreateADConnectorDirectoryResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getTrustPassword() {
-		return this.trustPassword;
+	public String getDirectoryId() {
+		return this.directoryId;
 	}
 
-	public void setTrustPassword(String trustPassword) {
-		this.trustPassword = trustPassword;
+	public void setDirectoryId(String directoryId) {
+		this.directoryId = directoryId;
 	}
 
 	public List<AdConnector> getAdConnectors() {

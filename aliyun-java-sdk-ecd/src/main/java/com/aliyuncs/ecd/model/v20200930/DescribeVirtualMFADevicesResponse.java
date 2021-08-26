@@ -57,52 +57,28 @@ public class DescribeVirtualMFADevicesResponse extends AcsResponse {
 
 	public static class VirtualMFADevice {
 
-		private String directoryId;
-
-		private String officeSiteId;
-
-		private String endUserId;
-
-		private String gmtEnabled;
+		private String serialNumber;
 
 		private String gmtUnlock;
 
+		private String endUserId;
+
 		private Integer consecutiveFails;
 
-		private String serialNumber;
+		private String officeSiteId;
 
 		private String status;
 
-		public String getDirectoryId() {
-			return this.directoryId;
+		private String directoryId;
+
+		private String gmtEnabled;
+
+		public String getSerialNumber() {
+			return this.serialNumber;
 		}
 
-		public void setDirectoryId(String directoryId) {
-			this.directoryId = directoryId;
-		}
-
-		public String getOfficeSiteId() {
-			return this.officeSiteId;
-		}
-
-		public void setOfficeSiteId(String officeSiteId) {
-			this.officeSiteId = officeSiteId;
-		}
-
-		public String getEndUserId() {
-			return this.endUserId;
-		}
-
-		public void setEndUserId(String endUserId) {
-			this.endUserId = endUserId;
-		}
-
-		public String getGmtEnabled() {
-			return this.gmtEnabled;
-		}
-
-		public void setGmtEnabled(String gmtEnabled) {
-			this.gmtEnabled = gmtEnabled;
+		public void setSerialNumber(String serialNumber) {
+			this.serialNumber = serialNumber;
 		}
 
 		public String getGmtUnlock() {
@@ -113,6 +89,14 @@ public class DescribeVirtualMFADevicesResponse extends AcsResponse {
 			this.gmtUnlock = gmtUnlock;
 		}
 
+		public String getEndUserId() {
+			return this.endUserId;
+		}
+
+		public void setEndUserId(String endUserId) {
+			this.endUserId = endUserId;
+		}
+
 		public Integer getConsecutiveFails() {
 			return this.consecutiveFails;
 		}
@@ -121,12 +105,12 @@ public class DescribeVirtualMFADevicesResponse extends AcsResponse {
 			this.consecutiveFails = consecutiveFails;
 		}
 
-		public String getSerialNumber() {
-			return this.serialNumber;
+		public String getOfficeSiteId() {
+			return this.officeSiteId;
 		}
 
-		public void setSerialNumber(String serialNumber) {
-			this.serialNumber = serialNumber;
+		public void setOfficeSiteId(String officeSiteId) {
+			this.officeSiteId = officeSiteId;
 		}
 
 		public String getStatus() {
@@ -135,6 +119,22 @@ public class DescribeVirtualMFADevicesResponse extends AcsResponse {
 
 		public void setStatus(String status) {
 			this.status = status;
+		}
+
+		public String getDirectoryId() {
+			return this.directoryId;
+		}
+
+		public void setDirectoryId(String directoryId) {
+			this.directoryId = directoryId;
+		}
+
+		public String getGmtEnabled() {
+			return this.gmtEnabled;
+		}
+
+		public void setGmtEnabled(String gmtEnabled) {
+			this.gmtEnabled = gmtEnabled;
 		}
 	}
 

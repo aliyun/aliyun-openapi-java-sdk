@@ -27,7 +27,7 @@ public class ResetNASDefaultMountTargetRequest extends RpcAcsRequest<ResetNASDef
 
 	private String fileSystemId;
 	public ResetNASDefaultMountTargetRequest() {
-		super("ecd", "2020-09-30", "ResetNASDefaultMountTarget", "gwsecd");
+		super("ecd", "2020-09-30", "ResetNASDefaultMountTarget");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

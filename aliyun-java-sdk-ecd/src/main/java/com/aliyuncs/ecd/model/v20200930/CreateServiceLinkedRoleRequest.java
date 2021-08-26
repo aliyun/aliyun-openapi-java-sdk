@@ -25,7 +25,7 @@ import com.aliyuncs.ecd.Endpoint;
 public class CreateServiceLinkedRoleRequest extends RpcAcsRequest<CreateServiceLinkedRoleResponse> {
 	   
 	public CreateServiceLinkedRoleRequest() {
-		super("ecd", "2020-09-30", "CreateServiceLinkedRole", "gwsecd");
+		super("ecd", "2020-09-30", "CreateServiceLinkedRole");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

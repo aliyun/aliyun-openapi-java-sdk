@@ -34,7 +34,7 @@ public class DescribeDesktopIdsByVulNamesRequest extends RpcAcsRequest<DescribeD
 
 	private String necessity;
 	public DescribeDesktopIdsByVulNamesRequest() {
-		super("ecd", "2020-09-30", "DescribeDesktopIdsByVulNames", "gwsecd");
+		super("ecd", "2020-09-30", "DescribeDesktopIdsByVulNames");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

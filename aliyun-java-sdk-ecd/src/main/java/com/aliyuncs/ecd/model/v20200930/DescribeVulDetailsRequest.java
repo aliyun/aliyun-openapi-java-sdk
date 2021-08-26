@@ -33,7 +33,7 @@ public class DescribeVulDetailsRequest extends RpcAcsRequest<DescribeVulDetailsR
 
 	private String lang;
 	public DescribeVulDetailsRequest() {
-		super("ecd", "2020-09-30", "DescribeVulDetails", "gwsecd");
+		super("ecd", "2020-09-30", "DescribeVulDetails");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

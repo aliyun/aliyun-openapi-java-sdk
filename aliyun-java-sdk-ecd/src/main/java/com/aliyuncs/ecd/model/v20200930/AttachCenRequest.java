@@ -29,7 +29,7 @@ public class AttachCenRequest extends RpcAcsRequest<AttachCenResponse> {
 
 	private String cenId;
 	public AttachCenRequest() {
-		super("ecd", "2020-09-30", "AttachCen", "gwsecd");
+		super("ecd", "2020-09-30", "AttachCen");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -26,22 +26,45 @@ import com.aliyuncs.ecd.Endpoint;
 public class DescribeBundlesRequest extends RpcAcsRequest<DescribeBundlesResponse> {
 	   
 
+	private Float gpuCount;
+
 	private List<String> bundleIds;
 
 	private String desktopTypeFamily;
 
 	private String nextToken;
 
-	private Integer maxResults;
+	private Boolean fromDesktopGroup;
 
 	private String bundleType;
+
+	private Integer memorySize;
+
+	private Integer maxResults;
+
+	private Boolean checkStock;
+
+	private String protocolType;
+
+	private Integer cpuCount;
 	public DescribeBundlesRequest() {
-		super("ecd", "2020-09-30", "DescribeBundles", "gwsecd");
+		super("ecd", "2020-09-30", "DescribeBundles");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Float getGpuCount() {
+		return this.gpuCount;
+	}
+
+	public void setGpuCount(Float gpuCount) {
+		this.gpuCount = gpuCount;
+		if(gpuCount != null){
+			putQueryParameter("GpuCount", gpuCount.toString());
+		}
 	}
 
 	public List<String> getBundleIds() {
@@ -79,14 +102,14 @@ public class DescribeBundlesRequest extends RpcAcsRequest<DescribeBundlesRespons
 		}
 	}
 
-	public Integer getMaxResults() {
-		return this.maxResults;
+	public Boolean getFromDesktopGroup() {
+		return this.fromDesktopGroup;
 	}
 
-	public void setMaxResults(Integer maxResults) {
-		this.maxResults = maxResults;
-		if(maxResults != null){
-			putQueryParameter("MaxResults", maxResults.toString());
+	public void setFromDesktopGroup(Boolean fromDesktopGroup) {
+		this.fromDesktopGroup = fromDesktopGroup;
+		if(fromDesktopGroup != null){
+			putQueryParameter("FromDesktopGroup", fromDesktopGroup.toString());
 		}
 	}
 
@@ -98,6 +121,61 @@ public class DescribeBundlesRequest extends RpcAcsRequest<DescribeBundlesRespons
 		this.bundleType = bundleType;
 		if(bundleType != null){
 			putQueryParameter("BundleType", bundleType);
+		}
+	}
+
+	public Integer getMemorySize() {
+		return this.memorySize;
+	}
+
+	public void setMemorySize(Integer memorySize) {
+		this.memorySize = memorySize;
+		if(memorySize != null){
+			putQueryParameter("MemorySize", memorySize.toString());
+		}
+	}
+
+	public Integer getMaxResults() {
+		return this.maxResults;
+	}
+
+	public void setMaxResults(Integer maxResults) {
+		this.maxResults = maxResults;
+		if(maxResults != null){
+			putQueryParameter("MaxResults", maxResults.toString());
+		}
+	}
+
+	public Boolean getCheckStock() {
+		return this.checkStock;
+	}
+
+	public void setCheckStock(Boolean checkStock) {
+		this.checkStock = checkStock;
+		if(checkStock != null){
+			putQueryParameter("CheckStock", checkStock.toString());
+		}
+	}
+
+	public String getProtocolType() {
+		return this.protocolType;
+	}
+
+	public void setProtocolType(String protocolType) {
+		this.protocolType = protocolType;
+		if(protocolType != null){
+			putQueryParameter("ProtocolType", protocolType);
+		}
+	}
+
+	public Integer getCpuCount() {
+		return this.cpuCount;
+	}
+
+	public void setCpuCount(Integer cpuCount) {
+		this.cpuCount = cpuCount;
+		if(cpuCount != null){
+			putQueryParameter("CpuCount", cpuCount.toString());
 		}
 	}
 

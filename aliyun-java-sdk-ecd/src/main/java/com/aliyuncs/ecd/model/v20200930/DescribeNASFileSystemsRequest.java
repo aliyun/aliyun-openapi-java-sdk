@@ -34,7 +34,7 @@ public class DescribeNASFileSystemsRequest extends RpcAcsRequest<DescribeNASFile
 
 	private List<String> fileSystemIds;
 	public DescribeNASFileSystemsRequest() {
-		super("ecd", "2020-09-30", "DescribeNASFileSystems", "gwsecd");
+		super("ecd", "2020-09-30", "DescribeNASFileSystems");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

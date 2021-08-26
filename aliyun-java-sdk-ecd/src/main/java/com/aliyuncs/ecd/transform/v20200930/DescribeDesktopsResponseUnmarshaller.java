@@ -30,6 +30,7 @@ public class DescribeDesktopsResponseUnmarshaller {
 	public static DescribeDesktopsResponse unmarshall(DescribeDesktopsResponse describeDesktopsResponse, UnmarshallerContext _ctx) {
 		
 		describeDesktopsResponse.setRequestId(_ctx.stringValue("DescribeDesktopsResponse.RequestId"));
+		describeDesktopsResponse.setTotalCount(_ctx.integerValue("DescribeDesktopsResponse.TotalCount"));
 		describeDesktopsResponse.setNextToken(_ctx.stringValue("DescribeDesktopsResponse.NextToken"));
 
 		List<Desktop> desktops = new ArrayList<Desktop>();
@@ -63,7 +64,11 @@ public class DescribeDesktopsResponseUnmarshaller {
 			desktop.setStartTime(_ctx.stringValue("DescribeDesktopsResponse.Desktops["+ i +"].StartTime"));
 			desktop.setConnectionStatus(_ctx.stringValue("DescribeDesktopsResponse.Desktops["+ i +"].ConnectionStatus"));
 			desktop.setOsType(_ctx.stringValue("DescribeDesktopsResponse.Desktops["+ i +"].OsType"));
+			desktop.setProtocolType(_ctx.stringValue("DescribeDesktopsResponse.Desktops["+ i +"].ProtocolType"));
 			desktop.setManagementFlag(_ctx.stringValue("DescribeDesktopsResponse.Desktops["+ i +"].ManagementFlag"));
+			desktop.setNetworkInterfaceIp(_ctx.stringValue("DescribeDesktopsResponse.Desktops["+ i +"].NetworkInterfaceIp"));
+			desktop.setDesktopGroupId(_ctx.stringValue("DescribeDesktopsResponse.Desktops["+ i +"].DesktopGroupId"));
+			desktop.setNetworkInterfaceIp1(_ctx.stringValue("DescribeDesktopsResponse.Desktops["+ i +"].NetworkInterfaceIp"));
 
 			List<String> endUserIds = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDesktopsResponse.Desktops["+ i +"].EndUserIds.Length"); j++) {

@@ -24,31 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateNASFileSystemResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String officeSiteId;
-
 	private String fileSystemId;
 
 	private String fileSystemName;
 
 	private String mountTargetDomain;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
+	private String requestId;
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getOfficeSiteId() {
-		return this.officeSiteId;
-	}
-
-	public void setOfficeSiteId(String officeSiteId) {
-		this.officeSiteId = officeSiteId;
-	}
+	private String officeSiteId;
 
 	public String getFileSystemId() {
 		return this.fileSystemId;
@@ -72,6 +56,22 @@ public class CreateNASFileSystemResponse extends AcsResponse {
 
 	public void setMountTargetDomain(String mountTargetDomain) {
 		this.mountTargetDomain = mountTargetDomain;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getOfficeSiteId() {
+		return this.officeSiteId;
+	}
+
+	public void setOfficeSiteId(String officeSiteId) {
+		this.officeSiteId = officeSiteId;
 	}
 
 	@Override

@@ -29,7 +29,7 @@ public class ModifyOfficeSiteCrossDesktopAccessRequest extends RpcAcsRequest<Mod
 
 	private Boolean enableCrossDesktopAccess;
 	public ModifyOfficeSiteCrossDesktopAccessRequest() {
-		super("ecd", "2020-09-30", "ModifyOfficeSiteCrossDesktopAccess", "gwsecd");
+		super("ecd", "2020-09-30", "ModifyOfficeSiteCrossDesktopAccess");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

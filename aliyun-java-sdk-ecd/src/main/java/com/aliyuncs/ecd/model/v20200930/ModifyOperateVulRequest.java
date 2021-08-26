@@ -34,7 +34,7 @@ public class ModifyOperateVulRequest extends RpcAcsRequest<ModifyOperateVulRespo
 
 	private String operateType;
 	public ModifyOperateVulRequest() {
-		super("ecd", "2020-09-30", "ModifyOperateVul", "gwsecd");
+		super("ecd", "2020-09-30", "ModifyOperateVul");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

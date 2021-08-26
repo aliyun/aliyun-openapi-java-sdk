@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateRAMDirectoryResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String directoryId;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getDirectoryId() {
 		return this.directoryId;
@@ -42,6 +34,14 @@ public class CreateRAMDirectoryResponse extends AcsResponse {
 
 	public void setDirectoryId(String directoryId) {
 		this.directoryId = directoryId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

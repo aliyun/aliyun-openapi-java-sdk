@@ -49,11 +49,11 @@ public class DescribeVulDetailsResponse extends AcsResponse {
 
 		private String cveId;
 
+		private String summary;
+
 		private String title;
 
 		private String cvssScore;
-
-		private String summary;
 
 		public String getCveId() {
 			return this.cveId;
@@ -61,6 +61,14 @@ public class DescribeVulDetailsResponse extends AcsResponse {
 
 		public void setCveId(String cveId) {
 			this.cveId = cveId;
+		}
+
+		public String getSummary() {
+			return this.summary;
+		}
+
+		public void setSummary(String summary) {
+			this.summary = summary;
 		}
 
 		public String getTitle() {
@@ -77,14 +85,6 @@ public class DescribeVulDetailsResponse extends AcsResponse {
 
 		public void setCvssScore(String cvssScore) {
 			this.cvssScore = cvssScore;
-		}
-
-		public String getSummary() {
-			return this.summary;
-		}
-
-		public void setSummary(String summary) {
-			this.summary = summary;
 		}
 	}
 

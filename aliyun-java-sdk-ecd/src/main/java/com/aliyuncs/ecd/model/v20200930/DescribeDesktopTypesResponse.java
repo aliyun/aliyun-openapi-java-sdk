@@ -47,23 +47,31 @@ public class DescribeDesktopTypesResponse extends AcsResponse {
 
 	public static class DesktopType {
 
+		private String systemDiskSize;
+
 		private String desktopTypeId;
 
-		private String instanceTypeFamily;
+		private String dataDiskSize;
 
 		private String cpuCount;
-
-		private String memorySize;
 
 		private Float gpuCount;
 
 		private String gpuSpec;
 
-		private String systemDiskSize;
+		private String instanceTypeFamily;
 
-		private String dataDiskSize;
+		private String memorySize;
 
 		private List<AllowDiskSizeItem> allowDiskSize;
+
+		public String getSystemDiskSize() {
+			return this.systemDiskSize;
+		}
+
+		public void setSystemDiskSize(String systemDiskSize) {
+			this.systemDiskSize = systemDiskSize;
+		}
 
 		public String getDesktopTypeId() {
 			return this.desktopTypeId;
@@ -73,12 +81,12 @@ public class DescribeDesktopTypesResponse extends AcsResponse {
 			this.desktopTypeId = desktopTypeId;
 		}
 
-		public String getInstanceTypeFamily() {
-			return this.instanceTypeFamily;
+		public String getDataDiskSize() {
+			return this.dataDiskSize;
 		}
 
-		public void setInstanceTypeFamily(String instanceTypeFamily) {
-			this.instanceTypeFamily = instanceTypeFamily;
+		public void setDataDiskSize(String dataDiskSize) {
+			this.dataDiskSize = dataDiskSize;
 		}
 
 		public String getCpuCount() {
@@ -87,14 +95,6 @@ public class DescribeDesktopTypesResponse extends AcsResponse {
 
 		public void setCpuCount(String cpuCount) {
 			this.cpuCount = cpuCount;
-		}
-
-		public String getMemorySize() {
-			return this.memorySize;
-		}
-
-		public void setMemorySize(String memorySize) {
-			this.memorySize = memorySize;
 		}
 
 		public Float getGpuCount() {
@@ -113,20 +113,20 @@ public class DescribeDesktopTypesResponse extends AcsResponse {
 			this.gpuSpec = gpuSpec;
 		}
 
-		public String getSystemDiskSize() {
-			return this.systemDiskSize;
+		public String getInstanceTypeFamily() {
+			return this.instanceTypeFamily;
 		}
 
-		public void setSystemDiskSize(String systemDiskSize) {
-			this.systemDiskSize = systemDiskSize;
+		public void setInstanceTypeFamily(String instanceTypeFamily) {
+			this.instanceTypeFamily = instanceTypeFamily;
 		}
 
-		public String getDataDiskSize() {
-			return this.dataDiskSize;
+		public String getMemorySize() {
+			return this.memorySize;
 		}
 
-		public void setDataDiskSize(String dataDiskSize) {
-			this.dataDiskSize = dataDiskSize;
+		public void setMemorySize(String memorySize) {
+			this.memorySize = memorySize;
 		}
 
 		public List<AllowDiskSizeItem> getAllowDiskSize() {
@@ -139,17 +139,9 @@ public class DescribeDesktopTypesResponse extends AcsResponse {
 
 		public static class AllowDiskSizeItem {
 
-			private Integer systemDiskSize;
-
 			private Integer dataDiskSize;
 
-			public Integer getSystemDiskSize() {
-				return this.systemDiskSize;
-			}
-
-			public void setSystemDiskSize(Integer systemDiskSize) {
-				this.systemDiskSize = systemDiskSize;
-			}
+			private Integer systemDiskSize;
 
 			public Integer getDataDiskSize() {
 				return this.dataDiskSize;
@@ -157,6 +149,14 @@ public class DescribeDesktopTypesResponse extends AcsResponse {
 
 			public void setDataDiskSize(Integer dataDiskSize) {
 				this.dataDiskSize = dataDiskSize;
+			}
+
+			public Integer getSystemDiskSize() {
+				return this.systemDiskSize;
+			}
+
+			public void setSystemDiskSize(Integer systemDiskSize) {
+				this.systemDiskSize = systemDiskSize;
 			}
 		}
 	}

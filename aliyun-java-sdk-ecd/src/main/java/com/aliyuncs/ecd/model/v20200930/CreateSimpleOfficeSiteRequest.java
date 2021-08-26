@@ -39,7 +39,7 @@ public class CreateSimpleOfficeSiteRequest extends RpcAcsRequest<CreateSimpleOff
 
 	private String cidrBlock;
 	public CreateSimpleOfficeSiteRequest() {
-		super("ecd", "2020-09-30", "CreateSimpleOfficeSite", "gwsecd");
+		super("ecd", "2020-09-30", "CreateSimpleOfficeSite");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

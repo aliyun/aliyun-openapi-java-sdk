@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetOfficeSiteSsoStatusResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Boolean ssoStatus;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public Boolean getSsoStatus() {
 		return this.ssoStatus;
@@ -42,6 +34,14 @@ public class GetOfficeSiteSsoStatusResponse extends AcsResponse {
 
 	public void setSsoStatus(Boolean ssoStatus) {
 		this.ssoStatus = ssoStatus;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

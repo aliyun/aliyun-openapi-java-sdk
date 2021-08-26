@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateADConnectorOfficeSiteResponse extends AcsResponse {
 
-	private String officeSiteId;
-
 	private String requestId;
 
-	public String getOfficeSiteId() {
-		return this.officeSiteId;
-	}
-
-	public void setOfficeSiteId(String officeSiteId) {
-		this.officeSiteId = officeSiteId;
-	}
+	private String officeSiteId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -42,6 +34,14 @@ public class CreateADConnectorOfficeSiteResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getOfficeSiteId() {
+		return this.officeSiteId;
+	}
+
+	public void setOfficeSiteId(String officeSiteId) {
+		this.officeSiteId = officeSiteId;
 	}
 
 	@Override

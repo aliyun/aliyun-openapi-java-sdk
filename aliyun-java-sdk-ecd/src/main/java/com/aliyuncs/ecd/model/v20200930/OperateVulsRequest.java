@@ -34,11 +34,11 @@ public class OperateVulsRequest extends RpcAcsRequest<OperateVulsResponse> {
 
 	private List<String> vulNames;
 
-	private List<String> desktopIds;
-
 	private String operateType;
+
+	private List<String> desktopIds;
 	public OperateVulsRequest() {
-		super("ecd", "2020-09-30", "OperateVuls", "gwsecd");
+		super("ecd", "2020-09-30", "OperateVuls");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -92,6 +92,17 @@ public class OperateVulsRequest extends RpcAcsRequest<OperateVulsResponse> {
 		}	
 	}
 
+	public String getOperateType() {
+		return this.operateType;
+	}
+
+	public void setOperateType(String operateType) {
+		this.operateType = operateType;
+		if(operateType != null){
+			putQueryParameter("OperateType", operateType);
+		}
+	}
+
 	public List<String> getDesktopIds() {
 		return this.desktopIds;
 	}
@@ -103,17 +114,6 @@ public class OperateVulsRequest extends RpcAcsRequest<OperateVulsResponse> {
 				putQueryParameter("DesktopId." + (i + 1) , desktopIds.get(i));
 			}
 		}	
-	}
-
-	public String getOperateType() {
-		return this.operateType;
-	}
-
-	public void setOperateType(String operateType) {
-		this.operateType = operateType;
-		if(operateType != null){
-			putQueryParameter("OperateType", operateType);
-		}
 	}
 
 	@Override

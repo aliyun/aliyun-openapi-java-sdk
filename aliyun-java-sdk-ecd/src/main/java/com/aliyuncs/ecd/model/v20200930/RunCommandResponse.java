@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class RunCommandResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String invokeId;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getInvokeId() {
 		return this.invokeId;
@@ -42,6 +34,14 @@ public class RunCommandResponse extends AcsResponse {
 
 	public void setInvokeId(String invokeId) {
 		this.invokeId = invokeId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

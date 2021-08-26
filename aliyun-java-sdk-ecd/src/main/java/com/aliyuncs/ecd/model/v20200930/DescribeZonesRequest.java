@@ -25,7 +25,7 @@ import com.aliyuncs.ecd.Endpoint;
 public class DescribeZonesRequest extends RpcAcsRequest<DescribeZonesResponse> {
 	   
 	public DescribeZonesRequest() {
-		super("ecd", "2020-09-30", "DescribeZones", "gwsecd");
+		super("ecd", "2020-09-30", "DescribeZones");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

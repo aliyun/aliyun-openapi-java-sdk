@@ -35,7 +35,7 @@ public class ModifyDesktopSpecRequest extends RpcAcsRequest<ModifyDesktopSpecRes
 
 	private Integer rootDiskSizeGib;
 	public ModifyDesktopSpecRequest() {
-		super("ecd", "2020-09-30", "ModifyDesktopSpec", "gwsecd");
+		super("ecd", "2020-09-30", "ModifyDesktopSpec");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

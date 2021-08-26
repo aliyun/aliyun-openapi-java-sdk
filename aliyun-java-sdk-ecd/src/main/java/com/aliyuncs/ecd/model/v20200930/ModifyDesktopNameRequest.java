@@ -29,7 +29,7 @@ public class ModifyDesktopNameRequest extends RpcAcsRequest<ModifyDesktopNameRes
 
 	private String desktopId;
 	public ModifyDesktopNameRequest() {
-		super("ecd", "2020-09-30", "ModifyDesktopName", "gwsecd");
+		super("ecd", "2020-09-30", "ModifyDesktopName");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

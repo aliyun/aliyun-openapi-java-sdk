@@ -25,7 +25,7 @@ import com.aliyuncs.ecd.Endpoint;
 public class DescribeVulOverviewRequest extends RpcAcsRequest<DescribeVulOverviewResponse> {
 	   
 	public DescribeVulOverviewRequest() {
-		super("ecd", "2020-09-30", "DescribeVulOverview", "gwsecd");
+		super("ecd", "2020-09-30", "DescribeVulOverview");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

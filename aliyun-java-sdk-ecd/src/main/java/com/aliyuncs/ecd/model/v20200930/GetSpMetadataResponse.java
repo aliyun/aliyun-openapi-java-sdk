@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetSpMetadataResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String spMetadata;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getSpMetadata() {
 		return this.spMetadata;
@@ -42,6 +34,14 @@ public class GetSpMetadataResponse extends AcsResponse {
 
 	public void setSpMetadata(String spMetadata) {
 		this.spMetadata = spMetadata;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

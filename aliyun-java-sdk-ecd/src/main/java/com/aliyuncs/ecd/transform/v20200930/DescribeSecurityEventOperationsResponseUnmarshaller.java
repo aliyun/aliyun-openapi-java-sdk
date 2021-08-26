@@ -31,8 +31,8 @@ public class DescribeSecurityEventOperationsResponseUnmarshaller {
 		List<SecurityEventOperation> securityEventOperations = new ArrayList<SecurityEventOperation>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSecurityEventOperationsResponse.SecurityEventOperations.Length"); i++) {
 			SecurityEventOperation securityEventOperation = new SecurityEventOperation();
-			securityEventOperation.setOperationCode(_ctx.stringValue("DescribeSecurityEventOperationsResponse.SecurityEventOperations["+ i +"].OperationCode"));
 			securityEventOperation.setOperationParams(_ctx.stringValue("DescribeSecurityEventOperationsResponse.SecurityEventOperations["+ i +"].OperationParams"));
+			securityEventOperation.setOperationCode(_ctx.stringValue("DescribeSecurityEventOperationsResponse.SecurityEventOperations["+ i +"].OperationCode"));
 			securityEventOperation.setUserCanOperate(_ctx.booleanValue("DescribeSecurityEventOperationsResponse.SecurityEventOperations["+ i +"].UserCanOperate"));
 
 			securityEventOperations.add(securityEventOperation);

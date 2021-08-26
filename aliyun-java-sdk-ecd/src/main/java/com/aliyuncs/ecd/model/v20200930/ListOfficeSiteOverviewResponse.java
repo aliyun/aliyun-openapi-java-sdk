@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListOfficeSiteOverviewResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String nextToken;
 
+	private String requestId;
+
 	private List<OfficeSiteOverviewResult> officeSiteOverviewResults;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getNextToken() {
 		return this.nextToken;
@@ -45,6 +37,14 @@ public class ListOfficeSiteOverviewResponse extends AcsResponse {
 
 	public void setNextToken(String nextToken) {
 		this.nextToken = nextToken;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<OfficeSiteOverviewResult> getOfficeSiteOverviewResults() {
@@ -57,45 +57,21 @@ public class ListOfficeSiteOverviewResponse extends AcsResponse {
 
 	public static class OfficeSiteOverviewResult {
 
-		private String regionId;
-
-		private String officeSiteId;
-
-		private String officeSiteName;
-
 		private String officeSiteStatus;
 
 		private Integer totalEdsCount;
 
+		private Integer willExpiredEdsCount;
+
+		private String officeSiteId;
+
 		private Integer runningEdsCount;
 
-		private Integer willExpiredEdsCount;
+		private String officeSiteName;
 
 		private Integer hasExpiredEdsCount;
 
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		public String getOfficeSiteId() {
-			return this.officeSiteId;
-		}
-
-		public void setOfficeSiteId(String officeSiteId) {
-			this.officeSiteId = officeSiteId;
-		}
-
-		public String getOfficeSiteName() {
-			return this.officeSiteName;
-		}
-
-		public void setOfficeSiteName(String officeSiteName) {
-			this.officeSiteName = officeSiteName;
-		}
+		private String regionId;
 
 		public String getOfficeSiteStatus() {
 			return this.officeSiteStatus;
@@ -113,14 +89,6 @@ public class ListOfficeSiteOverviewResponse extends AcsResponse {
 			this.totalEdsCount = totalEdsCount;
 		}
 
-		public Integer getRunningEdsCount() {
-			return this.runningEdsCount;
-		}
-
-		public void setRunningEdsCount(Integer runningEdsCount) {
-			this.runningEdsCount = runningEdsCount;
-		}
-
 		public Integer getWillExpiredEdsCount() {
 			return this.willExpiredEdsCount;
 		}
@@ -129,12 +97,44 @@ public class ListOfficeSiteOverviewResponse extends AcsResponse {
 			this.willExpiredEdsCount = willExpiredEdsCount;
 		}
 
+		public String getOfficeSiteId() {
+			return this.officeSiteId;
+		}
+
+		public void setOfficeSiteId(String officeSiteId) {
+			this.officeSiteId = officeSiteId;
+		}
+
+		public Integer getRunningEdsCount() {
+			return this.runningEdsCount;
+		}
+
+		public void setRunningEdsCount(Integer runningEdsCount) {
+			this.runningEdsCount = runningEdsCount;
+		}
+
+		public String getOfficeSiteName() {
+			return this.officeSiteName;
+		}
+
+		public void setOfficeSiteName(String officeSiteName) {
+			this.officeSiteName = officeSiteName;
+		}
+
 		public Integer getHasExpiredEdsCount() {
 			return this.hasExpiredEdsCount;
 		}
 
 		public void setHasExpiredEdsCount(Integer hasExpiredEdsCount) {
 			this.hasExpiredEdsCount = hasExpiredEdsCount;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 	}
 

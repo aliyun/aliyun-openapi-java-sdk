@@ -33,7 +33,7 @@ public class DescribeAlarmEventStackInfoRequest extends RpcAcsRequest<DescribeAl
 
 	private String lang;
 	public DescribeAlarmEventStackInfoRequest() {
-		super("ecd", "2020-09-30", "DescribeAlarmEventStackInfo", "gwsecd");
+		super("ecd", "2020-09-30", "DescribeAlarmEventStackInfo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

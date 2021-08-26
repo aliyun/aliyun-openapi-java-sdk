@@ -28,7 +28,7 @@ public class DeleteBundlesRequest extends RpcAcsRequest<DeleteBundlesResponse> {
 
 	private List<String> bundleIds;
 	public DeleteBundlesRequest() {
-		super("ecd", "2020-09-30", "DeleteBundles", "gwsecd");
+		super("ecd", "2020-09-30", "DeleteBundles");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

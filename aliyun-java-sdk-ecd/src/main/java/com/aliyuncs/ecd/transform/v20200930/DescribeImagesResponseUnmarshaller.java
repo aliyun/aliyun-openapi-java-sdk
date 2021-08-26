@@ -43,6 +43,7 @@ public class DescribeImagesResponseUnmarshaller {
 			image.setStatus(_ctx.stringValue("DescribeImagesResponse.Images["+ i +"].Status"));
 			image.setDescription(_ctx.stringValue("DescribeImagesResponse.Images["+ i +"].Description"));
 			image.setOsType(_ctx.stringValue("DescribeImagesResponse.Images["+ i +"].OsType"));
+			image.setProtocolType(_ctx.stringValue("DescribeImagesResponse.Images["+ i +"].ProtocolType"));
 
 			images.add(image);
 		}

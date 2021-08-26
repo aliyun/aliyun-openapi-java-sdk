@@ -33,7 +33,7 @@ public class DescribeSuspEventQuaraFilesRequest extends RpcAcsRequest<DescribeSu
 
 	private String status;
 	public DescribeSuspEventQuaraFilesRequest() {
-		super("ecd", "2020-09-30", "DescribeSuspEventQuaraFiles", "gwsecd");
+		super("ecd", "2020-09-30", "DescribeSuspEventQuaraFiles");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

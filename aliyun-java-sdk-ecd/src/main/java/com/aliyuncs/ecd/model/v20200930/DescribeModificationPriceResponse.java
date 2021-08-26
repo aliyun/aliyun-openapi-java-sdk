@@ -69,17 +69,9 @@ public class DescribeModificationPriceResponse extends AcsResponse {
 
 		public static class Rule {
 
-			private Long ruleId;
-
 			private String description;
 
-			public Long getRuleId() {
-				return this.ruleId;
-			}
-
-			public void setRuleId(Long ruleId) {
-				this.ruleId = ruleId;
-			}
+			private Long ruleId;
 
 			public String getDescription() {
 				return this.description;
@@ -87,6 +79,14 @@ public class DescribeModificationPriceResponse extends AcsResponse {
 
 			public void setDescription(String description) {
 				this.description = description;
+			}
+
+			public Long getRuleId() {
+				return this.ruleId;
+			}
+
+			public void setRuleId(Long ruleId) {
+				this.ruleId = ruleId;
 			}
 		}
 
@@ -96,9 +96,9 @@ public class DescribeModificationPriceResponse extends AcsResponse {
 
 			private Float discountPrice;
 
-			private Float tradePrice;
-
 			private String currency;
+
+			private Float tradePrice;
 
 			private List<Promotion> promotions;
 
@@ -118,20 +118,20 @@ public class DescribeModificationPriceResponse extends AcsResponse {
 				this.discountPrice = discountPrice;
 			}
 
-			public Float getTradePrice() {
-				return this.tradePrice;
-			}
-
-			public void setTradePrice(Float tradePrice) {
-				this.tradePrice = tradePrice;
-			}
-
 			public String getCurrency() {
 				return this.currency;
 			}
 
 			public void setCurrency(String currency) {
 				this.currency = currency;
+			}
+
+			public Float getTradePrice() {
+				return this.tradePrice;
+			}
+
+			public void setTradePrice(Float tradePrice) {
+				this.tradePrice = tradePrice;
 			}
 
 			public List<Promotion> getPromotions() {
@@ -144,15 +144,23 @@ public class DescribeModificationPriceResponse extends AcsResponse {
 
 			public static class Promotion {
 
+				private String promotionDesc;
+
 				private String optionCode;
+
+				private Boolean selected;
 
 				private String promotionId;
 
 				private String promotionName;
 
-				private String promotionDesc;
+				public String getPromotionDesc() {
+					return this.promotionDesc;
+				}
 
-				private Boolean selected;
+				public void setPromotionDesc(String promotionDesc) {
+					this.promotionDesc = promotionDesc;
+				}
 
 				public String getOptionCode() {
 					return this.optionCode;
@@ -160,6 +168,14 @@ public class DescribeModificationPriceResponse extends AcsResponse {
 
 				public void setOptionCode(String optionCode) {
 					this.optionCode = optionCode;
+				}
+
+				public Boolean getSelected() {
+					return this.selected;
+				}
+
+				public void setSelected(Boolean selected) {
+					this.selected = selected;
 				}
 
 				public String getPromotionId() {
@@ -176,22 +192,6 @@ public class DescribeModificationPriceResponse extends AcsResponse {
 
 				public void setPromotionName(String promotionName) {
 					this.promotionName = promotionName;
-				}
-
-				public String getPromotionDesc() {
-					return this.promotionDesc;
-				}
-
-				public void setPromotionDesc(String promotionDesc) {
-					this.promotionDesc = promotionDesc;
-				}
-
-				public Boolean getSelected() {
-					return this.selected;
-				}
-
-				public void setSelected(Boolean selected) {
-					this.selected = selected;
 				}
 			}
 		}

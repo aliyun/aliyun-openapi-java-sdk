@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeSuspEventQuaraFilesResponse extends AcsResponse {
 
+	private Integer currentPage;
+
 	private String requestId;
 
 	private Integer pageSize;
 
-	private Integer currentPage;
-
 	private Integer totalCount;
 
 	private List<QuaraFile> quaraFiles;
+
+	public Integer getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -49,14 +57,6 @@ public class DescribeSuspEventQuaraFilesResponse extends AcsResponse {
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
-	}
-
-	public Integer getCurrentPage() {
-		return this.currentPage;
-	}
-
-	public void setCurrentPage(Integer currentPage) {
-		this.currentPage = currentPage;
 	}
 
 	public Integer getTotalCount() {
@@ -77,25 +77,33 @@ public class DescribeSuspEventQuaraFilesResponse extends AcsResponse {
 
 	public static class QuaraFile {
 
+		private String status;
+
 		private String eventName;
 
 		private String eventType;
 
-		private Integer id;
-
-		private String desktopId;
+		private String path;
 
 		private String desktopName;
 
 		private String md5;
 
+		private String tag;
+
+		private String desktopId;
+
+		private Integer id;
+
 		private String modifyTime;
 
-		private String path;
+		public String getStatus() {
+			return this.status;
+		}
 
-		private String status;
-
-		private String tag;
+		public void setStatus(String status) {
+			this.status = status;
+		}
 
 		public String getEventName() {
 			return this.eventName;
@@ -113,20 +121,12 @@ public class DescribeSuspEventQuaraFilesResponse extends AcsResponse {
 			this.eventType = eventType;
 		}
 
-		public Integer getId() {
-			return this.id;
+		public String getPath() {
+			return this.path;
 		}
 
-		public void setId(Integer id) {
-			this.id = id;
-		}
-
-		public String getDesktopId() {
-			return this.desktopId;
-		}
-
-		public void setDesktopId(String desktopId) {
-			this.desktopId = desktopId;
+		public void setPath(String path) {
+			this.path = path;
 		}
 
 		public String getDesktopName() {
@@ -145,36 +145,36 @@ public class DescribeSuspEventQuaraFilesResponse extends AcsResponse {
 			this.md5 = md5;
 		}
 
-		public String getModifyTime() {
-			return this.modifyTime;
-		}
-
-		public void setModifyTime(String modifyTime) {
-			this.modifyTime = modifyTime;
-		}
-
-		public String getPath() {
-			return this.path;
-		}
-
-		public void setPath(String path) {
-			this.path = path;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
 		public String getTag() {
 			return this.tag;
 		}
 
 		public void setTag(String tag) {
 			this.tag = tag;
+		}
+
+		public String getDesktopId() {
+			return this.desktopId;
+		}
+
+		public void setDesktopId(String desktopId) {
+			this.desktopId = desktopId;
+		}
+
+		public Integer getId() {
+			return this.id;
+		}
+
+		public void setId(Integer id) {
+			this.id = id;
+		}
+
+		public String getModifyTime() {
+			return this.modifyTime;
+		}
+
+		public void setModifyTime(String modifyTime) {
+			this.modifyTime = modifyTime;
 		}
 	}
 

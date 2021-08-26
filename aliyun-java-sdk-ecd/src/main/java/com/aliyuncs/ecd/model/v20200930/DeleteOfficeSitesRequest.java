@@ -28,7 +28,7 @@ public class DeleteOfficeSitesRequest extends RpcAcsRequest<DeleteOfficeSitesRes
 
 	private List<String> officeSiteIds;
 	public DeleteOfficeSitesRequest() {
-		super("ecd", "2020-09-30", "DeleteOfficeSites", "gwsecd");
+		super("ecd", "2020-09-30", "DeleteOfficeSites");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

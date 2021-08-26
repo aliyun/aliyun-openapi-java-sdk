@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateSimpleOfficeSiteResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String officeSiteId;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getOfficeSiteId() {
 		return this.officeSiteId;
@@ -42,6 +34,14 @@ public class CreateSimpleOfficeSiteResponse extends AcsResponse {
 
 	public void setOfficeSiteId(String officeSiteId) {
 		this.officeSiteId = officeSiteId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

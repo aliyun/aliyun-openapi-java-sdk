@@ -32,14 +32,14 @@ public class ListOfficeSiteOverviewResponseUnmarshaller {
 		List<OfficeSiteOverviewResult> officeSiteOverviewResults = new ArrayList<OfficeSiteOverviewResult>();
 		for (int i = 0; i < _ctx.lengthValue("ListOfficeSiteOverviewResponse.OfficeSiteOverviewResults.Length"); i++) {
 			OfficeSiteOverviewResult officeSiteOverviewResult = new OfficeSiteOverviewResult();
-			officeSiteOverviewResult.setRegionId(_ctx.stringValue("ListOfficeSiteOverviewResponse.OfficeSiteOverviewResults["+ i +"].RegionId"));
-			officeSiteOverviewResult.setOfficeSiteId(_ctx.stringValue("ListOfficeSiteOverviewResponse.OfficeSiteOverviewResults["+ i +"].OfficeSiteId"));
-			officeSiteOverviewResult.setOfficeSiteName(_ctx.stringValue("ListOfficeSiteOverviewResponse.OfficeSiteOverviewResults["+ i +"].OfficeSiteName"));
 			officeSiteOverviewResult.setOfficeSiteStatus(_ctx.stringValue("ListOfficeSiteOverviewResponse.OfficeSiteOverviewResults["+ i +"].OfficeSiteStatus"));
 			officeSiteOverviewResult.setTotalEdsCount(_ctx.integerValue("ListOfficeSiteOverviewResponse.OfficeSiteOverviewResults["+ i +"].TotalEdsCount"));
-			officeSiteOverviewResult.setRunningEdsCount(_ctx.integerValue("ListOfficeSiteOverviewResponse.OfficeSiteOverviewResults["+ i +"].RunningEdsCount"));
 			officeSiteOverviewResult.setWillExpiredEdsCount(_ctx.integerValue("ListOfficeSiteOverviewResponse.OfficeSiteOverviewResults["+ i +"].WillExpiredEdsCount"));
+			officeSiteOverviewResult.setOfficeSiteId(_ctx.stringValue("ListOfficeSiteOverviewResponse.OfficeSiteOverviewResults["+ i +"].OfficeSiteId"));
+			officeSiteOverviewResult.setRunningEdsCount(_ctx.integerValue("ListOfficeSiteOverviewResponse.OfficeSiteOverviewResults["+ i +"].RunningEdsCount"));
+			officeSiteOverviewResult.setOfficeSiteName(_ctx.stringValue("ListOfficeSiteOverviewResponse.OfficeSiteOverviewResults["+ i +"].OfficeSiteName"));
 			officeSiteOverviewResult.setHasExpiredEdsCount(_ctx.integerValue("ListOfficeSiteOverviewResponse.OfficeSiteOverviewResults["+ i +"].HasExpiredEdsCount"));
+			officeSiteOverviewResult.setRegionId(_ctx.stringValue("ListOfficeSiteOverviewResponse.OfficeSiteOverviewResults["+ i +"].RegionId"));
 
 			officeSiteOverviewResults.add(officeSiteOverviewResult);
 		}

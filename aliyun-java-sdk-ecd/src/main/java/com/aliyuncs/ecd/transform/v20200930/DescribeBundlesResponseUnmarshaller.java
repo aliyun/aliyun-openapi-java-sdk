@@ -41,6 +41,9 @@ public class DescribeBundlesResponseUnmarshaller {
 			bundle.setDescription(_ctx.stringValue("DescribeBundlesResponse.Bundles["+ i +"].Description"));
 			bundle.setDesktopType(_ctx.stringValue("DescribeBundlesResponse.Bundles["+ i +"].DesktopType"));
 			bundle.setOsType(_ctx.stringValue("DescribeBundlesResponse.Bundles["+ i +"].OsType"));
+			bundle.setStockState(_ctx.stringValue("DescribeBundlesResponse.Bundles["+ i +"].StockState"));
+			bundle.setProtocolType(_ctx.stringValue("DescribeBundlesResponse.Bundles["+ i +"].ProtocolType"));
+			bundle.setLanguage(_ctx.stringValue("DescribeBundlesResponse.Bundles["+ i +"].Language"));
 
 			DesktopTypeAttribute desktopTypeAttribute = new DesktopTypeAttribute();
 			desktopTypeAttribute.setCpuCount(_ctx.integerValue("DescribeBundlesResponse.Bundles["+ i +"].DesktopTypeAttribute.CpuCount"));

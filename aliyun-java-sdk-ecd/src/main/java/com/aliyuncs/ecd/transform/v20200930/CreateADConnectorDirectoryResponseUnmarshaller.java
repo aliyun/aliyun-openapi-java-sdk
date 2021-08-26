@@ -27,8 +27,8 @@ public class CreateADConnectorDirectoryResponseUnmarshaller {
 	public static CreateADConnectorDirectoryResponse unmarshall(CreateADConnectorDirectoryResponse createADConnectorDirectoryResponse, UnmarshallerContext _ctx) {
 		
 		createADConnectorDirectoryResponse.setRequestId(_ctx.stringValue("CreateADConnectorDirectoryResponse.RequestId"));
-		createADConnectorDirectoryResponse.setDirectoryId(_ctx.stringValue("CreateADConnectorDirectoryResponse.DirectoryId"));
 		createADConnectorDirectoryResponse.setTrustPassword(_ctx.stringValue("CreateADConnectorDirectoryResponse.TrustPassword"));
+		createADConnectorDirectoryResponse.setDirectoryId(_ctx.stringValue("CreateADConnectorDirectoryResponse.DirectoryId"));
 
 		List<AdConnector> adConnectors = new ArrayList<AdConnector>();
 		for (int i = 0; i < _ctx.lengthValue("CreateADConnectorDirectoryResponse.AdConnectors.Length"); i++) {

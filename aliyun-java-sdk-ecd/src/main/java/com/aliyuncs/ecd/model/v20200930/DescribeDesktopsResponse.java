@@ -27,6 +27,8 @@ public class DescribeDesktopsResponse extends AcsResponse {
 
 	private String requestId;
 
+	private Integer totalCount;
+
 	private String nextToken;
 
 	private List<Desktop> desktops;
@@ -37,6 +39,14 @@ public class DescribeDesktopsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public String getNextToken() {
@@ -113,7 +123,15 @@ public class DescribeDesktopsResponse extends AcsResponse {
 
 		private String osType;
 
+		private String protocolType;
+
 		private String managementFlag;
+
+		private String networkInterfaceIp;
+
+		private String desktopGroupId;
+
+		private String networkInterfaceIp1;
 
 		private List<Disk> disks;
 
@@ -347,12 +365,44 @@ public class DescribeDesktopsResponse extends AcsResponse {
 			this.osType = osType;
 		}
 
+		public String getProtocolType() {
+			return this.protocolType;
+		}
+
+		public void setProtocolType(String protocolType) {
+			this.protocolType = protocolType;
+		}
+
 		public String getManagementFlag() {
 			return this.managementFlag;
 		}
 
 		public void setManagementFlag(String managementFlag) {
 			this.managementFlag = managementFlag;
+		}
+
+		public String getNetworkInterfaceIp() {
+			return this.networkInterfaceIp;
+		}
+
+		public void setNetworkInterfaceIp(String networkInterfaceIp) {
+			this.networkInterfaceIp = networkInterfaceIp;
+		}
+
+		public String getDesktopGroupId() {
+			return this.desktopGroupId;
+		}
+
+		public void setDesktopGroupId(String desktopGroupId) {
+			this.desktopGroupId = desktopGroupId;
+		}
+
+		public String getNetworkInterfaceIp1() {
+			return this.networkInterfaceIp1;
+		}
+
+		public void setNetworkInterfaceIp1(String networkInterfaceIp1) {
+			this.networkInterfaceIp1 = networkInterfaceIp1;
 		}
 
 		public List<Disk> getDisks() {

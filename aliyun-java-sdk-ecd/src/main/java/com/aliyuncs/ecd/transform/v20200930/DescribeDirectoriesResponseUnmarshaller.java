@@ -34,38 +34,27 @@ public class DescribeDirectoriesResponseUnmarshaller {
 		List<Directory> directories = new ArrayList<Directory>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDirectoriesResponse.Directories.Length"); i++) {
 			Directory directory = new Directory();
-			directory.setDirectoryId(_ctx.stringValue("DescribeDirectoriesResponse.Directories["+ i +"].DirectoryId"));
-			directory.setStatus(_ctx.stringValue("DescribeDirectoriesResponse.Directories["+ i +"].Status"));
-			directory.setDirectoryType(_ctx.stringValue("DescribeDirectoriesResponse.Directories["+ i +"].DirectoryType"));
-			directory.setCreationTime(_ctx.stringValue("DescribeDirectoriesResponse.Directories["+ i +"].CreationTime"));
-			directory.setName(_ctx.stringValue("DescribeDirectoriesResponse.Directories["+ i +"].Name"));
-			directory.setVpcId(_ctx.stringValue("DescribeDirectoriesResponse.Directories["+ i +"].VpcId"));
-			directory.setCustomSecurityGroupId(_ctx.stringValue("DescribeDirectoriesResponse.Directories["+ i +"].CustomSecurityGroupId"));
-			directory.setDnsUserName(_ctx.stringValue("DescribeDirectoriesResponse.Directories["+ i +"].DnsUserName"));
 			directory.setEnableInternetAccess(_ctx.booleanValue("DescribeDirectoriesResponse.Directories["+ i +"].EnableInternetAccess"));
-			directory.setEnableCrossDesktopAccess(_ctx.booleanValue("DescribeDirectoriesResponse.Directories["+ i +"].EnableCrossDesktopAccess"));
-			directory.setEnableAdminAccess(_ctx.booleanValue("DescribeDirectoriesResponse.Directories["+ i +"].EnableAdminAccess"));
-			directory.setDesktopAccessType(_ctx.stringValue("DescribeDirectoriesResponse.Directories["+ i +"].DesktopAccessType"));
-			directory.setDesktopVpcEndpoint(_ctx.stringValue("DescribeDirectoriesResponse.Directories["+ i +"].DesktopVpcEndpoint"));
-			directory.setTrustPassword(_ctx.stringValue("DescribeDirectoriesResponse.Directories["+ i +"].TrustPassword"));
-			directory.setDomainName(_ctx.stringValue("DescribeDirectoriesResponse.Directories["+ i +"].DomainName"));
-			directory.setDomainUserName(_ctx.stringValue("DescribeDirectoriesResponse.Directories["+ i +"].DomainUserName"));
+			directory.setVpcId(_ctx.stringValue("DescribeDirectoriesResponse.Directories["+ i +"].VpcId"));
+			directory.setCreationTime(_ctx.stringValue("DescribeDirectoriesResponse.Directories["+ i +"].CreationTime"));
+			directory.setStatus(_ctx.stringValue("DescribeDirectoriesResponse.Directories["+ i +"].Status"));
 			directory.setDomainPassword(_ctx.stringValue("DescribeDirectoriesResponse.Directories["+ i +"].DomainPassword"));
+			directory.setEnableAdminAccess(_ctx.booleanValue("DescribeDirectoriesResponse.Directories["+ i +"].EnableAdminAccess"));
 			directory.setSubDomainName(_ctx.stringValue("DescribeDirectoriesResponse.Directories["+ i +"].SubDomainName"));
-			directory.setMfaEnabled(_ctx.booleanValue("DescribeDirectoriesResponse.Directories["+ i +"].MfaEnabled"));
+			directory.setDomainUserName(_ctx.stringValue("DescribeDirectoriesResponse.Directories["+ i +"].DomainUserName"));
+			directory.setEnableCrossDesktopAccess(_ctx.booleanValue("DescribeDirectoriesResponse.Directories["+ i +"].EnableCrossDesktopAccess"));
+			directory.setCustomSecurityGroupId(_ctx.stringValue("DescribeDirectoriesResponse.Directories["+ i +"].CustomSecurityGroupId"));
+			directory.setDesktopVpcEndpoint(_ctx.stringValue("DescribeDirectoriesResponse.Directories["+ i +"].DesktopVpcEndpoint"));
 			directory.setSsoEnabled(_ctx.booleanValue("DescribeDirectoriesResponse.Directories["+ i +"].SsoEnabled"));
-
-			List<String> dnsAddress = new ArrayList<String>();
-			for (int j = 0; j < _ctx.lengthValue("DescribeDirectoriesResponse.Directories["+ i +"].DnsAddress.Length"); j++) {
-				dnsAddress.add(_ctx.stringValue("DescribeDirectoriesResponse.Directories["+ i +"].DnsAddress["+ j +"]"));
-			}
-			directory.setDnsAddress(dnsAddress);
-
-			List<String> subDnsAddress = new ArrayList<String>();
-			for (int j = 0; j < _ctx.lengthValue("DescribeDirectoriesResponse.Directories["+ i +"].SubDnsAddress.Length"); j++) {
-				subDnsAddress.add(_ctx.stringValue("DescribeDirectoriesResponse.Directories["+ i +"].SubDnsAddress["+ j +"]"));
-			}
-			directory.setSubDnsAddress(subDnsAddress);
+			directory.setDomainName(_ctx.stringValue("DescribeDirectoriesResponse.Directories["+ i +"].DomainName"));
+			directory.setDesktopAccessType(_ctx.stringValue("DescribeDirectoriesResponse.Directories["+ i +"].DesktopAccessType"));
+			directory.setMfaEnabled(_ctx.booleanValue("DescribeDirectoriesResponse.Directories["+ i +"].MfaEnabled"));
+			directory.setDirectoryType(_ctx.stringValue("DescribeDirectoriesResponse.Directories["+ i +"].DirectoryType"));
+			directory.setDnsUserName(_ctx.stringValue("DescribeDirectoriesResponse.Directories["+ i +"].DnsUserName"));
+			directory.setTrustPassword(_ctx.stringValue("DescribeDirectoriesResponse.Directories["+ i +"].TrustPassword"));
+			directory.setOuName(_ctx.stringValue("DescribeDirectoriesResponse.Directories["+ i +"].OuName"));
+			directory.setName(_ctx.stringValue("DescribeDirectoriesResponse.Directories["+ i +"].Name"));
+			directory.setDirectoryId(_ctx.stringValue("DescribeDirectoriesResponse.Directories["+ i +"].DirectoryId"));
 
 			List<String> vSwitchIds = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDirectoriesResponse.Directories["+ i +"].VSwitchIds.Length"); j++) {
@@ -79,12 +68,25 @@ public class DescribeDirectoriesResponseUnmarshaller {
 			}
 			directory.setFileSystemIds(fileSystemIds);
 
+			List<String> subDnsAddress = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeDirectoriesResponse.Directories["+ i +"].SubDnsAddress.Length"); j++) {
+				subDnsAddress.add(_ctx.stringValue("DescribeDirectoriesResponse.Directories["+ i +"].SubDnsAddress["+ j +"]"));
+			}
+			directory.setSubDnsAddress(subDnsAddress);
+
+			List<String> dnsAddress = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeDirectoriesResponse.Directories["+ i +"].DnsAddress.Length"); j++) {
+				dnsAddress.add(_ctx.stringValue("DescribeDirectoriesResponse.Directories["+ i +"].DnsAddress["+ j +"]"));
+			}
+			directory.setDnsAddress(dnsAddress);
+
 			List<ADConnector> aDConnectors = new ArrayList<ADConnector>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDirectoriesResponse.Directories["+ i +"].ADConnectors.Length"); j++) {
 				ADConnector aDConnector = new ADConnector();
-				aDConnector.setADConnectorAddress(_ctx.stringValue("DescribeDirectoriesResponse.Directories["+ i +"].ADConnectors["+ j +"].ADConnectorAddress"));
-				aDConnector.setVSwitchId(_ctx.stringValue("DescribeDirectoriesResponse.Directories["+ i +"].ADConnectors["+ j +"].VSwitchId"));
 				aDConnector.setConnectorStatus(_ctx.stringValue("DescribeDirectoriesResponse.Directories["+ i +"].ADConnectors["+ j +"].ConnectorStatus"));
+				aDConnector.setVSwitchId(_ctx.stringValue("DescribeDirectoriesResponse.Directories["+ i +"].ADConnectors["+ j +"].VSwitchId"));
+				aDConnector.setADConnectorAddress(_ctx.stringValue("DescribeDirectoriesResponse.Directories["+ i +"].ADConnectors["+ j +"].ADConnectorAddress"));
+				aDConnector.setTrustKey(_ctx.stringValue("DescribeDirectoriesResponse.Directories["+ i +"].ADConnectors["+ j +"].TrustKey"));
 				aDConnector.setNetworkInterfaceId(_ctx.stringValue("DescribeDirectoriesResponse.Directories["+ i +"].ADConnectors["+ j +"].NetworkInterfaceId"));
 
 				aDConnectors.add(aDConnector);
@@ -94,10 +96,10 @@ public class DescribeDirectoriesResponseUnmarshaller {
 			List<Log> logs = new ArrayList<Log>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDirectoriesResponse.Directories["+ i +"].Logs.Length"); j++) {
 				Log log = new Log();
-				log.setLevel(_ctx.stringValue("DescribeDirectoriesResponse.Directories["+ i +"].Logs["+ j +"].Level"));
-				log.setTimeStamp(_ctx.stringValue("DescribeDirectoriesResponse.Directories["+ i +"].Logs["+ j +"].TimeStamp"));
 				log.setStep(_ctx.stringValue("DescribeDirectoriesResponse.Directories["+ i +"].Logs["+ j +"].Step"));
 				log.setMessage(_ctx.stringValue("DescribeDirectoriesResponse.Directories["+ i +"].Logs["+ j +"].Message"));
+				log.setTimeStamp(_ctx.stringValue("DescribeDirectoriesResponse.Directories["+ i +"].Logs["+ j +"].TimeStamp"));
+				log.setLevel(_ctx.stringValue("DescribeDirectoriesResponse.Directories["+ i +"].Logs["+ j +"].Level"));
 
 				logs.add(log);
 			}

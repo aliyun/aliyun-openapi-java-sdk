@@ -25,7 +25,7 @@ import com.aliyuncs.ecd.Endpoint;
 public class CheckUserInSecurityCenterWhiteListRequest extends RpcAcsRequest<CheckUserInSecurityCenterWhiteListResponse> {
 	   
 	public CheckUserInSecurityCenterWhiteListRequest() {
-		super("ecd", "2020-09-30", "CheckUserInSecurityCenterWhiteList", "gwsecd");
+		super("ecd", "2020-09-30", "CheckUserInSecurityCenterWhiteList");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

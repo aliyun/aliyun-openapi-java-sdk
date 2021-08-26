@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeCensResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer pageSize;
 
-	private Integer totalCount;
+	private String requestId;
 
 	private Integer pageNumber;
 
-	private Integer pageSize;
+	private Integer totalCount;
 
 	private List<Cen> cens;
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class DescribeCensResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
 	}
 
 	public Integer getPageNumber() {
@@ -59,12 +59,12 @@ public class DescribeCensResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public Integer getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<Cen> getCens() {
@@ -77,55 +77,23 @@ public class DescribeCensResponse extends AcsResponse {
 
 	public static class Cen {
 
-		private String cenId;
-
-		private String name;
-
-		private String description;
-
-		private String protectionLevel;
-
 		private String status;
 
 		private String creationTime;
 
 		private String ipv6Level;
 
+		private String description;
+
+		private String cenId;
+
+		private String protectionLevel;
+
+		private String name;
+
 		private List<Tag> tags;
 
 		private List<PackageId> packageIds;
-
-		public String getCenId() {
-			return this.cenId;
-		}
-
-		public void setCenId(String cenId) {
-			this.cenId = cenId;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
-		public String getProtectionLevel() {
-			return this.protectionLevel;
-		}
-
-		public void setProtectionLevel(String protectionLevel) {
-			this.protectionLevel = protectionLevel;
-		}
 
 		public String getStatus() {
 			return this.status;
@@ -149,6 +117,38 @@ public class DescribeCensResponse extends AcsResponse {
 
 		public void setIpv6Level(String ipv6Level) {
 			this.ipv6Level = ipv6Level;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getCenId() {
+			return this.cenId;
+		}
+
+		public void setCenId(String cenId) {
+			this.cenId = cenId;
+		}
+
+		public String getProtectionLevel() {
+			return this.protectionLevel;
+		}
+
+		public void setProtectionLevel(String protectionLevel) {
+			this.protectionLevel = protectionLevel;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
 		}
 
 		public List<Tag> getTags() {

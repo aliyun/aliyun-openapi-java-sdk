@@ -32,22 +32,22 @@ public class DescribeNASFileSystemsResponseUnmarshaller {
 		List<FileSystem> fileSystems = new ArrayList<FileSystem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeNASFileSystemsResponse.FileSystems.Length"); i++) {
 			FileSystem fileSystem = new FileSystem();
-			fileSystem.setFileSystemId(_ctx.stringValue("DescribeNASFileSystemsResponse.FileSystems["+ i +"].FileSystemId"));
-			fileSystem.setFileSystemName(_ctx.stringValue("DescribeNASFileSystemsResponse.FileSystems["+ i +"].FileSystemName"));
-			fileSystem.setOfficeSiteId(_ctx.stringValue("DescribeNASFileSystemsResponse.FileSystems["+ i +"].OfficeSiteId"));
-			fileSystem.setOfficeSiteName(_ctx.stringValue("DescribeNASFileSystemsResponse.FileSystems["+ i +"].OfficeSiteName"));
-			fileSystem.setDescription(_ctx.stringValue("DescribeNASFileSystemsResponse.FileSystems["+ i +"].Description"));
-			fileSystem.setCreateTime(_ctx.stringValue("DescribeNASFileSystemsResponse.FileSystems["+ i +"].CreateTime"));
-			fileSystem.setFileSystemType(_ctx.stringValue("DescribeNASFileSystemsResponse.FileSystems["+ i +"].FileSystemType"));
-			fileSystem.setStorageType(_ctx.stringValue("DescribeNASFileSystemsResponse.FileSystems["+ i +"].StorageType"));
-			fileSystem.setSupportAcl(_ctx.booleanValue("DescribeNASFileSystemsResponse.FileSystems["+ i +"].SupportAcl"));
 			fileSystem.setCapacity(_ctx.longValue("DescribeNASFileSystemsResponse.FileSystems["+ i +"].Capacity"));
-			fileSystem.setMeteredSize(_ctx.longValue("DescribeNASFileSystemsResponse.FileSystems["+ i +"].MeteredSize"));
+			fileSystem.setMountTargetStatus(_ctx.stringValue("DescribeNASFileSystemsResponse.FileSystems["+ i +"].MountTargetStatus"));
+			fileSystem.setCreateTime(_ctx.stringValue("DescribeNASFileSystemsResponse.FileSystems["+ i +"].CreateTime"));
+			fileSystem.setOfficeSiteId(_ctx.stringValue("DescribeNASFileSystemsResponse.FileSystems["+ i +"].OfficeSiteId"));
+			fileSystem.setSupportAcl(_ctx.booleanValue("DescribeNASFileSystemsResponse.FileSystems["+ i +"].SupportAcl"));
+			fileSystem.setStorageType(_ctx.stringValue("DescribeNASFileSystemsResponse.FileSystems["+ i +"].StorageType"));
+			fileSystem.setOfficeSiteName(_ctx.stringValue("DescribeNASFileSystemsResponse.FileSystems["+ i +"].OfficeSiteName"));
 			fileSystem.setRegionId(_ctx.stringValue("DescribeNASFileSystemsResponse.FileSystems["+ i +"].RegionId"));
+			fileSystem.setFileSystemId(_ctx.stringValue("DescribeNASFileSystemsResponse.FileSystems["+ i +"].FileSystemId"));
+			fileSystem.setFileSystemType(_ctx.stringValue("DescribeNASFileSystemsResponse.FileSystems["+ i +"].FileSystemType"));
+			fileSystem.setFileSystemName(_ctx.stringValue("DescribeNASFileSystemsResponse.FileSystems["+ i +"].FileSystemName"));
+			fileSystem.setMeteredSize(_ctx.longValue("DescribeNASFileSystemsResponse.FileSystems["+ i +"].MeteredSize"));
+			fileSystem.setMountTargetDomain(_ctx.stringValue("DescribeNASFileSystemsResponse.FileSystems["+ i +"].MountTargetDomain"));
+			fileSystem.setDescription(_ctx.stringValue("DescribeNASFileSystemsResponse.FileSystems["+ i +"].Description"));
 			fileSystem.setZoneId(_ctx.stringValue("DescribeNASFileSystemsResponse.FileSystems["+ i +"].ZoneId"));
 			fileSystem.setFileSystemStatus(_ctx.stringValue("DescribeNASFileSystemsResponse.FileSystems["+ i +"].FileSystemStatus"));
-			fileSystem.setMountTargetStatus(_ctx.stringValue("DescribeNASFileSystemsResponse.FileSystems["+ i +"].MountTargetStatus"));
-			fileSystem.setMountTargetDomain(_ctx.stringValue("DescribeNASFileSystemsResponse.FileSystems["+ i +"].MountTargetDomain"));
 
 			fileSystems.add(fileSystem);
 		}

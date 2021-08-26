@@ -36,17 +36,17 @@ public class DescribeModificationPriceResponseUnmarshaller {
 		Price price = new Price();
 		price.setOriginalPrice(_ctx.floatValue("DescribeModificationPriceResponse.PriceInfo.Price.OriginalPrice"));
 		price.setDiscountPrice(_ctx.floatValue("DescribeModificationPriceResponse.PriceInfo.Price.DiscountPrice"));
-		price.setTradePrice(_ctx.floatValue("DescribeModificationPriceResponse.PriceInfo.Price.TradePrice"));
 		price.setCurrency(_ctx.stringValue("DescribeModificationPriceResponse.PriceInfo.Price.Currency"));
+		price.setTradePrice(_ctx.floatValue("DescribeModificationPriceResponse.PriceInfo.Price.TradePrice"));
 
 		List<Promotion> promotions = new ArrayList<Promotion>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeModificationPriceResponse.PriceInfo.Price.Promotions.Length"); i++) {
 			Promotion promotion = new Promotion();
+			promotion.setPromotionDesc(_ctx.stringValue("DescribeModificationPriceResponse.PriceInfo.Price.Promotions["+ i +"].PromotionDesc"));
 			promotion.setOptionCode(_ctx.stringValue("DescribeModificationPriceResponse.PriceInfo.Price.Promotions["+ i +"].OptionCode"));
+			promotion.setSelected(_ctx.booleanValue("DescribeModificationPriceResponse.PriceInfo.Price.Promotions["+ i +"].Selected"));
 			promotion.setPromotionId(_ctx.stringValue("DescribeModificationPriceResponse.PriceInfo.Price.Promotions["+ i +"].PromotionId"));
 			promotion.setPromotionName(_ctx.stringValue("DescribeModificationPriceResponse.PriceInfo.Price.Promotions["+ i +"].PromotionName"));
-			promotion.setPromotionDesc(_ctx.stringValue("DescribeModificationPriceResponse.PriceInfo.Price.Promotions["+ i +"].PromotionDesc"));
-			promotion.setSelected(_ctx.booleanValue("DescribeModificationPriceResponse.PriceInfo.Price.Promotions["+ i +"].Selected"));
 
 			promotions.add(promotion);
 		}
@@ -56,8 +56,8 @@ public class DescribeModificationPriceResponseUnmarshaller {
 		List<Rule> rules = new ArrayList<Rule>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeModificationPriceResponse.PriceInfo.Rules.Length"); i++) {
 			Rule rule = new Rule();
-			rule.setRuleId(_ctx.longValue("DescribeModificationPriceResponse.PriceInfo.Rules["+ i +"].RuleId"));
 			rule.setDescription(_ctx.stringValue("DescribeModificationPriceResponse.PriceInfo.Rules["+ i +"].Description"));
+			rule.setRuleId(_ctx.longValue("DescribeModificationPriceResponse.PriceInfo.Rules["+ i +"].RuleId"));
 
 			rules.add(rule);
 		}

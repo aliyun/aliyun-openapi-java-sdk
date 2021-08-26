@@ -27,7 +27,7 @@ public class DetachCenRequest extends RpcAcsRequest<DetachCenResponse> {
 
 	private String officeSiteId;
 	public DetachCenRequest() {
-		super("ecd", "2020-09-30", "DetachCen", "gwsecd");
+		super("ecd", "2020-09-30", "DetachCen");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

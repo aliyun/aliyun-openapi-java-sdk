@@ -42,11 +42,11 @@ public class DescribeDesktopsRequest extends RpcAcsRequest<DescribeDesktopsRespo
 
 	private String groupId;
 
-	private String html5Access;
-
 	private String expiredTime;
 
 	private Integer maxResults;
+
+	private String protocolType;
 
 	private String chargeType;
 
@@ -54,7 +54,7 @@ public class DescribeDesktopsRequest extends RpcAcsRequest<DescribeDesktopsRespo
 
 	private String userName;
 	public DescribeDesktopsRequest() {
-		super("ecd", "2020-09-30", "DescribeDesktops", "gwsecd");
+		super("ecd", "2020-09-30", "DescribeDesktops");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -154,17 +154,6 @@ public class DescribeDesktopsRequest extends RpcAcsRequest<DescribeDesktopsRespo
 		}
 	}
 
-	public String getHtml5Access() {
-		return this.html5Access;
-	}
-
-	public void setHtml5Access(String html5Access) {
-		this.html5Access = html5Access;
-		if(html5Access != null){
-			putQueryParameter("Html5Access", html5Access);
-		}
-	}
-
 	public String getExpiredTime() {
 		return this.expiredTime;
 	}
@@ -184,6 +173,17 @@ public class DescribeDesktopsRequest extends RpcAcsRequest<DescribeDesktopsRespo
 		this.maxResults = maxResults;
 		if(maxResults != null){
 			putQueryParameter("MaxResults", maxResults.toString());
+		}
+	}
+
+	public String getProtocolType() {
+		return this.protocolType;
+	}
+
+	public void setProtocolType(String protocolType) {
+		this.protocolType = protocolType;
+		if(protocolType != null){
+			putQueryParameter("ProtocolType", protocolType);
 		}
 	}
 

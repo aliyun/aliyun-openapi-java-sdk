@@ -24,29 +24,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeSuspEventOverviewResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Integer seriousCount;
-
 	private Integer suspiciousCount;
 
 	private Integer remindCount;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
+	private Integer seriousCount;
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Integer getSeriousCount() {
-		return this.seriousCount;
-	}
-
-	public void setSeriousCount(Integer seriousCount) {
-		this.seriousCount = seriousCount;
-	}
+	private String requestId;
 
 	public Integer getSuspiciousCount() {
 		return this.suspiciousCount;
@@ -62,6 +46,22 @@ public class DescribeSuspEventOverviewResponse extends AcsResponse {
 
 	public void setRemindCount(Integer remindCount) {
 		this.remindCount = remindCount;
+	}
+
+	public Integer getSeriousCount() {
+		return this.seriousCount;
+	}
+
+	public void setSeriousCount(Integer seriousCount) {
+		this.seriousCount = seriousCount;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

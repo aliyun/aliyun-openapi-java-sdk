@@ -34,42 +34,31 @@ public class DescribeOfficeSitesResponseUnmarshaller {
 		List<OfficeSite> officeSites = new ArrayList<OfficeSite>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeOfficeSitesResponse.OfficeSites.Length"); i++) {
 			OfficeSite officeSite = new OfficeSite();
-			officeSite.setOfficeSiteId(_ctx.stringValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].OfficeSiteId"));
 			officeSite.setStatus(_ctx.stringValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].Status"));
-			officeSite.setOfficeSiteType(_ctx.stringValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].OfficeSiteType"));
 			officeSite.setCreationTime(_ctx.stringValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].CreationTime"));
-			officeSite.setName(_ctx.stringValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].Name"));
 			officeSite.setVpcId(_ctx.stringValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].VpcId"));
-			officeSite.setCustomSecurityGroupId(_ctx.stringValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].CustomSecurityGroupId"));
-			officeSite.setDnsUserName(_ctx.stringValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].DnsUserName"));
-			officeSite.setEnableInternetAccess(_ctx.booleanValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].EnableInternetAccess"));
-			officeSite.setEnableCrossDesktopAccess(_ctx.booleanValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].EnableCrossDesktopAccess"));
 			officeSite.setEnableAdminAccess(_ctx.booleanValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].EnableAdminAccess"));
-			officeSite.setDesktopAccessType(_ctx.stringValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].DesktopAccessType"));
+			officeSite.setEnableCrossDesktopAccess(_ctx.booleanValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].EnableCrossDesktopAccess"));
 			officeSite.setDesktopVpcEndpoint(_ctx.stringValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].DesktopVpcEndpoint"));
-			officeSite.setTrustPassword(_ctx.stringValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].TrustPassword"));
+			officeSite.setDesktopAccessType(_ctx.stringValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].DesktopAccessType"));
 			officeSite.setDomainName(_ctx.stringValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].DomainName"));
-			officeSite.setDomainUserName(_ctx.stringValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].DomainUserName"));
-			officeSite.setDomainPassword(_ctx.stringValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].DomainPassword"));
-			officeSite.setSubDomainName(_ctx.stringValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].SubDomainName"));
-			officeSite.setMfaEnabled(_ctx.booleanValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].MfaEnabled"));
 			officeSite.setSsoEnabled(_ctx.booleanValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].SsoEnabled"));
-			officeSite.setBandwidth(_ctx.integerValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].Bandwidth"));
-			officeSite.setCenId(_ctx.stringValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].CenId"));
-			officeSite.setNetworkPackageId(_ctx.stringValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].NetworkPackageId"));
 			officeSite.setCidrBlock(_ctx.stringValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].CidrBlock"));
-
-			List<String> dnsAddress = new ArrayList<String>();
-			for (int j = 0; j < _ctx.lengthValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].DnsAddress.Length"); j++) {
-				dnsAddress.add(_ctx.stringValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].DnsAddress["+ j +"]"));
-			}
-			officeSite.setDnsAddress(dnsAddress);
-
-			List<String> subDnsAddress = new ArrayList<String>();
-			for (int j = 0; j < _ctx.lengthValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].SubDnsAddress.Length"); j++) {
-				subDnsAddress.add(_ctx.stringValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].SubDnsAddress["+ j +"]"));
-			}
-			officeSite.setSubDnsAddress(subDnsAddress);
+			officeSite.setBandwidth(_ctx.integerValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].Bandwidth"));
+			officeSite.setTrustPassword(_ctx.stringValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].TrustPassword"));
+			officeSite.setName(_ctx.stringValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].Name"));
+			officeSite.setEnableInternetAccess(_ctx.booleanValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].EnableInternetAccess"));
+			officeSite.setDomainPassword(_ctx.stringValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].DomainPassword"));
+			officeSite.setCustomSecurityGroupId(_ctx.stringValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].CustomSecurityGroupId"));
+			officeSite.setOuName(_ctx.stringValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].OuName"));
+			officeSite.setDomainUserName(_ctx.stringValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].DomainUserName"));
+			officeSite.setSubDomainName(_ctx.stringValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].SubDomainName"));
+			officeSite.setOfficeSiteId(_ctx.stringValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].OfficeSiteId"));
+			officeSite.setCenId(_ctx.stringValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].CenId"));
+			officeSite.setMfaEnabled(_ctx.booleanValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].MfaEnabled"));
+			officeSite.setNetworkPackageId(_ctx.stringValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].NetworkPackageId"));
+			officeSite.setDnsUserName(_ctx.stringValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].DnsUserName"));
+			officeSite.setOfficeSiteType(_ctx.stringValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].OfficeSiteType"));
 
 			List<String> vSwitchIds = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].VSwitchIds.Length"); j++) {
@@ -83,12 +72,25 @@ public class DescribeOfficeSitesResponseUnmarshaller {
 			}
 			officeSite.setFileSystemIds(fileSystemIds);
 
+			List<String> subDnsAddress = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].SubDnsAddress.Length"); j++) {
+				subDnsAddress.add(_ctx.stringValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].SubDnsAddress["+ j +"]"));
+			}
+			officeSite.setSubDnsAddress(subDnsAddress);
+
+			List<String> dnsAddress = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].DnsAddress.Length"); j++) {
+				dnsAddress.add(_ctx.stringValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].DnsAddress["+ j +"]"));
+			}
+			officeSite.setDnsAddress(dnsAddress);
+
 			List<ADConnector> aDConnectors = new ArrayList<ADConnector>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].ADConnectors.Length"); j++) {
 				ADConnector aDConnector = new ADConnector();
-				aDConnector.setADConnectorAddress(_ctx.stringValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].ADConnectors["+ j +"].ADConnectorAddress"));
-				aDConnector.setVSwitchId(_ctx.stringValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].ADConnectors["+ j +"].VSwitchId"));
 				aDConnector.setConnectorStatus(_ctx.stringValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].ADConnectors["+ j +"].ConnectorStatus"));
+				aDConnector.setVSwitchId(_ctx.stringValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].ADConnectors["+ j +"].VSwitchId"));
+				aDConnector.setADConnectorAddress(_ctx.stringValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].ADConnectors["+ j +"].ADConnectorAddress"));
+				aDConnector.setTrustKey(_ctx.stringValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].ADConnectors["+ j +"].TrustKey"));
 				aDConnector.setNetworkInterfaceId(_ctx.stringValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].ADConnectors["+ j +"].NetworkInterfaceId"));
 
 				aDConnectors.add(aDConnector);
@@ -98,10 +100,10 @@ public class DescribeOfficeSitesResponseUnmarshaller {
 			List<Log> logs = new ArrayList<Log>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].Logs.Length"); j++) {
 				Log log = new Log();
-				log.setLevel(_ctx.stringValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].Logs["+ j +"].Level"));
-				log.setTimeStamp(_ctx.stringValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].Logs["+ j +"].TimeStamp"));
 				log.setStep(_ctx.stringValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].Logs["+ j +"].Step"));
 				log.setMessage(_ctx.stringValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].Logs["+ j +"].Message"));
+				log.setTimeStamp(_ctx.stringValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].Logs["+ j +"].TimeStamp"));
+				log.setLevel(_ctx.stringValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].Logs["+ j +"].Level"));
 
 				logs.add(log);
 			}

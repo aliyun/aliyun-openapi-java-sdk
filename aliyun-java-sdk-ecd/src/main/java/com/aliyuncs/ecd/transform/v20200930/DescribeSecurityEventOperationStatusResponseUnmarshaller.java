@@ -32,8 +32,8 @@ public class DescribeSecurityEventOperationStatusResponseUnmarshaller {
 		List<SecurityEventOperationStatus> securityEventOperationStatuses = new ArrayList<SecurityEventOperationStatus>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSecurityEventOperationStatusResponse.SecurityEventOperationStatuses.Length"); i++) {
 			SecurityEventOperationStatus securityEventOperationStatus = new SecurityEventOperationStatus();
-			securityEventOperationStatus.setSecurityEventId(_ctx.longValue("DescribeSecurityEventOperationStatusResponse.SecurityEventOperationStatuses["+ i +"].SecurityEventId"));
 			securityEventOperationStatus.setStatus(_ctx.stringValue("DescribeSecurityEventOperationStatusResponse.SecurityEventOperationStatuses["+ i +"].Status"));
+			securityEventOperationStatus.setSecurityEventId(_ctx.longValue("DescribeSecurityEventOperationStatusResponse.SecurityEventOperationStatuses["+ i +"].SecurityEventId"));
 			securityEventOperationStatus.setErrorCode(_ctx.stringValue("DescribeSecurityEventOperationStatusResponse.SecurityEventOperationStatuses["+ i +"].ErrorCode"));
 
 			securityEventOperationStatuses.add(securityEventOperationStatus);

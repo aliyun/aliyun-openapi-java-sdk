@@ -32,9 +32,9 @@ public class DescribeVulDetailsResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("DescribeVulDetailsResponse.Cves.Length"); i++) {
 			Cve cve = new Cve();
 			cve.setCveId(_ctx.stringValue("DescribeVulDetailsResponse.Cves["+ i +"].CveId"));
+			cve.setSummary(_ctx.stringValue("DescribeVulDetailsResponse.Cves["+ i +"].Summary"));
 			cve.setTitle(_ctx.stringValue("DescribeVulDetailsResponse.Cves["+ i +"].Title"));
 			cve.setCvssScore(_ctx.stringValue("DescribeVulDetailsResponse.Cves["+ i +"].CvssScore"));
-			cve.setSummary(_ctx.stringValue("DescribeVulDetailsResponse.Cves["+ i +"].Summary"));
 
 			cves.add(cve);
 		}

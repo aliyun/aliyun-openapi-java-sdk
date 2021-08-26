@@ -29,9 +29,11 @@ public class CreateNASFileSystemRequest extends RpcAcsRequest<CreateNASFileSyste
 
 	private String description;
 
+	private String storageType;
+
 	private String name;
 	public CreateNASFileSystemRequest() {
-		super("ecd", "2020-09-30", "CreateNASFileSystem", "gwsecd");
+		super("ecd", "2020-09-30", "CreateNASFileSystem");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -58,6 +60,17 @@ public class CreateNASFileSystemRequest extends RpcAcsRequest<CreateNASFileSyste
 		this.description = description;
 		if(description != null){
 			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getStorageType() {
+		return this.storageType;
+	}
+
+	public void setStorageType(String storageType) {
+		this.storageType = storageType;
+		if(storageType != null){
+			putQueryParameter("StorageType", storageType);
 		}
 	}
 

@@ -34,7 +34,7 @@ public class RenewDesktopsRequest extends RpcAcsRequest<RenewDesktopsResponse> {
 
 	private List<String> desktopIds;
 	public RenewDesktopsRequest() {
-		super("ecd", "2020-09-30", "RenewDesktops", "gwsecd");
+		super("ecd", "2020-09-30", "RenewDesktops");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

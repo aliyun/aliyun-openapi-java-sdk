@@ -33,7 +33,7 @@ public class CreateSnapshotRequest extends RpcAcsRequest<CreateSnapshotResponse>
 
 	private String desktopId;
 	public CreateSnapshotRequest() {
-		super("ecd", "2020-09-30", "CreateSnapshot", "gwsecd");
+		super("ecd", "2020-09-30", "CreateSnapshot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

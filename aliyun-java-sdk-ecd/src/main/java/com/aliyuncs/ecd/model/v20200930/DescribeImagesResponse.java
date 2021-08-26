@@ -79,6 +79,8 @@ public class DescribeImagesResponse extends AcsResponse {
 
 		private String osType;
 
+		private String protocolType;
+
 		public String getCreationTime() {
 			return this.creationTime;
 		}
@@ -165,6 +167,14 @@ public class DescribeImagesResponse extends AcsResponse {
 
 		public void setOsType(String osType) {
 			this.osType = osType;
+		}
+
+		public String getProtocolType() {
+			return this.protocolType;
+		}
+
+		public void setProtocolType(String protocolType) {
+			this.protocolType = protocolType;
 		}
 	}
 

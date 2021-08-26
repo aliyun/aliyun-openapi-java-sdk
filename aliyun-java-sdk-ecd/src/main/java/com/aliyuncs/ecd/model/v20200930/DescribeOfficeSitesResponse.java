@@ -57,73 +57,67 @@ public class DescribeOfficeSitesResponse extends AcsResponse {
 
 	public static class OfficeSite {
 
-		private String officeSiteId;
-
 		private String status;
-
-		private String officeSiteType;
 
 		private String creationTime;
 
-		private String name;
-
 		private String vpcId;
-
-		private String customSecurityGroupId;
-
-		private String dnsUserName;
-
-		private Boolean enableInternetAccess;
-
-		private Boolean enableCrossDesktopAccess;
 
 		private Boolean enableAdminAccess;
 
-		private String desktopAccessType;
+		private Boolean enableCrossDesktopAccess;
 
 		private String desktopVpcEndpoint;
 
-		private String trustPassword;
+		private String desktopAccessType;
 
 		private String domainName;
 
-		private String domainUserName;
-
-		private String domainPassword;
-
-		private String subDomainName;
-
-		private Boolean mfaEnabled;
-
 		private Boolean ssoEnabled;
+
+		private String cidrBlock;
 
 		private Integer bandwidth;
 
+		private String trustPassword;
+
+		private String name;
+
+		private Boolean enableInternetAccess;
+
+		private String domainPassword;
+
+		private String customSecurityGroupId;
+
+		private String ouName;
+
+		private String domainUserName;
+
+		private String subDomainName;
+
+		private String officeSiteId;
+
 		private String cenId;
+
+		private Boolean mfaEnabled;
 
 		private String networkPackageId;
 
-		private String cidrBlock;
+		private String dnsUserName;
+
+		private String officeSiteType;
 
 		private List<ADConnector> aDConnectors;
 
 		private List<Log> logs;
 
-		private List<String> dnsAddress;
-
-		private List<String> subDnsAddress;
-
 		private List<String> vSwitchIds;
 
 		private List<String> fileSystemIds;
 
-		public String getOfficeSiteId() {
-			return this.officeSiteId;
-		}
+		private List<String> subDnsAddress;
 
-		public void setOfficeSiteId(String officeSiteId) {
-			this.officeSiteId = officeSiteId;
-		}
+		private List<String> dnsAddress;
 
 		public String getStatus() {
 			return this.status;
@@ -131,14 +125,6 @@ public class DescribeOfficeSitesResponse extends AcsResponse {
 
 		public void setStatus(String status) {
 			this.status = status;
-		}
-
-		public String getOfficeSiteType() {
-			return this.officeSiteType;
-		}
-
-		public void setOfficeSiteType(String officeSiteType) {
-			this.officeSiteType = officeSiteType;
 		}
 
 		public String getCreationTime() {
@@ -149,52 +135,12 @@ public class DescribeOfficeSitesResponse extends AcsResponse {
 			this.creationTime = creationTime;
 		}
 
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
 		public String getVpcId() {
 			return this.vpcId;
 		}
 
 		public void setVpcId(String vpcId) {
 			this.vpcId = vpcId;
-		}
-
-		public String getCustomSecurityGroupId() {
-			return this.customSecurityGroupId;
-		}
-
-		public void setCustomSecurityGroupId(String customSecurityGroupId) {
-			this.customSecurityGroupId = customSecurityGroupId;
-		}
-
-		public String getDnsUserName() {
-			return this.dnsUserName;
-		}
-
-		public void setDnsUserName(String dnsUserName) {
-			this.dnsUserName = dnsUserName;
-		}
-
-		public Boolean getEnableInternetAccess() {
-			return this.enableInternetAccess;
-		}
-
-		public void setEnableInternetAccess(Boolean enableInternetAccess) {
-			this.enableInternetAccess = enableInternetAccess;
-		}
-
-		public Boolean getEnableCrossDesktopAccess() {
-			return this.enableCrossDesktopAccess;
-		}
-
-		public void setEnableCrossDesktopAccess(Boolean enableCrossDesktopAccess) {
-			this.enableCrossDesktopAccess = enableCrossDesktopAccess;
 		}
 
 		public Boolean getEnableAdminAccess() {
@@ -205,12 +151,12 @@ public class DescribeOfficeSitesResponse extends AcsResponse {
 			this.enableAdminAccess = enableAdminAccess;
 		}
 
-		public String getDesktopAccessType() {
-			return this.desktopAccessType;
+		public Boolean getEnableCrossDesktopAccess() {
+			return this.enableCrossDesktopAccess;
 		}
 
-		public void setDesktopAccessType(String desktopAccessType) {
-			this.desktopAccessType = desktopAccessType;
+		public void setEnableCrossDesktopAccess(Boolean enableCrossDesktopAccess) {
+			this.enableCrossDesktopAccess = enableCrossDesktopAccess;
 		}
 
 		public String getDesktopVpcEndpoint() {
@@ -221,12 +167,12 @@ public class DescribeOfficeSitesResponse extends AcsResponse {
 			this.desktopVpcEndpoint = desktopVpcEndpoint;
 		}
 
-		public String getTrustPassword() {
-			return this.trustPassword;
+		public String getDesktopAccessType() {
+			return this.desktopAccessType;
 		}
 
-		public void setTrustPassword(String trustPassword) {
-			this.trustPassword = trustPassword;
+		public void setDesktopAccessType(String desktopAccessType) {
+			this.desktopAccessType = desktopAccessType;
 		}
 
 		public String getDomainName() {
@@ -237,44 +183,20 @@ public class DescribeOfficeSitesResponse extends AcsResponse {
 			this.domainName = domainName;
 		}
 
-		public String getDomainUserName() {
-			return this.domainUserName;
-		}
-
-		public void setDomainUserName(String domainUserName) {
-			this.domainUserName = domainUserName;
-		}
-
-		public String getDomainPassword() {
-			return this.domainPassword;
-		}
-
-		public void setDomainPassword(String domainPassword) {
-			this.domainPassword = domainPassword;
-		}
-
-		public String getSubDomainName() {
-			return this.subDomainName;
-		}
-
-		public void setSubDomainName(String subDomainName) {
-			this.subDomainName = subDomainName;
-		}
-
-		public Boolean getMfaEnabled() {
-			return this.mfaEnabled;
-		}
-
-		public void setMfaEnabled(Boolean mfaEnabled) {
-			this.mfaEnabled = mfaEnabled;
-		}
-
 		public Boolean getSsoEnabled() {
 			return this.ssoEnabled;
 		}
 
 		public void setSsoEnabled(Boolean ssoEnabled) {
 			this.ssoEnabled = ssoEnabled;
+		}
+
+		public String getCidrBlock() {
+			return this.cidrBlock;
+		}
+
+		public void setCidrBlock(String cidrBlock) {
+			this.cidrBlock = cidrBlock;
 		}
 
 		public Integer getBandwidth() {
@@ -285,12 +207,92 @@ public class DescribeOfficeSitesResponse extends AcsResponse {
 			this.bandwidth = bandwidth;
 		}
 
+		public String getTrustPassword() {
+			return this.trustPassword;
+		}
+
+		public void setTrustPassword(String trustPassword) {
+			this.trustPassword = trustPassword;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public Boolean getEnableInternetAccess() {
+			return this.enableInternetAccess;
+		}
+
+		public void setEnableInternetAccess(Boolean enableInternetAccess) {
+			this.enableInternetAccess = enableInternetAccess;
+		}
+
+		public String getDomainPassword() {
+			return this.domainPassword;
+		}
+
+		public void setDomainPassword(String domainPassword) {
+			this.domainPassword = domainPassword;
+		}
+
+		public String getCustomSecurityGroupId() {
+			return this.customSecurityGroupId;
+		}
+
+		public void setCustomSecurityGroupId(String customSecurityGroupId) {
+			this.customSecurityGroupId = customSecurityGroupId;
+		}
+
+		public String getOuName() {
+			return this.ouName;
+		}
+
+		public void setOuName(String ouName) {
+			this.ouName = ouName;
+		}
+
+		public String getDomainUserName() {
+			return this.domainUserName;
+		}
+
+		public void setDomainUserName(String domainUserName) {
+			this.domainUserName = domainUserName;
+		}
+
+		public String getSubDomainName() {
+			return this.subDomainName;
+		}
+
+		public void setSubDomainName(String subDomainName) {
+			this.subDomainName = subDomainName;
+		}
+
+		public String getOfficeSiteId() {
+			return this.officeSiteId;
+		}
+
+		public void setOfficeSiteId(String officeSiteId) {
+			this.officeSiteId = officeSiteId;
+		}
+
 		public String getCenId() {
 			return this.cenId;
 		}
 
 		public void setCenId(String cenId) {
 			this.cenId = cenId;
+		}
+
+		public Boolean getMfaEnabled() {
+			return this.mfaEnabled;
+		}
+
+		public void setMfaEnabled(Boolean mfaEnabled) {
+			this.mfaEnabled = mfaEnabled;
 		}
 
 		public String getNetworkPackageId() {
@@ -301,12 +303,20 @@ public class DescribeOfficeSitesResponse extends AcsResponse {
 			this.networkPackageId = networkPackageId;
 		}
 
-		public String getCidrBlock() {
-			return this.cidrBlock;
+		public String getDnsUserName() {
+			return this.dnsUserName;
 		}
 
-		public void setCidrBlock(String cidrBlock) {
-			this.cidrBlock = cidrBlock;
+		public void setDnsUserName(String dnsUserName) {
+			this.dnsUserName = dnsUserName;
+		}
+
+		public String getOfficeSiteType() {
+			return this.officeSiteType;
+		}
+
+		public void setOfficeSiteType(String officeSiteType) {
+			this.officeSiteType = officeSiteType;
 		}
 
 		public List<ADConnector> getADConnectors() {
@@ -325,22 +335,6 @@ public class DescribeOfficeSitesResponse extends AcsResponse {
 			this.logs = logs;
 		}
 
-		public List<String> getDnsAddress() {
-			return this.dnsAddress;
-		}
-
-		public void setDnsAddress(List<String> dnsAddress) {
-			this.dnsAddress = dnsAddress;
-		}
-
-		public List<String> getSubDnsAddress() {
-			return this.subDnsAddress;
-		}
-
-		public void setSubDnsAddress(List<String> subDnsAddress) {
-			this.subDnsAddress = subDnsAddress;
-		}
-
 		public List<String> getVSwitchIds() {
 			return this.vSwitchIds;
 		}
@@ -357,22 +351,40 @@ public class DescribeOfficeSitesResponse extends AcsResponse {
 			this.fileSystemIds = fileSystemIds;
 		}
 
+		public List<String> getSubDnsAddress() {
+			return this.subDnsAddress;
+		}
+
+		public void setSubDnsAddress(List<String> subDnsAddress) {
+			this.subDnsAddress = subDnsAddress;
+		}
+
+		public List<String> getDnsAddress() {
+			return this.dnsAddress;
+		}
+
+		public void setDnsAddress(List<String> dnsAddress) {
+			this.dnsAddress = dnsAddress;
+		}
+
 		public static class ADConnector {
-
-			private String aDConnectorAddress;
-
-			private String vSwitchId;
 
 			private String connectorStatus;
 
+			private String vSwitchId;
+
+			private String aDConnectorAddress;
+
+			private String trustKey;
+
 			private String networkInterfaceId;
 
-			public String getADConnectorAddress() {
-				return this.aDConnectorAddress;
+			public String getConnectorStatus() {
+				return this.connectorStatus;
 			}
 
-			public void setADConnectorAddress(String aDConnectorAddress) {
-				this.aDConnectorAddress = aDConnectorAddress;
+			public void setConnectorStatus(String connectorStatus) {
+				this.connectorStatus = connectorStatus;
 			}
 
 			public String getVSwitchId() {
@@ -383,12 +395,20 @@ public class DescribeOfficeSitesResponse extends AcsResponse {
 				this.vSwitchId = vSwitchId;
 			}
 
-			public String getConnectorStatus() {
-				return this.connectorStatus;
+			public String getADConnectorAddress() {
+				return this.aDConnectorAddress;
 			}
 
-			public void setConnectorStatus(String connectorStatus) {
-				this.connectorStatus = connectorStatus;
+			public void setADConnectorAddress(String aDConnectorAddress) {
+				this.aDConnectorAddress = aDConnectorAddress;
+			}
+
+			public String getTrustKey() {
+				return this.trustKey;
+			}
+
+			public void setTrustKey(String trustKey) {
+				this.trustKey = trustKey;
 			}
 
 			public String getNetworkInterfaceId() {
@@ -402,29 +422,13 @@ public class DescribeOfficeSitesResponse extends AcsResponse {
 
 		public static class Log {
 
-			private String level;
-
-			private String timeStamp;
-
 			private String step;
 
 			private String message;
 
-			public String getLevel() {
-				return this.level;
-			}
+			private String timeStamp;
 
-			public void setLevel(String level) {
-				this.level = level;
-			}
-
-			public String getTimeStamp() {
-				return this.timeStamp;
-			}
-
-			public void setTimeStamp(String timeStamp) {
-				this.timeStamp = timeStamp;
-			}
+			private String level;
 
 			public String getStep() {
 				return this.step;
@@ -440,6 +444,22 @@ public class DescribeOfficeSitesResponse extends AcsResponse {
 
 			public void setMessage(String message) {
 				this.message = message;
+			}
+
+			public String getTimeStamp() {
+				return this.timeStamp;
+			}
+
+			public void setTimeStamp(String timeStamp) {
+				this.timeStamp = timeStamp;
+			}
+
+			public String getLevel() {
+				return this.level;
+			}
+
+			public void setLevel(String level) {
+				this.level = level;
 			}
 		}
 	}

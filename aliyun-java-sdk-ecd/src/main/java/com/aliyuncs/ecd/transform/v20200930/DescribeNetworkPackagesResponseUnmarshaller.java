@@ -33,13 +33,19 @@ public class DescribeNetworkPackagesResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("DescribeNetworkPackagesResponse.NetworkPackages.Length"); i++) {
 			NetworkPackage networkPackage = new NetworkPackage();
 			networkPackage.setNetworkPackageId(_ctx.stringValue("DescribeNetworkPackagesResponse.NetworkPackages["+ i +"].NetworkPackageId"));
-			networkPackage.setOfficeSiteId(_ctx.stringValue("DescribeNetworkPackagesResponse.NetworkPackages["+ i +"].OfficeSiteId"));
-			networkPackage.setOfficeSiteName(_ctx.stringValue("DescribeNetworkPackagesResponse.NetworkPackages["+ i +"].OfficeSiteName"));
 			networkPackage.setBandwidth(_ctx.integerValue("DescribeNetworkPackagesResponse.NetworkPackages["+ i +"].Bandwidth"));
-			networkPackage.setNetworkPackageStatus(_ctx.stringValue("DescribeNetworkPackagesResponse.NetworkPackages["+ i +"].NetworkPackageStatus"));
-			networkPackage.setCreateTime(_ctx.stringValue("DescribeNetworkPackagesResponse.NetworkPackages["+ i +"].CreateTime"));
 			networkPackage.setExpiredTime(_ctx.stringValue("DescribeNetworkPackagesResponse.NetworkPackages["+ i +"].ExpiredTime"));
+			networkPackage.setCreateTime(_ctx.stringValue("DescribeNetworkPackagesResponse.NetworkPackages["+ i +"].CreateTime"));
+			networkPackage.setOfficeSiteId(_ctx.stringValue("DescribeNetworkPackagesResponse.NetworkPackages["+ i +"].OfficeSiteId"));
 			networkPackage.setInternetChargeType(_ctx.stringValue("DescribeNetworkPackagesResponse.NetworkPackages["+ i +"].InternetChargeType"));
+			networkPackage.setNetworkPackageStatus(_ctx.stringValue("DescribeNetworkPackagesResponse.NetworkPackages["+ i +"].NetworkPackageStatus"));
+			networkPackage.setOfficeSiteName(_ctx.stringValue("DescribeNetworkPackagesResponse.NetworkPackages["+ i +"].OfficeSiteName"));
+
+			List<String> eipAddresses = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeNetworkPackagesResponse.NetworkPackages["+ i +"].EipAddresses.Length"); j++) {
+				eipAddresses.add(_ctx.stringValue("DescribeNetworkPackagesResponse.NetworkPackages["+ i +"].EipAddresses["+ j +"]"));
+			}
+			networkPackage.setEipAddresses(eipAddresses);
 
 			networkPackages.add(networkPackage);
 		}

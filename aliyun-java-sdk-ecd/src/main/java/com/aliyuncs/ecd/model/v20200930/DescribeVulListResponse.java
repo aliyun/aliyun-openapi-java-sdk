@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeVulListResponse extends AcsResponse {
 
+	private Integer currentPage;
+
 	private String requestId;
 
 	private Integer pageSize;
 
-	private Integer currentPage;
-
 	private Integer totalCount;
 
 	private List<VulRecord> vulRecords;
+
+	public Integer getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -49,14 +57,6 @@ public class DescribeVulListResponse extends AcsResponse {
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
-	}
-
-	public Integer getCurrentPage() {
-		return this.currentPage;
-	}
-
-	public void setCurrentPage(Integer currentPage) {
-		this.currentPage = currentPage;
 	}
 
 	public Integer getTotalCount() {
@@ -77,56 +77,48 @@ public class DescribeVulListResponse extends AcsResponse {
 
 	public static class VulRecord {
 
-		private String name;
-
-		private String aliasName;
+		private Integer status;
 
 		private String type;
 
-		private Long firstTs;
-
-		private Long lastTs;
-
 		private Long modifyTs;
-
-		private Long repairTs;
-
-		private String desktopId;
 
 		private String desktopName;
 
-		private String necessity;
-
-		private String osVersion;
-
-		private String related;
-
 		private String resultCode;
-
-		private String resultMessage;
 
 		private String tag;
 
+		private String desktopId;
+
+		private String related;
+
+		private Long lastTs;
+
+		private Long firstTs;
+
+		private String necessity;
+
+		private Long repairTs;
+
 		private Boolean online;
 
-		private Integer status;
+		private String resultMessage;
+
+		private String osVersion;
+
+		private String aliasName;
+
+		private String name;
 
 		private ExtendContentJson extendContentJson;
 
-		public String getName() {
-			return this.name;
+		public Integer getStatus() {
+			return this.status;
 		}
 
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getAliasName() {
-			return this.aliasName;
-		}
-
-		public void setAliasName(String aliasName) {
-			this.aliasName = aliasName;
+		public void setStatus(Integer status) {
+			this.status = status;
 		}
 
 		public String getType() {
@@ -137,44 +129,12 @@ public class DescribeVulListResponse extends AcsResponse {
 			this.type = type;
 		}
 
-		public Long getFirstTs() {
-			return this.firstTs;
-		}
-
-		public void setFirstTs(Long firstTs) {
-			this.firstTs = firstTs;
-		}
-
-		public Long getLastTs() {
-			return this.lastTs;
-		}
-
-		public void setLastTs(Long lastTs) {
-			this.lastTs = lastTs;
-		}
-
 		public Long getModifyTs() {
 			return this.modifyTs;
 		}
 
 		public void setModifyTs(Long modifyTs) {
 			this.modifyTs = modifyTs;
-		}
-
-		public Long getRepairTs() {
-			return this.repairTs;
-		}
-
-		public void setRepairTs(Long repairTs) {
-			this.repairTs = repairTs;
-		}
-
-		public String getDesktopId() {
-			return this.desktopId;
-		}
-
-		public void setDesktopId(String desktopId) {
-			this.desktopId = desktopId;
 		}
 
 		public String getDesktopName() {
@@ -185,44 +145,12 @@ public class DescribeVulListResponse extends AcsResponse {
 			this.desktopName = desktopName;
 		}
 
-		public String getNecessity() {
-			return this.necessity;
-		}
-
-		public void setNecessity(String necessity) {
-			this.necessity = necessity;
-		}
-
-		public String getOsVersion() {
-			return this.osVersion;
-		}
-
-		public void setOsVersion(String osVersion) {
-			this.osVersion = osVersion;
-		}
-
-		public String getRelated() {
-			return this.related;
-		}
-
-		public void setRelated(String related) {
-			this.related = related;
-		}
-
 		public String getResultCode() {
 			return this.resultCode;
 		}
 
 		public void setResultCode(String resultCode) {
 			this.resultCode = resultCode;
-		}
-
-		public String getResultMessage() {
-			return this.resultMessage;
-		}
-
-		public void setResultMessage(String resultMessage) {
-			this.resultMessage = resultMessage;
 		}
 
 		public String getTag() {
@@ -233,6 +161,54 @@ public class DescribeVulListResponse extends AcsResponse {
 			this.tag = tag;
 		}
 
+		public String getDesktopId() {
+			return this.desktopId;
+		}
+
+		public void setDesktopId(String desktopId) {
+			this.desktopId = desktopId;
+		}
+
+		public String getRelated() {
+			return this.related;
+		}
+
+		public void setRelated(String related) {
+			this.related = related;
+		}
+
+		public Long getLastTs() {
+			return this.lastTs;
+		}
+
+		public void setLastTs(Long lastTs) {
+			this.lastTs = lastTs;
+		}
+
+		public Long getFirstTs() {
+			return this.firstTs;
+		}
+
+		public void setFirstTs(Long firstTs) {
+			this.firstTs = firstTs;
+		}
+
+		public String getNecessity() {
+			return this.necessity;
+		}
+
+		public void setNecessity(String necessity) {
+			this.necessity = necessity;
+		}
+
+		public Long getRepairTs() {
+			return this.repairTs;
+		}
+
+		public void setRepairTs(Long repairTs) {
+			this.repairTs = repairTs;
+		}
+
 		public Boolean getOnline() {
 			return this.online;
 		}
@@ -241,12 +217,36 @@ public class DescribeVulListResponse extends AcsResponse {
 			this.online = online;
 		}
 
-		public Integer getStatus() {
-			return this.status;
+		public String getResultMessage() {
+			return this.resultMessage;
 		}
 
-		public void setStatus(Integer status) {
-			this.status = status;
+		public void setResultMessage(String resultMessage) {
+			this.resultMessage = resultMessage;
+		}
+
+		public String getOsVersion() {
+			return this.osVersion;
+		}
+
+		public void setOsVersion(String osVersion) {
+			this.osVersion = osVersion;
+		}
+
+		public String getAliasName() {
+			return this.aliasName;
+		}
+
+		public void setAliasName(String aliasName) {
+			this.aliasName = aliasName;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
 		}
 
 		public ExtendContentJson getExtendContentJson() {
@@ -271,39 +271,15 @@ public class DescribeVulListResponse extends AcsResponse {
 
 			public static class RpmEntity {
 
-				private String fullVersion;
-
-				private String matchDetail;
-
-				private String name;
-
 				private String path;
 
 				private String updateCmd;
 
-				public String getFullVersion() {
-					return this.fullVersion;
-				}
+				private String name;
 
-				public void setFullVersion(String fullVersion) {
-					this.fullVersion = fullVersion;
-				}
+				private String fullVersion;
 
-				public String getMatchDetail() {
-					return this.matchDetail;
-				}
-
-				public void setMatchDetail(String matchDetail) {
-					this.matchDetail = matchDetail;
-				}
-
-				public String getName() {
-					return this.name;
-				}
-
-				public void setName(String name) {
-					this.name = name;
-				}
+				private String matchDetail;
 
 				public String getPath() {
 					return this.path;
@@ -319,6 +295,30 @@ public class DescribeVulListResponse extends AcsResponse {
 
 				public void setUpdateCmd(String updateCmd) {
 					this.updateCmd = updateCmd;
+				}
+
+				public String getName() {
+					return this.name;
+				}
+
+				public void setName(String name) {
+					this.name = name;
+				}
+
+				public String getFullVersion() {
+					return this.fullVersion;
+				}
+
+				public void setFullVersion(String fullVersion) {
+					this.fullVersion = fullVersion;
+				}
+
+				public String getMatchDetail() {
+					return this.matchDetail;
+				}
+
+				public void setMatchDetail(String matchDetail) {
+					this.matchDetail = matchDetail;
 				}
 			}
 		}

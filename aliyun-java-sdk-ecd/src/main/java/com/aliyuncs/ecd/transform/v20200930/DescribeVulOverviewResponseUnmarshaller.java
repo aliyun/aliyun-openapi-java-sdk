@@ -23,9 +23,9 @@ public class DescribeVulOverviewResponseUnmarshaller {
 	public static DescribeVulOverviewResponse unmarshall(DescribeVulOverviewResponse describeVulOverviewResponse, UnmarshallerContext _ctx) {
 		
 		describeVulOverviewResponse.setRequestId(_ctx.stringValue("DescribeVulOverviewResponse.RequestId"));
-		describeVulOverviewResponse.setAsapCount(_ctx.integerValue("DescribeVulOverviewResponse.AsapCount"));
-		describeVulOverviewResponse.setLaterCount(_ctx.integerValue("DescribeVulOverviewResponse.LaterCount"));
 		describeVulOverviewResponse.setNntfCount(_ctx.integerValue("DescribeVulOverviewResponse.NntfCount"));
+		describeVulOverviewResponse.setLaterCount(_ctx.integerValue("DescribeVulOverviewResponse.LaterCount"));
+		describeVulOverviewResponse.setAsapCount(_ctx.integerValue("DescribeVulOverviewResponse.AsapCount"));
 	 
 	 	return describeVulOverviewResponse;
 	}

@@ -31,7 +31,7 @@ public class ModifyImageAttributeRequest extends RpcAcsRequest<ModifyImageAttrib
 
 	private String name;
 	public ModifyImageAttributeRequest() {
-		super("ecd", "2020-09-30", "ModifyImageAttribute", "gwsecd");
+		super("ecd", "2020-09-30", "ModifyImageAttribute");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -29,41 +29,41 @@ public class DescribeVulListResponseUnmarshaller {
 	public static DescribeVulListResponse unmarshall(DescribeVulListResponse describeVulListResponse, UnmarshallerContext _ctx) {
 		
 		describeVulListResponse.setRequestId(_ctx.stringValue("DescribeVulListResponse.RequestId"));
-		describeVulListResponse.setPageSize(_ctx.integerValue("DescribeVulListResponse.PageSize"));
 		describeVulListResponse.setCurrentPage(_ctx.integerValue("DescribeVulListResponse.CurrentPage"));
+		describeVulListResponse.setPageSize(_ctx.integerValue("DescribeVulListResponse.PageSize"));
 		describeVulListResponse.setTotalCount(_ctx.integerValue("DescribeVulListResponse.TotalCount"));
 
 		List<VulRecord> vulRecords = new ArrayList<VulRecord>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeVulListResponse.VulRecords.Length"); i++) {
 			VulRecord vulRecord = new VulRecord();
-			vulRecord.setName(_ctx.stringValue("DescribeVulListResponse.VulRecords["+ i +"].Name"));
-			vulRecord.setAliasName(_ctx.stringValue("DescribeVulListResponse.VulRecords["+ i +"].AliasName"));
-			vulRecord.setType(_ctx.stringValue("DescribeVulListResponse.VulRecords["+ i +"].Type"));
-			vulRecord.setFirstTs(_ctx.longValue("DescribeVulListResponse.VulRecords["+ i +"].FirstTs"));
-			vulRecord.setLastTs(_ctx.longValue("DescribeVulListResponse.VulRecords["+ i +"].LastTs"));
-			vulRecord.setModifyTs(_ctx.longValue("DescribeVulListResponse.VulRecords["+ i +"].ModifyTs"));
-			vulRecord.setRepairTs(_ctx.longValue("DescribeVulListResponse.VulRecords["+ i +"].RepairTs"));
-			vulRecord.setDesktopId(_ctx.stringValue("DescribeVulListResponse.VulRecords["+ i +"].DesktopId"));
-			vulRecord.setDesktopName(_ctx.stringValue("DescribeVulListResponse.VulRecords["+ i +"].DesktopName"));
-			vulRecord.setNecessity(_ctx.stringValue("DescribeVulListResponse.VulRecords["+ i +"].Necessity"));
-			vulRecord.setOsVersion(_ctx.stringValue("DescribeVulListResponse.VulRecords["+ i +"].OsVersion"));
-			vulRecord.setRelated(_ctx.stringValue("DescribeVulListResponse.VulRecords["+ i +"].Related"));
-			vulRecord.setResultCode(_ctx.stringValue("DescribeVulListResponse.VulRecords["+ i +"].ResultCode"));
-			vulRecord.setResultMessage(_ctx.stringValue("DescribeVulListResponse.VulRecords["+ i +"].ResultMessage"));
-			vulRecord.setTag(_ctx.stringValue("DescribeVulListResponse.VulRecords["+ i +"].Tag"));
-			vulRecord.setOnline(_ctx.booleanValue("DescribeVulListResponse.VulRecords["+ i +"].Online"));
 			vulRecord.setStatus(_ctx.integerValue("DescribeVulListResponse.VulRecords["+ i +"].Status"));
+			vulRecord.setType(_ctx.stringValue("DescribeVulListResponse.VulRecords["+ i +"].Type"));
+			vulRecord.setModifyTs(_ctx.longValue("DescribeVulListResponse.VulRecords["+ i +"].ModifyTs"));
+			vulRecord.setDesktopName(_ctx.stringValue("DescribeVulListResponse.VulRecords["+ i +"].DesktopName"));
+			vulRecord.setResultCode(_ctx.stringValue("DescribeVulListResponse.VulRecords["+ i +"].ResultCode"));
+			vulRecord.setTag(_ctx.stringValue("DescribeVulListResponse.VulRecords["+ i +"].Tag"));
+			vulRecord.setDesktopId(_ctx.stringValue("DescribeVulListResponse.VulRecords["+ i +"].DesktopId"));
+			vulRecord.setRelated(_ctx.stringValue("DescribeVulListResponse.VulRecords["+ i +"].Related"));
+			vulRecord.setLastTs(_ctx.longValue("DescribeVulListResponse.VulRecords["+ i +"].LastTs"));
+			vulRecord.setFirstTs(_ctx.longValue("DescribeVulListResponse.VulRecords["+ i +"].FirstTs"));
+			vulRecord.setNecessity(_ctx.stringValue("DescribeVulListResponse.VulRecords["+ i +"].Necessity"));
+			vulRecord.setRepairTs(_ctx.longValue("DescribeVulListResponse.VulRecords["+ i +"].RepairTs"));
+			vulRecord.setOnline(_ctx.booleanValue("DescribeVulListResponse.VulRecords["+ i +"].Online"));
+			vulRecord.setResultMessage(_ctx.stringValue("DescribeVulListResponse.VulRecords["+ i +"].ResultMessage"));
+			vulRecord.setOsVersion(_ctx.stringValue("DescribeVulListResponse.VulRecords["+ i +"].OsVersion"));
+			vulRecord.setAliasName(_ctx.stringValue("DescribeVulListResponse.VulRecords["+ i +"].AliasName"));
+			vulRecord.setName(_ctx.stringValue("DescribeVulListResponse.VulRecords["+ i +"].Name"));
 
 			ExtendContentJson extendContentJson = new ExtendContentJson();
 
 			List<RpmEntity> rpmEntityList = new ArrayList<RpmEntity>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeVulListResponse.VulRecords["+ i +"].ExtendContentJson.RpmEntityList.Length"); j++) {
 				RpmEntity rpmEntity = new RpmEntity();
-				rpmEntity.setFullVersion(_ctx.stringValue("DescribeVulListResponse.VulRecords["+ i +"].ExtendContentJson.RpmEntityList["+ j +"].FullVersion"));
-				rpmEntity.setMatchDetail(_ctx.stringValue("DescribeVulListResponse.VulRecords["+ i +"].ExtendContentJson.RpmEntityList["+ j +"].MatchDetail"));
-				rpmEntity.setName(_ctx.stringValue("DescribeVulListResponse.VulRecords["+ i +"].ExtendContentJson.RpmEntityList["+ j +"].Name"));
 				rpmEntity.setPath(_ctx.stringValue("DescribeVulListResponse.VulRecords["+ i +"].ExtendContentJson.RpmEntityList["+ j +"].Path"));
 				rpmEntity.setUpdateCmd(_ctx.stringValue("DescribeVulListResponse.VulRecords["+ i +"].ExtendContentJson.RpmEntityList["+ j +"].UpdateCmd"));
+				rpmEntity.setName(_ctx.stringValue("DescribeVulListResponse.VulRecords["+ i +"].ExtendContentJson.RpmEntityList["+ j +"].Name"));
+				rpmEntity.setFullVersion(_ctx.stringValue("DescribeVulListResponse.VulRecords["+ i +"].ExtendContentJson.RpmEntityList["+ j +"].FullVersion"));
+				rpmEntity.setMatchDetail(_ctx.stringValue("DescribeVulListResponse.VulRecords["+ i +"].ExtendContentJson.RpmEntityList["+ j +"].MatchDetail"));
 
 				rpmEntityList.add(rpmEntity);
 			}

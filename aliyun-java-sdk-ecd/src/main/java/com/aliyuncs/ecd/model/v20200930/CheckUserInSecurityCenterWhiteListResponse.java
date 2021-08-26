@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CheckUserInSecurityCenterWhiteListResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Boolean inWhiteList;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public Boolean getInWhiteList() {
 		return this.inWhiteList;
@@ -42,6 +34,14 @@ public class CheckUserInSecurityCenterWhiteListResponse extends AcsResponse {
 
 	public void setInWhiteList(Boolean inWhiteList) {
 		this.inWhiteList = inWhiteList;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

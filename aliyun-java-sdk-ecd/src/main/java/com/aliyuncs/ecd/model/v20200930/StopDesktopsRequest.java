@@ -26,14 +26,27 @@ import com.aliyuncs.ecd.Endpoint;
 public class StopDesktopsRequest extends RpcAcsRequest<StopDesktopsResponse> {
 	   
 
+	private String stoppedMode;
+
 	private List<String> desktopIds;
 	public StopDesktopsRequest() {
-		super("ecd", "2020-09-30", "StopDesktops", "gwsecd");
+		super("ecd", "2020-09-30", "StopDesktops");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getStoppedMode() {
+		return this.stoppedMode;
+	}
+
+	public void setStoppedMode(String stoppedMode) {
+		this.stoppedMode = stoppedMode;
+		if(stoppedMode != null){
+			putQueryParameter("StoppedMode", stoppedMode);
+		}
 	}
 
 	public List<String> getDesktopIds() {

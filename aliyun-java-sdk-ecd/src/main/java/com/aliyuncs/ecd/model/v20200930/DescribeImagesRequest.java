@@ -37,8 +37,10 @@ public class DescribeImagesRequest extends RpcAcsRequest<DescribeImagesResponse>
 	private String nextToken;
 
 	private Integer maxResults;
+
+	private String protocolType;
 	public DescribeImagesRequest() {
-		super("ecd", "2020-09-30", "DescribeImages", "gwsecd");
+		super("ecd", "2020-09-30", "DescribeImages");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -111,6 +113,17 @@ public class DescribeImagesRequest extends RpcAcsRequest<DescribeImagesResponse>
 		this.maxResults = maxResults;
 		if(maxResults != null){
 			putQueryParameter("MaxResults", maxResults.toString());
+		}
+	}
+
+	public String getProtocolType() {
+		return this.protocolType;
+	}
+
+	public void setProtocolType(String protocolType) {
+		this.protocolType = protocolType;
+		if(protocolType != null){
+			putQueryParameter("ProtocolType", protocolType);
 		}
 	}
 

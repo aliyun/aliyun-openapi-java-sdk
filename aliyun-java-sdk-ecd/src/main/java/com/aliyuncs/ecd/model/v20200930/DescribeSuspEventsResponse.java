@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeSuspEventsResponse extends AcsResponse {
 
+	private Integer currentPage;
+
 	private String requestId;
 
 	private String pageSize;
 
-	private Integer currentPage;
-
 	private Integer totalCount;
 
 	private List<SuspEvent> suspEvents;
+
+	public Integer getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -49,14 +57,6 @@ public class DescribeSuspEventsResponse extends AcsResponse {
 
 	public void setPageSize(String pageSize) {
 		this.pageSize = pageSize;
-	}
-
-	public Integer getCurrentPage() {
-		return this.currentPage;
-	}
-
-	public void setCurrentPage(Integer currentPage) {
-		this.currentPage = currentPage;
 	}
 
 	public Integer getTotalCount() {
@@ -77,104 +77,56 @@ public class DescribeSuspEventsResponse extends AcsResponse {
 
 	public static class SuspEvent {
 
-		private Long id;
-
-		private String desktopId;
-
-		private String desktopName;
-
-		private String lastTime;
-
-		private String occurrenceTime;
-
-		private String uniqueInfo;
-
-		private String name;
+		private String dataSource;
 
 		private String eventSubType;
 
-		private String level;
+		private String desktopName;
 
-		private Integer eventStatus;
+		private String desktopId;
+
+		private String occurrenceTime;
+
+		private String alarmEventTypeDisplay;
+
+		private String alarmUniqueInfo;
 
 		private String desc;
 
-		private String operateMsg;
-
-		private String dataSource;
-
-		private String operateErrorCode;
+		private String alarmEventNameDisplay;
 
 		private Boolean canCancelFault;
+
+		private String lastTime;
+
+		private String operateMsg;
 
 		private String canBeDealOnLine;
 
 		private String alarmEventType;
 
+		private Integer eventStatus;
+
+		private String operateErrorCode;
+
 		private String alarmEventName;
 
-		private String alarmUniqueInfo;
+		private String name;
 
-		private String alarmEventNameDisplay;
+		private String uniqueInfo;
 
-		private String alarmEventTypeDisplay;
+		private String level;
+
+		private Long id;
 
 		private List<Detail> details;
 
-		public Long getId() {
-			return this.id;
+		public String getDataSource() {
+			return this.dataSource;
 		}
 
-		public void setId(Long id) {
-			this.id = id;
-		}
-
-		public String getDesktopId() {
-			return this.desktopId;
-		}
-
-		public void setDesktopId(String desktopId) {
-			this.desktopId = desktopId;
-		}
-
-		public String getDesktopName() {
-			return this.desktopName;
-		}
-
-		public void setDesktopName(String desktopName) {
-			this.desktopName = desktopName;
-		}
-
-		public String getLastTime() {
-			return this.lastTime;
-		}
-
-		public void setLastTime(String lastTime) {
-			this.lastTime = lastTime;
-		}
-
-		public String getOccurrenceTime() {
-			return this.occurrenceTime;
-		}
-
-		public void setOccurrenceTime(String occurrenceTime) {
-			this.occurrenceTime = occurrenceTime;
-		}
-
-		public String getUniqueInfo() {
-			return this.uniqueInfo;
-		}
-
-		public void setUniqueInfo(String uniqueInfo) {
-			this.uniqueInfo = uniqueInfo;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
+		public void setDataSource(String dataSource) {
+			this.dataSource = dataSource;
 		}
 
 		public String getEventSubType() {
@@ -185,20 +137,44 @@ public class DescribeSuspEventsResponse extends AcsResponse {
 			this.eventSubType = eventSubType;
 		}
 
-		public String getLevel() {
-			return this.level;
+		public String getDesktopName() {
+			return this.desktopName;
 		}
 
-		public void setLevel(String level) {
-			this.level = level;
+		public void setDesktopName(String desktopName) {
+			this.desktopName = desktopName;
 		}
 
-		public Integer getEventStatus() {
-			return this.eventStatus;
+		public String getDesktopId() {
+			return this.desktopId;
 		}
 
-		public void setEventStatus(Integer eventStatus) {
-			this.eventStatus = eventStatus;
+		public void setDesktopId(String desktopId) {
+			this.desktopId = desktopId;
+		}
+
+		public String getOccurrenceTime() {
+			return this.occurrenceTime;
+		}
+
+		public void setOccurrenceTime(String occurrenceTime) {
+			this.occurrenceTime = occurrenceTime;
+		}
+
+		public String getAlarmEventTypeDisplay() {
+			return this.alarmEventTypeDisplay;
+		}
+
+		public void setAlarmEventTypeDisplay(String alarmEventTypeDisplay) {
+			this.alarmEventTypeDisplay = alarmEventTypeDisplay;
+		}
+
+		public String getAlarmUniqueInfo() {
+			return this.alarmUniqueInfo;
+		}
+
+		public void setAlarmUniqueInfo(String alarmUniqueInfo) {
+			this.alarmUniqueInfo = alarmUniqueInfo;
 		}
 
 		public String getDesc() {
@@ -209,28 +185,12 @@ public class DescribeSuspEventsResponse extends AcsResponse {
 			this.desc = desc;
 		}
 
-		public String getOperateMsg() {
-			return this.operateMsg;
+		public String getAlarmEventNameDisplay() {
+			return this.alarmEventNameDisplay;
 		}
 
-		public void setOperateMsg(String operateMsg) {
-			this.operateMsg = operateMsg;
-		}
-
-		public String getDataSource() {
-			return this.dataSource;
-		}
-
-		public void setDataSource(String dataSource) {
-			this.dataSource = dataSource;
-		}
-
-		public String getOperateErrorCode() {
-			return this.operateErrorCode;
-		}
-
-		public void setOperateErrorCode(String operateErrorCode) {
-			this.operateErrorCode = operateErrorCode;
+		public void setAlarmEventNameDisplay(String alarmEventNameDisplay) {
+			this.alarmEventNameDisplay = alarmEventNameDisplay;
 		}
 
 		public Boolean getCanCancelFault() {
@@ -239,6 +199,22 @@ public class DescribeSuspEventsResponse extends AcsResponse {
 
 		public void setCanCancelFault(Boolean canCancelFault) {
 			this.canCancelFault = canCancelFault;
+		}
+
+		public String getLastTime() {
+			return this.lastTime;
+		}
+
+		public void setLastTime(String lastTime) {
+			this.lastTime = lastTime;
+		}
+
+		public String getOperateMsg() {
+			return this.operateMsg;
+		}
+
+		public void setOperateMsg(String operateMsg) {
+			this.operateMsg = operateMsg;
 		}
 
 		public String getCanBeDealOnLine() {
@@ -257,6 +233,22 @@ public class DescribeSuspEventsResponse extends AcsResponse {
 			this.alarmEventType = alarmEventType;
 		}
 
+		public Integer getEventStatus() {
+			return this.eventStatus;
+		}
+
+		public void setEventStatus(Integer eventStatus) {
+			this.eventStatus = eventStatus;
+		}
+
+		public String getOperateErrorCode() {
+			return this.operateErrorCode;
+		}
+
+		public void setOperateErrorCode(String operateErrorCode) {
+			this.operateErrorCode = operateErrorCode;
+		}
+
 		public String getAlarmEventName() {
 			return this.alarmEventName;
 		}
@@ -265,28 +257,36 @@ public class DescribeSuspEventsResponse extends AcsResponse {
 			this.alarmEventName = alarmEventName;
 		}
 
-		public String getAlarmUniqueInfo() {
-			return this.alarmUniqueInfo;
+		public String getName() {
+			return this.name;
 		}
 
-		public void setAlarmUniqueInfo(String alarmUniqueInfo) {
-			this.alarmUniqueInfo = alarmUniqueInfo;
+		public void setName(String name) {
+			this.name = name;
 		}
 
-		public String getAlarmEventNameDisplay() {
-			return this.alarmEventNameDisplay;
+		public String getUniqueInfo() {
+			return this.uniqueInfo;
 		}
 
-		public void setAlarmEventNameDisplay(String alarmEventNameDisplay) {
-			this.alarmEventNameDisplay = alarmEventNameDisplay;
+		public void setUniqueInfo(String uniqueInfo) {
+			this.uniqueInfo = uniqueInfo;
 		}
 
-		public String getAlarmEventTypeDisplay() {
-			return this.alarmEventTypeDisplay;
+		public String getLevel() {
+			return this.level;
 		}
 
-		public void setAlarmEventTypeDisplay(String alarmEventTypeDisplay) {
-			this.alarmEventTypeDisplay = alarmEventTypeDisplay;
+		public void setLevel(String level) {
+			this.level = level;
+		}
+
+		public Long getId() {
+			return this.id;
+		}
+
+		public void setId(Long id) {
+			this.id = id;
 		}
 
 		public List<Detail> getDetails() {
@@ -299,31 +299,15 @@ public class DescribeSuspEventsResponse extends AcsResponse {
 
 		public static class Detail {
 
-			private String name;
-
-			private String nameDisplay;
-
 			private String type;
 
 			private String value;
 
+			private String nameDisplay;
+
+			private String name;
+
 			private String valueDisplay;
-
-			public String getName() {
-				return this.name;
-			}
-
-			public void setName(String name) {
-				this.name = name;
-			}
-
-			public String getNameDisplay() {
-				return this.nameDisplay;
-			}
-
-			public void setNameDisplay(String nameDisplay) {
-				this.nameDisplay = nameDisplay;
-			}
 
 			public String getType() {
 				return this.type;
@@ -339,6 +323,22 @@ public class DescribeSuspEventsResponse extends AcsResponse {
 
 			public void setValue(String value) {
 				this.value = value;
+			}
+
+			public String getNameDisplay() {
+				return this.nameDisplay;
+			}
+
+			public void setNameDisplay(String nameDisplay) {
+				this.nameDisplay = nameDisplay;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
 			}
 
 			public String getValueDisplay() {

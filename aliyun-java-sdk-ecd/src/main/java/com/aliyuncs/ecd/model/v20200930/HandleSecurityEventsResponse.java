@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class HandleSecurityEventsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Long taskId;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public Long getTaskId() {
 		return this.taskId;
@@ -42,6 +34,14 @@ public class HandleSecurityEventsResponse extends AcsResponse {
 
 	public void setTaskId(Long taskId) {
 		this.taskId = taskId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

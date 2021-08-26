@@ -36,7 +36,7 @@ public class CreateRAMDirectoryRequest extends RpcAcsRequest<CreateRAMDirectoryR
 
 	private Boolean enableAdminAccess;
 	public CreateRAMDirectoryRequest() {
-		super("ecd", "2020-09-30", "CreateRAMDirectory", "gwsecd");
+		super("ecd", "2020-09-30", "CreateRAMDirectory");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

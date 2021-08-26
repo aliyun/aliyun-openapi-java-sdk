@@ -27,7 +27,7 @@ public class DeleteVirtualMFADeviceRequest extends RpcAcsRequest<DeleteVirtualMF
 
 	private String serialNumber;
 	public DeleteVirtualMFADeviceRequest() {
-		super("ecd", "2020-09-30", "DeleteVirtualMFADevice", "gwsecd");
+		super("ecd", "2020-09-30", "DeleteVirtualMFADevice");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

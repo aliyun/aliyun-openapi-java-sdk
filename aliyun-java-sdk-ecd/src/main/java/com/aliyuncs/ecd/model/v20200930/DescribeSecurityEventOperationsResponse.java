@@ -47,19 +47,11 @@ public class DescribeSecurityEventOperationsResponse extends AcsResponse {
 
 	public static class SecurityEventOperation {
 
-		private String operationCode;
-
 		private String operationParams;
 
+		private String operationCode;
+
 		private Boolean userCanOperate;
-
-		public String getOperationCode() {
-			return this.operationCode;
-		}
-
-		public void setOperationCode(String operationCode) {
-			this.operationCode = operationCode;
-		}
 
 		public String getOperationParams() {
 			return this.operationParams;
@@ -67,6 +59,14 @@ public class DescribeSecurityEventOperationsResponse extends AcsResponse {
 
 		public void setOperationParams(String operationParams) {
 			this.operationParams = operationParams;
+		}
+
+		public String getOperationCode() {
+			return this.operationCode;
+		}
+
+		public void setOperationCode(String operationCode) {
+			this.operationCode = operationCode;
 		}
 
 		public Boolean getUserCanOperate() {

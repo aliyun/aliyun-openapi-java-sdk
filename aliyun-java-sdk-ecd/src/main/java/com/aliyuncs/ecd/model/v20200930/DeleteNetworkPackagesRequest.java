@@ -28,7 +28,7 @@ public class DeleteNetworkPackagesRequest extends RpcAcsRequest<DeleteNetworkPac
 
 	private List<String> networkPackageIds;
 	public DeleteNetworkPackagesRequest() {
-		super("ecd", "2020-09-30", "DeleteNetworkPackages", "gwsecd");
+		super("ecd", "2020-09-30", "DeleteNetworkPackages");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

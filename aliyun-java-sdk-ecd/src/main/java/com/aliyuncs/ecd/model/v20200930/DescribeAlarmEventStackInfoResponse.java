@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeAlarmEventStackInfoResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String stackInfo;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getStackInfo() {
 		return this.stackInfo;
@@ -42,6 +34,14 @@ public class DescribeAlarmEventStackInfoResponse extends AcsResponse {
 
 	public void setStackInfo(String stackInfo) {
 		this.stackInfo = stackInfo;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

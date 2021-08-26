@@ -29,7 +29,7 @@ public class ModifyOfficeSiteMfaEnabledRequest extends RpcAcsRequest<ModifyOffic
 
 	private Boolean mfaEnabled;
 	public ModifyOfficeSiteMfaEnabledRequest() {
-		super("ecd", "2020-09-30", "ModifyOfficeSiteMfaEnabled", "gwsecd");
+		super("ecd", "2020-09-30", "ModifyOfficeSiteMfaEnabled");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

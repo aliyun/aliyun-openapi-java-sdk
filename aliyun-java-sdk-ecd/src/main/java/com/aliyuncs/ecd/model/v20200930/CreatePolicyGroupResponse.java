@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreatePolicyGroupResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String policyGroupId;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getPolicyGroupId() {
 		return this.policyGroupId;
@@ -42,6 +34,14 @@ public class CreatePolicyGroupResponse extends AcsResponse {
 
 	public void setPolicyGroupId(String policyGroupId) {
 		this.policyGroupId = policyGroupId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

@@ -32,24 +32,24 @@ public class DescribeClientEventsResponseUnmarshaller {
 		List<Event> events = new ArrayList<Event>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeClientEventsResponse.Events.Length"); i++) {
 			Event event = new Event();
-			event.setEventId(_ctx.stringValue("DescribeClientEventsResponse.Events["+ i +"].EventId"));
-			event.setEventType(_ctx.stringValue("DescribeClientEventsResponse.Events["+ i +"].EventType"));
-			event.setEventTime(_ctx.stringValue("DescribeClientEventsResponse.Events["+ i +"].EventTime"));
-			event.setRegionId(_ctx.stringValue("DescribeClientEventsResponse.Events["+ i +"].RegionId"));
-			event.setAliUid(_ctx.stringValue("DescribeClientEventsResponse.Events["+ i +"].AliUid"));
-			event.setEndUserId(_ctx.stringValue("DescribeClientEventsResponse.Events["+ i +"].EndUserId"));
-			event.setDesktopId(_ctx.stringValue("DescribeClientEventsResponse.Events["+ i +"].DesktopId"));
-			event.setDesktopIp(_ctx.stringValue("DescribeClientEventsResponse.Events["+ i +"].DesktopIp"));
-			event.setDirectoryId(_ctx.stringValue("DescribeClientEventsResponse.Events["+ i +"].DirectoryId"));
-			event.setOfficeSiteId(_ctx.stringValue("DescribeClientEventsResponse.Events["+ i +"].OfficeSiteId"));
-			event.setDirectoryType(_ctx.stringValue("DescribeClientEventsResponse.Events["+ i +"].DirectoryType"));
-			event.setOfficeSiteType(_ctx.stringValue("DescribeClientEventsResponse.Events["+ i +"].OfficeSiteType"));
-			event.setClientOS(_ctx.stringValue("DescribeClientEventsResponse.Events["+ i +"].ClientOS"));
-			event.setClientVersion(_ctx.stringValue("DescribeClientEventsResponse.Events["+ i +"].ClientVersion"));
-			event.setClientIp(_ctx.stringValue("DescribeClientEventsResponse.Events["+ i +"].ClientIp"));
-			event.setBytesSend(_ctx.stringValue("DescribeClientEventsResponse.Events["+ i +"].BytesSend"));
-			event.setBytesReceived(_ctx.stringValue("DescribeClientEventsResponse.Events["+ i +"].BytesReceived"));
 			event.setStatus(_ctx.stringValue("DescribeClientEventsResponse.Events["+ i +"].Status"));
+			event.setBytesReceived(_ctx.stringValue("DescribeClientEventsResponse.Events["+ i +"].BytesReceived"));
+			event.setDesktopIp(_ctx.stringValue("DescribeClientEventsResponse.Events["+ i +"].DesktopIp"));
+			event.setEventTime(_ctx.stringValue("DescribeClientEventsResponse.Events["+ i +"].EventTime"));
+			event.setBytesSend(_ctx.stringValue("DescribeClientEventsResponse.Events["+ i +"].BytesSend"));
+			event.setOfficeSiteId(_ctx.stringValue("DescribeClientEventsResponse.Events["+ i +"].OfficeSiteId"));
+			event.setAliUid(_ctx.stringValue("DescribeClientEventsResponse.Events["+ i +"].AliUid"));
+			event.setDesktopId(_ctx.stringValue("DescribeClientEventsResponse.Events["+ i +"].DesktopId"));
+			event.setRegionId(_ctx.stringValue("DescribeClientEventsResponse.Events["+ i +"].RegionId"));
+			event.setEventId(_ctx.stringValue("DescribeClientEventsResponse.Events["+ i +"].EventId"));
+			event.setDirectoryType(_ctx.stringValue("DescribeClientEventsResponse.Events["+ i +"].DirectoryType"));
+			event.setEventType(_ctx.stringValue("DescribeClientEventsResponse.Events["+ i +"].EventType"));
+			event.setEndUserId(_ctx.stringValue("DescribeClientEventsResponse.Events["+ i +"].EndUserId"));
+			event.setClientIp(_ctx.stringValue("DescribeClientEventsResponse.Events["+ i +"].ClientIp"));
+			event.setClientOS(_ctx.stringValue("DescribeClientEventsResponse.Events["+ i +"].ClientOS"));
+			event.setOfficeSiteType(_ctx.stringValue("DescribeClientEventsResponse.Events["+ i +"].OfficeSiteType"));
+			event.setDirectoryId(_ctx.stringValue("DescribeClientEventsResponse.Events["+ i +"].DirectoryId"));
+			event.setClientVersion(_ctx.stringValue("DescribeClientEventsResponse.Events["+ i +"].ClientVersion"));
 
 			events.add(event);
 		}

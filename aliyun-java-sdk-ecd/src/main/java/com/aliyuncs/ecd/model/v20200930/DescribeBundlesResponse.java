@@ -71,6 +71,12 @@ public class DescribeBundlesResponse extends AcsResponse {
 
 		private String osType;
 
+		private String stockState;
+
+		private String protocolType;
+
+		private String language;
+
 		private List<Disk> disks;
 
 		private DesktopTypeAttribute desktopTypeAttribute;
@@ -129,6 +135,30 @@ public class DescribeBundlesResponse extends AcsResponse {
 
 		public void setOsType(String osType) {
 			this.osType = osType;
+		}
+
+		public String getStockState() {
+			return this.stockState;
+		}
+
+		public void setStockState(String stockState) {
+			this.stockState = stockState;
+		}
+
+		public String getProtocolType() {
+			return this.protocolType;
+		}
+
+		public void setProtocolType(String protocolType) {
+			this.protocolType = protocolType;
+		}
+
+		public String getLanguage() {
+			return this.language;
+		}
+
+		public void setLanguage(String language) {
+			this.language = language;
 		}
 
 		public List<Disk> getDisks() {

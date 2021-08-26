@@ -48,7 +48,7 @@ public class CreateADConnectorDirectoryRequest extends RpcAcsRequest<CreateADCon
 
 	private List<String> dnsAddresss;
 	public CreateADConnectorDirectoryRequest() {
-		super("ecd", "2020-09-30", "CreateADConnectorDirectory", "gwsecd");
+		super("ecd", "2020-09-30", "CreateADConnectorDirectory");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

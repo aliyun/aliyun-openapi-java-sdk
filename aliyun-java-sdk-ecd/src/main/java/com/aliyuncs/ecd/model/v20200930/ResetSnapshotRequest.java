@@ -27,7 +27,7 @@ public class ResetSnapshotRequest extends RpcAcsRequest<ResetSnapshotResponse> {
 
 	private String snapshotId;
 	public ResetSnapshotRequest() {
-		super("ecd", "2020-09-30", "ResetSnapshot", "gwsecd");
+		super("ecd", "2020-09-30", "ResetSnapshot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

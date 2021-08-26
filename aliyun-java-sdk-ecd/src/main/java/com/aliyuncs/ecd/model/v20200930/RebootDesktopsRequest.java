@@ -28,7 +28,7 @@ public class RebootDesktopsRequest extends RpcAcsRequest<RebootDesktopsResponse>
 
 	private List<String> desktopIds;
 	public RebootDesktopsRequest() {
-		super("ecd", "2020-09-30", "RebootDesktops", "gwsecd");
+		super("ecd", "2020-09-30", "RebootDesktops");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

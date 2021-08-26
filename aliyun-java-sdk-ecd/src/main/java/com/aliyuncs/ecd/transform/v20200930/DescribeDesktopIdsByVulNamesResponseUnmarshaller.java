@@ -31,8 +31,8 @@ public class DescribeDesktopIdsByVulNamesResponseUnmarshaller {
 		List<DesktopItem> desktopItems = new ArrayList<DesktopItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDesktopIdsByVulNamesResponse.DesktopItems.Length"); i++) {
 			DesktopItem desktopItem = new DesktopItem();
-			desktopItem.setDesktopId(_ctx.stringValue("DescribeDesktopIdsByVulNamesResponse.DesktopItems["+ i +"].DesktopId"));
 			desktopItem.setDesktopName(_ctx.stringValue("DescribeDesktopIdsByVulNamesResponse.DesktopItems["+ i +"].DesktopName"));
+			desktopItem.setDesktopId(_ctx.stringValue("DescribeDesktopIdsByVulNamesResponse.DesktopItems["+ i +"].DesktopId"));
 
 			desktopItems.add(desktopItem);
 		}

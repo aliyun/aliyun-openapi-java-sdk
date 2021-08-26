@@ -62,7 +62,7 @@ public class CreateDesktopsRequest extends RpcAcsRequest<CreateDesktopsResponse>
 
 	private String userName;
 	public CreateDesktopsRequest() {
-		super("ecd", "2020-09-30", "CreateDesktops", "gwsecd");
+		super("ecd", "2020-09-30", "CreateDesktops");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -31,9 +31,9 @@ public class ModifyDesktopsPolicyGroupResponseUnmarshaller {
 		List<ModifyResult> modifyResults = new ArrayList<ModifyResult>();
 		for (int i = 0; i < _ctx.lengthValue("ModifyDesktopsPolicyGroupResponse.ModifyResults.Length"); i++) {
 			ModifyResult modifyResult = new ModifyResult();
-			modifyResult.setDesktopId(_ctx.stringValue("ModifyDesktopsPolicyGroupResponse.ModifyResults["+ i +"].DesktopId"));
 			modifyResult.setCode(_ctx.stringValue("ModifyDesktopsPolicyGroupResponse.ModifyResults["+ i +"].Code"));
 			modifyResult.setMessage(_ctx.stringValue("ModifyDesktopsPolicyGroupResponse.ModifyResults["+ i +"].Message"));
+			modifyResult.setDesktopId(_ctx.stringValue("ModifyDesktopsPolicyGroupResponse.ModifyResults["+ i +"].DesktopId"));
 
 			modifyResults.add(modifyResult);
 		}

@@ -47,7 +47,7 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 
 	private Integer rootDiskSizeGib;
 	public DescribePriceRequest() {
-		super("ecd", "2020-09-30", "DescribePrice", "gwsecd");
+		super("ecd", "2020-09-30", "DescribePrice");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

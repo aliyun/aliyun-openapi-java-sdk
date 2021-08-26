@@ -23,9 +23,9 @@ public class DescribeSuspEventOverviewResponseUnmarshaller {
 	public static DescribeSuspEventOverviewResponse unmarshall(DescribeSuspEventOverviewResponse describeSuspEventOverviewResponse, UnmarshallerContext _ctx) {
 		
 		describeSuspEventOverviewResponse.setRequestId(_ctx.stringValue("DescribeSuspEventOverviewResponse.RequestId"));
-		describeSuspEventOverviewResponse.setSeriousCount(_ctx.integerValue("DescribeSuspEventOverviewResponse.SeriousCount"));
 		describeSuspEventOverviewResponse.setSuspiciousCount(_ctx.integerValue("DescribeSuspEventOverviewResponse.SuspiciousCount"));
 		describeSuspEventOverviewResponse.setRemindCount(_ctx.integerValue("DescribeSuspEventOverviewResponse.RemindCount"));
+		describeSuspEventOverviewResponse.setSeriousCount(_ctx.integerValue("DescribeSuspEventOverviewResponse.SeriousCount"));
 	 
 	 	return describeSuspEventOverviewResponse;
 	}

@@ -28,7 +28,7 @@ public class DeleteDirectoriesRequest extends RpcAcsRequest<DeleteDirectoriesRes
 
 	private List<String> directoryIds;
 	public DeleteDirectoriesRequest() {
-		super("ecd", "2020-09-30", "DeleteDirectories", "gwsecd");
+		super("ecd", "2020-09-30", "DeleteDirectories");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

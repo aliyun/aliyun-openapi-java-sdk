@@ -41,7 +41,7 @@ public class DescribeSuspEventsRequest extends RpcAcsRequest<DescribeSuspEventsR
 
 	private String levels;
 	public DescribeSuspEventsRequest() {
-		super("ecd", "2020-09-30", "DescribeSuspEvents", "gwsecd");
+		super("ecd", "2020-09-30", "DescribeSuspEvents");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

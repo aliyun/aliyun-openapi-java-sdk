@@ -23,10 +23,10 @@ public class CreateNASFileSystemResponseUnmarshaller {
 	public static CreateNASFileSystemResponse unmarshall(CreateNASFileSystemResponse createNASFileSystemResponse, UnmarshallerContext _ctx) {
 		
 		createNASFileSystemResponse.setRequestId(_ctx.stringValue("CreateNASFileSystemResponse.RequestId"));
-		createNASFileSystemResponse.setOfficeSiteId(_ctx.stringValue("CreateNASFileSystemResponse.OfficeSiteId"));
 		createNASFileSystemResponse.setFileSystemId(_ctx.stringValue("CreateNASFileSystemResponse.FileSystemId"));
 		createNASFileSystemResponse.setFileSystemName(_ctx.stringValue("CreateNASFileSystemResponse.FileSystemName"));
 		createNASFileSystemResponse.setMountTargetDomain(_ctx.stringValue("CreateNASFileSystemResponse.MountTargetDomain"));
+		createNASFileSystemResponse.setOfficeSiteId(_ctx.stringValue("CreateNASFileSystemResponse.OfficeSiteId"));
 	 
 	 	return createNASFileSystemResponse;
 	}

@@ -23,8 +23,8 @@ public class DescribeScanTaskProgressResponseUnmarshaller {
 	public static DescribeScanTaskProgressResponse unmarshall(DescribeScanTaskProgressResponse describeScanTaskProgressResponse, UnmarshallerContext _ctx) {
 		
 		describeScanTaskProgressResponse.setRequestId(_ctx.stringValue("DescribeScanTaskProgressResponse.RequestId"));
-		describeScanTaskProgressResponse.setCreateTime(_ctx.stringValue("DescribeScanTaskProgressResponse.CreateTime"));
 		describeScanTaskProgressResponse.setTaskStatus(_ctx.stringValue("DescribeScanTaskProgressResponse.TaskStatus"));
+		describeScanTaskProgressResponse.setCreateTime(_ctx.stringValue("DescribeScanTaskProgressResponse.CreateTime"));
 	 
 	 	return describeScanTaskProgressResponse;
 	}

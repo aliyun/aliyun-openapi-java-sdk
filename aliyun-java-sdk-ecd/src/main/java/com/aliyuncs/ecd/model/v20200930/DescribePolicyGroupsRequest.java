@@ -32,7 +32,7 @@ public class DescribePolicyGroupsRequest extends RpcAcsRequest<DescribePolicyGro
 
 	private List<String> policyGroupIds;
 	public DescribePolicyGroupsRequest() {
-		super("ecd", "2020-09-30", "DescribePolicyGroups", "gwsecd");
+		super("ecd", "2020-09-30", "DescribePolicyGroups");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

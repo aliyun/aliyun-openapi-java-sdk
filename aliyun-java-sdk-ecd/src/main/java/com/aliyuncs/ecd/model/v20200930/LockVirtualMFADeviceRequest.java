@@ -27,7 +27,7 @@ public class LockVirtualMFADeviceRequest extends RpcAcsRequest<LockVirtualMFADev
 
 	private String serialNumber;
 	public LockVirtualMFADeviceRequest() {
-		super("ecd", "2020-09-30", "LockVirtualMFADevice", "gwsecd");
+		super("ecd", "2020-09-30", "LockVirtualMFADevice");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

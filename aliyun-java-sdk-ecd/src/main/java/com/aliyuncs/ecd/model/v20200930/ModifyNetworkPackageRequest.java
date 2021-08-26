@@ -29,7 +29,7 @@ public class ModifyNetworkPackageRequest extends RpcAcsRequest<ModifyNetworkPack
 
 	private String networkPackageId;
 	public ModifyNetworkPackageRequest() {
-		super("ecd", "2020-09-30", "ModifyNetworkPackage", "gwsecd");
+		super("ecd", "2020-09-30", "ModifyNetworkPackage");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -25,16 +25,44 @@ import com.aliyuncs.ecd.Endpoint;
 public class DescribeDesktopTypesRequest extends RpcAcsRequest<DescribeDesktopTypesResponse> {
 	   
 
+	private Integer memorySize;
+
+	private Float gpuCount;
+
 	private String instanceTypeFamily;
 
 	private String desktopTypeId;
+
+	private Integer cpuCount;
 	public DescribeDesktopTypesRequest() {
-		super("ecd", "2020-09-30", "DescribeDesktopTypes", "gwsecd");
+		super("ecd", "2020-09-30", "DescribeDesktopTypes");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Integer getMemorySize() {
+		return this.memorySize;
+	}
+
+	public void setMemorySize(Integer memorySize) {
+		this.memorySize = memorySize;
+		if(memorySize != null){
+			putQueryParameter("MemorySize", memorySize.toString());
+		}
+	}
+
+	public Float getGpuCount() {
+		return this.gpuCount;
+	}
+
+	public void setGpuCount(Float gpuCount) {
+		this.gpuCount = gpuCount;
+		if(gpuCount != null){
+			putQueryParameter("GpuCount", gpuCount.toString());
+		}
 	}
 
 	public String getInstanceTypeFamily() {
@@ -56,6 +84,17 @@ public class DescribeDesktopTypesRequest extends RpcAcsRequest<DescribeDesktopTy
 		this.desktopTypeId = desktopTypeId;
 		if(desktopTypeId != null){
 			putQueryParameter("DesktopTypeId", desktopTypeId);
+		}
+	}
+
+	public Integer getCpuCount() {
+		return this.cpuCount;
+	}
+
+	public void setCpuCount(Integer cpuCount) {
+		this.cpuCount = cpuCount;
+		if(cpuCount != null){
+			putQueryParameter("CpuCount", cpuCount.toString());
 		}
 	}
 

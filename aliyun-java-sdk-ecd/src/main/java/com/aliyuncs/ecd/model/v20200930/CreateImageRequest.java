@@ -15,6 +15,7 @@
 package com.aliyuncs.ecd.model.v20200930;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.ecd.Endpoint;
 
@@ -25,18 +26,48 @@ import com.aliyuncs.ecd.Endpoint;
 public class CreateImageRequest extends RpcAcsRequest<CreateImageResponse> {
 	   
 
+	private String snapshotId;
+
+	private List<String> snapshotIdss;
+
 	private String description;
 
 	private String imageName;
 
 	private String desktopId;
+
+	private String imageResourceType;
 	public CreateImageRequest() {
-		super("ecd", "2020-09-30", "CreateImage", "gwsecd");
+		super("ecd", "2020-09-30", "CreateImage");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getSnapshotId() {
+		return this.snapshotId;
+	}
+
+	public void setSnapshotId(String snapshotId) {
+		this.snapshotId = snapshotId;
+		if(snapshotId != null){
+			putQueryParameter("SnapshotId", snapshotId);
+		}
+	}
+
+	public List<String> getSnapshotIdss() {
+		return this.snapshotIdss;
+	}
+
+	public void setSnapshotIdss(List<String> snapshotIdss) {
+		this.snapshotIdss = snapshotIdss;	
+		if (snapshotIdss != null) {
+			for (int i = 0; i < snapshotIdss.size(); i++) {
+				putQueryParameter("SnapshotIds." + (i + 1) , snapshotIdss.get(i));
+			}
+		}	
 	}
 
 	public String getDescription() {
@@ -69,6 +100,17 @@ public class CreateImageRequest extends RpcAcsRequest<CreateImageResponse> {
 		this.desktopId = desktopId;
 		if(desktopId != null){
 			putQueryParameter("DesktopId", desktopId);
+		}
+	}
+
+	public String getImageResourceType() {
+		return this.imageResourceType;
+	}
+
+	public void setImageResourceType(String imageResourceType) {
+		this.imageResourceType = imageResourceType;
+		if(imageResourceType != null){
+			putQueryParameter("ImageResourceType", imageResourceType);
 		}
 	}
 

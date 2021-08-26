@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeSecurityEventOperationStatusResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String taskStatus;
 
+	private String requestId;
+
 	private List<SecurityEventOperationStatus> securityEventOperationStatuses;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getTaskStatus() {
 		return this.taskStatus;
@@ -45,6 +37,14 @@ public class DescribeSecurityEventOperationStatusResponse extends AcsResponse {
 
 	public void setTaskStatus(String taskStatus) {
 		this.taskStatus = taskStatus;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<SecurityEventOperationStatus> getSecurityEventOperationStatuses() {
@@ -57,19 +57,11 @@ public class DescribeSecurityEventOperationStatusResponse extends AcsResponse {
 
 	public static class SecurityEventOperationStatus {
 
-		private Long securityEventId;
-
 		private String status;
 
+		private Long securityEventId;
+
 		private String errorCode;
-
-		public Long getSecurityEventId() {
-			return this.securityEventId;
-		}
-
-		public void setSecurityEventId(Long securityEventId) {
-			this.securityEventId = securityEventId;
-		}
 
 		public String getStatus() {
 			return this.status;
@@ -77,6 +69,14 @@ public class DescribeSecurityEventOperationStatusResponse extends AcsResponse {
 
 		public void setStatus(String status) {
 			this.status = status;
+		}
+
+		public Long getSecurityEventId() {
+			return this.securityEventId;
+		}
+
+		public void setSecurityEventId(Long securityEventId) {
+			this.securityEventId = securityEventId;
 		}
 
 		public String getErrorCode() {

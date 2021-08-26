@@ -24,19 +24,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateNetworkPackageResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String networkPackageId;
 
+	private String requestId;
+
 	private String orderId;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getNetworkPackageId() {
 		return this.networkPackageId;
@@ -44,6 +36,14 @@ public class CreateNetworkPackageResponse extends AcsResponse {
 
 	public void setNetworkPackageId(String networkPackageId) {
 		this.networkPackageId = networkPackageId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getOrderId() {

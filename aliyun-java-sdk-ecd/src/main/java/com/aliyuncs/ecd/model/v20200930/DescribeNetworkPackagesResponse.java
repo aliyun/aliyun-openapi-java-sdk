@@ -59,19 +59,21 @@ public class DescribeNetworkPackagesResponse extends AcsResponse {
 
 		private String networkPackageId;
 
-		private String officeSiteId;
-
-		private String officeSiteName;
-
 		private Integer bandwidth;
-
-		private String networkPackageStatus;
-
-		private String createTime;
 
 		private String expiredTime;
 
+		private String createTime;
+
+		private String officeSiteId;
+
 		private String internetChargeType;
+
+		private String networkPackageStatus;
+
+		private String officeSiteName;
+
+		private List<String> eipAddresses;
 
 		public String getNetworkPackageId() {
 			return this.networkPackageId;
@@ -79,22 +81,6 @@ public class DescribeNetworkPackagesResponse extends AcsResponse {
 
 		public void setNetworkPackageId(String networkPackageId) {
 			this.networkPackageId = networkPackageId;
-		}
-
-		public String getOfficeSiteId() {
-			return this.officeSiteId;
-		}
-
-		public void setOfficeSiteId(String officeSiteId) {
-			this.officeSiteId = officeSiteId;
-		}
-
-		public String getOfficeSiteName() {
-			return this.officeSiteName;
-		}
-
-		public void setOfficeSiteName(String officeSiteName) {
-			this.officeSiteName = officeSiteName;
 		}
 
 		public Integer getBandwidth() {
@@ -105,12 +91,12 @@ public class DescribeNetworkPackagesResponse extends AcsResponse {
 			this.bandwidth = bandwidth;
 		}
 
-		public String getNetworkPackageStatus() {
-			return this.networkPackageStatus;
+		public String getExpiredTime() {
+			return this.expiredTime;
 		}
 
-		public void setNetworkPackageStatus(String networkPackageStatus) {
-			this.networkPackageStatus = networkPackageStatus;
+		public void setExpiredTime(String expiredTime) {
+			this.expiredTime = expiredTime;
 		}
 
 		public String getCreateTime() {
@@ -121,12 +107,12 @@ public class DescribeNetworkPackagesResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
-		public String getExpiredTime() {
-			return this.expiredTime;
+		public String getOfficeSiteId() {
+			return this.officeSiteId;
 		}
 
-		public void setExpiredTime(String expiredTime) {
-			this.expiredTime = expiredTime;
+		public void setOfficeSiteId(String officeSiteId) {
+			this.officeSiteId = officeSiteId;
 		}
 
 		public String getInternetChargeType() {
@@ -135,6 +121,30 @@ public class DescribeNetworkPackagesResponse extends AcsResponse {
 
 		public void setInternetChargeType(String internetChargeType) {
 			this.internetChargeType = internetChargeType;
+		}
+
+		public String getNetworkPackageStatus() {
+			return this.networkPackageStatus;
+		}
+
+		public void setNetworkPackageStatus(String networkPackageStatus) {
+			this.networkPackageStatus = networkPackageStatus;
+		}
+
+		public String getOfficeSiteName() {
+			return this.officeSiteName;
+		}
+
+		public void setOfficeSiteName(String officeSiteName) {
+			this.officeSiteName = officeSiteName;
+		}
+
+		public List<String> getEipAddresses() {
+			return this.eipAddresses;
+		}
+
+		public void setEipAddresses(List<String> eipAddresses) {
+			this.eipAddresses = eipAddresses;
 		}
 	}
 

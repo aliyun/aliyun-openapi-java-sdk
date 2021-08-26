@@ -29,7 +29,7 @@ public class DescribeCensRequest extends RpcAcsRequest<DescribeCensResponse> {
 
 	private Integer pageSize;
 	public DescribeCensRequest() {
-		super("ecd", "2020-09-30", "DescribeCens", "gwsecd");
+		super("ecd", "2020-09-30", "DescribeCens");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

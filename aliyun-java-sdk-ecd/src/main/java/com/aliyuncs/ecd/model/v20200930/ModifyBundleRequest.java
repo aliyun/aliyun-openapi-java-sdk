@@ -31,9 +31,11 @@ public class ModifyBundleRequest extends RpcAcsRequest<ModifyBundleResponse> {
 
 	private String description;
 
+	private String language;
+
 	private String bundleName;
 	public ModifyBundleRequest() {
-		super("ecd", "2020-09-30", "ModifyBundle", "gwsecd");
+		super("ecd", "2020-09-30", "ModifyBundle");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -71,6 +73,17 @@ public class ModifyBundleRequest extends RpcAcsRequest<ModifyBundleResponse> {
 		this.description = description;
 		if(description != null){
 			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getLanguage() {
+		return this.language;
+	}
+
+	public void setLanguage(String language) {
+		this.language = language;
+		if(language != null){
+			putQueryParameter("Language", language);
 		}
 	}
 

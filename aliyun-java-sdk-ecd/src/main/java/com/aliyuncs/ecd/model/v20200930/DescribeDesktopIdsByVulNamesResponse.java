@@ -47,17 +47,9 @@ public class DescribeDesktopIdsByVulNamesResponse extends AcsResponse {
 
 	public static class DesktopItem {
 
-		private String desktopId;
-
 		private String desktopName;
 
-		public String getDesktopId() {
-			return this.desktopId;
-		}
-
-		public void setDesktopId(String desktopId) {
-			this.desktopId = desktopId;
-		}
+		private String desktopId;
 
 		public String getDesktopName() {
 			return this.desktopName;
@@ -65,6 +57,14 @@ public class DescribeDesktopIdsByVulNamesResponse extends AcsResponse {
 
 		public void setDesktopName(String desktopName) {
 			this.desktopName = desktopName;
+		}
+
+		public String getDesktopId() {
+			return this.desktopId;
+		}
+
+		public void setDesktopId(String desktopId) {
+			this.desktopId = desktopId;
 		}
 	}
 

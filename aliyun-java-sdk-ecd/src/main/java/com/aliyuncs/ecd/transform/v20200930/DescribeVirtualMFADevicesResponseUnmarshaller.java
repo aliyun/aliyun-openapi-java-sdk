@@ -32,14 +32,14 @@ public class DescribeVirtualMFADevicesResponseUnmarshaller {
 		List<VirtualMFADevice> virtualMFADevices = new ArrayList<VirtualMFADevice>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeVirtualMFADevicesResponse.VirtualMFADevices.Length"); i++) {
 			VirtualMFADevice virtualMFADevice = new VirtualMFADevice();
-			virtualMFADevice.setDirectoryId(_ctx.stringValue("DescribeVirtualMFADevicesResponse.VirtualMFADevices["+ i +"].DirectoryId"));
-			virtualMFADevice.setOfficeSiteId(_ctx.stringValue("DescribeVirtualMFADevicesResponse.VirtualMFADevices["+ i +"].OfficeSiteId"));
-			virtualMFADevice.setEndUserId(_ctx.stringValue("DescribeVirtualMFADevicesResponse.VirtualMFADevices["+ i +"].EndUserId"));
-			virtualMFADevice.setGmtEnabled(_ctx.stringValue("DescribeVirtualMFADevicesResponse.VirtualMFADevices["+ i +"].GmtEnabled"));
-			virtualMFADevice.setGmtUnlock(_ctx.stringValue("DescribeVirtualMFADevicesResponse.VirtualMFADevices["+ i +"].GmtUnlock"));
-			virtualMFADevice.setConsecutiveFails(_ctx.integerValue("DescribeVirtualMFADevicesResponse.VirtualMFADevices["+ i +"].ConsecutiveFails"));
 			virtualMFADevice.setSerialNumber(_ctx.stringValue("DescribeVirtualMFADevicesResponse.VirtualMFADevices["+ i +"].SerialNumber"));
+			virtualMFADevice.setGmtUnlock(_ctx.stringValue("DescribeVirtualMFADevicesResponse.VirtualMFADevices["+ i +"].GmtUnlock"));
+			virtualMFADevice.setEndUserId(_ctx.stringValue("DescribeVirtualMFADevicesResponse.VirtualMFADevices["+ i +"].EndUserId"));
+			virtualMFADevice.setConsecutiveFails(_ctx.integerValue("DescribeVirtualMFADevicesResponse.VirtualMFADevices["+ i +"].ConsecutiveFails"));
+			virtualMFADevice.setOfficeSiteId(_ctx.stringValue("DescribeVirtualMFADevicesResponse.VirtualMFADevices["+ i +"].OfficeSiteId"));
 			virtualMFADevice.setStatus(_ctx.stringValue("DescribeVirtualMFADevicesResponse.VirtualMFADevices["+ i +"].status"));
+			virtualMFADevice.setDirectoryId(_ctx.stringValue("DescribeVirtualMFADevicesResponse.VirtualMFADevices["+ i +"].DirectoryId"));
+			virtualMFADevice.setGmtEnabled(_ctx.stringValue("DescribeVirtualMFADevicesResponse.VirtualMFADevices["+ i +"].GmtEnabled"));
 
 			virtualMFADevices.add(virtualMFADevice);
 		}

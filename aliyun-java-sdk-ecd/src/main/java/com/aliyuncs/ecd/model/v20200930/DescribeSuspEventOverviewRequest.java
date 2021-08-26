@@ -25,7 +25,7 @@ import com.aliyuncs.ecd.Endpoint;
 public class DescribeSuspEventOverviewRequest extends RpcAcsRequest<DescribeSuspEventOverviewResponse> {
 	   
 	public DescribeSuspEventOverviewRequest() {
-		super("ecd", "2020-09-30", "DescribeSuspEventOverview", "gwsecd");
+		super("ecd", "2020-09-30", "DescribeSuspEventOverview");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

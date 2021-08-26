@@ -29,7 +29,7 @@ public class ModifyNASDefaultMountTargetRequest extends RpcAcsRequest<ModifyNASD
 
 	private String fileSystemId;
 	public ModifyNASDefaultMountTargetRequest() {
-		super("ecd", "2020-09-30", "ModifyNASDefaultMountTarget", "gwsecd");
+		super("ecd", "2020-09-30", "ModifyNASDefaultMountTarget");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

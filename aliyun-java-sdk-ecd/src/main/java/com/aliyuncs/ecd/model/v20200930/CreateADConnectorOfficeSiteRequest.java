@@ -30,6 +30,8 @@ public class CreateADConnectorOfficeSiteRequest extends RpcAcsRequest<CreateADCo
 
 	private List<String> subDomainDnsAddresss;
 
+	private Long cenOwnerId;
+
 	private Boolean enableInternetAccess;
 
 	private String subDomainName;
@@ -54,7 +56,7 @@ public class CreateADConnectorOfficeSiteRequest extends RpcAcsRequest<CreateADCo
 
 	private List<String> dnsAddresss;
 	public CreateADConnectorOfficeSiteRequest() {
-		super("ecd", "2020-09-30", "CreateADConnectorOfficeSite", "gwsecd");
+		super("ecd", "2020-09-30", "CreateADConnectorOfficeSite");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -84,6 +86,17 @@ public class CreateADConnectorOfficeSiteRequest extends RpcAcsRequest<CreateADCo
 				putQueryParameter("SubDomainDnsAddress." + (i + 1) , subDomainDnsAddresss.get(i));
 			}
 		}	
+	}
+
+	public Long getCenOwnerId() {
+		return this.cenOwnerId;
+	}
+
+	public void setCenOwnerId(Long cenOwnerId) {
+		this.cenOwnerId = cenOwnerId;
+		if(cenOwnerId != null){
+			putQueryParameter("CenOwnerId", cenOwnerId.toString());
+		}
 	}
 
 	public Boolean getEnableInternetAccess() {

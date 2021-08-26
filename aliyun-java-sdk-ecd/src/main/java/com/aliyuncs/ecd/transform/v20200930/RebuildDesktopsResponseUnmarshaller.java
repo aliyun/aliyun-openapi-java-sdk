@@ -31,9 +31,9 @@ public class RebuildDesktopsResponseUnmarshaller {
 		List<RebuildResult> rebuildResults = new ArrayList<RebuildResult>();
 		for (int i = 0; i < _ctx.lengthValue("RebuildDesktopsResponse.RebuildResults.Length"); i++) {
 			RebuildResult rebuildResult = new RebuildResult();
-			rebuildResult.setDesktopId(_ctx.stringValue("RebuildDesktopsResponse.RebuildResults["+ i +"].DesktopId"));
 			rebuildResult.setCode(_ctx.stringValue("RebuildDesktopsResponse.RebuildResults["+ i +"].Code"));
 			rebuildResult.setMessage(_ctx.stringValue("RebuildDesktopsResponse.RebuildResults["+ i +"].Message"));
+			rebuildResult.setDesktopId(_ctx.stringValue("RebuildDesktopsResponse.RebuildResults["+ i +"].DesktopId"));
 
 			rebuildResults.add(rebuildResult);
 		}

@@ -28,7 +28,7 @@ public class DeletePolicyGroupsRequest extends RpcAcsRequest<DeletePolicyGroupsR
 
 	private List<String> policyGroupIds;
 	public DeletePolicyGroupsRequest() {
-		super("ecd", "2020-09-30", "DeletePolicyGroups", "gwsecd");
+		super("ecd", "2020-09-30", "DeletePolicyGroups");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -29,7 +29,7 @@ public class SetDirectorySsoStatusRequest extends RpcAcsRequest<SetDirectorySsoS
 
 	private String directoryId;
 	public SetDirectorySsoStatusRequest() {
-		super("ecd", "2020-09-30", "SetDirectorySsoStatus", "gwsecd");
+		super("ecd", "2020-09-30", "SetDirectorySsoStatus");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

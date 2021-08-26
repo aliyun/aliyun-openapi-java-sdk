@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeSnapshotsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String nextToken;
 
+	private String requestId;
+
 	private List<Snapshot> snapshots;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getNextToken() {
 		return this.nextToken;
@@ -45,6 +37,14 @@ public class DescribeSnapshotsResponse extends AcsResponse {
 
 	public void setNextToken(String nextToken) {
 		this.nextToken = nextToken;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<Snapshot> getSnapshots() {
@@ -57,42 +57,50 @@ public class DescribeSnapshotsResponse extends AcsResponse {
 
 	public static class Snapshot {
 
-		private String snapshotId;
+		private String creationTime;
 
-		private String desktopId;
+		private String status;
+
+		private String snapshotType;
 
 		private String snapshotName;
 
+		private String progress;
+
 		private String description;
 
-		private String snapshotType;
+		private String snapshotId;
+
+		private Integer remainTime;
 
 		private String sourceDiskSize;
 
 		private String sourceDiskType;
 
-		private String status;
+		private String desktopId;
 
-		private String creationTime;
-
-		private String progress;
-
-		private Integer remainTime;
-
-		public String getSnapshotId() {
-			return this.snapshotId;
+		public String getCreationTime() {
+			return this.creationTime;
 		}
 
-		public void setSnapshotId(String snapshotId) {
-			this.snapshotId = snapshotId;
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
 		}
 
-		public String getDesktopId() {
-			return this.desktopId;
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setDesktopId(String desktopId) {
-			this.desktopId = desktopId;
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
+		public String getSnapshotType() {
+			return this.snapshotType;
+		}
+
+		public void setSnapshotType(String snapshotType) {
+			this.snapshotType = snapshotType;
 		}
 
 		public String getSnapshotName() {
@@ -103,6 +111,14 @@ public class DescribeSnapshotsResponse extends AcsResponse {
 			this.snapshotName = snapshotName;
 		}
 
+		public String getProgress() {
+			return this.progress;
+		}
+
+		public void setProgress(String progress) {
+			this.progress = progress;
+		}
+
 		public String getDescription() {
 			return this.description;
 		}
@@ -111,12 +127,20 @@ public class DescribeSnapshotsResponse extends AcsResponse {
 			this.description = description;
 		}
 
-		public String getSnapshotType() {
-			return this.snapshotType;
+		public String getSnapshotId() {
+			return this.snapshotId;
 		}
 
-		public void setSnapshotType(String snapshotType) {
-			this.snapshotType = snapshotType;
+		public void setSnapshotId(String snapshotId) {
+			this.snapshotId = snapshotId;
+		}
+
+		public Integer getRemainTime() {
+			return this.remainTime;
+		}
+
+		public void setRemainTime(Integer remainTime) {
+			this.remainTime = remainTime;
 		}
 
 		public String getSourceDiskSize() {
@@ -135,36 +159,12 @@ public class DescribeSnapshotsResponse extends AcsResponse {
 			this.sourceDiskType = sourceDiskType;
 		}
 
-		public String getStatus() {
-			return this.status;
+		public String getDesktopId() {
+			return this.desktopId;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
-		public String getCreationTime() {
-			return this.creationTime;
-		}
-
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
-		}
-
-		public String getProgress() {
-			return this.progress;
-		}
-
-		public void setProgress(String progress) {
-			this.progress = progress;
-		}
-
-		public Integer getRemainTime() {
-			return this.remainTime;
-		}
-
-		public void setRemainTime(Integer remainTime) {
-			this.remainTime = remainTime;
+		public void setDesktopId(String desktopId) {
+			this.desktopId = desktopId;
 		}
 	}
 

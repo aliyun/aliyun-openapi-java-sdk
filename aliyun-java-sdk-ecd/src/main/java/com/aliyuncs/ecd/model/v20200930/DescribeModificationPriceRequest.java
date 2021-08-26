@@ -33,7 +33,7 @@ public class DescribeModificationPriceRequest extends RpcAcsRequest<DescribeModi
 
 	private Integer rootDiskSizeGib;
 	public DescribeModificationPriceRequest() {
-		super("ecd", "2020-09-30", "DescribeModificationPrice", "gwsecd");
+		super("ecd", "2020-09-30", "DescribeModificationPrice");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
