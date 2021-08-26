@@ -16,7 +16,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 
-@SuppressWarnings("deprecation")
 public abstract class AcsRequest<T extends AcsResponse> extends HttpRequest {
 
     private final Map<String, String> queryParameters = new HashMap<String, String>();

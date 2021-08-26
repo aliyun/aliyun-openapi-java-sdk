@@ -80,13 +80,9 @@ public class ECSMetadataServiceCredentialsFetcher {
 
     public InstanceProfileCredentials fetch() throws ClientException {
         String jsonContent = getMetadata();
-        JsonObject jsonObject = null;
-        jsonObject = new JsonParser().parse(jsonContent).getAsJsonObject();
-
-        if (jsonObject.has("Code") && jsonObject.has("AccessKeyId") && jsonObject.has("AccessKeySecret") && jsonObject
-                .has("SecurityToken") && jsonObject.has("Expiration")) {
-
-        } else {
+        JsonObject jsonObject = JsonParser.parseString(jsonContent).getAsJsonObject();;
+        if (!jsonObject.has("Code") || !jsonObject.has("AccessKeyId") || !jsonObject.has("AccessKeySecret") || !jsonObject
+                .has("SecurityToken") || !jsonObject.has("Expiration")) {
             throw new ClientException("Invalid json got from ECS Metadata service.");
         }
 

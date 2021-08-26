@@ -16,7 +16,7 @@ public class LocalConfigGlobalEndpointResolver extends LocalConfigRegionalEndpoi
 
     public LocalConfigGlobalEndpointResolver(String configJsonStr) {
         // For testability
-        JsonObject obj = (new JsonParser()).parse(configJsonStr).getAsJsonObject();
+        JsonObject obj = JsonParser.parseString(configJsonStr).getAsJsonObject();
         initLocalConfig(obj);
     }
 

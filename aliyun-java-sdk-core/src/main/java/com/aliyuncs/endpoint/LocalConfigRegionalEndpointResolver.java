@@ -24,7 +24,7 @@ public class LocalConfigRegionalEndpointResolver extends EndpointResolverBase {
             scanner = new Scanner(is, "UTF-8");
             scanner.useDelimiter("\0");
             String jsonStr = scanner.hasNext() ? scanner.next() : "";
-            ENDPOINTS_JSON = (new JsonParser()).parse(jsonStr).getAsJsonObject();
+            ENDPOINTS_JSON = JsonParser.parseString(jsonStr).getAsJsonObject();
         } finally {
             if (null != scanner) {
                 scanner.close();
@@ -38,7 +38,7 @@ public class LocalConfigRegionalEndpointResolver extends EndpointResolverBase {
 
     public LocalConfigRegionalEndpointResolver(String configJsonStr) {
         // For testability
-        JsonObject obj = (new JsonParser()).parse(configJsonStr).getAsJsonObject();
+        JsonObject obj = JsonParser.parseString(configJsonStr).getAsJsonObject();
         initLocalConfig(obj);
     }
 

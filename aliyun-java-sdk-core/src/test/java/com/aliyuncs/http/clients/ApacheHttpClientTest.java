@@ -1,7 +1,6 @@
 package com.aliyuncs.http.clients;
 
 import com.aliyuncs.exceptions.ClientException;
-import com.aliyuncs.exceptions.ServerException;
 import com.aliyuncs.http.*;
 import org.apache.http.Header;
 import org.apache.http.HttpEntity;

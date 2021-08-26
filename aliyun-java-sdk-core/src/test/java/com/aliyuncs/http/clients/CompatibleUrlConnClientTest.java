@@ -75,6 +75,7 @@ public class CompatibleUrlConnClientTest {
         HttpRequest request = mock(HttpRequest.class);
         CallBack callback = mock(CallBack.class);
         client.asyncInvoke(request, callback);
+        client.close();
     }
 
     @Test
@@ -87,6 +88,7 @@ public class CompatibleUrlConnClientTest {
         } catch (IllegalStateException e) {
             Assert.assertEquals("use HttpClientConfig.setIgnoreSSLCerts(true) instead", e.getMessage());
         }
+        client.close();
     }
 
     @Test
@@ -99,7 +101,7 @@ public class CompatibleUrlConnClientTest {
         } catch (IllegalStateException e) {
             Assert.assertEquals("use HttpClientConfig.setIgnoreSSLCerts(false) instead", e.getMessage());
         }
-
+        client.close();
     }
 
     @Test
@@ -110,7 +112,6 @@ public class CompatibleUrlConnClientTest {
         when(config.isIgnoreSSLCerts()).thenReturn(true);
         CompatibleUrlConnClient client = new CompatibleUrlConnClient(config);
         client.close();
-
     }
 
     @Test
@@ -123,7 +124,6 @@ public class CompatibleUrlConnClientTest {
         thrown.expect(IllegalArgumentException.class);
         HttpRequest request = mock(HttpRequest.class);
         Whitebox.invokeMethod(client, "buildHttpConnection", request);
-
     }
 
     @Test
@@ -743,6 +743,7 @@ public class CompatibleUrlConnClientTest {
         HttpRequest request = new HttpRequest("https://self-signed.badssl.com");
         request.setSysMethod(MethodType.GET);
         client.syncInvoke(request);
+        client.close();
     }
 
     @Test
@@ -754,10 +755,10 @@ public class CompatibleUrlConnClientTest {
             HttpRequest request = new HttpRequest("https://self-signed.badssl.com");
             request.setSysMethod(MethodType.GET);
             client.syncInvoke(request);
+            client.close();
         } catch (Exception e) {
             Assert.fail();
         }
-
     }
 
     @Test
@@ -770,6 +771,7 @@ public class CompatibleUrlConnClientTest {
         request.setSysMethod(MethodType.GET);
         request.setIgnoreSSLCerts(false);
         client.syncInvoke(request);
+        client.close();
     }
 
     @Test
@@ -783,6 +785,7 @@ public class CompatibleUrlConnClientTest {
             request.setSysMethod(MethodType.GET);
             request.setIgnoreSSLCerts(true);
             client.syncInvoke(request);
+            client.close();
         } catch (Exception e) {
             Assert.fail();
         }
