@@ -51,6 +51,12 @@ public class ListAvailableEcsTypesResponseUnmarshaller {
 				typesInfo.setGPUSpec(_ctx.stringValue("ListAvailableEcsTypesResponse.InstanceTypeFamilies["+ i +"].Types["+ j +"].GPUSpec"));
 				typesInfo.setStatus(_ctx.stringValue("ListAvailableEcsTypesResponse.InstanceTypeFamilies["+ i +"].Types["+ j +"].Status"));
 
+				List<String> zoneIds = new ArrayList<String>();
+				for (int k = 0; k < _ctx.lengthValue("ListAvailableEcsTypesResponse.InstanceTypeFamilies["+ i +"].Types["+ j +"].ZoneIds.Length"); k++) {
+					zoneIds.add(_ctx.stringValue("ListAvailableEcsTypesResponse.InstanceTypeFamilies["+ i +"].Types["+ j +"].ZoneIds["+ k +"]"));
+				}
+				typesInfo.setZoneIds(zoneIds);
+
 				types.add(typesInfo);
 			}
 			instanceTypeFamilyInfo.setTypes(types);

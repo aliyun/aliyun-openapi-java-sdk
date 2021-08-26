@@ -111,6 +111,8 @@ public class ListAvailableEcsTypesResponse extends AcsResponse {
 
 			private String status;
 
+			private List<String> zoneIds;
+
 			public Integer getCpuCoreCount() {
 				return this.cpuCoreCount;
 			}
@@ -197,6 +199,14 @@ public class ListAvailableEcsTypesResponse extends AcsResponse {
 
 			public void setStatus(String status) {
 				this.status = status;
+			}
+
+			public List<String> getZoneIds() {
+				return this.zoneIds;
+			}
+
+			public void setZoneIds(List<String> zoneIds) {
+				this.zoneIds = zoneIds;
 			}
 		}
 	}
