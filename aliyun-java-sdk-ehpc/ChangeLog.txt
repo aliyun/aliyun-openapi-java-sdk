@@ -1,3 +1,7 @@
+2021-08-27 Version: 1.14.6
+- ListAvailableEcsTypes set param ZoneId not required.
+- ListAvailableEcsTypes return ZoneIds.
+
 2021-08-26 Version: 1.14.5
 - ListAvailableEcsTypes set param ZoneId not required.
 - ListAvailableEcsTypes return ZoneIds.
