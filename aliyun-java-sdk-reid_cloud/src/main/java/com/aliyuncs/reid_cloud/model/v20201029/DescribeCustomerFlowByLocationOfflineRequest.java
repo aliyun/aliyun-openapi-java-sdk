@@ -22,17 +22,30 @@ import com.aliyuncs.reid_cloud.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeDevicesRequest extends RpcAcsRequest<DescribeDevicesResponse> {
+public class DescribeCustomerFlowByLocationOfflineRequest extends RpcAcsRequest<DescribeCustomerFlowByLocationOfflineResponse> {
 	   
 
+	private String startDate;
+
 	private Long storeId;
-	public DescribeDevicesRequest() {
-		super("reid_cloud", "2020-10-29", "DescribeDevices", "1.2.2");
+	public DescribeCustomerFlowByLocationOfflineRequest() {
+		super("reid_cloud", "2020-10-29", "DescribeCustomerFlowByLocationOffline", "1.2.2");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getStartDate() {
+		return this.startDate;
+	}
+
+	public void setStartDate(String startDate) {
+		this.startDate = startDate;
+		if(startDate != null){
+			putBodyParameter("StartDate", startDate);
+		}
 	}
 
 	public Long getStoreId() {
@@ -47,8 +60,8 @@ public class DescribeDevicesRequest extends RpcAcsRequest<DescribeDevicesRespons
 	}
 
 	@Override
-	public Class<DescribeDevicesResponse> getResponseClass() {
-		return DescribeDevicesResponse.class;
+	public Class<DescribeCustomerFlowByLocationOfflineResponse> getResponseClass() {
+		return DescribeCustomerFlowByLocationOfflineResponse.class;
 	}
 
 }

@@ -33,7 +33,7 @@ public class ListSpecialPersonnelByImageRequest extends RpcAcsRequest<ListSpecia
 
 	private String imageUrl;
 	public ListSpecialPersonnelByImageRequest() {
-		super("reid_cloud", "2020-10-29", "ListSpecialPersonnelByImage", "1.2.1");
+		super("reid_cloud", "2020-10-29", "ListSpecialPersonnelByImage", "1.2.2");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

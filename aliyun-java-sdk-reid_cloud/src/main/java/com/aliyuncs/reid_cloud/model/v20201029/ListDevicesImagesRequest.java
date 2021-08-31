@@ -29,7 +29,7 @@ public class ListDevicesImagesRequest extends RpcAcsRequest<ListDevicesImagesRes
 
 	private Long storeId;
 	public ListDevicesImagesRequest() {
-		super("reid_cloud", "2020-10-29", "ListDevicesImages", "1.2.1");
+		super("reid_cloud", "2020-10-29", "ListDevicesImages", "1.2.2");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

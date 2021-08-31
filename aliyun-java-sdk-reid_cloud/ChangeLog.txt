@@ -1,3 +1,6 @@
+2021-08-31 Version: 1.2.2
+- Supported cro algorithm.
+
 2021-04-19 Version: 1.2.1
 - Generated 2020-10-29 for `reid_cloud`.
 

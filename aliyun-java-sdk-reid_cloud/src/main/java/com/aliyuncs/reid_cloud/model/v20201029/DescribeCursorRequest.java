@@ -31,7 +31,7 @@ public class DescribeCursorRequest extends RpcAcsRequest<DescribeCursorResponse>
 
 	private String time;
 	public DescribeCursorRequest() {
-		super("reid_cloud", "2020-10-29", "DescribeCursor", "1.2.1");
+		super("reid_cloud", "2020-10-29", "DescribeCursor", "1.2.2");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
