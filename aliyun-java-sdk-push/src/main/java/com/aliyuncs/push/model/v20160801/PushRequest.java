@@ -57,6 +57,8 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 
 	private String expireTime;
 
+	private String androidImageUrl;
+
 	private String androidNotificationVivoChannel;
 
 	private String iOSNotificationCategory;
@@ -66,6 +68,8 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 	private Boolean storeOffline;
 
 	private String smsParams;
+
+	private String androidInboxBody;
 
 	private String jobKey;
 
@@ -78,6 +82,8 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 	private String androidXiaomiBigPictureUrl;
 
 	private Boolean iOSRemind;
+
+	private String iOSNotificationThreadId;
 
 	private String androidMusic;
 
@@ -103,9 +109,13 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 
 	private String iOSExtParameters;
 
+	private String androidXiaomiImageUrl;
+
 	private String smsTemplateName;
 
 	private String androidPopupBody;
+
+	private String androidBigPictureUrl;
 
 	private Boolean iOSSilentNotification;
 
@@ -315,6 +325,17 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 		}
 	}
 
+	public String getAndroidImageUrl() {
+		return this.androidImageUrl;
+	}
+
+	public void setAndroidImageUrl(String androidImageUrl) {
+		this.androidImageUrl = androidImageUrl;
+		if(androidImageUrl != null){
+			putQueryParameter("AndroidImageUrl", androidImageUrl);
+		}
+	}
+
 	public String getAndroidNotificationVivoChannel() {
 		return this.androidNotificationVivoChannel;
 	}
@@ -367,6 +388,17 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 		this.smsParams = smsParams;
 		if(smsParams != null){
 			putQueryParameter("SmsParams", smsParams);
+		}
+	}
+
+	public String getAndroidInboxBody() {
+		return this.androidInboxBody;
+	}
+
+	public void setAndroidInboxBody(String androidInboxBody) {
+		this.androidInboxBody = androidInboxBody;
+		if(androidInboxBody != null){
+			putQueryParameter("AndroidInboxBody", androidInboxBody);
 		}
 	}
 
@@ -433,6 +465,17 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 		this.iOSRemind = iOSRemind;
 		if(iOSRemind != null){
 			putQueryParameter("iOSRemind", iOSRemind.toString());
+		}
+	}
+
+	public String getIOSNotificationThreadId() {
+		return this.iOSNotificationThreadId;
+	}
+
+	public void setIOSNotificationThreadId(String iOSNotificationThreadId) {
+		this.iOSNotificationThreadId = iOSNotificationThreadId;
+		if(iOSNotificationThreadId != null){
+			putQueryParameter("iOSNotificationThreadId", iOSNotificationThreadId);
 		}
 	}
 
@@ -568,6 +611,17 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 		}
 	}
 
+	public String getAndroidXiaomiImageUrl() {
+		return this.androidXiaomiImageUrl;
+	}
+
+	public void setAndroidXiaomiImageUrl(String androidXiaomiImageUrl) {
+		this.androidXiaomiImageUrl = androidXiaomiImageUrl;
+		if(androidXiaomiImageUrl != null){
+			putQueryParameter("AndroidXiaomiImageUrl", androidXiaomiImageUrl);
+		}
+	}
+
 	public String getSmsTemplateName() {
 		return this.smsTemplateName;
 	}
@@ -587,6 +641,17 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 		this.androidPopupBody = androidPopupBody;
 		if(androidPopupBody != null){
 			putQueryParameter("AndroidPopupBody", androidPopupBody);
+		}
+	}
+
+	public String getAndroidBigPictureUrl() {
+		return this.androidBigPictureUrl;
+	}
+
+	public void setAndroidBigPictureUrl(String androidBigPictureUrl) {
+		this.androidBigPictureUrl = androidBigPictureUrl;
+		if(androidBigPictureUrl != null){
+			putQueryParameter("AndroidBigPictureUrl", androidBigPictureUrl);
 		}
 	}
 
