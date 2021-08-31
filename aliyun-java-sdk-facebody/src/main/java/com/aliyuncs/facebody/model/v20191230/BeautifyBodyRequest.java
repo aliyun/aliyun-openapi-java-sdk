@@ -37,6 +37,8 @@ public class BeautifyBodyRequest extends RpcAcsRequest<BeautifyBodyResponse> {
 
 	private Long originalWidth;
 
+	private Boolean isPregnant;
+
 	@SerializedName("faceList")
 	private List<FaceList> faceList;
 
@@ -103,6 +105,17 @@ public class BeautifyBodyRequest extends RpcAcsRequest<BeautifyBodyResponse> {
 		this.originalWidth = originalWidth;
 		if(originalWidth != null){
 			putBodyParameter("OriginalWidth", originalWidth.toString());
+		}
+	}
+
+	public Boolean getIsPregnant() {
+		return this.isPregnant;
+	}
+
+	public void setIsPregnant(Boolean isPregnant) {
+		this.isPregnant = isPregnant;
+		if(isPregnant != null){
+			putBodyParameter("IsPregnant", isPregnant.toString());
 		}
 	}
 
