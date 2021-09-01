@@ -1,3 +1,6 @@
+2021-09-01 Version: 3.3.25
+- SubmitURLUploadJob, support S3 Storage.
+
 2021-08-11 Version: 3.3.23
 - SubmitURLUploadJob.
 - GetJobInfo.

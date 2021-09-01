@@ -109,8 +109,23 @@ public class SubmitURLUploadJobRequest extends RpcAcsRequest<SubmitURLUploadJobR
 		@SerializedName("BucketOwnerId")
 		private String bucketOwnerId;
 
+		@SerializedName("S3Provider")
+		private String s3Provider;
+
+		@SerializedName("S3Endpoint")
+		private String s3Endpoint;
+
 		@SerializedName("ObjectKey")
 		private String objectKey;
+
+		@SerializedName("S3AccessKey")
+		private String s3AccessKey;
+
+		@SerializedName("S3SecretKey")
+		private String s3SecretKey;
+
+		@SerializedName("S3SessionToken")
+		private String s3SessionToken;
 
 		@SerializedName("ObjectRoleName")
 		private String objectRoleName;
@@ -131,12 +146,52 @@ public class SubmitURLUploadJobRequest extends RpcAcsRequest<SubmitURLUploadJobR
 			this.bucketOwnerId = bucketOwnerId;
 		}
 
+		public String getS3Provider() {
+			return this.s3Provider;
+		}
+
+		public void setS3Provider(String s3Provider) {
+			this.s3Provider = s3Provider;
+		}
+
+		public String getS3Endpoint() {
+			return this.s3Endpoint;
+		}
+
+		public void setS3Endpoint(String s3Endpoint) {
+			this.s3Endpoint = s3Endpoint;
+		}
+
 		public String getObjectKey() {
 			return this.objectKey;
 		}
 
 		public void setObjectKey(String objectKey) {
 			this.objectKey = objectKey;
+		}
+
+		public String getS3AccessKey() {
+			return this.s3AccessKey;
+		}
+
+		public void setS3AccessKey(String s3AccessKey) {
+			this.s3AccessKey = s3AccessKey;
+		}
+
+		public String getS3SecretKey() {
+			return this.s3SecretKey;
+		}
+
+		public void setS3SecretKey(String s3SecretKey) {
+			this.s3SecretKey = s3SecretKey;
+		}
+
+		public String getS3SessionToken() {
+			return this.s3SessionToken;
+		}
+
+		public void setS3SessionToken(String s3SessionToken) {
+			this.s3SessionToken = s3SessionToken;
 		}
 
 		public String getObjectRoleName() {
