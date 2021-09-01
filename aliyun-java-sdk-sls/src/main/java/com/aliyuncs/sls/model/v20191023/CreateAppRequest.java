@@ -25,9 +25,13 @@ import com.aliyuncs.sls.Endpoint;
 public class CreateAppRequest extends RpcAcsRequest<CreateAppResponse> {
 	   
 
+	private String clientToken;
+
 	private String appName;
 
 	private String displayName;
+
+	private String clientIp;
 
 	private String config;
 	public CreateAppRequest() {
@@ -37,6 +41,17 @@ public class CreateAppRequest extends RpcAcsRequest<CreateAppResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
 	}
 
 	public String getAppName() {
@@ -58,6 +73,17 @@ public class CreateAppRequest extends RpcAcsRequest<CreateAppResponse> {
 		this.displayName = displayName;
 		if(displayName != null){
 			putQueryParameter("DisplayName", displayName);
+		}
+	}
+
+	public String getClientIp() {
+		return this.clientIp;
+	}
+
+	public void setClientIp(String clientIp) {
+		this.clientIp = clientIp;
+		if(clientIp != null){
+			putQueryParameter("ClientIp", clientIp);
 		}
 	}
 

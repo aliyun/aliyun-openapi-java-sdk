@@ -22,14 +22,14 @@ import com.aliyuncs.sls.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeAppRequest extends RpcAcsRequest<DescribeAppResponse> {
+public class InitProjectAlertResourceRequest extends RpcAcsRequest<InitProjectAlertResourceResponse> {
 	   
 
-	private String appName;
+	private String projectName;
 
-	private String clientIp;
-	public DescribeAppRequest() {
-		super("Sls", "2019-10-23", "DescribeApp");
+	private String region;
+	public InitProjectAlertResourceRequest() {
+		super("Sls", "2019-10-23", "InitProjectAlertResource");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,31 +37,31 @@ public class DescribeAppRequest extends RpcAcsRequest<DescribeAppResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getAppName() {
-		return this.appName;
+	public String getProjectName() {
+		return this.projectName;
 	}
 
-	public void setAppName(String appName) {
-		this.appName = appName;
-		if(appName != null){
-			putQueryParameter("AppName", appName);
+	public void setProjectName(String projectName) {
+		this.projectName = projectName;
+		if(projectName != null){
+			putBodyParameter("ProjectName", projectName);
 		}
 	}
 
-	public String getClientIp() {
-		return this.clientIp;
+	public String getRegion() {
+		return this.region;
 	}
 
-	public void setClientIp(String clientIp) {
-		this.clientIp = clientIp;
-		if(clientIp != null){
-			putQueryParameter("ClientIp", clientIp);
+	public void setRegion(String region) {
+		this.region = region;
+		if(region != null){
+			putBodyParameter("Region", region);
 		}
 	}
 
 	@Override
-	public Class<DescribeAppResponse> getResponseClass() {
-		return DescribeAppResponse.class;
+	public Class<InitProjectAlertResourceResponse> getResponseClass() {
+		return InitProjectAlertResourceResponse.class;
 	}
 
 }

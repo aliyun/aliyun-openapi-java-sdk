@@ -26,6 +26,8 @@ public class DeleteAppRequest extends RpcAcsRequest<DeleteAppResponse> {
 	   
 
 	private String appName;
+
+	private String clientIp;
 	public DeleteAppRequest() {
 		super("Sls", "2019-10-23", "DeleteApp");
 		setMethod(MethodType.POST);
@@ -43,6 +45,17 @@ public class DeleteAppRequest extends RpcAcsRequest<DeleteAppResponse> {
 		this.appName = appName;
 		if(appName != null){
 			putQueryParameter("AppName", appName);
+		}
+	}
+
+	public String getClientIp() {
+		return this.clientIp;
+	}
+
+	public void setClientIp(String clientIp) {
+		this.clientIp = clientIp;
+		if(clientIp != null){
+			putQueryParameter("ClientIp", clientIp);
 		}
 	}
 

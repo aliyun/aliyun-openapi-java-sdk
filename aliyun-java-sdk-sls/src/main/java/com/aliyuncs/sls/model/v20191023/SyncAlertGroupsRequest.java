@@ -22,14 +22,14 @@ import com.aliyuncs.sls.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeAppRequest extends RpcAcsRequest<DescribeAppResponse> {
+public class SyncAlertGroupsRequest extends RpcAcsRequest<SyncAlertGroupsResponse> {
 	   
 
-	private String appName;
+	private String app;
 
-	private String clientIp;
-	public DescribeAppRequest() {
-		super("Sls", "2019-10-23", "DescribeApp");
+	private String groups;
+	public SyncAlertGroupsRequest() {
+		super("Sls", "2019-10-23", "SyncAlertGroups");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,31 +37,31 @@ public class DescribeAppRequest extends RpcAcsRequest<DescribeAppResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getAppName() {
-		return this.appName;
+	public String getApp() {
+		return this.app;
 	}
 
-	public void setAppName(String appName) {
-		this.appName = appName;
-		if(appName != null){
-			putQueryParameter("AppName", appName);
+	public void setApp(String app) {
+		this.app = app;
+		if(app != null){
+			putBodyParameter("App", app);
 		}
 	}
 
-	public String getClientIp() {
-		return this.clientIp;
+	public String getGroups() {
+		return this.groups;
 	}
 
-	public void setClientIp(String clientIp) {
-		this.clientIp = clientIp;
-		if(clientIp != null){
-			putQueryParameter("ClientIp", clientIp);
+	public void setGroups(String groups) {
+		this.groups = groups;
+		if(groups != null){
+			putBodyParameter("Groups", groups);
 		}
 	}
 
 	@Override
-	public Class<DescribeAppResponse> getResponseClass() {
-		return DescribeAppResponse.class;
+	public Class<SyncAlertGroupsResponse> getResponseClass() {
+		return SyncAlertGroupsResponse.class;
 	}
 
 }

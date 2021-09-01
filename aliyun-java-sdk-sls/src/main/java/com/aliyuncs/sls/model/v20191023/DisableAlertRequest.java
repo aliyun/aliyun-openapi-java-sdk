@@ -22,18 +22,18 @@ import com.aliyuncs.sls.Endpoint;
  * @author auto create
  * @version 
  */
-public class UpdateAppRequest extends RpcAcsRequest<UpdateAppResponse> {
+public class DisableAlertRequest extends RpcAcsRequest<DisableAlertResponse> {
 	   
 
-	private String appName;
+	private String app;
 
-	private String displayName;
+	private String projectName;
 
-	private String clientIp;
+	private String endpoint;
 
-	private String config;
-	public UpdateAppRequest() {
-		super("Sls", "2019-10-23", "UpdateApp");
+	private String alertId;
+	public DisableAlertRequest() {
+		super("Sls", "2019-10-23", "DisableAlert");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -41,53 +41,53 @@ public class UpdateAppRequest extends RpcAcsRequest<UpdateAppResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getAppName() {
-		return this.appName;
+	public String getApp() {
+		return this.app;
 	}
 
-	public void setAppName(String appName) {
-		this.appName = appName;
-		if(appName != null){
-			putQueryParameter("AppName", appName);
+	public void setApp(String app) {
+		this.app = app;
+		if(app != null){
+			putBodyParameter("App", app);
 		}
 	}
 
-	public String getDisplayName() {
-		return this.displayName;
+	public String getProjectName() {
+		return this.projectName;
 	}
 
-	public void setDisplayName(String displayName) {
-		this.displayName = displayName;
-		if(displayName != null){
-			putQueryParameter("DisplayName", displayName);
+	public void setProjectName(String projectName) {
+		this.projectName = projectName;
+		if(projectName != null){
+			putBodyParameter("ProjectName", projectName);
 		}
 	}
 
-	public String getClientIp() {
-		return this.clientIp;
+	public String getEndpoint() {
+		return this.endpoint;
 	}
 
-	public void setClientIp(String clientIp) {
-		this.clientIp = clientIp;
-		if(clientIp != null){
-			putQueryParameter("ClientIp", clientIp);
+	public void setEndpoint(String endpoint) {
+		this.endpoint = endpoint;
+		if(endpoint != null){
+			putBodyParameter("Endpoint", endpoint);
 		}
 	}
 
-	public String getConfig() {
-		return this.config;
+	public String getAlertId() {
+		return this.alertId;
 	}
 
-	public void setConfig(String config) {
-		this.config = config;
-		if(config != null){
-			putBodyParameter("Config", config);
+	public void setAlertId(String alertId) {
+		this.alertId = alertId;
+		if(alertId != null){
+			putBodyParameter("AlertId", alertId);
 		}
 	}
 
 	@Override
-	public Class<UpdateAppResponse> getResponseClass() {
-		return UpdateAppResponse.class;
+	public Class<DisableAlertResponse> getResponseClass() {
+		return DisableAlertResponse.class;
 	}
 
 }

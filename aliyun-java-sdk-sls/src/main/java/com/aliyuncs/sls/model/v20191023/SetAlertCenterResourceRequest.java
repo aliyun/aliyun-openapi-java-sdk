@@ -22,14 +22,16 @@ import com.aliyuncs.sls.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeAppRequest extends RpcAcsRequest<DescribeAppResponse> {
+public class SetAlertCenterResourceRequest extends RpcAcsRequest<SetAlertCenterResourceResponse> {
 	   
 
-	private String appName;
+	private String app;
 
-	private String clientIp;
-	public DescribeAppRequest() {
-		super("Sls", "2019-10-23", "DescribeApp");
+	private String language;
+
+	private String region;
+	public SetAlertCenterResourceRequest() {
+		super("Sls", "2019-10-23", "SetAlertCenterResource");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,31 +39,42 @@ public class DescribeAppRequest extends RpcAcsRequest<DescribeAppResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getAppName() {
-		return this.appName;
+	public String getApp() {
+		return this.app;
 	}
 
-	public void setAppName(String appName) {
-		this.appName = appName;
-		if(appName != null){
-			putQueryParameter("AppName", appName);
+	public void setApp(String app) {
+		this.app = app;
+		if(app != null){
+			putBodyParameter("App", app);
 		}
 	}
 
-	public String getClientIp() {
-		return this.clientIp;
+	public String getLanguage() {
+		return this.language;
 	}
 
-	public void setClientIp(String clientIp) {
-		this.clientIp = clientIp;
-		if(clientIp != null){
-			putQueryParameter("ClientIp", clientIp);
+	public void setLanguage(String language) {
+		this.language = language;
+		if(language != null){
+			putBodyParameter("Language", language);
+		}
+	}
+
+	public String getRegion() {
+		return this.region;
+	}
+
+	public void setRegion(String region) {
+		this.region = region;
+		if(region != null){
+			putBodyParameter("Region", region);
 		}
 	}
 
 	@Override
-	public Class<DescribeAppResponse> getResponseClass() {
-		return DescribeAppResponse.class;
+	public Class<SetAlertCenterResourceResponse> getResponseClass() {
+		return SetAlertCenterResourceResponse.class;
 	}
 
 }

@@ -22,14 +22,16 @@ import com.aliyuncs.sls.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeAppRequest extends RpcAcsRequest<DescribeAppResponse> {
+public class DeleteImportIngestionJobRequest extends RpcAcsRequest<DeleteImportIngestionJobResponse> {
 	   
 
-	private String appName;
+	private String namespace;
 
-	private String clientIp;
-	public DescribeAppRequest() {
-		super("Sls", "2019-10-23", "DescribeApp");
+	private String region;
+
+	private String jobName;
+	public DeleteImportIngestionJobRequest() {
+		super("Sls", "2019-10-23", "DeleteImportIngestionJob");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,31 +39,42 @@ public class DescribeAppRequest extends RpcAcsRequest<DescribeAppResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getAppName() {
-		return this.appName;
+	public String getNamespace() {
+		return this.namespace;
 	}
 
-	public void setAppName(String appName) {
-		this.appName = appName;
-		if(appName != null){
-			putQueryParameter("AppName", appName);
+	public void setNamespace(String namespace) {
+		this.namespace = namespace;
+		if(namespace != null){
+			putBodyParameter("Namespace", namespace);
 		}
 	}
 
-	public String getClientIp() {
-		return this.clientIp;
+	public String getRegion() {
+		return this.region;
 	}
 
-	public void setClientIp(String clientIp) {
-		this.clientIp = clientIp;
-		if(clientIp != null){
-			putQueryParameter("ClientIp", clientIp);
+	public void setRegion(String region) {
+		this.region = region;
+		if(region != null){
+			putBodyParameter("Region", region);
+		}
+	}
+
+	public String getJobName() {
+		return this.jobName;
+	}
+
+	public void setJobName(String jobName) {
+		this.jobName = jobName;
+		if(jobName != null){
+			putBodyParameter("JobName", jobName);
 		}
 	}
 
 	@Override
-	public Class<DescribeAppResponse> getResponseClass() {
-		return DescribeAppResponse.class;
+	public Class<DeleteImportIngestionJobResponse> getResponseClass() {
+		return DeleteImportIngestionJobResponse.class;
 	}
 
 }
