@@ -12,7 +12,7 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.quickbi_public.model.v20200808;
+package com.aliyuncs.quickbi_public.model.v20201111;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
@@ -22,14 +22,14 @@ import com.aliyuncs.quickbi_public.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListPortalMenusRequest extends RpcAcsRequest<ListPortalMenusResponse> {
+public class DeleteDataLevelRuleConfigRequest extends RpcAcsRequest<DeleteDataLevelRuleConfigResponse> {
 	   
 
-	private String dataPortalId;
+	private String ruleId;
 
-	private String userId;
-	public ListPortalMenusRequest() {
-		super("quickbi-public", "2020-08-08", "ListPortalMenus", "quickbi");
+	private String cubeId;
+	public DeleteDataLevelRuleConfigRequest() {
+		super("quickbi-public", "2020-11-11", "DeleteDataLevelRuleConfig", "quickbi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,31 +37,31 @@ public class ListPortalMenusRequest extends RpcAcsRequest<ListPortalMenusRespons
 		} catch (Exception e) {}
 	}
 
-	public String getDataPortalId() {
-		return this.dataPortalId;
+	public String getRuleId() {
+		return this.ruleId;
 	}
 
-	public void setDataPortalId(String dataPortalId) {
-		this.dataPortalId = dataPortalId;
-		if(dataPortalId != null){
-			putQueryParameter("DataPortalId", dataPortalId);
+	public void setRuleId(String ruleId) {
+		this.ruleId = ruleId;
+		if(ruleId != null){
+			putQueryParameter("RuleId", ruleId);
 		}
 	}
 
-	public String getUserId() {
-		return this.userId;
+	public String getCubeId() {
+		return this.cubeId;
 	}
 
-	public void setUserId(String userId) {
-		this.userId = userId;
-		if(userId != null){
-			putQueryParameter("UserId", userId);
+	public void setCubeId(String cubeId) {
+		this.cubeId = cubeId;
+		if(cubeId != null){
+			putQueryParameter("CubeId", cubeId);
 		}
 	}
 
 	@Override
-	public Class<ListPortalMenusResponse> getResponseClass() {
-		return ListPortalMenusResponse.class;
+	public Class<DeleteDataLevelRuleConfigResponse> getResponseClass() {
+		return DeleteDataLevelRuleConfigResponse.class;
 	}
 
 }

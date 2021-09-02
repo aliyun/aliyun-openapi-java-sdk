@@ -12,7 +12,7 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.quickbi_public.model.v20200808;
+package com.aliyuncs.quickbi_public.model.v20201111;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
@@ -22,14 +22,12 @@ import com.aliyuncs.quickbi_public.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListPortalMenusRequest extends RpcAcsRequest<ListPortalMenusResponse> {
+public class SetDataLevelPermissionWhiteListRequest extends RpcAcsRequest<SetDataLevelPermissionWhiteListResponse> {
 	   
 
-	private String dataPortalId;
-
-	private String userId;
-	public ListPortalMenusRequest() {
-		super("quickbi-public", "2020-08-08", "ListPortalMenus", "quickbi");
+	private String whiteListModel;
+	public SetDataLevelPermissionWhiteListRequest() {
+		super("quickbi-public", "2020-11-11", "SetDataLevelPermissionWhiteList", "quickbi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,31 +35,20 @@ public class ListPortalMenusRequest extends RpcAcsRequest<ListPortalMenusRespons
 		} catch (Exception e) {}
 	}
 
-	public String getDataPortalId() {
-		return this.dataPortalId;
+	public String getWhiteListModel() {
+		return this.whiteListModel;
 	}
 
-	public void setDataPortalId(String dataPortalId) {
-		this.dataPortalId = dataPortalId;
-		if(dataPortalId != null){
-			putQueryParameter("DataPortalId", dataPortalId);
-		}
-	}
-
-	public String getUserId() {
-		return this.userId;
-	}
-
-	public void setUserId(String userId) {
-		this.userId = userId;
-		if(userId != null){
-			putQueryParameter("UserId", userId);
+	public void setWhiteListModel(String whiteListModel) {
+		this.whiteListModel = whiteListModel;
+		if(whiteListModel != null){
+			putQueryParameter("WhiteListModel", whiteListModel);
 		}
 	}
 
 	@Override
-	public Class<ListPortalMenusResponse> getResponseClass() {
-		return ListPortalMenusResponse.class;
+	public Class<SetDataLevelPermissionWhiteListResponse> getResponseClass() {
+		return SetDataLevelPermissionWhiteListResponse.class;
 	}
 
 }

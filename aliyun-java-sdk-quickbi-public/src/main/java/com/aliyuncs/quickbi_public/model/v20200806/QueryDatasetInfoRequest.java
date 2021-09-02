@@ -12,7 +12,7 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.quickbi_public.model.v20200808;
+package com.aliyuncs.quickbi_public.model.v20200806;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
@@ -22,14 +22,12 @@ import com.aliyuncs.quickbi_public.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListPortalMenusRequest extends RpcAcsRequest<ListPortalMenusResponse> {
+public class QueryDatasetInfoRequest extends RpcAcsRequest<QueryDatasetInfoResponse> {
 	   
 
-	private String dataPortalId;
-
-	private String userId;
-	public ListPortalMenusRequest() {
-		super("quickbi-public", "2020-08-08", "ListPortalMenus", "quickbi");
+	private String datasetId;
+	public QueryDatasetInfoRequest() {
+		super("quickbi-public", "2020-08-06", "QueryDatasetInfo", "quickbi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,31 +35,20 @@ public class ListPortalMenusRequest extends RpcAcsRequest<ListPortalMenusRespons
 		} catch (Exception e) {}
 	}
 
-	public String getDataPortalId() {
-		return this.dataPortalId;
+	public String getDatasetId() {
+		return this.datasetId;
 	}
 
-	public void setDataPortalId(String dataPortalId) {
-		this.dataPortalId = dataPortalId;
-		if(dataPortalId != null){
-			putQueryParameter("DataPortalId", dataPortalId);
-		}
-	}
-
-	public String getUserId() {
-		return this.userId;
-	}
-
-	public void setUserId(String userId) {
-		this.userId = userId;
-		if(userId != null){
-			putQueryParameter("UserId", userId);
+	public void setDatasetId(String datasetId) {
+		this.datasetId = datasetId;
+		if(datasetId != null){
+			putQueryParameter("DatasetId", datasetId);
 		}
 	}
 
 	@Override
-	public Class<ListPortalMenusResponse> getResponseClass() {
-		return ListPortalMenusResponse.class;
+	public Class<QueryDatasetInfoResponse> getResponseClass() {
+		return QueryDatasetInfoResponse.class;
 	}
 
 }

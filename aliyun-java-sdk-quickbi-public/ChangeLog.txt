@@ -1,3 +1,6 @@
+2021-09-02 Version: 1.7.0
+- Added apis are as follows,ListPortalMenus,QueryDatasetInfo,AddDataLevelPermissionWhiteList,SetDataLevelPermissionWhiteList,ListDataLevelPermissionWhiteList,SetDataLevelPermissionExtraConfig,DeleteDataLevelRuleConfig,SetDataLevelPermissionRuleConfig,UpdateDataLevelPermissionStatus,QueryDatasetSwitchInfo,ListCubeDataLevelPermissionConfig,DeleteDataLevelPermissionRuleUsers,AddDataLevelPermissionRuleUsers.
+
 2021-07-29 Version: 1.6.0
 - Add api ListByUserGroupId, and update DeleteUser Api.
 
