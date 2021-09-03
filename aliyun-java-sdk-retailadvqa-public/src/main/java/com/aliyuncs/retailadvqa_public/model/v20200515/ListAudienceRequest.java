@@ -28,9 +28,9 @@ public class ListAudienceRequest extends RpcAcsRequest<ListAudienceResponse> {
 
 	private String columnName;
 
-	private String accessId;
+	private String userId;
 
-	private Boolean isPush;
+	private String accessId;
 
 	private String name;
 
@@ -68,6 +68,17 @@ public class ListAudienceRequest extends RpcAcsRequest<ListAudienceResponse> {
 		}
 	}
 
+	public String getUserId() {
+		return this.userId;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
+		if(userId != null){
+			putQueryParameter("UserId", userId);
+		}
+	}
+
 	public String getAccessId() {
 		return this.accessId;
 	}
@@ -76,17 +87,6 @@ public class ListAudienceRequest extends RpcAcsRequest<ListAudienceResponse> {
 		this.accessId = accessId;
 		if(accessId != null){
 			putQueryParameter("AccessId", accessId);
-		}
-	}
-
-	public Boolean getIsPush() {
-		return this.isPush;
-	}
-
-	public void setIsPush(Boolean isPush) {
-		this.isPush = isPush;
-		if(isPush != null){
-			putQueryParameter("IsPush", isPush.toString());
 		}
 	}
 

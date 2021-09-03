@@ -35,6 +35,7 @@ public class GetTokenPayLoadByCheckResponseUnmarshaller {
 
 		Data data = new Data();
 		data.setAud(_ctx.stringValue("GetTokenPayLoadByCheckResponse.Data.Aud"));
+		data.setAudName(_ctx.stringValue("GetTokenPayLoadByCheckResponse.Data.AudName"));
 		data.setRole(_ctx.stringValue("GetTokenPayLoadByCheckResponse.Data.Role"));
 		data.setRoleSign(_ctx.stringValue("GetTokenPayLoadByCheckResponse.Data.RoleSign"));
 		data.setDbRegion(_ctx.stringValue("GetTokenPayLoadByCheckResponse.Data.DbRegion"));

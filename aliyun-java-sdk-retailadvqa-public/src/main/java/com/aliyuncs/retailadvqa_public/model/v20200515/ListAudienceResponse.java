@@ -147,6 +147,8 @@ public class ListAudienceResponse extends AcsResponse {
 
 			private String id;
 
+			private Integer status;
+
 			private List<String> mappingTypes;
 
 			public String getLatestDataModifyStatus() {
@@ -219,6 +221,14 @@ public class ListAudienceResponse extends AcsResponse {
 
 			public void setId(String id) {
 				this.id = id;
+			}
+
+			public Integer getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(Integer status) {
+				this.status = status;
 			}
 
 			public List<String> getMappingTypes() {

@@ -14,17 +14,15 @@
 
 package com.aliyuncs.retailadvqa_public.model.v20200515;
 
-import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.retailadvqa_public.transform.v20200515.NewListMenuResponseUnmarshaller;
+import com.aliyuncs.retailadvqa_public.transform.v20200515.AudienceDetailByIdResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class NewListMenuResponse extends AcsResponse {
+public class AudienceDetailByIdResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -36,7 +34,7 @@ public class NewListMenuResponse extends AcsResponse {
 
 	private Boolean success;
 
-	private List<DataItem> data;
+	private Data data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -78,44 +76,36 @@ public class NewListMenuResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public List<DataItem> getData() {
+	public Data getData() {
 		return this.data;
 	}
 
-	public void setData(List<DataItem> data) {
+	public void setData(Data data) {
 		this.data = data;
 	}
 
-	public static class DataItem {
+	public static class Data {
 
-		private String key;
+		private String id;
 
-		private String url;
+		private Long numberOfAudiences;
 
 		private String name;
 
-		private String order;
-
-		private String parentKey;
-
-		private String sourceType;
-
-		private Map<Object,Object> children;
-
-		public String getKey() {
-			return this.key;
+		public String getId() {
+			return this.id;
 		}
 
-		public void setKey(String key) {
-			this.key = key;
+		public void setId(String id) {
+			this.id = id;
 		}
 
-		public String getUrl() {
-			return this.url;
+		public Long getNumberOfAudiences() {
+			return this.numberOfAudiences;
 		}
 
-		public void setUrl(String url) {
-			this.url = url;
+		public void setNumberOfAudiences(Long numberOfAudiences) {
+			this.numberOfAudiences = numberOfAudiences;
 		}
 
 		public String getName() {
@@ -125,43 +115,11 @@ public class NewListMenuResponse extends AcsResponse {
 		public void setName(String name) {
 			this.name = name;
 		}
-
-		public String getOrder() {
-			return this.order;
-		}
-
-		public void setOrder(String order) {
-			this.order = order;
-		}
-
-		public String getParentKey() {
-			return this.parentKey;
-		}
-
-		public void setParentKey(String parentKey) {
-			this.parentKey = parentKey;
-		}
-
-		public String getSourceType() {
-			return this.sourceType;
-		}
-
-		public void setSourceType(String sourceType) {
-			this.sourceType = sourceType;
-		}
-
-		public Map<Object,Object> getChildren() {
-			return this.children;
-		}
-
-		public void setChildren(Map<Object,Object> children) {
-			this.children = children;
-		}
 	}
 
 	@Override
-	public NewListMenuResponse getInstance(UnmarshallerContext context) {
-		return	NewListMenuResponseUnmarshaller.unmarshall(this, context);
+	public AudienceDetailByIdResponse getInstance(UnmarshallerContext context) {
+		return	AudienceDetailByIdResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

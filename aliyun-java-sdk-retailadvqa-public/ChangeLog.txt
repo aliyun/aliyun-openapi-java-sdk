@@ -1,3 +1,6 @@
+2021-09-03 Version: 3.3.26
+- ListAudience.
+
 2021-07-04 Version: 3.3.16
 - AutoMarketing.
 

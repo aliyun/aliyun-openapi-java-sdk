@@ -41,6 +41,7 @@ public class NewListMenuResponseUnmarshaller {
 			dataItem.setName(_ctx.stringValue("NewListMenuResponse.Data["+ i +"].Name"));
 			dataItem.setOrder(_ctx.stringValue("NewListMenuResponse.Data["+ i +"].Order"));
 			dataItem.setParentKey(_ctx.stringValue("NewListMenuResponse.Data["+ i +"].ParentKey"));
+			dataItem.setSourceType(_ctx.stringValue("NewListMenuResponse.Data["+ i +"].SourceType"));
 			dataItem.setChildren(_ctx.mapValue("NewListMenuResponse.Data["+ i +"].Children"));
 
 			data.add(dataItem);

@@ -89,6 +89,8 @@ public class GetTokenPayLoadByCheckResponse extends AcsResponse {
 
 		private String aud;
 
+		private String audName;
+
 		private String role;
 
 		private String roleSign;
@@ -121,6 +123,14 @@ public class GetTokenPayLoadByCheckResponse extends AcsResponse {
 
 		public void setAud(String aud) {
 			this.aud = aud;
+		}
+
+		public String getAudName() {
+			return this.audName;
+		}
+
+		public void setAudName(String audName) {
+			this.audName = audName;
 		}
 
 		public String getRole() {
