@@ -34,6 +34,8 @@ public class CreateOTAVerifyJobRequest extends RpcAcsRequest<CreateOTAVerifyJobR
 
 	private String iotInstanceId;
 
+	private List<Tag> tags;
+
 	private String firmwareId;
 
 	private String productKey;
@@ -92,6 +94,20 @@ public class CreateOTAVerifyJobRequest extends RpcAcsRequest<CreateOTAVerifyJobR
 		}
 	}
 
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+			}
+		}	
+	}
+
 	public String getFirmwareId() {
 		return this.firmwareId;
 	}
@@ -125,6 +141,29 @@ public class CreateOTAVerifyJobRequest extends RpcAcsRequest<CreateOTAVerifyJobR
 				putQueryParameter("TargetDeviceName." + (i + 1) , targetDeviceNames.get(i));
 			}
 		}	
+	}
+
+	public static class Tag {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
+		}
 	}
 
 	@Override

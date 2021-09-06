@@ -1,3 +1,6 @@
+2021-09-06 Version: 7.28.0
+- Update LinkSpeech API, including SpeechByCombination, SyncSpeechByCombination.
+
 2021-07-06 Version: 7.27.0
 - Add SubscribeTopic.
 

@@ -35,6 +35,7 @@ public class SyncSpeechByCombinationResponseUnmarshaller {
 		data.setMaxRetryCount(_ctx.integerValue("SyncSpeechByCombinationResponse.Data.MaxRetryCount"));
 		data.setDeviceErrorCode(_ctx.stringValue("SyncSpeechByCombinationResponse.Data.DeviceErrorCode"));
 		data.setDeviceErrorMessage(_ctx.stringValue("SyncSpeechByCombinationResponse.Data.DeviceErrorMessage"));
+		data.setDetail(_ctx.stringValue("SyncSpeechByCombinationResponse.Data.Detail"));
 		syncSpeechByCombinationResponse.setData(data);
 	 
 	 	return syncSpeechByCombinationResponse;

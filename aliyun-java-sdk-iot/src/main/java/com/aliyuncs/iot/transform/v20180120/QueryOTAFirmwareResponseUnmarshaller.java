@@ -14,8 +14,12 @@
 
 package com.aliyuncs.iot.transform.v20180120;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.iot.model.v20180120.QueryOTAFirmwareResponse;
 import com.aliyuncs.iot.model.v20180120.QueryOTAFirmwareResponse.FirmwareInfo;
+import com.aliyuncs.iot.model.v20180120.QueryOTAFirmwareResponse.FirmwareInfo.OtaPackageFileDTO;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -47,6 +51,19 @@ public class QueryOTAFirmwareResponseUnmarshaller {
 		firmwareInfo.setVerifyProgress(_ctx.integerValue("QueryOTAFirmwareResponse.FirmwareInfo.VerifyProgress"));
 		firmwareInfo.setModuleName(_ctx.stringValue("QueryOTAFirmwareResponse.FirmwareInfo.ModuleName"));
 		firmwareInfo.setUdi(_ctx.stringValue("QueryOTAFirmwareResponse.FirmwareInfo.Udi"));
+
+		List<OtaPackageFileDTO> multiFiles = new ArrayList<OtaPackageFileDTO>();
+		for (int i = 0; i < _ctx.lengthValue("QueryOTAFirmwareResponse.FirmwareInfo.MultiFiles.Length"); i++) {
+			OtaPackageFileDTO otaPackageFileDTO = new OtaPackageFileDTO();
+			otaPackageFileDTO.setName(_ctx.stringValue("QueryOTAFirmwareResponse.FirmwareInfo.MultiFiles["+ i +"].Name"));
+			otaPackageFileDTO.setSize(_ctx.integerValue("QueryOTAFirmwareResponse.FirmwareInfo.MultiFiles["+ i +"].Size"));
+			otaPackageFileDTO.setUrl(_ctx.stringValue("QueryOTAFirmwareResponse.FirmwareInfo.MultiFiles["+ i +"].Url"));
+			otaPackageFileDTO.setSignValue(_ctx.stringValue("QueryOTAFirmwareResponse.FirmwareInfo.MultiFiles["+ i +"].SignValue"));
+			otaPackageFileDTO.setFileMd5(_ctx.stringValue("QueryOTAFirmwareResponse.FirmwareInfo.MultiFiles["+ i +"].FileMd5"));
+
+			multiFiles.add(otaPackageFileDTO);
+		}
+		firmwareInfo.setMultiFiles(multiFiles);
 		queryOTAFirmwareResponse.setFirmwareInfo(firmwareInfo);
 	 
 	 	return queryOTAFirmwareResponse;

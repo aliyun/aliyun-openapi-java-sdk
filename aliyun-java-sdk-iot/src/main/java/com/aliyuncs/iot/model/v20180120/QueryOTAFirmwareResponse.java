@@ -14,6 +14,7 @@
 
 package com.aliyuncs.iot.model.v20180120;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.iot.transform.v20180120.QueryOTAFirmwareResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -111,6 +112,8 @@ public class QueryOTAFirmwareResponse extends AcsResponse {
 		private String moduleName;
 
 		private String udi;
+
+		private List<OtaPackageFileDTO> multiFiles;
 
 		public String getFirmwareName() {
 			return this.firmwareName;
@@ -255,10 +258,76 @@ public class QueryOTAFirmwareResponse extends AcsResponse {
 		public void setUdi(String udi) {
 			this.udi = udi;
 		}
+
+		public List<OtaPackageFileDTO> getMultiFiles() {
+			return this.multiFiles;
+		}
+
+		public void setMultiFiles(List<OtaPackageFileDTO> multiFiles) {
+			this.multiFiles = multiFiles;
+		}
+
+		public static class OtaPackageFileDTO {
+
+			private String name;
+
+			private Integer size;
+
+			private String url;
+
+			private String signValue;
+
+			private String fileMd5;
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
+
+			public Integer getSize() {
+				return this.size;
+			}
+
+			public void setSize(Integer size) {
+				this.size = size;
+			}
+
+			public String getUrl() {
+				return this.url;
+			}
+
+			public void setUrl(String url) {
+				this.url = url;
+			}
+
+			public String getSignValue() {
+				return this.signValue;
+			}
+
+			public void setSignValue(String signValue) {
+				this.signValue = signValue;
+			}
+
+			public String getFileMd5() {
+				return this.fileMd5;
+			}
+
+			public void setFileMd5(String fileMd5) {
+				this.fileMd5 = fileMd5;
+			}
+		}
 	}
 
 	@Override
 	public QueryOTAFirmwareResponse getInstance(UnmarshallerContext context) {
 		return	QueryOTAFirmwareResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

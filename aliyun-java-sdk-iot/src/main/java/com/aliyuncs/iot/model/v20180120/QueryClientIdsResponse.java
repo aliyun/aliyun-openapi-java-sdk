@@ -14,15 +14,16 @@
 
 package com.aliyuncs.iot.model.v20180120;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.iot.transform.v20180120.SyncSpeechByCombinationResponseUnmarshaller;
+import com.aliyuncs.iot.transform.v20180120.QueryClientIdsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class SyncSpeechByCombinationResponse extends AcsResponse {
+public class QueryClientIdsResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -76,79 +77,57 @@ public class SyncSpeechByCombinationResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String id;
+		private String iotId;
 
-		private Integer retryCount;
+		private List<DynamicRegClientId> dynamicRegClientIds;
 
-		private Boolean success;
-
-		private Integer maxRetryCount;
-
-		private String deviceErrorCode;
-
-		private String deviceErrorMessage;
-
-		private String detail;
-
-		public String getId() {
-			return this.id;
+		public String getIotId() {
+			return this.iotId;
 		}
 
-		public void setId(String id) {
-			this.id = id;
+		public void setIotId(String iotId) {
+			this.iotId = iotId;
 		}
 
-		public Integer getRetryCount() {
-			return this.retryCount;
+		public List<DynamicRegClientId> getDynamicRegClientIds() {
+			return this.dynamicRegClientIds;
 		}
 
-		public void setRetryCount(Integer retryCount) {
-			this.retryCount = retryCount;
+		public void setDynamicRegClientIds(List<DynamicRegClientId> dynamicRegClientIds) {
+			this.dynamicRegClientIds = dynamicRegClientIds;
 		}
 
-		public Boolean getSuccess() {
-			return this.success;
-		}
+		public static class DynamicRegClientId {
 
-		public void setSuccess(Boolean success) {
-			this.success = success;
-		}
+			private String clientId;
 
-		public Integer getMaxRetryCount() {
-			return this.maxRetryCount;
-		}
+			private Long createTime;
 
-		public void setMaxRetryCount(Integer maxRetryCount) {
-			this.maxRetryCount = maxRetryCount;
-		}
+			public String getClientId() {
+				return this.clientId;
+			}
 
-		public String getDeviceErrorCode() {
-			return this.deviceErrorCode;
-		}
+			public void setClientId(String clientId) {
+				this.clientId = clientId;
+			}
 
-		public void setDeviceErrorCode(String deviceErrorCode) {
-			this.deviceErrorCode = deviceErrorCode;
-		}
+			public Long getCreateTime() {
+				return this.createTime;
+			}
 
-		public String getDeviceErrorMessage() {
-			return this.deviceErrorMessage;
-		}
-
-		public void setDeviceErrorMessage(String deviceErrorMessage) {
-			this.deviceErrorMessage = deviceErrorMessage;
-		}
-
-		public String getDetail() {
-			return this.detail;
-		}
-
-		public void setDetail(String detail) {
-			this.detail = detail;
+			public void setCreateTime(Long createTime) {
+				this.createTime = createTime;
+			}
 		}
 	}
 
 	@Override
-	public SyncSpeechByCombinationResponse getInstance(UnmarshallerContext context) {
-		return	SyncSpeechByCombinationResponseUnmarshaller.unmarshall(this, context);
+	public QueryClientIdsResponse getInstance(UnmarshallerContext context) {
+		return	QueryClientIdsResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

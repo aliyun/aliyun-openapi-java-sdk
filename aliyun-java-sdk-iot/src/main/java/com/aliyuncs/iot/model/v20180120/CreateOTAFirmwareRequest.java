@@ -15,6 +15,7 @@
 package com.aliyuncs.iot.model.v20180120;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.iot.Endpoint;
 
@@ -26,6 +27,8 @@ public class CreateOTAFirmwareRequest extends RpcAcsRequest<CreateOTAFirmwareRes
 	   
 
 	private String signMethod;
+
+	private List<MultiFiles> multiFiless;
 
 	private Boolean needToVerify;
 
@@ -70,6 +73,23 @@ public class CreateOTAFirmwareRequest extends RpcAcsRequest<CreateOTAFirmwareRes
 		if(signMethod != null){
 			putQueryParameter("SignMethod", signMethod);
 		}
+	}
+
+	public List<MultiFiles> getMultiFiless() {
+		return this.multiFiless;
+	}
+
+	public void setMultiFiless(List<MultiFiles> multiFiless) {
+		this.multiFiless = multiFiless;	
+		if (multiFiless != null) {
+			for (int depth1 = 0; depth1 < multiFiless.size(); depth1++) {
+				putQueryParameter("MultiFiles." + (depth1 + 1) + ".Size" , multiFiless.get(depth1).getSize());
+				putQueryParameter("MultiFiles." + (depth1 + 1) + ".Name" , multiFiless.get(depth1).getName());
+				putQueryParameter("MultiFiles." + (depth1 + 1) + ".SignValue" , multiFiless.get(depth1).getSignValue());
+				putQueryParameter("MultiFiles." + (depth1 + 1) + ".FileMd5" , multiFiless.get(depth1).getFileMd5());
+				putQueryParameter("MultiFiles." + (depth1 + 1) + ".Url" , multiFiless.get(depth1).getUrl());
+			}
+		}	
 	}
 
 	public Boolean getNeedToVerify() {
@@ -212,6 +232,59 @@ public class CreateOTAFirmwareRequest extends RpcAcsRequest<CreateOTAFirmwareRes
 		this.destVersion = destVersion;
 		if(destVersion != null){
 			putQueryParameter("DestVersion", destVersion);
+		}
+	}
+
+	public static class MultiFiles {
+
+		private Integer size;
+
+		private String name;
+
+		private String signValue;
+
+		private String fileMd5;
+
+		private String url;
+
+		public Integer getSize() {
+			return this.size;
+		}
+
+		public void setSize(Integer size) {
+			this.size = size;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getSignValue() {
+			return this.signValue;
+		}
+
+		public void setSignValue(String signValue) {
+			this.signValue = signValue;
+		}
+
+		public String getFileMd5() {
+			return this.fileMd5;
+		}
+
+		public void setFileMd5(String fileMd5) {
+			this.fileMd5 = fileMd5;
+		}
+
+		public String getUrl() {
+			return this.url;
+		}
+
+		public void setUrl(String url) {
+			this.url = url;
 		}
 	}
 
