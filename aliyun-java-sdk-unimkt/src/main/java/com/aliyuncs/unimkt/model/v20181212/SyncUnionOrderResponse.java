@@ -24,15 +24,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class SyncUnionOrderResponse extends AcsResponse {
 
-	private String msg;
+	private Boolean status;
 
-	private String aliPayOrderId;
+	private String msg;
 
 	private String requestId;
 
 	private String errorCode;
 
-	private Boolean status;
+	private String aliPayOrderId;
+
+	public Boolean getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(Boolean status) {
+		this.status = status;
+	}
 
 	public String getMsg() {
 		return this.msg;
@@ -40,14 +48,6 @@ public class SyncUnionOrderResponse extends AcsResponse {
 
 	public void setMsg(String msg) {
 		this.msg = msg;
-	}
-
-	public String getAliPayOrderId() {
-		return this.aliPayOrderId;
-	}
-
-	public void setAliPayOrderId(String aliPayOrderId) {
-		this.aliPayOrderId = aliPayOrderId;
 	}
 
 	public String getRequestId() {
@@ -66,12 +66,12 @@ public class SyncUnionOrderResponse extends AcsResponse {
 		this.errorCode = errorCode;
 	}
 
-	public Boolean getStatus() {
-		return this.status;
+	public String getAliPayOrderId() {
+		return this.aliPayOrderId;
 	}
 
-	public void setStatus(Boolean status) {
-		this.status = status;
+	public void setAliPayOrderId(String aliPayOrderId) {
+		this.aliPayOrderId = aliPayOrderId;
 	}
 
 	@Override

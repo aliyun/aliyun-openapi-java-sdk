@@ -65,7 +65,7 @@ public class QueryIncomeTrendRequest extends RpcAcsRequest<QueryIncomeTrendRespo
 
 	private String adSlotName;
 	public QueryIncomeTrendRequest() {
-		super("UniMkt", "2018-12-12", "QueryIncomeTrend");
+		super("UniMkt", "2018-12-12", "QueryIncomeTrend", "1.0.0");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

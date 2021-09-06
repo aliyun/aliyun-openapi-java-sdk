@@ -26,31 +26,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryUnionPromotionResponse extends AcsResponse {
 
-	private Integer errorCode;
-
-	private Boolean success;
-
 	private String errorMsg;
 
 	private String requestId;
 
+	private String bizErrorCode;
+
+	private Boolean success;
+
+	private Integer errorCode;
+
 	private List<Map<Object,Object>> result;
-
-	public Integer getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(Integer errorCode) {
-		this.errorCode = errorCode;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getErrorMsg() {
 		return this.errorMsg;
@@ -66,6 +52,30 @@ public class QueryUnionPromotionResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getBizErrorCode() {
+		return this.bizErrorCode;
+	}
+
+	public void setBizErrorCode(String bizErrorCode) {
+		this.bizErrorCode = bizErrorCode;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
+	public Integer getErrorCode() {
+		return this.errorCode;
+	}
+
+	public void setErrorCode(Integer errorCode) {
+		this.errorCode = errorCode;
 	}
 
 	public List<Map<Object,Object>> getResult() {

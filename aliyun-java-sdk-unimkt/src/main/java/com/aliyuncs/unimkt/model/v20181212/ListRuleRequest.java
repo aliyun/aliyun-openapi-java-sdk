@@ -35,6 +35,8 @@ public class ListRuleRequest extends RpcAcsRequest<ListRuleResponse> {
 
 	private Integer pageNumber;
 
+	private String mediaName;
+
 	private String appName;
 
 	private String tenantId;
@@ -59,9 +61,11 @@ public class ListRuleRequest extends RpcAcsRequest<ListRuleResponse> {
 
 	private String userSite;
 
+	private String adSlotName;
+
 	private String ruleId;
 	public ListRuleRequest() {
-		super("UniMkt", "2018-12-12", "ListRule");
+		super("UniMkt", "2018-12-12", "ListRule", "1.0.0");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -121,6 +125,17 @@ public class ListRuleRequest extends RpcAcsRequest<ListRuleResponse> {
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getMediaName() {
+		return this.mediaName;
+	}
+
+	public void setMediaName(String mediaName) {
+		this.mediaName = mediaName;
+		if(mediaName != null){
+			putQueryParameter("MediaName", mediaName);
 		}
 	}
 
@@ -253,6 +268,17 @@ public class ListRuleRequest extends RpcAcsRequest<ListRuleResponse> {
 		this.userSite = userSite;
 		if(userSite != null){
 			putQueryParameter("UserSite", userSite);
+		}
+	}
+
+	public String getAdSlotName() {
+		return this.adSlotName;
+	}
+
+	public void setAdSlotName(String adSlotName) {
+		this.adSlotName = adSlotName;
+		if(adSlotName != null){
+			putQueryParameter("AdSlotName", adSlotName);
 		}
 	}
 

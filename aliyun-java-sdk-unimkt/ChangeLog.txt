@@ -1,3 +1,6 @@
+2021-09-06 Version: 2.3.6
+- Generated 2019-07-24, 2018-12-07, 2018-12-12 for `UniMkt`.
+
 2021-05-12 Version: 2.3.5
 - Supported AAA for BBB.
 

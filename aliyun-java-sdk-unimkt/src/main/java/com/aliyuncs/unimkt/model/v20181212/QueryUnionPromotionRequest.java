@@ -27,6 +27,8 @@ public class QueryUnionPromotionRequest extends RpcAcsRequest<QueryUnionPromotio
 
 	private String unionBizType;
 
+	private String proxyChannelId;
+
 	private String userNick;
 
 	private String sign;
@@ -37,7 +39,7 @@ public class QueryUnionPromotionRequest extends RpcAcsRequest<QueryUnionPromotio
 
 	private String channelId;
 	public QueryUnionPromotionRequest() {
-		super("UniMkt", "2018-12-12", "QueryUnionPromotion");
+		super("UniMkt", "2018-12-12", "QueryUnionPromotion", "1.0.0");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -53,6 +55,17 @@ public class QueryUnionPromotionRequest extends RpcAcsRequest<QueryUnionPromotio
 		this.unionBizType = unionBizType;
 		if(unionBizType != null){
 			putQueryParameter("UnionBizType", unionBizType);
+		}
+	}
+
+	public String getProxyChannelId() {
+		return this.proxyChannelId;
+	}
+
+	public void setProxyChannelId(String proxyChannelId) {
+		this.proxyChannelId = proxyChannelId;
+		if(proxyChannelId != null){
+			putQueryParameter("ProxyChannelId", proxyChannelId);
 		}
 	}
 

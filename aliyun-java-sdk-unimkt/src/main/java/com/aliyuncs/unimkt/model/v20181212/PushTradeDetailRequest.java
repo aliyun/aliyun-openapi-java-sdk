@@ -54,7 +54,7 @@ public class PushTradeDetailRequest extends RpcAcsRequest<PushTradeDetailRespons
 
 	private Float tradePrice;
 	public PushTradeDetailRequest() {
-		super("UniMkt", "2018-12-12", "PushTradeDetail");
+		super("UniMkt", "2018-12-12", "PushTradeDetail", "1.0.0");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

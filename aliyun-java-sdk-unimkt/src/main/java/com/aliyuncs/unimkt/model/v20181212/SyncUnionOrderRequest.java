@@ -25,6 +25,8 @@ import com.aliyuncs.unimkt.Endpoint;
 public class SyncUnionOrderRequest extends RpcAcsRequest<SyncUnionOrderResponse> {
 	   
 
+	private String proxyChannelId;
+
 	private String taskType;
 
 	private Long realCostAmount;
@@ -47,6 +49,8 @@ public class SyncUnionOrderRequest extends RpcAcsRequest<SyncUnionOrderResponse>
 
 	private String taskRuleType;
 
+	private String v;
+
 	private Integer industryLabelBagId;
 
 	private Long applyPrice;
@@ -61,12 +65,23 @@ public class SyncUnionOrderRequest extends RpcAcsRequest<SyncUnionOrderResponse>
 
 	private String status;
 	public SyncUnionOrderRequest() {
-		super("UniMkt", "2018-12-12", "SyncUnionOrder");
+		super("UniMkt", "2018-12-12", "SyncUnionOrder", "1.0.0");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getProxyChannelId() {
+		return this.proxyChannelId;
+	}
+
+	public void setProxyChannelId(String proxyChannelId) {
+		this.proxyChannelId = proxyChannelId;
+		if(proxyChannelId != null){
+			putQueryParameter("ProxyChannelId", proxyChannelId);
+		}
 	}
 
 	public String getTaskType() {
@@ -187,6 +202,17 @@ public class SyncUnionOrderRequest extends RpcAcsRequest<SyncUnionOrderResponse>
 		this.taskRuleType = taskRuleType;
 		if(taskRuleType != null){
 			putQueryParameter("TaskRuleType", taskRuleType);
+		}
+	}
+
+	public String getV() {
+		return this.v;
+	}
+
+	public void setV(String v) {
+		this.v = v;
+		if(v != null){
+			putQueryParameter("V", v);
 		}
 	}
 

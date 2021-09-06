@@ -27,7 +27,7 @@ public class QueryTaskRuleLimitRequest extends RpcAcsRequest<QueryTaskRuleLimitR
 
 	private String channelId;
 	public QueryTaskRuleLimitRequest() {
-		super("UniMkt", "2018-12-12", "QueryTaskRuleLimit");
+		super("UniMkt", "2018-12-12", "QueryTaskRuleLimit", "1.0.0");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

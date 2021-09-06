@@ -43,7 +43,7 @@ public class CreateSlotRequest extends RpcAcsRequest<CreateSlotResponse> {
 
 	private String adSlot;
 	public CreateSlotRequest() {
-		super("UniMkt", "2018-12-12", "CreateSlot");
+		super("UniMkt", "2018-12-12", "CreateSlot", "1.0.0");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

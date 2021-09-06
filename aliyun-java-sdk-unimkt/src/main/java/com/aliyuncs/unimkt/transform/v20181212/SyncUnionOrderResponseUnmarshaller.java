@@ -23,10 +23,10 @@ public class SyncUnionOrderResponseUnmarshaller {
 	public static SyncUnionOrderResponse unmarshall(SyncUnionOrderResponse syncUnionOrderResponse, UnmarshallerContext _ctx) {
 		
 		syncUnionOrderResponse.setRequestId(_ctx.stringValue("SyncUnionOrderResponse.RequestId"));
-		syncUnionOrderResponse.setMsg(_ctx.stringValue("SyncUnionOrderResponse.Msg"));
-		syncUnionOrderResponse.setAliPayOrderId(_ctx.stringValue("SyncUnionOrderResponse.AliPayOrderId"));
-		syncUnionOrderResponse.setErrorCode(_ctx.stringValue("SyncUnionOrderResponse.ErrorCode"));
 		syncUnionOrderResponse.setStatus(_ctx.booleanValue("SyncUnionOrderResponse.Status"));
+		syncUnionOrderResponse.setMsg(_ctx.stringValue("SyncUnionOrderResponse.Msg"));
+		syncUnionOrderResponse.setErrorCode(_ctx.stringValue("SyncUnionOrderResponse.ErrorCode"));
+		syncUnionOrderResponse.setAliPayOrderId(_ctx.stringValue("SyncUnionOrderResponse.AliPayOrderId"));
 	 
 	 	return syncUnionOrderResponse;
 	}

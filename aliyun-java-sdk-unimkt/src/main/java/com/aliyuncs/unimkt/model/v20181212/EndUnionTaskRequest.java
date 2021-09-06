@@ -31,7 +31,7 @@ public class EndUnionTaskRequest extends RpcAcsRequest<EndUnionTaskResponse> {
 
 	private Long taskId;
 	public EndUnionTaskRequest() {
-		super("UniMkt", "2018-12-12", "EndUnionTask");
+		super("UniMkt", "2018-12-12", "EndUnionTask", "1.0.0");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

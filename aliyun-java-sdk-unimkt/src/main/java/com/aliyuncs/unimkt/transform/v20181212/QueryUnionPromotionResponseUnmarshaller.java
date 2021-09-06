@@ -27,9 +27,10 @@ public class QueryUnionPromotionResponseUnmarshaller {
 	public static QueryUnionPromotionResponse unmarshall(QueryUnionPromotionResponse queryUnionPromotionResponse, UnmarshallerContext _ctx) {
 		
 		queryUnionPromotionResponse.setRequestId(_ctx.stringValue("QueryUnionPromotionResponse.RequestId"));
-		queryUnionPromotionResponse.setErrorCode(_ctx.integerValue("QueryUnionPromotionResponse.ErrorCode"));
-		queryUnionPromotionResponse.setSuccess(_ctx.booleanValue("QueryUnionPromotionResponse.Success"));
 		queryUnionPromotionResponse.setErrorMsg(_ctx.stringValue("QueryUnionPromotionResponse.ErrorMsg"));
+		queryUnionPromotionResponse.setBizErrorCode(_ctx.stringValue("QueryUnionPromotionResponse.BizErrorCode"));
+		queryUnionPromotionResponse.setSuccess(_ctx.booleanValue("QueryUnionPromotionResponse.Success"));
+		queryUnionPromotionResponse.setErrorCode(_ctx.integerValue("QueryUnionPromotionResponse.ErrorCode"));
 
 		List<Map<Object, Object>> result = _ctx.listMapValue("QueryUnionPromotionResponse.Result");
 		queryUnionPromotionResponse.setResult(result);

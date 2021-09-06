@@ -27,7 +27,7 @@ public class QueryTaskBizTypeRequest extends RpcAcsRequest<QueryTaskBizTypeRespo
 
 	private String channelId;
 	public QueryTaskBizTypeRequest() {
-		super("UniMkt", "2018-12-12", "QueryTaskBizType");
+		super("UniMkt", "2018-12-12", "QueryTaskBizType", "1.0.0");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
