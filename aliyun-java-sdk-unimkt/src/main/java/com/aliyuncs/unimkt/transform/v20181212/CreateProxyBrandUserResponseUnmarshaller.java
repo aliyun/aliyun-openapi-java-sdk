@@ -24,9 +24,9 @@ public class CreateProxyBrandUserResponseUnmarshaller {
 		
 		createProxyBrandUserResponse.setRequestId(_ctx.stringValue("CreateProxyBrandUserResponse.RequestId"));
 		createProxyBrandUserResponse.setCode(_ctx.integerValue("CreateProxyBrandUserResponse.Code"));
-		createProxyBrandUserResponse.setSuccess(_ctx.booleanValue("CreateProxyBrandUserResponse.Success"));
-		createProxyBrandUserResponse.setErrorMsg(_ctx.stringValue("CreateProxyBrandUserResponse.ErrorMsg"));
 		createProxyBrandUserResponse.setData(_ctx.booleanValue("CreateProxyBrandUserResponse.Data"));
+		createProxyBrandUserResponse.setErrorMsg(_ctx.stringValue("CreateProxyBrandUserResponse.ErrorMsg"));
+		createProxyBrandUserResponse.setSuccess(_ctx.booleanValue("CreateProxyBrandUserResponse.Success"));
 	 
 	 	return createProxyBrandUserResponse;
 	}

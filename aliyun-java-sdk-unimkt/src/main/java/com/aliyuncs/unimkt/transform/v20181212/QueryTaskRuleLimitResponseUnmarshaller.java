@@ -28,8 +28,8 @@ public class QueryTaskRuleLimitResponseUnmarshaller {
 		
 		queryTaskRuleLimitResponse.setRequestId(_ctx.stringValue("QueryTaskRuleLimitResponse.RequestId"));
 		queryTaskRuleLimitResponse.setCode(_ctx.integerValue("QueryTaskRuleLimitResponse.Code"));
-		queryTaskRuleLimitResponse.setSuccess(_ctx.booleanValue("QueryTaskRuleLimitResponse.Success"));
 		queryTaskRuleLimitResponse.setErrorMsg(_ctx.stringValue("QueryTaskRuleLimitResponse.ErrorMsg"));
+		queryTaskRuleLimitResponse.setSuccess(_ctx.booleanValue("QueryTaskRuleLimitResponse.Success"));
 
 		List<Map<Object, Object>> data = _ctx.listMapValue("QueryTaskRuleLimitResponse.Data");
 		queryTaskRuleLimitResponse.setData(data);

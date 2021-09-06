@@ -1,3 +1,6 @@
+2021-09-06 Version: 2.4.0
+- Supported for custom creative union task.
+
 2021-09-06 Version: 2.3.6
 - Generated 2019-07-24, 2018-12-07, 2018-12-12 for `UniMkt`.
 

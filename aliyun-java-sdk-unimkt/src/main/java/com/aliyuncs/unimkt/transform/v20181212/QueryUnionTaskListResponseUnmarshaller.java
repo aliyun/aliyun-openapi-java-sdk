@@ -25,9 +25,9 @@ public class QueryUnionTaskListResponseUnmarshaller {
 		
 		queryUnionTaskListResponse.setRequestId(_ctx.stringValue("QueryUnionTaskListResponse.RequestId"));
 		queryUnionTaskListResponse.setCode(_ctx.integerValue("QueryUnionTaskListResponse.Code"));
-		queryUnionTaskListResponse.setSuccess(_ctx.booleanValue("QueryUnionTaskListResponse.Success"));
-		queryUnionTaskListResponse.setErrorMsg(_ctx.stringValue("QueryUnionTaskListResponse.ErrorMsg"));
 		queryUnionTaskListResponse.setData(_ctx.mapValue("QueryUnionTaskListResponse.Data"));
+		queryUnionTaskListResponse.setErrorMsg(_ctx.stringValue("QueryUnionTaskListResponse.ErrorMsg"));
+		queryUnionTaskListResponse.setSuccess(_ctx.booleanValue("QueryUnionTaskListResponse.Success"));
 	 
 	 	return queryUnionTaskListResponse;
 	}

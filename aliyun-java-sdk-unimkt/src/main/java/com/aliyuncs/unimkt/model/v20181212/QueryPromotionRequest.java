@@ -34,7 +34,7 @@ public class QueryPromotionRequest extends RpcAcsRequest<QueryPromotionResponse>
 
 	private String channelId;
 	public QueryPromotionRequest() {
-		super("UniMkt", "2018-12-12", "QueryPromotion", "1.0.0");
+		super("UniMkt", "2018-12-12", "QueryPromotion");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

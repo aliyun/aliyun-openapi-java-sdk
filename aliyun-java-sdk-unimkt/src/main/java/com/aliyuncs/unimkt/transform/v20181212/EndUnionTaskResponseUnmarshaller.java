@@ -24,9 +24,9 @@ public class EndUnionTaskResponseUnmarshaller {
 		
 		endUnionTaskResponse.setRequestId(_ctx.stringValue("EndUnionTaskResponse.RequestId"));
 		endUnionTaskResponse.setCode(_ctx.integerValue("EndUnionTaskResponse.Code"));
-		endUnionTaskResponse.setSuccess(_ctx.booleanValue("EndUnionTaskResponse.Success"));
-		endUnionTaskResponse.setErrorMsg(_ctx.stringValue("EndUnionTaskResponse.ErrorMsg"));
 		endUnionTaskResponse.setData(_ctx.booleanValue("EndUnionTaskResponse.Data"));
+		endUnionTaskResponse.setErrorMsg(_ctx.stringValue("EndUnionTaskResponse.ErrorMsg"));
+		endUnionTaskResponse.setSuccess(_ctx.booleanValue("EndUnionTaskResponse.Success"));
 	 
 	 	return endUnionTaskResponse;
 	}

@@ -47,7 +47,7 @@ public class ListFlowRequest extends RpcAcsRequest<ListFlowResponse> {
 
 	private String userSite;
 	public ListFlowRequest() {
-		super("UniMkt", "2018-12-12", "ListFlow", "1.0.0");
+		super("UniMkt", "2018-12-12", "ListFlow");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -27,13 +27,13 @@ public class QueryUnionTaskInfoResponse extends AcsResponse {
 
 	private Integer code;
 
-	private Boolean success;
+	private Map<Object,Object> data;
 
 	private String errorMsg;
 
 	private String requestId;
 
-	private Map<Object,Object> data;
+	private Boolean success;
 
 	public Integer getCode() {
 		return this.code;
@@ -43,12 +43,12 @@ public class QueryUnionTaskInfoResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public Map<Object,Object> getData() {
+		return this.data;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setData(Map<Object,Object> data) {
+		this.data = data;
 	}
 
 	public String getErrorMsg() {
@@ -67,12 +67,12 @@ public class QueryUnionTaskInfoResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Map<Object,Object> getData() {
-		return this.data;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setData(Map<Object,Object> data) {
-		this.data = data;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	@Override

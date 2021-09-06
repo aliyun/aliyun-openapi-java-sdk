@@ -28,11 +28,11 @@ public class QueryTaskRuleLimitResponse extends AcsResponse {
 
 	private Integer code;
 
-	private Boolean success;
-
 	private String errorMsg;
 
 	private String requestId;
+
+	private Boolean success;
 
 	private List<Map<Object,Object>> data;
 
@@ -42,14 +42,6 @@ public class QueryTaskRuleLimitResponse extends AcsResponse {
 
 	public void setCode(Integer code) {
 		this.code = code;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
 	}
 
 	public String getErrorMsg() {
@@ -66,6 +58,14 @@ public class QueryTaskRuleLimitResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<Map<Object,Object>> getData() {

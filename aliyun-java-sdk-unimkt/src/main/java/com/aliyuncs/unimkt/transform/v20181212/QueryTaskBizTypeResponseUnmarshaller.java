@@ -28,8 +28,8 @@ public class QueryTaskBizTypeResponseUnmarshaller {
 		
 		queryTaskBizTypeResponse.setRequestId(_ctx.stringValue("QueryTaskBizTypeResponse.RequestId"));
 		queryTaskBizTypeResponse.setCode(_ctx.integerValue("QueryTaskBizTypeResponse.Code"));
-		queryTaskBizTypeResponse.setSuccess(_ctx.booleanValue("QueryTaskBizTypeResponse.Success"));
 		queryTaskBizTypeResponse.setErrorMsg(_ctx.stringValue("QueryTaskBizTypeResponse.ErrorMsg"));
+		queryTaskBizTypeResponse.setSuccess(_ctx.booleanValue("QueryTaskBizTypeResponse.Success"));
 
 		List<Map<Object, Object>> data = _ctx.listMapValue("QueryTaskBizTypeResponse.Data");
 		queryTaskBizTypeResponse.setData(data);

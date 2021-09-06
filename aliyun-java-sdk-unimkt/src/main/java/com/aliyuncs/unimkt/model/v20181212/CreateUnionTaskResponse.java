@@ -26,13 +26,13 @@ public class CreateUnionTaskResponse extends AcsResponse {
 
 	private Integer code;
 
-	private Boolean success;
+	private Long data;
 
 	private String errorMsg;
 
 	private String requestId;
 
-	private Long data;
+	private Boolean success;
 
 	public Integer getCode() {
 		return this.code;
@@ -42,12 +42,12 @@ public class CreateUnionTaskResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public Long getData() {
+		return this.data;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setData(Long data) {
+		this.data = data;
 	}
 
 	public String getErrorMsg() {
@@ -66,12 +66,12 @@ public class CreateUnionTaskResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Long getData() {
-		return this.data;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setData(Long data) {
-		this.data = data;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	@Override

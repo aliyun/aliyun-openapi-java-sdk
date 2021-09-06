@@ -28,8 +28,8 @@ public class QueryContentListResponseUnmarshaller {
 		
 		queryContentListResponse.setRequestId(_ctx.stringValue("QueryContentListResponse.RequestId"));
 		queryContentListResponse.setCode(_ctx.integerValue("QueryContentListResponse.Code"));
-		queryContentListResponse.setSuccess(_ctx.booleanValue("QueryContentListResponse.Success"));
 		queryContentListResponse.setErrorMsg(_ctx.stringValue("QueryContentListResponse.ErrorMsg"));
+		queryContentListResponse.setSuccess(_ctx.booleanValue("QueryContentListResponse.Success"));
 
 		List<Map<Object, Object>> data = _ctx.listMapValue("QueryContentListResponse.Data");
 		queryContentListResponse.setData(data);

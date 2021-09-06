@@ -28,8 +28,8 @@ public class QueryIndustryLabelBagResponseUnmarshaller {
 		
 		queryIndustryLabelBagResponse.setRequestId(_ctx.stringValue("QueryIndustryLabelBagResponse.RequestId"));
 		queryIndustryLabelBagResponse.setCode(_ctx.integerValue("QueryIndustryLabelBagResponse.Code"));
-		queryIndustryLabelBagResponse.setSuccess(_ctx.booleanValue("QueryIndustryLabelBagResponse.Success"));
 		queryIndustryLabelBagResponse.setErrorMsg(_ctx.stringValue("QueryIndustryLabelBagResponse.ErrorMsg"));
+		queryIndustryLabelBagResponse.setSuccess(_ctx.booleanValue("QueryIndustryLabelBagResponse.Success"));
 
 		List<Map<Object, Object>> data = _ctx.listMapValue("QueryIndustryLabelBagResponse.Data");
 		queryIndustryLabelBagResponse.setData(data);

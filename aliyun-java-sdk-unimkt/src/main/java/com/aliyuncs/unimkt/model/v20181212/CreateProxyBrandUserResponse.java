@@ -26,13 +26,13 @@ public class CreateProxyBrandUserResponse extends AcsResponse {
 
 	private Integer code;
 
-	private Boolean success;
+	private Boolean data;
 
 	private String errorMsg;
 
 	private String requestId;
 
-	private Boolean data;
+	private Boolean success;
 
 	public Integer getCode() {
 		return this.code;
@@ -42,12 +42,12 @@ public class CreateProxyBrandUserResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public Boolean getData() {
+		return this.data;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setData(Boolean data) {
+		this.data = data;
 	}
 
 	public String getErrorMsg() {
@@ -66,12 +66,12 @@ public class CreateProxyBrandUserResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getData() {
-		return this.data;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setData(Boolean data) {
-		this.data = data;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	@Override

@@ -24,9 +24,9 @@ public class CreateUnionTaskResponseUnmarshaller {
 		
 		createUnionTaskResponse.setRequestId(_ctx.stringValue("CreateUnionTaskResponse.RequestId"));
 		createUnionTaskResponse.setCode(_ctx.integerValue("CreateUnionTaskResponse.Code"));
-		createUnionTaskResponse.setSuccess(_ctx.booleanValue("CreateUnionTaskResponse.Success"));
-		createUnionTaskResponse.setErrorMsg(_ctx.stringValue("CreateUnionTaskResponse.ErrorMsg"));
 		createUnionTaskResponse.setData(_ctx.longValue("CreateUnionTaskResponse.Data"));
+		createUnionTaskResponse.setErrorMsg(_ctx.stringValue("CreateUnionTaskResponse.ErrorMsg"));
+		createUnionTaskResponse.setSuccess(_ctx.booleanValue("CreateUnionTaskResponse.Success"));
 	 
 	 	return createUnionTaskResponse;
 	}

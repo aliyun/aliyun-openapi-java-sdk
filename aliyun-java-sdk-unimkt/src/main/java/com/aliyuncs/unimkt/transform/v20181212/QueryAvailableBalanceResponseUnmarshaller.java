@@ -24,9 +24,9 @@ public class QueryAvailableBalanceResponseUnmarshaller {
 		
 		queryAvailableBalanceResponse.setRequestId(_ctx.stringValue("QueryAvailableBalanceResponse.RequestId"));
 		queryAvailableBalanceResponse.setCode(_ctx.integerValue("QueryAvailableBalanceResponse.Code"));
-		queryAvailableBalanceResponse.setSuccess(_ctx.booleanValue("QueryAvailableBalanceResponse.Success"));
-		queryAvailableBalanceResponse.setErrorMsg(_ctx.stringValue("QueryAvailableBalanceResponse.ErrorMsg"));
 		queryAvailableBalanceResponse.setData(_ctx.longValue("QueryAvailableBalanceResponse.Data"));
+		queryAvailableBalanceResponse.setErrorMsg(_ctx.stringValue("QueryAvailableBalanceResponse.ErrorMsg"));
+		queryAvailableBalanceResponse.setSuccess(_ctx.booleanValue("QueryAvailableBalanceResponse.Success"));
 	 
 	 	return queryAvailableBalanceResponse;
 	}

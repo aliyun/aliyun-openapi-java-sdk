@@ -27,6 +27,8 @@ public class CreateUnionTaskRequest extends RpcAcsRequest<CreateUnionTaskRespons
 
 	private String taskType;
 
+	private String customCreativeType;
+
 	private String taskBizType;
 
 	private String clientToken;
@@ -45,6 +47,8 @@ public class CreateUnionTaskRequest extends RpcAcsRequest<CreateUnionTaskRespons
 
 	private Long proxyUserId;
 
+	private String contentUrl;
+
 	private String taskRuleType;
 
 	private Long quota;
@@ -57,7 +61,7 @@ public class CreateUnionTaskRequest extends RpcAcsRequest<CreateUnionTaskRespons
 
 	private String channelId;
 	public CreateUnionTaskRequest() {
-		super("UniMkt", "2018-12-12", "CreateUnionTask", "1.0.0");
+		super("UniMkt", "2018-12-12", "CreateUnionTask");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -73,6 +77,17 @@ public class CreateUnionTaskRequest extends RpcAcsRequest<CreateUnionTaskRespons
 		this.taskType = taskType;
 		if(taskType != null){
 			putQueryParameter("TaskType", taskType);
+		}
+	}
+
+	public String getCustomCreativeType() {
+		return this.customCreativeType;
+	}
+
+	public void setCustomCreativeType(String customCreativeType) {
+		this.customCreativeType = customCreativeType;
+		if(customCreativeType != null){
+			putQueryParameter("CustomCreativeType", customCreativeType);
 		}
 	}
 
@@ -172,6 +187,17 @@ public class CreateUnionTaskRequest extends RpcAcsRequest<CreateUnionTaskRespons
 		this.proxyUserId = proxyUserId;
 		if(proxyUserId != null){
 			putQueryParameter("ProxyUserId", proxyUserId.toString());
+		}
+	}
+
+	public String getContentUrl() {
+		return this.contentUrl;
+	}
+
+	public void setContentUrl(String contentUrl) {
+		this.contentUrl = contentUrl;
+		if(contentUrl != null){
+			putQueryParameter("ContentUrl", contentUrl);
 		}
 	}
 

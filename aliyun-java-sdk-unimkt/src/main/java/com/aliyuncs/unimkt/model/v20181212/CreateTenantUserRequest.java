@@ -43,7 +43,7 @@ public class CreateTenantUserRequest extends RpcAcsRequest<CreateTenantUserRespo
 
 	private String userSite;
 	public CreateTenantUserRequest() {
-		super("UniMkt", "2018-12-12", "CreateTenantUser", "1.0.0");
+		super("UniMkt", "2018-12-12", "CreateTenantUser");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
