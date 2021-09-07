@@ -27,6 +27,8 @@ public class CreateAccountRequest extends RpcAcsRequest<CreateAccountResponse> {
 
 	private String dBInstanceName;
 
+	private String securityAccountPassword;
+
 	private String accountDescription;
 
 	private String accountPrivilege;
@@ -36,6 +38,8 @@ public class CreateAccountRequest extends RpcAcsRequest<CreateAccountResponse> {
 	private String accountName;
 
 	private String dBName;
+
+	private String securityAccountName;
 	public CreateAccountRequest() {
 		super("polardbx", "2020-02-02", "CreateAccount", "polardbx");
 		setMethod(MethodType.POST);
@@ -53,6 +57,17 @@ public class CreateAccountRequest extends RpcAcsRequest<CreateAccountResponse> {
 		this.dBInstanceName = dBInstanceName;
 		if(dBInstanceName != null){
 			putQueryParameter("DBInstanceName", dBInstanceName);
+		}
+	}
+
+	public String getSecurityAccountPassword() {
+		return this.securityAccountPassword;
+	}
+
+	public void setSecurityAccountPassword(String securityAccountPassword) {
+		this.securityAccountPassword = securityAccountPassword;
+		if(securityAccountPassword != null){
+			putQueryParameter("SecurityAccountPassword", securityAccountPassword);
 		}
 	}
 
@@ -108,6 +123,17 @@ public class CreateAccountRequest extends RpcAcsRequest<CreateAccountResponse> {
 		this.dBName = dBName;
 		if(dBName != null){
 			putQueryParameter("DBName", dBName);
+		}
+	}
+
+	public String getSecurityAccountName() {
+		return this.securityAccountName;
+	}
+
+	public void setSecurityAccountName(String securityAccountName) {
+		this.securityAccountName = securityAccountName;
+		if(securityAccountName != null){
+			putQueryParameter("SecurityAccountName", securityAccountName);
 		}
 	}
 

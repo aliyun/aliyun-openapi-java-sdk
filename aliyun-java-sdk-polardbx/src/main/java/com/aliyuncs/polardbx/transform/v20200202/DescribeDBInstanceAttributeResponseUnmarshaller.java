@@ -59,6 +59,9 @@ public class DescribeDBInstanceAttributeResponseUnmarshaller {
 		dBInstance.setExpireDate(_ctx.stringValue("DescribeDBInstanceAttributeResponse.DBInstance.ExpireDate"));
 		dBInstance.setType(_ctx.stringValue("DescribeDBInstanceAttributeResponse.DBInstance.Type"));
 		dBInstance.setDBNodeClass(_ctx.stringValue("DescribeDBInstanceAttributeResponse.DBInstance.DBNodeClass"));
+		dBInstance.setRightsSeparationStatus(_ctx.stringValue("DescribeDBInstanceAttributeResponse.DBInstance.RightsSeparationStatus"));
+		dBInstance.setRightsSeparationEnabled(_ctx.booleanValue("DescribeDBInstanceAttributeResponse.DBInstance.RightsSeparationEnabled"));
+		dBInstance.setKindCode(_ctx.integerValue("DescribeDBInstanceAttributeResponse.DBInstance.KindCode"));
 
 		List<String> readDBInstances = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDBInstanceAttributeResponse.DBInstance.ReadDBInstances.Length"); i++) {
@@ -73,6 +76,8 @@ public class DescribeDBInstanceAttributeResponseUnmarshaller {
 			dBNode.setNodeClass(_ctx.stringValue("DescribeDBInstanceAttributeResponse.DBInstance.DBNodes["+ i +"].NodeClass"));
 			dBNode.setRegionId(_ctx.stringValue("DescribeDBInstanceAttributeResponse.DBInstance.DBNodes["+ i +"].RegionId"));
 			dBNode.setZoneId(_ctx.stringValue("DescribeDBInstanceAttributeResponse.DBInstance.DBNodes["+ i +"].ZoneId"));
+			dBNode.setComputeNodeId(_ctx.stringValue("DescribeDBInstanceAttributeResponse.DBInstance.DBNodes["+ i +"].ComputeNodeId"));
+			dBNode.setDataNodeId(_ctx.stringValue("DescribeDBInstanceAttributeResponse.DBInstance.DBNodes["+ i +"].DataNodeId"));
 
 			dBNodes.add(dBNode);
 		}

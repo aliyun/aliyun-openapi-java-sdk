@@ -22,16 +22,16 @@ import com.aliyuncs.polardbx.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeAccountListRequest extends RpcAcsRequest<DescribeAccountListResponse> {
+public class UpdateDBInstanceSSLRequest extends RpcAcsRequest<UpdateDBInstanceSSLResponse> {
 	   
 
 	private String dBInstanceName;
 
-	private String accountType;
+	private String certCommonName;
 
-	private String accountName;
-	public DescribeAccountListRequest() {
-		super("polardbx", "2020-02-02", "DescribeAccountList", "polardbx");
+	private Boolean enableSSL;
+	public UpdateDBInstanceSSLRequest() {
+		super("polardbx", "2020-02-02", "UpdateDBInstanceSSL", "polardbx");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -50,31 +50,31 @@ public class DescribeAccountListRequest extends RpcAcsRequest<DescribeAccountLis
 		}
 	}
 
-	public String getAccountType() {
-		return this.accountType;
+	public String getCertCommonName() {
+		return this.certCommonName;
 	}
 
-	public void setAccountType(String accountType) {
-		this.accountType = accountType;
-		if(accountType != null){
-			putQueryParameter("AccountType", accountType);
+	public void setCertCommonName(String certCommonName) {
+		this.certCommonName = certCommonName;
+		if(certCommonName != null){
+			putQueryParameter("CertCommonName", certCommonName);
 		}
 	}
 
-	public String getAccountName() {
-		return this.accountName;
+	public Boolean getEnableSSL() {
+		return this.enableSSL;
 	}
 
-	public void setAccountName(String accountName) {
-		this.accountName = accountName;
-		if(accountName != null){
-			putQueryParameter("AccountName", accountName);
+	public void setEnableSSL(Boolean enableSSL) {
+		this.enableSSL = enableSSL;
+		if(enableSSL != null){
+			putQueryParameter("EnableSSL", enableSSL.toString());
 		}
 	}
 
 	@Override
-	public Class<DescribeAccountListResponse> getResponseClass() {
-		return DescribeAccountListResponse.class;
+	public Class<UpdateDBInstanceSSLResponse> getResponseClass() {
+		return UpdateDBInstanceSSLResponse.class;
 	}
 
 }

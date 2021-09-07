@@ -22,16 +22,12 @@ import com.aliyuncs.polardbx.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeAccountListRequest extends RpcAcsRequest<DescribeAccountListResponse> {
+public class DescribeDBInstanceTDERequest extends RpcAcsRequest<DescribeDBInstanceTDEResponse> {
 	   
 
 	private String dBInstanceName;
-
-	private String accountType;
-
-	private String accountName;
-	public DescribeAccountListRequest() {
-		super("polardbx", "2020-02-02", "DescribeAccountList", "polardbx");
+	public DescribeDBInstanceTDERequest() {
+		super("polardbx", "2020-02-02", "DescribeDBInstanceTDE", "polardbx");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -50,31 +46,9 @@ public class DescribeAccountListRequest extends RpcAcsRequest<DescribeAccountLis
 		}
 	}
 
-	public String getAccountType() {
-		return this.accountType;
-	}
-
-	public void setAccountType(String accountType) {
-		this.accountType = accountType;
-		if(accountType != null){
-			putQueryParameter("AccountType", accountType);
-		}
-	}
-
-	public String getAccountName() {
-		return this.accountName;
-	}
-
-	public void setAccountName(String accountName) {
-		this.accountName = accountName;
-		if(accountName != null){
-			putQueryParameter("AccountName", accountName);
-		}
-	}
-
 	@Override
-	public Class<DescribeAccountListResponse> getResponseClass() {
-		return DescribeAccountListResponse.class;
+	public Class<DescribeDBInstanceTDEResponse> getResponseClass() {
+		return DescribeDBInstanceTDEResponse.class;
 	}
 
 }

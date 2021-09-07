@@ -103,6 +103,12 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 		private String dBNodeClass;
 
+		private String rightsSeparationStatus;
+
+		private Boolean rightsSeparationEnabled;
+
+		private Integer kindCode;
+
 		private List<DBNode> dBNodes;
 
 		private List<ConnAddr> connAddrs;
@@ -333,6 +339,30 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 			this.dBNodeClass = dBNodeClass;
 		}
 
+		public String getRightsSeparationStatus() {
+			return this.rightsSeparationStatus;
+		}
+
+		public void setRightsSeparationStatus(String rightsSeparationStatus) {
+			this.rightsSeparationStatus = rightsSeparationStatus;
+		}
+
+		public Boolean getRightsSeparationEnabled() {
+			return this.rightsSeparationEnabled;
+		}
+
+		public void setRightsSeparationEnabled(Boolean rightsSeparationEnabled) {
+			this.rightsSeparationEnabled = rightsSeparationEnabled;
+		}
+
+		public Integer getKindCode() {
+			return this.kindCode;
+		}
+
+		public void setKindCode(Integer kindCode) {
+			this.kindCode = kindCode;
+		}
+
 		public List<DBNode> getDBNodes() {
 			return this.dBNodes;
 		}
@@ -367,6 +397,10 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 			private String zoneId;
 
+			private String computeNodeId;
+
+			private String dataNodeId;
+
 			public String getId() {
 				return this.id;
 			}
@@ -397,6 +431,22 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 			public void setZoneId(String zoneId) {
 				this.zoneId = zoneId;
+			}
+
+			public String getComputeNodeId() {
+				return this.computeNodeId;
+			}
+
+			public void setComputeNodeId(String computeNodeId) {
+				this.computeNodeId = computeNodeId;
+			}
+
+			public String getDataNodeId() {
+				return this.dataNodeId;
+			}
+
+			public void setDataNodeId(String dataNodeId) {
+				this.dataNodeId = dataNodeId;
 			}
 		}
 

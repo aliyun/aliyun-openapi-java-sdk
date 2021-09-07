@@ -15,28 +15,18 @@
 package com.aliyuncs.polardbx.model.v20200202;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.polardbx.transform.v20200202.ModifyAccountDescriptionResponseUnmarshaller;
+import com.aliyuncs.polardbx.transform.v20200202.UpdateDBInstanceTDEResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ModifyAccountDescriptionResponse extends AcsResponse {
-
-	private String message;
+public class UpdateDBInstanceTDEResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
+	private Data data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -46,17 +36,30 @@ public class ModifyAccountDescriptionResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public Data getData() {
+		return this.data;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setData(Data data) {
+		this.data = data;
+	}
+
+	public static class Data {
+
+		private String taskId;
+
+		public String getTaskId() {
+			return this.taskId;
+		}
+
+		public void setTaskId(String taskId) {
+			this.taskId = taskId;
+		}
 	}
 
 	@Override
-	public ModifyAccountDescriptionResponse getInstance(UnmarshallerContext context) {
-		return	ModifyAccountDescriptionResponseUnmarshaller.unmarshall(this, context);
+	public UpdateDBInstanceTDEResponse getInstance(UnmarshallerContext context) {
+		return	UpdateDBInstanceTDEResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

@@ -79,6 +79,8 @@ public class DescribeAccountListResponse extends AcsResponse {
 
 		private String dBName;
 
+		private String gmtCreated;
+
 		public String getAccountDescription() {
 			return this.accountDescription;
 		}
@@ -125,6 +127,14 @@ public class DescribeAccountListResponse extends AcsResponse {
 
 		public void setDBName(String dBName) {
 			this.dBName = dBName;
+		}
+
+		public String getGmtCreated() {
+			return this.gmtCreated;
+		}
+
+		public void setGmtCreated(String gmtCreated) {
+			this.gmtCreated = gmtCreated;
 		}
 	}
 

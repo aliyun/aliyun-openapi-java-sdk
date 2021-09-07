@@ -15,28 +15,18 @@
 package com.aliyuncs.polardbx.model.v20200202;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.polardbx.transform.v20200202.ModifyAccountDescriptionResponseUnmarshaller;
+import com.aliyuncs.polardbx.transform.v20200202.CheckCloudResourceAuthorizedResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ModifyAccountDescriptionResponse extends AcsResponse {
-
-	private String message;
+public class CheckCloudResourceAuthorizedResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
+	private Data data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -46,17 +36,40 @@ public class ModifyAccountDescriptionResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public Data getData() {
+		return this.data;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setData(Data data) {
+		this.data = data;
+	}
+
+	public static class Data {
+
+		private String authorizationState;
+
+		private String roleArn;
+
+		public String getAuthorizationState() {
+			return this.authorizationState;
+		}
+
+		public void setAuthorizationState(String authorizationState) {
+			this.authorizationState = authorizationState;
+		}
+
+		public String getRoleArn() {
+			return this.roleArn;
+		}
+
+		public void setRoleArn(String roleArn) {
+			this.roleArn = roleArn;
+		}
 	}
 
 	@Override
-	public ModifyAccountDescriptionResponse getInstance(UnmarshallerContext context) {
-		return	ModifyAccountDescriptionResponseUnmarshaller.unmarshall(this, context);
+	public CheckCloudResourceAuthorizedResponse getInstance(UnmarshallerContext context) {
+		return	CheckCloudResourceAuthorizedResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

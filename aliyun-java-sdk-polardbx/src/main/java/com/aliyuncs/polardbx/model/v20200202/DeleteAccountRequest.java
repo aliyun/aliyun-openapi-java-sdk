@@ -27,7 +27,11 @@ public class DeleteAccountRequest extends RpcAcsRequest<DeleteAccountResponse> {
 
 	private String dBInstanceName;
 
+	private String securityAccountPassword;
+
 	private String accountName;
+
+	private String securityAccountName;
 	public DeleteAccountRequest() {
 		super("polardbx", "2020-02-02", "DeleteAccount", "polardbx");
 		setMethod(MethodType.POST);
@@ -48,6 +52,17 @@ public class DeleteAccountRequest extends RpcAcsRequest<DeleteAccountResponse> {
 		}
 	}
 
+	public String getSecurityAccountPassword() {
+		return this.securityAccountPassword;
+	}
+
+	public void setSecurityAccountPassword(String securityAccountPassword) {
+		this.securityAccountPassword = securityAccountPassword;
+		if(securityAccountPassword != null){
+			putQueryParameter("SecurityAccountPassword", securityAccountPassword);
+		}
+	}
+
 	public String getAccountName() {
 		return this.accountName;
 	}
@@ -56,6 +71,17 @@ public class DeleteAccountRequest extends RpcAcsRequest<DeleteAccountResponse> {
 		this.accountName = accountName;
 		if(accountName != null){
 			putQueryParameter("AccountName", accountName);
+		}
+	}
+
+	public String getSecurityAccountName() {
+		return this.securityAccountName;
+	}
+
+	public void setSecurityAccountName(String securityAccountName) {
+		this.securityAccountName = securityAccountName;
+		if(securityAccountName != null){
+			putQueryParameter("SecurityAccountName", securityAccountName);
 		}
 	}
 

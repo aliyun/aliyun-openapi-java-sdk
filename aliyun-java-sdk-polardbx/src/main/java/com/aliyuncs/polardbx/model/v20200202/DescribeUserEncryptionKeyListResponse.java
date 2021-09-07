@@ -14,29 +14,20 @@
 
 package com.aliyuncs.polardbx.model.v20200202;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.polardbx.transform.v20200202.ModifyAccountDescriptionResponseUnmarshaller;
+import com.aliyuncs.polardbx.transform.v20200202.DescribeUserEncryptionKeyListResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ModifyAccountDescriptionResponse extends AcsResponse {
-
-	private String message;
+public class DescribeUserEncryptionKeyListResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
+	private Data data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -46,17 +37,30 @@ public class ModifyAccountDescriptionResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public Data getData() {
+		return this.data;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setData(Data data) {
+		this.data = data;
+	}
+
+	public static class Data {
+
+		private List<String> keyIds;
+
+		public List<String> getKeyIds() {
+			return this.keyIds;
+		}
+
+		public void setKeyIds(List<String> keyIds) {
+			this.keyIds = keyIds;
+		}
 	}
 
 	@Override
-	public ModifyAccountDescriptionResponse getInstance(UnmarshallerContext context) {
-		return	ModifyAccountDescriptionResponseUnmarshaller.unmarshall(this, context);
+	public DescribeUserEncryptionKeyListResponse getInstance(UnmarshallerContext context) {
+		return	DescribeUserEncryptionKeyListResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

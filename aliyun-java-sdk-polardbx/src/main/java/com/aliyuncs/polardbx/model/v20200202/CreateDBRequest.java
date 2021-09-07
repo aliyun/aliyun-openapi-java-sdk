@@ -29,11 +29,15 @@ public class CreateDBRequest extends RpcAcsRequest<CreateDBResponse> {
 
 	private String charset;
 
+	private String securityAccountPassword;
+
 	private String accountPrivilege;
 
 	private String accountName;
 
 	private String dbName;
+
+	private String securityAccountName;
 
 	private String dbDescription;
 	public CreateDBRequest() {
@@ -67,6 +71,17 @@ public class CreateDBRequest extends RpcAcsRequest<CreateDBResponse> {
 		}
 	}
 
+	public String getSecurityAccountPassword() {
+		return this.securityAccountPassword;
+	}
+
+	public void setSecurityAccountPassword(String securityAccountPassword) {
+		this.securityAccountPassword = securityAccountPassword;
+		if(securityAccountPassword != null){
+			putQueryParameter("SecurityAccountPassword", securityAccountPassword);
+		}
+	}
+
 	public String getAccountPrivilege() {
 		return this.accountPrivilege;
 	}
@@ -97,6 +112,17 @@ public class CreateDBRequest extends RpcAcsRequest<CreateDBResponse> {
 		this.dbName = dbName;
 		if(dbName != null){
 			putQueryParameter("DbName", dbName);
+		}
+	}
+
+	public String getSecurityAccountName() {
+		return this.securityAccountName;
+	}
+
+	public void setSecurityAccountName(String securityAccountName) {
+		this.securityAccountName = securityAccountName;
+		if(securityAccountName != null){
+			putQueryParameter("SecurityAccountName", securityAccountName);
 		}
 	}
 

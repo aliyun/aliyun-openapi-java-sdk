@@ -39,6 +39,7 @@ public class DescribeAccountListResponseUnmarshaller {
 			account.setAccountType(_ctx.stringValue("DescribeAccountListResponse.Data["+ i +"].AccountType"));
 			account.setDBInstanceName(_ctx.stringValue("DescribeAccountListResponse.Data["+ i +"].DBInstanceName"));
 			account.setDBName(_ctx.stringValue("DescribeAccountListResponse.Data["+ i +"].DBName"));
+			account.setGmtCreated(_ctx.stringValue("DescribeAccountListResponse.Data["+ i +"].GmtCreated"));
 
 			data.add(account);
 		}

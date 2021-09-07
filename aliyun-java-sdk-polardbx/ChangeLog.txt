@@ -1,3 +1,6 @@
+2021-09-07 Version: 1.0.1
+- Support DescribeBinaryLog to search binary logs.
+
 2021-02-24 Version: 1.2.0
 - Fix precision problem in DescribeDBInstances and DescribeDBAttribute.
 

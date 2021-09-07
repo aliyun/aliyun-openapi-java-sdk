@@ -14,18 +14,21 @@
 
 package com.aliyuncs.polardbx.transform.v20200202;
 
-import com.aliyuncs.polardbx.model.v20200202.CreateDBResponse;
+import com.aliyuncs.polardbx.model.v20200202.UpdateDBInstanceTDEResponse;
+import com.aliyuncs.polardbx.model.v20200202.UpdateDBInstanceTDEResponse.Data;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class CreateDBResponseUnmarshaller {
+public class UpdateDBInstanceTDEResponseUnmarshaller {
 
-	public static CreateDBResponse unmarshall(CreateDBResponse createDBResponse, UnmarshallerContext _ctx) {
+	public static UpdateDBInstanceTDEResponse unmarshall(UpdateDBInstanceTDEResponse updateDBInstanceTDEResponse, UnmarshallerContext _ctx) {
 		
-		createDBResponse.setRequestId(_ctx.stringValue("CreateDBResponse.RequestId"));
-		createDBResponse.setMessage(_ctx.stringValue("CreateDBResponse.Message"));
-		createDBResponse.setSuccess(_ctx.booleanValue("CreateDBResponse.Success"));
+		updateDBInstanceTDEResponse.setRequestId(_ctx.stringValue("UpdateDBInstanceTDEResponse.RequestId"));
+
+		Data data = new Data();
+		data.setTaskId(_ctx.stringValue("UpdateDBInstanceTDEResponse.Data.TaskId"));
+		updateDBInstanceTDEResponse.setData(data);
 	 
-	 	return createDBResponse;
+	 	return updateDBInstanceTDEResponse;
 	}
 }

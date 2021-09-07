@@ -22,16 +22,18 @@ import com.aliyuncs.polardbx.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeAccountListRequest extends RpcAcsRequest<DescribeAccountListResponse> {
+public class UpdateDBInstanceTDERequest extends RpcAcsRequest<UpdateDBInstanceTDEResponse> {
 	   
 
 	private String dBInstanceName;
 
-	private String accountType;
+	private String encryptionKey;
 
-	private String accountName;
-	public DescribeAccountListRequest() {
-		super("polardbx", "2020-02-02", "DescribeAccountList", "polardbx");
+	private String roleArn;
+
+	private Integer tDEStatus;
+	public UpdateDBInstanceTDERequest() {
+		super("polardbx", "2020-02-02", "UpdateDBInstanceTDE", "polardbx");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -50,31 +52,42 @@ public class DescribeAccountListRequest extends RpcAcsRequest<DescribeAccountLis
 		}
 	}
 
-	public String getAccountType() {
-		return this.accountType;
+	public String getEncryptionKey() {
+		return this.encryptionKey;
 	}
 
-	public void setAccountType(String accountType) {
-		this.accountType = accountType;
-		if(accountType != null){
-			putQueryParameter("AccountType", accountType);
+	public void setEncryptionKey(String encryptionKey) {
+		this.encryptionKey = encryptionKey;
+		if(encryptionKey != null){
+			putQueryParameter("EncryptionKey", encryptionKey);
 		}
 	}
 
-	public String getAccountName() {
-		return this.accountName;
+	public String getRoleArn() {
+		return this.roleArn;
 	}
 
-	public void setAccountName(String accountName) {
-		this.accountName = accountName;
-		if(accountName != null){
-			putQueryParameter("AccountName", accountName);
+	public void setRoleArn(String roleArn) {
+		this.roleArn = roleArn;
+		if(roleArn != null){
+			putQueryParameter("RoleArn", roleArn);
+		}
+	}
+
+	public Integer getTDEStatus() {
+		return this.tDEStatus;
+	}
+
+	public void setTDEStatus(Integer tDEStatus) {
+		this.tDEStatus = tDEStatus;
+		if(tDEStatus != null){
+			putQueryParameter("TDEStatus", tDEStatus.toString());
 		}
 	}
 
 	@Override
-	public Class<DescribeAccountListResponse> getResponseClass() {
-		return DescribeAccountListResponse.class;
+	public Class<UpdateDBInstanceTDEResponse> getResponseClass() {
+		return UpdateDBInstanceTDEResponse.class;
 	}
 
 }

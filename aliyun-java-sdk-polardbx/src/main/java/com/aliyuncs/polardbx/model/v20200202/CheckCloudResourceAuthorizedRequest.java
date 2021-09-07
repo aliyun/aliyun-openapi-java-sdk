@@ -22,16 +22,14 @@ import com.aliyuncs.polardbx.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeAccountListRequest extends RpcAcsRequest<DescribeAccountListResponse> {
+public class CheckCloudResourceAuthorizedRequest extends RpcAcsRequest<CheckCloudResourceAuthorizedResponse> {
 	   
 
 	private String dBInstanceName;
 
-	private String accountType;
-
-	private String accountName;
-	public DescribeAccountListRequest() {
-		super("polardbx", "2020-02-02", "DescribeAccountList", "polardbx");
+	private String roleArn;
+	public CheckCloudResourceAuthorizedRequest() {
+		super("polardbx", "2020-02-02", "CheckCloudResourceAuthorized", "polardbx");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -50,31 +48,20 @@ public class DescribeAccountListRequest extends RpcAcsRequest<DescribeAccountLis
 		}
 	}
 
-	public String getAccountType() {
-		return this.accountType;
+	public String getRoleArn() {
+		return this.roleArn;
 	}
 
-	public void setAccountType(String accountType) {
-		this.accountType = accountType;
-		if(accountType != null){
-			putQueryParameter("AccountType", accountType);
-		}
-	}
-
-	public String getAccountName() {
-		return this.accountName;
-	}
-
-	public void setAccountName(String accountName) {
-		this.accountName = accountName;
-		if(accountName != null){
-			putQueryParameter("AccountName", accountName);
+	public void setRoleArn(String roleArn) {
+		this.roleArn = roleArn;
+		if(roleArn != null){
+			putQueryParameter("RoleArn", roleArn);
 		}
 	}
 
 	@Override
-	public Class<DescribeAccountListResponse> getResponseClass() {
-		return DescribeAccountListResponse.class;
+	public Class<CheckCloudResourceAuthorizedResponse> getResponseClass() {
+		return CheckCloudResourceAuthorizedResponse.class;
 	}
 
 }
