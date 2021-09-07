@@ -35,7 +35,7 @@ public class FtDynamicAddressHttpVpcRequest extends RpcAcsRequest<FtDynamicAddre
 
 	private String defaultValue;
 	public FtDynamicAddressHttpVpcRequest() {
-		super("Ft", "2018-07-13", "FtDynamicAddressHttpVpc", "aaa");
+		super("Ft", "2018-07-13", "FtDynamicAddressHttpVpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

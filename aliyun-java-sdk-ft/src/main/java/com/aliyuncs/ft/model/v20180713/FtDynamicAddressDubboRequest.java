@@ -29,7 +29,7 @@ public class FtDynamicAddressDubboRequest extends RpcAcsRequest<FtDynamicAddress
 
 	private String stringValue;
 	public FtDynamicAddressDubboRequest() {
-		super("Ft", "2018-07-13", "FtDynamicAddressDubbo", "aaa");
+		super("Ft", "2018-07-13", "FtDynamicAddressDubbo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
