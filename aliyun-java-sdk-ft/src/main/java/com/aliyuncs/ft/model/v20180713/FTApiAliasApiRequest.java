@@ -27,7 +27,7 @@ public class FTApiAliasApiRequest extends RpcAcsRequest<FTApiAliasApiResponse> {
 
 	private String name;
 	public FTApiAliasApiRequest() {
-		super("Ft", "2018-07-13", "FTApiAliasApi");
+		super("Ft", "2018-07-13", "FTApiAliasApi", "aaa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

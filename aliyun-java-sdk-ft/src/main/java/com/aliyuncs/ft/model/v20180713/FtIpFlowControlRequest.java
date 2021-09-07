@@ -27,7 +27,7 @@ public class FtIpFlowControlRequest extends RpcAcsRequest<FtIpFlowControlRespons
 
 	private String name;
 	public FtIpFlowControlRequest() {
-		super("Ft", "2018-07-13", "FtIpFlowControl");
+		super("Ft", "2018-07-13", "FtIpFlowControl", "aaa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

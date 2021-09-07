@@ -33,7 +33,7 @@ public class BatchAuditTest01Request extends RpcAcsRequest<BatchAuditTest01Respo
 
 	private String batchAuditTest01;
 	public BatchAuditTest01Request() {
-		super("Ft", "2018-07-13", "BatchAuditTest01");
+		super("Ft", "2018-07-13", "BatchAuditTest01", "aaa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -30,7 +30,7 @@ public class FtParamListRequest extends RpcAcsRequest<FtParamListResponse> {
 
 	private String name;
 	public FtParamListRequest() {
-		super("Ft", "2018-07-13", "FtParamList");
+		super("Ft", "2018-07-13", "FtParamList", "aaa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -33,7 +33,7 @@ public class TestHttpApiRequest extends RpcAcsRequest<TestHttpApiResponse> {
 
 	private String defaultValue;
 	public TestHttpApiRequest() {
-		super("Ft", "2018-07-13", "TestHttpApi");
+		super("Ft", "2018-07-13", "TestHttpApi", "aaa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
