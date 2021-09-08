@@ -25,6 +25,8 @@ import com.aliyuncs.polardbx.Endpoint;
 public class DescribeBinaryLogListRequest extends RpcAcsRequest<DescribeBinaryLogListResponse> {
 	   
 
+	private String dBInstanceName;
+
 	private String startTime;
 
 	private Integer pageNumber;
@@ -39,6 +41,17 @@ public class DescribeBinaryLogListRequest extends RpcAcsRequest<DescribeBinaryLo
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getDBInstanceName() {
+		return this.dBInstanceName;
+	}
+
+	public void setDBInstanceName(String dBInstanceName) {
+		this.dBInstanceName = dBInstanceName;
+		if(dBInstanceName != null){
+			putQueryParameter("DBInstanceName", dBInstanceName);
+		}
 	}
 
 	public String getStartTime() {
