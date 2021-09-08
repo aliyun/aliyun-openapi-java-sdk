@@ -25,7 +25,7 @@ import com.aliyuncs.ft.Endpoint;
 public class FtDynamicAddressHsfRequest extends RpcAcsRequest<FtDynamicAddressHsfResponse> {
 	   
 	public FtDynamicAddressHsfRequest() {
-		super("Ft", "2018-07-13", "FtDynamicAddressHsf");
+		super("Ft", "2018-07-13", "FtDynamicAddressHsf", "aaa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

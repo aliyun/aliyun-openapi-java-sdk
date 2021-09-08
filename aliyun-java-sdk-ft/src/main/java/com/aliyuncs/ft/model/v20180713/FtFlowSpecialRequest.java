@@ -27,7 +27,7 @@ public class FtFlowSpecialRequest extends RpcAcsRequest<FtFlowSpecialResponse> {
 
 	private String name;
 	public FtFlowSpecialRequest() {
-		super("Ft", "2018-07-13", "FtFlowSpecial");
+		super("Ft", "2018-07-13", "FtFlowSpecial", "aaa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

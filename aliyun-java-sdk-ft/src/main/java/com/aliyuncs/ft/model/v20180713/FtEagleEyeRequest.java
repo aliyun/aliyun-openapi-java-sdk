@@ -27,7 +27,7 @@ public class FtEagleEyeRequest extends RpcAcsRequest<FtEagleEyeResponse> {
 
 	private String name;
 	public FtEagleEyeRequest() {
-		super("Ft", "2018-07-13", "FtEagleEye");
+		super("Ft", "2018-07-13", "FtEagleEye", "aaa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
