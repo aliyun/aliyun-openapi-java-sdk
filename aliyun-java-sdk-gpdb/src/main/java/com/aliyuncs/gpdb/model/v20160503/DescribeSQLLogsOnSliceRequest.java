@@ -22,18 +22,12 @@ import com.aliyuncs.gpdb.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeSQLLogsRequest extends RpcAcsRequest<DescribeSQLLogsResponse> {
+public class DescribeSQLLogsOnSliceRequest extends RpcAcsRequest<DescribeSQLLogsOnSliceResponse> {
 	   
 
-	private String startTime;
-
-	private String queryKeywords;
+	private String sliceId;
 
 	private Integer pageNumber;
-
-	private String database;
-
-	private String sourceIP;
 
 	private String minExecuteCost;
 
@@ -43,19 +37,11 @@ public class DescribeSQLLogsRequest extends RpcAcsRequest<DescribeSQLLogsRespons
 
 	private String maxExecuteCost;
 
-	private String executeCost;
-
 	private String executeState;
 
-	private String endTime;
-
-	private String operationType;
-
-	private String operationClass;
-
-	private String user;
-	public DescribeSQLLogsRequest() {
-		super("gpdb", "2016-05-03", "DescribeSQLLogs", "gpdb");
+	private String queryId;
+	public DescribeSQLLogsOnSliceRequest() {
+		super("gpdb", "2016-05-03", "DescribeSQLLogsOnSlice", "gpdb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -63,25 +49,14 @@ public class DescribeSQLLogsRequest extends RpcAcsRequest<DescribeSQLLogsRespons
 		} catch (Exception e) {}
 	}
 
-	public String getStartTime() {
-		return this.startTime;
+	public String getSliceId() {
+		return this.sliceId;
 	}
 
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
-		}
-	}
-
-	public String getQueryKeywords() {
-		return this.queryKeywords;
-	}
-
-	public void setQueryKeywords(String queryKeywords) {
-		this.queryKeywords = queryKeywords;
-		if(queryKeywords != null){
-			putQueryParameter("QueryKeywords", queryKeywords);
+	public void setSliceId(String sliceId) {
+		this.sliceId = sliceId;
+		if(sliceId != null){
+			putQueryParameter("SliceId", sliceId);
 		}
 	}
 
@@ -93,28 +68,6 @@ public class DescribeSQLLogsRequest extends RpcAcsRequest<DescribeSQLLogsRespons
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
-	public String getDatabase() {
-		return this.database;
-	}
-
-	public void setDatabase(String database) {
-		this.database = database;
-		if(database != null){
-			putQueryParameter("Database", database);
-		}
-	}
-
-	public String getSourceIP() {
-		return this.sourceIP;
-	}
-
-	public void setSourceIP(String sourceIP) {
-		this.sourceIP = sourceIP;
-		if(sourceIP != null){
-			putQueryParameter("SourceIP", sourceIP);
 		}
 	}
 
@@ -162,17 +115,6 @@ public class DescribeSQLLogsRequest extends RpcAcsRequest<DescribeSQLLogsRespons
 		}
 	}
 
-	public String getExecuteCost() {
-		return this.executeCost;
-	}
-
-	public void setExecuteCost(String executeCost) {
-		this.executeCost = executeCost;
-		if(executeCost != null){
-			putQueryParameter("ExecuteCost", executeCost);
-		}
-	}
-
 	public String getExecuteState() {
 		return this.executeState;
 	}
@@ -184,53 +126,20 @@ public class DescribeSQLLogsRequest extends RpcAcsRequest<DescribeSQLLogsRespons
 		}
 	}
 
-	public String getEndTime() {
-		return this.endTime;
+	public String getQueryId() {
+		return this.queryId;
 	}
 
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime);
-		}
-	}
-
-	public String getOperationType() {
-		return this.operationType;
-	}
-
-	public void setOperationType(String operationType) {
-		this.operationType = operationType;
-		if(operationType != null){
-			putQueryParameter("OperationType", operationType);
-		}
-	}
-
-	public String getOperationClass() {
-		return this.operationClass;
-	}
-
-	public void setOperationClass(String operationClass) {
-		this.operationClass = operationClass;
-		if(operationClass != null){
-			putQueryParameter("OperationClass", operationClass);
-		}
-	}
-
-	public String getUser() {
-		return this.user;
-	}
-
-	public void setUser(String user) {
-		this.user = user;
-		if(user != null){
-			putQueryParameter("User", user);
+	public void setQueryId(String queryId) {
+		this.queryId = queryId;
+		if(queryId != null){
+			putQueryParameter("QueryId", queryId);
 		}
 	}
 
 	@Override
-	public Class<DescribeSQLLogsResponse> getResponseClass() {
-		return DescribeSQLLogsResponse.class;
+	public Class<DescribeSQLLogsOnSliceResponse> getResponseClass() {
+		return DescribeSQLLogsOnSliceResponse.class;
 	}
 
 }

@@ -25,13 +25,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeSQLLogsResponse extends AcsResponse {
 
+	private Integer pageRecordCount;
+
 	private String requestId;
 
 	private Integer pageNumber;
 
-	private Integer pageRecordCount;
-
 	private List<Item> items;
+
+	public Integer getPageRecordCount() {
+		return this.pageRecordCount;
+	}
+
+	public void setPageRecordCount(Integer pageRecordCount) {
+		this.pageRecordCount = pageRecordCount;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -49,14 +57,6 @@ public class DescribeSQLLogsResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getPageRecordCount() {
-		return this.pageRecordCount;
-	}
-
-	public void setPageRecordCount(Integer pageRecordCount) {
-		this.pageRecordCount = pageRecordCount;
-	}
-
 	public List<Item> getItems() {
 		return this.items;
 	}
@@ -67,104 +67,40 @@ public class DescribeSQLLogsResponse extends AcsResponse {
 
 	public static class Item {
 
-		private String dBName;
-
-		private String accountName;
-
-		private String operationExecuteTime;
-
-		private String sQLText;
-
-		private Long returnRowCounts;
-
-		private Float executeCost;
-
-		private String dBRole;
-
-		private String sourceIP;
-
-		private Integer sourcePort;
+		private String operationClass;
 
 		private String executeState;
 
-		private String operationClass;
+		private Float executeCost;
+
+		private String sQLText;
+
+		private Integer sourcePort;
+
+		private String dBRole;
 
 		private String operationType;
 
-		private Long scanRowCounts;
+		private String sourceIP;
 
 		private String sQLPlan;
 
-		public String getDBName() {
-			return this.dBName;
+		private Long returnRowCounts;
+
+		private String dBName;
+
+		private String operationExecuteTime;
+
+		private Long scanRowCounts;
+
+		private String accountName;
+
+		public String getOperationClass() {
+			return this.operationClass;
 		}
 
-		public void setDBName(String dBName) {
-			this.dBName = dBName;
-		}
-
-		public String getAccountName() {
-			return this.accountName;
-		}
-
-		public void setAccountName(String accountName) {
-			this.accountName = accountName;
-		}
-
-		public String getOperationExecuteTime() {
-			return this.operationExecuteTime;
-		}
-
-		public void setOperationExecuteTime(String operationExecuteTime) {
-			this.operationExecuteTime = operationExecuteTime;
-		}
-
-		public String getSQLText() {
-			return this.sQLText;
-		}
-
-		public void setSQLText(String sQLText) {
-			this.sQLText = sQLText;
-		}
-
-		public Long getReturnRowCounts() {
-			return this.returnRowCounts;
-		}
-
-		public void setReturnRowCounts(Long returnRowCounts) {
-			this.returnRowCounts = returnRowCounts;
-		}
-
-		public Float getExecuteCost() {
-			return this.executeCost;
-		}
-
-		public void setExecuteCost(Float executeCost) {
-			this.executeCost = executeCost;
-		}
-
-		public String getDBRole() {
-			return this.dBRole;
-		}
-
-		public void setDBRole(String dBRole) {
-			this.dBRole = dBRole;
-		}
-
-		public String getSourceIP() {
-			return this.sourceIP;
-		}
-
-		public void setSourceIP(String sourceIP) {
-			this.sourceIP = sourceIP;
-		}
-
-		public Integer getSourcePort() {
-			return this.sourcePort;
-		}
-
-		public void setSourcePort(Integer sourcePort) {
-			this.sourcePort = sourcePort;
+		public void setOperationClass(String operationClass) {
+			this.operationClass = operationClass;
 		}
 
 		public String getExecuteState() {
@@ -175,12 +111,36 @@ public class DescribeSQLLogsResponse extends AcsResponse {
 			this.executeState = executeState;
 		}
 
-		public String getOperationClass() {
-			return this.operationClass;
+		public Float getExecuteCost() {
+			return this.executeCost;
 		}
 
-		public void setOperationClass(String operationClass) {
-			this.operationClass = operationClass;
+		public void setExecuteCost(Float executeCost) {
+			this.executeCost = executeCost;
+		}
+
+		public String getSQLText() {
+			return this.sQLText;
+		}
+
+		public void setSQLText(String sQLText) {
+			this.sQLText = sQLText;
+		}
+
+		public Integer getSourcePort() {
+			return this.sourcePort;
+		}
+
+		public void setSourcePort(Integer sourcePort) {
+			this.sourcePort = sourcePort;
+		}
+
+		public String getDBRole() {
+			return this.dBRole;
+		}
+
+		public void setDBRole(String dBRole) {
+			this.dBRole = dBRole;
 		}
 
 		public String getOperationType() {
@@ -191,12 +151,12 @@ public class DescribeSQLLogsResponse extends AcsResponse {
 			this.operationType = operationType;
 		}
 
-		public Long getScanRowCounts() {
-			return this.scanRowCounts;
+		public String getSourceIP() {
+			return this.sourceIP;
 		}
 
-		public void setScanRowCounts(Long scanRowCounts) {
-			this.scanRowCounts = scanRowCounts;
+		public void setSourceIP(String sourceIP) {
+			this.sourceIP = sourceIP;
 		}
 
 		public String getSQLPlan() {
@@ -205,6 +165,46 @@ public class DescribeSQLLogsResponse extends AcsResponse {
 
 		public void setSQLPlan(String sQLPlan) {
 			this.sQLPlan = sQLPlan;
+		}
+
+		public Long getReturnRowCounts() {
+			return this.returnRowCounts;
+		}
+
+		public void setReturnRowCounts(Long returnRowCounts) {
+			this.returnRowCounts = returnRowCounts;
+		}
+
+		public String getDBName() {
+			return this.dBName;
+		}
+
+		public void setDBName(String dBName) {
+			this.dBName = dBName;
+		}
+
+		public String getOperationExecuteTime() {
+			return this.operationExecuteTime;
+		}
+
+		public void setOperationExecuteTime(String operationExecuteTime) {
+			this.operationExecuteTime = operationExecuteTime;
+		}
+
+		public Long getScanRowCounts() {
+			return this.scanRowCounts;
+		}
+
+		public void setScanRowCounts(Long scanRowCounts) {
+			this.scanRowCounts = scanRowCounts;
+		}
+
+		public String getAccountName() {
+			return this.accountName;
+		}
+
+		public void setAccountName(String accountName) {
+			this.accountName = accountName;
 		}
 	}
 

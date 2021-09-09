@@ -15,15 +15,16 @@
 package com.aliyuncs.gpdb.model.v20160503;
 
 import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.gpdb.transform.v20160503.DescribeSQLLogCountResponseUnmarshaller;
+import com.aliyuncs.gpdb.transform.v20160503.DescribeDBInstanceSQLPatternsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeSQLLogCountResponse extends AcsResponse {
+public class DescribeDBInstanceSQLPatternsResponse extends AcsResponse {
 
 	private String endTime;
 
@@ -33,7 +34,7 @@ public class DescribeSQLLogCountResponse extends AcsResponse {
 
 	private String dBClusterId;
 
-	private List<Item> items;
+	private List<Pattern> patterns;
 
 	public String getEndTime() {
 		return this.endTime;
@@ -67,19 +68,19 @@ public class DescribeSQLLogCountResponse extends AcsResponse {
 		this.dBClusterId = dBClusterId;
 	}
 
-	public List<Item> getItems() {
-		return this.items;
+	public List<Pattern> getPatterns() {
+		return this.patterns;
 	}
 
-	public void setItems(List<Item> items) {
-		this.items = items;
+	public void setPatterns(List<Pattern> patterns) {
+		this.patterns = patterns;
 	}
 
-	public static class Item {
+	public static class Pattern {
 
 		private String name;
 
-		private List<SeriesItem> series;
+		private Map<Object,Object> values;
 
 		public String getName() {
 			return this.name;
@@ -89,44 +90,18 @@ public class DescribeSQLLogCountResponse extends AcsResponse {
 			this.name = name;
 		}
 
-		public List<SeriesItem> getSeries() {
-			return this.series;
+		public Map<Object,Object> getValues() {
+			return this.values;
 		}
 
-		public void setSeries(List<SeriesItem> series) {
-			this.series = series;
-		}
-
-		public static class SeriesItem {
-
-			private List<ValueItem> values;
-
-			public List<ValueItem> getValues() {
-				return this.values;
-			}
-
-			public void setValues(List<ValueItem> values) {
-				this.values = values;
-			}
-
-			public static class ValueItem {
-
-				private List<String> point;
-
-				public List<String> getPoint() {
-					return this.point;
-				}
-
-				public void setPoint(List<String> point) {
-					this.point = point;
-				}
-			}
+		public void setValues(Map<Object,Object> values) {
+			this.values = values;
 		}
 	}
 
 	@Override
-	public DescribeSQLLogCountResponse getInstance(UnmarshallerContext context) {
-		return	DescribeSQLLogCountResponseUnmarshaller.unmarshall(this, context);
+	public DescribeDBInstanceSQLPatternsResponse getInstance(UnmarshallerContext context) {
+		return	DescribeDBInstanceSQLPatternsResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

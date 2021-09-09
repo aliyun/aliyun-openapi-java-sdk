@@ -29,9 +29,9 @@ public class DescribeSQLLogCountResponseUnmarshaller {
 	public static DescribeSQLLogCountResponse unmarshall(DescribeSQLLogCountResponse describeSQLLogCountResponse, UnmarshallerContext _ctx) {
 		
 		describeSQLLogCountResponse.setRequestId(_ctx.stringValue("DescribeSQLLogCountResponse.RequestId"));
-		describeSQLLogCountResponse.setDBClusterId(_ctx.stringValue("DescribeSQLLogCountResponse.DBClusterId"));
-		describeSQLLogCountResponse.setStartTime(_ctx.stringValue("DescribeSQLLogCountResponse.StartTime"));
 		describeSQLLogCountResponse.setEndTime(_ctx.stringValue("DescribeSQLLogCountResponse.EndTime"));
+		describeSQLLogCountResponse.setStartTime(_ctx.stringValue("DescribeSQLLogCountResponse.StartTime"));
+		describeSQLLogCountResponse.setDBClusterId(_ctx.stringValue("DescribeSQLLogCountResponse.DBClusterId"));
 
 		List<Item> items = new ArrayList<Item>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSQLLogCountResponse.Items.Length"); i++) {

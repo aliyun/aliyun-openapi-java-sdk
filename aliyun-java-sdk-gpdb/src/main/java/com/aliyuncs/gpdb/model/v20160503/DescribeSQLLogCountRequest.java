@@ -33,7 +33,11 @@ public class DescribeSQLLogCountRequest extends RpcAcsRequest<DescribeSQLLogCoun
 
 	private String sourceIP;
 
+	private String minExecuteCost;
+
 	private String dBInstanceId;
+
+	private String maxExecuteCost;
 
 	private String executeCost;
 
@@ -99,6 +103,17 @@ public class DescribeSQLLogCountRequest extends RpcAcsRequest<DescribeSQLLogCoun
 		}
 	}
 
+	public String getMinExecuteCost() {
+		return this.minExecuteCost;
+	}
+
+	public void setMinExecuteCost(String minExecuteCost) {
+		this.minExecuteCost = minExecuteCost;
+		if(minExecuteCost != null){
+			putQueryParameter("MinExecuteCost", minExecuteCost);
+		}
+	}
+
 	public String getDBInstanceId() {
 		return this.dBInstanceId;
 	}
@@ -107,6 +122,17 @@ public class DescribeSQLLogCountRequest extends RpcAcsRequest<DescribeSQLLogCoun
 		this.dBInstanceId = dBInstanceId;
 		if(dBInstanceId != null){
 			putQueryParameter("DBInstanceId", dBInstanceId);
+		}
+	}
+
+	public String getMaxExecuteCost() {
+		return this.maxExecuteCost;
+	}
+
+	public void setMaxExecuteCost(String maxExecuteCost) {
+		this.maxExecuteCost = maxExecuteCost;
+		if(maxExecuteCost != null){
+			putQueryParameter("MaxExecuteCost", maxExecuteCost);
 		}
 	}
 

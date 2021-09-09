@@ -22,40 +22,24 @@ import com.aliyuncs.gpdb.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeSQLLogsRequest extends RpcAcsRequest<DescribeSQLLogsResponse> {
+public class DescribeDBInstanceSQLPatternsRequest extends RpcAcsRequest<DescribeDBInstanceSQLPatternsResponse> {
 	   
 
 	private String startTime;
 
 	private String queryKeywords;
 
-	private Integer pageNumber;
-
 	private String database;
 
 	private String sourceIP;
 
-	private String minExecuteCost;
-
-	private Integer pageSize;
-
 	private String dBInstanceId;
-
-	private String maxExecuteCost;
-
-	private String executeCost;
-
-	private String executeState;
 
 	private String endTime;
 
-	private String operationType;
-
-	private String operationClass;
-
 	private String user;
-	public DescribeSQLLogsRequest() {
-		super("gpdb", "2016-05-03", "DescribeSQLLogs", "gpdb");
+	public DescribeDBInstanceSQLPatternsRequest() {
+		super("gpdb", "2016-05-03", "DescribeDBInstanceSQLPatterns", "gpdb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -85,17 +69,6 @@ public class DescribeSQLLogsRequest extends RpcAcsRequest<DescribeSQLLogsRespons
 		}
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
 	public String getDatabase() {
 		return this.database;
 	}
@@ -118,28 +91,6 @@ public class DescribeSQLLogsRequest extends RpcAcsRequest<DescribeSQLLogsRespons
 		}
 	}
 
-	public String getMinExecuteCost() {
-		return this.minExecuteCost;
-	}
-
-	public void setMinExecuteCost(String minExecuteCost) {
-		this.minExecuteCost = minExecuteCost;
-		if(minExecuteCost != null){
-			putQueryParameter("MinExecuteCost", minExecuteCost);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
 	public String getDBInstanceId() {
 		return this.dBInstanceId;
 	}
@@ -151,39 +102,6 @@ public class DescribeSQLLogsRequest extends RpcAcsRequest<DescribeSQLLogsRespons
 		}
 	}
 
-	public String getMaxExecuteCost() {
-		return this.maxExecuteCost;
-	}
-
-	public void setMaxExecuteCost(String maxExecuteCost) {
-		this.maxExecuteCost = maxExecuteCost;
-		if(maxExecuteCost != null){
-			putQueryParameter("MaxExecuteCost", maxExecuteCost);
-		}
-	}
-
-	public String getExecuteCost() {
-		return this.executeCost;
-	}
-
-	public void setExecuteCost(String executeCost) {
-		this.executeCost = executeCost;
-		if(executeCost != null){
-			putQueryParameter("ExecuteCost", executeCost);
-		}
-	}
-
-	public String getExecuteState() {
-		return this.executeState;
-	}
-
-	public void setExecuteState(String executeState) {
-		this.executeState = executeState;
-		if(executeState != null){
-			putQueryParameter("ExecuteState", executeState);
-		}
-	}
-
 	public String getEndTime() {
 		return this.endTime;
 	}
@@ -192,28 +110,6 @@ public class DescribeSQLLogsRequest extends RpcAcsRequest<DescribeSQLLogsRespons
 		this.endTime = endTime;
 		if(endTime != null){
 			putQueryParameter("EndTime", endTime);
-		}
-	}
-
-	public String getOperationType() {
-		return this.operationType;
-	}
-
-	public void setOperationType(String operationType) {
-		this.operationType = operationType;
-		if(operationType != null){
-			putQueryParameter("OperationType", operationType);
-		}
-	}
-
-	public String getOperationClass() {
-		return this.operationClass;
-	}
-
-	public void setOperationClass(String operationClass) {
-		this.operationClass = operationClass;
-		if(operationClass != null){
-			putQueryParameter("OperationClass", operationClass);
 		}
 	}
 
@@ -229,8 +125,8 @@ public class DescribeSQLLogsRequest extends RpcAcsRequest<DescribeSQLLogsRespons
 	}
 
 	@Override
-	public Class<DescribeSQLLogsResponse> getResponseClass() {
-		return DescribeSQLLogsResponse.class;
+	public Class<DescribeDBInstanceSQLPatternsResponse> getResponseClass() {
+		return DescribeDBInstanceSQLPatternsResponse.class;
 	}
 
 }

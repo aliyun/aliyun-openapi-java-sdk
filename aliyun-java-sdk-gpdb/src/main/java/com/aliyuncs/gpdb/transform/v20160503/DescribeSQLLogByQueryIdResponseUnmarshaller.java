@@ -31,21 +31,27 @@ public class DescribeSQLLogByQueryIdResponseUnmarshaller {
 		List<SQLLog> items = new ArrayList<SQLLog>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSQLLogByQueryIdResponse.Items.Length"); i++) {
 			SQLLog sQLLog = new SQLLog();
+			sQLLog.setOperationClass(_ctx.stringValue("DescribeSQLLogByQueryIdResponse.Items["+ i +"].OperationClass"));
+			sQLLog.setExecuteState(_ctx.stringValue("DescribeSQLLogByQueryIdResponse.Items["+ i +"].ExecuteState"));
 			sQLLog.setExecuteCost(_ctx.floatValue("DescribeSQLLogByQueryIdResponse.Items["+ i +"].ExecuteCost"));
-			sQLLog.setSQLPlan(_ctx.stringValue("DescribeSQLLogByQueryIdResponse.Items["+ i +"].SQLPlan"));
-			sQLLog.setDBRole(_ctx.stringValue("DescribeSQLLogByQueryIdResponse.Items["+ i +"].DBRole"));
-			sQLLog.setQueryId(_ctx.stringValue("DescribeSQLLogByQueryIdResponse.Items["+ i +"].QueryId"));
-			sQLLog.setSourcePort(_ctx.integerValue("DescribeSQLLogByQueryIdResponse.Items["+ i +"].SourcePort"));
 			sQLLog.setSQLText(_ctx.stringValue("DescribeSQLLogByQueryIdResponse.Items["+ i +"].SQLText"));
+			sQLLog.setSourcePort(_ctx.integerValue("DescribeSQLLogByQueryIdResponse.Items["+ i +"].SourcePort"));
+			sQLLog.setDBRole(_ctx.stringValue("DescribeSQLLogByQueryIdResponse.Items["+ i +"].DBRole"));
+			sQLLog.setOperationType(_ctx.stringValue("DescribeSQLLogByQueryIdResponse.Items["+ i +"].OperationType"));
 			sQLLog.setSourceIP(_ctx.stringValue("DescribeSQLLogByQueryIdResponse.Items["+ i +"].SourceIP"));
+			sQLLog.setSQLPlan(_ctx.stringValue("DescribeSQLLogByQueryIdResponse.Items["+ i +"].SQLPlan"));
 			sQLLog.setReturnRowCounts(_ctx.longValue("DescribeSQLLogByQueryIdResponse.Items["+ i +"].ReturnRowCounts"));
 			sQLLog.setDBName(_ctx.stringValue("DescribeSQLLogByQueryIdResponse.Items["+ i +"].DBName"));
-			sQLLog.setOperationType(_ctx.stringValue("DescribeSQLLogByQueryIdResponse.Items["+ i +"].OperationType"));
+			sQLLog.setOperationExecuteTime(_ctx.stringValue("DescribeSQLLogByQueryIdResponse.Items["+ i +"].OperationExecuteTime"));
 			sQLLog.setScanRowCounts(_ctx.longValue("DescribeSQLLogByQueryIdResponse.Items["+ i +"].ScanRowCounts"));
 			sQLLog.setAccountName(_ctx.stringValue("DescribeSQLLogByQueryIdResponse.Items["+ i +"].AccountName"));
-			sQLLog.setOperationExecuteTime(_ctx.stringValue("DescribeSQLLogByQueryIdResponse.Items["+ i +"].OperationExecuteTime"));
-			sQLLog.setExecuteState(_ctx.stringValue("DescribeSQLLogByQueryIdResponse.Items["+ i +"].ExecuteState"));
-			sQLLog.setOperationClass(_ctx.stringValue("DescribeSQLLogByQueryIdResponse.Items["+ i +"].OperationClass"));
+			sQLLog.setQueryId(_ctx.stringValue("DescribeSQLLogByQueryIdResponse.Items["+ i +"].QueryId"));
+
+			List<String> sliceIds = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeSQLLogByQueryIdResponse.Items["+ i +"].SliceIds.Length"); j++) {
+				sliceIds.add(_ctx.stringValue("DescribeSQLLogByQueryIdResponse.Items["+ i +"].SliceIds["+ j +"]"));
+			}
+			sQLLog.setSliceIds(sliceIds);
 
 			items.add(sQLLog);
 		}
