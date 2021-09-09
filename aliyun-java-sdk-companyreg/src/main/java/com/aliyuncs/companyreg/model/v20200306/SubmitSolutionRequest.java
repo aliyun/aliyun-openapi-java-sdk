@@ -30,8 +30,10 @@ public class SubmitSolutionRequest extends RpcAcsRequest<SubmitSolutionResponse>
 	private String solution;
 
 	private String intentionBizId;
+
+	private String userId;
 	public SubmitSolutionRequest() {
-		super("companyreg", "2020-03-06", "SubmitSolution");
+		super("companyreg", "2020-03-06", "SubmitSolution", "companyreg");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -69,6 +71,17 @@ public class SubmitSolutionRequest extends RpcAcsRequest<SubmitSolutionResponse>
 		this.intentionBizId = intentionBizId;
 		if(intentionBizId != null){
 			putQueryParameter("IntentionBizId", intentionBizId);
+		}
+	}
+
+	public String getUserId() {
+		return this.userId;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
+		if(userId != null){
+			putQueryParameter("UserId", userId);
 		}
 	}
 

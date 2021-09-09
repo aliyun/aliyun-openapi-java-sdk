@@ -121,6 +121,10 @@ public class ListIcpApplicationsResponse extends AcsResponse {
 
 		private String actionType;
 
+		private String version;
+
+		private String produceVersion;
+
 		public String getOrderId() {
 			return this.orderId;
 		}
@@ -255,6 +259,22 @@ public class ListIcpApplicationsResponse extends AcsResponse {
 
 		public void setActionType(String actionType) {
 			this.actionType = actionType;
+		}
+
+		public String getVersion() {
+			return this.version;
+		}
+
+		public void setVersion(String version) {
+			this.version = version;
+		}
+
+		public String getProduceVersion() {
+			return this.produceVersion;
+		}
+
+		public void setProduceVersion(String produceVersion) {
+			this.produceVersion = produceVersion;
 		}
 	}
 

@@ -29,7 +29,7 @@ public class RejectIcpIntentionRequest extends RpcAcsRequest<RejectIcpIntentionR
 
 	private String bizId;
 	public RejectIcpIntentionRequest() {
-		super("companyreg", "2019-05-08", "RejectIcpIntention");
+		super("companyreg", "2019-05-08", "RejectIcpIntention", "companyreg");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

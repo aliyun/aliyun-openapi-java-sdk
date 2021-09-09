@@ -35,7 +35,7 @@ public class CreateBusinessOpportunityRequest extends RpcAcsRequest<CreateBusine
 
 	private String bizType;
 	public CreateBusinessOpportunityRequest() {
-		super("companyreg", "2020-03-06", "CreateBusinessOpportunity");
+		super("companyreg", "2020-03-06", "CreateBusinessOpportunity", "companyreg");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

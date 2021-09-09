@@ -37,7 +37,7 @@ public class ListCompanyRegConsultationsRequest extends RpcAcsRequest<ListCompan
 
 	private Long startGmtCreate;
 	public ListCompanyRegConsultationsRequest() {
-		super("companyreg", "2019-05-08", "ListCompanyRegConsultations");
+		super("companyreg", "2019-05-08", "ListCompanyRegConsultations", "companyreg");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

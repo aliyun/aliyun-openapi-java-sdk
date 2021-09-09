@@ -39,7 +39,7 @@ public class CreateBookkeepingIntentionRequest extends RpcAcsRequest<CreateBookk
 
 	private String userName;
 	public CreateBookkeepingIntentionRequest() {
-		super("companyreg", "2019-05-08", "CreateBookkeepingIntention");
+		super("companyreg", "2019-05-08", "CreateBookkeepingIntention", "companyreg");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

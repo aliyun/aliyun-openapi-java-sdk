@@ -31,7 +31,7 @@ public class WriteCommunicationLogRequest extends RpcAcsRequest<WriteCommunicati
 
 	private String bizId;
 	public WriteCommunicationLogRequest() {
-		super("companyreg", "2019-05-08", "WriteCommunicationLog");
+		super("companyreg", "2019-05-08", "WriteCommunicationLog", "companyreg");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

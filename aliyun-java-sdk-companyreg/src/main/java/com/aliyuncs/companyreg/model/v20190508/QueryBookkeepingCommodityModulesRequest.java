@@ -25,7 +25,7 @@ import com.aliyuncs.companyreg.Endpoint;
 public class QueryBookkeepingCommodityModulesRequest extends RpcAcsRequest<QueryBookkeepingCommodityModulesResponse> {
 	   
 	public QueryBookkeepingCommodityModulesRequest() {
-		super("companyreg", "2019-05-08", "QueryBookkeepingCommodityModules");
+		super("companyreg", "2019-05-08", "QueryBookkeepingCommodityModules", "companyreg");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

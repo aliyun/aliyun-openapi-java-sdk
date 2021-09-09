@@ -27,7 +27,7 @@ public class ConfirmTaxAmountRequest extends RpcAcsRequest<ConfirmTaxAmountRespo
 
 	private String bizId;
 	public ConfirmTaxAmountRequest() {
-		super("companyreg", "2019-05-08", "ConfirmTaxAmount");
+		super("companyreg", "2019-05-08", "ConfirmTaxAmount", "companyreg");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

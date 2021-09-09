@@ -25,27 +25,16 @@ import com.aliyuncs.companyreg.Endpoint;
 public class ConfirmMaterialRequest extends RpcAcsRequest<ConfirmMaterialResponse> {
 	   
 
-	private String bizId;
-
 	private String userOtherList;
+
+	private String bizId;
 	public ConfirmMaterialRequest() {
-		super("companyreg", "2019-05-08", "ConfirmMaterial");
+		super("companyreg", "2019-05-08", "ConfirmMaterial", "companyreg");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getBizId() {
-		return this.bizId;
-	}
-
-	public void setBizId(String bizId) {
-		this.bizId = bizId;
-		if(bizId != null){
-			putQueryParameter("BizId", bizId);
-		}
 	}
 
 	public String getUserOtherList() {
@@ -56,6 +45,17 @@ public class ConfirmMaterialRequest extends RpcAcsRequest<ConfirmMaterialRespons
 		this.userOtherList = userOtherList;
 		if(userOtherList != null){
 			putQueryParameter("UserOtherList", userOtherList);
+		}
+	}
+
+	public String getBizId() {
+		return this.bizId;
+	}
+
+	public void setBizId(String bizId) {
+		this.bizId = bizId;
+		if(bizId != null){
+			putQueryParameter("BizId", bizId);
 		}
 	}
 

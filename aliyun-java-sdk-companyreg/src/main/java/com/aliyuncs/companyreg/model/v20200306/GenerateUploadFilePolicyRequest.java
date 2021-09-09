@@ -25,16 +25,29 @@ import com.aliyuncs.companyreg.Endpoint;
 public class GenerateUploadFilePolicyRequest extends RpcAcsRequest<GenerateUploadFilePolicyResponse> {
 	   
 
+	private String fileType;
+
 	private String bizType;
 
-	private String fileType;
+	private String fileName;
 	public GenerateUploadFilePolicyRequest() {
-		super("companyreg", "2020-03-06", "GenerateUploadFilePolicy");
+		super("companyreg", "2020-03-06", "GenerateUploadFilePolicy", "companyreg");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getFileType() {
+		return this.fileType;
+	}
+
+	public void setFileType(String fileType) {
+		this.fileType = fileType;
+		if(fileType != null){
+			putQueryParameter("FileType", fileType);
+		}
 	}
 
 	public String getBizType() {
@@ -48,14 +61,14 @@ public class GenerateUploadFilePolicyRequest extends RpcAcsRequest<GenerateUploa
 		}
 	}
 
-	public String getFileType() {
-		return this.fileType;
+	public String getFileName() {
+		return this.fileName;
 	}
 
-	public void setFileType(String fileType) {
-		this.fileType = fileType;
-		if(fileType != null){
-			putQueryParameter("FileType", fileType);
+	public void setFileName(String fileName) {
+		this.fileName = fileName;
+		if(fileName != null){
+			putQueryParameter("FileName", fileName);
 		}
 	}
 

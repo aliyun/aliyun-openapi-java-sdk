@@ -25,20 +25,31 @@ import com.aliyuncs.companyreg.Endpoint;
 public class ListUserProduceOperateLogsRequest extends RpcAcsRequest<ListUserProduceOperateLogsResponse> {
 	   
 
+	private Integer pageNum;
+
 	private String bizType;
 
 	private String bizId;
 
 	private Integer pageSize;
-
-	private Integer pageNum;
 	public ListUserProduceOperateLogsRequest() {
-		super("companyreg", "2020-03-06", "ListUserProduceOperateLogs");
+		super("companyreg", "2020-03-06", "ListUserProduceOperateLogs", "companyreg");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Integer getPageNum() {
+		return this.pageNum;
+	}
+
+	public void setPageNum(Integer pageNum) {
+		this.pageNum = pageNum;
+		if(pageNum != null){
+			putQueryParameter("PageNum", pageNum.toString());
+		}
 	}
 
 	public String getBizType() {
@@ -71,17 +82,6 @@ public class ListUserProduceOperateLogsRequest extends RpcAcsRequest<ListUserPro
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public Integer getPageNum() {
-		return this.pageNum;
-	}
-
-	public void setPageNum(Integer pageNum) {
-		this.pageNum = pageNum;
-		if(pageNum != null){
-			putQueryParameter("PageNum", pageNum.toString());
 		}
 	}
 

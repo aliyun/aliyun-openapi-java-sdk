@@ -25,13 +25,23 @@ import com.aliyuncs.companyreg.Endpoint;
 public class UploadIcpBasicMaterialRequest extends RpcAcsRequest<UploadIcpBasicMaterialResponse> {
 	   
 
-	private String bizId;
+	private String socialCreditCode;
 
 	private String businessLicense;
 
+	private String corporateIdCard;
+
 	private String idCardList;
+
+	private String companyAddress;
+
+	private String companyName;
+
+	private String bizId;
+
+	private String corporateName;
 	public UploadIcpBasicMaterialRequest() {
-		super("companyreg", "2019-05-08", "UploadIcpBasicMaterial");
+		super("companyreg", "2019-05-08", "UploadIcpBasicMaterial", "companyreg");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -39,14 +49,14 @@ public class UploadIcpBasicMaterialRequest extends RpcAcsRequest<UploadIcpBasicM
 		} catch (Exception e) {}
 	}
 
-	public String getBizId() {
-		return this.bizId;
+	public String getSocialCreditCode() {
+		return this.socialCreditCode;
 	}
 
-	public void setBizId(String bizId) {
-		this.bizId = bizId;
-		if(bizId != null){
-			putQueryParameter("BizId", bizId);
+	public void setSocialCreditCode(String socialCreditCode) {
+		this.socialCreditCode = socialCreditCode;
+		if(socialCreditCode != null){
+			putQueryParameter("SocialCreditCode", socialCreditCode);
 		}
 	}
 
@@ -61,6 +71,17 @@ public class UploadIcpBasicMaterialRequest extends RpcAcsRequest<UploadIcpBasicM
 		}
 	}
 
+	public String getCorporateIdCard() {
+		return this.corporateIdCard;
+	}
+
+	public void setCorporateIdCard(String corporateIdCard) {
+		this.corporateIdCard = corporateIdCard;
+		if(corporateIdCard != null){
+			putQueryParameter("CorporateIdCard", corporateIdCard);
+		}
+	}
+
 	public String getIdCardList() {
 		return this.idCardList;
 	}
@@ -69,6 +90,50 @@ public class UploadIcpBasicMaterialRequest extends RpcAcsRequest<UploadIcpBasicM
 		this.idCardList = idCardList;
 		if(idCardList != null){
 			putQueryParameter("IdCardList", idCardList);
+		}
+	}
+
+	public String getCompanyAddress() {
+		return this.companyAddress;
+	}
+
+	public void setCompanyAddress(String companyAddress) {
+		this.companyAddress = companyAddress;
+		if(companyAddress != null){
+			putQueryParameter("CompanyAddress", companyAddress);
+		}
+	}
+
+	public String getCompanyName() {
+		return this.companyName;
+	}
+
+	public void setCompanyName(String companyName) {
+		this.companyName = companyName;
+		if(companyName != null){
+			putQueryParameter("CompanyName", companyName);
+		}
+	}
+
+	public String getBizId() {
+		return this.bizId;
+	}
+
+	public void setBizId(String bizId) {
+		this.bizId = bizId;
+		if(bizId != null){
+			putQueryParameter("BizId", bizId);
+		}
+	}
+
+	public String getCorporateName() {
+		return this.corporateName;
+	}
+
+	public void setCorporateName(String corporateName) {
+		this.corporateName = corporateName;
+		if(corporateName != null){
+			putQueryParameter("CorporateName", corporateName);
 		}
 	}
 

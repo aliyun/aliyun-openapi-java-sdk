@@ -35,7 +35,7 @@ public class ProcessCompanyRegOrderRequest extends RpcAcsRequest<ProcessCompanyR
 
 	private String bizSubCode;
 	public ProcessCompanyRegOrderRequest() {
-		super("companyreg", "2019-05-08", "ProcessCompanyRegOrder");
+		super("companyreg", "2019-05-08", "ProcessCompanyRegOrder", "companyreg");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

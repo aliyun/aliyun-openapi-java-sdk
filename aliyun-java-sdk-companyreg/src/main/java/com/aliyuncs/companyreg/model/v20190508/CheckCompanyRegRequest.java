@@ -35,7 +35,7 @@ public class CheckCompanyRegRequest extends RpcAcsRequest<CheckCompanyRegRespons
 
 	private Integer nameType;
 	public CheckCompanyRegRequest() {
-		super("companyreg", "2019-05-08", "CheckCompanyReg");
+		super("companyreg", "2019-05-08", "CheckCompanyReg", "companyreg");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

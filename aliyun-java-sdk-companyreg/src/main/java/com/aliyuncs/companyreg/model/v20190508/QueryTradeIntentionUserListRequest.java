@@ -41,7 +41,7 @@ public class QueryTradeIntentionUserListRequest extends RpcAcsRequest<QueryTrade
 
 	private Integer status;
 	public QueryTradeIntentionUserListRequest() {
-		super("companyreg", "2019-05-08", "QueryTradeIntentionUserList");
+		super("companyreg", "2019-05-08", "QueryTradeIntentionUserList", "companyreg");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -41,7 +41,7 @@ public class ListIcpApplicationsRequest extends RpcAcsRequest<ListIcpApplication
 
 	private String sortField;
 	public ListIcpApplicationsRequest() {
-		super("companyreg", "2019-05-08", "ListIcpApplications");
+		super("companyreg", "2019-05-08", "ListIcpApplications", "companyreg");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -35,7 +35,7 @@ public class ListBookkeepingStatisticsesRequest extends RpcAcsRequest<ListBookke
 
 	private Integer pageSize;
 	public ListBookkeepingStatisticsesRequest() {
-		super("companyreg", "2019-05-08", "ListBookkeepingStatisticses");
+		super("companyreg", "2019-05-08", "ListBookkeepingStatisticses", "companyreg");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

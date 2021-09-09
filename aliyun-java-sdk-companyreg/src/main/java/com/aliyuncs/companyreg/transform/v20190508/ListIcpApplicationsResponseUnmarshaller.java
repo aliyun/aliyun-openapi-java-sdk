@@ -52,6 +52,8 @@ public class ListIcpApplicationsResponseUnmarshaller {
 			application.setUpdateTime(_ctx.longValue("ListIcpApplicationsResponse.Applications["+ i +"].UpdateTime"));
 			application.setType(_ctx.integerValue("ListIcpApplicationsResponse.Applications["+ i +"].Type"));
 			application.setActionType(_ctx.stringValue("ListIcpApplicationsResponse.Applications["+ i +"].ActionType"));
+			application.setVersion(_ctx.stringValue("ListIcpApplicationsResponse.Applications["+ i +"].Version"));
+			application.setProduceVersion(_ctx.stringValue("ListIcpApplicationsResponse.Applications["+ i +"].ProduceVersion"));
 
 			applications.add(application);
 		}

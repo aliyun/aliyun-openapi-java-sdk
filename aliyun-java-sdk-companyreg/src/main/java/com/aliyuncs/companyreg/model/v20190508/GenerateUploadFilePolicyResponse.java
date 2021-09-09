@@ -38,6 +38,8 @@ public class GenerateUploadFilePolicyResponse extends AcsResponse {
 
 	private Long expireTime;
 
+	private String fileUrl;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -92,6 +94,14 @@ public class GenerateUploadFilePolicyResponse extends AcsResponse {
 
 	public void setExpireTime(Long expireTime) {
 		this.expireTime = expireTime;
+	}
+
+	public String getFileUrl() {
+		return this.fileUrl;
+	}
+
+	public void setFileUrl(String fileUrl) {
+		this.fileUrl = fileUrl;
 	}
 
 	@Override

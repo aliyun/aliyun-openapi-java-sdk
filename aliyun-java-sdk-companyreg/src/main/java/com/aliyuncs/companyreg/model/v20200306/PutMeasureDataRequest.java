@@ -35,7 +35,7 @@ public class PutMeasureDataRequest extends RpcAcsRequest<PutMeasureDataResponse>
 
 	private String dataType;
 	public PutMeasureDataRequest() {
-		super("companyreg", "2020-03-06", "PutMeasureData");
+		super("companyreg", "2020-03-06", "PutMeasureData", "companyreg");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

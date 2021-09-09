@@ -29,7 +29,7 @@ public class CloseIntentionRequest extends RpcAcsRequest<CloseIntentionResponse>
 
 	private String bizId;
 	public CloseIntentionRequest() {
-		super("companyreg", "2019-05-08", "CloseIntention");
+		super("companyreg", "2019-05-08", "CloseIntention", "companyreg");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

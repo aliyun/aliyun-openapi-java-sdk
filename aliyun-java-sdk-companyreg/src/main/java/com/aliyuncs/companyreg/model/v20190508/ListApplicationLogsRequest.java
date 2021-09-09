@@ -27,7 +27,7 @@ public class ListApplicationLogsRequest extends RpcAcsRequest<ListApplicationLog
 
 	private String bizId;
 	public ListApplicationLogsRequest() {
-		super("companyreg", "2019-05-08", "ListApplicationLogs");
+		super("companyreg", "2019-05-08", "ListApplicationLogs", "companyreg");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -27,7 +27,7 @@ public class ConfirmIntentionRequest extends RpcAcsRequest<ConfirmIntentionRespo
 
 	private String bizId;
 	public ConfirmIntentionRequest() {
-		super("companyreg", "2019-05-08", "ConfirmIntention");
+		super("companyreg", "2019-05-08", "ConfirmIntention", "companyreg");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

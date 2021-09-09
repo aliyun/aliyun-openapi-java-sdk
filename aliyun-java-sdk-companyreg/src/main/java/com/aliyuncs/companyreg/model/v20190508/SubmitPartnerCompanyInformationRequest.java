@@ -37,7 +37,7 @@ public class SubmitPartnerCompanyInformationRequest extends RpcAcsRequest<Submit
 
 	private String companyBizType;
 	public SubmitPartnerCompanyInformationRequest() {
-		super("companyreg", "2019-05-08", "SubmitPartnerCompanyInformation");
+		super("companyreg", "2019-05-08", "SubmitPartnerCompanyInformation", "companyreg");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -29,7 +29,7 @@ public class GenerateCompanyRegUploadPolicyRequest extends RpcAcsRequest<Generat
 
 	private String bizSubCode;
 	public GenerateCompanyRegUploadPolicyRequest() {
-		super("companyreg", "2019-05-08", "GenerateCompanyRegUploadPolicy");
+		super("companyreg", "2019-05-08", "GenerateCompanyRegUploadPolicy", "companyreg");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

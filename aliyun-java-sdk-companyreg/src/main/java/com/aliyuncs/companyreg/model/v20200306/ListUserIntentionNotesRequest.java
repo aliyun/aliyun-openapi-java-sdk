@@ -33,7 +33,7 @@ public class ListUserIntentionNotesRequest extends RpcAcsRequest<ListUserIntenti
 
 	private Integer pageNum;
 	public ListUserIntentionNotesRequest() {
-		super("companyreg", "2020-03-06", "ListUserIntentionNotes");
+		super("companyreg", "2020-03-06", "ListUserIntentionNotes", "companyreg");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

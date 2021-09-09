@@ -29,7 +29,7 @@ public class RefuseMaterialRequest extends RpcAcsRequest<RefuseMaterialResponse>
 
 	private String bizId;
 	public RefuseMaterialRequest() {
-		super("companyreg", "2019-05-08", "RefuseMaterial");
+		super("companyreg", "2019-05-08", "RefuseMaterial", "companyreg");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

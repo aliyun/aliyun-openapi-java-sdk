@@ -29,7 +29,7 @@ public class CloseIcpProduceRequest extends RpcAcsRequest<CloseIcpProduceRespons
 
 	private String bizId;
 	public CloseIcpProduceRequest() {
-		super("companyreg", "2019-05-08", "CloseIcpProduce");
+		super("companyreg", "2019-05-08", "CloseIcpProduce", "companyreg");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

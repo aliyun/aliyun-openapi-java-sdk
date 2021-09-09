@@ -35,7 +35,7 @@ public class PutMeasureReadyFlagRequest extends RpcAcsRequest<PutMeasureReadyFla
 
 	private String dataType;
 	public PutMeasureReadyFlagRequest() {
-		super("companyreg", "2020-03-06", "PutMeasureReadyFlag");
+		super("companyreg", "2020-03-06", "PutMeasureReadyFlag", "companyreg");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

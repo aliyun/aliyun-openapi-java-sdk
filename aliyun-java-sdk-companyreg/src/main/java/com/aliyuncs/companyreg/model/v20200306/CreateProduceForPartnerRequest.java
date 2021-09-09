@@ -31,7 +31,7 @@ public class CreateProduceForPartnerRequest extends RpcAcsRequest<CreateProduceF
 
 	private String bizId;
 	public CreateProduceForPartnerRequest() {
-		super("companyreg", "2020-03-06", "CreateProduceForPartner");
+		super("companyreg", "2020-03-06", "CreateProduceForPartner", "companyreg");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

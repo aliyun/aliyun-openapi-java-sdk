@@ -33,7 +33,7 @@ public class QueryBookkeepingCommoditiesRequest extends RpcAcsRequest<QueryBookk
 
 	private String areaType;
 	public QueryBookkeepingCommoditiesRequest() {
-		super("companyreg", "2019-05-08", "QueryBookkeepingCommodities");
+		super("companyreg", "2019-05-08", "QueryBookkeepingCommodities", "companyreg");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

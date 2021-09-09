@@ -29,6 +29,7 @@ public class GenerateUploadFilePolicyResponseUnmarshaller {
 		generateUploadFilePolicyResponse.setFileDir(_ctx.stringValue("GenerateUploadFilePolicyResponse.FileDir"));
 		generateUploadFilePolicyResponse.setHost(_ctx.stringValue("GenerateUploadFilePolicyResponse.Host"));
 		generateUploadFilePolicyResponse.setExpireTime(_ctx.stringValue("GenerateUploadFilePolicyResponse.ExpireTime"));
+		generateUploadFilePolicyResponse.setFileUrl(_ctx.stringValue("GenerateUploadFilePolicyResponse.FileUrl"));
 	 
 	 	return generateUploadFilePolicyResponse;
 	}

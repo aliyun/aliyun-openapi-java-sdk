@@ -33,6 +33,8 @@ public class SubmitIcpSolutionRequest extends RpcAcsRequest<SubmitIcpSolutionRes
 
 	private String source;
 
+	private String userId;
+
 	private Integer icpType;
 
 	private String companyAddress;
@@ -41,7 +43,7 @@ public class SubmitIcpSolutionRequest extends RpcAcsRequest<SubmitIcpSolutionRes
 
 	private String bizId;
 	public SubmitIcpSolutionRequest() {
-		super("companyreg", "2019-05-08", "SubmitIcpSolution");
+		super("companyreg", "2019-05-08", "SubmitIcpSolution", "companyreg");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -90,6 +92,17 @@ public class SubmitIcpSolutionRequest extends RpcAcsRequest<SubmitIcpSolutionRes
 		this.source = source;
 		if(source != null){
 			putBodyParameter("Source", source);
+		}
+	}
+
+	public String getUserId() {
+		return this.userId;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
+		if(userId != null){
+			putBodyParameter("UserId", userId);
 		}
 	}
 

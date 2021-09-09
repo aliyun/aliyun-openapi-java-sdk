@@ -25,18 +25,57 @@ import com.aliyuncs.companyreg.Endpoint;
 public class AcceptPartnerNotificationRequest extends RpcAcsRequest<AcceptPartnerNotificationResponse> {
 	   
 
-	private String officialFileURL;
-
-	private String bizId;
+	private String certificateEndTime;
 
 	private Integer applicationStatus;
+
+	private String certificateNumber;
+
+	private String officialFileURL;
+
+	private String certificateStartTime;
+
+	private String bizId;
 	public AcceptPartnerNotificationRequest() {
-		super("companyreg", "2019-05-08", "AcceptPartnerNotification");
+		super("companyreg", "2019-05-08", "AcceptPartnerNotification", "companyreg");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getCertificateEndTime() {
+		return this.certificateEndTime;
+	}
+
+	public void setCertificateEndTime(String certificateEndTime) {
+		this.certificateEndTime = certificateEndTime;
+		if(certificateEndTime != null){
+			putQueryParameter("CertificateEndTime", certificateEndTime);
+		}
+	}
+
+	public Integer getApplicationStatus() {
+		return this.applicationStatus;
+	}
+
+	public void setApplicationStatus(Integer applicationStatus) {
+		this.applicationStatus = applicationStatus;
+		if(applicationStatus != null){
+			putQueryParameter("ApplicationStatus", applicationStatus.toString());
+		}
+	}
+
+	public String getCertificateNumber() {
+		return this.certificateNumber;
+	}
+
+	public void setCertificateNumber(String certificateNumber) {
+		this.certificateNumber = certificateNumber;
+		if(certificateNumber != null){
+			putQueryParameter("CertificateNumber", certificateNumber);
+		}
 	}
 
 	public String getOfficialFileURL() {
@@ -50,6 +89,17 @@ public class AcceptPartnerNotificationRequest extends RpcAcsRequest<AcceptPartne
 		}
 	}
 
+	public String getCertificateStartTime() {
+		return this.certificateStartTime;
+	}
+
+	public void setCertificateStartTime(String certificateStartTime) {
+		this.certificateStartTime = certificateStartTime;
+		if(certificateStartTime != null){
+			putQueryParameter("CertificateStartTime", certificateStartTime);
+		}
+	}
+
 	public String getBizId() {
 		return this.bizId;
 	}
@@ -58,17 +108,6 @@ public class AcceptPartnerNotificationRequest extends RpcAcsRequest<AcceptPartne
 		this.bizId = bizId;
 		if(bizId != null){
 			putQueryParameter("BizId", bizId);
-		}
-	}
-
-	public Integer getApplicationStatus() {
-		return this.applicationStatus;
-	}
-
-	public void setApplicationStatus(Integer applicationStatus) {
-		this.applicationStatus = applicationStatus;
-		if(applicationStatus != null){
-			putQueryParameter("ApplicationStatus", applicationStatus.toString());
 		}
 	}
 

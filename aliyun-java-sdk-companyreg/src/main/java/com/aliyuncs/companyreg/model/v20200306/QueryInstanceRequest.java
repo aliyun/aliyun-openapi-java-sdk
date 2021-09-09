@@ -29,7 +29,7 @@ public class QueryInstanceRequest extends RpcAcsRequest<QueryInstanceResponse> {
 
 	private String instanceId;
 	public QueryInstanceRequest() {
-		super("companyreg", "2020-03-06", "QueryInstance");
+		super("companyreg", "2020-03-06", "QueryInstance", "companyreg");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

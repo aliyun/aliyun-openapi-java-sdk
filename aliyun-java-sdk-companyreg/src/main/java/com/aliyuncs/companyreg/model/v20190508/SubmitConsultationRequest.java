@@ -33,7 +33,7 @@ public class SubmitConsultationRequest extends RpcAcsRequest<SubmitConsultationR
 
 	private String bizSubCode;
 	public SubmitConsultationRequest() {
-		super("companyreg", "2019-05-08", "SubmitConsultation");
+		super("companyreg", "2019-05-08", "SubmitConsultation", "companyreg");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

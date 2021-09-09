@@ -31,7 +31,7 @@ public class ListUserSolutionsRequest extends RpcAcsRequest<ListUserSolutionsRes
 
 	private Integer pageNum;
 	public ListUserSolutionsRequest() {
-		super("companyreg", "2020-03-06", "ListUserSolutions");
+		super("companyreg", "2020-03-06", "ListUserSolutions", "companyreg");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

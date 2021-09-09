@@ -25,27 +25,16 @@ import com.aliyuncs.companyreg.Endpoint;
 public class DescribePartnerConfigRequest extends RpcAcsRequest<DescribePartnerConfigResponse> {
 	   
 
-	private String bizType;
-
 	private String partnerCode;
+
+	private String bizType;
 	public DescribePartnerConfigRequest() {
-		super("companyreg", "2020-03-06", "DescribePartnerConfig");
+		super("companyreg", "2020-03-06", "DescribePartnerConfig", "companyreg");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getBizType() {
-		return this.bizType;
-	}
-
-	public void setBizType(String bizType) {
-		this.bizType = bizType;
-		if(bizType != null){
-			putQueryParameter("BizType", bizType);
-		}
 	}
 
 	public String getPartnerCode() {
@@ -56,6 +45,17 @@ public class DescribePartnerConfigRequest extends RpcAcsRequest<DescribePartnerC
 		this.partnerCode = partnerCode;
 		if(partnerCode != null){
 			putQueryParameter("PartnerCode", partnerCode);
+		}
+	}
+
+	public String getBizType() {
+		return this.bizType;
+	}
+
+	public void setBizType(String bizType) {
+		this.bizType = bizType;
+		if(bizType != null){
+			putQueryParameter("BizType", bizType);
 		}
 	}
 

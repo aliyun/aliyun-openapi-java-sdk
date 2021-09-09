@@ -33,7 +33,7 @@ public class SubmitCommunicationNoteRequest extends RpcAcsRequest<SubmitCommunic
 
 	private String bizId;
 	public SubmitCommunicationNoteRequest() {
-		super("companyreg", "2019-05-08", "SubmitCommunicationNote");
+		super("companyreg", "2019-05-08", "SubmitCommunicationNote", "companyreg");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
