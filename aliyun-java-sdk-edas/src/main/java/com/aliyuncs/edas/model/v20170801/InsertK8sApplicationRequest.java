@@ -49,9 +49,13 @@ public class InsertK8sApplicationRequest extends RoaAcsRequest<InsertK8sApplicat
 
 	private String preStop;
 
+	private String buildPackId;
+
 	private String localVolume;
 
 	private Boolean useBodyEncoding;
+
+	private String emptyDirs;
 
 	private String packageType;
 
@@ -276,6 +280,17 @@ public class InsertK8sApplicationRequest extends RoaAcsRequest<InsertK8sApplicat
 		}
 	}
 
+	public String getBuildPackId() {
+		return this.buildPackId;
+	}
+
+	public void setBuildPackId(String buildPackId) {
+		this.buildPackId = buildPackId;
+		if(buildPackId != null){
+			putQueryParameter("BuildPackId", buildPackId);
+		}
+	}
+
 	public String getLocalVolume() {
 		return this.localVolume;
 	}
@@ -295,6 +310,17 @@ public class InsertK8sApplicationRequest extends RoaAcsRequest<InsertK8sApplicat
 		this.useBodyEncoding = useBodyEncoding;
 		if(useBodyEncoding != null){
 			putQueryParameter("UseBodyEncoding", useBodyEncoding.toString());
+		}
+	}
+
+	public String getEmptyDirs() {
+		return this.emptyDirs;
+	}
+
+	public void setEmptyDirs(String emptyDirs) {
+		this.emptyDirs = emptyDirs;
+		if(emptyDirs != null){
+			putQueryParameter("EmptyDirs", emptyDirs);
 		}
 	}
 

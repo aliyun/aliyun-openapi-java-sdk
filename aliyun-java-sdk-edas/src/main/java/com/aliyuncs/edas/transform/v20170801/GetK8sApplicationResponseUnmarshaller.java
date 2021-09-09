@@ -25,6 +25,7 @@ import com.aliyuncs.edas.model.v20170801.GetK8sApplicationResponse.Applcation.Co
 import com.aliyuncs.edas.model.v20170801.GetK8sApplicationResponse.Applcation.DeployGroup;
 import com.aliyuncs.edas.model.v20170801.GetK8sApplicationResponse.Applcation.DeployGroup.ComponentsItem;
 import com.aliyuncs.edas.model.v20170801.GetK8sApplicationResponse.Applcation.ImageInfo;
+import com.aliyuncs.edas.model.v20170801.GetK8sApplicationResponse.Applcation.LatestVersion;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -62,6 +63,12 @@ public class GetK8sApplicationResponseUnmarshaller {
 		app.setClusterId(_ctx.stringValue("GetK8sApplicationResponse.Applcation.App.ClusterId"));
 		app.setInstances(_ctx.integerValue("GetK8sApplicationResponse.Applcation.App.Instances"));
 		app.setCsClusterId(_ctx.stringValue("GetK8sApplicationResponse.Applcation.App.CsClusterId"));
+		app.setLimitCpuM(_ctx.integerValue("GetK8sApplicationResponse.Applcation.App.LimitCpuM"));
+		app.setRequestCpuM(_ctx.integerValue("GetK8sApplicationResponse.Applcation.App.RequestCpuM"));
+		app.setLimitMem(_ctx.integerValue("GetK8sApplicationResponse.Applcation.App.LimitMem"));
+		app.setRequestMem(_ctx.integerValue("GetK8sApplicationResponse.Applcation.App.RequestMem"));
+		app.setK8sNamespace(_ctx.stringValue("GetK8sApplicationResponse.Applcation.App.K8sNamespace"));
+		app.setRegionId(_ctx.stringValue("GetK8sApplicationResponse.Applcation.App.RegionId"));
 
 		List<String> cmdArgs = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("GetK8sApplicationResponse.Applcation.App.CmdArgs.Length"); i++) {
@@ -98,6 +105,12 @@ public class GetK8sApplicationResponseUnmarshaller {
 		conf.setDeployAcrossNodes(_ctx.stringValue("GetK8sApplicationResponse.Applcation.Conf.DeployAcrossNodes"));
 		applcation.setConf(conf);
 
+		LatestVersion latestVersion = new LatestVersion();
+		latestVersion.setPackageVersion(_ctx.stringValue("GetK8sApplicationResponse.Applcation.LatestVersion.PackageVersion"));
+		latestVersion.setUrl(_ctx.stringValue("GetK8sApplicationResponse.Applcation.LatestVersion.Url"));
+		latestVersion.setWarUrl(_ctx.stringValue("GetK8sApplicationResponse.Applcation.LatestVersion.WarUrl"));
+		applcation.setLatestVersion(latestVersion);
+
 		List<DeployGroup> deployGroups = new ArrayList<DeployGroup>();
 		for (int i = 0; i < _ctx.lengthValue("GetK8sApplicationResponse.Applcation.DeployGroups.Length"); i++) {
 			DeployGroup deployGroup = new DeployGroup();
@@ -107,6 +120,7 @@ public class GetK8sApplicationResponseUnmarshaller {
 				ComponentsItem componentsItem = new ComponentsItem();
 				componentsItem.setComponentId(_ctx.stringValue("GetK8sApplicationResponse.Applcation.DeployGroups["+ i +"].Components["+ j +"].ComponentId"));
 				componentsItem.setComponentKey(_ctx.stringValue("GetK8sApplicationResponse.Applcation.DeployGroups["+ i +"].Components["+ j +"].ComponentKey"));
+				componentsItem.setType(_ctx.stringValue("GetK8sApplicationResponse.Applcation.DeployGroups["+ i +"].Components["+ j +"].Type"));
 
 				components.add(componentsItem);
 			}

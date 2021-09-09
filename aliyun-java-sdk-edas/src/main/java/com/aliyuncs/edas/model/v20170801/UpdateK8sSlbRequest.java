@@ -37,6 +37,8 @@ public class UpdateK8sSlbRequest extends RoaAcsRequest<UpdateK8sSlbResponse> {
 
 	private String appId;
 
+	private Boolean disableForceOverride;
+
 	private String specification;
 
 	private String clusterId;
@@ -117,6 +119,17 @@ public class UpdateK8sSlbRequest extends RoaAcsRequest<UpdateK8sSlbResponse> {
 		this.appId = appId;
 		if(appId != null){
 			putQueryParameter("AppId", appId);
+		}
+	}
+
+	public Boolean getDisableForceOverride() {
+		return this.disableForceOverride;
+	}
+
+	public void setDisableForceOverride(Boolean disableForceOverride) {
+		this.disableForceOverride = disableForceOverride;
+		if(disableForceOverride != null){
+			putQueryParameter("DisableForceOverride", disableForceOverride.toString());
 		}
 	}
 

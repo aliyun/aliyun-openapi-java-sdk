@@ -22,19 +22,21 @@ import com.aliyuncs.edas.Endpoint;
  * @author auto create
  * @version 
  */
-public class UnbindSlbRequest extends RoaAcsRequest<UnbindSlbResponse> {
+public class ValidateK8sResourceRequest extends RoaAcsRequest<ValidateK8sResourceResponse> {
 	   
 
-	private String slbId;
+	private String kind;
 
 	private String appId;
 
-	private String deleteListener;
+	private String namespace;
 
-	private String type;
-	public UnbindSlbRequest() {
-		super("Edas", "2017-08-01", "UnbindSlb", "Edas");
-		setUriPattern("/pop/app/unbind_slb_json");
+	private String format;
+
+	private String content;
+	public ValidateK8sResourceRequest() {
+		super("Edas", "2017-08-01", "ValidateK8sResource", "Edas");
+		setUriPattern("/pop/v5/k8s/acs/validate_k8s_resource");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -42,14 +44,14 @@ public class UnbindSlbRequest extends RoaAcsRequest<UnbindSlbResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getSlbId() {
-		return this.slbId;
+	public String getKind() {
+		return this.kind;
 	}
 
-	public void setSlbId(String slbId) {
-		this.slbId = slbId;
-		if(slbId != null){
-			putQueryParameter("SlbId", slbId);
+	public void setKind(String kind) {
+		this.kind = kind;
+		if(kind != null){
+			putBodyParameter("Kind", kind);
 		}
 	}
 
@@ -60,35 +62,46 @@ public class UnbindSlbRequest extends RoaAcsRequest<UnbindSlbResponse> {
 	public void setAppId(String appId) {
 		this.appId = appId;
 		if(appId != null){
-			putQueryParameter("AppId", appId);
+			putBodyParameter("AppId", appId);
 		}
 	}
 
-	public String getDeleteListener() {
-		return this.deleteListener;
+	public String getNamespace() {
+		return this.namespace;
 	}
 
-	public void setDeleteListener(String deleteListener) {
-		this.deleteListener = deleteListener;
-		if(deleteListener != null){
-			putQueryParameter("DeleteListener", deleteListener);
+	public void setNamespace(String namespace) {
+		this.namespace = namespace;
+		if(namespace != null){
+			putBodyParameter("Namespace", namespace);
 		}
 	}
 
-	public String getType() {
-		return this.type;
+	public String getFormat() {
+		return this.format;
 	}
 
-	public void setType(String type) {
-		this.type = type;
-		if(type != null){
-			putQueryParameter("Type", type);
+	public void setFormat(String format) {
+		this.format = format;
+		if(format != null){
+			putBodyParameter("Format", format);
+		}
+	}
+
+	public String getContent() {
+		return this.content;
+	}
+
+	public void setContent(String content) {
+		this.content = content;
+		if(content != null){
+			putBodyParameter("Content", content);
 		}
 	}
 
 	@Override
-	public Class<UnbindSlbResponse> getResponseClass() {
-		return UnbindSlbResponse.class;
+	public Class<ValidateK8sResourceResponse> getResponseClass() {
+		return ValidateK8sResourceResponse.class;
 	}
 
 }

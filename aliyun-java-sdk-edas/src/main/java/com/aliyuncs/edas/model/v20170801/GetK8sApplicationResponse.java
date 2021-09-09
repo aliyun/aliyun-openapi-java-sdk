@@ -77,6 +77,8 @@ public class GetK8sApplicationResponse extends AcsResponse {
 
 		private Conf conf;
 
+		private LatestVersion latestVersion;
+
 		public String getAppId() {
 			return this.appId;
 		}
@@ -117,6 +119,14 @@ public class GetK8sApplicationResponse extends AcsResponse {
 			this.conf = conf;
 		}
 
+		public LatestVersion getLatestVersion() {
+			return this.latestVersion;
+		}
+
+		public void setLatestVersion(LatestVersion latestVersion) {
+			this.latestVersion = latestVersion;
+		}
+
 		public static class DeployGroup {
 
 			private List<ComponentsItem> components;
@@ -135,6 +145,8 @@ public class GetK8sApplicationResponse extends AcsResponse {
 
 				private String componentKey;
 
+				private String type;
+
 				public String getComponentId() {
 					return this.componentId;
 				}
@@ -149,6 +161,14 @@ public class GetK8sApplicationResponse extends AcsResponse {
 
 				public void setComponentKey(String componentKey) {
 					this.componentKey = componentKey;
+				}
+
+				public String getType() {
+					return this.type;
+				}
+
+				public void setType(String type) {
+					this.type = type;
 				}
 			}
 		}
@@ -252,6 +272,18 @@ public class GetK8sApplicationResponse extends AcsResponse {
 
 			private String csClusterId;
 
+			private Integer limitCpuM;
+
+			private Integer requestCpuM;
+
+			private Integer limitMem;
+
+			private Integer requestMem;
+
+			private String k8sNamespace;
+
+			private String regionId;
+
 			private List<Env> envList;
 
 			private List<String> cmdArgs;
@@ -350,6 +382,54 @@ public class GetK8sApplicationResponse extends AcsResponse {
 
 			public void setCsClusterId(String csClusterId) {
 				this.csClusterId = csClusterId;
+			}
+
+			public Integer getLimitCpuM() {
+				return this.limitCpuM;
+			}
+
+			public void setLimitCpuM(Integer limitCpuM) {
+				this.limitCpuM = limitCpuM;
+			}
+
+			public Integer getRequestCpuM() {
+				return this.requestCpuM;
+			}
+
+			public void setRequestCpuM(Integer requestCpuM) {
+				this.requestCpuM = requestCpuM;
+			}
+
+			public Integer getLimitMem() {
+				return this.limitMem;
+			}
+
+			public void setLimitMem(Integer limitMem) {
+				this.limitMem = limitMem;
+			}
+
+			public Integer getRequestMem() {
+				return this.requestMem;
+			}
+
+			public void setRequestMem(Integer requestMem) {
+				this.requestMem = requestMem;
+			}
+
+			public String getK8sNamespace() {
+				return this.k8sNamespace;
+			}
+
+			public void setK8sNamespace(String k8sNamespace) {
+				this.k8sNamespace = k8sNamespace;
+			}
+
+			public String getRegionId() {
+				return this.regionId;
+			}
+
+			public void setRegionId(String regionId) {
+				this.regionId = regionId;
 			}
 
 			public List<Env> getEnvList() {
@@ -542,6 +622,39 @@ public class GetK8sApplicationResponse extends AcsResponse {
 
 			public void setDeployAcrossNodes(String deployAcrossNodes) {
 				this.deployAcrossNodes = deployAcrossNodes;
+			}
+		}
+
+		public static class LatestVersion {
+
+			private String packageVersion;
+
+			private String url;
+
+			private String warUrl;
+
+			public String getPackageVersion() {
+				return this.packageVersion;
+			}
+
+			public void setPackageVersion(String packageVersion) {
+				this.packageVersion = packageVersion;
+			}
+
+			public String getUrl() {
+				return this.url;
+			}
+
+			public void setUrl(String url) {
+				this.url = url;
+			}
+
+			public String getWarUrl() {
+				return this.warUrl;
+			}
+
+			public void setWarUrl(String warUrl) {
+				this.warUrl = warUrl;
 			}
 		}
 	}

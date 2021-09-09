@@ -22,35 +22,18 @@ import com.aliyuncs.edas.Endpoint;
  * @author auto create
  * @version 
  */
-public class UnbindSlbRequest extends RoaAcsRequest<UnbindSlbResponse> {
+public class GetJavaStartUpConfigRequest extends RoaAcsRequest<GetJavaStartUpConfigResponse> {
 	   
 
-	private String slbId;
-
 	private String appId;
-
-	private String deleteListener;
-
-	private String type;
-	public UnbindSlbRequest() {
-		super("Edas", "2017-08-01", "UnbindSlb", "Edas");
-		setUriPattern("/pop/app/unbind_slb_json");
-		setMethod(MethodType.POST);
+	public GetJavaStartUpConfigRequest() {
+		super("Edas", "2017-08-01", "GetJavaStartUpConfig", "Edas");
+		setUriPattern("/pop/v5/oam/java_start_up_config");
+		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getSlbId() {
-		return this.slbId;
-	}
-
-	public void setSlbId(String slbId) {
-		this.slbId = slbId;
-		if(slbId != null){
-			putQueryParameter("SlbId", slbId);
-		}
 	}
 
 	public String getAppId() {
@@ -64,31 +47,9 @@ public class UnbindSlbRequest extends RoaAcsRequest<UnbindSlbResponse> {
 		}
 	}
 
-	public String getDeleteListener() {
-		return this.deleteListener;
-	}
-
-	public void setDeleteListener(String deleteListener) {
-		this.deleteListener = deleteListener;
-		if(deleteListener != null){
-			putQueryParameter("DeleteListener", deleteListener);
-		}
-	}
-
-	public String getType() {
-		return this.type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
-		if(type != null){
-			putQueryParameter("Type", type);
-		}
-	}
-
 	@Override
-	public Class<UnbindSlbResponse> getResponseClass() {
-		return UnbindSlbResponse.class;
+	public Class<GetJavaStartUpConfigResponse> getResponseClass() {
+		return GetJavaStartUpConfigResponse.class;
 	}
 
 }

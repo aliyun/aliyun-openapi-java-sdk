@@ -101,6 +101,8 @@ public class DeployK8sApplicationRequest extends RoaAcsRequest<DeployK8sApplicat
 
 	private String pvcMountDescs;
 
+	private String emptyDirs;
+
 	private Integer mcpuRequest;
 
 	private Integer mcpuLimit;
@@ -539,6 +541,17 @@ public class DeployK8sApplicationRequest extends RoaAcsRequest<DeployK8sApplicat
 		this.pvcMountDescs = pvcMountDescs;
 		if(pvcMountDescs != null){
 			putQueryParameter("PvcMountDescs", pvcMountDescs);
+		}
+	}
+
+	public String getEmptyDirs() {
+		return this.emptyDirs;
+	}
+
+	public void setEmptyDirs(String emptyDirs) {
+		this.emptyDirs = emptyDirs;
+		if(emptyDirs != null){
+			putQueryParameter("EmptyDirs", emptyDirs);
 		}
 	}
 
