@@ -33,7 +33,7 @@ public class CreateFaceConfigRequest extends RpcAcsRequest<CreateFaceConfigRespo
 
 	private String lang;
 	public CreateFaceConfigRequest() {
-		super("Cloudauth", "2019-03-07", "CreateFaceConfig", "cloudauth");
+		super("Cloudauth", "2019-03-07", "CreateFaceConfig");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

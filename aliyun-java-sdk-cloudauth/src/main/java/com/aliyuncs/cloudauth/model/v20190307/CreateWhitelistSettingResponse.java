@@ -12,21 +12,21 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.cloudauth.model.v20180916;
+package com.aliyuncs.cloudauth.model.v20190307;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cloudauth.transform.v20180916.CreateAuthKeyResponseUnmarshaller;
+import com.aliyuncs.cloudauth.transform.v20190307.CreateWhitelistSettingResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateAuthKeyResponse extends AcsResponse {
+public class CreateWhitelistSettingResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String authKey;
+	private Boolean resultObject;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -36,16 +36,21 @@ public class CreateAuthKeyResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getAuthKey() {
-		return this.authKey;
+	public Boolean getResultObject() {
+		return this.resultObject;
 	}
 
-	public void setAuthKey(String authKey) {
-		this.authKey = authKey;
+	public void setResultObject(Boolean resultObject) {
+		this.resultObject = resultObject;
 	}
 
 	@Override
-	public CreateAuthKeyResponse getInstance(UnmarshallerContext context) {
-		return	CreateAuthKeyResponseUnmarshaller.unmarshall(this, context);
+	public CreateWhitelistSettingResponse getInstance(UnmarshallerContext context) {
+		return	CreateWhitelistSettingResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

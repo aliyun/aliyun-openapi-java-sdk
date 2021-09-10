@@ -24,14 +24,14 @@ public class LivenessFaceVerifyResponseUnmarshaller {
 	public static LivenessFaceVerifyResponse unmarshall(LivenessFaceVerifyResponse livenessFaceVerifyResponse, UnmarshallerContext _ctx) {
 		
 		livenessFaceVerifyResponse.setRequestId(_ctx.stringValue("LivenessFaceVerifyResponse.RequestId"));
-		livenessFaceVerifyResponse.setMessage(_ctx.stringValue("LivenessFaceVerifyResponse.Message"));
 		livenessFaceVerifyResponse.setCode(_ctx.stringValue("LivenessFaceVerifyResponse.Code"));
+		livenessFaceVerifyResponse.setMessage(_ctx.stringValue("LivenessFaceVerifyResponse.Message"));
 
 		ResultObject resultObject = new ResultObject();
-		resultObject.setPassed(_ctx.stringValue("LivenessFaceVerifyResponse.ResultObject.Passed"));
-		resultObject.setMaterialInfo(_ctx.stringValue("LivenessFaceVerifyResponse.ResultObject.MaterialInfo"));
-		resultObject.setSubCode(_ctx.stringValue("LivenessFaceVerifyResponse.ResultObject.SubCode"));
 		resultObject.setCertifyId(_ctx.stringValue("LivenessFaceVerifyResponse.ResultObject.CertifyId"));
+		resultObject.setSubCode(_ctx.stringValue("LivenessFaceVerifyResponse.ResultObject.SubCode"));
+		resultObject.setMaterialInfo(_ctx.stringValue("LivenessFaceVerifyResponse.ResultObject.MaterialInfo"));
+		resultObject.setPassed(_ctx.stringValue("LivenessFaceVerifyResponse.ResultObject.Passed"));
 		livenessFaceVerifyResponse.setResultObject(resultObject);
 	 
 	 	return livenessFaceVerifyResponse;

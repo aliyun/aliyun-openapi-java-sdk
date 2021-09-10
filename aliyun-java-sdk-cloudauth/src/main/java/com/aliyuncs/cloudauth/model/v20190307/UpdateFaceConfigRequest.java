@@ -33,7 +33,7 @@ public class UpdateFaceConfigRequest extends RpcAcsRequest<UpdateFaceConfigRespo
 
 	private String lang;
 	public UpdateFaceConfigRequest() {
-		super("Cloudauth", "2019-03-07", "UpdateFaceConfig", "cloudauth");
+		super("Cloudauth", "2019-03-07", "UpdateFaceConfig");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -24,8 +24,8 @@ public class InitFaceVerifyResponseUnmarshaller {
 	public static InitFaceVerifyResponse unmarshall(InitFaceVerifyResponse initFaceVerifyResponse, UnmarshallerContext _ctx) {
 		
 		initFaceVerifyResponse.setRequestId(_ctx.stringValue("InitFaceVerifyResponse.RequestId"));
-		initFaceVerifyResponse.setMessage(_ctx.stringValue("InitFaceVerifyResponse.Message"));
 		initFaceVerifyResponse.setCode(_ctx.stringValue("InitFaceVerifyResponse.Code"));
+		initFaceVerifyResponse.setMessage(_ctx.stringValue("InitFaceVerifyResponse.Message"));
 
 		ResultObject resultObject = new ResultObject();
 		resultObject.setCertifyId(_ctx.stringValue("InitFaceVerifyResponse.ResultObject.CertifyId"));

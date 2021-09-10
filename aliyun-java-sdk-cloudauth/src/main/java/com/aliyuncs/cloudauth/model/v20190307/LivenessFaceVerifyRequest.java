@@ -50,8 +50,10 @@ public class LivenessFaceVerifyRequest extends RpcAcsRequest<LivenessFaceVerifyR
 	private String ossBucketName;
 
 	private String model;
+
+	private String crop;
 	public LivenessFaceVerifyRequest() {
-		super("Cloudauth", "2019-03-07", "LivenessFaceVerify", "cloudauth");
+		super("Cloudauth", "2019-03-07", "LivenessFaceVerify");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -199,6 +201,17 @@ public class LivenessFaceVerifyRequest extends RpcAcsRequest<LivenessFaceVerifyR
 		this.model = model;
 		if(model != null){
 			putQueryParameter("Model", model);
+		}
+	}
+
+	public String getCrop() {
+		return this.crop;
+	}
+
+	public void setCrop(String crop) {
+		this.crop = crop;
+		if(crop != null){
+			putBodyParameter("Crop", crop);
 		}
 	}
 

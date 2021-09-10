@@ -35,7 +35,7 @@ public class VerifyDeviceRequest extends RpcAcsRequest<VerifyDeviceResponse> {
 
 	private String certifyId;
 	public VerifyDeviceRequest() {
-		super("Cloudauth", "2019-03-07", "VerifyDevice", "cloudauth");
+		super("Cloudauth", "2019-03-07", "VerifyDevice");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

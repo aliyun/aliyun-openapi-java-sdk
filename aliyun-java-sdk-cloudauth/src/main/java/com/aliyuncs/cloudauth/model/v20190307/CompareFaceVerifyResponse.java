@@ -24,20 +24,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CompareFaceVerifyResponse extends AcsResponse {
 
-	private String requestId;
+	private String code;
 
 	private String message;
 
-	private String code;
+	private String requestId;
 
 	private ResultObject resultObject;
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public String getMessage() {
@@ -48,12 +48,12 @@ public class CompareFaceVerifyResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getCode() {
-		return this.code;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public ResultObject getResultObject() {
@@ -66,18 +66,18 @@ public class CompareFaceVerifyResponse extends AcsResponse {
 
 	public static class ResultObject {
 
-		private String passed;
+		private String certifyId;
 
 		private Float verifyScore;
 
-		private String certifyId;
+		private String passed;
 
-		public String getPassed() {
-			return this.passed;
+		public String getCertifyId() {
+			return this.certifyId;
 		}
 
-		public void setPassed(String passed) {
-			this.passed = passed;
+		public void setCertifyId(String certifyId) {
+			this.certifyId = certifyId;
 		}
 
 		public Float getVerifyScore() {
@@ -88,12 +88,12 @@ public class CompareFaceVerifyResponse extends AcsResponse {
 			this.verifyScore = verifyScore;
 		}
 
-		public String getCertifyId() {
-			return this.certifyId;
+		public String getPassed() {
+			return this.passed;
 		}
 
-		public void setCertifyId(String certifyId) {
-			this.certifyId = certifyId;
+		public void setPassed(String passed) {
+			this.passed = passed;
 		}
 	}
 

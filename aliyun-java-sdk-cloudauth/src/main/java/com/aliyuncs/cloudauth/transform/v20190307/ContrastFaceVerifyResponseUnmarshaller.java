@@ -24,15 +24,15 @@ public class ContrastFaceVerifyResponseUnmarshaller {
 	public static ContrastFaceVerifyResponse unmarshall(ContrastFaceVerifyResponse contrastFaceVerifyResponse, UnmarshallerContext _ctx) {
 		
 		contrastFaceVerifyResponse.setRequestId(_ctx.stringValue("ContrastFaceVerifyResponse.RequestId"));
-		contrastFaceVerifyResponse.setMessage(_ctx.stringValue("ContrastFaceVerifyResponse.Message"));
 		contrastFaceVerifyResponse.setCode(_ctx.stringValue("ContrastFaceVerifyResponse.Code"));
+		contrastFaceVerifyResponse.setMessage(_ctx.stringValue("ContrastFaceVerifyResponse.Message"));
 
 		ResultObject resultObject = new ResultObject();
-		resultObject.setPassed(_ctx.stringValue("ContrastFaceVerifyResponse.ResultObject.Passed"));
-		resultObject.setIdentityInfo(_ctx.stringValue("ContrastFaceVerifyResponse.ResultObject.IdentityInfo"));
-		resultObject.setMaterialInfo(_ctx.stringValue("ContrastFaceVerifyResponse.ResultObject.MaterialInfo"));
-		resultObject.setSubCode(_ctx.stringValue("ContrastFaceVerifyResponse.ResultObject.SubCode"));
 		resultObject.setCertifyId(_ctx.stringValue("ContrastFaceVerifyResponse.ResultObject.CertifyId"));
+		resultObject.setSubCode(_ctx.stringValue("ContrastFaceVerifyResponse.ResultObject.SubCode"));
+		resultObject.setMaterialInfo(_ctx.stringValue("ContrastFaceVerifyResponse.ResultObject.MaterialInfo"));
+		resultObject.setIdentityInfo(_ctx.stringValue("ContrastFaceVerifyResponse.ResultObject.IdentityInfo"));
+		resultObject.setPassed(_ctx.stringValue("ContrastFaceVerifyResponse.ResultObject.Passed"));
 		contrastFaceVerifyResponse.setResultObject(resultObject);
 	 
 	 	return contrastFaceVerifyResponse;

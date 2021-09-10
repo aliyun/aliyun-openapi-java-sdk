@@ -24,20 +24,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ContrastFaceVerifyResponse extends AcsResponse {
 
-	private String requestId;
+	private String code;
 
 	private String message;
 
-	private String code;
+	private String requestId;
 
 	private ResultObject resultObject;
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public String getMessage() {
@@ -48,12 +48,12 @@ public class ContrastFaceVerifyResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getCode() {
-		return this.code;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public ResultObject getResultObject() {
@@ -66,38 +66,22 @@ public class ContrastFaceVerifyResponse extends AcsResponse {
 
 	public static class ResultObject {
 
-		private String passed;
-
-		private String identityInfo;
-
-		private String materialInfo;
+		private String certifyId;
 
 		private String subCode;
 
-		private String certifyId;
+		private String materialInfo;
 
-		public String getPassed() {
-			return this.passed;
+		private String identityInfo;
+
+		private String passed;
+
+		public String getCertifyId() {
+			return this.certifyId;
 		}
 
-		public void setPassed(String passed) {
-			this.passed = passed;
-		}
-
-		public String getIdentityInfo() {
-			return this.identityInfo;
-		}
-
-		public void setIdentityInfo(String identityInfo) {
-			this.identityInfo = identityInfo;
-		}
-
-		public String getMaterialInfo() {
-			return this.materialInfo;
-		}
-
-		public void setMaterialInfo(String materialInfo) {
-			this.materialInfo = materialInfo;
+		public void setCertifyId(String certifyId) {
+			this.certifyId = certifyId;
 		}
 
 		public String getSubCode() {
@@ -108,12 +92,28 @@ public class ContrastFaceVerifyResponse extends AcsResponse {
 			this.subCode = subCode;
 		}
 
-		public String getCertifyId() {
-			return this.certifyId;
+		public String getMaterialInfo() {
+			return this.materialInfo;
 		}
 
-		public void setCertifyId(String certifyId) {
-			this.certifyId = certifyId;
+		public void setMaterialInfo(String materialInfo) {
+			this.materialInfo = materialInfo;
+		}
+
+		public String getIdentityInfo() {
+			return this.identityInfo;
+		}
+
+		public void setIdentityInfo(String identityInfo) {
+			this.identityInfo = identityInfo;
+		}
+
+		public String getPassed() {
+			return this.passed;
+		}
+
+		public void setPassed(String passed) {
+			this.passed = passed;
 		}
 	}
 

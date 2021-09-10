@@ -12,7 +12,7 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.cloudauth.model.v20180916;
+package com.aliyuncs.cloudauth.model.v20190307;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
@@ -22,24 +22,24 @@ import com.aliyuncs.cloudauth.Endpoint;
  * @author auto create
  * @version 
  */
-public class ModifyDeviceInfoRequest extends RpcAcsRequest<ModifyDeviceInfoResponse> {
+public class CreateWhitelistSettingRequest extends RpcAcsRequest<CreateWhitelistSettingResponse> {
 	   
 
-	private String userDeviceId;
+	private String certifyId;
 
-	private String duration;
-
-	private String expiredDay;
+	private String certNo;
 
 	private String sourceIp;
 
 	private String lang;
 
-	private String deviceId;
+	private Integer validDay;
 
-	private String bizType;
-	public ModifyDeviceInfoRequest() {
-		super("Cloudauth", "2018-09-16", "ModifyDeviceInfo", "cloudauth");
+	private String serviceCode;
+
+	private Long sceneId;
+	public CreateWhitelistSettingRequest() {
+		super("Cloudauth", "2019-03-07", "CreateWhitelistSetting");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -47,36 +47,25 @@ public class ModifyDeviceInfoRequest extends RpcAcsRequest<ModifyDeviceInfoRespo
 		} catch (Exception e) {}
 	}
 
-	public String getUserDeviceId() {
-		return this.userDeviceId;
+	public String getCertifyId() {
+		return this.certifyId;
 	}
 
-	public void setUserDeviceId(String userDeviceId) {
-		this.userDeviceId = userDeviceId;
-		if(userDeviceId != null){
-			putQueryParameter("UserDeviceId", userDeviceId);
+	public void setCertifyId(String certifyId) {
+		this.certifyId = certifyId;
+		if(certifyId != null){
+			putQueryParameter("CertifyId", certifyId);
 		}
 	}
 
-	public String getDuration() {
-		return this.duration;
+	public String getCertNo() {
+		return this.certNo;
 	}
 
-	public void setDuration(String duration) {
-		this.duration = duration;
-		if(duration != null){
-			putQueryParameter("Duration", duration);
-		}
-	}
-
-	public String getExpiredDay() {
-		return this.expiredDay;
-	}
-
-	public void setExpiredDay(String expiredDay) {
-		this.expiredDay = expiredDay;
-		if(expiredDay != null){
-			putQueryParameter("ExpiredDay", expiredDay);
+	public void setCertNo(String certNo) {
+		this.certNo = certNo;
+		if(certNo != null){
+			putQueryParameter("CertNo", certNo);
 		}
 	}
 
@@ -102,31 +91,42 @@ public class ModifyDeviceInfoRequest extends RpcAcsRequest<ModifyDeviceInfoRespo
 		}
 	}
 
-	public String getDeviceId() {
-		return this.deviceId;
+	public Integer getValidDay() {
+		return this.validDay;
 	}
 
-	public void setDeviceId(String deviceId) {
-		this.deviceId = deviceId;
-		if(deviceId != null){
-			putQueryParameter("DeviceId", deviceId);
+	public void setValidDay(Integer validDay) {
+		this.validDay = validDay;
+		if(validDay != null){
+			putQueryParameter("ValidDay", validDay.toString());
 		}
 	}
 
-	public String getBizType() {
-		return this.bizType;
+	public String getServiceCode() {
+		return this.serviceCode;
 	}
 
-	public void setBizType(String bizType) {
-		this.bizType = bizType;
-		if(bizType != null){
-			putQueryParameter("BizType", bizType);
+	public void setServiceCode(String serviceCode) {
+		this.serviceCode = serviceCode;
+		if(serviceCode != null){
+			putQueryParameter("ServiceCode", serviceCode);
+		}
+	}
+
+	public Long getSceneId() {
+		return this.sceneId;
+	}
+
+	public void setSceneId(Long sceneId) {
+		this.sceneId = sceneId;
+		if(sceneId != null){
+			putQueryParameter("SceneId", sceneId.toString());
 		}
 	}
 
 	@Override
-	public Class<ModifyDeviceInfoResponse> getResponseClass() {
-		return ModifyDeviceInfoResponse.class;
+	public Class<CreateWhitelistSettingResponse> getResponseClass() {
+		return CreateWhitelistSettingResponse.class;
 	}
 
 }

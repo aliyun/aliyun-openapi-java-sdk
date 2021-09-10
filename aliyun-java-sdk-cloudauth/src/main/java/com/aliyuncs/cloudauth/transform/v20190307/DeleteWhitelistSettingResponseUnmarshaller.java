@@ -12,19 +12,19 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.cloudauth.transform.v20180916;
+package com.aliyuncs.cloudauth.transform.v20190307;
 
-import com.aliyuncs.cloudauth.model.v20180916.CreateVerifySDKResponse;
+import com.aliyuncs.cloudauth.model.v20190307.DeleteWhitelistSettingResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class CreateVerifySDKResponseUnmarshaller {
+public class DeleteWhitelistSettingResponseUnmarshaller {
 
-	public static CreateVerifySDKResponse unmarshall(CreateVerifySDKResponse createVerifySDKResponse, UnmarshallerContext _ctx) {
+	public static DeleteWhitelistSettingResponse unmarshall(DeleteWhitelistSettingResponse deleteWhitelistSettingResponse, UnmarshallerContext _ctx) {
 		
-		createVerifySDKResponse.setRequestId(_ctx.stringValue("CreateVerifySDKResponse.RequestId"));
-		createVerifySDKResponse.setTaskId(_ctx.stringValue("CreateVerifySDKResponse.TaskId"));
+		deleteWhitelistSettingResponse.setRequestId(_ctx.stringValue("DeleteWhitelistSettingResponse.RequestId"));
+		deleteWhitelistSettingResponse.setResultObject(_ctx.booleanValue("DeleteWhitelistSettingResponse.ResultObject"));
 	 
-	 	return createVerifySDKResponse;
+	 	return deleteWhitelistSettingResponse;
 	}
 }

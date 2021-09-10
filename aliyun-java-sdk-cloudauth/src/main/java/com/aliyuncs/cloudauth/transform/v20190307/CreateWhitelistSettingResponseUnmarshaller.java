@@ -12,19 +12,19 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.cloudauth.transform.v20180916;
+package com.aliyuncs.cloudauth.transform.v20190307;
 
-import com.aliyuncs.cloudauth.model.v20180916.CreateAuthKeyResponse;
+import com.aliyuncs.cloudauth.model.v20190307.CreateWhitelistSettingResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class CreateAuthKeyResponseUnmarshaller {
+public class CreateWhitelistSettingResponseUnmarshaller {
 
-	public static CreateAuthKeyResponse unmarshall(CreateAuthKeyResponse createAuthKeyResponse, UnmarshallerContext _ctx) {
+	public static CreateWhitelistSettingResponse unmarshall(CreateWhitelistSettingResponse createWhitelistSettingResponse, UnmarshallerContext _ctx) {
 		
-		createAuthKeyResponse.setRequestId(_ctx.stringValue("CreateAuthKeyResponse.RequestId"));
-		createAuthKeyResponse.setAuthKey(_ctx.stringValue("CreateAuthKeyResponse.AuthKey"));
+		createWhitelistSettingResponse.setRequestId(_ctx.stringValue("CreateWhitelistSettingResponse.RequestId"));
+		createWhitelistSettingResponse.setResultObject(_ctx.booleanValue("CreateWhitelistSettingResponse.ResultObject"));
 	 
-	 	return createAuthKeyResponse;
+	 	return createWhitelistSettingResponse;
 	}
 }

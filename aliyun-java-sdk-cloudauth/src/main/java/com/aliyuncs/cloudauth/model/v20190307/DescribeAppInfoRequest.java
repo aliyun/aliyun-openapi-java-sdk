@@ -31,7 +31,7 @@ public class DescribeAppInfoRequest extends RpcAcsRequest<DescribeAppInfoRespons
 
 	private Integer pageSize;
 	public DescribeAppInfoRequest() {
-		super("Cloudauth", "2019-03-07", "DescribeAppInfo", "cloudauth");
+		super("Cloudauth", "2019-03-07", "DescribeAppInfo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

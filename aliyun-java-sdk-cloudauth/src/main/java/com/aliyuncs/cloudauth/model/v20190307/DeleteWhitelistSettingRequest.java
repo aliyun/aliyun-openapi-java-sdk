@@ -12,7 +12,7 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.cloudauth.model.v20180916;
+package com.aliyuncs.cloudauth.model.v20190307;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
@@ -22,60 +22,23 @@ import com.aliyuncs.cloudauth.Endpoint;
  * @author auto create
  * @version 
  */
-public class CreateAuthKeyRequest extends RpcAcsRequest<CreateAuthKeyResponse> {
+public class DeleteWhitelistSettingRequest extends RpcAcsRequest<DeleteWhitelistSettingResponse> {
 	   
-
-	private String userDeviceId;
-
-	private Boolean test;
-
-	private String bizType;
 
 	private String sourceIp;
 
-	private Integer authYears;
-
 	private String lang;
-	public CreateAuthKeyRequest() {
-		super("Cloudauth", "2018-09-16", "CreateAuthKey", "cloudauth");
+
+	private String serviceCode;
+
+	private String ids;
+	public DeleteWhitelistSettingRequest() {
+		super("Cloudauth", "2019-03-07", "DeleteWhitelistSetting");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getUserDeviceId() {
-		return this.userDeviceId;
-	}
-
-	public void setUserDeviceId(String userDeviceId) {
-		this.userDeviceId = userDeviceId;
-		if(userDeviceId != null){
-			putQueryParameter("UserDeviceId", userDeviceId);
-		}
-	}
-
-	public Boolean getTest() {
-		return this.test;
-	}
-
-	public void setTest(Boolean test) {
-		this.test = test;
-		if(test != null){
-			putQueryParameter("Test", test.toString());
-		}
-	}
-
-	public String getBizType() {
-		return this.bizType;
-	}
-
-	public void setBizType(String bizType) {
-		this.bizType = bizType;
-		if(bizType != null){
-			putQueryParameter("BizType", bizType);
-		}
 	}
 
 	public String getSourceIp() {
@@ -86,17 +49,6 @@ public class CreateAuthKeyRequest extends RpcAcsRequest<CreateAuthKeyResponse> {
 		this.sourceIp = sourceIp;
 		if(sourceIp != null){
 			putQueryParameter("SourceIp", sourceIp);
-		}
-	}
-
-	public Integer getAuthYears() {
-		return this.authYears;
-	}
-
-	public void setAuthYears(Integer authYears) {
-		this.authYears = authYears;
-		if(authYears != null){
-			putQueryParameter("AuthYears", authYears.toString());
 		}
 	}
 
@@ -111,9 +63,31 @@ public class CreateAuthKeyRequest extends RpcAcsRequest<CreateAuthKeyResponse> {
 		}
 	}
 
+	public String getServiceCode() {
+		return this.serviceCode;
+	}
+
+	public void setServiceCode(String serviceCode) {
+		this.serviceCode = serviceCode;
+		if(serviceCode != null){
+			putQueryParameter("ServiceCode", serviceCode);
+		}
+	}
+
+	public String getIds() {
+		return this.ids;
+	}
+
+	public void setIds(String ids) {
+		this.ids = ids;
+		if(ids != null){
+			putQueryParameter("Ids", ids);
+		}
+	}
+
 	@Override
-	public Class<CreateAuthKeyResponse> getResponseClass() {
-		return CreateAuthKeyResponse.class;
+	public Class<DeleteWhitelistSettingResponse> getResponseClass() {
+		return DeleteWhitelistSettingResponse.class;
 	}
 
 }

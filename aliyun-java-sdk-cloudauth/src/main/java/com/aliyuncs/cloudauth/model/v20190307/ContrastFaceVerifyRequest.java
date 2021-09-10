@@ -58,8 +58,10 @@ public class ContrastFaceVerifyRequest extends RpcAcsRequest<ContrastFaceVerifyR
 	private Long sceneId;
 
 	private String ossBucketName;
+
+	private String crop;
 	public ContrastFaceVerifyRequest() {
-		super("Cloudauth", "2019-03-07", "ContrastFaceVerify", "cloudauth");
+		super("Cloudauth", "2019-03-07", "ContrastFaceVerify");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -251,6 +253,17 @@ public class ContrastFaceVerifyRequest extends RpcAcsRequest<ContrastFaceVerifyR
 		this.ossBucketName = ossBucketName;
 		if(ossBucketName != null){
 			putBodyParameter("OssBucketName", ossBucketName);
+		}
+	}
+
+	public String getCrop() {
+		return this.crop;
+	}
+
+	public void setCrop(String crop) {
+		this.crop = crop;
+		if(crop != null){
+			putBodyParameter("Crop", crop);
 		}
 	}
 

@@ -31,7 +31,7 @@ public class DeleteWhitelistRequest extends RpcAcsRequest<DeleteWhitelistRespons
 
 	private String lang;
 	public DeleteWhitelistRequest() {
-		super("Cloudauth", "2019-03-07", "DeleteWhitelist", "cloudauth");
+		super("Cloudauth", "2019-03-07", "DeleteWhitelist");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

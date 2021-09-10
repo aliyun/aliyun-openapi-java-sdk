@@ -37,7 +37,7 @@ public class CreateWhitelistRequest extends RpcAcsRequest<CreateWhitelistRespons
 
 	private String lang;
 	public CreateWhitelistRequest() {
-		super("Cloudauth", "2019-03-07", "CreateWhitelist", "cloudauth");
+		super("Cloudauth", "2019-03-07", "CreateWhitelist");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

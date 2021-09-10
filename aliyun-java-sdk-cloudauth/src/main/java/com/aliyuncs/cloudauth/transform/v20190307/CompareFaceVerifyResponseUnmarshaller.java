@@ -24,13 +24,13 @@ public class CompareFaceVerifyResponseUnmarshaller {
 	public static CompareFaceVerifyResponse unmarshall(CompareFaceVerifyResponse compareFaceVerifyResponse, UnmarshallerContext _ctx) {
 		
 		compareFaceVerifyResponse.setRequestId(_ctx.stringValue("CompareFaceVerifyResponse.RequestId"));
-		compareFaceVerifyResponse.setMessage(_ctx.stringValue("CompareFaceVerifyResponse.Message"));
 		compareFaceVerifyResponse.setCode(_ctx.stringValue("CompareFaceVerifyResponse.Code"));
+		compareFaceVerifyResponse.setMessage(_ctx.stringValue("CompareFaceVerifyResponse.Message"));
 
 		ResultObject resultObject = new ResultObject();
-		resultObject.setPassed(_ctx.stringValue("CompareFaceVerifyResponse.ResultObject.Passed"));
-		resultObject.setVerifyScore(_ctx.floatValue("CompareFaceVerifyResponse.ResultObject.VerifyScore"));
 		resultObject.setCertifyId(_ctx.stringValue("CompareFaceVerifyResponse.ResultObject.CertifyId"));
+		resultObject.setVerifyScore(_ctx.floatValue("CompareFaceVerifyResponse.ResultObject.VerifyScore"));
+		resultObject.setPassed(_ctx.stringValue("CompareFaceVerifyResponse.ResultObject.Passed"));
 		compareFaceVerifyResponse.setResultObject(resultObject);
 	 
 	 	return compareFaceVerifyResponse;

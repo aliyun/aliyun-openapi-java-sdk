@@ -62,8 +62,10 @@ public class InitFaceVerifyRequest extends RpcAcsRequest<InitFaceVerifyResponse>
 	private String returnUrl;
 
 	private String callbackUrl;
+
+	private String crop;
 	public InitFaceVerifyRequest() {
-		super("Cloudauth", "2019-03-07", "InitFaceVerify", "cloudauth");
+		super("Cloudauth", "2019-03-07", "InitFaceVerify");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -277,6 +279,17 @@ public class InitFaceVerifyRequest extends RpcAcsRequest<InitFaceVerifyResponse>
 		this.callbackUrl = callbackUrl;
 		if(callbackUrl != null){
 			putQueryParameter("CallbackUrl", callbackUrl);
+		}
+	}
+
+	public String getCrop() {
+		return this.crop;
+	}
+
+	public void setCrop(String crop) {
+		this.crop = crop;
+		if(crop != null){
+			putBodyParameter("Crop", crop);
 		}
 	}
 

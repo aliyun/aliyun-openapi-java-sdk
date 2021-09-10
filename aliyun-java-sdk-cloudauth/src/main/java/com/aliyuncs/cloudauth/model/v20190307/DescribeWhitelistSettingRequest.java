@@ -22,12 +22,14 @@ import com.aliyuncs.cloudauth.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeWhitelistRequest extends RpcAcsRequest<DescribeWhitelistResponse> {
+public class DescribeWhitelistSettingRequest extends RpcAcsRequest<DescribeWhitelistSettingResponse> {
 	   
 
-	private String validEndDate;
+	private Long validEndDate;
 
-	private String valid;
+	private String certifyId;
+
+	private String certNo;
 
 	private String sourceIp;
 
@@ -37,15 +39,15 @@ public class DescribeWhitelistRequest extends RpcAcsRequest<DescribeWhitelistRes
 
 	private Integer currentPage;
 
-	private String bizType;
+	private String serviceCode;
 
-	private String idCardNum;
+	private Long sceneId;
 
-	private String bizId;
+	private Long validStartDate;
 
-	private String validStartDate;
-	public DescribeWhitelistRequest() {
-		super("Cloudauth", "2019-03-07", "DescribeWhitelist");
+	private String status;
+	public DescribeWhitelistSettingRequest() {
+		super("Cloudauth", "2019-03-07", "DescribeWhitelistSetting");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -53,25 +55,36 @@ public class DescribeWhitelistRequest extends RpcAcsRequest<DescribeWhitelistRes
 		} catch (Exception e) {}
 	}
 
-	public String getValidEndDate() {
+	public Long getValidEndDate() {
 		return this.validEndDate;
 	}
 
-	public void setValidEndDate(String validEndDate) {
+	public void setValidEndDate(Long validEndDate) {
 		this.validEndDate = validEndDate;
 		if(validEndDate != null){
-			putQueryParameter("ValidEndDate", validEndDate);
+			putQueryParameter("ValidEndDate", validEndDate.toString());
 		}
 	}
 
-	public String getValid() {
-		return this.valid;
+	public String getCertifyId() {
+		return this.certifyId;
 	}
 
-	public void setValid(String valid) {
-		this.valid = valid;
-		if(valid != null){
-			putQueryParameter("Valid", valid);
+	public void setCertifyId(String certifyId) {
+		this.certifyId = certifyId;
+		if(certifyId != null){
+			putQueryParameter("CertifyId", certifyId);
+		}
+	}
+
+	public String getCertNo() {
+		return this.certNo;
+	}
+
+	public void setCertNo(String certNo) {
+		this.certNo = certNo;
+		if(certNo != null){
+			putQueryParameter("CertNo", certNo);
 		}
 	}
 
@@ -119,53 +132,53 @@ public class DescribeWhitelistRequest extends RpcAcsRequest<DescribeWhitelistRes
 		}
 	}
 
-	public String getBizType() {
-		return this.bizType;
+	public String getServiceCode() {
+		return this.serviceCode;
 	}
 
-	public void setBizType(String bizType) {
-		this.bizType = bizType;
-		if(bizType != null){
-			putQueryParameter("BizType", bizType);
+	public void setServiceCode(String serviceCode) {
+		this.serviceCode = serviceCode;
+		if(serviceCode != null){
+			putQueryParameter("ServiceCode", serviceCode);
 		}
 	}
 
-	public String getIdCardNum() {
-		return this.idCardNum;
+	public Long getSceneId() {
+		return this.sceneId;
 	}
 
-	public void setIdCardNum(String idCardNum) {
-		this.idCardNum = idCardNum;
-		if(idCardNum != null){
-			putQueryParameter("IdCardNum", idCardNum);
+	public void setSceneId(Long sceneId) {
+		this.sceneId = sceneId;
+		if(sceneId != null){
+			putQueryParameter("SceneId", sceneId.toString());
 		}
 	}
 
-	public String getBizId() {
-		return this.bizId;
-	}
-
-	public void setBizId(String bizId) {
-		this.bizId = bizId;
-		if(bizId != null){
-			putQueryParameter("BizId", bizId);
-		}
-	}
-
-	public String getValidStartDate() {
+	public Long getValidStartDate() {
 		return this.validStartDate;
 	}
 
-	public void setValidStartDate(String validStartDate) {
+	public void setValidStartDate(Long validStartDate) {
 		this.validStartDate = validStartDate;
 		if(validStartDate != null){
-			putQueryParameter("ValidStartDate", validStartDate);
+			putQueryParameter("ValidStartDate", validStartDate.toString());
+		}
+	}
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+		if(status != null){
+			putQueryParameter("Status", status);
 		}
 	}
 
 	@Override
-	public Class<DescribeWhitelistResponse> getResponseClass() {
-		return DescribeWhitelistResponse.class;
+	public Class<DescribeWhitelistSettingResponse> getResponseClass() {
+		return DescribeWhitelistSettingResponse.class;
 	}
 
 }

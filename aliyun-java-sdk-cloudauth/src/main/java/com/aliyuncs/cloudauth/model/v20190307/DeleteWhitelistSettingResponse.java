@@ -12,21 +12,21 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.cloudauth.model.v20180916;
+package com.aliyuncs.cloudauth.model.v20190307;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cloudauth.transform.v20180916.DescribeVerifySDKResponseUnmarshaller;
+import com.aliyuncs.cloudauth.transform.v20190307.DeleteWhitelistSettingResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeVerifySDKResponse extends AcsResponse {
+public class DeleteWhitelistSettingResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String sdkUrl;
+	private Boolean resultObject;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -36,16 +36,21 @@ public class DescribeVerifySDKResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getSdkUrl() {
-		return this.sdkUrl;
+	public Boolean getResultObject() {
+		return this.resultObject;
 	}
 
-	public void setSdkUrl(String sdkUrl) {
-		this.sdkUrl = sdkUrl;
+	public void setResultObject(Boolean resultObject) {
+		this.resultObject = resultObject;
 	}
 
 	@Override
-	public DescribeVerifySDKResponse getInstance(UnmarshallerContext context) {
-		return	DescribeVerifySDKResponseUnmarshaller.unmarshall(this, context);
+	public DeleteWhitelistSettingResponse getInstance(UnmarshallerContext context) {
+		return	DeleteWhitelistSettingResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }
