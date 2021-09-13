@@ -223,6 +223,8 @@ public class QueryFpShotJobListResponse extends AcsResponse {
 
 			private List<FpShot> fpShots;
 
+			private List<TextFpShot> textFpShots;
+
 			public List<FpShot> getAudioFpShots() {
 				return this.audioFpShots;
 			}
@@ -237,6 +239,14 @@ public class QueryFpShotJobListResponse extends AcsResponse {
 
 			public void setFpShots(List<FpShot> fpShots) {
 				this.fpShots = fpShots;
+			}
+
+			public List<TextFpShot> getTextFpShots() {
+				return this.textFpShots;
+			}
+
+			public void setTextFpShots(List<TextFpShot> textFpShots) {
+				this.textFpShots = textFpShots;
 			}
 
 			public static class FpShot {
@@ -327,6 +337,105 @@ public class QueryFpShotJobListResponse extends AcsResponse {
 					}
 
 					public static class Input {
+
+						private String start;
+
+						private String duration;
+
+						public String getStart() {
+							return this.start;
+						}
+
+						public void setStart(String start) {
+							this.start = start;
+						}
+
+						public String getDuration() {
+							return this.duration;
+						}
+
+						public void setDuration(String duration) {
+							this.duration = duration;
+						}
+					}
+				}
+			}
+
+			public static class TextFpShot {
+
+				private String primaryKey;
+
+				private String similarity;
+
+				private List<TextFpShotSlice> textFpShotSlices;
+
+				public String getPrimaryKey() {
+					return this.primaryKey;
+				}
+
+				public void setPrimaryKey(String primaryKey) {
+					this.primaryKey = primaryKey;
+				}
+
+				public String getSimilarity() {
+					return this.similarity;
+				}
+
+				public void setSimilarity(String similarity) {
+					this.similarity = similarity;
+				}
+
+				public List<TextFpShotSlice> getTextFpShotSlices() {
+					return this.textFpShotSlices;
+				}
+
+				public void setTextFpShotSlices(List<TextFpShotSlice> textFpShotSlices) {
+					this.textFpShotSlices = textFpShotSlices;
+				}
+
+				public static class TextFpShotSlice {
+
+					private String similarity;
+
+					private String inputText;
+
+					private String duplicationText;
+
+					private InputFragment inputFragment;
+
+					public String getSimilarity() {
+						return this.similarity;
+					}
+
+					public void setSimilarity(String similarity) {
+						this.similarity = similarity;
+					}
+
+					public String getInputText() {
+						return this.inputText;
+					}
+
+					public void setInputText(String inputText) {
+						this.inputText = inputText;
+					}
+
+					public String getDuplicationText() {
+						return this.duplicationText;
+					}
+
+					public void setDuplicationText(String duplicationText) {
+						this.duplicationText = duplicationText;
+					}
+
+					public InputFragment getInputFragment() {
+						return this.inputFragment;
+					}
+
+					public void setInputFragment(InputFragment inputFragment) {
+						this.inputFragment = inputFragment;
+					}
+
+					public static class InputFragment {
 
 						private String start;
 

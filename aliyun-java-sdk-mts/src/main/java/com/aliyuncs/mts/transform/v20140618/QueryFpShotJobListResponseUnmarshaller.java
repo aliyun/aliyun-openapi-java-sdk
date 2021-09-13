@@ -25,6 +25,9 @@ import com.aliyuncs.mts.model.v20140618.QueryFpShotJobListResponse.FpShotJob.FpS
 import com.aliyuncs.mts.model.v20140618.QueryFpShotJobListResponse.FpShotJob.FpShotResult.FpShot.FpShotSlice;
 import com.aliyuncs.mts.model.v20140618.QueryFpShotJobListResponse.FpShotJob.FpShotResult.FpShot.FpShotSlice.Duplication;
 import com.aliyuncs.mts.model.v20140618.QueryFpShotJobListResponse.FpShotJob.FpShotResult.FpShot.FpShotSlice.Input;
+import com.aliyuncs.mts.model.v20140618.QueryFpShotJobListResponse.FpShotJob.FpShotResult.TextFpShot;
+import com.aliyuncs.mts.model.v20140618.QueryFpShotJobListResponse.FpShotJob.FpShotResult.TextFpShot.TextFpShotSlice;
+import com.aliyuncs.mts.model.v20140618.QueryFpShotJobListResponse.FpShotJob.FpShotResult.TextFpShot.TextFpShotSlice.InputFragment;
 import com.aliyuncs.mts.model.v20140618.QueryFpShotJobListResponse.FpShotJob.InputFile;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -122,6 +125,32 @@ public class QueryFpShotJobListResponseUnmarshaller {
 				fpShots.add(fpShot_);
 			}
 			fpShotResult.setFpShots(fpShots);
+
+			List<TextFpShot> textFpShots = new ArrayList<TextFpShot>();
+			for (int j = 0; j < _ctx.lengthValue("QueryFpShotJobListResponse.FpShotJobList["+ i +"].FpShotResult.TextFpShots.Length"); j++) {
+				TextFpShot textFpShot = new TextFpShot();
+				textFpShot.setPrimaryKey(_ctx.stringValue("QueryFpShotJobListResponse.FpShotJobList["+ i +"].FpShotResult.TextFpShots["+ j +"].PrimaryKey"));
+				textFpShot.setSimilarity(_ctx.stringValue("QueryFpShotJobListResponse.FpShotJobList["+ i +"].FpShotResult.TextFpShots["+ j +"].Similarity"));
+
+				List<TextFpShotSlice> textFpShotSlices = new ArrayList<TextFpShotSlice>();
+				for (int k = 0; k < _ctx.lengthValue("QueryFpShotJobListResponse.FpShotJobList["+ i +"].FpShotResult.TextFpShots["+ j +"].TextFpShotSlices.Length"); k++) {
+					TextFpShotSlice textFpShotSlice = new TextFpShotSlice();
+					textFpShotSlice.setSimilarity(_ctx.stringValue("QueryFpShotJobListResponse.FpShotJobList["+ i +"].FpShotResult.TextFpShots["+ j +"].TextFpShotSlices["+ k +"].Similarity"));
+					textFpShotSlice.setInputText(_ctx.stringValue("QueryFpShotJobListResponse.FpShotJobList["+ i +"].FpShotResult.TextFpShots["+ j +"].TextFpShotSlices["+ k +"].InputText"));
+					textFpShotSlice.setDuplicationText(_ctx.stringValue("QueryFpShotJobListResponse.FpShotJobList["+ i +"].FpShotResult.TextFpShots["+ j +"].TextFpShotSlices["+ k +"].DuplicationText"));
+
+					InputFragment inputFragment = new InputFragment();
+					inputFragment.setStart(_ctx.stringValue("QueryFpShotJobListResponse.FpShotJobList["+ i +"].FpShotResult.TextFpShots["+ j +"].TextFpShotSlices["+ k +"].InputFragment.Start"));
+					inputFragment.setDuration(_ctx.stringValue("QueryFpShotJobListResponse.FpShotJobList["+ i +"].FpShotResult.TextFpShots["+ j +"].TextFpShotSlices["+ k +"].InputFragment.Duration"));
+					textFpShotSlice.setInputFragment(inputFragment);
+
+					textFpShotSlices.add(textFpShotSlice);
+				}
+				textFpShot.setTextFpShotSlices(textFpShotSlices);
+
+				textFpShots.add(textFpShot);
+			}
+			fpShotResult.setTextFpShots(textFpShots);
 			fpShotJob.setFpShotResult(fpShotResult);
 
 			FpShotConfig fpShotConfig = new FpShotConfig();

@@ -15,26 +15,18 @@
 package com.aliyuncs.mts.model.v20140618;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.mts.transform.v20140618.StopIProductionJobResponseUnmarshaller;
+import com.aliyuncs.mts.transform.v20140618.SubmitOssFileCopyJobResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class StopIProductionJobResponse extends AcsResponse {
-
-	private String jobId;
+public class SubmitOssFileCopyJobResponse extends AcsResponse {
 
 	private String requestId;
 
-	public String getJobId() {
-		return this.jobId;
-	}
-
-	public void setJobId(String jobId) {
-		this.jobId = jobId;
-	}
+	private String jobId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -44,8 +36,21 @@ public class StopIProductionJobResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public String getJobId() {
+		return this.jobId;
+	}
+
+	public void setJobId(String jobId) {
+		this.jobId = jobId;
+	}
+
 	@Override
-	public StopIProductionJobResponse getInstance(UnmarshallerContext context) {
-		return	StopIProductionJobResponseUnmarshaller.unmarshall(this, context);
+	public SubmitOssFileCopyJobResponse getInstance(UnmarshallerContext context) {
+		return	SubmitOssFileCopyJobResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }
