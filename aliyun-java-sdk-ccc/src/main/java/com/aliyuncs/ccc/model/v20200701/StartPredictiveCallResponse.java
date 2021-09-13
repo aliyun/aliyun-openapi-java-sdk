@@ -17,14 +17,14 @@ package com.aliyuncs.ccc.model.v20200701;
 import java.util.List;
 import java.util.Map;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ccc.transform.v20200701.PollUserStatusResponseUnmarshaller;
+import com.aliyuncs.ccc.transform.v20200701.StartPredictiveCallResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class PollUserStatusResponse extends AcsResponse {
+public class StartPredictiveCallResponse extends AcsResponse {
 
 	private String code;
 
@@ -88,19 +88,9 @@ public class PollUserStatusResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Long contextId;
-
 		private CallContext callContext;
 
 		private UserContext userContext;
-
-		public Long getContextId() {
-			return this.contextId;
-		}
-
-		public void setContextId(Long contextId) {
-			this.contextId = contextId;
-		}
 
 		public CallContext getCallContext() {
 			return this.callContext;
@@ -162,8 +152,6 @@ public class PollUserStatusResponse extends AcsResponse {
 
 			public static class ChannelContext {
 
-				private Integer index;
-
 				private String releaseInitiator;
 
 				private String channelState;
@@ -174,8 +162,6 @@ public class PollUserStatusResponse extends AcsResponse {
 
 				private String channelFlags;
 
-				private String skillGroupId;
-
 				private Long timestamp;
 
 				private Map<Object,Object> associatedData;
@@ -184,23 +170,13 @@ public class PollUserStatusResponse extends AcsResponse {
 
 				private String callType;
 
-				private String channelVariables;
-
 				private String jobId;
 
 				private String channelId;
 
-				private String userExtension;
-
 				private String originator;
 
-				public Integer getIndex() {
-					return this.index;
-				}
-
-				public void setIndex(Integer index) {
-					this.index = index;
-				}
+				private String userExtension;
 
 				public String getReleaseInitiator() {
 					return this.releaseInitiator;
@@ -242,14 +218,6 @@ public class PollUserStatusResponse extends AcsResponse {
 					this.channelFlags = channelFlags;
 				}
 
-				public String getSkillGroupId() {
-					return this.skillGroupId;
-				}
-
-				public void setSkillGroupId(String skillGroupId) {
-					this.skillGroupId = skillGroupId;
-				}
-
 				public Long getTimestamp() {
 					return this.timestamp;
 				}
@@ -282,14 +250,6 @@ public class PollUserStatusResponse extends AcsResponse {
 					this.callType = callType;
 				}
 
-				public String getChannelVariables() {
-					return this.channelVariables;
-				}
-
-				public void setChannelVariables(String channelVariables) {
-					this.channelVariables = channelVariables;
-				}
-
 				public String getJobId() {
 					return this.jobId;
 				}
@@ -306,20 +266,20 @@ public class PollUserStatusResponse extends AcsResponse {
 					this.channelId = channelId;
 				}
 
-				public String getUserExtension() {
-					return this.userExtension;
-				}
-
-				public void setUserExtension(String userExtension) {
-					this.userExtension = userExtension;
-				}
-
 				public String getOriginator() {
 					return this.originator;
 				}
 
 				public void setOriginator(String originator) {
 					this.originator = originator;
+				}
+
+				public String getUserExtension() {
+					return this.userExtension;
+				}
+
+				public void setUserExtension(String userExtension) {
+					this.userExtension = userExtension;
 				}
 			}
 		}
@@ -343,6 +303,8 @@ public class PollUserStatusResponse extends AcsResponse {
 			private String instanceId;
 
 			private Boolean outboundScenario;
+
+			private String deviceState;
 
 			private String mobile;
 
@@ -424,6 +386,14 @@ public class PollUserStatusResponse extends AcsResponse {
 				this.outboundScenario = outboundScenario;
 			}
 
+			public String getDeviceState() {
+				return this.deviceState;
+			}
+
+			public void setDeviceState(String deviceState) {
+				this.deviceState = deviceState;
+			}
+
 			public String getMobile() {
 				return this.mobile;
 			}
@@ -459,8 +429,8 @@ public class PollUserStatusResponse extends AcsResponse {
 	}
 
 	@Override
-	public PollUserStatusResponse getInstance(UnmarshallerContext context) {
-		return	PollUserStatusResponseUnmarshaller.unmarshall(this, context);
+	public StartPredictiveCallResponse getInstance(UnmarshallerContext context) {
+		return	StartPredictiveCallResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

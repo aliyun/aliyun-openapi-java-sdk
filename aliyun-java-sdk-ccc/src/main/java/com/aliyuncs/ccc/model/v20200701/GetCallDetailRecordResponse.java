@@ -77,43 +77,47 @@ public class GetCallDetailRecordResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String agentIds;
-
-		private String agentNames;
-
-		private String calledNumber;
-
-		private String callingNumber;
+		private String releaseInitiator;
 
 		private String contactDisposition;
 
-		private String contactId;
-
 		private String contactType;
 
+		private String agentIds;
+
 		private Long callDuration;
+
+		private Boolean recordingReady;
 
 		private Long establishedTime;
 
 		private String instanceId;
 
-		private Long startTime;
-
-		private Long releaseTime;
-
-		private String skillGroupIds;
-
-		private String skillGroupNames;
-
 		private Boolean satisfactionSurveyOffered;
+
+		private String calledNumber;
+
+		private String agentNames;
 
 		private Integer satisfaction;
 
+		private Long startTime;
+
+		private String contactId;
+
 		private String satisfactionSurveyChannel;
 
-		private String releaseInitiator;
+		private Long releaseTime;
 
-		private Boolean recordingReady;
+		private String callingNumber;
+
+		private String skillGroupNames;
+
+		private String skillGroupIds;
+
+		private String callerLocation;
+
+		private String calleeLocation;
 
 		private List<AgentEventsItem> agentEvents;
 
@@ -121,36 +125,12 @@ public class GetCallDetailRecordResponse extends AcsResponse {
 
 		private List<QueueEventsItem> queueEvents;
 
-		public String getAgentIds() {
-			return this.agentIds;
+		public String getReleaseInitiator() {
+			return this.releaseInitiator;
 		}
 
-		public void setAgentIds(String agentIds) {
-			this.agentIds = agentIds;
-		}
-
-		public String getAgentNames() {
-			return this.agentNames;
-		}
-
-		public void setAgentNames(String agentNames) {
-			this.agentNames = agentNames;
-		}
-
-		public String getCalledNumber() {
-			return this.calledNumber;
-		}
-
-		public void setCalledNumber(String calledNumber) {
-			this.calledNumber = calledNumber;
-		}
-
-		public String getCallingNumber() {
-			return this.callingNumber;
-		}
-
-		public void setCallingNumber(String callingNumber) {
-			this.callingNumber = callingNumber;
+		public void setReleaseInitiator(String releaseInitiator) {
+			this.releaseInitiator = releaseInitiator;
 		}
 
 		public String getContactDisposition() {
@@ -161,14 +141,6 @@ public class GetCallDetailRecordResponse extends AcsResponse {
 			this.contactDisposition = contactDisposition;
 		}
 
-		public String getContactId() {
-			return this.contactId;
-		}
-
-		public void setContactId(String contactId) {
-			this.contactId = contactId;
-		}
-
 		public String getContactType() {
 			return this.contactType;
 		}
@@ -177,12 +149,28 @@ public class GetCallDetailRecordResponse extends AcsResponse {
 			this.contactType = contactType;
 		}
 
+		public String getAgentIds() {
+			return this.agentIds;
+		}
+
+		public void setAgentIds(String agentIds) {
+			this.agentIds = agentIds;
+		}
+
 		public Long getCallDuration() {
 			return this.callDuration;
 		}
 
 		public void setCallDuration(Long callDuration) {
 			this.callDuration = callDuration;
+		}
+
+		public Boolean getRecordingReady() {
+			return this.recordingReady;
+		}
+
+		public void setRecordingReady(Boolean recordingReady) {
+			this.recordingReady = recordingReady;
 		}
 
 		public Long getEstablishedTime() {
@@ -201,44 +189,28 @@ public class GetCallDetailRecordResponse extends AcsResponse {
 			this.instanceId = instanceId;
 		}
 
-		public Long getStartTime() {
-			return this.startTime;
-		}
-
-		public void setStartTime(Long startTime) {
-			this.startTime = startTime;
-		}
-
-		public Long getReleaseTime() {
-			return this.releaseTime;
-		}
-
-		public void setReleaseTime(Long releaseTime) {
-			this.releaseTime = releaseTime;
-		}
-
-		public String getSkillGroupIds() {
-			return this.skillGroupIds;
-		}
-
-		public void setSkillGroupIds(String skillGroupIds) {
-			this.skillGroupIds = skillGroupIds;
-		}
-
-		public String getSkillGroupNames() {
-			return this.skillGroupNames;
-		}
-
-		public void setSkillGroupNames(String skillGroupNames) {
-			this.skillGroupNames = skillGroupNames;
-		}
-
 		public Boolean getSatisfactionSurveyOffered() {
 			return this.satisfactionSurveyOffered;
 		}
 
 		public void setSatisfactionSurveyOffered(Boolean satisfactionSurveyOffered) {
 			this.satisfactionSurveyOffered = satisfactionSurveyOffered;
+		}
+
+		public String getCalledNumber() {
+			return this.calledNumber;
+		}
+
+		public void setCalledNumber(String calledNumber) {
+			this.calledNumber = calledNumber;
+		}
+
+		public String getAgentNames() {
+			return this.agentNames;
+		}
+
+		public void setAgentNames(String agentNames) {
+			this.agentNames = agentNames;
 		}
 
 		public Integer getSatisfaction() {
@@ -249,6 +221,22 @@ public class GetCallDetailRecordResponse extends AcsResponse {
 			this.satisfaction = satisfaction;
 		}
 
+		public Long getStartTime() {
+			return this.startTime;
+		}
+
+		public void setStartTime(Long startTime) {
+			this.startTime = startTime;
+		}
+
+		public String getContactId() {
+			return this.contactId;
+		}
+
+		public void setContactId(String contactId) {
+			this.contactId = contactId;
+		}
+
 		public String getSatisfactionSurveyChannel() {
 			return this.satisfactionSurveyChannel;
 		}
@@ -257,20 +245,52 @@ public class GetCallDetailRecordResponse extends AcsResponse {
 			this.satisfactionSurveyChannel = satisfactionSurveyChannel;
 		}
 
-		public String getReleaseInitiator() {
-			return this.releaseInitiator;
+		public Long getReleaseTime() {
+			return this.releaseTime;
 		}
 
-		public void setReleaseInitiator(String releaseInitiator) {
-			this.releaseInitiator = releaseInitiator;
+		public void setReleaseTime(Long releaseTime) {
+			this.releaseTime = releaseTime;
 		}
 
-		public Boolean getRecordingReady() {
-			return this.recordingReady;
+		public String getCallingNumber() {
+			return this.callingNumber;
 		}
 
-		public void setRecordingReady(Boolean recordingReady) {
-			this.recordingReady = recordingReady;
+		public void setCallingNumber(String callingNumber) {
+			this.callingNumber = callingNumber;
+		}
+
+		public String getSkillGroupNames() {
+			return this.skillGroupNames;
+		}
+
+		public void setSkillGroupNames(String skillGroupNames) {
+			this.skillGroupNames = skillGroupNames;
+		}
+
+		public String getSkillGroupIds() {
+			return this.skillGroupIds;
+		}
+
+		public void setSkillGroupIds(String skillGroupIds) {
+			this.skillGroupIds = skillGroupIds;
+		}
+
+		public String getCallerLocation() {
+			return this.callerLocation;
+		}
+
+		public void setCallerLocation(String callerLocation) {
+			this.callerLocation = callerLocation;
+		}
+
+		public String getCalleeLocation() {
+			return this.calleeLocation;
+		}
+
+		public void setCalleeLocation(String calleeLocation) {
+			this.calleeLocation = calleeLocation;
 		}
 
 		public List<AgentEventsItem> getAgentEvents() {
@@ -299,21 +319,13 @@ public class GetCallDetailRecordResponse extends AcsResponse {
 
 		public static class AgentEventsItem {
 
-			private String agentId;
-
 			private String agentName;
+
+			private String agentId;
 
 			private String skillGroupId;
 
 			private List<EventSequenceItem> eventSequence;
-
-			public String getAgentId() {
-				return this.agentId;
-			}
-
-			public void setAgentId(String agentId) {
-				this.agentId = agentId;
-			}
 
 			public String getAgentName() {
 				return this.agentName;
@@ -321,6 +333,14 @@ public class GetCallDetailRecordResponse extends AcsResponse {
 
 			public void setAgentName(String agentName) {
 				this.agentName = agentName;
+			}
+
+			public String getAgentId() {
+				return this.agentId;
+			}
+
+			public void setAgentId(String agentId) {
+				this.agentId = agentId;
 			}
 
 			public String getSkillGroupId() {
@@ -411,23 +431,15 @@ public class GetCallDetailRecordResponse extends AcsResponse {
 
 		public static class QueueEventsItem {
 
-			private String flowId;
-
 			private String queueId;
 
 			private String queueName;
 
+			private String flowId;
+
 			private Integer queueType;
 
 			private List<EventSequenceItem4> eventSequence3;
-
-			public String getFlowId() {
-				return this.flowId;
-			}
-
-			public void setFlowId(String flowId) {
-				this.flowId = flowId;
-			}
 
 			public String getQueueId() {
 				return this.queueId;
@@ -443,6 +455,14 @@ public class GetCallDetailRecordResponse extends AcsResponse {
 
 			public void setQueueName(String queueName) {
 				this.queueName = queueName;
+			}
+
+			public String getFlowId() {
+				return this.flowId;
+			}
+
+			public void setFlowId(String flowId) {
+				this.flowId = flowId;
 			}
 
 			public Integer getQueueType() {

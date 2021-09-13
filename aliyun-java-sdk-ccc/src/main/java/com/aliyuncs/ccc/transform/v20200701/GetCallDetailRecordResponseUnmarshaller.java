@@ -38,31 +38,33 @@ public class GetCallDetailRecordResponseUnmarshaller {
 		getCallDetailRecordResponse.setMessage(_ctx.stringValue("GetCallDetailRecordResponse.Message"));
 
 		Data data = new Data();
-		data.setAgentIds(_ctx.stringValue("GetCallDetailRecordResponse.Data.AgentIds"));
-		data.setAgentNames(_ctx.stringValue("GetCallDetailRecordResponse.Data.AgentNames"));
-		data.setCalledNumber(_ctx.stringValue("GetCallDetailRecordResponse.Data.CalledNumber"));
-		data.setCallingNumber(_ctx.stringValue("GetCallDetailRecordResponse.Data.CallingNumber"));
+		data.setReleaseInitiator(_ctx.stringValue("GetCallDetailRecordResponse.Data.ReleaseInitiator"));
 		data.setContactDisposition(_ctx.stringValue("GetCallDetailRecordResponse.Data.ContactDisposition"));
-		data.setContactId(_ctx.stringValue("GetCallDetailRecordResponse.Data.ContactId"));
 		data.setContactType(_ctx.stringValue("GetCallDetailRecordResponse.Data.ContactType"));
+		data.setAgentIds(_ctx.stringValue("GetCallDetailRecordResponse.Data.AgentIds"));
 		data.setCallDuration(_ctx.longValue("GetCallDetailRecordResponse.Data.CallDuration"));
+		data.setRecordingReady(_ctx.booleanValue("GetCallDetailRecordResponse.Data.RecordingReady"));
 		data.setEstablishedTime(_ctx.longValue("GetCallDetailRecordResponse.Data.EstablishedTime"));
 		data.setInstanceId(_ctx.stringValue("GetCallDetailRecordResponse.Data.InstanceId"));
-		data.setStartTime(_ctx.longValue("GetCallDetailRecordResponse.Data.StartTime"));
-		data.setReleaseTime(_ctx.longValue("GetCallDetailRecordResponse.Data.ReleaseTime"));
-		data.setSkillGroupIds(_ctx.stringValue("GetCallDetailRecordResponse.Data.SkillGroupIds"));
-		data.setSkillGroupNames(_ctx.stringValue("GetCallDetailRecordResponse.Data.SkillGroupNames"));
 		data.setSatisfactionSurveyOffered(_ctx.booleanValue("GetCallDetailRecordResponse.Data.SatisfactionSurveyOffered"));
+		data.setCalledNumber(_ctx.stringValue("GetCallDetailRecordResponse.Data.CalledNumber"));
+		data.setAgentNames(_ctx.stringValue("GetCallDetailRecordResponse.Data.AgentNames"));
 		data.setSatisfaction(_ctx.integerValue("GetCallDetailRecordResponse.Data.Satisfaction"));
+		data.setStartTime(_ctx.longValue("GetCallDetailRecordResponse.Data.StartTime"));
+		data.setContactId(_ctx.stringValue("GetCallDetailRecordResponse.Data.ContactId"));
 		data.setSatisfactionSurveyChannel(_ctx.stringValue("GetCallDetailRecordResponse.Data.SatisfactionSurveyChannel"));
-		data.setReleaseInitiator(_ctx.stringValue("GetCallDetailRecordResponse.Data.ReleaseInitiator"));
-		data.setRecordingReady(_ctx.booleanValue("GetCallDetailRecordResponse.Data.RecordingReady"));
+		data.setReleaseTime(_ctx.longValue("GetCallDetailRecordResponse.Data.ReleaseTime"));
+		data.setCallingNumber(_ctx.stringValue("GetCallDetailRecordResponse.Data.CallingNumber"));
+		data.setSkillGroupNames(_ctx.stringValue("GetCallDetailRecordResponse.Data.SkillGroupNames"));
+		data.setSkillGroupIds(_ctx.stringValue("GetCallDetailRecordResponse.Data.SkillGroupIds"));
+		data.setCallerLocation(_ctx.stringValue("GetCallDetailRecordResponse.Data.CallerLocation"));
+		data.setCalleeLocation(_ctx.stringValue("GetCallDetailRecordResponse.Data.CalleeLocation"));
 
 		List<AgentEventsItem> agentEvents = new ArrayList<AgentEventsItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetCallDetailRecordResponse.Data.AgentEvents.Length"); i++) {
 			AgentEventsItem agentEventsItem = new AgentEventsItem();
-			agentEventsItem.setAgentId(_ctx.stringValue("GetCallDetailRecordResponse.Data.AgentEvents["+ i +"].AgentId"));
 			agentEventsItem.setAgentName(_ctx.stringValue("GetCallDetailRecordResponse.Data.AgentEvents["+ i +"].AgentName"));
+			agentEventsItem.setAgentId(_ctx.stringValue("GetCallDetailRecordResponse.Data.AgentEvents["+ i +"].AgentId"));
 			agentEventsItem.setSkillGroupId(_ctx.stringValue("GetCallDetailRecordResponse.Data.AgentEvents["+ i +"].SkillGroupId"));
 
 			List<EventSequenceItem> eventSequence = new ArrayList<EventSequenceItem>();
@@ -101,9 +103,9 @@ public class GetCallDetailRecordResponseUnmarshaller {
 		List<QueueEventsItem> queueEvents = new ArrayList<QueueEventsItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetCallDetailRecordResponse.Data.QueueEvents.Length"); i++) {
 			QueueEventsItem queueEventsItem = new QueueEventsItem();
-			queueEventsItem.setFlowId(_ctx.stringValue("GetCallDetailRecordResponse.Data.QueueEvents["+ i +"].FlowId"));
 			queueEventsItem.setQueueId(_ctx.stringValue("GetCallDetailRecordResponse.Data.QueueEvents["+ i +"].QueueId"));
 			queueEventsItem.setQueueName(_ctx.stringValue("GetCallDetailRecordResponse.Data.QueueEvents["+ i +"].QueueName"));
+			queueEventsItem.setFlowId(_ctx.stringValue("GetCallDetailRecordResponse.Data.QueueEvents["+ i +"].FlowId"));
 			queueEventsItem.setQueueType(_ctx.integerValue("GetCallDetailRecordResponse.Data.QueueEvents["+ i +"].QueueType"));
 
 			List<EventSequenceItem4> eventSequence3 = new ArrayList<EventSequenceItem4>();

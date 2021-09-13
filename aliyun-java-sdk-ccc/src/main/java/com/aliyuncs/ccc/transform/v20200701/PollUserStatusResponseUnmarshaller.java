@@ -52,22 +52,22 @@ public class PollUserStatusResponseUnmarshaller {
 		List<ChannelContext> channelContexts = new ArrayList<ChannelContext>();
 		for (int i = 0; i < _ctx.lengthValue("PollUserStatusResponse.Data.CallContext.ChannelContexts.Length"); i++) {
 			ChannelContext channelContext = new ChannelContext();
-			channelContext.setAssociatedData(_ctx.mapValue("PollUserStatusResponse.Data.CallContext.ChannelContexts["+ i +"].AssociatedData"));
-			channelContext.setCallType(_ctx.stringValue("PollUserStatusResponse.Data.CallContext.ChannelContexts["+ i +"].CallType"));
-			channelContext.setChannelFlags(_ctx.stringValue("PollUserStatusResponse.Data.CallContext.ChannelContexts["+ i +"].ChannelFlags"));
-			channelContext.setChannelId(_ctx.stringValue("PollUserStatusResponse.Data.CallContext.ChannelContexts["+ i +"].ChannelId"));
+			channelContext.setIndex(_ctx.integerValue("PollUserStatusResponse.Data.CallContext.ChannelContexts["+ i +"].Index"));
+			channelContext.setReleaseInitiator(_ctx.stringValue("PollUserStatusResponse.Data.CallContext.ChannelContexts["+ i +"].ReleaseInitiator"));
 			channelContext.setChannelState(_ctx.stringValue("PollUserStatusResponse.Data.CallContext.ChannelContexts["+ i +"].ChannelState"));
 			channelContext.setDestination(_ctx.stringValue("PollUserStatusResponse.Data.CallContext.ChannelContexts["+ i +"].Destination"));
-			channelContext.setIndex(_ctx.integerValue("PollUserStatusResponse.Data.CallContext.ChannelContexts["+ i +"].Index"));
-			channelContext.setJobId(_ctx.stringValue("PollUserStatusResponse.Data.CallContext.ChannelContexts["+ i +"].JobId"));
-			channelContext.setOriginator(_ctx.stringValue("PollUserStatusResponse.Data.CallContext.ChannelContexts["+ i +"].Originator"));
-			channelContext.setReleaseInitiator(_ctx.stringValue("PollUserStatusResponse.Data.CallContext.ChannelContexts["+ i +"].ReleaseInitiator"));
-			channelContext.setReleaseReason(_ctx.stringValue("PollUserStatusResponse.Data.CallContext.ChannelContexts["+ i +"].ReleaseReason"));
+			channelContext.setUserId(_ctx.stringValue("PollUserStatusResponse.Data.CallContext.ChannelContexts["+ i +"].UserId"));
+			channelContext.setChannelFlags(_ctx.stringValue("PollUserStatusResponse.Data.CallContext.ChannelContexts["+ i +"].ChannelFlags"));
 			channelContext.setSkillGroupId(_ctx.stringValue("PollUserStatusResponse.Data.CallContext.ChannelContexts["+ i +"].SkillGroupId"));
 			channelContext.setTimestamp(_ctx.longValue("PollUserStatusResponse.Data.CallContext.ChannelContexts["+ i +"].Timestamp"));
-			channelContext.setUserExtension(_ctx.stringValue("PollUserStatusResponse.Data.CallContext.ChannelContexts["+ i +"].UserExtension"));
-			channelContext.setUserId(_ctx.stringValue("PollUserStatusResponse.Data.CallContext.ChannelContexts["+ i +"].UserId"));
+			channelContext.setAssociatedData(_ctx.mapValue("PollUserStatusResponse.Data.CallContext.ChannelContexts["+ i +"].AssociatedData"));
+			channelContext.setReleaseReason(_ctx.stringValue("PollUserStatusResponse.Data.CallContext.ChannelContexts["+ i +"].ReleaseReason"));
+			channelContext.setCallType(_ctx.stringValue("PollUserStatusResponse.Data.CallContext.ChannelContexts["+ i +"].CallType"));
 			channelContext.setChannelVariables(_ctx.stringValue("PollUserStatusResponse.Data.CallContext.ChannelContexts["+ i +"].ChannelVariables"));
+			channelContext.setJobId(_ctx.stringValue("PollUserStatusResponse.Data.CallContext.ChannelContexts["+ i +"].JobId"));
+			channelContext.setChannelId(_ctx.stringValue("PollUserStatusResponse.Data.CallContext.ChannelContexts["+ i +"].ChannelId"));
+			channelContext.setUserExtension(_ctx.stringValue("PollUserStatusResponse.Data.CallContext.ChannelContexts["+ i +"].UserExtension"));
+			channelContext.setOriginator(_ctx.stringValue("PollUserStatusResponse.Data.CallContext.ChannelContexts["+ i +"].Originator"));
 
 			channelContexts.add(channelContext);
 		}
@@ -75,18 +75,18 @@ public class PollUserStatusResponseUnmarshaller {
 		data.setCallContext(callContext);
 
 		UserContext userContext = new UserContext();
-		userContext.setBreakCode(_ctx.stringValue("PollUserStatusResponse.Data.UserContext.BreakCode"));
-		userContext.setDeviceId(_ctx.stringValue("PollUserStatusResponse.Data.UserContext.DeviceId"));
 		userContext.setExtension(_ctx.stringValue("PollUserStatusResponse.Data.UserContext.Extension"));
 		userContext.setHeartbeat(_ctx.longValue("PollUserStatusResponse.Data.UserContext.Heartbeat"));
-		userContext.setInstanceId(_ctx.stringValue("PollUserStatusResponse.Data.UserContext.InstanceId"));
-		userContext.setJobId(_ctx.stringValue("PollUserStatusResponse.Data.UserContext.JobId"));
-		userContext.setMobile(_ctx.stringValue("PollUserStatusResponse.Data.UserContext.Mobile"));
-		userContext.setOutboundScenario(_ctx.booleanValue("PollUserStatusResponse.Data.UserContext.OutboundScenario"));
-		userContext.setReserved(_ctx.longValue("PollUserStatusResponse.Data.UserContext.Reserved"));
-		userContext.setUserId(_ctx.stringValue("PollUserStatusResponse.Data.UserContext.UserId"));
-		userContext.setUserState(_ctx.stringValue("PollUserStatusResponse.Data.UserContext.UserState"));
 		userContext.setWorkMode(_ctx.stringValue("PollUserStatusResponse.Data.UserContext.WorkMode"));
+		userContext.setDeviceId(_ctx.stringValue("PollUserStatusResponse.Data.UserContext.DeviceId"));
+		userContext.setUserId(_ctx.stringValue("PollUserStatusResponse.Data.UserContext.UserId"));
+		userContext.setReserved(_ctx.longValue("PollUserStatusResponse.Data.UserContext.Reserved"));
+		userContext.setBreakCode(_ctx.stringValue("PollUserStatusResponse.Data.UserContext.BreakCode"));
+		userContext.setInstanceId(_ctx.stringValue("PollUserStatusResponse.Data.UserContext.InstanceId"));
+		userContext.setOutboundScenario(_ctx.booleanValue("PollUserStatusResponse.Data.UserContext.OutboundScenario"));
+		userContext.setMobile(_ctx.stringValue("PollUserStatusResponse.Data.UserContext.Mobile"));
+		userContext.setJobId(_ctx.stringValue("PollUserStatusResponse.Data.UserContext.JobId"));
+		userContext.setUserState(_ctx.stringValue("PollUserStatusResponse.Data.UserContext.UserState"));
 
 		List<String> signedSkillGroupIdList = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("PollUserStatusResponse.Data.UserContext.SignedSkillGroupIdList.Length"); i++) {

@@ -22,14 +22,14 @@ import com.aliyuncs.ccc.Endpoint;
  * @author auto create
  * @version 
  */
-public class StartBack2BackCallRequest extends RpcAcsRequest<StartBack2BackCallResponse> {
+public class StartPredictiveCallRequest extends RpcAcsRequest<StartPredictiveCallResponse> {
 	   
+
+	private String contactFlowId;
 
 	private String callee;
 
-	private String broker;
-
-	private String additionalBroker;
+	private String contactFlowVariables;
 
 	private String tags;
 
@@ -38,13 +38,24 @@ public class StartBack2BackCallRequest extends RpcAcsRequest<StartBack2BackCallR
 	private String caller;
 
 	private String instanceId;
-	public StartBack2BackCallRequest() {
-		super("CCC", "2020-07-01", "StartBack2BackCall", "CCC");
+	public StartPredictiveCallRequest() {
+		super("CCC", "2020-07-01", "StartPredictiveCall", "CCC");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getContactFlowId() {
+		return this.contactFlowId;
+	}
+
+	public void setContactFlowId(String contactFlowId) {
+		this.contactFlowId = contactFlowId;
+		if(contactFlowId != null){
+			putQueryParameter("ContactFlowId", contactFlowId);
+		}
 	}
 
 	public String getCallee() {
@@ -58,25 +69,14 @@ public class StartBack2BackCallRequest extends RpcAcsRequest<StartBack2BackCallR
 		}
 	}
 
-	public String getBroker() {
-		return this.broker;
+	public String getContactFlowVariables() {
+		return this.contactFlowVariables;
 	}
 
-	public void setBroker(String broker) {
-		this.broker = broker;
-		if(broker != null){
-			putQueryParameter("Broker", broker);
-		}
-	}
-
-	public String getAdditionalBroker() {
-		return this.additionalBroker;
-	}
-
-	public void setAdditionalBroker(String additionalBroker) {
-		this.additionalBroker = additionalBroker;
-		if(additionalBroker != null){
-			putQueryParameter("AdditionalBroker", additionalBroker);
+	public void setContactFlowVariables(String contactFlowVariables) {
+		this.contactFlowVariables = contactFlowVariables;
+		if(contactFlowVariables != null){
+			putQueryParameter("ContactFlowVariables", contactFlowVariables);
 		}
 	}
 
@@ -125,8 +125,8 @@ public class StartBack2BackCallRequest extends RpcAcsRequest<StartBack2BackCallR
 	}
 
 	@Override
-	public Class<StartBack2BackCallResponse> getResponseClass() {
-		return StartBack2BackCallResponse.class;
+	public Class<StartPredictiveCallResponse> getResponseClass() {
+		return StartPredictiveCallResponse.class;
 	}
 
 }

@@ -31,6 +31,8 @@ public class MakeCallRequest extends RpcAcsRequest<MakeCallResponse> {
 
 	private String deviceId;
 
+	private String tags;
+
 	private Integer timeoutSeconds;
 
 	private String caller;
@@ -75,6 +77,17 @@ public class MakeCallRequest extends RpcAcsRequest<MakeCallResponse> {
 		this.deviceId = deviceId;
 		if(deviceId != null){
 			putQueryParameter("DeviceId", deviceId);
+		}
+	}
+
+	public String getTags() {
+		return this.tags;
+	}
+
+	public void setTags(String tags) {
+		this.tags = tags;
+		if(tags != null){
+			putQueryParameter("Tags", tags);
 		}
 	}
 
