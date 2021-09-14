@@ -1,3 +1,8 @@
+2021-09-14 Version: 1.9.0
+- Support add workspace member.
+- Support remove workspace member.
+- Support Give Screen.
+
 2020-12-17 Version: 1.0.3
 - Support DeleteDatasourceUserAssociation.
 - Support SetDatasourceUserAssociation.
