@@ -91,6 +91,8 @@ public class SearchFaceResponse extends AcsResponse {
 
 				private String dbName;
 
+				private Float confidence;
+
 				public String getEntityId() {
 					return this.entityId;
 				}
@@ -129,6 +131,14 @@ public class SearchFaceResponse extends AcsResponse {
 
 				public void setDbName(String dbName) {
 					this.dbName = dbName;
+				}
+
+				public Float getConfidence() {
+					return this.confidence;
+				}
+
+				public void setConfidence(Float confidence) {
+					this.confidence = confidence;
 				}
 			}
 

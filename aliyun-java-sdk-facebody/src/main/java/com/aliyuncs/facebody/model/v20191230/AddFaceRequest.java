@@ -27,7 +27,13 @@ public class AddFaceRequest extends RpcAcsRequest<AddFaceResponse> {
 
 	private String entityId;
 
+	private Float qualityScoreThreshold;
+
+	private Float similarityScoreThresholdBetweenEntity;
+
 	private String extraData;
+
+	private Float similarityScoreThresholdInEntity;
 
 	private String dbName;
 
@@ -52,6 +58,28 @@ public class AddFaceRequest extends RpcAcsRequest<AddFaceResponse> {
 		}
 	}
 
+	public Float getQualityScoreThreshold() {
+		return this.qualityScoreThreshold;
+	}
+
+	public void setQualityScoreThreshold(Float qualityScoreThreshold) {
+		this.qualityScoreThreshold = qualityScoreThreshold;
+		if(qualityScoreThreshold != null){
+			putBodyParameter("QualityScoreThreshold", qualityScoreThreshold.toString());
+		}
+	}
+
+	public Float getSimilarityScoreThresholdBetweenEntity() {
+		return this.similarityScoreThresholdBetweenEntity;
+	}
+
+	public void setSimilarityScoreThresholdBetweenEntity(Float similarityScoreThresholdBetweenEntity) {
+		this.similarityScoreThresholdBetweenEntity = similarityScoreThresholdBetweenEntity;
+		if(similarityScoreThresholdBetweenEntity != null){
+			putBodyParameter("SimilarityScoreThresholdBetweenEntity", similarityScoreThresholdBetweenEntity.toString());
+		}
+	}
+
 	public String getExtraData() {
 		return this.extraData;
 	}
@@ -60,6 +88,17 @@ public class AddFaceRequest extends RpcAcsRequest<AddFaceResponse> {
 		this.extraData = extraData;
 		if(extraData != null){
 			putBodyParameter("ExtraData", extraData);
+		}
+	}
+
+	public Float getSimilarityScoreThresholdInEntity() {
+		return this.similarityScoreThresholdInEntity;
+	}
+
+	public void setSimilarityScoreThresholdInEntity(Float similarityScoreThresholdInEntity) {
+		this.similarityScoreThresholdInEntity = similarityScoreThresholdInEntity;
+		if(similarityScoreThresholdInEntity != null){
+			putBodyParameter("SimilarityScoreThresholdInEntity", similarityScoreThresholdInEntity.toString());
 		}
 	}
 

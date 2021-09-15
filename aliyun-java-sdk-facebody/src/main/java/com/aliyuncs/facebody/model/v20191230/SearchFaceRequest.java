@@ -25,6 +25,8 @@ import com.aliyuncs.facebody.Endpoint;
 public class SearchFaceRequest extends RpcAcsRequest<SearchFaceResponse> {
 	   
 
+	private Float qualityScoreThreshold;
+
 	private Integer limit;
 
 	private String dbNames;
@@ -39,6 +41,17 @@ public class SearchFaceRequest extends RpcAcsRequest<SearchFaceResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Float getQualityScoreThreshold() {
+		return this.qualityScoreThreshold;
+	}
+
+	public void setQualityScoreThreshold(Float qualityScoreThreshold) {
+		this.qualityScoreThreshold = qualityScoreThreshold;
+		if(qualityScoreThreshold != null){
+			putBodyParameter("QualityScoreThreshold", qualityScoreThreshold.toString());
+		}
 	}
 
 	public Integer getLimit() {
@@ -59,7 +72,7 @@ public class SearchFaceRequest extends RpcAcsRequest<SearchFaceResponse> {
 	public void setDbNames(String dbNames) {
 		this.dbNames = dbNames;
 		if(dbNames != null){
-			putQueryParameter("DbNames", dbNames);
+			putBodyParameter("DbNames", dbNames);
 		}
 	}
 
