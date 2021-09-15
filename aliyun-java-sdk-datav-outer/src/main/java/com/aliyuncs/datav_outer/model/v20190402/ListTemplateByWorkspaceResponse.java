@@ -47,7 +47,7 @@ public class ListTemplateByWorkspaceResponse extends AcsResponse {
 
 	public static class TemplateInstance {
 
-		private Float iD;
+		private Long id;
 
 		private String name;
 
@@ -57,12 +57,12 @@ public class ListTemplateByWorkspaceResponse extends AcsResponse {
 
 		private String size;
 
-		public Float getID() {
-			return this.iD;
+		public Long getId() {
+			return this.id;
 		}
 
-		public void setID(Float iD) {
-			this.iD = iD;
+		public void setId(Long id) {
+			this.id = id;
 		}
 
 		public String getName() {

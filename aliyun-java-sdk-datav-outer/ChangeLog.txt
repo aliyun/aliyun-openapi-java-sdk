@@ -1,3 +1,6 @@
+2021-09-15 Version: 1.9.1
+- Add set screen.
+
 2021-09-14 Version: 1.9.0
 - Support add workspace member.
 - Support remove workspace member.

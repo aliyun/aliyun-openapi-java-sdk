@@ -31,7 +31,7 @@ public class ListTemplateByWorkspaceResponseUnmarshaller {
 		List<TemplateInstance> templates = new ArrayList<TemplateInstance>();
 		for (int i = 0; i < _ctx.lengthValue("ListTemplateByWorkspaceResponse.Templates.Length"); i++) {
 			TemplateInstance templateInstance = new TemplateInstance();
-			templateInstance.setID(_ctx.floatValue("ListTemplateByWorkspaceResponse.Templates["+ i +"].ID"));
+			templateInstance.setId(_ctx.longValue("ListTemplateByWorkspaceResponse.Templates["+ i +"].Id"));
 			templateInstance.setName(_ctx.stringValue("ListTemplateByWorkspaceResponse.Templates["+ i +"].Name"));
 			templateInstance.setSnapshot(_ctx.stringValue("ListTemplateByWorkspaceResponse.Templates["+ i +"].Snapshot"));
 			templateInstance.setThumbnail(_ctx.stringValue("ListTemplateByWorkspaceResponse.Templates["+ i +"].Thumbnail"));
