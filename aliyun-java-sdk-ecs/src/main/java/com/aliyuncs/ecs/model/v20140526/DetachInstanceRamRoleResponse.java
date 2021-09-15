@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DetachInstanceRamRoleResponse extends AcsResponse {
 
+	private String ramRoleName;
+
 	private String requestId;
 
 	private Integer totalCount;
 
 	private Integer failCount;
 
-	private String ramRoleName;
-
 	private List<DetachInstanceRamRoleResult> detachInstanceRamRoleResults;
+
+	public String getRamRoleName() {
+		return this.ramRoleName;
+	}
+
+	public void setRamRoleName(String ramRoleName) {
+		this.ramRoleName = ramRoleName;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -59,14 +67,6 @@ public class DetachInstanceRamRoleResponse extends AcsResponse {
 		this.failCount = failCount;
 	}
 
-	public String getRamRoleName() {
-		return this.ramRoleName;
-	}
-
-	public void setRamRoleName(String ramRoleName) {
-		this.ramRoleName = ramRoleName;
-	}
-
 	public List<DetachInstanceRamRoleResult> getDetachInstanceRamRoleResults() {
 		return this.detachInstanceRamRoleResults;
 	}
@@ -77,31 +77,15 @@ public class DetachInstanceRamRoleResponse extends AcsResponse {
 
 	public static class DetachInstanceRamRoleResult {
 
-		private String instanceId;
-
-		private Boolean success;
-
 		private String code;
 
 		private String message;
 
+		private String instanceId;
+
+		private Boolean success;
+
 		private List<InstanceRamRoleSet> instanceRamRoleSets;
-
-		public String getInstanceId() {
-			return this.instanceId;
-		}
-
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
-
-		public Boolean getSuccess() {
-			return this.success;
-		}
-
-		public void setSuccess(Boolean success) {
-			this.success = success;
-		}
 
 		public String getCode() {
 			return this.code;
@@ -119,6 +103,22 @@ public class DetachInstanceRamRoleResponse extends AcsResponse {
 			this.message = message;
 		}
 
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public Boolean getSuccess() {
+			return this.success;
+		}
+
+		public void setSuccess(Boolean success) {
+			this.success = success;
+		}
+
 		public List<InstanceRamRoleSet> getInstanceRamRoleSets() {
 			return this.instanceRamRoleSets;
 		}
@@ -129,17 +129,9 @@ public class DetachInstanceRamRoleResponse extends AcsResponse {
 
 		public static class InstanceRamRoleSet {
 
-			private String instanceId;
-
 			private String ramRoleName;
 
-			public String getInstanceId() {
-				return this.instanceId;
-			}
-
-			public void setInstanceId(String instanceId) {
-				this.instanceId = instanceId;
-			}
+			private String instanceId;
 
 			public String getRamRoleName() {
 				return this.ramRoleName;
@@ -147,6 +139,14 @@ public class DetachInstanceRamRoleResponse extends AcsResponse {
 
 			public void setRamRoleName(String ramRoleName) {
 				this.ramRoleName = ramRoleName;
+			}
+
+			public String getInstanceId() {
+				return this.instanceId;
+			}
+
+			public void setInstanceId(String instanceId) {
+				this.instanceId = instanceId;
 			}
 		}
 	}

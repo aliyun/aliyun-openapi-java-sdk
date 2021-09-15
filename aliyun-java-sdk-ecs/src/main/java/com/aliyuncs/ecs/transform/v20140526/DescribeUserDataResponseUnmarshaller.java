@@ -23,9 +23,9 @@ public class DescribeUserDataResponseUnmarshaller {
 	public static DescribeUserDataResponse unmarshall(DescribeUserDataResponse describeUserDataResponse, UnmarshallerContext _ctx) {
 		
 		describeUserDataResponse.setRequestId(_ctx.stringValue("DescribeUserDataResponse.RequestId"));
-		describeUserDataResponse.setRegionId(_ctx.stringValue("DescribeUserDataResponse.RegionId"));
 		describeUserDataResponse.setInstanceId(_ctx.stringValue("DescribeUserDataResponse.InstanceId"));
 		describeUserDataResponse.setUserData(_ctx.stringValue("DescribeUserDataResponse.UserData"));
+		describeUserDataResponse.setRegionId(_ctx.stringValue("DescribeUserDataResponse.RegionId"));
 	 
 	 	return describeUserDataResponse;
 	}

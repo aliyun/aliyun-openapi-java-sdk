@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeInstanceAttachmentAttributesResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer pageSize;
 
-	private Integer totalCount;
+	private String requestId;
 
 	private Integer pageNumber;
 
-	private Integer pageSize;
+	private Integer totalCount;
 
 	private List<Instance> instances;
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class DescribeInstanceAttachmentAttributesResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
 	}
 
 	public Integer getPageNumber() {
@@ -59,12 +59,12 @@ public class DescribeInstanceAttachmentAttributesResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public Integer getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<Instance> getInstances() {
@@ -79,9 +79,9 @@ public class DescribeInstanceAttachmentAttributesResponse extends AcsResponse {
 
 		private String instanceId;
 
-		private String privatePoolOptionsId;
-
 		private String privatePoolOptionsMatchCriteria;
+
+		private String privatePoolOptionsId;
 
 		public String getInstanceId() {
 			return this.instanceId;
@@ -91,20 +91,20 @@ public class DescribeInstanceAttachmentAttributesResponse extends AcsResponse {
 			this.instanceId = instanceId;
 		}
 
-		public String getPrivatePoolOptionsId() {
-			return this.privatePoolOptionsId;
-		}
-
-		public void setPrivatePoolOptionsId(String privatePoolOptionsId) {
-			this.privatePoolOptionsId = privatePoolOptionsId;
-		}
-
 		public String getPrivatePoolOptionsMatchCriteria() {
 			return this.privatePoolOptionsMatchCriteria;
 		}
 
 		public void setPrivatePoolOptionsMatchCriteria(String privatePoolOptionsMatchCriteria) {
 			this.privatePoolOptionsMatchCriteria = privatePoolOptionsMatchCriteria;
+		}
+
+		public String getPrivatePoolOptionsId() {
+			return this.privatePoolOptionsId;
+		}
+
+		public void setPrivatePoolOptionsId(String privatePoolOptionsId) {
+			this.privatePoolOptionsId = privatePoolOptionsId;
 		}
 	}
 

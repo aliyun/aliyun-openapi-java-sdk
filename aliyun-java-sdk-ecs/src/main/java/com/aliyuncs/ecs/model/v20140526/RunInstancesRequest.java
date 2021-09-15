@@ -42,6 +42,8 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 
 	private String password;
 
+	private SystemDisk systemDisk;
+
 	private Integer deploymentSetGroupNo;
 
 	private String systemDiskAutoSnapshotPolicyId;
@@ -282,6 +284,18 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 		if(password != null){
 			putQueryParameter("Password", password);
 		}
+	}
+
+	public SystemDisk getSystemDisk() {
+		return this.systemDisk;
+	}
+
+	public void setSystemDisk(SystemDisk systemDisk) {
+		this.systemDisk = systemDisk;	
+		if (systemDisk != null) {
+			
+				putQueryParameter("SystemDisk.StorageClusterId" , systemDisk.getStorageClusterId());
+		}	
 	}
 
 	public Integer getDeploymentSetGroupNo() {
@@ -1088,6 +1102,7 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 				putQueryParameter("DataDisk." + (depth1 + 1) + ".EncryptAlgorithm" , dataDisks.get(depth1).getEncryptAlgorithm());
 				putQueryParameter("DataDisk." + (depth1 + 1) + ".DeleteWithInstance" , dataDisks.get(depth1).getDeleteWithInstance());
 				putQueryParameter("DataDisk." + (depth1 + 1) + ".KMSKeyId" , dataDisks.get(depth1).getKMSKeyId());
+				putQueryParameter("DataDisk." + (depth1 + 1) + ".StorageClusterId" , dataDisks.get(depth1).getStorageClusterId());
 			}
 		}	
 	}
@@ -1122,6 +1137,19 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 		this.systemDiskDescription = systemDiskDescription;
 		if(systemDiskDescription != null){
 			putQueryParameter("SystemDisk.Description", systemDiskDescription);
+		}
+	}
+
+	public static class SystemDisk {
+
+		private String storageClusterId;
+
+		public String getStorageClusterId() {
+			return this.storageClusterId;
+		}
+
+		public void setStorageClusterId(String storageClusterId) {
+			this.storageClusterId = storageClusterId;
 		}
 	}
 
@@ -1280,6 +1308,8 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 
 		private String kMSKeyId;
 
+		private String storageClusterId;
+
 		public String getPerformanceLevel() {
 			return this.performanceLevel;
 		}
@@ -1374,6 +1404,14 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 
 		public void setKMSKeyId(String kMSKeyId) {
 			this.kMSKeyId = kMSKeyId;
+		}
+
+		public String getStorageClusterId() {
+			return this.storageClusterId;
+		}
+
+		public void setStorageClusterId(String storageClusterId) {
+			this.storageClusterId = storageClusterId;
 		}
 	}
 

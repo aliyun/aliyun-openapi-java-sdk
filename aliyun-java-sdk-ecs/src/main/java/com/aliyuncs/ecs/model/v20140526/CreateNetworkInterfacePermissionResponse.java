@@ -46,32 +46,24 @@ public class CreateNetworkInterfacePermissionResponse extends AcsResponse {
 
 	public static class NetworkInterfacePermission {
 
-		private Long accountId;
-
-		private String serviceName;
+		private String permission;
 
 		private String networkInterfaceId;
 
+		private Long accountId;
+
 		private String networkInterfacePermissionId;
 
-		private String permission;
+		private String serviceName;
 
 		private String permissionState;
 
-		public Long getAccountId() {
-			return this.accountId;
+		public String getPermission() {
+			return this.permission;
 		}
 
-		public void setAccountId(Long accountId) {
-			this.accountId = accountId;
-		}
-
-		public String getServiceName() {
-			return this.serviceName;
-		}
-
-		public void setServiceName(String serviceName) {
-			this.serviceName = serviceName;
+		public void setPermission(String permission) {
+			this.permission = permission;
 		}
 
 		public String getNetworkInterfaceId() {
@@ -82,6 +74,14 @@ public class CreateNetworkInterfacePermissionResponse extends AcsResponse {
 			this.networkInterfaceId = networkInterfaceId;
 		}
 
+		public Long getAccountId() {
+			return this.accountId;
+		}
+
+		public void setAccountId(Long accountId) {
+			this.accountId = accountId;
+		}
+
 		public String getNetworkInterfacePermissionId() {
 			return this.networkInterfacePermissionId;
 		}
@@ -90,12 +90,12 @@ public class CreateNetworkInterfacePermissionResponse extends AcsResponse {
 			this.networkInterfacePermissionId = networkInterfacePermissionId;
 		}
 
-		public String getPermission() {
-			return this.permission;
+		public String getServiceName() {
+			return this.serviceName;
 		}
 
-		public void setPermission(String permission) {
-			this.permission = permission;
+		public void setServiceName(String serviceName) {
+			this.serviceName = serviceName;
 		}
 
 		public String getPermissionState() {

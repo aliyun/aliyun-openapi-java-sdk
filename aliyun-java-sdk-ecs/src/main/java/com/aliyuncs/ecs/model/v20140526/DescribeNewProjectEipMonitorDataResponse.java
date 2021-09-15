@@ -47,25 +47,17 @@ public class DescribeNewProjectEipMonitorDataResponse extends AcsResponse {
 
 	public static class EipMonitorData {
 
-		private Integer eipRX;
-
 		private Integer eipTX;
-
-		private Integer eipFlow;
-
-		private Integer eipBandwidth;
 
 		private Integer eipPackets;
 
+		private Integer eipBandwidth;
+
 		private String timeStamp;
 
-		public Integer getEipRX() {
-			return this.eipRX;
-		}
+		private Integer eipFlow;
 
-		public void setEipRX(Integer eipRX) {
-			this.eipRX = eipRX;
-		}
+		private Integer eipRX;
 
 		public Integer getEipTX() {
 			return this.eipTX;
@@ -73,22 +65,6 @@ public class DescribeNewProjectEipMonitorDataResponse extends AcsResponse {
 
 		public void setEipTX(Integer eipTX) {
 			this.eipTX = eipTX;
-		}
-
-		public Integer getEipFlow() {
-			return this.eipFlow;
-		}
-
-		public void setEipFlow(Integer eipFlow) {
-			this.eipFlow = eipFlow;
-		}
-
-		public Integer getEipBandwidth() {
-			return this.eipBandwidth;
-		}
-
-		public void setEipBandwidth(Integer eipBandwidth) {
-			this.eipBandwidth = eipBandwidth;
 		}
 
 		public Integer getEipPackets() {
@@ -99,12 +75,36 @@ public class DescribeNewProjectEipMonitorDataResponse extends AcsResponse {
 			this.eipPackets = eipPackets;
 		}
 
+		public Integer getEipBandwidth() {
+			return this.eipBandwidth;
+		}
+
+		public void setEipBandwidth(Integer eipBandwidth) {
+			this.eipBandwidth = eipBandwidth;
+		}
+
 		public String getTimeStamp() {
 			return this.timeStamp;
 		}
 
 		public void setTimeStamp(String timeStamp) {
 			this.timeStamp = timeStamp;
+		}
+
+		public Integer getEipFlow() {
+			return this.eipFlow;
+		}
+
+		public void setEipFlow(Integer eipFlow) {
+			this.eipFlow = eipFlow;
+		}
+
+		public Integer getEipRX() {
+			return this.eipRX;
+		}
+
+		public void setEipRX(Integer eipRX) {
+			this.eipRX = eipRX;
 		}
 	}
 

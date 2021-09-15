@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeLaunchTemplatesResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer pageSize;
 
-	private Integer totalCount;
+	private String requestId;
 
 	private Integer pageNumber;
 
-	private Integer pageSize;
+	private Integer totalCount;
 
 	private List<LaunchTemplateSet> launchTemplateSets;
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class DescribeLaunchTemplatesResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
 	}
 
 	public Integer getPageNumber() {
@@ -59,12 +59,12 @@ public class DescribeLaunchTemplatesResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public Integer getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<LaunchTemplateSet> getLaunchTemplateSets() {
@@ -77,30 +77,38 @@ public class DescribeLaunchTemplatesResponse extends AcsResponse {
 
 	public static class LaunchTemplateSet {
 
-		private String createTime;
+		private String launchTemplateName;
+
+		private Long defaultVersionNumber;
 
 		private String modifiedTime;
 
 		private String launchTemplateId;
 
-		private String launchTemplateName;
-
-		private Long defaultVersionNumber;
-
-		private Long latestVersionNumber;
-
-		private String createdBy;
+		private String createTime;
 
 		private String resourceGroupId;
 
+		private String createdBy;
+
+		private Long latestVersionNumber;
+
 		private List<Tag> tags;
 
-		public String getCreateTime() {
-			return this.createTime;
+		public String getLaunchTemplateName() {
+			return this.launchTemplateName;
 		}
 
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
+		public void setLaunchTemplateName(String launchTemplateName) {
+			this.launchTemplateName = launchTemplateName;
+		}
+
+		public Long getDefaultVersionNumber() {
+			return this.defaultVersionNumber;
+		}
+
+		public void setDefaultVersionNumber(Long defaultVersionNumber) {
+			this.defaultVersionNumber = defaultVersionNumber;
 		}
 
 		public String getModifiedTime() {
@@ -119,28 +127,20 @@ public class DescribeLaunchTemplatesResponse extends AcsResponse {
 			this.launchTemplateId = launchTemplateId;
 		}
 
-		public String getLaunchTemplateName() {
-			return this.launchTemplateName;
+		public String getCreateTime() {
+			return this.createTime;
 		}
 
-		public void setLaunchTemplateName(String launchTemplateName) {
-			this.launchTemplateName = launchTemplateName;
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
 		}
 
-		public Long getDefaultVersionNumber() {
-			return this.defaultVersionNumber;
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
 		}
 
-		public void setDefaultVersionNumber(Long defaultVersionNumber) {
-			this.defaultVersionNumber = defaultVersionNumber;
-		}
-
-		public Long getLatestVersionNumber() {
-			return this.latestVersionNumber;
-		}
-
-		public void setLatestVersionNumber(Long latestVersionNumber) {
-			this.latestVersionNumber = latestVersionNumber;
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
 		}
 
 		public String getCreatedBy() {
@@ -151,12 +151,12 @@ public class DescribeLaunchTemplatesResponse extends AcsResponse {
 			this.createdBy = createdBy;
 		}
 
-		public String getResourceGroupId() {
-			return this.resourceGroupId;
+		public Long getLatestVersionNumber() {
+			return this.latestVersionNumber;
 		}
 
-		public void setResourceGroupId(String resourceGroupId) {
-			this.resourceGroupId = resourceGroupId;
+		public void setLatestVersionNumber(Long latestVersionNumber) {
+			this.latestVersionNumber = latestVersionNumber;
 		}
 
 		public List<Tag> getTags() {
@@ -169,17 +169,9 @@ public class DescribeLaunchTemplatesResponse extends AcsResponse {
 
 		public static class Tag {
 
-			private String tagKey;
-
 			private String tagValue;
 
-			public String getTagKey() {
-				return this.tagKey;
-			}
-
-			public void setTagKey(String tagKey) {
-				this.tagKey = tagKey;
-			}
+			private String tagKey;
 
 			public String getTagValue() {
 				return this.tagValue;
@@ -187,6 +179,14 @@ public class DescribeLaunchTemplatesResponse extends AcsResponse {
 
 			public void setTagValue(String tagValue) {
 				this.tagValue = tagValue;
+			}
+
+			public String getTagKey() {
+				return this.tagKey;
+			}
+
+			public void setTagKey(String tagKey) {
+				this.tagKey = tagKey;
 			}
 		}
 	}

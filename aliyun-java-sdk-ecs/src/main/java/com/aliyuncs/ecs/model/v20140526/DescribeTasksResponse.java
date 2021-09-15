@@ -25,40 +25,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeTasksResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String regionId;
-
-	private Integer totalCount;
+	private Integer pageSize;
 
 	private Integer pageNumber;
 
-	private Integer pageSize;
+	private String requestId;
+
+	private Integer totalCount;
+
+	private String regionId;
 
 	private List<Task> taskSet;
 
-	public String getRequestId() {
-		return this.requestId;
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getRegionId() {
-		return this.regionId;
-	}
-
-	public void setRegionId(String regionId) {
-		this.regionId = regionId;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
 	}
 
 	public Integer getPageNumber() {
@@ -69,12 +53,28 @@ public class DescribeTasksResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
+
+	public String getRegionId() {
+		return this.regionId;
+	}
+
+	public void setRegionId(String regionId) {
+		this.regionId = regionId;
 	}
 
 	public List<Task> getTaskSet() {
@@ -87,17 +87,49 @@ public class DescribeTasksResponse extends AcsResponse {
 
 	public static class Task {
 
+		private String creationTime;
+
+		private String taskStatus;
+
+		private String finishedTime;
+
+		private String supportCancel;
+
 		private String taskId;
 
 		private String taskAction;
 
-		private String taskStatus;
+		public String getCreationTime() {
+			return this.creationTime;
+		}
 
-		private String supportCancel;
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
+		}
 
-		private String creationTime;
+		public String getTaskStatus() {
+			return this.taskStatus;
+		}
 
-		private String finishedTime;
+		public void setTaskStatus(String taskStatus) {
+			this.taskStatus = taskStatus;
+		}
+
+		public String getFinishedTime() {
+			return this.finishedTime;
+		}
+
+		public void setFinishedTime(String finishedTime) {
+			this.finishedTime = finishedTime;
+		}
+
+		public String getSupportCancel() {
+			return this.supportCancel;
+		}
+
+		public void setSupportCancel(String supportCancel) {
+			this.supportCancel = supportCancel;
+		}
 
 		public String getTaskId() {
 			return this.taskId;
@@ -113,38 +145,6 @@ public class DescribeTasksResponse extends AcsResponse {
 
 		public void setTaskAction(String taskAction) {
 			this.taskAction = taskAction;
-		}
-
-		public String getTaskStatus() {
-			return this.taskStatus;
-		}
-
-		public void setTaskStatus(String taskStatus) {
-			this.taskStatus = taskStatus;
-		}
-
-		public String getSupportCancel() {
-			return this.supportCancel;
-		}
-
-		public void setSupportCancel(String supportCancel) {
-			this.supportCancel = supportCancel;
-		}
-
-		public String getCreationTime() {
-			return this.creationTime;
-		}
-
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
-		}
-
-		public String getFinishedTime() {
-			return this.finishedTime;
-		}
-
-		public void setFinishedTime(String finishedTime) {
-			this.finishedTime = finishedTime;
 		}
 	}
 

@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeElasticityAssurancesResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String nextToken;
 
-	private Integer maxResults;
+	private String requestId;
 
 	private Integer totalCount;
 
+	private Integer maxResults;
+
 	private List<ElasticityAssuranceItem> elasticityAssuranceSet;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getNextToken() {
 		return this.nextToken;
@@ -51,12 +43,12 @@ public class DescribeElasticityAssurancesResponse extends AcsResponse {
 		this.nextToken = nextToken;
 	}
 
-	public Integer getMaxResults() {
-		return this.maxResults;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setMaxResults(Integer maxResults) {
-		this.maxResults = maxResults;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getTotalCount() {
@@ -65,6 +57,14 @@ public class DescribeElasticityAssurancesResponse extends AcsResponse {
 
 	public void setTotalCount(Integer totalCount) {
 		this.totalCount = totalCount;
+	}
+
+	public Integer getMaxResults() {
+		return this.maxResults;
+	}
+
+	public void setMaxResults(Integer maxResults) {
+		this.maxResults = maxResults;
 	}
 
 	public List<ElasticityAssuranceItem> getElasticityAssuranceSet() {
@@ -77,64 +77,40 @@ public class DescribeElasticityAssurancesResponse extends AcsResponse {
 
 	public static class ElasticityAssuranceItem {
 
-		private String privatePoolOptionsId;
-
-		private String privatePoolOptionsName;
-
-		private String description;
-
-		private String regionId;
+		private String status;
 
 		private String privatePoolOptionsMatchCriteria;
 
+		private String privatePoolOptionsId;
+
 		private Integer usedAssuranceTimes;
-
-		private String totalAssuranceTimes;
-
-		private String status;
-
-		private String startTime;
-
-		private String endTime;
 
 		private String latestStartTime;
 
+		private String privatePoolOptionsName;
+
+		private String regionId;
+
+		private String endTime;
+
+		private String startTime;
+
+		private String description;
+
 		private String resourceGroupId;
+
+		private String totalAssuranceTimes;
 
 		private List<AllocatedResource> allocatedResources;
 
 		private List<Tag> tags;
 
-		public String getPrivatePoolOptionsId() {
-			return this.privatePoolOptionsId;
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setPrivatePoolOptionsId(String privatePoolOptionsId) {
-			this.privatePoolOptionsId = privatePoolOptionsId;
-		}
-
-		public String getPrivatePoolOptionsName() {
-			return this.privatePoolOptionsName;
-		}
-
-		public void setPrivatePoolOptionsName(String privatePoolOptionsName) {
-			this.privatePoolOptionsName = privatePoolOptionsName;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public String getPrivatePoolOptionsMatchCriteria() {
@@ -145,44 +121,20 @@ public class DescribeElasticityAssurancesResponse extends AcsResponse {
 			this.privatePoolOptionsMatchCriteria = privatePoolOptionsMatchCriteria;
 		}
 
+		public String getPrivatePoolOptionsId() {
+			return this.privatePoolOptionsId;
+		}
+
+		public void setPrivatePoolOptionsId(String privatePoolOptionsId) {
+			this.privatePoolOptionsId = privatePoolOptionsId;
+		}
+
 		public Integer getUsedAssuranceTimes() {
 			return this.usedAssuranceTimes;
 		}
 
 		public void setUsedAssuranceTimes(Integer usedAssuranceTimes) {
 			this.usedAssuranceTimes = usedAssuranceTimes;
-		}
-
-		public String getTotalAssuranceTimes() {
-			return this.totalAssuranceTimes;
-		}
-
-		public void setTotalAssuranceTimes(String totalAssuranceTimes) {
-			this.totalAssuranceTimes = totalAssuranceTimes;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
-		public String getStartTime() {
-			return this.startTime;
-		}
-
-		public void setStartTime(String startTime) {
-			this.startTime = startTime;
-		}
-
-		public String getEndTime() {
-			return this.endTime;
-		}
-
-		public void setEndTime(String endTime) {
-			this.endTime = endTime;
 		}
 
 		public String getLatestStartTime() {
@@ -193,12 +145,60 @@ public class DescribeElasticityAssurancesResponse extends AcsResponse {
 			this.latestStartTime = latestStartTime;
 		}
 
+		public String getPrivatePoolOptionsName() {
+			return this.privatePoolOptionsName;
+		}
+
+		public void setPrivatePoolOptionsName(String privatePoolOptionsName) {
+			this.privatePoolOptionsName = privatePoolOptionsName;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		public String getEndTime() {
+			return this.endTime;
+		}
+
+		public void setEndTime(String endTime) {
+			this.endTime = endTime;
+		}
+
+		public String getStartTime() {
+			return this.startTime;
+		}
+
+		public void setStartTime(String startTime) {
+			this.startTime = startTime;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
 		public String getResourceGroupId() {
 			return this.resourceGroupId;
 		}
 
 		public void setResourceGroupId(String resourceGroupId) {
 			this.resourceGroupId = resourceGroupId;
+		}
+
+		public String getTotalAssuranceTimes() {
+			return this.totalAssuranceTimes;
+		}
+
+		public void setTotalAssuranceTimes(String totalAssuranceTimes) {
+			this.totalAssuranceTimes = totalAssuranceTimes;
 		}
 
 		public List<AllocatedResource> getAllocatedResources() {
@@ -219,13 +219,29 @@ public class DescribeElasticityAssurancesResponse extends AcsResponse {
 
 		public static class AllocatedResource {
 
+			private Integer usedAmount;
+
+			private Integer totalAmount;
+
 			private String zoneId;
 
 			private String instanceType;
 
-			private Integer totalAmount;
+			public Integer getUsedAmount() {
+				return this.usedAmount;
+			}
 
-			private Integer usedAmount;
+			public void setUsedAmount(Integer usedAmount) {
+				this.usedAmount = usedAmount;
+			}
+
+			public Integer getTotalAmount() {
+				return this.totalAmount;
+			}
+
+			public void setTotalAmount(Integer totalAmount) {
+				this.totalAmount = totalAmount;
+			}
 
 			public String getZoneId() {
 				return this.zoneId;
@@ -242,37 +258,13 @@ public class DescribeElasticityAssurancesResponse extends AcsResponse {
 			public void setInstanceType(String instanceType) {
 				this.instanceType = instanceType;
 			}
-
-			public Integer getTotalAmount() {
-				return this.totalAmount;
-			}
-
-			public void setTotalAmount(Integer totalAmount) {
-				this.totalAmount = totalAmount;
-			}
-
-			public Integer getUsedAmount() {
-				return this.usedAmount;
-			}
-
-			public void setUsedAmount(Integer usedAmount) {
-				this.usedAmount = usedAmount;
-			}
 		}
 
 		public static class Tag {
 
-			private String tagKey;
-
 			private String tagValue;
 
-			public String getTagKey() {
-				return this.tagKey;
-			}
-
-			public void setTagKey(String tagKey) {
-				this.tagKey = tagKey;
-			}
+			private String tagKey;
 
 			public String getTagValue() {
 				return this.tagValue;
@@ -280,6 +272,14 @@ public class DescribeElasticityAssurancesResponse extends AcsResponse {
 
 			public void setTagValue(String tagValue) {
 				this.tagValue = tagValue;
+			}
+
+			public String getTagKey() {
+				return this.tagKey;
+			}
+
+			public void setTagKey(String tagKey) {
+				this.tagKey = tagKey;
 			}
 		}
 	}

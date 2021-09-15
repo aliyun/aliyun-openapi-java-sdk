@@ -27,9 +27,9 @@ public class DescribeImageSupportInstanceTypesResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String regionId;
-
 	private String imageId;
+
+	private String regionId;
 
 	private List<InstanceType> instanceTypes;
 
@@ -41,20 +41,20 @@ public class DescribeImageSupportInstanceTypesResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getRegionId() {
-		return this.regionId;
-	}
-
-	public void setRegionId(String regionId) {
-		this.regionId = regionId;
-	}
-
 	public String getImageId() {
 		return this.imageId;
 	}
 
 	public void setImageId(String imageId) {
 		this.imageId = imageId;
+	}
+
+	public String getRegionId() {
+		return this.regionId;
+	}
+
+	public void setRegionId(String regionId) {
+		this.regionId = regionId;
 	}
 
 	public List<InstanceType> getInstanceTypes() {
@@ -69,11 +69,11 @@ public class DescribeImageSupportInstanceTypesResponse extends AcsResponse {
 
 		private String instanceTypeId;
 
+		private String instanceTypeFamily;
+
 		private Integer cpuCoreCount;
 
 		private Float memorySize;
-
-		private String instanceTypeFamily;
 
 		public String getInstanceTypeId() {
 			return this.instanceTypeId;
@@ -81,6 +81,14 @@ public class DescribeImageSupportInstanceTypesResponse extends AcsResponse {
 
 		public void setInstanceTypeId(String instanceTypeId) {
 			this.instanceTypeId = instanceTypeId;
+		}
+
+		public String getInstanceTypeFamily() {
+			return this.instanceTypeFamily;
+		}
+
+		public void setInstanceTypeFamily(String instanceTypeFamily) {
+			this.instanceTypeFamily = instanceTypeFamily;
 		}
 
 		public Integer getCpuCoreCount() {
@@ -97,14 +105,6 @@ public class DescribeImageSupportInstanceTypesResponse extends AcsResponse {
 
 		public void setMemorySize(Float memorySize) {
 			this.memorySize = memorySize;
-		}
-
-		public String getInstanceTypeFamily() {
-			return this.instanceTypeFamily;
-		}
-
-		public void setInstanceTypeFamily(String instanceTypeFamily) {
-			this.instanceTypeFamily = instanceTypeFamily;
 		}
 	}
 

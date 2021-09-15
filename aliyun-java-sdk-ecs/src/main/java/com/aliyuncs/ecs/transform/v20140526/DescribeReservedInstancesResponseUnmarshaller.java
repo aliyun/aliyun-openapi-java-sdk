@@ -29,29 +29,29 @@ public class DescribeReservedInstancesResponseUnmarshaller {
 	public static DescribeReservedInstancesResponse unmarshall(DescribeReservedInstancesResponse describeReservedInstancesResponse, UnmarshallerContext _ctx) {
 		
 		describeReservedInstancesResponse.setRequestId(_ctx.stringValue("DescribeReservedInstancesResponse.RequestId"));
-		describeReservedInstancesResponse.setTotalCount(_ctx.integerValue("DescribeReservedInstancesResponse.TotalCount"));
-		describeReservedInstancesResponse.setPageNumber(_ctx.integerValue("DescribeReservedInstancesResponse.PageNumber"));
 		describeReservedInstancesResponse.setPageSize(_ctx.integerValue("DescribeReservedInstancesResponse.PageSize"));
+		describeReservedInstancesResponse.setPageNumber(_ctx.integerValue("DescribeReservedInstancesResponse.PageNumber"));
+		describeReservedInstancesResponse.setTotalCount(_ctx.integerValue("DescribeReservedInstancesResponse.TotalCount"));
 
 		List<ReservedInstance> reservedInstances = new ArrayList<ReservedInstance>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeReservedInstancesResponse.ReservedInstances.Length"); i++) {
 			ReservedInstance reservedInstance = new ReservedInstance();
-			reservedInstance.setReservedInstanceId(_ctx.stringValue("DescribeReservedInstancesResponse.ReservedInstances["+ i +"].ReservedInstanceId"));
-			reservedInstance.setRegionId(_ctx.stringValue("DescribeReservedInstancesResponse.ReservedInstances["+ i +"].RegionId"));
-			reservedInstance.setZoneId(_ctx.stringValue("DescribeReservedInstancesResponse.ReservedInstances["+ i +"].ZoneId"));
-			reservedInstance.setReservedInstanceName(_ctx.stringValue("DescribeReservedInstancesResponse.ReservedInstances["+ i +"].ReservedInstanceName"));
-			reservedInstance.setDescription(_ctx.stringValue("DescribeReservedInstancesResponse.ReservedInstances["+ i +"].Description"));
-			reservedInstance.setInstanceType(_ctx.stringValue("DescribeReservedInstancesResponse.ReservedInstances["+ i +"].InstanceType"));
-			reservedInstance.setScope(_ctx.stringValue("DescribeReservedInstancesResponse.ReservedInstances["+ i +"].Scope"));
-			reservedInstance.setOfferingType(_ctx.stringValue("DescribeReservedInstancesResponse.ReservedInstances["+ i +"].OfferingType"));
-			reservedInstance.setPlatform(_ctx.stringValue("DescribeReservedInstancesResponse.ReservedInstances["+ i +"].Platform"));
-			reservedInstance.setInstanceAmount(_ctx.integerValue("DescribeReservedInstancesResponse.ReservedInstances["+ i +"].InstanceAmount"));
 			reservedInstance.setStatus(_ctx.stringValue("DescribeReservedInstancesResponse.ReservedInstances["+ i +"].Status"));
 			reservedInstance.setCreationTime(_ctx.stringValue("DescribeReservedInstancesResponse.ReservedInstances["+ i +"].CreationTime"));
-			reservedInstance.setExpiredTime(_ctx.stringValue("DescribeReservedInstancesResponse.ReservedInstances["+ i +"].ExpiredTime"));
+			reservedInstance.setReservedInstanceName(_ctx.stringValue("DescribeReservedInstancesResponse.ReservedInstances["+ i +"].ReservedInstanceName"));
+			reservedInstance.setReservedInstanceId(_ctx.stringValue("DescribeReservedInstancesResponse.ReservedInstances["+ i +"].ReservedInstanceId"));
+			reservedInstance.setInstanceType(_ctx.stringValue("DescribeReservedInstancesResponse.ReservedInstances["+ i +"].InstanceType"));
+			reservedInstance.setInstanceAmount(_ctx.integerValue("DescribeReservedInstancesResponse.ReservedInstances["+ i +"].InstanceAmount"));
+			reservedInstance.setRegionId(_ctx.stringValue("DescribeReservedInstancesResponse.ReservedInstances["+ i +"].RegionId"));
+			reservedInstance.setOfferingType(_ctx.stringValue("DescribeReservedInstancesResponse.ReservedInstances["+ i +"].OfferingType"));
 			reservedInstance.setStartTime(_ctx.stringValue("DescribeReservedInstancesResponse.ReservedInstances["+ i +"].StartTime"));
-			reservedInstance.setResourceGroupId(_ctx.stringValue("DescribeReservedInstancesResponse.ReservedInstances["+ i +"].ResourceGroupId"));
+			reservedInstance.setDescription(_ctx.stringValue("DescribeReservedInstancesResponse.ReservedInstances["+ i +"].Description"));
 			reservedInstance.setAllocationStatus(_ctx.stringValue("DescribeReservedInstancesResponse.ReservedInstances["+ i +"].AllocationStatus"));
+			reservedInstance.setExpiredTime(_ctx.stringValue("DescribeReservedInstancesResponse.ReservedInstances["+ i +"].ExpiredTime"));
+			reservedInstance.setResourceGroupId(_ctx.stringValue("DescribeReservedInstancesResponse.ReservedInstances["+ i +"].ResourceGroupId"));
+			reservedInstance.setZoneId(_ctx.stringValue("DescribeReservedInstancesResponse.ReservedInstances["+ i +"].ZoneId"));
+			reservedInstance.setPlatform(_ctx.stringValue("DescribeReservedInstancesResponse.ReservedInstances["+ i +"].Platform"));
+			reservedInstance.setScope(_ctx.stringValue("DescribeReservedInstancesResponse.ReservedInstances["+ i +"].Scope"));
 
 			List<OperationLock> operationLocks = new ArrayList<OperationLock>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeReservedInstancesResponse.ReservedInstances["+ i +"].OperationLocks.Length"); j++) {
@@ -65,8 +65,8 @@ public class DescribeReservedInstancesResponseUnmarshaller {
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeReservedInstancesResponse.ReservedInstances["+ i +"].Tags.Length"); j++) {
 				Tag tag = new Tag();
-				tag.setTagKey(_ctx.stringValue("DescribeReservedInstancesResponse.ReservedInstances["+ i +"].Tags["+ j +"].TagKey"));
 				tag.setTagValue(_ctx.stringValue("DescribeReservedInstancesResponse.ReservedInstances["+ i +"].Tags["+ j +"].TagValue"));
+				tag.setTagKey(_ctx.stringValue("DescribeReservedInstancesResponse.ReservedInstances["+ i +"].Tags["+ j +"].TagKey"));
 
 				tags.add(tag);
 			}

@@ -65,10 +65,10 @@ public class ModifyReservedInstancesRequest extends RpcAcsRequest<ModifyReserved
 		this.configurations = configurations;	
 		if (configurations != null) {
 			for (int depth1 = 0; depth1 < configurations.size(); depth1++) {
-				putQueryParameter("Configuration." + (depth1 + 1) + ".ZoneId" , configurations.get(depth1).getZoneId());
 				putQueryParameter("Configuration." + (depth1 + 1) + ".ReservedInstanceName" , configurations.get(depth1).getReservedInstanceName());
-				putQueryParameter("Configuration." + (depth1 + 1) + ".InstanceType" , configurations.get(depth1).getInstanceType());
+				putQueryParameter("Configuration." + (depth1 + 1) + ".ZoneId" , configurations.get(depth1).getZoneId());
 				putQueryParameter("Configuration." + (depth1 + 1) + ".Scope" , configurations.get(depth1).getScope());
+				putQueryParameter("Configuration." + (depth1 + 1) + ".InstanceType" , configurations.get(depth1).getInstanceType());
 				putQueryParameter("Configuration." + (depth1 + 1) + ".InstanceAmount" , configurations.get(depth1).getInstanceAmount());
 			}
 		}	
@@ -122,23 +122,15 @@ public class ModifyReservedInstancesRequest extends RpcAcsRequest<ModifyReserved
 
 	public static class Configuration {
 
-		private String zoneId;
-
 		private String reservedInstanceName;
 
-		private String instanceType;
+		private String zoneId;
 
 		private String scope;
 
+		private String instanceType;
+
 		private Integer instanceAmount;
-
-		public String getZoneId() {
-			return this.zoneId;
-		}
-
-		public void setZoneId(String zoneId) {
-			this.zoneId = zoneId;
-		}
 
 		public String getReservedInstanceName() {
 			return this.reservedInstanceName;
@@ -148,12 +140,12 @@ public class ModifyReservedInstancesRequest extends RpcAcsRequest<ModifyReserved
 			this.reservedInstanceName = reservedInstanceName;
 		}
 
-		public String getInstanceType() {
-			return this.instanceType;
+		public String getZoneId() {
+			return this.zoneId;
 		}
 
-		public void setInstanceType(String instanceType) {
-			this.instanceType = instanceType;
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
 		}
 
 		public String getScope() {
@@ -162,6 +154,14 @@ public class ModifyReservedInstancesRequest extends RpcAcsRequest<ModifyReserved
 
 		public void setScope(String scope) {
 			this.scope = scope;
+		}
+
+		public String getInstanceType() {
+			return this.instanceType;
+		}
+
+		public void setInstanceType(String instanceType) {
+			this.instanceType = instanceType;
 		}
 
 		public Integer getInstanceAmount() {

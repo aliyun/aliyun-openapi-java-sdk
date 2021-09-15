@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeKeyPairsResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer pageSize;
 
-	private Integer totalCount;
+	private String requestId;
 
 	private Integer pageNumber;
 
-	private Integer pageSize;
+	private Integer totalCount;
 
 	private List<KeyPair> keyPairs;
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class DescribeKeyPairsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
 	}
 
 	public Integer getPageNumber() {
@@ -59,12 +59,12 @@ public class DescribeKeyPairsResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public Integer getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<KeyPair> getKeyPairs() {
@@ -77,15 +77,23 @@ public class DescribeKeyPairsResponse extends AcsResponse {
 
 	public static class KeyPair {
 
+		private String creationTime;
+
 		private String keyPairName;
 
 		private String keyPairFingerPrint;
 
-		private String creationTime;
-
 		private String resourceGroupId;
 
 		private List<Tag> tags;
+
+		public String getCreationTime() {
+			return this.creationTime;
+		}
+
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
+		}
 
 		public String getKeyPairName() {
 			return this.keyPairName;
@@ -101,14 +109,6 @@ public class DescribeKeyPairsResponse extends AcsResponse {
 
 		public void setKeyPairFingerPrint(String keyPairFingerPrint) {
 			this.keyPairFingerPrint = keyPairFingerPrint;
-		}
-
-		public String getCreationTime() {
-			return this.creationTime;
-		}
-
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
 		}
 
 		public String getResourceGroupId() {
@@ -129,17 +129,9 @@ public class DescribeKeyPairsResponse extends AcsResponse {
 
 		public static class Tag {
 
-			private String tagKey;
-
 			private String tagValue;
 
-			public String getTagKey() {
-				return this.tagKey;
-			}
-
-			public void setTagKey(String tagKey) {
-				this.tagKey = tagKey;
-			}
+			private String tagKey;
 
 			public String getTagValue() {
 				return this.tagValue;
@@ -147,6 +139,14 @@ public class DescribeKeyPairsResponse extends AcsResponse {
 
 			public void setTagValue(String tagValue) {
 				this.tagValue = tagValue;
+			}
+
+			public String getTagKey() {
+				return this.tagKey;
+			}
+
+			public void setTagKey(String tagKey) {
+				this.tagKey = tagKey;
 			}
 		}
 	}

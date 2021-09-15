@@ -77,19 +77,11 @@ public class DescribeResourceByTagsResponse extends AcsResponse {
 
 	public static class Resource {
 
-		private String resourceId;
-
 		private String resourceType;
 
+		private String resourceId;
+
 		private String regionId;
-
-		public String getResourceId() {
-			return this.resourceId;
-		}
-
-		public void setResourceId(String resourceId) {
-			this.resourceId = resourceId;
-		}
 
 		public String getResourceType() {
 			return this.resourceType;
@@ -97,6 +89,14 @@ public class DescribeResourceByTagsResponse extends AcsResponse {
 
 		public void setResourceType(String resourceType) {
 			this.resourceType = resourceType;
+		}
+
+		public String getResourceId() {
+			return this.resourceId;
+		}
+
+		public void setResourceId(String resourceId) {
+			this.resourceId = resourceId;
 		}
 
 		public String getRegionId() {

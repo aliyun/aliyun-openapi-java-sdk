@@ -49,9 +49,9 @@ public class DescribeBandwidthLimitationResponse extends AcsResponse {
 
 		private String internetChargeType;
 
-		private Integer min;
-
 		private Integer max;
+
+		private Integer min;
 
 		private String unit;
 
@@ -63,20 +63,20 @@ public class DescribeBandwidthLimitationResponse extends AcsResponse {
 			this.internetChargeType = internetChargeType;
 		}
 
-		public Integer getMin() {
-			return this.min;
-		}
-
-		public void setMin(Integer min) {
-			this.min = min;
-		}
-
 		public Integer getMax() {
 			return this.max;
 		}
 
 		public void setMax(Integer max) {
 			this.max = max;
+		}
+
+		public Integer getMin() {
+			return this.min;
+		}
+
+		public void setMin(Integer min) {
+			this.min = min;
 		}
 
 		public String getUnit() {

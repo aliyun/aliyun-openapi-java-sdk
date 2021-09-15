@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeInstanceMaintenanceAttributesResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer pageSize;
 
-	private Integer totalCount;
+	private String requestId;
 
 	private Integer pageNumber;
 
-	private Integer pageSize;
+	private Integer totalCount;
 
 	private List<MaintenanceAttribute> maintenanceAttributes;
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class DescribeInstanceMaintenanceAttributesResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
 	}
 
 	public Integer getPageNumber() {
@@ -59,12 +59,12 @@ public class DescribeInstanceMaintenanceAttributesResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public Integer getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<MaintenanceAttribute> getMaintenanceAttributes() {
@@ -77,21 +77,13 @@ public class DescribeInstanceMaintenanceAttributesResponse extends AcsResponse {
 
 	public static class MaintenanceAttribute {
 
-		private String instanceId;
-
 		private Boolean notifyOnMaintenance;
+
+		private String instanceId;
 
 		private List<MaintenanceWindow> maintenanceWindows;
 
 		private ActionOnMaintenance actionOnMaintenance;
-
-		public String getInstanceId() {
-			return this.instanceId;
-		}
-
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
 
 		public Boolean getNotifyOnMaintenance() {
 			return this.notifyOnMaintenance;
@@ -99,6 +91,14 @@ public class DescribeInstanceMaintenanceAttributesResponse extends AcsResponse {
 
 		public void setNotifyOnMaintenance(Boolean notifyOnMaintenance) {
 			this.notifyOnMaintenance = notifyOnMaintenance;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
 		}
 
 		public List<MaintenanceWindow> getMaintenanceWindows() {
@@ -119,17 +119,9 @@ public class DescribeInstanceMaintenanceAttributesResponse extends AcsResponse {
 
 		public static class MaintenanceWindow {
 
-			private String startTime;
-
 			private String endTime;
 
-			public String getStartTime() {
-				return this.startTime;
-			}
-
-			public void setStartTime(String startTime) {
-				this.startTime = startTime;
-			}
+			private String startTime;
 
 			public String getEndTime() {
 				return this.endTime;
@@ -138,23 +130,23 @@ public class DescribeInstanceMaintenanceAttributesResponse extends AcsResponse {
 			public void setEndTime(String endTime) {
 				this.endTime = endTime;
 			}
+
+			public String getStartTime() {
+				return this.startTime;
+			}
+
+			public void setStartTime(String startTime) {
+				this.startTime = startTime;
+			}
 		}
 
 		public static class ActionOnMaintenance {
 
-			private String value;
-
 			private String defaultValue;
 
+			private String value;
+
 			private List<String> supportedValues;
-
-			public String getValue() {
-				return this.value;
-			}
-
-			public void setValue(String value) {
-				this.value = value;
-			}
 
 			public String getDefaultValue() {
 				return this.defaultValue;
@@ -162,6 +154,14 @@ public class DescribeInstanceMaintenanceAttributesResponse extends AcsResponse {
 
 			public void setDefaultValue(String defaultValue) {
 				this.defaultValue = defaultValue;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
 			}
 
 			public List<String> getSupportedValues() {

@@ -26,9 +26,9 @@ public class CreateActivationResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String activationId;
-
 	private String activationCode;
+
+	private String activationId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,20 +38,20 @@ public class CreateActivationResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getActivationId() {
-		return this.activationId;
-	}
-
-	public void setActivationId(String activationId) {
-		this.activationId = activationId;
-	}
-
 	public String getActivationCode() {
 		return this.activationCode;
 	}
 
 	public void setActivationCode(String activationCode) {
 		this.activationCode = activationCode;
+	}
+
+	public String getActivationId() {
+		return this.activationId;
+	}
+
+	public void setActivationId(String activationId) {
+		this.activationId = activationId;
 	}
 
 	@Override

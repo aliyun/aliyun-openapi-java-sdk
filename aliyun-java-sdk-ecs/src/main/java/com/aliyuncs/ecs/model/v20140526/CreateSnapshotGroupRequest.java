@@ -34,7 +34,13 @@ public class CreateSnapshotGroupRequest extends RpcAcsRequest<CreateSnapshotGrou
 
 	private String description;
 
+	private String resourceGroupId;
+
 	private Integer instantAccessRetentionDays;
+
+	private List<String> diskIds;
+
+	private List<Tag> tags;
 
 	private String resourceOwnerAccount;
 
@@ -100,6 +106,17 @@ public class CreateSnapshotGroupRequest extends RpcAcsRequest<CreateSnapshotGrou
 		}
 	}
 
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
 	public Integer getInstantAccessRetentionDays() {
 		return this.instantAccessRetentionDays;
 	}
@@ -109,6 +126,33 @@ public class CreateSnapshotGroupRequest extends RpcAcsRequest<CreateSnapshotGrou
 		if(instantAccessRetentionDays != null){
 			putQueryParameter("InstantAccessRetentionDays", instantAccessRetentionDays.toString());
 		}
+	}
+
+	public List<String> getDiskIds() {
+		return this.diskIds;
+	}
+
+	public void setDiskIds(List<String> diskIds) {
+		this.diskIds = diskIds;	
+		if (diskIds != null) {
+			for (int i = 0; i < diskIds.size(); i++) {
+				putQueryParameter("DiskId." + (i + 1) , diskIds.get(i));
+			}
+		}	
+	}
+
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+			}
+		}	
 	}
 
 	public String getResourceOwnerAccount() {
@@ -163,6 +207,29 @@ public class CreateSnapshotGroupRequest extends RpcAcsRequest<CreateSnapshotGrou
 		this.name = name;
 		if(name != null){
 			putQueryParameter("Name", name);
+		}
+	}
+
+	public static class Tag {
+
+		private String key;
+
+		private String value;
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
+		}
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
 		}
 	}
 

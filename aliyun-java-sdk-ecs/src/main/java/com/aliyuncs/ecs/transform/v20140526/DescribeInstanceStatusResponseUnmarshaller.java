@@ -27,15 +27,15 @@ public class DescribeInstanceStatusResponseUnmarshaller {
 	public static DescribeInstanceStatusResponse unmarshall(DescribeInstanceStatusResponse describeInstanceStatusResponse, UnmarshallerContext _ctx) {
 		
 		describeInstanceStatusResponse.setRequestId(_ctx.stringValue("DescribeInstanceStatusResponse.RequestId"));
-		describeInstanceStatusResponse.setTotalCount(_ctx.integerValue("DescribeInstanceStatusResponse.TotalCount"));
-		describeInstanceStatusResponse.setPageNumber(_ctx.integerValue("DescribeInstanceStatusResponse.PageNumber"));
 		describeInstanceStatusResponse.setPageSize(_ctx.integerValue("DescribeInstanceStatusResponse.PageSize"));
+		describeInstanceStatusResponse.setPageNumber(_ctx.integerValue("DescribeInstanceStatusResponse.PageNumber"));
+		describeInstanceStatusResponse.setTotalCount(_ctx.integerValue("DescribeInstanceStatusResponse.TotalCount"));
 
 		List<InstanceStatus> instanceStatuses = new ArrayList<InstanceStatus>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeInstanceStatusResponse.InstanceStatuses.Length"); i++) {
 			InstanceStatus instanceStatus = new InstanceStatus();
-			instanceStatus.setInstanceId(_ctx.stringValue("DescribeInstanceStatusResponse.InstanceStatuses["+ i +"].InstanceId"));
 			instanceStatus.setStatus(_ctx.stringValue("DescribeInstanceStatusResponse.InstanceStatuses["+ i +"].Status"));
+			instanceStatus.setInstanceId(_ctx.stringValue("DescribeInstanceStatusResponse.InstanceStatuses["+ i +"].InstanceId"));
 
 			instanceStatuses.add(instanceStatus);
 		}

@@ -22,11 +22,11 @@ public class EipNotifyPaidResponseUnmarshaller {
 
 	public static EipNotifyPaidResponse unmarshall(EipNotifyPaidResponse eipNotifyPaidResponse, UnmarshallerContext _ctx) {
 		
-		eipNotifyPaidResponse.setRequestId(_ctx.stringValue("EipNotifyPaidResponse.requestId"));
-		eipNotifyPaidResponse.setData(_ctx.stringValue("EipNotifyPaidResponse.data"));
 		eipNotifyPaidResponse.setCode(_ctx.stringValue("EipNotifyPaidResponse.code"));
-		eipNotifyPaidResponse.setMessage(_ctx.stringValue("EipNotifyPaidResponse.message"));
 		eipNotifyPaidResponse.setSuccess(_ctx.booleanValue("EipNotifyPaidResponse.success"));
+		eipNotifyPaidResponse.setMessage(_ctx.stringValue("EipNotifyPaidResponse.message"));
+		eipNotifyPaidResponse.setData(_ctx.stringValue("EipNotifyPaidResponse.data"));
+		eipNotifyPaidResponse.setRequestId(_ctx.stringValue("EipNotifyPaidResponse.requestId"));
 	 
 	 	return eipNotifyPaidResponse;
 	}

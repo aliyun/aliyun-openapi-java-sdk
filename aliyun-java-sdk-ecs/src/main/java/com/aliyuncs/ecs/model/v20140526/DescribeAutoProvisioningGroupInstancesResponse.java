@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeAutoProvisioningGroupInstancesResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer pageSize;
 
-	private Integer totalCount;
+	private String requestId;
 
 	private Integer pageNumber;
 
-	private Integer pageSize;
+	private Integer totalCount;
 
 	private List<Instance> instances;
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class DescribeAutoProvisioningGroupInstancesResponse extends AcsResponse 
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
 	}
 
 	public Integer getPageNumber() {
@@ -59,12 +59,12 @@ public class DescribeAutoProvisioningGroupInstancesResponse extends AcsResponse 
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public Integer getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<Instance> getInstances() {
@@ -77,37 +77,29 @@ public class DescribeAutoProvisioningGroupInstancesResponse extends AcsResponse 
 
 	public static class Instance {
 
-		private String instanceId;
-
 		private String status;
-
-		private String regionId;
-
-		private String zoneId;
-
-		private Integer cPU;
-
-		private Integer memory;
-
-		private String instanceType;
-
-		private Boolean isSpot;
-
-		private Boolean ioOptimized;
-
-		private String networkType;
-
-		private String osType;
 
 		private String creationTime;
 
-		public String getInstanceId() {
-			return this.instanceId;
-		}
+		private Boolean isSpot;
 
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
+		private Integer cPU;
+
+		private String instanceId;
+
+		private String networkType;
+
+		private String instanceType;
+
+		private String regionId;
+
+		private Boolean ioOptimized;
+
+		private String osType;
+
+		private String zoneId;
+
+		private Integer memory;
 
 		public String getStatus() {
 			return this.status;
@@ -117,44 +109,12 @@ public class DescribeAutoProvisioningGroupInstancesResponse extends AcsResponse 
 			this.status = status;
 		}
 
-		public String getRegionId() {
-			return this.regionId;
+		public String getCreationTime() {
+			return this.creationTime;
 		}
 
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		public String getZoneId() {
-			return this.zoneId;
-		}
-
-		public void setZoneId(String zoneId) {
-			this.zoneId = zoneId;
-		}
-
-		public Integer getCPU() {
-			return this.cPU;
-		}
-
-		public void setCPU(Integer cPU) {
-			this.cPU = cPU;
-		}
-
-		public Integer getMemory() {
-			return this.memory;
-		}
-
-		public void setMemory(Integer memory) {
-			this.memory = memory;
-		}
-
-		public String getInstanceType() {
-			return this.instanceType;
-		}
-
-		public void setInstanceType(String instanceType) {
-			this.instanceType = instanceType;
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
 		}
 
 		public Boolean getIsSpot() {
@@ -165,12 +125,20 @@ public class DescribeAutoProvisioningGroupInstancesResponse extends AcsResponse 
 			this.isSpot = isSpot;
 		}
 
-		public Boolean getIoOptimized() {
-			return this.ioOptimized;
+		public Integer getCPU() {
+			return this.cPU;
 		}
 
-		public void setIoOptimized(Boolean ioOptimized) {
-			this.ioOptimized = ioOptimized;
+		public void setCPU(Integer cPU) {
+			this.cPU = cPU;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
 		}
 
 		public String getNetworkType() {
@@ -181,6 +149,30 @@ public class DescribeAutoProvisioningGroupInstancesResponse extends AcsResponse 
 			this.networkType = networkType;
 		}
 
+		public String getInstanceType() {
+			return this.instanceType;
+		}
+
+		public void setInstanceType(String instanceType) {
+			this.instanceType = instanceType;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		public Boolean getIoOptimized() {
+			return this.ioOptimized;
+		}
+
+		public void setIoOptimized(Boolean ioOptimized) {
+			this.ioOptimized = ioOptimized;
+		}
+
 		public String getOsType() {
 			return this.osType;
 		}
@@ -189,12 +181,20 @@ public class DescribeAutoProvisioningGroupInstancesResponse extends AcsResponse 
 			this.osType = osType;
 		}
 
-		public String getCreationTime() {
-			return this.creationTime;
+		public String getZoneId() {
+			return this.zoneId;
 		}
 
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
+		}
+
+		public Integer getMemory() {
+			return this.memory;
+		}
+
+		public void setMemory(Integer memory) {
+			this.memory = memory;
 		}
 	}
 

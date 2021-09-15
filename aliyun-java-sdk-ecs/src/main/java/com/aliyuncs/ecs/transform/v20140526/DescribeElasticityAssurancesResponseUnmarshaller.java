@@ -30,32 +30,32 @@ public class DescribeElasticityAssurancesResponseUnmarshaller {
 		
 		describeElasticityAssurancesResponse.setRequestId(_ctx.stringValue("DescribeElasticityAssurancesResponse.RequestId"));
 		describeElasticityAssurancesResponse.setNextToken(_ctx.stringValue("DescribeElasticityAssurancesResponse.NextToken"));
-		describeElasticityAssurancesResponse.setMaxResults(_ctx.integerValue("DescribeElasticityAssurancesResponse.MaxResults"));
 		describeElasticityAssurancesResponse.setTotalCount(_ctx.integerValue("DescribeElasticityAssurancesResponse.TotalCount"));
+		describeElasticityAssurancesResponse.setMaxResults(_ctx.integerValue("DescribeElasticityAssurancesResponse.MaxResults"));
 
 		List<ElasticityAssuranceItem> elasticityAssuranceSet = new ArrayList<ElasticityAssuranceItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet.Length"); i++) {
 			ElasticityAssuranceItem elasticityAssuranceItem = new ElasticityAssuranceItem();
-			elasticityAssuranceItem.setPrivatePoolOptionsId(_ctx.stringValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].PrivatePoolOptionsId"));
-			elasticityAssuranceItem.setPrivatePoolOptionsName(_ctx.stringValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].PrivatePoolOptionsName"));
-			elasticityAssuranceItem.setDescription(_ctx.stringValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].Description"));
-			elasticityAssuranceItem.setRegionId(_ctx.stringValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].RegionId"));
-			elasticityAssuranceItem.setPrivatePoolOptionsMatchCriteria(_ctx.stringValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].PrivatePoolOptionsMatchCriteria"));
-			elasticityAssuranceItem.setUsedAssuranceTimes(_ctx.integerValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].UsedAssuranceTimes"));
-			elasticityAssuranceItem.setTotalAssuranceTimes(_ctx.stringValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].TotalAssuranceTimes"));
 			elasticityAssuranceItem.setStatus(_ctx.stringValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].Status"));
-			elasticityAssuranceItem.setStartTime(_ctx.stringValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].StartTime"));
-			elasticityAssuranceItem.setEndTime(_ctx.stringValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].EndTime"));
+			elasticityAssuranceItem.setPrivatePoolOptionsMatchCriteria(_ctx.stringValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].PrivatePoolOptionsMatchCriteria"));
+			elasticityAssuranceItem.setPrivatePoolOptionsId(_ctx.stringValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].PrivatePoolOptionsId"));
+			elasticityAssuranceItem.setUsedAssuranceTimes(_ctx.integerValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].UsedAssuranceTimes"));
 			elasticityAssuranceItem.setLatestStartTime(_ctx.stringValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].LatestStartTime"));
+			elasticityAssuranceItem.setPrivatePoolOptionsName(_ctx.stringValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].PrivatePoolOptionsName"));
+			elasticityAssuranceItem.setRegionId(_ctx.stringValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].RegionId"));
+			elasticityAssuranceItem.setEndTime(_ctx.stringValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].EndTime"));
+			elasticityAssuranceItem.setStartTime(_ctx.stringValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].StartTime"));
+			elasticityAssuranceItem.setDescription(_ctx.stringValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].Description"));
 			elasticityAssuranceItem.setResourceGroupId(_ctx.stringValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].ResourceGroupId"));
+			elasticityAssuranceItem.setTotalAssuranceTimes(_ctx.stringValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].TotalAssuranceTimes"));
 
 			List<AllocatedResource> allocatedResources = new ArrayList<AllocatedResource>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].AllocatedResources.Length"); j++) {
 				AllocatedResource allocatedResource = new AllocatedResource();
+				allocatedResource.setUsedAmount(_ctx.integerValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].AllocatedResources["+ j +"].UsedAmount"));
+				allocatedResource.setTotalAmount(_ctx.integerValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].AllocatedResources["+ j +"].TotalAmount"));
 				allocatedResource.setZoneId(_ctx.stringValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].AllocatedResources["+ j +"].zoneId"));
 				allocatedResource.setInstanceType(_ctx.stringValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].AllocatedResources["+ j +"].InstanceType"));
-				allocatedResource.setTotalAmount(_ctx.integerValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].AllocatedResources["+ j +"].TotalAmount"));
-				allocatedResource.setUsedAmount(_ctx.integerValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].AllocatedResources["+ j +"].UsedAmount"));
 
 				allocatedResources.add(allocatedResource);
 			}
@@ -64,8 +64,8 @@ public class DescribeElasticityAssurancesResponseUnmarshaller {
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].Tags.Length"); j++) {
 				Tag tag = new Tag();
-				tag.setTagKey(_ctx.stringValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].Tags["+ j +"].TagKey"));
 				tag.setTagValue(_ctx.stringValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].Tags["+ j +"].TagValue"));
+				tag.setTagKey(_ctx.stringValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].Tags["+ j +"].TagKey"));
 
 				tags.add(tag);
 			}

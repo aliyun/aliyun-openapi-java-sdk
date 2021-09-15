@@ -38,10 +38,10 @@ public class DescribeSpotAdviceResponseUnmarshaller {
 			List<AvailableSpotResource> availableSpotResources = new ArrayList<AvailableSpotResource>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeSpotAdviceResponse.AvailableSpotZones["+ i +"].AvailableSpotResources.Length"); j++) {
 				AvailableSpotResource availableSpotResource = new AvailableSpotResource();
-				availableSpotResource.setInstanceType(_ctx.stringValue("DescribeSpotAdviceResponse.AvailableSpotZones["+ i +"].AvailableSpotResources["+ j +"].InstanceType"));
-				availableSpotResource.setInterruptionRate(_ctx.floatValue("DescribeSpotAdviceResponse.AvailableSpotZones["+ i +"].AvailableSpotResources["+ j +"].InterruptionRate"));
 				availableSpotResource.setInterruptRateDesc(_ctx.stringValue("DescribeSpotAdviceResponse.AvailableSpotZones["+ i +"].AvailableSpotResources["+ j +"].InterruptRateDesc"));
 				availableSpotResource.setAverageSpotDiscount(_ctx.integerValue("DescribeSpotAdviceResponse.AvailableSpotZones["+ i +"].AvailableSpotResources["+ j +"].AverageSpotDiscount"));
+				availableSpotResource.setInstanceType(_ctx.stringValue("DescribeSpotAdviceResponse.AvailableSpotZones["+ i +"].AvailableSpotResources["+ j +"].InstanceType"));
+				availableSpotResource.setInterruptionRate(_ctx.floatValue("DescribeSpotAdviceResponse.AvailableSpotZones["+ i +"].AvailableSpotResources["+ j +"].InterruptionRate"));
 
 				availableSpotResources.add(availableSpotResource);
 			}

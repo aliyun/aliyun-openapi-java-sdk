@@ -28,23 +28,23 @@ public class DescribeKeyPairsResponseUnmarshaller {
 	public static DescribeKeyPairsResponse unmarshall(DescribeKeyPairsResponse describeKeyPairsResponse, UnmarshallerContext _ctx) {
 		
 		describeKeyPairsResponse.setRequestId(_ctx.stringValue("DescribeKeyPairsResponse.RequestId"));
-		describeKeyPairsResponse.setTotalCount(_ctx.integerValue("DescribeKeyPairsResponse.TotalCount"));
-		describeKeyPairsResponse.setPageNumber(_ctx.integerValue("DescribeKeyPairsResponse.PageNumber"));
 		describeKeyPairsResponse.setPageSize(_ctx.integerValue("DescribeKeyPairsResponse.PageSize"));
+		describeKeyPairsResponse.setPageNumber(_ctx.integerValue("DescribeKeyPairsResponse.PageNumber"));
+		describeKeyPairsResponse.setTotalCount(_ctx.integerValue("DescribeKeyPairsResponse.TotalCount"));
 
 		List<KeyPair> keyPairs = new ArrayList<KeyPair>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeKeyPairsResponse.KeyPairs.Length"); i++) {
 			KeyPair keyPair = new KeyPair();
+			keyPair.setCreationTime(_ctx.stringValue("DescribeKeyPairsResponse.KeyPairs["+ i +"].CreationTime"));
 			keyPair.setKeyPairName(_ctx.stringValue("DescribeKeyPairsResponse.KeyPairs["+ i +"].KeyPairName"));
 			keyPair.setKeyPairFingerPrint(_ctx.stringValue("DescribeKeyPairsResponse.KeyPairs["+ i +"].KeyPairFingerPrint"));
-			keyPair.setCreationTime(_ctx.stringValue("DescribeKeyPairsResponse.KeyPairs["+ i +"].CreationTime"));
 			keyPair.setResourceGroupId(_ctx.stringValue("DescribeKeyPairsResponse.KeyPairs["+ i +"].ResourceGroupId"));
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeKeyPairsResponse.KeyPairs["+ i +"].Tags.Length"); j++) {
 				Tag tag = new Tag();
-				tag.setTagKey(_ctx.stringValue("DescribeKeyPairsResponse.KeyPairs["+ i +"].Tags["+ j +"].TagKey"));
 				tag.setTagValue(_ctx.stringValue("DescribeKeyPairsResponse.KeyPairs["+ i +"].Tags["+ j +"].TagValue"));
+				tag.setTagKey(_ctx.stringValue("DescribeKeyPairsResponse.KeyPairs["+ i +"].Tags["+ j +"].TagKey"));
 
 				tags.add(tag);
 			}

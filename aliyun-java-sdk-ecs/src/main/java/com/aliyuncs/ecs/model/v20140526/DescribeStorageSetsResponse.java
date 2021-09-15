@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeStorageSetsResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer pageSize;
 
-	private Integer totalCount;
+	private String requestId;
 
 	private Integer pageNumber;
 
-	private Integer pageSize;
+	private Integer totalCount;
 
 	private List<StorageSet> storageSets;
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class DescribeStorageSetsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
 	}
 
 	public Integer getPageNumber() {
@@ -59,12 +59,12 @@ public class DescribeStorageSetsResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public Integer getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<StorageSet> getStorageSets() {
@@ -77,27 +77,19 @@ public class DescribeStorageSetsResponse extends AcsResponse {
 
 	public static class StorageSet {
 
-		private String storageSetId;
-
 		private String creationTime;
-
-		private String storageSetName;
 
 		private String description;
 
-		private Integer storageSetPartitionNumber;
-
-		private String regionId;
-
 		private String zoneId;
 
-		public String getStorageSetId() {
-			return this.storageSetId;
-		}
+		private String storageSetId;
 
-		public void setStorageSetId(String storageSetId) {
-			this.storageSetId = storageSetId;
-		}
+		private Integer storageSetPartitionNumber;
+
+		private String storageSetName;
+
+		private String regionId;
 
 		public String getCreationTime() {
 			return this.creationTime;
@@ -105,14 +97,6 @@ public class DescribeStorageSetsResponse extends AcsResponse {
 
 		public void setCreationTime(String creationTime) {
 			this.creationTime = creationTime;
-		}
-
-		public String getStorageSetName() {
-			return this.storageSetName;
-		}
-
-		public void setStorageSetName(String storageSetName) {
-			this.storageSetName = storageSetName;
 		}
 
 		public String getDescription() {
@@ -123,6 +107,22 @@ public class DescribeStorageSetsResponse extends AcsResponse {
 			this.description = description;
 		}
 
+		public String getZoneId() {
+			return this.zoneId;
+		}
+
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
+		}
+
+		public String getStorageSetId() {
+			return this.storageSetId;
+		}
+
+		public void setStorageSetId(String storageSetId) {
+			this.storageSetId = storageSetId;
+		}
+
 		public Integer getStorageSetPartitionNumber() {
 			return this.storageSetPartitionNumber;
 		}
@@ -131,20 +131,20 @@ public class DescribeStorageSetsResponse extends AcsResponse {
 			this.storageSetPartitionNumber = storageSetPartitionNumber;
 		}
 
+		public String getStorageSetName() {
+			return this.storageSetName;
+		}
+
+		public void setStorageSetName(String storageSetName) {
+			this.storageSetName = storageSetName;
+		}
+
 		public String getRegionId() {
 			return this.regionId;
 		}
 
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
-		}
-
-		public String getZoneId() {
-			return this.zoneId;
-		}
-
-		public void setZoneId(String zoneId) {
-			this.zoneId = zoneId;
 		}
 	}
 

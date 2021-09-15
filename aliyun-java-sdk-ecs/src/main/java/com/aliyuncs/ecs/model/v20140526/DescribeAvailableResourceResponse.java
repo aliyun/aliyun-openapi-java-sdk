@@ -47,23 +47,15 @@ public class DescribeAvailableResourceResponse extends AcsResponse {
 
 	public static class AvailableZone {
 
-		private String regionId;
-
 		private String zoneId;
 
 		private String status;
 
 		private String statusCategory;
 
+		private String regionId;
+
 		private List<AvailableResource> availableResources;
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
 
 		public String getZoneId() {
 			return this.zoneId;
@@ -87,6 +79,14 @@ public class DescribeAvailableResourceResponse extends AcsResponse {
 
 		public void setStatusCategory(String statusCategory) {
 			this.statusCategory = statusCategory;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 
 		public List<AvailableResource> getAvailableResources() {
@@ -121,25 +121,17 @@ public class DescribeAvailableResourceResponse extends AcsResponse {
 
 			public static class SupportedResource {
 
-				private String value;
-
 				private String status;
 
-				private String statusCategory;
-
-				private Integer min;
+				private String value;
 
 				private Integer max;
 
 				private String unit;
 
-				public String getValue() {
-					return this.value;
-				}
+				private String statusCategory;
 
-				public void setValue(String value) {
-					this.value = value;
-				}
+				private Integer min;
 
 				public String getStatus() {
 					return this.status;
@@ -149,20 +141,12 @@ public class DescribeAvailableResourceResponse extends AcsResponse {
 					this.status = status;
 				}
 
-				public String getStatusCategory() {
-					return this.statusCategory;
+				public String getValue() {
+					return this.value;
 				}
 
-				public void setStatusCategory(String statusCategory) {
-					this.statusCategory = statusCategory;
-				}
-
-				public Integer getMin() {
-					return this.min;
-				}
-
-				public void setMin(Integer min) {
-					this.min = min;
+				public void setValue(String value) {
+					this.value = value;
 				}
 
 				public Integer getMax() {
@@ -179,6 +163,22 @@ public class DescribeAvailableResourceResponse extends AcsResponse {
 
 				public void setUnit(String unit) {
 					this.unit = unit;
+				}
+
+				public String getStatusCategory() {
+					return this.statusCategory;
+				}
+
+				public void setStatusCategory(String statusCategory) {
+					this.statusCategory = statusCategory;
+				}
+
+				public Integer getMin() {
+					return this.min;
+				}
+
+				public void setMin(Integer min) {
+					this.min = min;
 				}
 			}
 		}

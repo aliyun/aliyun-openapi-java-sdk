@@ -109,7 +109,7 @@ public class DescribeDisksResponse extends AcsResponse {
 
 		private Boolean deleteAutoSnapshot;
 
-		private String dedicatedBlockStorageClusterId;
+		private String storageClusterId;
 
 		private Boolean encrypted;
 
@@ -261,12 +261,12 @@ public class DescribeDisksResponse extends AcsResponse {
 			this.deleteAutoSnapshot = deleteAutoSnapshot;
 		}
 
-		public String getDedicatedBlockStorageClusterId() {
-			return this.dedicatedBlockStorageClusterId;
+		public String getStorageClusterId() {
+			return this.storageClusterId;
 		}
 
-		public void setDedicatedBlockStorageClusterId(String dedicatedBlockStorageClusterId) {
-			this.dedicatedBlockStorageClusterId = dedicatedBlockStorageClusterId;
+		public void setStorageClusterId(String storageClusterId) {
+			this.storageClusterId = storageClusterId;
 		}
 
 		public Boolean getEncrypted() {

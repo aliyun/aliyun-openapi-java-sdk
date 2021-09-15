@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeUserBusinessBehaviorResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String statusValue;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getStatusValue() {
 		return this.statusValue;
@@ -42,6 +34,14 @@ public class DescribeUserBusinessBehaviorResponse extends AcsResponse {
 
 	public void setStatusValue(String statusValue) {
 		this.statusValue = statusValue;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

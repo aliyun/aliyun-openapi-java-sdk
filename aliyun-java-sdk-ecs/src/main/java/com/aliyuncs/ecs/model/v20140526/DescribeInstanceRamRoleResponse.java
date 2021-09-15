@@ -27,9 +27,9 @@ public class DescribeInstanceRamRoleResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String regionId;
-
 	private Integer totalCount;
+
+	private String regionId;
 
 	private List<InstanceRamRoleSet> instanceRamRoleSets;
 
@@ -41,20 +41,20 @@ public class DescribeInstanceRamRoleResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getRegionId() {
-		return this.regionId;
-	}
-
-	public void setRegionId(String regionId) {
-		this.regionId = regionId;
-	}
-
 	public Integer getTotalCount() {
 		return this.totalCount;
 	}
 
 	public void setTotalCount(Integer totalCount) {
 		this.totalCount = totalCount;
+	}
+
+	public String getRegionId() {
+		return this.regionId;
+	}
+
+	public void setRegionId(String regionId) {
+		this.regionId = regionId;
 	}
 
 	public List<InstanceRamRoleSet> getInstanceRamRoleSets() {
@@ -67,17 +67,9 @@ public class DescribeInstanceRamRoleResponse extends AcsResponse {
 
 	public static class InstanceRamRoleSet {
 
-		private String instanceId;
-
 		private String ramRoleName;
 
-		public String getInstanceId() {
-			return this.instanceId;
-		}
-
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
+		private String instanceId;
 
 		public String getRamRoleName() {
 			return this.ramRoleName;
@@ -85,6 +77,14 @@ public class DescribeInstanceRamRoleResponse extends AcsResponse {
 
 		public void setRamRoleName(String ramRoleName) {
 			this.ramRoleName = ramRoleName;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
 		}
 	}
 

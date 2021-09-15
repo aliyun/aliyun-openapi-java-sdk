@@ -31,33 +31,33 @@ public class DescribeAutoProvisioningGroupsResponseUnmarshaller {
 	public static DescribeAutoProvisioningGroupsResponse unmarshall(DescribeAutoProvisioningGroupsResponse describeAutoProvisioningGroupsResponse, UnmarshallerContext _ctx) {
 		
 		describeAutoProvisioningGroupsResponse.setRequestId(_ctx.stringValue("DescribeAutoProvisioningGroupsResponse.RequestId"));
-		describeAutoProvisioningGroupsResponse.setTotalCount(_ctx.integerValue("DescribeAutoProvisioningGroupsResponse.TotalCount"));
-		describeAutoProvisioningGroupsResponse.setPageNumber(_ctx.integerValue("DescribeAutoProvisioningGroupsResponse.PageNumber"));
 		describeAutoProvisioningGroupsResponse.setPageSize(_ctx.integerValue("DescribeAutoProvisioningGroupsResponse.PageSize"));
+		describeAutoProvisioningGroupsResponse.setPageNumber(_ctx.integerValue("DescribeAutoProvisioningGroupsResponse.PageNumber"));
+		describeAutoProvisioningGroupsResponse.setTotalCount(_ctx.integerValue("DescribeAutoProvisioningGroupsResponse.TotalCount"));
 
 		List<AutoProvisioningGroup> autoProvisioningGroups = new ArrayList<AutoProvisioningGroup>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeAutoProvisioningGroupsResponse.AutoProvisioningGroups.Length"); i++) {
 			AutoProvisioningGroup autoProvisioningGroup = new AutoProvisioningGroup();
-			autoProvisioningGroup.setAutoProvisioningGroupId(_ctx.stringValue("DescribeAutoProvisioningGroupsResponse.AutoProvisioningGroups["+ i +"].AutoProvisioningGroupId"));
-			autoProvisioningGroup.setAutoProvisioningGroupName(_ctx.stringValue("DescribeAutoProvisioningGroupsResponse.AutoProvisioningGroups["+ i +"].AutoProvisioningGroupName"));
-			autoProvisioningGroup.setAutoProvisioningGroupType(_ctx.stringValue("DescribeAutoProvisioningGroupsResponse.AutoProvisioningGroups["+ i +"].AutoProvisioningGroupType"));
-			autoProvisioningGroup.setStatus(_ctx.stringValue("DescribeAutoProvisioningGroupsResponse.AutoProvisioningGroups["+ i +"].Status"));
-			autoProvisioningGroup.setState(_ctx.stringValue("DescribeAutoProvisioningGroupsResponse.AutoProvisioningGroups["+ i +"].State"));
-			autoProvisioningGroup.setRegionId(_ctx.stringValue("DescribeAutoProvisioningGroupsResponse.AutoProvisioningGroups["+ i +"].RegionId"));
-			autoProvisioningGroup.setValidFrom(_ctx.stringValue("DescribeAutoProvisioningGroupsResponse.AutoProvisioningGroups["+ i +"].ValidFrom"));
-			autoProvisioningGroup.setValidUntil(_ctx.stringValue("DescribeAutoProvisioningGroupsResponse.AutoProvisioningGroups["+ i +"].ValidUntil"));
-			autoProvisioningGroup.setExcessCapacityTerminationPolicy(_ctx.stringValue("DescribeAutoProvisioningGroupsResponse.AutoProvisioningGroups["+ i +"].ExcessCapacityTerminationPolicy"));
-			autoProvisioningGroup.setMaxSpotPrice(_ctx.floatValue("DescribeAutoProvisioningGroupsResponse.AutoProvisioningGroups["+ i +"].MaxSpotPrice"));
-			autoProvisioningGroup.setLaunchTemplateId(_ctx.stringValue("DescribeAutoProvisioningGroupsResponse.AutoProvisioningGroups["+ i +"].LaunchTemplateId"));
-			autoProvisioningGroup.setLaunchTemplateVersion(_ctx.stringValue("DescribeAutoProvisioningGroupsResponse.AutoProvisioningGroups["+ i +"].LaunchTemplateVersion"));
-			autoProvisioningGroup.setTerminateInstances(_ctx.booleanValue("DescribeAutoProvisioningGroupsResponse.AutoProvisioningGroups["+ i +"].TerminateInstances"));
-			autoProvisioningGroup.setTerminateInstancesWithExpiration(_ctx.booleanValue("DescribeAutoProvisioningGroupsResponse.AutoProvisioningGroups["+ i +"].TerminateInstancesWithExpiration"));
 			autoProvisioningGroup.setCreationTime(_ctx.stringValue("DescribeAutoProvisioningGroupsResponse.AutoProvisioningGroups["+ i +"].CreationTime"));
+			autoProvisioningGroup.setAutoProvisioningGroupName(_ctx.stringValue("DescribeAutoProvisioningGroupsResponse.AutoProvisioningGroups["+ i +"].AutoProvisioningGroupName"));
+			autoProvisioningGroup.setStatus(_ctx.stringValue("DescribeAutoProvisioningGroupsResponse.AutoProvisioningGroups["+ i +"].Status"));
+			autoProvisioningGroup.setTerminateInstances(_ctx.booleanValue("DescribeAutoProvisioningGroupsResponse.AutoProvisioningGroups["+ i +"].TerminateInstances"));
+			autoProvisioningGroup.setMaxSpotPrice(_ctx.floatValue("DescribeAutoProvisioningGroupsResponse.AutoProvisioningGroups["+ i +"].MaxSpotPrice"));
+			autoProvisioningGroup.setState(_ctx.stringValue("DescribeAutoProvisioningGroupsResponse.AutoProvisioningGroups["+ i +"].State"));
+			autoProvisioningGroup.setLaunchTemplateId(_ctx.stringValue("DescribeAutoProvisioningGroupsResponse.AutoProvisioningGroups["+ i +"].LaunchTemplateId"));
+			autoProvisioningGroup.setValidFrom(_ctx.stringValue("DescribeAutoProvisioningGroupsResponse.AutoProvisioningGroups["+ i +"].ValidFrom"));
+			autoProvisioningGroup.setLaunchTemplateVersion(_ctx.stringValue("DescribeAutoProvisioningGroupsResponse.AutoProvisioningGroups["+ i +"].LaunchTemplateVersion"));
+			autoProvisioningGroup.setTerminateInstancesWithExpiration(_ctx.booleanValue("DescribeAutoProvisioningGroupsResponse.AutoProvisioningGroups["+ i +"].TerminateInstancesWithExpiration"));
+			autoProvisioningGroup.setRegionId(_ctx.stringValue("DescribeAutoProvisioningGroupsResponse.AutoProvisioningGroups["+ i +"].RegionId"));
+			autoProvisioningGroup.setValidUntil(_ctx.stringValue("DescribeAutoProvisioningGroupsResponse.AutoProvisioningGroups["+ i +"].ValidUntil"));
+			autoProvisioningGroup.setAutoProvisioningGroupType(_ctx.stringValue("DescribeAutoProvisioningGroupsResponse.AutoProvisioningGroups["+ i +"].AutoProvisioningGroupType"));
+			autoProvisioningGroup.setAutoProvisioningGroupId(_ctx.stringValue("DescribeAutoProvisioningGroupsResponse.AutoProvisioningGroups["+ i +"].AutoProvisioningGroupId"));
+			autoProvisioningGroup.setExcessCapacityTerminationPolicy(_ctx.stringValue("DescribeAutoProvisioningGroupsResponse.AutoProvisioningGroups["+ i +"].ExcessCapacityTerminationPolicy"));
 
 			SpotOptions spotOptions = new SpotOptions();
+			spotOptions.setInstancePoolsToUseCount(_ctx.integerValue("DescribeAutoProvisioningGroupsResponse.AutoProvisioningGroups["+ i +"].SpotOptions.InstancePoolsToUseCount"));
 			spotOptions.setAllocationStrategy(_ctx.stringValue("DescribeAutoProvisioningGroupsResponse.AutoProvisioningGroups["+ i +"].SpotOptions.AllocationStrategy"));
 			spotOptions.setInstanceInterruptionBehavior(_ctx.stringValue("DescribeAutoProvisioningGroupsResponse.AutoProvisioningGroups["+ i +"].SpotOptions.InstanceInterruptionBehavior"));
-			spotOptions.setInstancePoolsToUseCount(_ctx.integerValue("DescribeAutoProvisioningGroupsResponse.AutoProvisioningGroups["+ i +"].SpotOptions.InstancePoolsToUseCount"));
 			autoProvisioningGroup.setSpotOptions(spotOptions);
 
 			PayAsYouGoOptions payAsYouGoOptions = new PayAsYouGoOptions();
@@ -65,20 +65,20 @@ public class DescribeAutoProvisioningGroupsResponseUnmarshaller {
 			autoProvisioningGroup.setPayAsYouGoOptions(payAsYouGoOptions);
 
 			TargetCapacitySpecification targetCapacitySpecification = new TargetCapacitySpecification();
-			targetCapacitySpecification.setTotalTargetCapacity(_ctx.floatValue("DescribeAutoProvisioningGroupsResponse.AutoProvisioningGroups["+ i +"].TargetCapacitySpecification.TotalTargetCapacity"));
-			targetCapacitySpecification.setPayAsYouGoTargetCapacity(_ctx.floatValue("DescribeAutoProvisioningGroupsResponse.AutoProvisioningGroups["+ i +"].TargetCapacitySpecification.PayAsYouGoTargetCapacity"));
 			targetCapacitySpecification.setSpotTargetCapacity(_ctx.floatValue("DescribeAutoProvisioningGroupsResponse.AutoProvisioningGroups["+ i +"].TargetCapacitySpecification.SpotTargetCapacity"));
+			targetCapacitySpecification.setPayAsYouGoTargetCapacity(_ctx.floatValue("DescribeAutoProvisioningGroupsResponse.AutoProvisioningGroups["+ i +"].TargetCapacitySpecification.PayAsYouGoTargetCapacity"));
 			targetCapacitySpecification.setDefaultTargetCapacityType(_ctx.stringValue("DescribeAutoProvisioningGroupsResponse.AutoProvisioningGroups["+ i +"].TargetCapacitySpecification.DefaultTargetCapacityType"));
+			targetCapacitySpecification.setTotalTargetCapacity(_ctx.floatValue("DescribeAutoProvisioningGroupsResponse.AutoProvisioningGroups["+ i +"].TargetCapacitySpecification.TotalTargetCapacity"));
 			autoProvisioningGroup.setTargetCapacitySpecification(targetCapacitySpecification);
 
 			List<LaunchTemplateConfig> launchTemplateConfigs = new ArrayList<LaunchTemplateConfig>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeAutoProvisioningGroupsResponse.AutoProvisioningGroups["+ i +"].LaunchTemplateConfigs.Length"); j++) {
 				LaunchTemplateConfig launchTemplateConfig = new LaunchTemplateConfig();
-				launchTemplateConfig.setInstanceType(_ctx.stringValue("DescribeAutoProvisioningGroupsResponse.AutoProvisioningGroups["+ i +"].LaunchTemplateConfigs["+ j +"].InstanceType"));
 				launchTemplateConfig.setMaxPrice(_ctx.floatValue("DescribeAutoProvisioningGroupsResponse.AutoProvisioningGroups["+ i +"].LaunchTemplateConfigs["+ j +"].MaxPrice"));
+				launchTemplateConfig.setPriority(_ctx.floatValue("DescribeAutoProvisioningGroupsResponse.AutoProvisioningGroups["+ i +"].LaunchTemplateConfigs["+ j +"].Priority"));
 				launchTemplateConfig.setVSwitchId(_ctx.stringValue("DescribeAutoProvisioningGroupsResponse.AutoProvisioningGroups["+ i +"].LaunchTemplateConfigs["+ j +"].VSwitchId"));
 				launchTemplateConfig.setWeightedCapacity(_ctx.floatValue("DescribeAutoProvisioningGroupsResponse.AutoProvisioningGroups["+ i +"].LaunchTemplateConfigs["+ j +"].WeightedCapacity"));
-				launchTemplateConfig.setPriority(_ctx.floatValue("DescribeAutoProvisioningGroupsResponse.AutoProvisioningGroups["+ i +"].LaunchTemplateConfigs["+ j +"].Priority"));
+				launchTemplateConfig.setInstanceType(_ctx.stringValue("DescribeAutoProvisioningGroupsResponse.AutoProvisioningGroups["+ i +"].LaunchTemplateConfigs["+ j +"].InstanceType"));
 
 				launchTemplateConfigs.add(launchTemplateConfig);
 			}

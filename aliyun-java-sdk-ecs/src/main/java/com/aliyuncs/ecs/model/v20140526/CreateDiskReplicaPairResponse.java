@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateDiskReplicaPairResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String pairId;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getPairId() {
 		return this.pairId;
@@ -42,6 +34,14 @@ public class CreateDiskReplicaPairResponse extends AcsResponse {
 
 	public void setPairId(String pairId) {
 		this.pairId = pairId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

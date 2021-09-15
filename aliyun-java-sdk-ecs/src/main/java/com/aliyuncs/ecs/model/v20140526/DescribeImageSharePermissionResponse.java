@@ -27,15 +27,15 @@ public class DescribeImageSharePermissionResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String regionId;
-
-	private Integer totalCount;
-
 	private Integer pageNumber;
 
 	private Integer pageSize;
 
+	private Integer totalCount;
+
 	private String imageId;
+
+	private String regionId;
 
 	private List<ShareGroup> shareGroups;
 
@@ -47,22 +47,6 @@ public class DescribeImageSharePermissionResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getRegionId() {
-		return this.regionId;
-	}
-
-	public void setRegionId(String regionId) {
-		this.regionId = regionId;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
 	}
 
 	public Integer getPageNumber() {
@@ -81,12 +65,28 @@ public class DescribeImageSharePermissionResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
+
 	public String getImageId() {
 		return this.imageId;
 	}
 
 	public void setImageId(String imageId) {
 		this.imageId = imageId;
+	}
+
+	public String getRegionId() {
+		return this.regionId;
+	}
+
+	public void setRegionId(String regionId) {
+		this.regionId = regionId;
 	}
 
 	public List<ShareGroup> getShareGroups() {

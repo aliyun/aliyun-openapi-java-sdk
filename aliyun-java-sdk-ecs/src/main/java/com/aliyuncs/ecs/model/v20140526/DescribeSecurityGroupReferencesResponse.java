@@ -69,17 +69,9 @@ public class DescribeSecurityGroupReferencesResponse extends AcsResponse {
 
 		public static class ReferencingSecurityGroup {
 
-			private String aliUid;
-
 			private String securityGroupId;
 
-			public String getAliUid() {
-				return this.aliUid;
-			}
-
-			public void setAliUid(String aliUid) {
-				this.aliUid = aliUid;
-			}
+			private String aliUid;
 
 			public String getSecurityGroupId() {
 				return this.securityGroupId;
@@ -87,6 +79,14 @@ public class DescribeSecurityGroupReferencesResponse extends AcsResponse {
 
 			public void setSecurityGroupId(String securityGroupId) {
 				this.securityGroupId = securityGroupId;
+			}
+
+			public String getAliUid() {
+				return this.aliUid;
+			}
+
+			public void setAliUid(String aliUid) {
+				this.aliUid = aliUid;
 			}
 		}
 	}

@@ -52,8 +52,6 @@ public class CreateDiskRequest extends RpcAcsRequest<CreateDiskResponse> {
 
 	private List<Arn> arns;
 
-	private String dedicatedBlockStorageClusterId;
-
 	private String resourceOwnerAccount;
 
 	private String performanceLevel;
@@ -71,6 +69,8 @@ public class CreateDiskRequest extends RpcAcsRequest<CreateDiskResponse> {
 	private Boolean encrypted;
 
 	private String zoneId;
+
+	private String storageClusterId;
 
 	private String kMSKeyId;
 	public CreateDiskRequest() {
@@ -232,17 +232,6 @@ public class CreateDiskRequest extends RpcAcsRequest<CreateDiskResponse> {
 		}	
 	}
 
-	public String getDedicatedBlockStorageClusterId() {
-		return this.dedicatedBlockStorageClusterId;
-	}
-
-	public void setDedicatedBlockStorageClusterId(String dedicatedBlockStorageClusterId) {
-		this.dedicatedBlockStorageClusterId = dedicatedBlockStorageClusterId;
-		if(dedicatedBlockStorageClusterId != null){
-			putQueryParameter("DedicatedBlockStorageClusterId", dedicatedBlockStorageClusterId);
-		}
-	}
-
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -339,6 +328,17 @@ public class CreateDiskRequest extends RpcAcsRequest<CreateDiskResponse> {
 		this.zoneId = zoneId;
 		if(zoneId != null){
 			putQueryParameter("ZoneId", zoneId);
+		}
+	}
+
+	public String getStorageClusterId() {
+		return this.storageClusterId;
+	}
+
+	public void setStorageClusterId(String storageClusterId) {
+		this.storageClusterId = storageClusterId;
+		if(storageClusterId != null){
+			putQueryParameter("StorageClusterId", storageClusterId);
 		}
 	}
 

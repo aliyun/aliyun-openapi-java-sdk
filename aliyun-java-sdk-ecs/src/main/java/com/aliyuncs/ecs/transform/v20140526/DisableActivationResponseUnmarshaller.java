@@ -26,16 +26,16 @@ public class DisableActivationResponseUnmarshaller {
 		disableActivationResponse.setRequestId(_ctx.stringValue("DisableActivationResponse.RequestId"));
 
 		Activation activation = new Activation();
-		activation.setActivationId(_ctx.stringValue("DisableActivationResponse.Activation.ActivationId"));
-		activation.setInstanceName(_ctx.stringValue("DisableActivationResponse.Activation.InstanceName"));
-		activation.setDescription(_ctx.stringValue("DisableActivationResponse.Activation.Description"));
-		activation.setInstanceCount(_ctx.integerValue("DisableActivationResponse.Activation.InstanceCount"));
-		activation.setTimeToLiveInHours(_ctx.longValue("DisableActivationResponse.Activation.TimeToLiveInHours"));
-		activation.setIpAddressRange(_ctx.stringValue("DisableActivationResponse.Activation.IpAddressRange"));
-		activation.setRegisteredCount(_ctx.integerValue("DisableActivationResponse.Activation.RegisteredCount"));
-		activation.setDeregisteredCount(_ctx.integerValue("DisableActivationResponse.Activation.DeregisteredCount"));
-		activation.setDisabled(_ctx.booleanValue("DisableActivationResponse.Activation.Disabled"));
 		activation.setCreationTime(_ctx.stringValue("DisableActivationResponse.Activation.CreationTime"));
+		activation.setDeregisteredCount(_ctx.integerValue("DisableActivationResponse.Activation.DeregisteredCount"));
+		activation.setInstanceCount(_ctx.integerValue("DisableActivationResponse.Activation.InstanceCount"));
+		activation.setDescription(_ctx.stringValue("DisableActivationResponse.Activation.Description"));
+		activation.setRegisteredCount(_ctx.integerValue("DisableActivationResponse.Activation.RegisteredCount"));
+		activation.setInstanceName(_ctx.stringValue("DisableActivationResponse.Activation.InstanceName"));
+		activation.setDisabled(_ctx.booleanValue("DisableActivationResponse.Activation.Disabled"));
+		activation.setIpAddressRange(_ctx.stringValue("DisableActivationResponse.Activation.IpAddressRange"));
+		activation.setTimeToLiveInHours(_ctx.longValue("DisableActivationResponse.Activation.TimeToLiveInHours"));
+		activation.setActivationId(_ctx.stringValue("DisableActivationResponse.Activation.ActivationId"));
 		disableActivationResponse.setActivation(activation);
 	 
 	 	return disableActivationResponse;

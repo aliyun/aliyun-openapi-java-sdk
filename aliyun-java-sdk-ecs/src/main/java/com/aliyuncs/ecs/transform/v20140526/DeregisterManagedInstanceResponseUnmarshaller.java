@@ -26,19 +26,19 @@ public class DeregisterManagedInstanceResponseUnmarshaller {
 		deregisterManagedInstanceResponse.setRequestId(_ctx.stringValue("DeregisterManagedInstanceResponse.RequestId"));
 
 		Instance instance = new Instance();
-		instance.setInstanceId(_ctx.stringValue("DeregisterManagedInstanceResponse.Instance.InstanceId"));
-		instance.setInstanceName(_ctx.stringValue("DeregisterManagedInstanceResponse.Instance.InstanceName"));
-		instance.setActivationId(_ctx.stringValue("DeregisterManagedInstanceResponse.Instance.ActivationId"));
-		instance.setHostname(_ctx.stringValue("DeregisterManagedInstanceResponse.Instance.Hostname"));
-		instance.setMachineId(_ctx.stringValue("DeregisterManagedInstanceResponse.Instance.MachineId"));
-		instance.setOsType(_ctx.stringValue("DeregisterManagedInstanceResponse.Instance.OsType"));
-		instance.setOsVersion(_ctx.stringValue("DeregisterManagedInstanceResponse.Instance.OsVersion"));
-		instance.setIntranetIp(_ctx.stringValue("DeregisterManagedInstanceResponse.Instance.IntranetIp"));
+		instance.setLastInvokedTime(_ctx.stringValue("DeregisterManagedInstanceResponse.Instance.LastInvokedTime"));
 		instance.setInternetIp(_ctx.stringValue("DeregisterManagedInstanceResponse.Instance.InternetIp"));
+		instance.setHostname(_ctx.stringValue("DeregisterManagedInstanceResponse.Instance.Hostname"));
+		instance.setInstanceId(_ctx.stringValue("DeregisterManagedInstanceResponse.Instance.InstanceId"));
+		instance.setActivationId(_ctx.stringValue("DeregisterManagedInstanceResponse.Instance.ActivationId"));
+		instance.setIntranetIp(_ctx.stringValue("DeregisterManagedInstanceResponse.Instance.IntranetIp"));
 		instance.setAgentVersion(_ctx.stringValue("DeregisterManagedInstanceResponse.Instance.AgentVersion"));
 		instance.setRegistrationTime(_ctx.stringValue("DeregisterManagedInstanceResponse.Instance.RegistrationTime"));
+		instance.setInstanceName(_ctx.stringValue("DeregisterManagedInstanceResponse.Instance.InstanceName"));
+		instance.setOsType(_ctx.stringValue("DeregisterManagedInstanceResponse.Instance.OsType"));
+		instance.setOsVersion(_ctx.stringValue("DeregisterManagedInstanceResponse.Instance.OsVersion"));
 		instance.setInvocationCount(_ctx.longValue("DeregisterManagedInstanceResponse.Instance.InvocationCount"));
-		instance.setLastInvokedTime(_ctx.stringValue("DeregisterManagedInstanceResponse.Instance.LastInvokedTime"));
+		instance.setMachineId(_ctx.stringValue("DeregisterManagedInstanceResponse.Instance.MachineId"));
 		deregisterManagedInstanceResponse.setInstance(instance);
 	 
 	 	return deregisterManagedInstanceResponse;

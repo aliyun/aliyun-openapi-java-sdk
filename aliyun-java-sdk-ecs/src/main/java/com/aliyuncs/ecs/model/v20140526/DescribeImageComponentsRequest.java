@@ -36,6 +36,8 @@ public class DescribeImageComponentsRequest extends RpcAcsRequest<DescribeImageC
 
 	private List<Tag> tags;
 
+	private String owner;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -112,6 +114,17 @@ public class DescribeImageComponentsRequest extends RpcAcsRequest<DescribeImageC
 				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
 			}
 		}	
+	}
+
+	public String getOwner() {
+		return this.owner;
+	}
+
+	public void setOwner(String owner) {
+		this.owner = owner;
+		if(owner != null){
+			putQueryParameter("Owner", owner);
+		}
 	}
 
 	public String getResourceOwnerAccount() {

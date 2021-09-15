@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDiskReplicaPairsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String nextToken;
 
+	private String requestId;
+
 	private List<DiskReplicaPair> diskReplicaPairs;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getNextToken() {
 		return this.nextToken;
@@ -45,6 +37,14 @@ public class DescribeDiskReplicaPairsResponse extends AcsResponse {
 
 	public void setNextToken(String nextToken) {
 		this.nextToken = nextToken;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<DiskReplicaPair> getDiskReplicaPairs() {
@@ -57,36 +57,28 @@ public class DescribeDiskReplicaPairsResponse extends AcsResponse {
 
 	public static class DiskReplicaPair {
 
-		private String replicaPairId;
-
-		private String sourceRegion;
+		private String status;
 
 		private String sourceDiskId;
 
-		private String destinationRegion;
-
-		private String destinationDiskId;
-
-		private String pairName;
+		private String replicaPairId;
 
 		private String description;
 
-		private String status;
+		private String destinationRegion;
 
-		public String getReplicaPairId() {
-			return this.replicaPairId;
+		private String pairName;
+
+		private String sourceRegion;
+
+		private String destinationDiskId;
+
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setReplicaPairId(String replicaPairId) {
-			this.replicaPairId = replicaPairId;
-		}
-
-		public String getSourceRegion() {
-			return this.sourceRegion;
-		}
-
-		public void setSourceRegion(String sourceRegion) {
-			this.sourceRegion = sourceRegion;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public String getSourceDiskId() {
@@ -97,28 +89,12 @@ public class DescribeDiskReplicaPairsResponse extends AcsResponse {
 			this.sourceDiskId = sourceDiskId;
 		}
 
-		public String getDestinationRegion() {
-			return this.destinationRegion;
+		public String getReplicaPairId() {
+			return this.replicaPairId;
 		}
 
-		public void setDestinationRegion(String destinationRegion) {
-			this.destinationRegion = destinationRegion;
-		}
-
-		public String getDestinationDiskId() {
-			return this.destinationDiskId;
-		}
-
-		public void setDestinationDiskId(String destinationDiskId) {
-			this.destinationDiskId = destinationDiskId;
-		}
-
-		public String getPairName() {
-			return this.pairName;
-		}
-
-		public void setPairName(String pairName) {
-			this.pairName = pairName;
+		public void setReplicaPairId(String replicaPairId) {
+			this.replicaPairId = replicaPairId;
 		}
 
 		public String getDescription() {
@@ -129,12 +105,36 @@ public class DescribeDiskReplicaPairsResponse extends AcsResponse {
 			this.description = description;
 		}
 
-		public String getStatus() {
-			return this.status;
+		public String getDestinationRegion() {
+			return this.destinationRegion;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
+		public void setDestinationRegion(String destinationRegion) {
+			this.destinationRegion = destinationRegion;
+		}
+
+		public String getPairName() {
+			return this.pairName;
+		}
+
+		public void setPairName(String pairName) {
+			this.pairName = pairName;
+		}
+
+		public String getSourceRegion() {
+			return this.sourceRegion;
+		}
+
+		public void setSourceRegion(String sourceRegion) {
+			this.sourceRegion = sourceRegion;
+		}
+
+		public String getDestinationDiskId() {
+			return this.destinationDiskId;
+		}
+
+		public void setDestinationDiskId(String destinationDiskId) {
+			this.destinationDiskId = destinationDiskId;
 		}
 	}
 

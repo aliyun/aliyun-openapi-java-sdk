@@ -25,40 +25,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDeploymentSetsResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String regionId;
-
-	private Integer totalCount;
+	private Integer pageSize;
 
 	private Integer pageNumber;
 
-	private Integer pageSize;
+	private String requestId;
+
+	private Integer totalCount;
+
+	private String regionId;
 
 	private List<DeploymentSet> deploymentSets;
 
-	public String getRequestId() {
-		return this.requestId;
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getRegionId() {
-		return this.regionId;
-	}
-
-	public void setRegionId(String regionId) {
-		this.regionId = regionId;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
 	}
 
 	public Integer getPageNumber() {
@@ -69,12 +53,28 @@ public class DescribeDeploymentSetsResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
+
+	public String getRegionId() {
+		return this.regionId;
+	}
+
+	public void setRegionId(String regionId) {
+		this.regionId = regionId;
 	}
 
 	public List<DeploymentSet> getDeploymentSets() {
@@ -87,50 +87,34 @@ public class DescribeDeploymentSetsResponse extends AcsResponse {
 
 	public static class DeploymentSet {
 
-		private String deploymentSetId;
-
-		private String deploymentSetDescription;
-
-		private String deploymentSetName;
+		private String creationTime;
 
 		private String strategy;
 
+		private String deploymentSetId;
+
 		private String deploymentStrategy;
+
+		private String deploymentSetDescription;
 
 		private String domain;
 
+		private Integer groupCount;
+
 		private String granularity;
 
-		private Integer groupCount;
+		private String deploymentSetName;
 
 		private Integer instanceAmount;
 
-		private String creationTime;
-
 		private List<String> instanceIds;
 
-		public String getDeploymentSetId() {
-			return this.deploymentSetId;
+		public String getCreationTime() {
+			return this.creationTime;
 		}
 
-		public void setDeploymentSetId(String deploymentSetId) {
-			this.deploymentSetId = deploymentSetId;
-		}
-
-		public String getDeploymentSetDescription() {
-			return this.deploymentSetDescription;
-		}
-
-		public void setDeploymentSetDescription(String deploymentSetDescription) {
-			this.deploymentSetDescription = deploymentSetDescription;
-		}
-
-		public String getDeploymentSetName() {
-			return this.deploymentSetName;
-		}
-
-		public void setDeploymentSetName(String deploymentSetName) {
-			this.deploymentSetName = deploymentSetName;
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
 		}
 
 		public String getStrategy() {
@@ -141,12 +125,28 @@ public class DescribeDeploymentSetsResponse extends AcsResponse {
 			this.strategy = strategy;
 		}
 
+		public String getDeploymentSetId() {
+			return this.deploymentSetId;
+		}
+
+		public void setDeploymentSetId(String deploymentSetId) {
+			this.deploymentSetId = deploymentSetId;
+		}
+
 		public String getDeploymentStrategy() {
 			return this.deploymentStrategy;
 		}
 
 		public void setDeploymentStrategy(String deploymentStrategy) {
 			this.deploymentStrategy = deploymentStrategy;
+		}
+
+		public String getDeploymentSetDescription() {
+			return this.deploymentSetDescription;
+		}
+
+		public void setDeploymentSetDescription(String deploymentSetDescription) {
+			this.deploymentSetDescription = deploymentSetDescription;
 		}
 
 		public String getDomain() {
@@ -157,14 +157,6 @@ public class DescribeDeploymentSetsResponse extends AcsResponse {
 			this.domain = domain;
 		}
 
-		public String getGranularity() {
-			return this.granularity;
-		}
-
-		public void setGranularity(String granularity) {
-			this.granularity = granularity;
-		}
-
 		public Integer getGroupCount() {
 			return this.groupCount;
 		}
@@ -173,20 +165,28 @@ public class DescribeDeploymentSetsResponse extends AcsResponse {
 			this.groupCount = groupCount;
 		}
 
+		public String getGranularity() {
+			return this.granularity;
+		}
+
+		public void setGranularity(String granularity) {
+			this.granularity = granularity;
+		}
+
+		public String getDeploymentSetName() {
+			return this.deploymentSetName;
+		}
+
+		public void setDeploymentSetName(String deploymentSetName) {
+			this.deploymentSetName = deploymentSetName;
+		}
+
 		public Integer getInstanceAmount() {
 			return this.instanceAmount;
 		}
 
 		public void setInstanceAmount(Integer instanceAmount) {
 			this.instanceAmount = instanceAmount;
-		}
-
-		public String getCreationTime() {
-			return this.creationTime;
-		}
-
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
 		}
 
 		public List<String> getInstanceIds() {

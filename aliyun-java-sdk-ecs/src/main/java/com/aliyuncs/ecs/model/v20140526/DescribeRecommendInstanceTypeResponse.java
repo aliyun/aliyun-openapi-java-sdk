@@ -47,33 +47,25 @@ public class DescribeRecommendInstanceTypeResponse extends AcsResponse {
 
 	public static class RecommendInstanceType {
 
-		private String regionId;
-
 		private String commodityCode;
-
-		private String scene;
-
-		private String instanceChargeType;
-
-		private String spotStrategy;
-
-		private Integer priority;
 
 		private String zoneId;
 
+		private Integer priority;
+
 		private String networkType;
+
+		private String scene;
+
+		private String spotStrategy;
+
+		private String regionId;
+
+		private String instanceChargeType;
 
 		private List<Zone> zones;
 
 		private InstanceType instanceType;
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
 
 		public String getCommodityCode() {
 			return this.commodityCode;
@@ -81,38 +73,6 @@ public class DescribeRecommendInstanceTypeResponse extends AcsResponse {
 
 		public void setCommodityCode(String commodityCode) {
 			this.commodityCode = commodityCode;
-		}
-
-		public String getScene() {
-			return this.scene;
-		}
-
-		public void setScene(String scene) {
-			this.scene = scene;
-		}
-
-		public String getInstanceChargeType() {
-			return this.instanceChargeType;
-		}
-
-		public void setInstanceChargeType(String instanceChargeType) {
-			this.instanceChargeType = instanceChargeType;
-		}
-
-		public String getSpotStrategy() {
-			return this.spotStrategy;
-		}
-
-		public void setSpotStrategy(String spotStrategy) {
-			this.spotStrategy = spotStrategy;
-		}
-
-		public Integer getPriority() {
-			return this.priority;
-		}
-
-		public void setPriority(Integer priority) {
-			this.priority = priority;
 		}
 
 		public String getZoneId() {
@@ -123,12 +83,52 @@ public class DescribeRecommendInstanceTypeResponse extends AcsResponse {
 			this.zoneId = zoneId;
 		}
 
+		public Integer getPriority() {
+			return this.priority;
+		}
+
+		public void setPriority(Integer priority) {
+			this.priority = priority;
+		}
+
 		public String getNetworkType() {
 			return this.networkType;
 		}
 
 		public void setNetworkType(String networkType) {
 			this.networkType = networkType;
+		}
+
+		public String getScene() {
+			return this.scene;
+		}
+
+		public void setScene(String scene) {
+			this.scene = scene;
+		}
+
+		public String getSpotStrategy() {
+			return this.spotStrategy;
+		}
+
+		public void setSpotStrategy(String spotStrategy) {
+			this.spotStrategy = spotStrategy;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		public String getInstanceChargeType() {
+			return this.instanceChargeType;
+		}
+
+		public void setInstanceChargeType(String instanceChargeType) {
+			this.instanceChargeType = instanceChargeType;
 		}
 
 		public List<Zone> getZones() {
@@ -172,41 +172,17 @@ public class DescribeRecommendInstanceTypeResponse extends AcsResponse {
 
 		public static class InstanceType {
 
-			private String generation;
-
-			private String instanceTypeFamily;
-
-			private String instanceType;
-
 			private String supportIoOptimized;
 
 			private Integer cores;
 
 			private Integer memory;
 
-			public String getGeneration() {
-				return this.generation;
-			}
+			private String instanceType;
 
-			public void setGeneration(String generation) {
-				this.generation = generation;
-			}
+			private String instanceTypeFamily;
 
-			public String getInstanceTypeFamily() {
-				return this.instanceTypeFamily;
-			}
-
-			public void setInstanceTypeFamily(String instanceTypeFamily) {
-				this.instanceTypeFamily = instanceTypeFamily;
-			}
-
-			public String getInstanceType() {
-				return this.instanceType;
-			}
-
-			public void setInstanceType(String instanceType) {
-				this.instanceType = instanceType;
-			}
+			private String generation;
 
 			public String getSupportIoOptimized() {
 				return this.supportIoOptimized;
@@ -230,6 +206,30 @@ public class DescribeRecommendInstanceTypeResponse extends AcsResponse {
 
 			public void setMemory(Integer memory) {
 				this.memory = memory;
+			}
+
+			public String getInstanceType() {
+				return this.instanceType;
+			}
+
+			public void setInstanceType(String instanceType) {
+				this.instanceType = instanceType;
+			}
+
+			public String getInstanceTypeFamily() {
+				return this.instanceTypeFamily;
+			}
+
+			public void setInstanceTypeFamily(String instanceTypeFamily) {
+				this.instanceTypeFamily = instanceTypeFamily;
+			}
+
+			public String getGeneration() {
+				return this.generation;
+			}
+
+			public void setGeneration(String generation) {
+				this.generation = generation;
 			}
 		}
 	}

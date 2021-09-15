@@ -33,8 +33,8 @@ public class ModifyDedicatedHostsChargeTypeResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("ModifyDedicatedHostsChargeTypeResponse.FeeOfInstances.Length"); i++) {
 			FeeOfInstance feeOfInstance = new FeeOfInstance();
 			feeOfInstance.setInstanceId(_ctx.stringValue("ModifyDedicatedHostsChargeTypeResponse.FeeOfInstances["+ i +"].InstanceId"));
-			feeOfInstance.setFee(_ctx.stringValue("ModifyDedicatedHostsChargeTypeResponse.FeeOfInstances["+ i +"].Fee"));
 			feeOfInstance.setCurrency(_ctx.stringValue("ModifyDedicatedHostsChargeTypeResponse.FeeOfInstances["+ i +"].Currency"));
+			feeOfInstance.setFee(_ctx.stringValue("ModifyDedicatedHostsChargeTypeResponse.FeeOfInstances["+ i +"].Fee"));
 
 			feeOfInstances.add(feeOfInstance);
 		}

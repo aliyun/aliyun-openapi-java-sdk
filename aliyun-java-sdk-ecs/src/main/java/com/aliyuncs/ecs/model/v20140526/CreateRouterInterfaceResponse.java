@@ -26,9 +26,9 @@ public class CreateRouterInterfaceResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String routerInterfaceId;
-
 	private Long orderId;
+
+	private String routerInterfaceId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,20 +38,20 @@ public class CreateRouterInterfaceResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getRouterInterfaceId() {
-		return this.routerInterfaceId;
-	}
-
-	public void setRouterInterfaceId(String routerInterfaceId) {
-		this.routerInterfaceId = routerInterfaceId;
-	}
-
 	public Long getOrderId() {
 		return this.orderId;
 	}
 
 	public void setOrderId(Long orderId) {
 		this.orderId = orderId;
+	}
+
+	public String getRouterInterfaceId() {
+		return this.routerInterfaceId;
+	}
+
+	public void setRouterInterfaceId(String routerInterfaceId) {
+		this.routerInterfaceId = routerInterfaceId;
 	}
 
 	@Override

@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeEipAddressesResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer pageSize;
 
-	private Integer totalCount;
+	private String requestId;
 
 	private Integer pageNumber;
 
-	private Integer pageSize;
+	private Integer totalCount;
 
 	private List<EipAddress> eipAddresses;
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class DescribeEipAddressesResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
 	}
 
 	public Integer getPageNumber() {
@@ -59,12 +59,12 @@ public class DescribeEipAddressesResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public Integer getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<EipAddress> getEipAddresses() {
@@ -77,31 +77,71 @@ public class DescribeEipAddressesResponse extends AcsResponse {
 
 	public static class EipAddress {
 
+		private String status;
+
+		private String allocationTime;
+
+		private String chargeType;
+
+		private String instanceId;
+
+		private String instanceType;
+
 		private String regionId;
 
 		private String ipAddress;
 
-		private String allocationId;
-
-		private String status;
-
-		private String instanceId;
-
 		private String bandwidth;
-
-		private String eipBandwidth;
-
-		private String internetChargeType;
-
-		private String allocationTime;
-
-		private String instanceType;
-
-		private String chargeType;
 
 		private String expiredTime;
 
+		private String allocationId;
+
+		private String internetChargeType;
+
+		private String eipBandwidth;
+
 		private List<LockReason> operationLocks;
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
+		public String getAllocationTime() {
+			return this.allocationTime;
+		}
+
+		public void setAllocationTime(String allocationTime) {
+			this.allocationTime = allocationTime;
+		}
+
+		public String getChargeType() {
+			return this.chargeType;
+		}
+
+		public void setChargeType(String chargeType) {
+			this.chargeType = chargeType;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public String getInstanceType() {
+			return this.instanceType;
+		}
+
+		public void setInstanceType(String instanceType) {
+			this.instanceType = instanceType;
+		}
 
 		public String getRegionId() {
 			return this.regionId;
@@ -119,30 +159,6 @@ public class DescribeEipAddressesResponse extends AcsResponse {
 			this.ipAddress = ipAddress;
 		}
 
-		public String getAllocationId() {
-			return this.allocationId;
-		}
-
-		public void setAllocationId(String allocationId) {
-			this.allocationId = allocationId;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
-		public String getInstanceId() {
-			return this.instanceId;
-		}
-
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
-
 		public String getBandwidth() {
 			return this.bandwidth;
 		}
@@ -151,12 +167,20 @@ public class DescribeEipAddressesResponse extends AcsResponse {
 			this.bandwidth = bandwidth;
 		}
 
-		public String getEipBandwidth() {
-			return this.eipBandwidth;
+		public String getExpiredTime() {
+			return this.expiredTime;
 		}
 
-		public void setEipBandwidth(String eipBandwidth) {
-			this.eipBandwidth = eipBandwidth;
+		public void setExpiredTime(String expiredTime) {
+			this.expiredTime = expiredTime;
+		}
+
+		public String getAllocationId() {
+			return this.allocationId;
+		}
+
+		public void setAllocationId(String allocationId) {
+			this.allocationId = allocationId;
 		}
 
 		public String getInternetChargeType() {
@@ -167,36 +191,12 @@ public class DescribeEipAddressesResponse extends AcsResponse {
 			this.internetChargeType = internetChargeType;
 		}
 
-		public String getAllocationTime() {
-			return this.allocationTime;
+		public String getEipBandwidth() {
+			return this.eipBandwidth;
 		}
 
-		public void setAllocationTime(String allocationTime) {
-			this.allocationTime = allocationTime;
-		}
-
-		public String getInstanceType() {
-			return this.instanceType;
-		}
-
-		public void setInstanceType(String instanceType) {
-			this.instanceType = instanceType;
-		}
-
-		public String getChargeType() {
-			return this.chargeType;
-		}
-
-		public void setChargeType(String chargeType) {
-			this.chargeType = chargeType;
-		}
-
-		public String getExpiredTime() {
-			return this.expiredTime;
-		}
-
-		public void setExpiredTime(String expiredTime) {
-			this.expiredTime = expiredTime;
+		public void setEipBandwidth(String eipBandwidth) {
+			this.eipBandwidth = eipBandwidth;
 		}
 
 		public List<LockReason> getOperationLocks() {

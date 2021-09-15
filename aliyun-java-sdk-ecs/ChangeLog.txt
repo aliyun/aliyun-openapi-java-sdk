@@ -1,3 +1,6 @@
+2021-09-15 Version: 4.24.8
+- DescribeSecurityGroups support query by next token.
+
 2021-08-19 Version: 4.24.7
 - Add SupportSessionManager for DescribeCloudAssistantStatus.
 

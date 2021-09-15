@@ -47,17 +47,9 @@ public class DescribeInstanceTypeFamiliesResponse extends AcsResponse {
 
 	public static class InstanceTypeFamily {
 
-		private String instanceTypeFamilyId;
-
 		private String generation;
 
-		public String getInstanceTypeFamilyId() {
-			return this.instanceTypeFamilyId;
-		}
-
-		public void setInstanceTypeFamilyId(String instanceTypeFamilyId) {
-			this.instanceTypeFamilyId = instanceTypeFamilyId;
-		}
+		private String instanceTypeFamilyId;
 
 		public String getGeneration() {
 			return this.generation;
@@ -65,6 +57,14 @@ public class DescribeInstanceTypeFamiliesResponse extends AcsResponse {
 
 		public void setGeneration(String generation) {
 			this.generation = generation;
+		}
+
+		public String getInstanceTypeFamilyId() {
+			return this.instanceTypeFamilyId;
+		}
+
+		public void setInstanceTypeFamilyId(String instanceTypeFamilyId) {
+			this.instanceTypeFamilyId = instanceTypeFamilyId;
 		}
 	}
 

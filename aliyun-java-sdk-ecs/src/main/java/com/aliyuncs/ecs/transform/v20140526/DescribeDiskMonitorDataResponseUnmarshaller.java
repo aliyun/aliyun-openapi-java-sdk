@@ -32,16 +32,16 @@ public class DescribeDiskMonitorDataResponseUnmarshaller {
 		List<DiskMonitorData> monitorData = new ArrayList<DiskMonitorData>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDiskMonitorDataResponse.MonitorData.Length"); i++) {
 			DiskMonitorData diskMonitorData = new DiskMonitorData();
-			diskMonitorData.setDiskId(_ctx.stringValue("DescribeDiskMonitorDataResponse.MonitorData["+ i +"].DiskId"));
-			diskMonitorData.setIOPSRead(_ctx.integerValue("DescribeDiskMonitorDataResponse.MonitorData["+ i +"].IOPSRead"));
-			diskMonitorData.setIOPSWrite(_ctx.integerValue("DescribeDiskMonitorDataResponse.MonitorData["+ i +"].IOPSWrite"));
-			diskMonitorData.setIOPSTotal(_ctx.integerValue("DescribeDiskMonitorDataResponse.MonitorData["+ i +"].IOPSTotal"));
 			diskMonitorData.setBPSRead(_ctx.integerValue("DescribeDiskMonitorDataResponse.MonitorData["+ i +"].BPSRead"));
-			diskMonitorData.setBPSWrite(_ctx.integerValue("DescribeDiskMonitorDataResponse.MonitorData["+ i +"].BPSWrite"));
-			diskMonitorData.setBPSTotal(_ctx.integerValue("DescribeDiskMonitorDataResponse.MonitorData["+ i +"].BPSTotal"));
+			diskMonitorData.setIOPSRead(_ctx.integerValue("DescribeDiskMonitorDataResponse.MonitorData["+ i +"].IOPSRead"));
 			diskMonitorData.setLatencyRead(_ctx.integerValue("DescribeDiskMonitorDataResponse.MonitorData["+ i +"].LatencyRead"));
-			diskMonitorData.setLatencyWrite(_ctx.integerValue("DescribeDiskMonitorDataResponse.MonitorData["+ i +"].LatencyWrite"));
+			diskMonitorData.setBPSTotal(_ctx.integerValue("DescribeDiskMonitorDataResponse.MonitorData["+ i +"].BPSTotal"));
+			diskMonitorData.setIOPSTotal(_ctx.integerValue("DescribeDiskMonitorDataResponse.MonitorData["+ i +"].IOPSTotal"));
 			diskMonitorData.setTimeStamp(_ctx.stringValue("DescribeDiskMonitorDataResponse.MonitorData["+ i +"].TimeStamp"));
+			diskMonitorData.setLatencyWrite(_ctx.integerValue("DescribeDiskMonitorDataResponse.MonitorData["+ i +"].LatencyWrite"));
+			diskMonitorData.setIOPSWrite(_ctx.integerValue("DescribeDiskMonitorDataResponse.MonitorData["+ i +"].IOPSWrite"));
+			diskMonitorData.setDiskId(_ctx.stringValue("DescribeDiskMonitorDataResponse.MonitorData["+ i +"].DiskId"));
+			diskMonitorData.setBPSWrite(_ctx.integerValue("DescribeDiskMonitorDataResponse.MonitorData["+ i +"].BPSWrite"));
 
 			monitorData.add(diskMonitorData);
 		}

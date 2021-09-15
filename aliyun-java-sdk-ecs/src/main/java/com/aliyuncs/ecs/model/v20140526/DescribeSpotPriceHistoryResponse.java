@@ -27,9 +27,9 @@ public class DescribeSpotPriceHistoryResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Integer nextOffset;
-
 	private String currency;
+
+	private Integer nextOffset;
 
 	private List<SpotPriceType> spotPrices;
 
@@ -41,20 +41,20 @@ public class DescribeSpotPriceHistoryResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Integer getNextOffset() {
-		return this.nextOffset;
-	}
-
-	public void setNextOffset(Integer nextOffset) {
-		this.nextOffset = nextOffset;
-	}
-
 	public String getCurrency() {
 		return this.currency;
 	}
 
 	public void setCurrency(String currency) {
 		this.currency = currency;
+	}
+
+	public Integer getNextOffset() {
+		return this.nextOffset;
+	}
+
+	public void setNextOffset(Integer nextOffset) {
+		this.nextOffset = nextOffset;
 	}
 
 	public List<SpotPriceType> getSpotPrices() {
@@ -67,19 +67,27 @@ public class DescribeSpotPriceHistoryResponse extends AcsResponse {
 
 	public static class SpotPriceType {
 
+		private String ioOptimized;
+
 		private String zoneId;
 
-		private String instanceType;
-
-		private String ioOptimized;
+		private Float spotPrice;
 
 		private String timestamp;
 
 		private String networkType;
 
-		private Float spotPrice;
+		private String instanceType;
 
 		private Float originPrice;
+
+		public String getIoOptimized() {
+			return this.ioOptimized;
+		}
+
+		public void setIoOptimized(String ioOptimized) {
+			this.ioOptimized = ioOptimized;
+		}
 
 		public String getZoneId() {
 			return this.zoneId;
@@ -89,20 +97,12 @@ public class DescribeSpotPriceHistoryResponse extends AcsResponse {
 			this.zoneId = zoneId;
 		}
 
-		public String getInstanceType() {
-			return this.instanceType;
+		public Float getSpotPrice() {
+			return this.spotPrice;
 		}
 
-		public void setInstanceType(String instanceType) {
-			this.instanceType = instanceType;
-		}
-
-		public String getIoOptimized() {
-			return this.ioOptimized;
-		}
-
-		public void setIoOptimized(String ioOptimized) {
-			this.ioOptimized = ioOptimized;
+		public void setSpotPrice(Float spotPrice) {
+			this.spotPrice = spotPrice;
 		}
 
 		public String getTimestamp() {
@@ -121,12 +121,12 @@ public class DescribeSpotPriceHistoryResponse extends AcsResponse {
 			this.networkType = networkType;
 		}
 
-		public Float getSpotPrice() {
-			return this.spotPrice;
+		public String getInstanceType() {
+			return this.instanceType;
 		}
 
-		public void setSpotPrice(Float spotPrice) {
-			this.spotPrice = spotPrice;
+		public void setInstanceType(String instanceType) {
+			this.instanceType = instanceType;
 		}
 
 		public Float getOriginPrice() {

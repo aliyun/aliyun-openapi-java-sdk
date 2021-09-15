@@ -27,22 +27,22 @@ public class DescribeVpcsResponseUnmarshaller {
 	public static DescribeVpcsResponse unmarshall(DescribeVpcsResponse describeVpcsResponse, UnmarshallerContext _ctx) {
 		
 		describeVpcsResponse.setRequestId(_ctx.stringValue("DescribeVpcsResponse.RequestId"));
-		describeVpcsResponse.setTotalCount(_ctx.integerValue("DescribeVpcsResponse.TotalCount"));
-		describeVpcsResponse.setPageNumber(_ctx.integerValue("DescribeVpcsResponse.PageNumber"));
 		describeVpcsResponse.setPageSize(_ctx.integerValue("DescribeVpcsResponse.PageSize"));
+		describeVpcsResponse.setPageNumber(_ctx.integerValue("DescribeVpcsResponse.PageNumber"));
+		describeVpcsResponse.setTotalCount(_ctx.integerValue("DescribeVpcsResponse.TotalCount"));
 
 		List<Vpc> vpcs = new ArrayList<Vpc>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeVpcsResponse.Vpcs.Length"); i++) {
 			Vpc vpc = new Vpc();
-			vpc.setVpcId(_ctx.stringValue("DescribeVpcsResponse.Vpcs["+ i +"].VpcId"));
-			vpc.setRegionId(_ctx.stringValue("DescribeVpcsResponse.Vpcs["+ i +"].RegionId"));
-			vpc.setStatus(_ctx.stringValue("DescribeVpcsResponse.Vpcs["+ i +"].Status"));
-			vpc.setVpcName(_ctx.stringValue("DescribeVpcsResponse.Vpcs["+ i +"].VpcName"));
 			vpc.setCreationTime(_ctx.stringValue("DescribeVpcsResponse.Vpcs["+ i +"].CreationTime"));
-			vpc.setCidrBlock(_ctx.stringValue("DescribeVpcsResponse.Vpcs["+ i +"].CidrBlock"));
+			vpc.setVpcName(_ctx.stringValue("DescribeVpcsResponse.Vpcs["+ i +"].VpcName"));
+			vpc.setStatus(_ctx.stringValue("DescribeVpcsResponse.Vpcs["+ i +"].Status"));
+			vpc.setVpcId(_ctx.stringValue("DescribeVpcsResponse.Vpcs["+ i +"].VpcId"));
 			vpc.setVRouterId(_ctx.stringValue("DescribeVpcsResponse.Vpcs["+ i +"].VRouterId"));
-			vpc.setDescription(_ctx.stringValue("DescribeVpcsResponse.Vpcs["+ i +"].Description"));
 			vpc.setIsDefault(_ctx.booleanValue("DescribeVpcsResponse.Vpcs["+ i +"].IsDefault"));
+			vpc.setCidrBlock(_ctx.stringValue("DescribeVpcsResponse.Vpcs["+ i +"].CidrBlock"));
+			vpc.setDescription(_ctx.stringValue("DescribeVpcsResponse.Vpcs["+ i +"].Description"));
+			vpc.setRegionId(_ctx.stringValue("DescribeVpcsResponse.Vpcs["+ i +"].RegionId"));
 
 			List<String> vSwitchIds = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeVpcsResponse.Vpcs["+ i +"].VSwitchIds.Length"); j++) {

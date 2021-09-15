@@ -26,8 +26,8 @@ public class ModifyManagedInstanceResponseUnmarshaller {
 		modifyManagedInstanceResponse.setRequestId(_ctx.stringValue("ModifyManagedInstanceResponse.RequestId"));
 
 		Instance instance = new Instance();
-		instance.setInstanceId(_ctx.stringValue("ModifyManagedInstanceResponse.Instance.InstanceId"));
 		instance.setInstanceName(_ctx.stringValue("ModifyManagedInstanceResponse.Instance.InstanceName"));
+		instance.setInstanceId(_ctx.stringValue("ModifyManagedInstanceResponse.Instance.InstanceId"));
 		modifyManagedInstanceResponse.setInstance(instance);
 	 
 	 	return modifyManagedInstanceResponse;

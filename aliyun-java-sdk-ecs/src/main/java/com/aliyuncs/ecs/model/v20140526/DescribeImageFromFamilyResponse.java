@@ -47,74 +47,66 @@ public class DescribeImageFromFamilyResponse extends AcsResponse {
 
 	public static class Image {
 
-		private String progress;
+		private String creationTime;
 
-		private String imageId;
-
-		private String imageName;
+		private String status;
 
 		private String imageFamily;
 
+		private String progress;
+
+		private Boolean isCopied;
+
+		private Boolean isSupportIoOptimized;
+
+		private String imageOwnerAlias;
+
+		private Boolean isSupportCloudinit;
+
 		private String imageVersion;
+
+		private String usage;
+
+		private String isSelfShared;
 
 		private String description;
 
 		private Integer size;
 
-		private String imageOwnerAlias;
+		private String platform;
 
-		private Boolean isSupportIoOptimized;
-
-		private Boolean isSupportCloudinit;
+		private String imageName;
 
 		private String oSName;
 
-		private String architecture;
-
-		private String status;
-
-		private String productCode;
-
-		private Boolean isSubscribed;
-
-		private String creationTime;
-
-		private String isSelfShared;
+		private String imageId;
 
 		private String oSType;
 
-		private String platform;
+		private Boolean isSubscribed;
 
-		private String usage;
+		private String productCode;
 
-		private Boolean isCopied;
+		private String architecture;
 
 		private List<DiskDeviceMapping> diskDeviceMappings;
 
 		private List<Tag> tags;
 
-		public String getProgress() {
-			return this.progress;
+		public String getCreationTime() {
+			return this.creationTime;
 		}
 
-		public void setProgress(String progress) {
-			this.progress = progress;
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
 		}
 
-		public String getImageId() {
-			return this.imageId;
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setImageId(String imageId) {
-			this.imageId = imageId;
-		}
-
-		public String getImageName() {
-			return this.imageName;
-		}
-
-		public void setImageName(String imageName) {
-			this.imageName = imageName;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public String getImageFamily() {
@@ -125,12 +117,68 @@ public class DescribeImageFromFamilyResponse extends AcsResponse {
 			this.imageFamily = imageFamily;
 		}
 
+		public String getProgress() {
+			return this.progress;
+		}
+
+		public void setProgress(String progress) {
+			this.progress = progress;
+		}
+
+		public Boolean getIsCopied() {
+			return this.isCopied;
+		}
+
+		public void setIsCopied(Boolean isCopied) {
+			this.isCopied = isCopied;
+		}
+
+		public Boolean getIsSupportIoOptimized() {
+			return this.isSupportIoOptimized;
+		}
+
+		public void setIsSupportIoOptimized(Boolean isSupportIoOptimized) {
+			this.isSupportIoOptimized = isSupportIoOptimized;
+		}
+
+		public String getImageOwnerAlias() {
+			return this.imageOwnerAlias;
+		}
+
+		public void setImageOwnerAlias(String imageOwnerAlias) {
+			this.imageOwnerAlias = imageOwnerAlias;
+		}
+
+		public Boolean getIsSupportCloudinit() {
+			return this.isSupportCloudinit;
+		}
+
+		public void setIsSupportCloudinit(Boolean isSupportCloudinit) {
+			this.isSupportCloudinit = isSupportCloudinit;
+		}
+
 		public String getImageVersion() {
 			return this.imageVersion;
 		}
 
 		public void setImageVersion(String imageVersion) {
 			this.imageVersion = imageVersion;
+		}
+
+		public String getUsage() {
+			return this.usage;
+		}
+
+		public void setUsage(String usage) {
+			this.usage = usage;
+		}
+
+		public String getIsSelfShared() {
+			return this.isSelfShared;
+		}
+
+		public void setIsSelfShared(String isSelfShared) {
+			this.isSelfShared = isSelfShared;
 		}
 
 		public String getDescription() {
@@ -149,28 +197,20 @@ public class DescribeImageFromFamilyResponse extends AcsResponse {
 			this.size = size;
 		}
 
-		public String getImageOwnerAlias() {
-			return this.imageOwnerAlias;
+		public String getPlatform() {
+			return this.platform;
 		}
 
-		public void setImageOwnerAlias(String imageOwnerAlias) {
-			this.imageOwnerAlias = imageOwnerAlias;
+		public void setPlatform(String platform) {
+			this.platform = platform;
 		}
 
-		public Boolean getIsSupportIoOptimized() {
-			return this.isSupportIoOptimized;
+		public String getImageName() {
+			return this.imageName;
 		}
 
-		public void setIsSupportIoOptimized(Boolean isSupportIoOptimized) {
-			this.isSupportIoOptimized = isSupportIoOptimized;
-		}
-
-		public Boolean getIsSupportCloudinit() {
-			return this.isSupportCloudinit;
-		}
-
-		public void setIsSupportCloudinit(Boolean isSupportCloudinit) {
-			this.isSupportCloudinit = isSupportCloudinit;
+		public void setImageName(String imageName) {
+			this.imageName = imageName;
 		}
 
 		public String getOSName() {
@@ -181,52 +221,12 @@ public class DescribeImageFromFamilyResponse extends AcsResponse {
 			this.oSName = oSName;
 		}
 
-		public String getArchitecture() {
-			return this.architecture;
+		public String getImageId() {
+			return this.imageId;
 		}
 
-		public void setArchitecture(String architecture) {
-			this.architecture = architecture;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
-		public String getProductCode() {
-			return this.productCode;
-		}
-
-		public void setProductCode(String productCode) {
-			this.productCode = productCode;
-		}
-
-		public Boolean getIsSubscribed() {
-			return this.isSubscribed;
-		}
-
-		public void setIsSubscribed(Boolean isSubscribed) {
-			this.isSubscribed = isSubscribed;
-		}
-
-		public String getCreationTime() {
-			return this.creationTime;
-		}
-
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
-		}
-
-		public String getIsSelfShared() {
-			return this.isSelfShared;
-		}
-
-		public void setIsSelfShared(String isSelfShared) {
-			this.isSelfShared = isSelfShared;
+		public void setImageId(String imageId) {
+			this.imageId = imageId;
 		}
 
 		public String getOSType() {
@@ -237,28 +237,28 @@ public class DescribeImageFromFamilyResponse extends AcsResponse {
 			this.oSType = oSType;
 		}
 
-		public String getPlatform() {
-			return this.platform;
+		public Boolean getIsSubscribed() {
+			return this.isSubscribed;
 		}
 
-		public void setPlatform(String platform) {
-			this.platform = platform;
+		public void setIsSubscribed(Boolean isSubscribed) {
+			this.isSubscribed = isSubscribed;
 		}
 
-		public String getUsage() {
-			return this.usage;
+		public String getProductCode() {
+			return this.productCode;
 		}
 
-		public void setUsage(String usage) {
-			this.usage = usage;
+		public void setProductCode(String productCode) {
+			this.productCode = productCode;
 		}
 
-		public Boolean getIsCopied() {
-			return this.isCopied;
+		public String getArchitecture() {
+			return this.architecture;
 		}
 
-		public void setIsCopied(Boolean isCopied) {
-			this.isCopied = isCopied;
+		public void setArchitecture(String architecture) {
+			this.architecture = architecture;
 		}
 
 		public List<DiskDeviceMapping> getDiskDeviceMappings() {
@@ -279,19 +279,35 @@ public class DescribeImageFromFamilyResponse extends AcsResponse {
 
 		public static class DiskDeviceMapping {
 
+			private String type;
+
+			private String importOSSBucket;
+
 			private String snapshotId;
+
+			private String importOSSObject;
 
 			private String size;
 
 			private String device;
 
-			private String type;
-
 			private String format;
 
-			private String importOSSBucket;
+			public String getType() {
+				return this.type;
+			}
 
-			private String importOSSObject;
+			public void setType(String type) {
+				this.type = type;
+			}
+
+			public String getImportOSSBucket() {
+				return this.importOSSBucket;
+			}
+
+			public void setImportOSSBucket(String importOSSBucket) {
+				this.importOSSBucket = importOSSBucket;
+			}
 
 			public String getSnapshotId() {
 				return this.snapshotId;
@@ -299,6 +315,14 @@ public class DescribeImageFromFamilyResponse extends AcsResponse {
 
 			public void setSnapshotId(String snapshotId) {
 				this.snapshotId = snapshotId;
+			}
+
+			public String getImportOSSObject() {
+				return this.importOSSObject;
+			}
+
+			public void setImportOSSObject(String importOSSObject) {
+				this.importOSSObject = importOSSObject;
 			}
 
 			public String getSize() {
@@ -317,14 +341,6 @@ public class DescribeImageFromFamilyResponse extends AcsResponse {
 				this.device = device;
 			}
 
-			public String getType() {
-				return this.type;
-			}
-
-			public void setType(String type) {
-				this.type = type;
-			}
-
 			public String getFormat() {
 				return this.format;
 			}
@@ -332,37 +348,13 @@ public class DescribeImageFromFamilyResponse extends AcsResponse {
 			public void setFormat(String format) {
 				this.format = format;
 			}
-
-			public String getImportOSSBucket() {
-				return this.importOSSBucket;
-			}
-
-			public void setImportOSSBucket(String importOSSBucket) {
-				this.importOSSBucket = importOSSBucket;
-			}
-
-			public String getImportOSSObject() {
-				return this.importOSSObject;
-			}
-
-			public void setImportOSSObject(String importOSSObject) {
-				this.importOSSObject = importOSSObject;
-			}
 		}
 
 		public static class Tag {
 
-			private String tagKey;
-
 			private String tagValue;
 
-			public String getTagKey() {
-				return this.tagKey;
-			}
-
-			public void setTagKey(String tagKey) {
-				this.tagKey = tagKey;
-			}
+			private String tagKey;
 
 			public String getTagValue() {
 				return this.tagValue;
@@ -370,6 +362,14 @@ public class DescribeImageFromFamilyResponse extends AcsResponse {
 
 			public void setTagValue(String tagValue) {
 				this.tagValue = tagValue;
+			}
+
+			public String getTagKey() {
+				return this.tagKey;
+			}
+
+			public void setTagKey(String tagKey) {
+				this.tagKey = tagKey;
 			}
 		}
 	}

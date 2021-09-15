@@ -27,18 +27,18 @@ public class DescribePrefixListAttributesResponseUnmarshaller {
 	public static DescribePrefixListAttributesResponse unmarshall(DescribePrefixListAttributesResponse describePrefixListAttributesResponse, UnmarshallerContext _ctx) {
 		
 		describePrefixListAttributesResponse.setRequestId(_ctx.stringValue("DescribePrefixListAttributesResponse.RequestId"));
-		describePrefixListAttributesResponse.setPrefixListId(_ctx.stringValue("DescribePrefixListAttributesResponse.PrefixListId"));
-		describePrefixListAttributesResponse.setPrefixListName(_ctx.stringValue("DescribePrefixListAttributesResponse.PrefixListName"));
-		describePrefixListAttributesResponse.setAddressFamily(_ctx.stringValue("DescribePrefixListAttributesResponse.AddressFamily"));
+		describePrefixListAttributesResponse.setCreationTime(_ctx.stringValue("DescribePrefixListAttributesResponse.CreationTime"));
 		describePrefixListAttributesResponse.setMaxEntries(_ctx.integerValue("DescribePrefixListAttributesResponse.MaxEntries"));
 		describePrefixListAttributesResponse.setDescription(_ctx.stringValue("DescribePrefixListAttributesResponse.Description"));
-		describePrefixListAttributesResponse.setCreationTime(_ctx.stringValue("DescribePrefixListAttributesResponse.CreationTime"));
+		describePrefixListAttributesResponse.setAddressFamily(_ctx.stringValue("DescribePrefixListAttributesResponse.AddressFamily"));
+		describePrefixListAttributesResponse.setPrefixListName(_ctx.stringValue("DescribePrefixListAttributesResponse.PrefixListName"));
+		describePrefixListAttributesResponse.setPrefixListId(_ctx.stringValue("DescribePrefixListAttributesResponse.PrefixListId"));
 
 		List<Entry> entries = new ArrayList<Entry>();
 		for (int i = 0; i < _ctx.lengthValue("DescribePrefixListAttributesResponse.Entries.Length"); i++) {
 			Entry entry = new Entry();
-			entry.setCidr(_ctx.stringValue("DescribePrefixListAttributesResponse.Entries["+ i +"].Cidr"));
 			entry.setDescription(_ctx.stringValue("DescribePrefixListAttributesResponse.Entries["+ i +"].Description"));
+			entry.setCidr(_ctx.stringValue("DescribePrefixListAttributesResponse.Entries["+ i +"].Cidr"));
 
 			entries.add(entry);
 		}

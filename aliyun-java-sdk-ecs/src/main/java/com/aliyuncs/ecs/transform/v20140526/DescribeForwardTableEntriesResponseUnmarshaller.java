@@ -27,21 +27,21 @@ public class DescribeForwardTableEntriesResponseUnmarshaller {
 	public static DescribeForwardTableEntriesResponse unmarshall(DescribeForwardTableEntriesResponse describeForwardTableEntriesResponse, UnmarshallerContext _ctx) {
 		
 		describeForwardTableEntriesResponse.setRequestId(_ctx.stringValue("DescribeForwardTableEntriesResponse.RequestId"));
-		describeForwardTableEntriesResponse.setTotalCount(_ctx.integerValue("DescribeForwardTableEntriesResponse.TotalCount"));
-		describeForwardTableEntriesResponse.setPageNumber(_ctx.integerValue("DescribeForwardTableEntriesResponse.PageNumber"));
 		describeForwardTableEntriesResponse.setPageSize(_ctx.integerValue("DescribeForwardTableEntriesResponse.PageSize"));
+		describeForwardTableEntriesResponse.setPageNumber(_ctx.integerValue("DescribeForwardTableEntriesResponse.PageNumber"));
+		describeForwardTableEntriesResponse.setTotalCount(_ctx.integerValue("DescribeForwardTableEntriesResponse.TotalCount"));
 
 		List<ForwardTableEntry> forwardTableEntries = new ArrayList<ForwardTableEntry>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeForwardTableEntriesResponse.ForwardTableEntries.Length"); i++) {
 			ForwardTableEntry forwardTableEntry = new ForwardTableEntry();
-			forwardTableEntry.setForwardTableId(_ctx.stringValue("DescribeForwardTableEntriesResponse.ForwardTableEntries["+ i +"].ForwardTableId"));
+			forwardTableEntry.setStatus(_ctx.stringValue("DescribeForwardTableEntriesResponse.ForwardTableEntries["+ i +"].Status"));
 			forwardTableEntry.setForwardEntryId(_ctx.stringValue("DescribeForwardTableEntriesResponse.ForwardTableEntries["+ i +"].ForwardEntryId"));
-			forwardTableEntry.setExternalIp(_ctx.stringValue("DescribeForwardTableEntriesResponse.ForwardTableEntries["+ i +"].ExternalIp"));
-			forwardTableEntry.setExternalPort(_ctx.stringValue("DescribeForwardTableEntriesResponse.ForwardTableEntries["+ i +"].ExternalPort"));
-			forwardTableEntry.setIpProtocol(_ctx.stringValue("DescribeForwardTableEntriesResponse.ForwardTableEntries["+ i +"].IpProtocol"));
 			forwardTableEntry.setInternalIp(_ctx.stringValue("DescribeForwardTableEntriesResponse.ForwardTableEntries["+ i +"].InternalIp"));
 			forwardTableEntry.setInternalPort(_ctx.stringValue("DescribeForwardTableEntriesResponse.ForwardTableEntries["+ i +"].InternalPort"));
-			forwardTableEntry.setStatus(_ctx.stringValue("DescribeForwardTableEntriesResponse.ForwardTableEntries["+ i +"].Status"));
+			forwardTableEntry.setForwardTableId(_ctx.stringValue("DescribeForwardTableEntriesResponse.ForwardTableEntries["+ i +"].ForwardTableId"));
+			forwardTableEntry.setExternalPort(_ctx.stringValue("DescribeForwardTableEntriesResponse.ForwardTableEntries["+ i +"].ExternalPort"));
+			forwardTableEntry.setIpProtocol(_ctx.stringValue("DescribeForwardTableEntriesResponse.ForwardTableEntries["+ i +"].IpProtocol"));
+			forwardTableEntry.setExternalIp(_ctx.stringValue("DescribeForwardTableEntriesResponse.ForwardTableEntries["+ i +"].ExternalIp"));
 
 			forwardTableEntries.add(forwardTableEntry);
 		}

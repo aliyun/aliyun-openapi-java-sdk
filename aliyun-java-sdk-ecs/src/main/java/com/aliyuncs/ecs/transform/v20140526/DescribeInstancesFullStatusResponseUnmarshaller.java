@@ -34,9 +34,9 @@ public class DescribeInstancesFullStatusResponseUnmarshaller {
 	public static DescribeInstancesFullStatusResponse unmarshall(DescribeInstancesFullStatusResponse describeInstancesFullStatusResponse, UnmarshallerContext _ctx) {
 		
 		describeInstancesFullStatusResponse.setRequestId(_ctx.stringValue("DescribeInstancesFullStatusResponse.RequestId"));
-		describeInstancesFullStatusResponse.setTotalCount(_ctx.integerValue("DescribeInstancesFullStatusResponse.TotalCount"));
-		describeInstancesFullStatusResponse.setPageNumber(_ctx.integerValue("DescribeInstancesFullStatusResponse.PageNumber"));
 		describeInstancesFullStatusResponse.setPageSize(_ctx.integerValue("DescribeInstancesFullStatusResponse.PageSize"));
+		describeInstancesFullStatusResponse.setPageNumber(_ctx.integerValue("DescribeInstancesFullStatusResponse.PageNumber"));
+		describeInstancesFullStatusResponse.setTotalCount(_ctx.integerValue("DescribeInstancesFullStatusResponse.TotalCount"));
 
 		List<InstanceFullStatusType> instanceFullStatusSet = new ArrayList<InstanceFullStatusType>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeInstancesFullStatusResponse.InstanceFullStatusSet.Length"); i++) {
@@ -44,46 +44,46 @@ public class DescribeInstancesFullStatusResponseUnmarshaller {
 			instanceFullStatusType.setInstanceId(_ctx.stringValue("DescribeInstancesFullStatusResponse.InstanceFullStatusSet["+ i +"].InstanceId"));
 
 			Status status = new Status();
-			status.setCode(_ctx.integerValue("DescribeInstancesFullStatusResponse.InstanceFullStatusSet["+ i +"].Status.Code"));
 			status.setName(_ctx.stringValue("DescribeInstancesFullStatusResponse.InstanceFullStatusSet["+ i +"].Status.Name"));
+			status.setCode(_ctx.integerValue("DescribeInstancesFullStatusResponse.InstanceFullStatusSet["+ i +"].Status.Code"));
 			instanceFullStatusType.setStatus(status);
 
 			HealthStatus healthStatus = new HealthStatus();
-			healthStatus.setCode(_ctx.integerValue("DescribeInstancesFullStatusResponse.InstanceFullStatusSet["+ i +"].HealthStatus.Code"));
 			healthStatus.setName(_ctx.stringValue("DescribeInstancesFullStatusResponse.InstanceFullStatusSet["+ i +"].HealthStatus.Name"));
+			healthStatus.setCode(_ctx.integerValue("DescribeInstancesFullStatusResponse.InstanceFullStatusSet["+ i +"].HealthStatus.Code"));
 			instanceFullStatusType.setHealthStatus(healthStatus);
 
 			List<ScheduledSystemEventType> scheduledSystemEventSet = new ArrayList<ScheduledSystemEventType>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeInstancesFullStatusResponse.InstanceFullStatusSet["+ i +"].ScheduledSystemEventSet.Length"); j++) {
 				ScheduledSystemEventType scheduledSystemEventType = new ScheduledSystemEventType();
-				scheduledSystemEventType.setEventId(_ctx.stringValue("DescribeInstancesFullStatusResponse.InstanceFullStatusSet["+ i +"].ScheduledSystemEventSet["+ j +"].EventId"));
 				scheduledSystemEventType.setEventPublishTime(_ctx.stringValue("DescribeInstancesFullStatusResponse.InstanceFullStatusSet["+ i +"].ScheduledSystemEventSet["+ j +"].EventPublishTime"));
+				scheduledSystemEventType.setEventId(_ctx.stringValue("DescribeInstancesFullStatusResponse.InstanceFullStatusSet["+ i +"].ScheduledSystemEventSet["+ j +"].EventId"));
 				scheduledSystemEventType.setNotBefore(_ctx.stringValue("DescribeInstancesFullStatusResponse.InstanceFullStatusSet["+ i +"].ScheduledSystemEventSet["+ j +"].NotBefore"));
-				scheduledSystemEventType.setReason(_ctx.stringValue("DescribeInstancesFullStatusResponse.InstanceFullStatusSet["+ i +"].ScheduledSystemEventSet["+ j +"].Reason"));
 				scheduledSystemEventType.setImpactLevel(_ctx.stringValue("DescribeInstancesFullStatusResponse.InstanceFullStatusSet["+ i +"].ScheduledSystemEventSet["+ j +"].ImpactLevel"));
+				scheduledSystemEventType.setReason(_ctx.stringValue("DescribeInstancesFullStatusResponse.InstanceFullStatusSet["+ i +"].ScheduledSystemEventSet["+ j +"].Reason"));
 
 				EventCycleStatus eventCycleStatus = new EventCycleStatus();
-				eventCycleStatus.setCode(_ctx.integerValue("DescribeInstancesFullStatusResponse.InstanceFullStatusSet["+ i +"].ScheduledSystemEventSet["+ j +"].EventCycleStatus.Code"));
 				eventCycleStatus.setName(_ctx.stringValue("DescribeInstancesFullStatusResponse.InstanceFullStatusSet["+ i +"].ScheduledSystemEventSet["+ j +"].EventCycleStatus.Name"));
+				eventCycleStatus.setCode(_ctx.integerValue("DescribeInstancesFullStatusResponse.InstanceFullStatusSet["+ i +"].ScheduledSystemEventSet["+ j +"].EventCycleStatus.Code"));
 				scheduledSystemEventType.setEventCycleStatus(eventCycleStatus);
 
 				EventType eventType = new EventType();
-				eventType.setCode(_ctx.integerValue("DescribeInstancesFullStatusResponse.InstanceFullStatusSet["+ i +"].ScheduledSystemEventSet["+ j +"].EventType.Code"));
 				eventType.setName(_ctx.stringValue("DescribeInstancesFullStatusResponse.InstanceFullStatusSet["+ i +"].ScheduledSystemEventSet["+ j +"].EventType.Name"));
+				eventType.setCode(_ctx.integerValue("DescribeInstancesFullStatusResponse.InstanceFullStatusSet["+ i +"].ScheduledSystemEventSet["+ j +"].EventType.Code"));
 				scheduledSystemEventType.setEventType(eventType);
 
 				ExtendedAttribute extendedAttribute = new ExtendedAttribute();
-				extendedAttribute.setDiskId(_ctx.stringValue("DescribeInstancesFullStatusResponse.InstanceFullStatusSet["+ i +"].ScheduledSystemEventSet["+ j +"].ExtendedAttribute.DiskId"));
 				extendedAttribute.setDevice(_ctx.stringValue("DescribeInstancesFullStatusResponse.InstanceFullStatusSet["+ i +"].ScheduledSystemEventSet["+ j +"].ExtendedAttribute.Device"));
+				extendedAttribute.setDiskId(_ctx.stringValue("DescribeInstancesFullStatusResponse.InstanceFullStatusSet["+ i +"].ScheduledSystemEventSet["+ j +"].ExtendedAttribute.DiskId"));
 
 				List<InactiveDisk> inactiveDisks = new ArrayList<InactiveDisk>();
 				for (int k = 0; k < _ctx.lengthValue("DescribeInstancesFullStatusResponse.InstanceFullStatusSet["+ i +"].ScheduledSystemEventSet["+ j +"].ExtendedAttribute.InactiveDisks.Length"); k++) {
 					InactiveDisk inactiveDisk = new InactiveDisk();
 					inactiveDisk.setCreationTime(_ctx.stringValue("DescribeInstancesFullStatusResponse.InstanceFullStatusSet["+ i +"].ScheduledSystemEventSet["+ j +"].ExtendedAttribute.InactiveDisks["+ k +"].CreationTime"));
-					inactiveDisk.setReleaseTime(_ctx.stringValue("DescribeInstancesFullStatusResponse.InstanceFullStatusSet["+ i +"].ScheduledSystemEventSet["+ j +"].ExtendedAttribute.InactiveDisks["+ k +"].ReleaseTime"));
-					inactiveDisk.setDeviceType(_ctx.stringValue("DescribeInstancesFullStatusResponse.InstanceFullStatusSet["+ i +"].ScheduledSystemEventSet["+ j +"].ExtendedAttribute.InactiveDisks["+ k +"].DeviceType"));
-					inactiveDisk.setDeviceCategory(_ctx.stringValue("DescribeInstancesFullStatusResponse.InstanceFullStatusSet["+ i +"].ScheduledSystemEventSet["+ j +"].ExtendedAttribute.InactiveDisks["+ k +"].DeviceCategory"));
 					inactiveDisk.setDeviceSize(_ctx.stringValue("DescribeInstancesFullStatusResponse.InstanceFullStatusSet["+ i +"].ScheduledSystemEventSet["+ j +"].ExtendedAttribute.InactiveDisks["+ k +"].DeviceSize"));
+					inactiveDisk.setDeviceCategory(_ctx.stringValue("DescribeInstancesFullStatusResponse.InstanceFullStatusSet["+ i +"].ScheduledSystemEventSet["+ j +"].ExtendedAttribute.InactiveDisks["+ k +"].DeviceCategory"));
+					inactiveDisk.setDeviceType(_ctx.stringValue("DescribeInstancesFullStatusResponse.InstanceFullStatusSet["+ i +"].ScheduledSystemEventSet["+ j +"].ExtendedAttribute.InactiveDisks["+ k +"].DeviceType"));
+					inactiveDisk.setReleaseTime(_ctx.stringValue("DescribeInstancesFullStatusResponse.InstanceFullStatusSet["+ i +"].ScheduledSystemEventSet["+ j +"].ExtendedAttribute.InactiveDisks["+ k +"].ReleaseTime"));
 
 					inactiveDisks.add(inactiveDisk);
 				}

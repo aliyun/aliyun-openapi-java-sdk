@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeVRoutersResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer pageSize;
 
-	private Integer totalCount;
+	private String requestId;
 
 	private Integer pageNumber;
 
-	private Integer pageSize;
+	private Integer totalCount;
 
 	private List<VRouter> vRouters;
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class DescribeVRoutersResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
 	}
 
 	public Integer getPageNumber() {
@@ -59,12 +59,12 @@ public class DescribeVRoutersResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public Integer getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<VRouter> getVRouters() {
@@ -77,27 +77,19 @@ public class DescribeVRoutersResponse extends AcsResponse {
 
 	public static class VRouter {
 
-		private String regionId;
-
 		private String vpcId;
-
-		private String vRouterName;
-
-		private String description;
-
-		private String vRouterId;
 
 		private String creationTime;
 
+		private String vRouterId;
+
+		private String description;
+
+		private String vRouterName;
+
+		private String regionId;
+
 		private List<String> routeTableIds;
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
 
 		public String getVpcId() {
 			return this.vpcId;
@@ -107,20 +99,12 @@ public class DescribeVRoutersResponse extends AcsResponse {
 			this.vpcId = vpcId;
 		}
 
-		public String getVRouterName() {
-			return this.vRouterName;
+		public String getCreationTime() {
+			return this.creationTime;
 		}
 
-		public void setVRouterName(String vRouterName) {
-			this.vRouterName = vRouterName;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
 		}
 
 		public String getVRouterId() {
@@ -131,12 +115,28 @@ public class DescribeVRoutersResponse extends AcsResponse {
 			this.vRouterId = vRouterId;
 		}
 
-		public String getCreationTime() {
-			return this.creationTime;
+		public String getDescription() {
+			return this.description;
 		}
 
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getVRouterName() {
+			return this.vRouterName;
+		}
+
+		public void setVRouterName(String vRouterName) {
+			this.vRouterName = vRouterName;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 
 		public List<String> getRouteTableIds() {

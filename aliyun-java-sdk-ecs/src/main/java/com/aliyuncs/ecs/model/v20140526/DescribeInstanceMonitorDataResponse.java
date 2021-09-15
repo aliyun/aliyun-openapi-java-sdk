@@ -47,118 +47,46 @@ public class DescribeInstanceMonitorDataResponse extends AcsResponse {
 
 	public static class InstanceMonitorData {
 
-		private String instanceId;
-
-		private Integer cPU;
-
-		private Integer intranetRX;
-
-		private Integer intranetTX;
-
-		private Integer intranetBandwidth;
-
-		private Integer internetRX;
-
-		private Integer internetTX;
-
-		private Integer internetBandwidth;
-
-		private Integer iOPSRead;
-
-		private Integer iOPSWrite;
+		private Float cPUCreditBalance;
 
 		private Integer bPSRead;
 
-		private Integer bPSWrite;
+		private Integer internetTX;
+
+		private Integer cPU;
 
 		private Float cPUCreditUsage;
 
-		private Float cPUCreditBalance;
+		private Integer iOPSWrite;
 
-		private Float cPUAdvanceCreditBalance;
+		private Integer intranetTX;
+
+		private String instanceId;
+
+		private Integer bPSWrite;
 
 		private Float cPUNotpaidSurplusCreditUsage;
 
+		private Float cPUAdvanceCreditBalance;
+
+		private Integer iOPSRead;
+
+		private Integer internetBandwidth;
+
+		private Integer internetRX;
+
 		private String timeStamp;
 
-		public String getInstanceId() {
-			return this.instanceId;
+		private Integer intranetRX;
+
+		private Integer intranetBandwidth;
+
+		public Float getCPUCreditBalance() {
+			return this.cPUCreditBalance;
 		}
 
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
-
-		public Integer getCPU() {
-			return this.cPU;
-		}
-
-		public void setCPU(Integer cPU) {
-			this.cPU = cPU;
-		}
-
-		public Integer getIntranetRX() {
-			return this.intranetRX;
-		}
-
-		public void setIntranetRX(Integer intranetRX) {
-			this.intranetRX = intranetRX;
-		}
-
-		public Integer getIntranetTX() {
-			return this.intranetTX;
-		}
-
-		public void setIntranetTX(Integer intranetTX) {
-			this.intranetTX = intranetTX;
-		}
-
-		public Integer getIntranetBandwidth() {
-			return this.intranetBandwidth;
-		}
-
-		public void setIntranetBandwidth(Integer intranetBandwidth) {
-			this.intranetBandwidth = intranetBandwidth;
-		}
-
-		public Integer getInternetRX() {
-			return this.internetRX;
-		}
-
-		public void setInternetRX(Integer internetRX) {
-			this.internetRX = internetRX;
-		}
-
-		public Integer getInternetTX() {
-			return this.internetTX;
-		}
-
-		public void setInternetTX(Integer internetTX) {
-			this.internetTX = internetTX;
-		}
-
-		public Integer getInternetBandwidth() {
-			return this.internetBandwidth;
-		}
-
-		public void setInternetBandwidth(Integer internetBandwidth) {
-			this.internetBandwidth = internetBandwidth;
-		}
-
-		public Integer getIOPSRead() {
-			return this.iOPSRead;
-		}
-
-		public void setIOPSRead(Integer iOPSRead) {
-			this.iOPSRead = iOPSRead;
-		}
-
-		public Integer getIOPSWrite() {
-			return this.iOPSWrite;
-		}
-
-		public void setIOPSWrite(Integer iOPSWrite) {
-			this.iOPSWrite = iOPSWrite;
+		public void setCPUCreditBalance(Float cPUCreditBalance) {
+			this.cPUCreditBalance = cPUCreditBalance;
 		}
 
 		public Integer getBPSRead() {
@@ -169,12 +97,20 @@ public class DescribeInstanceMonitorDataResponse extends AcsResponse {
 			this.bPSRead = bPSRead;
 		}
 
-		public Integer getBPSWrite() {
-			return this.bPSWrite;
+		public Integer getInternetTX() {
+			return this.internetTX;
 		}
 
-		public void setBPSWrite(Integer bPSWrite) {
-			this.bPSWrite = bPSWrite;
+		public void setInternetTX(Integer internetTX) {
+			this.internetTX = internetTX;
+		}
+
+		public Integer getCPU() {
+			return this.cPU;
+		}
+
+		public void setCPU(Integer cPU) {
+			this.cPU = cPU;
 		}
 
 		public Float getCPUCreditUsage() {
@@ -185,20 +121,36 @@ public class DescribeInstanceMonitorDataResponse extends AcsResponse {
 			this.cPUCreditUsage = cPUCreditUsage;
 		}
 
-		public Float getCPUCreditBalance() {
-			return this.cPUCreditBalance;
+		public Integer getIOPSWrite() {
+			return this.iOPSWrite;
 		}
 
-		public void setCPUCreditBalance(Float cPUCreditBalance) {
-			this.cPUCreditBalance = cPUCreditBalance;
+		public void setIOPSWrite(Integer iOPSWrite) {
+			this.iOPSWrite = iOPSWrite;
 		}
 
-		public Float getCPUAdvanceCreditBalance() {
-			return this.cPUAdvanceCreditBalance;
+		public Integer getIntranetTX() {
+			return this.intranetTX;
 		}
 
-		public void setCPUAdvanceCreditBalance(Float cPUAdvanceCreditBalance) {
-			this.cPUAdvanceCreditBalance = cPUAdvanceCreditBalance;
+		public void setIntranetTX(Integer intranetTX) {
+			this.intranetTX = intranetTX;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public Integer getBPSWrite() {
+			return this.bPSWrite;
+		}
+
+		public void setBPSWrite(Integer bPSWrite) {
+			this.bPSWrite = bPSWrite;
 		}
 
 		public Float getCPUNotpaidSurplusCreditUsage() {
@@ -209,12 +161,60 @@ public class DescribeInstanceMonitorDataResponse extends AcsResponse {
 			this.cPUNotpaidSurplusCreditUsage = cPUNotpaidSurplusCreditUsage;
 		}
 
+		public Float getCPUAdvanceCreditBalance() {
+			return this.cPUAdvanceCreditBalance;
+		}
+
+		public void setCPUAdvanceCreditBalance(Float cPUAdvanceCreditBalance) {
+			this.cPUAdvanceCreditBalance = cPUAdvanceCreditBalance;
+		}
+
+		public Integer getIOPSRead() {
+			return this.iOPSRead;
+		}
+
+		public void setIOPSRead(Integer iOPSRead) {
+			this.iOPSRead = iOPSRead;
+		}
+
+		public Integer getInternetBandwidth() {
+			return this.internetBandwidth;
+		}
+
+		public void setInternetBandwidth(Integer internetBandwidth) {
+			this.internetBandwidth = internetBandwidth;
+		}
+
+		public Integer getInternetRX() {
+			return this.internetRX;
+		}
+
+		public void setInternetRX(Integer internetRX) {
+			this.internetRX = internetRX;
+		}
+
 		public String getTimeStamp() {
 			return this.timeStamp;
 		}
 
 		public void setTimeStamp(String timeStamp) {
 			this.timeStamp = timeStamp;
+		}
+
+		public Integer getIntranetRX() {
+			return this.intranetRX;
+		}
+
+		public void setIntranetRX(Integer intranetRX) {
+			this.intranetRX = intranetRX;
+		}
+
+		public Integer getIntranetBandwidth() {
+			return this.intranetBandwidth;
+		}
+
+		public void setIntranetBandwidth(Integer intranetBandwidth) {
+			this.intranetBandwidth = intranetBandwidth;
 		}
 	}
 

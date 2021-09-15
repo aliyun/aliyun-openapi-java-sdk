@@ -24,31 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class EipNotifyPaidResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String data;
-
 	private String code;
-
-	private String message;
 
 	private Boolean success;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
+	private String message;
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String data;
 
-	public String getData() {
-		return this.data;
-	}
-
-	public void setData(String data) {
-		this.data = data;
-	}
+	private String requestId;
 
 	public String getCode() {
 		return this.code;
@@ -56,6 +40,14 @@ public class EipNotifyPaidResponse extends AcsResponse {
 
 	public void setCode(String code) {
 		this.code = code;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public String getMessage() {
@@ -66,12 +58,20 @@ public class EipNotifyPaidResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getData() {
+		return this.data;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setData(String data) {
+		this.data = data;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

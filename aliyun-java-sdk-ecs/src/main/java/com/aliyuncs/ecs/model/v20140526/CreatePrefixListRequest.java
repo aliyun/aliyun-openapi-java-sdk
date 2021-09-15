@@ -161,25 +161,17 @@ public class CreatePrefixListRequest extends RpcAcsRequest<CreatePrefixListRespo
 		this.entrys = entrys;	
 		if (entrys != null) {
 			for (int depth1 = 0; depth1 < entrys.size(); depth1++) {
-				putQueryParameter("Entry." + (depth1 + 1) + ".Cidr" , entrys.get(depth1).getCidr());
 				putQueryParameter("Entry." + (depth1 + 1) + ".Description" , entrys.get(depth1).getDescription());
+				putQueryParameter("Entry." + (depth1 + 1) + ".Cidr" , entrys.get(depth1).getCidr());
 			}
 		}	
 	}
 
 	public static class Entry {
 
-		private String cidr;
-
 		private String description;
 
-		public String getCidr() {
-			return this.cidr;
-		}
-
-		public void setCidr(String cidr) {
-			this.cidr = cidr;
-		}
+		private String cidr;
 
 		public String getDescription() {
 			return this.description;
@@ -187,6 +179,14 @@ public class CreatePrefixListRequest extends RpcAcsRequest<CreatePrefixListRespo
 
 		public void setDescription(String description) {
 			this.description = description;
+		}
+
+		public String getCidr() {
+			return this.cidr;
+		}
+
+		public void setCidr(String cidr) {
+			this.cidr = cidr;
 		}
 	}
 

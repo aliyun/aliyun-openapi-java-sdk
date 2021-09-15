@@ -23,8 +23,8 @@ public class CreateActivationResponseUnmarshaller {
 	public static CreateActivationResponse unmarshall(CreateActivationResponse createActivationResponse, UnmarshallerContext _ctx) {
 		
 		createActivationResponse.setRequestId(_ctx.stringValue("CreateActivationResponse.RequestId"));
-		createActivationResponse.setActivationId(_ctx.stringValue("CreateActivationResponse.ActivationId"));
 		createActivationResponse.setActivationCode(_ctx.stringValue("CreateActivationResponse.ActivationCode"));
+		createActivationResponse.setActivationId(_ctx.stringValue("CreateActivationResponse.ActivationId"));
 	 
 	 	return createActivationResponse;
 	}

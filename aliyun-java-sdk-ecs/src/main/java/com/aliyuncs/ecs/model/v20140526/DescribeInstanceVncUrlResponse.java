@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeInstanceVncUrlResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String vncUrl;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getVncUrl() {
 		return this.vncUrl;
@@ -42,6 +34,14 @@ public class DescribeInstanceVncUrlResponse extends AcsResponse {
 
 	public void setVncUrl(String vncUrl) {
 		this.vncUrl = vncUrl;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

@@ -22,11 +22,11 @@ public class EipFillProductResponseUnmarshaller {
 
 	public static EipFillProductResponse unmarshall(EipFillProductResponse eipFillProductResponse, UnmarshallerContext _ctx) {
 		
-		eipFillProductResponse.setRequestId(_ctx.stringValue("EipFillProductResponse.requestId"));
-		eipFillProductResponse.setData(_ctx.stringValue("EipFillProductResponse.data"));
 		eipFillProductResponse.setCode(_ctx.stringValue("EipFillProductResponse.code"));
 		eipFillProductResponse.setSuccess(_ctx.booleanValue("EipFillProductResponse.success"));
 		eipFillProductResponse.setMessage(_ctx.stringValue("EipFillProductResponse.message"));
+		eipFillProductResponse.setData(_ctx.stringValue("EipFillProductResponse.data"));
+		eipFillProductResponse.setRequestId(_ctx.stringValue("EipFillProductResponse.requestId"));
 	 
 	 	return eipFillProductResponse;
 	}

@@ -47,67 +47,35 @@ public class DescribeDedicatedHostTypesResponse extends AcsResponse {
 
 	public static class DedicatedHostType {
 
-		private String dedicatedHostType;
-
-		private Integer sockets;
-
-		private Integer totalVcpus;
-
-		private Integer totalVgpus;
-
 		private Integer cores;
-
-		private Integer physicalGpus;
-
-		private Float memorySize;
-
-		private Long localStorageCapacity;
-
-		private Integer localStorageAmount;
 
 		private String localStorageCategory;
 
 		private String gPUSpec;
 
-		private Boolean supportCpuOverCommitRatio;
+		private Integer totalVcpus;
 
 		private String cpuOverCommitRatioRange;
+
+		private Integer physicalGpus;
+
+		private Float memorySize;
+
+		private Boolean supportCpuOverCommitRatio;
+
+		private Long localStorageCapacity;
+
+		private String dedicatedHostType;
+
+		private Integer localStorageAmount;
+
+		private Integer totalVgpus;
+
+		private Integer sockets;
 
 		private List<String> supportedInstanceTypeFamilies;
 
 		private List<String> supportedInstanceTypesList;
-
-		public String getDedicatedHostType() {
-			return this.dedicatedHostType;
-		}
-
-		public void setDedicatedHostType(String dedicatedHostType) {
-			this.dedicatedHostType = dedicatedHostType;
-		}
-
-		public Integer getSockets() {
-			return this.sockets;
-		}
-
-		public void setSockets(Integer sockets) {
-			this.sockets = sockets;
-		}
-
-		public Integer getTotalVcpus() {
-			return this.totalVcpus;
-		}
-
-		public void setTotalVcpus(Integer totalVcpus) {
-			this.totalVcpus = totalVcpus;
-		}
-
-		public Integer getTotalVgpus() {
-			return this.totalVgpus;
-		}
-
-		public void setTotalVgpus(Integer totalVgpus) {
-			this.totalVgpus = totalVgpus;
-		}
 
 		public Integer getCores() {
 			return this.cores;
@@ -115,38 +83,6 @@ public class DescribeDedicatedHostTypesResponse extends AcsResponse {
 
 		public void setCores(Integer cores) {
 			this.cores = cores;
-		}
-
-		public Integer getPhysicalGpus() {
-			return this.physicalGpus;
-		}
-
-		public void setPhysicalGpus(Integer physicalGpus) {
-			this.physicalGpus = physicalGpus;
-		}
-
-		public Float getMemorySize() {
-			return this.memorySize;
-		}
-
-		public void setMemorySize(Float memorySize) {
-			this.memorySize = memorySize;
-		}
-
-		public Long getLocalStorageCapacity() {
-			return this.localStorageCapacity;
-		}
-
-		public void setLocalStorageCapacity(Long localStorageCapacity) {
-			this.localStorageCapacity = localStorageCapacity;
-		}
-
-		public Integer getLocalStorageAmount() {
-			return this.localStorageAmount;
-		}
-
-		public void setLocalStorageAmount(Integer localStorageAmount) {
-			this.localStorageAmount = localStorageAmount;
 		}
 
 		public String getLocalStorageCategory() {
@@ -165,12 +101,12 @@ public class DescribeDedicatedHostTypesResponse extends AcsResponse {
 			this.gPUSpec = gPUSpec;
 		}
 
-		public Boolean getSupportCpuOverCommitRatio() {
-			return this.supportCpuOverCommitRatio;
+		public Integer getTotalVcpus() {
+			return this.totalVcpus;
 		}
 
-		public void setSupportCpuOverCommitRatio(Boolean supportCpuOverCommitRatio) {
-			this.supportCpuOverCommitRatio = supportCpuOverCommitRatio;
+		public void setTotalVcpus(Integer totalVcpus) {
+			this.totalVcpus = totalVcpus;
 		}
 
 		public String getCpuOverCommitRatioRange() {
@@ -179,6 +115,70 @@ public class DescribeDedicatedHostTypesResponse extends AcsResponse {
 
 		public void setCpuOverCommitRatioRange(String cpuOverCommitRatioRange) {
 			this.cpuOverCommitRatioRange = cpuOverCommitRatioRange;
+		}
+
+		public Integer getPhysicalGpus() {
+			return this.physicalGpus;
+		}
+
+		public void setPhysicalGpus(Integer physicalGpus) {
+			this.physicalGpus = physicalGpus;
+		}
+
+		public Float getMemorySize() {
+			return this.memorySize;
+		}
+
+		public void setMemorySize(Float memorySize) {
+			this.memorySize = memorySize;
+		}
+
+		public Boolean getSupportCpuOverCommitRatio() {
+			return this.supportCpuOverCommitRatio;
+		}
+
+		public void setSupportCpuOverCommitRatio(Boolean supportCpuOverCommitRatio) {
+			this.supportCpuOverCommitRatio = supportCpuOverCommitRatio;
+		}
+
+		public Long getLocalStorageCapacity() {
+			return this.localStorageCapacity;
+		}
+
+		public void setLocalStorageCapacity(Long localStorageCapacity) {
+			this.localStorageCapacity = localStorageCapacity;
+		}
+
+		public String getDedicatedHostType() {
+			return this.dedicatedHostType;
+		}
+
+		public void setDedicatedHostType(String dedicatedHostType) {
+			this.dedicatedHostType = dedicatedHostType;
+		}
+
+		public Integer getLocalStorageAmount() {
+			return this.localStorageAmount;
+		}
+
+		public void setLocalStorageAmount(Integer localStorageAmount) {
+			this.localStorageAmount = localStorageAmount;
+		}
+
+		public Integer getTotalVgpus() {
+			return this.totalVgpus;
+		}
+
+		public void setTotalVgpus(Integer totalVgpus) {
+			this.totalVgpus = totalVgpus;
+		}
+
+		public Integer getSockets() {
+			return this.sockets;
+		}
+
+		public void setSockets(Integer sockets) {
+			this.sockets = sockets;
 		}
 
 		public List<String> getSupportedInstanceTypeFamilies() {

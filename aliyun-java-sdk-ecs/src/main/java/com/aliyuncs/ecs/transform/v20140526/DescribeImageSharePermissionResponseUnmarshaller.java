@@ -28,11 +28,11 @@ public class DescribeImageSharePermissionResponseUnmarshaller {
 	public static DescribeImageSharePermissionResponse unmarshall(DescribeImageSharePermissionResponse describeImageSharePermissionResponse, UnmarshallerContext _ctx) {
 		
 		describeImageSharePermissionResponse.setRequestId(_ctx.stringValue("DescribeImageSharePermissionResponse.RequestId"));
-		describeImageSharePermissionResponse.setRegionId(_ctx.stringValue("DescribeImageSharePermissionResponse.RegionId"));
-		describeImageSharePermissionResponse.setTotalCount(_ctx.integerValue("DescribeImageSharePermissionResponse.TotalCount"));
 		describeImageSharePermissionResponse.setPageNumber(_ctx.integerValue("DescribeImageSharePermissionResponse.PageNumber"));
 		describeImageSharePermissionResponse.setPageSize(_ctx.integerValue("DescribeImageSharePermissionResponse.PageSize"));
+		describeImageSharePermissionResponse.setTotalCount(_ctx.integerValue("DescribeImageSharePermissionResponse.TotalCount"));
 		describeImageSharePermissionResponse.setImageId(_ctx.stringValue("DescribeImageSharePermissionResponse.ImageId"));
+		describeImageSharePermissionResponse.setRegionId(_ctx.stringValue("DescribeImageSharePermissionResponse.RegionId"));
 
 		List<ShareGroup> shareGroups = new ArrayList<ShareGroup>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeImageSharePermissionResponse.ShareGroups.Length"); i++) {

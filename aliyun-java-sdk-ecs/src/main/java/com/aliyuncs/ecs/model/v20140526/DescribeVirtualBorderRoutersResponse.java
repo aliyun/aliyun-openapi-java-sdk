@@ -77,84 +77,52 @@ public class DescribeVirtualBorderRoutersResponse extends AcsResponse {
 
 	public static class VirtualBorderRouterType {
 
-		private String vbrId;
-
-		private String creationTime;
-
-		private String activationTime;
-
-		private String terminationTime;
-
-		private String recoveryTime;
+		private String vlanInterfaceId;
 
 		private String status;
 
-		private Integer vlanId;
+		private String creationTime;
 
 		private String circuitCode;
 
-		private String routeTableId;
-
-		private String vlanInterfaceId;
+		private String physicalConnectionOwnerUid;
 
 		private String localGatewayIp;
 
-		private String peerGatewayIp;
-
-		private String peeringSubnetMask;
-
-		private String physicalConnectionId;
-
-		private String physicalConnectionStatus;
+		private String activationTime;
 
 		private String physicalConnectionBusinessStatus;
 
-		private String physicalConnectionOwnerUid;
+		private String peeringSubnetMask;
 
-		private String accessPointId;
-
-		private String name;
+		private String routeTableId;
 
 		private String description;
 
-		public String getVbrId() {
-			return this.vbrId;
+		private String physicalConnectionStatus;
+
+		private String recoveryTime;
+
+		private String terminationTime;
+
+		private String peerGatewayIp;
+
+		private String name;
+
+		private String accessPointId;
+
+		private String vbrId;
+
+		private String physicalConnectionId;
+
+		private Integer vlanId;
+
+		public String getVlanInterfaceId() {
+			return this.vlanInterfaceId;
 		}
 
-		public void setVbrId(String vbrId) {
-			this.vbrId = vbrId;
-		}
-
-		public String getCreationTime() {
-			return this.creationTime;
-		}
-
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
-		}
-
-		public String getActivationTime() {
-			return this.activationTime;
-		}
-
-		public void setActivationTime(String activationTime) {
-			this.activationTime = activationTime;
-		}
-
-		public String getTerminationTime() {
-			return this.terminationTime;
-		}
-
-		public void setTerminationTime(String terminationTime) {
-			this.terminationTime = terminationTime;
-		}
-
-		public String getRecoveryTime() {
-			return this.recoveryTime;
-		}
-
-		public void setRecoveryTime(String recoveryTime) {
-			this.recoveryTime = recoveryTime;
+		public void setVlanInterfaceId(String vlanInterfaceId) {
+			this.vlanInterfaceId = vlanInterfaceId;
 		}
 
 		public String getStatus() {
@@ -165,12 +133,12 @@ public class DescribeVirtualBorderRoutersResponse extends AcsResponse {
 			this.status = status;
 		}
 
-		public Integer getVlanId() {
-			return this.vlanId;
+		public String getCreationTime() {
+			return this.creationTime;
 		}
 
-		public void setVlanId(Integer vlanId) {
-			this.vlanId = vlanId;
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
 		}
 
 		public String getCircuitCode() {
@@ -181,20 +149,12 @@ public class DescribeVirtualBorderRoutersResponse extends AcsResponse {
 			this.circuitCode = circuitCode;
 		}
 
-		public String getRouteTableId() {
-			return this.routeTableId;
+		public String getPhysicalConnectionOwnerUid() {
+			return this.physicalConnectionOwnerUid;
 		}
 
-		public void setRouteTableId(String routeTableId) {
-			this.routeTableId = routeTableId;
-		}
-
-		public String getVlanInterfaceId() {
-			return this.vlanInterfaceId;
-		}
-
-		public void setVlanInterfaceId(String vlanInterfaceId) {
-			this.vlanInterfaceId = vlanInterfaceId;
+		public void setPhysicalConnectionOwnerUid(String physicalConnectionOwnerUid) {
+			this.physicalConnectionOwnerUid = physicalConnectionOwnerUid;
 		}
 
 		public String getLocalGatewayIp() {
@@ -205,36 +165,12 @@ public class DescribeVirtualBorderRoutersResponse extends AcsResponse {
 			this.localGatewayIp = localGatewayIp;
 		}
 
-		public String getPeerGatewayIp() {
-			return this.peerGatewayIp;
+		public String getActivationTime() {
+			return this.activationTime;
 		}
 
-		public void setPeerGatewayIp(String peerGatewayIp) {
-			this.peerGatewayIp = peerGatewayIp;
-		}
-
-		public String getPeeringSubnetMask() {
-			return this.peeringSubnetMask;
-		}
-
-		public void setPeeringSubnetMask(String peeringSubnetMask) {
-			this.peeringSubnetMask = peeringSubnetMask;
-		}
-
-		public String getPhysicalConnectionId() {
-			return this.physicalConnectionId;
-		}
-
-		public void setPhysicalConnectionId(String physicalConnectionId) {
-			this.physicalConnectionId = physicalConnectionId;
-		}
-
-		public String getPhysicalConnectionStatus() {
-			return this.physicalConnectionStatus;
-		}
-
-		public void setPhysicalConnectionStatus(String physicalConnectionStatus) {
-			this.physicalConnectionStatus = physicalConnectionStatus;
+		public void setActivationTime(String activationTime) {
+			this.activationTime = activationTime;
 		}
 
 		public String getPhysicalConnectionBusinessStatus() {
@@ -245,20 +181,60 @@ public class DescribeVirtualBorderRoutersResponse extends AcsResponse {
 			this.physicalConnectionBusinessStatus = physicalConnectionBusinessStatus;
 		}
 
-		public String getPhysicalConnectionOwnerUid() {
-			return this.physicalConnectionOwnerUid;
+		public String getPeeringSubnetMask() {
+			return this.peeringSubnetMask;
 		}
 
-		public void setPhysicalConnectionOwnerUid(String physicalConnectionOwnerUid) {
-			this.physicalConnectionOwnerUid = physicalConnectionOwnerUid;
+		public void setPeeringSubnetMask(String peeringSubnetMask) {
+			this.peeringSubnetMask = peeringSubnetMask;
 		}
 
-		public String getAccessPointId() {
-			return this.accessPointId;
+		public String getRouteTableId() {
+			return this.routeTableId;
 		}
 
-		public void setAccessPointId(String accessPointId) {
-			this.accessPointId = accessPointId;
+		public void setRouteTableId(String routeTableId) {
+			this.routeTableId = routeTableId;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getPhysicalConnectionStatus() {
+			return this.physicalConnectionStatus;
+		}
+
+		public void setPhysicalConnectionStatus(String physicalConnectionStatus) {
+			this.physicalConnectionStatus = physicalConnectionStatus;
+		}
+
+		public String getRecoveryTime() {
+			return this.recoveryTime;
+		}
+
+		public void setRecoveryTime(String recoveryTime) {
+			this.recoveryTime = recoveryTime;
+		}
+
+		public String getTerminationTime() {
+			return this.terminationTime;
+		}
+
+		public void setTerminationTime(String terminationTime) {
+			this.terminationTime = terminationTime;
+		}
+
+		public String getPeerGatewayIp() {
+			return this.peerGatewayIp;
+		}
+
+		public void setPeerGatewayIp(String peerGatewayIp) {
+			this.peerGatewayIp = peerGatewayIp;
 		}
 
 		public String getName() {
@@ -269,12 +245,36 @@ public class DescribeVirtualBorderRoutersResponse extends AcsResponse {
 			this.name = name;
 		}
 
-		public String getDescription() {
-			return this.description;
+		public String getAccessPointId() {
+			return this.accessPointId;
 		}
 
-		public void setDescription(String description) {
-			this.description = description;
+		public void setAccessPointId(String accessPointId) {
+			this.accessPointId = accessPointId;
+		}
+
+		public String getVbrId() {
+			return this.vbrId;
+		}
+
+		public void setVbrId(String vbrId) {
+			this.vbrId = vbrId;
+		}
+
+		public String getPhysicalConnectionId() {
+			return this.physicalConnectionId;
+		}
+
+		public void setPhysicalConnectionId(String physicalConnectionId) {
+			this.physicalConnectionId = physicalConnectionId;
+		}
+
+		public Integer getVlanId() {
+			return this.vlanId;
+		}
+
+		public void setVlanId(Integer vlanId) {
+			this.vlanId = vlanId;
 		}
 	}
 

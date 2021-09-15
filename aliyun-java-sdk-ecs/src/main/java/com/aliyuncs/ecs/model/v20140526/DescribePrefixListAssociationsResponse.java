@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribePrefixListAssociationsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String nextToken;
 
+	private String requestId;
+
 	private List<PrefixListAssociation> prefixListAssociations;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getNextToken() {
 		return this.nextToken;
@@ -45,6 +37,14 @@ public class DescribePrefixListAssociationsResponse extends AcsResponse {
 
 	public void setNextToken(String nextToken) {
 		this.nextToken = nextToken;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<PrefixListAssociation> getPrefixListAssociations() {

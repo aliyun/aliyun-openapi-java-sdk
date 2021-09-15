@@ -27,17 +27,17 @@ public class DescribeSnapshotPackageResponseUnmarshaller {
 	public static DescribeSnapshotPackageResponse unmarshall(DescribeSnapshotPackageResponse describeSnapshotPackageResponse, UnmarshallerContext _ctx) {
 		
 		describeSnapshotPackageResponse.setRequestId(_ctx.stringValue("DescribeSnapshotPackageResponse.RequestId"));
-		describeSnapshotPackageResponse.setTotalCount(_ctx.integerValue("DescribeSnapshotPackageResponse.TotalCount"));
-		describeSnapshotPackageResponse.setPageNumber(_ctx.integerValue("DescribeSnapshotPackageResponse.PageNumber"));
 		describeSnapshotPackageResponse.setPageSize(_ctx.integerValue("DescribeSnapshotPackageResponse.PageSize"));
+		describeSnapshotPackageResponse.setPageNumber(_ctx.integerValue("DescribeSnapshotPackageResponse.PageNumber"));
+		describeSnapshotPackageResponse.setTotalCount(_ctx.integerValue("DescribeSnapshotPackageResponse.TotalCount"));
 
 		List<SnapshotPackage> snapshotPackages = new ArrayList<SnapshotPackage>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSnapshotPackageResponse.SnapshotPackages.Length"); i++) {
 			SnapshotPackage snapshotPackage = new SnapshotPackage();
-			snapshotPackage.setStartTime(_ctx.stringValue("DescribeSnapshotPackageResponse.SnapshotPackages["+ i +"].StartTime"));
-			snapshotPackage.setEndTime(_ctx.stringValue("DescribeSnapshotPackageResponse.SnapshotPackages["+ i +"].EndTime"));
-			snapshotPackage.setInitCapacity(_ctx.longValue("DescribeSnapshotPackageResponse.SnapshotPackages["+ i +"].InitCapacity"));
 			snapshotPackage.setDisplayName(_ctx.stringValue("DescribeSnapshotPackageResponse.SnapshotPackages["+ i +"].DisplayName"));
+			snapshotPackage.setEndTime(_ctx.stringValue("DescribeSnapshotPackageResponse.SnapshotPackages["+ i +"].EndTime"));
+			snapshotPackage.setStartTime(_ctx.stringValue("DescribeSnapshotPackageResponse.SnapshotPackages["+ i +"].StartTime"));
+			snapshotPackage.setInitCapacity(_ctx.longValue("DescribeSnapshotPackageResponse.SnapshotPackages["+ i +"].InitCapacity"));
 
 			snapshotPackages.add(snapshotPackage);
 		}

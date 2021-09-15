@@ -27,25 +27,25 @@ public class DescribeSnapshotLinksResponseUnmarshaller {
 	public static DescribeSnapshotLinksResponse unmarshall(DescribeSnapshotLinksResponse describeSnapshotLinksResponse, UnmarshallerContext _ctx) {
 		
 		describeSnapshotLinksResponse.setRequestId(_ctx.stringValue("DescribeSnapshotLinksResponse.RequestId"));
-		describeSnapshotLinksResponse.setTotalCount(_ctx.integerValue("DescribeSnapshotLinksResponse.TotalCount"));
-		describeSnapshotLinksResponse.setPageNumber(_ctx.integerValue("DescribeSnapshotLinksResponse.PageNumber"));
 		describeSnapshotLinksResponse.setPageSize(_ctx.integerValue("DescribeSnapshotLinksResponse.PageSize"));
+		describeSnapshotLinksResponse.setPageNumber(_ctx.integerValue("DescribeSnapshotLinksResponse.PageNumber"));
+		describeSnapshotLinksResponse.setTotalCount(_ctx.integerValue("DescribeSnapshotLinksResponse.TotalCount"));
 
 		List<SnapshotLink> snapshotLinks = new ArrayList<SnapshotLink>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSnapshotLinksResponse.SnapshotLinks.Length"); i++) {
 			SnapshotLink snapshotLink = new SnapshotLink();
-			snapshotLink.setSnapshotLinkId(_ctx.stringValue("DescribeSnapshotLinksResponse.SnapshotLinks["+ i +"].SnapshotLinkId"));
-			snapshotLink.setRegionId(_ctx.stringValue("DescribeSnapshotLinksResponse.SnapshotLinks["+ i +"].RegionId"));
-			snapshotLink.setInstanceId(_ctx.stringValue("DescribeSnapshotLinksResponse.SnapshotLinks["+ i +"].InstanceId"));
-			snapshotLink.setInstanceName(_ctx.stringValue("DescribeSnapshotLinksResponse.SnapshotLinks["+ i +"].InstanceName"));
-			snapshotLink.setSourceDiskId(_ctx.stringValue("DescribeSnapshotLinksResponse.SnapshotLinks["+ i +"].SourceDiskId"));
+			snapshotLink.setInstantAccess(_ctx.booleanValue("DescribeSnapshotLinksResponse.SnapshotLinks["+ i +"].InstantAccess"));
+			snapshotLink.setTotalSize(_ctx.longValue("DescribeSnapshotLinksResponse.SnapshotLinks["+ i +"].TotalSize"));
 			snapshotLink.setSourceDiskName(_ctx.stringValue("DescribeSnapshotLinksResponse.SnapshotLinks["+ i +"].SourceDiskName"));
 			snapshotLink.setSourceDiskSize(_ctx.integerValue("DescribeSnapshotLinksResponse.SnapshotLinks["+ i +"].SourceDiskSize"));
 			snapshotLink.setSourceDiskType(_ctx.stringValue("DescribeSnapshotLinksResponse.SnapshotLinks["+ i +"].SourceDiskType"));
-			snapshotLink.setCategory(_ctx.stringValue("DescribeSnapshotLinksResponse.SnapshotLinks["+ i +"].Category"));
-			snapshotLink.setInstantAccess(_ctx.booleanValue("DescribeSnapshotLinksResponse.SnapshotLinks["+ i +"].InstantAccess"));
-			snapshotLink.setTotalSize(_ctx.longValue("DescribeSnapshotLinksResponse.SnapshotLinks["+ i +"].TotalSize"));
+			snapshotLink.setInstanceId(_ctx.stringValue("DescribeSnapshotLinksResponse.SnapshotLinks["+ i +"].InstanceId"));
+			snapshotLink.setSnapshotLinkId(_ctx.stringValue("DescribeSnapshotLinksResponse.SnapshotLinks["+ i +"].SnapshotLinkId"));
 			snapshotLink.setTotalCount(_ctx.integerValue("DescribeSnapshotLinksResponse.SnapshotLinks["+ i +"].TotalCount"));
+			snapshotLink.setRegionId(_ctx.stringValue("DescribeSnapshotLinksResponse.SnapshotLinks["+ i +"].RegionId"));
+			snapshotLink.setSourceDiskId(_ctx.stringValue("DescribeSnapshotLinksResponse.SnapshotLinks["+ i +"].SourceDiskId"));
+			snapshotLink.setInstanceName(_ctx.stringValue("DescribeSnapshotLinksResponse.SnapshotLinks["+ i +"].InstanceName"));
+			snapshotLink.setCategory(_ctx.stringValue("DescribeSnapshotLinksResponse.SnapshotLinks["+ i +"].Category"));
 
 			snapshotLinks.add(snapshotLink);
 		}

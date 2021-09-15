@@ -32,14 +32,14 @@ public class DescribeEniMonitorDataResponseUnmarshaller {
 		List<EniMonitorData> monitorData = new ArrayList<EniMonitorData>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeEniMonitorDataResponse.MonitorData.Length"); i++) {
 			EniMonitorData eniMonitorData = new EniMonitorData();
-			eniMonitorData.setEniId(_ctx.stringValue("DescribeEniMonitorDataResponse.MonitorData["+ i +"].EniId"));
-			eniMonitorData.setTimeStamp(_ctx.stringValue("DescribeEniMonitorDataResponse.MonitorData["+ i +"].TimeStamp"));
-			eniMonitorData.setPacketTx(_ctx.stringValue("DescribeEniMonitorDataResponse.MonitorData["+ i +"].PacketTx"));
 			eniMonitorData.setPacketRx(_ctx.stringValue("DescribeEniMonitorDataResponse.MonitorData["+ i +"].PacketRx"));
+			eniMonitorData.setTimeStamp(_ctx.stringValue("DescribeEniMonitorDataResponse.MonitorData["+ i +"].TimeStamp"));
+			eniMonitorData.setDropPacketRx(_ctx.stringValue("DescribeEniMonitorDataResponse.MonitorData["+ i +"].DropPacketRx"));
+			eniMonitorData.setEniId(_ctx.stringValue("DescribeEniMonitorDataResponse.MonitorData["+ i +"].EniId"));
+			eniMonitorData.setDropPacketTx(_ctx.stringValue("DescribeEniMonitorDataResponse.MonitorData["+ i +"].DropPacketTx"));
+			eniMonitorData.setPacketTx(_ctx.stringValue("DescribeEniMonitorDataResponse.MonitorData["+ i +"].PacketTx"));
 			eniMonitorData.setIntranetTx(_ctx.stringValue("DescribeEniMonitorDataResponse.MonitorData["+ i +"].IntranetTx"));
 			eniMonitorData.setIntranetRx(_ctx.stringValue("DescribeEniMonitorDataResponse.MonitorData["+ i +"].IntranetRx"));
-			eniMonitorData.setDropPacketTx(_ctx.stringValue("DescribeEniMonitorDataResponse.MonitorData["+ i +"].DropPacketTx"));
-			eniMonitorData.setDropPacketRx(_ctx.stringValue("DescribeEniMonitorDataResponse.MonitorData["+ i +"].DropPacketRx"));
 
 			monitorData.add(eniMonitorData);
 		}

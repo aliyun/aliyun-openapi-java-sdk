@@ -98,9 +98,9 @@ public class CreateLaunchTemplateRequest extends RpcAcsRequest<CreateLaunchTempl
 
 	private Boolean enableVmOsConfig;
 
-	private List<NetworkInterface> networkInterfaces;
-
 	private String deploymentSetId;
+
+	private List<NetworkInterface> networkInterfaces;
 
 	private String resourceOwnerAccount;
 
@@ -534,28 +534,6 @@ public class CreateLaunchTemplateRequest extends RpcAcsRequest<CreateLaunchTempl
 		}
 	}
 
-	public List<NetworkInterface> getNetworkInterfaces() {
-		return this.networkInterfaces;
-	}
-
-	public void setNetworkInterfaces(List<NetworkInterface> networkInterfaces) {
-		this.networkInterfaces = networkInterfaces;	
-		if (networkInterfaces != null) {
-			for (int depth1 = 0; depth1 < networkInterfaces.size(); depth1++) {
-				putQueryParameter("NetworkInterface." + (depth1 + 1) + ".PrimaryIpAddress" , networkInterfaces.get(depth1).getPrimaryIpAddress());
-				putQueryParameter("NetworkInterface." + (depth1 + 1) + ".VSwitchId" , networkInterfaces.get(depth1).getVSwitchId());
-				putQueryParameter("NetworkInterface." + (depth1 + 1) + ".SecurityGroupId" , networkInterfaces.get(depth1).getSecurityGroupId());
-				putQueryParameter("NetworkInterface." + (depth1 + 1) + ".NetworkInterfaceName" , networkInterfaces.get(depth1).getNetworkInterfaceName());
-				putQueryParameter("NetworkInterface." + (depth1 + 1) + ".Description" , networkInterfaces.get(depth1).getDescription());
-				if (networkInterfaces.get(depth1).getSecurityGroupIdss() != null) {
-					for (int i = 0; i < networkInterfaces.get(depth1).getSecurityGroupIdss().size(); i++) {
-						putQueryParameter("NetworkInterface." + (depth1 + 1) + ".SecurityGroupIds." + (i + 1) , networkInterfaces.get(depth1).getSecurityGroupIdss().get(i));
-					}
-				}
-			}
-		}	
-	}
-
 	public String getDeploymentSetId() {
 		return this.deploymentSetId;
 	}
@@ -565,6 +543,28 @@ public class CreateLaunchTemplateRequest extends RpcAcsRequest<CreateLaunchTempl
 		if(deploymentSetId != null){
 			putQueryParameter("DeploymentSetId", deploymentSetId);
 		}
+	}
+
+	public List<NetworkInterface> getNetworkInterfaces() {
+		return this.networkInterfaces;
+	}
+
+	public void setNetworkInterfaces(List<NetworkInterface> networkInterfaces) {
+		this.networkInterfaces = networkInterfaces;	
+		if (networkInterfaces != null) {
+			for (int depth1 = 0; depth1 < networkInterfaces.size(); depth1++) {
+				putQueryParameter("NetworkInterface." + (depth1 + 1) + ".VSwitchId" , networkInterfaces.get(depth1).getVSwitchId());
+				putQueryParameter("NetworkInterface." + (depth1 + 1) + ".NetworkInterfaceName" , networkInterfaces.get(depth1).getNetworkInterfaceName());
+				putQueryParameter("NetworkInterface." + (depth1 + 1) + ".Description" , networkInterfaces.get(depth1).getDescription());
+				putQueryParameter("NetworkInterface." + (depth1 + 1) + ".SecurityGroupId" , networkInterfaces.get(depth1).getSecurityGroupId());
+				putQueryParameter("NetworkInterface." + (depth1 + 1) + ".PrimaryIpAddress" , networkInterfaces.get(depth1).getPrimaryIpAddress());
+				if (networkInterfaces.get(depth1).getSecurityGroupIdss() != null) {
+					for (int i = 0; i < networkInterfaces.get(depth1).getSecurityGroupIdss().size(); i++) {
+						putQueryParameter("NetworkInterface." + (depth1 + 1) + ".SecurityGroupIds." + (i + 1) , networkInterfaces.get(depth1).getSecurityGroupIdss().get(i));
+					}
+				}
+			}
+		}	
 	}
 
 	public String getResourceOwnerAccount() {
@@ -654,15 +654,15 @@ public class CreateLaunchTemplateRequest extends RpcAcsRequest<CreateLaunchTempl
 		this.dataDisks = dataDisks;	
 		if (dataDisks != null) {
 			for (int depth1 = 0; depth1 < dataDisks.size(); depth1++) {
-				putQueryParameter("DataDisk." + (depth1 + 1) + ".Size" , dataDisks.get(depth1).getSize());
-				putQueryParameter("DataDisk." + (depth1 + 1) + ".SnapshotId" , dataDisks.get(depth1).getSnapshotId());
-				putQueryParameter("DataDisk." + (depth1 + 1) + ".Category" , dataDisks.get(depth1).getCategory());
-				putQueryParameter("DataDisk." + (depth1 + 1) + ".Encrypted" , dataDisks.get(depth1).getEncrypted());
-				putQueryParameter("DataDisk." + (depth1 + 1) + ".DiskName" , dataDisks.get(depth1).getDiskName());
-				putQueryParameter("DataDisk." + (depth1 + 1) + ".Description" , dataDisks.get(depth1).getDescription());
-				putQueryParameter("DataDisk." + (depth1 + 1) + ".DeleteWithInstance" , dataDisks.get(depth1).getDeleteWithInstance());
-				putQueryParameter("DataDisk." + (depth1 + 1) + ".Device" , dataDisks.get(depth1).getDevice());
 				putQueryParameter("DataDisk." + (depth1 + 1) + ".PerformanceLevel" , dataDisks.get(depth1).getPerformanceLevel());
+				putQueryParameter("DataDisk." + (depth1 + 1) + ".Description" , dataDisks.get(depth1).getDescription());
+				putQueryParameter("DataDisk." + (depth1 + 1) + ".SnapshotId" , dataDisks.get(depth1).getSnapshotId());
+				putQueryParameter("DataDisk." + (depth1 + 1) + ".Size" , dataDisks.get(depth1).getSize());
+				putQueryParameter("DataDisk." + (depth1 + 1) + ".Device" , dataDisks.get(depth1).getDevice());
+				putQueryParameter("DataDisk." + (depth1 + 1) + ".DiskName" , dataDisks.get(depth1).getDiskName());
+				putQueryParameter("DataDisk." + (depth1 + 1) + ".Category" , dataDisks.get(depth1).getCategory());
+				putQueryParameter("DataDisk." + (depth1 + 1) + ".DeleteWithInstance" , dataDisks.get(depth1).getDeleteWithInstance());
+				putQueryParameter("DataDisk." + (depth1 + 1) + ".Encrypted" , dataDisks.get(depth1).getEncrypted());
 			}
 		}	
 	}
@@ -748,25 +748,17 @@ public class CreateLaunchTemplateRequest extends RpcAcsRequest<CreateLaunchTempl
 
 	public static class NetworkInterface {
 
-		private String primaryIpAddress;
-
 		private String vSwitchId;
-
-		private String securityGroupId;
 
 		private String networkInterfaceName;
 
 		private String description;
 
+		private String securityGroupId;
+
+		private String primaryIpAddress;
+
 		private List<String> securityGroupIdss;
-
-		public String getPrimaryIpAddress() {
-			return this.primaryIpAddress;
-		}
-
-		public void setPrimaryIpAddress(String primaryIpAddress) {
-			this.primaryIpAddress = primaryIpAddress;
-		}
 
 		public String getVSwitchId() {
 			return this.vSwitchId;
@@ -774,14 +766,6 @@ public class CreateLaunchTemplateRequest extends RpcAcsRequest<CreateLaunchTempl
 
 		public void setVSwitchId(String vSwitchId) {
 			this.vSwitchId = vSwitchId;
-		}
-
-		public String getSecurityGroupId() {
-			return this.securityGroupId;
-		}
-
-		public void setSecurityGroupId(String securityGroupId) {
-			this.securityGroupId = securityGroupId;
 		}
 
 		public String getNetworkInterfaceName() {
@@ -800,6 +784,22 @@ public class CreateLaunchTemplateRequest extends RpcAcsRequest<CreateLaunchTempl
 			this.description = description;
 		}
 
+		public String getSecurityGroupId() {
+			return this.securityGroupId;
+		}
+
+		public void setSecurityGroupId(String securityGroupId) {
+			this.securityGroupId = securityGroupId;
+		}
+
+		public String getPrimaryIpAddress() {
+			return this.primaryIpAddress;
+		}
+
+		public void setPrimaryIpAddress(String primaryIpAddress) {
+			this.primaryIpAddress = primaryIpAddress;
+		}
+
 		public List<String> getSecurityGroupIdss() {
 			return this.securityGroupIdss;
 		}
@@ -811,62 +811,30 @@ public class CreateLaunchTemplateRequest extends RpcAcsRequest<CreateLaunchTempl
 
 	public static class DataDisk {
 
-		private Integer size;
-
-		private String snapshotId;
-
-		private String category;
-
-		private String encrypted;
-
-		private String diskName;
+		private String performanceLevel;
 
 		private String description;
 
-		private Boolean deleteWithInstance;
+		private String snapshotId;
+
+		private Integer size;
 
 		private String device;
 
-		private String performanceLevel;
+		private String diskName;
 
-		public Integer getSize() {
-			return this.size;
+		private String category;
+
+		private Boolean deleteWithInstance;
+
+		private String encrypted;
+
+		public String getPerformanceLevel() {
+			return this.performanceLevel;
 		}
 
-		public void setSize(Integer size) {
-			this.size = size;
-		}
-
-		public String getSnapshotId() {
-			return this.snapshotId;
-		}
-
-		public void setSnapshotId(String snapshotId) {
-			this.snapshotId = snapshotId;
-		}
-
-		public String getCategory() {
-			return this.category;
-		}
-
-		public void setCategory(String category) {
-			this.category = category;
-		}
-
-		public String getEncrypted() {
-			return this.encrypted;
-		}
-
-		public void setEncrypted(String encrypted) {
-			this.encrypted = encrypted;
-		}
-
-		public String getDiskName() {
-			return this.diskName;
-		}
-
-		public void setDiskName(String diskName) {
-			this.diskName = diskName;
+		public void setPerformanceLevel(String performanceLevel) {
+			this.performanceLevel = performanceLevel;
 		}
 
 		public String getDescription() {
@@ -877,12 +845,20 @@ public class CreateLaunchTemplateRequest extends RpcAcsRequest<CreateLaunchTempl
 			this.description = description;
 		}
 
-		public Boolean getDeleteWithInstance() {
-			return this.deleteWithInstance;
+		public String getSnapshotId() {
+			return this.snapshotId;
 		}
 
-		public void setDeleteWithInstance(Boolean deleteWithInstance) {
-			this.deleteWithInstance = deleteWithInstance;
+		public void setSnapshotId(String snapshotId) {
+			this.snapshotId = snapshotId;
+		}
+
+		public Integer getSize() {
+			return this.size;
+		}
+
+		public void setSize(Integer size) {
+			this.size = size;
 		}
 
 		public String getDevice() {
@@ -893,12 +869,36 @@ public class CreateLaunchTemplateRequest extends RpcAcsRequest<CreateLaunchTempl
 			this.device = device;
 		}
 
-		public String getPerformanceLevel() {
-			return this.performanceLevel;
+		public String getDiskName() {
+			return this.diskName;
 		}
 
-		public void setPerformanceLevel(String performanceLevel) {
-			this.performanceLevel = performanceLevel;
+		public void setDiskName(String diskName) {
+			this.diskName = diskName;
+		}
+
+		public String getCategory() {
+			return this.category;
+		}
+
+		public void setCategory(String category) {
+			this.category = category;
+		}
+
+		public Boolean getDeleteWithInstance() {
+			return this.deleteWithInstance;
+		}
+
+		public void setDeleteWithInstance(Boolean deleteWithInstance) {
+			this.deleteWithInstance = deleteWithInstance;
+		}
+
+		public String getEncrypted() {
+			return this.encrypted;
+		}
+
+		public void setEncrypted(String encrypted) {
+			this.encrypted = encrypted;
 		}
 	}
 

@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeRouteTablesResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer pageSize;
 
-	private Integer totalCount;
+	private String requestId;
 
 	private Integer pageNumber;
 
-	private Integer pageSize;
+	private Integer totalCount;
 
 	private List<RouteTable> routeTables;
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class DescribeRouteTablesResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
 	}
 
 	public Integer getPageNumber() {
@@ -59,12 +59,12 @@ public class DescribeRouteTablesResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public Integer getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<RouteTable> getRouteTables() {
@@ -77,17 +77,25 @@ public class DescribeRouteTablesResponse extends AcsResponse {
 
 	public static class RouteTable {
 
+		private String creationTime;
+
 		private String vRouterId;
 
 		private String routeTableId;
 
-		private String routeTableType;
-
-		private String creationTime;
-
 		private String resourceGroupId;
 
+		private String routeTableType;
+
 		private List<RouteEntry> routeEntrys;
+
+		public String getCreationTime() {
+			return this.creationTime;
+		}
+
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
+		}
 
 		public String getVRouterId() {
 			return this.vRouterId;
@@ -105,28 +113,20 @@ public class DescribeRouteTablesResponse extends AcsResponse {
 			this.routeTableId = routeTableId;
 		}
 
-		public String getRouteTableType() {
-			return this.routeTableType;
-		}
-
-		public void setRouteTableType(String routeTableType) {
-			this.routeTableType = routeTableType;
-		}
-
-		public String getCreationTime() {
-			return this.creationTime;
-		}
-
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
-		}
-
 		public String getResourceGroupId() {
 			return this.resourceGroupId;
 		}
 
 		public void setResourceGroupId(String resourceGroupId) {
 			this.resourceGroupId = resourceGroupId;
+		}
+
+		public String getRouteTableType() {
+			return this.routeTableType;
+		}
+
+		public void setRouteTableType(String routeTableType) {
+			this.routeTableType = routeTableType;
 		}
 
 		public List<RouteEntry> getRouteEntrys() {
@@ -139,35 +139,19 @@ public class DescribeRouteTablesResponse extends AcsResponse {
 
 		public static class RouteEntry {
 
-			private String routeTableId;
-
-			private String destinationCidrBlock;
-
 			private String type;
 
 			private String status;
 
-			private String instanceId;
-
 			private String nextHopType;
 
+			private String destinationCidrBlock;
+
+			private String instanceId;
+
+			private String routeTableId;
+
 			private List<NextHop> nextHops;
-
-			public String getRouteTableId() {
-				return this.routeTableId;
-			}
-
-			public void setRouteTableId(String routeTableId) {
-				this.routeTableId = routeTableId;
-			}
-
-			public String getDestinationCidrBlock() {
-				return this.destinationCidrBlock;
-			}
-
-			public void setDestinationCidrBlock(String destinationCidrBlock) {
-				this.destinationCidrBlock = destinationCidrBlock;
-			}
 
 			public String getType() {
 				return this.type;
@@ -185,6 +169,22 @@ public class DescribeRouteTablesResponse extends AcsResponse {
 				this.status = status;
 			}
 
+			public String getNextHopType() {
+				return this.nextHopType;
+			}
+
+			public void setNextHopType(String nextHopType) {
+				this.nextHopType = nextHopType;
+			}
+
+			public String getDestinationCidrBlock() {
+				return this.destinationCidrBlock;
+			}
+
+			public void setDestinationCidrBlock(String destinationCidrBlock) {
+				this.destinationCidrBlock = destinationCidrBlock;
+			}
+
 			public String getInstanceId() {
 				return this.instanceId;
 			}
@@ -193,12 +193,12 @@ public class DescribeRouteTablesResponse extends AcsResponse {
 				this.instanceId = instanceId;
 			}
 
-			public String getNextHopType() {
-				return this.nextHopType;
+			public String getRouteTableId() {
+				return this.routeTableId;
 			}
 
-			public void setNextHopType(String nextHopType) {
-				this.nextHopType = nextHopType;
+			public void setRouteTableId(String routeTableId) {
+				this.routeTableId = routeTableId;
 			}
 
 			public List<NextHop> getNextHops() {
@@ -211,20 +211,20 @@ public class DescribeRouteTablesResponse extends AcsResponse {
 
 			public static class NextHop {
 
-				private String nextHopType;
+				private Integer weight;
 
 				private String nextHopId;
 
+				private String nextHopType;
+
 				private Integer enabled;
 
-				private Integer weight;
-
-				public String getNextHopType() {
-					return this.nextHopType;
+				public Integer getWeight() {
+					return this.weight;
 				}
 
-				public void setNextHopType(String nextHopType) {
-					this.nextHopType = nextHopType;
+				public void setWeight(Integer weight) {
+					this.weight = weight;
 				}
 
 				public String getNextHopId() {
@@ -235,20 +235,20 @@ public class DescribeRouteTablesResponse extends AcsResponse {
 					this.nextHopId = nextHopId;
 				}
 
+				public String getNextHopType() {
+					return this.nextHopType;
+				}
+
+				public void setNextHopType(String nextHopType) {
+					this.nextHopType = nextHopType;
+				}
+
 				public Integer getEnabled() {
 					return this.enabled;
 				}
 
 				public void setEnabled(Integer enabled) {
 					this.enabled = enabled;
-				}
-
-				public Integer getWeight() {
-					return this.weight;
-				}
-
-				public void setWeight(Integer weight) {
-					this.weight = weight;
 				}
 			}
 		}

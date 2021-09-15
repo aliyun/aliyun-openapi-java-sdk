@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateSecurityGroupResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String securityGroupId;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getSecurityGroupId() {
 		return this.securityGroupId;
@@ -42,6 +34,14 @@ public class CreateSecurityGroupResponse extends AcsResponse {
 
 	public void setSecurityGroupId(String securityGroupId) {
 		this.securityGroupId = securityGroupId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

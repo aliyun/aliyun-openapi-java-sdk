@@ -69,19 +69,27 @@ public class DescribeAccountAttributesResponse extends AcsResponse {
 
 		public static class ValueItem {
 
+			private String diskCategory;
+
 			private String value;
 
 			private String expiredTime;
 
 			private String zoneId;
 
-			private String instanceChargeType;
-
 			private String instanceType;
 
 			private Integer count;
 
-			private String diskCategory;
+			private String instanceChargeType;
+
+			public String getDiskCategory() {
+				return this.diskCategory;
+			}
+
+			public void setDiskCategory(String diskCategory) {
+				this.diskCategory = diskCategory;
+			}
 
 			public String getValue() {
 				return this.value;
@@ -107,14 +115,6 @@ public class DescribeAccountAttributesResponse extends AcsResponse {
 				this.zoneId = zoneId;
 			}
 
-			public String getInstanceChargeType() {
-				return this.instanceChargeType;
-			}
-
-			public void setInstanceChargeType(String instanceChargeType) {
-				this.instanceChargeType = instanceChargeType;
-			}
-
 			public String getInstanceType() {
 				return this.instanceType;
 			}
@@ -131,12 +131,12 @@ public class DescribeAccountAttributesResponse extends AcsResponse {
 				this.count = count;
 			}
 
-			public String getDiskCategory() {
-				return this.diskCategory;
+			public String getInstanceChargeType() {
+				return this.instanceChargeType;
 			}
 
-			public void setDiskCategory(String diskCategory) {
-				this.diskCategory = diskCategory;
+			public void setInstanceChargeType(String instanceChargeType) {
+				this.instanceChargeType = instanceChargeType;
 			}
 		}
 	}

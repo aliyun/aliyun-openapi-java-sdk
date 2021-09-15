@@ -31,8 +31,8 @@ public class DescribeInstanceTypeFamiliesResponseUnmarshaller {
 		List<InstanceTypeFamily> instanceTypeFamilies = new ArrayList<InstanceTypeFamily>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeInstanceTypeFamiliesResponse.InstanceTypeFamilies.Length"); i++) {
 			InstanceTypeFamily instanceTypeFamily = new InstanceTypeFamily();
-			instanceTypeFamily.setInstanceTypeFamilyId(_ctx.stringValue("DescribeInstanceTypeFamiliesResponse.InstanceTypeFamilies["+ i +"].InstanceTypeFamilyId"));
 			instanceTypeFamily.setGeneration(_ctx.stringValue("DescribeInstanceTypeFamiliesResponse.InstanceTypeFamilies["+ i +"].Generation"));
+			instanceTypeFamily.setInstanceTypeFamilyId(_ctx.stringValue("DescribeInstanceTypeFamiliesResponse.InstanceTypeFamilies["+ i +"].InstanceTypeFamilyId"));
 
 			instanceTypeFamilies.add(instanceTypeFamily);
 		}

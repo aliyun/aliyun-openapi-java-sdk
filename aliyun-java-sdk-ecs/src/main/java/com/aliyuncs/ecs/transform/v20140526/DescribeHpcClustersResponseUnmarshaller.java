@@ -27,9 +27,9 @@ public class DescribeHpcClustersResponseUnmarshaller {
 	public static DescribeHpcClustersResponse unmarshall(DescribeHpcClustersResponse describeHpcClustersResponse, UnmarshallerContext _ctx) {
 		
 		describeHpcClustersResponse.setRequestId(_ctx.stringValue("DescribeHpcClustersResponse.RequestId"));
-		describeHpcClustersResponse.setTotalCount(_ctx.integerValue("DescribeHpcClustersResponse.TotalCount"));
-		describeHpcClustersResponse.setPageNumber(_ctx.integerValue("DescribeHpcClustersResponse.PageNumber"));
 		describeHpcClustersResponse.setPageSize(_ctx.integerValue("DescribeHpcClustersResponse.PageSize"));
+		describeHpcClustersResponse.setPageNumber(_ctx.integerValue("DescribeHpcClustersResponse.PageNumber"));
+		describeHpcClustersResponse.setTotalCount(_ctx.integerValue("DescribeHpcClustersResponse.TotalCount"));
 
 		List<HpcCluster> hpcClusters = new ArrayList<HpcCluster>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeHpcClustersResponse.HpcClusters.Length"); i++) {

@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeNatGatewaysResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer pageSize;
 
-	private Integer totalCount;
+	private String requestId;
 
 	private Integer pageNumber;
 
-	private Integer pageSize;
+	private Integer totalCount;
 
 	private List<NatGateway> natGateways;
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class DescribeNatGatewaysResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
 	}
 
 	public Integer getPageNumber() {
@@ -59,12 +59,12 @@ public class DescribeNatGatewaysResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public Integer getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<NatGateway> getNatGateways() {
@@ -77,60 +77,44 @@ public class DescribeNatGatewaysResponse extends AcsResponse {
 
 	public static class NatGateway {
 
-		private String natGatewayId;
+		private String status;
 
-		private String regionId;
-
-		private String name;
-
-		private String description;
+		private String creationTime;
 
 		private String vpcId;
 
 		private String spec;
 
-		private String instanceChargeType;
+		private String description;
+
+		private String natGatewayId;
 
 		private String businessStatus;
 
-		private String creationTime;
+		private String name;
 
-		private String status;
+		private String instanceChargeType;
+
+		private String regionId;
 
 		private List<String> forwardTableIds;
 
 		private List<String> bandwidthPackageIds;
 
-		public String getNatGatewayId() {
-			return this.natGatewayId;
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setNatGatewayId(String natGatewayId) {
-			this.natGatewayId = natGatewayId;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
-		public String getRegionId() {
-			return this.regionId;
+		public String getCreationTime() {
+			return this.creationTime;
 		}
 
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
 		}
 
 		public String getVpcId() {
@@ -149,12 +133,20 @@ public class DescribeNatGatewaysResponse extends AcsResponse {
 			this.spec = spec;
 		}
 
-		public String getInstanceChargeType() {
-			return this.instanceChargeType;
+		public String getDescription() {
+			return this.description;
 		}
 
-		public void setInstanceChargeType(String instanceChargeType) {
-			this.instanceChargeType = instanceChargeType;
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getNatGatewayId() {
+			return this.natGatewayId;
+		}
+
+		public void setNatGatewayId(String natGatewayId) {
+			this.natGatewayId = natGatewayId;
 		}
 
 		public String getBusinessStatus() {
@@ -165,20 +157,28 @@ public class DescribeNatGatewaysResponse extends AcsResponse {
 			this.businessStatus = businessStatus;
 		}
 
-		public String getCreationTime() {
-			return this.creationTime;
+		public String getName() {
+			return this.name;
 		}
 
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
+		public void setName(String name) {
+			this.name = name;
 		}
 
-		public String getStatus() {
-			return this.status;
+		public String getInstanceChargeType() {
+			return this.instanceChargeType;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
+		public void setInstanceChargeType(String instanceChargeType) {
+			this.instanceChargeType = instanceChargeType;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 
 		public List<String> getForwardTableIds() {

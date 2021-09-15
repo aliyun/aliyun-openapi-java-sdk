@@ -31,23 +31,23 @@ public class DescribeInstanceMonitorDataResponseUnmarshaller {
 		List<InstanceMonitorData> monitorData = new ArrayList<InstanceMonitorData>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeInstanceMonitorDataResponse.MonitorData.Length"); i++) {
 			InstanceMonitorData instanceMonitorData = new InstanceMonitorData();
-			instanceMonitorData.setInstanceId(_ctx.stringValue("DescribeInstanceMonitorDataResponse.MonitorData["+ i +"].InstanceId"));
-			instanceMonitorData.setCPU(_ctx.integerValue("DescribeInstanceMonitorDataResponse.MonitorData["+ i +"].CPU"));
-			instanceMonitorData.setIntranetRX(_ctx.integerValue("DescribeInstanceMonitorDataResponse.MonitorData["+ i +"].IntranetRX"));
-			instanceMonitorData.setIntranetTX(_ctx.integerValue("DescribeInstanceMonitorDataResponse.MonitorData["+ i +"].IntranetTX"));
-			instanceMonitorData.setIntranetBandwidth(_ctx.integerValue("DescribeInstanceMonitorDataResponse.MonitorData["+ i +"].IntranetBandwidth"));
-			instanceMonitorData.setInternetRX(_ctx.integerValue("DescribeInstanceMonitorDataResponse.MonitorData["+ i +"].InternetRX"));
-			instanceMonitorData.setInternetTX(_ctx.integerValue("DescribeInstanceMonitorDataResponse.MonitorData["+ i +"].InternetTX"));
-			instanceMonitorData.setInternetBandwidth(_ctx.integerValue("DescribeInstanceMonitorDataResponse.MonitorData["+ i +"].InternetBandwidth"));
-			instanceMonitorData.setIOPSRead(_ctx.integerValue("DescribeInstanceMonitorDataResponse.MonitorData["+ i +"].IOPSRead"));
-			instanceMonitorData.setIOPSWrite(_ctx.integerValue("DescribeInstanceMonitorDataResponse.MonitorData["+ i +"].IOPSWrite"));
-			instanceMonitorData.setBPSRead(_ctx.integerValue("DescribeInstanceMonitorDataResponse.MonitorData["+ i +"].BPSRead"));
-			instanceMonitorData.setBPSWrite(_ctx.integerValue("DescribeInstanceMonitorDataResponse.MonitorData["+ i +"].BPSWrite"));
-			instanceMonitorData.setCPUCreditUsage(_ctx.floatValue("DescribeInstanceMonitorDataResponse.MonitorData["+ i +"].CPUCreditUsage"));
 			instanceMonitorData.setCPUCreditBalance(_ctx.floatValue("DescribeInstanceMonitorDataResponse.MonitorData["+ i +"].CPUCreditBalance"));
-			instanceMonitorData.setCPUAdvanceCreditBalance(_ctx.floatValue("DescribeInstanceMonitorDataResponse.MonitorData["+ i +"].CPUAdvanceCreditBalance"));
+			instanceMonitorData.setBPSRead(_ctx.integerValue("DescribeInstanceMonitorDataResponse.MonitorData["+ i +"].BPSRead"));
+			instanceMonitorData.setInternetTX(_ctx.integerValue("DescribeInstanceMonitorDataResponse.MonitorData["+ i +"].InternetTX"));
+			instanceMonitorData.setCPU(_ctx.integerValue("DescribeInstanceMonitorDataResponse.MonitorData["+ i +"].CPU"));
+			instanceMonitorData.setCPUCreditUsage(_ctx.floatValue("DescribeInstanceMonitorDataResponse.MonitorData["+ i +"].CPUCreditUsage"));
+			instanceMonitorData.setIOPSWrite(_ctx.integerValue("DescribeInstanceMonitorDataResponse.MonitorData["+ i +"].IOPSWrite"));
+			instanceMonitorData.setIntranetTX(_ctx.integerValue("DescribeInstanceMonitorDataResponse.MonitorData["+ i +"].IntranetTX"));
+			instanceMonitorData.setInstanceId(_ctx.stringValue("DescribeInstanceMonitorDataResponse.MonitorData["+ i +"].InstanceId"));
+			instanceMonitorData.setBPSWrite(_ctx.integerValue("DescribeInstanceMonitorDataResponse.MonitorData["+ i +"].BPSWrite"));
 			instanceMonitorData.setCPUNotpaidSurplusCreditUsage(_ctx.floatValue("DescribeInstanceMonitorDataResponse.MonitorData["+ i +"].CPUNotpaidSurplusCreditUsage"));
+			instanceMonitorData.setCPUAdvanceCreditBalance(_ctx.floatValue("DescribeInstanceMonitorDataResponse.MonitorData["+ i +"].CPUAdvanceCreditBalance"));
+			instanceMonitorData.setIOPSRead(_ctx.integerValue("DescribeInstanceMonitorDataResponse.MonitorData["+ i +"].IOPSRead"));
+			instanceMonitorData.setInternetBandwidth(_ctx.integerValue("DescribeInstanceMonitorDataResponse.MonitorData["+ i +"].InternetBandwidth"));
+			instanceMonitorData.setInternetRX(_ctx.integerValue("DescribeInstanceMonitorDataResponse.MonitorData["+ i +"].InternetRX"));
 			instanceMonitorData.setTimeStamp(_ctx.stringValue("DescribeInstanceMonitorDataResponse.MonitorData["+ i +"].TimeStamp"));
+			instanceMonitorData.setIntranetRX(_ctx.integerValue("DescribeInstanceMonitorDataResponse.MonitorData["+ i +"].IntranetRX"));
+			instanceMonitorData.setIntranetBandwidth(_ctx.integerValue("DescribeInstanceMonitorDataResponse.MonitorData["+ i +"].IntranetBandwidth"));
 
 			monitorData.add(instanceMonitorData);
 		}

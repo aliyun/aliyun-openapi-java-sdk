@@ -33,6 +33,8 @@ public class CreateDedicatedBlockStorageClusterRequest extends RpcAcsRequest<Cre
 
 	private String description;
 
+	private String type;
+
 	private Integer capacity;
 
 	private Integer period;
@@ -40,8 +42,6 @@ public class CreateDedicatedBlockStorageClusterRequest extends RpcAcsRequest<Cre
 	private String fromApp;
 
 	private String resourceOwnerAccount;
-
-	private String performanceLevel;
 
 	private String ownerAccount;
 
@@ -105,6 +105,17 @@ public class CreateDedicatedBlockStorageClusterRequest extends RpcAcsRequest<Cre
 		}
 	}
 
+	public String getType() {
+		return this.type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+		if(type != null){
+			putQueryParameter("Type", type);
+		}
+	}
+
 	public Integer getCapacity() {
 		return this.capacity;
 	}
@@ -146,17 +157,6 @@ public class CreateDedicatedBlockStorageClusterRequest extends RpcAcsRequest<Cre
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getPerformanceLevel() {
-		return this.performanceLevel;
-	}
-
-	public void setPerformanceLevel(String performanceLevel) {
-		this.performanceLevel = performanceLevel;
-		if(performanceLevel != null){
-			putQueryParameter("PerformanceLevel", performanceLevel);
 		}
 	}
 

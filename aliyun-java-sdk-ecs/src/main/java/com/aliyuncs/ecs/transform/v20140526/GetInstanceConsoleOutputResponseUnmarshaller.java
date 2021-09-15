@@ -23,9 +23,9 @@ public class GetInstanceConsoleOutputResponseUnmarshaller {
 	public static GetInstanceConsoleOutputResponse unmarshall(GetInstanceConsoleOutputResponse getInstanceConsoleOutputResponse, UnmarshallerContext _ctx) {
 		
 		getInstanceConsoleOutputResponse.setRequestId(_ctx.stringValue("GetInstanceConsoleOutputResponse.RequestId"));
+		getInstanceConsoleOutputResponse.setLastUpdateTime(_ctx.stringValue("GetInstanceConsoleOutputResponse.LastUpdateTime"));
 		getInstanceConsoleOutputResponse.setInstanceId(_ctx.stringValue("GetInstanceConsoleOutputResponse.InstanceId"));
 		getInstanceConsoleOutputResponse.setConsoleOutput(_ctx.stringValue("GetInstanceConsoleOutputResponse.ConsoleOutput"));
-		getInstanceConsoleOutputResponse.setLastUpdateTime(_ctx.stringValue("GetInstanceConsoleOutputResponse.LastUpdateTime"));
 	 
 	 	return getInstanceConsoleOutputResponse;
 	}

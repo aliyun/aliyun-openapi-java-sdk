@@ -27,39 +27,39 @@ public class DescribeSecurityGroupAttributeResponseUnmarshaller {
 	public static DescribeSecurityGroupAttributeResponse unmarshall(DescribeSecurityGroupAttributeResponse describeSecurityGroupAttributeResponse, UnmarshallerContext _ctx) {
 		
 		describeSecurityGroupAttributeResponse.setRequestId(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.RequestId"));
-		describeSecurityGroupAttributeResponse.setRegionId(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.RegionId"));
-		describeSecurityGroupAttributeResponse.setSecurityGroupId(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.SecurityGroupId"));
-		describeSecurityGroupAttributeResponse.setDescription(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.Description"));
-		describeSecurityGroupAttributeResponse.setSecurityGroupName(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.SecurityGroupName"));
 		describeSecurityGroupAttributeResponse.setVpcId(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.VpcId"));
 		describeSecurityGroupAttributeResponse.setInnerAccessPolicy(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.InnerAccessPolicy"));
+		describeSecurityGroupAttributeResponse.setDescription(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.Description"));
+		describeSecurityGroupAttributeResponse.setSecurityGroupId(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.SecurityGroupId"));
+		describeSecurityGroupAttributeResponse.setSecurityGroupName(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.SecurityGroupName"));
+		describeSecurityGroupAttributeResponse.setRegionId(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.RegionId"));
 
 		List<Permission> permissions = new ArrayList<Permission>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSecurityGroupAttributeResponse.Permissions.Length"); i++) {
 			Permission permission = new Permission();
-			permission.setIpProtocol(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].IpProtocol"));
-			permission.setPortRange(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].PortRange"));
-			permission.setSourcePortRange(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].SourcePortRange"));
+			permission.setDirection(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].Direction"));
 			permission.setSourceGroupId(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].SourceGroupId"));
-			permission.setSourceGroupName(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].SourceGroupName"));
-			permission.setSourceCidrIp(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].SourceCidrIp"));
-			permission.setIpv6SourceCidrIp(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].Ipv6SourceCidrIp"));
-			permission.setSourcePrefixListId(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].SourcePrefixListId"));
-			permission.setSourcePrefixListName(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].SourcePrefixListName"));
-			permission.setPolicy(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].Policy"));
-			permission.setNicType(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].NicType"));
-			permission.setSourceGroupOwnerAccount(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].SourceGroupOwnerAccount"));
-			permission.setDestGroupId(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].DestGroupId"));
-			permission.setDestGroupName(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].DestGroupName"));
-			permission.setDestCidrIp(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].DestCidrIp"));
-			permission.setIpv6DestCidrIp(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].Ipv6DestCidrIp"));
+			permission.setDestGroupOwnerAccount(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].DestGroupOwnerAccount"));
 			permission.setDestPrefixListId(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].DestPrefixListId"));
 			permission.setDestPrefixListName(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].DestPrefixListName"));
-			permission.setDestGroupOwnerAccount(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].DestGroupOwnerAccount"));
-			permission.setPriority(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].Priority"));
-			permission.setDirection(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].Direction"));
-			permission.setDescription(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].Description"));
+			permission.setSourceCidrIp(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].SourceCidrIp"));
+			permission.setIpv6DestCidrIp(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].Ipv6DestCidrIp"));
 			permission.setCreateTime(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].CreateTime"));
+			permission.setIpv6SourceCidrIp(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].Ipv6SourceCidrIp"));
+			permission.setDestGroupId(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].DestGroupId"));
+			permission.setDestCidrIp(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].DestCidrIp"));
+			permission.setIpProtocol(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].IpProtocol"));
+			permission.setPriority(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].Priority"));
+			permission.setDestGroupName(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].DestGroupName"));
+			permission.setNicType(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].NicType"));
+			permission.setPolicy(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].Policy"));
+			permission.setDescription(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].Description"));
+			permission.setPortRange(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].PortRange"));
+			permission.setSourcePrefixListName(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].SourcePrefixListName"));
+			permission.setSourcePrefixListId(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].SourcePrefixListId"));
+			permission.setSourceGroupOwnerAccount(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].SourceGroupOwnerAccount"));
+			permission.setSourceGroupName(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].SourceGroupName"));
+			permission.setSourcePortRange(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].SourcePortRange"));
 
 			permissions.add(permission);
 		}

@@ -23,9 +23,9 @@ public class ModifyReservedInstanceAttributeResponseUnmarshaller {
 	public static ModifyReservedInstanceAttributeResponse unmarshall(ModifyReservedInstanceAttributeResponse modifyReservedInstanceAttributeResponse, UnmarshallerContext _ctx) {
 		
 		modifyReservedInstanceAttributeResponse.setRequestId(_ctx.stringValue("ModifyReservedInstanceAttributeResponse.RequestId"));
+		modifyReservedInstanceAttributeResponse.setHttpStatusCode(_ctx.integerValue("ModifyReservedInstanceAttributeResponse.HttpStatusCode"));
 		modifyReservedInstanceAttributeResponse.setCode(_ctx.stringValue("ModifyReservedInstanceAttributeResponse.Code"));
 		modifyReservedInstanceAttributeResponse.setMessage(_ctx.stringValue("ModifyReservedInstanceAttributeResponse.Message"));
-		modifyReservedInstanceAttributeResponse.setHttpStatusCode(_ctx.integerValue("ModifyReservedInstanceAttributeResponse.HttpStatusCode"));
 	 
 	 	return modifyReservedInstanceAttributeResponse;
 	}

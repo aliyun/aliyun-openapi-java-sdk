@@ -77,37 +77,21 @@ public class DescribeVirtualBorderRoutersForPhysicalConnectionResponse extends A
 
 	public static class VirtualBorderRouterForPhysicalConnectionType {
 
-		private String vbrId;
-
-		private Long vbrOwnerUid;
-
 		private String creationTime;
-
-		private String activationTime;
-
-		private String terminationTime;
-
-		private String recoveryTime;
-
-		private Integer vlanId;
 
 		private String circuitCode;
 
-		public String getVbrId() {
-			return this.vbrId;
-		}
+		private String recoveryTime;
 
-		public void setVbrId(String vbrId) {
-			this.vbrId = vbrId;
-		}
+		private String terminationTime;
 
-		public Long getVbrOwnerUid() {
-			return this.vbrOwnerUid;
-		}
+		private String activationTime;
 
-		public void setVbrOwnerUid(Long vbrOwnerUid) {
-			this.vbrOwnerUid = vbrOwnerUid;
-		}
+		private Long vbrOwnerUid;
+
+		private String vbrId;
+
+		private Integer vlanId;
 
 		public String getCreationTime() {
 			return this.creationTime;
@@ -117,20 +101,12 @@ public class DescribeVirtualBorderRoutersForPhysicalConnectionResponse extends A
 			this.creationTime = creationTime;
 		}
 
-		public String getActivationTime() {
-			return this.activationTime;
+		public String getCircuitCode() {
+			return this.circuitCode;
 		}
 
-		public void setActivationTime(String activationTime) {
-			this.activationTime = activationTime;
-		}
-
-		public String getTerminationTime() {
-			return this.terminationTime;
-		}
-
-		public void setTerminationTime(String terminationTime) {
-			this.terminationTime = terminationTime;
+		public void setCircuitCode(String circuitCode) {
+			this.circuitCode = circuitCode;
 		}
 
 		public String getRecoveryTime() {
@@ -141,20 +117,44 @@ public class DescribeVirtualBorderRoutersForPhysicalConnectionResponse extends A
 			this.recoveryTime = recoveryTime;
 		}
 
+		public String getTerminationTime() {
+			return this.terminationTime;
+		}
+
+		public void setTerminationTime(String terminationTime) {
+			this.terminationTime = terminationTime;
+		}
+
+		public String getActivationTime() {
+			return this.activationTime;
+		}
+
+		public void setActivationTime(String activationTime) {
+			this.activationTime = activationTime;
+		}
+
+		public Long getVbrOwnerUid() {
+			return this.vbrOwnerUid;
+		}
+
+		public void setVbrOwnerUid(Long vbrOwnerUid) {
+			this.vbrOwnerUid = vbrOwnerUid;
+		}
+
+		public String getVbrId() {
+			return this.vbrId;
+		}
+
+		public void setVbrId(String vbrId) {
+			this.vbrId = vbrId;
+		}
+
 		public Integer getVlanId() {
 			return this.vlanId;
 		}
 
 		public void setVlanId(Integer vlanId) {
 			this.vlanId = vlanId;
-		}
-
-		public String getCircuitCode() {
-			return this.circuitCode;
-		}
-
-		public void setCircuitCode(String circuitCode) {
-			this.circuitCode = circuitCode;
 		}
 	}
 

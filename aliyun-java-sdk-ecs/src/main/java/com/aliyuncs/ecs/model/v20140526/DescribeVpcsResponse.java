@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeVpcsResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer pageSize;
 
-	private Integer totalCount;
+	private String requestId;
 
 	private Integer pageNumber;
 
-	private Integer pageSize;
+	private Integer totalCount;
 
 	private List<Vpc> vpcs;
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class DescribeVpcsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
 	}
 
 	public Integer getPageNumber() {
@@ -59,12 +59,12 @@ public class DescribeVpcsResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public Integer getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<Vpc> getVpcs() {
@@ -77,50 +77,34 @@ public class DescribeVpcsResponse extends AcsResponse {
 
 	public static class Vpc {
 
-		private String vpcId;
-
-		private String regionId;
-
-		private String status;
+		private String creationTime;
 
 		private String vpcName;
 
-		private String creationTime;
+		private String status;
 
-		private String cidrBlock;
+		private String vpcId;
 
 		private String vRouterId;
 
+		private Boolean isDefault;
+
+		private String cidrBlock;
+
 		private String description;
 
-		private Boolean isDefault;
+		private String regionId;
 
 		private List<String> vSwitchIds;
 
 		private List<String> userCidrs;
 
-		public String getVpcId() {
-			return this.vpcId;
+		public String getCreationTime() {
+			return this.creationTime;
 		}
 
-		public void setVpcId(String vpcId) {
-			this.vpcId = vpcId;
-		}
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
 		}
 
 		public String getVpcName() {
@@ -131,20 +115,20 @@ public class DescribeVpcsResponse extends AcsResponse {
 			this.vpcName = vpcName;
 		}
 
-		public String getCreationTime() {
-			return this.creationTime;
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
-		public String getCidrBlock() {
-			return this.cidrBlock;
+		public String getVpcId() {
+			return this.vpcId;
 		}
 
-		public void setCidrBlock(String cidrBlock) {
-			this.cidrBlock = cidrBlock;
+		public void setVpcId(String vpcId) {
+			this.vpcId = vpcId;
 		}
 
 		public String getVRouterId() {
@@ -155,6 +139,22 @@ public class DescribeVpcsResponse extends AcsResponse {
 			this.vRouterId = vRouterId;
 		}
 
+		public Boolean getIsDefault() {
+			return this.isDefault;
+		}
+
+		public void setIsDefault(Boolean isDefault) {
+			this.isDefault = isDefault;
+		}
+
+		public String getCidrBlock() {
+			return this.cidrBlock;
+		}
+
+		public void setCidrBlock(String cidrBlock) {
+			this.cidrBlock = cidrBlock;
+		}
+
 		public String getDescription() {
 			return this.description;
 		}
@@ -163,12 +163,12 @@ public class DescribeVpcsResponse extends AcsResponse {
 			this.description = description;
 		}
 
-		public Boolean getIsDefault() {
-			return this.isDefault;
+		public String getRegionId() {
+			return this.regionId;
 		}
 
-		public void setIsDefault(Boolean isDefault) {
-			this.isDefault = isDefault;
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 
 		public List<String> getVSwitchIds() {

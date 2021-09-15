@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateDeploymentSetResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String deploymentSetId;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getDeploymentSetId() {
 		return this.deploymentSetId;
@@ -42,6 +34,14 @@ public class CreateDeploymentSetResponse extends AcsResponse {
 
 	public void setDeploymentSetId(String deploymentSetId) {
 		this.deploymentSetId = deploymentSetId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

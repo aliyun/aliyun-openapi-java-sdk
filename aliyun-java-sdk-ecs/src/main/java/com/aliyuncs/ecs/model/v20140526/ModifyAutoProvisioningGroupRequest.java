@@ -114,11 +114,11 @@ public class ModifyAutoProvisioningGroupRequest extends RpcAcsRequest<ModifyAuto
 		this.launchTemplateConfigs = launchTemplateConfigs;	
 		if (launchTemplateConfigs != null) {
 			for (int depth1 = 0; depth1 < launchTemplateConfigs.size(); depth1++) {
-				putQueryParameter("LaunchTemplateConfig." + (depth1 + 1) + ".InstanceType" , launchTemplateConfigs.get(depth1).getInstanceType());
-				putQueryParameter("LaunchTemplateConfig." + (depth1 + 1) + ".MaxPrice" , launchTemplateConfigs.get(depth1).getMaxPrice());
 				putQueryParameter("LaunchTemplateConfig." + (depth1 + 1) + ".VSwitchId" , launchTemplateConfigs.get(depth1).getVSwitchId());
-				putQueryParameter("LaunchTemplateConfig." + (depth1 + 1) + ".WeightedCapacity" , launchTemplateConfigs.get(depth1).getWeightedCapacity());
+				putQueryParameter("LaunchTemplateConfig." + (depth1 + 1) + ".MaxPrice" , launchTemplateConfigs.get(depth1).getMaxPrice());
 				putQueryParameter("LaunchTemplateConfig." + (depth1 + 1) + ".Priority" , launchTemplateConfigs.get(depth1).getPriority());
+				putQueryParameter("LaunchTemplateConfig." + (depth1 + 1) + ".InstanceType" , launchTemplateConfigs.get(depth1).getInstanceType());
+				putQueryParameter("LaunchTemplateConfig." + (depth1 + 1) + ".WeightedCapacity" , launchTemplateConfigs.get(depth1).getWeightedCapacity());
 			}
 		}	
 	}
@@ -224,22 +224,22 @@ public class ModifyAutoProvisioningGroupRequest extends RpcAcsRequest<ModifyAuto
 
 	public static class LaunchTemplateConfig {
 
-		private String instanceType;
+		private String vSwitchId;
 
 		private Double maxPrice;
 
-		private String vSwitchId;
+		private Integer priority;
+
+		private String instanceType;
 
 		private Double weightedCapacity;
 
-		private Integer priority;
-
-		public String getInstanceType() {
-			return this.instanceType;
+		public String getVSwitchId() {
+			return this.vSwitchId;
 		}
 
-		public void setInstanceType(String instanceType) {
-			this.instanceType = instanceType;
+		public void setVSwitchId(String vSwitchId) {
+			this.vSwitchId = vSwitchId;
 		}
 
 		public Double getMaxPrice() {
@@ -250,12 +250,20 @@ public class ModifyAutoProvisioningGroupRequest extends RpcAcsRequest<ModifyAuto
 			this.maxPrice = maxPrice;
 		}
 
-		public String getVSwitchId() {
-			return this.vSwitchId;
+		public Integer getPriority() {
+			return this.priority;
 		}
 
-		public void setVSwitchId(String vSwitchId) {
-			this.vSwitchId = vSwitchId;
+		public void setPriority(Integer priority) {
+			this.priority = priority;
+		}
+
+		public String getInstanceType() {
+			return this.instanceType;
+		}
+
+		public void setInstanceType(String instanceType) {
+			this.instanceType = instanceType;
 		}
 
 		public Double getWeightedCapacity() {
@@ -264,14 +272,6 @@ public class ModifyAutoProvisioningGroupRequest extends RpcAcsRequest<ModifyAuto
 
 		public void setWeightedCapacity(Double weightedCapacity) {
 			this.weightedCapacity = weightedCapacity;
-		}
-
-		public Integer getPriority() {
-			return this.priority;
-		}
-
-		public void setPriority(Integer priority) {
-			this.priority = priority;
 		}
 	}
 

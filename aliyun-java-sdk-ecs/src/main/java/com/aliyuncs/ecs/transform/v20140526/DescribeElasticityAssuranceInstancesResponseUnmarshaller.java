@@ -28,8 +28,8 @@ public class DescribeElasticityAssuranceInstancesResponseUnmarshaller {
 		
 		describeElasticityAssuranceInstancesResponse.setRequestId(_ctx.stringValue("DescribeElasticityAssuranceInstancesResponse.RequestId"));
 		describeElasticityAssuranceInstancesResponse.setNextToken(_ctx.stringValue("DescribeElasticityAssuranceInstancesResponse.NextToken"));
-		describeElasticityAssuranceInstancesResponse.setMaxResults(_ctx.integerValue("DescribeElasticityAssuranceInstancesResponse.MaxResults"));
 		describeElasticityAssuranceInstancesResponse.setTotalCount(_ctx.integerValue("DescribeElasticityAssuranceInstancesResponse.TotalCount"));
+		describeElasticityAssuranceInstancesResponse.setMaxResults(_ctx.integerValue("DescribeElasticityAssuranceInstancesResponse.MaxResults"));
 
 		List<InstanceIdSet> elasticityAssuranceItem = new ArrayList<InstanceIdSet>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeElasticityAssuranceInstancesResponse.ElasticityAssuranceItem.Length"); i++) {

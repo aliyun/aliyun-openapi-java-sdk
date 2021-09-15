@@ -28,8 +28,8 @@ public class DescribeCapacityReservationInstancesResponseUnmarshaller {
 		
 		describeCapacityReservationInstancesResponse.setRequestId(_ctx.stringValue("DescribeCapacityReservationInstancesResponse.RequestId"));
 		describeCapacityReservationInstancesResponse.setNextToken(_ctx.stringValue("DescribeCapacityReservationInstancesResponse.NextToken"));
-		describeCapacityReservationInstancesResponse.setMaxResults(_ctx.integerValue("DescribeCapacityReservationInstancesResponse.MaxResults"));
 		describeCapacityReservationInstancesResponse.setTotalCount(_ctx.integerValue("DescribeCapacityReservationInstancesResponse.TotalCount"));
+		describeCapacityReservationInstancesResponse.setMaxResults(_ctx.integerValue("DescribeCapacityReservationInstancesResponse.MaxResults"));
 
 		List<InstanceIdSet> capacityReservationItem = new ArrayList<InstanceIdSet>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeCapacityReservationInstancesResponse.CapacityReservationItem.Length"); i++) {

@@ -50,7 +50,7 @@ public class DescribeDisksResponseUnmarshaller {
 			disk.setStorageSetPartitionNumber(_ctx.integerValue("DescribeDisksResponse.Disks["+ i +"].StorageSetPartitionNumber"));
 			disk.setDiskId(_ctx.stringValue("DescribeDisksResponse.Disks["+ i +"].DiskId"));
 			disk.setDeleteAutoSnapshot(_ctx.booleanValue("DescribeDisksResponse.Disks["+ i +"].DeleteAutoSnapshot"));
-			disk.setDedicatedBlockStorageClusterId(_ctx.stringValue("DescribeDisksResponse.Disks["+ i +"].DedicatedBlockStorageClusterId"));
+			disk.setStorageClusterId(_ctx.stringValue("DescribeDisksResponse.Disks["+ i +"].StorageClusterId"));
 			disk.setEncrypted(_ctx.booleanValue("DescribeDisksResponse.Disks["+ i +"].Encrypted"));
 			disk.setIOPSRead(_ctx.integerValue("DescribeDisksResponse.Disks["+ i +"].IOPSRead"));
 			disk.setMountInstanceNum(_ctx.integerValue("DescribeDisksResponse.Disks["+ i +"].MountInstanceNum"));

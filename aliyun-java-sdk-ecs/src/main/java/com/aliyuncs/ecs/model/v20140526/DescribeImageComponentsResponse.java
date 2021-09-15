@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeImageComponentsResponse extends AcsResponse {
 
+	private String nextToken;
+
 	private String requestId;
 
 	private Integer totalCount;
 
-	private String nextToken;
-
 	private Integer maxResults;
 
 	private List<ImageComponentSet> imageComponent;
+
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -49,14 +57,6 @@ public class DescribeImageComponentsResponse extends AcsResponse {
 
 	public void setTotalCount(Integer totalCount) {
 		this.totalCount = totalCount;
-	}
-
-	public String getNextToken() {
-		return this.nextToken;
-	}
-
-	public void setNextToken(String nextToken) {
-		this.nextToken = nextToken;
 	}
 
 	public Integer getMaxResults() {
@@ -79,19 +79,21 @@ public class DescribeImageComponentsResponse extends AcsResponse {
 
 		private String creationTime;
 
-		private String imageComponentId;
-
-		private String name;
-
 		private String description;
 
 		private String systemType;
 
+		private String imageComponentId;
+
 		private String componentType;
+
+		private String resourceGroupId;
+
+		private String name;
 
 		private String content;
 
-		private String resourceGroupId;
+		private String owner;
 
 		private List<Tag> tags;
 
@@ -101,22 +103,6 @@ public class DescribeImageComponentsResponse extends AcsResponse {
 
 		public void setCreationTime(String creationTime) {
 			this.creationTime = creationTime;
-		}
-
-		public String getImageComponentId() {
-			return this.imageComponentId;
-		}
-
-		public void setImageComponentId(String imageComponentId) {
-			this.imageComponentId = imageComponentId;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
 		}
 
 		public String getDescription() {
@@ -135,12 +121,36 @@ public class DescribeImageComponentsResponse extends AcsResponse {
 			this.systemType = systemType;
 		}
 
+		public String getImageComponentId() {
+			return this.imageComponentId;
+		}
+
+		public void setImageComponentId(String imageComponentId) {
+			this.imageComponentId = imageComponentId;
+		}
+
 		public String getComponentType() {
 			return this.componentType;
 		}
 
 		public void setComponentType(String componentType) {
 			this.componentType = componentType;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
 		}
 
 		public String getContent() {
@@ -151,12 +161,12 @@ public class DescribeImageComponentsResponse extends AcsResponse {
 			this.content = content;
 		}
 
-		public String getResourceGroupId() {
-			return this.resourceGroupId;
+		public String getOwner() {
+			return this.owner;
 		}
 
-		public void setResourceGroupId(String resourceGroupId) {
-			this.resourceGroupId = resourceGroupId;
+		public void setOwner(String owner) {
+			this.owner = owner;
 		}
 
 		public List<Tag> getTags() {
@@ -169,17 +179,9 @@ public class DescribeImageComponentsResponse extends AcsResponse {
 
 		public static class Tag {
 
-			private String tagKey;
-
 			private String tagValue;
 
-			public String getTagKey() {
-				return this.tagKey;
-			}
-
-			public void setTagKey(String tagKey) {
-				this.tagKey = tagKey;
-			}
+			private String tagKey;
 
 			public String getTagValue() {
 				return this.tagValue;
@@ -187,6 +189,14 @@ public class DescribeImageComponentsResponse extends AcsResponse {
 
 			public void setTagValue(String tagValue) {
 				this.tagValue = tagValue;
+			}
+
+			public String getTagKey() {
+				return this.tagKey;
+			}
+
+			public void setTagKey(String tagKey) {
+				this.tagKey = tagKey;
 			}
 		}
 	}

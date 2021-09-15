@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class AttachInstanceRamRoleResponse extends AcsResponse {
 
+	private String ramRoleName;
+
 	private String requestId;
 
 	private Integer totalCount;
 
 	private Integer failCount;
 
-	private String ramRoleName;
-
 	private List<AttachInstanceRamRoleResult> attachInstanceRamRoleResults;
+
+	public String getRamRoleName() {
+		return this.ramRoleName;
+	}
+
+	public void setRamRoleName(String ramRoleName) {
+		this.ramRoleName = ramRoleName;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -59,14 +67,6 @@ public class AttachInstanceRamRoleResponse extends AcsResponse {
 		this.failCount = failCount;
 	}
 
-	public String getRamRoleName() {
-		return this.ramRoleName;
-	}
-
-	public void setRamRoleName(String ramRoleName) {
-		this.ramRoleName = ramRoleName;
-	}
-
 	public List<AttachInstanceRamRoleResult> getAttachInstanceRamRoleResults() {
 		return this.attachInstanceRamRoleResults;
 	}
@@ -77,29 +77,13 @@ public class AttachInstanceRamRoleResponse extends AcsResponse {
 
 	public static class AttachInstanceRamRoleResult {
 
-		private String instanceId;
-
-		private Boolean success;
-
 		private String code;
 
 		private String message;
 
-		public String getInstanceId() {
-			return this.instanceId;
-		}
+		private String instanceId;
 
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
-
-		public Boolean getSuccess() {
-			return this.success;
-		}
-
-		public void setSuccess(Boolean success) {
-			this.success = success;
-		}
+		private Boolean success;
 
 		public String getCode() {
 			return this.code;
@@ -115,6 +99,22 @@ public class AttachInstanceRamRoleResponse extends AcsResponse {
 
 		public void setMessage(String message) {
 			this.message = message;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public Boolean getSuccess() {
+			return this.success;
+		}
+
+		public void setSuccess(Boolean success) {
+			this.success = success;
 		}
 	}
 

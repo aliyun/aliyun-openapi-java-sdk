@@ -37,8 +37,8 @@ public class DescribeSecurityGroupReferencesResponseUnmarshaller {
 			List<ReferencingSecurityGroup> referencingSecurityGroups = new ArrayList<ReferencingSecurityGroup>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeSecurityGroupReferencesResponse.SecurityGroupReferences["+ i +"].ReferencingSecurityGroups.Length"); j++) {
 				ReferencingSecurityGroup referencingSecurityGroup = new ReferencingSecurityGroup();
-				referencingSecurityGroup.setAliUid(_ctx.stringValue("DescribeSecurityGroupReferencesResponse.SecurityGroupReferences["+ i +"].ReferencingSecurityGroups["+ j +"].AliUid"));
 				referencingSecurityGroup.setSecurityGroupId(_ctx.stringValue("DescribeSecurityGroupReferencesResponse.SecurityGroupReferences["+ i +"].ReferencingSecurityGroups["+ j +"].SecurityGroupId"));
+				referencingSecurityGroup.setAliUid(_ctx.stringValue("DescribeSecurityGroupReferencesResponse.SecurityGroupReferences["+ i +"].ReferencingSecurityGroups["+ j +"].AliUid"));
 
 				referencingSecurityGroups.add(referencingSecurityGroup);
 			}

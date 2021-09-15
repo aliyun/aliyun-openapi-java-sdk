@@ -32,14 +32,14 @@ public class DescribeDiskReplicaPairsResponseUnmarshaller {
 		List<DiskReplicaPair> diskReplicaPairs = new ArrayList<DiskReplicaPair>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDiskReplicaPairsResponse.DiskReplicaPairs.Length"); i++) {
 			DiskReplicaPair diskReplicaPair = new DiskReplicaPair();
-			diskReplicaPair.setReplicaPairId(_ctx.stringValue("DescribeDiskReplicaPairsResponse.DiskReplicaPairs["+ i +"].ReplicaPairId"));
-			diskReplicaPair.setSourceRegion(_ctx.stringValue("DescribeDiskReplicaPairsResponse.DiskReplicaPairs["+ i +"].SourceRegion"));
-			diskReplicaPair.setSourceDiskId(_ctx.stringValue("DescribeDiskReplicaPairsResponse.DiskReplicaPairs["+ i +"].SourceDiskId"));
-			diskReplicaPair.setDestinationRegion(_ctx.stringValue("DescribeDiskReplicaPairsResponse.DiskReplicaPairs["+ i +"].DestinationRegion"));
-			diskReplicaPair.setDestinationDiskId(_ctx.stringValue("DescribeDiskReplicaPairsResponse.DiskReplicaPairs["+ i +"].DestinationDiskId"));
-			diskReplicaPair.setPairName(_ctx.stringValue("DescribeDiskReplicaPairsResponse.DiskReplicaPairs["+ i +"].PairName"));
-			diskReplicaPair.setDescription(_ctx.stringValue("DescribeDiskReplicaPairsResponse.DiskReplicaPairs["+ i +"].Description"));
 			diskReplicaPair.setStatus(_ctx.stringValue("DescribeDiskReplicaPairsResponse.DiskReplicaPairs["+ i +"].Status"));
+			diskReplicaPair.setSourceDiskId(_ctx.stringValue("DescribeDiskReplicaPairsResponse.DiskReplicaPairs["+ i +"].SourceDiskId"));
+			diskReplicaPair.setReplicaPairId(_ctx.stringValue("DescribeDiskReplicaPairsResponse.DiskReplicaPairs["+ i +"].ReplicaPairId"));
+			diskReplicaPair.setDescription(_ctx.stringValue("DescribeDiskReplicaPairsResponse.DiskReplicaPairs["+ i +"].Description"));
+			diskReplicaPair.setDestinationRegion(_ctx.stringValue("DescribeDiskReplicaPairsResponse.DiskReplicaPairs["+ i +"].DestinationRegion"));
+			diskReplicaPair.setPairName(_ctx.stringValue("DescribeDiskReplicaPairsResponse.DiskReplicaPairs["+ i +"].PairName"));
+			diskReplicaPair.setSourceRegion(_ctx.stringValue("DescribeDiskReplicaPairsResponse.DiskReplicaPairs["+ i +"].SourceRegion"));
+			diskReplicaPair.setDestinationDiskId(_ctx.stringValue("DescribeDiskReplicaPairsResponse.DiskReplicaPairs["+ i +"].DestinationDiskId"));
 
 			diskReplicaPairs.add(diskReplicaPair);
 		}

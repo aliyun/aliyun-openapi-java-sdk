@@ -28,33 +28,27 @@ public class DescribeImagePipelinesResponseUnmarshaller {
 	public static DescribeImagePipelinesResponse unmarshall(DescribeImagePipelinesResponse describeImagePipelinesResponse, UnmarshallerContext _ctx) {
 		
 		describeImagePipelinesResponse.setRequestId(_ctx.stringValue("DescribeImagePipelinesResponse.RequestId"));
-		describeImagePipelinesResponse.setTotalCount(_ctx.integerValue("DescribeImagePipelinesResponse.TotalCount"));
 		describeImagePipelinesResponse.setNextToken(_ctx.stringValue("DescribeImagePipelinesResponse.NextToken"));
+		describeImagePipelinesResponse.setTotalCount(_ctx.integerValue("DescribeImagePipelinesResponse.TotalCount"));
 		describeImagePipelinesResponse.setMaxResults(_ctx.integerValue("DescribeImagePipelinesResponse.MaxResults"));
 
 		List<ImagePipelineSet> imagePipeline = new ArrayList<ImagePipelineSet>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeImagePipelinesResponse.ImagePipeline.Length"); i++) {
 			ImagePipelineSet imagePipelineSet = new ImagePipelineSet();
 			imagePipelineSet.setCreationTime(_ctx.stringValue("DescribeImagePipelinesResponse.ImagePipeline["+ i +"].CreationTime"));
-			imagePipelineSet.setImagePipelineId(_ctx.stringValue("DescribeImagePipelinesResponse.ImagePipeline["+ i +"].ImagePipelineId"));
-			imagePipelineSet.setName(_ctx.stringValue("DescribeImagePipelinesResponse.ImagePipeline["+ i +"].Name"));
-			imagePipelineSet.setDescription(_ctx.stringValue("DescribeImagePipelinesResponse.ImagePipeline["+ i +"].Description"));
-			imagePipelineSet.setBaseImageType(_ctx.stringValue("DescribeImagePipelinesResponse.ImagePipeline["+ i +"].BaseImageType"));
-			imagePipelineSet.setBaseImage(_ctx.stringValue("DescribeImagePipelinesResponse.ImagePipeline["+ i +"].BaseImage"));
-			imagePipelineSet.setImageName(_ctx.stringValue("DescribeImagePipelinesResponse.ImagePipeline["+ i +"].ImageName"));
-			imagePipelineSet.setVSwitchId(_ctx.stringValue("DescribeImagePipelinesResponse.ImagePipeline["+ i +"].VSwitchId"));
+			imagePipelineSet.setDeleteInstanceOnFailure(_ctx.booleanValue("DescribeImagePipelinesResponse.ImagePipeline["+ i +"].DeleteInstanceOnFailure"));
 			imagePipelineSet.setInstanceType(_ctx.stringValue("DescribeImagePipelinesResponse.ImagePipeline["+ i +"].InstanceType"));
 			imagePipelineSet.setInternetMaxBandwidthOut(_ctx.integerValue("DescribeImagePipelinesResponse.ImagePipeline["+ i +"].InternetMaxBandwidthOut"));
+			imagePipelineSet.setImagePipelineId(_ctx.stringValue("DescribeImagePipelinesResponse.ImagePipeline["+ i +"].ImagePipelineId"));
+			imagePipelineSet.setVSwitchId(_ctx.stringValue("DescribeImagePipelinesResponse.ImagePipeline["+ i +"].VSwitchId"));
 			imagePipelineSet.setSystemDiskSize(_ctx.integerValue("DescribeImagePipelinesResponse.ImagePipeline["+ i +"].SystemDiskSize"));
-			imagePipelineSet.setDeleteInstanceOnFailure(_ctx.booleanValue("DescribeImagePipelinesResponse.ImagePipeline["+ i +"].DeleteInstanceOnFailure"));
-			imagePipelineSet.setBuildContent(_ctx.stringValue("DescribeImagePipelinesResponse.ImagePipeline["+ i +"].BuildContent"));
+			imagePipelineSet.setDescription(_ctx.stringValue("DescribeImagePipelinesResponse.ImagePipeline["+ i +"].Description"));
+			imagePipelineSet.setBaseImage(_ctx.stringValue("DescribeImagePipelinesResponse.ImagePipeline["+ i +"].BaseImage"));
 			imagePipelineSet.setResourceGroupId(_ctx.stringValue("DescribeImagePipelinesResponse.ImagePipeline["+ i +"].ResourceGroupId"));
-
-			List<String> addAccounts = new ArrayList<String>();
-			for (int j = 0; j < _ctx.lengthValue("DescribeImagePipelinesResponse.ImagePipeline["+ i +"].AddAccounts.Length"); j++) {
-				addAccounts.add(_ctx.stringValue("DescribeImagePipelinesResponse.ImagePipeline["+ i +"].AddAccounts["+ j +"]"));
-			}
-			imagePipelineSet.setAddAccounts(addAccounts);
+			imagePipelineSet.setImageName(_ctx.stringValue("DescribeImagePipelinesResponse.ImagePipeline["+ i +"].ImageName"));
+			imagePipelineSet.setBaseImageType(_ctx.stringValue("DescribeImagePipelinesResponse.ImagePipeline["+ i +"].BaseImageType"));
+			imagePipelineSet.setName(_ctx.stringValue("DescribeImagePipelinesResponse.ImagePipeline["+ i +"].Name"));
+			imagePipelineSet.setBuildContent(_ctx.stringValue("DescribeImagePipelinesResponse.ImagePipeline["+ i +"].BuildContent"));
 
 			List<String> toRegionIds = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeImagePipelinesResponse.ImagePipeline["+ i +"].ToRegionIds.Length"); j++) {
@@ -62,11 +56,17 @@ public class DescribeImagePipelinesResponseUnmarshaller {
 			}
 			imagePipelineSet.setToRegionIds(toRegionIds);
 
+			List<String> addAccounts = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeImagePipelinesResponse.ImagePipeline["+ i +"].AddAccounts.Length"); j++) {
+				addAccounts.add(_ctx.stringValue("DescribeImagePipelinesResponse.ImagePipeline["+ i +"].AddAccounts["+ j +"]"));
+			}
+			imagePipelineSet.setAddAccounts(addAccounts);
+
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeImagePipelinesResponse.ImagePipeline["+ i +"].Tags.Length"); j++) {
 				Tag tag = new Tag();
-				tag.setTagKey(_ctx.stringValue("DescribeImagePipelinesResponse.ImagePipeline["+ i +"].Tags["+ j +"].TagKey"));
 				tag.setTagValue(_ctx.stringValue("DescribeImagePipelinesResponse.ImagePipeline["+ i +"].Tags["+ j +"].TagValue"));
+				tag.setTagKey(_ctx.stringValue("DescribeImagePipelinesResponse.ImagePipeline["+ i +"].Tags["+ j +"].TagKey"));
 
 				tags.add(tag);
 			}

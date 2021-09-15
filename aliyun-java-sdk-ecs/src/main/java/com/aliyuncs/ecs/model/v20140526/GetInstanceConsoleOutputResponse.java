@@ -24,13 +24,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetInstanceConsoleOutputResponse extends AcsResponse {
 
+	private String lastUpdateTime;
+
 	private String requestId;
 
 	private String instanceId;
 
 	private String consoleOutput;
 
-	private String lastUpdateTime;
+	public String getLastUpdateTime() {
+		return this.lastUpdateTime;
+	}
+
+	public void setLastUpdateTime(String lastUpdateTime) {
+		this.lastUpdateTime = lastUpdateTime;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -54,14 +62,6 @@ public class GetInstanceConsoleOutputResponse extends AcsResponse {
 
 	public void setConsoleOutput(String consoleOutput) {
 		this.consoleOutput = consoleOutput;
-	}
-
-	public String getLastUpdateTime() {
-		return this.lastUpdateTime;
-	}
-
-	public void setLastUpdateTime(String lastUpdateTime) {
-		this.lastUpdateTime = lastUpdateTime;
 	}
 
 	@Override

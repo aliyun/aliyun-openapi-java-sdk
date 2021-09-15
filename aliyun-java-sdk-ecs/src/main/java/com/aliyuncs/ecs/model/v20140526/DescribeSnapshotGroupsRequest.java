@@ -28,7 +28,11 @@ public class DescribeSnapshotGroupsRequest extends RpcAcsRequest<DescribeSnapsho
 
 	private Long resourceOwnerId;
 
+	private String resourceGroupId;
+
 	private String nextToken;
+
+	private List<Tag> tags;
 
 	private String resourceOwnerAccount;
 
@@ -67,6 +71,17 @@ public class DescribeSnapshotGroupsRequest extends RpcAcsRequest<DescribeSnapsho
 		}
 	}
 
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
 	public String getNextToken() {
 		return this.nextToken;
 	}
@@ -76,6 +91,20 @@ public class DescribeSnapshotGroupsRequest extends RpcAcsRequest<DescribeSnapsho
 		if(nextToken != null){
 			putQueryParameter("NextToken", nextToken);
 		}
+	}
+
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+			}
+		}	
 	}
 
 	public String getResourceOwnerAccount() {
@@ -181,6 +210,29 @@ public class DescribeSnapshotGroupsRequest extends RpcAcsRequest<DescribeSnapsho
 				putQueryParameter("Status." + (i + 1) , statuss.get(i));
 			}
 		}	
+	}
+
+	public static class Tag {
+
+		private String key;
+
+		private String value;
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
+		}
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
 	}
 
 	@Override

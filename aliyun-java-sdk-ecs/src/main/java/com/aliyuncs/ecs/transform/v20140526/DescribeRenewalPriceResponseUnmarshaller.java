@@ -37,8 +37,8 @@ public class DescribeRenewalPriceResponseUnmarshaller {
 		Price price = new Price();
 		price.setOriginalPrice(_ctx.floatValue("DescribeRenewalPriceResponse.PriceInfo.Price.OriginalPrice"));
 		price.setDiscountPrice(_ctx.floatValue("DescribeRenewalPriceResponse.PriceInfo.Price.DiscountPrice"));
-		price.setTradePrice(_ctx.floatValue("DescribeRenewalPriceResponse.PriceInfo.Price.TradePrice"));
 		price.setCurrency(_ctx.stringValue("DescribeRenewalPriceResponse.PriceInfo.Price.Currency"));
+		price.setTradePrice(_ctx.floatValue("DescribeRenewalPriceResponse.PriceInfo.Price.TradePrice"));
 
 		List<ResourcePriceModel> detailInfos = new ArrayList<ResourcePriceModel>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeRenewalPriceResponse.PriceInfo.Price.DetailInfos.Length"); i++) {
@@ -51,8 +51,8 @@ public class DescribeRenewalPriceResponseUnmarshaller {
 			List<Rule1> subRules = new ArrayList<Rule1>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeRenewalPriceResponse.PriceInfo.Price.DetailInfos["+ i +"].SubRules.Length"); j++) {
 				Rule1 rule1 = new Rule1();
-				rule1.setRuleId(_ctx.longValue("DescribeRenewalPriceResponse.PriceInfo.Price.DetailInfos["+ i +"].SubRules["+ j +"].RuleId"));
 				rule1.setDescription(_ctx.stringValue("DescribeRenewalPriceResponse.PriceInfo.Price.DetailInfos["+ i +"].SubRules["+ j +"].Description"));
+				rule1.setRuleId(_ctx.longValue("DescribeRenewalPriceResponse.PriceInfo.Price.DetailInfos["+ i +"].SubRules["+ j +"].RuleId"));
 
 				subRules.add(rule1);
 			}
@@ -66,8 +66,8 @@ public class DescribeRenewalPriceResponseUnmarshaller {
 		List<Rule> rules = new ArrayList<Rule>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeRenewalPriceResponse.PriceInfo.Rules.Length"); i++) {
 			Rule rule = new Rule();
-			rule.setRuleId(_ctx.longValue("DescribeRenewalPriceResponse.PriceInfo.Rules["+ i +"].RuleId"));
 			rule.setDescription(_ctx.stringValue("DescribeRenewalPriceResponse.PriceInfo.Rules["+ i +"].Description"));
+			rule.setRuleId(_ctx.longValue("DescribeRenewalPriceResponse.PriceInfo.Rules["+ i +"].RuleId"));
 
 			rules.add(rule);
 		}

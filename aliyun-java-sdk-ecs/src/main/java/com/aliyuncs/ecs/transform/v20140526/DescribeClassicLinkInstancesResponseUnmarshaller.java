@@ -27,15 +27,15 @@ public class DescribeClassicLinkInstancesResponseUnmarshaller {
 	public static DescribeClassicLinkInstancesResponse unmarshall(DescribeClassicLinkInstancesResponse describeClassicLinkInstancesResponse, UnmarshallerContext _ctx) {
 		
 		describeClassicLinkInstancesResponse.setRequestId(_ctx.stringValue("DescribeClassicLinkInstancesResponse.RequestId"));
-		describeClassicLinkInstancesResponse.setTotalCount(_ctx.integerValue("DescribeClassicLinkInstancesResponse.TotalCount"));
-		describeClassicLinkInstancesResponse.setPageNumber(_ctx.integerValue("DescribeClassicLinkInstancesResponse.PageNumber"));
 		describeClassicLinkInstancesResponse.setPageSize(_ctx.integerValue("DescribeClassicLinkInstancesResponse.PageSize"));
+		describeClassicLinkInstancesResponse.setPageNumber(_ctx.integerValue("DescribeClassicLinkInstancesResponse.PageNumber"));
+		describeClassicLinkInstancesResponse.setTotalCount(_ctx.integerValue("DescribeClassicLinkInstancesResponse.TotalCount"));
 
 		List<Link> links = new ArrayList<Link>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeClassicLinkInstancesResponse.Links.Length"); i++) {
 			Link link = new Link();
-			link.setInstanceId(_ctx.stringValue("DescribeClassicLinkInstancesResponse.Links["+ i +"].InstanceId"));
 			link.setVpcId(_ctx.stringValue("DescribeClassicLinkInstancesResponse.Links["+ i +"].VpcId"));
+			link.setInstanceId(_ctx.stringValue("DescribeClassicLinkInstancesResponse.Links["+ i +"].InstanceId"));
 
 			links.add(link);
 		}

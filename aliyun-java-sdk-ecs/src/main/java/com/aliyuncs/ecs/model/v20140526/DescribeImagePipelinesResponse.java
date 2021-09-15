@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeImagePipelinesResponse extends AcsResponse {
 
+	private String nextToken;
+
 	private String requestId;
 
 	private Integer totalCount;
 
-	private String nextToken;
-
 	private Integer maxResults;
 
 	private List<ImagePipelineSet> imagePipeline;
+
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -49,14 +57,6 @@ public class DescribeImagePipelinesResponse extends AcsResponse {
 
 	public void setTotalCount(Integer totalCount) {
 		this.totalCount = totalCount;
-	}
-
-	public String getNextToken() {
-		return this.nextToken;
-	}
-
-	public void setNextToken(String nextToken) {
-		this.nextToken = nextToken;
 	}
 
 	public Integer getMaxResults() {
@@ -79,37 +79,37 @@ public class DescribeImagePipelinesResponse extends AcsResponse {
 
 		private String creationTime;
 
-		private String imagePipelineId;
-
-		private String name;
-
-		private String description;
-
-		private String baseImageType;
-
-		private String baseImage;
-
-		private String imageName;
-
-		private String vSwitchId;
+		private Boolean deleteInstanceOnFailure;
 
 		private String instanceType;
 
 		private Integer internetMaxBandwidthOut;
 
+		private String imagePipelineId;
+
+		private String vSwitchId;
+
 		private Integer systemDiskSize;
 
-		private Boolean deleteInstanceOnFailure;
+		private String description;
 
-		private String buildContent;
+		private String baseImage;
 
 		private String resourceGroupId;
 
+		private String imageName;
+
+		private String baseImageType;
+
+		private String name;
+
+		private String buildContent;
+
 		private List<Tag> tags;
 
-		private List<String> addAccounts;
-
 		private List<String> toRegionIds;
+
+		private List<String> addAccounts;
 
 		public String getCreationTime() {
 			return this.creationTime;
@@ -119,60 +119,12 @@ public class DescribeImagePipelinesResponse extends AcsResponse {
 			this.creationTime = creationTime;
 		}
 
-		public String getImagePipelineId() {
-			return this.imagePipelineId;
+		public Boolean getDeleteInstanceOnFailure() {
+			return this.deleteInstanceOnFailure;
 		}
 
-		public void setImagePipelineId(String imagePipelineId) {
-			this.imagePipelineId = imagePipelineId;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
-		public String getBaseImageType() {
-			return this.baseImageType;
-		}
-
-		public void setBaseImageType(String baseImageType) {
-			this.baseImageType = baseImageType;
-		}
-
-		public String getBaseImage() {
-			return this.baseImage;
-		}
-
-		public void setBaseImage(String baseImage) {
-			this.baseImage = baseImage;
-		}
-
-		public String getImageName() {
-			return this.imageName;
-		}
-
-		public void setImageName(String imageName) {
-			this.imageName = imageName;
-		}
-
-		public String getVSwitchId() {
-			return this.vSwitchId;
-		}
-
-		public void setVSwitchId(String vSwitchId) {
-			this.vSwitchId = vSwitchId;
+		public void setDeleteInstanceOnFailure(Boolean deleteInstanceOnFailure) {
+			this.deleteInstanceOnFailure = deleteInstanceOnFailure;
 		}
 
 		public String getInstanceType() {
@@ -191,6 +143,22 @@ public class DescribeImagePipelinesResponse extends AcsResponse {
 			this.internetMaxBandwidthOut = internetMaxBandwidthOut;
 		}
 
+		public String getImagePipelineId() {
+			return this.imagePipelineId;
+		}
+
+		public void setImagePipelineId(String imagePipelineId) {
+			this.imagePipelineId = imagePipelineId;
+		}
+
+		public String getVSwitchId() {
+			return this.vSwitchId;
+		}
+
+		public void setVSwitchId(String vSwitchId) {
+			this.vSwitchId = vSwitchId;
+		}
+
 		public Integer getSystemDiskSize() {
 			return this.systemDiskSize;
 		}
@@ -199,20 +167,20 @@ public class DescribeImagePipelinesResponse extends AcsResponse {
 			this.systemDiskSize = systemDiskSize;
 		}
 
-		public Boolean getDeleteInstanceOnFailure() {
-			return this.deleteInstanceOnFailure;
+		public String getDescription() {
+			return this.description;
 		}
 
-		public void setDeleteInstanceOnFailure(Boolean deleteInstanceOnFailure) {
-			this.deleteInstanceOnFailure = deleteInstanceOnFailure;
+		public void setDescription(String description) {
+			this.description = description;
 		}
 
-		public String getBuildContent() {
-			return this.buildContent;
+		public String getBaseImage() {
+			return this.baseImage;
 		}
 
-		public void setBuildContent(String buildContent) {
-			this.buildContent = buildContent;
+		public void setBaseImage(String baseImage) {
+			this.baseImage = baseImage;
 		}
 
 		public String getResourceGroupId() {
@@ -223,20 +191,44 @@ public class DescribeImagePipelinesResponse extends AcsResponse {
 			this.resourceGroupId = resourceGroupId;
 		}
 
+		public String getImageName() {
+			return this.imageName;
+		}
+
+		public void setImageName(String imageName) {
+			this.imageName = imageName;
+		}
+
+		public String getBaseImageType() {
+			return this.baseImageType;
+		}
+
+		public void setBaseImageType(String baseImageType) {
+			this.baseImageType = baseImageType;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getBuildContent() {
+			return this.buildContent;
+		}
+
+		public void setBuildContent(String buildContent) {
+			this.buildContent = buildContent;
+		}
+
 		public List<Tag> getTags() {
 			return this.tags;
 		}
 
 		public void setTags(List<Tag> tags) {
 			this.tags = tags;
-		}
-
-		public List<String> getAddAccounts() {
-			return this.addAccounts;
-		}
-
-		public void setAddAccounts(List<String> addAccounts) {
-			this.addAccounts = addAccounts;
 		}
 
 		public List<String> getToRegionIds() {
@@ -247,19 +239,19 @@ public class DescribeImagePipelinesResponse extends AcsResponse {
 			this.toRegionIds = toRegionIds;
 		}
 
-		public static class Tag {
+		public List<String> getAddAccounts() {
+			return this.addAccounts;
+		}
 
-			private String tagKey;
+		public void setAddAccounts(List<String> addAccounts) {
+			this.addAccounts = addAccounts;
+		}
+
+		public static class Tag {
 
 			private String tagValue;
 
-			public String getTagKey() {
-				return this.tagKey;
-			}
-
-			public void setTagKey(String tagKey) {
-				this.tagKey = tagKey;
-			}
+			private String tagKey;
 
 			public String getTagValue() {
 				return this.tagValue;
@@ -267,6 +259,14 @@ public class DescribeImagePipelinesResponse extends AcsResponse {
 
 			public void setTagValue(String tagValue) {
 				this.tagValue = tagValue;
+			}
+
+			public String getTagKey() {
+				return this.tagKey;
+			}
+
+			public void setTagKey(String tagKey) {
+				this.tagKey = tagKey;
 			}
 		}
 	}

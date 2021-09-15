@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateHaVipResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String haVipId;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getHaVipId() {
 		return this.haVipId;
@@ -42,6 +34,14 @@ public class CreateHaVipResponse extends AcsResponse {
 
 	public void setHaVipId(String haVipId) {
 		this.haVipId = haVipId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

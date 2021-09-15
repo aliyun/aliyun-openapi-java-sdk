@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeEniMonitorDataResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
 
+	private String requestId;
+
 	private List<EniMonitorData> monitorData;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -45,6 +37,14 @@ public class DescribeEniMonitorDataResponse extends AcsResponse {
 
 	public void setTotalCount(Integer totalCount) {
 		this.totalCount = totalCount;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<EniMonitorData> getMonitorData() {
@@ -57,28 +57,28 @@ public class DescribeEniMonitorDataResponse extends AcsResponse {
 
 	public static class EniMonitorData {
 
-		private String eniId;
+		private String packetRx;
 
 		private String timeStamp;
 
-		private String packetTx;
+		private String dropPacketRx;
 
-		private String packetRx;
+		private String eniId;
+
+		private String dropPacketTx;
+
+		private String packetTx;
 
 		private String intranetTx;
 
 		private String intranetRx;
 
-		private String dropPacketTx;
-
-		private String dropPacketRx;
-
-		public String getEniId() {
-			return this.eniId;
+		public String getPacketRx() {
+			return this.packetRx;
 		}
 
-		public void setEniId(String eniId) {
-			this.eniId = eniId;
+		public void setPacketRx(String packetRx) {
+			this.packetRx = packetRx;
 		}
 
 		public String getTimeStamp() {
@@ -89,20 +89,36 @@ public class DescribeEniMonitorDataResponse extends AcsResponse {
 			this.timeStamp = timeStamp;
 		}
 
+		public String getDropPacketRx() {
+			return this.dropPacketRx;
+		}
+
+		public void setDropPacketRx(String dropPacketRx) {
+			this.dropPacketRx = dropPacketRx;
+		}
+
+		public String getEniId() {
+			return this.eniId;
+		}
+
+		public void setEniId(String eniId) {
+			this.eniId = eniId;
+		}
+
+		public String getDropPacketTx() {
+			return this.dropPacketTx;
+		}
+
+		public void setDropPacketTx(String dropPacketTx) {
+			this.dropPacketTx = dropPacketTx;
+		}
+
 		public String getPacketTx() {
 			return this.packetTx;
 		}
 
 		public void setPacketTx(String packetTx) {
 			this.packetTx = packetTx;
-		}
-
-		public String getPacketRx() {
-			return this.packetRx;
-		}
-
-		public void setPacketRx(String packetRx) {
-			this.packetRx = packetRx;
 		}
 
 		public String getIntranetTx() {
@@ -119,22 +135,6 @@ public class DescribeEniMonitorDataResponse extends AcsResponse {
 
 		public void setIntranetRx(String intranetRx) {
 			this.intranetRx = intranetRx;
-		}
-
-		public String getDropPacketTx() {
-			return this.dropPacketTx;
-		}
-
-		public void setDropPacketTx(String dropPacketTx) {
-			this.dropPacketTx = dropPacketTx;
-		}
-
-		public String getDropPacketRx() {
-			return this.dropPacketRx;
-		}
-
-		public void setDropPacketRx(String dropPacketRx) {
-			this.dropPacketRx = dropPacketRx;
 		}
 	}
 

@@ -32,8 +32,8 @@ public class DescribeBandwidthLimitationResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("DescribeBandwidthLimitationResponse.Bandwidths.Length"); i++) {
 			Bandwidth bandwidth = new Bandwidth();
 			bandwidth.setInternetChargeType(_ctx.stringValue("DescribeBandwidthLimitationResponse.Bandwidths["+ i +"].InternetChargeType"));
-			bandwidth.setMin(_ctx.integerValue("DescribeBandwidthLimitationResponse.Bandwidths["+ i +"].Min"));
 			bandwidth.setMax(_ctx.integerValue("DescribeBandwidthLimitationResponse.Bandwidths["+ i +"].Max"));
+			bandwidth.setMin(_ctx.integerValue("DescribeBandwidthLimitationResponse.Bandwidths["+ i +"].Min"));
 			bandwidth.setUnit(_ctx.stringValue("DescribeBandwidthLimitationResponse.Bandwidths["+ i +"].Unit"));
 
 			bandwidths.add(bandwidth);

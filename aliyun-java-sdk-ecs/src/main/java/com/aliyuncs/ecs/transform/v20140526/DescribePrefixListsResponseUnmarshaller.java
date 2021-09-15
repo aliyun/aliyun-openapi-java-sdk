@@ -32,13 +32,13 @@ public class DescribePrefixListsResponseUnmarshaller {
 		List<PrefixList> prefixLists = new ArrayList<PrefixList>();
 		for (int i = 0; i < _ctx.lengthValue("DescribePrefixListsResponse.PrefixLists.Length"); i++) {
 			PrefixList prefixList = new PrefixList();
-			prefixList.setPrefixListId(_ctx.stringValue("DescribePrefixListsResponse.PrefixLists["+ i +"].PrefixListId"));
-			prefixList.setPrefixListName(_ctx.stringValue("DescribePrefixListsResponse.PrefixLists["+ i +"].PrefixListName"));
-			prefixList.setAddressFamily(_ctx.stringValue("DescribePrefixListsResponse.PrefixLists["+ i +"].AddressFamily"));
-			prefixList.setMaxEntries(_ctx.integerValue("DescribePrefixListsResponse.PrefixLists["+ i +"].MaxEntries"));
-			prefixList.setDescription(_ctx.stringValue("DescribePrefixListsResponse.PrefixLists["+ i +"].Description"));
 			prefixList.setCreationTime(_ctx.stringValue("DescribePrefixListsResponse.PrefixLists["+ i +"].CreationTime"));
 			prefixList.setAssociationCount(_ctx.integerValue("DescribePrefixListsResponse.PrefixLists["+ i +"].AssociationCount"));
+			prefixList.setMaxEntries(_ctx.integerValue("DescribePrefixListsResponse.PrefixLists["+ i +"].MaxEntries"));
+			prefixList.setDescription(_ctx.stringValue("DescribePrefixListsResponse.PrefixLists["+ i +"].Description"));
+			prefixList.setAddressFamily(_ctx.stringValue("DescribePrefixListsResponse.PrefixLists["+ i +"].AddressFamily"));
+			prefixList.setPrefixListName(_ctx.stringValue("DescribePrefixListsResponse.PrefixLists["+ i +"].PrefixListName"));
+			prefixList.setPrefixListId(_ctx.stringValue("DescribePrefixListsResponse.PrefixLists["+ i +"].PrefixListId"));
 
 			prefixLists.add(prefixList);
 		}

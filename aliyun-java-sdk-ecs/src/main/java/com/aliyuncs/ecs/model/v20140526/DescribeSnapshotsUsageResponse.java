@@ -24,11 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeSnapshotsUsageResponse extends AcsResponse {
 
+	private Long snapshotSize;
+
 	private String requestId;
 
 	private Integer snapshotCount;
 
-	private Long snapshotSize;
+	public Long getSnapshotSize() {
+		return this.snapshotSize;
+	}
+
+	public void setSnapshotSize(Long snapshotSize) {
+		this.snapshotSize = snapshotSize;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -44,14 +52,6 @@ public class DescribeSnapshotsUsageResponse extends AcsResponse {
 
 	public void setSnapshotCount(Integer snapshotCount) {
 		this.snapshotCount = snapshotCount;
-	}
-
-	public Long getSnapshotSize() {
-		return this.snapshotSize;
-	}
-
-	public void setSnapshotSize(Long snapshotSize) {
-		this.snapshotSize = snapshotSize;
 	}
 
 	@Override

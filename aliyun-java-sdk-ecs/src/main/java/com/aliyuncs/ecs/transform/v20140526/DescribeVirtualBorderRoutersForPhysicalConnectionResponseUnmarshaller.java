@@ -34,14 +34,14 @@ public class DescribeVirtualBorderRoutersForPhysicalConnectionResponseUnmarshall
 		List<VirtualBorderRouterForPhysicalConnectionType> virtualBorderRouterForPhysicalConnectionSet = new ArrayList<VirtualBorderRouterForPhysicalConnectionType>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeVirtualBorderRoutersForPhysicalConnectionResponse.VirtualBorderRouterForPhysicalConnectionSet.Length"); i++) {
 			VirtualBorderRouterForPhysicalConnectionType virtualBorderRouterForPhysicalConnectionType = new VirtualBorderRouterForPhysicalConnectionType();
-			virtualBorderRouterForPhysicalConnectionType.setVbrId(_ctx.stringValue("DescribeVirtualBorderRoutersForPhysicalConnectionResponse.VirtualBorderRouterForPhysicalConnectionSet["+ i +"].VbrId"));
-			virtualBorderRouterForPhysicalConnectionType.setVbrOwnerUid(_ctx.longValue("DescribeVirtualBorderRoutersForPhysicalConnectionResponse.VirtualBorderRouterForPhysicalConnectionSet["+ i +"].VbrOwnerUid"));
 			virtualBorderRouterForPhysicalConnectionType.setCreationTime(_ctx.stringValue("DescribeVirtualBorderRoutersForPhysicalConnectionResponse.VirtualBorderRouterForPhysicalConnectionSet["+ i +"].CreationTime"));
-			virtualBorderRouterForPhysicalConnectionType.setActivationTime(_ctx.stringValue("DescribeVirtualBorderRoutersForPhysicalConnectionResponse.VirtualBorderRouterForPhysicalConnectionSet["+ i +"].ActivationTime"));
-			virtualBorderRouterForPhysicalConnectionType.setTerminationTime(_ctx.stringValue("DescribeVirtualBorderRoutersForPhysicalConnectionResponse.VirtualBorderRouterForPhysicalConnectionSet["+ i +"].TerminationTime"));
-			virtualBorderRouterForPhysicalConnectionType.setRecoveryTime(_ctx.stringValue("DescribeVirtualBorderRoutersForPhysicalConnectionResponse.VirtualBorderRouterForPhysicalConnectionSet["+ i +"].RecoveryTime"));
-			virtualBorderRouterForPhysicalConnectionType.setVlanId(_ctx.integerValue("DescribeVirtualBorderRoutersForPhysicalConnectionResponse.VirtualBorderRouterForPhysicalConnectionSet["+ i +"].VlanId"));
 			virtualBorderRouterForPhysicalConnectionType.setCircuitCode(_ctx.stringValue("DescribeVirtualBorderRoutersForPhysicalConnectionResponse.VirtualBorderRouterForPhysicalConnectionSet["+ i +"].CircuitCode"));
+			virtualBorderRouterForPhysicalConnectionType.setRecoveryTime(_ctx.stringValue("DescribeVirtualBorderRoutersForPhysicalConnectionResponse.VirtualBorderRouterForPhysicalConnectionSet["+ i +"].RecoveryTime"));
+			virtualBorderRouterForPhysicalConnectionType.setTerminationTime(_ctx.stringValue("DescribeVirtualBorderRoutersForPhysicalConnectionResponse.VirtualBorderRouterForPhysicalConnectionSet["+ i +"].TerminationTime"));
+			virtualBorderRouterForPhysicalConnectionType.setActivationTime(_ctx.stringValue("DescribeVirtualBorderRoutersForPhysicalConnectionResponse.VirtualBorderRouterForPhysicalConnectionSet["+ i +"].ActivationTime"));
+			virtualBorderRouterForPhysicalConnectionType.setVbrOwnerUid(_ctx.longValue("DescribeVirtualBorderRoutersForPhysicalConnectionResponse.VirtualBorderRouterForPhysicalConnectionSet["+ i +"].VbrOwnerUid"));
+			virtualBorderRouterForPhysicalConnectionType.setVbrId(_ctx.stringValue("DescribeVirtualBorderRoutersForPhysicalConnectionResponse.VirtualBorderRouterForPhysicalConnectionSet["+ i +"].VbrId"));
+			virtualBorderRouterForPhysicalConnectionType.setVlanId(_ctx.integerValue("DescribeVirtualBorderRoutersForPhysicalConnectionResponse.VirtualBorderRouterForPhysicalConnectionSet["+ i +"].VlanId"));
 
 			virtualBorderRouterForPhysicalConnectionSet.add(virtualBorderRouterForPhysicalConnectionType);
 		}

@@ -26,11 +26,11 @@ public class DescribeUserDataResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String regionId;
-
 	private String instanceId;
 
 	private String userData;
+
+	private String regionId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,14 +38,6 @@ public class DescribeUserDataResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getRegionId() {
-		return this.regionId;
-	}
-
-	public void setRegionId(String regionId) {
-		this.regionId = regionId;
 	}
 
 	public String getInstanceId() {
@@ -62,6 +54,14 @@ public class DescribeUserDataResponse extends AcsResponse {
 
 	public void setUserData(String userData) {
 		this.userData = userData;
+	}
+
+	public String getRegionId() {
+		return this.regionId;
+	}
+
+	public void setRegionId(String regionId) {
+		this.regionId = regionId;
 	}
 
 	@Override

@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeAutoProvisioningGroupHistoryResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer pageSize;
 
-	private Integer totalCount;
+	private String requestId;
 
 	private Integer pageNumber;
 
-	private Integer pageSize;
+	private Integer totalCount;
 
 	private List<AutoProvisioningGroupHistory> autoProvisioningGroupHistories;
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class DescribeAutoProvisioningGroupHistoryResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
 	}
 
 	public Integer getPageNumber() {
@@ -59,12 +59,12 @@ public class DescribeAutoProvisioningGroupHistoryResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public Integer getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<AutoProvisioningGroupHistory> getAutoProvisioningGroupHistories() {
@@ -77,23 +77,15 @@ public class DescribeAutoProvisioningGroupHistoryResponse extends AcsResponse {
 
 	public static class AutoProvisioningGroupHistory {
 
-		private String taskId;
-
 		private String status;
-
-		private String lastEventTime;
 
 		private String startTime;
 
+		private String taskId;
+
+		private String lastEventTime;
+
 		private List<ActivityDetail> activityDetails;
-
-		public String getTaskId() {
-			return this.taskId;
-		}
-
-		public void setTaskId(String taskId) {
-			this.taskId = taskId;
-		}
 
 		public String getStatus() {
 			return this.status;
@@ -103,20 +95,28 @@ public class DescribeAutoProvisioningGroupHistoryResponse extends AcsResponse {
 			this.status = status;
 		}
 
-		public String getLastEventTime() {
-			return this.lastEventTime;
-		}
-
-		public void setLastEventTime(String lastEventTime) {
-			this.lastEventTime = lastEventTime;
-		}
-
 		public String getStartTime() {
 			return this.startTime;
 		}
 
 		public void setStartTime(String startTime) {
 			this.startTime = startTime;
+		}
+
+		public String getTaskId() {
+			return this.taskId;
+		}
+
+		public void setTaskId(String taskId) {
+			this.taskId = taskId;
+		}
+
+		public String getLastEventTime() {
+			return this.lastEventTime;
+		}
+
+		public void setLastEventTime(String lastEventTime) {
+			this.lastEventTime = lastEventTime;
 		}
 
 		public List<ActivityDetail> getActivityDetails() {
@@ -129,17 +129,9 @@ public class DescribeAutoProvisioningGroupHistoryResponse extends AcsResponse {
 
 		public static class ActivityDetail {
 
-			private String detail;
-
 			private String status;
 
-			public String getDetail() {
-				return this.detail;
-			}
-
-			public void setDetail(String detail) {
-				this.detail = detail;
-			}
+			private String detail;
 
 			public String getStatus() {
 				return this.status;
@@ -147,6 +139,14 @@ public class DescribeAutoProvisioningGroupHistoryResponse extends AcsResponse {
 
 			public void setStatus(String status) {
 				this.status = status;
+			}
+
+			public String getDetail() {
+				return this.detail;
+			}
+
+			public void setDetail(String detail) {
+				this.detail = detail;
 			}
 		}
 	}

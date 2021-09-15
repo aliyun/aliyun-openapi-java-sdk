@@ -31,19 +31,19 @@ public class DescribeDedicatedHostTypesResponseUnmarshaller {
 		List<DedicatedHostType> dedicatedHostTypes = new ArrayList<DedicatedHostType>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDedicatedHostTypesResponse.DedicatedHostTypes.Length"); i++) {
 			DedicatedHostType dedicatedHostType = new DedicatedHostType();
-			dedicatedHostType.setDedicatedHostType(_ctx.stringValue("DescribeDedicatedHostTypesResponse.DedicatedHostTypes["+ i +"].DedicatedHostType"));
-			dedicatedHostType.setSockets(_ctx.integerValue("DescribeDedicatedHostTypesResponse.DedicatedHostTypes["+ i +"].Sockets"));
-			dedicatedHostType.setTotalVcpus(_ctx.integerValue("DescribeDedicatedHostTypesResponse.DedicatedHostTypes["+ i +"].TotalVcpus"));
-			dedicatedHostType.setTotalVgpus(_ctx.integerValue("DescribeDedicatedHostTypesResponse.DedicatedHostTypes["+ i +"].TotalVgpus"));
 			dedicatedHostType.setCores(_ctx.integerValue("DescribeDedicatedHostTypesResponse.DedicatedHostTypes["+ i +"].Cores"));
-			dedicatedHostType.setPhysicalGpus(_ctx.integerValue("DescribeDedicatedHostTypesResponse.DedicatedHostTypes["+ i +"].PhysicalGpus"));
-			dedicatedHostType.setMemorySize(_ctx.floatValue("DescribeDedicatedHostTypesResponse.DedicatedHostTypes["+ i +"].MemorySize"));
-			dedicatedHostType.setLocalStorageCapacity(_ctx.longValue("DescribeDedicatedHostTypesResponse.DedicatedHostTypes["+ i +"].LocalStorageCapacity"));
-			dedicatedHostType.setLocalStorageAmount(_ctx.integerValue("DescribeDedicatedHostTypesResponse.DedicatedHostTypes["+ i +"].LocalStorageAmount"));
 			dedicatedHostType.setLocalStorageCategory(_ctx.stringValue("DescribeDedicatedHostTypesResponse.DedicatedHostTypes["+ i +"].LocalStorageCategory"));
 			dedicatedHostType.setGPUSpec(_ctx.stringValue("DescribeDedicatedHostTypesResponse.DedicatedHostTypes["+ i +"].GPUSpec"));
-			dedicatedHostType.setSupportCpuOverCommitRatio(_ctx.booleanValue("DescribeDedicatedHostTypesResponse.DedicatedHostTypes["+ i +"].SupportCpuOverCommitRatio"));
+			dedicatedHostType.setTotalVcpus(_ctx.integerValue("DescribeDedicatedHostTypesResponse.DedicatedHostTypes["+ i +"].TotalVcpus"));
 			dedicatedHostType.setCpuOverCommitRatioRange(_ctx.stringValue("DescribeDedicatedHostTypesResponse.DedicatedHostTypes["+ i +"].CpuOverCommitRatioRange"));
+			dedicatedHostType.setPhysicalGpus(_ctx.integerValue("DescribeDedicatedHostTypesResponse.DedicatedHostTypes["+ i +"].PhysicalGpus"));
+			dedicatedHostType.setMemorySize(_ctx.floatValue("DescribeDedicatedHostTypesResponse.DedicatedHostTypes["+ i +"].MemorySize"));
+			dedicatedHostType.setSupportCpuOverCommitRatio(_ctx.booleanValue("DescribeDedicatedHostTypesResponse.DedicatedHostTypes["+ i +"].SupportCpuOverCommitRatio"));
+			dedicatedHostType.setLocalStorageCapacity(_ctx.longValue("DescribeDedicatedHostTypesResponse.DedicatedHostTypes["+ i +"].LocalStorageCapacity"));
+			dedicatedHostType.setDedicatedHostType(_ctx.stringValue("DescribeDedicatedHostTypesResponse.DedicatedHostTypes["+ i +"].DedicatedHostType"));
+			dedicatedHostType.setLocalStorageAmount(_ctx.integerValue("DescribeDedicatedHostTypesResponse.DedicatedHostTypes["+ i +"].LocalStorageAmount"));
+			dedicatedHostType.setTotalVgpus(_ctx.integerValue("DescribeDedicatedHostTypesResponse.DedicatedHostTypes["+ i +"].TotalVgpus"));
+			dedicatedHostType.setSockets(_ctx.integerValue("DescribeDedicatedHostTypesResponse.DedicatedHostTypes["+ i +"].Sockets"));
 
 			List<String> supportedInstanceTypeFamilies = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDedicatedHostTypesResponse.DedicatedHostTypes["+ i +"].SupportedInstanceTypeFamilies.Length"); j++) {

@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDiskMonitorDataResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
 
+	private String requestId;
+
 	private List<DiskMonitorData> monitorData;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -45,6 +37,14 @@ public class DescribeDiskMonitorDataResponse extends AcsResponse {
 
 	public void setTotalCount(Integer totalCount) {
 		this.totalCount = totalCount;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<DiskMonitorData> getMonitorData() {
@@ -57,32 +57,32 @@ public class DescribeDiskMonitorDataResponse extends AcsResponse {
 
 	public static class DiskMonitorData {
 
-		private String diskId;
+		private Integer bPSRead;
 
 		private Integer iOPSRead;
 
-		private Integer iOPSWrite;
-
-		private Integer iOPSTotal;
-
-		private Integer bPSRead;
-
-		private Integer bPSWrite;
+		private Integer latencyRead;
 
 		private Integer bPSTotal;
 
-		private Integer latencyRead;
-
-		private Integer latencyWrite;
+		private Integer iOPSTotal;
 
 		private String timeStamp;
 
-		public String getDiskId() {
-			return this.diskId;
+		private Integer latencyWrite;
+
+		private Integer iOPSWrite;
+
+		private String diskId;
+
+		private Integer bPSWrite;
+
+		public Integer getBPSRead() {
+			return this.bPSRead;
 		}
 
-		public void setDiskId(String diskId) {
-			this.diskId = diskId;
+		public void setBPSRead(Integer bPSRead) {
+			this.bPSRead = bPSRead;
 		}
 
 		public Integer getIOPSRead() {
@@ -93,36 +93,12 @@ public class DescribeDiskMonitorDataResponse extends AcsResponse {
 			this.iOPSRead = iOPSRead;
 		}
 
-		public Integer getIOPSWrite() {
-			return this.iOPSWrite;
+		public Integer getLatencyRead() {
+			return this.latencyRead;
 		}
 
-		public void setIOPSWrite(Integer iOPSWrite) {
-			this.iOPSWrite = iOPSWrite;
-		}
-
-		public Integer getIOPSTotal() {
-			return this.iOPSTotal;
-		}
-
-		public void setIOPSTotal(Integer iOPSTotal) {
-			this.iOPSTotal = iOPSTotal;
-		}
-
-		public Integer getBPSRead() {
-			return this.bPSRead;
-		}
-
-		public void setBPSRead(Integer bPSRead) {
-			this.bPSRead = bPSRead;
-		}
-
-		public Integer getBPSWrite() {
-			return this.bPSWrite;
-		}
-
-		public void setBPSWrite(Integer bPSWrite) {
-			this.bPSWrite = bPSWrite;
+		public void setLatencyRead(Integer latencyRead) {
+			this.latencyRead = latencyRead;
 		}
 
 		public Integer getBPSTotal() {
@@ -133,12 +109,20 @@ public class DescribeDiskMonitorDataResponse extends AcsResponse {
 			this.bPSTotal = bPSTotal;
 		}
 
-		public Integer getLatencyRead() {
-			return this.latencyRead;
+		public Integer getIOPSTotal() {
+			return this.iOPSTotal;
 		}
 
-		public void setLatencyRead(Integer latencyRead) {
-			this.latencyRead = latencyRead;
+		public void setIOPSTotal(Integer iOPSTotal) {
+			this.iOPSTotal = iOPSTotal;
+		}
+
+		public String getTimeStamp() {
+			return this.timeStamp;
+		}
+
+		public void setTimeStamp(String timeStamp) {
+			this.timeStamp = timeStamp;
 		}
 
 		public Integer getLatencyWrite() {
@@ -149,12 +133,28 @@ public class DescribeDiskMonitorDataResponse extends AcsResponse {
 			this.latencyWrite = latencyWrite;
 		}
 
-		public String getTimeStamp() {
-			return this.timeStamp;
+		public Integer getIOPSWrite() {
+			return this.iOPSWrite;
 		}
 
-		public void setTimeStamp(String timeStamp) {
-			this.timeStamp = timeStamp;
+		public void setIOPSWrite(Integer iOPSWrite) {
+			this.iOPSWrite = iOPSWrite;
+		}
+
+		public String getDiskId() {
+			return this.diskId;
+		}
+
+		public void setDiskId(String diskId) {
+			this.diskId = diskId;
+		}
+
+		public Integer getBPSWrite() {
+			return this.bPSWrite;
+		}
+
+		public void setBPSWrite(Integer bPSWrite) {
+			this.bPSWrite = bPSWrite;
 		}
 	}
 

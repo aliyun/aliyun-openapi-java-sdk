@@ -27,20 +27,20 @@ public class DescribeStorageSetsResponseUnmarshaller {
 	public static DescribeStorageSetsResponse unmarshall(DescribeStorageSetsResponse describeStorageSetsResponse, UnmarshallerContext _ctx) {
 		
 		describeStorageSetsResponse.setRequestId(_ctx.stringValue("DescribeStorageSetsResponse.RequestId"));
-		describeStorageSetsResponse.setTotalCount(_ctx.integerValue("DescribeStorageSetsResponse.TotalCount"));
-		describeStorageSetsResponse.setPageNumber(_ctx.integerValue("DescribeStorageSetsResponse.PageNumber"));
 		describeStorageSetsResponse.setPageSize(_ctx.integerValue("DescribeStorageSetsResponse.PageSize"));
+		describeStorageSetsResponse.setPageNumber(_ctx.integerValue("DescribeStorageSetsResponse.PageNumber"));
+		describeStorageSetsResponse.setTotalCount(_ctx.integerValue("DescribeStorageSetsResponse.TotalCount"));
 
 		List<StorageSet> storageSets = new ArrayList<StorageSet>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeStorageSetsResponse.StorageSets.Length"); i++) {
 			StorageSet storageSet = new StorageSet();
-			storageSet.setStorageSetId(_ctx.stringValue("DescribeStorageSetsResponse.StorageSets["+ i +"].StorageSetId"));
 			storageSet.setCreationTime(_ctx.stringValue("DescribeStorageSetsResponse.StorageSets["+ i +"].CreationTime"));
-			storageSet.setStorageSetName(_ctx.stringValue("DescribeStorageSetsResponse.StorageSets["+ i +"].StorageSetName"));
 			storageSet.setDescription(_ctx.stringValue("DescribeStorageSetsResponse.StorageSets["+ i +"].Description"));
-			storageSet.setStorageSetPartitionNumber(_ctx.integerValue("DescribeStorageSetsResponse.StorageSets["+ i +"].StorageSetPartitionNumber"));
-			storageSet.setRegionId(_ctx.stringValue("DescribeStorageSetsResponse.StorageSets["+ i +"].RegionId"));
 			storageSet.setZoneId(_ctx.stringValue("DescribeStorageSetsResponse.StorageSets["+ i +"].ZoneId"));
+			storageSet.setStorageSetId(_ctx.stringValue("DescribeStorageSetsResponse.StorageSets["+ i +"].StorageSetId"));
+			storageSet.setStorageSetPartitionNumber(_ctx.integerValue("DescribeStorageSetsResponse.StorageSets["+ i +"].StorageSetPartitionNumber"));
+			storageSet.setStorageSetName(_ctx.stringValue("DescribeStorageSetsResponse.StorageSets["+ i +"].StorageSetName"));
+			storageSet.setRegionId(_ctx.stringValue("DescribeStorageSetsResponse.StorageSets["+ i +"].RegionId"));
 
 			storageSets.add(storageSet);
 		}

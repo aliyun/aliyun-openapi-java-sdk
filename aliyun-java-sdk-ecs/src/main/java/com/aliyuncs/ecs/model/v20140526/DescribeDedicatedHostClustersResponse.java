@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDedicatedHostClustersResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer pageSize;
 
-	private Integer totalCount;
+	private String requestId;
 
 	private Integer pageNumber;
 
-	private Integer pageSize;
+	private Integer totalCount;
 
 	private List<DedicatedHostCluster> dedicatedHostClusters;
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class DescribeDedicatedHostClustersResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
 	}
 
 	public Integer getPageNumber() {
@@ -59,12 +59,12 @@ public class DescribeDedicatedHostClustersResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public Integer getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<DedicatedHostCluster> getDedicatedHostClusters() {
@@ -77,23 +77,31 @@ public class DescribeDedicatedHostClustersResponse extends AcsResponse {
 
 	public static class DedicatedHostCluster {
 
+		private String description;
+
 		private String dedicatedHostClusterId;
 
-		private String regionId;
+		private String resourceGroupId;
 
 		private String zoneId;
 
+		private String regionId;
+
 		private String dedicatedHostClusterName;
-
-		private String description;
-
-		private String resourceGroupId;
 
 		private List<Tag> tags;
 
 		private List<String> dedicatedHostIds;
 
 		private DedicatedHostClusterCapacity dedicatedHostClusterCapacity;
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
 
 		public String getDedicatedHostClusterId() {
 			return this.dedicatedHostClusterId;
@@ -103,12 +111,12 @@ public class DescribeDedicatedHostClustersResponse extends AcsResponse {
 			this.dedicatedHostClusterId = dedicatedHostClusterId;
 		}
 
-		public String getRegionId() {
-			return this.regionId;
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
 		}
 
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
 		}
 
 		public String getZoneId() {
@@ -119,28 +127,20 @@ public class DescribeDedicatedHostClustersResponse extends AcsResponse {
 			this.zoneId = zoneId;
 		}
 
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
 		public String getDedicatedHostClusterName() {
 			return this.dedicatedHostClusterName;
 		}
 
 		public void setDedicatedHostClusterName(String dedicatedHostClusterName) {
 			this.dedicatedHostClusterName = dedicatedHostClusterName;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
-		public String getResourceGroupId() {
-			return this.resourceGroupId;
-		}
-
-		public void setResourceGroupId(String resourceGroupId) {
-			this.resourceGroupId = resourceGroupId;
 		}
 
 		public List<Tag> getTags() {
@@ -169,17 +169,9 @@ public class DescribeDedicatedHostClustersResponse extends AcsResponse {
 
 		public static class Tag {
 
-			private String tagKey;
-
 			private String tagValue;
 
-			public String getTagKey() {
-				return this.tagKey;
-			}
-
-			public void setTagKey(String tagKey) {
-				this.tagKey = tagKey;
-			}
+			private String tagKey;
 
 			public String getTagValue() {
 				return this.tagValue;
@@ -188,29 +180,29 @@ public class DescribeDedicatedHostClustersResponse extends AcsResponse {
 			public void setTagValue(String tagValue) {
 				this.tagValue = tagValue;
 			}
+
+			public String getTagKey() {
+				return this.tagKey;
+			}
+
+			public void setTagKey(String tagKey) {
+				this.tagKey = tagKey;
+			}
 		}
 
 		public static class DedicatedHostClusterCapacity {
 
-			private Integer totalVcpus;
-
 			private Integer availableVcpus;
+
+			private Integer availableMemory;
 
 			private Integer totalMemory;
 
-			private Integer availableMemory;
+			private Integer totalVcpus;
 
 			private List<LocalStorageCapacity> localStorageCapacities;
 
 			private List<AvailableInstanceType> availableInstanceTypes;
-
-			public Integer getTotalVcpus() {
-				return this.totalVcpus;
-			}
-
-			public void setTotalVcpus(Integer totalVcpus) {
-				this.totalVcpus = totalVcpus;
-			}
 
 			public Integer getAvailableVcpus() {
 				return this.availableVcpus;
@@ -218,6 +210,14 @@ public class DescribeDedicatedHostClustersResponse extends AcsResponse {
 
 			public void setAvailableVcpus(Integer availableVcpus) {
 				this.availableVcpus = availableVcpus;
+			}
+
+			public Integer getAvailableMemory() {
+				return this.availableMemory;
+			}
+
+			public void setAvailableMemory(Integer availableMemory) {
+				this.availableMemory = availableMemory;
 			}
 
 			public Integer getTotalMemory() {
@@ -228,12 +228,12 @@ public class DescribeDedicatedHostClustersResponse extends AcsResponse {
 				this.totalMemory = totalMemory;
 			}
 
-			public Integer getAvailableMemory() {
-				return this.availableMemory;
+			public Integer getTotalVcpus() {
+				return this.totalVcpus;
 			}
 
-			public void setAvailableMemory(Integer availableMemory) {
-				this.availableMemory = availableMemory;
+			public void setTotalVcpus(Integer totalVcpus) {
+				this.totalVcpus = totalVcpus;
 			}
 
 			public List<LocalStorageCapacity> getLocalStorageCapacities() {
@@ -254,18 +254,18 @@ public class DescribeDedicatedHostClustersResponse extends AcsResponse {
 
 			public static class LocalStorageCapacity {
 
-				private Integer totalDisk;
+				private String dataDiskCategory;
 
 				private Integer availableDisk;
 
-				private String dataDiskCategory;
+				private Integer totalDisk;
 
-				public Integer getTotalDisk() {
-					return this.totalDisk;
+				public String getDataDiskCategory() {
+					return this.dataDiskCategory;
 				}
 
-				public void setTotalDisk(Integer totalDisk) {
-					this.totalDisk = totalDisk;
+				public void setDataDiskCategory(String dataDiskCategory) {
+					this.dataDiskCategory = dataDiskCategory;
 				}
 
 				public Integer getAvailableDisk() {
@@ -276,12 +276,12 @@ public class DescribeDedicatedHostClustersResponse extends AcsResponse {
 					this.availableDisk = availableDisk;
 				}
 
-				public String getDataDiskCategory() {
-					return this.dataDiskCategory;
+				public Integer getTotalDisk() {
+					return this.totalDisk;
 				}
 
-				public void setDataDiskCategory(String dataDiskCategory) {
-					this.dataDiskCategory = dataDiskCategory;
+				public void setTotalDisk(Integer totalDisk) {
+					this.totalDisk = totalDisk;
 				}
 			}
 

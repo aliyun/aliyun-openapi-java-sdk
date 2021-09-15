@@ -93,8 +93,8 @@ public class ModifyPrefixListRequest extends RpcAcsRequest<ModifyPrefixListRespo
 		this.addEntrys = addEntrys;	
 		if (addEntrys != null) {
 			for (int depth1 = 0; depth1 < addEntrys.size(); depth1++) {
-				putQueryParameter("AddEntry." + (depth1 + 1) + ".Cidr" , addEntrys.get(depth1).getCidr());
 				putQueryParameter("AddEntry." + (depth1 + 1) + ".Description" , addEntrys.get(depth1).getDescription());
+				putQueryParameter("AddEntry." + (depth1 + 1) + ".Cidr" , addEntrys.get(depth1).getCidr());
 			}
 		}	
 	}
@@ -158,17 +158,9 @@ public class ModifyPrefixListRequest extends RpcAcsRequest<ModifyPrefixListRespo
 
 	public static class AddEntry {
 
-		private String cidr;
-
 		private String description;
 
-		public String getCidr() {
-			return this.cidr;
-		}
-
-		public void setCidr(String cidr) {
-			this.cidr = cidr;
-		}
+		private String cidr;
 
 		public String getDescription() {
 			return this.description;
@@ -176,6 +168,14 @@ public class ModifyPrefixListRequest extends RpcAcsRequest<ModifyPrefixListRespo
 
 		public void setDescription(String description) {
 			this.description = description;
+		}
+
+		public String getCidr() {
+			return this.cidr;
+		}
+
+		public void setCidr(String cidr) {
+			this.cidr = cidr;
 		}
 	}
 

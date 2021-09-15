@@ -27,18 +27,18 @@ public class DescribeSpotPriceHistoryResponseUnmarshaller {
 	public static DescribeSpotPriceHistoryResponse unmarshall(DescribeSpotPriceHistoryResponse describeSpotPriceHistoryResponse, UnmarshallerContext _ctx) {
 		
 		describeSpotPriceHistoryResponse.setRequestId(_ctx.stringValue("DescribeSpotPriceHistoryResponse.RequestId"));
-		describeSpotPriceHistoryResponse.setNextOffset(_ctx.integerValue("DescribeSpotPriceHistoryResponse.NextOffset"));
 		describeSpotPriceHistoryResponse.setCurrency(_ctx.stringValue("DescribeSpotPriceHistoryResponse.Currency"));
+		describeSpotPriceHistoryResponse.setNextOffset(_ctx.integerValue("DescribeSpotPriceHistoryResponse.NextOffset"));
 
 		List<SpotPriceType> spotPrices = new ArrayList<SpotPriceType>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSpotPriceHistoryResponse.SpotPrices.Length"); i++) {
 			SpotPriceType spotPriceType = new SpotPriceType();
-			spotPriceType.setZoneId(_ctx.stringValue("DescribeSpotPriceHistoryResponse.SpotPrices["+ i +"].ZoneId"));
-			spotPriceType.setInstanceType(_ctx.stringValue("DescribeSpotPriceHistoryResponse.SpotPrices["+ i +"].InstanceType"));
 			spotPriceType.setIoOptimized(_ctx.stringValue("DescribeSpotPriceHistoryResponse.SpotPrices["+ i +"].IoOptimized"));
+			spotPriceType.setZoneId(_ctx.stringValue("DescribeSpotPriceHistoryResponse.SpotPrices["+ i +"].ZoneId"));
+			spotPriceType.setSpotPrice(_ctx.floatValue("DescribeSpotPriceHistoryResponse.SpotPrices["+ i +"].SpotPrice"));
 			spotPriceType.setTimestamp(_ctx.stringValue("DescribeSpotPriceHistoryResponse.SpotPrices["+ i +"].Timestamp"));
 			spotPriceType.setNetworkType(_ctx.stringValue("DescribeSpotPriceHistoryResponse.SpotPrices["+ i +"].NetworkType"));
-			spotPriceType.setSpotPrice(_ctx.floatValue("DescribeSpotPriceHistoryResponse.SpotPrices["+ i +"].SpotPrice"));
+			spotPriceType.setInstanceType(_ctx.stringValue("DescribeSpotPriceHistoryResponse.SpotPrices["+ i +"].InstanceType"));
 			spotPriceType.setOriginPrice(_ctx.floatValue("DescribeSpotPriceHistoryResponse.SpotPrices["+ i +"].OriginPrice"));
 
 			spotPrices.add(spotPriceType);

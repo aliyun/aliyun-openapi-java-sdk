@@ -46,17 +46,9 @@ public class ModifyManagedInstanceResponse extends AcsResponse {
 
 	public static class Instance {
 
-		private String instanceId;
-
 		private String instanceName;
 
-		public String getInstanceId() {
-			return this.instanceId;
-		}
-
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
+		private String instanceId;
 
 		public String getInstanceName() {
 			return this.instanceName;
@@ -64,6 +56,14 @@ public class ModifyManagedInstanceResponse extends AcsResponse {
 
 		public void setInstanceName(String instanceName) {
 			this.instanceName = instanceName;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
 		}
 	}
 

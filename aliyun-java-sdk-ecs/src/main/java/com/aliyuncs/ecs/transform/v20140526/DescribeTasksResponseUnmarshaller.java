@@ -27,20 +27,20 @@ public class DescribeTasksResponseUnmarshaller {
 	public static DescribeTasksResponse unmarshall(DescribeTasksResponse describeTasksResponse, UnmarshallerContext _ctx) {
 		
 		describeTasksResponse.setRequestId(_ctx.stringValue("DescribeTasksResponse.RequestId"));
-		describeTasksResponse.setRegionId(_ctx.stringValue("DescribeTasksResponse.RegionId"));
-		describeTasksResponse.setTotalCount(_ctx.integerValue("DescribeTasksResponse.TotalCount"));
-		describeTasksResponse.setPageNumber(_ctx.integerValue("DescribeTasksResponse.PageNumber"));
 		describeTasksResponse.setPageSize(_ctx.integerValue("DescribeTasksResponse.PageSize"));
+		describeTasksResponse.setPageNumber(_ctx.integerValue("DescribeTasksResponse.PageNumber"));
+		describeTasksResponse.setTotalCount(_ctx.integerValue("DescribeTasksResponse.TotalCount"));
+		describeTasksResponse.setRegionId(_ctx.stringValue("DescribeTasksResponse.RegionId"));
 
 		List<Task> taskSet = new ArrayList<Task>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeTasksResponse.TaskSet.Length"); i++) {
 			Task task = new Task();
+			task.setCreationTime(_ctx.stringValue("DescribeTasksResponse.TaskSet["+ i +"].CreationTime"));
+			task.setTaskStatus(_ctx.stringValue("DescribeTasksResponse.TaskSet["+ i +"].TaskStatus"));
+			task.setFinishedTime(_ctx.stringValue("DescribeTasksResponse.TaskSet["+ i +"].FinishedTime"));
+			task.setSupportCancel(_ctx.stringValue("DescribeTasksResponse.TaskSet["+ i +"].SupportCancel"));
 			task.setTaskId(_ctx.stringValue("DescribeTasksResponse.TaskSet["+ i +"].TaskId"));
 			task.setTaskAction(_ctx.stringValue("DescribeTasksResponse.TaskSet["+ i +"].TaskAction"));
-			task.setTaskStatus(_ctx.stringValue("DescribeTasksResponse.TaskSet["+ i +"].TaskStatus"));
-			task.setSupportCancel(_ctx.stringValue("DescribeTasksResponse.TaskSet["+ i +"].SupportCancel"));
-			task.setCreationTime(_ctx.stringValue("DescribeTasksResponse.TaskSet["+ i +"].CreationTime"));
-			task.setFinishedTime(_ctx.stringValue("DescribeTasksResponse.TaskSet["+ i +"].FinishedTime"));
 
 			taskSet.add(task);
 		}

@@ -33,19 +33,19 @@ public class DescribeDedicatedBlockStorageClustersResponseUnmarshaller {
 		List<DedicatedBlockStorageCluster> dedicatedBlockStorageClusters = new ArrayList<DedicatedBlockStorageCluster>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDedicatedBlockStorageClustersResponse.DedicatedBlockStorageClusters.Length"); i++) {
 			DedicatedBlockStorageCluster dedicatedBlockStorageCluster = new DedicatedBlockStorageCluster();
-			dedicatedBlockStorageCluster.setDedicatedBlockStorageClusterId(_ctx.stringValue("DescribeDedicatedBlockStorageClustersResponse.DedicatedBlockStorageClusters["+ i +"].DedicatedBlockStorageClusterId"));
-			dedicatedBlockStorageCluster.setDedicatedBlockStorageClusterName(_ctx.stringValue("DescribeDedicatedBlockStorageClustersResponse.DedicatedBlockStorageClusters["+ i +"].DedicatedBlockStorageClusterName"));
-			dedicatedBlockStorageCluster.setDescription(_ctx.stringValue("DescribeDedicatedBlockStorageClustersResponse.DedicatedBlockStorageClusters["+ i +"].Description"));
-			dedicatedBlockStorageCluster.setZoneId(_ctx.stringValue("DescribeDedicatedBlockStorageClustersResponse.DedicatedBlockStorageClusters["+ i +"].ZoneId"));
 			dedicatedBlockStorageCluster.setStatus(_ctx.stringValue("DescribeDedicatedBlockStorageClustersResponse.DedicatedBlockStorageClusters["+ i +"].Status"));
-			dedicatedBlockStorageCluster.setCategory(_ctx.stringValue("DescribeDedicatedBlockStorageClustersResponse.DedicatedBlockStorageClusters["+ i +"].Category"));
-			dedicatedBlockStorageCluster.setPerformanceLevel(_ctx.stringValue("DescribeDedicatedBlockStorageClustersResponse.DedicatedBlockStorageClusters["+ i +"].PerformanceLevel"));
+			dedicatedBlockStorageCluster.setType(_ctx.stringValue("DescribeDedicatedBlockStorageClustersResponse.DedicatedBlockStorageClusters["+ i +"].Type"));
+			dedicatedBlockStorageCluster.setDescription(_ctx.stringValue("DescribeDedicatedBlockStorageClustersResponse.DedicatedBlockStorageClusters["+ i +"].Description"));
 			dedicatedBlockStorageCluster.setExpiredTime(_ctx.stringValue("DescribeDedicatedBlockStorageClustersResponse.DedicatedBlockStorageClusters["+ i +"].ExpiredTime"));
 			dedicatedBlockStorageCluster.setCreateTime(_ctx.stringValue("DescribeDedicatedBlockStorageClustersResponse.DedicatedBlockStorageClusters["+ i +"].CreateTime"));
+			dedicatedBlockStorageCluster.setZoneId(_ctx.stringValue("DescribeDedicatedBlockStorageClustersResponse.DedicatedBlockStorageClusters["+ i +"].ZoneId"));
+			dedicatedBlockStorageCluster.setCategory(_ctx.stringValue("DescribeDedicatedBlockStorageClustersResponse.DedicatedBlockStorageClusters["+ i +"].Category"));
+			dedicatedBlockStorageCluster.setDedicatedBlockStorageClusterName(_ctx.stringValue("DescribeDedicatedBlockStorageClustersResponse.DedicatedBlockStorageClusters["+ i +"].DedicatedBlockStorageClusterName"));
+			dedicatedBlockStorageCluster.setDedicatedBlockStorageClusterId(_ctx.stringValue("DescribeDedicatedBlockStorageClustersResponse.DedicatedBlockStorageClusters["+ i +"].DedicatedBlockStorageClusterId"));
 
 			DedicatedBlockStorageClusterCapacity dedicatedBlockStorageClusterCapacity = new DedicatedBlockStorageClusterCapacity();
-			dedicatedBlockStorageClusterCapacity.setAvailableCapacity(_ctx.longValue("DescribeDedicatedBlockStorageClustersResponse.DedicatedBlockStorageClusters["+ i +"].DedicatedBlockStorageClusterCapacity.AvailableCapacity"));
 			dedicatedBlockStorageClusterCapacity.setTotalCapacity(_ctx.longValue("DescribeDedicatedBlockStorageClustersResponse.DedicatedBlockStorageClusters["+ i +"].DedicatedBlockStorageClusterCapacity.TotalCapacity"));
+			dedicatedBlockStorageClusterCapacity.setAvailableCapacity(_ctx.longValue("DescribeDedicatedBlockStorageClustersResponse.DedicatedBlockStorageClusters["+ i +"].DedicatedBlockStorageClusterCapacity.AvailableCapacity"));
 			dedicatedBlockStorageCluster.setDedicatedBlockStorageClusterCapacity(dedicatedBlockStorageClusterCapacity);
 
 			dedicatedBlockStorageClusters.add(dedicatedBlockStorageCluster);

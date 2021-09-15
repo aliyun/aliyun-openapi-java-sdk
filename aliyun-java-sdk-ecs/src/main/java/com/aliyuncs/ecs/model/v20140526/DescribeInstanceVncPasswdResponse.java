@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeInstanceVncPasswdResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String vncPasswd;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getVncPasswd() {
 		return this.vncPasswd;
@@ -42,6 +34,14 @@ public class DescribeInstanceVncPasswdResponse extends AcsResponse {
 
 	public void setVncPasswd(String vncPasswd) {
 		this.vncPasswd = vncPasswd;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

@@ -27,14 +27,14 @@ public class DescribeInstanceRamRoleResponseUnmarshaller {
 	public static DescribeInstanceRamRoleResponse unmarshall(DescribeInstanceRamRoleResponse describeInstanceRamRoleResponse, UnmarshallerContext _ctx) {
 		
 		describeInstanceRamRoleResponse.setRequestId(_ctx.stringValue("DescribeInstanceRamRoleResponse.RequestId"));
-		describeInstanceRamRoleResponse.setRegionId(_ctx.stringValue("DescribeInstanceRamRoleResponse.RegionId"));
 		describeInstanceRamRoleResponse.setTotalCount(_ctx.integerValue("DescribeInstanceRamRoleResponse.TotalCount"));
+		describeInstanceRamRoleResponse.setRegionId(_ctx.stringValue("DescribeInstanceRamRoleResponse.RegionId"));
 
 		List<InstanceRamRoleSet> instanceRamRoleSets = new ArrayList<InstanceRamRoleSet>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeInstanceRamRoleResponse.InstanceRamRoleSets.Length"); i++) {
 			InstanceRamRoleSet instanceRamRoleSet = new InstanceRamRoleSet();
-			instanceRamRoleSet.setInstanceId(_ctx.stringValue("DescribeInstanceRamRoleResponse.InstanceRamRoleSets["+ i +"].InstanceId"));
 			instanceRamRoleSet.setRamRoleName(_ctx.stringValue("DescribeInstanceRamRoleResponse.InstanceRamRoleSets["+ i +"].RamRoleName"));
+			instanceRamRoleSet.setInstanceId(_ctx.stringValue("DescribeInstanceRamRoleResponse.InstanceRamRoleSets["+ i +"].InstanceId"));
 
 			instanceRamRoleSets.add(instanceRamRoleSet);
 		}

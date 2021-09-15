@@ -27,17 +27,17 @@ public class DetachKeyPairResponseUnmarshaller {
 	public static DetachKeyPairResponse unmarshall(DetachKeyPairResponse detachKeyPairResponse, UnmarshallerContext _ctx) {
 		
 		detachKeyPairResponse.setRequestId(_ctx.stringValue("DetachKeyPairResponse.RequestId"));
+		detachKeyPairResponse.setKeyPairName(_ctx.stringValue("DetachKeyPairResponse.KeyPairName"));
 		detachKeyPairResponse.setTotalCount(_ctx.stringValue("DetachKeyPairResponse.TotalCount"));
 		detachKeyPairResponse.setFailCount(_ctx.stringValue("DetachKeyPairResponse.FailCount"));
-		detachKeyPairResponse.setKeyPairName(_ctx.stringValue("DetachKeyPairResponse.KeyPairName"));
 
 		List<Result> results = new ArrayList<Result>();
 		for (int i = 0; i < _ctx.lengthValue("DetachKeyPairResponse.Results.Length"); i++) {
 			Result result = new Result();
-			result.setInstanceId(_ctx.stringValue("DetachKeyPairResponse.Results["+ i +"].InstanceId"));
-			result.setSuccess(_ctx.stringValue("DetachKeyPairResponse.Results["+ i +"].Success"));
 			result.setCode(_ctx.stringValue("DetachKeyPairResponse.Results["+ i +"].Code"));
 			result.setMessage(_ctx.stringValue("DetachKeyPairResponse.Results["+ i +"].Message"));
+			result.setInstanceId(_ctx.stringValue("DetachKeyPairResponse.Results["+ i +"].InstanceId"));
+			result.setSuccess(_ctx.stringValue("DetachKeyPairResponse.Results["+ i +"].Success"));
 
 			results.add(result);
 		}

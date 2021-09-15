@@ -77,80 +77,48 @@ public class DescribePhysicalConnectionsResponse extends AcsResponse {
 
 	public static class PhysicalConnectionType {
 
-		private String physicalConnectionId;
-
-		private String accessPointId;
-
-		private String type;
-
-		private String status;
-
-		private String businessStatus;
+		private String adLocation;
 
 		private String creationTime;
 
-		private String enabledTime;
+		private String status;
 
-		private String lineOperator;
-
-		private String spec;
-
-		private String peerLocation;
-
-		private String portType;
-
-		private String redundantPhysicalConnectionId;
-
-		private String name;
-
-		private String description;
-
-		private String adLocation;
+		private String type;
 
 		private String portNumber;
 
 		private String circuitCode;
 
+		private String spec;
+
 		private Long bandwidth;
 
-		public String getPhysicalConnectionId() {
-			return this.physicalConnectionId;
+		private String description;
+
+		private String portType;
+
+		private String enabledTime;
+
+		private String businessStatus;
+
+		private String lineOperator;
+
+		private String name;
+
+		private String redundantPhysicalConnectionId;
+
+		private String peerLocation;
+
+		private String accessPointId;
+
+		private String physicalConnectionId;
+
+		public String getAdLocation() {
+			return this.adLocation;
 		}
 
-		public void setPhysicalConnectionId(String physicalConnectionId) {
-			this.physicalConnectionId = physicalConnectionId;
-		}
-
-		public String getAccessPointId() {
-			return this.accessPointId;
-		}
-
-		public void setAccessPointId(String accessPointId) {
-			this.accessPointId = accessPointId;
-		}
-
-		public String getType() {
-			return this.type;
-		}
-
-		public void setType(String type) {
-			this.type = type;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
-		public String getBusinessStatus() {
-			return this.businessStatus;
-		}
-
-		public void setBusinessStatus(String businessStatus) {
-			this.businessStatus = businessStatus;
+		public void setAdLocation(String adLocation) {
+			this.adLocation = adLocation;
 		}
 
 		public String getCreationTime() {
@@ -161,76 +129,20 @@ public class DescribePhysicalConnectionsResponse extends AcsResponse {
 			this.creationTime = creationTime;
 		}
 
-		public String getEnabledTime() {
-			return this.enabledTime;
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setEnabledTime(String enabledTime) {
-			this.enabledTime = enabledTime;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
-		public String getLineOperator() {
-			return this.lineOperator;
+		public String getType() {
+			return this.type;
 		}
 
-		public void setLineOperator(String lineOperator) {
-			this.lineOperator = lineOperator;
-		}
-
-		public String getSpec() {
-			return this.spec;
-		}
-
-		public void setSpec(String spec) {
-			this.spec = spec;
-		}
-
-		public String getPeerLocation() {
-			return this.peerLocation;
-		}
-
-		public void setPeerLocation(String peerLocation) {
-			this.peerLocation = peerLocation;
-		}
-
-		public String getPortType() {
-			return this.portType;
-		}
-
-		public void setPortType(String portType) {
-			this.portType = portType;
-		}
-
-		public String getRedundantPhysicalConnectionId() {
-			return this.redundantPhysicalConnectionId;
-		}
-
-		public void setRedundantPhysicalConnectionId(String redundantPhysicalConnectionId) {
-			this.redundantPhysicalConnectionId = redundantPhysicalConnectionId;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
-		public String getAdLocation() {
-			return this.adLocation;
-		}
-
-		public void setAdLocation(String adLocation) {
-			this.adLocation = adLocation;
+		public void setType(String type) {
+			this.type = type;
 		}
 
 		public String getPortNumber() {
@@ -249,12 +161,100 @@ public class DescribePhysicalConnectionsResponse extends AcsResponse {
 			this.circuitCode = circuitCode;
 		}
 
+		public String getSpec() {
+			return this.spec;
+		}
+
+		public void setSpec(String spec) {
+			this.spec = spec;
+		}
+
 		public Long getBandwidth() {
 			return this.bandwidth;
 		}
 
 		public void setBandwidth(Long bandwidth) {
 			this.bandwidth = bandwidth;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getPortType() {
+			return this.portType;
+		}
+
+		public void setPortType(String portType) {
+			this.portType = portType;
+		}
+
+		public String getEnabledTime() {
+			return this.enabledTime;
+		}
+
+		public void setEnabledTime(String enabledTime) {
+			this.enabledTime = enabledTime;
+		}
+
+		public String getBusinessStatus() {
+			return this.businessStatus;
+		}
+
+		public void setBusinessStatus(String businessStatus) {
+			this.businessStatus = businessStatus;
+		}
+
+		public String getLineOperator() {
+			return this.lineOperator;
+		}
+
+		public void setLineOperator(String lineOperator) {
+			this.lineOperator = lineOperator;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getRedundantPhysicalConnectionId() {
+			return this.redundantPhysicalConnectionId;
+		}
+
+		public void setRedundantPhysicalConnectionId(String redundantPhysicalConnectionId) {
+			this.redundantPhysicalConnectionId = redundantPhysicalConnectionId;
+		}
+
+		public String getPeerLocation() {
+			return this.peerLocation;
+		}
+
+		public void setPeerLocation(String peerLocation) {
+			this.peerLocation = peerLocation;
+		}
+
+		public String getAccessPointId() {
+			return this.accessPointId;
+		}
+
+		public void setAccessPointId(String accessPointId) {
+			this.accessPointId = accessPointId;
+		}
+
+		public String getPhysicalConnectionId() {
+			return this.physicalConnectionId;
+		}
+
+		public void setPhysicalConnectionId(String physicalConnectionId) {
+			this.physicalConnectionId = physicalConnectionId;
 		}
 	}
 

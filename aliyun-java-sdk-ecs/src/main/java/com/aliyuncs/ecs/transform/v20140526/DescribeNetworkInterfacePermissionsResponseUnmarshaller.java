@@ -27,18 +27,18 @@ public class DescribeNetworkInterfacePermissionsResponseUnmarshaller {
 	public static DescribeNetworkInterfacePermissionsResponse unmarshall(DescribeNetworkInterfacePermissionsResponse describeNetworkInterfacePermissionsResponse, UnmarshallerContext _ctx) {
 		
 		describeNetworkInterfacePermissionsResponse.setRequestId(_ctx.stringValue("DescribeNetworkInterfacePermissionsResponse.RequestId"));
-		describeNetworkInterfacePermissionsResponse.setTotalCount(_ctx.integerValue("DescribeNetworkInterfacePermissionsResponse.TotalCount"));
-		describeNetworkInterfacePermissionsResponse.setPageNumber(_ctx.integerValue("DescribeNetworkInterfacePermissionsResponse.PageNumber"));
 		describeNetworkInterfacePermissionsResponse.setPageSize(_ctx.integerValue("DescribeNetworkInterfacePermissionsResponse.PageSize"));
+		describeNetworkInterfacePermissionsResponse.setPageNumber(_ctx.integerValue("DescribeNetworkInterfacePermissionsResponse.PageNumber"));
+		describeNetworkInterfacePermissionsResponse.setTotalCount(_ctx.integerValue("DescribeNetworkInterfacePermissionsResponse.TotalCount"));
 
 		List<NetworkInterfacePermission> networkInterfacePermissions = new ArrayList<NetworkInterfacePermission>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeNetworkInterfacePermissionsResponse.NetworkInterfacePermissions.Length"); i++) {
 			NetworkInterfacePermission networkInterfacePermission = new NetworkInterfacePermission();
-			networkInterfacePermission.setAccountId(_ctx.longValue("DescribeNetworkInterfacePermissionsResponse.NetworkInterfacePermissions["+ i +"].AccountId"));
-			networkInterfacePermission.setServiceName(_ctx.stringValue("DescribeNetworkInterfacePermissionsResponse.NetworkInterfacePermissions["+ i +"].ServiceName"));
-			networkInterfacePermission.setNetworkInterfaceId(_ctx.stringValue("DescribeNetworkInterfacePermissionsResponse.NetworkInterfacePermissions["+ i +"].NetworkInterfaceId"));
-			networkInterfacePermission.setNetworkInterfacePermissionId(_ctx.stringValue("DescribeNetworkInterfacePermissionsResponse.NetworkInterfacePermissions["+ i +"].NetworkInterfacePermissionId"));
 			networkInterfacePermission.setPermission(_ctx.stringValue("DescribeNetworkInterfacePermissionsResponse.NetworkInterfacePermissions["+ i +"].Permission"));
+			networkInterfacePermission.setNetworkInterfaceId(_ctx.stringValue("DescribeNetworkInterfacePermissionsResponse.NetworkInterfacePermissions["+ i +"].NetworkInterfaceId"));
+			networkInterfacePermission.setAccountId(_ctx.longValue("DescribeNetworkInterfacePermissionsResponse.NetworkInterfacePermissions["+ i +"].AccountId"));
+			networkInterfacePermission.setNetworkInterfacePermissionId(_ctx.stringValue("DescribeNetworkInterfacePermissionsResponse.NetworkInterfacePermissions["+ i +"].NetworkInterfacePermissionId"));
+			networkInterfacePermission.setServiceName(_ctx.stringValue("DescribeNetworkInterfacePermissionsResponse.NetworkInterfacePermissions["+ i +"].ServiceName"));
 			networkInterfacePermission.setPermissionState(_ctx.stringValue("DescribeNetworkInterfacePermissionsResponse.NetworkInterfacePermissions["+ i +"].PermissionState"));
 
 			networkInterfacePermissions.add(networkInterfacePermission);

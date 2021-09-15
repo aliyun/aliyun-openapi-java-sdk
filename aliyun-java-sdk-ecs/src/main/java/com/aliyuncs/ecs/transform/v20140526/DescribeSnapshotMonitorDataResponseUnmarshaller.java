@@ -31,8 +31,8 @@ public class DescribeSnapshotMonitorDataResponseUnmarshaller {
 		List<DataPoint> monitorData = new ArrayList<DataPoint>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSnapshotMonitorDataResponse.MonitorData.Length"); i++) {
 			DataPoint dataPoint = new DataPoint();
-			dataPoint.setTimeStamp(_ctx.stringValue("DescribeSnapshotMonitorDataResponse.MonitorData["+ i +"].TimeStamp"));
 			dataPoint.setSize(_ctx.longValue("DescribeSnapshotMonitorDataResponse.MonitorData["+ i +"].Size"));
+			dataPoint.setTimeStamp(_ctx.stringValue("DescribeSnapshotMonitorDataResponse.MonitorData["+ i +"].TimeStamp"));
 
 			monitorData.add(dataPoint);
 		}

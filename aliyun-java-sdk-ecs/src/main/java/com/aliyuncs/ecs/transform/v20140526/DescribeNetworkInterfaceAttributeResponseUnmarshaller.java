@@ -32,25 +32,25 @@ public class DescribeNetworkInterfaceAttributeResponseUnmarshaller {
 	public static DescribeNetworkInterfaceAttributeResponse unmarshall(DescribeNetworkInterfaceAttributeResponse describeNetworkInterfaceAttributeResponse, UnmarshallerContext _ctx) {
 		
 		describeNetworkInterfaceAttributeResponse.setRequestId(_ctx.stringValue("DescribeNetworkInterfaceAttributeResponse.RequestId"));
-		describeNetworkInterfaceAttributeResponse.setNetworkInterfaceId(_ctx.stringValue("DescribeNetworkInterfaceAttributeResponse.NetworkInterfaceId"));
-		describeNetworkInterfaceAttributeResponse.setStatus(_ctx.stringValue("DescribeNetworkInterfaceAttributeResponse.Status"));
-		describeNetworkInterfaceAttributeResponse.setType(_ctx.stringValue("DescribeNetworkInterfaceAttributeResponse.Type"));
+		describeNetworkInterfaceAttributeResponse.setCreationTime(_ctx.stringValue("DescribeNetworkInterfaceAttributeResponse.CreationTime"));
 		describeNetworkInterfaceAttributeResponse.setVpcId(_ctx.stringValue("DescribeNetworkInterfaceAttributeResponse.VpcId"));
+		describeNetworkInterfaceAttributeResponse.setType(_ctx.stringValue("DescribeNetworkInterfaceAttributeResponse.Type"));
+		describeNetworkInterfaceAttributeResponse.setStatus(_ctx.stringValue("DescribeNetworkInterfaceAttributeResponse.Status"));
+		describeNetworkInterfaceAttributeResponse.setNetworkInterfaceTrafficMode(_ctx.stringValue("DescribeNetworkInterfaceAttributeResponse.NetworkInterfaceTrafficMode"));
+		describeNetworkInterfaceAttributeResponse.setNetworkInterfaceName(_ctx.stringValue("DescribeNetworkInterfaceAttributeResponse.NetworkInterfaceName"));
+		describeNetworkInterfaceAttributeResponse.setMacAddress(_ctx.stringValue("DescribeNetworkInterfaceAttributeResponse.MacAddress"));
+		describeNetworkInterfaceAttributeResponse.setQueuePairNumber(_ctx.integerValue("DescribeNetworkInterfaceAttributeResponse.QueuePairNumber"));
+		describeNetworkInterfaceAttributeResponse.setNetworkInterfaceId(_ctx.stringValue("DescribeNetworkInterfaceAttributeResponse.NetworkInterfaceId"));
+		describeNetworkInterfaceAttributeResponse.setServiceID(_ctx.longValue("DescribeNetworkInterfaceAttributeResponse.ServiceID"));
+		describeNetworkInterfaceAttributeResponse.setInstanceId(_ctx.stringValue("DescribeNetworkInterfaceAttributeResponse.InstanceId"));
+		describeNetworkInterfaceAttributeResponse.setOwnerId(_ctx.stringValue("DescribeNetworkInterfaceAttributeResponse.OwnerId"));
+		describeNetworkInterfaceAttributeResponse.setServiceManaged(_ctx.booleanValue("DescribeNetworkInterfaceAttributeResponse.ServiceManaged"));
 		describeNetworkInterfaceAttributeResponse.setVSwitchId(_ctx.stringValue("DescribeNetworkInterfaceAttributeResponse.VSwitchId"));
+		describeNetworkInterfaceAttributeResponse.setDescription(_ctx.stringValue("DescribeNetworkInterfaceAttributeResponse.Description"));
+		describeNetworkInterfaceAttributeResponse.setResourceGroupId(_ctx.stringValue("DescribeNetworkInterfaceAttributeResponse.ResourceGroupId"));
 		describeNetworkInterfaceAttributeResponse.setZoneId(_ctx.stringValue("DescribeNetworkInterfaceAttributeResponse.ZoneId"));
 		describeNetworkInterfaceAttributeResponse.setPrivateIpAddress(_ctx.stringValue("DescribeNetworkInterfaceAttributeResponse.PrivateIpAddress"));
-		describeNetworkInterfaceAttributeResponse.setMacAddress(_ctx.stringValue("DescribeNetworkInterfaceAttributeResponse.MacAddress"));
-		describeNetworkInterfaceAttributeResponse.setNetworkInterfaceName(_ctx.stringValue("DescribeNetworkInterfaceAttributeResponse.NetworkInterfaceName"));
-		describeNetworkInterfaceAttributeResponse.setDescription(_ctx.stringValue("DescribeNetworkInterfaceAttributeResponse.Description"));
-		describeNetworkInterfaceAttributeResponse.setInstanceId(_ctx.stringValue("DescribeNetworkInterfaceAttributeResponse.InstanceId"));
-		describeNetworkInterfaceAttributeResponse.setCreationTime(_ctx.stringValue("DescribeNetworkInterfaceAttributeResponse.CreationTime"));
-		describeNetworkInterfaceAttributeResponse.setResourceGroupId(_ctx.stringValue("DescribeNetworkInterfaceAttributeResponse.ResourceGroupId"));
-		describeNetworkInterfaceAttributeResponse.setServiceID(_ctx.longValue("DescribeNetworkInterfaceAttributeResponse.ServiceID"));
-		describeNetworkInterfaceAttributeResponse.setServiceManaged(_ctx.booleanValue("DescribeNetworkInterfaceAttributeResponse.ServiceManaged"));
 		describeNetworkInterfaceAttributeResponse.setQueueNumber(_ctx.integerValue("DescribeNetworkInterfaceAttributeResponse.QueueNumber"));
-		describeNetworkInterfaceAttributeResponse.setOwnerId(_ctx.stringValue("DescribeNetworkInterfaceAttributeResponse.OwnerId"));
-		describeNetworkInterfaceAttributeResponse.setNetworkInterfaceTrafficMode(_ctx.stringValue("DescribeNetworkInterfaceAttributeResponse.NetworkInterfaceTrafficMode"));
-		describeNetworkInterfaceAttributeResponse.setQueuePairNumber(_ctx.integerValue("DescribeNetworkInterfaceAttributeResponse.QueuePairNumber"));
 
 		List<String> securityGroupIds = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeNetworkInterfaceAttributeResponse.SecurityGroupIds.Length"); i++) {
@@ -64,9 +64,9 @@ public class DescribeNetworkInterfaceAttributeResponseUnmarshaller {
 		describeNetworkInterfaceAttributeResponse.setAssociatedPublicIp(associatedPublicIp);
 
 		Attachment attachment = new Attachment();
+		attachment.setDeviceIndex(_ctx.integerValue("DescribeNetworkInterfaceAttributeResponse.Attachment.DeviceIndex"));
 		attachment.setInstanceId(_ctx.stringValue("DescribeNetworkInterfaceAttributeResponse.Attachment.InstanceId"));
 		attachment.setTrunkNetworkInterfaceId(_ctx.stringValue("DescribeNetworkInterfaceAttributeResponse.Attachment.TrunkNetworkInterfaceId"));
-		attachment.setDeviceIndex(_ctx.integerValue("DescribeNetworkInterfaceAttributeResponse.Attachment.DeviceIndex"));
 
 		List<String> memberNetworkInterfaceIds = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeNetworkInterfaceAttributeResponse.Attachment.MemberNetworkInterfaceIds.Length"); i++) {
@@ -102,8 +102,8 @@ public class DescribeNetworkInterfaceAttributeResponseUnmarshaller {
 		List<Tag> tags = new ArrayList<Tag>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeNetworkInterfaceAttributeResponse.Tags.Length"); i++) {
 			Tag tag = new Tag();
-			tag.setTagKey(_ctx.stringValue("DescribeNetworkInterfaceAttributeResponse.Tags["+ i +"].TagKey"));
 			tag.setTagValue(_ctx.stringValue("DescribeNetworkInterfaceAttributeResponse.Tags["+ i +"].TagValue"));
+			tag.setTagKey(_ctx.stringValue("DescribeNetworkInterfaceAttributeResponse.Tags["+ i +"].TagKey"));
 
 			tags.add(tag);
 		}

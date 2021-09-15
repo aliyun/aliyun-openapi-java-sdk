@@ -31,11 +31,12 @@ public class DescribeDedicatedHostAutoRenewResponseUnmarshaller {
 		List<DedicatedHostRenewAttribute> dedicatedHostRenewAttributes = new ArrayList<DedicatedHostRenewAttribute>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDedicatedHostAutoRenewResponse.DedicatedHostRenewAttributes.Length"); i++) {
 			DedicatedHostRenewAttribute dedicatedHostRenewAttribute = new DedicatedHostRenewAttribute();
-			dedicatedHostRenewAttribute.setDedicatedHostId(_ctx.stringValue("DescribeDedicatedHostAutoRenewResponse.DedicatedHostRenewAttributes["+ i +"].DedicatedHostId"));
-			dedicatedHostRenewAttribute.setAutoRenewEnabled(_ctx.booleanValue("DescribeDedicatedHostAutoRenewResponse.DedicatedHostRenewAttributes["+ i +"].AutoRenewEnabled"));
-			dedicatedHostRenewAttribute.setDuration(_ctx.integerValue("DescribeDedicatedHostAutoRenewResponse.DedicatedHostRenewAttributes["+ i +"].Duration"));
 			dedicatedHostRenewAttribute.setPeriodUnit(_ctx.stringValue("DescribeDedicatedHostAutoRenewResponse.DedicatedHostRenewAttributes["+ i +"].PeriodUnit"));
+			dedicatedHostRenewAttribute.setDuration(_ctx.integerValue("DescribeDedicatedHostAutoRenewResponse.DedicatedHostRenewAttributes["+ i +"].Duration"));
+			dedicatedHostRenewAttribute.setDedicatedHostId(_ctx.stringValue("DescribeDedicatedHostAutoRenewResponse.DedicatedHostRenewAttributes["+ i +"].DedicatedHostId"));
 			dedicatedHostRenewAttribute.setRenewalStatus(_ctx.stringValue("DescribeDedicatedHostAutoRenewResponse.DedicatedHostRenewAttributes["+ i +"].RenewalStatus"));
+			dedicatedHostRenewAttribute.setAutoRenewEnabled(_ctx.booleanValue("DescribeDedicatedHostAutoRenewResponse.DedicatedHostRenewAttributes["+ i +"].AutoRenewEnabled"));
+			dedicatedHostRenewAttribute.setAutoRenewWithEcs(_ctx.stringValue("DescribeDedicatedHostAutoRenewResponse.DedicatedHostRenewAttributes["+ i +"].AutoRenewWithEcs"));
 
 			dedicatedHostRenewAttributes.add(dedicatedHostRenewAttribute);
 		}

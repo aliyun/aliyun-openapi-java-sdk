@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeImagePipelineExecutionsResponse extends AcsResponse {
 
+	private String nextToken;
+
 	private String requestId;
 
 	private Integer totalCount;
 
-	private String nextToken;
-
 	private Integer maxResults;
 
 	private List<ImagePipelineExecutionSet> imagePipelineExecution;
+
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -49,14 +57,6 @@ public class DescribeImagePipelineExecutionsResponse extends AcsResponse {
 
 	public void setTotalCount(Integer totalCount) {
 		this.totalCount = totalCount;
-	}
-
-	public String getNextToken() {
-		return this.nextToken;
-	}
-
-	public void setNextToken(String nextToken) {
-		this.nextToken = nextToken;
 	}
 
 	public Integer getMaxResults() {
@@ -79,19 +79,19 @@ public class DescribeImagePipelineExecutionsResponse extends AcsResponse {
 
 		private String creationTime;
 
-		private String modifiedTime;
-
-		private String imageId;
-
 		private String imagePipelineId;
-
-		private String executionId;
 
 		private String status;
 
-		private String message;
+		private String modifiedTime;
 
 		private String resourceGroupId;
+
+		private String message;
+
+		private String imageId;
+
+		private String executionId;
 
 		private List<Tag> tags;
 
@@ -103,36 +103,12 @@ public class DescribeImagePipelineExecutionsResponse extends AcsResponse {
 			this.creationTime = creationTime;
 		}
 
-		public String getModifiedTime() {
-			return this.modifiedTime;
-		}
-
-		public void setModifiedTime(String modifiedTime) {
-			this.modifiedTime = modifiedTime;
-		}
-
-		public String getImageId() {
-			return this.imageId;
-		}
-
-		public void setImageId(String imageId) {
-			this.imageId = imageId;
-		}
-
 		public String getImagePipelineId() {
 			return this.imagePipelineId;
 		}
 
 		public void setImagePipelineId(String imagePipelineId) {
 			this.imagePipelineId = imagePipelineId;
-		}
-
-		public String getExecutionId() {
-			return this.executionId;
-		}
-
-		public void setExecutionId(String executionId) {
-			this.executionId = executionId;
 		}
 
 		public String getStatus() {
@@ -143,12 +119,12 @@ public class DescribeImagePipelineExecutionsResponse extends AcsResponse {
 			this.status = status;
 		}
 
-		public String getMessage() {
-			return this.message;
+		public String getModifiedTime() {
+			return this.modifiedTime;
 		}
 
-		public void setMessage(String message) {
-			this.message = message;
+		public void setModifiedTime(String modifiedTime) {
+			this.modifiedTime = modifiedTime;
 		}
 
 		public String getResourceGroupId() {
@@ -157,6 +133,30 @@ public class DescribeImagePipelineExecutionsResponse extends AcsResponse {
 
 		public void setResourceGroupId(String resourceGroupId) {
 			this.resourceGroupId = resourceGroupId;
+		}
+
+		public String getMessage() {
+			return this.message;
+		}
+
+		public void setMessage(String message) {
+			this.message = message;
+		}
+
+		public String getImageId() {
+			return this.imageId;
+		}
+
+		public void setImageId(String imageId) {
+			this.imageId = imageId;
+		}
+
+		public String getExecutionId() {
+			return this.executionId;
+		}
+
+		public void setExecutionId(String executionId) {
+			this.executionId = executionId;
 		}
 
 		public List<Tag> getTags() {
@@ -169,17 +169,9 @@ public class DescribeImagePipelineExecutionsResponse extends AcsResponse {
 
 		public static class Tag {
 
-			private String tagKey;
-
 			private String tagValue;
 
-			public String getTagKey() {
-				return this.tagKey;
-			}
-
-			public void setTagKey(String tagKey) {
-				this.tagKey = tagKey;
-			}
+			private String tagKey;
 
 			public String getTagValue() {
 				return this.tagValue;
@@ -187,6 +179,14 @@ public class DescribeImagePipelineExecutionsResponse extends AcsResponse {
 
 			public void setTagValue(String tagValue) {
 				this.tagValue = tagValue;
+			}
+
+			public String getTagKey() {
+				return this.tagKey;
+			}
+
+			public void setTagKey(String tagKey) {
+				this.tagKey = tagKey;
 			}
 		}
 	}

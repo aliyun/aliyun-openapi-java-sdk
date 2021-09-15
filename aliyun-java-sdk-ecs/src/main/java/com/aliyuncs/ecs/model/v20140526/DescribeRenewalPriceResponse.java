@@ -69,17 +69,9 @@ public class DescribeRenewalPriceResponse extends AcsResponse {
 
 		public static class Rule {
 
-			private Long ruleId;
-
 			private String description;
 
-			public Long getRuleId() {
-				return this.ruleId;
-			}
-
-			public void setRuleId(Long ruleId) {
-				this.ruleId = ruleId;
-			}
+			private Long ruleId;
 
 			public String getDescription() {
 				return this.description;
@@ -87,6 +79,14 @@ public class DescribeRenewalPriceResponse extends AcsResponse {
 
 			public void setDescription(String description) {
 				this.description = description;
+			}
+
+			public Long getRuleId() {
+				return this.ruleId;
+			}
+
+			public void setRuleId(Long ruleId) {
+				this.ruleId = ruleId;
 			}
 		}
 
@@ -96,9 +96,9 @@ public class DescribeRenewalPriceResponse extends AcsResponse {
 
 			private Float discountPrice;
 
-			private Float tradePrice;
-
 			private String currency;
+
+			private Float tradePrice;
 
 			private List<ResourcePriceModel> detailInfos;
 
@@ -118,20 +118,20 @@ public class DescribeRenewalPriceResponse extends AcsResponse {
 				this.discountPrice = discountPrice;
 			}
 
-			public Float getTradePrice() {
-				return this.tradePrice;
-			}
-
-			public void setTradePrice(Float tradePrice) {
-				this.tradePrice = tradePrice;
-			}
-
 			public String getCurrency() {
 				return this.currency;
 			}
 
 			public void setCurrency(String currency) {
 				this.currency = currency;
+			}
+
+			public Float getTradePrice() {
+				return this.tradePrice;
+			}
+
+			public void setTradePrice(Float tradePrice) {
+				this.tradePrice = tradePrice;
 			}
 
 			public List<ResourcePriceModel> getDetailInfos() {
@@ -196,17 +196,9 @@ public class DescribeRenewalPriceResponse extends AcsResponse {
 
 				public static class Rule1 {
 
-					private Long ruleId;
-
 					private String description;
 
-					public Long getRuleId() {
-						return this.ruleId;
-					}
-
-					public void setRuleId(Long ruleId) {
-						this.ruleId = ruleId;
-					}
+					private Long ruleId;
 
 					public String getDescription() {
 						return this.description;
@@ -214,6 +206,14 @@ public class DescribeRenewalPriceResponse extends AcsResponse {
 
 					public void setDescription(String description) {
 						this.description = description;
+					}
+
+					public Long getRuleId() {
+						return this.ruleId;
+					}
+
+					public void setRuleId(Long ruleId) {
+						this.ruleId = ruleId;
 					}
 				}
 			}

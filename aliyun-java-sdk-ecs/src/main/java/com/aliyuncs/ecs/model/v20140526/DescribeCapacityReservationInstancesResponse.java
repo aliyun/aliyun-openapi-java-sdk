@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeCapacityReservationInstancesResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String nextToken;
 
-	private Integer maxResults;
+	private String requestId;
 
 	private Integer totalCount;
 
+	private Integer maxResults;
+
 	private List<InstanceIdSet> capacityReservationItem;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getNextToken() {
 		return this.nextToken;
@@ -51,12 +43,12 @@ public class DescribeCapacityReservationInstancesResponse extends AcsResponse {
 		this.nextToken = nextToken;
 	}
 
-	public Integer getMaxResults() {
-		return this.maxResults;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setMaxResults(Integer maxResults) {
-		this.maxResults = maxResults;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getTotalCount() {
@@ -65,6 +57,14 @@ public class DescribeCapacityReservationInstancesResponse extends AcsResponse {
 
 	public void setTotalCount(Integer totalCount) {
 		this.totalCount = totalCount;
+	}
+
+	public Integer getMaxResults() {
+		return this.maxResults;
+	}
+
+	public void setMaxResults(Integer maxResults) {
+		this.maxResults = maxResults;
 	}
 
 	public List<InstanceIdSet> getCapacityReservationItem() {

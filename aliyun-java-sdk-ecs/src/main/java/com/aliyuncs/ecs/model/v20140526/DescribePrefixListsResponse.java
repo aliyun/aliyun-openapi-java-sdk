@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribePrefixListsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String nextToken;
 
+	private String requestId;
+
 	private List<PrefixList> prefixLists;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getNextToken() {
 		return this.nextToken;
@@ -45,6 +37,14 @@ public class DescribePrefixListsResponse extends AcsResponse {
 
 	public void setNextToken(String nextToken) {
 		this.nextToken = nextToken;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<PrefixList> getPrefixLists() {
@@ -57,42 +57,34 @@ public class DescribePrefixListsResponse extends AcsResponse {
 
 	public static class PrefixList {
 
-		private String prefixListId;
+		private String creationTime;
 
-		private String prefixListName;
-
-		private String addressFamily;
+		private Integer associationCount;
 
 		private Integer maxEntries;
 
 		private String description;
 
-		private String creationTime;
+		private String addressFamily;
 
-		private Integer associationCount;
+		private String prefixListName;
 
-		public String getPrefixListId() {
-			return this.prefixListId;
+		private String prefixListId;
+
+		public String getCreationTime() {
+			return this.creationTime;
 		}
 
-		public void setPrefixListId(String prefixListId) {
-			this.prefixListId = prefixListId;
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
 		}
 
-		public String getPrefixListName() {
-			return this.prefixListName;
+		public Integer getAssociationCount() {
+			return this.associationCount;
 		}
 
-		public void setPrefixListName(String prefixListName) {
-			this.prefixListName = prefixListName;
-		}
-
-		public String getAddressFamily() {
-			return this.addressFamily;
-		}
-
-		public void setAddressFamily(String addressFamily) {
-			this.addressFamily = addressFamily;
+		public void setAssociationCount(Integer associationCount) {
+			this.associationCount = associationCount;
 		}
 
 		public Integer getMaxEntries() {
@@ -111,20 +103,28 @@ public class DescribePrefixListsResponse extends AcsResponse {
 			this.description = description;
 		}
 
-		public String getCreationTime() {
-			return this.creationTime;
+		public String getAddressFamily() {
+			return this.addressFamily;
 		}
 
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
+		public void setAddressFamily(String addressFamily) {
+			this.addressFamily = addressFamily;
 		}
 
-		public Integer getAssociationCount() {
-			return this.associationCount;
+		public String getPrefixListName() {
+			return this.prefixListName;
 		}
 
-		public void setAssociationCount(Integer associationCount) {
-			this.associationCount = associationCount;
+		public void setPrefixListName(String prefixListName) {
+			this.prefixListName = prefixListName;
+		}
+
+		public String getPrefixListId() {
+			return this.prefixListId;
+		}
+
+		public void setPrefixListId(String prefixListId) {
+			this.prefixListId = prefixListId;
 		}
 	}
 

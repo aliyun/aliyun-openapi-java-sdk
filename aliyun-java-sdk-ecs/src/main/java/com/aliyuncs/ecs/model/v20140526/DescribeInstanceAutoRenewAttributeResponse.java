@@ -77,15 +77,39 @@ public class DescribeInstanceAutoRenewAttributeResponse extends AcsResponse {
 
 	public static class InstanceRenewAttribute {
 
+		private String periodUnit;
+
+		private Integer duration;
+
+		private String renewalStatus;
+
 		private String instanceId;
 
 		private Boolean autoRenewEnabled;
 
-		private Integer duration;
+		public String getPeriodUnit() {
+			return this.periodUnit;
+		}
 
-		private String periodUnit;
+		public void setPeriodUnit(String periodUnit) {
+			this.periodUnit = periodUnit;
+		}
 
-		private String renewalStatus;
+		public Integer getDuration() {
+			return this.duration;
+		}
+
+		public void setDuration(Integer duration) {
+			this.duration = duration;
+		}
+
+		public String getRenewalStatus() {
+			return this.renewalStatus;
+		}
+
+		public void setRenewalStatus(String renewalStatus) {
+			this.renewalStatus = renewalStatus;
+		}
 
 		public String getInstanceId() {
 			return this.instanceId;
@@ -101,30 +125,6 @@ public class DescribeInstanceAutoRenewAttributeResponse extends AcsResponse {
 
 		public void setAutoRenewEnabled(Boolean autoRenewEnabled) {
 			this.autoRenewEnabled = autoRenewEnabled;
-		}
-
-		public Integer getDuration() {
-			return this.duration;
-		}
-
-		public void setDuration(Integer duration) {
-			this.duration = duration;
-		}
-
-		public String getPeriodUnit() {
-			return this.periodUnit;
-		}
-
-		public void setPeriodUnit(String periodUnit) {
-			this.periodUnit = periodUnit;
-		}
-
-		public String getRenewalStatus() {
-			return this.renewalStatus;
-		}
-
-		public void setRenewalStatus(String renewalStatus) {
-			this.renewalStatus = renewalStatus;
 		}
 	}
 

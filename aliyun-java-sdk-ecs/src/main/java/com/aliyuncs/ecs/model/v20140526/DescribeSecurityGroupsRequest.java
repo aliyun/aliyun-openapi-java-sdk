@@ -42,6 +42,8 @@ public class DescribeSecurityGroupsRequest extends RpcAcsRequest<DescribeSecurit
 
 	private String resourceGroupId;
 
+	private String nextToken;
+
 	private Integer pageSize;
 
 	private List<Tag> tags;
@@ -59,6 +61,8 @@ public class DescribeSecurityGroupsRequest extends RpcAcsRequest<DescribeSecurit
 	private String securityGroupType;
 
 	private String vpcId;
+
+	private Integer maxResults;
 	public DescribeSecurityGroupsRequest() {
 		super("Ecs", "2014-05-26", "DescribeSecurityGroups", "ecs");
 		setMethod(MethodType.POST);
@@ -156,6 +160,17 @@ public class DescribeSecurityGroupsRequest extends RpcAcsRequest<DescribeSecurit
 		}
 	}
 
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+		if(nextToken != null){
+			putQueryParameter("NextToken", nextToken);
+		}
+	}
+
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
@@ -175,7 +190,7 @@ public class DescribeSecurityGroupsRequest extends RpcAcsRequest<DescribeSecurit
 		this.tags = tags;	
 		if (tags != null) {
 			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
-				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".value" , tags.get(depth1).getValue());
 				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
 			}
 		}	
@@ -255,6 +270,17 @@ public class DescribeSecurityGroupsRequest extends RpcAcsRequest<DescribeSecurit
 		this.vpcId = vpcId;
 		if(vpcId != null){
 			putQueryParameter("VpcId", vpcId);
+		}
+	}
+
+	public Integer getMaxResults() {
+		return this.maxResults;
+	}
+
+	public void setMaxResults(Integer maxResults) {
+		this.maxResults = maxResults;
+		if(maxResults != null){
+			putQueryParameter("MaxResults", maxResults.toString());
 		}
 	}
 

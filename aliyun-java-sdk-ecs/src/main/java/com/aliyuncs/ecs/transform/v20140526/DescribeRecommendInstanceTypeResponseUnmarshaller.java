@@ -33,22 +33,22 @@ public class DescribeRecommendInstanceTypeResponseUnmarshaller {
 		List<RecommendInstanceType> data = new ArrayList<RecommendInstanceType>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeRecommendInstanceTypeResponse.Data.Length"); i++) {
 			RecommendInstanceType recommendInstanceType = new RecommendInstanceType();
-			recommendInstanceType.setRegionId(_ctx.stringValue("DescribeRecommendInstanceTypeResponse.Data["+ i +"].RegionId"));
 			recommendInstanceType.setCommodityCode(_ctx.stringValue("DescribeRecommendInstanceTypeResponse.Data["+ i +"].CommodityCode"));
-			recommendInstanceType.setScene(_ctx.stringValue("DescribeRecommendInstanceTypeResponse.Data["+ i +"].Scene"));
-			recommendInstanceType.setInstanceChargeType(_ctx.stringValue("DescribeRecommendInstanceTypeResponse.Data["+ i +"].InstanceChargeType"));
-			recommendInstanceType.setSpotStrategy(_ctx.stringValue("DescribeRecommendInstanceTypeResponse.Data["+ i +"].SpotStrategy"));
-			recommendInstanceType.setPriority(_ctx.integerValue("DescribeRecommendInstanceTypeResponse.Data["+ i +"].Priority"));
 			recommendInstanceType.setZoneId(_ctx.stringValue("DescribeRecommendInstanceTypeResponse.Data["+ i +"].ZoneId"));
+			recommendInstanceType.setPriority(_ctx.integerValue("DescribeRecommendInstanceTypeResponse.Data["+ i +"].Priority"));
 			recommendInstanceType.setNetworkType(_ctx.stringValue("DescribeRecommendInstanceTypeResponse.Data["+ i +"].NetworkType"));
+			recommendInstanceType.setScene(_ctx.stringValue("DescribeRecommendInstanceTypeResponse.Data["+ i +"].Scene"));
+			recommendInstanceType.setSpotStrategy(_ctx.stringValue("DescribeRecommendInstanceTypeResponse.Data["+ i +"].SpotStrategy"));
+			recommendInstanceType.setRegionId(_ctx.stringValue("DescribeRecommendInstanceTypeResponse.Data["+ i +"].RegionId"));
+			recommendInstanceType.setInstanceChargeType(_ctx.stringValue("DescribeRecommendInstanceTypeResponse.Data["+ i +"].InstanceChargeType"));
 
 			InstanceType instanceType = new InstanceType();
-			instanceType.setGeneration(_ctx.stringValue("DescribeRecommendInstanceTypeResponse.Data["+ i +"].InstanceType.Generation"));
-			instanceType.setInstanceTypeFamily(_ctx.stringValue("DescribeRecommendInstanceTypeResponse.Data["+ i +"].InstanceType.InstanceTypeFamily"));
-			instanceType.setInstanceType(_ctx.stringValue("DescribeRecommendInstanceTypeResponse.Data["+ i +"].InstanceType.InstanceType"));
 			instanceType.setSupportIoOptimized(_ctx.stringValue("DescribeRecommendInstanceTypeResponse.Data["+ i +"].InstanceType.SupportIoOptimized"));
 			instanceType.setCores(_ctx.integerValue("DescribeRecommendInstanceTypeResponse.Data["+ i +"].InstanceType.Cores"));
 			instanceType.setMemory(_ctx.integerValue("DescribeRecommendInstanceTypeResponse.Data["+ i +"].InstanceType.Memory"));
+			instanceType.setInstanceType(_ctx.stringValue("DescribeRecommendInstanceTypeResponse.Data["+ i +"].InstanceType.InstanceType"));
+			instanceType.setInstanceTypeFamily(_ctx.stringValue("DescribeRecommendInstanceTypeResponse.Data["+ i +"].InstanceType.InstanceTypeFamily"));
+			instanceType.setGeneration(_ctx.stringValue("DescribeRecommendInstanceTypeResponse.Data["+ i +"].InstanceType.Generation"));
 			recommendInstanceType.setInstanceType(instanceType);
 
 			List<Zone> zones = new ArrayList<Zone>();

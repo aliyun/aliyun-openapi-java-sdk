@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeSnapshotGroupsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String nextToken;
 
+	private String requestId;
+
 	private List<SnapshotGroup> snapshotGroups;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getNextToken() {
 		return this.nextToken;
@@ -45,6 +37,14 @@ public class DescribeSnapshotGroupsResponse extends AcsResponse {
 
 	public void setNextToken(String nextToken) {
 		this.nextToken = nextToken;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<SnapshotGroup> getSnapshotGroups() {
@@ -57,37 +57,25 @@ public class DescribeSnapshotGroupsResponse extends AcsResponse {
 
 	public static class SnapshotGroup {
 
-		private String instanceId;
-
-		private String snapshotGroupId;
-
 		private String status;
-
-		private String name;
-
-		private String description;
 
 		private String creationTime;
 
+		private String description;
+
 		private String progressStatus;
 
+		private String snapshotGroupId;
+
+		private String instanceId;
+
+		private String name;
+
+		private String resourceGroupId;
+
+		private List<Tag> tags;
+
 		private List<Snapshot> snapshots;
-
-		public String getInstanceId() {
-			return this.instanceId;
-		}
-
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
-
-		public String getSnapshotGroupId() {
-			return this.snapshotGroupId;
-		}
-
-		public void setSnapshotGroupId(String snapshotGroupId) {
-			this.snapshotGroupId = snapshotGroupId;
-		}
 
 		public String getStatus() {
 			return this.status;
@@ -95,22 +83,6 @@ public class DescribeSnapshotGroupsResponse extends AcsResponse {
 
 		public void setStatus(String status) {
 			this.status = status;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
 		}
 
 		public String getCreationTime() {
@@ -121,12 +93,60 @@ public class DescribeSnapshotGroupsResponse extends AcsResponse {
 			this.creationTime = creationTime;
 		}
 
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
 		public String getProgressStatus() {
 			return this.progressStatus;
 		}
 
 		public void setProgressStatus(String progressStatus) {
 			this.progressStatus = progressStatus;
+		}
+
+		public String getSnapshotGroupId() {
+			return this.snapshotGroupId;
+		}
+
+		public void setSnapshotGroupId(String snapshotGroupId) {
+			this.snapshotGroupId = snapshotGroupId;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
+		public List<Tag> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<Tag> tags) {
+			this.tags = tags;
 		}
 
 		public List<Snapshot> getSnapshots() {
@@ -137,26 +157,51 @@ public class DescribeSnapshotGroupsResponse extends AcsResponse {
 			this.snapshots = snapshots;
 		}
 
+		public static class Tag {
+
+			private String key;
+
+			private String value;
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
+			}
+		}
+
 		public static class Snapshot {
-
-			private String snapshotId;
-
-			private String progress;
 
 			private String sourceDiskId;
 
-			private String sourceDiskType;
-
-			private Boolean instantAccess;
+			private String progress;
 
 			private Integer instantAccessRetentionDays;
 
-			public String getSnapshotId() {
-				return this.snapshotId;
+			private String snapshotId;
+
+			private Boolean instantAccess;
+
+			private String sourceDiskType;
+
+			private List<Tag2> tags1;
+
+			public String getSourceDiskId() {
+				return this.sourceDiskId;
 			}
 
-			public void setSnapshotId(String snapshotId) {
-				this.snapshotId = snapshotId;
+			public void setSourceDiskId(String sourceDiskId) {
+				this.sourceDiskId = sourceDiskId;
 			}
 
 			public String getProgress() {
@@ -167,20 +212,20 @@ public class DescribeSnapshotGroupsResponse extends AcsResponse {
 				this.progress = progress;
 			}
 
-			public String getSourceDiskId() {
-				return this.sourceDiskId;
+			public Integer getInstantAccessRetentionDays() {
+				return this.instantAccessRetentionDays;
 			}
 
-			public void setSourceDiskId(String sourceDiskId) {
-				this.sourceDiskId = sourceDiskId;
+			public void setInstantAccessRetentionDays(Integer instantAccessRetentionDays) {
+				this.instantAccessRetentionDays = instantAccessRetentionDays;
 			}
 
-			public String getSourceDiskType() {
-				return this.sourceDiskType;
+			public String getSnapshotId() {
+				return this.snapshotId;
 			}
 
-			public void setSourceDiskType(String sourceDiskType) {
-				this.sourceDiskType = sourceDiskType;
+			public void setSnapshotId(String snapshotId) {
+				this.snapshotId = snapshotId;
 			}
 
 			public Boolean getInstantAccess() {
@@ -191,12 +236,43 @@ public class DescribeSnapshotGroupsResponse extends AcsResponse {
 				this.instantAccess = instantAccess;
 			}
 
-			public Integer getInstantAccessRetentionDays() {
-				return this.instantAccessRetentionDays;
+			public String getSourceDiskType() {
+				return this.sourceDiskType;
 			}
 
-			public void setInstantAccessRetentionDays(Integer instantAccessRetentionDays) {
-				this.instantAccessRetentionDays = instantAccessRetentionDays;
+			public void setSourceDiskType(String sourceDiskType) {
+				this.sourceDiskType = sourceDiskType;
+			}
+
+			public List<Tag2> getTags1() {
+				return this.tags1;
+			}
+
+			public void setTags1(List<Tag2> tags1) {
+				this.tags1 = tags1;
+			}
+
+			public static class Tag2 {
+
+				private String key;
+
+				private String value;
+
+				public String getKey() {
+					return this.key;
+				}
+
+				public void setKey(String key) {
+					this.key = key;
+				}
+
+				public String getValue() {
+					return this.value;
+				}
+
+				public void setValue(String value) {
+					this.value = value;
+				}
 			}
 		}
 	}

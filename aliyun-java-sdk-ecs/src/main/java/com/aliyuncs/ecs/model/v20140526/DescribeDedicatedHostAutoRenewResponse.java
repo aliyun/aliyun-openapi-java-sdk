@@ -47,30 +47,24 @@ public class DescribeDedicatedHostAutoRenewResponse extends AcsResponse {
 
 	public static class DedicatedHostRenewAttribute {
 
-		private String dedicatedHostId;
-
-		private Boolean autoRenewEnabled;
+		private String periodUnit;
 
 		private Integer duration;
 
-		private String periodUnit;
+		private String dedicatedHostId;
 
 		private String renewalStatus;
 
-		public String getDedicatedHostId() {
-			return this.dedicatedHostId;
+		private Boolean autoRenewEnabled;
+
+		private String autoRenewWithEcs;
+
+		public String getPeriodUnit() {
+			return this.periodUnit;
 		}
 
-		public void setDedicatedHostId(String dedicatedHostId) {
-			this.dedicatedHostId = dedicatedHostId;
-		}
-
-		public Boolean getAutoRenewEnabled() {
-			return this.autoRenewEnabled;
-		}
-
-		public void setAutoRenewEnabled(Boolean autoRenewEnabled) {
-			this.autoRenewEnabled = autoRenewEnabled;
+		public void setPeriodUnit(String periodUnit) {
+			this.periodUnit = periodUnit;
 		}
 
 		public Integer getDuration() {
@@ -81,12 +75,12 @@ public class DescribeDedicatedHostAutoRenewResponse extends AcsResponse {
 			this.duration = duration;
 		}
 
-		public String getPeriodUnit() {
-			return this.periodUnit;
+		public String getDedicatedHostId() {
+			return this.dedicatedHostId;
 		}
 
-		public void setPeriodUnit(String periodUnit) {
-			this.periodUnit = periodUnit;
+		public void setDedicatedHostId(String dedicatedHostId) {
+			this.dedicatedHostId = dedicatedHostId;
 		}
 
 		public String getRenewalStatus() {
@@ -95,6 +89,22 @@ public class DescribeDedicatedHostAutoRenewResponse extends AcsResponse {
 
 		public void setRenewalStatus(String renewalStatus) {
 			this.renewalStatus = renewalStatus;
+		}
+
+		public Boolean getAutoRenewEnabled() {
+			return this.autoRenewEnabled;
+		}
+
+		public void setAutoRenewEnabled(Boolean autoRenewEnabled) {
+			this.autoRenewEnabled = autoRenewEnabled;
+		}
+
+		public String getAutoRenewWithEcs() {
+			return this.autoRenewWithEcs;
+		}
+
+		public void setAutoRenewWithEcs(String autoRenewWithEcs) {
+			this.autoRenewWithEcs = autoRenewWithEcs;
 		}
 	}
 

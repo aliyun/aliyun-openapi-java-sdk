@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeCommandsResponse extends AcsResponse {
 
-	private String requestId;
+	private Long pageSize;
 
-	private Long totalCount;
+	private String requestId;
 
 	private Long pageNumber;
 
-	private Long pageSize;
+	private Long totalCount;
 
 	private List<Command> commands;
+
+	public Long getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Long pageSize) {
+		this.pageSize = pageSize;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class DescribeCommandsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Long getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Long totalCount) {
-		this.totalCount = totalCount;
 	}
 
 	public Long getPageNumber() {
@@ -59,12 +59,12 @@ public class DescribeCommandsResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Long getPageSize() {
-		return this.pageSize;
+	public Long getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setPageSize(Long pageSize) {
-		this.pageSize = pageSize;
+	public void setTotalCount(Long totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<Command> getCommands() {
@@ -77,50 +77,42 @@ public class DescribeCommandsResponse extends AcsResponse {
 
 	public static class Command {
 
-		private String commandId;
-
-		private String name;
+		private String creationTime;
 
 		private String type;
-
-		private Integer version;
-
-		private Boolean latest;
-
-		private String provider;
-
-		private String category;
-
-		private String description;
-
-		private String commandContent;
-
-		private String workingDir;
 
 		private Long timeout;
 
 		private Integer invokeTimes;
 
-		private String creationTime;
+		private String commandId;
+
+		private String workingDir;
+
+		private String description;
+
+		private Integer version;
+
+		private String provider;
+
+		private String commandContent;
+
+		private String category;
+
+		private Boolean latest;
+
+		private String name;
 
 		private Boolean enableParameter;
 
 		private List<String> parameterNames;
 
-		public String getCommandId() {
-			return this.commandId;
+		public String getCreationTime() {
+			return this.creationTime;
 		}
 
-		public void setCommandId(String commandId) {
-			this.commandId = commandId;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
 		}
 
 		public String getType() {
@@ -129,62 +121,6 @@ public class DescribeCommandsResponse extends AcsResponse {
 
 		public void setType(String type) {
 			this.type = type;
-		}
-
-		public Integer getVersion() {
-			return this.version;
-		}
-
-		public void setVersion(Integer version) {
-			this.version = version;
-		}
-
-		public Boolean getLatest() {
-			return this.latest;
-		}
-
-		public void setLatest(Boolean latest) {
-			this.latest = latest;
-		}
-
-		public String getProvider() {
-			return this.provider;
-		}
-
-		public void setProvider(String provider) {
-			this.provider = provider;
-		}
-
-		public String getCategory() {
-			return this.category;
-		}
-
-		public void setCategory(String category) {
-			this.category = category;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
-		public String getCommandContent() {
-			return this.commandContent;
-		}
-
-		public void setCommandContent(String commandContent) {
-			this.commandContent = commandContent;
-		}
-
-		public String getWorkingDir() {
-			return this.workingDir;
-		}
-
-		public void setWorkingDir(String workingDir) {
-			this.workingDir = workingDir;
 		}
 
 		public Long getTimeout() {
@@ -203,12 +139,76 @@ public class DescribeCommandsResponse extends AcsResponse {
 			this.invokeTimes = invokeTimes;
 		}
 
-		public String getCreationTime() {
-			return this.creationTime;
+		public String getCommandId() {
+			return this.commandId;
 		}
 
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
+		public void setCommandId(String commandId) {
+			this.commandId = commandId;
+		}
+
+		public String getWorkingDir() {
+			return this.workingDir;
+		}
+
+		public void setWorkingDir(String workingDir) {
+			this.workingDir = workingDir;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public Integer getVersion() {
+			return this.version;
+		}
+
+		public void setVersion(Integer version) {
+			this.version = version;
+		}
+
+		public String getProvider() {
+			return this.provider;
+		}
+
+		public void setProvider(String provider) {
+			this.provider = provider;
+		}
+
+		public String getCommandContent() {
+			return this.commandContent;
+		}
+
+		public void setCommandContent(String commandContent) {
+			this.commandContent = commandContent;
+		}
+
+		public String getCategory() {
+			return this.category;
+		}
+
+		public void setCategory(String category) {
+			this.category = category;
+		}
+
+		public Boolean getLatest() {
+			return this.latest;
+		}
+
+		public void setLatest(Boolean latest) {
+			this.latest = latest;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
 		}
 
 		public Boolean getEnableParameter() {

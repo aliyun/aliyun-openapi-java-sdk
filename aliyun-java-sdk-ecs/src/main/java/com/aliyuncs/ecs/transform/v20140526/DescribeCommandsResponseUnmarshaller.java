@@ -27,26 +27,26 @@ public class DescribeCommandsResponseUnmarshaller {
 	public static DescribeCommandsResponse unmarshall(DescribeCommandsResponse describeCommandsResponse, UnmarshallerContext _ctx) {
 		
 		describeCommandsResponse.setRequestId(_ctx.stringValue("DescribeCommandsResponse.RequestId"));
-		describeCommandsResponse.setTotalCount(_ctx.longValue("DescribeCommandsResponse.TotalCount"));
-		describeCommandsResponse.setPageNumber(_ctx.longValue("DescribeCommandsResponse.PageNumber"));
 		describeCommandsResponse.setPageSize(_ctx.longValue("DescribeCommandsResponse.PageSize"));
+		describeCommandsResponse.setPageNumber(_ctx.longValue("DescribeCommandsResponse.PageNumber"));
+		describeCommandsResponse.setTotalCount(_ctx.longValue("DescribeCommandsResponse.TotalCount"));
 
 		List<Command> commands = new ArrayList<Command>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeCommandsResponse.Commands.Length"); i++) {
 			Command command = new Command();
-			command.setCommandId(_ctx.stringValue("DescribeCommandsResponse.Commands["+ i +"].CommandId"));
-			command.setName(_ctx.stringValue("DescribeCommandsResponse.Commands["+ i +"].Name"));
+			command.setCreationTime(_ctx.stringValue("DescribeCommandsResponse.Commands["+ i +"].CreationTime"));
 			command.setType(_ctx.stringValue("DescribeCommandsResponse.Commands["+ i +"].Type"));
-			command.setVersion(_ctx.integerValue("DescribeCommandsResponse.Commands["+ i +"].Version"));
-			command.setLatest(_ctx.booleanValue("DescribeCommandsResponse.Commands["+ i +"].Latest"));
-			command.setProvider(_ctx.stringValue("DescribeCommandsResponse.Commands["+ i +"].Provider"));
-			command.setCategory(_ctx.stringValue("DescribeCommandsResponse.Commands["+ i +"].Category"));
-			command.setDescription(_ctx.stringValue("DescribeCommandsResponse.Commands["+ i +"].Description"));
-			command.setCommandContent(_ctx.stringValue("DescribeCommandsResponse.Commands["+ i +"].CommandContent"));
-			command.setWorkingDir(_ctx.stringValue("DescribeCommandsResponse.Commands["+ i +"].WorkingDir"));
 			command.setTimeout(_ctx.longValue("DescribeCommandsResponse.Commands["+ i +"].Timeout"));
 			command.setInvokeTimes(_ctx.integerValue("DescribeCommandsResponse.Commands["+ i +"].InvokeTimes"));
-			command.setCreationTime(_ctx.stringValue("DescribeCommandsResponse.Commands["+ i +"].CreationTime"));
+			command.setCommandId(_ctx.stringValue("DescribeCommandsResponse.Commands["+ i +"].CommandId"));
+			command.setWorkingDir(_ctx.stringValue("DescribeCommandsResponse.Commands["+ i +"].WorkingDir"));
+			command.setDescription(_ctx.stringValue("DescribeCommandsResponse.Commands["+ i +"].Description"));
+			command.setVersion(_ctx.integerValue("DescribeCommandsResponse.Commands["+ i +"].Version"));
+			command.setProvider(_ctx.stringValue("DescribeCommandsResponse.Commands["+ i +"].Provider"));
+			command.setCommandContent(_ctx.stringValue("DescribeCommandsResponse.Commands["+ i +"].CommandContent"));
+			command.setCategory(_ctx.stringValue("DescribeCommandsResponse.Commands["+ i +"].Category"));
+			command.setLatest(_ctx.booleanValue("DescribeCommandsResponse.Commands["+ i +"].Latest"));
+			command.setName(_ctx.stringValue("DescribeCommandsResponse.Commands["+ i +"].Name"));
 			command.setEnableParameter(_ctx.booleanValue("DescribeCommandsResponse.Commands["+ i +"].EnableParameter"));
 
 			List<String> parameterNames = new ArrayList<String>();

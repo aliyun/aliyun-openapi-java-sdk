@@ -31,9 +31,9 @@ public class DescribeDisksFullStatusResponseUnmarshaller {
 	public static DescribeDisksFullStatusResponse unmarshall(DescribeDisksFullStatusResponse describeDisksFullStatusResponse, UnmarshallerContext _ctx) {
 		
 		describeDisksFullStatusResponse.setRequestId(_ctx.stringValue("DescribeDisksFullStatusResponse.RequestId"));
-		describeDisksFullStatusResponse.setTotalCount(_ctx.integerValue("DescribeDisksFullStatusResponse.TotalCount"));
-		describeDisksFullStatusResponse.setPageNumber(_ctx.integerValue("DescribeDisksFullStatusResponse.PageNumber"));
 		describeDisksFullStatusResponse.setPageSize(_ctx.integerValue("DescribeDisksFullStatusResponse.PageSize"));
+		describeDisksFullStatusResponse.setPageNumber(_ctx.integerValue("DescribeDisksFullStatusResponse.PageNumber"));
+		describeDisksFullStatusResponse.setTotalCount(_ctx.integerValue("DescribeDisksFullStatusResponse.TotalCount"));
 
 		List<DiskFullStatusType> diskFullStatusSet = new ArrayList<DiskFullStatusType>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDisksFullStatusResponse.DiskFullStatusSet.Length"); i++) {
@@ -43,26 +43,26 @@ public class DescribeDisksFullStatusResponseUnmarshaller {
 			diskFullStatusType.setDevice(_ctx.stringValue("DescribeDisksFullStatusResponse.DiskFullStatusSet["+ i +"].Device"));
 
 			Status status = new Status();
-			status.setCode(_ctx.integerValue("DescribeDisksFullStatusResponse.DiskFullStatusSet["+ i +"].Status.Code"));
 			status.setName(_ctx.stringValue("DescribeDisksFullStatusResponse.DiskFullStatusSet["+ i +"].Status.Name"));
+			status.setCode(_ctx.integerValue("DescribeDisksFullStatusResponse.DiskFullStatusSet["+ i +"].Status.Code"));
 			diskFullStatusType.setStatus(status);
 
 			HealthStatus healthStatus = new HealthStatus();
-			healthStatus.setCode(_ctx.integerValue("DescribeDisksFullStatusResponse.DiskFullStatusSet["+ i +"].HealthStatus.Code"));
 			healthStatus.setName(_ctx.stringValue("DescribeDisksFullStatusResponse.DiskFullStatusSet["+ i +"].HealthStatus.Name"));
+			healthStatus.setCode(_ctx.integerValue("DescribeDisksFullStatusResponse.DiskFullStatusSet["+ i +"].HealthStatus.Code"));
 			diskFullStatusType.setHealthStatus(healthStatus);
 
 			List<DiskEventType> diskEventSet = new ArrayList<DiskEventType>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDisksFullStatusResponse.DiskFullStatusSet["+ i +"].DiskEventSet.Length"); j++) {
 				DiskEventType diskEventType = new DiskEventType();
 				diskEventType.setEventId(_ctx.stringValue("DescribeDisksFullStatusResponse.DiskFullStatusSet["+ i +"].DiskEventSet["+ j +"].EventId"));
-				diskEventType.setEventTime(_ctx.stringValue("DescribeDisksFullStatusResponse.DiskFullStatusSet["+ i +"].DiskEventSet["+ j +"].EventTime"));
 				diskEventType.setEventEndTime(_ctx.stringValue("DescribeDisksFullStatusResponse.DiskFullStatusSet["+ i +"].DiskEventSet["+ j +"].EventEndTime"));
+				diskEventType.setEventTime(_ctx.stringValue("DescribeDisksFullStatusResponse.DiskFullStatusSet["+ i +"].DiskEventSet["+ j +"].EventTime"));
 				diskEventType.setImpactLevel(_ctx.stringValue("DescribeDisksFullStatusResponse.DiskFullStatusSet["+ i +"].DiskEventSet["+ j +"].ImpactLevel"));
 
 				EventType eventType = new EventType();
-				eventType.setCode(_ctx.integerValue("DescribeDisksFullStatusResponse.DiskFullStatusSet["+ i +"].DiskEventSet["+ j +"].EventType.Code"));
 				eventType.setName(_ctx.stringValue("DescribeDisksFullStatusResponse.DiskFullStatusSet["+ i +"].DiskEventSet["+ j +"].EventType.Name"));
+				eventType.setCode(_ctx.integerValue("DescribeDisksFullStatusResponse.DiskFullStatusSet["+ i +"].DiskEventSet["+ j +"].EventType.Code"));
 				diskEventType.setEventType(eventType);
 
 				diskEventSet.add(diskEventType);

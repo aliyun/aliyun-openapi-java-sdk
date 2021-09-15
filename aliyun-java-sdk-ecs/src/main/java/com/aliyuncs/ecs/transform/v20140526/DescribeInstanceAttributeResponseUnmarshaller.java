@@ -30,29 +30,29 @@ public class DescribeInstanceAttributeResponseUnmarshaller {
 	public static DescribeInstanceAttributeResponse unmarshall(DescribeInstanceAttributeResponse describeInstanceAttributeResponse, UnmarshallerContext _ctx) {
 		
 		describeInstanceAttributeResponse.setRequestId(_ctx.stringValue("DescribeInstanceAttributeResponse.RequestId"));
-		describeInstanceAttributeResponse.setInstanceId(_ctx.stringValue("DescribeInstanceAttributeResponse.InstanceId"));
-		describeInstanceAttributeResponse.setInstanceName(_ctx.stringValue("DescribeInstanceAttributeResponse.InstanceName"));
-		describeInstanceAttributeResponse.setImageId(_ctx.stringValue("DescribeInstanceAttributeResponse.ImageId"));
-		describeInstanceAttributeResponse.setRegionId(_ctx.stringValue("DescribeInstanceAttributeResponse.RegionId"));
-		describeInstanceAttributeResponse.setZoneId(_ctx.stringValue("DescribeInstanceAttributeResponse.ZoneId"));
-		describeInstanceAttributeResponse.setClusterId(_ctx.stringValue("DescribeInstanceAttributeResponse.ClusterId"));
-		describeInstanceAttributeResponse.setInstanceType(_ctx.stringValue("DescribeInstanceAttributeResponse.InstanceType"));
-		describeInstanceAttributeResponse.setCpu(_ctx.integerValue("DescribeInstanceAttributeResponse.Cpu"));
-		describeInstanceAttributeResponse.setMemory(_ctx.integerValue("DescribeInstanceAttributeResponse.Memory"));
-		describeInstanceAttributeResponse.setHostName(_ctx.stringValue("DescribeInstanceAttributeResponse.HostName"));
 		describeInstanceAttributeResponse.setStatus(_ctx.stringValue("DescribeInstanceAttributeResponse.Status"));
-		describeInstanceAttributeResponse.setInternetChargeType(_ctx.stringValue("DescribeInstanceAttributeResponse.InternetChargeType"));
-		describeInstanceAttributeResponse.setInternetMaxBandwidthIn(_ctx.integerValue("DescribeInstanceAttributeResponse.InternetMaxBandwidthIn"));
-		describeInstanceAttributeResponse.setInternetMaxBandwidthOut(_ctx.integerValue("DescribeInstanceAttributeResponse.InternetMaxBandwidthOut"));
-		describeInstanceAttributeResponse.setVlanId(_ctx.stringValue("DescribeInstanceAttributeResponse.VlanId"));
 		describeInstanceAttributeResponse.setSerialNumber(_ctx.stringValue("DescribeInstanceAttributeResponse.SerialNumber"));
 		describeInstanceAttributeResponse.setCreationTime(_ctx.stringValue("DescribeInstanceAttributeResponse.CreationTime"));
 		describeInstanceAttributeResponse.setDescription(_ctx.stringValue("DescribeInstanceAttributeResponse.Description"));
+		describeInstanceAttributeResponse.setInstanceName(_ctx.stringValue("DescribeInstanceAttributeResponse.InstanceName"));
 		describeInstanceAttributeResponse.setInstanceNetworkType(_ctx.stringValue("DescribeInstanceAttributeResponse.InstanceNetworkType"));
-		describeInstanceAttributeResponse.setIoOptimized(_ctx.stringValue("DescribeInstanceAttributeResponse.IoOptimized"));
-		describeInstanceAttributeResponse.setInstanceChargeType(_ctx.stringValue("DescribeInstanceAttributeResponse.InstanceChargeType"));
-		describeInstanceAttributeResponse.setExpiredTime(_ctx.stringValue("DescribeInstanceAttributeResponse.ExpiredTime"));
+		describeInstanceAttributeResponse.setMemory(_ctx.integerValue("DescribeInstanceAttributeResponse.Memory"));
+		describeInstanceAttributeResponse.setImageId(_ctx.stringValue("DescribeInstanceAttributeResponse.ImageId"));
+		describeInstanceAttributeResponse.setClusterId(_ctx.stringValue("DescribeInstanceAttributeResponse.ClusterId"));
+		describeInstanceAttributeResponse.setVlanId(_ctx.stringValue("DescribeInstanceAttributeResponse.VlanId"));
 		describeInstanceAttributeResponse.setStoppedMode(_ctx.stringValue("DescribeInstanceAttributeResponse.StoppedMode"));
+		describeInstanceAttributeResponse.setHostName(_ctx.stringValue("DescribeInstanceAttributeResponse.HostName"));
+		describeInstanceAttributeResponse.setInstanceId(_ctx.stringValue("DescribeInstanceAttributeResponse.InstanceId"));
+		describeInstanceAttributeResponse.setInstanceType(_ctx.stringValue("DescribeInstanceAttributeResponse.InstanceType"));
+		describeInstanceAttributeResponse.setInternetMaxBandwidthIn(_ctx.integerValue("DescribeInstanceAttributeResponse.InternetMaxBandwidthIn"));
+		describeInstanceAttributeResponse.setInternetMaxBandwidthOut(_ctx.integerValue("DescribeInstanceAttributeResponse.InternetMaxBandwidthOut"));
+		describeInstanceAttributeResponse.setRegionId(_ctx.stringValue("DescribeInstanceAttributeResponse.RegionId"));
+		describeInstanceAttributeResponse.setInstanceChargeType(_ctx.stringValue("DescribeInstanceAttributeResponse.InstanceChargeType"));
+		describeInstanceAttributeResponse.setIoOptimized(_ctx.stringValue("DescribeInstanceAttributeResponse.IoOptimized"));
+		describeInstanceAttributeResponse.setCpu(_ctx.integerValue("DescribeInstanceAttributeResponse.Cpu"));
+		describeInstanceAttributeResponse.setExpiredTime(_ctx.stringValue("DescribeInstanceAttributeResponse.ExpiredTime"));
+		describeInstanceAttributeResponse.setZoneId(_ctx.stringValue("DescribeInstanceAttributeResponse.ZoneId"));
+		describeInstanceAttributeResponse.setInternetChargeType(_ctx.stringValue("DescribeInstanceAttributeResponse.InternetChargeType"));
 		describeInstanceAttributeResponse.setCreditSpecification(_ctx.stringValue("DescribeInstanceAttributeResponse.CreditSpecification"));
 
 		List<String> securityGroupIds = new ArrayList<String>();
@@ -75,8 +75,8 @@ public class DescribeInstanceAttributeResponseUnmarshaller {
 
 		VpcAttributes vpcAttributes = new VpcAttributes();
 		vpcAttributes.setVpcId(_ctx.stringValue("DescribeInstanceAttributeResponse.VpcAttributes.VpcId"));
-		vpcAttributes.setVSwitchId(_ctx.stringValue("DescribeInstanceAttributeResponse.VpcAttributes.VSwitchId"));
 		vpcAttributes.setNatIpAddress(_ctx.stringValue("DescribeInstanceAttributeResponse.VpcAttributes.NatIpAddress"));
+		vpcAttributes.setVSwitchId(_ctx.stringValue("DescribeInstanceAttributeResponse.VpcAttributes.VSwitchId"));
 
 		List<String> privateIpAddress = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeInstanceAttributeResponse.VpcAttributes.PrivateIpAddress.Length"); i++) {
@@ -86,15 +86,15 @@ public class DescribeInstanceAttributeResponseUnmarshaller {
 		describeInstanceAttributeResponse.setVpcAttributes(vpcAttributes);
 
 		EipAddress eipAddress = new EipAddress();
-		eipAddress.setAllocationId(_ctx.stringValue("DescribeInstanceAttributeResponse.EipAddress.AllocationId"));
+		eipAddress.setInternetChargeType(_ctx.stringValue("DescribeInstanceAttributeResponse.EipAddress.InternetChargeType"));
 		eipAddress.setIpAddress(_ctx.stringValue("DescribeInstanceAttributeResponse.EipAddress.IpAddress"));
 		eipAddress.setBandwidth(_ctx.integerValue("DescribeInstanceAttributeResponse.EipAddress.Bandwidth"));
-		eipAddress.setInternetChargeType(_ctx.stringValue("DescribeInstanceAttributeResponse.EipAddress.InternetChargeType"));
+		eipAddress.setAllocationId(_ctx.stringValue("DescribeInstanceAttributeResponse.EipAddress.AllocationId"));
 		describeInstanceAttributeResponse.setEipAddress(eipAddress);
 
 		DedicatedHostAttribute dedicatedHostAttribute = new DedicatedHostAttribute();
-		dedicatedHostAttribute.setDedicatedHostId(_ctx.stringValue("DescribeInstanceAttributeResponse.DedicatedHostAttribute.DedicatedHostId"));
 		dedicatedHostAttribute.setDedicatedHostName(_ctx.stringValue("DescribeInstanceAttributeResponse.DedicatedHostAttribute.DedicatedHostName"));
+		dedicatedHostAttribute.setDedicatedHostId(_ctx.stringValue("DescribeInstanceAttributeResponse.DedicatedHostAttribute.DedicatedHostId"));
 		describeInstanceAttributeResponse.setDedicatedHostAttribute(dedicatedHostAttribute);
 
 		List<LockReason> operationLocks = new ArrayList<LockReason>();

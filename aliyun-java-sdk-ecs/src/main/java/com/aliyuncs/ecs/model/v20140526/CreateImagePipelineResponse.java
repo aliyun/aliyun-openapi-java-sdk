@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateImagePipelineResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String imagePipelineId;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getImagePipelineId() {
 		return this.imagePipelineId;
@@ -42,6 +34,14 @@ public class CreateImagePipelineResponse extends AcsResponse {
 
 	public void setImagePipelineId(String imagePipelineId) {
 		this.imagePipelineId = imagePipelineId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

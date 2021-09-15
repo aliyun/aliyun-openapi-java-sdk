@@ -34,8 +34,8 @@ public class DescribeResourceByTagsResponseUnmarshaller {
 		List<Resource> resources = new ArrayList<Resource>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeResourceByTagsResponse.Resources.Length"); i++) {
 			Resource resource = new Resource();
-			resource.setResourceId(_ctx.stringValue("DescribeResourceByTagsResponse.Resources["+ i +"].ResourceId"));
 			resource.setResourceType(_ctx.stringValue("DescribeResourceByTagsResponse.Resources["+ i +"].ResourceType"));
+			resource.setResourceId(_ctx.stringValue("DescribeResourceByTagsResponse.Resources["+ i +"].ResourceId"));
 			resource.setRegionId(_ctx.stringValue("DescribeResourceByTagsResponse.Resources["+ i +"].RegionId"));
 
 			resources.add(resource);

@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ModifyDedicatedHostsChargeTypeResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String orderId;
 
+	private String requestId;
+
 	private List<FeeOfInstance> feeOfInstances;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getOrderId() {
 		return this.orderId;
@@ -45,6 +37,14 @@ public class ModifyDedicatedHostsChargeTypeResponse extends AcsResponse {
 
 	public void setOrderId(String orderId) {
 		this.orderId = orderId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<FeeOfInstance> getFeeOfInstances() {
@@ -59,9 +59,9 @@ public class ModifyDedicatedHostsChargeTypeResponse extends AcsResponse {
 
 		private String instanceId;
 
-		private String fee;
-
 		private String currency;
+
+		private String fee;
 
 		public String getInstanceId() {
 			return this.instanceId;
@@ -71,20 +71,20 @@ public class ModifyDedicatedHostsChargeTypeResponse extends AcsResponse {
 			this.instanceId = instanceId;
 		}
 
-		public String getFee() {
-			return this.fee;
-		}
-
-		public void setFee(String fee) {
-			this.fee = fee;
-		}
-
 		public String getCurrency() {
 			return this.currency;
 		}
 
 		public void setCurrency(String currency) {
 			this.currency = currency;
+		}
+
+		public String getFee() {
+			return this.fee;
+		}
+
+		public void setFee(String fee) {
+			this.fee = fee;
 		}
 	}
 

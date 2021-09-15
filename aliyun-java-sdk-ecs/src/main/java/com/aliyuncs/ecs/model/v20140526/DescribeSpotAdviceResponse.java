@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeSpotAdviceResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String regionId;
 
+	private String requestId;
+
 	private List<AvailableSpotZone> availableSpotZones;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getRegionId() {
 		return this.regionId;
@@ -45,6 +37,14 @@ public class DescribeSpotAdviceResponse extends AcsResponse {
 
 	public void setRegionId(String regionId) {
 		this.regionId = regionId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<AvailableSpotZone> getAvailableSpotZones() {
@@ -79,29 +79,13 @@ public class DescribeSpotAdviceResponse extends AcsResponse {
 
 		public static class AvailableSpotResource {
 
-			private String instanceType;
-
-			private Float interruptionRate;
-
 			private String interruptRateDesc;
 
 			private Integer averageSpotDiscount;
 
-			public String getInstanceType() {
-				return this.instanceType;
-			}
+			private String instanceType;
 
-			public void setInstanceType(String instanceType) {
-				this.instanceType = instanceType;
-			}
-
-			public Float getInterruptionRate() {
-				return this.interruptionRate;
-			}
-
-			public void setInterruptionRate(Float interruptionRate) {
-				this.interruptionRate = interruptionRate;
-			}
+			private Float interruptionRate;
 
 			public String getInterruptRateDesc() {
 				return this.interruptRateDesc;
@@ -117,6 +101,22 @@ public class DescribeSpotAdviceResponse extends AcsResponse {
 
 			public void setAverageSpotDiscount(Integer averageSpotDiscount) {
 				this.averageSpotDiscount = averageSpotDiscount;
+			}
+
+			public String getInstanceType() {
+				return this.instanceType;
+			}
+
+			public void setInstanceType(String instanceType) {
+				this.instanceType = instanceType;
+			}
+
+			public Float getInterruptionRate() {
+				return this.interruptionRate;
+			}
+
+			public void setInterruptionRate(Float interruptionRate) {
+				this.interruptionRate = interruptionRate;
 			}
 		}
 	}

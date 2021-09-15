@@ -25,17 +25,33 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDemandsResponse extends AcsResponse {
 
+	private Integer pageSize;
+
+	private Integer pageNumber;
+
 	private String requestId;
 
 	private Integer totalCount;
 
-	private Integer pageNumber;
-
-	private Integer pageSize;
-
 	private String regionId;
 
 	private List<Demand> demands;
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -51,22 +67,6 @@ public class DescribeDemandsResponse extends AcsResponse {
 
 	public void setTotalCount(Integer totalCount) {
 		this.totalCount = totalCount;
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
 	}
 
 	public String getRegionId() {
@@ -87,83 +87,43 @@ public class DescribeDemandsResponse extends AcsResponse {
 
 	public static class Demand {
 
-		private String zoneId;
-
-		private String demandTime;
-
-		private String instanceTypeFamily;
-
-		private String demandId;
-
-		private String demandName;
-
 		private String comment;
 
 		private String demandDescription;
 
+		private String demandId;
+
+		private String demandTime;
+
 		private String instanceType;
 
-		private String instanceChargeType;
+		private String demandName;
 
 		private Integer period;
 
-		private String periodUnit;
-
-		private String startTime;
-
-		private String endTime;
-
-		private String demandStatus;
-
-		private Integer totalAmount;
+		private String instanceChargeType;
 
 		private Integer availableAmount;
 
+		private String endTime;
+
+		private String startTime;
+
+		private String periodUnit;
+
+		private String zoneId;
+
 		private Integer usedAmount;
+
+		private Integer totalAmount;
 
 		private Integer deliveringAmount;
 
+		private String instanceTypeFamily;
+
+		private String demandStatus;
+
 		private List<SupplyInfo> supplyInfos;
-
-		public String getZoneId() {
-			return this.zoneId;
-		}
-
-		public void setZoneId(String zoneId) {
-			this.zoneId = zoneId;
-		}
-
-		public String getDemandTime() {
-			return this.demandTime;
-		}
-
-		public void setDemandTime(String demandTime) {
-			this.demandTime = demandTime;
-		}
-
-		public String getInstanceTypeFamily() {
-			return this.instanceTypeFamily;
-		}
-
-		public void setInstanceTypeFamily(String instanceTypeFamily) {
-			this.instanceTypeFamily = instanceTypeFamily;
-		}
-
-		public String getDemandId() {
-			return this.demandId;
-		}
-
-		public void setDemandId(String demandId) {
-			this.demandId = demandId;
-		}
-
-		public String getDemandName() {
-			return this.demandName;
-		}
-
-		public void setDemandName(String demandName) {
-			this.demandName = demandName;
-		}
 
 		public String getComment() {
 			return this.comment;
@@ -181,6 +141,22 @@ public class DescribeDemandsResponse extends AcsResponse {
 			this.demandDescription = demandDescription;
 		}
 
+		public String getDemandId() {
+			return this.demandId;
+		}
+
+		public void setDemandId(String demandId) {
+			this.demandId = demandId;
+		}
+
+		public String getDemandTime() {
+			return this.demandTime;
+		}
+
+		public void setDemandTime(String demandTime) {
+			this.demandTime = demandTime;
+		}
+
 		public String getInstanceType() {
 			return this.instanceType;
 		}
@@ -189,12 +165,12 @@ public class DescribeDemandsResponse extends AcsResponse {
 			this.instanceType = instanceType;
 		}
 
-		public String getInstanceChargeType() {
-			return this.instanceChargeType;
+		public String getDemandName() {
+			return this.demandName;
 		}
 
-		public void setInstanceChargeType(String instanceChargeType) {
-			this.instanceChargeType = instanceChargeType;
+		public void setDemandName(String demandName) {
+			this.demandName = demandName;
 		}
 
 		public Integer getPeriod() {
@@ -205,44 +181,12 @@ public class DescribeDemandsResponse extends AcsResponse {
 			this.period = period;
 		}
 
-		public String getPeriodUnit() {
-			return this.periodUnit;
+		public String getInstanceChargeType() {
+			return this.instanceChargeType;
 		}
 
-		public void setPeriodUnit(String periodUnit) {
-			this.periodUnit = periodUnit;
-		}
-
-		public String getStartTime() {
-			return this.startTime;
-		}
-
-		public void setStartTime(String startTime) {
-			this.startTime = startTime;
-		}
-
-		public String getEndTime() {
-			return this.endTime;
-		}
-
-		public void setEndTime(String endTime) {
-			this.endTime = endTime;
-		}
-
-		public String getDemandStatus() {
-			return this.demandStatus;
-		}
-
-		public void setDemandStatus(String demandStatus) {
-			this.demandStatus = demandStatus;
-		}
-
-		public Integer getTotalAmount() {
-			return this.totalAmount;
-		}
-
-		public void setTotalAmount(Integer totalAmount) {
-			this.totalAmount = totalAmount;
+		public void setInstanceChargeType(String instanceChargeType) {
+			this.instanceChargeType = instanceChargeType;
 		}
 
 		public Integer getAvailableAmount() {
@@ -253,6 +197,38 @@ public class DescribeDemandsResponse extends AcsResponse {
 			this.availableAmount = availableAmount;
 		}
 
+		public String getEndTime() {
+			return this.endTime;
+		}
+
+		public void setEndTime(String endTime) {
+			this.endTime = endTime;
+		}
+
+		public String getStartTime() {
+			return this.startTime;
+		}
+
+		public void setStartTime(String startTime) {
+			this.startTime = startTime;
+		}
+
+		public String getPeriodUnit() {
+			return this.periodUnit;
+		}
+
+		public void setPeriodUnit(String periodUnit) {
+			this.periodUnit = periodUnit;
+		}
+
+		public String getZoneId() {
+			return this.zoneId;
+		}
+
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
+		}
+
 		public Integer getUsedAmount() {
 			return this.usedAmount;
 		}
@@ -261,12 +237,36 @@ public class DescribeDemandsResponse extends AcsResponse {
 			this.usedAmount = usedAmount;
 		}
 
+		public Integer getTotalAmount() {
+			return this.totalAmount;
+		}
+
+		public void setTotalAmount(Integer totalAmount) {
+			this.totalAmount = totalAmount;
+		}
+
 		public Integer getDeliveringAmount() {
 			return this.deliveringAmount;
 		}
 
 		public void setDeliveringAmount(Integer deliveringAmount) {
 			this.deliveringAmount = deliveringAmount;
+		}
+
+		public String getInstanceTypeFamily() {
+			return this.instanceTypeFamily;
+		}
+
+		public void setInstanceTypeFamily(String instanceTypeFamily) {
+			this.instanceTypeFamily = instanceTypeFamily;
+		}
+
+		public String getDemandStatus() {
+			return this.demandStatus;
+		}
+
+		public void setDemandStatus(String demandStatus) {
+			this.demandStatus = demandStatus;
 		}
 
 		public List<SupplyInfo> getSupplyInfos() {

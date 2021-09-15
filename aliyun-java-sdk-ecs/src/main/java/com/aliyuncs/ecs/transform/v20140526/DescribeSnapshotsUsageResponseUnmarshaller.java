@@ -23,8 +23,8 @@ public class DescribeSnapshotsUsageResponseUnmarshaller {
 	public static DescribeSnapshotsUsageResponse unmarshall(DescribeSnapshotsUsageResponse describeSnapshotsUsageResponse, UnmarshallerContext _ctx) {
 		
 		describeSnapshotsUsageResponse.setRequestId(_ctx.stringValue("DescribeSnapshotsUsageResponse.RequestId"));
-		describeSnapshotsUsageResponse.setSnapshotCount(_ctx.integerValue("DescribeSnapshotsUsageResponse.SnapshotCount"));
 		describeSnapshotsUsageResponse.setSnapshotSize(_ctx.longValue("DescribeSnapshotsUsageResponse.SnapshotSize"));
+		describeSnapshotsUsageResponse.setSnapshotCount(_ctx.integerValue("DescribeSnapshotsUsageResponse.SnapshotCount"));
 	 
 	 	return describeSnapshotsUsageResponse;
 	}

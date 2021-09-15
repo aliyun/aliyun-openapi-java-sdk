@@ -27,23 +27,23 @@ public class DescribeNatGatewaysResponseUnmarshaller {
 	public static DescribeNatGatewaysResponse unmarshall(DescribeNatGatewaysResponse describeNatGatewaysResponse, UnmarshallerContext _ctx) {
 		
 		describeNatGatewaysResponse.setRequestId(_ctx.stringValue("DescribeNatGatewaysResponse.RequestId"));
-		describeNatGatewaysResponse.setTotalCount(_ctx.integerValue("DescribeNatGatewaysResponse.TotalCount"));
-		describeNatGatewaysResponse.setPageNumber(_ctx.integerValue("DescribeNatGatewaysResponse.PageNumber"));
 		describeNatGatewaysResponse.setPageSize(_ctx.integerValue("DescribeNatGatewaysResponse.PageSize"));
+		describeNatGatewaysResponse.setPageNumber(_ctx.integerValue("DescribeNatGatewaysResponse.PageNumber"));
+		describeNatGatewaysResponse.setTotalCount(_ctx.integerValue("DescribeNatGatewaysResponse.TotalCount"));
 
 		List<NatGateway> natGateways = new ArrayList<NatGateway>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeNatGatewaysResponse.NatGateways.Length"); i++) {
 			NatGateway natGateway = new NatGateway();
-			natGateway.setNatGatewayId(_ctx.stringValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].NatGatewayId"));
-			natGateway.setRegionId(_ctx.stringValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].RegionId"));
-			natGateway.setName(_ctx.stringValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].Name"));
-			natGateway.setDescription(_ctx.stringValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].Description"));
+			natGateway.setStatus(_ctx.stringValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].Status"));
+			natGateway.setCreationTime(_ctx.stringValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].CreationTime"));
 			natGateway.setVpcId(_ctx.stringValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].VpcId"));
 			natGateway.setSpec(_ctx.stringValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].Spec"));
-			natGateway.setInstanceChargeType(_ctx.stringValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].InstanceChargeType"));
+			natGateway.setDescription(_ctx.stringValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].Description"));
+			natGateway.setNatGatewayId(_ctx.stringValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].NatGatewayId"));
 			natGateway.setBusinessStatus(_ctx.stringValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].BusinessStatus"));
-			natGateway.setCreationTime(_ctx.stringValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].CreationTime"));
-			natGateway.setStatus(_ctx.stringValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].Status"));
+			natGateway.setName(_ctx.stringValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].Name"));
+			natGateway.setInstanceChargeType(_ctx.stringValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].InstanceChargeType"));
+			natGateway.setRegionId(_ctx.stringValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].RegionId"));
 
 			List<String> forwardTableIds = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].ForwardTableIds.Length"); j++) {

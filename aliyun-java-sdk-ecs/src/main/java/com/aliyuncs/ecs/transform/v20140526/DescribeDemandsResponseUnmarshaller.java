@@ -28,32 +28,32 @@ public class DescribeDemandsResponseUnmarshaller {
 	public static DescribeDemandsResponse unmarshall(DescribeDemandsResponse describeDemandsResponse, UnmarshallerContext _ctx) {
 		
 		describeDemandsResponse.setRequestId(_ctx.stringValue("DescribeDemandsResponse.RequestId"));
-		describeDemandsResponse.setTotalCount(_ctx.integerValue("DescribeDemandsResponse.TotalCount"));
-		describeDemandsResponse.setPageNumber(_ctx.integerValue("DescribeDemandsResponse.PageNumber"));
 		describeDemandsResponse.setPageSize(_ctx.integerValue("DescribeDemandsResponse.PageSize"));
+		describeDemandsResponse.setPageNumber(_ctx.integerValue("DescribeDemandsResponse.PageNumber"));
+		describeDemandsResponse.setTotalCount(_ctx.integerValue("DescribeDemandsResponse.TotalCount"));
 		describeDemandsResponse.setRegionId(_ctx.stringValue("DescribeDemandsResponse.RegionId"));
 
 		List<Demand> demands = new ArrayList<Demand>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDemandsResponse.Demands.Length"); i++) {
 			Demand demand = new Demand();
-			demand.setZoneId(_ctx.stringValue("DescribeDemandsResponse.Demands["+ i +"].ZoneId"));
-			demand.setDemandTime(_ctx.stringValue("DescribeDemandsResponse.Demands["+ i +"].DemandTime"));
-			demand.setInstanceTypeFamily(_ctx.stringValue("DescribeDemandsResponse.Demands["+ i +"].InstanceTypeFamily"));
-			demand.setDemandId(_ctx.stringValue("DescribeDemandsResponse.Demands["+ i +"].DemandId"));
-			demand.setDemandName(_ctx.stringValue("DescribeDemandsResponse.Demands["+ i +"].DemandName"));
 			demand.setComment(_ctx.stringValue("DescribeDemandsResponse.Demands["+ i +"].Comment"));
 			demand.setDemandDescription(_ctx.stringValue("DescribeDemandsResponse.Demands["+ i +"].DemandDescription"));
+			demand.setDemandId(_ctx.stringValue("DescribeDemandsResponse.Demands["+ i +"].DemandId"));
+			demand.setDemandTime(_ctx.stringValue("DescribeDemandsResponse.Demands["+ i +"].DemandTime"));
 			demand.setInstanceType(_ctx.stringValue("DescribeDemandsResponse.Demands["+ i +"].InstanceType"));
-			demand.setInstanceChargeType(_ctx.stringValue("DescribeDemandsResponse.Demands["+ i +"].InstanceChargeType"));
+			demand.setDemandName(_ctx.stringValue("DescribeDemandsResponse.Demands["+ i +"].DemandName"));
 			demand.setPeriod(_ctx.integerValue("DescribeDemandsResponse.Demands["+ i +"].Period"));
-			demand.setPeriodUnit(_ctx.stringValue("DescribeDemandsResponse.Demands["+ i +"].PeriodUnit"));
-			demand.setStartTime(_ctx.stringValue("DescribeDemandsResponse.Demands["+ i +"].StartTime"));
-			demand.setEndTime(_ctx.stringValue("DescribeDemandsResponse.Demands["+ i +"].EndTime"));
-			demand.setDemandStatus(_ctx.stringValue("DescribeDemandsResponse.Demands["+ i +"].DemandStatus"));
-			demand.setTotalAmount(_ctx.integerValue("DescribeDemandsResponse.Demands["+ i +"].TotalAmount"));
+			demand.setInstanceChargeType(_ctx.stringValue("DescribeDemandsResponse.Demands["+ i +"].InstanceChargeType"));
 			demand.setAvailableAmount(_ctx.integerValue("DescribeDemandsResponse.Demands["+ i +"].AvailableAmount"));
+			demand.setEndTime(_ctx.stringValue("DescribeDemandsResponse.Demands["+ i +"].EndTime"));
+			demand.setStartTime(_ctx.stringValue("DescribeDemandsResponse.Demands["+ i +"].StartTime"));
+			demand.setPeriodUnit(_ctx.stringValue("DescribeDemandsResponse.Demands["+ i +"].PeriodUnit"));
+			demand.setZoneId(_ctx.stringValue("DescribeDemandsResponse.Demands["+ i +"].ZoneId"));
 			demand.setUsedAmount(_ctx.integerValue("DescribeDemandsResponse.Demands["+ i +"].UsedAmount"));
+			demand.setTotalAmount(_ctx.integerValue("DescribeDemandsResponse.Demands["+ i +"].TotalAmount"));
 			demand.setDeliveringAmount(_ctx.integerValue("DescribeDemandsResponse.Demands["+ i +"].DeliveringAmount"));
+			demand.setInstanceTypeFamily(_ctx.stringValue("DescribeDemandsResponse.Demands["+ i +"].InstanceTypeFamily"));
+			demand.setDemandStatus(_ctx.stringValue("DescribeDemandsResponse.Demands["+ i +"].DemandStatus"));
 
 			List<SupplyInfo> supplyInfos = new ArrayList<SupplyInfo>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDemandsResponse.Demands["+ i +"].SupplyInfos.Length"); j++) {

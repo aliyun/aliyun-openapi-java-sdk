@@ -34,26 +34,26 @@ public class DescribeVirtualBorderRoutersResponseUnmarshaller {
 		List<VirtualBorderRouterType> virtualBorderRouterSet = new ArrayList<VirtualBorderRouterType>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeVirtualBorderRoutersResponse.VirtualBorderRouterSet.Length"); i++) {
 			VirtualBorderRouterType virtualBorderRouterType = new VirtualBorderRouterType();
-			virtualBorderRouterType.setVbrId(_ctx.stringValue("DescribeVirtualBorderRoutersResponse.VirtualBorderRouterSet["+ i +"].VbrId"));
-			virtualBorderRouterType.setCreationTime(_ctx.stringValue("DescribeVirtualBorderRoutersResponse.VirtualBorderRouterSet["+ i +"].CreationTime"));
-			virtualBorderRouterType.setActivationTime(_ctx.stringValue("DescribeVirtualBorderRoutersResponse.VirtualBorderRouterSet["+ i +"].ActivationTime"));
-			virtualBorderRouterType.setTerminationTime(_ctx.stringValue("DescribeVirtualBorderRoutersResponse.VirtualBorderRouterSet["+ i +"].TerminationTime"));
-			virtualBorderRouterType.setRecoveryTime(_ctx.stringValue("DescribeVirtualBorderRoutersResponse.VirtualBorderRouterSet["+ i +"].RecoveryTime"));
-			virtualBorderRouterType.setStatus(_ctx.stringValue("DescribeVirtualBorderRoutersResponse.VirtualBorderRouterSet["+ i +"].Status"));
-			virtualBorderRouterType.setVlanId(_ctx.integerValue("DescribeVirtualBorderRoutersResponse.VirtualBorderRouterSet["+ i +"].VlanId"));
-			virtualBorderRouterType.setCircuitCode(_ctx.stringValue("DescribeVirtualBorderRoutersResponse.VirtualBorderRouterSet["+ i +"].CircuitCode"));
-			virtualBorderRouterType.setRouteTableId(_ctx.stringValue("DescribeVirtualBorderRoutersResponse.VirtualBorderRouterSet["+ i +"].RouteTableId"));
 			virtualBorderRouterType.setVlanInterfaceId(_ctx.stringValue("DescribeVirtualBorderRoutersResponse.VirtualBorderRouterSet["+ i +"].VlanInterfaceId"));
-			virtualBorderRouterType.setLocalGatewayIp(_ctx.stringValue("DescribeVirtualBorderRoutersResponse.VirtualBorderRouterSet["+ i +"].LocalGatewayIp"));
-			virtualBorderRouterType.setPeerGatewayIp(_ctx.stringValue("DescribeVirtualBorderRoutersResponse.VirtualBorderRouterSet["+ i +"].PeerGatewayIp"));
-			virtualBorderRouterType.setPeeringSubnetMask(_ctx.stringValue("DescribeVirtualBorderRoutersResponse.VirtualBorderRouterSet["+ i +"].PeeringSubnetMask"));
-			virtualBorderRouterType.setPhysicalConnectionId(_ctx.stringValue("DescribeVirtualBorderRoutersResponse.VirtualBorderRouterSet["+ i +"].PhysicalConnectionId"));
-			virtualBorderRouterType.setPhysicalConnectionStatus(_ctx.stringValue("DescribeVirtualBorderRoutersResponse.VirtualBorderRouterSet["+ i +"].PhysicalConnectionStatus"));
-			virtualBorderRouterType.setPhysicalConnectionBusinessStatus(_ctx.stringValue("DescribeVirtualBorderRoutersResponse.VirtualBorderRouterSet["+ i +"].PhysicalConnectionBusinessStatus"));
+			virtualBorderRouterType.setStatus(_ctx.stringValue("DescribeVirtualBorderRoutersResponse.VirtualBorderRouterSet["+ i +"].Status"));
+			virtualBorderRouterType.setCreationTime(_ctx.stringValue("DescribeVirtualBorderRoutersResponse.VirtualBorderRouterSet["+ i +"].CreationTime"));
+			virtualBorderRouterType.setCircuitCode(_ctx.stringValue("DescribeVirtualBorderRoutersResponse.VirtualBorderRouterSet["+ i +"].CircuitCode"));
 			virtualBorderRouterType.setPhysicalConnectionOwnerUid(_ctx.stringValue("DescribeVirtualBorderRoutersResponse.VirtualBorderRouterSet["+ i +"].PhysicalConnectionOwnerUid"));
-			virtualBorderRouterType.setAccessPointId(_ctx.stringValue("DescribeVirtualBorderRoutersResponse.VirtualBorderRouterSet["+ i +"].AccessPointId"));
-			virtualBorderRouterType.setName(_ctx.stringValue("DescribeVirtualBorderRoutersResponse.VirtualBorderRouterSet["+ i +"].Name"));
+			virtualBorderRouterType.setLocalGatewayIp(_ctx.stringValue("DescribeVirtualBorderRoutersResponse.VirtualBorderRouterSet["+ i +"].LocalGatewayIp"));
+			virtualBorderRouterType.setActivationTime(_ctx.stringValue("DescribeVirtualBorderRoutersResponse.VirtualBorderRouterSet["+ i +"].ActivationTime"));
+			virtualBorderRouterType.setPhysicalConnectionBusinessStatus(_ctx.stringValue("DescribeVirtualBorderRoutersResponse.VirtualBorderRouterSet["+ i +"].PhysicalConnectionBusinessStatus"));
+			virtualBorderRouterType.setPeeringSubnetMask(_ctx.stringValue("DescribeVirtualBorderRoutersResponse.VirtualBorderRouterSet["+ i +"].PeeringSubnetMask"));
+			virtualBorderRouterType.setRouteTableId(_ctx.stringValue("DescribeVirtualBorderRoutersResponse.VirtualBorderRouterSet["+ i +"].RouteTableId"));
 			virtualBorderRouterType.setDescription(_ctx.stringValue("DescribeVirtualBorderRoutersResponse.VirtualBorderRouterSet["+ i +"].Description"));
+			virtualBorderRouterType.setPhysicalConnectionStatus(_ctx.stringValue("DescribeVirtualBorderRoutersResponse.VirtualBorderRouterSet["+ i +"].PhysicalConnectionStatus"));
+			virtualBorderRouterType.setRecoveryTime(_ctx.stringValue("DescribeVirtualBorderRoutersResponse.VirtualBorderRouterSet["+ i +"].RecoveryTime"));
+			virtualBorderRouterType.setTerminationTime(_ctx.stringValue("DescribeVirtualBorderRoutersResponse.VirtualBorderRouterSet["+ i +"].TerminationTime"));
+			virtualBorderRouterType.setPeerGatewayIp(_ctx.stringValue("DescribeVirtualBorderRoutersResponse.VirtualBorderRouterSet["+ i +"].PeerGatewayIp"));
+			virtualBorderRouterType.setName(_ctx.stringValue("DescribeVirtualBorderRoutersResponse.VirtualBorderRouterSet["+ i +"].Name"));
+			virtualBorderRouterType.setAccessPointId(_ctx.stringValue("DescribeVirtualBorderRoutersResponse.VirtualBorderRouterSet["+ i +"].AccessPointId"));
+			virtualBorderRouterType.setVbrId(_ctx.stringValue("DescribeVirtualBorderRoutersResponse.VirtualBorderRouterSet["+ i +"].VbrId"));
+			virtualBorderRouterType.setPhysicalConnectionId(_ctx.stringValue("DescribeVirtualBorderRoutersResponse.VirtualBorderRouterSet["+ i +"].PhysicalConnectionId"));
+			virtualBorderRouterType.setVlanId(_ctx.integerValue("DescribeVirtualBorderRoutersResponse.VirtualBorderRouterSet["+ i +"].VlanId"));
 
 			virtualBorderRouterSet.add(virtualBorderRouterType);
 		}

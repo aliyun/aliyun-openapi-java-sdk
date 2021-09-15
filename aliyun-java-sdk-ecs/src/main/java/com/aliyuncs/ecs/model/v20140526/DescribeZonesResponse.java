@@ -49,21 +49,23 @@ public class DescribeZonesResponse extends AcsResponse {
 
 		private String zoneId;
 
+		private String zoneType;
+
 		private String localName;
 
 		private List<ResourcesInfo> availableResources;
 
 		private List<String> availableResourceCreation;
 
-		private List<String> availableDiskCategories;
+		private List<String> dedicatedHostGenerations;
 
 		private List<String> availableInstanceTypes;
 
-		private List<String> availableVolumeCategories;
+		private List<String> availableDiskCategories;
 
 		private List<String> availableDedicatedHostTypes;
 
-		private List<String> dedicatedHostGenerations;
+		private List<String> availableVolumeCategories;
 
 		public String getZoneId() {
 			return this.zoneId;
@@ -71,6 +73,14 @@ public class DescribeZonesResponse extends AcsResponse {
 
 		public void setZoneId(String zoneId) {
 			this.zoneId = zoneId;
+		}
+
+		public String getZoneType() {
+			return this.zoneType;
+		}
+
+		public void setZoneType(String zoneType) {
+			this.zoneType = zoneType;
 		}
 
 		public String getLocalName() {
@@ -97,12 +107,12 @@ public class DescribeZonesResponse extends AcsResponse {
 			this.availableResourceCreation = availableResourceCreation;
 		}
 
-		public List<String> getAvailableDiskCategories() {
-			return this.availableDiskCategories;
+		public List<String> getDedicatedHostGenerations() {
+			return this.dedicatedHostGenerations;
 		}
 
-		public void setAvailableDiskCategories(List<String> availableDiskCategories) {
-			this.availableDiskCategories = availableDiskCategories;
+		public void setDedicatedHostGenerations(List<String> dedicatedHostGenerations) {
+			this.dedicatedHostGenerations = dedicatedHostGenerations;
 		}
 
 		public List<String> getAvailableInstanceTypes() {
@@ -113,12 +123,12 @@ public class DescribeZonesResponse extends AcsResponse {
 			this.availableInstanceTypes = availableInstanceTypes;
 		}
 
-		public List<String> getAvailableVolumeCategories() {
-			return this.availableVolumeCategories;
+		public List<String> getAvailableDiskCategories() {
+			return this.availableDiskCategories;
 		}
 
-		public void setAvailableVolumeCategories(List<String> availableVolumeCategories) {
-			this.availableVolumeCategories = availableVolumeCategories;
+		public void setAvailableDiskCategories(List<String> availableDiskCategories) {
+			this.availableDiskCategories = availableDiskCategories;
 		}
 
 		public List<String> getAvailableDedicatedHostTypes() {
@@ -129,12 +139,12 @@ public class DescribeZonesResponse extends AcsResponse {
 			this.availableDedicatedHostTypes = availableDedicatedHostTypes;
 		}
 
-		public List<String> getDedicatedHostGenerations() {
-			return this.dedicatedHostGenerations;
+		public List<String> getAvailableVolumeCategories() {
+			return this.availableVolumeCategories;
 		}
 
-		public void setDedicatedHostGenerations(List<String> dedicatedHostGenerations) {
-			this.dedicatedHostGenerations = dedicatedHostGenerations;
+		public void setAvailableVolumeCategories(List<String> availableVolumeCategories) {
+			this.availableVolumeCategories = availableVolumeCategories;
 		}
 
 		public static class ResourcesInfo {
@@ -143,15 +153,15 @@ public class DescribeZonesResponse extends AcsResponse {
 
 			private List<String> systemDiskCategories;
 
-			private List<String> dataDiskCategories;
+			private List<String> instanceGenerations;
 
-			private List<String> networkTypes;
+			private List<String> dataDiskCategories;
 
 			private List<String> instanceTypes;
 
 			private List<String> instanceTypeFamilies;
 
-			private List<String> instanceGenerations;
+			private List<String> networkTypes;
 
 			public Boolean getIoOptimized() {
 				return this.ioOptimized;
@@ -169,20 +179,20 @@ public class DescribeZonesResponse extends AcsResponse {
 				this.systemDiskCategories = systemDiskCategories;
 			}
 
+			public List<String> getInstanceGenerations() {
+				return this.instanceGenerations;
+			}
+
+			public void setInstanceGenerations(List<String> instanceGenerations) {
+				this.instanceGenerations = instanceGenerations;
+			}
+
 			public List<String> getDataDiskCategories() {
 				return this.dataDiskCategories;
 			}
 
 			public void setDataDiskCategories(List<String> dataDiskCategories) {
 				this.dataDiskCategories = dataDiskCategories;
-			}
-
-			public List<String> getNetworkTypes() {
-				return this.networkTypes;
-			}
-
-			public void setNetworkTypes(List<String> networkTypes) {
-				this.networkTypes = networkTypes;
 			}
 
 			public List<String> getInstanceTypes() {
@@ -201,12 +211,12 @@ public class DescribeZonesResponse extends AcsResponse {
 				this.instanceTypeFamilies = instanceTypeFamilies;
 			}
 
-			public List<String> getInstanceGenerations() {
-				return this.instanceGenerations;
+			public List<String> getNetworkTypes() {
+				return this.networkTypes;
 			}
 
-			public void setInstanceGenerations(List<String> instanceGenerations) {
-				this.instanceGenerations = instanceGenerations;
+			public void setNetworkTypes(List<String> networkTypes) {
+				this.networkTypes = networkTypes;
 			}
 		}
 	}

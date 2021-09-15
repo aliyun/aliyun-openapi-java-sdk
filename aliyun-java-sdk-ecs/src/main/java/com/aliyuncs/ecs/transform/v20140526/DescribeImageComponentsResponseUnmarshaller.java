@@ -28,27 +28,28 @@ public class DescribeImageComponentsResponseUnmarshaller {
 	public static DescribeImageComponentsResponse unmarshall(DescribeImageComponentsResponse describeImageComponentsResponse, UnmarshallerContext _ctx) {
 		
 		describeImageComponentsResponse.setRequestId(_ctx.stringValue("DescribeImageComponentsResponse.RequestId"));
-		describeImageComponentsResponse.setTotalCount(_ctx.integerValue("DescribeImageComponentsResponse.TotalCount"));
 		describeImageComponentsResponse.setNextToken(_ctx.stringValue("DescribeImageComponentsResponse.NextToken"));
+		describeImageComponentsResponse.setTotalCount(_ctx.integerValue("DescribeImageComponentsResponse.TotalCount"));
 		describeImageComponentsResponse.setMaxResults(_ctx.integerValue("DescribeImageComponentsResponse.MaxResults"));
 
 		List<ImageComponentSet> imageComponent = new ArrayList<ImageComponentSet>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeImageComponentsResponse.ImageComponent.Length"); i++) {
 			ImageComponentSet imageComponentSet = new ImageComponentSet();
 			imageComponentSet.setCreationTime(_ctx.stringValue("DescribeImageComponentsResponse.ImageComponent["+ i +"].CreationTime"));
-			imageComponentSet.setImageComponentId(_ctx.stringValue("DescribeImageComponentsResponse.ImageComponent["+ i +"].ImageComponentId"));
-			imageComponentSet.setName(_ctx.stringValue("DescribeImageComponentsResponse.ImageComponent["+ i +"].Name"));
 			imageComponentSet.setDescription(_ctx.stringValue("DescribeImageComponentsResponse.ImageComponent["+ i +"].Description"));
 			imageComponentSet.setSystemType(_ctx.stringValue("DescribeImageComponentsResponse.ImageComponent["+ i +"].SystemType"));
+			imageComponentSet.setImageComponentId(_ctx.stringValue("DescribeImageComponentsResponse.ImageComponent["+ i +"].ImageComponentId"));
 			imageComponentSet.setComponentType(_ctx.stringValue("DescribeImageComponentsResponse.ImageComponent["+ i +"].ComponentType"));
-			imageComponentSet.setContent(_ctx.stringValue("DescribeImageComponentsResponse.ImageComponent["+ i +"].Content"));
 			imageComponentSet.setResourceGroupId(_ctx.stringValue("DescribeImageComponentsResponse.ImageComponent["+ i +"].ResourceGroupId"));
+			imageComponentSet.setName(_ctx.stringValue("DescribeImageComponentsResponse.ImageComponent["+ i +"].Name"));
+			imageComponentSet.setContent(_ctx.stringValue("DescribeImageComponentsResponse.ImageComponent["+ i +"].Content"));
+			imageComponentSet.setOwner(_ctx.stringValue("DescribeImageComponentsResponse.ImageComponent["+ i +"].Owner"));
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeImageComponentsResponse.ImageComponent["+ i +"].Tags.Length"); j++) {
 				Tag tag = new Tag();
-				tag.setTagKey(_ctx.stringValue("DescribeImageComponentsResponse.ImageComponent["+ i +"].Tags["+ j +"].TagKey"));
 				tag.setTagValue(_ctx.stringValue("DescribeImageComponentsResponse.ImageComponent["+ i +"].Tags["+ j +"].TagValue"));
+				tag.setTagKey(_ctx.stringValue("DescribeImageComponentsResponse.ImageComponent["+ i +"].Tags["+ j +"].TagKey"));
 
 				tags.add(tag);
 			}

@@ -25,40 +25,26 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeSecurityGroupsResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String regionId;
-
-	private Integer totalCount;
+	private Integer pageSize;
 
 	private Integer pageNumber;
 
-	private Integer pageSize;
+	private String requestId;
+
+	private Integer totalCount;
+
+	private String regionId;
+
+	private String nextToken;
 
 	private List<SecurityGroup> securityGroups;
 
-	public String getRequestId() {
-		return this.requestId;
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getRegionId() {
-		return this.regionId;
-	}
-
-	public void setRegionId(String regionId) {
-		this.regionId = regionId;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
 	}
 
 	public Integer getPageNumber() {
@@ -69,12 +55,36 @@ public class DescribeSecurityGroupsResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
+
+	public String getRegionId() {
+		return this.regionId;
+	}
+
+	public void setRegionId(String regionId) {
+		this.regionId = regionId;
+	}
+
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
 	}
 
 	public List<SecurityGroup> getSecurityGroups() {
@@ -87,52 +97,36 @@ public class DescribeSecurityGroupsResponse extends AcsResponse {
 
 	public static class SecurityGroup {
 
-		private String securityGroupId;
-
-		private String description;
-
-		private String securityGroupName;
+		private String creationTime;
 
 		private String vpcId;
 
-		private String creationTime;
+		private Boolean serviceManaged;
+
+		private String description;
+
+		private String securityGroupId;
+
+		private String resourceGroupId;
+
+		private String securityGroupName;
+
+		private Integer ecsCount;
+
+		private Long serviceID;
 
 		private String securityGroupType;
 
 		private Integer availableInstanceAmount;
 
-		private Integer ecsCount;
-
-		private String resourceGroupId;
-
-		private Long serviceID;
-
-		private Boolean serviceManaged;
-
 		private List<Tag> tags;
 
-		public String getSecurityGroupId() {
-			return this.securityGroupId;
+		public String getCreationTime() {
+			return this.creationTime;
 		}
 
-		public void setSecurityGroupId(String securityGroupId) {
-			this.securityGroupId = securityGroupId;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
-		public String getSecurityGroupName() {
-			return this.securityGroupName;
-		}
-
-		public void setSecurityGroupName(String securityGroupName) {
-			this.securityGroupName = securityGroupName;
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
 		}
 
 		public String getVpcId() {
@@ -143,12 +137,60 @@ public class DescribeSecurityGroupsResponse extends AcsResponse {
 			this.vpcId = vpcId;
 		}
 
-		public String getCreationTime() {
-			return this.creationTime;
+		public Boolean getServiceManaged() {
+			return this.serviceManaged;
 		}
 
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
+		public void setServiceManaged(Boolean serviceManaged) {
+			this.serviceManaged = serviceManaged;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getSecurityGroupId() {
+			return this.securityGroupId;
+		}
+
+		public void setSecurityGroupId(String securityGroupId) {
+			this.securityGroupId = securityGroupId;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
+		public String getSecurityGroupName() {
+			return this.securityGroupName;
+		}
+
+		public void setSecurityGroupName(String securityGroupName) {
+			this.securityGroupName = securityGroupName;
+		}
+
+		public Integer getEcsCount() {
+			return this.ecsCount;
+		}
+
+		public void setEcsCount(Integer ecsCount) {
+			this.ecsCount = ecsCount;
+		}
+
+		public Long getServiceID() {
+			return this.serviceID;
+		}
+
+		public void setServiceID(Long serviceID) {
+			this.serviceID = serviceID;
 		}
 
 		public String getSecurityGroupType() {
@@ -167,38 +209,6 @@ public class DescribeSecurityGroupsResponse extends AcsResponse {
 			this.availableInstanceAmount = availableInstanceAmount;
 		}
 
-		public Integer getEcsCount() {
-			return this.ecsCount;
-		}
-
-		public void setEcsCount(Integer ecsCount) {
-			this.ecsCount = ecsCount;
-		}
-
-		public String getResourceGroupId() {
-			return this.resourceGroupId;
-		}
-
-		public void setResourceGroupId(String resourceGroupId) {
-			this.resourceGroupId = resourceGroupId;
-		}
-
-		public Long getServiceID() {
-			return this.serviceID;
-		}
-
-		public void setServiceID(Long serviceID) {
-			this.serviceID = serviceID;
-		}
-
-		public Boolean getServiceManaged() {
-			return this.serviceManaged;
-		}
-
-		public void setServiceManaged(Boolean serviceManaged) {
-			this.serviceManaged = serviceManaged;
-		}
-
 		public List<Tag> getTags() {
 			return this.tags;
 		}
@@ -209,17 +219,9 @@ public class DescribeSecurityGroupsResponse extends AcsResponse {
 
 		public static class Tag {
 
-			private String tagKey;
-
 			private String tagValue;
 
-			public String getTagKey() {
-				return this.tagKey;
-			}
-
-			public void setTagKey(String tagKey) {
-				this.tagKey = tagKey;
-			}
+			private String tagKey;
 
 			public String getTagValue() {
 				return this.tagValue;
@@ -227,6 +229,14 @@ public class DescribeSecurityGroupsResponse extends AcsResponse {
 
 			public void setTagValue(String tagValue) {
 				this.tagValue = tagValue;
+			}
+
+			public String getTagKey() {
+				return this.tagKey;
+			}
+
+			public void setTagKey(String tagKey) {
+				this.tagKey = tagKey;
 			}
 		}
 	}

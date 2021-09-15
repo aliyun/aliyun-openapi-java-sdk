@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeReservedInstancesResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer pageSize;
 
-	private Integer totalCount;
+	private String requestId;
 
 	private Integer pageNumber;
 
-	private Integer pageSize;
+	private Integer totalCount;
 
 	private List<ReservedInstance> reservedInstances;
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class DescribeReservedInstancesResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
 	}
 
 	public Integer getPageNumber() {
@@ -59,12 +59,12 @@ public class DescribeReservedInstancesResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public Integer getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<ReservedInstance> getReservedInstances() {
@@ -77,121 +77,41 @@ public class DescribeReservedInstancesResponse extends AcsResponse {
 
 	public static class ReservedInstance {
 
-		private String reservedInstanceId;
-
-		private String regionId;
-
-		private String zoneId;
-
-		private String reservedInstanceName;
-
-		private String description;
-
-		private String instanceType;
-
-		private String scope;
-
-		private String offeringType;
-
-		private String platform;
-
-		private Integer instanceAmount;
-
 		private String status;
 
 		private String creationTime;
 
-		private String expiredTime;
+		private String reservedInstanceName;
+
+		private String reservedInstanceId;
+
+		private String instanceType;
+
+		private Integer instanceAmount;
+
+		private String regionId;
+
+		private String offeringType;
 
 		private String startTime;
 
-		private String resourceGroupId;
+		private String description;
 
 		private String allocationStatus;
+
+		private String expiredTime;
+
+		private String resourceGroupId;
+
+		private String zoneId;
+
+		private String platform;
+
+		private String scope;
 
 		private List<OperationLock> operationLocks;
 
 		private List<Tag> tags;
-
-		public String getReservedInstanceId() {
-			return this.reservedInstanceId;
-		}
-
-		public void setReservedInstanceId(String reservedInstanceId) {
-			this.reservedInstanceId = reservedInstanceId;
-		}
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		public String getZoneId() {
-			return this.zoneId;
-		}
-
-		public void setZoneId(String zoneId) {
-			this.zoneId = zoneId;
-		}
-
-		public String getReservedInstanceName() {
-			return this.reservedInstanceName;
-		}
-
-		public void setReservedInstanceName(String reservedInstanceName) {
-			this.reservedInstanceName = reservedInstanceName;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
-		public String getInstanceType() {
-			return this.instanceType;
-		}
-
-		public void setInstanceType(String instanceType) {
-			this.instanceType = instanceType;
-		}
-
-		public String getScope() {
-			return this.scope;
-		}
-
-		public void setScope(String scope) {
-			this.scope = scope;
-		}
-
-		public String getOfferingType() {
-			return this.offeringType;
-		}
-
-		public void setOfferingType(String offeringType) {
-			this.offeringType = offeringType;
-		}
-
-		public String getPlatform() {
-			return this.platform;
-		}
-
-		public void setPlatform(String platform) {
-			this.platform = platform;
-		}
-
-		public Integer getInstanceAmount() {
-			return this.instanceAmount;
-		}
-
-		public void setInstanceAmount(Integer instanceAmount) {
-			this.instanceAmount = instanceAmount;
-		}
 
 		public String getStatus() {
 			return this.status;
@@ -209,12 +129,52 @@ public class DescribeReservedInstancesResponse extends AcsResponse {
 			this.creationTime = creationTime;
 		}
 
-		public String getExpiredTime() {
-			return this.expiredTime;
+		public String getReservedInstanceName() {
+			return this.reservedInstanceName;
 		}
 
-		public void setExpiredTime(String expiredTime) {
-			this.expiredTime = expiredTime;
+		public void setReservedInstanceName(String reservedInstanceName) {
+			this.reservedInstanceName = reservedInstanceName;
+		}
+
+		public String getReservedInstanceId() {
+			return this.reservedInstanceId;
+		}
+
+		public void setReservedInstanceId(String reservedInstanceId) {
+			this.reservedInstanceId = reservedInstanceId;
+		}
+
+		public String getInstanceType() {
+			return this.instanceType;
+		}
+
+		public void setInstanceType(String instanceType) {
+			this.instanceType = instanceType;
+		}
+
+		public Integer getInstanceAmount() {
+			return this.instanceAmount;
+		}
+
+		public void setInstanceAmount(Integer instanceAmount) {
+			this.instanceAmount = instanceAmount;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		public String getOfferingType() {
+			return this.offeringType;
+		}
+
+		public void setOfferingType(String offeringType) {
+			this.offeringType = offeringType;
 		}
 
 		public String getStartTime() {
@@ -225,12 +185,12 @@ public class DescribeReservedInstancesResponse extends AcsResponse {
 			this.startTime = startTime;
 		}
 
-		public String getResourceGroupId() {
-			return this.resourceGroupId;
+		public String getDescription() {
+			return this.description;
 		}
 
-		public void setResourceGroupId(String resourceGroupId) {
-			this.resourceGroupId = resourceGroupId;
+		public void setDescription(String description) {
+			this.description = description;
 		}
 
 		public String getAllocationStatus() {
@@ -239,6 +199,46 @@ public class DescribeReservedInstancesResponse extends AcsResponse {
 
 		public void setAllocationStatus(String allocationStatus) {
 			this.allocationStatus = allocationStatus;
+		}
+
+		public String getExpiredTime() {
+			return this.expiredTime;
+		}
+
+		public void setExpiredTime(String expiredTime) {
+			this.expiredTime = expiredTime;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
+		public String getZoneId() {
+			return this.zoneId;
+		}
+
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
+		}
+
+		public String getPlatform() {
+			return this.platform;
+		}
+
+		public void setPlatform(String platform) {
+			this.platform = platform;
+		}
+
+		public String getScope() {
+			return this.scope;
+		}
+
+		public void setScope(String scope) {
+			this.scope = scope;
 		}
 
 		public List<OperationLock> getOperationLocks() {
@@ -272,17 +272,9 @@ public class DescribeReservedInstancesResponse extends AcsResponse {
 
 		public static class Tag {
 
-			private String tagKey;
-
 			private String tagValue;
 
-			public String getTagKey() {
-				return this.tagKey;
-			}
-
-			public void setTagKey(String tagKey) {
-				this.tagKey = tagKey;
-			}
+			private String tagKey;
 
 			public String getTagValue() {
 				return this.tagValue;
@@ -290,6 +282,14 @@ public class DescribeReservedInstancesResponse extends AcsResponse {
 
 			public void setTagValue(String tagValue) {
 				this.tagValue = tagValue;
+			}
+
+			public String getTagKey() {
+				return this.tagKey;
+			}
+
+			public void setTagKey(String tagKey) {
+				this.tagKey = tagKey;
 			}
 		}
 	}

@@ -47,17 +47,9 @@ public class DescribeSnapshotMonitorDataResponse extends AcsResponse {
 
 	public static class DataPoint {
 
-		private String timeStamp;
-
 		private Long size;
 
-		public String getTimeStamp() {
-			return this.timeStamp;
-		}
-
-		public void setTimeStamp(String timeStamp) {
-			this.timeStamp = timeStamp;
-		}
+		private String timeStamp;
 
 		public Long getSize() {
 			return this.size;
@@ -65,6 +57,14 @@ public class DescribeSnapshotMonitorDataResponse extends AcsResponse {
 
 		public void setSize(Long size) {
 			this.size = size;
+		}
+
+		public String getTimeStamp() {
+			return this.timeStamp;
+		}
+
+		public void setTimeStamp(String timeStamp) {
+			this.timeStamp = timeStamp;
 		}
 	}
 

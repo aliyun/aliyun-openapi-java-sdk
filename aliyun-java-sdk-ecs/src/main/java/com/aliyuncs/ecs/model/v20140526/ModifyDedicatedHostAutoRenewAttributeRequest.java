@@ -33,6 +33,8 @@ public class ModifyDedicatedHostAutoRenewAttributeRequest extends RpcAcsRequest<
 
 	private String renewalStatus;
 
+	private String autoRenewWithEcs;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -92,6 +94,17 @@ public class ModifyDedicatedHostAutoRenewAttributeRequest extends RpcAcsRequest<
 		this.renewalStatus = renewalStatus;
 		if(renewalStatus != null){
 			putQueryParameter("RenewalStatus", renewalStatus);
+		}
+	}
+
+	public String getAutoRenewWithEcs() {
+		return this.autoRenewWithEcs;
+	}
+
+	public void setAutoRenewWithEcs(String autoRenewWithEcs) {
+		this.autoRenewWithEcs = autoRenewWithEcs;
+		if(autoRenewWithEcs != null){
+			putQueryParameter("AutoRenewWithEcs", autoRenewWithEcs);
 		}
 	}
 

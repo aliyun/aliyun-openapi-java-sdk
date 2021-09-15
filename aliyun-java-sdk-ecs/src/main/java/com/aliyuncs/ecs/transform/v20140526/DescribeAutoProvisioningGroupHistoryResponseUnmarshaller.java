@@ -28,23 +28,23 @@ public class DescribeAutoProvisioningGroupHistoryResponseUnmarshaller {
 	public static DescribeAutoProvisioningGroupHistoryResponse unmarshall(DescribeAutoProvisioningGroupHistoryResponse describeAutoProvisioningGroupHistoryResponse, UnmarshallerContext _ctx) {
 		
 		describeAutoProvisioningGroupHistoryResponse.setRequestId(_ctx.stringValue("DescribeAutoProvisioningGroupHistoryResponse.RequestId"));
-		describeAutoProvisioningGroupHistoryResponse.setTotalCount(_ctx.integerValue("DescribeAutoProvisioningGroupHistoryResponse.TotalCount"));
-		describeAutoProvisioningGroupHistoryResponse.setPageNumber(_ctx.integerValue("DescribeAutoProvisioningGroupHistoryResponse.PageNumber"));
 		describeAutoProvisioningGroupHistoryResponse.setPageSize(_ctx.integerValue("DescribeAutoProvisioningGroupHistoryResponse.PageSize"));
+		describeAutoProvisioningGroupHistoryResponse.setPageNumber(_ctx.integerValue("DescribeAutoProvisioningGroupHistoryResponse.PageNumber"));
+		describeAutoProvisioningGroupHistoryResponse.setTotalCount(_ctx.integerValue("DescribeAutoProvisioningGroupHistoryResponse.TotalCount"));
 
 		List<AutoProvisioningGroupHistory> autoProvisioningGroupHistories = new ArrayList<AutoProvisioningGroupHistory>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeAutoProvisioningGroupHistoryResponse.AutoProvisioningGroupHistories.Length"); i++) {
 			AutoProvisioningGroupHistory autoProvisioningGroupHistory = new AutoProvisioningGroupHistory();
-			autoProvisioningGroupHistory.setTaskId(_ctx.stringValue("DescribeAutoProvisioningGroupHistoryResponse.AutoProvisioningGroupHistories["+ i +"].TaskId"));
 			autoProvisioningGroupHistory.setStatus(_ctx.stringValue("DescribeAutoProvisioningGroupHistoryResponse.AutoProvisioningGroupHistories["+ i +"].Status"));
-			autoProvisioningGroupHistory.setLastEventTime(_ctx.stringValue("DescribeAutoProvisioningGroupHistoryResponse.AutoProvisioningGroupHistories["+ i +"].LastEventTime"));
 			autoProvisioningGroupHistory.setStartTime(_ctx.stringValue("DescribeAutoProvisioningGroupHistoryResponse.AutoProvisioningGroupHistories["+ i +"].StartTime"));
+			autoProvisioningGroupHistory.setTaskId(_ctx.stringValue("DescribeAutoProvisioningGroupHistoryResponse.AutoProvisioningGroupHistories["+ i +"].TaskId"));
+			autoProvisioningGroupHistory.setLastEventTime(_ctx.stringValue("DescribeAutoProvisioningGroupHistoryResponse.AutoProvisioningGroupHistories["+ i +"].LastEventTime"));
 
 			List<ActivityDetail> activityDetails = new ArrayList<ActivityDetail>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeAutoProvisioningGroupHistoryResponse.AutoProvisioningGroupHistories["+ i +"].ActivityDetails.Length"); j++) {
 				ActivityDetail activityDetail = new ActivityDetail();
-				activityDetail.setDetail(_ctx.stringValue("DescribeAutoProvisioningGroupHistoryResponse.AutoProvisioningGroupHistories["+ i +"].ActivityDetails["+ j +"].Detail"));
 				activityDetail.setStatus(_ctx.stringValue("DescribeAutoProvisioningGroupHistoryResponse.AutoProvisioningGroupHistories["+ i +"].ActivityDetails["+ j +"].Status"));
+				activityDetail.setDetail(_ctx.stringValue("DescribeAutoProvisioningGroupHistoryResponse.AutoProvisioningGroupHistories["+ i +"].ActivityDetails["+ j +"].Detail"));
 
 				activityDetails.add(activityDetail);
 			}

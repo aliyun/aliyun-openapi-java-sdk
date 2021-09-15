@@ -28,9 +28,9 @@ public class DescribePrefixListsRequest extends RpcAcsRequest<DescribePrefixList
 
 	private Long resourceOwnerId;
 
-	private List<String> prefixListIds;
-
 	private String nextToken;
+
+	private List<String> prefixListIds;
 
 	private String addressFamily;
 
@@ -63,6 +63,17 @@ public class DescribePrefixListsRequest extends RpcAcsRequest<DescribePrefixList
 		}
 	}
 
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+		if(nextToken != null){
+			putQueryParameter("NextToken", nextToken);
+		}
+	}
+
 	public List<String> getPrefixListIds() {
 		return this.prefixListIds;
 	}
@@ -74,17 +85,6 @@ public class DescribePrefixListsRequest extends RpcAcsRequest<DescribePrefixList
 				putQueryParameter("PrefixListId." + (i + 1) , prefixListIds.get(i));
 			}
 		}	
-	}
-
-	public String getNextToken() {
-		return this.nextToken;
-	}
-
-	public void setNextToken(String nextToken) {
-		this.nextToken = nextToken;
-		if(nextToken != null){
-			putQueryParameter("NextToken", nextToken);
-		}
 	}
 
 	public String getAddressFamily() {

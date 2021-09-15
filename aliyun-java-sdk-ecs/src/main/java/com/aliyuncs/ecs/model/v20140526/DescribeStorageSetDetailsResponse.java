@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeStorageSetDetailsResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer pageSize;
 
-	private Integer totalCount;
+	private String requestId;
 
 	private Integer pageNumber;
 
-	private Integer pageSize;
+	private Integer totalCount;
 
 	private List<Disk> disks;
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class DescribeStorageSetDetailsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
 	}
 
 	public Integer getPageNumber() {
@@ -59,12 +59,12 @@ public class DescribeStorageSetDetailsResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public Integer getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<Disk> getDisks() {
@@ -77,28 +77,28 @@ public class DescribeStorageSetDetailsResponse extends AcsResponse {
 
 	public static class Disk {
 
-		private String diskId;
+		private String creationTime;
 
 		private String diskName;
 
-		private String category;
+		private String zoneId;
 
 		private String storageSetId;
 
-		private String creationTime;
+		private String diskId;
+
+		private String category;
 
 		private Integer storageSetPartitionNumber;
 
 		private String regionId;
 
-		private String zoneId;
-
-		public String getDiskId() {
-			return this.diskId;
+		public String getCreationTime() {
+			return this.creationTime;
 		}
 
-		public void setDiskId(String diskId) {
-			this.diskId = diskId;
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
 		}
 
 		public String getDiskName() {
@@ -109,12 +109,12 @@ public class DescribeStorageSetDetailsResponse extends AcsResponse {
 			this.diskName = diskName;
 		}
 
-		public String getCategory() {
-			return this.category;
+		public String getZoneId() {
+			return this.zoneId;
 		}
 
-		public void setCategory(String category) {
-			this.category = category;
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
 		}
 
 		public String getStorageSetId() {
@@ -125,12 +125,20 @@ public class DescribeStorageSetDetailsResponse extends AcsResponse {
 			this.storageSetId = storageSetId;
 		}
 
-		public String getCreationTime() {
-			return this.creationTime;
+		public String getDiskId() {
+			return this.diskId;
 		}
 
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
+		public void setDiskId(String diskId) {
+			this.diskId = diskId;
+		}
+
+		public String getCategory() {
+			return this.category;
+		}
+
+		public void setCategory(String category) {
+			this.category = category;
 		}
 
 		public Integer getStorageSetPartitionNumber() {
@@ -147,14 +155,6 @@ public class DescribeStorageSetDetailsResponse extends AcsResponse {
 
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
-		}
-
-		public String getZoneId() {
-			return this.zoneId;
-		}
-
-		public void setZoneId(String zoneId) {
-			this.zoneId = zoneId;
 		}
 	}
 

@@ -24,20 +24,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ModifyReservedInstanceAttributeResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer httpStatusCode;
 
 	private String code;
 
 	private String message;
 
-	private Integer httpStatusCode;
+	private String requestId;
 
-	public String getRequestId() {
-		return this.requestId;
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
 	}
 
 	public String getCode() {
@@ -56,12 +56,12 @@ public class ModifyReservedInstanceAttributeResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public Integer getHttpStatusCode() {
-		return this.httpStatusCode;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setHttpStatusCode(Integer httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

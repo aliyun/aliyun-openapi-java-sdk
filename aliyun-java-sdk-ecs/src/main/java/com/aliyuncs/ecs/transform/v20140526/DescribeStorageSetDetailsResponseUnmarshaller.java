@@ -27,21 +27,21 @@ public class DescribeStorageSetDetailsResponseUnmarshaller {
 	public static DescribeStorageSetDetailsResponse unmarshall(DescribeStorageSetDetailsResponse describeStorageSetDetailsResponse, UnmarshallerContext _ctx) {
 		
 		describeStorageSetDetailsResponse.setRequestId(_ctx.stringValue("DescribeStorageSetDetailsResponse.RequestId"));
-		describeStorageSetDetailsResponse.setTotalCount(_ctx.integerValue("DescribeStorageSetDetailsResponse.TotalCount"));
-		describeStorageSetDetailsResponse.setPageNumber(_ctx.integerValue("DescribeStorageSetDetailsResponse.PageNumber"));
 		describeStorageSetDetailsResponse.setPageSize(_ctx.integerValue("DescribeStorageSetDetailsResponse.PageSize"));
+		describeStorageSetDetailsResponse.setPageNumber(_ctx.integerValue("DescribeStorageSetDetailsResponse.PageNumber"));
+		describeStorageSetDetailsResponse.setTotalCount(_ctx.integerValue("DescribeStorageSetDetailsResponse.TotalCount"));
 
 		List<Disk> disks = new ArrayList<Disk>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeStorageSetDetailsResponse.Disks.Length"); i++) {
 			Disk disk = new Disk();
-			disk.setDiskId(_ctx.stringValue("DescribeStorageSetDetailsResponse.Disks["+ i +"].DiskId"));
-			disk.setDiskName(_ctx.stringValue("DescribeStorageSetDetailsResponse.Disks["+ i +"].DiskName"));
-			disk.setCategory(_ctx.stringValue("DescribeStorageSetDetailsResponse.Disks["+ i +"].Category"));
-			disk.setStorageSetId(_ctx.stringValue("DescribeStorageSetDetailsResponse.Disks["+ i +"].StorageSetId"));
 			disk.setCreationTime(_ctx.stringValue("DescribeStorageSetDetailsResponse.Disks["+ i +"].CreationTime"));
+			disk.setDiskName(_ctx.stringValue("DescribeStorageSetDetailsResponse.Disks["+ i +"].DiskName"));
+			disk.setZoneId(_ctx.stringValue("DescribeStorageSetDetailsResponse.Disks["+ i +"].ZoneId"));
+			disk.setStorageSetId(_ctx.stringValue("DescribeStorageSetDetailsResponse.Disks["+ i +"].StorageSetId"));
+			disk.setDiskId(_ctx.stringValue("DescribeStorageSetDetailsResponse.Disks["+ i +"].DiskId"));
+			disk.setCategory(_ctx.stringValue("DescribeStorageSetDetailsResponse.Disks["+ i +"].Category"));
 			disk.setStorageSetPartitionNumber(_ctx.integerValue("DescribeStorageSetDetailsResponse.Disks["+ i +"].StorageSetPartitionNumber"));
 			disk.setRegionId(_ctx.stringValue("DescribeStorageSetDetailsResponse.Disks["+ i +"].RegionId"));
-			disk.setZoneId(_ctx.stringValue("DescribeStorageSetDetailsResponse.Disks["+ i +"].ZoneId"));
 
 			disks.add(disk);
 		}

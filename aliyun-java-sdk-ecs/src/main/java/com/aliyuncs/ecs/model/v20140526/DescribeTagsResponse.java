@@ -77,19 +77,11 @@ public class DescribeTagsResponse extends AcsResponse {
 
 	public static class Tag {
 
-		private String tagKey;
-
 		private String tagValue;
 
+		private String tagKey;
+
 		private ResourceTypeCount resourceTypeCount;
-
-		public String getTagKey() {
-			return this.tagKey;
-		}
-
-		public void setTagKey(String tagKey) {
-			this.tagKey = tagKey;
-		}
 
 		public String getTagValue() {
 			return this.tagValue;
@@ -97,6 +89,14 @@ public class DescribeTagsResponse extends AcsResponse {
 
 		public void setTagValue(String tagValue) {
 			this.tagValue = tagValue;
+		}
+
+		public String getTagKey() {
+			return this.tagKey;
+		}
+
+		public void setTagKey(String tagKey) {
+			this.tagKey = tagKey;
 		}
 
 		public ResourceTypeCount getResourceTypeCount() {
@@ -111,27 +111,27 @@ public class DescribeTagsResponse extends AcsResponse {
 
 			private Integer instance;
 
-			private Integer disk;
-
-			private Integer volume;
-
 			private Integer image;
+
+			private Integer ddh;
+
+			private Integer snapshotPolicy;
+
+			private Integer securitygroup;
 
 			private Integer snapshot;
 
-			private Integer securitygroup;
+			private Integer reservedInstance;
 
 			private Integer launchTemplate;
 
 			private Integer eni;
 
-			private Integer ddh;
+			private Integer disk;
 
 			private Integer keyPair;
 
-			private Integer snapshotPolicy;
-
-			private Integer reservedInstance;
+			private Integer volume;
 
 			public Integer getInstance() {
 				return this.instance;
@@ -139,22 +139,6 @@ public class DescribeTagsResponse extends AcsResponse {
 
 			public void setInstance(Integer instance) {
 				this.instance = instance;
-			}
-
-			public Integer getDisk() {
-				return this.disk;
-			}
-
-			public void setDisk(Integer disk) {
-				this.disk = disk;
-			}
-
-			public Integer getVolume() {
-				return this.volume;
-			}
-
-			public void setVolume(Integer volume) {
-				this.volume = volume;
 			}
 
 			public Integer getImage() {
@@ -165,12 +149,20 @@ public class DescribeTagsResponse extends AcsResponse {
 				this.image = image;
 			}
 
-			public Integer getSnapshot() {
-				return this.snapshot;
+			public Integer getDdh() {
+				return this.ddh;
 			}
 
-			public void setSnapshot(Integer snapshot) {
-				this.snapshot = snapshot;
+			public void setDdh(Integer ddh) {
+				this.ddh = ddh;
+			}
+
+			public Integer getSnapshotPolicy() {
+				return this.snapshotPolicy;
+			}
+
+			public void setSnapshotPolicy(Integer snapshotPolicy) {
+				this.snapshotPolicy = snapshotPolicy;
 			}
 
 			public Integer getSecuritygroup() {
@@ -179,6 +171,22 @@ public class DescribeTagsResponse extends AcsResponse {
 
 			public void setSecuritygroup(Integer securitygroup) {
 				this.securitygroup = securitygroup;
+			}
+
+			public Integer getSnapshot() {
+				return this.snapshot;
+			}
+
+			public void setSnapshot(Integer snapshot) {
+				this.snapshot = snapshot;
+			}
+
+			public Integer getReservedInstance() {
+				return this.reservedInstance;
+			}
+
+			public void setReservedInstance(Integer reservedInstance) {
+				this.reservedInstance = reservedInstance;
 			}
 
 			public Integer getLaunchTemplate() {
@@ -197,12 +205,12 @@ public class DescribeTagsResponse extends AcsResponse {
 				this.eni = eni;
 			}
 
-			public Integer getDdh() {
-				return this.ddh;
+			public Integer getDisk() {
+				return this.disk;
 			}
 
-			public void setDdh(Integer ddh) {
-				this.ddh = ddh;
+			public void setDisk(Integer disk) {
+				this.disk = disk;
 			}
 
 			public Integer getKeyPair() {
@@ -213,20 +221,12 @@ public class DescribeTagsResponse extends AcsResponse {
 				this.keyPair = keyPair;
 			}
 
-			public Integer getSnapshotPolicy() {
-				return this.snapshotPolicy;
+			public Integer getVolume() {
+				return this.volume;
 			}
 
-			public void setSnapshotPolicy(Integer snapshotPolicy) {
-				this.snapshotPolicy = snapshotPolicy;
-			}
-
-			public Integer getReservedInstance() {
-				return this.reservedInstance;
-			}
-
-			public void setReservedInstance(Integer reservedInstance) {
-				this.reservedInstance = reservedInstance;
+			public void setVolume(Integer volume) {
+				this.volume = volume;
 			}
 		}
 	}

@@ -27,27 +27,27 @@ public class DescribeManagedInstancesResponseUnmarshaller {
 	public static DescribeManagedInstancesResponse unmarshall(DescribeManagedInstancesResponse describeManagedInstancesResponse, UnmarshallerContext _ctx) {
 		
 		describeManagedInstancesResponse.setRequestId(_ctx.stringValue("DescribeManagedInstancesResponse.RequestId"));
-		describeManagedInstancesResponse.setTotalCount(_ctx.longValue("DescribeManagedInstancesResponse.TotalCount"));
-		describeManagedInstancesResponse.setPageNumber(_ctx.longValue("DescribeManagedInstancesResponse.PageNumber"));
 		describeManagedInstancesResponse.setPageSize(_ctx.longValue("DescribeManagedInstancesResponse.PageSize"));
+		describeManagedInstancesResponse.setPageNumber(_ctx.longValue("DescribeManagedInstancesResponse.PageNumber"));
+		describeManagedInstancesResponse.setTotalCount(_ctx.longValue("DescribeManagedInstancesResponse.TotalCount"));
 
 		List<Instance> instances = new ArrayList<Instance>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeManagedInstancesResponse.Instances.Length"); i++) {
 			Instance instance = new Instance();
-			instance.setInstanceId(_ctx.stringValue("DescribeManagedInstancesResponse.Instances["+ i +"].InstanceId"));
-			instance.setInstanceName(_ctx.stringValue("DescribeManagedInstancesResponse.Instances["+ i +"].InstanceName"));
-			instance.setActivationId(_ctx.stringValue("DescribeManagedInstancesResponse.Instances["+ i +"].ActivationId"));
-			instance.setHostname(_ctx.stringValue("DescribeManagedInstancesResponse.Instances["+ i +"].Hostname"));
-			instance.setMachineId(_ctx.stringValue("DescribeManagedInstancesResponse.Instances["+ i +"].MachineId"));
-			instance.setOsType(_ctx.stringValue("DescribeManagedInstancesResponse.Instances["+ i +"].OsType"));
-			instance.setOsVersion(_ctx.stringValue("DescribeManagedInstancesResponse.Instances["+ i +"].OsVersion"));
-			instance.setIntranetIp(_ctx.stringValue("DescribeManagedInstancesResponse.Instances["+ i +"].IntranetIp"));
-			instance.setInternetIp(_ctx.stringValue("DescribeManagedInstancesResponse.Instances["+ i +"].InternetIp"));
-			instance.setAgentVersion(_ctx.stringValue("DescribeManagedInstancesResponse.Instances["+ i +"].AgentVersion"));
-			instance.setRegistrationTime(_ctx.stringValue("DescribeManagedInstancesResponse.Instances["+ i +"].RegistrationTime"));
-			instance.setInvocationCount(_ctx.longValue("DescribeManagedInstancesResponse.Instances["+ i +"].InvocationCount"));
 			instance.setLastInvokedTime(_ctx.stringValue("DescribeManagedInstancesResponse.Instances["+ i +"].LastInvokedTime"));
 			instance.setConnected(_ctx.booleanValue("DescribeManagedInstancesResponse.Instances["+ i +"].Connected"));
+			instance.setInternetIp(_ctx.stringValue("DescribeManagedInstancesResponse.Instances["+ i +"].InternetIp"));
+			instance.setHostname(_ctx.stringValue("DescribeManagedInstancesResponse.Instances["+ i +"].Hostname"));
+			instance.setInstanceId(_ctx.stringValue("DescribeManagedInstancesResponse.Instances["+ i +"].InstanceId"));
+			instance.setActivationId(_ctx.stringValue("DescribeManagedInstancesResponse.Instances["+ i +"].ActivationId"));
+			instance.setIntranetIp(_ctx.stringValue("DescribeManagedInstancesResponse.Instances["+ i +"].IntranetIp"));
+			instance.setAgentVersion(_ctx.stringValue("DescribeManagedInstancesResponse.Instances["+ i +"].AgentVersion"));
+			instance.setRegistrationTime(_ctx.stringValue("DescribeManagedInstancesResponse.Instances["+ i +"].RegistrationTime"));
+			instance.setInstanceName(_ctx.stringValue("DescribeManagedInstancesResponse.Instances["+ i +"].InstanceName"));
+			instance.setOsType(_ctx.stringValue("DescribeManagedInstancesResponse.Instances["+ i +"].OsType"));
+			instance.setOsVersion(_ctx.stringValue("DescribeManagedInstancesResponse.Instances["+ i +"].OsVersion"));
+			instance.setInvocationCount(_ctx.longValue("DescribeManagedInstancesResponse.Instances["+ i +"].InvocationCount"));
+			instance.setMachineId(_ctx.stringValue("DescribeManagedInstancesResponse.Instances["+ i +"].MachineId"));
 
 			instances.add(instance);
 		}

@@ -26,11 +26,11 @@ public class CreateNetworkInterfacePermissionResponseUnmarshaller {
 		createNetworkInterfacePermissionResponse.setRequestId(_ctx.stringValue("CreateNetworkInterfacePermissionResponse.RequestId"));
 
 		NetworkInterfacePermission networkInterfacePermission = new NetworkInterfacePermission();
-		networkInterfacePermission.setAccountId(_ctx.longValue("CreateNetworkInterfacePermissionResponse.NetworkInterfacePermission.AccountId"));
-		networkInterfacePermission.setServiceName(_ctx.stringValue("CreateNetworkInterfacePermissionResponse.NetworkInterfacePermission.ServiceName"));
-		networkInterfacePermission.setNetworkInterfaceId(_ctx.stringValue("CreateNetworkInterfacePermissionResponse.NetworkInterfacePermission.NetworkInterfaceId"));
-		networkInterfacePermission.setNetworkInterfacePermissionId(_ctx.stringValue("CreateNetworkInterfacePermissionResponse.NetworkInterfacePermission.NetworkInterfacePermissionId"));
 		networkInterfacePermission.setPermission(_ctx.stringValue("CreateNetworkInterfacePermissionResponse.NetworkInterfacePermission.Permission"));
+		networkInterfacePermission.setNetworkInterfaceId(_ctx.stringValue("CreateNetworkInterfacePermissionResponse.NetworkInterfacePermission.NetworkInterfaceId"));
+		networkInterfacePermission.setAccountId(_ctx.longValue("CreateNetworkInterfacePermissionResponse.NetworkInterfacePermission.AccountId"));
+		networkInterfacePermission.setNetworkInterfacePermissionId(_ctx.stringValue("CreateNetworkInterfacePermissionResponse.NetworkInterfacePermission.NetworkInterfacePermissionId"));
+		networkInterfacePermission.setServiceName(_ctx.stringValue("CreateNetworkInterfacePermissionResponse.NetworkInterfacePermission.ServiceName"));
 		networkInterfacePermission.setPermissionState(_ctx.stringValue("CreateNetworkInterfacePermissionResponse.NetworkInterfacePermission.PermissionState"));
 		createNetworkInterfacePermissionResponse.setNetworkInterfacePermission(networkInterfacePermission);
 	 

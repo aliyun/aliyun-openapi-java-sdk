@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateStorageSetResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String storageSetId;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getStorageSetId() {
 		return this.storageSetId;
@@ -42,6 +34,14 @@ public class CreateStorageSetResponse extends AcsResponse {
 
 	public void setStorageSetId(String storageSetId) {
 		this.storageSetId = storageSetId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

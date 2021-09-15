@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDedicatedBlockStorageClustersResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String nextToken;
 
+	private String requestId;
+
 	private List<DedicatedBlockStorageCluster> dedicatedBlockStorageClusters;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getNextToken() {
 		return this.nextToken;
@@ -45,6 +37,14 @@ public class DescribeDedicatedBlockStorageClustersResponse extends AcsResponse {
 
 	public void setNextToken(String nextToken) {
 		this.nextToken = nextToken;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<DedicatedBlockStorageCluster> getDedicatedBlockStorageClusters() {
@@ -57,57 +57,25 @@ public class DescribeDedicatedBlockStorageClustersResponse extends AcsResponse {
 
 	public static class DedicatedBlockStorageCluster {
 
-		private String dedicatedBlockStorageClusterId;
-
-		private String dedicatedBlockStorageClusterName;
-
-		private String description;
-
-		private String zoneId;
-
 		private String status;
 
-		private String category;
+		private String type;
 
-		private String performanceLevel;
+		private String description;
 
 		private String expiredTime;
 
 		private String createTime;
 
+		private String zoneId;
+
+		private String category;
+
+		private String dedicatedBlockStorageClusterName;
+
+		private String dedicatedBlockStorageClusterId;
+
 		private DedicatedBlockStorageClusterCapacity dedicatedBlockStorageClusterCapacity;
-
-		public String getDedicatedBlockStorageClusterId() {
-			return this.dedicatedBlockStorageClusterId;
-		}
-
-		public void setDedicatedBlockStorageClusterId(String dedicatedBlockStorageClusterId) {
-			this.dedicatedBlockStorageClusterId = dedicatedBlockStorageClusterId;
-		}
-
-		public String getDedicatedBlockStorageClusterName() {
-			return this.dedicatedBlockStorageClusterName;
-		}
-
-		public void setDedicatedBlockStorageClusterName(String dedicatedBlockStorageClusterName) {
-			this.dedicatedBlockStorageClusterName = dedicatedBlockStorageClusterName;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
-		public String getZoneId() {
-			return this.zoneId;
-		}
-
-		public void setZoneId(String zoneId) {
-			this.zoneId = zoneId;
-		}
 
 		public String getStatus() {
 			return this.status;
@@ -117,20 +85,20 @@ public class DescribeDedicatedBlockStorageClustersResponse extends AcsResponse {
 			this.status = status;
 		}
 
-		public String getCategory() {
-			return this.category;
+		public String getType() {
+			return this.type;
 		}
 
-		public void setCategory(String category) {
-			this.category = category;
+		public void setType(String type) {
+			this.type = type;
 		}
 
-		public String getPerformanceLevel() {
-			return this.performanceLevel;
+		public String getDescription() {
+			return this.description;
 		}
 
-		public void setPerformanceLevel(String performanceLevel) {
-			this.performanceLevel = performanceLevel;
+		public void setDescription(String description) {
+			this.description = description;
 		}
 
 		public String getExpiredTime() {
@@ -149,6 +117,38 @@ public class DescribeDedicatedBlockStorageClustersResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
+		public String getZoneId() {
+			return this.zoneId;
+		}
+
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
+		}
+
+		public String getCategory() {
+			return this.category;
+		}
+
+		public void setCategory(String category) {
+			this.category = category;
+		}
+
+		public String getDedicatedBlockStorageClusterName() {
+			return this.dedicatedBlockStorageClusterName;
+		}
+
+		public void setDedicatedBlockStorageClusterName(String dedicatedBlockStorageClusterName) {
+			this.dedicatedBlockStorageClusterName = dedicatedBlockStorageClusterName;
+		}
+
+		public String getDedicatedBlockStorageClusterId() {
+			return this.dedicatedBlockStorageClusterId;
+		}
+
+		public void setDedicatedBlockStorageClusterId(String dedicatedBlockStorageClusterId) {
+			this.dedicatedBlockStorageClusterId = dedicatedBlockStorageClusterId;
+		}
+
 		public DedicatedBlockStorageClusterCapacity getDedicatedBlockStorageClusterCapacity() {
 			return this.dedicatedBlockStorageClusterCapacity;
 		}
@@ -159,17 +159,9 @@ public class DescribeDedicatedBlockStorageClustersResponse extends AcsResponse {
 
 		public static class DedicatedBlockStorageClusterCapacity {
 
-			private Long availableCapacity;
-
 			private Long totalCapacity;
 
-			public Long getAvailableCapacity() {
-				return this.availableCapacity;
-			}
-
-			public void setAvailableCapacity(Long availableCapacity) {
-				this.availableCapacity = availableCapacity;
-			}
+			private Long availableCapacity;
 
 			public Long getTotalCapacity() {
 				return this.totalCapacity;
@@ -177,6 +169,14 @@ public class DescribeDedicatedBlockStorageClustersResponse extends AcsResponse {
 
 			public void setTotalCapacity(Long totalCapacity) {
 				this.totalCapacity = totalCapacity;
+			}
+
+			public Long getAvailableCapacity() {
+				return this.availableCapacity;
+			}
+
+			public void setAvailableCapacity(Long availableCapacity) {
+				this.availableCapacity = availableCapacity;
 			}
 		}
 	}

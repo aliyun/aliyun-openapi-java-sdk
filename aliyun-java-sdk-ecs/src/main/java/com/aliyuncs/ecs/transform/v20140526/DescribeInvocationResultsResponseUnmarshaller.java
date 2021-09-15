@@ -37,20 +37,20 @@ public class DescribeInvocationResultsResponseUnmarshaller {
 		List<InvocationResult> invocationResults = new ArrayList<InvocationResult>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeInvocationResultsResponse.Invocation.InvocationResults.Length"); i++) {
 			InvocationResult invocationResult = new InvocationResult();
-			invocationResult.setCommandId(_ctx.stringValue("DescribeInvocationResultsResponse.Invocation.InvocationResults["+ i +"].CommandId"));
-			invocationResult.setInvokeId(_ctx.stringValue("DescribeInvocationResultsResponse.Invocation.InvocationResults["+ i +"].InvokeId"));
-			invocationResult.setInstanceId(_ctx.stringValue("DescribeInvocationResultsResponse.Invocation.InvocationResults["+ i +"].InstanceId"));
-			invocationResult.setStartTime(_ctx.stringValue("DescribeInvocationResultsResponse.Invocation.InvocationResults["+ i +"].StartTime"));
-			invocationResult.setStopTime(_ctx.stringValue("DescribeInvocationResultsResponse.Invocation.InvocationResults["+ i +"].StopTime"));
-			invocationResult.setFinishedTime(_ctx.stringValue("DescribeInvocationResultsResponse.Invocation.InvocationResults["+ i +"].FinishedTime"));
+			invocationResult.setInvocationStatus(_ctx.stringValue("DescribeInvocationResultsResponse.Invocation.InvocationResults["+ i +"].InvocationStatus"));
 			invocationResult.setRepeats(_ctx.integerValue("DescribeInvocationResultsResponse.Invocation.InvocationResults["+ i +"].Repeats"));
+			invocationResult.setCommandId(_ctx.stringValue("DescribeInvocationResultsResponse.Invocation.InvocationResults["+ i +"].CommandId"));
+			invocationResult.setInstanceId(_ctx.stringValue("DescribeInvocationResultsResponse.Invocation.InvocationResults["+ i +"].InstanceId"));
 			invocationResult.setOutput(_ctx.stringValue("DescribeInvocationResultsResponse.Invocation.InvocationResults["+ i +"].Output"));
 			invocationResult.setDropped(_ctx.integerValue("DescribeInvocationResultsResponse.Invocation.InvocationResults["+ i +"].Dropped"));
-			invocationResult.setInvokeRecordStatus(_ctx.stringValue("DescribeInvocationResultsResponse.Invocation.InvocationResults["+ i +"].InvokeRecordStatus"));
-			invocationResult.setInvocationStatus(_ctx.stringValue("DescribeInvocationResultsResponse.Invocation.InvocationResults["+ i +"].InvocationStatus"));
+			invocationResult.setStopTime(_ctx.stringValue("DescribeInvocationResultsResponse.Invocation.InvocationResults["+ i +"].StopTime"));
 			invocationResult.setExitCode(_ctx.longValue("DescribeInvocationResultsResponse.Invocation.InvocationResults["+ i +"].ExitCode"));
-			invocationResult.setErrorCode(_ctx.stringValue("DescribeInvocationResultsResponse.Invocation.InvocationResults["+ i +"].ErrorCode"));
+			invocationResult.setStartTime(_ctx.stringValue("DescribeInvocationResultsResponse.Invocation.InvocationResults["+ i +"].StartTime"));
 			invocationResult.setErrorInfo(_ctx.stringValue("DescribeInvocationResultsResponse.Invocation.InvocationResults["+ i +"].ErrorInfo"));
+			invocationResult.setErrorCode(_ctx.stringValue("DescribeInvocationResultsResponse.Invocation.InvocationResults["+ i +"].ErrorCode"));
+			invocationResult.setFinishedTime(_ctx.stringValue("DescribeInvocationResultsResponse.Invocation.InvocationResults["+ i +"].FinishedTime"));
+			invocationResult.setInvokeId(_ctx.stringValue("DescribeInvocationResultsResponse.Invocation.InvocationResults["+ i +"].InvokeId"));
+			invocationResult.setInvokeRecordStatus(_ctx.stringValue("DescribeInvocationResultsResponse.Invocation.InvocationResults["+ i +"].InvokeRecordStatus"));
 			invocationResult.setUsername(_ctx.stringValue("DescribeInvocationResultsResponse.Invocation.InvocationResults["+ i +"].Username"));
 
 			invocationResults.add(invocationResult);
