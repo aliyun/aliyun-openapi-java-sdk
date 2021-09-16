@@ -1,3 +1,6 @@
+2021-09-16 Version: 1.0.7
+- Supported GetSqlOptimizeAdvice.
+
 2021-08-16 Version: 1.0.6
 - Add SQL throttle APIs for MySQL and PolarDB MySQL.
 

@@ -15,33 +15,31 @@
 package com.aliyuncs.das.model.v20200116;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.das.transform.v20200116.TurnOffAutoResourceOptimizeResponseUnmarshaller;
+import com.aliyuncs.das.transform.v20200116.GetSqlOptimizeAdviceResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class TurnOffAutoResourceOptimizeResponse extends AcsResponse {
-
-	private String requestId;
-
-	private String message;
-
-	private String synchro;
-
-	private String data;
+public class GetSqlOptimizeAdviceResponse extends AcsResponse {
 
 	private String code;
 
+	private String message;
+
+	private String data;
+
+	private String requestId;
+
 	private String success;
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public String getMessage() {
@@ -52,14 +50,6 @@ public class TurnOffAutoResourceOptimizeResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getSynchro() {
-		return this.synchro;
-	}
-
-	public void setSynchro(String synchro) {
-		this.synchro = synchro;
-	}
-
 	public String getData() {
 		return this.data;
 	}
@@ -68,12 +58,12 @@ public class TurnOffAutoResourceOptimizeResponse extends AcsResponse {
 		this.data = data;
 	}
 
-	public String getCode() {
-		return this.code;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getSuccess() {
@@ -85,12 +75,7 @@ public class TurnOffAutoResourceOptimizeResponse extends AcsResponse {
 	}
 
 	@Override
-	public TurnOffAutoResourceOptimizeResponse getInstance(UnmarshallerContext context) {
-		return	TurnOffAutoResourceOptimizeResponseUnmarshaller.unmarshall(this, context);
-	}
-
-	@Override
-	public boolean checkShowJsonItemName() {
-		return false;
+	public GetSqlOptimizeAdviceResponse getInstance(UnmarshallerContext context) {
+		return	GetSqlOptimizeAdviceResponseUnmarshaller.unmarshall(this, context);
 	}
 }
