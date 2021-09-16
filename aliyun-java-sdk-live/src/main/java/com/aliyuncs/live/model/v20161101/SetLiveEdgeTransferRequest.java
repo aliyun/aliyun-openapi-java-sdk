@@ -22,20 +22,24 @@ import com.aliyuncs.live.Endpoint;
  * @author auto create
  * @version 
  */
-public class SetLiveStreamsNotifyUrlConfigRequest extends RpcAcsRequest<SetLiveStreamsNotifyUrlConfigResponse> {
+public class SetLiveEdgeTransferRequest extends RpcAcsRequest<SetLiveEdgeTransferResponse> {
 	   
 
-	private String notifyReqAuth;
+	private String transferArgs;
 
-	private String notifyUrl;
+	private String appName;
+
+	private String streamName;
+
+	private String targetDomainList;
 
 	private String domainName;
 
 	private Long ownerId;
 
-	private String notifyAuthKey;
-	public SetLiveStreamsNotifyUrlConfigRequest() {
-		super("live", "2016-11-01", "SetLiveStreamsNotifyUrlConfig", "live");
+	private String httpDns;
+	public SetLiveEdgeTransferRequest() {
+		super("live", "2016-11-01", "SetLiveEdgeTransfer", "live");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -43,25 +47,47 @@ public class SetLiveStreamsNotifyUrlConfigRequest extends RpcAcsRequest<SetLiveS
 		} catch (Exception e) {}
 	}
 
-	public String getNotifyReqAuth() {
-		return this.notifyReqAuth;
+	public String getTransferArgs() {
+		return this.transferArgs;
 	}
 
-	public void setNotifyReqAuth(String notifyReqAuth) {
-		this.notifyReqAuth = notifyReqAuth;
-		if(notifyReqAuth != null){
-			putQueryParameter("NotifyReqAuth", notifyReqAuth);
+	public void setTransferArgs(String transferArgs) {
+		this.transferArgs = transferArgs;
+		if(transferArgs != null){
+			putQueryParameter("TransferArgs", transferArgs);
 		}
 	}
 
-	public String getNotifyUrl() {
-		return this.notifyUrl;
+	public String getAppName() {
+		return this.appName;
 	}
 
-	public void setNotifyUrl(String notifyUrl) {
-		this.notifyUrl = notifyUrl;
-		if(notifyUrl != null){
-			putQueryParameter("NotifyUrl", notifyUrl);
+	public void setAppName(String appName) {
+		this.appName = appName;
+		if(appName != null){
+			putQueryParameter("AppName", appName);
+		}
+	}
+
+	public String getStreamName() {
+		return this.streamName;
+	}
+
+	public void setStreamName(String streamName) {
+		this.streamName = streamName;
+		if(streamName != null){
+			putQueryParameter("StreamName", streamName);
+		}
+	}
+
+	public String getTargetDomainList() {
+		return this.targetDomainList;
+	}
+
+	public void setTargetDomainList(String targetDomainList) {
+		this.targetDomainList = targetDomainList;
+		if(targetDomainList != null){
+			putQueryParameter("TargetDomainList", targetDomainList);
 		}
 	}
 
@@ -87,20 +113,20 @@ public class SetLiveStreamsNotifyUrlConfigRequest extends RpcAcsRequest<SetLiveS
 		}
 	}
 
-	public String getNotifyAuthKey() {
-		return this.notifyAuthKey;
+	public String getHttpDns() {
+		return this.httpDns;
 	}
 
-	public void setNotifyAuthKey(String notifyAuthKey) {
-		this.notifyAuthKey = notifyAuthKey;
-		if(notifyAuthKey != null){
-			putQueryParameter("NotifyAuthKey", notifyAuthKey);
+	public void setHttpDns(String httpDns) {
+		this.httpDns = httpDns;
+		if(httpDns != null){
+			putQueryParameter("HttpDns", httpDns);
 		}
 	}
 
 	@Override
-	public Class<SetLiveStreamsNotifyUrlConfigResponse> getResponseClass() {
-		return SetLiveStreamsNotifyUrlConfigResponse.class;
+	public Class<SetLiveEdgeTransferResponse> getResponseClass() {
+		return SetLiveEdgeTransferResponse.class;
 	}
 
 }

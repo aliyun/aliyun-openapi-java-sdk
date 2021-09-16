@@ -35,6 +35,7 @@ public class StartCasterResponseUnmarshaller {
 			SceneInfo sceneInfo = new SceneInfo();
 			sceneInfo.setSceneId(_ctx.stringValue("StartCasterResponse.PvwSceneInfos["+ i +"].SceneId"));
 			sceneInfo.setStreamUrl(_ctx.stringValue("StartCasterResponse.PvwSceneInfos["+ i +"].StreamUrl"));
+			sceneInfo.setRtsUrl(_ctx.stringValue("StartCasterResponse.PvwSceneInfos["+ i +"].RtsUrl"));
 
 			pvwSceneInfos.add(sceneInfo);
 		}
@@ -45,6 +46,7 @@ public class StartCasterResponseUnmarshaller {
 			SceneInfo1 sceneInfo1 = new SceneInfo1();
 			sceneInfo1.setSceneId(_ctx.stringValue("StartCasterResponse.PgmSceneInfos["+ i +"].SceneId"));
 			sceneInfo1.setStreamUrl(_ctx.stringValue("StartCasterResponse.PgmSceneInfos["+ i +"].StreamUrl"));
+			sceneInfo1.setRtsUrl(_ctx.stringValue("StartCasterResponse.PgmSceneInfos["+ i +"].RtsUrl"));
 
 			List<StreamInfo> streamInfos = new ArrayList<StreamInfo>();
 			for (int j = 0; j < _ctx.lengthValue("StartCasterResponse.PgmSceneInfos["+ i +"].StreamInfos.Length"); j++) {

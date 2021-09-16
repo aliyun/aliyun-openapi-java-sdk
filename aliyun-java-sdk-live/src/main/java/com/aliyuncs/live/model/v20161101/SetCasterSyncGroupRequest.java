@@ -78,6 +78,11 @@ public class SetCasterSyncGroupRequest extends RpcAcsRequest<SetCasterSyncGroupR
 						putQueryParameter("SyncGroup." + (depth1 + 1) + ".ResourceIds." + (i + 1) , syncGroups.get(depth1).getResourceIdss().get(i));
 					}
 				}
+				if (syncGroups.get(depth1).getSyncOffsetss() != null) {
+					for (int i = 0; i < syncGroups.get(depth1).getSyncOffsetss().size(); i++) {
+						putQueryParameter("SyncGroup." + (depth1 + 1) + ".SyncOffsets." + (i + 1) , syncGroups.get(depth1).getSyncOffsetss().get(i));
+					}
+				}
 			}
 		}	
 	}
@@ -91,6 +96,8 @@ public class SetCasterSyncGroupRequest extends RpcAcsRequest<SetCasterSyncGroupR
 		private String hostResourceId;
 
 		private List<String> resourceIdss;
+
+		private List<Integer> syncOffsetss;
 
 		public Integer getMode() {
 			return this.mode;
@@ -122,6 +129,14 @@ public class SetCasterSyncGroupRequest extends RpcAcsRequest<SetCasterSyncGroupR
 
 		public void setResourceIdss(List<String> resourceIdss) {
 			this.resourceIdss = resourceIdss;
+		}
+
+		public List<Integer> getSyncOffsetss() {
+			return this.syncOffsetss;
+		}
+
+		public void setSyncOffsetss(List<Integer> syncOffsetss) {
+			this.syncOffsetss = syncOffsetss;
 		}
 	}
 

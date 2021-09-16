@@ -25,6 +25,8 @@ import com.aliyuncs.live.Endpoint;
 public class AddCasterVideoResourceRequest extends RpcAcsRequest<AddCasterVideoResourceResponse> {
 	   
 
+	private Integer inputType;
+
 	private Integer endOffset;
 
 	private String materialId;
@@ -36,6 +38,8 @@ public class AddCasterVideoResourceRequest extends RpcAcsRequest<AddCasterVideoR
 	private String casterId;
 
 	private Long ownerId;
+
+	private Integer streamMonitor;
 
 	private Integer beginOffset;
 
@@ -55,6 +59,17 @@ public class AddCasterVideoResourceRequest extends RpcAcsRequest<AddCasterVideoR
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Integer getInputType() {
+		return this.inputType;
+	}
+
+	public void setInputType(Integer inputType) {
+		this.inputType = inputType;
+		if(inputType != null){
+			putQueryParameter("InputType", inputType.toString());
+		}
 	}
 
 	public Integer getEndOffset() {
@@ -120,6 +135,17 @@ public class AddCasterVideoResourceRequest extends RpcAcsRequest<AddCasterVideoR
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public Integer getStreamMonitor() {
+		return this.streamMonitor;
+	}
+
+	public void setStreamMonitor(Integer streamMonitor) {
+		this.streamMonitor = streamMonitor;
+		if(streamMonitor != null){
+			putQueryParameter("StreamMonitor", streamMonitor.toString());
 		}
 	}
 

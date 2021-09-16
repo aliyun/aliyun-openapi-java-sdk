@@ -61,6 +61,8 @@ public class StartCasterResponse extends AcsResponse {
 
 		private String streamUrl;
 
+		private String rtsUrl;
+
 		public String getSceneId() {
 			return this.sceneId;
 		}
@@ -76,6 +78,14 @@ public class StartCasterResponse extends AcsResponse {
 		public void setStreamUrl(String streamUrl) {
 			this.streamUrl = streamUrl;
 		}
+
+		public String getRtsUrl() {
+			return this.rtsUrl;
+		}
+
+		public void setRtsUrl(String rtsUrl) {
+			this.rtsUrl = rtsUrl;
+		}
 	}
 
 	public static class SceneInfo1 {
@@ -83,6 +93,8 @@ public class StartCasterResponse extends AcsResponse {
 		private String sceneId;
 
 		private String streamUrl;
+
+		private String rtsUrl;
 
 		private List<StreamInfo> streamInfos;
 
@@ -100,6 +112,14 @@ public class StartCasterResponse extends AcsResponse {
 
 		public void setStreamUrl(String streamUrl) {
 			this.streamUrl = streamUrl;
+		}
+
+		public String getRtsUrl() {
+			return this.rtsUrl;
+		}
+
+		public void setRtsUrl(String rtsUrl) {
+			this.rtsUrl = rtsUrl;
 		}
 
 		public List<StreamInfo> getStreamInfos() {

@@ -65,6 +65,12 @@ public class DescribeCasterChannelsResponse extends AcsResponse {
 
 		private String rtmpUrl;
 
+		private String rtsUrl;
+
+		private Integer inputType;
+
+		private String faceBeauty;
+
 		public String getChannelId() {
 			return this.channelId;
 		}
@@ -95,6 +101,30 @@ public class DescribeCasterChannelsResponse extends AcsResponse {
 
 		public void setRtmpUrl(String rtmpUrl) {
 			this.rtmpUrl = rtmpUrl;
+		}
+
+		public String getRtsUrl() {
+			return this.rtsUrl;
+		}
+
+		public void setRtsUrl(String rtsUrl) {
+			this.rtsUrl = rtsUrl;
+		}
+
+		public Integer getInputType() {
+			return this.inputType;
+		}
+
+		public void setInputType(Integer inputType) {
+			this.inputType = inputType;
+		}
+
+		public String getFaceBeauty() {
+			return this.faceBeauty;
+		}
+
+		public void setFaceBeauty(String faceBeauty) {
+			this.faceBeauty = faceBeauty;
 		}
 	}
 

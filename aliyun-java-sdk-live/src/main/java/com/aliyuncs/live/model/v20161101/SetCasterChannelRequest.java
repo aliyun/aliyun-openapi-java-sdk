@@ -25,6 +25,8 @@ import com.aliyuncs.live.Endpoint;
 public class SetCasterChannelRequest extends RpcAcsRequest<SetCasterChannelResponse> {
 	   
 
+	private String faceBeauty;
+
 	private Integer seekOffset;
 
 	private Integer playStatus;
@@ -43,6 +45,17 @@ public class SetCasterChannelRequest extends RpcAcsRequest<SetCasterChannelRespo
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getFaceBeauty() {
+		return this.faceBeauty;
+	}
+
+	public void setFaceBeauty(String faceBeauty) {
+		this.faceBeauty = faceBeauty;
+		if(faceBeauty != null){
+			putQueryParameter("FaceBeauty", faceBeauty);
+		}
 	}
 
 	public Integer getSeekOffset() {

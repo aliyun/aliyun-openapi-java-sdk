@@ -37,6 +37,7 @@ public class DescribeCasterVideoResourcesResponseUnmarshaller {
 			videoResource.setResourceName(_ctx.stringValue("DescribeCasterVideoResourcesResponse.VideoResources["+ i +"].ResourceName"));
 			videoResource.setLocationId(_ctx.stringValue("DescribeCasterVideoResourcesResponse.VideoResources["+ i +"].LocationId"));
 			videoResource.setLiveStreamUrl(_ctx.stringValue("DescribeCasterVideoResourcesResponse.VideoResources["+ i +"].LiveStreamUrl"));
+			videoResource.setFlvUrl(_ctx.stringValue("DescribeCasterVideoResourcesResponse.VideoResources["+ i +"].FlvUrl"));
 			videoResource.setRepeatNum(_ctx.integerValue("DescribeCasterVideoResourcesResponse.VideoResources["+ i +"].RepeatNum"));
 			videoResource.setVodUrl(_ctx.stringValue("DescribeCasterVideoResourcesResponse.VideoResources["+ i +"].VodUrl"));
 			videoResource.setBeginOffset(_ctx.integerValue("DescribeCasterVideoResourcesResponse.VideoResources["+ i +"].BeginOffset"));

@@ -53,7 +53,7 @@ public class DescribeLiveDomainRecordUsageDataResponse extends AcsResponse {
 
 		private String type;
 
-		private Long size;
+		private Long duration;
 
 		private Long count;
 
@@ -81,12 +81,12 @@ public class DescribeLiveDomainRecordUsageDataResponse extends AcsResponse {
 			this.type = type;
 		}
 
-		public Long getSize() {
-			return this.size;
+		public Long getDuration() {
+			return this.duration;
 		}
 
-		public void setSize(Long size) {
-			this.size = size;
+		public void setDuration(Long duration) {
+			this.duration = duration;
 		}
 
 		public Long getCount() {

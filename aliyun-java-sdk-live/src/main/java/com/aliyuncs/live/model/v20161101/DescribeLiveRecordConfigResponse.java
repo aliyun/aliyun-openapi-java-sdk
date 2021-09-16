@@ -117,6 +117,10 @@ public class DescribeLiveRecordConfigResponse extends AcsResponse {
 
 		private List<RecordFormat> recordFormatList;
 
+		private List<RecordFormat> transcodeRecordFormatList;
+
+		private List<String> transcodeTemplates;
+
 		public String getDomainName() {
 			return this.domainName;
 		}
@@ -197,6 +201,22 @@ public class DescribeLiveRecordConfigResponse extends AcsResponse {
 			this.recordFormatList = recordFormatList;
 		}
 
+		public List<RecordFormat> getTranscodeRecordFormatList() {
+			return this.transcodeRecordFormatList;
+		}
+
+		public void setTranscodeRecordFormatList(List<RecordFormat> transcodeRecordFormatList) {
+			this.transcodeRecordFormatList = transcodeRecordFormatList;
+		}
+
+		public List<String> getTranscodeTemplates() {
+			return this.transcodeTemplates;
+		}
+
+		public void setTranscodeTemplates(List<String> transcodeTemplates) {
+			this.transcodeTemplates = transcodeTemplates;
+		}
+
 		public static class RecordFormat {
 
 			private String format;
@@ -206,6 +226,8 @@ public class DescribeLiveRecordConfigResponse extends AcsResponse {
 			private String sliceOssObjectPrefix;
 
 			private Integer cycleDuration;
+
+			private Integer sliceDuration;
 
 			public String getFormat() {
 				return this.format;
@@ -237,6 +259,14 @@ public class DescribeLiveRecordConfigResponse extends AcsResponse {
 
 			public void setCycleDuration(Integer cycleDuration) {
 				this.cycleDuration = cycleDuration;
+			}
+
+			public Integer getSliceDuration() {
+				return this.sliceDuration;
+			}
+
+			public void setSliceDuration(Integer sliceDuration) {
+				this.sliceDuration = sliceDuration;
 			}
 		}
 	}

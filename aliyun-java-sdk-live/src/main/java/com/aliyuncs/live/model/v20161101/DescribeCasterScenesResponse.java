@@ -67,6 +67,8 @@ public class DescribeCasterScenesResponse extends AcsResponse {
 
 		private String streamUrl;
 
+		private String rtsUrl;
+
 		private Integer status;
 
 		private List<StreamInfo> streamInfos;
@@ -111,6 +113,14 @@ public class DescribeCasterScenesResponse extends AcsResponse {
 
 		public void setStreamUrl(String streamUrl) {
 			this.streamUrl = streamUrl;
+		}
+
+		public String getRtsUrl() {
+			return this.rtsUrl;
+		}
+
+		public void setRtsUrl(String rtsUrl) {
+			this.rtsUrl = rtsUrl;
 		}
 
 		public Integer getStatus() {

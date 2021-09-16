@@ -22,47 +22,19 @@ import com.aliyuncs.live.Endpoint;
  * @author auto create
  * @version 
  */
-public class SetLiveStreamsNotifyUrlConfigRequest extends RpcAcsRequest<SetLiveStreamsNotifyUrlConfigResponse> {
+public class DescribeLiveEdgeTransferRequest extends RpcAcsRequest<DescribeLiveEdgeTransferResponse> {
 	   
-
-	private String notifyReqAuth;
-
-	private String notifyUrl;
 
 	private String domainName;
 
 	private Long ownerId;
-
-	private String notifyAuthKey;
-	public SetLiveStreamsNotifyUrlConfigRequest() {
-		super("live", "2016-11-01", "SetLiveStreamsNotifyUrlConfig", "live");
+	public DescribeLiveEdgeTransferRequest() {
+		super("live", "2016-11-01", "DescribeLiveEdgeTransfer", "live");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getNotifyReqAuth() {
-		return this.notifyReqAuth;
-	}
-
-	public void setNotifyReqAuth(String notifyReqAuth) {
-		this.notifyReqAuth = notifyReqAuth;
-		if(notifyReqAuth != null){
-			putQueryParameter("NotifyReqAuth", notifyReqAuth);
-		}
-	}
-
-	public String getNotifyUrl() {
-		return this.notifyUrl;
-	}
-
-	public void setNotifyUrl(String notifyUrl) {
-		this.notifyUrl = notifyUrl;
-		if(notifyUrl != null){
-			putQueryParameter("NotifyUrl", notifyUrl);
-		}
 	}
 
 	public String getDomainName() {
@@ -87,20 +59,9 @@ public class SetLiveStreamsNotifyUrlConfigRequest extends RpcAcsRequest<SetLiveS
 		}
 	}
 
-	public String getNotifyAuthKey() {
-		return this.notifyAuthKey;
-	}
-
-	public void setNotifyAuthKey(String notifyAuthKey) {
-		this.notifyAuthKey = notifyAuthKey;
-		if(notifyAuthKey != null){
-			putQueryParameter("NotifyAuthKey", notifyAuthKey);
-		}
-	}
-
 	@Override
-	public Class<SetLiveStreamsNotifyUrlConfigResponse> getResponseClass() {
-		return SetLiveStreamsNotifyUrlConfigResponse.class;
+	public Class<DescribeLiveEdgeTransferResponse> getResponseClass() {
+		return DescribeLiveEdgeTransferResponse.class;
 	}
 
 }

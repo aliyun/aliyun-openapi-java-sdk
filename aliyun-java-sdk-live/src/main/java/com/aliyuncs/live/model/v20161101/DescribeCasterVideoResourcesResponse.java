@@ -67,6 +67,8 @@ public class DescribeCasterVideoResourcesResponse extends AcsResponse {
 
 		private String liveStreamUrl;
 
+		private String flvUrl;
+
 		private Integer repeatNum;
 
 		private String vodUrl;
@@ -115,6 +117,14 @@ public class DescribeCasterVideoResourcesResponse extends AcsResponse {
 
 		public void setLiveStreamUrl(String liveStreamUrl) {
 			this.liveStreamUrl = liveStreamUrl;
+		}
+
+		public String getFlvUrl() {
+			return this.flvUrl;
+		}
+
+		public void setFlvUrl(String flvUrl) {
+			this.flvUrl = flvUrl;
 		}
 
 		public Integer getRepeatNum() {

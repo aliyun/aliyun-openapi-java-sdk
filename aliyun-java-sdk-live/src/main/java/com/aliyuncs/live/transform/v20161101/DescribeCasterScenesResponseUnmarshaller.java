@@ -38,6 +38,7 @@ public class DescribeCasterScenesResponseUnmarshaller {
 			scene.setOutputType(_ctx.stringValue("DescribeCasterScenesResponse.SceneList["+ i +"].OutputType"));
 			scene.setLayoutId(_ctx.stringValue("DescribeCasterScenesResponse.SceneList["+ i +"].LayoutId"));
 			scene.setStreamUrl(_ctx.stringValue("DescribeCasterScenesResponse.SceneList["+ i +"].StreamUrl"));
+			scene.setRtsUrl(_ctx.stringValue("DescribeCasterScenesResponse.SceneList["+ i +"].RtsUrl"));
 			scene.setStatus(_ctx.integerValue("DescribeCasterScenesResponse.SceneList["+ i +"].Status"));
 
 			List<String> componentIds = new ArrayList<String>();

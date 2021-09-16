@@ -22,20 +22,18 @@ import com.aliyuncs.live.Endpoint;
  * @author auto create
  * @version 
  */
-public class SetLiveStreamsNotifyUrlConfigRequest extends RpcAcsRequest<SetLiveStreamsNotifyUrlConfigResponse> {
+public class DescribeLiveStreamStateRequest extends RpcAcsRequest<DescribeLiveStreamStateResponse> {
 	   
 
-	private String notifyReqAuth;
+	private String appName;
 
-	private String notifyUrl;
+	private String streamName;
 
 	private String domainName;
 
 	private Long ownerId;
-
-	private String notifyAuthKey;
-	public SetLiveStreamsNotifyUrlConfigRequest() {
-		super("live", "2016-11-01", "SetLiveStreamsNotifyUrlConfig", "live");
+	public DescribeLiveStreamStateRequest() {
+		super("live", "2016-11-01", "DescribeLiveStreamState", "live");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -43,25 +41,25 @@ public class SetLiveStreamsNotifyUrlConfigRequest extends RpcAcsRequest<SetLiveS
 		} catch (Exception e) {}
 	}
 
-	public String getNotifyReqAuth() {
-		return this.notifyReqAuth;
+	public String getAppName() {
+		return this.appName;
 	}
 
-	public void setNotifyReqAuth(String notifyReqAuth) {
-		this.notifyReqAuth = notifyReqAuth;
-		if(notifyReqAuth != null){
-			putQueryParameter("NotifyReqAuth", notifyReqAuth);
+	public void setAppName(String appName) {
+		this.appName = appName;
+		if(appName != null){
+			putQueryParameter("AppName", appName);
 		}
 	}
 
-	public String getNotifyUrl() {
-		return this.notifyUrl;
+	public String getStreamName() {
+		return this.streamName;
 	}
 
-	public void setNotifyUrl(String notifyUrl) {
-		this.notifyUrl = notifyUrl;
-		if(notifyUrl != null){
-			putQueryParameter("NotifyUrl", notifyUrl);
+	public void setStreamName(String streamName) {
+		this.streamName = streamName;
+		if(streamName != null){
+			putQueryParameter("StreamName", streamName);
 		}
 	}
 
@@ -87,20 +85,9 @@ public class SetLiveStreamsNotifyUrlConfigRequest extends RpcAcsRequest<SetLiveS
 		}
 	}
 
-	public String getNotifyAuthKey() {
-		return this.notifyAuthKey;
-	}
-
-	public void setNotifyAuthKey(String notifyAuthKey) {
-		this.notifyAuthKey = notifyAuthKey;
-		if(notifyAuthKey != null){
-			putQueryParameter("NotifyAuthKey", notifyAuthKey);
-		}
-	}
-
 	@Override
-	public Class<SetLiveStreamsNotifyUrlConfigResponse> getResponseClass() {
-		return SetLiveStreamsNotifyUrlConfigResponse.class;
+	public Class<DescribeLiveStreamStateResponse> getResponseClass() {
+		return DescribeLiveStreamStateResponse.class;
 	}
 
 }
