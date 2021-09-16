@@ -1,3 +1,6 @@
+2021-09-16 Version: 3.3.27
+- ListAudience.
+
 2021-09-03 Version: 3.3.26
 - ListAudience.
 

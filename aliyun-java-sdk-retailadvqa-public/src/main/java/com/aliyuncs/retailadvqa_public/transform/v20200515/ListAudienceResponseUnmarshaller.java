@@ -50,7 +50,6 @@ public class ListAudienceResponseUnmarshaller {
 			contentItem.setName(_ctx.stringValue("ListAudienceResponse.Data.Content["+ i +"].Name"));
 			contentItem.setIsDynamic(_ctx.booleanValue("ListAudienceResponse.Data.Content["+ i +"].IsDynamic"));
 			contentItem.setId(_ctx.stringValue("ListAudienceResponse.Data.Content["+ i +"].Id"));
-			contentItem.setStatus(_ctx.integerValue("ListAudienceResponse.Data.Content["+ i +"].Status"));
 
 			List<String> mappingTypes = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("ListAudienceResponse.Data.Content["+ i +"].MappingTypes.Length"); j++) {

@@ -326,6 +326,10 @@ public class GetAudienceMarketingInfoResponse extends AcsResponse {
 
 					private String status;
 
+					private String createTime;
+
+					private String modifyTime;
+
 					public String getJobId() {
 						return this.jobId;
 					}
@@ -364,6 +368,22 @@ public class GetAudienceMarketingInfoResponse extends AcsResponse {
 
 					public void setStatus(String status) {
 						this.status = status;
+					}
+
+					public String getCreateTime() {
+						return this.createTime;
+					}
+
+					public void setCreateTime(String createTime) {
+						this.createTime = createTime;
+					}
+
+					public String getModifyTime() {
+						return this.modifyTime;
+					}
+
+					public void setModifyTime(String modifyTime) {
+						this.modifyTime = modifyTime;
 					}
 				}
 			}

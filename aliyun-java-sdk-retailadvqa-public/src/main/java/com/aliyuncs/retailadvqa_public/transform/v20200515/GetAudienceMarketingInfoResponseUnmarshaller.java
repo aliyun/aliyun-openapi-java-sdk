@@ -78,6 +78,8 @@ public class GetAudienceMarketingInfoResponseUnmarshaller {
 				marketingTasksItem.setTaskName(_ctx.stringValue("GetAudienceMarketingInfoResponse.Data.Content["+ i +"].SmsMarketingModel.MarketingTasks["+ j +"].TaskName"));
 				marketingTasksItem.setMarketType(_ctx.stringValue("GetAudienceMarketingInfoResponse.Data.Content["+ i +"].SmsMarketingModel.MarketingTasks["+ j +"].MarketType"));
 				marketingTasksItem.setStatus(_ctx.stringValue("GetAudienceMarketingInfoResponse.Data.Content["+ i +"].SmsMarketingModel.MarketingTasks["+ j +"].Status"));
+				marketingTasksItem.setCreateTime(_ctx.stringValue("GetAudienceMarketingInfoResponse.Data.Content["+ i +"].SmsMarketingModel.MarketingTasks["+ j +"].CreateTime"));
+				marketingTasksItem.setModifyTime(_ctx.stringValue("GetAudienceMarketingInfoResponse.Data.Content["+ i +"].SmsMarketingModel.MarketingTasks["+ j +"].ModifyTime"));
 
 				marketingTasks.add(marketingTasksItem);
 			}

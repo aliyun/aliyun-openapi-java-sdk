@@ -4,7 +4,7 @@
   <groupId>com.aliyun</groupId>
   <artifactId>aliyun-java-sdk-retailadvqa-public</artifactId>
   <packaging>jar</packaging>
-  <version>3.3.26</version>
+  <version>3.3.27</version>
   <name>aliyun-java-sdk-retailadvqa-public</name>
   <url>http://www.aliyun.com</url>
   <description>Aliyun Open API SDK for Java
