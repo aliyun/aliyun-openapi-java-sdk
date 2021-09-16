@@ -1,16 +1,18 @@
 package com.aliyuncs;
 
-import java.io.UnsupportedEncodingException;
-import java.util.HashMap;
-import java.util.Map;
-
+import com.aliyuncs.auth.AlibabaCloudCredentials;
+import com.aliyuncs.auth.BasicCredentials;
+import com.aliyuncs.auth.HmacSHA1Signer;
+import com.aliyuncs.http.FormatType;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.http.ProtocolType;
 import org.junit.Assert;
 import org.junit.Test;
 import org.powermock.reflect.Whitebox;
 
-import com.aliyuncs.http.FormatType;
-import com.aliyuncs.http.MethodType;
-import com.aliyuncs.http.ProtocolType;
+import java.io.UnsupportedEncodingException;
+import java.util.HashMap;
+import java.util.Map;
 
 public class CommonRequestTest {
 
@@ -29,6 +31,18 @@ public class CommonRequestTest {
         acsRequest = request.buildRequest();
         Assert.assertEquals(FormatType.JSON, acsRequest.getHttpContentType());
 
+    }
+
+    @Test
+    public void methodRequestTest() throws Exception {
+        CommonRequest request = new CommonRequest();
+        request.setSysMethod(MethodType.POST);
+        HmacSHA1Signer hmacSHA1Signer = new HmacSHA1Signer();
+        AlibabaCloudCredentials basicCredentials = new BasicCredentials("accessKeyId", "accessKeySecret");
+        FormatType formatType = FormatType.JSON;
+        Map<String, ?> stringMap = request.methodRequest(hmacSHA1Signer, basicCredentials, formatType);
+        Assert.assertNotNull(stringMap);
+        Assert.assertEquals("application/json", stringMap.get(""));
     }
 
     @Test
