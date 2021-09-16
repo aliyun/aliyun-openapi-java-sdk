@@ -91,6 +91,7 @@ public class QueryJobListResponseUnmarshaller {
 			output.setPriority(_ctx.stringValue("QueryJobListResponse.JobList["+ i +"].Output.Priority"));
 			output.setAudioStreamMap(_ctx.stringValue("QueryJobListResponse.JobList["+ i +"].Output.AudioStreamMap"));
 			output.setUserData(_ctx.stringValue("QueryJobListResponse.JobList["+ i +"].Output.UserData"));
+			output.setExtendData(_ctx.stringValue("QueryJobListResponse.JobList["+ i +"].Output.ExtendData"));
 			output.setVideoStreamMap(_ctx.stringValue("QueryJobListResponse.JobList["+ i +"].Output.VideoStreamMap"));
 			output.setRotate(_ctx.stringValue("QueryJobListResponse.JobList["+ i +"].Output.Rotate"));
 			output.setMergeConfigUrl(_ctx.stringValue("QueryJobListResponse.JobList["+ i +"].Output.MergeConfigUrl"));

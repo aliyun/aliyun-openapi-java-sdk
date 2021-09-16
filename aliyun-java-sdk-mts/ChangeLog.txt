@@ -1,3 +1,6 @@
+2021-09-16 Version: 3.3.31
+- Add externalUrl for SubmitMediaCensorJob.
+
 2021-09-14 Version: 3.3.28
 - Add URL for SubmitCensorJob.
 

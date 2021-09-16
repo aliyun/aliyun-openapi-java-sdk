@@ -179,6 +179,8 @@ public class QueryJobListResponse extends AcsResponse {
 
 			private String userData;
 
+			private String extendData;
+
 			private String videoStreamMap;
 
 			private String rotate;
@@ -259,6 +261,14 @@ public class QueryJobListResponse extends AcsResponse {
 
 			public void setUserData(String userData) {
 				this.userData = userData;
+			}
+
+			public String getExtendData() {
+				return this.extendData;
+			}
+
+			public void setExtendData(String extendData) {
+				this.extendData = extendData;
 			}
 
 			public String getVideoStreamMap() {

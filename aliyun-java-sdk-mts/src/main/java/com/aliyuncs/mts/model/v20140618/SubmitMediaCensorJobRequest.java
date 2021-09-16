@@ -25,6 +25,8 @@ import com.aliyuncs.mts.Endpoint;
 public class SubmitMediaCensorJobRequest extends RpcAcsRequest<SubmitMediaCensorJobResponse> {
 	   
 
+	private String externalUrl;
+
 	private Long resourceOwnerId;
 
 	private String description;
@@ -55,6 +57,17 @@ public class SubmitMediaCensorJobRequest extends RpcAcsRequest<SubmitMediaCensor
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getExternalUrl() {
+		return this.externalUrl;
+	}
+
+	public void setExternalUrl(String externalUrl) {
+		this.externalUrl = externalUrl;
+		if(externalUrl != null){
+			putQueryParameter("ExternalUrl", externalUrl);
+		}
 	}
 
 	public Long getResourceOwnerId() {
