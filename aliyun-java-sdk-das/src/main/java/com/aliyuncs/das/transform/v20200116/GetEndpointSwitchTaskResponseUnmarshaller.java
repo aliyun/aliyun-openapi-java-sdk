@@ -31,11 +31,11 @@ public class GetEndpointSwitchTaskResponseUnmarshaller {
 
 		Data data = new Data();
 		data.setStatus(_ctx.stringValue("GetEndpointSwitchTaskResponse.Data.Status"));
-		data.setTaskId(_ctx.stringValue("GetEndpointSwitchTaskResponse.Data.TaskId"));
-		data.setAccountId(_ctx.stringValue("GetEndpointSwitchTaskResponse.Data.AccountId"));
 		data.setUuid(_ctx.stringValue("GetEndpointSwitchTaskResponse.Data.Uuid"));
-		data.setErrMsg(_ctx.stringValue("GetEndpointSwitchTaskResponse.Data.ErrMsg"));
 		data.setOriUuid(_ctx.stringValue("GetEndpointSwitchTaskResponse.Data.OriUuid"));
+		data.setAccountId(_ctx.stringValue("GetEndpointSwitchTaskResponse.Data.AccountId"));
+		data.setErrMsg(_ctx.stringValue("GetEndpointSwitchTaskResponse.Data.ErrMsg"));
+		data.setTaskId(_ctx.stringValue("GetEndpointSwitchTaskResponse.Data.TaskId"));
 		data.setDbLinkId(_ctx.longValue("GetEndpointSwitchTaskResponse.Data.DbLinkId"));
 		getEndpointSwitchTaskResponse.setData(data);
 	 

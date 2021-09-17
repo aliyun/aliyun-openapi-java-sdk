@@ -28,11 +28,11 @@ public class GetSqlOptimizeAdviceResponse extends AcsResponse {
 
 	private String message;
 
-	private String data;
-
 	private String requestId;
 
 	private String success;
+
+	private Data data;
 
 	public String getCode() {
 		return this.code;
@@ -50,14 +50,6 @@ public class GetSqlOptimizeAdviceResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getData() {
-		return this.data;
-	}
-
-	public void setData(String data) {
-		this.data = data;
-	}
-
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -72,6 +64,77 @@ public class GetSqlOptimizeAdviceResponse extends AcsResponse {
 
 	public void setSuccess(String success) {
 		this.success = success;
+	}
+
+	public Data getData() {
+		return this.data;
+	}
+
+	public void setData(Data data) {
+		this.data = data;
+	}
+
+	public static class Data {
+
+		private String status;
+
+		private String statusCode;
+
+		private String downloadUrl;
+
+		private String createTime;
+
+		private String expireTime;
+
+		private String taskId;
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
+		public String getStatusCode() {
+			return this.statusCode;
+		}
+
+		public void setStatusCode(String statusCode) {
+			this.statusCode = statusCode;
+		}
+
+		public String getDownloadUrl() {
+			return this.downloadUrl;
+		}
+
+		public void setDownloadUrl(String downloadUrl) {
+			this.downloadUrl = downloadUrl;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
+
+		public String getExpireTime() {
+			return this.expireTime;
+		}
+
+		public void setExpireTime(String expireTime) {
+			this.expireTime = expireTime;
+		}
+
+		public String getTaskId() {
+			return this.taskId;
+		}
+
+		public void setTaskId(String taskId) {
+			this.taskId = taskId;
+		}
 	}
 
 	@Override

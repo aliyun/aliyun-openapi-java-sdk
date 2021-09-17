@@ -24,9 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class AddHDMInstanceResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String message;
+
+	private String requestId;
 
 	private String synchro;
 
@@ -36,20 +36,20 @@ public class AddHDMInstanceResponse extends AcsResponse {
 
 	private Data data;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public String getMessage() {
 		return this.message;
 	}
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getSynchro() {
@@ -86,61 +86,29 @@ public class AddHDMInstanceResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String role;
-
-		private String tenantId;
-
-		private String uuid;
-
-		private String ownerId;
-
 		private String vpcId;
+
+		private String token;
+
+		private String ip;
+
+		private String callerUid;
 
 		private String instanceId;
 
 		private Integer port;
 
-		private String ip;
+		private String ownerId;
+
+		private String uuid;
 
 		private String error;
 
-		private String token;
-
 		private Integer code;
 
-		private String callerUid;
+		private String role;
 
-		public String getRole() {
-			return this.role;
-		}
-
-		public void setRole(String role) {
-			this.role = role;
-		}
-
-		public String getTenantId() {
-			return this.tenantId;
-		}
-
-		public void setTenantId(String tenantId) {
-			this.tenantId = tenantId;
-		}
-
-		public String getUuid() {
-			return this.uuid;
-		}
-
-		public void setUuid(String uuid) {
-			this.uuid = uuid;
-		}
-
-		public String getOwnerId() {
-			return this.ownerId;
-		}
-
-		public void setOwnerId(String ownerId) {
-			this.ownerId = ownerId;
-		}
+		private String tenantId;
 
 		public String getVpcId() {
 			return this.vpcId;
@@ -148,6 +116,30 @@ public class AddHDMInstanceResponse extends AcsResponse {
 
 		public void setVpcId(String vpcId) {
 			this.vpcId = vpcId;
+		}
+
+		public String getToken() {
+			return this.token;
+		}
+
+		public void setToken(String token) {
+			this.token = token;
+		}
+
+		public String getIp() {
+			return this.ip;
+		}
+
+		public void setIp(String ip) {
+			this.ip = ip;
+		}
+
+		public String getCallerUid() {
+			return this.callerUid;
+		}
+
+		public void setCallerUid(String callerUid) {
+			this.callerUid = callerUid;
 		}
 
 		public String getInstanceId() {
@@ -166,12 +158,20 @@ public class AddHDMInstanceResponse extends AcsResponse {
 			this.port = port;
 		}
 
-		public String getIp() {
-			return this.ip;
+		public String getOwnerId() {
+			return this.ownerId;
 		}
 
-		public void setIp(String ip) {
-			this.ip = ip;
+		public void setOwnerId(String ownerId) {
+			this.ownerId = ownerId;
+		}
+
+		public String getUuid() {
+			return this.uuid;
+		}
+
+		public void setUuid(String uuid) {
+			this.uuid = uuid;
 		}
 
 		public String getError() {
@@ -182,14 +182,6 @@ public class AddHDMInstanceResponse extends AcsResponse {
 			this.error = error;
 		}
 
-		public String getToken() {
-			return this.token;
-		}
-
-		public void setToken(String token) {
-			this.token = token;
-		}
-
 		public Integer getCode() {
 			return this.code;
 		}
@@ -198,12 +190,20 @@ public class AddHDMInstanceResponse extends AcsResponse {
 			this.code = code;
 		}
 
-		public String getCallerUid() {
-			return this.callerUid;
+		public String getRole() {
+			return this.role;
 		}
 
-		public void setCallerUid(String callerUid) {
-			this.callerUid = callerUid;
+		public void setRole(String role) {
+			this.role = role;
+		}
+
+		public String getTenantId() {
+			return this.tenantId;
+		}
+
+		public void setTenantId(String tenantId) {
+			this.tenantId = tenantId;
 		}
 	}
 

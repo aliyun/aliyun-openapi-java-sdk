@@ -34,17 +34,17 @@ public class GetHDMAliyunResourceSyncResultResponseUnmarshaller {
 		getHDMAliyunResourceSyncResultResponse.setSuccess(_ctx.stringValue("GetHDMAliyunResourceSyncResultResponse.Success"));
 
 		Data data = new Data();
-		data.setResults(_ctx.stringValue("GetHDMAliyunResourceSyncResultResponse.Data.Results"));
-		data.setErrorMsg(_ctx.stringValue("GetHDMAliyunResourceSyncResultResponse.Data.ErrorMsg"));
 		data.setSyncStatus(_ctx.stringValue("GetHDMAliyunResourceSyncResultResponse.Data.SyncStatus"));
+		data.setErrorMsg(_ctx.stringValue("GetHDMAliyunResourceSyncResultResponse.Data.ErrorMsg"));
+		data.setResults(_ctx.stringValue("GetHDMAliyunResourceSyncResultResponse.Data.Results"));
 
 		List<ResourceSyncSubResult> subResults = new ArrayList<ResourceSyncSubResult>();
 		for (int i = 0; i < _ctx.lengthValue("GetHDMAliyunResourceSyncResultResponse.Data.SubResults.Length"); i++) {
 			ResourceSyncSubResult resourceSyncSubResult = new ResourceSyncSubResult();
-			resourceSyncSubResult.setErrMsg(_ctx.stringValue("GetHDMAliyunResourceSyncResultResponse.Data.SubResults["+ i +"].ErrMsg"));
-			resourceSyncSubResult.setResourceType(_ctx.stringValue("GetHDMAliyunResourceSyncResultResponse.Data.SubResults["+ i +"].ResourceType"));
 			resourceSyncSubResult.setSyncCount(_ctx.integerValue("GetHDMAliyunResourceSyncResultResponse.Data.SubResults["+ i +"].SyncCount"));
+			resourceSyncSubResult.setResourceType(_ctx.stringValue("GetHDMAliyunResourceSyncResultResponse.Data.SubResults["+ i +"].ResourceType"));
 			resourceSyncSubResult.setSuccess(_ctx.booleanValue("GetHDMAliyunResourceSyncResultResponse.Data.SubResults["+ i +"].Success"));
+			resourceSyncSubResult.setErrMsg(_ctx.stringValue("GetHDMAliyunResourceSyncResultResponse.Data.SubResults["+ i +"].ErrMsg"));
 
 			subResults.add(resourceSyncSubResult);
 		}

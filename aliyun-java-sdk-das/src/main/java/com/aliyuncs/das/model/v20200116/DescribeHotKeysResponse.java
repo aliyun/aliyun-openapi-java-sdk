@@ -25,9 +25,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeHotKeysResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String message;
+
+	private String requestId;
 
 	private String code;
 
@@ -35,20 +35,20 @@ public class DescribeHotKeysResponse extends AcsResponse {
 
 	private List<HotKey> data;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public String getMessage() {
 		return this.message;
 	}
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getCode() {
@@ -77,15 +77,39 @@ public class DescribeHotKeysResponse extends AcsResponse {
 
 	public static class HotKey {
 
+		private String key;
+
+		private Integer db;
+
+		private String hot;
+
 		private String keyType;
 
 		private Long size;
 
-		private String hot;
+		public String getKey() {
+			return this.key;
+		}
 
-		private Integer db;
+		public void setKey(String key) {
+			this.key = key;
+		}
 
-		private String key;
+		public Integer getDb() {
+			return this.db;
+		}
+
+		public void setDb(Integer db) {
+			this.db = db;
+		}
+
+		public String getHot() {
+			return this.hot;
+		}
+
+		public void setHot(String hot) {
+			this.hot = hot;
+		}
 
 		public String getKeyType() {
 			return this.keyType;
@@ -101,30 +125,6 @@ public class DescribeHotKeysResponse extends AcsResponse {
 
 		public void setSize(Long size) {
 			this.size = size;
-		}
-
-		public String getHot() {
-			return this.hot;
-		}
-
-		public void setHot(String hot) {
-			this.hot = hot;
-		}
-
-		public Integer getDb() {
-			return this.db;
-		}
-
-		public void setDb(Integer db) {
-			this.db = db;
-		}
-
-		public String getKey() {
-			return this.key;
-		}
-
-		public void setKey(String key) {
-			this.key = key;
 		}
 	}
 

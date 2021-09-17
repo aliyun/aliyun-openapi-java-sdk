@@ -25,9 +25,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetInstanceInspectionsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String message;
+
+	private String requestId;
 
 	private String code;
 
@@ -35,20 +35,20 @@ public class GetInstanceInspectionsResponse extends AcsResponse {
 
 	private Data data;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public String getMessage() {
 		return this.message;
 	}
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getCode() {
@@ -77,13 +77,21 @@ public class GetInstanceInspectionsResponse extends AcsResponse {
 
 	public static class Data {
 
+		private Long pageNo;
+
 		private Long pageSize;
 
 		private Long total;
 
-		private Long pageNo;
-
 		private List<BaseInspection> list;
+
+		public Long getPageNo() {
+			return this.pageNo;
+		}
+
+		public void setPageNo(Long pageNo) {
+			this.pageNo = pageNo;
+		}
 
 		public Long getPageSize() {
 			return this.pageSize;
@@ -101,14 +109,6 @@ public class GetInstanceInspectionsResponse extends AcsResponse {
 			this.total = total;
 		}
 
-		public Long getPageNo() {
-			return this.pageNo;
-		}
-
-		public void setPageNo(Long pageNo) {
-			this.pageNo = pageNo;
-		}
-
 		public List<BaseInspection> getList() {
 			return this.list;
 		}
@@ -119,43 +119,19 @@ public class GetInstanceInspectionsResponse extends AcsResponse {
 
 		public static class BaseInspection {
 
-			private Integer score;
-
-			private Long gmtCreate;
-
-			private String scoreMap;
-
 			private Long endTime;
 
 			private Long startTime;
 
 			private String data;
 
+			private String scoreMap;
+
+			private Long gmtCreate;
+
+			private Integer score;
+
 			private Instance instance;
-
-			public Integer getScore() {
-				return this.score;
-			}
-
-			public void setScore(Integer score) {
-				this.score = score;
-			}
-
-			public Long getGmtCreate() {
-				return this.gmtCreate;
-			}
-
-			public void setGmtCreate(Long gmtCreate) {
-				this.gmtCreate = gmtCreate;
-			}
-
-			public String getScoreMap() {
-				return this.scoreMap;
-			}
-
-			public void setScoreMap(String scoreMap) {
-				this.scoreMap = scoreMap;
-			}
 
 			public Long getEndTime() {
 				return this.endTime;
@@ -181,6 +157,30 @@ public class GetInstanceInspectionsResponse extends AcsResponse {
 				this.data = data;
 			}
 
+			public String getScoreMap() {
+				return this.scoreMap;
+			}
+
+			public void setScoreMap(String scoreMap) {
+				this.scoreMap = scoreMap;
+			}
+
+			public Long getGmtCreate() {
+				return this.gmtCreate;
+			}
+
+			public void setGmtCreate(Long gmtCreate) {
+				this.gmtCreate = gmtCreate;
+			}
+
+			public Integer getScore() {
+				return this.score;
+			}
+
+			public void setScore(Integer score) {
+				this.score = score;
+			}
+
 			public Instance getInstance() {
 				return this.instance;
 			}
@@ -191,42 +191,34 @@ public class GetInstanceInspectionsResponse extends AcsResponse {
 
 			public static class Instance {
 
-				private String engineVersion;
-
-				private String accountId;
+				private String vpcId;
 
 				private String uuid;
 
-				private String vpcId;
-
-				private String instanceId;
-
-				private String networkType;
-
-				private String nodeId;
-
 				private String instanceArea;
-
-				private String region;
 
 				private String instanceClass;
 
+				private String region;
+
+				private String accountId;
+
+				private String networkType;
+
 				private String engine;
 
-				public String getEngineVersion() {
-					return this.engineVersion;
+				private String instanceId;
+
+				private String nodeId;
+
+				private String engineVersion;
+
+				public String getVpcId() {
+					return this.vpcId;
 				}
 
-				public void setEngineVersion(String engineVersion) {
-					this.engineVersion = engineVersion;
-				}
-
-				public String getAccountId() {
-					return this.accountId;
-				}
-
-				public void setAccountId(String accountId) {
-					this.accountId = accountId;
+				public void setVpcId(String vpcId) {
+					this.vpcId = vpcId;
 				}
 
 				public String getUuid() {
@@ -237,52 +229,12 @@ public class GetInstanceInspectionsResponse extends AcsResponse {
 					this.uuid = uuid;
 				}
 
-				public String getVpcId() {
-					return this.vpcId;
-				}
-
-				public void setVpcId(String vpcId) {
-					this.vpcId = vpcId;
-				}
-
-				public String getInstanceId() {
-					return this.instanceId;
-				}
-
-				public void setInstanceId(String instanceId) {
-					this.instanceId = instanceId;
-				}
-
-				public String getNetworkType() {
-					return this.networkType;
-				}
-
-				public void setNetworkType(String networkType) {
-					this.networkType = networkType;
-				}
-
-				public String getNodeId() {
-					return this.nodeId;
-				}
-
-				public void setNodeId(String nodeId) {
-					this.nodeId = nodeId;
-				}
-
 				public String getInstanceArea() {
 					return this.instanceArea;
 				}
 
 				public void setInstanceArea(String instanceArea) {
 					this.instanceArea = instanceArea;
-				}
-
-				public String getRegion() {
-					return this.region;
-				}
-
-				public void setRegion(String region) {
-					this.region = region;
 				}
 
 				public String getInstanceClass() {
@@ -293,12 +245,60 @@ public class GetInstanceInspectionsResponse extends AcsResponse {
 					this.instanceClass = instanceClass;
 				}
 
+				public String getRegion() {
+					return this.region;
+				}
+
+				public void setRegion(String region) {
+					this.region = region;
+				}
+
+				public String getAccountId() {
+					return this.accountId;
+				}
+
+				public void setAccountId(String accountId) {
+					this.accountId = accountId;
+				}
+
+				public String getNetworkType() {
+					return this.networkType;
+				}
+
+				public void setNetworkType(String networkType) {
+					this.networkType = networkType;
+				}
+
 				public String getEngine() {
 					return this.engine;
 				}
 
 				public void setEngine(String engine) {
 					this.engine = engine;
+				}
+
+				public String getInstanceId() {
+					return this.instanceId;
+				}
+
+				public void setInstanceId(String instanceId) {
+					this.instanceId = instanceId;
+				}
+
+				public String getNodeId() {
+					return this.nodeId;
+				}
+
+				public void setNodeId(String nodeId) {
+					this.nodeId = nodeId;
+				}
+
+				public String getEngineVersion() {
+					return this.engineVersion;
+				}
+
+				public void setEngineVersion(String engineVersion) {
+					this.engineVersion = engineVersion;
 				}
 			}
 		}

@@ -34,18 +34,18 @@ public class DescribeHotBigKeysResponseUnmarshaller {
 		describeHotBigKeysResponse.setSuccess(_ctx.stringValue("DescribeHotBigKeysResponse.Success"));
 
 		Data data = new Data();
-		data.setBigKeyMsg(_ctx.stringValue("DescribeHotBigKeysResponse.Data.BigKeyMsg"));
 		data.setHotKeyMsg(_ctx.stringValue("DescribeHotBigKeysResponse.Data.HotKeyMsg"));
+		data.setBigKeyMsg(_ctx.stringValue("DescribeHotBigKeysResponse.Data.BigKeyMsg"));
 
 		List<HotKey> hotKeys = new ArrayList<HotKey>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeHotBigKeysResponse.Data.HotKeys.Length"); i++) {
 			HotKey hotKey = new HotKey();
-			hotKey.setKeyType(_ctx.stringValue("DescribeHotBigKeysResponse.Data.HotKeys["+ i +"].KeyType"));
-			hotKey.setNodeId(_ctx.stringValue("DescribeHotBigKeysResponse.Data.HotKeys["+ i +"].NodeId"));
-			hotKey.setLfu(_ctx.integerValue("DescribeHotBigKeysResponse.Data.HotKeys["+ i +"].Lfu"));
-			hotKey.setHot(_ctx.stringValue("DescribeHotBigKeysResponse.Data.HotKeys["+ i +"].Hot"));
-			hotKey.setDb(_ctx.integerValue("DescribeHotBigKeysResponse.Data.HotKeys["+ i +"].Db"));
 			hotKey.setKey(_ctx.stringValue("DescribeHotBigKeysResponse.Data.HotKeys["+ i +"].Key"));
+			hotKey.setDb(_ctx.integerValue("DescribeHotBigKeysResponse.Data.HotKeys["+ i +"].Db"));
+			hotKey.setHot(_ctx.stringValue("DescribeHotBigKeysResponse.Data.HotKeys["+ i +"].Hot"));
+			hotKey.setKeyType(_ctx.stringValue("DescribeHotBigKeysResponse.Data.HotKeys["+ i +"].KeyType"));
+			hotKey.setLfu(_ctx.integerValue("DescribeHotBigKeysResponse.Data.HotKeys["+ i +"].Lfu"));
+			hotKey.setNodeId(_ctx.stringValue("DescribeHotBigKeysResponse.Data.HotKeys["+ i +"].NodeId"));
 
 			hotKeys.add(hotKey);
 		}
@@ -54,11 +54,11 @@ public class DescribeHotBigKeysResponseUnmarshaller {
 		List<BigKey> bigKeys = new ArrayList<BigKey>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeHotBigKeysResponse.Data.BigKeys.Length"); i++) {
 			BigKey bigKey = new BigKey();
+			bigKey.setDb(_ctx.integerValue("DescribeHotBigKeysResponse.Data.BigKeys["+ i +"].Db"));
+			bigKey.setKey(_ctx.stringValue("DescribeHotBigKeysResponse.Data.BigKeys["+ i +"].Key"));
 			bigKey.setKeyType(_ctx.stringValue("DescribeHotBigKeysResponse.Data.BigKeys["+ i +"].KeyType"));
 			bigKey.setSize(_ctx.longValue("DescribeHotBigKeysResponse.Data.BigKeys["+ i +"].Size"));
 			bigKey.setNodeId(_ctx.stringValue("DescribeHotBigKeysResponse.Data.BigKeys["+ i +"].NodeId"));
-			bigKey.setKey(_ctx.stringValue("DescribeHotBigKeysResponse.Data.BigKeys["+ i +"].Key"));
-			bigKey.setDb(_ctx.integerValue("DescribeHotBigKeysResponse.Data.BigKeys["+ i +"].Db"));
 
 			bigKeys.add(bigKey);
 		}

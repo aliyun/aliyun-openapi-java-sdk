@@ -25,9 +25,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeHotBigKeysResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String message;
+
+	private String requestId;
 
 	private String code;
 
@@ -35,20 +35,20 @@ public class DescribeHotBigKeysResponse extends AcsResponse {
 
 	private Data data;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public String getMessage() {
 		return this.message;
 	}
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getCode() {
@@ -77,21 +77,13 @@ public class DescribeHotBigKeysResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String bigKeyMsg;
-
 		private String hotKeyMsg;
+
+		private String bigKeyMsg;
 
 		private List<HotKey> hotKeys;
 
 		private List<BigKey> bigKeys;
-
-		public String getBigKeyMsg() {
-			return this.bigKeyMsg;
-		}
-
-		public void setBigKeyMsg(String bigKeyMsg) {
-			this.bigKeyMsg = bigKeyMsg;
-		}
 
 		public String getHotKeyMsg() {
 			return this.hotKeyMsg;
@@ -99,6 +91,14 @@ public class DescribeHotBigKeysResponse extends AcsResponse {
 
 		public void setHotKeyMsg(String hotKeyMsg) {
 			this.hotKeyMsg = hotKeyMsg;
+		}
+
+		public String getBigKeyMsg() {
+			return this.bigKeyMsg;
+		}
+
+		public void setBigKeyMsg(String bigKeyMsg) {
+			this.bigKeyMsg = bigKeyMsg;
 		}
 
 		public List<HotKey> getHotKeys() {
@@ -119,17 +119,41 @@ public class DescribeHotBigKeysResponse extends AcsResponse {
 
 		public static class HotKey {
 
-			private String keyType;
-
-			private String nodeId;
-
-			private Integer lfu;
-
-			private String hot;
+			private String key;
 
 			private Integer db;
 
-			private String key;
+			private String hot;
+
+			private String keyType;
+
+			private Integer lfu;
+
+			private String nodeId;
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
+
+			public Integer getDb() {
+				return this.db;
+			}
+
+			public void setDb(Integer db) {
+				this.db = db;
+			}
+
+			public String getHot() {
+				return this.hot;
+			}
+
+			public void setHot(String hot) {
+				this.hot = hot;
+			}
 
 			public String getKeyType() {
 				return this.keyType;
@@ -137,14 +161,6 @@ public class DescribeHotBigKeysResponse extends AcsResponse {
 
 			public void setKeyType(String keyType) {
 				this.keyType = keyType;
-			}
-
-			public String getNodeId() {
-				return this.nodeId;
-			}
-
-			public void setNodeId(String nodeId) {
-				this.nodeId = nodeId;
 			}
 
 			public Integer getLfu() {
@@ -155,13 +171,26 @@ public class DescribeHotBigKeysResponse extends AcsResponse {
 				this.lfu = lfu;
 			}
 
-			public String getHot() {
-				return this.hot;
+			public String getNodeId() {
+				return this.nodeId;
 			}
 
-			public void setHot(String hot) {
-				this.hot = hot;
+			public void setNodeId(String nodeId) {
+				this.nodeId = nodeId;
 			}
+		}
+
+		public static class BigKey {
+
+			private Integer db;
+
+			private String key;
+
+			private String keyType;
+
+			private Long size;
+
+			private String nodeId;
 
 			public Integer getDb() {
 				return this.db;
@@ -178,19 +207,6 @@ public class DescribeHotBigKeysResponse extends AcsResponse {
 			public void setKey(String key) {
 				this.key = key;
 			}
-		}
-
-		public static class BigKey {
-
-			private String keyType;
-
-			private Long size;
-
-			private String nodeId;
-
-			private String key;
-
-			private Integer db;
 
 			public String getKeyType() {
 				return this.keyType;
@@ -214,22 +230,6 @@ public class DescribeHotBigKeysResponse extends AcsResponse {
 
 			public void setNodeId(String nodeId) {
 				this.nodeId = nodeId;
-			}
-
-			public String getKey() {
-				return this.key;
-			}
-
-			public void setKey(String key) {
-				this.key = key;
-			}
-
-			public Integer getDb() {
-				return this.db;
-			}
-
-			public void setDb(Integer db) {
-				this.db = db;
 			}
 		}
 	}

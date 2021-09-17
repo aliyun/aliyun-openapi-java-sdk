@@ -24,9 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetEndpointSwitchTaskResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String message;
+
+	private String requestId;
 
 	private String synchro;
 
@@ -36,20 +36,20 @@ public class GetEndpointSwitchTaskResponse extends AcsResponse {
 
 	private Data data;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public String getMessage() {
 		return this.message;
 	}
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getSynchro() {
@@ -88,15 +88,15 @@ public class GetEndpointSwitchTaskResponse extends AcsResponse {
 
 		private String status;
 
-		private String taskId;
+		private String uuid;
+
+		private String oriUuid;
 
 		private String accountId;
 
-		private String uuid;
-
 		private String errMsg;
 
-		private String oriUuid;
+		private String taskId;
 
 		private Long dbLinkId;
 
@@ -108,12 +108,20 @@ public class GetEndpointSwitchTaskResponse extends AcsResponse {
 			this.status = status;
 		}
 
-		public String getTaskId() {
-			return this.taskId;
+		public String getUuid() {
+			return this.uuid;
 		}
 
-		public void setTaskId(String taskId) {
-			this.taskId = taskId;
+		public void setUuid(String uuid) {
+			this.uuid = uuid;
+		}
+
+		public String getOriUuid() {
+			return this.oriUuid;
+		}
+
+		public void setOriUuid(String oriUuid) {
+			this.oriUuid = oriUuid;
 		}
 
 		public String getAccountId() {
@@ -124,14 +132,6 @@ public class GetEndpointSwitchTaskResponse extends AcsResponse {
 			this.accountId = accountId;
 		}
 
-		public String getUuid() {
-			return this.uuid;
-		}
-
-		public void setUuid(String uuid) {
-			this.uuid = uuid;
-		}
-
 		public String getErrMsg() {
 			return this.errMsg;
 		}
@@ -140,12 +140,12 @@ public class GetEndpointSwitchTaskResponse extends AcsResponse {
 			this.errMsg = errMsg;
 		}
 
-		public String getOriUuid() {
-			return this.oriUuid;
+		public String getTaskId() {
+			return this.taskId;
 		}
 
-		public void setOriUuid(String oriUuid) {
-			this.oriUuid = oriUuid;
+		public void setTaskId(String taskId) {
+			this.taskId = taskId;
 		}
 
 		public Long getDbLinkId() {

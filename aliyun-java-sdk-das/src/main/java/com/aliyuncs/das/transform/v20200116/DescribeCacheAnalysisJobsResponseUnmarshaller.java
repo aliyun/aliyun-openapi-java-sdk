@@ -34,31 +34,31 @@ public class DescribeCacheAnalysisJobsResponseUnmarshaller {
 		describeCacheAnalysisJobsResponse.setSuccess(_ctx.stringValue("DescribeCacheAnalysisJobsResponse.Success"));
 
 		Data data = new Data();
-		data.setExtra(_ctx.stringValue("DescribeCacheAnalysisJobsResponse.Data.Extra"));
-		data.setPageSize(_ctx.longValue("DescribeCacheAnalysisJobsResponse.Data.PageSize"));
-		data.setTotal(_ctx.longValue("DescribeCacheAnalysisJobsResponse.Data.Total"));
 		data.setPageNo(_ctx.longValue("DescribeCacheAnalysisJobsResponse.Data.PageNo"));
+		data.setPageSize(_ctx.longValue("DescribeCacheAnalysisJobsResponse.Data.PageSize"));
+		data.setExtra(_ctx.stringValue("DescribeCacheAnalysisJobsResponse.Data.Extra"));
+		data.setTotal(_ctx.longValue("DescribeCacheAnalysisJobsResponse.Data.Total"));
 
 		List<CacheAnalysisJob> list = new ArrayList<CacheAnalysisJob>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeCacheAnalysisJobsResponse.Data.List.Length"); i++) {
 			CacheAnalysisJob cacheAnalysisJob = new CacheAnalysisJob();
+			cacheAnalysisJob.setTaskState(_ctx.stringValue("DescribeCacheAnalysisJobsResponse.Data.List["+ i +"].TaskState"));
+			cacheAnalysisJob.setJobId(_ctx.stringValue("DescribeCacheAnalysisJobsResponse.Data.List["+ i +"].JobId"));
 			cacheAnalysisJob.setMessage(_ctx.stringValue("DescribeCacheAnalysisJobsResponse.Data.List["+ i +"].Message"));
 			cacheAnalysisJob.setInstanceId(_ctx.stringValue("DescribeCacheAnalysisJobsResponse.Data.List["+ i +"].InstanceId"));
 			cacheAnalysisJob.setNodeId(_ctx.stringValue("DescribeCacheAnalysisJobsResponse.Data.List["+ i +"].NodeId"));
-			cacheAnalysisJob.setTaskState(_ctx.stringValue("DescribeCacheAnalysisJobsResponse.Data.List["+ i +"].TaskState"));
-			cacheAnalysisJob.setJobId(_ctx.stringValue("DescribeCacheAnalysisJobsResponse.Data.List["+ i +"].JobId"));
 
 			List<KeyInfo> bigKeys = new ArrayList<KeyInfo>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeCacheAnalysisJobsResponse.Data.List["+ i +"].BigKeys.Length"); j++) {
 				KeyInfo keyInfo = new KeyInfo();
-				keyInfo.setBytes(_ctx.longValue("DescribeCacheAnalysisJobsResponse.Data.List["+ i +"].BigKeys["+ j +"].Bytes"));
 				keyInfo.setType(_ctx.stringValue("DescribeCacheAnalysisJobsResponse.Data.List["+ i +"].BigKeys["+ j +"].Type"));
-				keyInfo.setNodeId(_ctx.stringValue("DescribeCacheAnalysisJobsResponse.Data.List["+ i +"].BigKeys["+ j +"].NodeId"));
-				keyInfo.setExpirationTimeMillis(_ctx.longValue("DescribeCacheAnalysisJobsResponse.Data.List["+ i +"].BigKeys["+ j +"].ExpirationTimeMillis"));
-				keyInfo.setEncoding(_ctx.stringValue("DescribeCacheAnalysisJobsResponse.Data.List["+ i +"].BigKeys["+ j +"].Encoding"));
-				keyInfo.setCount(_ctx.longValue("DescribeCacheAnalysisJobsResponse.Data.List["+ i +"].BigKeys["+ j +"].Count"));
-				keyInfo.setKey(_ctx.stringValue("DescribeCacheAnalysisJobsResponse.Data.List["+ i +"].BigKeys["+ j +"].Key"));
 				keyInfo.setDb(_ctx.integerValue("DescribeCacheAnalysisJobsResponse.Data.List["+ i +"].BigKeys["+ j +"].Db"));
+				keyInfo.setExpirationTimeMillis(_ctx.longValue("DescribeCacheAnalysisJobsResponse.Data.List["+ i +"].BigKeys["+ j +"].ExpirationTimeMillis"));
+				keyInfo.setKey(_ctx.stringValue("DescribeCacheAnalysisJobsResponse.Data.List["+ i +"].BigKeys["+ j +"].Key"));
+				keyInfo.setEncoding(_ctx.stringValue("DescribeCacheAnalysisJobsResponse.Data.List["+ i +"].BigKeys["+ j +"].Encoding"));
+				keyInfo.setBytes(_ctx.longValue("DescribeCacheAnalysisJobsResponse.Data.List["+ i +"].BigKeys["+ j +"].Bytes"));
+				keyInfo.setNodeId(_ctx.stringValue("DescribeCacheAnalysisJobsResponse.Data.List["+ i +"].BigKeys["+ j +"].NodeId"));
+				keyInfo.setCount(_ctx.longValue("DescribeCacheAnalysisJobsResponse.Data.List["+ i +"].BigKeys["+ j +"].Count"));
 
 				bigKeys.add(keyInfo);
 			}

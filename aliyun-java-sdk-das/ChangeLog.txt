@@ -1,3 +1,6 @@
+2021-09-17 Version: 1.0.8
+- Fix Bugs for GetSqlOptimizeAdvice.
+
 2021-09-16 Version: 1.0.7
 - Supported GetSqlOptimizeAdvice.
 

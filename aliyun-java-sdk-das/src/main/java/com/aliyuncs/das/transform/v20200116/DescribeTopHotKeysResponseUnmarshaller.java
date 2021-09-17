@@ -34,12 +34,12 @@ public class DescribeTopHotKeysResponseUnmarshaller {
 		List<HotKey> data = new ArrayList<HotKey>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeTopHotKeysResponse.Data.Length"); i++) {
 			HotKey hotKey = new HotKey();
-			hotKey.setKeyType(_ctx.stringValue("DescribeTopHotKeysResponse.Data["+ i +"].KeyType"));
-			hotKey.setNodeId(_ctx.stringValue("DescribeTopHotKeysResponse.Data["+ i +"].NodeId"));
-			hotKey.setLfu(_ctx.integerValue("DescribeTopHotKeysResponse.Data["+ i +"].Lfu"));
-			hotKey.setHot(_ctx.stringValue("DescribeTopHotKeysResponse.Data["+ i +"].Hot"));
-			hotKey.setKey(_ctx.stringValue("DescribeTopHotKeysResponse.Data["+ i +"].Key"));
 			hotKey.setDb(_ctx.integerValue("DescribeTopHotKeysResponse.Data["+ i +"].Db"));
+			hotKey.setKey(_ctx.stringValue("DescribeTopHotKeysResponse.Data["+ i +"].Key"));
+			hotKey.setHot(_ctx.stringValue("DescribeTopHotKeysResponse.Data["+ i +"].Hot"));
+			hotKey.setKeyType(_ctx.stringValue("DescribeTopHotKeysResponse.Data["+ i +"].KeyType"));
+			hotKey.setLfu(_ctx.integerValue("DescribeTopHotKeysResponse.Data["+ i +"].Lfu"));
+			hotKey.setNodeId(_ctx.stringValue("DescribeTopHotKeysResponse.Data["+ i +"].NodeId"));
 
 			data.add(hotKey);
 		}

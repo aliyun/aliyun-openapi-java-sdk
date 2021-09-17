@@ -34,32 +34,32 @@ public class GetInstanceInspectionsResponseUnmarshaller {
 		getInstanceInspectionsResponse.setSuccess(_ctx.stringValue("GetInstanceInspectionsResponse.Success"));
 
 		Data data = new Data();
+		data.setPageNo(_ctx.longValue("GetInstanceInspectionsResponse.Data.PageNo"));
 		data.setPageSize(_ctx.longValue("GetInstanceInspectionsResponse.Data.PageSize"));
 		data.setTotal(_ctx.longValue("GetInstanceInspectionsResponse.Data.Total"));
-		data.setPageNo(_ctx.longValue("GetInstanceInspectionsResponse.Data.PageNo"));
 
 		List<BaseInspection> list = new ArrayList<BaseInspection>();
 		for (int i = 0; i < _ctx.lengthValue("GetInstanceInspectionsResponse.Data.List.Length"); i++) {
 			BaseInspection baseInspection = new BaseInspection();
-			baseInspection.setScore(_ctx.integerValue("GetInstanceInspectionsResponse.Data.List["+ i +"].Score"));
-			baseInspection.setGmtCreate(_ctx.longValue("GetInstanceInspectionsResponse.Data.List["+ i +"].GmtCreate"));
-			baseInspection.setScoreMap(_ctx.stringValue("GetInstanceInspectionsResponse.Data.List["+ i +"].ScoreMap"));
 			baseInspection.setEndTime(_ctx.longValue("GetInstanceInspectionsResponse.Data.List["+ i +"].EndTime"));
 			baseInspection.setStartTime(_ctx.longValue("GetInstanceInspectionsResponse.Data.List["+ i +"].StartTime"));
 			baseInspection.setData(_ctx.stringValue("GetInstanceInspectionsResponse.Data.List["+ i +"].Data"));
+			baseInspection.setScoreMap(_ctx.stringValue("GetInstanceInspectionsResponse.Data.List["+ i +"].ScoreMap"));
+			baseInspection.setGmtCreate(_ctx.longValue("GetInstanceInspectionsResponse.Data.List["+ i +"].GmtCreate"));
+			baseInspection.setScore(_ctx.integerValue("GetInstanceInspectionsResponse.Data.List["+ i +"].Score"));
 
 			Instance instance = new Instance();
-			instance.setEngineVersion(_ctx.stringValue("GetInstanceInspectionsResponse.Data.List["+ i +"].Instance.EngineVersion"));
-			instance.setAccountId(_ctx.stringValue("GetInstanceInspectionsResponse.Data.List["+ i +"].Instance.AccountId"));
-			instance.setUuid(_ctx.stringValue("GetInstanceInspectionsResponse.Data.List["+ i +"].Instance.Uuid"));
 			instance.setVpcId(_ctx.stringValue("GetInstanceInspectionsResponse.Data.List["+ i +"].Instance.VpcId"));
-			instance.setInstanceId(_ctx.stringValue("GetInstanceInspectionsResponse.Data.List["+ i +"].Instance.InstanceId"));
-			instance.setNetworkType(_ctx.stringValue("GetInstanceInspectionsResponse.Data.List["+ i +"].Instance.NetworkType"));
-			instance.setNodeId(_ctx.stringValue("GetInstanceInspectionsResponse.Data.List["+ i +"].Instance.NodeId"));
+			instance.setUuid(_ctx.stringValue("GetInstanceInspectionsResponse.Data.List["+ i +"].Instance.Uuid"));
 			instance.setInstanceArea(_ctx.stringValue("GetInstanceInspectionsResponse.Data.List["+ i +"].Instance.InstanceArea"));
-			instance.setRegion(_ctx.stringValue("GetInstanceInspectionsResponse.Data.List["+ i +"].Instance.Region"));
 			instance.setInstanceClass(_ctx.stringValue("GetInstanceInspectionsResponse.Data.List["+ i +"].Instance.InstanceClass"));
+			instance.setRegion(_ctx.stringValue("GetInstanceInspectionsResponse.Data.List["+ i +"].Instance.Region"));
+			instance.setAccountId(_ctx.stringValue("GetInstanceInspectionsResponse.Data.List["+ i +"].Instance.AccountId"));
+			instance.setNetworkType(_ctx.stringValue("GetInstanceInspectionsResponse.Data.List["+ i +"].Instance.NetworkType"));
 			instance.setEngine(_ctx.stringValue("GetInstanceInspectionsResponse.Data.List["+ i +"].Instance.Engine"));
+			instance.setInstanceId(_ctx.stringValue("GetInstanceInspectionsResponse.Data.List["+ i +"].Instance.InstanceId"));
+			instance.setNodeId(_ctx.stringValue("GetInstanceInspectionsResponse.Data.List["+ i +"].Instance.NodeId"));
+			instance.setEngineVersion(_ctx.stringValue("GetInstanceInspectionsResponse.Data.List["+ i +"].Instance.EngineVersion"));
 			baseInspection.setInstance(instance);
 
 			list.add(baseInspection);

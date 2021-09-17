@@ -15,6 +15,7 @@
 package com.aliyuncs.das.transform.v20200116;
 
 import com.aliyuncs.das.model.v20200116.GetSqlOptimizeAdviceResponse;
+import com.aliyuncs.das.model.v20200116.GetSqlOptimizeAdviceResponse.Data;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -25,8 +26,16 @@ public class GetSqlOptimizeAdviceResponseUnmarshaller {
 		getSqlOptimizeAdviceResponse.setRequestId(_ctx.stringValue("GetSqlOptimizeAdviceResponse.RequestId"));
 		getSqlOptimizeAdviceResponse.setCode(_ctx.stringValue("GetSqlOptimizeAdviceResponse.Code"));
 		getSqlOptimizeAdviceResponse.setMessage(_ctx.stringValue("GetSqlOptimizeAdviceResponse.Message"));
-		getSqlOptimizeAdviceResponse.setData(_ctx.stringValue("GetSqlOptimizeAdviceResponse.Data"));
 		getSqlOptimizeAdviceResponse.setSuccess(_ctx.stringValue("GetSqlOptimizeAdviceResponse.Success"));
+
+		Data data = new Data();
+		data.setStatus(_ctx.stringValue("GetSqlOptimizeAdviceResponse.Data.Status"));
+		data.setStatusCode(_ctx.stringValue("GetSqlOptimizeAdviceResponse.Data.StatusCode"));
+		data.setDownloadUrl(_ctx.stringValue("GetSqlOptimizeAdviceResponse.Data.DownloadUrl"));
+		data.setCreateTime(_ctx.stringValue("GetSqlOptimizeAdviceResponse.Data.CreateTime"));
+		data.setExpireTime(_ctx.stringValue("GetSqlOptimizeAdviceResponse.Data.ExpireTime"));
+		data.setTaskId(_ctx.stringValue("GetSqlOptimizeAdviceResponse.Data.TaskId"));
+		getSqlOptimizeAdviceResponse.setData(data);
 	 
 	 	return getSqlOptimizeAdviceResponse;
 	}

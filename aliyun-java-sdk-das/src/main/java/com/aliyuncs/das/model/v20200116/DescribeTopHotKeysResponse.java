@@ -25,9 +25,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeTopHotKeysResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String message;
+
+	private String requestId;
 
 	private String code;
 
@@ -35,20 +35,20 @@ public class DescribeTopHotKeysResponse extends AcsResponse {
 
 	private List<HotKey> data;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public String getMessage() {
 		return this.message;
 	}
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getCode() {
@@ -77,48 +77,24 @@ public class DescribeTopHotKeysResponse extends AcsResponse {
 
 	public static class HotKey {
 
-		private String keyType;
-
-		private String nodeId;
-
-		private Integer lfu;
-
-		private String hot;
+		private Integer db;
 
 		private String key;
 
-		private Integer db;
+		private String hot;
 
-		public String getKeyType() {
-			return this.keyType;
+		private String keyType;
+
+		private Integer lfu;
+
+		private String nodeId;
+
+		public Integer getDb() {
+			return this.db;
 		}
 
-		public void setKeyType(String keyType) {
-			this.keyType = keyType;
-		}
-
-		public String getNodeId() {
-			return this.nodeId;
-		}
-
-		public void setNodeId(String nodeId) {
-			this.nodeId = nodeId;
-		}
-
-		public Integer getLfu() {
-			return this.lfu;
-		}
-
-		public void setLfu(Integer lfu) {
-			this.lfu = lfu;
-		}
-
-		public String getHot() {
-			return this.hot;
-		}
-
-		public void setHot(String hot) {
-			this.hot = hot;
+		public void setDb(Integer db) {
+			this.db = db;
 		}
 
 		public String getKey() {
@@ -129,12 +105,36 @@ public class DescribeTopHotKeysResponse extends AcsResponse {
 			this.key = key;
 		}
 
-		public Integer getDb() {
-			return this.db;
+		public String getHot() {
+			return this.hot;
 		}
 
-		public void setDb(Integer db) {
-			this.db = db;
+		public void setHot(String hot) {
+			this.hot = hot;
+		}
+
+		public String getKeyType() {
+			return this.keyType;
+		}
+
+		public void setKeyType(String keyType) {
+			this.keyType = keyType;
+		}
+
+		public Integer getLfu() {
+			return this.lfu;
+		}
+
+		public void setLfu(Integer lfu) {
+			this.lfu = lfu;
+		}
+
+		public String getNodeId() {
+			return this.nodeId;
+		}
+
+		public void setNodeId(String nodeId) {
+			this.nodeId = nodeId;
 		}
 	}
 

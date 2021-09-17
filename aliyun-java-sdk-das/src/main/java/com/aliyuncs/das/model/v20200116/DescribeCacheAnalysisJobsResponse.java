@@ -25,9 +25,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeCacheAnalysisJobsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String message;
+
+	private String requestId;
 
 	private String code;
 
@@ -35,20 +35,20 @@ public class DescribeCacheAnalysisJobsResponse extends AcsResponse {
 
 	private Data data;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public String getMessage() {
 		return this.message;
 	}
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getCode() {
@@ -77,22 +77,22 @@ public class DescribeCacheAnalysisJobsResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String extra;
+		private Long pageNo;
 
 		private Long pageSize;
 
-		private Long total;
+		private String extra;
 
-		private Long pageNo;
+		private Long total;
 
 		private List<CacheAnalysisJob> list;
 
-		public String getExtra() {
-			return this.extra;
+		public Long getPageNo() {
+			return this.pageNo;
 		}
 
-		public void setExtra(String extra) {
-			this.extra = extra;
+		public void setPageNo(Long pageNo) {
+			this.pageNo = pageNo;
 		}
 
 		public Long getPageSize() {
@@ -103,20 +103,20 @@ public class DescribeCacheAnalysisJobsResponse extends AcsResponse {
 			this.pageSize = pageSize;
 		}
 
+		public String getExtra() {
+			return this.extra;
+		}
+
+		public void setExtra(String extra) {
+			this.extra = extra;
+		}
+
 		public Long getTotal() {
 			return this.total;
 		}
 
 		public void setTotal(Long total) {
 			this.total = total;
-		}
-
-		public Long getPageNo() {
-			return this.pageNo;
-		}
-
-		public void setPageNo(Long pageNo) {
-			this.pageNo = pageNo;
 		}
 
 		public List<CacheAnalysisJob> getList() {
@@ -129,17 +129,33 @@ public class DescribeCacheAnalysisJobsResponse extends AcsResponse {
 
 		public static class CacheAnalysisJob {
 
+			private String taskState;
+
+			private String jobId;
+
 			private String message;
 
 			private String instanceId;
 
 			private String nodeId;
 
-			private String taskState;
-
-			private String jobId;
-
 			private List<KeyInfo> bigKeys;
+
+			public String getTaskState() {
+				return this.taskState;
+			}
+
+			public void setTaskState(String taskState) {
+				this.taskState = taskState;
+			}
+
+			public String getJobId() {
+				return this.jobId;
+			}
+
+			public void setJobId(String jobId) {
+				this.jobId = jobId;
+			}
 
 			public String getMessage() {
 				return this.message;
@@ -165,22 +181,6 @@ public class DescribeCacheAnalysisJobsResponse extends AcsResponse {
 				this.nodeId = nodeId;
 			}
 
-			public String getTaskState() {
-				return this.taskState;
-			}
-
-			public void setTaskState(String taskState) {
-				this.taskState = taskState;
-			}
-
-			public String getJobId() {
-				return this.jobId;
-			}
-
-			public void setJobId(String jobId) {
-				this.jobId = jobId;
-			}
-
 			public List<KeyInfo> getBigKeys() {
 				return this.bigKeys;
 			}
@@ -191,29 +191,21 @@ public class DescribeCacheAnalysisJobsResponse extends AcsResponse {
 
 			public static class KeyInfo {
 
-				private Long bytes;
-
 				private String type;
-
-				private String nodeId;
-
-				private Long expirationTimeMillis;
-
-				private String encoding;
-
-				private Long count;
-
-				private String key;
 
 				private Integer db;
 
-				public Long getBytes() {
-					return this.bytes;
-				}
+				private Long expirationTimeMillis;
 
-				public void setBytes(Long bytes) {
-					this.bytes = bytes;
-				}
+				private String key;
+
+				private String encoding;
+
+				private Long bytes;
+
+				private String nodeId;
+
+				private Long count;
 
 				public String getType() {
 					return this.type;
@@ -223,12 +215,12 @@ public class DescribeCacheAnalysisJobsResponse extends AcsResponse {
 					this.type = type;
 				}
 
-				public String getNodeId() {
-					return this.nodeId;
+				public Integer getDb() {
+					return this.db;
 				}
 
-				public void setNodeId(String nodeId) {
-					this.nodeId = nodeId;
+				public void setDb(Integer db) {
+					this.db = db;
 				}
 
 				public Long getExpirationTimeMillis() {
@@ -239,22 +231,6 @@ public class DescribeCacheAnalysisJobsResponse extends AcsResponse {
 					this.expirationTimeMillis = expirationTimeMillis;
 				}
 
-				public String getEncoding() {
-					return this.encoding;
-				}
-
-				public void setEncoding(String encoding) {
-					this.encoding = encoding;
-				}
-
-				public Long getCount() {
-					return this.count;
-				}
-
-				public void setCount(Long count) {
-					this.count = count;
-				}
-
 				public String getKey() {
 					return this.key;
 				}
@@ -263,12 +239,36 @@ public class DescribeCacheAnalysisJobsResponse extends AcsResponse {
 					this.key = key;
 				}
 
-				public Integer getDb() {
-					return this.db;
+				public String getEncoding() {
+					return this.encoding;
 				}
 
-				public void setDb(Integer db) {
-					this.db = db;
+				public void setEncoding(String encoding) {
+					this.encoding = encoding;
+				}
+
+				public Long getBytes() {
+					return this.bytes;
+				}
+
+				public void setBytes(Long bytes) {
+					this.bytes = bytes;
+				}
+
+				public String getNodeId() {
+					return this.nodeId;
+				}
+
+				public void setNodeId(String nodeId) {
+					this.nodeId = nodeId;
+				}
+
+				public Long getCount() {
+					return this.count;
+				}
+
+				public void setCount(Long count) {
+					this.count = count;
 				}
 			}
 		}

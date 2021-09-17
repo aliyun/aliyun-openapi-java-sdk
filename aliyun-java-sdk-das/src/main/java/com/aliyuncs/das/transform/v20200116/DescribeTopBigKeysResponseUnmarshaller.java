@@ -34,11 +34,11 @@ public class DescribeTopBigKeysResponseUnmarshaller {
 		List<BigKey> data = new ArrayList<BigKey>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeTopBigKeysResponse.Data.Length"); i++) {
 			BigKey bigKey = new BigKey();
+			bigKey.setKey(_ctx.stringValue("DescribeTopBigKeysResponse.Data["+ i +"].Key"));
+			bigKey.setDb(_ctx.integerValue("DescribeTopBigKeysResponse.Data["+ i +"].Db"));
 			bigKey.setKeyType(_ctx.stringValue("DescribeTopBigKeysResponse.Data["+ i +"].KeyType"));
 			bigKey.setSize(_ctx.longValue("DescribeTopBigKeysResponse.Data["+ i +"].Size"));
 			bigKey.setNodeId(_ctx.stringValue("DescribeTopBigKeysResponse.Data["+ i +"].NodeId"));
-			bigKey.setDb(_ctx.integerValue("DescribeTopBigKeysResponse.Data["+ i +"].Db"));
-			bigKey.setKey(_ctx.stringValue("DescribeTopBigKeysResponse.Data["+ i +"].Key"));
 
 			data.add(bigKey);
 		}

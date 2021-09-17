@@ -34,11 +34,11 @@ public class DescribeHotKeysResponseUnmarshaller {
 		List<HotKey> data = new ArrayList<HotKey>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeHotKeysResponse.Data.Length"); i++) {
 			HotKey hotKey = new HotKey();
+			hotKey.setKey(_ctx.stringValue("DescribeHotKeysResponse.Data["+ i +"].Key"));
+			hotKey.setDb(_ctx.integerValue("DescribeHotKeysResponse.Data["+ i +"].Db"));
+			hotKey.setHot(_ctx.stringValue("DescribeHotKeysResponse.Data["+ i +"].Hot"));
 			hotKey.setKeyType(_ctx.stringValue("DescribeHotKeysResponse.Data["+ i +"].KeyType"));
 			hotKey.setSize(_ctx.longValue("DescribeHotKeysResponse.Data["+ i +"].Size"));
-			hotKey.setHot(_ctx.stringValue("DescribeHotKeysResponse.Data["+ i +"].Hot"));
-			hotKey.setDb(_ctx.integerValue("DescribeHotKeysResponse.Data["+ i +"].Db"));
-			hotKey.setKey(_ctx.stringValue("DescribeHotKeysResponse.Data["+ i +"].Key"));
 
 			data.add(hotKey);
 		}

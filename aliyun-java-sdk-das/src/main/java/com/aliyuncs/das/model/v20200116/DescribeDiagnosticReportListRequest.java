@@ -27,11 +27,7 @@ public class DescribeDiagnosticReportListRequest extends RpcAcsRequest<DescribeD
 
 	private String skipAuth;
 
-	private String __context;
-
 	private String signature;
-
-	private String endTime;
 
 	private String startTime;
 
@@ -41,13 +37,17 @@ public class DescribeDiagnosticReportListRequest extends RpcAcsRequest<DescribeD
 
 	private String accessKey;
 
-	private String pageNo;
-
 	private String pageSize;
 
 	private String dBInstanceId;
 
 	private String timestamp;
+
+	private String __context;
+
+	private String endTime;
+
+	private String pageNo;
 	public DescribeDiagnosticReportListRequest() {
 		super("DAS", "2020-01-16", "DescribeDiagnosticReportList", "das");
 		setMethod(MethodType.POST);
@@ -68,17 +68,6 @@ public class DescribeDiagnosticReportListRequest extends RpcAcsRequest<DescribeD
 		}
 	}
 
-	public String get__Context() {
-		return this.__context;
-	}
-
-	public void set__Context(String __context) {
-		this.__context = __context;
-		if(__context != null){
-			putQueryParameter("__context", __context);
-		}
-	}
-
 	public String getSignature() {
 		return this.signature;
 	}
@@ -87,17 +76,6 @@ public class DescribeDiagnosticReportListRequest extends RpcAcsRequest<DescribeD
 		this.signature = signature;
 		if(signature != null){
 			putQueryParameter("signature", signature);
-		}
-	}
-
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime);
 		}
 	}
 
@@ -145,17 +123,6 @@ public class DescribeDiagnosticReportListRequest extends RpcAcsRequest<DescribeD
 		}
 	}
 
-	public String getPageNo() {
-		return this.pageNo;
-	}
-
-	public void setPageNo(String pageNo) {
-		this.pageNo = pageNo;
-		if(pageNo != null){
-			putQueryParameter("PageNo", pageNo);
-		}
-	}
-
 	public String getPageSize() {
 		return this.pageSize;
 	}
@@ -186,6 +153,39 @@ public class DescribeDiagnosticReportListRequest extends RpcAcsRequest<DescribeD
 		this.timestamp = timestamp;
 		if(timestamp != null){
 			putQueryParameter("timestamp", timestamp);
+		}
+	}
+
+	public String get__Context() {
+		return this.__context;
+	}
+
+	public void set__Context(String __context) {
+		this.__context = __context;
+		if(__context != null){
+			putQueryParameter("__context", __context);
+		}
+	}
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime);
+		}
+	}
+
+	public String getPageNo() {
+		return this.pageNo;
+	}
+
+	public void setPageNo(String pageNo) {
+		this.pageNo = pageNo;
+		if(pageNo != null){
+			putQueryParameter("PageNo", pageNo);
 		}
 	}
 

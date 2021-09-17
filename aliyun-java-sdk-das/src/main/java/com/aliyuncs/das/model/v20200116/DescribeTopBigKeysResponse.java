@@ -25,9 +25,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeTopBigKeysResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String message;
+
+	private String requestId;
 
 	private String code;
 
@@ -35,20 +35,20 @@ public class DescribeTopBigKeysResponse extends AcsResponse {
 
 	private List<BigKey> data;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public String getMessage() {
 		return this.message;
 	}
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getCode() {
@@ -77,15 +77,31 @@ public class DescribeTopBigKeysResponse extends AcsResponse {
 
 	public static class BigKey {
 
+		private String key;
+
+		private Integer db;
+
 		private String keyType;
 
 		private Long size;
 
 		private String nodeId;
 
-		private Integer db;
+		public String getKey() {
+			return this.key;
+		}
 
-		private String key;
+		public void setKey(String key) {
+			this.key = key;
+		}
+
+		public Integer getDb() {
+			return this.db;
+		}
+
+		public void setDb(Integer db) {
+			this.db = db;
+		}
 
 		public String getKeyType() {
 			return this.keyType;
@@ -109,22 +125,6 @@ public class DescribeTopBigKeysResponse extends AcsResponse {
 
 		public void setNodeId(String nodeId) {
 			this.nodeId = nodeId;
-		}
-
-		public Integer getDb() {
-			return this.db;
-		}
-
-		public void setDb(Integer db) {
-			this.db = db;
-		}
-
-		public String getKey() {
-			return this.key;
-		}
-
-		public void setKey(String key) {
-			this.key = key;
 		}
 	}
 

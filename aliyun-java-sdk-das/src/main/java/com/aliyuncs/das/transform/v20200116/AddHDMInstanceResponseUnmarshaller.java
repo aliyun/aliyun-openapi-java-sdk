@@ -30,18 +30,18 @@ public class AddHDMInstanceResponseUnmarshaller {
 		addHDMInstanceResponse.setSuccess(_ctx.stringValue("AddHDMInstanceResponse.Success"));
 
 		Data data = new Data();
-		data.setRole(_ctx.stringValue("AddHDMInstanceResponse.Data.Role"));
-		data.setTenantId(_ctx.stringValue("AddHDMInstanceResponse.Data.TenantId"));
-		data.setUuid(_ctx.stringValue("AddHDMInstanceResponse.Data.Uuid"));
-		data.setOwnerId(_ctx.stringValue("AddHDMInstanceResponse.Data.OwnerId"));
 		data.setVpcId(_ctx.stringValue("AddHDMInstanceResponse.Data.VpcId"));
+		data.setToken(_ctx.stringValue("AddHDMInstanceResponse.Data.Token"));
+		data.setIp(_ctx.stringValue("AddHDMInstanceResponse.Data.Ip"));
+		data.setCallerUid(_ctx.stringValue("AddHDMInstanceResponse.Data.CallerUid"));
 		data.setInstanceId(_ctx.stringValue("AddHDMInstanceResponse.Data.InstanceId"));
 		data.setPort(_ctx.integerValue("AddHDMInstanceResponse.Data.Port"));
-		data.setIp(_ctx.stringValue("AddHDMInstanceResponse.Data.Ip"));
+		data.setOwnerId(_ctx.stringValue("AddHDMInstanceResponse.Data.OwnerId"));
+		data.setUuid(_ctx.stringValue("AddHDMInstanceResponse.Data.Uuid"));
 		data.setError(_ctx.stringValue("AddHDMInstanceResponse.Data.Error"));
-		data.setToken(_ctx.stringValue("AddHDMInstanceResponse.Data.Token"));
 		data.setCode(_ctx.integerValue("AddHDMInstanceResponse.Data.Code"));
-		data.setCallerUid(_ctx.stringValue("AddHDMInstanceResponse.Data.CallerUid"));
+		data.setRole(_ctx.stringValue("AddHDMInstanceResponse.Data.Role"));
+		data.setTenantId(_ctx.stringValue("AddHDMInstanceResponse.Data.TenantId"));
 		addHDMInstanceResponse.setData(data);
 	 
 	 	return addHDMInstanceResponse;

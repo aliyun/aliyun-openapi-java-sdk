@@ -34,17 +34,17 @@ public class GetHDMLastAliyunResourceSyncResultResponseUnmarshaller {
 		getHDMLastAliyunResourceSyncResultResponse.setSuccess(_ctx.stringValue("GetHDMLastAliyunResourceSyncResultResponse.Success"));
 
 		Data data = new Data();
-		data.setResults(_ctx.stringValue("GetHDMLastAliyunResourceSyncResultResponse.Data.Results"));
-		data.setErrorMsg(_ctx.stringValue("GetHDMLastAliyunResourceSyncResultResponse.Data.ErrorMsg"));
 		data.setSyncStatus(_ctx.stringValue("GetHDMLastAliyunResourceSyncResultResponse.Data.SyncStatus"));
+		data.setErrorMsg(_ctx.stringValue("GetHDMLastAliyunResourceSyncResultResponse.Data.ErrorMsg"));
+		data.setResults(_ctx.stringValue("GetHDMLastAliyunResourceSyncResultResponse.Data.Results"));
 
 		List<ResourceSyncSubResult> subResults = new ArrayList<ResourceSyncSubResult>();
 		for (int i = 0; i < _ctx.lengthValue("GetHDMLastAliyunResourceSyncResultResponse.Data.SubResults.Length"); i++) {
 			ResourceSyncSubResult resourceSyncSubResult = new ResourceSyncSubResult();
-			resourceSyncSubResult.setErrMsg(_ctx.stringValue("GetHDMLastAliyunResourceSyncResultResponse.Data.SubResults["+ i +"].ErrMsg"));
-			resourceSyncSubResult.setResourceType(_ctx.stringValue("GetHDMLastAliyunResourceSyncResultResponse.Data.SubResults["+ i +"].ResourceType"));
 			resourceSyncSubResult.setSyncCount(_ctx.integerValue("GetHDMLastAliyunResourceSyncResultResponse.Data.SubResults["+ i +"].SyncCount"));
+			resourceSyncSubResult.setResourceType(_ctx.stringValue("GetHDMLastAliyunResourceSyncResultResponse.Data.SubResults["+ i +"].ResourceType"));
 			resourceSyncSubResult.setSuccess(_ctx.booleanValue("GetHDMLastAliyunResourceSyncResultResponse.Data.SubResults["+ i +"].Success"));
+			resourceSyncSubResult.setErrMsg(_ctx.stringValue("GetHDMLastAliyunResourceSyncResultResponse.Data.SubResults["+ i +"].ErrMsg"));
 
 			subResults.add(resourceSyncSubResult);
 		}
