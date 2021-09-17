@@ -56,6 +56,7 @@ public class MassPushRequest extends RpcAcsRequest<MassPushResponse> {
 				putBodyParameter("PushTask." + (depth1 + 1) + ".iOSRemindBody" , pushTasks.get(depth1).getIOSRemindBody());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidNotifyType" , pushTasks.get(depth1).getAndroidNotifyType());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidPopupTitle" , pushTasks.get(depth1).getAndroidPopupTitle());
+				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidMessageHuaweiCategory" , pushTasks.get(depth1).getAndroidMessageHuaweiCategory());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".iOSMusic" , pushTasks.get(depth1).getIOSMusic());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".iOSApnsEnv" , pushTasks.get(depth1).getIOSApnsEnv());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".iOSMutableContent" , pushTasks.get(depth1).getIOSMutableContent());
@@ -76,6 +77,7 @@ public class MassPushRequest extends RpcAcsRequest<MassPushResponse> {
 				putBodyParameter("PushTask." + (depth1 + 1) + ".iOSNotificationThreadId" , pushTasks.get(depth1).getIOSNotificationThreadId());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidMusic" , pushTasks.get(depth1).getAndroidMusic());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".iOSNotificationCollapseId" , pushTasks.get(depth1).getIOSNotificationCollapseId());
+				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidMessageHuaweiUrgency" , pushTasks.get(depth1).getAndroidMessageHuaweiUrgency());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".PushType" , pushTasks.get(depth1).getPushType());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidExtParameters" , pushTasks.get(depth1).getAndroidExtParameters());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".iOSBadge" , pushTasks.get(depth1).getIOSBadge());
@@ -89,6 +91,7 @@ public class MassPushRequest extends RpcAcsRequest<MassPushResponse> {
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidPopupBody" , pushTasks.get(depth1).getAndroidPopupBody());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidBigPictureUrl" , pushTasks.get(depth1).getAndroidBigPictureUrl());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".iOSSilentNotification" , pushTasks.get(depth1).getIOSSilentNotification());
+				putBodyParameter("PushTask." + (depth1 + 1) + ".SendChannels" , pushTasks.get(depth1).getSendChannels());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".Target" , pushTasks.get(depth1).getTarget());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidBigTitle" , pushTasks.get(depth1).getAndroidBigTitle());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidNotificationChannel" , pushTasks.get(depth1).getAndroidNotificationChannel());
@@ -135,6 +138,8 @@ public class MassPushRequest extends RpcAcsRequest<MassPushResponse> {
 
 		private String androidPopupTitle;
 
+		private String androidMessageHuaweiCategory;
+
 		private String iOSMusic;
 
 		private String iOSApnsEnv;
@@ -175,6 +180,8 @@ public class MassPushRequest extends RpcAcsRequest<MassPushResponse> {
 
 		private String iOSNotificationCollapseId;
 
+		private String androidMessageHuaweiUrgency;
+
 		private String pushType;
 
 		private String androidExtParameters;
@@ -200,6 +207,8 @@ public class MassPushRequest extends RpcAcsRequest<MassPushResponse> {
 		private String androidBigPictureUrl;
 
 		private Boolean iOSSilentNotification;
+
+		private String sendChannels;
 
 		private String target;
 
@@ -297,6 +306,14 @@ public class MassPushRequest extends RpcAcsRequest<MassPushResponse> {
 
 		public void setAndroidPopupTitle(String androidPopupTitle) {
 			this.androidPopupTitle = androidPopupTitle;
+		}
+
+		public String getAndroidMessageHuaweiCategory() {
+			return this.androidMessageHuaweiCategory;
+		}
+
+		public void setAndroidMessageHuaweiCategory(String androidMessageHuaweiCategory) {
+			this.androidMessageHuaweiCategory = androidMessageHuaweiCategory;
 		}
 
 		public String getIOSMusic() {
@@ -459,6 +476,14 @@ public class MassPushRequest extends RpcAcsRequest<MassPushResponse> {
 			this.iOSNotificationCollapseId = iOSNotificationCollapseId;
 		}
 
+		public String getAndroidMessageHuaweiUrgency() {
+			return this.androidMessageHuaweiUrgency;
+		}
+
+		public void setAndroidMessageHuaweiUrgency(String androidMessageHuaweiUrgency) {
+			this.androidMessageHuaweiUrgency = androidMessageHuaweiUrgency;
+		}
+
 		public String getPushType() {
 			return this.pushType;
 		}
@@ -561,6 +586,14 @@ public class MassPushRequest extends RpcAcsRequest<MassPushResponse> {
 
 		public void setIOSSilentNotification(Boolean iOSSilentNotification) {
 			this.iOSSilentNotification = iOSSilentNotification;
+		}
+
+		public String getSendChannels() {
+			return this.sendChannels;
+		}
+
+		public void setSendChannels(String sendChannels) {
+			this.sendChannels = sendChannels;
 		}
 
 		public String getTarget() {

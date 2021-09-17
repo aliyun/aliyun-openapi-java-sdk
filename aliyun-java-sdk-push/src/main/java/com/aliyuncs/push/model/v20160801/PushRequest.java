@@ -47,6 +47,8 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 
 	private String androidPopupTitle;
 
+	private String androidMessageHuaweiCategory;
+
 	private String iOSMusic;
 
 	private String iOSApnsEnv;
@@ -89,6 +91,8 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 
 	private String iOSNotificationCollapseId;
 
+	private String androidMessageHuaweiUrgency;
+
 	private String pushType;
 
 	private String androidExtParameters;
@@ -118,6 +122,8 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 	private String androidBigPictureUrl;
 
 	private Boolean iOSSilentNotification;
+
+	private String sendChannels;
 
 	private String target;
 
@@ -267,6 +273,17 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 		this.androidPopupTitle = androidPopupTitle;
 		if(androidPopupTitle != null){
 			putQueryParameter("AndroidPopupTitle", androidPopupTitle);
+		}
+	}
+
+	public String getAndroidMessageHuaweiCategory() {
+		return this.androidMessageHuaweiCategory;
+	}
+
+	public void setAndroidMessageHuaweiCategory(String androidMessageHuaweiCategory) {
+		this.androidMessageHuaweiCategory = androidMessageHuaweiCategory;
+		if(androidMessageHuaweiCategory != null){
+			putQueryParameter("AndroidMessageHuaweiCategory", androidMessageHuaweiCategory);
 		}
 	}
 
@@ -501,6 +518,17 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 		}
 	}
 
+	public String getAndroidMessageHuaweiUrgency() {
+		return this.androidMessageHuaweiUrgency;
+	}
+
+	public void setAndroidMessageHuaweiUrgency(String androidMessageHuaweiUrgency) {
+		this.androidMessageHuaweiUrgency = androidMessageHuaweiUrgency;
+		if(androidMessageHuaweiUrgency != null){
+			putQueryParameter("AndroidMessageHuaweiUrgency", androidMessageHuaweiUrgency);
+		}
+	}
+
 	public String getPushType() {
 		return this.pushType;
 	}
@@ -663,6 +691,17 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 		this.iOSSilentNotification = iOSSilentNotification;
 		if(iOSSilentNotification != null){
 			putQueryParameter("iOSSilentNotification", iOSSilentNotification.toString());
+		}
+	}
+
+	public String getSendChannels() {
+		return this.sendChannels;
+	}
+
+	public void setSendChannels(String sendChannels) {
+		this.sendChannels = sendChannels;
+		if(sendChannels != null){
+			putQueryParameter("SendChannels", sendChannels);
 		}
 	}
 
