@@ -14,6 +14,7 @@
 
 package com.aliyuncs.dyplsapi.model.v20170525;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.dyplsapi.transform.v20170525.GetSecretAsrDetailResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -24,21 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetSecretAsrDetailResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String code;
 
 	private String message;
 
-	private String data;
+	private String requestId;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private Data data;
 
 	public String getCode() {
 		return this.code;
@@ -56,12 +49,176 @@ public class GetSecretAsrDetailResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getData() {
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Data getData() {
 		return this.data;
 	}
 
-	public void setData(String data) {
+	public void setData(Data data) {
 		this.data = data;
+	}
+
+	public static class Data {
+
+		private String requestId;
+
+		private String businessId;
+
+		private String businessKey;
+
+		private String code;
+
+		private String msg;
+
+		private Long bizDuration;
+
+		private String type;
+
+		private List<SecretAsrSentenceDTO> sentences;
+
+		public String getRequestId() {
+			return this.requestId;
+		}
+
+		public void setRequestId(String requestId) {
+			this.requestId = requestId;
+		}
+
+		public String getBusinessId() {
+			return this.businessId;
+		}
+
+		public void setBusinessId(String businessId) {
+			this.businessId = businessId;
+		}
+
+		public String getBusinessKey() {
+			return this.businessKey;
+		}
+
+		public void setBusinessKey(String businessKey) {
+			this.businessKey = businessKey;
+		}
+
+		public String getCode() {
+			return this.code;
+		}
+
+		public void setCode(String code) {
+			this.code = code;
+		}
+
+		public String getMsg() {
+			return this.msg;
+		}
+
+		public void setMsg(String msg) {
+			this.msg = msg;
+		}
+
+		public Long getBizDuration() {
+			return this.bizDuration;
+		}
+
+		public void setBizDuration(Long bizDuration) {
+			this.bizDuration = bizDuration;
+		}
+
+		public String getType() {
+			return this.type;
+		}
+
+		public void setType(String type) {
+			this.type = type;
+		}
+
+		public List<SecretAsrSentenceDTO> getSentences() {
+			return this.sentences;
+		}
+
+		public void setSentences(List<SecretAsrSentenceDTO> sentences) {
+			this.sentences = sentences;
+		}
+
+		public static class SecretAsrSentenceDTO {
+
+			private Long endTime;
+
+			private Long silenceDuration;
+
+			private Long beginTime;
+
+			private String text;
+
+			private Integer channelId;
+
+			private Integer speechRate;
+
+			private String emotionValue;
+
+			public Long getEndTime() {
+				return this.endTime;
+			}
+
+			public void setEndTime(Long endTime) {
+				this.endTime = endTime;
+			}
+
+			public Long getSilenceDuration() {
+				return this.silenceDuration;
+			}
+
+			public void setSilenceDuration(Long silenceDuration) {
+				this.silenceDuration = silenceDuration;
+			}
+
+			public Long getBeginTime() {
+				return this.beginTime;
+			}
+
+			public void setBeginTime(Long beginTime) {
+				this.beginTime = beginTime;
+			}
+
+			public String getText() {
+				return this.text;
+			}
+
+			public void setText(String text) {
+				this.text = text;
+			}
+
+			public Integer getChannelId() {
+				return this.channelId;
+			}
+
+			public void setChannelId(Integer channelId) {
+				this.channelId = channelId;
+			}
+
+			public Integer getSpeechRate() {
+				return this.speechRate;
+			}
+
+			public void setSpeechRate(Integer speechRate) {
+				this.speechRate = speechRate;
+			}
+
+			public String getEmotionValue() {
+				return this.emotionValue;
+			}
+
+			public void setEmotionValue(String emotionValue) {
+				this.emotionValue = emotionValue;
+			}
+		}
 	}
 
 	@Override

@@ -39,7 +39,7 @@ public class UpdatePhoneSwitchRequest extends RpcAcsRequest<UpdatePhoneSwitchRes
 
 	private String poolKey;
 	public UpdatePhoneSwitchRequest() {
-		super("Dyplsapi", "2017-05-25", "UpdatePhoneSwitch", "dyplsapi");
+		super("Dyplsapi", "2017-05-25", "UpdatePhoneSwitch");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

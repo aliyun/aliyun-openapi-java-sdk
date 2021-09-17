@@ -25,21 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QuerySecretNoRemainResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String code;
 
 	private String message;
 
+	private String requestId;
+
 	private SecretRemainDTO secretRemainDTO;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -57,6 +49,14 @@ public class QuerySecretNoRemainResponse extends AcsResponse {
 		this.message = message;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	public SecretRemainDTO getSecretRemainDTO() {
 		return this.secretRemainDTO;
 	}
@@ -67,19 +67,11 @@ public class QuerySecretNoRemainResponse extends AcsResponse {
 
 	public static class SecretRemainDTO {
 
-		private String city;
-
 		private Long amount;
 
+		private String city;
+
 		private List<RemainDTO> remainDTOList;
-
-		public String getCity() {
-			return this.city;
-		}
-
-		public void setCity(String city) {
-			this.city = city;
-		}
 
 		public Long getAmount() {
 			return this.amount;
@@ -87,6 +79,14 @@ public class QuerySecretNoRemainResponse extends AcsResponse {
 
 		public void setAmount(Long amount) {
 			this.amount = amount;
+		}
+
+		public String getCity() {
+			return this.city;
+		}
+
+		public void setCity(String city) {
+			this.city = city;
 		}
 
 		public List<RemainDTO> getRemainDTOList() {
@@ -99,17 +99,9 @@ public class QuerySecretNoRemainResponse extends AcsResponse {
 
 		public static class RemainDTO {
 
-			private String city;
-
 			private Long amount;
 
-			public String getCity() {
-				return this.city;
-			}
-
-			public void setCity(String city) {
-				this.city = city;
-			}
+			private String city;
 
 			public Long getAmount() {
 				return this.amount;
@@ -117,6 +109,14 @@ public class QuerySecretNoRemainResponse extends AcsResponse {
 
 			public void setAmount(Long amount) {
 				this.amount = amount;
+			}
+
+			public String getCity() {
+				return this.city;
+			}
+
+			public void setCity(String city) {
+				this.city = city;
 			}
 		}
 	}

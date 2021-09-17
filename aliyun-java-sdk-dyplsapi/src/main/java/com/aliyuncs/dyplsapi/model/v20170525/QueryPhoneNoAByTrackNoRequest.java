@@ -37,7 +37,7 @@ public class QueryPhoneNoAByTrackNoRequest extends RpcAcsRequest<QueryPhoneNoABy
 
 	private String trackNo;
 	public QueryPhoneNoAByTrackNoRequest() {
-		super("Dyplsapi", "2017-05-25", "QueryPhoneNoAByTrackNo", "dyplsapi");
+		super("Dyplsapi", "2017-05-25", "QueryPhoneNoAByTrackNo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

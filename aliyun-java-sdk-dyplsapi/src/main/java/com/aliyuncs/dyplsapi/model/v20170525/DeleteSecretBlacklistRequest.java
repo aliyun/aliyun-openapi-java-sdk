@@ -35,7 +35,7 @@ public class DeleteSecretBlacklistRequest extends RpcAcsRequest<DeleteSecretBlac
 
 	private String wayControl;
 	public DeleteSecretBlacklistRequest() {
-		super("Dyplsapi", "2017-05-25", "DeleteSecretBlacklist", "dyplsapi");
+		super("Dyplsapi", "2017-05-25", "DeleteSecretBlacklist");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

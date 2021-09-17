@@ -28,8 +28,8 @@ public class QueryCallStatusResponseUnmarshaller {
 		queryCallStatusResponse.setMessage(_ctx.stringValue("QueryCallStatusResponse.Message"));
 
 		SecretCallStatusDTO secretCallStatusDTO = new SecretCallStatusDTO();
-		secretCallStatusDTO.setStatus(_ctx.integerValue("QueryCallStatusResponse.SecretCallStatusDTO.Status"));
 		secretCallStatusDTO.setCalledNo(_ctx.stringValue("QueryCallStatusResponse.SecretCallStatusDTO.CalledNo"));
+		secretCallStatusDTO.setStatus(_ctx.integerValue("QueryCallStatusResponse.SecretCallStatusDTO.Status"));
 		queryCallStatusResponse.setSecretCallStatusDTO(secretCallStatusDTO);
 	 
 	 	return queryCallStatusResponse;

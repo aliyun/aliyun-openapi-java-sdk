@@ -61,7 +61,7 @@ public class BindAxbRequest extends RpcAcsRequest<BindAxbResponse> {
 
 	private String callRestrict;
 	public BindAxbRequest() {
-		super("Dyplsapi", "2017-05-25", "BindAxb", "dyplsapi");
+		super("Dyplsapi", "2017-05-25", "BindAxb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

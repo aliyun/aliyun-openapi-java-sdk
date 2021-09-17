@@ -25,21 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryPhoneNoAByTrackNoResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String code;
 
 	private String message;
 
+	private String requestId;
+
 	private List<PhoneNoAInfo> module;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -57,6 +49,14 @@ public class QueryPhoneNoAByTrackNoResponse extends AcsResponse {
 		this.message = message;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	public List<PhoneNoAInfo> getModule() {
 		return this.module;
 	}
@@ -67,18 +67,18 @@ public class QueryPhoneNoAByTrackNoResponse extends AcsResponse {
 
 	public static class PhoneNoAInfo {
 
-		private String phoneNoA;
+		private String extension;
 
 		private String phoneNoX;
 
-		private String extension;
+		private String phoneNoA;
 
-		public String getPhoneNoA() {
-			return this.phoneNoA;
+		public String getExtension() {
+			return this.extension;
 		}
 
-		public void setPhoneNoA(String phoneNoA) {
-			this.phoneNoA = phoneNoA;
+		public void setExtension(String extension) {
+			this.extension = extension;
 		}
 
 		public String getPhoneNoX() {
@@ -89,12 +89,12 @@ public class QueryPhoneNoAByTrackNoResponse extends AcsResponse {
 			this.phoneNoX = phoneNoX;
 		}
 
-		public String getExtension() {
-			return this.extension;
+		public String getPhoneNoA() {
+			return this.phoneNoA;
 		}
 
-		public void setExtension(String extension) {
-			this.extension = extension;
+		public void setPhoneNoA(String phoneNoA) {
+			this.phoneNoA = phoneNoA;
 		}
 	}
 

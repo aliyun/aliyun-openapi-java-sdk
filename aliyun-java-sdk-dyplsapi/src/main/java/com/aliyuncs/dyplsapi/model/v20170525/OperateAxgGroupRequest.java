@@ -39,7 +39,7 @@ public class OperateAxgGroupRequest extends RpcAcsRequest<OperateAxgGroupRespons
 
 	private String operateType;
 	public OperateAxgGroupRequest() {
-		super("Dyplsapi", "2017-05-25", "OperateAxgGroup", "dyplsapi");
+		super("Dyplsapi", "2017-05-25", "OperateAxgGroup");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

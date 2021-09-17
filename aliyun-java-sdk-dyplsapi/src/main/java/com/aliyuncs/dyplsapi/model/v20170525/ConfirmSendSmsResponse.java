@@ -15,18 +15,20 @@
 package com.aliyuncs.dyplsapi.model.v20170525;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.dyplsapi.transform.v20170525.UnlockSecretNoResponseUnmarshaller;
+import com.aliyuncs.dyplsapi.transform.v20170525.ConfirmSendSmsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class UnlockSecretNoResponse extends AcsResponse {
+public class ConfirmSendSmsResponse extends AcsResponse {
 
 	private String code;
 
 	private String message;
+
+	private String data;
 
 	private String requestId;
 
@@ -46,6 +48,14 @@ public class UnlockSecretNoResponse extends AcsResponse {
 		this.message = message;
 	}
 
+	public String getData() {
+		return this.data;
+	}
+
+	public void setData(String data) {
+		this.data = data;
+	}
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -55,8 +65,8 @@ public class UnlockSecretNoResponse extends AcsResponse {
 	}
 
 	@Override
-	public UnlockSecretNoResponse getInstance(UnmarshallerContext context) {
-		return	UnlockSecretNoResponseUnmarshaller.unmarshall(this, context);
+	public ConfirmSendSmsResponse getInstance(UnmarshallerContext context) {
+		return	ConfirmSendSmsResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

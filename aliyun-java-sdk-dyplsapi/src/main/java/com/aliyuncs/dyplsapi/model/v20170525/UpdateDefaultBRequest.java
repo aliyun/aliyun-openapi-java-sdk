@@ -39,7 +39,7 @@ public class UpdateDefaultBRequest extends RpcAcsRequest<UpdateDefaultBResponse>
 
 	private String poolKey;
 	public UpdateDefaultBRequest() {
-		super("Dyplsapi", "2017-05-25", "UpdateDefaultB", "dyplsapi");
+		super("Dyplsapi", "2017-05-25", "UpdateDefaultB");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -41,7 +41,7 @@ public class UpdatePhoneNumberRequest extends RpcAcsRequest<UpdatePhoneNumberRes
 
 	private String newPhoneNo;
 	public UpdatePhoneNumberRequest() {
-		super("Dyplsapi", "2017-05-25", "UpdatePhoneNumber", "dyplsapi");
+		super("Dyplsapi", "2017-05-25", "UpdatePhoneNumber");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

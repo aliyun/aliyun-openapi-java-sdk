@@ -24,21 +24,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QuerySubscriptionDetailResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String code;
 
 	private String message;
 
+	private String requestId;
+
 	private SecretBindDetailDTO secretBindDetailDTO;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -56,6 +48,14 @@ public class QuerySubscriptionDetailResponse extends AcsResponse {
 		this.message = message;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	public SecretBindDetailDTO getSecretBindDetailDTO() {
 		return this.secretBindDetailDTO;
 	}
@@ -66,62 +66,38 @@ public class QuerySubscriptionDetailResponse extends AcsResponse {
 
 	public static class SecretBindDetailDTO {
 
-		private String subsId;
-
-		private String phoneNoA;
-
-		private String phoneNoX;
-
-		private String phoneNoB;
+		private Long status;
 
 		private String extension;
 
+		private String phoneNoB;
+
 		private Long groupId;
+
+		private Boolean needRecord;
+
+		private Boolean aSRStatus;
 
 		private String gmtCreate;
 
 		private String expireDate;
 
-		private Boolean needRecord;
+		private String subsId;
+
+		private String phoneNoX;
 
 		private String callRestrict;
 
-		private Long status;
-
-		private Boolean aSRStatus;
-
 		private String aSRModelId;
 
-		public String getSubsId() {
-			return this.subsId;
+		private String phoneNoA;
+
+		public Long getStatus() {
+			return this.status;
 		}
 
-		public void setSubsId(String subsId) {
-			this.subsId = subsId;
-		}
-
-		public String getPhoneNoA() {
-			return this.phoneNoA;
-		}
-
-		public void setPhoneNoA(String phoneNoA) {
-			this.phoneNoA = phoneNoA;
-		}
-
-		public String getPhoneNoX() {
-			return this.phoneNoX;
-		}
-
-		public void setPhoneNoX(String phoneNoX) {
-			this.phoneNoX = phoneNoX;
-		}
-
-		public String getPhoneNoB() {
-			return this.phoneNoB;
-		}
-
-		public void setPhoneNoB(String phoneNoB) {
-			this.phoneNoB = phoneNoB;
+		public void setStatus(Long status) {
+			this.status = status;
 		}
 
 		public String getExtension() {
@@ -132,12 +108,36 @@ public class QuerySubscriptionDetailResponse extends AcsResponse {
 			this.extension = extension;
 		}
 
+		public String getPhoneNoB() {
+			return this.phoneNoB;
+		}
+
+		public void setPhoneNoB(String phoneNoB) {
+			this.phoneNoB = phoneNoB;
+		}
+
 		public Long getGroupId() {
 			return this.groupId;
 		}
 
 		public void setGroupId(Long groupId) {
 			this.groupId = groupId;
+		}
+
+		public Boolean getNeedRecord() {
+			return this.needRecord;
+		}
+
+		public void setNeedRecord(Boolean needRecord) {
+			this.needRecord = needRecord;
+		}
+
+		public Boolean getASRStatus() {
+			return this.aSRStatus;
+		}
+
+		public void setASRStatus(Boolean aSRStatus) {
+			this.aSRStatus = aSRStatus;
 		}
 
 		public String getGmtCreate() {
@@ -156,12 +156,20 @@ public class QuerySubscriptionDetailResponse extends AcsResponse {
 			this.expireDate = expireDate;
 		}
 
-		public Boolean getNeedRecord() {
-			return this.needRecord;
+		public String getSubsId() {
+			return this.subsId;
 		}
 
-		public void setNeedRecord(Boolean needRecord) {
-			this.needRecord = needRecord;
+		public void setSubsId(String subsId) {
+			this.subsId = subsId;
+		}
+
+		public String getPhoneNoX() {
+			return this.phoneNoX;
+		}
+
+		public void setPhoneNoX(String phoneNoX) {
+			this.phoneNoX = phoneNoX;
 		}
 
 		public String getCallRestrict() {
@@ -172,28 +180,20 @@ public class QuerySubscriptionDetailResponse extends AcsResponse {
 			this.callRestrict = callRestrict;
 		}
 
-		public Long getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(Long status) {
-			this.status = status;
-		}
-
-		public Boolean getASRStatus() {
-			return this.aSRStatus;
-		}
-
-		public void setASRStatus(Boolean aSRStatus) {
-			this.aSRStatus = aSRStatus;
-		}
-
 		public String getASRModelId() {
 			return this.aSRModelId;
 		}
 
 		public void setASRModelId(String aSRModelId) {
 			this.aSRModelId = aSRModelId;
+		}
+
+		public String getPhoneNoA() {
+			return this.phoneNoA;
+		}
+
+		public void setPhoneNoA(String phoneNoA) {
+			this.phoneNoA = phoneNoA;
 		}
 	}
 

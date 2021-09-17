@@ -39,7 +39,7 @@ public class AddAxnTrackNoRequest extends RpcAcsRequest<AddAxnTrackNoResponse> {
 
 	private String poolKey;
 	public AddAxnTrackNoRequest() {
-		super("Dyplsapi", "2017-05-25", "AddAxnTrackNo", "dyplsapi");
+		super("Dyplsapi", "2017-05-25", "AddAxnTrackNo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

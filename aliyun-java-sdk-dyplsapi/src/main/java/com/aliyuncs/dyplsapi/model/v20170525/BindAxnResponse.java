@@ -24,21 +24,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class BindAxnResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String code;
 
 	private String message;
 
+	private String requestId;
+
 	private SecretBindDTO secretBindDTO;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -56,6 +48,14 @@ public class BindAxnResponse extends AcsResponse {
 		this.message = message;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	public SecretBindDTO getSecretBindDTO() {
 		return this.secretBindDTO;
 	}
@@ -66,11 +66,19 @@ public class BindAxnResponse extends AcsResponse {
 
 	public static class SecretBindDTO {
 
+		private String extension;
+
 		private String subsId;
 
 		private String secretNo;
 
-		private String extension;
+		public String getExtension() {
+			return this.extension;
+		}
+
+		public void setExtension(String extension) {
+			this.extension = extension;
+		}
 
 		public String getSubsId() {
 			return this.subsId;
@@ -86,14 +94,6 @@ public class BindAxnResponse extends AcsResponse {
 
 		public void setSecretNo(String secretNo) {
 			this.secretNo = secretNo;
-		}
-
-		public String getExtension() {
-			return this.extension;
-		}
-
-		public void setExtension(String extension) {
-			this.extension = extension;
 		}
 	}
 

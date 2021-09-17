@@ -28,9 +28,9 @@ public class BindAxnExtensionResponseUnmarshaller {
 		bindAxnExtensionResponse.setMessage(_ctx.stringValue("BindAxnExtensionResponse.Message"));
 
 		SecretBindDTO secretBindDTO = new SecretBindDTO();
+		secretBindDTO.setExtension(_ctx.stringValue("BindAxnExtensionResponse.SecretBindDTO.Extension"));
 		secretBindDTO.setSubsId(_ctx.stringValue("BindAxnExtensionResponse.SecretBindDTO.SubsId"));
 		secretBindDTO.setSecretNo(_ctx.stringValue("BindAxnExtensionResponse.SecretBindDTO.SecretNo"));
-		secretBindDTO.setExtension(_ctx.stringValue("BindAxnExtensionResponse.SecretBindDTO.Extension"));
 		bindAxnExtensionResponse.setSecretBindDTO(secretBindDTO);
 	 
 	 	return bindAxnExtensionResponse;

@@ -28,8 +28,8 @@ public class GetTotalPublicUrlResponseUnmarshaller {
 		getTotalPublicUrlResponse.setMessage(_ctx.stringValue("GetTotalPublicUrlResponse.Message"));
 
 		Data data = new Data();
-		data.setPhonePublicUrl(_ctx.stringValue("GetTotalPublicUrlResponse.Data.PhonePublicUrl"));
 		data.setRingPublicUrl(_ctx.stringValue("GetTotalPublicUrlResponse.Data.RingPublicUrl"));
+		data.setPhonePublicUrl(_ctx.stringValue("GetTotalPublicUrlResponse.Data.PhonePublicUrl"));
 		getTotalPublicUrlResponse.setData(data);
 	 
 	 	return getTotalPublicUrlResponse;

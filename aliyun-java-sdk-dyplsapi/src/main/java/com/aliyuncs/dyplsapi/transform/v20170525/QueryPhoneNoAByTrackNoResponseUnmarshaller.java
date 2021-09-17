@@ -33,9 +33,9 @@ public class QueryPhoneNoAByTrackNoResponseUnmarshaller {
 		List<PhoneNoAInfo> module = new ArrayList<PhoneNoAInfo>();
 		for (int i = 0; i < _ctx.lengthValue("QueryPhoneNoAByTrackNoResponse.Module.Length"); i++) {
 			PhoneNoAInfo phoneNoAInfo = new PhoneNoAInfo();
-			phoneNoAInfo.setPhoneNoA(_ctx.stringValue("QueryPhoneNoAByTrackNoResponse.Module["+ i +"].PhoneNoA"));
-			phoneNoAInfo.setPhoneNoX(_ctx.stringValue("QueryPhoneNoAByTrackNoResponse.Module["+ i +"].PhoneNoX"));
 			phoneNoAInfo.setExtension(_ctx.stringValue("QueryPhoneNoAByTrackNoResponse.Module["+ i +"].Extension"));
+			phoneNoAInfo.setPhoneNoX(_ctx.stringValue("QueryPhoneNoAByTrackNoResponse.Module["+ i +"].PhoneNoX"));
+			phoneNoAInfo.setPhoneNoA(_ctx.stringValue("QueryPhoneNoAByTrackNoResponse.Module["+ i +"].PhoneNoA"));
 
 			module.add(phoneNoAInfo);
 		}

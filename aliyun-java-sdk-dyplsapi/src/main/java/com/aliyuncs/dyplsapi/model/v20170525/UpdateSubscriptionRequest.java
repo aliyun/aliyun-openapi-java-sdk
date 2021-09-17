@@ -63,7 +63,7 @@ public class UpdateSubscriptionRequest extends RpcAcsRequest<UpdateSubscriptionR
 
 	private String callRestrict;
 	public UpdateSubscriptionRequest() {
-		super("Dyplsapi", "2017-05-25", "UpdateSubscription", "dyplsapi");
+		super("Dyplsapi", "2017-05-25", "UpdateSubscription");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

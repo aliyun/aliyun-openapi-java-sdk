@@ -39,7 +39,7 @@ public class CreateSubscriptionRequest extends RpcAcsRequest<CreateSubscriptionR
 
 	private String poolKey;
 	public CreateSubscriptionRequest() {
-		super("Dyplsapi", "2017-05-25", "CreateSubscription", "dyplsapi");
+		super("Dyplsapi", "2017-05-25", "CreateSubscription");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

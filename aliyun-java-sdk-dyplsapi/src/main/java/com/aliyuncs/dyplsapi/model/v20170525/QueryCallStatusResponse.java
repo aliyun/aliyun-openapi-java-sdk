@@ -24,21 +24,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryCallStatusResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String code;
 
 	private String message;
 
+	private String requestId;
+
 	private SecretCallStatusDTO secretCallStatusDTO;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -56,6 +48,14 @@ public class QueryCallStatusResponse extends AcsResponse {
 		this.message = message;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	public SecretCallStatusDTO getSecretCallStatusDTO() {
 		return this.secretCallStatusDTO;
 	}
@@ -66,17 +66,9 @@ public class QueryCallStatusResponse extends AcsResponse {
 
 	public static class SecretCallStatusDTO {
 
-		private Integer status;
-
 		private String calledNo;
 
-		public Integer getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(Integer status) {
-			this.status = status;
-		}
+		private Integer status;
 
 		public String getCalledNo() {
 			return this.calledNo;
@@ -84,6 +76,14 @@ public class QueryCallStatusResponse extends AcsResponse {
 
 		public void setCalledNo(String calledNo) {
 			this.calledNo = calledNo;
+		}
+
+		public Integer getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(Integer status) {
+			this.status = status;
 		}
 	}
 

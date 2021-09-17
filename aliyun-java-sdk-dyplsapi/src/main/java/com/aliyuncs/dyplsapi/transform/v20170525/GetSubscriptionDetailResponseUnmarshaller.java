@@ -28,13 +28,13 @@ public class GetSubscriptionDetailResponseUnmarshaller {
 		getSubscriptionDetailResponse.setMessage(_ctx.stringValue("GetSubscriptionDetailResponse.Message"));
 
 		Data data = new Data();
+		data.setPhoneNo(_ctx.stringValue("GetSubscriptionDetailResponse.Data.PhoneNo"));
+		data.setCity(_ctx.stringValue("GetSubscriptionDetailResponse.Data.City"));
+		data.setSwitchStatus(_ctx.integerValue("GetSubscriptionDetailResponse.Data.SwitchStatus"));
 		data.setSubsId(_ctx.longValue("GetSubscriptionDetailResponse.Data.SubsId"));
 		data.setSecretNo(_ctx.stringValue("GetSubscriptionDetailResponse.Data.SecretNo"));
-		data.setPhoneNo(_ctx.stringValue("GetSubscriptionDetailResponse.Data.PhoneNo"));
-		data.setSwitchStatus(_ctx.integerValue("GetSubscriptionDetailResponse.Data.SwitchStatus"));
-		data.setProvince(_ctx.stringValue("GetSubscriptionDetailResponse.Data.Province"));
-		data.setCity(_ctx.stringValue("GetSubscriptionDetailResponse.Data.City"));
 		data.setVendor(_ctx.stringValue("GetSubscriptionDetailResponse.Data.Vendor"));
+		data.setProvince(_ctx.stringValue("GetSubscriptionDetailResponse.Data.Province"));
 		getSubscriptionDetailResponse.setData(data);
 	 
 	 	return getSubscriptionDetailResponse;

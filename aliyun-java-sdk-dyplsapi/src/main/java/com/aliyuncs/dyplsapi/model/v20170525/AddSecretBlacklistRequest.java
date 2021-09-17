@@ -35,7 +35,7 @@ public class AddSecretBlacklistRequest extends RpcAcsRequest<AddSecretBlacklistR
 
 	private String wayControl;
 	public AddSecretBlacklistRequest() {
-		super("Dyplsapi", "2017-05-25", "AddSecretBlacklist", "dyplsapi");
+		super("Dyplsapi", "2017-05-25", "AddSecretBlacklist");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

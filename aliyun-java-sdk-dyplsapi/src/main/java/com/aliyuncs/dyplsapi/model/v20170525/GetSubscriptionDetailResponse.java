@@ -24,21 +24,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetSubscriptionDetailResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String code;
 
 	private String message;
 
+	private String requestId;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -56,6 +48,14 @@ public class GetSubscriptionDetailResponse extends AcsResponse {
 		this.message = message;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -66,19 +66,43 @@ public class GetSubscriptionDetailResponse extends AcsResponse {
 
 	public static class Data {
 
+		private String phoneNo;
+
+		private String city;
+
+		private Integer switchStatus;
+
 		private Long subsId;
 
 		private String secretNo;
 
-		private String phoneNo;
-
-		private Integer switchStatus;
+		private String vendor;
 
 		private String province;
 
-		private String city;
+		public String getPhoneNo() {
+			return this.phoneNo;
+		}
 
-		private String vendor;
+		public void setPhoneNo(String phoneNo) {
+			this.phoneNo = phoneNo;
+		}
+
+		public String getCity() {
+			return this.city;
+		}
+
+		public void setCity(String city) {
+			this.city = city;
+		}
+
+		public Integer getSwitchStatus() {
+			return this.switchStatus;
+		}
+
+		public void setSwitchStatus(Integer switchStatus) {
+			this.switchStatus = switchStatus;
+		}
 
 		public Long getSubsId() {
 			return this.subsId;
@@ -96,20 +120,12 @@ public class GetSubscriptionDetailResponse extends AcsResponse {
 			this.secretNo = secretNo;
 		}
 
-		public String getPhoneNo() {
-			return this.phoneNo;
+		public String getVendor() {
+			return this.vendor;
 		}
 
-		public void setPhoneNo(String phoneNo) {
-			this.phoneNo = phoneNo;
-		}
-
-		public Integer getSwitchStatus() {
-			return this.switchStatus;
-		}
-
-		public void setSwitchStatus(Integer switchStatus) {
-			this.switchStatus = switchStatus;
+		public void setVendor(String vendor) {
+			this.vendor = vendor;
 		}
 
 		public String getProvince() {
@@ -118,22 +134,6 @@ public class GetSubscriptionDetailResponse extends AcsResponse {
 
 		public void setProvince(String province) {
 			this.province = province;
-		}
-
-		public String getCity() {
-			return this.city;
-		}
-
-		public void setCity(String city) {
-			this.city = city;
-		}
-
-		public String getVendor() {
-			return this.vendor;
-		}
-
-		public void setVendor(String vendor) {
-			this.vendor = vendor;
 		}
 	}
 

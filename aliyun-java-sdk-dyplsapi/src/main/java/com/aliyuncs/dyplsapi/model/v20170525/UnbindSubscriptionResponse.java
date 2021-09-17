@@ -24,29 +24,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class UnbindSubscriptionResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String chargeId;
-
 	private String code;
 
 	private String message;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
+	private String requestId;
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getChargeId() {
-		return this.chargeId;
-	}
-
-	public void setChargeId(String chargeId) {
-		this.chargeId = chargeId;
-	}
+	private String chargeId;
 
 	public String getCode() {
 		return this.code;
@@ -62,6 +46,22 @@ public class UnbindSubscriptionResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getChargeId() {
+		return this.chargeId;
+	}
+
+	public void setChargeId(String chargeId) {
+		this.chargeId = chargeId;
 	}
 
 	@Override

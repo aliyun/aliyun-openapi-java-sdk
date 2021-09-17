@@ -37,7 +37,7 @@ public class GetSubscriptionDetailRequest extends RpcAcsRequest<GetSubscriptionD
 
 	private String poolKey;
 	public GetSubscriptionDetailRequest() {
-		super("Dyplsapi", "2017-05-25", "GetSubscriptionDetail", "dyplsapi");
+		super("Dyplsapi", "2017-05-25", "GetSubscriptionDetail");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

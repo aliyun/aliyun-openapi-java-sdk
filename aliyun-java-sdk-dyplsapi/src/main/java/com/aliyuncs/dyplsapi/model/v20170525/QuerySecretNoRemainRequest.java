@@ -37,7 +37,7 @@ public class QuerySecretNoRemainRequest extends RpcAcsRequest<QuerySecretNoRemai
 
 	private Long ownerId;
 	public QuerySecretNoRemainRequest() {
-		super("Dyplsapi", "2017-05-25", "QuerySecretNoRemain", "dyplsapi");
+		super("Dyplsapi", "2017-05-25", "QuerySecretNoRemain");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

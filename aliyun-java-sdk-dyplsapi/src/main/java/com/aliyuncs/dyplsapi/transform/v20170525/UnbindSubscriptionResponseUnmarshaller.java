@@ -23,9 +23,9 @@ public class UnbindSubscriptionResponseUnmarshaller {
 	public static UnbindSubscriptionResponse unmarshall(UnbindSubscriptionResponse unbindSubscriptionResponse, UnmarshallerContext _ctx) {
 		
 		unbindSubscriptionResponse.setRequestId(_ctx.stringValue("UnbindSubscriptionResponse.RequestId"));
-		unbindSubscriptionResponse.setChargeId(_ctx.stringValue("UnbindSubscriptionResponse.ChargeId"));
 		unbindSubscriptionResponse.setCode(_ctx.stringValue("UnbindSubscriptionResponse.Code"));
 		unbindSubscriptionResponse.setMessage(_ctx.stringValue("UnbindSubscriptionResponse.Message"));
+		unbindSubscriptionResponse.setChargeId(_ctx.stringValue("UnbindSubscriptionResponse.ChargeId"));
 	 
 	 	return unbindSubscriptionResponse;
 	}

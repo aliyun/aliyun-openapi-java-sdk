@@ -24,21 +24,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetTotalPublicUrlResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String code;
 
 	private String message;
 
+	private String requestId;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -56,6 +48,14 @@ public class GetTotalPublicUrlResponse extends AcsResponse {
 		this.message = message;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -66,17 +66,9 @@ public class GetTotalPublicUrlResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String phonePublicUrl;
-
 		private String ringPublicUrl;
 
-		public String getPhonePublicUrl() {
-			return this.phonePublicUrl;
-		}
-
-		public void setPhonePublicUrl(String phonePublicUrl) {
-			this.phonePublicUrl = phonePublicUrl;
-		}
+		private String phonePublicUrl;
 
 		public String getRingPublicUrl() {
 			return this.ringPublicUrl;
@@ -84,6 +76,14 @@ public class GetTotalPublicUrlResponse extends AcsResponse {
 
 		public void setRingPublicUrl(String ringPublicUrl) {
 			this.ringPublicUrl = ringPublicUrl;
+		}
+
+		public String getPhonePublicUrl() {
+			return this.phonePublicUrl;
+		}
+
+		public void setPhonePublicUrl(String phonePublicUrl) {
+			this.phonePublicUrl = phonePublicUrl;
 		}
 	}
 

@@ -35,7 +35,7 @@ public class QuerySubsIdRequest extends RpcAcsRequest<QuerySubsIdResponse> {
 
 	private String phoneNoX;
 	public QuerySubsIdRequest() {
-		super("Dyplsapi", "2017-05-25", "QuerySubsId", "dyplsapi");
+		super("Dyplsapi", "2017-05-25", "QuerySubsId");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

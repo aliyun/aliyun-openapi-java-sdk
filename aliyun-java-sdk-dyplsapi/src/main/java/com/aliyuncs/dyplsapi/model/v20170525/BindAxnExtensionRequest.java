@@ -61,7 +61,7 @@ public class BindAxnExtensionRequest extends RpcAcsRequest<BindAxnExtensionRespo
 
 	private String callRestrict;
 	public BindAxnExtensionRequest() {
-		super("Dyplsapi", "2017-05-25", "BindAxnExtension", "dyplsapi");
+		super("Dyplsapi", "2017-05-25", "BindAxnExtension");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

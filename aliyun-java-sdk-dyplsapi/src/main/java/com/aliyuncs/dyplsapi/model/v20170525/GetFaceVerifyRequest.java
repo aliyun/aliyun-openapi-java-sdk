@@ -33,7 +33,7 @@ public class GetFaceVerifyRequest extends RpcAcsRequest<GetFaceVerifyResponse> {
 
 	private Long ownerId;
 	public GetFaceVerifyRequest() {
-		super("Dyplsapi", "2017-05-25", "GetFaceVerify", "dyplsapi");
+		super("Dyplsapi", "2017-05-25", "GetFaceVerify");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -32,14 +32,14 @@ public class QuerySecretNoRemainResponseUnmarshaller {
 		querySecretNoRemainResponse.setMessage(_ctx.stringValue("QuerySecretNoRemainResponse.Message"));
 
 		SecretRemainDTO secretRemainDTO = new SecretRemainDTO();
-		secretRemainDTO.setCity(_ctx.stringValue("QuerySecretNoRemainResponse.SecretRemainDTO.City"));
 		secretRemainDTO.setAmount(_ctx.longValue("QuerySecretNoRemainResponse.SecretRemainDTO.Amount"));
+		secretRemainDTO.setCity(_ctx.stringValue("QuerySecretNoRemainResponse.SecretRemainDTO.City"));
 
 		List<RemainDTO> remainDTOList = new ArrayList<RemainDTO>();
 		for (int i = 0; i < _ctx.lengthValue("QuerySecretNoRemainResponse.SecretRemainDTO.RemainDTOList.Length"); i++) {
 			RemainDTO remainDTO = new RemainDTO();
-			remainDTO.setCity(_ctx.stringValue("QuerySecretNoRemainResponse.SecretRemainDTO.RemainDTOList["+ i +"].City"));
 			remainDTO.setAmount(_ctx.longValue("QuerySecretNoRemainResponse.SecretRemainDTO.RemainDTOList["+ i +"].Amount"));
+			remainDTO.setCity(_ctx.stringValue("QuerySecretNoRemainResponse.SecretRemainDTO.RemainDTOList["+ i +"].City"));
 
 			remainDTOList.add(remainDTO);
 		}

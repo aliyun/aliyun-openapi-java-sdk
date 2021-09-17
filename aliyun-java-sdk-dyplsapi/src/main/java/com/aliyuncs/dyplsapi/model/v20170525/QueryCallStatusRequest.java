@@ -37,7 +37,7 @@ public class QueryCallStatusRequest extends RpcAcsRequest<QueryCallStatusRespons
 
 	private String poolKey;
 	public QueryCallStatusRequest() {
-		super("Dyplsapi", "2017-05-25", "QueryCallStatus", "dyplsapi");
+		super("Dyplsapi", "2017-05-25", "QueryCallStatus");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

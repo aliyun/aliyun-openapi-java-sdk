@@ -28,19 +28,19 @@ public class QuerySubscriptionDetailResponseUnmarshaller {
 		querySubscriptionDetailResponse.setMessage(_ctx.stringValue("QuerySubscriptionDetailResponse.Message"));
 
 		SecretBindDetailDTO secretBindDetailDTO = new SecretBindDetailDTO();
-		secretBindDetailDTO.setSubsId(_ctx.stringValue("QuerySubscriptionDetailResponse.SecretBindDetailDTO.SubsId"));
-		secretBindDetailDTO.setPhoneNoA(_ctx.stringValue("QuerySubscriptionDetailResponse.SecretBindDetailDTO.PhoneNoA"));
-		secretBindDetailDTO.setPhoneNoX(_ctx.stringValue("QuerySubscriptionDetailResponse.SecretBindDetailDTO.PhoneNoX"));
-		secretBindDetailDTO.setPhoneNoB(_ctx.stringValue("QuerySubscriptionDetailResponse.SecretBindDetailDTO.PhoneNoB"));
+		secretBindDetailDTO.setStatus(_ctx.longValue("QuerySubscriptionDetailResponse.SecretBindDetailDTO.Status"));
 		secretBindDetailDTO.setExtension(_ctx.stringValue("QuerySubscriptionDetailResponse.SecretBindDetailDTO.Extension"));
+		secretBindDetailDTO.setPhoneNoB(_ctx.stringValue("QuerySubscriptionDetailResponse.SecretBindDetailDTO.PhoneNoB"));
 		secretBindDetailDTO.setGroupId(_ctx.longValue("QuerySubscriptionDetailResponse.SecretBindDetailDTO.GroupId"));
+		secretBindDetailDTO.setNeedRecord(_ctx.booleanValue("QuerySubscriptionDetailResponse.SecretBindDetailDTO.NeedRecord"));
+		secretBindDetailDTO.setASRStatus(_ctx.booleanValue("QuerySubscriptionDetailResponse.SecretBindDetailDTO.ASRStatus"));
 		secretBindDetailDTO.setGmtCreate(_ctx.stringValue("QuerySubscriptionDetailResponse.SecretBindDetailDTO.GmtCreate"));
 		secretBindDetailDTO.setExpireDate(_ctx.stringValue("QuerySubscriptionDetailResponse.SecretBindDetailDTO.ExpireDate"));
-		secretBindDetailDTO.setNeedRecord(_ctx.booleanValue("QuerySubscriptionDetailResponse.SecretBindDetailDTO.NeedRecord"));
+		secretBindDetailDTO.setSubsId(_ctx.stringValue("QuerySubscriptionDetailResponse.SecretBindDetailDTO.SubsId"));
+		secretBindDetailDTO.setPhoneNoX(_ctx.stringValue("QuerySubscriptionDetailResponse.SecretBindDetailDTO.PhoneNoX"));
 		secretBindDetailDTO.setCallRestrict(_ctx.stringValue("QuerySubscriptionDetailResponse.SecretBindDetailDTO.CallRestrict"));
-		secretBindDetailDTO.setStatus(_ctx.longValue("QuerySubscriptionDetailResponse.SecretBindDetailDTO.Status"));
-		secretBindDetailDTO.setASRStatus(_ctx.booleanValue("QuerySubscriptionDetailResponse.SecretBindDetailDTO.ASRStatus"));
 		secretBindDetailDTO.setASRModelId(_ctx.stringValue("QuerySubscriptionDetailResponse.SecretBindDetailDTO.ASRModelId"));
+		secretBindDetailDTO.setPhoneNoA(_ctx.stringValue("QuerySubscriptionDetailResponse.SecretBindDetailDTO.PhoneNoA"));
 		querySubscriptionDetailResponse.setSecretBindDetailDTO(secretBindDetailDTO);
 	 
 	 	return querySubscriptionDetailResponse;

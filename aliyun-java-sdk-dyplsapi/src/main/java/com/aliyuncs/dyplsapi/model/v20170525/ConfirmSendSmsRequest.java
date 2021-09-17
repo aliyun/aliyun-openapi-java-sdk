@@ -22,24 +22,22 @@ import com.aliyuncs.dyplsapi.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetTotalPublicUrlRequest extends RpcAcsRequest<GetTotalPublicUrlResponse> {
+public class ConfirmSendSmsRequest extends RpcAcsRequest<ConfirmSendSmsResponse> {
 	   
 
 	private String callId;
 
 	private Long resourceOwnerId;
 
-	private String resourceOwnerAccount;
+	private String secretNo;
 
-	private Boolean checkSubs;
+	private String resourceOwnerAccount;
 
 	private Long ownerId;
 
-	private String callTime;
-
-	private String partnerKey;
-	public GetTotalPublicUrlRequest() {
-		super("Dyplsapi", "2017-05-25", "GetTotalPublicUrl");
+	private String poolKey;
+	public ConfirmSendSmsRequest() {
+		super("Dyplsapi", "2017-05-25", "ConfirmSendSms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -69,6 +67,17 @@ public class GetTotalPublicUrlRequest extends RpcAcsRequest<GetTotalPublicUrlRes
 		}
 	}
 
+	public String getSecretNo() {
+		return this.secretNo;
+	}
+
+	public void setSecretNo(String secretNo) {
+		this.secretNo = secretNo;
+		if(secretNo != null){
+			putQueryParameter("SecretNo", secretNo);
+		}
+	}
+
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -77,17 +86,6 @@ public class GetTotalPublicUrlRequest extends RpcAcsRequest<GetTotalPublicUrlRes
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public Boolean getCheckSubs() {
-		return this.checkSubs;
-	}
-
-	public void setCheckSubs(Boolean checkSubs) {
-		this.checkSubs = checkSubs;
-		if(checkSubs != null){
-			putQueryParameter("CheckSubs", checkSubs.toString());
 		}
 	}
 
@@ -102,31 +100,20 @@ public class GetTotalPublicUrlRequest extends RpcAcsRequest<GetTotalPublicUrlRes
 		}
 	}
 
-	public String getCallTime() {
-		return this.callTime;
+	public String getPoolKey() {
+		return this.poolKey;
 	}
 
-	public void setCallTime(String callTime) {
-		this.callTime = callTime;
-		if(callTime != null){
-			putQueryParameter("CallTime", callTime);
-		}
-	}
-
-	public String getPartnerKey() {
-		return this.partnerKey;
-	}
-
-	public void setPartnerKey(String partnerKey) {
-		this.partnerKey = partnerKey;
-		if(partnerKey != null){
-			putQueryParameter("PartnerKey", partnerKey);
+	public void setPoolKey(String poolKey) {
+		this.poolKey = poolKey;
+		if(poolKey != null){
+			putQueryParameter("PoolKey", poolKey);
 		}
 	}
 
 	@Override
-	public Class<GetTotalPublicUrlResponse> getResponseClass() {
-		return GetTotalPublicUrlResponse.class;
+	public Class<ConfirmSendSmsResponse> getResponseClass() {
+		return ConfirmSendSmsResponse.class;
 	}
 
 }
