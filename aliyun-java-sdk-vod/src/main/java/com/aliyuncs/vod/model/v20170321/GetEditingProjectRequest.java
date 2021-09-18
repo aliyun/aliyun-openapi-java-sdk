@@ -27,13 +27,13 @@ public class GetEditingProjectRequest extends RpcAcsRequest<GetEditingProjectRes
 
 	private String resourceOwnerId;
 
+	private String projectId;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private String ownerId;
-
-	private String projectId;
 	public GetEditingProjectRequest() {
 		super("vod", "2017-03-21", "GetEditingProject", "vod");
 		setMethod(MethodType.POST);
@@ -51,6 +51,17 @@ public class GetEditingProjectRequest extends RpcAcsRequest<GetEditingProjectRes
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId);
+		}
+	}
+
+	public String getProjectId() {
+		return this.projectId;
+	}
+
+	public void setProjectId(String projectId) {
+		this.projectId = projectId;
+		if(projectId != null){
+			putQueryParameter("ProjectId", projectId);
 		}
 	}
 
@@ -84,17 +95,6 @@ public class GetEditingProjectRequest extends RpcAcsRequest<GetEditingProjectRes
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId);
-		}
-	}
-
-	public String getProjectId() {
-		return this.projectId;
-	}
-
-	public void setProjectId(String projectId) {
-		this.projectId = projectId;
-		if(projectId != null){
-			putQueryParameter("ProjectId", projectId);
 		}
 	}
 

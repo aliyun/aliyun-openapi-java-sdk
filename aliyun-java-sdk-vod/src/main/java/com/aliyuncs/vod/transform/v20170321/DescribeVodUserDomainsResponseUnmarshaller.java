@@ -37,13 +37,11 @@ public class DescribeVodUserDomainsResponseUnmarshaller {
 			PageData pageData = new PageData();
 			pageData.setDomainName(_ctx.stringValue("DescribeVodUserDomainsResponse.Domains["+ i +"].DomainName"));
 			pageData.setCname(_ctx.stringValue("DescribeVodUserDomainsResponse.Domains["+ i +"].Cname"));
-			pageData.setCdnType(_ctx.stringValue("DescribeVodUserDomainsResponse.Domains["+ i +"].CdnType"));
 			pageData.setDomainStatus(_ctx.stringValue("DescribeVodUserDomainsResponse.Domains["+ i +"].DomainStatus"));
 			pageData.setGmtCreated(_ctx.stringValue("DescribeVodUserDomainsResponse.Domains["+ i +"].GmtCreated"));
 			pageData.setGmtModified(_ctx.stringValue("DescribeVodUserDomainsResponse.Domains["+ i +"].GmtModified"));
 			pageData.setDescription(_ctx.stringValue("DescribeVodUserDomainsResponse.Domains["+ i +"].Description"));
 			pageData.setSslProtocol(_ctx.stringValue("DescribeVodUserDomainsResponse.Domains["+ i +"].SslProtocol"));
-			pageData.setWeight(_ctx.stringValue("DescribeVodUserDomainsResponse.Domains["+ i +"].Weight"));
 			pageData.setSandbox(_ctx.stringValue("DescribeVodUserDomainsResponse.Domains["+ i +"].Sandbox"));
 
 			List<Source> sources = new ArrayList<Source>();

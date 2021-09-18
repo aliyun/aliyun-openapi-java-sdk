@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.vod.model.v20170321.GetAIMediaAuditJobResponse;
 import com.aliyuncs.vod.model.v20170321.GetAIMediaAuditJobResponse.MediaAuditJob;
 import com.aliyuncs.vod.model.v20170321.GetAIMediaAuditJobResponse.MediaAuditJob.Data;
+import com.aliyuncs.vod.model.v20170321.GetAIMediaAuditJobResponse.MediaAuditJob.Data.AudioResultItem;
 import com.aliyuncs.vod.model.v20170321.GetAIMediaAuditJobResponse.MediaAuditJob.Data.ImageResultItem;
 import com.aliyuncs.vod.model.v20170321.GetAIMediaAuditJobResponse.MediaAuditJob.Data.ImageResultItem.ResultItem;
 import com.aliyuncs.vod.model.v20170321.GetAIMediaAuditJobResponse.MediaAuditJob.Data.TextResultItem;
@@ -250,6 +251,18 @@ public class GetAIMediaAuditJobResponseUnmarshaller {
 			textResult.add(textResultItem);
 		}
 		data.setTextResult(textResult);
+
+		List<AudioResultItem> audioResult = new ArrayList<AudioResultItem>();
+		for (int i = 0; i < _ctx.lengthValue("GetAIMediaAuditJobResponse.MediaAuditJob.Data.AudioResult.Length"); i++) {
+			AudioResultItem audioResultItem = new AudioResultItem();
+			audioResultItem.setSuggestion(_ctx.stringValue("GetAIMediaAuditJobResponse.MediaAuditJob.Data.AudioResult["+ i +"].Suggestion"));
+			audioResultItem.setLabel(_ctx.stringValue("GetAIMediaAuditJobResponse.MediaAuditJob.Data.AudioResult["+ i +"].Label"));
+			audioResultItem.setScene(_ctx.stringValue("GetAIMediaAuditJobResponse.MediaAuditJob.Data.AudioResult["+ i +"].Scene"));
+			audioResultItem.setScore(_ctx.stringValue("GetAIMediaAuditJobResponse.MediaAuditJob.Data.AudioResult["+ i +"].Score"));
+
+			audioResult.add(audioResultItem);
+		}
+		data.setAudioResult(audioResult);
 		mediaAuditJob.setData(data);
 		getAIMediaAuditJobResponse.setMediaAuditJob(mediaAuditJob);
 	 

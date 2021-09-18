@@ -25,17 +25,11 @@ import com.aliyuncs.vod.Endpoint;
 public class DetachAppPolicyFromIdentityRequest extends RpcAcsRequest<DetachAppPolicyFromIdentityResponse> {
 	   
 
-	private Long resourceOwnerId;
+	private String identityType;
 
 	private String policyNames;
 
 	private String identityName;
-
-	private String identityType;
-
-	private String resourceOwnerAccount;
-
-	private Long ownerId;
 
 	private String appId;
 	public DetachAppPolicyFromIdentityRequest() {
@@ -47,14 +41,14 @@ public class DetachAppPolicyFromIdentityRequest extends RpcAcsRequest<DetachAppP
 		} catch (Exception e) {}
 	}
 
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
+	public String getIdentityType() {
+		return this.identityType;
 	}
 
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+	public void setIdentityType(String identityType) {
+		this.identityType = identityType;
+		if(identityType != null){
+			putQueryParameter("IdentityType", identityType);
 		}
 	}
 
@@ -77,39 +71,6 @@ public class DetachAppPolicyFromIdentityRequest extends RpcAcsRequest<DetachAppP
 		this.identityName = identityName;
 		if(identityName != null){
 			putQueryParameter("IdentityName", identityName);
-		}
-	}
-
-	public String getIdentityType() {
-		return this.identityType;
-	}
-
-	public void setIdentityType(String identityType) {
-		this.identityType = identityType;
-		if(identityType != null){
-			putQueryParameter("IdentityType", identityType);
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

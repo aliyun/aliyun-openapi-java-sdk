@@ -25,15 +25,9 @@ import com.aliyuncs.vod.Endpoint;
 public class ListAppPoliciesForIdentityRequest extends RpcAcsRequest<ListAppPoliciesForIdentityResponse> {
 	   
 
-	private Long resourceOwnerId;
-
-	private String identityName;
-
 	private String identityType;
 
-	private String resourceOwnerAccount;
-
-	private Long ownerId;
+	private String identityName;
 
 	private String appId;
 	public ListAppPoliciesForIdentityRequest() {
@@ -43,28 +37,6 @@ public class ListAppPoliciesForIdentityRequest extends RpcAcsRequest<ListAppPoli
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getIdentityName() {
-		return this.identityName;
-	}
-
-	public void setIdentityName(String identityName) {
-		this.identityName = identityName;
-		if(identityName != null){
-			putQueryParameter("IdentityName", identityName);
-		}
 	}
 
 	public String getIdentityType() {
@@ -78,25 +50,14 @@ public class ListAppPoliciesForIdentityRequest extends RpcAcsRequest<ListAppPoli
 		}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
+	public String getIdentityName() {
+		return this.identityName;
 	}
 
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
+	public void setIdentityName(String identityName) {
+		this.identityName = identityName;
+		if(identityName != null){
+			putQueryParameter("IdentityName", identityName);
 		}
 	}
 

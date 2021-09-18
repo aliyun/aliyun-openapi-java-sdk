@@ -25,13 +25,7 @@ import com.aliyuncs.vod.Endpoint;
 public class DeleteStreamRequest extends RpcAcsRequest<DeleteStreamResponse> {
 	   
 
-	private Long resourceOwnerId;
-
-	private String resourceOwnerAccount;
-
 	private String videoId;
-
-	private Long ownerId;
 
 	private String jobIds;
 	public DeleteStreamRequest() {
@@ -43,28 +37,6 @@ public class DeleteStreamRequest extends RpcAcsRequest<DeleteStreamResponse> {
 		} catch (Exception e) {}
 	}
 
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
 	public String getVideoId() {
 		return this.videoId;
 	}
@@ -73,17 +45,6 @@ public class DeleteStreamRequest extends RpcAcsRequest<DeleteStreamResponse> {
 		this.videoId = videoId;
 		if(videoId != null){
 			putQueryParameter("VideoId", videoId);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

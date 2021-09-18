@@ -39,8 +39,6 @@ public class SubmitAIJobRequest extends RpcAcsRequest<SubmitAIJobResponse> {
 
 	private String mediaId;
 
-	private String input;
-
 	private String config;
 	public SubmitAIJobRequest() {
 		super("vod", "2017-03-21", "SubmitAIJob", "vod");
@@ -125,17 +123,6 @@ public class SubmitAIJobRequest extends RpcAcsRequest<SubmitAIJobResponse> {
 		this.mediaId = mediaId;
 		if(mediaId != null){
 			putQueryParameter("MediaId", mediaId);
-		}
-	}
-
-	public String getInput() {
-		return this.input;
-	}
-
-	public void setInput(String input) {
-		this.input = input;
-		if(input != null){
-			putQueryParameter("Input", input);
 		}
 	}
 

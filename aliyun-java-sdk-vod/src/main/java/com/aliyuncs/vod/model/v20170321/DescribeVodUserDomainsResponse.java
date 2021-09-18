@@ -81,8 +81,6 @@ public class DescribeVodUserDomainsResponse extends AcsResponse {
 
 		private String cname;
 
-		private String cdnType;
-
 		private String domainStatus;
 
 		private String gmtCreated;
@@ -92,8 +90,6 @@ public class DescribeVodUserDomainsResponse extends AcsResponse {
 		private String description;
 
 		private String sslProtocol;
-
-		private String weight;
 
 		private String sandbox;
 
@@ -113,14 +109,6 @@ public class DescribeVodUserDomainsResponse extends AcsResponse {
 
 		public void setCname(String cname) {
 			this.cname = cname;
-		}
-
-		public String getCdnType() {
-			return this.cdnType;
-		}
-
-		public void setCdnType(String cdnType) {
-			this.cdnType = cdnType;
 		}
 
 		public String getDomainStatus() {
@@ -161,14 +149,6 @@ public class DescribeVodUserDomainsResponse extends AcsResponse {
 
 		public void setSslProtocol(String sslProtocol) {
 			this.sslProtocol = sslProtocol;
-		}
-
-		public String getWeight() {
-			return this.weight;
-		}
-
-		public void setWeight(String weight) {
-			this.weight = weight;
 		}
 
 		public String getSandbox() {

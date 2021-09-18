@@ -25,21 +25,11 @@ import com.aliyuncs.vod.Endpoint;
 public class UploadMediaByURLRequest extends RpcAcsRequest<UploadMediaByURLResponse> {
 	   
 
-	private Long resourceOwnerId;
-
-	private String messageCallback;
-
 	private String storageLocation;
 
 	private String userData;
 
 	private String workflowId;
-
-	private String resourceOwnerAccount;
-
-	private Long ownerId;
-
-	private String priority;
 
 	private String templateGroupId;
 
@@ -55,28 +45,6 @@ public class UploadMediaByURLRequest extends RpcAcsRequest<UploadMediaByURLRespo
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getMessageCallback() {
-		return this.messageCallback;
-	}
-
-	public void setMessageCallback(String messageCallback) {
-		this.messageCallback = messageCallback;
-		if(messageCallback != null){
-			putQueryParameter("MessageCallback", messageCallback);
-		}
 	}
 
 	public String getStorageLocation() {
@@ -109,39 +77,6 @@ public class UploadMediaByURLRequest extends RpcAcsRequest<UploadMediaByURLRespo
 		this.workflowId = workflowId;
 		if(workflowId != null){
 			putQueryParameter("WorkflowId", workflowId);
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getPriority() {
-		return this.priority;
-	}
-
-	public void setPriority(String priority) {
-		this.priority = priority;
-		if(priority != null){
-			putQueryParameter("Priority", priority);
 		}
 	}
 

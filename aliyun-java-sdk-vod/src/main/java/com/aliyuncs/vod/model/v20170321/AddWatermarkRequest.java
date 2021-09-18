@@ -25,13 +25,7 @@ import com.aliyuncs.vod.Endpoint;
 public class AddWatermarkRequest extends RpcAcsRequest<AddWatermarkResponse> {
 	   
 
-	private Long resourceOwnerId;
-
 	private String type;
-
-	private String resourceOwnerAccount;
-
-	private Long ownerId;
 
 	private String watermarkConfig;
 
@@ -49,17 +43,6 @@ public class AddWatermarkRequest extends RpcAcsRequest<AddWatermarkResponse> {
 		} catch (Exception e) {}
 	}
 
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
 	public String getType() {
 		return this.type;
 	}
@@ -68,28 +51,6 @@ public class AddWatermarkRequest extends RpcAcsRequest<AddWatermarkResponse> {
 		this.type = type;
 		if(type != null){
 			putQueryParameter("Type", type);
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

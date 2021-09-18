@@ -75,6 +75,8 @@ public class GetEditingProjectMaterialsResponse extends AcsResponse {
 
 		private String spriteConfig;
 
+		private String materialType;
+
 		private List<String> snapshots;
 
 		private List<String> sprites;
@@ -189,6 +191,14 @@ public class GetEditingProjectMaterialsResponse extends AcsResponse {
 
 		public void setSpriteConfig(String spriteConfig) {
 			this.spriteConfig = spriteConfig;
+		}
+
+		public String getMaterialType() {
+			return this.materialType;
+		}
+
+		public void setMaterialType(String materialType) {
+			this.materialType = materialType;
 		}
 
 		public List<String> getSnapshots() {

@@ -25,17 +25,9 @@ import com.aliyuncs.vod.Endpoint;
 public class AddVodTemplateRequest extends RpcAcsRequest<AddVodTemplateResponse> {
 	   
 
-	private Long resourceOwnerId;
-
-	private String subTemplateType;
-
 	private String templateConfig;
 
 	private String templateType;
-
-	private String resourceOwnerAccount;
-
-	private Long ownerId;
 
 	private String appId;
 
@@ -47,28 +39,6 @@ public class AddVodTemplateRequest extends RpcAcsRequest<AddVodTemplateResponse>
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getSubTemplateType() {
-		return this.subTemplateType;
-	}
-
-	public void setSubTemplateType(String subTemplateType) {
-		this.subTemplateType = subTemplateType;
-		if(subTemplateType != null){
-			putQueryParameter("SubTemplateType", subTemplateType);
-		}
 	}
 
 	public String getTemplateConfig() {
@@ -90,28 +60,6 @@ public class AddVodTemplateRequest extends RpcAcsRequest<AddVodTemplateResponse>
 		this.templateType = templateType;
 		if(templateType != null){
 			putQueryParameter("TemplateType", templateType);
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

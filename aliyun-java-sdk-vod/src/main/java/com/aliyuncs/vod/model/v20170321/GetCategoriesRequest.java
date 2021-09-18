@@ -25,17 +25,11 @@ import com.aliyuncs.vod.Endpoint;
 public class GetCategoriesRequest extends RpcAcsRequest<GetCategoriesResponse> {
 	   
 
-	private String resourceOwnerId;
-
 	private String type;
 
 	private Long cateId;
 
 	private Long pageSize;
-
-	private String resourceOwnerAccount;
-
-	private String ownerId;
 
 	private Long pageNo;
 
@@ -47,17 +41,6 @@ public class GetCategoriesRequest extends RpcAcsRequest<GetCategoriesResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(String resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId);
-		}
 	}
 
 	public String getType() {
@@ -90,28 +73,6 @@ public class GetCategoriesRequest extends RpcAcsRequest<GetCategoriesResponse> {
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(String ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId);
 		}
 	}
 

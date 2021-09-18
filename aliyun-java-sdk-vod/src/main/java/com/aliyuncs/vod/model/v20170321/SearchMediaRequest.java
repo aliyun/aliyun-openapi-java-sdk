@@ -25,21 +25,13 @@ import com.aliyuncs.vod.Endpoint;
 public class SearchMediaRequest extends RpcAcsRequest<SearchMediaResponse> {
 	   
 
-	private Long resourceOwnerId;
-
-	private String sessionId;
-
 	private String scrollToken;
 
 	private String searchType;
 
 	private Integer pageSize;
 
-	private String resourceOwnerAccount;
-
 	private String match;
-
-	private Long ownerId;
 
 	private Integer pageNo;
 
@@ -53,28 +45,6 @@ public class SearchMediaRequest extends RpcAcsRequest<SearchMediaResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getSessionId() {
-		return this.sessionId;
-	}
-
-	public void setSessionId(String sessionId) {
-		this.sessionId = sessionId;
-		if(sessionId != null){
-			putQueryParameter("SessionId", sessionId);
-		}
 	}
 
 	public String getScrollToken() {
@@ -110,17 +80,6 @@ public class SearchMediaRequest extends RpcAcsRequest<SearchMediaResponse> {
 		}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
 	public String getMatch() {
 		return this.match;
 	}
@@ -129,17 +88,6 @@ public class SearchMediaRequest extends RpcAcsRequest<SearchMediaResponse> {
 		this.match = match;
 		if(match != null){
 			putQueryParameter("Match", match);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

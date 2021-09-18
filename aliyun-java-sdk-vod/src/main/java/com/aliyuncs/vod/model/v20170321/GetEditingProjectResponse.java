@@ -66,6 +66,8 @@ public class GetEditingProjectResponse extends AcsResponse {
 
 		private String regionId;
 
+		private String fEExtend;
+
 		public String getProjectId() {
 			return this.projectId;
 		}
@@ -144,6 +146,14 @@ public class GetEditingProjectResponse extends AcsResponse {
 
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
+		}
+
+		public String getFEExtend() {
+			return this.fEExtend;
+		}
+
+		public void setFEExtend(String fEExtend) {
+			this.fEExtend = fEExtend;
 		}
 	}
 

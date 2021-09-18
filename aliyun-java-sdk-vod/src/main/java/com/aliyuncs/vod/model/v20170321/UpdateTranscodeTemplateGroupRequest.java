@@ -27,17 +27,11 @@ public class UpdateTranscodeTemplateGroupRequest extends RpcAcsRequest<UpdateTra
 
 	private String transcodeTemplateList;
 
-	private Long resourceOwnerId;
-
-	private String locked;
-
-	private String resourceOwnerAccount;
-
-	private Long ownerId;
-
 	private String transcodeTemplateGroupId;
 
 	private String name;
+
+	private String locked;
 	public UpdateTranscodeTemplateGroupRequest() {
 		super("vod", "2017-03-21", "UpdateTranscodeTemplateGroup", "vod");
 		setMethod(MethodType.POST);
@@ -55,50 +49,6 @@ public class UpdateTranscodeTemplateGroupRequest extends RpcAcsRequest<UpdateTra
 		this.transcodeTemplateList = transcodeTemplateList;
 		if(transcodeTemplateList != null){
 			putQueryParameter("TranscodeTemplateList", transcodeTemplateList);
-		}
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getLocked() {
-		return this.locked;
-	}
-
-	public void setLocked(String locked) {
-		this.locked = locked;
-		if(locked != null){
-			putQueryParameter("Locked", locked);
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 
@@ -121,6 +71,17 @@ public class UpdateTranscodeTemplateGroupRequest extends RpcAcsRequest<UpdateTra
 		this.name = name;
 		if(name != null){
 			putQueryParameter("Name", name);
+		}
+	}
+
+	public String getLocked() {
+		return this.locked;
+	}
+
+	public void setLocked(String locked) {
+		this.locked = locked;
+		if(locked != null){
+			putQueryParameter("Locked", locked);
 		}
 	}
 

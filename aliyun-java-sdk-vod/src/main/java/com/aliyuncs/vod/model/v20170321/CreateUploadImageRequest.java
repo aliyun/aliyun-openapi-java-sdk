@@ -25,8 +25,6 @@ import com.aliyuncs.vod.Endpoint;
 public class CreateUploadImageRequest extends RpcAcsRequest<CreateUploadImageResponse> {
 	   
 
-	private Long resourceOwnerId;
-
 	private String description;
 
 	private String title;
@@ -39,15 +37,9 @@ public class CreateUploadImageRequest extends RpcAcsRequest<CreateUploadImageRes
 
 	private String imageType;
 
-	private String resourceOwnerAccount;
-
 	private String imageExt;
 
-	private Long ownerId;
-
 	private String tags;
-
-	private String originalFileName;
 
 	private String appId;
 	public CreateUploadImageRequest() {
@@ -57,17 +49,6 @@ public class CreateUploadImageRequest extends RpcAcsRequest<CreateUploadImageRes
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
 	}
 
 	public String getDescription() {
@@ -136,17 +117,6 @@ public class CreateUploadImageRequest extends RpcAcsRequest<CreateUploadImageRes
 		}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
 	public String getImageExt() {
 		return this.imageExt;
 	}
@@ -158,17 +128,6 @@ public class CreateUploadImageRequest extends RpcAcsRequest<CreateUploadImageRes
 		}
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
 	public String getTags() {
 		return this.tags;
 	}
@@ -177,17 +136,6 @@ public class CreateUploadImageRequest extends RpcAcsRequest<CreateUploadImageRes
 		this.tags = tags;
 		if(tags != null){
 			putQueryParameter("Tags", tags);
-		}
-	}
-
-	public String getOriginalFileName() {
-		return this.originalFileName;
-	}
-
-	public void setOriginalFileName(String originalFileName) {
-		this.originalFileName = originalFileName;
-		if(originalFileName != null){
-			putQueryParameter("OriginalFileName", originalFileName);
 		}
 	}
 

@@ -308,6 +308,8 @@ public class GetPlayInfoResponse extends AcsResponse {
 
 		private String transcodeMode;
 
+		private String danMuURL;
+
 		private List<Thumbnail> thumbnailList;
 
 		public String getOutputType() {
@@ -380,6 +382,14 @@ public class GetPlayInfoResponse extends AcsResponse {
 
 		public void setTranscodeMode(String transcodeMode) {
 			this.transcodeMode = transcodeMode;
+		}
+
+		public String getDanMuURL() {
+			return this.danMuURL;
+		}
+
+		public void setDanMuURL(String danMuURL) {
+			this.danMuURL = danMuURL;
 		}
 
 		public List<Thumbnail> getThumbnailList() {

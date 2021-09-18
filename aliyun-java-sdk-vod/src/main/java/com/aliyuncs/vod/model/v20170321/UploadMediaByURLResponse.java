@@ -47,17 +47,9 @@ public class UploadMediaByURLResponse extends AcsResponse {
 
 	public static class UploadJob {
 
-		private String jobId;
-
 		private String sourceURL;
 
-		public String getJobId() {
-			return this.jobId;
-		}
-
-		public void setJobId(String jobId) {
-			this.jobId = jobId;
-		}
+		private String jobId;
 
 		public String getSourceURL() {
 			return this.sourceURL;
@@ -65,6 +57,14 @@ public class UploadMediaByURLResponse extends AcsResponse {
 
 		public void setSourceURL(String sourceURL) {
 			this.sourceURL = sourceURL;
+		}
+
+		public String getJobId() {
+			return this.jobId;
+		}
+
+		public void setJobId(String jobId) {
+			this.jobId = jobId;
 		}
 	}
 

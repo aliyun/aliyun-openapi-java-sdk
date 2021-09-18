@@ -1,3 +1,6 @@
+2021-09-18 Version: 2.5.13
+- Add copyright invasion detection APIs.
+
 2020-09-24 Version: 2.15.12
 - Add a new api named SubmitAIImageAuditJob to submit image ai detection job.
 - Add a new api named CreateDNADB to create a DNA analysis library.

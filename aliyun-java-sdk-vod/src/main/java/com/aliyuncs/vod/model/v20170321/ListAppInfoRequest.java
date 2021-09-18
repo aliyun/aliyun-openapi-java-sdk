@@ -25,15 +25,9 @@ import com.aliyuncs.vod.Endpoint;
 public class ListAppInfoRequest extends RpcAcsRequest<ListAppInfoResponse> {
 	   
 
-	private Long resourceOwnerId;
+	private Integer pageNo;
 
 	private Integer pageSize;
-
-	private String resourceOwnerAccount;
-
-	private Long ownerId;
-
-	private Integer pageNo;
 
 	private String status;
 	public ListAppInfoRequest() {
@@ -45,14 +39,14 @@ public class ListAppInfoRequest extends RpcAcsRequest<ListAppInfoResponse> {
 		} catch (Exception e) {}
 	}
 
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
+	public Integer getPageNo() {
+		return this.pageNo;
 	}
 
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+	public void setPageNo(Integer pageNo) {
+		this.pageNo = pageNo;
+		if(pageNo != null){
+			putQueryParameter("PageNo", pageNo.toString());
 		}
 	}
 
@@ -64,39 +58,6 @@ public class ListAppInfoRequest extends RpcAcsRequest<ListAppInfoResponse> {
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public Integer getPageNo() {
-		return this.pageNo;
-	}
-
-	public void setPageNo(Integer pageNo) {
-		this.pageNo = pageNo;
-		if(pageNo != null){
-			putQueryParameter("PageNo", pageNo.toString());
 		}
 	}
 

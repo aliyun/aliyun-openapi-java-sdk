@@ -25,15 +25,7 @@ import com.aliyuncs.vod.Endpoint;
 public class DeleteMultipartUploadRequest extends RpcAcsRequest<DeleteMultipartUploadResponse> {
 	   
 
-	private String resourceOwnerId;
-
-	private Long resourceRealOwnerId;
-
-	private String resourceOwnerAccount;
-
 	private String ownerAccount;
-
-	private String ownerId;
 
 	private String mediaId;
 
@@ -47,39 +39,6 @@ public class DeleteMultipartUploadRequest extends RpcAcsRequest<DeleteMultipartU
 		} catch (Exception e) {}
 	}
 
-	public String getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(String resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId);
-		}
-	}
-
-	public Long getResourceRealOwnerId() {
-		return this.resourceRealOwnerId;
-	}
-
-	public void setResourceRealOwnerId(Long resourceRealOwnerId) {
-		this.resourceRealOwnerId = resourceRealOwnerId;
-		if(resourceRealOwnerId != null){
-			putQueryParameter("ResourceRealOwnerId", resourceRealOwnerId.toString());
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -88,17 +47,6 @@ public class DeleteMultipartUploadRequest extends RpcAcsRequest<DeleteMultipartU
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public String getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(String ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId);
 		}
 	}
 

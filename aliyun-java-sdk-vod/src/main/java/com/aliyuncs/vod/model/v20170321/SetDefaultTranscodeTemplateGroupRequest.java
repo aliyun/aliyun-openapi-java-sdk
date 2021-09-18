@@ -25,12 +25,6 @@ import com.aliyuncs.vod.Endpoint;
 public class SetDefaultTranscodeTemplateGroupRequest extends RpcAcsRequest<SetDefaultTranscodeTemplateGroupResponse> {
 	   
 
-	private Long resourceOwnerId;
-
-	private String resourceOwnerAccount;
-
-	private Long ownerId;
-
 	private String transcodeTemplateGroupId;
 	public SetDefaultTranscodeTemplateGroupRequest() {
 		super("vod", "2017-03-21", "SetDefaultTranscodeTemplateGroup", "vod");
@@ -39,39 +33,6 @@ public class SetDefaultTranscodeTemplateGroupRequest extends RpcAcsRequest<SetDe
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
 	}
 
 	public String getTranscodeTemplateGroupId() {

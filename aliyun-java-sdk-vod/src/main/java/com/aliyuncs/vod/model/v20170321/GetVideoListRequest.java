@@ -25,8 +25,6 @@ import com.aliyuncs.vod.Endpoint;
 public class GetVideoListRequest extends RpcAcsRequest<GetVideoListResponse> {
 	   
 
-	private Long resourceOwnerId;
-
 	private String startTime;
 
 	private String storageLocation;
@@ -35,11 +33,7 @@ public class GetVideoListRequest extends RpcAcsRequest<GetVideoListResponse> {
 
 	private Integer pageSize;
 
-	private String resourceOwnerAccount;
-
 	private String endTime;
-
-	private Long ownerId;
 
 	private Integer pageNo;
 
@@ -53,17 +47,6 @@ public class GetVideoListRequest extends RpcAcsRequest<GetVideoListResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
 	}
 
 	public String getStartTime() {
@@ -110,17 +93,6 @@ public class GetVideoListRequest extends RpcAcsRequest<GetVideoListResponse> {
 		}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
 	public String getEndTime() {
 		return this.endTime;
 	}
@@ -129,17 +101,6 @@ public class GetVideoListRequest extends RpcAcsRequest<GetVideoListResponse> {
 		this.endTime = endTime;
 		if(endTime != null){
 			putQueryParameter("EndTime", endTime);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

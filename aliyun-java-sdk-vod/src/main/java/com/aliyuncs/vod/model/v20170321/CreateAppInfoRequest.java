@@ -25,15 +25,9 @@ import com.aliyuncs.vod.Endpoint;
 public class CreateAppInfoRequest extends RpcAcsRequest<CreateAppInfoResponse> {
 	   
 
-	private Long resourceOwnerId;
-
 	private String description;
 
 	private String appName;
-
-	private String resourceOwnerAccount;
-
-	private Long ownerId;
 	public CreateAppInfoRequest() {
 		super("vod", "2017-03-21", "CreateAppInfo", "vod");
 		setMethod(MethodType.POST);
@@ -41,17 +35,6 @@ public class CreateAppInfoRequest extends RpcAcsRequest<CreateAppInfoResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
 	}
 
 	public String getDescription() {
@@ -73,28 +56,6 @@ public class CreateAppInfoRequest extends RpcAcsRequest<CreateAppInfoResponse> {
 		this.appName = appName;
 		if(appName != null){
 			putQueryParameter("AppName", appName);
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

@@ -27,12 +27,6 @@ public class AddTranscodeTemplateGroupRequest extends RpcAcsRequest<AddTranscode
 
 	private String transcodeTemplateList;
 
-	private Long resourceOwnerId;
-
-	private String resourceOwnerAccount;
-
-	private Long ownerId;
-
 	private String transcodeTemplateGroupId;
 
 	private String appId;
@@ -55,39 +49,6 @@ public class AddTranscodeTemplateGroupRequest extends RpcAcsRequest<AddTranscode
 		this.transcodeTemplateList = transcodeTemplateList;
 		if(transcodeTemplateList != null){
 			putQueryParameter("TranscodeTemplateList", transcodeTemplateList);
-		}
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

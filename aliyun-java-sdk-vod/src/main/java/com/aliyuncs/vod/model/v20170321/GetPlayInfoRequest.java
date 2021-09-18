@@ -25,8 +25,6 @@ import com.aliyuncs.vod.Endpoint;
 public class GetPlayInfoRequest extends RpcAcsRequest<GetPlayInfoResponse> {
 	   
 
-	private Long resourceOwnerId;
-
 	private String formats;
 
 	private String reAuthInfo;
@@ -41,13 +39,11 @@ public class GetPlayInfoRequest extends RpcAcsRequest<GetPlayInfoResponse> {
 
 	private String streamType;
 
-	private String resourceOwnerAccount;
-
 	private String videoId;
 
-	private Long ownerId;
-
 	private String resultType;
+
+	private String additionType;
 	public GetPlayInfoRequest() {
 		super("vod", "2017-03-21", "GetPlayInfo", "vod");
 		setMethod(MethodType.POST);
@@ -55,17 +51,6 @@ public class GetPlayInfoRequest extends RpcAcsRequest<GetPlayInfoResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
 	}
 
 	public String getFormats() {
@@ -145,17 +130,6 @@ public class GetPlayInfoRequest extends RpcAcsRequest<GetPlayInfoResponse> {
 		}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
 	public String getVideoId() {
 		return this.videoId;
 	}
@@ -167,17 +141,6 @@ public class GetPlayInfoRequest extends RpcAcsRequest<GetPlayInfoResponse> {
 		}
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
 	public String getResultType() {
 		return this.resultType;
 	}
@@ -186,6 +149,17 @@ public class GetPlayInfoRequest extends RpcAcsRequest<GetPlayInfoResponse> {
 		this.resultType = resultType;
 		if(resultType != null){
 			putQueryParameter("ResultType", resultType);
+		}
+	}
+
+	public String getAdditionType() {
+		return this.additionType;
+	}
+
+	public void setAdditionType(String additionType) {
+		this.additionType = additionType;
+		if(additionType != null){
+			putQueryParameter("AdditionType", additionType);
 		}
 	}
 

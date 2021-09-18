@@ -28,23 +28,15 @@ public class DescribeVodUserDomainsRequest extends RpcAcsRequest<DescribeVodUser
 
 	private Integer pageNumber;
 
-	private Boolean checkDomainShow;
-
 	private String securityToken;
-
-	private String cdnType;
 
 	private Integer pageSize;
 
 	private List<Tag> tags;
 
-	private String funcFilter;
-
 	private String domainName;
 
 	private Long ownerId;
-
-	private String funcId;
 
 	private String domainStatus;
 
@@ -69,17 +61,6 @@ public class DescribeVodUserDomainsRequest extends RpcAcsRequest<DescribeVodUser
 		}
 	}
 
-	public Boolean getCheckDomainShow() {
-		return this.checkDomainShow;
-	}
-
-	public void setCheckDomainShow(Boolean checkDomainShow) {
-		this.checkDomainShow = checkDomainShow;
-		if(checkDomainShow != null){
-			putQueryParameter("CheckDomainShow", checkDomainShow.toString());
-		}
-	}
-
 	public String getSecurityToken() {
 		return this.securityToken;
 	}
@@ -88,17 +69,6 @@ public class DescribeVodUserDomainsRequest extends RpcAcsRequest<DescribeVodUser
 		this.securityToken = securityToken;
 		if(securityToken != null){
 			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	public String getCdnType() {
-		return this.cdnType;
-	}
-
-	public void setCdnType(String cdnType) {
-		this.cdnType = cdnType;
-		if(cdnType != null){
-			putQueryParameter("CdnType", cdnType);
 		}
 	}
 
@@ -127,17 +97,6 @@ public class DescribeVodUserDomainsRequest extends RpcAcsRequest<DescribeVodUser
 		}	
 	}
 
-	public String getFuncFilter() {
-		return this.funcFilter;
-	}
-
-	public void setFuncFilter(String funcFilter) {
-		this.funcFilter = funcFilter;
-		if(funcFilter != null){
-			putQueryParameter("FuncFilter", funcFilter);
-		}
-	}
-
 	public String getDomainName() {
 		return this.domainName;
 	}
@@ -157,17 +116,6 @@ public class DescribeVodUserDomainsRequest extends RpcAcsRequest<DescribeVodUser
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getFuncId() {
-		return this.funcId;
-	}
-
-	public void setFuncId(String funcId) {
-		this.funcId = funcId;
-		if(funcId != null){
-			putQueryParameter("FuncId", funcId);
 		}
 	}
 

@@ -25,15 +25,7 @@ import com.aliyuncs.vod.Endpoint;
 public class GetUploadDetailsRequest extends RpcAcsRequest<GetUploadDetailsResponse> {
 	   
 
-	private Long resourceOwnerId;
-
-	private Long resourceRealOwnerId;
-
 	private String mediaIds;
-
-	private String resourceOwnerAccount;
-
-	private Long ownerId;
 
 	private String mediaType;
 	public GetUploadDetailsRequest() {
@@ -45,28 +37,6 @@ public class GetUploadDetailsRequest extends RpcAcsRequest<GetUploadDetailsRespo
 		} catch (Exception e) {}
 	}
 
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public Long getResourceRealOwnerId() {
-		return this.resourceRealOwnerId;
-	}
-
-	public void setResourceRealOwnerId(Long resourceRealOwnerId) {
-		this.resourceRealOwnerId = resourceRealOwnerId;
-		if(resourceRealOwnerId != null){
-			putQueryParameter("ResourceRealOwnerId", resourceRealOwnerId.toString());
-		}
-	}
-
 	public String getMediaIds() {
 		return this.mediaIds;
 	}
@@ -75,28 +45,6 @@ public class GetUploadDetailsRequest extends RpcAcsRequest<GetUploadDetailsRespo
 		this.mediaIds = mediaIds;
 		if(mediaIds != null){
 			putQueryParameter("MediaIds", mediaIds);
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

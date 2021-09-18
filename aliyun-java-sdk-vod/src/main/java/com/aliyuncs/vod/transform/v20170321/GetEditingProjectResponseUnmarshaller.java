@@ -36,6 +36,7 @@ public class GetEditingProjectResponseUnmarshaller {
 		project.setCoverURL(_ctx.stringValue("GetEditingProjectResponse.Project.CoverURL"));
 		project.setStorageLocation(_ctx.stringValue("GetEditingProjectResponse.Project.StorageLocation"));
 		project.setRegionId(_ctx.stringValue("GetEditingProjectResponse.Project.RegionId"));
+		project.setFEExtend(_ctx.stringValue("GetEditingProjectResponse.Project.FEExtend"));
 		getEditingProjectResponse.setProject(project);
 	 
 	 	return getEditingProjectResponse;

@@ -38,8 +38,6 @@ public class SetVodDomainCertificateRequest extends RpcAcsRequest<SetVodDomainCe
 	private Long ownerId;
 
 	private String sSLPub;
-
-	private String region;
 	public SetVodDomainCertificateRequest() {
 		super("vod", "2017-03-21", "SetVodDomainCertificate", "vod");
 		setMethod(MethodType.POST);
@@ -123,17 +121,6 @@ public class SetVodDomainCertificateRequest extends RpcAcsRequest<SetVodDomainCe
 		this.sSLPub = sSLPub;
 		if(sSLPub != null){
 			putQueryParameter("SSLPub", sSLPub);
-		}
-	}
-
-	public String getRegion() {
-		return this.region;
-	}
-
-	public void setRegion(String region) {
-		this.region = region;
-		if(region != null){
-			putQueryParameter("Region", region);
 		}
 	}
 

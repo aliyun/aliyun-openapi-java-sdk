@@ -25,25 +25,17 @@ import com.aliyuncs.vod.Endpoint;
 public class SubmitTranscodeJobsRequest extends RpcAcsRequest<SubmitTranscodeJobsResponse> {
 	   
 
-	private Long resourceOwnerId;
-
 	private String userData;
-
-	private String resourceOwnerAccount;
 
 	private String videoId;
 
 	private String overrideParams;
-
-	private Long ownerId;
 
 	private String priority;
 
 	private String pipelineId;
 
 	private String templateGroupId;
-
-	private String fileUrl;
 
 	private String encryptConfig;
 	public SubmitTranscodeJobsRequest() {
@@ -55,17 +47,6 @@ public class SubmitTranscodeJobsRequest extends RpcAcsRequest<SubmitTranscodeJob
 		} catch (Exception e) {}
 	}
 
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
 	public String getUserData() {
 		return this.userData;
 	}
@@ -74,17 +55,6 @@ public class SubmitTranscodeJobsRequest extends RpcAcsRequest<SubmitTranscodeJob
 		this.userData = userData;
 		if(userData != null){
 			putQueryParameter("UserData", userData);
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 
@@ -107,17 +77,6 @@ public class SubmitTranscodeJobsRequest extends RpcAcsRequest<SubmitTranscodeJob
 		this.overrideParams = overrideParams;
 		if(overrideParams != null){
 			putQueryParameter("OverrideParams", overrideParams);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 
@@ -151,17 +110,6 @@ public class SubmitTranscodeJobsRequest extends RpcAcsRequest<SubmitTranscodeJob
 		this.templateGroupId = templateGroupId;
 		if(templateGroupId != null){
 			putQueryParameter("TemplateGroupId", templateGroupId);
-		}
-	}
-
-	public String getFileUrl() {
-		return this.fileUrl;
-	}
-
-	public void setFileUrl(String fileUrl) {
-		this.fileUrl = fileUrl;
-		if(fileUrl != null){
-			putQueryParameter("FileUrl", fileUrl);
 		}
 	}
 

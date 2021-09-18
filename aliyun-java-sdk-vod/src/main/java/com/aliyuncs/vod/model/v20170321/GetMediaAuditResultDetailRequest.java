@@ -25,12 +25,6 @@ import com.aliyuncs.vod.Endpoint;
 public class GetMediaAuditResultDetailRequest extends RpcAcsRequest<GetMediaAuditResultDetailResponse> {
 	   
 
-	private Long resourceOwnerId;
-
-	private String resourceOwnerAccount;
-
-	private String ownerId;
-
 	private String mediaId;
 
 	private Integer pageNo;
@@ -41,39 +35,6 @@ public class GetMediaAuditResultDetailRequest extends RpcAcsRequest<GetMediaAudi
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(String ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId);
-		}
 	}
 
 	public String getMediaId() {

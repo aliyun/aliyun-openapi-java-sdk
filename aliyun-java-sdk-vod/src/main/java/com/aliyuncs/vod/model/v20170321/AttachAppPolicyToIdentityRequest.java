@@ -25,17 +25,11 @@ import com.aliyuncs.vod.Endpoint;
 public class AttachAppPolicyToIdentityRequest extends RpcAcsRequest<AttachAppPolicyToIdentityResponse> {
 	   
 
-	private Long resourceOwnerId;
-
 	private String policyNames;
 
 	private String identityName;
 
 	private String identityType;
-
-	private String resourceOwnerAccount;
-
-	private Long ownerId;
 
 	private String appId;
 	public AttachAppPolicyToIdentityRequest() {
@@ -45,17 +39,6 @@ public class AttachAppPolicyToIdentityRequest extends RpcAcsRequest<AttachAppPol
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
 	}
 
 	public String getPolicyNames() {
@@ -88,28 +71,6 @@ public class AttachAppPolicyToIdentityRequest extends RpcAcsRequest<AttachAppPol
 		this.identityType = identityType;
 		if(identityType != null){
 			putQueryParameter("IdentityType", identityType);
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

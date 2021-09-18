@@ -25,19 +25,13 @@ import com.aliyuncs.vod.Endpoint;
 public class ListTranscodeTaskRequest extends RpcAcsRequest<ListTranscodeTaskResponse> {
 	   
 
-	private Long resourceOwnerId;
-
 	private String startTime;
 
 	private Integer pageSize;
 
-	private String resourceOwnerAccount;
-
 	private String endTime;
 
 	private String videoId;
-
-	private Long ownerId;
 
 	private Integer pageNo;
 	public ListTranscodeTaskRequest() {
@@ -47,17 +41,6 @@ public class ListTranscodeTaskRequest extends RpcAcsRequest<ListTranscodeTaskRes
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
 	}
 
 	public String getStartTime() {
@@ -82,17 +65,6 @@ public class ListTranscodeTaskRequest extends RpcAcsRequest<ListTranscodeTaskRes
 		}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
 	public String getEndTime() {
 		return this.endTime;
 	}
@@ -112,17 +84,6 @@ public class ListTranscodeTaskRequest extends RpcAcsRequest<ListTranscodeTaskRes
 		this.videoId = videoId;
 		if(videoId != null){
 			putQueryParameter("VideoId", videoId);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

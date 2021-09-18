@@ -25,17 +25,11 @@ import com.aliyuncs.vod.Endpoint;
 public class UpdateAITemplateRequest extends RpcAcsRequest<UpdateAITemplateResponse> {
 	   
 
-	private Long resourceOwnerId;
+	private String templateId;
 
 	private String templateConfig;
 
 	private String templateName;
-
-	private String resourceOwnerAccount;
-
-	private Long ownerId;
-
-	private String templateId;
 	public UpdateAITemplateRequest() {
 		super("vod", "2017-03-21", "UpdateAITemplate", "vod");
 		setMethod(MethodType.POST);
@@ -45,14 +39,14 @@ public class UpdateAITemplateRequest extends RpcAcsRequest<UpdateAITemplateRespo
 		} catch (Exception e) {}
 	}
 
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
+	public String getTemplateId() {
+		return this.templateId;
 	}
 
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+	public void setTemplateId(String templateId) {
+		this.templateId = templateId;
+		if(templateId != null){
+			putQueryParameter("TemplateId", templateId);
 		}
 	}
 
@@ -75,39 +69,6 @@ public class UpdateAITemplateRequest extends RpcAcsRequest<UpdateAITemplateRespo
 		this.templateName = templateName;
 		if(templateName != null){
 			putQueryParameter("TemplateName", templateName);
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getTemplateId() {
-		return this.templateId;
-	}
-
-	public void setTemplateId(String templateId) {
-		this.templateId = templateId;
-		if(templateId != null){
-			putQueryParameter("TemplateId", templateId);
 		}
 	}
 

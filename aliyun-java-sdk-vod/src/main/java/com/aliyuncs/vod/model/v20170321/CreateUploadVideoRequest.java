@@ -25,10 +25,6 @@ import com.aliyuncs.vod.Endpoint;
 public class CreateUploadVideoRequest extends RpcAcsRequest<CreateUploadVideoResponse> {
 	   
 
-	private Long resourceOwnerId;
-
-	private String transcodeMode;
-
 	private String description;
 
 	private Long fileSize;
@@ -45,14 +41,6 @@ public class CreateUploadVideoRequest extends RpcAcsRequest<CreateUploadVideoRes
 
 	private String workflowId;
 
-	private String customMediaInfo;
-
-	private String resourceOwnerAccount;
-
-	private String iP;
-
-	private Long ownerId;
-
 	private String tags;
 
 	private String fileName;
@@ -67,28 +55,6 @@ public class CreateUploadVideoRequest extends RpcAcsRequest<CreateUploadVideoRes
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getTranscodeMode() {
-		return this.transcodeMode;
-	}
-
-	public void setTranscodeMode(String transcodeMode) {
-		this.transcodeMode = transcodeMode;
-		if(transcodeMode != null){
-			putQueryParameter("TranscodeMode", transcodeMode);
-		}
 	}
 
 	public String getDescription() {
@@ -176,50 +142,6 @@ public class CreateUploadVideoRequest extends RpcAcsRequest<CreateUploadVideoRes
 		this.workflowId = workflowId;
 		if(workflowId != null){
 			putQueryParameter("WorkflowId", workflowId);
-		}
-	}
-
-	public String getCustomMediaInfo() {
-		return this.customMediaInfo;
-	}
-
-	public void setCustomMediaInfo(String customMediaInfo) {
-		this.customMediaInfo = customMediaInfo;
-		if(customMediaInfo != null){
-			putQueryParameter("CustomMediaInfo", customMediaInfo);
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getIP() {
-		return this.iP;
-	}
-
-	public void setIP(String iP) {
-		this.iP = iP;
-		if(iP != null){
-			putQueryParameter("IP", iP);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

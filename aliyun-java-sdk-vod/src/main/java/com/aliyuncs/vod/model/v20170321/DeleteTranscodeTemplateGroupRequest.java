@@ -25,17 +25,11 @@ import com.aliyuncs.vod.Endpoint;
 public class DeleteTranscodeTemplateGroupRequest extends RpcAcsRequest<DeleteTranscodeTemplateGroupResponse> {
 	   
 
-	private Long resourceOwnerId;
-
 	private String transcodeTemplateIds;
 
-	private String forceDelGroup;
-
-	private String resourceOwnerAccount;
-
-	private Long ownerId;
-
 	private String transcodeTemplateGroupId;
+
+	private String forceDelGroup;
 	public DeleteTranscodeTemplateGroupRequest() {
 		super("vod", "2017-03-21", "DeleteTranscodeTemplateGroup", "vod");
 		setMethod(MethodType.POST);
@@ -43,17 +37,6 @@ public class DeleteTranscodeTemplateGroupRequest extends RpcAcsRequest<DeleteTra
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
 	}
 
 	public String getTranscodeTemplateIds() {
@@ -67,39 +50,6 @@ public class DeleteTranscodeTemplateGroupRequest extends RpcAcsRequest<DeleteTra
 		}
 	}
 
-	public String getForceDelGroup() {
-		return this.forceDelGroup;
-	}
-
-	public void setForceDelGroup(String forceDelGroup) {
-		this.forceDelGroup = forceDelGroup;
-		if(forceDelGroup != null){
-			putQueryParameter("ForceDelGroup", forceDelGroup);
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
 	public String getTranscodeTemplateGroupId() {
 		return this.transcodeTemplateGroupId;
 	}
@@ -108,6 +58,17 @@ public class DeleteTranscodeTemplateGroupRequest extends RpcAcsRequest<DeleteTra
 		this.transcodeTemplateGroupId = transcodeTemplateGroupId;
 		if(transcodeTemplateGroupId != null){
 			putQueryParameter("TranscodeTemplateGroupId", transcodeTemplateGroupId);
+		}
+	}
+
+	public String getForceDelGroup() {
+		return this.forceDelGroup;
+	}
+
+	public void setForceDelGroup(String forceDelGroup) {
+		this.forceDelGroup = forceDelGroup;
+		if(forceDelGroup != null){
+			putQueryParameter("ForceDelGroup", forceDelGroup);
 		}
 	}
 

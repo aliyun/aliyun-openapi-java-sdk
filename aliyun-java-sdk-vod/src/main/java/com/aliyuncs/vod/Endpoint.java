@@ -32,12 +32,17 @@ public class Endpoint {
             put("cn-hongkong-finance-pop", "vod.aliyuncs.com");
             put("cn-qingdao-nebula", "vod.aliyuncs.com");
             put("cn-shanghai-finance-1", "vod.aliyuncs.com");
+            put("cn-hongkong", "vod.aliyuncs.com");
             put("cn-beijing-finance-pop", "vod.aliyuncs.com");
             put("cn-wuhan", "vod.aliyuncs.com");
+            put("cn-zhangjiakou", "vod.aliyuncs.com");
+            put("us-west-1", "vod.aliyuncs.com");
+            put("cn-zhangbei", "vod.aliyuncs.com");
             put("cn-zhengzhou-nebula-1", "vod.aliyuncs.com");
             put("rus-west-1-pop", "vod.aliyuncs.com");
             put("cn-shanghai-et15-b01", "vod.aliyuncs.com");
             put("cn-hangzhou-bj-b01", "vod.aliyuncs.com");
+            put("eu-west-1", "vod.aliyuncs.com");
             put("cn-hangzhou-internal-test-1", "vod.aliyuncs.com");
             put("eu-west-1-oxs", "vod.aliyuncs.com");
             put("cn-zhangbei-na61-b01", "vod.aliyuncs.com");
@@ -61,7 +66,7 @@ public class Endpoint {
             put("ap-northeast-2-pop", "vod.aliyuncs.com");
             put("cn-shenzhen-inner", "vod.aliyuncs.com");
             put("cn-zhangjiakou-na62-a01", "vod.aliyuncs.com");
-            put("cn-hangzhou", "vod.cn-shanghai.aliyuncs.com");
+            put("cn-hangzhou", "vod.aliyuncs.com");
         }
     };
 

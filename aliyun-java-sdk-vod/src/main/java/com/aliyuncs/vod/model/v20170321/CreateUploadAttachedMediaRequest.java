@@ -25,10 +25,6 @@ import com.aliyuncs.vod.Endpoint;
 public class CreateUploadAttachedMediaRequest extends RpcAcsRequest<CreateUploadAttachedMediaResponse> {
 	   
 
-	private Long resourceOwnerId;
-
-	private String icon;
-
 	private String description;
 
 	private String fileSize;
@@ -41,13 +37,7 @@ public class CreateUploadAttachedMediaRequest extends RpcAcsRequest<CreateUpload
 
 	private String userData;
 
-	private Long cateId;
-
-	private String resourceOwnerAccount;
-
 	private String cateIds;
-
-	private Long ownerId;
 
 	private String tags;
 
@@ -63,28 +53,6 @@ public class CreateUploadAttachedMediaRequest extends RpcAcsRequest<CreateUpload
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getIcon() {
-		return this.icon;
-	}
-
-	public void setIcon(String icon) {
-		this.icon = icon;
-		if(icon != null){
-			putQueryParameter("Icon", icon);
-		}
 	}
 
 	public String getDescription() {
@@ -153,28 +121,6 @@ public class CreateUploadAttachedMediaRequest extends RpcAcsRequest<CreateUpload
 		}
 	}
 
-	public Long getCateId() {
-		return this.cateId;
-	}
-
-	public void setCateId(Long cateId) {
-		this.cateId = cateId;
-		if(cateId != null){
-			putQueryParameter("CateId", cateId.toString());
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
 	public String getCateIds() {
 		return this.cateIds;
 	}
@@ -183,17 +129,6 @@ public class CreateUploadAttachedMediaRequest extends RpcAcsRequest<CreateUpload
 		this.cateIds = cateIds;
 		if(cateIds != null){
 			putQueryParameter("CateIds", cateIds);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

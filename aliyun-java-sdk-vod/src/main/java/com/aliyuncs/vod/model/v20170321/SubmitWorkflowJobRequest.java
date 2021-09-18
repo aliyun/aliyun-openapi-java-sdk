@@ -25,17 +25,9 @@ import com.aliyuncs.vod.Endpoint;
 public class SubmitWorkflowJobRequest extends RpcAcsRequest<SubmitWorkflowJobResponse> {
 	   
 
-	private Long resourceOwnerId;
-
-	private String workflowId;
-
-	private String resourceOwnerAccount;
-
-	private Long ownerId;
-
 	private String mediaId;
 
-	private String fileUrl;
+	private String workflowId;
 	public SubmitWorkflowJobRequest() {
 		super("vod", "2017-03-21", "SubmitWorkflowJob", "vod");
 		setMethod(MethodType.POST);
@@ -43,50 +35,6 @@ public class SubmitWorkflowJobRequest extends RpcAcsRequest<SubmitWorkflowJobRes
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getWorkflowId() {
-		return this.workflowId;
-	}
-
-	public void setWorkflowId(String workflowId) {
-		this.workflowId = workflowId;
-		if(workflowId != null){
-			putQueryParameter("WorkflowId", workflowId);
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
 	}
 
 	public String getMediaId() {
@@ -100,14 +48,14 @@ public class SubmitWorkflowJobRequest extends RpcAcsRequest<SubmitWorkflowJobRes
 		}
 	}
 
-	public String getFileUrl() {
-		return this.fileUrl;
+	public String getWorkflowId() {
+		return this.workflowId;
 	}
 
-	public void setFileUrl(String fileUrl) {
-		this.fileUrl = fileUrl;
-		if(fileUrl != null){
-			putQueryParameter("FileUrl", fileUrl);
+	public void setWorkflowId(String workflowId) {
+		this.workflowId = workflowId;
+		if(workflowId != null){
+			putQueryParameter("WorkflowId", workflowId);
 		}
 	}
 

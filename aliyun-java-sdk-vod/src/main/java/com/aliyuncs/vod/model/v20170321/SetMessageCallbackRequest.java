@@ -27,21 +27,13 @@ public class SetMessageCallbackRequest extends RpcAcsRequest<SetMessageCallbackR
 
 	private String authKey;
 
-	private String resourceOwnerId;
-
-	private Long resourceRealOwnerId;
-
 	private String callbackType;
-
-	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private String eventTypeList;
 
 	private String mnsQueueName;
-
-	private String ownerId;
 
 	private String mnsEndpoint;
 
@@ -70,28 +62,6 @@ public class SetMessageCallbackRequest extends RpcAcsRequest<SetMessageCallbackR
 		}
 	}
 
-	public String getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(String resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId);
-		}
-	}
-
-	public Long getResourceRealOwnerId() {
-		return this.resourceRealOwnerId;
-	}
-
-	public void setResourceRealOwnerId(Long resourceRealOwnerId) {
-		this.resourceRealOwnerId = resourceRealOwnerId;
-		if(resourceRealOwnerId != null){
-			putQueryParameter("ResourceRealOwnerId", resourceRealOwnerId.toString());
-		}
-	}
-
 	public String getCallbackType() {
 		return this.callbackType;
 	}
@@ -100,17 +70,6 @@ public class SetMessageCallbackRequest extends RpcAcsRequest<SetMessageCallbackR
 		this.callbackType = callbackType;
 		if(callbackType != null){
 			putQueryParameter("CallbackType", callbackType);
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 
@@ -144,17 +103,6 @@ public class SetMessageCallbackRequest extends RpcAcsRequest<SetMessageCallbackR
 		this.mnsQueueName = mnsQueueName;
 		if(mnsQueueName != null){
 			putQueryParameter("MnsQueueName", mnsQueueName);
-		}
-	}
-
-	public String getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(String ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId);
 		}
 	}
 

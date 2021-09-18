@@ -149,6 +149,8 @@ public class GetAIMediaAuditJobResponse extends AcsResponse {
 
 			private List<TextResultItem> textResult;
 
+			private List<AudioResultItem> audioResult;
+
 			private VideoResult videoResult;
 
 			public String getSuggestion() {
@@ -189,6 +191,14 @@ public class GetAIMediaAuditJobResponse extends AcsResponse {
 
 			public void setTextResult(List<TextResultItem> textResult) {
 				this.textResult = textResult;
+			}
+
+			public List<AudioResultItem> getAudioResult() {
+				return this.audioResult;
+			}
+
+			public void setAudioResult(List<AudioResultItem> audioResult) {
+				this.audioResult = audioResult;
 			}
 
 			public VideoResult getVideoResult() {
@@ -355,6 +365,49 @@ public class GetAIMediaAuditJobResponse extends AcsResponse {
 
 				public void setContent(String content) {
 					this.content = content;
+				}
+			}
+
+			public static class AudioResultItem {
+
+				private String suggestion;
+
+				private String label;
+
+				private String scene;
+
+				private String score;
+
+				public String getSuggestion() {
+					return this.suggestion;
+				}
+
+				public void setSuggestion(String suggestion) {
+					this.suggestion = suggestion;
+				}
+
+				public String getLabel() {
+					return this.label;
+				}
+
+				public void setLabel(String label) {
+					this.label = label;
+				}
+
+				public String getScene() {
+					return this.scene;
+				}
+
+				public void setScene(String scene) {
+					this.scene = scene;
+				}
+
+				public String getScore() {
+					return this.score;
+				}
+
+				public void setScore(String score) {
+					this.score = score;
 				}
 			}
 

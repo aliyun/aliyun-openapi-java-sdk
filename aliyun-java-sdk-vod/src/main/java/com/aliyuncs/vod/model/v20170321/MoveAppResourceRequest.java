@@ -25,15 +25,9 @@ import com.aliyuncs.vod.Endpoint;
 public class MoveAppResourceRequest extends RpcAcsRequest<MoveAppResourceResponse> {
 	   
 
-	private Long resourceOwnerId;
+	private String resourceType;
 
 	private String targetAppId;
-
-	private String resourceOwnerAccount;
-
-	private Long ownerId;
-
-	private String resourceType;
 
 	private String resourceIds;
 	public MoveAppResourceRequest() {
@@ -45,14 +39,14 @@ public class MoveAppResourceRequest extends RpcAcsRequest<MoveAppResourceRespons
 		} catch (Exception e) {}
 	}
 
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
+	public String getResourceType() {
+		return this.resourceType;
 	}
 
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+	public void setResourceType(String resourceType) {
+		this.resourceType = resourceType;
+		if(resourceType != null){
+			putQueryParameter("ResourceType", resourceType);
 		}
 	}
 
@@ -64,39 +58,6 @@ public class MoveAppResourceRequest extends RpcAcsRequest<MoveAppResourceRespons
 		this.targetAppId = targetAppId;
 		if(targetAppId != null){
 			putQueryParameter("TargetAppId", targetAppId);
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getResourceType() {
-		return this.resourceType;
-	}
-
-	public void setResourceType(String resourceType) {
-		this.resourceType = resourceType;
-		if(resourceType != null){
-			putQueryParameter("ResourceType", resourceType);
 		}
 	}
 

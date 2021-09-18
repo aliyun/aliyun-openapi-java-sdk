@@ -25,8 +25,6 @@ import com.aliyuncs.vod.Endpoint;
 public class ListLiveRecordVideoRequest extends RpcAcsRequest<ListLiveRecordVideoResponse> {
 	   
 
-	private Long resourceOwnerId;
-
 	private String startTime;
 
 	private String appName;
@@ -35,15 +33,9 @@ public class ListLiveRecordVideoRequest extends RpcAcsRequest<ListLiveRecordVide
 
 	private String streamName;
 
-	private String queryType;
-
-	private String resourceOwnerAccount;
-
 	private String domainName;
 
 	private String endTime;
-
-	private Long ownerId;
 
 	private Integer pageNo;
 
@@ -55,17 +47,6 @@ public class ListLiveRecordVideoRequest extends RpcAcsRequest<ListLiveRecordVide
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
 	}
 
 	public String getStartTime() {
@@ -112,28 +93,6 @@ public class ListLiveRecordVideoRequest extends RpcAcsRequest<ListLiveRecordVide
 		}
 	}
 
-	public String getQueryType() {
-		return this.queryType;
-	}
-
-	public void setQueryType(String queryType) {
-		this.queryType = queryType;
-		if(queryType != null){
-			putQueryParameter("QueryType", queryType);
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
 	public String getDomainName() {
 		return this.domainName;
 	}
@@ -153,17 +112,6 @@ public class ListLiveRecordVideoRequest extends RpcAcsRequest<ListLiveRecordVide
 		this.endTime = endTime;
 		if(endTime != null){
 			putQueryParameter("EndTime", endTime);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

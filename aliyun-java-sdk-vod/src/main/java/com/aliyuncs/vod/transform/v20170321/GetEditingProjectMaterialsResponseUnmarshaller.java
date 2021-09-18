@@ -45,6 +45,7 @@ public class GetEditingProjectMaterialsResponseUnmarshaller {
 			material.setCateName(_ctx.stringValue("GetEditingProjectMaterialsResponse.MaterialList["+ i +"].CateName"));
 			material.setSource(_ctx.stringValue("GetEditingProjectMaterialsResponse.MaterialList["+ i +"].Source"));
 			material.setSpriteConfig(_ctx.stringValue("GetEditingProjectMaterialsResponse.MaterialList["+ i +"].SpriteConfig"));
+			material.setMaterialType(_ctx.stringValue("GetEditingProjectMaterialsResponse.MaterialList["+ i +"].MaterialType"));
 
 			List<String> snapshots = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("GetEditingProjectMaterialsResponse.MaterialList["+ i +"].Snapshots.Length"); j++) {

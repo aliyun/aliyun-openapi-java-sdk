@@ -31,8 +31,8 @@ public class UploadMediaByURLResponseUnmarshaller {
 		List<UploadJob> uploadJobs = new ArrayList<UploadJob>();
 		for (int i = 0; i < _ctx.lengthValue("UploadMediaByURLResponse.UploadJobs.Length"); i++) {
 			UploadJob uploadJob = new UploadJob();
-			uploadJob.setJobId(_ctx.stringValue("UploadMediaByURLResponse.UploadJobs["+ i +"].JobId"));
 			uploadJob.setSourceURL(_ctx.stringValue("UploadMediaByURLResponse.UploadJobs["+ i +"].SourceURL"));
+			uploadJob.setJobId(_ctx.stringValue("UploadMediaByURLResponse.UploadJobs["+ i +"].JobId"));
 
 			uploadJobs.add(uploadJob);
 		}

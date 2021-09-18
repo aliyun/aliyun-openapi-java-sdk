@@ -27,8 +27,6 @@ public class SubmitMediaDNADeleteJobRequest extends RpcAcsRequest<SubmitMediaDNA
 
 	private String resourceOwnerId;
 
-	private String fpDBId;
-
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -53,17 +51,6 @@ public class SubmitMediaDNADeleteJobRequest extends RpcAcsRequest<SubmitMediaDNA
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId);
-		}
-	}
-
-	public String getFpDBId() {
-		return this.fpDBId;
-	}
-
-	public void setFpDBId(String fpDBId) {
-		this.fpDBId = fpDBId;
-		if(fpDBId != null){
-			putQueryParameter("FpDBId", fpDBId);
 		}
 	}
 

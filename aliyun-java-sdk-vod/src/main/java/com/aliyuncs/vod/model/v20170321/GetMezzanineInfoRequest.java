@@ -25,19 +25,11 @@ import com.aliyuncs.vod.Endpoint;
 public class GetMezzanineInfoRequest extends RpcAcsRequest<GetMezzanineInfoResponse> {
 	   
 
-	private Long resourceOwnerId;
-
 	private String outputType;
 
 	private Long authTimeout;
 
-	private String resourceOwnerAccount;
-
 	private String videoId;
-
-	private Long ownerId;
-
-	private Boolean previewSegment;
 
 	private String additionType;
 	public GetMezzanineInfoRequest() {
@@ -47,17 +39,6 @@ public class GetMezzanineInfoRequest extends RpcAcsRequest<GetMezzanineInfoRespo
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
 	}
 
 	public String getOutputType() {
@@ -82,17 +63,6 @@ public class GetMezzanineInfoRequest extends RpcAcsRequest<GetMezzanineInfoRespo
 		}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
 	public String getVideoId() {
 		return this.videoId;
 	}
@@ -101,28 +71,6 @@ public class GetMezzanineInfoRequest extends RpcAcsRequest<GetMezzanineInfoRespo
 		this.videoId = videoId;
 		if(videoId != null){
 			putQueryParameter("VideoId", videoId);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public Boolean getPreviewSegment() {
-		return this.previewSegment;
-	}
-
-	public void setPreviewSegment(Boolean previewSegment) {
-		this.previewSegment = previewSegment;
-		if(previewSegment != null){
-			putQueryParameter("PreviewSegment", previewSegment.toString());
 		}
 	}
 

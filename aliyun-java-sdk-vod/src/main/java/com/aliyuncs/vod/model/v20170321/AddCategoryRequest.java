@@ -25,17 +25,11 @@ import com.aliyuncs.vod.Endpoint;
 public class AddCategoryRequest extends RpcAcsRequest<AddCategoryResponse> {
 	   
 
-	private String resourceOwnerId;
-
 	private String type;
 
 	private Long parentId;
 
 	private String cateName;
-
-	private String resourceOwnerAccount;
-
-	private String ownerId;
 	public AddCategoryRequest() {
 		super("vod", "2017-03-21", "AddCategory", "vod");
 		setMethod(MethodType.POST);
@@ -43,17 +37,6 @@ public class AddCategoryRequest extends RpcAcsRequest<AddCategoryResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(String resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId);
-		}
 	}
 
 	public String getType() {
@@ -86,28 +69,6 @@ public class AddCategoryRequest extends RpcAcsRequest<AddCategoryResponse> {
 		this.cateName = cateName;
 		if(cateName != null){
 			putQueryParameter("CateName", cateName);
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(String ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId);
 		}
 	}
 

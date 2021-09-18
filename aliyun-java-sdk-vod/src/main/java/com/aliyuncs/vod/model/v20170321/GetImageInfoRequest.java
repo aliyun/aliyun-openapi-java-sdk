@@ -25,17 +25,11 @@ import com.aliyuncs.vod.Endpoint;
 public class GetImageInfoRequest extends RpcAcsRequest<GetImageInfoResponse> {
 	   
 
-	private Long resourceOwnerId;
-
 	private String imageId;
 
 	private String outputType;
 
 	private Long authTimeout;
-
-	private String resourceOwnerAccount;
-
-	private Long ownerId;
 	public GetImageInfoRequest() {
 		super("vod", "2017-03-21", "GetImageInfo", "vod");
 		setMethod(MethodType.POST);
@@ -43,17 +37,6 @@ public class GetImageInfoRequest extends RpcAcsRequest<GetImageInfoResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
 	}
 
 	public String getImageId() {
@@ -86,28 +69,6 @@ public class GetImageInfoRequest extends RpcAcsRequest<GetImageInfoResponse> {
 		this.authTimeout = authTimeout;
 		if(authTimeout != null){
 			putQueryParameter("AuthTimeout", authTimeout.toString());
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 
