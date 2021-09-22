@@ -1,3 +1,6 @@
+2021-09-22 Version: 1.9.2
+- GiveScreen add workspaceId.
+
 2021-09-15 Version: 1.9.1
 - Add set screen.
 

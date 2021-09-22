@@ -34,6 +34,8 @@ public class GiveScreenRequest extends RpcAcsRequest<GiveScreenResponse> {
 	private Integer screenId;
 
 	private String domain;
+
+	private Long workspaceId;
 	public GiveScreenRequest() {
 		super("datav-outer", "2019-04-02", "GiveScreen", "datav");
 		setMethod(MethodType.POST);
@@ -95,6 +97,17 @@ public class GiveScreenRequest extends RpcAcsRequest<GiveScreenResponse> {
 		this.domain = domain;
 		if(domain != null){
 			putBodyParameter("Domain", domain);
+		}
+	}
+
+	public Long getWorkspaceId() {
+		return this.workspaceId;
+	}
+
+	public void setWorkspaceId(Long workspaceId) {
+		this.workspaceId = workspaceId;
+		if(workspaceId != null){
+			putBodyParameter("WorkspaceId", workspaceId.toString());
 		}
 	}
 
