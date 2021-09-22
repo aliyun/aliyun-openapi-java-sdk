@@ -15,22 +15,22 @@
 package com.aliyuncs.dypnsapi.model.v20170525;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.dypnsapi.transform.v20170525.GetAuthorizationUrlResponseUnmarshaller;
+import com.aliyuncs.dypnsapi.transform.v20170525.VerifySmsCodeResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetAuthorizationUrlResponse extends AcsResponse {
+public class VerifySmsCodeResponse extends AcsResponse {
 
 	private String code;
 
 	private String message;
 
-	private String requestId;
+	private Boolean data;
 
-	private Data data;
+	private String requestId;
 
 	public String getCode() {
 		return this.code;
@@ -48,6 +48,14 @@ public class GetAuthorizationUrlResponse extends AcsResponse {
 		this.message = message;
 	}
 
+	public Boolean getData() {
+		return this.data;
+	}
+
+	public void setData(Boolean data) {
+		this.data = data;
+	}
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -56,30 +64,9 @@ public class GetAuthorizationUrlResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Data getData() {
-		return this.data;
-	}
-
-	public void setData(Data data) {
-		this.data = data;
-	}
-
-	public static class Data {
-
-		private String authorizationUrl;
-
-		public String getAuthorizationUrl() {
-			return this.authorizationUrl;
-		}
-
-		public void setAuthorizationUrl(String authorizationUrl) {
-			this.authorizationUrl = authorizationUrl;
-		}
-	}
-
 	@Override
-	public GetAuthorizationUrlResponse getInstance(UnmarshallerContext context) {
-		return	GetAuthorizationUrlResponseUnmarshaller.unmarshall(this, context);
+	public VerifySmsCodeResponse getInstance(UnmarshallerContext context) {
+		return	VerifySmsCodeResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

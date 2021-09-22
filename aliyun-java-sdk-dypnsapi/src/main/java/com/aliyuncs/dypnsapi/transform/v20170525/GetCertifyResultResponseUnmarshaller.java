@@ -33,11 +33,11 @@ public class GetCertifyResultResponseUnmarshaller {
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetCertifyResultResponse.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
-			dataItem.setVerifyResult(_ctx.stringValue("GetCertifyResultResponse.Data["+ i +"].VerifyResult"));
-			dataItem.setVerifyDesc(_ctx.stringValue("GetCertifyResultResponse.Data["+ i +"].VerifyDesc"));
-			dataItem.setIdentityInfo(_ctx.stringValue("GetCertifyResultResponse.Data["+ i +"].IdentityInfo"));
-			dataItem.setDeviceToken(_ctx.stringValue("GetCertifyResultResponse.Data["+ i +"].DeviceToken"));
 			dataItem.setMaterialInfo(_ctx.stringValue("GetCertifyResultResponse.Data["+ i +"].MaterialInfo"));
+			dataItem.setIdentityInfo(_ctx.stringValue("GetCertifyResultResponse.Data["+ i +"].IdentityInfo"));
+			dataItem.setVerifyDesc(_ctx.stringValue("GetCertifyResultResponse.Data["+ i +"].VerifyDesc"));
+			dataItem.setVerifyResult(_ctx.stringValue("GetCertifyResultResponse.Data["+ i +"].VerifyResult"));
+			dataItem.setDeviceToken(_ctx.stringValue("GetCertifyResultResponse.Data["+ i +"].DeviceToken"));
 
 			data.add(dataItem);
 		}

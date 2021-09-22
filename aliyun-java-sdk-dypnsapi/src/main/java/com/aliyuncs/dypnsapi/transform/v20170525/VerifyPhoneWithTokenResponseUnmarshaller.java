@@ -28,8 +28,8 @@ public class VerifyPhoneWithTokenResponseUnmarshaller {
 		verifyPhoneWithTokenResponse.setMessage(_ctx.stringValue("VerifyPhoneWithTokenResponse.Message"));
 
 		GateVerify gateVerify = new GateVerify();
-		gateVerify.setVerifyId(_ctx.stringValue("VerifyPhoneWithTokenResponse.GateVerify.VerifyId"));
 		gateVerify.setVerifyResult(_ctx.stringValue("VerifyPhoneWithTokenResponse.GateVerify.VerifyResult"));
+		gateVerify.setVerifyId(_ctx.stringValue("VerifyPhoneWithTokenResponse.GateVerify.VerifyId"));
 		verifyPhoneWithTokenResponse.setGateVerify(gateVerify);
 	 
 	 	return verifyPhoneWithTokenResponse;

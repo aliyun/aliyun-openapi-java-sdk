@@ -14,16 +14,15 @@
 
 package com.aliyuncs.dypnsapi.model.v20170525;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.dypnsapi.transform.v20170525.GetCertifyResultResponseUnmarshaller;
+import com.aliyuncs.dypnsapi.transform.v20170525.GetSmsAuthTokensResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetCertifyResultResponse extends AcsResponse {
+public class GetSmsAuthTokensResponse extends AcsResponse {
 
 	private String code;
 
@@ -31,7 +30,7 @@ public class GetCertifyResultResponse extends AcsResponse {
 
 	private String requestId;
 
-	private List<DataItem> data;
+	private Data data;
 
 	public String getCode() {
 		return this.code;
@@ -57,70 +56,70 @@ public class GetCertifyResultResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<DataItem> getData() {
+	public Data getData() {
 		return this.data;
 	}
 
-	public void setData(List<DataItem> data) {
+	public void setData(Data data) {
 		this.data = data;
 	}
 
-	public static class DataItem {
+	public static class Data {
 
-		private String materialInfo;
+		private String bizToken;
 
-		private String identityInfo;
+		private String stsAccessKeySecret;
 
-		private String verifyDesc;
+		private String stsAccessKeyId;
 
-		private String verifyResult;
+		private Long expireTime;
 
-		private String deviceToken;
+		private String stsToken;
 
-		public String getMaterialInfo() {
-			return this.materialInfo;
+		public String getBizToken() {
+			return this.bizToken;
 		}
 
-		public void setMaterialInfo(String materialInfo) {
-			this.materialInfo = materialInfo;
+		public void setBizToken(String bizToken) {
+			this.bizToken = bizToken;
 		}
 
-		public String getIdentityInfo() {
-			return this.identityInfo;
+		public String getStsAccessKeySecret() {
+			return this.stsAccessKeySecret;
 		}
 
-		public void setIdentityInfo(String identityInfo) {
-			this.identityInfo = identityInfo;
+		public void setStsAccessKeySecret(String stsAccessKeySecret) {
+			this.stsAccessKeySecret = stsAccessKeySecret;
 		}
 
-		public String getVerifyDesc() {
-			return this.verifyDesc;
+		public String getStsAccessKeyId() {
+			return this.stsAccessKeyId;
 		}
 
-		public void setVerifyDesc(String verifyDesc) {
-			this.verifyDesc = verifyDesc;
+		public void setStsAccessKeyId(String stsAccessKeyId) {
+			this.stsAccessKeyId = stsAccessKeyId;
 		}
 
-		public String getVerifyResult() {
-			return this.verifyResult;
+		public Long getExpireTime() {
+			return this.expireTime;
 		}
 
-		public void setVerifyResult(String verifyResult) {
-			this.verifyResult = verifyResult;
+		public void setExpireTime(Long expireTime) {
+			this.expireTime = expireTime;
 		}
 
-		public String getDeviceToken() {
-			return this.deviceToken;
+		public String getStsToken() {
+			return this.stsToken;
 		}
 
-		public void setDeviceToken(String deviceToken) {
-			this.deviceToken = deviceToken;
+		public void setStsToken(String stsToken) {
+			this.stsToken = stsToken;
 		}
 	}
 
 	@Override
-	public GetCertifyResultResponse getInstance(UnmarshallerContext context) {
-		return	GetCertifyResultResponseUnmarshaller.unmarshall(this, context);
+	public GetSmsAuthTokensResponse getInstance(UnmarshallerContext context) {
+		return	GetSmsAuthTokensResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

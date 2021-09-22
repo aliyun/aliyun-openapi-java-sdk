@@ -28,8 +28,8 @@ public class VerifyMobileResponseUnmarshaller {
 		verifyMobileResponse.setMessage(_ctx.stringValue("VerifyMobileResponse.Message"));
 
 		GateVerifyResultDTO gateVerifyResultDTO = new GateVerifyResultDTO();
-		gateVerifyResultDTO.setVerifyId(_ctx.stringValue("VerifyMobileResponse.GateVerifyResultDTO.VerifyId"));
 		gateVerifyResultDTO.setVerifyResult(_ctx.stringValue("VerifyMobileResponse.GateVerifyResultDTO.VerifyResult"));
+		gateVerifyResultDTO.setVerifyId(_ctx.stringValue("VerifyMobileResponse.GateVerifyResultDTO.VerifyId"));
 		verifyMobileResponse.setGateVerifyResultDTO(gateVerifyResultDTO);
 	 
 	 	return verifyMobileResponse;
