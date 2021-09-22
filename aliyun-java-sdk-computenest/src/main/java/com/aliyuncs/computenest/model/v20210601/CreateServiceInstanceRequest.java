@@ -32,7 +32,7 @@ public class CreateServiceInstanceRequest extends RpcAcsRequest<CreateServiceIns
 
 	private String templateName;
 
-	private List<RequestTags> requestTagss;
+	private List<RequestTag> requestTags;
 
 	private String serviceVersion;
 
@@ -85,16 +85,16 @@ public class CreateServiceInstanceRequest extends RpcAcsRequest<CreateServiceIns
 		}
 	}
 
-	public List<RequestTags> getRequestTagss() {
-		return this.requestTagss;
+	public List<RequestTag> getRequestTags() {
+		return this.requestTags;
 	}
 
-	public void setRequestTagss(List<RequestTags> requestTagss) {
-		this.requestTagss = requestTagss;	
-		if (requestTagss != null) {
-			for (int depth1 = 0; depth1 < requestTagss.size(); depth1++) {
-				putQueryParameter("RequestTags." + (depth1 + 1) + ".Value" , requestTagss.get(depth1).getValue());
-				putQueryParameter("RequestTags." + (depth1 + 1) + ".Key" , requestTagss.get(depth1).getKey());
+	public void setRequestTags(List<RequestTag> requestTags) {
+		this.requestTags = requestTags;	
+		if (requestTags != null) {
+			for (int depth1 = 0; depth1 < requestTags.size(); depth1++) {
+				putQueryParameter("RequestTag." + (depth1 + 1) + ".Value" , requestTags.get(depth1).getValue());
+				putQueryParameter("RequestTag." + (depth1 + 1) + ".Key" , requestTags.get(depth1).getKey());
 			}
 		}	
 	}
@@ -158,7 +158,7 @@ public class CreateServiceInstanceRequest extends RpcAcsRequest<CreateServiceIns
 		}	
 	}
 
-	public static class RequestTags {
+	public static class RequestTag {
 
 		private String value;
 
