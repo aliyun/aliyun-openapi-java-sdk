@@ -40,9 +40,13 @@ public class UpdateDnsGtmInstanceGlobalConfigRequest extends RpcAcsRequest<Updat
 
 	private Integer ttl;
 
+	private Boolean forceUpdate;
+
 	private String instanceId;
 
 	private String instanceName;
+
+	private String publicRr;
 
 	private String publicZoneName;
 	public UpdateDnsGtmInstanceGlobalConfigRequest() {
@@ -95,6 +99,7 @@ public class UpdateDnsGtmInstanceGlobalConfigRequest extends RpcAcsRequest<Updat
 		this.alertConfigs = alertConfigs;	
 		if (alertConfigs != null) {
 			for (int depth1 = 0; depth1 < alertConfigs.size(); depth1++) {
+				putQueryParameter("AlertConfig." + (depth1 + 1) + ".DingtalkNotice" , alertConfigs.get(depth1).getDingtalkNotice());
 				putQueryParameter("AlertConfig." + (depth1 + 1) + ".SmsNotice" , alertConfigs.get(depth1).getSmsNotice());
 				putQueryParameter("AlertConfig." + (depth1 + 1) + ".NoticeType" , alertConfigs.get(depth1).getNoticeType());
 				putQueryParameter("AlertConfig." + (depth1 + 1) + ".EmailNotice" , alertConfigs.get(depth1).getEmailNotice());
@@ -135,6 +140,17 @@ public class UpdateDnsGtmInstanceGlobalConfigRequest extends RpcAcsRequest<Updat
 		}
 	}
 
+	public Boolean getForceUpdate() {
+		return this.forceUpdate;
+	}
+
+	public void setForceUpdate(Boolean forceUpdate) {
+		this.forceUpdate = forceUpdate;
+		if(forceUpdate != null){
+			putQueryParameter("ForceUpdate", forceUpdate.toString());
+		}
+	}
+
 	public String getInstanceId() {
 		return this.instanceId;
 	}
@@ -157,6 +173,17 @@ public class UpdateDnsGtmInstanceGlobalConfigRequest extends RpcAcsRequest<Updat
 		}
 	}
 
+	public String getPublicRr() {
+		return this.publicRr;
+	}
+
+	public void setPublicRr(String publicRr) {
+		this.publicRr = publicRr;
+		if(publicRr != null){
+			putQueryParameter("PublicRr", publicRr);
+		}
+	}
+
 	public String getPublicZoneName() {
 		return this.publicZoneName;
 	}
@@ -170,11 +197,21 @@ public class UpdateDnsGtmInstanceGlobalConfigRequest extends RpcAcsRequest<Updat
 
 	public static class AlertConfig {
 
+		private Boolean dingtalkNotice;
+
 		private Boolean smsNotice;
 
 		private String noticeType;
 
 		private Boolean emailNotice;
+
+		public Boolean getDingtalkNotice() {
+			return this.dingtalkNotice;
+		}
+
+		public void setDingtalkNotice(Boolean dingtalkNotice) {
+			this.dingtalkNotice = dingtalkNotice;
+		}
 
 		public Boolean getSmsNotice() {
 			return this.smsNotice;

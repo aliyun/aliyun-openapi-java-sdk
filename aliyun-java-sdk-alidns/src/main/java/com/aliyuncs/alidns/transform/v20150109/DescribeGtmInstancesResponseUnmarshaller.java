@@ -27,29 +27,30 @@ public class DescribeGtmInstancesResponseUnmarshaller {
 	public static DescribeGtmInstancesResponse unmarshall(DescribeGtmInstancesResponse describeGtmInstancesResponse, UnmarshallerContext _ctx) {
 		
 		describeGtmInstancesResponse.setRequestId(_ctx.stringValue("DescribeGtmInstancesResponse.RequestId"));
-		describeGtmInstancesResponse.setPageNumber(_ctx.integerValue("DescribeGtmInstancesResponse.PageNumber"));
 		describeGtmInstancesResponse.setPageSize(_ctx.integerValue("DescribeGtmInstancesResponse.PageSize"));
-		describeGtmInstancesResponse.setTotalItems(_ctx.integerValue("DescribeGtmInstancesResponse.TotalItems"));
+		describeGtmInstancesResponse.setPageNumber(_ctx.integerValue("DescribeGtmInstancesResponse.PageNumber"));
 		describeGtmInstancesResponse.setTotalPages(_ctx.integerValue("DescribeGtmInstancesResponse.TotalPages"));
+		describeGtmInstancesResponse.setTotalItems(_ctx.integerValue("DescribeGtmInstancesResponse.TotalItems"));
 
 		List<GtmInstance> gtmInstances = new ArrayList<GtmInstance>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeGtmInstancesResponse.GtmInstances.Length"); i++) {
 			GtmInstance gtmInstance = new GtmInstance();
-			gtmInstance.setInstanceId(_ctx.stringValue("DescribeGtmInstancesResponse.GtmInstances["+ i +"].InstanceId"));
-			gtmInstance.setInstanceName(_ctx.stringValue("DescribeGtmInstancesResponse.GtmInstances["+ i +"].InstanceName"));
-			gtmInstance.setCname(_ctx.stringValue("DescribeGtmInstancesResponse.GtmInstances["+ i +"].Cname"));
-			gtmInstance.setUserDomainName(_ctx.stringValue("DescribeGtmInstancesResponse.GtmInstances["+ i +"].UserDomainName"));
-			gtmInstance.setVersionCode(_ctx.stringValue("DescribeGtmInstancesResponse.GtmInstances["+ i +"].VersionCode"));
-			gtmInstance.setTtl(_ctx.integerValue("DescribeGtmInstancesResponse.GtmInstances["+ i +"].Ttl"));
-			gtmInstance.setLbaStrategy(_ctx.stringValue("DescribeGtmInstancesResponse.GtmInstances["+ i +"].LbaStrategy"));
-			gtmInstance.setCreateTime(_ctx.stringValue("DescribeGtmInstancesResponse.GtmInstances["+ i +"].CreateTime"));
-			gtmInstance.setCreateTimestamp(_ctx.longValue("DescribeGtmInstancesResponse.GtmInstances["+ i +"].CreateTimestamp"));
 			gtmInstance.setExpireTime(_ctx.stringValue("DescribeGtmInstancesResponse.GtmInstances["+ i +"].ExpireTime"));
-			gtmInstance.setExpireTimestamp(_ctx.longValue("DescribeGtmInstancesResponse.GtmInstances["+ i +"].ExpireTimestamp"));
-			gtmInstance.setAlertGroup(_ctx.stringValue("DescribeGtmInstancesResponse.GtmInstances["+ i +"].AlertGroup"));
-			gtmInstance.setCnameMode(_ctx.stringValue("DescribeGtmInstancesResponse.GtmInstances["+ i +"].CnameMode"));
 			gtmInstance.setAccessStrategyNum(_ctx.integerValue("DescribeGtmInstancesResponse.GtmInstances["+ i +"].AccessStrategyNum"));
+			gtmInstance.setCreateTime(_ctx.stringValue("DescribeGtmInstancesResponse.GtmInstances["+ i +"].CreateTime"));
+			gtmInstance.setCnameMode(_ctx.stringValue("DescribeGtmInstancesResponse.GtmInstances["+ i +"].CnameMode"));
+			gtmInstance.setInstanceId(_ctx.stringValue("DescribeGtmInstancesResponse.GtmInstances["+ i +"].InstanceId"));
+			gtmInstance.setExpireTimestamp(_ctx.longValue("DescribeGtmInstancesResponse.GtmInstances["+ i +"].ExpireTimestamp"));
+			gtmInstance.setTtl(_ctx.integerValue("DescribeGtmInstancesResponse.GtmInstances["+ i +"].Ttl"));
+			gtmInstance.setAlertGroup(_ctx.stringValue("DescribeGtmInstancesResponse.GtmInstances["+ i +"].AlertGroup"));
 			gtmInstance.setAddressPoolNum(_ctx.integerValue("DescribeGtmInstancesResponse.GtmInstances["+ i +"].AddressPoolNum"));
+			gtmInstance.setInstanceName(_ctx.stringValue("DescribeGtmInstancesResponse.GtmInstances["+ i +"].InstanceName"));
+			gtmInstance.setLbaStrategy(_ctx.stringValue("DescribeGtmInstancesResponse.GtmInstances["+ i +"].LbaStrategy"));
+			gtmInstance.setCname(_ctx.stringValue("DescribeGtmInstancesResponse.GtmInstances["+ i +"].Cname"));
+			gtmInstance.setVersionCode(_ctx.stringValue("DescribeGtmInstancesResponse.GtmInstances["+ i +"].VersionCode"));
+			gtmInstance.setUserDomainName(_ctx.stringValue("DescribeGtmInstancesResponse.GtmInstances["+ i +"].UserDomainName"));
+			gtmInstance.setCreateTimestamp(_ctx.longValue("DescribeGtmInstancesResponse.GtmInstances["+ i +"].CreateTimestamp"));
+			gtmInstance.setResourceGroupId(_ctx.stringValue("DescribeGtmInstancesResponse.GtmInstances["+ i +"].ResourceGroupId"));
 
 			gtmInstances.add(gtmInstance);
 		}

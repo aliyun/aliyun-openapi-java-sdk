@@ -25,17 +25,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDnsGtmInstancesResponse extends AcsResponse {
 
+	private Integer pageSize;
+
 	private String requestId;
 
 	private Integer pageNumber;
 
-	private Integer pageSize;
+	private Integer totalPages;
 
 	private Integer totalItems;
 
-	private Integer totalPages;
-
 	private List<GtmInstance> gtmInstances;
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -53,12 +61,12 @@ public class DescribeDnsGtmInstancesResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public Integer getTotalPages() {
+		return this.totalPages;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setTotalPages(Integer totalPages) {
+		this.totalPages = totalPages;
 	}
 
 	public Integer getTotalItems() {
@@ -67,14 +75,6 @@ public class DescribeDnsGtmInstancesResponse extends AcsResponse {
 
 	public void setTotalItems(Integer totalItems) {
 		this.totalItems = totalItems;
-	}
-
-	public Integer getTotalPages() {
-		return this.totalPages;
-	}
-
-	public void setTotalPages(Integer totalPages) {
-		this.totalPages = totalPages;
 	}
 
 	public List<GtmInstance> getGtmInstances() {
@@ -87,68 +87,36 @@ public class DescribeDnsGtmInstancesResponse extends AcsResponse {
 
 	public static class GtmInstance {
 
-		private String instanceId;
-
-		private String versionCode;
-
-		private Integer smsQuota;
-
-		private String createTime;
-
-		private Long createTimestamp;
+		private String paymentType;
 
 		private String expireTime;
 
-		private Long expireTimestamp;
+		private String createTime;
 
-		private Integer taskQuota;
+		private Integer smsQuota;
+
+		private String instanceId;
+
+		private Long expireTimestamp;
 
 		private String resourceGroupId;
 
-		private String paymentType;
+		private String versionCode;
+
+		private Integer taskQuota;
+
+		private Long createTimestamp;
 
 		private Config config;
 
 		private UsedQuota usedQuota;
 
-		public String getInstanceId() {
-			return this.instanceId;
+		public String getPaymentType() {
+			return this.paymentType;
 		}
 
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
-
-		public String getVersionCode() {
-			return this.versionCode;
-		}
-
-		public void setVersionCode(String versionCode) {
-			this.versionCode = versionCode;
-		}
-
-		public Integer getSmsQuota() {
-			return this.smsQuota;
-		}
-
-		public void setSmsQuota(Integer smsQuota) {
-			this.smsQuota = smsQuota;
-		}
-
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
-		}
-
-		public Long getCreateTimestamp() {
-			return this.createTimestamp;
-		}
-
-		public void setCreateTimestamp(Long createTimestamp) {
-			this.createTimestamp = createTimestamp;
+		public void setPaymentType(String paymentType) {
+			this.paymentType = paymentType;
 		}
 
 		public String getExpireTime() {
@@ -159,20 +127,36 @@ public class DescribeDnsGtmInstancesResponse extends AcsResponse {
 			this.expireTime = expireTime;
 		}
 
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
+
+		public Integer getSmsQuota() {
+			return this.smsQuota;
+		}
+
+		public void setSmsQuota(Integer smsQuota) {
+			this.smsQuota = smsQuota;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
 		public Long getExpireTimestamp() {
 			return this.expireTimestamp;
 		}
 
 		public void setExpireTimestamp(Long expireTimestamp) {
 			this.expireTimestamp = expireTimestamp;
-		}
-
-		public Integer getTaskQuota() {
-			return this.taskQuota;
-		}
-
-		public void setTaskQuota(Integer taskQuota) {
-			this.taskQuota = taskQuota;
 		}
 
 		public String getResourceGroupId() {
@@ -183,12 +167,28 @@ public class DescribeDnsGtmInstancesResponse extends AcsResponse {
 			this.resourceGroupId = resourceGroupId;
 		}
 
-		public String getPaymentType() {
-			return this.paymentType;
+		public String getVersionCode() {
+			return this.versionCode;
 		}
 
-		public void setPaymentType(String paymentType) {
-			this.paymentType = paymentType;
+		public void setVersionCode(String versionCode) {
+			this.versionCode = versionCode;
+		}
+
+		public Integer getTaskQuota() {
+			return this.taskQuota;
+		}
+
+		public void setTaskQuota(Integer taskQuota) {
+			this.taskQuota = taskQuota;
+		}
+
+		public Long getCreateTimestamp() {
+			return this.createTimestamp;
+		}
+
+		public void setCreateTimestamp(Long createTimestamp) {
+			this.createTimestamp = createTimestamp;
 		}
 
 		public Config getConfig() {
@@ -209,63 +209,25 @@ public class DescribeDnsGtmInstancesResponse extends AcsResponse {
 
 		public static class Config {
 
-			private String instanceName;
-
-			private String cnameType;
-
-			private String publicUserDomainName;
-
-			private String publicCnameMode;
-
-			private String publicZoneName;
-
 			private Integer ttl;
 
 			private String alertGroup;
 
+			private String publicZoneName;
+
+			private String cnameType;
+
 			private String strategyMode;
 
+			private String instanceName;
+
+			private String publicCnameMode;
+
+			private String publicUserDomainName;
+
+			private String publicRr;
+
 			private List<AlertConfigItem> alertConfig;
-
-			public String getInstanceName() {
-				return this.instanceName;
-			}
-
-			public void setInstanceName(String instanceName) {
-				this.instanceName = instanceName;
-			}
-
-			public String getCnameType() {
-				return this.cnameType;
-			}
-
-			public void setCnameType(String cnameType) {
-				this.cnameType = cnameType;
-			}
-
-			public String getPublicUserDomainName() {
-				return this.publicUserDomainName;
-			}
-
-			public void setPublicUserDomainName(String publicUserDomainName) {
-				this.publicUserDomainName = publicUserDomainName;
-			}
-
-			public String getPublicCnameMode() {
-				return this.publicCnameMode;
-			}
-
-			public void setPublicCnameMode(String publicCnameMode) {
-				this.publicCnameMode = publicCnameMode;
-			}
-
-			public String getPublicZoneName() {
-				return this.publicZoneName;
-			}
-
-			public void setPublicZoneName(String publicZoneName) {
-				this.publicZoneName = publicZoneName;
-			}
 
 			public Integer getTtl() {
 				return this.ttl;
@@ -283,12 +245,60 @@ public class DescribeDnsGtmInstancesResponse extends AcsResponse {
 				this.alertGroup = alertGroup;
 			}
 
+			public String getPublicZoneName() {
+				return this.publicZoneName;
+			}
+
+			public void setPublicZoneName(String publicZoneName) {
+				this.publicZoneName = publicZoneName;
+			}
+
+			public String getCnameType() {
+				return this.cnameType;
+			}
+
+			public void setCnameType(String cnameType) {
+				this.cnameType = cnameType;
+			}
+
 			public String getStrategyMode() {
 				return this.strategyMode;
 			}
 
 			public void setStrategyMode(String strategyMode) {
 				this.strategyMode = strategyMode;
+			}
+
+			public String getInstanceName() {
+				return this.instanceName;
+			}
+
+			public void setInstanceName(String instanceName) {
+				this.instanceName = instanceName;
+			}
+
+			public String getPublicCnameMode() {
+				return this.publicCnameMode;
+			}
+
+			public void setPublicCnameMode(String publicCnameMode) {
+				this.publicCnameMode = publicCnameMode;
+			}
+
+			public String getPublicUserDomainName() {
+				return this.publicUserDomainName;
+			}
+
+			public void setPublicUserDomainName(String publicUserDomainName) {
+				this.publicUserDomainName = publicUserDomainName;
+			}
+
+			public String getPublicRr() {
+				return this.publicRr;
+			}
+
+			public void setPublicRr(String publicRr) {
+				this.publicRr = publicRr;
 			}
 
 			public List<AlertConfigItem> getAlertConfig() {
@@ -301,19 +311,13 @@ public class DescribeDnsGtmInstancesResponse extends AcsResponse {
 
 			public static class AlertConfigItem {
 
-				private String noticeType;
-
 				private String smsNotice;
+
+				private String noticeType;
 
 				private String emailNotice;
 
-				public String getNoticeType() {
-					return this.noticeType;
-				}
-
-				public void setNoticeType(String noticeType) {
-					this.noticeType = noticeType;
-				}
+				private String dingtalkNotice;
 
 				public String getSmsNotice() {
 					return this.smsNotice;
@@ -323,6 +327,14 @@ public class DescribeDnsGtmInstancesResponse extends AcsResponse {
 					this.smsNotice = smsNotice;
 				}
 
+				public String getNoticeType() {
+					return this.noticeType;
+				}
+
+				public void setNoticeType(String noticeType) {
+					this.noticeType = noticeType;
+				}
+
 				public String getEmailNotice() {
 					return this.emailNotice;
 				}
@@ -330,16 +342,34 @@ public class DescribeDnsGtmInstancesResponse extends AcsResponse {
 				public void setEmailNotice(String emailNotice) {
 					this.emailNotice = emailNotice;
 				}
+
+				public String getDingtalkNotice() {
+					return this.dingtalkNotice;
+				}
+
+				public void setDingtalkNotice(String dingtalkNotice) {
+					this.dingtalkNotice = dingtalkNotice;
+				}
 			}
 		}
 
 		public static class UsedQuota {
 
+			private Integer emailUsedCount;
+
 			private Integer taskUsedCount;
 
 			private Integer smsUsedCount;
 
-			private Integer emailUsedCount;
+			private Integer dingtalkUsedCount;
+
+			public Integer getEmailUsedCount() {
+				return this.emailUsedCount;
+			}
+
+			public void setEmailUsedCount(Integer emailUsedCount) {
+				this.emailUsedCount = emailUsedCount;
+			}
 
 			public Integer getTaskUsedCount() {
 				return this.taskUsedCount;
@@ -357,12 +387,12 @@ public class DescribeDnsGtmInstancesResponse extends AcsResponse {
 				this.smsUsedCount = smsUsedCount;
 			}
 
-			public Integer getEmailUsedCount() {
-				return this.emailUsedCount;
+			public Integer getDingtalkUsedCount() {
+				return this.dingtalkUsedCount;
 			}
 
-			public void setEmailUsedCount(Integer emailUsedCount) {
-				this.emailUsedCount = emailUsedCount;
+			public void setDingtalkUsedCount(Integer dingtalkUsedCount) {
+				this.dingtalkUsedCount = dingtalkUsedCount;
 			}
 		}
 	}

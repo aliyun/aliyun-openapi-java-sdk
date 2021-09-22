@@ -57,6 +57,8 @@ public class UpdateDnsGtmAccessStrategyRequest extends RpcAcsRequest<UpdateDnsGt
 	private String strategyId;
 
 	private List<FailoverAddrPool> failoverAddrPools;
+
+	private String accessMode;
 	public UpdateDnsGtmAccessStrategyRequest() {
 		super("Alidns", "2015-01-09", "UpdateDnsGtmAccessStrategy", "alidns");
 		setMethod(MethodType.POST);
@@ -246,6 +248,17 @@ public class UpdateDnsGtmAccessStrategyRequest extends RpcAcsRequest<UpdateDnsGt
 				putQueryParameter("FailoverAddrPool." + (depth1 + 1) + ".LbaWeight" , failoverAddrPools.get(depth1).getLbaWeight());
 			}
 		}	
+	}
+
+	public String getAccessMode() {
+		return this.accessMode;
+	}
+
+	public void setAccessMode(String accessMode) {
+		this.accessMode = accessMode;
+		if(accessMode != null){
+			putQueryParameter("AccessMode", accessMode);
+		}
 	}
 
 	public static class DefaultAddrPool {

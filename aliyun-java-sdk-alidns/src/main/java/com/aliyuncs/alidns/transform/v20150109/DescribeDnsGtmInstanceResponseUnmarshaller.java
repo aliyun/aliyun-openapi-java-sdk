@@ -29,33 +29,35 @@ public class DescribeDnsGtmInstanceResponseUnmarshaller {
 	public static DescribeDnsGtmInstanceResponse unmarshall(DescribeDnsGtmInstanceResponse describeDnsGtmInstanceResponse, UnmarshallerContext _ctx) {
 		
 		describeDnsGtmInstanceResponse.setRequestId(_ctx.stringValue("DescribeDnsGtmInstanceResponse.RequestId"));
-		describeDnsGtmInstanceResponse.setInstanceId(_ctx.stringValue("DescribeDnsGtmInstanceResponse.InstanceId"));
-		describeDnsGtmInstanceResponse.setVersionCode(_ctx.stringValue("DescribeDnsGtmInstanceResponse.VersionCode"));
-		describeDnsGtmInstanceResponse.setSmsQuota(_ctx.integerValue("DescribeDnsGtmInstanceResponse.SmsQuota"));
-		describeDnsGtmInstanceResponse.setTaskQuota(_ctx.integerValue("DescribeDnsGtmInstanceResponse.TaskQuota"));
-		describeDnsGtmInstanceResponse.setCreateTime(_ctx.stringValue("DescribeDnsGtmInstanceResponse.CreateTime"));
-		describeDnsGtmInstanceResponse.setCreateTimestamp(_ctx.longValue("DescribeDnsGtmInstanceResponse.CreateTimestamp"));
-		describeDnsGtmInstanceResponse.setExpireTime(_ctx.stringValue("DescribeDnsGtmInstanceResponse.ExpireTime"));
 		describeDnsGtmInstanceResponse.setExpireTimestamp(_ctx.longValue("DescribeDnsGtmInstanceResponse.ExpireTimestamp"));
 		describeDnsGtmInstanceResponse.setResourceGroupId(_ctx.stringValue("DescribeDnsGtmInstanceResponse.ResourceGroupId"));
+		describeDnsGtmInstanceResponse.setInstanceId(_ctx.stringValue("DescribeDnsGtmInstanceResponse.InstanceId"));
+		describeDnsGtmInstanceResponse.setTaskQuota(_ctx.integerValue("DescribeDnsGtmInstanceResponse.TaskQuota"));
+		describeDnsGtmInstanceResponse.setCreateTime(_ctx.stringValue("DescribeDnsGtmInstanceResponse.CreateTime"));
+		describeDnsGtmInstanceResponse.setSmsQuota(_ctx.integerValue("DescribeDnsGtmInstanceResponse.SmsQuota"));
+		describeDnsGtmInstanceResponse.setVersionCode(_ctx.stringValue("DescribeDnsGtmInstanceResponse.VersionCode"));
 		describeDnsGtmInstanceResponse.setPaymentType(_ctx.stringValue("DescribeDnsGtmInstanceResponse.PaymentType"));
+		describeDnsGtmInstanceResponse.setExpireTime(_ctx.stringValue("DescribeDnsGtmInstanceResponse.ExpireTime"));
+		describeDnsGtmInstanceResponse.setCreateTimestamp(_ctx.longValue("DescribeDnsGtmInstanceResponse.CreateTimestamp"));
 
 		Config config = new Config();
-		config.setInstanceName(_ctx.stringValue("DescribeDnsGtmInstanceResponse.Config.InstanceName"));
-		config.setCnameType(_ctx.stringValue("DescribeDnsGtmInstanceResponse.Config.CnameType"));
-		config.setPublicUserDomainName(_ctx.stringValue("DescribeDnsGtmInstanceResponse.Config.PublicUserDomainName"));
-		config.setPublicCnameMode(_ctx.stringValue("DescribeDnsGtmInstanceResponse.Config.PublicCnameMode"));
-		config.setPubicZoneName(_ctx.stringValue("DescribeDnsGtmInstanceResponse.Config.PubicZoneName"));
 		config.setTtl(_ctx.integerValue("DescribeDnsGtmInstanceResponse.Config.Ttl"));
-		config.setStrategyMode(_ctx.stringValue("DescribeDnsGtmInstanceResponse.Config.StrategyMode"));
 		config.setAlertGroup(_ctx.stringValue("DescribeDnsGtmInstanceResponse.Config.AlertGroup"));
+		config.setCnameType(_ctx.stringValue("DescribeDnsGtmInstanceResponse.Config.CnameType"));
+		config.setStrategyMode(_ctx.stringValue("DescribeDnsGtmInstanceResponse.Config.StrategyMode"));
+		config.setInstanceName(_ctx.stringValue("DescribeDnsGtmInstanceResponse.Config.InstanceName"));
+		config.setPublicCnameMode(_ctx.stringValue("DescribeDnsGtmInstanceResponse.Config.PublicCnameMode"));
+		config.setPublicUserDomainName(_ctx.stringValue("DescribeDnsGtmInstanceResponse.Config.PublicUserDomainName"));
+		config.setPubicZoneName(_ctx.stringValue("DescribeDnsGtmInstanceResponse.Config.PubicZoneName"));
+		config.setPublicRr(_ctx.stringValue("DescribeDnsGtmInstanceResponse.Config.PublicRr"));
 
 		List<AlertConfigItem> alertConfig = new ArrayList<AlertConfigItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDnsGtmInstanceResponse.Config.AlertConfig.Length"); i++) {
 			AlertConfigItem alertConfigItem = new AlertConfigItem();
-			alertConfigItem.setNoticeType(_ctx.stringValue("DescribeDnsGtmInstanceResponse.Config.AlertConfig["+ i +"].NoticeType"));
 			alertConfigItem.setSmsNotice(_ctx.booleanValue("DescribeDnsGtmInstanceResponse.Config.AlertConfig["+ i +"].SmsNotice"));
+			alertConfigItem.setNoticeType(_ctx.stringValue("DescribeDnsGtmInstanceResponse.Config.AlertConfig["+ i +"].NoticeType"));
 			alertConfigItem.setEmailNotice(_ctx.booleanValue("DescribeDnsGtmInstanceResponse.Config.AlertConfig["+ i +"].EmailNotice"));
+			alertConfigItem.setDingtalkNotice(_ctx.booleanValue("DescribeDnsGtmInstanceResponse.Config.AlertConfig["+ i +"].DingtalkNotice"));
 
 			alertConfig.add(alertConfigItem);
 		}
@@ -63,9 +65,10 @@ public class DescribeDnsGtmInstanceResponseUnmarshaller {
 		describeDnsGtmInstanceResponse.setConfig(config);
 
 		UsedQuota usedQuota = new UsedQuota();
+		usedQuota.setEmailUsedCount(_ctx.integerValue("DescribeDnsGtmInstanceResponse.UsedQuota.EmailUsedCount"));
 		usedQuota.setTaskUsedCount(_ctx.integerValue("DescribeDnsGtmInstanceResponse.UsedQuota.TaskUsedCount"));
 		usedQuota.setSmsUsedCount(_ctx.integerValue("DescribeDnsGtmInstanceResponse.UsedQuota.SmsUsedCount"));
-		usedQuota.setEmailUsedCount(_ctx.integerValue("DescribeDnsGtmInstanceResponse.UsedQuota.EmailUsedCount"));
+		usedQuota.setDingtalkUsedCount(_ctx.integerValue("DescribeDnsGtmInstanceResponse.UsedQuota.DingtalkUsedCount"));
 		describeDnsGtmInstanceResponse.setUsedQuota(usedQuota);
 	 
 	 	return describeDnsGtmInstanceResponse;

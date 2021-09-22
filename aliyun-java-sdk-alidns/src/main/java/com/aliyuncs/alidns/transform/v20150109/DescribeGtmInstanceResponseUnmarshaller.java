@@ -23,21 +23,22 @@ public class DescribeGtmInstanceResponseUnmarshaller {
 	public static DescribeGtmInstanceResponse unmarshall(DescribeGtmInstanceResponse describeGtmInstanceResponse, UnmarshallerContext _ctx) {
 		
 		describeGtmInstanceResponse.setRequestId(_ctx.stringValue("DescribeGtmInstanceResponse.RequestId"));
+		describeGtmInstanceResponse.setExpireTimestamp(_ctx.longValue("DescribeGtmInstanceResponse.ExpireTimestamp"));
+		describeGtmInstanceResponse.setUserDomainName(_ctx.stringValue("DescribeGtmInstanceResponse.UserDomainName"));
+		describeGtmInstanceResponse.setLbaStrategy(_ctx.stringValue("DescribeGtmInstanceResponse.LbaStrategy"));
 		describeGtmInstanceResponse.setInstanceId(_ctx.stringValue("DescribeGtmInstanceResponse.InstanceId"));
+		describeGtmInstanceResponse.setCreateTime(_ctx.stringValue("DescribeGtmInstanceResponse.CreateTime"));
+		describeGtmInstanceResponse.setCnameMode(_ctx.stringValue("DescribeGtmInstanceResponse.CnameMode"));
+		describeGtmInstanceResponse.setTtl(_ctx.integerValue("DescribeGtmInstanceResponse.Ttl"));
+		describeGtmInstanceResponse.setCname(_ctx.stringValue("DescribeGtmInstanceResponse.Cname"));
 		describeGtmInstanceResponse.setInstanceName(_ctx.stringValue("DescribeGtmInstanceResponse.InstanceName"));
 		describeGtmInstanceResponse.setVersionCode(_ctx.stringValue("DescribeGtmInstanceResponse.VersionCode"));
-		describeGtmInstanceResponse.setExpireTime(_ctx.stringValue("DescribeGtmInstanceResponse.ExpireTime"));
-		describeGtmInstanceResponse.setExpireTimestamp(_ctx.longValue("DescribeGtmInstanceResponse.ExpireTimestamp"));
-		describeGtmInstanceResponse.setCname(_ctx.stringValue("DescribeGtmInstanceResponse.Cname"));
-		describeGtmInstanceResponse.setUserDomainName(_ctx.stringValue("DescribeGtmInstanceResponse.UserDomainName"));
-		describeGtmInstanceResponse.setTtl(_ctx.integerValue("DescribeGtmInstanceResponse.Ttl"));
-		describeGtmInstanceResponse.setLbaStrategy(_ctx.stringValue("DescribeGtmInstanceResponse.LbaStrategy"));
-		describeGtmInstanceResponse.setCreateTime(_ctx.stringValue("DescribeGtmInstanceResponse.CreateTime"));
-		describeGtmInstanceResponse.setCreateTimestamp(_ctx.longValue("DescribeGtmInstanceResponse.CreateTimestamp"));
 		describeGtmInstanceResponse.setAlertGroup(_ctx.stringValue("DescribeGtmInstanceResponse.AlertGroup"));
-		describeGtmInstanceResponse.setCnameMode(_ctx.stringValue("DescribeGtmInstanceResponse.CnameMode"));
-		describeGtmInstanceResponse.setAccessStrategyNum(_ctx.integerValue("DescribeGtmInstanceResponse.AccessStrategyNum"));
 		describeGtmInstanceResponse.setAddressPoolNum(_ctx.integerValue("DescribeGtmInstanceResponse.AddressPoolNum"));
+		describeGtmInstanceResponse.setAccessStrategyNum(_ctx.integerValue("DescribeGtmInstanceResponse.AccessStrategyNum"));
+		describeGtmInstanceResponse.setExpireTime(_ctx.stringValue("DescribeGtmInstanceResponse.ExpireTime"));
+		describeGtmInstanceResponse.setCreateTimestamp(_ctx.longValue("DescribeGtmInstanceResponse.CreateTimestamp"));
+		describeGtmInstanceResponse.setResourceGroupId(_ctx.stringValue("DescribeGtmInstanceResponse.ResourceGroupId"));
 	 
 	 	return describeGtmInstanceResponse;
 	}

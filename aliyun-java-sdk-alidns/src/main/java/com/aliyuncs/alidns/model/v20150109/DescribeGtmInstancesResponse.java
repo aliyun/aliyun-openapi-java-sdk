@@ -25,17 +25,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeGtmInstancesResponse extends AcsResponse {
 
+	private Integer pageSize;
+
 	private String requestId;
 
 	private Integer pageNumber;
 
-	private Integer pageSize;
+	private Integer totalPages;
 
 	private Integer totalItems;
 
-	private Integer totalPages;
-
 	private List<GtmInstance> gtmInstances;
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -53,12 +61,12 @@ public class DescribeGtmInstancesResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public Integer getTotalPages() {
+		return this.totalPages;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setTotalPages(Integer totalPages) {
+		this.totalPages = totalPages;
 	}
 
 	public Integer getTotalItems() {
@@ -67,14 +75,6 @@ public class DescribeGtmInstancesResponse extends AcsResponse {
 
 	public void setTotalItems(Integer totalItems) {
 		this.totalItems = totalItems;
-	}
-
-	public Integer getTotalPages() {
-		return this.totalPages;
-	}
-
-	public void setTotalPages(Integer totalPages) {
-		this.totalPages = totalPages;
 	}
 
 	public List<GtmInstance> getGtmInstances() {
@@ -87,107 +87,37 @@ public class DescribeGtmInstancesResponse extends AcsResponse {
 
 	public static class GtmInstance {
 
-		private String instanceId;
-
-		private String instanceName;
-
-		private String cname;
-
-		private String userDomainName;
-
-		private String versionCode;
-
-		private Integer ttl;
-
-		private String lbaStrategy;
-
-		private String createTime;
-
-		private Long createTimestamp;
-
 		private String expireTime;
-
-		private Long expireTimestamp;
-
-		private String alertGroup;
-
-		private String cnameMode;
 
 		private Integer accessStrategyNum;
 
+		private String createTime;
+
+		private String cnameMode;
+
+		private String instanceId;
+
+		private Long expireTimestamp;
+
+		private Integer ttl;
+
+		private String alertGroup;
+
 		private Integer addressPoolNum;
 
-		public String getInstanceId() {
-			return this.instanceId;
-		}
+		private String instanceName;
 
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
+		private String lbaStrategy;
 
-		public String getInstanceName() {
-			return this.instanceName;
-		}
+		private String cname;
 
-		public void setInstanceName(String instanceName) {
-			this.instanceName = instanceName;
-		}
+		private String versionCode;
 
-		public String getCname() {
-			return this.cname;
-		}
+		private String userDomainName;
 
-		public void setCname(String cname) {
-			this.cname = cname;
-		}
+		private Long createTimestamp;
 
-		public String getUserDomainName() {
-			return this.userDomainName;
-		}
-
-		public void setUserDomainName(String userDomainName) {
-			this.userDomainName = userDomainName;
-		}
-
-		public String getVersionCode() {
-			return this.versionCode;
-		}
-
-		public void setVersionCode(String versionCode) {
-			this.versionCode = versionCode;
-		}
-
-		public Integer getTtl() {
-			return this.ttl;
-		}
-
-		public void setTtl(Integer ttl) {
-			this.ttl = ttl;
-		}
-
-		public String getLbaStrategy() {
-			return this.lbaStrategy;
-		}
-
-		public void setLbaStrategy(String lbaStrategy) {
-			this.lbaStrategy = lbaStrategy;
-		}
-
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
-		}
-
-		public Long getCreateTimestamp() {
-			return this.createTimestamp;
-		}
-
-		public void setCreateTimestamp(Long createTimestamp) {
-			this.createTimestamp = createTimestamp;
-		}
+		private String resourceGroupId;
 
 		public String getExpireTime() {
 			return this.expireTime;
@@ -195,30 +125,6 @@ public class DescribeGtmInstancesResponse extends AcsResponse {
 
 		public void setExpireTime(String expireTime) {
 			this.expireTime = expireTime;
-		}
-
-		public Long getExpireTimestamp() {
-			return this.expireTimestamp;
-		}
-
-		public void setExpireTimestamp(Long expireTimestamp) {
-			this.expireTimestamp = expireTimestamp;
-		}
-
-		public String getAlertGroup() {
-			return this.alertGroup;
-		}
-
-		public void setAlertGroup(String alertGroup) {
-			this.alertGroup = alertGroup;
-		}
-
-		public String getCnameMode() {
-			return this.cnameMode;
-		}
-
-		public void setCnameMode(String cnameMode) {
-			this.cnameMode = cnameMode;
 		}
 
 		public Integer getAccessStrategyNum() {
@@ -229,12 +135,116 @@ public class DescribeGtmInstancesResponse extends AcsResponse {
 			this.accessStrategyNum = accessStrategyNum;
 		}
 
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
+
+		public String getCnameMode() {
+			return this.cnameMode;
+		}
+
+		public void setCnameMode(String cnameMode) {
+			this.cnameMode = cnameMode;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public Long getExpireTimestamp() {
+			return this.expireTimestamp;
+		}
+
+		public void setExpireTimestamp(Long expireTimestamp) {
+			this.expireTimestamp = expireTimestamp;
+		}
+
+		public Integer getTtl() {
+			return this.ttl;
+		}
+
+		public void setTtl(Integer ttl) {
+			this.ttl = ttl;
+		}
+
+		public String getAlertGroup() {
+			return this.alertGroup;
+		}
+
+		public void setAlertGroup(String alertGroup) {
+			this.alertGroup = alertGroup;
+		}
+
 		public Integer getAddressPoolNum() {
 			return this.addressPoolNum;
 		}
 
 		public void setAddressPoolNum(Integer addressPoolNum) {
 			this.addressPoolNum = addressPoolNum;
+		}
+
+		public String getInstanceName() {
+			return this.instanceName;
+		}
+
+		public void setInstanceName(String instanceName) {
+			this.instanceName = instanceName;
+		}
+
+		public String getLbaStrategy() {
+			return this.lbaStrategy;
+		}
+
+		public void setLbaStrategy(String lbaStrategy) {
+			this.lbaStrategy = lbaStrategy;
+		}
+
+		public String getCname() {
+			return this.cname;
+		}
+
+		public void setCname(String cname) {
+			this.cname = cname;
+		}
+
+		public String getVersionCode() {
+			return this.versionCode;
+		}
+
+		public void setVersionCode(String versionCode) {
+			this.versionCode = versionCode;
+		}
+
+		public String getUserDomainName() {
+			return this.userDomainName;
+		}
+
+		public void setUserDomainName(String userDomainName) {
+			this.userDomainName = userDomainName;
+		}
+
+		public Long getCreateTimestamp() {
+			return this.createTimestamp;
+		}
+
+		public void setCreateTimestamp(Long createTimestamp) {
+			this.createTimestamp = createTimestamp;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
 		}
 	}
 
