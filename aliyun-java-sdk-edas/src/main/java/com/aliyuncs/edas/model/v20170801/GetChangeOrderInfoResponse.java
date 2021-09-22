@@ -67,29 +67,39 @@ public class GetChangeOrderInfoResponse extends AcsResponse {
 
 	public static class ChangeOrderInfo {
 
+		private Integer status;
+
 		private String changeOrderId;
 
-		private String createUserId;
-
-		private String desc;
-
-		private Integer batchCount;
-
 		private String batchType;
-
-		private Integer status;
 
 		private String coType;
 
 		private String createTime;
 
+		private String changeOrderDescription;
+
+		private Integer batchCount;
+
+		private String createUserId;
+
 		private Boolean supportRollback;
 
-		private String changeOrderDescription;
+		private String desc;
 
 		private List<PipelineInfo> pipelineInfoList;
 
+		private List<String> targets;
+
 		private TrafficControl trafficControl;
+
+		public Integer getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(Integer status) {
+			this.status = status;
+		}
 
 		public String getChangeOrderId() {
 			return this.changeOrderId;
@@ -99,44 +109,12 @@ public class GetChangeOrderInfoResponse extends AcsResponse {
 			this.changeOrderId = changeOrderId;
 		}
 
-		public String getCreateUserId() {
-			return this.createUserId;
-		}
-
-		public void setCreateUserId(String createUserId) {
-			this.createUserId = createUserId;
-		}
-
-		public String getDesc() {
-			return this.desc;
-		}
-
-		public void setDesc(String desc) {
-			this.desc = desc;
-		}
-
-		public Integer getBatchCount() {
-			return this.batchCount;
-		}
-
-		public void setBatchCount(Integer batchCount) {
-			this.batchCount = batchCount;
-		}
-
 		public String getBatchType() {
 			return this.batchType;
 		}
 
 		public void setBatchType(String batchType) {
 			this.batchType = batchType;
-		}
-
-		public Integer getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(Integer status) {
-			this.status = status;
 		}
 
 		public String getCoType() {
@@ -155,14 +133,6 @@ public class GetChangeOrderInfoResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
-		public Boolean getSupportRollback() {
-			return this.supportRollback;
-		}
-
-		public void setSupportRollback(Boolean supportRollback) {
-			this.supportRollback = supportRollback;
-		}
-
 		public String getChangeOrderDescription() {
 			return this.changeOrderDescription;
 		}
@@ -171,12 +141,52 @@ public class GetChangeOrderInfoResponse extends AcsResponse {
 			this.changeOrderDescription = changeOrderDescription;
 		}
 
+		public Integer getBatchCount() {
+			return this.batchCount;
+		}
+
+		public void setBatchCount(Integer batchCount) {
+			this.batchCount = batchCount;
+		}
+
+		public String getCreateUserId() {
+			return this.createUserId;
+		}
+
+		public void setCreateUserId(String createUserId) {
+			this.createUserId = createUserId;
+		}
+
+		public Boolean getSupportRollback() {
+			return this.supportRollback;
+		}
+
+		public void setSupportRollback(Boolean supportRollback) {
+			this.supportRollback = supportRollback;
+		}
+
+		public String getDesc() {
+			return this.desc;
+		}
+
+		public void setDesc(String desc) {
+			this.desc = desc;
+		}
+
 		public List<PipelineInfo> getPipelineInfoList() {
 			return this.pipelineInfoList;
 		}
 
 		public void setPipelineInfoList(List<PipelineInfo> pipelineInfoList) {
 			this.pipelineInfoList = pipelineInfoList;
+		}
+
+		public List<String> getTargets() {
+			return this.targets;
+		}
+
+		public void setTargets(List<String> targets) {
+			this.targets = targets;
 		}
 
 		public TrafficControl getTrafficControl() {
@@ -189,27 +199,19 @@ public class GetChangeOrderInfoResponse extends AcsResponse {
 
 		public static class PipelineInfo {
 
-			private String pipelineId;
-
 			private String pipelineName;
-
-			private Integer pipelineStatus;
 
 			private String startTime;
 
 			private String updateTime;
 
+			private Integer pipelineStatus;
+
+			private String pipelineId;
+
 			private List<StageInfoDTO> stageList;
 
 			private List<StageDetailDTO> stageDetailList;
-
-			public String getPipelineId() {
-				return this.pipelineId;
-			}
-
-			public void setPipelineId(String pipelineId) {
-				this.pipelineId = pipelineId;
-			}
 
 			public String getPipelineName() {
 				return this.pipelineName;
@@ -217,14 +219,6 @@ public class GetChangeOrderInfoResponse extends AcsResponse {
 
 			public void setPipelineName(String pipelineName) {
 				this.pipelineName = pipelineName;
-			}
-
-			public Integer getPipelineStatus() {
-				return this.pipelineStatus;
-			}
-
-			public void setPipelineStatus(Integer pipelineStatus) {
-				this.pipelineStatus = pipelineStatus;
 			}
 
 			public String getStartTime() {
@@ -241,6 +235,22 @@ public class GetChangeOrderInfoResponse extends AcsResponse {
 
 			public void setUpdateTime(String updateTime) {
 				this.updateTime = updateTime;
+			}
+
+			public Integer getPipelineStatus() {
+				return this.pipelineStatus;
+			}
+
+			public void setPipelineStatus(Integer pipelineStatus) {
+				this.pipelineStatus = pipelineStatus;
+			}
+
+			public String getPipelineId() {
+				return this.pipelineId;
+			}
+
+			public void setPipelineId(String pipelineId) {
+				this.pipelineId = pipelineId;
 			}
 
 			public List<StageInfoDTO> getStageList() {
@@ -263,9 +273,9 @@ public class GetChangeOrderInfoResponse extends AcsResponse {
 
 				private String stageId;
 
-				private String stageName;
-
 				private Integer status;
+
+				private String stageName;
 
 				private StageResultDTO stageResultDTO;
 
@@ -277,20 +287,20 @@ public class GetChangeOrderInfoResponse extends AcsResponse {
 					this.stageId = stageId;
 				}
 
-				public String getStageName() {
-					return this.stageName;
-				}
-
-				public void setStageName(String stageName) {
-					this.stageName = stageName;
-				}
-
 				public Integer getStatus() {
 					return this.status;
 				}
 
 				public void setStatus(Integer status) {
 					this.status = status;
+				}
+
+				public String getStageName() {
+					return this.stageName;
+				}
+
+				public void setStageName(String stageName) {
+					this.stageName = stageName;
 				}
 
 				public StageResultDTO getStageResultDTO() {
@@ -325,24 +335,24 @@ public class GetChangeOrderInfoResponse extends AcsResponse {
 
 					public static class InstanceDTO {
 
-						private String instanceName;
+						private Integer status;
 
 						private String instanceIp;
 
-						private Integer status;
-
 						private String podName;
+
+						private String instanceName;
 
 						private String podStatus;
 
 						private List<InstanceStageDTO> instanceStageDTOList;
 
-						public String getInstanceName() {
-							return this.instanceName;
+						public Integer getStatus() {
+							return this.status;
 						}
 
-						public void setInstanceName(String instanceName) {
-							this.instanceName = instanceName;
+						public void setStatus(Integer status) {
+							this.status = status;
 						}
 
 						public String getInstanceIp() {
@@ -353,20 +363,20 @@ public class GetChangeOrderInfoResponse extends AcsResponse {
 							this.instanceIp = instanceIp;
 						}
 
-						public Integer getStatus() {
-							return this.status;
-						}
-
-						public void setStatus(Integer status) {
-							this.status = status;
-						}
-
 						public String getPodName() {
 							return this.podName;
 						}
 
 						public void setPodName(String podName) {
 							this.podName = podName;
+						}
+
+						public String getInstanceName() {
+							return this.instanceName;
+						}
+
+						public void setInstanceName(String instanceName) {
+							this.instanceName = instanceName;
 						}
 
 						public String getPodStatus() {
@@ -389,15 +399,15 @@ public class GetChangeOrderInfoResponse extends AcsResponse {
 
 							private String stageId;
 
-							private String stageName;
-
 							private Integer status;
-
-							private String stageMessage;
 
 							private String startTime;
 
+							private String stageMessage;
+
 							private String finishTime;
+
+							private String stageName;
 
 							public String getStageId() {
 								return this.stageId;
@@ -405,14 +415,6 @@ public class GetChangeOrderInfoResponse extends AcsResponse {
 
 							public void setStageId(String stageId) {
 								this.stageId = stageId;
-							}
-
-							public String getStageName() {
-								return this.stageName;
-							}
-
-							public void setStageName(String stageName) {
-								this.stageName = stageName;
 							}
 
 							public Integer getStatus() {
@@ -423,20 +425,20 @@ public class GetChangeOrderInfoResponse extends AcsResponse {
 								this.status = status;
 							}
 
-							public String getStageMessage() {
-								return this.stageMessage;
-							}
-
-							public void setStageMessage(String stageMessage) {
-								this.stageMessage = stageMessage;
-							}
-
 							public String getStartTime() {
 								return this.startTime;
 							}
 
 							public void setStartTime(String startTime) {
 								this.startTime = startTime;
+							}
+
+							public String getStageMessage() {
+								return this.stageMessage;
+							}
+
+							public void setStageMessage(String stageMessage) {
+								this.stageMessage = stageMessage;
 							}
 
 							public String getFinishTime() {
@@ -446,6 +448,14 @@ public class GetChangeOrderInfoResponse extends AcsResponse {
 							public void setFinishTime(String finishTime) {
 								this.finishTime = finishTime;
 							}
+
+							public String getStageName() {
+								return this.stageName;
+							}
+
+							public void setStageName(String stageName) {
+								this.stageName = stageName;
+							}
 						}
 					}
 
@@ -453,11 +463,11 @@ public class GetChangeOrderInfoResponse extends AcsResponse {
 
 						private String stageId;
 
-						private String stageName;
-
 						private Integer status;
 
 						private String message;
+
+						private String stageName;
 
 						public String getStageId() {
 							return this.stageId;
@@ -465,14 +475,6 @@ public class GetChangeOrderInfoResponse extends AcsResponse {
 
 						public void setStageId(String stageId) {
 							this.stageId = stageId;
-						}
-
-						public String getStageName() {
-							return this.stageName;
-						}
-
-						public void setStageName(String stageName) {
-							this.stageName = stageName;
 						}
 
 						public Integer getStatus() {
@@ -490,6 +492,14 @@ public class GetChangeOrderInfoResponse extends AcsResponse {
 						public void setMessage(String message) {
 							this.message = message;
 						}
+
+						public String getStageName() {
+							return this.stageName;
+						}
+
+						public void setStageName(String stageName) {
+							this.stageName = stageName;
+						}
 					}
 				}
 			}
@@ -498,9 +508,9 @@ public class GetChangeOrderInfoResponse extends AcsResponse {
 
 				private String stageId;
 
-				private String stageName;
-
 				private Integer stageStatus;
+
+				private String stageName;
 
 				private List<TaskInfoDTO> taskList;
 
@@ -512,20 +522,20 @@ public class GetChangeOrderInfoResponse extends AcsResponse {
 					this.stageId = stageId;
 				}
 
-				public String getStageName() {
-					return this.stageName;
-				}
-
-				public void setStageName(String stageName) {
-					this.stageName = stageName;
-				}
-
 				public Integer getStageStatus() {
 					return this.stageStatus;
 				}
 
 				public void setStageStatus(Integer stageStatus) {
 					this.stageStatus = stageStatus;
+				}
+
+				public String getStageName() {
+					return this.stageName;
+				}
+
+				public void setStageName(String stageName) {
+					this.stageName = stageName;
 				}
 
 				public List<TaskInfoDTO> getTaskList() {
@@ -538,30 +548,38 @@ public class GetChangeOrderInfoResponse extends AcsResponse {
 
 				public static class TaskInfoDTO {
 
-					private String taskName;
+					private Integer taskErrorIgnorance;
+
+					private Boolean showManualIgnorance;
 
 					private String taskStatus;
 
 					private String taskMessage;
 
-					private String taskId;
+					private String taskName;
 
 					private String taskErrorCode;
 
-					private String taskErrorMessage;
-
-					private Boolean showManualIgnorance;
-
-					private Integer taskErrorIgnorance;
-
 					private Integer retryType;
 
-					public String getTaskName() {
-						return this.taskName;
+					private String taskId;
+
+					private String taskErrorMessage;
+
+					public Integer getTaskErrorIgnorance() {
+						return this.taskErrorIgnorance;
 					}
 
-					public void setTaskName(String taskName) {
-						this.taskName = taskName;
+					public void setTaskErrorIgnorance(Integer taskErrorIgnorance) {
+						this.taskErrorIgnorance = taskErrorIgnorance;
+					}
+
+					public Boolean getShowManualIgnorance() {
+						return this.showManualIgnorance;
+					}
+
+					public void setShowManualIgnorance(Boolean showManualIgnorance) {
+						this.showManualIgnorance = showManualIgnorance;
 					}
 
 					public String getTaskStatus() {
@@ -580,12 +598,12 @@ public class GetChangeOrderInfoResponse extends AcsResponse {
 						this.taskMessage = taskMessage;
 					}
 
-					public String getTaskId() {
-						return this.taskId;
+					public String getTaskName() {
+						return this.taskName;
 					}
 
-					public void setTaskId(String taskId) {
-						this.taskId = taskId;
+					public void setTaskName(String taskName) {
+						this.taskName = taskName;
 					}
 
 					public String getTaskErrorCode() {
@@ -596,30 +614,6 @@ public class GetChangeOrderInfoResponse extends AcsResponse {
 						this.taskErrorCode = taskErrorCode;
 					}
 
-					public String getTaskErrorMessage() {
-						return this.taskErrorMessage;
-					}
-
-					public void setTaskErrorMessage(String taskErrorMessage) {
-						this.taskErrorMessage = taskErrorMessage;
-					}
-
-					public Boolean getShowManualIgnorance() {
-						return this.showManualIgnorance;
-					}
-
-					public void setShowManualIgnorance(Boolean showManualIgnorance) {
-						this.showManualIgnorance = showManualIgnorance;
-					}
-
-					public Integer getTaskErrorIgnorance() {
-						return this.taskErrorIgnorance;
-					}
-
-					public void setTaskErrorIgnorance(Integer taskErrorIgnorance) {
-						this.taskErrorIgnorance = taskErrorIgnorance;
-					}
-
 					public Integer getRetryType() {
 						return this.retryType;
 					}
@@ -627,25 +621,33 @@ public class GetChangeOrderInfoResponse extends AcsResponse {
 					public void setRetryType(Integer retryType) {
 						this.retryType = retryType;
 					}
+
+					public String getTaskId() {
+						return this.taskId;
+					}
+
+					public void setTaskId(String taskId) {
+						this.taskId = taskId;
+					}
+
+					public String getTaskErrorMessage() {
+						return this.taskErrorMessage;
+					}
+
+					public void setTaskErrorMessage(String taskErrorMessage) {
+						this.taskErrorMessage = taskErrorMessage;
+					}
 				}
 			}
 		}
 
 		public static class TrafficControl {
 
-			private String rules;
-
 			private String routes;
 
+			private String rules;
+
 			private String tips;
-
-			public String getRules() {
-				return this.rules;
-			}
-
-			public void setRules(String rules) {
-				this.rules = rules;
-			}
 
 			public String getRoutes() {
 				return this.routes;
@@ -653,6 +655,14 @@ public class GetChangeOrderInfoResponse extends AcsResponse {
 
 			public void setRoutes(String routes) {
 				this.routes = routes;
+			}
+
+			public String getRules() {
+				return this.rules;
+			}
+
+			public void setRules(String rules) {
+				this.rules = rules;
 			}
 
 			public String getTips() {

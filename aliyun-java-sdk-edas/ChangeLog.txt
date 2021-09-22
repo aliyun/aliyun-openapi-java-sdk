@@ -1,3 +1,6 @@
+2021-09-22 Version: 3.23.0
+- Modify CreateK8sSecret.
+
 2021-09-09 Version: 3.22.0
 - Modify API InsertK8sApplication.
 - Modify API DeployK8sApplication.

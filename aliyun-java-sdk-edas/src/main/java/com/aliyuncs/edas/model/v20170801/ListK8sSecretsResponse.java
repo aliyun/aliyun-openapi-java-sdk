@@ -89,40 +89,38 @@ public class ListK8sSecretsResponse extends AcsResponse {
 
 		public static class SecretsItem {
 
-			private String name;
-
-			private String namespace;
+			private String type;
 
 			private String creationTime;
 
-			private String type;
-
-			private String clusterId;
-
 			private String clusterName;
 
-			private String certId;
+			private String namespace;
+
+			private Boolean base64Encoded;
 
 			private String certRegionId;
 
+			private String certId;
+
+			private String name;
+
+			private String clusterId;
+
+			private List<RelatedIngressRulesItem> relatedIngressRules;
+
 			private List<DataItem> data;
 
-			private List<RelatedAppsItem> relatedApps;
+			private List<RelatedAppsItem2> relatedApps;
 
-			public String getName() {
-				return this.name;
+			private CertDetail certDetail;
+
+			public String getType() {
+				return this.type;
 			}
 
-			public void setName(String name) {
-				this.name = name;
-			}
-
-			public String getNamespace() {
-				return this.namespace;
-			}
-
-			public void setNamespace(String namespace) {
-				this.namespace = namespace;
+			public void setType(String type) {
+				this.type = type;
 			}
 
 			public String getCreationTime() {
@@ -133,22 +131,6 @@ public class ListK8sSecretsResponse extends AcsResponse {
 				this.creationTime = creationTime;
 			}
 
-			public String getType() {
-				return this.type;
-			}
-
-			public void setType(String type) {
-				this.type = type;
-			}
-
-			public String getClusterId() {
-				return this.clusterId;
-			}
-
-			public void setClusterId(String clusterId) {
-				this.clusterId = clusterId;
-			}
-
 			public String getClusterName() {
 				return this.clusterName;
 			}
@@ -157,12 +139,20 @@ public class ListK8sSecretsResponse extends AcsResponse {
 				this.clusterName = clusterName;
 			}
 
-			public String getCertId() {
-				return this.certId;
+			public String getNamespace() {
+				return this.namespace;
 			}
 
-			public void setCertId(String certId) {
-				this.certId = certId;
+			public void setNamespace(String namespace) {
+				this.namespace = namespace;
+			}
+
+			public Boolean getBase64Encoded() {
+				return this.base64Encoded;
+			}
+
+			public void setBase64Encoded(Boolean base64Encoded) {
+				this.base64Encoded = base64Encoded;
 			}
 
 			public String getCertRegionId() {
@@ -173,6 +163,38 @@ public class ListK8sSecretsResponse extends AcsResponse {
 				this.certRegionId = certRegionId;
 			}
 
+			public String getCertId() {
+				return this.certId;
+			}
+
+			public void setCertId(String certId) {
+				this.certId = certId;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
+
+			public String getClusterId() {
+				return this.clusterId;
+			}
+
+			public void setClusterId(String clusterId) {
+				this.clusterId = clusterId;
+			}
+
+			public List<RelatedIngressRulesItem> getRelatedIngressRules() {
+				return this.relatedIngressRules;
+			}
+
+			public void setRelatedIngressRules(List<RelatedIngressRulesItem> relatedIngressRules) {
+				this.relatedIngressRules = relatedIngressRules;
+			}
+
 			public List<DataItem> getData() {
 				return this.data;
 			}
@@ -181,12 +203,76 @@ public class ListK8sSecretsResponse extends AcsResponse {
 				this.data = data;
 			}
 
-			public List<RelatedAppsItem> getRelatedApps() {
+			public List<RelatedAppsItem2> getRelatedApps() {
 				return this.relatedApps;
 			}
 
-			public void setRelatedApps(List<RelatedAppsItem> relatedApps) {
+			public void setRelatedApps(List<RelatedAppsItem2> relatedApps) {
 				this.relatedApps = relatedApps;
+			}
+
+			public CertDetail getCertDetail() {
+				return this.certDetail;
+			}
+
+			public void setCertDetail(CertDetail certDetail) {
+				this.certDetail = certDetail;
+			}
+
+			public static class RelatedIngressRulesItem {
+
+				private String name;
+
+				private String namespace;
+
+				private List<RelatedAppsItem> relatedApps1;
+
+				public String getName() {
+					return this.name;
+				}
+
+				public void setName(String name) {
+					this.name = name;
+				}
+
+				public String getNamespace() {
+					return this.namespace;
+				}
+
+				public void setNamespace(String namespace) {
+					this.namespace = namespace;
+				}
+
+				public List<RelatedAppsItem> getRelatedApps1() {
+					return this.relatedApps1;
+				}
+
+				public void setRelatedApps1(List<RelatedAppsItem> relatedApps1) {
+					this.relatedApps1 = relatedApps1;
+				}
+
+				public static class RelatedAppsItem {
+
+					private String appName;
+
+					private String appId;
+
+					public String getAppName() {
+						return this.appName;
+					}
+
+					public void setAppName(String appName) {
+						this.appName = appName;
+					}
+
+					public String getAppId() {
+						return this.appId;
+					}
+
+					public void setAppId(String appId) {
+						this.appId = appId;
+					}
+				}
 			}
 
 			public static class DataItem {
@@ -212,7 +298,7 @@ public class ListK8sSecretsResponse extends AcsResponse {
 				}
 			}
 
-			public static class RelatedAppsItem {
+			public static class RelatedAppsItem2 {
 
 				private String appName;
 
@@ -232,6 +318,59 @@ public class ListK8sSecretsResponse extends AcsResponse {
 
 				public void setAppId(String appId) {
 					this.appId = appId;
+				}
+			}
+
+			public static class CertDetail {
+
+				private String endTime;
+
+				private String status;
+
+				private String startTime;
+
+				private String issuer;
+
+				private List<String> domainNames;
+
+				public String getEndTime() {
+					return this.endTime;
+				}
+
+				public void setEndTime(String endTime) {
+					this.endTime = endTime;
+				}
+
+				public String getStatus() {
+					return this.status;
+				}
+
+				public void setStatus(String status) {
+					this.status = status;
+				}
+
+				public String getStartTime() {
+					return this.startTime;
+				}
+
+				public void setStartTime(String startTime) {
+					this.startTime = startTime;
+				}
+
+				public String getIssuer() {
+					return this.issuer;
+				}
+
+				public void setIssuer(String issuer) {
+					this.issuer = issuer;
+				}
+
+				public List<String> getDomainNames() {
+					return this.domainNames;
+				}
+
+				public void setDomainNames(List<String> domainNames) {
+					this.domainNames = domainNames;
 				}
 			}
 		}

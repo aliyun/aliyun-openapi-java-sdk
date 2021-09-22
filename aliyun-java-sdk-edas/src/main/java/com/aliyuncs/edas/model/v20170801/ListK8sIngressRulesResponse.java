@@ -67,21 +67,13 @@ public class ListK8sIngressRulesResponse extends AcsResponse {
 
 	public static class DataItem {
 
-		private String clusterId;
-
 		private String clusterName;
+
+		private String clusterId;
 
 		private String regionId;
 
 		private List<IngressConfsItem> ingressConfs;
-
-		public String getClusterId() {
-			return this.clusterId;
-		}
-
-		public void setClusterId(String clusterId) {
-			this.clusterId = clusterId;
-		}
 
 		public String getClusterName() {
 			return this.clusterName;
@@ -89,6 +81,14 @@ public class ListK8sIngressRulesResponse extends AcsResponse {
 
 		public void setClusterName(String clusterName) {
 			this.clusterName = clusterName;
+		}
+
+		public String getClusterId() {
+			return this.clusterId;
+		}
+
+		public void setClusterId(String clusterId) {
+			this.clusterId = clusterId;
 		}
 
 		public String getRegionId() {
@@ -109,32 +109,34 @@ public class ListK8sIngressRulesResponse extends AcsResponse {
 
 		public static class IngressConfsItem {
 
-			private String name;
+			private String creationTime;
 
-			private String namespace;
+			private Boolean sslRedirect;
 
 			private String endpoint;
 
-			private String creationTime;
+			private String namespace;
+
+			private String name;
 
 			private String dashboardUrl;
 
 			private List<RulesItem> rules;
 
-			public String getName() {
-				return this.name;
+			public String getCreationTime() {
+				return this.creationTime;
 			}
 
-			public void setName(String name) {
-				this.name = name;
+			public void setCreationTime(String creationTime) {
+				this.creationTime = creationTime;
 			}
 
-			public String getNamespace() {
-				return this.namespace;
+			public Boolean getSslRedirect() {
+				return this.sslRedirect;
 			}
 
-			public void setNamespace(String namespace) {
-				this.namespace = namespace;
+			public void setSslRedirect(Boolean sslRedirect) {
+				this.sslRedirect = sslRedirect;
 			}
 
 			public String getEndpoint() {
@@ -145,12 +147,20 @@ public class ListK8sIngressRulesResponse extends AcsResponse {
 				this.endpoint = endpoint;
 			}
 
-			public String getCreationTime() {
-				return this.creationTime;
+			public String getNamespace() {
+				return this.namespace;
 			}
 
-			public void setCreationTime(String creationTime) {
-				this.creationTime = creationTime;
+			public void setNamespace(String namespace) {
+				this.namespace = namespace;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
 			}
 
 			public String getDashboardUrl() {
@@ -171,19 +181,11 @@ public class ListK8sIngressRulesResponse extends AcsResponse {
 
 			public static class RulesItem {
 
-				private String host;
-
 				private String secretName;
 
+				private String host;
+
 				private List<PathsItem> paths;
-
-				public String getHost() {
-					return this.host;
-				}
-
-				public void setHost(String host) {
-					this.host = host;
-				}
 
 				public String getSecretName() {
 					return this.secretName;
@@ -191,6 +193,14 @@ public class ListK8sIngressRulesResponse extends AcsResponse {
 
 				public void setSecretName(String secretName) {
 					this.secretName = secretName;
+				}
+
+				public String getHost() {
+					return this.host;
+				}
+
+				public void setHost(String host) {
+					this.host = host;
 				}
 
 				public List<PathsItem> getPaths() {
@@ -203,15 +213,23 @@ public class ListK8sIngressRulesResponse extends AcsResponse {
 
 				public static class PathsItem {
 
-					private String path;
+					private String status;
 
-					private String appId;
+					private String path;
 
 					private String appName;
 
-					private String status;
+					private String appId;
 
 					private Backend backend;
+
+					public String getStatus() {
+						return this.status;
+					}
+
+					public void setStatus(String status) {
+						this.status = status;
+					}
 
 					public String getPath() {
 						return this.path;
@@ -219,14 +237,6 @@ public class ListK8sIngressRulesResponse extends AcsResponse {
 
 					public void setPath(String path) {
 						this.path = path;
-					}
-
-					public String getAppId() {
-						return this.appId;
-					}
-
-					public void setAppId(String appId) {
-						this.appId = appId;
 					}
 
 					public String getAppName() {
@@ -237,12 +247,12 @@ public class ListK8sIngressRulesResponse extends AcsResponse {
 						this.appName = appName;
 					}
 
-					public String getStatus() {
-						return this.status;
+					public String getAppId() {
+						return this.appId;
 					}
 
-					public void setStatus(String status) {
-						this.status = status;
+					public void setAppId(String appId) {
+						this.appId = appId;
 					}
 
 					public Backend getBackend() {

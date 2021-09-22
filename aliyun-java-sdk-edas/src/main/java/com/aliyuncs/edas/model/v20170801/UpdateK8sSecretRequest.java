@@ -25,6 +25,8 @@ import com.aliyuncs.edas.Endpoint;
 public class UpdateK8sSecretRequest extends RoaAcsRequest<UpdateK8sSecretResponse> {
 	   
 
+	private Boolean base64Encoded;
+
 	private String data;
 
 	private String name;
@@ -46,6 +48,17 @@ public class UpdateK8sSecretRequest extends RoaAcsRequest<UpdateK8sSecretRespons
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Boolean getBase64Encoded() {
+		return this.base64Encoded;
+	}
+
+	public void setBase64Encoded(Boolean base64Encoded) {
+		this.base64Encoded = base64Encoded;
+		if(base64Encoded != null){
+			putBodyParameter("Base64Encoded", base64Encoded.toString());
+		}
 	}
 
 	public String getData() {

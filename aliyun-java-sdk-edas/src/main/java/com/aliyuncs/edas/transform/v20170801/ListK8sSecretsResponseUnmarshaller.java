@@ -20,8 +20,11 @@ import java.util.List;
 import com.aliyuncs.edas.model.v20170801.ListK8sSecretsResponse;
 import com.aliyuncs.edas.model.v20170801.ListK8sSecretsResponse.ResultItem;
 import com.aliyuncs.edas.model.v20170801.ListK8sSecretsResponse.ResultItem.SecretsItem;
+import com.aliyuncs.edas.model.v20170801.ListK8sSecretsResponse.ResultItem.SecretsItem.CertDetail;
 import com.aliyuncs.edas.model.v20170801.ListK8sSecretsResponse.ResultItem.SecretsItem.DataItem;
-import com.aliyuncs.edas.model.v20170801.ListK8sSecretsResponse.ResultItem.SecretsItem.RelatedAppsItem;
+import com.aliyuncs.edas.model.v20170801.ListK8sSecretsResponse.ResultItem.SecretsItem.RelatedAppsItem2;
+import com.aliyuncs.edas.model.v20170801.ListK8sSecretsResponse.ResultItem.SecretsItem.RelatedIngressRulesItem;
+import com.aliyuncs.edas.model.v20170801.ListK8sSecretsResponse.ResultItem.SecretsItem.RelatedIngressRulesItem.RelatedAppsItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -41,14 +44,48 @@ public class ListK8sSecretsResponseUnmarshaller {
 			List<SecretsItem> secrets = new ArrayList<SecretsItem>();
 			for (int j = 0; j < _ctx.lengthValue("ListK8sSecretsResponse.Result["+ i +"].Secrets.Length"); j++) {
 				SecretsItem secretsItem = new SecretsItem();
-				secretsItem.setName(_ctx.stringValue("ListK8sSecretsResponse.Result["+ i +"].Secrets["+ j +"].Name"));
-				secretsItem.setNamespace(_ctx.stringValue("ListK8sSecretsResponse.Result["+ i +"].Secrets["+ j +"].Namespace"));
-				secretsItem.setCreationTime(_ctx.stringValue("ListK8sSecretsResponse.Result["+ i +"].Secrets["+ j +"].CreationTime"));
 				secretsItem.setType(_ctx.stringValue("ListK8sSecretsResponse.Result["+ i +"].Secrets["+ j +"].Type"));
-				secretsItem.setClusterId(_ctx.stringValue("ListK8sSecretsResponse.Result["+ i +"].Secrets["+ j +"].ClusterId"));
+				secretsItem.setCreationTime(_ctx.stringValue("ListK8sSecretsResponse.Result["+ i +"].Secrets["+ j +"].CreationTime"));
 				secretsItem.setClusterName(_ctx.stringValue("ListK8sSecretsResponse.Result["+ i +"].Secrets["+ j +"].ClusterName"));
-				secretsItem.setCertId(_ctx.stringValue("ListK8sSecretsResponse.Result["+ i +"].Secrets["+ j +"].CertId"));
+				secretsItem.setNamespace(_ctx.stringValue("ListK8sSecretsResponse.Result["+ i +"].Secrets["+ j +"].Namespace"));
+				secretsItem.setBase64Encoded(_ctx.booleanValue("ListK8sSecretsResponse.Result["+ i +"].Secrets["+ j +"].Base64Encoded"));
 				secretsItem.setCertRegionId(_ctx.stringValue("ListK8sSecretsResponse.Result["+ i +"].Secrets["+ j +"].CertRegionId"));
+				secretsItem.setCertId(_ctx.stringValue("ListK8sSecretsResponse.Result["+ i +"].Secrets["+ j +"].CertId"));
+				secretsItem.setName(_ctx.stringValue("ListK8sSecretsResponse.Result["+ i +"].Secrets["+ j +"].Name"));
+				secretsItem.setClusterId(_ctx.stringValue("ListK8sSecretsResponse.Result["+ i +"].Secrets["+ j +"].ClusterId"));
+
+				CertDetail certDetail = new CertDetail();
+				certDetail.setEndTime(_ctx.stringValue("ListK8sSecretsResponse.Result["+ i +"].Secrets["+ j +"].CertDetail.EndTime"));
+				certDetail.setStatus(_ctx.stringValue("ListK8sSecretsResponse.Result["+ i +"].Secrets["+ j +"].CertDetail.Status"));
+				certDetail.setStartTime(_ctx.stringValue("ListK8sSecretsResponse.Result["+ i +"].Secrets["+ j +"].CertDetail.StartTime"));
+				certDetail.setIssuer(_ctx.stringValue("ListK8sSecretsResponse.Result["+ i +"].Secrets["+ j +"].CertDetail.Issuer"));
+
+				List<String> domainNames = new ArrayList<String>();
+				for (int k = 0; k < _ctx.lengthValue("ListK8sSecretsResponse.Result["+ i +"].Secrets["+ j +"].CertDetail.DomainNames.Length"); k++) {
+					domainNames.add(_ctx.stringValue("ListK8sSecretsResponse.Result["+ i +"].Secrets["+ j +"].CertDetail.DomainNames["+ k +"]"));
+				}
+				certDetail.setDomainNames(domainNames);
+				secretsItem.setCertDetail(certDetail);
+
+				List<RelatedIngressRulesItem> relatedIngressRules = new ArrayList<RelatedIngressRulesItem>();
+				for (int k = 0; k < _ctx.lengthValue("ListK8sSecretsResponse.Result["+ i +"].Secrets["+ j +"].RelatedIngressRules.Length"); k++) {
+					RelatedIngressRulesItem relatedIngressRulesItem = new RelatedIngressRulesItem();
+					relatedIngressRulesItem.setName(_ctx.stringValue("ListK8sSecretsResponse.Result["+ i +"].Secrets["+ j +"].RelatedIngressRules["+ k +"].Name"));
+					relatedIngressRulesItem.setNamespace(_ctx.stringValue("ListK8sSecretsResponse.Result["+ i +"].Secrets["+ j +"].RelatedIngressRules["+ k +"].Namespace"));
+
+					List<RelatedAppsItem> relatedApps1 = new ArrayList<RelatedAppsItem>();
+					for (int l = 0; l < _ctx.lengthValue("ListK8sSecretsResponse.Result["+ i +"].Secrets["+ j +"].RelatedIngressRules["+ k +"].RelatedApps.Length"); l++) {
+						RelatedAppsItem relatedAppsItem = new RelatedAppsItem();
+						relatedAppsItem.setAppName(_ctx.stringValue("ListK8sSecretsResponse.Result["+ i +"].Secrets["+ j +"].RelatedIngressRules["+ k +"].RelatedApps["+ l +"].AppName"));
+						relatedAppsItem.setAppId(_ctx.stringValue("ListK8sSecretsResponse.Result["+ i +"].Secrets["+ j +"].RelatedIngressRules["+ k +"].RelatedApps["+ l +"].AppId"));
+
+						relatedApps1.add(relatedAppsItem);
+					}
+					relatedIngressRulesItem.setRelatedApps1(relatedApps1);
+
+					relatedIngressRules.add(relatedIngressRulesItem);
+				}
+				secretsItem.setRelatedIngressRules(relatedIngressRules);
 
 				List<DataItem> data = new ArrayList<DataItem>();
 				for (int k = 0; k < _ctx.lengthValue("ListK8sSecretsResponse.Result["+ i +"].Secrets["+ j +"].Data.Length"); k++) {
@@ -60,13 +97,13 @@ public class ListK8sSecretsResponseUnmarshaller {
 				}
 				secretsItem.setData(data);
 
-				List<RelatedAppsItem> relatedApps = new ArrayList<RelatedAppsItem>();
+				List<RelatedAppsItem2> relatedApps = new ArrayList<RelatedAppsItem2>();
 				for (int k = 0; k < _ctx.lengthValue("ListK8sSecretsResponse.Result["+ i +"].Secrets["+ j +"].RelatedApps.Length"); k++) {
-					RelatedAppsItem relatedAppsItem = new RelatedAppsItem();
-					relatedAppsItem.setAppName(_ctx.stringValue("ListK8sSecretsResponse.Result["+ i +"].Secrets["+ j +"].RelatedApps["+ k +"].AppName"));
-					relatedAppsItem.setAppId(_ctx.stringValue("ListK8sSecretsResponse.Result["+ i +"].Secrets["+ j +"].RelatedApps["+ k +"].AppId"));
+					RelatedAppsItem2 relatedAppsItem2 = new RelatedAppsItem2();
+					relatedAppsItem2.setAppName(_ctx.stringValue("ListK8sSecretsResponse.Result["+ i +"].Secrets["+ j +"].RelatedApps["+ k +"].AppName"));
+					relatedAppsItem2.setAppId(_ctx.stringValue("ListK8sSecretsResponse.Result["+ i +"].Secrets["+ j +"].RelatedApps["+ k +"].AppId"));
 
-					relatedApps.add(relatedAppsItem);
+					relatedApps.add(relatedAppsItem2);
 				}
 				secretsItem.setRelatedApps(relatedApps);
 

@@ -37,32 +37,33 @@ public class ListK8sIngressRulesResponseUnmarshaller {
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListK8sIngressRulesResponse.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
-			dataItem.setClusterId(_ctx.stringValue("ListK8sIngressRulesResponse.Data["+ i +"].ClusterId"));
 			dataItem.setClusterName(_ctx.stringValue("ListK8sIngressRulesResponse.Data["+ i +"].ClusterName"));
+			dataItem.setClusterId(_ctx.stringValue("ListK8sIngressRulesResponse.Data["+ i +"].ClusterId"));
 			dataItem.setRegionId(_ctx.stringValue("ListK8sIngressRulesResponse.Data["+ i +"].RegionId"));
 
 			List<IngressConfsItem> ingressConfs = new ArrayList<IngressConfsItem>();
 			for (int j = 0; j < _ctx.lengthValue("ListK8sIngressRulesResponse.Data["+ i +"].IngressConfs.Length"); j++) {
 				IngressConfsItem ingressConfsItem = new IngressConfsItem();
-				ingressConfsItem.setName(_ctx.stringValue("ListK8sIngressRulesResponse.Data["+ i +"].IngressConfs["+ j +"].Name"));
-				ingressConfsItem.setNamespace(_ctx.stringValue("ListK8sIngressRulesResponse.Data["+ i +"].IngressConfs["+ j +"].Namespace"));
-				ingressConfsItem.setEndpoint(_ctx.stringValue("ListK8sIngressRulesResponse.Data["+ i +"].IngressConfs["+ j +"].Endpoint"));
 				ingressConfsItem.setCreationTime(_ctx.stringValue("ListK8sIngressRulesResponse.Data["+ i +"].IngressConfs["+ j +"].CreationTime"));
+				ingressConfsItem.setSslRedirect(_ctx.booleanValue("ListK8sIngressRulesResponse.Data["+ i +"].IngressConfs["+ j +"].SslRedirect"));
+				ingressConfsItem.setEndpoint(_ctx.stringValue("ListK8sIngressRulesResponse.Data["+ i +"].IngressConfs["+ j +"].Endpoint"));
+				ingressConfsItem.setNamespace(_ctx.stringValue("ListK8sIngressRulesResponse.Data["+ i +"].IngressConfs["+ j +"].Namespace"));
+				ingressConfsItem.setName(_ctx.stringValue("ListK8sIngressRulesResponse.Data["+ i +"].IngressConfs["+ j +"].Name"));
 				ingressConfsItem.setDashboardUrl(_ctx.stringValue("ListK8sIngressRulesResponse.Data["+ i +"].IngressConfs["+ j +"].DashboardUrl"));
 
 				List<RulesItem> rules = new ArrayList<RulesItem>();
 				for (int k = 0; k < _ctx.lengthValue("ListK8sIngressRulesResponse.Data["+ i +"].IngressConfs["+ j +"].Rules.Length"); k++) {
 					RulesItem rulesItem = new RulesItem();
-					rulesItem.setHost(_ctx.stringValue("ListK8sIngressRulesResponse.Data["+ i +"].IngressConfs["+ j +"].Rules["+ k +"].Host"));
 					rulesItem.setSecretName(_ctx.stringValue("ListK8sIngressRulesResponse.Data["+ i +"].IngressConfs["+ j +"].Rules["+ k +"].SecretName"));
+					rulesItem.setHost(_ctx.stringValue("ListK8sIngressRulesResponse.Data["+ i +"].IngressConfs["+ j +"].Rules["+ k +"].Host"));
 
 					List<PathsItem> paths = new ArrayList<PathsItem>();
 					for (int l = 0; l < _ctx.lengthValue("ListK8sIngressRulesResponse.Data["+ i +"].IngressConfs["+ j +"].Rules["+ k +"].Paths.Length"); l++) {
 						PathsItem pathsItem = new PathsItem();
-						pathsItem.setPath(_ctx.stringValue("ListK8sIngressRulesResponse.Data["+ i +"].IngressConfs["+ j +"].Rules["+ k +"].Paths["+ l +"].Path"));
-						pathsItem.setAppId(_ctx.stringValue("ListK8sIngressRulesResponse.Data["+ i +"].IngressConfs["+ j +"].Rules["+ k +"].Paths["+ l +"].AppId"));
-						pathsItem.setAppName(_ctx.stringValue("ListK8sIngressRulesResponse.Data["+ i +"].IngressConfs["+ j +"].Rules["+ k +"].Paths["+ l +"].AppName"));
 						pathsItem.setStatus(_ctx.stringValue("ListK8sIngressRulesResponse.Data["+ i +"].IngressConfs["+ j +"].Rules["+ k +"].Paths["+ l +"].Status"));
+						pathsItem.setPath(_ctx.stringValue("ListK8sIngressRulesResponse.Data["+ i +"].IngressConfs["+ j +"].Rules["+ k +"].Paths["+ l +"].Path"));
+						pathsItem.setAppName(_ctx.stringValue("ListK8sIngressRulesResponse.Data["+ i +"].IngressConfs["+ j +"].Rules["+ k +"].Paths["+ l +"].AppName"));
+						pathsItem.setAppId(_ctx.stringValue("ListK8sIngressRulesResponse.Data["+ i +"].IngressConfs["+ j +"].Rules["+ k +"].Paths["+ l +"].AppId"));
 
 						Backend backend = new Backend();
 						backend.setServiceName(_ctx.stringValue("ListK8sIngressRulesResponse.Data["+ i +"].IngressConfs["+ j +"].Rules["+ k +"].Paths["+ l +"].Backend.ServiceName"));
