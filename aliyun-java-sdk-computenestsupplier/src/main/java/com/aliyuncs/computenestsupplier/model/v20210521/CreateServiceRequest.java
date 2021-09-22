@@ -42,6 +42,8 @@ public class CreateServiceRequest extends RpcAcsRequest<CreateServiceResponse> {
 
 	private Boolean isSupportOperated;
 
+	private List<RequestTags> requestTagss;
+
 	private List<ServiceInfo> serviceInfos;
 
 	private String serviceId;
@@ -144,6 +146,20 @@ public class CreateServiceRequest extends RpcAcsRequest<CreateServiceResponse> {
 		}
 	}
 
+	public List<RequestTags> getRequestTagss() {
+		return this.requestTagss;
+	}
+
+	public void setRequestTagss(List<RequestTags> requestTagss) {
+		this.requestTagss = requestTagss;	
+		if (requestTagss != null) {
+			for (int depth1 = 0; depth1 < requestTagss.size(); depth1++) {
+				putQueryParameter("RequestTags." + (depth1 + 1) + ".Value" , requestTagss.get(depth1).getValue());
+				putQueryParameter("RequestTags." + (depth1 + 1) + ".Key" , requestTagss.get(depth1).getKey());
+			}
+		}	
+	}
+
 	public List<ServiceInfo> getServiceInfos() {
 		return this.serviceInfos;
 	}
@@ -179,6 +195,29 @@ public class CreateServiceRequest extends RpcAcsRequest<CreateServiceResponse> {
 		this.deployType = deployType;
 		if(deployType != null){
 			putQueryParameter("DeployType", deployType);
+		}
+	}
+
+	public static class RequestTags {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 
