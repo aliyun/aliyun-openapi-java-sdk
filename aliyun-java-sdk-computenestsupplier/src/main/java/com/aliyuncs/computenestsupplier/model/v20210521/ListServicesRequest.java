@@ -30,9 +30,9 @@ public class ListServicesRequest extends RpcAcsRequest<ListServicesResponse> {
 
 	private String nextToken;
 
-	private List<Filter> filters;
+	private List<RequestTag> requestTags;
 
-	private List<RequestTags> requestTagss;
+	private List<Filter> filters;
 
 	private String maxResults;
 	public ListServicesRequest() {
@@ -66,6 +66,20 @@ public class ListServicesRequest extends RpcAcsRequest<ListServicesResponse> {
 		}
 	}
 
+	public List<RequestTag> getRequestTags() {
+		return this.requestTags;
+	}
+
+	public void setRequestTags(List<RequestTag> requestTags) {
+		this.requestTags = requestTags;	
+		if (requestTags != null) {
+			for (int depth1 = 0; depth1 < requestTags.size(); depth1++) {
+				putQueryParameter("RequestTag." + (depth1 + 1) + ".Value" , requestTags.get(depth1).getValue());
+				putQueryParameter("RequestTag." + (depth1 + 1) + ".Key" , requestTags.get(depth1).getKey());
+			}
+		}	
+	}
+
 	public List<Filter> getFilters() {
 		return this.filters;
 	}
@@ -84,20 +98,6 @@ public class ListServicesRequest extends RpcAcsRequest<ListServicesResponse> {
 		}	
 	}
 
-	public List<RequestTags> getRequestTagss() {
-		return this.requestTagss;
-	}
-
-	public void setRequestTagss(List<RequestTags> requestTagss) {
-		this.requestTagss = requestTagss;	
-		if (requestTagss != null) {
-			for (int depth1 = 0; depth1 < requestTagss.size(); depth1++) {
-				putQueryParameter("RequestTags." + (depth1 + 1) + ".Value" , requestTagss.get(depth1).getValue());
-				putQueryParameter("RequestTags." + (depth1 + 1) + ".Key" , requestTagss.get(depth1).getKey());
-			}
-		}	
-	}
-
 	public String getMaxResults() {
 		return this.maxResults;
 	}
@@ -106,6 +106,29 @@ public class ListServicesRequest extends RpcAcsRequest<ListServicesResponse> {
 		this.maxResults = maxResults;
 		if(maxResults != null){
 			putQueryParameter("MaxResults", maxResults);
+		}
+	}
+
+	public static class RequestTag {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 
@@ -129,29 +152,6 @@ public class ListServicesRequest extends RpcAcsRequest<ListServicesResponse> {
 
 		public void setValues(List<String> values) {
 			this.values = values;
-		}
-	}
-
-	public static class RequestTags {
-
-		private String value;
-
-		private String key;
-
-		public String getValue() {
-			return this.value;
-		}
-
-		public void setValue(String value) {
-			this.value = value;
-		}
-
-		public String getKey() {
-			return this.key;
-		}
-
-		public void setKey(String key) {
-			this.key = key;
 		}
 	}
 
