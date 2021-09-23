@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.polardb.model.v20170801.DescribeGlobalDatabaseNetworkResponse;
 import com.aliyuncs.polardb.model.v20170801.DescribeGlobalDatabaseNetworkResponse.Connection;
 import com.aliyuncs.polardb.model.v20170801.DescribeGlobalDatabaseNetworkResponse.DBCluster;
+import com.aliyuncs.polardb.model.v20170801.DescribeGlobalDatabaseNetworkResponse.DBCluster.DBNode;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -62,6 +63,23 @@ public class DescribeGlobalDatabaseNetworkResponseUnmarshaller {
 			dBCluster.setStorageUsed(_ctx.stringValue("DescribeGlobalDatabaseNetworkResponse.DBClusters["+ i +"].StorageUsed"));
 			dBCluster.setDBClusterDescription(_ctx.stringValue("DescribeGlobalDatabaseNetworkResponse.DBClusters["+ i +"].DBClusterDescription"));
 			dBCluster.setRole(_ctx.stringValue("DescribeGlobalDatabaseNetworkResponse.DBClusters["+ i +"].Role"));
+
+			List<DBNode> dBNodes = new ArrayList<DBNode>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeGlobalDatabaseNetworkResponse.DBClusters["+ i +"].DBNodes.Length"); j++) {
+				DBNode dBNode = new DBNode();
+				dBNode.setDBNodeClass(_ctx.stringValue("DescribeGlobalDatabaseNetworkResponse.DBClusters["+ i +"].DBNodes["+ j +"].DBNodeClass"));
+				dBNode.setZoneId(_ctx.stringValue("DescribeGlobalDatabaseNetworkResponse.DBClusters["+ i +"].DBNodes["+ j +"].ZoneId"));
+				dBNode.setCreationTime(_ctx.stringValue("DescribeGlobalDatabaseNetworkResponse.DBClusters["+ i +"].DBNodes["+ j +"].CreationTime"));
+				dBNode.setDBNodeRole(_ctx.stringValue("DescribeGlobalDatabaseNetworkResponse.DBClusters["+ i +"].DBNodes["+ j +"].DBNodeRole"));
+				dBNode.setDBNodeStatus(_ctx.stringValue("DescribeGlobalDatabaseNetworkResponse.DBClusters["+ i +"].DBNodes["+ j +"].DBNodeStatus"));
+				dBNode.setFailoverPriority(_ctx.integerValue("DescribeGlobalDatabaseNetworkResponse.DBClusters["+ i +"].DBNodes["+ j +"].FailoverPriority"));
+				dBNode.setMaxConnections(_ctx.integerValue("DescribeGlobalDatabaseNetworkResponse.DBClusters["+ i +"].DBNodes["+ j +"].MaxConnections"));
+				dBNode.setMaxIOPS(_ctx.integerValue("DescribeGlobalDatabaseNetworkResponse.DBClusters["+ i +"].DBNodes["+ j +"].MaxIOPS"));
+				dBNode.setDBNodeId(_ctx.stringValue("DescribeGlobalDatabaseNetworkResponse.DBClusters["+ i +"].DBNodes["+ j +"].DBNodeId"));
+
+				dBNodes.add(dBNode);
+			}
+			dBCluster.setDBNodes(dBNodes);
 
 			dBClusters.add(dBCluster);
 		}

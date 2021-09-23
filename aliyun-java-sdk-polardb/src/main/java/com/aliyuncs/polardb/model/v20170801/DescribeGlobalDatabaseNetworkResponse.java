@@ -176,6 +176,8 @@ public class DescribeGlobalDatabaseNetworkResponse extends AcsResponse {
 
 		private String role;
 
+		private List<DBNode> dBNodes;
+
 		public String getReplicaLag() {
 			return this.replicaLag;
 		}
@@ -278,6 +280,107 @@ public class DescribeGlobalDatabaseNetworkResponse extends AcsResponse {
 
 		public void setRole(String role) {
 			this.role = role;
+		}
+
+		public List<DBNode> getDBNodes() {
+			return this.dBNodes;
+		}
+
+		public void setDBNodes(List<DBNode> dBNodes) {
+			this.dBNodes = dBNodes;
+		}
+
+		public static class DBNode {
+
+			private String dBNodeClass;
+
+			private String zoneId;
+
+			private String creationTime;
+
+			private String dBNodeRole;
+
+			private String dBNodeStatus;
+
+			private Integer failoverPriority;
+
+			private Integer maxConnections;
+
+			private Integer maxIOPS;
+
+			private String dBNodeId;
+
+			public String getDBNodeClass() {
+				return this.dBNodeClass;
+			}
+
+			public void setDBNodeClass(String dBNodeClass) {
+				this.dBNodeClass = dBNodeClass;
+			}
+
+			public String getZoneId() {
+				return this.zoneId;
+			}
+
+			public void setZoneId(String zoneId) {
+				this.zoneId = zoneId;
+			}
+
+			public String getCreationTime() {
+				return this.creationTime;
+			}
+
+			public void setCreationTime(String creationTime) {
+				this.creationTime = creationTime;
+			}
+
+			public String getDBNodeRole() {
+				return this.dBNodeRole;
+			}
+
+			public void setDBNodeRole(String dBNodeRole) {
+				this.dBNodeRole = dBNodeRole;
+			}
+
+			public String getDBNodeStatus() {
+				return this.dBNodeStatus;
+			}
+
+			public void setDBNodeStatus(String dBNodeStatus) {
+				this.dBNodeStatus = dBNodeStatus;
+			}
+
+			public Integer getFailoverPriority() {
+				return this.failoverPriority;
+			}
+
+			public void setFailoverPriority(Integer failoverPriority) {
+				this.failoverPriority = failoverPriority;
+			}
+
+			public Integer getMaxConnections() {
+				return this.maxConnections;
+			}
+
+			public void setMaxConnections(Integer maxConnections) {
+				this.maxConnections = maxConnections;
+			}
+
+			public Integer getMaxIOPS() {
+				return this.maxIOPS;
+			}
+
+			public void setMaxIOPS(Integer maxIOPS) {
+				this.maxIOPS = maxIOPS;
+			}
+
+			public String getDBNodeId() {
+				return this.dBNodeId;
+			}
+
+			public void setDBNodeId(String dBNodeId) {
+				this.dBNodeId = dBNodeId;
+			}
 		}
 	}
 

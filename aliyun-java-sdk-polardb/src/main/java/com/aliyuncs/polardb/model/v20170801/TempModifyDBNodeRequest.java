@@ -15,6 +15,7 @@
 package com.aliyuncs.polardb.model.v20170801;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.polardb.Endpoint;
 
@@ -22,32 +23,30 @@ import com.aliyuncs.polardb.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeScheduleTasksRequest extends RpcAcsRequest<DescribeScheduleTasksResponse> {
+public class TempModifyDBNodeRequest extends RpcAcsRequest<TempModifyDBNodeResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String dBClusterDescription;
+	private String clientToken;
 
-	private Integer pageNumber;
-
-	private Integer pageSize;
+	private String restoreTime;
 
 	private String resourceOwnerAccount;
-
-	private String orderId;
 
 	private String dBClusterId;
 
 	private String ownerAccount;
 
+	private String operationType;
+
 	private Long ownerId;
 
-	private String taskAction;
+	private String modifyType;
 
-	private String status;
-	public DescribeScheduleTasksRequest() {
-		super("polardb", "2017-08-01", "DescribeScheduleTasks", "polardb");
+	private List<DBNode> dBNodes;
+	public TempModifyDBNodeRequest() {
+		super("polardb", "2017-08-01", "TempModifyDBNode", "polardb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -66,36 +65,25 @@ public class DescribeScheduleTasksRequest extends RpcAcsRequest<DescribeSchedule
 		}
 	}
 
-	public String getDBClusterDescription() {
-		return this.dBClusterDescription;
+	public String getClientToken() {
+		return this.clientToken;
 	}
 
-	public void setDBClusterDescription(String dBClusterDescription) {
-		this.dBClusterDescription = dBClusterDescription;
-		if(dBClusterDescription != null){
-			putQueryParameter("DBClusterDescription", dBClusterDescription);
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public String getRestoreTime() {
+		return this.restoreTime;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
+	public void setRestoreTime(String restoreTime) {
+		this.restoreTime = restoreTime;
+		if(restoreTime != null){
+			putQueryParameter("RestoreTime", restoreTime);
 		}
 	}
 
@@ -107,17 +95,6 @@ public class DescribeScheduleTasksRequest extends RpcAcsRequest<DescribeSchedule
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getOrderId() {
-		return this.orderId;
-	}
-
-	public void setOrderId(String orderId) {
-		this.orderId = orderId;
-		if(orderId != null){
-			putQueryParameter("OrderId", orderId);
 		}
 	}
 
@@ -143,6 +120,17 @@ public class DescribeScheduleTasksRequest extends RpcAcsRequest<DescribeSchedule
 		}
 	}
 
+	public String getOperationType() {
+		return this.operationType;
+	}
+
+	public void setOperationType(String operationType) {
+		this.operationType = operationType;
+		if(operationType != null){
+			putQueryParameter("OperationType", operationType);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -154,31 +142,57 @@ public class DescribeScheduleTasksRequest extends RpcAcsRequest<DescribeSchedule
 		}
 	}
 
-	public String getTaskAction() {
-		return this.taskAction;
+	public String getModifyType() {
+		return this.modifyType;
 	}
 
-	public void setTaskAction(String taskAction) {
-		this.taskAction = taskAction;
-		if(taskAction != null){
-			putQueryParameter("TaskAction", taskAction);
+	public void setModifyType(String modifyType) {
+		this.modifyType = modifyType;
+		if(modifyType != null){
+			putQueryParameter("ModifyType", modifyType);
 		}
 	}
 
-	public String getStatus() {
-		return this.status;
+	public List<DBNode> getDBNodes() {
+		return this.dBNodes;
 	}
 
-	public void setStatus(String status) {
-		this.status = status;
-		if(status != null){
-			putQueryParameter("Status", status);
+	public void setDBNodes(List<DBNode> dBNodes) {
+		this.dBNodes = dBNodes;	
+		if (dBNodes != null) {
+			for (int depth1 = 0; depth1 < dBNodes.size(); depth1++) {
+				putQueryParameter("DBNode." + (depth1 + 1) + ".TargetClass" , dBNodes.get(depth1).getTargetClass());
+				putQueryParameter("DBNode." + (depth1 + 1) + ".ZoneId" , dBNodes.get(depth1).getZoneId());
+			}
+		}	
+	}
+
+	public static class DBNode {
+
+		private String targetClass;
+
+		private String zoneId;
+
+		public String getTargetClass() {
+			return this.targetClass;
+		}
+
+		public void setTargetClass(String targetClass) {
+			this.targetClass = targetClass;
+		}
+
+		public String getZoneId() {
+			return this.zoneId;
+		}
+
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
 		}
 	}
 
 	@Override
-	public Class<DescribeScheduleTasksResponse> getResponseClass() {
-		return DescribeScheduleTasksResponse.class;
+	public Class<TempModifyDBNodeResponse> getResponseClass() {
+		return TempModifyDBNodeResponse.class;
 	}
 
 }

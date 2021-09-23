@@ -117,6 +117,8 @@ public class DescribeDBClustersResponse extends AcsResponse {
 
 		private String engine;
 
+		private String category;
+
 		private List<Tag> tags;
 
 		private List<DBNode> dBNodes;
@@ -279,6 +281,14 @@ public class DescribeDBClustersResponse extends AcsResponse {
 
 		public void setEngine(String engine) {
 			this.engine = engine;
+		}
+
+		public String getCategory() {
+			return this.category;
+		}
+
+		public void setCategory(String category) {
+			this.category = category;
 		}
 
 		public List<Tag> getTags() {

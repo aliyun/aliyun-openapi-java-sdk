@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeScheduleTasksResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String message;
 
 	private String code;
 
 	private Boolean success;
 
+	private String requestId;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getMessage() {
 		return this.message;
@@ -67,6 +59,14 @@ public class DescribeScheduleTasksResponse extends AcsResponse {
 		this.success = success;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -79,9 +79,9 @@ public class DescribeScheduleTasksResponse extends AcsResponse {
 
 		private Integer totalRecordCount;
 
-		private Integer pageSize;
-
 		private Integer pageNumber;
+
+		private Integer pageSize;
 
 		private List<TimerInfosItem> timerInfos;
 
@@ -93,20 +93,20 @@ public class DescribeScheduleTasksResponse extends AcsResponse {
 			this.totalRecordCount = totalRecordCount;
 		}
 
-		public Integer getPageSize() {
-			return this.pageSize;
-		}
-
-		public void setPageSize(Integer pageSize) {
-			this.pageSize = pageSize;
-		}
-
 		public Integer getPageNumber() {
 			return this.pageNumber;
 		}
 
 		public void setPageNumber(Integer pageNumber) {
 			this.pageNumber = pageNumber;
+		}
+
+		public Integer getPageSize() {
+			return this.pageSize;
+		}
+
+		public void setPageSize(Integer pageSize) {
+			this.pageSize = pageSize;
 		}
 
 		public List<TimerInfosItem> getTimerInfos() {
@@ -123,23 +123,23 @@ public class DescribeScheduleTasksResponse extends AcsResponse {
 
 			private String action;
 
-			private String taskId;
+			private String plannedEndTime;
 
 			private String plannedTime;
-
-			private String dbClusterDescription;
-
-			private String plannedStartTime;
 
 			private String dBClusterId;
 
 			private String region;
 
+			private String plannedStartTime;
+
+			private String taskId;
+
 			private String orderId;
 
-			private String plannedEndTime;
-
 			private String dbClusterStatus;
+
+			private String dbClusterDescription;
 
 			public String getStatus() {
 				return this.status;
@@ -157,12 +157,12 @@ public class DescribeScheduleTasksResponse extends AcsResponse {
 				this.action = action;
 			}
 
-			public String getTaskId() {
-				return this.taskId;
+			public String getPlannedEndTime() {
+				return this.plannedEndTime;
 			}
 
-			public void setTaskId(String taskId) {
-				this.taskId = taskId;
+			public void setPlannedEndTime(String plannedEndTime) {
+				this.plannedEndTime = plannedEndTime;
 			}
 
 			public String getPlannedTime() {
@@ -171,22 +171,6 @@ public class DescribeScheduleTasksResponse extends AcsResponse {
 
 			public void setPlannedTime(String plannedTime) {
 				this.plannedTime = plannedTime;
-			}
-
-			public String getDbClusterDescription() {
-				return this.dbClusterDescription;
-			}
-
-			public void setDbClusterDescription(String dbClusterDescription) {
-				this.dbClusterDescription = dbClusterDescription;
-			}
-
-			public String getPlannedStartTime() {
-				return this.plannedStartTime;
-			}
-
-			public void setPlannedStartTime(String plannedStartTime) {
-				this.plannedStartTime = plannedStartTime;
 			}
 
 			public String getDBClusterId() {
@@ -205,6 +189,22 @@ public class DescribeScheduleTasksResponse extends AcsResponse {
 				this.region = region;
 			}
 
+			public String getPlannedStartTime() {
+				return this.plannedStartTime;
+			}
+
+			public void setPlannedStartTime(String plannedStartTime) {
+				this.plannedStartTime = plannedStartTime;
+			}
+
+			public String getTaskId() {
+				return this.taskId;
+			}
+
+			public void setTaskId(String taskId) {
+				this.taskId = taskId;
+			}
+
 			public String getOrderId() {
 				return this.orderId;
 			}
@@ -213,20 +213,20 @@ public class DescribeScheduleTasksResponse extends AcsResponse {
 				this.orderId = orderId;
 			}
 
-			public String getPlannedEndTime() {
-				return this.plannedEndTime;
-			}
-
-			public void setPlannedEndTime(String plannedEndTime) {
-				this.plannedEndTime = plannedEndTime;
-			}
-
 			public String getDbClusterStatus() {
 				return this.dbClusterStatus;
 			}
 
 			public void setDbClusterStatus(String dbClusterStatus) {
 				this.dbClusterStatus = dbClusterStatus;
+			}
+
+			public String getDbClusterDescription() {
+				return this.dbClusterDescription;
+			}
+
+			public void setDbClusterDescription(String dbClusterDescription) {
+				this.dbClusterDescription = dbClusterDescription;
 			}
 		}
 	}

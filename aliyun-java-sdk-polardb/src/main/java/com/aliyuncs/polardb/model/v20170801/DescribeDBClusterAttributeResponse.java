@@ -35,15 +35,15 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 
 	private String dBClusterId;
 
-	private String dBClusterNetworkType;
-
 	private String dBType;
+
+	private String dBClusterNetworkType;
 
 	private Boolean isLatestVersion;
 
-	private String dBVersion;
-
 	private Long storageMax;
+
+	private String dBVersion;
 
 	private String zoneIds;
 
@@ -63,23 +63,25 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 
 	private String expired;
 
-	private String lockMode;
-
 	private String payType;
+
+	private String lockMode;
 
 	private Long storageUsed;
 
 	private String dBVersionStatus;
 
-	private String subCategory;
-
 	private String creationTime;
-
-	private String regionId;
 
 	private Long sQLSize;
 
+	private String regionId;
+
 	private String expireTime;
+
+	private String subCategory;
+
+	private Boolean isProxyLatestVersion;
 
 	private List<DBNode> dBNodes;
 
@@ -125,20 +127,20 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 		this.dBClusterId = dBClusterId;
 	}
 
-	public String getDBClusterNetworkType() {
-		return this.dBClusterNetworkType;
-	}
-
-	public void setDBClusterNetworkType(String dBClusterNetworkType) {
-		this.dBClusterNetworkType = dBClusterNetworkType;
-	}
-
 	public String getDBType() {
 		return this.dBType;
 	}
 
 	public void setDBType(String dBType) {
 		this.dBType = dBType;
+	}
+
+	public String getDBClusterNetworkType() {
+		return this.dBClusterNetworkType;
+	}
+
+	public void setDBClusterNetworkType(String dBClusterNetworkType) {
+		this.dBClusterNetworkType = dBClusterNetworkType;
 	}
 
 	public Boolean getIsLatestVersion() {
@@ -149,20 +151,20 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 		this.isLatestVersion = isLatestVersion;
 	}
 
-	public String getDBVersion() {
-		return this.dBVersion;
-	}
-
-	public void setDBVersion(String dBVersion) {
-		this.dBVersion = dBVersion;
-	}
-
 	public Long getStorageMax() {
 		return this.storageMax;
 	}
 
 	public void setStorageMax(Long storageMax) {
 		this.storageMax = storageMax;
+	}
+
+	public String getDBVersion() {
+		return this.dBVersion;
+	}
+
+	public void setDBVersion(String dBVersion) {
+		this.dBVersion = dBVersion;
 	}
 
 	public String getZoneIds() {
@@ -237,20 +239,20 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 		this.expired = expired;
 	}
 
-	public String getLockMode() {
-		return this.lockMode;
-	}
-
-	public void setLockMode(String lockMode) {
-		this.lockMode = lockMode;
-	}
-
 	public String getPayType() {
 		return this.payType;
 	}
 
 	public void setPayType(String payType) {
 		this.payType = payType;
+	}
+
+	public String getLockMode() {
+		return this.lockMode;
+	}
+
+	public void setLockMode(String lockMode) {
+		this.lockMode = lockMode;
 	}
 
 	public Long getStorageUsed() {
@@ -269,28 +271,12 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 		this.dBVersionStatus = dBVersionStatus;
 	}
 
-	public String getSubCategory() {
-		return this.subCategory;
-	}
-
-	public void setSubCategory(String subCategory) {
-		this.subCategory = subCategory;
-	}
-
 	public String getCreationTime() {
 		return this.creationTime;
 	}
 
 	public void setCreationTime(String creationTime) {
 		this.creationTime = creationTime;
-	}
-
-	public String getRegionId() {
-		return this.regionId;
-	}
-
-	public void setRegionId(String regionId) {
-		this.regionId = regionId;
 	}
 
 	public Long getSQLSize() {
@@ -301,12 +287,36 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 		this.sQLSize = sQLSize;
 	}
 
+	public String getRegionId() {
+		return this.regionId;
+	}
+
+	public void setRegionId(String regionId) {
+		this.regionId = regionId;
+	}
+
 	public String getExpireTime() {
 		return this.expireTime;
 	}
 
 	public void setExpireTime(String expireTime) {
 		this.expireTime = expireTime;
+	}
+
+	public String getSubCategory() {
+		return this.subCategory;
+	}
+
+	public void setSubCategory(String subCategory) {
+		this.subCategory = subCategory;
+	}
+
+	public Boolean getIsProxyLatestVersion() {
+		return this.isProxyLatestVersion;
+	}
+
+	public void setIsProxyLatestVersion(Boolean isProxyLatestVersion) {
+		this.isProxyLatestVersion = isProxyLatestVersion;
 	}
 
 	public List<DBNode> getDBNodes() {
@@ -327,55 +337,23 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 
 	public static class DBNode {
 
-		private String dBNodeStatus;
-
-		private Integer maxConnections;
-
-		private String zoneId;
-
-		private String dBNodeRole;
-
 		private String creationTime;
-
-		private String dBNodeId;
 
 		private Integer failoverPriority;
 
-		private String dBNodeClass;
-
 		private Integer maxIOPS;
 
-		public String getDBNodeStatus() {
-			return this.dBNodeStatus;
-		}
+		private String dBNodeClass;
 
-		public void setDBNodeStatus(String dBNodeStatus) {
-			this.dBNodeStatus = dBNodeStatus;
-		}
+		private String dBNodeRole;
 
-		public Integer getMaxConnections() {
-			return this.maxConnections;
-		}
+		private String zoneId;
 
-		public void setMaxConnections(Integer maxConnections) {
-			this.maxConnections = maxConnections;
-		}
+		private Integer maxConnections;
 
-		public String getZoneId() {
-			return this.zoneId;
-		}
+		private String dBNodeStatus;
 
-		public void setZoneId(String zoneId) {
-			this.zoneId = zoneId;
-		}
-
-		public String getDBNodeRole() {
-			return this.dBNodeRole;
-		}
-
-		public void setDBNodeRole(String dBNodeRole) {
-			this.dBNodeRole = dBNodeRole;
-		}
+		private String dBNodeId;
 
 		public String getCreationTime() {
 			return this.creationTime;
@@ -383,14 +361,6 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 
 		public void setCreationTime(String creationTime) {
 			this.creationTime = creationTime;
-		}
-
-		public String getDBNodeId() {
-			return this.dBNodeId;
-		}
-
-		public void setDBNodeId(String dBNodeId) {
-			this.dBNodeId = dBNodeId;
 		}
 
 		public Integer getFailoverPriority() {
@@ -401,6 +371,14 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 			this.failoverPriority = failoverPriority;
 		}
 
+		public Integer getMaxIOPS() {
+			return this.maxIOPS;
+		}
+
+		public void setMaxIOPS(Integer maxIOPS) {
+			this.maxIOPS = maxIOPS;
+		}
+
 		public String getDBNodeClass() {
 			return this.dBNodeClass;
 		}
@@ -409,28 +387,52 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 			this.dBNodeClass = dBNodeClass;
 		}
 
-		public Integer getMaxIOPS() {
-			return this.maxIOPS;
+		public String getDBNodeRole() {
+			return this.dBNodeRole;
 		}
 
-		public void setMaxIOPS(Integer maxIOPS) {
-			this.maxIOPS = maxIOPS;
+		public void setDBNodeRole(String dBNodeRole) {
+			this.dBNodeRole = dBNodeRole;
+		}
+
+		public String getZoneId() {
+			return this.zoneId;
+		}
+
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
+		}
+
+		public Integer getMaxConnections() {
+			return this.maxConnections;
+		}
+
+		public void setMaxConnections(Integer maxConnections) {
+			this.maxConnections = maxConnections;
+		}
+
+		public String getDBNodeStatus() {
+			return this.dBNodeStatus;
+		}
+
+		public void setDBNodeStatus(String dBNodeStatus) {
+			this.dBNodeStatus = dBNodeStatus;
+		}
+
+		public String getDBNodeId() {
+			return this.dBNodeId;
+		}
+
+		public void setDBNodeId(String dBNodeId) {
+			this.dBNodeId = dBNodeId;
 		}
 	}
 
 	public static class Tag {
 
-		private String value;
-
 		private String key;
 
-		public String getValue() {
-			return this.value;
-		}
-
-		public void setValue(String value) {
-			this.value = value;
-		}
+		private String value;
 
 		public String getKey() {
 			return this.key;
@@ -438,6 +440,14 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 
 		public void setKey(String key) {
 			this.key = key;
+		}
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
 		}
 	}
 

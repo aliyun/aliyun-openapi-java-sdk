@@ -1,3 +1,8 @@
+2021-09-23 Version: 1.8.11
+- Supports the purchase of polardb storage packages.
+- Support temporary upgrades and allocations of instances.
+- Query the detailed information of the node returned by the GDN instance.
+
 2021-07-29 Version: 1.8.10
 - Supported DescribeMaskingRules.
 - ModifyMaskingRules.
