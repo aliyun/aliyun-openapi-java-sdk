@@ -23,8 +23,8 @@ public class CreateServerlessDBInstanceResponseUnmarshaller {
 	public static CreateServerlessDBInstanceResponse unmarshall(CreateServerlessDBInstanceResponse createServerlessDBInstanceResponse, UnmarshallerContext _ctx) {
 		
 		createServerlessDBInstanceResponse.setRequestId(_ctx.stringValue("CreateServerlessDBInstanceResponse.RequestId"));
-		createServerlessDBInstanceResponse.setOrderId(_ctx.stringValue("CreateServerlessDBInstanceResponse.OrderId"));
 		createServerlessDBInstanceResponse.setDBInstanceId(_ctx.stringValue("CreateServerlessDBInstanceResponse.DBInstanceId"));
+		createServerlessDBInstanceResponse.setOrderId(_ctx.stringValue("CreateServerlessDBInstanceResponse.OrderId"));
 	 
 	 	return createServerlessDBInstanceResponse;
 	}

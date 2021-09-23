@@ -37,8 +37,6 @@ public class TransformToPrePaidRequest extends RpcAcsRequest<TransformToPrePaidR
 
 	private Boolean autoPay;
 
-	private String fromApp;
-
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -49,7 +47,7 @@ public class TransformToPrePaidRequest extends RpcAcsRequest<TransformToPrePaidR
 
 	private String autoRenew;
 	public TransformToPrePaidRequest() {
-		super("Dds", "2015-12-01", "TransformToPrePaid", "Dds");
+		super("Dds", "2015-12-01", "TransformToPrePaid", "dds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -120,17 +118,6 @@ public class TransformToPrePaidRequest extends RpcAcsRequest<TransformToPrePaidR
 		this.autoPay = autoPay;
 		if(autoPay != null){
 			putQueryParameter("AutoPay", autoPay.toString());
-		}
-	}
-
-	public String getFromApp() {
-		return this.fromApp;
-	}
-
-	public void setFromApp(String fromApp) {
-		this.fromApp = fromApp;
-		if(fromApp != null){
-			putQueryParameter("FromApp", fromApp);
 		}
 	}
 

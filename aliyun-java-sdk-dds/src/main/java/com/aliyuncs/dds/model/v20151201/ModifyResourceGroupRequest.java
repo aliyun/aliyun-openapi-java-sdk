@@ -39,7 +39,7 @@ public class ModifyResourceGroupRequest extends RpcAcsRequest<ModifyResourceGrou
 
 	private Long ownerId;
 	public ModifyResourceGroupRequest() {
-		super("Dds", "2015-12-01", "ModifyResourceGroup", "Dds");
+		super("Dds", "2015-12-01", "ModifyResourceGroup", "dds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

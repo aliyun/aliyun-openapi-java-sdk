@@ -55,7 +55,7 @@ public class DescribeDedicatedClusterInstanceListRequest extends RpcAcsRequest<D
 
 	private String zoneId;
 	public DescribeDedicatedClusterInstanceListRequest() {
-		super("Dds", "2015-12-01", "DescribeDedicatedClusterInstanceList", "Dds");
+		super("Dds", "2015-12-01", "DescribeDedicatedClusterInstanceList", "dds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

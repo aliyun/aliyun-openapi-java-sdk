@@ -14,18 +14,18 @@
 
 package com.aliyuncs.dds.transform.v20151201;
 
-import com.aliyuncs.dds.model.v20151201.TransformToPrePaidResponse;
+import com.aliyuncs.dds.model.v20151201.CreateNodeBatchResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class TransformToPrePaidResponseUnmarshaller {
+public class CreateNodeBatchResponseUnmarshaller {
 
-	public static TransformToPrePaidResponse unmarshall(TransformToPrePaidResponse transformToPrePaidResponse, UnmarshallerContext _ctx) {
+	public static CreateNodeBatchResponse unmarshall(CreateNodeBatchResponse createNodeBatchResponse, UnmarshallerContext _ctx) {
 		
-		transformToPrePaidResponse.setRequestId(_ctx.stringValue("TransformToPrePaidResponse.RequestId"));
-		transformToPrePaidResponse.setEndTime(_ctx.stringValue("TransformToPrePaidResponse.EndTime"));
-		transformToPrePaidResponse.setOrderId(_ctx.stringValue("TransformToPrePaidResponse.OrderId"));
+		createNodeBatchResponse.setRequestId(_ctx.stringValue("CreateNodeBatchResponse.RequestId"));
+		createNodeBatchResponse.setOrderId(_ctx.stringValue("CreateNodeBatchResponse.OrderId"));
+		createNodeBatchResponse.setNodeId(_ctx.stringValue("CreateNodeBatchResponse.NodeId"));
 	 
-	 	return transformToPrePaidResponse;
+	 	return createNodeBatchResponse;
 	}
 }

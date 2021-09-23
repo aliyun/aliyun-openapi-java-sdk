@@ -41,7 +41,7 @@ public class ModifyInstanceVpcAuthModeRequest extends RpcAcsRequest<ModifyInstan
 
 	private Long ownerId;
 	public ModifyInstanceVpcAuthModeRequest() {
-		super("Dds", "2015-12-01", "ModifyInstanceVpcAuthMode", "Dds");
+		super("Dds", "2015-12-01", "ModifyInstanceVpcAuthMode", "dds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

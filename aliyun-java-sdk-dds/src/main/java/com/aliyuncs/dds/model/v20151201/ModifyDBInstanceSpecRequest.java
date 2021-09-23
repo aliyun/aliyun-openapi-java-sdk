@@ -55,7 +55,7 @@ public class ModifyDBInstanceSpecRequest extends RpcAcsRequest<ModifyDBInstanceS
 
 	private String orderType;
 	public ModifyDBInstanceSpecRequest() {
-		super("Dds", "2015-12-01", "ModifyDBInstanceSpec", "Dds");
+		super("Dds", "2015-12-01", "ModifyDBInstanceSpec", "dds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

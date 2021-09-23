@@ -47,7 +47,7 @@ public class RenewDBInstanceRequest extends RpcAcsRequest<RenewDBInstanceRespons
 
 	private Long ownerId;
 	public RenewDBInstanceRequest() {
-		super("Dds", "2015-12-01", "RenewDBInstance", "Dds");
+		super("Dds", "2015-12-01", "RenewDBInstance", "dds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

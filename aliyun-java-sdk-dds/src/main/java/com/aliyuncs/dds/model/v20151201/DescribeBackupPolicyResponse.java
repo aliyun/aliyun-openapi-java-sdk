@@ -24,15 +24,27 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeBackupPolicyResponse extends AcsResponse {
 
-	private String requestId;
+	private String preferredBackupPeriod;
 
-	private String backupRetentionPeriod;
+	private String requestId;
 
 	private String preferredBackupTime;
 
-	private String preferredBackupPeriod;
+	private String backupRetentionPeriod;
 
 	private String preferredNextBackupTime;
+
+	private Integer enableBackupLog;
+
+	private Integer logBackupRetentionPeriod;
+
+	public String getPreferredBackupPeriod() {
+		return this.preferredBackupPeriod;
+	}
+
+	public void setPreferredBackupPeriod(String preferredBackupPeriod) {
+		this.preferredBackupPeriod = preferredBackupPeriod;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -40,14 +52,6 @@ public class DescribeBackupPolicyResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getBackupRetentionPeriod() {
-		return this.backupRetentionPeriod;
-	}
-
-	public void setBackupRetentionPeriod(String backupRetentionPeriod) {
-		this.backupRetentionPeriod = backupRetentionPeriod;
 	}
 
 	public String getPreferredBackupTime() {
@@ -58,12 +62,12 @@ public class DescribeBackupPolicyResponse extends AcsResponse {
 		this.preferredBackupTime = preferredBackupTime;
 	}
 
-	public String getPreferredBackupPeriod() {
-		return this.preferredBackupPeriod;
+	public String getBackupRetentionPeriod() {
+		return this.backupRetentionPeriod;
 	}
 
-	public void setPreferredBackupPeriod(String preferredBackupPeriod) {
-		this.preferredBackupPeriod = preferredBackupPeriod;
+	public void setBackupRetentionPeriod(String backupRetentionPeriod) {
+		this.backupRetentionPeriod = backupRetentionPeriod;
 	}
 
 	public String getPreferredNextBackupTime() {
@@ -72,6 +76,22 @@ public class DescribeBackupPolicyResponse extends AcsResponse {
 
 	public void setPreferredNextBackupTime(String preferredNextBackupTime) {
 		this.preferredNextBackupTime = preferredNextBackupTime;
+	}
+
+	public Integer getEnableBackupLog() {
+		return this.enableBackupLog;
+	}
+
+	public void setEnableBackupLog(Integer enableBackupLog) {
+		this.enableBackupLog = enableBackupLog;
+	}
+
+	public Integer getLogBackupRetentionPeriod() {
+		return this.logBackupRetentionPeriod;
+	}
+
+	public void setLogBackupRetentionPeriod(Integer logBackupRetentionPeriod) {
+		this.logBackupRetentionPeriod = logBackupRetentionPeriod;
 	}
 
 	@Override

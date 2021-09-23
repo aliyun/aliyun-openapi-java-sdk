@@ -31,6 +31,8 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 
 	private String dBInstanceId;
 
+	private Long enableBackupLog;
+
 	private String preferredBackupPeriod;
 
 	private String resourceOwnerAccount;
@@ -40,8 +42,12 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 	private Long ownerId;
 
 	private String preferredBackupTime;
+
+	private Long backupRetentionPeriod;
+
+	private Long logBackupRetentionPeriod;
 	public ModifyBackupPolicyRequest() {
-		super("Dds", "2015-12-01", "ModifyBackupPolicy", "Dds");
+		super("Dds", "2015-12-01", "ModifyBackupPolicy", "dds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -79,6 +85,17 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 		this.dBInstanceId = dBInstanceId;
 		if(dBInstanceId != null){
 			putQueryParameter("DBInstanceId", dBInstanceId);
+		}
+	}
+
+	public Long getEnableBackupLog() {
+		return this.enableBackupLog;
+	}
+
+	public void setEnableBackupLog(Long enableBackupLog) {
+		this.enableBackupLog = enableBackupLog;
+		if(enableBackupLog != null){
+			putQueryParameter("EnableBackupLog", enableBackupLog.toString());
 		}
 	}
 
@@ -134,6 +151,28 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 		this.preferredBackupTime = preferredBackupTime;
 		if(preferredBackupTime != null){
 			putQueryParameter("PreferredBackupTime", preferredBackupTime);
+		}
+	}
+
+	public Long getBackupRetentionPeriod() {
+		return this.backupRetentionPeriod;
+	}
+
+	public void setBackupRetentionPeriod(Long backupRetentionPeriod) {
+		this.backupRetentionPeriod = backupRetentionPeriod;
+		if(backupRetentionPeriod != null){
+			putQueryParameter("BackupRetentionPeriod", backupRetentionPeriod.toString());
+		}
+	}
+
+	public Long getLogBackupRetentionPeriod() {
+		return this.logBackupRetentionPeriod;
+	}
+
+	public void setLogBackupRetentionPeriod(Long logBackupRetentionPeriod) {
+		this.logBackupRetentionPeriod = logBackupRetentionPeriod;
+		if(logBackupRetentionPeriod != null){
+			putQueryParameter("LogBackupRetentionPeriod", logBackupRetentionPeriod.toString());
 		}
 	}
 

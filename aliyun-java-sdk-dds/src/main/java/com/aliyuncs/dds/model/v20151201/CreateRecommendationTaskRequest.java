@@ -43,7 +43,7 @@ public class CreateRecommendationTaskRequest extends RpcAcsRequest<CreateRecomme
 
 	private String instanceId;
 	public CreateRecommendationTaskRequest() {
-		super("Dds", "2015-12-01", "CreateRecommendationTask", "Dds");
+		super("Dds", "2015-12-01", "CreateRecommendationTask", "dds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

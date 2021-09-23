@@ -69,19 +69,11 @@ public class DescribeAvailableResourceResponse extends AcsResponse {
 
 		public static class AvailableZone {
 
-			private String regionId;
-
 			private String zoneId;
 
+			private String regionId;
+
 			private List<SupportedEngineVersion> supportedEngineVersions;
-
-			public String getRegionId() {
-				return this.regionId;
-			}
-
-			public void setRegionId(String regionId) {
-				this.regionId = regionId;
-			}
 
 			public String getZoneId() {
 				return this.zoneId;
@@ -89,6 +81,14 @@ public class DescribeAvailableResourceResponse extends AcsResponse {
 
 			public void setZoneId(String zoneId) {
 				this.zoneId = zoneId;
+			}
+
+			public String getRegionId() {
+				return this.regionId;
+			}
+
+			public void setRegionId(String regionId) {
+				this.regionId = regionId;
 			}
 
 			public List<SupportedEngineVersion> getSupportedEngineVersions() {
@@ -177,17 +177,9 @@ public class DescribeAvailableResourceResponse extends AcsResponse {
 
 						public static class AvailableResource {
 
-							private String instanceClass;
-
 							private String instanceClassRemark;
 
-							public String getInstanceClass() {
-								return this.instanceClass;
-							}
-
-							public void setInstanceClass(String instanceClass) {
-								this.instanceClass = instanceClass;
-							}
+							private String instanceClass;
 
 							public String getInstanceClassRemark() {
 								return this.instanceClassRemark;
@@ -195,6 +187,14 @@ public class DescribeAvailableResourceResponse extends AcsResponse {
 
 							public void setInstanceClassRemark(String instanceClassRemark) {
 								this.instanceClassRemark = instanceClassRemark;
+							}
+
+							public String getInstanceClass() {
+								return this.instanceClass;
+							}
+
+							public void setInstanceClass(String instanceClass) {
+								this.instanceClass = instanceClass;
 							}
 						}
 					}

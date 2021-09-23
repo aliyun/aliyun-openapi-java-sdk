@@ -47,7 +47,7 @@ public class ModifyDBInstanceNetworkTypeRequest extends RpcAcsRequest<ModifyDBIn
 
 	private String vpcId;
 	public ModifyDBInstanceNetworkTypeRequest() {
-		super("Dds", "2015-12-01", "ModifyDBInstanceNetworkType", "Dds");
+		super("Dds", "2015-12-01", "ModifyDBInstanceNetworkType", "dds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -43,7 +43,7 @@ public class ModifyDBInstanceConnectionStringRequest extends RpcAcsRequest<Modif
 
 	private String currentConnectionString;
 	public ModifyDBInstanceConnectionStringRequest() {
-		super("Dds", "2015-12-01", "ModifyDBInstanceConnectionString", "Dds");
+		super("Dds", "2015-12-01", "ModifyDBInstanceConnectionString", "dds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -41,7 +41,7 @@ public class ModifyInstanceAutoRenewalAttributeRequest extends RpcAcsRequest<Mod
 
 	private String autoRenew;
 	public ModifyInstanceAutoRenewalAttributeRequest() {
-		super("Dds", "2015-12-01", "ModifyInstanceAutoRenewalAttribute", "Dds");
+		super("Dds", "2015-12-01", "ModifyInstanceAutoRenewalAttribute", "dds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -15,20 +15,20 @@
 package com.aliyuncs.dds.model.v20151201;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.dds.transform.v20151201.CreateServerlessDBInstanceResponseUnmarshaller;
+import com.aliyuncs.dds.transform.v20151201.CreateNodeBatchResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateServerlessDBInstanceResponse extends AcsResponse {
+public class CreateNodeBatchResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String dBInstanceId;
-
 	private String orderId;
+
+	private String nodeId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -36,14 +36,6 @@ public class CreateServerlessDBInstanceResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
-
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
 	}
 
 	public String getOrderId() {
@@ -54,8 +46,16 @@ public class CreateServerlessDBInstanceResponse extends AcsResponse {
 		this.orderId = orderId;
 	}
 
+	public String getNodeId() {
+		return this.nodeId;
+	}
+
+	public void setNodeId(String nodeId) {
+		this.nodeId = nodeId;
+	}
+
 	@Override
-	public CreateServerlessDBInstanceResponse getInstance(UnmarshallerContext context) {
-		return	CreateServerlessDBInstanceResponseUnmarshaller.unmarshall(this, context);
+	public CreateNodeBatchResponse getInstance(UnmarshallerContext context) {
+		return	CreateNodeBatchResponseUnmarshaller.unmarshall(this, context);
 	}
 }

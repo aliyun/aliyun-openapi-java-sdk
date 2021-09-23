@@ -32,6 +32,8 @@ public class DescribeActiveOperationTaskTypeResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("DescribeActiveOperationTaskTypeResponse.TypeList.Length"); i++) {
 			Items items = new Items();
 			items.setTaskType(_ctx.stringValue("DescribeActiveOperationTaskTypeResponse.TypeList["+ i +"].TaskType"));
+			items.setTaskTypeInfoEn(_ctx.stringValue("DescribeActiveOperationTaskTypeResponse.TypeList["+ i +"].TaskTypeInfoEn"));
+			items.setTaskTypeInfoZh(_ctx.stringValue("DescribeActiveOperationTaskTypeResponse.TypeList["+ i +"].TaskTypeInfoZh"));
 			items.setCount(_ctx.integerValue("DescribeActiveOperationTaskTypeResponse.TypeList["+ i +"].Count"));
 
 			typeList.add(items);

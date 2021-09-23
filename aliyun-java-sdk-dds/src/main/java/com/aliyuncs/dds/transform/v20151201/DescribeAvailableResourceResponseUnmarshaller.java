@@ -41,8 +41,8 @@ public class DescribeAvailableResourceResponseUnmarshaller {
 			List<AvailableZone> availableZones = new ArrayList<AvailableZone>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeAvailableResourceResponse.SupportedDBTypes["+ i +"].AvailableZones.Length"); j++) {
 				AvailableZone availableZone = new AvailableZone();
-				availableZone.setRegionId(_ctx.stringValue("DescribeAvailableResourceResponse.SupportedDBTypes["+ i +"].AvailableZones["+ j +"].RegionId"));
 				availableZone.setZoneId(_ctx.stringValue("DescribeAvailableResourceResponse.SupportedDBTypes["+ i +"].AvailableZones["+ j +"].ZoneId"));
+				availableZone.setRegionId(_ctx.stringValue("DescribeAvailableResourceResponse.SupportedDBTypes["+ i +"].AvailableZones["+ j +"].RegionId"));
 
 				List<SupportedEngineVersion> supportedEngineVersions = new ArrayList<SupportedEngineVersion>();
 				for (int k = 0; k < _ctx.lengthValue("DescribeAvailableResourceResponse.SupportedDBTypes["+ i +"].AvailableZones["+ j +"].SupportedEngineVersions.Length"); k++) {
@@ -63,8 +63,8 @@ public class DescribeAvailableResourceResponseUnmarshaller {
 							List<AvailableResource> availableResources = new ArrayList<AvailableResource>();
 							for (int n = 0; n < _ctx.lengthValue("DescribeAvailableResourceResponse.SupportedDBTypes["+ i +"].AvailableZones["+ j +"].SupportedEngineVersions["+ k +"].SupportedEngines["+ l +"].SupportedNodeTypes["+ m +"].AvailableResources.Length"); n++) {
 								AvailableResource availableResource = new AvailableResource();
-								availableResource.setInstanceClass(_ctx.stringValue("DescribeAvailableResourceResponse.SupportedDBTypes["+ i +"].AvailableZones["+ j +"].SupportedEngineVersions["+ k +"].SupportedEngines["+ l +"].SupportedNodeTypes["+ m +"].AvailableResources["+ n +"].InstanceClass"));
 								availableResource.setInstanceClassRemark(_ctx.stringValue("DescribeAvailableResourceResponse.SupportedDBTypes["+ i +"].AvailableZones["+ j +"].SupportedEngineVersions["+ k +"].SupportedEngines["+ l +"].SupportedNodeTypes["+ m +"].AvailableResources["+ n +"].InstanceClassRemark"));
+								availableResource.setInstanceClass(_ctx.stringValue("DescribeAvailableResourceResponse.SupportedDBTypes["+ i +"].AvailableZones["+ j +"].SupportedEngineVersions["+ k +"].SupportedEngines["+ l +"].SupportedNodeTypes["+ m +"].AvailableResources["+ n +"].InstanceClass"));
 
 								availableResources.add(availableResource);
 							}

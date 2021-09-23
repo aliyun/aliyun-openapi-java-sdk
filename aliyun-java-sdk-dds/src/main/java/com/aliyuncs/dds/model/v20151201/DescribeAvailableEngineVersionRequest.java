@@ -37,7 +37,7 @@ public class DescribeAvailableEngineVersionRequest extends RpcAcsRequest<Describ
 
 	private Long ownerId;
 	public DescribeAvailableEngineVersionRequest() {
-		super("Dds", "2015-12-01", "DescribeAvailableEngineVersion", "Dds");
+		super("Dds", "2015-12-01", "DescribeAvailableEngineVersion", "dds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

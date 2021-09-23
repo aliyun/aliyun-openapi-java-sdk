@@ -49,6 +49,10 @@ public class DescribeActiveOperationTaskTypeResponse extends AcsResponse {
 
 		private String taskType;
 
+		private String taskTypeInfoEn;
+
+		private String taskTypeInfoZh;
+
 		private Integer count;
 
 		public String getTaskType() {
@@ -57,6 +61,22 @@ public class DescribeActiveOperationTaskTypeResponse extends AcsResponse {
 
 		public void setTaskType(String taskType) {
 			this.taskType = taskType;
+		}
+
+		public String getTaskTypeInfoEn() {
+			return this.taskTypeInfoEn;
+		}
+
+		public void setTaskTypeInfoEn(String taskTypeInfoEn) {
+			this.taskTypeInfoEn = taskTypeInfoEn;
+		}
+
+		public String getTaskTypeInfoZh() {
+			return this.taskTypeInfoZh;
+		}
+
+		public void setTaskTypeInfoZh(String taskTypeInfoZh) {
+			this.taskTypeInfoZh = taskTypeInfoZh;
 		}
 
 		public Integer getCount() {

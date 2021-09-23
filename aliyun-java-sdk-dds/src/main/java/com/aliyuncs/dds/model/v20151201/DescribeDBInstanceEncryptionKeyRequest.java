@@ -39,7 +39,7 @@ public class DescribeDBInstanceEncryptionKeyRequest extends RpcAcsRequest<Descri
 
 	private Long ownerId;
 	public DescribeDBInstanceEncryptionKeyRequest() {
-		super("Dds", "2015-12-01", "DescribeDBInstanceEncryptionKey", "Dds");
+		super("Dds", "2015-12-01", "DescribeDBInstanceEncryptionKey", "dds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

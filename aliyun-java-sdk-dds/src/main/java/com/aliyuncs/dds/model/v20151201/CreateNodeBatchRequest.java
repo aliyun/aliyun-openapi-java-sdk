@@ -22,28 +22,34 @@ import com.aliyuncs.dds.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeAuditFilesRequest extends RpcAcsRequest<DescribeAuditFilesResponse> {
+public class CreateNodeBatchRequest extends RpcAcsRequest<CreateNodeBatchResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private Integer pageNumber;
+	private String clientToken;
+
+	private String nodesInfo;
+
+	private String couponNo;
 
 	private String securityToken;
 
-	private Integer pageSize;
-
 	private String dBInstanceId;
 
-	private String nodeId;
+	private String businessInfo;
+
+	private Boolean autoPay;
+
+	private String fromApp;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private Long ownerId;
-	public DescribeAuditFilesRequest() {
-		super("Dds", "2015-12-01", "DescribeAuditFiles", "dds");
+	public CreateNodeBatchRequest() {
+		super("Dds", "2015-12-01", "CreateNodeBatch", "dds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -62,14 +68,36 @@ public class DescribeAuditFilesRequest extends RpcAcsRequest<DescribeAuditFilesR
 		}
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public String getClientToken() {
+		return this.clientToken;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getNodesInfo() {
+		return this.nodesInfo;
+	}
+
+	public void setNodesInfo(String nodesInfo) {
+		this.nodesInfo = nodesInfo;
+		if(nodesInfo != null){
+			putQueryParameter("NodesInfo", nodesInfo);
+		}
+	}
+
+	public String getCouponNo() {
+		return this.couponNo;
+	}
+
+	public void setCouponNo(String couponNo) {
+		this.couponNo = couponNo;
+		if(couponNo != null){
+			putQueryParameter("CouponNo", couponNo);
 		}
 	}
 
@@ -84,17 +112,6 @@ public class DescribeAuditFilesRequest extends RpcAcsRequest<DescribeAuditFilesR
 		}
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
 	public String getDBInstanceId() {
 		return this.dBInstanceId;
 	}
@@ -106,14 +123,36 @@ public class DescribeAuditFilesRequest extends RpcAcsRequest<DescribeAuditFilesR
 		}
 	}
 
-	public String getNodeId() {
-		return this.nodeId;
+	public String getBusinessInfo() {
+		return this.businessInfo;
 	}
 
-	public void setNodeId(String nodeId) {
-		this.nodeId = nodeId;
-		if(nodeId != null){
-			putQueryParameter("NodeId", nodeId);
+	public void setBusinessInfo(String businessInfo) {
+		this.businessInfo = businessInfo;
+		if(businessInfo != null){
+			putQueryParameter("BusinessInfo", businessInfo);
+		}
+	}
+
+	public Boolean getAutoPay() {
+		return this.autoPay;
+	}
+
+	public void setAutoPay(Boolean autoPay) {
+		this.autoPay = autoPay;
+		if(autoPay != null){
+			putQueryParameter("AutoPay", autoPay.toString());
+		}
+	}
+
+	public String getFromApp() {
+		return this.fromApp;
+	}
+
+	public void setFromApp(String fromApp) {
+		this.fromApp = fromApp;
+		if(fromApp != null){
+			putQueryParameter("FromApp", fromApp);
 		}
 	}
 
@@ -151,8 +190,8 @@ public class DescribeAuditFilesRequest extends RpcAcsRequest<DescribeAuditFilesR
 	}
 
 	@Override
-	public Class<DescribeAuditFilesResponse> getResponseClass() {
-		return DescribeAuditFilesResponse.class;
+	public Class<CreateNodeBatchResponse> getResponseClass() {
+		return CreateNodeBatchResponse.class;
 	}
 
 }

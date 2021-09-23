@@ -39,7 +39,7 @@ public class DescribeUserEncryptionKeyListRequest extends RpcAcsRequest<Describe
 
 	private String targetRegionId;
 	public DescribeUserEncryptionKeyListRequest() {
-		super("Dds", "2015-12-01", "DescribeUserEncryptionKeyList", "Dds");
+		super("Dds", "2015-12-01", "DescribeUserEncryptionKeyList", "dds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -49,7 +49,7 @@ public class DescribeDBInstancePerformanceRequest extends RpcAcsRequest<Describe
 
 	private Long ownerId;
 	public DescribeDBInstancePerformanceRequest() {
-		super("Dds", "2015-12-01", "DescribeDBInstancePerformance", "Dds");
+		super("Dds", "2015-12-01", "DescribeDBInstancePerformance", "dds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

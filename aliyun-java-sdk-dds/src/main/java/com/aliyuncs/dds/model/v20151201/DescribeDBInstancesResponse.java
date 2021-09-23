@@ -105,6 +105,8 @@ public class DescribeDBInstancesResponse extends AcsResponse {
 
 		private Integer dBInstanceStorage;
 
+		private String capacityUnit;
+
 		private String resourceGroupId;
 
 		private String zoneId;
@@ -235,6 +237,14 @@ public class DescribeDBInstancesResponse extends AcsResponse {
 
 		public void setDBInstanceStorage(Integer dBInstanceStorage) {
 			this.dBInstanceStorage = dBInstanceStorage;
+		}
+
+		public String getCapacityUnit() {
+			return this.capacityUnit;
+		}
+
+		public void setCapacityUnit(String capacityUnit) {
+			this.capacityUnit = capacityUnit;
 		}
 
 		public String getResourceGroupId() {

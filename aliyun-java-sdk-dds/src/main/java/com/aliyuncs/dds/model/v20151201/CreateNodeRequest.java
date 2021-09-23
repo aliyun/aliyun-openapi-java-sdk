@@ -45,8 +45,6 @@ public class CreateNodeRequest extends RpcAcsRequest<CreateNodeResponse> {
 
 	private Boolean autoPay;
 
-	private String fromApp;
-
 	private String resourceOwnerAccount;
 
 	private Integer nodeStorage;
@@ -55,7 +53,7 @@ public class CreateNodeRequest extends RpcAcsRequest<CreateNodeResponse> {
 
 	private Long ownerId;
 	public CreateNodeRequest() {
-		super("Dds", "2015-12-01", "CreateNode", "Dds");
+		super("Dds", "2015-12-01", "CreateNode", "dds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -170,17 +168,6 @@ public class CreateNodeRequest extends RpcAcsRequest<CreateNodeResponse> {
 		this.autoPay = autoPay;
 		if(autoPay != null){
 			putQueryParameter("AutoPay", autoPay.toString());
-		}
-	}
-
-	public String getFromApp() {
-		return this.fromApp;
-	}
-
-	public void setFromApp(String fromApp) {
-		this.fromApp = fromApp;
-		if(fromApp != null){
-			putQueryParameter("FromApp", fromApp);
 		}
 	}
 
