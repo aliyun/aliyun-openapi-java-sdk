@@ -24,6 +24,8 @@ import com.aliyuncs.http.MethodType;
 public class DescribeDeviceServiceRequest extends RpcAcsRequest<DescribeDeviceServiceResponse> {
 	   
 
+	private String ensRegionId;
+
 	private String instanceId;
 
 	private String appId;
@@ -32,6 +34,17 @@ public class DescribeDeviceServiceRequest extends RpcAcsRequest<DescribeDeviceSe
 	public DescribeDeviceServiceRequest() {
 		super("Ens", "2017-11-10", "DescribeDeviceService", "ens");
 		setMethod(MethodType.GET);
+	}
+
+	public String getEnsRegionId() {
+		return this.ensRegionId;
+	}
+
+	public void setEnsRegionId(String ensRegionId) {
+		this.ensRegionId = ensRegionId;
+		if(ensRegionId != null){
+			putQueryParameter("EnsRegionId", ensRegionId);
+		}
 	}
 
 	public String getInstanceId() {

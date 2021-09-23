@@ -34,6 +34,9 @@ public class DescribeLoadBalancerUDPListenerAttributeResponseUnmarshaller {
 		describeLoadBalancerUDPListenerAttributeResponse.setHealthCheckInterval(_ctx.integerValue("DescribeLoadBalancerUDPListenerAttributeResponse.HealthCheckInterval"));
 		describeLoadBalancerUDPListenerAttributeResponse.setDescription(_ctx.stringValue("DescribeLoadBalancerUDPListenerAttributeResponse.Description"));
 		describeLoadBalancerUDPListenerAttributeResponse.setBackendServerPort(_ctx.integerValue("DescribeLoadBalancerUDPListenerAttributeResponse.BackendServerPort"));
+		describeLoadBalancerUDPListenerAttributeResponse.setHealthCheckConnectPort(_ctx.integerValue("DescribeLoadBalancerUDPListenerAttributeResponse.HealthCheckConnectPort"));
+		describeLoadBalancerUDPListenerAttributeResponse.setHealthCheckReq(_ctx.stringValue("DescribeLoadBalancerUDPListenerAttributeResponse.HealthCheckReq"));
+		describeLoadBalancerUDPListenerAttributeResponse.setHealthCheckExp(_ctx.stringValue("DescribeLoadBalancerUDPListenerAttributeResponse.HealthCheckExp"));
 	 
 	 	return describeLoadBalancerUDPListenerAttributeResponse;
 	}

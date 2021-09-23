@@ -26,6 +26,8 @@ public class AddNetworkInterfaceToInstanceRequest extends RpcAcsRequest<AddNetwo
 
 	private String networks;
 
+	private Boolean autoStart;
+
 	private String instanceId;
 	public AddNetworkInterfaceToInstanceRequest() {
 		super("Ens", "2017-11-10", "AddNetworkInterfaceToInstance", "ens");
@@ -40,6 +42,17 @@ public class AddNetworkInterfaceToInstanceRequest extends RpcAcsRequest<AddNetwo
 		this.networks = networks;
 		if(networks != null){
 			putQueryParameter("Networks", networks);
+		}
+	}
+
+	public Boolean getAutoStart() {
+		return this.autoStart;
+	}
+
+	public void setAutoStart(Boolean autoStart) {
+		this.autoStart = autoStart;
+		if(autoStart != null){
+			putQueryParameter("AutoStart", autoStart.toString());
 		}
 	}
 

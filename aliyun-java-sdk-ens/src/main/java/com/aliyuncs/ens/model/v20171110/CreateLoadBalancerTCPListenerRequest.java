@@ -53,6 +53,8 @@ public class CreateLoadBalancerTCPListenerRequest extends RpcAcsRequest<CreateLo
 	private String healthCheckType;
 
 	private String healthCheckHttpCode;
+
+	private Integer healthCheckConnectPort;
 	public CreateLoadBalancerTCPListenerRequest() {
 		super("Ens", "2017-11-10", "CreateLoadBalancerTCPListener", "ens");
 		setMethod(MethodType.POST);
@@ -220,6 +222,17 @@ public class CreateLoadBalancerTCPListenerRequest extends RpcAcsRequest<CreateLo
 		this.healthCheckHttpCode = healthCheckHttpCode;
 		if(healthCheckHttpCode != null){
 			putQueryParameter("HealthCheckHttpCode", healthCheckHttpCode);
+		}
+	}
+
+	public Integer getHealthCheckConnectPort() {
+		return this.healthCheckConnectPort;
+	}
+
+	public void setHealthCheckConnectPort(Integer healthCheckConnectPort) {
+		this.healthCheckConnectPort = healthCheckConnectPort;
+		if(healthCheckConnectPort != null){
+			putQueryParameter("HealthCheckConnectPort", healthCheckConnectPort.toString());
 		}
 	}
 

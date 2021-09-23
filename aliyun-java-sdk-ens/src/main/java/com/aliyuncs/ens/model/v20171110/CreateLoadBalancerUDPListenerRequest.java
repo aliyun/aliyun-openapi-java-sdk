@@ -26,9 +26,13 @@ public class CreateLoadBalancerUDPListenerRequest extends RpcAcsRequest<CreateLo
 
 	private String loadBalancerId;
 
+	private String healthCheckReq;
+
 	private Integer healthCheckInterval;
 
 	private Integer backendServerPort;
+
+	private String healthCheckExp;
 
 	private Integer healthCheckConnectTimeout;
 
@@ -41,6 +45,8 @@ public class CreateLoadBalancerUDPListenerRequest extends RpcAcsRequest<CreateLo
 	private String scheduler;
 
 	private Integer listenerPort;
+
+	private Integer healthCheckConnectPort;
 	public CreateLoadBalancerUDPListenerRequest() {
 		super("Ens", "2017-11-10", "CreateLoadBalancerUDPListener", "ens");
 		setMethod(MethodType.POST);
@@ -54,6 +60,17 @@ public class CreateLoadBalancerUDPListenerRequest extends RpcAcsRequest<CreateLo
 		this.loadBalancerId = loadBalancerId;
 		if(loadBalancerId != null){
 			putQueryParameter("LoadBalancerId", loadBalancerId);
+		}
+	}
+
+	public String getHealthCheckReq() {
+		return this.healthCheckReq;
+	}
+
+	public void setHealthCheckReq(String healthCheckReq) {
+		this.healthCheckReq = healthCheckReq;
+		if(healthCheckReq != null){
+			putQueryParameter("HealthCheckReq", healthCheckReq);
 		}
 	}
 
@@ -76,6 +93,17 @@ public class CreateLoadBalancerUDPListenerRequest extends RpcAcsRequest<CreateLo
 		this.backendServerPort = backendServerPort;
 		if(backendServerPort != null){
 			putQueryParameter("BackendServerPort", backendServerPort.toString());
+		}
+	}
+
+	public String getHealthCheckExp() {
+		return this.healthCheckExp;
+	}
+
+	public void setHealthCheckExp(String healthCheckExp) {
+		this.healthCheckExp = healthCheckExp;
+		if(healthCheckExp != null){
+			putQueryParameter("HealthCheckExp", healthCheckExp);
 		}
 	}
 
@@ -142,6 +170,17 @@ public class CreateLoadBalancerUDPListenerRequest extends RpcAcsRequest<CreateLo
 		this.listenerPort = listenerPort;
 		if(listenerPort != null){
 			putQueryParameter("ListenerPort", listenerPort.toString());
+		}
+	}
+
+	public Integer getHealthCheckConnectPort() {
+		return this.healthCheckConnectPort;
+	}
+
+	public void setHealthCheckConnectPort(Integer healthCheckConnectPort) {
+		this.healthCheckConnectPort = healthCheckConnectPort;
+		if(healthCheckConnectPort != null){
+			putQueryParameter("HealthCheckConnectPort", healthCheckConnectPort.toString());
 		}
 	}
 

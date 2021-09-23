@@ -60,6 +60,8 @@ public class DescribeLoadBalancerTCPListenerAttributeResponse extends AcsRespons
 
 	private Integer backendServerPort;
 
+	private Integer healthCheckConnectPort;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -202,6 +204,14 @@ public class DescribeLoadBalancerTCPListenerAttributeResponse extends AcsRespons
 
 	public void setBackendServerPort(Integer backendServerPort) {
 		this.backendServerPort = backendServerPort;
+	}
+
+	public Integer getHealthCheckConnectPort() {
+		return this.healthCheckConnectPort;
+	}
+
+	public void setHealthCheckConnectPort(Integer healthCheckConnectPort) {
+		this.healthCheckConnectPort = healthCheckConnectPort;
 	}
 
 	@Override

@@ -26,7 +26,11 @@ public class SetLoadBalancerUDPListenerAttributeRequest extends RpcAcsRequest<Se
 
 	private String loadBalancerId;
 
+	private String healthCheckReq;
+
 	private Integer healthCheckInterval;
+
+	private String healthCheckExp;
 
 	private Integer healthCheckConnectTimeout;
 
@@ -57,6 +61,17 @@ public class SetLoadBalancerUDPListenerAttributeRequest extends RpcAcsRequest<Se
 		}
 	}
 
+	public String getHealthCheckReq() {
+		return this.healthCheckReq;
+	}
+
+	public void setHealthCheckReq(String healthCheckReq) {
+		this.healthCheckReq = healthCheckReq;
+		if(healthCheckReq != null){
+			putQueryParameter("HealthCheckReq", healthCheckReq);
+		}
+	}
+
 	public Integer getHealthCheckInterval() {
 		return this.healthCheckInterval;
 	}
@@ -65,6 +80,17 @@ public class SetLoadBalancerUDPListenerAttributeRequest extends RpcAcsRequest<Se
 		this.healthCheckInterval = healthCheckInterval;
 		if(healthCheckInterval != null){
 			putQueryParameter("HealthCheckInterval", healthCheckInterval.toString());
+		}
+	}
+
+	public String getHealthCheckExp() {
+		return this.healthCheckExp;
+	}
+
+	public void setHealthCheckExp(String healthCheckExp) {
+		this.healthCheckExp = healthCheckExp;
+		if(healthCheckExp != null){
+			putQueryParameter("HealthCheckExp", healthCheckExp);
 		}
 	}
 

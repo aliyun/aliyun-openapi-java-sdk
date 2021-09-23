@@ -48,6 +48,12 @@ public class DescribeLoadBalancerUDPListenerAttributeResponse extends AcsRespons
 
 	private Integer backendServerPort;
 
+	private Integer healthCheckConnectPort;
+
+	private String healthCheckReq;
+
+	private String healthCheckExp;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -142,6 +148,30 @@ public class DescribeLoadBalancerUDPListenerAttributeResponse extends AcsRespons
 
 	public void setBackendServerPort(Integer backendServerPort) {
 		this.backendServerPort = backendServerPort;
+	}
+
+	public Integer getHealthCheckConnectPort() {
+		return this.healthCheckConnectPort;
+	}
+
+	public void setHealthCheckConnectPort(Integer healthCheckConnectPort) {
+		this.healthCheckConnectPort = healthCheckConnectPort;
+	}
+
+	public String getHealthCheckReq() {
+		return this.healthCheckReq;
+	}
+
+	public void setHealthCheckReq(String healthCheckReq) {
+		this.healthCheckReq = healthCheckReq;
+	}
+
+	public String getHealthCheckExp() {
+		return this.healthCheckExp;
+	}
+
+	public void setHealthCheckExp(String healthCheckExp) {
+		this.healthCheckExp = healthCheckExp;
 	}
 
 	@Override
