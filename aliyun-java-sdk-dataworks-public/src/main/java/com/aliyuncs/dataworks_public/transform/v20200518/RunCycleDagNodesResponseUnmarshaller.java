@@ -26,10 +26,10 @@ public class RunCycleDagNodesResponseUnmarshaller {
 	public static RunCycleDagNodesResponse unmarshall(RunCycleDagNodesResponse runCycleDagNodesResponse, UnmarshallerContext _ctx) {
 		
 		runCycleDagNodesResponse.setRequestId(_ctx.stringValue("RunCycleDagNodesResponse.RequestId"));
-		runCycleDagNodesResponse.setErrorCode(_ctx.stringValue("RunCycleDagNodesResponse.ErrorCode"));
-		runCycleDagNodesResponse.setErrorMessage(_ctx.stringValue("RunCycleDagNodesResponse.ErrorMessage"));
 		runCycleDagNodesResponse.setHttpStatusCode(_ctx.integerValue("RunCycleDagNodesResponse.HttpStatusCode"));
+		runCycleDagNodesResponse.setErrorMessage(_ctx.stringValue("RunCycleDagNodesResponse.ErrorMessage"));
 		runCycleDagNodesResponse.setSuccess(_ctx.booleanValue("RunCycleDagNodesResponse.Success"));
+		runCycleDagNodesResponse.setErrorCode(_ctx.stringValue("RunCycleDagNodesResponse.ErrorCode"));
 
 		List<Long> data = new ArrayList<Long>();
 		for (int i = 0; i < _ctx.lengthValue("RunCycleDagNodesResponse.Data.Length"); i++) {

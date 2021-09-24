@@ -62,6 +62,8 @@ public class GetDISyncTaskResponse extends AcsResponse {
 
 		private String message;
 
+		private SolutionDetail solutionDetail;
+
 		public String getCode() {
 			return this.code;
 		}
@@ -84,6 +86,127 @@ public class GetDISyncTaskResponse extends AcsResponse {
 
 		public void setMessage(String message) {
 			this.message = message;
+		}
+
+		public SolutionDetail getSolutionDetail() {
+			return this.solutionDetail;
+		}
+
+		public void setSolutionDetail(SolutionDetail solutionDetail) {
+			this.solutionDetail = solutionDetail;
+		}
+
+		public static class SolutionDetail {
+
+			private Long id;
+
+			private String type;
+
+			private Long projectId;
+
+			private String status;
+
+			private String processContent;
+
+			private String startTime;
+
+			private String name;
+
+			private String creatorName;
+
+			private String sourceType;
+
+			private String submitTime;
+
+			private String processExtra;
+
+			public Long getId() {
+				return this.id;
+			}
+
+			public void setId(Long id) {
+				this.id = id;
+			}
+
+			public String getType() {
+				return this.type;
+			}
+
+			public void setType(String type) {
+				this.type = type;
+			}
+
+			public Long getProjectId() {
+				return this.projectId;
+			}
+
+			public void setProjectId(Long projectId) {
+				this.projectId = projectId;
+			}
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
+			}
+
+			public String getProcessContent() {
+				return this.processContent;
+			}
+
+			public void setProcessContent(String processContent) {
+				this.processContent = processContent;
+			}
+
+			public String getStartTime() {
+				return this.startTime;
+			}
+
+			public void setStartTime(String startTime) {
+				this.startTime = startTime;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
+
+			public String getCreatorName() {
+				return this.creatorName;
+			}
+
+			public void setCreatorName(String creatorName) {
+				this.creatorName = creatorName;
+			}
+
+			public String getSourceType() {
+				return this.sourceType;
+			}
+
+			public void setSourceType(String sourceType) {
+				this.sourceType = sourceType;
+			}
+
+			public String getSubmitTime() {
+				return this.submitTime;
+			}
+
+			public void setSubmitTime(String submitTime) {
+				this.submitTime = submitTime;
+			}
+
+			public String getProcessExtra() {
+				return this.processExtra;
+			}
+
+			public void setProcessExtra(String processExtra) {
+				this.processExtra = processExtra;
+			}
 		}
 	}
 

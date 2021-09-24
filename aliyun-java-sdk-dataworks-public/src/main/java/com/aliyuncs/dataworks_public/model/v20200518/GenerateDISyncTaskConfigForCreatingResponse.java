@@ -14,36 +14,21 @@
 
 package com.aliyuncs.dataworks_public.model.v20200518;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.dataworks_public.transform.v20200518.RunCycleDagNodesResponseUnmarshaller;
+import com.aliyuncs.dataworks_public.transform.v20200518.GenerateDISyncTaskConfigForCreatingResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class RunCycleDagNodesResponse extends AcsResponse {
-
-	private Integer httpStatusCode;
+public class GenerateDISyncTaskConfigForCreatingResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String errorMessage;
-
 	private Boolean success;
 
-	private String errorCode;
-
-	private List<Long> data;
-
-	public Integer getHttpStatusCode() {
-		return this.httpStatusCode;
-	}
-
-	public void setHttpStatusCode(Integer httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
-	}
+	private Data data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -51,14 +36,6 @@ public class RunCycleDagNodesResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
 	}
 
 	public Boolean getSuccess() {
@@ -69,25 +46,50 @@ public class RunCycleDagNodesResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
-	}
-
-	public List<Long> getData() {
+	public Data getData() {
 		return this.data;
 	}
 
-	public void setData(List<Long> data) {
+	public void setData(Data data) {
 		this.data = data;
 	}
 
+	public static class Data {
+
+		private Long processId;
+
+		private String status;
+
+		private String message;
+
+		public Long getProcessId() {
+			return this.processId;
+		}
+
+		public void setProcessId(Long processId) {
+			this.processId = processId;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
+		public String getMessage() {
+			return this.message;
+		}
+
+		public void setMessage(String message) {
+			this.message = message;
+		}
+	}
+
 	@Override
-	public RunCycleDagNodesResponse getInstance(UnmarshallerContext context) {
-		return	RunCycleDagNodesResponseUnmarshaller.unmarshall(this, context);
+	public GenerateDISyncTaskConfigForCreatingResponse getInstance(UnmarshallerContext context) {
+		return	GenerateDISyncTaskConfigForCreatingResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

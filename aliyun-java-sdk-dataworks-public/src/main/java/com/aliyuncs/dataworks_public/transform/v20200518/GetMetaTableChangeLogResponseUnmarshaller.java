@@ -28,10 +28,10 @@ public class GetMetaTableChangeLogResponseUnmarshaller {
 	public static GetMetaTableChangeLogResponse unmarshall(GetMetaTableChangeLogResponse getMetaTableChangeLogResponse, UnmarshallerContext _ctx) {
 		
 		getMetaTableChangeLogResponse.setRequestId(_ctx.stringValue("GetMetaTableChangeLogResponse.RequestId"));
-		getMetaTableChangeLogResponse.setErrorCode(_ctx.stringValue("GetMetaTableChangeLogResponse.ErrorCode"));
-		getMetaTableChangeLogResponse.setErrorMessage(_ctx.stringValue("GetMetaTableChangeLogResponse.ErrorMessage"));
 		getMetaTableChangeLogResponse.setHttpStatusCode(_ctx.integerValue("GetMetaTableChangeLogResponse.HttpStatusCode"));
+		getMetaTableChangeLogResponse.setErrorMessage(_ctx.stringValue("GetMetaTableChangeLogResponse.ErrorMessage"));
 		getMetaTableChangeLogResponse.setSuccess(_ctx.booleanValue("GetMetaTableChangeLogResponse.Success"));
+		getMetaTableChangeLogResponse.setErrorCode(_ctx.stringValue("GetMetaTableChangeLogResponse.ErrorCode"));
 
 		Data data = new Data();
 		data.setPageNumber(_ctx.integerValue("GetMetaTableChangeLogResponse.Data.PageNumber"));
@@ -41,12 +41,12 @@ public class GetMetaTableChangeLogResponseUnmarshaller {
 		List<DataEntityListItem> dataEntityList = new ArrayList<DataEntityListItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetMetaTableChangeLogResponse.Data.DataEntityList.Length"); i++) {
 			DataEntityListItem dataEntityListItem = new DataEntityListItem();
-			dataEntityListItem.setCreateTime(_ctx.longValue("GetMetaTableChangeLogResponse.Data.DataEntityList["+ i +"].CreateTime"));
-			dataEntityListItem.setModifiedTime(_ctx.longValue("GetMetaTableChangeLogResponse.Data.DataEntityList["+ i +"].ModifiedTime"));
-			dataEntityListItem.setChangeType(_ctx.stringValue("GetMetaTableChangeLogResponse.Data.DataEntityList["+ i +"].ChangeType"));
-			dataEntityListItem.setOperator(_ctx.stringValue("GetMetaTableChangeLogResponse.Data.DataEntityList["+ i +"].Operator"));
 			dataEntityListItem.setObjectType(_ctx.stringValue("GetMetaTableChangeLogResponse.Data.DataEntityList["+ i +"].ObjectType"));
+			dataEntityListItem.setModifiedTime(_ctx.longValue("GetMetaTableChangeLogResponse.Data.DataEntityList["+ i +"].ModifiedTime"));
+			dataEntityListItem.setCreateTime(_ctx.longValue("GetMetaTableChangeLogResponse.Data.DataEntityList["+ i +"].CreateTime"));
 			dataEntityListItem.setChangeContent(_ctx.stringValue("GetMetaTableChangeLogResponse.Data.DataEntityList["+ i +"].ChangeContent"));
+			dataEntityListItem.setOperator(_ctx.stringValue("GetMetaTableChangeLogResponse.Data.DataEntityList["+ i +"].Operator"));
+			dataEntityListItem.setChangeType(_ctx.stringValue("GetMetaTableChangeLogResponse.Data.DataEntityList["+ i +"].ChangeType"));
 
 			dataEntityList.add(dataEntityListItem);
 		}

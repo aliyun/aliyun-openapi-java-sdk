@@ -14,6 +14,7 @@
 
 package com.aliyuncs.dataworks_public.model.v20200518;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.dataworks_public.transform.v20200518.GetDISyncInstanceInfoResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -62,6 +63,8 @@ public class GetDISyncInstanceInfoResponse extends AcsResponse {
 
 		private String message;
 
+		private SolutionInfo solutionInfo;
+
 		public String getStatus() {
 			return this.status;
 		}
@@ -84,6 +87,90 @@ public class GetDISyncInstanceInfoResponse extends AcsResponse {
 
 		public void setMessage(String message) {
 			this.message = message;
+		}
+
+		public SolutionInfo getSolutionInfo() {
+			return this.solutionInfo;
+		}
+
+		public void setSolutionInfo(SolutionInfo solutionInfo) {
+			this.solutionInfo = solutionInfo;
+		}
+
+		public static class SolutionInfo {
+
+			private Long id;
+
+			private String status;
+
+			private String creatorName;
+
+			private List<StepDetailItem> stepDetail;
+
+			public Long getId() {
+				return this.id;
+			}
+
+			public void setId(Long id) {
+				this.id = id;
+			}
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
+			}
+
+			public String getCreatorName() {
+				return this.creatorName;
+			}
+
+			public void setCreatorName(String creatorName) {
+				this.creatorName = creatorName;
+			}
+
+			public List<StepDetailItem> getStepDetail() {
+				return this.stepDetail;
+			}
+
+			public void setStepDetail(List<StepDetailItem> stepDetail) {
+				this.stepDetail = stepDetail;
+			}
+
+			public static class StepDetailItem {
+
+				private String stepName;
+
+				private Long stepId;
+
+				private String status;
+
+				public String getStepName() {
+					return this.stepName;
+				}
+
+				public void setStepName(String stepName) {
+					this.stepName = stepName;
+				}
+
+				public Long getStepId() {
+					return this.stepId;
+				}
+
+				public void setStepId(Long stepId) {
+					this.stepId = stepId;
+				}
+
+				public String getStatus() {
+					return this.status;
+				}
+
+				public void setStatus(String status) {
+					this.status = status;
+				}
+			}
 		}
 	}
 
