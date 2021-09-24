@@ -33,7 +33,7 @@ public class ListEurekaServicesRequest extends RpcAcsRequest<ListEurekaServicesR
 
 	private Integer pageSize;
 	public ListEurekaServicesRequest() {
-		super("mse", "2019-05-31", "ListEurekaServices", "mse");
+		super("mse", "2019-05-31", "ListEurekaServices");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

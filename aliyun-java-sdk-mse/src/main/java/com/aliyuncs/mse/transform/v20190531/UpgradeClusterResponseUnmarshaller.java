@@ -23,10 +23,10 @@ public class UpgradeClusterResponseUnmarshaller {
 	public static UpgradeClusterResponse unmarshall(UpgradeClusterResponse upgradeClusterResponse, UnmarshallerContext _ctx) {
 		
 		upgradeClusterResponse.setRequestId(_ctx.stringValue("UpgradeClusterResponse.RequestId"));
-		upgradeClusterResponse.setSuccess(_ctx.booleanValue("UpgradeClusterResponse.Success"));
 		upgradeClusterResponse.setMessage(_ctx.stringValue("UpgradeClusterResponse.Message"));
-		upgradeClusterResponse.setErrorCode(_ctx.stringValue("UpgradeClusterResponse.ErrorCode"));
 		upgradeClusterResponse.setHttpCode(_ctx.stringValue("UpgradeClusterResponse.HttpCode"));
+		upgradeClusterResponse.setErrorCode(_ctx.stringValue("UpgradeClusterResponse.ErrorCode"));
+		upgradeClusterResponse.setSuccess(_ctx.booleanValue("UpgradeClusterResponse.Success"));
 	 
 	 	return upgradeClusterResponse;
 	}

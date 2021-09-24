@@ -33,7 +33,7 @@ public class DeleteNacosServiceRequest extends RpcAcsRequest<DeleteNacosServiceR
 
 	private String serviceName;
 	public DeleteNacosServiceRequest() {
-		super("mse", "2019-05-31", "DeleteNacosService", "mse");
+		super("mse", "2019-05-31", "DeleteNacosService");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

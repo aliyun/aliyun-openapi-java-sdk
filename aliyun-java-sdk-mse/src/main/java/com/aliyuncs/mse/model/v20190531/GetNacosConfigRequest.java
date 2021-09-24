@@ -31,9 +31,11 @@ public class GetNacosConfigRequest extends RpcAcsRequest<GetNacosConfigResponse>
 
 	private String namespaceId;
 
+	private Boolean beta;
+
 	private String group;
 	public GetNacosConfigRequest() {
-		super("mse", "2019-05-31", "GetNacosConfig", "mse");
+		super("mse", "2019-05-31", "GetNacosConfig");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -71,6 +73,17 @@ public class GetNacosConfigRequest extends RpcAcsRequest<GetNacosConfigResponse>
 		this.namespaceId = namespaceId;
 		if(namespaceId != null){
 			putQueryParameter("NamespaceId", namespaceId);
+		}
+	}
+
+	public Boolean getBeta() {
+		return this.beta;
+	}
+
+	public void setBeta(Boolean beta) {
+		this.beta = beta;
+		if(beta != null){
+			putQueryParameter("Beta", beta.toString());
 		}
 	}
 

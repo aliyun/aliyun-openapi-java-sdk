@@ -25,9 +25,17 @@ import com.aliyuncs.mse.Endpoint;
 public class UpdateNacosConfigRequest extends RpcAcsRequest<UpdateNacosConfigResponse> {
 	   
 
+	private String encryptedDataKey;
+
 	private String type;
 
 	private String content;
+
+	private String appName;
+
+	private String namespaceId;
+
+	private String group;
 
 	private String tags;
 
@@ -37,22 +45,27 @@ public class UpdateNacosConfigRequest extends RpcAcsRequest<UpdateNacosConfigRes
 
 	private String dataId;
 
-	private String appName;
-
-	private String namespaceId;
-
-	private String group;
-
 	private String desc;
 
 	private String md5;
 	public UpdateNacosConfigRequest() {
-		super("mse", "2019-05-31", "UpdateNacosConfig", "mse");
+		super("mse", "2019-05-31", "UpdateNacosConfig");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getEncryptedDataKey() {
+		return this.encryptedDataKey;
+	}
+
+	public void setEncryptedDataKey(String encryptedDataKey) {
+		this.encryptedDataKey = encryptedDataKey;
+		if(encryptedDataKey != null){
+			putQueryParameter("EncryptedDataKey", encryptedDataKey);
+		}
 	}
 
 	public String getType() {
@@ -74,6 +87,39 @@ public class UpdateNacosConfigRequest extends RpcAcsRequest<UpdateNacosConfigRes
 		this.content = content;
 		if(content != null){
 			putQueryParameter("Content", content);
+		}
+	}
+
+	public String getAppName() {
+		return this.appName;
+	}
+
+	public void setAppName(String appName) {
+		this.appName = appName;
+		if(appName != null){
+			putQueryParameter("AppName", appName);
+		}
+	}
+
+	public String getNamespaceId() {
+		return this.namespaceId;
+	}
+
+	public void setNamespaceId(String namespaceId) {
+		this.namespaceId = namespaceId;
+		if(namespaceId != null){
+			putQueryParameter("NamespaceId", namespaceId);
+		}
+	}
+
+	public String getGroup() {
+		return this.group;
+	}
+
+	public void setGroup(String group) {
+		this.group = group;
+		if(group != null){
+			putQueryParameter("Group", group);
 		}
 	}
 
@@ -118,39 +164,6 @@ public class UpdateNacosConfigRequest extends RpcAcsRequest<UpdateNacosConfigRes
 		this.dataId = dataId;
 		if(dataId != null){
 			putQueryParameter("DataId", dataId);
-		}
-	}
-
-	public String getAppName() {
-		return this.appName;
-	}
-
-	public void setAppName(String appName) {
-		this.appName = appName;
-		if(appName != null){
-			putQueryParameter("AppName", appName);
-		}
-	}
-
-	public String getNamespaceId() {
-		return this.namespaceId;
-	}
-
-	public void setNamespaceId(String namespaceId) {
-		this.namespaceId = namespaceId;
-		if(namespaceId != null){
-			putQueryParameter("NamespaceId", namespaceId);
-		}
-	}
-
-	public String getGroup() {
-		return this.group;
-	}
-
-	public void setGroup(String group) {
-		this.group = group;
-		if(group != null){
-			putQueryParameter("Group", group);
 		}
 	}
 

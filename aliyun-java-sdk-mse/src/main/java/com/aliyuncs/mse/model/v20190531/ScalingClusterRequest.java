@@ -35,7 +35,7 @@ public class ScalingClusterRequest extends RpcAcsRequest<ScalingClusterResponse>
 
 	private Integer instanceCount;
 	public ScalingClusterRequest() {
-		super("mse", "2019-05-31", "ScalingCluster", "mse");
+		super("mse", "2019-05-31", "ScalingCluster");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

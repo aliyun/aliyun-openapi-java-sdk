@@ -24,11 +24,11 @@ public class ExportNacosConfigResponseUnmarshaller {
 	public static ExportNacosConfigResponse unmarshall(ExportNacosConfigResponse exportNacosConfigResponse, UnmarshallerContext _ctx) {
 		
 		exportNacosConfigResponse.setRequestId(_ctx.stringValue("ExportNacosConfigResponse.RequestId"));
-		exportNacosConfigResponse.setSuccess(_ctx.booleanValue("ExportNacosConfigResponse.Success"));
-		exportNacosConfigResponse.setMessage(_ctx.stringValue("ExportNacosConfigResponse.Message"));
-		exportNacosConfigResponse.setErrorCode(_ctx.stringValue("ExportNacosConfigResponse.ErrorCode"));
 		exportNacosConfigResponse.setHttpStatusCode(_ctx.integerValue("ExportNacosConfigResponse.HttpStatusCode"));
+		exportNacosConfigResponse.setSuccess(_ctx.booleanValue("ExportNacosConfigResponse.Success"));
+		exportNacosConfigResponse.setErrorCode(_ctx.stringValue("ExportNacosConfigResponse.ErrorCode"));
 		exportNacosConfigResponse.setCode(_ctx.integerValue("ExportNacosConfigResponse.Code"));
+		exportNacosConfigResponse.setMessage(_ctx.stringValue("ExportNacosConfigResponse.Message"));
 		exportNacosConfigResponse.setDynamicMessage(_ctx.stringValue("ExportNacosConfigResponse.DynamicMessage"));
 
 		Data data = new Data();

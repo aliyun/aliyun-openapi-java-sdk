@@ -24,24 +24,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class UpdateNacosInstanceResponse extends AcsResponse {
 
-	private String message;
+	private Integer httpStatusCode;
 
 	private String requestId;
 
-	private Integer httpStatusCode;
-
-	private String data;
+	private String message;
 
 	private Integer code;
 
 	private Boolean success;
 
-	public String getMessage() {
-		return this.message;
+	private String data;
+
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
 	}
 
 	public String getRequestId() {
@@ -52,20 +52,12 @@ public class UpdateNacosInstanceResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Integer getHttpStatusCode() {
-		return this.httpStatusCode;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setHttpStatusCode(Integer httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
-	}
-
-	public String getData() {
-		return this.data;
-	}
-
-	public void setData(String data) {
-		this.data = data;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Integer getCode() {
@@ -82,6 +74,14 @@ public class UpdateNacosInstanceResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getData() {
+		return this.data;
+	}
+
+	public void setData(String data) {
+		this.data = data;
 	}
 
 	@Override

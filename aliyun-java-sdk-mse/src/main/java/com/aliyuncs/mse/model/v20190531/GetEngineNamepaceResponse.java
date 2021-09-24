@@ -24,59 +24,27 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetEngineNamepaceResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
-	private String message;
-
-	private String errorCode;
-
 	private String httpCode;
-
-	private String namespace;
-
-	private String namespaceShowName;
-
-	private String namespaceDesc;
-
-	private String quota;
-
-	private String configCount;
 
 	private String type;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
+	private String quota;
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
-	public Boolean getSuccess() {
-		return this.success;
-	}
+	private String message;
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
+	private String configCount;
 
-	public String getMessage() {
-		return this.message;
-	}
+	private String namespaceShowName;
 
-	public void setMessage(String message) {
-		this.message = message;
-	}
+	private String errorCode;
 
-	public String getErrorCode() {
-		return this.errorCode;
-	}
+	private Boolean success;
 
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
-	}
+	private String namespaceDesc;
+
+	private String namespace;
 
 	public String getHttpCode() {
 		return this.httpCode;
@@ -86,28 +54,12 @@ public class GetEngineNamepaceResponse extends AcsResponse {
 		this.httpCode = httpCode;
 	}
 
-	public String getNamespace() {
-		return this.namespace;
+	public String getType() {
+		return this.type;
 	}
 
-	public void setNamespace(String namespace) {
-		this.namespace = namespace;
-	}
-
-	public String getNamespaceShowName() {
-		return this.namespaceShowName;
-	}
-
-	public void setNamespaceShowName(String namespaceShowName) {
-		this.namespaceShowName = namespaceShowName;
-	}
-
-	public String getNamespaceDesc() {
-		return this.namespaceDesc;
-	}
-
-	public void setNamespaceDesc(String namespaceDesc) {
-		this.namespaceDesc = namespaceDesc;
+	public void setType(String type) {
+		this.type = type;
 	}
 
 	public String getQuota() {
@@ -118,6 +70,22 @@ public class GetEngineNamepaceResponse extends AcsResponse {
 		this.quota = quota;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
 	public String getConfigCount() {
 		return this.configCount;
 	}
@@ -126,12 +94,44 @@ public class GetEngineNamepaceResponse extends AcsResponse {
 		this.configCount = configCount;
 	}
 
-	public String getType() {
-		return this.type;
+	public String getNamespaceShowName() {
+		return this.namespaceShowName;
 	}
 
-	public void setType(String type) {
-		this.type = type;
+	public void setNamespaceShowName(String namespaceShowName) {
+		this.namespaceShowName = namespaceShowName;
+	}
+
+	public String getErrorCode() {
+		return this.errorCode;
+	}
+
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
+	public String getNamespaceDesc() {
+		return this.namespaceDesc;
+	}
+
+	public void setNamespaceDesc(String namespaceDesc) {
+		this.namespaceDesc = namespaceDesc;
+	}
+
+	public String getNamespace() {
+		return this.namespace;
+	}
+
+	public void setNamespace(String namespace) {
+		this.namespace = namespace;
 	}
 
 	@Override

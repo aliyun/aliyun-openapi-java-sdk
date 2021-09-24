@@ -24,31 +24,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryConfigResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String success;
-
 	private String message;
 
-	private String errorCode;
+	private String requestId;
+
+	private Boolean success;
+
+	private Integer code;
+
+	private Integer httpStatusCode;
 
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(String success) {
-		this.success = success;
-	}
 
 	public String getMessage() {
 		return this.message;
@@ -58,12 +44,36 @@ public class QueryConfigResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getErrorCode() {
-		return this.errorCode;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
+	public Integer getCode() {
+		return this.code;
+	}
+
+	public void setCode(Integer code) {
+		this.code = code;
+	}
+
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
+	}
+
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
 	}
 
 	public Data getData() {
@@ -76,54 +86,58 @@ public class QueryConfigResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String clusterName;
+		private String maxClientCnxns;
 
-		private String tickTime;
+		private Boolean configAuthSupported;
 
 		private String initLimit;
 
-		private String syncLimit;
-
-		private String maxClientCnxns;
+		private Boolean mCPEnabled;
 
 		private Boolean openSuperAcl;
 
-		private String userName;
-
-		private String passWord;
+		private Boolean restartFlag;
 
 		private String jvmFlagsCustom;
-
-		private String juteMaxbuffer;
 
 		private String autopurgePurgeInterval;
 
 		private String autopurgeSnapRetainCount;
 
-		private Boolean restartFlag;
-
-		private Boolean configAuthSupported;
+		private String syncLimit;
 
 		private Boolean configAuthEnabled;
 
+		private String clusterName;
+
 		private Boolean mCPSupported;
 
-		private Boolean mCPEnabled;
+		private String juteMaxbuffer;
 
-		public String getClusterName() {
-			return this.clusterName;
+		private String tickTime;
+
+		private String passWord;
+
+		private String userName;
+
+		private Boolean configSecretSupported;
+
+		private Boolean configSecretEnabled;
+
+		public String getMaxClientCnxns() {
+			return this.maxClientCnxns;
 		}
 
-		public void setClusterName(String clusterName) {
-			this.clusterName = clusterName;
+		public void setMaxClientCnxns(String maxClientCnxns) {
+			this.maxClientCnxns = maxClientCnxns;
 		}
 
-		public String getTickTime() {
-			return this.tickTime;
+		public Boolean getConfigAuthSupported() {
+			return this.configAuthSupported;
 		}
 
-		public void setTickTime(String tickTime) {
-			this.tickTime = tickTime;
+		public void setConfigAuthSupported(Boolean configAuthSupported) {
+			this.configAuthSupported = configAuthSupported;
 		}
 
 		public String getInitLimit() {
@@ -134,20 +148,12 @@ public class QueryConfigResponse extends AcsResponse {
 			this.initLimit = initLimit;
 		}
 
-		public String getSyncLimit() {
-			return this.syncLimit;
+		public Boolean getMCPEnabled() {
+			return this.mCPEnabled;
 		}
 
-		public void setSyncLimit(String syncLimit) {
-			this.syncLimit = syncLimit;
-		}
-
-		public String getMaxClientCnxns() {
-			return this.maxClientCnxns;
-		}
-
-		public void setMaxClientCnxns(String maxClientCnxns) {
-			this.maxClientCnxns = maxClientCnxns;
+		public void setMCPEnabled(Boolean mCPEnabled) {
+			this.mCPEnabled = mCPEnabled;
 		}
 
 		public Boolean getOpenSuperAcl() {
@@ -158,20 +164,12 @@ public class QueryConfigResponse extends AcsResponse {
 			this.openSuperAcl = openSuperAcl;
 		}
 
-		public String getUserName() {
-			return this.userName;
+		public Boolean getRestartFlag() {
+			return this.restartFlag;
 		}
 
-		public void setUserName(String userName) {
-			this.userName = userName;
-		}
-
-		public String getPassWord() {
-			return this.passWord;
-		}
-
-		public void setPassWord(String passWord) {
-			this.passWord = passWord;
+		public void setRestartFlag(Boolean restartFlag) {
+			this.restartFlag = restartFlag;
 		}
 
 		public String getJvmFlagsCustom() {
@@ -180,14 +178,6 @@ public class QueryConfigResponse extends AcsResponse {
 
 		public void setJvmFlagsCustom(String jvmFlagsCustom) {
 			this.jvmFlagsCustom = jvmFlagsCustom;
-		}
-
-		public String getJuteMaxbuffer() {
-			return this.juteMaxbuffer;
-		}
-
-		public void setJuteMaxbuffer(String juteMaxbuffer) {
-			this.juteMaxbuffer = juteMaxbuffer;
 		}
 
 		public String getAutopurgePurgeInterval() {
@@ -206,20 +196,12 @@ public class QueryConfigResponse extends AcsResponse {
 			this.autopurgeSnapRetainCount = autopurgeSnapRetainCount;
 		}
 
-		public Boolean getRestartFlag() {
-			return this.restartFlag;
+		public String getSyncLimit() {
+			return this.syncLimit;
 		}
 
-		public void setRestartFlag(Boolean restartFlag) {
-			this.restartFlag = restartFlag;
-		}
-
-		public Boolean getConfigAuthSupported() {
-			return this.configAuthSupported;
-		}
-
-		public void setConfigAuthSupported(Boolean configAuthSupported) {
-			this.configAuthSupported = configAuthSupported;
+		public void setSyncLimit(String syncLimit) {
+			this.syncLimit = syncLimit;
 		}
 
 		public Boolean getConfigAuthEnabled() {
@@ -230,6 +212,14 @@ public class QueryConfigResponse extends AcsResponse {
 			this.configAuthEnabled = configAuthEnabled;
 		}
 
+		public String getClusterName() {
+			return this.clusterName;
+		}
+
+		public void setClusterName(String clusterName) {
+			this.clusterName = clusterName;
+		}
+
 		public Boolean getMCPSupported() {
 			return this.mCPSupported;
 		}
@@ -238,12 +228,52 @@ public class QueryConfigResponse extends AcsResponse {
 			this.mCPSupported = mCPSupported;
 		}
 
-		public Boolean getMCPEnabled() {
-			return this.mCPEnabled;
+		public String getJuteMaxbuffer() {
+			return this.juteMaxbuffer;
 		}
 
-		public void setMCPEnabled(Boolean mCPEnabled) {
-			this.mCPEnabled = mCPEnabled;
+		public void setJuteMaxbuffer(String juteMaxbuffer) {
+			this.juteMaxbuffer = juteMaxbuffer;
+		}
+
+		public String getTickTime() {
+			return this.tickTime;
+		}
+
+		public void setTickTime(String tickTime) {
+			this.tickTime = tickTime;
+		}
+
+		public String getPassWord() {
+			return this.passWord;
+		}
+
+		public void setPassWord(String passWord) {
+			this.passWord = passWord;
+		}
+
+		public String getUserName() {
+			return this.userName;
+		}
+
+		public void setUserName(String userName) {
+			this.userName = userName;
+		}
+
+		public Boolean getConfigSecretSupported() {
+			return this.configSecretSupported;
+		}
+
+		public void setConfigSecretSupported(Boolean configSecretSupported) {
+			this.configSecretSupported = configSecretSupported;
+		}
+
+		public Boolean getConfigSecretEnabled() {
+			return this.configSecretEnabled;
+		}
+
+		public void setConfigSecretEnabled(Boolean configSecretEnabled) {
+			this.configSecretEnabled = configSecretEnabled;
 		}
 	}
 

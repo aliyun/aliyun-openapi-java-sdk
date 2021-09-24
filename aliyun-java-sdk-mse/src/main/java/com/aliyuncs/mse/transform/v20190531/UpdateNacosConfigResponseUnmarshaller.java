@@ -23,10 +23,10 @@ public class UpdateNacosConfigResponseUnmarshaller {
 	public static UpdateNacosConfigResponse unmarshall(UpdateNacosConfigResponse updateNacosConfigResponse, UnmarshallerContext _ctx) {
 		
 		updateNacosConfigResponse.setRequestId(_ctx.stringValue("UpdateNacosConfigResponse.RequestId"));
-		updateNacosConfigResponse.setSuccess(_ctx.booleanValue("UpdateNacosConfigResponse.Success"));
+		updateNacosConfigResponse.setHttpCode(_ctx.stringValue("UpdateNacosConfigResponse.HttpCode"));
 		updateNacosConfigResponse.setMessage(_ctx.stringValue("UpdateNacosConfigResponse.Message"));
 		updateNacosConfigResponse.setErrorCode(_ctx.stringValue("UpdateNacosConfigResponse.ErrorCode"));
-		updateNacosConfigResponse.setHttpCode(_ctx.stringValue("UpdateNacosConfigResponse.HttpCode"));
+		updateNacosConfigResponse.setSuccess(_ctx.booleanValue("UpdateNacosConfigResponse.Success"));
 	 
 	 	return updateNacosConfigResponse;
 	}

@@ -35,7 +35,7 @@ public class CreateEngineNamespaceRequest extends RpcAcsRequest<CreateEngineName
 
 	private String desc;
 	public CreateEngineNamespaceRequest() {
-		super("mse", "2019-05-31", "CreateEngineNamespace", "mse");
+		super("mse", "2019-05-31", "CreateEngineNamespace");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

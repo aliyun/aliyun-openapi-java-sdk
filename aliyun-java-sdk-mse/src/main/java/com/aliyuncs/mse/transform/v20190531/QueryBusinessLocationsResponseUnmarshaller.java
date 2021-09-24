@@ -27,25 +27,25 @@ public class QueryBusinessLocationsResponseUnmarshaller {
 	public static QueryBusinessLocationsResponse unmarshall(QueryBusinessLocationsResponse queryBusinessLocationsResponse, UnmarshallerContext _ctx) {
 		
 		queryBusinessLocationsResponse.setRequestId(_ctx.stringValue("QueryBusinessLocationsResponse.RequestId"));
-		queryBusinessLocationsResponse.setSuccess(_ctx.stringValue("QueryBusinessLocationsResponse.Success"));
 		queryBusinessLocationsResponse.setMessage(_ctx.stringValue("QueryBusinessLocationsResponse.Message"));
 		queryBusinessLocationsResponse.setErrorCode(_ctx.stringValue("QueryBusinessLocationsResponse.ErrorCode"));
+		queryBusinessLocationsResponse.setSuccess(_ctx.stringValue("QueryBusinessLocationsResponse.Success"));
 
 		List<LocationData> data = new ArrayList<LocationData>();
 		for (int i = 0; i < _ctx.lengthValue("QueryBusinessLocationsResponse.Data.Length"); i++) {
 			LocationData locationData = new LocationData();
+			locationData.setOrdering(_ctx.integerValue("QueryBusinessLocationsResponse.Data["+ i +"].Ordering"));
 			locationData.setType(_ctx.stringValue("QueryBusinessLocationsResponse.Data["+ i +"].Type"));
-			locationData.setName(_ctx.stringValue("QueryBusinessLocationsResponse.Data["+ i +"].Name"));
-			locationData.setCnName(_ctx.stringValue("QueryBusinessLocationsResponse.Data["+ i +"].CnName"));
-			locationData.setEnName(_ctx.stringValue("QueryBusinessLocationsResponse.Data["+ i +"].EnName"));
+			locationData.setDistrictEnName(_ctx.stringValue("QueryBusinessLocationsResponse.Data["+ i +"].DistrictEnName"));
 			locationData.setShowName(_ctx.stringValue("QueryBusinessLocationsResponse.Data["+ i +"].ShowName"));
+			locationData.setDistrictCnName(_ctx.stringValue("QueryBusinessLocationsResponse.Data["+ i +"].DistrictCnName"));
+			locationData.setEnName(_ctx.stringValue("QueryBusinessLocationsResponse.Data["+ i +"].EnName"));
+			locationData.setDistrictId(_ctx.stringValue("QueryBusinessLocationsResponse.Data["+ i +"].DistrictId"));
+			locationData.setDistrictShowName(_ctx.stringValue("QueryBusinessLocationsResponse.Data["+ i +"].DistrictShowName"));
 			locationData.setDescription(_ctx.stringValue("QueryBusinessLocationsResponse.Data["+ i +"].Description"));
 			locationData.setEnDescription(_ctx.stringValue("QueryBusinessLocationsResponse.Data["+ i +"].EnDescription"));
-			locationData.setOrdering(_ctx.integerValue("QueryBusinessLocationsResponse.Data["+ i +"].Ordering"));
-			locationData.setDistrictId(_ctx.stringValue("QueryBusinessLocationsResponse.Data["+ i +"].DistrictId"));
-			locationData.setDistrictCnName(_ctx.stringValue("QueryBusinessLocationsResponse.Data["+ i +"].DistrictCnName"));
-			locationData.setDistrictEnName(_ctx.stringValue("QueryBusinessLocationsResponse.Data["+ i +"].DistrictEnName"));
-			locationData.setDistrictShowName(_ctx.stringValue("QueryBusinessLocationsResponse.Data["+ i +"].DistrictShowName"));
+			locationData.setCnName(_ctx.stringValue("QueryBusinessLocationsResponse.Data["+ i +"].CnName"));
+			locationData.setName(_ctx.stringValue("QueryBusinessLocationsResponse.Data["+ i +"].Name"));
 			locationData.setDistrictOrdering(_ctx.integerValue("QueryBusinessLocationsResponse.Data["+ i +"].DistrictOrdering"));
 
 			data.add(locationData);

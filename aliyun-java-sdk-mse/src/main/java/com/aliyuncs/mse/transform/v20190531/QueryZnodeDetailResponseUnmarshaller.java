@@ -24,15 +24,15 @@ public class QueryZnodeDetailResponseUnmarshaller {
 	public static QueryZnodeDetailResponse unmarshall(QueryZnodeDetailResponse queryZnodeDetailResponse, UnmarshallerContext _ctx) {
 		
 		queryZnodeDetailResponse.setRequestId(_ctx.stringValue("QueryZnodeDetailResponse.RequestId"));
-		queryZnodeDetailResponse.setSuccess(_ctx.stringValue("QueryZnodeDetailResponse.Success"));
 		queryZnodeDetailResponse.setMessage(_ctx.stringValue("QueryZnodeDetailResponse.Message"));
 		queryZnodeDetailResponse.setErrorCode(_ctx.stringValue("QueryZnodeDetailResponse.ErrorCode"));
+		queryZnodeDetailResponse.setSuccess(_ctx.stringValue("QueryZnodeDetailResponse.Success"));
 
 		Data data = new Data();
-		data.setPath(_ctx.stringValue("QueryZnodeDetailResponse.Data.Path"));
-		data.setName(_ctx.stringValue("QueryZnodeDetailResponse.Data.Name"));
 		data.setData(_ctx.stringValue("QueryZnodeDetailResponse.Data.Data"));
+		data.setPath(_ctx.stringValue("QueryZnodeDetailResponse.Data.Path"));
 		data.setDir(_ctx.booleanValue("QueryZnodeDetailResponse.Data.Dir"));
+		data.setName(_ctx.stringValue("QueryZnodeDetailResponse.Data.Name"));
 		queryZnodeDetailResponse.setData(data);
 	 
 	 	return queryZnodeDetailResponse;

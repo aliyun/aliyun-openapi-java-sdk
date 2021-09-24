@@ -27,22 +27,22 @@ public class ListAnsServicesResponseUnmarshaller {
 	public static ListAnsServicesResponse unmarshall(ListAnsServicesResponse listAnsServicesResponse, UnmarshallerContext _ctx) {
 		
 		listAnsServicesResponse.setRequestId(_ctx.stringValue("ListAnsServicesResponse.RequestId"));
-		listAnsServicesResponse.setSuccess(_ctx.booleanValue("ListAnsServicesResponse.Success"));
-		listAnsServicesResponse.setMessage(_ctx.stringValue("ListAnsServicesResponse.Message"));
-		listAnsServicesResponse.setErrorCode(_ctx.stringValue("ListAnsServicesResponse.ErrorCode"));
-		listAnsServicesResponse.setPageNumber(_ctx.integerValue("ListAnsServicesResponse.PageNumber"));
-		listAnsServicesResponse.setPageSize(_ctx.integerValue("ListAnsServicesResponse.PageSize"));
-		listAnsServicesResponse.setTotalCount(_ctx.integerValue("ListAnsServicesResponse.TotalCount"));
 		listAnsServicesResponse.setHttpCode(_ctx.stringValue("ListAnsServicesResponse.HttpCode"));
+		listAnsServicesResponse.setTotalCount(_ctx.integerValue("ListAnsServicesResponse.TotalCount"));
+		listAnsServicesResponse.setMessage(_ctx.stringValue("ListAnsServicesResponse.Message"));
+		listAnsServicesResponse.setPageSize(_ctx.integerValue("ListAnsServicesResponse.PageSize"));
+		listAnsServicesResponse.setPageNumber(_ctx.integerValue("ListAnsServicesResponse.PageNumber"));
+		listAnsServicesResponse.setErrorCode(_ctx.stringValue("ListAnsServicesResponse.ErrorCode"));
+		listAnsServicesResponse.setSuccess(_ctx.booleanValue("ListAnsServicesResponse.Success"));
 
 		List<SimpleNacosAnsService> data = new ArrayList<SimpleNacosAnsService>();
 		for (int i = 0; i < _ctx.lengthValue("ListAnsServicesResponse.Data.Length"); i++) {
 			SimpleNacosAnsService simpleNacosAnsService = new SimpleNacosAnsService();
-			simpleNacosAnsService.setName(_ctx.stringValue("ListAnsServicesResponse.Data["+ i +"].Name"));
-			simpleNacosAnsService.setGroupName(_ctx.stringValue("ListAnsServicesResponse.Data["+ i +"].GroupName"));
-			simpleNacosAnsService.setClusterCount(_ctx.integerValue("ListAnsServicesResponse.Data["+ i +"].ClusterCount"));
-			simpleNacosAnsService.setIpCount(_ctx.integerValue("ListAnsServicesResponse.Data["+ i +"].IpCount"));
 			simpleNacosAnsService.setHealthyInstanceCount(_ctx.integerValue("ListAnsServicesResponse.Data["+ i +"].HealthyInstanceCount"));
+			simpleNacosAnsService.setGroupName(_ctx.stringValue("ListAnsServicesResponse.Data["+ i +"].GroupName"));
+			simpleNacosAnsService.setIpCount(_ctx.integerValue("ListAnsServicesResponse.Data["+ i +"].IpCount"));
+			simpleNacosAnsService.setName(_ctx.stringValue("ListAnsServicesResponse.Data["+ i +"].Name"));
+			simpleNacosAnsService.setClusterCount(_ctx.integerValue("ListAnsServicesResponse.Data["+ i +"].ClusterCount"));
 
 			data.add(simpleNacosAnsService);
 		}

@@ -29,7 +29,7 @@ public class GetOverviewRequest extends RpcAcsRequest<GetOverviewResponse> {
 
 	private String region;
 	public GetOverviewRequest() {
-		super("mse", "2019-05-31", "GetOverview", "mse");
+		super("mse", "2019-05-31", "GetOverview");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -24,16 +24,16 @@ public class CreateZnodeResponseUnmarshaller {
 	public static CreateZnodeResponse unmarshall(CreateZnodeResponse createZnodeResponse, UnmarshallerContext _ctx) {
 		
 		createZnodeResponse.setRequestId(_ctx.stringValue("CreateZnodeResponse.RequestId"));
-		createZnodeResponse.setSuccess(_ctx.booleanValue("CreateZnodeResponse.Success"));
+		createZnodeResponse.setHttpCode(_ctx.stringValue("CreateZnodeResponse.HttpCode"));
 		createZnodeResponse.setMessage(_ctx.stringValue("CreateZnodeResponse.Message"));
 		createZnodeResponse.setErrorCode(_ctx.stringValue("CreateZnodeResponse.ErrorCode"));
-		createZnodeResponse.setHttpCode(_ctx.stringValue("CreateZnodeResponse.HttpCode"));
+		createZnodeResponse.setSuccess(_ctx.booleanValue("CreateZnodeResponse.Success"));
 
 		Data data = new Data();
-		data.setPath(_ctx.stringValue("CreateZnodeResponse.Data.Path"));
-		data.setName(_ctx.stringValue("CreateZnodeResponse.Data.Name"));
 		data.setData(_ctx.stringValue("CreateZnodeResponse.Data.Data"));
+		data.setPath(_ctx.stringValue("CreateZnodeResponse.Data.Path"));
 		data.setDir(_ctx.booleanValue("CreateZnodeResponse.Data.Dir"));
+		data.setName(_ctx.stringValue("CreateZnodeResponse.Data.Name"));
 		createZnodeResponse.setData(data);
 	 
 	 	return createZnodeResponse;

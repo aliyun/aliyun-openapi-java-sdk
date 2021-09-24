@@ -27,20 +27,20 @@ public class ListListenersByIpResponseUnmarshaller {
 	public static ListListenersByIpResponse unmarshall(ListListenersByIpResponse listListenersByIpResponse, UnmarshallerContext _ctx) {
 		
 		listListenersByIpResponse.setRequestId(_ctx.stringValue("ListListenersByIpResponse.RequestId"));
-		listListenersByIpResponse.setSuccess(_ctx.booleanValue("ListListenersByIpResponse.Success"));
-		listListenersByIpResponse.setMessage(_ctx.stringValue("ListListenersByIpResponse.Message"));
-		listListenersByIpResponse.setErrorCode(_ctx.stringValue("ListListenersByIpResponse.ErrorCode"));
-		listListenersByIpResponse.setPageNumber(_ctx.integerValue("ListListenersByIpResponse.PageNumber"));
-		listListenersByIpResponse.setPageSize(_ctx.integerValue("ListListenersByIpResponse.PageSize"));
-		listListenersByIpResponse.setTotalCount(_ctx.integerValue("ListListenersByIpResponse.TotalCount"));
 		listListenersByIpResponse.setHttpCode(_ctx.stringValue("ListListenersByIpResponse.HttpCode"));
+		listListenersByIpResponse.setTotalCount(_ctx.integerValue("ListListenersByIpResponse.TotalCount"));
+		listListenersByIpResponse.setMessage(_ctx.stringValue("ListListenersByIpResponse.Message"));
+		listListenersByIpResponse.setPageSize(_ctx.integerValue("ListListenersByIpResponse.PageSize"));
+		listListenersByIpResponse.setPageNumber(_ctx.integerValue("ListListenersByIpResponse.PageNumber"));
+		listListenersByIpResponse.setErrorCode(_ctx.stringValue("ListListenersByIpResponse.ErrorCode"));
+		listListenersByIpResponse.setSuccess(_ctx.booleanValue("ListListenersByIpResponse.Success"));
 
 		List<Listener> listeners = new ArrayList<Listener>();
 		for (int i = 0; i < _ctx.lengthValue("ListListenersByIpResponse.Listeners.Length"); i++) {
 			Listener listener = new Listener();
+			listener.setMd5(_ctx.stringValue("ListListenersByIpResponse.Listeners["+ i +"].Md5"));
 			listener.setDataId(_ctx.stringValue("ListListenersByIpResponse.Listeners["+ i +"].DataId"));
 			listener.setGroup(_ctx.stringValue("ListListenersByIpResponse.Listeners["+ i +"].Group"));
-			listener.setMd5(_ctx.stringValue("ListListenersByIpResponse.Listeners["+ i +"].Md5"));
 
 			listeners.add(listener);
 		}

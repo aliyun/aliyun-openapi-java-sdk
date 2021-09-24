@@ -27,22 +27,22 @@ public class QueryClusterSpecificationResponseUnmarshaller {
 	public static QueryClusterSpecificationResponse unmarshall(QueryClusterSpecificationResponse queryClusterSpecificationResponse, UnmarshallerContext _ctx) {
 		
 		queryClusterSpecificationResponse.setRequestId(_ctx.stringValue("QueryClusterSpecificationResponse.RequestId"));
+		queryClusterSpecificationResponse.setHttpStatusCode(_ctx.integerValue("QueryClusterSpecificationResponse.HttpStatusCode"));
 		queryClusterSpecificationResponse.setSuccess(_ctx.booleanValue("QueryClusterSpecificationResponse.Success"));
-		queryClusterSpecificationResponse.setMessage(_ctx.stringValue("QueryClusterSpecificationResponse.Message"));
 		queryClusterSpecificationResponse.setErrorCode(_ctx.stringValue("QueryClusterSpecificationResponse.ErrorCode"));
 		queryClusterSpecificationResponse.setCode(_ctx.integerValue("QueryClusterSpecificationResponse.Code"));
-		queryClusterSpecificationResponse.setHttpStatusCode(_ctx.integerValue("QueryClusterSpecificationResponse.HttpStatusCode"));
+		queryClusterSpecificationResponse.setMessage(_ctx.stringValue("QueryClusterSpecificationResponse.Message"));
 
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("QueryClusterSpecificationResponse.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
 			dataItem.setClusterSpecificationName(_ctx.stringValue("QueryClusterSpecificationResponse.Data["+ i +"].ClusterSpecificationName"));
-			dataItem.setMemoryCapacity(_ctx.stringValue("QueryClusterSpecificationResponse.Data["+ i +"].MemoryCapacity"));
-			dataItem.setCpuCapacity(_ctx.stringValue("QueryClusterSpecificationResponse.Data["+ i +"].CpuCapacity"));
 			dataItem.setDiskCapacity(_ctx.stringValue("QueryClusterSpecificationResponse.Data["+ i +"].DiskCapacity"));
+			dataItem.setMemoryCapacity(_ctx.stringValue("QueryClusterSpecificationResponse.Data["+ i +"].MemoryCapacity"));
 			dataItem.setInstanceCount(_ctx.stringValue("QueryClusterSpecificationResponse.Data["+ i +"].InstanceCount"));
 			dataItem.setMaxTps(_ctx.stringValue("QueryClusterSpecificationResponse.Data["+ i +"].MaxTps"));
 			dataItem.setMaxCon(_ctx.stringValue("QueryClusterSpecificationResponse.Data["+ i +"].MaxCon"));
+			dataItem.setCpuCapacity(_ctx.stringValue("QueryClusterSpecificationResponse.Data["+ i +"].CpuCapacity"));
 
 			data.add(dataItem);
 		}

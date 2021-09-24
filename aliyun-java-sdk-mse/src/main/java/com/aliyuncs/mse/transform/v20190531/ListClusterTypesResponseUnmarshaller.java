@@ -27,11 +27,11 @@ public class ListClusterTypesResponseUnmarshaller {
 	public static ListClusterTypesResponse unmarshall(ListClusterTypesResponse listClusterTypesResponse, UnmarshallerContext _ctx) {
 		
 		listClusterTypesResponse.setRequestId(_ctx.stringValue("ListClusterTypesResponse.RequestId"));
-		listClusterTypesResponse.setSuccess(_ctx.booleanValue("ListClusterTypesResponse.Success"));
-		listClusterTypesResponse.setMessage(_ctx.stringValue("ListClusterTypesResponse.Message"));
-		listClusterTypesResponse.setErrorCode(_ctx.stringValue("ListClusterTypesResponse.ErrorCode"));
 		listClusterTypesResponse.setHttpStatusCode(_ctx.integerValue("ListClusterTypesResponse.HttpStatusCode"));
+		listClusterTypesResponse.setSuccess(_ctx.booleanValue("ListClusterTypesResponse.Success"));
+		listClusterTypesResponse.setErrorCode(_ctx.stringValue("ListClusterTypesResponse.ErrorCode"));
 		listClusterTypesResponse.setCode(_ctx.integerValue("ListClusterTypesResponse.Code"));
+		listClusterTypesResponse.setMessage(_ctx.stringValue("ListClusterTypesResponse.Message"));
 		listClusterTypesResponse.setDynamicMessage(_ctx.stringValue("ListClusterTypesResponse.DynamicMessage"));
 
 		List<DataItem> data = new ArrayList<DataItem>();

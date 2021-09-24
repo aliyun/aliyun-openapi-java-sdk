@@ -25,70 +25,30 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListEngineNamespacesResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
-	private String message;
-
-	private String errorCode;
-
-	private Integer pageNumber;
-
-	private Integer pageSize;
+	private String httpCode;
 
 	private Integer totalCount;
 
-	private String httpCode;
+	private String requestId;
+
+	private String message;
+
+	private Integer pageSize;
+
+	private Integer pageNumber;
+
+	private String errorCode;
+
+	private Boolean success;
 
 	private List<Namespace> data;
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getHttpCode() {
+		return this.httpCode;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setHttpCode(String httpCode) {
+		this.httpCode = httpCode;
 	}
 
 	public Integer getTotalCount() {
@@ -99,12 +59,52 @@ public class ListEngineNamespacesResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public String getHttpCode() {
-		return this.httpCode;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setHttpCode(String httpCode) {
-		this.httpCode = httpCode;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+	}
+
+	public String getErrorCode() {
+		return this.errorCode;
+	}
+
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<Namespace> getData() {
@@ -117,26 +117,26 @@ public class ListEngineNamespacesResponse extends AcsResponse {
 
 	public static class Namespace {
 
-		private String namespace;
+		private Integer type;
 
 		private String namespaceShowName;
 
-		private String namespaceDesc;
-
 		private Integer quota;
+
+		private String namespace;
+
+		private String namespaceDesc;
 
 		private Integer configCount;
 
-		private Integer type;
-
 		private String serviceCount;
 
-		public String getNamespace() {
-			return this.namespace;
+		public Integer getType() {
+			return this.type;
 		}
 
-		public void setNamespace(String namespace) {
-			this.namespace = namespace;
+		public void setType(Integer type) {
+			this.type = type;
 		}
 
 		public String getNamespaceShowName() {
@@ -147,14 +147,6 @@ public class ListEngineNamespacesResponse extends AcsResponse {
 			this.namespaceShowName = namespaceShowName;
 		}
 
-		public String getNamespaceDesc() {
-			return this.namespaceDesc;
-		}
-
-		public void setNamespaceDesc(String namespaceDesc) {
-			this.namespaceDesc = namespaceDesc;
-		}
-
 		public Integer getQuota() {
 			return this.quota;
 		}
@@ -163,20 +155,28 @@ public class ListEngineNamespacesResponse extends AcsResponse {
 			this.quota = quota;
 		}
 
+		public String getNamespace() {
+			return this.namespace;
+		}
+
+		public void setNamespace(String namespace) {
+			this.namespace = namespace;
+		}
+
+		public String getNamespaceDesc() {
+			return this.namespaceDesc;
+		}
+
+		public void setNamespaceDesc(String namespaceDesc) {
+			this.namespaceDesc = namespaceDesc;
+		}
+
 		public Integer getConfigCount() {
 			return this.configCount;
 		}
 
 		public void setConfigCount(Integer configCount) {
 			this.configCount = configCount;
-		}
-
-		public Integer getType() {
-			return this.type;
-		}
-
-		public void setType(Integer type) {
-			this.type = type;
 		}
 
 		public String getServiceCount() {

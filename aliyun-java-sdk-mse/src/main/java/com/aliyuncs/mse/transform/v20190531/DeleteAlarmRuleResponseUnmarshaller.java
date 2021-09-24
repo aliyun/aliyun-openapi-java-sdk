@@ -23,10 +23,10 @@ public class DeleteAlarmRuleResponseUnmarshaller {
 	public static DeleteAlarmRuleResponse unmarshall(DeleteAlarmRuleResponse deleteAlarmRuleResponse, UnmarshallerContext _ctx) {
 		
 		deleteAlarmRuleResponse.setRequestId(_ctx.stringValue("DeleteAlarmRuleResponse.RequestId"));
-		deleteAlarmRuleResponse.setSuccess(_ctx.booleanValue("DeleteAlarmRuleResponse.Success"));
+		deleteAlarmRuleResponse.setHttpCode(_ctx.stringValue("DeleteAlarmRuleResponse.HttpCode"));
 		deleteAlarmRuleResponse.setMessage(_ctx.stringValue("DeleteAlarmRuleResponse.Message"));
 		deleteAlarmRuleResponse.setErrorCode(_ctx.stringValue("DeleteAlarmRuleResponse.ErrorCode"));
-		deleteAlarmRuleResponse.setHttpCode(_ctx.stringValue("DeleteAlarmRuleResponse.HttpCode"));
+		deleteAlarmRuleResponse.setSuccess(_ctx.booleanValue("DeleteAlarmRuleResponse.Success"));
 	 
 	 	return deleteAlarmRuleResponse;
 	}

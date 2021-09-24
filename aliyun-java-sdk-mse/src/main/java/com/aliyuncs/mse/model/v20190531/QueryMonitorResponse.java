@@ -24,23 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryMonitorResponse extends AcsResponse {
 
-	private Boolean success;
-
 	private String message;
-
-	private String errorCode;
 
 	private String requestId;
 
 	private String data;
 
-	public Boolean getSuccess() {
-		return this.success;
-	}
+	private String errorCode;
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
+	private Boolean success;
 
 	public String getMessage() {
 		return this.message;
@@ -48,14 +40,6 @@ public class QueryMonitorResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
-	}
-
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
 	}
 
 	public String getRequestId() {
@@ -72,6 +56,22 @@ public class QueryMonitorResponse extends AcsResponse {
 
 	public void setData(String data) {
 		this.data = data;
+	}
+
+	public String getErrorCode() {
+		return this.errorCode;
+	}
+
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	@Override

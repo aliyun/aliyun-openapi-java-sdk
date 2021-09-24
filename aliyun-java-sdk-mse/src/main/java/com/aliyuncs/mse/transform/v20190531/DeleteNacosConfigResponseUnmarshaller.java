@@ -23,11 +23,11 @@ public class DeleteNacosConfigResponseUnmarshaller {
 	public static DeleteNacosConfigResponse unmarshall(DeleteNacosConfigResponse deleteNacosConfigResponse, UnmarshallerContext _ctx) {
 		
 		deleteNacosConfigResponse.setRequestId(_ctx.stringValue("DeleteNacosConfigResponse.RequestId"));
-		deleteNacosConfigResponse.setSuccess(_ctx.booleanValue("DeleteNacosConfigResponse.Success"));
+		deleteNacosConfigResponse.setHttpCode(_ctx.stringValue("DeleteNacosConfigResponse.HttpCode"));
 		deleteNacosConfigResponse.setMessage(_ctx.stringValue("DeleteNacosConfigResponse.Message"));
 		deleteNacosConfigResponse.setErrorCode(_ctx.stringValue("DeleteNacosConfigResponse.ErrorCode"));
-		deleteNacosConfigResponse.setHttpCode(_ctx.stringValue("DeleteNacosConfigResponse.HttpCode"));
 		deleteNacosConfigResponse.setCode(_ctx.stringValue("DeleteNacosConfigResponse.Code"));
+		deleteNacosConfigResponse.setSuccess(_ctx.booleanValue("DeleteNacosConfigResponse.Success"));
 	 
 	 	return deleteNacosConfigResponse;
 	}

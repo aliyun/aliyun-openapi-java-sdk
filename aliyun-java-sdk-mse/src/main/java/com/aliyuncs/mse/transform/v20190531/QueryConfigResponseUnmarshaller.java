@@ -24,28 +24,31 @@ public class QueryConfigResponseUnmarshaller {
 	public static QueryConfigResponse unmarshall(QueryConfigResponse queryConfigResponse, UnmarshallerContext _ctx) {
 		
 		queryConfigResponse.setRequestId(_ctx.stringValue("QueryConfigResponse.RequestId"));
-		queryConfigResponse.setSuccess(_ctx.stringValue("QueryConfigResponse.Success"));
 		queryConfigResponse.setMessage(_ctx.stringValue("QueryConfigResponse.Message"));
-		queryConfigResponse.setErrorCode(_ctx.stringValue("QueryConfigResponse.ErrorCode"));
+		queryConfigResponse.setSuccess(_ctx.booleanValue("QueryConfigResponse.Success"));
+		queryConfigResponse.setCode(_ctx.integerValue("QueryConfigResponse.Code"));
+		queryConfigResponse.setHttpStatusCode(_ctx.integerValue("QueryConfigResponse.HttpStatusCode"));
 
 		Data data = new Data();
-		data.setClusterName(_ctx.stringValue("QueryConfigResponse.Data.ClusterName"));
-		data.setTickTime(_ctx.stringValue("QueryConfigResponse.Data.TickTime"));
-		data.setInitLimit(_ctx.stringValue("QueryConfigResponse.Data.InitLimit"));
-		data.setSyncLimit(_ctx.stringValue("QueryConfigResponse.Data.SyncLimit"));
 		data.setMaxClientCnxns(_ctx.stringValue("QueryConfigResponse.Data.MaxClientCnxns"));
+		data.setConfigAuthSupported(_ctx.booleanValue("QueryConfigResponse.Data.ConfigAuthSupported"));
+		data.setInitLimit(_ctx.stringValue("QueryConfigResponse.Data.InitLimit"));
+		data.setMCPEnabled(_ctx.booleanValue("QueryConfigResponse.Data.MCPEnabled"));
 		data.setOpenSuperAcl(_ctx.booleanValue("QueryConfigResponse.Data.OpenSuperAcl"));
-		data.setUserName(_ctx.stringValue("QueryConfigResponse.Data.UserName"));
-		data.setPassWord(_ctx.stringValue("QueryConfigResponse.Data.PassWord"));
+		data.setRestartFlag(_ctx.booleanValue("QueryConfigResponse.Data.RestartFlag"));
 		data.setJvmFlagsCustom(_ctx.stringValue("QueryConfigResponse.Data.JvmFlagsCustom"));
-		data.setJuteMaxbuffer(_ctx.stringValue("QueryConfigResponse.Data.JuteMaxbuffer"));
 		data.setAutopurgePurgeInterval(_ctx.stringValue("QueryConfigResponse.Data.AutopurgePurgeInterval"));
 		data.setAutopurgeSnapRetainCount(_ctx.stringValue("QueryConfigResponse.Data.AutopurgeSnapRetainCount"));
-		data.setRestartFlag(_ctx.booleanValue("QueryConfigResponse.Data.RestartFlag"));
-		data.setConfigAuthSupported(_ctx.booleanValue("QueryConfigResponse.Data.ConfigAuthSupported"));
+		data.setSyncLimit(_ctx.stringValue("QueryConfigResponse.Data.SyncLimit"));
 		data.setConfigAuthEnabled(_ctx.booleanValue("QueryConfigResponse.Data.ConfigAuthEnabled"));
+		data.setClusterName(_ctx.stringValue("QueryConfigResponse.Data.ClusterName"));
 		data.setMCPSupported(_ctx.booleanValue("QueryConfigResponse.Data.MCPSupported"));
-		data.setMCPEnabled(_ctx.booleanValue("QueryConfigResponse.Data.MCPEnabled"));
+		data.setJuteMaxbuffer(_ctx.stringValue("QueryConfigResponse.Data.JuteMaxbuffer"));
+		data.setTickTime(_ctx.stringValue("QueryConfigResponse.Data.TickTime"));
+		data.setPassWord(_ctx.stringValue("QueryConfigResponse.Data.PassWord"));
+		data.setUserName(_ctx.stringValue("QueryConfigResponse.Data.UserName"));
+		data.setConfigSecretSupported(_ctx.booleanValue("QueryConfigResponse.Data.ConfigSecretSupported"));
+		data.setConfigSecretEnabled(_ctx.booleanValue("QueryConfigResponse.Data.ConfigSecretEnabled"));
 		queryConfigResponse.setData(data);
 	 
 	 	return queryConfigResponse;

@@ -23,11 +23,11 @@ public class CreateNacosConfigResponseUnmarshaller {
 	public static CreateNacosConfigResponse unmarshall(CreateNacosConfigResponse createNacosConfigResponse, UnmarshallerContext _ctx) {
 		
 		createNacosConfigResponse.setRequestId(_ctx.stringValue("CreateNacosConfigResponse.RequestId"));
-		createNacosConfigResponse.setSuccess(_ctx.booleanValue("CreateNacosConfigResponse.Success"));
+		createNacosConfigResponse.setHttpCode(_ctx.stringValue("CreateNacosConfigResponse.HttpCode"));
 		createNacosConfigResponse.setMessage(_ctx.stringValue("CreateNacosConfigResponse.Message"));
 		createNacosConfigResponse.setErrorCode(_ctx.stringValue("CreateNacosConfigResponse.ErrorCode"));
-		createNacosConfigResponse.setHttpCode(_ctx.stringValue("CreateNacosConfigResponse.HttpCode"));
 		createNacosConfigResponse.setCode(_ctx.stringValue("CreateNacosConfigResponse.Code"));
+		createNacosConfigResponse.setSuccess(_ctx.booleanValue("CreateNacosConfigResponse.Success"));
 	 
 	 	return createNacosConfigResponse;
 	}

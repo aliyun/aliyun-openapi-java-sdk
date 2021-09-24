@@ -25,70 +25,30 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListAlarmHistoriesResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
-	private String message;
-
-	private String errorCode;
-
-	private Integer pageNumber;
-
-	private Integer pageSize;
+	private String httpCode;
 
 	private Integer totalCount;
 
-	private String httpCode;
+	private String requestId;
+
+	private String message;
+
+	private Integer pageSize;
+
+	private Integer pageNumber;
+
+	private String errorCode;
+
+	private Boolean success;
 
 	private List<AlarmHistoryModel> data;
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getHttpCode() {
+		return this.httpCode;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setHttpCode(String httpCode) {
+		this.httpCode = httpCode;
 	}
 
 	public Integer getTotalCount() {
@@ -99,12 +59,52 @@ public class ListAlarmHistoriesResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public String getHttpCode() {
-		return this.httpCode;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setHttpCode(String httpCode) {
-		this.httpCode = httpCode;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+	}
+
+	public String getErrorCode() {
+		return this.errorCode;
+	}
+
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<AlarmHistoryModel> getData() {
@@ -119,15 +119,15 @@ public class ListAlarmHistoriesResponse extends AcsResponse {
 
 		private String alarmTime;
 
-		private String alarmPhone;
+		private String alarmEmail;
 
 		private String alarmDingDing;
+
+		private String alarmPhone;
 
 		private String alarmName;
 
 		private String alarmContent;
-
-		private String alarmEmail;
 
 		public String getAlarmTime() {
 			return this.alarmTime;
@@ -137,12 +137,12 @@ public class ListAlarmHistoriesResponse extends AcsResponse {
 			this.alarmTime = alarmTime;
 		}
 
-		public String getAlarmPhone() {
-			return this.alarmPhone;
+		public String getAlarmEmail() {
+			return this.alarmEmail;
 		}
 
-		public void setAlarmPhone(String alarmPhone) {
-			this.alarmPhone = alarmPhone;
+		public void setAlarmEmail(String alarmEmail) {
+			this.alarmEmail = alarmEmail;
 		}
 
 		public String getAlarmDingDing() {
@@ -151,6 +151,14 @@ public class ListAlarmHistoriesResponse extends AcsResponse {
 
 		public void setAlarmDingDing(String alarmDingDing) {
 			this.alarmDingDing = alarmDingDing;
+		}
+
+		public String getAlarmPhone() {
+			return this.alarmPhone;
+		}
+
+		public void setAlarmPhone(String alarmPhone) {
+			this.alarmPhone = alarmPhone;
 		}
 
 		public String getAlarmName() {
@@ -167,14 +175,6 @@ public class ListAlarmHistoriesResponse extends AcsResponse {
 
 		public void setAlarmContent(String alarmContent) {
 			this.alarmContent = alarmContent;
-		}
-
-		public String getAlarmEmail() {
-			return this.alarmEmail;
-		}
-
-		public void setAlarmEmail(String alarmEmail) {
-			this.alarmEmail = alarmEmail;
 		}
 	}
 

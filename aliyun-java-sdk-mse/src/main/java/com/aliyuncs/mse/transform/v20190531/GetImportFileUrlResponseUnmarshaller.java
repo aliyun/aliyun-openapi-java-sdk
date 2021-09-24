@@ -24,11 +24,11 @@ public class GetImportFileUrlResponseUnmarshaller {
 	public static GetImportFileUrlResponse unmarshall(GetImportFileUrlResponse getImportFileUrlResponse, UnmarshallerContext _ctx) {
 		
 		getImportFileUrlResponse.setRequestId(_ctx.stringValue("GetImportFileUrlResponse.RequestId"));
-		getImportFileUrlResponse.setSuccess(_ctx.booleanValue("GetImportFileUrlResponse.Success"));
-		getImportFileUrlResponse.setMessage(_ctx.stringValue("GetImportFileUrlResponse.Message"));
-		getImportFileUrlResponse.setErrorCode(_ctx.stringValue("GetImportFileUrlResponse.ErrorCode"));
 		getImportFileUrlResponse.setHttpStatusCode(_ctx.integerValue("GetImportFileUrlResponse.HttpStatusCode"));
+		getImportFileUrlResponse.setSuccess(_ctx.booleanValue("GetImportFileUrlResponse.Success"));
+		getImportFileUrlResponse.setErrorCode(_ctx.stringValue("GetImportFileUrlResponse.ErrorCode"));
 		getImportFileUrlResponse.setCode(_ctx.integerValue("GetImportFileUrlResponse.Code"));
+		getImportFileUrlResponse.setMessage(_ctx.stringValue("GetImportFileUrlResponse.Message"));
 		getImportFileUrlResponse.setDynamicMessage(_ctx.stringValue("GetImportFileUrlResponse.DynamicMessage"));
 
 		Data data = new Data();

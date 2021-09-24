@@ -41,6 +41,8 @@ public class UpdateConfigRequest extends RpcAcsRequest<UpdateConfigResponse> {
 
 	private String autopurgeSnapRetainCount;
 
+	private Boolean configSecretEnabled;
+
 	private Boolean mCPEnabled;
 
 	private String tickTime;
@@ -57,7 +59,7 @@ public class UpdateConfigRequest extends RpcAcsRequest<UpdateConfigResponse> {
 
 	private String userName;
 	public UpdateConfigRequest() {
-		super("mse", "2019-05-31", "UpdateConfig", "mse");
+		super("mse", "2019-05-31", "UpdateConfig");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -150,6 +152,17 @@ public class UpdateConfigRequest extends RpcAcsRequest<UpdateConfigResponse> {
 		this.autopurgeSnapRetainCount = autopurgeSnapRetainCount;
 		if(autopurgeSnapRetainCount != null){
 			putQueryParameter("AutopurgeSnapRetainCount", autopurgeSnapRetainCount);
+		}
+	}
+
+	public Boolean getConfigSecretEnabled() {
+		return this.configSecretEnabled;
+	}
+
+	public void setConfigSecretEnabled(Boolean configSecretEnabled) {
+		this.configSecretEnabled = configSecretEnabled;
+		if(configSecretEnabled != null){
+			putQueryParameter("ConfigSecretEnabled", configSecretEnabled.toString());
 		}
 	}
 

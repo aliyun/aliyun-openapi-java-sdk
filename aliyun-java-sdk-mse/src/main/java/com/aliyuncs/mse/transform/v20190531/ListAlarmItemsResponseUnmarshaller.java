@@ -27,20 +27,20 @@ public class ListAlarmItemsResponseUnmarshaller {
 	public static ListAlarmItemsResponse unmarshall(ListAlarmItemsResponse listAlarmItemsResponse, UnmarshallerContext _ctx) {
 		
 		listAlarmItemsResponse.setRequestId(_ctx.stringValue("ListAlarmItemsResponse.RequestId"));
-		listAlarmItemsResponse.setSuccess(_ctx.booleanValue("ListAlarmItemsResponse.Success"));
-		listAlarmItemsResponse.setMessage(_ctx.stringValue("ListAlarmItemsResponse.Message"));
-		listAlarmItemsResponse.setErrorCode(_ctx.stringValue("ListAlarmItemsResponse.ErrorCode"));
-		listAlarmItemsResponse.setPageNumber(_ctx.integerValue("ListAlarmItemsResponse.PageNumber"));
-		listAlarmItemsResponse.setPageSize(_ctx.integerValue("ListAlarmItemsResponse.PageSize"));
-		listAlarmItemsResponse.setTotalCount(_ctx.integerValue("ListAlarmItemsResponse.TotalCount"));
 		listAlarmItemsResponse.setHttpCode(_ctx.stringValue("ListAlarmItemsResponse.HttpCode"));
+		listAlarmItemsResponse.setTotalCount(_ctx.integerValue("ListAlarmItemsResponse.TotalCount"));
+		listAlarmItemsResponse.setMessage(_ctx.stringValue("ListAlarmItemsResponse.Message"));
+		listAlarmItemsResponse.setPageSize(_ctx.integerValue("ListAlarmItemsResponse.PageSize"));
+		listAlarmItemsResponse.setPageNumber(_ctx.integerValue("ListAlarmItemsResponse.PageNumber"));
+		listAlarmItemsResponse.setErrorCode(_ctx.stringValue("ListAlarmItemsResponse.ErrorCode"));
+		listAlarmItemsResponse.setSuccess(_ctx.booleanValue("ListAlarmItemsResponse.Success"));
 
 		List<AlarmItem> data = new ArrayList<AlarmItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListAlarmItemsResponse.Data.Length"); i++) {
 			AlarmItem alarmItem = new AlarmItem();
-			alarmItem.setAlarmCode(_ctx.stringValue("ListAlarmItemsResponse.Data["+ i +"].AlarmCode"));
 			alarmItem.setAlarmDesc(_ctx.stringValue("ListAlarmItemsResponse.Data["+ i +"].AlarmDesc"));
 			alarmItem.setClusterType(_ctx.stringValue("ListAlarmItemsResponse.Data["+ i +"].ClusterType"));
+			alarmItem.setAlarmCode(_ctx.stringValue("ListAlarmItemsResponse.Data["+ i +"].AlarmCode"));
 
 			data.add(alarmItem);
 		}

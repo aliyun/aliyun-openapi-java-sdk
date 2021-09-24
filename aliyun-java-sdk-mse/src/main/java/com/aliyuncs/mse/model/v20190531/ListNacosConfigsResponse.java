@@ -25,72 +25,32 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListNacosConfigsResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
-	private String message;
-
-	private String errorCode;
-
-	private Integer pageNumber;
-
-	private Integer pageSize;
+	private String httpCode;
 
 	private Integer totalCount;
 
-	private String httpCode;
+	private String requestId;
+
+	private String message;
+
+	private Integer pageSize;
+
+	private Integer pageNumber;
+
+	private String errorCode;
 
 	private Integer code;
 
+	private Boolean success;
+
 	private List<NacosConfigForListModel> configurations;
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getHttpCode() {
+		return this.httpCode;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setHttpCode(String httpCode) {
+		this.httpCode = httpCode;
 	}
 
 	public Integer getTotalCount() {
@@ -101,12 +61,44 @@ public class ListNacosConfigsResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public String getHttpCode() {
-		return this.httpCode;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setHttpCode(String httpCode) {
-		this.httpCode = httpCode;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+	}
+
+	public String getErrorCode() {
+		return this.errorCode;
+	}
+
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
 	}
 
 	public Integer getCode() {
@@ -115,6 +107,14 @@ public class ListNacosConfigsResponse extends AcsResponse {
 
 	public void setCode(Integer code) {
 		this.code = code;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<NacosConfigForListModel> getConfigurations() {
@@ -127,29 +127,13 @@ public class ListNacosConfigsResponse extends AcsResponse {
 
 	public static class NacosConfigForListModel {
 
-		private String dataId;
-
-		private String group;
-
 		private String appName;
+
+		private String dataId;
 
 		private String id;
 
-		public String getDataId() {
-			return this.dataId;
-		}
-
-		public void setDataId(String dataId) {
-			this.dataId = dataId;
-		}
-
-		public String getGroup() {
-			return this.group;
-		}
-
-		public void setGroup(String group) {
-			this.group = group;
-		}
+		private String group;
 
 		public String getAppName() {
 			return this.appName;
@@ -159,12 +143,28 @@ public class ListNacosConfigsResponse extends AcsResponse {
 			this.appName = appName;
 		}
 
+		public String getDataId() {
+			return this.dataId;
+		}
+
+		public void setDataId(String dataId) {
+			this.dataId = dataId;
+		}
+
 		public String getId() {
 			return this.id;
 		}
 
 		public void setId(String id) {
 			this.id = id;
+		}
+
+		public String getGroup() {
+			return this.group;
+		}
+
+		public void setGroup(String group) {
+			this.group = group;
 		}
 	}
 

@@ -26,70 +26,30 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListAnsInstancesResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
-	private String message;
-
-	private String errorCode;
-
-	private Integer pageNumber;
-
-	private Integer pageSize;
+	private String httpCode;
 
 	private Integer totalCount;
 
-	private String httpCode;
+	private String requestId;
+
+	private String message;
+
+	private Integer pageSize;
+
+	private Integer pageNumber;
+
+	private String errorCode;
+
+	private Boolean success;
 
 	private List<NacosAnsInstance> data;
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getHttpCode() {
+		return this.httpCode;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setHttpCode(String httpCode) {
+		this.httpCode = httpCode;
 	}
 
 	public Integer getTotalCount() {
@@ -100,12 +60,52 @@ public class ListAnsInstancesResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public String getHttpCode() {
-		return this.httpCode;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setHttpCode(String httpCode) {
-		this.httpCode = httpCode;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+	}
+
+	public String getErrorCode() {
+		return this.errorCode;
+	}
+
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<NacosAnsInstance> getData() {
@@ -118,52 +118,52 @@ public class ListAnsInstancesResponse extends AcsResponse {
 
 	public static class NacosAnsInstance {
 
-		private Boolean enabled;
+		private String defaultKey;
 
 		private Boolean ephemeral;
 
-		private Boolean healthy;
-
 		private Boolean marked;
 
-		private Integer failCount;
+		private String ip;
+
+		private String instanceId;
 
 		private Integer port;
 
-		private Integer instanceHeartBeatInterval;
-
-		private Integer instanceHeartBeatTimeOut;
-
-		private Integer ipDeleteTimeout;
+		private Long lastBeat;
 
 		private Integer okCount;
 
 		private Integer weight;
 
-		private Long lastBeat;
+		private Integer instanceHeartBeatInterval;
+
+		private Integer ipDeleteTimeout;
 
 		private String app;
 
-		private String clusterName;
+		private Integer failCount;
+
+		private Boolean healthy;
+
+		private Boolean enabled;
 
 		private String datumKey;
 
-		private String defaultKey;
+		private String clusterName;
 
-		private String instanceId;
-
-		private String ip;
+		private Integer instanceHeartBeatTimeOut;
 
 		private String serviceName;
 
 		private Map<Object,Object> metadata;
 
-		public Boolean getEnabled() {
-			return this.enabled;
+		public String getDefaultKey() {
+			return this.defaultKey;
 		}
 
-		public void setEnabled(Boolean enabled) {
-			this.enabled = enabled;
+		public void setDefaultKey(String defaultKey) {
+			this.defaultKey = defaultKey;
 		}
 
 		public Boolean getEphemeral() {
@@ -174,14 +174,6 @@ public class ListAnsInstancesResponse extends AcsResponse {
 			this.ephemeral = ephemeral;
 		}
 
-		public Boolean getHealthy() {
-			return this.healthy;
-		}
-
-		public void setHealthy(Boolean healthy) {
-			this.healthy = healthy;
-		}
-
 		public Boolean getMarked() {
 			return this.marked;
 		}
@@ -190,12 +182,20 @@ public class ListAnsInstancesResponse extends AcsResponse {
 			this.marked = marked;
 		}
 
-		public Integer getFailCount() {
-			return this.failCount;
+		public String getIp() {
+			return this.ip;
 		}
 
-		public void setFailCount(Integer failCount) {
-			this.failCount = failCount;
+		public void setIp(String ip) {
+			this.ip = ip;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
 		}
 
 		public Integer getPort() {
@@ -206,28 +206,12 @@ public class ListAnsInstancesResponse extends AcsResponse {
 			this.port = port;
 		}
 
-		public Integer getInstanceHeartBeatInterval() {
-			return this.instanceHeartBeatInterval;
+		public Long getLastBeat() {
+			return this.lastBeat;
 		}
 
-		public void setInstanceHeartBeatInterval(Integer instanceHeartBeatInterval) {
-			this.instanceHeartBeatInterval = instanceHeartBeatInterval;
-		}
-
-		public Integer getInstanceHeartBeatTimeOut() {
-			return this.instanceHeartBeatTimeOut;
-		}
-
-		public void setInstanceHeartBeatTimeOut(Integer instanceHeartBeatTimeOut) {
-			this.instanceHeartBeatTimeOut = instanceHeartBeatTimeOut;
-		}
-
-		public Integer getIpDeleteTimeout() {
-			return this.ipDeleteTimeout;
-		}
-
-		public void setIpDeleteTimeout(Integer ipDeleteTimeout) {
-			this.ipDeleteTimeout = ipDeleteTimeout;
+		public void setLastBeat(Long lastBeat) {
+			this.lastBeat = lastBeat;
 		}
 
 		public Integer getOkCount() {
@@ -246,12 +230,20 @@ public class ListAnsInstancesResponse extends AcsResponse {
 			this.weight = weight;
 		}
 
-		public Long getLastBeat() {
-			return this.lastBeat;
+		public Integer getInstanceHeartBeatInterval() {
+			return this.instanceHeartBeatInterval;
 		}
 
-		public void setLastBeat(Long lastBeat) {
-			this.lastBeat = lastBeat;
+		public void setInstanceHeartBeatInterval(Integer instanceHeartBeatInterval) {
+			this.instanceHeartBeatInterval = instanceHeartBeatInterval;
+		}
+
+		public Integer getIpDeleteTimeout() {
+			return this.ipDeleteTimeout;
+		}
+
+		public void setIpDeleteTimeout(Integer ipDeleteTimeout) {
+			this.ipDeleteTimeout = ipDeleteTimeout;
 		}
 
 		public String getApp() {
@@ -262,12 +254,28 @@ public class ListAnsInstancesResponse extends AcsResponse {
 			this.app = app;
 		}
 
-		public String getClusterName() {
-			return this.clusterName;
+		public Integer getFailCount() {
+			return this.failCount;
 		}
 
-		public void setClusterName(String clusterName) {
-			this.clusterName = clusterName;
+		public void setFailCount(Integer failCount) {
+			this.failCount = failCount;
+		}
+
+		public Boolean getHealthy() {
+			return this.healthy;
+		}
+
+		public void setHealthy(Boolean healthy) {
+			this.healthy = healthy;
+		}
+
+		public Boolean getEnabled() {
+			return this.enabled;
+		}
+
+		public void setEnabled(Boolean enabled) {
+			this.enabled = enabled;
 		}
 
 		public String getDatumKey() {
@@ -278,28 +286,20 @@ public class ListAnsInstancesResponse extends AcsResponse {
 			this.datumKey = datumKey;
 		}
 
-		public String getDefaultKey() {
-			return this.defaultKey;
+		public String getClusterName() {
+			return this.clusterName;
 		}
 
-		public void setDefaultKey(String defaultKey) {
-			this.defaultKey = defaultKey;
+		public void setClusterName(String clusterName) {
+			this.clusterName = clusterName;
 		}
 
-		public String getInstanceId() {
-			return this.instanceId;
+		public Integer getInstanceHeartBeatTimeOut() {
+			return this.instanceHeartBeatTimeOut;
 		}
 
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
-
-		public String getIp() {
-			return this.ip;
-		}
-
-		public void setIp(String ip) {
-			this.ip = ip;
+		public void setInstanceHeartBeatTimeOut(Integer instanceHeartBeatTimeOut) {
+			this.instanceHeartBeatTimeOut = instanceHeartBeatTimeOut;
 		}
 
 		public String getServiceName() {

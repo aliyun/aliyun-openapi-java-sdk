@@ -24,10 +24,10 @@ public class GetOverviewResponseUnmarshaller {
 		
 		getOverviewResponse.setRequestId(_ctx.stringValue("GetOverviewResponse.RequestId"));
 		getOverviewResponse.setMessage(_ctx.stringValue("GetOverviewResponse.Message"));
-		getOverviewResponse.setHttpStatusCode(_ctx.integerValue("GetOverviewResponse.HttpStatusCode"));
 		getOverviewResponse.setData(_ctx.stringValue("GetOverviewResponse.Data"));
 		getOverviewResponse.setCode(_ctx.integerValue("GetOverviewResponse.Code"));
 		getOverviewResponse.setSuccess(_ctx.stringValue("GetOverviewResponse.Success"));
+		getOverviewResponse.setHttpStatusCode(_ctx.integerValue("GetOverviewResponse.HttpStatusCode"));
 	 
 	 	return getOverviewResponse;
 	}

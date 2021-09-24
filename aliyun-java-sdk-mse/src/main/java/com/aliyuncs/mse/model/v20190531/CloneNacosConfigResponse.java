@@ -25,21 +25,29 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CloneNacosConfigResponse extends AcsResponse {
 
+	private Integer httpStatusCode;
+
 	private String requestId;
 
 	private Boolean success;
 
-	private String message;
-
 	private String errorCode;
 
-	private Integer httpStatusCode;
-
 	private Integer code;
+
+	private String message;
 
 	private String dynamicMessage;
 
 	private Data data;
+
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
+	}
+
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -57,14 +65,6 @@ public class CloneNacosConfigResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
 	public String getErrorCode() {
 		return this.errorCode;
 	}
@@ -73,20 +73,20 @@ public class CloneNacosConfigResponse extends AcsResponse {
 		this.errorCode = errorCode;
 	}
 
-	public Integer getHttpStatusCode() {
-		return this.httpStatusCode;
-	}
-
-	public void setHttpStatusCode(Integer httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
-	}
-
 	public Integer getCode() {
 		return this.code;
 	}
 
 	public void setCode(Integer code) {
 		this.code = code;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public String getDynamicMessage() {

@@ -26,70 +26,30 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListEurekaInstancesResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
-	private String message;
-
-	private String errorCode;
-
-	private Integer pageNumber;
-
-	private Integer pageSize;
+	private String httpCode;
 
 	private Integer totalCount;
 
-	private String httpCode;
+	private String requestId;
+
+	private String message;
+
+	private Integer pageSize;
+
+	private Integer pageNumber;
+
+	private String errorCode;
+
+	private Boolean success;
 
 	private List<EurekaInstance> data;
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getHttpCode() {
+		return this.httpCode;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setHttpCode(String httpCode) {
+		this.httpCode = httpCode;
 	}
 
 	public Integer getTotalCount() {
@@ -100,12 +60,52 @@ public class ListEurekaInstancesResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public String getHttpCode() {
-		return this.httpCode;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setHttpCode(String httpCode) {
-		this.httpCode = httpCode;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+	}
+
+	public String getErrorCode() {
+		return this.errorCode;
+	}
+
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<EurekaInstance> getData() {
@@ -118,33 +118,81 @@ public class ListEurekaInstancesResponse extends AcsResponse {
 
 	public static class EurekaInstance {
 
+		private String status;
+
+		private Long lastDirtyTimestamp;
+
+		private String ipAddr;
+
+		private String homePageUrl;
+
+		private String hostName;
+
+		private String instanceId;
+
 		private Integer port;
 
 		private Integer securePort;
 
-		private Integer durationInSecs;
+		private String app;
 
-		private Integer renewalIntervalInSecs;
+		private Integer durationInSecs;
 
 		private Long lastUpdatedTimestamp;
 
-		private String app;
-
-		private String ipAddr;
-
-		private String status;
-
-		private String homePageUrl;
-
-		private String instanceId;
+		private Integer renewalIntervalInSecs;
 
 		private String vipAddress;
 
-		private String hostName;
-
 		private Map<Object,Object> metadata;
 
-		private Long lastDirtyTimestamp;
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
+		public Long getLastDirtyTimestamp() {
+			return this.lastDirtyTimestamp;
+		}
+
+		public void setLastDirtyTimestamp(Long lastDirtyTimestamp) {
+			this.lastDirtyTimestamp = lastDirtyTimestamp;
+		}
+
+		public String getIpAddr() {
+			return this.ipAddr;
+		}
+
+		public void setIpAddr(String ipAddr) {
+			this.ipAddr = ipAddr;
+		}
+
+		public String getHomePageUrl() {
+			return this.homePageUrl;
+		}
+
+		public void setHomePageUrl(String homePageUrl) {
+			this.homePageUrl = homePageUrl;
+		}
+
+		public String getHostName() {
+			return this.hostName;
+		}
+
+		public void setHostName(String hostName) {
+			this.hostName = hostName;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
 
 		public Integer getPort() {
 			return this.port;
@@ -162,20 +210,20 @@ public class ListEurekaInstancesResponse extends AcsResponse {
 			this.securePort = securePort;
 		}
 
+		public String getApp() {
+			return this.app;
+		}
+
+		public void setApp(String app) {
+			this.app = app;
+		}
+
 		public Integer getDurationInSecs() {
 			return this.durationInSecs;
 		}
 
 		public void setDurationInSecs(Integer durationInSecs) {
 			this.durationInSecs = durationInSecs;
-		}
-
-		public Integer getRenewalIntervalInSecs() {
-			return this.renewalIntervalInSecs;
-		}
-
-		public void setRenewalIntervalInSecs(Integer renewalIntervalInSecs) {
-			this.renewalIntervalInSecs = renewalIntervalInSecs;
 		}
 
 		public Long getLastUpdatedTimestamp() {
@@ -186,44 +234,12 @@ public class ListEurekaInstancesResponse extends AcsResponse {
 			this.lastUpdatedTimestamp = lastUpdatedTimestamp;
 		}
 
-		public String getApp() {
-			return this.app;
+		public Integer getRenewalIntervalInSecs() {
+			return this.renewalIntervalInSecs;
 		}
 
-		public void setApp(String app) {
-			this.app = app;
-		}
-
-		public String getIpAddr() {
-			return this.ipAddr;
-		}
-
-		public void setIpAddr(String ipAddr) {
-			this.ipAddr = ipAddr;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
-		public String getHomePageUrl() {
-			return this.homePageUrl;
-		}
-
-		public void setHomePageUrl(String homePageUrl) {
-			this.homePageUrl = homePageUrl;
-		}
-
-		public String getInstanceId() {
-			return this.instanceId;
-		}
-
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
+		public void setRenewalIntervalInSecs(Integer renewalIntervalInSecs) {
+			this.renewalIntervalInSecs = renewalIntervalInSecs;
 		}
 
 		public String getVipAddress() {
@@ -234,28 +250,12 @@ public class ListEurekaInstancesResponse extends AcsResponse {
 			this.vipAddress = vipAddress;
 		}
 
-		public String getHostName() {
-			return this.hostName;
-		}
-
-		public void setHostName(String hostName) {
-			this.hostName = hostName;
-		}
-
 		public Map<Object,Object> getMetadata() {
 			return this.metadata;
 		}
 
 		public void setMetadata(Map<Object,Object> metadata) {
 			this.metadata = metadata;
-		}
-
-		public Long getLastDirtyTimestamp() {
-			return this.lastDirtyTimestamp;
-		}
-
-		public void setLastDirtyTimestamp(Long lastDirtyTimestamp) {
-			this.lastDirtyTimestamp = lastDirtyTimestamp;
 		}
 	}
 

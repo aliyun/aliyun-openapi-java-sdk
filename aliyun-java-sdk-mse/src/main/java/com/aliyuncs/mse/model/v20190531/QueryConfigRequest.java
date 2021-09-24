@@ -33,7 +33,7 @@ public class QueryConfigRequest extends RpcAcsRequest<QueryConfigResponse> {
 
 	private String requestPars;
 	public QueryConfigRequest() {
-		super("mse", "2019-05-31", "QueryConfig", "mse");
+		super("mse", "2019-05-31", "QueryConfig");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

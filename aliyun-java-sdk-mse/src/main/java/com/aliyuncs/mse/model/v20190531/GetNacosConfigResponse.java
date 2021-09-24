@@ -24,31 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetNacosConfigResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String message;
+
+	private String requestId;
 
 	private String errorCode;
 
+	private Boolean success;
+
 	private Configuration configuration;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getMessage() {
 		return this.message;
@@ -58,12 +42,28 @@ public class GetNacosConfigResponse extends AcsResponse {
 		this.message = message;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	public String getErrorCode() {
 		return this.errorCode;
 	}
 
 	public void setErrorCode(String errorCode) {
 		this.errorCode = errorCode;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Configuration getConfiguration() {
@@ -76,36 +76,32 @@ public class GetNacosConfigResponse extends AcsResponse {
 
 	public static class Configuration {
 
-		private String dataId;
-
-		private String group;
+		private String type;
 
 		private String appName;
 
 		private String tags;
 
-		private String desc;
-
 		private String md5;
 
-		private String type;
+		private String dataId;
 
 		private String content;
 
-		public String getDataId() {
-			return this.dataId;
+		private String group;
+
+		private String desc;
+
+		private String encryptedDataKey;
+
+		private String betaIps;
+
+		public String getType() {
+			return this.type;
 		}
 
-		public void setDataId(String dataId) {
-			this.dataId = dataId;
-		}
-
-		public String getGroup() {
-			return this.group;
-		}
-
-		public void setGroup(String group) {
-			this.group = group;
+		public void setType(String type) {
+			this.type = type;
 		}
 
 		public String getAppName() {
@@ -124,14 +120,6 @@ public class GetNacosConfigResponse extends AcsResponse {
 			this.tags = tags;
 		}
 
-		public String getDesc() {
-			return this.desc;
-		}
-
-		public void setDesc(String desc) {
-			this.desc = desc;
-		}
-
 		public String getMd5() {
 			return this.md5;
 		}
@@ -140,12 +128,12 @@ public class GetNacosConfigResponse extends AcsResponse {
 			this.md5 = md5;
 		}
 
-		public String getType() {
-			return this.type;
+		public String getDataId() {
+			return this.dataId;
 		}
 
-		public void setType(String type) {
-			this.type = type;
+		public void setDataId(String dataId) {
+			this.dataId = dataId;
 		}
 
 		public String getContent() {
@@ -154,6 +142,38 @@ public class GetNacosConfigResponse extends AcsResponse {
 
 		public void setContent(String content) {
 			this.content = content;
+		}
+
+		public String getGroup() {
+			return this.group;
+		}
+
+		public void setGroup(String group) {
+			this.group = group;
+		}
+
+		public String getDesc() {
+			return this.desc;
+		}
+
+		public void setDesc(String desc) {
+			this.desc = desc;
+		}
+
+		public String getEncryptedDataKey() {
+			return this.encryptedDataKey;
+		}
+
+		public void setEncryptedDataKey(String encryptedDataKey) {
+			this.encryptedDataKey = encryptedDataKey;
+		}
+
+		public String getBetaIps() {
+			return this.betaIps;
+		}
+
+		public void setBetaIps(String betaIps) {
+			this.betaIps = betaIps;
 		}
 	}
 

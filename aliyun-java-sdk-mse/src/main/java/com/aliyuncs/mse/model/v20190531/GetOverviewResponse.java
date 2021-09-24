@@ -24,11 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetOverviewResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String message;
 
-	private Integer httpStatusCode;
+	private String requestId;
 
 	private String data;
 
@@ -36,13 +34,7 @@ public class GetOverviewResponse extends AcsResponse {
 
 	private String success;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private Integer httpStatusCode;
 
 	public String getMessage() {
 		return this.message;
@@ -52,12 +44,12 @@ public class GetOverviewResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public Integer getHttpStatusCode() {
-		return this.httpStatusCode;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setHttpStatusCode(Integer httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getData() {
@@ -82,6 +74,14 @@ public class GetOverviewResponse extends AcsResponse {
 
 	public void setSuccess(String success) {
 		this.success = success;
+	}
+
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
+	}
+
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
 	}
 
 	@Override

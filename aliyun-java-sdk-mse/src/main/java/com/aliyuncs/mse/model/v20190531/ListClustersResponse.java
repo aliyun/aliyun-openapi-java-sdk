@@ -25,70 +25,30 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListClustersResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
-	private String message;
-
-	private String errorCode;
-
-	private Integer pageNumber;
-
-	private Integer pageSize;
+	private String httpCode;
 
 	private Integer totalCount;
 
-	private String httpCode;
+	private String requestId;
+
+	private String message;
+
+	private Integer pageSize;
+
+	private Integer pageNumber;
+
+	private String errorCode;
+
+	private Boolean success;
 
 	private List<ClusterForListModel> data;
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getHttpCode() {
+		return this.httpCode;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setHttpCode(String httpCode) {
+		this.httpCode = httpCode;
 	}
 
 	public Integer getTotalCount() {
@@ -99,12 +59,52 @@ public class ListClustersResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public String getHttpCode() {
-		return this.httpCode;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setHttpCode(String httpCode) {
-		this.httpCode = httpCode;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+	}
+
+	public String getErrorCode() {
+		return this.errorCode;
+	}
+
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<ClusterForListModel> getData() {
@@ -117,54 +117,44 @@ public class ListClustersResponse extends AcsResponse {
 
 	public static class ClusterForListModel {
 
-		private String clusterId;
-
-		private String clusterAliasName;
-
-		private String initStatus;
+		private String endDate;
 
 		private String intranetDomain;
 
-		private String createTime;
-
-		private String internetAddress;
-
-		private String intranetAddress;
-
 		private String internetDomain;
 
-		private String clusterType;
+		private String createTime;
 
 		private String chargeType;
 
-		private String endDate;
+		private String intranetAddress;
 
 		private String instanceId;
 
+		private String internetAddress;
+
+		private String clusterAliasName;
+
+		private String clusterType;
+
+		private String initStatus;
+
 		private String appVersion;
 
-		public String getClusterId() {
-			return this.clusterId;
+		private String clusterId;
+
+		private Boolean canUpdate;
+
+		private String versionCode;
+
+		private Long instanceCount;
+
+		public String getEndDate() {
+			return this.endDate;
 		}
 
-		public void setClusterId(String clusterId) {
-			this.clusterId = clusterId;
-		}
-
-		public String getClusterAliasName() {
-			return this.clusterAliasName;
-		}
-
-		public void setClusterAliasName(String clusterAliasName) {
-			this.clusterAliasName = clusterAliasName;
-		}
-
-		public String getInitStatus() {
-			return this.initStatus;
-		}
-
-		public void setInitStatus(String initStatus) {
-			this.initStatus = initStatus;
+		public void setEndDate(String endDate) {
+			this.endDate = endDate;
 		}
 
 		public String getIntranetDomain() {
@@ -175,30 +165,6 @@ public class ListClustersResponse extends AcsResponse {
 			this.intranetDomain = intranetDomain;
 		}
 
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
-		}
-
-		public String getInternetAddress() {
-			return this.internetAddress;
-		}
-
-		public void setInternetAddress(String internetAddress) {
-			this.internetAddress = internetAddress;
-		}
-
-		public String getIntranetAddress() {
-			return this.intranetAddress;
-		}
-
-		public void setIntranetAddress(String intranetAddress) {
-			this.intranetAddress = intranetAddress;
-		}
-
 		public String getInternetDomain() {
 			return this.internetDomain;
 		}
@@ -207,12 +173,12 @@ public class ListClustersResponse extends AcsResponse {
 			this.internetDomain = internetDomain;
 		}
 
-		public String getClusterType() {
-			return this.clusterType;
+		public String getCreateTime() {
+			return this.createTime;
 		}
 
-		public void setClusterType(String clusterType) {
-			this.clusterType = clusterType;
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
 		}
 
 		public String getChargeType() {
@@ -223,12 +189,12 @@ public class ListClustersResponse extends AcsResponse {
 			this.chargeType = chargeType;
 		}
 
-		public String getEndDate() {
-			return this.endDate;
+		public String getIntranetAddress() {
+			return this.intranetAddress;
 		}
 
-		public void setEndDate(String endDate) {
-			this.endDate = endDate;
+		public void setIntranetAddress(String intranetAddress) {
+			this.intranetAddress = intranetAddress;
 		}
 
 		public String getInstanceId() {
@@ -239,12 +205,76 @@ public class ListClustersResponse extends AcsResponse {
 			this.instanceId = instanceId;
 		}
 
+		public String getInternetAddress() {
+			return this.internetAddress;
+		}
+
+		public void setInternetAddress(String internetAddress) {
+			this.internetAddress = internetAddress;
+		}
+
+		public String getClusterAliasName() {
+			return this.clusterAliasName;
+		}
+
+		public void setClusterAliasName(String clusterAliasName) {
+			this.clusterAliasName = clusterAliasName;
+		}
+
+		public String getClusterType() {
+			return this.clusterType;
+		}
+
+		public void setClusterType(String clusterType) {
+			this.clusterType = clusterType;
+		}
+
+		public String getInitStatus() {
+			return this.initStatus;
+		}
+
+		public void setInitStatus(String initStatus) {
+			this.initStatus = initStatus;
+		}
+
 		public String getAppVersion() {
 			return this.appVersion;
 		}
 
 		public void setAppVersion(String appVersion) {
 			this.appVersion = appVersion;
+		}
+
+		public String getClusterId() {
+			return this.clusterId;
+		}
+
+		public void setClusterId(String clusterId) {
+			this.clusterId = clusterId;
+		}
+
+		public Boolean getCanUpdate() {
+			return this.canUpdate;
+		}
+
+		public void setCanUpdate(Boolean canUpdate) {
+			this.canUpdate = canUpdate;
+		}
+
+		public String getVersionCode() {
+			return this.versionCode;
+		}
+
+		public void setVersionCode(String versionCode) {
+			this.versionCode = versionCode;
+		}
+
+		public Long getInstanceCount() {
+			return this.instanceCount;
+		}
+
+		public void setInstanceCount(Long instanceCount) {
+			this.instanceCount = instanceCount;
 		}
 	}
 

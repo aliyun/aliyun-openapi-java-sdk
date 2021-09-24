@@ -35,7 +35,7 @@ public class CloneNacosConfigRequest extends RpcAcsRequest<CloneNacosConfigRespo
 
 	private String policy;
 	public CloneNacosConfigRequest() {
-		super("mse", "2019-05-31", "CloneNacosConfig", "mse");
+		super("mse", "2019-05-31", "CloneNacosConfig");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

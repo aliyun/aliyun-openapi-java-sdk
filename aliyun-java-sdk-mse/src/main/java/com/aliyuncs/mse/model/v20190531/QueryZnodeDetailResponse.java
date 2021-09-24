@@ -24,31 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryZnodeDetailResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String success;
-
 	private String message;
+
+	private String requestId;
 
 	private String errorCode;
 
+	private String success;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(String success) {
-		this.success = success;
-	}
 
 	public String getMessage() {
 		return this.message;
@@ -58,12 +42,28 @@ public class QueryZnodeDetailResponse extends AcsResponse {
 		this.message = message;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	public String getErrorCode() {
 		return this.errorCode;
 	}
 
 	public void setErrorCode(String errorCode) {
 		this.errorCode = errorCode;
+	}
+
+	public String getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(String success) {
+		this.success = success;
 	}
 
 	public Data getData() {
@@ -76,29 +76,13 @@ public class QueryZnodeDetailResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String path;
-
-		private String name;
-
 		private String data;
+
+		private String path;
 
 		private Boolean dir;
 
-		public String getPath() {
-			return this.path;
-		}
-
-		public void setPath(String path) {
-			this.path = path;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
+		private String name;
 
 		public String getData() {
 			return this.data;
@@ -108,12 +92,28 @@ public class QueryZnodeDetailResponse extends AcsResponse {
 			this.data = data;
 		}
 
+		public String getPath() {
+			return this.path;
+		}
+
+		public void setPath(String path) {
+			this.path = path;
+		}
+
 		public Boolean getDir() {
 			return this.dir;
 		}
 
 		public void setDir(Boolean dir) {
 			this.dir = dir;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
 		}
 	}
 

@@ -24,23 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class UpgradeClusterResponse extends AcsResponse {
 
-	private Boolean success;
-
 	private String message;
-
-	private String errorCode;
-
-	private String requestId;
 
 	private String httpCode;
 
-	public Boolean getSuccess() {
-		return this.success;
-	}
+	private String requestId;
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
+	private String errorCode;
+
+	private Boolean success;
 
 	public String getMessage() {
 		return this.message;
@@ -50,12 +42,12 @@ public class UpgradeClusterResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getErrorCode() {
-		return this.errorCode;
+	public String getHttpCode() {
+		return this.httpCode;
 	}
 
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
+	public void setHttpCode(String httpCode) {
+		this.httpCode = httpCode;
 	}
 
 	public String getRequestId() {
@@ -66,12 +58,20 @@ public class UpgradeClusterResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getHttpCode() {
-		return this.httpCode;
+	public String getErrorCode() {
+		return this.errorCode;
 	}
 
-	public void setHttpCode(String httpCode) {
-		this.httpCode = httpCode;
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	@Override

@@ -24,17 +24,18 @@ public class GetNacosHistoryConfigResponseUnmarshaller {
 	public static GetNacosHistoryConfigResponse unmarshall(GetNacosHistoryConfigResponse getNacosHistoryConfigResponse, UnmarshallerContext _ctx) {
 		
 		getNacosHistoryConfigResponse.setRequestId(_ctx.stringValue("GetNacosHistoryConfigResponse.RequestId"));
-		getNacosHistoryConfigResponse.setSuccess(_ctx.booleanValue("GetNacosHistoryConfigResponse.Success"));
 		getNacosHistoryConfigResponse.setMessage(_ctx.stringValue("GetNacosHistoryConfigResponse.Message"));
 		getNacosHistoryConfigResponse.setErrorCode(_ctx.stringValue("GetNacosHistoryConfigResponse.ErrorCode"));
+		getNacosHistoryConfigResponse.setSuccess(_ctx.booleanValue("GetNacosHistoryConfigResponse.Success"));
 
 		Configuration configuration = new Configuration();
-		configuration.setDataId(_ctx.stringValue("GetNacosHistoryConfigResponse.Configuration.DataId"));
-		configuration.setGroup(_ctx.stringValue("GetNacosHistoryConfigResponse.Configuration.Group"));
 		configuration.setAppName(_ctx.stringValue("GetNacosHistoryConfigResponse.Configuration.AppName"));
 		configuration.setMd5(_ctx.stringValue("GetNacosHistoryConfigResponse.Configuration.Md5"));
+		configuration.setDataId(_ctx.stringValue("GetNacosHistoryConfigResponse.Configuration.DataId"));
 		configuration.setContent(_ctx.stringValue("GetNacosHistoryConfigResponse.Configuration.Content"));
+		configuration.setGroup(_ctx.stringValue("GetNacosHistoryConfigResponse.Configuration.Group"));
 		configuration.setOpType(_ctx.stringValue("GetNacosHistoryConfigResponse.Configuration.OpType"));
+		configuration.setEncryptedDataKey(_ctx.stringValue("GetNacosHistoryConfigResponse.Configuration.EncryptedDataKey"));
 		getNacosHistoryConfigResponse.setConfiguration(configuration);
 	 
 	 	return getNacosHistoryConfigResponse;

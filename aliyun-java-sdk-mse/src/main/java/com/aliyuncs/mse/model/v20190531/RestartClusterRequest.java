@@ -31,7 +31,7 @@ public class RestartClusterRequest extends RpcAcsRequest<RestartClusterResponse>
 
 	private String requestPars;
 	public RestartClusterRequest() {
-		super("mse", "2019-05-31", "RestartCluster", "mse");
+		super("mse", "2019-05-31", "RestartCluster");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

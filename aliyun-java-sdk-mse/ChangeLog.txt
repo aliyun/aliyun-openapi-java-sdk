@@ -1,3 +1,6 @@
+2021-09-24 Version: 2.7.33-SNAPSHOT
+- Add Gateway ListGateway api.
+
 2021-03-24 Version: 2.7.0
 - Support Nacos Config.
 

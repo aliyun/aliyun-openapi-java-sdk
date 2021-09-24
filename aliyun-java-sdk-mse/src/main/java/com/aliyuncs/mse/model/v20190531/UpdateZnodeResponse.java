@@ -24,21 +24,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class UpdateZnodeResponse extends AcsResponse {
 
-	private Boolean success;
-
 	private String message;
-
-	private String errorCode;
 
 	private String requestId;
 
-	public Boolean getSuccess() {
-		return this.success;
-	}
+	private String errorCode;
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
+	private Boolean success;
 
 	public String getMessage() {
 		return this.message;
@@ -46,6 +38,14 @@ public class UpdateZnodeResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getErrorCode() {
@@ -56,12 +56,12 @@ public class UpdateZnodeResponse extends AcsResponse {
 		this.errorCode = errorCode;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	@Override

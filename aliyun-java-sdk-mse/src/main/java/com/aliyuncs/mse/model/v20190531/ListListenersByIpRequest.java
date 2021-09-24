@@ -33,7 +33,7 @@ public class ListListenersByIpRequest extends RpcAcsRequest<ListListenersByIpRes
 
 	private String requestPars;
 	public ListListenersByIpRequest() {
-		super("mse", "2019-05-31", "ListListenersByIp", "mse");
+		super("mse", "2019-05-31", "ListListenersByIp");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

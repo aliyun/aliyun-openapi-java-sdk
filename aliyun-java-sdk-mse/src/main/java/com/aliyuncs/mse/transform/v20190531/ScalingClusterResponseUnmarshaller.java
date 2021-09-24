@@ -23,9 +23,9 @@ public class ScalingClusterResponseUnmarshaller {
 	public static ScalingClusterResponse unmarshall(ScalingClusterResponse scalingClusterResponse, UnmarshallerContext _ctx) {
 		
 		scalingClusterResponse.setRequestId(_ctx.stringValue("ScalingClusterResponse.RequestId"));
-		scalingClusterResponse.setSuccess(_ctx.booleanValue("ScalingClusterResponse.Success"));
 		scalingClusterResponse.setMessage(_ctx.stringValue("ScalingClusterResponse.Message"));
 		scalingClusterResponse.setErrorCode(_ctx.stringValue("ScalingClusterResponse.ErrorCode"));
+		scalingClusterResponse.setSuccess(_ctx.booleanValue("ScalingClusterResponse.Success"));
 	 
 	 	return scalingClusterResponse;
 	}

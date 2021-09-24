@@ -26,31 +26,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListAnsServiceClustersResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String message;
+
+	private String requestId;
 
 	private String errorCode;
 
+	private Boolean success;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getMessage() {
 		return this.message;
@@ -60,12 +44,28 @@ public class ListAnsServiceClustersResponse extends AcsResponse {
 		this.message = message;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	public String getErrorCode() {
 		return this.errorCode;
 	}
 
 	public void setErrorCode(String errorCode) {
 		this.errorCode = errorCode;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Data getData() {
@@ -80,11 +80,11 @@ public class ListAnsServiceClustersResponse extends AcsResponse {
 
 		private Float protectThreshold;
 
-		private String selectorType;
+		private String groupName;
 
 		private String name;
 
-		private String groupName;
+		private String selectorType;
 
 		private Map<Object,Object> metadata;
 
@@ -98,12 +98,12 @@ public class ListAnsServiceClustersResponse extends AcsResponse {
 			this.protectThreshold = protectThreshold;
 		}
 
-		public String getSelectorType() {
-			return this.selectorType;
+		public String getGroupName() {
+			return this.groupName;
 		}
 
-		public void setSelectorType(String selectorType) {
-			this.selectorType = selectorType;
+		public void setGroupName(String groupName) {
+			this.groupName = groupName;
 		}
 
 		public String getName() {
@@ -114,12 +114,12 @@ public class ListAnsServiceClustersResponse extends AcsResponse {
 			this.name = name;
 		}
 
-		public String getGroupName() {
-			return this.groupName;
+		public String getSelectorType() {
+			return this.selectorType;
 		}
 
-		public void setGroupName(String groupName) {
-			this.groupName = groupName;
+		public void setSelectorType(String selectorType) {
+			this.selectorType = selectorType;
 		}
 
 		public Map<Object,Object> getMetadata() {
@@ -140,19 +140,43 @@ public class ListAnsServiceClustersResponse extends AcsResponse {
 
 		public static class NacosAnsCluster {
 
+			private Integer defaultCheckPort;
+
+			private String healthCheckerType;
+
+			private Boolean useIPPort4Check;
+
 			private String serviceName;
 
 			private String name;
 
-			private String healthCheckerType;
-
 			private Integer defaultPort;
 
-			private Integer defaultCheckPort;
-
-			private Boolean useIPPort4Check;
-
 			private Map<Object,Object> metadata;
+
+			public Integer getDefaultCheckPort() {
+				return this.defaultCheckPort;
+			}
+
+			public void setDefaultCheckPort(Integer defaultCheckPort) {
+				this.defaultCheckPort = defaultCheckPort;
+			}
+
+			public String getHealthCheckerType() {
+				return this.healthCheckerType;
+			}
+
+			public void setHealthCheckerType(String healthCheckerType) {
+				this.healthCheckerType = healthCheckerType;
+			}
+
+			public Boolean getUseIPPort4Check() {
+				return this.useIPPort4Check;
+			}
+
+			public void setUseIPPort4Check(Boolean useIPPort4Check) {
+				this.useIPPort4Check = useIPPort4Check;
+			}
 
 			public String getServiceName() {
 				return this.serviceName;
@@ -170,36 +194,12 @@ public class ListAnsServiceClustersResponse extends AcsResponse {
 				this.name = name;
 			}
 
-			public String getHealthCheckerType() {
-				return this.healthCheckerType;
-			}
-
-			public void setHealthCheckerType(String healthCheckerType) {
-				this.healthCheckerType = healthCheckerType;
-			}
-
 			public Integer getDefaultPort() {
 				return this.defaultPort;
 			}
 
 			public void setDefaultPort(Integer defaultPort) {
 				this.defaultPort = defaultPort;
-			}
-
-			public Integer getDefaultCheckPort() {
-				return this.defaultCheckPort;
-			}
-
-			public void setDefaultCheckPort(Integer defaultCheckPort) {
-				this.defaultCheckPort = defaultCheckPort;
-			}
-
-			public Boolean getUseIPPort4Check() {
-				return this.useIPPort4Check;
-			}
-
-			public void setUseIPPort4Check(Boolean useIPPort4Check) {
-				this.useIPPort4Check = useIPPort4Check;
 			}
 
 			public Map<Object,Object> getMetadata() {

@@ -29,7 +29,7 @@ public class DeleteAlarmRuleRequest extends RpcAcsRequest<DeleteAlarmRuleRespons
 
 	private String requestPars;
 	public DeleteAlarmRuleRequest() {
-		super("mse", "2019-05-31", "DeleteAlarmRule", "mse");
+		super("mse", "2019-05-31", "DeleteAlarmRule");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

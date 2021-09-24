@@ -24,17 +24,17 @@ public class QueryClusterDiskSpecificationResponseUnmarshaller {
 	public static QueryClusterDiskSpecificationResponse unmarshall(QueryClusterDiskSpecificationResponse queryClusterDiskSpecificationResponse, UnmarshallerContext _ctx) {
 		
 		queryClusterDiskSpecificationResponse.setRequestId(_ctx.stringValue("QueryClusterDiskSpecificationResponse.RequestId"));
-		queryClusterDiskSpecificationResponse.setSuccess(_ctx.booleanValue("QueryClusterDiskSpecificationResponse.Success"));
-		queryClusterDiskSpecificationResponse.setMessage(_ctx.stringValue("QueryClusterDiskSpecificationResponse.Message"));
-		queryClusterDiskSpecificationResponse.setErrorCode(_ctx.stringValue("QueryClusterDiskSpecificationResponse.ErrorCode"));
 		queryClusterDiskSpecificationResponse.setHttpStatusCode(_ctx.integerValue("QueryClusterDiskSpecificationResponse.HttpStatusCode"));
+		queryClusterDiskSpecificationResponse.setSuccess(_ctx.booleanValue("QueryClusterDiskSpecificationResponse.Success"));
+		queryClusterDiskSpecificationResponse.setErrorCode(_ctx.stringValue("QueryClusterDiskSpecificationResponse.ErrorCode"));
 		queryClusterDiskSpecificationResponse.setCode(_ctx.integerValue("QueryClusterDiskSpecificationResponse.Code"));
+		queryClusterDiskSpecificationResponse.setMessage(_ctx.stringValue("QueryClusterDiskSpecificationResponse.Message"));
 		queryClusterDiskSpecificationResponse.setDynamicMessage(_ctx.stringValue("QueryClusterDiskSpecificationResponse.DynamicMessage"));
 
 		Data data = new Data();
-		data.setMin(_ctx.integerValue("QueryClusterDiskSpecificationResponse.Data.Min"));
-		data.setMax(_ctx.integerValue("QueryClusterDiskSpecificationResponse.Data.Max"));
 		data.setStep(_ctx.integerValue("QueryClusterDiskSpecificationResponse.Data.Step"));
+		data.setMax(_ctx.integerValue("QueryClusterDiskSpecificationResponse.Data.Max"));
+		data.setMin(_ctx.integerValue("QueryClusterDiskSpecificationResponse.Data.Min"));
 		queryClusterDiskSpecificationResponse.setData(data);
 	 
 	 	return queryClusterDiskSpecificationResponse;

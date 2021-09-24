@@ -27,19 +27,19 @@ public class ListClusterVersionsResponseUnmarshaller {
 	public static ListClusterVersionsResponse unmarshall(ListClusterVersionsResponse listClusterVersionsResponse, UnmarshallerContext _ctx) {
 		
 		listClusterVersionsResponse.setRequestId(_ctx.stringValue("ListClusterVersionsResponse.RequestId"));
-		listClusterVersionsResponse.setSuccess(_ctx.booleanValue("ListClusterVersionsResponse.Success"));
-		listClusterVersionsResponse.setMessage(_ctx.stringValue("ListClusterVersionsResponse.Message"));
-		listClusterVersionsResponse.setErrorCode(_ctx.stringValue("ListClusterVersionsResponse.ErrorCode"));
 		listClusterVersionsResponse.setHttpStatusCode(_ctx.integerValue("ListClusterVersionsResponse.HttpStatusCode"));
+		listClusterVersionsResponse.setSuccess(_ctx.booleanValue("ListClusterVersionsResponse.Success"));
+		listClusterVersionsResponse.setErrorCode(_ctx.stringValue("ListClusterVersionsResponse.ErrorCode"));
 		listClusterVersionsResponse.setCode(_ctx.integerValue("ListClusterVersionsResponse.Code"));
+		listClusterVersionsResponse.setMessage(_ctx.stringValue("ListClusterVersionsResponse.Message"));
 		listClusterVersionsResponse.setDynamicMessage(_ctx.stringValue("ListClusterVersionsResponse.DynamicMessage"));
 
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListClusterVersionsResponse.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
-			dataItem.setClusterType(_ctx.stringValue("ListClusterVersionsResponse.Data["+ i +"].ClusterType"));
 			dataItem.setCode(_ctx.stringValue("ListClusterVersionsResponse.Data["+ i +"].Code"));
 			dataItem.setShowName(_ctx.stringValue("ListClusterVersionsResponse.Data["+ i +"].ShowName"));
+			dataItem.setClusterType(_ctx.stringValue("ListClusterVersionsResponse.Data["+ i +"].ClusterType"));
 
 			data.add(dataItem);
 		}

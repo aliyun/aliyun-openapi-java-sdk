@@ -24,21 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class UpdateConfigResponse extends AcsResponse {
 
-	private Boolean success;
-
 	private String message;
-
-	private String errorCode;
 
 	private String requestId;
 
-	public Boolean getSuccess() {
-		return this.success;
-	}
+	private Boolean success;
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
+	private Integer code;
+
+	private Integer httpStatusCode;
 
 	public String getMessage() {
 		return this.message;
@@ -48,20 +42,36 @@ public class UpdateConfigResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
-	}
-
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
+	public Integer getCode() {
+		return this.code;
+	}
+
+	public void setCode(Integer code) {
+		this.code = code;
+	}
+
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
+	}
+
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
 	}
 
 	@Override

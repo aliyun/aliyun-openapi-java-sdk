@@ -23,11 +23,11 @@ public class UpdateNacosInstanceResponseUnmarshaller {
 	public static UpdateNacosInstanceResponse unmarshall(UpdateNacosInstanceResponse updateNacosInstanceResponse, UnmarshallerContext _ctx) {
 		
 		updateNacosInstanceResponse.setRequestId(_ctx.stringValue("UpdateNacosInstanceResponse.RequestId"));
-		updateNacosInstanceResponse.setMessage(_ctx.stringValue("UpdateNacosInstanceResponse.Message"));
 		updateNacosInstanceResponse.setHttpStatusCode(_ctx.integerValue("UpdateNacosInstanceResponse.HttpStatusCode"));
-		updateNacosInstanceResponse.setData(_ctx.stringValue("UpdateNacosInstanceResponse.Data"));
+		updateNacosInstanceResponse.setMessage(_ctx.stringValue("UpdateNacosInstanceResponse.Message"));
 		updateNacosInstanceResponse.setCode(_ctx.integerValue("UpdateNacosInstanceResponse.Code"));
 		updateNacosInstanceResponse.setSuccess(_ctx.booleanValue("UpdateNacosInstanceResponse.Success"));
+		updateNacosInstanceResponse.setData(_ctx.stringValue("UpdateNacosInstanceResponse.Data"));
 	 
 	 	return updateNacosInstanceResponse;
 	}

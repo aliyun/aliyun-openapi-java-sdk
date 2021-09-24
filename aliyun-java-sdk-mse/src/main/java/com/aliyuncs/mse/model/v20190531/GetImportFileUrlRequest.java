@@ -31,7 +31,7 @@ public class GetImportFileUrlRequest extends RpcAcsRequest<GetImportFileUrlRespo
 
 	private String namespaceId;
 	public GetImportFileUrlRequest() {
-		super("mse", "2019-05-31", "GetImportFileUrl", "mse");
+		super("mse", "2019-05-31", "GetImportFileUrl");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

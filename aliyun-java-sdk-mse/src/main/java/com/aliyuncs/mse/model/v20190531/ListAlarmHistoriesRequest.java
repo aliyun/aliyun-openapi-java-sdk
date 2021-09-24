@@ -39,7 +39,7 @@ public class ListAlarmHistoriesRequest extends RpcAcsRequest<ListAlarmHistoriesR
 
 	private String alarmName;
 	public ListAlarmHistoriesRequest() {
-		super("mse", "2019-05-31", "ListAlarmHistories", "mse");
+		super("mse", "2019-05-31", "ListAlarmHistories");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

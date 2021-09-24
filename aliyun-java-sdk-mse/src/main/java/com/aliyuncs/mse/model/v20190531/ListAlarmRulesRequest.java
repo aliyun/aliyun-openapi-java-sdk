@@ -33,7 +33,7 @@ public class ListAlarmRulesRequest extends RpcAcsRequest<ListAlarmRulesResponse>
 
 	private Integer pageSize;
 	public ListAlarmRulesRequest() {
-		super("mse", "2019-05-31", "ListAlarmRules", "mse");
+		super("mse", "2019-05-31", "ListAlarmRules");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

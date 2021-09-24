@@ -23,10 +23,10 @@ public class DeleteClusterResponseUnmarshaller {
 	public static DeleteClusterResponse unmarshall(DeleteClusterResponse deleteClusterResponse, UnmarshallerContext _ctx) {
 		
 		deleteClusterResponse.setRequestId(_ctx.stringValue("DeleteClusterResponse.RequestId"));
-		deleteClusterResponse.setSuccess(_ctx.booleanValue("DeleteClusterResponse.Success"));
+		deleteClusterResponse.setHttpCode(_ctx.stringValue("DeleteClusterResponse.HttpCode"));
 		deleteClusterResponse.setMessage(_ctx.stringValue("DeleteClusterResponse.Message"));
 		deleteClusterResponse.setErrorCode(_ctx.stringValue("DeleteClusterResponse.ErrorCode"));
-		deleteClusterResponse.setHttpCode(_ctx.stringValue("DeleteClusterResponse.HttpCode"));
+		deleteClusterResponse.setSuccess(_ctx.booleanValue("DeleteClusterResponse.Success"));
 	 
 	 	return deleteClusterResponse;
 	}

@@ -31,7 +31,7 @@ public class UpgradeClusterRequest extends RpcAcsRequest<UpgradeClusterResponse>
 
 	private String requestPars;
 	public UpgradeClusterRequest() {
-		super("mse", "2019-05-31", "UpgradeCluster", "mse");
+		super("mse", "2019-05-31", "UpgradeCluster");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

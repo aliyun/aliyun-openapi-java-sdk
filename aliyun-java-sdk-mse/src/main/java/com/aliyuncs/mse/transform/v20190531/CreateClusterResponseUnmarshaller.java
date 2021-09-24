@@ -23,11 +23,11 @@ public class CreateClusterResponseUnmarshaller {
 	public static CreateClusterResponse unmarshall(CreateClusterResponse createClusterResponse, UnmarshallerContext _ctx) {
 		
 		createClusterResponse.setRequestId(_ctx.stringValue("CreateClusterResponse.RequestId"));
-		createClusterResponse.setErrorCode(_ctx.stringValue("CreateClusterResponse.ErrorCode"));
 		createClusterResponse.setMessage(_ctx.stringValue("CreateClusterResponse.Message"));
-		createClusterResponse.setSuccess(_ctx.booleanValue("CreateClusterResponse.Success"));
-		createClusterResponse.setOrderId(_ctx.stringValue("CreateClusterResponse.OrderId"));
 		createClusterResponse.setInstanceId(_ctx.stringValue("CreateClusterResponse.InstanceId"));
+		createClusterResponse.setErrorCode(_ctx.stringValue("CreateClusterResponse.ErrorCode"));
+		createClusterResponse.setOrderId(_ctx.stringValue("CreateClusterResponse.OrderId"));
+		createClusterResponse.setSuccess(_ctx.booleanValue("CreateClusterResponse.Success"));
 	 
 	 	return createClusterResponse;
 	}

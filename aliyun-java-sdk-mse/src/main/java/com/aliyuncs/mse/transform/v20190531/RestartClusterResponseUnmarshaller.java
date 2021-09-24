@@ -23,9 +23,9 @@ public class RestartClusterResponseUnmarshaller {
 	public static RestartClusterResponse unmarshall(RestartClusterResponse restartClusterResponse, UnmarshallerContext _ctx) {
 		
 		restartClusterResponse.setRequestId(_ctx.stringValue("RestartClusterResponse.RequestId"));
-		restartClusterResponse.setSuccess(_ctx.booleanValue("RestartClusterResponse.Success"));
 		restartClusterResponse.setMessage(_ctx.stringValue("RestartClusterResponse.Message"));
 		restartClusterResponse.setErrorCode(_ctx.stringValue("RestartClusterResponse.ErrorCode"));
+		restartClusterResponse.setSuccess(_ctx.booleanValue("RestartClusterResponse.Success"));
 	 
 	 	return restartClusterResponse;
 	}

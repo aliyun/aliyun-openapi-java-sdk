@@ -24,21 +24,29 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryClusterDiskSpecificationResponse extends AcsResponse {
 
+	private Integer httpStatusCode;
+
 	private String requestId;
 
 	private Boolean success;
 
-	private String message;
-
 	private String errorCode;
 
-	private Integer httpStatusCode;
-
 	private Integer code;
+
+	private String message;
 
 	private String dynamicMessage;
 
 	private Data data;
+
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
+	}
+
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -56,14 +64,6 @@ public class QueryClusterDiskSpecificationResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
 	public String getErrorCode() {
 		return this.errorCode;
 	}
@@ -72,20 +72,20 @@ public class QueryClusterDiskSpecificationResponse extends AcsResponse {
 		this.errorCode = errorCode;
 	}
 
-	public Integer getHttpStatusCode() {
-		return this.httpStatusCode;
-	}
-
-	public void setHttpStatusCode(Integer httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
-	}
-
 	public Integer getCode() {
 		return this.code;
 	}
 
 	public void setCode(Integer code) {
 		this.code = code;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public String getDynamicMessage() {
@@ -106,18 +106,18 @@ public class QueryClusterDiskSpecificationResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Integer min;
+		private Integer step;
 
 		private Integer max;
 
-		private Integer step;
+		private Integer min;
 
-		public Integer getMin() {
-			return this.min;
+		public Integer getStep() {
+			return this.step;
 		}
 
-		public void setMin(Integer min) {
-			this.min = min;
+		public void setStep(Integer step) {
+			this.step = step;
 		}
 
 		public Integer getMax() {
@@ -128,12 +128,12 @@ public class QueryClusterDiskSpecificationResponse extends AcsResponse {
 			this.max = max;
 		}
 
-		public Integer getStep() {
-			return this.step;
+		public Integer getMin() {
+			return this.min;
 		}
 
-		public void setStep(Integer step) {
-			this.step = step;
+		public void setMin(Integer min) {
+			this.min = min;
 		}
 	}
 

@@ -27,13 +27,13 @@ public class ListAlarmContactGroupsResponseUnmarshaller {
 	public static ListAlarmContactGroupsResponse unmarshall(ListAlarmContactGroupsResponse listAlarmContactGroupsResponse, UnmarshallerContext _ctx) {
 		
 		listAlarmContactGroupsResponse.setRequestId(_ctx.stringValue("ListAlarmContactGroupsResponse.RequestId"));
-		listAlarmContactGroupsResponse.setSuccess(_ctx.booleanValue("ListAlarmContactGroupsResponse.Success"));
-		listAlarmContactGroupsResponse.setMessage(_ctx.stringValue("ListAlarmContactGroupsResponse.Message"));
-		listAlarmContactGroupsResponse.setErrorCode(_ctx.stringValue("ListAlarmContactGroupsResponse.ErrorCode"));
-		listAlarmContactGroupsResponse.setPageNumber(_ctx.integerValue("ListAlarmContactGroupsResponse.PageNumber"));
-		listAlarmContactGroupsResponse.setPageSize(_ctx.integerValue("ListAlarmContactGroupsResponse.PageSize"));
-		listAlarmContactGroupsResponse.setTotalCount(_ctx.integerValue("ListAlarmContactGroupsResponse.TotalCount"));
 		listAlarmContactGroupsResponse.setHttpCode(_ctx.stringValue("ListAlarmContactGroupsResponse.HttpCode"));
+		listAlarmContactGroupsResponse.setTotalCount(_ctx.integerValue("ListAlarmContactGroupsResponse.TotalCount"));
+		listAlarmContactGroupsResponse.setMessage(_ctx.stringValue("ListAlarmContactGroupsResponse.Message"));
+		listAlarmContactGroupsResponse.setPageSize(_ctx.integerValue("ListAlarmContactGroupsResponse.PageSize"));
+		listAlarmContactGroupsResponse.setPageNumber(_ctx.integerValue("ListAlarmContactGroupsResponse.PageNumber"));
+		listAlarmContactGroupsResponse.setErrorCode(_ctx.stringValue("ListAlarmContactGroupsResponse.ErrorCode"));
+		listAlarmContactGroupsResponse.setSuccess(_ctx.booleanValue("ListAlarmContactGroupsResponse.Success"));
 
 		List<AlarmContactGroupModel> data = new ArrayList<AlarmContactGroupModel>();
 		for (int i = 0; i < _ctx.lengthValue("ListAlarmContactGroupsResponse.Data.Length"); i++) {

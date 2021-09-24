@@ -31,6 +31,8 @@ public class CreateNacosConfigRequest extends RpcAcsRequest<CreateNacosConfigRes
 
 	private String tags;
 
+	private String betaIps;
+
 	private String instanceId;
 
 	private String dataId;
@@ -43,7 +45,7 @@ public class CreateNacosConfigRequest extends RpcAcsRequest<CreateNacosConfigRes
 
 	private String desc;
 	public CreateNacosConfigRequest() {
-		super("mse", "2019-05-31", "CreateNacosConfig", "mse");
+		super("mse", "2019-05-31", "CreateNacosConfig");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -81,6 +83,17 @@ public class CreateNacosConfigRequest extends RpcAcsRequest<CreateNacosConfigRes
 		this.tags = tags;
 		if(tags != null){
 			putQueryParameter("Tags", tags);
+		}
+	}
+
+	public String getBetaIps() {
+		return this.betaIps;
+	}
+
+	public void setBetaIps(String betaIps) {
+		this.betaIps = betaIps;
+		if(betaIps != null){
+			putQueryParameter("BetaIps", betaIps);
 		}
 	}
 

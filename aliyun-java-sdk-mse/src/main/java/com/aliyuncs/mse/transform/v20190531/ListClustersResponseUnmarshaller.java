@@ -27,30 +27,33 @@ public class ListClustersResponseUnmarshaller {
 	public static ListClustersResponse unmarshall(ListClustersResponse listClustersResponse, UnmarshallerContext _ctx) {
 		
 		listClustersResponse.setRequestId(_ctx.stringValue("ListClustersResponse.RequestId"));
-		listClustersResponse.setSuccess(_ctx.booleanValue("ListClustersResponse.Success"));
-		listClustersResponse.setMessage(_ctx.stringValue("ListClustersResponse.Message"));
-		listClustersResponse.setErrorCode(_ctx.stringValue("ListClustersResponse.ErrorCode"));
-		listClustersResponse.setPageNumber(_ctx.integerValue("ListClustersResponse.PageNumber"));
-		listClustersResponse.setPageSize(_ctx.integerValue("ListClustersResponse.PageSize"));
-		listClustersResponse.setTotalCount(_ctx.integerValue("ListClustersResponse.TotalCount"));
 		listClustersResponse.setHttpCode(_ctx.stringValue("ListClustersResponse.HttpCode"));
+		listClustersResponse.setTotalCount(_ctx.integerValue("ListClustersResponse.TotalCount"));
+		listClustersResponse.setMessage(_ctx.stringValue("ListClustersResponse.Message"));
+		listClustersResponse.setPageSize(_ctx.integerValue("ListClustersResponse.PageSize"));
+		listClustersResponse.setPageNumber(_ctx.integerValue("ListClustersResponse.PageNumber"));
+		listClustersResponse.setErrorCode(_ctx.stringValue("ListClustersResponse.ErrorCode"));
+		listClustersResponse.setSuccess(_ctx.booleanValue("ListClustersResponse.Success"));
 
 		List<ClusterForListModel> data = new ArrayList<ClusterForListModel>();
 		for (int i = 0; i < _ctx.lengthValue("ListClustersResponse.Data.Length"); i++) {
 			ClusterForListModel clusterForListModel = new ClusterForListModel();
-			clusterForListModel.setClusterId(_ctx.stringValue("ListClustersResponse.Data["+ i +"].ClusterId"));
-			clusterForListModel.setClusterAliasName(_ctx.stringValue("ListClustersResponse.Data["+ i +"].ClusterAliasName"));
-			clusterForListModel.setInitStatus(_ctx.stringValue("ListClustersResponse.Data["+ i +"].InitStatus"));
-			clusterForListModel.setIntranetDomain(_ctx.stringValue("ListClustersResponse.Data["+ i +"].IntranetDomain"));
-			clusterForListModel.setCreateTime(_ctx.stringValue("ListClustersResponse.Data["+ i +"].CreateTime"));
-			clusterForListModel.setInternetAddress(_ctx.stringValue("ListClustersResponse.Data["+ i +"].InternetAddress"));
-			clusterForListModel.setIntranetAddress(_ctx.stringValue("ListClustersResponse.Data["+ i +"].IntranetAddress"));
-			clusterForListModel.setInternetDomain(_ctx.stringValue("ListClustersResponse.Data["+ i +"].InternetDomain"));
-			clusterForListModel.setClusterType(_ctx.stringValue("ListClustersResponse.Data["+ i +"].ClusterType"));
-			clusterForListModel.setChargeType(_ctx.stringValue("ListClustersResponse.Data["+ i +"].ChargeType"));
 			clusterForListModel.setEndDate(_ctx.stringValue("ListClustersResponse.Data["+ i +"].EndDate"));
+			clusterForListModel.setIntranetDomain(_ctx.stringValue("ListClustersResponse.Data["+ i +"].IntranetDomain"));
+			clusterForListModel.setInternetDomain(_ctx.stringValue("ListClustersResponse.Data["+ i +"].InternetDomain"));
+			clusterForListModel.setCreateTime(_ctx.stringValue("ListClustersResponse.Data["+ i +"].CreateTime"));
+			clusterForListModel.setChargeType(_ctx.stringValue("ListClustersResponse.Data["+ i +"].ChargeType"));
+			clusterForListModel.setIntranetAddress(_ctx.stringValue("ListClustersResponse.Data["+ i +"].IntranetAddress"));
 			clusterForListModel.setInstanceId(_ctx.stringValue("ListClustersResponse.Data["+ i +"].InstanceId"));
+			clusterForListModel.setInternetAddress(_ctx.stringValue("ListClustersResponse.Data["+ i +"].InternetAddress"));
+			clusterForListModel.setClusterAliasName(_ctx.stringValue("ListClustersResponse.Data["+ i +"].ClusterAliasName"));
+			clusterForListModel.setClusterType(_ctx.stringValue("ListClustersResponse.Data["+ i +"].ClusterType"));
+			clusterForListModel.setInitStatus(_ctx.stringValue("ListClustersResponse.Data["+ i +"].InitStatus"));
 			clusterForListModel.setAppVersion(_ctx.stringValue("ListClustersResponse.Data["+ i +"].AppVersion"));
+			clusterForListModel.setClusterId(_ctx.stringValue("ListClustersResponse.Data["+ i +"].ClusterId"));
+			clusterForListModel.setCanUpdate(_ctx.booleanValue("ListClustersResponse.Data["+ i +"].CanUpdate"));
+			clusterForListModel.setVersionCode(_ctx.stringValue("ListClustersResponse.Data["+ i +"].VersionCode"));
+			clusterForListModel.setInstanceCount(_ctx.longValue("ListClustersResponse.Data["+ i +"].InstanceCount"));
 
 			data.add(clusterForListModel);
 		}

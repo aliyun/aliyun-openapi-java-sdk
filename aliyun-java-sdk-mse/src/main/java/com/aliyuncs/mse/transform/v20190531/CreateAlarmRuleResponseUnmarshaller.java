@@ -23,9 +23,9 @@ public class CreateAlarmRuleResponseUnmarshaller {
 	public static CreateAlarmRuleResponse unmarshall(CreateAlarmRuleResponse createAlarmRuleResponse, UnmarshallerContext _ctx) {
 		
 		createAlarmRuleResponse.setRequestId(_ctx.stringValue("CreateAlarmRuleResponse.RequestId"));
-		createAlarmRuleResponse.setSuccess(_ctx.booleanValue("CreateAlarmRuleResponse.Success"));
 		createAlarmRuleResponse.setMessage(_ctx.stringValue("CreateAlarmRuleResponse.Message"));
 		createAlarmRuleResponse.setErrorCode(_ctx.stringValue("CreateAlarmRuleResponse.ErrorCode"));
+		createAlarmRuleResponse.setSuccess(_ctx.booleanValue("CreateAlarmRuleResponse.Success"));
 	 
 	 	return createAlarmRuleResponse;
 	}

@@ -27,7 +27,7 @@ public class ListEngineNamespacesRequest extends RpcAcsRequest<ListEngineNamespa
 
 	private String instanceId;
 	public ListEngineNamespacesRequest() {
-		super("mse", "2019-05-31", "ListEngineNamespaces", "mse");
+		super("mse", "2019-05-31", "ListEngineNamespaces");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

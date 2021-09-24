@@ -23,10 +23,10 @@ public class QueryMonitorResponseUnmarshaller {
 	public static QueryMonitorResponse unmarshall(QueryMonitorResponse queryMonitorResponse, UnmarshallerContext _ctx) {
 		
 		queryMonitorResponse.setRequestId(_ctx.stringValue("QueryMonitorResponse.RequestId"));
-		queryMonitorResponse.setSuccess(_ctx.booleanValue("QueryMonitorResponse.Success"));
 		queryMonitorResponse.setMessage(_ctx.stringValue("QueryMonitorResponse.Message"));
-		queryMonitorResponse.setErrorCode(_ctx.stringValue("QueryMonitorResponse.ErrorCode"));
 		queryMonitorResponse.setData(_ctx.stringValue("QueryMonitorResponse.Data"));
+		queryMonitorResponse.setErrorCode(_ctx.stringValue("QueryMonitorResponse.ErrorCode"));
+		queryMonitorResponse.setSuccess(_ctx.booleanValue("QueryMonitorResponse.Success"));
 	 
 	 	return queryMonitorResponse;
 	}

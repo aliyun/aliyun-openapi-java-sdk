@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryBusinessLocationsResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String success;
-
 	private String message;
+
+	private String requestId;
 
 	private String errorCode;
 
+	private String success;
+
 	private List<LocationData> data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(String success) {
-		this.success = success;
-	}
 
 	public String getMessage() {
 		return this.message;
@@ -59,12 +43,28 @@ public class QueryBusinessLocationsResponse extends AcsResponse {
 		this.message = message;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	public String getErrorCode() {
 		return this.errorCode;
 	}
 
 	public void setErrorCode(String errorCode) {
 		this.errorCode = errorCode;
+	}
+
+	public String getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(String success) {
+		this.success = success;
 	}
 
 	public List<LocationData> getData() {
@@ -77,31 +77,39 @@ public class QueryBusinessLocationsResponse extends AcsResponse {
 
 	public static class LocationData {
 
+		private Integer ordering;
+
 		private String type;
 
-		private String name;
+		private String districtEnName;
 
-		private String cnName;
+		private String showName;
+
+		private String districtCnName;
 
 		private String enName;
 
-		private String showName;
+		private String districtId;
+
+		private String districtShowName;
 
 		private String description;
 
 		private String enDescription;
 
-		private Integer ordering;
+		private String cnName;
 
-		private String districtId;
-
-		private String districtCnName;
-
-		private String districtEnName;
-
-		private String districtShowName;
+		private String name;
 
 		private Integer districtOrdering;
+
+		public Integer getOrdering() {
+			return this.ordering;
+		}
+
+		public void setOrdering(Integer ordering) {
+			this.ordering = ordering;
+		}
 
 		public String getType() {
 			return this.type;
@@ -111,20 +119,28 @@ public class QueryBusinessLocationsResponse extends AcsResponse {
 			this.type = type;
 		}
 
-		public String getName() {
-			return this.name;
+		public String getDistrictEnName() {
+			return this.districtEnName;
 		}
 
-		public void setName(String name) {
-			this.name = name;
+		public void setDistrictEnName(String districtEnName) {
+			this.districtEnName = districtEnName;
 		}
 
-		public String getCnName() {
-			return this.cnName;
+		public String getShowName() {
+			return this.showName;
 		}
 
-		public void setCnName(String cnName) {
-			this.cnName = cnName;
+		public void setShowName(String showName) {
+			this.showName = showName;
+		}
+
+		public String getDistrictCnName() {
+			return this.districtCnName;
+		}
+
+		public void setDistrictCnName(String districtCnName) {
+			this.districtCnName = districtCnName;
 		}
 
 		public String getEnName() {
@@ -135,12 +151,20 @@ public class QueryBusinessLocationsResponse extends AcsResponse {
 			this.enName = enName;
 		}
 
-		public String getShowName() {
-			return this.showName;
+		public String getDistrictId() {
+			return this.districtId;
 		}
 
-		public void setShowName(String showName) {
-			this.showName = showName;
+		public void setDistrictId(String districtId) {
+			this.districtId = districtId;
+		}
+
+		public String getDistrictShowName() {
+			return this.districtShowName;
+		}
+
+		public void setDistrictShowName(String districtShowName) {
+			this.districtShowName = districtShowName;
 		}
 
 		public String getDescription() {
@@ -159,44 +183,20 @@ public class QueryBusinessLocationsResponse extends AcsResponse {
 			this.enDescription = enDescription;
 		}
 
-		public Integer getOrdering() {
-			return this.ordering;
+		public String getCnName() {
+			return this.cnName;
 		}
 
-		public void setOrdering(Integer ordering) {
-			this.ordering = ordering;
+		public void setCnName(String cnName) {
+			this.cnName = cnName;
 		}
 
-		public String getDistrictId() {
-			return this.districtId;
+		public String getName() {
+			return this.name;
 		}
 
-		public void setDistrictId(String districtId) {
-			this.districtId = districtId;
-		}
-
-		public String getDistrictCnName() {
-			return this.districtCnName;
-		}
-
-		public void setDistrictCnName(String districtCnName) {
-			this.districtCnName = districtCnName;
-		}
-
-		public String getDistrictEnName() {
-			return this.districtEnName;
-		}
-
-		public void setDistrictEnName(String districtEnName) {
-			this.districtEnName = districtEnName;
-		}
-
-		public String getDistrictShowName() {
-			return this.districtShowName;
-		}
-
-		public void setDistrictShowName(String districtShowName) {
-			this.districtShowName = districtShowName;
+		public void setName(String name) {
+			this.name = name;
 		}
 
 		public Integer getDistrictOrdering() {

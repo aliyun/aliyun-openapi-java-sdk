@@ -24,31 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetNacosHistoryConfigResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String message;
+
+	private String requestId;
 
 	private String errorCode;
 
+	private Boolean success;
+
 	private Configuration configuration;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getMessage() {
 		return this.message;
@@ -58,12 +42,28 @@ public class GetNacosHistoryConfigResponse extends AcsResponse {
 		this.message = message;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	public String getErrorCode() {
 		return this.errorCode;
 	}
 
 	public void setErrorCode(String errorCode) {
 		this.errorCode = errorCode;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Configuration getConfiguration() {
@@ -76,33 +76,19 @@ public class GetNacosHistoryConfigResponse extends AcsResponse {
 
 	public static class Configuration {
 
-		private String dataId;
-
-		private String group;
-
 		private String appName;
 
 		private String md5;
 
+		private String dataId;
+
 		private String content;
+
+		private String group;
 
 		private String opType;
 
-		public String getDataId() {
-			return this.dataId;
-		}
-
-		public void setDataId(String dataId) {
-			this.dataId = dataId;
-		}
-
-		public String getGroup() {
-			return this.group;
-		}
-
-		public void setGroup(String group) {
-			this.group = group;
-		}
+		private String encryptedDataKey;
 
 		public String getAppName() {
 			return this.appName;
@@ -120,6 +106,14 @@ public class GetNacosHistoryConfigResponse extends AcsResponse {
 			this.md5 = md5;
 		}
 
+		public String getDataId() {
+			return this.dataId;
+		}
+
+		public void setDataId(String dataId) {
+			this.dataId = dataId;
+		}
+
 		public String getContent() {
 			return this.content;
 		}
@@ -128,12 +122,28 @@ public class GetNacosHistoryConfigResponse extends AcsResponse {
 			this.content = content;
 		}
 
+		public String getGroup() {
+			return this.group;
+		}
+
+		public void setGroup(String group) {
+			this.group = group;
+		}
+
 		public String getOpType() {
 			return this.opType;
 		}
 
 		public void setOpType(String opType) {
 			this.opType = opType;
+		}
+
+		public String getEncryptedDataKey() {
+			return this.encryptedDataKey;
+		}
+
+		public void setEncryptedDataKey(String encryptedDataKey) {
+			this.encryptedDataKey = encryptedDataKey;
 		}
 	}
 

@@ -28,31 +28,31 @@ public class ListEurekaInstancesResponseUnmarshaller {
 	public static ListEurekaInstancesResponse unmarshall(ListEurekaInstancesResponse listEurekaInstancesResponse, UnmarshallerContext _ctx) {
 		
 		listEurekaInstancesResponse.setRequestId(_ctx.stringValue("ListEurekaInstancesResponse.RequestId"));
-		listEurekaInstancesResponse.setSuccess(_ctx.booleanValue("ListEurekaInstancesResponse.Success"));
-		listEurekaInstancesResponse.setMessage(_ctx.stringValue("ListEurekaInstancesResponse.Message"));
-		listEurekaInstancesResponse.setErrorCode(_ctx.stringValue("ListEurekaInstancesResponse.ErrorCode"));
-		listEurekaInstancesResponse.setPageNumber(_ctx.integerValue("ListEurekaInstancesResponse.PageNumber"));
-		listEurekaInstancesResponse.setPageSize(_ctx.integerValue("ListEurekaInstancesResponse.PageSize"));
-		listEurekaInstancesResponse.setTotalCount(_ctx.integerValue("ListEurekaInstancesResponse.TotalCount"));
 		listEurekaInstancesResponse.setHttpCode(_ctx.stringValue("ListEurekaInstancesResponse.HttpCode"));
+		listEurekaInstancesResponse.setTotalCount(_ctx.integerValue("ListEurekaInstancesResponse.TotalCount"));
+		listEurekaInstancesResponse.setMessage(_ctx.stringValue("ListEurekaInstancesResponse.Message"));
+		listEurekaInstancesResponse.setPageSize(_ctx.integerValue("ListEurekaInstancesResponse.PageSize"));
+		listEurekaInstancesResponse.setPageNumber(_ctx.integerValue("ListEurekaInstancesResponse.PageNumber"));
+		listEurekaInstancesResponse.setErrorCode(_ctx.stringValue("ListEurekaInstancesResponse.ErrorCode"));
+		listEurekaInstancesResponse.setSuccess(_ctx.booleanValue("ListEurekaInstancesResponse.Success"));
 
 		List<EurekaInstance> data = new ArrayList<EurekaInstance>();
 		for (int i = 0; i < _ctx.lengthValue("ListEurekaInstancesResponse.Data.Length"); i++) {
 			EurekaInstance eurekaInstance = new EurekaInstance();
+			eurekaInstance.setStatus(_ctx.stringValue("ListEurekaInstancesResponse.Data["+ i +"].Status"));
+			eurekaInstance.setLastDirtyTimestamp(_ctx.longValue("ListEurekaInstancesResponse.Data["+ i +"].LastDirtyTimestamp"));
+			eurekaInstance.setIpAddr(_ctx.stringValue("ListEurekaInstancesResponse.Data["+ i +"].IpAddr"));
+			eurekaInstance.setHomePageUrl(_ctx.stringValue("ListEurekaInstancesResponse.Data["+ i +"].HomePageUrl"));
+			eurekaInstance.setHostName(_ctx.stringValue("ListEurekaInstancesResponse.Data["+ i +"].HostName"));
+			eurekaInstance.setInstanceId(_ctx.stringValue("ListEurekaInstancesResponse.Data["+ i +"].InstanceId"));
 			eurekaInstance.setPort(_ctx.integerValue("ListEurekaInstancesResponse.Data["+ i +"].Port"));
 			eurekaInstance.setSecurePort(_ctx.integerValue("ListEurekaInstancesResponse.Data["+ i +"].SecurePort"));
-			eurekaInstance.setDurationInSecs(_ctx.integerValue("ListEurekaInstancesResponse.Data["+ i +"].DurationInSecs"));
-			eurekaInstance.setRenewalIntervalInSecs(_ctx.integerValue("ListEurekaInstancesResponse.Data["+ i +"].RenewalIntervalInSecs"));
-			eurekaInstance.setLastUpdatedTimestamp(_ctx.longValue("ListEurekaInstancesResponse.Data["+ i +"].LastUpdatedTimestamp"));
 			eurekaInstance.setApp(_ctx.stringValue("ListEurekaInstancesResponse.Data["+ i +"].App"));
-			eurekaInstance.setIpAddr(_ctx.stringValue("ListEurekaInstancesResponse.Data["+ i +"].IpAddr"));
-			eurekaInstance.setStatus(_ctx.stringValue("ListEurekaInstancesResponse.Data["+ i +"].Status"));
-			eurekaInstance.setHomePageUrl(_ctx.stringValue("ListEurekaInstancesResponse.Data["+ i +"].HomePageUrl"));
-			eurekaInstance.setInstanceId(_ctx.stringValue("ListEurekaInstancesResponse.Data["+ i +"].InstanceId"));
+			eurekaInstance.setDurationInSecs(_ctx.integerValue("ListEurekaInstancesResponse.Data["+ i +"].DurationInSecs"));
+			eurekaInstance.setLastUpdatedTimestamp(_ctx.longValue("ListEurekaInstancesResponse.Data["+ i +"].LastUpdatedTimestamp"));
+			eurekaInstance.setRenewalIntervalInSecs(_ctx.integerValue("ListEurekaInstancesResponse.Data["+ i +"].RenewalIntervalInSecs"));
 			eurekaInstance.setVipAddress(_ctx.stringValue("ListEurekaInstancesResponse.Data["+ i +"].VipAddress"));
-			eurekaInstance.setHostName(_ctx.stringValue("ListEurekaInstancesResponse.Data["+ i +"].HostName"));
 			eurekaInstance.setMetadata(_ctx.mapValue("ListEurekaInstancesResponse.Data["+ i +"].Metadata"));
-			eurekaInstance.setLastDirtyTimestamp(_ctx.longValue("ListEurekaInstancesResponse.Data["+ i +"].LastDirtyTimestamp"));
 
 			data.add(eurekaInstance);
 		}

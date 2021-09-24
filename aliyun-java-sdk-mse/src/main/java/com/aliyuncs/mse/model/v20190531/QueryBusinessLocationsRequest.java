@@ -25,7 +25,7 @@ import com.aliyuncs.mse.Endpoint;
 public class QueryBusinessLocationsRequest extends RpcAcsRequest<QueryBusinessLocationsResponse> {
 	   
 	public QueryBusinessLocationsRequest() {
-		super("mse", "2019-05-31", "QueryBusinessLocations", "mse");
+		super("mse", "2019-05-31", "QueryBusinessLocations");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

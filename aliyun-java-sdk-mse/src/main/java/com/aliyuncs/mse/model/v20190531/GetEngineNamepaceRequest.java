@@ -31,7 +31,7 @@ public class GetEngineNamepaceRequest extends RpcAcsRequest<GetEngineNamepaceRes
 
 	private String id;
 	public GetEngineNamepaceRequest() {
-		super("mse", "2019-05-31", "GetEngineNamepace", "mse");
+		super("mse", "2019-05-31", "GetEngineNamepace");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

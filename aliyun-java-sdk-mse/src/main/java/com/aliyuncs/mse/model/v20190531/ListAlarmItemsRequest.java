@@ -27,7 +27,7 @@ public class ListAlarmItemsRequest extends RpcAcsRequest<ListAlarmItemsResponse>
 
 	private String requestPars;
 	public ListAlarmItemsRequest() {
-		super("mse", "2019-05-31", "ListAlarmItems", "mse");
+		super("mse", "2019-05-31", "ListAlarmItems");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

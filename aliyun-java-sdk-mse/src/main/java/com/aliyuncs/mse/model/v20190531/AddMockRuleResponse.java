@@ -24,11 +24,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class AddMockRuleResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer httpStatusCode;
 
 	private String message;
 
-	private Integer httpStatusCode;
+	private String requestId;
 
 	private Integer code;
 
@@ -36,12 +36,12 @@ public class AddMockRuleResponse extends AcsResponse {
 
 	private Data data;
 
-	public String getRequestId() {
-		return this.requestId;
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
 	}
 
 	public String getMessage() {
@@ -52,12 +52,12 @@ public class AddMockRuleResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public Integer getHttpStatusCode() {
-		return this.httpStatusCode;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setHttpStatusCode(Integer httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getCode() {
@@ -86,70 +86,38 @@ public class AddMockRuleResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String consumerAppName;
-
-		private String accountId;
-
-		private String providerAppId;
-
-		private String providerAppName;
-
-		private String consumerAppId;
+		private String namespaceId;
 
 		private String scMockItemJson;
 
-		private Boolean enable;
+		private String consumerAppName;
 
-		private String region;
+		private String consumerAppId;
 
-		private Long id;
-
-		private String namespaceId;
+		private String accountId;
 
 		private String extraJson;
 
 		private String source;
 
+		private String region;
+
+		private String providerAppId;
+
+		private String providerAppName;
+
 		private String name;
 
-		public String getConsumerAppName() {
-			return this.consumerAppName;
+		private Long id;
+
+		private Boolean enable;
+
+		public String getNamespaceId() {
+			return this.namespaceId;
 		}
 
-		public void setConsumerAppName(String consumerAppName) {
-			this.consumerAppName = consumerAppName;
-		}
-
-		public String getAccountId() {
-			return this.accountId;
-		}
-
-		public void setAccountId(String accountId) {
-			this.accountId = accountId;
-		}
-
-		public String getProviderAppId() {
-			return this.providerAppId;
-		}
-
-		public void setProviderAppId(String providerAppId) {
-			this.providerAppId = providerAppId;
-		}
-
-		public String getProviderAppName() {
-			return this.providerAppName;
-		}
-
-		public void setProviderAppName(String providerAppName) {
-			this.providerAppName = providerAppName;
-		}
-
-		public String getConsumerAppId() {
-			return this.consumerAppId;
-		}
-
-		public void setConsumerAppId(String consumerAppId) {
-			this.consumerAppId = consumerAppId;
+		public void setNamespaceId(String namespaceId) {
+			this.namespaceId = namespaceId;
 		}
 
 		public String getScMockItemJson() {
@@ -160,36 +128,28 @@ public class AddMockRuleResponse extends AcsResponse {
 			this.scMockItemJson = scMockItemJson;
 		}
 
-		public Boolean getEnable() {
-			return this.enable;
+		public String getConsumerAppName() {
+			return this.consumerAppName;
 		}
 
-		public void setEnable(Boolean enable) {
-			this.enable = enable;
+		public void setConsumerAppName(String consumerAppName) {
+			this.consumerAppName = consumerAppName;
 		}
 
-		public String getRegion() {
-			return this.region;
+		public String getConsumerAppId() {
+			return this.consumerAppId;
 		}
 
-		public void setRegion(String region) {
-			this.region = region;
+		public void setConsumerAppId(String consumerAppId) {
+			this.consumerAppId = consumerAppId;
 		}
 
-		public Long getId() {
-			return this.id;
+		public String getAccountId() {
+			return this.accountId;
 		}
 
-		public void setId(Long id) {
-			this.id = id;
-		}
-
-		public String getNamespaceId() {
-			return this.namespaceId;
-		}
-
-		public void setNamespaceId(String namespaceId) {
-			this.namespaceId = namespaceId;
+		public void setAccountId(String accountId) {
+			this.accountId = accountId;
 		}
 
 		public String getExtraJson() {
@@ -208,12 +168,52 @@ public class AddMockRuleResponse extends AcsResponse {
 			this.source = source;
 		}
 
+		public String getRegion() {
+			return this.region;
+		}
+
+		public void setRegion(String region) {
+			this.region = region;
+		}
+
+		public String getProviderAppId() {
+			return this.providerAppId;
+		}
+
+		public void setProviderAppId(String providerAppId) {
+			this.providerAppId = providerAppId;
+		}
+
+		public String getProviderAppName() {
+			return this.providerAppName;
+		}
+
+		public void setProviderAppName(String providerAppName) {
+			this.providerAppName = providerAppName;
+		}
+
 		public String getName() {
 			return this.name;
 		}
 
 		public void setName(String name) {
 			this.name = name;
+		}
+
+		public Long getId() {
+			return this.id;
+		}
+
+		public void setId(Long id) {
+			this.id = id;
+		}
+
+		public Boolean getEnable() {
+			return this.enable;
+		}
+
+		public void setEnable(Boolean enable) {
+			this.enable = enable;
 		}
 	}
 

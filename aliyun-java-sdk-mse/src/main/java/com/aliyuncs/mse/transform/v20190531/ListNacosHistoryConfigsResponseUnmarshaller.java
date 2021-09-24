@@ -27,23 +27,23 @@ public class ListNacosHistoryConfigsResponseUnmarshaller {
 	public static ListNacosHistoryConfigsResponse unmarshall(ListNacosHistoryConfigsResponse listNacosHistoryConfigsResponse, UnmarshallerContext _ctx) {
 		
 		listNacosHistoryConfigsResponse.setRequestId(_ctx.stringValue("ListNacosHistoryConfigsResponse.RequestId"));
-		listNacosHistoryConfigsResponse.setSuccess(_ctx.booleanValue("ListNacosHistoryConfigsResponse.Success"));
-		listNacosHistoryConfigsResponse.setMessage(_ctx.stringValue("ListNacosHistoryConfigsResponse.Message"));
-		listNacosHistoryConfigsResponse.setErrorCode(_ctx.stringValue("ListNacosHistoryConfigsResponse.ErrorCode"));
-		listNacosHistoryConfigsResponse.setPageNumber(_ctx.integerValue("ListNacosHistoryConfigsResponse.PageNumber"));
-		listNacosHistoryConfigsResponse.setPageSize(_ctx.integerValue("ListNacosHistoryConfigsResponse.PageSize"));
-		listNacosHistoryConfigsResponse.setTotalCount(_ctx.integerValue("ListNacosHistoryConfigsResponse.TotalCount"));
 		listNacosHistoryConfigsResponse.setHttpCode(_ctx.stringValue("ListNacosHistoryConfigsResponse.HttpCode"));
+		listNacosHistoryConfigsResponse.setTotalCount(_ctx.integerValue("ListNacosHistoryConfigsResponse.TotalCount"));
+		listNacosHistoryConfigsResponse.setMessage(_ctx.stringValue("ListNacosHistoryConfigsResponse.Message"));
+		listNacosHistoryConfigsResponse.setPageSize(_ctx.integerValue("ListNacosHistoryConfigsResponse.PageSize"));
+		listNacosHistoryConfigsResponse.setPageNumber(_ctx.integerValue("ListNacosHistoryConfigsResponse.PageNumber"));
+		listNacosHistoryConfigsResponse.setErrorCode(_ctx.stringValue("ListNacosHistoryConfigsResponse.ErrorCode"));
+		listNacosHistoryConfigsResponse.setSuccess(_ctx.booleanValue("ListNacosHistoryConfigsResponse.Success"));
 
 		List<HistoryItem> historyItems = new ArrayList<HistoryItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListNacosHistoryConfigsResponse.HistoryItems.Length"); i++) {
 			HistoryItem historyItem = new HistoryItem();
+			historyItem.setAppName(_ctx.stringValue("ListNacosHistoryConfigsResponse.HistoryItems["+ i +"].AppName"));
 			historyItem.setDataId(_ctx.stringValue("ListNacosHistoryConfigsResponse.HistoryItems["+ i +"].DataId"));
 			historyItem.setGroup(_ctx.stringValue("ListNacosHistoryConfigsResponse.HistoryItems["+ i +"].Group"));
 			historyItem.setLastModifiedTime(_ctx.longValue("ListNacosHistoryConfigsResponse.HistoryItems["+ i +"].LastModifiedTime"));
 			historyItem.setId(_ctx.longValue("ListNacosHistoryConfigsResponse.HistoryItems["+ i +"].Id"));
 			historyItem.setOpType(_ctx.stringValue("ListNacosHistoryConfigsResponse.HistoryItems["+ i +"].OpType"));
-			historyItem.setAppName(_ctx.stringValue("ListNacosHistoryConfigsResponse.HistoryItems["+ i +"].AppName"));
 
 			historyItems.add(historyItem);
 		}

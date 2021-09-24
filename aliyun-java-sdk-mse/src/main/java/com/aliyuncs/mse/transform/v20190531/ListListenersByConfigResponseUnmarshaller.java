@@ -27,13 +27,13 @@ public class ListListenersByConfigResponseUnmarshaller {
 	public static ListListenersByConfigResponse unmarshall(ListListenersByConfigResponse listListenersByConfigResponse, UnmarshallerContext _ctx) {
 		
 		listListenersByConfigResponse.setRequestId(_ctx.stringValue("ListListenersByConfigResponse.RequestId"));
-		listListenersByConfigResponse.setSuccess(_ctx.booleanValue("ListListenersByConfigResponse.Success"));
-		listListenersByConfigResponse.setMessage(_ctx.stringValue("ListListenersByConfigResponse.Message"));
-		listListenersByConfigResponse.setErrorCode(_ctx.stringValue("ListListenersByConfigResponse.ErrorCode"));
-		listListenersByConfigResponse.setPageNumber(_ctx.integerValue("ListListenersByConfigResponse.PageNumber"));
-		listListenersByConfigResponse.setPageSize(_ctx.integerValue("ListListenersByConfigResponse.PageSize"));
-		listListenersByConfigResponse.setTotalCount(_ctx.integerValue("ListListenersByConfigResponse.TotalCount"));
 		listListenersByConfigResponse.setHttpCode(_ctx.stringValue("ListListenersByConfigResponse.HttpCode"));
+		listListenersByConfigResponse.setTotalCount(_ctx.integerValue("ListListenersByConfigResponse.TotalCount"));
+		listListenersByConfigResponse.setMessage(_ctx.stringValue("ListListenersByConfigResponse.Message"));
+		listListenersByConfigResponse.setPageSize(_ctx.integerValue("ListListenersByConfigResponse.PageSize"));
+		listListenersByConfigResponse.setPageNumber(_ctx.integerValue("ListListenersByConfigResponse.PageNumber"));
+		listListenersByConfigResponse.setErrorCode(_ctx.stringValue("ListListenersByConfigResponse.ErrorCode"));
+		listListenersByConfigResponse.setSuccess(_ctx.booleanValue("ListListenersByConfigResponse.Success"));
 
 		List<Listener> listeners = new ArrayList<Listener>();
 		for (int i = 0; i < _ctx.lengthValue("ListListenersByConfigResponse.Listeners.Length"); i++) {

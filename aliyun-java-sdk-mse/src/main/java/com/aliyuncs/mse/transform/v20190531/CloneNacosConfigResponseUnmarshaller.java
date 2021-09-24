@@ -29,11 +29,11 @@ public class CloneNacosConfigResponseUnmarshaller {
 	public static CloneNacosConfigResponse unmarshall(CloneNacosConfigResponse cloneNacosConfigResponse, UnmarshallerContext _ctx) {
 		
 		cloneNacosConfigResponse.setRequestId(_ctx.stringValue("CloneNacosConfigResponse.RequestId"));
-		cloneNacosConfigResponse.setSuccess(_ctx.booleanValue("CloneNacosConfigResponse.Success"));
-		cloneNacosConfigResponse.setMessage(_ctx.stringValue("CloneNacosConfigResponse.Message"));
-		cloneNacosConfigResponse.setErrorCode(_ctx.stringValue("CloneNacosConfigResponse.ErrorCode"));
 		cloneNacosConfigResponse.setHttpStatusCode(_ctx.integerValue("CloneNacosConfigResponse.HttpStatusCode"));
+		cloneNacosConfigResponse.setSuccess(_ctx.booleanValue("CloneNacosConfigResponse.Success"));
+		cloneNacosConfigResponse.setErrorCode(_ctx.stringValue("CloneNacosConfigResponse.ErrorCode"));
 		cloneNacosConfigResponse.setCode(_ctx.integerValue("CloneNacosConfigResponse.Code"));
+		cloneNacosConfigResponse.setMessage(_ctx.stringValue("CloneNacosConfigResponse.Message"));
 		cloneNacosConfigResponse.setDynamicMessage(_ctx.stringValue("CloneNacosConfigResponse.DynamicMessage"));
 
 		Data data = new Data();

@@ -27,22 +27,22 @@ public class ListAlarmRulesResponseUnmarshaller {
 	public static ListAlarmRulesResponse unmarshall(ListAlarmRulesResponse listAlarmRulesResponse, UnmarshallerContext _ctx) {
 		
 		listAlarmRulesResponse.setRequestId(_ctx.stringValue("ListAlarmRulesResponse.RequestId"));
-		listAlarmRulesResponse.setSuccess(_ctx.booleanValue("ListAlarmRulesResponse.Success"));
-		listAlarmRulesResponse.setMessage(_ctx.stringValue("ListAlarmRulesResponse.Message"));
-		listAlarmRulesResponse.setErrorCode(_ctx.stringValue("ListAlarmRulesResponse.ErrorCode"));
-		listAlarmRulesResponse.setPageNumber(_ctx.integerValue("ListAlarmRulesResponse.PageNumber"));
-		listAlarmRulesResponse.setPageSize(_ctx.integerValue("ListAlarmRulesResponse.PageSize"));
-		listAlarmRulesResponse.setTotalCount(_ctx.integerValue("ListAlarmRulesResponse.TotalCount"));
 		listAlarmRulesResponse.setHttpCode(_ctx.stringValue("ListAlarmRulesResponse.HttpCode"));
+		listAlarmRulesResponse.setTotalCount(_ctx.integerValue("ListAlarmRulesResponse.TotalCount"));
+		listAlarmRulesResponse.setMessage(_ctx.stringValue("ListAlarmRulesResponse.Message"));
+		listAlarmRulesResponse.setPageSize(_ctx.integerValue("ListAlarmRulesResponse.PageSize"));
+		listAlarmRulesResponse.setPageNumber(_ctx.integerValue("ListAlarmRulesResponse.PageNumber"));
+		listAlarmRulesResponse.setErrorCode(_ctx.stringValue("ListAlarmRulesResponse.ErrorCode"));
+		listAlarmRulesResponse.setSuccess(_ctx.booleanValue("ListAlarmRulesResponse.Success"));
 
 		List<AlarmRuleModel> data = new ArrayList<AlarmRuleModel>();
 		for (int i = 0; i < _ctx.lengthValue("ListAlarmRulesResponse.Data.Length"); i++) {
 			AlarmRuleModel alarmRuleModel = new AlarmRuleModel();
 			alarmRuleModel.setAlarmStatus(_ctx.stringValue("ListAlarmRulesResponse.Data["+ i +"].AlarmStatus"));
-			alarmRuleModel.setAlarmName(_ctx.stringValue("ListAlarmRulesResponse.Data["+ i +"].AlarmName"));
+			alarmRuleModel.setAlarmRuleId(_ctx.stringValue("ListAlarmRulesResponse.Data["+ i +"].AlarmRuleId"));
 			alarmRuleModel.setCreateTime(_ctx.stringValue("ListAlarmRulesResponse.Data["+ i +"].CreateTime"));
 			alarmRuleModel.setAlarmRuleDetail(_ctx.stringValue("ListAlarmRulesResponse.Data["+ i +"].AlarmRuleDetail"));
-			alarmRuleModel.setAlarmRuleId(_ctx.stringValue("ListAlarmRulesResponse.Data["+ i +"].AlarmRuleId"));
+			alarmRuleModel.setAlarmName(_ctx.stringValue("ListAlarmRulesResponse.Data["+ i +"].AlarmName"));
 
 			data.add(alarmRuleModel);
 		}

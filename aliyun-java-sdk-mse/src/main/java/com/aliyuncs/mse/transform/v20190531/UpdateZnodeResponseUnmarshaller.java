@@ -23,9 +23,9 @@ public class UpdateZnodeResponseUnmarshaller {
 	public static UpdateZnodeResponse unmarshall(UpdateZnodeResponse updateZnodeResponse, UnmarshallerContext _ctx) {
 		
 		updateZnodeResponse.setRequestId(_ctx.stringValue("UpdateZnodeResponse.RequestId"));
-		updateZnodeResponse.setSuccess(_ctx.booleanValue("UpdateZnodeResponse.Success"));
 		updateZnodeResponse.setMessage(_ctx.stringValue("UpdateZnodeResponse.Message"));
 		updateZnodeResponse.setErrorCode(_ctx.stringValue("UpdateZnodeResponse.ErrorCode"));
+		updateZnodeResponse.setSuccess(_ctx.booleanValue("UpdateZnodeResponse.Success"));
 	 
 	 	return updateZnodeResponse;
 	}

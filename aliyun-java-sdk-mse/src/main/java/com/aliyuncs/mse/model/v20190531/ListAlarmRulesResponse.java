@@ -25,70 +25,30 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListAlarmRulesResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
-	private String message;
-
-	private String errorCode;
-
-	private Integer pageNumber;
-
-	private Integer pageSize;
+	private String httpCode;
 
 	private Integer totalCount;
 
-	private String httpCode;
+	private String requestId;
+
+	private String message;
+
+	private Integer pageSize;
+
+	private Integer pageNumber;
+
+	private String errorCode;
+
+	private Boolean success;
 
 	private List<AlarmRuleModel> data;
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getHttpCode() {
+		return this.httpCode;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setHttpCode(String httpCode) {
+		this.httpCode = httpCode;
 	}
 
 	public Integer getTotalCount() {
@@ -99,12 +59,52 @@ public class ListAlarmRulesResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public String getHttpCode() {
-		return this.httpCode;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setHttpCode(String httpCode) {
-		this.httpCode = httpCode;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+	}
+
+	public String getErrorCode() {
+		return this.errorCode;
+	}
+
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<AlarmRuleModel> getData() {
@@ -119,13 +119,13 @@ public class ListAlarmRulesResponse extends AcsResponse {
 
 		private String alarmStatus;
 
-		private String alarmName;
+		private String alarmRuleId;
 
 		private String createTime;
 
 		private String alarmRuleDetail;
 
-		private String alarmRuleId;
+		private String alarmName;
 
 		public String getAlarmStatus() {
 			return this.alarmStatus;
@@ -135,12 +135,12 @@ public class ListAlarmRulesResponse extends AcsResponse {
 			this.alarmStatus = alarmStatus;
 		}
 
-		public String getAlarmName() {
-			return this.alarmName;
+		public String getAlarmRuleId() {
+			return this.alarmRuleId;
 		}
 
-		public void setAlarmName(String alarmName) {
-			this.alarmName = alarmName;
+		public void setAlarmRuleId(String alarmRuleId) {
+			this.alarmRuleId = alarmRuleId;
 		}
 
 		public String getCreateTime() {
@@ -159,12 +159,12 @@ public class ListAlarmRulesResponse extends AcsResponse {
 			this.alarmRuleDetail = alarmRuleDetail;
 		}
 
-		public String getAlarmRuleId() {
-			return this.alarmRuleId;
+		public String getAlarmName() {
+			return this.alarmName;
 		}
 
-		public void setAlarmRuleId(String alarmRuleId) {
-			this.alarmRuleId = alarmRuleId;
+		public void setAlarmName(String alarmName) {
+			this.alarmName = alarmName;
 		}
 	}
 

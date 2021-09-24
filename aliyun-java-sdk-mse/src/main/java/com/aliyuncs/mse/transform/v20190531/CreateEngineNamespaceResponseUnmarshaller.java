@@ -24,18 +24,18 @@ public class CreateEngineNamespaceResponseUnmarshaller {
 	public static CreateEngineNamespaceResponse unmarshall(CreateEngineNamespaceResponse createEngineNamespaceResponse, UnmarshallerContext _ctx) {
 		
 		createEngineNamespaceResponse.setRequestId(_ctx.stringValue("CreateEngineNamespaceResponse.RequestId"));
-		createEngineNamespaceResponse.setSuccess(_ctx.booleanValue("CreateEngineNamespaceResponse.Success"));
 		createEngineNamespaceResponse.setMessage(_ctx.stringValue("CreateEngineNamespaceResponse.Message"));
-		createEngineNamespaceResponse.setErrorCode(_ctx.stringValue("CreateEngineNamespaceResponse.ErrorCode"));
 		createEngineNamespaceResponse.setClusterId(_ctx.stringValue("CreateEngineNamespaceResponse.ClusterId"));
+		createEngineNamespaceResponse.setErrorCode(_ctx.stringValue("CreateEngineNamespaceResponse.ErrorCode"));
+		createEngineNamespaceResponse.setSuccess(_ctx.booleanValue("CreateEngineNamespaceResponse.Success"));
 
 		Data data = new Data();
-		data.setNamespace(_ctx.stringValue("CreateEngineNamespaceResponse.Data.Namespace"));
-		data.setNamespaceShowName(_ctx.stringValue("CreateEngineNamespaceResponse.Data.NamespaceShowName"));
-		data.setNamespaceDesc(_ctx.stringValue("CreateEngineNamespaceResponse.Data.NamespaceDesc"));
-		data.setQuota(_ctx.integerValue("CreateEngineNamespaceResponse.Data.Quota"));
-		data.setConfigCount(_ctx.integerValue("CreateEngineNamespaceResponse.Data.ConfigCount"));
 		data.setType(_ctx.integerValue("CreateEngineNamespaceResponse.Data.Type"));
+		data.setNamespaceShowName(_ctx.stringValue("CreateEngineNamespaceResponse.Data.NamespaceShowName"));
+		data.setQuota(_ctx.integerValue("CreateEngineNamespaceResponse.Data.Quota"));
+		data.setNamespace(_ctx.stringValue("CreateEngineNamespaceResponse.Data.Namespace"));
+		data.setNamespaceDesc(_ctx.stringValue("CreateEngineNamespaceResponse.Data.NamespaceDesc"));
+		data.setConfigCount(_ctx.integerValue("CreateEngineNamespaceResponse.Data.ConfigCount"));
 		data.setServiceCount(_ctx.integerValue("CreateEngineNamespaceResponse.Data.ServiceCount"));
 		createEngineNamespaceResponse.setData(data);
 	 

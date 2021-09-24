@@ -27,7 +27,7 @@ public class QueryClusterDiskSpecificationRequest extends RpcAcsRequest<QueryClu
 
 	private String clusterType;
 	public QueryClusterDiskSpecificationRequest() {
-		super("mse", "2019-05-31", "QueryClusterDiskSpecification", "mse");
+		super("mse", "2019-05-31", "QueryClusterDiskSpecification");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

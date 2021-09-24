@@ -23,9 +23,9 @@ public class UpdateClusterResponseUnmarshaller {
 	public static UpdateClusterResponse unmarshall(UpdateClusterResponse updateClusterResponse, UnmarshallerContext _ctx) {
 		
 		updateClusterResponse.setRequestId(_ctx.stringValue("UpdateClusterResponse.RequestId"));
-		updateClusterResponse.setSuccess(_ctx.booleanValue("UpdateClusterResponse.Success"));
 		updateClusterResponse.setMessage(_ctx.stringValue("UpdateClusterResponse.Message"));
 		updateClusterResponse.setErrorCode(_ctx.stringValue("UpdateClusterResponse.ErrorCode"));
+		updateClusterResponse.setSuccess(_ctx.booleanValue("UpdateClusterResponse.Success"));
 	 
 	 	return updateClusterResponse;
 	}

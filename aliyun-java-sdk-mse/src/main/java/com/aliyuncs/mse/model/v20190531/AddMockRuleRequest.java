@@ -45,7 +45,7 @@ public class AddMockRuleRequest extends RpcAcsRequest<AddMockRuleResponse> {
 
 	private String region;
 	public AddMockRuleRequest() {
-		super("mse", "2019-05-31", "AddMockRule", "mse");
+		super("mse", "2019-05-31", "AddMockRule");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

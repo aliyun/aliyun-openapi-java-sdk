@@ -27,11 +27,11 @@ public class ListClusterConnectionTypesResponseUnmarshaller {
 	public static ListClusterConnectionTypesResponse unmarshall(ListClusterConnectionTypesResponse listClusterConnectionTypesResponse, UnmarshallerContext _ctx) {
 		
 		listClusterConnectionTypesResponse.setRequestId(_ctx.stringValue("ListClusterConnectionTypesResponse.RequestId"));
-		listClusterConnectionTypesResponse.setSuccess(_ctx.booleanValue("ListClusterConnectionTypesResponse.Success"));
-		listClusterConnectionTypesResponse.setMessage(_ctx.stringValue("ListClusterConnectionTypesResponse.Message"));
-		listClusterConnectionTypesResponse.setErrorCode(_ctx.stringValue("ListClusterConnectionTypesResponse.ErrorCode"));
 		listClusterConnectionTypesResponse.setHttpStatusCode(_ctx.integerValue("ListClusterConnectionTypesResponse.HttpStatusCode"));
+		listClusterConnectionTypesResponse.setSuccess(_ctx.booleanValue("ListClusterConnectionTypesResponse.Success"));
+		listClusterConnectionTypesResponse.setErrorCode(_ctx.stringValue("ListClusterConnectionTypesResponse.ErrorCode"));
 		listClusterConnectionTypesResponse.setCode(_ctx.integerValue("ListClusterConnectionTypesResponse.Code"));
+		listClusterConnectionTypesResponse.setMessage(_ctx.stringValue("ListClusterConnectionTypesResponse.Message"));
 		listClusterConnectionTypesResponse.setDynamicMessage(_ctx.stringValue("ListClusterConnectionTypesResponse.DynamicMessage"));
 
 		List<DataItem> data = new ArrayList<DataItem>();

@@ -23,16 +23,16 @@ public class GetEngineNamepaceResponseUnmarshaller {
 	public static GetEngineNamepaceResponse unmarshall(GetEngineNamepaceResponse getEngineNamepaceResponse, UnmarshallerContext _ctx) {
 		
 		getEngineNamepaceResponse.setRequestId(_ctx.stringValue("GetEngineNamepaceResponse.RequestId"));
-		getEngineNamepaceResponse.setSuccess(_ctx.booleanValue("GetEngineNamepaceResponse.Success"));
-		getEngineNamepaceResponse.setMessage(_ctx.stringValue("GetEngineNamepaceResponse.Message"));
-		getEngineNamepaceResponse.setErrorCode(_ctx.stringValue("GetEngineNamepaceResponse.ErrorCode"));
 		getEngineNamepaceResponse.setHttpCode(_ctx.stringValue("GetEngineNamepaceResponse.HttpCode"));
-		getEngineNamepaceResponse.setNamespace(_ctx.stringValue("GetEngineNamepaceResponse.Namespace"));
-		getEngineNamepaceResponse.setNamespaceShowName(_ctx.stringValue("GetEngineNamepaceResponse.NamespaceShowName"));
-		getEngineNamepaceResponse.setNamespaceDesc(_ctx.stringValue("GetEngineNamepaceResponse.NamespaceDesc"));
-		getEngineNamepaceResponse.setQuota(_ctx.stringValue("GetEngineNamepaceResponse.Quota"));
-		getEngineNamepaceResponse.setConfigCount(_ctx.stringValue("GetEngineNamepaceResponse.ConfigCount"));
 		getEngineNamepaceResponse.setType(_ctx.stringValue("GetEngineNamepaceResponse.Type"));
+		getEngineNamepaceResponse.setQuota(_ctx.stringValue("GetEngineNamepaceResponse.Quota"));
+		getEngineNamepaceResponse.setMessage(_ctx.stringValue("GetEngineNamepaceResponse.Message"));
+		getEngineNamepaceResponse.setConfigCount(_ctx.stringValue("GetEngineNamepaceResponse.ConfigCount"));
+		getEngineNamepaceResponse.setNamespaceShowName(_ctx.stringValue("GetEngineNamepaceResponse.NamespaceShowName"));
+		getEngineNamepaceResponse.setErrorCode(_ctx.stringValue("GetEngineNamepaceResponse.ErrorCode"));
+		getEngineNamepaceResponse.setSuccess(_ctx.booleanValue("GetEngineNamepaceResponse.Success"));
+		getEngineNamepaceResponse.setNamespaceDesc(_ctx.stringValue("GetEngineNamepaceResponse.NamespaceDesc"));
+		getEngineNamepaceResponse.setNamespace(_ctx.stringValue("GetEngineNamepaceResponse.Namespace"));
 	 
 	 	return getEngineNamepaceResponse;
 	}

@@ -24,19 +24,21 @@ public class GetNacosConfigResponseUnmarshaller {
 	public static GetNacosConfigResponse unmarshall(GetNacosConfigResponse getNacosConfigResponse, UnmarshallerContext _ctx) {
 		
 		getNacosConfigResponse.setRequestId(_ctx.stringValue("GetNacosConfigResponse.RequestId"));
-		getNacosConfigResponse.setSuccess(_ctx.booleanValue("GetNacosConfigResponse.Success"));
 		getNacosConfigResponse.setMessage(_ctx.stringValue("GetNacosConfigResponse.Message"));
 		getNacosConfigResponse.setErrorCode(_ctx.stringValue("GetNacosConfigResponse.ErrorCode"));
+		getNacosConfigResponse.setSuccess(_ctx.booleanValue("GetNacosConfigResponse.Success"));
 
 		Configuration configuration = new Configuration();
-		configuration.setDataId(_ctx.stringValue("GetNacosConfigResponse.Configuration.DataId"));
-		configuration.setGroup(_ctx.stringValue("GetNacosConfigResponse.Configuration.Group"));
+		configuration.setType(_ctx.stringValue("GetNacosConfigResponse.Configuration.Type"));
 		configuration.setAppName(_ctx.stringValue("GetNacosConfigResponse.Configuration.AppName"));
 		configuration.setTags(_ctx.stringValue("GetNacosConfigResponse.Configuration.Tags"));
-		configuration.setDesc(_ctx.stringValue("GetNacosConfigResponse.Configuration.Desc"));
 		configuration.setMd5(_ctx.stringValue("GetNacosConfigResponse.Configuration.Md5"));
-		configuration.setType(_ctx.stringValue("GetNacosConfigResponse.Configuration.Type"));
+		configuration.setDataId(_ctx.stringValue("GetNacosConfigResponse.Configuration.DataId"));
 		configuration.setContent(_ctx.stringValue("GetNacosConfigResponse.Configuration.Content"));
+		configuration.setGroup(_ctx.stringValue("GetNacosConfigResponse.Configuration.Group"));
+		configuration.setDesc(_ctx.stringValue("GetNacosConfigResponse.Configuration.Desc"));
+		configuration.setEncryptedDataKey(_ctx.stringValue("GetNacosConfigResponse.Configuration.EncryptedDataKey"));
+		configuration.setBetaIps(_ctx.stringValue("GetNacosConfigResponse.Configuration.BetaIps"));
 		getNacosConfigResponse.setConfiguration(configuration);
 	 
 	 	return getNacosConfigResponse;

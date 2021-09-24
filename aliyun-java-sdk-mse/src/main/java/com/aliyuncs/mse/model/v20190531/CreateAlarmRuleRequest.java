@@ -43,7 +43,7 @@ public class CreateAlarmRuleRequest extends RpcAcsRequest<CreateAlarmRuleRespons
 
 	private Float value;
 	public CreateAlarmRuleRequest() {
-		super("mse", "2019-05-31", "CreateAlarmRule", "mse");
+		super("mse", "2019-05-31", "CreateAlarmRule");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

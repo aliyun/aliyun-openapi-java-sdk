@@ -27,13 +27,13 @@ public class ListEurekaServicesResponseUnmarshaller {
 	public static ListEurekaServicesResponse unmarshall(ListEurekaServicesResponse listEurekaServicesResponse, UnmarshallerContext _ctx) {
 		
 		listEurekaServicesResponse.setRequestId(_ctx.stringValue("ListEurekaServicesResponse.RequestId"));
-		listEurekaServicesResponse.setSuccess(_ctx.booleanValue("ListEurekaServicesResponse.Success"));
-		listEurekaServicesResponse.setMessage(_ctx.stringValue("ListEurekaServicesResponse.Message"));
-		listEurekaServicesResponse.setErrorCode(_ctx.stringValue("ListEurekaServicesResponse.ErrorCode"));
-		listEurekaServicesResponse.setPageNumber(_ctx.integerValue("ListEurekaServicesResponse.PageNumber"));
-		listEurekaServicesResponse.setPageSize(_ctx.integerValue("ListEurekaServicesResponse.PageSize"));
-		listEurekaServicesResponse.setTotalCount(_ctx.integerValue("ListEurekaServicesResponse.TotalCount"));
 		listEurekaServicesResponse.setHttpCode(_ctx.stringValue("ListEurekaServicesResponse.HttpCode"));
+		listEurekaServicesResponse.setTotalCount(_ctx.integerValue("ListEurekaServicesResponse.TotalCount"));
+		listEurekaServicesResponse.setMessage(_ctx.stringValue("ListEurekaServicesResponse.Message"));
+		listEurekaServicesResponse.setPageSize(_ctx.integerValue("ListEurekaServicesResponse.PageSize"));
+		listEurekaServicesResponse.setPageNumber(_ctx.integerValue("ListEurekaServicesResponse.PageNumber"));
+		listEurekaServicesResponse.setErrorCode(_ctx.stringValue("ListEurekaServicesResponse.ErrorCode"));
+		listEurekaServicesResponse.setSuccess(_ctx.booleanValue("ListEurekaServicesResponse.Success"));
 
 		List<SimpleService> data = new ArrayList<SimpleService>();
 		for (int i = 0; i < _ctx.lengthValue("ListEurekaServicesResponse.Data.Length"); i++) {

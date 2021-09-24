@@ -24,30 +24,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DeleteEngineNamespaceResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
+	private String httpCode;
 
 	private String message;
 
+	private String requestId;
+
 	private String errorCode;
 
-	private String httpCode;
+	private Boolean success;
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getHttpCode() {
+		return this.httpCode;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setHttpCode(String httpCode) {
+		this.httpCode = httpCode;
 	}
 
 	public String getMessage() {
@@ -58,6 +50,14 @@ public class DeleteEngineNamespaceResponse extends AcsResponse {
 		this.message = message;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	public String getErrorCode() {
 		return this.errorCode;
 	}
@@ -66,12 +66,12 @@ public class DeleteEngineNamespaceResponse extends AcsResponse {
 		this.errorCode = errorCode;
 	}
 
-	public String getHttpCode() {
-		return this.httpCode;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setHttpCode(String httpCode) {
-		this.httpCode = httpCode;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	@Override

@@ -29,11 +29,11 @@ public class ImportNacosConfigResponseUnmarshaller {
 	public static ImportNacosConfigResponse unmarshall(ImportNacosConfigResponse importNacosConfigResponse, UnmarshallerContext _ctx) {
 		
 		importNacosConfigResponse.setRequestId(_ctx.stringValue("ImportNacosConfigResponse.RequestId"));
-		importNacosConfigResponse.setSuccess(_ctx.booleanValue("ImportNacosConfigResponse.Success"));
-		importNacosConfigResponse.setMessage(_ctx.stringValue("ImportNacosConfigResponse.Message"));
-		importNacosConfigResponse.setErrorCode(_ctx.stringValue("ImportNacosConfigResponse.ErrorCode"));
 		importNacosConfigResponse.setHttpStatusCode(_ctx.integerValue("ImportNacosConfigResponse.HttpStatusCode"));
+		importNacosConfigResponse.setSuccess(_ctx.booleanValue("ImportNacosConfigResponse.Success"));
+		importNacosConfigResponse.setErrorCode(_ctx.stringValue("ImportNacosConfigResponse.ErrorCode"));
 		importNacosConfigResponse.setCode(_ctx.integerValue("ImportNacosConfigResponse.Code"));
+		importNacosConfigResponse.setMessage(_ctx.stringValue("ImportNacosConfigResponse.Message"));
 		importNacosConfigResponse.setDynamicMessage(_ctx.stringValue("ImportNacosConfigResponse.DynamicMessage"));
 
 		Data data = new Data();

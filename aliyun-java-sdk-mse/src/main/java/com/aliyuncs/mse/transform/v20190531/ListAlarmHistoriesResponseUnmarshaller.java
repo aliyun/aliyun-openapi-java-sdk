@@ -27,23 +27,23 @@ public class ListAlarmHistoriesResponseUnmarshaller {
 	public static ListAlarmHistoriesResponse unmarshall(ListAlarmHistoriesResponse listAlarmHistoriesResponse, UnmarshallerContext _ctx) {
 		
 		listAlarmHistoriesResponse.setRequestId(_ctx.stringValue("ListAlarmHistoriesResponse.RequestId"));
-		listAlarmHistoriesResponse.setSuccess(_ctx.booleanValue("ListAlarmHistoriesResponse.Success"));
-		listAlarmHistoriesResponse.setMessage(_ctx.stringValue("ListAlarmHistoriesResponse.Message"));
-		listAlarmHistoriesResponse.setErrorCode(_ctx.stringValue("ListAlarmHistoriesResponse.ErrorCode"));
-		listAlarmHistoriesResponse.setPageNumber(_ctx.integerValue("ListAlarmHistoriesResponse.PageNumber"));
-		listAlarmHistoriesResponse.setPageSize(_ctx.integerValue("ListAlarmHistoriesResponse.PageSize"));
-		listAlarmHistoriesResponse.setTotalCount(_ctx.integerValue("ListAlarmHistoriesResponse.TotalCount"));
 		listAlarmHistoriesResponse.setHttpCode(_ctx.stringValue("ListAlarmHistoriesResponse.HttpCode"));
+		listAlarmHistoriesResponse.setTotalCount(_ctx.integerValue("ListAlarmHistoriesResponse.TotalCount"));
+		listAlarmHistoriesResponse.setMessage(_ctx.stringValue("ListAlarmHistoriesResponse.Message"));
+		listAlarmHistoriesResponse.setPageSize(_ctx.integerValue("ListAlarmHistoriesResponse.PageSize"));
+		listAlarmHistoriesResponse.setPageNumber(_ctx.integerValue("ListAlarmHistoriesResponse.PageNumber"));
+		listAlarmHistoriesResponse.setErrorCode(_ctx.stringValue("ListAlarmHistoriesResponse.ErrorCode"));
+		listAlarmHistoriesResponse.setSuccess(_ctx.booleanValue("ListAlarmHistoriesResponse.Success"));
 
 		List<AlarmHistoryModel> data = new ArrayList<AlarmHistoryModel>();
 		for (int i = 0; i < _ctx.lengthValue("ListAlarmHistoriesResponse.Data.Length"); i++) {
 			AlarmHistoryModel alarmHistoryModel = new AlarmHistoryModel();
 			alarmHistoryModel.setAlarmTime(_ctx.stringValue("ListAlarmHistoriesResponse.Data["+ i +"].AlarmTime"));
-			alarmHistoryModel.setAlarmPhone(_ctx.stringValue("ListAlarmHistoriesResponse.Data["+ i +"].AlarmPhone"));
+			alarmHistoryModel.setAlarmEmail(_ctx.stringValue("ListAlarmHistoriesResponse.Data["+ i +"].AlarmEmail"));
 			alarmHistoryModel.setAlarmDingDing(_ctx.stringValue("ListAlarmHistoriesResponse.Data["+ i +"].AlarmDingDing"));
+			alarmHistoryModel.setAlarmPhone(_ctx.stringValue("ListAlarmHistoriesResponse.Data["+ i +"].AlarmPhone"));
 			alarmHistoryModel.setAlarmName(_ctx.stringValue("ListAlarmHistoriesResponse.Data["+ i +"].AlarmName"));
 			alarmHistoryModel.setAlarmContent(_ctx.stringValue("ListAlarmHistoriesResponse.Data["+ i +"].AlarmContent"));
-			alarmHistoryModel.setAlarmEmail(_ctx.stringValue("ListAlarmHistoriesResponse.Data["+ i +"].AlarmEmail"));
 
 			data.add(alarmHistoryModel);
 		}

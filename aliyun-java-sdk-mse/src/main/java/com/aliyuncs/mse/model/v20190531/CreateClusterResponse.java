@@ -24,24 +24,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateClusterResponse extends AcsResponse {
 
-	private String errorCode;
+	private String requestId;
 
 	private String message;
 
-	private String requestId;
+	private String instanceId;
 
-	private Boolean success;
+	private String errorCode;
 
 	private String orderId;
 
-	private String instanceId;
+	private Boolean success;
 
-	public String getErrorCode() {
-		return this.errorCode;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getMessage() {
@@ -52,20 +52,20 @@ public class CreateClusterResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getInstanceId() {
+		return this.instanceId;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getErrorCode() {
+		return this.errorCode;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
 	}
 
 	public String getOrderId() {
@@ -76,12 +76,12 @@ public class CreateClusterResponse extends AcsResponse {
 		this.orderId = orderId;
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	@Override

@@ -24,17 +24,17 @@ public class UpdateEngineNamespaceResponseUnmarshaller {
 	public static UpdateEngineNamespaceResponse unmarshall(UpdateEngineNamespaceResponse updateEngineNamespaceResponse, UnmarshallerContext _ctx) {
 		
 		updateEngineNamespaceResponse.setRequestId(_ctx.stringValue("UpdateEngineNamespaceResponse.RequestId"));
-		updateEngineNamespaceResponse.setSuccess(_ctx.booleanValue("UpdateEngineNamespaceResponse.Success"));
 		updateEngineNamespaceResponse.setMessage(_ctx.stringValue("UpdateEngineNamespaceResponse.Message"));
 		updateEngineNamespaceResponse.setErrorCode(_ctx.stringValue("UpdateEngineNamespaceResponse.ErrorCode"));
+		updateEngineNamespaceResponse.setSuccess(_ctx.booleanValue("UpdateEngineNamespaceResponse.Success"));
 
 		Data data = new Data();
-		data.setNamespace(_ctx.stringValue("UpdateEngineNamespaceResponse.Data.Namespace"));
-		data.setNamespaceShowName(_ctx.stringValue("UpdateEngineNamespaceResponse.Data.NamespaceShowName"));
-		data.setNamespaceDesc(_ctx.stringValue("UpdateEngineNamespaceResponse.Data.NamespaceDesc"));
-		data.setQuota(_ctx.integerValue("UpdateEngineNamespaceResponse.Data.Quota"));
-		data.setConfigCount(_ctx.integerValue("UpdateEngineNamespaceResponse.Data.ConfigCount"));
 		data.setType(_ctx.integerValue("UpdateEngineNamespaceResponse.Data.Type"));
+		data.setNamespaceShowName(_ctx.stringValue("UpdateEngineNamespaceResponse.Data.NamespaceShowName"));
+		data.setQuota(_ctx.integerValue("UpdateEngineNamespaceResponse.Data.Quota"));
+		data.setNamespace(_ctx.stringValue("UpdateEngineNamespaceResponse.Data.Namespace"));
+		data.setNamespaceDesc(_ctx.stringValue("UpdateEngineNamespaceResponse.Data.NamespaceDesc"));
+		data.setConfigCount(_ctx.integerValue("UpdateEngineNamespaceResponse.Data.ConfigCount"));
 		updateEngineNamespaceResponse.setData(data);
 	 
 	 	return updateEngineNamespaceResponse;
