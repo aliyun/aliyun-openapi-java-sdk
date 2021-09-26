@@ -35,7 +35,7 @@ public class CreateDeviceSnapshotRequest extends RpcAcsRequest<CreateDeviceSnaps
 
 	private String deviceId;
 	public CreateDeviceSnapshotRequest() {
-		super("vs", "2018-12-12", "CreateDeviceSnapshot", "vs");
+		super("vs", "2018-12-12", "CreateDeviceSnapshot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

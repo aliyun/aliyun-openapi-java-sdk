@@ -37,7 +37,7 @@ public class ListBucketsRequest extends RpcAcsRequest<ListBucketsResponse> {
 
 	private String marker;
 	public ListBucketsRequest() {
-		super("vs", "2018-12-12", "ListBuckets", "vs");
+		super("vs", "2018-12-12", "ListBuckets");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

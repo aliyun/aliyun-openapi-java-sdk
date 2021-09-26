@@ -31,7 +31,7 @@ public class BindDirectoryRequest extends RpcAcsRequest<BindDirectoryResponse> {
 
 	private String deviceId;
 	public BindDirectoryRequest() {
-		super("vs", "2018-12-12", "BindDirectory", "vs");
+		super("vs", "2018-12-12", "BindDirectory");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

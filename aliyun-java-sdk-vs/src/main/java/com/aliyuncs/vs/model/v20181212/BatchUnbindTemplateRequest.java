@@ -35,7 +35,7 @@ public class BatchUnbindTemplateRequest extends RpcAcsRequest<BatchUnbindTemplat
 
 	private String instanceId;
 	public BatchUnbindTemplateRequest() {
-		super("vs", "2018-12-12", "BatchUnbindTemplate", "vs");
+		super("vs", "2018-12-12", "BatchUnbindTemplate");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

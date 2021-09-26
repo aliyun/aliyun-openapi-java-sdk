@@ -47,7 +47,7 @@ public class DescribeGroupsRequest extends RpcAcsRequest<DescribeGroupsResponse>
 
 	private String status;
 	public DescribeGroupsRequest() {
-		super("vs", "2018-12-12", "DescribeGroups", "vs");
+		super("vs", "2018-12-12", "DescribeGroups");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

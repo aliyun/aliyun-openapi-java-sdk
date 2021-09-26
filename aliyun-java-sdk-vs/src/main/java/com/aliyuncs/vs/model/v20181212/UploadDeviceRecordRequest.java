@@ -41,7 +41,7 @@ public class UploadDeviceRecordRequest extends RpcAcsRequest<UploadDeviceRecordR
 
 	private String deviceId;
 	public UploadDeviceRecordRequest() {
-		super("vs", "2018-12-12", "UploadDeviceRecord", "vs");
+		super("vs", "2018-12-12", "UploadDeviceRecord");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

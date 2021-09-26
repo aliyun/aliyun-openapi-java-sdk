@@ -47,7 +47,7 @@ public class DescribeVsStreamsOnlineListRequest extends RpcAcsRequest<DescribeVs
 
 	private Long ownerId;
 	public DescribeVsStreamsOnlineListRequest() {
-		super("vs", "2018-12-12", "DescribeVsStreamsOnlineList", "vs");
+		super("vs", "2018-12-12", "DescribeVsStreamsOnlineList");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -29,7 +29,7 @@ public class SyncDeviceChannelsRequest extends RpcAcsRequest<SyncDeviceChannelsR
 
 	private String deviceId;
 	public SyncDeviceChannelsRequest() {
-		super("vs", "2018-12-12", "SyncDeviceChannels", "vs");
+		super("vs", "2018-12-12", "SyncDeviceChannels");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

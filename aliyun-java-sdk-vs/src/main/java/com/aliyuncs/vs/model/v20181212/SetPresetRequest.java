@@ -33,7 +33,7 @@ public class SetPresetRequest extends RpcAcsRequest<SetPresetResponse> {
 
 	private Long ownerId;
 	public SetPresetRequest() {
-		super("vs", "2018-12-12", "SetPreset", "vs");
+		super("vs", "2018-12-12", "SetPreset");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

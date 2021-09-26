@@ -35,7 +35,7 @@ public class ModifyDeviceAlarmRequest extends RpcAcsRequest<ModifyDeviceAlarmRes
 
 	private Integer status;
 	public ModifyDeviceAlarmRequest() {
-		super("vs", "2018-12-12", "ModifyDeviceAlarm", "vs");
+		super("vs", "2018-12-12", "ModifyDeviceAlarm");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

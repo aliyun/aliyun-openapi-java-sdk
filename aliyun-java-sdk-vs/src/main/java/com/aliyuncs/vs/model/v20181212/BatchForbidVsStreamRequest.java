@@ -39,7 +39,7 @@ public class BatchForbidVsStreamRequest extends RpcAcsRequest<BatchForbidVsStrea
 
 	private String oneshot;
 	public BatchForbidVsStreamRequest() {
-		super("vs", "2018-12-12", "BatchForbidVsStream", "vs");
+		super("vs", "2018-12-12", "BatchForbidVsStream");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

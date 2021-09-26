@@ -31,7 +31,7 @@ public class BatchBindDirectoriesRequest extends RpcAcsRequest<BatchBindDirector
 
 	private String deviceId;
 	public BatchBindDirectoriesRequest() {
-		super("vs", "2018-12-12", "BatchBindDirectories", "vs");
+		super("vs", "2018-12-12", "BatchBindDirectories");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

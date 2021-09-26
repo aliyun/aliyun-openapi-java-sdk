@@ -29,7 +29,7 @@ public class ResetRenderingDevicesRequest extends RpcAcsRequest<ResetRenderingDe
 
 	private String instanceIds;
 	public ResetRenderingDevicesRequest() {
-		super("vs", "2018-12-12", "ResetRenderingDevices", "vs");
+		super("vs", "2018-12-12", "ResetRenderingDevices");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -31,7 +31,7 @@ public class BatchBindParentPlatformDevicesRequest extends RpcAcsRequest<BatchBi
 
 	private String deviceId;
 	public BatchBindParentPlatformDevicesRequest() {
-		super("vs", "2018-12-12", "BatchBindParentPlatformDevices", "vs");
+		super("vs", "2018-12-12", "BatchBindParentPlatformDevices");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

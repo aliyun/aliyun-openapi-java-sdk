@@ -29,7 +29,7 @@ public class DescribeNodeDevicesInfoRequest extends RpcAcsRequest<DescribeNodeDe
 
 	private String nodeName;
 	public DescribeNodeDevicesInfoRequest() {
-		super("vs", "2018-12-12", "DescribeNodeDevicesInfo", "vs");
+		super("vs", "2018-12-12", "DescribeNodeDevicesInfo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

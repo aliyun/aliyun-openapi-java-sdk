@@ -37,7 +37,7 @@ public class ContinuousMoveRequest extends RpcAcsRequest<ContinuousMoveResponse>
 
 	private Long ownerId;
 	public ContinuousMoveRequest() {
-		super("vs", "2018-12-12", "ContinuousMove", "vs");
+		super("vs", "2018-12-12", "ContinuousMove");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

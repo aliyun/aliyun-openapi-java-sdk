@@ -29,7 +29,7 @@ public class SyncCatalogsRequest extends RpcAcsRequest<SyncCatalogsResponse> {
 
 	private Long ownerId;
 	public SyncCatalogsRequest() {
-		super("vs", "2018-12-12", "SyncCatalogs", "vs");
+		super("vs", "2018-12-12", "SyncCatalogs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

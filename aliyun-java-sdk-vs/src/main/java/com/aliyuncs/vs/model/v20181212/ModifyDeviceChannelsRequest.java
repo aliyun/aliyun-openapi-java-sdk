@@ -35,7 +35,7 @@ public class ModifyDeviceChannelsRequest extends RpcAcsRequest<ModifyDeviceChann
 
 	private String dsn;
 	public ModifyDeviceChannelsRequest() {
-		super("vs", "2018-12-12", "ModifyDeviceChannels", "vs");
+		super("vs", "2018-12-12", "ModifyDeviceChannels");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

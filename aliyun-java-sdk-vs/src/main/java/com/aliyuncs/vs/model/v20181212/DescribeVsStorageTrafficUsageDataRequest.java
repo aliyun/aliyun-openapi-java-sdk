@@ -37,7 +37,7 @@ public class DescribeVsStorageTrafficUsageDataRequest extends RpcAcsRequest<Desc
 
 	private String interval;
 	public DescribeVsStorageTrafficUsageDataRequest() {
-		super("vs", "2018-12-12", "DescribeVsStorageTrafficUsageData", "vs");
+		super("vs", "2018-12-12", "DescribeVsStorageTrafficUsageData");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -25,7 +25,7 @@ import com.aliyuncs.vs.Endpoint;
 public class OpenVsServiceRequest extends RpcAcsRequest<OpenVsServiceResponse> {
 	   
 	public OpenVsServiceRequest() {
-		super("vs", "2018-12-12", "OpenVsService", "vs");
+		super("vs", "2018-12-12", "OpenVsService");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -31,7 +31,7 @@ public class DescribePresetsRequest extends RpcAcsRequest<DescribePresetsRespons
 
 	private Long ownerId;
 	public DescribePresetsRequest() {
-		super("vs", "2018-12-12", "DescribePresets", "vs");
+		super("vs", "2018-12-12", "DescribePresets");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

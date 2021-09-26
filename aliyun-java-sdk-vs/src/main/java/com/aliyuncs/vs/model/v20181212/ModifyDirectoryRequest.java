@@ -33,7 +33,7 @@ public class ModifyDirectoryRequest extends RpcAcsRequest<ModifyDirectoryRespons
 
 	private String name;
 	public ModifyDirectoryRequest() {
-		super("vs", "2018-12-12", "ModifyDirectory", "vs");
+		super("vs", "2018-12-12", "ModifyDirectory");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -33,7 +33,7 @@ public class OperateRenderingDevicesRequest extends RpcAcsRequest<OperateRenderi
 
 	private String operation;
 	public OperateRenderingDevicesRequest() {
-		super("vs", "2018-12-12", "OperateRenderingDevices", "vs");
+		super("vs", "2018-12-12", "OperateRenderingDevices");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

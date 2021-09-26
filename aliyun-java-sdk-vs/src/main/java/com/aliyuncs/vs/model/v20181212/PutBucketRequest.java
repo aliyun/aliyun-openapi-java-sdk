@@ -43,7 +43,7 @@ public class PutBucketRequest extends RpcAcsRequest<PutBucketResponse> {
 
 	private String comment;
 	public PutBucketRequest() {
-		super("vs", "2018-12-12", "PutBucket", "vs");
+		super("vs", "2018-12-12", "PutBucket");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

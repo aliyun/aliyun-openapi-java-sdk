@@ -39,7 +39,7 @@ public class BindTemplateRequest extends RpcAcsRequest<BindTemplateResponse> {
 
 	private String instanceId;
 	public BindTemplateRequest() {
-		super("vs", "2018-12-12", "BindTemplate", "vs");
+		super("vs", "2018-12-12", "BindTemplate");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

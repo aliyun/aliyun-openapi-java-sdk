@@ -41,7 +41,7 @@ public class AddVsPullStreamInfoConfigRequest extends RpcAcsRequest<AddVsPullStr
 
 	private String sourceUrl;
 	public AddVsPullStreamInfoConfigRequest() {
-		super("vs", "2018-12-12", "AddVsPullStreamInfoConfig", "vs");
+		super("vs", "2018-12-12", "AddVsPullStreamInfoConfig");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -29,7 +29,7 @@ public class DeleteBucketRequest extends RpcAcsRequest<DeleteBucketResponse> {
 
 	private Long ownerId;
 	public DeleteBucketRequest() {
-		super("vs", "2018-12-12", "DeleteBucket", "vs");
+		super("vs", "2018-12-12", "DeleteBucket");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
