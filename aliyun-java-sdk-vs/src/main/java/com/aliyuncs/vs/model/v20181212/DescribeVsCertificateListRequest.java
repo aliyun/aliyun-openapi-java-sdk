@@ -29,7 +29,7 @@ public class DescribeVsCertificateListRequest extends RpcAcsRequest<DescribeVsCe
 
 	private Long ownerId;
 	public DescribeVsCertificateListRequest() {
-		super("vs", "2018-12-12", "DescribeVsCertificateList");
+		super("vs", "2018-12-12", "DescribeVsCertificateList", "vs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

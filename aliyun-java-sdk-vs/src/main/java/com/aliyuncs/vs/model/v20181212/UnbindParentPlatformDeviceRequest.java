@@ -31,7 +31,7 @@ public class UnbindParentPlatformDeviceRequest extends RpcAcsRequest<UnbindParen
 
 	private String deviceId;
 	public UnbindParentPlatformDeviceRequest() {
-		super("vs", "2018-12-12", "UnbindParentPlatformDevice");
+		super("vs", "2018-12-12", "UnbindParentPlatformDevice", "vs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

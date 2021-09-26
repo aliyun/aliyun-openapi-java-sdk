@@ -29,7 +29,7 @@ public class DeleteDeviceRequest extends RpcAcsRequest<DeleteDeviceResponse> {
 
 	private Long ownerId;
 	public DeleteDeviceRequest() {
-		super("vs", "2018-12-12", "DeleteDevice");
+		super("vs", "2018-12-12", "DeleteDevice", "vs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

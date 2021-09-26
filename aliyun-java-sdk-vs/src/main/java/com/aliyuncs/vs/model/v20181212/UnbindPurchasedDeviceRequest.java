@@ -29,7 +29,7 @@ public class UnbindPurchasedDeviceRequest extends RpcAcsRequest<UnbindPurchasedD
 
 	private String deviceId;
 	public UnbindPurchasedDeviceRequest() {
-		super("vs", "2018-12-12", "UnbindPurchasedDevice");
+		super("vs", "2018-12-12", "UnbindPurchasedDevice", "vs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

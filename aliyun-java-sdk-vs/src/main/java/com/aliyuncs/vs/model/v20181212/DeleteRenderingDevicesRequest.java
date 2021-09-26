@@ -29,7 +29,7 @@ public class DeleteRenderingDevicesRequest extends RpcAcsRequest<DeleteRendering
 
 	private String instanceIds;
 	public DeleteRenderingDevicesRequest() {
-		super("vs", "2018-12-12", "DeleteRenderingDevices");
+		super("vs", "2018-12-12", "DeleteRenderingDevices", "vs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

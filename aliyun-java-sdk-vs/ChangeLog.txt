@@ -1,3 +1,6 @@
+2021-09-26 Version: 1.11.2
+- Support odcap device.
+
 2021-08-05 Version: 1.11.1
 - Add cloud-rendering-service API.
 - Fix bugs.

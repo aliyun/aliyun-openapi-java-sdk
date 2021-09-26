@@ -51,7 +51,7 @@ public class CreateRenderingDeviceRequest extends RpcAcsRequest<CreateRenderingD
 
 	private String edgeNodeName;
 	public CreateRenderingDeviceRequest() {
-		super("vs", "2018-12-12", "CreateRenderingDevice");
+		super("vs", "2018-12-12", "CreateRenderingDevice", "vs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

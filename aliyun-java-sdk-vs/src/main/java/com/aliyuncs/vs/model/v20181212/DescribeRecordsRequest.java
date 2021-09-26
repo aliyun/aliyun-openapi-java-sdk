@@ -45,7 +45,7 @@ public class DescribeRecordsRequest extends RpcAcsRequest<DescribeRecordsRespons
 
 	private String sortBy;
 	public DescribeRecordsRequest() {
-		super("vs", "2018-12-12", "DescribeRecords");
+		super("vs", "2018-12-12", "DescribeRecords", "vs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -33,7 +33,7 @@ public class BatchBindPurchasedDevicesRequest extends RpcAcsRequest<BatchBindPur
 
 	private String region;
 	public BatchBindPurchasedDevicesRequest() {
-		super("vs", "2018-12-12", "BatchBindPurchasedDevices");
+		super("vs", "2018-12-12", "BatchBindPurchasedDevices", "vs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

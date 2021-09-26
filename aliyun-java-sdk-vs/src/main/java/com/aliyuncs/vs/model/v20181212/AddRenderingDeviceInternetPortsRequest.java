@@ -35,7 +35,7 @@ public class AddRenderingDeviceInternetPortsRequest extends RpcAcsRequest<AddRen
 
 	private String internalPort;
 	public AddRenderingDeviceInternetPortsRequest() {
-		super("vs", "2018-12-12", "AddRenderingDeviceInternetPorts");
+		super("vs", "2018-12-12", "AddRenderingDeviceInternetPorts", "vs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

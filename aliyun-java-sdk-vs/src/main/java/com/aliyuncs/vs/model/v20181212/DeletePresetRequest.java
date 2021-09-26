@@ -33,7 +33,7 @@ public class DeletePresetRequest extends RpcAcsRequest<DeletePresetResponse> {
 
 	private Long ownerId;
 	public DeletePresetRequest() {
-		super("vs", "2018-12-12", "DeletePreset");
+		super("vs", "2018-12-12", "DeletePreset", "vs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

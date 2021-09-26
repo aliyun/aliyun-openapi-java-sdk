@@ -57,7 +57,7 @@ public class DescribeDevicesRequest extends RpcAcsRequest<DescribeDevicesRespons
 
 	private String status;
 	public DescribeDevicesRequest() {
-		super("vs", "2018-12-12", "DescribeDevices");
+		super("vs", "2018-12-12", "DescribeDevices", "vs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -71,7 +71,7 @@ public class CreateTemplateRequest extends RpcAcsRequest<CreateTemplateResponse>
 
 	private String region;
 	public CreateTemplateRequest() {
-		super("vs", "2018-12-12", "CreateTemplate");
+		super("vs", "2018-12-12", "CreateTemplate", "vs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

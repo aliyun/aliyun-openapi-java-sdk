@@ -29,7 +29,7 @@ public class DescribeStreamRequest extends RpcAcsRequest<DescribeStreamResponse>
 
 	private Long ownerId;
 	public DescribeStreamRequest() {
-		super("vs", "2018-12-12", "DescribeStream");
+		super("vs", "2018-12-12", "DescribeStream", "vs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

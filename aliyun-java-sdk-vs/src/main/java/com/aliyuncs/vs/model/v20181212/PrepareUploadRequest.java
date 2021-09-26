@@ -31,7 +31,7 @@ public class PrepareUploadRequest extends RpcAcsRequest<PrepareUploadResponse> {
 
 	private Long ownerId;
 	public PrepareUploadRequest() {
-		super("vs", "2018-12-12", "PrepareUpload");
+		super("vs", "2018-12-12", "PrepareUpload", "vs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

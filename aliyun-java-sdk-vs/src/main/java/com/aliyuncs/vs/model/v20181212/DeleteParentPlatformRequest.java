@@ -29,7 +29,7 @@ public class DeleteParentPlatformRequest extends RpcAcsRequest<DeleteParentPlatf
 
 	private Long ownerId;
 	public DeleteParentPlatformRequest() {
-		super("vs", "2018-12-12", "DeleteParentPlatform");
+		super("vs", "2018-12-12", "DeleteParentPlatform", "vs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -43,7 +43,7 @@ public class UpdateRenderingDeviceSpecRequest extends RpcAcsRequest<UpdateRender
 
 	private String instanceIds;
 	public UpdateRenderingDeviceSpecRequest() {
-		super("vs", "2018-12-12", "UpdateRenderingDeviceSpec");
+		super("vs", "2018-12-12", "UpdateRenderingDeviceSpec", "vs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -35,7 +35,7 @@ public class DeleteRenderingDeviceInternetPortsRequest extends RpcAcsRequest<Del
 
 	private String internalPort;
 	public DeleteRenderingDeviceInternetPortsRequest() {
-		super("vs", "2018-12-12", "DeleteRenderingDeviceInternetPorts");
+		super("vs", "2018-12-12", "DeleteRenderingDeviceInternetPorts", "vs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

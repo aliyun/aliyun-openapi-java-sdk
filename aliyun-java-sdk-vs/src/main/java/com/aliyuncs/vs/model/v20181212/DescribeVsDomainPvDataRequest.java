@@ -33,7 +33,7 @@ public class DescribeVsDomainPvDataRequest extends RpcAcsRequest<DescribeVsDomai
 
 	private Long ownerId;
 	public DescribeVsDomainPvDataRequest() {
-		super("vs", "2018-12-12", "DescribeVsDomainPvData");
+		super("vs", "2018-12-12", "DescribeVsDomainPvData", "vs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

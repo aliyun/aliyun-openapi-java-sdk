@@ -59,7 +59,7 @@ public class ModifyGroupRequest extends RpcAcsRequest<ModifyGroupResponse> {
 
 	private String captureOssBucket;
 	public ModifyGroupRequest() {
-		super("vs", "2018-12-12", "ModifyGroup");
+		super("vs", "2018-12-12", "ModifyGroup", "vs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

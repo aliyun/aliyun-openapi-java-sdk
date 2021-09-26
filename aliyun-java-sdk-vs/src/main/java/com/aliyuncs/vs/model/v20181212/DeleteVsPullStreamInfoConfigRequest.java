@@ -33,7 +33,7 @@ public class DeleteVsPullStreamInfoConfigRequest extends RpcAcsRequest<DeleteVsP
 
 	private Long ownerId;
 	public DeleteVsPullStreamInfoConfigRequest() {
-		super("vs", "2018-12-12", "DeleteVsPullStreamInfoConfig");
+		super("vs", "2018-12-12", "DeleteVsPullStreamInfoConfig", "vs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

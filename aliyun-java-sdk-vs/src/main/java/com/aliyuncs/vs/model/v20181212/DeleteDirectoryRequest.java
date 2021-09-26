@@ -29,7 +29,7 @@ public class DeleteDirectoryRequest extends RpcAcsRequest<DeleteDirectoryRespons
 
 	private Long ownerId;
 	public DeleteDirectoryRequest() {
-		super("vs", "2018-12-12", "DeleteDirectory");
+		super("vs", "2018-12-12", "DeleteDirectory", "vs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

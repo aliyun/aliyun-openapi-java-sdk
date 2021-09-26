@@ -31,7 +31,7 @@ public class StopDeviceRequest extends RpcAcsRequest<StopDeviceResponse> {
 
 	private Long ownerId;
 	public StopDeviceRequest() {
-		super("vs", "2018-12-12", "StopDevice");
+		super("vs", "2018-12-12", "StopDevice", "vs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

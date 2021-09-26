@@ -37,7 +37,7 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 
 	private String internalPorts;
 	public CreateClusterRequest() {
-		super("vs", "2018-12-12", "CreateCluster");
+		super("vs", "2018-12-12", "CreateCluster", "vs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

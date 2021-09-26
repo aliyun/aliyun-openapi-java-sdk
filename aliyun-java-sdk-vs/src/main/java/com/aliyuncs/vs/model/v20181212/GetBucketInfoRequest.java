@@ -29,7 +29,7 @@ public class GetBucketInfoRequest extends RpcAcsRequest<GetBucketInfoResponse> {
 
 	private Long ownerId;
 	public GetBucketInfoRequest() {
-		super("vs", "2018-12-12", "GetBucketInfo");
+		super("vs", "2018-12-12", "GetBucketInfo", "vs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

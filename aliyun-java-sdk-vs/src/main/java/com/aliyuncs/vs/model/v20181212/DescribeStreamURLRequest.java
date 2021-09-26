@@ -49,7 +49,7 @@ public class DescribeStreamURLRequest extends RpcAcsRequest<DescribeStreamURLRes
 
 	private String location;
 	public DescribeStreamURLRequest() {
-		super("vs", "2018-12-12", "DescribeStreamURL");
+		super("vs", "2018-12-12", "DescribeStreamURL", "vs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

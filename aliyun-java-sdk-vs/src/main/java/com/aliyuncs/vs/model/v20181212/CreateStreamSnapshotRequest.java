@@ -31,7 +31,7 @@ public class CreateStreamSnapshotRequest extends RpcAcsRequest<CreateStreamSnaps
 
 	private String location;
 	public CreateStreamSnapshotRequest() {
-		super("vs", "2018-12-12", "CreateStreamSnapshot");
+		super("vs", "2018-12-12", "CreateStreamSnapshot", "vs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

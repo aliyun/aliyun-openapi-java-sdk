@@ -29,7 +29,7 @@ public class DeleteVsStreamsNotifyUrlConfigRequest extends RpcAcsRequest<DeleteV
 
 	private Long ownerId;
 	public DeleteVsStreamsNotifyUrlConfigRequest() {
-		super("vs", "2018-12-12", "DeleteVsStreamsNotifyUrlConfig");
+		super("vs", "2018-12-12", "DeleteVsStreamsNotifyUrlConfig", "vs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

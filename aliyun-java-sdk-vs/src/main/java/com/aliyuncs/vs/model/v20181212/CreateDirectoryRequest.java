@@ -35,7 +35,7 @@ public class CreateDirectoryRequest extends RpcAcsRequest<CreateDirectoryRespons
 
 	private String name;
 	public CreateDirectoryRequest() {
-		super("vs", "2018-12-12", "CreateDirectory");
+		super("vs", "2018-12-12", "CreateDirectory", "vs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

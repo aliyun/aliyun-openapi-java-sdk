@@ -37,7 +37,7 @@ public class StopMoveRequest extends RpcAcsRequest<StopMoveResponse> {
 
 	private Long ownerId;
 	public StopMoveRequest() {
-		super("vs", "2018-12-12", "StopMove");
+		super("vs", "2018-12-12", "StopMove", "vs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -31,7 +31,7 @@ public class BatchSetVsDomainConfigsRequest extends RpcAcsRequest<BatchSetVsDoma
 
 	private Long ownerId;
 	public BatchSetVsDomainConfigsRequest() {
-		super("vs", "2018-12-12", "BatchSetVsDomainConfigs");
+		super("vs", "2018-12-12", "BatchSetVsDomainConfigs", "vs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

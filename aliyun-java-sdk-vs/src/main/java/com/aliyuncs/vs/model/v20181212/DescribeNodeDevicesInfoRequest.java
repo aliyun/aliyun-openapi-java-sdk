@@ -22,45 +22,19 @@ import com.aliyuncs.vs.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeDeviceGatewayRequest extends RpcAcsRequest<DescribeDeviceGatewayResponse> {
+public class DescribeNodeDevicesInfoRequest extends RpcAcsRequest<DescribeNodeDevicesInfoResponse> {
 	   
-
-	private String clientIp;
-
-	private String id;
 
 	private Long ownerId;
 
-	private Long expire;
-	public DescribeDeviceGatewayRequest() {
-		super("vs", "2018-12-12", "DescribeDeviceGateway", "vs");
+	private String nodeName;
+	public DescribeNodeDevicesInfoRequest() {
+		super("vs", "2018-12-12", "DescribeNodeDevicesInfo", "vs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getClientIp() {
-		return this.clientIp;
-	}
-
-	public void setClientIp(String clientIp) {
-		this.clientIp = clientIp;
-		if(clientIp != null){
-			putQueryParameter("ClientIp", clientIp);
-		}
-	}
-
-	public String getId() {
-		return this.id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
-		if(id != null){
-			putQueryParameter("Id", id);
-		}
 	}
 
 	public Long getOwnerId() {
@@ -74,20 +48,20 @@ public class DescribeDeviceGatewayRequest extends RpcAcsRequest<DescribeDeviceGa
 		}
 	}
 
-	public Long getExpire() {
-		return this.expire;
+	public String getNodeName() {
+		return this.nodeName;
 	}
 
-	public void setExpire(Long expire) {
-		this.expire = expire;
-		if(expire != null){
-			putQueryParameter("Expire", expire.toString());
+	public void setNodeName(String nodeName) {
+		this.nodeName = nodeName;
+		if(nodeName != null){
+			putQueryParameter("NodeName", nodeName);
 		}
 	}
 
 	@Override
-	public Class<DescribeDeviceGatewayResponse> getResponseClass() {
-		return DescribeDeviceGatewayResponse.class;
+	public Class<DescribeNodeDevicesInfoResponse> getResponseClass() {
+		return DescribeNodeDevicesInfoResponse.class;
 	}
 
 }

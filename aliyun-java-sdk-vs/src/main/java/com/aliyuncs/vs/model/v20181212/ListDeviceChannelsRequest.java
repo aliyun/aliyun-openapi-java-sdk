@@ -33,7 +33,7 @@ public class ListDeviceChannelsRequest extends RpcAcsRequest<ListDeviceChannelsR
 
 	private String deviceId;
 	public ListDeviceChannelsRequest() {
-		super("vs", "2018-12-12", "ListDeviceChannels");
+		super("vs", "2018-12-12", "ListDeviceChannels", "vs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

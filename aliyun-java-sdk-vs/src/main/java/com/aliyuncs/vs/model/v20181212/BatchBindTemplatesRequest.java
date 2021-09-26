@@ -39,7 +39,7 @@ public class BatchBindTemplatesRequest extends RpcAcsRequest<BatchBindTemplatesR
 
 	private String instanceId;
 	public BatchBindTemplatesRequest() {
-		super("vs", "2018-12-12", "BatchBindTemplates");
+		super("vs", "2018-12-12", "BatchBindTemplates", "vs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

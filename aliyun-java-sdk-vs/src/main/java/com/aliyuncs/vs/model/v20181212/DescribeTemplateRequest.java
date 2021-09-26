@@ -29,7 +29,7 @@ public class DescribeTemplateRequest extends RpcAcsRequest<DescribeTemplateRespo
 
 	private Long ownerId;
 	public DescribeTemplateRequest() {
-		super("vs", "2018-12-12", "DescribeTemplate");
+		super("vs", "2018-12-12", "DescribeTemplate", "vs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

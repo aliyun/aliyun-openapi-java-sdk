@@ -31,7 +31,7 @@ public class DescribeGroupRequest extends RpcAcsRequest<DescribeGroupResponse> {
 
 	private Long ownerId;
 	public DescribeGroupRequest() {
-		super("vs", "2018-12-12", "DescribeGroup");
+		super("vs", "2018-12-12", "DescribeGroup", "vs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

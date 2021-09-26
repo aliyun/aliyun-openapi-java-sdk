@@ -31,7 +31,7 @@ public class DescribeClustersRequest extends RpcAcsRequest<DescribeClustersRespo
 
 	private Long pageNo;
 	public DescribeClustersRequest() {
-		super("vs", "2018-12-12", "DescribeClusters");
+		super("vs", "2018-12-12", "DescribeClusters", "vs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

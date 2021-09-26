@@ -41,7 +41,7 @@ public class UpdateClusterRequest extends RpcAcsRequest<UpdateClusterResponse> {
 
 	private String internalPorts;
 	public UpdateClusterRequest() {
-		super("vs", "2018-12-12", "UpdateCluster");
+		super("vs", "2018-12-12", "UpdateCluster", "vs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

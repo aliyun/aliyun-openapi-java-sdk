@@ -31,7 +31,7 @@ public class UpdateBucketInfoRequest extends RpcAcsRequest<UpdateBucketInfoRespo
 
 	private String comment;
 	public UpdateBucketInfoRequest() {
-		super("vs", "2018-12-12", "UpdateBucketInfo");
+		super("vs", "2018-12-12", "UpdateBucketInfo", "vs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

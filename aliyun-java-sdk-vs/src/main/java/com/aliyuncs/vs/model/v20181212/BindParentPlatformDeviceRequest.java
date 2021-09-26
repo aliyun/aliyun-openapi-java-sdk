@@ -31,7 +31,7 @@ public class BindParentPlatformDeviceRequest extends RpcAcsRequest<BindParentPla
 
 	private String deviceId;
 	public BindParentPlatformDeviceRequest() {
-		super("vs", "2018-12-12", "BindParentPlatformDevice");
+		super("vs", "2018-12-12", "BindParentPlatformDevice", "vs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

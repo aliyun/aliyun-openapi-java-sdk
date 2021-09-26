@@ -29,7 +29,7 @@ public class BatchStartDevicesRequest extends RpcAcsRequest<BatchStartDevicesRes
 
 	private Long ownerId;
 	public BatchStartDevicesRequest() {
-		super("vs", "2018-12-12", "BatchStartDevices");
+		super("vs", "2018-12-12", "BatchStartDevices", "vs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

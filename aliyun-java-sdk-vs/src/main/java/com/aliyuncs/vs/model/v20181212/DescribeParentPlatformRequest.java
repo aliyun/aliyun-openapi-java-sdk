@@ -29,7 +29,7 @@ public class DescribeParentPlatformRequest extends RpcAcsRequest<DescribeParentP
 
 	private Long ownerId;
 	public DescribeParentPlatformRequest() {
-		super("vs", "2018-12-12", "DescribeParentPlatform");
+		super("vs", "2018-12-12", "DescribeParentPlatform", "vs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

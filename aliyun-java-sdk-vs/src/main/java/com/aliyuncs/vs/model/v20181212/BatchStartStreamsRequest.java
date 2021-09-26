@@ -29,7 +29,7 @@ public class BatchStartStreamsRequest extends RpcAcsRequest<BatchStartStreamsRes
 
 	private Long ownerId;
 	public BatchStartStreamsRequest() {
-		super("vs", "2018-12-12", "BatchStartStreams");
+		super("vs", "2018-12-12", "BatchStartStreams", "vs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

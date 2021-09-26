@@ -41,7 +41,7 @@ public class DescribeDeviceURLRequest extends RpcAcsRequest<DescribeDeviceURLRes
 
 	private Long expire;
 	public DescribeDeviceURLRequest() {
-		super("vs", "2018-12-12", "DescribeDeviceURL");
+		super("vs", "2018-12-12", "DescribeDeviceURL", "vs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

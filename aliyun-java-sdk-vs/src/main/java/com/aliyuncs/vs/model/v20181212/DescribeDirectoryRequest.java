@@ -29,7 +29,7 @@ public class DescribeDirectoryRequest extends RpcAcsRequest<DescribeDirectoryRes
 
 	private Long ownerId;
 	public DescribeDirectoryRequest() {
-		super("vs", "2018-12-12", "DescribeDirectory");
+		super("vs", "2018-12-12", "DescribeDirectory", "vs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

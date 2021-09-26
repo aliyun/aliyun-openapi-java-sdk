@@ -33,7 +33,7 @@ public class ModifyDeviceCaptureRequest extends RpcAcsRequest<ModifyDeviceCaptur
 
 	private Long ownerId;
 	public ModifyDeviceCaptureRequest() {
-		super("vs", "2018-12-12", "ModifyDeviceCapture");
+		super("vs", "2018-12-12", "ModifyDeviceCapture", "vs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

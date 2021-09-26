@@ -35,7 +35,7 @@ public class StartRecordStreamRequest extends RpcAcsRequest<StartRecordStreamRes
 
 	private String name;
 	public StartRecordStreamRequest() {
-		super("vs", "2018-12-12", "StartRecordStream");
+		super("vs", "2018-12-12", "StartRecordStream", "vs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

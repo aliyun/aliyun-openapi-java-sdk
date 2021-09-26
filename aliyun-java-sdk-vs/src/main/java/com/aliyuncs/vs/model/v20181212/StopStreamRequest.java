@@ -33,7 +33,7 @@ public class StopStreamRequest extends RpcAcsRequest<StopStreamResponse> {
 
 	private String name;
 	public StopStreamRequest() {
-		super("vs", "2018-12-12", "StopStream");
+		super("vs", "2018-12-12", "StopStream", "vs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

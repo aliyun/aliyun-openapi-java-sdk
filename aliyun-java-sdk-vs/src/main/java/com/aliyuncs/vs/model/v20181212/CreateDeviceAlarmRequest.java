@@ -43,7 +43,7 @@ public class CreateDeviceAlarmRequest extends RpcAcsRequest<CreateDeviceAlarmRes
 
 	private Integer channelId;
 	public CreateDeviceAlarmRequest() {
-		super("vs", "2018-12-12", "CreateDeviceAlarm");
+		super("vs", "2018-12-12", "CreateDeviceAlarm", "vs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
