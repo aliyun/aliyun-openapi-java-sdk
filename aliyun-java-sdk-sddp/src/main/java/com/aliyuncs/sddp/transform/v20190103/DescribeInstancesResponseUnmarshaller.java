@@ -53,10 +53,17 @@ public class DescribeInstancesResponseUnmarshaller {
 			instance.setAcl(_ctx.stringValue("DescribeInstancesResponse.Items["+ i +"].Acl"));
 			instance.setS2Count(_ctx.integerValue("DescribeInstancesResponse.Items["+ i +"].S2Count"));
 			instance.setS3Count(_ctx.integerValue("DescribeInstancesResponse.Items["+ i +"].S3Count"));
+			instance.setCountDetails(_ctx.stringValue("DescribeInstancesResponse.Items["+ i +"].CountDetails"));
 			instance.setLastFinishTime(_ctx.longValue("DescribeInstancesResponse.Items["+ i +"].LastFinishTime"));
 			instance.setRegionName(_ctx.stringValue("DescribeInstancesResponse.Items["+ i +"].RegionName"));
 			instance.setRegionId(_ctx.stringValue("DescribeInstancesResponse.Items["+ i +"].RegionId"));
 			instance.setEngineType(_ctx.stringValue("DescribeInstancesResponse.Items["+ i +"].EngineType"));
+			instance.setS1Count(_ctx.integerValue("DescribeInstancesResponse.Items["+ i +"].S1Count"));
+			instance.setRiskScore(_ctx.floatValue("DescribeInstancesResponse.Items["+ i +"].RiskScore"));
+			instance.setLastRiskScore(_ctx.floatValue("DescribeInstancesResponse.Items["+ i +"].LastRiskScore"));
+			instance.setSensLevelName(_ctx.stringValue("DescribeInstancesResponse.Items["+ i +"].SensLevelName"));
+			instance.setInstanceDescription(_ctx.stringValue("DescribeInstancesResponse.Items["+ i +"].InstanceDescription"));
+			instance.setTenantName(_ctx.stringValue("DescribeInstancesResponse.Items["+ i +"].TenantName"));
 
 			items.add(instance);
 		}

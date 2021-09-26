@@ -29,7 +29,7 @@ public class DeleteRuleRequest extends RpcAcsRequest<DeleteRuleResponse> {
 
 	private String lang;
 	public DeleteRuleRequest() {
-		super("Sddp", "2019-01-03", "DeleteRule", "sddp");
+		super("Sddp", "2019-01-03", "DeleteRule");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

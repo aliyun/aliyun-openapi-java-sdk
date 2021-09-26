@@ -29,7 +29,7 @@ public class ManualTriggerMaskingProcessRequest extends RpcAcsRequest<ManualTrig
 
 	private String lang;
 	public ManualTriggerMaskingProcessRequest() {
-		super("Sddp", "2019-01-03", "ManualTriggerMaskingProcess", "sddp");
+		super("Sddp", "2019-01-03", "ManualTriggerMaskingProcess");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

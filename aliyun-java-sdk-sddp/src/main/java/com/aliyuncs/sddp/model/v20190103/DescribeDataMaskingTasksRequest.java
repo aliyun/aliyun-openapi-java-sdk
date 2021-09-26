@@ -39,7 +39,7 @@ public class DescribeDataMaskingTasksRequest extends RpcAcsRequest<DescribeDataM
 
 	private Integer dstType;
 	public DescribeDataMaskingTasksRequest() {
-		super("Sddp", "2019-01-03", "DescribeDataMaskingTasks", "sddp");
+		super("Sddp", "2019-01-03", "DescribeDataMaskingTasks");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

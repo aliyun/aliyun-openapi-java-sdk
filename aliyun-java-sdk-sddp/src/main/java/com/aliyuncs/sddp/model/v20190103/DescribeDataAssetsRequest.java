@@ -39,7 +39,7 @@ public class DescribeDataAssetsRequest extends RpcAcsRequest<DescribeDataAssetsR
 
 	private Long ruleId;
 	public DescribeDataAssetsRequest() {
-		super("Sddp", "2019-01-03", "DescribeDataAssets", "sddp");
+		super("Sddp", "2019-01-03", "DescribeDataAssets");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

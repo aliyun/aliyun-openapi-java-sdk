@@ -54,6 +54,10 @@ public class DescribeEventsResponseUnmarshaller {
 			event.setDealTime(_ctx.longValue("DescribeEventsResponse.Items["+ i +"].DealTime"));
 			event.setDepartName(_ctx.stringValue("DescribeEventsResponse.Items["+ i +"].DepartName"));
 			event.setBacked(_ctx.booleanValue("DescribeEventsResponse.Items["+ i +"].Backed"));
+			event.setInstanceName(_ctx.stringValue("DescribeEventsResponse.Items["+ i +"].InstanceName"));
+			event.setUserIdValue(_ctx.stringValue("DescribeEventsResponse.Items["+ i +"].UserIdValue"));
+			event.setDealUserIdValue(_ctx.stringValue("DescribeEventsResponse.Items["+ i +"].DealUserIdValue"));
+			event.setWarnLevel(_ctx.integerValue("DescribeEventsResponse.Items["+ i +"].WarnLevel"));
 
 			items.add(event);
 		}

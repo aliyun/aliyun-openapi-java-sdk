@@ -31,7 +31,21 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 
 	private Long riskLevelId;
 
+	private String source;
+
+	private Long startTime;
+
+	private Long userId;
+
+	private String nameAccurate;
+
+	private String sensLevelName;
+
+	private Long lastFinishTimeStart;
+
 	private Integer pageSize;
+
+	private Integer checkStatus;
 
 	private String lang;
 
@@ -39,13 +53,19 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 
 	private Integer featureType;
 
+	private Integer userType;
+
+	private Long endTime;
+
 	private Integer currentPage;
 
 	private String name;
 
 	private Long ruleId;
+
+	private Long lastFinishTimeEnd;
 	public DescribeInstancesRequest() {
-		super("Sddp", "2019-01-03", "DescribeInstances", "sddp");
+		super("Sddp", "2019-01-03", "DescribeInstances");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -86,6 +106,72 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 		}
 	}
 
+	public String getSource() {
+		return this.source;
+	}
+
+	public void setSource(String source) {
+		this.source = source;
+		if(source != null){
+			putQueryParameter("Source", source);
+		}
+	}
+
+	public Long getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(Long startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime.toString());
+		}
+	}
+
+	public Long getUserId() {
+		return this.userId;
+	}
+
+	public void setUserId(Long userId) {
+		this.userId = userId;
+		if(userId != null){
+			putQueryParameter("UserId", userId.toString());
+		}
+	}
+
+	public String getNameAccurate() {
+		return this.nameAccurate;
+	}
+
+	public void setNameAccurate(String nameAccurate) {
+		this.nameAccurate = nameAccurate;
+		if(nameAccurate != null){
+			putQueryParameter("NameAccurate", nameAccurate);
+		}
+	}
+
+	public String getSensLevelName() {
+		return this.sensLevelName;
+	}
+
+	public void setSensLevelName(String sensLevelName) {
+		this.sensLevelName = sensLevelName;
+		if(sensLevelName != null){
+			putQueryParameter("SensLevelName", sensLevelName);
+		}
+	}
+
+	public Long getLastFinishTimeStart() {
+		return this.lastFinishTimeStart;
+	}
+
+	public void setLastFinishTimeStart(Long lastFinishTimeStart) {
+		this.lastFinishTimeStart = lastFinishTimeStart;
+		if(lastFinishTimeStart != null){
+			putQueryParameter("LastFinishTimeStart", lastFinishTimeStart.toString());
+		}
+	}
+
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
@@ -94,6 +180,17 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public Integer getCheckStatus() {
+		return this.checkStatus;
+	}
+
+	public void setCheckStatus(Integer checkStatus) {
+		this.checkStatus = checkStatus;
+		if(checkStatus != null){
+			putQueryParameter("CheckStatus", checkStatus.toString());
 		}
 	}
 
@@ -130,6 +227,28 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 		}
 	}
 
+	public Integer getUserType() {
+		return this.userType;
+	}
+
+	public void setUserType(Integer userType) {
+		this.userType = userType;
+		if(userType != null){
+			putQueryParameter("UserType", userType.toString());
+		}
+	}
+
+	public Long getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(Long endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime.toString());
+		}
+	}
+
 	public Integer getCurrentPage() {
 		return this.currentPage;
 	}
@@ -160,6 +279,17 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 		this.ruleId = ruleId;
 		if(ruleId != null){
 			putQueryParameter("RuleId", ruleId.toString());
+		}
+	}
+
+	public Long getLastFinishTimeEnd() {
+		return this.lastFinishTimeEnd;
+	}
+
+	public void setLastFinishTimeEnd(Long lastFinishTimeEnd) {
+		this.lastFinishTimeEnd = lastFinishTimeEnd;
+		if(lastFinishTimeEnd != null){
+			putQueryParameter("LastFinishTimeEnd", lastFinishTimeEnd.toString());
 		}
 	}
 

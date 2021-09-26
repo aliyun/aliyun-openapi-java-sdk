@@ -21,17 +21,50 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeUserStatusResponseUnmarshaller {
 
-	public static DescribeUserStatusResponse unmarshall(DescribeUserStatusResponse describeUserStatusResponse, UnmarshallerContext context) {
+	public static DescribeUserStatusResponse unmarshall(DescribeUserStatusResponse describeUserStatusResponse, UnmarshallerContext _ctx) {
 		
-		describeUserStatusResponse.setRequestId(context.stringValue("DescribeUserStatusResponse.RequestId"));
+		describeUserStatusResponse.setRequestId(_ctx.stringValue("DescribeUserStatusResponse.RequestId"));
 
 		UserStatus userStatus = new UserStatus();
-		userStatus.setAuthed(context.booleanValue("DescribeUserStatusResponse.UserStatus.Authed"));
-		userStatus.setBuyed(context.booleanValue("DescribeUserStatusResponse.UserStatus.Buyed"));
-		userStatus.setOssBucketSet(context.booleanValue("DescribeUserStatusResponse.UserStatus.OssBucketSet"));
-		userStatus.setOdpsSet(context.booleanValue("DescribeUserStatusResponse.UserStatus.OdpsSet"));
-		userStatus.setRdsSet(context.booleanValue("DescribeUserStatusResponse.UserStatus.RdsSet"));
-		userStatus.setAccessKeyId(context.stringValue("DescribeUserStatusResponse.UserStatus.AccessKeyId"));
+		userStatus.setAuthed(_ctx.booleanValue("DescribeUserStatusResponse.UserStatus.Authed"));
+		userStatus.setBuyed(_ctx.booleanValue("DescribeUserStatusResponse.UserStatus.Buyed"));
+		userStatus.setOssBucketSet(_ctx.booleanValue("DescribeUserStatusResponse.UserStatus.OssBucketSet"));
+		userStatus.setOdpsSet(_ctx.booleanValue("DescribeUserStatusResponse.UserStatus.OdpsSet"));
+		userStatus.setRdsSet(_ctx.booleanValue("DescribeUserStatusResponse.UserStatus.RdsSet"));
+		userStatus.setAuthProductList(_ctx.stringValue("DescribeUserStatusResponse.UserStatus.AuthProductList"));
+		userStatus.setAccessKeyId(_ctx.stringValue("DescribeUserStatusResponse.UserStatus.AccessKeyId"));
+		userStatus.setTrail(_ctx.booleanValue("DescribeUserStatusResponse.UserStatus.Trail"));
+		userStatus.setInstanceStatus(_ctx.integerValue("DescribeUserStatusResponse.UserStatus.InstanceStatus"));
+		userStatus.setInstanceId(_ctx.stringValue("DescribeUserStatusResponse.UserStatus.InstanceId"));
+		userStatus.setRemainDays(_ctx.integerValue("DescribeUserStatusResponse.UserStatus.RemainDays"));
+		userStatus.setRenewStatus(_ctx.booleanValue("DescribeUserStatusResponse.UserStatus.RenewStatus"));
+		userStatus.setInstanceNum(_ctx.integerValue("DescribeUserStatusResponse.UserStatus.InstanceNum"));
+		userStatus.setUseInstanceNum(_ctx.integerValue("DescribeUserStatusResponse.UserStatus.UseInstanceNum"));
+		userStatus.setOssSize(_ctx.longValue("DescribeUserStatusResponse.UserStatus.OssSize"));
+		userStatus.setUseOssSize(_ctx.longValue("DescribeUserStatusResponse.UserStatus.UseOssSize"));
+		userStatus.setChargeType(_ctx.stringValue("DescribeUserStatusResponse.UserStatus.ChargeType"));
+		userStatus.setLabStatus(_ctx.integerValue("DescribeUserStatusResponse.UserStatus.LabStatus"));
+		userStatus.setVersion(_ctx.stringValue("DescribeUserStatusResponse.UserStatus.Version"));
+		userStatus.setDbAuditStatus(_ctx.integerValue("DescribeUserStatusResponse.UserStatus.DbAuditStatus"));
+		userStatus.setAssetScanned(_ctx.booleanValue("DescribeUserStatusResponse.UserStatus.AssetScanned"));
+		userStatus.setAuditUpgradeStatus(_ctx.booleanValue("DescribeUserStatusResponse.UserStatus.AuditUpgradeStatus"));
+		userStatus.setSensitiveTable(_ctx.longValue("DescribeUserStatusResponse.UserStatus.SensitiveTable"));
+		userStatus.setSensitiveObject(_ctx.longValue("DescribeUserStatusResponse.UserStatus.SensitiveObject"));
+		userStatus.setDatamaskColumns(_ctx.longValue("DescribeUserStatusResponse.UserStatus.DatamaskColumns"));
+		userStatus.setAlarmCount(_ctx.longValue("DescribeUserStatusResponse.UserStatus.AlarmCount"));
+		userStatus.setDivulgeCount(_ctx.longValue("DescribeUserStatusResponse.UserStatus.DivulgeCount"));
+		userStatus.setDisplayTime(_ctx.stringValue("DescribeUserStatusResponse.UserStatus.DisplayTime"));
+		userStatus.setTotalDataMaskColumns(_ctx.longValue("DescribeUserStatusResponse.UserStatus.TotalDataMaskColumns"));
+		userStatus.setDataMaskTasks(_ctx.longValue("DescribeUserStatusResponse.UserStatus.DataMaskTasks"));
+		userStatus.setDataMaskColumns(_ctx.longValue("DescribeUserStatusResponse.UserStatus.DataMaskColumns"));
+		userStatus.setSensitiveTables(_ctx.longValue("DescribeUserStatusResponse.UserStatus.SensitiveTables"));
+		userStatus.setSensitiveObjects(_ctx.longValue("DescribeUserStatusResponse.UserStatus.SensitiveObjects"));
+		userStatus.setIncSensitiveTables(_ctx.longValue("DescribeUserStatusResponse.UserStatus.IncSensitiveTables"));
+		userStatus.setIncSensitiveObjects(_ctx.longValue("DescribeUserStatusResponse.UserStatus.IncSensitiveObjects"));
+		userStatus.setSensitiveTop(_ctx.stringValue("DescribeUserStatusResponse.UserStatus.SensitiveTop"));
+		userStatus.setDlpTotalCount(_ctx.longValue("DescribeUserStatusResponse.UserStatus.DlpTotalCount"));
+		userStatus.setDlpCount(_ctx.longValue("DescribeUserStatusResponse.UserStatus.DlpCount"));
+		userStatus.setSensitiveTotalTop(_ctx.stringValue("DescribeUserStatusResponse.UserStatus.SensitiveTotalTop"));
 		describeUserStatusResponse.setUserStatus(userStatus);
 	 
 	 	return describeUserStatusResponse;

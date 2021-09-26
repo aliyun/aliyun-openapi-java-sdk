@@ -57,6 +57,23 @@ public class DescribeDataLimitsResponseUnmarshaller {
 			dataLimit.setErrorCode(_ctx.stringValue("DescribeDataLimitsResponse.Items["+ i +"].ErrorCode"));
 			dataLimit.setErrorMessage(_ctx.stringValue("DescribeDataLimitsResponse.Items["+ i +"].ErrorMessage"));
 			dataLimit.setPort(_ctx.integerValue("DescribeDataLimitsResponse.Items["+ i +"].Port"));
+			dataLimit.setDbVersion(_ctx.stringValue("DescribeDataLimitsResponse.Items["+ i +"].DbVersion"));
+			dataLimit.setSupportDatamask(_ctx.booleanValue("DescribeDataLimitsResponse.Items["+ i +"].SupportDatamask"));
+			dataLimit.setSupportScan(_ctx.booleanValue("DescribeDataLimitsResponse.Items["+ i +"].SupportScan"));
+			dataLimit.setSupportAudit(_ctx.booleanValue("DescribeDataLimitsResponse.Items["+ i +"].SupportAudit"));
+			dataLimit.setDatamaskStatus(_ctx.integerValue("DescribeDataLimitsResponse.Items["+ i +"].DatamaskStatus"));
+			dataLimit.setSamplingSize(_ctx.integerValue("DescribeDataLimitsResponse.Items["+ i +"].SamplingSize"));
+			dataLimit.setNextStartTime(_ctx.longValue("DescribeDataLimitsResponse.Items["+ i +"].NextStartTime"));
+			dataLimit.setSupportOcr(_ctx.booleanValue("DescribeDataLimitsResponse.Items["+ i +"].SupportOcr"));
+			dataLimit.setOcrStatus(_ctx.integerValue("DescribeDataLimitsResponse.Items["+ i +"].OcrStatus"));
+			dataLimit.setAgentId(_ctx.stringValue("DescribeDataLimitsResponse.Items["+ i +"].AgentId"));
+			dataLimit.setAgentState(_ctx.integerValue("DescribeDataLimitsResponse.Items["+ i +"].AgentState"));
+			dataLimit.setSupportAgentInstall(_ctx.booleanValue("DescribeDataLimitsResponse.Items["+ i +"].SupportAgentInstall"));
+			dataLimit.setEventStatus(_ctx.integerValue("DescribeDataLimitsResponse.Items["+ i +"].EventStatus"));
+			dataLimit.setSupportEvent(_ctx.booleanValue("DescribeDataLimitsResponse.Items["+ i +"].SupportEvent"));
+			dataLimit.setInstanceId(_ctx.stringValue("DescribeDataLimitsResponse.Items["+ i +"].InstanceId"));
+			dataLimit.setInstanceDescription(_ctx.stringValue("DescribeDataLimitsResponse.Items["+ i +"].InstanceDescription"));
+			dataLimit.setTenantName(_ctx.stringValue("DescribeDataLimitsResponse.Items["+ i +"].TenantName"));
 
 			items.add(dataLimit);
 		}

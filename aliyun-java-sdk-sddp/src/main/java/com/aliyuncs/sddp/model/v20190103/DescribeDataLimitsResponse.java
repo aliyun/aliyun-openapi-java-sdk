@@ -123,6 +123,40 @@ public class DescribeDataLimitsResponse extends AcsResponse {
 
 		private Integer port;
 
+		private String dbVersion;
+
+		private Boolean supportDatamask;
+
+		private Boolean supportScan;
+
+		private Boolean supportAudit;
+
+		private Integer datamaskStatus;
+
+		private Integer samplingSize;
+
+		private Long nextStartTime;
+
+		private Boolean supportOcr;
+
+		private Integer ocrStatus;
+
+		private String agentId;
+
+		private Integer agentState;
+
+		private Boolean supportAgentInstall;
+
+		private Integer eventStatus;
+
+		private Boolean supportEvent;
+
+		private String instanceId;
+
+		private String instanceDescription;
+
+		private String tenantName;
+
 		public String getRegionId() {
 			return this.regionId;
 		}
@@ -305,6 +339,142 @@ public class DescribeDataLimitsResponse extends AcsResponse {
 
 		public void setPort(Integer port) {
 			this.port = port;
+		}
+
+		public String getDbVersion() {
+			return this.dbVersion;
+		}
+
+		public void setDbVersion(String dbVersion) {
+			this.dbVersion = dbVersion;
+		}
+
+		public Boolean getSupportDatamask() {
+			return this.supportDatamask;
+		}
+
+		public void setSupportDatamask(Boolean supportDatamask) {
+			this.supportDatamask = supportDatamask;
+		}
+
+		public Boolean getSupportScan() {
+			return this.supportScan;
+		}
+
+		public void setSupportScan(Boolean supportScan) {
+			this.supportScan = supportScan;
+		}
+
+		public Boolean getSupportAudit() {
+			return this.supportAudit;
+		}
+
+		public void setSupportAudit(Boolean supportAudit) {
+			this.supportAudit = supportAudit;
+		}
+
+		public Integer getDatamaskStatus() {
+			return this.datamaskStatus;
+		}
+
+		public void setDatamaskStatus(Integer datamaskStatus) {
+			this.datamaskStatus = datamaskStatus;
+		}
+
+		public Integer getSamplingSize() {
+			return this.samplingSize;
+		}
+
+		public void setSamplingSize(Integer samplingSize) {
+			this.samplingSize = samplingSize;
+		}
+
+		public Long getNextStartTime() {
+			return this.nextStartTime;
+		}
+
+		public void setNextStartTime(Long nextStartTime) {
+			this.nextStartTime = nextStartTime;
+		}
+
+		public Boolean getSupportOcr() {
+			return this.supportOcr;
+		}
+
+		public void setSupportOcr(Boolean supportOcr) {
+			this.supportOcr = supportOcr;
+		}
+
+		public Integer getOcrStatus() {
+			return this.ocrStatus;
+		}
+
+		public void setOcrStatus(Integer ocrStatus) {
+			this.ocrStatus = ocrStatus;
+		}
+
+		public String getAgentId() {
+			return this.agentId;
+		}
+
+		public void setAgentId(String agentId) {
+			this.agentId = agentId;
+		}
+
+		public Integer getAgentState() {
+			return this.agentState;
+		}
+
+		public void setAgentState(Integer agentState) {
+			this.agentState = agentState;
+		}
+
+		public Boolean getSupportAgentInstall() {
+			return this.supportAgentInstall;
+		}
+
+		public void setSupportAgentInstall(Boolean supportAgentInstall) {
+			this.supportAgentInstall = supportAgentInstall;
+		}
+
+		public Integer getEventStatus() {
+			return this.eventStatus;
+		}
+
+		public void setEventStatus(Integer eventStatus) {
+			this.eventStatus = eventStatus;
+		}
+
+		public Boolean getSupportEvent() {
+			return this.supportEvent;
+		}
+
+		public void setSupportEvent(Boolean supportEvent) {
+			this.supportEvent = supportEvent;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public String getInstanceDescription() {
+			return this.instanceDescription;
+		}
+
+		public void setInstanceDescription(String instanceDescription) {
+			this.instanceDescription = instanceDescription;
+		}
+
+		public String getTenantName() {
+			return this.tenantName;
+		}
+
+		public void setTenantName(String tenantName) {
+			this.tenantName = tenantName;
 		}
 	}
 

@@ -42,6 +42,15 @@ public class DescribeOssObjectDetailResponseUnmarshaller {
 			rule.setRuleName(_ctx.stringValue("DescribeOssObjectDetailResponse.OssObjectDetail.RuleList["+ i +"].RuleName"));
 			rule.setCount(_ctx.longValue("DescribeOssObjectDetailResponse.OssObjectDetail.RuleList["+ i +"].Count"));
 			rule.setCategory(_ctx.integerValue("DescribeOssObjectDetailResponse.OssObjectDetail.RuleList["+ i +"].Category"));
+			rule.setCategoryName(_ctx.stringValue("DescribeOssObjectDetailResponse.OssObjectDetail.RuleList["+ i +"].CategoryName"));
+			rule.setRiskLevelName(_ctx.stringValue("DescribeOssObjectDetailResponse.OssObjectDetail.RuleList["+ i +"].RiskLevelName"));
+			rule.setRiskLevelId(_ctx.longValue("DescribeOssObjectDetailResponse.OssObjectDetail.RuleList["+ i +"].RiskLevelId"));
+
+			List<String> sampleList = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeOssObjectDetailResponse.OssObjectDetail.RuleList["+ i +"].SampleList.Length"); j++) {
+				sampleList.add(_ctx.stringValue("DescribeOssObjectDetailResponse.OssObjectDetail.RuleList["+ i +"].SampleList["+ j +"]"));
+			}
+			rule.setSampleList(sampleList);
 
 			ruleList.add(rule);
 		}

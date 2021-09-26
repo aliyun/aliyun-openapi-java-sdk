@@ -31,6 +31,8 @@ public class CreateRuleRequest extends RpcAcsRequest<CreateRuleResponse> {
 
 	private Long productId;
 
+	private String description;
+
 	private Long riskLevelId;
 
 	private String content;
@@ -41,11 +43,17 @@ public class CreateRuleRequest extends RpcAcsRequest<CreateRuleResponse> {
 
 	private String statExpress;
 
+	private Integer contentCategory;
+
+	private String target;
+
 	private String name;
 
 	private Integer category;
+
+	private Integer status;
 	public CreateRuleRequest() {
-		super("Sddp", "2019-01-03", "CreateRule", "sddp");
+		super("Sddp", "2019-01-03", "CreateRule");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -83,6 +91,17 @@ public class CreateRuleRequest extends RpcAcsRequest<CreateRuleResponse> {
 		this.productId = productId;
 		if(productId != null){
 			putQueryParameter("ProductId", productId.toString());
+		}
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
 		}
 	}
 
@@ -141,6 +160,28 @@ public class CreateRuleRequest extends RpcAcsRequest<CreateRuleResponse> {
 		}
 	}
 
+	public Integer getContentCategory() {
+		return this.contentCategory;
+	}
+
+	public void setContentCategory(Integer contentCategory) {
+		this.contentCategory = contentCategory;
+		if(contentCategory != null){
+			putQueryParameter("ContentCategory", contentCategory.toString());
+		}
+	}
+
+	public String getTarget() {
+		return this.target;
+	}
+
+	public void setTarget(String target) {
+		this.target = target;
+		if(target != null){
+			putQueryParameter("Target", target);
+		}
+	}
+
 	public String getName() {
 		return this.name;
 	}
@@ -160,6 +201,17 @@ public class CreateRuleRequest extends RpcAcsRequest<CreateRuleResponse> {
 		this.category = category;
 		if(category != null){
 			putQueryParameter("Category", category.toString());
+		}
+	}
+
+	public Integer getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(Integer status) {
+		this.status = status;
+		if(status != null){
+			putQueryParameter("Status", status.toString());
 		}
 	}
 

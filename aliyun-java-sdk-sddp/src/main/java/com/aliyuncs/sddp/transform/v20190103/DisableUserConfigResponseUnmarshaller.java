@@ -14,17 +14,16 @@
 
 package com.aliyuncs.sddp.transform.v20190103;
 
-import com.aliyuncs.sddp.model.v20190103.ModifyRuleStatusResponse;
+import com.aliyuncs.sddp.model.v20190103.DisableUserConfigResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class ModifyRuleStatusResponseUnmarshaller {
+public class DisableUserConfigResponseUnmarshaller {
 
-	public static ModifyRuleStatusResponse unmarshall(ModifyRuleStatusResponse modifyRuleStatusResponse, UnmarshallerContext _ctx) {
+	public static DisableUserConfigResponse unmarshall(DisableUserConfigResponse disableUserConfigResponse, UnmarshallerContext _ctx) {
 		
-		modifyRuleStatusResponse.setRequestId(_ctx.stringValue("ModifyRuleStatusResponse.RequestId"));
-		modifyRuleStatusResponse.setFailedIds(_ctx.stringValue("ModifyRuleStatusResponse.FailedIds"));
+		disableUserConfigResponse.setRequestId(_ctx.stringValue("DisableUserConfigResponse.RequestId"));
 	 
-	 	return modifyRuleStatusResponse;
+	 	return disableUserConfigResponse;
 	}
 }

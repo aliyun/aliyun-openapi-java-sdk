@@ -107,6 +107,8 @@ public class DescribeDataMaskingTasksResponse extends AcsResponse {
 
 		private Integer triggerType;
 
+		private Boolean originalTable;
+
 		public Long getId() {
 			return this.id;
 		}
@@ -225,6 +227,14 @@ public class DescribeDataMaskingTasksResponse extends AcsResponse {
 
 		public void setTriggerType(Integer triggerType) {
 			this.triggerType = triggerType;
+		}
+
+		public Boolean getOriginalTable() {
+			return this.originalTable;
+		}
+
+		public void setOriginalTable(Boolean originalTable) {
+			this.originalTable = originalTable;
 		}
 	}
 

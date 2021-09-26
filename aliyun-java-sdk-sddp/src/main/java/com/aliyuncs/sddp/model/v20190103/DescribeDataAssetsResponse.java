@@ -91,7 +91,7 @@ public class DescribeDataAssetsResponse extends AcsResponse {
 
 		private Boolean protection;
 
-		private Integer labelsec;
+		private Boolean labelsec;
 
 		private String odpsRiskLevelName;
 
@@ -173,11 +173,11 @@ public class DescribeDataAssetsResponse extends AcsResponse {
 			this.protection = protection;
 		}
 
-		public Integer getLabelsec() {
+		public Boolean getLabelsec() {
 			return this.labelsec;
 		}
 
-		public void setLabelsec(Integer labelsec) {
+		public void setLabelsec(Boolean labelsec) {
 			this.labelsec = labelsec;
 		}
 

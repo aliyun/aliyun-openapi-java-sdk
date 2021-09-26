@@ -109,9 +109,25 @@ public class DescribeTablesResponse extends AcsResponse {
 
 		private Integer s3Count;
 
+		private Integer s1Count;
+
+		private String countDetails;
+
 		private Integer totalRows;
 
 		private Long lastScanTime;
+
+		private String regionName;
+
+		private String instanceName;
+
+		private String sensLevelName;
+
+		private String instanceDescription;
+
+		private String tenantName;
+
+		private List<Rule> ruleList;
 
 		public Long getId() {
 			return this.id;
@@ -241,6 +257,22 @@ public class DescribeTablesResponse extends AcsResponse {
 			this.s3Count = s3Count;
 		}
 
+		public Integer getS1Count() {
+			return this.s1Count;
+		}
+
+		public void setS1Count(Integer s1Count) {
+			this.s1Count = s1Count;
+		}
+
+		public String getCountDetails() {
+			return this.countDetails;
+		}
+
+		public void setCountDetails(String countDetails) {
+			this.countDetails = countDetails;
+		}
+
 		public Integer getTotalRows() {
 			return this.totalRows;
 		}
@@ -255,6 +287,97 @@ public class DescribeTablesResponse extends AcsResponse {
 
 		public void setLastScanTime(Long lastScanTime) {
 			this.lastScanTime = lastScanTime;
+		}
+
+		public String getRegionName() {
+			return this.regionName;
+		}
+
+		public void setRegionName(String regionName) {
+			this.regionName = regionName;
+		}
+
+		public String getInstanceName() {
+			return this.instanceName;
+		}
+
+		public void setInstanceName(String instanceName) {
+			this.instanceName = instanceName;
+		}
+
+		public String getSensLevelName() {
+			return this.sensLevelName;
+		}
+
+		public void setSensLevelName(String sensLevelName) {
+			this.sensLevelName = sensLevelName;
+		}
+
+		public String getInstanceDescription() {
+			return this.instanceDescription;
+		}
+
+		public void setInstanceDescription(String instanceDescription) {
+			this.instanceDescription = instanceDescription;
+		}
+
+		public String getTenantName() {
+			return this.tenantName;
+		}
+
+		public void setTenantName(String tenantName) {
+			this.tenantName = tenantName;
+		}
+
+		public List<Rule> getRuleList() {
+			return this.ruleList;
+		}
+
+		public void setRuleList(List<Rule> ruleList) {
+			this.ruleList = ruleList;
+		}
+
+		public static class Rule {
+
+			private String name;
+
+			private String displayName;
+
+			private Long count;
+
+			private Long riskLevelId;
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
+
+			public String getDisplayName() {
+				return this.displayName;
+			}
+
+			public void setDisplayName(String displayName) {
+				this.displayName = displayName;
+			}
+
+			public Long getCount() {
+				return this.count;
+			}
+
+			public void setCount(Long count) {
+				this.count = count;
+			}
+
+			public Long getRiskLevelId() {
+				return this.riskLevelId;
+			}
+
+			public void setRiskLevelId(Long riskLevelId) {
+				this.riskLevelId = riskLevelId;
+			}
 		}
 	}
 

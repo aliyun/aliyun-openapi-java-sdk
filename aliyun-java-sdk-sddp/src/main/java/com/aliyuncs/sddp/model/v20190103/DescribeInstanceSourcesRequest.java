@@ -22,28 +22,28 @@ import com.aliyuncs.sddp.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribePrivilegesRequest extends RpcAcsRequest<DescribePrivilegesResponse> {
+public class DescribeInstanceSourcesRequest extends RpcAcsRequest<DescribeInstanceSourcesResponse> {
 	   
 
-	private Integer accountType;
-
-	private Long accountId;
+	private Long productId;
 
 	private Integer pageSize;
 
 	private String lang;
 
-	private String key;
+	private String serviceRegionId;
 
-	private Long useAccountId;
-
-	private Integer featureType;
+	private String engineType;
 
 	private Integer currentPage;
 
-	private String dataTypeIds;
-	public DescribePrivilegesRequest() {
-		super("Sddp", "2019-01-03", "DescribePrivileges", "sddp");
+	private Boolean authed;
+
+	private String instanceId;
+
+	private String dbName;
+	public DescribeInstanceSourcesRequest() {
+		super("Sddp", "2019-01-03", "DescribeInstanceSources");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -51,25 +51,14 @@ public class DescribePrivilegesRequest extends RpcAcsRequest<DescribePrivilegesR
 		} catch (Exception e) {}
 	}
 
-	public Integer getAccountType() {
-		return this.accountType;
+	public Long getProductId() {
+		return this.productId;
 	}
 
-	public void setAccountType(Integer accountType) {
-		this.accountType = accountType;
-		if(accountType != null){
-			putQueryParameter("AccountType", accountType.toString());
-		}
-	}
-
-	public Long getAccountId() {
-		return this.accountId;
-	}
-
-	public void setAccountId(Long accountId) {
-		this.accountId = accountId;
-		if(accountId != null){
-			putQueryParameter("AccountId", accountId.toString());
+	public void setProductId(Long productId) {
+		this.productId = productId;
+		if(productId != null){
+			putQueryParameter("ProductId", productId.toString());
 		}
 	}
 
@@ -95,36 +84,25 @@ public class DescribePrivilegesRequest extends RpcAcsRequest<DescribePrivilegesR
 		}
 	}
 
-	public String getKey() {
-		return this.key;
+	public String getServiceRegionId() {
+		return this.serviceRegionId;
 	}
 
-	public void setKey(String key) {
-		this.key = key;
-		if(key != null){
-			putQueryParameter("Key", key);
+	public void setServiceRegionId(String serviceRegionId) {
+		this.serviceRegionId = serviceRegionId;
+		if(serviceRegionId != null){
+			putQueryParameter("ServiceRegionId", serviceRegionId);
 		}
 	}
 
-	public Long getUseAccountId() {
-		return this.useAccountId;
+	public String getEngineType() {
+		return this.engineType;
 	}
 
-	public void setUseAccountId(Long useAccountId) {
-		this.useAccountId = useAccountId;
-		if(useAccountId != null){
-			putQueryParameter("UseAccountId", useAccountId.toString());
-		}
-	}
-
-	public Integer getFeatureType() {
-		return this.featureType;
-	}
-
-	public void setFeatureType(Integer featureType) {
-		this.featureType = featureType;
-		if(featureType != null){
-			putQueryParameter("FeatureType", featureType.toString());
+	public void setEngineType(String engineType) {
+		this.engineType = engineType;
+		if(engineType != null){
+			putQueryParameter("EngineType", engineType);
 		}
 	}
 
@@ -139,20 +117,42 @@ public class DescribePrivilegesRequest extends RpcAcsRequest<DescribePrivilegesR
 		}
 	}
 
-	public String getDataTypeIds() {
-		return this.dataTypeIds;
+	public Boolean getAuthed() {
+		return this.authed;
 	}
 
-	public void setDataTypeIds(String dataTypeIds) {
-		this.dataTypeIds = dataTypeIds;
-		if(dataTypeIds != null){
-			putQueryParameter("DataTypeIds", dataTypeIds);
+	public void setAuthed(Boolean authed) {
+		this.authed = authed;
+		if(authed != null){
+			putQueryParameter("Authed", authed.toString());
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getDbName() {
+		return this.dbName;
+	}
+
+	public void setDbName(String dbName) {
+		this.dbName = dbName;
+		if(dbName != null){
+			putQueryParameter("DbName", dbName);
 		}
 	}
 
 	@Override
-	public Class<DescribePrivilegesResponse> getResponseClass() {
-		return DescribePrivilegesResponse.class;
+	public Class<DescribeInstanceSourcesResponse> getResponseClass() {
+		return DescribeInstanceSourcesResponse.class;
 	}
 
 }

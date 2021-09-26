@@ -103,6 +103,12 @@ public class DescribeOssObjectsResponse extends AcsResponse {
 
 		private String bucketName;
 
+		private String regionName;
+
+		private Long lastScanTime;
+
+		private List<Rule> ruleList;
+
 		public String getId() {
 			return this.id;
 		}
@@ -205,6 +211,63 @@ public class DescribeOssObjectsResponse extends AcsResponse {
 
 		public void setBucketName(String bucketName) {
 			this.bucketName = bucketName;
+		}
+
+		public String getRegionName() {
+			return this.regionName;
+		}
+
+		public void setRegionName(String regionName) {
+			this.regionName = regionName;
+		}
+
+		public Long getLastScanTime() {
+			return this.lastScanTime;
+		}
+
+		public void setLastScanTime(Long lastScanTime) {
+			this.lastScanTime = lastScanTime;
+		}
+
+		public List<Rule> getRuleList() {
+			return this.ruleList;
+		}
+
+		public void setRuleList(List<Rule> ruleList) {
+			this.ruleList = ruleList;
+		}
+
+		public static class Rule {
+
+			private String name;
+
+			private Long count;
+
+			private Long riskLevelId;
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
+
+			public Long getCount() {
+				return this.count;
+			}
+
+			public void setCount(Long count) {
+				this.count = count;
+			}
+
+			public Long getRiskLevelId() {
+				return this.riskLevelId;
+			}
+
+			public void setRiskLevelId(Long riskLevelId) {
+				this.riskLevelId = riskLevelId;
+			}
 		}
 	}
 

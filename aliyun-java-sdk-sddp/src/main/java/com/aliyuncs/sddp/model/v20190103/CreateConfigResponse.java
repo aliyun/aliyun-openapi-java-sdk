@@ -26,12 +26,22 @@ public class CreateConfigResponse extends AcsResponse {
 
 	private String requestId;
 
+	private Long id;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Long getId() {
+		return this.id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	@Override

@@ -49,6 +49,7 @@ public class DescribeDataMaskingTasksResponseUnmarshaller {
 			task.setDstTypeCode(_ctx.stringValue("DescribeDataMaskingTasksResponse.Items["+ i +"].DstTypeCode"));
 			task.setSrcTypeCode(_ctx.stringValue("DescribeDataMaskingTasksResponse.Items["+ i +"].SrcTypeCode"));
 			task.setTriggerType(_ctx.integerValue("DescribeDataMaskingTasksResponse.Items["+ i +"].TriggerType"));
+			task.setOriginalTable(_ctx.booleanValue("DescribeDataMaskingTasksResponse.Items["+ i +"].OriginalTable"));
 
 			items.add(task);
 		}

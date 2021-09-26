@@ -45,6 +45,12 @@ public class DescribeEventTypesResponseUnmarshaller {
 				subType.setCode(_ctx.stringValue("DescribeEventTypesResponse.EventTypeList["+ i +"].SubTypeList["+ j +"].Code"));
 				subType.setDescription(_ctx.stringValue("DescribeEventTypesResponse.EventTypeList["+ i +"].SubTypeList["+ j +"].Description"));
 				subType.setStatus(_ctx.integerValue("DescribeEventTypesResponse.EventTypeList["+ i +"].SubTypeList["+ j +"].Status"));
+				subType.setEventHitCount(_ctx.integerValue("DescribeEventTypesResponse.EventTypeList["+ i +"].SubTypeList["+ j +"].EventHitCount"));
+				subType.setAdaptedProduct(_ctx.stringValue("DescribeEventTypesResponse.EventTypeList["+ i +"].SubTypeList["+ j +"].AdaptedProduct"));
+				subType.setConfigCode(_ctx.stringValue("DescribeEventTypesResponse.EventTypeList["+ i +"].SubTypeList["+ j +"].ConfigCode"));
+				subType.setConfigContentType(_ctx.integerValue("DescribeEventTypesResponse.EventTypeList["+ i +"].SubTypeList["+ j +"].ConfigContentType"));
+				subType.setConfigDescription(_ctx.stringValue("DescribeEventTypesResponse.EventTypeList["+ i +"].SubTypeList["+ j +"].ConfigDescription"));
+				subType.setConfigValue(_ctx.stringValue("DescribeEventTypesResponse.EventTypeList["+ i +"].SubTypeList["+ j +"].ConfigValue"));
 
 				subTypeList.add(subType);
 			}

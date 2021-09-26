@@ -27,28 +27,39 @@ public class DescribeColumnsResponseUnmarshaller {
 	public static DescribeColumnsResponse unmarshall(DescribeColumnsResponse describeColumnsResponse, UnmarshallerContext _ctx) {
 		
 		describeColumnsResponse.setRequestId(_ctx.stringValue("DescribeColumnsResponse.RequestId"));
-		describeColumnsResponse.setPageSize(_ctx.integerValue("DescribeColumnsResponse.PageSize"));
 		describeColumnsResponse.setCurrentPage(_ctx.integerValue("DescribeColumnsResponse.CurrentPage"));
+		describeColumnsResponse.setPageSize(_ctx.integerValue("DescribeColumnsResponse.PageSize"));
 		describeColumnsResponse.setTotalCount(_ctx.integerValue("DescribeColumnsResponse.TotalCount"));
 
 		List<Column> items = new ArrayList<Column>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeColumnsResponse.Items.Length"); i++) {
 			Column column = new Column();
-			column.setId(_ctx.stringValue("DescribeColumnsResponse.Items["+ i +"].Id"));
-			column.setName(_ctx.stringValue("DescribeColumnsResponse.Items["+ i +"].Name"));
-			column.setInstanceId(_ctx.longValue("DescribeColumnsResponse.Items["+ i +"].InstanceId"));
-			column.setTableId(_ctx.longValue("DescribeColumnsResponse.Items["+ i +"].TableId"));
 			column.setCreationTime(_ctx.longValue("DescribeColumnsResponse.Items["+ i +"].CreationTime"));
-			column.setSensitive(_ctx.booleanValue("DescribeColumnsResponse.Items["+ i +"].Sensitive"));
-			column.setProductCode(_ctx.stringValue("DescribeColumnsResponse.Items["+ i +"].ProductCode"));
+			column.setTableName(_ctx.stringValue("DescribeColumnsResponse.Items["+ i +"].TableName"));
 			column.setDataType(_ctx.stringValue("DescribeColumnsResponse.Items["+ i +"].DataType"));
 			column.setOdpsRiskLevelValue(_ctx.integerValue("DescribeColumnsResponse.Items["+ i +"].OdpsRiskLevelValue"));
-			column.setOdpsRiskLevelName(_ctx.stringValue("DescribeColumnsResponse.Items["+ i +"].OdpsRiskLevelName"));
-			column.setRiskLevelId(_ctx.longValue("DescribeColumnsResponse.Items["+ i +"].RiskLevelId"));
-			column.setRiskLevelName(_ctx.stringValue("DescribeColumnsResponse.Items["+ i +"].RiskLevelName"));
-			column.setRuleId(_ctx.longValue("DescribeColumnsResponse.Items["+ i +"].RuleId"));
-			column.setRuleName(_ctx.stringValue("DescribeColumnsResponse.Items["+ i +"].RuleName"));
 			column.setDepartName(_ctx.stringValue("DescribeColumnsResponse.Items["+ i +"].DepartName"));
+			column.setInstanceId(_ctx.longValue("DescribeColumnsResponse.Items["+ i +"].InstanceId"));
+			column.setRiskLevelId(_ctx.longValue("DescribeColumnsResponse.Items["+ i +"].RiskLevelId"));
+			column.setRuleName(_ctx.stringValue("DescribeColumnsResponse.Items["+ i +"].RuleName"));
+			column.setRuleId(_ctx.longValue("DescribeColumnsResponse.Items["+ i +"].RuleId"));
+			column.setSensitive(_ctx.booleanValue("DescribeColumnsResponse.Items["+ i +"].Sensitive"));
+			column.setSensLevelName(_ctx.stringValue("DescribeColumnsResponse.Items["+ i +"].SensLevelName"));
+			column.setInstanceName(_ctx.stringValue("DescribeColumnsResponse.Items["+ i +"].InstanceName"));
+			column.setRiskLevelName(_ctx.stringValue("DescribeColumnsResponse.Items["+ i +"].RiskLevelName"));
+			column.setOdpsRiskLevelName(_ctx.stringValue("DescribeColumnsResponse.Items["+ i +"].OdpsRiskLevelName"));
+			column.setName(_ctx.stringValue("DescribeColumnsResponse.Items["+ i +"].Name"));
+			column.setTableId(_ctx.longValue("DescribeColumnsResponse.Items["+ i +"].TableId"));
+			column.setId(_ctx.stringValue("DescribeColumnsResponse.Items["+ i +"].Id"));
+			column.setProductCode(_ctx.stringValue("DescribeColumnsResponse.Items["+ i +"].ProductCode"));
+			column.setRevisionStatus(_ctx.longValue("DescribeColumnsResponse.Items["+ i +"].RevisionStatus"));
+			column.setRevisionId(_ctx.longValue("DescribeColumnsResponse.Items["+ i +"].RevisionId"));
+
+			List<String> sampleList = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeColumnsResponse.Items["+ i +"].SampleList.Length"); j++) {
+				sampleList.add(_ctx.stringValue("DescribeColumnsResponse.Items["+ i +"].SampleList["+ j +"]"));
+			}
+			column.setSampleList(sampleList);
 
 			items.add(column);
 		}

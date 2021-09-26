@@ -29,7 +29,7 @@ public class DeleteDataLimitRequest extends RpcAcsRequest<DeleteDataLimitRespons
 
 	private String lang;
 	public DeleteDataLimitRequest() {
-		super("Sddp", "2019-01-03", "DeleteDataLimit", "sddp");
+		super("Sddp", "2019-01-03", "DeleteDataLimit");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

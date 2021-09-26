@@ -15,14 +15,14 @@
 package com.aliyuncs.sddp.model.v20190103;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.sddp.transform.v20190103.ModifySaleFlowCountTypeResponseUnmarshaller;
+import com.aliyuncs.sddp.transform.v20190103.StopMaskingProcessResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ModifySaleFlowCountTypeResponse extends AcsResponse {
+public class StopMaskingProcessResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -35,8 +35,8 @@ public class ModifySaleFlowCountTypeResponse extends AcsResponse {
 	}
 
 	@Override
-	public ModifySaleFlowCountTypeResponse getInstance(UnmarshallerContext context) {
-		return	ModifySaleFlowCountTypeResponseUnmarshaller.unmarshall(this, context);
+	public StopMaskingProcessResponse getInstance(UnmarshallerContext context) {
+		return	StopMaskingProcessResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

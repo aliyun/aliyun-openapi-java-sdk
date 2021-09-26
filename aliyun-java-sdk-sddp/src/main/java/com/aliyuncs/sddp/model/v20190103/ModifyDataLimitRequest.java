@@ -39,6 +39,8 @@ public class ModifyDataLimitRequest extends RpcAcsRequest<ModifyDataLimitRespons
 
 	private Integer auditStatus;
 
+	private Integer autoScan;
+
 	private Integer logStoreDay;
 
 	private Integer resourceType;
@@ -47,7 +49,7 @@ public class ModifyDataLimitRequest extends RpcAcsRequest<ModifyDataLimitRespons
 
 	private String userName;
 	public ModifyDataLimitRequest() {
-		super("Sddp", "2019-01-03", "ModifyDataLimit", "sddp");
+		super("Sddp", "2019-01-03", "ModifyDataLimit");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -129,6 +131,17 @@ public class ModifyDataLimitRequest extends RpcAcsRequest<ModifyDataLimitRespons
 		this.auditStatus = auditStatus;
 		if(auditStatus != null){
 			putQueryParameter("AuditStatus", auditStatus.toString());
+		}
+	}
+
+	public Integer getAutoScan() {
+		return this.autoScan;
+	}
+
+	public void setAutoScan(Integer autoScan) {
+		this.autoScan = autoScan;
+		if(autoScan != null){
+			putQueryParameter("AutoScan", autoScan.toString());
 		}
 	}
 

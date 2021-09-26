@@ -83,6 +83,8 @@ public class DescribeDataMaskingRunHistoryResponse extends AcsResponse {
 
 		private Long startTime;
 
+		private Long endTime;
+
 		private Integer runIndex;
 
 		private Integer type;
@@ -104,6 +106,14 @@ public class DescribeDataMaskingRunHistoryResponse extends AcsResponse {
 		private String dstTypeCode;
 
 		private String srcTypeCode;
+
+		private Integer hasSubProcess;
+
+		private Integer hasDownloadFile;
+
+		private String srcTableName;
+
+		private String failMsg;
 
 		public Long getId() {
 			return this.id;
@@ -127,6 +137,14 @@ public class DescribeDataMaskingRunHistoryResponse extends AcsResponse {
 
 		public void setStartTime(Long startTime) {
 			this.startTime = startTime;
+		}
+
+		public Long getEndTime() {
+			return this.endTime;
+		}
+
+		public void setEndTime(Long endTime) {
+			this.endTime = endTime;
 		}
 
 		public Integer getRunIndex() {
@@ -215,6 +233,38 @@ public class DescribeDataMaskingRunHistoryResponse extends AcsResponse {
 
 		public void setSrcTypeCode(String srcTypeCode) {
 			this.srcTypeCode = srcTypeCode;
+		}
+
+		public Integer getHasSubProcess() {
+			return this.hasSubProcess;
+		}
+
+		public void setHasSubProcess(Integer hasSubProcess) {
+			this.hasSubProcess = hasSubProcess;
+		}
+
+		public Integer getHasDownloadFile() {
+			return this.hasDownloadFile;
+		}
+
+		public void setHasDownloadFile(Integer hasDownloadFile) {
+			this.hasDownloadFile = hasDownloadFile;
+		}
+
+		public String getSrcTableName() {
+			return this.srcTableName;
+		}
+
+		public void setSrcTableName(String srcTableName) {
+			this.srcTableName = srcTableName;
+		}
+
+		public String getFailMsg() {
+			return this.failMsg;
+		}
+
+		public void setFailMsg(String failMsg) {
+			this.failMsg = failMsg;
 		}
 	}
 

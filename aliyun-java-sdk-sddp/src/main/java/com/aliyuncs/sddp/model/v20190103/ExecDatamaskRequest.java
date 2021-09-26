@@ -29,7 +29,7 @@ public class ExecDatamaskRequest extends RpcAcsRequest<ExecDatamaskResponse> {
 
 	private Long templateId;
 	public ExecDatamaskRequest() {
-		super("Sddp", "2019-01-03", "ExecDatamask", "sddp");
+		super("Sddp", "2019-01-03", "ExecDatamask");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -25,16 +25,31 @@ import com.aliyuncs.sddp.Endpoint;
 public class DescribeEventTypesRequest extends RpcAcsRequest<DescribeEventTypesResponse> {
 	   
 
+	private Integer resourceId;
+
 	private Long parentTypeId;
 
 	private String lang;
+
+	private Integer status;
 	public DescribeEventTypesRequest() {
-		super("Sddp", "2019-01-03", "DescribeEventTypes", "sddp");
+		super("Sddp", "2019-01-03", "DescribeEventTypes");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Integer getResourceId() {
+		return this.resourceId;
+	}
+
+	public void setResourceId(Integer resourceId) {
+		this.resourceId = resourceId;
+		if(resourceId != null){
+			putQueryParameter("ResourceId", resourceId.toString());
+		}
 	}
 
 	public Long getParentTypeId() {
@@ -56,6 +71,17 @@ public class DescribeEventTypesRequest extends RpcAcsRequest<DescribeEventTypesR
 		this.lang = lang;
 		if(lang != null){
 			putQueryParameter("Lang", lang);
+		}
+	}
+
+	public Integer getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(Integer status) {
+		this.status = status;
+		if(status != null){
+			putQueryParameter("Status", status.toString());
 		}
 	}
 

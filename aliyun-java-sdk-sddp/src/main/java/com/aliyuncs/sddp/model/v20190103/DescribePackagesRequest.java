@@ -41,7 +41,7 @@ public class DescribePackagesRequest extends RpcAcsRequest<DescribePackagesRespo
 
 	private Long ruleId;
 	public DescribePackagesRequest() {
-		super("Sddp", "2019-01-03", "DescribePackages", "sddp");
+		super("Sddp", "2019-01-03", "DescribePackages");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

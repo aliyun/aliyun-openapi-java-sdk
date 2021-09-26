@@ -37,7 +37,13 @@ public class DescribeRulesRequest extends RpcAcsRequest<DescribeRulesResponse> {
 
 	private String lang;
 
+	private Boolean keywordCompatible;
+
 	private Integer ruleType;
+
+	private String groupId;
+
+	private Integer contentCategory;
 
 	private Integer currentPage;
 
@@ -46,8 +52,10 @@ public class DescribeRulesRequest extends RpcAcsRequest<DescribeRulesResponse> {
 	private String name;
 
 	private Integer category;
+
+	private Integer status;
 	public DescribeRulesRequest() {
-		super("Sddp", "2019-01-03", "DescribeRules", "sddp");
+		super("Sddp", "2019-01-03", "DescribeRules");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -121,6 +129,17 @@ public class DescribeRulesRequest extends RpcAcsRequest<DescribeRulesResponse> {
 		}
 	}
 
+	public Boolean getKeywordCompatible() {
+		return this.keywordCompatible;
+	}
+
+	public void setKeywordCompatible(Boolean keywordCompatible) {
+		this.keywordCompatible = keywordCompatible;
+		if(keywordCompatible != null){
+			putQueryParameter("KeywordCompatible", keywordCompatible.toString());
+		}
+	}
+
 	public Integer getRuleType() {
 		return this.ruleType;
 	}
@@ -129,6 +148,28 @@ public class DescribeRulesRequest extends RpcAcsRequest<DescribeRulesResponse> {
 		this.ruleType = ruleType;
 		if(ruleType != null){
 			putQueryParameter("RuleType", ruleType.toString());
+		}
+	}
+
+	public String getGroupId() {
+		return this.groupId;
+	}
+
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
+		if(groupId != null){
+			putQueryParameter("GroupId", groupId);
+		}
+	}
+
+	public Integer getContentCategory() {
+		return this.contentCategory;
+	}
+
+	public void setContentCategory(Integer contentCategory) {
+		this.contentCategory = contentCategory;
+		if(contentCategory != null){
+			putQueryParameter("ContentCategory", contentCategory.toString());
 		}
 	}
 
@@ -173,6 +214,17 @@ public class DescribeRulesRequest extends RpcAcsRequest<DescribeRulesResponse> {
 		this.category = category;
 		if(category != null){
 			putQueryParameter("Category", category.toString());
+		}
+	}
+
+	public Integer getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(Integer status) {
+		this.status = status;
+		if(status != null){
+			putQueryParameter("Status", status.toString());
 		}
 	}
 

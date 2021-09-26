@@ -29,7 +29,7 @@ public class DescribeEventDetailRequest extends RpcAcsRequest<DescribeEventDetai
 
 	private String lang;
 	public DescribeEventDetailRequest() {
-		super("Sddp", "2019-01-03", "DescribeEventDetail", "sddp");
+		super("Sddp", "2019-01-03", "DescribeEventDetail");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

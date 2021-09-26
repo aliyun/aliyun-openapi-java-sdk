@@ -24,6 +24,7 @@ import com.aliyuncs.sddp.model.v20190103.DescribeEventDetailResponse.Event.Detai
 import com.aliyuncs.sddp.model.v20190103.DescribeEventDetailResponse.Event.Detail.ChartItem.Data;
 import com.aliyuncs.sddp.model.v20190103.DescribeEventDetailResponse.Event.Detail.ContentItem;
 import com.aliyuncs.sddp.model.v20190103.DescribeEventDetailResponse.Event.Detail.ResourceInfoItem;
+import com.aliyuncs.sddp.model.v20190103.DescribeEventDetailResponse.Event.HandleInfo;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -55,6 +56,9 @@ public class DescribeEventDetailResponseUnmarshaller {
 		event.setDepartName(_ctx.stringValue("DescribeEventDetailResponse.Event.DepartName"));
 		event.setBacked(_ctx.booleanValue("DescribeEventDetailResponse.Event.Backed"));
 		event.setDealReason(_ctx.stringValue("DescribeEventDetailResponse.Event.DealReason"));
+		event.setUserIdValue(_ctx.stringValue("DescribeEventDetailResponse.Event.UserIdValue"));
+		event.setDealUserIdValue(_ctx.stringValue("DescribeEventDetailResponse.Event.dealUserIdValue"));
+		event.setLogDetail(_ctx.stringValue("DescribeEventDetailResponse.Event.LogDetail"));
 
 		Detail detail = new Detail();
 
@@ -95,6 +99,22 @@ public class DescribeEventDetailResponseUnmarshaller {
 		}
 		detail.setResourceInfo(resourceInfo);
 		event.setDetail(detail);
+
+		List<HandleInfo> handleInfoList = new ArrayList<HandleInfo>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeEventDetailResponse.Event.HandleInfoList.Length"); i++) {
+			HandleInfo handleInfo = new HandleInfo();
+			handleInfo.setHandlerType(_ctx.stringValue("DescribeEventDetailResponse.Event.HandleInfoList["+ i +"].HandlerType"));
+			handleInfo.setHandlerName(_ctx.stringValue("DescribeEventDetailResponse.Event.HandleInfoList["+ i +"].HandlerName"));
+			handleInfo.setHandlerValue(_ctx.integerValue("DescribeEventDetailResponse.Event.HandleInfoList["+ i +"].HandlerValue"));
+			handleInfo.setCurrentValue(_ctx.stringValue("DescribeEventDetailResponse.Event.HandleInfoList["+ i +"].CurrentValue"));
+			handleInfo.setDisableTime(_ctx.longValue("DescribeEventDetailResponse.Event.HandleInfoList["+ i +"].DisableTime"));
+			handleInfo.setEnableTime(_ctx.longValue("DescribeEventDetailResponse.Event.HandleInfoList["+ i +"].EnableTime"));
+			handleInfo.setStatus(_ctx.integerValue("DescribeEventDetailResponse.Event.HandleInfoList["+ i +"].Status"));
+			handleInfo.setId(_ctx.longValue("DescribeEventDetailResponse.Event.HandleInfoList["+ i +"].Id"));
+
+			handleInfoList.add(handleInfo);
+		}
+		event.setHandleInfoList(handleInfoList);
 		describeEventDetailResponse.setEvent(event);
 	 
 	 	return describeEventDetailResponse;

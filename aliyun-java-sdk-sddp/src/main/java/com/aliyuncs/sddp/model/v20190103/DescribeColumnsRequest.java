@@ -27,7 +27,11 @@ public class DescribeColumnsRequest extends RpcAcsRequest<DescribeColumnsRespons
 
 	private String productCode;
 
+	private String ruleName;
+
 	private Long riskLevelId;
+
+	private String sensLevelName;
 
 	private Integer pageSize;
 
@@ -35,15 +39,19 @@ public class DescribeColumnsRequest extends RpcAcsRequest<DescribeColumnsRespons
 
 	private String lang;
 
+	private String tableName;
+
 	private Integer currentPage;
 
 	private Long instanceId;
+
+	private String instanceName;
 
 	private String name;
 
 	private Long ruleId;
 	public DescribeColumnsRequest() {
-		super("Sddp", "2019-01-03", "DescribeColumns", "sddp");
+		super("Sddp", "2019-01-03", "DescribeColumns");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -62,6 +70,17 @@ public class DescribeColumnsRequest extends RpcAcsRequest<DescribeColumnsRespons
 		}
 	}
 
+	public String getRuleName() {
+		return this.ruleName;
+	}
+
+	public void setRuleName(String ruleName) {
+		this.ruleName = ruleName;
+		if(ruleName != null){
+			putQueryParameter("RuleName", ruleName);
+		}
+	}
+
 	public Long getRiskLevelId() {
 		return this.riskLevelId;
 	}
@@ -70,6 +89,17 @@ public class DescribeColumnsRequest extends RpcAcsRequest<DescribeColumnsRespons
 		this.riskLevelId = riskLevelId;
 		if(riskLevelId != null){
 			putQueryParameter("RiskLevelId", riskLevelId.toString());
+		}
+	}
+
+	public String getSensLevelName() {
+		return this.sensLevelName;
+	}
+
+	public void setSensLevelName(String sensLevelName) {
+		this.sensLevelName = sensLevelName;
+		if(sensLevelName != null){
+			putQueryParameter("SensLevelName", sensLevelName);
 		}
 	}
 
@@ -106,6 +136,17 @@ public class DescribeColumnsRequest extends RpcAcsRequest<DescribeColumnsRespons
 		}
 	}
 
+	public String getTableName() {
+		return this.tableName;
+	}
+
+	public void setTableName(String tableName) {
+		this.tableName = tableName;
+		if(tableName != null){
+			putQueryParameter("TableName", tableName);
+		}
+	}
+
 	public Integer getCurrentPage() {
 		return this.currentPage;
 	}
@@ -125,6 +166,17 @@ public class DescribeColumnsRequest extends RpcAcsRequest<DescribeColumnsRespons
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId.toString());
+		}
+	}
+
+	public String getInstanceName() {
+		return this.instanceName;
+	}
+
+	public void setInstanceName(String instanceName) {
+		this.instanceName = instanceName;
+		if(instanceName != null){
+			putQueryParameter("InstanceName", instanceName);
 		}
 	}
 

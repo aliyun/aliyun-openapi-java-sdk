@@ -15,18 +15,25 @@
 package com.aliyuncs.sddp.model.v20190103;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.sddp.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeUserStatusRequest extends RpcAcsRequest<DescribeUserStatusResponse> {
-	
-	public DescribeUserStatusRequest() {
-		super("Sddp", "2019-01-03", "DescribeUserStatus", "sddp");
-	}
+	   
 
 	private String lang;
+	public DescribeUserStatusRequest() {
+		super("Sddp", "2019-01-03", "DescribeUserStatus");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getLang() {
 		return this.lang;

@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.sddp.model.v20190103.DescribeOssObjectsResponse;
 import com.aliyuncs.sddp.model.v20190103.DescribeOssObjectsResponse.Column;
+import com.aliyuncs.sddp.model.v20190103.DescribeOssObjectsResponse.Column.Rule;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -47,6 +48,19 @@ public class DescribeOssObjectsResponseUnmarshaller {
 			column.setRuleCount(_ctx.integerValue("DescribeOssObjectsResponse.Items["+ i +"].RuleCount"));
 			column.setCategoryName(_ctx.stringValue("DescribeOssObjectsResponse.Items["+ i +"].CategoryName"));
 			column.setBucketName(_ctx.stringValue("DescribeOssObjectsResponse.Items["+ i +"].BucketName"));
+			column.setRegionName(_ctx.stringValue("DescribeOssObjectsResponse.Items["+ i +"].RegionName"));
+			column.setLastScanTime(_ctx.longValue("DescribeOssObjectsResponse.Items["+ i +"].LastScanTime"));
+
+			List<Rule> ruleList = new ArrayList<Rule>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeOssObjectsResponse.Items["+ i +"].RuleList.Length"); j++) {
+				Rule rule = new Rule();
+				rule.setName(_ctx.stringValue("DescribeOssObjectsResponse.Items["+ i +"].RuleList["+ j +"].Name"));
+				rule.setCount(_ctx.longValue("DescribeOssObjectsResponse.Items["+ i +"].RuleList["+ j +"].Count"));
+				rule.setRiskLevelId(_ctx.longValue("DescribeOssObjectsResponse.Items["+ i +"].RuleList["+ j +"].RiskLevelId"));
+
+				ruleList.add(rule);
+			}
+			column.setRuleList(ruleList);
 
 			items.add(column);
 		}

@@ -29,7 +29,7 @@ public class DescribeOssObjectDetailRequest extends RpcAcsRequest<DescribeOssObj
 
 	private String lang;
 	public DescribeOssObjectDetailRequest() {
-		super("Sddp", "2019-01-03", "DescribeOssObjectDetail", "sddp");
+		super("Sddp", "2019-01-03", "DescribeOssObjectDetail");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

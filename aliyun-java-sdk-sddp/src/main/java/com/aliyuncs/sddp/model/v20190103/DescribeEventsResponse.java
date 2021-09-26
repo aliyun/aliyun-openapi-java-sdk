@@ -117,6 +117,14 @@ public class DescribeEventsResponse extends AcsResponse {
 
 		private Boolean backed;
 
+		private String instanceName;
+
+		private String userIdValue;
+
+		private String dealUserIdValue;
+
+		private Integer warnLevel;
+
 		public Long getId() {
 			return this.id;
 		}
@@ -275,6 +283,38 @@ public class DescribeEventsResponse extends AcsResponse {
 
 		public void setBacked(Boolean backed) {
 			this.backed = backed;
+		}
+
+		public String getInstanceName() {
+			return this.instanceName;
+		}
+
+		public void setInstanceName(String instanceName) {
+			this.instanceName = instanceName;
+		}
+
+		public String getUserIdValue() {
+			return this.userIdValue;
+		}
+
+		public void setUserIdValue(String userIdValue) {
+			this.userIdValue = userIdValue;
+		}
+
+		public String getDealUserIdValue() {
+			return this.dealUserIdValue;
+		}
+
+		public void setDealUserIdValue(String dealUserIdValue) {
+			this.dealUserIdValue = dealUserIdValue;
+		}
+
+		public Integer getWarnLevel() {
+			return this.warnLevel;
+		}
+
+		public void setWarnLevel(Integer warnLevel) {
+			this.warnLevel = warnLevel;
 		}
 	}
 

@@ -115,6 +115,14 @@ public class DescribeOssObjectDetailResponse extends AcsResponse {
 
 			private Integer category;
 
+			private String categoryName;
+
+			private String riskLevelName;
+
+			private Long riskLevelId;
+
+			private List<String> sampleList;
+
 			public String getRuleName() {
 				return this.ruleName;
 			}
@@ -137,6 +145,38 @@ public class DescribeOssObjectDetailResponse extends AcsResponse {
 
 			public void setCategory(Integer category) {
 				this.category = category;
+			}
+
+			public String getCategoryName() {
+				return this.categoryName;
+			}
+
+			public void setCategoryName(String categoryName) {
+				this.categoryName = categoryName;
+			}
+
+			public String getRiskLevelName() {
+				return this.riskLevelName;
+			}
+
+			public void setRiskLevelName(String riskLevelName) {
+				this.riskLevelName = riskLevelName;
+			}
+
+			public Long getRiskLevelId() {
+				return this.riskLevelId;
+			}
+
+			public void setRiskLevelId(Long riskLevelId) {
+				this.riskLevelId = riskLevelId;
+			}
+
+			public List<String> getSampleList() {
+				return this.sampleList;
+			}
+
+			public void setSampleList(List<String> sampleList) {
+				this.sampleList = sampleList;
 			}
 		}
 	}

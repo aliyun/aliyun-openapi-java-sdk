@@ -22,14 +22,14 @@ import com.aliyuncs.sddp.Endpoint;
  * @author auto create
  * @version 
  */
-public class ModifySaleFlowCountTypeRequest extends RpcAcsRequest<ModifySaleFlowCountTypeResponse> {
+public class DisableUserConfigRequest extends RpcAcsRequest<DisableUserConfigResponse> {
 	   
 
-	private Integer saleFlowCountType;
+	private String code;
 
 	private String lang;
-	public ModifySaleFlowCountTypeRequest() {
-		super("Sddp", "2019-01-03", "ModifySaleFlowCountType", "sddp");
+	public DisableUserConfigRequest() {
+		super("Sddp", "2019-01-03", "DisableUserConfig");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,14 +37,14 @@ public class ModifySaleFlowCountTypeRequest extends RpcAcsRequest<ModifySaleFlow
 		} catch (Exception e) {}
 	}
 
-	public Integer getSaleFlowCountType() {
-		return this.saleFlowCountType;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setSaleFlowCountType(Integer saleFlowCountType) {
-		this.saleFlowCountType = saleFlowCountType;
-		if(saleFlowCountType != null){
-			putQueryParameter("SaleFlowCountType", saleFlowCountType.toString());
+	public void setCode(String code) {
+		this.code = code;
+		if(code != null){
+			putQueryParameter("Code", code);
 		}
 	}
 
@@ -60,8 +60,8 @@ public class ModifySaleFlowCountTypeRequest extends RpcAcsRequest<ModifySaleFlow
 	}
 
 	@Override
-	public Class<ModifySaleFlowCountTypeResponse> getResponseClass() {
-		return ModifySaleFlowCountTypeResponse.class;
+	public Class<DisableUserConfigResponse> getResponseClass() {
+		return DisableUserConfigResponse.class;
 	}
 
 }

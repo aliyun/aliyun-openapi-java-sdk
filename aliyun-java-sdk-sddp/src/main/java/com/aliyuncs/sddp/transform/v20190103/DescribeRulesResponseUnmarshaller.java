@@ -55,6 +55,10 @@ public class DescribeRulesResponseUnmarshaller {
 			rule.setHitTotalCount(_ctx.integerValue("DescribeRulesResponse.Items["+ i +"].HitTotalCount"));
 			rule.setProductCode(_ctx.stringValue("DescribeRulesResponse.Items["+ i +"].ProductCode"));
 			rule.setWarnLevel(_ctx.integerValue("DescribeRulesResponse.Items["+ i +"].WarnLevel"));
+			rule.setMajorKey(_ctx.stringValue("DescribeRulesResponse.Items["+ i +"].MajorKey"));
+			rule.setContentCategory(_ctx.stringValue("DescribeRulesResponse.Items["+ i +"].ContentCategory"));
+			rule.setTarget(_ctx.stringValue("DescribeRulesResponse.Items["+ i +"].Target"));
+			rule.setGroupId(_ctx.stringValue("DescribeRulesResponse.Items["+ i +"].GroupId"));
 
 			items.add(rule);
 		}

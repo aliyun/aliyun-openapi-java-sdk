@@ -115,6 +115,8 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		private Integer s3Count;
 
+		private String countDetails;
+
 		private Long lastFinishTime;
 
 		private String regionName;
@@ -122,6 +124,18 @@ public class DescribeInstancesResponse extends AcsResponse {
 		private String regionId;
 
 		private String engineType;
+
+		private Integer s1Count;
+
+		private Float riskScore;
+
+		private Float lastRiskScore;
+
+		private String sensLevelName;
+
+		private String instanceDescription;
+
+		private String tenantName;
 
 		public Long getId() {
 			return this.id;
@@ -275,6 +289,14 @@ public class DescribeInstancesResponse extends AcsResponse {
 			this.s3Count = s3Count;
 		}
 
+		public String getCountDetails() {
+			return this.countDetails;
+		}
+
+		public void setCountDetails(String countDetails) {
+			this.countDetails = countDetails;
+		}
+
 		public Long getLastFinishTime() {
 			return this.lastFinishTime;
 		}
@@ -305,6 +327,54 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		public void setEngineType(String engineType) {
 			this.engineType = engineType;
+		}
+
+		public Integer getS1Count() {
+			return this.s1Count;
+		}
+
+		public void setS1Count(Integer s1Count) {
+			this.s1Count = s1Count;
+		}
+
+		public Float getRiskScore() {
+			return this.riskScore;
+		}
+
+		public void setRiskScore(Float riskScore) {
+			this.riskScore = riskScore;
+		}
+
+		public Float getLastRiskScore() {
+			return this.lastRiskScore;
+		}
+
+		public void setLastRiskScore(Float lastRiskScore) {
+			this.lastRiskScore = lastRiskScore;
+		}
+
+		public String getSensLevelName() {
+			return this.sensLevelName;
+		}
+
+		public void setSensLevelName(String sensLevelName) {
+			this.sensLevelName = sensLevelName;
+		}
+
+		public String getInstanceDescription() {
+			return this.instanceDescription;
+		}
+
+		public void setInstanceDescription(String instanceDescription) {
+			this.instanceDescription = instanceDescription;
+		}
+
+		public String getTenantName() {
+			return this.tenantName;
+		}
+
+		public void setTenantName(String tenantName) {
+			this.tenantName = tenantName;
 		}
 	}
 

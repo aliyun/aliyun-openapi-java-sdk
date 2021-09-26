@@ -89,6 +89,14 @@ public class DescribeEventDetailResponse extends AcsResponse {
 
 		private String dealReason;
 
+		private String userIdValue;
+
+		private String dealUserIdValue;
+
+		private String logDetail;
+
+		private List<HandleInfo> handleInfoList;
+
 		private Detail detail;
 
 		public Long getId() {
@@ -259,12 +267,127 @@ public class DescribeEventDetailResponse extends AcsResponse {
 			this.dealReason = dealReason;
 		}
 
+		public String getUserIdValue() {
+			return this.userIdValue;
+		}
+
+		public void setUserIdValue(String userIdValue) {
+			this.userIdValue = userIdValue;
+		}
+
+		public String getDealUserIdValue() {
+			return this.dealUserIdValue;
+		}
+
+		public void setDealUserIdValue(String dealUserIdValue) {
+			this.dealUserIdValue = dealUserIdValue;
+		}
+
+		public String getLogDetail() {
+			return this.logDetail;
+		}
+
+		public void setLogDetail(String logDetail) {
+			this.logDetail = logDetail;
+		}
+
+		public List<HandleInfo> getHandleInfoList() {
+			return this.handleInfoList;
+		}
+
+		public void setHandleInfoList(List<HandleInfo> handleInfoList) {
+			this.handleInfoList = handleInfoList;
+		}
+
 		public Detail getDetail() {
 			return this.detail;
 		}
 
 		public void setDetail(Detail detail) {
 			this.detail = detail;
+		}
+
+		public static class HandleInfo {
+
+			private String handlerType;
+
+			private String handlerName;
+
+			private Integer handlerValue;
+
+			private String currentValue;
+
+			private Long disableTime;
+
+			private Long enableTime;
+
+			private Integer status;
+
+			private Long id;
+
+			public String getHandlerType() {
+				return this.handlerType;
+			}
+
+			public void setHandlerType(String handlerType) {
+				this.handlerType = handlerType;
+			}
+
+			public String getHandlerName() {
+				return this.handlerName;
+			}
+
+			public void setHandlerName(String handlerName) {
+				this.handlerName = handlerName;
+			}
+
+			public Integer getHandlerValue() {
+				return this.handlerValue;
+			}
+
+			public void setHandlerValue(Integer handlerValue) {
+				this.handlerValue = handlerValue;
+			}
+
+			public String getCurrentValue() {
+				return this.currentValue;
+			}
+
+			public void setCurrentValue(String currentValue) {
+				this.currentValue = currentValue;
+			}
+
+			public Long getDisableTime() {
+				return this.disableTime;
+			}
+
+			public void setDisableTime(Long disableTime) {
+				this.disableTime = disableTime;
+			}
+
+			public Long getEnableTime() {
+				return this.enableTime;
+			}
+
+			public void setEnableTime(Long enableTime) {
+				this.enableTime = enableTime;
+			}
+
+			public Integer getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(Integer status) {
+				this.status = status;
+			}
+
+			public Long getId() {
+				return this.id;
+			}
+
+			public void setId(Long id) {
+				this.id = id;
+			}
 		}
 
 		public static class Detail {

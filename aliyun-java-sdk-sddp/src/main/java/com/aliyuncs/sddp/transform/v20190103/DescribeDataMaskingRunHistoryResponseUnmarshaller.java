@@ -37,6 +37,7 @@ public class DescribeDataMaskingRunHistoryResponseUnmarshaller {
 			task.setId(_ctx.longValue("DescribeDataMaskingRunHistoryResponse.Items["+ i +"].Id"));
 			task.setTaskId(_ctx.stringValue("DescribeDataMaskingRunHistoryResponse.Items["+ i +"].TaskId"));
 			task.setStartTime(_ctx.longValue("DescribeDataMaskingRunHistoryResponse.Items["+ i +"].StartTime"));
+			task.setEndTime(_ctx.longValue("DescribeDataMaskingRunHistoryResponse.Items["+ i +"].EndTime"));
 			task.setRunIndex(_ctx.integerValue("DescribeDataMaskingRunHistoryResponse.Items["+ i +"].RunIndex"));
 			task.setType(_ctx.integerValue("DescribeDataMaskingRunHistoryResponse.Items["+ i +"].Type"));
 			task.setDstType(_ctx.integerValue("DescribeDataMaskingRunHistoryResponse.Items["+ i +"].DstType"));
@@ -48,6 +49,10 @@ public class DescribeDataMaskingRunHistoryResponseUnmarshaller {
 			task.setFailCode(_ctx.stringValue("DescribeDataMaskingRunHistoryResponse.Items["+ i +"].FailCode"));
 			task.setDstTypeCode(_ctx.stringValue("DescribeDataMaskingRunHistoryResponse.Items["+ i +"].DstTypeCode"));
 			task.setSrcTypeCode(_ctx.stringValue("DescribeDataMaskingRunHistoryResponse.Items["+ i +"].SrcTypeCode"));
+			task.setHasSubProcess(_ctx.integerValue("DescribeDataMaskingRunHistoryResponse.Items["+ i +"].HasSubProcess"));
+			task.setHasDownloadFile(_ctx.integerValue("DescribeDataMaskingRunHistoryResponse.Items["+ i +"].HasDownloadFile"));
+			task.setSrcTableName(_ctx.stringValue("DescribeDataMaskingRunHistoryResponse.Items["+ i +"].SrcTableName"));
+			task.setFailMsg(_ctx.stringValue("DescribeDataMaskingRunHistoryResponse.Items["+ i +"].FailMsg"));
 
 			items.add(task);
 		}

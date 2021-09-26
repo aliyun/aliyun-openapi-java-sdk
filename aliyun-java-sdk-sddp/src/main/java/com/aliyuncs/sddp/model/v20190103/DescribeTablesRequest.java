@@ -31,21 +31,37 @@ public class DescribeTablesRequest extends RpcAcsRequest<DescribeTablesResponse>
 
 	private Long packageId;
 
+	private String ruleName;
+
 	private Long riskLevelId;
+
+	private Long startTime;
+
+	private Long lastScanTimeEnd;
+
+	private Long lastScanTimeStart;
+
+	private String sensLevelName;
 
 	private Integer pageSize;
 
+	private String instanceDescription;
+
 	private String lang;
+
+	private Long endTime;
 
 	private Integer currentPage;
 
 	private Long instanceId;
 
+	private String instanceName;
+
 	private String name;
 
 	private Long ruleId;
 	public DescribeTablesRequest() {
-		super("Sddp", "2019-01-03", "DescribeTables", "sddp");
+		super("Sddp", "2019-01-03", "DescribeTables");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -86,6 +102,17 @@ public class DescribeTablesRequest extends RpcAcsRequest<DescribeTablesResponse>
 		}
 	}
 
+	public String getRuleName() {
+		return this.ruleName;
+	}
+
+	public void setRuleName(String ruleName) {
+		this.ruleName = ruleName;
+		if(ruleName != null){
+			putQueryParameter("RuleName", ruleName);
+		}
+	}
+
 	public Long getRiskLevelId() {
 		return this.riskLevelId;
 	}
@@ -94,6 +121,50 @@ public class DescribeTablesRequest extends RpcAcsRequest<DescribeTablesResponse>
 		this.riskLevelId = riskLevelId;
 		if(riskLevelId != null){
 			putQueryParameter("RiskLevelId", riskLevelId.toString());
+		}
+	}
+
+	public Long getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(Long startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime.toString());
+		}
+	}
+
+	public Long getLastScanTimeEnd() {
+		return this.lastScanTimeEnd;
+	}
+
+	public void setLastScanTimeEnd(Long lastScanTimeEnd) {
+		this.lastScanTimeEnd = lastScanTimeEnd;
+		if(lastScanTimeEnd != null){
+			putQueryParameter("LastScanTimeEnd", lastScanTimeEnd.toString());
+		}
+	}
+
+	public Long getLastScanTimeStart() {
+		return this.lastScanTimeStart;
+	}
+
+	public void setLastScanTimeStart(Long lastScanTimeStart) {
+		this.lastScanTimeStart = lastScanTimeStart;
+		if(lastScanTimeStart != null){
+			putQueryParameter("LastScanTimeStart", lastScanTimeStart.toString());
+		}
+	}
+
+	public String getSensLevelName() {
+		return this.sensLevelName;
+	}
+
+	public void setSensLevelName(String sensLevelName) {
+		this.sensLevelName = sensLevelName;
+		if(sensLevelName != null){
+			putQueryParameter("SensLevelName", sensLevelName);
 		}
 	}
 
@@ -108,6 +179,17 @@ public class DescribeTablesRequest extends RpcAcsRequest<DescribeTablesResponse>
 		}
 	}
 
+	public String getInstanceDescription() {
+		return this.instanceDescription;
+	}
+
+	public void setInstanceDescription(String instanceDescription) {
+		this.instanceDescription = instanceDescription;
+		if(instanceDescription != null){
+			putQueryParameter("InstanceDescription", instanceDescription);
+		}
+	}
+
 	public String getLang() {
 		return this.lang;
 	}
@@ -116,6 +198,17 @@ public class DescribeTablesRequest extends RpcAcsRequest<DescribeTablesResponse>
 		this.lang = lang;
 		if(lang != null){
 			putQueryParameter("Lang", lang);
+		}
+	}
+
+	public Long getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(Long endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime.toString());
 		}
 	}
 
@@ -138,6 +231,17 @@ public class DescribeTablesRequest extends RpcAcsRequest<DescribeTablesResponse>
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId.toString());
+		}
+	}
+
+	public String getInstanceName() {
+		return this.instanceName;
+	}
+
+	public void setInstanceName(String instanceName) {
+		this.instanceName = instanceName;
+		if(instanceName != null){
+			putQueryParameter("InstanceName", instanceName);
 		}
 	}
 

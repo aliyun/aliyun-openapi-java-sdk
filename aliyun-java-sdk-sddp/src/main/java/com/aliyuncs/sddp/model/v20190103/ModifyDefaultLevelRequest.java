@@ -31,7 +31,7 @@ public class ModifyDefaultLevelRequest extends RpcAcsRequest<ModifyDefaultLevelR
 
 	private String sensitiveIds;
 	public ModifyDefaultLevelRequest() {
-		super("Sddp", "2019-01-03", "ModifyDefaultLevel", "sddp");
+		super("Sddp", "2019-01-03", "ModifyDefaultLevel");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

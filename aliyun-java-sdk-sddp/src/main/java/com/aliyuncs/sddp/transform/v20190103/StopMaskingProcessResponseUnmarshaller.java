@@ -14,17 +14,16 @@
 
 package com.aliyuncs.sddp.transform.v20190103;
 
-import com.aliyuncs.sddp.model.v20190103.ModifyRuleStatusResponse;
+import com.aliyuncs.sddp.model.v20190103.StopMaskingProcessResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class ModifyRuleStatusResponseUnmarshaller {
+public class StopMaskingProcessResponseUnmarshaller {
 
-	public static ModifyRuleStatusResponse unmarshall(ModifyRuleStatusResponse modifyRuleStatusResponse, UnmarshallerContext _ctx) {
+	public static StopMaskingProcessResponse unmarshall(StopMaskingProcessResponse stopMaskingProcessResponse, UnmarshallerContext _ctx) {
 		
-		modifyRuleStatusResponse.setRequestId(_ctx.stringValue("ModifyRuleStatusResponse.RequestId"));
-		modifyRuleStatusResponse.setFailedIds(_ctx.stringValue("ModifyRuleStatusResponse.FailedIds"));
+		stopMaskingProcessResponse.setRequestId(_ctx.stringValue("StopMaskingProcessResponse.RequestId"));
 	 
-	 	return modifyRuleStatusResponse;
+	 	return stopMaskingProcessResponse;
 	}
 }

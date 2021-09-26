@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeColumnsResponse extends AcsResponse {
 
+	private Integer currentPage;
+
 	private String requestId;
 
 	private Integer pageSize;
 
-	private Integer currentPage;
-
 	private Integer totalCount;
 
 	private List<Column> items;
+
+	public Integer getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -49,14 +57,6 @@ public class DescribeColumnsResponse extends AcsResponse {
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
-	}
-
-	public Integer getCurrentPage() {
-		return this.currentPage;
-	}
-
-	public void setCurrentPage(Integer currentPage) {
-		this.currentPage = currentPage;
 	}
 
 	public Integer getTotalCount() {
@@ -77,67 +77,47 @@ public class DescribeColumnsResponse extends AcsResponse {
 
 	public static class Column {
 
-		private String id;
-
-		private String name;
-
-		private Long instanceId;
-
-		private Long tableId;
-
 		private Long creationTime;
 
-		private Boolean sensitive;
-
-		private String productCode;
+		private String tableName;
 
 		private String dataType;
 
 		private Integer odpsRiskLevelValue;
 
-		private String odpsRiskLevelName;
+		private String departName;
+
+		private Long instanceId;
 
 		private Long riskLevelId;
 
-		private String riskLevelName;
+		private String ruleName;
 
 		private Long ruleId;
 
-		private String ruleName;
+		private Boolean sensitive;
 
-		private String departName;
+		private String sensLevelName;
 
-		public String getId() {
-			return this.id;
-		}
+		private String instanceName;
 
-		public void setId(String id) {
-			this.id = id;
-		}
+		private String riskLevelName;
 
-		public String getName() {
-			return this.name;
-		}
+		private String odpsRiskLevelName;
 
-		public void setName(String name) {
-			this.name = name;
-		}
+		private String name;
 
-		public Long getInstanceId() {
-			return this.instanceId;
-		}
+		private Long tableId;
 
-		public void setInstanceId(Long instanceId) {
-			this.instanceId = instanceId;
-		}
+		private String id;
 
-		public Long getTableId() {
-			return this.tableId;
-		}
+		private String productCode;
 
-		public void setTableId(Long tableId) {
-			this.tableId = tableId;
-		}
+		private Long revisionStatus;
+
+		private Long revisionId;
+
+		private List<String> sampleList;
 
 		public Long getCreationTime() {
 			return this.creationTime;
@@ -147,20 +127,12 @@ public class DescribeColumnsResponse extends AcsResponse {
 			this.creationTime = creationTime;
 		}
 
-		public Boolean getSensitive() {
-			return this.sensitive;
+		public String getTableName() {
+			return this.tableName;
 		}
 
-		public void setSensitive(Boolean sensitive) {
-			this.sensitive = sensitive;
-		}
-
-		public String getProductCode() {
-			return this.productCode;
-		}
-
-		public void setProductCode(String productCode) {
-			this.productCode = productCode;
+		public void setTableName(String tableName) {
+			this.tableName = tableName;
 		}
 
 		public String getDataType() {
@@ -179,12 +151,20 @@ public class DescribeColumnsResponse extends AcsResponse {
 			this.odpsRiskLevelValue = odpsRiskLevelValue;
 		}
 
-		public String getOdpsRiskLevelName() {
-			return this.odpsRiskLevelName;
+		public String getDepartName() {
+			return this.departName;
 		}
 
-		public void setOdpsRiskLevelName(String odpsRiskLevelName) {
-			this.odpsRiskLevelName = odpsRiskLevelName;
+		public void setDepartName(String departName) {
+			this.departName = departName;
+		}
+
+		public Long getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(Long instanceId) {
+			this.instanceId = instanceId;
 		}
 
 		public Long getRiskLevelId() {
@@ -195,12 +175,12 @@ public class DescribeColumnsResponse extends AcsResponse {
 			this.riskLevelId = riskLevelId;
 		}
 
-		public String getRiskLevelName() {
-			return this.riskLevelName;
+		public String getRuleName() {
+			return this.ruleName;
 		}
 
-		public void setRiskLevelName(String riskLevelName) {
-			this.riskLevelName = riskLevelName;
+		public void setRuleName(String ruleName) {
+			this.ruleName = ruleName;
 		}
 
 		public Long getRuleId() {
@@ -211,20 +191,100 @@ public class DescribeColumnsResponse extends AcsResponse {
 			this.ruleId = ruleId;
 		}
 
-		public String getRuleName() {
-			return this.ruleName;
+		public Boolean getSensitive() {
+			return this.sensitive;
 		}
 
-		public void setRuleName(String ruleName) {
-			this.ruleName = ruleName;
+		public void setSensitive(Boolean sensitive) {
+			this.sensitive = sensitive;
 		}
 
-		public String getDepartName() {
-			return this.departName;
+		public String getSensLevelName() {
+			return this.sensLevelName;
 		}
 
-		public void setDepartName(String departName) {
-			this.departName = departName;
+		public void setSensLevelName(String sensLevelName) {
+			this.sensLevelName = sensLevelName;
+		}
+
+		public String getInstanceName() {
+			return this.instanceName;
+		}
+
+		public void setInstanceName(String instanceName) {
+			this.instanceName = instanceName;
+		}
+
+		public String getRiskLevelName() {
+			return this.riskLevelName;
+		}
+
+		public void setRiskLevelName(String riskLevelName) {
+			this.riskLevelName = riskLevelName;
+		}
+
+		public String getOdpsRiskLevelName() {
+			return this.odpsRiskLevelName;
+		}
+
+		public void setOdpsRiskLevelName(String odpsRiskLevelName) {
+			this.odpsRiskLevelName = odpsRiskLevelName;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public Long getTableId() {
+			return this.tableId;
+		}
+
+		public void setTableId(Long tableId) {
+			this.tableId = tableId;
+		}
+
+		public String getId() {
+			return this.id;
+		}
+
+		public void setId(String id) {
+			this.id = id;
+		}
+
+		public String getProductCode() {
+			return this.productCode;
+		}
+
+		public void setProductCode(String productCode) {
+			this.productCode = productCode;
+		}
+
+		public Long getRevisionStatus() {
+			return this.revisionStatus;
+		}
+
+		public void setRevisionStatus(Long revisionStatus) {
+			this.revisionStatus = revisionStatus;
+		}
+
+		public Long getRevisionId() {
+			return this.revisionId;
+		}
+
+		public void setRevisionId(Long revisionId) {
+			this.revisionId = revisionId;
+		}
+
+		public List<String> getSampleList() {
+			return this.sampleList;
+		}
+
+		public void setSampleList(List<String> sampleList) {
+			this.sampleList = sampleList;
 		}
 	}
 

@@ -39,6 +39,8 @@ public class DescribeEventsRequest extends RpcAcsRequest<DescribeEventsResponse>
 
 	private Integer pageSize;
 
+	private Long id;
+
 	private String lang;
 
 	private String dealUserId;
@@ -47,9 +49,13 @@ public class DescribeEventsRequest extends RpcAcsRequest<DescribeEventsResponse>
 
 	private Integer currentPage;
 
+	private String instanceName;
+
 	private String status;
+
+	private String userName;
 	public DescribeEventsRequest() {
-		super("Sddp", "2019-01-03", "DescribeEvents", "sddp");
+		super("Sddp", "2019-01-03", "DescribeEvents");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -134,6 +140,17 @@ public class DescribeEventsRequest extends RpcAcsRequest<DescribeEventsResponse>
 		}
 	}
 
+	public Long getId() {
+		return this.id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+		if(id != null){
+			putQueryParameter("Id", id.toString());
+		}
+	}
+
 	public String getLang() {
 		return this.lang;
 	}
@@ -178,6 +195,17 @@ public class DescribeEventsRequest extends RpcAcsRequest<DescribeEventsResponse>
 		}
 	}
 
+	public String getInstanceName() {
+		return this.instanceName;
+	}
+
+	public void setInstanceName(String instanceName) {
+		this.instanceName = instanceName;
+		if(instanceName != null){
+			putQueryParameter("InstanceName", instanceName);
+		}
+	}
+
 	public String getStatus() {
 		return this.status;
 	}
@@ -186,6 +214,17 @@ public class DescribeEventsRequest extends RpcAcsRequest<DescribeEventsResponse>
 		this.status = status;
 		if(status != null){
 			putQueryParameter("Status", status);
+		}
+	}
+
+	public String getUserName() {
+		return this.userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+		if(userName != null){
+			putQueryParameter("UserName", userName);
 		}
 	}
 

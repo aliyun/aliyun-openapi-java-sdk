@@ -22,16 +22,16 @@ import com.aliyuncs.sddp.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeAccountDetailRequest extends RpcAcsRequest<DescribeAccountDetailResponse> {
+public class StopMaskingProcessRequest extends RpcAcsRequest<StopMaskingProcessResponse> {
 	   
 
-	private Long userId;
-
-	private Long accountTypeId;
+	private Long id;
 
 	private String lang;
-	public DescribeAccountDetailRequest() {
-		super("Sddp", "2019-01-03", "DescribeAccountDetail", "sddp");
+
+	private Integer featureType;
+	public StopMaskingProcessRequest() {
+		super("Sddp", "2019-01-03", "StopMaskingProcess");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -39,25 +39,14 @@ public class DescribeAccountDetailRequest extends RpcAcsRequest<DescribeAccountD
 		} catch (Exception e) {}
 	}
 
-	public Long getUserId() {
-		return this.userId;
+	public Long getId() {
+		return this.id;
 	}
 
-	public void setUserId(Long userId) {
-		this.userId = userId;
-		if(userId != null){
-			putQueryParameter("UserId", userId.toString());
-		}
-	}
-
-	public Long getAccountTypeId() {
-		return this.accountTypeId;
-	}
-
-	public void setAccountTypeId(Long accountTypeId) {
-		this.accountTypeId = accountTypeId;
-		if(accountTypeId != null){
-			putQueryParameter("AccountTypeId", accountTypeId.toString());
+	public void setId(Long id) {
+		this.id = id;
+		if(id != null){
+			putQueryParameter("Id", id.toString());
 		}
 	}
 
@@ -72,9 +61,20 @@ public class DescribeAccountDetailRequest extends RpcAcsRequest<DescribeAccountD
 		}
 	}
 
+	public Integer getFeatureType() {
+		return this.featureType;
+	}
+
+	public void setFeatureType(Integer featureType) {
+		this.featureType = featureType;
+		if(featureType != null){
+			putQueryParameter("FeatureType", featureType.toString());
+		}
+	}
+
 	@Override
-	public Class<DescribeAccountDetailResponse> getResponseClass() {
-		return DescribeAccountDetailResponse.class;
+	public Class<StopMaskingProcessResponse> getResponseClass() {
+		return StopMaskingProcessResponse.class;
 	}
 
 }

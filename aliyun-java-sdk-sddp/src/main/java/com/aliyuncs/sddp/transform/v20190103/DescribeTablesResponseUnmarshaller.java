@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.sddp.model.v20190103.DescribeTablesResponse;
 import com.aliyuncs.sddp.model.v20190103.DescribeTablesResponse.Table;
+import com.aliyuncs.sddp.model.v20190103.DescribeTablesResponse.Table.Rule;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -50,8 +51,27 @@ public class DescribeTablesResponseUnmarshaller {
 			table.setInstanceId(_ctx.longValue("DescribeTablesResponse.Items["+ i +"].InstanceId"));
 			table.setS2Count(_ctx.integerValue("DescribeTablesResponse.Items["+ i +"].S2Count"));
 			table.setS3Count(_ctx.integerValue("DescribeTablesResponse.Items["+ i +"].S3Count"));
+			table.setS1Count(_ctx.integerValue("DescribeTablesResponse.Items["+ i +"].S1Count"));
+			table.setCountDetails(_ctx.stringValue("DescribeTablesResponse.Items["+ i +"].CountDetails"));
 			table.setTotalRows(_ctx.integerValue("DescribeTablesResponse.Items["+ i +"].TotalRows"));
 			table.setLastScanTime(_ctx.longValue("DescribeTablesResponse.Items["+ i +"].LastScanTime"));
+			table.setRegionName(_ctx.stringValue("DescribeTablesResponse.Items["+ i +"].RegionName"));
+			table.setInstanceName(_ctx.stringValue("DescribeTablesResponse.Items["+ i +"].InstanceName"));
+			table.setSensLevelName(_ctx.stringValue("DescribeTablesResponse.Items["+ i +"].SensLevelName"));
+			table.setInstanceDescription(_ctx.stringValue("DescribeTablesResponse.Items["+ i +"].InstanceDescription"));
+			table.setTenantName(_ctx.stringValue("DescribeTablesResponse.Items["+ i +"].TenantName"));
+
+			List<Rule> ruleList = new ArrayList<Rule>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeTablesResponse.Items["+ i +"].RuleList.Length"); j++) {
+				Rule rule = new Rule();
+				rule.setName(_ctx.stringValue("DescribeTablesResponse.Items["+ i +"].RuleList["+ j +"].Name"));
+				rule.setDisplayName(_ctx.stringValue("DescribeTablesResponse.Items["+ i +"].RuleList["+ j +"].DisplayName"));
+				rule.setCount(_ctx.longValue("DescribeTablesResponse.Items["+ i +"].RuleList["+ j +"].Count"));
+				rule.setRiskLevelId(_ctx.longValue("DescribeTablesResponse.Items["+ i +"].RuleList["+ j +"].RiskLevelId"));
+
+				ruleList.add(rule);
+			}
+			table.setRuleList(ruleList);
 
 			items.add(table);
 		}

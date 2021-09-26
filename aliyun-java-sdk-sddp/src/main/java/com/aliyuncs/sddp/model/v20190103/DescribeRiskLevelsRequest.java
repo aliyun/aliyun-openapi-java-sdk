@@ -22,56 +22,17 @@ import com.aliyuncs.sddp.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeAuthAccountsRequest extends RpcAcsRequest<DescribeAuthAccountsResponse> {
+public class DescribeRiskLevelsRequest extends RpcAcsRequest<DescribeRiskLevelsResponse> {
 	   
 
-	private Integer featureType;
-
-	private Integer currentPage;
-
-	private Integer pageSize;
-
 	private String lang;
-	public DescribeAuthAccountsRequest() {
-		super("Sddp", "2019-01-03", "DescribeAuthAccounts", "sddp");
+	public DescribeRiskLevelsRequest() {
+		super("Sddp", "2019-01-03", "DescribeRiskLevels");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Integer getFeatureType() {
-		return this.featureType;
-	}
-
-	public void setFeatureType(Integer featureType) {
-		this.featureType = featureType;
-		if(featureType != null){
-			putQueryParameter("FeatureType", featureType.toString());
-		}
-	}
-
-	public Integer getCurrentPage() {
-		return this.currentPage;
-	}
-
-	public void setCurrentPage(Integer currentPage) {
-		this.currentPage = currentPage;
-		if(currentPage != null){
-			putQueryParameter("CurrentPage", currentPage.toString());
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
 	}
 
 	public String getLang() {
@@ -86,8 +47,8 @@ public class DescribeAuthAccountsRequest extends RpcAcsRequest<DescribeAuthAccou
 	}
 
 	@Override
-	public Class<DescribeAuthAccountsResponse> getResponseClass() {
-		return DescribeAuthAccountsResponse.class;
+	public Class<DescribeRiskLevelsResponse> getResponseClass() {
+		return DescribeRiskLevelsResponse.class;
 	}
 
 }

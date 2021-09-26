@@ -119,6 +119,14 @@ public class DescribeRulesResponse extends AcsResponse {
 
 		private Integer warnLevel;
 
+		private String majorKey;
+
+		private String contentCategory;
+
+		private String target;
+
+		private String groupId;
+
 		public Long getId() {
 			return this.id;
 		}
@@ -285,6 +293,38 @@ public class DescribeRulesResponse extends AcsResponse {
 
 		public void setWarnLevel(Integer warnLevel) {
 			this.warnLevel = warnLevel;
+		}
+
+		public String getMajorKey() {
+			return this.majorKey;
+		}
+
+		public void setMajorKey(String majorKey) {
+			this.majorKey = majorKey;
+		}
+
+		public String getContentCategory() {
+			return this.contentCategory;
+		}
+
+		public void setContentCategory(String contentCategory) {
+			this.contentCategory = contentCategory;
+		}
+
+		public String getTarget() {
+			return this.target;
+		}
+
+		public void setTarget(String target) {
+			this.target = target;
+		}
+
+		public String getGroupId() {
+			return this.groupId;
+		}
+
+		public void setGroupId(String groupId) {
+			this.groupId = groupId;
 		}
 	}
 

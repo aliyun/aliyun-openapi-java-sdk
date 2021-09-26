@@ -14,16 +14,17 @@
 
 package com.aliyuncs.sddp.transform.v20190103;
 
-import com.aliyuncs.sddp.model.v20190103.ModifySaleFlowCountTypeResponse;
+import com.aliyuncs.sddp.model.v20190103.CreateScanTaskResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class ModifySaleFlowCountTypeResponseUnmarshaller {
+public class CreateScanTaskResponseUnmarshaller {
 
-	public static ModifySaleFlowCountTypeResponse unmarshall(ModifySaleFlowCountTypeResponse modifySaleFlowCountTypeResponse, UnmarshallerContext _ctx) {
+	public static CreateScanTaskResponse unmarshall(CreateScanTaskResponse createScanTaskResponse, UnmarshallerContext _ctx) {
 		
-		modifySaleFlowCountTypeResponse.setRequestId(_ctx.stringValue("ModifySaleFlowCountTypeResponse.RequestId"));
+		createScanTaskResponse.setRequestId(_ctx.stringValue("CreateScanTaskResponse.RequestId"));
+		createScanTaskResponse.setId(_ctx.integerValue("CreateScanTaskResponse.Id"));
 	 
-	 	return modifySaleFlowCountTypeResponse;
+	 	return createScanTaskResponse;
 	}
 }

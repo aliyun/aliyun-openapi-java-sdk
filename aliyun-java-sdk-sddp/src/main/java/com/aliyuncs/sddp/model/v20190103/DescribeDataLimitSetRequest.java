@@ -22,18 +22,16 @@ import com.aliyuncs.sddp.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeUseFlowRequest extends RpcAcsRequest<DescribeUseFlowResponse> {
+public class DescribeDataLimitSetRequest extends RpcAcsRequest<DescribeDataLimitSetResponse> {
 	   
 
-	private String dateType;
-
-	private Integer featureType;
-
-	private Integer days;
+	private String parentId;
 
 	private String lang;
-	public DescribeUseFlowRequest() {
-		super("Sddp", "2019-01-03", "DescribeUseFlow", "sddp");
+
+	private Integer resourceType;
+	public DescribeDataLimitSetRequest() {
+		super("Sddp", "2019-01-03", "DescribeDataLimitSet");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -41,36 +39,14 @@ public class DescribeUseFlowRequest extends RpcAcsRequest<DescribeUseFlowRespons
 		} catch (Exception e) {}
 	}
 
-	public String getDateType() {
-		return this.dateType;
+	public String getParentId() {
+		return this.parentId;
 	}
 
-	public void setDateType(String dateType) {
-		this.dateType = dateType;
-		if(dateType != null){
-			putQueryParameter("DateType", dateType);
-		}
-	}
-
-	public Integer getFeatureType() {
-		return this.featureType;
-	}
-
-	public void setFeatureType(Integer featureType) {
-		this.featureType = featureType;
-		if(featureType != null){
-			putQueryParameter("FeatureType", featureType.toString());
-		}
-	}
-
-	public Integer getDays() {
-		return this.days;
-	}
-
-	public void setDays(Integer days) {
-		this.days = days;
-		if(days != null){
-			putQueryParameter("Days", days.toString());
+	public void setParentId(String parentId) {
+		this.parentId = parentId;
+		if(parentId != null){
+			putQueryParameter("ParentId", parentId);
 		}
 	}
 
@@ -85,9 +61,20 @@ public class DescribeUseFlowRequest extends RpcAcsRequest<DescribeUseFlowRespons
 		}
 	}
 
+	public Integer getResourceType() {
+		return this.resourceType;
+	}
+
+	public void setResourceType(Integer resourceType) {
+		this.resourceType = resourceType;
+		if(resourceType != null){
+			putQueryParameter("ResourceType", resourceType.toString());
+		}
+	}
+
 	@Override
-	public Class<DescribeUseFlowResponse> getResponseClass() {
-		return DescribeUseFlowResponse.class;
+	public Class<DescribeDataLimitSetResponse> getResponseClass() {
+		return DescribeDataLimitSetResponse.class;
 	}
 
 }

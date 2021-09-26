@@ -1,3 +1,6 @@
+2021-09-26 Version: 1.0.3
+- Fix bugs for create config.
+
 2020-03-13 Version: 1.0.2
 - Support datamask api.
 

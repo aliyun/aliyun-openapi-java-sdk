@@ -109,6 +109,18 @@ public class DescribeEventTypesResponse extends AcsResponse {
 
 			private Integer status;
 
+			private Integer eventHitCount;
+
+			private String adaptedProduct;
+
+			private String configCode;
+
+			private Integer configContentType;
+
+			private String configDescription;
+
+			private String configValue;
+
 			public Long getId() {
 				return this.id;
 			}
@@ -147,6 +159,54 @@ public class DescribeEventTypesResponse extends AcsResponse {
 
 			public void setStatus(Integer status) {
 				this.status = status;
+			}
+
+			public Integer getEventHitCount() {
+				return this.eventHitCount;
+			}
+
+			public void setEventHitCount(Integer eventHitCount) {
+				this.eventHitCount = eventHitCount;
+			}
+
+			public String getAdaptedProduct() {
+				return this.adaptedProduct;
+			}
+
+			public void setAdaptedProduct(String adaptedProduct) {
+				this.adaptedProduct = adaptedProduct;
+			}
+
+			public String getConfigCode() {
+				return this.configCode;
+			}
+
+			public void setConfigCode(String configCode) {
+				this.configCode = configCode;
+			}
+
+			public Integer getConfigContentType() {
+				return this.configContentType;
+			}
+
+			public void setConfigContentType(Integer configContentType) {
+				this.configContentType = configContentType;
+			}
+
+			public String getConfigDescription() {
+				return this.configDescription;
+			}
+
+			public void setConfigDescription(String configDescription) {
+				this.configDescription = configDescription;
+			}
+
+			public String getConfigValue() {
+				return this.configValue;
+			}
+
+			public void setConfigValue(String configValue) {
+				this.configValue = configValue;
 			}
 		}
 	}

@@ -15,18 +15,16 @@
 package com.aliyuncs.sddp.model.v20190103;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.sddp.transform.v20190103.ModifyRuleStatusResponseUnmarshaller;
+import com.aliyuncs.sddp.transform.v20190103.DisableUserConfigResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ModifyRuleStatusResponse extends AcsResponse {
+public class DisableUserConfigResponse extends AcsResponse {
 
 	private String requestId;
-
-	private String failedIds;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -36,17 +34,9 @@ public class ModifyRuleStatusResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getFailedIds() {
-		return this.failedIds;
-	}
-
-	public void setFailedIds(String failedIds) {
-		this.failedIds = failedIds;
-	}
-
 	@Override
-	public ModifyRuleStatusResponse getInstance(UnmarshallerContext context) {
-		return	ModifyRuleStatusResponseUnmarshaller.unmarshall(this, context);
+	public DisableUserConfigResponse getInstance(UnmarshallerContext context) {
+		return	DisableUserConfigResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

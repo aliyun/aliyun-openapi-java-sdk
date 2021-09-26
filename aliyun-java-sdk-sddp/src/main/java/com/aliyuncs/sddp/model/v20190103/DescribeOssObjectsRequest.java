@@ -27,9 +27,15 @@ public class DescribeOssObjectsRequest extends RpcAcsRequest<DescribeOssObjectsR
 
 	private Integer riskLevelId;
 
+	private Long lastScanTimeEnd;
+
+	private Long lastScanTimeStart;
+
 	private Integer pageSize;
 
 	private String lang;
+
+	private String serviceRegionId;
 
 	private Integer currentPage;
 
@@ -39,7 +45,7 @@ public class DescribeOssObjectsRequest extends RpcAcsRequest<DescribeOssObjectsR
 
 	private Long ruleId;
 	public DescribeOssObjectsRequest() {
-		super("Sddp", "2019-01-03", "DescribeOssObjects", "sddp");
+		super("Sddp", "2019-01-03", "DescribeOssObjects");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -55,6 +61,28 @@ public class DescribeOssObjectsRequest extends RpcAcsRequest<DescribeOssObjectsR
 		this.riskLevelId = riskLevelId;
 		if(riskLevelId != null){
 			putQueryParameter("RiskLevelId", riskLevelId.toString());
+		}
+	}
+
+	public Long getLastScanTimeEnd() {
+		return this.lastScanTimeEnd;
+	}
+
+	public void setLastScanTimeEnd(Long lastScanTimeEnd) {
+		this.lastScanTimeEnd = lastScanTimeEnd;
+		if(lastScanTimeEnd != null){
+			putQueryParameter("LastScanTimeEnd", lastScanTimeEnd.toString());
+		}
+	}
+
+	public Long getLastScanTimeStart() {
+		return this.lastScanTimeStart;
+	}
+
+	public void setLastScanTimeStart(Long lastScanTimeStart) {
+		this.lastScanTimeStart = lastScanTimeStart;
+		if(lastScanTimeStart != null){
+			putQueryParameter("LastScanTimeStart", lastScanTimeStart.toString());
 		}
 	}
 
@@ -77,6 +105,17 @@ public class DescribeOssObjectsRequest extends RpcAcsRequest<DescribeOssObjectsR
 		this.lang = lang;
 		if(lang != null){
 			putQueryParameter("Lang", lang);
+		}
+	}
+
+	public String getServiceRegionId() {
+		return this.serviceRegionId;
+	}
+
+	public void setServiceRegionId(String serviceRegionId) {
+		this.serviceRegionId = serviceRegionId;
+		if(serviceRegionId != null){
+			putQueryParameter("ServiceRegionId", serviceRegionId);
 		}
 	}
 

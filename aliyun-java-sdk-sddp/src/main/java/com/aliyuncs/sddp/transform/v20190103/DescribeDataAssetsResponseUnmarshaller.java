@@ -41,7 +41,7 @@ public class DescribeDataAssetsResponseUnmarshaller {
 			asset.setProductId(_ctx.stringValue("DescribeDataAssetsResponse.Items["+ i +"].ProductId"));
 			asset.setProductCode(_ctx.stringValue("DescribeDataAssetsResponse.Items["+ i +"].ProductCode"));
 			asset.setProtection(_ctx.booleanValue("DescribeDataAssetsResponse.Items["+ i +"].Protection"));
-			asset.setLabelsec(_ctx.integerValue("DescribeDataAssetsResponse.Items["+ i +"].Labelsec"));
+			asset.setLabelsec(_ctx.booleanValue("DescribeDataAssetsResponse.Items["+ i +"].Labelsec"));
 			asset.setOdpsRiskLevelName(_ctx.stringValue("DescribeDataAssetsResponse.Items["+ i +"].OdpsRiskLevelName"));
 			asset.setSensitive(_ctx.booleanValue("DescribeDataAssetsResponse.Items["+ i +"].Sensitive"));
 			asset.setRiskLevelId(_ctx.longValue("DescribeDataAssetsResponse.Items["+ i +"].RiskLevelId"));
