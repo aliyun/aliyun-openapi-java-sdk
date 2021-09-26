@@ -25,17 +25,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListInstancesResponse extends AcsResponse {
 
+	private Boolean success;
+
 	private Integer httpStatusCode;
-
-	private String requestId;
-
-	private String errorMessage;
 
 	private String errorCode;
 
-	private Boolean success;
+	private String errorMessage;
+
+	private String requestId;
 
 	private Data data;
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
 
 	public Integer getHttpStatusCode() {
 		return this.httpStatusCode;
@@ -43,22 +51,6 @@ public class ListInstancesResponse extends AcsResponse {
 
 	public void setHttpStatusCode(Integer httpStatusCode) {
 		this.httpStatusCode = httpStatusCode;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
 	}
 
 	public String getErrorCode() {
@@ -69,12 +61,20 @@ public class ListInstancesResponse extends AcsResponse {
 		this.errorCode = errorCode;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getErrorMessage() {
+		return this.errorMessage;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Data getData() {
@@ -129,210 +129,66 @@ public class ListInstancesResponse extends AcsResponse {
 
 		public static class Instance {
 
-			private String status;
-
-			private Long cycTime;
-
-			private Long beginRunningTime;
-
-			private Long finishTime;
-
-			private String errorMessage;
-
-			private Long createTime;
-
-			private Long dagId;
-
-			private Integer priority;
-
-			private String taskType;
-
-			private String paramValues;
-
-			private String connection;
-
-			private Long baselineId;
-
-			private Integer dqcType;
-
-			private String dagType;
-
-			private Long businessId;
-
-			private Integer taskRerunTime;
-
-			private Long modifyTime;
-
-			private Boolean repeatability;
-
-			private Long repeatInterval;
+			private Long nodeId;
 
 			private Long instanceId;
 
-			private Long beginWaitResTime;
+			private Long dagId;
 
-			private Long relatedFlowId;
+			private String dagType;
+
+			private String status;
 
 			private Long bizdate;
+
+			private Long cycTime;
+
+			private Long createTime;
+
+			private Long modifyTime;
 
 			private String nodeName;
 
 			private Long beginWaitTimeTime;
 
+			private Long beginWaitResTime;
+
+			private Long beginRunningTime;
+
+			private String paramValues;
+
+			private Long finishTime;
+
+			private Integer priority;
+
+			private Long baselineId;
+
+			private Boolean repeatability;
+
+			private Long repeatInterval;
+
+			private String connection;
+
+			private Integer dqcType;
+
 			private String dqcDescription;
 
-			private Long nodeId;
+			private String errorMessage;
 
-			public String getStatus() {
-				return this.status;
+			private Long relatedFlowId;
+
+			private String taskType;
+
+			private Integer taskRerunTime;
+
+			private Long businessId;
+
+			public Long getNodeId() {
+				return this.nodeId;
 			}
 
-			public void setStatus(String status) {
-				this.status = status;
-			}
-
-			public Long getCycTime() {
-				return this.cycTime;
-			}
-
-			public void setCycTime(Long cycTime) {
-				this.cycTime = cycTime;
-			}
-
-			public Long getBeginRunningTime() {
-				return this.beginRunningTime;
-			}
-
-			public void setBeginRunningTime(Long beginRunningTime) {
-				this.beginRunningTime = beginRunningTime;
-			}
-
-			public Long getFinishTime() {
-				return this.finishTime;
-			}
-
-			public void setFinishTime(Long finishTime) {
-				this.finishTime = finishTime;
-			}
-
-			public String getErrorMessage() {
-				return this.errorMessage;
-			}
-
-			public void setErrorMessage(String errorMessage) {
-				this.errorMessage = errorMessage;
-			}
-
-			public Long getCreateTime() {
-				return this.createTime;
-			}
-
-			public void setCreateTime(Long createTime) {
-				this.createTime = createTime;
-			}
-
-			public Long getDagId() {
-				return this.dagId;
-			}
-
-			public void setDagId(Long dagId) {
-				this.dagId = dagId;
-			}
-
-			public Integer getPriority() {
-				return this.priority;
-			}
-
-			public void setPriority(Integer priority) {
-				this.priority = priority;
-			}
-
-			public String getTaskType() {
-				return this.taskType;
-			}
-
-			public void setTaskType(String taskType) {
-				this.taskType = taskType;
-			}
-
-			public String getParamValues() {
-				return this.paramValues;
-			}
-
-			public void setParamValues(String paramValues) {
-				this.paramValues = paramValues;
-			}
-
-			public String getConnection() {
-				return this.connection;
-			}
-
-			public void setConnection(String connection) {
-				this.connection = connection;
-			}
-
-			public Long getBaselineId() {
-				return this.baselineId;
-			}
-
-			public void setBaselineId(Long baselineId) {
-				this.baselineId = baselineId;
-			}
-
-			public Integer getDqcType() {
-				return this.dqcType;
-			}
-
-			public void setDqcType(Integer dqcType) {
-				this.dqcType = dqcType;
-			}
-
-			public String getDagType() {
-				return this.dagType;
-			}
-
-			public void setDagType(String dagType) {
-				this.dagType = dagType;
-			}
-
-			public Long getBusinessId() {
-				return this.businessId;
-			}
-
-			public void setBusinessId(Long businessId) {
-				this.businessId = businessId;
-			}
-
-			public Integer getTaskRerunTime() {
-				return this.taskRerunTime;
-			}
-
-			public void setTaskRerunTime(Integer taskRerunTime) {
-				this.taskRerunTime = taskRerunTime;
-			}
-
-			public Long getModifyTime() {
-				return this.modifyTime;
-			}
-
-			public void setModifyTime(Long modifyTime) {
-				this.modifyTime = modifyTime;
-			}
-
-			public Boolean getRepeatability() {
-				return this.repeatability;
-			}
-
-			public void setRepeatability(Boolean repeatability) {
-				this.repeatability = repeatability;
-			}
-
-			public Long getRepeatInterval() {
-				return this.repeatInterval;
-			}
-
-			public void setRepeatInterval(Long repeatInterval) {
-				this.repeatInterval = repeatInterval;
+			public void setNodeId(Long nodeId) {
+				this.nodeId = nodeId;
 			}
 
 			public Long getInstanceId() {
@@ -343,20 +199,28 @@ public class ListInstancesResponse extends AcsResponse {
 				this.instanceId = instanceId;
 			}
 
-			public Long getBeginWaitResTime() {
-				return this.beginWaitResTime;
+			public Long getDagId() {
+				return this.dagId;
 			}
 
-			public void setBeginWaitResTime(Long beginWaitResTime) {
-				this.beginWaitResTime = beginWaitResTime;
+			public void setDagId(Long dagId) {
+				this.dagId = dagId;
 			}
 
-			public Long getRelatedFlowId() {
-				return this.relatedFlowId;
+			public String getDagType() {
+				return this.dagType;
 			}
 
-			public void setRelatedFlowId(Long relatedFlowId) {
-				this.relatedFlowId = relatedFlowId;
+			public void setDagType(String dagType) {
+				this.dagType = dagType;
+			}
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
 			}
 
 			public Long getBizdate() {
@@ -365,6 +229,30 @@ public class ListInstancesResponse extends AcsResponse {
 
 			public void setBizdate(Long bizdate) {
 				this.bizdate = bizdate;
+			}
+
+			public Long getCycTime() {
+				return this.cycTime;
+			}
+
+			public void setCycTime(Long cycTime) {
+				this.cycTime = cycTime;
+			}
+
+			public Long getCreateTime() {
+				return this.createTime;
+			}
+
+			public void setCreateTime(Long createTime) {
+				this.createTime = createTime;
+			}
+
+			public Long getModifyTime() {
+				return this.modifyTime;
+			}
+
+			public void setModifyTime(Long modifyTime) {
+				this.modifyTime = modifyTime;
 			}
 
 			public String getNodeName() {
@@ -383,6 +271,86 @@ public class ListInstancesResponse extends AcsResponse {
 				this.beginWaitTimeTime = beginWaitTimeTime;
 			}
 
+			public Long getBeginWaitResTime() {
+				return this.beginWaitResTime;
+			}
+
+			public void setBeginWaitResTime(Long beginWaitResTime) {
+				this.beginWaitResTime = beginWaitResTime;
+			}
+
+			public Long getBeginRunningTime() {
+				return this.beginRunningTime;
+			}
+
+			public void setBeginRunningTime(Long beginRunningTime) {
+				this.beginRunningTime = beginRunningTime;
+			}
+
+			public String getParamValues() {
+				return this.paramValues;
+			}
+
+			public void setParamValues(String paramValues) {
+				this.paramValues = paramValues;
+			}
+
+			public Long getFinishTime() {
+				return this.finishTime;
+			}
+
+			public void setFinishTime(Long finishTime) {
+				this.finishTime = finishTime;
+			}
+
+			public Integer getPriority() {
+				return this.priority;
+			}
+
+			public void setPriority(Integer priority) {
+				this.priority = priority;
+			}
+
+			public Long getBaselineId() {
+				return this.baselineId;
+			}
+
+			public void setBaselineId(Long baselineId) {
+				this.baselineId = baselineId;
+			}
+
+			public Boolean getRepeatability() {
+				return this.repeatability;
+			}
+
+			public void setRepeatability(Boolean repeatability) {
+				this.repeatability = repeatability;
+			}
+
+			public Long getRepeatInterval() {
+				return this.repeatInterval;
+			}
+
+			public void setRepeatInterval(Long repeatInterval) {
+				this.repeatInterval = repeatInterval;
+			}
+
+			public String getConnection() {
+				return this.connection;
+			}
+
+			public void setConnection(String connection) {
+				this.connection = connection;
+			}
+
+			public Integer getDqcType() {
+				return this.dqcType;
+			}
+
+			public void setDqcType(Integer dqcType) {
+				this.dqcType = dqcType;
+			}
+
 			public String getDqcDescription() {
 				return this.dqcDescription;
 			}
@@ -391,12 +359,44 @@ public class ListInstancesResponse extends AcsResponse {
 				this.dqcDescription = dqcDescription;
 			}
 
-			public Long getNodeId() {
-				return this.nodeId;
+			public String getErrorMessage() {
+				return this.errorMessage;
 			}
 
-			public void setNodeId(Long nodeId) {
-				this.nodeId = nodeId;
+			public void setErrorMessage(String errorMessage) {
+				this.errorMessage = errorMessage;
+			}
+
+			public Long getRelatedFlowId() {
+				return this.relatedFlowId;
+			}
+
+			public void setRelatedFlowId(Long relatedFlowId) {
+				this.relatedFlowId = relatedFlowId;
+			}
+
+			public String getTaskType() {
+				return this.taskType;
+			}
+
+			public void setTaskType(String taskType) {
+				this.taskType = taskType;
+			}
+
+			public Integer getTaskRerunTime() {
+				return this.taskRerunTime;
+			}
+
+			public void setTaskRerunTime(Integer taskRerunTime) {
+				this.taskRerunTime = taskRerunTime;
+			}
+
+			public Long getBusinessId() {
+				return this.businessId;
+			}
+
+			public void setBusinessId(Long businessId) {
+				this.businessId = businessId;
 			}
 		}
 	}

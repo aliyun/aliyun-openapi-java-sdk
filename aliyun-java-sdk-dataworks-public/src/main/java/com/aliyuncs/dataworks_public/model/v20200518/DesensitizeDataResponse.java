@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DesensitizeDataResponse extends AcsResponse {
 
-	private String desensitizeData;
-
 	private String requestId;
 
-	public String getDesensitizeData() {
-		return this.desensitizeData;
-	}
-
-	public void setDesensitizeData(String desensitizeData) {
-		this.desensitizeData = desensitizeData;
-	}
+	private String desensitizeData;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -42,6 +34,14 @@ public class DesensitizeDataResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getDesensitizeData() {
+		return this.desensitizeData;
+	}
+
+	public void setDesensitizeData(String desensitizeData) {
+		this.desensitizeData = desensitizeData;
 	}
 
 	@Override

@@ -24,33 +24,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DeployFileResponse extends AcsResponse {
 
-	private Integer httpStatusCode;
-
-	private Long data;
-
 	private String requestId;
-
-	private String errorMessage;
 
 	private Boolean success;
 
 	private String errorCode;
 
-	public Integer getHttpStatusCode() {
-		return this.httpStatusCode;
-	}
+	private String errorMessage;
 
-	public void setHttpStatusCode(Integer httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
-	}
+	private Long data;
 
-	public Long getData() {
-		return this.data;
-	}
-
-	public void setData(Long data) {
-		this.data = data;
-	}
+	private Integer httpStatusCode;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -58,14 +42,6 @@ public class DeployFileResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
 	}
 
 	public Boolean getSuccess() {
@@ -82,6 +58,30 @@ public class DeployFileResponse extends AcsResponse {
 
 	public void setErrorCode(String errorCode) {
 		this.errorCode = errorCode;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
+	public Long getData() {
+		return this.data;
+	}
+
+	public void setData(Long data) {
+		this.data = data;
+	}
+
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
+	}
+
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
 	}
 
 	@Override

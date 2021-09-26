@@ -24,24 +24,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DeleteQualityRuleResponse extends AcsResponse {
 
-	private Integer httpStatusCode;
+	private String errorCode;
 
 	private Boolean data;
 
 	private String errorMessage;
 
-	private String requestId;
-
-	private String errorCode;
-
 	private Boolean success;
 
-	public Integer getHttpStatusCode() {
-		return this.httpStatusCode;
+	private Integer httpStatusCode;
+
+	private String requestId;
+
+	public String getErrorCode() {
+		return this.errorCode;
 	}
 
-	public void setHttpStatusCode(Integer httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
 	}
 
 	public Boolean getData() {
@@ -60,28 +60,28 @@ public class DeleteQualityRuleResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
-	}
-
 	public Boolean getSuccess() {
 		return this.success;
 	}
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
+	}
+
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

@@ -33,20 +33,20 @@ public class GetDISyncInstanceInfoResponseUnmarshaller {
 
 		Data data = new Data();
 		data.setStatus(_ctx.stringValue("GetDISyncInstanceInfoResponse.Data.Status"));
-		data.setMessage(_ctx.stringValue("GetDISyncInstanceInfoResponse.Data.Message"));
 		data.setName(_ctx.stringValue("GetDISyncInstanceInfoResponse.Data.Name"));
+		data.setMessage(_ctx.stringValue("GetDISyncInstanceInfoResponse.Data.Message"));
 
 		SolutionInfo solutionInfo = new SolutionInfo();
-		solutionInfo.setStatus(_ctx.stringValue("GetDISyncInstanceInfoResponse.Data.SolutionInfo.Status"));
 		solutionInfo.setId(_ctx.longValue("GetDISyncInstanceInfoResponse.Data.SolutionInfo.Id"));
+		solutionInfo.setStatus(_ctx.stringValue("GetDISyncInstanceInfoResponse.Data.SolutionInfo.Status"));
 		solutionInfo.setCreatorName(_ctx.stringValue("GetDISyncInstanceInfoResponse.Data.SolutionInfo.CreatorName"));
 
 		List<StepDetailItem> stepDetail = new ArrayList<StepDetailItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetDISyncInstanceInfoResponse.Data.SolutionInfo.StepDetail.Length"); i++) {
 			StepDetailItem stepDetailItem = new StepDetailItem();
-			stepDetailItem.setStatus(_ctx.stringValue("GetDISyncInstanceInfoResponse.Data.SolutionInfo.StepDetail["+ i +"].Status"));
-			stepDetailItem.setStepId(_ctx.longValue("GetDISyncInstanceInfoResponse.Data.SolutionInfo.StepDetail["+ i +"].StepId"));
 			stepDetailItem.setStepName(_ctx.stringValue("GetDISyncInstanceInfoResponse.Data.SolutionInfo.StepDetail["+ i +"].StepName"));
+			stepDetailItem.setStepId(_ctx.longValue("GetDISyncInstanceInfoResponse.Data.SolutionInfo.StepDetail["+ i +"].StepId"));
+			stepDetailItem.setStatus(_ctx.stringValue("GetDISyncInstanceInfoResponse.Data.SolutionInfo.StepDetail["+ i +"].Status"));
 
 			stepDetail.add(stepDetailItem);
 		}

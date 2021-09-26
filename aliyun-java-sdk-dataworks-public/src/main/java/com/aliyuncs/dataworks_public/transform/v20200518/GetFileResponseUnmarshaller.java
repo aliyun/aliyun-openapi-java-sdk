@@ -31,51 +31,51 @@ public class GetFileResponseUnmarshaller {
 	public static GetFileResponse unmarshall(GetFileResponse getFileResponse, UnmarshallerContext _ctx) {
 		
 		getFileResponse.setRequestId(_ctx.stringValue("GetFileResponse.RequestId"));
-		getFileResponse.setHttpStatusCode(_ctx.integerValue("GetFileResponse.HttpStatusCode"));
-		getFileResponse.setErrorMessage(_ctx.stringValue("GetFileResponse.ErrorMessage"));
-		getFileResponse.setErrorCode(_ctx.stringValue("GetFileResponse.ErrorCode"));
 		getFileResponse.setSuccess(_ctx.booleanValue("GetFileResponse.Success"));
+		getFileResponse.setErrorCode(_ctx.stringValue("GetFileResponse.ErrorCode"));
+		getFileResponse.setErrorMessage(_ctx.stringValue("GetFileResponse.ErrorMessage"));
+		getFileResponse.setHttpStatusCode(_ctx.integerValue("GetFileResponse.HttpStatusCode"));
 
 		Data data = new Data();
 
 		File file = new File();
-		file.setCommitStatus(_ctx.integerValue("GetFileResponse.Data.File.CommitStatus"));
-		file.setAutoParsing(_ctx.booleanValue("GetFileResponse.Data.File.AutoParsing"));
-		file.setOwner(_ctx.stringValue("GetFileResponse.Data.File.Owner"));
-		file.setCreateTime(_ctx.longValue("GetFileResponse.Data.File.CreateTime"));
-		file.setFileType(_ctx.integerValue("GetFileResponse.Data.File.FileType"));
-		file.setCurrentVersion(_ctx.integerValue("GetFileResponse.Data.File.CurrentVersion"));
-		file.setBizId(_ctx.longValue("GetFileResponse.Data.File.BizId"));
-		file.setLastEditUser(_ctx.stringValue("GetFileResponse.Data.File.LastEditUser"));
-		file.setFileName(_ctx.stringValue("GetFileResponse.Data.File.FileName"));
 		file.setConnectionName(_ctx.stringValue("GetFileResponse.Data.File.ConnectionName"));
-		file.setUseType(_ctx.stringValue("GetFileResponse.Data.File.UseType"));
-		file.setFileFolderId(_ctx.stringValue("GetFileResponse.Data.File.FileFolderId"));
 		file.setParentId(_ctx.longValue("GetFileResponse.Data.File.ParentId"));
-		file.setCreateUser(_ctx.stringValue("GetFileResponse.Data.File.CreateUser"));
 		file.setIsMaxCompute(_ctx.booleanValue("GetFileResponse.Data.File.IsMaxCompute"));
-		file.setBusinessId(_ctx.longValue("GetFileResponse.Data.File.BusinessId"));
+		file.setCreateTime(_ctx.longValue("GetFileResponse.Data.File.CreateTime"));
+		file.setCreateUser(_ctx.stringValue("GetFileResponse.Data.File.CreateUser"));
+		file.setBizId(_ctx.longValue("GetFileResponse.Data.File.BizId"));
+		file.setFileFolderId(_ctx.stringValue("GetFileResponse.Data.File.FileFolderId"));
+		file.setFileName(_ctx.stringValue("GetFileResponse.Data.File.FileName"));
+		file.setFileType(_ctx.integerValue("GetFileResponse.Data.File.FileType"));
+		file.setUseType(_ctx.stringValue("GetFileResponse.Data.File.UseType"));
 		file.setFileDescription(_ctx.stringValue("GetFileResponse.Data.File.FileDescription"));
-		file.setDeletedStatus(_ctx.stringValue("GetFileResponse.Data.File.DeletedStatus"));
-		file.setLastEditTime(_ctx.longValue("GetFileResponse.Data.File.LastEditTime"));
 		file.setContent(_ctx.stringValue("GetFileResponse.Data.File.Content"));
 		file.setNodeId(_ctx.longValue("GetFileResponse.Data.File.NodeId"));
+		file.setCurrentVersion(_ctx.integerValue("GetFileResponse.Data.File.CurrentVersion"));
+		file.setOwner(_ctx.stringValue("GetFileResponse.Data.File.Owner"));
+		file.setLastEditUser(_ctx.stringValue("GetFileResponse.Data.File.LastEditUser"));
+		file.setLastEditTime(_ctx.longValue("GetFileResponse.Data.File.LastEditTime"));
+		file.setCommitStatus(_ctx.integerValue("GetFileResponse.Data.File.CommitStatus"));
+		file.setDeletedStatus(_ctx.stringValue("GetFileResponse.Data.File.DeletedStatus"));
+		file.setBusinessId(_ctx.longValue("GetFileResponse.Data.File.BusinessId"));
+		file.setAutoParsing(_ctx.booleanValue("GetFileResponse.Data.File.AutoParsing"));
 		data.setFile(file);
 
 		NodeConfiguration nodeConfiguration = new NodeConfiguration();
+		nodeConfiguration.setAutoRerunTimes(_ctx.integerValue("GetFileResponse.Data.NodeConfiguration.AutoRerunTimes"));
+		nodeConfiguration.setAutoRerunIntervalMillis(_ctx.integerValue("GetFileResponse.Data.NodeConfiguration.AutoRerunIntervalMillis"));
 		nodeConfiguration.setRerunMode(_ctx.stringValue("GetFileResponse.Data.NodeConfiguration.RerunMode"));
-		nodeConfiguration.setSchedulerType(_ctx.stringValue("GetFileResponse.Data.NodeConfiguration.SchedulerType"));
 		nodeConfiguration.setStop(_ctx.booleanValue("GetFileResponse.Data.NodeConfiguration.Stop"));
 		nodeConfiguration.setParaValue(_ctx.stringValue("GetFileResponse.Data.NodeConfiguration.ParaValue"));
 		nodeConfiguration.setStartEffectDate(_ctx.longValue("GetFileResponse.Data.NodeConfiguration.StartEffectDate"));
 		nodeConfiguration.setEndEffectDate(_ctx.longValue("GetFileResponse.Data.NodeConfiguration.EndEffectDate"));
+		nodeConfiguration.setCronExpress(_ctx.stringValue("GetFileResponse.Data.NodeConfiguration.CronExpress"));
 		nodeConfiguration.setCycleType(_ctx.stringValue("GetFileResponse.Data.NodeConfiguration.CycleType"));
+		nodeConfiguration.setDependentType(_ctx.stringValue("GetFileResponse.Data.NodeConfiguration.DependentType"));
 		nodeConfiguration.setDependentNodeIdList(_ctx.stringValue("GetFileResponse.Data.NodeConfiguration.DependentNodeIdList"));
 		nodeConfiguration.setResourceGroupId(_ctx.longValue("GetFileResponse.Data.NodeConfiguration.ResourceGroupId"));
-		nodeConfiguration.setDependentType(_ctx.stringValue("GetFileResponse.Data.NodeConfiguration.DependentType"));
-		nodeConfiguration.setAutoRerunTimes(_ctx.integerValue("GetFileResponse.Data.NodeConfiguration.AutoRerunTimes"));
-		nodeConfiguration.setAutoRerunIntervalMillis(_ctx.integerValue("GetFileResponse.Data.NodeConfiguration.AutoRerunIntervalMillis"));
-		nodeConfiguration.setCronExpress(_ctx.stringValue("GetFileResponse.Data.NodeConfiguration.CronExpress"));
+		nodeConfiguration.setSchedulerType(_ctx.stringValue("GetFileResponse.Data.NodeConfiguration.SchedulerType"));
 
 		List<NodeInputOutput> inputList = new ArrayList<NodeInputOutput>();
 		for (int i = 0; i < _ctx.lengthValue("GetFileResponse.Data.NodeConfiguration.InputList.Length"); i++) {
@@ -90,8 +90,8 @@ public class GetFileResponseUnmarshaller {
 		List<NodeInputOutput1> outputList = new ArrayList<NodeInputOutput1>();
 		for (int i = 0; i < _ctx.lengthValue("GetFileResponse.Data.NodeConfiguration.OutputList.Length"); i++) {
 			NodeInputOutput1 nodeInputOutput1 = new NodeInputOutput1();
-			nodeInputOutput1.setRefTableName(_ctx.stringValue("GetFileResponse.Data.NodeConfiguration.OutputList["+ i +"].RefTableName"));
 			nodeInputOutput1.setOutput(_ctx.stringValue("GetFileResponse.Data.NodeConfiguration.OutputList["+ i +"].Output"));
+			nodeInputOutput1.setRefTableName(_ctx.stringValue("GetFileResponse.Data.NodeConfiguration.OutputList["+ i +"].RefTableName"));
 
 			outputList.add(nodeInputOutput1);
 		}

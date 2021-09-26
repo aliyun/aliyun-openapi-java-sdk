@@ -28,44 +28,44 @@ public class ListQualityRulesResponseUnmarshaller {
 	public static ListQualityRulesResponse unmarshall(ListQualityRulesResponse listQualityRulesResponse, UnmarshallerContext _ctx) {
 		
 		listQualityRulesResponse.setRequestId(_ctx.stringValue("ListQualityRulesResponse.RequestId"));
-		listQualityRulesResponse.setHttpStatusCode(_ctx.integerValue("ListQualityRulesResponse.HttpStatusCode"));
-		listQualityRulesResponse.setErrorMessage(_ctx.stringValue("ListQualityRulesResponse.ErrorMessage"));
-		listQualityRulesResponse.setSuccess(_ctx.booleanValue("ListQualityRulesResponse.Success"));
 		listQualityRulesResponse.setErrorCode(_ctx.stringValue("ListQualityRulesResponse.ErrorCode"));
+		listQualityRulesResponse.setSuccess(_ctx.booleanValue("ListQualityRulesResponse.Success"));
+		listQualityRulesResponse.setErrorMessage(_ctx.stringValue("ListQualityRulesResponse.ErrorMessage"));
+		listQualityRulesResponse.setHttpStatusCode(_ctx.integerValue("ListQualityRulesResponse.HttpStatusCode"));
 
 		Data data = new Data();
+		data.setTotalCount(_ctx.longValue("ListQualityRulesResponse.Data.TotalCount"));
 		data.setPageNumber(_ctx.integerValue("ListQualityRulesResponse.Data.PageNumber"));
 		data.setPageSize(_ctx.integerValue("ListQualityRulesResponse.Data.PageSize"));
-		data.setTotalCount(_ctx.longValue("ListQualityRulesResponse.Data.TotalCount"));
 
 		List<RulesItem> rules = new ArrayList<RulesItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListQualityRulesResponse.Data.Rules.Length"); i++) {
 			RulesItem rulesItem = new RulesItem();
-			rulesItem.setBlockType(_ctx.integerValue("ListQualityRulesResponse.Data.Rules["+ i +"].BlockType"));
-			rulesItem.setOnDutyAccountName(_ctx.stringValue("ListQualityRulesResponse.Data.Rules["+ i +"].OnDutyAccountName"));
-			rulesItem.setProperty(_ctx.stringValue("ListQualityRulesResponse.Data.Rules["+ i +"].Property"));
-			rulesItem.setWarningThreshold(_ctx.stringValue("ListQualityRulesResponse.Data.Rules["+ i +"].WarningThreshold"));
-			rulesItem.setTableName(_ctx.stringValue("ListQualityRulesResponse.Data.Rules["+ i +"].TableName"));
-			rulesItem.setOnDuty(_ctx.stringValue("ListQualityRulesResponse.Data.Rules["+ i +"].OnDuty"));
-			rulesItem.setComment(_ctx.stringValue("ListQualityRulesResponse.Data.Rules["+ i +"].Comment"));
-			rulesItem.setRuleCheckerRelationId(_ctx.integerValue("ListQualityRulesResponse.Data.Rules["+ i +"].RuleCheckerRelationId"));
-			rulesItem.setFixCheck(_ctx.booleanValue("ListQualityRulesResponse.Data.Rules["+ i +"].FixCheck"));
-			rulesItem.setMethodId(_ctx.integerValue("ListQualityRulesResponse.Data.Rules["+ i +"].MethodId"));
-			rulesItem.setTemplateName(_ctx.stringValue("ListQualityRulesResponse.Data.Rules["+ i +"].TemplateName"));
-			rulesItem.setTrend(_ctx.stringValue("ListQualityRulesResponse.Data.Rules["+ i +"].Trend"));
-			rulesItem.setHistoryWarningThreshold(_ctx.stringValue("ListQualityRulesResponse.Data.Rules["+ i +"].HistoryWarningThreshold"));
-			rulesItem.setRuleType(_ctx.integerValue("ListQualityRulesResponse.Data.Rules["+ i +"].RuleType"));
-			rulesItem.setMatchExpression(_ctx.stringValue("ListQualityRulesResponse.Data.Rules["+ i +"].MatchExpression"));
 			rulesItem.setProjectName(_ctx.stringValue("ListQualityRulesResponse.Data.Rules["+ i +"].ProjectName"));
-			rulesItem.setPropertyKey(_ctx.stringValue("ListQualityRulesResponse.Data.Rules["+ i +"].PropertyKey"));
-			rulesItem.setCriticalThreshold(_ctx.stringValue("ListQualityRulesResponse.Data.Rules["+ i +"].CriticalThreshold"));
-			rulesItem.setHistoryCriticalThreshold(_ctx.stringValue("ListQualityRulesResponse.Data.Rules["+ i +"].HistoryCriticalThreshold"));
-			rulesItem.setMethodName(_ctx.stringValue("ListQualityRulesResponse.Data.Rules["+ i +"].MethodName"));
-			rulesItem.setCheckerId(_ctx.integerValue("ListQualityRulesResponse.Data.Rules["+ i +"].CheckerId"));
-			rulesItem.setEntityId(_ctx.integerValue("ListQualityRulesResponse.Data.Rules["+ i +"].EntityId"));
-			rulesItem.setExpectValue(_ctx.stringValue("ListQualityRulesResponse.Data.Rules["+ i +"].ExpectValue"));
-			rulesItem.setTemplateId(_ctx.integerValue("ListQualityRulesResponse.Data.Rules["+ i +"].TemplateId"));
+			rulesItem.setTableName(_ctx.stringValue("ListQualityRulesResponse.Data.Rules["+ i +"].TableName"));
 			rulesItem.setId(_ctx.integerValue("ListQualityRulesResponse.Data.Rules["+ i +"].Id"));
+			rulesItem.setEntityId(_ctx.integerValue("ListQualityRulesResponse.Data.Rules["+ i +"].EntityId"));
+			rulesItem.setProperty(_ctx.stringValue("ListQualityRulesResponse.Data.Rules["+ i +"].Property"));
+			rulesItem.setMethodId(_ctx.integerValue("ListQualityRulesResponse.Data.Rules["+ i +"].MethodId"));
+			rulesItem.setMethodName(_ctx.stringValue("ListQualityRulesResponse.Data.Rules["+ i +"].MethodName"));
+			rulesItem.setOnDuty(_ctx.stringValue("ListQualityRulesResponse.Data.Rules["+ i +"].OnDuty"));
+			rulesItem.setRuleType(_ctx.integerValue("ListQualityRulesResponse.Data.Rules["+ i +"].RuleType"));
+			rulesItem.setBlockType(_ctx.integerValue("ListQualityRulesResponse.Data.Rules["+ i +"].BlockType"));
+			rulesItem.setTemplateId(_ctx.integerValue("ListQualityRulesResponse.Data.Rules["+ i +"].TemplateId"));
+			rulesItem.setTemplateName(_ctx.stringValue("ListQualityRulesResponse.Data.Rules["+ i +"].TemplateName"));
+			rulesItem.setRuleCheckerRelationId(_ctx.integerValue("ListQualityRulesResponse.Data.Rules["+ i +"].RuleCheckerRelationId"));
+			rulesItem.setCheckerId(_ctx.integerValue("ListQualityRulesResponse.Data.Rules["+ i +"].CheckerId"));
+			rulesItem.setFixCheck(_ctx.booleanValue("ListQualityRulesResponse.Data.Rules["+ i +"].FixCheck"));
+			rulesItem.setTrend(_ctx.stringValue("ListQualityRulesResponse.Data.Rules["+ i +"].Trend"));
+			rulesItem.setWarningThreshold(_ctx.stringValue("ListQualityRulesResponse.Data.Rules["+ i +"].WarningThreshold"));
+			rulesItem.setCriticalThreshold(_ctx.stringValue("ListQualityRulesResponse.Data.Rules["+ i +"].CriticalThreshold"));
+			rulesItem.setHistoryWarningThreshold(_ctx.stringValue("ListQualityRulesResponse.Data.Rules["+ i +"].HistoryWarningThreshold"));
+			rulesItem.setHistoryCriticalThreshold(_ctx.stringValue("ListQualityRulesResponse.Data.Rules["+ i +"].HistoryCriticalThreshold"));
+			rulesItem.setPropertyKey(_ctx.stringValue("ListQualityRulesResponse.Data.Rules["+ i +"].PropertyKey"));
+			rulesItem.setMatchExpression(_ctx.stringValue("ListQualityRulesResponse.Data.Rules["+ i +"].MatchExpression"));
+			rulesItem.setComment(_ctx.stringValue("ListQualityRulesResponse.Data.Rules["+ i +"].Comment"));
+			rulesItem.setExpectValue(_ctx.stringValue("ListQualityRulesResponse.Data.Rules["+ i +"].ExpectValue"));
+			rulesItem.setOnDutyAccountName(_ctx.stringValue("ListQualityRulesResponse.Data.Rules["+ i +"].OnDutyAccountName"));
 
 			rules.add(rulesItem);
 		}

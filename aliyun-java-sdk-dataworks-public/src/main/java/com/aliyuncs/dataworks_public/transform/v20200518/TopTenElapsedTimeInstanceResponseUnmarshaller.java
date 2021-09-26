@@ -35,13 +35,13 @@ public class TopTenElapsedTimeInstanceResponseUnmarshaller {
 		List<ConsumeTimeRankItem> consumeTimeRank = new ArrayList<ConsumeTimeRankItem>();
 		for (int i = 0; i < _ctx.lengthValue("TopTenElapsedTimeInstanceResponse.InstanceConsumeTimeRank.ConsumeTimeRank.Length"); i++) {
 			ConsumeTimeRankItem consumeTimeRankItem = new ConsumeTimeRankItem();
-			consumeTimeRankItem.setOwner(_ctx.stringValue("TopTenElapsedTimeInstanceResponse.InstanceConsumeTimeRank.ConsumeTimeRank["+ i +"].Owner"));
 			consumeTimeRankItem.setNodeName(_ctx.stringValue("TopTenElapsedTimeInstanceResponse.InstanceConsumeTimeRank.ConsumeTimeRank["+ i +"].NodeName"));
-			consumeTimeRankItem.setBusinessDate(_ctx.longValue("TopTenElapsedTimeInstanceResponse.InstanceConsumeTimeRank.ConsumeTimeRank["+ i +"].BusinessDate"));
-			consumeTimeRankItem.setProgramType(_ctx.integerValue("TopTenElapsedTimeInstanceResponse.InstanceConsumeTimeRank.ConsumeTimeRank["+ i +"].ProgramType"));
-			consumeTimeRankItem.setInstanceId(_ctx.longValue("TopTenElapsedTimeInstanceResponse.InstanceConsumeTimeRank.ConsumeTimeRank["+ i +"].InstanceId"));
 			consumeTimeRankItem.setNodeId(_ctx.longValue("TopTenElapsedTimeInstanceResponse.InstanceConsumeTimeRank.ConsumeTimeRank["+ i +"].NodeId"));
+			consumeTimeRankItem.setBusinessDate(_ctx.longValue("TopTenElapsedTimeInstanceResponse.InstanceConsumeTimeRank.ConsumeTimeRank["+ i +"].BusinessDate"));
+			consumeTimeRankItem.setOwner(_ctx.stringValue("TopTenElapsedTimeInstanceResponse.InstanceConsumeTimeRank.ConsumeTimeRank["+ i +"].Owner"));
 			consumeTimeRankItem.setConsumed(_ctx.longValue("TopTenElapsedTimeInstanceResponse.InstanceConsumeTimeRank.ConsumeTimeRank["+ i +"].Consumed"));
+			consumeTimeRankItem.setInstanceId(_ctx.longValue("TopTenElapsedTimeInstanceResponse.InstanceConsumeTimeRank.ConsumeTimeRank["+ i +"].InstanceId"));
+			consumeTimeRankItem.setProgramType(_ctx.integerValue("TopTenElapsedTimeInstanceResponse.InstanceConsumeTimeRank.ConsumeTimeRank["+ i +"].ProgramType"));
 
 			consumeTimeRank.add(consumeTimeRankItem);
 		}

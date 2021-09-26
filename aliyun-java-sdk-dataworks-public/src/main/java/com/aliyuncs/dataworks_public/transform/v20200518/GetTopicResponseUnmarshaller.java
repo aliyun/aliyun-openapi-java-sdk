@@ -24,35 +24,35 @@ public class GetTopicResponseUnmarshaller {
 	public static GetTopicResponse unmarshall(GetTopicResponse getTopicResponse, UnmarshallerContext _ctx) {
 		
 		getTopicResponse.setRequestId(_ctx.stringValue("GetTopicResponse.RequestId"));
-		getTopicResponse.setHttpStatusCode(_ctx.integerValue("GetTopicResponse.HttpStatusCode"));
-		getTopicResponse.setErrorMessage(_ctx.stringValue("GetTopicResponse.ErrorMessage"));
-		getTopicResponse.setErrorCode(_ctx.stringValue("GetTopicResponse.ErrorCode"));
 		getTopicResponse.setSuccess(_ctx.booleanValue("GetTopicResponse.Success"));
+		getTopicResponse.setErrorCode(_ctx.stringValue("GetTopicResponse.ErrorCode"));
+		getTopicResponse.setErrorMessage(_ctx.stringValue("GetTopicResponse.ErrorMessage"));
+		getTopicResponse.setHttpStatusCode(_ctx.integerValue("GetTopicResponse.HttpStatusCode"));
 
 		Data data = new Data();
-		data.setOwner(_ctx.stringValue("GetTopicResponse.Data.Owner"));
+		data.setTopicId(_ctx.longValue("GetTopicResponse.Data.TopicId"));
 		data.setTopicName(_ctx.stringValue("GetTopicResponse.Data.TopicName"));
-		data.setBaselineStatus(_ctx.stringValue("GetTopicResponse.Data.BaselineStatus"));
-		data.setProjectId(_ctx.longValue("GetTopicResponse.Data.ProjectId"));
-		data.setNextAlertTime(_ctx.longValue("GetTopicResponse.Data.NextAlertTime"));
-		data.setInstanceId(_ctx.longValue("GetTopicResponse.Data.InstanceId"));
-		data.setFixTime(_ctx.longValue("GetTopicResponse.Data.FixTime"));
-		data.setBaselineInGroupId(_ctx.integerValue("GetTopicResponse.Data.BaselineInGroupId"));
-		data.setBaselineBuffer(_ctx.longValue("GetTopicResponse.Data.BaselineBuffer"));
-		data.setTopicType(_ctx.stringValue("GetTopicResponse.Data.TopicType"));
 		data.setTopicStatus(_ctx.stringValue("GetTopicResponse.Data.TopicStatus"));
-		data.setHappenTime(_ctx.longValue("GetTopicResponse.Data.HappenTime"));
+		data.setTopicType(_ctx.stringValue("GetTopicResponse.Data.TopicType"));
+		data.setAddTime(_ctx.longValue("GetTopicResponse.Data.AddTime"));
+		data.setAlertTime(_ctx.longValue("GetTopicResponse.Data.AlertTime"));
+		data.setAssigner(_ctx.stringValue("GetTopicResponse.Data.Assigner"));
+		data.setBaselineId(_ctx.longValue("GetTopicResponse.Data.BaselineId"));
+		data.setBaselineName(_ctx.stringValue("GetTopicResponse.Data.BaselineName"));
+		data.setBaselineInGroupId(_ctx.integerValue("GetTopicResponse.Data.BaselineInGroupId"));
+		data.setBaselineStatus(_ctx.stringValue("GetTopicResponse.Data.BaselineStatus"));
+		data.setBaselineBuffer(_ctx.longValue("GetTopicResponse.Data.BaselineBuffer"));
+		data.setBuffer(_ctx.longValue("GetTopicResponse.Data.Buffer"));
 		data.setDealTime(_ctx.longValue("GetTopicResponse.Data.DealTime"));
 		data.setDealUser(_ctx.stringValue("GetTopicResponse.Data.DealUser"));
-		data.setBaselineName(_ctx.stringValue("GetTopicResponse.Data.BaselineName"));
-		data.setBaselineId(_ctx.longValue("GetTopicResponse.Data.BaselineId"));
-		data.setNodeName(_ctx.stringValue("GetTopicResponse.Data.NodeName"));
-		data.setAlertTime(_ctx.longValue("GetTopicResponse.Data.AlertTime"));
-		data.setBuffer(_ctx.longValue("GetTopicResponse.Data.Buffer"));
-		data.setAssigner(_ctx.stringValue("GetTopicResponse.Data.Assigner"));
-		data.setTopicId(_ctx.longValue("GetTopicResponse.Data.TopicId"));
-		data.setAddTime(_ctx.longValue("GetTopicResponse.Data.AddTime"));
+		data.setFixTime(_ctx.longValue("GetTopicResponse.Data.FixTime"));
+		data.setHappenTime(_ctx.longValue("GetTopicResponse.Data.HappenTime"));
+		data.setInstanceId(_ctx.longValue("GetTopicResponse.Data.InstanceId"));
+		data.setNextAlertTime(_ctx.longValue("GetTopicResponse.Data.NextAlertTime"));
 		data.setNodeId(_ctx.longValue("GetTopicResponse.Data.NodeId"));
+		data.setNodeName(_ctx.stringValue("GetTopicResponse.Data.NodeName"));
+		data.setOwner(_ctx.stringValue("GetTopicResponse.Data.Owner"));
+		data.setProjectId(_ctx.longValue("GetTopicResponse.Data.ProjectId"));
 		getTopicResponse.setData(data);
 	 
 	 	return getTopicResponse;

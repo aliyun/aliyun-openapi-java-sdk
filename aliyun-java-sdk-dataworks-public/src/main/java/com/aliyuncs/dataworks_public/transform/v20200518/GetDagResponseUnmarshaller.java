@@ -24,23 +24,23 @@ public class GetDagResponseUnmarshaller {
 	public static GetDagResponse unmarshall(GetDagResponse getDagResponse, UnmarshallerContext _ctx) {
 		
 		getDagResponse.setRequestId(_ctx.stringValue("GetDagResponse.RequestId"));
-		getDagResponse.setHttpStatusCode(_ctx.integerValue("GetDagResponse.HttpStatusCode"));
-		getDagResponse.setErrorMessage(_ctx.stringValue("GetDagResponse.ErrorMessage"));
-		getDagResponse.setErrorCode(_ctx.stringValue("GetDagResponse.ErrorCode"));
 		getDagResponse.setSuccess(_ctx.booleanValue("GetDagResponse.Success"));
+		getDagResponse.setHttpStatusCode(_ctx.integerValue("GetDagResponse.HttpStatusCode"));
+		getDagResponse.setErrorCode(_ctx.stringValue("GetDagResponse.ErrorCode"));
+		getDagResponse.setErrorMessage(_ctx.stringValue("GetDagResponse.ErrorMessage"));
 
 		Data data = new Data();
-		data.setType(_ctx.stringValue("GetDagResponse.Data.Type"));
-		data.setStatus(_ctx.stringValue("GetDagResponse.Data.Status"));
-		data.setFinishTime(_ctx.longValue("GetDagResponse.Data.FinishTime"));
-		data.setCreateTime(_ctx.longValue("GetDagResponse.Data.CreateTime"));
 		data.setProjectId(_ctx.longValue("GetDagResponse.Data.ProjectId"));
 		data.setDagId(_ctx.longValue("GetDagResponse.Data.DagId"));
+		data.setName(_ctx.stringValue("GetDagResponse.Data.Name"));
+		data.setType(_ctx.stringValue("GetDagResponse.Data.Type"));
+		data.setStatus(_ctx.stringValue("GetDagResponse.Data.Status"));
+		data.setBizdate(_ctx.longValue("GetDagResponse.Data.Bizdate"));
 		data.setGmtdate(_ctx.longValue("GetDagResponse.Data.Gmtdate"));
 		data.setStartTime(_ctx.longValue("GetDagResponse.Data.StartTime"));
+		data.setFinishTime(_ctx.longValue("GetDagResponse.Data.FinishTime"));
+		data.setCreateTime(_ctx.longValue("GetDagResponse.Data.CreateTime"));
 		data.setCreateUser(_ctx.stringValue("GetDagResponse.Data.CreateUser"));
-		data.setBizdate(_ctx.longValue("GetDagResponse.Data.Bizdate"));
-		data.setName(_ctx.stringValue("GetDagResponse.Data.Name"));
 		data.setModifyTime(_ctx.longValue("GetDagResponse.Data.ModifyTime"));
 		getDagResponse.setData(data);
 	 

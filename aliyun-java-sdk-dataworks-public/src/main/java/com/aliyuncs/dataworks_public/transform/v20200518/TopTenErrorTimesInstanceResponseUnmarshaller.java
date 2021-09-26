@@ -35,12 +35,12 @@ public class TopTenErrorTimesInstanceResponseUnmarshaller {
 		List<ErrorRankItem> errorRank = new ArrayList<ErrorRankItem>();
 		for (int i = 0; i < _ctx.lengthValue("TopTenErrorTimesInstanceResponse.InstanceErrorRank.ErrorRank.Length"); i++) {
 			ErrorRankItem errorRankItem = new ErrorRankItem();
-			errorRankItem.setOwner(_ctx.stringValue("TopTenErrorTimesInstanceResponse.InstanceErrorRank.ErrorRank["+ i +"].Owner"));
+			errorRankItem.setNodeId(_ctx.longValue("TopTenErrorTimesInstanceResponse.InstanceErrorRank.ErrorRank["+ i +"].NodeId"));
 			errorRankItem.setNodeName(_ctx.stringValue("TopTenErrorTimesInstanceResponse.InstanceErrorRank.ErrorRank["+ i +"].NodeName"));
+			errorRankItem.setOwner(_ctx.stringValue("TopTenErrorTimesInstanceResponse.InstanceErrorRank.ErrorRank["+ i +"].Owner"));
+			errorRankItem.setCount(_ctx.integerValue("TopTenErrorTimesInstanceResponse.InstanceErrorRank.ErrorRank["+ i +"].Count"));
 			errorRankItem.setProjectId(_ctx.longValue("TopTenErrorTimesInstanceResponse.InstanceErrorRank.ErrorRank["+ i +"].ProjectId"));
 			errorRankItem.setProgramType(_ctx.integerValue("TopTenErrorTimesInstanceResponse.InstanceErrorRank.ErrorRank["+ i +"].ProgramType"));
-			errorRankItem.setNodeId(_ctx.longValue("TopTenErrorTimesInstanceResponse.InstanceErrorRank.ErrorRank["+ i +"].NodeId"));
-			errorRankItem.setCount(_ctx.integerValue("TopTenErrorTimesInstanceResponse.InstanceErrorRank.ErrorRank["+ i +"].Count"));
 
 			errorRank.add(errorRankItem);
 		}

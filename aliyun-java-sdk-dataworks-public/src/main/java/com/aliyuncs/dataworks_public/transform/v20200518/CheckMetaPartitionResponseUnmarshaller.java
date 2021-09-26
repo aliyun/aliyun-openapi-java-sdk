@@ -23,11 +23,11 @@ public class CheckMetaPartitionResponseUnmarshaller {
 	public static CheckMetaPartitionResponse unmarshall(CheckMetaPartitionResponse checkMetaPartitionResponse, UnmarshallerContext _ctx) {
 		
 		checkMetaPartitionResponse.setRequestId(_ctx.stringValue("CheckMetaPartitionResponse.RequestId"));
-		checkMetaPartitionResponse.setHttpStatusCode(_ctx.integerValue("CheckMetaPartitionResponse.HttpStatusCode"));
-		checkMetaPartitionResponse.setData(_ctx.booleanValue("CheckMetaPartitionResponse.Data"));
-		checkMetaPartitionResponse.setErrorMessage(_ctx.stringValue("CheckMetaPartitionResponse.ErrorMessage"));
 		checkMetaPartitionResponse.setErrorCode(_ctx.stringValue("CheckMetaPartitionResponse.ErrorCode"));
+		checkMetaPartitionResponse.setErrorMessage(_ctx.stringValue("CheckMetaPartitionResponse.ErrorMessage"));
+		checkMetaPartitionResponse.setHttpStatusCode(_ctx.integerValue("CheckMetaPartitionResponse.HttpStatusCode"));
 		checkMetaPartitionResponse.setSuccess(_ctx.booleanValue("CheckMetaPartitionResponse.Success"));
+		checkMetaPartitionResponse.setData(_ctx.booleanValue("CheckMetaPartitionResponse.Data"));
 	 
 	 	return checkMetaPartitionResponse;
 	}

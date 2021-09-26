@@ -24,26 +24,26 @@ public class GetBaselineConfigResponseUnmarshaller {
 	public static GetBaselineConfigResponse unmarshall(GetBaselineConfigResponse getBaselineConfigResponse, UnmarshallerContext _ctx) {
 		
 		getBaselineConfigResponse.setRequestId(_ctx.stringValue("GetBaselineConfigResponse.RequestId"));
-		getBaselineConfigResponse.setHttpStatusCode(_ctx.integerValue("GetBaselineConfigResponse.HttpStatusCode"));
-		getBaselineConfigResponse.setErrorMessage(_ctx.stringValue("GetBaselineConfigResponse.ErrorMessage"));
-		getBaselineConfigResponse.setErrorCode(_ctx.stringValue("GetBaselineConfigResponse.ErrorCode"));
 		getBaselineConfigResponse.setSuccess(_ctx.booleanValue("GetBaselineConfigResponse.Success"));
+		getBaselineConfigResponse.setErrorCode(_ctx.stringValue("GetBaselineConfigResponse.ErrorCode"));
+		getBaselineConfigResponse.setErrorMessage(_ctx.stringValue("GetBaselineConfigResponse.ErrorMessage"));
+		getBaselineConfigResponse.setHttpStatusCode(_ctx.integerValue("GetBaselineConfigResponse.HttpStatusCode"));
 
 		Data data = new Data();
-		data.setHourSlaDetail(_ctx.stringValue("GetBaselineConfigResponse.Data.HourSlaDetail"));
-		data.setIsDefault(_ctx.booleanValue("GetBaselineConfigResponse.Data.IsDefault"));
+		data.setBaselineId(_ctx.longValue("GetBaselineConfigResponse.Data.BaselineId"));
+		data.setPriority(_ctx.integerValue("GetBaselineConfigResponse.Data.Priority"));
+		data.setBaselineName(_ctx.stringValue("GetBaselineConfigResponse.Data.BaselineName"));
 		data.setOwner(_ctx.stringValue("GetBaselineConfigResponse.Data.Owner"));
 		data.setProjectId(_ctx.longValue("GetBaselineConfigResponse.Data.ProjectId"));
-		data.setPriority(_ctx.integerValue("GetBaselineConfigResponse.Data.Priority"));
-		data.setSlaMinu(_ctx.integerValue("GetBaselineConfigResponse.Data.SlaMinu"));
-		data.setSlaHour(_ctx.integerValue("GetBaselineConfigResponse.Data.SlaHour"));
-		data.setBaselineId(_ctx.longValue("GetBaselineConfigResponse.Data.BaselineId"));
-		data.setBaselineName(_ctx.stringValue("GetBaselineConfigResponse.Data.BaselineName"));
-		data.setHourExpDetail(_ctx.stringValue("GetBaselineConfigResponse.Data.HourExpDetail"));
 		data.setUseFlag(_ctx.booleanValue("GetBaselineConfigResponse.Data.UseFlag"));
-		data.setExpHour(_ctx.integerValue("GetBaselineConfigResponse.Data.ExpHour"));
 		data.setBaselineType(_ctx.stringValue("GetBaselineConfigResponse.Data.BaselineType"));
+		data.setExpHour(_ctx.integerValue("GetBaselineConfigResponse.Data.ExpHour"));
 		data.setExpMinu(_ctx.integerValue("GetBaselineConfigResponse.Data.ExpMinu"));
+		data.setSlaHour(_ctx.integerValue("GetBaselineConfigResponse.Data.SlaHour"));
+		data.setSlaMinu(_ctx.integerValue("GetBaselineConfigResponse.Data.SlaMinu"));
+		data.setHourExpDetail(_ctx.stringValue("GetBaselineConfigResponse.Data.HourExpDetail"));
+		data.setHourSlaDetail(_ctx.stringValue("GetBaselineConfigResponse.Data.HourSlaDetail"));
+		data.setIsDefault(_ctx.booleanValue("GetBaselineConfigResponse.Data.IsDefault"));
 		getBaselineConfigResponse.setData(data);
 	 
 	 	return getBaselineConfigResponse;

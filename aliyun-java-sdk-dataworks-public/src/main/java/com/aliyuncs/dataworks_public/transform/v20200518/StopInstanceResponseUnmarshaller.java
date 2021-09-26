@@ -23,11 +23,11 @@ public class StopInstanceResponseUnmarshaller {
 	public static StopInstanceResponse unmarshall(StopInstanceResponse stopInstanceResponse, UnmarshallerContext _ctx) {
 		
 		stopInstanceResponse.setRequestId(_ctx.stringValue("StopInstanceResponse.RequestId"));
-		stopInstanceResponse.setHttpStatusCode(_ctx.integerValue("StopInstanceResponse.HttpStatusCode"));
-		stopInstanceResponse.setData(_ctx.booleanValue("StopInstanceResponse.Data"));
-		stopInstanceResponse.setErrorMessage(_ctx.stringValue("StopInstanceResponse.ErrorMessage"));
 		stopInstanceResponse.setErrorCode(_ctx.stringValue("StopInstanceResponse.ErrorCode"));
+		stopInstanceResponse.setErrorMessage(_ctx.stringValue("StopInstanceResponse.ErrorMessage"));
+		stopInstanceResponse.setHttpStatusCode(_ctx.integerValue("StopInstanceResponse.HttpStatusCode"));
 		stopInstanceResponse.setSuccess(_ctx.booleanValue("StopInstanceResponse.Success"));
+		stopInstanceResponse.setData(_ctx.booleanValue("StopInstanceResponse.Data"));
 	 
 	 	return stopInstanceResponse;
 	}

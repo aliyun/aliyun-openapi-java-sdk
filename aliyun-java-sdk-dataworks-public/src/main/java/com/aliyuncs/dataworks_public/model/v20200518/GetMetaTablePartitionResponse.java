@@ -25,24 +25,32 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetMetaTablePartitionResponse extends AcsResponse {
 
-	private Integer httpStatusCode;
-
-	private String errorMessage;
-
 	private String requestId;
-
-	private Boolean success;
 
 	private String errorCode;
 
+	private String errorMessage;
+
+	private Integer httpStatusCode;
+
+	private Boolean success;
+
 	private Data data;
 
-	public Integer getHttpStatusCode() {
-		return this.httpStatusCode;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setHttpStatusCode(Integer httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getErrorCode() {
+		return this.errorCode;
+	}
+
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
 	}
 
 	public String getErrorMessage() {
@@ -53,12 +61,12 @@ public class GetMetaTablePartitionResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
 	}
 
 	public Boolean getSuccess() {
@@ -67,14 +75,6 @@ public class GetMetaTablePartitionResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
-	}
-
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
 	}
 
 	public Data getData() {
@@ -129,42 +129,34 @@ public class GetMetaTablePartitionResponse extends AcsResponse {
 
 		public static class DataEntityListItem {
 
-			private String partitionPath;
-
-			private Long dataSize;
+			private String partitionGuid;
 
 			private String partitionName;
 
-			private String comment;
-
-			private Long modifiedTime;
-
 			private Long createTime;
+
+			private Long dataSize;
 
 			private Long recordCount;
 
-			private String partitionType;
-
-			private String partitionGuid;
-
-			private String partitionLocation;
+			private Long modifiedTime;
 
 			private String tableGuid;
 
-			public String getPartitionPath() {
-				return this.partitionPath;
+			private String comment;
+
+			private String partitionType;
+
+			private String partitionPath;
+
+			private String partitionLocation;
+
+			public String getPartitionGuid() {
+				return this.partitionGuid;
 			}
 
-			public void setPartitionPath(String partitionPath) {
-				this.partitionPath = partitionPath;
-			}
-
-			public Long getDataSize() {
-				return this.dataSize;
-			}
-
-			public void setDataSize(Long dataSize) {
-				this.dataSize = dataSize;
+			public void setPartitionGuid(String partitionGuid) {
+				this.partitionGuid = partitionGuid;
 			}
 
 			public String getPartitionName() {
@@ -175,28 +167,20 @@ public class GetMetaTablePartitionResponse extends AcsResponse {
 				this.partitionName = partitionName;
 			}
 
-			public String getComment() {
-				return this.comment;
-			}
-
-			public void setComment(String comment) {
-				this.comment = comment;
-			}
-
-			public Long getModifiedTime() {
-				return this.modifiedTime;
-			}
-
-			public void setModifiedTime(Long modifiedTime) {
-				this.modifiedTime = modifiedTime;
-			}
-
 			public Long getCreateTime() {
 				return this.createTime;
 			}
 
 			public void setCreateTime(Long createTime) {
 				this.createTime = createTime;
+			}
+
+			public Long getDataSize() {
+				return this.dataSize;
+			}
+
+			public void setDataSize(Long dataSize) {
+				this.dataSize = dataSize;
 			}
 
 			public Long getRecordCount() {
@@ -207,28 +191,12 @@ public class GetMetaTablePartitionResponse extends AcsResponse {
 				this.recordCount = recordCount;
 			}
 
-			public String getPartitionType() {
-				return this.partitionType;
+			public Long getModifiedTime() {
+				return this.modifiedTime;
 			}
 
-			public void setPartitionType(String partitionType) {
-				this.partitionType = partitionType;
-			}
-
-			public String getPartitionGuid() {
-				return this.partitionGuid;
-			}
-
-			public void setPartitionGuid(String partitionGuid) {
-				this.partitionGuid = partitionGuid;
-			}
-
-			public String getPartitionLocation() {
-				return this.partitionLocation;
-			}
-
-			public void setPartitionLocation(String partitionLocation) {
-				this.partitionLocation = partitionLocation;
+			public void setModifiedTime(Long modifiedTime) {
+				this.modifiedTime = modifiedTime;
 			}
 
 			public String getTableGuid() {
@@ -237,6 +205,38 @@ public class GetMetaTablePartitionResponse extends AcsResponse {
 
 			public void setTableGuid(String tableGuid) {
 				this.tableGuid = tableGuid;
+			}
+
+			public String getComment() {
+				return this.comment;
+			}
+
+			public void setComment(String comment) {
+				this.comment = comment;
+			}
+
+			public String getPartitionType() {
+				return this.partitionType;
+			}
+
+			public void setPartitionType(String partitionType) {
+				this.partitionType = partitionType;
+			}
+
+			public String getPartitionPath() {
+				return this.partitionPath;
+			}
+
+			public void setPartitionPath(String partitionPath) {
+				this.partitionPath = partitionPath;
+			}
+
+			public String getPartitionLocation() {
+				return this.partitionLocation;
+			}
+
+			public void setPartitionLocation(String partitionLocation) {
+				this.partitionLocation = partitionLocation;
 			}
 		}
 	}

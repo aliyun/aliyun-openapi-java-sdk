@@ -25,24 +25,32 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetMetaColumnLineageResponse extends AcsResponse {
 
-	private Integer httpStatusCode;
-
-	private String errorMessage;
-
 	private String requestId;
-
-	private Boolean success;
 
 	private String errorCode;
 
+	private String errorMessage;
+
+	private Integer httpStatusCode;
+
+	private Boolean success;
+
 	private Data data;
 
-	public Integer getHttpStatusCode() {
-		return this.httpStatusCode;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setHttpStatusCode(Integer httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getErrorCode() {
+		return this.errorCode;
+	}
+
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
 	}
 
 	public String getErrorMessage() {
@@ -53,12 +61,12 @@ public class GetMetaColumnLineageResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
 	}
 
 	public Boolean getSuccess() {
@@ -67,14 +75,6 @@ public class GetMetaColumnLineageResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
-	}
-
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
 	}
 
 	public Data getData() {
@@ -87,13 +87,21 @@ public class GetMetaColumnLineageResponse extends AcsResponse {
 
 	public static class Data {
 
+		private Long totalCount;
+
 		private Integer pageNum;
 
 		private Integer pageSize;
 
-		private Long totalCount;
-
 		private List<DataEntityListItem> dataEntityList;
+
+		public Long getTotalCount() {
+			return this.totalCount;
+		}
+
+		public void setTotalCount(Long totalCount) {
+			this.totalCount = totalCount;
+		}
 
 		public Integer getPageNum() {
 			return this.pageNum;
@@ -111,14 +119,6 @@ public class GetMetaColumnLineageResponse extends AcsResponse {
 			this.pageSize = pageSize;
 		}
 
-		public Long getTotalCount() {
-			return this.totalCount;
-		}
-
-		public void setTotalCount(Long totalCount) {
-			this.totalCount = totalCount;
-		}
-
 		public List<DataEntityListItem> getDataEntityList() {
 			return this.dataEntityList;
 		}
@@ -129,23 +129,15 @@ public class GetMetaColumnLineageResponse extends AcsResponse {
 
 		public static class DataEntityListItem {
 
-			private String columnGuid;
-
 			private String columnName;
 
-			private String tableName;
-
-			private String databaseName;
+			private String columnGuid;
 
 			private String clusterId;
 
-			public String getColumnGuid() {
-				return this.columnGuid;
-			}
+			private String databaseName;
 
-			public void setColumnGuid(String columnGuid) {
-				this.columnGuid = columnGuid;
-			}
+			private String tableName;
 
 			public String getColumnName() {
 				return this.columnName;
@@ -155,12 +147,20 @@ public class GetMetaColumnLineageResponse extends AcsResponse {
 				this.columnName = columnName;
 			}
 
-			public String getTableName() {
-				return this.tableName;
+			public String getColumnGuid() {
+				return this.columnGuid;
 			}
 
-			public void setTableName(String tableName) {
-				this.tableName = tableName;
+			public void setColumnGuid(String columnGuid) {
+				this.columnGuid = columnGuid;
+			}
+
+			public String getClusterId() {
+				return this.clusterId;
+			}
+
+			public void setClusterId(String clusterId) {
+				this.clusterId = clusterId;
 			}
 
 			public String getDatabaseName() {
@@ -171,12 +171,12 @@ public class GetMetaColumnLineageResponse extends AcsResponse {
 				this.databaseName = databaseName;
 			}
 
-			public String getClusterId() {
-				return this.clusterId;
+			public String getTableName() {
+				return this.tableName;
 			}
 
-			public void setClusterId(String clusterId) {
-				this.clusterId = clusterId;
+			public void setTableName(String tableName) {
+				this.tableName = tableName;
 			}
 		}
 	}

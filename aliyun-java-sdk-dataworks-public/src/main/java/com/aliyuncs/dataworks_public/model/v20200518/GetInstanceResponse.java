@@ -24,17 +24,33 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetInstanceResponse extends AcsResponse {
 
+	private String errorCode;
+
+	private String errorMessage;
+
 	private Integer httpStatusCode;
 
 	private String requestId;
 
-	private String errorMessage;
-
 	private Boolean success;
 
-	private String errorCode;
-
 	private Data data;
+
+	public String getErrorCode() {
+		return this.errorCode;
+	}
+
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
 
 	public Integer getHttpStatusCode() {
 		return this.httpStatusCode;
@@ -52,28 +68,12 @@ public class GetInstanceResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
-
 	public Boolean getSuccess() {
 		return this.success;
 	}
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
-	}
-
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
 	}
 
 	public Data getData() {
@@ -86,106 +86,74 @@ public class GetInstanceResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String status;
+		private Long nodeId;
 
-		private Long cycTime;
-
-		private Long beginRunningTime;
-
-		private Long finishTime;
-
-		private String errorMessage;
-
-		private Long createTime;
+		private Long instanceId;
 
 		private Long dagId;
 
-		private Integer priority;
+		private String dagType;
 
-		private String taskType;
+		private String status;
+
+		private Long bizdate;
 
 		private String paramValues;
 
-		private String connection;
+		private Long cycTime;
 
-		private Long baselineId;
+		private Long finishTime;
 
-		private Integer dqcType;
+		private Long beginWaitTimeTime;
 
-		private String dagType;
+		private Long beginWaitResTime;
 
-		private Long businessId;
+		private Long beginRunningTime;
 
-		private Integer taskRerunTime;
+		private Long createTime;
 
 		private Long modifyTime;
+
+		private String nodeName;
+
+		private Integer priority;
+
+		private Long baselineId;
 
 		private Boolean repeatability;
 
 		private Long repeatInterval;
 
-		private Long instanceId;
+		private String connection;
 
-		private Long beginWaitResTime;
-
-		private Long relatedFlowId;
-
-		private Long bizdate;
-
-		private String nodeName;
-
-		private Long beginWaitTimeTime;
+		private Integer dqcType;
 
 		private String dqcDescription;
 
-		private Long nodeId;
+		private String errorMessage;
 
-		public String getStatus() {
-			return this.status;
+		private Long relatedFlowId;
+
+		private String taskType;
+
+		private Integer taskRerunTime;
+
+		private Long businessId;
+
+		public Long getNodeId() {
+			return this.nodeId;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
+		public void setNodeId(Long nodeId) {
+			this.nodeId = nodeId;
 		}
 
-		public Long getCycTime() {
-			return this.cycTime;
+		public Long getInstanceId() {
+			return this.instanceId;
 		}
 
-		public void setCycTime(Long cycTime) {
-			this.cycTime = cycTime;
-		}
-
-		public Long getBeginRunningTime() {
-			return this.beginRunningTime;
-		}
-
-		public void setBeginRunningTime(Long beginRunningTime) {
-			this.beginRunningTime = beginRunningTime;
-		}
-
-		public Long getFinishTime() {
-			return this.finishTime;
-		}
-
-		public void setFinishTime(Long finishTime) {
-			this.finishTime = finishTime;
-		}
-
-		public String getErrorMessage() {
-			return this.errorMessage;
-		}
-
-		public void setErrorMessage(String errorMessage) {
-			this.errorMessage = errorMessage;
-		}
-
-		public Long getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(Long createTime) {
-			this.createTime = createTime;
+		public void setInstanceId(Long instanceId) {
+			this.instanceId = instanceId;
 		}
 
 		public Long getDagId() {
@@ -196,20 +164,28 @@ public class GetInstanceResponse extends AcsResponse {
 			this.dagId = dagId;
 		}
 
-		public Integer getPriority() {
-			return this.priority;
+		public String getDagType() {
+			return this.dagType;
 		}
 
-		public void setPriority(Integer priority) {
-			this.priority = priority;
+		public void setDagType(String dagType) {
+			this.dagType = dagType;
 		}
 
-		public String getTaskType() {
-			return this.taskType;
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setTaskType(String taskType) {
-			this.taskType = taskType;
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
+		public Long getBizdate() {
+			return this.bizdate;
+		}
+
+		public void setBizdate(Long bizdate) {
+			this.bizdate = bizdate;
 		}
 
 		public String getParamValues() {
@@ -220,52 +196,52 @@ public class GetInstanceResponse extends AcsResponse {
 			this.paramValues = paramValues;
 		}
 
-		public String getConnection() {
-			return this.connection;
+		public Long getCycTime() {
+			return this.cycTime;
 		}
 
-		public void setConnection(String connection) {
-			this.connection = connection;
+		public void setCycTime(Long cycTime) {
+			this.cycTime = cycTime;
 		}
 
-		public Long getBaselineId() {
-			return this.baselineId;
+		public Long getFinishTime() {
+			return this.finishTime;
 		}
 
-		public void setBaselineId(Long baselineId) {
-			this.baselineId = baselineId;
+		public void setFinishTime(Long finishTime) {
+			this.finishTime = finishTime;
 		}
 
-		public Integer getDqcType() {
-			return this.dqcType;
+		public Long getBeginWaitTimeTime() {
+			return this.beginWaitTimeTime;
 		}
 
-		public void setDqcType(Integer dqcType) {
-			this.dqcType = dqcType;
+		public void setBeginWaitTimeTime(Long beginWaitTimeTime) {
+			this.beginWaitTimeTime = beginWaitTimeTime;
 		}
 
-		public String getDagType() {
-			return this.dagType;
+		public Long getBeginWaitResTime() {
+			return this.beginWaitResTime;
 		}
 
-		public void setDagType(String dagType) {
-			this.dagType = dagType;
+		public void setBeginWaitResTime(Long beginWaitResTime) {
+			this.beginWaitResTime = beginWaitResTime;
 		}
 
-		public Long getBusinessId() {
-			return this.businessId;
+		public Long getBeginRunningTime() {
+			return this.beginRunningTime;
 		}
 
-		public void setBusinessId(Long businessId) {
-			this.businessId = businessId;
+		public void setBeginRunningTime(Long beginRunningTime) {
+			this.beginRunningTime = beginRunningTime;
 		}
 
-		public Integer getTaskRerunTime() {
-			return this.taskRerunTime;
+		public Long getCreateTime() {
+			return this.createTime;
 		}
 
-		public void setTaskRerunTime(Integer taskRerunTime) {
-			this.taskRerunTime = taskRerunTime;
+		public void setCreateTime(Long createTime) {
+			this.createTime = createTime;
 		}
 
 		public Long getModifyTime() {
@@ -274,6 +250,30 @@ public class GetInstanceResponse extends AcsResponse {
 
 		public void setModifyTime(Long modifyTime) {
 			this.modifyTime = modifyTime;
+		}
+
+		public String getNodeName() {
+			return this.nodeName;
+		}
+
+		public void setNodeName(String nodeName) {
+			this.nodeName = nodeName;
+		}
+
+		public Integer getPriority() {
+			return this.priority;
+		}
+
+		public void setPriority(Integer priority) {
+			this.priority = priority;
+		}
+
+		public Long getBaselineId() {
+			return this.baselineId;
+		}
+
+		public void setBaselineId(Long baselineId) {
+			this.baselineId = baselineId;
 		}
 
 		public Boolean getRepeatability() {
@@ -292,52 +292,20 @@ public class GetInstanceResponse extends AcsResponse {
 			this.repeatInterval = repeatInterval;
 		}
 
-		public Long getInstanceId() {
-			return this.instanceId;
+		public String getConnection() {
+			return this.connection;
 		}
 
-		public void setInstanceId(Long instanceId) {
-			this.instanceId = instanceId;
+		public void setConnection(String connection) {
+			this.connection = connection;
 		}
 
-		public Long getBeginWaitResTime() {
-			return this.beginWaitResTime;
+		public Integer getDqcType() {
+			return this.dqcType;
 		}
 
-		public void setBeginWaitResTime(Long beginWaitResTime) {
-			this.beginWaitResTime = beginWaitResTime;
-		}
-
-		public Long getRelatedFlowId() {
-			return this.relatedFlowId;
-		}
-
-		public void setRelatedFlowId(Long relatedFlowId) {
-			this.relatedFlowId = relatedFlowId;
-		}
-
-		public Long getBizdate() {
-			return this.bizdate;
-		}
-
-		public void setBizdate(Long bizdate) {
-			this.bizdate = bizdate;
-		}
-
-		public String getNodeName() {
-			return this.nodeName;
-		}
-
-		public void setNodeName(String nodeName) {
-			this.nodeName = nodeName;
-		}
-
-		public Long getBeginWaitTimeTime() {
-			return this.beginWaitTimeTime;
-		}
-
-		public void setBeginWaitTimeTime(Long beginWaitTimeTime) {
-			this.beginWaitTimeTime = beginWaitTimeTime;
+		public void setDqcType(Integer dqcType) {
+			this.dqcType = dqcType;
 		}
 
 		public String getDqcDescription() {
@@ -348,12 +316,44 @@ public class GetInstanceResponse extends AcsResponse {
 			this.dqcDescription = dqcDescription;
 		}
 
-		public Long getNodeId() {
-			return this.nodeId;
+		public String getErrorMessage() {
+			return this.errorMessage;
 		}
 
-		public void setNodeId(Long nodeId) {
-			this.nodeId = nodeId;
+		public void setErrorMessage(String errorMessage) {
+			this.errorMessage = errorMessage;
+		}
+
+		public Long getRelatedFlowId() {
+			return this.relatedFlowId;
+		}
+
+		public void setRelatedFlowId(Long relatedFlowId) {
+			this.relatedFlowId = relatedFlowId;
+		}
+
+		public String getTaskType() {
+			return this.taskType;
+		}
+
+		public void setTaskType(String taskType) {
+			this.taskType = taskType;
+		}
+
+		public Integer getTaskRerunTime() {
+			return this.taskRerunTime;
+		}
+
+		public void setTaskRerunTime(Integer taskRerunTime) {
+			this.taskRerunTime = taskRerunTime;
+		}
+
+		public Long getBusinessId() {
+			return this.businessId;
+		}
+
+		public void setBusinessId(Long businessId) {
+			this.businessId = businessId;
 		}
 	}
 

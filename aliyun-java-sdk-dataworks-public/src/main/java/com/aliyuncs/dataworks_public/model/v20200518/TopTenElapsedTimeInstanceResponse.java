@@ -69,27 +69,19 @@ public class TopTenElapsedTimeInstanceResponse extends AcsResponse {
 
 		public static class ConsumeTimeRankItem {
 
-			private String owner;
-
 			private String nodeName;
-
-			private Long businessDate;
-
-			private Integer programType;
-
-			private Long instanceId;
 
 			private Long nodeId;
 
+			private Long businessDate;
+
+			private String owner;
+
 			private Long consumed;
 
-			public String getOwner() {
-				return this.owner;
-			}
+			private Long instanceId;
 
-			public void setOwner(String owner) {
-				this.owner = owner;
-			}
+			private Integer programType;
 
 			public String getNodeName() {
 				return this.nodeName;
@@ -97,30 +89,6 @@ public class TopTenElapsedTimeInstanceResponse extends AcsResponse {
 
 			public void setNodeName(String nodeName) {
 				this.nodeName = nodeName;
-			}
-
-			public Long getBusinessDate() {
-				return this.businessDate;
-			}
-
-			public void setBusinessDate(Long businessDate) {
-				this.businessDate = businessDate;
-			}
-
-			public Integer getProgramType() {
-				return this.programType;
-			}
-
-			public void setProgramType(Integer programType) {
-				this.programType = programType;
-			}
-
-			public Long getInstanceId() {
-				return this.instanceId;
-			}
-
-			public void setInstanceId(Long instanceId) {
-				this.instanceId = instanceId;
 			}
 
 			public Long getNodeId() {
@@ -131,12 +99,44 @@ public class TopTenElapsedTimeInstanceResponse extends AcsResponse {
 				this.nodeId = nodeId;
 			}
 
+			public Long getBusinessDate() {
+				return this.businessDate;
+			}
+
+			public void setBusinessDate(Long businessDate) {
+				this.businessDate = businessDate;
+			}
+
+			public String getOwner() {
+				return this.owner;
+			}
+
+			public void setOwner(String owner) {
+				this.owner = owner;
+			}
+
 			public Long getConsumed() {
 				return this.consumed;
 			}
 
 			public void setConsumed(Long consumed) {
 				this.consumed = consumed;
+			}
+
+			public Long getInstanceId() {
+				return this.instanceId;
+			}
+
+			public void setInstanceId(Long instanceId) {
+				this.instanceId = instanceId;
+			}
+
+			public Integer getProgramType() {
+				return this.programType;
+			}
+
+			public void setProgramType(Integer programType) {
+				this.programType = programType;
 			}
 		}
 	}

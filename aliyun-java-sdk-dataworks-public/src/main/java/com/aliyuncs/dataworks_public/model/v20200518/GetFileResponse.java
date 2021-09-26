@@ -25,33 +25,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetFileResponse extends AcsResponse {
 
-	private Integer httpStatusCode;
-
-	private String errorMessage;
-
 	private String requestId;
-
-	private String errorCode;
 
 	private Boolean success;
 
+	private String errorCode;
+
+	private String errorMessage;
+
+	private Integer httpStatusCode;
+
 	private Data data;
-
-	public Integer getHttpStatusCode() {
-		return this.httpStatusCode;
-	}
-
-	public void setHttpStatusCode(Integer httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -59,6 +43,14 @@ public class GetFileResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public String getErrorCode() {
@@ -69,12 +61,20 @@ public class GetFileResponse extends AcsResponse {
 		this.errorCode = errorCode;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getErrorMessage() {
+		return this.errorMessage;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
+	}
+
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
 	}
 
 	public Data getData() {
@@ -109,119 +109,47 @@ public class GetFileResponse extends AcsResponse {
 
 		public static class File {
 
-			private Integer commitStatus;
-
-			private Boolean autoParsing;
-
-			private String owner;
-
-			private Long createTime;
-
-			private Integer fileType;
-
-			private Integer currentVersion;
-
-			private Long bizId;
-
-			private String lastEditUser;
-
-			private String fileName;
-
 			private String connectionName;
-
-			private String useType;
-
-			private String fileFolderId;
 
 			private Long parentId;
 
-			private String createUser;
-
 			private Boolean isMaxCompute;
 
-			private Long businessId;
+			private Long createTime;
+
+			private String createUser;
+
+			private Long bizId;
+
+			private String fileFolderId;
+
+			private String fileName;
+
+			private Integer fileType;
+
+			private String useType;
 
 			private String fileDescription;
-
-			private String deletedStatus;
-
-			private Long lastEditTime;
 
 			private String content;
 
 			private Long nodeId;
 
-			public Integer getCommitStatus() {
-				return this.commitStatus;
-			}
+			private Integer currentVersion;
 
-			public void setCommitStatus(Integer commitStatus) {
-				this.commitStatus = commitStatus;
-			}
+			private String owner;
 
-			public Boolean getAutoParsing() {
-				return this.autoParsing;
-			}
+			private String lastEditUser;
 
-			public void setAutoParsing(Boolean autoParsing) {
-				this.autoParsing = autoParsing;
-			}
+			private Long lastEditTime;
 
-			public String getOwner() {
-				return this.owner;
-			}
+			private Integer commitStatus;
 
-			public void setOwner(String owner) {
-				this.owner = owner;
-			}
+			private String deletedStatus;
 
-			public Long getCreateTime() {
-				return this.createTime;
-			}
+			private Long businessId;
 
-			public void setCreateTime(Long createTime) {
-				this.createTime = createTime;
-			}
-
-			public Integer getFileType() {
-				return this.fileType;
-			}
-
-			public void setFileType(Integer fileType) {
-				this.fileType = fileType;
-			}
-
-			public Integer getCurrentVersion() {
-				return this.currentVersion;
-			}
-
-			public void setCurrentVersion(Integer currentVersion) {
-				this.currentVersion = currentVersion;
-			}
-
-			public Long getBizId() {
-				return this.bizId;
-			}
-
-			public void setBizId(Long bizId) {
-				this.bizId = bizId;
-			}
-
-			public String getLastEditUser() {
-				return this.lastEditUser;
-			}
-
-			public void setLastEditUser(String lastEditUser) {
-				this.lastEditUser = lastEditUser;
-			}
-
-			public String getFileName() {
-				return this.fileName;
-			}
-
-			public void setFileName(String fileName) {
-				this.fileName = fileName;
-			}
+			private Boolean autoParsing;
 
 			public String getConnectionName() {
 				return this.connectionName;
@@ -229,22 +157,6 @@ public class GetFileResponse extends AcsResponse {
 
 			public void setConnectionName(String connectionName) {
 				this.connectionName = connectionName;
-			}
-
-			public String getUseType() {
-				return this.useType;
-			}
-
-			public void setUseType(String useType) {
-				this.useType = useType;
-			}
-
-			public String getFileFolderId() {
-				return this.fileFolderId;
-			}
-
-			public void setFileFolderId(String fileFolderId) {
-				this.fileFolderId = fileFolderId;
 			}
 
 			public Long getParentId() {
@@ -255,14 +167,6 @@ public class GetFileResponse extends AcsResponse {
 				this.parentId = parentId;
 			}
 
-			public String getCreateUser() {
-				return this.createUser;
-			}
-
-			public void setCreateUser(String createUser) {
-				this.createUser = createUser;
-			}
-
 			public Boolean getIsMaxCompute() {
 				return this.isMaxCompute;
 			}
@@ -271,12 +175,60 @@ public class GetFileResponse extends AcsResponse {
 				this.isMaxCompute = isMaxCompute;
 			}
 
-			public Long getBusinessId() {
-				return this.businessId;
+			public Long getCreateTime() {
+				return this.createTime;
 			}
 
-			public void setBusinessId(Long businessId) {
-				this.businessId = businessId;
+			public void setCreateTime(Long createTime) {
+				this.createTime = createTime;
+			}
+
+			public String getCreateUser() {
+				return this.createUser;
+			}
+
+			public void setCreateUser(String createUser) {
+				this.createUser = createUser;
+			}
+
+			public Long getBizId() {
+				return this.bizId;
+			}
+
+			public void setBizId(Long bizId) {
+				this.bizId = bizId;
+			}
+
+			public String getFileFolderId() {
+				return this.fileFolderId;
+			}
+
+			public void setFileFolderId(String fileFolderId) {
+				this.fileFolderId = fileFolderId;
+			}
+
+			public String getFileName() {
+				return this.fileName;
+			}
+
+			public void setFileName(String fileName) {
+				this.fileName = fileName;
+			}
+
+			public Integer getFileType() {
+				return this.fileType;
+			}
+
+			public void setFileType(Integer fileType) {
+				this.fileType = fileType;
+			}
+
+			public String getUseType() {
+				return this.useType;
+			}
+
+			public void setUseType(String useType) {
+				this.useType = useType;
 			}
 
 			public String getFileDescription() {
@@ -285,22 +237,6 @@ public class GetFileResponse extends AcsResponse {
 
 			public void setFileDescription(String fileDescription) {
 				this.fileDescription = fileDescription;
-			}
-
-			public String getDeletedStatus() {
-				return this.deletedStatus;
-			}
-
-			public void setDeletedStatus(String deletedStatus) {
-				this.deletedStatus = deletedStatus;
-			}
-
-			public Long getLastEditTime() {
-				return this.lastEditTime;
-			}
-
-			public void setLastEditTime(Long lastEditTime) {
-				this.lastEditTime = lastEditTime;
 			}
 
 			public String getContent() {
@@ -318,13 +254,79 @@ public class GetFileResponse extends AcsResponse {
 			public void setNodeId(Long nodeId) {
 				this.nodeId = nodeId;
 			}
+
+			public Integer getCurrentVersion() {
+				return this.currentVersion;
+			}
+
+			public void setCurrentVersion(Integer currentVersion) {
+				this.currentVersion = currentVersion;
+			}
+
+			public String getOwner() {
+				return this.owner;
+			}
+
+			public void setOwner(String owner) {
+				this.owner = owner;
+			}
+
+			public String getLastEditUser() {
+				return this.lastEditUser;
+			}
+
+			public void setLastEditUser(String lastEditUser) {
+				this.lastEditUser = lastEditUser;
+			}
+
+			public Long getLastEditTime() {
+				return this.lastEditTime;
+			}
+
+			public void setLastEditTime(Long lastEditTime) {
+				this.lastEditTime = lastEditTime;
+			}
+
+			public Integer getCommitStatus() {
+				return this.commitStatus;
+			}
+
+			public void setCommitStatus(Integer commitStatus) {
+				this.commitStatus = commitStatus;
+			}
+
+			public String getDeletedStatus() {
+				return this.deletedStatus;
+			}
+
+			public void setDeletedStatus(String deletedStatus) {
+				this.deletedStatus = deletedStatus;
+			}
+
+			public Long getBusinessId() {
+				return this.businessId;
+			}
+
+			public void setBusinessId(Long businessId) {
+				this.businessId = businessId;
+			}
+
+			public Boolean getAutoParsing() {
+				return this.autoParsing;
+			}
+
+			public void setAutoParsing(Boolean autoParsing) {
+				this.autoParsing = autoParsing;
+			}
 		}
 
 		public static class NodeConfiguration {
 
-			private String rerunMode;
+			private Integer autoRerunTimes;
 
-			private String schedulerType;
+			private Integer autoRerunIntervalMillis;
+
+			private String rerunMode;
 
 			private Boolean stop;
 
@@ -334,23 +336,37 @@ public class GetFileResponse extends AcsResponse {
 
 			private Long endEffectDate;
 
+			private String cronExpress;
+
 			private String cycleType;
+
+			private String dependentType;
 
 			private String dependentNodeIdList;
 
 			private Long resourceGroupId;
 
-			private String dependentType;
-
-			private Integer autoRerunTimes;
-
-			private Integer autoRerunIntervalMillis;
-
-			private String cronExpress;
+			private String schedulerType;
 
 			private List<NodeInputOutput> inputList;
 
 			private List<NodeInputOutput1> outputList;
+
+			public Integer getAutoRerunTimes() {
+				return this.autoRerunTimes;
+			}
+
+			public void setAutoRerunTimes(Integer autoRerunTimes) {
+				this.autoRerunTimes = autoRerunTimes;
+			}
+
+			public Integer getAutoRerunIntervalMillis() {
+				return this.autoRerunIntervalMillis;
+			}
+
+			public void setAutoRerunIntervalMillis(Integer autoRerunIntervalMillis) {
+				this.autoRerunIntervalMillis = autoRerunIntervalMillis;
+			}
 
 			public String getRerunMode() {
 				return this.rerunMode;
@@ -358,14 +374,6 @@ public class GetFileResponse extends AcsResponse {
 
 			public void setRerunMode(String rerunMode) {
 				this.rerunMode = rerunMode;
-			}
-
-			public String getSchedulerType() {
-				return this.schedulerType;
-			}
-
-			public void setSchedulerType(String schedulerType) {
-				this.schedulerType = schedulerType;
 			}
 
 			public Boolean getStop() {
@@ -400,12 +408,28 @@ public class GetFileResponse extends AcsResponse {
 				this.endEffectDate = endEffectDate;
 			}
 
+			public String getCronExpress() {
+				return this.cronExpress;
+			}
+
+			public void setCronExpress(String cronExpress) {
+				this.cronExpress = cronExpress;
+			}
+
 			public String getCycleType() {
 				return this.cycleType;
 			}
 
 			public void setCycleType(String cycleType) {
 				this.cycleType = cycleType;
+			}
+
+			public String getDependentType() {
+				return this.dependentType;
+			}
+
+			public void setDependentType(String dependentType) {
+				this.dependentType = dependentType;
 			}
 
 			public String getDependentNodeIdList() {
@@ -424,36 +448,12 @@ public class GetFileResponse extends AcsResponse {
 				this.resourceGroupId = resourceGroupId;
 			}
 
-			public String getDependentType() {
-				return this.dependentType;
+			public String getSchedulerType() {
+				return this.schedulerType;
 			}
 
-			public void setDependentType(String dependentType) {
-				this.dependentType = dependentType;
-			}
-
-			public Integer getAutoRerunTimes() {
-				return this.autoRerunTimes;
-			}
-
-			public void setAutoRerunTimes(Integer autoRerunTimes) {
-				this.autoRerunTimes = autoRerunTimes;
-			}
-
-			public Integer getAutoRerunIntervalMillis() {
-				return this.autoRerunIntervalMillis;
-			}
-
-			public void setAutoRerunIntervalMillis(Integer autoRerunIntervalMillis) {
-				this.autoRerunIntervalMillis = autoRerunIntervalMillis;
-			}
-
-			public String getCronExpress() {
-				return this.cronExpress;
-			}
-
-			public void setCronExpress(String cronExpress) {
-				this.cronExpress = cronExpress;
+			public void setSchedulerType(String schedulerType) {
+				this.schedulerType = schedulerType;
 			}
 
 			public List<NodeInputOutput> getInputList() {
@@ -497,17 +497,9 @@ public class GetFileResponse extends AcsResponse {
 
 			public static class NodeInputOutput1 {
 
-				private String refTableName;
-
 				private String output;
 
-				public String getRefTableName() {
-					return this.refTableName;
-				}
-
-				public void setRefTableName(String refTableName) {
-					this.refTableName = refTableName;
-				}
+				private String refTableName;
 
 				public String getOutput() {
 					return this.output;
@@ -515,6 +507,14 @@ public class GetFileResponse extends AcsResponse {
 
 				public void setOutput(String output) {
 					this.output = output;
+				}
+
+				public String getRefTableName() {
+					return this.refTableName;
+				}
+
+				public void setRefTableName(String refTableName) {
+					this.refTableName = refTableName;
 				}
 			}
 		}

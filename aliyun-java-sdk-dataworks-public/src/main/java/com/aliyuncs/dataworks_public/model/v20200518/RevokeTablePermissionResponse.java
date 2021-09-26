@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class RevokeTablePermissionResponse extends AcsResponse {
 
-	private Boolean revokeSuccess;
-
 	private String requestId;
 
-	public Boolean getRevokeSuccess() {
-		return this.revokeSuccess;
-	}
-
-	public void setRevokeSuccess(Boolean revokeSuccess) {
-		this.revokeSuccess = revokeSuccess;
-	}
+	private Boolean revokeSuccess;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -42,6 +34,14 @@ public class RevokeTablePermissionResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Boolean getRevokeSuccess() {
+		return this.revokeSuccess;
+	}
+
+	public void setRevokeSuccess(Boolean revokeSuccess) {
+		this.revokeSuccess = revokeSuccess;
 	}
 
 	@Override

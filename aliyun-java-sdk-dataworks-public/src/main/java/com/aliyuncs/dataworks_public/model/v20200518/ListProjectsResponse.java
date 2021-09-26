@@ -89,35 +89,19 @@ public class ListProjectsResponse extends AcsResponse {
 
 		public static class Project {
 
-			private String projectStatusCode;
-
-			private Integer projectStatus;
-
 			private String projectName;
 
 			private String projectIdentifier;
 
-			private Long projectId;
-
 			private String projectDescription;
+
+			private Integer projectStatus;
+
+			private Long projectId;
 
 			private String projectOwnerBaseId;
 
-			public String getProjectStatusCode() {
-				return this.projectStatusCode;
-			}
-
-			public void setProjectStatusCode(String projectStatusCode) {
-				this.projectStatusCode = projectStatusCode;
-			}
-
-			public Integer getProjectStatus() {
-				return this.projectStatus;
-			}
-
-			public void setProjectStatus(Integer projectStatus) {
-				this.projectStatus = projectStatus;
-			}
+			private String projectStatusCode;
 
 			public String getProjectName() {
 				return this.projectName;
@@ -135,14 +119,6 @@ public class ListProjectsResponse extends AcsResponse {
 				this.projectIdentifier = projectIdentifier;
 			}
 
-			public Long getProjectId() {
-				return this.projectId;
-			}
-
-			public void setProjectId(Long projectId) {
-				this.projectId = projectId;
-			}
-
 			public String getProjectDescription() {
 				return this.projectDescription;
 			}
@@ -151,12 +127,36 @@ public class ListProjectsResponse extends AcsResponse {
 				this.projectDescription = projectDescription;
 			}
 
+			public Integer getProjectStatus() {
+				return this.projectStatus;
+			}
+
+			public void setProjectStatus(Integer projectStatus) {
+				this.projectStatus = projectStatus;
+			}
+
+			public Long getProjectId() {
+				return this.projectId;
+			}
+
+			public void setProjectId(Long projectId) {
+				this.projectId = projectId;
+			}
+
 			public String getProjectOwnerBaseId() {
 				return this.projectOwnerBaseId;
 			}
 
 			public void setProjectOwnerBaseId(String projectOwnerBaseId) {
 				this.projectOwnerBaseId = projectOwnerBaseId;
+			}
+
+			public String getProjectStatusCode() {
+				return this.projectStatusCode;
+			}
+
+			public void setProjectStatusCode(String projectStatusCode) {
+				this.projectStatusCode = projectStatusCode;
 			}
 		}
 	}

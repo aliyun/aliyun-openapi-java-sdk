@@ -28,10 +28,10 @@ public class ListFilesResponseUnmarshaller {
 	public static ListFilesResponse unmarshall(ListFilesResponse listFilesResponse, UnmarshallerContext _ctx) {
 		
 		listFilesResponse.setRequestId(_ctx.stringValue("ListFilesResponse.RequestId"));
-		listFilesResponse.setHttpStatusCode(_ctx.integerValue("ListFilesResponse.HttpStatusCode"));
-		listFilesResponse.setErrorMessage(_ctx.stringValue("ListFilesResponse.ErrorMessage"));
-		listFilesResponse.setErrorCode(_ctx.stringValue("ListFilesResponse.ErrorCode"));
 		listFilesResponse.setSuccess(_ctx.booleanValue("ListFilesResponse.Success"));
+		listFilesResponse.setErrorCode(_ctx.stringValue("ListFilesResponse.ErrorCode"));
+		listFilesResponse.setErrorMessage(_ctx.stringValue("ListFilesResponse.ErrorMessage"));
+		listFilesResponse.setHttpStatusCode(_ctx.integerValue("ListFilesResponse.HttpStatusCode"));
 
 		Data data = new Data();
 		data.setPageNumber(_ctx.integerValue("ListFilesResponse.Data.PageNumber"));
@@ -41,27 +41,27 @@ public class ListFilesResponseUnmarshaller {
 		List<File> files = new ArrayList<File>();
 		for (int i = 0; i < _ctx.lengthValue("ListFilesResponse.Data.Files.Length"); i++) {
 			File file = new File();
-			file.setCommitStatus(_ctx.integerValue("ListFilesResponse.Data.Files["+ i +"].CommitStatus"));
-			file.setAutoParsing(_ctx.booleanValue("ListFilesResponse.Data.Files["+ i +"].AutoParsing"));
-			file.setOwner(_ctx.stringValue("ListFilesResponse.Data.Files["+ i +"].Owner"));
-			file.setCreateTime(_ctx.longValue("ListFilesResponse.Data.Files["+ i +"].CreateTime"));
-			file.setFileType(_ctx.integerValue("ListFilesResponse.Data.Files["+ i +"].FileType"));
-			file.setCurrentVersion(_ctx.integerValue("ListFilesResponse.Data.Files["+ i +"].CurrentVersion"));
-			file.setBizId(_ctx.longValue("ListFilesResponse.Data.Files["+ i +"].BizId"));
-			file.setLastEditUser(_ctx.stringValue("ListFilesResponse.Data.Files["+ i +"].LastEditUser"));
-			file.setFileName(_ctx.stringValue("ListFilesResponse.Data.Files["+ i +"].FileName"));
 			file.setConnectionName(_ctx.stringValue("ListFilesResponse.Data.Files["+ i +"].ConnectionName"));
-			file.setUseType(_ctx.stringValue("ListFilesResponse.Data.Files["+ i +"].UseType"));
-			file.setFileFolderId(_ctx.stringValue("ListFilesResponse.Data.Files["+ i +"].FileFolderId"));
-			file.setFileId(_ctx.longValue("ListFilesResponse.Data.Files["+ i +"].FileId"));
 			file.setParentId(_ctx.longValue("ListFilesResponse.Data.Files["+ i +"].ParentId"));
-			file.setCreateUser(_ctx.stringValue("ListFilesResponse.Data.Files["+ i +"].CreateUser"));
 			file.setIsMaxCompute(_ctx.booleanValue("ListFilesResponse.Data.Files["+ i +"].IsMaxCompute"));
-			file.setBusinessId(_ctx.longValue("ListFilesResponse.Data.Files["+ i +"].BusinessId"));
+			file.setCreateTime(_ctx.longValue("ListFilesResponse.Data.Files["+ i +"].CreateTime"));
+			file.setCreateUser(_ctx.stringValue("ListFilesResponse.Data.Files["+ i +"].CreateUser"));
+			file.setBizId(_ctx.longValue("ListFilesResponse.Data.Files["+ i +"].BizId"));
+			file.setFileFolderId(_ctx.stringValue("ListFilesResponse.Data.Files["+ i +"].FileFolderId"));
+			file.setFileName(_ctx.stringValue("ListFilesResponse.Data.Files["+ i +"].FileName"));
+			file.setFileType(_ctx.integerValue("ListFilesResponse.Data.Files["+ i +"].FileType"));
+			file.setUseType(_ctx.stringValue("ListFilesResponse.Data.Files["+ i +"].UseType"));
 			file.setFileDescription(_ctx.stringValue("ListFilesResponse.Data.Files["+ i +"].FileDescription"));
-			file.setLastEditTime(_ctx.longValue("ListFilesResponse.Data.Files["+ i +"].LastEditTime"));
 			file.setContent(_ctx.stringValue("ListFilesResponse.Data.Files["+ i +"].Content"));
 			file.setNodeId(_ctx.longValue("ListFilesResponse.Data.Files["+ i +"].NodeId"));
+			file.setCurrentVersion(_ctx.integerValue("ListFilesResponse.Data.Files["+ i +"].CurrentVersion"));
+			file.setOwner(_ctx.stringValue("ListFilesResponse.Data.Files["+ i +"].Owner"));
+			file.setLastEditUser(_ctx.stringValue("ListFilesResponse.Data.Files["+ i +"].LastEditUser"));
+			file.setLastEditTime(_ctx.longValue("ListFilesResponse.Data.Files["+ i +"].LastEditTime"));
+			file.setCommitStatus(_ctx.integerValue("ListFilesResponse.Data.Files["+ i +"].CommitStatus"));
+			file.setFileId(_ctx.longValue("ListFilesResponse.Data.Files["+ i +"].FileId"));
+			file.setBusinessId(_ctx.longValue("ListFilesResponse.Data.Files["+ i +"].BusinessId"));
+			file.setAutoParsing(_ctx.booleanValue("ListFilesResponse.Data.Files["+ i +"].AutoParsing"));
 
 			files.add(file);
 		}

@@ -26,10 +26,10 @@ public class GetDDLJobStatusResponseUnmarshaller {
 		getDDLJobStatusResponse.setRequestId(_ctx.stringValue("GetDDLJobStatusResponse.RequestId"));
 
 		Data data = new Data();
-		data.setStatus(_ctx.stringValue("GetDDLJobStatusResponse.Data.Status"));
 		data.setNextTaskId(_ctx.stringValue("GetDDLJobStatusResponse.Data.NextTaskId"));
-		data.setTaskId(_ctx.stringValue("GetDDLJobStatusResponse.Data.TaskId"));
 		data.setContent(_ctx.stringValue("GetDDLJobStatusResponse.Data.Content"));
+		data.setStatus(_ctx.stringValue("GetDDLJobStatusResponse.Data.Status"));
+		data.setTaskId(_ctx.stringValue("GetDDLJobStatusResponse.Data.TaskId"));
 		getDDLJobStatusResponse.setData(data);
 	 
 	 	return getDDLJobStatusResponse;

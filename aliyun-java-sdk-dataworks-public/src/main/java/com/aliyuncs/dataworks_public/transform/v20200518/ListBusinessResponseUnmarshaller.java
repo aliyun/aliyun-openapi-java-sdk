@@ -28,10 +28,10 @@ public class ListBusinessResponseUnmarshaller {
 	public static ListBusinessResponse unmarshall(ListBusinessResponse listBusinessResponse, UnmarshallerContext _ctx) {
 		
 		listBusinessResponse.setRequestId(_ctx.stringValue("ListBusinessResponse.RequestId"));
-		listBusinessResponse.setHttpStatusCode(_ctx.integerValue("ListBusinessResponse.HttpStatusCode"));
-		listBusinessResponse.setErrorMessage(_ctx.stringValue("ListBusinessResponse.ErrorMessage"));
-		listBusinessResponse.setErrorCode(_ctx.stringValue("ListBusinessResponse.ErrorCode"));
 		listBusinessResponse.setSuccess(_ctx.booleanValue("ListBusinessResponse.Success"));
+		listBusinessResponse.setErrorCode(_ctx.stringValue("ListBusinessResponse.ErrorCode"));
+		listBusinessResponse.setErrorMessage(_ctx.stringValue("ListBusinessResponse.ErrorMessage"));
+		listBusinessResponse.setHttpStatusCode(_ctx.integerValue("ListBusinessResponse.HttpStatusCode"));
 
 		Data data = new Data();
 		data.setPageNumber(_ctx.integerValue("ListBusinessResponse.Data.PageNumber"));
@@ -41,11 +41,11 @@ public class ListBusinessResponseUnmarshaller {
 		List<BusinessItem> business = new ArrayList<BusinessItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListBusinessResponse.Data.Business.Length"); i++) {
 			BusinessItem businessItem = new BusinessItem();
-			businessItem.setOwner(_ctx.stringValue("ListBusinessResponse.Data.Business["+ i +"].Owner"));
-			businessItem.setDescription(_ctx.stringValue("ListBusinessResponse.Data.Business["+ i +"].Description"));
-			businessItem.setProjectId(_ctx.longValue("ListBusinessResponse.Data.Business["+ i +"].ProjectId"));
 			businessItem.setBusinessId(_ctx.longValue("ListBusinessResponse.Data.Business["+ i +"].BusinessId"));
 			businessItem.setBusinessName(_ctx.stringValue("ListBusinessResponse.Data.Business["+ i +"].BusinessName"));
+			businessItem.setProjectId(_ctx.longValue("ListBusinessResponse.Data.Business["+ i +"].ProjectId"));
+			businessItem.setOwner(_ctx.stringValue("ListBusinessResponse.Data.Business["+ i +"].Owner"));
+			businessItem.setDescription(_ctx.stringValue("ListBusinessResponse.Data.Business["+ i +"].Description"));
 			businessItem.setUseType(_ctx.stringValue("ListBusinessResponse.Data.Business["+ i +"].UseType"));
 
 			business.add(businessItem);

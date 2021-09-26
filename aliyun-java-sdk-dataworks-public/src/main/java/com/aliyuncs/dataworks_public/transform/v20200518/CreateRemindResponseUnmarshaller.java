@@ -23,11 +23,11 @@ public class CreateRemindResponseUnmarshaller {
 	public static CreateRemindResponse unmarshall(CreateRemindResponse createRemindResponse, UnmarshallerContext _ctx) {
 		
 		createRemindResponse.setRequestId(_ctx.stringValue("CreateRemindResponse.RequestId"));
-		createRemindResponse.setHttpStatusCode(_ctx.integerValue("CreateRemindResponse.HttpStatusCode"));
-		createRemindResponse.setData(_ctx.longValue("CreateRemindResponse.Data"));
-		createRemindResponse.setErrorMessage(_ctx.stringValue("CreateRemindResponse.ErrorMessage"));
 		createRemindResponse.setSuccess(_ctx.booleanValue("CreateRemindResponse.Success"));
 		createRemindResponse.setErrorCode(_ctx.stringValue("CreateRemindResponse.ErrorCode"));
+		createRemindResponse.setErrorMessage(_ctx.stringValue("CreateRemindResponse.ErrorMessage"));
+		createRemindResponse.setHttpStatusCode(_ctx.integerValue("CreateRemindResponse.HttpStatusCode"));
+		createRemindResponse.setData(_ctx.longValue("CreateRemindResponse.Data"));
 	 
 	 	return createRemindResponse;
 	}

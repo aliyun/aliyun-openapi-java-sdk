@@ -26,10 +26,10 @@ public class DeleteViewResponseUnmarshaller {
 		deleteViewResponse.setRequestId(_ctx.stringValue("DeleteViewResponse.RequestId"));
 
 		TaskInfo taskInfo = new TaskInfo();
-		taskInfo.setStatus(_ctx.stringValue("DeleteViewResponse.TaskInfo.Status"));
-		taskInfo.setNextTaskId(_ctx.stringValue("DeleteViewResponse.TaskInfo.NextTaskId"));
 		taskInfo.setTaskId(_ctx.stringValue("DeleteViewResponse.TaskInfo.TaskId"));
 		taskInfo.setContent(_ctx.stringValue("DeleteViewResponse.TaskInfo.Content"));
+		taskInfo.setStatus(_ctx.stringValue("DeleteViewResponse.TaskInfo.Status"));
+		taskInfo.setNextTaskId(_ctx.stringValue("DeleteViewResponse.TaskInfo.NextTaskId"));
 		deleteViewResponse.setTaskInfo(taskInfo);
 	 
 	 	return deleteViewResponse;

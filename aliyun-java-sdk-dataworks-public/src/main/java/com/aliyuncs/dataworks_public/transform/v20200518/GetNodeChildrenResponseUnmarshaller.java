@@ -28,26 +28,26 @@ public class GetNodeChildrenResponseUnmarshaller {
 	public static GetNodeChildrenResponse unmarshall(GetNodeChildrenResponse getNodeChildrenResponse, UnmarshallerContext _ctx) {
 		
 		getNodeChildrenResponse.setRequestId(_ctx.stringValue("GetNodeChildrenResponse.RequestId"));
-		getNodeChildrenResponse.setHttpStatusCode(_ctx.integerValue("GetNodeChildrenResponse.HttpStatusCode"));
-		getNodeChildrenResponse.setErrorMessage(_ctx.stringValue("GetNodeChildrenResponse.ErrorMessage"));
-		getNodeChildrenResponse.setErrorCode(_ctx.stringValue("GetNodeChildrenResponse.ErrorCode"));
 		getNodeChildrenResponse.setSuccess(_ctx.booleanValue("GetNodeChildrenResponse.Success"));
+		getNodeChildrenResponse.setHttpStatusCode(_ctx.integerValue("GetNodeChildrenResponse.HttpStatusCode"));
+		getNodeChildrenResponse.setErrorCode(_ctx.stringValue("GetNodeChildrenResponse.ErrorCode"));
+		getNodeChildrenResponse.setErrorMessage(_ctx.stringValue("GetNodeChildrenResponse.ErrorMessage"));
 
 		Data data = new Data();
 
 		List<NodesItem> nodes = new ArrayList<NodesItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetNodeChildrenResponse.Data.Nodes.Length"); i++) {
 			NodesItem nodesItem = new NodesItem();
-			nodesItem.setSchedulerType(_ctx.stringValue("GetNodeChildrenResponse.Data.Nodes["+ i +"].SchedulerType"));
-			nodesItem.setBaselineId(_ctx.longValue("GetNodeChildrenResponse.Data.Nodes["+ i +"].BaselineId"));
-			nodesItem.setRepeatability(_ctx.booleanValue("GetNodeChildrenResponse.Data.Nodes["+ i +"].Repeatability"));
-			nodesItem.setNodeName(_ctx.stringValue("GetNodeChildrenResponse.Data.Nodes["+ i +"].NodeName"));
-			nodesItem.setProjectId(_ctx.longValue("GetNodeChildrenResponse.Data.Nodes["+ i +"].ProjectId"));
-			nodesItem.setProgramType(_ctx.stringValue("GetNodeChildrenResponse.Data.Nodes["+ i +"].ProgramType"));
-			nodesItem.setPriority(_ctx.integerValue("GetNodeChildrenResponse.Data.Nodes["+ i +"].Priority"));
-			nodesItem.setOwnerId(_ctx.stringValue("GetNodeChildrenResponse.Data.Nodes["+ i +"].OwnerId"));
-			nodesItem.setCronExpress(_ctx.stringValue("GetNodeChildrenResponse.Data.Nodes["+ i +"].CronExpress"));
 			nodesItem.setNodeId(_ctx.longValue("GetNodeChildrenResponse.Data.Nodes["+ i +"].NodeId"));
+			nodesItem.setNodeName(_ctx.stringValue("GetNodeChildrenResponse.Data.Nodes["+ i +"].NodeName"));
+			nodesItem.setCronExpress(_ctx.stringValue("GetNodeChildrenResponse.Data.Nodes["+ i +"].CronExpress"));
+			nodesItem.setSchedulerType(_ctx.stringValue("GetNodeChildrenResponse.Data.Nodes["+ i +"].SchedulerType"));
+			nodesItem.setProgramType(_ctx.stringValue("GetNodeChildrenResponse.Data.Nodes["+ i +"].ProgramType"));
+			nodesItem.setOwnerId(_ctx.stringValue("GetNodeChildrenResponse.Data.Nodes["+ i +"].OwnerId"));
+			nodesItem.setProjectId(_ctx.longValue("GetNodeChildrenResponse.Data.Nodes["+ i +"].ProjectId"));
+			nodesItem.setRepeatability(_ctx.booleanValue("GetNodeChildrenResponse.Data.Nodes["+ i +"].Repeatability"));
+			nodesItem.setPriority(_ctx.integerValue("GetNodeChildrenResponse.Data.Nodes["+ i +"].Priority"));
+			nodesItem.setBaselineId(_ctx.longValue("GetNodeChildrenResponse.Data.Nodes["+ i +"].BaselineId"));
 
 			nodes.add(nodesItem);
 		}

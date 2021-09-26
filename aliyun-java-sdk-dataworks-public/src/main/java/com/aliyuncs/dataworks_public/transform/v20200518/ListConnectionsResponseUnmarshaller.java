@@ -39,24 +39,24 @@ public class ListConnectionsResponseUnmarshaller {
 		List<ConnectionsItem> connections = new ArrayList<ConnectionsItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListConnectionsResponse.Data.Connections.Length"); i++) {
 			ConnectionsItem connectionsItem = new ConnectionsItem();
-			connectionsItem.setStatus(_ctx.integerValue("ListConnectionsResponse.Data.Connections["+ i +"].Status"));
-			connectionsItem.setConnectionType(_ctx.stringValue("ListConnectionsResponse.Data.Connections["+ i +"].ConnectionType"));
-			connectionsItem.setProjectId(_ctx.integerValue("ListConnectionsResponse.Data.Connections["+ i +"].ProjectId"));
-			connectionsItem.setSubType(_ctx.stringValue("ListConnectionsResponse.Data.Connections["+ i +"].SubType"));
+			connectionsItem.setShared(_ctx.booleanValue("ListConnectionsResponse.Data.Connections["+ i +"].Shared"));
 			connectionsItem.setGmtModified(_ctx.stringValue("ListConnectionsResponse.Data.Connections["+ i +"].GmtModified"));
-			connectionsItem.setEnvType(_ctx.integerValue("ListConnectionsResponse.Data.Connections["+ i +"].EnvType"));
 			connectionsItem.setConnectStatus(_ctx.integerValue("ListConnectionsResponse.Data.Connections["+ i +"].ConnectStatus"));
-			connectionsItem.setSequence(_ctx.integerValue("ListConnectionsResponse.Data.Connections["+ i +"].Sequence"));
+			connectionsItem.setBindingCalcEngineId(_ctx.integerValue("ListConnectionsResponse.Data.Connections["+ i +"].BindingCalcEngineId"));
 			connectionsItem.setDescription(_ctx.stringValue("ListConnectionsResponse.Data.Connections["+ i +"].Description"));
+			connectionsItem.setConnectionType(_ctx.stringValue("ListConnectionsResponse.Data.Connections["+ i +"].ConnectionType"));
 			connectionsItem.setGmtCreate(_ctx.stringValue("ListConnectionsResponse.Data.Connections["+ i +"].GmtCreate"));
 			connectionsItem.setDefaultEngine(_ctx.booleanValue("ListConnectionsResponse.Data.Connections["+ i +"].DefaultEngine"));
-			connectionsItem.setShared(_ctx.booleanValue("ListConnectionsResponse.Data.Connections["+ i +"].Shared"));
 			connectionsItem.setOperator(_ctx.stringValue("ListConnectionsResponse.Data.Connections["+ i +"].Operator"));
-			connectionsItem.setName(_ctx.stringValue("ListConnectionsResponse.Data.Connections["+ i +"].Name"));
-			connectionsItem.setContent(_ctx.stringValue("ListConnectionsResponse.Data.Connections["+ i +"].Content"));
-			connectionsItem.setId(_ctx.integerValue("ListConnectionsResponse.Data.Connections["+ i +"].Id"));
-			connectionsItem.setBindingCalcEngineId(_ctx.integerValue("ListConnectionsResponse.Data.Connections["+ i +"].BindingCalcEngineId"));
+			connectionsItem.setSequence(_ctx.integerValue("ListConnectionsResponse.Data.Connections["+ i +"].Sequence"));
+			connectionsItem.setEnvType(_ctx.integerValue("ListConnectionsResponse.Data.Connections["+ i +"].EnvType"));
 			connectionsItem.setTenantId(_ctx.longValue("ListConnectionsResponse.Data.Connections["+ i +"].TenantId"));
+			connectionsItem.setName(_ctx.stringValue("ListConnectionsResponse.Data.Connections["+ i +"].Name"));
+			connectionsItem.setSubType(_ctx.stringValue("ListConnectionsResponse.Data.Connections["+ i +"].SubType"));
+			connectionsItem.setId(_ctx.integerValue("ListConnectionsResponse.Data.Connections["+ i +"].Id"));
+			connectionsItem.setProjectId(_ctx.integerValue("ListConnectionsResponse.Data.Connections["+ i +"].ProjectId"));
+			connectionsItem.setStatus(_ctx.integerValue("ListConnectionsResponse.Data.Connections["+ i +"].Status"));
+			connectionsItem.setContent(_ctx.stringValue("ListConnectionsResponse.Data.Connections["+ i +"].Content"));
 
 			connections.add(connectionsItem);
 		}

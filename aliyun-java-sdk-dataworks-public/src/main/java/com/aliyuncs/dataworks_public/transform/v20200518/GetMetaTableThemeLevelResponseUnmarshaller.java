@@ -29,20 +29,20 @@ public class GetMetaTableThemeLevelResponseUnmarshaller {
 	public static GetMetaTableThemeLevelResponse unmarshall(GetMetaTableThemeLevelResponse getMetaTableThemeLevelResponse, UnmarshallerContext _ctx) {
 		
 		getMetaTableThemeLevelResponse.setRequestId(_ctx.stringValue("GetMetaTableThemeLevelResponse.RequestId"));
-		getMetaTableThemeLevelResponse.setHttpStatusCode(_ctx.integerValue("GetMetaTableThemeLevelResponse.HttpStatusCode"));
-		getMetaTableThemeLevelResponse.setErrorMessage(_ctx.stringValue("GetMetaTableThemeLevelResponse.ErrorMessage"));
-		getMetaTableThemeLevelResponse.setSuccess(_ctx.booleanValue("GetMetaTableThemeLevelResponse.Success"));
 		getMetaTableThemeLevelResponse.setErrorCode(_ctx.stringValue("GetMetaTableThemeLevelResponse.ErrorCode"));
+		getMetaTableThemeLevelResponse.setErrorMessage(_ctx.stringValue("GetMetaTableThemeLevelResponse.ErrorMessage"));
+		getMetaTableThemeLevelResponse.setHttpStatusCode(_ctx.integerValue("GetMetaTableThemeLevelResponse.HttpStatusCode"));
+		getMetaTableThemeLevelResponse.setSuccess(_ctx.booleanValue("GetMetaTableThemeLevelResponse.Success"));
 
 		Entity entity = new Entity();
 
 		List<ThemeItem> theme = new ArrayList<ThemeItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetMetaTableThemeLevelResponse.Entity.Theme.Length"); i++) {
 			ThemeItem themeItem = new ThemeItem();
-			themeItem.setParentId(_ctx.longValue("GetMetaTableThemeLevelResponse.Entity.Theme["+ i +"].ParentId"));
-			themeItem.setName(_ctx.stringValue("GetMetaTableThemeLevelResponse.Entity.Theme["+ i +"].Name"));
 			themeItem.setThemeId(_ctx.longValue("GetMetaTableThemeLevelResponse.Entity.Theme["+ i +"].ThemeId"));
+			themeItem.setName(_ctx.stringValue("GetMetaTableThemeLevelResponse.Entity.Theme["+ i +"].Name"));
 			themeItem.setLevel(_ctx.integerValue("GetMetaTableThemeLevelResponse.Entity.Theme["+ i +"].Level"));
+			themeItem.setParentId(_ctx.longValue("GetMetaTableThemeLevelResponse.Entity.Theme["+ i +"].ParentId"));
 
 			theme.add(themeItem);
 		}
@@ -51,10 +51,10 @@ public class GetMetaTableThemeLevelResponseUnmarshaller {
 		List<LevelItem> level = new ArrayList<LevelItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetMetaTableThemeLevelResponse.Entity.Level.Length"); i++) {
 			LevelItem levelItem = new LevelItem();
+			levelItem.setLevelId(_ctx.longValue("GetMetaTableThemeLevelResponse.Entity.Level["+ i +"].LevelId"));
+			levelItem.setName(_ctx.stringValue("GetMetaTableThemeLevelResponse.Entity.Level["+ i +"].Name"));
 			levelItem.setType(_ctx.integerValue("GetMetaTableThemeLevelResponse.Entity.Level["+ i +"].Type"));
 			levelItem.setDescription(_ctx.stringValue("GetMetaTableThemeLevelResponse.Entity.Level["+ i +"].Description"));
-			levelItem.setName(_ctx.stringValue("GetMetaTableThemeLevelResponse.Entity.Level["+ i +"].Name"));
-			levelItem.setLevelId(_ctx.longValue("GetMetaTableThemeLevelResponse.Entity.Level["+ i +"].LevelId"));
 
 			level.add(levelItem);
 		}

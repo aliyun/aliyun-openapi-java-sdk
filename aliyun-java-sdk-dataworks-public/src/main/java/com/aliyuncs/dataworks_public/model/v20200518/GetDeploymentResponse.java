@@ -24,33 +24,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetDeploymentResponse extends AcsResponse {
 
-	private Integer httpStatusCode;
-
-	private String errorMessage;
-
 	private String requestId;
-
-	private String errorCode;
 
 	private Boolean success;
 
+	private String errorCode;
+
+	private String errorMessage;
+
+	private Integer httpStatusCode;
+
 	private Data data;
-
-	public Integer getHttpStatusCode() {
-		return this.httpStatusCode;
-	}
-
-	public void setHttpStatusCode(Integer httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -58,6 +42,14 @@ public class GetDeploymentResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public String getErrorCode() {
@@ -68,12 +60,20 @@ public class GetDeploymentResponse extends AcsResponse {
 		this.errorCode = errorCode;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getErrorMessage() {
+		return this.errorMessage;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
+	}
+
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
 	}
 
 	public Data getData() {
@@ -98,25 +98,65 @@ public class GetDeploymentResponse extends AcsResponse {
 
 		public static class Deployment {
 
-			private Integer status;
+			private String name;
 
-			private String errorMessage;
+			private String creatorId;
+
+			private String handlerId;
+
+			private Long createTime;
+
+			private Long executeTime;
+
+			private Integer status;
 
 			private Integer fromEnvironment;
 
 			private Integer toEnvironment;
 
+			private String errorMessage;
+
 			private Integer checkingStatus;
 
-			private Long createTime;
+			public String getName() {
+				return this.name;
+			}
 
-			private String handlerId;
+			public void setName(String name) {
+				this.name = name;
+			}
 
-			private String creatorId;
+			public String getCreatorId() {
+				return this.creatorId;
+			}
 
-			private Long executeTime;
+			public void setCreatorId(String creatorId) {
+				this.creatorId = creatorId;
+			}
 
-			private String name;
+			public String getHandlerId() {
+				return this.handlerId;
+			}
+
+			public void setHandlerId(String handlerId) {
+				this.handlerId = handlerId;
+			}
+
+			public Long getCreateTime() {
+				return this.createTime;
+			}
+
+			public void setCreateTime(Long createTime) {
+				this.createTime = createTime;
+			}
+
+			public Long getExecuteTime() {
+				return this.executeTime;
+			}
+
+			public void setExecuteTime(Long executeTime) {
+				this.executeTime = executeTime;
+			}
 
 			public Integer getStatus() {
 				return this.status;
@@ -124,14 +164,6 @@ public class GetDeploymentResponse extends AcsResponse {
 
 			public void setStatus(Integer status) {
 				this.status = status;
-			}
-
-			public String getErrorMessage() {
-				return this.errorMessage;
-			}
-
-			public void setErrorMessage(String errorMessage) {
-				this.errorMessage = errorMessage;
 			}
 
 			public Integer getFromEnvironment() {
@@ -150,52 +182,20 @@ public class GetDeploymentResponse extends AcsResponse {
 				this.toEnvironment = toEnvironment;
 			}
 
+			public String getErrorMessage() {
+				return this.errorMessage;
+			}
+
+			public void setErrorMessage(String errorMessage) {
+				this.errorMessage = errorMessage;
+			}
+
 			public Integer getCheckingStatus() {
 				return this.checkingStatus;
 			}
 
 			public void setCheckingStatus(Integer checkingStatus) {
 				this.checkingStatus = checkingStatus;
-			}
-
-			public Long getCreateTime() {
-				return this.createTime;
-			}
-
-			public void setCreateTime(Long createTime) {
-				this.createTime = createTime;
-			}
-
-			public String getHandlerId() {
-				return this.handlerId;
-			}
-
-			public void setHandlerId(String handlerId) {
-				this.handlerId = handlerId;
-			}
-
-			public String getCreatorId() {
-				return this.creatorId;
-			}
-
-			public void setCreatorId(String creatorId) {
-				this.creatorId = creatorId;
-			}
-
-			public Long getExecuteTime() {
-				return this.executeTime;
-			}
-
-			public void setExecuteTime(Long executeTime) {
-				this.executeTime = executeTime;
-			}
-
-			public String getName() {
-				return this.name;
-			}
-
-			public void setName(String name) {
-				this.name = name;
 			}
 		}
 	}

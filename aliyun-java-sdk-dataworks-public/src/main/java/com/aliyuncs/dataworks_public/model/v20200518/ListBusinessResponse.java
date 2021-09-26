@@ -25,33 +25,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListBusinessResponse extends AcsResponse {
 
-	private Integer httpStatusCode;
-
-	private String errorMessage;
-
 	private String requestId;
-
-	private String errorCode;
 
 	private Boolean success;
 
+	private String errorCode;
+
+	private String errorMessage;
+
+	private Integer httpStatusCode;
+
 	private Data data;
-
-	public Integer getHttpStatusCode() {
-		return this.httpStatusCode;
-	}
-
-	public void setHttpStatusCode(Integer httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -59,6 +43,14 @@ public class ListBusinessResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public String getErrorCode() {
@@ -69,12 +61,20 @@ public class ListBusinessResponse extends AcsResponse {
 		this.errorCode = errorCode;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getErrorMessage() {
+		return this.errorMessage;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
+	}
+
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
 	}
 
 	public Data getData() {
@@ -129,41 +129,17 @@ public class ListBusinessResponse extends AcsResponse {
 
 		public static class BusinessItem {
 
-			private String owner;
-
-			private String description;
-
-			private Long projectId;
-
 			private Long businessId;
 
 			private String businessName;
 
+			private Long projectId;
+
+			private String owner;
+
+			private String description;
+
 			private String useType;
-
-			public String getOwner() {
-				return this.owner;
-			}
-
-			public void setOwner(String owner) {
-				this.owner = owner;
-			}
-
-			public String getDescription() {
-				return this.description;
-			}
-
-			public void setDescription(String description) {
-				this.description = description;
-			}
-
-			public Long getProjectId() {
-				return this.projectId;
-			}
-
-			public void setProjectId(Long projectId) {
-				this.projectId = projectId;
-			}
 
 			public Long getBusinessId() {
 				return this.businessId;
@@ -179,6 +155,30 @@ public class ListBusinessResponse extends AcsResponse {
 
 			public void setBusinessName(String businessName) {
 				this.businessName = businessName;
+			}
+
+			public Long getProjectId() {
+				return this.projectId;
+			}
+
+			public void setProjectId(Long projectId) {
+				this.projectId = projectId;
+			}
+
+			public String getOwner() {
+				return this.owner;
+			}
+
+			public void setOwner(String owner) {
+				this.owner = owner;
+			}
+
+			public String getDescription() {
+				return this.description;
+			}
+
+			public void setDescription(String description) {
+				this.description = description;
 			}
 
 			public String getUseType() {

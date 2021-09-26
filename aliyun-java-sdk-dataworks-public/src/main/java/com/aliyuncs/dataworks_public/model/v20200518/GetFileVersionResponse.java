@@ -24,33 +24,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetFileVersionResponse extends AcsResponse {
 
-	private Integer httpStatusCode;
-
-	private String errorMessage;
-
 	private String requestId;
-
-	private String errorCode;
 
 	private Boolean success;
 
+	private String errorCode;
+
+	private String errorMessage;
+
+	private Integer httpStatusCode;
+
 	private Data data;
-
-	public Integer getHttpStatusCode() {
-		return this.httpStatusCode;
-	}
-
-	public void setHttpStatusCode(Integer httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -58,6 +42,14 @@ public class GetFileVersionResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public String getErrorCode() {
@@ -68,12 +60,20 @@ public class GetFileVersionResponse extends AcsResponse {
 		this.errorCode = errorCode;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getErrorMessage() {
+		return this.errorMessage;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
+	}
+
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
 	}
 
 	public Data getData() {
@@ -86,31 +86,39 @@ public class GetFileVersionResponse extends AcsResponse {
 
 	public static class Data {
 
+		private Integer fileVersion;
+
 		private String fileContent;
-
-		private Boolean isCurrentProd;
-
-		private String status;
-
-		private String nodeContent;
-
-		private String commitUser;
-
-		private String comment;
 
 		private String filePropertyContent;
 
-		private String fileName;
+		private String nodeContent;
 
-		private String useType;
+		private String comment;
+
+		private Long nodeId;
+
+		private Boolean isCurrentProd;
 
 		private String changeType;
 
-		private Integer fileVersion;
+		private String status;
+
+		private String fileName;
+
+		private String commitUser;
 
 		private Long commitTime;
 
-		private Long nodeId;
+		private String useType;
+
+		public Integer getFileVersion() {
+			return this.fileVersion;
+		}
+
+		public void setFileVersion(Integer fileVersion) {
+			this.fileVersion = fileVersion;
+		}
 
 		public String getFileContent() {
 			return this.fileContent;
@@ -118,46 +126,6 @@ public class GetFileVersionResponse extends AcsResponse {
 
 		public void setFileContent(String fileContent) {
 			this.fileContent = fileContent;
-		}
-
-		public Boolean getIsCurrentProd() {
-			return this.isCurrentProd;
-		}
-
-		public void setIsCurrentProd(Boolean isCurrentProd) {
-			this.isCurrentProd = isCurrentProd;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
-		public String getNodeContent() {
-			return this.nodeContent;
-		}
-
-		public void setNodeContent(String nodeContent) {
-			this.nodeContent = nodeContent;
-		}
-
-		public String getCommitUser() {
-			return this.commitUser;
-		}
-
-		public void setCommitUser(String commitUser) {
-			this.commitUser = commitUser;
-		}
-
-		public String getComment() {
-			return this.comment;
-		}
-
-		public void setComment(String comment) {
-			this.comment = comment;
 		}
 
 		public String getFilePropertyContent() {
@@ -168,20 +136,36 @@ public class GetFileVersionResponse extends AcsResponse {
 			this.filePropertyContent = filePropertyContent;
 		}
 
-		public String getFileName() {
-			return this.fileName;
+		public String getNodeContent() {
+			return this.nodeContent;
 		}
 
-		public void setFileName(String fileName) {
-			this.fileName = fileName;
+		public void setNodeContent(String nodeContent) {
+			this.nodeContent = nodeContent;
 		}
 
-		public String getUseType() {
-			return this.useType;
+		public String getComment() {
+			return this.comment;
 		}
 
-		public void setUseType(String useType) {
-			this.useType = useType;
+		public void setComment(String comment) {
+			this.comment = comment;
+		}
+
+		public Long getNodeId() {
+			return this.nodeId;
+		}
+
+		public void setNodeId(Long nodeId) {
+			this.nodeId = nodeId;
+		}
+
+		public Boolean getIsCurrentProd() {
+			return this.isCurrentProd;
+		}
+
+		public void setIsCurrentProd(Boolean isCurrentProd) {
+			this.isCurrentProd = isCurrentProd;
 		}
 
 		public String getChangeType() {
@@ -192,12 +176,28 @@ public class GetFileVersionResponse extends AcsResponse {
 			this.changeType = changeType;
 		}
 
-		public Integer getFileVersion() {
-			return this.fileVersion;
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setFileVersion(Integer fileVersion) {
-			this.fileVersion = fileVersion;
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
+		public String getFileName() {
+			return this.fileName;
+		}
+
+		public void setFileName(String fileName) {
+			this.fileName = fileName;
+		}
+
+		public String getCommitUser() {
+			return this.commitUser;
+		}
+
+		public void setCommitUser(String commitUser) {
+			this.commitUser = commitUser;
 		}
 
 		public Long getCommitTime() {
@@ -208,12 +208,12 @@ public class GetFileVersionResponse extends AcsResponse {
 			this.commitTime = commitTime;
 		}
 
-		public Long getNodeId() {
-			return this.nodeId;
+		public String getUseType() {
+			return this.useType;
 		}
 
-		public void setNodeId(Long nodeId) {
-			this.nodeId = nodeId;
+		public void setUseType(String useType) {
+			this.useType = useType;
 		}
 	}
 

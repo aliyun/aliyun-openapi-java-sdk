@@ -37,13 +37,13 @@ public class ListProjectsResponseUnmarshaller {
 		List<Project> projectList = new ArrayList<Project>();
 		for (int i = 0; i < _ctx.lengthValue("ListProjectsResponse.PageResult.ProjectList.Length"); i++) {
 			Project project = new Project();
-			project.setProjectStatusCode(_ctx.stringValue("ListProjectsResponse.PageResult.ProjectList["+ i +"].ProjectStatusCode"));
-			project.setProjectStatus(_ctx.integerValue("ListProjectsResponse.PageResult.ProjectList["+ i +"].ProjectStatus"));
 			project.setProjectName(_ctx.stringValue("ListProjectsResponse.PageResult.ProjectList["+ i +"].ProjectName"));
 			project.setProjectIdentifier(_ctx.stringValue("ListProjectsResponse.PageResult.ProjectList["+ i +"].ProjectIdentifier"));
-			project.setProjectId(_ctx.longValue("ListProjectsResponse.PageResult.ProjectList["+ i +"].ProjectId"));
 			project.setProjectDescription(_ctx.stringValue("ListProjectsResponse.PageResult.ProjectList["+ i +"].ProjectDescription"));
+			project.setProjectStatus(_ctx.integerValue("ListProjectsResponse.PageResult.ProjectList["+ i +"].ProjectStatus"));
+			project.setProjectId(_ctx.longValue("ListProjectsResponse.PageResult.ProjectList["+ i +"].ProjectId"));
 			project.setProjectOwnerBaseId(_ctx.stringValue("ListProjectsResponse.PageResult.ProjectList["+ i +"].ProjectOwnerBaseId"));
+			project.setProjectStatusCode(_ctx.stringValue("ListProjectsResponse.PageResult.ProjectList["+ i +"].ProjectStatusCode"));
 
 			projectList.add(project);
 		}

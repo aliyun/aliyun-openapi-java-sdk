@@ -32,36 +32,36 @@ public class GetRemindResponseUnmarshaller {
 	public static GetRemindResponse unmarshall(GetRemindResponse getRemindResponse, UnmarshallerContext _ctx) {
 		
 		getRemindResponse.setRequestId(_ctx.stringValue("GetRemindResponse.RequestId"));
-		getRemindResponse.setHttpStatusCode(_ctx.integerValue("GetRemindResponse.HttpStatusCode"));
-		getRemindResponse.setErrorMessage(_ctx.stringValue("GetRemindResponse.ErrorMessage"));
-		getRemindResponse.setErrorCode(_ctx.stringValue("GetRemindResponse.ErrorCode"));
 		getRemindResponse.setSuccess(_ctx.booleanValue("GetRemindResponse.Success"));
+		getRemindResponse.setErrorCode(_ctx.stringValue("GetRemindResponse.ErrorCode"));
+		getRemindResponse.setErrorMessage(_ctx.stringValue("GetRemindResponse.ErrorMessage"));
+		getRemindResponse.setHttpStatusCode(_ctx.integerValue("GetRemindResponse.HttpStatusCode"));
 
 		Data data = new Data();
-		data.setMaxAlertTimes(_ctx.integerValue("GetRemindResponse.Data.MaxAlertTimes"));
-		data.setRemindUnit(_ctx.stringValue("GetRemindResponse.Data.RemindUnit"));
-		data.setAlertInterval(_ctx.integerValue("GetRemindResponse.Data.AlertInterval"));
-		data.setUseflag(_ctx.booleanValue("GetRemindResponse.Data.Useflag"));
-		data.setFounder(_ctx.stringValue("GetRemindResponse.Data.Founder"));
 		data.setRemindId(_ctx.longValue("GetRemindResponse.Data.RemindId"));
+		data.setRemindName(_ctx.stringValue("GetRemindResponse.Data.RemindName"));
+		data.setDndStart(_ctx.stringValue("GetRemindResponse.Data.DndStart"));
 		data.setDndEnd(_ctx.stringValue("GetRemindResponse.Data.DndEnd"));
+		data.setRemindUnit(_ctx.stringValue("GetRemindResponse.Data.RemindUnit"));
 		data.setRemindType(_ctx.stringValue("GetRemindResponse.Data.RemindType"));
 		data.setAlertUnit(_ctx.stringValue("GetRemindResponse.Data.AlertUnit"));
-		data.setDndStart(_ctx.stringValue("GetRemindResponse.Data.DndStart"));
-		data.setRemindName(_ctx.stringValue("GetRemindResponse.Data.RemindName"));
+		data.setUseflag(_ctx.booleanValue("GetRemindResponse.Data.Useflag"));
+		data.setFounder(_ctx.stringValue("GetRemindResponse.Data.Founder"));
+		data.setAlertInterval(_ctx.integerValue("GetRemindResponse.Data.AlertInterval"));
 		data.setDetail(_ctx.stringValue("GetRemindResponse.Data.Detail"));
-
-		List<String> alertTargets = new ArrayList<String>();
-		for (int i = 0; i < _ctx.lengthValue("GetRemindResponse.Data.AlertTargets.Length"); i++) {
-			alertTargets.add(_ctx.stringValue("GetRemindResponse.Data.AlertTargets["+ i +"]"));
-		}
-		data.setAlertTargets(alertTargets);
+		data.setMaxAlertTimes(_ctx.integerValue("GetRemindResponse.Data.MaxAlertTimes"));
 
 		List<String> alertMethods = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("GetRemindResponse.Data.AlertMethods.Length"); i++) {
 			alertMethods.add(_ctx.stringValue("GetRemindResponse.Data.AlertMethods["+ i +"]"));
 		}
 		data.setAlertMethods(alertMethods);
+
+		List<String> alertTargets = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("GetRemindResponse.Data.AlertTargets.Length"); i++) {
+			alertTargets.add(_ctx.stringValue("GetRemindResponse.Data.AlertTargets["+ i +"]"));
+		}
+		data.setAlertTargets(alertTargets);
 
 		List<RobotsItem> robots = new ArrayList<RobotsItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetRemindResponse.Data.Robots.Length"); i++) {
@@ -76,9 +76,9 @@ public class GetRemindResponseUnmarshaller {
 		List<NodesItem> nodes = new ArrayList<NodesItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetRemindResponse.Data.Nodes.Length"); i++) {
 			NodesItem nodesItem = new NodesItem();
-			nodesItem.setOwner(_ctx.stringValue("GetRemindResponse.Data.Nodes["+ i +"].Owner"));
-			nodesItem.setNodeName(_ctx.stringValue("GetRemindResponse.Data.Nodes["+ i +"].NodeName"));
 			nodesItem.setNodeId(_ctx.longValue("GetRemindResponse.Data.Nodes["+ i +"].NodeId"));
+			nodesItem.setNodeName(_ctx.stringValue("GetRemindResponse.Data.Nodes["+ i +"].NodeName"));
+			nodesItem.setOwner(_ctx.stringValue("GetRemindResponse.Data.Nodes["+ i +"].Owner"));
 			nodesItem.setProjectId(_ctx.longValue("GetRemindResponse.Data.Nodes["+ i +"].ProjectId"));
 
 			nodes.add(nodesItem);
@@ -88,8 +88,8 @@ public class GetRemindResponseUnmarshaller {
 		List<BaselinesItem> baselines = new ArrayList<BaselinesItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetRemindResponse.Data.Baselines.Length"); i++) {
 			BaselinesItem baselinesItem = new BaselinesItem();
-			baselinesItem.setBaselineName(_ctx.stringValue("GetRemindResponse.Data.Baselines["+ i +"].BaselineName"));
 			baselinesItem.setBaselineId(_ctx.longValue("GetRemindResponse.Data.Baselines["+ i +"].BaselineId"));
+			baselinesItem.setBaselineName(_ctx.stringValue("GetRemindResponse.Data.Baselines["+ i +"].BaselineName"));
 
 			baselines.add(baselinesItem);
 		}
@@ -107,8 +107,8 @@ public class GetRemindResponseUnmarshaller {
 		List<BizProcessesItem> bizProcesses = new ArrayList<BizProcessesItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetRemindResponse.Data.BizProcesses.Length"); i++) {
 			BizProcessesItem bizProcessesItem = new BizProcessesItem();
-			bizProcessesItem.setBizProcessName(_ctx.stringValue("GetRemindResponse.Data.BizProcesses["+ i +"].BizProcessName"));
 			bizProcessesItem.setBizId(_ctx.longValue("GetRemindResponse.Data.BizProcesses["+ i +"].BizId"));
+			bizProcessesItem.setBizProcessName(_ctx.stringValue("GetRemindResponse.Data.BizProcesses["+ i +"].BizProcessName"));
 
 			bizProcesses.add(bizProcessesItem);
 		}

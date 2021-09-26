@@ -28,10 +28,10 @@ public class ListNodesByOutputResponseUnmarshaller {
 	public static ListNodesByOutputResponse unmarshall(ListNodesByOutputResponse listNodesByOutputResponse, UnmarshallerContext _ctx) {
 		
 		listNodesByOutputResponse.setRequestId(_ctx.stringValue("ListNodesByOutputResponse.RequestId"));
-		listNodesByOutputResponse.setHttpStatusCode(_ctx.integerValue("ListNodesByOutputResponse.HttpStatusCode"));
-		listNodesByOutputResponse.setErrorMessage(_ctx.stringValue("ListNodesByOutputResponse.ErrorMessage"));
-		listNodesByOutputResponse.setErrorCode(_ctx.stringValue("ListNodesByOutputResponse.ErrorCode"));
 		listNodesByOutputResponse.setSuccess(_ctx.booleanValue("ListNodesByOutputResponse.Success"));
+		listNodesByOutputResponse.setHttpStatusCode(_ctx.integerValue("ListNodesByOutputResponse.HttpStatusCode"));
+		listNodesByOutputResponse.setErrorCode(_ctx.stringValue("ListNodesByOutputResponse.ErrorCode"));
+		listNodesByOutputResponse.setErrorMessage(_ctx.stringValue("ListNodesByOutputResponse.ErrorMessage"));
 
 		List<OutputNodePair> data = new ArrayList<OutputNodePair>();
 		for (int i = 0; i < _ctx.lengthValue("ListNodesByOutputResponse.Data.Length"); i++) {
@@ -41,25 +41,25 @@ public class ListNodesByOutputResponseUnmarshaller {
 			List<Node> nodeList = new ArrayList<Node>();
 			for (int j = 0; j < _ctx.lengthValue("ListNodesByOutputResponse.Data["+ i +"].NodeList.Length"); j++) {
 				Node node = new Node();
-				node.setSchedulerType(_ctx.stringValue("ListNodesByOutputResponse.Data["+ i +"].NodeList["+ j +"].SchedulerType"));
-				node.setRepeatInterval(_ctx.integerValue("ListNodesByOutputResponse.Data["+ i +"].NodeList["+ j +"].RepeatInterval"));
-				node.setRepeatability(_ctx.booleanValue("ListNodesByOutputResponse.Data["+ i +"].NodeList["+ j +"].Repeatability"));
-				node.setFileType(_ctx.stringValue("ListNodesByOutputResponse.Data["+ i +"].NodeList["+ j +"].FileType"));
-				node.setProjectId(_ctx.longValue("ListNodesByOutputResponse.Data["+ i +"].NodeList["+ j +"].ProjectId"));
-				node.setProgramType(_ctx.stringValue("ListNodesByOutputResponse.Data["+ i +"].NodeList["+ j +"].ProgramType"));
-				node.setPriority(_ctx.integerValue("ListNodesByOutputResponse.Data["+ i +"].NodeList["+ j +"].Priority"));
-				node.setOwnerId(_ctx.stringValue("ListNodesByOutputResponse.Data["+ i +"].NodeList["+ j +"].OwnerId"));
-				node.setConnection(_ctx.stringValue("ListNodesByOutputResponse.Data["+ i +"].NodeList["+ j +"].Connection"));
-				node.setParamValues(_ctx.stringValue("ListNodesByOutputResponse.Data["+ i +"].NodeList["+ j +"].ParamValues"));
-				node.setRelatedFlowId(_ctx.longValue("ListNodesByOutputResponse.Data["+ i +"].NodeList["+ j +"].RelatedFlowId"));
-				node.setDqcType(_ctx.integerValue("ListNodesByOutputResponse.Data["+ i +"].NodeList["+ j +"].DqcType"));
-				node.setBaselineId(_ctx.longValue("ListNodesByOutputResponse.Data["+ i +"].NodeList["+ j +"].BaselineId"));
-				node.setDescription(_ctx.stringValue("ListNodesByOutputResponse.Data["+ i +"].NodeList["+ j +"].Description"));
-				node.setNodeName(_ctx.stringValue("ListNodesByOutputResponse.Data["+ i +"].NodeList["+ j +"].NodeName"));
-				node.setResGroupName(_ctx.stringValue("ListNodesByOutputResponse.Data["+ i +"].NodeList["+ j +"].ResGroupName"));
-				node.setDqcDescription(_ctx.stringValue("ListNodesByOutputResponse.Data["+ i +"].NodeList["+ j +"].DqcDescription"));
-				node.setCronExpress(_ctx.stringValue("ListNodesByOutputResponse.Data["+ i +"].NodeList["+ j +"].CronExpress"));
 				node.setNodeId(_ctx.longValue("ListNodesByOutputResponse.Data["+ i +"].NodeList["+ j +"].NodeId"));
+				node.setNodeName(_ctx.stringValue("ListNodesByOutputResponse.Data["+ i +"].NodeList["+ j +"].NodeName"));
+				node.setOwnerId(_ctx.stringValue("ListNodesByOutputResponse.Data["+ i +"].NodeList["+ j +"].OwnerId"));
+				node.setDescription(_ctx.stringValue("ListNodesByOutputResponse.Data["+ i +"].NodeList["+ j +"].Description"));
+				node.setResGroupName(_ctx.stringValue("ListNodesByOutputResponse.Data["+ i +"].NodeList["+ j +"].ResGroupName"));
+				node.setCronExpress(_ctx.stringValue("ListNodesByOutputResponse.Data["+ i +"].NodeList["+ j +"].CronExpress"));
+				node.setRepeatability(_ctx.booleanValue("ListNodesByOutputResponse.Data["+ i +"].NodeList["+ j +"].Repeatability"));
+				node.setProgramType(_ctx.stringValue("ListNodesByOutputResponse.Data["+ i +"].NodeList["+ j +"].ProgramType"));
+				node.setProjectId(_ctx.longValue("ListNodesByOutputResponse.Data["+ i +"].NodeList["+ j +"].ProjectId"));
+				node.setSchedulerType(_ctx.stringValue("ListNodesByOutputResponse.Data["+ i +"].NodeList["+ j +"].SchedulerType"));
+				node.setParamValues(_ctx.stringValue("ListNodesByOutputResponse.Data["+ i +"].NodeList["+ j +"].ParamValues"));
+				node.setPriority(_ctx.integerValue("ListNodesByOutputResponse.Data["+ i +"].NodeList["+ j +"].Priority"));
+				node.setBaselineId(_ctx.longValue("ListNodesByOutputResponse.Data["+ i +"].NodeList["+ j +"].BaselineId"));
+				node.setRepeatInterval(_ctx.integerValue("ListNodesByOutputResponse.Data["+ i +"].NodeList["+ j +"].RepeatInterval"));
+				node.setConnection(_ctx.stringValue("ListNodesByOutputResponse.Data["+ i +"].NodeList["+ j +"].Connection"));
+				node.setDqcType(_ctx.integerValue("ListNodesByOutputResponse.Data["+ i +"].NodeList["+ j +"].DqcType"));
+				node.setDqcDescription(_ctx.stringValue("ListNodesByOutputResponse.Data["+ i +"].NodeList["+ j +"].DqcDescription"));
+				node.setRelatedFlowId(_ctx.longValue("ListNodesByOutputResponse.Data["+ i +"].NodeList["+ j +"].RelatedFlowId"));
+				node.setFileType(_ctx.stringValue("ListNodesByOutputResponse.Data["+ i +"].NodeList["+ j +"].FileType"));
 
 				nodeList.add(node);
 			}

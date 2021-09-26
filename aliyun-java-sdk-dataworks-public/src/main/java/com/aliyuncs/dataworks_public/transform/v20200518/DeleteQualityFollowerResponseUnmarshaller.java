@@ -23,11 +23,11 @@ public class DeleteQualityFollowerResponseUnmarshaller {
 	public static DeleteQualityFollowerResponse unmarshall(DeleteQualityFollowerResponse deleteQualityFollowerResponse, UnmarshallerContext _ctx) {
 		
 		deleteQualityFollowerResponse.setRequestId(_ctx.stringValue("DeleteQualityFollowerResponse.RequestId"));
-		deleteQualityFollowerResponse.setHttpStatusCode(_ctx.integerValue("DeleteQualityFollowerResponse.HttpStatusCode"));
-		deleteQualityFollowerResponse.setData(_ctx.booleanValue("DeleteQualityFollowerResponse.Data"));
-		deleteQualityFollowerResponse.setErrorMessage(_ctx.stringValue("DeleteQualityFollowerResponse.ErrorMessage"));
 		deleteQualityFollowerResponse.setErrorCode(_ctx.stringValue("DeleteQualityFollowerResponse.ErrorCode"));
+		deleteQualityFollowerResponse.setData(_ctx.booleanValue("DeleteQualityFollowerResponse.Data"));
 		deleteQualityFollowerResponse.setSuccess(_ctx.booleanValue("DeleteQualityFollowerResponse.Success"));
+		deleteQualityFollowerResponse.setErrorMessage(_ctx.stringValue("DeleteQualityFollowerResponse.ErrorMessage"));
+		deleteQualityFollowerResponse.setHttpStatusCode(_ctx.integerValue("DeleteQualityFollowerResponse.HttpStatusCode"));
 	 
 	 	return deleteQualityFollowerResponse;
 	}

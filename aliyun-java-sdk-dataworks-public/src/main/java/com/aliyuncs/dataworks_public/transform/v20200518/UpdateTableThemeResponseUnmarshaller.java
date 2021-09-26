@@ -23,11 +23,11 @@ public class UpdateTableThemeResponseUnmarshaller {
 	public static UpdateTableThemeResponse unmarshall(UpdateTableThemeResponse updateTableThemeResponse, UnmarshallerContext _ctx) {
 		
 		updateTableThemeResponse.setRequestId(_ctx.stringValue("UpdateTableThemeResponse.RequestId"));
-		updateTableThemeResponse.setHttpStatusCode(_ctx.integerValue("UpdateTableThemeResponse.HttpStatusCode"));
-		updateTableThemeResponse.setErrorMessage(_ctx.stringValue("UpdateTableThemeResponse.ErrorMessage"));
-		updateTableThemeResponse.setUpdateResult(_ctx.booleanValue("UpdateTableThemeResponse.UpdateResult"));
 		updateTableThemeResponse.setErrorCode(_ctx.stringValue("UpdateTableThemeResponse.ErrorCode"));
+		updateTableThemeResponse.setErrorMessage(_ctx.stringValue("UpdateTableThemeResponse.ErrorMessage"));
+		updateTableThemeResponse.setHttpStatusCode(_ctx.integerValue("UpdateTableThemeResponse.HttpStatusCode"));
 		updateTableThemeResponse.setSuccess(_ctx.booleanValue("UpdateTableThemeResponse.Success"));
+		updateTableThemeResponse.setUpdateResult(_ctx.booleanValue("UpdateTableThemeResponse.UpdateResult"));
 	 
 	 	return updateTableThemeResponse;
 	}

@@ -23,11 +23,11 @@ public class AddToMetaCategoryResponseUnmarshaller {
 	public static AddToMetaCategoryResponse unmarshall(AddToMetaCategoryResponse addToMetaCategoryResponse, UnmarshallerContext _ctx) {
 		
 		addToMetaCategoryResponse.setRequestId(_ctx.stringValue("AddToMetaCategoryResponse.RequestId"));
-		addToMetaCategoryResponse.setHttpStatusCode(_ctx.integerValue("AddToMetaCategoryResponse.HttpStatusCode"));
-		addToMetaCategoryResponse.setData(_ctx.booleanValue("AddToMetaCategoryResponse.Data"));
-		addToMetaCategoryResponse.setErrorMessage(_ctx.stringValue("AddToMetaCategoryResponse.ErrorMessage"));
 		addToMetaCategoryResponse.setErrorCode(_ctx.stringValue("AddToMetaCategoryResponse.ErrorCode"));
+		addToMetaCategoryResponse.setErrorMessage(_ctx.stringValue("AddToMetaCategoryResponse.ErrorMessage"));
+		addToMetaCategoryResponse.setHttpStatusCode(_ctx.integerValue("AddToMetaCategoryResponse.HttpStatusCode"));
 		addToMetaCategoryResponse.setSuccess(_ctx.booleanValue("AddToMetaCategoryResponse.Success"));
+		addToMetaCategoryResponse.setData(_ctx.booleanValue("AddToMetaCategoryResponse.Data"));
 	 
 	 	return addToMetaCategoryResponse;
 	}

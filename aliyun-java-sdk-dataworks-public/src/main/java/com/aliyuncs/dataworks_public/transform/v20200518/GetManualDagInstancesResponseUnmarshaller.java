@@ -31,22 +31,22 @@ public class GetManualDagInstancesResponseUnmarshaller {
 		List<InstancesItem> instances = new ArrayList<InstancesItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetManualDagInstancesResponse.Instances.Length"); i++) {
 			InstancesItem instancesItem = new InstancesItem();
+			instancesItem.setNodeId(_ctx.longValue("GetManualDagInstancesResponse.Instances["+ i +"].NodeId"));
+			instancesItem.setInstanceId(_ctx.longValue("GetManualDagInstancesResponse.Instances["+ i +"].InstanceId"));
+			instancesItem.setDagId(_ctx.longValue("GetManualDagInstancesResponse.Instances["+ i +"].DagId"));
+			instancesItem.setDagType(_ctx.stringValue("GetManualDagInstancesResponse.Instances["+ i +"].DagType"));
 			instancesItem.setStatus(_ctx.stringValue("GetManualDagInstancesResponse.Instances["+ i +"].Status"));
-			instancesItem.setBeginRunningTime(_ctx.longValue("GetManualDagInstancesResponse.Instances["+ i +"].BeginRunningTime"));
 			instancesItem.setBizDate(_ctx.longValue("GetManualDagInstancesResponse.Instances["+ i +"].BizDate"));
 			instancesItem.setCycTime(_ctx.longValue("GetManualDagInstancesResponse.Instances["+ i +"].CycTime"));
-			instancesItem.setFinishTime(_ctx.longValue("GetManualDagInstancesResponse.Instances["+ i +"].FinishTime"));
 			instancesItem.setCreateTime(_ctx.longValue("GetManualDagInstancesResponse.Instances["+ i +"].CreateTime"));
-			instancesItem.setDagId(_ctx.longValue("GetManualDagInstancesResponse.Instances["+ i +"].DagId"));
-			instancesItem.setInstanceId(_ctx.longValue("GetManualDagInstancesResponse.Instances["+ i +"].InstanceId"));
-			instancesItem.setBeginWaitResTime(_ctx.longValue("GetManualDagInstancesResponse.Instances["+ i +"].BeginWaitResTime"));
-			instancesItem.setTaskType(_ctx.stringValue("GetManualDagInstancesResponse.Instances["+ i +"].TaskType"));
-			instancesItem.setParamValues(_ctx.stringValue("GetManualDagInstancesResponse.Instances["+ i +"].ParamValues"));
-			instancesItem.setDagType(_ctx.stringValue("GetManualDagInstancesResponse.Instances["+ i +"].DagType"));
+			instancesItem.setModifyTime(_ctx.longValue("GetManualDagInstancesResponse.Instances["+ i +"].ModifyTime"));
 			instancesItem.setNodeName(_ctx.stringValue("GetManualDagInstancesResponse.Instances["+ i +"].NodeName"));
 			instancesItem.setBeginWaitTimeTime(_ctx.longValue("GetManualDagInstancesResponse.Instances["+ i +"].BeginWaitTimeTime"));
-			instancesItem.setNodeId(_ctx.longValue("GetManualDagInstancesResponse.Instances["+ i +"].NodeId"));
-			instancesItem.setModifyTime(_ctx.longValue("GetManualDagInstancesResponse.Instances["+ i +"].ModifyTime"));
+			instancesItem.setBeginWaitResTime(_ctx.longValue("GetManualDagInstancesResponse.Instances["+ i +"].BeginWaitResTime"));
+			instancesItem.setBeginRunningTime(_ctx.longValue("GetManualDagInstancesResponse.Instances["+ i +"].BeginRunningTime"));
+			instancesItem.setParamValues(_ctx.stringValue("GetManualDagInstancesResponse.Instances["+ i +"].ParamValues"));
+			instancesItem.setFinishTime(_ctx.longValue("GetManualDagInstancesResponse.Instances["+ i +"].FinishTime"));
+			instancesItem.setTaskType(_ctx.stringValue("GetManualDagInstancesResponse.Instances["+ i +"].TaskType"));
 
 			instances.add(instancesItem);
 		}

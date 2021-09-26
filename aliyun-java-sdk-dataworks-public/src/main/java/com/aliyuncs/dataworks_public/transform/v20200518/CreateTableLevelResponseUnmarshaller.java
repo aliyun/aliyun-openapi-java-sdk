@@ -23,9 +23,9 @@ public class CreateTableLevelResponseUnmarshaller {
 	public static CreateTableLevelResponse unmarshall(CreateTableLevelResponse createTableLevelResponse, UnmarshallerContext _ctx) {
 		
 		createTableLevelResponse.setRequestId(_ctx.stringValue("CreateTableLevelResponse.RequestId"));
-		createTableLevelResponse.setHttpStatusCode(_ctx.integerValue("CreateTableLevelResponse.HttpStatusCode"));
-		createTableLevelResponse.setErrorMessage(_ctx.stringValue("CreateTableLevelResponse.ErrorMessage"));
 		createTableLevelResponse.setErrorCode(_ctx.stringValue("CreateTableLevelResponse.ErrorCode"));
+		createTableLevelResponse.setErrorMessage(_ctx.stringValue("CreateTableLevelResponse.ErrorMessage"));
+		createTableLevelResponse.setHttpStatusCode(_ctx.integerValue("CreateTableLevelResponse.HttpStatusCode"));
 		createTableLevelResponse.setSuccess(_ctx.booleanValue("CreateTableLevelResponse.Success"));
 		createTableLevelResponse.setLevelId(_ctx.longValue("CreateTableLevelResponse.LevelId"));
 	 

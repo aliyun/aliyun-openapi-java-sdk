@@ -26,10 +26,10 @@ public class UpdateTableResponseUnmarshaller {
 		updateTableResponse.setRequestId(_ctx.stringValue("UpdateTableResponse.RequestId"));
 
 		TaskInfo taskInfo = new TaskInfo();
-		taskInfo.setStatus(_ctx.stringValue("UpdateTableResponse.TaskInfo.Status"));
-		taskInfo.setNextTaskId(_ctx.stringValue("UpdateTableResponse.TaskInfo.NextTaskId"));
 		taskInfo.setTaskId(_ctx.stringValue("UpdateTableResponse.TaskInfo.TaskId"));
 		taskInfo.setContent(_ctx.stringValue("UpdateTableResponse.TaskInfo.Content"));
+		taskInfo.setStatus(_ctx.stringValue("UpdateTableResponse.TaskInfo.Status"));
+		taskInfo.setNextTaskId(_ctx.stringValue("UpdateTableResponse.TaskInfo.NextTaskId"));
 		updateTableResponse.setTaskInfo(taskInfo);
 	 
 	 	return updateTableResponse;

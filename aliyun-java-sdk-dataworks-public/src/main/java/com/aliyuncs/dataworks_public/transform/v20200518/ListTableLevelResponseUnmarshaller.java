@@ -28,10 +28,10 @@ public class ListTableLevelResponseUnmarshaller {
 	public static ListTableLevelResponse unmarshall(ListTableLevelResponse listTableLevelResponse, UnmarshallerContext _ctx) {
 		
 		listTableLevelResponse.setRequestId(_ctx.stringValue("ListTableLevelResponse.RequestId"));
-		listTableLevelResponse.setHttpStatusCode(_ctx.integerValue("ListTableLevelResponse.HttpStatusCode"));
-		listTableLevelResponse.setErrorMessage(_ctx.stringValue("ListTableLevelResponse.ErrorMessage"));
-		listTableLevelResponse.setSuccess(_ctx.booleanValue("ListTableLevelResponse.Success"));
 		listTableLevelResponse.setErrorCode(_ctx.stringValue("ListTableLevelResponse.ErrorCode"));
+		listTableLevelResponse.setErrorMessage(_ctx.stringValue("ListTableLevelResponse.ErrorMessage"));
+		listTableLevelResponse.setHttpStatusCode(_ctx.integerValue("ListTableLevelResponse.HttpStatusCode"));
+		listTableLevelResponse.setSuccess(_ctx.booleanValue("ListTableLevelResponse.Success"));
 
 		TableLevelInfo tableLevelInfo = new TableLevelInfo();
 		tableLevelInfo.setTotalCount(_ctx.longValue("ListTableLevelResponse.TableLevelInfo.TotalCount"));
@@ -39,11 +39,11 @@ public class ListTableLevelResponseUnmarshaller {
 		List<LevelListItem> levelList = new ArrayList<LevelListItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListTableLevelResponse.TableLevelInfo.LevelList.Length"); i++) {
 			LevelListItem levelListItem = new LevelListItem();
-			levelListItem.setLevelType(_ctx.integerValue("ListTableLevelResponse.TableLevelInfo.LevelList["+ i +"].LevelType"));
-			levelListItem.setDescription(_ctx.stringValue("ListTableLevelResponse.TableLevelInfo.LevelList["+ i +"].Description"));
+			levelListItem.setLevelId(_ctx.longValue("ListTableLevelResponse.TableLevelInfo.LevelList["+ i +"].LevelId"));
 			levelListItem.setName(_ctx.stringValue("ListTableLevelResponse.TableLevelInfo.LevelList["+ i +"].Name"));
 			levelListItem.setProjectId(_ctx.longValue("ListTableLevelResponse.TableLevelInfo.LevelList["+ i +"].ProjectId"));
-			levelListItem.setLevelId(_ctx.longValue("ListTableLevelResponse.TableLevelInfo.LevelList["+ i +"].LevelId"));
+			levelListItem.setLevelType(_ctx.integerValue("ListTableLevelResponse.TableLevelInfo.LevelList["+ i +"].LevelType"));
+			levelListItem.setDescription(_ctx.stringValue("ListTableLevelResponse.TableLevelInfo.LevelList["+ i +"].Description"));
 
 			levelList.add(levelListItem);
 		}

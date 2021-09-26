@@ -24,19 +24,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetDataSourceMetaResponse extends AcsResponse {
 
-	private Boolean success;
-
 	private String requestId;
 
+	private Boolean success;
+
 	private Data data;
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -44,6 +36,14 @@ public class GetDataSourceMetaResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Data getData() {
@@ -56,11 +56,19 @@ public class GetDataSourceMetaResponse extends AcsResponse {
 
 	public static class Data {
 
+		private String meta;
+
 		private String status;
 
 		private String message;
 
-		private String meta;
+		public String getMeta() {
+			return this.meta;
+		}
+
+		public void setMeta(String meta) {
+			this.meta = meta;
+		}
 
 		public String getStatus() {
 			return this.status;
@@ -76,14 +84,6 @@ public class GetDataSourceMetaResponse extends AcsResponse {
 
 		public void setMessage(String message) {
 			this.message = message;
-		}
-
-		public String getMeta() {
-			return this.meta;
-		}
-
-		public void setMeta(String meta) {
-			this.meta = meta;
 		}
 	}
 

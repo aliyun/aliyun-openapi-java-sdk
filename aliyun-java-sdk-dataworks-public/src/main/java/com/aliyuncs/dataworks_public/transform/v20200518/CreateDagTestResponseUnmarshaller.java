@@ -23,11 +23,11 @@ public class CreateDagTestResponseUnmarshaller {
 	public static CreateDagTestResponse unmarshall(CreateDagTestResponse createDagTestResponse, UnmarshallerContext _ctx) {
 		
 		createDagTestResponse.setRequestId(_ctx.stringValue("CreateDagTestResponse.RequestId"));
-		createDagTestResponse.setHttpStatusCode(_ctx.integerValue("CreateDagTestResponse.HttpStatusCode"));
-		createDagTestResponse.setData(_ctx.longValue("CreateDagTestResponse.Data"));
-		createDagTestResponse.setErrorMessage(_ctx.stringValue("CreateDagTestResponse.ErrorMessage"));
 		createDagTestResponse.setErrorCode(_ctx.stringValue("CreateDagTestResponse.ErrorCode"));
+		createDagTestResponse.setErrorMessage(_ctx.stringValue("CreateDagTestResponse.ErrorMessage"));
+		createDagTestResponse.setHttpStatusCode(_ctx.integerValue("CreateDagTestResponse.HttpStatusCode"));
 		createDagTestResponse.setSuccess(_ctx.booleanValue("CreateDagTestResponse.Success"));
+		createDagTestResponse.setData(_ctx.longValue("CreateDagTestResponse.Data"));
 	 
 	 	return createDagTestResponse;
 	}

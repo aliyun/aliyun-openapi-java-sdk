@@ -46,54 +46,30 @@ public class GetDataServiceGroupResponse extends AcsResponse {
 
 	public static class Group {
 
-		private String modifiedTime;
-
-		private String description;
-
-		private String groupName;
-
-		private String groupId;
+		private Long tenantId;
 
 		private Long projectId;
 
+		private String groupId;
+
 		private String apiGatewayGroupId;
 
-		private String creatorId;
+		private String groupName;
+
+		private String description;
 
 		private String createdTime;
 
-		private Long tenantId;
+		private String modifiedTime;
 
-		public String getModifiedTime() {
-			return this.modifiedTime;
+		private String creatorId;
+
+		public Long getTenantId() {
+			return this.tenantId;
 		}
 
-		public void setModifiedTime(String modifiedTime) {
-			this.modifiedTime = modifiedTime;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
-		public String getGroupName() {
-			return this.groupName;
-		}
-
-		public void setGroupName(String groupName) {
-			this.groupName = groupName;
-		}
-
-		public String getGroupId() {
-			return this.groupId;
-		}
-
-		public void setGroupId(String groupId) {
-			this.groupId = groupId;
+		public void setTenantId(Long tenantId) {
+			this.tenantId = tenantId;
 		}
 
 		public Long getProjectId() {
@@ -104,6 +80,14 @@ public class GetDataServiceGroupResponse extends AcsResponse {
 			this.projectId = projectId;
 		}
 
+		public String getGroupId() {
+			return this.groupId;
+		}
+
+		public void setGroupId(String groupId) {
+			this.groupId = groupId;
+		}
+
 		public String getApiGatewayGroupId() {
 			return this.apiGatewayGroupId;
 		}
@@ -112,12 +96,20 @@ public class GetDataServiceGroupResponse extends AcsResponse {
 			this.apiGatewayGroupId = apiGatewayGroupId;
 		}
 
-		public String getCreatorId() {
-			return this.creatorId;
+		public String getGroupName() {
+			return this.groupName;
 		}
 
-		public void setCreatorId(String creatorId) {
-			this.creatorId = creatorId;
+		public void setGroupName(String groupName) {
+			this.groupName = groupName;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
 		}
 
 		public String getCreatedTime() {
@@ -128,12 +120,20 @@ public class GetDataServiceGroupResponse extends AcsResponse {
 			this.createdTime = createdTime;
 		}
 
-		public Long getTenantId() {
-			return this.tenantId;
+		public String getModifiedTime() {
+			return this.modifiedTime;
 		}
 
-		public void setTenantId(Long tenantId) {
-			this.tenantId = tenantId;
+		public void setModifiedTime(String modifiedTime) {
+			this.modifiedTime = modifiedTime;
+		}
+
+		public String getCreatorId() {
+			return this.creatorId;
+		}
+
+		public void setCreatorId(String creatorId) {
+			this.creatorId = creatorId;
 		}
 	}
 

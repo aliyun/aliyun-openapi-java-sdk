@@ -27,16 +27,16 @@ public class GetMigrationProcessResponseUnmarshaller {
 	public static GetMigrationProcessResponse unmarshall(GetMigrationProcessResponse getMigrationProcessResponse, UnmarshallerContext _ctx) {
 		
 		getMigrationProcessResponse.setRequestId(_ctx.stringValue("GetMigrationProcessResponse.RequestId"));
-		getMigrationProcessResponse.setHttpStatusCode(_ctx.integerValue("GetMigrationProcessResponse.HttpStatusCode"));
-		getMigrationProcessResponse.setErrorMessage(_ctx.stringValue("GetMigrationProcessResponse.ErrorMessage"));
-		getMigrationProcessResponse.setSuccess(_ctx.booleanValue("GetMigrationProcessResponse.Success"));
 		getMigrationProcessResponse.setErrorCode(_ctx.stringValue("GetMigrationProcessResponse.ErrorCode"));
+		getMigrationProcessResponse.setErrorMessage(_ctx.stringValue("GetMigrationProcessResponse.ErrorMessage"));
+		getMigrationProcessResponse.setHttpStatusCode(_ctx.integerValue("GetMigrationProcessResponse.HttpStatusCode"));
+		getMigrationProcessResponse.setSuccess(_ctx.booleanValue("GetMigrationProcessResponse.Success"));
 
 		List<ProgressTaskItem> data = new ArrayList<ProgressTaskItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetMigrationProcessResponse.Data.Length"); i++) {
 			ProgressTaskItem progressTaskItem = new ProgressTaskItem();
-			progressTaskItem.setTaskStatus(_ctx.stringValue("GetMigrationProcessResponse.Data["+ i +"].TaskStatus"));
 			progressTaskItem.setTaskName(_ctx.stringValue("GetMigrationProcessResponse.Data["+ i +"].TaskName"));
+			progressTaskItem.setTaskStatus(_ctx.stringValue("GetMigrationProcessResponse.Data["+ i +"].TaskStatus"));
 
 			data.add(progressTaskItem);
 		}

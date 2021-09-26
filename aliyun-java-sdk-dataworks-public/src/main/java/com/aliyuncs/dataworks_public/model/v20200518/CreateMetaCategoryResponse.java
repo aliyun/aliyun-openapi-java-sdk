@@ -24,24 +24,32 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateMetaCategoryResponse extends AcsResponse {
 
-	private Integer httpStatusCode;
-
-	private String errorMessage;
-
 	private String requestId;
-
-	private Boolean success;
 
 	private String errorCode;
 
+	private String errorMessage;
+
+	private Integer httpStatusCode;
+
+	private Boolean success;
+
 	private Data data;
 
-	public Integer getHttpStatusCode() {
-		return this.httpStatusCode;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setHttpStatusCode(Integer httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getErrorCode() {
+		return this.errorCode;
+	}
+
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
 	}
 
 	public String getErrorMessage() {
@@ -52,12 +60,12 @@ public class CreateMetaCategoryResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
 	}
 
 	public Boolean getSuccess() {
@@ -66,14 +74,6 @@ public class CreateMetaCategoryResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
-	}
-
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
 	}
 
 	public Data getData() {

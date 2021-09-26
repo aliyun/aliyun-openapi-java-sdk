@@ -25,24 +25,32 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetMetaTableLineageResponse extends AcsResponse {
 
-	private Integer httpStatusCode;
-
-	private String errorMessage;
-
 	private String requestId;
-
-	private Boolean success;
 
 	private String errorCode;
 
+	private String errorMessage;
+
+	private Integer httpStatusCode;
+
+	private Boolean success;
+
 	private Data data;
 
-	public Integer getHttpStatusCode() {
-		return this.httpStatusCode;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setHttpStatusCode(Integer httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getErrorCode() {
+		return this.errorCode;
+	}
+
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
 	}
 
 	public String getErrorMessage() {
@@ -53,12 +61,12 @@ public class GetMetaTableLineageResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
 	}
 
 	public Boolean getSuccess() {
@@ -67,14 +75,6 @@ public class GetMetaTableLineageResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
-	}
-
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
 	}
 
 	public Data getData() {
@@ -87,19 +87,11 @@ public class GetMetaTableLineageResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String nextPrimaryKey;
-
 		private Boolean hasNext;
 
+		private String nextPrimaryKey;
+
 		private List<DataEntityListItem> dataEntityList;
-
-		public String getNextPrimaryKey() {
-			return this.nextPrimaryKey;
-		}
-
-		public void setNextPrimaryKey(String nextPrimaryKey) {
-			this.nextPrimaryKey = nextPrimaryKey;
-		}
 
 		public Boolean getHasNext() {
 			return this.hasNext;
@@ -107,6 +99,14 @@ public class GetMetaTableLineageResponse extends AcsResponse {
 
 		public void setHasNext(Boolean hasNext) {
 			this.hasNext = hasNext;
+		}
+
+		public String getNextPrimaryKey() {
+			return this.nextPrimaryKey;
+		}
+
+		public void setNextPrimaryKey(String nextPrimaryKey) {
+			this.nextPrimaryKey = nextPrimaryKey;
 		}
 
 		public List<DataEntityListItem> getDataEntityList() {

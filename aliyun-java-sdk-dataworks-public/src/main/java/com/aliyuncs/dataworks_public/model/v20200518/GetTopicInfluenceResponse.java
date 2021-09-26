@@ -25,17 +25,41 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetTopicInfluenceResponse extends AcsResponse {
 
+	private Boolean success;
+
+	private String errorCode;
+
+	private String errorMessage;
+
 	private Integer httpStatusCode;
 
 	private String requestId;
 
-	private String errorMessage;
-
-	private String errorCode;
-
-	private Boolean success;
-
 	private Data data;
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
+	public String getErrorCode() {
+		return this.errorCode;
+	}
+
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
 
 	public Integer getHttpStatusCode() {
 		return this.httpStatusCode;
@@ -51,30 +75,6 @@ public class GetTopicInfluenceResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
-
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
 	}
 
 	public Data getData() {
@@ -109,47 +109,23 @@ public class GetTopicInfluenceResponse extends AcsResponse {
 
 		public static class InfluencesItem {
 
-			private String status;
-
-			private String owner;
-
-			private String baselineName;
-
 			private Long baselineId;
 
 			private Long bizdate;
 
-			private Long buffer;
+			private Integer inGroupId;
+
+			private String baselineName;
+
+			private String owner;
+
+			private String status;
 
 			private Long projectId;
 
 			private Integer priority;
 
-			private Integer inGroupId;
-
-			public String getStatus() {
-				return this.status;
-			}
-
-			public void setStatus(String status) {
-				this.status = status;
-			}
-
-			public String getOwner() {
-				return this.owner;
-			}
-
-			public void setOwner(String owner) {
-				this.owner = owner;
-			}
-
-			public String getBaselineName() {
-				return this.baselineName;
-			}
-
-			public void setBaselineName(String baselineName) {
-				this.baselineName = baselineName;
-			}
+			private Long buffer;
 
 			public Long getBaselineId() {
 				return this.baselineId;
@@ -167,12 +143,36 @@ public class GetTopicInfluenceResponse extends AcsResponse {
 				this.bizdate = bizdate;
 			}
 
-			public Long getBuffer() {
-				return this.buffer;
+			public Integer getInGroupId() {
+				return this.inGroupId;
 			}
 
-			public void setBuffer(Long buffer) {
-				this.buffer = buffer;
+			public void setInGroupId(Integer inGroupId) {
+				this.inGroupId = inGroupId;
+			}
+
+			public String getBaselineName() {
+				return this.baselineName;
+			}
+
+			public void setBaselineName(String baselineName) {
+				this.baselineName = baselineName;
+			}
+
+			public String getOwner() {
+				return this.owner;
+			}
+
+			public void setOwner(String owner) {
+				this.owner = owner;
+			}
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
 			}
 
 			public Long getProjectId() {
@@ -191,12 +191,12 @@ public class GetTopicInfluenceResponse extends AcsResponse {
 				this.priority = priority;
 			}
 
-			public Integer getInGroupId() {
-				return this.inGroupId;
+			public Long getBuffer() {
+				return this.buffer;
 			}
 
-			public void setInGroupId(Integer inGroupId) {
-				this.inGroupId = inGroupId;
+			public void setBuffer(Long buffer) {
+				this.buffer = buffer;
 			}
 		}
 	}

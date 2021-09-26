@@ -89,45 +89,21 @@ public class ListDataServiceFoldersResponse extends AcsResponse {
 
 		public static class Folder {
 
-			private Long parentId;
-
-			private String modifiedTime;
-
-			private String groupId;
-
 			private Long folderId;
 
 			private String folderName;
 
 			private Long projectId;
 
-			private String createdTime;
-
 			private Long tenantId;
 
-			public Long getParentId() {
-				return this.parentId;
-			}
+			private String createdTime;
 
-			public void setParentId(Long parentId) {
-				this.parentId = parentId;
-			}
+			private String modifiedTime;
 
-			public String getModifiedTime() {
-				return this.modifiedTime;
-			}
+			private String groupId;
 
-			public void setModifiedTime(String modifiedTime) {
-				this.modifiedTime = modifiedTime;
-			}
-
-			public String getGroupId() {
-				return this.groupId;
-			}
-
-			public void setGroupId(String groupId) {
-				this.groupId = groupId;
-			}
+			private Long parentId;
 
 			public Long getFolderId() {
 				return this.folderId;
@@ -153,6 +129,14 @@ public class ListDataServiceFoldersResponse extends AcsResponse {
 				this.projectId = projectId;
 			}
 
+			public Long getTenantId() {
+				return this.tenantId;
+			}
+
+			public void setTenantId(Long tenantId) {
+				this.tenantId = tenantId;
+			}
+
 			public String getCreatedTime() {
 				return this.createdTime;
 			}
@@ -161,12 +145,28 @@ public class ListDataServiceFoldersResponse extends AcsResponse {
 				this.createdTime = createdTime;
 			}
 
-			public Long getTenantId() {
-				return this.tenantId;
+			public String getModifiedTime() {
+				return this.modifiedTime;
 			}
 
-			public void setTenantId(Long tenantId) {
-				this.tenantId = tenantId;
+			public void setModifiedTime(String modifiedTime) {
+				this.modifiedTime = modifiedTime;
+			}
+
+			public String getGroupId() {
+				return this.groupId;
+			}
+
+			public void setGroupId(String groupId) {
+				this.groupId = groupId;
+			}
+
+			public Long getParentId() {
+				return this.parentId;
+			}
+
+			public void setParentId(Long parentId) {
+				this.parentId = parentId;
 			}
 		}
 	}

@@ -23,11 +23,11 @@ public class DeleteFileResponseUnmarshaller {
 	public static DeleteFileResponse unmarshall(DeleteFileResponse deleteFileResponse, UnmarshallerContext _ctx) {
 		
 		deleteFileResponse.setRequestId(_ctx.stringValue("DeleteFileResponse.RequestId"));
-		deleteFileResponse.setHttpStatusCode(_ctx.integerValue("DeleteFileResponse.HttpStatusCode"));
-		deleteFileResponse.setDeploymentId(_ctx.longValue("DeleteFileResponse.DeploymentId"));
-		deleteFileResponse.setErrorMessage(_ctx.stringValue("DeleteFileResponse.ErrorMessage"));
 		deleteFileResponse.setSuccess(_ctx.booleanValue("DeleteFileResponse.Success"));
 		deleteFileResponse.setErrorCode(_ctx.stringValue("DeleteFileResponse.ErrorCode"));
+		deleteFileResponse.setErrorMessage(_ctx.stringValue("DeleteFileResponse.ErrorMessage"));
+		deleteFileResponse.setHttpStatusCode(_ctx.integerValue("DeleteFileResponse.HttpStatusCode"));
+		deleteFileResponse.setDeploymentId(_ctx.longValue("DeleteFileResponse.DeploymentId"));
 	 
 	 	return deleteFileResponse;
 	}

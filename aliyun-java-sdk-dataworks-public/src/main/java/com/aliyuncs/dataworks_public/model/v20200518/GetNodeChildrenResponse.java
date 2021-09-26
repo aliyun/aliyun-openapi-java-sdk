@@ -25,17 +25,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetNodeChildrenResponse extends AcsResponse {
 
+	private Boolean success;
+
 	private Integer httpStatusCode;
-
-	private String requestId;
-
-	private String errorMessage;
 
 	private String errorCode;
 
-	private Boolean success;
+	private String errorMessage;
+
+	private String requestId;
 
 	private Data data;
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
 
 	public Integer getHttpStatusCode() {
 		return this.httpStatusCode;
@@ -43,22 +51,6 @@ public class GetNodeChildrenResponse extends AcsResponse {
 
 	public void setHttpStatusCode(Integer httpStatusCode) {
 		this.httpStatusCode = httpStatusCode;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
 	}
 
 	public String getErrorCode() {
@@ -69,12 +61,20 @@ public class GetNodeChildrenResponse extends AcsResponse {
 		this.errorCode = errorCode;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getErrorMessage() {
+		return this.errorMessage;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Data getData() {
@@ -99,48 +99,32 @@ public class GetNodeChildrenResponse extends AcsResponse {
 
 		public static class NodesItem {
 
-			private String schedulerType;
-
-			private Long baselineId;
-
-			private Boolean repeatability;
+			private Long nodeId;
 
 			private String nodeName;
 
-			private Long projectId;
+			private String cronExpress;
+
+			private String schedulerType;
 
 			private String programType;
 
-			private Integer priority;
-
 			private String ownerId;
 
-			private String cronExpress;
+			private Long projectId;
 
-			private Long nodeId;
+			private Boolean repeatability;
 
-			public String getSchedulerType() {
-				return this.schedulerType;
+			private Integer priority;
+
+			private Long baselineId;
+
+			public Long getNodeId() {
+				return this.nodeId;
 			}
 
-			public void setSchedulerType(String schedulerType) {
-				this.schedulerType = schedulerType;
-			}
-
-			public Long getBaselineId() {
-				return this.baselineId;
-			}
-
-			public void setBaselineId(Long baselineId) {
-				this.baselineId = baselineId;
-			}
-
-			public Boolean getRepeatability() {
-				return this.repeatability;
-			}
-
-			public void setRepeatability(Boolean repeatability) {
-				this.repeatability = repeatability;
+			public void setNodeId(Long nodeId) {
+				this.nodeId = nodeId;
 			}
 
 			public String getNodeName() {
@@ -151,12 +135,20 @@ public class GetNodeChildrenResponse extends AcsResponse {
 				this.nodeName = nodeName;
 			}
 
-			public Long getProjectId() {
-				return this.projectId;
+			public String getCronExpress() {
+				return this.cronExpress;
 			}
 
-			public void setProjectId(Long projectId) {
-				this.projectId = projectId;
+			public void setCronExpress(String cronExpress) {
+				this.cronExpress = cronExpress;
+			}
+
+			public String getSchedulerType() {
+				return this.schedulerType;
+			}
+
+			public void setSchedulerType(String schedulerType) {
+				this.schedulerType = schedulerType;
 			}
 
 			public String getProgramType() {
@@ -167,14 +159,6 @@ public class GetNodeChildrenResponse extends AcsResponse {
 				this.programType = programType;
 			}
 
-			public Integer getPriority() {
-				return this.priority;
-			}
-
-			public void setPriority(Integer priority) {
-				this.priority = priority;
-			}
-
 			public String getOwnerId() {
 				return this.ownerId;
 			}
@@ -183,20 +167,36 @@ public class GetNodeChildrenResponse extends AcsResponse {
 				this.ownerId = ownerId;
 			}
 
-			public String getCronExpress() {
-				return this.cronExpress;
+			public Long getProjectId() {
+				return this.projectId;
 			}
 
-			public void setCronExpress(String cronExpress) {
-				this.cronExpress = cronExpress;
+			public void setProjectId(Long projectId) {
+				this.projectId = projectId;
 			}
 
-			public Long getNodeId() {
-				return this.nodeId;
+			public Boolean getRepeatability() {
+				return this.repeatability;
 			}
 
-			public void setNodeId(Long nodeId) {
-				this.nodeId = nodeId;
+			public void setRepeatability(Boolean repeatability) {
+				this.repeatability = repeatability;
+			}
+
+			public Integer getPriority() {
+				return this.priority;
+			}
+
+			public void setPriority(Integer priority) {
+				this.priority = priority;
+			}
+
+			public Long getBaselineId() {
+				return this.baselineId;
+			}
+
+			public void setBaselineId(Long baselineId) {
+				this.baselineId = baselineId;
 			}
 		}
 	}

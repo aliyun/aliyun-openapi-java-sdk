@@ -28,10 +28,10 @@ public class ListFoldersResponseUnmarshaller {
 	public static ListFoldersResponse unmarshall(ListFoldersResponse listFoldersResponse, UnmarshallerContext _ctx) {
 		
 		listFoldersResponse.setRequestId(_ctx.stringValue("ListFoldersResponse.RequestId"));
-		listFoldersResponse.setHttpStatusCode(_ctx.integerValue("ListFoldersResponse.HttpStatusCode"));
-		listFoldersResponse.setErrorMessage(_ctx.stringValue("ListFoldersResponse.ErrorMessage"));
-		listFoldersResponse.setErrorCode(_ctx.stringValue("ListFoldersResponse.ErrorCode"));
 		listFoldersResponse.setSuccess(_ctx.booleanValue("ListFoldersResponse.Success"));
+		listFoldersResponse.setErrorCode(_ctx.stringValue("ListFoldersResponse.ErrorCode"));
+		listFoldersResponse.setErrorMessage(_ctx.stringValue("ListFoldersResponse.ErrorMessage"));
+		listFoldersResponse.setHttpStatusCode(_ctx.integerValue("ListFoldersResponse.HttpStatusCode"));
 
 		Data data = new Data();
 		data.setPageNumber(_ctx.integerValue("ListFoldersResponse.Data.PageNumber"));
@@ -41,8 +41,8 @@ public class ListFoldersResponseUnmarshaller {
 		List<FoldersItem> folders = new ArrayList<FoldersItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListFoldersResponse.Data.Folders.Length"); i++) {
 			FoldersItem foldersItem = new FoldersItem();
-			foldersItem.setFolderPath(_ctx.stringValue("ListFoldersResponse.Data.Folders["+ i +"].FolderPath"));
 			foldersItem.setFolderId(_ctx.stringValue("ListFoldersResponse.Data.Folders["+ i +"].FolderId"));
+			foldersItem.setFolderPath(_ctx.stringValue("ListFoldersResponse.Data.Folders["+ i +"].FolderPath"));
 
 			folders.add(foldersItem);
 		}
