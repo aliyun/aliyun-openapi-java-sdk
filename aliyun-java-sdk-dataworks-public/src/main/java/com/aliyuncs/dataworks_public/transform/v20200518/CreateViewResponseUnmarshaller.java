@@ -26,10 +26,10 @@ public class CreateViewResponseUnmarshaller {
 		createViewResponse.setRequestId(_ctx.stringValue("CreateViewResponse.RequestId"));
 
 		TaskInfo taskInfo = new TaskInfo();
-		taskInfo.setTaskId(_ctx.stringValue("CreateViewResponse.TaskInfo.TaskId"));
-		taskInfo.setContent(_ctx.stringValue("CreateViewResponse.TaskInfo.Content"));
 		taskInfo.setStatus(_ctx.stringValue("CreateViewResponse.TaskInfo.Status"));
 		taskInfo.setNextTaskId(_ctx.stringValue("CreateViewResponse.TaskInfo.NextTaskId"));
+		taskInfo.setTaskId(_ctx.stringValue("CreateViewResponse.TaskInfo.TaskId"));
+		taskInfo.setContent(_ctx.stringValue("CreateViewResponse.TaskInfo.Content"));
 		createViewResponse.setTaskInfo(taskInfo);
 	 
 	 	return createViewResponse;

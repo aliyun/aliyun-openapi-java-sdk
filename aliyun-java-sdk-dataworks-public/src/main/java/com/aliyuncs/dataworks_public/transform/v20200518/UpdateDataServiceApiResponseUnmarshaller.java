@@ -23,10 +23,10 @@ public class UpdateDataServiceApiResponseUnmarshaller {
 	public static UpdateDataServiceApiResponse unmarshall(UpdateDataServiceApiResponse updateDataServiceApiResponse, UnmarshallerContext _ctx) {
 		
 		updateDataServiceApiResponse.setRequestId(_ctx.stringValue("UpdateDataServiceApiResponse.RequestId"));
-		updateDataServiceApiResponse.setData(_ctx.booleanValue("UpdateDataServiceApiResponse.Data"));
-		updateDataServiceApiResponse.setErrorCode(_ctx.stringValue("UpdateDataServiceApiResponse.ErrorCode"));
-		updateDataServiceApiResponse.setErrorMessage(_ctx.stringValue("UpdateDataServiceApiResponse.ErrorMessage"));
 		updateDataServiceApiResponse.setHttpStatusCode(_ctx.integerValue("UpdateDataServiceApiResponse.HttpStatusCode"));
+		updateDataServiceApiResponse.setData(_ctx.booleanValue("UpdateDataServiceApiResponse.Data"));
+		updateDataServiceApiResponse.setErrorMessage(_ctx.stringValue("UpdateDataServiceApiResponse.ErrorMessage"));
+		updateDataServiceApiResponse.setErrorCode(_ctx.stringValue("UpdateDataServiceApiResponse.ErrorCode"));
 		updateDataServiceApiResponse.setSuccess(_ctx.booleanValue("UpdateDataServiceApiResponse.Success"));
 	 
 	 	return updateDataServiceApiResponse;

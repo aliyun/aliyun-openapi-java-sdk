@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ApprovePermissionApplyOrderResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Boolean approveSuccess;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public Boolean getApproveSuccess() {
 		return this.approveSuccess;
@@ -42,6 +34,14 @@ public class ApprovePermissionApplyOrderResponse extends AcsResponse {
 
 	public void setApproveSuccess(Boolean approveSuccess) {
 		this.approveSuccess = approveSuccess;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

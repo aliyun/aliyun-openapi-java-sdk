@@ -28,10 +28,10 @@ public class GetMetaTableOutputResponseUnmarshaller {
 	public static GetMetaTableOutputResponse unmarshall(GetMetaTableOutputResponse getMetaTableOutputResponse, UnmarshallerContext _ctx) {
 		
 		getMetaTableOutputResponse.setRequestId(_ctx.stringValue("GetMetaTableOutputResponse.RequestId"));
-		getMetaTableOutputResponse.setErrorCode(_ctx.stringValue("GetMetaTableOutputResponse.ErrorCode"));
-		getMetaTableOutputResponse.setErrorMessage(_ctx.stringValue("GetMetaTableOutputResponse.ErrorMessage"));
 		getMetaTableOutputResponse.setHttpStatusCode(_ctx.integerValue("GetMetaTableOutputResponse.HttpStatusCode"));
+		getMetaTableOutputResponse.setErrorMessage(_ctx.stringValue("GetMetaTableOutputResponse.ErrorMessage"));
 		getMetaTableOutputResponse.setSuccess(_ctx.booleanValue("GetMetaTableOutputResponse.Success"));
+		getMetaTableOutputResponse.setErrorCode(_ctx.stringValue("GetMetaTableOutputResponse.ErrorCode"));
 
 		Data data = new Data();
 		data.setPageNumber(_ctx.integerValue("GetMetaTableOutputResponse.Data.PageNumber"));
@@ -41,13 +41,13 @@ public class GetMetaTableOutputResponseUnmarshaller {
 		List<DataEntityListItem> dataEntityList = new ArrayList<DataEntityListItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetMetaTableOutputResponse.Data.DataEntityList.Length"); i++) {
 			DataEntityListItem dataEntityListItem = new DataEntityListItem();
+			dataEntityListItem.setEndTime(_ctx.stringValue("GetMetaTableOutputResponse.Data.DataEntityList["+ i +"].EndTime"));
+			dataEntityListItem.setTaskInstanceId(_ctx.longValue("GetMetaTableOutputResponse.Data.DataEntityList["+ i +"].TaskInstanceId"));
+			dataEntityListItem.setStartTime(_ctx.stringValue("GetMetaTableOutputResponse.Data.DataEntityList["+ i +"].StartTime"));
+			dataEntityListItem.setProjectId(_ctx.longValue("GetMetaTableOutputResponse.Data.DataEntityList["+ i +"].ProjectId"));
+			dataEntityListItem.setWaitTime(_ctx.stringValue("GetMetaTableOutputResponse.Data.DataEntityList["+ i +"].WaitTime"));
 			dataEntityListItem.setTableGuid(_ctx.stringValue("GetMetaTableOutputResponse.Data.DataEntityList["+ i +"].TableGuid"));
 			dataEntityListItem.setTaskId(_ctx.stringValue("GetMetaTableOutputResponse.Data.DataEntityList["+ i +"].TaskId"));
-			dataEntityListItem.setStartTime(_ctx.stringValue("GetMetaTableOutputResponse.Data.DataEntityList["+ i +"].StartTime"));
-			dataEntityListItem.setEndTime(_ctx.stringValue("GetMetaTableOutputResponse.Data.DataEntityList["+ i +"].EndTime"));
-			dataEntityListItem.setWaitTime(_ctx.stringValue("GetMetaTableOutputResponse.Data.DataEntityList["+ i +"].WaitTime"));
-			dataEntityListItem.setProjectId(_ctx.longValue("GetMetaTableOutputResponse.Data.DataEntityList["+ i +"].ProjectId"));
-			dataEntityListItem.setTaskInstanceId(_ctx.longValue("GetMetaTableOutputResponse.Data.DataEntityList["+ i +"].TaskInstanceId"));
 
 			dataEntityList.add(dataEntityListItem);
 		}

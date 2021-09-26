@@ -25,41 +25,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListBaselineConfigsResponse extends AcsResponse {
 
-	private Boolean success;
-
-	private String errorCode;
-
-	private String errorMessage;
-
 	private Integer httpStatusCode;
 
 	private String requestId;
 
+	private String errorMessage;
+
+	private String errorCode;
+
+	private Boolean success;
+
 	private Data data;
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
 
 	public Integer getHttpStatusCode() {
 		return this.httpStatusCode;
@@ -75,6 +51,30 @@ public class ListBaselineConfigsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
+	public String getErrorCode() {
+		return this.errorCode;
+	}
+
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Data getData() {
@@ -129,56 +129,48 @@ public class ListBaselineConfigsResponse extends AcsResponse {
 
 		public static class BaselinesItem {
 
-			private Long baselineId;
+			private String hourSlaDetail;
 
-			private Integer priority;
-
-			private String baselineName;
+			private Boolean isDefault;
 
 			private String owner;
 
 			private Long projectId;
 
-			private Boolean useFlag;
-
-			private String baselineType;
-
-			private Integer expHour;
-
-			private Integer expMinu;
-
-			private Integer slaHour;
+			private Integer priority;
 
 			private Integer slaMinu;
 
+			private Integer slaHour;
+
+			private Long baselineId;
+
+			private String baselineName;
+
 			private String hourExpDetail;
 
-			private String hourSlaDetail;
+			private Boolean useFlag;
 
-			private Boolean isDefault;
+			private Integer expHour;
 
-			public Long getBaselineId() {
-				return this.baselineId;
+			private String baselineType;
+
+			private Integer expMinu;
+
+			public String getHourSlaDetail() {
+				return this.hourSlaDetail;
 			}
 
-			public void setBaselineId(Long baselineId) {
-				this.baselineId = baselineId;
+			public void setHourSlaDetail(String hourSlaDetail) {
+				this.hourSlaDetail = hourSlaDetail;
 			}
 
-			public Integer getPriority() {
-				return this.priority;
+			public Boolean getIsDefault() {
+				return this.isDefault;
 			}
 
-			public void setPriority(Integer priority) {
-				this.priority = priority;
-			}
-
-			public String getBaselineName() {
-				return this.baselineName;
-			}
-
-			public void setBaselineName(String baselineName) {
-				this.baselineName = baselineName;
+			public void setIsDefault(Boolean isDefault) {
+				this.isDefault = isDefault;
 			}
 
 			public String getOwner() {
@@ -197,44 +189,12 @@ public class ListBaselineConfigsResponse extends AcsResponse {
 				this.projectId = projectId;
 			}
 
-			public Boolean getUseFlag() {
-				return this.useFlag;
+			public Integer getPriority() {
+				return this.priority;
 			}
 
-			public void setUseFlag(Boolean useFlag) {
-				this.useFlag = useFlag;
-			}
-
-			public String getBaselineType() {
-				return this.baselineType;
-			}
-
-			public void setBaselineType(String baselineType) {
-				this.baselineType = baselineType;
-			}
-
-			public Integer getExpHour() {
-				return this.expHour;
-			}
-
-			public void setExpHour(Integer expHour) {
-				this.expHour = expHour;
-			}
-
-			public Integer getExpMinu() {
-				return this.expMinu;
-			}
-
-			public void setExpMinu(Integer expMinu) {
-				this.expMinu = expMinu;
-			}
-
-			public Integer getSlaHour() {
-				return this.slaHour;
-			}
-
-			public void setSlaHour(Integer slaHour) {
-				this.slaHour = slaHour;
+			public void setPriority(Integer priority) {
+				this.priority = priority;
 			}
 
 			public Integer getSlaMinu() {
@@ -245,6 +205,30 @@ public class ListBaselineConfigsResponse extends AcsResponse {
 				this.slaMinu = slaMinu;
 			}
 
+			public Integer getSlaHour() {
+				return this.slaHour;
+			}
+
+			public void setSlaHour(Integer slaHour) {
+				this.slaHour = slaHour;
+			}
+
+			public Long getBaselineId() {
+				return this.baselineId;
+			}
+
+			public void setBaselineId(Long baselineId) {
+				this.baselineId = baselineId;
+			}
+
+			public String getBaselineName() {
+				return this.baselineName;
+			}
+
+			public void setBaselineName(String baselineName) {
+				this.baselineName = baselineName;
+			}
+
 			public String getHourExpDetail() {
 				return this.hourExpDetail;
 			}
@@ -253,20 +237,36 @@ public class ListBaselineConfigsResponse extends AcsResponse {
 				this.hourExpDetail = hourExpDetail;
 			}
 
-			public String getHourSlaDetail() {
-				return this.hourSlaDetail;
+			public Boolean getUseFlag() {
+				return this.useFlag;
 			}
 
-			public void setHourSlaDetail(String hourSlaDetail) {
-				this.hourSlaDetail = hourSlaDetail;
+			public void setUseFlag(Boolean useFlag) {
+				this.useFlag = useFlag;
 			}
 
-			public Boolean getIsDefault() {
-				return this.isDefault;
+			public Integer getExpHour() {
+				return this.expHour;
 			}
 
-			public void setIsDefault(Boolean isDefault) {
-				this.isDefault = isDefault;
+			public void setExpHour(Integer expHour) {
+				this.expHour = expHour;
+			}
+
+			public String getBaselineType() {
+				return this.baselineType;
+			}
+
+			public void setBaselineType(String baselineType) {
+				this.baselineType = baselineType;
+			}
+
+			public Integer getExpMinu() {
+				return this.expMinu;
+			}
+
+			public void setExpMinu(Integer expMinu) {
+				this.expMinu = expMinu;
 			}
 		}
 	}

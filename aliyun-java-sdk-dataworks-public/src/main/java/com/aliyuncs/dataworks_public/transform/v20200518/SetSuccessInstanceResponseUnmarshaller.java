@@ -23,11 +23,11 @@ public class SetSuccessInstanceResponseUnmarshaller {
 	public static SetSuccessInstanceResponse unmarshall(SetSuccessInstanceResponse setSuccessInstanceResponse, UnmarshallerContext _ctx) {
 		
 		setSuccessInstanceResponse.setRequestId(_ctx.stringValue("SetSuccessInstanceResponse.RequestId"));
-		setSuccessInstanceResponse.setErrorCode(_ctx.stringValue("SetSuccessInstanceResponse.ErrorCode"));
-		setSuccessInstanceResponse.setErrorMessage(_ctx.stringValue("SetSuccessInstanceResponse.ErrorMessage"));
 		setSuccessInstanceResponse.setHttpStatusCode(_ctx.integerValue("SetSuccessInstanceResponse.HttpStatusCode"));
-		setSuccessInstanceResponse.setSuccess(_ctx.booleanValue("SetSuccessInstanceResponse.Success"));
 		setSuccessInstanceResponse.setData(_ctx.booleanValue("SetSuccessInstanceResponse.Data"));
+		setSuccessInstanceResponse.setErrorMessage(_ctx.stringValue("SetSuccessInstanceResponse.ErrorMessage"));
+		setSuccessInstanceResponse.setErrorCode(_ctx.stringValue("SetSuccessInstanceResponse.ErrorCode"));
+		setSuccessInstanceResponse.setSuccess(_ctx.booleanValue("SetSuccessInstanceResponse.Success"));
 	 
 	 	return setSuccessInstanceResponse;
 	}

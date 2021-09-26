@@ -23,11 +23,11 @@ public class ResumeInstanceResponseUnmarshaller {
 	public static ResumeInstanceResponse unmarshall(ResumeInstanceResponse resumeInstanceResponse, UnmarshallerContext _ctx) {
 		
 		resumeInstanceResponse.setRequestId(_ctx.stringValue("ResumeInstanceResponse.RequestId"));
-		resumeInstanceResponse.setErrorCode(_ctx.stringValue("ResumeInstanceResponse.ErrorCode"));
-		resumeInstanceResponse.setErrorMessage(_ctx.stringValue("ResumeInstanceResponse.ErrorMessage"));
 		resumeInstanceResponse.setHttpStatusCode(_ctx.integerValue("ResumeInstanceResponse.HttpStatusCode"));
-		resumeInstanceResponse.setSuccess(_ctx.booleanValue("ResumeInstanceResponse.Success"));
 		resumeInstanceResponse.setData(_ctx.booleanValue("ResumeInstanceResponse.Data"));
+		resumeInstanceResponse.setErrorMessage(_ctx.stringValue("ResumeInstanceResponse.ErrorMessage"));
+		resumeInstanceResponse.setErrorCode(_ctx.stringValue("ResumeInstanceResponse.ErrorCode"));
+		resumeInstanceResponse.setSuccess(_ctx.booleanValue("ResumeInstanceResponse.Success"));
 	 
 	 	return resumeInstanceResponse;
 	}

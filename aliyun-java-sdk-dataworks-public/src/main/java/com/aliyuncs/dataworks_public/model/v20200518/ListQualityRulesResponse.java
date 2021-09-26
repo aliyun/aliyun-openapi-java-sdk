@@ -25,41 +25,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListQualityRulesResponse extends AcsResponse {
 
-	private String errorCode;
-
-	private Boolean success;
-
-	private String errorMessage;
-
 	private Integer httpStatusCode;
 
 	private String requestId;
 
+	private String errorMessage;
+
+	private Boolean success;
+
+	private String errorCode;
+
 	private Data data;
-
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
 
 	public Integer getHttpStatusCode() {
 		return this.httpStatusCode;
@@ -77,6 +53,30 @@ public class ListQualityRulesResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
+	public String getErrorCode() {
+		return this.errorCode;
+	}
+
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -87,21 +87,13 @@ public class ListQualityRulesResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Long totalCount;
-
 		private Integer pageNumber;
 
 		private Integer pageSize;
 
+		private Long totalCount;
+
 		private List<RulesItem> rules;
-
-		public Long getTotalCount() {
-			return this.totalCount;
-		}
-
-		public void setTotalCount(Long totalCount) {
-			this.totalCount = totalCount;
-		}
 
 		public Integer getPageNumber() {
 			return this.pageNumber;
@@ -119,6 +111,14 @@ public class ListQualityRulesResponse extends AcsResponse {
 			this.pageSize = pageSize;
 		}
 
+		public Long getTotalCount() {
+			return this.totalCount;
+		}
+
+		public void setTotalCount(Long totalCount) {
+			this.totalCount = totalCount;
+		}
+
 		public List<RulesItem> getRules() {
 			return this.rules;
 		}
@@ -129,86 +129,70 @@ public class ListQualityRulesResponse extends AcsResponse {
 
 		public static class RulesItem {
 
-			private String projectName;
-
-			private String tableName;
-
-			private Integer id;
-
-			private Integer entityId;
-
-			private String property;
-
-			private Integer methodId;
-
-			private String methodName;
-
-			private String onDuty;
-
-			private Integer ruleType;
-
 			private Integer blockType;
-
-			private Integer templateId;
-
-			private String templateName;
-
-			private Integer ruleCheckerRelationId;
-
-			private Integer checkerId;
-
-			private Boolean fixCheck;
-
-			private String trend;
-
-			private String warningThreshold;
-
-			private String criticalThreshold;
-
-			private String historyWarningThreshold;
-
-			private String historyCriticalThreshold;
-
-			private String propertyKey;
-
-			private String matchExpression;
-
-			private String comment;
-
-			private String expectValue;
 
 			private String onDutyAccountName;
 
-			public String getProjectName() {
-				return this.projectName;
+			private String property;
+
+			private String warningThreshold;
+
+			private String tableName;
+
+			private String onDuty;
+
+			private String comment;
+
+			private Integer ruleCheckerRelationId;
+
+			private Boolean fixCheck;
+
+			private Integer methodId;
+
+			private String templateName;
+
+			private String trend;
+
+			private String historyWarningThreshold;
+
+			private Integer ruleType;
+
+			private String matchExpression;
+
+			private String projectName;
+
+			private String propertyKey;
+
+			private String criticalThreshold;
+
+			private String historyCriticalThreshold;
+
+			private String methodName;
+
+			private Integer checkerId;
+
+			private Integer entityId;
+
+			private String expectValue;
+
+			private Integer templateId;
+
+			private Integer id;
+
+			public Integer getBlockType() {
+				return this.blockType;
 			}
 
-			public void setProjectName(String projectName) {
-				this.projectName = projectName;
+			public void setBlockType(Integer blockType) {
+				this.blockType = blockType;
 			}
 
-			public String getTableName() {
-				return this.tableName;
+			public String getOnDutyAccountName() {
+				return this.onDutyAccountName;
 			}
 
-			public void setTableName(String tableName) {
-				this.tableName = tableName;
-			}
-
-			public Integer getId() {
-				return this.id;
-			}
-
-			public void setId(Integer id) {
-				this.id = id;
-			}
-
-			public Integer getEntityId() {
-				return this.entityId;
-			}
-
-			public void setEntityId(Integer entityId) {
-				this.entityId = entityId;
+			public void setOnDutyAccountName(String onDutyAccountName) {
+				this.onDutyAccountName = onDutyAccountName;
 			}
 
 			public String getProperty() {
@@ -219,20 +203,20 @@ public class ListQualityRulesResponse extends AcsResponse {
 				this.property = property;
 			}
 
-			public Integer getMethodId() {
-				return this.methodId;
+			public String getWarningThreshold() {
+				return this.warningThreshold;
 			}
 
-			public void setMethodId(Integer methodId) {
-				this.methodId = methodId;
+			public void setWarningThreshold(String warningThreshold) {
+				this.warningThreshold = warningThreshold;
 			}
 
-			public String getMethodName() {
-				return this.methodName;
+			public String getTableName() {
+				return this.tableName;
 			}
 
-			public void setMethodName(String methodName) {
-				this.methodName = methodName;
+			public void setTableName(String tableName) {
+				this.tableName = tableName;
 			}
 
 			public String getOnDuty() {
@@ -243,36 +227,12 @@ public class ListQualityRulesResponse extends AcsResponse {
 				this.onDuty = onDuty;
 			}
 
-			public Integer getRuleType() {
-				return this.ruleType;
+			public String getComment() {
+				return this.comment;
 			}
 
-			public void setRuleType(Integer ruleType) {
-				this.ruleType = ruleType;
-			}
-
-			public Integer getBlockType() {
-				return this.blockType;
-			}
-
-			public void setBlockType(Integer blockType) {
-				this.blockType = blockType;
-			}
-
-			public Integer getTemplateId() {
-				return this.templateId;
-			}
-
-			public void setTemplateId(Integer templateId) {
-				this.templateId = templateId;
-			}
-
-			public String getTemplateName() {
-				return this.templateName;
-			}
-
-			public void setTemplateName(String templateName) {
-				this.templateName = templateName;
+			public void setComment(String comment) {
+				this.comment = comment;
 			}
 
 			public Integer getRuleCheckerRelationId() {
@@ -283,20 +243,28 @@ public class ListQualityRulesResponse extends AcsResponse {
 				this.ruleCheckerRelationId = ruleCheckerRelationId;
 			}
 
-			public Integer getCheckerId() {
-				return this.checkerId;
-			}
-
-			public void setCheckerId(Integer checkerId) {
-				this.checkerId = checkerId;
-			}
-
 			public Boolean getFixCheck() {
 				return this.fixCheck;
 			}
 
 			public void setFixCheck(Boolean fixCheck) {
 				this.fixCheck = fixCheck;
+			}
+
+			public Integer getMethodId() {
+				return this.methodId;
+			}
+
+			public void setMethodId(Integer methodId) {
+				this.methodId = methodId;
+			}
+
+			public String getTemplateName() {
+				return this.templateName;
+			}
+
+			public void setTemplateName(String templateName) {
+				this.templateName = templateName;
 			}
 
 			public String getTrend() {
@@ -307,22 +275,6 @@ public class ListQualityRulesResponse extends AcsResponse {
 				this.trend = trend;
 			}
 
-			public String getWarningThreshold() {
-				return this.warningThreshold;
-			}
-
-			public void setWarningThreshold(String warningThreshold) {
-				this.warningThreshold = warningThreshold;
-			}
-
-			public String getCriticalThreshold() {
-				return this.criticalThreshold;
-			}
-
-			public void setCriticalThreshold(String criticalThreshold) {
-				this.criticalThreshold = criticalThreshold;
-			}
-
 			public String getHistoryWarningThreshold() {
 				return this.historyWarningThreshold;
 			}
@@ -331,20 +283,12 @@ public class ListQualityRulesResponse extends AcsResponse {
 				this.historyWarningThreshold = historyWarningThreshold;
 			}
 
-			public String getHistoryCriticalThreshold() {
-				return this.historyCriticalThreshold;
+			public Integer getRuleType() {
+				return this.ruleType;
 			}
 
-			public void setHistoryCriticalThreshold(String historyCriticalThreshold) {
-				this.historyCriticalThreshold = historyCriticalThreshold;
-			}
-
-			public String getPropertyKey() {
-				return this.propertyKey;
-			}
-
-			public void setPropertyKey(String propertyKey) {
-				this.propertyKey = propertyKey;
+			public void setRuleType(Integer ruleType) {
+				this.ruleType = ruleType;
 			}
 
 			public String getMatchExpression() {
@@ -355,12 +299,60 @@ public class ListQualityRulesResponse extends AcsResponse {
 				this.matchExpression = matchExpression;
 			}
 
-			public String getComment() {
-				return this.comment;
+			public String getProjectName() {
+				return this.projectName;
 			}
 
-			public void setComment(String comment) {
-				this.comment = comment;
+			public void setProjectName(String projectName) {
+				this.projectName = projectName;
+			}
+
+			public String getPropertyKey() {
+				return this.propertyKey;
+			}
+
+			public void setPropertyKey(String propertyKey) {
+				this.propertyKey = propertyKey;
+			}
+
+			public String getCriticalThreshold() {
+				return this.criticalThreshold;
+			}
+
+			public void setCriticalThreshold(String criticalThreshold) {
+				this.criticalThreshold = criticalThreshold;
+			}
+
+			public String getHistoryCriticalThreshold() {
+				return this.historyCriticalThreshold;
+			}
+
+			public void setHistoryCriticalThreshold(String historyCriticalThreshold) {
+				this.historyCriticalThreshold = historyCriticalThreshold;
+			}
+
+			public String getMethodName() {
+				return this.methodName;
+			}
+
+			public void setMethodName(String methodName) {
+				this.methodName = methodName;
+			}
+
+			public Integer getCheckerId() {
+				return this.checkerId;
+			}
+
+			public void setCheckerId(Integer checkerId) {
+				this.checkerId = checkerId;
+			}
+
+			public Integer getEntityId() {
+				return this.entityId;
+			}
+
+			public void setEntityId(Integer entityId) {
+				this.entityId = entityId;
 			}
 
 			public String getExpectValue() {
@@ -371,12 +363,20 @@ public class ListQualityRulesResponse extends AcsResponse {
 				this.expectValue = expectValue;
 			}
 
-			public String getOnDutyAccountName() {
-				return this.onDutyAccountName;
+			public Integer getTemplateId() {
+				return this.templateId;
 			}
 
-			public void setOnDutyAccountName(String onDutyAccountName) {
-				this.onDutyAccountName = onDutyAccountName;
+			public void setTemplateId(Integer templateId) {
+				this.templateId = templateId;
+			}
+
+			public Integer getId() {
+				return this.id;
+			}
+
+			public void setId(Integer id) {
+				this.id = id;
 			}
 		}
 	}

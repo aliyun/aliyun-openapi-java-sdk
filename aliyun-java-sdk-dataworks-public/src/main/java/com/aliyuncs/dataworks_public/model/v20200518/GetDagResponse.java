@@ -24,25 +24,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetDagResponse extends AcsResponse {
 
-	private Boolean success;
-
 	private Integer httpStatusCode;
-
-	private String errorCode;
-
-	private String errorMessage;
 
 	private String requestId;
 
+	private String errorMessage;
+
+	private String errorCode;
+
+	private Boolean success;
+
 	private Data data;
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public Integer getHttpStatusCode() {
 		return this.httpStatusCode;
@@ -52,12 +44,12 @@ public class GetDagResponse extends AcsResponse {
 		this.httpStatusCode = httpStatusCode;
 	}
 
-	public String getErrorCode() {
-		return this.errorCode;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getErrorMessage() {
@@ -68,12 +60,20 @@ public class GetDagResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getErrorCode() {
+		return this.errorCode;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Data getData() {
@@ -86,53 +86,29 @@ public class GetDagResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Long projectId;
-
-		private Long dagId;
-
-		private String name;
-
 		private String type;
 
 		private String status;
-
-		private Long bizdate;
-
-		private Long gmtdate;
-
-		private Long startTime;
 
 		private Long finishTime;
 
 		private Long createTime;
 
+		private Long projectId;
+
+		private Long dagId;
+
+		private Long gmtdate;
+
+		private Long startTime;
+
 		private String createUser;
 
+		private Long bizdate;
+
+		private String name;
+
 		private Long modifyTime;
-
-		public Long getProjectId() {
-			return this.projectId;
-		}
-
-		public void setProjectId(Long projectId) {
-			this.projectId = projectId;
-		}
-
-		public Long getDagId() {
-			return this.dagId;
-		}
-
-		public void setDagId(Long dagId) {
-			this.dagId = dagId;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
 
 		public String getType() {
 			return this.type;
@@ -148,30 +124,6 @@ public class GetDagResponse extends AcsResponse {
 
 		public void setStatus(String status) {
 			this.status = status;
-		}
-
-		public Long getBizdate() {
-			return this.bizdate;
-		}
-
-		public void setBizdate(Long bizdate) {
-			this.bizdate = bizdate;
-		}
-
-		public Long getGmtdate() {
-			return this.gmtdate;
-		}
-
-		public void setGmtdate(Long gmtdate) {
-			this.gmtdate = gmtdate;
-		}
-
-		public Long getStartTime() {
-			return this.startTime;
-		}
-
-		public void setStartTime(Long startTime) {
-			this.startTime = startTime;
 		}
 
 		public Long getFinishTime() {
@@ -190,12 +142,60 @@ public class GetDagResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
+		public Long getProjectId() {
+			return this.projectId;
+		}
+
+		public void setProjectId(Long projectId) {
+			this.projectId = projectId;
+		}
+
+		public Long getDagId() {
+			return this.dagId;
+		}
+
+		public void setDagId(Long dagId) {
+			this.dagId = dagId;
+		}
+
+		public Long getGmtdate() {
+			return this.gmtdate;
+		}
+
+		public void setGmtdate(Long gmtdate) {
+			this.gmtdate = gmtdate;
+		}
+
+		public Long getStartTime() {
+			return this.startTime;
+		}
+
+		public void setStartTime(Long startTime) {
+			this.startTime = startTime;
+		}
+
 		public String getCreateUser() {
 			return this.createUser;
 		}
 
 		public void setCreateUser(String createUser) {
 			this.createUser = createUser;
+		}
+
+		public Long getBizdate() {
+			return this.bizdate;
+		}
+
+		public void setBizdate(Long bizdate) {
+			this.bizdate = bizdate;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
 		}
 
 		public Long getModifyTime() {

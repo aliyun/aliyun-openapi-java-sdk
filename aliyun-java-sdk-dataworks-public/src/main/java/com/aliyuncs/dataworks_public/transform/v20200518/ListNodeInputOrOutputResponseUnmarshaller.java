@@ -27,10 +27,10 @@ public class ListNodeInputOrOutputResponseUnmarshaller {
 	public static ListNodeInputOrOutputResponse unmarshall(ListNodeInputOrOutputResponse listNodeInputOrOutputResponse, UnmarshallerContext _ctx) {
 		
 		listNodeInputOrOutputResponse.setRequestId(_ctx.stringValue("ListNodeInputOrOutputResponse.RequestId"));
-		listNodeInputOrOutputResponse.setSuccess(_ctx.booleanValue("ListNodeInputOrOutputResponse.Success"));
-		listNodeInputOrOutputResponse.setErrorCode(_ctx.stringValue("ListNodeInputOrOutputResponse.ErrorCode"));
-		listNodeInputOrOutputResponse.setErrorMessage(_ctx.stringValue("ListNodeInputOrOutputResponse.ErrorMessage"));
 		listNodeInputOrOutputResponse.setHttpStatusCode(_ctx.integerValue("ListNodeInputOrOutputResponse.HttpStatusCode"));
+		listNodeInputOrOutputResponse.setErrorMessage(_ctx.stringValue("ListNodeInputOrOutputResponse.ErrorMessage"));
+		listNodeInputOrOutputResponse.setErrorCode(_ctx.stringValue("ListNodeInputOrOutputResponse.ErrorCode"));
+		listNodeInputOrOutputResponse.setSuccess(_ctx.booleanValue("ListNodeInputOrOutputResponse.Success"));
 
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListNodeInputOrOutputResponse.Data.Length"); i++) {

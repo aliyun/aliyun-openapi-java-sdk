@@ -25,32 +25,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetMetaTableOutputResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String errorCode;
+	private Integer httpStatusCode;
 
 	private String errorMessage;
 
-	private Integer httpStatusCode;
+	private String requestId;
 
 	private Boolean success;
 
+	private String errorCode;
+
 	private Data data;
 
-	public String getRequestId() {
-		return this.requestId;
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
 	}
 
 	public String getErrorMessage() {
@@ -61,12 +53,12 @@ public class GetMetaTableOutputResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public Integer getHttpStatusCode() {
-		return this.httpStatusCode;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setHttpStatusCode(Integer httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Boolean getSuccess() {
@@ -75,6 +67,14 @@ public class GetMetaTableOutputResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getErrorCode() {
+		return this.errorCode;
+	}
+
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
 	}
 
 	public Data getData() {
@@ -129,19 +129,59 @@ public class GetMetaTableOutputResponse extends AcsResponse {
 
 		public static class DataEntityListItem {
 
+			private String endTime;
+
+			private Long taskInstanceId;
+
+			private String startTime;
+
+			private Long projectId;
+
+			private String waitTime;
+
 			private String tableGuid;
 
 			private String taskId;
 
-			private String startTime;
+			public String getEndTime() {
+				return this.endTime;
+			}
 
-			private String endTime;
+			public void setEndTime(String endTime) {
+				this.endTime = endTime;
+			}
 
-			private String waitTime;
+			public Long getTaskInstanceId() {
+				return this.taskInstanceId;
+			}
 
-			private Long projectId;
+			public void setTaskInstanceId(Long taskInstanceId) {
+				this.taskInstanceId = taskInstanceId;
+			}
 
-			private Long taskInstanceId;
+			public String getStartTime() {
+				return this.startTime;
+			}
+
+			public void setStartTime(String startTime) {
+				this.startTime = startTime;
+			}
+
+			public Long getProjectId() {
+				return this.projectId;
+			}
+
+			public void setProjectId(Long projectId) {
+				this.projectId = projectId;
+			}
+
+			public String getWaitTime() {
+				return this.waitTime;
+			}
+
+			public void setWaitTime(String waitTime) {
+				this.waitTime = waitTime;
+			}
 
 			public String getTableGuid() {
 				return this.tableGuid;
@@ -157,46 +197,6 @@ public class GetMetaTableOutputResponse extends AcsResponse {
 
 			public void setTaskId(String taskId) {
 				this.taskId = taskId;
-			}
-
-			public String getStartTime() {
-				return this.startTime;
-			}
-
-			public void setStartTime(String startTime) {
-				this.startTime = startTime;
-			}
-
-			public String getEndTime() {
-				return this.endTime;
-			}
-
-			public void setEndTime(String endTime) {
-				this.endTime = endTime;
-			}
-
-			public String getWaitTime() {
-				return this.waitTime;
-			}
-
-			public void setWaitTime(String waitTime) {
-				this.waitTime = waitTime;
-			}
-
-			public Long getProjectId() {
-				return this.projectId;
-			}
-
-			public void setProjectId(Long projectId) {
-				this.projectId = projectId;
-			}
-
-			public Long getTaskInstanceId() {
-				return this.taskInstanceId;
-			}
-
-			public void setTaskInstanceId(Long taskInstanceId) {
-				this.taskInstanceId = taskInstanceId;
 			}
 		}
 	}

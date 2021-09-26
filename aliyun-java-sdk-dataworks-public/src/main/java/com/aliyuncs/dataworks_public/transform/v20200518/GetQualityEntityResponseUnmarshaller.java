@@ -27,30 +27,30 @@ public class GetQualityEntityResponseUnmarshaller {
 	public static GetQualityEntityResponse unmarshall(GetQualityEntityResponse getQualityEntityResponse, UnmarshallerContext _ctx) {
 		
 		getQualityEntityResponse.setRequestId(_ctx.stringValue("GetQualityEntityResponse.RequestId"));
-		getQualityEntityResponse.setSuccess(_ctx.booleanValue("GetQualityEntityResponse.Success"));
-		getQualityEntityResponse.setErrorCode(_ctx.stringValue("GetQualityEntityResponse.ErrorCode"));
-		getQualityEntityResponse.setErrorMessage(_ctx.stringValue("GetQualityEntityResponse.ErrorMessage"));
 		getQualityEntityResponse.setHttpStatusCode(_ctx.integerValue("GetQualityEntityResponse.HttpStatusCode"));
+		getQualityEntityResponse.setErrorMessage(_ctx.stringValue("GetQualityEntityResponse.ErrorMessage"));
+		getQualityEntityResponse.setErrorCode(_ctx.stringValue("GetQualityEntityResponse.ErrorCode"));
+		getQualityEntityResponse.setSuccess(_ctx.booleanValue("GetQualityEntityResponse.Success"));
 
 		List<EntityDto> data = new ArrayList<EntityDto>();
 		for (int i = 0; i < _ctx.lengthValue("GetQualityEntityResponse.Data.Length"); i++) {
 			EntityDto entityDto = new EntityDto();
-			entityDto.setId(_ctx.longValue("GetQualityEntityResponse.Data["+ i +"].Id"));
-			entityDto.setProjectName(_ctx.stringValue("GetQualityEntityResponse.Data["+ i +"].ProjectName"));
-			entityDto.setTableName(_ctx.stringValue("GetQualityEntityResponse.Data["+ i +"].TableName"));
-			entityDto.setEnvType(_ctx.stringValue("GetQualityEntityResponse.Data["+ i +"].EnvType"));
-			entityDto.setMatchExpression(_ctx.stringValue("GetQualityEntityResponse.Data["+ i +"].MatchExpression"));
-			entityDto.setEntityLevel(_ctx.integerValue("GetQualityEntityResponse.Data["+ i +"].EntityLevel"));
-			entityDto.setOnDuty(_ctx.stringValue("GetQualityEntityResponse.Data["+ i +"].OnDuty"));
-			entityDto.setModifyUser(_ctx.stringValue("GetQualityEntityResponse.Data["+ i +"].ModifyUser"));
-			entityDto.setCreateTime(_ctx.longValue("GetQualityEntityResponse.Data["+ i +"].CreateTime"));
-			entityDto.setModifyTime(_ctx.longValue("GetQualityEntityResponse.Data["+ i +"].ModifyTime"));
-			entityDto.setSql(_ctx.integerValue("GetQualityEntityResponse.Data["+ i +"].Sql"));
-			entityDto.setTask(_ctx.integerValue("GetQualityEntityResponse.Data["+ i +"].Task"));
-			entityDto.setFollowers(_ctx.stringValue("GetQualityEntityResponse.Data["+ i +"].Followers"));
-			entityDto.setHasRelativeNode(_ctx.booleanValue("GetQualityEntityResponse.Data["+ i +"].HasRelativeNode"));
 			entityDto.setRelativeNode(_ctx.stringValue("GetQualityEntityResponse.Data["+ i +"].RelativeNode"));
 			entityDto.setOnDutyAccountName(_ctx.stringValue("GetQualityEntityResponse.Data["+ i +"].OnDutyAccountName"));
+			entityDto.setTask(_ctx.integerValue("GetQualityEntityResponse.Data["+ i +"].Task"));
+			entityDto.setTableName(_ctx.stringValue("GetQualityEntityResponse.Data["+ i +"].TableName"));
+			entityDto.setFollowers(_ctx.stringValue("GetQualityEntityResponse.Data["+ i +"].Followers"));
+			entityDto.setOnDuty(_ctx.stringValue("GetQualityEntityResponse.Data["+ i +"].OnDuty"));
+			entityDto.setMatchExpression(_ctx.stringValue("GetQualityEntityResponse.Data["+ i +"].MatchExpression"));
+			entityDto.setCreateTime(_ctx.longValue("GetQualityEntityResponse.Data["+ i +"].CreateTime"));
+			entityDto.setProjectName(_ctx.stringValue("GetQualityEntityResponse.Data["+ i +"].ProjectName"));
+			entityDto.setHasRelativeNode(_ctx.booleanValue("GetQualityEntityResponse.Data["+ i +"].HasRelativeNode"));
+			entityDto.setEnvType(_ctx.stringValue("GetQualityEntityResponse.Data["+ i +"].EnvType"));
+			entityDto.setEntityLevel(_ctx.integerValue("GetQualityEntityResponse.Data["+ i +"].EntityLevel"));
+			entityDto.setModifyUser(_ctx.stringValue("GetQualityEntityResponse.Data["+ i +"].ModifyUser"));
+			entityDto.setSql(_ctx.integerValue("GetQualityEntityResponse.Data["+ i +"].Sql"));
+			entityDto.setId(_ctx.longValue("GetQualityEntityResponse.Data["+ i +"].Id"));
+			entityDto.setModifyTime(_ctx.longValue("GetQualityEntityResponse.Data["+ i +"].ModifyTime"));
 
 			data.add(entityDto);
 		}

@@ -23,11 +23,11 @@ public class SubmitFileResponseUnmarshaller {
 	public static SubmitFileResponse unmarshall(SubmitFileResponse submitFileResponse, UnmarshallerContext _ctx) {
 		
 		submitFileResponse.setRequestId(_ctx.stringValue("SubmitFileResponse.RequestId"));
+		submitFileResponse.setHttpStatusCode(_ctx.integerValue("SubmitFileResponse.HttpStatusCode"));
+		submitFileResponse.setData(_ctx.longValue("SubmitFileResponse.Data"));
+		submitFileResponse.setErrorMessage(_ctx.stringValue("SubmitFileResponse.ErrorMessage"));
 		submitFileResponse.setSuccess(_ctx.booleanValue("SubmitFileResponse.Success"));
 		submitFileResponse.setErrorCode(_ctx.stringValue("SubmitFileResponse.ErrorCode"));
-		submitFileResponse.setErrorMessage(_ctx.stringValue("SubmitFileResponse.ErrorMessage"));
-		submitFileResponse.setData(_ctx.longValue("SubmitFileResponse.Data"));
-		submitFileResponse.setHttpStatusCode(_ctx.integerValue("SubmitFileResponse.HttpStatusCode"));
 	 
 	 	return submitFileResponse;
 	}

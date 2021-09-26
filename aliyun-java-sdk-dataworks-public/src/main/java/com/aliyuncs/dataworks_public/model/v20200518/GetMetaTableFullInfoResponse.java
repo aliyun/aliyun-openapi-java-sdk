@@ -25,32 +25,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetMetaTableFullInfoResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String errorCode;
+	private Integer httpStatusCode;
 
 	private String errorMessage;
 
-	private Integer httpStatusCode;
+	private String requestId;
 
 	private Boolean success;
 
+	private String errorCode;
+
 	private Data data;
 
-	public String getRequestId() {
-		return this.requestId;
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
 	}
 
 	public String getErrorMessage() {
@@ -61,12 +53,12 @@ public class GetMetaTableFullInfoResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public Integer getHttpStatusCode() {
-		return this.httpStatusCode;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setHttpStatusCode(Integer httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Boolean getSuccess() {
@@ -75,6 +67,14 @@ public class GetMetaTableFullInfoResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getErrorCode() {
+		return this.errorCode;
+	}
+
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
 	}
 
 	public Data getData() {
@@ -89,43 +89,43 @@ public class GetMetaTableFullInfoResponse extends AcsResponse {
 
 		private String tableName;
 
-		private String tableGuid;
-
-		private String ownerId;
-
-		private Long tenantId;
-
-		private Long projectId;
-
-		private Long createTime;
-
-		private Long lastModifyTime;
+		private String comment;
 
 		private Integer lifeCycle;
 
-		private Integer isVisible;
+		private Long createTime;
 
 		private String projectName;
 
-		private Long dataSize;
+		private Long projectId;
+
+		private String ownerId;
 
 		private Integer envType;
 
-		private String comment;
-
-		private Long totalColumnCount;
-
-		private Long lastDdlTime;
-
 		private Long lastAccessTime;
+
+		private Long dataSize;
+
+		private Long lastModifyTime;
 
 		private String databaseName;
 
+		private Integer isVisible;
+
+		private Long totalColumnCount;
+
+		private String tableGuid;
+
 		private String partitionKeys;
+
+		private Long lastDdlTime;
 
 		private String location;
 
 		private String clusterId;
+
+		private Long tenantId;
 
 		private List<ColumnListItem> columnList;
 
@@ -137,52 +137,12 @@ public class GetMetaTableFullInfoResponse extends AcsResponse {
 			this.tableName = tableName;
 		}
 
-		public String getTableGuid() {
-			return this.tableGuid;
+		public String getComment() {
+			return this.comment;
 		}
 
-		public void setTableGuid(String tableGuid) {
-			this.tableGuid = tableGuid;
-		}
-
-		public String getOwnerId() {
-			return this.ownerId;
-		}
-
-		public void setOwnerId(String ownerId) {
-			this.ownerId = ownerId;
-		}
-
-		public Long getTenantId() {
-			return this.tenantId;
-		}
-
-		public void setTenantId(Long tenantId) {
-			this.tenantId = tenantId;
-		}
-
-		public Long getProjectId() {
-			return this.projectId;
-		}
-
-		public void setProjectId(Long projectId) {
-			this.projectId = projectId;
-		}
-
-		public Long getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(Long createTime) {
-			this.createTime = createTime;
-		}
-
-		public Long getLastModifyTime() {
-			return this.lastModifyTime;
-		}
-
-		public void setLastModifyTime(Long lastModifyTime) {
-			this.lastModifyTime = lastModifyTime;
+		public void setComment(String comment) {
+			this.comment = comment;
 		}
 
 		public Integer getLifeCycle() {
@@ -193,12 +153,12 @@ public class GetMetaTableFullInfoResponse extends AcsResponse {
 			this.lifeCycle = lifeCycle;
 		}
 
-		public Integer getIsVisible() {
-			return this.isVisible;
+		public Long getCreateTime() {
+			return this.createTime;
 		}
 
-		public void setIsVisible(Integer isVisible) {
-			this.isVisible = isVisible;
+		public void setCreateTime(Long createTime) {
+			this.createTime = createTime;
 		}
 
 		public String getProjectName() {
@@ -209,12 +169,20 @@ public class GetMetaTableFullInfoResponse extends AcsResponse {
 			this.projectName = projectName;
 		}
 
-		public Long getDataSize() {
-			return this.dataSize;
+		public Long getProjectId() {
+			return this.projectId;
 		}
 
-		public void setDataSize(Long dataSize) {
-			this.dataSize = dataSize;
+		public void setProjectId(Long projectId) {
+			this.projectId = projectId;
+		}
+
+		public String getOwnerId() {
+			return this.ownerId;
+		}
+
+		public void setOwnerId(String ownerId) {
+			this.ownerId = ownerId;
 		}
 
 		public Integer getEnvType() {
@@ -225,36 +193,28 @@ public class GetMetaTableFullInfoResponse extends AcsResponse {
 			this.envType = envType;
 		}
 
-		public String getComment() {
-			return this.comment;
-		}
-
-		public void setComment(String comment) {
-			this.comment = comment;
-		}
-
-		public Long getTotalColumnCount() {
-			return this.totalColumnCount;
-		}
-
-		public void setTotalColumnCount(Long totalColumnCount) {
-			this.totalColumnCount = totalColumnCount;
-		}
-
-		public Long getLastDdlTime() {
-			return this.lastDdlTime;
-		}
-
-		public void setLastDdlTime(Long lastDdlTime) {
-			this.lastDdlTime = lastDdlTime;
-		}
-
 		public Long getLastAccessTime() {
 			return this.lastAccessTime;
 		}
 
 		public void setLastAccessTime(Long lastAccessTime) {
 			this.lastAccessTime = lastAccessTime;
+		}
+
+		public Long getDataSize() {
+			return this.dataSize;
+		}
+
+		public void setDataSize(Long dataSize) {
+			this.dataSize = dataSize;
+		}
+
+		public Long getLastModifyTime() {
+			return this.lastModifyTime;
+		}
+
+		public void setLastModifyTime(Long lastModifyTime) {
+			this.lastModifyTime = lastModifyTime;
 		}
 
 		public String getDatabaseName() {
@@ -265,12 +225,44 @@ public class GetMetaTableFullInfoResponse extends AcsResponse {
 			this.databaseName = databaseName;
 		}
 
+		public Integer getIsVisible() {
+			return this.isVisible;
+		}
+
+		public void setIsVisible(Integer isVisible) {
+			this.isVisible = isVisible;
+		}
+
+		public Long getTotalColumnCount() {
+			return this.totalColumnCount;
+		}
+
+		public void setTotalColumnCount(Long totalColumnCount) {
+			this.totalColumnCount = totalColumnCount;
+		}
+
+		public String getTableGuid() {
+			return this.tableGuid;
+		}
+
+		public void setTableGuid(String tableGuid) {
+			this.tableGuid = tableGuid;
+		}
+
 		public String getPartitionKeys() {
 			return this.partitionKeys;
 		}
 
 		public void setPartitionKeys(String partitionKeys) {
 			this.partitionKeys = partitionKeys;
+		}
+
+		public Long getLastDdlTime() {
+			return this.lastDdlTime;
+		}
+
+		public void setLastDdlTime(Long lastDdlTime) {
+			this.lastDdlTime = lastDdlTime;
 		}
 
 		public String getLocation() {
@@ -289,6 +281,14 @@ public class GetMetaTableFullInfoResponse extends AcsResponse {
 			this.clusterId = clusterId;
 		}
 
+		public Long getTenantId() {
+			return this.tenantId;
+		}
+
+		public void setTenantId(Long tenantId) {
+			this.tenantId = tenantId;
+		}
+
 		public List<ColumnListItem> getColumnList() {
 			return this.columnList;
 		}
@@ -299,23 +299,31 @@ public class GetMetaTableFullInfoResponse extends AcsResponse {
 
 		public static class ColumnListItem {
 
+			private String columnName;
+
 			private String columnGuid;
 
-			private String columnName;
+			private Boolean isPartitionColumn;
+
+			private String comment;
 
 			private String columnType;
 
 			private Boolean isPrimaryKey;
 
-			private String comment;
-
-			private Boolean isPartitionColumn;
-
-			private Boolean isForeignKey;
+			private Integer position;
 
 			private String caption;
 
-			private Integer position;
+			private Boolean isForeignKey;
+
+			public String getColumnName() {
+				return this.columnName;
+			}
+
+			public void setColumnName(String columnName) {
+				this.columnName = columnName;
+			}
 
 			public String getColumnGuid() {
 				return this.columnGuid;
@@ -325,12 +333,20 @@ public class GetMetaTableFullInfoResponse extends AcsResponse {
 				this.columnGuid = columnGuid;
 			}
 
-			public String getColumnName() {
-				return this.columnName;
+			public Boolean getIsPartitionColumn() {
+				return this.isPartitionColumn;
 			}
 
-			public void setColumnName(String columnName) {
-				this.columnName = columnName;
+			public void setIsPartitionColumn(Boolean isPartitionColumn) {
+				this.isPartitionColumn = isPartitionColumn;
+			}
+
+			public String getComment() {
+				return this.comment;
+			}
+
+			public void setComment(String comment) {
+				this.comment = comment;
 			}
 
 			public String getColumnType() {
@@ -349,28 +365,12 @@ public class GetMetaTableFullInfoResponse extends AcsResponse {
 				this.isPrimaryKey = isPrimaryKey;
 			}
 
-			public String getComment() {
-				return this.comment;
+			public Integer getPosition() {
+				return this.position;
 			}
 
-			public void setComment(String comment) {
-				this.comment = comment;
-			}
-
-			public Boolean getIsPartitionColumn() {
-				return this.isPartitionColumn;
-			}
-
-			public void setIsPartitionColumn(Boolean isPartitionColumn) {
-				this.isPartitionColumn = isPartitionColumn;
-			}
-
-			public Boolean getIsForeignKey() {
-				return this.isForeignKey;
-			}
-
-			public void setIsForeignKey(Boolean isForeignKey) {
-				this.isForeignKey = isForeignKey;
+			public void setPosition(Integer position) {
+				this.position = position;
 			}
 
 			public String getCaption() {
@@ -381,12 +381,12 @@ public class GetMetaTableFullInfoResponse extends AcsResponse {
 				this.caption = caption;
 			}
 
-			public Integer getPosition() {
-				return this.position;
+			public Boolean getIsForeignKey() {
+				return this.isForeignKey;
 			}
 
-			public void setPosition(Integer position) {
-				this.position = position;
+			public void setIsForeignKey(Boolean isForeignKey) {
+				this.isForeignKey = isForeignKey;
 			}
 		}
 	}

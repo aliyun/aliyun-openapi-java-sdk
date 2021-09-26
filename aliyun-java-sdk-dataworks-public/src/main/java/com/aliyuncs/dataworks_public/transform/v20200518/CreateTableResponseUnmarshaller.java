@@ -26,10 +26,10 @@ public class CreateTableResponseUnmarshaller {
 		createTableResponse.setRequestId(_ctx.stringValue("CreateTableResponse.RequestId"));
 
 		TaskInfo taskInfo = new TaskInfo();
-		taskInfo.setTaskId(_ctx.stringValue("CreateTableResponse.TaskInfo.TaskId"));
-		taskInfo.setContent(_ctx.stringValue("CreateTableResponse.TaskInfo.Content"));
 		taskInfo.setStatus(_ctx.stringValue("CreateTableResponse.TaskInfo.Status"));
 		taskInfo.setNextTaskId(_ctx.stringValue("CreateTableResponse.TaskInfo.NextTaskId"));
+		taskInfo.setTaskId(_ctx.stringValue("CreateTableResponse.TaskInfo.TaskId"));
+		taskInfo.setContent(_ctx.stringValue("CreateTableResponse.TaskInfo.Content"));
 		createTableResponse.setTaskInfo(taskInfo);
 	 
 	 	return createTableResponse;

@@ -28,10 +28,10 @@ public class GetTopicInfluenceResponseUnmarshaller {
 	public static GetTopicInfluenceResponse unmarshall(GetTopicInfluenceResponse getTopicInfluenceResponse, UnmarshallerContext _ctx) {
 		
 		getTopicInfluenceResponse.setRequestId(_ctx.stringValue("GetTopicInfluenceResponse.RequestId"));
-		getTopicInfluenceResponse.setSuccess(_ctx.booleanValue("GetTopicInfluenceResponse.Success"));
-		getTopicInfluenceResponse.setErrorCode(_ctx.stringValue("GetTopicInfluenceResponse.ErrorCode"));
-		getTopicInfluenceResponse.setErrorMessage(_ctx.stringValue("GetTopicInfluenceResponse.ErrorMessage"));
 		getTopicInfluenceResponse.setHttpStatusCode(_ctx.integerValue("GetTopicInfluenceResponse.HttpStatusCode"));
+		getTopicInfluenceResponse.setErrorMessage(_ctx.stringValue("GetTopicInfluenceResponse.ErrorMessage"));
+		getTopicInfluenceResponse.setErrorCode(_ctx.stringValue("GetTopicInfluenceResponse.ErrorCode"));
+		getTopicInfluenceResponse.setSuccess(_ctx.booleanValue("GetTopicInfluenceResponse.Success"));
 
 		Data data = new Data();
 		data.setTopicId(_ctx.longValue("GetTopicInfluenceResponse.Data.TopicId"));
@@ -39,15 +39,15 @@ public class GetTopicInfluenceResponseUnmarshaller {
 		List<InfluencesItem> influences = new ArrayList<InfluencesItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetTopicInfluenceResponse.Data.Influences.Length"); i++) {
 			InfluencesItem influencesItem = new InfluencesItem();
+			influencesItem.setStatus(_ctx.stringValue("GetTopicInfluenceResponse.Data.Influences["+ i +"].Status"));
+			influencesItem.setOwner(_ctx.stringValue("GetTopicInfluenceResponse.Data.Influences["+ i +"].Owner"));
+			influencesItem.setBaselineName(_ctx.stringValue("GetTopicInfluenceResponse.Data.Influences["+ i +"].BaselineName"));
 			influencesItem.setBaselineId(_ctx.longValue("GetTopicInfluenceResponse.Data.Influences["+ i +"].BaselineId"));
 			influencesItem.setBizdate(_ctx.longValue("GetTopicInfluenceResponse.Data.Influences["+ i +"].Bizdate"));
-			influencesItem.setInGroupId(_ctx.integerValue("GetTopicInfluenceResponse.Data.Influences["+ i +"].InGroupId"));
-			influencesItem.setBaselineName(_ctx.stringValue("GetTopicInfluenceResponse.Data.Influences["+ i +"].BaselineName"));
-			influencesItem.setOwner(_ctx.stringValue("GetTopicInfluenceResponse.Data.Influences["+ i +"].Owner"));
-			influencesItem.setStatus(_ctx.stringValue("GetTopicInfluenceResponse.Data.Influences["+ i +"].Status"));
+			influencesItem.setBuffer(_ctx.longValue("GetTopicInfluenceResponse.Data.Influences["+ i +"].Buffer"));
 			influencesItem.setProjectId(_ctx.longValue("GetTopicInfluenceResponse.Data.Influences["+ i +"].ProjectId"));
 			influencesItem.setPriority(_ctx.integerValue("GetTopicInfluenceResponse.Data.Influences["+ i +"].Priority"));
-			influencesItem.setBuffer(_ctx.longValue("GetTopicInfluenceResponse.Data.Influences["+ i +"].Buffer"));
+			influencesItem.setInGroupId(_ctx.integerValue("GetTopicInfluenceResponse.Data.Influences["+ i +"].InGroupId"));
 
 			influences.add(influencesItem);
 		}

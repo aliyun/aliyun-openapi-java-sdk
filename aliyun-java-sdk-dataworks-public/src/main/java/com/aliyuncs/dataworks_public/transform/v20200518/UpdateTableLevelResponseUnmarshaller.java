@@ -23,11 +23,11 @@ public class UpdateTableLevelResponseUnmarshaller {
 	public static UpdateTableLevelResponse unmarshall(UpdateTableLevelResponse updateTableLevelResponse, UnmarshallerContext _ctx) {
 		
 		updateTableLevelResponse.setRequestId(_ctx.stringValue("UpdateTableLevelResponse.RequestId"));
-		updateTableLevelResponse.setErrorCode(_ctx.stringValue("UpdateTableLevelResponse.ErrorCode"));
-		updateTableLevelResponse.setErrorMessage(_ctx.stringValue("UpdateTableLevelResponse.ErrorMessage"));
 		updateTableLevelResponse.setHttpStatusCode(_ctx.integerValue("UpdateTableLevelResponse.HttpStatusCode"));
-		updateTableLevelResponse.setSuccess(_ctx.booleanValue("UpdateTableLevelResponse.Success"));
+		updateTableLevelResponse.setErrorMessage(_ctx.stringValue("UpdateTableLevelResponse.ErrorMessage"));
 		updateTableLevelResponse.setUpdateResult(_ctx.booleanValue("UpdateTableLevelResponse.UpdateResult"));
+		updateTableLevelResponse.setErrorCode(_ctx.stringValue("UpdateTableLevelResponse.ErrorCode"));
+		updateTableLevelResponse.setSuccess(_ctx.booleanValue("UpdateTableLevelResponse.Success"));
 	 
 	 	return updateTableLevelResponse;
 	}

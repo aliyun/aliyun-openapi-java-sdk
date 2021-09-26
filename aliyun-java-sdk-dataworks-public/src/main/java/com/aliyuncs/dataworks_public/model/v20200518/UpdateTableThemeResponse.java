@@ -24,17 +24,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class UpdateTableThemeResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer httpStatusCode;
 
-	private String errorCode;
+	private String requestId;
 
 	private String errorMessage;
 
-	private Integer httpStatusCode;
+	private Boolean updateResult;
+
+	private String errorCode;
 
 	private Boolean success;
 
-	private Boolean updateResult;
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
+	}
+
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -42,14 +50,6 @@ public class UpdateTableThemeResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
 	}
 
 	public String getErrorMessage() {
@@ -60,12 +60,20 @@ public class UpdateTableThemeResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public Integer getHttpStatusCode() {
-		return this.httpStatusCode;
+	public Boolean getUpdateResult() {
+		return this.updateResult;
 	}
 
-	public void setHttpStatusCode(Integer httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
+	public void setUpdateResult(Boolean updateResult) {
+		this.updateResult = updateResult;
+	}
+
+	public String getErrorCode() {
+		return this.errorCode;
+	}
+
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
 	}
 
 	public Boolean getSuccess() {
@@ -74,14 +82,6 @@ public class UpdateTableThemeResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
-	}
-
-	public Boolean getUpdateResult() {
-		return this.updateResult;
-	}
-
-	public void setUpdateResult(Boolean updateResult) {
-		this.updateResult = updateResult;
 	}
 
 	@Override

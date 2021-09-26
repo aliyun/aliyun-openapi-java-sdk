@@ -33,17 +33,17 @@ public class GetDISyncTaskResponseUnmarshaller {
 		data.setMessage(_ctx.stringValue("GetDISyncTaskResponse.Data.Message"));
 
 		SolutionDetail solutionDetail = new SolutionDetail();
-		solutionDetail.setId(_ctx.longValue("GetDISyncTaskResponse.Data.SolutionDetail.Id"));
-		solutionDetail.setType(_ctx.stringValue("GetDISyncTaskResponse.Data.SolutionDetail.Type"));
-		solutionDetail.setProjectId(_ctx.longValue("GetDISyncTaskResponse.Data.SolutionDetail.ProjectId"));
 		solutionDetail.setStatus(_ctx.stringValue("GetDISyncTaskResponse.Data.SolutionDetail.Status"));
-		solutionDetail.setProcessContent(_ctx.stringValue("GetDISyncTaskResponse.Data.SolutionDetail.ProcessContent"));
+		solutionDetail.setType(_ctx.stringValue("GetDISyncTaskResponse.Data.SolutionDetail.Type"));
 		solutionDetail.setStartTime(_ctx.stringValue("GetDISyncTaskResponse.Data.SolutionDetail.StartTime"));
-		solutionDetail.setName(_ctx.stringValue("GetDISyncTaskResponse.Data.SolutionDetail.Name"));
 		solutionDetail.setCreatorName(_ctx.stringValue("GetDISyncTaskResponse.Data.SolutionDetail.CreatorName"));
+		solutionDetail.setProjectId(_ctx.longValue("GetDISyncTaskResponse.Data.SolutionDetail.ProjectId"));
 		solutionDetail.setSourceType(_ctx.stringValue("GetDISyncTaskResponse.Data.SolutionDetail.SourceType"));
-		solutionDetail.setSubmitTime(_ctx.stringValue("GetDISyncTaskResponse.Data.SolutionDetail.SubmitTime"));
+		solutionDetail.setProcessContent(_ctx.stringValue("GetDISyncTaskResponse.Data.SolutionDetail.ProcessContent"));
+		solutionDetail.setName(_ctx.stringValue("GetDISyncTaskResponse.Data.SolutionDetail.Name"));
 		solutionDetail.setProcessExtra(_ctx.stringValue("GetDISyncTaskResponse.Data.SolutionDetail.ProcessExtra"));
+		solutionDetail.setSubmitTime(_ctx.stringValue("GetDISyncTaskResponse.Data.SolutionDetail.SubmitTime"));
+		solutionDetail.setId(_ctx.longValue("GetDISyncTaskResponse.Data.SolutionDetail.Id"));
 		data.setSolutionDetail(solutionDetail);
 		getDISyncTaskResponse.setData(data);
 	 

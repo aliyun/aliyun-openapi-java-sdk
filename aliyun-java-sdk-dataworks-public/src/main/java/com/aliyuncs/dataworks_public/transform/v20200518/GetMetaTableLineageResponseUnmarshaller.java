@@ -28,14 +28,14 @@ public class GetMetaTableLineageResponseUnmarshaller {
 	public static GetMetaTableLineageResponse unmarshall(GetMetaTableLineageResponse getMetaTableLineageResponse, UnmarshallerContext _ctx) {
 		
 		getMetaTableLineageResponse.setRequestId(_ctx.stringValue("GetMetaTableLineageResponse.RequestId"));
-		getMetaTableLineageResponse.setErrorCode(_ctx.stringValue("GetMetaTableLineageResponse.ErrorCode"));
-		getMetaTableLineageResponse.setErrorMessage(_ctx.stringValue("GetMetaTableLineageResponse.ErrorMessage"));
 		getMetaTableLineageResponse.setHttpStatusCode(_ctx.integerValue("GetMetaTableLineageResponse.HttpStatusCode"));
+		getMetaTableLineageResponse.setErrorMessage(_ctx.stringValue("GetMetaTableLineageResponse.ErrorMessage"));
 		getMetaTableLineageResponse.setSuccess(_ctx.booleanValue("GetMetaTableLineageResponse.Success"));
+		getMetaTableLineageResponse.setErrorCode(_ctx.stringValue("GetMetaTableLineageResponse.ErrorCode"));
 
 		Data data = new Data();
-		data.setHasNext(_ctx.booleanValue("GetMetaTableLineageResponse.Data.HasNext"));
 		data.setNextPrimaryKey(_ctx.stringValue("GetMetaTableLineageResponse.Data.NextPrimaryKey"));
+		data.setHasNext(_ctx.booleanValue("GetMetaTableLineageResponse.Data.HasNext"));
 
 		List<DataEntityListItem> dataEntityList = new ArrayList<DataEntityListItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetMetaTableLineageResponse.Data.DataEntityList.Length"); i++) {

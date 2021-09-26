@@ -40,9 +40,9 @@ public class ListPermissionApplyOrdersResponseUnmarshaller {
 		List<Orders> applyOrder = new ArrayList<Orders>();
 		for (int i = 0; i < _ctx.lengthValue("ListPermissionApplyOrdersResponse.ApplyOrders.ApplyOrder.Length"); i++) {
 			Orders orders = new Orders();
-			orders.setFlowId(_ctx.stringValue("ListPermissionApplyOrdersResponse.ApplyOrders.ApplyOrder["+ i +"].FlowId"));
 			orders.setApplyBaseId(_ctx.stringValue("ListPermissionApplyOrdersResponse.ApplyOrders.ApplyOrder["+ i +"].ApplyBaseId"));
 			orders.setApplyTimestamp(_ctx.longValue("ListPermissionApplyOrdersResponse.ApplyOrders.ApplyOrder["+ i +"].ApplyTimestamp"));
+			orders.setFlowId(_ctx.stringValue("ListPermissionApplyOrdersResponse.ApplyOrders.ApplyOrder["+ i +"].FlowId"));
 			orders.setFlowStatus(_ctx.integerValue("ListPermissionApplyOrdersResponse.ApplyOrders.ApplyOrder["+ i +"].FlowStatus"));
 
 			ApproveContent approveContent = new ApproveContent();

@@ -26,13 +26,13 @@ public class GetInstanceStatusCountResponseUnmarshaller {
 		getInstanceStatusCountResponse.setRequestId(_ctx.stringValue("GetInstanceStatusCountResponse.RequestId"));
 
 		StatusCount statusCount = new StatusCount();
+		statusCount.setFailureCount(_ctx.integerValue("GetInstanceStatusCountResponse.StatusCount.FailureCount"));
+		statusCount.setWaitTimeCount(_ctx.integerValue("GetInstanceStatusCountResponse.StatusCount.WaitTimeCount"));
+		statusCount.setRunningCount(_ctx.integerValue("GetInstanceStatusCountResponse.StatusCount.RunningCount"));
+		statusCount.setSuccessCount(_ctx.integerValue("GetInstanceStatusCountResponse.StatusCount.SuccessCount"));
 		statusCount.setTotalCount(_ctx.integerValue("GetInstanceStatusCountResponse.StatusCount.TotalCount"));
 		statusCount.setNotRunCount(_ctx.integerValue("GetInstanceStatusCountResponse.StatusCount.NotRunCount"));
-		statusCount.setWaitTimeCount(_ctx.integerValue("GetInstanceStatusCountResponse.StatusCount.WaitTimeCount"));
 		statusCount.setWaitResCount(_ctx.integerValue("GetInstanceStatusCountResponse.StatusCount.WaitResCount"));
-		statusCount.setRunningCount(_ctx.integerValue("GetInstanceStatusCountResponse.StatusCount.RunningCount"));
-		statusCount.setFailureCount(_ctx.integerValue("GetInstanceStatusCountResponse.StatusCount.FailureCount"));
-		statusCount.setSuccessCount(_ctx.integerValue("GetInstanceStatusCountResponse.StatusCount.SuccessCount"));
 		getInstanceStatusCountResponse.setStatusCount(statusCount);
 	 
 	 	return getInstanceStatusCountResponse;

@@ -28,24 +28,24 @@ public class GetMetaColumnLineageResponseUnmarshaller {
 	public static GetMetaColumnLineageResponse unmarshall(GetMetaColumnLineageResponse getMetaColumnLineageResponse, UnmarshallerContext _ctx) {
 		
 		getMetaColumnLineageResponse.setRequestId(_ctx.stringValue("GetMetaColumnLineageResponse.RequestId"));
-		getMetaColumnLineageResponse.setErrorCode(_ctx.stringValue("GetMetaColumnLineageResponse.ErrorCode"));
-		getMetaColumnLineageResponse.setErrorMessage(_ctx.stringValue("GetMetaColumnLineageResponse.ErrorMessage"));
 		getMetaColumnLineageResponse.setHttpStatusCode(_ctx.integerValue("GetMetaColumnLineageResponse.HttpStatusCode"));
+		getMetaColumnLineageResponse.setErrorMessage(_ctx.stringValue("GetMetaColumnLineageResponse.ErrorMessage"));
 		getMetaColumnLineageResponse.setSuccess(_ctx.booleanValue("GetMetaColumnLineageResponse.Success"));
+		getMetaColumnLineageResponse.setErrorCode(_ctx.stringValue("GetMetaColumnLineageResponse.ErrorCode"));
 
 		Data data = new Data();
-		data.setTotalCount(_ctx.longValue("GetMetaColumnLineageResponse.Data.TotalCount"));
 		data.setPageNum(_ctx.integerValue("GetMetaColumnLineageResponse.Data.PageNum"));
 		data.setPageSize(_ctx.integerValue("GetMetaColumnLineageResponse.Data.PageSize"));
+		data.setTotalCount(_ctx.longValue("GetMetaColumnLineageResponse.Data.TotalCount"));
 
 		List<DataEntityListItem> dataEntityList = new ArrayList<DataEntityListItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetMetaColumnLineageResponse.Data.DataEntityList.Length"); i++) {
 			DataEntityListItem dataEntityListItem = new DataEntityListItem();
-			dataEntityListItem.setColumnName(_ctx.stringValue("GetMetaColumnLineageResponse.Data.DataEntityList["+ i +"].ColumnName"));
 			dataEntityListItem.setColumnGuid(_ctx.stringValue("GetMetaColumnLineageResponse.Data.DataEntityList["+ i +"].ColumnGuid"));
-			dataEntityListItem.setClusterId(_ctx.stringValue("GetMetaColumnLineageResponse.Data.DataEntityList["+ i +"].ClusterId"));
-			dataEntityListItem.setDatabaseName(_ctx.stringValue("GetMetaColumnLineageResponse.Data.DataEntityList["+ i +"].DatabaseName"));
+			dataEntityListItem.setColumnName(_ctx.stringValue("GetMetaColumnLineageResponse.Data.DataEntityList["+ i +"].ColumnName"));
 			dataEntityListItem.setTableName(_ctx.stringValue("GetMetaColumnLineageResponse.Data.DataEntityList["+ i +"].TableName"));
+			dataEntityListItem.setDatabaseName(_ctx.stringValue("GetMetaColumnLineageResponse.Data.DataEntityList["+ i +"].DatabaseName"));
+			dataEntityListItem.setClusterId(_ctx.stringValue("GetMetaColumnLineageResponse.Data.DataEntityList["+ i +"].ClusterId"));
 
 			dataEntityList.add(dataEntityListItem);
 		}

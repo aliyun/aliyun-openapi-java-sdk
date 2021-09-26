@@ -23,11 +23,11 @@ public class GetNodeCodeResponseUnmarshaller {
 	public static GetNodeCodeResponse unmarshall(GetNodeCodeResponse getNodeCodeResponse, UnmarshallerContext _ctx) {
 		
 		getNodeCodeResponse.setRequestId(_ctx.stringValue("GetNodeCodeResponse.RequestId"));
-		getNodeCodeResponse.setSuccess(_ctx.booleanValue("GetNodeCodeResponse.Success"));
-		getNodeCodeResponse.setErrorCode(_ctx.stringValue("GetNodeCodeResponse.ErrorCode"));
-		getNodeCodeResponse.setErrorMessage(_ctx.stringValue("GetNodeCodeResponse.ErrorMessage"));
 		getNodeCodeResponse.setHttpStatusCode(_ctx.integerValue("GetNodeCodeResponse.HttpStatusCode"));
 		getNodeCodeResponse.setData(_ctx.stringValue("GetNodeCodeResponse.Data"));
+		getNodeCodeResponse.setErrorMessage(_ctx.stringValue("GetNodeCodeResponse.ErrorMessage"));
+		getNodeCodeResponse.setSuccess(_ctx.booleanValue("GetNodeCodeResponse.Success"));
+		getNodeCodeResponse.setErrorCode(_ctx.stringValue("GetNodeCodeResponse.ErrorCode"));
 	 
 	 	return getNodeCodeResponse;
 	}

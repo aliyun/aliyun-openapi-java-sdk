@@ -39,24 +39,24 @@ public class ExportConnectionsResponseUnmarshaller {
 		List<DataSourcesItem> dataSources = new ArrayList<DataSourcesItem>();
 		for (int i = 0; i < _ctx.lengthValue("ExportConnectionsResponse.Data.DataSources.Length"); i++) {
 			DataSourcesItem dataSourcesItem = new DataSourcesItem();
-			dataSourcesItem.setShared(_ctx.booleanValue("ExportConnectionsResponse.Data.DataSources["+ i +"].Shared"));
+			dataSourcesItem.setStatus(_ctx.integerValue("ExportConnectionsResponse.Data.DataSources["+ i +"].Status"));
+			dataSourcesItem.setProjectId(_ctx.integerValue("ExportConnectionsResponse.Data.DataSources["+ i +"].ProjectId"));
+			dataSourcesItem.setSubType(_ctx.stringValue("ExportConnectionsResponse.Data.DataSources["+ i +"].SubType"));
 			dataSourcesItem.setGmtModified(_ctx.stringValue("ExportConnectionsResponse.Data.DataSources["+ i +"].GmtModified"));
+			dataSourcesItem.setEnvType(_ctx.integerValue("ExportConnectionsResponse.Data.DataSources["+ i +"].EnvType"));
 			dataSourcesItem.setConnectStatus(_ctx.integerValue("ExportConnectionsResponse.Data.DataSources["+ i +"].ConnectStatus"));
-			dataSourcesItem.setBindingCalcEngineId(_ctx.integerValue("ExportConnectionsResponse.Data.DataSources["+ i +"].BindingCalcEngineId"));
+			dataSourcesItem.setSequence(_ctx.integerValue("ExportConnectionsResponse.Data.DataSources["+ i +"].Sequence"));
 			dataSourcesItem.setDescription(_ctx.stringValue("ExportConnectionsResponse.Data.DataSources["+ i +"].Description"));
 			dataSourcesItem.setDataSourceType(_ctx.stringValue("ExportConnectionsResponse.Data.DataSources["+ i +"].DataSourceType"));
 			dataSourcesItem.setGmtCreate(_ctx.stringValue("ExportConnectionsResponse.Data.DataSources["+ i +"].GmtCreate"));
 			dataSourcesItem.setDefaultEngine(_ctx.booleanValue("ExportConnectionsResponse.Data.DataSources["+ i +"].DefaultEngine"));
+			dataSourcesItem.setShared(_ctx.booleanValue("ExportConnectionsResponse.Data.DataSources["+ i +"].Shared"));
 			dataSourcesItem.setOperator(_ctx.stringValue("ExportConnectionsResponse.Data.DataSources["+ i +"].Operator"));
-			dataSourcesItem.setSequence(_ctx.integerValue("ExportConnectionsResponse.Data.DataSources["+ i +"].Sequence"));
-			dataSourcesItem.setEnvType(_ctx.integerValue("ExportConnectionsResponse.Data.DataSources["+ i +"].EnvType"));
-			dataSourcesItem.setTenantId(_ctx.longValue("ExportConnectionsResponse.Data.DataSources["+ i +"].TenantId"));
 			dataSourcesItem.setName(_ctx.stringValue("ExportConnectionsResponse.Data.DataSources["+ i +"].Name"));
-			dataSourcesItem.setSubType(_ctx.stringValue("ExportConnectionsResponse.Data.DataSources["+ i +"].SubType"));
-			dataSourcesItem.setId(_ctx.integerValue("ExportConnectionsResponse.Data.DataSources["+ i +"].Id"));
-			dataSourcesItem.setProjectId(_ctx.integerValue("ExportConnectionsResponse.Data.DataSources["+ i +"].ProjectId"));
-			dataSourcesItem.setStatus(_ctx.integerValue("ExportConnectionsResponse.Data.DataSources["+ i +"].Status"));
 			dataSourcesItem.setContent(_ctx.stringValue("ExportConnectionsResponse.Data.DataSources["+ i +"].Content"));
+			dataSourcesItem.setId(_ctx.integerValue("ExportConnectionsResponse.Data.DataSources["+ i +"].Id"));
+			dataSourcesItem.setBindingCalcEngineId(_ctx.integerValue("ExportConnectionsResponse.Data.DataSources["+ i +"].BindingCalcEngineId"));
+			dataSourcesItem.setTenantId(_ctx.longValue("ExportConnectionsResponse.Data.DataSources["+ i +"].TenantId"));
 
 			dataSources.add(dataSourcesItem);
 		}

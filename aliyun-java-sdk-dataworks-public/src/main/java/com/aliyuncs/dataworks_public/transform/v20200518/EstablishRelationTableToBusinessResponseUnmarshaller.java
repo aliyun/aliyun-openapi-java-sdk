@@ -23,10 +23,10 @@ public class EstablishRelationTableToBusinessResponseUnmarshaller {
 	public static EstablishRelationTableToBusinessResponse unmarshall(EstablishRelationTableToBusinessResponse establishRelationTableToBusinessResponse, UnmarshallerContext _ctx) {
 		
 		establishRelationTableToBusinessResponse.setRequestId(_ctx.stringValue("EstablishRelationTableToBusinessResponse.RequestId"));
-		establishRelationTableToBusinessResponse.setSuccess(_ctx.booleanValue("EstablishRelationTableToBusinessResponse.Success"));
-		establishRelationTableToBusinessResponse.setErrorCode(_ctx.stringValue("EstablishRelationTableToBusinessResponse.ErrorCode"));
-		establishRelationTableToBusinessResponse.setErrorMessage(_ctx.stringValue("EstablishRelationTableToBusinessResponse.ErrorMessage"));
 		establishRelationTableToBusinessResponse.setHttpStatusCode(_ctx.integerValue("EstablishRelationTableToBusinessResponse.HttpStatusCode"));
+		establishRelationTableToBusinessResponse.setErrorMessage(_ctx.stringValue("EstablishRelationTableToBusinessResponse.ErrorMessage"));
+		establishRelationTableToBusinessResponse.setErrorCode(_ctx.stringValue("EstablishRelationTableToBusinessResponse.ErrorCode"));
+		establishRelationTableToBusinessResponse.setSuccess(_ctx.booleanValue("EstablishRelationTableToBusinessResponse.Success"));
 	 
 	 	return establishRelationTableToBusinessResponse;
 	}

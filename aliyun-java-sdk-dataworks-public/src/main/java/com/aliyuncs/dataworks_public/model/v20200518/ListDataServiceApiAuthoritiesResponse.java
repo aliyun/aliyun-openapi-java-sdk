@@ -25,33 +25,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListDataServiceApiAuthoritiesResponse extends AcsResponse {
 
-	private String errorCode;
-
-	private String errorMessage;
-
 	private Integer httpStatusCode;
 
 	private String requestId;
 
+	private String errorMessage;
+
 	private Boolean success;
 
+	private String errorCode;
+
 	private Data data;
-
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
 
 	public Integer getHttpStatusCode() {
 		return this.httpStatusCode;
@@ -69,12 +53,28 @@ public class ListDataServiceApiAuthoritiesResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
 	public Boolean getSuccess() {
 		return this.success;
 	}
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getErrorCode() {
+		return this.errorCode;
+	}
+
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
 	}
 
 	public Data getData() {
@@ -129,51 +129,27 @@ public class ListDataServiceApiAuthoritiesResponse extends AcsResponse {
 
 		public static class ApiAuthorization {
 
-			private Long apiId;
-
-			private String apiName;
-
-			private String apiPath;
-
 			private Integer apiStatus;
 
-			private String createdTime;
-
-			private String creatorId;
-
-			private String groupId;
+			private Long apiId;
 
 			private String modifiedTime;
 
+			private String groupId;
+
 			private Long projectId;
+
+			private String creatorId;
+
+			private String createdTime;
+
+			private String apiName;
 
 			private Long tenantId;
 
+			private String apiPath;
+
 			private List<AuthorizationRecord> authorizationRecords;
-
-			public Long getApiId() {
-				return this.apiId;
-			}
-
-			public void setApiId(Long apiId) {
-				this.apiId = apiId;
-			}
-
-			public String getApiName() {
-				return this.apiName;
-			}
-
-			public void setApiName(String apiName) {
-				this.apiName = apiName;
-			}
-
-			public String getApiPath() {
-				return this.apiPath;
-			}
-
-			public void setApiPath(String apiPath) {
-				this.apiPath = apiPath;
-			}
 
 			public Integer getApiStatus() {
 				return this.apiStatus;
@@ -183,28 +159,12 @@ public class ListDataServiceApiAuthoritiesResponse extends AcsResponse {
 				this.apiStatus = apiStatus;
 			}
 
-			public String getCreatedTime() {
-				return this.createdTime;
+			public Long getApiId() {
+				return this.apiId;
 			}
 
-			public void setCreatedTime(String createdTime) {
-				this.createdTime = createdTime;
-			}
-
-			public String getCreatorId() {
-				return this.creatorId;
-			}
-
-			public void setCreatorId(String creatorId) {
-				this.creatorId = creatorId;
-			}
-
-			public String getGroupId() {
-				return this.groupId;
-			}
-
-			public void setGroupId(String groupId) {
-				this.groupId = groupId;
+			public void setApiId(Long apiId) {
+				this.apiId = apiId;
 			}
 
 			public String getModifiedTime() {
@@ -215,6 +175,14 @@ public class ListDataServiceApiAuthoritiesResponse extends AcsResponse {
 				this.modifiedTime = modifiedTime;
 			}
 
+			public String getGroupId() {
+				return this.groupId;
+			}
+
+			public void setGroupId(String groupId) {
+				this.groupId = groupId;
+			}
+
 			public Long getProjectId() {
 				return this.projectId;
 			}
@@ -223,12 +191,44 @@ public class ListDataServiceApiAuthoritiesResponse extends AcsResponse {
 				this.projectId = projectId;
 			}
 
+			public String getCreatorId() {
+				return this.creatorId;
+			}
+
+			public void setCreatorId(String creatorId) {
+				this.creatorId = creatorId;
+			}
+
+			public String getCreatedTime() {
+				return this.createdTime;
+			}
+
+			public void setCreatedTime(String createdTime) {
+				this.createdTime = createdTime;
+			}
+
+			public String getApiName() {
+				return this.apiName;
+			}
+
+			public void setApiName(String apiName) {
+				this.apiName = apiName;
+			}
+
 			public Long getTenantId() {
 				return this.tenantId;
 			}
 
 			public void setTenantId(Long tenantId) {
 				this.tenantId = tenantId;
+			}
+
+			public String getApiPath() {
+				return this.apiPath;
+			}
+
+			public void setApiPath(String apiPath) {
+				this.apiPath = apiPath;
 			}
 
 			public List<AuthorizationRecord> getAuthorizationRecords() {
@@ -241,20 +241,20 @@ public class ListDataServiceApiAuthoritiesResponse extends AcsResponse {
 
 			public static class AuthorizationRecord {
 
-				private String createdTime;
+				private String endTime;
 
 				private String creatorId;
 
-				private String endTime;
+				private String createdTime;
 
 				private Long projectId;
 
-				public String getCreatedTime() {
-					return this.createdTime;
+				public String getEndTime() {
+					return this.endTime;
 				}
 
-				public void setCreatedTime(String createdTime) {
-					this.createdTime = createdTime;
+				public void setEndTime(String endTime) {
+					this.endTime = endTime;
 				}
 
 				public String getCreatorId() {
@@ -265,12 +265,12 @@ public class ListDataServiceApiAuthoritiesResponse extends AcsResponse {
 					this.creatorId = creatorId;
 				}
 
-				public String getEndTime() {
-					return this.endTime;
+				public String getCreatedTime() {
+					return this.createdTime;
 				}
 
-				public void setEndTime(String endTime) {
-					this.endTime = endTime;
+				public void setCreatedTime(String createdTime) {
+					this.createdTime = createdTime;
 				}
 
 				public Long getProjectId() {

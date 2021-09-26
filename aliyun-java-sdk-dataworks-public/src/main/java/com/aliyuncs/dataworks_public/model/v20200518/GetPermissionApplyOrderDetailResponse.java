@@ -132,29 +132,13 @@ public class GetPermissionApplyOrderDetailResponse extends AcsResponse {
 
 		public static class GranteeObjectListItem {
 
-			private String granteeId;
-
-			private String granteeName;
-
 			private Integer granteeType;
 
 			private Integer granteeTypeSub;
 
-			public String getGranteeId() {
-				return this.granteeId;
-			}
+			private String granteeName;
 
-			public void setGranteeId(String granteeId) {
-				this.granteeId = granteeId;
-			}
-
-			public String getGranteeName() {
-				return this.granteeName;
-			}
-
-			public void setGranteeName(String granteeName) {
-				this.granteeName = granteeName;
-			}
+			private String granteeId;
 
 			public Integer getGranteeType() {
 				return this.granteeType;
@@ -170,6 +154,22 @@ public class GetPermissionApplyOrderDetailResponse extends AcsResponse {
 
 			public void setGranteeTypeSub(Integer granteeTypeSub) {
 				this.granteeTypeSub = granteeTypeSub;
+			}
+
+			public String getGranteeName() {
+				return this.granteeName;
+			}
+
+			public void setGranteeName(String granteeName) {
+				this.granteeName = granteeName;
+			}
+
+			public String getGranteeId() {
+				return this.granteeId;
+			}
+
+			public void setGranteeId(String granteeId) {
+				this.granteeId = granteeId;
 			}
 		}
 
@@ -217,19 +217,11 @@ public class GetPermissionApplyOrderDetailResponse extends AcsResponse {
 
 			public static class ProjectMeta {
 
-				private Integer workspaceId;
-
 				private String maxComputeProjectName;
 
+				private Integer workspaceId;
+
 				private List<ObjectMetaListItem> objectMetaList;
-
-				public Integer getWorkspaceId() {
-					return this.workspaceId;
-				}
-
-				public void setWorkspaceId(Integer workspaceId) {
-					this.workspaceId = workspaceId;
-				}
 
 				public String getMaxComputeProjectName() {
 					return this.maxComputeProjectName;
@@ -237,6 +229,14 @@ public class GetPermissionApplyOrderDetailResponse extends AcsResponse {
 
 				public void setMaxComputeProjectName(String maxComputeProjectName) {
 					this.maxComputeProjectName = maxComputeProjectName;
+				}
+
+				public Integer getWorkspaceId() {
+					return this.workspaceId;
+				}
+
+				public void setWorkspaceId(Integer workspaceId) {
+					this.workspaceId = workspaceId;
 				}
 
 				public List<ObjectMetaListItem> getObjectMetaList() {
@@ -271,17 +271,9 @@ public class GetPermissionApplyOrderDetailResponse extends AcsResponse {
 
 					public static class ColumnMetaListItem {
 
-						private String columnComment;
-
 						private String columnName;
 
-						public String getColumnComment() {
-							return this.columnComment;
-						}
-
-						public void setColumnComment(String columnComment) {
-							this.columnComment = columnComment;
-						}
+						private String columnComment;
 
 						public String getColumnName() {
 							return this.columnName;
@@ -289,6 +281,14 @@ public class GetPermissionApplyOrderDetailResponse extends AcsResponse {
 
 						public void setColumnName(String columnName) {
 							this.columnName = columnName;
+						}
+
+						public String getColumnComment() {
+							return this.columnComment;
+						}
+
+						public void setColumnComment(String columnComment) {
+							this.columnComment = columnComment;
 						}
 					}
 				}

@@ -23,11 +23,11 @@ public class RunSmokeTestResponseUnmarshaller {
 	public static RunSmokeTestResponse unmarshall(RunSmokeTestResponse runSmokeTestResponse, UnmarshallerContext _ctx) {
 		
 		runSmokeTestResponse.setRequestId(_ctx.stringValue("RunSmokeTestResponse.RequestId"));
-		runSmokeTestResponse.setErrorCode(_ctx.stringValue("RunSmokeTestResponse.ErrorCode"));
-		runSmokeTestResponse.setErrorMessage(_ctx.stringValue("RunSmokeTestResponse.ErrorMessage"));
 		runSmokeTestResponse.setHttpStatusCode(_ctx.integerValue("RunSmokeTestResponse.HttpStatusCode"));
-		runSmokeTestResponse.setSuccess(_ctx.booleanValue("RunSmokeTestResponse.Success"));
 		runSmokeTestResponse.setData(_ctx.longValue("RunSmokeTestResponse.Data"));
+		runSmokeTestResponse.setErrorMessage(_ctx.stringValue("RunSmokeTestResponse.ErrorMessage"));
+		runSmokeTestResponse.setErrorCode(_ctx.stringValue("RunSmokeTestResponse.ErrorCode"));
+		runSmokeTestResponse.setSuccess(_ctx.booleanValue("RunSmokeTestResponse.Success"));
 	 
 	 	return runSmokeTestResponse;
 	}

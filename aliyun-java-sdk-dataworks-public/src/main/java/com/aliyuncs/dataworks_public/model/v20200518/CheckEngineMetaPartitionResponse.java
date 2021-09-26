@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CheckEngineMetaPartitionResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Boolean data;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public Boolean getData() {
 		return this.data;
@@ -42,6 +34,14 @@ public class CheckEngineMetaPartitionResponse extends AcsResponse {
 
 	public void setData(Boolean data) {
 		this.data = data;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

@@ -28,10 +28,10 @@ public class GetMetaCategoryResponseUnmarshaller {
 	public static GetMetaCategoryResponse unmarshall(GetMetaCategoryResponse getMetaCategoryResponse, UnmarshallerContext _ctx) {
 		
 		getMetaCategoryResponse.setRequestId(_ctx.stringValue("GetMetaCategoryResponse.RequestId"));
-		getMetaCategoryResponse.setErrorCode(_ctx.stringValue("GetMetaCategoryResponse.ErrorCode"));
-		getMetaCategoryResponse.setErrorMessage(_ctx.stringValue("GetMetaCategoryResponse.ErrorMessage"));
 		getMetaCategoryResponse.setHttpStatusCode(_ctx.integerValue("GetMetaCategoryResponse.HttpStatusCode"));
+		getMetaCategoryResponse.setErrorMessage(_ctx.stringValue("GetMetaCategoryResponse.ErrorMessage"));
 		getMetaCategoryResponse.setSuccess(_ctx.booleanValue("GetMetaCategoryResponse.Success"));
+		getMetaCategoryResponse.setErrorCode(_ctx.stringValue("GetMetaCategoryResponse.ErrorCode"));
 
 		Data data = new Data();
 		data.setPageNum(_ctx.integerValue("GetMetaCategoryResponse.Data.PageNum"));
@@ -41,15 +41,15 @@ public class GetMetaCategoryResponseUnmarshaller {
 		List<DataEntityListItem> dataEntityList = new ArrayList<DataEntityListItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetMetaCategoryResponse.Data.DataEntityList.Length"); i++) {
 			DataEntityListItem dataEntityListItem = new DataEntityListItem();
-			dataEntityListItem.setCategoryId(_ctx.longValue("GetMetaCategoryResponse.Data.DataEntityList["+ i +"].CategoryId"));
-			dataEntityListItem.setName(_ctx.stringValue("GetMetaCategoryResponse.Data.DataEntityList["+ i +"].Name"));
-			dataEntityListItem.setCreateTime(_ctx.longValue("GetMetaCategoryResponse.Data.DataEntityList["+ i +"].CreateTime"));
-			dataEntityListItem.setModifiedTime(_ctx.longValue("GetMetaCategoryResponse.Data.DataEntityList["+ i +"].ModifiedTime"));
-			dataEntityListItem.setComment(_ctx.stringValue("GetMetaCategoryResponse.Data.DataEntityList["+ i +"].Comment"));
-			dataEntityListItem.setOwnerId(_ctx.stringValue("GetMetaCategoryResponse.Data.DataEntityList["+ i +"].OwnerId"));
-			dataEntityListItem.setLastOperatorId(_ctx.stringValue("GetMetaCategoryResponse.Data.DataEntityList["+ i +"].LastOperatorId"));
-			dataEntityListItem.setParentCategoryId(_ctx.longValue("GetMetaCategoryResponse.Data.DataEntityList["+ i +"].ParentCategoryId"));
 			dataEntityListItem.setDepth(_ctx.integerValue("GetMetaCategoryResponse.Data.DataEntityList["+ i +"].Depth"));
+			dataEntityListItem.setComment(_ctx.stringValue("GetMetaCategoryResponse.Data.DataEntityList["+ i +"].Comment"));
+			dataEntityListItem.setModifiedTime(_ctx.longValue("GetMetaCategoryResponse.Data.DataEntityList["+ i +"].ModifiedTime"));
+			dataEntityListItem.setCreateTime(_ctx.longValue("GetMetaCategoryResponse.Data.DataEntityList["+ i +"].CreateTime"));
+			dataEntityListItem.setCategoryId(_ctx.longValue("GetMetaCategoryResponse.Data.DataEntityList["+ i +"].CategoryId"));
+			dataEntityListItem.setLastOperatorId(_ctx.stringValue("GetMetaCategoryResponse.Data.DataEntityList["+ i +"].LastOperatorId"));
+			dataEntityListItem.setName(_ctx.stringValue("GetMetaCategoryResponse.Data.DataEntityList["+ i +"].Name"));
+			dataEntityListItem.setParentCategoryId(_ctx.longValue("GetMetaCategoryResponse.Data.DataEntityList["+ i +"].ParentCategoryId"));
+			dataEntityListItem.setOwnerId(_ctx.stringValue("GetMetaCategoryResponse.Data.DataEntityList["+ i +"].OwnerId"));
 
 			dataEntityList.add(dataEntityListItem);
 		}

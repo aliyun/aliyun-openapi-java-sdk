@@ -27,8 +27,8 @@ public class GenerateDISyncTaskConfigForUpdatingResponseUnmarshaller {
 		generateDISyncTaskConfigForUpdatingResponse.setSuccess(_ctx.booleanValue("GenerateDISyncTaskConfigForUpdatingResponse.Success"));
 
 		Data data = new Data();
-		data.setProcessId(_ctx.longValue("GenerateDISyncTaskConfigForUpdatingResponse.Data.ProcessId"));
 		data.setStatus(_ctx.stringValue("GenerateDISyncTaskConfigForUpdatingResponse.Data.Status"));
+		data.setProcessId(_ctx.longValue("GenerateDISyncTaskConfigForUpdatingResponse.Data.ProcessId"));
 		data.setMessage(_ctx.stringValue("GenerateDISyncTaskConfigForUpdatingResponse.Data.Message"));
 		generateDISyncTaskConfigForUpdatingResponse.setData(data);
 	 

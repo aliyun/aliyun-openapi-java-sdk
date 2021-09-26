@@ -35,11 +35,11 @@ public class ListRefDISyncTasksResponseUnmarshaller {
 		List<DISyncTasksItem> dISyncTasks = new ArrayList<DISyncTasksItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListRefDISyncTasksResponse.Data.DISyncTasks.Length"); i++) {
 			DISyncTasksItem dISyncTasksItem = new DISyncTasksItem();
-			dISyncTasksItem.setNodeName(_ctx.stringValue("ListRefDISyncTasksResponse.Data.DISyncTasks["+ i +"].NodeName"));
-			dISyncTasksItem.setNodeId(_ctx.longValue("ListRefDISyncTasksResponse.Data.DISyncTasks["+ i +"].NodeId"));
+			dISyncTasksItem.setDiSourceDatasource(_ctx.stringValue("ListRefDISyncTasksResponse.Data.DISyncTasks["+ i +"].DiSourceDatasource"));
 			dISyncTasksItem.setTaskType(_ctx.stringValue("ListRefDISyncTasksResponse.Data.DISyncTasks["+ i +"].TaskType"));
 			dISyncTasksItem.setDiDestinationDatasource(_ctx.stringValue("ListRefDISyncTasksResponse.Data.DISyncTasks["+ i +"].DiDestinationDatasource"));
-			dISyncTasksItem.setDiSourceDatasource(_ctx.stringValue("ListRefDISyncTasksResponse.Data.DISyncTasks["+ i +"].DiSourceDatasource"));
+			dISyncTasksItem.setNodeName(_ctx.stringValue("ListRefDISyncTasksResponse.Data.DISyncTasks["+ i +"].NodeName"));
+			dISyncTasksItem.setNodeId(_ctx.longValue("ListRefDISyncTasksResponse.Data.DISyncTasks["+ i +"].NodeId"));
 
 			dISyncTasks.add(dISyncTasksItem);
 		}

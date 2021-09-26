@@ -46,60 +46,28 @@ public class GetDataServiceFolderResponse extends AcsResponse {
 
 	public static class Folder {
 
-		private Long tenantId;
-
-		private Long projectId;
-
-		private Long folderId;
-
-		private String folderName;
-
-		private String createdTime;
+		private Long parentId;
 
 		private String modifiedTime;
 
 		private String groupId;
 
-		private Long parentId;
+		private Long folderId;
 
-		public Long getTenantId() {
-			return this.tenantId;
+		private Long projectId;
+
+		private String folderName;
+
+		private String createdTime;
+
+		private Long tenantId;
+
+		public Long getParentId() {
+			return this.parentId;
 		}
 
-		public void setTenantId(Long tenantId) {
-			this.tenantId = tenantId;
-		}
-
-		public Long getProjectId() {
-			return this.projectId;
-		}
-
-		public void setProjectId(Long projectId) {
-			this.projectId = projectId;
-		}
-
-		public Long getFolderId() {
-			return this.folderId;
-		}
-
-		public void setFolderId(Long folderId) {
-			this.folderId = folderId;
-		}
-
-		public String getFolderName() {
-			return this.folderName;
-		}
-
-		public void setFolderName(String folderName) {
-			this.folderName = folderName;
-		}
-
-		public String getCreatedTime() {
-			return this.createdTime;
-		}
-
-		public void setCreatedTime(String createdTime) {
-			this.createdTime = createdTime;
+		public void setParentId(Long parentId) {
+			this.parentId = parentId;
 		}
 
 		public String getModifiedTime() {
@@ -118,12 +86,44 @@ public class GetDataServiceFolderResponse extends AcsResponse {
 			this.groupId = groupId;
 		}
 
-		public Long getParentId() {
-			return this.parentId;
+		public Long getFolderId() {
+			return this.folderId;
 		}
 
-		public void setParentId(Long parentId) {
-			this.parentId = parentId;
+		public void setFolderId(Long folderId) {
+			this.folderId = folderId;
+		}
+
+		public Long getProjectId() {
+			return this.projectId;
+		}
+
+		public void setProjectId(Long projectId) {
+			this.projectId = projectId;
+		}
+
+		public String getFolderName() {
+			return this.folderName;
+		}
+
+		public void setFolderName(String folderName) {
+			this.folderName = folderName;
+		}
+
+		public String getCreatedTime() {
+			return this.createdTime;
+		}
+
+		public void setCreatedTime(String createdTime) {
+			this.createdTime = createdTime;
+		}
+
+		public Long getTenantId() {
+			return this.tenantId;
+		}
+
+		public void setTenantId(Long tenantId) {
+			this.tenantId = tenantId;
 		}
 	}
 

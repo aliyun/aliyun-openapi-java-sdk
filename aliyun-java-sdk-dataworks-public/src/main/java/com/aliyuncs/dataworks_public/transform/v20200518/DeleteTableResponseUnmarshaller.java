@@ -26,10 +26,10 @@ public class DeleteTableResponseUnmarshaller {
 		deleteTableResponse.setRequestId(_ctx.stringValue("DeleteTableResponse.RequestId"));
 
 		TaskInfo taskInfo = new TaskInfo();
-		taskInfo.setTaskId(_ctx.stringValue("DeleteTableResponse.TaskInfo.TaskId"));
-		taskInfo.setContent(_ctx.stringValue("DeleteTableResponse.TaskInfo.Content"));
 		taskInfo.setStatus(_ctx.stringValue("DeleteTableResponse.TaskInfo.Status"));
 		taskInfo.setNextTaskId(_ctx.stringValue("DeleteTableResponse.TaskInfo.NextTaskId"));
+		taskInfo.setTaskId(_ctx.stringValue("DeleteTableResponse.TaskInfo.TaskId"));
+		taskInfo.setContent(_ctx.stringValue("DeleteTableResponse.TaskInfo.Content"));
 		deleteTableResponse.setTaskInfo(taskInfo);
 	 
 	 	return deleteTableResponse;

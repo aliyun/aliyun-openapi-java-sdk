@@ -69,43 +69,19 @@ public class GetInstanceConsumeTimeRankResponse extends AcsResponse {
 
 		public static class ConsumeTimeRankItem {
 
-			private String nodeName;
-
-			private Long nodeId;
-
-			private Long bizdate;
-
 			private String owner;
 
-			private Long consumed;
+			private String nodeName;
+
+			private Long bizdate;
 
 			private Long instanceId;
 
 			private Integer prgType;
 
-			public String getNodeName() {
-				return this.nodeName;
-			}
+			private Long nodeId;
 
-			public void setNodeName(String nodeName) {
-				this.nodeName = nodeName;
-			}
-
-			public Long getNodeId() {
-				return this.nodeId;
-			}
-
-			public void setNodeId(Long nodeId) {
-				this.nodeId = nodeId;
-			}
-
-			public Long getBizdate() {
-				return this.bizdate;
-			}
-
-			public void setBizdate(Long bizdate) {
-				this.bizdate = bizdate;
-			}
+			private Long consumed;
 
 			public String getOwner() {
 				return this.owner;
@@ -115,12 +91,20 @@ public class GetInstanceConsumeTimeRankResponse extends AcsResponse {
 				this.owner = owner;
 			}
 
-			public Long getConsumed() {
-				return this.consumed;
+			public String getNodeName() {
+				return this.nodeName;
 			}
 
-			public void setConsumed(Long consumed) {
-				this.consumed = consumed;
+			public void setNodeName(String nodeName) {
+				this.nodeName = nodeName;
+			}
+
+			public Long getBizdate() {
+				return this.bizdate;
+			}
+
+			public void setBizdate(Long bizdate) {
+				this.bizdate = bizdate;
 			}
 
 			public Long getInstanceId() {
@@ -137,6 +121,22 @@ public class GetInstanceConsumeTimeRankResponse extends AcsResponse {
 
 			public void setPrgType(Integer prgType) {
 				this.prgType = prgType;
+			}
+
+			public Long getNodeId() {
+				return this.nodeId;
+			}
+
+			public void setNodeId(Long nodeId) {
+				this.nodeId = nodeId;
+			}
+
+			public Long getConsumed() {
+				return this.consumed;
+			}
+
+			public void setConsumed(Long consumed) {
+				this.consumed = consumed;
 			}
 		}
 	}

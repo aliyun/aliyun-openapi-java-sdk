@@ -46,29 +46,13 @@ public class CreateViewResponse extends AcsResponse {
 
 	public static class TaskInfo {
 
-		private String taskId;
-
-		private String content;
-
 		private String status;
 
 		private String nextTaskId;
 
-		public String getTaskId() {
-			return this.taskId;
-		}
+		private String taskId;
 
-		public void setTaskId(String taskId) {
-			this.taskId = taskId;
-		}
-
-		public String getContent() {
-			return this.content;
-		}
-
-		public void setContent(String content) {
-			this.content = content;
-		}
+		private String content;
 
 		public String getStatus() {
 			return this.status;
@@ -84,6 +68,22 @@ public class CreateViewResponse extends AcsResponse {
 
 		public void setNextTaskId(String nextTaskId) {
 			this.nextTaskId = nextTaskId;
+		}
+
+		public String getTaskId() {
+			return this.taskId;
+		}
+
+		public void setTaskId(String taskId) {
+			this.taskId = taskId;
+		}
+
+		public String getContent() {
+			return this.content;
+		}
+
+		public void setContent(String content) {
+			this.content = content;
 		}
 	}
 

@@ -36,8 +36,8 @@ public class ListSuccessInstanceAmountResponseUnmarshaller {
 		List<TodayTrendItem> todayTrend = new ArrayList<TodayTrendItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListSuccessInstanceAmountResponse.InstanceStatusTrend.TodayTrend.Length"); i++) {
 			TodayTrendItem todayTrendItem = new TodayTrendItem();
-			todayTrendItem.setCount(_ctx.integerValue("ListSuccessInstanceAmountResponse.InstanceStatusTrend.TodayTrend["+ i +"].Count"));
 			todayTrendItem.setTimePoint(_ctx.stringValue("ListSuccessInstanceAmountResponse.InstanceStatusTrend.TodayTrend["+ i +"].TimePoint"));
+			todayTrendItem.setCount(_ctx.integerValue("ListSuccessInstanceAmountResponse.InstanceStatusTrend.TodayTrend["+ i +"].Count"));
 
 			todayTrend.add(todayTrendItem);
 		}
@@ -46,8 +46,8 @@ public class ListSuccessInstanceAmountResponseUnmarshaller {
 		List<YesterdayTrendItem> yesterdayTrend = new ArrayList<YesterdayTrendItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListSuccessInstanceAmountResponse.InstanceStatusTrend.YesterdayTrend.Length"); i++) {
 			YesterdayTrendItem yesterdayTrendItem = new YesterdayTrendItem();
-			yesterdayTrendItem.setCount(_ctx.integerValue("ListSuccessInstanceAmountResponse.InstanceStatusTrend.YesterdayTrend["+ i +"].Count"));
 			yesterdayTrendItem.setTimePoint(_ctx.stringValue("ListSuccessInstanceAmountResponse.InstanceStatusTrend.YesterdayTrend["+ i +"].TimePoint"));
+			yesterdayTrendItem.setCount(_ctx.integerValue("ListSuccessInstanceAmountResponse.InstanceStatusTrend.YesterdayTrend["+ i +"].Count"));
 
 			yesterdayTrend.add(yesterdayTrendItem);
 		}
@@ -56,8 +56,8 @@ public class ListSuccessInstanceAmountResponseUnmarshaller {
 		List<AvgTrendItem> avgTrend = new ArrayList<AvgTrendItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListSuccessInstanceAmountResponse.InstanceStatusTrend.AvgTrend.Length"); i++) {
 			AvgTrendItem avgTrendItem = new AvgTrendItem();
-			avgTrendItem.setCount(_ctx.integerValue("ListSuccessInstanceAmountResponse.InstanceStatusTrend.AvgTrend["+ i +"].Count"));
 			avgTrendItem.setTimePoint(_ctx.stringValue("ListSuccessInstanceAmountResponse.InstanceStatusTrend.AvgTrend["+ i +"].TimePoint"));
+			avgTrendItem.setCount(_ctx.integerValue("ListSuccessInstanceAmountResponse.InstanceStatusTrend.AvgTrend["+ i +"].Count"));
 
 			avgTrend.add(avgTrendItem);
 		}

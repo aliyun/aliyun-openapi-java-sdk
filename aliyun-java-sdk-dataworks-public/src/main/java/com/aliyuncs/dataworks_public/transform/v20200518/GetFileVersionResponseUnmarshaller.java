@@ -24,25 +24,25 @@ public class GetFileVersionResponseUnmarshaller {
 	public static GetFileVersionResponse unmarshall(GetFileVersionResponse getFileVersionResponse, UnmarshallerContext _ctx) {
 		
 		getFileVersionResponse.setRequestId(_ctx.stringValue("GetFileVersionResponse.RequestId"));
-		getFileVersionResponse.setSuccess(_ctx.booleanValue("GetFileVersionResponse.Success"));
-		getFileVersionResponse.setErrorCode(_ctx.stringValue("GetFileVersionResponse.ErrorCode"));
-		getFileVersionResponse.setErrorMessage(_ctx.stringValue("GetFileVersionResponse.ErrorMessage"));
 		getFileVersionResponse.setHttpStatusCode(_ctx.integerValue("GetFileVersionResponse.HttpStatusCode"));
+		getFileVersionResponse.setErrorMessage(_ctx.stringValue("GetFileVersionResponse.ErrorMessage"));
+		getFileVersionResponse.setErrorCode(_ctx.stringValue("GetFileVersionResponse.ErrorCode"));
+		getFileVersionResponse.setSuccess(_ctx.booleanValue("GetFileVersionResponse.Success"));
 
 		Data data = new Data();
-		data.setFileVersion(_ctx.integerValue("GetFileVersionResponse.Data.FileVersion"));
 		data.setFileContent(_ctx.stringValue("GetFileVersionResponse.Data.FileContent"));
-		data.setFilePropertyContent(_ctx.stringValue("GetFileVersionResponse.Data.FilePropertyContent"));
-		data.setNodeContent(_ctx.stringValue("GetFileVersionResponse.Data.NodeContent"));
-		data.setComment(_ctx.stringValue("GetFileVersionResponse.Data.Comment"));
-		data.setNodeId(_ctx.longValue("GetFileVersionResponse.Data.NodeId"));
 		data.setIsCurrentProd(_ctx.booleanValue("GetFileVersionResponse.Data.IsCurrentProd"));
-		data.setChangeType(_ctx.stringValue("GetFileVersionResponse.Data.ChangeType"));
 		data.setStatus(_ctx.stringValue("GetFileVersionResponse.Data.Status"));
-		data.setFileName(_ctx.stringValue("GetFileVersionResponse.Data.FileName"));
+		data.setNodeContent(_ctx.stringValue("GetFileVersionResponse.Data.NodeContent"));
 		data.setCommitUser(_ctx.stringValue("GetFileVersionResponse.Data.CommitUser"));
-		data.setCommitTime(_ctx.longValue("GetFileVersionResponse.Data.CommitTime"));
+		data.setComment(_ctx.stringValue("GetFileVersionResponse.Data.Comment"));
+		data.setFilePropertyContent(_ctx.stringValue("GetFileVersionResponse.Data.FilePropertyContent"));
+		data.setFileName(_ctx.stringValue("GetFileVersionResponse.Data.FileName"));
 		data.setUseType(_ctx.stringValue("GetFileVersionResponse.Data.UseType"));
+		data.setChangeType(_ctx.stringValue("GetFileVersionResponse.Data.ChangeType"));
+		data.setFileVersion(_ctx.integerValue("GetFileVersionResponse.Data.FileVersion"));
+		data.setCommitTime(_ctx.longValue("GetFileVersionResponse.Data.CommitTime"));
+		data.setNodeId(_ctx.longValue("GetFileVersionResponse.Data.NodeId"));
 		getFileVersionResponse.setData(data);
 	 
 	 	return getFileVersionResponse;

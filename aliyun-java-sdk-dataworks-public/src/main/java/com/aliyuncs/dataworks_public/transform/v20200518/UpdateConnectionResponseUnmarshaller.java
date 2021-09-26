@@ -23,9 +23,9 @@ public class UpdateConnectionResponseUnmarshaller {
 	public static UpdateConnectionResponse unmarshall(UpdateConnectionResponse updateConnectionResponse, UnmarshallerContext _ctx) {
 		
 		updateConnectionResponse.setRequestId(_ctx.stringValue("UpdateConnectionResponse.RequestId"));
-		updateConnectionResponse.setSuccess(_ctx.booleanValue("UpdateConnectionResponse.Success"));
 		updateConnectionResponse.setHttpStatusCode(_ctx.stringValue("UpdateConnectionResponse.HttpStatusCode"));
 		updateConnectionResponse.setData(_ctx.booleanValue("UpdateConnectionResponse.Data"));
+		updateConnectionResponse.setSuccess(_ctx.booleanValue("UpdateConnectionResponse.Success"));
 	 
 	 	return updateConnectionResponse;
 	}

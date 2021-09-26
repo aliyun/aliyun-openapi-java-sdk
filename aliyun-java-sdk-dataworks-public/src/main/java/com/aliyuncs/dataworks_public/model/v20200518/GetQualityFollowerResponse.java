@@ -25,41 +25,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetQualityFollowerResponse extends AcsResponse {
 
-	private String errorCode;
-
-	private Boolean success;
-
-	private String errorMessage;
-
 	private Integer httpStatusCode;
 
 	private String requestId;
 
+	private String errorMessage;
+
+	private Boolean success;
+
+	private String errorCode;
+
 	private List<Follower> data;
-
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
 
 	public Integer getHttpStatusCode() {
 		return this.httpStatusCode;
@@ -77,6 +53,30 @@ public class GetQualityFollowerResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
+	public String getErrorCode() {
+		return this.errorCode;
+	}
+
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
+	}
+
 	public List<Follower> getData() {
 		return this.data;
 	}
@@ -87,26 +87,26 @@ public class GetQualityFollowerResponse extends AcsResponse {
 
 	public static class Follower {
 
-		private String projectName;
+		private String followerAccountName;
 
 		private String tableName;
 
-		private Long id;
+		private Integer alarmMode;
 
 		private String entityId;
 
+		private String projectName;
+
+		private Long id;
+
 		private String follower;
 
-		private Integer alarmMode;
-
-		private String followerAccountName;
-
-		public String getProjectName() {
-			return this.projectName;
+		public String getFollowerAccountName() {
+			return this.followerAccountName;
 		}
 
-		public void setProjectName(String projectName) {
-			this.projectName = projectName;
+		public void setFollowerAccountName(String followerAccountName) {
+			this.followerAccountName = followerAccountName;
 		}
 
 		public String getTableName() {
@@ -117,12 +117,12 @@ public class GetQualityFollowerResponse extends AcsResponse {
 			this.tableName = tableName;
 		}
 
-		public Long getId() {
-			return this.id;
+		public Integer getAlarmMode() {
+			return this.alarmMode;
 		}
 
-		public void setId(Long id) {
-			this.id = id;
+		public void setAlarmMode(Integer alarmMode) {
+			this.alarmMode = alarmMode;
 		}
 
 		public String getEntityId() {
@@ -133,28 +133,28 @@ public class GetQualityFollowerResponse extends AcsResponse {
 			this.entityId = entityId;
 		}
 
+		public String getProjectName() {
+			return this.projectName;
+		}
+
+		public void setProjectName(String projectName) {
+			this.projectName = projectName;
+		}
+
+		public Long getId() {
+			return this.id;
+		}
+
+		public void setId(Long id) {
+			this.id = id;
+		}
+
 		public String getFollower() {
 			return this.follower;
 		}
 
 		public void setFollower(String follower) {
 			this.follower = follower;
-		}
-
-		public Integer getAlarmMode() {
-			return this.alarmMode;
-		}
-
-		public void setAlarmMode(Integer alarmMode) {
-			this.alarmMode = alarmMode;
-		}
-
-		public String getFollowerAccountName() {
-			return this.followerAccountName;
-		}
-
-		public void setFollowerAccountName(String followerAccountName) {
-			this.followerAccountName = followerAccountName;
 		}
 	}
 

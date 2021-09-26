@@ -31,8 +31,8 @@ public class ListProgramTypeCountResponseUnmarshaller {
 		List<ProgramTypeAndCount> programTypeAndCounts = new ArrayList<ProgramTypeAndCount>();
 		for (int i = 0; i < _ctx.lengthValue("ListProgramTypeCountResponse.ProgramTypeAndCounts.Length"); i++) {
 			ProgramTypeAndCount programTypeAndCount = new ProgramTypeAndCount();
-			programTypeAndCount.setProgramType(_ctx.stringValue("ListProgramTypeCountResponse.ProgramTypeAndCounts["+ i +"].ProgramType"));
 			programTypeAndCount.setCount(_ctx.integerValue("ListProgramTypeCountResponse.ProgramTypeAndCounts["+ i +"].Count"));
+			programTypeAndCount.setProgramType(_ctx.stringValue("ListProgramTypeCountResponse.ProgramTypeAndCounts["+ i +"].ProgramType"));
 
 			programTypeAndCounts.add(programTypeAndCount);
 		}

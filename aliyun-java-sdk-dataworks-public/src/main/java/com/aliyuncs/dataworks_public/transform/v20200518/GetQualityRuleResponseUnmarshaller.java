@@ -24,35 +24,35 @@ public class GetQualityRuleResponseUnmarshaller {
 	public static GetQualityRuleResponse unmarshall(GetQualityRuleResponse getQualityRuleResponse, UnmarshallerContext _ctx) {
 		
 		getQualityRuleResponse.setRequestId(_ctx.stringValue("GetQualityRuleResponse.RequestId"));
-		getQualityRuleResponse.setSuccess(_ctx.booleanValue("GetQualityRuleResponse.Success"));
-		getQualityRuleResponse.setErrorCode(_ctx.stringValue("GetQualityRuleResponse.ErrorCode"));
-		getQualityRuleResponse.setErrorMessage(_ctx.stringValue("GetQualityRuleResponse.ErrorMessage"));
 		getQualityRuleResponse.setHttpStatusCode(_ctx.integerValue("GetQualityRuleResponse.HttpStatusCode"));
+		getQualityRuleResponse.setErrorMessage(_ctx.stringValue("GetQualityRuleResponse.ErrorMessage"));
+		getQualityRuleResponse.setErrorCode(_ctx.stringValue("GetQualityRuleResponse.ErrorCode"));
+		getQualityRuleResponse.setSuccess(_ctx.booleanValue("GetQualityRuleResponse.Success"));
 
 		Data data = new Data();
-		data.setId(_ctx.longValue("GetQualityRuleResponse.Data.Id"));
-		data.setEntityId(_ctx.longValue("GetQualityRuleResponse.Data.EntityId"));
-		data.setProperty(_ctx.stringValue("GetQualityRuleResponse.Data.Property"));
-		data.setMethodId(_ctx.integerValue("GetQualityRuleResponse.Data.MethodId"));
-		data.setMethodName(_ctx.stringValue("GetQualityRuleResponse.Data.MethodName"));
-		data.setWhereCondition(_ctx.stringValue("GetQualityRuleResponse.Data.WhereCondition"));
-		data.setOnDuty(_ctx.stringValue("GetQualityRuleResponse.Data.OnDuty"));
-		data.setRuleType(_ctx.integerValue("GetQualityRuleResponse.Data.RuleType"));
 		data.setBlockType(_ctx.integerValue("GetQualityRuleResponse.Data.BlockType"));
-		data.setTemplateId(_ctx.integerValue("GetQualityRuleResponse.Data.TemplateId"));
-		data.setTemplateName(_ctx.stringValue("GetQualityRuleResponse.Data.TemplateName"));
-		data.setComment(_ctx.stringValue("GetQualityRuleResponse.Data.Comment"));
-		data.setRuleName(_ctx.stringValue("GetQualityRuleResponse.Data.RuleName"));
-		data.setPredictType(_ctx.integerValue("GetQualityRuleResponse.Data.PredictType"));
+		data.setOnDutyAccountName(_ctx.stringValue("GetQualityRuleResponse.Data.OnDutyAccountName"));
 		data.setWarningThreshold(_ctx.stringValue("GetQualityRuleResponse.Data.WarningThreshold"));
+		data.setProperty(_ctx.stringValue("GetQualityRuleResponse.Data.Property"));
+		data.setRuleType(_ctx.integerValue("GetQualityRuleResponse.Data.RuleType"));
+		data.setComment(_ctx.stringValue("GetQualityRuleResponse.Data.Comment"));
+		data.setOnDuty(_ctx.stringValue("GetQualityRuleResponse.Data.OnDuty"));
+		data.setChecker(_ctx.integerValue("GetQualityRuleResponse.Data.Checker"));
+		data.setFixCheck(_ctx.booleanValue("GetQualityRuleResponse.Data.FixCheck"));
+		data.setMethodId(_ctx.integerValue("GetQualityRuleResponse.Data.MethodId"));
 		data.setCriticalThreshold(_ctx.stringValue("GetQualityRuleResponse.Data.CriticalThreshold"));
+		data.setPredictType(_ctx.integerValue("GetQualityRuleResponse.Data.PredictType"));
+		data.setTemplateName(_ctx.stringValue("GetQualityRuleResponse.Data.TemplateName"));
+		data.setCheckerName(_ctx.stringValue("GetQualityRuleResponse.Data.CheckerName"));
+		data.setRuleName(_ctx.stringValue("GetQualityRuleResponse.Data.RuleName"));
+		data.setMethodName(_ctx.stringValue("GetQualityRuleResponse.Data.MethodName"));
+		data.setEntityId(_ctx.longValue("GetQualityRuleResponse.Data.EntityId"));
+		data.setWhereCondition(_ctx.stringValue("GetQualityRuleResponse.Data.WhereCondition"));
 		data.setOperator(_ctx.stringValue("GetQualityRuleResponse.Data.Operator"));
 		data.setExpectValue(_ctx.stringValue("GetQualityRuleResponse.Data.ExpectValue"));
 		data.setTrend(_ctx.stringValue("GetQualityRuleResponse.Data.Trend"));
-		data.setCheckerName(_ctx.stringValue("GetQualityRuleResponse.Data.CheckerName"));
-		data.setChecker(_ctx.integerValue("GetQualityRuleResponse.Data.Checker"));
-		data.setFixCheck(_ctx.booleanValue("GetQualityRuleResponse.Data.FixCheck"));
-		data.setOnDutyAccountName(_ctx.stringValue("GetQualityRuleResponse.Data.OnDutyAccountName"));
+		data.setTemplateId(_ctx.integerValue("GetQualityRuleResponse.Data.TemplateId"));
+		data.setId(_ctx.longValue("GetQualityRuleResponse.Data.Id"));
 		getQualityRuleResponse.setData(data);
 	 
 	 	return getQualityRuleResponse;

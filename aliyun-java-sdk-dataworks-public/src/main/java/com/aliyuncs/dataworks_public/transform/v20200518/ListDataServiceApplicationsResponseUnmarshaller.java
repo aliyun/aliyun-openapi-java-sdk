@@ -28,10 +28,10 @@ public class ListDataServiceApplicationsResponseUnmarshaller {
 	public static ListDataServiceApplicationsResponse unmarshall(ListDataServiceApplicationsResponse listDataServiceApplicationsResponse, UnmarshallerContext _ctx) {
 		
 		listDataServiceApplicationsResponse.setRequestId(_ctx.stringValue("ListDataServiceApplicationsResponse.RequestId"));
-		listDataServiceApplicationsResponse.setErrorCode(_ctx.stringValue("ListDataServiceApplicationsResponse.ErrorCode"));
-		listDataServiceApplicationsResponse.setErrorMessage(_ctx.stringValue("ListDataServiceApplicationsResponse.ErrorMessage"));
 		listDataServiceApplicationsResponse.setHttpStatusCode(_ctx.integerValue("ListDataServiceApplicationsResponse.HttpStatusCode"));
+		listDataServiceApplicationsResponse.setErrorMessage(_ctx.stringValue("ListDataServiceApplicationsResponse.ErrorMessage"));
 		listDataServiceApplicationsResponse.setSuccess(_ctx.booleanValue("ListDataServiceApplicationsResponse.Success"));
+		listDataServiceApplicationsResponse.setErrorCode(_ctx.stringValue("ListDataServiceApplicationsResponse.ErrorCode"));
 
 		Data data = new Data();
 		data.setPageNumber(_ctx.integerValue("ListDataServiceApplicationsResponse.Data.PageNumber"));
@@ -41,8 +41,8 @@ public class ListDataServiceApplicationsResponseUnmarshaller {
 		List<Application> applications = new ArrayList<Application>();
 		for (int i = 0; i < _ctx.lengthValue("ListDataServiceApplicationsResponse.Data.Applications.Length"); i++) {
 			Application application = new Application();
-			application.setApplicationId(_ctx.longValue("ListDataServiceApplicationsResponse.Data.Applications["+ i +"].ApplicationId"));
 			application.setApplicationName(_ctx.stringValue("ListDataServiceApplicationsResponse.Data.Applications["+ i +"].ApplicationName"));
+			application.setApplicationId(_ctx.longValue("ListDataServiceApplicationsResponse.Data.Applications["+ i +"].ApplicationId"));
 			application.setProjectId(_ctx.longValue("ListDataServiceApplicationsResponse.Data.Applications["+ i +"].ProjectId"));
 
 			applications.add(application);

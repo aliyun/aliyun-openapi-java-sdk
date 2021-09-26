@@ -23,9 +23,9 @@ public class CreateTableThemeResponseUnmarshaller {
 	public static CreateTableThemeResponse unmarshall(CreateTableThemeResponse createTableThemeResponse, UnmarshallerContext _ctx) {
 		
 		createTableThemeResponse.setRequestId(_ctx.stringValue("CreateTableThemeResponse.RequestId"));
-		createTableThemeResponse.setErrorCode(_ctx.stringValue("CreateTableThemeResponse.ErrorCode"));
-		createTableThemeResponse.setErrorMessage(_ctx.stringValue("CreateTableThemeResponse.ErrorMessage"));
 		createTableThemeResponse.setHttpStatusCode(_ctx.integerValue("CreateTableThemeResponse.HttpStatusCode"));
+		createTableThemeResponse.setErrorMessage(_ctx.stringValue("CreateTableThemeResponse.ErrorMessage"));
+		createTableThemeResponse.setErrorCode(_ctx.stringValue("CreateTableThemeResponse.ErrorCode"));
 		createTableThemeResponse.setSuccess(_ctx.booleanValue("CreateTableThemeResponse.Success"));
 		createTableThemeResponse.setThemeId(_ctx.longValue("CreateTableThemeResponse.ThemeId"));
 	 

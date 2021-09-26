@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class RunManualDagNodesResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Long dagId;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public Long getDagId() {
 		return this.dagId;
@@ -42,6 +34,14 @@ public class RunManualDagNodesResponse extends AcsResponse {
 
 	public void setDagId(Long dagId) {
 		this.dagId = dagId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

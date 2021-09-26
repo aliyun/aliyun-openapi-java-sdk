@@ -28,10 +28,10 @@ public class ListTopicsResponseUnmarshaller {
 	public static ListTopicsResponse unmarshall(ListTopicsResponse listTopicsResponse, UnmarshallerContext _ctx) {
 		
 		listTopicsResponse.setRequestId(_ctx.stringValue("ListTopicsResponse.RequestId"));
-		listTopicsResponse.setSuccess(_ctx.booleanValue("ListTopicsResponse.Success"));
-		listTopicsResponse.setErrorCode(_ctx.stringValue("ListTopicsResponse.ErrorCode"));
-		listTopicsResponse.setErrorMessage(_ctx.stringValue("ListTopicsResponse.ErrorMessage"));
 		listTopicsResponse.setHttpStatusCode(_ctx.integerValue("ListTopicsResponse.HttpStatusCode"));
+		listTopicsResponse.setErrorMessage(_ctx.stringValue("ListTopicsResponse.ErrorMessage"));
+		listTopicsResponse.setErrorCode(_ctx.stringValue("ListTopicsResponse.ErrorCode"));
+		listTopicsResponse.setSuccess(_ctx.booleanValue("ListTopicsResponse.Success"));
 
 		Data data = new Data();
 		data.setPageNumber(_ctx.integerValue("ListTopicsResponse.Data.PageNumber"));
@@ -41,18 +41,18 @@ public class ListTopicsResponseUnmarshaller {
 		List<TopicsItem> topics = new ArrayList<TopicsItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListTopicsResponse.Data.Topics.Length"); i++) {
 			TopicsItem topicsItem = new TopicsItem();
-			topicsItem.setTopicId(_ctx.longValue("ListTopicsResponse.Data.Topics["+ i +"].TopicId"));
 			topicsItem.setTopicName(_ctx.stringValue("ListTopicsResponse.Data.Topics["+ i +"].TopicName"));
-			topicsItem.setTopicStatus(_ctx.stringValue("ListTopicsResponse.Data.Topics["+ i +"].TopicStatus"));
-			topicsItem.setTopicType(_ctx.stringValue("ListTopicsResponse.Data.Topics["+ i +"].TopicType"));
-			topicsItem.setAddTime(_ctx.longValue("ListTopicsResponse.Data.Topics["+ i +"].AddTime"));
-			topicsItem.setHappenTime(_ctx.longValue("ListTopicsResponse.Data.Topics["+ i +"].HappenTime"));
-			topicsItem.setFixTime(_ctx.longValue("ListTopicsResponse.Data.Topics["+ i +"].FixTime"));
-			topicsItem.setInstanceId(_ctx.longValue("ListTopicsResponse.Data.Topics["+ i +"].InstanceId"));
-			topicsItem.setNodeId(_ctx.longValue("ListTopicsResponse.Data.Topics["+ i +"].NodeId"));
-			topicsItem.setNodeName(_ctx.stringValue("ListTopicsResponse.Data.Topics["+ i +"].NodeName"));
-			topicsItem.setNodeOwner(_ctx.stringValue("ListTopicsResponse.Data.Topics["+ i +"].NodeOwner"));
 			topicsItem.setProjectId(_ctx.longValue("ListTopicsResponse.Data.Topics["+ i +"].ProjectId"));
+			topicsItem.setNodeOwner(_ctx.stringValue("ListTopicsResponse.Data.Topics["+ i +"].NodeOwner"));
+			topicsItem.setInstanceId(_ctx.longValue("ListTopicsResponse.Data.Topics["+ i +"].InstanceId"));
+			topicsItem.setFixTime(_ctx.longValue("ListTopicsResponse.Data.Topics["+ i +"].FixTime"));
+			topicsItem.setTopicType(_ctx.stringValue("ListTopicsResponse.Data.Topics["+ i +"].TopicType"));
+			topicsItem.setTopicStatus(_ctx.stringValue("ListTopicsResponse.Data.Topics["+ i +"].TopicStatus"));
+			topicsItem.setHappenTime(_ctx.longValue("ListTopicsResponse.Data.Topics["+ i +"].HappenTime"));
+			topicsItem.setNodeName(_ctx.stringValue("ListTopicsResponse.Data.Topics["+ i +"].NodeName"));
+			topicsItem.setTopicId(_ctx.longValue("ListTopicsResponse.Data.Topics["+ i +"].TopicId"));
+			topicsItem.setAddTime(_ctx.longValue("ListTopicsResponse.Data.Topics["+ i +"].AddTime"));
+			topicsItem.setNodeId(_ctx.longValue("ListTopicsResponse.Data.Topics["+ i +"].NodeId"));
 
 			topics.add(topicsItem);
 		}

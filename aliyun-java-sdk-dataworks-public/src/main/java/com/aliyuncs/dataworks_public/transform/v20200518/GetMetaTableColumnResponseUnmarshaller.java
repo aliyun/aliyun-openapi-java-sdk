@@ -28,28 +28,28 @@ public class GetMetaTableColumnResponseUnmarshaller {
 	public static GetMetaTableColumnResponse unmarshall(GetMetaTableColumnResponse getMetaTableColumnResponse, UnmarshallerContext _ctx) {
 		
 		getMetaTableColumnResponse.setRequestId(_ctx.stringValue("GetMetaTableColumnResponse.RequestId"));
-		getMetaTableColumnResponse.setErrorCode(_ctx.stringValue("GetMetaTableColumnResponse.ErrorCode"));
-		getMetaTableColumnResponse.setErrorMessage(_ctx.stringValue("GetMetaTableColumnResponse.ErrorMessage"));
 		getMetaTableColumnResponse.setHttpStatusCode(_ctx.integerValue("GetMetaTableColumnResponse.HttpStatusCode"));
+		getMetaTableColumnResponse.setErrorMessage(_ctx.stringValue("GetMetaTableColumnResponse.ErrorMessage"));
 		getMetaTableColumnResponse.setSuccess(_ctx.booleanValue("GetMetaTableColumnResponse.Success"));
+		getMetaTableColumnResponse.setErrorCode(_ctx.stringValue("GetMetaTableColumnResponse.ErrorCode"));
 
 		Data data = new Data();
-		data.setTotalCount(_ctx.longValue("GetMetaTableColumnResponse.Data.TotalCount"));
 		data.setPageNum(_ctx.integerValue("GetMetaTableColumnResponse.Data.PageNum"));
 		data.setPageSize(_ctx.integerValue("GetMetaTableColumnResponse.Data.PageSize"));
+		data.setTotalCount(_ctx.longValue("GetMetaTableColumnResponse.Data.TotalCount"));
 
 		List<ColumnListItem> columnList = new ArrayList<ColumnListItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetMetaTableColumnResponse.Data.ColumnList.Length"); i++) {
 			ColumnListItem columnListItem = new ColumnListItem();
-			columnListItem.setColumnName(_ctx.stringValue("GetMetaTableColumnResponse.Data.ColumnList["+ i +"].ColumnName"));
 			columnListItem.setColumnGuid(_ctx.stringValue("GetMetaTableColumnResponse.Data.ColumnList["+ i +"].ColumnGuid"));
-			columnListItem.setComment(_ctx.stringValue("GetMetaTableColumnResponse.Data.ColumnList["+ i +"].Comment"));
-			columnListItem.setIsPrimaryKey(_ctx.booleanValue("GetMetaTableColumnResponse.Data.ColumnList["+ i +"].IsPrimaryKey"));
-			columnListItem.setColumnType(_ctx.stringValue("GetMetaTableColumnResponse.Data.ColumnList["+ i +"].ColumnType"));
+			columnListItem.setColumnName(_ctx.stringValue("GetMetaTableColumnResponse.Data.ColumnList["+ i +"].ColumnName"));
 			columnListItem.setIsPartitionColumn(_ctx.booleanValue("GetMetaTableColumnResponse.Data.ColumnList["+ i +"].IsPartitionColumn"));
-			columnListItem.setIsForeignKey(_ctx.booleanValue("GetMetaTableColumnResponse.Data.ColumnList["+ i +"].IsForeignKey"));
-			columnListItem.setCaption(_ctx.stringValue("GetMetaTableColumnResponse.Data.ColumnList["+ i +"].Caption"));
+			columnListItem.setComment(_ctx.stringValue("GetMetaTableColumnResponse.Data.ColumnList["+ i +"].Comment"));
+			columnListItem.setColumnType(_ctx.stringValue("GetMetaTableColumnResponse.Data.ColumnList["+ i +"].ColumnType"));
+			columnListItem.setIsPrimaryKey(_ctx.booleanValue("GetMetaTableColumnResponse.Data.ColumnList["+ i +"].IsPrimaryKey"));
 			columnListItem.setPosition(_ctx.integerValue("GetMetaTableColumnResponse.Data.ColumnList["+ i +"].Position"));
+			columnListItem.setCaption(_ctx.stringValue("GetMetaTableColumnResponse.Data.ColumnList["+ i +"].Caption"));
+			columnListItem.setIsForeignKey(_ctx.booleanValue("GetMetaTableColumnResponse.Data.ColumnList["+ i +"].IsForeignKey"));
 
 			columnList.add(columnListItem);
 		}

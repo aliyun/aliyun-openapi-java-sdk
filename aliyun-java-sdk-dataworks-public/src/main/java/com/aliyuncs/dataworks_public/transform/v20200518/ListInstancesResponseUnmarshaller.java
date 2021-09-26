@@ -28,10 +28,10 @@ public class ListInstancesResponseUnmarshaller {
 	public static ListInstancesResponse unmarshall(ListInstancesResponse listInstancesResponse, UnmarshallerContext _ctx) {
 		
 		listInstancesResponse.setRequestId(_ctx.stringValue("ListInstancesResponse.RequestId"));
-		listInstancesResponse.setSuccess(_ctx.booleanValue("ListInstancesResponse.Success"));
 		listInstancesResponse.setHttpStatusCode(_ctx.integerValue("ListInstancesResponse.HttpStatusCode"));
-		listInstancesResponse.setErrorCode(_ctx.stringValue("ListInstancesResponse.ErrorCode"));
 		listInstancesResponse.setErrorMessage(_ctx.stringValue("ListInstancesResponse.ErrorMessage"));
+		listInstancesResponse.setErrorCode(_ctx.stringValue("ListInstancesResponse.ErrorCode"));
+		listInstancesResponse.setSuccess(_ctx.booleanValue("ListInstancesResponse.Success"));
 
 		Data data = new Data();
 		data.setPageNumber(_ctx.integerValue("ListInstancesResponse.Data.PageNumber"));
@@ -41,33 +41,33 @@ public class ListInstancesResponseUnmarshaller {
 		List<Instance> instances = new ArrayList<Instance>();
 		for (int i = 0; i < _ctx.lengthValue("ListInstancesResponse.Data.Instances.Length"); i++) {
 			Instance instance = new Instance();
-			instance.setNodeId(_ctx.longValue("ListInstancesResponse.Data.Instances["+ i +"].NodeId"));
-			instance.setInstanceId(_ctx.longValue("ListInstancesResponse.Data.Instances["+ i +"].InstanceId"));
-			instance.setDagId(_ctx.longValue("ListInstancesResponse.Data.Instances["+ i +"].DagId"));
-			instance.setDagType(_ctx.stringValue("ListInstancesResponse.Data.Instances["+ i +"].DagType"));
 			instance.setStatus(_ctx.stringValue("ListInstancesResponse.Data.Instances["+ i +"].Status"));
-			instance.setBizdate(_ctx.longValue("ListInstancesResponse.Data.Instances["+ i +"].Bizdate"));
 			instance.setCycTime(_ctx.longValue("ListInstancesResponse.Data.Instances["+ i +"].CycTime"));
-			instance.setCreateTime(_ctx.longValue("ListInstancesResponse.Data.Instances["+ i +"].CreateTime"));
-			instance.setModifyTime(_ctx.longValue("ListInstancesResponse.Data.Instances["+ i +"].ModifyTime"));
-			instance.setNodeName(_ctx.stringValue("ListInstancesResponse.Data.Instances["+ i +"].NodeName"));
-			instance.setBeginWaitTimeTime(_ctx.longValue("ListInstancesResponse.Data.Instances["+ i +"].BeginWaitTimeTime"));
-			instance.setBeginWaitResTime(_ctx.longValue("ListInstancesResponse.Data.Instances["+ i +"].BeginWaitResTime"));
 			instance.setBeginRunningTime(_ctx.longValue("ListInstancesResponse.Data.Instances["+ i +"].BeginRunningTime"));
-			instance.setParamValues(_ctx.stringValue("ListInstancesResponse.Data.Instances["+ i +"].ParamValues"));
 			instance.setFinishTime(_ctx.longValue("ListInstancesResponse.Data.Instances["+ i +"].FinishTime"));
+			instance.setErrorMessage(_ctx.stringValue("ListInstancesResponse.Data.Instances["+ i +"].ErrorMessage"));
+			instance.setCreateTime(_ctx.longValue("ListInstancesResponse.Data.Instances["+ i +"].CreateTime"));
+			instance.setDagId(_ctx.longValue("ListInstancesResponse.Data.Instances["+ i +"].DagId"));
 			instance.setPriority(_ctx.integerValue("ListInstancesResponse.Data.Instances["+ i +"].Priority"));
+			instance.setTaskType(_ctx.stringValue("ListInstancesResponse.Data.Instances["+ i +"].TaskType"));
+			instance.setParamValues(_ctx.stringValue("ListInstancesResponse.Data.Instances["+ i +"].ParamValues"));
+			instance.setConnection(_ctx.stringValue("ListInstancesResponse.Data.Instances["+ i +"].Connection"));
 			instance.setBaselineId(_ctx.longValue("ListInstancesResponse.Data.Instances["+ i +"].BaselineId"));
+			instance.setDqcType(_ctx.integerValue("ListInstancesResponse.Data.Instances["+ i +"].DqcType"));
+			instance.setDagType(_ctx.stringValue("ListInstancesResponse.Data.Instances["+ i +"].DagType"));
+			instance.setBusinessId(_ctx.longValue("ListInstancesResponse.Data.Instances["+ i +"].BusinessId"));
+			instance.setTaskRerunTime(_ctx.integerValue("ListInstancesResponse.Data.Instances["+ i +"].TaskRerunTime"));
+			instance.setModifyTime(_ctx.longValue("ListInstancesResponse.Data.Instances["+ i +"].ModifyTime"));
 			instance.setRepeatability(_ctx.booleanValue("ListInstancesResponse.Data.Instances["+ i +"].Repeatability"));
 			instance.setRepeatInterval(_ctx.longValue("ListInstancesResponse.Data.Instances["+ i +"].RepeatInterval"));
-			instance.setConnection(_ctx.stringValue("ListInstancesResponse.Data.Instances["+ i +"].Connection"));
-			instance.setDqcType(_ctx.integerValue("ListInstancesResponse.Data.Instances["+ i +"].DqcType"));
-			instance.setDqcDescription(_ctx.stringValue("ListInstancesResponse.Data.Instances["+ i +"].DqcDescription"));
-			instance.setErrorMessage(_ctx.stringValue("ListInstancesResponse.Data.Instances["+ i +"].ErrorMessage"));
+			instance.setInstanceId(_ctx.longValue("ListInstancesResponse.Data.Instances["+ i +"].InstanceId"));
+			instance.setBeginWaitResTime(_ctx.longValue("ListInstancesResponse.Data.Instances["+ i +"].BeginWaitResTime"));
 			instance.setRelatedFlowId(_ctx.longValue("ListInstancesResponse.Data.Instances["+ i +"].RelatedFlowId"));
-			instance.setTaskType(_ctx.stringValue("ListInstancesResponse.Data.Instances["+ i +"].TaskType"));
-			instance.setTaskRerunTime(_ctx.integerValue("ListInstancesResponse.Data.Instances["+ i +"].TaskRerunTime"));
-			instance.setBusinessId(_ctx.longValue("ListInstancesResponse.Data.Instances["+ i +"].BusinessId"));
+			instance.setBizdate(_ctx.longValue("ListInstancesResponse.Data.Instances["+ i +"].Bizdate"));
+			instance.setNodeName(_ctx.stringValue("ListInstancesResponse.Data.Instances["+ i +"].NodeName"));
+			instance.setBeginWaitTimeTime(_ctx.longValue("ListInstancesResponse.Data.Instances["+ i +"].BeginWaitTimeTime"));
+			instance.setDqcDescription(_ctx.stringValue("ListInstancesResponse.Data.Instances["+ i +"].DqcDescription"));
+			instance.setNodeId(_ctx.longValue("ListInstancesResponse.Data.Instances["+ i +"].NodeId"));
 
 			instances.add(instance);
 		}

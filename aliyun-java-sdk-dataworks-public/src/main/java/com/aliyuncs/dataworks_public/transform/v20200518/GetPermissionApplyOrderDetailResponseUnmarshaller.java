@@ -46,8 +46,8 @@ public class GetPermissionApplyOrderDetailResponseUnmarshaller {
 		approveContent.setOrderType(_ctx.integerValue("GetPermissionApplyOrderDetailResponse.ApplyOrderDetail.ApproveContent.OrderType"));
 
 		ProjectMeta projectMeta = new ProjectMeta();
-		projectMeta.setWorkspaceId(_ctx.integerValue("GetPermissionApplyOrderDetailResponse.ApplyOrderDetail.ApproveContent.ProjectMeta.WorkspaceId"));
 		projectMeta.setMaxComputeProjectName(_ctx.stringValue("GetPermissionApplyOrderDetailResponse.ApplyOrderDetail.ApproveContent.ProjectMeta.MaxComputeProjectName"));
+		projectMeta.setWorkspaceId(_ctx.integerValue("GetPermissionApplyOrderDetailResponse.ApplyOrderDetail.ApproveContent.ProjectMeta.WorkspaceId"));
 
 		List<ObjectMetaListItem> objectMetaList = new ArrayList<ObjectMetaListItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetPermissionApplyOrderDetailResponse.ApplyOrderDetail.ApproveContent.ProjectMeta.ObjectMetaList.Length"); i++) {
@@ -57,8 +57,8 @@ public class GetPermissionApplyOrderDetailResponseUnmarshaller {
 			List<ColumnMetaListItem> columnMetaList = new ArrayList<ColumnMetaListItem>();
 			for (int j = 0; j < _ctx.lengthValue("GetPermissionApplyOrderDetailResponse.ApplyOrderDetail.ApproveContent.ProjectMeta.ObjectMetaList["+ i +"].ColumnMetaList.Length"); j++) {
 				ColumnMetaListItem columnMetaListItem = new ColumnMetaListItem();
-				columnMetaListItem.setColumnComment(_ctx.stringValue("GetPermissionApplyOrderDetailResponse.ApplyOrderDetail.ApproveContent.ProjectMeta.ObjectMetaList["+ i +"].ColumnMetaList["+ j +"].ColumnComment"));
 				columnMetaListItem.setColumnName(_ctx.stringValue("GetPermissionApplyOrderDetailResponse.ApplyOrderDetail.ApproveContent.ProjectMeta.ObjectMetaList["+ i +"].ColumnMetaList["+ j +"].ColumnName"));
+				columnMetaListItem.setColumnComment(_ctx.stringValue("GetPermissionApplyOrderDetailResponse.ApplyOrderDetail.ApproveContent.ProjectMeta.ObjectMetaList["+ i +"].ColumnMetaList["+ j +"].ColumnComment"));
 
 				columnMetaList.add(columnMetaListItem);
 			}
@@ -82,10 +82,10 @@ public class GetPermissionApplyOrderDetailResponseUnmarshaller {
 		List<GranteeObjectListItem> granteeObjectList = new ArrayList<GranteeObjectListItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetPermissionApplyOrderDetailResponse.ApplyOrderDetail.GranteeObjectList.Length"); i++) {
 			GranteeObjectListItem granteeObjectListItem = new GranteeObjectListItem();
-			granteeObjectListItem.setGranteeId(_ctx.stringValue("GetPermissionApplyOrderDetailResponse.ApplyOrderDetail.GranteeObjectList["+ i +"].GranteeId"));
-			granteeObjectListItem.setGranteeName(_ctx.stringValue("GetPermissionApplyOrderDetailResponse.ApplyOrderDetail.GranteeObjectList["+ i +"].GranteeName"));
 			granteeObjectListItem.setGranteeType(_ctx.integerValue("GetPermissionApplyOrderDetailResponse.ApplyOrderDetail.GranteeObjectList["+ i +"].GranteeType"));
 			granteeObjectListItem.setGranteeTypeSub(_ctx.integerValue("GetPermissionApplyOrderDetailResponse.ApplyOrderDetail.GranteeObjectList["+ i +"].GranteeTypeSub"));
+			granteeObjectListItem.setGranteeName(_ctx.stringValue("GetPermissionApplyOrderDetailResponse.ApplyOrderDetail.GranteeObjectList["+ i +"].GranteeName"));
+			granteeObjectListItem.setGranteeId(_ctx.stringValue("GetPermissionApplyOrderDetailResponse.ApplyOrderDetail.GranteeObjectList["+ i +"].GranteeId"));
 
 			granteeObjectList.add(granteeObjectListItem);
 		}

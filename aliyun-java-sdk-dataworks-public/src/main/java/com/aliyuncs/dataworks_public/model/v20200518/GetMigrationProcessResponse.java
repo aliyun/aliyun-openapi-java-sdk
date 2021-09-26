@@ -25,33 +25,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetMigrationProcessResponse extends AcsResponse {
 
-	private String errorCode;
-
-	private String errorMessage;
-
 	private Integer httpStatusCode;
 
 	private String requestId;
 
+	private String errorMessage;
+
 	private Boolean success;
 
+	private String errorCode;
+
 	private List<ProgressTaskItem> data;
-
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
 
 	public Integer getHttpStatusCode() {
 		return this.httpStatusCode;
@@ -69,12 +53,28 @@ public class GetMigrationProcessResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
 	public Boolean getSuccess() {
 		return this.success;
 	}
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getErrorCode() {
+		return this.errorCode;
+	}
+
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
 	}
 
 	public List<ProgressTaskItem> getData() {
@@ -87,17 +87,9 @@ public class GetMigrationProcessResponse extends AcsResponse {
 
 	public static class ProgressTaskItem {
 
-		private String taskName;
-
 		private String taskStatus;
 
-		public String getTaskName() {
-			return this.taskName;
-		}
-
-		public void setTaskName(String taskName) {
-			this.taskName = taskName;
-		}
+		private String taskName;
 
 		public String getTaskStatus() {
 			return this.taskStatus;
@@ -105,6 +97,14 @@ public class GetMigrationProcessResponse extends AcsResponse {
 
 		public void setTaskStatus(String taskStatus) {
 			this.taskStatus = taskStatus;
+		}
+
+		public String getTaskName() {
+			return this.taskName;
+		}
+
+		public void setTaskName(String taskName) {
+			this.taskName = taskName;
 		}
 	}
 

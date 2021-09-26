@@ -23,10 +23,10 @@ public class UpdateBusinessResponseUnmarshaller {
 	public static UpdateBusinessResponse unmarshall(UpdateBusinessResponse updateBusinessResponse, UnmarshallerContext _ctx) {
 		
 		updateBusinessResponse.setRequestId(_ctx.stringValue("UpdateBusinessResponse.RequestId"));
-		updateBusinessResponse.setSuccess(_ctx.booleanValue("UpdateBusinessResponse.Success"));
-		updateBusinessResponse.setErrorCode(_ctx.stringValue("UpdateBusinessResponse.ErrorCode"));
-		updateBusinessResponse.setErrorMessage(_ctx.stringValue("UpdateBusinessResponse.ErrorMessage"));
 		updateBusinessResponse.setHttpStatusCode(_ctx.integerValue("UpdateBusinessResponse.HttpStatusCode"));
+		updateBusinessResponse.setErrorMessage(_ctx.stringValue("UpdateBusinessResponse.ErrorMessage"));
+		updateBusinessResponse.setErrorCode(_ctx.stringValue("UpdateBusinessResponse.ErrorCode"));
+		updateBusinessResponse.setSuccess(_ctx.booleanValue("UpdateBusinessResponse.Success"));
 	 
 	 	return updateBusinessResponse;
 	}

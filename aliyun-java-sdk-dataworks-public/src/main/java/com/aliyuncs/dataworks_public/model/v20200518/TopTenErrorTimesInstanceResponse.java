@@ -69,33 +69,17 @@ public class TopTenErrorTimesInstanceResponse extends AcsResponse {
 
 		public static class ErrorRankItem {
 
-			private Long nodeId;
-
-			private String nodeName;
-
 			private String owner;
 
-			private Integer count;
+			private String nodeName;
 
 			private Long projectId;
 
 			private Integer programType;
 
-			public Long getNodeId() {
-				return this.nodeId;
-			}
+			private Long nodeId;
 
-			public void setNodeId(Long nodeId) {
-				this.nodeId = nodeId;
-			}
-
-			public String getNodeName() {
-				return this.nodeName;
-			}
-
-			public void setNodeName(String nodeName) {
-				this.nodeName = nodeName;
-			}
+			private Integer count;
 
 			public String getOwner() {
 				return this.owner;
@@ -105,12 +89,12 @@ public class TopTenErrorTimesInstanceResponse extends AcsResponse {
 				this.owner = owner;
 			}
 
-			public Integer getCount() {
-				return this.count;
+			public String getNodeName() {
+				return this.nodeName;
 			}
 
-			public void setCount(Integer count) {
-				this.count = count;
+			public void setNodeName(String nodeName) {
+				this.nodeName = nodeName;
 			}
 
 			public Long getProjectId() {
@@ -127,6 +111,22 @@ public class TopTenErrorTimesInstanceResponse extends AcsResponse {
 
 			public void setProgramType(Integer programType) {
 				this.programType = programType;
+			}
+
+			public Long getNodeId() {
+				return this.nodeId;
+			}
+
+			public void setNodeId(Long nodeId) {
+				this.nodeId = nodeId;
+			}
+
+			public Integer getCount() {
+				return this.count;
+			}
+
+			public void setCount(Integer count) {
+				this.count = count;
 			}
 		}
 	}

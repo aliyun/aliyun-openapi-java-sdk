@@ -39,24 +39,24 @@ public class ListDataSourcesResponseUnmarshaller {
 		List<DataSourcesItem> dataSources = new ArrayList<DataSourcesItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListDataSourcesResponse.Data.DataSources.Length"); i++) {
 			DataSourcesItem dataSourcesItem = new DataSourcesItem();
-			dataSourcesItem.setShared(_ctx.booleanValue("ListDataSourcesResponse.Data.DataSources["+ i +"].Shared"));
+			dataSourcesItem.setStatus(_ctx.integerValue("ListDataSourcesResponse.Data.DataSources["+ i +"].Status"));
+			dataSourcesItem.setProjectId(_ctx.integerValue("ListDataSourcesResponse.Data.DataSources["+ i +"].ProjectId"));
+			dataSourcesItem.setSubType(_ctx.stringValue("ListDataSourcesResponse.Data.DataSources["+ i +"].SubType"));
 			dataSourcesItem.setGmtModified(_ctx.stringValue("ListDataSourcesResponse.Data.DataSources["+ i +"].GmtModified"));
+			dataSourcesItem.setEnvType(_ctx.integerValue("ListDataSourcesResponse.Data.DataSources["+ i +"].EnvType"));
 			dataSourcesItem.setConnectStatus(_ctx.integerValue("ListDataSourcesResponse.Data.DataSources["+ i +"].ConnectStatus"));
-			dataSourcesItem.setBindingCalcEngineId(_ctx.integerValue("ListDataSourcesResponse.Data.DataSources["+ i +"].BindingCalcEngineId"));
+			dataSourcesItem.setSequence(_ctx.integerValue("ListDataSourcesResponse.Data.DataSources["+ i +"].Sequence"));
 			dataSourcesItem.setDescription(_ctx.stringValue("ListDataSourcesResponse.Data.DataSources["+ i +"].Description"));
 			dataSourcesItem.setDataSourceType(_ctx.stringValue("ListDataSourcesResponse.Data.DataSources["+ i +"].DataSourceType"));
 			dataSourcesItem.setGmtCreate(_ctx.stringValue("ListDataSourcesResponse.Data.DataSources["+ i +"].GmtCreate"));
 			dataSourcesItem.setDefaultEngine(_ctx.booleanValue("ListDataSourcesResponse.Data.DataSources["+ i +"].DefaultEngine"));
+			dataSourcesItem.setShared(_ctx.booleanValue("ListDataSourcesResponse.Data.DataSources["+ i +"].Shared"));
 			dataSourcesItem.setOperator(_ctx.stringValue("ListDataSourcesResponse.Data.DataSources["+ i +"].Operator"));
-			dataSourcesItem.setSequence(_ctx.integerValue("ListDataSourcesResponse.Data.DataSources["+ i +"].Sequence"));
-			dataSourcesItem.setEnvType(_ctx.integerValue("ListDataSourcesResponse.Data.DataSources["+ i +"].EnvType"));
-			dataSourcesItem.setTenantId(_ctx.longValue("ListDataSourcesResponse.Data.DataSources["+ i +"].TenantId"));
 			dataSourcesItem.setName(_ctx.stringValue("ListDataSourcesResponse.Data.DataSources["+ i +"].Name"));
-			dataSourcesItem.setSubType(_ctx.stringValue("ListDataSourcesResponse.Data.DataSources["+ i +"].SubType"));
-			dataSourcesItem.setId(_ctx.integerValue("ListDataSourcesResponse.Data.DataSources["+ i +"].Id"));
-			dataSourcesItem.setProjectId(_ctx.integerValue("ListDataSourcesResponse.Data.DataSources["+ i +"].ProjectId"));
-			dataSourcesItem.setStatus(_ctx.integerValue("ListDataSourcesResponse.Data.DataSources["+ i +"].Status"));
 			dataSourcesItem.setContent(_ctx.stringValue("ListDataSourcesResponse.Data.DataSources["+ i +"].Content"));
+			dataSourcesItem.setId(_ctx.integerValue("ListDataSourcesResponse.Data.DataSources["+ i +"].Id"));
+			dataSourcesItem.setBindingCalcEngineId(_ctx.integerValue("ListDataSourcesResponse.Data.DataSources["+ i +"].BindingCalcEngineId"));
+			dataSourcesItem.setTenantId(_ctx.longValue("ListDataSourcesResponse.Data.DataSources["+ i +"].TenantId"));
 
 			dataSources.add(dataSourcesItem);
 		}
