@@ -99,6 +99,8 @@ public class QueryFpShotJobListResponse extends AcsResponse {
 
 		private String id;
 
+		private String input;
+
 		private FpShotResult fpShotResult;
 
 		private FpShotConfig fpShotConfig;
@@ -191,6 +193,14 @@ public class QueryFpShotJobListResponse extends AcsResponse {
 
 		public void setId(String id) {
 			this.id = id;
+		}
+
+		public String getInput() {
+			return this.input;
+		}
+
+		public void setInput(String input) {
+			this.input = input;
 		}
 
 		public FpShotResult getFpShotResult() {

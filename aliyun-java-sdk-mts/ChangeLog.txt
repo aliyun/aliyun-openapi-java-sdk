@@ -1,3 +1,6 @@
+2021-09-28 Version: 3.3.33
+- Add ListFpShotImportJob.
+
 2021-09-16 Version: 3.3.31
 - Add externalUrl for SubmitMediaCensorJob.
 

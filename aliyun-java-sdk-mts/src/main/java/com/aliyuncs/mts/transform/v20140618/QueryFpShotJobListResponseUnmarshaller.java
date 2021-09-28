@@ -65,6 +65,7 @@ public class QueryFpShotJobListResponseUnmarshaller {
 			fpShotJob.setCode(_ctx.stringValue("QueryFpShotJobListResponse.FpShotJobList["+ i +"].Code"));
 			fpShotJob.setPipelineId(_ctx.stringValue("QueryFpShotJobListResponse.FpShotJobList["+ i +"].PipelineId"));
 			fpShotJob.setId(_ctx.stringValue("QueryFpShotJobListResponse.FpShotJobList["+ i +"].Id"));
+			fpShotJob.setInput(_ctx.stringValue("QueryFpShotJobListResponse.FpShotJobList["+ i +"].Input"));
 
 			FpShotResult fpShotResult = new FpShotResult();
 
