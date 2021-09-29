@@ -27,24 +27,24 @@ public class AssumeRoleWithSAMLResponseUnmarshaller {
 		
 		assumeRoleWithSAMLResponse.setRequestId(_ctx.stringValue("AssumeRoleWithSAMLResponse.RequestId"));
 
-		Credentials credentials = new Credentials();
-		credentials.setSecurityToken(_ctx.stringValue("AssumeRoleWithSAMLResponse.Credentials.SecurityToken"));
-		credentials.setAccessKeySecret(_ctx.stringValue("AssumeRoleWithSAMLResponse.Credentials.AccessKeySecret"));
-		credentials.setAccessKeyId(_ctx.stringValue("AssumeRoleWithSAMLResponse.Credentials.AccessKeyId"));
-		credentials.setExpiration(_ctx.stringValue("AssumeRoleWithSAMLResponse.Credentials.Expiration"));
-		assumeRoleWithSAMLResponse.setCredentials(credentials);
+		SAMLAssertionInfo sAMLAssertionInfo = new SAMLAssertionInfo();
+		sAMLAssertionInfo.setSubjectType(_ctx.stringValue("AssumeRoleWithSAMLResponse.SAMLAssertionInfo.SubjectType"));
+		sAMLAssertionInfo.setIssuer(_ctx.stringValue("AssumeRoleWithSAMLResponse.SAMLAssertionInfo.Issuer"));
+		sAMLAssertionInfo.setRecipient(_ctx.stringValue("AssumeRoleWithSAMLResponse.SAMLAssertionInfo.Recipient"));
+		sAMLAssertionInfo.setSubject(_ctx.stringValue("AssumeRoleWithSAMLResponse.SAMLAssertionInfo.Subject"));
+		assumeRoleWithSAMLResponse.setSAMLAssertionInfo(sAMLAssertionInfo);
 
 		AssumedRoleUser assumedRoleUser = new AssumedRoleUser();
 		assumedRoleUser.setArn(_ctx.stringValue("AssumeRoleWithSAMLResponse.AssumedRoleUser.Arn"));
 		assumedRoleUser.setAssumedRoleId(_ctx.stringValue("AssumeRoleWithSAMLResponse.AssumedRoleUser.AssumedRoleId"));
 		assumeRoleWithSAMLResponse.setAssumedRoleUser(assumedRoleUser);
 
-		SAMLAssertionInfo sAMLAssertionInfo = new SAMLAssertionInfo();
-		sAMLAssertionInfo.setSubjectType(_ctx.stringValue("AssumeRoleWithSAMLResponse.SAMLAssertionInfo.SubjectType"));
-		sAMLAssertionInfo.setSubject(_ctx.stringValue("AssumeRoleWithSAMLResponse.SAMLAssertionInfo.Subject"));
-		sAMLAssertionInfo.setRecipient(_ctx.stringValue("AssumeRoleWithSAMLResponse.SAMLAssertionInfo.Recipient"));
-		sAMLAssertionInfo.setIssuer(_ctx.stringValue("AssumeRoleWithSAMLResponse.SAMLAssertionInfo.Issuer"));
-		assumeRoleWithSAMLResponse.setSAMLAssertionInfo(sAMLAssertionInfo);
+		Credentials credentials = new Credentials();
+		credentials.setSecurityToken(_ctx.stringValue("AssumeRoleWithSAMLResponse.Credentials.SecurityToken"));
+		credentials.setAccessKeyId(_ctx.stringValue("AssumeRoleWithSAMLResponse.Credentials.AccessKeyId"));
+		credentials.setAccessKeySecret(_ctx.stringValue("AssumeRoleWithSAMLResponse.Credentials.AccessKeySecret"));
+		credentials.setExpiration(_ctx.stringValue("AssumeRoleWithSAMLResponse.Credentials.Expiration"));
+		assumeRoleWithSAMLResponse.setCredentials(credentials);
 	 
 	 	return assumeRoleWithSAMLResponse;
 	}

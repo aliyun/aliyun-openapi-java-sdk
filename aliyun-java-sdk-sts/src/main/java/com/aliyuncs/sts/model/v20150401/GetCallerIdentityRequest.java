@@ -26,7 +26,7 @@ import com.aliyuncs.sts.Endpoint;
 public class GetCallerIdentityRequest extends RpcAcsRequest<GetCallerIdentityResponse> {
 	   
 	public GetCallerIdentityRequest() {
-		super("Sts", "2015-04-01", "GetCallerIdentity", "sts");
+		super("Sts", "2015-04-01", "GetCallerIdentity");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

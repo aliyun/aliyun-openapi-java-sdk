@@ -34,7 +34,7 @@ public class AssumeRoleRequest extends RpcAcsRequest<AssumeRoleResponse> {
 
 	private Long durationSeconds;
 	public AssumeRoleRequest() {
-		super("Sts", "2015-04-01", "AssumeRole", "sts");
+		super("Sts", "2015-04-01", "AssumeRole");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

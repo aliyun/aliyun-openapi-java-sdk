@@ -26,17 +26,17 @@ public class AssumeRoleResponseUnmarshaller {
 		
 		assumeRoleResponse.setRequestId(_ctx.stringValue("AssumeRoleResponse.RequestId"));
 
+		AssumedRoleUser assumedRoleUser = new AssumedRoleUser();
+		assumedRoleUser.setAssumedRoleId(_ctx.stringValue("AssumeRoleResponse.AssumedRoleUser.AssumedRoleId"));
+		assumedRoleUser.setArn(_ctx.stringValue("AssumeRoleResponse.AssumedRoleUser.Arn"));
+		assumeRoleResponse.setAssumedRoleUser(assumedRoleUser);
+
 		Credentials credentials = new Credentials();
 		credentials.setSecurityToken(_ctx.stringValue("AssumeRoleResponse.Credentials.SecurityToken"));
+		credentials.setExpiration(_ctx.stringValue("AssumeRoleResponse.Credentials.Expiration"));
 		credentials.setAccessKeySecret(_ctx.stringValue("AssumeRoleResponse.Credentials.AccessKeySecret"));
 		credentials.setAccessKeyId(_ctx.stringValue("AssumeRoleResponse.Credentials.AccessKeyId"));
-		credentials.setExpiration(_ctx.stringValue("AssumeRoleResponse.Credentials.Expiration"));
 		assumeRoleResponse.setCredentials(credentials);
-
-		AssumedRoleUser assumedRoleUser = new AssumedRoleUser();
-		assumedRoleUser.setArn(_ctx.stringValue("AssumeRoleResponse.AssumedRoleUser.Arn"));
-		assumedRoleUser.setAssumedRoleId(_ctx.stringValue("AssumeRoleResponse.AssumedRoleUser.AssumedRoleId"));
-		assumeRoleResponse.setAssumedRoleUser(assumedRoleUser);
 	 
 	 	return assumeRoleResponse;
 	}

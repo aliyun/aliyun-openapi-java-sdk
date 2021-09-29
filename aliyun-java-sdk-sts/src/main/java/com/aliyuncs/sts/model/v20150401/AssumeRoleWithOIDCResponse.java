@@ -15,18 +15,18 @@
 package com.aliyuncs.sts.model.v20150401;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.sts.transform.v20150401.AssumeRoleWithSAMLResponseUnmarshaller;
+import com.aliyuncs.sts.transform.v20150401.AssumeRoleWithOIDCResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class AssumeRoleWithSAMLResponse extends AcsResponse {
+public class AssumeRoleWithOIDCResponse extends AcsResponse {
 
 	private String requestId;
 
-	private SAMLAssertionInfo sAMLAssertionInfo;
+	private OIDCTokenInfo oIDCTokenInfo;
 
 	private AssumedRoleUser assumedRoleUser;
 
@@ -40,12 +40,12 @@ public class AssumeRoleWithSAMLResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public SAMLAssertionInfo getSAMLAssertionInfo() {
-		return this.sAMLAssertionInfo;
+	public OIDCTokenInfo getOIDCTokenInfo() {
+		return this.oIDCTokenInfo;
 	}
 
-	public void setSAMLAssertionInfo(SAMLAssertionInfo sAMLAssertionInfo) {
-		this.sAMLAssertionInfo = sAMLAssertionInfo;
+	public void setOIDCTokenInfo(OIDCTokenInfo oIDCTokenInfo) {
+		this.oIDCTokenInfo = oIDCTokenInfo;
 	}
 
 	public AssumedRoleUser getAssumedRoleUser() {
@@ -64,22 +64,20 @@ public class AssumeRoleWithSAMLResponse extends AcsResponse {
 		this.credentials = credentials;
 	}
 
-	public static class SAMLAssertionInfo {
-
-		private String subjectType;
-
-		private String issuer;
-
-		private String recipient;
+	public static class OIDCTokenInfo {
 
 		private String subject;
 
-		public String getSubjectType() {
-			return this.subjectType;
+		private String issuer;
+
+		private String clientIds;
+
+		public String getSubject() {
+			return this.subject;
 		}
 
-		public void setSubjectType(String subjectType) {
-			this.subjectType = subjectType;
+		public void setSubject(String subject) {
+			this.subject = subject;
 		}
 
 		public String getIssuer() {
@@ -90,36 +88,20 @@ public class AssumeRoleWithSAMLResponse extends AcsResponse {
 			this.issuer = issuer;
 		}
 
-		public String getRecipient() {
-			return this.recipient;
+		public String getClientIds() {
+			return this.clientIds;
 		}
 
-		public void setRecipient(String recipient) {
-			this.recipient = recipient;
-		}
-
-		public String getSubject() {
-			return this.subject;
-		}
-
-		public void setSubject(String subject) {
-			this.subject = subject;
+		public void setClientIds(String clientIds) {
+			this.clientIds = clientIds;
 		}
 	}
 
 	public static class AssumedRoleUser {
 
-		private String arn;
-
 		private String assumedRoleId;
 
-		public String getArn() {
-			return this.arn;
-		}
-
-		public void setArn(String arn) {
-			this.arn = arn;
-		}
+		private String arn;
 
 		public String getAssumedRoleId() {
 			return this.assumedRoleId;
@@ -128,17 +110,25 @@ public class AssumeRoleWithSAMLResponse extends AcsResponse {
 		public void setAssumedRoleId(String assumedRoleId) {
 			this.assumedRoleId = assumedRoleId;
 		}
+
+		public String getArn() {
+			return this.arn;
+		}
+
+		public void setArn(String arn) {
+			this.arn = arn;
+		}
 	}
 
 	public static class Credentials {
 
 		private String securityToken;
 
-		private String accessKeyId;
+		private String expiration;
 
 		private String accessKeySecret;
 
-		private String expiration;
+		private String accessKeyId;
 
 		public String getSecurityToken() {
 			return this.securityToken;
@@ -148,12 +138,12 @@ public class AssumeRoleWithSAMLResponse extends AcsResponse {
 			this.securityToken = securityToken;
 		}
 
-		public String getAccessKeyId() {
-			return this.accessKeyId;
+		public String getExpiration() {
+			return this.expiration;
 		}
 
-		public void setAccessKeyId(String accessKeyId) {
-			this.accessKeyId = accessKeyId;
+		public void setExpiration(String expiration) {
+			this.expiration = expiration;
 		}
 
 		public String getAccessKeySecret() {
@@ -164,17 +154,22 @@ public class AssumeRoleWithSAMLResponse extends AcsResponse {
 			this.accessKeySecret = accessKeySecret;
 		}
 
-		public String getExpiration() {
-			return this.expiration;
+		public String getAccessKeyId() {
+			return this.accessKeyId;
 		}
 
-		public void setExpiration(String expiration) {
-			this.expiration = expiration;
+		public void setAccessKeyId(String accessKeyId) {
+			this.accessKeyId = accessKeyId;
 		}
 	}
 
 	@Override
-	public AssumeRoleWithSAMLResponse getInstance(UnmarshallerContext context) {
-		return	AssumeRoleWithSAMLResponseUnmarshaller.unmarshall(this, context);
+	public AssumeRoleWithOIDCResponse getInstance(UnmarshallerContext context) {
+		return	AssumeRoleWithOIDCResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

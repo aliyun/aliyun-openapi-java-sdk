@@ -1,3 +1,6 @@
+2021-09-29 Version: 3.1.0
+- Supported AssumeRoleWithOIDC.
+
 2020-06-19 Version: 3.0.2
 - Generated 2015-04-01 for `Sts`.
 

@@ -24,19 +24,27 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetCallerIdentityResponse extends AcsResponse {
 
+	private String identityType;
+
 	private String accountId;
 
-	private String userId;
-
-	private String roleId;
-
-	private String arn;
-
-	private String identityType;
+	private String requestId;
 
 	private String principalId;
 
-	private String requestId;
+	private String userId;
+
+	private String arn;
+
+	private String roleId;
+
+	public String getIdentityType() {
+		return this.identityType;
+	}
+
+	public void setIdentityType(String identityType) {
+		this.identityType = identityType;
+	}
 
 	public String getAccountId() {
 		return this.accountId;
@@ -46,36 +54,12 @@ public class GetCallerIdentityResponse extends AcsResponse {
 		this.accountId = accountId;
 	}
 
-	public String getUserId() {
-		return this.userId;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setUserId(String userId) {
-		this.userId = userId;
-	}
-
-	public String getRoleId() {
-		return this.roleId;
-	}
-
-	public void setRoleId(String roleId) {
-		this.roleId = roleId;
-	}
-
-	public String getArn() {
-		return this.arn;
-	}
-
-	public void setArn(String arn) {
-		this.arn = arn;
-	}
-
-	public String getIdentityType() {
-		return this.identityType;
-	}
-
-	public void setIdentityType(String identityType) {
-		this.identityType = identityType;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getPrincipalId() {
@@ -86,12 +70,28 @@ public class GetCallerIdentityResponse extends AcsResponse {
 		this.principalId = principalId;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getUserId() {
+		return this.userId;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
+
+	public String getArn() {
+		return this.arn;
+	}
+
+	public void setArn(String arn) {
+		this.arn = arn;
+	}
+
+	public String getRoleId() {
+		return this.roleId;
+	}
+
+	public void setRoleId(String roleId) {
+		this.roleId = roleId;
 	}
 
 	@Override

@@ -23,37 +23,28 @@ import com.aliyuncs.sts.Endpoint;
  * @author auto create
  * @version 
  */
-public class AssumeRoleWithSAMLRequest extends RpcAcsRequest<AssumeRoleWithSAMLResponse> {
+public class AssumeRoleWithOIDCRequest extends RpcAcsRequest<AssumeRoleWithOIDCResponse> {
 	   
-
-	private String sAMLAssertion;
 
 	private String roleArn;
 
-	private String sAMLProviderArn;
+	private String roleSessionName;
+
+	private String oIDCToken;
 
 	private Long durationSeconds;
 
+	private String oIDCProviderArn;
+
 	private String policy;
-	public AssumeRoleWithSAMLRequest() {
-		super("Sts", "2015-04-01", "AssumeRoleWithSAML");
+	public AssumeRoleWithOIDCRequest() {
+		super("Sts", "2015-04-01", "AssumeRoleWithOIDC");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getSAMLAssertion() {
-		return this.sAMLAssertion;
-	}
-
-	public void setSAMLAssertion(String sAMLAssertion) {
-		this.sAMLAssertion = sAMLAssertion;
-		if(sAMLAssertion != null){
-			putQueryParameter("SAMLAssertion", sAMLAssertion);
-		}
 	}
 
 	public String getRoleArn() {
@@ -67,14 +58,25 @@ public class AssumeRoleWithSAMLRequest extends RpcAcsRequest<AssumeRoleWithSAMLR
 		}
 	}
 
-	public String getSAMLProviderArn() {
-		return this.sAMLProviderArn;
+	public String getRoleSessionName() {
+		return this.roleSessionName;
 	}
 
-	public void setSAMLProviderArn(String sAMLProviderArn) {
-		this.sAMLProviderArn = sAMLProviderArn;
-		if(sAMLProviderArn != null){
-			putQueryParameter("SAMLProviderArn", sAMLProviderArn);
+	public void setRoleSessionName(String roleSessionName) {
+		this.roleSessionName = roleSessionName;
+		if(roleSessionName != null){
+			putQueryParameter("RoleSessionName", roleSessionName);
+		}
+	}
+
+	public String getOIDCToken() {
+		return this.oIDCToken;
+	}
+
+	public void setOIDCToken(String oIDCToken) {
+		this.oIDCToken = oIDCToken;
+		if(oIDCToken != null){
+			putQueryParameter("OIDCToken", oIDCToken);
 		}
 	}
 
@@ -86,6 +88,17 @@ public class AssumeRoleWithSAMLRequest extends RpcAcsRequest<AssumeRoleWithSAMLR
 		this.durationSeconds = durationSeconds;
 		if(durationSeconds != null){
 			putQueryParameter("DurationSeconds", durationSeconds.toString());
+		}
+	}
+
+	public String getOIDCProviderArn() {
+		return this.oIDCProviderArn;
+	}
+
+	public void setOIDCProviderArn(String oIDCProviderArn) {
+		this.oIDCProviderArn = oIDCProviderArn;
+		if(oIDCProviderArn != null){
+			putQueryParameter("OIDCProviderArn", oIDCProviderArn);
 		}
 	}
 
@@ -101,8 +114,8 @@ public class AssumeRoleWithSAMLRequest extends RpcAcsRequest<AssumeRoleWithSAMLR
 	}
 
 	@Override
-	public Class<AssumeRoleWithSAMLResponse> getResponseClass() {
-		return AssumeRoleWithSAMLResponse.class;
+	public Class<AssumeRoleWithOIDCResponse> getResponseClass() {
+		return AssumeRoleWithOIDCResponse.class;
 	}
 
 }

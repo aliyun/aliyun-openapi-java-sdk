@@ -23,12 +23,12 @@ public class GetCallerIdentityResponseUnmarshaller {
 	public static GetCallerIdentityResponse unmarshall(GetCallerIdentityResponse getCallerIdentityResponse, UnmarshallerContext _ctx) {
 		
 		getCallerIdentityResponse.setRequestId(_ctx.stringValue("GetCallerIdentityResponse.RequestId"));
-		getCallerIdentityResponse.setAccountId(_ctx.stringValue("GetCallerIdentityResponse.AccountId"));
-		getCallerIdentityResponse.setUserId(_ctx.stringValue("GetCallerIdentityResponse.UserId"));
-		getCallerIdentityResponse.setRoleId(_ctx.stringValue("GetCallerIdentityResponse.RoleId"));
-		getCallerIdentityResponse.setArn(_ctx.stringValue("GetCallerIdentityResponse.Arn"));
 		getCallerIdentityResponse.setIdentityType(_ctx.stringValue("GetCallerIdentityResponse.IdentityType"));
+		getCallerIdentityResponse.setAccountId(_ctx.stringValue("GetCallerIdentityResponse.AccountId"));
 		getCallerIdentityResponse.setPrincipalId(_ctx.stringValue("GetCallerIdentityResponse.PrincipalId"));
+		getCallerIdentityResponse.setUserId(_ctx.stringValue("GetCallerIdentityResponse.UserId"));
+		getCallerIdentityResponse.setArn(_ctx.stringValue("GetCallerIdentityResponse.Arn"));
+		getCallerIdentityResponse.setRoleId(_ctx.stringValue("GetCallerIdentityResponse.RoleId"));
 	 
 	 	return getCallerIdentityResponse;
 	}
