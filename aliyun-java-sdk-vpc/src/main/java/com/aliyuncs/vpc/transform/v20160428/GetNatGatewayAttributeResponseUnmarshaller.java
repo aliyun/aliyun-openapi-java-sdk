@@ -32,18 +32,19 @@ public class GetNatGatewayAttributeResponseUnmarshaller {
 	public static GetNatGatewayAttributeResponse unmarshall(GetNatGatewayAttributeResponse getNatGatewayAttributeResponse, UnmarshallerContext _ctx) {
 		
 		getNatGatewayAttributeResponse.setRequestId(_ctx.stringValue("GetNatGatewayAttributeResponse.RequestId"));
-		getNatGatewayAttributeResponse.setDescription(_ctx.stringValue("GetNatGatewayAttributeResponse.Description"));
-		getNatGatewayAttributeResponse.setNatType(_ctx.stringValue("GetNatGatewayAttributeResponse.NatType"));
-		getNatGatewayAttributeResponse.setEcsMetricEnabled(_ctx.booleanValue("GetNatGatewayAttributeResponse.EcsMetricEnabled"));
 		getNatGatewayAttributeResponse.setVpcId(_ctx.stringValue("GetNatGatewayAttributeResponse.VpcId"));
-		getNatGatewayAttributeResponse.setNatGatewayId(_ctx.stringValue("GetNatGatewayAttributeResponse.NatGatewayId"));
 		getNatGatewayAttributeResponse.setCreationTime(_ctx.stringValue("GetNatGatewayAttributeResponse.CreationTime"));
-		getNatGatewayAttributeResponse.setExpiredTime(_ctx.stringValue("GetNatGatewayAttributeResponse.ExpiredTime"));
-		getNatGatewayAttributeResponse.setName(_ctx.stringValue("GetNatGatewayAttributeResponse.Name"));
 		getNatGatewayAttributeResponse.setStatus(_ctx.stringValue("GetNatGatewayAttributeResponse.Status"));
-		getNatGatewayAttributeResponse.setBusinessStatus(_ctx.stringValue("GetNatGatewayAttributeResponse.BusinessStatus"));
+		getNatGatewayAttributeResponse.setNatType(_ctx.stringValue("GetNatGatewayAttributeResponse.NatType"));
+		getNatGatewayAttributeResponse.setNetworkType(_ctx.stringValue("GetNatGatewayAttributeResponse.NetworkType"));
 		getNatGatewayAttributeResponse.setRegionId(_ctx.stringValue("GetNatGatewayAttributeResponse.RegionId"));
+		getNatGatewayAttributeResponse.setEcsMetricEnabled(_ctx.booleanValue("GetNatGatewayAttributeResponse.EcsMetricEnabled"));
+		getNatGatewayAttributeResponse.setDescription(_ctx.stringValue("GetNatGatewayAttributeResponse.Description"));
+		getNatGatewayAttributeResponse.setExpiredTime(_ctx.stringValue("GetNatGatewayAttributeResponse.ExpiredTime"));
 		getNatGatewayAttributeResponse.setResourceGroupId(_ctx.stringValue("GetNatGatewayAttributeResponse.ResourceGroupId"));
+		getNatGatewayAttributeResponse.setNatGatewayId(_ctx.stringValue("GetNatGatewayAttributeResponse.NatGatewayId"));
+		getNatGatewayAttributeResponse.setBusinessStatus(_ctx.stringValue("GetNatGatewayAttributeResponse.BusinessStatus"));
+		getNatGatewayAttributeResponse.setName(_ctx.stringValue("GetNatGatewayAttributeResponse.Name"));
 
 		ForwardTable forwardTable = new ForwardTable();
 		forwardTable.setForwardTableId(_ctx.stringValue("GetNatGatewayAttributeResponse.ForwardTable.ForwardTableId"));
@@ -51,23 +52,23 @@ public class GetNatGatewayAttributeResponseUnmarshaller {
 		getNatGatewayAttributeResponse.setForwardTable(forwardTable);
 
 		SnatTable snatTable = new SnatTable();
-		snatTable.setSnatTableId(_ctx.stringValue("GetNatGatewayAttributeResponse.SnatTable.SnatTableId"));
 		snatTable.setSnatEntryCount(_ctx.integerValue("GetNatGatewayAttributeResponse.SnatTable.SnatEntryCount"));
+		snatTable.setSnatTableId(_ctx.stringValue("GetNatGatewayAttributeResponse.SnatTable.SnatTableId"));
 		getNatGatewayAttributeResponse.setSnatTable(snatTable);
 
 		BillingConfig billingConfig = new BillingConfig();
-		billingConfig.setSpec(_ctx.stringValue("GetNatGatewayAttributeResponse.BillingConfig.Spec"));
 		billingConfig.setInternetChargeType(_ctx.stringValue("GetNatGatewayAttributeResponse.BillingConfig.InternetChargeType"));
-		billingConfig.setInstanceChargeType(_ctx.stringValue("GetNatGatewayAttributeResponse.BillingConfig.InstanceChargeType"));
 		billingConfig.setAutoPay(_ctx.stringValue("GetNatGatewayAttributeResponse.BillingConfig.AutoPay"));
+		billingConfig.setSpec(_ctx.stringValue("GetNatGatewayAttributeResponse.BillingConfig.Spec"));
+		billingConfig.setInstanceChargeType(_ctx.stringValue("GetNatGatewayAttributeResponse.BillingConfig.InstanceChargeType"));
 		getNatGatewayAttributeResponse.setBillingConfig(billingConfig);
 
 		PrivateInfo privateInfo = new PrivateInfo();
-		privateInfo.setEniInstanceId(_ctx.stringValue("GetNatGatewayAttributeResponse.PrivateInfo.EniInstanceId"));
-		privateInfo.setIzNo(_ctx.stringValue("GetNatGatewayAttributeResponse.PrivateInfo.IzNo"));
 		privateInfo.setMaxBandwidth(_ctx.integerValue("GetNatGatewayAttributeResponse.PrivateInfo.MaxBandwidth"));
-		privateInfo.setPrivateIpAddress(_ctx.stringValue("GetNatGatewayAttributeResponse.PrivateInfo.PrivateIpAddress"));
 		privateInfo.setVswitchId(_ctx.stringValue("GetNatGatewayAttributeResponse.PrivateInfo.VswitchId"));
+		privateInfo.setPrivateIpAddress(_ctx.stringValue("GetNatGatewayAttributeResponse.PrivateInfo.PrivateIpAddress"));
+		privateInfo.setIzNo(_ctx.stringValue("GetNatGatewayAttributeResponse.PrivateInfo.IzNo"));
+		privateInfo.setEniInstanceId(_ctx.stringValue("GetNatGatewayAttributeResponse.PrivateInfo.EniInstanceId"));
 		getNatGatewayAttributeResponse.setPrivateInfo(privateInfo);
 
 		DeletionProtectionInfo deletionProtectionInfo = new DeletionProtectionInfo();
@@ -77,9 +78,9 @@ public class GetNatGatewayAttributeResponseUnmarshaller {
 		List<IpListItem> ipList = new ArrayList<IpListItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetNatGatewayAttributeResponse.IpList.Length"); i++) {
 			IpListItem ipListItem = new IpListItem();
+			ipListItem.setUsingStatus(_ctx.stringValue("GetNatGatewayAttributeResponse.IpList["+ i +"].UsingStatus"));
 			ipListItem.setIpAddress(_ctx.stringValue("GetNatGatewayAttributeResponse.IpList["+ i +"].IpAddress"));
 			ipListItem.setAllocationId(_ctx.stringValue("GetNatGatewayAttributeResponse.IpList["+ i +"].AllocationId"));
-			ipListItem.setUsingStatus(_ctx.stringValue("GetNatGatewayAttributeResponse.IpList["+ i +"].UsingStatus"));
 
 			ipList.add(ipListItem);
 		}

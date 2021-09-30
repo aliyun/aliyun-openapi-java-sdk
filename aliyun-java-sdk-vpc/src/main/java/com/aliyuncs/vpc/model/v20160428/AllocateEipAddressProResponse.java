@@ -26,13 +26,13 @@ public class AllocateEipAddressProResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String allocationId;
-
-	private String eipAddress;
-
 	private Long orderId;
 
 	private String resourceGroupId;
+
+	private String eipAddress;
+
+	private String allocationId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -40,22 +40,6 @@ public class AllocateEipAddressProResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getAllocationId() {
-		return this.allocationId;
-	}
-
-	public void setAllocationId(String allocationId) {
-		this.allocationId = allocationId;
-	}
-
-	public String getEipAddress() {
-		return this.eipAddress;
-	}
-
-	public void setEipAddress(String eipAddress) {
-		this.eipAddress = eipAddress;
 	}
 
 	public Long getOrderId() {
@@ -72,6 +56,22 @@ public class AllocateEipAddressProResponse extends AcsResponse {
 
 	public void setResourceGroupId(String resourceGroupId) {
 		this.resourceGroupId = resourceGroupId;
+	}
+
+	public String getEipAddress() {
+		return this.eipAddress;
+	}
+
+	public void setEipAddress(String eipAddress) {
+		this.eipAddress = eipAddress;
+	}
+
+	public String getAllocationId() {
+		return this.allocationId;
+	}
+
+	public void setAllocationId(String allocationId) {
+		this.allocationId = allocationId;
 	}
 
 	@Override

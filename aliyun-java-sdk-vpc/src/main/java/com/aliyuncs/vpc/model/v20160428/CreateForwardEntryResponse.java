@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateForwardEntryResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String forwardEntryId;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getForwardEntryId() {
 		return this.forwardEntryId;
@@ -42,6 +34,14 @@ public class CreateForwardEntryResponse extends AcsResponse {
 
 	public void setForwardEntryId(String forwardEntryId) {
 		this.forwardEntryId = forwardEntryId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

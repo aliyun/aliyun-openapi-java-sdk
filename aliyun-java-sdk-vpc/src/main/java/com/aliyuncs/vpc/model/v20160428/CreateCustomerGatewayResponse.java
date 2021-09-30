@@ -26,15 +26,15 @@ public class CreateCustomerGatewayResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String customerGatewayId;
-
 	private String ipAddress;
-
-	private String name;
 
 	private String description;
 
+	private String customerGatewayId;
+
 	private Long createTime;
+
+	private String name;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -42,14 +42,6 @@ public class CreateCustomerGatewayResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getCustomerGatewayId() {
-		return this.customerGatewayId;
-	}
-
-	public void setCustomerGatewayId(String customerGatewayId) {
-		this.customerGatewayId = customerGatewayId;
 	}
 
 	public String getIpAddress() {
@@ -60,14 +52,6 @@ public class CreateCustomerGatewayResponse extends AcsResponse {
 		this.ipAddress = ipAddress;
 	}
 
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
 	public String getDescription() {
 		return this.description;
 	}
@@ -76,12 +60,28 @@ public class CreateCustomerGatewayResponse extends AcsResponse {
 		this.description = description;
 	}
 
+	public String getCustomerGatewayId() {
+		return this.customerGatewayId;
+	}
+
+	public void setCustomerGatewayId(String customerGatewayId) {
+		this.customerGatewayId = customerGatewayId;
+	}
+
 	public Long getCreateTime() {
 		return this.createTime;
 	}
 
 	public void setCreateTime(Long createTime) {
 		this.createTime = createTime;
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	@Override

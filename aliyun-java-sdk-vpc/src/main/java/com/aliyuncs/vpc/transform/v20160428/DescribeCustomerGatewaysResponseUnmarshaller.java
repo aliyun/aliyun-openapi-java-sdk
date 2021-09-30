@@ -27,19 +27,20 @@ public class DescribeCustomerGatewaysResponseUnmarshaller {
 	public static DescribeCustomerGatewaysResponse unmarshall(DescribeCustomerGatewaysResponse describeCustomerGatewaysResponse, UnmarshallerContext _ctx) {
 		
 		describeCustomerGatewaysResponse.setRequestId(_ctx.stringValue("DescribeCustomerGatewaysResponse.RequestId"));
-		describeCustomerGatewaysResponse.setTotalCount(_ctx.integerValue("DescribeCustomerGatewaysResponse.TotalCount"));
-		describeCustomerGatewaysResponse.setPageNumber(_ctx.integerValue("DescribeCustomerGatewaysResponse.PageNumber"));
 		describeCustomerGatewaysResponse.setPageSize(_ctx.integerValue("DescribeCustomerGatewaysResponse.PageSize"));
+		describeCustomerGatewaysResponse.setPageNumber(_ctx.integerValue("DescribeCustomerGatewaysResponse.PageNumber"));
+		describeCustomerGatewaysResponse.setTotalCount(_ctx.integerValue("DescribeCustomerGatewaysResponse.TotalCount"));
 
 		List<CustomerGateway> customerGateways = new ArrayList<CustomerGateway>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeCustomerGatewaysResponse.CustomerGateways.Length"); i++) {
 			CustomerGateway customerGateway = new CustomerGateway();
-			customerGateway.setCustomerGatewayId(_ctx.stringValue("DescribeCustomerGatewaysResponse.CustomerGateways["+ i +"].CustomerGatewayId"));
-			customerGateway.setName(_ctx.stringValue("DescribeCustomerGatewaysResponse.CustomerGateways["+ i +"].Name"));
 			customerGateway.setIpAddress(_ctx.stringValue("DescribeCustomerGatewaysResponse.CustomerGateways["+ i +"].IpAddress"));
+			customerGateway.setAsn(_ctx.longValue("DescribeCustomerGatewaysResponse.CustomerGateways["+ i +"].Asn"));
 			customerGateway.setDescription(_ctx.stringValue("DescribeCustomerGatewaysResponse.CustomerGateways["+ i +"].Description"));
+			customerGateway.setCustomerGatewayId(_ctx.stringValue("DescribeCustomerGatewaysResponse.CustomerGateways["+ i +"].CustomerGatewayId"));
 			customerGateway.setCreateTime(_ctx.longValue("DescribeCustomerGatewaysResponse.CustomerGateways["+ i +"].CreateTime"));
-			customerGateway.setAsn(_ctx.integerValue("DescribeCustomerGatewaysResponse.CustomerGateways["+ i +"].Asn"));
+			customerGateway.setName(_ctx.stringValue("DescribeCustomerGatewaysResponse.CustomerGateways["+ i +"].Name"));
+			customerGateway.setAuthKey(_ctx.stringValue("DescribeCustomerGatewaysResponse.CustomerGateways["+ i +"].AuthKey"));
 
 			customerGateways.add(customerGateway);
 		}

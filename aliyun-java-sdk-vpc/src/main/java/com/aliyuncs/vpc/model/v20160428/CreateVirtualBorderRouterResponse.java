@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateVirtualBorderRouterResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String vbrId;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getVbrId() {
 		return this.vbrId;
@@ -42,6 +34,14 @@ public class CreateVirtualBorderRouterResponse extends AcsResponse {
 
 	public void setVbrId(String vbrId) {
 		this.vbrId = vbrId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

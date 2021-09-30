@@ -77,73 +77,69 @@ public class DescribePhysicalConnectionsResponse extends AcsResponse {
 
 	public static class PhysicalConnectionType {
 
-		private String physicalConnectionId;
-
-		private String accessPointId;
-
 		private String type;
 
 		private String status;
 
-		private String businessStatus;
-
 		private String creationTime;
 
-		private String enabledTime;
-
-		private String lineOperator;
-
-		private String spec;
-
-		private String peerLocation;
-
-		private String portType;
-
-		private String redundantPhysicalConnectionId;
-
-		private String name;
-
-		private String description;
-
 		private String adLocation;
-
-		private String portNumber;
-
-		private String circuitCode;
-
-		private Long bandwidth;
-
-		private String loaStatus;
-
-		private String spec1;
-
-		private String hasReservationData;
-
-		private String reservationInternetChargeType;
 
 		private String reservationActiveTime;
 
 		private String reservationOrderType;
 
-		private String endTime;
+		private String portNumber;
+
+		private String spec;
 
 		private String chargeType;
 
-		public String getPhysicalConnectionId() {
-			return this.physicalConnectionId;
-		}
+		private String reservationInternetChargeType;
 
-		public void setPhysicalConnectionId(String physicalConnectionId) {
-			this.physicalConnectionId = physicalConnectionId;
-		}
+		private String description;
 
-		public String getAccessPointId() {
-			return this.accessPointId;
-		}
+		private Long bandwidth;
 
-		public void setAccessPointId(String accessPointId) {
-			this.accessPointId = accessPointId;
-		}
+		private String enabledTime;
+
+		private String lineOperator;
+
+		private String peerLocation;
+
+		private String redundantPhysicalConnectionId;
+
+		private String name;
+
+		private String circuitCode;
+
+		private String endTime;
+
+		private String portType;
+
+		private String businessStatus;
+
+		private String loaStatus;
+
+		private String accessPointId;
+
+		private String hasReservationData;
+
+		private String physicalConnectionId;
+
+		private String productType;
+
+		private Integer virtualPhysicalConnectionCount;
+
+		private String parentPhysicalConnectionId;
+
+		private Long parentPhysicalConnectionAliUid;
+
+		private String vlanId;
+
+		private String orderMode;
+
+		private String vpconnStatus;
 
 		public String getType() {
 			return this.type;
@@ -161,14 +157,6 @@ public class DescribePhysicalConnectionsResponse extends AcsResponse {
 			this.status = status;
 		}
 
-		public String getBusinessStatus() {
-			return this.businessStatus;
-		}
-
-		public void setBusinessStatus(String businessStatus) {
-			this.businessStatus = businessStatus;
-		}
-
 		public String getCreationTime() {
 			return this.creationTime;
 		}
@@ -177,132 +165,12 @@ public class DescribePhysicalConnectionsResponse extends AcsResponse {
 			this.creationTime = creationTime;
 		}
 
-		public String getEnabledTime() {
-			return this.enabledTime;
-		}
-
-		public void setEnabledTime(String enabledTime) {
-			this.enabledTime = enabledTime;
-		}
-
-		public String getLineOperator() {
-			return this.lineOperator;
-		}
-
-		public void setLineOperator(String lineOperator) {
-			this.lineOperator = lineOperator;
-		}
-
-		public String getSpec() {
-			return this.spec;
-		}
-
-		public void setSpec(String spec) {
-			this.spec = spec;
-		}
-
-		public String getPeerLocation() {
-			return this.peerLocation;
-		}
-
-		public void setPeerLocation(String peerLocation) {
-			this.peerLocation = peerLocation;
-		}
-
-		public String getPortType() {
-			return this.portType;
-		}
-
-		public void setPortType(String portType) {
-			this.portType = portType;
-		}
-
-		public String getRedundantPhysicalConnectionId() {
-			return this.redundantPhysicalConnectionId;
-		}
-
-		public void setRedundantPhysicalConnectionId(String redundantPhysicalConnectionId) {
-			this.redundantPhysicalConnectionId = redundantPhysicalConnectionId;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
 		public String getAdLocation() {
 			return this.adLocation;
 		}
 
 		public void setAdLocation(String adLocation) {
 			this.adLocation = adLocation;
-		}
-
-		public String getPortNumber() {
-			return this.portNumber;
-		}
-
-		public void setPortNumber(String portNumber) {
-			this.portNumber = portNumber;
-		}
-
-		public String getCircuitCode() {
-			return this.circuitCode;
-		}
-
-		public void setCircuitCode(String circuitCode) {
-			this.circuitCode = circuitCode;
-		}
-
-		public Long getBandwidth() {
-			return this.bandwidth;
-		}
-
-		public void setBandwidth(Long bandwidth) {
-			this.bandwidth = bandwidth;
-		}
-
-		public String getLoaStatus() {
-			return this.loaStatus;
-		}
-
-		public void setLoaStatus(String loaStatus) {
-			this.loaStatus = loaStatus;
-		}
-
-		public String getSpec1() {
-			return this.spec1;
-		}
-
-		public void setSpec1(String spec1) {
-			this.spec1 = spec1;
-		}
-
-		public String getHasReservationData() {
-			return this.hasReservationData;
-		}
-
-		public void setHasReservationData(String hasReservationData) {
-			this.hasReservationData = hasReservationData;
-		}
-
-		public String getReservationInternetChargeType() {
-			return this.reservationInternetChargeType;
-		}
-
-		public void setReservationInternetChargeType(String reservationInternetChargeType) {
-			this.reservationInternetChargeType = reservationInternetChargeType;
 		}
 
 		public String getReservationActiveTime() {
@@ -321,12 +189,20 @@ public class DescribePhysicalConnectionsResponse extends AcsResponse {
 			this.reservationOrderType = reservationOrderType;
 		}
 
-		public String getEndTime() {
-			return this.endTime;
+		public String getPortNumber() {
+			return this.portNumber;
 		}
 
-		public void setEndTime(String endTime) {
-			this.endTime = endTime;
+		public void setPortNumber(String portNumber) {
+			this.portNumber = portNumber;
+		}
+
+		public String getSpec() {
+			return this.spec;
+		}
+
+		public void setSpec(String spec) {
+			this.spec = spec;
 		}
 
 		public String getChargeType() {
@@ -335,6 +211,190 @@ public class DescribePhysicalConnectionsResponse extends AcsResponse {
 
 		public void setChargeType(String chargeType) {
 			this.chargeType = chargeType;
+		}
+
+		public String getReservationInternetChargeType() {
+			return this.reservationInternetChargeType;
+		}
+
+		public void setReservationInternetChargeType(String reservationInternetChargeType) {
+			this.reservationInternetChargeType = reservationInternetChargeType;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public Long getBandwidth() {
+			return this.bandwidth;
+		}
+
+		public void setBandwidth(Long bandwidth) {
+			this.bandwidth = bandwidth;
+		}
+
+		public String getEnabledTime() {
+			return this.enabledTime;
+		}
+
+		public void setEnabledTime(String enabledTime) {
+			this.enabledTime = enabledTime;
+		}
+
+		public String getLineOperator() {
+			return this.lineOperator;
+		}
+
+		public void setLineOperator(String lineOperator) {
+			this.lineOperator = lineOperator;
+		}
+
+		public String getPeerLocation() {
+			return this.peerLocation;
+		}
+
+		public void setPeerLocation(String peerLocation) {
+			this.peerLocation = peerLocation;
+		}
+
+		public String getRedundantPhysicalConnectionId() {
+			return this.redundantPhysicalConnectionId;
+		}
+
+		public void setRedundantPhysicalConnectionId(String redundantPhysicalConnectionId) {
+			this.redundantPhysicalConnectionId = redundantPhysicalConnectionId;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getCircuitCode() {
+			return this.circuitCode;
+		}
+
+		public void setCircuitCode(String circuitCode) {
+			this.circuitCode = circuitCode;
+		}
+
+		public String getEndTime() {
+			return this.endTime;
+		}
+
+		public void setEndTime(String endTime) {
+			this.endTime = endTime;
+		}
+
+		public String getPortType() {
+			return this.portType;
+		}
+
+		public void setPortType(String portType) {
+			this.portType = portType;
+		}
+
+		public String getBusinessStatus() {
+			return this.businessStatus;
+		}
+
+		public void setBusinessStatus(String businessStatus) {
+			this.businessStatus = businessStatus;
+		}
+
+		public String getLoaStatus() {
+			return this.loaStatus;
+		}
+
+		public void setLoaStatus(String loaStatus) {
+			this.loaStatus = loaStatus;
+		}
+
+		public String getAccessPointId() {
+			return this.accessPointId;
+		}
+
+		public void setAccessPointId(String accessPointId) {
+			this.accessPointId = accessPointId;
+		}
+
+		public String getHasReservationData() {
+			return this.hasReservationData;
+		}
+
+		public void setHasReservationData(String hasReservationData) {
+			this.hasReservationData = hasReservationData;
+		}
+
+		public String getPhysicalConnectionId() {
+			return this.physicalConnectionId;
+		}
+
+		public void setPhysicalConnectionId(String physicalConnectionId) {
+			this.physicalConnectionId = physicalConnectionId;
+		}
+
+		public String getProductType() {
+			return this.productType;
+		}
+
+		public void setProductType(String productType) {
+			this.productType = productType;
+		}
+
+		public Integer getVirtualPhysicalConnectionCount() {
+			return this.virtualPhysicalConnectionCount;
+		}
+
+		public void setVirtualPhysicalConnectionCount(Integer virtualPhysicalConnectionCount) {
+			this.virtualPhysicalConnectionCount = virtualPhysicalConnectionCount;
+		}
+
+		public String getParentPhysicalConnectionId() {
+			return this.parentPhysicalConnectionId;
+		}
+
+		public void setParentPhysicalConnectionId(String parentPhysicalConnectionId) {
+			this.parentPhysicalConnectionId = parentPhysicalConnectionId;
+		}
+
+		public Long getParentPhysicalConnectionAliUid() {
+			return this.parentPhysicalConnectionAliUid;
+		}
+
+		public void setParentPhysicalConnectionAliUid(Long parentPhysicalConnectionAliUid) {
+			this.parentPhysicalConnectionAliUid = parentPhysicalConnectionAliUid;
+		}
+
+		public String getVlanId() {
+			return this.vlanId;
+		}
+
+		public void setVlanId(String vlanId) {
+			this.vlanId = vlanId;
+		}
+
+		public String getOrderMode() {
+			return this.orderMode;
+		}
+
+		public void setOrderMode(String orderMode) {
+			this.orderMode = orderMode;
+		}
+
+		public String getVpconnStatus() {
+			return this.vpconnStatus;
+		}
+
+		public void setVpconnStatus(String vpconnStatus) {
+			this.vpconnStatus = vpconnStatus;
 		}
 	}
 

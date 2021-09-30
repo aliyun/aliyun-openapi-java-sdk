@@ -23,10 +23,10 @@ public class AllocateEipAddressProResponseUnmarshaller {
 	public static AllocateEipAddressProResponse unmarshall(AllocateEipAddressProResponse allocateEipAddressProResponse, UnmarshallerContext _ctx) {
 		
 		allocateEipAddressProResponse.setRequestId(_ctx.stringValue("AllocateEipAddressProResponse.RequestId"));
-		allocateEipAddressProResponse.setAllocationId(_ctx.stringValue("AllocateEipAddressProResponse.AllocationId"));
-		allocateEipAddressProResponse.setEipAddress(_ctx.stringValue("AllocateEipAddressProResponse.EipAddress"));
 		allocateEipAddressProResponse.setOrderId(_ctx.longValue("AllocateEipAddressProResponse.OrderId"));
 		allocateEipAddressProResponse.setResourceGroupId(_ctx.stringValue("AllocateEipAddressProResponse.ResourceGroupId"));
+		allocateEipAddressProResponse.setEipAddress(_ctx.stringValue("AllocateEipAddressProResponse.EipAddress"));
+		allocateEipAddressProResponse.setAllocationId(_ctx.stringValue("AllocateEipAddressProResponse.AllocationId"));
 	 
 	 	return allocateEipAddressProResponse;
 	}

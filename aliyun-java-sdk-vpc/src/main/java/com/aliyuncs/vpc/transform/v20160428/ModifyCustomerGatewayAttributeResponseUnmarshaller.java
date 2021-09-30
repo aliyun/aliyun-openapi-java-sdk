@@ -23,11 +23,11 @@ public class ModifyCustomerGatewayAttributeResponseUnmarshaller {
 	public static ModifyCustomerGatewayAttributeResponse unmarshall(ModifyCustomerGatewayAttributeResponse modifyCustomerGatewayAttributeResponse, UnmarshallerContext _ctx) {
 		
 		modifyCustomerGatewayAttributeResponse.setRequestId(_ctx.stringValue("ModifyCustomerGatewayAttributeResponse.RequestId"));
-		modifyCustomerGatewayAttributeResponse.setCustomerGatewayId(_ctx.stringValue("ModifyCustomerGatewayAttributeResponse.CustomerGatewayId"));
 		modifyCustomerGatewayAttributeResponse.setIpAddress(_ctx.stringValue("ModifyCustomerGatewayAttributeResponse.IpAddress"));
-		modifyCustomerGatewayAttributeResponse.setName(_ctx.stringValue("ModifyCustomerGatewayAttributeResponse.Name"));
 		modifyCustomerGatewayAttributeResponse.setDescription(_ctx.stringValue("ModifyCustomerGatewayAttributeResponse.Description"));
+		modifyCustomerGatewayAttributeResponse.setCustomerGatewayId(_ctx.stringValue("ModifyCustomerGatewayAttributeResponse.CustomerGatewayId"));
 		modifyCustomerGatewayAttributeResponse.setCreateTime(_ctx.longValue("ModifyCustomerGatewayAttributeResponse.CreateTime"));
+		modifyCustomerGatewayAttributeResponse.setName(_ctx.stringValue("ModifyCustomerGatewayAttributeResponse.Name"));
 	 
 	 	return modifyCustomerGatewayAttributeResponse;
 	}

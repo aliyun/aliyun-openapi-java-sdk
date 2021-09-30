@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateSnatEntryResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String snatEntryId;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getSnatEntryId() {
 		return this.snatEntryId;
@@ -42,6 +34,14 @@ public class CreateSnatEntryResponse extends AcsResponse {
 
 	public void setSnatEntryId(String snatEntryId) {
 		this.snatEntryId = snatEntryId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

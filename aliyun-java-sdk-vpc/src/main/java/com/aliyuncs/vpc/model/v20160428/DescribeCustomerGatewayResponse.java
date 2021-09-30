@@ -24,19 +24,29 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeCustomerGatewayResponse extends AcsResponse {
 
-	private String requestId;
+	private Long asn;
 
-	private String customerGatewayId;
+	private String requestId;
 
 	private String ipAddress;
 
-	private String name;
-
 	private String description;
+
+	private String customerGatewayId;
 
 	private Long createTime;
 
-	private Integer asn;
+	private String name;
+
+	private String authKey;
+
+	public Long getAsn() {
+		return this.asn;
+	}
+
+	public void setAsn(Long asn) {
+		this.asn = asn;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -44,14 +54,6 @@ public class DescribeCustomerGatewayResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getCustomerGatewayId() {
-		return this.customerGatewayId;
-	}
-
-	public void setCustomerGatewayId(String customerGatewayId) {
-		this.customerGatewayId = customerGatewayId;
 	}
 
 	public String getIpAddress() {
@@ -62,20 +64,20 @@ public class DescribeCustomerGatewayResponse extends AcsResponse {
 		this.ipAddress = ipAddress;
 	}
 
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
 	public String getDescription() {
 		return this.description;
 	}
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+
+	public String getCustomerGatewayId() {
+		return this.customerGatewayId;
+	}
+
+	public void setCustomerGatewayId(String customerGatewayId) {
+		this.customerGatewayId = customerGatewayId;
 	}
 
 	public Long getCreateTime() {
@@ -86,12 +88,20 @@ public class DescribeCustomerGatewayResponse extends AcsResponse {
 		this.createTime = createTime;
 	}
 
-	public Integer getAsn() {
-		return this.asn;
+	public String getName() {
+		return this.name;
 	}
 
-	public void setAsn(Integer asn) {
-		this.asn = asn;
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getAuthKey() {
+		return this.authKey;
+	}
+
+	public void setAuthKey(String authKey) {
+		this.authKey = authKey;
 	}
 
 	@Override

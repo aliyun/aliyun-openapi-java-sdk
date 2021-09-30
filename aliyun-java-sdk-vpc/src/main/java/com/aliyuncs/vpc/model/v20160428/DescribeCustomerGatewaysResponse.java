@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeCustomerGatewaysResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer pageSize;
 
-	private Integer totalCount;
+	private String requestId;
 
 	private Integer pageNumber;
 
-	private Integer pageSize;
+	private Integer totalCount;
 
 	private List<CustomerGateway> customerGateways;
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class DescribeCustomerGatewaysResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
 	}
 
 	public Integer getPageNumber() {
@@ -59,12 +59,12 @@ public class DescribeCustomerGatewaysResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public Integer getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<CustomerGateway> getCustomerGateways() {
@@ -77,33 +77,19 @@ public class DescribeCustomerGatewaysResponse extends AcsResponse {
 
 	public static class CustomerGateway {
 
-		private String customerGatewayId;
-
-		private String name;
-
 		private String ipAddress;
+
+		private Long asn;
 
 		private String description;
 
+		private String customerGatewayId;
+
 		private Long createTime;
 
-		private Integer asn;
+		private String name;
 
-		public String getCustomerGatewayId() {
-			return this.customerGatewayId;
-		}
-
-		public void setCustomerGatewayId(String customerGatewayId) {
-			this.customerGatewayId = customerGatewayId;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
+		private String authKey;
 
 		public String getIpAddress() {
 			return this.ipAddress;
@@ -111,6 +97,14 @@ public class DescribeCustomerGatewaysResponse extends AcsResponse {
 
 		public void setIpAddress(String ipAddress) {
 			this.ipAddress = ipAddress;
+		}
+
+		public Long getAsn() {
+			return this.asn;
+		}
+
+		public void setAsn(Long asn) {
+			this.asn = asn;
 		}
 
 		public String getDescription() {
@@ -121,6 +115,14 @@ public class DescribeCustomerGatewaysResponse extends AcsResponse {
 			this.description = description;
 		}
 
+		public String getCustomerGatewayId() {
+			return this.customerGatewayId;
+		}
+
+		public void setCustomerGatewayId(String customerGatewayId) {
+			this.customerGatewayId = customerGatewayId;
+		}
+
 		public Long getCreateTime() {
 			return this.createTime;
 		}
@@ -129,12 +131,20 @@ public class DescribeCustomerGatewaysResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
-		public Integer getAsn() {
-			return this.asn;
+		public String getName() {
+			return this.name;
 		}
 
-		public void setAsn(Integer asn) {
-			this.asn = asn;
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getAuthKey() {
+			return this.authKey;
+		}
+
+		public void setAuthKey(String authKey) {
+			this.authKey = authKey;
 		}
 	}
 

@@ -27,55 +27,56 @@ public class DescribeVpnConnectionResponseUnmarshaller {
 	public static DescribeVpnConnectionResponse unmarshall(DescribeVpnConnectionResponse describeVpnConnectionResponse, UnmarshallerContext _ctx) {
 		
 		describeVpnConnectionResponse.setRequestId(_ctx.stringValue("DescribeVpnConnectionResponse.RequestId"));
-		describeVpnConnectionResponse.setVpnConnectionId(_ctx.stringValue("DescribeVpnConnectionResponse.VpnConnectionId"));
-		describeVpnConnectionResponse.setCustomerGatewayId(_ctx.stringValue("DescribeVpnConnectionResponse.CustomerGatewayId"));
-		describeVpnConnectionResponse.setVpnGatewayId(_ctx.stringValue("DescribeVpnConnectionResponse.VpnGatewayId"));
-		describeVpnConnectionResponse.setName(_ctx.stringValue("DescribeVpnConnectionResponse.Name"));
-		describeVpnConnectionResponse.setLocalSubnet(_ctx.stringValue("DescribeVpnConnectionResponse.LocalSubnet"));
-		describeVpnConnectionResponse.setRemoteSubnet(_ctx.stringValue("DescribeVpnConnectionResponse.RemoteSubnet"));
+		describeVpnConnectionResponse.setStatus(_ctx.stringValue("DescribeVpnConnectionResponse.Status"));
+		describeVpnConnectionResponse.setRemoteCaCertificate(_ctx.stringValue("DescribeVpnConnectionResponse.RemoteCaCertificate"));
+		describeVpnConnectionResponse.setEnableNatTraversal(_ctx.booleanValue("DescribeVpnConnectionResponse.EnableNatTraversal"));
 		describeVpnConnectionResponse.setCreateTime(_ctx.longValue("DescribeVpnConnectionResponse.CreateTime"));
 		describeVpnConnectionResponse.setEffectImmediately(_ctx.booleanValue("DescribeVpnConnectionResponse.EffectImmediately"));
-		describeVpnConnectionResponse.setStatus(_ctx.stringValue("DescribeVpnConnectionResponse.Status"));
+		describeVpnConnectionResponse.setVpnGatewayId(_ctx.stringValue("DescribeVpnConnectionResponse.VpnGatewayId"));
+		describeVpnConnectionResponse.setLocalSubnet(_ctx.stringValue("DescribeVpnConnectionResponse.LocalSubnet"));
+		describeVpnConnectionResponse.setVpnConnectionId(_ctx.stringValue("DescribeVpnConnectionResponse.VpnConnectionId"));
+		describeVpnConnectionResponse.setRemoteSubnet(_ctx.stringValue("DescribeVpnConnectionResponse.RemoteSubnet"));
+		describeVpnConnectionResponse.setCustomerGatewayId(_ctx.stringValue("DescribeVpnConnectionResponse.CustomerGatewayId"));
+		describeVpnConnectionResponse.setName(_ctx.stringValue("DescribeVpnConnectionResponse.Name"));
 		describeVpnConnectionResponse.setEnableDpd(_ctx.booleanValue("DescribeVpnConnectionResponse.EnableDpd"));
-		describeVpnConnectionResponse.setEnableNatTraversal(_ctx.booleanValue("DescribeVpnConnectionResponse.EnableNatTraversal"));
-		describeVpnConnectionResponse.setRemoteCaCertificate(_ctx.stringValue("DescribeVpnConnectionResponse.RemoteCaCertificate"));
 
 		IkeConfig ikeConfig = new IkeConfig();
-		ikeConfig.setPsk(_ctx.stringValue("DescribeVpnConnectionResponse.IkeConfig.Psk"));
-		ikeConfig.setIkeVersion(_ctx.stringValue("DescribeVpnConnectionResponse.IkeConfig.IkeVersion"));
-		ikeConfig.setIkeMode(_ctx.stringValue("DescribeVpnConnectionResponse.IkeConfig.IkeMode"));
-		ikeConfig.setIkeEncAlg(_ctx.stringValue("DescribeVpnConnectionResponse.IkeConfig.IkeEncAlg"));
-		ikeConfig.setIkeAuthAlg(_ctx.stringValue("DescribeVpnConnectionResponse.IkeConfig.IkeAuthAlg"));
-		ikeConfig.setIkePfs(_ctx.stringValue("DescribeVpnConnectionResponse.IkeConfig.IkePfs"));
-		ikeConfig.setIkeLifetime(_ctx.longValue("DescribeVpnConnectionResponse.IkeConfig.IkeLifetime"));
-		ikeConfig.setLocalId(_ctx.stringValue("DescribeVpnConnectionResponse.IkeConfig.LocalId"));
 		ikeConfig.setRemoteId(_ctx.stringValue("DescribeVpnConnectionResponse.IkeConfig.RemoteId"));
+		ikeConfig.setIkeLifetime(_ctx.longValue("DescribeVpnConnectionResponse.IkeConfig.IkeLifetime"));
+		ikeConfig.setIkeEncAlg(_ctx.stringValue("DescribeVpnConnectionResponse.IkeConfig.IkeEncAlg"));
+		ikeConfig.setLocalId(_ctx.stringValue("DescribeVpnConnectionResponse.IkeConfig.LocalId"));
+		ikeConfig.setIkeMode(_ctx.stringValue("DescribeVpnConnectionResponse.IkeConfig.IkeMode"));
+		ikeConfig.setIkeVersion(_ctx.stringValue("DescribeVpnConnectionResponse.IkeConfig.IkeVersion"));
+		ikeConfig.setIkePfs(_ctx.stringValue("DescribeVpnConnectionResponse.IkeConfig.IkePfs"));
+		ikeConfig.setPsk(_ctx.stringValue("DescribeVpnConnectionResponse.IkeConfig.Psk"));
+		ikeConfig.setIkeAuthAlg(_ctx.stringValue("DescribeVpnConnectionResponse.IkeConfig.IkeAuthAlg"));
 		describeVpnConnectionResponse.setIkeConfig(ikeConfig);
 
 		IpsecConfig ipsecConfig = new IpsecConfig();
-		ipsecConfig.setIpsecEncAlg(_ctx.stringValue("DescribeVpnConnectionResponse.IpsecConfig.IpsecEncAlg"));
 		ipsecConfig.setIpsecAuthAlg(_ctx.stringValue("DescribeVpnConnectionResponse.IpsecConfig.IpsecAuthAlg"));
-		ipsecConfig.setIpsecPfs(_ctx.stringValue("DescribeVpnConnectionResponse.IpsecConfig.IpsecPfs"));
 		ipsecConfig.setIpsecLifetime(_ctx.longValue("DescribeVpnConnectionResponse.IpsecConfig.IpsecLifetime"));
+		ipsecConfig.setIpsecEncAlg(_ctx.stringValue("DescribeVpnConnectionResponse.IpsecConfig.IpsecEncAlg"));
+		ipsecConfig.setIpsecPfs(_ctx.stringValue("DescribeVpnConnectionResponse.IpsecConfig.IpsecPfs"));
 		describeVpnConnectionResponse.setIpsecConfig(ipsecConfig);
 
 		VcoHealthCheck vcoHealthCheck = new VcoHealthCheck();
-		vcoHealthCheck.setEnable(_ctx.stringValue("DescribeVpnConnectionResponse.VcoHealthCheck.Enable"));
-		vcoHealthCheck.setSip(_ctx.stringValue("DescribeVpnConnectionResponse.VcoHealthCheck.Sip"));
+		vcoHealthCheck.setStatus(_ctx.stringValue("DescribeVpnConnectionResponse.VcoHealthCheck.Status"));
 		vcoHealthCheck.setDip(_ctx.stringValue("DescribeVpnConnectionResponse.VcoHealthCheck.Dip"));
 		vcoHealthCheck.setInterval(_ctx.integerValue("DescribeVpnConnectionResponse.VcoHealthCheck.Interval"));
 		vcoHealthCheck.setRetry(_ctx.integerValue("DescribeVpnConnectionResponse.VcoHealthCheck.Retry"));
-		vcoHealthCheck.setStatus(_ctx.stringValue("DescribeVpnConnectionResponse.VcoHealthCheck.Status"));
+		vcoHealthCheck.setSip(_ctx.stringValue("DescribeVpnConnectionResponse.VcoHealthCheck.Sip"));
+		vcoHealthCheck.setEnable(_ctx.stringValue("DescribeVpnConnectionResponse.VcoHealthCheck.Enable"));
 		describeVpnConnectionResponse.setVcoHealthCheck(vcoHealthCheck);
 
 		VpnBgpConfig vpnBgpConfig = new VpnBgpConfig();
-		vpnBgpConfig.setEnableBgp(_ctx.stringValue("DescribeVpnConnectionResponse.VpnBgpConfig.EnableBgp"));
-		vpnBgpConfig.setTunnelCidr(_ctx.stringValue("DescribeVpnConnectionResponse.VpnBgpConfig.TunnelCidr"));
-		vpnBgpConfig.setLocalBgpIp(_ctx.stringValue("DescribeVpnConnectionResponse.VpnBgpConfig.LocalBgpIp"));
-		vpnBgpConfig.setPeerBgpIp(_ctx.stringValue("DescribeVpnConnectionResponse.VpnBgpConfig.PeerBgpIp"));
-		vpnBgpConfig.setLocalAsn(_ctx.stringValue("DescribeVpnConnectionResponse.VpnBgpConfig.LocalAsn"));
-		vpnBgpConfig.setPeerAsn(_ctx.stringValue("DescribeVpnConnectionResponse.VpnBgpConfig.PeerAsn"));
 		vpnBgpConfig.setStatus(_ctx.stringValue("DescribeVpnConnectionResponse.VpnBgpConfig.Status"));
+		vpnBgpConfig.setPeerBgpIp(_ctx.stringValue("DescribeVpnConnectionResponse.VpnBgpConfig.PeerBgpIp"));
+		vpnBgpConfig.setTunnelCidr(_ctx.stringValue("DescribeVpnConnectionResponse.VpnBgpConfig.TunnelCidr"));
+		vpnBgpConfig.setEnableBgp(_ctx.stringValue("DescribeVpnConnectionResponse.VpnBgpConfig.EnableBgp"));
+		vpnBgpConfig.setLocalBgpIp(_ctx.stringValue("DescribeVpnConnectionResponse.VpnBgpConfig.LocalBgpIp"));
+		vpnBgpConfig.setPeerAsn(_ctx.longValue("DescribeVpnConnectionResponse.VpnBgpConfig.PeerAsn"));
+		vpnBgpConfig.setLocalAsn(_ctx.longValue("DescribeVpnConnectionResponse.VpnBgpConfig.LocalAsn"));
+		vpnBgpConfig.setAuthKey(_ctx.stringValue("DescribeVpnConnectionResponse.VpnBgpConfig.AuthKey"));
 		describeVpnConnectionResponse.setVpnBgpConfig(vpnBgpConfig);
 	 
 	 	return describeVpnConnectionResponse;

@@ -31,6 +31,8 @@ public class DescribeEipAddressesRequest extends RpcAcsRequest<DescribeEipAddres
 
 	private String iSP;
 
+	private String eipName;
+
 	private String allocationId;
 
 	private Boolean includeReservationData;
@@ -107,6 +109,17 @@ public class DescribeEipAddressesRequest extends RpcAcsRequest<DescribeEipAddres
 		this.iSP = iSP;
 		if(iSP != null){
 			putQueryParameter("ISP", iSP);
+		}
+	}
+
+	public String getEipName() {
+		return this.eipName;
+	}
+
+	public void setEipName(String eipName) {
+		this.eipName = eipName;
+		if(eipName != null){
+			putQueryParameter("EipName", eipName);
 		}
 	}
 

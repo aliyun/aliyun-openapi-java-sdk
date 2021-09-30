@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeNatGatewaysResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer pageSize;
 
-	private Integer totalCount;
+	private String requestId;
 
 	private Integer pageNumber;
 
-	private Integer pageSize;
+	private Integer totalCount;
 
 	private List<NatGateway> natGateways;
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class DescribeNatGatewaysResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
 	}
 
 	public Integer getPageNumber() {
@@ -59,12 +59,12 @@ public class DescribeNatGatewaysResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public Integer getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<NatGateway> getNatGateways() {
@@ -77,39 +77,45 @@ public class DescribeNatGatewaysResponse extends AcsResponse {
 
 	public static class NatGateway {
 
-		private String natGatewayId;
-
-		private String regionId;
-
-		private String name;
-
-		private String description;
-
-		private String vpcId;
-
-		private String spec;
-
-		private String instanceChargeType;
-
-		private String expiredTime;
-
-		private Boolean autoPay;
-
-		private String businessStatus;
+		private String status;
 
 		private String creationTime;
 
-		private String status;
+		private String vpcId;
 
 		private String natType;
 
-		private String internetChargeType;
+		private Boolean autoPay;
 
-		private String resourceGroupId;
+		private String spec;
 
 		private Boolean deletionProtection;
 
+		private String networkType;
+
+		private Boolean securityProtectionEnabled;
+
+		private String instanceChargeType;
+
+		private String regionId;
+
 		private Boolean ecsMetricEnabled;
+
+		private Boolean icmpReplyEnabled;
+
+		private String description;
+
+		private String expiredTime;
+
+		private String resourceGroupId;
+
+		private String natGatewayId;
+
+		private String internetChargeType;
+
+		private String businessStatus;
+
+		private String name;
 
 		private List<IpList> ipLists;
 
@@ -121,84 +127,12 @@ public class DescribeNatGatewaysResponse extends AcsResponse {
 
 		private NatGatewayPrivateInfo natGatewayPrivateInfo;
 
-		public String getNatGatewayId() {
-			return this.natGatewayId;
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setNatGatewayId(String natGatewayId) {
-			this.natGatewayId = natGatewayId;
-		}
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
-		public String getVpcId() {
-			return this.vpcId;
-		}
-
-		public void setVpcId(String vpcId) {
-			this.vpcId = vpcId;
-		}
-
-		public String getSpec() {
-			return this.spec;
-		}
-
-		public void setSpec(String spec) {
-			this.spec = spec;
-		}
-
-		public String getInstanceChargeType() {
-			return this.instanceChargeType;
-		}
-
-		public void setInstanceChargeType(String instanceChargeType) {
-			this.instanceChargeType = instanceChargeType;
-		}
-
-		public String getExpiredTime() {
-			return this.expiredTime;
-		}
-
-		public void setExpiredTime(String expiredTime) {
-			this.expiredTime = expiredTime;
-		}
-
-		public Boolean getAutoPay() {
-			return this.autoPay;
-		}
-
-		public void setAutoPay(Boolean autoPay) {
-			this.autoPay = autoPay;
-		}
-
-		public String getBusinessStatus() {
-			return this.businessStatus;
-		}
-
-		public void setBusinessStatus(String businessStatus) {
-			this.businessStatus = businessStatus;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public String getCreationTime() {
@@ -209,12 +143,12 @@ public class DescribeNatGatewaysResponse extends AcsResponse {
 			this.creationTime = creationTime;
 		}
 
-		public String getStatus() {
-			return this.status;
+		public String getVpcId() {
+			return this.vpcId;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
+		public void setVpcId(String vpcId) {
+			this.vpcId = vpcId;
 		}
 
 		public String getNatType() {
@@ -225,20 +159,20 @@ public class DescribeNatGatewaysResponse extends AcsResponse {
 			this.natType = natType;
 		}
 
-		public String getInternetChargeType() {
-			return this.internetChargeType;
+		public Boolean getAutoPay() {
+			return this.autoPay;
 		}
 
-		public void setInternetChargeType(String internetChargeType) {
-			this.internetChargeType = internetChargeType;
+		public void setAutoPay(Boolean autoPay) {
+			this.autoPay = autoPay;
 		}
 
-		public String getResourceGroupId() {
-			return this.resourceGroupId;
+		public String getSpec() {
+			return this.spec;
 		}
 
-		public void setResourceGroupId(String resourceGroupId) {
-			this.resourceGroupId = resourceGroupId;
+		public void setSpec(String spec) {
+			this.spec = spec;
 		}
 
 		public Boolean getDeletionProtection() {
@@ -249,12 +183,108 @@ public class DescribeNatGatewaysResponse extends AcsResponse {
 			this.deletionProtection = deletionProtection;
 		}
 
+		public String getNetworkType() {
+			return this.networkType;
+		}
+
+		public void setNetworkType(String networkType) {
+			this.networkType = networkType;
+		}
+
+		public Boolean getSecurityProtectionEnabled() {
+			return this.securityProtectionEnabled;
+		}
+
+		public void setSecurityProtectionEnabled(Boolean securityProtectionEnabled) {
+			this.securityProtectionEnabled = securityProtectionEnabled;
+		}
+
+		public String getInstanceChargeType() {
+			return this.instanceChargeType;
+		}
+
+		public void setInstanceChargeType(String instanceChargeType) {
+			this.instanceChargeType = instanceChargeType;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
 		public Boolean getEcsMetricEnabled() {
 			return this.ecsMetricEnabled;
 		}
 
 		public void setEcsMetricEnabled(Boolean ecsMetricEnabled) {
 			this.ecsMetricEnabled = ecsMetricEnabled;
+		}
+
+		public Boolean getIcmpReplyEnabled() {
+			return this.icmpReplyEnabled;
+		}
+
+		public void setIcmpReplyEnabled(Boolean icmpReplyEnabled) {
+			this.icmpReplyEnabled = icmpReplyEnabled;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getExpiredTime() {
+			return this.expiredTime;
+		}
+
+		public void setExpiredTime(String expiredTime) {
+			this.expiredTime = expiredTime;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
+		public String getNatGatewayId() {
+			return this.natGatewayId;
+		}
+
+		public void setNatGatewayId(String natGatewayId) {
+			this.natGatewayId = natGatewayId;
+		}
+
+		public String getInternetChargeType() {
+			return this.internetChargeType;
+		}
+
+		public void setInternetChargeType(String internetChargeType) {
+			this.internetChargeType = internetChargeType;
+		}
+
+		public String getBusinessStatus() {
+			return this.businessStatus;
+		}
+
+		public void setBusinessStatus(String businessStatus) {
+			this.businessStatus = businessStatus;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
 		}
 
 		public List<IpList> getIpLists() {
@@ -299,24 +329,24 @@ public class DescribeNatGatewaysResponse extends AcsResponse {
 
 		public static class IpList {
 
-			private String allocationId;
+			private String usingStatus;
 
 			private String ipAddress;
 
-			private String usingStatus;
+			private Boolean snatEntryEnabled;
+
+			private String allocationId;
 
 			private Boolean apAccessEnabled;
 
-			private Boolean snatEntryEnabled;
-
 			private String privateIpAddress;
 
-			public String getAllocationId() {
-				return this.allocationId;
+			public String getUsingStatus() {
+				return this.usingStatus;
 			}
 
-			public void setAllocationId(String allocationId) {
-				this.allocationId = allocationId;
+			public void setUsingStatus(String usingStatus) {
+				this.usingStatus = usingStatus;
 			}
 
 			public String getIpAddress() {
@@ -327,12 +357,20 @@ public class DescribeNatGatewaysResponse extends AcsResponse {
 				this.ipAddress = ipAddress;
 			}
 
-			public String getUsingStatus() {
-				return this.usingStatus;
+			public Boolean getSnatEntryEnabled() {
+				return this.snatEntryEnabled;
 			}
 
-			public void setUsingStatus(String usingStatus) {
-				this.usingStatus = usingStatus;
+			public void setSnatEntryEnabled(Boolean snatEntryEnabled) {
+				this.snatEntryEnabled = snatEntryEnabled;
+			}
+
+			public String getAllocationId() {
+				return this.allocationId;
+			}
+
+			public void setAllocationId(String allocationId) {
+				this.allocationId = allocationId;
 			}
 
 			public Boolean getApAccessEnabled() {
@@ -341,14 +379,6 @@ public class DescribeNatGatewaysResponse extends AcsResponse {
 
 			public void setApAccessEnabled(Boolean apAccessEnabled) {
 				this.apAccessEnabled = apAccessEnabled;
-			}
-
-			public Boolean getSnatEntryEnabled() {
-				return this.snatEntryEnabled;
-			}
-
-			public void setSnatEntryEnabled(Boolean snatEntryEnabled) {
-				this.snatEntryEnabled = snatEntryEnabled;
 			}
 
 			public String getPrivateIpAddress() {
@@ -362,17 +392,25 @@ public class DescribeNatGatewaysResponse extends AcsResponse {
 
 		public static class NatGatewayPrivateInfo {
 
-			private String eniInstanceId;
-
-			private String privateIpAddress;
-
 			private String vswitchId;
 
-			private String izNo;
+			private String eniInstanceId;
 
 			private Integer maxBandwidth;
 
+			private String privateIpAddress;
+
+			private String izNo;
+
 			private String eniType;
+
+			public String getVswitchId() {
+				return this.vswitchId;
+			}
+
+			public void setVswitchId(String vswitchId) {
+				this.vswitchId = vswitchId;
+			}
 
 			public String getEniInstanceId() {
 				return this.eniInstanceId;
@@ -380,6 +418,14 @@ public class DescribeNatGatewaysResponse extends AcsResponse {
 
 			public void setEniInstanceId(String eniInstanceId) {
 				this.eniInstanceId = eniInstanceId;
+			}
+
+			public Integer getMaxBandwidth() {
+				return this.maxBandwidth;
+			}
+
+			public void setMaxBandwidth(Integer maxBandwidth) {
+				this.maxBandwidth = maxBandwidth;
 			}
 
 			public String getPrivateIpAddress() {
@@ -390,28 +436,12 @@ public class DescribeNatGatewaysResponse extends AcsResponse {
 				this.privateIpAddress = privateIpAddress;
 			}
 
-			public String getVswitchId() {
-				return this.vswitchId;
-			}
-
-			public void setVswitchId(String vswitchId) {
-				this.vswitchId = vswitchId;
-			}
-
 			public String getIzNo() {
 				return this.izNo;
 			}
 
 			public void setIzNo(String izNo) {
 				this.izNo = izNo;
-			}
-
-			public Integer getMaxBandwidth() {
-				return this.maxBandwidth;
-			}
-
-			public void setMaxBandwidth(Integer maxBandwidth) {
-				this.maxBandwidth = maxBandwidth;
 			}
 
 			public String getEniType() {

@@ -25,31 +25,33 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetNatGatewayAttributeResponse extends AcsResponse {
 
+	private String vpcId;
+
+	private String creationTime;
+
+	private String status;
+
+	private String natType;
+
+	private String networkType;
+
+	private String regionId;
+
+	private Boolean ecsMetricEnabled;
+
 	private String requestId;
 
 	private String description;
 
-	private String natType;
+	private String expiredTime;
 
-	private Boolean ecsMetricEnabled;
-
-	private String vpcId;
+	private String resourceGroupId;
 
 	private String natGatewayId;
 
-	private String creationTime;
-
-	private String expiredTime;
-
-	private String name;
-
-	private String status;
-
 	private String businessStatus;
 
-	private String regionId;
-
-	private String resourceGroupId;
+	private String name;
 
 	private List<IpListItem> ipList;
 
@@ -62,6 +64,62 @@ public class GetNatGatewayAttributeResponse extends AcsResponse {
 	private PrivateInfo privateInfo;
 
 	private DeletionProtectionInfo deletionProtectionInfo;
+
+	public String getVpcId() {
+		return this.vpcId;
+	}
+
+	public void setVpcId(String vpcId) {
+		this.vpcId = vpcId;
+	}
+
+	public String getCreationTime() {
+		return this.creationTime;
+	}
+
+	public void setCreationTime(String creationTime) {
+		this.creationTime = creationTime;
+	}
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	public String getNatType() {
+		return this.natType;
+	}
+
+	public void setNatType(String natType) {
+		this.natType = natType;
+	}
+
+	public String getNetworkType() {
+		return this.networkType;
+	}
+
+	public void setNetworkType(String networkType) {
+		this.networkType = networkType;
+	}
+
+	public String getRegionId() {
+		return this.regionId;
+	}
+
+	public void setRegionId(String regionId) {
+		this.regionId = regionId;
+	}
+
+	public Boolean getEcsMetricEnabled() {
+		return this.ecsMetricEnabled;
+	}
+
+	public void setEcsMetricEnabled(Boolean ecsMetricEnabled) {
+		this.ecsMetricEnabled = ecsMetricEnabled;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -79,28 +137,20 @@ public class GetNatGatewayAttributeResponse extends AcsResponse {
 		this.description = description;
 	}
 
-	public String getNatType() {
-		return this.natType;
+	public String getExpiredTime() {
+		return this.expiredTime;
 	}
 
-	public void setNatType(String natType) {
-		this.natType = natType;
+	public void setExpiredTime(String expiredTime) {
+		this.expiredTime = expiredTime;
 	}
 
-	public Boolean getEcsMetricEnabled() {
-		return this.ecsMetricEnabled;
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
 	}
 
-	public void setEcsMetricEnabled(Boolean ecsMetricEnabled) {
-		this.ecsMetricEnabled = ecsMetricEnabled;
-	}
-
-	public String getVpcId() {
-		return this.vpcId;
-	}
-
-	public void setVpcId(String vpcId) {
-		this.vpcId = vpcId;
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
 	}
 
 	public String getNatGatewayId() {
@@ -111,38 +161,6 @@ public class GetNatGatewayAttributeResponse extends AcsResponse {
 		this.natGatewayId = natGatewayId;
 	}
 
-	public String getCreationTime() {
-		return this.creationTime;
-	}
-
-	public void setCreationTime(String creationTime) {
-		this.creationTime = creationTime;
-	}
-
-	public String getExpiredTime() {
-		return this.expiredTime;
-	}
-
-	public void setExpiredTime(String expiredTime) {
-		this.expiredTime = expiredTime;
-	}
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-	}
-
 	public String getBusinessStatus() {
 		return this.businessStatus;
 	}
@@ -151,20 +169,12 @@ public class GetNatGatewayAttributeResponse extends AcsResponse {
 		this.businessStatus = businessStatus;
 	}
 
-	public String getRegionId() {
-		return this.regionId;
+	public String getName() {
+		return this.name;
 	}
 
-	public void setRegionId(String regionId) {
-		this.regionId = regionId;
-	}
-
-	public String getResourceGroupId() {
-		return this.resourceGroupId;
-	}
-
-	public void setResourceGroupId(String resourceGroupId) {
-		this.resourceGroupId = resourceGroupId;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public List<IpListItem> getIpList() {
@@ -217,11 +227,19 @@ public class GetNatGatewayAttributeResponse extends AcsResponse {
 
 	public static class IpListItem {
 
+		private String usingStatus;
+
 		private String ipAddress;
 
 		private String allocationId;
 
-		private String usingStatus;
+		public String getUsingStatus() {
+			return this.usingStatus;
+		}
+
+		public void setUsingStatus(String usingStatus) {
+			this.usingStatus = usingStatus;
+		}
 
 		public String getIpAddress() {
 			return this.ipAddress;
@@ -237,14 +255,6 @@ public class GetNatGatewayAttributeResponse extends AcsResponse {
 
 		public void setAllocationId(String allocationId) {
 			this.allocationId = allocationId;
-		}
-
-		public String getUsingStatus() {
-			return this.usingStatus;
-		}
-
-		public void setUsingStatus(String usingStatus) {
-			this.usingStatus = usingStatus;
 		}
 	}
 
@@ -273,17 +283,9 @@ public class GetNatGatewayAttributeResponse extends AcsResponse {
 
 	public static class SnatTable {
 
-		private String snatTableId;
-
 		private Integer snatEntryCount;
 
-		public String getSnatTableId() {
-			return this.snatTableId;
-		}
-
-		public void setSnatTableId(String snatTableId) {
-			this.snatTableId = snatTableId;
-		}
+		private String snatTableId;
 
 		public Integer getSnatEntryCount() {
 			return this.snatEntryCount;
@@ -292,25 +294,25 @@ public class GetNatGatewayAttributeResponse extends AcsResponse {
 		public void setSnatEntryCount(Integer snatEntryCount) {
 			this.snatEntryCount = snatEntryCount;
 		}
+
+		public String getSnatTableId() {
+			return this.snatTableId;
+		}
+
+		public void setSnatTableId(String snatTableId) {
+			this.snatTableId = snatTableId;
+		}
 	}
 
 	public static class BillingConfig {
 
-		private String spec;
-
 		private String internetChargeType;
-
-		private String instanceChargeType;
 
 		private String autoPay;
 
-		public String getSpec() {
-			return this.spec;
-		}
+		private String spec;
 
-		public void setSpec(String spec) {
-			this.spec = spec;
-		}
+		private String instanceChargeType;
 
 		public String getInternetChargeType() {
 			return this.internetChargeType;
@@ -320,14 +322,6 @@ public class GetNatGatewayAttributeResponse extends AcsResponse {
 			this.internetChargeType = internetChargeType;
 		}
 
-		public String getInstanceChargeType() {
-			return this.instanceChargeType;
-		}
-
-		public void setInstanceChargeType(String instanceChargeType) {
-			this.instanceChargeType = instanceChargeType;
-		}
-
 		public String getAutoPay() {
 			return this.autoPay;
 		}
@@ -335,35 +329,35 @@ public class GetNatGatewayAttributeResponse extends AcsResponse {
 		public void setAutoPay(String autoPay) {
 			this.autoPay = autoPay;
 		}
+
+		public String getSpec() {
+			return this.spec;
+		}
+
+		public void setSpec(String spec) {
+			this.spec = spec;
+		}
+
+		public String getInstanceChargeType() {
+			return this.instanceChargeType;
+		}
+
+		public void setInstanceChargeType(String instanceChargeType) {
+			this.instanceChargeType = instanceChargeType;
+		}
 	}
 
 	public static class PrivateInfo {
 
-		private String eniInstanceId;
-
-		private String izNo;
-
 		private Integer maxBandwidth;
-
-		private String privateIpAddress;
 
 		private String vswitchId;
 
-		public String getEniInstanceId() {
-			return this.eniInstanceId;
-		}
+		private String privateIpAddress;
 
-		public void setEniInstanceId(String eniInstanceId) {
-			this.eniInstanceId = eniInstanceId;
-		}
+		private String izNo;
 
-		public String getIzNo() {
-			return this.izNo;
-		}
-
-		public void setIzNo(String izNo) {
-			this.izNo = izNo;
-		}
+		private String eniInstanceId;
 
 		public Integer getMaxBandwidth() {
 			return this.maxBandwidth;
@@ -371,6 +365,14 @@ public class GetNatGatewayAttributeResponse extends AcsResponse {
 
 		public void setMaxBandwidth(Integer maxBandwidth) {
 			this.maxBandwidth = maxBandwidth;
+		}
+
+		public String getVswitchId() {
+			return this.vswitchId;
+		}
+
+		public void setVswitchId(String vswitchId) {
+			this.vswitchId = vswitchId;
 		}
 
 		public String getPrivateIpAddress() {
@@ -381,12 +383,20 @@ public class GetNatGatewayAttributeResponse extends AcsResponse {
 			this.privateIpAddress = privateIpAddress;
 		}
 
-		public String getVswitchId() {
-			return this.vswitchId;
+		public String getIzNo() {
+			return this.izNo;
 		}
 
-		public void setVswitchId(String vswitchId) {
-			this.vswitchId = vswitchId;
+		public void setIzNo(String izNo) {
+			this.izNo = izNo;
+		}
+
+		public String getEniInstanceId() {
+			return this.eniInstanceId;
+		}
+
+		public void setEniInstanceId(String eniInstanceId) {
+			this.eniInstanceId = eniInstanceId;
 		}
 	}
 

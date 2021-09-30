@@ -27,6 +27,8 @@ public class DescribeNatGatewaysRequest extends RpcAcsRequest<DescribeNatGateway
 
 	private Long resourceOwnerId;
 
+	private String networkType;
+
 	private String spec;
 
 	private Integer pageNumber;
@@ -71,6 +73,17 @@ public class DescribeNatGatewaysRequest extends RpcAcsRequest<DescribeNatGateway
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getNetworkType() {
+		return this.networkType;
+	}
+
+	public void setNetworkType(String networkType) {
+		this.networkType = networkType;
+		if(networkType != null){
+			putQueryParameter("NetworkType", networkType);
 		}
 	}
 

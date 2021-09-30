@@ -139,6 +139,8 @@ public class DescribeVirtualBorderRoutersResponse extends AcsResponse {
 
 		private String cloudBoxInstanceId;
 
+		private String pConnVbrChargeType;
+
 		private List<AssociatedPhysicalConnection> associatedPhysicalConnections;
 
 		private List<AssociatedCen> associatedCens;
@@ -389,6 +391,14 @@ public class DescribeVirtualBorderRoutersResponse extends AcsResponse {
 
 		public void setCloudBoxInstanceId(String cloudBoxInstanceId) {
 			this.cloudBoxInstanceId = cloudBoxInstanceId;
+		}
+
+		public String getPConnVbrChargeType() {
+			return this.pConnVbrChargeType;
+		}
+
+		public void setPConnVbrChargeType(String pConnVbrChargeType) {
+			this.pConnVbrChargeType = pConnVbrChargeType;
 		}
 
 		public List<AssociatedPhysicalConnection> getAssociatedPhysicalConnections() {

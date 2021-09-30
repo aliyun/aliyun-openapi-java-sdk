@@ -29,11 +29,17 @@ public class CreateNatGatewayRequest extends RpcAcsRequest<CreateNatGatewayRespo
 
 	private String clientToken;
 
+	private Boolean securityProtectionEnabled;
+
 	private String description;
+
+	private String networkType;
 
 	private String spec;
 
 	private String duration;
+
+	private Boolean icmpReplyEnabled;
 
 	private String natType;
 
@@ -87,6 +93,17 @@ public class CreateNatGatewayRequest extends RpcAcsRequest<CreateNatGatewayRespo
 		}
 	}
 
+	public Boolean getSecurityProtectionEnabled() {
+		return this.securityProtectionEnabled;
+	}
+
+	public void setSecurityProtectionEnabled(Boolean securityProtectionEnabled) {
+		this.securityProtectionEnabled = securityProtectionEnabled;
+		if(securityProtectionEnabled != null){
+			putQueryParameter("SecurityProtectionEnabled", securityProtectionEnabled.toString());
+		}
+	}
+
 	public String getDescription() {
 		return this.description;
 	}
@@ -95,6 +112,17 @@ public class CreateNatGatewayRequest extends RpcAcsRequest<CreateNatGatewayRespo
 		this.description = description;
 		if(description != null){
 			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getNetworkType() {
+		return this.networkType;
+	}
+
+	public void setNetworkType(String networkType) {
+		this.networkType = networkType;
+		if(networkType != null){
+			putQueryParameter("NetworkType", networkType);
 		}
 	}
 
@@ -117,6 +145,17 @@ public class CreateNatGatewayRequest extends RpcAcsRequest<CreateNatGatewayRespo
 		this.duration = duration;
 		if(duration != null){
 			putQueryParameter("Duration", duration);
+		}
+	}
+
+	public Boolean getIcmpReplyEnabled() {
+		return this.icmpReplyEnabled;
+	}
+
+	public void setIcmpReplyEnabled(Boolean icmpReplyEnabled) {
+		this.icmpReplyEnabled = icmpReplyEnabled;
+		if(icmpReplyEnabled != null){
+			putQueryParameter("IcmpReplyEnabled", icmpReplyEnabled.toString());
 		}
 	}
 

@@ -23,11 +23,11 @@ public class CreateCustomerGatewayResponseUnmarshaller {
 	public static CreateCustomerGatewayResponse unmarshall(CreateCustomerGatewayResponse createCustomerGatewayResponse, UnmarshallerContext _ctx) {
 		
 		createCustomerGatewayResponse.setRequestId(_ctx.stringValue("CreateCustomerGatewayResponse.RequestId"));
-		createCustomerGatewayResponse.setCustomerGatewayId(_ctx.stringValue("CreateCustomerGatewayResponse.CustomerGatewayId"));
 		createCustomerGatewayResponse.setIpAddress(_ctx.stringValue("CreateCustomerGatewayResponse.IpAddress"));
-		createCustomerGatewayResponse.setName(_ctx.stringValue("CreateCustomerGatewayResponse.Name"));
 		createCustomerGatewayResponse.setDescription(_ctx.stringValue("CreateCustomerGatewayResponse.Description"));
+		createCustomerGatewayResponse.setCustomerGatewayId(_ctx.stringValue("CreateCustomerGatewayResponse.CustomerGatewayId"));
 		createCustomerGatewayResponse.setCreateTime(_ctx.longValue("CreateCustomerGatewayResponse.CreateTime"));
+		createCustomerGatewayResponse.setName(_ctx.stringValue("CreateCustomerGatewayResponse.Name"));
 	 
 	 	return createCustomerGatewayResponse;
 	}

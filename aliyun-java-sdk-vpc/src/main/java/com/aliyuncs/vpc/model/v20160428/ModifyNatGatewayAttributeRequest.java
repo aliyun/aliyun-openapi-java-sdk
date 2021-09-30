@@ -29,6 +29,8 @@ public class ModifyNatGatewayAttributeRequest extends RpcAcsRequest<ModifyNatGat
 
 	private String description;
 
+	private Boolean icmpReplyEnabled;
+
 	private String natGatewayId;
 
 	private String resourceOwnerAccount;
@@ -66,6 +68,17 @@ public class ModifyNatGatewayAttributeRequest extends RpcAcsRequest<ModifyNatGat
 		this.description = description;
 		if(description != null){
 			putQueryParameter("Description", description);
+		}
+	}
+
+	public Boolean getIcmpReplyEnabled() {
+		return this.icmpReplyEnabled;
+	}
+
+	public void setIcmpReplyEnabled(Boolean icmpReplyEnabled) {
+		this.icmpReplyEnabled = icmpReplyEnabled;
+		if(icmpReplyEnabled != null){
+			putQueryParameter("IcmpReplyEnabled", icmpReplyEnabled.toString());
 		}
 	}
 

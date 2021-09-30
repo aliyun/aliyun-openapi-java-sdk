@@ -27,6 +27,8 @@ public class CreateCustomerGatewayRequest extends RpcAcsRequest<CreateCustomerGa
 
 	private String ipAddress;
 
+	private String authKey;
+
 	private Long resourceOwnerId;
 
 	private String clientToken;
@@ -59,6 +61,17 @@ public class CreateCustomerGatewayRequest extends RpcAcsRequest<CreateCustomerGa
 		this.ipAddress = ipAddress;
 		if(ipAddress != null){
 			putQueryParameter("IpAddress", ipAddress);
+		}
+	}
+
+	public String getAuthKey() {
+		return this.authKey;
+	}
+
+	public void setAuthKey(String authKey) {
+		this.authKey = authKey;
+		if(authKey != null){
+			putQueryParameter("AuthKey", authKey);
 		}
 	}
 

@@ -23,12 +23,13 @@ public class DescribeCustomerGatewayResponseUnmarshaller {
 	public static DescribeCustomerGatewayResponse unmarshall(DescribeCustomerGatewayResponse describeCustomerGatewayResponse, UnmarshallerContext _ctx) {
 		
 		describeCustomerGatewayResponse.setRequestId(_ctx.stringValue("DescribeCustomerGatewayResponse.RequestId"));
-		describeCustomerGatewayResponse.setCustomerGatewayId(_ctx.stringValue("DescribeCustomerGatewayResponse.CustomerGatewayId"));
+		describeCustomerGatewayResponse.setAsn(_ctx.longValue("DescribeCustomerGatewayResponse.Asn"));
 		describeCustomerGatewayResponse.setIpAddress(_ctx.stringValue("DescribeCustomerGatewayResponse.IpAddress"));
-		describeCustomerGatewayResponse.setName(_ctx.stringValue("DescribeCustomerGatewayResponse.Name"));
 		describeCustomerGatewayResponse.setDescription(_ctx.stringValue("DescribeCustomerGatewayResponse.Description"));
+		describeCustomerGatewayResponse.setCustomerGatewayId(_ctx.stringValue("DescribeCustomerGatewayResponse.CustomerGatewayId"));
 		describeCustomerGatewayResponse.setCreateTime(_ctx.longValue("DescribeCustomerGatewayResponse.CreateTime"));
-		describeCustomerGatewayResponse.setAsn(_ctx.integerValue("DescribeCustomerGatewayResponse.Asn"));
+		describeCustomerGatewayResponse.setName(_ctx.stringValue("DescribeCustomerGatewayResponse.Name"));
+		describeCustomerGatewayResponse.setAuthKey(_ctx.stringValue("DescribeCustomerGatewayResponse.AuthKey"));
 	 
 	 	return describeCustomerGatewayResponse;
 	}

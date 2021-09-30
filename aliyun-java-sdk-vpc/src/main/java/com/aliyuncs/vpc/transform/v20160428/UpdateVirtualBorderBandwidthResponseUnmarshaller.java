@@ -23,10 +23,10 @@ public class UpdateVirtualBorderBandwidthResponseUnmarshaller {
 	public static UpdateVirtualBorderBandwidthResponse unmarshall(UpdateVirtualBorderBandwidthResponse updateVirtualBorderBandwidthResponse, UnmarshallerContext _ctx) {
 		
 		updateVirtualBorderBandwidthResponse.setRequestId(_ctx.stringValue("UpdateVirtualBorderBandwidthResponse.RequestId"));
-		updateVirtualBorderBandwidthResponse.setSuccess(_ctx.booleanValue("UpdateVirtualBorderBandwidthResponse.Success"));
+		updateVirtualBorderBandwidthResponse.setCode(_ctx.stringValue("UpdateVirtualBorderBandwidthResponse.Code"));
 		updateVirtualBorderBandwidthResponse.setHttpStatusCode(_ctx.stringValue("UpdateVirtualBorderBandwidthResponse.HttpStatusCode"));
 		updateVirtualBorderBandwidthResponse.setMessage(_ctx.stringValue("UpdateVirtualBorderBandwidthResponse.Message"));
-		updateVirtualBorderBandwidthResponse.setCode(_ctx.stringValue("UpdateVirtualBorderBandwidthResponse.Code"));
+		updateVirtualBorderBandwidthResponse.setSuccess(_ctx.booleanValue("UpdateVirtualBorderBandwidthResponse.Success"));
 	 
 	 	return updateVirtualBorderBandwidthResponse;
 	}

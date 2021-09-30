@@ -67,6 +67,7 @@ public class DescribeVirtualBorderRoutersResponseUnmarshaller {
 			virtualBorderRouterType.setPeeringIpv6SubnetMask(_ctx.stringValue("DescribeVirtualBorderRoutersResponse.VirtualBorderRouterSet["+ i +"].PeeringIpv6SubnetMask"));
 			virtualBorderRouterType.setEnableIpv6(_ctx.booleanValue("DescribeVirtualBorderRoutersResponse.VirtualBorderRouterSet["+ i +"].EnableIpv6"));
 			virtualBorderRouterType.setCloudBoxInstanceId(_ctx.stringValue("DescribeVirtualBorderRoutersResponse.VirtualBorderRouterSet["+ i +"].CloudBoxInstanceId"));
+			virtualBorderRouterType.setPConnVbrChargeType(_ctx.stringValue("DescribeVirtualBorderRoutersResponse.VirtualBorderRouterSet["+ i +"].PConnVbrChargeType"));
 
 			List<AssociatedPhysicalConnection> associatedPhysicalConnections = new ArrayList<AssociatedPhysicalConnection>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeVirtualBorderRoutersResponse.VirtualBorderRouterSet["+ i +"].AssociatedPhysicalConnections.Length"); j++) {

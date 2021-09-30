@@ -24,30 +24,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class UpdateVirtualBorderBandwidthResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
+	private String code;
 
 	private String httpStatusCode;
 
 	private String message;
 
-	private String code;
+	private String requestId;
 
-	public String getRequestId() {
-		return this.requestId;
+	private Boolean success;
+
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public String getHttpStatusCode() {
@@ -66,12 +58,20 @@ public class UpdateVirtualBorderBandwidthResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getCode() {
-		return this.code;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	@Override
