@@ -22,20 +22,16 @@ import com.aliyuncs.scdn.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeScdnDomainConfigsRequest extends RpcAcsRequest<DescribeScdnDomainConfigsResponse> {
+public class BatchStopScdnDomainRequest extends RpcAcsRequest<BatchStopScdnDomainResponse> {
 	   
 
-	private String functionNames;
-
-	private String domainName;
+	private String domainNames;
 
 	private Long ownerId;
 
 	private String securityToken;
-
-	private String configId;
-	public DescribeScdnDomainConfigsRequest() {
-		super("scdn", "2017-11-15", "DescribeScdnDomainConfigs");
+	public BatchStopScdnDomainRequest() {
+		super("scdn", "2017-11-15", "BatchStopScdnDomain");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -43,25 +39,14 @@ public class DescribeScdnDomainConfigsRequest extends RpcAcsRequest<DescribeScdn
 		} catch (Exception e) {}
 	}
 
-	public String getFunctionNames() {
-		return this.functionNames;
+	public String getDomainNames() {
+		return this.domainNames;
 	}
 
-	public void setFunctionNames(String functionNames) {
-		this.functionNames = functionNames;
-		if(functionNames != null){
-			putQueryParameter("FunctionNames", functionNames);
-		}
-	}
-
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		if(domainName != null){
-			putQueryParameter("DomainName", domainName);
+	public void setDomainNames(String domainNames) {
+		this.domainNames = domainNames;
+		if(domainNames != null){
+			putQueryParameter("DomainNames", domainNames);
 		}
 	}
 
@@ -87,20 +72,9 @@ public class DescribeScdnDomainConfigsRequest extends RpcAcsRequest<DescribeScdn
 		}
 	}
 
-	public String getConfigId() {
-		return this.configId;
-	}
-
-	public void setConfigId(String configId) {
-		this.configId = configId;
-		if(configId != null){
-			putQueryParameter("ConfigId", configId);
-		}
-	}
-
 	@Override
-	public Class<DescribeScdnDomainConfigsResponse> getResponseClass() {
-		return DescribeScdnDomainConfigsResponse.class;
+	public Class<BatchStopScdnDomainResponse> getResponseClass() {
+		return BatchStopScdnDomainResponse.class;
 	}
 
 }

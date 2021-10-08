@@ -1,3 +1,6 @@
+2021-10-08 Version: 2.2.6
+- Fixed SDK update delay.
+
 2021-05-10 Version: 2.2.5
 - Delete API.
 

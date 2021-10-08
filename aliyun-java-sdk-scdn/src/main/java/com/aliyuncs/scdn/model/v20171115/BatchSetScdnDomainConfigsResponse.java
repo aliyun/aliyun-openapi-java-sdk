@@ -14,6 +14,7 @@
 
 package com.aliyuncs.scdn.model.v20171115;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.scdn.transform.v20171115.BatchSetScdnDomainConfigsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -26,12 +27,55 @@ public class BatchSetScdnDomainConfigsResponse extends AcsResponse {
 
 	private String requestId;
 
+	private List<DomainConfigModel> domainConfigList;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public List<DomainConfigModel> getDomainConfigList() {
+		return this.domainConfigList;
+	}
+
+	public void setDomainConfigList(List<DomainConfigModel> domainConfigList) {
+		this.domainConfigList = domainConfigList;
+	}
+
+	public static class DomainConfigModel {
+
+		private String domainName;
+
+		private Long configId;
+
+		private String functionName;
+
+		public String getDomainName() {
+			return this.domainName;
+		}
+
+		public void setDomainName(String domainName) {
+			this.domainName = domainName;
+		}
+
+		public Long getConfigId() {
+			return this.configId;
+		}
+
+		public void setConfigId(Long configId) {
+			this.configId = configId;
+		}
+
+		public String getFunctionName() {
+			return this.functionName;
+		}
+
+		public void setFunctionName(String functionName) {
+			this.functionName = functionName;
+		}
 	}
 
 	@Override
