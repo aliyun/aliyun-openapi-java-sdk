@@ -37,7 +37,6 @@ public class DescribeDcdnUserDomainsByFuncResponseUnmarshaller {
 			PageData pageData = new PageData();
 			pageData.setDomainName(_ctx.stringValue("DescribeDcdnUserDomainsByFuncResponse.Domains["+ i +"].DomainName"));
 			pageData.setCname(_ctx.stringValue("DescribeDcdnUserDomainsByFuncResponse.Domains["+ i +"].Cname"));
-			pageData.setCdnType(_ctx.stringValue("DescribeDcdnUserDomainsByFuncResponse.Domains["+ i +"].CdnType"));
 			pageData.setDomainStatus(_ctx.stringValue("DescribeDcdnUserDomainsByFuncResponse.Domains["+ i +"].DomainStatus"));
 			pageData.setGmtCreated(_ctx.stringValue("DescribeDcdnUserDomainsByFuncResponse.Domains["+ i +"].GmtCreated"));
 			pageData.setGmtModified(_ctx.stringValue("DescribeDcdnUserDomainsByFuncResponse.Domains["+ i +"].GmtModified"));

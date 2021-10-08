@@ -25,8 +25,6 @@ import com.aliyuncs.dcdn.Endpoint;
 public class RollbackDcdnStagingConfigRequest extends RpcAcsRequest<RollbackDcdnStagingConfigResponse> {
 	   
 
-	private String functionName;
-
 	private String domainName;
 
 	private Long ownerId;
@@ -37,17 +35,6 @@ public class RollbackDcdnStagingConfigRequest extends RpcAcsRequest<RollbackDcdn
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getFunctionName() {
-		return this.functionName;
-	}
-
-	public void setFunctionName(String functionName) {
-		this.functionName = functionName;
-		if(functionName != null){
-			putQueryParameter("FunctionName", functionName);
-		}
 	}
 
 	public String getDomainName() {

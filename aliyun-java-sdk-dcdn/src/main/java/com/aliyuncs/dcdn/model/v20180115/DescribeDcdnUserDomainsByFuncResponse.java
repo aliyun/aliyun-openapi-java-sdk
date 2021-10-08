@@ -81,8 +81,6 @@ public class DescribeDcdnUserDomainsByFuncResponse extends AcsResponse {
 
 		private String cname;
 
-		private String cdnType;
-
 		private String domainStatus;
 
 		private String gmtCreated;
@@ -113,14 +111,6 @@ public class DescribeDcdnUserDomainsByFuncResponse extends AcsResponse {
 
 		public void setCname(String cname) {
 			this.cname = cname;
-		}
-
-		public String getCdnType() {
-			return this.cdnType;
-		}
-
-		public void setCdnType(String cdnType) {
-			this.cdnType = cdnType;
 		}
 
 		public String getDomainStatus() {

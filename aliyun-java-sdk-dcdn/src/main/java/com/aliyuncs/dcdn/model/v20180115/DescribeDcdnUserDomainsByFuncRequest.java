@@ -31,6 +31,10 @@ public class DescribeDcdnUserDomainsByFuncRequest extends RpcAcsRequest<Describe
 
 	private Integer pageSize;
 
+	private String funcFilter;
+
+	private String domainName;
+
 	private Long ownerId;
 
 	private Integer funcId;
@@ -73,6 +77,28 @@ public class DescribeDcdnUserDomainsByFuncRequest extends RpcAcsRequest<Describe
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getFuncFilter() {
+		return this.funcFilter;
+	}
+
+	public void setFuncFilter(String funcFilter) {
+		this.funcFilter = funcFilter;
+		if(funcFilter != null){
+			putQueryParameter("FuncFilter", funcFilter);
+		}
+	}
+
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
 		}
 	}
 

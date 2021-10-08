@@ -25,6 +25,8 @@ import com.aliyuncs.dcdn.Endpoint;
 public class DescribeDcdnWafDomainRequest extends RpcAcsRequest<DescribeDcdnWafDomainResponse> {
 	   
 
+	private String resourceGroupId;
+
 	private String domainName;
 
 	private Long ownerId;
@@ -35,6 +37,17 @@ public class DescribeDcdnWafDomainRequest extends RpcAcsRequest<DescribeDcdnWafD
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
 	}
 
 	public String getDomainName() {

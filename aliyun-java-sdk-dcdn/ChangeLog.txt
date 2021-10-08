@@ -1,3 +1,6 @@
+2021-10-08 Version: 2.1.6
+- Fixed SDK update delay.
+
 2021-05-17 Version: 2.1.5
 - Add DescribeDcdnRefreshTaskById.
 

@@ -36,8 +36,6 @@ public class CreateDcdnDeliverTaskRequest extends RpcAcsRequest<CreateDcdnDelive
 	private String schedule;
 
 	private String name;
-
-	private String status;
 	public CreateDcdnDeliverTaskRequest() {
 		super("dcdn", "2018-01-15", "CreateDcdnDeliverTask");
 		setMethod(MethodType.POST);
@@ -110,17 +108,6 @@ public class CreateDcdnDeliverTaskRequest extends RpcAcsRequest<CreateDcdnDelive
 		this.name = name;
 		if(name != null){
 			putBodyParameter("Name", name);
-		}
-	}
-
-	public String getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-		if(status != null){
-			putBodyParameter("Status", status);
 		}
 	}
 

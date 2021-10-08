@@ -32,6 +32,8 @@ public class DescribeDcdnDomainConfigsRequest extends RpcAcsRequest<DescribeDcdn
 	private Long ownerId;
 
 	private String securityToken;
+
+	private String configId;
 	public DescribeDcdnDomainConfigsRequest() {
 		super("dcdn", "2018-01-15", "DescribeDcdnDomainConfigs");
 		setMethod(MethodType.POST);
@@ -82,6 +84,17 @@ public class DescribeDcdnDomainConfigsRequest extends RpcAcsRequest<DescribeDcdn
 		this.securityToken = securityToken;
 		if(securityToken != null){
 			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public String getConfigId() {
+		return this.configId;
+	}
+
+	public void setConfigId(String configId) {
+		this.configId = configId;
+		if(configId != null){
+			putQueryParameter("ConfigId", configId);
 		}
 	}
 

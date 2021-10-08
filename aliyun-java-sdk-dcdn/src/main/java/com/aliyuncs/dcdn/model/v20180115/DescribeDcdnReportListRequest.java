@@ -27,11 +27,7 @@ public class DescribeDcdnReportListRequest extends RpcAcsRequest<DescribeDcdnRep
 
 	private Long reportId;
 
-	private String permission;
-
 	private Long ownerId;
-
-	private String status;
 	public DescribeDcdnReportListRequest() {
 		super("dcdn", "2018-01-15", "DescribeDcdnReportList");
 		setMethod(MethodType.POST);
@@ -52,17 +48,6 @@ public class DescribeDcdnReportListRequest extends RpcAcsRequest<DescribeDcdnRep
 		}
 	}
 
-	public String getPermission() {
-		return this.permission;
-	}
-
-	public void setPermission(String permission) {
-		this.permission = permission;
-		if(permission != null){
-			putQueryParameter("Permission", permission);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -71,17 +56,6 @@ public class DescribeDcdnReportListRequest extends RpcAcsRequest<DescribeDcdnRep
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-		if(status != null){
-			putQueryParameter("Status", status);
 		}
 	}
 

@@ -25,17 +25,11 @@ import com.aliyuncs.dcdn.Endpoint;
 public class CreateDcdnSubTaskRequest extends RpcAcsRequest<CreateDcdnSubTaskResponse> {
 	   
 
-	private String startTime;
-
 	private String domainName;
-
-	private String endTime;
 
 	private Long ownerId;
 
 	private String reportIds;
-
-	private String status;
 	public CreateDcdnSubTaskRequest() {
 		super("dcdn", "2018-01-15", "CreateDcdnSubTask");
 		setMethod(MethodType.POST);
@@ -43,17 +37,6 @@ public class CreateDcdnSubTaskRequest extends RpcAcsRequest<CreateDcdnSubTaskRes
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putBodyParameter("StartTime", startTime);
-		}
 	}
 
 	public String getDomainName() {
@@ -64,17 +47,6 @@ public class CreateDcdnSubTaskRequest extends RpcAcsRequest<CreateDcdnSubTaskRes
 		this.domainName = domainName;
 		if(domainName != null){
 			putBodyParameter("DomainName", domainName);
-		}
-	}
-
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putBodyParameter("EndTime", endTime);
 		}
 	}
 
@@ -97,17 +69,6 @@ public class CreateDcdnSubTaskRequest extends RpcAcsRequest<CreateDcdnSubTaskRes
 		this.reportIds = reportIds;
 		if(reportIds != null){
 			putBodyParameter("ReportIds", reportIds);
-		}
-	}
-
-	public String getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-		if(status != null){
-			putBodyParameter("Status", status);
 		}
 	}
 

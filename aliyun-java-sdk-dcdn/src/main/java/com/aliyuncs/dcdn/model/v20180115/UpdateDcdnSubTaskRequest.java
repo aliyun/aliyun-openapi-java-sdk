@@ -34,8 +34,6 @@ public class UpdateDcdnSubTaskRequest extends RpcAcsRequest<UpdateDcdnSubTaskRes
 	private Long ownerId;
 
 	private String reportIds;
-
-	private String status;
 	public UpdateDcdnSubTaskRequest() {
 		super("dcdn", "2018-01-15", "UpdateDcdnSubTask");
 		setMethod(MethodType.POST);
@@ -97,17 +95,6 @@ public class UpdateDcdnSubTaskRequest extends RpcAcsRequest<UpdateDcdnSubTaskRes
 		this.reportIds = reportIds;
 		if(reportIds != null){
 			putBodyParameter("ReportIds", reportIds);
-		}
-	}
-
-	public String getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-		if(status != null){
-			putBodyParameter("Status", status);
 		}
 	}
 

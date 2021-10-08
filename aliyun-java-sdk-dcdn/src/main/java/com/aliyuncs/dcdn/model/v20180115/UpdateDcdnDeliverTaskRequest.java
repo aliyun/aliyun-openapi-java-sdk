@@ -38,8 +38,6 @@ public class UpdateDcdnDeliverTaskRequest extends RpcAcsRequest<UpdateDcdnDelive
 	private String schedule;
 
 	private String name;
-
-	private String status;
 	public UpdateDcdnDeliverTaskRequest() {
 		super("dcdn", "2018-01-15", "UpdateDcdnDeliverTask");
 		setMethod(MethodType.POST);
@@ -123,17 +121,6 @@ public class UpdateDcdnDeliverTaskRequest extends RpcAcsRequest<UpdateDcdnDelive
 		this.name = name;
 		if(name != null){
 			putBodyParameter("Name", name);
-		}
-	}
-
-	public String getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-		if(status != null){
-			putBodyParameter("Status", status);
 		}
 	}
 

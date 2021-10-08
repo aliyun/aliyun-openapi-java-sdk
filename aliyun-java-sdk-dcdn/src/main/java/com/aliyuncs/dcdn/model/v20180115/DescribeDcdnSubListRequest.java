@@ -26,8 +26,6 @@ public class DescribeDcdnSubListRequest extends RpcAcsRequest<DescribeDcdnSubLis
 	   
 
 	private Long ownerId;
-
-	private String status;
 	public DescribeDcdnSubListRequest() {
 		super("dcdn", "2018-01-15", "DescribeDcdnSubList");
 		setMethod(MethodType.POST);
@@ -45,17 +43,6 @@ public class DescribeDcdnSubListRequest extends RpcAcsRequest<DescribeDcdnSubLis
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-		if(status != null){
-			putQueryParameter("Status", status);
 		}
 	}
 
