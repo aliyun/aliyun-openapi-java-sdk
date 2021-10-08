@@ -25,6 +25,14 @@ import com.aliyuncs.facebody.Endpoint;
 public class DetectFaceRequest extends RpcAcsRequest<DetectFaceResponse> {
 	   
 
+	private Long maxFaceNumber;
+
+	private Boolean landmark;
+
+	private Boolean pose;
+
+	private Boolean quality;
+
 	private String imageURL;
 	public DetectFaceRequest() {
 		super("facebody", "2019-12-30", "DetectFace");
@@ -33,6 +41,50 @@ public class DetectFaceRequest extends RpcAcsRequest<DetectFaceResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Long getMaxFaceNumber() {
+		return this.maxFaceNumber;
+	}
+
+	public void setMaxFaceNumber(Long maxFaceNumber) {
+		this.maxFaceNumber = maxFaceNumber;
+		if(maxFaceNumber != null){
+			putBodyParameter("MaxFaceNumber", maxFaceNumber.toString());
+		}
+	}
+
+	public Boolean getLandmark() {
+		return this.landmark;
+	}
+
+	public void setLandmark(Boolean landmark) {
+		this.landmark = landmark;
+		if(landmark != null){
+			putBodyParameter("Landmark", landmark.toString());
+		}
+	}
+
+	public Boolean getPose() {
+		return this.pose;
+	}
+
+	public void setPose(Boolean pose) {
+		this.pose = pose;
+		if(pose != null){
+			putBodyParameter("Pose", pose.toString());
+		}
+	}
+
+	public Boolean getQuality() {
+		return this.quality;
+	}
+
+	public void setQuality(Boolean quality) {
+		this.quality = quality;
+		if(quality != null){
+			putBodyParameter("Quality", quality.toString());
+		}
 	}
 
 	public String getImageURL() {

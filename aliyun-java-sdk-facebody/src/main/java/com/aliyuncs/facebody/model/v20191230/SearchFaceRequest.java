@@ -25,6 +25,8 @@ import com.aliyuncs.facebody.Endpoint;
 public class SearchFaceRequest extends RpcAcsRequest<SearchFaceResponse> {
 	   
 
+	private Long maxFaceNum;
+
 	private Float qualityScoreThreshold;
 
 	private Integer limit;
@@ -41,6 +43,17 @@ public class SearchFaceRequest extends RpcAcsRequest<SearchFaceResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Long getMaxFaceNum() {
+		return this.maxFaceNum;
+	}
+
+	public void setMaxFaceNum(Long maxFaceNum) {
+		this.maxFaceNum = maxFaceNum;
+		if(maxFaceNum != null){
+			putBodyParameter("MaxFaceNum", maxFaceNum.toString());
+		}
 	}
 
 	public Float getQualityScoreThreshold() {
