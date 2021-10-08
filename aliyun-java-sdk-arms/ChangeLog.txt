@@ -1,3 +1,7 @@
+2021-10-08 Version: 2.7.36
+- Add TurnOnSecondSwitch.
+- Add QueryReleaseMetric.
+
 2021-07-28 Version: 2.7.35
 - Update QueryPromInstallStatus.
 - Update UninstallPromCluster.

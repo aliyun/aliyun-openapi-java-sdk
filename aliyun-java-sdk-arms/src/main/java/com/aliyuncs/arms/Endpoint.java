@@ -44,7 +44,6 @@ public class Endpoint {
             put("cn-hangzhou-internal-test-3", "arms.aliyuncs.com");
             put("cn-hangzhou-internal-test-2", "arms.aliyuncs.com");
             put("me-east-1", "arms.aliyuncs.com");
-            put("cn-chengdu", "arms.aliyuncs.com");
             put("cn-hangzhou-test-306", "arms.aliyuncs.com");
             put("cn-huhehaote-nebula-1", "arms.aliyuncs.com");
             put("cn-shanghai-et2-b01", "arms.aliyuncs.com");

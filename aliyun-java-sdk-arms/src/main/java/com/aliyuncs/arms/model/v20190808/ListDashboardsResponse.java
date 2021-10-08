@@ -47,37 +47,141 @@ public class ListDashboardsResponse extends AcsResponse {
 
 	public static class DashboardVosItem {
 
+		private String type;
+
+		private String time;
+
+		private Boolean needUpdate;
+
+		private String kind;
+
+		private String url;
+
+		private String httpsUrl;
+
+		private String dashboardType;
+
+		private String exporter;
+
+		private String version;
+
+		private Boolean isArmsExporter;
+
+		private String httpUrl;
+
+		private String title;
+
+		private String name;
+
 		private String id;
 
 		private String uid;
 
-		private String title;
-
-		private String time;
-
-		private String url;
-
-		private String type;
-
-		private String exporter;
-
-		private Boolean isArmsExporter;
-
-		private String name;
-
-		private String version;
-
-		private String dashboardType;
-
-		private String kind;
-
-		private Boolean needUpdate;
-
-		private String httpUrl;
-
-		private String httpsUrl;
-
 		private List<String> tags;
+
+		public String getType() {
+			return this.type;
+		}
+
+		public void setType(String type) {
+			this.type = type;
+		}
+
+		public String getTime() {
+			return this.time;
+		}
+
+		public void setTime(String time) {
+			this.time = time;
+		}
+
+		public Boolean getNeedUpdate() {
+			return this.needUpdate;
+		}
+
+		public void setNeedUpdate(Boolean needUpdate) {
+			this.needUpdate = needUpdate;
+		}
+
+		public String getKind() {
+			return this.kind;
+		}
+
+		public void setKind(String kind) {
+			this.kind = kind;
+		}
+
+		public String getUrl() {
+			return this.url;
+		}
+
+		public void setUrl(String url) {
+			this.url = url;
+		}
+
+		public String getHttpsUrl() {
+			return this.httpsUrl;
+		}
+
+		public void setHttpsUrl(String httpsUrl) {
+			this.httpsUrl = httpsUrl;
+		}
+
+		public String getDashboardType() {
+			return this.dashboardType;
+		}
+
+		public void setDashboardType(String dashboardType) {
+			this.dashboardType = dashboardType;
+		}
+
+		public String getExporter() {
+			return this.exporter;
+		}
+
+		public void setExporter(String exporter) {
+			this.exporter = exporter;
+		}
+
+		public String getVersion() {
+			return this.version;
+		}
+
+		public void setVersion(String version) {
+			this.version = version;
+		}
+
+		public Boolean getIsArmsExporter() {
+			return this.isArmsExporter;
+		}
+
+		public void setIsArmsExporter(Boolean isArmsExporter) {
+			this.isArmsExporter = isArmsExporter;
+		}
+
+		public String getHttpUrl() {
+			return this.httpUrl;
+		}
+
+		public void setHttpUrl(String httpUrl) {
+			this.httpUrl = httpUrl;
+		}
+
+		public String getTitle() {
+			return this.title;
+		}
+
+		public void setTitle(String title) {
+			this.title = title;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
 
 		public String getId() {
 			return this.id;
@@ -93,110 +197,6 @@ public class ListDashboardsResponse extends AcsResponse {
 
 		public void setUid(String uid) {
 			this.uid = uid;
-		}
-
-		public String getTitle() {
-			return this.title;
-		}
-
-		public void setTitle(String title) {
-			this.title = title;
-		}
-
-		public String getTime() {
-			return this.time;
-		}
-
-		public void setTime(String time) {
-			this.time = time;
-		}
-
-		public String getUrl() {
-			return this.url;
-		}
-
-		public void setUrl(String url) {
-			this.url = url;
-		}
-
-		public String getType() {
-			return this.type;
-		}
-
-		public void setType(String type) {
-			this.type = type;
-		}
-
-		public String getExporter() {
-			return this.exporter;
-		}
-
-		public void setExporter(String exporter) {
-			this.exporter = exporter;
-		}
-
-		public Boolean getIsArmsExporter() {
-			return this.isArmsExporter;
-		}
-
-		public void setIsArmsExporter(Boolean isArmsExporter) {
-			this.isArmsExporter = isArmsExporter;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getVersion() {
-			return this.version;
-		}
-
-		public void setVersion(String version) {
-			this.version = version;
-		}
-
-		public String getDashboardType() {
-			return this.dashboardType;
-		}
-
-		public void setDashboardType(String dashboardType) {
-			this.dashboardType = dashboardType;
-		}
-
-		public String getKind() {
-			return this.kind;
-		}
-
-		public void setKind(String kind) {
-			this.kind = kind;
-		}
-
-		public Boolean getNeedUpdate() {
-			return this.needUpdate;
-		}
-
-		public void setNeedUpdate(Boolean needUpdate) {
-			this.needUpdate = needUpdate;
-		}
-
-		public String getHttpUrl() {
-			return this.httpUrl;
-		}
-
-		public void setHttpUrl(String httpUrl) {
-			this.httpUrl = httpUrl;
-		}
-
-		public String getHttpsUrl() {
-			return this.httpsUrl;
-		}
-
-		public void setHttpsUrl(String httpsUrl) {
-			this.httpsUrl = httpsUrl;
 		}
 
 		public List<String> getTags() {

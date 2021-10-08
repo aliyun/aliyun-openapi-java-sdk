@@ -33,6 +33,8 @@ public class ListDashboardsRequest extends RpcAcsRequest<ListDashboardsResponse>
 
 	private String clusterId;
 
+	private String proxyUserId;
+
 	private String title;
 
 	private String clusterType;
@@ -86,6 +88,17 @@ public class ListDashboardsRequest extends RpcAcsRequest<ListDashboardsResponse>
 		this.clusterId = clusterId;
 		if(clusterId != null){
 			putQueryParameter("ClusterId", clusterId);
+		}
+	}
+
+	public String getProxyUserId() {
+		return this.proxyUserId;
+	}
+
+	public void setProxyUserId(String proxyUserId) {
+		this.proxyUserId = proxyUserId;
+		if(proxyUserId != null){
+			putQueryParameter("ProxyUserId", proxyUserId);
 		}
 	}
 
