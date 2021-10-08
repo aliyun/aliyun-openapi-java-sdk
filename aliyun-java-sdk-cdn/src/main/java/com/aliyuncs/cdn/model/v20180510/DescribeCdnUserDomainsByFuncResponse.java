@@ -95,8 +95,6 @@ public class DescribeCdnUserDomainsByFuncResponse extends AcsResponse {
 
 		private String resourceGroupId;
 
-		private String sandbox;
-
 		private List<Source> sources;
 
 		public String getDomainName() {
@@ -169,14 +167,6 @@ public class DescribeCdnUserDomainsByFuncResponse extends AcsResponse {
 
 		public void setResourceGroupId(String resourceGroupId) {
 			this.resourceGroupId = resourceGroupId;
-		}
-
-		public String getSandbox() {
-			return this.sandbox;
-		}
-
-		public void setSandbox(String sandbox) {
-			this.sandbox = sandbox;
 		}
 
 		public List<Source> getSources() {

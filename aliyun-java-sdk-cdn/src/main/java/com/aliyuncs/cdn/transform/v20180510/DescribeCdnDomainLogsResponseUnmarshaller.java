@@ -20,7 +20,7 @@ import java.util.List;
 import com.aliyuncs.cdn.model.v20180510.DescribeCdnDomainLogsResponse;
 import com.aliyuncs.cdn.model.v20180510.DescribeCdnDomainLogsResponse.DomainLogDetail;
 import com.aliyuncs.cdn.model.v20180510.DescribeCdnDomainLogsResponse.DomainLogDetail.LogInfoDetail;
-import com.aliyuncs.cdn.model.v20180510.DescribeCdnDomainLogsResponse.DomainLogDetail.PageInfoDetail;
+import com.aliyuncs.cdn.model.v20180510.DescribeCdnDomainLogsResponse.DomainLogDetail.PageInfos;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -36,15 +36,10 @@ public class DescribeCdnDomainLogsResponseUnmarshaller {
 			domainLogDetail.setDomainName(_ctx.stringValue("DescribeCdnDomainLogsResponse.DomainLogDetails["+ i +"].DomainName"));
 			domainLogDetail.setLogCount(_ctx.longValue("DescribeCdnDomainLogsResponse.DomainLogDetails["+ i +"].LogCount"));
 
-			List<PageInfoDetail> pageInfos = new ArrayList<PageInfoDetail>();
-			for (int j = 0; j < _ctx.lengthValue("DescribeCdnDomainLogsResponse.DomainLogDetails["+ i +"].PageInfos.Length"); j++) {
-				PageInfoDetail pageInfoDetail = new PageInfoDetail();
-				pageInfoDetail.setPageIndex(_ctx.longValue("DescribeCdnDomainLogsResponse.DomainLogDetails["+ i +"].PageInfos["+ j +"].PageIndex"));
-				pageInfoDetail.setPageSize(_ctx.longValue("DescribeCdnDomainLogsResponse.DomainLogDetails["+ i +"].PageInfos["+ j +"].PageSize"));
-				pageInfoDetail.setTotal(_ctx.longValue("DescribeCdnDomainLogsResponse.DomainLogDetails["+ i +"].PageInfos["+ j +"].Total"));
-
-				pageInfos.add(pageInfoDetail);
-			}
+			PageInfos pageInfos = new PageInfos();
+			pageInfos.setPageIndex(_ctx.longValue("DescribeCdnDomainLogsResponse.DomainLogDetails["+ i +"].PageInfos.PageIndex"));
+			pageInfos.setPageSize(_ctx.longValue("DescribeCdnDomainLogsResponse.DomainLogDetails["+ i +"].PageInfos.PageSize"));
+			pageInfos.setTotal(_ctx.longValue("DescribeCdnDomainLogsResponse.DomainLogDetails["+ i +"].PageInfos.Total"));
 			domainLogDetail.setPageInfos(pageInfos);
 
 			List<LogInfoDetail> logInfos = new ArrayList<LogInfoDetail>();

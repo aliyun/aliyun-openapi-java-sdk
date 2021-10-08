@@ -15,14 +15,14 @@
 package com.aliyuncs.cdn.model.v20180510;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cdn.transform.v20180510.SetDomainGreenManagerConfigResponseUnmarshaller;
+import com.aliyuncs.cdn.transform.v20180510.BatchDeleteCdnDomainConfigResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class SetDomainGreenManagerConfigResponse extends AcsResponse {
+public class BatchDeleteCdnDomainConfigResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -35,7 +35,7 @@ public class SetDomainGreenManagerConfigResponse extends AcsResponse {
 	}
 
 	@Override
-	public SetDomainGreenManagerConfigResponse getInstance(UnmarshallerContext context) {
-		return	SetDomainGreenManagerConfigResponseUnmarshaller.unmarshall(this, context);
+	public BatchDeleteCdnDomainConfigResponse getInstance(UnmarshallerContext context) {
+		return	BatchDeleteCdnDomainConfigResponseUnmarshaller.unmarshall(this, context);
 	}
 }

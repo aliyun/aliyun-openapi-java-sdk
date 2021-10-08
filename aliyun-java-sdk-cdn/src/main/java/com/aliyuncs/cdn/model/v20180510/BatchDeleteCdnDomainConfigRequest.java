@@ -22,20 +22,20 @@ import com.aliyuncs.cdn.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeCdnDomainConfigsRequest extends RpcAcsRequest<DescribeCdnDomainConfigsResponse> {
+public class BatchDeleteCdnDomainConfigRequest extends RpcAcsRequest<BatchDeleteCdnDomainConfigResponse> {
 	   
 
 	private String functionNames;
 
-	private String securityToken;
+	private String domainNames;
 
-	private String domainName;
+	private String ownerAccount;
 
 	private Long ownerId;
 
-	private String configId;
-	public DescribeCdnDomainConfigsRequest() {
-		super("Cdn", "2018-05-10", "DescribeCdnDomainConfigs");
+	private String securityToken;
+	public BatchDeleteCdnDomainConfigRequest() {
+		super("Cdn", "2018-05-10", "BatchDeleteCdnDomainConfig");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -54,25 +54,25 @@ public class DescribeCdnDomainConfigsRequest extends RpcAcsRequest<DescribeCdnDo
 		}
 	}
 
-	public String getSecurityToken() {
-		return this.securityToken;
+	public String getDomainNames() {
+		return this.domainNames;
 	}
 
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
+	public void setDomainNames(String domainNames) {
+		this.domainNames = domainNames;
+		if(domainNames != null){
+			putQueryParameter("DomainNames", domainNames);
 		}
 	}
 
-	public String getDomainName() {
-		return this.domainName;
+	public String getOwnerAccount() {
+		return this.ownerAccount;
 	}
 
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		if(domainName != null){
-			putQueryParameter("DomainName", domainName);
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
 		}
 	}
 
@@ -87,20 +87,20 @@ public class DescribeCdnDomainConfigsRequest extends RpcAcsRequest<DescribeCdnDo
 		}
 	}
 
-	public String getConfigId() {
-		return this.configId;
+	public String getSecurityToken() {
+		return this.securityToken;
 	}
 
-	public void setConfigId(String configId) {
-		this.configId = configId;
-		if(configId != null){
-			putQueryParameter("ConfigId", configId);
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 
 	@Override
-	public Class<DescribeCdnDomainConfigsResponse> getResponseClass() {
-		return DescribeCdnDomainConfigsResponse.class;
+	public Class<BatchDeleteCdnDomainConfigResponse> getResponseClass() {
+		return BatchDeleteCdnDomainConfigResponse.class;
 	}
 
 }

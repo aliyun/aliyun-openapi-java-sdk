@@ -22,17 +22,43 @@ import com.aliyuncs.cdn.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeCdnSubListRequest extends RpcAcsRequest<DescribeCdnSubListResponse> {
+public class DescribeCdnDeletedDomainsRequest extends RpcAcsRequest<DescribeCdnDeletedDomainsResponse> {
 	   
 
+	private Integer pageNumber;
+
+	private Integer pageSize;
+
 	private Long ownerId;
-	public DescribeCdnSubListRequest() {
-		super("Cdn", "2018-05-10", "DescribeCdnSubList");
+	public DescribeCdnDeletedDomainsRequest() {
+		super("Cdn", "2018-05-10", "DescribeCdnDeletedDomains");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
 	}
 
 	public Long getOwnerId() {
@@ -47,8 +73,8 @@ public class DescribeCdnSubListRequest extends RpcAcsRequest<DescribeCdnSubListR
 	}
 
 	@Override
-	public Class<DescribeCdnSubListResponse> getResponseClass() {
-		return DescribeCdnSubListResponse.class;
+	public Class<DescribeCdnDeletedDomainsResponse> getResponseClass() {
+		return DescribeCdnDeletedDomainsResponse.class;
 	}
 
 }

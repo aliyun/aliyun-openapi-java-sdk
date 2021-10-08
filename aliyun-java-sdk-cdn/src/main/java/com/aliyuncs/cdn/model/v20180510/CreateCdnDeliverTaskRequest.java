@@ -36,8 +36,6 @@ public class CreateCdnDeliverTaskRequest extends RpcAcsRequest<CreateCdnDeliverT
 	private String schedule;
 
 	private String name;
-
-	private String status;
 	public CreateCdnDeliverTaskRequest() {
 		super("Cdn", "2018-05-10", "CreateCdnDeliverTask");
 		setMethod(MethodType.POST);
@@ -110,17 +108,6 @@ public class CreateCdnDeliverTaskRequest extends RpcAcsRequest<CreateCdnDeliverT
 		this.name = name;
 		if(name != null){
 			putBodyParameter("Name", name);
-		}
-	}
-
-	public String getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-		if(status != null){
-			putBodyParameter("Status", status);
 		}
 	}
 

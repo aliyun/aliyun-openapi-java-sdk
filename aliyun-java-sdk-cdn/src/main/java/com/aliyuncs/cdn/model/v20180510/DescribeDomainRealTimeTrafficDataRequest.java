@@ -25,7 +25,11 @@ import com.aliyuncs.cdn.Endpoint;
 public class DescribeDomainRealTimeTrafficDataRequest extends RpcAcsRequest<DescribeDomainRealTimeTrafficDataResponse> {
 	   
 
+	private String locationNameEn;
+
 	private String startTime;
+
+	private String ispNameEn;
 
 	private String domainName;
 
@@ -41,6 +45,17 @@ public class DescribeDomainRealTimeTrafficDataRequest extends RpcAcsRequest<Desc
 		} catch (Exception e) {}
 	}
 
+	public String getLocationNameEn() {
+		return this.locationNameEn;
+	}
+
+	public void setLocationNameEn(String locationNameEn) {
+		this.locationNameEn = locationNameEn;
+		if(locationNameEn != null){
+			putQueryParameter("LocationNameEn", locationNameEn);
+		}
+	}
+
 	public String getStartTime() {
 		return this.startTime;
 	}
@@ -49,6 +64,17 @@ public class DescribeDomainRealTimeTrafficDataRequest extends RpcAcsRequest<Desc
 		this.startTime = startTime;
 		if(startTime != null){
 			putQueryParameter("StartTime", startTime);
+		}
+	}
+
+	public String getIspNameEn() {
+		return this.ispNameEn;
+	}
+
+	public void setIspNameEn(String ispNameEn) {
+		this.ispNameEn = ispNameEn;
+		if(ispNameEn != null){
+			putQueryParameter("IspNameEn", ispNameEn);
 		}
 	}
 

@@ -14,16 +14,16 @@
 
 package com.aliyuncs.cdn.transform.v20180510;
 
-import com.aliyuncs.cdn.model.v20180510.SetDomainGreenManagerConfigResponse;
+import com.aliyuncs.cdn.model.v20180510.SetUserGreenManagerConfigResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class SetDomainGreenManagerConfigResponseUnmarshaller {
+public class SetUserGreenManagerConfigResponseUnmarshaller {
 
-	public static SetDomainGreenManagerConfigResponse unmarshall(SetDomainGreenManagerConfigResponse setDomainGreenManagerConfigResponse, UnmarshallerContext _ctx) {
+	public static SetUserGreenManagerConfigResponse unmarshall(SetUserGreenManagerConfigResponse setUserGreenManagerConfigResponse, UnmarshallerContext _ctx) {
 		
-		setDomainGreenManagerConfigResponse.setRequestId(_ctx.stringValue("SetDomainGreenManagerConfigResponse.RequestId"));
+		setUserGreenManagerConfigResponse.setRequestId(_ctx.stringValue("SetUserGreenManagerConfigResponse.RequestId"));
 	 
-	 	return setDomainGreenManagerConfigResponse;
+	 	return setUserGreenManagerConfigResponse;
 	}
 }

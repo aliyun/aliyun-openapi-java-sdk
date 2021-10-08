@@ -22,16 +22,18 @@ import com.aliyuncs.cdn.Endpoint;
  * @author auto create
  * @version 
  */
-public class SetDomainGreenManagerConfigRequest extends RpcAcsRequest<SetDomainGreenManagerConfigResponse> {
+public class DescribeDomainMultiUsageDataRequest extends RpcAcsRequest<DescribeDomainMultiUsageDataResponse> {
 	   
 
-	private String enable;
+	private String startTime;
 
 	private String domainName;
 
+	private String endTime;
+
 	private Long ownerId;
-	public SetDomainGreenManagerConfigRequest() {
-		super("Cdn", "2018-05-10", "SetDomainGreenManagerConfig");
+	public DescribeDomainMultiUsageDataRequest() {
+		super("Cdn", "2018-05-10", "DescribeDomainMultiUsageData");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -39,14 +41,14 @@ public class SetDomainGreenManagerConfigRequest extends RpcAcsRequest<SetDomainG
 		} catch (Exception e) {}
 	}
 
-	public String getEnable() {
-		return this.enable;
+	public String getStartTime() {
+		return this.startTime;
 	}
 
-	public void setEnable(String enable) {
-		this.enable = enable;
-		if(enable != null){
-			putQueryParameter("Enable", enable);
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
 		}
 	}
 
@@ -58,6 +60,17 @@ public class SetDomainGreenManagerConfigRequest extends RpcAcsRequest<SetDomainG
 		this.domainName = domainName;
 		if(domainName != null){
 			putQueryParameter("DomainName", domainName);
+		}
+	}
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime);
 		}
 	}
 
@@ -73,8 +86,8 @@ public class SetDomainGreenManagerConfigRequest extends RpcAcsRequest<SetDomainG
 	}
 
 	@Override
-	public Class<SetDomainGreenManagerConfigResponse> getResponseClass() {
-		return SetDomainGreenManagerConfigResponse.class;
+	public Class<DescribeDomainMultiUsageDataResponse> getResponseClass() {
+		return DescribeDomainMultiUsageDataResponse.class;
 	}
 
 }

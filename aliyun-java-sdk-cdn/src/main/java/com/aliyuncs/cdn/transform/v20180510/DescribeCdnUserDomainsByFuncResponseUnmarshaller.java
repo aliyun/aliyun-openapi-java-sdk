@@ -44,7 +44,6 @@ public class DescribeCdnUserDomainsByFuncResponseUnmarshaller {
 			pageData.setDescription(_ctx.stringValue("DescribeCdnUserDomainsByFuncResponse.Domains["+ i +"].Description"));
 			pageData.setSslProtocol(_ctx.stringValue("DescribeCdnUserDomainsByFuncResponse.Domains["+ i +"].SslProtocol"));
 			pageData.setResourceGroupId(_ctx.stringValue("DescribeCdnUserDomainsByFuncResponse.Domains["+ i +"].ResourceGroupId"));
-			pageData.setSandbox(_ctx.stringValue("DescribeCdnUserDomainsByFuncResponse.Domains["+ i +"].Sandbox"));
 
 			List<Source> sources = new ArrayList<Source>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeCdnUserDomainsByFuncResponse.Domains["+ i +"].Sources.Length"); j++) {

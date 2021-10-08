@@ -12,7 +12,7 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.cdn.model.v20141111;
+package com.aliyuncs.cdn.model.v20180510;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
@@ -22,16 +22,18 @@ import com.aliyuncs.cdn.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeUserCustomerLabelsRequest extends RpcAcsRequest<DescribeUserCustomerLabelsResponse> {
+public class SetUserGreenManagerConfigRequest extends RpcAcsRequest<SetUserGreenManagerConfigResponse> {
 	   
 
 	private Long ownerId;
 
-	private Long uid;
-
 	private String securityToken;
-	public DescribeUserCustomerLabelsRequest() {
-		super("Cdn", "2014-11-11", "DescribeUserCustomerLabels");
+
+	private String quota;
+
+	private String ratio;
+	public SetUserGreenManagerConfigRequest() {
+		super("Cdn", "2018-05-10", "SetUserGreenManagerConfig");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -50,17 +52,6 @@ public class DescribeUserCustomerLabelsRequest extends RpcAcsRequest<DescribeUse
 		}
 	}
 
-	public Long getUid() {
-		return this.uid;
-	}
-
-	public void setUid(Long uid) {
-		this.uid = uid;
-		if(uid != null){
-			putQueryParameter("Uid", uid.toString());
-		}
-	}
-
 	public String getSecurityToken() {
 		return this.securityToken;
 	}
@@ -72,9 +63,31 @@ public class DescribeUserCustomerLabelsRequest extends RpcAcsRequest<DescribeUse
 		}
 	}
 
+	public String getQuota() {
+		return this.quota;
+	}
+
+	public void setQuota(String quota) {
+		this.quota = quota;
+		if(quota != null){
+			putQueryParameter("Quota", quota);
+		}
+	}
+
+	public String getRatio() {
+		return this.ratio;
+	}
+
+	public void setRatio(String ratio) {
+		this.ratio = ratio;
+		if(ratio != null){
+			putQueryParameter("Ratio", ratio);
+		}
+	}
+
 	@Override
-	public Class<DescribeUserCustomerLabelsResponse> getResponseClass() {
-		return DescribeUserCustomerLabelsResponse.class;
+	public Class<SetUserGreenManagerConfigResponse> getResponseClass() {
+		return SetUserGreenManagerConfigResponse.class;
 	}
 
 }

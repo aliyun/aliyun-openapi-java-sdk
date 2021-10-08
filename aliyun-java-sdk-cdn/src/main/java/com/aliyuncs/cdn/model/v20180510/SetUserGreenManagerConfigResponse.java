@@ -12,21 +12,19 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.cdn.model.v20141111;
+package com.aliyuncs.cdn.model.v20180510;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cdn.transform.v20141111.DescribeUserCustomerLabelsResponseUnmarshaller;
+import com.aliyuncs.cdn.transform.v20180510.SetUserGreenManagerConfigResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeUserCustomerLabelsResponse extends AcsResponse {
+public class SetUserGreenManagerConfigResponse extends AcsResponse {
 
 	private String requestId;
-
-	private Boolean isInnerUser;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -36,16 +34,8 @@ public class DescribeUserCustomerLabelsResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getIsInnerUser() {
-		return this.isInnerUser;
-	}
-
-	public void setIsInnerUser(Boolean isInnerUser) {
-		this.isInnerUser = isInnerUser;
-	}
-
 	@Override
-	public DescribeUserCustomerLabelsResponse getInstance(UnmarshallerContext context) {
-		return	DescribeUserCustomerLabelsResponseUnmarshaller.unmarshall(this, context);
+	public SetUserGreenManagerConfigResponse getInstance(UnmarshallerContext context) {
+		return	SetUserGreenManagerConfigResponseUnmarshaller.unmarshall(this, context);
 	}
 }

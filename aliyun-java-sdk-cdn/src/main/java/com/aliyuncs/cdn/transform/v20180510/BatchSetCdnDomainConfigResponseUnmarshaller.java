@@ -14,7 +14,11 @@
 
 package com.aliyuncs.cdn.transform.v20180510;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.cdn.model.v20180510.BatchSetCdnDomainConfigResponse;
+import com.aliyuncs.cdn.model.v20180510.BatchSetCdnDomainConfigResponse.DomainConfigModel;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -23,6 +27,17 @@ public class BatchSetCdnDomainConfigResponseUnmarshaller {
 	public static BatchSetCdnDomainConfigResponse unmarshall(BatchSetCdnDomainConfigResponse batchSetCdnDomainConfigResponse, UnmarshallerContext _ctx) {
 		
 		batchSetCdnDomainConfigResponse.setRequestId(_ctx.stringValue("BatchSetCdnDomainConfigResponse.RequestId"));
+
+		List<DomainConfigModel> domainConfigList = new ArrayList<DomainConfigModel>();
+		for (int i = 0; i < _ctx.lengthValue("BatchSetCdnDomainConfigResponse.DomainConfigList.Length"); i++) {
+			DomainConfigModel domainConfigModel = new DomainConfigModel();
+			domainConfigModel.setDomainName(_ctx.stringValue("BatchSetCdnDomainConfigResponse.DomainConfigList["+ i +"].DomainName"));
+			domainConfigModel.setConfigId(_ctx.longValue("BatchSetCdnDomainConfigResponse.DomainConfigList["+ i +"].ConfigId"));
+			domainConfigModel.setFunctionName(_ctx.stringValue("BatchSetCdnDomainConfigResponse.DomainConfigList["+ i +"].FunctionName"));
+
+			domainConfigList.add(domainConfigModel);
+		}
+		batchSetCdnDomainConfigResponse.setDomainConfigList(domainConfigList);
 	 
 	 	return batchSetCdnDomainConfigResponse;
 	}

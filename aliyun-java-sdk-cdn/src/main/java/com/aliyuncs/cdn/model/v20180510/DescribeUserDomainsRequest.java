@@ -26,6 +26,8 @@ import com.aliyuncs.cdn.Endpoint;
 public class DescribeUserDomainsRequest extends RpcAcsRequest<DescribeUserDomainsResponse> {
 	   
 
+	private String source;
+
 	private Integer pageNumber;
 
 	private Boolean checkDomainShow;
@@ -60,6 +62,17 @@ public class DescribeUserDomainsRequest extends RpcAcsRequest<DescribeUserDomain
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getSource() {
+		return this.source;
+	}
+
+	public void setSource(String source) {
+		this.source = source;
+		if(source != null){
+			putQueryParameter("Source", source);
+		}
 	}
 
 	public Integer getPageNumber() {
