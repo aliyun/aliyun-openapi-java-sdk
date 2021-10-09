@@ -111,17 +111,25 @@ public class DescribeAvailableResourcesResponse extends AcsResponse {
 
 			public static class SupportedInstanceClass {
 
+				private String description;
+
 				private String displayClass;
 
 				private String instanceClass;
-
-				private String description;
 
 				private String storageType;
 
 				private NodeCount nodeCount;
 
 				private StorageSize storageSize;
+
+				public String getDescription() {
+					return this.description;
+				}
+
+				public void setDescription(String description) {
+					this.description = description;
+				}
 
 				public String getDisplayClass() {
 					return this.displayClass;
@@ -137,14 +145,6 @@ public class DescribeAvailableResourcesResponse extends AcsResponse {
 
 				public void setInstanceClass(String instanceClass) {
 					this.instanceClass = instanceClass;
-				}
-
-				public String getDescription() {
-					return this.description;
-				}
-
-				public void setDescription(String description) {
-					this.description = description;
 				}
 
 				public String getStorageType() {
@@ -173,11 +173,19 @@ public class DescribeAvailableResourcesResponse extends AcsResponse {
 
 				public static class NodeCount {
 
+					private String step;
+
 					private String minCount;
 
 					private String maxCount;
 
-					private String step;
+					public String getStep() {
+						return this.step;
+					}
+
+					public void setStep(String step) {
+						this.step = step;
+					}
 
 					public String getMinCount() {
 						return this.minCount;
@@ -193,24 +201,24 @@ public class DescribeAvailableResourcesResponse extends AcsResponse {
 
 					public void setMaxCount(String maxCount) {
 						this.maxCount = maxCount;
-					}
-
-					public String getStep() {
-						return this.step;
-					}
-
-					public void setStep(String step) {
-						this.step = step;
 					}
 				}
 
 				public static class StorageSize {
 
+					private String step;
+
 					private String minCount;
 
 					private String maxCount;
 
-					private String step;
+					public String getStep() {
+						return this.step;
+					}
+
+					public void setStep(String step) {
+						this.step = step;
+					}
 
 					public String getMinCount() {
 						return this.minCount;
@@ -226,14 +234,6 @@ public class DescribeAvailableResourcesResponse extends AcsResponse {
 
 					public void setMaxCount(String maxCount) {
 						this.maxCount = maxCount;
-					}
-
-					public String getStep() {
-						return this.step;
-					}
-
-					public void setStep(String step) {
-						this.step = step;
 					}
 				}
 			}

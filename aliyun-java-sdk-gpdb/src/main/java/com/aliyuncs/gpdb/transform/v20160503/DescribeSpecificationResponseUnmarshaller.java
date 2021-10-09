@@ -30,11 +30,21 @@ public class DescribeSpecificationResponseUnmarshaller {
 		
 		describeSpecificationResponse.setRequestId(_ctx.stringValue("DescribeSpecificationResponse.RequestId"));
 
+		List<StorageNoticeItem> storageNotice = new ArrayList<StorageNoticeItem>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeSpecificationResponse.StorageNotice.Length"); i++) {
+			StorageNoticeItem storageNoticeItem = new StorageNoticeItem();
+			storageNoticeItem.setValue(_ctx.stringValue("DescribeSpecificationResponse.StorageNotice["+ i +"].Value"));
+			storageNoticeItem.setText(_ctx.stringValue("DescribeSpecificationResponse.StorageNotice["+ i +"].Text"));
+
+			storageNotice.add(storageNoticeItem);
+		}
+		describeSpecificationResponse.setStorageNotice(storageNotice);
+
 		List<DBInstanceClassItem> dBInstanceClass = new ArrayList<DBInstanceClassItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSpecificationResponse.DBInstanceClass.Length"); i++) {
 			DBInstanceClassItem dBInstanceClassItem = new DBInstanceClassItem();
-			dBInstanceClassItem.setText(_ctx.stringValue("DescribeSpecificationResponse.DBInstanceClass["+ i +"].Text"));
 			dBInstanceClassItem.setValue(_ctx.stringValue("DescribeSpecificationResponse.DBInstanceClass["+ i +"].Value"));
+			dBInstanceClassItem.setText(_ctx.stringValue("DescribeSpecificationResponse.DBInstanceClass["+ i +"].Text"));
 
 			dBInstanceClass.add(dBInstanceClassItem);
 		}
@@ -43,22 +53,12 @@ public class DescribeSpecificationResponseUnmarshaller {
 		List<DBInstanceGroupCountItem> dBInstanceGroupCount = new ArrayList<DBInstanceGroupCountItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSpecificationResponse.DBInstanceGroupCount.Length"); i++) {
 			DBInstanceGroupCountItem dBInstanceGroupCountItem = new DBInstanceGroupCountItem();
-			dBInstanceGroupCountItem.setText(_ctx.stringValue("DescribeSpecificationResponse.DBInstanceGroupCount["+ i +"].Text"));
 			dBInstanceGroupCountItem.setValue(_ctx.stringValue("DescribeSpecificationResponse.DBInstanceGroupCount["+ i +"].Value"));
+			dBInstanceGroupCountItem.setText(_ctx.stringValue("DescribeSpecificationResponse.DBInstanceGroupCount["+ i +"].Text"));
 
 			dBInstanceGroupCount.add(dBInstanceGroupCountItem);
 		}
 		describeSpecificationResponse.setDBInstanceGroupCount(dBInstanceGroupCount);
-
-		List<StorageNoticeItem> storageNotice = new ArrayList<StorageNoticeItem>();
-		for (int i = 0; i < _ctx.lengthValue("DescribeSpecificationResponse.StorageNotice.Length"); i++) {
-			StorageNoticeItem storageNoticeItem = new StorageNoticeItem();
-			storageNoticeItem.setText(_ctx.stringValue("DescribeSpecificationResponse.StorageNotice["+ i +"].Text"));
-			storageNoticeItem.setValue(_ctx.stringValue("DescribeSpecificationResponse.StorageNotice["+ i +"].Value"));
-
-			storageNotice.add(storageNoticeItem);
-		}
-		describeSpecificationResponse.setStorageNotice(storageNotice);
 	 
 	 	return describeSpecificationResponse;
 	}

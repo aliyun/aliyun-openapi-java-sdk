@@ -33,21 +33,21 @@ public class DescribeSlowSQLLogsResponseUnmarshaller {
 		List<Item> items = new ArrayList<Item>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSlowSQLLogsResponse.Items.Length"); i++) {
 			Item item = new Item();
+			item.setOperationClass(_ctx.stringValue("DescribeSlowSQLLogsResponse.Items["+ i +"].OperationClass"));
+			item.setExecuteState(_ctx.stringValue("DescribeSlowSQLLogsResponse.Items["+ i +"].ExecuteState"));
 			item.setExecuteCost(_ctx.floatValue("DescribeSlowSQLLogsResponse.Items["+ i +"].ExecuteCost"));
-			item.setSQLPlan(_ctx.stringValue("DescribeSlowSQLLogsResponse.Items["+ i +"].SQLPlan"));
-			item.setDBRole(_ctx.stringValue("DescribeSlowSQLLogsResponse.Items["+ i +"].DBRole"));
-			item.setQueryId(_ctx.stringValue("DescribeSlowSQLLogsResponse.Items["+ i +"].QueryId"));
-			item.setSourcePort(_ctx.integerValue("DescribeSlowSQLLogsResponse.Items["+ i +"].SourcePort"));
 			item.setSQLText(_ctx.stringValue("DescribeSlowSQLLogsResponse.Items["+ i +"].SQLText"));
+			item.setSourcePort(_ctx.integerValue("DescribeSlowSQLLogsResponse.Items["+ i +"].SourcePort"));
+			item.setDBRole(_ctx.stringValue("DescribeSlowSQLLogsResponse.Items["+ i +"].DBRole"));
+			item.setOperationType(_ctx.stringValue("DescribeSlowSQLLogsResponse.Items["+ i +"].OperationType"));
 			item.setSourceIP(_ctx.stringValue("DescribeSlowSQLLogsResponse.Items["+ i +"].SourceIP"));
+			item.setSQLPlan(_ctx.stringValue("DescribeSlowSQLLogsResponse.Items["+ i +"].SQLPlan"));
 			item.setReturnRowCounts(_ctx.longValue("DescribeSlowSQLLogsResponse.Items["+ i +"].ReturnRowCounts"));
 			item.setDBName(_ctx.stringValue("DescribeSlowSQLLogsResponse.Items["+ i +"].DBName"));
-			item.setOperationType(_ctx.stringValue("DescribeSlowSQLLogsResponse.Items["+ i +"].OperationType"));
+			item.setOperationExecuteTime(_ctx.stringValue("DescribeSlowSQLLogsResponse.Items["+ i +"].OperationExecuteTime"));
 			item.setScanRowCounts(_ctx.longValue("DescribeSlowSQLLogsResponse.Items["+ i +"].ScanRowCounts"));
 			item.setAccountName(_ctx.stringValue("DescribeSlowSQLLogsResponse.Items["+ i +"].AccountName"));
-			item.setOperationExecuteTime(_ctx.stringValue("DescribeSlowSQLLogsResponse.Items["+ i +"].OperationExecuteTime"));
-			item.setExecuteState(_ctx.stringValue("DescribeSlowSQLLogsResponse.Items["+ i +"].ExecuteState"));
-			item.setOperationClass(_ctx.stringValue("DescribeSlowSQLLogsResponse.Items["+ i +"].OperationClass"));
+			item.setQueryId(_ctx.stringValue("DescribeSlowSQLLogsResponse.Items["+ i +"].QueryId"));
 
 			items.add(item);
 		}

@@ -23,12 +23,12 @@ public class DescribeResourceUsageResponseUnmarshaller {
 	public static DescribeResourceUsageResponse unmarshall(DescribeResourceUsageResponse describeResourceUsageResponse, UnmarshallerContext _ctx) {
 		
 		describeResourceUsageResponse.setRequestId(_ctx.stringValue("DescribeResourceUsageResponse.RequestId"));
-		describeResourceUsageResponse.setDBInstanceId(_ctx.stringValue("DescribeResourceUsageResponse.DBInstanceId"));
-		describeResourceUsageResponse.setEngine(_ctx.stringValue("DescribeResourceUsageResponse.Engine"));
-		describeResourceUsageResponse.setDiskUsed(_ctx.longValue("DescribeResourceUsageResponse.DiskUsed"));
-		describeResourceUsageResponse.setDataSize(_ctx.longValue("DescribeResourceUsageResponse.DataSize"));
 		describeResourceUsageResponse.setLogSize(_ctx.longValue("DescribeResourceUsageResponse.LogSize"));
+		describeResourceUsageResponse.setDBInstanceId(_ctx.stringValue("DescribeResourceUsageResponse.DBInstanceId"));
+		describeResourceUsageResponse.setDataSize(_ctx.longValue("DescribeResourceUsageResponse.DataSize"));
 		describeResourceUsageResponse.setBackupSize(_ctx.longValue("DescribeResourceUsageResponse.BackupSize"));
+		describeResourceUsageResponse.setDiskUsed(_ctx.longValue("DescribeResourceUsageResponse.DiskUsed"));
+		describeResourceUsageResponse.setEngine(_ctx.stringValue("DescribeResourceUsageResponse.Engine"));
 	 
 	 	return describeResourceUsageResponse;
 	}

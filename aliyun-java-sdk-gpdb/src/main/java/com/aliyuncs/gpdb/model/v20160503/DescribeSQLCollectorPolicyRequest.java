@@ -27,7 +27,7 @@ public class DescribeSQLCollectorPolicyRequest extends RpcAcsRequest<DescribeSQL
 
 	private String dBInstanceId;
 	public DescribeSQLCollectorPolicyRequest() {
-		super("gpdb", "2016-05-03", "DescribeSQLCollectorPolicy", "gpdb");
+		super("gpdb", "2016-05-03", "DescribeSQLCollectorPolicy");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

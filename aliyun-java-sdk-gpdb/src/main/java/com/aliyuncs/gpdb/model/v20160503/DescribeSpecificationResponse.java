@@ -27,11 +27,11 @@ public class DescribeSpecificationResponse extends AcsResponse {
 
 	private String requestId;
 
+	private List<StorageNoticeItem> storageNotice;
+
 	private List<DBInstanceClassItem> dBInstanceClass;
 
 	private List<DBInstanceGroupCountItem> dBInstanceGroupCount;
-
-	private List<StorageNoticeItem> storageNotice;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -39,6 +39,14 @@ public class DescribeSpecificationResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public List<StorageNoticeItem> getStorageNotice() {
+		return this.storageNotice;
+	}
+
+	public void setStorageNotice(List<StorageNoticeItem> storageNotice) {
+		this.storageNotice = storageNotice;
 	}
 
 	public List<DBInstanceClassItem> getDBInstanceClass() {
@@ -57,19 +65,19 @@ public class DescribeSpecificationResponse extends AcsResponse {
 		this.dBInstanceGroupCount = dBInstanceGroupCount;
 	}
 
-	public List<StorageNoticeItem> getStorageNotice() {
-		return this.storageNotice;
-	}
+	public static class StorageNoticeItem {
 
-	public void setStorageNotice(List<StorageNoticeItem> storageNotice) {
-		this.storageNotice = storageNotice;
-	}
-
-	public static class DBInstanceClassItem {
+		private String value;
 
 		private String text;
 
-		private String value;
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
 
 		public String getText() {
 			return this.text;
@@ -78,6 +86,13 @@ public class DescribeSpecificationResponse extends AcsResponse {
 		public void setText(String text) {
 			this.text = text;
 		}
+	}
+
+	public static class DBInstanceClassItem {
+
+		private String value;
+
+		private String text;
 
 		public String getValue() {
 			return this.value;
@@ -85,22 +100,22 @@ public class DescribeSpecificationResponse extends AcsResponse {
 
 		public void setValue(String value) {
 			this.value = value;
+		}
+
+		public String getText() {
+			return this.text;
+		}
+
+		public void setText(String text) {
+			this.text = text;
 		}
 	}
 
 	public static class DBInstanceGroupCountItem {
 
-		private String text;
-
 		private String value;
 
-		public String getText() {
-			return this.text;
-		}
-
-		public void setText(String text) {
-			this.text = text;
-		}
+		private String text;
 
 		public String getValue() {
 			return this.value;
@@ -109,13 +124,6 @@ public class DescribeSpecificationResponse extends AcsResponse {
 		public void setValue(String value) {
 			this.value = value;
 		}
-	}
-
-	public static class StorageNoticeItem {
-
-		private String text;
-
-		private String value;
 
 		public String getText() {
 			return this.text;
@@ -123,14 +131,6 @@ public class DescribeSpecificationResponse extends AcsResponse {
 
 		public void setText(String text) {
 			this.text = text;
-		}
-
-		public String getValue() {
-			return this.value;
-		}
-
-		public void setValue(String value) {
-			this.value = value;
 		}
 	}
 

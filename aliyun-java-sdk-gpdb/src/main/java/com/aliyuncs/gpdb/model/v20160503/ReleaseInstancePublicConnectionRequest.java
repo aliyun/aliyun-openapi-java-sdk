@@ -31,7 +31,7 @@ public class ReleaseInstancePublicConnectionRequest extends RpcAcsRequest<Releas
 
 	private String currentConnectionString;
 	public ReleaseInstancePublicConnectionRequest() {
-		super("gpdb", "2016-05-03", "ReleaseInstancePublicConnection", "gpdb");
+		super("gpdb", "2016-05-03", "ReleaseInstancePublicConnection");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

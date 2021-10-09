@@ -27,7 +27,7 @@ public class DescribeDBInstanceNetInfoRequest extends RpcAcsRequest<DescribeDBIn
 
 	private String dBInstanceId;
 	public DescribeDBInstanceNetInfoRequest() {
-		super("gpdb", "2016-05-03", "DescribeDBInstanceNetInfo", "gpdb");
+		super("gpdb", "2016-05-03", "DescribeDBInstanceNetInfo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

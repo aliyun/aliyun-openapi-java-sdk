@@ -24,17 +24,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDBInstanceSSLResponse extends AcsResponse {
 
+	private String sSLExpiredTime;
+
 	private String requestId;
+
+	private Boolean sSLEnabled;
 
 	private String dBInstanceId;
 
-	private String dBInstanceName;
-
 	private String certCommonName;
 
-	private String sSLExpiredTime;
+	private String dBInstanceName;
 
-	private Boolean sSLEnabled;
+	public String getSSLExpiredTime() {
+		return this.sSLExpiredTime;
+	}
+
+	public void setSSLExpiredTime(String sSLExpiredTime) {
+		this.sSLExpiredTime = sSLExpiredTime;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -42,6 +50,14 @@ public class DescribeDBInstanceSSLResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Boolean getSSLEnabled() {
+		return this.sSLEnabled;
+	}
+
+	public void setSSLEnabled(Boolean sSLEnabled) {
+		this.sSLEnabled = sSLEnabled;
 	}
 
 	public String getDBInstanceId() {
@@ -52,14 +68,6 @@ public class DescribeDBInstanceSSLResponse extends AcsResponse {
 		this.dBInstanceId = dBInstanceId;
 	}
 
-	public String getDBInstanceName() {
-		return this.dBInstanceName;
-	}
-
-	public void setDBInstanceName(String dBInstanceName) {
-		this.dBInstanceName = dBInstanceName;
-	}
-
 	public String getCertCommonName() {
 		return this.certCommonName;
 	}
@@ -68,20 +76,12 @@ public class DescribeDBInstanceSSLResponse extends AcsResponse {
 		this.certCommonName = certCommonName;
 	}
 
-	public String getSSLExpiredTime() {
-		return this.sSLExpiredTime;
+	public String getDBInstanceName() {
+		return this.dBInstanceName;
 	}
 
-	public void setSSLExpiredTime(String sSLExpiredTime) {
-		this.sSLExpiredTime = sSLExpiredTime;
-	}
-
-	public Boolean getSSLEnabled() {
-		return this.sSLEnabled;
-	}
-
-	public void setSSLEnabled(Boolean sSLEnabled) {
-		this.sSLEnabled = sSLEnabled;
+	public void setDBInstanceName(String dBInstanceName) {
+		this.dBInstanceName = dBInstanceName;
 	}
 
 	@Override

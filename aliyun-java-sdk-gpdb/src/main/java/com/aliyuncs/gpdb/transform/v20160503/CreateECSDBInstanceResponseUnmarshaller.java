@@ -25,8 +25,8 @@ public class CreateECSDBInstanceResponseUnmarshaller {
 		createECSDBInstanceResponse.setRequestId(_ctx.stringValue("CreateECSDBInstanceResponse.RequestId"));
 		createECSDBInstanceResponse.setDBInstanceId(_ctx.stringValue("CreateECSDBInstanceResponse.DBInstanceId"));
 		createECSDBInstanceResponse.setPort(_ctx.stringValue("CreateECSDBInstanceResponse.Port"));
-		createECSDBInstanceResponse.setOrderId(_ctx.stringValue("CreateECSDBInstanceResponse.OrderId"));
 		createECSDBInstanceResponse.setConnectionString(_ctx.stringValue("CreateECSDBInstanceResponse.ConnectionString"));
+		createECSDBInstanceResponse.setOrderId(_ctx.stringValue("CreateECSDBInstanceResponse.OrderId"));
 	 
 	 	return createECSDBInstanceResponse;
 	}

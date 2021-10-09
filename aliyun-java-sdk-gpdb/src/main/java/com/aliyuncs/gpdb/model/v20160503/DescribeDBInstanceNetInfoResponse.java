@@ -57,21 +57,37 @@ public class DescribeDBInstanceNetInfoResponse extends AcsResponse {
 
 	public static class DBInstanceNetInfo {
 
-		private String iPType;
+		private String vSwitchId;
 
-		private String vPCId;
+		private String connectionString;
+
+		private String iPType;
 
 		private String port;
 
-		private String vSwitchId;
-
 		private String vpcInstanceId;
 
-		private String addressType;
+		private String vPCId;
 
 		private String iPAddress;
 
-		private String connectionString;
+		private String addressType;
+
+		public String getVSwitchId() {
+			return this.vSwitchId;
+		}
+
+		public void setVSwitchId(String vSwitchId) {
+			this.vSwitchId = vSwitchId;
+		}
+
+		public String getConnectionString() {
+			return this.connectionString;
+		}
+
+		public void setConnectionString(String connectionString) {
+			this.connectionString = connectionString;
+		}
 
 		public String getIPType() {
 			return this.iPType;
@@ -79,14 +95,6 @@ public class DescribeDBInstanceNetInfoResponse extends AcsResponse {
 
 		public void setIPType(String iPType) {
 			this.iPType = iPType;
-		}
-
-		public String getVPCId() {
-			return this.vPCId;
-		}
-
-		public void setVPCId(String vPCId) {
-			this.vPCId = vPCId;
 		}
 
 		public String getPort() {
@@ -97,14 +105,6 @@ public class DescribeDBInstanceNetInfoResponse extends AcsResponse {
 			this.port = port;
 		}
 
-		public String getVSwitchId() {
-			return this.vSwitchId;
-		}
-
-		public void setVSwitchId(String vSwitchId) {
-			this.vSwitchId = vSwitchId;
-		}
-
 		public String getVpcInstanceId() {
 			return this.vpcInstanceId;
 		}
@@ -113,12 +113,12 @@ public class DescribeDBInstanceNetInfoResponse extends AcsResponse {
 			this.vpcInstanceId = vpcInstanceId;
 		}
 
-		public String getAddressType() {
-			return this.addressType;
+		public String getVPCId() {
+			return this.vPCId;
 		}
 
-		public void setAddressType(String addressType) {
-			this.addressType = addressType;
+		public void setVPCId(String vPCId) {
+			this.vPCId = vPCId;
 		}
 
 		public String getIPAddress() {
@@ -129,12 +129,12 @@ public class DescribeDBInstanceNetInfoResponse extends AcsResponse {
 			this.iPAddress = iPAddress;
 		}
 
-		public String getConnectionString() {
-			return this.connectionString;
+		public String getAddressType() {
+			return this.addressType;
 		}
 
-		public void setConnectionString(String connectionString) {
-			this.connectionString = connectionString;
+		public void setAddressType(String addressType) {
+			this.addressType = addressType;
 		}
 	}
 

@@ -35,7 +35,7 @@ public class UpgradeDBInstanceRequest extends RpcAcsRequest<UpgradeDBInstanceRes
 
 	private String payType;
 	public UpgradeDBInstanceRequest() {
-		super("gpdb", "2016-05-03", "UpgradeDBInstance", "gpdb");
+		super("gpdb", "2016-05-03", "UpgradeDBInstance");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

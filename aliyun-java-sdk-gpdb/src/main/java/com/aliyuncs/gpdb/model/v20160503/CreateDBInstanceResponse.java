@@ -28,11 +28,11 @@ public class CreateDBInstanceResponse extends AcsResponse {
 
 	private String dBInstanceId;
 
-	private String orderId;
+	private String port;
 
 	private String connectionString;
 
-	private String port;
+	private String orderId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -50,12 +50,12 @@ public class CreateDBInstanceResponse extends AcsResponse {
 		this.dBInstanceId = dBInstanceId;
 	}
 
-	public String getOrderId() {
-		return this.orderId;
+	public String getPort() {
+		return this.port;
 	}
 
-	public void setOrderId(String orderId) {
-		this.orderId = orderId;
+	public void setPort(String port) {
+		this.port = port;
 	}
 
 	public String getConnectionString() {
@@ -66,12 +66,12 @@ public class CreateDBInstanceResponse extends AcsResponse {
 		this.connectionString = connectionString;
 	}
 
-	public String getPort() {
-		return this.port;
+	public String getOrderId() {
+		return this.orderId;
 	}
 
-	public void setPort(String port) {
-		this.port = port;
+	public void setOrderId(String orderId) {
+		this.orderId = orderId;
 	}
 
 	@Override

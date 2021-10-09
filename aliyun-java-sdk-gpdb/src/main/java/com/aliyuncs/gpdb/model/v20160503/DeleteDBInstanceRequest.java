@@ -31,7 +31,7 @@ public class DeleteDBInstanceRequest extends RpcAcsRequest<DeleteDBInstanceRespo
 
 	private Long ownerId;
 	public DeleteDBInstanceRequest() {
-		super("gpdb", "2016-05-03", "DeleteDBInstance", "gpdb");
+		super("gpdb", "2016-05-03", "DeleteDBInstance");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

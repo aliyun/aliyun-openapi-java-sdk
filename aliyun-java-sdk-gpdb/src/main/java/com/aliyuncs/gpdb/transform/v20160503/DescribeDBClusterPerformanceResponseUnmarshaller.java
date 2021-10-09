@@ -29,9 +29,9 @@ public class DescribeDBClusterPerformanceResponseUnmarshaller {
 	public static DescribeDBClusterPerformanceResponse unmarshall(DescribeDBClusterPerformanceResponse describeDBClusterPerformanceResponse, UnmarshallerContext _ctx) {
 		
 		describeDBClusterPerformanceResponse.setRequestId(_ctx.stringValue("DescribeDBClusterPerformanceResponse.RequestId"));
-		describeDBClusterPerformanceResponse.setDBClusterId(_ctx.stringValue("DescribeDBClusterPerformanceResponse.DBClusterId"));
-		describeDBClusterPerformanceResponse.setStartTime(_ctx.stringValue("DescribeDBClusterPerformanceResponse.StartTime"));
 		describeDBClusterPerformanceResponse.setEndTime(_ctx.stringValue("DescribeDBClusterPerformanceResponse.EndTime"));
+		describeDBClusterPerformanceResponse.setStartTime(_ctx.stringValue("DescribeDBClusterPerformanceResponse.StartTime"));
+		describeDBClusterPerformanceResponse.setDBClusterId(_ctx.stringValue("DescribeDBClusterPerformanceResponse.DBClusterId"));
 
 		List<PerformanceKey> performanceKeys = new ArrayList<PerformanceKey>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDBClusterPerformanceResponse.PerformanceKeys.Length"); i++) {
@@ -42,8 +42,8 @@ public class DescribeDBClusterPerformanceResponseUnmarshaller {
 			List<SeriesItem> series = new ArrayList<SeriesItem>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDBClusterPerformanceResponse.PerformanceKeys["+ i +"].Series.Length"); j++) {
 				SeriesItem seriesItem = new SeriesItem();
-				seriesItem.setName(_ctx.stringValue("DescribeDBClusterPerformanceResponse.PerformanceKeys["+ i +"].Series["+ j +"].Name"));
 				seriesItem.setRole(_ctx.stringValue("DescribeDBClusterPerformanceResponse.PerformanceKeys["+ i +"].Series["+ j +"].Role"));
+				seriesItem.setName(_ctx.stringValue("DescribeDBClusterPerformanceResponse.PerformanceKeys["+ i +"].Series["+ j +"].Name"));
 
 				List<ValueItem> values = new ArrayList<ValueItem>();
 				for (int k = 0; k < _ctx.lengthValue("DescribeDBClusterPerformanceResponse.PerformanceKeys["+ i +"].Series["+ j +"].Values.Length"); k++) {

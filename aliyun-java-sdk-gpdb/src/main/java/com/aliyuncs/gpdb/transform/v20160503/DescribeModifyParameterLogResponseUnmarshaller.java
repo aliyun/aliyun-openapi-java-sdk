@@ -31,11 +31,11 @@ public class DescribeModifyParameterLogResponseUnmarshaller {
 		List<ChangelogsItem> changelogs = new ArrayList<ChangelogsItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeModifyParameterLogResponse.Changelogs.Length"); i++) {
 			ChangelogsItem changelogsItem = new ChangelogsItem();
-			changelogsItem.setParameterName(_ctx.stringValue("DescribeModifyParameterLogResponse.Changelogs["+ i +"].ParameterName"));
-			changelogsItem.setParameterValueBefore(_ctx.stringValue("DescribeModifyParameterLogResponse.Changelogs["+ i +"].ParameterValueBefore"));
 			changelogsItem.setParameterValueAfter(_ctx.stringValue("DescribeModifyParameterLogResponse.Changelogs["+ i +"].ParameterValueAfter"));
-			changelogsItem.setParameterValid(_ctx.stringValue("DescribeModifyParameterLogResponse.Changelogs["+ i +"].ParameterValid"));
+			changelogsItem.setParameterName(_ctx.stringValue("DescribeModifyParameterLogResponse.Changelogs["+ i +"].ParameterName"));
 			changelogsItem.setEffectTime(_ctx.stringValue("DescribeModifyParameterLogResponse.Changelogs["+ i +"].EffectTime"));
+			changelogsItem.setParameterValueBefore(_ctx.stringValue("DescribeModifyParameterLogResponse.Changelogs["+ i +"].ParameterValueBefore"));
+			changelogsItem.setParameterValid(_ctx.stringValue("DescribeModifyParameterLogResponse.Changelogs["+ i +"].ParameterValid"));
 
 			changelogs.add(changelogsItem);
 		}

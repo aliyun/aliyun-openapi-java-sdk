@@ -30,9 +30,9 @@ public class CreateECSDBInstanceResponse extends AcsResponse {
 
 	private String port;
 
-	private String orderId;
-
 	private String connectionString;
+
+	private String orderId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -58,20 +58,20 @@ public class CreateECSDBInstanceResponse extends AcsResponse {
 		this.port = port;
 	}
 
-	public String getOrderId() {
-		return this.orderId;
-	}
-
-	public void setOrderId(String orderId) {
-		this.orderId = orderId;
-	}
-
 	public String getConnectionString() {
 		return this.connectionString;
 	}
 
 	public void setConnectionString(String connectionString) {
 		this.connectionString = connectionString;
+	}
+
+	public String getOrderId() {
+		return this.orderId;
+	}
+
+	public void setOrderId(String orderId) {
+		this.orderId = orderId;
 	}
 
 	@Override

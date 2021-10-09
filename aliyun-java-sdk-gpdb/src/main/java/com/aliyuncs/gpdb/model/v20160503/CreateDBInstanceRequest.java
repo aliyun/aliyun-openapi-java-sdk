@@ -57,7 +57,7 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 
 	private String instanceNetworkType;
 	public CreateDBInstanceRequest() {
-		super("gpdb", "2016-05-03", "CreateDBInstance", "gpdb");
+		super("gpdb", "2016-05-03", "CreateDBInstance");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

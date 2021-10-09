@@ -25,21 +25,9 @@ import com.aliyuncs.gpdb.Endpoint;
 public class CreateECSDBInstanceRequest extends RpcAcsRequest<CreateECSDBInstanceResponse> {
 	   
 
-	private String clientToken;
-
-	private String instanceSpec;
-
-	private Integer storageSize;
-
-	private String segStorageType;
-
-	private Integer masterNodeNum;
-
 	private String engineVersion;
 
-	private Integer segNodeNum;
-
-	private String engine;
+	private String dBInstanceCategory;
 
 	private String encryptionType;
 
@@ -53,85 +41,44 @@ public class CreateECSDBInstanceRequest extends RpcAcsRequest<CreateECSDBInstanc
 
 	private Long ownerId;
 
-	private String usedTime;
-
 	private String securityIPList;
 
 	private String vSwitchId;
 
 	private String privateIpAddress;
 
-	private String vPCId;
-
 	private String zoneId;
-
-	private String payType;
 
 	private String instanceNetworkType;
 
+	private String clientToken;
+
+	private String instanceSpec;
+
+	private Integer storageSize;
+
+	private String segStorageType;
+
+	private Integer masterNodeNum;
+
+	private Integer segNodeNum;
+
+	private String engine;
+
+	private String usedTime;
+
+	private String vPCId;
+
+	private String payType;
+
 	private String srcDbInstanceName;
 	public CreateECSDBInstanceRequest() {
-		super("gpdb", "2016-05-03", "CreateECSDBInstance", "gpdb");
+		super("gpdb", "2016-05-03", "CreateECSDBInstance");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
-		}
-	}
-
-	public String getInstanceSpec() {
-		return this.instanceSpec;
-	}
-
-	public void setInstanceSpec(String instanceSpec) {
-		this.instanceSpec = instanceSpec;
-		if(instanceSpec != null){
-			putQueryParameter("InstanceSpec", instanceSpec);
-		}
-	}
-
-	public Integer getStorageSize() {
-		return this.storageSize;
-	}
-
-	public void setStorageSize(Integer storageSize) {
-		this.storageSize = storageSize;
-		if(storageSize != null){
-			putQueryParameter("StorageSize", storageSize.toString());
-		}
-	}
-
-	public String getSegStorageType() {
-		return this.segStorageType;
-	}
-
-	public void setSegStorageType(String segStorageType) {
-		this.segStorageType = segStorageType;
-		if(segStorageType != null){
-			putQueryParameter("SegStorageType", segStorageType);
-		}
-	}
-
-	public Integer getMasterNodeNum() {
-		return this.masterNodeNum;
-	}
-
-	public void setMasterNodeNum(Integer masterNodeNum) {
-		this.masterNodeNum = masterNodeNum;
-		if(masterNodeNum != null){
-			putQueryParameter("MasterNodeNum", masterNodeNum.toString());
-		}
 	}
 
 	public String getEngineVersion() {
@@ -145,25 +92,14 @@ public class CreateECSDBInstanceRequest extends RpcAcsRequest<CreateECSDBInstanc
 		}
 	}
 
-	public Integer getSegNodeNum() {
-		return this.segNodeNum;
+	public String getDBInstanceCategory() {
+		return this.dBInstanceCategory;
 	}
 
-	public void setSegNodeNum(Integer segNodeNum) {
-		this.segNodeNum = segNodeNum;
-		if(segNodeNum != null){
-			putQueryParameter("SegNodeNum", segNodeNum.toString());
-		}
-	}
-
-	public String getEngine() {
-		return this.engine;
-	}
-
-	public void setEngine(String engine) {
-		this.engine = engine;
-		if(engine != null){
-			putQueryParameter("Engine", engine);
+	public void setDBInstanceCategory(String dBInstanceCategory) {
+		this.dBInstanceCategory = dBInstanceCategory;
+		if(dBInstanceCategory != null){
+			putQueryParameter("DBInstanceCategory", dBInstanceCategory);
 		}
 	}
 
@@ -233,17 +169,6 @@ public class CreateECSDBInstanceRequest extends RpcAcsRequest<CreateECSDBInstanc
 		}
 	}
 
-	public String getUsedTime() {
-		return this.usedTime;
-	}
-
-	public void setUsedTime(String usedTime) {
-		this.usedTime = usedTime;
-		if(usedTime != null){
-			putQueryParameter("UsedTime", usedTime);
-		}
-	}
-
 	public String getSecurityIPList() {
 		return this.securityIPList;
 	}
@@ -277,17 +202,6 @@ public class CreateECSDBInstanceRequest extends RpcAcsRequest<CreateECSDBInstanc
 		}
 	}
 
-	public String getVPCId() {
-		return this.vPCId;
-	}
-
-	public void setVPCId(String vPCId) {
-		this.vPCId = vPCId;
-		if(vPCId != null){
-			putQueryParameter("VPCId", vPCId);
-		}
-	}
-
 	public String getZoneId() {
 		return this.zoneId;
 	}
@@ -299,17 +213,6 @@ public class CreateECSDBInstanceRequest extends RpcAcsRequest<CreateECSDBInstanc
 		}
 	}
 
-	public String getPayType() {
-		return this.payType;
-	}
-
-	public void setPayType(String payType) {
-		this.payType = payType;
-		if(payType != null){
-			putQueryParameter("PayType", payType);
-		}
-	}
-
 	public String getInstanceNetworkType() {
 		return this.instanceNetworkType;
 	}
@@ -318,6 +221,116 @@ public class CreateECSDBInstanceRequest extends RpcAcsRequest<CreateECSDBInstanc
 		this.instanceNetworkType = instanceNetworkType;
 		if(instanceNetworkType != null){
 			putQueryParameter("InstanceNetworkType", instanceNetworkType);
+		}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getInstanceSpec() {
+		return this.instanceSpec;
+	}
+
+	public void setInstanceSpec(String instanceSpec) {
+		this.instanceSpec = instanceSpec;
+		if(instanceSpec != null){
+			putQueryParameter("InstanceSpec", instanceSpec);
+		}
+	}
+
+	public Integer getStorageSize() {
+		return this.storageSize;
+	}
+
+	public void setStorageSize(Integer storageSize) {
+		this.storageSize = storageSize;
+		if(storageSize != null){
+			putQueryParameter("StorageSize", storageSize.toString());
+		}
+	}
+
+	public String getSegStorageType() {
+		return this.segStorageType;
+	}
+
+	public void setSegStorageType(String segStorageType) {
+		this.segStorageType = segStorageType;
+		if(segStorageType != null){
+			putQueryParameter("SegStorageType", segStorageType);
+		}
+	}
+
+	public Integer getMasterNodeNum() {
+		return this.masterNodeNum;
+	}
+
+	public void setMasterNodeNum(Integer masterNodeNum) {
+		this.masterNodeNum = masterNodeNum;
+		if(masterNodeNum != null){
+			putQueryParameter("MasterNodeNum", masterNodeNum.toString());
+		}
+	}
+
+	public Integer getSegNodeNum() {
+		return this.segNodeNum;
+	}
+
+	public void setSegNodeNum(Integer segNodeNum) {
+		this.segNodeNum = segNodeNum;
+		if(segNodeNum != null){
+			putQueryParameter("SegNodeNum", segNodeNum.toString());
+		}
+	}
+
+	public String getEngine() {
+		return this.engine;
+	}
+
+	public void setEngine(String engine) {
+		this.engine = engine;
+		if(engine != null){
+			putQueryParameter("Engine", engine);
+		}
+	}
+
+	public String getUsedTime() {
+		return this.usedTime;
+	}
+
+	public void setUsedTime(String usedTime) {
+		this.usedTime = usedTime;
+		if(usedTime != null){
+			putQueryParameter("UsedTime", usedTime);
+		}
+	}
+
+	public String getVPCId() {
+		return this.vPCId;
+	}
+
+	public void setVPCId(String vPCId) {
+		this.vPCId = vPCId;
+		if(vPCId != null){
+			putQueryParameter("VPCId", vPCId);
+		}
+	}
+
+	public String getPayType() {
+		return this.payType;
+	}
+
+	public void setPayType(String payType) {
+		this.payType = payType;
+		if(payType != null){
+			putQueryParameter("PayType", payType);
 		}
 	}
 

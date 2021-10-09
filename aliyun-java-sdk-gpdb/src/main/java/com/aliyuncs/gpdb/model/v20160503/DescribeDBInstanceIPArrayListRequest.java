@@ -27,7 +27,7 @@ public class DescribeDBInstanceIPArrayListRequest extends RpcAcsRequest<Describe
 
 	private String dBInstanceId;
 	public DescribeDBInstanceIPArrayListRequest() {
-		super("gpdb", "2016-05-03", "DescribeDBInstanceIPArrayList", "gpdb");
+		super("gpdb", "2016-05-03", "DescribeDBInstanceIPArrayList");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

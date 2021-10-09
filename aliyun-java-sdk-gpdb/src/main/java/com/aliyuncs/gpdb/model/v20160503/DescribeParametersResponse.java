@@ -47,19 +47,43 @@ public class DescribeParametersResponse extends AcsResponse {
 
 	public static class ParametersItem {
 
+		private String isChangeableConfig;
+
+		private String forceRestartInstance;
+
+		private String optionalRange;
+
 		private String parameterName;
 
 		private String parameterValue;
 
-		private String currentValue;
-
 		private String parameterDescription;
 
-		private String forceRestartInstance;
+		private String currentValue;
 
-		private String isChangeableConfig;
+		public String getIsChangeableConfig() {
+			return this.isChangeableConfig;
+		}
 
-		private String optionalRange;
+		public void setIsChangeableConfig(String isChangeableConfig) {
+			this.isChangeableConfig = isChangeableConfig;
+		}
+
+		public String getForceRestartInstance() {
+			return this.forceRestartInstance;
+		}
+
+		public void setForceRestartInstance(String forceRestartInstance) {
+			this.forceRestartInstance = forceRestartInstance;
+		}
+
+		public String getOptionalRange() {
+			return this.optionalRange;
+		}
+
+		public void setOptionalRange(String optionalRange) {
+			this.optionalRange = optionalRange;
+		}
 
 		public String getParameterName() {
 			return this.parameterName;
@@ -77,14 +101,6 @@ public class DescribeParametersResponse extends AcsResponse {
 			this.parameterValue = parameterValue;
 		}
 
-		public String getCurrentValue() {
-			return this.currentValue;
-		}
-
-		public void setCurrentValue(String currentValue) {
-			this.currentValue = currentValue;
-		}
-
 		public String getParameterDescription() {
 			return this.parameterDescription;
 		}
@@ -93,28 +109,12 @@ public class DescribeParametersResponse extends AcsResponse {
 			this.parameterDescription = parameterDescription;
 		}
 
-		public String getForceRestartInstance() {
-			return this.forceRestartInstance;
+		public String getCurrentValue() {
+			return this.currentValue;
 		}
 
-		public void setForceRestartInstance(String forceRestartInstance) {
-			this.forceRestartInstance = forceRestartInstance;
-		}
-
-		public String getIsChangeableConfig() {
-			return this.isChangeableConfig;
-		}
-
-		public void setIsChangeableConfig(String isChangeableConfig) {
-			this.isChangeableConfig = isChangeableConfig;
-		}
-
-		public String getOptionalRange() {
-			return this.optionalRange;
-		}
-
-		public void setOptionalRange(String optionalRange) {
-			this.optionalRange = optionalRange;
+		public void setCurrentValue(String currentValue) {
+			this.currentValue = currentValue;
 		}
 	}
 

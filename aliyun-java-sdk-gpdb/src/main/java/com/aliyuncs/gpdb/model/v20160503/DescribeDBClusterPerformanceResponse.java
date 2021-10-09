@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDBClusterPerformanceResponse extends AcsResponse {
 
-	private String requestId;
+	private String endTime;
 
-	private String dBClusterId;
+	private String requestId;
 
 	private String startTime;
 
-	private String endTime;
+	private String dBClusterId;
 
 	private List<PerformanceKey> performanceKeys;
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class DescribeDBClusterPerformanceResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getDBClusterId() {
-		return this.dBClusterId;
-	}
-
-	public void setDBClusterId(String dBClusterId) {
-		this.dBClusterId = dBClusterId;
 	}
 
 	public String getStartTime() {
@@ -59,12 +59,12 @@ public class DescribeDBClusterPerformanceResponse extends AcsResponse {
 		this.startTime = startTime;
 	}
 
-	public String getEndTime() {
-		return this.endTime;
+	public String getDBClusterId() {
+		return this.dBClusterId;
 	}
 
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
+	public void setDBClusterId(String dBClusterId) {
+		this.dBClusterId = dBClusterId;
 	}
 
 	public List<PerformanceKey> getPerformanceKeys() {
@@ -109,19 +109,11 @@ public class DescribeDBClusterPerformanceResponse extends AcsResponse {
 
 		public static class SeriesItem {
 
-			private String name;
-
 			private String role;
 
+			private String name;
+
 			private List<ValueItem> values;
-
-			public String getName() {
-				return this.name;
-			}
-
-			public void setName(String name) {
-				this.name = name;
-			}
 
 			public String getRole() {
 				return this.role;
@@ -129,6 +121,14 @@ public class DescribeDBClusterPerformanceResponse extends AcsResponse {
 
 			public void setRole(String role) {
 				this.role = role;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
 			}
 
 			public List<ValueItem> getValues() {

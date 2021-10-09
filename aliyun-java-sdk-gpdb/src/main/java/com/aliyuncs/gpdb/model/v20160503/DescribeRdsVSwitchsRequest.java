@@ -39,7 +39,7 @@ public class DescribeRdsVSwitchsRequest extends RpcAcsRequest<DescribeRdsVSwitch
 
 	private String zoneId;
 	public DescribeRdsVSwitchsRequest() {
-		super("gpdb", "2016-05-03", "DescribeRdsVSwitchs", "gpdb");
+		super("gpdb", "2016-05-03", "DescribeRdsVSwitchs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

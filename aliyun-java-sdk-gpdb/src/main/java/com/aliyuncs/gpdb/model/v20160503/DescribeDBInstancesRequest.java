@@ -26,6 +26,8 @@ import com.aliyuncs.gpdb.Endpoint;
 public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstancesResponse> {
 	   
 
+	private List<String> dBInstanceStatuses;
+
 	private Integer pageNumber;
 
 	private Integer pageSize;
@@ -38,14 +40,31 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 
 	private Long ownerId;
 
+	private List<String> dBInstanceCategories;
+
+	private List<String> instanceDeployTypes;
+
 	private String instanceNetworkType;
 	public DescribeDBInstancesRequest() {
-		super("gpdb", "2016-05-03", "DescribeDBInstances", "gpdb");
+		super("gpdb", "2016-05-03", "DescribeDBInstances");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public List<String> getDBInstanceStatuses() {
+		return this.dBInstanceStatuses;
+	}
+
+	public void setDBInstanceStatuses(List<String> dBInstanceStatuses) {
+		this.dBInstanceStatuses = dBInstanceStatuses;	
+		if (dBInstanceStatuses != null) {
+			for (int depth1 = 0; depth1 < dBInstanceStatuses.size(); depth1++) {
+				putQueryParameter("DBInstanceStatuses." + (depth1 + 1) , dBInstanceStatuses.get(depth1));
+			}
+		}	
 	}
 
 	public Integer getPageNumber() {
@@ -115,6 +134,32 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
 		}
+	}
+
+	public List<String> getDBInstanceCategories() {
+		return this.dBInstanceCategories;
+	}
+
+	public void setDBInstanceCategories(List<String> dBInstanceCategories) {
+		this.dBInstanceCategories = dBInstanceCategories;	
+		if (dBInstanceCategories != null) {
+			for (int depth1 = 0; depth1 < dBInstanceCategories.size(); depth1++) {
+				putQueryParameter("DBInstanceCategories." + (depth1 + 1) , dBInstanceCategories.get(depth1));
+			}
+		}	
+	}
+
+	public List<String> getInstanceDeployTypes() {
+		return this.instanceDeployTypes;
+	}
+
+	public void setInstanceDeployTypes(List<String> instanceDeployTypes) {
+		this.instanceDeployTypes = instanceDeployTypes;	
+		if (instanceDeployTypes != null) {
+			for (int depth1 = 0; depth1 < instanceDeployTypes.size(); depth1++) {
+				putQueryParameter("InstanceDeployTypes." + (depth1 + 1) , instanceDeployTypes.get(depth1));
+			}
+		}	
 	}
 
 	public String getInstanceNetworkType() {

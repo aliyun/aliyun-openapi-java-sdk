@@ -31,7 +31,7 @@ public class AddBuDBInstanceRelationRequest extends RpcAcsRequest<AddBuDBInstanc
 
 	private String businessUnit;
 	public AddBuDBInstanceRelationRequest() {
-		super("gpdb", "2016-05-03", "AddBuDBInstanceRelation", "gpdb");
+		super("gpdb", "2016-05-03", "AddBuDBInstanceRelation");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

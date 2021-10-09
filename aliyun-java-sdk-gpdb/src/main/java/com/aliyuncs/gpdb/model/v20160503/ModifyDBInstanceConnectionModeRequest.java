@@ -29,7 +29,7 @@ public class ModifyDBInstanceConnectionModeRequest extends RpcAcsRequest<ModifyD
 
 	private String dBInstanceId;
 	public ModifyDBInstanceConnectionModeRequest() {
-		super("gpdb", "2016-05-03", "ModifyDBInstanceConnectionMode", "gpdb");
+		super("gpdb", "2016-05-03", "ModifyDBInstanceConnectionMode");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

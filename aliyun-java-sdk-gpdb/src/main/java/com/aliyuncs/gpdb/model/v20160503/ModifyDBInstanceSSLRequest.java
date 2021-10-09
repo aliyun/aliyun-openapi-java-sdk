@@ -31,7 +31,7 @@ public class ModifyDBInstanceSSLRequest extends RpcAcsRequest<ModifyDBInstanceSS
 
 	private Integer sSLEnabled;
 	public ModifyDBInstanceSSLRequest() {
-		super("gpdb", "2016-05-03", "ModifyDBInstanceSSL", "gpdb");
+		super("gpdb", "2016-05-03", "ModifyDBInstanceSSL");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

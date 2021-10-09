@@ -24,19 +24,27 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeResourceUsageResponse extends AcsResponse {
 
+	private Long logSize;
+
 	private String requestId;
 
 	private String dBInstanceId;
 
-	private String engine;
+	private Long dataSize;
+
+	private Long backupSize;
 
 	private Long diskUsed;
 
-	private Long dataSize;
+	private String engine;
 
-	private Long logSize;
+	public Long getLogSize() {
+		return this.logSize;
+	}
 
-	private Long backupSize;
+	public void setLogSize(Long logSize) {
+		this.logSize = logSize;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -54,12 +62,20 @@ public class DescribeResourceUsageResponse extends AcsResponse {
 		this.dBInstanceId = dBInstanceId;
 	}
 
-	public String getEngine() {
-		return this.engine;
+	public Long getDataSize() {
+		return this.dataSize;
 	}
 
-	public void setEngine(String engine) {
-		this.engine = engine;
+	public void setDataSize(Long dataSize) {
+		this.dataSize = dataSize;
+	}
+
+	public Long getBackupSize() {
+		return this.backupSize;
+	}
+
+	public void setBackupSize(Long backupSize) {
+		this.backupSize = backupSize;
 	}
 
 	public Long getDiskUsed() {
@@ -70,28 +86,12 @@ public class DescribeResourceUsageResponse extends AcsResponse {
 		this.diskUsed = diskUsed;
 	}
 
-	public Long getDataSize() {
-		return this.dataSize;
+	public String getEngine() {
+		return this.engine;
 	}
 
-	public void setDataSize(Long dataSize) {
-		this.dataSize = dataSize;
-	}
-
-	public Long getLogSize() {
-		return this.logSize;
-	}
-
-	public void setLogSize(Long logSize) {
-		this.logSize = logSize;
-	}
-
-	public Long getBackupSize() {
-		return this.backupSize;
-	}
-
-	public void setBackupSize(Long backupSize) {
-		this.backupSize = backupSize;
+	public void setEngine(String engine) {
+		this.engine = engine;
 	}
 
 	@Override

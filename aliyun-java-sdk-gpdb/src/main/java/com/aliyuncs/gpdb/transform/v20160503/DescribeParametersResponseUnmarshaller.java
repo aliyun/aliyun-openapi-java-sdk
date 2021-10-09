@@ -31,13 +31,13 @@ public class DescribeParametersResponseUnmarshaller {
 		List<ParametersItem> parameters = new ArrayList<ParametersItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeParametersResponse.Parameters.Length"); i++) {
 			ParametersItem parametersItem = new ParametersItem();
+			parametersItem.setIsChangeableConfig(_ctx.stringValue("DescribeParametersResponse.Parameters["+ i +"].IsChangeableConfig"));
+			parametersItem.setForceRestartInstance(_ctx.stringValue("DescribeParametersResponse.Parameters["+ i +"].ForceRestartInstance"));
+			parametersItem.setOptionalRange(_ctx.stringValue("DescribeParametersResponse.Parameters["+ i +"].OptionalRange"));
 			parametersItem.setParameterName(_ctx.stringValue("DescribeParametersResponse.Parameters["+ i +"].ParameterName"));
 			parametersItem.setParameterValue(_ctx.stringValue("DescribeParametersResponse.Parameters["+ i +"].ParameterValue"));
-			parametersItem.setCurrentValue(_ctx.stringValue("DescribeParametersResponse.Parameters["+ i +"].CurrentValue"));
 			parametersItem.setParameterDescription(_ctx.stringValue("DescribeParametersResponse.Parameters["+ i +"].ParameterDescription"));
-			parametersItem.setForceRestartInstance(_ctx.stringValue("DescribeParametersResponse.Parameters["+ i +"].ForceRestartInstance"));
-			parametersItem.setIsChangeableConfig(_ctx.stringValue("DescribeParametersResponse.Parameters["+ i +"].IsChangeableConfig"));
-			parametersItem.setOptionalRange(_ctx.stringValue("DescribeParametersResponse.Parameters["+ i +"].OptionalRange"));
+			parametersItem.setCurrentValue(_ctx.stringValue("DescribeParametersResponse.Parameters["+ i +"].CurrentValue"));
 
 			parameters.add(parametersItem);
 		}

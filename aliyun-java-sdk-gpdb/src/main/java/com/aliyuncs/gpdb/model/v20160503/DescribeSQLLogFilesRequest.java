@@ -33,7 +33,7 @@ public class DescribeSQLLogFilesRequest extends RpcAcsRequest<DescribeSQLLogFile
 
 	private String fileName;
 	public DescribeSQLLogFilesRequest() {
-		super("gpdb", "2016-05-03", "DescribeSQLLogFiles", "gpdb");
+		super("gpdb", "2016-05-03", "DescribeSQLLogFiles");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -67,35 +67,51 @@ public class DescribeSlowSQLLogsResponse extends AcsResponse {
 
 	public static class Item {
 
+		private String operationClass;
+
+		private String executeState;
+
 		private Float executeCost;
-
-		private String sQLPlan;
-
-		private String dBRole;
-
-		private String queryId;
-
-		private Integer sourcePort;
 
 		private String sQLText;
 
+		private Integer sourcePort;
+
+		private String dBRole;
+
+		private String operationType;
+
 		private String sourceIP;
+
+		private String sQLPlan;
 
 		private Long returnRowCounts;
 
 		private String dBName;
 
-		private String operationType;
+		private String operationExecuteTime;
 
 		private Long scanRowCounts;
 
 		private String accountName;
 
-		private String operationExecuteTime;
+		private String queryId;
 
-		private String executeState;
+		public String getOperationClass() {
+			return this.operationClass;
+		}
 
-		private String operationClass;
+		public void setOperationClass(String operationClass) {
+			this.operationClass = operationClass;
+		}
+
+		public String getExecuteState() {
+			return this.executeState;
+		}
+
+		public void setExecuteState(String executeState) {
+			this.executeState = executeState;
+		}
 
 		public Float getExecuteCost() {
 			return this.executeCost;
@@ -103,38 +119,6 @@ public class DescribeSlowSQLLogsResponse extends AcsResponse {
 
 		public void setExecuteCost(Float executeCost) {
 			this.executeCost = executeCost;
-		}
-
-		public String getSQLPlan() {
-			return this.sQLPlan;
-		}
-
-		public void setSQLPlan(String sQLPlan) {
-			this.sQLPlan = sQLPlan;
-		}
-
-		public String getDBRole() {
-			return this.dBRole;
-		}
-
-		public void setDBRole(String dBRole) {
-			this.dBRole = dBRole;
-		}
-
-		public String getQueryId() {
-			return this.queryId;
-		}
-
-		public void setQueryId(String queryId) {
-			this.queryId = queryId;
-		}
-
-		public Integer getSourcePort() {
-			return this.sourcePort;
-		}
-
-		public void setSourcePort(Integer sourcePort) {
-			this.sourcePort = sourcePort;
 		}
 
 		public String getSQLText() {
@@ -145,12 +129,44 @@ public class DescribeSlowSQLLogsResponse extends AcsResponse {
 			this.sQLText = sQLText;
 		}
 
+		public Integer getSourcePort() {
+			return this.sourcePort;
+		}
+
+		public void setSourcePort(Integer sourcePort) {
+			this.sourcePort = sourcePort;
+		}
+
+		public String getDBRole() {
+			return this.dBRole;
+		}
+
+		public void setDBRole(String dBRole) {
+			this.dBRole = dBRole;
+		}
+
+		public String getOperationType() {
+			return this.operationType;
+		}
+
+		public void setOperationType(String operationType) {
+			this.operationType = operationType;
+		}
+
 		public String getSourceIP() {
 			return this.sourceIP;
 		}
 
 		public void setSourceIP(String sourceIP) {
 			this.sourceIP = sourceIP;
+		}
+
+		public String getSQLPlan() {
+			return this.sQLPlan;
+		}
+
+		public void setSQLPlan(String sQLPlan) {
+			this.sQLPlan = sQLPlan;
 		}
 
 		public Long getReturnRowCounts() {
@@ -169,12 +185,12 @@ public class DescribeSlowSQLLogsResponse extends AcsResponse {
 			this.dBName = dBName;
 		}
 
-		public String getOperationType() {
-			return this.operationType;
+		public String getOperationExecuteTime() {
+			return this.operationExecuteTime;
 		}
 
-		public void setOperationType(String operationType) {
-			this.operationType = operationType;
+		public void setOperationExecuteTime(String operationExecuteTime) {
+			this.operationExecuteTime = operationExecuteTime;
 		}
 
 		public Long getScanRowCounts() {
@@ -193,28 +209,12 @@ public class DescribeSlowSQLLogsResponse extends AcsResponse {
 			this.accountName = accountName;
 		}
 
-		public String getOperationExecuteTime() {
-			return this.operationExecuteTime;
+		public String getQueryId() {
+			return this.queryId;
 		}
 
-		public void setOperationExecuteTime(String operationExecuteTime) {
-			this.operationExecuteTime = operationExecuteTime;
-		}
-
-		public String getExecuteState() {
-			return this.executeState;
-		}
-
-		public void setExecuteState(String executeState) {
-			this.executeState = executeState;
-		}
-
-		public String getOperationClass() {
-			return this.operationClass;
-		}
-
-		public void setOperationClass(String operationClass) {
-			this.operationClass = operationClass;
+		public void setQueryId(String queryId) {
+			this.queryId = queryId;
 		}
 	}
 

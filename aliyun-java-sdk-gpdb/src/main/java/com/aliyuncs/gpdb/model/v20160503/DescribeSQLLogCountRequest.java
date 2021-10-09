@@ -51,7 +51,7 @@ public class DescribeSQLLogCountRequest extends RpcAcsRequest<DescribeSQLLogCoun
 
 	private String user;
 	public DescribeSQLLogCountRequest() {
-		super("gpdb", "2016-05-03", "DescribeSQLLogCount", "gpdb");
+		super("gpdb", "2016-05-03", "DescribeSQLLogCount");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

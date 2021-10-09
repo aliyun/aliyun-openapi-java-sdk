@@ -24,9 +24,9 @@ public class CreateDBInstanceResponseUnmarshaller {
 		
 		createDBInstanceResponse.setRequestId(_ctx.stringValue("CreateDBInstanceResponse.RequestId"));
 		createDBInstanceResponse.setDBInstanceId(_ctx.stringValue("CreateDBInstanceResponse.DBInstanceId"));
-		createDBInstanceResponse.setOrderId(_ctx.stringValue("CreateDBInstanceResponse.OrderId"));
-		createDBInstanceResponse.setConnectionString(_ctx.stringValue("CreateDBInstanceResponse.ConnectionString"));
 		createDBInstanceResponse.setPort(_ctx.stringValue("CreateDBInstanceResponse.Port"));
+		createDBInstanceResponse.setConnectionString(_ctx.stringValue("CreateDBInstanceResponse.ConnectionString"));
+		createDBInstanceResponse.setOrderId(_ctx.stringValue("CreateDBInstanceResponse.OrderId"));
 	 
 	 	return createDBInstanceResponse;
 	}

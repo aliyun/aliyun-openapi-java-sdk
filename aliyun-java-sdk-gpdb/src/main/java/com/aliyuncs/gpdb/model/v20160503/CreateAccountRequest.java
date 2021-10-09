@@ -37,7 +37,7 @@ public class CreateAccountRequest extends RpcAcsRequest<CreateAccountResponse> {
 
 	private String databaseName;
 	public CreateAccountRequest() {
-		super("gpdb", "2016-05-03", "CreateAccount", "gpdb");
+		super("gpdb", "2016-05-03", "CreateAccount");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

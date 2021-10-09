@@ -31,7 +31,7 @@ public class ModifyAccountDescriptionRequest extends RpcAcsRequest<ModifyAccount
 
 	private String dBInstanceId;
 	public ModifyAccountDescriptionRequest() {
-		super("gpdb", "2016-05-03", "ModifyAccountDescription", "gpdb");
+		super("gpdb", "2016-05-03", "ModifyAccountDescription");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

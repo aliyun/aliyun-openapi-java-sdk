@@ -41,7 +41,7 @@ public class DescribeSQLLogsOnSliceRequest extends RpcAcsRequest<DescribeSQLLogs
 
 	private String queryId;
 	public DescribeSQLLogsOnSliceRequest() {
-		super("gpdb", "2016-05-03", "DescribeSQLLogsOnSlice", "gpdb");
+		super("gpdb", "2016-05-03", "DescribeSQLLogsOnSlice");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

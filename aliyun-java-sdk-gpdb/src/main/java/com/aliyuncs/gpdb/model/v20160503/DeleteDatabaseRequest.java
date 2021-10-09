@@ -29,7 +29,7 @@ public class DeleteDatabaseRequest extends RpcAcsRequest<DeleteDatabaseResponse>
 
 	private String dBName;
 	public DeleteDatabaseRequest() {
-		super("gpdb", "2016-05-03", "DeleteDatabase", "gpdb");
+		super("gpdb", "2016-05-03", "DeleteDatabase");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

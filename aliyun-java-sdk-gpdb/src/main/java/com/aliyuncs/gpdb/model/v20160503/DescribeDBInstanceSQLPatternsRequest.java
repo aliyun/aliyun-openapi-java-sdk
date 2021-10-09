@@ -39,7 +39,7 @@ public class DescribeDBInstanceSQLPatternsRequest extends RpcAcsRequest<Describe
 
 	private String user;
 	public DescribeDBInstanceSQLPatternsRequest() {
-		super("gpdb", "2016-05-03", "DescribeDBInstanceSQLPatterns", "gpdb");
+		super("gpdb", "2016-05-03", "DescribeDBInstanceSQLPatterns");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

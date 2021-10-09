@@ -32,41 +32,42 @@ public class DescribeDBInstanceOnECSAttributeResponseUnmarshaller {
 		List<DBInstanceAttribute> items = new ArrayList<DBInstanceAttribute>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDBInstanceOnECSAttributeResponse.Items.Length"); i++) {
 			DBInstanceAttribute dBInstanceAttribute = new DBInstanceAttribute();
-			dBInstanceAttribute.setMasterNodeNum(_ctx.integerValue("DescribeDBInstanceOnECSAttributeResponse.Items["+ i +"].MasterNodeNum"));
-			dBInstanceAttribute.setSegNodeNum(_ctx.integerValue("DescribeDBInstanceOnECSAttributeResponse.Items["+ i +"].SegNodeNum"));
+			dBInstanceAttribute.setCreationTime(_ctx.stringValue("DescribeDBInstanceOnECSAttributeResponse.Items["+ i +"].CreationTime"));
+			dBInstanceAttribute.setVpcId(_ctx.stringValue("DescribeDBInstanceOnECSAttributeResponse.Items["+ i +"].VpcId"));
+			dBInstanceAttribute.setEncryptionType(_ctx.stringValue("DescribeDBInstanceOnECSAttributeResponse.Items["+ i +"].EncryptionType"));
+			dBInstanceAttribute.setInstanceDeployType(_ctx.stringValue("DescribeDBInstanceOnECSAttributeResponse.Items["+ i +"].InstanceDeployType"));
+			dBInstanceAttribute.setPayType(_ctx.stringValue("DescribeDBInstanceOnECSAttributeResponse.Items["+ i +"].PayType"));
+			dBInstanceAttribute.setStorageType(_ctx.stringValue("DescribeDBInstanceOnECSAttributeResponse.Items["+ i +"].StorageType"));
+			dBInstanceAttribute.setConnectionMode(_ctx.stringValue("DescribeDBInstanceOnECSAttributeResponse.Items["+ i +"].ConnectionMode"));
 			dBInstanceAttribute.setPort(_ctx.stringValue("DescribeDBInstanceOnECSAttributeResponse.Items["+ i +"].Port"));
-			dBInstanceAttribute.setEncryptionKey(_ctx.stringValue("DescribeDBInstanceOnECSAttributeResponse.Items["+ i +"].EncryptionKey"));
+			dBInstanceAttribute.setLockMode(_ctx.stringValue("DescribeDBInstanceOnECSAttributeResponse.Items["+ i +"].LockMode"));
+			dBInstanceAttribute.setEngineVersion(_ctx.stringValue("DescribeDBInstanceOnECSAttributeResponse.Items["+ i +"].EngineVersion"));
+			dBInstanceAttribute.setMemorySize(_ctx.integerValue("DescribeDBInstanceOnECSAttributeResponse.Items["+ i +"].MemorySize"));
+			dBInstanceAttribute.setSegNodeNum(_ctx.integerValue("DescribeDBInstanceOnECSAttributeResponse.Items["+ i +"].SegNodeNum"));
+			dBInstanceAttribute.setConnectionString(_ctx.stringValue("DescribeDBInstanceOnECSAttributeResponse.Items["+ i +"].ConnectionString"));
 			dBInstanceAttribute.setInstanceNetworkType(_ctx.stringValue("DescribeDBInstanceOnECSAttributeResponse.Items["+ i +"].InstanceNetworkType"));
-			dBInstanceAttribute.setSupportRestore(_ctx.booleanValue("DescribeDBInstanceOnECSAttributeResponse.Items["+ i +"].SupportRestore"));
+			dBInstanceAttribute.setEncryptionKey(_ctx.stringValue("DescribeDBInstanceOnECSAttributeResponse.Items["+ i +"].EncryptionKey"));
+			dBInstanceAttribute.setDBInstanceDescription(_ctx.stringValue("DescribeDBInstanceOnECSAttributeResponse.Items["+ i +"].DBInstanceDescription"));
+			dBInstanceAttribute.setCpuCores(_ctx.integerValue("DescribeDBInstanceOnECSAttributeResponse.Items["+ i +"].CpuCores"));
+			dBInstanceAttribute.setExpireTime(_ctx.stringValue("DescribeDBInstanceOnECSAttributeResponse.Items["+ i +"].ExpireTime"));
+			dBInstanceAttribute.setDBInstanceStatus(_ctx.stringValue("DescribeDBInstanceOnECSAttributeResponse.Items["+ i +"].DBInstanceStatus"));
+			dBInstanceAttribute.setStorageSize(_ctx.integerValue("DescribeDBInstanceOnECSAttributeResponse.Items["+ i +"].StorageSize"));
+			dBInstanceAttribute.setRegionId(_ctx.stringValue("DescribeDBInstanceOnECSAttributeResponse.Items["+ i +"].RegionId"));
+			dBInstanceAttribute.setVSwitchId(_ctx.stringValue("DescribeDBInstanceOnECSAttributeResponse.Items["+ i +"].VSwitchId"));
+			dBInstanceAttribute.setZoneId(_ctx.stringValue("DescribeDBInstanceOnECSAttributeResponse.Items["+ i +"].ZoneId"));
 			dBInstanceAttribute.setDBInstanceId(_ctx.stringValue("DescribeDBInstanceOnECSAttributeResponse.Items["+ i +"].DBInstanceId"));
 			dBInstanceAttribute.setEngine(_ctx.stringValue("DescribeDBInstanceOnECSAttributeResponse.Items["+ i +"].Engine"));
-			dBInstanceAttribute.setDBInstanceDescription(_ctx.stringValue("DescribeDBInstanceOnECSAttributeResponse.Items["+ i +"].DBInstanceDescription"));
-			dBInstanceAttribute.setMemorySize(_ctx.integerValue("DescribeDBInstanceOnECSAttributeResponse.Items["+ i +"].MemorySize"));
-			dBInstanceAttribute.setEncryptionType(_ctx.stringValue("DescribeDBInstanceOnECSAttributeResponse.Items["+ i +"].EncryptionType"));
-			dBInstanceAttribute.setEngineVersion(_ctx.stringValue("DescribeDBInstanceOnECSAttributeResponse.Items["+ i +"].EngineVersion"));
-			dBInstanceAttribute.setStorageType(_ctx.stringValue("DescribeDBInstanceOnECSAttributeResponse.Items["+ i +"].StorageType"));
-			dBInstanceAttribute.setZoneId(_ctx.stringValue("DescribeDBInstanceOnECSAttributeResponse.Items["+ i +"].ZoneId"));
-			dBInstanceAttribute.setDBInstanceStatus(_ctx.stringValue("DescribeDBInstanceOnECSAttributeResponse.Items["+ i +"].DBInstanceStatus"));
 			dBInstanceAttribute.setDBInstanceClass(_ctx.stringValue("DescribeDBInstanceOnECSAttributeResponse.Items["+ i +"].DBInstanceClass"));
-			dBInstanceAttribute.setVSwitchId(_ctx.stringValue("DescribeDBInstanceOnECSAttributeResponse.Items["+ i +"].VSwitchId"));
+			dBInstanceAttribute.setSupportRestore(_ctx.booleanValue("DescribeDBInstanceOnECSAttributeResponse.Items["+ i +"].SupportRestore"));
 			dBInstanceAttribute.setMinorVersion(_ctx.stringValue("DescribeDBInstanceOnECSAttributeResponse.Items["+ i +"].MinorVersion"));
-			dBInstanceAttribute.setStorageSize(_ctx.integerValue("DescribeDBInstanceOnECSAttributeResponse.Items["+ i +"].StorageSize"));
-			dBInstanceAttribute.setLockMode(_ctx.stringValue("DescribeDBInstanceOnECSAttributeResponse.Items["+ i +"].LockMode"));
-			dBInstanceAttribute.setPayType(_ctx.stringValue("DescribeDBInstanceOnECSAttributeResponse.Items["+ i +"].PayType"));
-			dBInstanceAttribute.setVpcId(_ctx.stringValue("DescribeDBInstanceOnECSAttributeResponse.Items["+ i +"].VpcId"));
-			dBInstanceAttribute.setCpuCores(_ctx.integerValue("DescribeDBInstanceOnECSAttributeResponse.Items["+ i +"].CpuCores"));
-			dBInstanceAttribute.setConnectionMode(_ctx.stringValue("DescribeDBInstanceOnECSAttributeResponse.Items["+ i +"].ConnectionMode"));
-			dBInstanceAttribute.setInstanceDeployType(_ctx.stringValue("DescribeDBInstanceOnECSAttributeResponse.Items["+ i +"].InstanceDeployType"));
-			dBInstanceAttribute.setCreationTime(_ctx.stringValue("DescribeDBInstanceOnECSAttributeResponse.Items["+ i +"].CreationTime"));
-			dBInstanceAttribute.setRegionId(_ctx.stringValue("DescribeDBInstanceOnECSAttributeResponse.Items["+ i +"].RegionId"));
-			dBInstanceAttribute.setExpireTime(_ctx.stringValue("DescribeDBInstanceOnECSAttributeResponse.Items["+ i +"].ExpireTime"));
-			dBInstanceAttribute.setConnectionString(_ctx.stringValue("DescribeDBInstanceOnECSAttributeResponse.Items["+ i +"].ConnectionString"));
+			dBInstanceAttribute.setMasterNodeNum(_ctx.integerValue("DescribeDBInstanceOnECSAttributeResponse.Items["+ i +"].MasterNodeNum"));
+			dBInstanceAttribute.setDBInstanceCategory(_ctx.stringValue("DescribeDBInstanceOnECSAttributeResponse.Items["+ i +"].DBInstanceCategory"));
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDBInstanceOnECSAttributeResponse.Items["+ i +"].Tags.Length"); j++) {
 				Tag tag = new Tag();
-				tag.setValue(_ctx.stringValue("DescribeDBInstanceOnECSAttributeResponse.Items["+ i +"].Tags["+ j +"].Value"));
 				tag.setKey(_ctx.stringValue("DescribeDBInstanceOnECSAttributeResponse.Items["+ i +"].Tags["+ j +"].Key"));
+				tag.setValue(_ctx.stringValue("DescribeDBInstanceOnECSAttributeResponse.Items["+ i +"].Tags["+ j +"].Value"));
 
 				tags.add(tag);
 			}

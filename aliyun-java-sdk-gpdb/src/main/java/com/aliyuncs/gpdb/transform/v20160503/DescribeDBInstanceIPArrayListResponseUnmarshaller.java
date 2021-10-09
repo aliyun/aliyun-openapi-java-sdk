@@ -32,8 +32,8 @@ public class DescribeDBInstanceIPArrayListResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("DescribeDBInstanceIPArrayListResponse.Items.Length"); i++) {
 			DBInstanceIPArray dBInstanceIPArray = new DBInstanceIPArray();
 			dBInstanceIPArray.setDBInstanceIPArrayName(_ctx.stringValue("DescribeDBInstanceIPArrayListResponse.Items["+ i +"].DBInstanceIPArrayName"));
-			dBInstanceIPArray.setDBInstanceIPArrayAttribute(_ctx.stringValue("DescribeDBInstanceIPArrayListResponse.Items["+ i +"].DBInstanceIPArrayAttribute"));
 			dBInstanceIPArray.setSecurityIPList(_ctx.stringValue("DescribeDBInstanceIPArrayListResponse.Items["+ i +"].SecurityIPList"));
+			dBInstanceIPArray.setDBInstanceIPArrayAttribute(_ctx.stringValue("DescribeDBInstanceIPArrayListResponse.Items["+ i +"].DBInstanceIPArrayAttribute"));
 
 			items.add(dBInstanceIPArray);
 		}

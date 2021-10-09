@@ -23,11 +23,11 @@ public class DescribeDBInstanceSSLResponseUnmarshaller {
 	public static DescribeDBInstanceSSLResponse unmarshall(DescribeDBInstanceSSLResponse describeDBInstanceSSLResponse, UnmarshallerContext _ctx) {
 		
 		describeDBInstanceSSLResponse.setRequestId(_ctx.stringValue("DescribeDBInstanceSSLResponse.RequestId"));
-		describeDBInstanceSSLResponse.setDBInstanceId(_ctx.stringValue("DescribeDBInstanceSSLResponse.DBInstanceId"));
-		describeDBInstanceSSLResponse.setDBInstanceName(_ctx.stringValue("DescribeDBInstanceSSLResponse.DBInstanceName"));
-		describeDBInstanceSSLResponse.setCertCommonName(_ctx.stringValue("DescribeDBInstanceSSLResponse.CertCommonName"));
 		describeDBInstanceSSLResponse.setSSLExpiredTime(_ctx.stringValue("DescribeDBInstanceSSLResponse.SSLExpiredTime"));
 		describeDBInstanceSSLResponse.setSSLEnabled(_ctx.booleanValue("DescribeDBInstanceSSLResponse.SSLEnabled"));
+		describeDBInstanceSSLResponse.setDBInstanceId(_ctx.stringValue("DescribeDBInstanceSSLResponse.DBInstanceId"));
+		describeDBInstanceSSLResponse.setCertCommonName(_ctx.stringValue("DescribeDBInstanceSSLResponse.CertCommonName"));
+		describeDBInstanceSSLResponse.setDBInstanceName(_ctx.stringValue("DescribeDBInstanceSSLResponse.DBInstanceName"));
 	 
 	 	return describeDBInstanceSSLResponse;
 	}

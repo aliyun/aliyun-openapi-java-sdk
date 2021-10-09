@@ -29,7 +29,7 @@ public class DescribeAccountsRequest extends RpcAcsRequest<DescribeAccountsRespo
 
 	private String dBInstanceId;
 	public DescribeAccountsRequest() {
-		super("gpdb", "2016-05-03", "DescribeAccounts", "gpdb");
+		super("gpdb", "2016-05-03", "DescribeAccounts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

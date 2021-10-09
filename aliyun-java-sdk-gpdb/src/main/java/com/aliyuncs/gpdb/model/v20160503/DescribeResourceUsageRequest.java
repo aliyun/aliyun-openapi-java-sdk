@@ -27,7 +27,7 @@ public class DescribeResourceUsageRequest extends RpcAcsRequest<DescribeResource
 
 	private String dBInstanceId;
 	public DescribeResourceUsageRequest() {
-		super("gpdb", "2016-05-03", "DescribeResourceUsage", "gpdb");
+		super("gpdb", "2016-05-03", "DescribeResourceUsage");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

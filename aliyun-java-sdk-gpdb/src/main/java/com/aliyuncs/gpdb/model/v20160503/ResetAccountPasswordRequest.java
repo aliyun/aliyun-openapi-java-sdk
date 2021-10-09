@@ -31,7 +31,7 @@ public class ResetAccountPasswordRequest extends RpcAcsRequest<ResetAccountPassw
 
 	private String accountPassword;
 	public ResetAccountPasswordRequest() {
-		super("gpdb", "2016-05-03", "ResetAccountPassword", "gpdb");
+		super("gpdb", "2016-05-03", "ResetAccountPassword");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -23,9 +23,9 @@ public class UpgradeDBVersionResponseUnmarshaller {
 	public static UpgradeDBVersionResponse unmarshall(UpgradeDBVersionResponse upgradeDBVersionResponse, UnmarshallerContext _ctx) {
 		
 		upgradeDBVersionResponse.setRequestId(_ctx.stringValue("UpgradeDBVersionResponse.RequestId"));
+		upgradeDBVersionResponse.setTaskId(_ctx.stringValue("UpgradeDBVersionResponse.TaskId"));
 		upgradeDBVersionResponse.setDBInstanceId(_ctx.stringValue("UpgradeDBVersionResponse.DBInstanceId"));
 		upgradeDBVersionResponse.setDBInstanceName(_ctx.stringValue("UpgradeDBVersionResponse.DBInstanceName"));
-		upgradeDBVersionResponse.setTaskId(_ctx.stringValue("UpgradeDBVersionResponse.TaskId"));
 	 
 	 	return upgradeDBVersionResponse;
 	}
