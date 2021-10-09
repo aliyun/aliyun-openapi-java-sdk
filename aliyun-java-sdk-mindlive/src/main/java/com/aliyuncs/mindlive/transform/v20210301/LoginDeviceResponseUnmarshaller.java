@@ -23,9 +23,9 @@ public class LoginDeviceResponseUnmarshaller {
 	public static LoginDeviceResponse unmarshall(LoginDeviceResponse loginDeviceResponse, UnmarshallerContext _ctx) {
 		
 		loginDeviceResponse.setRequestId(_ctx.stringValue("LoginDeviceResponse.RequestId"));
+		loginDeviceResponse.setErrorMessage(_ctx.stringValue("LoginDeviceResponse.ErrorMessage"));
 		loginDeviceResponse.setSuccess(_ctx.booleanValue("LoginDeviceResponse.Success"));
 		loginDeviceResponse.setErrorCode(_ctx.stringValue("LoginDeviceResponse.ErrorCode"));
-		loginDeviceResponse.setErrorMessage(_ctx.stringValue("LoginDeviceResponse.ErrorMessage"));
 	 
 	 	return loginDeviceResponse;
 	}

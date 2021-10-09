@@ -15,6 +15,7 @@
 package com.aliyuncs.mindlive.model.v20210301;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 
 /**
@@ -29,6 +30,7 @@ public class RequestOssStsRequest extends RpcAcsRequest<RequestOssStsResponse> {
 	private String appCode;
 	public RequestOssStsRequest() {
 		super("MindLive", "2021-03-01", "RequestOssSts");
+		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
 

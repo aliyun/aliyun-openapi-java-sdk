@@ -28,9 +28,9 @@ public class RequestPasterResponseUnmarshaller {
 	public static RequestPasterResponse unmarshall(RequestPasterResponse requestPasterResponse, UnmarshallerContext _ctx) {
 		
 		requestPasterResponse.setRequestId(_ctx.stringValue("RequestPasterResponse.RequestId"));
+		requestPasterResponse.setErrorMessage(_ctx.stringValue("RequestPasterResponse.ErrorMessage"));
 		requestPasterResponse.setSuccess(_ctx.booleanValue("RequestPasterResponse.Success"));
 		requestPasterResponse.setErrorCode(_ctx.stringValue("RequestPasterResponse.ErrorCode"));
-		requestPasterResponse.setErrorMessage(_ctx.stringValue("RequestPasterResponse.ErrorMessage"));
 
 		List<PasterConfig> data = new ArrayList<PasterConfig>();
 		for (int i = 0; i < _ctx.lengthValue("RequestPasterResponse.Data.Length"); i++) {

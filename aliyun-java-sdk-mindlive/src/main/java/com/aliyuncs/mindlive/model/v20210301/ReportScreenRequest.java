@@ -15,6 +15,7 @@
 package com.aliyuncs.mindlive.model.v20210301;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 
 /**
@@ -27,12 +28,9 @@ public class ReportScreenRequest extends RpcAcsRequest<ReportScreenResponse> {
 	private String ossObjectKey;
 
 	private String ossBucketName;
-
-	private String userSource;
-
-	private String userId;
 	public ReportScreenRequest() {
 		super("MindLive", "2021-03-01", "ReportScreen");
+		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
 
@@ -55,28 +53,6 @@ public class ReportScreenRequest extends RpcAcsRequest<ReportScreenResponse> {
 		this.ossBucketName = ossBucketName;
 		if(ossBucketName != null){
 			putQueryParameter("OssBucketName", ossBucketName);
-		}
-	}
-
-	public String getUserSource() {
-		return this.userSource;
-	}
-
-	public void setUserSource(String userSource) {
-		this.userSource = userSource;
-		if(userSource != null){
-			putQueryParameter("UserSource", userSource);
-		}
-	}
-
-	public String getUserId() {
-		return this.userId;
-	}
-
-	public void setUserId(String userId) {
-		this.userId = userId;
-		if(userId != null){
-			putQueryParameter("UserId", userId);
 		}
 	}
 

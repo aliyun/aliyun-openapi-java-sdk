@@ -24,15 +24,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class RequestBindingStateResponse extends AcsResponse {
 
+	private String errorMessage;
+
 	private String requestId;
 
 	private Boolean success;
 
 	private String errorCode;
 
-	private String errorMessage;
-
 	private Data data;
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -58,14 +66,6 @@ public class RequestBindingStateResponse extends AcsResponse {
 		this.errorCode = errorCode;
 	}
 
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
-
 	public Data getData() {
 		return this.data;
 	}
@@ -75,6 +75,8 @@ public class RequestBindingStateResponse extends AcsResponse {
 	}
 
 	public static class Data {
+
+		private String userAvatar;
 
 		private String deviceId;
 
@@ -86,7 +88,13 @@ public class RequestBindingStateResponse extends AcsResponse {
 
 		private String userNick;
 
-		private String userAvatar;
+		public String getUserAvatar() {
+			return this.userAvatar;
+		}
+
+		public void setUserAvatar(String userAvatar) {
+			this.userAvatar = userAvatar;
+		}
 
 		public String getDeviceId() {
 			return this.deviceId;
@@ -126,14 +134,6 @@ public class RequestBindingStateResponse extends AcsResponse {
 
 		public void setUserNick(String userNick) {
 			this.userNick = userNick;
-		}
-
-		public String getUserAvatar() {
-			return this.userAvatar;
-		}
-
-		public void setUserAvatar(String userAvatar) {
-			this.userAvatar = userAvatar;
 		}
 	}
 

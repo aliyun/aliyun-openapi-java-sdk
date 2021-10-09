@@ -24,15 +24,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class RequestOssStsResponse extends AcsResponse {
 
+	private String errorMessage;
+
 	private String requestId;
 
 	private Boolean success;
 
 	private String errorCode;
 
-	private String errorMessage;
-
 	private Data data;
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -58,14 +66,6 @@ public class RequestOssStsResponse extends AcsResponse {
 		this.errorCode = errorCode;
 	}
 
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
-
 	public Data getData() {
 		return this.data;
 	}
@@ -76,35 +76,19 @@ public class RequestOssStsResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String endPoint;
-
-		private String bucket;
-
 		private String objectKeyPrefix;
-
-		private String accessKeyId;
-
-		private String accessKeySecret;
 
 		private String securityToken;
 
+		private String accessKeySecret;
+
 		private String expire;
 
-		public String getEndPoint() {
-			return this.endPoint;
-		}
+		private String endPoint;
 
-		public void setEndPoint(String endPoint) {
-			this.endPoint = endPoint;
-		}
+		private String accessKeyId;
 
-		public String getBucket() {
-			return this.bucket;
-		}
-
-		public void setBucket(String bucket) {
-			this.bucket = bucket;
-		}
+		private String bucket;
 
 		public String getObjectKeyPrefix() {
 			return this.objectKeyPrefix;
@@ -112,22 +96,6 @@ public class RequestOssStsResponse extends AcsResponse {
 
 		public void setObjectKeyPrefix(String objectKeyPrefix) {
 			this.objectKeyPrefix = objectKeyPrefix;
-		}
-
-		public String getAccessKeyId() {
-			return this.accessKeyId;
-		}
-
-		public void setAccessKeyId(String accessKeyId) {
-			this.accessKeyId = accessKeyId;
-		}
-
-		public String getAccessKeySecret() {
-			return this.accessKeySecret;
-		}
-
-		public void setAccessKeySecret(String accessKeySecret) {
-			this.accessKeySecret = accessKeySecret;
 		}
 
 		public String getSecurityToken() {
@@ -138,12 +106,44 @@ public class RequestOssStsResponse extends AcsResponse {
 			this.securityToken = securityToken;
 		}
 
+		public String getAccessKeySecret() {
+			return this.accessKeySecret;
+		}
+
+		public void setAccessKeySecret(String accessKeySecret) {
+			this.accessKeySecret = accessKeySecret;
+		}
+
 		public String getExpire() {
 			return this.expire;
 		}
 
 		public void setExpire(String expire) {
 			this.expire = expire;
+		}
+
+		public String getEndPoint() {
+			return this.endPoint;
+		}
+
+		public void setEndPoint(String endPoint) {
+			this.endPoint = endPoint;
+		}
+
+		public String getAccessKeyId() {
+			return this.accessKeyId;
+		}
+
+		public void setAccessKeyId(String accessKeyId) {
+			this.accessKeyId = accessKeyId;
+		}
+
+		public String getBucket() {
+			return this.bucket;
+		}
+
+		public void setBucket(String bucket) {
+			this.bucket = bucket;
 		}
 	}
 

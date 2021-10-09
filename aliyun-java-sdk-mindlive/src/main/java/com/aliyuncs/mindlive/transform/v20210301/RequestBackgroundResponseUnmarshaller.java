@@ -16,6 +16,7 @@ package com.aliyuncs.mindlive.transform.v20210301;
 
 import com.aliyuncs.mindlive.model.v20210301.RequestBackgroundResponse;
 import com.aliyuncs.mindlive.model.v20210301.RequestBackgroundResponse.Data;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -24,14 +25,18 @@ public class RequestBackgroundResponseUnmarshaller {
 	public static RequestBackgroundResponse unmarshall(RequestBackgroundResponse requestBackgroundResponse, UnmarshallerContext _ctx) {
 		
 		requestBackgroundResponse.setRequestId(_ctx.stringValue("RequestBackgroundResponse.RequestId"));
+		requestBackgroundResponse.setErrorMessage(_ctx.stringValue("RequestBackgroundResponse.ErrorMessage"));
 		requestBackgroundResponse.setSuccess(_ctx.booleanValue("RequestBackgroundResponse.Success"));
 		requestBackgroundResponse.setErrorCode(_ctx.stringValue("RequestBackgroundResponse.ErrorCode"));
-		requestBackgroundResponse.setErrorMessage(_ctx.stringValue("RequestBackgroundResponse.ErrorMessage"));
 
 		Data data = new Data();
-		data.setResourceUuid(_ctx.stringValue("RequestBackgroundResponse.Data.ResourceUuid"));
+		data.setBgConfig(_ctx.mapValue("RequestBackgroundResponse.Data.BgConfig"));
 		data.setDownloadUrl(_ctx.stringValue("RequestBackgroundResponse.Data.DownloadUrl"));
 		data.setFileType(_ctx.stringValue("RequestBackgroundResponse.Data.FileType"));
+		data.setOpen(_ctx.booleanValue("RequestBackgroundResponse.Data.Open"));
+		data.setScope(_ctx.stringValue("RequestBackgroundResponse.Data.Scope"));
+		data.setMode(_ctx.stringValue("RequestBackgroundResponse.Data.Mode"));
+		data.setResourceUuid(_ctx.stringValue("RequestBackgroundResponse.Data.ResourceUuid"));
 		requestBackgroundResponse.setData(data);
 	 
 	 	return requestBackgroundResponse;

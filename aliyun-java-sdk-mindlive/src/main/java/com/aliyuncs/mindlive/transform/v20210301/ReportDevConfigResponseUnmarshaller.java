@@ -23,9 +23,9 @@ public class ReportDevConfigResponseUnmarshaller {
 	public static ReportDevConfigResponse unmarshall(ReportDevConfigResponse reportDevConfigResponse, UnmarshallerContext _ctx) {
 		
 		reportDevConfigResponse.setRequestId(_ctx.stringValue("ReportDevConfigResponse.RequestId"));
+		reportDevConfigResponse.setErrorMessage(_ctx.stringValue("ReportDevConfigResponse.ErrorMessage"));
 		reportDevConfigResponse.setSuccess(_ctx.booleanValue("ReportDevConfigResponse.Success"));
 		reportDevConfigResponse.setErrorCode(_ctx.stringValue("ReportDevConfigResponse.ErrorCode"));
-		reportDevConfigResponse.setErrorMessage(_ctx.stringValue("ReportDevConfigResponse.ErrorMessage"));
 	 
 	 	return reportDevConfigResponse;
 	}

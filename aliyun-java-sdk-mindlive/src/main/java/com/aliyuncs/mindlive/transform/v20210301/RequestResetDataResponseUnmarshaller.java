@@ -24,11 +24,12 @@ public class RequestResetDataResponseUnmarshaller {
 	public static RequestResetDataResponse unmarshall(RequestResetDataResponse requestResetDataResponse, UnmarshallerContext _ctx) {
 		
 		requestResetDataResponse.setRequestId(_ctx.stringValue("RequestResetDataResponse.RequestId"));
+		requestResetDataResponse.setErrorMessage(_ctx.stringValue("RequestResetDataResponse.ErrorMessage"));
 		requestResetDataResponse.setSuccess(_ctx.booleanValue("RequestResetDataResponse.Success"));
 		requestResetDataResponse.setErrorCode(_ctx.stringValue("RequestResetDataResponse.ErrorCode"));
-		requestResetDataResponse.setErrorMessage(_ctx.stringValue("RequestResetDataResponse.ErrorMessage"));
 
 		Data data = new Data();
+		data.setFullUrl(_ctx.stringValue("RequestResetDataResponse.Data.FullUrl"));
 		data.setUrl(_ctx.stringValue("RequestResetDataResponse.Data.Url"));
 		requestResetDataResponse.setData(data);
 	 

@@ -24,14 +24,15 @@ public class RequestBindDataResponseUnmarshaller {
 	public static RequestBindDataResponse unmarshall(RequestBindDataResponse requestBindDataResponse, UnmarshallerContext _ctx) {
 		
 		requestBindDataResponse.setRequestId(_ctx.stringValue("RequestBindDataResponse.RequestId"));
+		requestBindDataResponse.setErrorMessage(_ctx.stringValue("RequestBindDataResponse.ErrorMessage"));
 		requestBindDataResponse.setSuccess(_ctx.booleanValue("RequestBindDataResponse.Success"));
 		requestBindDataResponse.setErrorCode(_ctx.stringValue("RequestBindDataResponse.ErrorCode"));
-		requestBindDataResponse.setErrorMessage(_ctx.stringValue("RequestBindDataResponse.ErrorMessage"));
 
 		Data data = new Data();
-		data.setUrl(_ctx.stringValue("RequestBindDataResponse.Data.Url"));
 		data.setCode(_ctx.stringValue("RequestBindDataResponse.Data.Code"));
 		data.setMaxKeepSeconds(_ctx.integerValue("RequestBindDataResponse.Data.MaxKeepSeconds"));
+		data.setUrl(_ctx.stringValue("RequestBindDataResponse.Data.Url"));
+		data.setShortUrl(_ctx.stringValue("RequestBindDataResponse.Data.ShortUrl"));
 		requestBindDataResponse.setData(data);
 	 
 	 	return requestBindDataResponse;

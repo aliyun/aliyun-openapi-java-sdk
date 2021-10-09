@@ -15,6 +15,7 @@
 package com.aliyuncs.mindlive.model.v20210301;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 
 /**
@@ -27,6 +28,7 @@ public class ResetDeviceRequest extends RpcAcsRequest<ResetDeviceResponse> {
 	private String code;
 	public ResetDeviceRequest() {
 		super("MindLive", "2021-03-01", "ResetDevice");
+		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
 

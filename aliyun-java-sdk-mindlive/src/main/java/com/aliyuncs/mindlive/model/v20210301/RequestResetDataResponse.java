@@ -24,15 +24,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class RequestResetDataResponse extends AcsResponse {
 
+	private String errorMessage;
+
 	private String requestId;
 
 	private Boolean success;
 
 	private String errorCode;
 
-	private String errorMessage;
-
 	private Data data;
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -58,14 +66,6 @@ public class RequestResetDataResponse extends AcsResponse {
 		this.errorCode = errorCode;
 	}
 
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
-
 	public Data getData() {
 		return this.data;
 	}
@@ -76,7 +76,17 @@ public class RequestResetDataResponse extends AcsResponse {
 
 	public static class Data {
 
+		private String fullUrl;
+
 		private String url;
+
+		public String getFullUrl() {
+			return this.fullUrl;
+		}
+
+		public void setFullUrl(String fullUrl) {
+			this.fullUrl = fullUrl;
+		}
 
 		public String getUrl() {
 			return this.url;

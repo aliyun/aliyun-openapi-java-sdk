@@ -24,13 +24,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ResetDeviceResponse extends AcsResponse {
 
+	private String errorMessage;
+
 	private String requestId;
 
 	private Boolean success;
 
 	private String errorCode;
 
-	private String errorMessage;
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -54,14 +62,6 @@ public class ResetDeviceResponse extends AcsResponse {
 
 	public void setErrorCode(String errorCode) {
 		this.errorCode = errorCode;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
 	}
 
 	@Override

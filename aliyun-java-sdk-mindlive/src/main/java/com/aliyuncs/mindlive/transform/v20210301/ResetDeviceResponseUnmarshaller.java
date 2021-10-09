@@ -23,9 +23,9 @@ public class ResetDeviceResponseUnmarshaller {
 	public static ResetDeviceResponse unmarshall(ResetDeviceResponse resetDeviceResponse, UnmarshallerContext _ctx) {
 		
 		resetDeviceResponse.setRequestId(_ctx.stringValue("ResetDeviceResponse.RequestId"));
+		resetDeviceResponse.setErrorMessage(_ctx.stringValue("ResetDeviceResponse.ErrorMessage"));
 		resetDeviceResponse.setSuccess(_ctx.booleanValue("ResetDeviceResponse.Success"));
 		resetDeviceResponse.setErrorCode(_ctx.stringValue("ResetDeviceResponse.ErrorCode"));
-		resetDeviceResponse.setErrorMessage(_ctx.stringValue("ResetDeviceResponse.ErrorMessage"));
 	 
 	 	return resetDeviceResponse;
 	}

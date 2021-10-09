@@ -1,3 +1,8 @@
+2021-10-09 Version: 0.0.16
+- Add Request Service Info.
+- Add Global Sell Point State Getter And Setter.
+- Add Telepromoter State Getter And Setter.
+
 2021-04-02 Version: 0.0.7
 - Update ReportDevConfig Param.
 

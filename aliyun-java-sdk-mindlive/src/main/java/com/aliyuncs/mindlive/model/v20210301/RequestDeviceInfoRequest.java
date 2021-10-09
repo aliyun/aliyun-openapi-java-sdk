@@ -15,6 +15,7 @@
 package com.aliyuncs.mindlive.model.v20210301;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 
 /**
@@ -25,6 +26,7 @@ public class RequestDeviceInfoRequest extends RpcAcsRequest<RequestDeviceInfoRes
 	   
 	public RequestDeviceInfoRequest() {
 		super("MindLive", "2021-03-01", "RequestDeviceInfo");
+		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
 

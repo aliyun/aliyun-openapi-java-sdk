@@ -14,6 +14,7 @@
 
 package com.aliyuncs.mindlive.model.v20210301;
 
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.mindlive.transform.v20210301.RequestBackgroundResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -24,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class RequestBackgroundResponse extends AcsResponse {
 
+	private String errorMessage;
+
 	private String requestId;
 
 	private Boolean success;
 
 	private String errorCode;
 
-	private String errorMessage;
-
 	private Data data;
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -58,14 +67,6 @@ public class RequestBackgroundResponse extends AcsResponse {
 		this.errorCode = errorCode;
 	}
 
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
-
 	public Data getData() {
 		return this.data;
 	}
@@ -76,18 +77,26 @@ public class RequestBackgroundResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String resourceUuid;
+		private Map<Object,Object> bgConfig;
 
 		private String downloadUrl;
 
 		private String fileType;
 
-		public String getResourceUuid() {
-			return this.resourceUuid;
+		private Boolean open;
+
+		private String scope;
+
+		private String mode;
+
+		private String resourceUuid;
+
+		public Map<Object,Object> getBgConfig() {
+			return this.bgConfig;
 		}
 
-		public void setResourceUuid(String resourceUuid) {
-			this.resourceUuid = resourceUuid;
+		public void setBgConfig(Map<Object,Object> bgConfig) {
+			this.bgConfig = bgConfig;
 		}
 
 		public String getDownloadUrl() {
@@ -104,6 +113,38 @@ public class RequestBackgroundResponse extends AcsResponse {
 
 		public void setFileType(String fileType) {
 			this.fileType = fileType;
+		}
+
+		public Boolean getOpen() {
+			return this.open;
+		}
+
+		public void setOpen(Boolean open) {
+			this.open = open;
+		}
+
+		public String getScope() {
+			return this.scope;
+		}
+
+		public void setScope(String scope) {
+			this.scope = scope;
+		}
+
+		public String getMode() {
+			return this.mode;
+		}
+
+		public void setMode(String mode) {
+			this.mode = mode;
+		}
+
+		public String getResourceUuid() {
+			return this.resourceUuid;
+		}
+
+		public void setResourceUuid(String resourceUuid) {
+			this.resourceUuid = resourceUuid;
 		}
 	}
 

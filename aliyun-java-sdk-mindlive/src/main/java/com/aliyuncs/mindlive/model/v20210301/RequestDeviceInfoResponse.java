@@ -24,15 +24,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class RequestDeviceInfoResponse extends AcsResponse {
 
+	private String errorMessage;
+
 	private String requestId;
 
 	private Boolean success;
 
 	private String errorCode;
 
-	private String errorMessage;
-
 	private Data data;
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -58,14 +66,6 @@ public class RequestDeviceInfoResponse extends AcsResponse {
 		this.errorCode = errorCode;
 	}
 
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
-
 	public Data getData() {
 		return this.data;
 	}
@@ -76,18 +76,18 @@ public class RequestDeviceInfoResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String deviceId;
+		private String publicIp;
 
 		private String deviceName;
 
-		private String publicIp;
+		private String deviceId;
 
-		public String getDeviceId() {
-			return this.deviceId;
+		public String getPublicIp() {
+			return this.publicIp;
 		}
 
-		public void setDeviceId(String deviceId) {
-			this.deviceId = deviceId;
+		public void setPublicIp(String publicIp) {
+			this.publicIp = publicIp;
 		}
 
 		public String getDeviceName() {
@@ -98,12 +98,12 @@ public class RequestDeviceInfoResponse extends AcsResponse {
 			this.deviceName = deviceName;
 		}
 
-		public String getPublicIp() {
-			return this.publicIp;
+		public String getDeviceId() {
+			return this.deviceId;
 		}
 
-		public void setPublicIp(String publicIp) {
-			this.publicIp = publicIp;
+		public void setDeviceId(String deviceId) {
+			this.deviceId = deviceId;
 		}
 	}
 

@@ -23,9 +23,9 @@ public class ReportScreenResponseUnmarshaller {
 	public static ReportScreenResponse unmarshall(ReportScreenResponse reportScreenResponse, UnmarshallerContext _ctx) {
 		
 		reportScreenResponse.setRequestId(_ctx.stringValue("ReportScreenResponse.RequestId"));
+		reportScreenResponse.setErrorMessage(_ctx.stringValue("ReportScreenResponse.ErrorMessage"));
 		reportScreenResponse.setSuccess(_ctx.booleanValue("ReportScreenResponse.Success"));
 		reportScreenResponse.setErrorCode(_ctx.stringValue("ReportScreenResponse.ErrorCode"));
-		reportScreenResponse.setErrorMessage(_ctx.stringValue("ReportScreenResponse.ErrorMessage"));
 	 
 	 	return reportScreenResponse;
 	}

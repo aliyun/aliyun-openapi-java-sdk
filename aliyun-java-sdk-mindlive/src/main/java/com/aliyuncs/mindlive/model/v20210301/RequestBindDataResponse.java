@@ -24,15 +24,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class RequestBindDataResponse extends AcsResponse {
 
+	private String errorMessage;
+
 	private String requestId;
 
 	private Boolean success;
 
 	private String errorCode;
 
-	private String errorMessage;
-
 	private Data data;
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -58,14 +66,6 @@ public class RequestBindDataResponse extends AcsResponse {
 		this.errorCode = errorCode;
 	}
 
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
-
 	public Data getData() {
 		return this.data;
 	}
@@ -76,19 +76,13 @@ public class RequestBindDataResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String url;
-
 		private String code;
 
 		private Integer maxKeepSeconds;
 
-		public String getUrl() {
-			return this.url;
-		}
+		private String url;
 
-		public void setUrl(String url) {
-			this.url = url;
-		}
+		private String shortUrl;
 
 		public String getCode() {
 			return this.code;
@@ -104,6 +98,22 @@ public class RequestBindDataResponse extends AcsResponse {
 
 		public void setMaxKeepSeconds(Integer maxKeepSeconds) {
 			this.maxKeepSeconds = maxKeepSeconds;
+		}
+
+		public String getUrl() {
+			return this.url;
+		}
+
+		public void setUrl(String url) {
+			this.url = url;
+		}
+
+		public String getShortUrl() {
+			return this.shortUrl;
+		}
+
+		public void setShortUrl(String shortUrl) {
+			this.shortUrl = shortUrl;
 		}
 	}
 

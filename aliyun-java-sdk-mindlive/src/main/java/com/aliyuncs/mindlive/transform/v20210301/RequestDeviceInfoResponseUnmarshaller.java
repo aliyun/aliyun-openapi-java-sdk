@@ -24,14 +24,14 @@ public class RequestDeviceInfoResponseUnmarshaller {
 	public static RequestDeviceInfoResponse unmarshall(RequestDeviceInfoResponse requestDeviceInfoResponse, UnmarshallerContext _ctx) {
 		
 		requestDeviceInfoResponse.setRequestId(_ctx.stringValue("RequestDeviceInfoResponse.RequestId"));
+		requestDeviceInfoResponse.setErrorMessage(_ctx.stringValue("RequestDeviceInfoResponse.ErrorMessage"));
 		requestDeviceInfoResponse.setSuccess(_ctx.booleanValue("RequestDeviceInfoResponse.Success"));
 		requestDeviceInfoResponse.setErrorCode(_ctx.stringValue("RequestDeviceInfoResponse.ErrorCode"));
-		requestDeviceInfoResponse.setErrorMessage(_ctx.stringValue("RequestDeviceInfoResponse.ErrorMessage"));
 
 		Data data = new Data();
-		data.setDeviceId(_ctx.stringValue("RequestDeviceInfoResponse.Data.DeviceId"));
-		data.setDeviceName(_ctx.stringValue("RequestDeviceInfoResponse.Data.DeviceName"));
 		data.setPublicIp(_ctx.stringValue("RequestDeviceInfoResponse.Data.PublicIp"));
+		data.setDeviceName(_ctx.stringValue("RequestDeviceInfoResponse.Data.DeviceName"));
+		data.setDeviceId(_ctx.stringValue("RequestDeviceInfoResponse.Data.DeviceId"));
 		requestDeviceInfoResponse.setData(data);
 	 
 	 	return requestDeviceInfoResponse;

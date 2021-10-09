@@ -24,9 +24,9 @@ public class RequestIotTriadResponseUnmarshaller {
 	public static RequestIotTriadResponse unmarshall(RequestIotTriadResponse requestIotTriadResponse, UnmarshallerContext _ctx) {
 		
 		requestIotTriadResponse.setRequestId(_ctx.stringValue("RequestIotTriadResponse.RequestId"));
+		requestIotTriadResponse.setErrorMessage(_ctx.stringValue("RequestIotTriadResponse.ErrorMessage"));
 		requestIotTriadResponse.setSuccess(_ctx.booleanValue("RequestIotTriadResponse.Success"));
 		requestIotTriadResponse.setErrorCode(_ctx.stringValue("RequestIotTriadResponse.ErrorCode"));
-		requestIotTriadResponse.setErrorMessage(_ctx.stringValue("RequestIotTriadResponse.ErrorMessage"));
 
 		Data data = new Data();
 		data.setProductKey(_ctx.stringValue("RequestIotTriadResponse.Data.ProductKey"));

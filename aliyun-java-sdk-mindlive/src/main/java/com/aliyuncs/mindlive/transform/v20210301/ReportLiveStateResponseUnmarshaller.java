@@ -23,9 +23,9 @@ public class ReportLiveStateResponseUnmarshaller {
 	public static ReportLiveStateResponse unmarshall(ReportLiveStateResponse reportLiveStateResponse, UnmarshallerContext _ctx) {
 		
 		reportLiveStateResponse.setRequestId(_ctx.stringValue("ReportLiveStateResponse.RequestId"));
+		reportLiveStateResponse.setErrorMessage(_ctx.stringValue("ReportLiveStateResponse.ErrorMessage"));
 		reportLiveStateResponse.setSuccess(_ctx.booleanValue("ReportLiveStateResponse.Success"));
 		reportLiveStateResponse.setErrorCode(_ctx.stringValue("ReportLiveStateResponse.ErrorCode"));
-		reportLiveStateResponse.setErrorMessage(_ctx.stringValue("ReportLiveStateResponse.ErrorMessage"));
 	 
 	 	return reportLiveStateResponse;
 	}

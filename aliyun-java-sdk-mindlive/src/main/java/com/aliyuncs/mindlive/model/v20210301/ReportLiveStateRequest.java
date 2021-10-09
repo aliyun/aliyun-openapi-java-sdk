@@ -15,6 +15,7 @@
 package com.aliyuncs.mindlive.model.v20210301;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 
 /**
@@ -37,6 +38,7 @@ public class ReportLiveStateRequest extends RpcAcsRequest<ReportLiveStateRespons
 	private String anchorId;
 	public ReportLiveStateRequest() {
 		super("MindLive", "2021-03-01", "ReportLiveState");
+		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
 

@@ -15,6 +15,7 @@
 package com.aliyuncs.mindlive.model.v20210301;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 
 /**
@@ -23,35 +24,10 @@ import com.aliyuncs.http.MethodType;
  */
 public class RequestBackgroundRequest extends RpcAcsRequest<RequestBackgroundResponse> {
 	   
-
-	private String userSource;
-
-	private String userId;
 	public RequestBackgroundRequest() {
 		super("MindLive", "2021-03-01", "RequestBackground");
+		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
-	}
-
-	public String getUserSource() {
-		return this.userSource;
-	}
-
-	public void setUserSource(String userSource) {
-		this.userSource = userSource;
-		if(userSource != null){
-			putQueryParameter("UserSource", userSource);
-		}
-	}
-
-	public String getUserId() {
-		return this.userId;
-	}
-
-	public void setUserId(String userId) {
-		this.userId = userId;
-		if(userId != null){
-			putQueryParameter("UserId", userId);
-		}
 	}
 
 	@Override

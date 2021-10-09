@@ -24,18 +24,18 @@ public class RequestOssStsResponseUnmarshaller {
 	public static RequestOssStsResponse unmarshall(RequestOssStsResponse requestOssStsResponse, UnmarshallerContext _ctx) {
 		
 		requestOssStsResponse.setRequestId(_ctx.stringValue("RequestOssStsResponse.RequestId"));
+		requestOssStsResponse.setErrorMessage(_ctx.stringValue("RequestOssStsResponse.ErrorMessage"));
 		requestOssStsResponse.setSuccess(_ctx.booleanValue("RequestOssStsResponse.Success"));
 		requestOssStsResponse.setErrorCode(_ctx.stringValue("RequestOssStsResponse.ErrorCode"));
-		requestOssStsResponse.setErrorMessage(_ctx.stringValue("RequestOssStsResponse.ErrorMessage"));
 
 		Data data = new Data();
-		data.setEndPoint(_ctx.stringValue("RequestOssStsResponse.Data.EndPoint"));
-		data.setBucket(_ctx.stringValue("RequestOssStsResponse.Data.Bucket"));
 		data.setObjectKeyPrefix(_ctx.stringValue("RequestOssStsResponse.Data.ObjectKeyPrefix"));
-		data.setAccessKeyId(_ctx.stringValue("RequestOssStsResponse.Data.AccessKeyId"));
-		data.setAccessKeySecret(_ctx.stringValue("RequestOssStsResponse.Data.AccessKeySecret"));
 		data.setSecurityToken(_ctx.stringValue("RequestOssStsResponse.Data.SecurityToken"));
+		data.setAccessKeySecret(_ctx.stringValue("RequestOssStsResponse.Data.AccessKeySecret"));
 		data.setExpire(_ctx.stringValue("RequestOssStsResponse.Data.Expire"));
+		data.setEndPoint(_ctx.stringValue("RequestOssStsResponse.Data.EndPoint"));
+		data.setAccessKeyId(_ctx.stringValue("RequestOssStsResponse.Data.AccessKeyId"));
+		data.setBucket(_ctx.stringValue("RequestOssStsResponse.Data.Bucket"));
 		requestOssStsResponse.setData(data);
 	 
 	 	return requestOssStsResponse;

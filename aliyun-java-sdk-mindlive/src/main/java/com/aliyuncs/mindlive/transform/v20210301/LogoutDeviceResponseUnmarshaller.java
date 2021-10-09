@@ -23,9 +23,9 @@ public class LogoutDeviceResponseUnmarshaller {
 	public static LogoutDeviceResponse unmarshall(LogoutDeviceResponse logoutDeviceResponse, UnmarshallerContext _ctx) {
 		
 		logoutDeviceResponse.setRequestId(_ctx.stringValue("LogoutDeviceResponse.RequestId"));
+		logoutDeviceResponse.setErrorMessage(_ctx.stringValue("LogoutDeviceResponse.ErrorMessage"));
 		logoutDeviceResponse.setSuccess(_ctx.booleanValue("LogoutDeviceResponse.Success"));
 		logoutDeviceResponse.setErrorCode(_ctx.stringValue("LogoutDeviceResponse.ErrorCode"));
-		logoutDeviceResponse.setErrorMessage(_ctx.stringValue("LogoutDeviceResponse.ErrorMessage"));
 	 
 	 	return logoutDeviceResponse;
 	}

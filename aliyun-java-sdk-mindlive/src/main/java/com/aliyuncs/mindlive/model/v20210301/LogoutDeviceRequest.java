@@ -15,6 +15,7 @@
 package com.aliyuncs.mindlive.model.v20210301;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 
 /**
@@ -29,6 +30,7 @@ public class LogoutDeviceRequest extends RpcAcsRequest<LogoutDeviceResponse> {
 	private String userId;
 	public LogoutDeviceRequest() {
 		super("MindLive", "2021-03-01", "LogoutDevice");
+		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
 

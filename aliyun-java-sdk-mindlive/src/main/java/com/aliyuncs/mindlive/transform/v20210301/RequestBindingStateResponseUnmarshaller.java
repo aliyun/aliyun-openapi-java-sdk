@@ -24,17 +24,17 @@ public class RequestBindingStateResponseUnmarshaller {
 	public static RequestBindingStateResponse unmarshall(RequestBindingStateResponse requestBindingStateResponse, UnmarshallerContext _ctx) {
 		
 		requestBindingStateResponse.setRequestId(_ctx.stringValue("RequestBindingStateResponse.RequestId"));
+		requestBindingStateResponse.setErrorMessage(_ctx.stringValue("RequestBindingStateResponse.ErrorMessage"));
 		requestBindingStateResponse.setSuccess(_ctx.booleanValue("RequestBindingStateResponse.Success"));
 		requestBindingStateResponse.setErrorCode(_ctx.stringValue("RequestBindingStateResponse.ErrorCode"));
-		requestBindingStateResponse.setErrorMessage(_ctx.stringValue("RequestBindingStateResponse.ErrorMessage"));
 
 		Data data = new Data();
+		data.setUserAvatar(_ctx.stringValue("RequestBindingStateResponse.Data.UserAvatar"));
 		data.setDeviceId(_ctx.stringValue("RequestBindingStateResponse.Data.DeviceId"));
 		data.setUserSource(_ctx.stringValue("RequestBindingStateResponse.Data.UserSource"));
 		data.setUserId(_ctx.stringValue("RequestBindingStateResponse.Data.UserId"));
 		data.setBindAt(_ctx.longValue("RequestBindingStateResponse.Data.BindAt"));
 		data.setUserNick(_ctx.stringValue("RequestBindingStateResponse.Data.UserNick"));
-		data.setUserAvatar(_ctx.stringValue("RequestBindingStateResponse.Data.UserAvatar"));
 		requestBindingStateResponse.setData(data);
 	 
 	 	return requestBindingStateResponse;
