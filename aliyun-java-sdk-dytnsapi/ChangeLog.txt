@@ -1,3 +1,6 @@
+2021-10-11 Version: 1.0.4
+- Fixed SDK update delay.
+
 2021-09-24 Version: 1.0.3
 - Fixed SDK update delay.
 
