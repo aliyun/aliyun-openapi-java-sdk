@@ -25,21 +25,29 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeSynchronizationJobStatusListResponse extends AcsResponse {
 
+	private String requestId;
+
 	private String errCode;
 
-	private String errMessage;
-
-	private Integer pageNumber;
-
 	private Integer pageRecordCount;
-
-	private String requestId;
 
 	private String success;
 
 	private Long totalRecordCount;
 
+	private String errMessage;
+
+	private Integer pageNumber;
+
 	private List<SynchronizationJobStatusInfo> synchronizationJobListStatusList;
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
 
 	public String getErrCode() {
 		return this.errCode;
@@ -49,36 +57,12 @@ public class DescribeSynchronizationJobStatusListResponse extends AcsResponse {
 		this.errCode = errCode;
 	}
 
-	public String getErrMessage() {
-		return this.errMessage;
-	}
-
-	public void setErrMessage(String errMessage) {
-		this.errMessage = errMessage;
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
 	public Integer getPageRecordCount() {
 		return this.pageRecordCount;
 	}
 
 	public void setPageRecordCount(Integer pageRecordCount) {
 		this.pageRecordCount = pageRecordCount;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
 	}
 
 	public String getSuccess() {
@@ -95,6 +79,22 @@ public class DescribeSynchronizationJobStatusListResponse extends AcsResponse {
 
 	public void setTotalRecordCount(Long totalRecordCount) {
 		this.totalRecordCount = totalRecordCount;
+	}
+
+	public String getErrMessage() {
+		return this.errMessage;
+	}
+
+	public void setErrMessage(String errMessage) {
+		this.errMessage = errMessage;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<SynchronizationJobStatusInfo> getSynchronizationJobListStatusList() {
@@ -129,19 +129,11 @@ public class DescribeSynchronizationJobStatusListResponse extends AcsResponse {
 
 		public static class SynchronizationDirectionInfo {
 
-			private String checkpoint;
-
 			private String status;
 
 			private String synchronizationDirection;
 
-			public String getCheckpoint() {
-				return this.checkpoint;
-			}
-
-			public void setCheckpoint(String checkpoint) {
-				this.checkpoint = checkpoint;
-			}
+			private String checkpoint;
 
 			public String getStatus() {
 				return this.status;
@@ -157,6 +149,14 @@ public class DescribeSynchronizationJobStatusListResponse extends AcsResponse {
 
 			public void setSynchronizationDirection(String synchronizationDirection) {
 				this.synchronizationDirection = synchronizationDirection;
+			}
+
+			public String getCheckpoint() {
+				return this.checkpoint;
+			}
+
+			public void setCheckpoint(String checkpoint) {
+				this.checkpoint = checkpoint;
 			}
 		}
 	}

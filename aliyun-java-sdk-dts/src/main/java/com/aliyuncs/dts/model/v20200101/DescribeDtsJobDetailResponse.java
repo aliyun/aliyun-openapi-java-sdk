@@ -24,71 +24,71 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDtsJobDetailResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
-	private Integer code;
-
-	private String errCode;
-
-	private String errMessage;
-
-	private String dynamicMessage;
-
-	private Integer httpStatusCode;
-
-	private String dtsInstanceID;
-
-	private String dtsJobId;
+	private String status;
 
 	private String dtsJobName;
 
-	private String dtsJobClass;
+	private String finishTime;
 
-	private String dtsJobDirection;
+	private String errorMessage;
 
-	private String payType;
-
-	private String expireTime;
+	private String dtsJobId;
 
 	private String createTime;
 
-	private String finishTime;
+	private String payType;
 
-	private String status;
+	private String reserved;
+
+	private Integer databaseCount;
+
+	private String dtsJobClass;
+
+	private String endTimestamp;
+
+	private String appName;
+
+	private String destNetType;
+
+	private String subscribeTopic;
+
+	private String dtsInstanceID;
+
+	private String requestId;
+
+	private Integer code;
 
 	private Integer checkpoint;
 
 	private Integer delay;
 
-	private String reserved;
+	private String expireTime;
 
-	private String errorMessage;
+	private String errCode;
 
-	private String dbObject;
+	private Boolean success;
 
-	private String synchronizationDirection;
-
-	private String etlCalculator;
-
-	private String groupId;
-
-	private Integer databaseCount;
-
-	private String subscribeTopic;
-
-	private String consumptionCheckpoint;
-
-	private String beginTimestamp;
-
-	private String endTimestamp;
+	private String errMessage;
 
 	private String consumptionClient;
 
-	private String appName;
+	private String dbObject;
 
-	private String destNetType;
+	private String dynamicMessage;
+
+	private String consumptionCheckpoint;
+
+	private String etlCalculator;
+
+	private Integer httpStatusCode;
+
+	private String beginTimestamp;
+
+	private String groupId;
+
+	private String synchronizationDirection;
+
+	private String dtsJobDirection;
 
 	private SourceEndpoint sourceEndpoint;
 
@@ -100,76 +100,12 @@ public class DescribeDtsJobDetailResponse extends AcsResponse {
 
 	private SubscriptionDataType subscriptionDataType;
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getStatus() {
+		return this.status;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public Integer getCode() {
-		return this.code;
-	}
-
-	public void setCode(Integer code) {
-		this.code = code;
-	}
-
-	public String getErrCode() {
-		return this.errCode;
-	}
-
-	public void setErrCode(String errCode) {
-		this.errCode = errCode;
-	}
-
-	public String getErrMessage() {
-		return this.errMessage;
-	}
-
-	public void setErrMessage(String errMessage) {
-		this.errMessage = errMessage;
-	}
-
-	public String getDynamicMessage() {
-		return this.dynamicMessage;
-	}
-
-	public void setDynamicMessage(String dynamicMessage) {
-		this.dynamicMessage = dynamicMessage;
-	}
-
-	public Integer getHttpStatusCode() {
-		return this.httpStatusCode;
-	}
-
-	public void setHttpStatusCode(Integer httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
-	}
-
-	public String getDtsInstanceID() {
-		return this.dtsInstanceID;
-	}
-
-	public void setDtsInstanceID(String dtsInstanceID) {
-		this.dtsInstanceID = dtsInstanceID;
-	}
-
-	public String getDtsJobId() {
-		return this.dtsJobId;
-	}
-
-	public void setDtsJobId(String dtsJobId) {
-		this.dtsJobId = dtsJobId;
+	public void setStatus(String status) {
+		this.status = status;
 	}
 
 	public String getDtsJobName() {
@@ -180,36 +116,28 @@ public class DescribeDtsJobDetailResponse extends AcsResponse {
 		this.dtsJobName = dtsJobName;
 	}
 
-	public String getDtsJobClass() {
-		return this.dtsJobClass;
+	public String getFinishTime() {
+		return this.finishTime;
 	}
 
-	public void setDtsJobClass(String dtsJobClass) {
-		this.dtsJobClass = dtsJobClass;
+	public void setFinishTime(String finishTime) {
+		this.finishTime = finishTime;
 	}
 
-	public String getDtsJobDirection() {
-		return this.dtsJobDirection;
+	public String getErrorMessage() {
+		return this.errorMessage;
 	}
 
-	public void setDtsJobDirection(String dtsJobDirection) {
-		this.dtsJobDirection = dtsJobDirection;
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
 	}
 
-	public String getPayType() {
-		return this.payType;
+	public String getDtsJobId() {
+		return this.dtsJobId;
 	}
 
-	public void setPayType(String payType) {
-		this.payType = payType;
-	}
-
-	public String getExpireTime() {
-		return this.expireTime;
-	}
-
-	public void setExpireTime(String expireTime) {
-		this.expireTime = expireTime;
+	public void setDtsJobId(String dtsJobId) {
+		this.dtsJobId = dtsJobId;
 	}
 
 	public String getCreateTime() {
@@ -220,20 +148,92 @@ public class DescribeDtsJobDetailResponse extends AcsResponse {
 		this.createTime = createTime;
 	}
 
-	public String getFinishTime() {
-		return this.finishTime;
+	public String getPayType() {
+		return this.payType;
 	}
 
-	public void setFinishTime(String finishTime) {
-		this.finishTime = finishTime;
+	public void setPayType(String payType) {
+		this.payType = payType;
 	}
 
-	public String getStatus() {
-		return this.status;
+	public String getReserved() {
+		return this.reserved;
 	}
 
-	public void setStatus(String status) {
-		this.status = status;
+	public void setReserved(String reserved) {
+		this.reserved = reserved;
+	}
+
+	public Integer getDatabaseCount() {
+		return this.databaseCount;
+	}
+
+	public void setDatabaseCount(Integer databaseCount) {
+		this.databaseCount = databaseCount;
+	}
+
+	public String getDtsJobClass() {
+		return this.dtsJobClass;
+	}
+
+	public void setDtsJobClass(String dtsJobClass) {
+		this.dtsJobClass = dtsJobClass;
+	}
+
+	public String getEndTimestamp() {
+		return this.endTimestamp;
+	}
+
+	public void setEndTimestamp(String endTimestamp) {
+		this.endTimestamp = endTimestamp;
+	}
+
+	public String getAppName() {
+		return this.appName;
+	}
+
+	public void setAppName(String appName) {
+		this.appName = appName;
+	}
+
+	public String getDestNetType() {
+		return this.destNetType;
+	}
+
+	public void setDestNetType(String destNetType) {
+		this.destNetType = destNetType;
+	}
+
+	public String getSubscribeTopic() {
+		return this.subscribeTopic;
+	}
+
+	public void setSubscribeTopic(String subscribeTopic) {
+		this.subscribeTopic = subscribeTopic;
+	}
+
+	public String getDtsInstanceID() {
+		return this.dtsInstanceID;
+	}
+
+	public void setDtsInstanceID(String dtsInstanceID) {
+		this.dtsInstanceID = dtsInstanceID;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Integer getCode() {
+		return this.code;
+	}
+
+	public void setCode(Integer code) {
+		this.code = code;
 	}
 
 	public Integer getCheckpoint() {
@@ -252,92 +252,36 @@ public class DescribeDtsJobDetailResponse extends AcsResponse {
 		this.delay = delay;
 	}
 
-	public String getReserved() {
-		return this.reserved;
+	public String getExpireTime() {
+		return this.expireTime;
 	}
 
-	public void setReserved(String reserved) {
-		this.reserved = reserved;
+	public void setExpireTime(String expireTime) {
+		this.expireTime = expireTime;
 	}
 
-	public String getErrorMessage() {
-		return this.errorMessage;
+	public String getErrCode() {
+		return this.errCode;
 	}
 
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
+	public void setErrCode(String errCode) {
+		this.errCode = errCode;
 	}
 
-	public String getDbObject() {
-		return this.dbObject;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setDbObject(String dbObject) {
-		this.dbObject = dbObject;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
-	public String getSynchronizationDirection() {
-		return this.synchronizationDirection;
+	public String getErrMessage() {
+		return this.errMessage;
 	}
 
-	public void setSynchronizationDirection(String synchronizationDirection) {
-		this.synchronizationDirection = synchronizationDirection;
-	}
-
-	public String getEtlCalculator() {
-		return this.etlCalculator;
-	}
-
-	public void setEtlCalculator(String etlCalculator) {
-		this.etlCalculator = etlCalculator;
-	}
-
-	public String getGroupId() {
-		return this.groupId;
-	}
-
-	public void setGroupId(String groupId) {
-		this.groupId = groupId;
-	}
-
-	public Integer getDatabaseCount() {
-		return this.databaseCount;
-	}
-
-	public void setDatabaseCount(Integer databaseCount) {
-		this.databaseCount = databaseCount;
-	}
-
-	public String getSubscribeTopic() {
-		return this.subscribeTopic;
-	}
-
-	public void setSubscribeTopic(String subscribeTopic) {
-		this.subscribeTopic = subscribeTopic;
-	}
-
-	public String getConsumptionCheckpoint() {
-		return this.consumptionCheckpoint;
-	}
-
-	public void setConsumptionCheckpoint(String consumptionCheckpoint) {
-		this.consumptionCheckpoint = consumptionCheckpoint;
-	}
-
-	public String getBeginTimestamp() {
-		return this.beginTimestamp;
-	}
-
-	public void setBeginTimestamp(String beginTimestamp) {
-		this.beginTimestamp = beginTimestamp;
-	}
-
-	public String getEndTimestamp() {
-		return this.endTimestamp;
-	}
-
-	public void setEndTimestamp(String endTimestamp) {
-		this.endTimestamp = endTimestamp;
+	public void setErrMessage(String errMessage) {
+		this.errMessage = errMessage;
 	}
 
 	public String getConsumptionClient() {
@@ -348,20 +292,76 @@ public class DescribeDtsJobDetailResponse extends AcsResponse {
 		this.consumptionClient = consumptionClient;
 	}
 
-	public String getAppName() {
-		return this.appName;
+	public String getDbObject() {
+		return this.dbObject;
 	}
 
-	public void setAppName(String appName) {
-		this.appName = appName;
+	public void setDbObject(String dbObject) {
+		this.dbObject = dbObject;
 	}
 
-	public String getDestNetType() {
-		return this.destNetType;
+	public String getDynamicMessage() {
+		return this.dynamicMessage;
 	}
 
-	public void setDestNetType(String destNetType) {
-		this.destNetType = destNetType;
+	public void setDynamicMessage(String dynamicMessage) {
+		this.dynamicMessage = dynamicMessage;
+	}
+
+	public String getConsumptionCheckpoint() {
+		return this.consumptionCheckpoint;
+	}
+
+	public void setConsumptionCheckpoint(String consumptionCheckpoint) {
+		this.consumptionCheckpoint = consumptionCheckpoint;
+	}
+
+	public String getEtlCalculator() {
+		return this.etlCalculator;
+	}
+
+	public void setEtlCalculator(String etlCalculator) {
+		this.etlCalculator = etlCalculator;
+	}
+
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
+	}
+
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
+	}
+
+	public String getBeginTimestamp() {
+		return this.beginTimestamp;
+	}
+
+	public void setBeginTimestamp(String beginTimestamp) {
+		this.beginTimestamp = beginTimestamp;
+	}
+
+	public String getGroupId() {
+		return this.groupId;
+	}
+
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
+	}
+
+	public String getSynchronizationDirection() {
+		return this.synchronizationDirection;
+	}
+
+	public void setSynchronizationDirection(String synchronizationDirection) {
+		this.synchronizationDirection = synchronizationDirection;
+	}
+
+	public String getDtsJobDirection() {
+		return this.dtsJobDirection;
+	}
+
+	public void setDtsJobDirection(String dtsJobDirection) {
+		this.dtsJobDirection = dtsJobDirection;
 	}
 
 	public SourceEndpoint getSourceEndpoint() {
@@ -406,60 +406,44 @@ public class DescribeDtsJobDetailResponse extends AcsResponse {
 
 	public static class SourceEndpoint {
 
-		private String instanceID;
-
-		private String region;
-
-		private String instanceType;
-
-		private String engineName;
-
-		private String ip;
-
-		private String port;
-
-		private String databaseName;
-
 		private String oracleSID;
-
-		private String userName;
 
 		private String sslSolutionEnum;
 
+		private String ip;
+
+		private String instanceID;
+
 		private String roleName;
+
+		private String instanceType;
+
+		private String port;
+
+		private String engineName;
+
+		private String region;
+
+		private String databaseName;
 
 		private String aliyunUid;
 
-		public String getInstanceID() {
-			return this.instanceID;
+		private String userName;
+
+		public String getOracleSID() {
+			return this.oracleSID;
 		}
 
-		public void setInstanceID(String instanceID) {
-			this.instanceID = instanceID;
+		public void setOracleSID(String oracleSID) {
+			this.oracleSID = oracleSID;
 		}
 
-		public String getRegion() {
-			return this.region;
+		public String getSslSolutionEnum() {
+			return this.sslSolutionEnum;
 		}
 
-		public void setRegion(String region) {
-			this.region = region;
-		}
-
-		public String getInstanceType() {
-			return this.instanceType;
-		}
-
-		public void setInstanceType(String instanceType) {
-			this.instanceType = instanceType;
-		}
-
-		public String getEngineName() {
-			return this.engineName;
-		}
-
-		public void setEngineName(String engineName) {
-			this.engineName = engineName;
+		public void setSslSolutionEnum(String sslSolutionEnum) {
+			this.sslSolutionEnum = sslSolutionEnum;
 		}
 
 		public String getIp() {
@@ -470,44 +454,12 @@ public class DescribeDtsJobDetailResponse extends AcsResponse {
 			this.ip = ip;
 		}
 
-		public String getPort() {
-			return this.port;
+		public String getInstanceID() {
+			return this.instanceID;
 		}
 
-		public void setPort(String port) {
-			this.port = port;
-		}
-
-		public String getDatabaseName() {
-			return this.databaseName;
-		}
-
-		public void setDatabaseName(String databaseName) {
-			this.databaseName = databaseName;
-		}
-
-		public String getOracleSID() {
-			return this.oracleSID;
-		}
-
-		public void setOracleSID(String oracleSID) {
-			this.oracleSID = oracleSID;
-		}
-
-		public String getUserName() {
-			return this.userName;
-		}
-
-		public void setUserName(String userName) {
-			this.userName = userName;
-		}
-
-		public String getSslSolutionEnum() {
-			return this.sslSolutionEnum;
-		}
-
-		public void setSslSolutionEnum(String sslSolutionEnum) {
-			this.sslSolutionEnum = sslSolutionEnum;
+		public void setInstanceID(String instanceID) {
+			this.instanceID = instanceID;
 		}
 
 		public String getRoleName() {
@@ -518,75 +470,12 @@ public class DescribeDtsJobDetailResponse extends AcsResponse {
 			this.roleName = roleName;
 		}
 
-		public String getAliyunUid() {
-			return this.aliyunUid;
-		}
-
-		public void setAliyunUid(String aliyunUid) {
-			this.aliyunUid = aliyunUid;
-		}
-	}
-
-	public static class DestinationEndpoint {
-
-		private String instanceID;
-
-		private String region;
-
-		private String instanceType;
-
-		private String engineName;
-
-		private String ip;
-
-		private String port;
-
-		private String databaseName;
-
-		private String oracleSID;
-
-		private String userName;
-
-		private String sslSolutionEnum;
-
-		public String getInstanceID() {
-			return this.instanceID;
-		}
-
-		public void setInstanceID(String instanceID) {
-			this.instanceID = instanceID;
-		}
-
-		public String getRegion() {
-			return this.region;
-		}
-
-		public void setRegion(String region) {
-			this.region = region;
-		}
-
 		public String getInstanceType() {
 			return this.instanceType;
 		}
 
 		public void setInstanceType(String instanceType) {
 			this.instanceType = instanceType;
-		}
-
-		public String getEngineName() {
-			return this.engineName;
-		}
-
-		public void setEngineName(String engineName) {
-			this.engineName = engineName;
-		}
-
-		public String getIp() {
-			return this.ip;
-		}
-
-		public void setIp(String ip) {
-			this.ip = ip;
 		}
 
 		public String getPort() {
@@ -597,12 +486,75 @@ public class DescribeDtsJobDetailResponse extends AcsResponse {
 			this.port = port;
 		}
 
+		public String getEngineName() {
+			return this.engineName;
+		}
+
+		public void setEngineName(String engineName) {
+			this.engineName = engineName;
+		}
+
+		public String getRegion() {
+			return this.region;
+		}
+
+		public void setRegion(String region) {
+			this.region = region;
+		}
+
 		public String getDatabaseName() {
 			return this.databaseName;
 		}
 
 		public void setDatabaseName(String databaseName) {
 			this.databaseName = databaseName;
+		}
+
+		public String getAliyunUid() {
+			return this.aliyunUid;
+		}
+
+		public void setAliyunUid(String aliyunUid) {
+			this.aliyunUid = aliyunUid;
+		}
+
+		public String getUserName() {
+			return this.userName;
+		}
+
+		public void setUserName(String userName) {
+			this.userName = userName;
+		}
+	}
+
+	public static class DestinationEndpoint {
+
+		private String sslSolutionEnum;
+
+		private String oracleSID;
+
+		private String databaseName;
+
+		private String region;
+
+		private String ip;
+
+		private String instanceID;
+
+		private String port;
+
+		private String instanceType;
+
+		private String userName;
+
+		private String engineName;
+
+		public String getSslSolutionEnum() {
+			return this.sslSolutionEnum;
+		}
+
+		public void setSslSolutionEnum(String sslSolutionEnum) {
+			this.sslSolutionEnum = sslSolutionEnum;
 		}
 
 		public String getOracleSID() {
@@ -613,6 +565,54 @@ public class DescribeDtsJobDetailResponse extends AcsResponse {
 			this.oracleSID = oracleSID;
 		}
 
+		public String getDatabaseName() {
+			return this.databaseName;
+		}
+
+		public void setDatabaseName(String databaseName) {
+			this.databaseName = databaseName;
+		}
+
+		public String getRegion() {
+			return this.region;
+		}
+
+		public void setRegion(String region) {
+			this.region = region;
+		}
+
+		public String getIp() {
+			return this.ip;
+		}
+
+		public void setIp(String ip) {
+			this.ip = ip;
+		}
+
+		public String getInstanceID() {
+			return this.instanceID;
+		}
+
+		public void setInstanceID(String instanceID) {
+			this.instanceID = instanceID;
+		}
+
+		public String getPort() {
+			return this.port;
+		}
+
+		public void setPort(String port) {
+			this.port = port;
+		}
+
+		public String getInstanceType() {
+			return this.instanceType;
+		}
+
+		public void setInstanceType(String instanceType) {
+			this.instanceType = instanceType;
+		}
+
 		public String getUserName() {
 			return this.userName;
 		}
@@ -621,31 +621,31 @@ public class DescribeDtsJobDetailResponse extends AcsResponse {
 			this.userName = userName;
 		}
 
-		public String getSslSolutionEnum() {
-			return this.sslSolutionEnum;
+		public String getEngineName() {
+			return this.engineName;
 		}
 
-		public void setSslSolutionEnum(String sslSolutionEnum) {
-			this.sslSolutionEnum = sslSolutionEnum;
+		public void setEngineName(String engineName) {
+			this.engineName = engineName;
 		}
 	}
 
 	public static class MigrationMode {
 
-		private Boolean structureInitialization;
+		private Boolean dataExtractTransformLoad;
 
 		private Boolean dataInitialization;
 
 		private Boolean dataSynchronization;
 
-		private Boolean dataExtractTransformLoad;
+		private Boolean structureInitialization;
 
-		public Boolean getStructureInitialization() {
-			return this.structureInitialization;
+		public Boolean getDataExtractTransformLoad() {
+			return this.dataExtractTransformLoad;
 		}
 
-		public void setStructureInitialization(Boolean structureInitialization) {
-			this.structureInitialization = structureInitialization;
+		public void setDataExtractTransformLoad(Boolean dataExtractTransformLoad) {
+			this.dataExtractTransformLoad = dataExtractTransformLoad;
 		}
 
 		public Boolean getDataInitialization() {
@@ -664,22 +664,30 @@ public class DescribeDtsJobDetailResponse extends AcsResponse {
 			this.dataSynchronization = dataSynchronization;
 		}
 
-		public Boolean getDataExtractTransformLoad() {
-			return this.dataExtractTransformLoad;
+		public Boolean getStructureInitialization() {
+			return this.structureInitialization;
 		}
 
-		public void setDataExtractTransformLoad(Boolean dataExtractTransformLoad) {
-			this.dataExtractTransformLoad = dataExtractTransformLoad;
+		public void setStructureInitialization(Boolean structureInitialization) {
+			this.structureInitialization = structureInitialization;
 		}
 	}
 
 	public static class SubscriptionHost {
 
+		private String vpcHost;
+
 		private String publicHost;
 
 		private String privateHost;
 
-		private String vpcHost;
+		public String getVpcHost() {
+			return this.vpcHost;
+		}
+
+		public void setVpcHost(String vpcHost) {
+			this.vpcHost = vpcHost;
+		}
 
 		public String getPublicHost() {
 			return this.publicHost;
@@ -696,29 +704,13 @@ public class DescribeDtsJobDetailResponse extends AcsResponse {
 		public void setPrivateHost(String privateHost) {
 			this.privateHost = privateHost;
 		}
-
-		public String getVpcHost() {
-			return this.vpcHost;
-		}
-
-		public void setVpcHost(String vpcHost) {
-			this.vpcHost = vpcHost;
-		}
 	}
 
 	public static class SubscriptionDataType {
 
-		private Boolean ddl;
-
 		private Boolean dml;
 
-		public Boolean getDdl() {
-			return this.ddl;
-		}
-
-		public void setDdl(Boolean ddl) {
-			this.ddl = ddl;
-		}
+		private Boolean ddl;
 
 		public Boolean getDml() {
 			return this.dml;
@@ -726,6 +718,14 @@ public class DescribeDtsJobDetailResponse extends AcsResponse {
 
 		public void setDml(Boolean dml) {
 			this.dml = dml;
+		}
+
+		public Boolean getDdl() {
+			return this.ddl;
+		}
+
+		public void setDdl(Boolean ddl) {
+			this.ddl = ddl;
 		}
 	}
 

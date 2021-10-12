@@ -24,35 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ConfigureDtsJobResponse extends AcsResponse {
 
-	private String errCode;
-
-	private String errMessage;
-
 	private String httpStatusCode;
-
-	private String dtsJobId;
 
 	private String requestId;
 
-	private String success;
+	private String errCode;
+
+	private String dtsJobId;
 
 	private String dtsInstanceId;
 
-	public String getErrCode() {
-		return this.errCode;
-	}
+	private String success;
 
-	public void setErrCode(String errCode) {
-		this.errCode = errCode;
-	}
-
-	public String getErrMessage() {
-		return this.errMessage;
-	}
-
-	public void setErrMessage(String errMessage) {
-		this.errMessage = errMessage;
-	}
+	private String errMessage;
 
 	public String getHttpStatusCode() {
 		return this.httpStatusCode;
@@ -60,14 +44,6 @@ public class ConfigureDtsJobResponse extends AcsResponse {
 
 	public void setHttpStatusCode(String httpStatusCode) {
 		this.httpStatusCode = httpStatusCode;
-	}
-
-	public String getDtsJobId() {
-		return this.dtsJobId;
-	}
-
-	public void setDtsJobId(String dtsJobId) {
-		this.dtsJobId = dtsJobId;
 	}
 
 	public String getRequestId() {
@@ -78,12 +54,20 @@ public class ConfigureDtsJobResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getSuccess() {
-		return this.success;
+	public String getErrCode() {
+		return this.errCode;
 	}
 
-	public void setSuccess(String success) {
-		this.success = success;
+	public void setErrCode(String errCode) {
+		this.errCode = errCode;
+	}
+
+	public String getDtsJobId() {
+		return this.dtsJobId;
+	}
+
+	public void setDtsJobId(String dtsJobId) {
+		this.dtsJobId = dtsJobId;
 	}
 
 	public String getDtsInstanceId() {
@@ -92,6 +76,22 @@ public class ConfigureDtsJobResponse extends AcsResponse {
 
 	public void setDtsInstanceId(String dtsInstanceId) {
 		this.dtsInstanceId = dtsInstanceId;
+	}
+
+	public String getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(String success) {
+		this.success = success;
+	}
+
+	public String getErrMessage() {
+		return this.errMessage;
+	}
+
+	public void setErrMessage(String errMessage) {
+		this.errMessage = errMessage;
 	}
 
 	@Override

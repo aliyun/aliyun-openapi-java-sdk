@@ -23,12 +23,12 @@ public class DeleteDtsJobResponseUnmarshaller {
 	public static DeleteDtsJobResponse unmarshall(DeleteDtsJobResponse deleteDtsJobResponse, UnmarshallerContext _ctx) {
 		
 		deleteDtsJobResponse.setRequestId(_ctx.stringValue("DeleteDtsJobResponse.RequestId"));
-		deleteDtsJobResponse.setDynamicCode(_ctx.stringValue("DeleteDtsJobResponse.DynamicCode"));
-		deleteDtsJobResponse.setDynamicMessage(_ctx.stringValue("DeleteDtsJobResponse.DynamicMessage"));
-		deleteDtsJobResponse.setErrCode(_ctx.stringValue("DeleteDtsJobResponse.ErrCode"));
-		deleteDtsJobResponse.setErrMessage(_ctx.stringValue("DeleteDtsJobResponse.ErrMessage"));
 		deleteDtsJobResponse.setHttpStatusCode(_ctx.integerValue("DeleteDtsJobResponse.HttpStatusCode"));
+		deleteDtsJobResponse.setErrCode(_ctx.stringValue("DeleteDtsJobResponse.ErrCode"));
 		deleteDtsJobResponse.setSuccess(_ctx.booleanValue("DeleteDtsJobResponse.Success"));
+		deleteDtsJobResponse.setErrMessage(_ctx.stringValue("DeleteDtsJobResponse.ErrMessage"));
+		deleteDtsJobResponse.setDynamicMessage(_ctx.stringValue("DeleteDtsJobResponse.DynamicMessage"));
+		deleteDtsJobResponse.setDynamicCode(_ctx.stringValue("DeleteDtsJobResponse.DynamicCode"));
 	 
 	 	return deleteDtsJobResponse;
 	}

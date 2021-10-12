@@ -46,52 +46,52 @@ public class DescribeSynchronizationJobsResponseUnmarshaller {
 		List<SynchronizationInstance> synchronizationInstances = new ArrayList<SynchronizationInstance>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSynchronizationJobsResponse.SynchronizationInstances.Length"); i++) {
 			SynchronizationInstance synchronizationInstance = new SynchronizationInstance();
-			synchronizationInstance.setCreateTime(_ctx.stringValue("DescribeSynchronizationJobsResponse.SynchronizationInstances["+ i +"].CreateTime"));
 			synchronizationInstance.setDataInitialization(_ctx.stringValue("DescribeSynchronizationJobsResponse.SynchronizationInstances["+ i +"].DataInitialization"));
+			synchronizationInstance.setStatus(_ctx.stringValue("DescribeSynchronizationJobsResponse.SynchronizationInstances["+ i +"].Status"));
+			synchronizationInstance.setSynchronizationJobName(_ctx.stringValue("DescribeSynchronizationJobsResponse.SynchronizationInstances["+ i +"].SynchronizationJobName"));
 			synchronizationInstance.setDelay(_ctx.stringValue("DescribeSynchronizationJobsResponse.SynchronizationInstances["+ i +"].Delay"));
 			synchronizationInstance.setErrorMessage(_ctx.stringValue("DescribeSynchronizationJobsResponse.SynchronizationInstances["+ i +"].ErrorMessage"));
 			synchronizationInstance.setExpireTime(_ctx.stringValue("DescribeSynchronizationJobsResponse.SynchronizationInstances["+ i +"].ExpireTime"));
+			synchronizationInstance.setCreateTime(_ctx.stringValue("DescribeSynchronizationJobsResponse.SynchronizationInstances["+ i +"].CreateTime"));
 			synchronizationInstance.setPayType(_ctx.stringValue("DescribeSynchronizationJobsResponse.SynchronizationInstances["+ i +"].PayType"));
-			synchronizationInstance.setStatus(_ctx.stringValue("DescribeSynchronizationJobsResponse.SynchronizationInstances["+ i +"].Status"));
 			synchronizationInstance.setStructureInitialization(_ctx.stringValue("DescribeSynchronizationJobsResponse.SynchronizationInstances["+ i +"].StructureInitialization"));
-			synchronizationInstance.setSynchronizationDirection(_ctx.stringValue("DescribeSynchronizationJobsResponse.SynchronizationInstances["+ i +"].SynchronizationDirection"));
 			synchronizationInstance.setSynchronizationJobClass(_ctx.stringValue("DescribeSynchronizationJobsResponse.SynchronizationInstances["+ i +"].SynchronizationJobClass"));
-			synchronizationInstance.setSynchronizationJobId(_ctx.stringValue("DescribeSynchronizationJobsResponse.SynchronizationInstances["+ i +"].SynchronizationJobId"));
-			synchronizationInstance.setSynchronizationJobName(_ctx.stringValue("DescribeSynchronizationJobsResponse.SynchronizationInstances["+ i +"].SynchronizationJobName"));
-			synchronizationInstance.setJobCreateTime(_ctx.stringValue("DescribeSynchronizationJobsResponse.SynchronizationInstances["+ i +"].JobCreateTime"));
 			synchronizationInstance.setInstanceCreateTime(_ctx.stringValue("DescribeSynchronizationJobsResponse.SynchronizationInstances["+ i +"].InstanceCreateTime"));
+			synchronizationInstance.setSynchronizationJobId(_ctx.stringValue("DescribeSynchronizationJobsResponse.SynchronizationInstances["+ i +"].SynchronizationJobId"));
+			synchronizationInstance.setSynchronizationDirection(_ctx.stringValue("DescribeSynchronizationJobsResponse.SynchronizationInstances["+ i +"].SynchronizationDirection"));
+			synchronizationInstance.setJobCreateTime(_ctx.stringValue("DescribeSynchronizationJobsResponse.SynchronizationInstances["+ i +"].JobCreateTime"));
 
 			DataInitializationStatus dataInitializationStatus = new DataInitializationStatus();
-			dataInitializationStatus.setErrorMessage(_ctx.stringValue("DescribeSynchronizationJobsResponse.SynchronizationInstances["+ i +"].DataInitializationStatus.ErrorMessage"));
-			dataInitializationStatus.setPercent(_ctx.stringValue("DescribeSynchronizationJobsResponse.SynchronizationInstances["+ i +"].DataInitializationStatus.Percent"));
-			dataInitializationStatus.setProgress(_ctx.stringValue("DescribeSynchronizationJobsResponse.SynchronizationInstances["+ i +"].DataInitializationStatus.Progress"));
 			dataInitializationStatus.setStatus(_ctx.stringValue("DescribeSynchronizationJobsResponse.SynchronizationInstances["+ i +"].DataInitializationStatus.Status"));
+			dataInitializationStatus.setPercent(_ctx.stringValue("DescribeSynchronizationJobsResponse.SynchronizationInstances["+ i +"].DataInitializationStatus.Percent"));
+			dataInitializationStatus.setErrorMessage(_ctx.stringValue("DescribeSynchronizationJobsResponse.SynchronizationInstances["+ i +"].DataInitializationStatus.ErrorMessage"));
+			dataInitializationStatus.setProgress(_ctx.stringValue("DescribeSynchronizationJobsResponse.SynchronizationInstances["+ i +"].DataInitializationStatus.Progress"));
 			synchronizationInstance.setDataInitializationStatus(dataInitializationStatus);
 
 			DataSynchronizationStatus dataSynchronizationStatus = new DataSynchronizationStatus();
-			dataSynchronizationStatus.setDelay(_ctx.stringValue("DescribeSynchronizationJobsResponse.SynchronizationInstances["+ i +"].DataSynchronizationStatus.Delay"));
-			dataSynchronizationStatus.setErrorMessage(_ctx.stringValue("DescribeSynchronizationJobsResponse.SynchronizationInstances["+ i +"].DataSynchronizationStatus.ErrorMessage"));
-			dataSynchronizationStatus.setPercent(_ctx.stringValue("DescribeSynchronizationJobsResponse.SynchronizationInstances["+ i +"].DataSynchronizationStatus.Percent"));
 			dataSynchronizationStatus.setStatus(_ctx.stringValue("DescribeSynchronizationJobsResponse.SynchronizationInstances["+ i +"].DataSynchronizationStatus.Status"));
+			dataSynchronizationStatus.setDelay(_ctx.stringValue("DescribeSynchronizationJobsResponse.SynchronizationInstances["+ i +"].DataSynchronizationStatus.Delay"));
+			dataSynchronizationStatus.setPercent(_ctx.stringValue("DescribeSynchronizationJobsResponse.SynchronizationInstances["+ i +"].DataSynchronizationStatus.Percent"));
+			dataSynchronizationStatus.setErrorMessage(_ctx.stringValue("DescribeSynchronizationJobsResponse.SynchronizationInstances["+ i +"].DataSynchronizationStatus.ErrorMessage"));
 			synchronizationInstance.setDataSynchronizationStatus(dataSynchronizationStatus);
 
 			DestinationEndpoint destinationEndpoint = new DestinationEndpoint();
-			destinationEndpoint.setEngineName(_ctx.stringValue("DescribeSynchronizationJobsResponse.SynchronizationInstances["+ i +"].DestinationEndpoint.EngineName"));
-			destinationEndpoint.setIP(_ctx.stringValue("DescribeSynchronizationJobsResponse.SynchronizationInstances["+ i +"].DestinationEndpoint.IP"));
 			destinationEndpoint.setInstanceId(_ctx.stringValue("DescribeSynchronizationJobsResponse.SynchronizationInstances["+ i +"].DestinationEndpoint.InstanceId"));
+			destinationEndpoint.setIP(_ctx.stringValue("DescribeSynchronizationJobsResponse.SynchronizationInstances["+ i +"].DestinationEndpoint.IP"));
 			destinationEndpoint.setInstanceType(_ctx.stringValue("DescribeSynchronizationJobsResponse.SynchronizationInstances["+ i +"].DestinationEndpoint.InstanceType"));
 			destinationEndpoint.setPort(_ctx.stringValue("DescribeSynchronizationJobsResponse.SynchronizationInstances["+ i +"].DestinationEndpoint.Port"));
 			destinationEndpoint.setUserName(_ctx.stringValue("DescribeSynchronizationJobsResponse.SynchronizationInstances["+ i +"].DestinationEndpoint.UserName"));
+			destinationEndpoint.setEngineName(_ctx.stringValue("DescribeSynchronizationJobsResponse.SynchronizationInstances["+ i +"].DestinationEndpoint.EngineName"));
 			synchronizationInstance.setDestinationEndpoint(destinationEndpoint);
 
 			Performance performance = new Performance();
-			performance.setFLOW(_ctx.stringValue("DescribeSynchronizationJobsResponse.SynchronizationInstances["+ i +"].Performance.FLOW"));
 			performance.setRPS(_ctx.stringValue("DescribeSynchronizationJobsResponse.SynchronizationInstances["+ i +"].Performance.RPS"));
+			performance.setFLOW(_ctx.stringValue("DescribeSynchronizationJobsResponse.SynchronizationInstances["+ i +"].Performance.FLOW"));
 			synchronizationInstance.setPerformance(performance);
 
 			PrecheckStatus precheckStatus = new PrecheckStatus();
-			precheckStatus.setPercent(_ctx.stringValue("DescribeSynchronizationJobsResponse.SynchronizationInstances["+ i +"].PrecheckStatus.Percent"));
 			precheckStatus.setStatus(_ctx.stringValue("DescribeSynchronizationJobsResponse.SynchronizationInstances["+ i +"].PrecheckStatus.Status"));
+			precheckStatus.setPercent(_ctx.stringValue("DescribeSynchronizationJobsResponse.SynchronizationInstances["+ i +"].PrecheckStatus.Percent"));
 
 			List<CheckItem> detail = new ArrayList<CheckItem>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeSynchronizationJobsResponse.SynchronizationInstances["+ i +"].PrecheckStatus.Detail.Length"); j++) {
@@ -107,19 +107,19 @@ public class DescribeSynchronizationJobsResponseUnmarshaller {
 			synchronizationInstance.setPrecheckStatus(precheckStatus);
 
 			SourceEndpoint sourceEndpoint = new SourceEndpoint();
-			sourceEndpoint.setEngineName(_ctx.stringValue("DescribeSynchronizationJobsResponse.SynchronizationInstances["+ i +"].SourceEndpoint.EngineName"));
-			sourceEndpoint.setIP(_ctx.stringValue("DescribeSynchronizationJobsResponse.SynchronizationInstances["+ i +"].SourceEndpoint.IP"));
 			sourceEndpoint.setInstanceId(_ctx.stringValue("DescribeSynchronizationJobsResponse.SynchronizationInstances["+ i +"].SourceEndpoint.InstanceId"));
+			sourceEndpoint.setIP(_ctx.stringValue("DescribeSynchronizationJobsResponse.SynchronizationInstances["+ i +"].SourceEndpoint.IP"));
 			sourceEndpoint.setInstanceType(_ctx.stringValue("DescribeSynchronizationJobsResponse.SynchronizationInstances["+ i +"].SourceEndpoint.InstanceType"));
 			sourceEndpoint.setPort(_ctx.stringValue("DescribeSynchronizationJobsResponse.SynchronizationInstances["+ i +"].SourceEndpoint.Port"));
 			sourceEndpoint.setUserName(_ctx.stringValue("DescribeSynchronizationJobsResponse.SynchronizationInstances["+ i +"].SourceEndpoint.UserName"));
+			sourceEndpoint.setEngineName(_ctx.stringValue("DescribeSynchronizationJobsResponse.SynchronizationInstances["+ i +"].SourceEndpoint.EngineName"));
 			synchronizationInstance.setSourceEndpoint(sourceEndpoint);
 
 			StructureInitializationStatus structureInitializationStatus = new StructureInitializationStatus();
-			structureInitializationStatus.setErrorMessage(_ctx.stringValue("DescribeSynchronizationJobsResponse.SynchronizationInstances["+ i +"].StructureInitializationStatus.ErrorMessage"));
-			structureInitializationStatus.setPercent(_ctx.stringValue("DescribeSynchronizationJobsResponse.SynchronizationInstances["+ i +"].StructureInitializationStatus.Percent"));
-			structureInitializationStatus.setProgress(_ctx.stringValue("DescribeSynchronizationJobsResponse.SynchronizationInstances["+ i +"].StructureInitializationStatus.Progress"));
 			structureInitializationStatus.setStatus(_ctx.stringValue("DescribeSynchronizationJobsResponse.SynchronizationInstances["+ i +"].StructureInitializationStatus.Status"));
+			structureInitializationStatus.setPercent(_ctx.stringValue("DescribeSynchronizationJobsResponse.SynchronizationInstances["+ i +"].StructureInitializationStatus.Percent"));
+			structureInitializationStatus.setErrorMessage(_ctx.stringValue("DescribeSynchronizationJobsResponse.SynchronizationInstances["+ i +"].StructureInitializationStatus.ErrorMessage"));
+			structureInitializationStatus.setProgress(_ctx.stringValue("DescribeSynchronizationJobsResponse.SynchronizationInstances["+ i +"].StructureInitializationStatus.Progress"));
 			synchronizationInstance.setStructureInitializationStatus(structureInitializationStatus);
 
 			List<Tag> tags = new ArrayList<Tag>();

@@ -24,8 +24,8 @@ public class DeleteSynchronizationJobResponseUnmarshaller {
 		
 		deleteSynchronizationJobResponse.setRequestId(_ctx.stringValue("DeleteSynchronizationJobResponse.RequestId"));
 		deleteSynchronizationJobResponse.setErrCode(_ctx.stringValue("DeleteSynchronizationJobResponse.ErrCode"));
-		deleteSynchronizationJobResponse.setErrMessage(_ctx.stringValue("DeleteSynchronizationJobResponse.ErrMessage"));
 		deleteSynchronizationJobResponse.setSuccess(_ctx.stringValue("DeleteSynchronizationJobResponse.Success"));
+		deleteSynchronizationJobResponse.setErrMessage(_ctx.stringValue("DeleteSynchronizationJobResponse.ErrMessage"));
 	 
 	 	return deleteSynchronizationJobResponse;
 	}

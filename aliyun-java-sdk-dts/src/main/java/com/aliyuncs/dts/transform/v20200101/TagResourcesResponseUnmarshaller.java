@@ -23,9 +23,9 @@ public class TagResourcesResponseUnmarshaller {
 	public static TagResourcesResponse unmarshall(TagResourcesResponse tagResourcesResponse, UnmarshallerContext _ctx) {
 		
 		tagResourcesResponse.setRequestId(_ctx.stringValue("TagResourcesResponse.RequestId"));
+		tagResourcesResponse.setErrCode(_ctx.stringValue("TagResourcesResponse.ErrCode"));
 		tagResourcesResponse.setSuccess(_ctx.booleanValue("TagResourcesResponse.Success"));
 		tagResourcesResponse.setErrMessage(_ctx.stringValue("TagResourcesResponse.ErrMessage"));
-		tagResourcesResponse.setErrCode(_ctx.stringValue("TagResourcesResponse.ErrCode"));
 	 
 	 	return tagResourcesResponse;
 	}

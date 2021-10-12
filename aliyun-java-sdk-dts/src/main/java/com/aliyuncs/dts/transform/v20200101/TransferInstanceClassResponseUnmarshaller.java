@@ -23,16 +23,16 @@ public class TransferInstanceClassResponseUnmarshaller {
 	public static TransferInstanceClassResponse unmarshall(TransferInstanceClassResponse transferInstanceClassResponse, UnmarshallerContext _ctx) {
 		
 		transferInstanceClassResponse.setRequestId(_ctx.stringValue("TransferInstanceClassResponse.RequestId"));
+		transferInstanceClassResponse.setEndTime(_ctx.stringValue("TransferInstanceClassResponse.EndTime"));
+		transferInstanceClassResponse.setHttpStatusCode(_ctx.integerValue("TransferInstanceClassResponse.HttpStatusCode"));
+		transferInstanceClassResponse.setDtsJobId(_ctx.stringValue("TransferInstanceClassResponse.DtsJobId"));
+		transferInstanceClassResponse.setErrCode(_ctx.stringValue("TransferInstanceClassResponse.ErrCode"));
+		transferInstanceClassResponse.setSuccess(_ctx.booleanValue("TransferInstanceClassResponse.Success"));
+		transferInstanceClassResponse.setChargeType(_ctx.stringValue("TransferInstanceClassResponse.ChargeType"));
+		transferInstanceClassResponse.setErrMessage(_ctx.stringValue("TransferInstanceClassResponse.ErrMessage"));
 		transferInstanceClassResponse.setCode(_ctx.stringValue("TransferInstanceClassResponse.Code"));
 		transferInstanceClassResponse.setDynamicMessage(_ctx.stringValue("TransferInstanceClassResponse.DynamicMessage"));
-		transferInstanceClassResponse.setErrCode(_ctx.stringValue("TransferInstanceClassResponse.ErrCode"));
-		transferInstanceClassResponse.setErrMessage(_ctx.stringValue("TransferInstanceClassResponse.ErrMessage"));
-		transferInstanceClassResponse.setHttpStatusCode(_ctx.integerValue("TransferInstanceClassResponse.HttpStatusCode"));
-		transferInstanceClassResponse.setSuccess(_ctx.booleanValue("TransferInstanceClassResponse.Success"));
-		transferInstanceClassResponse.setDtsJobId(_ctx.stringValue("TransferInstanceClassResponse.DtsJobId"));
 		transferInstanceClassResponse.setInstanceId(_ctx.stringValue("TransferInstanceClassResponse.InstanceId"));
-		transferInstanceClassResponse.setChargeType(_ctx.stringValue("TransferInstanceClassResponse.ChargeType"));
-		transferInstanceClassResponse.setEndTime(_ctx.stringValue("TransferInstanceClassResponse.EndTime"));
 	 
 	 	return transferInstanceClassResponse;
 	}

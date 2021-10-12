@@ -23,16 +23,16 @@ public class RenewInstanceResponseUnmarshaller {
 	public static RenewInstanceResponse unmarshall(RenewInstanceResponse renewInstanceResponse, UnmarshallerContext _ctx) {
 		
 		renewInstanceResponse.setRequestId(_ctx.stringValue("RenewInstanceResponse.RequestId"));
-		renewInstanceResponse.setChargeType(_ctx.stringValue("RenewInstanceResponse.ChargeType"));
-		renewInstanceResponse.setCode(_ctx.stringValue("RenewInstanceResponse.Code"));
-		renewInstanceResponse.setDtsJobId(_ctx.stringValue("RenewInstanceResponse.DtsJobId"));
-		renewInstanceResponse.setDynamicMessage(_ctx.stringValue("RenewInstanceResponse.DynamicMessage"));
+		renewInstanceResponse.setHttpStatusCode(_ctx.integerValue("RenewInstanceResponse.HttpStatusCode"));
 		renewInstanceResponse.setEndTime(_ctx.stringValue("RenewInstanceResponse.EndTime"));
 		renewInstanceResponse.setErrCode(_ctx.stringValue("RenewInstanceResponse.ErrCode"));
-		renewInstanceResponse.setErrMessage(_ctx.stringValue("RenewInstanceResponse.ErrMessage"));
-		renewInstanceResponse.setHttpStatusCode(_ctx.integerValue("RenewInstanceResponse.HttpStatusCode"));
-		renewInstanceResponse.setInstanceId(_ctx.stringValue("RenewInstanceResponse.InstanceId"));
+		renewInstanceResponse.setDtsJobId(_ctx.stringValue("RenewInstanceResponse.DtsJobId"));
 		renewInstanceResponse.setSuccess(_ctx.booleanValue("RenewInstanceResponse.Success"));
+		renewInstanceResponse.setErrMessage(_ctx.stringValue("RenewInstanceResponse.ErrMessage"));
+		renewInstanceResponse.setChargeType(_ctx.stringValue("RenewInstanceResponse.ChargeType"));
+		renewInstanceResponse.setCode(_ctx.stringValue("RenewInstanceResponse.Code"));
+		renewInstanceResponse.setDynamicMessage(_ctx.stringValue("RenewInstanceResponse.DynamicMessage"));
+		renewInstanceResponse.setInstanceId(_ctx.stringValue("RenewInstanceResponse.InstanceId"));
 	 
 	 	return renewInstanceResponse;
 	}

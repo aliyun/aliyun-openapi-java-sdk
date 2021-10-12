@@ -23,13 +23,13 @@ public class WhiteIpListResponseUnmarshaller {
 	public static WhiteIpListResponse unmarshall(WhiteIpListResponse whiteIpListResponse, UnmarshallerContext _ctx) {
 		
 		whiteIpListResponse.setRequestId(_ctx.stringValue("WhiteIpListResponse.RequestId"));
-		whiteIpListResponse.setDynamicCode(_ctx.stringValue("WhiteIpListResponse.DynamicCode"));
-		whiteIpListResponse.setDynamicMessage(_ctx.stringValue("WhiteIpListResponse.DynamicMessage"));
-		whiteIpListResponse.setErrCode(_ctx.stringValue("WhiteIpListResponse.ErrCode"));
-		whiteIpListResponse.setErrMessage(_ctx.stringValue("WhiteIpListResponse.ErrMessage"));
 		whiteIpListResponse.setHttpStatusCode(_ctx.integerValue("WhiteIpListResponse.HttpStatusCode"));
+		whiteIpListResponse.setErrCode(_ctx.stringValue("WhiteIpListResponse.ErrCode"));
 		whiteIpListResponse.setSuccess(_ctx.booleanValue("WhiteIpListResponse.Success"));
+		whiteIpListResponse.setErrMessage(_ctx.stringValue("WhiteIpListResponse.ErrMessage"));
 		whiteIpListResponse.setIpList(_ctx.stringValue("WhiteIpListResponse.IpList"));
+		whiteIpListResponse.setDynamicMessage(_ctx.stringValue("WhiteIpListResponse.DynamicMessage"));
+		whiteIpListResponse.setDynamicCode(_ctx.stringValue("WhiteIpListResponse.DynamicCode"));
 	 
 	 	return whiteIpListResponse;
 	}

@@ -24,8 +24,8 @@ public class ModifyConsumptionTimestampResponseUnmarshaller {
 		
 		modifyConsumptionTimestampResponse.setRequestId(_ctx.stringValue("ModifyConsumptionTimestampResponse.RequestId"));
 		modifyConsumptionTimestampResponse.setErrCode(_ctx.stringValue("ModifyConsumptionTimestampResponse.ErrCode"));
-		modifyConsumptionTimestampResponse.setErrMessage(_ctx.stringValue("ModifyConsumptionTimestampResponse.ErrMessage"));
 		modifyConsumptionTimestampResponse.setSuccess(_ctx.stringValue("ModifyConsumptionTimestampResponse.Success"));
+		modifyConsumptionTimestampResponse.setErrMessage(_ctx.stringValue("ModifyConsumptionTimestampResponse.ErrMessage"));
 	 
 	 	return modifyConsumptionTimestampResponse;
 	}

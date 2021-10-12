@@ -28,6 +28,7 @@ import com.aliyuncs.dts.model.v20200101.DescribeDtsJobsResponse.DtsJobStatus.Mig
 import com.aliyuncs.dts.model.v20200101.DescribeDtsJobsResponse.DtsJobStatus.Performance;
 import com.aliyuncs.dts.model.v20200101.DescribeDtsJobsResponse.DtsJobStatus.PrecheckStatus;
 import com.aliyuncs.dts.model.v20200101.DescribeDtsJobsResponse.DtsJobStatus.PrecheckStatus.PrecheckDetail;
+import com.aliyuncs.dts.model.v20200101.DescribeDtsJobsResponse.DtsJobStatus.RetryState;
 import com.aliyuncs.dts.model.v20200101.DescribeDtsJobsResponse.DtsJobStatus.ReverseJob;
 import com.aliyuncs.dts.model.v20200101.DescribeDtsJobsResponse.DtsJobStatus.ReverseJob.DataInitializationStatus1;
 import com.aliyuncs.dts.model.v20200101.DescribeDtsJobsResponse.DtsJobStatus.ReverseJob.DataSynchronizationStatus2;
@@ -48,71 +49,72 @@ public class DescribeDtsJobsResponseUnmarshaller {
 	public static DescribeDtsJobsResponse unmarshall(DescribeDtsJobsResponse describeDtsJobsResponse, UnmarshallerContext _ctx) {
 		
 		describeDtsJobsResponse.setRequestId(_ctx.stringValue("DescribeDtsJobsResponse.RequestId"));
-		describeDtsJobsResponse.setDynamicCode(_ctx.stringValue("DescribeDtsJobsResponse.DynamicCode"));
-		describeDtsJobsResponse.setDynamicMessage(_ctx.stringValue("DescribeDtsJobsResponse.DynamicMessage"));
-		describeDtsJobsResponse.setErrCode(_ctx.stringValue("DescribeDtsJobsResponse.ErrCode"));
-		describeDtsJobsResponse.setErrMessage(_ctx.stringValue("DescribeDtsJobsResponse.ErrMessage"));
 		describeDtsJobsResponse.setHttpStatusCode(_ctx.integerValue("DescribeDtsJobsResponse.HttpStatusCode"));
-		describeDtsJobsResponse.setPageNumber(_ctx.integerValue("DescribeDtsJobsResponse.PageNumber"));
-		describeDtsJobsResponse.setPageRecordCount(_ctx.integerValue("DescribeDtsJobsResponse.PageRecordCount"));
+		describeDtsJobsResponse.setErrCode(_ctx.stringValue("DescribeDtsJobsResponse.ErrCode"));
 		describeDtsJobsResponse.setSuccess(_ctx.booleanValue("DescribeDtsJobsResponse.Success"));
+		describeDtsJobsResponse.setPageRecordCount(_ctx.integerValue("DescribeDtsJobsResponse.PageRecordCount"));
 		describeDtsJobsResponse.setTotalRecordCount(_ctx.integerValue("DescribeDtsJobsResponse.TotalRecordCount"));
+		describeDtsJobsResponse.setErrMessage(_ctx.stringValue("DescribeDtsJobsResponse.ErrMessage"));
+		describeDtsJobsResponse.setDynamicMessage(_ctx.stringValue("DescribeDtsJobsResponse.DynamicMessage"));
+		describeDtsJobsResponse.setPageNumber(_ctx.integerValue("DescribeDtsJobsResponse.PageNumber"));
+		describeDtsJobsResponse.setDynamicCode(_ctx.stringValue("DescribeDtsJobsResponse.DynamicCode"));
 
 		List<DtsJobStatus> dtsJobList = new ArrayList<DtsJobStatus>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDtsJobsResponse.DtsJobList.Length"); i++) {
 			DtsJobStatus dtsJobStatus = new DtsJobStatus();
-			dtsJobStatus.setCheckpoint(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].Checkpoint"));
-			dtsJobStatus.setCreateTime(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].CreateTime"));
-			dtsJobStatus.setDbObject(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].DbObject"));
-			dtsJobStatus.setDelay(_ctx.integerValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].Delay"));
-			dtsJobStatus.setDtsInstanceID(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].DtsInstanceID"));
-			dtsJobStatus.setDtsJobClass(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].DtsJobClass"));
-			dtsJobStatus.setDtsJobDirection(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].DtsJobDirection"));
-			dtsJobStatus.setDtsJobId(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].DtsJobId"));
+			dtsJobStatus.setStatus(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].Status"));
 			dtsJobStatus.setDtsJobName(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].DtsJobName"));
+			dtsJobStatus.setDelay(_ctx.integerValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].Delay"));
 			dtsJobStatus.setErrorMessage(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ErrorMessage"));
 			dtsJobStatus.setExpireTime(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ExpireTime"));
+			dtsJobStatus.setDtsJobId(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].DtsJobId"));
+			dtsJobStatus.setCreateTime(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].CreateTime"));
 			dtsJobStatus.setPayType(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].PayType"));
 			dtsJobStatus.setReserved(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].Reserved"));
-			dtsJobStatus.setStatus(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].Status"));
 			dtsJobStatus.setConsumptionClient(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ConsumptionClient"));
-			dtsJobStatus.setBeginTimestamp(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].BeginTimestamp"));
-			dtsJobStatus.setEndTimestamp(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].EndTimestamp"));
+			dtsJobStatus.setDbObject(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].DbObject"));
+			dtsJobStatus.setDtsJobClass(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].DtsJobClass"));
 			dtsJobStatus.setConsumptionCheckpoint(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ConsumptionCheckpoint"));
+			dtsJobStatus.setEndTimestamp(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].EndTimestamp"));
 			dtsJobStatus.setAppName(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].AppName"));
+			dtsJobStatus.setBeginTimestamp(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].BeginTimestamp"));
+			dtsJobStatus.setDtsInstanceID(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].DtsInstanceID"));
+			dtsJobStatus.setDtsJobDirection(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].DtsJobDirection"));
+			dtsJobStatus.setCheckpoint(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].Checkpoint"));
 
 			DataInitializationStatus dataInitializationStatus = new DataInitializationStatus();
-			dataInitializationStatus.setErrorMessage(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].DataInitializationStatus.ErrorMessage"));
-			dataInitializationStatus.setPercent(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].DataInitializationStatus.Percent"));
-			dataInitializationStatus.setProgress(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].DataInitializationStatus.Progress"));
 			dataInitializationStatus.setStatus(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].DataInitializationStatus.Status"));
+			dataInitializationStatus.setPercent(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].DataInitializationStatus.Percent"));
+			dataInitializationStatus.setErrorMessage(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].DataInitializationStatus.ErrorMessage"));
+			dataInitializationStatus.setProgress(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].DataInitializationStatus.Progress"));
 			dtsJobStatus.setDataInitializationStatus(dataInitializationStatus);
 
 			DataSynchronizationStatus dataSynchronizationStatus = new DataSynchronizationStatus();
-			dataSynchronizationStatus.setErrorMessage(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].DataSynchronizationStatus.ErrorMessage"));
+			dataSynchronizationStatus.setStatus(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].DataSynchronizationStatus.Status"));
+			dataSynchronizationStatus.setNeedUpgrade(_ctx.booleanValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].DataSynchronizationStatus.NeedUpgrade"));
 			dataSynchronizationStatus.setPercent(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].DataSynchronizationStatus.Percent"));
 			dataSynchronizationStatus.setProgress(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].DataSynchronizationStatus.Progress"));
-			dataSynchronizationStatus.setStatus(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].DataSynchronizationStatus.Status"));
+			dataSynchronizationStatus.setErrorMessage(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].DataSynchronizationStatus.ErrorMessage"));
 			dtsJobStatus.setDataSynchronizationStatus(dataSynchronizationStatus);
 
 			DataEtlStatus dataEtlStatus = new DataEtlStatus();
-			dataEtlStatus.setErrorMessage(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].DataEtlStatus.ErrorMessage"));
-			dataEtlStatus.setPercent(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].DataEtlStatus.Percent"));
-			dataEtlStatus.setProgress(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].DataEtlStatus.Progress"));
 			dataEtlStatus.setStatus(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].DataEtlStatus.Status"));
+			dataEtlStatus.setPercent(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].DataEtlStatus.Percent"));
+			dataEtlStatus.setErrorMessage(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].DataEtlStatus.ErrorMessage"));
+			dataEtlStatus.setProgress(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].DataEtlStatus.Progress"));
 			dtsJobStatus.setDataEtlStatus(dataEtlStatus);
 
 			DestinationEndpoint destinationEndpoint = new DestinationEndpoint();
-			destinationEndpoint.setDatabaseName(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].DestinationEndpoint.DatabaseName"));
-			destinationEndpoint.setEngineName(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].DestinationEndpoint.EngineName"));
-			destinationEndpoint.setInstanceID(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].DestinationEndpoint.InstanceID"));
-			destinationEndpoint.setInstanceType(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].DestinationEndpoint.InstanceType"));
-			destinationEndpoint.setIp(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].DestinationEndpoint.Ip"));
-			destinationEndpoint.setOracleSID(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].DestinationEndpoint.OracleSID"));
-			destinationEndpoint.setPort(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].DestinationEndpoint.Port"));
-			destinationEndpoint.setRegion(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].DestinationEndpoint.Region"));
 			destinationEndpoint.setSslSolutionEnum(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].DestinationEndpoint.SslSolutionEnum"));
+			destinationEndpoint.setOracleSID(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].DestinationEndpoint.OracleSID"));
+			destinationEndpoint.setRegion(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].DestinationEndpoint.Region"));
+			destinationEndpoint.setDatabaseName(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].DestinationEndpoint.DatabaseName"));
+			destinationEndpoint.setIp(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].DestinationEndpoint.Ip"));
+			destinationEndpoint.setInstanceID(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].DestinationEndpoint.InstanceID"));
+			destinationEndpoint.setPort(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].DestinationEndpoint.Port"));
+			destinationEndpoint.setInstanceType(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].DestinationEndpoint.InstanceType"));
 			destinationEndpoint.setUserName(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].DestinationEndpoint.UserName"));
+			destinationEndpoint.setEngineName(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].DestinationEndpoint.EngineName"));
 			dtsJobStatus.setDestinationEndpoint(destinationEndpoint);
 
 			MigrationMode migrationMode = new MigrationMode();
@@ -122,23 +124,23 @@ public class DescribeDtsJobsResponseUnmarshaller {
 			dtsJobStatus.setMigrationMode(migrationMode);
 
 			Performance performance = new Performance();
-			performance.setFlow(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].Performance.Flow"));
 			performance.setRps(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].Performance.Rps"));
+			performance.setFlow(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].Performance.Flow"));
 			dtsJobStatus.setPerformance(performance);
 
 			PrecheckStatus precheckStatus = new PrecheckStatus();
-			precheckStatus.setErrorMessage(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].PrecheckStatus.ErrorMessage"));
-			precheckStatus.setPercent(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].PrecheckStatus.Percent"));
 			precheckStatus.setStatus(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].PrecheckStatus.Status"));
+			precheckStatus.setPercent(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].PrecheckStatus.Percent"));
+			precheckStatus.setErrorMessage(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].PrecheckStatus.ErrorMessage"));
 
 			List<PrecheckDetail> detail = new ArrayList<PrecheckDetail>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].PrecheckStatus.Detail.Length"); j++) {
 				PrecheckDetail precheckDetail = new PrecheckDetail();
-				precheckDetail.setCheckItem(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].PrecheckStatus.Detail["+ j +"].CheckItem"));
-				precheckDetail.setCheckItemDescription(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].PrecheckStatus.Detail["+ j +"].CheckItemDescription"));
 				precheckDetail.setCheckResult(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].PrecheckStatus.Detail["+ j +"].CheckResult"));
-				precheckDetail.setFailedReason(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].PrecheckStatus.Detail["+ j +"].FailedReason"));
+				precheckDetail.setCheckItemDescription(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].PrecheckStatus.Detail["+ j +"].CheckItemDescription"));
+				precheckDetail.setCheckItem(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].PrecheckStatus.Detail["+ j +"].CheckItem"));
 				precheckDetail.setRepairMethod(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].PrecheckStatus.Detail["+ j +"].RepairMethod"));
+				precheckDetail.setFailedReason(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].PrecheckStatus.Detail["+ j +"].FailedReason"));
 
 				detail.add(precheckDetail);
 			}
@@ -146,46 +148,47 @@ public class DescribeDtsJobsResponseUnmarshaller {
 			dtsJobStatus.setPrecheckStatus(precheckStatus);
 
 			ReverseJob reverseJob = new ReverseJob();
-			reverseJob.setCheckpoint(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ReverseJob.Checkpoint"));
-			reverseJob.setCreateTime(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ReverseJob.CreateTime"));
-			reverseJob.setDbObject(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ReverseJob.DbObject"));
-			reverseJob.setDelay(_ctx.integerValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ReverseJob.Delay"));
-			reverseJob.setDtsInstanceID(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ReverseJob.DtsInstanceID"));
-			reverseJob.setDtsJobClass(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ReverseJob.DtsJobClass"));
-			reverseJob.setDtsJobDirection(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ReverseJob.DtsJobDirection"));
-			reverseJob.setDtsJobId(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ReverseJob.DtsJobId"));
+			reverseJob.setStatus(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ReverseJob.Status"));
 			reverseJob.setDtsJobName(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ReverseJob.DtsJobName"));
+			reverseJob.setDelay(_ctx.integerValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ReverseJob.Delay"));
 			reverseJob.setErrorMessage(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ReverseJob.ErrorMessage"));
+			reverseJob.setDtsJobId(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ReverseJob.DtsJobId"));
 			reverseJob.setExpireTime(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ReverseJob.ExpireTime"));
+			reverseJob.setCreateTime(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ReverseJob.CreateTime"));
 			reverseJob.setPayType(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ReverseJob.PayType"));
 			reverseJob.setReserved(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ReverseJob.Reserved"));
-			reverseJob.setStatus(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ReverseJob.Status"));
+			reverseJob.setDbObject(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ReverseJob.DbObject"));
+			reverseJob.setDtsJobClass(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ReverseJob.DtsJobClass"));
+			reverseJob.setDtsInstanceID(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ReverseJob.DtsInstanceID"));
+			reverseJob.setDtsJobDirection(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ReverseJob.DtsJobDirection"));
+			reverseJob.setCheckpoint(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ReverseJob.Checkpoint"));
 
 			DataInitializationStatus1 dataInitializationStatus1 = new DataInitializationStatus1();
-			dataInitializationStatus1.setErrorMessage(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ReverseJob.DataInitializationStatus.ErrorMessage"));
-			dataInitializationStatus1.setPercent(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ReverseJob.DataInitializationStatus.Percent"));
-			dataInitializationStatus1.setProgress(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ReverseJob.DataInitializationStatus.Progress"));
 			dataInitializationStatus1.setStatus(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ReverseJob.DataInitializationStatus.Status"));
+			dataInitializationStatus1.setPercent(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ReverseJob.DataInitializationStatus.Percent"));
+			dataInitializationStatus1.setErrorMessage(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ReverseJob.DataInitializationStatus.ErrorMessage"));
+			dataInitializationStatus1.setProgress(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ReverseJob.DataInitializationStatus.Progress"));
 			reverseJob.setDataInitializationStatus1(dataInitializationStatus1);
 
 			DataSynchronizationStatus2 dataSynchronizationStatus2 = new DataSynchronizationStatus2();
-			dataSynchronizationStatus2.setErrorMessage(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ReverseJob.DataSynchronizationStatus.ErrorMessage"));
+			dataSynchronizationStatus2.setStatus(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ReverseJob.DataSynchronizationStatus.Status"));
+			dataSynchronizationStatus2.setNeedUpgrade(_ctx.booleanValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ReverseJob.DataSynchronizationStatus.NeedUpgrade"));
 			dataSynchronizationStatus2.setPercent(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ReverseJob.DataSynchronizationStatus.Percent"));
 			dataSynchronizationStatus2.setProgress(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ReverseJob.DataSynchronizationStatus.Progress"));
-			dataSynchronizationStatus2.setStatus(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ReverseJob.DataSynchronizationStatus.Status"));
+			dataSynchronizationStatus2.setErrorMessage(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ReverseJob.DataSynchronizationStatus.ErrorMessage"));
 			reverseJob.setDataSynchronizationStatus2(dataSynchronizationStatus2);
 
 			DestinationEndpoint3 destinationEndpoint3 = new DestinationEndpoint3();
-			destinationEndpoint3.setDatabaseName(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ReverseJob.DestinationEndpoint.DatabaseName"));
-			destinationEndpoint3.setEngineName(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ReverseJob.DestinationEndpoint.EngineName"));
-			destinationEndpoint3.setInstanceID(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ReverseJob.DestinationEndpoint.InstanceID"));
-			destinationEndpoint3.setInstanceType(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ReverseJob.DestinationEndpoint.InstanceType"));
-			destinationEndpoint3.setIp(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ReverseJob.DestinationEndpoint.Ip"));
-			destinationEndpoint3.setOracleSID(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ReverseJob.DestinationEndpoint.OracleSID"));
-			destinationEndpoint3.setPort(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ReverseJob.DestinationEndpoint.Port"));
-			destinationEndpoint3.setRegion(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ReverseJob.DestinationEndpoint.Region"));
 			destinationEndpoint3.setSslSolutionEnum(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ReverseJob.DestinationEndpoint.SslSolutionEnum"));
+			destinationEndpoint3.setOracleSID(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ReverseJob.DestinationEndpoint.OracleSID"));
+			destinationEndpoint3.setRegion(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ReverseJob.DestinationEndpoint.Region"));
+			destinationEndpoint3.setDatabaseName(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ReverseJob.DestinationEndpoint.DatabaseName"));
+			destinationEndpoint3.setIp(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ReverseJob.DestinationEndpoint.Ip"));
+			destinationEndpoint3.setInstanceID(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ReverseJob.DestinationEndpoint.InstanceID"));
+			destinationEndpoint3.setPort(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ReverseJob.DestinationEndpoint.Port"));
+			destinationEndpoint3.setInstanceType(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ReverseJob.DestinationEndpoint.InstanceType"));
 			destinationEndpoint3.setUserName(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ReverseJob.DestinationEndpoint.UserName"));
+			destinationEndpoint3.setEngineName(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ReverseJob.DestinationEndpoint.EngineName"));
 			reverseJob.setDestinationEndpoint3(destinationEndpoint3);
 
 			MigrationMode4 migrationMode4 = new MigrationMode4();
@@ -195,23 +198,23 @@ public class DescribeDtsJobsResponseUnmarshaller {
 			reverseJob.setMigrationMode4(migrationMode4);
 
 			Performance5 performance5 = new Performance5();
-			performance5.setFlow(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ReverseJob.Performance.Flow"));
 			performance5.setRps(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ReverseJob.Performance.Rps"));
+			performance5.setFlow(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ReverseJob.Performance.Flow"));
 			reverseJob.setPerformance5(performance5);
 
 			PrecheckStatus6 precheckStatus6 = new PrecheckStatus6();
-			precheckStatus6.setErrorMessage(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ReverseJob.PrecheckStatus.ErrorMessage"));
-			precheckStatus6.setPercent(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ReverseJob.PrecheckStatus.Percent"));
 			precheckStatus6.setStatus(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ReverseJob.PrecheckStatus.Status"));
+			precheckStatus6.setPercent(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ReverseJob.PrecheckStatus.Percent"));
+			precheckStatus6.setErrorMessage(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ReverseJob.PrecheckStatus.ErrorMessage"));
 
 			List<PrecheckDetail10> detail9 = new ArrayList<PrecheckDetail10>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ReverseJob.PrecheckStatus.Detail.Length"); j++) {
 				PrecheckDetail10 precheckDetail10 = new PrecheckDetail10();
-				precheckDetail10.setCheckItem(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ReverseJob.PrecheckStatus.Detail["+ j +"].CheckItem"));
-				precheckDetail10.setCheckItemDescription(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ReverseJob.PrecheckStatus.Detail["+ j +"].CheckItemDescription"));
 				precheckDetail10.setCheckResult(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ReverseJob.PrecheckStatus.Detail["+ j +"].CheckResult"));
-				precheckDetail10.setFailedReason(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ReverseJob.PrecheckStatus.Detail["+ j +"].FailedReason"));
+				precheckDetail10.setCheckItemDescription(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ReverseJob.PrecheckStatus.Detail["+ j +"].CheckItemDescription"));
+				precheckDetail10.setCheckItem(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ReverseJob.PrecheckStatus.Detail["+ j +"].CheckItem"));
 				precheckDetail10.setRepairMethod(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ReverseJob.PrecheckStatus.Detail["+ j +"].RepairMethod"));
+				precheckDetail10.setFailedReason(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ReverseJob.PrecheckStatus.Detail["+ j +"].FailedReason"));
 
 				detail9.add(precheckDetail10);
 			}
@@ -219,51 +222,59 @@ public class DescribeDtsJobsResponseUnmarshaller {
 			reverseJob.setPrecheckStatus6(precheckStatus6);
 
 			SourceEndpoint7 sourceEndpoint7 = new SourceEndpoint7();
-			sourceEndpoint7.setDatabaseName(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ReverseJob.SourceEndpoint.DatabaseName"));
-			sourceEndpoint7.setEngineName(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ReverseJob.SourceEndpoint.EngineName"));
-			sourceEndpoint7.setInstanceID(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ReverseJob.SourceEndpoint.InstanceID"));
-			sourceEndpoint7.setInstanceType(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ReverseJob.SourceEndpoint.InstanceType"));
-			sourceEndpoint7.setIp(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ReverseJob.SourceEndpoint.Ip"));
-			sourceEndpoint7.setOracleSID(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ReverseJob.SourceEndpoint.OracleSID"));
-			sourceEndpoint7.setPort(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ReverseJob.SourceEndpoint.Port"));
-			sourceEndpoint7.setRegion(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ReverseJob.SourceEndpoint.Region"));
 			sourceEndpoint7.setSslSolutionEnum(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ReverseJob.SourceEndpoint.SslSolutionEnum"));
+			sourceEndpoint7.setOracleSID(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ReverseJob.SourceEndpoint.OracleSID"));
+			sourceEndpoint7.setRegion(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ReverseJob.SourceEndpoint.Region"));
+			sourceEndpoint7.setDatabaseName(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ReverseJob.SourceEndpoint.DatabaseName"));
+			sourceEndpoint7.setIp(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ReverseJob.SourceEndpoint.Ip"));
+			sourceEndpoint7.setInstanceID(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ReverseJob.SourceEndpoint.InstanceID"));
+			sourceEndpoint7.setPort(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ReverseJob.SourceEndpoint.Port"));
+			sourceEndpoint7.setInstanceType(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ReverseJob.SourceEndpoint.InstanceType"));
 			sourceEndpoint7.setUserName(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ReverseJob.SourceEndpoint.UserName"));
+			sourceEndpoint7.setEngineName(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ReverseJob.SourceEndpoint.EngineName"));
 			reverseJob.setSourceEndpoint7(sourceEndpoint7);
 
 			StructureInitializationStatus8 structureInitializationStatus8 = new StructureInitializationStatus8();
-			structureInitializationStatus8.setErrorMessage(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ReverseJob.StructureInitializationStatus.ErrorMessage"));
-			structureInitializationStatus8.setPercent(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ReverseJob.StructureInitializationStatus.Percent"));
-			structureInitializationStatus8.setProgress(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ReverseJob.StructureInitializationStatus.Progress"));
 			structureInitializationStatus8.setStatus(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ReverseJob.StructureInitializationStatus.Status"));
+			structureInitializationStatus8.setPercent(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ReverseJob.StructureInitializationStatus.Percent"));
+			structureInitializationStatus8.setErrorMessage(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ReverseJob.StructureInitializationStatus.ErrorMessage"));
+			structureInitializationStatus8.setProgress(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ReverseJob.StructureInitializationStatus.Progress"));
 			reverseJob.setStructureInitializationStatus8(structureInitializationStatus8);
 			dtsJobStatus.setReverseJob(reverseJob);
 
 			SourceEndpoint sourceEndpoint = new SourceEndpoint();
-			sourceEndpoint.setDatabaseName(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].SourceEndpoint.DatabaseName"));
-			sourceEndpoint.setEngineName(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].SourceEndpoint.EngineName"));
-			sourceEndpoint.setInstanceID(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].SourceEndpoint.InstanceID"));
-			sourceEndpoint.setInstanceType(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].SourceEndpoint.InstanceType"));
-			sourceEndpoint.setIp(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].SourceEndpoint.Ip"));
-			sourceEndpoint.setOracleSID(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].SourceEndpoint.OracleSID"));
-			sourceEndpoint.setPort(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].SourceEndpoint.Port"));
-			sourceEndpoint.setRegion(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].SourceEndpoint.Region"));
 			sourceEndpoint.setSslSolutionEnum(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].SourceEndpoint.SslSolutionEnum"));
+			sourceEndpoint.setOracleSID(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].SourceEndpoint.OracleSID"));
+			sourceEndpoint.setRegion(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].SourceEndpoint.Region"));
+			sourceEndpoint.setDatabaseName(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].SourceEndpoint.DatabaseName"));
+			sourceEndpoint.setIp(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].SourceEndpoint.Ip"));
+			sourceEndpoint.setInstanceID(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].SourceEndpoint.InstanceID"));
+			sourceEndpoint.setPort(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].SourceEndpoint.Port"));
+			sourceEndpoint.setInstanceType(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].SourceEndpoint.InstanceType"));
 			sourceEndpoint.setUserName(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].SourceEndpoint.UserName"));
+			sourceEndpoint.setEngineName(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].SourceEndpoint.EngineName"));
 			dtsJobStatus.setSourceEndpoint(sourceEndpoint);
 
 			StructureInitializationStatus structureInitializationStatus = new StructureInitializationStatus();
-			structureInitializationStatus.setErrorMessage(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].StructureInitializationStatus.ErrorMessage"));
-			structureInitializationStatus.setPercent(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].StructureInitializationStatus.Percent"));
-			structureInitializationStatus.setProgress(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].StructureInitializationStatus.Progress"));
 			structureInitializationStatus.setStatus(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].StructureInitializationStatus.Status"));
+			structureInitializationStatus.setPercent(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].StructureInitializationStatus.Percent"));
+			structureInitializationStatus.setErrorMessage(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].StructureInitializationStatus.ErrorMessage"));
+			structureInitializationStatus.setProgress(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].StructureInitializationStatus.Progress"));
 			dtsJobStatus.setStructureInitializationStatus(structureInitializationStatus);
+
+			RetryState retryState = new RetryState();
+			retryState.setRetryCount(_ctx.integerValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].RetryState.RetryCount"));
+			retryState.setMaxRetryTime(_ctx.integerValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].RetryState.MaxRetryTime"));
+			retryState.setErrMessage(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].RetryState.ErrMessage"));
+			retryState.setRetryTarget(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].RetryState.RetryTarget"));
+			retryState.setRetryTime(_ctx.integerValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].RetryState.RetryTime"));
+			dtsJobStatus.setRetryState(retryState);
 
 			List<DtsTag> tagList = new ArrayList<DtsTag>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].TagList.Length"); j++) {
 				DtsTag dtsTag = new DtsTag();
-				dtsTag.setTagKey(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].TagList["+ j +"].TagKey"));
 				dtsTag.setTagValue(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].TagList["+ j +"].TagValue"));
+				dtsTag.setTagKey(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].TagList["+ j +"].TagKey"));
 
 				tagList.add(dtsTag);
 			}

@@ -25,59 +25,27 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDtsJobsResponse extends AcsResponse {
 
-	private String dynamicCode;
-
-	private String dynamicMessage;
-
-	private String errCode;
-
-	private String errMessage;
-
 	private Integer httpStatusCode;
-
-	private Integer pageNumber;
-
-	private Integer pageRecordCount;
 
 	private String requestId;
 
+	private String errCode;
+
 	private Boolean success;
+
+	private Integer pageRecordCount;
 
 	private Integer totalRecordCount;
 
+	private String errMessage;
+
+	private String dynamicMessage;
+
+	private Integer pageNumber;
+
+	private String dynamicCode;
+
 	private List<DtsJobStatus> dtsJobList;
-
-	public String getDynamicCode() {
-		return this.dynamicCode;
-	}
-
-	public void setDynamicCode(String dynamicCode) {
-		this.dynamicCode = dynamicCode;
-	}
-
-	public String getDynamicMessage() {
-		return this.dynamicMessage;
-	}
-
-	public void setDynamicMessage(String dynamicMessage) {
-		this.dynamicMessage = dynamicMessage;
-	}
-
-	public String getErrCode() {
-		return this.errCode;
-	}
-
-	public void setErrCode(String errCode) {
-		this.errCode = errCode;
-	}
-
-	public String getErrMessage() {
-		return this.errMessage;
-	}
-
-	public void setErrMessage(String errMessage) {
-		this.errMessage = errMessage;
-	}
 
 	public Integer getHttpStatusCode() {
 		return this.httpStatusCode;
@@ -85,22 +53,6 @@ public class DescribeDtsJobsResponse extends AcsResponse {
 
 	public void setHttpStatusCode(Integer httpStatusCode) {
 		this.httpStatusCode = httpStatusCode;
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
-	public Integer getPageRecordCount() {
-		return this.pageRecordCount;
-	}
-
-	public void setPageRecordCount(Integer pageRecordCount) {
-		this.pageRecordCount = pageRecordCount;
 	}
 
 	public String getRequestId() {
@@ -111,6 +63,14 @@ public class DescribeDtsJobsResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public String getErrCode() {
+		return this.errCode;
+	}
+
+	public void setErrCode(String errCode) {
+		this.errCode = errCode;
+	}
+
 	public Boolean getSuccess() {
 		return this.success;
 	}
@@ -119,12 +79,52 @@ public class DescribeDtsJobsResponse extends AcsResponse {
 		this.success = success;
 	}
 
+	public Integer getPageRecordCount() {
+		return this.pageRecordCount;
+	}
+
+	public void setPageRecordCount(Integer pageRecordCount) {
+		this.pageRecordCount = pageRecordCount;
+	}
+
 	public Integer getTotalRecordCount() {
 		return this.totalRecordCount;
 	}
 
 	public void setTotalRecordCount(Integer totalRecordCount) {
 		this.totalRecordCount = totalRecordCount;
+	}
+
+	public String getErrMessage() {
+		return this.errMessage;
+	}
+
+	public void setErrMessage(String errMessage) {
+		this.errMessage = errMessage;
+	}
+
+	public String getDynamicMessage() {
+		return this.dynamicMessage;
+	}
+
+	public void setDynamicMessage(String dynamicMessage) {
+		this.dynamicMessage = dynamicMessage;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+	}
+
+	public String getDynamicCode() {
+		return this.dynamicCode;
+	}
+
+	public void setDynamicCode(String dynamicCode) {
+		this.dynamicCode = dynamicCode;
 	}
 
 	public List<DtsJobStatus> getDtsJobList() {
@@ -137,43 +137,43 @@ public class DescribeDtsJobsResponse extends AcsResponse {
 
 	public static class DtsJobStatus {
 
-		private String checkpoint;
-
-		private String createTime;
-
-		private String dbObject;
-
-		private Integer delay;
-
-		private String dtsInstanceID;
-
-		private String dtsJobClass;
-
-		private String dtsJobDirection;
-
-		private String dtsJobId;
+		private String status;
 
 		private String dtsJobName;
+
+		private Integer delay;
 
 		private String errorMessage;
 
 		private String expireTime;
 
+		private String dtsJobId;
+
+		private String createTime;
+
 		private String payType;
 
 		private String reserved;
 
-		private String status;
-
 		private String consumptionClient;
 
-		private String beginTimestamp;
+		private String dbObject;
 
-		private String endTimestamp;
+		private String dtsJobClass;
 
 		private String consumptionCheckpoint;
 
+		private String endTimestamp;
+
 		private String appName;
+
+		private String beginTimestamp;
+
+		private String dtsInstanceID;
+
+		private String dtsJobDirection;
+
+		private String checkpoint;
 
 		private List<DtsTag> tagList;
 
@@ -197,68 +197,14 @@ public class DescribeDtsJobsResponse extends AcsResponse {
 
 		private StructureInitializationStatus structureInitializationStatus;
 
-		public String getCheckpoint() {
-			return this.checkpoint;
+		private RetryState retryState;
+
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setCheckpoint(String checkpoint) {
-			this.checkpoint = checkpoint;
-		}
-
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
-		}
-
-		public String getDbObject() {
-			return this.dbObject;
-		}
-
-		public void setDbObject(String dbObject) {
-			this.dbObject = dbObject;
-		}
-
-		public Integer getDelay() {
-			return this.delay;
-		}
-
-		public void setDelay(Integer delay) {
-			this.delay = delay;
-		}
-
-		public String getDtsInstanceID() {
-			return this.dtsInstanceID;
-		}
-
-		public void setDtsInstanceID(String dtsInstanceID) {
-			this.dtsInstanceID = dtsInstanceID;
-		}
-
-		public String getDtsJobClass() {
-			return this.dtsJobClass;
-		}
-
-		public void setDtsJobClass(String dtsJobClass) {
-			this.dtsJobClass = dtsJobClass;
-		}
-
-		public String getDtsJobDirection() {
-			return this.dtsJobDirection;
-		}
-
-		public void setDtsJobDirection(String dtsJobDirection) {
-			this.dtsJobDirection = dtsJobDirection;
-		}
-
-		public String getDtsJobId() {
-			return this.dtsJobId;
-		}
-
-		public void setDtsJobId(String dtsJobId) {
-			this.dtsJobId = dtsJobId;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public String getDtsJobName() {
@@ -267,6 +213,14 @@ public class DescribeDtsJobsResponse extends AcsResponse {
 
 		public void setDtsJobName(String dtsJobName) {
 			this.dtsJobName = dtsJobName;
+		}
+
+		public Integer getDelay() {
+			return this.delay;
+		}
+
+		public void setDelay(Integer delay) {
+			this.delay = delay;
 		}
 
 		public String getErrorMessage() {
@@ -285,6 +239,22 @@ public class DescribeDtsJobsResponse extends AcsResponse {
 			this.expireTime = expireTime;
 		}
 
+		public String getDtsJobId() {
+			return this.dtsJobId;
+		}
+
+		public void setDtsJobId(String dtsJobId) {
+			this.dtsJobId = dtsJobId;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
+
 		public String getPayType() {
 			return this.payType;
 		}
@@ -301,14 +271,6 @@ public class DescribeDtsJobsResponse extends AcsResponse {
 			this.reserved = reserved;
 		}
 
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
 		public String getConsumptionClient() {
 			return this.consumptionClient;
 		}
@@ -317,20 +279,20 @@ public class DescribeDtsJobsResponse extends AcsResponse {
 			this.consumptionClient = consumptionClient;
 		}
 
-		public String getBeginTimestamp() {
-			return this.beginTimestamp;
+		public String getDbObject() {
+			return this.dbObject;
 		}
 
-		public void setBeginTimestamp(String beginTimestamp) {
-			this.beginTimestamp = beginTimestamp;
+		public void setDbObject(String dbObject) {
+			this.dbObject = dbObject;
 		}
 
-		public String getEndTimestamp() {
-			return this.endTimestamp;
+		public String getDtsJobClass() {
+			return this.dtsJobClass;
 		}
 
-		public void setEndTimestamp(String endTimestamp) {
-			this.endTimestamp = endTimestamp;
+		public void setDtsJobClass(String dtsJobClass) {
+			this.dtsJobClass = dtsJobClass;
 		}
 
 		public String getConsumptionCheckpoint() {
@@ -341,12 +303,52 @@ public class DescribeDtsJobsResponse extends AcsResponse {
 			this.consumptionCheckpoint = consumptionCheckpoint;
 		}
 
+		public String getEndTimestamp() {
+			return this.endTimestamp;
+		}
+
+		public void setEndTimestamp(String endTimestamp) {
+			this.endTimestamp = endTimestamp;
+		}
+
 		public String getAppName() {
 			return this.appName;
 		}
 
 		public void setAppName(String appName) {
 			this.appName = appName;
+		}
+
+		public String getBeginTimestamp() {
+			return this.beginTimestamp;
+		}
+
+		public void setBeginTimestamp(String beginTimestamp) {
+			this.beginTimestamp = beginTimestamp;
+		}
+
+		public String getDtsInstanceID() {
+			return this.dtsInstanceID;
+		}
+
+		public void setDtsInstanceID(String dtsInstanceID) {
+			this.dtsInstanceID = dtsInstanceID;
+		}
+
+		public String getDtsJobDirection() {
+			return this.dtsJobDirection;
+		}
+
+		public void setDtsJobDirection(String dtsJobDirection) {
+			this.dtsJobDirection = dtsJobDirection;
+		}
+
+		public String getCheckpoint() {
+			return this.checkpoint;
+		}
+
+		public void setCheckpoint(String checkpoint) {
+			this.checkpoint = checkpoint;
 		}
 
 		public List<DtsTag> getTagList() {
@@ -437,19 +439,19 @@ public class DescribeDtsJobsResponse extends AcsResponse {
 			this.structureInitializationStatus = structureInitializationStatus;
 		}
 
-		public static class DtsTag {
+		public RetryState getRetryState() {
+			return this.retryState;
+		}
 
-			private String tagKey;
+		public void setRetryState(RetryState retryState) {
+			this.retryState = retryState;
+		}
+
+		public static class DtsTag {
 
 			private String tagValue;
 
-			public String getTagKey() {
-				return this.tagKey;
-			}
-
-			public void setTagKey(String tagKey) {
-				this.tagKey = tagKey;
-			}
+			private String tagKey;
 
 			public String getTagValue() {
 				return this.tagValue;
@@ -458,24 +460,32 @@ public class DescribeDtsJobsResponse extends AcsResponse {
 			public void setTagValue(String tagValue) {
 				this.tagValue = tagValue;
 			}
+
+			public String getTagKey() {
+				return this.tagKey;
+			}
+
+			public void setTagKey(String tagKey) {
+				this.tagKey = tagKey;
+			}
 		}
 
 		public static class DataInitializationStatus {
 
-			private String errorMessage;
+			private String status;
 
 			private String percent;
 
+			private String errorMessage;
+
 			private String progress;
 
-			private String status;
-
-			public String getErrorMessage() {
-				return this.errorMessage;
+			public String getStatus() {
+				return this.status;
 			}
 
-			public void setErrorMessage(String errorMessage) {
-				this.errorMessage = errorMessage;
+			public void setStatus(String status) {
+				this.status = status;
 			}
 
 			public String getPercent() {
@@ -486,39 +496,49 @@ public class DescribeDtsJobsResponse extends AcsResponse {
 				this.percent = percent;
 			}
 
+			public String getErrorMessage() {
+				return this.errorMessage;
+			}
+
+			public void setErrorMessage(String errorMessage) {
+				this.errorMessage = errorMessage;
+			}
+
 			public String getProgress() {
 				return this.progress;
 			}
 
 			public void setProgress(String progress) {
 				this.progress = progress;
-			}
-
-			public String getStatus() {
-				return this.status;
-			}
-
-			public void setStatus(String status) {
-				this.status = status;
 			}
 		}
 
 		public static class DataSynchronizationStatus {
 
-			private String errorMessage;
+			private String status;
+
+			private Boolean needUpgrade;
 
 			private String percent;
 
 			private String progress;
 
-			private String status;
+			private String errorMessage;
 
-			public String getErrorMessage() {
-				return this.errorMessage;
+			public String getStatus() {
+				return this.status;
 			}
 
-			public void setErrorMessage(String errorMessage) {
-				this.errorMessage = errorMessage;
+			public void setStatus(String status) {
+				this.status = status;
+			}
+
+			public Boolean getNeedUpgrade() {
+				return this.needUpgrade;
+			}
+
+			public void setNeedUpgrade(Boolean needUpgrade) {
+				this.needUpgrade = needUpgrade;
 			}
 
 			public String getPercent() {
@@ -537,31 +557,31 @@ public class DescribeDtsJobsResponse extends AcsResponse {
 				this.progress = progress;
 			}
 
-			public String getStatus() {
-				return this.status;
+			public String getErrorMessage() {
+				return this.errorMessage;
 			}
 
-			public void setStatus(String status) {
-				this.status = status;
+			public void setErrorMessage(String errorMessage) {
+				this.errorMessage = errorMessage;
 			}
 		}
 
 		public static class DataEtlStatus {
 
-			private String errorMessage;
+			private String status;
 
 			private String percent;
 
+			private String errorMessage;
+
 			private String progress;
 
-			private String status;
-
-			public String getErrorMessage() {
-				return this.errorMessage;
+			public String getStatus() {
+				return this.status;
 			}
 
-			public void setErrorMessage(String errorMessage) {
-				this.errorMessage = errorMessage;
+			public void setStatus(String status) {
+				this.status = status;
 			}
 
 			public String getPercent() {
@@ -572,6 +592,14 @@ public class DescribeDtsJobsResponse extends AcsResponse {
 				this.percent = percent;
 			}
 
+			public String getErrorMessage() {
+				return this.errorMessage;
+			}
+
+			public void setErrorMessage(String errorMessage) {
+				this.errorMessage = errorMessage;
+			}
+
 			public String getProgress() {
 				return this.progress;
 			}
@@ -579,76 +607,36 @@ public class DescribeDtsJobsResponse extends AcsResponse {
 			public void setProgress(String progress) {
 				this.progress = progress;
 			}
-
-			public String getStatus() {
-				return this.status;
-			}
-
-			public void setStatus(String status) {
-				this.status = status;
-			}
 		}
 
 		public static class DestinationEndpoint {
 
-			private String databaseName;
-
-			private String engineName;
-
-			private String instanceID;
-
-			private String instanceType;
-
-			private String ip;
+			private String sslSolutionEnum;
 
 			private String oracleSID;
 
-			private String port;
-
 			private String region;
 
-			private String sslSolutionEnum;
+			private String databaseName;
+
+			private String ip;
+
+			private String instanceID;
+
+			private String port;
+
+			private String instanceType;
 
 			private String userName;
 
-			public String getDatabaseName() {
-				return this.databaseName;
+			private String engineName;
+
+			public String getSslSolutionEnum() {
+				return this.sslSolutionEnum;
 			}
 
-			public void setDatabaseName(String databaseName) {
-				this.databaseName = databaseName;
-			}
-
-			public String getEngineName() {
-				return this.engineName;
-			}
-
-			public void setEngineName(String engineName) {
-				this.engineName = engineName;
-			}
-
-			public String getInstanceID() {
-				return this.instanceID;
-			}
-
-			public void setInstanceID(String instanceID) {
-				this.instanceID = instanceID;
-			}
-
-			public String getInstanceType() {
-				return this.instanceType;
-			}
-
-			public void setInstanceType(String instanceType) {
-				this.instanceType = instanceType;
-			}
-
-			public String getIp() {
-				return this.ip;
-			}
-
-			public void setIp(String ip) {
-				this.ip = ip;
+			public void setSslSolutionEnum(String sslSolutionEnum) {
+				this.sslSolutionEnum = sslSolutionEnum;
 			}
 
 			public String getOracleSID() {
@@ -659,14 +647,6 @@ public class DescribeDtsJobsResponse extends AcsResponse {
 				this.oracleSID = oracleSID;
 			}
 
-			public String getPort() {
-				return this.port;
-			}
-
-			public void setPort(String port) {
-				this.port = port;
-			}
-
 			public String getRegion() {
 				return this.region;
 			}
@@ -675,12 +655,44 @@ public class DescribeDtsJobsResponse extends AcsResponse {
 				this.region = region;
 			}
 
-			public String getSslSolutionEnum() {
-				return this.sslSolutionEnum;
+			public String getDatabaseName() {
+				return this.databaseName;
 			}
 
-			public void setSslSolutionEnum(String sslSolutionEnum) {
-				this.sslSolutionEnum = sslSolutionEnum;
+			public void setDatabaseName(String databaseName) {
+				this.databaseName = databaseName;
+			}
+
+			public String getIp() {
+				return this.ip;
+			}
+
+			public void setIp(String ip) {
+				this.ip = ip;
+			}
+
+			public String getInstanceID() {
+				return this.instanceID;
+			}
+
+			public void setInstanceID(String instanceID) {
+				this.instanceID = instanceID;
+			}
+
+			public String getPort() {
+				return this.port;
+			}
+
+			public void setPort(String port) {
+				this.port = port;
+			}
+
+			public String getInstanceType() {
+				return this.instanceType;
+			}
+
+			public void setInstanceType(String instanceType) {
+				this.instanceType = instanceType;
 			}
 
 			public String getUserName() {
@@ -689,6 +701,14 @@ public class DescribeDtsJobsResponse extends AcsResponse {
 
 			public void setUserName(String userName) {
 				this.userName = userName;
+			}
+
+			public String getEngineName() {
+				return this.engineName;
+			}
+
+			public void setEngineName(String engineName) {
+				this.engineName = engineName;
 			}
 		}
 
@@ -727,17 +747,9 @@ public class DescribeDtsJobsResponse extends AcsResponse {
 
 		public static class Performance {
 
-			private String flow;
-
 			private String rps;
 
-			public String getFlow() {
-				return this.flow;
-			}
-
-			public void setFlow(String flow) {
-				this.flow = flow;
-			}
+			private String flow;
 
 			public String getRps() {
 				return this.rps;
@@ -746,24 +758,32 @@ public class DescribeDtsJobsResponse extends AcsResponse {
 			public void setRps(String rps) {
 				this.rps = rps;
 			}
+
+			public String getFlow() {
+				return this.flow;
+			}
+
+			public void setFlow(String flow) {
+				this.flow = flow;
+			}
 		}
 
 		public static class PrecheckStatus {
 
-			private String errorMessage;
+			private String status;
 
 			private String percent;
 
-			private String status;
+			private String errorMessage;
 
 			private List<PrecheckDetail> detail;
 
-			public String getErrorMessage() {
-				return this.errorMessage;
+			public String getStatus() {
+				return this.status;
 			}
 
-			public void setErrorMessage(String errorMessage) {
-				this.errorMessage = errorMessage;
+			public void setStatus(String status) {
+				this.status = status;
 			}
 
 			public String getPercent() {
@@ -774,12 +794,12 @@ public class DescribeDtsJobsResponse extends AcsResponse {
 				this.percent = percent;
 			}
 
-			public String getStatus() {
-				return this.status;
+			public String getErrorMessage() {
+				return this.errorMessage;
 			}
 
-			public void setStatus(String status) {
-				this.status = status;
+			public void setErrorMessage(String errorMessage) {
+				this.errorMessage = errorMessage;
 			}
 
 			public List<PrecheckDetail> getDetail() {
@@ -792,22 +812,22 @@ public class DescribeDtsJobsResponse extends AcsResponse {
 
 			public static class PrecheckDetail {
 
-				private String checkItem;
+				private String checkResult;
 
 				private String checkItemDescription;
 
-				private String checkResult;
-
-				private String failedReason;
+				private String checkItem;
 
 				private String repairMethod;
 
-				public String getCheckItem() {
-					return this.checkItem;
+				private String failedReason;
+
+				public String getCheckResult() {
+					return this.checkResult;
 				}
 
-				public void setCheckItem(String checkItem) {
-					this.checkItem = checkItem;
+				public void setCheckResult(String checkResult) {
+					this.checkResult = checkResult;
 				}
 
 				public String getCheckItemDescription() {
@@ -818,20 +838,12 @@ public class DescribeDtsJobsResponse extends AcsResponse {
 					this.checkItemDescription = checkItemDescription;
 				}
 
-				public String getCheckResult() {
-					return this.checkResult;
+				public String getCheckItem() {
+					return this.checkItem;
 				}
 
-				public void setCheckResult(String checkResult) {
-					this.checkResult = checkResult;
-				}
-
-				public String getFailedReason() {
-					return this.failedReason;
-				}
-
-				public void setFailedReason(String failedReason) {
-					this.failedReason = failedReason;
+				public void setCheckItem(String checkItem) {
+					this.checkItem = checkItem;
 				}
 
 				public String getRepairMethod() {
@@ -841,38 +853,46 @@ public class DescribeDtsJobsResponse extends AcsResponse {
 				public void setRepairMethod(String repairMethod) {
 					this.repairMethod = repairMethod;
 				}
+
+				public String getFailedReason() {
+					return this.failedReason;
+				}
+
+				public void setFailedReason(String failedReason) {
+					this.failedReason = failedReason;
+				}
 			}
 		}
 
 		public static class ReverseJob {
 
-			private String checkpoint;
-
-			private String createTime;
-
-			private String dbObject;
-
-			private Integer delay;
-
-			private String dtsInstanceID;
-
-			private String dtsJobClass;
-
-			private String dtsJobDirection;
-
-			private String dtsJobId;
+			private String status;
 
 			private String dtsJobName;
 
+			private Integer delay;
+
 			private String errorMessage;
 
+			private String dtsJobId;
+
 			private String expireTime;
+
+			private String createTime;
 
 			private String payType;
 
 			private String reserved;
 
-			private String status;
+			private String dbObject;
+
+			private String dtsJobClass;
+
+			private String dtsInstanceID;
+
+			private String dtsJobDirection;
+
+			private String checkpoint;
 
 			private DataInitializationStatus1 dataInitializationStatus1;
 
@@ -890,68 +910,12 @@ public class DescribeDtsJobsResponse extends AcsResponse {
 
 			private StructureInitializationStatus8 structureInitializationStatus8;
 
-			public String getCheckpoint() {
-				return this.checkpoint;
+			public String getStatus() {
+				return this.status;
 			}
 
-			public void setCheckpoint(String checkpoint) {
-				this.checkpoint = checkpoint;
-			}
-
-			public String getCreateTime() {
-				return this.createTime;
-			}
-
-			public void setCreateTime(String createTime) {
-				this.createTime = createTime;
-			}
-
-			public String getDbObject() {
-				return this.dbObject;
-			}
-
-			public void setDbObject(String dbObject) {
-				this.dbObject = dbObject;
-			}
-
-			public Integer getDelay() {
-				return this.delay;
-			}
-
-			public void setDelay(Integer delay) {
-				this.delay = delay;
-			}
-
-			public String getDtsInstanceID() {
-				return this.dtsInstanceID;
-			}
-
-			public void setDtsInstanceID(String dtsInstanceID) {
-				this.dtsInstanceID = dtsInstanceID;
-			}
-
-			public String getDtsJobClass() {
-				return this.dtsJobClass;
-			}
-
-			public void setDtsJobClass(String dtsJobClass) {
-				this.dtsJobClass = dtsJobClass;
-			}
-
-			public String getDtsJobDirection() {
-				return this.dtsJobDirection;
-			}
-
-			public void setDtsJobDirection(String dtsJobDirection) {
-				this.dtsJobDirection = dtsJobDirection;
-			}
-
-			public String getDtsJobId() {
-				return this.dtsJobId;
-			}
-
-			public void setDtsJobId(String dtsJobId) {
-				this.dtsJobId = dtsJobId;
+			public void setStatus(String status) {
+				this.status = status;
 			}
 
 			public String getDtsJobName() {
@@ -962,6 +926,14 @@ public class DescribeDtsJobsResponse extends AcsResponse {
 				this.dtsJobName = dtsJobName;
 			}
 
+			public Integer getDelay() {
+				return this.delay;
+			}
+
+			public void setDelay(Integer delay) {
+				this.delay = delay;
+			}
+
 			public String getErrorMessage() {
 				return this.errorMessage;
 			}
@@ -970,12 +942,28 @@ public class DescribeDtsJobsResponse extends AcsResponse {
 				this.errorMessage = errorMessage;
 			}
 
+			public String getDtsJobId() {
+				return this.dtsJobId;
+			}
+
+			public void setDtsJobId(String dtsJobId) {
+				this.dtsJobId = dtsJobId;
+			}
+
 			public String getExpireTime() {
 				return this.expireTime;
 			}
 
 			public void setExpireTime(String expireTime) {
 				this.expireTime = expireTime;
+			}
+
+			public String getCreateTime() {
+				return this.createTime;
+			}
+
+			public void setCreateTime(String createTime) {
+				this.createTime = createTime;
 			}
 
 			public String getPayType() {
@@ -994,12 +982,44 @@ public class DescribeDtsJobsResponse extends AcsResponse {
 				this.reserved = reserved;
 			}
 
-			public String getStatus() {
-				return this.status;
+			public String getDbObject() {
+				return this.dbObject;
 			}
 
-			public void setStatus(String status) {
-				this.status = status;
+			public void setDbObject(String dbObject) {
+				this.dbObject = dbObject;
+			}
+
+			public String getDtsJobClass() {
+				return this.dtsJobClass;
+			}
+
+			public void setDtsJobClass(String dtsJobClass) {
+				this.dtsJobClass = dtsJobClass;
+			}
+
+			public String getDtsInstanceID() {
+				return this.dtsInstanceID;
+			}
+
+			public void setDtsInstanceID(String dtsInstanceID) {
+				this.dtsInstanceID = dtsInstanceID;
+			}
+
+			public String getDtsJobDirection() {
+				return this.dtsJobDirection;
+			}
+
+			public void setDtsJobDirection(String dtsJobDirection) {
+				this.dtsJobDirection = dtsJobDirection;
+			}
+
+			public String getCheckpoint() {
+				return this.checkpoint;
+			}
+
+			public void setCheckpoint(String checkpoint) {
+				this.checkpoint = checkpoint;
 			}
 
 			public DataInitializationStatus1 getDataInitializationStatus1() {
@@ -1068,20 +1088,20 @@ public class DescribeDtsJobsResponse extends AcsResponse {
 
 			public static class DataInitializationStatus1 {
 
-				private String errorMessage;
+				private String status;
 
 				private String percent;
 
+				private String errorMessage;
+
 				private String progress;
 
-				private String status;
-
-				public String getErrorMessage() {
-					return this.errorMessage;
+				public String getStatus() {
+					return this.status;
 				}
 
-				public void setErrorMessage(String errorMessage) {
-					this.errorMessage = errorMessage;
+				public void setStatus(String status) {
+					this.status = status;
 				}
 
 				public String getPercent() {
@@ -1092,39 +1112,49 @@ public class DescribeDtsJobsResponse extends AcsResponse {
 					this.percent = percent;
 				}
 
+				public String getErrorMessage() {
+					return this.errorMessage;
+				}
+
+				public void setErrorMessage(String errorMessage) {
+					this.errorMessage = errorMessage;
+				}
+
 				public String getProgress() {
 					return this.progress;
 				}
 
 				public void setProgress(String progress) {
 					this.progress = progress;
-				}
-
-				public String getStatus() {
-					return this.status;
-				}
-
-				public void setStatus(String status) {
-					this.status = status;
 				}
 			}
 
 			public static class DataSynchronizationStatus2 {
 
-				private String errorMessage;
+				private String status;
+
+				private Boolean needUpgrade;
 
 				private String percent;
 
 				private String progress;
 
-				private String status;
+				private String errorMessage;
 
-				public String getErrorMessage() {
-					return this.errorMessage;
+				public String getStatus() {
+					return this.status;
 				}
 
-				public void setErrorMessage(String errorMessage) {
-					this.errorMessage = errorMessage;
+				public void setStatus(String status) {
+					this.status = status;
+				}
+
+				public Boolean getNeedUpgrade() {
+					return this.needUpgrade;
+				}
+
+				public void setNeedUpgrade(Boolean needUpgrade) {
+					this.needUpgrade = needUpgrade;
 				}
 
 				public String getPercent() {
@@ -1143,75 +1173,43 @@ public class DescribeDtsJobsResponse extends AcsResponse {
 					this.progress = progress;
 				}
 
-				public String getStatus() {
-					return this.status;
+				public String getErrorMessage() {
+					return this.errorMessage;
 				}
 
-				public void setStatus(String status) {
-					this.status = status;
+				public void setErrorMessage(String errorMessage) {
+					this.errorMessage = errorMessage;
 				}
 			}
 
 			public static class DestinationEndpoint3 {
 
-				private String databaseName;
-
-				private String engineName;
-
-				private String instanceID;
-
-				private String instanceType;
-
-				private String ip;
+				private String sslSolutionEnum;
 
 				private String oracleSID;
 
-				private String port;
-
 				private String region;
 
-				private String sslSolutionEnum;
+				private String databaseName;
+
+				private String ip;
+
+				private String instanceID;
+
+				private String port;
+
+				private String instanceType;
 
 				private String userName;
 
-				public String getDatabaseName() {
-					return this.databaseName;
+				private String engineName;
+
+				public String getSslSolutionEnum() {
+					return this.sslSolutionEnum;
 				}
 
-				public void setDatabaseName(String databaseName) {
-					this.databaseName = databaseName;
-				}
-
-				public String getEngineName() {
-					return this.engineName;
-				}
-
-				public void setEngineName(String engineName) {
-					this.engineName = engineName;
-				}
-
-				public String getInstanceID() {
-					return this.instanceID;
-				}
-
-				public void setInstanceID(String instanceID) {
-					this.instanceID = instanceID;
-				}
-
-				public String getInstanceType() {
-					return this.instanceType;
-				}
-
-				public void setInstanceType(String instanceType) {
-					this.instanceType = instanceType;
-				}
-
-				public String getIp() {
-					return this.ip;
-				}
-
-				public void setIp(String ip) {
-					this.ip = ip;
+				public void setSslSolutionEnum(String sslSolutionEnum) {
+					this.sslSolutionEnum = sslSolutionEnum;
 				}
 
 				public String getOracleSID() {
@@ -1222,14 +1220,6 @@ public class DescribeDtsJobsResponse extends AcsResponse {
 					this.oracleSID = oracleSID;
 				}
 
-				public String getPort() {
-					return this.port;
-				}
-
-				public void setPort(String port) {
-					this.port = port;
-				}
-
 				public String getRegion() {
 					return this.region;
 				}
@@ -1238,12 +1228,44 @@ public class DescribeDtsJobsResponse extends AcsResponse {
 					this.region = region;
 				}
 
-				public String getSslSolutionEnum() {
-					return this.sslSolutionEnum;
+				public String getDatabaseName() {
+					return this.databaseName;
 				}
 
-				public void setSslSolutionEnum(String sslSolutionEnum) {
-					this.sslSolutionEnum = sslSolutionEnum;
+				public void setDatabaseName(String databaseName) {
+					this.databaseName = databaseName;
+				}
+
+				public String getIp() {
+					return this.ip;
+				}
+
+				public void setIp(String ip) {
+					this.ip = ip;
+				}
+
+				public String getInstanceID() {
+					return this.instanceID;
+				}
+
+				public void setInstanceID(String instanceID) {
+					this.instanceID = instanceID;
+				}
+
+				public String getPort() {
+					return this.port;
+				}
+
+				public void setPort(String port) {
+					this.port = port;
+				}
+
+				public String getInstanceType() {
+					return this.instanceType;
+				}
+
+				public void setInstanceType(String instanceType) {
+					this.instanceType = instanceType;
 				}
 
 				public String getUserName() {
@@ -1252,6 +1274,14 @@ public class DescribeDtsJobsResponse extends AcsResponse {
 
 				public void setUserName(String userName) {
 					this.userName = userName;
+				}
+
+				public String getEngineName() {
+					return this.engineName;
+				}
+
+				public void setEngineName(String engineName) {
+					this.engineName = engineName;
 				}
 			}
 
@@ -1290,17 +1320,9 @@ public class DescribeDtsJobsResponse extends AcsResponse {
 
 			public static class Performance5 {
 
-				private String flow;
-
 				private String rps;
 
-				public String getFlow() {
-					return this.flow;
-				}
-
-				public void setFlow(String flow) {
-					this.flow = flow;
-				}
+				private String flow;
 
 				public String getRps() {
 					return this.rps;
@@ -1309,24 +1331,32 @@ public class DescribeDtsJobsResponse extends AcsResponse {
 				public void setRps(String rps) {
 					this.rps = rps;
 				}
+
+				public String getFlow() {
+					return this.flow;
+				}
+
+				public void setFlow(String flow) {
+					this.flow = flow;
+				}
 			}
 
 			public static class PrecheckStatus6 {
 
-				private String errorMessage;
+				private String status;
 
 				private String percent;
 
-				private String status;
+				private String errorMessage;
 
 				private List<PrecheckDetail10> detail9;
 
-				public String getErrorMessage() {
-					return this.errorMessage;
+				public String getStatus() {
+					return this.status;
 				}
 
-				public void setErrorMessage(String errorMessage) {
-					this.errorMessage = errorMessage;
+				public void setStatus(String status) {
+					this.status = status;
 				}
 
 				public String getPercent() {
@@ -1337,12 +1367,12 @@ public class DescribeDtsJobsResponse extends AcsResponse {
 					this.percent = percent;
 				}
 
-				public String getStatus() {
-					return this.status;
+				public String getErrorMessage() {
+					return this.errorMessage;
 				}
 
-				public void setStatus(String status) {
-					this.status = status;
+				public void setErrorMessage(String errorMessage) {
+					this.errorMessage = errorMessage;
 				}
 
 				public List<PrecheckDetail10> getDetail9() {
@@ -1355,22 +1385,22 @@ public class DescribeDtsJobsResponse extends AcsResponse {
 
 				public static class PrecheckDetail10 {
 
-					private String checkItem;
+					private String checkResult;
 
 					private String checkItemDescription;
 
-					private String checkResult;
-
-					private String failedReason;
+					private String checkItem;
 
 					private String repairMethod;
 
-					public String getCheckItem() {
-						return this.checkItem;
+					private String failedReason;
+
+					public String getCheckResult() {
+						return this.checkResult;
 					}
 
-					public void setCheckItem(String checkItem) {
-						this.checkItem = checkItem;
+					public void setCheckResult(String checkResult) {
+						this.checkResult = checkResult;
 					}
 
 					public String getCheckItemDescription() {
@@ -1381,20 +1411,12 @@ public class DescribeDtsJobsResponse extends AcsResponse {
 						this.checkItemDescription = checkItemDescription;
 					}
 
-					public String getCheckResult() {
-						return this.checkResult;
+					public String getCheckItem() {
+						return this.checkItem;
 					}
 
-					public void setCheckResult(String checkResult) {
-						this.checkResult = checkResult;
-					}
-
-					public String getFailedReason() {
-						return this.failedReason;
-					}
-
-					public void setFailedReason(String failedReason) {
-						this.failedReason = failedReason;
+					public void setCheckItem(String checkItem) {
+						this.checkItem = checkItem;
 					}
 
 					public String getRepairMethod() {
@@ -1404,69 +1426,45 @@ public class DescribeDtsJobsResponse extends AcsResponse {
 					public void setRepairMethod(String repairMethod) {
 						this.repairMethod = repairMethod;
 					}
+
+					public String getFailedReason() {
+						return this.failedReason;
+					}
+
+					public void setFailedReason(String failedReason) {
+						this.failedReason = failedReason;
+					}
 				}
 			}
 
 			public static class SourceEndpoint7 {
 
-				private String databaseName;
-
-				private String engineName;
-
-				private String instanceID;
-
-				private String instanceType;
-
-				private String ip;
+				private String sslSolutionEnum;
 
 				private String oracleSID;
 
-				private String port;
-
 				private String region;
 
-				private String sslSolutionEnum;
+				private String databaseName;
+
+				private String ip;
+
+				private String instanceID;
+
+				private String port;
+
+				private String instanceType;
 
 				private String userName;
 
-				public String getDatabaseName() {
-					return this.databaseName;
+				private String engineName;
+
+				public String getSslSolutionEnum() {
+					return this.sslSolutionEnum;
 				}
 
-				public void setDatabaseName(String databaseName) {
-					this.databaseName = databaseName;
-				}
-
-				public String getEngineName() {
-					return this.engineName;
-				}
-
-				public void setEngineName(String engineName) {
-					this.engineName = engineName;
-				}
-
-				public String getInstanceID() {
-					return this.instanceID;
-				}
-
-				public void setInstanceID(String instanceID) {
-					this.instanceID = instanceID;
-				}
-
-				public String getInstanceType() {
-					return this.instanceType;
-				}
-
-				public void setInstanceType(String instanceType) {
-					this.instanceType = instanceType;
-				}
-
-				public String getIp() {
-					return this.ip;
-				}
-
-				public void setIp(String ip) {
-					this.ip = ip;
+				public void setSslSolutionEnum(String sslSolutionEnum) {
+					this.sslSolutionEnum = sslSolutionEnum;
 				}
 
 				public String getOracleSID() {
@@ -1477,14 +1475,6 @@ public class DescribeDtsJobsResponse extends AcsResponse {
 					this.oracleSID = oracleSID;
 				}
 
-				public String getPort() {
-					return this.port;
-				}
-
-				public void setPort(String port) {
-					this.port = port;
-				}
-
 				public String getRegion() {
 					return this.region;
 				}
@@ -1493,12 +1483,44 @@ public class DescribeDtsJobsResponse extends AcsResponse {
 					this.region = region;
 				}
 
-				public String getSslSolutionEnum() {
-					return this.sslSolutionEnum;
+				public String getDatabaseName() {
+					return this.databaseName;
 				}
 
-				public void setSslSolutionEnum(String sslSolutionEnum) {
-					this.sslSolutionEnum = sslSolutionEnum;
+				public void setDatabaseName(String databaseName) {
+					this.databaseName = databaseName;
+				}
+
+				public String getIp() {
+					return this.ip;
+				}
+
+				public void setIp(String ip) {
+					this.ip = ip;
+				}
+
+				public String getInstanceID() {
+					return this.instanceID;
+				}
+
+				public void setInstanceID(String instanceID) {
+					this.instanceID = instanceID;
+				}
+
+				public String getPort() {
+					return this.port;
+				}
+
+				public void setPort(String port) {
+					this.port = port;
+				}
+
+				public String getInstanceType() {
+					return this.instanceType;
+				}
+
+				public void setInstanceType(String instanceType) {
+					this.instanceType = instanceType;
 				}
 
 				public String getUserName() {
@@ -1508,24 +1530,32 @@ public class DescribeDtsJobsResponse extends AcsResponse {
 				public void setUserName(String userName) {
 					this.userName = userName;
 				}
+
+				public String getEngineName() {
+					return this.engineName;
+				}
+
+				public void setEngineName(String engineName) {
+					this.engineName = engineName;
+				}
 			}
 
 			public static class StructureInitializationStatus8 {
 
-				private String errorMessage;
+				private String status;
 
 				private String percent;
 
+				private String errorMessage;
+
 				private String progress;
 
-				private String status;
-
-				public String getErrorMessage() {
-					return this.errorMessage;
+				public String getStatus() {
+					return this.status;
 				}
 
-				public void setErrorMessage(String errorMessage) {
-					this.errorMessage = errorMessage;
+				public void setStatus(String status) {
+					this.status = status;
 				}
 
 				public String getPercent() {
@@ -1536,6 +1566,14 @@ public class DescribeDtsJobsResponse extends AcsResponse {
 					this.percent = percent;
 				}
 
+				public String getErrorMessage() {
+					return this.errorMessage;
+				}
+
+				public void setErrorMessage(String errorMessage) {
+					this.errorMessage = errorMessage;
+				}
+
 				public String getProgress() {
 					return this.progress;
 				}
@@ -1543,77 +1581,37 @@ public class DescribeDtsJobsResponse extends AcsResponse {
 				public void setProgress(String progress) {
 					this.progress = progress;
 				}
-
-				public String getStatus() {
-					return this.status;
-				}
-
-				public void setStatus(String status) {
-					this.status = status;
-				}
 			}
 		}
 
 		public static class SourceEndpoint {
 
-			private String databaseName;
-
-			private String engineName;
-
-			private String instanceID;
-
-			private String instanceType;
-
-			private String ip;
+			private String sslSolutionEnum;
 
 			private String oracleSID;
 
-			private String port;
-
 			private String region;
 
-			private String sslSolutionEnum;
+			private String databaseName;
+
+			private String ip;
+
+			private String instanceID;
+
+			private String port;
+
+			private String instanceType;
 
 			private String userName;
 
-			public String getDatabaseName() {
-				return this.databaseName;
+			private String engineName;
+
+			public String getSslSolutionEnum() {
+				return this.sslSolutionEnum;
 			}
 
-			public void setDatabaseName(String databaseName) {
-				this.databaseName = databaseName;
-			}
-
-			public String getEngineName() {
-				return this.engineName;
-			}
-
-			public void setEngineName(String engineName) {
-				this.engineName = engineName;
-			}
-
-			public String getInstanceID() {
-				return this.instanceID;
-			}
-
-			public void setInstanceID(String instanceID) {
-				this.instanceID = instanceID;
-			}
-
-			public String getInstanceType() {
-				return this.instanceType;
-			}
-
-			public void setInstanceType(String instanceType) {
-				this.instanceType = instanceType;
-			}
-
-			public String getIp() {
-				return this.ip;
-			}
-
-			public void setIp(String ip) {
-				this.ip = ip;
+			public void setSslSolutionEnum(String sslSolutionEnum) {
+				this.sslSolutionEnum = sslSolutionEnum;
 			}
 
 			public String getOracleSID() {
@@ -1624,14 +1622,6 @@ public class DescribeDtsJobsResponse extends AcsResponse {
 				this.oracleSID = oracleSID;
 			}
 
-			public String getPort() {
-				return this.port;
-			}
-
-			public void setPort(String port) {
-				this.port = port;
-			}
-
 			public String getRegion() {
 				return this.region;
 			}
@@ -1640,12 +1630,44 @@ public class DescribeDtsJobsResponse extends AcsResponse {
 				this.region = region;
 			}
 
-			public String getSslSolutionEnum() {
-				return this.sslSolutionEnum;
+			public String getDatabaseName() {
+				return this.databaseName;
 			}
 
-			public void setSslSolutionEnum(String sslSolutionEnum) {
-				this.sslSolutionEnum = sslSolutionEnum;
+			public void setDatabaseName(String databaseName) {
+				this.databaseName = databaseName;
+			}
+
+			public String getIp() {
+				return this.ip;
+			}
+
+			public void setIp(String ip) {
+				this.ip = ip;
+			}
+
+			public String getInstanceID() {
+				return this.instanceID;
+			}
+
+			public void setInstanceID(String instanceID) {
+				this.instanceID = instanceID;
+			}
+
+			public String getPort() {
+				return this.port;
+			}
+
+			public void setPort(String port) {
+				this.port = port;
+			}
+
+			public String getInstanceType() {
+				return this.instanceType;
+			}
+
+			public void setInstanceType(String instanceType) {
+				this.instanceType = instanceType;
 			}
 
 			public String getUserName() {
@@ -1655,24 +1677,32 @@ public class DescribeDtsJobsResponse extends AcsResponse {
 			public void setUserName(String userName) {
 				this.userName = userName;
 			}
+
+			public String getEngineName() {
+				return this.engineName;
+			}
+
+			public void setEngineName(String engineName) {
+				this.engineName = engineName;
+			}
 		}
 
 		public static class StructureInitializationStatus {
 
-			private String errorMessage;
+			private String status;
 
 			private String percent;
 
+			private String errorMessage;
+
 			private String progress;
 
-			private String status;
-
-			public String getErrorMessage() {
-				return this.errorMessage;
+			public String getStatus() {
+				return this.status;
 			}
 
-			public void setErrorMessage(String errorMessage) {
-				this.errorMessage = errorMessage;
+			public void setStatus(String status) {
+				this.status = status;
 			}
 
 			public String getPercent() {
@@ -1683,6 +1713,14 @@ public class DescribeDtsJobsResponse extends AcsResponse {
 				this.percent = percent;
 			}
 
+			public String getErrorMessage() {
+				return this.errorMessage;
+			}
+
+			public void setErrorMessage(String errorMessage) {
+				this.errorMessage = errorMessage;
+			}
+
 			public String getProgress() {
 				return this.progress;
 			}
@@ -1690,13 +1728,58 @@ public class DescribeDtsJobsResponse extends AcsResponse {
 			public void setProgress(String progress) {
 				this.progress = progress;
 			}
+		}
 
-			public String getStatus() {
-				return this.status;
+		public static class RetryState {
+
+			private Integer retryCount;
+
+			private Integer maxRetryTime;
+
+			private String errMessage;
+
+			private String retryTarget;
+
+			private Integer retryTime;
+
+			public Integer getRetryCount() {
+				return this.retryCount;
 			}
 
-			public void setStatus(String status) {
-				this.status = status;
+			public void setRetryCount(Integer retryCount) {
+				this.retryCount = retryCount;
+			}
+
+			public Integer getMaxRetryTime() {
+				return this.maxRetryTime;
+			}
+
+			public void setMaxRetryTime(Integer maxRetryTime) {
+				this.maxRetryTime = maxRetryTime;
+			}
+
+			public String getErrMessage() {
+				return this.errMessage;
+			}
+
+			public void setErrMessage(String errMessage) {
+				this.errMessage = errMessage;
+			}
+
+			public String getRetryTarget() {
+				return this.retryTarget;
+			}
+
+			public void setRetryTarget(String retryTarget) {
+				this.retryTarget = retryTarget;
+			}
+
+			public Integer getRetryTime() {
+				return this.retryTime;
+			}
+
+			public void setRetryTime(Integer retryTime) {
+				this.retryTime = retryTime;
 			}
 		}
 	}

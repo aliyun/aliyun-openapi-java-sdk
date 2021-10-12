@@ -25,33 +25,33 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeSubscriptionInstanceStatusResponse extends AcsResponse {
 
-	private String beginTimestamp;
-
-	private String consumptionCheckpoint;
-
-	private String consumptionClient;
-
-	private String endTimestamp;
-
-	private String errMessage;
-
-	private String payType;
-
-	private String requestId;
-
 	private String status;
 
-	private String subscribeTopic;
-
-	private String subscriptionInstanceID;
-
-	private String subscriptionInstanceName;
+	private String errorMessage;
 
 	private String errCode;
 
 	private String success;
 
-	private String errorMessage;
+	private String errMessage;
+
+	private String payType;
+
+	private String consumptionClient;
+
+	private String consumptionCheckpoint;
+
+	private String endTimestamp;
+
+	private String beginTimestamp;
+
+	private String requestId;
+
+	private String subscribeTopic;
+
+	private String subscriptionInstanceName;
+
+	private String subscriptionInstanceID;
 
 	private String taskId;
 
@@ -63,62 +63,6 @@ public class DescribeSubscriptionInstanceStatusResponse extends AcsResponse {
 
 	private SubscriptionHost subscriptionHost;
 
-	public String getBeginTimestamp() {
-		return this.beginTimestamp;
-	}
-
-	public void setBeginTimestamp(String beginTimestamp) {
-		this.beginTimestamp = beginTimestamp;
-	}
-
-	public String getConsumptionCheckpoint() {
-		return this.consumptionCheckpoint;
-	}
-
-	public void setConsumptionCheckpoint(String consumptionCheckpoint) {
-		this.consumptionCheckpoint = consumptionCheckpoint;
-	}
-
-	public String getConsumptionClient() {
-		return this.consumptionClient;
-	}
-
-	public void setConsumptionClient(String consumptionClient) {
-		this.consumptionClient = consumptionClient;
-	}
-
-	public String getEndTimestamp() {
-		return this.endTimestamp;
-	}
-
-	public void setEndTimestamp(String endTimestamp) {
-		this.endTimestamp = endTimestamp;
-	}
-
-	public String getErrMessage() {
-		return this.errMessage;
-	}
-
-	public void setErrMessage(String errMessage) {
-		this.errMessage = errMessage;
-	}
-
-	public String getPayType() {
-		return this.payType;
-	}
-
-	public void setPayType(String payType) {
-		this.payType = payType;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public String getStatus() {
 		return this.status;
 	}
@@ -127,28 +71,12 @@ public class DescribeSubscriptionInstanceStatusResponse extends AcsResponse {
 		this.status = status;
 	}
 
-	public String getSubscribeTopic() {
-		return this.subscribeTopic;
+	public String getErrorMessage() {
+		return this.errorMessage;
 	}
 
-	public void setSubscribeTopic(String subscribeTopic) {
-		this.subscribeTopic = subscribeTopic;
-	}
-
-	public String getSubscriptionInstanceID() {
-		return this.subscriptionInstanceID;
-	}
-
-	public void setSubscriptionInstanceID(String subscriptionInstanceID) {
-		this.subscriptionInstanceID = subscriptionInstanceID;
-	}
-
-	public String getSubscriptionInstanceName() {
-		return this.subscriptionInstanceName;
-	}
-
-	public void setSubscriptionInstanceName(String subscriptionInstanceName) {
-		this.subscriptionInstanceName = subscriptionInstanceName;
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
 	}
 
 	public String getErrCode() {
@@ -167,12 +95,84 @@ public class DescribeSubscriptionInstanceStatusResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public String getErrorMessage() {
-		return this.errorMessage;
+	public String getErrMessage() {
+		return this.errMessage;
 	}
 
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
+	public void setErrMessage(String errMessage) {
+		this.errMessage = errMessage;
+	}
+
+	public String getPayType() {
+		return this.payType;
+	}
+
+	public void setPayType(String payType) {
+		this.payType = payType;
+	}
+
+	public String getConsumptionClient() {
+		return this.consumptionClient;
+	}
+
+	public void setConsumptionClient(String consumptionClient) {
+		this.consumptionClient = consumptionClient;
+	}
+
+	public String getConsumptionCheckpoint() {
+		return this.consumptionCheckpoint;
+	}
+
+	public void setConsumptionCheckpoint(String consumptionCheckpoint) {
+		this.consumptionCheckpoint = consumptionCheckpoint;
+	}
+
+	public String getEndTimestamp() {
+		return this.endTimestamp;
+	}
+
+	public void setEndTimestamp(String endTimestamp) {
+		this.endTimestamp = endTimestamp;
+	}
+
+	public String getBeginTimestamp() {
+		return this.beginTimestamp;
+	}
+
+	public void setBeginTimestamp(String beginTimestamp) {
+		this.beginTimestamp = beginTimestamp;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getSubscribeTopic() {
+		return this.subscribeTopic;
+	}
+
+	public void setSubscribeTopic(String subscribeTopic) {
+		this.subscribeTopic = subscribeTopic;
+	}
+
+	public String getSubscriptionInstanceName() {
+		return this.subscriptionInstanceName;
+	}
+
+	public void setSubscriptionInstanceName(String subscriptionInstanceName) {
+		this.subscriptionInstanceName = subscriptionInstanceName;
+	}
+
+	public String getSubscriptionInstanceID() {
+		return this.subscriptionInstanceID;
+	}
+
+	public void setSubscriptionInstanceID(String subscriptionInstanceID) {
+		this.subscriptionInstanceID = subscriptionInstanceID;
 	}
 
 	public String getTaskId() {
@@ -250,17 +250,9 @@ public class DescribeSubscriptionInstanceStatusResponse extends AcsResponse {
 
 	public static class SourceEndpoint {
 
-		private String instanceID;
-
 		private String instanceType;
 
-		public String getInstanceID() {
-			return this.instanceID;
-		}
-
-		public void setInstanceID(String instanceID) {
-			this.instanceID = instanceID;
-		}
+		private String instanceID;
 
 		public String getInstanceType() {
 			return this.instanceType;
@@ -269,21 +261,21 @@ public class DescribeSubscriptionInstanceStatusResponse extends AcsResponse {
 		public void setInstanceType(String instanceType) {
 			this.instanceType = instanceType;
 		}
+
+		public String getInstanceID() {
+			return this.instanceID;
+		}
+
+		public void setInstanceID(String instanceID) {
+			this.instanceID = instanceID;
+		}
 	}
 
 	public static class SubscriptionDataType {
 
-		private Boolean dDL;
-
 		private Boolean dML;
 
-		public Boolean getDDL() {
-			return this.dDL;
-		}
-
-		public void setDDL(Boolean dDL) {
-			this.dDL = dDL;
-		}
+		private Boolean dDL;
 
 		public Boolean getDML() {
 			return this.dML;
@@ -292,22 +284,30 @@ public class DescribeSubscriptionInstanceStatusResponse extends AcsResponse {
 		public void setDML(Boolean dML) {
 			this.dML = dML;
 		}
+
+		public Boolean getDDL() {
+			return this.dDL;
+		}
+
+		public void setDDL(Boolean dDL) {
+			this.dDL = dDL;
+		}
 	}
 
 	public static class SubscriptionHost {
 
-		private String privateHost;
+		private String vPCHost;
 
 		private String publicHost;
 
-		private String vPCHost;
+		private String privateHost;
 
-		public String getPrivateHost() {
-			return this.privateHost;
+		public String getVPCHost() {
+			return this.vPCHost;
 		}
 
-		public void setPrivateHost(String privateHost) {
-			this.privateHost = privateHost;
+		public void setVPCHost(String vPCHost) {
+			this.vPCHost = vPCHost;
 		}
 
 		public String getPublicHost() {
@@ -318,12 +318,12 @@ public class DescribeSubscriptionInstanceStatusResponse extends AcsResponse {
 			this.publicHost = publicHost;
 		}
 
-		public String getVPCHost() {
-			return this.vPCHost;
+		public String getPrivateHost() {
+			return this.privateHost;
 		}
 
-		public void setVPCHost(String vPCHost) {
-			this.vPCHost = vPCHost;
+		public void setPrivateHost(String privateHost) {
+			this.privateHost = privateHost;
 		}
 	}
 

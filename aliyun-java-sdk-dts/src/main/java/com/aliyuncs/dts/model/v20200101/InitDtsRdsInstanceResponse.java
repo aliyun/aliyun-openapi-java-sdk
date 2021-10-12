@@ -15,18 +15,16 @@
 package com.aliyuncs.dts.model.v20200101;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.dts.transform.v20200101.DescribeEndpointSwitchStatusResponseUnmarshaller;
+import com.aliyuncs.dts.transform.v20200101.InitDtsRdsInstanceResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeEndpointSwitchStatusResponse extends AcsResponse {
+public class InitDtsRdsInstanceResponse extends AcsResponse {
 
-	private String status;
-
-	private String errorMessage;
+	private String httpStatusCode;
 
 	private String requestId;
 
@@ -36,20 +34,16 @@ public class DescribeEndpointSwitchStatusResponse extends AcsResponse {
 
 	private String errMessage;
 
-	public String getStatus() {
-		return this.status;
+	private String adminAccount;
+
+	private String adminPassword;
+
+	public String getHttpStatusCode() {
+		return this.httpStatusCode;
 	}
 
-	public void setStatus(String status) {
-		this.status = status;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
+	public void setHttpStatusCode(String httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
 	}
 
 	public String getRequestId() {
@@ -84,9 +78,25 @@ public class DescribeEndpointSwitchStatusResponse extends AcsResponse {
 		this.errMessage = errMessage;
 	}
 
+	public String getAdminAccount() {
+		return this.adminAccount;
+	}
+
+	public void setAdminAccount(String adminAccount) {
+		this.adminAccount = adminAccount;
+	}
+
+	public String getAdminPassword() {
+		return this.adminPassword;
+	}
+
+	public void setAdminPassword(String adminPassword) {
+		this.adminPassword = adminPassword;
+	}
+
 	@Override
-	public DescribeEndpointSwitchStatusResponse getInstance(UnmarshallerContext context) {
-		return	DescribeEndpointSwitchStatusResponseUnmarshaller.unmarshall(this, context);
+	public InitDtsRdsInstanceResponse getInstance(UnmarshallerContext context) {
+		return	InitDtsRdsInstanceResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

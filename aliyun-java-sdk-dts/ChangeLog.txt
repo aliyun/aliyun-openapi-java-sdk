@@ -1,3 +1,6 @@
+2021-10-12 Version: 5.1.20
+- Update InitDtsRdsInstance API.
+
 2021-08-13 Version: 5.1.18
 - Supported etlOperatorColumnReference for ModifyDtsJob.
 

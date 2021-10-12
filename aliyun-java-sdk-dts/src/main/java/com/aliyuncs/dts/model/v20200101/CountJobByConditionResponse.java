@@ -15,42 +15,30 @@
 package com.aliyuncs.dts.model.v20200101;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.dts.transform.v20200101.DescribeEndpointSwitchStatusResponseUnmarshaller;
+import com.aliyuncs.dts.transform.v20200101.CountJobByConditionResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeEndpointSwitchStatusResponse extends AcsResponse {
-
-	private String status;
-
-	private String errorMessage;
+public class CountJobByConditionResponse extends AcsResponse {
 
 	private String requestId;
 
+	private Integer httpStatusCode;
+
 	private String errCode;
 
-	private String success;
+	private Boolean success;
 
 	private String errMessage;
 
-	public String getStatus() {
-		return this.status;
-	}
+	private String dynamicMessage;
 
-	public void setStatus(String status) {
-		this.status = status;
-	}
+	private String dynamicCode;
 
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
+	private Long totalRecordCount;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -58,6 +46,14 @@ public class DescribeEndpointSwitchStatusResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
+	}
+
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
 	}
 
 	public String getErrCode() {
@@ -68,11 +64,11 @@ public class DescribeEndpointSwitchStatusResponse extends AcsResponse {
 		this.errCode = errCode;
 	}
 
-	public String getSuccess() {
+	public Boolean getSuccess() {
 		return this.success;
 	}
 
-	public void setSuccess(String success) {
+	public void setSuccess(Boolean success) {
 		this.success = success;
 	}
 
@@ -84,9 +80,33 @@ public class DescribeEndpointSwitchStatusResponse extends AcsResponse {
 		this.errMessage = errMessage;
 	}
 
+	public String getDynamicMessage() {
+		return this.dynamicMessage;
+	}
+
+	public void setDynamicMessage(String dynamicMessage) {
+		this.dynamicMessage = dynamicMessage;
+	}
+
+	public String getDynamicCode() {
+		return this.dynamicCode;
+	}
+
+	public void setDynamicCode(String dynamicCode) {
+		this.dynamicCode = dynamicCode;
+	}
+
+	public Long getTotalRecordCount() {
+		return this.totalRecordCount;
+	}
+
+	public void setTotalRecordCount(Long totalRecordCount) {
+		this.totalRecordCount = totalRecordCount;
+	}
+
 	@Override
-	public DescribeEndpointSwitchStatusResponse getInstance(UnmarshallerContext context) {
-		return	DescribeEndpointSwitchStatusResponseUnmarshaller.unmarshall(this, context);
+	public CountJobByConditionResponse getInstance(UnmarshallerContext context) {
+		return	CountJobByConditionResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

@@ -23,12 +23,12 @@ public class ConfigureSubscriptionResponseUnmarshaller {
 	public static ConfigureSubscriptionResponse unmarshall(ConfigureSubscriptionResponse configureSubscriptionResponse, UnmarshallerContext _ctx) {
 		
 		configureSubscriptionResponse.setRequestId(_ctx.stringValue("ConfigureSubscriptionResponse.RequestId"));
-		configureSubscriptionResponse.setErrCode(_ctx.stringValue("ConfigureSubscriptionResponse.ErrCode"));
-		configureSubscriptionResponse.setErrMessage(_ctx.stringValue("ConfigureSubscriptionResponse.ErrMessage"));
-		configureSubscriptionResponse.setSuccess(_ctx.stringValue("ConfigureSubscriptionResponse.Success"));
-		configureSubscriptionResponse.setDtsJobId(_ctx.stringValue("ConfigureSubscriptionResponse.DtsJobId"));
-		configureSubscriptionResponse.setDtsInstanceId(_ctx.stringValue("ConfigureSubscriptionResponse.DtsInstanceId"));
 		configureSubscriptionResponse.setHttpStatusCode(_ctx.stringValue("ConfigureSubscriptionResponse.HttpStatusCode"));
+		configureSubscriptionResponse.setErrCode(_ctx.stringValue("ConfigureSubscriptionResponse.ErrCode"));
+		configureSubscriptionResponse.setDtsJobId(_ctx.stringValue("ConfigureSubscriptionResponse.DtsJobId"));
+		configureSubscriptionResponse.setSuccess(_ctx.stringValue("ConfigureSubscriptionResponse.Success"));
+		configureSubscriptionResponse.setDtsInstanceId(_ctx.stringValue("ConfigureSubscriptionResponse.DtsInstanceId"));
+		configureSubscriptionResponse.setErrMessage(_ctx.stringValue("ConfigureSubscriptionResponse.ErrMessage"));
 	 
 	 	return configureSubscriptionResponse;
 	}

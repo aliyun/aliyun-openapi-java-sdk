@@ -24,74 +24,34 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeSubscriptionInstanceAlertResponse extends AcsResponse {
 
-	private String delayAlertPhone;
-
-	private String delayAlertStatus;
-
-	private String delayOverSeconds;
-
-	private String errCode;
-
-	private String errMessage;
-
-	private String errorAlertPhone;
+	private String requestId;
 
 	private String errorAlertStatus;
 
-	private String requestId;
-
-	private String subscriptionInstanceID;
-
-	private String subscriptionInstanceName;
+	private String errCode;
 
 	private String success;
 
-	public String getDelayAlertPhone() {
-		return this.delayAlertPhone;
+	private String errorAlertPhone;
+
+	private String errMessage;
+
+	private String delayAlertStatus;
+
+	private String subscriptionInstanceName;
+
+	private String delayAlertPhone;
+
+	private String subscriptionInstanceID;
+
+	private String delayOverSeconds;
+
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setDelayAlertPhone(String delayAlertPhone) {
-		this.delayAlertPhone = delayAlertPhone;
-	}
-
-	public String getDelayAlertStatus() {
-		return this.delayAlertStatus;
-	}
-
-	public void setDelayAlertStatus(String delayAlertStatus) {
-		this.delayAlertStatus = delayAlertStatus;
-	}
-
-	public String getDelayOverSeconds() {
-		return this.delayOverSeconds;
-	}
-
-	public void setDelayOverSeconds(String delayOverSeconds) {
-		this.delayOverSeconds = delayOverSeconds;
-	}
-
-	public String getErrCode() {
-		return this.errCode;
-	}
-
-	public void setErrCode(String errCode) {
-		this.errCode = errCode;
-	}
-
-	public String getErrMessage() {
-		return this.errMessage;
-	}
-
-	public void setErrMessage(String errMessage) {
-		this.errMessage = errMessage;
-	}
-
-	public String getErrorAlertPhone() {
-		return this.errorAlertPhone;
-	}
-
-	public void setErrorAlertPhone(String errorAlertPhone) {
-		this.errorAlertPhone = errorAlertPhone;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getErrorAlertStatus() {
@@ -102,20 +62,44 @@ public class DescribeSubscriptionInstanceAlertResponse extends AcsResponse {
 		this.errorAlertStatus = errorAlertStatus;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getErrCode() {
+		return this.errCode;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setErrCode(String errCode) {
+		this.errCode = errCode;
 	}
 
-	public String getSubscriptionInstanceID() {
-		return this.subscriptionInstanceID;
+	public String getSuccess() {
+		return this.success;
 	}
 
-	public void setSubscriptionInstanceID(String subscriptionInstanceID) {
-		this.subscriptionInstanceID = subscriptionInstanceID;
+	public void setSuccess(String success) {
+		this.success = success;
+	}
+
+	public String getErrorAlertPhone() {
+		return this.errorAlertPhone;
+	}
+
+	public void setErrorAlertPhone(String errorAlertPhone) {
+		this.errorAlertPhone = errorAlertPhone;
+	}
+
+	public String getErrMessage() {
+		return this.errMessage;
+	}
+
+	public void setErrMessage(String errMessage) {
+		this.errMessage = errMessage;
+	}
+
+	public String getDelayAlertStatus() {
+		return this.delayAlertStatus;
+	}
+
+	public void setDelayAlertStatus(String delayAlertStatus) {
+		this.delayAlertStatus = delayAlertStatus;
 	}
 
 	public String getSubscriptionInstanceName() {
@@ -126,12 +110,28 @@ public class DescribeSubscriptionInstanceAlertResponse extends AcsResponse {
 		this.subscriptionInstanceName = subscriptionInstanceName;
 	}
 
-	public String getSuccess() {
-		return this.success;
+	public String getDelayAlertPhone() {
+		return this.delayAlertPhone;
 	}
 
-	public void setSuccess(String success) {
-		this.success = success;
+	public void setDelayAlertPhone(String delayAlertPhone) {
+		this.delayAlertPhone = delayAlertPhone;
+	}
+
+	public String getSubscriptionInstanceID() {
+		return this.subscriptionInstanceID;
+	}
+
+	public void setSubscriptionInstanceID(String subscriptionInstanceID) {
+		this.subscriptionInstanceID = subscriptionInstanceID;
+	}
+
+	public String getDelayOverSeconds() {
+		return this.delayOverSeconds;
+	}
+
+	public void setDelayOverSeconds(String delayOverSeconds) {
+		this.delayOverSeconds = delayOverSeconds;
 	}
 
 	@Override

@@ -24,30 +24,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeSynchronizationJobReplicatorCompareResponse extends AcsResponse {
 
-	private String errCode;
-
-	private String errMessage;
+	private Boolean synchronizationReplicatorCompareEnable;
 
 	private String requestId;
 
+	private String errCode;
+
 	private String success;
 
-	private Boolean synchronizationReplicatorCompareEnable;
+	private String errMessage;
 
-	public String getErrCode() {
-		return this.errCode;
+	public Boolean getSynchronizationReplicatorCompareEnable() {
+		return this.synchronizationReplicatorCompareEnable;
 	}
 
-	public void setErrCode(String errCode) {
-		this.errCode = errCode;
-	}
-
-	public String getErrMessage() {
-		return this.errMessage;
-	}
-
-	public void setErrMessage(String errMessage) {
-		this.errMessage = errMessage;
+	public void setSynchronizationReplicatorCompareEnable(Boolean synchronizationReplicatorCompareEnable) {
+		this.synchronizationReplicatorCompareEnable = synchronizationReplicatorCompareEnable;
 	}
 
 	public String getRequestId() {
@@ -58,6 +50,14 @@ public class DescribeSynchronizationJobReplicatorCompareResponse extends AcsResp
 		this.requestId = requestId;
 	}
 
+	public String getErrCode() {
+		return this.errCode;
+	}
+
+	public void setErrCode(String errCode) {
+		this.errCode = errCode;
+	}
+
 	public String getSuccess() {
 		return this.success;
 	}
@@ -66,12 +66,12 @@ public class DescribeSynchronizationJobReplicatorCompareResponse extends AcsResp
 		this.success = success;
 	}
 
-	public Boolean getSynchronizationReplicatorCompareEnable() {
-		return this.synchronizationReplicatorCompareEnable;
+	public String getErrMessage() {
+		return this.errMessage;
 	}
 
-	public void setSynchronizationReplicatorCompareEnable(Boolean synchronizationReplicatorCompareEnable) {
-		this.synchronizationReplicatorCompareEnable = synchronizationReplicatorCompareEnable;
+	public void setErrMessage(String errMessage) {
+		this.errMessage = errMessage;
 	}
 
 	@Override
