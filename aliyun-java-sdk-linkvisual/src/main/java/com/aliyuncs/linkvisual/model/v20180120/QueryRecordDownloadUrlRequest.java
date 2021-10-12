@@ -29,7 +29,11 @@ public class QueryRecordDownloadUrlRequest extends RpcAcsRequest<QueryRecordDown
 
 	private String iotInstanceId;
 
+	private String productKey;
+
 	private String fileName;
+
+	private String deviceName;
 	public QueryRecordDownloadUrlRequest() {
 		super("Linkvisual", "2018-01-20", "QueryRecordDownloadUrl", "Linkvisual");
 		setMethod(MethodType.POST);
@@ -61,6 +65,17 @@ public class QueryRecordDownloadUrlRequest extends RpcAcsRequest<QueryRecordDown
 		}
 	}
 
+	public String getProductKey() {
+		return this.productKey;
+	}
+
+	public void setProductKey(String productKey) {
+		this.productKey = productKey;
+		if(productKey != null){
+			putQueryParameter("ProductKey", productKey);
+		}
+	}
+
 	public String getFileName() {
 		return this.fileName;
 	}
@@ -69,6 +84,17 @@ public class QueryRecordDownloadUrlRequest extends RpcAcsRequest<QueryRecordDown
 		this.fileName = fileName;
 		if(fileName != null){
 			putQueryParameter("FileName", fileName);
+		}
+	}
+
+	public String getDeviceName() {
+		return this.deviceName;
+	}
+
+	public void setDeviceName(String deviceName) {
+		this.deviceName = deviceName;
+		if(deviceName != null){
+			putQueryParameter("DeviceName", deviceName);
 		}
 	}
 

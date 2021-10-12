@@ -37,6 +37,10 @@ public class QueryDeviceEventRequest extends RpcAcsRequest<QueryDeviceEventRespo
 
 	private Integer currentPage;
 
+	private String productKey;
+
+	private String deviceName;
+
 	private Integer eventType;
 	public QueryDeviceEventRequest() {
 		super("Linkvisual", "2018-01-20", "QueryDeviceEvent", "Linkvisual");
@@ -110,6 +114,28 @@ public class QueryDeviceEventRequest extends RpcAcsRequest<QueryDeviceEventRespo
 		this.currentPage = currentPage;
 		if(currentPage != null){
 			putQueryParameter("CurrentPage", currentPage.toString());
+		}
+	}
+
+	public String getProductKey() {
+		return this.productKey;
+	}
+
+	public void setProductKey(String productKey) {
+		this.productKey = productKey;
+		if(productKey != null){
+			putQueryParameter("ProductKey", productKey);
+		}
+	}
+
+	public String getDeviceName() {
+		return this.deviceName;
+	}
+
+	public void setDeviceName(String deviceName) {
+		this.deviceName = deviceName;
+		if(deviceName != null){
+			putQueryParameter("DeviceName", deviceName);
 		}
 	}
 

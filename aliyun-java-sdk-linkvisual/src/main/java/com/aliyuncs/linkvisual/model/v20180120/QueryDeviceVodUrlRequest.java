@@ -37,9 +37,13 @@ public class QueryDeviceVodUrlRequest extends RpcAcsRequest<QueryDeviceVodUrlRes
 
 	private Boolean shouldEncrypt;
 
+	private String productKey;
+
 	private String fileName;
 
 	private Integer seekTime;
+
+	private String deviceName;
 
 	private Integer urlValidDuration;
 	public QueryDeviceVodUrlRequest() {
@@ -117,6 +121,17 @@ public class QueryDeviceVodUrlRequest extends RpcAcsRequest<QueryDeviceVodUrlRes
 		}
 	}
 
+	public String getProductKey() {
+		return this.productKey;
+	}
+
+	public void setProductKey(String productKey) {
+		this.productKey = productKey;
+		if(productKey != null){
+			putQueryParameter("ProductKey", productKey);
+		}
+	}
+
 	public String getFileName() {
 		return this.fileName;
 	}
@@ -136,6 +151,17 @@ public class QueryDeviceVodUrlRequest extends RpcAcsRequest<QueryDeviceVodUrlRes
 		this.seekTime = seekTime;
 		if(seekTime != null){
 			putQueryParameter("SeekTime", seekTime.toString());
+		}
+	}
+
+	public String getDeviceName() {
+		return this.deviceName;
+	}
+
+	public void setDeviceName(String deviceName) {
+		this.deviceName = deviceName;
+		if(deviceName != null){
+			putQueryParameter("DeviceName", deviceName);
 		}
 	}
 

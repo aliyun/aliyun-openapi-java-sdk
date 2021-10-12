@@ -27,7 +27,13 @@ public class DeleteEventRecordPlanDeviceRequest extends RpcAcsRequest<DeleteEven
 
 	private String iotId;
 
+	private String iotInstanceId;
+
 	private Integer streamType;
+
+	private String productKey;
+
+	private String deviceName;
 	public DeleteEventRecordPlanDeviceRequest() {
 		super("Linkvisual", "2018-01-20", "DeleteEventRecordPlanDevice", "Linkvisual");
 		setMethod(MethodType.POST);
@@ -48,6 +54,17 @@ public class DeleteEventRecordPlanDeviceRequest extends RpcAcsRequest<DeleteEven
 		}
 	}
 
+	public String getIotInstanceId() {
+		return this.iotInstanceId;
+	}
+
+	public void setIotInstanceId(String iotInstanceId) {
+		this.iotInstanceId = iotInstanceId;
+		if(iotInstanceId != null){
+			putQueryParameter("IotInstanceId", iotInstanceId);
+		}
+	}
+
 	public Integer getStreamType() {
 		return this.streamType;
 	}
@@ -56,6 +73,28 @@ public class DeleteEventRecordPlanDeviceRequest extends RpcAcsRequest<DeleteEven
 		this.streamType = streamType;
 		if(streamType != null){
 			putQueryParameter("StreamType", streamType.toString());
+		}
+	}
+
+	public String getProductKey() {
+		return this.productKey;
+	}
+
+	public void setProductKey(String productKey) {
+		this.productKey = productKey;
+		if(productKey != null){
+			putQueryParameter("ProductKey", productKey);
+		}
+	}
+
+	public String getDeviceName() {
+		return this.deviceName;
+	}
+
+	public void setDeviceName(String deviceName) {
+		this.deviceName = deviceName;
+		if(deviceName != null){
+			putQueryParameter("DeviceName", deviceName);
 		}
 	}
 

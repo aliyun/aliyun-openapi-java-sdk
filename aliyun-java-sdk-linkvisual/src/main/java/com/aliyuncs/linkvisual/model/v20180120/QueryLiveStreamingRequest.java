@@ -43,6 +43,10 @@ public class QueryLiveStreamingRequest extends RpcAcsRequest<QueryLiveStreamingR
 
 	private Integer streamType;
 
+	private String productKey;
+
+	private String deviceName;
+
 	private Integer urlValidDuration;
 	public QueryLiveStreamingRequest() {
 		super("Linkvisual", "2018-01-20", "QueryLiveStreaming", "Linkvisual");
@@ -149,6 +153,28 @@ public class QueryLiveStreamingRequest extends RpcAcsRequest<QueryLiveStreamingR
 		this.streamType = streamType;
 		if(streamType != null){
 			putQueryParameter("StreamType", streamType.toString());
+		}
+	}
+
+	public String getProductKey() {
+		return this.productKey;
+	}
+
+	public void setProductKey(String productKey) {
+		this.productKey = productKey;
+		if(productKey != null){
+			putQueryParameter("ProductKey", productKey);
+		}
+	}
+
+	public String getDeviceName() {
+		return this.deviceName;
+	}
+
+	public void setDeviceName(String deviceName) {
+		this.deviceName = deviceName;
+		if(deviceName != null){
+			putQueryParameter("DeviceName", deviceName);
 		}
 	}
 

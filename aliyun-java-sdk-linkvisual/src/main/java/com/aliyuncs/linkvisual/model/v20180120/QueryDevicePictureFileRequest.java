@@ -31,6 +31,10 @@ public class QueryDevicePictureFileRequest extends RpcAcsRequest<QueryDevicePict
 
 	private String iotInstanceId;
 
+	private String productKey;
+
+	private String deviceName;
+
 	private String captureId;
 	public QueryDevicePictureFileRequest() {
 		super("Linkvisual", "2018-01-20", "QueryDevicePictureFile", "Linkvisual");
@@ -71,6 +75,28 @@ public class QueryDevicePictureFileRequest extends RpcAcsRequest<QueryDevicePict
 		this.iotInstanceId = iotInstanceId;
 		if(iotInstanceId != null){
 			putQueryParameter("IotInstanceId", iotInstanceId);
+		}
+	}
+
+	public String getProductKey() {
+		return this.productKey;
+	}
+
+	public void setProductKey(String productKey) {
+		this.productKey = productKey;
+		if(productKey != null){
+			putQueryParameter("ProductKey", productKey);
+		}
+	}
+
+	public String getDeviceName() {
+		return this.deviceName;
+	}
+
+	public void setDeviceName(String deviceName) {
+		this.deviceName = deviceName;
+		if(deviceName != null){
+			putQueryParameter("DeviceName", deviceName);
 		}
 	}
 

@@ -31,6 +31,7 @@ public class QueryDeviceVodUrlResponseUnmarshaller {
 
 		Data data = new Data();
 		data.setVodUrl(_ctx.stringValue("QueryDeviceVodUrlResponse.Data.VodUrl"));
+		data.setDecryptKey(_ctx.stringValue("QueryDeviceVodUrlResponse.Data.DecryptKey"));
 		queryDeviceVodUrlResponse.setData(data);
 	 
 	 	return queryDeviceVodUrlResponse;

@@ -14,27 +14,26 @@
 
 package com.aliyuncs.linkvisual.model.v20180120;
 
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.linkvisual.transform.v20180120.QueryDeviceVodUrlResponseUnmarshaller;
+import com.aliyuncs.linkvisual.transform.v20180120.DeleteLocalFileUploadJobResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class QueryDeviceVodUrlResponse extends AcsResponse {
+public class DeleteLocalFileUploadJobResponse extends AcsResponse {
 
 	private String requestId;
 
 	private Boolean success;
 
-	private String errorMessage;
-
 	private String code;
 
-	private String decryptKey;
+	private String errorMessage;
 
-	private Data data;
+	private Map<Object,Object> data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -52,14 +51,6 @@ public class QueryDeviceVodUrlResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
-
 	public String getCode() {
 		return this.code;
 	}
@@ -68,52 +59,24 @@ public class QueryDeviceVodUrlResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getDecryptKey() {
-		return this.decryptKey;
+	public String getErrorMessage() {
+		return this.errorMessage;
 	}
 
-	public void setDecryptKey(String decryptKey) {
-		this.decryptKey = decryptKey;
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
 	}
 
-	public Data getData() {
+	public Map<Object,Object> getData() {
 		return this.data;
 	}
 
-	public void setData(Data data) {
+	public void setData(Map<Object,Object> data) {
 		this.data = data;
 	}
 
-	public static class Data {
-
-		private String vodUrl;
-
-		private String decryptKey;
-
-		public String getVodUrl() {
-			return this.vodUrl;
-		}
-
-		public void setVodUrl(String vodUrl) {
-			this.vodUrl = vodUrl;
-		}
-
-		public String getDecryptKey() {
-			return this.decryptKey;
-		}
-
-		public void setDecryptKey(String decryptKey) {
-			this.decryptKey = decryptKey;
-		}
-	}
-
 	@Override
-	public QueryDeviceVodUrlResponse getInstance(UnmarshallerContext context) {
-		return	QueryDeviceVodUrlResponseUnmarshaller.unmarshall(this, context);
-	}
-
-	@Override
-	public boolean checkShowJsonItemName() {
-		return false;
+	public DeleteLocalFileUploadJobResponse getInstance(UnmarshallerContext context) {
+		return	DeleteLocalFileUploadJobResponseUnmarshaller.unmarshall(this, context);
 	}
 }

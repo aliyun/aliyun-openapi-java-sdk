@@ -88,12 +88,22 @@ public class QueryDeviceVodUrlByTimeResponse extends AcsResponse {
 
 		private String vodUrl;
 
+		private String decryptKey;
+
 		public String getVodUrl() {
 			return this.vodUrl;
 		}
 
 		public void setVodUrl(String vodUrl) {
 			this.vodUrl = vodUrl;
+		}
+
+		public String getDecryptKey() {
+			return this.decryptKey;
+		}
+
+		public void setDecryptKey(String decryptKey) {
+			this.decryptKey = decryptKey;
 		}
 	}
 

@@ -33,6 +33,10 @@ public class QueryDevicePictureByListRequest extends RpcAcsRequest<QueryDevicePi
 	private String iotInstanceId;
 
 	private List<String> pictureIdLists;
+
+	private String productKey;
+
+	private String deviceName;
 	public QueryDevicePictureByListRequest() {
 		super("Linkvisual", "2018-01-20", "QueryDevicePictureByList", "Linkvisual");
 		setMethod(MethodType.POST);
@@ -86,6 +90,28 @@ public class QueryDevicePictureByListRequest extends RpcAcsRequest<QueryDevicePi
 				putQueryParameter("PictureIdList." + (i + 1) , pictureIdLists.get(i));
 			}
 		}	
+	}
+
+	public String getProductKey() {
+		return this.productKey;
+	}
+
+	public void setProductKey(String productKey) {
+		this.productKey = productKey;
+		if(productKey != null){
+			putQueryParameter("ProductKey", productKey);
+		}
+	}
+
+	public String getDeviceName() {
+		return this.deviceName;
+	}
+
+	public void setDeviceName(String deviceName) {
+		this.deviceName = deviceName;
+		if(deviceName != null){
+			putQueryParameter("DeviceName", deviceName);
+		}
 	}
 
 	@Override

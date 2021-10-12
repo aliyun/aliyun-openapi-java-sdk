@@ -29,7 +29,11 @@ public class QueryMonthRecordRequest extends RpcAcsRequest<QueryMonthRecordRespo
 
 	private String iotInstanceId;
 
+	private String productKey;
+
 	private String month;
+
+	private String deviceName;
 	public QueryMonthRecordRequest() {
 		super("Linkvisual", "2018-01-20", "QueryMonthRecord", "Linkvisual");
 		setMethod(MethodType.POST);
@@ -61,6 +65,17 @@ public class QueryMonthRecordRequest extends RpcAcsRequest<QueryMonthRecordRespo
 		}
 	}
 
+	public String getProductKey() {
+		return this.productKey;
+	}
+
+	public void setProductKey(String productKey) {
+		this.productKey = productKey;
+		if(productKey != null){
+			putQueryParameter("ProductKey", productKey);
+		}
+	}
+
 	public String getMonth() {
 		return this.month;
 	}
@@ -69,6 +84,17 @@ public class QueryMonthRecordRequest extends RpcAcsRequest<QueryMonthRecordRespo
 		this.month = month;
 		if(month != null){
 			putQueryParameter("Month", month);
+		}
+	}
+
+	public String getDeviceName() {
+		return this.deviceName;
+	}
+
+	public void setDeviceName(String deviceName) {
+		this.deviceName = deviceName;
+		if(deviceName != null){
+			putQueryParameter("DeviceName", deviceName);
 		}
 	}
 

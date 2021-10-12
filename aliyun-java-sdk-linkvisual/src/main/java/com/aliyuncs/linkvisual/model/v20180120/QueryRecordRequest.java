@@ -42,6 +42,10 @@ public class QueryRecordRequest extends RpcAcsRequest<QueryRecordResponse> {
 	private Integer beginTime;
 
 	private Integer currentPage;
+
+	private String productKey;
+
+	private String deviceName;
 	public QueryRecordRequest() {
 		super("Linkvisual", "2018-01-20", "QueryRecord", "Linkvisual");
 		setMethod(MethodType.POST);
@@ -147,6 +151,28 @@ public class QueryRecordRequest extends RpcAcsRequest<QueryRecordResponse> {
 		this.currentPage = currentPage;
 		if(currentPage != null){
 			putQueryParameter("CurrentPage", currentPage.toString());
+		}
+	}
+
+	public String getProductKey() {
+		return this.productKey;
+	}
+
+	public void setProductKey(String productKey) {
+		this.productKey = productKey;
+		if(productKey != null){
+			putQueryParameter("ProductKey", productKey);
+		}
+	}
+
+	public String getDeviceName() {
+		return this.deviceName;
+	}
+
+	public void setDeviceName(String deviceName) {
+		this.deviceName = deviceName;
+		if(deviceName != null){
+			putQueryParameter("DeviceName", deviceName);
 		}
 	}
 

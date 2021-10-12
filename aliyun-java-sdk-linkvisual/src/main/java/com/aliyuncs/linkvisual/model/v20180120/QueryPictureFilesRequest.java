@@ -40,6 +40,10 @@ public class QueryPictureFilesRequest extends RpcAcsRequest<QueryPictureFilesRes
 	private Long beginTime;
 
 	private Integer currentPage;
+
+	private String productKey;
+
+	private String deviceName;
 	public QueryPictureFilesRequest() {
 		super("Linkvisual", "2018-01-20", "QueryPictureFiles", "Linkvisual");
 		setMethod(MethodType.POST);
@@ -134,6 +138,28 @@ public class QueryPictureFilesRequest extends RpcAcsRequest<QueryPictureFilesRes
 		this.currentPage = currentPage;
 		if(currentPage != null){
 			putQueryParameter("CurrentPage", currentPage.toString());
+		}
+	}
+
+	public String getProductKey() {
+		return this.productKey;
+	}
+
+	public void setProductKey(String productKey) {
+		this.productKey = productKey;
+		if(productKey != null){
+			putQueryParameter("ProductKey", productKey);
+		}
+	}
+
+	public String getDeviceName() {
+		return this.deviceName;
+	}
+
+	public void setDeviceName(String deviceName) {
+		this.deviceName = deviceName;
+		if(deviceName != null){
+			putQueryParameter("DeviceName", deviceName);
 		}
 	}
 

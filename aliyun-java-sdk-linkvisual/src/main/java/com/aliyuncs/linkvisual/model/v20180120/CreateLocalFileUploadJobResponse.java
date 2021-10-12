@@ -15,24 +15,22 @@
 package com.aliyuncs.linkvisual.model.v20180120;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.linkvisual.transform.v20180120.QueryDeviceVodUrlResponseUnmarshaller;
+import com.aliyuncs.linkvisual.transform.v20180120.CreateLocalFileUploadJobResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class QueryDeviceVodUrlResponse extends AcsResponse {
+public class CreateLocalFileUploadJobResponse extends AcsResponse {
 
 	private String requestId;
 
 	private Boolean success;
 
-	private String errorMessage;
-
 	private String code;
 
-	private String decryptKey;
+	private String errorMessage;
 
 	private Data data;
 
@@ -52,14 +50,6 @@ public class QueryDeviceVodUrlResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
-
 	public String getCode() {
 		return this.code;
 	}
@@ -68,12 +58,12 @@ public class QueryDeviceVodUrlResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getDecryptKey() {
-		return this.decryptKey;
+	public String getErrorMessage() {
+		return this.errorMessage;
 	}
 
-	public void setDecryptKey(String decryptKey) {
-		this.decryptKey = decryptKey;
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
 	}
 
 	public Data getData() {
@@ -86,34 +76,19 @@ public class QueryDeviceVodUrlResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String vodUrl;
+		private String jobId;
 
-		private String decryptKey;
-
-		public String getVodUrl() {
-			return this.vodUrl;
+		public String getJobId() {
+			return this.jobId;
 		}
 
-		public void setVodUrl(String vodUrl) {
-			this.vodUrl = vodUrl;
-		}
-
-		public String getDecryptKey() {
-			return this.decryptKey;
-		}
-
-		public void setDecryptKey(String decryptKey) {
-			this.decryptKey = decryptKey;
+		public void setJobId(String jobId) {
+			this.jobId = jobId;
 		}
 	}
 
 	@Override
-	public QueryDeviceVodUrlResponse getInstance(UnmarshallerContext context) {
-		return	QueryDeviceVodUrlResponseUnmarshaller.unmarshall(this, context);
-	}
-
-	@Override
-	public boolean checkShowJsonItemName() {
-		return false;
+	public CreateLocalFileUploadJobResponse getInstance(UnmarshallerContext context) {
+		return	CreateLocalFileUploadJobResponseUnmarshaller.unmarshall(this, context);
 	}
 }

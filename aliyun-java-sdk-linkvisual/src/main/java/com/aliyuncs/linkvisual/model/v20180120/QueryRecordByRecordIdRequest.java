@@ -29,7 +29,11 @@ public class QueryRecordByRecordIdRequest extends RpcAcsRequest<QueryRecordByRec
 
 	private String iotInstanceId;
 
+	private String productKey;
+
 	private String recordId;
+
+	private String deviceName;
 	public QueryRecordByRecordIdRequest() {
 		super("Linkvisual", "2018-01-20", "QueryRecordByRecordId", "Linkvisual");
 		setMethod(MethodType.POST);
@@ -61,6 +65,17 @@ public class QueryRecordByRecordIdRequest extends RpcAcsRequest<QueryRecordByRec
 		}
 	}
 
+	public String getProductKey() {
+		return this.productKey;
+	}
+
+	public void setProductKey(String productKey) {
+		this.productKey = productKey;
+		if(productKey != null){
+			putQueryParameter("ProductKey", productKey);
+		}
+	}
+
 	public String getRecordId() {
 		return this.recordId;
 	}
@@ -69,6 +84,17 @@ public class QueryRecordByRecordIdRequest extends RpcAcsRequest<QueryRecordByRec
 		this.recordId = recordId;
 		if(recordId != null){
 			putQueryParameter("RecordId", recordId);
+		}
+	}
+
+	public String getDeviceName() {
+		return this.deviceName;
+	}
+
+	public void setDeviceName(String deviceName) {
+		this.deviceName = deviceName;
+		if(deviceName != null){
+			putQueryParameter("DeviceName", deviceName);
 		}
 	}
 

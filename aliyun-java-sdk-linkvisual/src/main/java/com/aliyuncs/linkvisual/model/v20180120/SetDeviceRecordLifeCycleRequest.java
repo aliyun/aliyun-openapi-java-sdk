@@ -27,7 +27,13 @@ public class SetDeviceRecordLifeCycleRequest extends RpcAcsRequest<SetDeviceReco
 
 	private String iotId;
 
+	private String iotInstanceId;
+
 	private Integer day;
+
+	private String productKey;
+
+	private String deviceName;
 	public SetDeviceRecordLifeCycleRequest() {
 		super("Linkvisual", "2018-01-20", "SetDeviceRecordLifeCycle", "Linkvisual");
 		setMethod(MethodType.POST);
@@ -48,6 +54,17 @@ public class SetDeviceRecordLifeCycleRequest extends RpcAcsRequest<SetDeviceReco
 		}
 	}
 
+	public String getIotInstanceId() {
+		return this.iotInstanceId;
+	}
+
+	public void setIotInstanceId(String iotInstanceId) {
+		this.iotInstanceId = iotInstanceId;
+		if(iotInstanceId != null){
+			putQueryParameter("IotInstanceId", iotInstanceId);
+		}
+	}
+
 	public Integer getDay() {
 		return this.day;
 	}
@@ -56,6 +73,28 @@ public class SetDeviceRecordLifeCycleRequest extends RpcAcsRequest<SetDeviceReco
 		this.day = day;
 		if(day != null){
 			putQueryParameter("Day", day.toString());
+		}
+	}
+
+	public String getProductKey() {
+		return this.productKey;
+	}
+
+	public void setProductKey(String productKey) {
+		this.productKey = productKey;
+		if(productKey != null){
+			putQueryParameter("ProductKey", productKey);
+		}
+	}
+
+	public String getDeviceName() {
+		return this.deviceName;
+	}
+
+	public void setDeviceName(String deviceName) {
+		this.deviceName = deviceName;
+		if(deviceName != null){
+			putQueryParameter("DeviceName", deviceName);
 		}
 	}
 

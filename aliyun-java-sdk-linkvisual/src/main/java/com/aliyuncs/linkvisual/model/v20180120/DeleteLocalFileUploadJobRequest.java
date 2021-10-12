@@ -22,20 +22,14 @@ import com.aliyuncs.linkvisual.Endpoint;
  * @author auto create
  * @version 
  */
-public class QueryRecordUrlRequest extends RpcAcsRequest<QueryRecordUrlResponse> {
+public class DeleteLocalFileUploadJobRequest extends RpcAcsRequest<DeleteLocalFileUploadJobResponse> {
 	   
 
-	private String iotId;
+	private String jobId;
 
 	private String iotInstanceId;
-
-	private String productKey;
-
-	private String fileName;
-
-	private String deviceName;
-	public QueryRecordUrlRequest() {
-		super("Linkvisual", "2018-01-20", "QueryRecordUrl", "Linkvisual");
+	public DeleteLocalFileUploadJobRequest() {
+		super("Linkvisual", "2018-01-20", "DeleteLocalFileUploadJob", "Linkvisual");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -43,14 +37,14 @@ public class QueryRecordUrlRequest extends RpcAcsRequest<QueryRecordUrlResponse>
 		} catch (Exception e) {}
 	}
 
-	public String getIotId() {
-		return this.iotId;
+	public String getJobId() {
+		return this.jobId;
 	}
 
-	public void setIotId(String iotId) {
-		this.iotId = iotId;
-		if(iotId != null){
-			putQueryParameter("IotId", iotId);
+	public void setJobId(String jobId) {
+		this.jobId = jobId;
+		if(jobId != null){
+			putQueryParameter("JobId", jobId);
 		}
 	}
 
@@ -65,42 +59,9 @@ public class QueryRecordUrlRequest extends RpcAcsRequest<QueryRecordUrlResponse>
 		}
 	}
 
-	public String getProductKey() {
-		return this.productKey;
-	}
-
-	public void setProductKey(String productKey) {
-		this.productKey = productKey;
-		if(productKey != null){
-			putQueryParameter("ProductKey", productKey);
-		}
-	}
-
-	public String getFileName() {
-		return this.fileName;
-	}
-
-	public void setFileName(String fileName) {
-		this.fileName = fileName;
-		if(fileName != null){
-			putQueryParameter("FileName", fileName);
-		}
-	}
-
-	public String getDeviceName() {
-		return this.deviceName;
-	}
-
-	public void setDeviceName(String deviceName) {
-		this.deviceName = deviceName;
-		if(deviceName != null){
-			putQueryParameter("DeviceName", deviceName);
-		}
-	}
-
 	@Override
-	public Class<QueryRecordUrlResponse> getResponseClass() {
-		return QueryRecordUrlResponse.class;
+	public Class<DeleteLocalFileUploadJobResponse> getResponseClass() {
+		return DeleteLocalFileUploadJobResponse.class;
 	}
 
 }

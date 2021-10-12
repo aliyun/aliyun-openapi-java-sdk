@@ -41,7 +41,11 @@ public class QueryDeviceVodUrlByTimeRequest extends RpcAcsRequest<QueryDeviceVod
 
 	private Integer beginTime;
 
+	private String productKey;
+
 	private Integer seekTime;
+
+	private String deviceName;
 
 	private Integer urlValidDuration;
 	public QueryDeviceVodUrlByTimeRequest() {
@@ -141,6 +145,17 @@ public class QueryDeviceVodUrlByTimeRequest extends RpcAcsRequest<QueryDeviceVod
 		}
 	}
 
+	public String getProductKey() {
+		return this.productKey;
+	}
+
+	public void setProductKey(String productKey) {
+		this.productKey = productKey;
+		if(productKey != null){
+			putQueryParameter("ProductKey", productKey);
+		}
+	}
+
 	public Integer getSeekTime() {
 		return this.seekTime;
 	}
@@ -149,6 +164,17 @@ public class QueryDeviceVodUrlByTimeRequest extends RpcAcsRequest<QueryDeviceVod
 		this.seekTime = seekTime;
 		if(seekTime != null){
 			putQueryParameter("SeekTime", seekTime.toString());
+		}
+	}
+
+	public String getDeviceName() {
+		return this.deviceName;
+	}
+
+	public void setDeviceName(String deviceName) {
+		this.deviceName = deviceName;
+		if(deviceName != null){
+			putQueryParameter("DeviceName", deviceName);
 		}
 	}
 

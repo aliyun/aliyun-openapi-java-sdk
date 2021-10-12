@@ -28,6 +28,10 @@ public class TriggerCapturePictureRequest extends RpcAcsRequest<TriggerCapturePi
 	private String iotId;
 
 	private String iotInstanceId;
+
+	private String productKey;
+
+	private String deviceName;
 	public TriggerCapturePictureRequest() {
 		super("Linkvisual", "2018-01-20", "TriggerCapturePicture", "Linkvisual");
 		setMethod(MethodType.POST);
@@ -56,6 +60,28 @@ public class TriggerCapturePictureRequest extends RpcAcsRequest<TriggerCapturePi
 		this.iotInstanceId = iotInstanceId;
 		if(iotInstanceId != null){
 			putQueryParameter("IotInstanceId", iotInstanceId);
+		}
+	}
+
+	public String getProductKey() {
+		return this.productKey;
+	}
+
+	public void setProductKey(String productKey) {
+		this.productKey = productKey;
+		if(productKey != null){
+			putQueryParameter("ProductKey", productKey);
+		}
+	}
+
+	public String getDeviceName() {
+		return this.deviceName;
+	}
+
+	public void setDeviceName(String deviceName) {
+		this.deviceName = deviceName;
+		if(deviceName != null){
+			putQueryParameter("DeviceName", deviceName);
 		}
 	}
 
