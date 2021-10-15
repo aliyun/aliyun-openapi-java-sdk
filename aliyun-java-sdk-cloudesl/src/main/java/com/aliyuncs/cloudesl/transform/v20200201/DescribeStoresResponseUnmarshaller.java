@@ -50,6 +50,7 @@ public class DescribeStoresResponseUnmarshaller {
 			storeInfo.setPhone(_ctx.stringValue("DescribeStoresResponse.Stores["+ i +"].Phone"));
 			storeInfo.setLevel(_ctx.stringValue("DescribeStoresResponse.Stores["+ i +"].Level"));
 			storeInfo.setTemplateVersion(_ctx.stringValue("DescribeStoresResponse.Stores["+ i +"].TemplateVersion"));
+			storeInfo.setTimeZone(_ctx.stringValue("DescribeStoresResponse.Stores["+ i +"].TimeZone"));
 
 			stores.add(storeInfo);
 		}

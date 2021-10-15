@@ -29,6 +29,8 @@ public class CreateStoreRequest extends RpcAcsRequest<CreateStoreResponse> {
 
 	private String clientToken;
 
+	private String timeZone;
+
 	private String storeName;
 
 	private String parentId;
@@ -64,6 +66,17 @@ public class CreateStoreRequest extends RpcAcsRequest<CreateStoreResponse> {
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putBodyParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getTimeZone() {
+		return this.timeZone;
+	}
+
+	public void setTimeZone(String timeZone) {
+		this.timeZone = timeZone;
+		if(timeZone != null){
+			putBodyParameter("TimeZone", timeZone);
 		}
 	}
 

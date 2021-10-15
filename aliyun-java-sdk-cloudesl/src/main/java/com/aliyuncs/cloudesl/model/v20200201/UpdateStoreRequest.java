@@ -27,6 +27,8 @@ public class UpdateStoreRequest extends RpcAcsRequest<UpdateStoreResponse> {
 
 	private String extraParams;
 
+	private String timezone;
+
 	private String storeName;
 
 	private String storeId;
@@ -53,6 +55,17 @@ public class UpdateStoreRequest extends RpcAcsRequest<UpdateStoreResponse> {
 		this.extraParams = extraParams;
 		if(extraParams != null){
 			putBodyParameter("ExtraParams", extraParams);
+		}
+	}
+
+	public String getTimezone() {
+		return this.timezone;
+	}
+
+	public void setTimezone(String timezone) {
+		this.timezone = timezone;
+		if(timezone != null){
+			putBodyParameter("Timezone", timezone);
 		}
 	}
 

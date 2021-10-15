@@ -165,6 +165,8 @@ public class DescribeStoresResponse extends AcsResponse {
 
 		private String templateVersion;
 
+		private String timeZone;
+
 		public String getStoreName() {
 			return this.storeName;
 		}
@@ -235,6 +237,14 @@ public class DescribeStoresResponse extends AcsResponse {
 
 		public void setTemplateVersion(String templateVersion) {
 			this.templateVersion = templateVersion;
+		}
+
+		public String getTimeZone() {
+			return this.timeZone;
+		}
+
+		public void setTimeZone(String timeZone) {
+			this.timeZone = timeZone;
 		}
 	}
 
