@@ -22,40 +22,31 @@ import com.aliyuncs.reid_cloud.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListActionDataRequest extends RpcAcsRequest<ListActionDataResponse> {
+public class DescribePredictGroupResultRequest extends RpcAcsRequest<DescribePredictGroupResultResponse> {
 	   
 
-	private Long endTime;
-
 	private Long startTime;
+
+	private Long ipcId;
 
 	private Long storeId;
 
 	private Integer pageNumber;
 
-	private String name;
-
 	private Integer pageSize;
 
-	private Boolean filterInvalidData;
-	public ListActionDataRequest() {
-		super("reid_cloud", "2020-10-29", "ListActionData", "1.2.3");
+	private Long trackletId;
+
+	private Long endTime;
+
+	private String predictType;
+	public DescribePredictGroupResultRequest() {
+		super("reid_cloud", "2020-10-29", "DescribePredictGroupResult", "1.2.3");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Long getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(Long endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putBodyParameter("EndTime", endTime.toString());
-		}
 	}
 
 	public Long getStartTime() {
@@ -66,6 +57,17 @@ public class ListActionDataRequest extends RpcAcsRequest<ListActionDataResponse>
 		this.startTime = startTime;
 		if(startTime != null){
 			putBodyParameter("StartTime", startTime.toString());
+		}
+	}
+
+	public Long getIpcId() {
+		return this.ipcId;
+	}
+
+	public void setIpcId(Long ipcId) {
+		this.ipcId = ipcId;
+		if(ipcId != null){
+			putBodyParameter("IpcId", ipcId.toString());
 		}
 	}
 
@@ -91,17 +93,6 @@ public class ListActionDataRequest extends RpcAcsRequest<ListActionDataResponse>
 		}
 	}
 
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putBodyParameter("Name", name);
-		}
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
@@ -113,20 +104,42 @@ public class ListActionDataRequest extends RpcAcsRequest<ListActionDataResponse>
 		}
 	}
 
-	public Boolean getFilterInvalidData() {
-		return this.filterInvalidData;
+	public Long getTrackletId() {
+		return this.trackletId;
 	}
 
-	public void setFilterInvalidData(Boolean filterInvalidData) {
-		this.filterInvalidData = filterInvalidData;
-		if(filterInvalidData != null){
-			putBodyParameter("FilterInvalidData", filterInvalidData.toString());
+	public void setTrackletId(Long trackletId) {
+		this.trackletId = trackletId;
+		if(trackletId != null){
+			putBodyParameter("TrackletId", trackletId.toString());
+		}
+	}
+
+	public Long getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(Long endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putBodyParameter("EndTime", endTime.toString());
+		}
+	}
+
+	public String getPredictType() {
+		return this.predictType;
+	}
+
+	public void setPredictType(String predictType) {
+		this.predictType = predictType;
+		if(predictType != null){
+			putBodyParameter("PredictType", predictType);
 		}
 	}
 
 	@Override
-	public Class<ListActionDataResponse> getResponseClass() {
-		return ListActionDataResponse.class;
+	public Class<DescribePredictGroupResultResponse> getResponseClass() {
+		return DescribePredictGroupResultResponse.class;
 	}
 
 }

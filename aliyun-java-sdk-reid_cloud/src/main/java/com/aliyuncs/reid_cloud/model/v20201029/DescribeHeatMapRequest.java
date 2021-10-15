@@ -31,7 +31,7 @@ public class DescribeHeatMapRequest extends RpcAcsRequest<DescribeHeatMapRespons
 
 	private Long emapId;
 	public DescribeHeatMapRequest() {
-		super("reid_cloud", "2020-10-29", "DescribeHeatMap", "1.2.2");
+		super("reid_cloud", "2020-10-29", "DescribeHeatMap", "1.2.3");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

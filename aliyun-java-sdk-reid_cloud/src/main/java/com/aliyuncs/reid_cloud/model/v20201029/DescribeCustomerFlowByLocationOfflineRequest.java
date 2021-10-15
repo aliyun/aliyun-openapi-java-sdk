@@ -29,7 +29,7 @@ public class DescribeCustomerFlowByLocationOfflineRequest extends RpcAcsRequest<
 
 	private Long storeId;
 	public DescribeCustomerFlowByLocationOfflineRequest() {
-		super("reid_cloud", "2020-10-29", "DescribeCustomerFlowByLocationOffline", "1.2.2");
+		super("reid_cloud", "2020-10-29", "DescribeCustomerFlowByLocationOffline", "1.2.3");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

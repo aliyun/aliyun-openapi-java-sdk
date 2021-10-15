@@ -35,7 +35,7 @@ public class DescribeBaseStatisticsRequest extends RpcAcsRequest<DescribeBaseSta
 
 	private Long locationId;
 	public DescribeBaseStatisticsRequest() {
-		super("reid_cloud", "2020-10-29", "DescribeBaseStatistics", "1.2.2");
+		super("reid_cloud", "2020-10-29", "DescribeBaseStatistics", "1.2.3");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
