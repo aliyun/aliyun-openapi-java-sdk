@@ -1,3 +1,6 @@
+2021-10-15 Version: 2.13.1
+- Add createSettleConfirm interface.
+
 2021-09-09 Version: 2.13.0
 - Add support for activity.
 
