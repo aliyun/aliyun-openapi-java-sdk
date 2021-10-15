@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class BidDomainResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String auctionId;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getAuctionId() {
 		return this.auctionId;
@@ -42,6 +34,14 @@ public class BidDomainResponse extends AcsResponse {
 
 	public void setAuctionId(String auctionId) {
 		this.auctionId = auctionId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

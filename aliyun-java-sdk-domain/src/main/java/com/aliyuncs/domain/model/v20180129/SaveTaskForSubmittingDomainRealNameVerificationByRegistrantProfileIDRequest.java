@@ -35,7 +35,7 @@ public class SaveTaskForSubmittingDomainRealNameVerificationByRegistrantProfileI
 
 	private String lang;
 	public SaveTaskForSubmittingDomainRealNameVerificationByRegistrantProfileIDRequest() {
-		super("Domain", "2018-01-29", "SaveTaskForSubmittingDomainRealNameVerificationByRegistrantProfileID", "domain");
+		super("Domain", "2018-01-29", "SaveTaskForSubmittingDomainRealNameVerificationByRegistrantProfileID");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

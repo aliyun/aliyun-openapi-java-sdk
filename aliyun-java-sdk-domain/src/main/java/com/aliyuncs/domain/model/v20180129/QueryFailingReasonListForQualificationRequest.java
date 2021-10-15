@@ -35,7 +35,7 @@ public class QueryFailingReasonListForQualificationRequest extends RpcAcsRequest
 
 	private String lang;
 	public QueryFailingReasonListForQualificationRequest() {
-		super("Domain", "2018-01-29", "QueryFailingReasonListForQualification", "domain");
+		super("Domain", "2018-01-29", "QueryFailingReasonListForQualification");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

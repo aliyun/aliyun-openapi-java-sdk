@@ -33,7 +33,7 @@ public class CancelDomainVerificationRequest extends RpcAcsRequest<CancelDomainV
 
 	private String lang;
 	public CancelDomainVerificationRequest() {
-		super("Domain", "2018-01-29", "CancelDomainVerification", "domain");
+		super("Domain", "2018-01-29", "CancelDomainVerification");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

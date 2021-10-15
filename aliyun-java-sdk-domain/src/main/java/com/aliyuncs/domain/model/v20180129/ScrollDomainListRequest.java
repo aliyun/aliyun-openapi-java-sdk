@@ -69,7 +69,7 @@ public class ScrollDomainListRequest extends RpcAcsRequest<ScrollDomainListRespo
 
 	private Integer endLength;
 	public ScrollDomainListRequest() {
-		super("Domain", "2018-01-29", "ScrollDomainList", "domain");
+		super("Domain", "2018-01-29", "ScrollDomainList");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

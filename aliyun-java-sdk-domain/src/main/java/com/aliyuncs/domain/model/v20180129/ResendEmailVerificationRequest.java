@@ -31,7 +31,7 @@ public class ResendEmailVerificationRequest extends RpcAcsRequest<ResendEmailVer
 
 	private String email;
 	public ResendEmailVerificationRequest() {
-		super("Domain", "2018-01-29", "ResendEmailVerification", "domain");
+		super("Domain", "2018-01-29", "ResendEmailVerification");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -32,7 +32,7 @@ public class AcknowledgeTaskResultRequest extends RpcAcsRequest<AcknowledgeTaskR
 
 	private String lang;
 	public AcknowledgeTaskResultRequest() {
-		super("Domain", "2018-01-29", "AcknowledgeTaskResult", "domain");
+		super("Domain", "2018-01-29", "AcknowledgeTaskResult");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

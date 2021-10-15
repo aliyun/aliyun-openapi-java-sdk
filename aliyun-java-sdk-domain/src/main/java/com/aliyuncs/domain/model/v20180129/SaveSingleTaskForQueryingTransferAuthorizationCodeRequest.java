@@ -31,7 +31,7 @@ public class SaveSingleTaskForQueryingTransferAuthorizationCodeRequest extends R
 
 	private String lang;
 	public SaveSingleTaskForQueryingTransferAuthorizationCodeRequest() {
-		super("Domain", "2018-01-29", "SaveSingleTaskForQueryingTransferAuthorizationCode", "domain");
+		super("Domain", "2018-01-29", "SaveSingleTaskForQueryingTransferAuthorizationCode");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

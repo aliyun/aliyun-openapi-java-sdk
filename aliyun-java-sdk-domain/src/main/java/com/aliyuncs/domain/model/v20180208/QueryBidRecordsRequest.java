@@ -31,7 +31,7 @@ public class QueryBidRecordsRequest extends RpcAcsRequest<QueryBidRecordsRespons
 
 	private Integer currentPage;
 	public QueryBidRecordsRequest() {
-		super("Domain", "2018-02-08", "QueryBidRecords", "domain");
+		super("Domain", "2018-02-08", "QueryBidRecords");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

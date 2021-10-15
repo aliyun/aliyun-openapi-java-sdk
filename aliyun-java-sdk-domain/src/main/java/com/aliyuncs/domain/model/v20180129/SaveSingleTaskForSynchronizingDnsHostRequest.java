@@ -31,7 +31,7 @@ public class SaveSingleTaskForSynchronizingDnsHostRequest extends RpcAcsRequest<
 
 	private String lang;
 	public SaveSingleTaskForSynchronizingDnsHostRequest() {
-		super("Domain", "2018-01-29", "SaveSingleTaskForSynchronizingDnsHost", "domain");
+		super("Domain", "2018-01-29", "SaveSingleTaskForSynchronizingDnsHost");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

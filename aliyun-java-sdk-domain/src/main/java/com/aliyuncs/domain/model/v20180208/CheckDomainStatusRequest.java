@@ -12,7 +12,7 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.domain.model.v20180129;
+package com.aliyuncs.domain.model.v20180208;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
@@ -22,46 +22,33 @@ import com.aliyuncs.domain.Endpoint;
  * @author auto create
  * @version 
  */
-public class QueryDomainAdminDivisionRequest extends RpcAcsRequest<QueryDomainAdminDivisionResponse> {
+public class CheckDomainStatusRequest extends RpcAcsRequest<CheckDomainStatusResponse> {
 	   
 
-	private String userClientIp;
-
-	private String lang;
-	public QueryDomainAdminDivisionRequest() {
-		super("Domain", "2018-01-29", "QueryDomainAdminDivision");
-		setMethod(MethodType.POST);
+	private String domain;
+	public CheckDomainStatusRequest() {
+		super("Domain", "2018-02-08", "CheckDomainStatus");
+		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	public String getUserClientIp() {
-		return this.userClientIp;
+	public String getDomain() {
+		return this.domain;
 	}
 
-	public void setUserClientIp(String userClientIp) {
-		this.userClientIp = userClientIp;
-		if(userClientIp != null){
-			putQueryParameter("UserClientIp", userClientIp);
-		}
-	}
-
-	public String getLang() {
-		return this.lang;
-	}
-
-	public void setLang(String lang) {
-		this.lang = lang;
-		if(lang != null){
-			putQueryParameter("Lang", lang);
+	public void setDomain(String domain) {
+		this.domain = domain;
+		if(domain != null){
+			putQueryParameter("Domain", domain);
 		}
 	}
 
 	@Override
-	public Class<QueryDomainAdminDivisionResponse> getResponseClass() {
-		return QueryDomainAdminDivisionResponse.class;
+	public Class<CheckDomainStatusResponse> getResponseClass() {
+		return CheckDomainStatusResponse.class;
 	}
 
 }

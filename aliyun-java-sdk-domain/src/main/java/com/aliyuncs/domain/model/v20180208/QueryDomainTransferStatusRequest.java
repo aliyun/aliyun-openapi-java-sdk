@@ -27,7 +27,7 @@ public class QueryDomainTransferStatusRequest extends RpcAcsRequest<QueryDomainT
 
 	private String domainName;
 	public QueryDomainTransferStatusRequest() {
-		super("Domain", "2018-02-08", "QueryDomainTransferStatus", "domain");
+		super("Domain", "2018-02-08", "QueryDomainTransferStatus");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

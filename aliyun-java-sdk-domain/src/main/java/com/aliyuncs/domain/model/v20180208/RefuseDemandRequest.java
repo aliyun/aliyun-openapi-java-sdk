@@ -29,7 +29,7 @@ public class RefuseDemandRequest extends RpcAcsRequest<RefuseDemandResponse> {
 
 	private String message;
 	public RefuseDemandRequest() {
-		super("Domain", "2018-02-08", "RefuseDemand", "domain");
+		super("Domain", "2018-02-08", "RefuseDemand");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

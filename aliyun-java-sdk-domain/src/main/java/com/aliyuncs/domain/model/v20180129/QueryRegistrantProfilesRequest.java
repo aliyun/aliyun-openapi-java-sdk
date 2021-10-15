@@ -49,7 +49,7 @@ public class QueryRegistrantProfilesRequest extends RpcAcsRequest<QueryRegistran
 
 	private String userClientIp;
 	public QueryRegistrantProfilesRequest() {
-		super("Domain", "2018-01-29", "QueryRegistrantProfiles", "domain");
+		super("Domain", "2018-01-29", "QueryRegistrantProfiles");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

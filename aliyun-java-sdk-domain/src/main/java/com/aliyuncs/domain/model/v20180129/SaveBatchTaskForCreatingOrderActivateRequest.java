@@ -40,7 +40,7 @@ public class SaveBatchTaskForCreatingOrderActivateRequest extends RpcAcsRequest<
 
 	private Boolean usePromotion;
 	public SaveBatchTaskForCreatingOrderActivateRequest() {
-		super("Domain", "2018-01-29", "SaveBatchTaskForCreatingOrderActivate", "domain");
+		super("Domain", "2018-01-29", "SaveBatchTaskForCreatingOrderActivate");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

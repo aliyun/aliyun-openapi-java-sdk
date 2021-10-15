@@ -33,7 +33,7 @@ public class CheckProcessingServerLockApplyRequest extends RpcAcsRequest<CheckPr
 
 	private String lang;
 	public CheckProcessingServerLockApplyRequest() {
-		super("Domain", "2018-01-29", "CheckProcessingServerLockApply", "domain");
+		super("Domain", "2018-01-29", "CheckProcessingServerLockApply");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

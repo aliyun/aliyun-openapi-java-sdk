@@ -31,7 +31,7 @@ public class QueryBrokerDemandRecordRequest extends RpcAcsRequest<QueryBrokerDem
 
 	private Integer currentPage;
 	public QueryBrokerDemandRecordRequest() {
-		super("Domain", "2018-02-08", "QueryBrokerDemandRecord", "domain");
+		super("Domain", "2018-02-08", "QueryBrokerDemandRecord");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

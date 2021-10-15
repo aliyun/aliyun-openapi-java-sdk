@@ -31,7 +31,7 @@ public class DeleteEmailVerificationRequest extends RpcAcsRequest<DeleteEmailVer
 
 	private String email;
 	public DeleteEmailVerificationRequest() {
-		super("Domain", "2018-01-29", "DeleteEmailVerification", "domain");
+		super("Domain", "2018-01-29", "DeleteEmailVerification");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

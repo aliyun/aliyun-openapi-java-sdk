@@ -31,7 +31,7 @@ public class QueryTransferOutInfoRequest extends RpcAcsRequest<QueryTransferOutI
 
 	private String lang;
 	public QueryTransferOutInfoRequest() {
-		super("Domain", "2018-01-29", "QueryTransferOutInfo", "domain");
+		super("Domain", "2018-01-29", "QueryTransferOutInfo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

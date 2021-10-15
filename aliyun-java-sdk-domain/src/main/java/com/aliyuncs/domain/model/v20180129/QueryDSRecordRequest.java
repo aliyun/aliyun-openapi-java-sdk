@@ -31,7 +31,7 @@ public class QueryDSRecordRequest extends RpcAcsRequest<QueryDSRecordResponse> {
 
 	private String lang;
 	public QueryDSRecordRequest() {
-		super("Domain", "2018-01-29", "QueryDSRecord", "domain");
+		super("Domain", "2018-01-29", "QueryDSRecord");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

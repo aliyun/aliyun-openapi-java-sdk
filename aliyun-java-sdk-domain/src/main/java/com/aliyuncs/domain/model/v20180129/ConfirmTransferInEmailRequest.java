@@ -34,7 +34,7 @@ public class ConfirmTransferInEmailRequest extends RpcAcsRequest<ConfirmTransfer
 
 	private String email;
 	public ConfirmTransferInEmailRequest() {
-		super("Domain", "2018-01-29", "ConfirmTransferInEmail", "domain");
+		super("Domain", "2018-01-29", "ConfirmTransferInEmail");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

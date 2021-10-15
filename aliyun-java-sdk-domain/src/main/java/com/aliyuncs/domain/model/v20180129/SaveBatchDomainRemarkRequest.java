@@ -33,7 +33,7 @@ public class SaveBatchDomainRemarkRequest extends RpcAcsRequest<SaveBatchDomainR
 
 	private String lang;
 	public SaveBatchDomainRemarkRequest() {
-		super("Domain", "2018-01-29", "SaveBatchDomainRemark", "domain");
+		super("Domain", "2018-01-29", "SaveBatchDomainRemark");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

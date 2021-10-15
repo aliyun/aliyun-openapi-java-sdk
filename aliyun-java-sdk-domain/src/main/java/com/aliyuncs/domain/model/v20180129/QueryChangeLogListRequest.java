@@ -39,7 +39,7 @@ public class QueryChangeLogListRequest extends RpcAcsRequest<QueryChangeLogListR
 
 	private String lang;
 	public QueryChangeLogListRequest() {
-		super("Domain", "2018-01-29", "QueryChangeLogList", "domain");
+		super("Domain", "2018-01-29", "QueryChangeLogList");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

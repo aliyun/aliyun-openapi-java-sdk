@@ -34,7 +34,7 @@ public class SaveBatchTaskForDomainNameProxyServiceRequest extends RpcAcsRequest
 
 	private Boolean status;
 	public SaveBatchTaskForDomainNameProxyServiceRequest() {
-		super("Domain", "2018-01-29", "SaveBatchTaskForDomainNameProxyService", "domain");
+		super("Domain", "2018-01-29", "SaveBatchTaskForDomainNameProxyService");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

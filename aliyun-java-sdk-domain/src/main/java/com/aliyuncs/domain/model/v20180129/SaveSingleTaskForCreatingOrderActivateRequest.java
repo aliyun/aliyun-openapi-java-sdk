@@ -89,7 +89,7 @@ public class SaveSingleTaskForCreatingOrderActivateRequest extends RpcAcsRequest
 
 	private Boolean usePromotion;
 	public SaveSingleTaskForCreatingOrderActivateRequest() {
-		super("Domain", "2018-01-29", "SaveSingleTaskForCreatingOrderActivate", "domain");
+		super("Domain", "2018-01-29", "SaveSingleTaskForCreatingOrderActivate");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -33,7 +33,7 @@ public class QueryFailReasonForDomainRealNameVerificationRequest extends RpcAcsR
 
 	private String lang;
 	public QueryFailReasonForDomainRealNameVerificationRequest() {
-		super("Domain", "2018-01-29", "QueryFailReasonForDomainRealNameVerification", "domain");
+		super("Domain", "2018-01-29", "QueryFailReasonForDomainRealNameVerification");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
