@@ -35,7 +35,7 @@ public class ValidateK8sResourceRequest extends RoaAcsRequest<ValidateK8sResourc
 
 	private String content;
 	public ValidateK8sResourceRequest() {
-		super("Edas", "2017-08-01", "ValidateK8sResource", "Edas");
+		super("Edas", "2017-08-01", "ValidateK8sResource", "edas");
 		setUriPattern("/pop/v5/k8s/acs/validate_k8s_resource");
 		setMethod(MethodType.POST);
 		try {

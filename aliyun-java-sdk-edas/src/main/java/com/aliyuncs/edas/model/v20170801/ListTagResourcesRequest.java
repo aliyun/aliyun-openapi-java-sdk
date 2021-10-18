@@ -35,7 +35,7 @@ public class ListTagResourcesRequest extends RoaAcsRequest<ListTagResourcesRespo
 
 	private List<Object> tags;
 	public ListTagResourcesRequest() {
-		super("Edas", "2017-08-01", "ListTagResources", "Edas");
+		super("Edas", "2017-08-01", "ListTagResources", "edas");
 		setUriPattern("/pop/v5/tag/tags");
 		setMethod(MethodType.GET);
 		try {

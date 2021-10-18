@@ -29,7 +29,7 @@ public class InsertRoleRequest extends RoaAcsRequest<InsertRoleResponse> {
 
 	private String actionData;
 	public InsertRoleRequest() {
-		super("Edas", "2017-08-01", "InsertRole", "Edas");
+		super("Edas", "2017-08-01", "InsertRole", "edas");
 		setUriPattern("/pop/v5/account/create_role");
 		setMethod(MethodType.POST);
 		try {

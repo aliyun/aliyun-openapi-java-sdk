@@ -29,7 +29,7 @@ public class ContinuePipelineRequest extends RoaAcsRequest<ContinuePipelineRespo
 
 	private String pipelineId;
 	public ContinuePipelineRequest() {
-		super("Edas", "2017-08-01", "ContinuePipeline", "Edas");
+		super("Edas", "2017-08-01", "ContinuePipeline", "edas");
 		setUriPattern("/pop/v5/changeorder/pipeline_batch_confirm");
 		setMethod(MethodType.GET);
 		try {

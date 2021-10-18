@@ -27,7 +27,7 @@ public class GetAppDeploymentRequest extends RoaAcsRequest<GetAppDeploymentRespo
 
 	private String appId;
 	public GetAppDeploymentRequest() {
-		super("Edas", "2017-08-01", "GetAppDeployment", "Edas");
+		super("Edas", "2017-08-01", "GetAppDeployment", "edas");
 		setUriPattern("/pop/v5/oam/app_deployment");
 		setMethod(MethodType.GET);
 		try {

@@ -31,7 +31,7 @@ public class GetGrayAppsRequest extends RoaAcsRequest<GetGrayAppsResponse> {
 
 	private String physicalRegionId;
 	public GetGrayAppsRequest() {
-		super("Edas", "2017-08-01", "GetGrayApps", "Edas");
+		super("Edas", "2017-08-01", "GetGrayApps", "edas");
 		setUriPattern("/pop/v5/gray/app_list");
 		setMethod(MethodType.GET);
 		try {

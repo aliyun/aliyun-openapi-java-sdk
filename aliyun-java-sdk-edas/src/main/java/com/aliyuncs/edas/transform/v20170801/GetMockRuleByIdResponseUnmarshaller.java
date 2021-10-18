@@ -20,7 +20,9 @@ import java.util.List;
 import com.aliyuncs.edas.model.v20170801.GetMockRuleByIdResponse;
 import com.aliyuncs.edas.model.v20170801.GetMockRuleByIdResponse.Data;
 import com.aliyuncs.edas.model.v20170801.GetMockRuleByIdResponse.Data.DubboMockItem;
+import com.aliyuncs.edas.model.v20170801.GetMockRuleByIdResponse.Data.DubboMockItem.ArgumentMockItem2;
 import com.aliyuncs.edas.model.v20170801.GetMockRuleByIdResponse.Data.SpringCloudMockItem;
+import com.aliyuncs.edas.model.v20170801.GetMockRuleByIdResponse.Data.SpringCloudMockItem.ArgumentMockItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -34,28 +36,43 @@ public class GetMockRuleByIdResponseUnmarshaller {
 		getMockRuleByIdResponse.setSuccess(_ctx.booleanValue("GetMockRuleByIdResponse.Success"));
 
 		Data data = new Data();
-		data.setAccountId(_ctx.stringValue("GetMockRuleByIdResponse.Data.AccountId"));
-		data.setName(_ctx.stringValue("GetMockRuleByIdResponse.Data.Name"));
-		data.setConsumerAppId(_ctx.stringValue("GetMockRuleByIdResponse.Data.ConsumerAppId"));
-		data.setConsumerAppName(_ctx.stringValue("GetMockRuleByIdResponse.Data.ConsumerAppName"));
-		data.setEnable(_ctx.booleanValue("GetMockRuleByIdResponse.Data.Enable"));
-		data.setExtraJson(_ctx.stringValue("GetMockRuleByIdResponse.Data.ExtraJson"));
-		data.setId(_ctx.longValue("GetMockRuleByIdResponse.Data.Id"));
-		data.setProviderAppId(_ctx.stringValue("GetMockRuleByIdResponse.Data.ProviderAppId"));
-		data.setProviderAppName(_ctx.stringValue("GetMockRuleByIdResponse.Data.ProviderAppName"));
 		data.setRegion(_ctx.stringValue("GetMockRuleByIdResponse.Data.Region"));
+		data.setConsumerAppName(_ctx.stringValue("GetMockRuleByIdResponse.Data.ConsumerAppName"));
+		data.setProviderAppId(_ctx.stringValue("GetMockRuleByIdResponse.Data.ProviderAppId"));
+		data.setConsumerAppId(_ctx.stringValue("GetMockRuleByIdResponse.Data.ConsumerAppId"));
+		data.setAccountId(_ctx.stringValue("GetMockRuleByIdResponse.Data.AccountId"));
+		data.setExtraJson(_ctx.stringValue("GetMockRuleByIdResponse.Data.ExtraJson"));
 		data.setSource(_ctx.stringValue("GetMockRuleByIdResponse.Data.Source"));
+		data.setProviderAppName(_ctx.stringValue("GetMockRuleByIdResponse.Data.ProviderAppName"));
+		data.setName(_ctx.stringValue("GetMockRuleByIdResponse.Data.Name"));
+		data.setId(_ctx.longValue("GetMockRuleByIdResponse.Data.Id"));
+		data.setEnable(_ctx.booleanValue("GetMockRuleByIdResponse.Data.Enable"));
 
 		List<SpringCloudMockItem> scMockItems = new ArrayList<SpringCloudMockItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetMockRuleByIdResponse.Data.ScMockItems.Length"); i++) {
 			SpringCloudMockItem springCloudMockItem = new SpringCloudMockItem();
-			springCloudMockItem.setExceptionClassName(_ctx.stringValue("GetMockRuleByIdResponse.Data.ScMockItems["+ i +"].ExceptionClassName"));
-			springCloudMockItem.setExecuteCondition(_ctx.stringValue("GetMockRuleByIdResponse.Data.ScMockItems["+ i +"].ExecuteCondition"));
-			springCloudMockItem.setBizMethod(_ctx.stringValue("GetMockRuleByIdResponse.Data.ScMockItems["+ i +"].Method"));
-			springCloudMockItem.setOper(_ctx.stringValue("GetMockRuleByIdResponse.Data.ScMockItems["+ i +"].Oper"));
-			springCloudMockItem.setPath(_ctx.stringValue("GetMockRuleByIdResponse.Data.ScMockItems["+ i +"].Path"));
-			springCloudMockItem.setServiceName(_ctx.stringValue("GetMockRuleByIdResponse.Data.ScMockItems["+ i +"].ServiceName"));
 			springCloudMockItem.setValue(_ctx.stringValue("GetMockRuleByIdResponse.Data.ScMockItems["+ i +"].Value"));
+			springCloudMockItem.setOper(_ctx.stringValue("GetMockRuleByIdResponse.Data.ScMockItems["+ i +"].Oper"));
+			springCloudMockItem.setExecuteCondition(_ctx.stringValue("GetMockRuleByIdResponse.Data.ScMockItems["+ i +"].ExecuteCondition"));
+			springCloudMockItem.setPath(_ctx.stringValue("GetMockRuleByIdResponse.Data.ScMockItems["+ i +"].Path"));
+			springCloudMockItem.setBizMethod(_ctx.stringValue("GetMockRuleByIdResponse.Data.ScMockItems["+ i +"].Method"));
+			springCloudMockItem.setExceptionClassName(_ctx.stringValue("GetMockRuleByIdResponse.Data.ScMockItems["+ i +"].ExceptionClassName"));
+			springCloudMockItem.setServiceName(_ctx.stringValue("GetMockRuleByIdResponse.Data.ScMockItems["+ i +"].ServiceName"));
+			springCloudMockItem.setCondition(_ctx.stringValue("GetMockRuleByIdResponse.Data.ScMockItems["+ i +"].Condition"));
+			springCloudMockItem.setTimeout(_ctx.longValue("GetMockRuleByIdResponse.Data.ScMockItems["+ i +"].Timeout"));
+
+			List<ArgumentMockItem> argumentMockItems = new ArrayList<ArgumentMockItem>();
+			for (int j = 0; j < _ctx.lengthValue("GetMockRuleByIdResponse.Data.ScMockItems["+ i +"].ArgumentMockItems.Length"); j++) {
+				ArgumentMockItem argumentMockItem = new ArgumentMockItem();
+				argumentMockItem.setType(_ctx.stringValue("GetMockRuleByIdResponse.Data.ScMockItems["+ i +"].ArgumentMockItems["+ j +"].Type"));
+				argumentMockItem.setName(_ctx.stringValue("GetMockRuleByIdResponse.Data.ScMockItems["+ i +"].ArgumentMockItems["+ j +"].Name"));
+				argumentMockItem.setOperator(_ctx.stringValue("GetMockRuleByIdResponse.Data.ScMockItems["+ i +"].ArgumentMockItems["+ j +"].Operator"));
+				argumentMockItem.setDatum(_ctx.stringValue("GetMockRuleByIdResponse.Data.ScMockItems["+ i +"].ArgumentMockItems["+ j +"].Datum"));
+				argumentMockItem.setCond(_ctx.stringValue("GetMockRuleByIdResponse.Data.ScMockItems["+ i +"].ArgumentMockItems["+ j +"].Cond"));
+
+				argumentMockItems.add(argumentMockItem);
+			}
+			springCloudMockItem.setArgumentMockItems(argumentMockItems);
 
 			scMockItems.add(springCloudMockItem);
 		}
@@ -64,17 +81,32 @@ public class GetMockRuleByIdResponseUnmarshaller {
 		List<DubboMockItem> dubboMockItems = new ArrayList<DubboMockItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetMockRuleByIdResponse.Data.DubboMockItems.Length"); i++) {
 			DubboMockItem dubboMockItem = new DubboMockItem();
-			dubboMockItem.setExceptionClassName(_ctx.stringValue("GetMockRuleByIdResponse.Data.DubboMockItems["+ i +"].ExceptionClassName"));
-			dubboMockItem.setExecuteCondition(_ctx.stringValue("GetMockRuleByIdResponse.Data.DubboMockItems["+ i +"].ExecuteCondition"));
-			dubboMockItem.setMethodName(_ctx.stringValue("GetMockRuleByIdResponse.Data.DubboMockItems["+ i +"].MethodName"));
-			dubboMockItem.setOper(_ctx.stringValue("GetMockRuleByIdResponse.Data.DubboMockItems["+ i +"].Oper"));
-			dubboMockItem.setPath(_ctx.stringValue("GetMockRuleByIdResponse.Data.DubboMockItems["+ i +"].Path"));
-			dubboMockItem.setServiceName(_ctx.stringValue("GetMockRuleByIdResponse.Data.DubboMockItems["+ i +"].ServiceName"));
-			dubboMockItem.setValue(_ctx.stringValue("GetMockRuleByIdResponse.Data.DubboMockItems["+ i +"].Value"));
-			dubboMockItem.setVersion(_ctx.stringValue("GetMockRuleByIdResponse.Data.DubboMockItems["+ i +"].Version"));
-			dubboMockItem.setGroup(_ctx.stringValue("GetMockRuleByIdResponse.Data.DubboMockItems["+ i +"].Group"));
 			dubboMockItem.setParamTypes(_ctx.stringValue("GetMockRuleByIdResponse.Data.DubboMockItems["+ i +"].ParamTypes"));
+			dubboMockItem.setMethodName(_ctx.stringValue("GetMockRuleByIdResponse.Data.DubboMockItems["+ i +"].MethodName"));
+			dubboMockItem.setValue(_ctx.stringValue("GetMockRuleByIdResponse.Data.DubboMockItems["+ i +"].Value"));
+			dubboMockItem.setOper(_ctx.stringValue("GetMockRuleByIdResponse.Data.DubboMockItems["+ i +"].Oper"));
 			dubboMockItem.setExceptionMessage(_ctx.stringValue("GetMockRuleByIdResponse.Data.DubboMockItems["+ i +"].ExceptionMessage"));
+			dubboMockItem.setExecuteCondition(_ctx.stringValue("GetMockRuleByIdResponse.Data.DubboMockItems["+ i +"].ExecuteCondition"));
+			dubboMockItem.setVersion(_ctx.stringValue("GetMockRuleByIdResponse.Data.DubboMockItems["+ i +"].Version"));
+			dubboMockItem.setPath(_ctx.stringValue("GetMockRuleByIdResponse.Data.DubboMockItems["+ i +"].Path"));
+			dubboMockItem.setExceptionClassName(_ctx.stringValue("GetMockRuleByIdResponse.Data.DubboMockItems["+ i +"].ExceptionClassName"));
+			dubboMockItem.setServiceName(_ctx.stringValue("GetMockRuleByIdResponse.Data.DubboMockItems["+ i +"].ServiceName"));
+			dubboMockItem.setGroup(_ctx.stringValue("GetMockRuleByIdResponse.Data.DubboMockItems["+ i +"].Group"));
+			dubboMockItem.setCondition(_ctx.stringValue("GetMockRuleByIdResponse.Data.DubboMockItems["+ i +"].Condition"));
+			dubboMockItem.setTimeout(_ctx.longValue("GetMockRuleByIdResponse.Data.DubboMockItems["+ i +"].Timeout"));
+
+			List<ArgumentMockItem2> argumentMockItems1 = new ArrayList<ArgumentMockItem2>();
+			for (int j = 0; j < _ctx.lengthValue("GetMockRuleByIdResponse.Data.DubboMockItems["+ i +"].ArgumentMockItems.Length"); j++) {
+				ArgumentMockItem2 argumentMockItem2 = new ArgumentMockItem2();
+				argumentMockItem2.setType(_ctx.stringValue("GetMockRuleByIdResponse.Data.DubboMockItems["+ i +"].ArgumentMockItems["+ j +"].Type"));
+				argumentMockItem2.setName(_ctx.stringValue("GetMockRuleByIdResponse.Data.DubboMockItems["+ i +"].ArgumentMockItems["+ j +"].Name"));
+				argumentMockItem2.setOperator(_ctx.stringValue("GetMockRuleByIdResponse.Data.DubboMockItems["+ i +"].ArgumentMockItems["+ j +"].Operator"));
+				argumentMockItem2.setDatum(_ctx.stringValue("GetMockRuleByIdResponse.Data.DubboMockItems["+ i +"].ArgumentMockItems["+ j +"].Datum"));
+				argumentMockItem2.setCond(_ctx.stringValue("GetMockRuleByIdResponse.Data.DubboMockItems["+ i +"].ArgumentMockItems["+ j +"].Cond"));
+
+				argumentMockItems1.add(argumentMockItem2);
+			}
+			dubboMockItem.setArgumentMockItems1(argumentMockItems1);
 
 			dubboMockItems.add(dubboMockItem);
 		}

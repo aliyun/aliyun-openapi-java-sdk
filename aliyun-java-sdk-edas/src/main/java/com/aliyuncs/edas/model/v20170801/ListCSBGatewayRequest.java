@@ -27,7 +27,7 @@ public class ListCSBGatewayRequest extends RoaAcsRequest<ListCSBGatewayResponse>
 
 	private String logicalRegionId;
 	public ListCSBGatewayRequest() {
-		super("Edas", "2017-08-01", "ListCSBGateway", "Edas");
+		super("Edas", "2017-08-01", "ListCSBGateway", "edas");
 		setUriPattern("/pop/v5/csbgateway/gateway");
 		setMethod(MethodType.GET);
 		try {

@@ -22,31 +22,27 @@ import com.aliyuncs.edas.Endpoint;
  * @author auto create
  * @version 
  */
-public class QueryServiceTimeConfigRequest extends RoaAcsRequest<QueryServiceTimeConfigResponse> {
+public class GetIstioTestMethodRequest extends RoaAcsRequest<GetIstioTestMethodResponse> {
 	   
 
-	private String serviceType;
+	private String httpMethod;
 
 	private String appId;
 
-	private String serviceVersion;
-
-	private Integer pageSize;
-
 	private String namespace;
+
+	private String methodSignature;
 
 	private String serviceName;
 
-	private String source;
-
 	private String region;
 
-	private String serviceGroup;
+	private String requiredPath;
 
-	private Integer pageNumber;
-	public QueryServiceTimeConfigRequest() {
-		super("Edas", "2017-08-01", "QueryServiceTimeConfig", "edas");
-		setUriPattern("/pop/sp/api/timeout/page");
+	private String methodController;
+	public GetIstioTestMethodRequest() {
+		super("Edas", "2017-08-01", "GetIstioTestMethod", "edas");
+		setUriPattern("/pop/sp/api/mse/test/istio/method");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -54,14 +50,14 @@ public class QueryServiceTimeConfigRequest extends RoaAcsRequest<QueryServiceTim
 		} catch (Exception e) {}
 	}
 
-	public String getServiceType() {
-		return this.serviceType;
+	public String getHttpMethod() {
+		return this.httpMethod;
 	}
 
-	public void setServiceType(String serviceType) {
-		this.serviceType = serviceType;
-		if(serviceType != null){
-			putQueryParameter("ServiceType", serviceType);
+	public void setHttpMethod(String httpMethod) {
+		this.httpMethod = httpMethod;
+		if(httpMethod != null){
+			putQueryParameter("HttpMethod", httpMethod);
 		}
 	}
 
@@ -76,28 +72,6 @@ public class QueryServiceTimeConfigRequest extends RoaAcsRequest<QueryServiceTim
 		}
 	}
 
-	public String getServiceVersion() {
-		return this.serviceVersion;
-	}
-
-	public void setServiceVersion(String serviceVersion) {
-		this.serviceVersion = serviceVersion;
-		if(serviceVersion != null){
-			putQueryParameter("ServiceVersion", serviceVersion);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
 	public String getNamespace() {
 		return this.namespace;
 	}
@@ -106,6 +80,17 @@ public class QueryServiceTimeConfigRequest extends RoaAcsRequest<QueryServiceTim
 		this.namespace = namespace;
 		if(namespace != null){
 			putQueryParameter("Namespace", namespace);
+		}
+	}
+
+	public String getMethodSignature() {
+		return this.methodSignature;
+	}
+
+	public void setMethodSignature(String methodSignature) {
+		this.methodSignature = methodSignature;
+		if(methodSignature != null){
+			putQueryParameter("MethodSignature", methodSignature);
 		}
 	}
 
@@ -120,17 +105,6 @@ public class QueryServiceTimeConfigRequest extends RoaAcsRequest<QueryServiceTim
 		}
 	}
 
-	public String getSource() {
-		return this.source;
-	}
-
-	public void setSource(String source) {
-		this.source = source;
-		if(source != null){
-			putQueryParameter("Source", source);
-		}
-	}
-
 	public String getRegion() {
 		return this.region;
 	}
@@ -142,31 +116,31 @@ public class QueryServiceTimeConfigRequest extends RoaAcsRequest<QueryServiceTim
 		}
 	}
 
-	public String getServiceGroup() {
-		return this.serviceGroup;
+	public String getRequiredPath() {
+		return this.requiredPath;
 	}
 
-	public void setServiceGroup(String serviceGroup) {
-		this.serviceGroup = serviceGroup;
-		if(serviceGroup != null){
-			putQueryParameter("ServiceGroup", serviceGroup);
+	public void setRequiredPath(String requiredPath) {
+		this.requiredPath = requiredPath;
+		if(requiredPath != null){
+			putQueryParameter("RequiredPath", requiredPath);
 		}
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public String getMethodController() {
+		return this.methodController;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
+	public void setMethodController(String methodController) {
+		this.methodController = methodController;
+		if(methodController != null){
+			putQueryParameter("MethodController", methodController);
 		}
 	}
 
 	@Override
-	public Class<QueryServiceTimeConfigResponse> getResponseClass() {
-		return QueryServiceTimeConfigResponse.class;
+	public Class<GetIstioTestMethodResponse> getResponseClass() {
+		return GetIstioTestMethodResponse.class;
 	}
 
 }

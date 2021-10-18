@@ -37,7 +37,7 @@ public class UpdateEnvHttpTrafficControlRequest extends RoaAcsRequest<UpdateEnvH
 
 	private String triggerPolicy;
 	public UpdateEnvHttpTrafficControlRequest() {
-		super("Edas", "2017-08-01", "UpdateEnvHttpTrafficControl", "Edas");
+		super("Edas", "2017-08-01", "UpdateEnvHttpTrafficControl", "edas");
 		setUriPattern("/pop/v5/gray/env_http_traffic_control");
 		setMethod(MethodType.PUT);
 		try {

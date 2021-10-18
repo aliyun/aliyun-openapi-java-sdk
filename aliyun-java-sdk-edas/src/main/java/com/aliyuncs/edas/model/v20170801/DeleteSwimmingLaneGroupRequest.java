@@ -27,7 +27,7 @@ public class DeleteSwimmingLaneGroupRequest extends RoaAcsRequest<DeleteSwimming
 
 	private Long groupId;
 	public DeleteSwimmingLaneGroupRequest() {
-		super("Edas", "2017-08-01", "DeleteSwimmingLaneGroup", "Edas");
+		super("Edas", "2017-08-01", "DeleteSwimmingLaneGroup", "edas");
 		setUriPattern("/pop/v5/trafficmgnt/swimming_lane_groups");
 		setMethod(MethodType.DELETE);
 		try {

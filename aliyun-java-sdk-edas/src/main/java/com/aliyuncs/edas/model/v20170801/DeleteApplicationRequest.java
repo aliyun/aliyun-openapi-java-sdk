@@ -27,7 +27,7 @@ public class DeleteApplicationRequest extends RoaAcsRequest<DeleteApplicationRes
 
 	private String appId;
 	public DeleteApplicationRequest() {
-		super("Edas", "2017-08-01", "DeleteApplication", "Edas");
+		super("Edas", "2017-08-01", "DeleteApplication", "edas");
 		setUriPattern("/pop/v5/changeorder/co_delete_app");
 		setMethod(MethodType.DELETE);
 		try {

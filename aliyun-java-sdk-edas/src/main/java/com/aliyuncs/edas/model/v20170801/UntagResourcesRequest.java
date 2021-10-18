@@ -35,7 +35,7 @@ public class UntagResourcesRequest extends RoaAcsRequest<UntagResourcesResponse>
 
 	private String resourceIds;
 	public UntagResourcesRequest() {
-		super("Edas", "2017-08-01", "UntagResources", "Edas");
+		super("Edas", "2017-08-01", "UntagResources", "edas");
 		setUriPattern("/pop/v5/tag/tags");
 		setMethod(MethodType.DELETE);
 		try {

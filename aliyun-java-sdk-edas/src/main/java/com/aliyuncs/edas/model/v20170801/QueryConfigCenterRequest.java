@@ -31,7 +31,7 @@ public class QueryConfigCenterRequest extends RoaAcsRequest<QueryConfigCenterRes
 
 	private String group;
 	public QueryConfigCenterRequest() {
-		super("Edas", "2017-08-01", "QueryConfigCenter", "Edas");
+		super("Edas", "2017-08-01", "QueryConfigCenter", "edas");
 		setUriPattern("/pop/v5/configCenter");
 		setMethod(MethodType.GET);
 		try {

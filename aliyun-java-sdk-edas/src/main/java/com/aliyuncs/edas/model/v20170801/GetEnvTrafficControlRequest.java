@@ -27,7 +27,7 @@ public class GetEnvTrafficControlRequest extends RoaAcsRequest<GetEnvTrafficCont
 
 	private String pointcutName;
 	public GetEnvTrafficControlRequest() {
-		super("Edas", "2017-08-01", "GetEnvTrafficControl", "Edas");
+		super("Edas", "2017-08-01", "GetEnvTrafficControl", "edas");
 		setUriPattern("/pop/v5/gray/env_traffic_control_list");
 		setMethod(MethodType.GET);
 		try {

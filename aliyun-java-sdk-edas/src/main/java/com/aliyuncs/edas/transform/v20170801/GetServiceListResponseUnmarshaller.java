@@ -34,32 +34,30 @@ public class GetServiceListResponseUnmarshaller {
 		List<MseServiceResponse> data = new ArrayList<MseServiceResponse>();
 		for (int i = 0; i < _ctx.lengthValue("GetServiceListResponse.Data.Length"); i++) {
 			MseServiceResponse mseServiceResponse = new MseServiceResponse();
-			mseServiceResponse.setServiceName(_ctx.stringValue("GetServiceListResponse.Data["+ i +"].ServiceName"));
 			mseServiceResponse.setEdasAppName(_ctx.stringValue("GetServiceListResponse.Data["+ i +"].EdasAppName"));
 			mseServiceResponse.setDubboApplicationName(_ctx.stringValue("GetServiceListResponse.Data["+ i +"].DubboApplicationName"));
+			mseServiceResponse.setVersion(_ctx.stringValue("GetServiceListResponse.Data["+ i +"].Version"));
+			mseServiceResponse.setRegistryType(_ctx.stringValue("GetServiceListResponse.Data["+ i +"].RegistryType"));
 			mseServiceResponse.setSpringApplicationName(_ctx.stringValue("GetServiceListResponse.Data["+ i +"].SpringApplicationName"));
 			mseServiceResponse.setServiceType(_ctx.stringValue("GetServiceListResponse.Data["+ i +"].ServiceType"));
-			mseServiceResponse.setRegistryType(_ctx.stringValue("GetServiceListResponse.Data["+ i +"].RegistryType"));
-			mseServiceResponse.setVersion(_ctx.stringValue("GetServiceListResponse.Data["+ i +"].Version"));
-			mseServiceResponse.setGroup(_ctx.stringValue("GetServiceListResponse.Data["+ i +"].Group"));
+			mseServiceResponse.setServiceName(_ctx.stringValue("GetServiceListResponse.Data["+ i +"].ServiceName"));
 			mseServiceResponse.setMetadata(_ctx.stringValue("GetServiceListResponse.Data["+ i +"].Metadata"));
+			mseServiceResponse.setGroup(_ctx.stringValue("GetServiceListResponse.Data["+ i +"].Group"));
 
 			List<Method> methods = new ArrayList<Method>();
 			for (int j = 0; j < _ctx.lengthValue("GetServiceListResponse.Data["+ i +"].Methods.Length"); j++) {
 				Method method = new Method();
-				method.setName(_ctx.stringValue("GetServiceListResponse.Data["+ i +"].Methods["+ j +"].Name"));
-				method.setReturnType(_ctx.stringValue("GetServiceListResponse.Data["+ i +"].Methods["+ j +"].ReturnType"));
-				method.setMethodController(_ctx.stringValue("GetServiceListResponse.Data["+ i +"].Methods["+ j +"].MethodController"));
-				method.setParameterNames(_ctx.stringValue("GetServiceListResponse.Data["+ i +"].Methods["+ j +"].ParameterNames"));
-				method.setNameDetail(_ctx.stringValue("GetServiceListResponse.Data["+ i +"].Methods["+ j +"].NameDetail"));
-				method.setReturnDetails(_ctx.stringValue("GetServiceListResponse.Data["+ i +"].Methods["+ j +"].ReturnDetails"));
-				method.setParameterTypes(_ctx.stringValue("GetServiceListResponse.Data["+ i +"].Methods["+ j +"].ParameterTypes"));
 				method.setParameterDetails(_ctx.stringValue("GetServiceListResponse.Data["+ i +"].Methods["+ j +"].ParameterDetails"));
-				method.setRequestMethods(_ctx.stringValue("GetServiceListResponse.Data["+ i +"].Methods["+ j +"].RequestMethods"));
-				method.setParameterDetails1(_ctx.stringValue("GetServiceListResponse.Data["+ i +"].Methods["+ j +"].ParameterDetails"));
-				method.setRequestMethods2(_ctx.stringValue("GetServiceListResponse.Data["+ i +"].Methods["+ j +"].RequestMethods"));
-				method.setPaths(_ctx.stringValue("GetServiceListResponse.Data["+ i +"].Methods["+ j +"].Paths"));
+				method.setNameDetail(_ctx.stringValue("GetServiceListResponse.Data["+ i +"].Methods["+ j +"].NameDetail"));
+				method.setParameterNames(_ctx.stringValue("GetServiceListResponse.Data["+ i +"].Methods["+ j +"].ParameterNames"));
 				method.setParameterDefinitions(_ctx.stringValue("GetServiceListResponse.Data["+ i +"].Methods["+ j +"].ParameterDefinitions"));
+				method.setPaths(_ctx.stringValue("GetServiceListResponse.Data["+ i +"].Methods["+ j +"].Paths"));
+				method.setParameterTypes(_ctx.stringValue("GetServiceListResponse.Data["+ i +"].Methods["+ j +"].ParameterTypes"));
+				method.setRequestMethods(_ctx.stringValue("GetServiceListResponse.Data["+ i +"].Methods["+ j +"].RequestMethods"));
+				method.setReturnDetails(_ctx.stringValue("GetServiceListResponse.Data["+ i +"].Methods["+ j +"].ReturnDetails"));
+				method.setName(_ctx.stringValue("GetServiceListResponse.Data["+ i +"].Methods["+ j +"].Name"));
+				method.setMethodController(_ctx.stringValue("GetServiceListResponse.Data["+ i +"].Methods["+ j +"].MethodController"));
+				method.setReturnType(_ctx.stringValue("GetServiceListResponse.Data["+ i +"].Methods["+ j +"].ReturnType"));
 
 				methods.add(method);
 			}

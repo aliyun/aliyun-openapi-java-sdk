@@ -33,7 +33,7 @@ public class ListConfigCentersRequest extends RoaAcsRequest<ListConfigCentersRes
 
 	private String group;
 	public ListConfigCentersRequest() {
-		super("Edas", "2017-08-01", "ListConfigCenters", "Edas");
+		super("Edas", "2017-08-01", "ListConfigCenters", "edas");
 		setUriPattern("/pop/v5/configCenters");
 		setMethod(MethodType.GET);
 		try {

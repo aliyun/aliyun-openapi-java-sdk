@@ -43,7 +43,7 @@ public class ListStatusRequest extends RoaAcsRequest<ListStatusResponse> {
 
 	private String status;
 	public ListStatusRequest() {
-		super("Edas", "2017-08-01", "ListStatus", "Edas");
+		super("Edas", "2017-08-01", "ListStatus", "edas");
 		setUriPattern("/pop/sp/api/mse/status/list");
 		setMethod(MethodType.POST);
 		try {

@@ -43,7 +43,7 @@ public class UpdateK8sApplicationConfigRequest extends RoaAcsRequest<UpdateK8sAp
 
 	private Integer timeout;
 	public UpdateK8sApplicationConfigRequest() {
-		super("Edas", "2017-08-01", "UpdateK8sApplicationConfig", "Edas");
+		super("Edas", "2017-08-01", "UpdateK8sApplicationConfig", "edas");
 		setUriPattern("/pop/v5/k8s/acs/k8s_app_configuration");
 		setMethod(MethodType.PUT);
 		try {

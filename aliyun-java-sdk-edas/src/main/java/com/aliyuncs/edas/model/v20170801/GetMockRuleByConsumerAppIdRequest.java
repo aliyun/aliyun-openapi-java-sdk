@@ -29,7 +29,7 @@ public class GetMockRuleByConsumerAppIdRequest extends RoaAcsRequest<GetMockRule
 
 	private String region;
 	public GetMockRuleByConsumerAppIdRequest() {
-		super("Edas", "2017-08-01", "GetMockRuleByConsumerAppId", "Edas");
+		super("Edas", "2017-08-01", "GetMockRuleByConsumerAppId", "edas");
 		setUriPattern("/pop/sp/api/mock/getMockRuleByConsumerAppId");
 		setMethod(MethodType.POST);
 		try {

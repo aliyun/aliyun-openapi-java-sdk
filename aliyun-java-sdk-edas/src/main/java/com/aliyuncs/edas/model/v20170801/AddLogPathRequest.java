@@ -29,7 +29,7 @@ public class AddLogPathRequest extends RoaAcsRequest<AddLogPathResponse> {
 
 	private String appId;
 	public AddLogPathRequest() {
-		super("Edas", "2017-08-01", "AddLogPath", "Edas");
+		super("Edas", "2017-08-01", "AddLogPath", "edas");
 		setUriPattern("/pop/v5/log/popListLogDirs");
 		setMethod(MethodType.POST);
 		try {

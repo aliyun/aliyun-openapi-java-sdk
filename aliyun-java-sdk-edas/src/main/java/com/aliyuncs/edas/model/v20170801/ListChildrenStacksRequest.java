@@ -31,7 +31,7 @@ public class ListChildrenStacksRequest extends RoaAcsRequest<ListChildrenStacksR
 
 	private Integer currentPage;
 	public ListChildrenStacksRequest() {
-		super("Edas", "2017-08-01", "ListChildrenStacks", "Edas");
+		super("Edas", "2017-08-01", "ListChildrenStacks", "edas");
 		setUriPattern("/pop/v5/s2i/list_children_stack");
 		setMethod(MethodType.GET);
 		try {

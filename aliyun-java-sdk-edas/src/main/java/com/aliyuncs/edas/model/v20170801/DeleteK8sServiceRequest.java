@@ -29,7 +29,7 @@ public class DeleteK8sServiceRequest extends RoaAcsRequest<DeleteK8sServiceRespo
 
 	private String name;
 	public DeleteK8sServiceRequest() {
-		super("Edas", "2017-08-01", "DeleteK8sService", "Edas");
+		super("Edas", "2017-08-01", "DeleteK8sService", "edas");
 		setUriPattern("/pop/v5/k8s/acs/k8s_service");
 		setMethod(MethodType.DELETE);
 		try {

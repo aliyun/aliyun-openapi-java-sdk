@@ -29,7 +29,7 @@ public class RestartK8sApplicationRequest extends RoaAcsRequest<RestartK8sApplic
 
 	private Integer timeout;
 	public RestartK8sApplicationRequest() {
-		super("Edas", "2017-08-01", "RestartK8sApplication", "Edas");
+		super("Edas", "2017-08-01", "RestartK8sApplication", "edas");
 		setUriPattern("/pop/v5/k8s/acs/restart_k8s_app");
 		setMethod(MethodType.POST);
 		try {

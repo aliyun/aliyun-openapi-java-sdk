@@ -109,63 +109,31 @@ public class GetAccountMockRuleResponse extends AcsResponse {
 
 		public static class MseMockRules {
 
-			private Integer id;
-
-			private String name;
-
-			private String region;
-
-			private Boolean enable;
-
 			private Integer status;
 
-			private String providerAppId;
-
-			private String providerAppName;
-
-			private String consumerAppId;
+			private String region;
 
 			private String consumerAppName;
 
 			private String gmtCreate;
 
+			private String providerAppId;
+
+			private String consumerAppId;
+
 			private String gmtModified;
+
+			private String providerAppName;
+
+			private String name;
+
+			private Integer id;
+
+			private Boolean enable;
 
 			private List<DubboMockItem> dubboMockItems;
 
 			private List<SpringCloudMockItem> scMockItems;
-
-			public Integer getId() {
-				return this.id;
-			}
-
-			public void setId(Integer id) {
-				this.id = id;
-			}
-
-			public String getName() {
-				return this.name;
-			}
-
-			public void setName(String name) {
-				this.name = name;
-			}
-
-			public String getRegion() {
-				return this.region;
-			}
-
-			public void setRegion(String region) {
-				this.region = region;
-			}
-
-			public Boolean getEnable() {
-				return this.enable;
-			}
-
-			public void setEnable(Boolean enable) {
-				this.enable = enable;
-			}
 
 			public Integer getStatus() {
 				return this.status;
@@ -175,28 +143,12 @@ public class GetAccountMockRuleResponse extends AcsResponse {
 				this.status = status;
 			}
 
-			public String getProviderAppId() {
-				return this.providerAppId;
+			public String getRegion() {
+				return this.region;
 			}
 
-			public void setProviderAppId(String providerAppId) {
-				this.providerAppId = providerAppId;
-			}
-
-			public String getProviderAppName() {
-				return this.providerAppName;
-			}
-
-			public void setProviderAppName(String providerAppName) {
-				this.providerAppName = providerAppName;
-			}
-
-			public String getConsumerAppId() {
-				return this.consumerAppId;
-			}
-
-			public void setConsumerAppId(String consumerAppId) {
-				this.consumerAppId = consumerAppId;
+			public void setRegion(String region) {
+				this.region = region;
 			}
 
 			public String getConsumerAppName() {
@@ -215,12 +167,60 @@ public class GetAccountMockRuleResponse extends AcsResponse {
 				this.gmtCreate = gmtCreate;
 			}
 
+			public String getProviderAppId() {
+				return this.providerAppId;
+			}
+
+			public void setProviderAppId(String providerAppId) {
+				this.providerAppId = providerAppId;
+			}
+
+			public String getConsumerAppId() {
+				return this.consumerAppId;
+			}
+
+			public void setConsumerAppId(String consumerAppId) {
+				this.consumerAppId = consumerAppId;
+			}
+
 			public String getGmtModified() {
 				return this.gmtModified;
 			}
 
 			public void setGmtModified(String gmtModified) {
 				this.gmtModified = gmtModified;
+			}
+
+			public String getProviderAppName() {
+				return this.providerAppName;
+			}
+
+			public void setProviderAppName(String providerAppName) {
+				this.providerAppName = providerAppName;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
+
+			public Integer getId() {
+				return this.id;
+			}
+
+			public void setId(Integer id) {
+				this.id = id;
+			}
+
+			public Boolean getEnable() {
+				return this.enable;
+			}
+
+			public void setEnable(Boolean enable) {
+				this.enable = enable;
 			}
 
 			public List<DubboMockItem> getDubboMockItems() {
@@ -243,17 +243,17 @@ public class GetAccountMockRuleResponse extends AcsResponse {
 
 				private String methodName;
 
+				private String value;
+
 				private String oper;
+
+				private String executeCondition;
+
+				private String version;
 
 				private String exceptionClassName;
 
 				private String serviceName;
-
-				private String value;
-
-				private String version;
-
-				private String executeCondition;
 
 				private String group;
 
@@ -267,12 +267,36 @@ public class GetAccountMockRuleResponse extends AcsResponse {
 					this.methodName = methodName;
 				}
 
+				public String getValue() {
+					return this.value;
+				}
+
+				public void setValue(String value) {
+					this.value = value;
+				}
+
 				public String getOper() {
 					return this.oper;
 				}
 
 				public void setOper(String oper) {
 					this.oper = oper;
+				}
+
+				public String getExecuteCondition() {
+					return this.executeCondition;
+				}
+
+				public void setExecuteCondition(String executeCondition) {
+					this.executeCondition = executeCondition;
+				}
+
+				public String getVersion() {
+					return this.version;
+				}
+
+				public void setVersion(String version) {
+					this.version = version;
 				}
 
 				public String getExceptionClassName() {
@@ -289,30 +313,6 @@ public class GetAccountMockRuleResponse extends AcsResponse {
 
 				public void setServiceName(String serviceName) {
 					this.serviceName = serviceName;
-				}
-
-				public String getValue() {
-					return this.value;
-				}
-
-				public void setValue(String value) {
-					this.value = value;
-				}
-
-				public String getVersion() {
-					return this.version;
-				}
-
-				public void setVersion(String version) {
-					this.version = version;
-				}
-
-				public String getExecuteCondition() {
-					return this.executeCondition;
-				}
-
-				public void setExecuteCondition(String executeCondition) {
-					this.executeCondition = executeCondition;
 				}
 
 				public String getGroup() {
@@ -334,42 +334,26 @@ public class GetAccountMockRuleResponse extends AcsResponse {
 
 			public static class SpringCloudMockItem {
 
-				private String exceptionClassName;
-
-				private String executeCondition;
-
-				private String method;
+				private String value;
 
 				private String oper;
 
+				private String executeCondition;
+
 				private String path;
+
+				private String method;
+
+				private String exceptionClassName;
 
 				private String serviceName;
 
-				private String value;
-
-				public String getExceptionClassName() {
-					return this.exceptionClassName;
+				public String getValue() {
+					return this.value;
 				}
 
-				public void setExceptionClassName(String exceptionClassName) {
-					this.exceptionClassName = exceptionClassName;
-				}
-
-				public String getExecuteCondition() {
-					return this.executeCondition;
-				}
-
-				public void setExecuteCondition(String executeCondition) {
-					this.executeCondition = executeCondition;
-				}
-
-				public String getBizMethod() {
-					return this.method;
-				}
-
-				public void setBizMethod(String method) {
-					this.method = method;
+				public void setValue(String value) {
+					this.value = value;
 				}
 
 				public String getOper() {
@@ -380,6 +364,14 @@ public class GetAccountMockRuleResponse extends AcsResponse {
 					this.oper = oper;
 				}
 
+				public String getExecuteCondition() {
+					return this.executeCondition;
+				}
+
+				public void setExecuteCondition(String executeCondition) {
+					this.executeCondition = executeCondition;
+				}
+
 				public String getPath() {
 					return this.path;
 				}
@@ -388,20 +380,28 @@ public class GetAccountMockRuleResponse extends AcsResponse {
 					this.path = path;
 				}
 
+				public String getBizMethod() {
+					return this.method;
+				}
+
+				public void setBizMethod(String method) {
+					this.method = method;
+				}
+
+				public String getExceptionClassName() {
+					return this.exceptionClassName;
+				}
+
+				public void setExceptionClassName(String exceptionClassName) {
+					this.exceptionClassName = exceptionClassName;
+				}
+
 				public String getServiceName() {
 					return this.serviceName;
 				}
 
 				public void setServiceName(String serviceName) {
 					this.serviceName = serviceName;
-				}
-
-				public String getValue() {
-					return this.value;
-				}
-
-				public void setValue(String value) {
-					this.value = value;
 				}
 			}
 		}

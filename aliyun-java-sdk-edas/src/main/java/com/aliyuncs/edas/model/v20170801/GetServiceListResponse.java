@@ -67,33 +67,25 @@ public class GetServiceListResponse extends AcsResponse {
 
 	public static class MseServiceResponse {
 
-		private String serviceName;
-
 		private String edasAppName;
 
 		private String dubboApplicationName;
+
+		private String version;
+
+		private String registryType;
 
 		private String springApplicationName;
 
 		private String serviceType;
 
-		private String registryType;
-
-		private String version;
-
-		private String group;
+		private String serviceName;
 
 		private String metadata;
 
+		private String group;
+
 		private List<Method> methods;
-
-		public String getServiceName() {
-			return this.serviceName;
-		}
-
-		public void setServiceName(String serviceName) {
-			this.serviceName = serviceName;
-		}
 
 		public String getEdasAppName() {
 			return this.edasAppName;
@@ -109,6 +101,22 @@ public class GetServiceListResponse extends AcsResponse {
 
 		public void setDubboApplicationName(String dubboApplicationName) {
 			this.dubboApplicationName = dubboApplicationName;
+		}
+
+		public String getVersion() {
+			return this.version;
+		}
+
+		public void setVersion(String version) {
+			this.version = version;
+		}
+
+		public String getRegistryType() {
+			return this.registryType;
+		}
+
+		public void setRegistryType(String registryType) {
+			this.registryType = registryType;
 		}
 
 		public String getSpringApplicationName() {
@@ -127,28 +135,12 @@ public class GetServiceListResponse extends AcsResponse {
 			this.serviceType = serviceType;
 		}
 
-		public String getRegistryType() {
-			return this.registryType;
+		public String getServiceName() {
+			return this.serviceName;
 		}
 
-		public void setRegistryType(String registryType) {
-			this.registryType = registryType;
-		}
-
-		public String getVersion() {
-			return this.version;
-		}
-
-		public void setVersion(String version) {
-			this.version = version;
-		}
-
-		public String getGroup() {
-			return this.group;
-		}
-
-		public void setGroup(String group) {
-			this.group = group;
+		public void setServiceName(String serviceName) {
+			this.serviceName = serviceName;
 		}
 
 		public String getMetadata() {
@@ -157,6 +149,14 @@ public class GetServiceListResponse extends AcsResponse {
 
 		public void setMetadata(String metadata) {
 			this.metadata = metadata;
+		}
+
+		public String getGroup() {
+			return this.group;
+		}
+
+		public void setGroup(String group) {
+			this.group = group;
 		}
 
 		public List<Method> getMethods() {
@@ -169,62 +169,34 @@ public class GetServiceListResponse extends AcsResponse {
 
 		public static class Method {
 
-			private String name;
-
-			private String returnType;
-
-			private String methodController;
-
-			private String parameterNames;
+			private String parameterDetails;
 
 			private String nameDetail;
 
-			private String returnDetails;
-
-			private String parameterTypes;
-
-			private String parameterDetails;
-
-			private String requestMethods;
-
-			private String parameterDetails1;
-
-			private String requestMethods2;
-
-			private String paths;
+			private String parameterNames;
 
 			private String parameterDefinitions;
 
-			public String getName() {
-				return this.name;
+			private String paths;
+
+			private String parameterTypes;
+
+			private String requestMethods;
+
+			private String returnDetails;
+
+			private String name;
+
+			private String methodController;
+
+			private String returnType;
+
+			public String getParameterDetails() {
+				return this.parameterDetails;
 			}
 
-			public void setName(String name) {
-				this.name = name;
-			}
-
-			public String getReturnType() {
-				return this.returnType;
-			}
-
-			public void setReturnType(String returnType) {
-				this.returnType = returnType;
-			}
-
-			public String getMethodController() {
-				return this.methodController;
-			}
-
-			public void setMethodController(String methodController) {
-				this.methodController = methodController;
-			}
-
-			public String getParameterNames() {
-				return this.parameterNames;
-			}
-
-			public void setParameterNames(String parameterNames) {
-				this.parameterNames = parameterNames;
+			public void setParameterDetails(String parameterDetails) {
+				this.parameterDetails = parameterDetails;
 			}
 
 			public String getNameDetail() {
@@ -235,52 +207,20 @@ public class GetServiceListResponse extends AcsResponse {
 				this.nameDetail = nameDetail;
 			}
 
-			public String getReturnDetails() {
-				return this.returnDetails;
+			public String getParameterNames() {
+				return this.parameterNames;
 			}
 
-			public void setReturnDetails(String returnDetails) {
-				this.returnDetails = returnDetails;
+			public void setParameterNames(String parameterNames) {
+				this.parameterNames = parameterNames;
 			}
 
-			public String getParameterTypes() {
-				return this.parameterTypes;
+			public String getParameterDefinitions() {
+				return this.parameterDefinitions;
 			}
 
-			public void setParameterTypes(String parameterTypes) {
-				this.parameterTypes = parameterTypes;
-			}
-
-			public String getParameterDetails() {
-				return this.parameterDetails;
-			}
-
-			public void setParameterDetails(String parameterDetails) {
-				this.parameterDetails = parameterDetails;
-			}
-
-			public String getRequestMethods() {
-				return this.requestMethods;
-			}
-
-			public void setRequestMethods(String requestMethods) {
-				this.requestMethods = requestMethods;
-			}
-
-			public String getParameterDetails1() {
-				return this.parameterDetails1;
-			}
-
-			public void setParameterDetails1(String parameterDetails1) {
-				this.parameterDetails1 = parameterDetails1;
-			}
-
-			public String getRequestMethods2() {
-				return this.requestMethods2;
-			}
-
-			public void setRequestMethods2(String requestMethods2) {
-				this.requestMethods2 = requestMethods2;
+			public void setParameterDefinitions(String parameterDefinitions) {
+				this.parameterDefinitions = parameterDefinitions;
 			}
 
 			public String getPaths() {
@@ -291,12 +231,52 @@ public class GetServiceListResponse extends AcsResponse {
 				this.paths = paths;
 			}
 
-			public String getParameterDefinitions() {
-				return this.parameterDefinitions;
+			public String getParameterTypes() {
+				return this.parameterTypes;
 			}
 
-			public void setParameterDefinitions(String parameterDefinitions) {
-				this.parameterDefinitions = parameterDefinitions;
+			public void setParameterTypes(String parameterTypes) {
+				this.parameterTypes = parameterTypes;
+			}
+
+			public String getRequestMethods() {
+				return this.requestMethods;
+			}
+
+			public void setRequestMethods(String requestMethods) {
+				this.requestMethods = requestMethods;
+			}
+
+			public String getReturnDetails() {
+				return this.returnDetails;
+			}
+
+			public void setReturnDetails(String returnDetails) {
+				this.returnDetails = returnDetails;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
+
+			public String getMethodController() {
+				return this.methodController;
+			}
+
+			public void setMethodController(String methodController) {
+				this.methodController = methodController;
+			}
+
+			public String getReturnType() {
+				return this.returnType;
+			}
+
+			public void setReturnType(String returnType) {
+				this.returnType = returnType;
 			}
 		}
 	}

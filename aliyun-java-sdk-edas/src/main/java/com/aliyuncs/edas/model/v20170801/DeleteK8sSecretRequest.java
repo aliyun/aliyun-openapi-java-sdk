@@ -31,7 +31,7 @@ public class DeleteK8sSecretRequest extends RoaAcsRequest<DeleteK8sSecretRespons
 
 	private String clusterId;
 	public DeleteK8sSecretRequest() {
-		super("Edas", "2017-08-01", "DeleteK8sSecret", "Edas");
+		super("Edas", "2017-08-01", "DeleteK8sSecret", "edas");
 		setUriPattern("/pop/v5/k8s/acs/k8s_secret");
 		setMethod(MethodType.DELETE);
 		try {

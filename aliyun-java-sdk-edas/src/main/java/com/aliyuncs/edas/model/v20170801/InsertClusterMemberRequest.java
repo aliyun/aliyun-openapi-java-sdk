@@ -31,7 +31,7 @@ public class InsertClusterMemberRequest extends RoaAcsRequest<InsertClusterMembe
 
 	private String clusterId;
 	public InsertClusterMemberRequest() {
-		super("Edas", "2017-08-01", "InsertClusterMember", "Edas");
+		super("Edas", "2017-08-01", "InsertClusterMember", "edas");
 		setUriPattern("/pop/v5/resource/cluster_member");
 		setMethod(MethodType.POST);
 		try {

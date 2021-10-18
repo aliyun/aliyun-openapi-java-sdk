@@ -35,7 +35,7 @@ public class UpdateLocalitySettingRequest extends RoaAcsRequest<UpdateLocalitySe
 
 	private Boolean enabled;
 	public UpdateLocalitySettingRequest() {
-		super("Edas", "2017-08-01", "UpdateLocalitySetting", "Edas");
+		super("Edas", "2017-08-01", "UpdateLocalitySetting", "edas");
 		setUriPattern("/pop/sp/applications/locality/setting");
 		setMethod(MethodType.POST);
 		try {

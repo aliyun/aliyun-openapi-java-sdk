@@ -27,7 +27,7 @@ public class ListRecentChangeOrderRequest extends RoaAcsRequest<ListRecentChange
 
 	private String appId;
 	public ListRecentChangeOrderRequest() {
-		super("Edas", "2017-08-01", "ListRecentChangeOrder", "Edas");
+		super("Edas", "2017-08-01", "ListRecentChangeOrder", "edas");
 		setUriPattern("/pop/v5/changeorder/change_order_list");
 		setMethod(MethodType.POST);
 		try {

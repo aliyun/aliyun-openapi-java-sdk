@@ -27,7 +27,7 @@ public class EnableMockRuleRequest extends RoaAcsRequest<EnableMockRuleResponse>
 
 	private Long id;
 	public EnableMockRuleRequest() {
-		super("Edas", "2017-08-01", "EnableMockRule", "Edas");
+		super("Edas", "2017-08-01", "EnableMockRule", "edas");
 		setUriPattern("/pop/sp/api/mock/enableMockRule");
 		setMethod(MethodType.POST);
 		try {

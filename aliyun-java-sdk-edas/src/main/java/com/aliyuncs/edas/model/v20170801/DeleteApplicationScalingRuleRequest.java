@@ -29,7 +29,7 @@ public class DeleteApplicationScalingRuleRequest extends RoaAcsRequest<DeleteApp
 
 	private String appId;
 	public DeleteApplicationScalingRuleRequest() {
-		super("Edas", "2017-08-01", "DeleteApplicationScalingRule", "Edas");
+		super("Edas", "2017-08-01", "DeleteApplicationScalingRule", "edas");
 		setUriPattern("/pop/v1/eam/scale/application_scaling_rule");
 		setMethod(MethodType.DELETE);
 		try {

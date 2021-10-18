@@ -29,7 +29,7 @@ public class GetSslCertificateListRequest extends RoaAcsRequest<GetSslCertificat
 
 	private Integer pageSize;
 	public GetSslCertificateListRequest() {
-		super("Edas", "2017-08-01", "GetSslCertificateList", "Edas");
+		super("Edas", "2017-08-01", "GetSslCertificateList", "edas");
 		setUriPattern("/pop/v5/ssl_certificate");
 		setMethod(MethodType.GET);
 		try {

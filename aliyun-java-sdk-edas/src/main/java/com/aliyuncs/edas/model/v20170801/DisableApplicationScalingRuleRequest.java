@@ -29,7 +29,7 @@ public class DisableApplicationScalingRuleRequest extends RoaAcsRequest<DisableA
 
 	private String appId;
 	public DisableApplicationScalingRuleRequest() {
-		super("Edas", "2017-08-01", "DisableApplicationScalingRule", "Edas");
+		super("Edas", "2017-08-01", "DisableApplicationScalingRule", "edas");
 		setUriPattern("/pop/v1/eam/scale/disable_application_scaling_rule");
 		setMethod(MethodType.PUT);
 		try {

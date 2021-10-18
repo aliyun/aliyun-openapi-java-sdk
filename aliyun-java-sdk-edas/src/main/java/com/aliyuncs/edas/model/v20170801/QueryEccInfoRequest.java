@@ -27,7 +27,7 @@ public class QueryEccInfoRequest extends RoaAcsRequest<QueryEccInfoResponse> {
 
 	private String eccId;
 	public QueryEccInfoRequest() {
-		super("Edas", "2017-08-01", "QueryEccInfo", "Edas");
+		super("Edas", "2017-08-01", "QueryEccInfo", "edas");
 		setUriPattern("/pop/v5/ecc");
 		setMethod(MethodType.GET);
 		try {

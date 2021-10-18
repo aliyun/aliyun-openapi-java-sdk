@@ -35,11 +35,13 @@ public class GetAccountMockRuleRequest extends RoaAcsRequest<GetAccountMockRuleR
 
 	private String namespace;
 
+	private Long mockType;
+
 	private String region;
 
 	private String consumerAppName;
 	public GetAccountMockRuleRequest() {
-		super("Edas", "2017-08-01", "GetAccountMockRule", "Edas");
+		super("Edas", "2017-08-01", "GetAccountMockRule", "edas");
 		setUriPattern("/pop/sp/api/mock/getAccountMockRule");
 		setMethod(MethodType.POST);
 		try {
@@ -100,6 +102,17 @@ public class GetAccountMockRuleRequest extends RoaAcsRequest<GetAccountMockRuleR
 		this.namespace = namespace;
 		if(namespace != null){
 			putQueryParameter("Namespace", namespace);
+		}
+	}
+
+	public Long getMockType() {
+		return this.mockType;
+	}
+
+	public void setMockType(Long mockType) {
+		this.mockType = mockType;
+		if(mockType != null){
+			putQueryParameter("MockType", mockType.toString());
 		}
 	}
 

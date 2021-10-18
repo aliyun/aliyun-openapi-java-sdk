@@ -33,7 +33,7 @@ public class CreateGrayEnvironmentRequest extends RoaAcsRequest<CreateGrayEnviro
 
 	private String tag;
 	public CreateGrayEnvironmentRequest() {
-		super("Edas", "2017-08-01", "CreateGrayEnvironment", "Edas");
+		super("Edas", "2017-08-01", "CreateGrayEnvironment", "edas");
 		setUriPattern("/pop/v5/gray/env");
 		setMethod(MethodType.POST);
 		try {

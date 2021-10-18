@@ -27,7 +27,7 @@ public class UpdateSwimmingLanePriorityRequest extends RoaAcsRequest<UpdateSwimm
 
 	private String priorities;
 	public UpdateSwimmingLanePriorityRequest() {
-		super("Edas", "2017-08-01", "UpdateSwimmingLanePriority", "Edas");
+		super("Edas", "2017-08-01", "UpdateSwimmingLanePriority", "edas");
 		setUriPattern("/pop/v5/trafficmgnt/swimming_lane");
 		setMethod(MethodType.POST);
 		try {

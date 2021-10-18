@@ -27,7 +27,7 @@ public class RemoveMockRuleRequest extends RoaAcsRequest<RemoveMockRuleResponse>
 
 	private Long id;
 	public RemoveMockRuleRequest() {
-		super("Edas", "2017-08-01", "RemoveMockRule", "Edas");
+		super("Edas", "2017-08-01", "RemoveMockRule", "edas");
 		setUriPattern("/pop/sp/api/mock/removeMockRule");
 		setMethod(MethodType.POST);
 		try {

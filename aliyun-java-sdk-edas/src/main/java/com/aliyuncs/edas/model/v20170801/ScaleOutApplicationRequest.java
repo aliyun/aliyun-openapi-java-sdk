@@ -31,7 +31,7 @@ public class ScaleOutApplicationRequest extends RoaAcsRequest<ScaleOutApplicatio
 
 	private String appId;
 	public ScaleOutApplicationRequest() {
-		super("Edas", "2017-08-01", "ScaleOutApplication", "Edas");
+		super("Edas", "2017-08-01", "ScaleOutApplication", "edas");
 		setUriPattern("/pop/v5/changeorder/co_scale_out");
 		setMethod(MethodType.POST);
 		try {

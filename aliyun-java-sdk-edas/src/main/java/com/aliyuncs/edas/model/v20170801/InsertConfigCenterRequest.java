@@ -35,7 +35,7 @@ public class InsertConfigCenterRequest extends RoaAcsRequest<InsertConfigCenterR
 
 	private String group;
 	public InsertConfigCenterRequest() {
-		super("Edas", "2017-08-01", "InsertConfigCenter", "Edas");
+		super("Edas", "2017-08-01", "InsertConfigCenter", "edas");
 		setUriPattern("/pop/v5/configCenter");
 		setMethod(MethodType.POST);
 		try {

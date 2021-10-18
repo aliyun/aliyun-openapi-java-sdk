@@ -33,7 +33,7 @@ public class CreateK8sIngressRuleRequest extends RoaAcsRequest<CreateK8sIngressR
 
 	private String clusterId;
 	public CreateK8sIngressRuleRequest() {
-		super("Edas", "2017-08-01", "CreateK8sIngressRule", "Edas");
+		super("Edas", "2017-08-01", "CreateK8sIngressRule", "edas");
 		setUriPattern("/pop/v5/k8s/acs/k8s_ingress");
 		setMethod(MethodType.POST);
 		try {

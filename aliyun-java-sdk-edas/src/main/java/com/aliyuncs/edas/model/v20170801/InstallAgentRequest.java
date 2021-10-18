@@ -31,7 +31,7 @@ public class InstallAgentRequest extends RoaAcsRequest<InstallAgentResponse> {
 
 	private String clusterId;
 	public InstallAgentRequest() {
-		super("Edas", "2017-08-01", "InstallAgent", "Edas");
+		super("Edas", "2017-08-01", "InstallAgent", "edas");
 		setUriPattern("/pop/v5/ecss/install_agent");
 		setMethod(MethodType.POST);
 		try {

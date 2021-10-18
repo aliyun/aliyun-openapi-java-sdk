@@ -29,19 +29,19 @@ public class AddMockRuleResponseUnmarshaller {
 		addMockRuleResponse.setSuccess(_ctx.booleanValue("AddMockRuleResponse.Success"));
 
 		Data data = new Data();
-		data.setAccountId(_ctx.stringValue("AddMockRuleResponse.Data.AccountId"));
-		data.setName(_ctx.stringValue("AddMockRuleResponse.Data.Name"));
-		data.setConsumerAppId(_ctx.stringValue("AddMockRuleResponse.Data.ConsumerAppId"));
-		data.setConsumerAppName(_ctx.stringValue("AddMockRuleResponse.Data.ConsumerAppName"));
-		data.setEnable(_ctx.booleanValue("AddMockRuleResponse.Data.Enable"));
-		data.setExtraJson(_ctx.stringValue("AddMockRuleResponse.Data.ExtraJson"));
-		data.setId(_ctx.longValue("AddMockRuleResponse.Data.Id"));
 		data.setNamespaceId(_ctx.stringValue("AddMockRuleResponse.Data.NamespaceId"));
-		data.setProviderAppId(_ctx.stringValue("AddMockRuleResponse.Data.ProviderAppId"));
-		data.setProviderAppName(_ctx.stringValue("AddMockRuleResponse.Data.ProviderAppName"));
-		data.setRegion(_ctx.stringValue("AddMockRuleResponse.Data.Region"));
 		data.setScMockItemJson(_ctx.stringValue("AddMockRuleResponse.Data.ScMockItemJson"));
+		data.setConsumerAppName(_ctx.stringValue("AddMockRuleResponse.Data.ConsumerAppName"));
+		data.setAccountId(_ctx.stringValue("AddMockRuleResponse.Data.AccountId"));
+		data.setConsumerAppId(_ctx.stringValue("AddMockRuleResponse.Data.ConsumerAppId"));
+		data.setExtraJson(_ctx.stringValue("AddMockRuleResponse.Data.ExtraJson"));
 		data.setSource(_ctx.stringValue("AddMockRuleResponse.Data.Source"));
+		data.setRegion(_ctx.stringValue("AddMockRuleResponse.Data.Region"));
+		data.setProviderAppId(_ctx.stringValue("AddMockRuleResponse.Data.ProviderAppId"));
+		data.setName(_ctx.stringValue("AddMockRuleResponse.Data.Name"));
+		data.setProviderAppName(_ctx.stringValue("AddMockRuleResponse.Data.ProviderAppName"));
+		data.setId(_ctx.longValue("AddMockRuleResponse.Data.Id"));
+		data.setEnable(_ctx.booleanValue("AddMockRuleResponse.Data.Enable"));
 		addMockRuleResponse.setData(data);
 	 
 	 	return addMockRuleResponse;

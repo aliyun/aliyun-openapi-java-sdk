@@ -33,24 +33,24 @@ public class ListApplicationEcuResponseUnmarshaller {
 		List<EcuEntity> ecuInfoList = new ArrayList<EcuEntity>();
 		for (int i = 0; i < _ctx.lengthValue("ListApplicationEcuResponse.EcuInfoList.Length"); i++) {
 			EcuEntity ecuEntity = new EcuEntity();
-			ecuEntity.setEcuId(_ctx.stringValue("ListApplicationEcuResponse.EcuInfoList["+ i +"].EcuId"));
-			ecuEntity.setOnline(_ctx.booleanValue("ListApplicationEcuResponse.EcuInfoList["+ i +"].Online"));
-			ecuEntity.setDockerEnv(_ctx.booleanValue("ListApplicationEcuResponse.EcuInfoList["+ i +"].DockerEnv"));
-			ecuEntity.setCreateTime(_ctx.longValue("ListApplicationEcuResponse.EcuInfoList["+ i +"].CreateTime"));
+			ecuEntity.setVpcId(_ctx.stringValue("ListApplicationEcuResponse.EcuInfoList["+ i +"].VpcId"));
 			ecuEntity.setUpdateTime(_ctx.longValue("ListApplicationEcuResponse.EcuInfoList["+ i +"].UpdateTime"));
 			ecuEntity.setIpAddr(_ctx.stringValue("ListApplicationEcuResponse.EcuInfoList["+ i +"].IpAddr"));
-			ecuEntity.setHeartbeatTime(_ctx.longValue("ListApplicationEcuResponse.EcuInfoList["+ i +"].HeartbeatTime"));
-			ecuEntity.setUserId(_ctx.stringValue("ListApplicationEcuResponse.EcuInfoList["+ i +"].UserId"));
-			ecuEntity.setName(_ctx.stringValue("ListApplicationEcuResponse.EcuInfoList["+ i +"].Name"));
-			ecuEntity.setZoneId(_ctx.stringValue("ListApplicationEcuResponse.EcuInfoList["+ i +"].ZoneId"));
-			ecuEntity.setRegionId(_ctx.stringValue("ListApplicationEcuResponse.EcuInfoList["+ i +"].RegionId"));
-			ecuEntity.setInstanceId(_ctx.stringValue("ListApplicationEcuResponse.EcuInfoList["+ i +"].InstanceId"));
-			ecuEntity.setVpcId(_ctx.stringValue("ListApplicationEcuResponse.EcuInfoList["+ i +"].VpcId"));
 			ecuEntity.setAvailableCpu(_ctx.integerValue("ListApplicationEcuResponse.EcuInfoList["+ i +"].AvailableCpu"));
-			ecuEntity.setAvailableMem(_ctx.integerValue("ListApplicationEcuResponse.EcuInfoList["+ i +"].AvailableMem"));
-			ecuEntity.setCpu(_ctx.integerValue("ListApplicationEcuResponse.EcuInfoList["+ i +"].Cpu"));
+			ecuEntity.setCreateTime(_ctx.longValue("ListApplicationEcuResponse.EcuInfoList["+ i +"].CreateTime"));
+			ecuEntity.setUserId(_ctx.stringValue("ListApplicationEcuResponse.EcuInfoList["+ i +"].UserId"));
+			ecuEntity.setInstanceId(_ctx.stringValue("ListApplicationEcuResponse.EcuInfoList["+ i +"].InstanceId"));
 			ecuEntity.setMem(_ctx.integerValue("ListApplicationEcuResponse.EcuInfoList["+ i +"].Mem"));
+			ecuEntity.setRegionId(_ctx.stringValue("ListApplicationEcuResponse.EcuInfoList["+ i +"].RegionId"));
+			ecuEntity.setEcuId(_ctx.stringValue("ListApplicationEcuResponse.EcuInfoList["+ i +"].EcuId"));
+			ecuEntity.setCpu(_ctx.integerValue("ListApplicationEcuResponse.EcuInfoList["+ i +"].Cpu"));
 			ecuEntity.setAppId(_ctx.stringValue("ListApplicationEcuResponse.EcuInfoList["+ i +"].AppId"));
+			ecuEntity.setDockerEnv(_ctx.booleanValue("ListApplicationEcuResponse.EcuInfoList["+ i +"].DockerEnv"));
+			ecuEntity.setOnline(_ctx.booleanValue("ListApplicationEcuResponse.EcuInfoList["+ i +"].Online"));
+			ecuEntity.setAvailableMem(_ctx.integerValue("ListApplicationEcuResponse.EcuInfoList["+ i +"].AvailableMem"));
+			ecuEntity.setZoneId(_ctx.stringValue("ListApplicationEcuResponse.EcuInfoList["+ i +"].ZoneId"));
+			ecuEntity.setName(_ctx.stringValue("ListApplicationEcuResponse.EcuInfoList["+ i +"].Name"));
+			ecuEntity.setHeartbeatTime(_ctx.longValue("ListApplicationEcuResponse.EcuInfoList["+ i +"].HeartbeatTime"));
 
 			ecuInfoList.add(ecuEntity);
 		}

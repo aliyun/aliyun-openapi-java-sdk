@@ -67,7 +67,7 @@ public class InsertApplicationRequest extends RoaAcsRequest<InsertApplicationRes
 
 	private String hooks;
 	public InsertApplicationRequest() {
-		super("Edas", "2017-08-01", "InsertApplication", "Edas");
+		super("Edas", "2017-08-01", "InsertApplication", "edas");
 		setUriPattern("/pop/v5/changeorder/co_create_app");
 		setMethod(MethodType.POST);
 		try {

@@ -29,7 +29,7 @@ public class UpdateEnvAppGroupRequest extends RoaAcsRequest<UpdateEnvAppGroupRes
 
 	private String scopes;
 	public UpdateEnvAppGroupRequest() {
-		super("Edas", "2017-08-01", "UpdateEnvAppGroup", "Edas");
+		super("Edas", "2017-08-01", "UpdateEnvAppGroup", "edas");
 		setUriPattern("/pop/v5/gray/env_app_groups");
 		setMethod(MethodType.PUT);
 		try {

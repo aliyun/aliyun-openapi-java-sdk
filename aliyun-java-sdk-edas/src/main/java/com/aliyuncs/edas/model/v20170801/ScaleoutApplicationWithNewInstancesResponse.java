@@ -25,22 +25,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ScaleoutApplicationWithNewInstancesResponse extends AcsResponse {
 
-	private String requestId;
+	private String changeOrderId;
 
 	private Integer code;
 
 	private String message;
 
-	private String changeOrderId;
+	private String requestId;
 
 	private List<String> instanceIds;
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getChangeOrderId() {
+		return this.changeOrderId;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setChangeOrderId(String changeOrderId) {
+		this.changeOrderId = changeOrderId;
 	}
 
 	public Integer getCode() {
@@ -59,12 +59,12 @@ public class ScaleoutApplicationWithNewInstancesResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getChangeOrderId() {
-		return this.changeOrderId;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setChangeOrderId(String changeOrderId) {
-		this.changeOrderId = changeOrderId;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<String> getInstanceIds() {

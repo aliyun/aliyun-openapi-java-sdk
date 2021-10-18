@@ -41,7 +41,7 @@ public class UpdateDegradeControlRequest extends RoaAcsRequest<UpdateDegradeCont
 
 	private String methodName;
 	public UpdateDegradeControlRequest() {
-		super("Edas", "2017-08-01", "UpdateDegradeControl", "Edas");
+		super("Edas", "2017-08-01", "UpdateDegradeControl", "edas");
 		setUriPattern("/pop/v5/degradeControl");
 		setMethod(MethodType.PUT);
 		try {

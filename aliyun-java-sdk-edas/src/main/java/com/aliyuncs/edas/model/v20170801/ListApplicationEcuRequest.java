@@ -25,15 +25,28 @@ import com.aliyuncs.edas.Endpoint;
 public class ListApplicationEcuRequest extends RoaAcsRequest<ListApplicationEcuResponse> {
 	   
 
+	private String logicalRegionId;
+
 	private String appId;
 	public ListApplicationEcuRequest() {
-		super("Edas", "2017-08-01", "ListApplicationEcu", "Edas");
+		super("Edas", "2017-08-01", "ListApplicationEcu", "edas");
 		setUriPattern("/pop/v5/resource/ecu_list");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getLogicalRegionId() {
+		return this.logicalRegionId;
+	}
+
+	public void setLogicalRegionId(String logicalRegionId) {
+		this.logicalRegionId = logicalRegionId;
+		if(logicalRegionId != null){
+			putQueryParameter("LogicalRegionId", logicalRegionId);
+		}
 	}
 
 	public String getAppId() {

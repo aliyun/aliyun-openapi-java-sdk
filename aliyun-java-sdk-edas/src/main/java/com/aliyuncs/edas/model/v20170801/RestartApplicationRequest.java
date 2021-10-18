@@ -29,7 +29,7 @@ public class RestartApplicationRequest extends RoaAcsRequest<RestartApplicationR
 
 	private String eccInfo;
 	public RestartApplicationRequest() {
-		super("Edas", "2017-08-01", "RestartApplication", "Edas");
+		super("Edas", "2017-08-01", "RestartApplication", "edas");
 		setUriPattern("/pop/v5/changeorder/co_restart");
 		setMethod(MethodType.POST);
 		try {

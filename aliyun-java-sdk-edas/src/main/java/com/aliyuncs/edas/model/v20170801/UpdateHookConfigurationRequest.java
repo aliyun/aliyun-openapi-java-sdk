@@ -31,7 +31,7 @@ public class UpdateHookConfigurationRequest extends RoaAcsRequest<UpdateHookConf
 
 	private String hooks;
 	public UpdateHookConfigurationRequest() {
-		super("Edas", "2017-08-01", "UpdateHookConfiguration", "Edas");
+		super("Edas", "2017-08-01", "UpdateHookConfiguration", "edas");
 		setUriPattern("/pop/app/config_app_hook_json");
 		setMethod(MethodType.POST);
 		try {

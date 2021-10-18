@@ -43,7 +43,7 @@ public class UppateEnvHsfTrafficControlRequest extends RoaAcsRequest<UppateEnvHs
 
 	private String methodName;
 	public UppateEnvHsfTrafficControlRequest() {
-		super("Edas", "2017-08-01", "UppateEnvHsfTrafficControl", "Edas");
+		super("Edas", "2017-08-01", "UppateEnvHsfTrafficControl", "edas");
 		setUriPattern("/pop/v5/gray/env_hsf_traffic_control");
 		setMethod(MethodType.PUT);
 		try {

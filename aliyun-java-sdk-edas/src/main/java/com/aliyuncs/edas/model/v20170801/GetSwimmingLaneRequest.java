@@ -27,7 +27,7 @@ public class GetSwimmingLaneRequest extends RoaAcsRequest<GetSwimmingLaneRespons
 
 	private Long laneId;
 	public GetSwimmingLaneRequest() {
-		super("Edas", "2017-08-01", "GetSwimmingLane", "Edas");
+		super("Edas", "2017-08-01", "GetSwimmingLane", "edas");
 		setUriPattern("/pop/v5/trafficmgnt/swimming_lane");
 		setMethod(MethodType.GET);
 		try {

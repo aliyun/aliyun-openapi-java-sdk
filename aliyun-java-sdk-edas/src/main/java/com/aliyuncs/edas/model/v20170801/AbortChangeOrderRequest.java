@@ -27,7 +27,7 @@ public class AbortChangeOrderRequest extends RoaAcsRequest<AbortChangeOrderRespo
 
 	private String changeOrderId;
 	public AbortChangeOrderRequest() {
-		super("Edas", "2017-08-01", "AbortChangeOrder", "Edas");
+		super("Edas", "2017-08-01", "AbortChangeOrder", "edas");
 		setUriPattern("/pop/v5/changeorder/change_order_abort");
 		setMethod(MethodType.PUT);
 		try {

@@ -43,7 +43,7 @@ public class InsertFlowControlRequest extends RoaAcsRequest<InsertFlowControlRes
 
 	private String methodName;
 	public InsertFlowControlRequest() {
-		super("Edas", "2017-08-01", "InsertFlowControl", "Edas");
+		super("Edas", "2017-08-01", "InsertFlowControl", "edas");
 		setUriPattern("/pop/v5/flowControl");
 		setMethod(MethodType.POST);
 		try {

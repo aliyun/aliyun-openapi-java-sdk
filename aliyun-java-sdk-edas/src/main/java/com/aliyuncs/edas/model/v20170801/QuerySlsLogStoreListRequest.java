@@ -33,7 +33,7 @@ public class QuerySlsLogStoreListRequest extends RoaAcsRequest<QuerySlsLogStoreL
 
 	private String type;
 	public QuerySlsLogStoreListRequest() {
-		super("Edas", "2017-08-01", "QuerySlsLogStoreList", "Edas");
+		super("Edas", "2017-08-01", "QuerySlsLogStoreList", "edas");
 		setUriPattern("/pop/v5/k8s/sls/query_sls_log_store_list");
 		setMethod(MethodType.GET);
 		try {

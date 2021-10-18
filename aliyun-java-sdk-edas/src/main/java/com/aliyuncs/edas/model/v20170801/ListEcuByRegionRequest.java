@@ -29,7 +29,7 @@ public class ListEcuByRegionRequest extends RoaAcsRequest<ListEcuByRegionRespons
 
 	private String logicalRegionId;
 	public ListEcuByRegionRequest() {
-		super("Edas", "2017-08-01", "ListEcuByRegion", "Edas");
+		super("Edas", "2017-08-01", "ListEcuByRegion", "edas");
 		setUriPattern("/pop/v5/resource/ecu_list");
 		setMethod(MethodType.GET);
 		try {

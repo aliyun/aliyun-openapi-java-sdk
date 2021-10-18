@@ -39,22 +39,22 @@ public class GetK8sClusterResponseUnmarshaller {
 		List<Cluster> clusterList = new ArrayList<Cluster>();
 		for (int i = 0; i < _ctx.lengthValue("GetK8sClusterResponse.ClusterPage.ClusterList.Length"); i++) {
 			Cluster cluster = new Cluster();
-			cluster.setClusterId(_ctx.stringValue("GetK8sClusterResponse.ClusterPage.ClusterList["+ i +"].ClusterId"));
-			cluster.setClusterImportStatus(_ctx.integerValue("GetK8sClusterResponse.ClusterPage.ClusterList["+ i +"].ClusterImportStatus"));
-			cluster.setClusterName(_ctx.stringValue("GetK8sClusterResponse.ClusterPage.ClusterList["+ i +"].ClusterName"));
-			cluster.setClusterStatus(_ctx.integerValue("GetK8sClusterResponse.ClusterPage.ClusterList["+ i +"].ClusterStatus"));
-			cluster.setClusterType(_ctx.integerValue("GetK8sClusterResponse.ClusterPage.ClusterList["+ i +"].ClusterType"));
-			cluster.setRegionId(_ctx.stringValue("GetK8sClusterResponse.ClusterPage.ClusterList["+ i +"].RegionId"));
 			cluster.setVpcId(_ctx.stringValue("GetK8sClusterResponse.ClusterPage.ClusterList["+ i +"].VpcId"));
 			cluster.setVswitchId(_ctx.stringValue("GetK8sClusterResponse.ClusterPage.ClusterList["+ i +"].VswitchId"));
 			cluster.setSubNetCidr(_ctx.stringValue("GetK8sClusterResponse.ClusterPage.ClusterList["+ i +"].SubNetCidr"));
+			cluster.setMem(_ctx.integerValue("GetK8sClusterResponse.ClusterPage.ClusterList["+ i +"].Mem"));
+			cluster.setRegionId(_ctx.stringValue("GetK8sClusterResponse.ClusterPage.ClusterList["+ i +"].RegionId"));
 			cluster.setCsClusterStatus(_ctx.stringValue("GetK8sClusterResponse.ClusterPage.ClusterList["+ i +"].CsClusterStatus"));
+			cluster.setCpu(_ctx.integerValue("GetK8sClusterResponse.ClusterPage.ClusterList["+ i +"].Cpu"));
+			cluster.setNetworkMode(_ctx.integerValue("GetK8sClusterResponse.ClusterPage.ClusterList["+ i +"].NetworkMode"));
 			cluster.setCsClusterId(_ctx.stringValue("GetK8sClusterResponse.ClusterPage.ClusterList["+ i +"].CsClusterId"));
 			cluster.setDescription(_ctx.stringValue("GetK8sClusterResponse.ClusterPage.ClusterList["+ i +"].Description"));
+			cluster.setClusterType(_ctx.integerValue("GetK8sClusterResponse.ClusterPage.ClusterList["+ i +"].ClusterType"));
+			cluster.setClusterStatus(_ctx.integerValue("GetK8sClusterResponse.ClusterPage.ClusterList["+ i +"].ClusterStatus"));
+			cluster.setClusterName(_ctx.stringValue("GetK8sClusterResponse.ClusterPage.ClusterList["+ i +"].ClusterName"));
 			cluster.setNodeNum(_ctx.integerValue("GetK8sClusterResponse.ClusterPage.ClusterList["+ i +"].NodeNum"));
-			cluster.setCpu(_ctx.integerValue("GetK8sClusterResponse.ClusterPage.ClusterList["+ i +"].Cpu"));
-			cluster.setMem(_ctx.integerValue("GetK8sClusterResponse.ClusterPage.ClusterList["+ i +"].Mem"));
-			cluster.setNetworkMode(_ctx.integerValue("GetK8sClusterResponse.ClusterPage.ClusterList["+ i +"].NetworkMode"));
+			cluster.setClusterId(_ctx.stringValue("GetK8sClusterResponse.ClusterPage.ClusterList["+ i +"].ClusterId"));
+			cluster.setClusterImportStatus(_ctx.integerValue("GetK8sClusterResponse.ClusterPage.ClusterList["+ i +"].ClusterImportStatus"));
 
 			clusterList.add(cluster);
 		}

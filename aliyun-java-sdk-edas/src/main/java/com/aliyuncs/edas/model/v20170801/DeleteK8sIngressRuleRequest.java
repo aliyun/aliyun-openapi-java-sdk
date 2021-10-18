@@ -31,7 +31,7 @@ public class DeleteK8sIngressRuleRequest extends RoaAcsRequest<DeleteK8sIngressR
 
 	private String clusterId;
 	public DeleteK8sIngressRuleRequest() {
-		super("Edas", "2017-08-01", "DeleteK8sIngressRule", "Edas");
+		super("Edas", "2017-08-01", "DeleteK8sIngressRule", "edas");
 		setUriPattern("/pop/v5/k8s/acs/k8s_ingress");
 		setMethod(MethodType.DELETE);
 		try {

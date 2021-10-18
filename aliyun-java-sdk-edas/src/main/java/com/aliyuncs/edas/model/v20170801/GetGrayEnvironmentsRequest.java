@@ -27,7 +27,7 @@ public class GetGrayEnvironmentsRequest extends RoaAcsRequest<GetGrayEnvironment
 
 	private String logicalRegionId;
 	public GetGrayEnvironmentsRequest() {
-		super("Edas", "2017-08-01", "GetGrayEnvironments", "Edas");
+		super("Edas", "2017-08-01", "GetGrayEnvironments", "edas");
 		setUriPattern("/pop/v5/gray/env_list");
 		setMethod(MethodType.GET);
 		try {

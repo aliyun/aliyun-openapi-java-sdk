@@ -26,9 +26,9 @@ public class ScaleoutApplicationWithNewInstancesResponseUnmarshaller {
 	public static ScaleoutApplicationWithNewInstancesResponse unmarshall(ScaleoutApplicationWithNewInstancesResponse scaleoutApplicationWithNewInstancesResponse, UnmarshallerContext _ctx) {
 		
 		scaleoutApplicationWithNewInstancesResponse.setRequestId(_ctx.stringValue("ScaleoutApplicationWithNewInstancesResponse.RequestId"));
+		scaleoutApplicationWithNewInstancesResponse.setChangeOrderId(_ctx.stringValue("ScaleoutApplicationWithNewInstancesResponse.ChangeOrderId"));
 		scaleoutApplicationWithNewInstancesResponse.setCode(_ctx.integerValue("ScaleoutApplicationWithNewInstancesResponse.Code"));
 		scaleoutApplicationWithNewInstancesResponse.setMessage(_ctx.stringValue("ScaleoutApplicationWithNewInstancesResponse.Message"));
-		scaleoutApplicationWithNewInstancesResponse.setChangeOrderId(_ctx.stringValue("ScaleoutApplicationWithNewInstancesResponse.ChangeOrderId"));
 
 		List<String> instanceIds = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("ScaleoutApplicationWithNewInstancesResponse.InstanceIds.Length"); i++) {

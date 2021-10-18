@@ -41,7 +41,7 @@ public class GetSpringCloudTestMethodRequest extends RoaAcsRequest<GetSpringClou
 
 	private String methodController;
 	public GetSpringCloudTestMethodRequest() {
-		super("Edas", "2017-08-01", "GetSpringCloudTestMethod", "Edas");
+		super("Edas", "2017-08-01", "GetSpringCloudTestMethod", "edas");
 		setUriPattern("/pop/sp/api/mse/test/springcloud/method");
 		setMethod(MethodType.POST);
 		try {

@@ -35,9 +35,9 @@ public class AddMockRuleRequest extends RoaAcsRequest<AddMockRuleResponse> {
 
 	private String source;
 
-	private String providerAppName;
-
 	private Boolean enable;
+
+	private String providerAppName;
 
 	private String name;
 
@@ -45,9 +45,11 @@ public class AddMockRuleRequest extends RoaAcsRequest<AddMockRuleResponse> {
 
 	private String consumerAppsJson;
 
+	private Long mockType;
+
 	private String region;
 	public AddMockRuleRequest() {
-		super("Edas", "2017-08-01", "AddMockRule", "Edas");
+		super("Edas", "2017-08-01", "AddMockRule", "edas");
 		setUriPattern("/pop/sp/api/mock/addMockRule");
 		setMethod(MethodType.POST);
 		try {
@@ -111,17 +113,6 @@ public class AddMockRuleRequest extends RoaAcsRequest<AddMockRuleResponse> {
 		}
 	}
 
-	public String getProviderAppName() {
-		return this.providerAppName;
-	}
-
-	public void setProviderAppName(String providerAppName) {
-		this.providerAppName = providerAppName;
-		if(providerAppName != null){
-			putQueryParameter("ProviderAppName", providerAppName);
-		}
-	}
-
 	public Boolean getEnable() {
 		return this.enable;
 	}
@@ -130,6 +121,17 @@ public class AddMockRuleRequest extends RoaAcsRequest<AddMockRuleResponse> {
 		this.enable = enable;
 		if(enable != null){
 			putQueryParameter("Enable", enable.toString());
+		}
+	}
+
+	public String getProviderAppName() {
+		return this.providerAppName;
+	}
+
+	public void setProviderAppName(String providerAppName) {
+		this.providerAppName = providerAppName;
+		if(providerAppName != null){
+			putQueryParameter("ProviderAppName", providerAppName);
 		}
 	}
 
@@ -163,6 +165,17 @@ public class AddMockRuleRequest extends RoaAcsRequest<AddMockRuleResponse> {
 		this.consumerAppsJson = consumerAppsJson;
 		if(consumerAppsJson != null){
 			putQueryParameter("ConsumerAppsJson", consumerAppsJson);
+		}
+	}
+
+	public Long getMockType() {
+		return this.mockType;
+	}
+
+	public void setMockType(Long mockType) {
+		this.mockType = mockType;
+		if(mockType != null){
+			putQueryParameter("MockType", mockType.toString());
 		}
 	}
 

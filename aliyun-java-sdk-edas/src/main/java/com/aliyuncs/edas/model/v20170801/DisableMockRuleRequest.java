@@ -27,7 +27,7 @@ public class DisableMockRuleRequest extends RoaAcsRequest<DisableMockRuleRespons
 
 	private Long id;
 	public DisableMockRuleRequest() {
-		super("Edas", "2017-08-01", "DisableMockRule", "Edas");
+		super("Edas", "2017-08-01", "DisableMockRule", "edas");
 		setUriPattern("/pop/sp/api/mock/disableMockRule");
 		setMethod(MethodType.POST);
 		try {

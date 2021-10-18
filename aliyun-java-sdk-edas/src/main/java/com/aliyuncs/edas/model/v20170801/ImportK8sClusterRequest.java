@@ -33,7 +33,7 @@ public class ImportK8sClusterRequest extends RoaAcsRequest<ImportK8sClusterRespo
 
 	private String clusterId;
 	public ImportK8sClusterRequest() {
-		super("Edas", "2017-08-01", "ImportK8sCluster", "Edas");
+		super("Edas", "2017-08-01", "ImportK8sCluster", "edas");
 		setUriPattern("/pop/v5/import_k8s_cluster");
 		setMethod(MethodType.POST);
 		try {

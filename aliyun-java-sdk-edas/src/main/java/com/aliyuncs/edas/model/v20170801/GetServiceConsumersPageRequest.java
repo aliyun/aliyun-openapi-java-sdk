@@ -53,7 +53,7 @@ public class GetServiceConsumersPageRequest extends RoaAcsRequest<GetServiceCons
 
 	private String group;
 	public GetServiceConsumersPageRequest() {
-		super("Edas", "2017-08-01", "GetServiceConsumersPage", "Edas");
+		super("Edas", "2017-08-01", "GetServiceConsumersPage", "edas");
 		setUriPattern("/pop/sp/api/mseForOam/getServiceConsumersPage");
 		setMethod(MethodType.POST);
 		try {

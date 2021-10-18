@@ -95,7 +95,7 @@ public class CreateApplicationTemplateRequest extends RoaAcsRequest<CreateApplic
 
 	private String postStart;
 	public CreateApplicationTemplateRequest() {
-		super("Edas", "2017-08-01", "CreateApplicationTemplate", "Edas");
+		super("Edas", "2017-08-01", "CreateApplicationTemplate", "edas");
 		setUriPattern("/pop/v5/cnedas/app_template");
 		setMethod(MethodType.POST);
 		try {

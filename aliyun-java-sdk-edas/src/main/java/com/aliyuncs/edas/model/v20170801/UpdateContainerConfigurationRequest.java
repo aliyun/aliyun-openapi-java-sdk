@@ -39,7 +39,7 @@ public class UpdateContainerConfigurationRequest extends RoaAcsRequest<UpdateCon
 
 	private String contextPath;
 	public UpdateContainerConfigurationRequest() {
-		super("Edas", "2017-08-01", "UpdateContainerConfiguration", "Edas");
+		super("Edas", "2017-08-01", "UpdateContainerConfiguration", "edas");
 		setUriPattern("/pop/v5/app/container_config");
 		setMethod(MethodType.POST);
 		try {
