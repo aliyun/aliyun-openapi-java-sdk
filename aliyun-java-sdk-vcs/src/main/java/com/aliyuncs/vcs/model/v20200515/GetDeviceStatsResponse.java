@@ -14,15 +14,16 @@
 
 package com.aliyuncs.vcs.model.v20200515;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.vcs.transform.v20200515.GetDeviceLiveUrlResponseUnmarshaller;
+import com.aliyuncs.vcs.transform.v20200515.GetDeviceStatsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetDeviceLiveUrlResponse extends AcsResponse {
+public class GetDeviceStatsResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -30,11 +31,7 @@ public class GetDeviceLiveUrlResponse extends AcsResponse {
 
 	private String message;
 
-	private String outProtocol;
-
-	private Long streamType;
-
-	private String url;
+	private List<Result> data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -60,33 +57,50 @@ public class GetDeviceLiveUrlResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getOutProtocol() {
-		return this.outProtocol;
+	public List<Result> getData() {
+		return this.data;
 	}
 
-	public void setOutProtocol(String outProtocol) {
-		this.outProtocol = outProtocol;
+	public void setData(List<Result> data) {
+		this.data = data;
 	}
 
-	public Long getStreamType() {
-		return this.streamType;
-	}
+	public static class Result {
 
-	public void setStreamType(Long streamType) {
-		this.streamType = streamType;
-	}
+		private String deviceType;
 
-	public String getUrl() {
-		return this.url;
-	}
+		private String deviceStatus;
 
-	public void setUrl(String url) {
-		this.url = url;
+		private Long count;
+
+		public String getDeviceType() {
+			return this.deviceType;
+		}
+
+		public void setDeviceType(String deviceType) {
+			this.deviceType = deviceType;
+		}
+
+		public String getDeviceStatus() {
+			return this.deviceStatus;
+		}
+
+		public void setDeviceStatus(String deviceStatus) {
+			this.deviceStatus = deviceStatus;
+		}
+
+		public Long getCount() {
+			return this.count;
+		}
+
+		public void setCount(Long count) {
+			this.count = count;
+		}
 	}
 
 	@Override
-	public GetDeviceLiveUrlResponse getInstance(UnmarshallerContext context) {
-		return	GetDeviceLiveUrlResponseUnmarshaller.unmarshall(this, context);
+	public GetDeviceStatsResponse getInstance(UnmarshallerContext context) {
+		return	GetDeviceStatsResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

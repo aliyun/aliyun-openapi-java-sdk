@@ -27,6 +27,8 @@ public class DescribeIpcsRequest extends RpcAcsRequest<DescribeIpcsResponse> {
 
 	private String parentDeviceType;
 
+	private String deviceStatus;
+
 	private Long pageNum;
 
 	private String corpIdList;
@@ -55,6 +57,17 @@ public class DescribeIpcsRequest extends RpcAcsRequest<DescribeIpcsResponse> {
 		this.parentDeviceType = parentDeviceType;
 		if(parentDeviceType != null){
 			putBodyParameter("ParentDeviceType", parentDeviceType);
+		}
+	}
+
+	public String getDeviceStatus() {
+		return this.deviceStatus;
+	}
+
+	public void setDeviceStatus(String deviceStatus) {
+		this.deviceStatus = deviceStatus;
+		if(deviceStatus != null){
+			putBodyParameter("DeviceStatus", deviceStatus);
 		}
 	}
 

@@ -23,8 +23,8 @@ public class GetDeviceVideoUrlResponseUnmarshaller {
 	public static GetDeviceVideoUrlResponse unmarshall(GetDeviceVideoUrlResponse getDeviceVideoUrlResponse, UnmarshallerContext _ctx) {
 		
 		getDeviceVideoUrlResponse.setRequestId(_ctx.stringValue("GetDeviceVideoUrlResponse.RequestId"));
-		getDeviceVideoUrlResponse.setMessage(_ctx.stringValue("GetDeviceVideoUrlResponse.Message"));
 		getDeviceVideoUrlResponse.setCode(_ctx.stringValue("GetDeviceVideoUrlResponse.Code"));
+		getDeviceVideoUrlResponse.setMessage(_ctx.stringValue("GetDeviceVideoUrlResponse.Message"));
 		getDeviceVideoUrlResponse.setOutProtocol(_ctx.stringValue("GetDeviceVideoUrlResponse.OutProtocol"));
 		getDeviceVideoUrlResponse.setUrl(_ctx.stringValue("GetDeviceVideoUrlResponse.Url"));
 	 

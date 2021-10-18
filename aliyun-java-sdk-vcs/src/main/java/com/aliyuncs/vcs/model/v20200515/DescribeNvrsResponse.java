@@ -75,7 +75,7 @@ public class DescribeNvrsResponse extends AcsResponse {
 
 		private Long pageSize;
 
-		private List<RecordsItem> records;
+		private List<Record> records;
 
 		public Long getTotalCount() {
 			return this.totalCount;
@@ -109,15 +109,15 @@ public class DescribeNvrsResponse extends AcsResponse {
 			this.pageSize = pageSize;
 		}
 
-		public List<RecordsItem> getRecords() {
+		public List<Record> getRecords() {
 			return this.records;
 		}
 
-		public void setRecords(List<RecordsItem> records) {
+		public void setRecords(List<Record> records) {
 			this.records = records;
 		}
 
-		public static class RecordsItem {
+		public static class Record {
 
 			private String corpId;
 

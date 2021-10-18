@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.vcs.model.v20200515.DeleteDevicesResponse;
-import com.aliyuncs.vcs.model.v20200515.DeleteDevicesResponse.DataItem;
+import com.aliyuncs.vcs.model.v20200515.DeleteDevicesResponse.DeviceInfo;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -30,14 +30,14 @@ public class DeleteDevicesResponseUnmarshaller {
 		deleteDevicesResponse.setCode(_ctx.stringValue("DeleteDevicesResponse.Code"));
 		deleteDevicesResponse.setMessage(_ctx.stringValue("DeleteDevicesResponse.Message"));
 
-		List<DataItem> data = new ArrayList<DataItem>();
+		List<DeviceInfo> data = new ArrayList<DeviceInfo>();
 		for (int i = 0; i < _ctx.lengthValue("DeleteDevicesResponse.Data.Length"); i++) {
-			DataItem dataItem = new DataItem();
-			dataItem.setDeviceId(_ctx.stringValue("DeleteDevicesResponse.Data["+ i +"].DeviceId"));
-			dataItem.setDescription(_ctx.stringValue("DeleteDevicesResponse.Data["+ i +"].Description"));
-			dataItem.setCode(_ctx.stringValue("DeleteDevicesResponse.Data["+ i +"].Code"));
+			DeviceInfo deviceInfo = new DeviceInfo();
+			deviceInfo.setDeviceId(_ctx.stringValue("DeleteDevicesResponse.Data["+ i +"].DeviceId"));
+			deviceInfo.setCode(_ctx.stringValue("DeleteDevicesResponse.Data["+ i +"].Code"));
+			deviceInfo.setDescription(_ctx.stringValue("DeleteDevicesResponse.Data["+ i +"].Description"));
 
-			data.add(dataItem);
+			data.add(deviceInfo);
 		}
 		deleteDevicesResponse.setData(data);
 	 

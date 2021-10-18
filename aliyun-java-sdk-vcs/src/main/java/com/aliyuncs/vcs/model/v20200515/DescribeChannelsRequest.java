@@ -27,6 +27,8 @@ public class DescribeChannelsRequest extends RpcAcsRequest<DescribeChannelsRespo
 
 	private String nvrId;
 
+	private String deviceStatus;
+
 	private Long pageNum;
 
 	private Long showUnConfig;
@@ -51,6 +53,17 @@ public class DescribeChannelsRequest extends RpcAcsRequest<DescribeChannelsRespo
 		this.nvrId = nvrId;
 		if(nvrId != null){
 			putBodyParameter("NvrId", nvrId);
+		}
+	}
+
+	public String getDeviceStatus() {
+		return this.deviceStatus;
+	}
+
+	public void setDeviceStatus(String deviceStatus) {
+		this.deviceStatus = deviceStatus;
+		if(deviceStatus != null){
+			putBodyParameter("DeviceStatus", deviceStatus);
 		}
 	}
 

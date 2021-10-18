@@ -23,8 +23,8 @@ public class ModifyDeviceResponseUnmarshaller {
 	public static ModifyDeviceResponse unmarshall(ModifyDeviceResponse modifyDeviceResponse, UnmarshallerContext _ctx) {
 		
 		modifyDeviceResponse.setRequestId(_ctx.stringValue("ModifyDeviceResponse.RequestId"));
-		modifyDeviceResponse.setMessage(_ctx.stringValue("ModifyDeviceResponse.Message"));
 		modifyDeviceResponse.setCode(_ctx.stringValue("ModifyDeviceResponse.Code"));
+		modifyDeviceResponse.setMessage(_ctx.stringValue("ModifyDeviceResponse.Message"));
 	 
 	 	return modifyDeviceResponse;
 	}

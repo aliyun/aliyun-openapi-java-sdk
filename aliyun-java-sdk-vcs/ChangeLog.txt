@@ -1,3 +1,6 @@
+2021-10-18 Version: 1.8.0
+- The data service provides a search interface.
+
 2021-08-12 Version: 3.0.9
 - Create Device Update.
 

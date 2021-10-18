@@ -77,6 +77,8 @@ public class CreateDeviceRequest extends RpcAcsRequest<CreateDeviceResponse> {
 
 	private String deviceId;
 
+	private String activateCode;
+
 	private String deviceName;
 
 	private Long subDeviceCount;
@@ -372,6 +374,17 @@ public class CreateDeviceRequest extends RpcAcsRequest<CreateDeviceResponse> {
 		this.deviceId = deviceId;
 		if(deviceId != null){
 			putBodyParameter("DeviceId", deviceId);
+		}
+	}
+
+	public String getActivateCode() {
+		return this.activateCode;
+	}
+
+	public void setActivateCode(String activateCode) {
+		this.activateCode = activateCode;
+		if(activateCode != null){
+			putBodyParameter("ActivateCode", activateCode);
 		}
 	}
 

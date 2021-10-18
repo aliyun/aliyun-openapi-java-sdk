@@ -25,13 +25,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeIpcsResponse extends AcsResponse {
 
+	private String requestId;
+
 	private String code;
 
 	private String message;
 
-	private String requestId;
-
 	private Data data;
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
 
 	public String getCode() {
 		return this.code;
@@ -49,14 +57,6 @@ public class DescribeIpcsResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public Data getData() {
 		return this.data;
 	}
@@ -67,31 +67,15 @@ public class DescribeIpcsResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Long pageNum;
-
-		private Long pageSize;
-
 		private Long totalCount;
 
 		private Long totalPage;
 
-		private List<RecordsItem> records;
+		private Long pageNum;
 
-		public Long getPageNum() {
-			return this.pageNum;
-		}
+		private Long pageSize;
 
-		public void setPageNum(Long pageNum) {
-			this.pageNum = pageNum;
-		}
-
-		public Long getPageSize() {
-			return this.pageSize;
-		}
-
-		public void setPageSize(Long pageSize) {
-			this.pageSize = pageSize;
-		}
+		private List<Record> records;
 
 		public Long getTotalCount() {
 			return this.totalCount;
@@ -109,73 +93,61 @@ public class DescribeIpcsResponse extends AcsResponse {
 			this.totalPage = totalPage;
 		}
 
-		public List<RecordsItem> getRecords() {
+		public Long getPageNum() {
+			return this.pageNum;
+		}
+
+		public void setPageNum(Long pageNum) {
+			this.pageNum = pageNum;
+		}
+
+		public Long getPageSize() {
+			return this.pageSize;
+		}
+
+		public void setPageSize(Long pageSize) {
+			this.pageSize = pageSize;
+		}
+
+		public List<Record> getRecords() {
 			return this.records;
 		}
 
-		public void setRecords(List<RecordsItem> records) {
+		public void setRecords(List<Record> records) {
 			this.records = records;
 		}
 
-		public static class RecordsItem {
+		public static class Record {
 
 			private String corpId;
 
-			private String createTime;
-
-			private String modifyTime;
-
-			private String deviceAddress;
-
-			private String deviceId;
-
-			private String deviceName;
-
-			private String deviceType;
-
-			private String inProtocol;
-
-			private String latitude;
-
-			private String longitude;
-
-			private String deviceStatus;
-
-			private String streamStatus;
-
-			private String streamAction;
-
-			private String vendor;
-
 			private String serverId;
-
-			private String password;
-
-			private String serverPort;
 
 			private String serverIp;
 
 			private String serverRealm;
 
-			private String deviceSite;
+			private String serverPort;
+
+			private String deviceId;
+
+			private String password;
+
+			private String deviceName;
+
+			private String deviceAddress;
+
+			private String longitude;
+
+			private String latitude;
 
 			private String deviceDirection;
+
+			private String deviceSite;
 
 			private String deviceResolution;
 
 			private String deviceRate;
-
-			private String parentDeviceId;
-
-			private String deviceModel;
-
-			private String datasourceType;
-
-			private String regionName;
-
-			private String vap;
-
-			private String deviceSubType;
 
 			private String frameRate;
 
@@ -193,9 +165,35 @@ public class DescribeIpcsResponse extends AcsResponse {
 
 			private String oSDTimeY;
 
+			private String vendor;
+
+			private String deviceType;
+
+			private String deviceModel;
+
+			private String inProtocol;
+
 			private String deviceSn;
 
+			private String datasourceType;
+
+			private String deviceSubType;
+
 			private String deviceIp;
+
+			private String deviceStatus;
+
+			private String streamStatus;
+
+			private String streamAction;
+
+			private String parentDeviceId;
+
+			private String createTime;
+
+			private String modifyTime;
+
+			private String vap;
 
 			public String getCorpId() {
 				return this.corpId;
@@ -205,132 +203,12 @@ public class DescribeIpcsResponse extends AcsResponse {
 				this.corpId = corpId;
 			}
 
-			public String getCreateTime() {
-				return this.createTime;
-			}
-
-			public void setCreateTime(String createTime) {
-				this.createTime = createTime;
-			}
-
-			public String getModifyTime() {
-				return this.modifyTime;
-			}
-
-			public void setModifyTime(String modifyTime) {
-				this.modifyTime = modifyTime;
-			}
-
-			public String getDeviceAddress() {
-				return this.deviceAddress;
-			}
-
-			public void setDeviceAddress(String deviceAddress) {
-				this.deviceAddress = deviceAddress;
-			}
-
-			public String getDeviceId() {
-				return this.deviceId;
-			}
-
-			public void setDeviceId(String deviceId) {
-				this.deviceId = deviceId;
-			}
-
-			public String getDeviceName() {
-				return this.deviceName;
-			}
-
-			public void setDeviceName(String deviceName) {
-				this.deviceName = deviceName;
-			}
-
-			public String getDeviceType() {
-				return this.deviceType;
-			}
-
-			public void setDeviceType(String deviceType) {
-				this.deviceType = deviceType;
-			}
-
-			public String getInProtocol() {
-				return this.inProtocol;
-			}
-
-			public void setInProtocol(String inProtocol) {
-				this.inProtocol = inProtocol;
-			}
-
-			public String getLatitude() {
-				return this.latitude;
-			}
-
-			public void setLatitude(String latitude) {
-				this.latitude = latitude;
-			}
-
-			public String getLongitude() {
-				return this.longitude;
-			}
-
-			public void setLongitude(String longitude) {
-				this.longitude = longitude;
-			}
-
-			public String getDeviceStatus() {
-				return this.deviceStatus;
-			}
-
-			public void setDeviceStatus(String deviceStatus) {
-				this.deviceStatus = deviceStatus;
-			}
-
-			public String getStreamStatus() {
-				return this.streamStatus;
-			}
-
-			public void setStreamStatus(String streamStatus) {
-				this.streamStatus = streamStatus;
-			}
-
-			public String getStreamAction() {
-				return this.streamAction;
-			}
-
-			public void setStreamAction(String streamAction) {
-				this.streamAction = streamAction;
-			}
-
-			public String getVendor() {
-				return this.vendor;
-			}
-
-			public void setVendor(String vendor) {
-				this.vendor = vendor;
-			}
-
 			public String getServerId() {
 				return this.serverId;
 			}
 
 			public void setServerId(String serverId) {
 				this.serverId = serverId;
-			}
-
-			public String getPassword() {
-				return this.password;
-			}
-
-			public void setPassword(String password) {
-				this.password = password;
-			}
-
-			public String getServerPort() {
-				return this.serverPort;
-			}
-
-			public void setServerPort(String serverPort) {
-				this.serverPort = serverPort;
 			}
 
 			public String getServerIp() {
@@ -349,12 +227,60 @@ public class DescribeIpcsResponse extends AcsResponse {
 				this.serverRealm = serverRealm;
 			}
 
-			public String getDeviceSite() {
-				return this.deviceSite;
+			public String getServerPort() {
+				return this.serverPort;
 			}
 
-			public void setDeviceSite(String deviceSite) {
-				this.deviceSite = deviceSite;
+			public void setServerPort(String serverPort) {
+				this.serverPort = serverPort;
+			}
+
+			public String getDeviceId() {
+				return this.deviceId;
+			}
+
+			public void setDeviceId(String deviceId) {
+				this.deviceId = deviceId;
+			}
+
+			public String getPassword() {
+				return this.password;
+			}
+
+			public void setPassword(String password) {
+				this.password = password;
+			}
+
+			public String getDeviceName() {
+				return this.deviceName;
+			}
+
+			public void setDeviceName(String deviceName) {
+				this.deviceName = deviceName;
+			}
+
+			public String getDeviceAddress() {
+				return this.deviceAddress;
+			}
+
+			public void setDeviceAddress(String deviceAddress) {
+				this.deviceAddress = deviceAddress;
+			}
+
+			public String getLongitude() {
+				return this.longitude;
+			}
+
+			public void setLongitude(String longitude) {
+				this.longitude = longitude;
+			}
+
+			public String getLatitude() {
+				return this.latitude;
+			}
+
+			public void setLatitude(String latitude) {
+				this.latitude = latitude;
 			}
 
 			public String getDeviceDirection() {
@@ -363,6 +289,14 @@ public class DescribeIpcsResponse extends AcsResponse {
 
 			public void setDeviceDirection(String deviceDirection) {
 				this.deviceDirection = deviceDirection;
+			}
+
+			public String getDeviceSite() {
+				return this.deviceSite;
+			}
+
+			public void setDeviceSite(String deviceSite) {
+				this.deviceSite = deviceSite;
 			}
 
 			public String getDeviceResolution() {
@@ -379,54 +313,6 @@ public class DescribeIpcsResponse extends AcsResponse {
 
 			public void setDeviceRate(String deviceRate) {
 				this.deviceRate = deviceRate;
-			}
-
-			public String getParentDeviceId() {
-				return this.parentDeviceId;
-			}
-
-			public void setParentDeviceId(String parentDeviceId) {
-				this.parentDeviceId = parentDeviceId;
-			}
-
-			public String getDeviceModel() {
-				return this.deviceModel;
-			}
-
-			public void setDeviceModel(String deviceModel) {
-				this.deviceModel = deviceModel;
-			}
-
-			public String getDatasourceType() {
-				return this.datasourceType;
-			}
-
-			public void setDatasourceType(String datasourceType) {
-				this.datasourceType = datasourceType;
-			}
-
-			public String getRegionName() {
-				return this.regionName;
-			}
-
-			public void setRegionName(String regionName) {
-				this.regionName = regionName;
-			}
-
-			public String getVap() {
-				return this.vap;
-			}
-
-			public void setVap(String vap) {
-				this.vap = vap;
-			}
-
-			public String getDeviceSubType() {
-				return this.deviceSubType;
-			}
-
-			public void setDeviceSubType(String deviceSubType) {
-				this.deviceSubType = deviceSubType;
 			}
 
 			public String getFrameRate() {
@@ -493,6 +379,38 @@ public class DescribeIpcsResponse extends AcsResponse {
 				this.oSDTimeY = oSDTimeY;
 			}
 
+			public String getVendor() {
+				return this.vendor;
+			}
+
+			public void setVendor(String vendor) {
+				this.vendor = vendor;
+			}
+
+			public String getDeviceType() {
+				return this.deviceType;
+			}
+
+			public void setDeviceType(String deviceType) {
+				this.deviceType = deviceType;
+			}
+
+			public String getDeviceModel() {
+				return this.deviceModel;
+			}
+
+			public void setDeviceModel(String deviceModel) {
+				this.deviceModel = deviceModel;
+			}
+
+			public String getInProtocol() {
+				return this.inProtocol;
+			}
+
+			public void setInProtocol(String inProtocol) {
+				this.inProtocol = inProtocol;
+			}
+
 			public String getDeviceSn() {
 				return this.deviceSn;
 			}
@@ -501,12 +419,84 @@ public class DescribeIpcsResponse extends AcsResponse {
 				this.deviceSn = deviceSn;
 			}
 
+			public String getDatasourceType() {
+				return this.datasourceType;
+			}
+
+			public void setDatasourceType(String datasourceType) {
+				this.datasourceType = datasourceType;
+			}
+
+			public String getDeviceSubType() {
+				return this.deviceSubType;
+			}
+
+			public void setDeviceSubType(String deviceSubType) {
+				this.deviceSubType = deviceSubType;
+			}
+
 			public String getDeviceIp() {
 				return this.deviceIp;
 			}
 
 			public void setDeviceIp(String deviceIp) {
 				this.deviceIp = deviceIp;
+			}
+
+			public String getDeviceStatus() {
+				return this.deviceStatus;
+			}
+
+			public void setDeviceStatus(String deviceStatus) {
+				this.deviceStatus = deviceStatus;
+			}
+
+			public String getStreamStatus() {
+				return this.streamStatus;
+			}
+
+			public void setStreamStatus(String streamStatus) {
+				this.streamStatus = streamStatus;
+			}
+
+			public String getStreamAction() {
+				return this.streamAction;
+			}
+
+			public void setStreamAction(String streamAction) {
+				this.streamAction = streamAction;
+			}
+
+			public String getParentDeviceId() {
+				return this.parentDeviceId;
+			}
+
+			public void setParentDeviceId(String parentDeviceId) {
+				this.parentDeviceId = parentDeviceId;
+			}
+
+			public String getCreateTime() {
+				return this.createTime;
+			}
+
+			public void setCreateTime(String createTime) {
+				this.createTime = createTime;
+			}
+
+			public String getModifyTime() {
+				return this.modifyTime;
+			}
+
+			public void setModifyTime(String modifyTime) {
+				this.modifyTime = modifyTime;
+			}
+
+			public String getVap() {
+				return this.vap;
+			}
+
+			public void setVap(String vap) {
+				this.vap = vap;
 			}
 		}
 	}

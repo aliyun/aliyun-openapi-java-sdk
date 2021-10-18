@@ -25,13 +25,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DeleteDevicesResponse extends AcsResponse {
 
+	private String requestId;
+
 	private String code;
 
 	private String message;
 
-	private String requestId;
+	private List<DeviceInfo> data;
 
-	private List<DataItem> data;
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
 
 	public String getCode() {
 		return this.code;
@@ -49,29 +57,21 @@ public class DeleteDevicesResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public List<DataItem> getData() {
+	public List<DeviceInfo> getData() {
 		return this.data;
 	}
 
-	public void setData(List<DataItem> data) {
+	public void setData(List<DeviceInfo> data) {
 		this.data = data;
 	}
 
-	public static class DataItem {
+	public static class DeviceInfo {
 
 		private String deviceId;
 
-		private String description;
-
 		private String code;
+
+		private String description;
 
 		public String getDeviceId() {
 			return this.deviceId;
@@ -81,20 +81,20 @@ public class DeleteDevicesResponse extends AcsResponse {
 			this.deviceId = deviceId;
 		}
 
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
 		public String getCode() {
 			return this.code;
 		}
 
 		public void setCode(String code) {
 			this.code = code;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
 		}
 	}
 

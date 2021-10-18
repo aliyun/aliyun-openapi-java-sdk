@@ -23,9 +23,9 @@ public class GetDevicePictureResponseUnmarshaller {
 	public static GetDevicePictureResponse unmarshall(GetDevicePictureResponse getDevicePictureResponse, UnmarshallerContext _ctx) {
 		
 		getDevicePictureResponse.setRequestId(_ctx.stringValue("GetDevicePictureResponse.RequestId"));
+		getDevicePictureResponse.setCode(_ctx.stringValue("GetDevicePictureResponse.Code"));
 		getDevicePictureResponse.setMessage(_ctx.stringValue("GetDevicePictureResponse.Message"));
 		getDevicePictureResponse.setData(_ctx.stringValue("GetDevicePictureResponse.Data"));
-		getDevicePictureResponse.setCode(_ctx.stringValue("GetDevicePictureResponse.Code"));
 	 
 	 	return getDevicePictureResponse;
 	}

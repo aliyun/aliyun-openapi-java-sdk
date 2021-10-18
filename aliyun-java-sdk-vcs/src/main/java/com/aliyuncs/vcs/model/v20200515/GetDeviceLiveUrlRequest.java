@@ -27,7 +27,7 @@ public class GetDeviceLiveUrlRequest extends RpcAcsRequest<GetDeviceLiveUrlRespo
 
 	private String outProtocol;
 
-	private Integer streamType;
+	private String streamType;
 
 	private String corpId;
 
@@ -54,14 +54,14 @@ public class GetDeviceLiveUrlRequest extends RpcAcsRequest<GetDeviceLiveUrlRespo
 		}
 	}
 
-	public Integer getStreamType() {
+	public String getStreamType() {
 		return this.streamType;
 	}
 
-	public void setStreamType(Integer streamType) {
+	public void setStreamType(String streamType) {
 		this.streamType = streamType;
 		if(streamType != null){
-			putBodyParameter("StreamType", streamType.toString());
+			putBodyParameter("StreamType", streamType);
 		}
 	}
 

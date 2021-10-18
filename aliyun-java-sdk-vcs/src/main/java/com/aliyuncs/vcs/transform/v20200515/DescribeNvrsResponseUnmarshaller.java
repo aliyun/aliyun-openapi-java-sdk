@@ -19,8 +19,8 @@ import java.util.List;
 
 import com.aliyuncs.vcs.model.v20200515.DescribeNvrsResponse;
 import com.aliyuncs.vcs.model.v20200515.DescribeNvrsResponse.Data;
-import com.aliyuncs.vcs.model.v20200515.DescribeNvrsResponse.Data.RecordsItem;
-import com.aliyuncs.vcs.model.v20200515.DescribeNvrsResponse.Data.RecordsItem.SubDeviceInfoItem;
+import com.aliyuncs.vcs.model.v20200515.DescribeNvrsResponse.Data.Record;
+import com.aliyuncs.vcs.model.v20200515.DescribeNvrsResponse.Data.Record.SubDeviceInfoItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -38,30 +38,30 @@ public class DescribeNvrsResponseUnmarshaller {
 		data.setPageNum(_ctx.longValue("DescribeNvrsResponse.Data.PageNum"));
 		data.setPageSize(_ctx.longValue("DescribeNvrsResponse.Data.PageSize"));
 
-		List<RecordsItem> records = new ArrayList<RecordsItem>();
+		List<Record> records = new ArrayList<Record>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeNvrsResponse.Data.Records.Length"); i++) {
-			RecordsItem recordsItem = new RecordsItem();
-			recordsItem.setCorpId(_ctx.stringValue("DescribeNvrsResponse.Data.Records["+ i +"].CorpId"));
-			recordsItem.setServerId(_ctx.stringValue("DescribeNvrsResponse.Data.Records["+ i +"].ServerId"));
-			recordsItem.setServerIp(_ctx.stringValue("DescribeNvrsResponse.Data.Records["+ i +"].ServerIp"));
-			recordsItem.setServerRealm(_ctx.stringValue("DescribeNvrsResponse.Data.Records["+ i +"].ServerRealm"));
-			recordsItem.setServerPort(_ctx.stringValue("DescribeNvrsResponse.Data.Records["+ i +"].ServerPort"));
-			recordsItem.setDeviceId(_ctx.stringValue("DescribeNvrsResponse.Data.Records["+ i +"].DeviceId"));
-			recordsItem.setPassword(_ctx.stringValue("DescribeNvrsResponse.Data.Records["+ i +"].Password"));
-			recordsItem.setDeviceName(_ctx.stringValue("DescribeNvrsResponse.Data.Records["+ i +"].DeviceName"));
-			recordsItem.setDeviceAddress(_ctx.stringValue("DescribeNvrsResponse.Data.Records["+ i +"].DeviceAddress"));
-			recordsItem.setLongitude(_ctx.stringValue("DescribeNvrsResponse.Data.Records["+ i +"].Longitude"));
-			recordsItem.setLatitude(_ctx.stringValue("DescribeNvrsResponse.Data.Records["+ i +"].Latitude"));
-			recordsItem.setVendor(_ctx.stringValue("DescribeNvrsResponse.Data.Records["+ i +"].Vendor"));
-			recordsItem.setDeviceType(_ctx.stringValue("DescribeNvrsResponse.Data.Records["+ i +"].DeviceType"));
-			recordsItem.setInProtocol(_ctx.stringValue("DescribeNvrsResponse.Data.Records["+ i +"].InProtocol"));
-			recordsItem.setDeviceSn(_ctx.stringValue("DescribeNvrsResponse.Data.Records["+ i +"].DeviceSn"));
-			recordsItem.setDatasourceType(_ctx.stringValue("DescribeNvrsResponse.Data.Records["+ i +"].DatasourceType"));
-			recordsItem.setDeviceStatus(_ctx.stringValue("DescribeNvrsResponse.Data.Records["+ i +"].DeviceStatus"));
-			recordsItem.setSubDeviceCount(_ctx.stringValue("DescribeNvrsResponse.Data.Records["+ i +"].SubDeviceCount"));
-			recordsItem.setCreateTime(_ctx.stringValue("DescribeNvrsResponse.Data.Records["+ i +"].CreateTime"));
-			recordsItem.setModifyTime(_ctx.stringValue("DescribeNvrsResponse.Data.Records["+ i +"].ModifyTime"));
-			recordsItem.setDeviceModel(_ctx.stringValue("DescribeNvrsResponse.Data.Records["+ i +"].DeviceModel"));
+			Record record = new Record();
+			record.setCorpId(_ctx.stringValue("DescribeNvrsResponse.Data.Records["+ i +"].CorpId"));
+			record.setServerId(_ctx.stringValue("DescribeNvrsResponse.Data.Records["+ i +"].ServerId"));
+			record.setServerIp(_ctx.stringValue("DescribeNvrsResponse.Data.Records["+ i +"].ServerIp"));
+			record.setServerRealm(_ctx.stringValue("DescribeNvrsResponse.Data.Records["+ i +"].ServerRealm"));
+			record.setServerPort(_ctx.stringValue("DescribeNvrsResponse.Data.Records["+ i +"].ServerPort"));
+			record.setDeviceId(_ctx.stringValue("DescribeNvrsResponse.Data.Records["+ i +"].DeviceId"));
+			record.setPassword(_ctx.stringValue("DescribeNvrsResponse.Data.Records["+ i +"].Password"));
+			record.setDeviceName(_ctx.stringValue("DescribeNvrsResponse.Data.Records["+ i +"].DeviceName"));
+			record.setDeviceAddress(_ctx.stringValue("DescribeNvrsResponse.Data.Records["+ i +"].DeviceAddress"));
+			record.setLongitude(_ctx.stringValue("DescribeNvrsResponse.Data.Records["+ i +"].Longitude"));
+			record.setLatitude(_ctx.stringValue("DescribeNvrsResponse.Data.Records["+ i +"].Latitude"));
+			record.setVendor(_ctx.stringValue("DescribeNvrsResponse.Data.Records["+ i +"].Vendor"));
+			record.setDeviceType(_ctx.stringValue("DescribeNvrsResponse.Data.Records["+ i +"].DeviceType"));
+			record.setInProtocol(_ctx.stringValue("DescribeNvrsResponse.Data.Records["+ i +"].InProtocol"));
+			record.setDeviceSn(_ctx.stringValue("DescribeNvrsResponse.Data.Records["+ i +"].DeviceSn"));
+			record.setDatasourceType(_ctx.stringValue("DescribeNvrsResponse.Data.Records["+ i +"].DatasourceType"));
+			record.setDeviceStatus(_ctx.stringValue("DescribeNvrsResponse.Data.Records["+ i +"].DeviceStatus"));
+			record.setSubDeviceCount(_ctx.stringValue("DescribeNvrsResponse.Data.Records["+ i +"].SubDeviceCount"));
+			record.setCreateTime(_ctx.stringValue("DescribeNvrsResponse.Data.Records["+ i +"].CreateTime"));
+			record.setModifyTime(_ctx.stringValue("DescribeNvrsResponse.Data.Records["+ i +"].ModifyTime"));
+			record.setDeviceModel(_ctx.stringValue("DescribeNvrsResponse.Data.Records["+ i +"].DeviceModel"));
 
 			List<SubDeviceInfoItem> subDeviceInfo = new ArrayList<SubDeviceInfoItem>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeNvrsResponse.Data.Records["+ i +"].SubDeviceInfo.Length"); j++) {
@@ -70,9 +70,9 @@ public class DescribeNvrsResponseUnmarshaller {
 
 				subDeviceInfo.add(subDeviceInfoItem);
 			}
-			recordsItem.setSubDeviceInfo(subDeviceInfo);
+			record.setSubDeviceInfo(subDeviceInfo);
 
-			records.add(recordsItem);
+			records.add(record);
 		}
 		data.setRecords(records);
 		describeNvrsResponse.setData(data);
