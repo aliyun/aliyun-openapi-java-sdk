@@ -27,11 +27,15 @@ public class ModifyDomainRequest extends RpcAcsRequest<ModifyDomainResponse> {
 
 	private Integer ipFollowStatus;
 
+	private String sniHost;
+
 	private String httpPort;
 
 	private String http2Port;
 
 	private Integer writeTime;
+
+	private Integer sniStatus;
 
 	private Integer accessHeaderMode;
 
@@ -84,6 +88,17 @@ public class ModifyDomainRequest extends RpcAcsRequest<ModifyDomainResponse> {
 		}
 	}
 
+	public String getSniHost() {
+		return this.sniHost;
+	}
+
+	public void setSniHost(String sniHost) {
+		this.sniHost = sniHost;
+		if(sniHost != null){
+			putQueryParameter("SniHost", sniHost);
+		}
+	}
+
 	public String getHttpPort() {
 		return this.httpPort;
 	}
@@ -114,6 +129,17 @@ public class ModifyDomainRequest extends RpcAcsRequest<ModifyDomainResponse> {
 		this.writeTime = writeTime;
 		if(writeTime != null){
 			putQueryParameter("WriteTime", writeTime.toString());
+		}
+	}
+
+	public Integer getSniStatus() {
+		return this.sniStatus;
+	}
+
+	public void setSniStatus(Integer sniStatus) {
+		this.sniStatus = sniStatus;
+		if(sniStatus != null){
+			putQueryParameter("SniStatus", sniStatus.toString());
 		}
 	}
 

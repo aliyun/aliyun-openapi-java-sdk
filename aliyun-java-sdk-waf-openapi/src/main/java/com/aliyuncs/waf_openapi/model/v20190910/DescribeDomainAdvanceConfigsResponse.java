@@ -69,44 +69,44 @@ public class DescribeDomainAdvanceConfigsResponse extends AcsResponse {
 
 		public static class Profile {
 
-			private String cname;
-
-			private Integer resolvedType;
-
-			private Integer vipServiceStatus;
-
-			private Integer certStatus;
-
-			private Integer exclusiveVipStatus;
-
 			private Integer ipv6Status;
-
-			private String httpPort;
-
-			private String httpsPort;
-
-			private String http2Port;
-
-			private String rs;
-
-			private Integer clusterType;
 
 			private String gSLBStatus;
 
-			public String getCname() {
-				return this.cname;
+			private Integer vipServiceStatus;
+
+			private Integer clusterType;
+
+			private Integer exclusiveVipStatus;
+
+			private String cname;
+
+			private Integer certStatus;
+
+			private Integer resolvedType;
+
+			private List<Integer> http2Port;
+
+			private List<Integer> httpPort;
+
+			private List<String> rs;
+
+			private List<Integer> httpsPort;
+
+			public Integer getIpv6Status() {
+				return this.ipv6Status;
 			}
 
-			public void setCname(String cname) {
-				this.cname = cname;
+			public void setIpv6Status(Integer ipv6Status) {
+				this.ipv6Status = ipv6Status;
 			}
 
-			public Integer getResolvedType() {
-				return this.resolvedType;
+			public String getGSLBStatus() {
+				return this.gSLBStatus;
 			}
 
-			public void setResolvedType(Integer resolvedType) {
-				this.resolvedType = resolvedType;
+			public void setGSLBStatus(String gSLBStatus) {
+				this.gSLBStatus = gSLBStatus;
 			}
 
 			public Integer getVipServiceStatus() {
@@ -117,12 +117,12 @@ public class DescribeDomainAdvanceConfigsResponse extends AcsResponse {
 				this.vipServiceStatus = vipServiceStatus;
 			}
 
-			public Integer getCertStatus() {
-				return this.certStatus;
+			public Integer getClusterType() {
+				return this.clusterType;
 			}
 
-			public void setCertStatus(Integer certStatus) {
-				this.certStatus = certStatus;
+			public void setClusterType(Integer clusterType) {
+				this.clusterType = clusterType;
 			}
 
 			public Integer getExclusiveVipStatus() {
@@ -133,60 +133,60 @@ public class DescribeDomainAdvanceConfigsResponse extends AcsResponse {
 				this.exclusiveVipStatus = exclusiveVipStatus;
 			}
 
-			public Integer getIpv6Status() {
-				return this.ipv6Status;
+			public String getCname() {
+				return this.cname;
 			}
 
-			public void setIpv6Status(Integer ipv6Status) {
-				this.ipv6Status = ipv6Status;
+			public void setCname(String cname) {
+				this.cname = cname;
 			}
 
-			public String getHttpPort() {
-				return this.httpPort;
+			public Integer getCertStatus() {
+				return this.certStatus;
 			}
 
-			public void setHttpPort(String httpPort) {
-				this.httpPort = httpPort;
+			public void setCertStatus(Integer certStatus) {
+				this.certStatus = certStatus;
 			}
 
-			public String getHttpsPort() {
-				return this.httpsPort;
+			public Integer getResolvedType() {
+				return this.resolvedType;
 			}
 
-			public void setHttpsPort(String httpsPort) {
-				this.httpsPort = httpsPort;
+			public void setResolvedType(Integer resolvedType) {
+				this.resolvedType = resolvedType;
 			}
 
-			public String getHttp2Port() {
+			public List<Integer> getHttp2Port() {
 				return this.http2Port;
 			}
 
-			public void setHttp2Port(String http2Port) {
+			public void setHttp2Port(List<Integer> http2Port) {
 				this.http2Port = http2Port;
 			}
 
-			public String getRs() {
+			public List<Integer> getHttpPort() {
+				return this.httpPort;
+			}
+
+			public void setHttpPort(List<Integer> httpPort) {
+				this.httpPort = httpPort;
+			}
+
+			public List<String> getRs() {
 				return this.rs;
 			}
 
-			public void setRs(String rs) {
+			public void setRs(List<String> rs) {
 				this.rs = rs;
 			}
 
-			public Integer getClusterType() {
-				return this.clusterType;
+			public List<Integer> getHttpsPort() {
+				return this.httpsPort;
 			}
 
-			public void setClusterType(Integer clusterType) {
-				this.clusterType = clusterType;
-			}
-
-			public String getGSLBStatus() {
-				return this.gSLBStatus;
-			}
-
-			public void setGSLBStatus(String gSLBStatus) {
-				this.gSLBStatus = gSLBStatus;
+			public void setHttpsPort(List<Integer> httpsPort) {
+				this.httpsPort = httpsPort;
 			}
 		}
 	}

@@ -75,6 +75,10 @@ public class DescribeDomainResponse extends AcsResponse {
 
 		private String accessType;
 
+		private Integer sniStatus;
+
+		private String sniHost;
+
 		private List<LogHeader> logHeaders;
 
 		private List<CloudNativeInstancesItem> cloudNativeInstances;
@@ -199,6 +203,22 @@ public class DescribeDomainResponse extends AcsResponse {
 
 		public void setAccessType(String accessType) {
 			this.accessType = accessType;
+		}
+
+		public Integer getSniStatus() {
+			return this.sniStatus;
+		}
+
+		public void setSniStatus(Integer sniStatus) {
+			this.sniStatus = sniStatus;
+		}
+
+		public String getSniHost() {
+			return this.sniHost;
+		}
+
+		public void setSniHost(String sniHost) {
+			this.sniHost = sniHost;
 		}
 
 		public List<LogHeader> getLogHeaders() {

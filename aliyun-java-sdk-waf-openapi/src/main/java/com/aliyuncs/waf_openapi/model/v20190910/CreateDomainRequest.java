@@ -27,6 +27,8 @@ public class CreateDomainRequest extends RpcAcsRequest<CreateDomainResponse> {
 
 	private Integer ipFollowStatus;
 
+	private String sniHost;
+
 	private String resourceGroupId;
 
 	private String httpPort;
@@ -34,6 +36,8 @@ public class CreateDomainRequest extends RpcAcsRequest<CreateDomainResponse> {
 	private String http2Port;
 
 	private Integer writeTime;
+
+	private Integer sniStatus;
 
 	private Integer accessHeaderMode;
 
@@ -86,6 +90,17 @@ public class CreateDomainRequest extends RpcAcsRequest<CreateDomainResponse> {
 		}
 	}
 
+	public String getSniHost() {
+		return this.sniHost;
+	}
+
+	public void setSniHost(String sniHost) {
+		this.sniHost = sniHost;
+		if(sniHost != null){
+			putQueryParameter("SniHost", sniHost);
+		}
+	}
+
 	public String getResourceGroupId() {
 		return this.resourceGroupId;
 	}
@@ -127,6 +142,17 @@ public class CreateDomainRequest extends RpcAcsRequest<CreateDomainResponse> {
 		this.writeTime = writeTime;
 		if(writeTime != null){
 			putQueryParameter("WriteTime", writeTime.toString());
+		}
+	}
+
+	public Integer getSniStatus() {
+		return this.sniStatus;
+	}
+
+	public void setSniStatus(Integer sniStatus) {
+		this.sniStatus = sniStatus;
+		if(sniStatus != null){
+			putQueryParameter("SniStatus", sniStatus.toString());
 		}
 	}
 

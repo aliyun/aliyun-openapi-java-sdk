@@ -46,6 +46,8 @@ public class DescribeDomainResponseUnmarshaller {
 		domain.setWriteTime(_ctx.integerValue("DescribeDomainResponse.Domain.WriteTime"));
 		domain.setResourceGroupId(_ctx.stringValue("DescribeDomainResponse.Domain.ResourceGroupId"));
 		domain.setAccessType(_ctx.stringValue("DescribeDomainResponse.Domain.AccessType"));
+		domain.setSniStatus(_ctx.integerValue("DescribeDomainResponse.Domain.SniStatus"));
+		domain.setSniHost(_ctx.stringValue("DescribeDomainResponse.Domain.SniHost"));
 
 		List<String> sourceIps = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDomainResponse.Domain.SourceIps.Length"); i++) {

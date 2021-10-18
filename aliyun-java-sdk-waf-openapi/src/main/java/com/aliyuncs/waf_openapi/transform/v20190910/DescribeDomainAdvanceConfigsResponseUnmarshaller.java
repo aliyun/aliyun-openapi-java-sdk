@@ -35,18 +35,38 @@ public class DescribeDomainAdvanceConfigsResponseUnmarshaller {
 			domainConfig.setDomain(_ctx.stringValue("DescribeDomainAdvanceConfigsResponse.DomainConfigs["+ i +"].Domain"));
 
 			Profile profile = new Profile();
-			profile.setCname(_ctx.stringValue("DescribeDomainAdvanceConfigsResponse.DomainConfigs["+ i +"].Profile.Cname"));
-			profile.setResolvedType(_ctx.integerValue("DescribeDomainAdvanceConfigsResponse.DomainConfigs["+ i +"].Profile.ResolvedType"));
-			profile.setVipServiceStatus(_ctx.integerValue("DescribeDomainAdvanceConfigsResponse.DomainConfigs["+ i +"].Profile.VipServiceStatus"));
-			profile.setCertStatus(_ctx.integerValue("DescribeDomainAdvanceConfigsResponse.DomainConfigs["+ i +"].Profile.CertStatus"));
-			profile.setExclusiveVipStatus(_ctx.integerValue("DescribeDomainAdvanceConfigsResponse.DomainConfigs["+ i +"].Profile.ExclusiveVipStatus"));
 			profile.setIpv6Status(_ctx.integerValue("DescribeDomainAdvanceConfigsResponse.DomainConfigs["+ i +"].Profile.Ipv6Status"));
-			profile.setHttpPort(_ctx.stringValue("DescribeDomainAdvanceConfigsResponse.DomainConfigs["+ i +"].Profile.HttpPort"));
-			profile.setHttpsPort(_ctx.stringValue("DescribeDomainAdvanceConfigsResponse.DomainConfigs["+ i +"].Profile.HttpsPort"));
-			profile.setHttp2Port(_ctx.stringValue("DescribeDomainAdvanceConfigsResponse.DomainConfigs["+ i +"].Profile.Http2Port"));
-			profile.setRs(_ctx.stringValue("DescribeDomainAdvanceConfigsResponse.DomainConfigs["+ i +"].Profile.Rs"));
-			profile.setClusterType(_ctx.integerValue("DescribeDomainAdvanceConfigsResponse.DomainConfigs["+ i +"].Profile.ClusterType"));
 			profile.setGSLBStatus(_ctx.stringValue("DescribeDomainAdvanceConfigsResponse.DomainConfigs["+ i +"].Profile.GSLBStatus"));
+			profile.setVipServiceStatus(_ctx.integerValue("DescribeDomainAdvanceConfigsResponse.DomainConfigs["+ i +"].Profile.VipServiceStatus"));
+			profile.setClusterType(_ctx.integerValue("DescribeDomainAdvanceConfigsResponse.DomainConfigs["+ i +"].Profile.ClusterType"));
+			profile.setExclusiveVipStatus(_ctx.integerValue("DescribeDomainAdvanceConfigsResponse.DomainConfigs["+ i +"].Profile.ExclusiveVipStatus"));
+			profile.setCname(_ctx.stringValue("DescribeDomainAdvanceConfigsResponse.DomainConfigs["+ i +"].Profile.Cname"));
+			profile.setCertStatus(_ctx.integerValue("DescribeDomainAdvanceConfigsResponse.DomainConfigs["+ i +"].Profile.CertStatus"));
+			profile.setResolvedType(_ctx.integerValue("DescribeDomainAdvanceConfigsResponse.DomainConfigs["+ i +"].Profile.ResolvedType"));
+
+			List<Integer> http2Port = new ArrayList<Integer>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeDomainAdvanceConfigsResponse.DomainConfigs["+ i +"].Profile.Http2Port.Length"); j++) {
+				http2Port.add(_ctx.integerValue("DescribeDomainAdvanceConfigsResponse.DomainConfigs["+ i +"].Profile.Http2Port["+ j +"]"));
+			}
+			profile.setHttp2Port(http2Port);
+
+			List<Integer> httpPort = new ArrayList<Integer>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeDomainAdvanceConfigsResponse.DomainConfigs["+ i +"].Profile.HttpPort.Length"); j++) {
+				httpPort.add(_ctx.integerValue("DescribeDomainAdvanceConfigsResponse.DomainConfigs["+ i +"].Profile.HttpPort["+ j +"]"));
+			}
+			profile.setHttpPort(httpPort);
+
+			List<String> rs = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeDomainAdvanceConfigsResponse.DomainConfigs["+ i +"].Profile.Rs.Length"); j++) {
+				rs.add(_ctx.stringValue("DescribeDomainAdvanceConfigsResponse.DomainConfigs["+ i +"].Profile.Rs["+ j +"]"));
+			}
+			profile.setRs(rs);
+
+			List<Integer> httpsPort = new ArrayList<Integer>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeDomainAdvanceConfigsResponse.DomainConfigs["+ i +"].Profile.HttpsPort.Length"); j++) {
+				httpsPort.add(_ctx.integerValue("DescribeDomainAdvanceConfigsResponse.DomainConfigs["+ i +"].Profile.HttpsPort["+ j +"]"));
+			}
+			profile.setHttpsPort(httpsPort);
 			domainConfig.setProfile(profile);
 
 			domainConfigs.add(domainConfig);
