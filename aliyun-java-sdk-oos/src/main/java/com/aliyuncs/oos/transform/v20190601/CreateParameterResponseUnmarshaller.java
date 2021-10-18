@@ -39,6 +39,7 @@ public class CreateParameterResponseUnmarshaller {
 		parameter.setType(_ctx.stringValue("CreateParameterResponse.Parameter.Type"));
 		parameter.setConstraints(_ctx.stringValue("CreateParameterResponse.Parameter.Constraints"));
 		parameter.setTags(_ctx.mapValue("CreateParameterResponse.Parameter.Tags"));
+		parameter.setResourceGroupId(_ctx.stringValue("CreateParameterResponse.Parameter.ResourceGroupId"));
 		createParameterResponse.setParameter(parameter);
 	 
 	 	return createParameterResponse;

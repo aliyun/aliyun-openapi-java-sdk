@@ -29,7 +29,7 @@ public class GetTemplateRequest extends RpcAcsRequest<GetTemplateResponse> {
 
 	private String templateName;
 	public GetTemplateRequest() {
-		super("oos", "2019-06-01", "GetTemplate");
+		super("oos", "2019-06-01", "GetTemplate", "oos");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

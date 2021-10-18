@@ -33,6 +33,8 @@ public class StartExecutionRequest extends RpcAcsRequest<StartExecutionResponse>
 
 	private String mode;
 
+	private String resourceGroupId;
+
 	private String templateVersion;
 
 	private String templateName;
@@ -49,7 +51,7 @@ public class StartExecutionRequest extends RpcAcsRequest<StartExecutionResponse>
 
 	private String parameters;
 	public StartExecutionRequest() {
-		super("oos", "2019-06-01", "StartExecution");
+		super("oos", "2019-06-01", "StartExecution", "oos");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -87,6 +89,17 @@ public class StartExecutionRequest extends RpcAcsRequest<StartExecutionResponse>
 		this.mode = mode;
 		if(mode != null){
 			putQueryParameter("Mode", mode);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

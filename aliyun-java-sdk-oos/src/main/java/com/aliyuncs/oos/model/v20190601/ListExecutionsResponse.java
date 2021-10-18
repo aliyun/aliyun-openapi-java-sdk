@@ -126,6 +126,8 @@ public class ListExecutionsResponse extends AcsResponse {
 
 		private String resourceStatus;
 
+		private String resourceGroupId;
+
 		private List<CurrentTask> currentTasks;
 
 		public String getExecutionId() {
@@ -358,6 +360,14 @@ public class ListExecutionsResponse extends AcsResponse {
 
 		public void setResourceStatus(String resourceStatus) {
 			this.resourceStatus = resourceStatus;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
 		}
 
 		public List<CurrentTask> getCurrentTasks() {

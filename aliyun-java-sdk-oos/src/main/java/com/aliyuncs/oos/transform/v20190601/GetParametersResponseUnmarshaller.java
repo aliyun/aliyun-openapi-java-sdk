@@ -51,6 +51,7 @@ public class GetParametersResponseUnmarshaller {
 			parameter.setValue(_ctx.stringValue("GetParametersResponse.Parameters["+ i +"].Value"));
 			parameter.setConstraints(_ctx.stringValue("GetParametersResponse.Parameters["+ i +"].Constraints"));
 			parameter.setTags(_ctx.mapValue("GetParametersResponse.Parameters["+ i +"].Tags"));
+			parameter.setResourceGroupId(_ctx.stringValue("GetParametersResponse.Parameters["+ i +"].ResourceGroupId"));
 
 			parameters.add(parameter);
 		}

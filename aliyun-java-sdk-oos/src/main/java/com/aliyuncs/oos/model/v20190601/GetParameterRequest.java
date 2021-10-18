@@ -25,16 +25,29 @@ import com.aliyuncs.oos.Endpoint;
 public class GetParameterRequest extends RpcAcsRequest<GetParameterResponse> {
 	   
 
+	private String resourceGroupId;
+
 	private Integer parameterVersion;
 
 	private String name;
 	public GetParameterRequest() {
-		super("oos", "2019-06-01", "GetParameter");
+		super("oos", "2019-06-01", "GetParameter", "oos");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
 	}
 
 	public Integer getParameterVersion() {

@@ -36,6 +36,7 @@ public class SetServiceSettingsResponseUnmarshaller {
 			serviceSetting.setDeliveryOssKeyPrefix(_ctx.stringValue("SetServiceSettingsResponse.ServiceSettings["+ i +"].DeliveryOssKeyPrefix"));
 			serviceSetting.setDeliverySlsEnabled(_ctx.booleanValue("SetServiceSettingsResponse.ServiceSettings["+ i +"].DeliverySlsEnabled"));
 			serviceSetting.setDeliverySlsProjectName(_ctx.stringValue("SetServiceSettingsResponse.ServiceSettings["+ i +"].DeliverySlsProjectName"));
+			serviceSetting.setRdcEnterpriseId(_ctx.stringValue("SetServiceSettingsResponse.ServiceSettings["+ i +"].RdcEnterpriseId"));
 
 			serviceSettings.add(serviceSetting);
 		}

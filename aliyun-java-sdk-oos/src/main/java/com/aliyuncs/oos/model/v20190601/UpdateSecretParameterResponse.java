@@ -72,6 +72,8 @@ public class UpdateSecretParameterResponse extends AcsResponse {
 
 		private String tags;
 
+		private String resourceGroupId;
+
 		public String getId() {
 			return this.id;
 		}
@@ -174,6 +176,14 @@ public class UpdateSecretParameterResponse extends AcsResponse {
 
 		public void setTags(String tags) {
 			this.tags = tags;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
 		}
 	}
 

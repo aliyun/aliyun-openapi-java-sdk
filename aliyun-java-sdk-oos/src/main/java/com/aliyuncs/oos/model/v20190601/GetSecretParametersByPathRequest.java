@@ -35,7 +35,7 @@ public class GetSecretParametersByPathRequest extends RpcAcsRequest<GetSecretPar
 
 	private Integer maxResults;
 	public GetSecretParametersByPathRequest() {
-		super("oos", "2019-06-01", "GetSecretParametersByPath");
+		super("oos", "2019-06-01", "GetSecretParametersByPath", "oos");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

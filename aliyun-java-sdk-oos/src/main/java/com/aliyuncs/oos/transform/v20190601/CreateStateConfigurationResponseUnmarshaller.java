@@ -39,6 +39,7 @@ public class CreateStateConfigurationResponseUnmarshaller {
 		stateConfiguration.setScheduleExpression(_ctx.stringValue("CreateStateConfigurationResponse.StateConfiguration.ScheduleExpression"));
 		stateConfiguration.setTargets(_ctx.stringValue("CreateStateConfigurationResponse.StateConfiguration.Targets"));
 		stateConfiguration.setTags(_ctx.mapValue("CreateStateConfigurationResponse.StateConfiguration.Tags"));
+		stateConfiguration.setResourceGroupId(_ctx.stringValue("CreateStateConfigurationResponse.StateConfiguration.ResourceGroupId"));
 		createStateConfigurationResponse.setStateConfiguration(stateConfiguration);
 	 
 	 	return createStateConfigurationResponse;

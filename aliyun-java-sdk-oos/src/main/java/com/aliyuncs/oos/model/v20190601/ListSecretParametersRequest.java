@@ -27,21 +27,23 @@ public class ListSecretParametersRequest extends RpcAcsRequest<ListSecretParamet
 
 	private Boolean recursive;
 
-	private String tags;
-
 	private String path;
 
+	private String resourceGroupId;
+
 	private String nextToken;
+
+	private String sortOrder;
+
+	private String tags;
 
 	private String name;
 
 	private Integer maxResults;
 
-	private String sortOrder;
-
 	private String sortField;
 	public ListSecretParametersRequest() {
-		super("oos", "2019-06-01", "ListSecretParameters");
+		super("oos", "2019-06-01", "ListSecretParameters", "oos");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -60,17 +62,6 @@ public class ListSecretParametersRequest extends RpcAcsRequest<ListSecretParamet
 		}
 	}
 
-	public String getTags() {
-		return this.tags;
-	}
-
-	public void setTags(String tags) {
-		this.tags = tags;
-		if(tags != null){
-			putQueryParameter("Tags", tags);
-		}
-	}
-
 	public String getPath() {
 		return this.path;
 	}
@@ -82,6 +73,17 @@ public class ListSecretParametersRequest extends RpcAcsRequest<ListSecretParamet
 		}
 	}
 
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
 	public String getNextToken() {
 		return this.nextToken;
 	}
@@ -90,6 +92,28 @@ public class ListSecretParametersRequest extends RpcAcsRequest<ListSecretParamet
 		this.nextToken = nextToken;
 		if(nextToken != null){
 			putQueryParameter("NextToken", nextToken);
+		}
+	}
+
+	public String getSortOrder() {
+		return this.sortOrder;
+	}
+
+	public void setSortOrder(String sortOrder) {
+		this.sortOrder = sortOrder;
+		if(sortOrder != null){
+			putQueryParameter("SortOrder", sortOrder);
+		}
+	}
+
+	public String getTags() {
+		return this.tags;
+	}
+
+	public void setTags(String tags) {
+		this.tags = tags;
+		if(tags != null){
+			putQueryParameter("Tags", tags);
 		}
 	}
 
@@ -112,17 +136,6 @@ public class ListSecretParametersRequest extends RpcAcsRequest<ListSecretParamet
 		this.maxResults = maxResults;
 		if(maxResults != null){
 			putQueryParameter("MaxResults", maxResults.toString());
-		}
-	}
-
-	public String getSortOrder() {
-		return this.sortOrder;
-	}
-
-	public void setSortOrder(String sortOrder) {
-		this.sortOrder = sortOrder;
-		if(sortOrder != null){
-			putQueryParameter("SortOrder", sortOrder);
 		}
 	}
 

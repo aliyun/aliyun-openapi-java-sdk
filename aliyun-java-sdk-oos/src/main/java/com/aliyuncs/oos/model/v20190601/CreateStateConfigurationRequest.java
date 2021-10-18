@@ -33,6 +33,8 @@ public class CreateStateConfigurationRequest extends RpcAcsRequest<CreateStateCo
 
 	private String targets;
 
+	private String resourceGroupId;
+
 	private String templateVersion;
 
 	private String scheduleExpression;
@@ -45,7 +47,7 @@ public class CreateStateConfigurationRequest extends RpcAcsRequest<CreateStateCo
 
 	private String parameters;
 	public CreateStateConfigurationRequest() {
-		super("oos", "2019-06-01", "CreateStateConfiguration");
+		super("oos", "2019-06-01", "CreateStateConfiguration", "oos");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -94,6 +96,17 @@ public class CreateStateConfigurationRequest extends RpcAcsRequest<CreateStateCo
 		this.targets = targets;
 		if(targets != null){
 			putQueryParameter("Targets", targets);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

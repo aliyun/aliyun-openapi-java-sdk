@@ -29,7 +29,7 @@ public class DeleteTemplateRequest extends RpcAcsRequest<DeleteTemplateResponse>
 
 	private String templateName;
 	public DeleteTemplateRequest() {
-		super("oos", "2019-06-01", "DeleteTemplate");
+		super("oos", "2019-06-01", "DeleteTemplate", "oos");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

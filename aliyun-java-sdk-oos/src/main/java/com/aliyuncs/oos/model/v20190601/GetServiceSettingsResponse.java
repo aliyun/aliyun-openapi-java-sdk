@@ -57,6 +57,8 @@ public class GetServiceSettingsResponse extends AcsResponse {
 
 		private String deliverySlsProjectName;
 
+		private String rdcEnterpriseId;
+
 		public Boolean getDeliveryOssEnabled() {
 			return this.deliveryOssEnabled;
 		}
@@ -95,6 +97,14 @@ public class GetServiceSettingsResponse extends AcsResponse {
 
 		public void setDeliverySlsProjectName(String deliverySlsProjectName) {
 			this.deliverySlsProjectName = deliverySlsProjectName;
+		}
+
+		public String getRdcEnterpriseId() {
+			return this.rdcEnterpriseId;
+		}
+
+		public void setRdcEnterpriseId(String rdcEnterpriseId) {
+			this.rdcEnterpriseId = rdcEnterpriseId;
 		}
 	}
 

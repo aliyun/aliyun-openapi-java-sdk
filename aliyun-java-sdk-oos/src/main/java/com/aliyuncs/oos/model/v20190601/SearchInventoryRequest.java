@@ -34,7 +34,7 @@ public class SearchInventoryRequest extends RpcAcsRequest<SearchInventoryRespons
 
 	private Integer maxResults;
 	public SearchInventoryRequest() {
-		super("oos", "2019-06-01", "SearchInventory");
+		super("oos", "2019-06-01", "SearchInventory", "oos");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

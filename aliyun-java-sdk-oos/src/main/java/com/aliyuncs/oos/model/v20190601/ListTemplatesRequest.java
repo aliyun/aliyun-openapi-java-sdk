@@ -27,6 +27,8 @@ import com.aliyuncs.oos.Endpoint;
 public class ListTemplatesRequest extends RpcAcsRequest<ListTemplatesResponse> {
 	   
 
+	private String resourceGroupId;
+
 	private String createdDateBefore;
 
 	private String createdBy;
@@ -55,12 +57,23 @@ public class ListTemplatesRequest extends RpcAcsRequest<ListTemplatesResponse> {
 
 	private String category;
 	public ListTemplatesRequest() {
-		super("oos", "2019-06-01", "ListTemplates");
+		super("oos", "2019-06-01", "ListTemplates", "oos");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
 	}
 
 	public String getCreatedDateBefore() {

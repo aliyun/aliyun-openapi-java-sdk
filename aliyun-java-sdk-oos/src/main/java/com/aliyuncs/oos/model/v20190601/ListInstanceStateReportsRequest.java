@@ -33,7 +33,7 @@ public class ListInstanceStateReportsRequest extends RpcAcsRequest<ListInstanceS
 
 	private String stateConfigurationId;
 	public ListInstanceStateReportsRequest() {
-		super("oos", "2019-06-01", "ListInstanceStateReports");
+		super("oos", "2019-06-01", "ListInstanceStateReports", "oos");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

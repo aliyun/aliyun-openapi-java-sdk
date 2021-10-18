@@ -40,6 +40,7 @@ public class GetParameterResponseUnmarshaller {
 		parameter.setValue(_ctx.stringValue("GetParameterResponse.Parameter.Value"));
 		parameter.setConstraints(_ctx.stringValue("GetParameterResponse.Parameter.Constraints"));
 		parameter.setTags(_ctx.mapValue("GetParameterResponse.Parameter.Tags"));
+		parameter.setResourceGroupId(_ctx.stringValue("GetParameterResponse.Parameter.ResourceGroupId"));
 		getParameterResponse.setParameter(parameter);
 	 
 	 	return getParameterResponse;

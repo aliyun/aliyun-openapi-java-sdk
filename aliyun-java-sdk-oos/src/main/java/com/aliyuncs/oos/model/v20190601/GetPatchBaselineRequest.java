@@ -27,7 +27,7 @@ public class GetPatchBaselineRequest extends RpcAcsRequest<GetPatchBaselineRespo
 
 	private String name;
 	public GetPatchBaselineRequest() {
-		super("oos", "2019-06-01", "GetPatchBaseline");
+		super("oos", "2019-06-01", "GetPatchBaseline", "oos");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -33,6 +33,8 @@ public class CreateSecretParameterRequest extends RpcAcsRequest<CreateSecretPara
 
 	private String constraints;
 
+	private String resourceGroupId;
+
 	private String value;
 
 	private String keyId;
@@ -41,7 +43,7 @@ public class CreateSecretParameterRequest extends RpcAcsRequest<CreateSecretPara
 
 	private String name;
 	public CreateSecretParameterRequest() {
-		super("oos", "2019-06-01", "CreateSecretParameter");
+		super("oos", "2019-06-01", "CreateSecretParameter", "oos");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -90,6 +92,17 @@ public class CreateSecretParameterRequest extends RpcAcsRequest<CreateSecretPara
 		this.constraints = constraints;
 		if(constraints != null){
 			putQueryParameter("Constraints", constraints);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

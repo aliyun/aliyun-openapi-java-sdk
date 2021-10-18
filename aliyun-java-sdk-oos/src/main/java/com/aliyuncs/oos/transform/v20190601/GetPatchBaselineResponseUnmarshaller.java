@@ -36,6 +36,7 @@ public class GetPatchBaselineResponseUnmarshaller {
 		patchBaseline.setShareType(_ctx.stringValue("GetPatchBaselineResponse.PatchBaseline.ShareType"));
 		patchBaseline.setOperationSystem(_ctx.stringValue("GetPatchBaselineResponse.PatchBaseline.OperationSystem"));
 		patchBaseline.setApprovalRules(_ctx.stringValue("GetPatchBaselineResponse.PatchBaseline.ApprovalRules"));
+		patchBaseline.setIsDefault(_ctx.booleanValue("GetPatchBaselineResponse.PatchBaseline.IsDefault"));
 		getPatchBaselineResponse.setPatchBaseline(patchBaseline);
 	 
 	 	return getPatchBaselineResponse;

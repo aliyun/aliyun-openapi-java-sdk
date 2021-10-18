@@ -53,6 +53,7 @@ public class StartExecutionResponseUnmarshaller {
 		execution.setRamRole(_ctx.stringValue("StartExecutionResponse.Execution.RamRole"));
 		execution.setTags(_ctx.mapValue("StartExecutionResponse.Execution.Tags"));
 		execution.setDescription(_ctx.stringValue("StartExecutionResponse.Execution.Description"));
+		execution.setResourceGroupId(_ctx.stringValue("StartExecutionResponse.Execution.ResourceGroupId"));
 
 		List<CurrentTask> currentTasks = new ArrayList<CurrentTask>();
 		for (int i = 0; i < _ctx.lengthValue("StartExecutionResponse.Execution.CurrentTasks.Length"); i++) {

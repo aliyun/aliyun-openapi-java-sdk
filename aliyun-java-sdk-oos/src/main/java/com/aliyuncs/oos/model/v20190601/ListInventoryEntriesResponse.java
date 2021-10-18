@@ -26,29 +26,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListInventoryEntriesResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String nextToken;
 
-	private String instanceId;
-
-	private String captureTime;
-
-	private String typeName;
+	private String requestId;
 
 	private String schemaVersion;
 
 	private Integer maxResults;
 
+	private String captureTime;
+
+	private String typeName;
+
+	private String instanceId;
+
 	private List<Map<Object,Object>> entries;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getNextToken() {
 		return this.nextToken;
@@ -58,12 +50,28 @@ public class ListInventoryEntriesResponse extends AcsResponse {
 		this.nextToken = nextToken;
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getSchemaVersion() {
+		return this.schemaVersion;
+	}
+
+	public void setSchemaVersion(String schemaVersion) {
+		this.schemaVersion = schemaVersion;
+	}
+
+	public Integer getMaxResults() {
+		return this.maxResults;
+	}
+
+	public void setMaxResults(Integer maxResults) {
+		this.maxResults = maxResults;
 	}
 
 	public String getCaptureTime() {
@@ -82,20 +90,12 @@ public class ListInventoryEntriesResponse extends AcsResponse {
 		this.typeName = typeName;
 	}
 
-	public String getSchemaVersion() {
-		return this.schemaVersion;
+	public String getInstanceId() {
+		return this.instanceId;
 	}
 
-	public void setSchemaVersion(String schemaVersion) {
-		this.schemaVersion = schemaVersion;
-	}
-
-	public Integer getMaxResults() {
-		return this.maxResults;
-	}
-
-	public void setMaxResults(Integer maxResults) {
-		this.maxResults = maxResults;
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
 	}
 
 	public List<Map<Object,Object>> getEntries() {

@@ -92,6 +92,8 @@ public class ListSecretParametersResponse extends AcsResponse {
 
 		private Map<Object,Object> tags;
 
+		private String resourceGroupId;
+
 		public String getName() {
 			return this.name;
 		}
@@ -186,6 +188,14 @@ public class ListSecretParametersResponse extends AcsResponse {
 
 		public void setTags(Map<Object,Object> tags) {
 			this.tags = tags;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
 		}
 	}
 

@@ -33,7 +33,7 @@ public class ListTemplateVersionsRequest extends RpcAcsRequest<ListTemplateVersi
 
 	private String shareType;
 	public ListTemplateVersionsRequest() {
-		super("oos", "2019-06-01", "ListTemplateVersions");
+		super("oos", "2019-06-01", "ListTemplateVersions", "oos");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

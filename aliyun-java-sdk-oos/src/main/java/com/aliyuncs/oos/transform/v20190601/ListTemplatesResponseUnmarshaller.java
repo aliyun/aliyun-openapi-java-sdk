@@ -51,6 +51,7 @@ public class ListTemplatesResponseUnmarshaller {
 			template.setTags(_ctx.mapValue("ListTemplatesResponse.Templates["+ i +"].Tags"));
 			template.setCategory(_ctx.stringValue("ListTemplatesResponse.Templates["+ i +"].Category"));
 			template.setTemplateType(_ctx.stringValue("ListTemplatesResponse.Templates["+ i +"].TemplateType"));
+			template.setResourceGroupId(_ctx.stringValue("ListTemplatesResponse.Templates["+ i +"].ResourceGroupId"));
 
 			templates.add(template);
 		}

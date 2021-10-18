@@ -33,6 +33,8 @@ public class UpdateStateConfigurationRequest extends RpcAcsRequest<UpdateStateCo
 
 	private String targets;
 
+	private String resourceGroupId;
+
 	private String scheduleExpression;
 
 	private String configureMode;
@@ -43,7 +45,7 @@ public class UpdateStateConfigurationRequest extends RpcAcsRequest<UpdateStateCo
 
 	private String stateConfigurationId;
 	public UpdateStateConfigurationRequest() {
-		super("oos", "2019-06-01", "UpdateStateConfiguration");
+		super("oos", "2019-06-01", "UpdateStateConfiguration", "oos");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -92,6 +94,17 @@ public class UpdateStateConfigurationRequest extends RpcAcsRequest<UpdateStateCo
 		this.targets = targets;
 		if(targets != null){
 			putQueryParameter("Targets", targets);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

@@ -102,6 +102,8 @@ public class ListTemplatesResponse extends AcsResponse {
 
 		private String templateType;
 
+		private String resourceGroupId;
+
 		public String getTemplateName() {
 			return this.templateName;
 		}
@@ -236,6 +238,14 @@ public class ListTemplatesResponse extends AcsResponse {
 
 		public void setTemplateType(String templateType) {
 			this.templateType = templateType;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
 		}
 	}
 

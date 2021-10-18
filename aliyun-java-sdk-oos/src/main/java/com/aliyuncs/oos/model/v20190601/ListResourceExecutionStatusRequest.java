@@ -31,7 +31,7 @@ public class ListResourceExecutionStatusRequest extends RpcAcsRequest<ListResour
 
 	private Integer maxResults;
 	public ListResourceExecutionStatusRequest() {
-		super("oos", "2019-06-01", "ListResourceExecutionStatus");
+		super("oos", "2019-06-01", "ListResourceExecutionStatus", "oos");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -40,6 +40,7 @@ public class UpdateTemplateResponseUnmarshaller {
 		template.setTemplateVersion(_ctx.stringValue("UpdateTemplateResponse.Template.TemplateVersion"));
 		template.setHasTrigger(_ctx.booleanValue("UpdateTemplateResponse.Template.HasTrigger"));
 		template.setTags(_ctx.mapValue("UpdateTemplateResponse.Template.Tags"));
+		template.setResourceGroupId(_ctx.stringValue("UpdateTemplateResponse.Template.ResourceGroupId"));
 		updateTemplateResponse.setTemplate(template);
 	 
 	 	return updateTemplateResponse;

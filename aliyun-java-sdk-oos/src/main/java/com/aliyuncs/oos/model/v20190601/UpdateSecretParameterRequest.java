@@ -29,11 +29,13 @@ public class UpdateSecretParameterRequest extends RpcAcsRequest<UpdateSecretPara
 
 	private String tags;
 
+	private String resourceGroupId;
+
 	private String name;
 
 	private String value;
 	public UpdateSecretParameterRequest() {
-		super("oos", "2019-06-01", "UpdateSecretParameter");
+		super("oos", "2019-06-01", "UpdateSecretParameter", "oos");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -60,6 +62,17 @@ public class UpdateSecretParameterRequest extends RpcAcsRequest<UpdateSecretPara
 		this.tags = tags;
 		if(tags != null){
 			putQueryParameter("Tags", tags);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

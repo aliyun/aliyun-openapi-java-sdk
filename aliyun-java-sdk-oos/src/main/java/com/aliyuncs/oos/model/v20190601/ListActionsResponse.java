@@ -79,6 +79,8 @@ public class ListActionsResponse extends AcsResponse {
 
 		private String templateVersion;
 
+		private Integer popularity;
+
 		public String getOOSActionName() {
 			return this.oOSActionName;
 		}
@@ -125,6 +127,14 @@ public class ListActionsResponse extends AcsResponse {
 
 		public void setTemplateVersion(String templateVersion) {
 			this.templateVersion = templateVersion;
+		}
+
+		public Integer getPopularity() {
+			return this.popularity;
+		}
+
+		public void setPopularity(Integer popularity) {
+			this.popularity = popularity;
 		}
 	}
 

@@ -33,7 +33,7 @@ public class GetInventorySchemaRequest extends RpcAcsRequest<GetInventorySchemaR
 
 	private String typeName;
 	public GetInventorySchemaRequest() {
-		super("oos", "2019-06-01", "GetInventorySchema");
+		super("oos", "2019-06-01", "GetInventorySchema", "oos");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

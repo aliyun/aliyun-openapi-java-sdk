@@ -28,11 +28,11 @@ public class ListInventoryEntriesResponseUnmarshaller {
 		
 		listInventoryEntriesResponse.setRequestId(_ctx.stringValue("ListInventoryEntriesResponse.RequestId"));
 		listInventoryEntriesResponse.setNextToken(_ctx.stringValue("ListInventoryEntriesResponse.NextToken"));
-		listInventoryEntriesResponse.setInstanceId(_ctx.stringValue("ListInventoryEntriesResponse.InstanceId"));
-		listInventoryEntriesResponse.setCaptureTime(_ctx.stringValue("ListInventoryEntriesResponse.CaptureTime"));
-		listInventoryEntriesResponse.setTypeName(_ctx.stringValue("ListInventoryEntriesResponse.TypeName"));
 		listInventoryEntriesResponse.setSchemaVersion(_ctx.stringValue("ListInventoryEntriesResponse.SchemaVersion"));
 		listInventoryEntriesResponse.setMaxResults(_ctx.integerValue("ListInventoryEntriesResponse.MaxResults"));
+		listInventoryEntriesResponse.setCaptureTime(_ctx.stringValue("ListInventoryEntriesResponse.CaptureTime"));
+		listInventoryEntriesResponse.setTypeName(_ctx.stringValue("ListInventoryEntriesResponse.TypeName"));
+		listInventoryEntriesResponse.setInstanceId(_ctx.stringValue("ListInventoryEntriesResponse.InstanceId"));
 
 		List<Map<Object, Object>> entries = _ctx.listMapValue("ListInventoryEntriesResponse.Entries");
 		listInventoryEntriesResponse.setEntries(entries);

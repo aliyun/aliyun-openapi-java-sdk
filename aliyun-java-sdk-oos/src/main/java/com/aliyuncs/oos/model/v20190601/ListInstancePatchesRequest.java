@@ -30,8 +30,10 @@ public class ListInstancePatchesRequest extends RpcAcsRequest<ListInstancePatche
 	private String nextToken;
 
 	private Integer maxResults;
+
+	private String patchStatuses;
 	public ListInstancePatchesRequest() {
-		super("oos", "2019-06-01", "ListInstancePatches");
+		super("oos", "2019-06-01", "ListInstancePatches", "oos");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -69,6 +71,17 @@ public class ListInstancePatchesRequest extends RpcAcsRequest<ListInstancePatche
 		this.maxResults = maxResults;
 		if(maxResults != null){
 			putQueryParameter("MaxResults", maxResults.toString());
+		}
+	}
+
+	public String getPatchStatuses() {
+		return this.patchStatuses;
+	}
+
+	public void setPatchStatuses(String patchStatuses) {
+		this.patchStatuses = patchStatuses;
+		if(patchStatuses != null){
+			putQueryParameter("PatchStatuses", patchStatuses);
 		}
 	}
 

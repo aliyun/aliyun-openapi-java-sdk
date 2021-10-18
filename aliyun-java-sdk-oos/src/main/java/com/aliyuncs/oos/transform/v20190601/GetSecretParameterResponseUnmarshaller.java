@@ -41,6 +41,7 @@ public class GetSecretParameterResponseUnmarshaller {
 		parameter.setConstraints(_ctx.stringValue("GetSecretParameterResponse.Parameter.Constraints"));
 		parameter.setKeyId(_ctx.stringValue("GetSecretParameterResponse.Parameter.KeyId"));
 		parameter.setTags(_ctx.mapValue("GetSecretParameterResponse.Parameter.Tags"));
+		parameter.setResourceGroupId(_ctx.stringValue("GetSecretParameterResponse.Parameter.ResourceGroupId"));
 		getSecretParameterResponse.setParameter(parameter);
 	 
 	 	return getSecretParameterResponse;

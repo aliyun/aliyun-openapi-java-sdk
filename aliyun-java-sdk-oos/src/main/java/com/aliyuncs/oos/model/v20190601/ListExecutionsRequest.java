@@ -35,6 +35,8 @@ public class ListExecutionsRequest extends RpcAcsRequest<ListExecutionsResponse>
 
 	private String executionId;
 
+	private String resourceGroupId;
+
 	private String ramRole;
 
 	private String nextToken;
@@ -67,7 +69,7 @@ public class ListExecutionsRequest extends RpcAcsRequest<ListExecutionsResponse>
 
 	private String status;
 	public ListExecutionsRequest() {
-		super("oos", "2019-06-01", "ListExecutions");
+		super("oos", "2019-06-01", "ListExecutions", "oos");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -116,6 +118,17 @@ public class ListExecutionsRequest extends RpcAcsRequest<ListExecutionsResponse>
 		this.executionId = executionId;
 		if(executionId != null){
 			putQueryParameter("ExecutionId", executionId);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

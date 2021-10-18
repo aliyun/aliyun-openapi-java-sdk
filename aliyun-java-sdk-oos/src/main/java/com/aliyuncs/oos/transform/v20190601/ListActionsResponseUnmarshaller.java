@@ -39,6 +39,7 @@ public class ListActionsResponseUnmarshaller {
 			action.setCreatedDate(_ctx.stringValue("ListActionsResponse.Actions["+ i +"].CreatedDate"));
 			action.setProperties(_ctx.stringValue("ListActionsResponse.Actions["+ i +"].Properties"));
 			action.setTemplateVersion(_ctx.stringValue("ListActionsResponse.Actions["+ i +"].TemplateVersion"));
+			action.setPopularity(_ctx.integerValue("ListActionsResponse.Actions["+ i +"].Popularity"));
 
 			actions.add(action);
 		}

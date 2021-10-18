@@ -27,6 +27,8 @@ public class SetServiceSettingsRequest extends RpcAcsRequest<SetServiceSettingsR
 
 	private Boolean deliverySlsEnabled;
 
+	private String rdcEnterpriseId;
+
 	private String deliveryOssKeyPrefix;
 
 	private Boolean deliveryOssEnabled;
@@ -35,7 +37,7 @@ public class SetServiceSettingsRequest extends RpcAcsRequest<SetServiceSettingsR
 
 	private String deliveryOssBucketName;
 	public SetServiceSettingsRequest() {
-		super("oos", "2019-06-01", "SetServiceSettings");
+		super("oos", "2019-06-01", "SetServiceSettings", "oos");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -51,6 +53,17 @@ public class SetServiceSettingsRequest extends RpcAcsRequest<SetServiceSettingsR
 		this.deliverySlsEnabled = deliverySlsEnabled;
 		if(deliverySlsEnabled != null){
 			putQueryParameter("DeliverySlsEnabled", deliverySlsEnabled.toString());
+		}
+	}
+
+	public String getRdcEnterpriseId() {
+		return this.rdcEnterpriseId;
+	}
+
+	public void setRdcEnterpriseId(String rdcEnterpriseId) {
+		this.rdcEnterpriseId = rdcEnterpriseId;
+		if(rdcEnterpriseId != null){
+			putQueryParameter("RdcEnterpriseId", rdcEnterpriseId);
 		}
 	}
 

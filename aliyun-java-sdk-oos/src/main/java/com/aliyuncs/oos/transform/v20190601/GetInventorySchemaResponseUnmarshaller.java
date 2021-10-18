@@ -29,6 +29,7 @@ public class GetInventorySchemaResponseUnmarshaller {
 		
 		getInventorySchemaResponse.setRequestId(_ctx.stringValue("GetInventorySchemaResponse.RequestId"));
 		getInventorySchemaResponse.setNextToken(_ctx.stringValue("GetInventorySchemaResponse.NextToken"));
+		getInventorySchemaResponse.setMaxResults(_ctx.stringValue("GetInventorySchemaResponse.MaxResults"));
 
 		List<Schema> schemas = new ArrayList<Schema>();
 		for (int i = 0; i < _ctx.lengthValue("GetInventorySchemaResponse.Schemas.Length"); i++) {

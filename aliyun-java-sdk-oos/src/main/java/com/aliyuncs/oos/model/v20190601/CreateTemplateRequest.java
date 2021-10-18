@@ -31,11 +31,13 @@ public class CreateTemplateRequest extends RpcAcsRequest<CreateTemplateResponse>
 
 	private Map<Object,Object> tags;
 
+	private String resourceGroupId;
+
 	private String templateName;
 
 	private String versionName;
 	public CreateTemplateRequest() {
-		super("oos", "2019-06-01", "CreateTemplate");
+		super("oos", "2019-06-01", "CreateTemplate", "oos");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -62,6 +64,17 @@ public class CreateTemplateRequest extends RpcAcsRequest<CreateTemplateResponse>
 		this.tags = tags;
 		if(tags != null){
 			putQueryParameter("Tags", new Gson().toJson(tags));
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

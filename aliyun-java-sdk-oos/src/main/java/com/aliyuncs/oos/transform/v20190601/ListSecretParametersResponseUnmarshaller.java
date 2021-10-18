@@ -46,6 +46,7 @@ public class ListSecretParametersResponseUnmarshaller {
 			parameter.setType(_ctx.stringValue("ListSecretParametersResponse.Parameters["+ i +"].Type"));
 			parameter.setKeyId(_ctx.stringValue("ListSecretParametersResponse.Parameters["+ i +"].KeyId"));
 			parameter.setTags(_ctx.mapValue("ListSecretParametersResponse.Parameters["+ i +"].Tags"));
+			parameter.setResourceGroupId(_ctx.stringValue("ListSecretParametersResponse.Parameters["+ i +"].ResourceGroupId"));
 
 			parameters.add(parameter);
 		}

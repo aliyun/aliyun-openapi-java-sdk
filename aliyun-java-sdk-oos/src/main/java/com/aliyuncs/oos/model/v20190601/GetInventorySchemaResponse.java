@@ -29,6 +29,8 @@ public class GetInventorySchemaResponse extends AcsResponse {
 
 	private String nextToken;
 
+	private String maxResults;
+
 	private List<Schema> schemas;
 
 	public String getRequestId() {
@@ -45,6 +47,14 @@ public class GetInventorySchemaResponse extends AcsResponse {
 
 	public void setNextToken(String nextToken) {
 		this.nextToken = nextToken;
+	}
+
+	public String getMaxResults() {
+		return this.maxResults;
+	}
+
+	public void setMaxResults(String maxResults) {
+		this.maxResults = maxResults;
 	}
 
 	public List<Schema> getSchemas() {

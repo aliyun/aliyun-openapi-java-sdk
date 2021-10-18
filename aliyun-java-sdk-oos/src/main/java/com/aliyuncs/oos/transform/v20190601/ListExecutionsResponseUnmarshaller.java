@@ -64,6 +64,7 @@ public class ListExecutionsResponseUnmarshaller {
 			execution.setLastTriggerStatus(_ctx.stringValue("ListExecutionsResponse.Executions["+ i +"].LastTriggerStatus"));
 			execution.setLastSuccessfulTriggerTime(_ctx.stringValue("ListExecutionsResponse.Executions["+ i +"].LastSuccessfulTriggerTime"));
 			execution.setResourceStatus(_ctx.stringValue("ListExecutionsResponse.Executions["+ i +"].ResourceStatus"));
+			execution.setResourceGroupId(_ctx.stringValue("ListExecutionsResponse.Executions["+ i +"].ResourceGroupId"));
 
 			List<CurrentTask> currentTasks = new ArrayList<CurrentTask>();
 			for (int j = 0; j < _ctx.lengthValue("ListExecutionsResponse.Executions["+ i +"].CurrentTasks.Length"); j++) {

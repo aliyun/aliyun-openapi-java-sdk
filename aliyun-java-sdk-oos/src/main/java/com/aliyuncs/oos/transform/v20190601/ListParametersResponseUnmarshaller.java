@@ -46,6 +46,7 @@ public class ListParametersResponseUnmarshaller {
 			parameter.setParameterVersion(_ctx.stringValue("ListParametersResponse.Parameters["+ i +"].ParameterVersion"));
 			parameter.setType(_ctx.stringValue("ListParametersResponse.Parameters["+ i +"].Type"));
 			parameter.setTags(_ctx.mapValue("ListParametersResponse.Parameters["+ i +"].Tags"));
+			parameter.setResourceGroupId(_ctx.stringValue("ListParametersResponse.Parameters["+ i +"].ResourceGroupId"));
 
 			parameters.add(parameter);
 		}

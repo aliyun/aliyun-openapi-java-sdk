@@ -66,6 +66,8 @@ public class GetPatchBaselineResponse extends AcsResponse {
 
 		private String approvalRules;
 
+		private Boolean isDefault;
+
 		public String getId() {
 			return this.id;
 		}
@@ -144,6 +146,14 @@ public class GetPatchBaselineResponse extends AcsResponse {
 
 		public void setApprovalRules(String approvalRules) {
 			this.approvalRules = approvalRules;
+		}
+
+		public Boolean getIsDefault() {
+			return this.isDefault;
+		}
+
+		public void setIsDefault(Boolean isDefault) {
+			this.isDefault = isDefault;
 		}
 	}
 

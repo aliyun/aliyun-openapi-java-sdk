@@ -45,6 +45,7 @@ public class UpdateStateConfigurationResponseUnmarshaller {
 			stateConfigurationItem.setTargets(_ctx.stringValue("UpdateStateConfigurationResponse.StateConfiguration["+ i +"].Targets"));
 			stateConfigurationItem.setUpdateTime(_ctx.stringValue("UpdateStateConfigurationResponse.StateConfiguration["+ i +"].UpdateTime"));
 			stateConfigurationItem.setTags(_ctx.mapValue("UpdateStateConfigurationResponse.StateConfiguration["+ i +"].Tags"));
+			stateConfigurationItem.setResourceGroupId(_ctx.stringValue("UpdateStateConfigurationResponse.StateConfiguration["+ i +"].ResourceGroupId"));
 
 			stateConfiguration.add(stateConfigurationItem);
 		}
