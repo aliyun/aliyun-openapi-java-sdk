@@ -1,3 +1,7 @@
+2021-10-18 Version: 4.24.11
+- Adjust ecs openapi endpoint.
+- Fix SDK array format.
+
 2021-10-08 Version: 4.24.9
 - Adjust ecs openapi endpoint.
 
