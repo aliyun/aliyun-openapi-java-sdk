@@ -18,8 +18,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.vcs.model.v20200515.SearchTargetResponse;
-import com.aliyuncs.vcs.model.v20200515.SearchTargetResponse.DataItem;
-import com.aliyuncs.vcs.model.v20200515.SearchTargetResponse.DataItem.Record;
+import com.aliyuncs.vcs.model.v20200515.SearchTargetResponse.Data;
+import com.aliyuncs.vcs.model.v20200515.SearchTargetResponse.Data.Record;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -32,34 +32,29 @@ public class SearchTargetResponseUnmarshaller {
 		searchTargetResponse.setCode(_ctx.stringValue("SearchTargetResponse.Code"));
 		searchTargetResponse.setMessage(_ctx.stringValue("SearchTargetResponse.Message"));
 
-		List<DataItem> data = new ArrayList<DataItem>();
-		for (int i = 0; i < _ctx.lengthValue("SearchTargetResponse.Data.Length"); i++) {
-			DataItem dataItem = new DataItem();
-			dataItem.setTotalCount(_ctx.longValue("SearchTargetResponse.Data["+ i +"].TotalCount"));
-			dataItem.setPageSize(_ctx.longValue("SearchTargetResponse.Data["+ i +"].PageSize"));
-			dataItem.setPageNumber(_ctx.longValue("SearchTargetResponse.Data["+ i +"].PageNumber"));
+		Data data = new Data();
+		data.setTotalCount(_ctx.longValue("SearchTargetResponse.Data.TotalCount"));
+		data.setPageSize(_ctx.longValue("SearchTargetResponse.Data.PageSize"));
+		data.setPageNumber(_ctx.longValue("SearchTargetResponse.Data.PageNumber"));
 
-			List<Record> records = new ArrayList<Record>();
-			for (int j = 0; j < _ctx.lengthValue("SearchTargetResponse.Data["+ i +"].Records.Length"); j++) {
-				Record record = new Record();
-				record.setTargetType(_ctx.stringValue("SearchTargetResponse.Data["+ i +"].Records["+ j +"].TargetType"));
-				record.setTimestamp(_ctx.stringValue("SearchTargetResponse.Data["+ i +"].Records["+ j +"].Timestamp"));
-				record.setDeviceId(_ctx.stringValue("SearchTargetResponse.Data["+ i +"].Records["+ j +"].DeviceId"));
-				record.setTargetAttributes(_ctx.stringValue("SearchTargetResponse.Data["+ i +"].Records["+ j +"].TargetAttributes"));
-				record.setTargetImageUrl(_ctx.stringValue("SearchTargetResponse.Data["+ i +"].Records["+ j +"].TargetImageUrl"));
-				record.setSourceImageUrl(_ctx.stringValue("SearchTargetResponse.Data["+ i +"].Records["+ j +"].SourceImageUrl"));
-				record.setLeftTopX(_ctx.longValue("SearchTargetResponse.Data["+ i +"].Records["+ j +"].LeftTopX"));
-				record.setLeftTopY(_ctx.longValue("SearchTargetResponse.Data["+ i +"].Records["+ j +"].LeftTopY"));
-				record.setRightBottomX(_ctx.longValue("SearchTargetResponse.Data["+ i +"].Records["+ j +"].RightBottomX"));
-				record.setRightBottomY(_ctx.longValue("SearchTargetResponse.Data["+ i +"].Records["+ j +"].RightBottomY"));
-				record.setTargetImageSimilarity(_ctx.doubleValue("SearchTargetResponse.Data["+ i +"].Records["+ j +"].TargetImageSimilarity"));
+		List<Record> records = new ArrayList<Record>();
+		for (int i = 0; i < _ctx.lengthValue("SearchTargetResponse.Data.Records.Length"); i++) {
+			Record record = new Record();
+			record.setTargetType(_ctx.stringValue("SearchTargetResponse.Data.Records["+ i +"].TargetType"));
+			record.setTimestamp(_ctx.stringValue("SearchTargetResponse.Data.Records["+ i +"].Timestamp"));
+			record.setDeviceId(_ctx.stringValue("SearchTargetResponse.Data.Records["+ i +"].DeviceId"));
+			record.setTargetAttributes(_ctx.stringValue("SearchTargetResponse.Data.Records["+ i +"].TargetAttributes"));
+			record.setTargetImageUrl(_ctx.stringValue("SearchTargetResponse.Data.Records["+ i +"].TargetImageUrl"));
+			record.setSourceImageUrl(_ctx.stringValue("SearchTargetResponse.Data.Records["+ i +"].SourceImageUrl"));
+			record.setLeftTopX(_ctx.longValue("SearchTargetResponse.Data.Records["+ i +"].LeftTopX"));
+			record.setLeftTopY(_ctx.longValue("SearchTargetResponse.Data.Records["+ i +"].LeftTopY"));
+			record.setRightBottomX(_ctx.longValue("SearchTargetResponse.Data.Records["+ i +"].RightBottomX"));
+			record.setRightBottomY(_ctx.longValue("SearchTargetResponse.Data.Records["+ i +"].RightBottomY"));
+			record.setTargetImageSimilarity(_ctx.doubleValue("SearchTargetResponse.Data.Records["+ i +"].TargetImageSimilarity"));
 
-				records.add(record);
-			}
-			dataItem.setRecords(records);
-
-			data.add(dataItem);
+			records.add(record);
 		}
+		data.setRecords(records);
 		searchTargetResponse.setData(data);
 	 
 	 	return searchTargetResponse;

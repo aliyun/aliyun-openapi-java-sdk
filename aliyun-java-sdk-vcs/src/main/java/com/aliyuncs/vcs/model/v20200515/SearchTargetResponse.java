@@ -33,7 +33,7 @@ public class SearchTargetResponse extends AcsResponse {
 
 	private String message;
 
-	private List<DataItem> data;
+	private Data data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -67,15 +67,15 @@ public class SearchTargetResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public List<DataItem> getData() {
+	public Data getData() {
 		return this.data;
 	}
 
-	public void setData(List<DataItem> data) {
+	public void setData(Data data) {
 		this.data = data;
 	}
 
-	public static class DataItem {
+	public static class Data {
 
 		private Long totalCount;
 
