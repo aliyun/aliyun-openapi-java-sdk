@@ -76,19 +76,11 @@ public class ScaleAppResponse extends AcsResponse {
 
 	public static class Result {
 
-		private Boolean admitted;
-
 		private String businessCode;
 
 		private Long deployOrderId;
 
-		public Boolean getAdmitted() {
-			return this.admitted;
-		}
-
-		public void setAdmitted(Boolean admitted) {
-			this.admitted = admitted;
-		}
+		private Boolean admitted;
 
 		public String getBusinessCode() {
 			return this.businessCode;
@@ -104,6 +96,14 @@ public class ScaleAppResponse extends AcsResponse {
 
 		public void setDeployOrderId(Long deployOrderId) {
 			this.deployOrderId = deployOrderId;
+		}
+
+		public Boolean getAdmitted() {
+			return this.admitted;
+		}
+
+		public void setAdmitted(Boolean admitted) {
+			this.admitted = admitted;
 		}
 	}
 

@@ -29,9 +29,9 @@ public class ScaleAppResponseUnmarshaller {
 		scaleAppResponse.setSuccess(_ctx.booleanValue("ScaleAppResponse.Success"));
 
 		Result result = new Result();
-		result.setAdmitted(_ctx.booleanValue("ScaleAppResponse.Result.Admitted"));
 		result.setBusinessCode(_ctx.stringValue("ScaleAppResponse.Result.BusinessCode"));
 		result.setDeployOrderId(_ctx.longValue("ScaleAppResponse.Result.DeployOrderId"));
+		result.setAdmitted(_ctx.booleanValue("ScaleAppResponse.Result.Admitted"));
 		scaleAppResponse.setResult(result);
 	 
 	 	return scaleAppResponse;

@@ -76,59 +76,67 @@ public class DescribeDeployOrderDetailResponse extends AcsResponse {
 
 	public static class Result {
 
+		private Integer status;
+
 		private String appInstanceType;
-
-		private Integer currentPartitionNum;
-
-		private Long deployOrderId;
-
-		private String deployPauseType;
-
-		private String deployPauseTypeName;
 
 		private String deployType;
 
-		private String deployTypeName;
-
-		private String description;
-
-		private Integer elapsedTime;
-
-		private String endTime;
-
-		private Long envId;
-
-		private String envType;
-
-		private String failureRate;
-
-		private Integer finishAppInstanceCt;
-
-		private String name;
-
-		private String partitionType;
+		private String userId;
 
 		private String partitionTypeName;
 
-		private Integer result;
-
-		private String resultName;
-
-		private Long schemaId;
-
-		private String startTime;
-
-		private Integer status;
-
 		private String statusName;
+
+		private String envType;
 
 		private Integer totalAppInstanceCt;
 
+		private Integer elapsedTime;
+
+		private String description;
+
+		private String name;
+
+		private String deployTypeName;
+
+		private Integer finishAppInstanceCt;
+
+		private Long schemaId;
+
+		private String deployPauseType;
+
+		private Integer result;
+
+		private String failureRate;
+
 		private Integer totalPartitions;
 
-		private String userId;
-
 		private String userNick;
+
+		private String endTime;
+
+		private String startTime;
+
+		private Long deployOrderId;
+
+		private String deployPauseTypeName;
+
+		private String resultName;
+
+		private Integer currentPartitionNum;
+
+		private String partitionType;
+
+		private Long envId;
+
+		public Integer getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(Integer status) {
+			this.status = status;
+		}
 
 		public String getAppInstanceType() {
 			return this.appInstanceType;
@@ -136,38 +144,6 @@ public class DescribeDeployOrderDetailResponse extends AcsResponse {
 
 		public void setAppInstanceType(String appInstanceType) {
 			this.appInstanceType = appInstanceType;
-		}
-
-		public Integer getCurrentPartitionNum() {
-			return this.currentPartitionNum;
-		}
-
-		public void setCurrentPartitionNum(Integer currentPartitionNum) {
-			this.currentPartitionNum = currentPartitionNum;
-		}
-
-		public Long getDeployOrderId() {
-			return this.deployOrderId;
-		}
-
-		public void setDeployOrderId(Long deployOrderId) {
-			this.deployOrderId = deployOrderId;
-		}
-
-		public String getDeployPauseType() {
-			return this.deployPauseType;
-		}
-
-		public void setDeployPauseType(String deployPauseType) {
-			this.deployPauseType = deployPauseType;
-		}
-
-		public String getDeployPauseTypeName() {
-			return this.deployPauseTypeName;
-		}
-
-		public void setDeployPauseTypeName(String deployPauseTypeName) {
-			this.deployPauseTypeName = deployPauseTypeName;
 		}
 
 		public String getDeployType() {
@@ -178,84 +154,12 @@ public class DescribeDeployOrderDetailResponse extends AcsResponse {
 			this.deployType = deployType;
 		}
 
-		public String getDeployTypeName() {
-			return this.deployTypeName;
+		public String getUserId() {
+			return this.userId;
 		}
 
-		public void setDeployTypeName(String deployTypeName) {
-			this.deployTypeName = deployTypeName;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
-		public Integer getElapsedTime() {
-			return this.elapsedTime;
-		}
-
-		public void setElapsedTime(Integer elapsedTime) {
-			this.elapsedTime = elapsedTime;
-		}
-
-		public String getEndTime() {
-			return this.endTime;
-		}
-
-		public void setEndTime(String endTime) {
-			this.endTime = endTime;
-		}
-
-		public Long getEnvId() {
-			return this.envId;
-		}
-
-		public void setEnvId(Long envId) {
-			this.envId = envId;
-		}
-
-		public String getEnvType() {
-			return this.envType;
-		}
-
-		public void setEnvType(String envType) {
-			this.envType = envType;
-		}
-
-		public String getFailureRate() {
-			return this.failureRate;
-		}
-
-		public void setFailureRate(String failureRate) {
-			this.failureRate = failureRate;
-		}
-
-		public Integer getFinishAppInstanceCt() {
-			return this.finishAppInstanceCt;
-		}
-
-		public void setFinishAppInstanceCt(Integer finishAppInstanceCt) {
-			this.finishAppInstanceCt = finishAppInstanceCt;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getPartitionType() {
-			return this.partitionType;
-		}
-
-		public void setPartitionType(String partitionType) {
-			this.partitionType = partitionType;
+		public void setUserId(String userId) {
+			this.userId = userId;
 		}
 
 		public String getPartitionTypeName() {
@@ -266,52 +170,20 @@ public class DescribeDeployOrderDetailResponse extends AcsResponse {
 			this.partitionTypeName = partitionTypeName;
 		}
 
-		public Integer getResult() {
-			return this.result;
-		}
-
-		public void setResult(Integer result) {
-			this.result = result;
-		}
-
-		public String getResultName() {
-			return this.resultName;
-		}
-
-		public void setResultName(String resultName) {
-			this.resultName = resultName;
-		}
-
-		public Long getSchemaId() {
-			return this.schemaId;
-		}
-
-		public void setSchemaId(Long schemaId) {
-			this.schemaId = schemaId;
-		}
-
-		public String getStartTime() {
-			return this.startTime;
-		}
-
-		public void setStartTime(String startTime) {
-			this.startTime = startTime;
-		}
-
-		public Integer getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(Integer status) {
-			this.status = status;
-		}
-
 		public String getStatusName() {
 			return this.statusName;
 		}
 
 		public void setStatusName(String statusName) {
 			this.statusName = statusName;
+		}
+
+		public String getEnvType() {
+			return this.envType;
+		}
+
+		public void setEnvType(String envType) {
+			this.envType = envType;
 		}
 
 		public Integer getTotalAppInstanceCt() {
@@ -322,6 +194,78 @@ public class DescribeDeployOrderDetailResponse extends AcsResponse {
 			this.totalAppInstanceCt = totalAppInstanceCt;
 		}
 
+		public Integer getElapsedTime() {
+			return this.elapsedTime;
+		}
+
+		public void setElapsedTime(Integer elapsedTime) {
+			this.elapsedTime = elapsedTime;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getDeployTypeName() {
+			return this.deployTypeName;
+		}
+
+		public void setDeployTypeName(String deployTypeName) {
+			this.deployTypeName = deployTypeName;
+		}
+
+		public Integer getFinishAppInstanceCt() {
+			return this.finishAppInstanceCt;
+		}
+
+		public void setFinishAppInstanceCt(Integer finishAppInstanceCt) {
+			this.finishAppInstanceCt = finishAppInstanceCt;
+		}
+
+		public Long getSchemaId() {
+			return this.schemaId;
+		}
+
+		public void setSchemaId(Long schemaId) {
+			this.schemaId = schemaId;
+		}
+
+		public String getDeployPauseType() {
+			return this.deployPauseType;
+		}
+
+		public void setDeployPauseType(String deployPauseType) {
+			this.deployPauseType = deployPauseType;
+		}
+
+		public Integer getResult() {
+			return this.result;
+		}
+
+		public void setResult(Integer result) {
+			this.result = result;
+		}
+
+		public String getFailureRate() {
+			return this.failureRate;
+		}
+
+		public void setFailureRate(String failureRate) {
+			this.failureRate = failureRate;
+		}
+
 		public Integer getTotalPartitions() {
 			return this.totalPartitions;
 		}
@@ -330,20 +274,76 @@ public class DescribeDeployOrderDetailResponse extends AcsResponse {
 			this.totalPartitions = totalPartitions;
 		}
 
-		public String getUserId() {
-			return this.userId;
-		}
-
-		public void setUserId(String userId) {
-			this.userId = userId;
-		}
-
 		public String getUserNick() {
 			return this.userNick;
 		}
 
 		public void setUserNick(String userNick) {
 			this.userNick = userNick;
+		}
+
+		public String getEndTime() {
+			return this.endTime;
+		}
+
+		public void setEndTime(String endTime) {
+			this.endTime = endTime;
+		}
+
+		public String getStartTime() {
+			return this.startTime;
+		}
+
+		public void setStartTime(String startTime) {
+			this.startTime = startTime;
+		}
+
+		public Long getDeployOrderId() {
+			return this.deployOrderId;
+		}
+
+		public void setDeployOrderId(Long deployOrderId) {
+			this.deployOrderId = deployOrderId;
+		}
+
+		public String getDeployPauseTypeName() {
+			return this.deployPauseTypeName;
+		}
+
+		public void setDeployPauseTypeName(String deployPauseTypeName) {
+			this.deployPauseTypeName = deployPauseTypeName;
+		}
+
+		public String getResultName() {
+			return this.resultName;
+		}
+
+		public void setResultName(String resultName) {
+			this.resultName = resultName;
+		}
+
+		public Integer getCurrentPartitionNum() {
+			return this.currentPartitionNum;
+		}
+
+		public void setCurrentPartitionNum(Integer currentPartitionNum) {
+			this.currentPartitionNum = currentPartitionNum;
+		}
+
+		public String getPartitionType() {
+			return this.partitionType;
+		}
+
+		public void setPartitionType(String partitionType) {
+			this.partitionType = partitionType;
+		}
+
+		public Long getEnvId() {
+			return this.envId;
+		}
+
+		public void setEnvId(Long envId) {
+			this.envId = envId;
 		}
 	}
 

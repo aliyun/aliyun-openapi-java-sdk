@@ -1,3 +1,6 @@
+2021-10-19 Version: 2.0.19
+- Supported ScaleApp totalPartitions.
+
 2021-07-29 Version: 2.0.18
 - ListAppInstanceResponse add status field.
 

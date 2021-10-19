@@ -25,6 +25,8 @@ import com.aliyuncs.retailcloud.Endpoint;
 public class ScaleAppRequest extends RpcAcsRequest<ScaleAppResponse> {
 	   
 
+	private Integer totalPartitions;
+
 	private Integer replicas;
 
 	private Long envId;
@@ -35,6 +37,17 @@ public class ScaleAppRequest extends RpcAcsRequest<ScaleAppResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Integer getTotalPartitions() {
+		return this.totalPartitions;
+	}
+
+	public void setTotalPartitions(Integer totalPartitions) {
+		this.totalPartitions = totalPartitions;
+		if(totalPartitions != null){
+			putQueryParameter("TotalPartitions", totalPartitions.toString());
+		}
 	}
 
 	public Integer getReplicas() {
