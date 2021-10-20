@@ -58,9 +58,9 @@ public class DescribeDtsJobDetailResponse extends AcsResponse {
 
 	private Integer code;
 
-	private Integer checkpoint;
+	private Long checkpoint;
 
-	private Integer delay;
+	private Long delay;
 
 	private String expireTime;
 
@@ -236,19 +236,19 @@ public class DescribeDtsJobDetailResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public Integer getCheckpoint() {
+	public Long getCheckpoint() {
 		return this.checkpoint;
 	}
 
-	public void setCheckpoint(Integer checkpoint) {
+	public void setCheckpoint(Long checkpoint) {
 		this.checkpoint = checkpoint;
 	}
 
-	public Integer getDelay() {
+	public Long getDelay() {
 		return this.delay;
 	}
 
-	public void setDelay(Integer delay) {
+	public void setDelay(Long delay) {
 		this.delay = delay;
 	}
 

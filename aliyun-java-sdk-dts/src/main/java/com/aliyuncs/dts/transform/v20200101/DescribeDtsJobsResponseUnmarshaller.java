@@ -64,7 +64,7 @@ public class DescribeDtsJobsResponseUnmarshaller {
 			DtsJobStatus dtsJobStatus = new DtsJobStatus();
 			dtsJobStatus.setStatus(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].Status"));
 			dtsJobStatus.setDtsJobName(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].DtsJobName"));
-			dtsJobStatus.setDelay(_ctx.integerValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].Delay"));
+			dtsJobStatus.setDelay(_ctx.longValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].Delay"));
 			dtsJobStatus.setErrorMessage(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ErrorMessage"));
 			dtsJobStatus.setExpireTime(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ExpireTime"));
 			dtsJobStatus.setDtsJobId(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].DtsJobId"));
@@ -150,7 +150,7 @@ public class DescribeDtsJobsResponseUnmarshaller {
 			ReverseJob reverseJob = new ReverseJob();
 			reverseJob.setStatus(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ReverseJob.Status"));
 			reverseJob.setDtsJobName(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ReverseJob.DtsJobName"));
-			reverseJob.setDelay(_ctx.integerValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ReverseJob.Delay"));
+			reverseJob.setDelay(_ctx.longValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ReverseJob.Delay"));
 			reverseJob.setErrorMessage(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ReverseJob.ErrorMessage"));
 			reverseJob.setDtsJobId(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ReverseJob.DtsJobId"));
 			reverseJob.setExpireTime(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ReverseJob.ExpireTime"));

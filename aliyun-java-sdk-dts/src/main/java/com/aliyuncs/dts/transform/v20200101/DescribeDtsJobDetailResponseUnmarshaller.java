@@ -44,8 +44,8 @@ public class DescribeDtsJobDetailResponseUnmarshaller {
 		describeDtsJobDetailResponse.setSubscribeTopic(_ctx.stringValue("DescribeDtsJobDetailResponse.SubscribeTopic"));
 		describeDtsJobDetailResponse.setDtsInstanceID(_ctx.stringValue("DescribeDtsJobDetailResponse.DtsInstanceID"));
 		describeDtsJobDetailResponse.setCode(_ctx.integerValue("DescribeDtsJobDetailResponse.Code"));
-		describeDtsJobDetailResponse.setCheckpoint(_ctx.integerValue("DescribeDtsJobDetailResponse.Checkpoint"));
-		describeDtsJobDetailResponse.setDelay(_ctx.integerValue("DescribeDtsJobDetailResponse.Delay"));
+		describeDtsJobDetailResponse.setCheckpoint(_ctx.longValue("DescribeDtsJobDetailResponse.Checkpoint"));
+		describeDtsJobDetailResponse.setDelay(_ctx.longValue("DescribeDtsJobDetailResponse.Delay"));
 		describeDtsJobDetailResponse.setExpireTime(_ctx.stringValue("DescribeDtsJobDetailResponse.ExpireTime"));
 		describeDtsJobDetailResponse.setErrCode(_ctx.stringValue("DescribeDtsJobDetailResponse.ErrCode"));
 		describeDtsJobDetailResponse.setSuccess(_ctx.booleanValue("DescribeDtsJobDetailResponse.Success"));

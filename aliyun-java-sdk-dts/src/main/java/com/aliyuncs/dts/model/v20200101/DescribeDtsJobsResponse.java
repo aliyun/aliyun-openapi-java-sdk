@@ -141,7 +141,7 @@ public class DescribeDtsJobsResponse extends AcsResponse {
 
 		private String dtsJobName;
 
-		private Integer delay;
+		private Long delay;
 
 		private String errorMessage;
 
@@ -215,11 +215,11 @@ public class DescribeDtsJobsResponse extends AcsResponse {
 			this.dtsJobName = dtsJobName;
 		}
 
-		public Integer getDelay() {
+		public Long getDelay() {
 			return this.delay;
 		}
 
-		public void setDelay(Integer delay) {
+		public void setDelay(Long delay) {
 			this.delay = delay;
 		}
 
@@ -870,7 +870,7 @@ public class DescribeDtsJobsResponse extends AcsResponse {
 
 			private String dtsJobName;
 
-			private Integer delay;
+			private Long delay;
 
 			private String errorMessage;
 
@@ -926,11 +926,11 @@ public class DescribeDtsJobsResponse extends AcsResponse {
 				this.dtsJobName = dtsJobName;
 			}
 
-			public Integer getDelay() {
+			public Long getDelay() {
 				return this.delay;
 			}
 
-			public void setDelay(Integer delay) {
+			public void setDelay(Long delay) {
 				this.delay = delay;
 			}
 
