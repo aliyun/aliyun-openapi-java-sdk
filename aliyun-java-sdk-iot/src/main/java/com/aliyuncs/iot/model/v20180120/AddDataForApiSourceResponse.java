@@ -14,16 +14,15 @@
 
 package com.aliyuncs.iot.model.v20180120;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.iot.transform.v20180120.SubscribeTopicResponseUnmarshaller;
+import com.aliyuncs.iot.transform.v20180120.AddDataForApiSourceResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class SubscribeTopicResponse extends AcsResponse {
+public class AddDataForApiSourceResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -33,7 +32,7 @@ public class SubscribeTopicResponse extends AcsResponse {
 
 	private String errorMessage;
 
-	private List<String> failureTopics;
+	private Long data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -67,17 +66,17 @@ public class SubscribeTopicResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public List<String> getFailureTopics() {
-		return this.failureTopics;
+	public Long getData() {
+		return this.data;
 	}
 
-	public void setFailureTopics(List<String> failureTopics) {
-		this.failureTopics = failureTopics;
+	public void setData(Long data) {
+		this.data = data;
 	}
 
 	@Override
-	public SubscribeTopicResponse getInstance(UnmarshallerContext context) {
-		return	SubscribeTopicResponseUnmarshaller.unmarshall(this, context);
+	public AddDataForApiSourceResponse getInstance(UnmarshallerContext context) {
+		return	AddDataForApiSourceResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

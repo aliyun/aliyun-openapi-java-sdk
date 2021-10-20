@@ -14,16 +14,15 @@
 
 package com.aliyuncs.iot.model.v20180120;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.iot.transform.v20180120.SubscribeTopicResponseUnmarshaller;
+import com.aliyuncs.iot.transform.v20180120.CreateDeviceTunnelResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class SubscribeTopicResponse extends AcsResponse {
+public class CreateDeviceTunnelResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -33,7 +32,7 @@ public class SubscribeTopicResponse extends AcsResponse {
 
 	private String errorMessage;
 
-	private List<String> failureTopics;
+	private Data data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -67,17 +66,50 @@ public class SubscribeTopicResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public List<String> getFailureTopics() {
-		return this.failureTopics;
+	public Data getData() {
+		return this.data;
 	}
 
-	public void setFailureTopics(List<String> failureTopics) {
-		this.failureTopics = failureTopics;
+	public void setData(Data data) {
+		this.data = data;
+	}
+
+	public static class Data {
+
+		private String tunnelId;
+
+		private String sourceAccessToken;
+
+		private String sourceURI;
+
+		public String getTunnelId() {
+			return this.tunnelId;
+		}
+
+		public void setTunnelId(String tunnelId) {
+			this.tunnelId = tunnelId;
+		}
+
+		public String getSourceAccessToken() {
+			return this.sourceAccessToken;
+		}
+
+		public void setSourceAccessToken(String sourceAccessToken) {
+			this.sourceAccessToken = sourceAccessToken;
+		}
+
+		public String getSourceURI() {
+			return this.sourceURI;
+		}
+
+		public void setSourceURI(String sourceURI) {
+			this.sourceURI = sourceURI;
+		}
 	}
 
 	@Override
-	public SubscribeTopicResponse getInstance(UnmarshallerContext context) {
-		return	SubscribeTopicResponseUnmarshaller.unmarshall(this, context);
+	public CreateDeviceTunnelResponse getInstance(UnmarshallerContext context) {
+		return	CreateDeviceTunnelResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

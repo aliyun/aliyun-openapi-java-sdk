@@ -85,6 +85,8 @@ public class QueryDeviceGroupByDeviceResponse extends AcsResponse {
 
 		private String groupDesc;
 
+		private String groupType;
+
 		public String getGroupId() {
 			return this.groupId;
 		}
@@ -115,6 +117,14 @@ public class QueryDeviceGroupByDeviceResponse extends AcsResponse {
 
 		public void setGroupDesc(String groupDesc) {
 			this.groupDesc = groupDesc;
+		}
+
+		public String getGroupType() {
+			return this.groupType;
+		}
+
+		public void setGroupType(String groupType) {
+			this.groupType = groupType;
 		}
 	}
 

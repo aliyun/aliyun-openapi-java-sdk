@@ -36,6 +36,7 @@ public class QueryDeviceGroupInfoResponseUnmarshaller {
 		data.setDeviceCount(_ctx.integerValue("QueryDeviceGroupInfoResponse.Data.DeviceCount"));
 		data.setDeviceActive(_ctx.integerValue("QueryDeviceGroupInfoResponse.Data.DeviceActive"));
 		data.setDeviceOnline(_ctx.integerValue("QueryDeviceGroupInfoResponse.Data.DeviceOnline"));
+		data.setDynamicGroupExpression(_ctx.stringValue("QueryDeviceGroupInfoResponse.Data.DynamicGroupExpression"));
 		queryDeviceGroupInfoResponse.setData(data);
 	 
 	 	return queryDeviceGroupInfoResponse;

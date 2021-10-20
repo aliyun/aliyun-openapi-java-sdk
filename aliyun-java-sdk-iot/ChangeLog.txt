@@ -1,3 +1,8 @@
+2021-10-20 Version: 7.29.0
+- Add DeviceCenter API, including CreateDeviceDynamicGroup, DeleteDeviceDynamicGroup, QueryDynamicGroupDevices.
+- Update DeviceCenter API, including SetDeviceGroupTags, QueryDeviceGroupByFuzzyName, QueryDeviceGroupByDevice, QueryDeviceGroupTagList, UpdateDeviceGroup, QueryDeviceGroupList, QueryDeviceGroupInfo.
+- Update OTA API, including CreateOTADynamicUpgradeJob, CreateOTAStaticUpgradeJob, QueryOTAJob.
+
 2021-09-06 Version: 7.28.0
 - Update LinkSpeech API, including SpeechByCombination, SyncSpeechByCombination.
 

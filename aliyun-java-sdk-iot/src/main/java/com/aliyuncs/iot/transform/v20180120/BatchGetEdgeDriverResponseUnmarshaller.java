@@ -43,6 +43,7 @@ public class BatchGetEdgeDriverResponseUnmarshaller {
 			driver.setIsBuiltIn(_ctx.booleanValue("BatchGetEdgeDriverResponse.DriverList["+ i +"].IsBuiltIn"));
 			driver.setGmtCreateTimestamp(_ctx.longValue("BatchGetEdgeDriverResponse.DriverList["+ i +"].GmtCreateTimestamp"));
 			driver.setGmtModifiedTimestamp(_ctx.longValue("BatchGetEdgeDriverResponse.DriverList["+ i +"].GmtModifiedTimestamp"));
+			driver.setUseOfficialConfig(_ctx.integerValue("BatchGetEdgeDriverResponse.DriverList["+ i +"].UseOfficialConfig"));
 
 			driverList.add(driver);
 		}

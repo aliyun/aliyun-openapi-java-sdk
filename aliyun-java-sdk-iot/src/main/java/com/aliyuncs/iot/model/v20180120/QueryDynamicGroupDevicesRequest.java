@@ -15,7 +15,6 @@
 package com.aliyuncs.iot.model.v20180120;
 
 import com.aliyuncs.RpcAcsRequest;
-import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.iot.Endpoint;
 
@@ -23,22 +22,28 @@ import com.aliyuncs.iot.Endpoint;
  * @author auto create
  * @version 
  */
-public class QueryDeviceGroupListRequest extends RpcAcsRequest<QueryDeviceGroupListResponse> {
+public class QueryDynamicGroupDevicesRequest extends RpcAcsRequest<QueryDynamicGroupDevicesResponse> {
 	   
 
-	private List<String> groupTypess;
-
-	private String superGroupId;
+	private String nextToken;
 
 	private String iotInstanceId;
 
 	private Integer pageSize;
 
+	private Boolean fuzzyName;
+
+	private String groupId;
+
 	private Integer currentPage;
 
-	private String groupName;
-	public QueryDeviceGroupListRequest() {
-		super("Iot", "2018-01-20", "QueryDeviceGroupList", "iot");
+	private String productKey;
+
+	private String deviceName;
+
+	private String status;
+	public QueryDynamicGroupDevicesRequest() {
+		super("Iot", "2018-01-20", "QueryDynamicGroupDevices", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -46,27 +51,14 @@ public class QueryDeviceGroupListRequest extends RpcAcsRequest<QueryDeviceGroupL
 		} catch (Exception e) {}
 	}
 
-	public List<String> getGroupTypess() {
-		return this.groupTypess;
+	public String getNextToken() {
+		return this.nextToken;
 	}
 
-	public void setGroupTypess(List<String> groupTypess) {
-		this.groupTypess = groupTypess;	
-		if (groupTypess != null) {
-			for (int i = 0; i < groupTypess.size(); i++) {
-				putQueryParameter("GroupTypes." + (i + 1) , groupTypess.get(i));
-			}
-		}	
-	}
-
-	public String getSuperGroupId() {
-		return this.superGroupId;
-	}
-
-	public void setSuperGroupId(String superGroupId) {
-		this.superGroupId = superGroupId;
-		if(superGroupId != null){
-			putQueryParameter("SuperGroupId", superGroupId);
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+		if(nextToken != null){
+			putQueryParameter("NextToken", nextToken);
 		}
 	}
 
@@ -92,6 +84,28 @@ public class QueryDeviceGroupListRequest extends RpcAcsRequest<QueryDeviceGroupL
 		}
 	}
 
+	public Boolean getFuzzyName() {
+		return this.fuzzyName;
+	}
+
+	public void setFuzzyName(Boolean fuzzyName) {
+		this.fuzzyName = fuzzyName;
+		if(fuzzyName != null){
+			putQueryParameter("FuzzyName", fuzzyName.toString());
+		}
+	}
+
+	public String getGroupId() {
+		return this.groupId;
+	}
+
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
+		if(groupId != null){
+			putQueryParameter("GroupId", groupId);
+		}
+	}
+
 	public Integer getCurrentPage() {
 		return this.currentPage;
 	}
@@ -103,20 +117,42 @@ public class QueryDeviceGroupListRequest extends RpcAcsRequest<QueryDeviceGroupL
 		}
 	}
 
-	public String getGroupName() {
-		return this.groupName;
+	public String getProductKey() {
+		return this.productKey;
 	}
 
-	public void setGroupName(String groupName) {
-		this.groupName = groupName;
-		if(groupName != null){
-			putQueryParameter("GroupName", groupName);
+	public void setProductKey(String productKey) {
+		this.productKey = productKey;
+		if(productKey != null){
+			putQueryParameter("ProductKey", productKey);
+		}
+	}
+
+	public String getDeviceName() {
+		return this.deviceName;
+	}
+
+	public void setDeviceName(String deviceName) {
+		this.deviceName = deviceName;
+		if(deviceName != null){
+			putQueryParameter("DeviceName", deviceName);
+		}
+	}
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+		if(status != null){
+			putQueryParameter("Status", status);
 		}
 	}
 
 	@Override
-	public Class<QueryDeviceGroupListResponse> getResponseClass() {
-		return QueryDeviceGroupListResponse.class;
+	public Class<QueryDynamicGroupDevicesResponse> getResponseClass() {
+		return QueryDynamicGroupDevicesResponse.class;
 	}
 
 }

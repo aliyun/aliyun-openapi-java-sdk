@@ -14,16 +14,16 @@
 
 package com.aliyuncs.iot.model.v20180120;
 
-import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.iot.transform.v20180120.SubscribeTopicResponseUnmarshaller;
+import com.aliyuncs.iot.transform.v20180120.BatchAddDataForApiSourceResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class SubscribeTopicResponse extends AcsResponse {
+public class BatchAddDataForApiSourceResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -33,7 +33,7 @@ public class SubscribeTopicResponse extends AcsResponse {
 
 	private String errorMessage;
 
-	private List<String> failureTopics;
+	private Map<Object,Object> data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -67,21 +67,16 @@ public class SubscribeTopicResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public List<String> getFailureTopics() {
-		return this.failureTopics;
+	public Map<Object,Object> getData() {
+		return this.data;
 	}
 
-	public void setFailureTopics(List<String> failureTopics) {
-		this.failureTopics = failureTopics;
-	}
-
-	@Override
-	public SubscribeTopicResponse getInstance(UnmarshallerContext context) {
-		return	SubscribeTopicResponseUnmarshaller.unmarshall(this, context);
+	public void setData(Map<Object,Object> data) {
+		this.data = data;
 	}
 
 	@Override
-	public boolean checkShowJsonItemName() {
-		return false;
+	public BatchAddDataForApiSourceResponse getInstance(UnmarshallerContext context) {
+		return	BatchAddDataForApiSourceResponseUnmarshaller.unmarshall(this, context);
 	}
 }

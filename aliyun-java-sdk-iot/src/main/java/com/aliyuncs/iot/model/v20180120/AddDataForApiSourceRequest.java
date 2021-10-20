@@ -22,16 +22,16 @@ import com.aliyuncs.iot.Endpoint;
  * @author auto create
  * @version 
  */
-public class QueryDeviceGroupTagListRequest extends RpcAcsRequest<QueryDeviceGroupTagListResponse> {
+public class AddDataForApiSourceRequest extends RpcAcsRequest<AddDataForApiSourceResponse> {
 	   
 
-	private String groupType;
+	private String content;
 
 	private String iotInstanceId;
 
-	private String groupId;
-	public QueryDeviceGroupTagListRequest() {
-		super("Iot", "2018-01-20", "QueryDeviceGroupTagList", "iot");
+	private String apiId;
+	public AddDataForApiSourceRequest() {
+		super("Iot", "2018-01-20", "AddDataForApiSource", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -39,14 +39,14 @@ public class QueryDeviceGroupTagListRequest extends RpcAcsRequest<QueryDeviceGro
 		} catch (Exception e) {}
 	}
 
-	public String getGroupType() {
-		return this.groupType;
+	public String getContent() {
+		return this.content;
 	}
 
-	public void setGroupType(String groupType) {
-		this.groupType = groupType;
-		if(groupType != null){
-			putQueryParameter("GroupType", groupType);
+	public void setContent(String content) {
+		this.content = content;
+		if(content != null){
+			putQueryParameter("Content", content);
 		}
 	}
 
@@ -61,20 +61,20 @@ public class QueryDeviceGroupTagListRequest extends RpcAcsRequest<QueryDeviceGro
 		}
 	}
 
-	public String getGroupId() {
-		return this.groupId;
+	public String getApiId() {
+		return this.apiId;
 	}
 
-	public void setGroupId(String groupId) {
-		this.groupId = groupId;
-		if(groupId != null){
-			putQueryParameter("GroupId", groupId);
+	public void setApiId(String apiId) {
+		this.apiId = apiId;
+		if(apiId != null){
+			putQueryParameter("ApiId", apiId);
 		}
 	}
 
 	@Override
-	public Class<QueryDeviceGroupTagListResponse> getResponseClass() {
-		return QueryDeviceGroupTagListResponse.class;
+	public Class<AddDataForApiSourceResponse> getResponseClass() {
+		return AddDataForApiSourceResponse.class;
 	}
 
 }

@@ -22,16 +22,16 @@ import com.aliyuncs.iot.Endpoint;
  * @author auto create
  * @version 
  */
-public class QueryDeviceGroupTagListRequest extends RpcAcsRequest<QueryDeviceGroupTagListResponse> {
+public class BatchAddDataForApiSourceRequest extends RpcAcsRequest<BatchAddDataForApiSourceResponse> {
 	   
 
-	private String groupType;
+	private String contentList;
 
 	private String iotInstanceId;
 
-	private String groupId;
-	public QueryDeviceGroupTagListRequest() {
-		super("Iot", "2018-01-20", "QueryDeviceGroupTagList", "iot");
+	private String apiId;
+	public BatchAddDataForApiSourceRequest() {
+		super("Iot", "2018-01-20", "BatchAddDataForApiSource", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -39,14 +39,14 @@ public class QueryDeviceGroupTagListRequest extends RpcAcsRequest<QueryDeviceGro
 		} catch (Exception e) {}
 	}
 
-	public String getGroupType() {
-		return this.groupType;
+	public String getContentList() {
+		return this.contentList;
 	}
 
-	public void setGroupType(String groupType) {
-		this.groupType = groupType;
-		if(groupType != null){
-			putQueryParameter("GroupType", groupType);
+	public void setContentList(String contentList) {
+		this.contentList = contentList;
+		if(contentList != null){
+			putQueryParameter("ContentList", contentList);
 		}
 	}
 
@@ -61,20 +61,20 @@ public class QueryDeviceGroupTagListRequest extends RpcAcsRequest<QueryDeviceGro
 		}
 	}
 
-	public String getGroupId() {
-		return this.groupId;
+	public String getApiId() {
+		return this.apiId;
 	}
 
-	public void setGroupId(String groupId) {
-		this.groupId = groupId;
-		if(groupId != null){
-			putQueryParameter("GroupId", groupId);
+	public void setApiId(String apiId) {
+		this.apiId = apiId;
+		if(apiId != null){
+			putQueryParameter("ApiId", apiId);
 		}
 	}
 
 	@Override
-	public Class<QueryDeviceGroupTagListResponse> getResponseClass() {
-		return QueryDeviceGroupTagListResponse.class;
+	public Class<BatchAddDataForApiSourceResponse> getResponseClass() {
+		return BatchAddDataForApiSourceResponse.class;
 	}
 
 }

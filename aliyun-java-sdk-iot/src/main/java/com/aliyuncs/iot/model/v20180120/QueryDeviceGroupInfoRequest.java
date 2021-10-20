@@ -25,6 +25,8 @@ import com.aliyuncs.iot.Endpoint;
 public class QueryDeviceGroupInfoRequest extends RpcAcsRequest<QueryDeviceGroupInfoResponse> {
 	   
 
+	private String groupType;
+
 	private String iotInstanceId;
 
 	private String groupId;
@@ -35,6 +37,17 @@ public class QueryDeviceGroupInfoRequest extends RpcAcsRequest<QueryDeviceGroupI
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getGroupType() {
+		return this.groupType;
+	}
+
+	public void setGroupType(String groupType) {
+		this.groupType = groupType;
+		if(groupType != null){
+			putQueryParameter("GroupType", groupType);
+		}
 	}
 
 	public String getIotInstanceId() {

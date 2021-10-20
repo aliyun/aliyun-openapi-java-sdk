@@ -127,6 +127,12 @@ public class QueryOTAJobResponse extends AcsResponse {
 
 		private Boolean needConfirm;
 
+		private String groupId;
+
+		private String groupName;
+
+		private String downloadProtocol;
+
 		private List<OtaTagDTO> tags;
 
 		private List<String> srcVersions;
@@ -329,6 +335,30 @@ public class QueryOTAJobResponse extends AcsResponse {
 
 		public void setNeedConfirm(Boolean needConfirm) {
 			this.needConfirm = needConfirm;
+		}
+
+		public String getGroupId() {
+			return this.groupId;
+		}
+
+		public void setGroupId(String groupId) {
+			this.groupId = groupId;
+		}
+
+		public String getGroupName() {
+			return this.groupName;
+		}
+
+		public void setGroupName(String groupName) {
+			this.groupName = groupName;
+		}
+
+		public String getDownloadProtocol() {
+			return this.downloadProtocol;
+		}
+
+		public void setDownloadProtocol(String downloadProtocol) {
+			this.downloadProtocol = downloadProtocol;
 		}
 
 		public List<OtaTagDTO> getTags() {

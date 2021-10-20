@@ -38,6 +38,7 @@ public class QueryDeviceGroupByDeviceResponseUnmarshaller {
 			groupInfo.setGroupName(_ctx.stringValue("QueryDeviceGroupByDeviceResponse.GroupInfos["+ i +"].GroupName"));
 			groupInfo.setUtcCreate(_ctx.stringValue("QueryDeviceGroupByDeviceResponse.GroupInfos["+ i +"].UtcCreate"));
 			groupInfo.setGroupDesc(_ctx.stringValue("QueryDeviceGroupByDeviceResponse.GroupInfos["+ i +"].GroupDesc"));
+			groupInfo.setGroupType(_ctx.stringValue("QueryDeviceGroupByDeviceResponse.GroupInfos["+ i +"].GroupType"));
 
 			groupInfos.add(groupInfo);
 		}

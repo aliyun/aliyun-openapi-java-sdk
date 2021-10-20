@@ -139,6 +139,8 @@ public class QueryEdgeDriverResponse extends AcsResponse {
 
 			private Boolean isApply;
 
+			private Integer useOfficialConfig;
+
 			public String getDriverId() {
 				return this.driverId;
 			}
@@ -217,6 +219,14 @@ public class QueryEdgeDriverResponse extends AcsResponse {
 
 			public void setIsApply(Boolean isApply) {
 				this.isApply = isApply;
+			}
+
+			public Integer getUseOfficialConfig() {
+				return this.useOfficialConfig;
+			}
+
+			public void setUseOfficialConfig(Integer useOfficialConfig) {
+				this.useOfficialConfig = useOfficialConfig;
 			}
 		}
 	}

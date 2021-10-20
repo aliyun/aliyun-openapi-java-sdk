@@ -22,16 +22,18 @@ import com.aliyuncs.iot.Endpoint;
  * @author auto create
  * @version 
  */
-public class QueryDeviceGroupTagListRequest extends RpcAcsRequest<QueryDeviceGroupTagListResponse> {
+public class CreateDeviceDynamicGroupRequest extends RpcAcsRequest<CreateDeviceDynamicGroupResponse> {
 	   
 
-	private String groupType;
+	private String dynamicGroupExpression;
 
 	private String iotInstanceId;
 
-	private String groupId;
-	public QueryDeviceGroupTagListRequest() {
-		super("Iot", "2018-01-20", "QueryDeviceGroupTagList", "iot");
+	private String groupName;
+
+	private String groupDesc;
+	public CreateDeviceDynamicGroupRequest() {
+		super("Iot", "2018-01-20", "CreateDeviceDynamicGroup", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -39,14 +41,14 @@ public class QueryDeviceGroupTagListRequest extends RpcAcsRequest<QueryDeviceGro
 		} catch (Exception e) {}
 	}
 
-	public String getGroupType() {
-		return this.groupType;
+	public String getDynamicGroupExpression() {
+		return this.dynamicGroupExpression;
 	}
 
-	public void setGroupType(String groupType) {
-		this.groupType = groupType;
-		if(groupType != null){
-			putQueryParameter("GroupType", groupType);
+	public void setDynamicGroupExpression(String dynamicGroupExpression) {
+		this.dynamicGroupExpression = dynamicGroupExpression;
+		if(dynamicGroupExpression != null){
+			putQueryParameter("DynamicGroupExpression", dynamicGroupExpression);
 		}
 	}
 
@@ -61,20 +63,31 @@ public class QueryDeviceGroupTagListRequest extends RpcAcsRequest<QueryDeviceGro
 		}
 	}
 
-	public String getGroupId() {
-		return this.groupId;
+	public String getGroupName() {
+		return this.groupName;
 	}
 
-	public void setGroupId(String groupId) {
-		this.groupId = groupId;
-		if(groupId != null){
-			putQueryParameter("GroupId", groupId);
+	public void setGroupName(String groupName) {
+		this.groupName = groupName;
+		if(groupName != null){
+			putQueryParameter("GroupName", groupName);
+		}
+	}
+
+	public String getGroupDesc() {
+		return this.groupDesc;
+	}
+
+	public void setGroupDesc(String groupDesc) {
+		this.groupDesc = groupDesc;
+		if(groupDesc != null){
+			putQueryParameter("GroupDesc", groupDesc);
 		}
 	}
 
 	@Override
-	public Class<QueryDeviceGroupTagListResponse> getResponseClass() {
-		return QueryDeviceGroupTagListResponse.class;
+	public Class<CreateDeviceDynamicGroupResponse> getResponseClass() {
+		return CreateDeviceDynamicGroupResponse.class;
 	}
 
 }

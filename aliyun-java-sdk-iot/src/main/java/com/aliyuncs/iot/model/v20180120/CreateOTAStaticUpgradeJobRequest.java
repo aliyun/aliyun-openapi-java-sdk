@@ -32,9 +32,13 @@ public class CreateOTAStaticUpgradeJobRequest extends RpcAcsRequest<CreateOTASta
 
 	private Boolean needConfirm;
 
+	private String groupType;
+
 	private Boolean needPush;
 
 	private String iotInstanceId;
+
+	private String downloadProtocol;
 
 	private String targetSelection;
 
@@ -45,6 +49,8 @@ public class CreateOTAStaticUpgradeJobRequest extends RpcAcsRequest<CreateOTASta
 	private String grayPercent;
 
 	private String dnListFileUrl;
+
+	private String groupId;
 
 	private String firmwareId;
 
@@ -103,6 +109,17 @@ public class CreateOTAStaticUpgradeJobRequest extends RpcAcsRequest<CreateOTASta
 		}
 	}
 
+	public String getGroupType() {
+		return this.groupType;
+	}
+
+	public void setGroupType(String groupType) {
+		this.groupType = groupType;
+		if(groupType != null){
+			putQueryParameter("GroupType", groupType);
+		}
+	}
+
 	public Boolean getNeedPush() {
 		return this.needPush;
 	}
@@ -122,6 +139,17 @@ public class CreateOTAStaticUpgradeJobRequest extends RpcAcsRequest<CreateOTASta
 		this.iotInstanceId = iotInstanceId;
 		if(iotInstanceId != null){
 			putQueryParameter("IotInstanceId", iotInstanceId);
+		}
+	}
+
+	public String getDownloadProtocol() {
+		return this.downloadProtocol;
+	}
+
+	public void setDownloadProtocol(String downloadProtocol) {
+		this.downloadProtocol = downloadProtocol;
+		if(downloadProtocol != null){
+			putQueryParameter("DownloadProtocol", downloadProtocol);
 		}
 	}
 
@@ -180,6 +208,17 @@ public class CreateOTAStaticUpgradeJobRequest extends RpcAcsRequest<CreateOTASta
 		this.dnListFileUrl = dnListFileUrl;
 		if(dnListFileUrl != null){
 			putQueryParameter("DnListFileUrl", dnListFileUrl);
+		}
+	}
+
+	public String getGroupId() {
+		return this.groupId;
+	}
+
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
+		if(groupId != null){
+			putQueryParameter("GroupId", groupId);
 		}
 	}
 

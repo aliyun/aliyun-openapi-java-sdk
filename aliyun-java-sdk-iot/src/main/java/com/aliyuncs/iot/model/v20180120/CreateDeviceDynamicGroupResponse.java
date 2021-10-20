@@ -15,14 +15,14 @@
 package com.aliyuncs.iot.model.v20180120;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.iot.transform.v20180120.QueryDeviceGroupInfoResponseUnmarshaller;
+import com.aliyuncs.iot.transform.v20180120.CreateDeviceDynamicGroupResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class QueryDeviceGroupInfoResponse extends AcsResponse {
+public class CreateDeviceDynamicGroupResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -84,12 +84,6 @@ public class QueryDeviceGroupInfoResponse extends AcsResponse {
 
 		private String groupDesc;
 
-		private Integer deviceCount;
-
-		private Integer deviceActive;
-
-		private Integer deviceOnline;
-
 		private String dynamicGroupExpression;
 
 		public String getGroupId() {
@@ -124,30 +118,6 @@ public class QueryDeviceGroupInfoResponse extends AcsResponse {
 			this.groupDesc = groupDesc;
 		}
 
-		public Integer getDeviceCount() {
-			return this.deviceCount;
-		}
-
-		public void setDeviceCount(Integer deviceCount) {
-			this.deviceCount = deviceCount;
-		}
-
-		public Integer getDeviceActive() {
-			return this.deviceActive;
-		}
-
-		public void setDeviceActive(Integer deviceActive) {
-			this.deviceActive = deviceActive;
-		}
-
-		public Integer getDeviceOnline() {
-			return this.deviceOnline;
-		}
-
-		public void setDeviceOnline(Integer deviceOnline) {
-			this.deviceOnline = deviceOnline;
-		}
-
 		public String getDynamicGroupExpression() {
 			return this.dynamicGroupExpression;
 		}
@@ -158,7 +128,7 @@ public class QueryDeviceGroupInfoResponse extends AcsResponse {
 	}
 
 	@Override
-	public QueryDeviceGroupInfoResponse getInstance(UnmarshallerContext context) {
-		return	QueryDeviceGroupInfoResponseUnmarshaller.unmarshall(this, context);
+	public CreateDeviceDynamicGroupResponse getInstance(UnmarshallerContext context) {
+		return	CreateDeviceDynamicGroupResponseUnmarshaller.unmarshall(this, context);
 	}
 }

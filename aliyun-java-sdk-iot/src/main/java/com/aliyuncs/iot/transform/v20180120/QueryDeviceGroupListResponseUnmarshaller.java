@@ -42,6 +42,7 @@ public class QueryDeviceGroupListResponseUnmarshaller {
 			groupInfo.setUtcCreate(_ctx.stringValue("QueryDeviceGroupListResponse.Data["+ i +"].UtcCreate"));
 			groupInfo.setGroupName(_ctx.stringValue("QueryDeviceGroupListResponse.Data["+ i +"].GroupName"));
 			groupInfo.setGroupDesc(_ctx.stringValue("QueryDeviceGroupListResponse.Data["+ i +"].GroupDesc"));
+			groupInfo.setGroupType(_ctx.stringValue("QueryDeviceGroupListResponse.Data["+ i +"].GroupType"));
 
 			data.add(groupInfo);
 		}

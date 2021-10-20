@@ -15,7 +15,6 @@
 package com.aliyuncs.iot.model.v20180120;
 
 import com.aliyuncs.RpcAcsRequest;
-import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.iot.Endpoint;
 
@@ -23,51 +22,27 @@ import com.aliyuncs.iot.Endpoint;
  * @author auto create
  * @version 
  */
-public class QueryDeviceGroupListRequest extends RpcAcsRequest<QueryDeviceGroupListResponse> {
+public class ListSourceReplicaRequest extends RpcAcsRequest<ListSourceReplicaResponse> {
 	   
-
-	private List<String> groupTypess;
-
-	private String superGroupId;
 
 	private String iotInstanceId;
 
+	private String context;
+
 	private Integer pageSize;
 
-	private Integer currentPage;
+	private String sourceType;
 
-	private String groupName;
-	public QueryDeviceGroupListRequest() {
-		super("Iot", "2018-01-20", "QueryDeviceGroupList", "iot");
+	private Integer pageNo;
+
+	private String lpInstanceId;
+	public ListSourceReplicaRequest() {
+		super("Iot", "2018-01-20", "ListSourceReplica", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public List<String> getGroupTypess() {
-		return this.groupTypess;
-	}
-
-	public void setGroupTypess(List<String> groupTypess) {
-		this.groupTypess = groupTypess;	
-		if (groupTypess != null) {
-			for (int i = 0; i < groupTypess.size(); i++) {
-				putQueryParameter("GroupTypes." + (i + 1) , groupTypess.get(i));
-			}
-		}	
-	}
-
-	public String getSuperGroupId() {
-		return this.superGroupId;
-	}
-
-	public void setSuperGroupId(String superGroupId) {
-		this.superGroupId = superGroupId;
-		if(superGroupId != null){
-			putQueryParameter("SuperGroupId", superGroupId);
-		}
 	}
 
 	public String getIotInstanceId() {
@@ -77,7 +52,18 @@ public class QueryDeviceGroupListRequest extends RpcAcsRequest<QueryDeviceGroupL
 	public void setIotInstanceId(String iotInstanceId) {
 		this.iotInstanceId = iotInstanceId;
 		if(iotInstanceId != null){
-			putQueryParameter("IotInstanceId", iotInstanceId);
+			putBodyParameter("IotInstanceId", iotInstanceId);
+		}
+	}
+
+	public String getContext() {
+		return this.context;
+	}
+
+	public void setContext(String context) {
+		this.context = context;
+		if(context != null){
+			putBodyParameter("Context", context);
 		}
 	}
 
@@ -92,31 +78,42 @@ public class QueryDeviceGroupListRequest extends RpcAcsRequest<QueryDeviceGroupL
 		}
 	}
 
-	public Integer getCurrentPage() {
-		return this.currentPage;
+	public String getSourceType() {
+		return this.sourceType;
 	}
 
-	public void setCurrentPage(Integer currentPage) {
-		this.currentPage = currentPage;
-		if(currentPage != null){
-			putQueryParameter("CurrentPage", currentPage.toString());
+	public void setSourceType(String sourceType) {
+		this.sourceType = sourceType;
+		if(sourceType != null){
+			putQueryParameter("SourceType", sourceType);
 		}
 	}
 
-	public String getGroupName() {
-		return this.groupName;
+	public Integer getPageNo() {
+		return this.pageNo;
 	}
 
-	public void setGroupName(String groupName) {
-		this.groupName = groupName;
-		if(groupName != null){
-			putQueryParameter("GroupName", groupName);
+	public void setPageNo(Integer pageNo) {
+		this.pageNo = pageNo;
+		if(pageNo != null){
+			putQueryParameter("PageNo", pageNo.toString());
+		}
+	}
+
+	public String getLpInstanceId() {
+		return this.lpInstanceId;
+	}
+
+	public void setLpInstanceId(String lpInstanceId) {
+		this.lpInstanceId = lpInstanceId;
+		if(lpInstanceId != null){
+			putQueryParameter("LpInstanceId", lpInstanceId);
 		}
 	}
 
 	@Override
-	public Class<QueryDeviceGroupListResponse> getResponseClass() {
-		return QueryDeviceGroupListResponse.class;
+	public Class<ListSourceReplicaResponse> getResponseClass() {
+		return ListSourceReplicaResponse.class;
 	}
 
 }

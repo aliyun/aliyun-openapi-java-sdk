@@ -95,6 +95,8 @@ public class BatchGetEdgeDriverResponse extends AcsResponse {
 
 		private Long gmtModifiedTimestamp;
 
+		private Integer useOfficialConfig;
+
 		public String getDriverId() {
 			return this.driverId;
 		}
@@ -165,6 +167,14 @@ public class BatchGetEdgeDriverResponse extends AcsResponse {
 
 		public void setGmtModifiedTimestamp(Long gmtModifiedTimestamp) {
 			this.gmtModifiedTimestamp = gmtModifiedTimestamp;
+		}
+
+		public Integer getUseOfficialConfig() {
+			return this.useOfficialConfig;
+		}
+
+		public void setUseOfficialConfig(Integer useOfficialConfig) {
+			this.useOfficialConfig = useOfficialConfig;
 		}
 	}
 

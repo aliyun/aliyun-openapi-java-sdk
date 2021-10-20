@@ -22,32 +22,19 @@ import com.aliyuncs.iot.Endpoint;
  * @author auto create
  * @version 
  */
-public class QueryDeviceGroupTagListRequest extends RpcAcsRequest<QueryDeviceGroupTagListResponse> {
+public class DeleteDeviceTunnelRequest extends RpcAcsRequest<DeleteDeviceTunnelResponse> {
 	   
-
-	private String groupType;
 
 	private String iotInstanceId;
 
-	private String groupId;
-	public QueryDeviceGroupTagListRequest() {
-		super("Iot", "2018-01-20", "QueryDeviceGroupTagList", "iot");
+	private String tunnelId;
+	public DeleteDeviceTunnelRequest() {
+		super("Iot", "2018-01-20", "DeleteDeviceTunnel", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getGroupType() {
-		return this.groupType;
-	}
-
-	public void setGroupType(String groupType) {
-		this.groupType = groupType;
-		if(groupType != null){
-			putQueryParameter("GroupType", groupType);
-		}
 	}
 
 	public String getIotInstanceId() {
@@ -61,20 +48,20 @@ public class QueryDeviceGroupTagListRequest extends RpcAcsRequest<QueryDeviceGro
 		}
 	}
 
-	public String getGroupId() {
-		return this.groupId;
+	public String getTunnelId() {
+		return this.tunnelId;
 	}
 
-	public void setGroupId(String groupId) {
-		this.groupId = groupId;
-		if(groupId != null){
-			putQueryParameter("GroupId", groupId);
+	public void setTunnelId(String tunnelId) {
+		this.tunnelId = tunnelId;
+		if(tunnelId != null){
+			putQueryParameter("TunnelId", tunnelId);
 		}
 	}
 
 	@Override
-	public Class<QueryDeviceGroupTagListResponse> getResponseClass() {
-		return QueryDeviceGroupTagListResponse.class;
+	public Class<DeleteDeviceTunnelResponse> getResponseClass() {
+		return DeleteDeviceTunnelResponse.class;
 	}
 
 }

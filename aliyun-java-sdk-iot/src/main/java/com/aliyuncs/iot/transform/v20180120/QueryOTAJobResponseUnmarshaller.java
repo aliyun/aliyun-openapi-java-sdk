@@ -58,6 +58,9 @@ public class QueryOTAJobResponseUnmarshaller {
 		data.setDynamicMode(_ctx.integerValue("QueryOTAJobResponse.Data.DynamicMode"));
 		data.setNeedPush(_ctx.booleanValue("QueryOTAJobResponse.Data.NeedPush"));
 		data.setNeedConfirm(_ctx.booleanValue("QueryOTAJobResponse.Data.NeedConfirm"));
+		data.setGroupId(_ctx.stringValue("QueryOTAJobResponse.Data.GroupId"));
+		data.setGroupName(_ctx.stringValue("QueryOTAJobResponse.Data.GroupName"));
+		data.setDownloadProtocol(_ctx.stringValue("QueryOTAJobResponse.Data.DownloadProtocol"));
 
 		List<String> srcVersions = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("QueryOTAJobResponse.Data.SrcVersions.Length"); i++) {

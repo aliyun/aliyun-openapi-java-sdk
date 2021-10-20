@@ -34,11 +34,17 @@ public class CreateOTADynamicUpgradeJobRequest extends RpcAcsRequest<CreateOTADy
 
 	private Boolean needConfirm;
 
+	private String groupType;
+
 	private Boolean needPush;
 
 	private String iotInstanceId;
 
+	private String downloadProtocol;
+
 	private List<Tag> tags;
+
+	private String groupId;
 
 	private String firmwareId;
 
@@ -104,6 +110,17 @@ public class CreateOTADynamicUpgradeJobRequest extends RpcAcsRequest<CreateOTADy
 		}
 	}
 
+	public String getGroupType() {
+		return this.groupType;
+	}
+
+	public void setGroupType(String groupType) {
+		this.groupType = groupType;
+		if(groupType != null){
+			putQueryParameter("GroupType", groupType);
+		}
+	}
+
 	public Boolean getNeedPush() {
 		return this.needPush;
 	}
@@ -126,6 +143,17 @@ public class CreateOTADynamicUpgradeJobRequest extends RpcAcsRequest<CreateOTADy
 		}
 	}
 
+	public String getDownloadProtocol() {
+		return this.downloadProtocol;
+	}
+
+	public void setDownloadProtocol(String downloadProtocol) {
+		this.downloadProtocol = downloadProtocol;
+		if(downloadProtocol != null){
+			putQueryParameter("DownloadProtocol", downloadProtocol);
+		}
+	}
+
 	public List<Tag> getTags() {
 		return this.tags;
 	}
@@ -138,6 +166,17 @@ public class CreateOTADynamicUpgradeJobRequest extends RpcAcsRequest<CreateOTADy
 				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
 			}
 		}	
+	}
+
+	public String getGroupId() {
+		return this.groupId;
+	}
+
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
+		if(groupId != null){
+			putQueryParameter("GroupId", groupId);
+		}
 	}
 
 	public String getFirmwareId() {
