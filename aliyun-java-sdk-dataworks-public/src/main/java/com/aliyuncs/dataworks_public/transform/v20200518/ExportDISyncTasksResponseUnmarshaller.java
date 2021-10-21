@@ -15,7 +15,7 @@
 package com.aliyuncs.dataworks_public.transform.v20200518;
 
 import com.aliyuncs.dataworks_public.model.v20200518.ExportDISyncTasksResponse;
-import com.aliyuncs.dataworks_public.model.v20200518.ExportDISyncTasksResponse.TaskDetail;
+import com.aliyuncs.dataworks_public.model.v20200518.ExportDISyncTasksResponse.Data;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -23,12 +23,12 @@ public class ExportDISyncTasksResponseUnmarshaller {
 
 	public static ExportDISyncTasksResponse unmarshall(ExportDISyncTasksResponse exportDISyncTasksResponse, UnmarshallerContext _ctx) {
 		
-		exportDISyncTasksResponse.setRequestId(_ctx.stringValue("ExportDISyncTasksResponse.RequestId"));
-		exportDISyncTasksResponse.setSuccess(_ctx.booleanValue("ExportDISyncTasksResponse.Success"));
+		exportDISyncTasksResponse.setSuccess(_ctx.booleanValue("ExportDISyncTasksResponse.success"));
+		exportDISyncTasksResponse.setRequestId(_ctx.stringValue("ExportDISyncTasksResponse.requestId"));
 
-		TaskDetail taskDetail = new TaskDetail();
-		taskDetail.setRealTimeSolution(_ctx.stringValue("ExportDISyncTasksResponse.TaskDetail.RealTimeSolution"));
-		exportDISyncTasksResponse.setTaskDetail(taskDetail);
+		Data data = new Data();
+		data.setRealTimeSolution(_ctx.stringValue("ExportDISyncTasksResponse.data.realTimeSolution"));
+		exportDISyncTasksResponse.setData(data);
 	 
 	 	return exportDISyncTasksResponse;
 	}

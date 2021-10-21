@@ -27,9 +27,9 @@ public class ImportDISyncTasksRequest extends RpcAcsRequest<ImportDISyncTasksRes
 
 	private String taskType;
 
-	private String taskContent;
-
 	private String taskParam;
+
+	private String body;
 
 	private Long projectId;
 	public ImportDISyncTasksRequest() {
@@ -52,17 +52,6 @@ public class ImportDISyncTasksRequest extends RpcAcsRequest<ImportDISyncTasksRes
 		}
 	}
 
-	public String getTaskContent() {
-		return this.taskContent;
-	}
-
-	public void setTaskContent(String taskContent) {
-		this.taskContent = taskContent;
-		if(taskContent != null){
-			putQueryParameter("TaskContent", taskContent);
-		}
-	}
-
 	public String getTaskParam() {
 		return this.taskParam;
 	}
@@ -71,6 +60,17 @@ public class ImportDISyncTasksRequest extends RpcAcsRequest<ImportDISyncTasksRes
 		this.taskParam = taskParam;
 		if(taskParam != null){
 			putQueryParameter("TaskParam", taskParam);
+		}
+	}
+
+	public String getBody() {
+		return this.body;
+	}
+
+	public void setBody(String body) {
+		this.body = body;
+		if(body != null){
+			putBodyParameter("body", body);
 		}
 	}
 

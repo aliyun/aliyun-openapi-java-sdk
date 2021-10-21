@@ -24,19 +24,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ExportDISyncTasksResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Boolean success;
 
-	private TaskDetail taskDetail;
+	private String requestId;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private Data data;
 
 	public Boolean getSuccess() {
 		return this.success;
@@ -46,15 +38,23 @@ public class ExportDISyncTasksResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public TaskDetail getTaskDetail() {
-		return this.taskDetail;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setTaskDetail(TaskDetail taskDetail) {
-		this.taskDetail = taskDetail;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
-	public static class TaskDetail {
+	public Data getData() {
+		return this.data;
+	}
+
+	public void setData(Data data) {
+		this.data = data;
+	}
+
+	public static class Data {
 
 		private String realTimeSolution;
 
