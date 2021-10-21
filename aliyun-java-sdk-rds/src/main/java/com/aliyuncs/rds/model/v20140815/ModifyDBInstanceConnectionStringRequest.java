@@ -29,6 +29,8 @@ public class ModifyDBInstanceConnectionStringRequest extends RpcAcsRequest<Modif
 
 	private String connectionStringPrefix;
 
+	private String generalGroupName;
+
 	private String dBInstanceId;
 
 	private String resourceOwnerAccount;
@@ -68,6 +70,17 @@ public class ModifyDBInstanceConnectionStringRequest extends RpcAcsRequest<Modif
 		this.connectionStringPrefix = connectionStringPrefix;
 		if(connectionStringPrefix != null){
 			putQueryParameter("ConnectionStringPrefix", connectionStringPrefix);
+		}
+	}
+
+	public String getGeneralGroupName() {
+		return this.generalGroupName;
+	}
+
+	public void setGeneralGroupName(String generalGroupName) {
+		this.generalGroupName = generalGroupName;
+		if(generalGroupName != null){
+			putQueryParameter("GeneralGroupName", generalGroupName);
 		}
 	}
 

@@ -29,6 +29,8 @@ public class AllocateInstancePublicConnectionRequest extends RpcAcsRequest<Alloc
 
 	private String connectionStringPrefix;
 
+	private String generalGroupName;
+
 	private String dBInstanceId;
 
 	private String resourceOwnerAccount;
@@ -66,6 +68,17 @@ public class AllocateInstancePublicConnectionRequest extends RpcAcsRequest<Alloc
 		this.connectionStringPrefix = connectionStringPrefix;
 		if(connectionStringPrefix != null){
 			putQueryParameter("ConnectionStringPrefix", connectionStringPrefix);
+		}
+	}
+
+	public String getGeneralGroupName() {
+		return this.generalGroupName;
+	}
+
+	public void setGeneralGroupName(String generalGroupName) {
+		this.generalGroupName = generalGroupName;
+		if(generalGroupName != null){
+			putQueryParameter("GeneralGroupName", generalGroupName);
 		}
 	}
 

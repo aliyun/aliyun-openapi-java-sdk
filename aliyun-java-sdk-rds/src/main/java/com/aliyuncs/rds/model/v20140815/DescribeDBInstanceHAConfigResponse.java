@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDBInstanceHAConfigResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String dBInstanceId;
 
-	private String syncMode;
+	private String requestId;
 
 	private String hAMode;
 
+	private String syncMode;
+
 	private List<NodeInfo> hostInstanceInfos;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getDBInstanceId() {
 		return this.dBInstanceId;
@@ -51,12 +43,12 @@ public class DescribeDBInstanceHAConfigResponse extends AcsResponse {
 		this.dBInstanceId = dBInstanceId;
 	}
 
-	public String getSyncMode() {
-		return this.syncMode;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setSyncMode(String syncMode) {
-		this.syncMode = syncMode;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getHAMode() {
@@ -65,6 +57,14 @@ public class DescribeDBInstanceHAConfigResponse extends AcsResponse {
 
 	public void setHAMode(String hAMode) {
 		this.hAMode = hAMode;
+	}
+
+	public String getSyncMode() {
+		return this.syncMode;
+	}
+
+	public void setSyncMode(String syncMode) {
+		this.syncMode = syncMode;
 	}
 
 	public List<NodeInfo> getHostInstanceInfos() {
@@ -77,13 +77,7 @@ public class DescribeDBInstanceHAConfigResponse extends AcsResponse {
 
 	public static class NodeInfo {
 
-		private String nodeId;
-
-		private String regionId;
-
 		private String logSyncTime;
-
-		private String dataSyncTime;
 
 		private String nodeType;
 
@@ -91,21 +85,11 @@ public class DescribeDBInstanceHAConfigResponse extends AcsResponse {
 
 		private String syncStatus;
 
-		public String getNodeId() {
-			return this.nodeId;
-		}
+		private String dataSyncTime;
 
-		public void setNodeId(String nodeId) {
-			this.nodeId = nodeId;
-		}
+		private String nodeId;
 
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
+		private String regionId;
 
 		public String getLogSyncTime() {
 			return this.logSyncTime;
@@ -113,14 +97,6 @@ public class DescribeDBInstanceHAConfigResponse extends AcsResponse {
 
 		public void setLogSyncTime(String logSyncTime) {
 			this.logSyncTime = logSyncTime;
-		}
-
-		public String getDataSyncTime() {
-			return this.dataSyncTime;
-		}
-
-		public void setDataSyncTime(String dataSyncTime) {
-			this.dataSyncTime = dataSyncTime;
 		}
 
 		public String getNodeType() {
@@ -145,6 +121,30 @@ public class DescribeDBInstanceHAConfigResponse extends AcsResponse {
 
 		public void setSyncStatus(String syncStatus) {
 			this.syncStatus = syncStatus;
+		}
+
+		public String getDataSyncTime() {
+			return this.dataSyncTime;
+		}
+
+		public void setDataSyncTime(String dataSyncTime) {
+			this.dataSyncTime = dataSyncTime;
+		}
+
+		public String getNodeId() {
+			return this.nodeId;
+		}
+
+		public void setNodeId(String nodeId) {
+			this.nodeId = nodeId;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 	}
 

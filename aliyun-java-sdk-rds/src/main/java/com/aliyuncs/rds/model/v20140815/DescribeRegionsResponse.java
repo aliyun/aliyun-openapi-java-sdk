@@ -47,9 +47,39 @@ public class DescribeRegionsResponse extends AcsResponse {
 
 	public static class RDSRegion {
 
+		private String zoneId;
+
+		private String regionEndpoint;
+
+		private String localName;
+
 		private String regionId;
 
-		private String zoneId;
+		private String zoneName;
+
+		public String getZoneId() {
+			return this.zoneId;
+		}
+
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
+		}
+
+		public String getRegionEndpoint() {
+			return this.regionEndpoint;
+		}
+
+		public void setRegionEndpoint(String regionEndpoint) {
+			this.regionEndpoint = regionEndpoint;
+		}
+
+		public String getLocalName() {
+			return this.localName;
+		}
+
+		public void setLocalName(String localName) {
+			this.localName = localName;
+		}
 
 		public String getRegionId() {
 			return this.regionId;
@@ -59,12 +89,12 @@ public class DescribeRegionsResponse extends AcsResponse {
 			this.regionId = regionId;
 		}
 
-		public String getZoneId() {
-			return this.zoneId;
+		public String getZoneName() {
+			return this.zoneName;
 		}
 
-		public void setZoneId(String zoneId) {
-			this.zoneId = zoneId;
+		public void setZoneName(String zoneName) {
+			this.zoneName = zoneName;
 		}
 	}
 

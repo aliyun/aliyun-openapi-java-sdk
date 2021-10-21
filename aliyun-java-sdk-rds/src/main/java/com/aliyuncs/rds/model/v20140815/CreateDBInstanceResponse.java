@@ -24,15 +24,41 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateDBInstanceResponse extends AcsResponse {
 
+	private Boolean dryRunResult;
+
+	private Boolean tagResult;
+
 	private String requestId;
-
-	private String dBInstanceId;
-
-	private String orderId;
 
 	private String connectionString;
 
+	private String message;
+
+	private String dBInstanceId;
+
 	private String port;
+
+	private String taskId;
+
+	private Boolean dryRun;
+
+	private String orderId;
+
+	public Boolean getDryRunResult() {
+		return this.dryRunResult;
+	}
+
+	public void setDryRunResult(Boolean dryRunResult) {
+		this.dryRunResult = dryRunResult;
+	}
+
+	public Boolean getTagResult() {
+		return this.tagResult;
+	}
+
+	public void setTagResult(Boolean tagResult) {
+		this.tagResult = tagResult;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -40,22 +66,6 @@ public class CreateDBInstanceResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
-
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-	}
-
-	public String getOrderId() {
-		return this.orderId;
-	}
-
-	public void setOrderId(String orderId) {
-		this.orderId = orderId;
 	}
 
 	public String getConnectionString() {
@@ -66,12 +76,52 @@ public class CreateDBInstanceResponse extends AcsResponse {
 		this.connectionString = connectionString;
 	}
 
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
+	}
+
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+	}
+
 	public String getPort() {
 		return this.port;
 	}
 
 	public void setPort(String port) {
 		this.port = port;
+	}
+
+	public String getTaskId() {
+		return this.taskId;
+	}
+
+	public void setTaskId(String taskId) {
+		this.taskId = taskId;
+	}
+
+	public Boolean getDryRun() {
+		return this.dryRun;
+	}
+
+	public void setDryRun(Boolean dryRun) {
+		this.dryRun = dryRun;
+	}
+
+	public String getOrderId() {
+		return this.orderId;
+	}
+
+	public void setOrderId(String orderId) {
+		this.orderId = orderId;
 	}
 
 	@Override

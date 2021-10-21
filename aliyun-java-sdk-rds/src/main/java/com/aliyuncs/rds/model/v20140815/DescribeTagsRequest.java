@@ -39,6 +39,8 @@ public class DescribeTagsRequest extends RpcAcsRequest<DescribeTagsResponse> {
 
 	private Long ownerId;
 
+	private String resourceType;
+
 	private String tags;
 	public DescribeTagsRequest() {
 		super("Rds", "2014-08-15", "DescribeTags", "rds");
@@ -123,6 +125,17 @@ public class DescribeTagsRequest extends RpcAcsRequest<DescribeTagsResponse> {
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getResourceType() {
+		return this.resourceType;
+	}
+
+	public void setResourceType(String resourceType) {
+		this.resourceType = resourceType;
+		if(resourceType != null){
+			putQueryParameter("ResourceType", resourceType);
 		}
 	}
 

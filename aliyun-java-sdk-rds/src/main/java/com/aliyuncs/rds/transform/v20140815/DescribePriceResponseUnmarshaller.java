@@ -32,10 +32,10 @@ public class DescribePriceResponseUnmarshaller {
 		describePriceResponse.setRequestId(_ctx.stringValue("DescribePriceResponse.RequestId"));
 
 		PriceInfo priceInfo = new PriceInfo();
-		priceInfo.setCurrency(_ctx.stringValue("DescribePriceResponse.PriceInfo.Currency"));
 		priceInfo.setOriginalPrice(_ctx.floatValue("DescribePriceResponse.PriceInfo.OriginalPrice"));
-		priceInfo.setTradePrice(_ctx.floatValue("DescribePriceResponse.PriceInfo.TradePrice"));
 		priceInfo.setDiscountPrice(_ctx.floatValue("DescribePriceResponse.PriceInfo.DiscountPrice"));
+		priceInfo.setCurrency(_ctx.stringValue("DescribePriceResponse.PriceInfo.Currency"));
+		priceInfo.setTradePrice(_ctx.floatValue("DescribePriceResponse.PriceInfo.TradePrice"));
 
 		List<String> ruleIds = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribePriceResponse.PriceInfo.RuleIds.Length"); i++) {
@@ -52,10 +52,10 @@ public class DescribePriceResponseUnmarshaller {
 		List<Coupon> coupons = new ArrayList<Coupon>();
 		for (int i = 0; i < _ctx.lengthValue("DescribePriceResponse.PriceInfo.Coupons.Length"); i++) {
 			Coupon coupon = new Coupon();
+			coupon.setIsSelected(_ctx.stringValue("DescribePriceResponse.PriceInfo.Coupons["+ i +"].IsSelected"));
 			coupon.setCouponNo(_ctx.stringValue("DescribePriceResponse.PriceInfo.Coupons["+ i +"].CouponNo"));
 			coupon.setName(_ctx.stringValue("DescribePriceResponse.PriceInfo.Coupons["+ i +"].Name"));
 			coupon.setDescription(_ctx.stringValue("DescribePriceResponse.PriceInfo.Coupons["+ i +"].Description"));
-			coupon.setIsSelected(_ctx.stringValue("DescribePriceResponse.PriceInfo.Coupons["+ i +"].IsSelected"));
 
 			coupons.add(coupon);
 		}
@@ -65,9 +65,9 @@ public class DescribePriceResponseUnmarshaller {
 		List<Rule> rules = new ArrayList<Rule>();
 		for (int i = 0; i < _ctx.lengthValue("DescribePriceResponse.Rules.Length"); i++) {
 			Rule rule = new Rule();
-			rule.setRuleId(_ctx.longValue("DescribePriceResponse.Rules["+ i +"].RuleId"));
 			rule.setName(_ctx.stringValue("DescribePriceResponse.Rules["+ i +"].Name"));
 			rule.setDescription(_ctx.stringValue("DescribePriceResponse.Rules["+ i +"].Description"));
+			rule.setRuleId(_ctx.longValue("DescribePriceResponse.Rules["+ i +"].RuleId"));
 
 			rules.add(rule);
 		}

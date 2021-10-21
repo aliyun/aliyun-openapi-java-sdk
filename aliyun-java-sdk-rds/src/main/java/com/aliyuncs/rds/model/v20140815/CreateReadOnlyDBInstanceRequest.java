@@ -53,17 +53,23 @@ public class CreateReadOnlyDBInstanceRequest extends RpcAcsRequest<CreateReadOnl
 
 	private String tddlBizType;
 
+	private String period;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private Long ownerId;
 
+	private String usedTime;
+
 	private String dBInstanceClass;
 
 	private String vSwitchId;
 
 	private String privateIpAddress;
+
+	private String autoRenew;
 
 	private String vPCId;
 
@@ -237,6 +243,17 @@ public class CreateReadOnlyDBInstanceRequest extends RpcAcsRequest<CreateReadOnl
 		}
 	}
 
+	public String getPeriod() {
+		return this.period;
+	}
+
+	public void setPeriod(String period) {
+		this.period = period;
+		if(period != null){
+			putQueryParameter("Period", period);
+		}
+	}
+
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -270,6 +287,17 @@ public class CreateReadOnlyDBInstanceRequest extends RpcAcsRequest<CreateReadOnl
 		}
 	}
 
+	public String getUsedTime() {
+		return this.usedTime;
+	}
+
+	public void setUsedTime(String usedTime) {
+		this.usedTime = usedTime;
+		if(usedTime != null){
+			putQueryParameter("UsedTime", usedTime);
+		}
+	}
+
 	public String getDBInstanceClass() {
 		return this.dBInstanceClass;
 	}
@@ -300,6 +328,17 @@ public class CreateReadOnlyDBInstanceRequest extends RpcAcsRequest<CreateReadOnl
 		this.privateIpAddress = privateIpAddress;
 		if(privateIpAddress != null){
 			putQueryParameter("PrivateIpAddress", privateIpAddress);
+		}
+	}
+
+	public String getAutoRenew() {
+		return this.autoRenew;
+	}
+
+	public void setAutoRenew(String autoRenew) {
+		this.autoRenew = autoRenew;
+		if(autoRenew != null){
+			putQueryParameter("AutoRenew", autoRenew);
 		}
 	}
 

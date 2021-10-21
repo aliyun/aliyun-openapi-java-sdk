@@ -39,6 +39,8 @@ public class ModifySecurityIpsRequest extends RpcAcsRequest<ModifySecurityIpsRes
 
 	private String modifyMode;
 
+	private String freshWhiteListReadins;
+
 	private String dBInstanceIPArrayAttribute;
 	public ModifySecurityIpsRequest() {
 		super("Rds", "2014-08-15", "ModifySecurityIps", "rds");
@@ -123,6 +125,17 @@ public class ModifySecurityIpsRequest extends RpcAcsRequest<ModifySecurityIpsRes
 		this.modifyMode = modifyMode;
 		if(modifyMode != null){
 			putQueryParameter("ModifyMode", modifyMode);
+		}
+	}
+
+	public String getFreshWhiteListReadins() {
+		return this.freshWhiteListReadins;
+	}
+
+	public void setFreshWhiteListReadins(String freshWhiteListReadins) {
+		this.freshWhiteListReadins = freshWhiteListReadins;
+		if(freshWhiteListReadins != null){
+			putQueryParameter("FreshWhiteListReadins", freshWhiteListReadins);
 		}
 	}
 

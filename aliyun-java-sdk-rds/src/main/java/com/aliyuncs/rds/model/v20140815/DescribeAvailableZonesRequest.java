@@ -25,19 +25,21 @@ import com.aliyuncs.rds.Endpoint;
 public class DescribeAvailableZonesRequest extends RpcAcsRequest<DescribeAvailableZonesResponse> {
 	   
 
+	private String dBInstanceName;
+
 	private Long resourceOwnerId;
 
 	private String engineVersion;
 
 	private String engine;
 
-	private String instanceChargeType;
-
 	private String dispenseMode;
 
 	private String commodityCode;
 
 	private String zoneId;
+
+	private String category;
 	public DescribeAvailableZonesRequest() {
 		super("Rds", "2014-08-15", "DescribeAvailableZones", "rds");
 		setMethod(MethodType.POST);
@@ -45,6 +47,17 @@ public class DescribeAvailableZonesRequest extends RpcAcsRequest<DescribeAvailab
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getDBInstanceName() {
+		return this.dBInstanceName;
+	}
+
+	public void setDBInstanceName(String dBInstanceName) {
+		this.dBInstanceName = dBInstanceName;
+		if(dBInstanceName != null){
+			putQueryParameter("DBInstanceName", dBInstanceName);
+		}
 	}
 
 	public Long getResourceOwnerId() {
@@ -80,17 +93,6 @@ public class DescribeAvailableZonesRequest extends RpcAcsRequest<DescribeAvailab
 		}
 	}
 
-	public String getInstanceChargeType() {
-		return this.instanceChargeType;
-	}
-
-	public void setInstanceChargeType(String instanceChargeType) {
-		this.instanceChargeType = instanceChargeType;
-		if(instanceChargeType != null){
-			putQueryParameter("InstanceChargeType", instanceChargeType);
-		}
-	}
-
 	public String getDispenseMode() {
 		return this.dispenseMode;
 	}
@@ -121,6 +123,17 @@ public class DescribeAvailableZonesRequest extends RpcAcsRequest<DescribeAvailab
 		this.zoneId = zoneId;
 		if(zoneId != null){
 			putQueryParameter("ZoneId", zoneId);
+		}
+	}
+
+	public String getCategory() {
+		return this.category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
+		if(category != null){
+			putQueryParameter("Category", category);
 		}
 	}
 

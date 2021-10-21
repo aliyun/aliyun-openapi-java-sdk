@@ -24,9 +24,9 @@ public class CreateReadOnlyDBInstanceResponseUnmarshaller {
 		
 		createReadOnlyDBInstanceResponse.setRequestId(_ctx.stringValue("CreateReadOnlyDBInstanceResponse.RequestId"));
 		createReadOnlyDBInstanceResponse.setDBInstanceId(_ctx.stringValue("CreateReadOnlyDBInstanceResponse.DBInstanceId"));
-		createReadOnlyDBInstanceResponse.setOrderId(_ctx.stringValue("CreateReadOnlyDBInstanceResponse.OrderId"));
-		createReadOnlyDBInstanceResponse.setConnectionString(_ctx.stringValue("CreateReadOnlyDBInstanceResponse.ConnectionString"));
 		createReadOnlyDBInstanceResponse.setPort(_ctx.stringValue("CreateReadOnlyDBInstanceResponse.Port"));
+		createReadOnlyDBInstanceResponse.setConnectionString(_ctx.stringValue("CreateReadOnlyDBInstanceResponse.ConnectionString"));
+		createReadOnlyDBInstanceResponse.setOrderId(_ctx.stringValue("CreateReadOnlyDBInstanceResponse.OrderId"));
 	 
 	 	return createReadOnlyDBInstanceResponse;
 	}

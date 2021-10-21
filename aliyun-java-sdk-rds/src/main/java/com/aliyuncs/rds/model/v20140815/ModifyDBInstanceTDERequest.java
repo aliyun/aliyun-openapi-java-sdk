@@ -27,6 +27,12 @@ public class ModifyDBInstanceTDERequest extends RpcAcsRequest<ModifyDBInstanceTD
 
 	private Long resourceOwnerId;
 
+	private String certificate;
+
+	private String privateKey;
+
+	private String passWord;
+
 	private String dBInstanceId;
 
 	private String resourceOwnerAccount;
@@ -59,6 +65,39 @@ public class ModifyDBInstanceTDERequest extends RpcAcsRequest<ModifyDBInstanceTD
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getCertificate() {
+		return this.certificate;
+	}
+
+	public void setCertificate(String certificate) {
+		this.certificate = certificate;
+		if(certificate != null){
+			putQueryParameter("Certificate", certificate);
+		}
+	}
+
+	public String getPrivateKey() {
+		return this.privateKey;
+	}
+
+	public void setPrivateKey(String privateKey) {
+		this.privateKey = privateKey;
+		if(privateKey != null){
+			putQueryParameter("PrivateKey", privateKey);
+		}
+	}
+
+	public String getPassWord() {
+		return this.passWord;
+	}
+
+	public void setPassWord(String passWord) {
+		this.passWord = passWord;
+		if(passWord != null){
+			putQueryParameter("PassWord", passWord);
 		}
 	}
 

@@ -15,20 +15,18 @@
 package com.aliyuncs.rds.model.v20140815;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.rds.transform.v20140815.MigrateConnectionToOtherZoneResponseUnmarshaller;
+import com.aliyuncs.rds.transform.v20140815.CreateGADInstanceResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class MigrateConnectionToOtherZoneResponse extends AcsResponse {
+public class CreateGADInstanceResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String code;
-
-	private String message;
+	private Result result;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,25 +36,40 @@ public class MigrateConnectionToOtherZoneResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getCode() {
-		return this.code;
+	public Result getResult() {
+		return this.result;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
+	public void setResult(Result result) {
+		this.result = result;
 	}
 
-	public String getMessage() {
-		return this.message;
-	}
+	public static class Result {
 
-	public void setMessage(String message) {
-		this.message = message;
+		private String gadInstanceName;
+
+		private String createCount;
+
+		public String getGadInstanceName() {
+			return this.gadInstanceName;
+		}
+
+		public void setGadInstanceName(String gadInstanceName) {
+			this.gadInstanceName = gadInstanceName;
+		}
+
+		public String getCreateCount() {
+			return this.createCount;
+		}
+
+		public void setCreateCount(String createCount) {
+			this.createCount = createCount;
+		}
 	}
 
 	@Override
-	public MigrateConnectionToOtherZoneResponse getInstance(UnmarshallerContext context) {
-		return	MigrateConnectionToOtherZoneResponseUnmarshaller.unmarshall(this, context);
+	public CreateGADInstanceResponse getInstance(UnmarshallerContext context) {
+		return	CreateGADInstanceResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

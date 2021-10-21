@@ -28,19 +28,19 @@ public class DescribeDBInstanceHAConfigResponseUnmarshaller {
 		
 		describeDBInstanceHAConfigResponse.setRequestId(_ctx.stringValue("DescribeDBInstanceHAConfigResponse.RequestId"));
 		describeDBInstanceHAConfigResponse.setDBInstanceId(_ctx.stringValue("DescribeDBInstanceHAConfigResponse.DBInstanceId"));
-		describeDBInstanceHAConfigResponse.setSyncMode(_ctx.stringValue("DescribeDBInstanceHAConfigResponse.SyncMode"));
 		describeDBInstanceHAConfigResponse.setHAMode(_ctx.stringValue("DescribeDBInstanceHAConfigResponse.HAMode"));
+		describeDBInstanceHAConfigResponse.setSyncMode(_ctx.stringValue("DescribeDBInstanceHAConfigResponse.SyncMode"));
 
 		List<NodeInfo> hostInstanceInfos = new ArrayList<NodeInfo>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDBInstanceHAConfigResponse.HostInstanceInfos.Length"); i++) {
 			NodeInfo nodeInfo = new NodeInfo();
-			nodeInfo.setNodeId(_ctx.stringValue("DescribeDBInstanceHAConfigResponse.HostInstanceInfos["+ i +"].NodeId"));
-			nodeInfo.setRegionId(_ctx.stringValue("DescribeDBInstanceHAConfigResponse.HostInstanceInfos["+ i +"].RegionId"));
 			nodeInfo.setLogSyncTime(_ctx.stringValue("DescribeDBInstanceHAConfigResponse.HostInstanceInfos["+ i +"].LogSyncTime"));
-			nodeInfo.setDataSyncTime(_ctx.stringValue("DescribeDBInstanceHAConfigResponse.HostInstanceInfos["+ i +"].DataSyncTime"));
 			nodeInfo.setNodeType(_ctx.stringValue("DescribeDBInstanceHAConfigResponse.HostInstanceInfos["+ i +"].NodeType"));
 			nodeInfo.setZoneId(_ctx.stringValue("DescribeDBInstanceHAConfigResponse.HostInstanceInfos["+ i +"].ZoneId"));
 			nodeInfo.setSyncStatus(_ctx.stringValue("DescribeDBInstanceHAConfigResponse.HostInstanceInfos["+ i +"].SyncStatus"));
+			nodeInfo.setDataSyncTime(_ctx.stringValue("DescribeDBInstanceHAConfigResponse.HostInstanceInfos["+ i +"].DataSyncTime"));
+			nodeInfo.setNodeId(_ctx.stringValue("DescribeDBInstanceHAConfigResponse.HostInstanceInfos["+ i +"].NodeId"));
+			nodeInfo.setRegionId(_ctx.stringValue("DescribeDBInstanceHAConfigResponse.HostInstanceInfos["+ i +"].RegionId"));
 
 			hostInstanceInfos.add(nodeInfo);
 		}

@@ -26,6 +26,8 @@ public class DescribeRegionsRequest extends RpcAcsRequest<DescribeRegionsRespons
 	   
 
 	private Long resourceOwnerId;
+
+	private String acceptLanguage;
 	public DescribeRegionsRequest() {
 		super("Rds", "2014-08-15", "DescribeRegions", "rds");
 		setMethod(MethodType.POST);
@@ -43,6 +45,17 @@ public class DescribeRegionsRequest extends RpcAcsRequest<DescribeRegionsRespons
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
+	}
+
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
 		}
 	}
 

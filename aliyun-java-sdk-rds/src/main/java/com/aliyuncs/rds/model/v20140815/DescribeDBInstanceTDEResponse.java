@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDBInstanceTDEResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String tDEStatus;
 
+	private String requestId;
+
 	private List<Database> databases;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getTDEStatus() {
 		return this.tDEStatus;
@@ -45,6 +37,14 @@ public class DescribeDBInstanceTDEResponse extends AcsResponse {
 
 	public void setTDEStatus(String tDEStatus) {
 		this.tDEStatus = tDEStatus;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<Database> getDatabases() {

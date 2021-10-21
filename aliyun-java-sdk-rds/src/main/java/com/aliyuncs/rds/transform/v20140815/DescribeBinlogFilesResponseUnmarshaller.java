@@ -44,6 +44,7 @@ public class DescribeBinlogFilesResponseUnmarshaller {
 			binLogFile.setChecksum(_ctx.stringValue("DescribeBinlogFilesResponse.Items["+ i +"].Checksum"));
 			binLogFile.setHostInstanceID(_ctx.stringValue("DescribeBinlogFilesResponse.Items["+ i +"].HostInstanceID"));
 			binLogFile.setLogFileName(_ctx.stringValue("DescribeBinlogFilesResponse.Items["+ i +"].LogFileName"));
+			binLogFile.setRemoteStatus(_ctx.stringValue("DescribeBinlogFilesResponse.Items["+ i +"].RemoteStatus"));
 
 			items.add(binLogFile);
 		}

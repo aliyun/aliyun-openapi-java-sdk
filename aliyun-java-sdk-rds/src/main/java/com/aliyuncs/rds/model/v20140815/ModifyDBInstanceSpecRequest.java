@@ -31,9 +31,13 @@ public class ModifyDBInstanceSpecRequest extends RpcAcsRequest<ModifyDBInstanceS
 
 	private String engineVersion;
 
+	private String resourceGroupId;
+
 	private String effectiveTime;
 
 	private String dBInstanceId;
+
+	private String switchTime;
 
 	private String dBInstanceStorageType;
 
@@ -48,6 +52,8 @@ public class ModifyDBInstanceSpecRequest extends RpcAcsRequest<ModifyDBInstanceS
 	private String ownerAccount;
 
 	private Long ownerId;
+
+	private Long usedTime;
 
 	private String dBInstanceClass;
 
@@ -96,6 +102,17 @@ public class ModifyDBInstanceSpecRequest extends RpcAcsRequest<ModifyDBInstanceS
 		}
 	}
 
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
 	public String getEffectiveTime() {
 		return this.effectiveTime;
 	}
@@ -115,6 +132,17 @@ public class ModifyDBInstanceSpecRequest extends RpcAcsRequest<ModifyDBInstanceS
 		this.dBInstanceId = dBInstanceId;
 		if(dBInstanceId != null){
 			putQueryParameter("DBInstanceId", dBInstanceId);
+		}
+	}
+
+	public String getSwitchTime() {
+		return this.switchTime;
+	}
+
+	public void setSwitchTime(String switchTime) {
+		this.switchTime = switchTime;
+		if(switchTime != null){
+			putQueryParameter("SwitchTime", switchTime);
 		}
 	}
 
@@ -192,6 +220,17 @@ public class ModifyDBInstanceSpecRequest extends RpcAcsRequest<ModifyDBInstanceS
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public Long getUsedTime() {
+		return this.usedTime;
+	}
+
+	public void setUsedTime(Long usedTime) {
+		this.usedTime = usedTime;
+		if(usedTime != null){
+			putQueryParameter("UsedTime", usedTime.toString());
 		}
 	}
 

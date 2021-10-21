@@ -15,6 +15,7 @@
 package com.aliyuncs.rds.model.v20140815;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.rds.Endpoint;
 
@@ -41,9 +42,13 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 
 	private String dBInstanceDescription;
 
+	private List<Tag> tags;
+
 	private String businessInfo;
 
 	private String period;
+
+	private Boolean dryRun;
 
 	private String encryptionKey;
 
@@ -87,11 +92,17 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 
 	private String dedicatedHostGroupId;
 
+	private String createStrategy;
+
 	private String dBInstanceNetType;
+
+	private Integer amount;
 
 	private String usedTime;
 
 	private String targetMinorVersion;
+
+	private String userBackupId;
 
 	private Integer storageUpperBound;
 
@@ -199,6 +210,20 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		}
 	}
 
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+			}
+		}	
+	}
+
 	public String getBusinessInfo() {
 		return this.businessInfo;
 	}
@@ -218,6 +243,17 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		this.period = period;
 		if(period != null){
 			putQueryParameter("Period", period);
+		}
+	}
+
+	public Boolean getDryRun() {
+		return this.dryRun;
+	}
+
+	public void setDryRun(Boolean dryRun) {
+		this.dryRun = dryRun;
+		if(dryRun != null){
+			putQueryParameter("DryRun", dryRun.toString());
 		}
 	}
 
@@ -452,6 +488,17 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		}
 	}
 
+	public String getCreateStrategy() {
+		return this.createStrategy;
+	}
+
+	public void setCreateStrategy(String createStrategy) {
+		this.createStrategy = createStrategy;
+		if(createStrategy != null){
+			putQueryParameter("CreateStrategy", createStrategy);
+		}
+	}
+
 	public String getDBInstanceNetType() {
 		return this.dBInstanceNetType;
 	}
@@ -460,6 +507,17 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		this.dBInstanceNetType = dBInstanceNetType;
 		if(dBInstanceNetType != null){
 			putQueryParameter("DBInstanceNetType", dBInstanceNetType);
+		}
+	}
+
+	public Integer getAmount() {
+		return this.amount;
+	}
+
+	public void setAmount(Integer amount) {
+		this.amount = amount;
+		if(amount != null){
+			putQueryParameter("Amount", amount.toString());
 		}
 	}
 
@@ -482,6 +540,17 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		this.targetMinorVersion = targetMinorVersion;
 		if(targetMinorVersion != null){
 			putQueryParameter("TargetMinorVersion", targetMinorVersion);
+		}
+	}
+
+	public String getUserBackupId() {
+		return this.userBackupId;
+	}
+
+	public void setUserBackupId(String userBackupId) {
+		this.userBackupId = userBackupId;
+		if(userBackupId != null){
+			putQueryParameter("UserBackupId", userBackupId);
 		}
 	}
 
@@ -537,6 +606,29 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		this.payType = payType;
 		if(payType != null){
 			putQueryParameter("PayType", payType);
+		}
+	}
+
+	public static class Tag {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

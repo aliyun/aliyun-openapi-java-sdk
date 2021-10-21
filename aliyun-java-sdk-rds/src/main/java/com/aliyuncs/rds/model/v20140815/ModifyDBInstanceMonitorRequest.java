@@ -27,17 +27,17 @@ public class ModifyDBInstanceMonitorRequest extends RpcAcsRequest<ModifyDBInstan
 
 	private Long resourceOwnerId;
 
+	private String clientToken;
+
+	private String dBInstanceId;
+
 	private String period;
 
 	private String resourceOwnerAccount;
 
-	private String clientToken;
-
 	private String ownerAccount;
 
 	private Long ownerId;
-
-	private String dBInstanceId;
 	public ModifyDBInstanceMonitorRequest() {
 		super("Rds", "2014-08-15", "ModifyDBInstanceMonitor", "rds");
 		setMethod(MethodType.POST);
@@ -55,6 +55,28 @@ public class ModifyDBInstanceMonitorRequest extends RpcAcsRequest<ModifyDBInstan
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
+	}
+
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+		if(dBInstanceId != null){
+			putQueryParameter("DBInstanceId", dBInstanceId);
 		}
 	}
 
@@ -80,17 +102,6 @@ public class ModifyDBInstanceMonitorRequest extends RpcAcsRequest<ModifyDBInstan
 		}
 	}
 
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
-		}
-	}
-
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -110,17 +121,6 @@ public class ModifyDBInstanceMonitorRequest extends RpcAcsRequest<ModifyDBInstan
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
-
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-		if(dBInstanceId != null){
-			putQueryParameter("DBInstanceId", dBInstanceId);
 		}
 	}
 

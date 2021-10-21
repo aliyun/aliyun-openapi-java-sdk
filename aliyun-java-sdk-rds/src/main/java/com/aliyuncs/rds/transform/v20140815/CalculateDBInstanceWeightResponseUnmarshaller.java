@@ -36,6 +36,7 @@ public class CalculateDBInstanceWeightResponseUnmarshaller {
 			dBInstanceWeight.setReadonlyInstanceSQLDelayedTime(_ctx.stringValue("CalculateDBInstanceWeightResponse.Items["+ i +"].ReadonlyInstanceSQLDelayedTime"));
 			dBInstanceWeight.setAvailability(_ctx.stringValue("CalculateDBInstanceWeightResponse.Items["+ i +"].Availability"));
 			dBInstanceWeight.setWeight(_ctx.stringValue("CalculateDBInstanceWeightResponse.Items["+ i +"].Weight"));
+			dBInstanceWeight.setRole(_ctx.stringValue("CalculateDBInstanceWeightResponse.Items["+ i +"].Role"));
 
 			items.add(dBInstanceWeight);
 		}

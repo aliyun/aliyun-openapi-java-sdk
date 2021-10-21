@@ -45,6 +45,7 @@ public class DescribeEventsResponseUnmarshaller {
 			eventItemsItem.setEventReason(_ctx.stringValue("DescribeEventsResponse.EventItems["+ i +"].EventReason"));
 			eventItemsItem.setEventPayload(_ctx.stringValue("DescribeEventsResponse.EventItems["+ i +"].EventPayload"));
 			eventItemsItem.setEventRecordTime(_ctx.stringValue("DescribeEventsResponse.EventItems["+ i +"].EventRecordTime"));
+			eventItemsItem.setCallerUid(_ctx.longValue("DescribeEventsResponse.EventItems["+ i +"].CallerUid"));
 
 			eventItems.add(eventItemsItem);
 		}

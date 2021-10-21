@@ -105,6 +105,8 @@ public class DescribeBinlogFilesResponse extends AcsResponse {
 
 		private String logFileName;
 
+		private String remoteStatus;
+
 		public Long getFileSize() {
 			return this.fileSize;
 		}
@@ -175,6 +177,14 @@ public class DescribeBinlogFilesResponse extends AcsResponse {
 
 		public void setLogFileName(String logFileName) {
 			this.logFileName = logFileName;
+		}
+
+		public String getRemoteStatus() {
+			return this.remoteStatus;
+		}
+
+		public void setRemoteStatus(String remoteStatus) {
+			this.remoteStatus = remoteStatus;
 		}
 	}
 

@@ -57,6 +57,8 @@ public class CalculateDBInstanceWeightResponse extends AcsResponse {
 
 		private String weight;
 
+		private String role;
+
 		public String getDBInstanceId() {
 			return this.dBInstanceId;
 		}
@@ -95,6 +97,14 @@ public class CalculateDBInstanceWeightResponse extends AcsResponse {
 
 		public void setWeight(String weight) {
 			this.weight = weight;
+		}
+
+		public String getRole() {
+			return this.role;
+		}
+
+		public void setRole(String role) {
+			this.role = role;
 		}
 	}
 

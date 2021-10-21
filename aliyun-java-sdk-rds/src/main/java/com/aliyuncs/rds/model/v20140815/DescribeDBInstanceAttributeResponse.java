@@ -195,6 +195,12 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 		private String superPermissionMode;
 
+		private String generalGroupName;
+
+		private Integer tipsLevel;
+
+		private String tips;
+
 		private List<SlaveZone> slaveZones;
 
 		private List<ReadOnlyDBInstanceId> readOnlyDBInstanceIds;
@@ -791,6 +797,30 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 		public void setSuperPermissionMode(String superPermissionMode) {
 			this.superPermissionMode = superPermissionMode;
+		}
+
+		public String getGeneralGroupName() {
+			return this.generalGroupName;
+		}
+
+		public void setGeneralGroupName(String generalGroupName) {
+			this.generalGroupName = generalGroupName;
+		}
+
+		public Integer getTipsLevel() {
+			return this.tipsLevel;
+		}
+
+		public void setTipsLevel(Integer tipsLevel) {
+			this.tipsLevel = tipsLevel;
+		}
+
+		public String getTips() {
+			return this.tips;
+		}
+
+		public void setTips(String tips) {
+			this.tips = tips;
 		}
 
 		public List<SlaveZone> getSlaveZones() {

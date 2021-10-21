@@ -23,10 +23,15 @@ public class CreateDBInstanceResponseUnmarshaller {
 	public static CreateDBInstanceResponse unmarshall(CreateDBInstanceResponse createDBInstanceResponse, UnmarshallerContext _ctx) {
 		
 		createDBInstanceResponse.setRequestId(_ctx.stringValue("CreateDBInstanceResponse.RequestId"));
-		createDBInstanceResponse.setDBInstanceId(_ctx.stringValue("CreateDBInstanceResponse.DBInstanceId"));
-		createDBInstanceResponse.setOrderId(_ctx.stringValue("CreateDBInstanceResponse.OrderId"));
+		createDBInstanceResponse.setDryRunResult(_ctx.booleanValue("CreateDBInstanceResponse.DryRunResult"));
+		createDBInstanceResponse.setTagResult(_ctx.booleanValue("CreateDBInstanceResponse.TagResult"));
 		createDBInstanceResponse.setConnectionString(_ctx.stringValue("CreateDBInstanceResponse.ConnectionString"));
+		createDBInstanceResponse.setMessage(_ctx.stringValue("CreateDBInstanceResponse.Message"));
+		createDBInstanceResponse.setDBInstanceId(_ctx.stringValue("CreateDBInstanceResponse.DBInstanceId"));
 		createDBInstanceResponse.setPort(_ctx.stringValue("CreateDBInstanceResponse.Port"));
+		createDBInstanceResponse.setTaskId(_ctx.stringValue("CreateDBInstanceResponse.TaskId"));
+		createDBInstanceResponse.setDryRun(_ctx.booleanValue("CreateDBInstanceResponse.DryRun"));
+		createDBInstanceResponse.setOrderId(_ctx.stringValue("CreateDBInstanceResponse.OrderId"));
 	 
 	 	return createDBInstanceResponse;
 	}

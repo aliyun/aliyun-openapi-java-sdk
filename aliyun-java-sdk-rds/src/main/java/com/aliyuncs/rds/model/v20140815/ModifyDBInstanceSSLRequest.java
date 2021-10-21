@@ -29,9 +29,27 @@ public class ModifyDBInstanceSSLRequest extends RpcAcsRequest<ModifyDBInstanceSS
 
 	private String connectionString;
 
+	private String serverKey;
+
+	private Integer clientCrlEnabled;
+
+	private String aCL;
+
+	private String clientCertRevocationList;
+
+	private String serverCert;
+
 	private String dBInstanceId;
 
+	private Integer clientCAEnabled;
+
+	private String clientCACert;
+
+	private String replicationACL;
+
 	private String resourceOwnerAccount;
+
+	private String cAType;
 
 	private String ownerAccount;
 
@@ -69,6 +87,61 @@ public class ModifyDBInstanceSSLRequest extends RpcAcsRequest<ModifyDBInstanceSS
 		}
 	}
 
+	public String getServerKey() {
+		return this.serverKey;
+	}
+
+	public void setServerKey(String serverKey) {
+		this.serverKey = serverKey;
+		if(serverKey != null){
+			putQueryParameter("ServerKey", serverKey);
+		}
+	}
+
+	public Integer getClientCrlEnabled() {
+		return this.clientCrlEnabled;
+	}
+
+	public void setClientCrlEnabled(Integer clientCrlEnabled) {
+		this.clientCrlEnabled = clientCrlEnabled;
+		if(clientCrlEnabled != null){
+			putQueryParameter("ClientCrlEnabled", clientCrlEnabled.toString());
+		}
+	}
+
+	public String getACL() {
+		return this.aCL;
+	}
+
+	public void setACL(String aCL) {
+		this.aCL = aCL;
+		if(aCL != null){
+			putQueryParameter("ACL", aCL);
+		}
+	}
+
+	public String getClientCertRevocationList() {
+		return this.clientCertRevocationList;
+	}
+
+	public void setClientCertRevocationList(String clientCertRevocationList) {
+		this.clientCertRevocationList = clientCertRevocationList;
+		if(clientCertRevocationList != null){
+			putQueryParameter("ClientCertRevocationList", clientCertRevocationList);
+		}
+	}
+
+	public String getServerCert() {
+		return this.serverCert;
+	}
+
+	public void setServerCert(String serverCert) {
+		this.serverCert = serverCert;
+		if(serverCert != null){
+			putQueryParameter("ServerCert", serverCert);
+		}
+	}
+
 	public String getDBInstanceId() {
 		return this.dBInstanceId;
 	}
@@ -80,6 +153,39 @@ public class ModifyDBInstanceSSLRequest extends RpcAcsRequest<ModifyDBInstanceSS
 		}
 	}
 
+	public Integer getClientCAEnabled() {
+		return this.clientCAEnabled;
+	}
+
+	public void setClientCAEnabled(Integer clientCAEnabled) {
+		this.clientCAEnabled = clientCAEnabled;
+		if(clientCAEnabled != null){
+			putQueryParameter("ClientCAEnabled", clientCAEnabled.toString());
+		}
+	}
+
+	public String getClientCACert() {
+		return this.clientCACert;
+	}
+
+	public void setClientCACert(String clientCACert) {
+		this.clientCACert = clientCACert;
+		if(clientCACert != null){
+			putQueryParameter("ClientCACert", clientCACert);
+		}
+	}
+
+	public String getReplicationACL() {
+		return this.replicationACL;
+	}
+
+	public void setReplicationACL(String replicationACL) {
+		this.replicationACL = replicationACL;
+		if(replicationACL != null){
+			putQueryParameter("ReplicationACL", replicationACL);
+		}
+	}
+
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -88,6 +194,17 @@ public class ModifyDBInstanceSSLRequest extends RpcAcsRequest<ModifyDBInstanceSS
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getCAType() {
+		return this.cAType;
+	}
+
+	public void setCAType(String cAType) {
+		this.cAType = cAType;
+		if(cAType != null){
+			putQueryParameter("CAType", cAType);
 		}
 	}
 

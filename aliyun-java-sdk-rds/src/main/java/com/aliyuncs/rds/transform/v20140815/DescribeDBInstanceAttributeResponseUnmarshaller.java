@@ -108,6 +108,9 @@ public class DescribeDBInstanceAttributeResponseUnmarshaller {
 			dBInstanceAttribute.setOriginConfiguration(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].OriginConfiguration"));
 			dBInstanceAttribute.setDedicatedHostGroupId(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].DedicatedHostGroupId"));
 			dBInstanceAttribute.setSuperPermissionMode(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].SuperPermissionMode"));
+			dBInstanceAttribute.setGeneralGroupName(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].GeneralGroupName"));
+			dBInstanceAttribute.setTipsLevel(_ctx.integerValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].TipsLevel"));
+			dBInstanceAttribute.setTips(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].Tips"));
 
 			Extra extra = new Extra();
 			extra.setReplicaGroupID(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].Extra.ReplicaGroupID"));

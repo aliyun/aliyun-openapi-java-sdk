@@ -27,6 +27,8 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 
 	private Long resourceOwnerId;
 
+	private String connectionString;
+
 	private String engineVersion;
 
 	private String resourceGroupId;
@@ -45,6 +47,8 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 
 	private String zoneId;
 
+	private Integer maxResults;
+
 	private String instanceNetworkType;
 
 	private String connectionMode;
@@ -60,6 +64,8 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 	private String expired;
 
 	private String engine;
+
+	private String nextToken;
 
 	private Integer pageSize;
 
@@ -95,6 +101,17 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getConnectionString() {
+		return this.connectionString;
+	}
+
+	public void setConnectionString(String connectionString) {
+		this.connectionString = connectionString;
+		if(connectionString != null){
+			putQueryParameter("ConnectionString", connectionString);
 		}
 	}
 
@@ -197,6 +214,17 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 		}
 	}
 
+	public Integer getMaxResults() {
+		return this.maxResults;
+	}
+
+	public void setMaxResults(Integer maxResults) {
+		this.maxResults = maxResults;
+		if(maxResults != null){
+			putQueryParameter("MaxResults", maxResults.toString());
+		}
+	}
+
 	public String getInstanceNetworkType() {
 		return this.instanceNetworkType;
 	}
@@ -282,6 +310,17 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 		this.engine = engine;
 		if(engine != null){
 			putQueryParameter("Engine", engine);
+		}
+	}
+
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+		if(nextToken != null){
+			putQueryParameter("NextToken", nextToken);
 		}
 	}
 

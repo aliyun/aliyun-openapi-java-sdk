@@ -64,6 +64,7 @@ public class DescribeDBInstanceNetInfoResponseUnmarshaller {
 				dBInstanceWeight.setDBInstanceType(_ctx.stringValue("DescribeDBInstanceNetInfoResponse.DBInstanceNetInfos["+ i +"].DBInstanceWeights["+ j +"].DBInstanceType"));
 				dBInstanceWeight.setAvailability(_ctx.stringValue("DescribeDBInstanceNetInfoResponse.DBInstanceNetInfos["+ i +"].DBInstanceWeights["+ j +"].Availability"));
 				dBInstanceWeight.setWeight(_ctx.stringValue("DescribeDBInstanceNetInfoResponse.DBInstanceNetInfos["+ i +"].DBInstanceWeights["+ j +"].Weight"));
+				dBInstanceWeight.setRole(_ctx.stringValue("DescribeDBInstanceNetInfoResponse.DBInstanceNetInfos["+ i +"].DBInstanceWeights["+ j +"].Role"));
 
 				dBInstanceWeights.add(dBInstanceWeight);
 			}

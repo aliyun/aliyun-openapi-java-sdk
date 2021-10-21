@@ -99,6 +99,8 @@ public class DescribeEventsResponse extends AcsResponse {
 
 		private String eventRecordTime;
 
+		private Long callerUid;
+
 		public Integer getEventId() {
 			return this.eventId;
 		}
@@ -185,6 +187,14 @@ public class DescribeEventsResponse extends AcsResponse {
 
 		public void setEventRecordTime(String eventRecordTime) {
 			this.eventRecordTime = eventRecordTime;
+		}
+
+		public Long getCallerUid() {
+			return this.callerUid;
+		}
+
+		public void setCallerUid(Long callerUid) {
+			this.callerUid = callerUid;
 		}
 	}
 
