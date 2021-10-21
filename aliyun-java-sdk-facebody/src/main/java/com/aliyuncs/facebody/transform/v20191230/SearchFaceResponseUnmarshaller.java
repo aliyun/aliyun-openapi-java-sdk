@@ -30,12 +30,15 @@ public class SearchFaceResponseUnmarshaller {
 	public static SearchFaceResponse unmarshall(SearchFaceResponse searchFaceResponse, UnmarshallerContext _ctx) {
 		
 		searchFaceResponse.setRequestId(_ctx.stringValue("SearchFaceResponse.RequestId"));
+		searchFaceResponse.setCode(_ctx.stringValue("SearchFaceResponse.Code"));
+		searchFaceResponse.setMessage(_ctx.stringValue("SearchFaceResponse.Message"));
 
 		Data data = new Data();
 
 		List<MatchListItem> matchList = new ArrayList<MatchListItem>();
 		for (int i = 0; i < _ctx.lengthValue("SearchFaceResponse.Data.MatchList.Length"); i++) {
 			MatchListItem matchListItem = new MatchListItem();
+			matchListItem.setQualitieScore(_ctx.floatValue("SearchFaceResponse.Data.MatchList["+ i +"].QualitieScore"));
 
 			Location location = new Location();
 			location.setWidth(_ctx.integerValue("SearchFaceResponse.Data.MatchList["+ i +"].Location.Width"));

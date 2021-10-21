@@ -93,6 +93,8 @@ public class BatchAddFacesResponse extends AcsResponse {
 
 			private String faceId;
 
+			private Float qualitieScore;
+
 			public String getImageURL() {
 				return this.imageURL;
 			}
@@ -107,6 +109,14 @@ public class BatchAddFacesResponse extends AcsResponse {
 
 			public void setFaceId(String faceId) {
 				this.faceId = faceId;
+			}
+
+			public Float getQualitieScore() {
+				return this.qualitieScore;
+			}
+
+			public void setQualitieScore(Float qualitieScore) {
+				this.qualitieScore = qualitieScore;
 			}
 		}
 

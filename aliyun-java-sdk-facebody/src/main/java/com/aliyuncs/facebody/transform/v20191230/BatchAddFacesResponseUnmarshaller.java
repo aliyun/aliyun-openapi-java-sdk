@@ -39,6 +39,7 @@ public class BatchAddFacesResponseUnmarshaller {
 			InsertedFacesItem insertedFacesItem = new InsertedFacesItem();
 			insertedFacesItem.setImageURL(_ctx.stringValue("BatchAddFacesResponse.Data.InsertedFaces["+ i +"].ImageURL"));
 			insertedFacesItem.setFaceId(_ctx.stringValue("BatchAddFacesResponse.Data.InsertedFaces["+ i +"].FaceId"));
+			insertedFacesItem.setQualitieScore(_ctx.floatValue("BatchAddFacesResponse.Data.InsertedFaces["+ i +"].QualitieScore"));
 
 			insertedFaces.add(insertedFacesItem);
 		}

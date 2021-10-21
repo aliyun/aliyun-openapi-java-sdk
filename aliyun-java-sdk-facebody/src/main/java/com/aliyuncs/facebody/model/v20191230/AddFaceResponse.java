@@ -26,6 +26,10 @@ public class AddFaceResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String code;
+
+	private String message;
+
 	private Data data;
 
 	public String getRequestId() {
@@ -34,6 +38,22 @@ public class AddFaceResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Data getData() {
@@ -48,12 +68,22 @@ public class AddFaceResponse extends AcsResponse {
 
 		private String faceId;
 
+		private Float qualitieScore;
+
 		public String getFaceId() {
 			return this.faceId;
 		}
 
 		public void setFaceId(String faceId) {
 			this.faceId = faceId;
+		}
+
+		public Float getQualitieScore() {
+			return this.qualitieScore;
+		}
+
+		public void setQualitieScore(Float qualitieScore) {
+			this.qualitieScore = qualitieScore;
 		}
 	}
 

@@ -24,9 +24,12 @@ public class AddFaceResponseUnmarshaller {
 	public static AddFaceResponse unmarshall(AddFaceResponse addFaceResponse, UnmarshallerContext _ctx) {
 		
 		addFaceResponse.setRequestId(_ctx.stringValue("AddFaceResponse.RequestId"));
+		addFaceResponse.setCode(_ctx.stringValue("AddFaceResponse.Code"));
+		addFaceResponse.setMessage(_ctx.stringValue("AddFaceResponse.Message"));
 
 		Data data = new Data();
 		data.setFaceId(_ctx.stringValue("AddFaceResponse.Data.FaceId"));
+		data.setQualitieScore(_ctx.floatValue("AddFaceResponse.Data.QualitieScore"));
 		addFaceResponse.setData(data);
 	 
 	 	return addFaceResponse;

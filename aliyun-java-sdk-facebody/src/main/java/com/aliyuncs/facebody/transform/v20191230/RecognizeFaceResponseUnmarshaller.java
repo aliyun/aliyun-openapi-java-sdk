@@ -28,6 +28,8 @@ public class RecognizeFaceResponseUnmarshaller {
 	public static RecognizeFaceResponse unmarshall(RecognizeFaceResponse recognizeFaceResponse, UnmarshallerContext _ctx) {
 		
 		recognizeFaceResponse.setRequestId(_ctx.stringValue("RecognizeFaceResponse.RequestId"));
+		recognizeFaceResponse.setCode(_ctx.stringValue("RecognizeFaceResponse.Code"));
+		recognizeFaceResponse.setMessage(_ctx.stringValue("RecognizeFaceResponse.Message"));
 
 		Data data = new Data();
 		data.setFaceCount(_ctx.integerValue("RecognizeFaceResponse.Data.FaceCount"));
