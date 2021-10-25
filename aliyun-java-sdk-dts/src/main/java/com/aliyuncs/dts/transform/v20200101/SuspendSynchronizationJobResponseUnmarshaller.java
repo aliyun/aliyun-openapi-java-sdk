@@ -24,8 +24,8 @@ public class SuspendSynchronizationJobResponseUnmarshaller {
 		
 		suspendSynchronizationJobResponse.setRequestId(_ctx.stringValue("SuspendSynchronizationJobResponse.RequestId"));
 		suspendSynchronizationJobResponse.setErrCode(_ctx.stringValue("SuspendSynchronizationJobResponse.ErrCode"));
-		suspendSynchronizationJobResponse.setSuccess(_ctx.stringValue("SuspendSynchronizationJobResponse.Success"));
 		suspendSynchronizationJobResponse.setErrMessage(_ctx.stringValue("SuspendSynchronizationJobResponse.ErrMessage"));
+		suspendSynchronizationJobResponse.setSuccess(_ctx.stringValue("SuspendSynchronizationJobResponse.Success"));
 	 
 	 	return suspendSynchronizationJobResponse;
 	}

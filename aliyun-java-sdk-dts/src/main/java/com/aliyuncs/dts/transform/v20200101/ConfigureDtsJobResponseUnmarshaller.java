@@ -23,12 +23,12 @@ public class ConfigureDtsJobResponseUnmarshaller {
 	public static ConfigureDtsJobResponse unmarshall(ConfigureDtsJobResponse configureDtsJobResponse, UnmarshallerContext _ctx) {
 		
 		configureDtsJobResponse.setRequestId(_ctx.stringValue("ConfigureDtsJobResponse.RequestId"));
-		configureDtsJobResponse.setHttpStatusCode(_ctx.stringValue("ConfigureDtsJobResponse.HttpStatusCode"));
 		configureDtsJobResponse.setErrCode(_ctx.stringValue("ConfigureDtsJobResponse.ErrCode"));
-		configureDtsJobResponse.setDtsJobId(_ctx.stringValue("ConfigureDtsJobResponse.DtsJobId"));
-		configureDtsJobResponse.setDtsInstanceId(_ctx.stringValue("ConfigureDtsJobResponse.DtsInstanceId"));
-		configureDtsJobResponse.setSuccess(_ctx.stringValue("ConfigureDtsJobResponse.Success"));
 		configureDtsJobResponse.setErrMessage(_ctx.stringValue("ConfigureDtsJobResponse.ErrMessage"));
+		configureDtsJobResponse.setHttpStatusCode(_ctx.stringValue("ConfigureDtsJobResponse.HttpStatusCode"));
+		configureDtsJobResponse.setDtsJobId(_ctx.stringValue("ConfigureDtsJobResponse.DtsJobId"));
+		configureDtsJobResponse.setSuccess(_ctx.stringValue("ConfigureDtsJobResponse.Success"));
+		configureDtsJobResponse.setDtsInstanceId(_ctx.stringValue("ConfigureDtsJobResponse.DtsInstanceId"));
 	 
 	 	return configureDtsJobResponse;
 	}

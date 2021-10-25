@@ -23,12 +23,12 @@ public class SuspendDtsJobResponseUnmarshaller {
 	public static SuspendDtsJobResponse unmarshall(SuspendDtsJobResponse suspendDtsJobResponse, UnmarshallerContext _ctx) {
 		
 		suspendDtsJobResponse.setRequestId(_ctx.stringValue("SuspendDtsJobResponse.RequestId"));
-		suspendDtsJobResponse.setHttpStatusCode(_ctx.integerValue("SuspendDtsJobResponse.HttpStatusCode"));
-		suspendDtsJobResponse.setErrCode(_ctx.stringValue("SuspendDtsJobResponse.ErrCode"));
-		suspendDtsJobResponse.setSuccess(_ctx.booleanValue("SuspendDtsJobResponse.Success"));
-		suspendDtsJobResponse.setErrMessage(_ctx.stringValue("SuspendDtsJobResponse.ErrMessage"));
-		suspendDtsJobResponse.setDynamicMessage(_ctx.stringValue("SuspendDtsJobResponse.DynamicMessage"));
 		suspendDtsJobResponse.setDynamicCode(_ctx.stringValue("SuspendDtsJobResponse.DynamicCode"));
+		suspendDtsJobResponse.setDynamicMessage(_ctx.stringValue("SuspendDtsJobResponse.DynamicMessage"));
+		suspendDtsJobResponse.setErrCode(_ctx.stringValue("SuspendDtsJobResponse.ErrCode"));
+		suspendDtsJobResponse.setErrMessage(_ctx.stringValue("SuspendDtsJobResponse.ErrMessage"));
+		suspendDtsJobResponse.setHttpStatusCode(_ctx.integerValue("SuspendDtsJobResponse.HttpStatusCode"));
+		suspendDtsJobResponse.setSuccess(_ctx.booleanValue("SuspendDtsJobResponse.Success"));
 	 
 	 	return suspendDtsJobResponse;
 	}

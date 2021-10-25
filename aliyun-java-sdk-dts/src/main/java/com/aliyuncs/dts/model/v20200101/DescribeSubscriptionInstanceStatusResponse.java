@@ -25,33 +25,33 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeSubscriptionInstanceStatusResponse extends AcsResponse {
 
-	private String status;
+	private String beginTimestamp;
 
-	private String errorMessage;
+	private String consumptionCheckpoint;
 
-	private String errCode;
+	private String consumptionClient;
 
-	private String success;
+	private String endTimestamp;
 
 	private String errMessage;
 
 	private String payType;
 
-	private String consumptionClient;
-
-	private String consumptionCheckpoint;
-
-	private String endTimestamp;
-
-	private String beginTimestamp;
-
 	private String requestId;
+
+	private String status;
 
 	private String subscribeTopic;
 
+	private String subscriptionInstanceID;
+
 	private String subscriptionInstanceName;
 
-	private String subscriptionInstanceID;
+	private String errCode;
+
+	private String success;
+
+	private String errorMessage;
 
 	private String taskId;
 
@@ -63,36 +63,36 @@ public class DescribeSubscriptionInstanceStatusResponse extends AcsResponse {
 
 	private SubscriptionHost subscriptionHost;
 
-	public String getStatus() {
-		return this.status;
+	public String getBeginTimestamp() {
+		return this.beginTimestamp;
 	}
 
-	public void setStatus(String status) {
-		this.status = status;
+	public void setBeginTimestamp(String beginTimestamp) {
+		this.beginTimestamp = beginTimestamp;
 	}
 
-	public String getErrorMessage() {
-		return this.errorMessage;
+	public String getConsumptionCheckpoint() {
+		return this.consumptionCheckpoint;
 	}
 
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
+	public void setConsumptionCheckpoint(String consumptionCheckpoint) {
+		this.consumptionCheckpoint = consumptionCheckpoint;
 	}
 
-	public String getErrCode() {
-		return this.errCode;
+	public String getConsumptionClient() {
+		return this.consumptionClient;
 	}
 
-	public void setErrCode(String errCode) {
-		this.errCode = errCode;
+	public void setConsumptionClient(String consumptionClient) {
+		this.consumptionClient = consumptionClient;
 	}
 
-	public String getSuccess() {
-		return this.success;
+	public String getEndTimestamp() {
+		return this.endTimestamp;
 	}
 
-	public void setSuccess(String success) {
-		this.success = success;
+	public void setEndTimestamp(String endTimestamp) {
+		this.endTimestamp = endTimestamp;
 	}
 
 	public String getErrMessage() {
@@ -111,44 +111,20 @@ public class DescribeSubscriptionInstanceStatusResponse extends AcsResponse {
 		this.payType = payType;
 	}
 
-	public String getConsumptionClient() {
-		return this.consumptionClient;
-	}
-
-	public void setConsumptionClient(String consumptionClient) {
-		this.consumptionClient = consumptionClient;
-	}
-
-	public String getConsumptionCheckpoint() {
-		return this.consumptionCheckpoint;
-	}
-
-	public void setConsumptionCheckpoint(String consumptionCheckpoint) {
-		this.consumptionCheckpoint = consumptionCheckpoint;
-	}
-
-	public String getEndTimestamp() {
-		return this.endTimestamp;
-	}
-
-	public void setEndTimestamp(String endTimestamp) {
-		this.endTimestamp = endTimestamp;
-	}
-
-	public String getBeginTimestamp() {
-		return this.beginTimestamp;
-	}
-
-	public void setBeginTimestamp(String beginTimestamp) {
-		this.beginTimestamp = beginTimestamp;
-	}
-
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
 	}
 
 	public String getSubscribeTopic() {
@@ -159,6 +135,14 @@ public class DescribeSubscriptionInstanceStatusResponse extends AcsResponse {
 		this.subscribeTopic = subscribeTopic;
 	}
 
+	public String getSubscriptionInstanceID() {
+		return this.subscriptionInstanceID;
+	}
+
+	public void setSubscriptionInstanceID(String subscriptionInstanceID) {
+		this.subscriptionInstanceID = subscriptionInstanceID;
+	}
+
 	public String getSubscriptionInstanceName() {
 		return this.subscriptionInstanceName;
 	}
@@ -167,12 +151,28 @@ public class DescribeSubscriptionInstanceStatusResponse extends AcsResponse {
 		this.subscriptionInstanceName = subscriptionInstanceName;
 	}
 
-	public String getSubscriptionInstanceID() {
-		return this.subscriptionInstanceID;
+	public String getErrCode() {
+		return this.errCode;
 	}
 
-	public void setSubscriptionInstanceID(String subscriptionInstanceID) {
-		this.subscriptionInstanceID = subscriptionInstanceID;
+	public void setErrCode(String errCode) {
+		this.errCode = errCode;
+	}
+
+	public String getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(String success) {
+		this.success = success;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
 	}
 
 	public String getTaskId() {
@@ -250,17 +250,9 @@ public class DescribeSubscriptionInstanceStatusResponse extends AcsResponse {
 
 	public static class SourceEndpoint {
 
-		private String instanceType;
-
 		private String instanceID;
 
-		public String getInstanceType() {
-			return this.instanceType;
-		}
-
-		public void setInstanceType(String instanceType) {
-			this.instanceType = instanceType;
-		}
+		private String instanceType;
 
 		public String getInstanceID() {
 			return this.instanceID;
@@ -269,21 +261,21 @@ public class DescribeSubscriptionInstanceStatusResponse extends AcsResponse {
 		public void setInstanceID(String instanceID) {
 			this.instanceID = instanceID;
 		}
+
+		public String getInstanceType() {
+			return this.instanceType;
+		}
+
+		public void setInstanceType(String instanceType) {
+			this.instanceType = instanceType;
+		}
 	}
 
 	public static class SubscriptionDataType {
 
-		private Boolean dML;
-
 		private Boolean dDL;
 
-		public Boolean getDML() {
-			return this.dML;
-		}
-
-		public void setDML(Boolean dML) {
-			this.dML = dML;
-		}
+		private Boolean dML;
 
 		public Boolean getDDL() {
 			return this.dDL;
@@ -292,22 +284,30 @@ public class DescribeSubscriptionInstanceStatusResponse extends AcsResponse {
 		public void setDDL(Boolean dDL) {
 			this.dDL = dDL;
 		}
+
+		public Boolean getDML() {
+			return this.dML;
+		}
+
+		public void setDML(Boolean dML) {
+			this.dML = dML;
+		}
 	}
 
 	public static class SubscriptionHost {
 
-		private String vPCHost;
+		private String privateHost;
 
 		private String publicHost;
 
-		private String privateHost;
+		private String vPCHost;
 
-		public String getVPCHost() {
-			return this.vPCHost;
+		public String getPrivateHost() {
+			return this.privateHost;
 		}
 
-		public void setVPCHost(String vPCHost) {
-			this.vPCHost = vPCHost;
+		public void setPrivateHost(String privateHost) {
+			this.privateHost = privateHost;
 		}
 
 		public String getPublicHost() {
@@ -318,12 +318,12 @@ public class DescribeSubscriptionInstanceStatusResponse extends AcsResponse {
 			this.publicHost = publicHost;
 		}
 
-		public String getPrivateHost() {
-			return this.privateHost;
+		public String getVPCHost() {
+			return this.vPCHost;
 		}
 
-		public void setPrivateHost(String privateHost) {
-			this.privateHost = privateHost;
+		public void setVPCHost(String vPCHost) {
+			this.vPCHost = vPCHost;
 		}
 	}
 

@@ -23,12 +23,12 @@ public class ResetDtsJobResponseUnmarshaller {
 	public static ResetDtsJobResponse unmarshall(ResetDtsJobResponse resetDtsJobResponse, UnmarshallerContext _ctx) {
 		
 		resetDtsJobResponse.setRequestId(_ctx.stringValue("ResetDtsJobResponse.RequestId"));
-		resetDtsJobResponse.setHttpStatusCode(_ctx.integerValue("ResetDtsJobResponse.HttpStatusCode"));
-		resetDtsJobResponse.setErrCode(_ctx.stringValue("ResetDtsJobResponse.ErrCode"));
-		resetDtsJobResponse.setSuccess(_ctx.booleanValue("ResetDtsJobResponse.Success"));
-		resetDtsJobResponse.setErrMessage(_ctx.stringValue("ResetDtsJobResponse.ErrMessage"));
-		resetDtsJobResponse.setDynamicMessage(_ctx.stringValue("ResetDtsJobResponse.DynamicMessage"));
 		resetDtsJobResponse.setDynamicCode(_ctx.stringValue("ResetDtsJobResponse.DynamicCode"));
+		resetDtsJobResponse.setDynamicMessage(_ctx.stringValue("ResetDtsJobResponse.DynamicMessage"));
+		resetDtsJobResponse.setErrCode(_ctx.stringValue("ResetDtsJobResponse.ErrCode"));
+		resetDtsJobResponse.setErrMessage(_ctx.stringValue("ResetDtsJobResponse.ErrMessage"));
+		resetDtsJobResponse.setHttpStatusCode(_ctx.integerValue("ResetDtsJobResponse.HttpStatusCode"));
+		resetDtsJobResponse.setSuccess(_ctx.booleanValue("ResetDtsJobResponse.Success"));
 	 
 	 	return resetDtsJobResponse;
 	}

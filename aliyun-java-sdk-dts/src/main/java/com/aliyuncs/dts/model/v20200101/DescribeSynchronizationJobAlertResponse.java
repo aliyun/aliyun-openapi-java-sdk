@@ -24,76 +24,36 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeSynchronizationJobAlertResponse extends AcsResponse {
 
-	private String synchronizationJobName;
-
-	private String errorAlertStatus;
-
-	private String errCode;
-
-	private String success;
-
-	private String errorAlertPhone;
-
-	private String errMessage;
+	private String delayAlertPhone;
 
 	private String delayAlertStatus;
 
-	private String delayAlertPhone;
-
 	private String delayOverSeconds;
+
+	private String errCode;
+
+	private String errMessage;
+
+	private String errorAlertPhone;
+
+	private String errorAlertStatus;
 
 	private String requestId;
 
-	private String synchronizationJobId;
+	private String success;
 
 	private String synchronizationDirection;
 
-	public String getSynchronizationJobName() {
-		return this.synchronizationJobName;
+	private String synchronizationJobId;
+
+	private String synchronizationJobName;
+
+	public String getDelayAlertPhone() {
+		return this.delayAlertPhone;
 	}
 
-	public void setSynchronizationJobName(String synchronizationJobName) {
-		this.synchronizationJobName = synchronizationJobName;
-	}
-
-	public String getErrorAlertStatus() {
-		return this.errorAlertStatus;
-	}
-
-	public void setErrorAlertStatus(String errorAlertStatus) {
-		this.errorAlertStatus = errorAlertStatus;
-	}
-
-	public String getErrCode() {
-		return this.errCode;
-	}
-
-	public void setErrCode(String errCode) {
-		this.errCode = errCode;
-	}
-
-	public String getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(String success) {
-		this.success = success;
-	}
-
-	public String getErrorAlertPhone() {
-		return this.errorAlertPhone;
-	}
-
-	public void setErrorAlertPhone(String errorAlertPhone) {
-		this.errorAlertPhone = errorAlertPhone;
-	}
-
-	public String getErrMessage() {
-		return this.errMessage;
-	}
-
-	public void setErrMessage(String errMessage) {
-		this.errMessage = errMessage;
+	public void setDelayAlertPhone(String delayAlertPhone) {
+		this.delayAlertPhone = delayAlertPhone;
 	}
 
 	public String getDelayAlertStatus() {
@@ -104,20 +64,44 @@ public class DescribeSynchronizationJobAlertResponse extends AcsResponse {
 		this.delayAlertStatus = delayAlertStatus;
 	}
 
-	public String getDelayAlertPhone() {
-		return this.delayAlertPhone;
-	}
-
-	public void setDelayAlertPhone(String delayAlertPhone) {
-		this.delayAlertPhone = delayAlertPhone;
-	}
-
 	public String getDelayOverSeconds() {
 		return this.delayOverSeconds;
 	}
 
 	public void setDelayOverSeconds(String delayOverSeconds) {
 		this.delayOverSeconds = delayOverSeconds;
+	}
+
+	public String getErrCode() {
+		return this.errCode;
+	}
+
+	public void setErrCode(String errCode) {
+		this.errCode = errCode;
+	}
+
+	public String getErrMessage() {
+		return this.errMessage;
+	}
+
+	public void setErrMessage(String errMessage) {
+		this.errMessage = errMessage;
+	}
+
+	public String getErrorAlertPhone() {
+		return this.errorAlertPhone;
+	}
+
+	public void setErrorAlertPhone(String errorAlertPhone) {
+		this.errorAlertPhone = errorAlertPhone;
+	}
+
+	public String getErrorAlertStatus() {
+		return this.errorAlertStatus;
+	}
+
+	public void setErrorAlertStatus(String errorAlertStatus) {
+		this.errorAlertStatus = errorAlertStatus;
 	}
 
 	public String getRequestId() {
@@ -128,12 +112,12 @@ public class DescribeSynchronizationJobAlertResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getSynchronizationJobId() {
-		return this.synchronizationJobId;
+	public String getSuccess() {
+		return this.success;
 	}
 
-	public void setSynchronizationJobId(String synchronizationJobId) {
-		this.synchronizationJobId = synchronizationJobId;
+	public void setSuccess(String success) {
+		this.success = success;
 	}
 
 	public String getSynchronizationDirection() {
@@ -142,6 +126,22 @@ public class DescribeSynchronizationJobAlertResponse extends AcsResponse {
 
 	public void setSynchronizationDirection(String synchronizationDirection) {
 		this.synchronizationDirection = synchronizationDirection;
+	}
+
+	public String getSynchronizationJobId() {
+		return this.synchronizationJobId;
+	}
+
+	public void setSynchronizationJobId(String synchronizationJobId) {
+		this.synchronizationJobId = synchronizationJobId;
+	}
+
+	public String getSynchronizationJobName() {
+		return this.synchronizationJobName;
+	}
+
+	public void setSynchronizationJobName(String synchronizationJobName) {
+		this.synchronizationJobName = synchronizationJobName;
 	}
 
 	@Override

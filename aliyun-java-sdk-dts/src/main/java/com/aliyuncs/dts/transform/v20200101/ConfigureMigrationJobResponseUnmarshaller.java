@@ -24,8 +24,8 @@ public class ConfigureMigrationJobResponseUnmarshaller {
 		
 		configureMigrationJobResponse.setRequestId(_ctx.stringValue("ConfigureMigrationJobResponse.RequestId"));
 		configureMigrationJobResponse.setErrCode(_ctx.stringValue("ConfigureMigrationJobResponse.ErrCode"));
-		configureMigrationJobResponse.setSuccess(_ctx.stringValue("ConfigureMigrationJobResponse.Success"));
 		configureMigrationJobResponse.setErrMessage(_ctx.stringValue("ConfigureMigrationJobResponse.ErrMessage"));
+		configureMigrationJobResponse.setSuccess(_ctx.stringValue("ConfigureMigrationJobResponse.Success"));
 	 
 	 	return configureMigrationJobResponse;
 	}

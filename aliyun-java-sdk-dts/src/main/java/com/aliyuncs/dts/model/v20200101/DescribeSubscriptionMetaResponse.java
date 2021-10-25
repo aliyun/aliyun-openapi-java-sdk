@@ -25,17 +25,33 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeSubscriptionMetaResponse extends AcsResponse {
 
+	private String errCode;
+
+	private String errMessage;
+
 	private String httpStatusCode;
 
 	private String requestId;
 
-	private String errCode;
-
 	private String success;
 
-	private String errMessage;
-
 	private List<SubscriptionMetaListItem> subscriptionMetaList;
+
+	public String getErrCode() {
+		return this.errCode;
+	}
+
+	public void setErrCode(String errCode) {
+		this.errCode = errCode;
+	}
+
+	public String getErrMessage() {
+		return this.errMessage;
+	}
+
+	public void setErrMessage(String errMessage) {
+		this.errMessage = errMessage;
+	}
 
 	public String getHttpStatusCode() {
 		return this.httpStatusCode;
@@ -53,28 +69,12 @@ public class DescribeSubscriptionMetaResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getErrCode() {
-		return this.errCode;
-	}
-
-	public void setErrCode(String errCode) {
-		this.errCode = errCode;
-	}
-
 	public String getSuccess() {
 		return this.success;
 	}
 
 	public void setSuccess(String success) {
 		this.success = success;
-	}
-
-	public String getErrMessage() {
-		return this.errMessage;
-	}
-
-	public void setErrMessage(String errMessage) {
-		this.errMessage = errMessage;
 	}
 
 	public List<SubscriptionMetaListItem> getSubscriptionMetaList() {
@@ -87,15 +87,31 @@ public class DescribeSubscriptionMetaResponse extends AcsResponse {
 
 	public static class SubscriptionMetaListItem {
 
+		private String dProxyUrl;
+
+		private String topic;
+
 		private String sid;
 
 		private Long checkpoint;
 
-		private String dProxyUrl;
-
 		private String dBList;
 
-		private String topic;
+		public String getDProxyUrl() {
+			return this.dProxyUrl;
+		}
+
+		public void setDProxyUrl(String dProxyUrl) {
+			this.dProxyUrl = dProxyUrl;
+		}
+
+		public String getTopic() {
+			return this.topic;
+		}
+
+		public void setTopic(String topic) {
+			this.topic = topic;
+		}
 
 		public String getSid() {
 			return this.sid;
@@ -113,28 +129,12 @@ public class DescribeSubscriptionMetaResponse extends AcsResponse {
 			this.checkpoint = checkpoint;
 		}
 
-		public String getDProxyUrl() {
-			return this.dProxyUrl;
-		}
-
-		public void setDProxyUrl(String dProxyUrl) {
-			this.dProxyUrl = dProxyUrl;
-		}
-
 		public String getDBList() {
 			return this.dBList;
 		}
 
 		public void setDBList(String dBList) {
 			this.dBList = dBList;
-		}
-
-		public String getTopic() {
-			return this.topic;
-		}
-
-		public void setTopic(String topic) {
-			this.topic = topic;
 		}
 	}
 

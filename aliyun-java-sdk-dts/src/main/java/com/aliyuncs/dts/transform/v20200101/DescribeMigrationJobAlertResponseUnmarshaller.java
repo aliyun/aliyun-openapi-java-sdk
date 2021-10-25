@@ -23,16 +23,16 @@ public class DescribeMigrationJobAlertResponseUnmarshaller {
 	public static DescribeMigrationJobAlertResponse unmarshall(DescribeMigrationJobAlertResponse describeMigrationJobAlertResponse, UnmarshallerContext _ctx) {
 		
 		describeMigrationJobAlertResponse.setRequestId(_ctx.stringValue("DescribeMigrationJobAlertResponse.RequestId"));
-		describeMigrationJobAlertResponse.setMigrationJobName(_ctx.stringValue("DescribeMigrationJobAlertResponse.MigrationJobName"));
-		describeMigrationJobAlertResponse.setErrorAlertStatus(_ctx.stringValue("DescribeMigrationJobAlertResponse.ErrorAlertStatus"));
-		describeMigrationJobAlertResponse.setErrCode(_ctx.stringValue("DescribeMigrationJobAlertResponse.ErrCode"));
-		describeMigrationJobAlertResponse.setSuccess(_ctx.stringValue("DescribeMigrationJobAlertResponse.Success"));
-		describeMigrationJobAlertResponse.setErrorAlertPhone(_ctx.stringValue("DescribeMigrationJobAlertResponse.ErrorAlertPhone"));
-		describeMigrationJobAlertResponse.setErrMessage(_ctx.stringValue("DescribeMigrationJobAlertResponse.ErrMessage"));
-		describeMigrationJobAlertResponse.setDelayAlertStatus(_ctx.stringValue("DescribeMigrationJobAlertResponse.DelayAlertStatus"));
 		describeMigrationJobAlertResponse.setDelayAlertPhone(_ctx.stringValue("DescribeMigrationJobAlertResponse.DelayAlertPhone"));
-		describeMigrationJobAlertResponse.setMigrationJobId(_ctx.stringValue("DescribeMigrationJobAlertResponse.MigrationJobId"));
+		describeMigrationJobAlertResponse.setDelayAlertStatus(_ctx.stringValue("DescribeMigrationJobAlertResponse.DelayAlertStatus"));
 		describeMigrationJobAlertResponse.setDelayOverSeconds(_ctx.stringValue("DescribeMigrationJobAlertResponse.DelayOverSeconds"));
+		describeMigrationJobAlertResponse.setErrCode(_ctx.stringValue("DescribeMigrationJobAlertResponse.ErrCode"));
+		describeMigrationJobAlertResponse.setErrMessage(_ctx.stringValue("DescribeMigrationJobAlertResponse.ErrMessage"));
+		describeMigrationJobAlertResponse.setErrorAlertPhone(_ctx.stringValue("DescribeMigrationJobAlertResponse.ErrorAlertPhone"));
+		describeMigrationJobAlertResponse.setErrorAlertStatus(_ctx.stringValue("DescribeMigrationJobAlertResponse.ErrorAlertStatus"));
+		describeMigrationJobAlertResponse.setMigrationJobId(_ctx.stringValue("DescribeMigrationJobAlertResponse.MigrationJobId"));
+		describeMigrationJobAlertResponse.setMigrationJobName(_ctx.stringValue("DescribeMigrationJobAlertResponse.MigrationJobName"));
+		describeMigrationJobAlertResponse.setSuccess(_ctx.stringValue("DescribeMigrationJobAlertResponse.Success"));
 	 
 	 	return describeMigrationJobAlertResponse;
 	}

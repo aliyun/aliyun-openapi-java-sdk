@@ -24,22 +24,30 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateMigrationJobResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String migrationJobId;
-
 	private String errCode;
-
-	private String success;
 
 	private String errMessage;
 
-	public String getRequestId() {
-		return this.requestId;
+	private String migrationJobId;
+
+	private String requestId;
+
+	private String success;
+
+	public String getErrCode() {
+		return this.errCode;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setErrCode(String errCode) {
+		this.errCode = errCode;
+	}
+
+	public String getErrMessage() {
+		return this.errMessage;
+	}
+
+	public void setErrMessage(String errMessage) {
+		this.errMessage = errMessage;
 	}
 
 	public String getMigrationJobId() {
@@ -50,12 +58,12 @@ public class CreateMigrationJobResponse extends AcsResponse {
 		this.migrationJobId = migrationJobId;
 	}
 
-	public String getErrCode() {
-		return this.errCode;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setErrCode(String errCode) {
-		this.errCode = errCode;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getSuccess() {
@@ -64,14 +72,6 @@ public class CreateMigrationJobResponse extends AcsResponse {
 
 	public void setSuccess(String success) {
 		this.success = success;
-	}
-
-	public String getErrMessage() {
-		return this.errMessage;
-	}
-
-	public void setErrMessage(String errMessage) {
-		this.errMessage = errMessage;
 	}
 
 	@Override

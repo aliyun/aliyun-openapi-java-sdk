@@ -24,82 +24,34 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeMigrationJobAlertResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String migrationJobName;
-
-	private String errorAlertStatus;
-
-	private String errCode;
-
-	private String success;
-
-	private String errorAlertPhone;
-
-	private String errMessage;
+	private String delayAlertPhone;
 
 	private String delayAlertStatus;
 
-	private String delayAlertPhone;
+	private String delayOverSeconds;
+
+	private String errCode;
+
+	private String errMessage;
+
+	private String errorAlertPhone;
+
+	private String errorAlertStatus;
 
 	private String migrationJobId;
 
-	private String delayOverSeconds;
+	private String migrationJobName;
 
-	public String getRequestId() {
-		return this.requestId;
+	private String requestId;
+
+	private String success;
+
+	public String getDelayAlertPhone() {
+		return this.delayAlertPhone;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getMigrationJobName() {
-		return this.migrationJobName;
-	}
-
-	public void setMigrationJobName(String migrationJobName) {
-		this.migrationJobName = migrationJobName;
-	}
-
-	public String getErrorAlertStatus() {
-		return this.errorAlertStatus;
-	}
-
-	public void setErrorAlertStatus(String errorAlertStatus) {
-		this.errorAlertStatus = errorAlertStatus;
-	}
-
-	public String getErrCode() {
-		return this.errCode;
-	}
-
-	public void setErrCode(String errCode) {
-		this.errCode = errCode;
-	}
-
-	public String getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(String success) {
-		this.success = success;
-	}
-
-	public String getErrorAlertPhone() {
-		return this.errorAlertPhone;
-	}
-
-	public void setErrorAlertPhone(String errorAlertPhone) {
-		this.errorAlertPhone = errorAlertPhone;
-	}
-
-	public String getErrMessage() {
-		return this.errMessage;
-	}
-
-	public void setErrMessage(String errMessage) {
-		this.errMessage = errMessage;
+	public void setDelayAlertPhone(String delayAlertPhone) {
+		this.delayAlertPhone = delayAlertPhone;
 	}
 
 	public String getDelayAlertStatus() {
@@ -110,12 +62,44 @@ public class DescribeMigrationJobAlertResponse extends AcsResponse {
 		this.delayAlertStatus = delayAlertStatus;
 	}
 
-	public String getDelayAlertPhone() {
-		return this.delayAlertPhone;
+	public String getDelayOverSeconds() {
+		return this.delayOverSeconds;
 	}
 
-	public void setDelayAlertPhone(String delayAlertPhone) {
-		this.delayAlertPhone = delayAlertPhone;
+	public void setDelayOverSeconds(String delayOverSeconds) {
+		this.delayOverSeconds = delayOverSeconds;
+	}
+
+	public String getErrCode() {
+		return this.errCode;
+	}
+
+	public void setErrCode(String errCode) {
+		this.errCode = errCode;
+	}
+
+	public String getErrMessage() {
+		return this.errMessage;
+	}
+
+	public void setErrMessage(String errMessage) {
+		this.errMessage = errMessage;
+	}
+
+	public String getErrorAlertPhone() {
+		return this.errorAlertPhone;
+	}
+
+	public void setErrorAlertPhone(String errorAlertPhone) {
+		this.errorAlertPhone = errorAlertPhone;
+	}
+
+	public String getErrorAlertStatus() {
+		return this.errorAlertStatus;
+	}
+
+	public void setErrorAlertStatus(String errorAlertStatus) {
+		this.errorAlertStatus = errorAlertStatus;
 	}
 
 	public String getMigrationJobId() {
@@ -126,12 +110,28 @@ public class DescribeMigrationJobAlertResponse extends AcsResponse {
 		this.migrationJobId = migrationJobId;
 	}
 
-	public String getDelayOverSeconds() {
-		return this.delayOverSeconds;
+	public String getMigrationJobName() {
+		return this.migrationJobName;
 	}
 
-	public void setDelayOverSeconds(String delayOverSeconds) {
-		this.delayOverSeconds = delayOverSeconds;
+	public void setMigrationJobName(String migrationJobName) {
+		this.migrationJobName = migrationJobName;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(String success) {
+		this.success = success;
 	}
 
 	@Override

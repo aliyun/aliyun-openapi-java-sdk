@@ -24,25 +24,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDTSIPResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String errCode;
-
-	private String success;
 
 	private String errMessage;
 
-	private String dynamicMessage;
+	private String requestId;
+
+	private String success;
 
 	private String dynamicCode;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String dynamicMessage;
 
 	public String getErrCode() {
 		return this.errCode;
@@ -50,14 +42,6 @@ public class DescribeDTSIPResponse extends AcsResponse {
 
 	public void setErrCode(String errCode) {
 		this.errCode = errCode;
-	}
-
-	public String getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(String success) {
-		this.success = success;
 	}
 
 	public String getErrMessage() {
@@ -68,12 +52,20 @@ public class DescribeDTSIPResponse extends AcsResponse {
 		this.errMessage = errMessage;
 	}
 
-	public String getDynamicMessage() {
-		return this.dynamicMessage;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setDynamicMessage(String dynamicMessage) {
-		this.dynamicMessage = dynamicMessage;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(String success) {
+		this.success = success;
 	}
 
 	public String getDynamicCode() {
@@ -82,6 +74,14 @@ public class DescribeDTSIPResponse extends AcsResponse {
 
 	public void setDynamicCode(String dynamicCode) {
 		this.dynamicCode = dynamicCode;
+	}
+
+	public String getDynamicMessage() {
+		return this.dynamicMessage;
+	}
+
+	public void setDynamicMessage(String dynamicMessage) {
+		this.dynamicMessage = dynamicMessage;
 	}
 
 	@Override

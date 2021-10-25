@@ -24,83 +24,27 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class RenewInstanceResponse extends AcsResponse {
 
-	private Integer httpStatusCode;
-
-	private String endTime;
-
-	private String requestId;
-
-	private String errCode;
-
-	private String dtsJobId;
-
-	private Boolean success;
-
-	private String errMessage;
-
 	private String chargeType;
 
 	private String code;
 
+	private String dtsJobId;
+
 	private String dynamicMessage;
+
+	private String endTime;
+
+	private String errCode;
+
+	private String errMessage;
+
+	private Integer httpStatusCode;
 
 	private String instanceId;
 
-	public Integer getHttpStatusCode() {
-		return this.httpStatusCode;
-	}
+	private String requestId;
 
-	public void setHttpStatusCode(Integer httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
-	}
-
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getErrCode() {
-		return this.errCode;
-	}
-
-	public void setErrCode(String errCode) {
-		this.errCode = errCode;
-	}
-
-	public String getDtsJobId() {
-		return this.dtsJobId;
-	}
-
-	public void setDtsJobId(String dtsJobId) {
-		this.dtsJobId = dtsJobId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getErrMessage() {
-		return this.errMessage;
-	}
-
-	public void setErrMessage(String errMessage) {
-		this.errMessage = errMessage;
-	}
+	private Boolean success;
 
 	public String getChargeType() {
 		return this.chargeType;
@@ -118,6 +62,14 @@ public class RenewInstanceResponse extends AcsResponse {
 		this.code = code;
 	}
 
+	public String getDtsJobId() {
+		return this.dtsJobId;
+	}
+
+	public void setDtsJobId(String dtsJobId) {
+		this.dtsJobId = dtsJobId;
+	}
+
 	public String getDynamicMessage() {
 		return this.dynamicMessage;
 	}
@@ -126,12 +78,60 @@ public class RenewInstanceResponse extends AcsResponse {
 		this.dynamicMessage = dynamicMessage;
 	}
 
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+	}
+
+	public String getErrCode() {
+		return this.errCode;
+	}
+
+	public void setErrCode(String errCode) {
+		this.errCode = errCode;
+	}
+
+	public String getErrMessage() {
+		return this.errMessage;
+	}
+
+	public void setErrMessage(String errMessage) {
+		this.errMessage = errMessage;
+	}
+
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
+	}
+
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
+	}
+
 	public String getInstanceId() {
 		return this.instanceId;
 	}
 
 	public void setInstanceId(String instanceId) {
 		this.instanceId = instanceId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	@Override

@@ -24,8 +24,8 @@ public class ShieldPrecheckResponseUnmarshaller {
 		
 		shieldPrecheckResponse.setRequestId(_ctx.stringValue("ShieldPrecheckResponse.RequestId"));
 		shieldPrecheckResponse.setErrCode(_ctx.stringValue("ShieldPrecheckResponse.ErrCode"));
-		shieldPrecheckResponse.setSuccess(_ctx.booleanValue("ShieldPrecheckResponse.Success"));
 		shieldPrecheckResponse.setErrMessage(_ctx.stringValue("ShieldPrecheckResponse.ErrMessage"));
+		shieldPrecheckResponse.setSuccess(_ctx.booleanValue("ShieldPrecheckResponse.Success"));
 	 
 	 	return shieldPrecheckResponse;
 	}

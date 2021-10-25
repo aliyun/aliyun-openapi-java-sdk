@@ -23,9 +23,9 @@ public class UntagResourcesResponseUnmarshaller {
 	public static UntagResourcesResponse unmarshall(UntagResourcesResponse untagResourcesResponse, UnmarshallerContext _ctx) {
 		
 		untagResourcesResponse.setRequestId(_ctx.stringValue("UntagResourcesResponse.RequestId"));
-		untagResourcesResponse.setErrCode(_ctx.stringValue("UntagResourcesResponse.ErrCode"));
 		untagResourcesResponse.setSuccess(_ctx.booleanValue("UntagResourcesResponse.Success"));
 		untagResourcesResponse.setErrMessage(_ctx.stringValue("UntagResourcesResponse.ErrMessage"));
+		untagResourcesResponse.setErrCode(_ctx.stringValue("UntagResourcesResponse.ErrCode"));
 	 
 	 	return untagResourcesResponse;
 	}

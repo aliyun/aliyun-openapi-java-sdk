@@ -25,29 +25,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeSubscriptionInstancesResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String errCode;
-
-	private Integer pageRecordCount;
-
-	private String success;
-
-	private Long totalRecordCount;
 
 	private String errMessage;
 
 	private Integer pageNumber;
 
+	private Integer pageRecordCount;
+
+	private String requestId;
+
+	private String success;
+
+	private Long totalRecordCount;
+
 	private List<SubscriptionInstance> subscriptionInstances;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getErrCode() {
 		return this.errCode;
@@ -55,30 +47,6 @@ public class DescribeSubscriptionInstancesResponse extends AcsResponse {
 
 	public void setErrCode(String errCode) {
 		this.errCode = errCode;
-	}
-
-	public Integer getPageRecordCount() {
-		return this.pageRecordCount;
-	}
-
-	public void setPageRecordCount(Integer pageRecordCount) {
-		this.pageRecordCount = pageRecordCount;
-	}
-
-	public String getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(String success) {
-		this.success = success;
-	}
-
-	public Long getTotalRecordCount() {
-		return this.totalRecordCount;
-	}
-
-	public void setTotalRecordCount(Long totalRecordCount) {
-		this.totalRecordCount = totalRecordCount;
 	}
 
 	public String getErrMessage() {
@@ -97,6 +65,38 @@ public class DescribeSubscriptionInstancesResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
+	public Integer getPageRecordCount() {
+		return this.pageRecordCount;
+	}
+
+	public void setPageRecordCount(Integer pageRecordCount) {
+		this.pageRecordCount = pageRecordCount;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(String success) {
+		this.success = success;
+	}
+
+	public Long getTotalRecordCount() {
+		return this.totalRecordCount;
+	}
+
+	public void setTotalRecordCount(Long totalRecordCount) {
+		this.totalRecordCount = totalRecordCount;
+	}
+
 	public List<SubscriptionInstance> getSubscriptionInstances() {
 		return this.subscriptionInstances;
 	}
@@ -107,29 +107,29 @@ public class DescribeSubscriptionInstancesResponse extends AcsResponse {
 
 	public static class SubscriptionInstance {
 
-		private String status;
+		private String beginTimestamp;
+
+		private String consumptionCheckpoint;
+
+		private String consumptionClient;
+
+		private String endTimestamp;
 
 		private String errorMessage;
 
 		private String payType;
 
-		private String consumptionClient;
-
-		private String consumptionCheckpoint;
-
-		private String endTimestamp;
-
-		private String instanceCreateTime;
-
-		private String beginTimestamp;
+		private String status;
 
 		private String subscribeTopic;
 
-		private String subscriptionInstanceName;
-
 		private String subscriptionInstanceID;
 
+		private String subscriptionInstanceName;
+
 		private String jobCreateTime;
+
+		private String instanceCreateTime;
 
 		private List<SynchronousObject> subscriptionObject;
 
@@ -141,12 +141,36 @@ public class DescribeSubscriptionInstancesResponse extends AcsResponse {
 
 		private SubscriptionHost subscriptionHost;
 
-		public String getStatus() {
-			return this.status;
+		public String getBeginTimestamp() {
+			return this.beginTimestamp;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
+		public void setBeginTimestamp(String beginTimestamp) {
+			this.beginTimestamp = beginTimestamp;
+		}
+
+		public String getConsumptionCheckpoint() {
+			return this.consumptionCheckpoint;
+		}
+
+		public void setConsumptionCheckpoint(String consumptionCheckpoint) {
+			this.consumptionCheckpoint = consumptionCheckpoint;
+		}
+
+		public String getConsumptionClient() {
+			return this.consumptionClient;
+		}
+
+		public void setConsumptionClient(String consumptionClient) {
+			this.consumptionClient = consumptionClient;
+		}
+
+		public String getEndTimestamp() {
+			return this.endTimestamp;
+		}
+
+		public void setEndTimestamp(String endTimestamp) {
+			this.endTimestamp = endTimestamp;
 		}
 
 		public String getErrorMessage() {
@@ -165,44 +189,12 @@ public class DescribeSubscriptionInstancesResponse extends AcsResponse {
 			this.payType = payType;
 		}
 
-		public String getConsumptionClient() {
-			return this.consumptionClient;
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setConsumptionClient(String consumptionClient) {
-			this.consumptionClient = consumptionClient;
-		}
-
-		public String getConsumptionCheckpoint() {
-			return this.consumptionCheckpoint;
-		}
-
-		public void setConsumptionCheckpoint(String consumptionCheckpoint) {
-			this.consumptionCheckpoint = consumptionCheckpoint;
-		}
-
-		public String getEndTimestamp() {
-			return this.endTimestamp;
-		}
-
-		public void setEndTimestamp(String endTimestamp) {
-			this.endTimestamp = endTimestamp;
-		}
-
-		public String getInstanceCreateTime() {
-			return this.instanceCreateTime;
-		}
-
-		public void setInstanceCreateTime(String instanceCreateTime) {
-			this.instanceCreateTime = instanceCreateTime;
-		}
-
-		public String getBeginTimestamp() {
-			return this.beginTimestamp;
-		}
-
-		public void setBeginTimestamp(String beginTimestamp) {
-			this.beginTimestamp = beginTimestamp;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public String getSubscribeTopic() {
@@ -213,14 +205,6 @@ public class DescribeSubscriptionInstancesResponse extends AcsResponse {
 			this.subscribeTopic = subscribeTopic;
 		}
 
-		public String getSubscriptionInstanceName() {
-			return this.subscriptionInstanceName;
-		}
-
-		public void setSubscriptionInstanceName(String subscriptionInstanceName) {
-			this.subscriptionInstanceName = subscriptionInstanceName;
-		}
-
 		public String getSubscriptionInstanceID() {
 			return this.subscriptionInstanceID;
 		}
@@ -229,12 +213,28 @@ public class DescribeSubscriptionInstancesResponse extends AcsResponse {
 			this.subscriptionInstanceID = subscriptionInstanceID;
 		}
 
+		public String getSubscriptionInstanceName() {
+			return this.subscriptionInstanceName;
+		}
+
+		public void setSubscriptionInstanceName(String subscriptionInstanceName) {
+			this.subscriptionInstanceName = subscriptionInstanceName;
+		}
+
 		public String getJobCreateTime() {
 			return this.jobCreateTime;
 		}
 
 		public void setJobCreateTime(String jobCreateTime) {
 			this.jobCreateTime = jobCreateTime;
+		}
+
+		public String getInstanceCreateTime() {
+			return this.instanceCreateTime;
+		}
+
+		public void setInstanceCreateTime(String instanceCreateTime) {
+			this.instanceCreateTime = instanceCreateTime;
 		}
 
 		public List<SynchronousObject> getSubscriptionObject() {
@@ -335,17 +335,9 @@ public class DescribeSubscriptionInstancesResponse extends AcsResponse {
 
 		public static class SourceEndpoint {
 
-			private String instanceType;
-
 			private String instanceID;
 
-			public String getInstanceType() {
-				return this.instanceType;
-			}
-
-			public void setInstanceType(String instanceType) {
-				this.instanceType = instanceType;
-			}
+			private String instanceType;
 
 			public String getInstanceID() {
 				return this.instanceID;
@@ -354,21 +346,21 @@ public class DescribeSubscriptionInstancesResponse extends AcsResponse {
 			public void setInstanceID(String instanceID) {
 				this.instanceID = instanceID;
 			}
+
+			public String getInstanceType() {
+				return this.instanceType;
+			}
+
+			public void setInstanceType(String instanceType) {
+				this.instanceType = instanceType;
+			}
 		}
 
 		public static class SubscriptionDataType {
 
-			private Boolean dML;
-
 			private Boolean dDL;
 
-			public Boolean getDML() {
-				return this.dML;
-			}
-
-			public void setDML(Boolean dML) {
-				this.dML = dML;
-			}
+			private Boolean dML;
 
 			public Boolean getDDL() {
 				return this.dDL;
@@ -377,22 +369,30 @@ public class DescribeSubscriptionInstancesResponse extends AcsResponse {
 			public void setDDL(Boolean dDL) {
 				this.dDL = dDL;
 			}
+
+			public Boolean getDML() {
+				return this.dML;
+			}
+
+			public void setDML(Boolean dML) {
+				this.dML = dML;
+			}
 		}
 
 		public static class SubscriptionHost {
 
-			private String vPCHost;
+			private String privateHost;
 
 			private String publicHost;
 
-			private String privateHost;
+			private String vPCHost;
 
-			public String getVPCHost() {
-				return this.vPCHost;
+			public String getPrivateHost() {
+				return this.privateHost;
 			}
 
-			public void setVPCHost(String vPCHost) {
-				this.vPCHost = vPCHost;
+			public void setPrivateHost(String privateHost) {
+				this.privateHost = privateHost;
 			}
 
 			public String getPublicHost() {
@@ -403,12 +403,12 @@ public class DescribeSubscriptionInstancesResponse extends AcsResponse {
 				this.publicHost = publicHost;
 			}
 
-			public String getPrivateHost() {
-				return this.privateHost;
+			public String getVPCHost() {
+				return this.vPCHost;
 			}
 
-			public void setPrivateHost(String privateHost) {
-				this.privateHost = privateHost;
+			public void setVPCHost(String vPCHost) {
+				this.vPCHost = vPCHost;
 			}
 		}
 	}

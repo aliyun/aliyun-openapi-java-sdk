@@ -26,13 +26,13 @@ public class CreateConsumerGroupResponse extends AcsResponse {
 
 	private String consumerGroupID;
 
-	private String requestId;
-
 	private String errCode;
 
-	private String success;
-
 	private String errMessage;
+
+	private String requestId;
+
+	private String success;
 
 	public String getConsumerGroupID() {
 		return this.consumerGroupID;
@@ -40,14 +40,6 @@ public class CreateConsumerGroupResponse extends AcsResponse {
 
 	public void setConsumerGroupID(String consumerGroupID) {
 		this.consumerGroupID = consumerGroupID;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
 	}
 
 	public String getErrCode() {
@@ -58,20 +50,28 @@ public class CreateConsumerGroupResponse extends AcsResponse {
 		this.errCode = errCode;
 	}
 
-	public String getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(String success) {
-		this.success = success;
-	}
-
 	public String getErrMessage() {
 		return this.errMessage;
 	}
 
 	public void setErrMessage(String errMessage) {
 		this.errMessage = errMessage;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(String success) {
+		this.success = success;
 	}
 
 	@Override

@@ -30,35 +30,35 @@ public class DescribeSubscriptionInstanceStatusResponseUnmarshaller {
 	public static DescribeSubscriptionInstanceStatusResponse unmarshall(DescribeSubscriptionInstanceStatusResponse describeSubscriptionInstanceStatusResponse, UnmarshallerContext _ctx) {
 		
 		describeSubscriptionInstanceStatusResponse.setRequestId(_ctx.stringValue("DescribeSubscriptionInstanceStatusResponse.RequestId"));
-		describeSubscriptionInstanceStatusResponse.setStatus(_ctx.stringValue("DescribeSubscriptionInstanceStatusResponse.Status"));
-		describeSubscriptionInstanceStatusResponse.setErrorMessage(_ctx.stringValue("DescribeSubscriptionInstanceStatusResponse.ErrorMessage"));
-		describeSubscriptionInstanceStatusResponse.setErrCode(_ctx.stringValue("DescribeSubscriptionInstanceStatusResponse.ErrCode"));
-		describeSubscriptionInstanceStatusResponse.setSuccess(_ctx.stringValue("DescribeSubscriptionInstanceStatusResponse.Success"));
+		describeSubscriptionInstanceStatusResponse.setBeginTimestamp(_ctx.stringValue("DescribeSubscriptionInstanceStatusResponse.BeginTimestamp"));
+		describeSubscriptionInstanceStatusResponse.setConsumptionCheckpoint(_ctx.stringValue("DescribeSubscriptionInstanceStatusResponse.ConsumptionCheckpoint"));
+		describeSubscriptionInstanceStatusResponse.setConsumptionClient(_ctx.stringValue("DescribeSubscriptionInstanceStatusResponse.ConsumptionClient"));
+		describeSubscriptionInstanceStatusResponse.setEndTimestamp(_ctx.stringValue("DescribeSubscriptionInstanceStatusResponse.EndTimestamp"));
 		describeSubscriptionInstanceStatusResponse.setErrMessage(_ctx.stringValue("DescribeSubscriptionInstanceStatusResponse.ErrMessage"));
 		describeSubscriptionInstanceStatusResponse.setPayType(_ctx.stringValue("DescribeSubscriptionInstanceStatusResponse.PayType"));
-		describeSubscriptionInstanceStatusResponse.setConsumptionClient(_ctx.stringValue("DescribeSubscriptionInstanceStatusResponse.ConsumptionClient"));
-		describeSubscriptionInstanceStatusResponse.setConsumptionCheckpoint(_ctx.stringValue("DescribeSubscriptionInstanceStatusResponse.ConsumptionCheckpoint"));
-		describeSubscriptionInstanceStatusResponse.setEndTimestamp(_ctx.stringValue("DescribeSubscriptionInstanceStatusResponse.EndTimestamp"));
-		describeSubscriptionInstanceStatusResponse.setBeginTimestamp(_ctx.stringValue("DescribeSubscriptionInstanceStatusResponse.BeginTimestamp"));
+		describeSubscriptionInstanceStatusResponse.setStatus(_ctx.stringValue("DescribeSubscriptionInstanceStatusResponse.Status"));
 		describeSubscriptionInstanceStatusResponse.setSubscribeTopic(_ctx.stringValue("DescribeSubscriptionInstanceStatusResponse.SubscribeTopic"));
-		describeSubscriptionInstanceStatusResponse.setSubscriptionInstanceName(_ctx.stringValue("DescribeSubscriptionInstanceStatusResponse.SubscriptionInstanceName"));
 		describeSubscriptionInstanceStatusResponse.setSubscriptionInstanceID(_ctx.stringValue("DescribeSubscriptionInstanceStatusResponse.SubscriptionInstanceID"));
+		describeSubscriptionInstanceStatusResponse.setSubscriptionInstanceName(_ctx.stringValue("DescribeSubscriptionInstanceStatusResponse.SubscriptionInstanceName"));
+		describeSubscriptionInstanceStatusResponse.setErrCode(_ctx.stringValue("DescribeSubscriptionInstanceStatusResponse.ErrCode"));
+		describeSubscriptionInstanceStatusResponse.setSuccess(_ctx.stringValue("DescribeSubscriptionInstanceStatusResponse.Success"));
+		describeSubscriptionInstanceStatusResponse.setErrorMessage(_ctx.stringValue("DescribeSubscriptionInstanceStatusResponse.ErrorMessage"));
 		describeSubscriptionInstanceStatusResponse.setTaskId(_ctx.stringValue("DescribeSubscriptionInstanceStatusResponse.TaskId"));
 
 		SourceEndpoint sourceEndpoint = new SourceEndpoint();
-		sourceEndpoint.setInstanceType(_ctx.stringValue("DescribeSubscriptionInstanceStatusResponse.SourceEndpoint.InstanceType"));
 		sourceEndpoint.setInstanceID(_ctx.stringValue("DescribeSubscriptionInstanceStatusResponse.SourceEndpoint.InstanceID"));
+		sourceEndpoint.setInstanceType(_ctx.stringValue("DescribeSubscriptionInstanceStatusResponse.SourceEndpoint.InstanceType"));
 		describeSubscriptionInstanceStatusResponse.setSourceEndpoint(sourceEndpoint);
 
 		SubscriptionDataType subscriptionDataType = new SubscriptionDataType();
-		subscriptionDataType.setDML(_ctx.booleanValue("DescribeSubscriptionInstanceStatusResponse.SubscriptionDataType.DML"));
 		subscriptionDataType.setDDL(_ctx.booleanValue("DescribeSubscriptionInstanceStatusResponse.SubscriptionDataType.DDL"));
+		subscriptionDataType.setDML(_ctx.booleanValue("DescribeSubscriptionInstanceStatusResponse.SubscriptionDataType.DML"));
 		describeSubscriptionInstanceStatusResponse.setSubscriptionDataType(subscriptionDataType);
 
 		SubscriptionHost subscriptionHost = new SubscriptionHost();
-		subscriptionHost.setVPCHost(_ctx.stringValue("DescribeSubscriptionInstanceStatusResponse.SubscriptionHost.VPCHost"));
-		subscriptionHost.setPublicHost(_ctx.stringValue("DescribeSubscriptionInstanceStatusResponse.SubscriptionHost.PublicHost"));
 		subscriptionHost.setPrivateHost(_ctx.stringValue("DescribeSubscriptionInstanceStatusResponse.SubscriptionHost.PrivateHost"));
+		subscriptionHost.setPublicHost(_ctx.stringValue("DescribeSubscriptionInstanceStatusResponse.SubscriptionHost.PublicHost"));
+		subscriptionHost.setVPCHost(_ctx.stringValue("DescribeSubscriptionInstanceStatusResponse.SubscriptionHost.VPCHost"));
 		describeSubscriptionInstanceStatusResponse.setSubscriptionHost(subscriptionHost);
 
 		List<SynchronousObject> subscriptionObject = new ArrayList<SynchronousObject>();

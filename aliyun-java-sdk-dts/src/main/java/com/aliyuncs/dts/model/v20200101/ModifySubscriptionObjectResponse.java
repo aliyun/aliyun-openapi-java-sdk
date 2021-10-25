@@ -24,21 +24,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ModifySubscriptionObjectResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String errCode;
-
-	private String success;
 
 	private String errMessage;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
+	private String requestId;
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String success;
 
 	public String getErrCode() {
 		return this.errCode;
@@ -48,20 +40,28 @@ public class ModifySubscriptionObjectResponse extends AcsResponse {
 		this.errCode = errCode;
 	}
 
-	public String getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(String success) {
-		this.success = success;
-	}
-
 	public String getErrMessage() {
 		return this.errMessage;
 	}
 
 	public void setErrMessage(String errMessage) {
 		this.errMessage = errMessage;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(String success) {
+		this.success = success;
 	}
 
 	@Override

@@ -23,16 +23,16 @@ public class SkipPreCheckResponseUnmarshaller {
 	public static SkipPreCheckResponse unmarshall(SkipPreCheckResponse skipPreCheckResponse, UnmarshallerContext _ctx) {
 		
 		skipPreCheckResponse.setRequestId(_ctx.stringValue("SkipPreCheckResponse.RequestId"));
-		skipPreCheckResponse.setHttpStatusCode(_ctx.integerValue("SkipPreCheckResponse.HttpStatusCode"));
-		skipPreCheckResponse.setErrCode(_ctx.stringValue("SkipPreCheckResponse.ErrCode"));
-		skipPreCheckResponse.setSuccess(_ctx.booleanValue("SkipPreCheckResponse.Success"));
-		skipPreCheckResponse.setErrMessage(_ctx.stringValue("SkipPreCheckResponse.ErrMessage"));
-		skipPreCheckResponse.setSkipNames(_ctx.stringValue("SkipPreCheckResponse.SkipNames"));
 		skipPreCheckResponse.setCode(_ctx.stringValue("SkipPreCheckResponse.Code"));
-		skipPreCheckResponse.setScheduleJobId(_ctx.stringValue("SkipPreCheckResponse.ScheduleJobId"));
 		skipPreCheckResponse.setDynamicMessage(_ctx.stringValue("SkipPreCheckResponse.DynamicMessage"));
+		skipPreCheckResponse.setErrCode(_ctx.stringValue("SkipPreCheckResponse.ErrCode"));
+		skipPreCheckResponse.setErrMessage(_ctx.stringValue("SkipPreCheckResponse.ErrMessage"));
+		skipPreCheckResponse.setHttpStatusCode(_ctx.integerValue("SkipPreCheckResponse.HttpStatusCode"));
+		skipPreCheckResponse.setSuccess(_ctx.booleanValue("SkipPreCheckResponse.Success"));
 		skipPreCheckResponse.setMigrationJobId(_ctx.stringValue("SkipPreCheckResponse.MigrationJobId"));
+		skipPreCheckResponse.setScheduleJobId(_ctx.stringValue("SkipPreCheckResponse.ScheduleJobId"));
 		skipPreCheckResponse.setSkipItems(_ctx.stringValue("SkipPreCheckResponse.SkipItems"));
+		skipPreCheckResponse.setSkipNames(_ctx.stringValue("SkipPreCheckResponse.SkipNames"));
 	 
 	 	return skipPreCheckResponse;
 	}

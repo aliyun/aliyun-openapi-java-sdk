@@ -25,44 +25,28 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeConsumerGroupResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String errCode;
-
-	private String success;
+	private Integer pageNumber;
 
 	private Integer pageRecordCount;
 
+	private String requestId;
+
 	private Integer totalRecordCount;
+
+	private String errCode;
 
 	private String errMessage;
 
-	private Integer pageNumber;
+	private String success;
 
 	private List<DescribeConsumerChannel> consumerChannels;
 
-	public String getRequestId() {
-		return this.requestId;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getErrCode() {
-		return this.errCode;
-	}
-
-	public void setErrCode(String errCode) {
-		this.errCode = errCode;
-	}
-
-	public String getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(String success) {
-		this.success = success;
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public Integer getPageRecordCount() {
@@ -73,12 +57,28 @@ public class DescribeConsumerGroupResponse extends AcsResponse {
 		this.pageRecordCount = pageRecordCount;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	public Integer getTotalRecordCount() {
 		return this.totalRecordCount;
 	}
 
 	public void setTotalRecordCount(Integer totalRecordCount) {
 		this.totalRecordCount = totalRecordCount;
+	}
+
+	public String getErrCode() {
+		return this.errCode;
+	}
+
+	public void setErrCode(String errCode) {
+		this.errCode = errCode;
 	}
 
 	public String getErrMessage() {
@@ -89,12 +89,12 @@ public class DescribeConsumerGroupResponse extends AcsResponse {
 		this.errMessage = errMessage;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public String getSuccess() {
+		return this.success;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
+	public void setSuccess(String success) {
+		this.success = success;
 	}
 
 	public List<DescribeConsumerChannel> getConsumerChannels() {
@@ -107,25 +107,17 @@ public class DescribeConsumerGroupResponse extends AcsResponse {
 
 	public static class DescribeConsumerChannel {
 
-		private String consumerGroupUserName;
-
 		private String consumerGroupID;
-
-		private Long messageDelay;
 
 		private String consumerGroupName;
 
+		private String consumerGroupUserName;
+
 		private String consumptionCheckpoint;
 
+		private Long messageDelay;
+
 		private Long unconsumedData;
-
-		public String getConsumerGroupUserName() {
-			return this.consumerGroupUserName;
-		}
-
-		public void setConsumerGroupUserName(String consumerGroupUserName) {
-			this.consumerGroupUserName = consumerGroupUserName;
-		}
 
 		public String getConsumerGroupID() {
 			return this.consumerGroupID;
@@ -133,14 +125,6 @@ public class DescribeConsumerGroupResponse extends AcsResponse {
 
 		public void setConsumerGroupID(String consumerGroupID) {
 			this.consumerGroupID = consumerGroupID;
-		}
-
-		public Long getMessageDelay() {
-			return this.messageDelay;
-		}
-
-		public void setMessageDelay(Long messageDelay) {
-			this.messageDelay = messageDelay;
 		}
 
 		public String getConsumerGroupName() {
@@ -151,12 +135,28 @@ public class DescribeConsumerGroupResponse extends AcsResponse {
 			this.consumerGroupName = consumerGroupName;
 		}
 
+		public String getConsumerGroupUserName() {
+			return this.consumerGroupUserName;
+		}
+
+		public void setConsumerGroupUserName(String consumerGroupUserName) {
+			this.consumerGroupUserName = consumerGroupUserName;
+		}
+
 		public String getConsumptionCheckpoint() {
 			return this.consumptionCheckpoint;
 		}
 
 		public void setConsumptionCheckpoint(String consumptionCheckpoint) {
 			this.consumptionCheckpoint = consumptionCheckpoint;
+		}
+
+		public Long getMessageDelay() {
+			return this.messageDelay;
+		}
+
+		public void setMessageDelay(Long messageDelay) {
+			this.messageDelay = messageDelay;
 		}
 
 		public Long getUnconsumedData() {

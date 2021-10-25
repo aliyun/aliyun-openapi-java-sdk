@@ -25,17 +25,49 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeConnectionStatusResponse extends AcsResponse {
 
+	private String errCode;
+
+	private String errMessage;
+
+	private String requestId;
+
+	private String success;
+
 	private Map<Object,Object> sourceConnectionStatus;
 
 	private Map<Object,Object> destinationConnectionStatus;
 
-	private String requestId;
+	public String getErrCode() {
+		return this.errCode;
+	}
 
-	private String errCode;
+	public void setErrCode(String errCode) {
+		this.errCode = errCode;
+	}
 
-	private String success;
+	public String getErrMessage() {
+		return this.errMessage;
+	}
 
-	private String errMessage;
+	public void setErrMessage(String errMessage) {
+		this.errMessage = errMessage;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(String success) {
+		this.success = success;
+	}
 
 	public Map<Object,Object> getSourceConnectionStatus() {
 		return this.sourceConnectionStatus;
@@ -51,38 +83,6 @@ public class DescribeConnectionStatusResponse extends AcsResponse {
 
 	public void setDestinationConnectionStatus(Map<Object,Object> destinationConnectionStatus) {
 		this.destinationConnectionStatus = destinationConnectionStatus;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getErrCode() {
-		return this.errCode;
-	}
-
-	public void setErrCode(String errCode) {
-		this.errCode = errCode;
-	}
-
-	public String getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(String success) {
-		this.success = success;
-	}
-
-	public String getErrMessage() {
-		return this.errMessage;
-	}
-
-	public void setErrMessage(String errMessage) {
-		this.errMessage = errMessage;
 	}
 
 	@Override

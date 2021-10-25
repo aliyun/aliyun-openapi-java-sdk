@@ -24,11 +24,11 @@ public class DescribeConnectionStatusResponseUnmarshaller {
 	public static DescribeConnectionStatusResponse unmarshall(DescribeConnectionStatusResponse describeConnectionStatusResponse, UnmarshallerContext _ctx) {
 		
 		describeConnectionStatusResponse.setRequestId(_ctx.stringValue("DescribeConnectionStatusResponse.RequestId"));
+		describeConnectionStatusResponse.setErrCode(_ctx.stringValue("DescribeConnectionStatusResponse.ErrCode"));
+		describeConnectionStatusResponse.setErrMessage(_ctx.stringValue("DescribeConnectionStatusResponse.ErrMessage"));
+		describeConnectionStatusResponse.setSuccess(_ctx.stringValue("DescribeConnectionStatusResponse.Success"));
 		describeConnectionStatusResponse.setSourceConnectionStatus(_ctx.mapValue("DescribeConnectionStatusResponse.SourceConnectionStatus"));
 		describeConnectionStatusResponse.setDestinationConnectionStatus(_ctx.mapValue("DescribeConnectionStatusResponse.DestinationConnectionStatus"));
-		describeConnectionStatusResponse.setErrCode(_ctx.stringValue("DescribeConnectionStatusResponse.ErrCode"));
-		describeConnectionStatusResponse.setSuccess(_ctx.stringValue("DescribeConnectionStatusResponse.Success"));
-		describeConnectionStatusResponse.setErrMessage(_ctx.stringValue("DescribeConnectionStatusResponse.ErrMessage"));
 	 
 	 	return describeConnectionStatusResponse;
 	}

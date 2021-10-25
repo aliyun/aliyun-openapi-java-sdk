@@ -24,33 +24,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateConsumerChannelResponse extends AcsResponse {
 
-	private String httpStatusCode;
-
-	private String requestId;
-
 	private String errCode;
-
-	private String success;
 
 	private String errMessage;
 
+	private String requestId;
+
+	private String success;
+
 	private String consumerGroupID;
 
-	public String getHttpStatusCode() {
-		return this.httpStatusCode;
-	}
-
-	public void setHttpStatusCode(String httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String httpStatusCode;
 
 	public String getErrCode() {
 		return this.errCode;
@@ -58,14 +42,6 @@ public class CreateConsumerChannelResponse extends AcsResponse {
 
 	public void setErrCode(String errCode) {
 		this.errCode = errCode;
-	}
-
-	public String getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(String success) {
-		this.success = success;
 	}
 
 	public String getErrMessage() {
@@ -76,12 +52,36 @@ public class CreateConsumerChannelResponse extends AcsResponse {
 		this.errMessage = errMessage;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(String success) {
+		this.success = success;
+	}
+
 	public String getConsumerGroupID() {
 		return this.consumerGroupID;
 	}
 
 	public void setConsumerGroupID(String consumerGroupID) {
 		this.consumerGroupID = consumerGroupID;
+	}
+
+	public String getHttpStatusCode() {
+		return this.httpStatusCode;
+	}
+
+	public void setHttpStatusCode(String httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
 	}
 
 	@Override

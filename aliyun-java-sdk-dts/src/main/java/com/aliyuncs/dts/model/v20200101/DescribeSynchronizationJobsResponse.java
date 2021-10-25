@@ -27,9 +27,9 @@ public class DescribeSynchronizationJobsResponse extends AcsResponse {
 
 	private Integer pageNumber;
 
-	private String requestId;
-
 	private Integer pageRecordCount;
+
+	private String requestId;
 
 	private Long totalRecordCount;
 
@@ -43,20 +43,20 @@ public class DescribeSynchronizationJobsResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public Integer getPageRecordCount() {
 		return this.pageRecordCount;
 	}
 
 	public void setPageRecordCount(Integer pageRecordCount) {
 		this.pageRecordCount = pageRecordCount;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Long getTotalRecordCount() {
@@ -77,11 +77,9 @@ public class DescribeSynchronizationJobsResponse extends AcsResponse {
 
 	public static class SynchronizationInstance {
 
+		private String createTime;
+
 		private String dataInitialization;
-
-		private String status;
-
-		private String synchronizationJobName;
 
 		private String delay;
 
@@ -89,21 +87,23 @@ public class DescribeSynchronizationJobsResponse extends AcsResponse {
 
 		private String expireTime;
 
-		private String createTime;
-
 		private String payType;
+
+		private String status;
 
 		private String structureInitialization;
 
-		private String synchronizationJobClass;
+		private String synchronizationDirection;
 
-		private String instanceCreateTime;
+		private String synchronizationJobClass;
 
 		private String synchronizationJobId;
 
-		private String synchronizationDirection;
+		private String synchronizationJobName;
 
 		private String jobCreateTime;
+
+		private String instanceCreateTime;
 
 		private List<Tag> tags;
 
@@ -123,28 +123,20 @@ public class DescribeSynchronizationJobsResponse extends AcsResponse {
 
 		private StructureInitializationStatus structureInitializationStatus;
 
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
+
 		public String getDataInitialization() {
 			return this.dataInitialization;
 		}
 
 		public void setDataInitialization(String dataInitialization) {
 			this.dataInitialization = dataInitialization;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
-		public String getSynchronizationJobName() {
-			return this.synchronizationJobName;
-		}
-
-		public void setSynchronizationJobName(String synchronizationJobName) {
-			this.synchronizationJobName = synchronizationJobName;
 		}
 
 		public String getDelay() {
@@ -171,20 +163,20 @@ public class DescribeSynchronizationJobsResponse extends AcsResponse {
 			this.expireTime = expireTime;
 		}
 
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
-		}
-
 		public String getPayType() {
 			return this.payType;
 		}
 
 		public void setPayType(String payType) {
 			this.payType = payType;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public String getStructureInitialization() {
@@ -195,20 +187,20 @@ public class DescribeSynchronizationJobsResponse extends AcsResponse {
 			this.structureInitialization = structureInitialization;
 		}
 
+		public String getSynchronizationDirection() {
+			return this.synchronizationDirection;
+		}
+
+		public void setSynchronizationDirection(String synchronizationDirection) {
+			this.synchronizationDirection = synchronizationDirection;
+		}
+
 		public String getSynchronizationJobClass() {
 			return this.synchronizationJobClass;
 		}
 
 		public void setSynchronizationJobClass(String synchronizationJobClass) {
 			this.synchronizationJobClass = synchronizationJobClass;
-		}
-
-		public String getInstanceCreateTime() {
-			return this.instanceCreateTime;
-		}
-
-		public void setInstanceCreateTime(String instanceCreateTime) {
-			this.instanceCreateTime = instanceCreateTime;
 		}
 
 		public String getSynchronizationJobId() {
@@ -219,12 +211,12 @@ public class DescribeSynchronizationJobsResponse extends AcsResponse {
 			this.synchronizationJobId = synchronizationJobId;
 		}
 
-		public String getSynchronizationDirection() {
-			return this.synchronizationDirection;
+		public String getSynchronizationJobName() {
+			return this.synchronizationJobName;
 		}
 
-		public void setSynchronizationDirection(String synchronizationDirection) {
-			this.synchronizationDirection = synchronizationDirection;
+		public void setSynchronizationJobName(String synchronizationJobName) {
+			this.synchronizationJobName = synchronizationJobName;
 		}
 
 		public String getJobCreateTime() {
@@ -233,6 +225,14 @@ public class DescribeSynchronizationJobsResponse extends AcsResponse {
 
 		public void setJobCreateTime(String jobCreateTime) {
 			this.jobCreateTime = jobCreateTime;
+		}
+
+		public String getInstanceCreateTime() {
+			return this.instanceCreateTime;
+		}
+
+		public void setInstanceCreateTime(String instanceCreateTime) {
+			this.instanceCreateTime = instanceCreateTime;
 		}
 
 		public List<Tag> getTags() {
@@ -401,20 +401,20 @@ public class DescribeSynchronizationJobsResponse extends AcsResponse {
 
 		public static class DataInitializationStatus {
 
-			private String status;
+			private String errorMessage;
 
 			private String percent;
 
-			private String errorMessage;
-
 			private String progress;
 
-			public String getStatus() {
-				return this.status;
+			private String status;
+
+			public String getErrorMessage() {
+				return this.errorMessage;
 			}
 
-			public void setStatus(String status) {
-				this.status = status;
+			public void setErrorMessage(String errorMessage) {
+				this.errorMessage = errorMessage;
 			}
 
 			public String getPercent() {
@@ -423,14 +423,6 @@ public class DescribeSynchronizationJobsResponse extends AcsResponse {
 
 			public void setPercent(String percent) {
 				this.percent = percent;
-			}
-
-			public String getErrorMessage() {
-				return this.errorMessage;
-			}
-
-			public void setErrorMessage(String errorMessage) {
-				this.errorMessage = errorMessage;
 			}
 
 			public String getProgress() {
@@ -440,17 +432,6 @@ public class DescribeSynchronizationJobsResponse extends AcsResponse {
 			public void setProgress(String progress) {
 				this.progress = progress;
 			}
-		}
-
-		public static class DataSynchronizationStatus {
-
-			private String status;
-
-			private String delay;
-
-			private String percent;
-
-			private String errorMessage;
 
 			public String getStatus() {
 				return this.status;
@@ -459,6 +440,17 @@ public class DescribeSynchronizationJobsResponse extends AcsResponse {
 			public void setStatus(String status) {
 				this.status = status;
 			}
+		}
+
+		public static class DataSynchronizationStatus {
+
+			private String delay;
+
+			private String errorMessage;
+
+			private String percent;
+
+			private String status;
 
 			public String getDelay() {
 				return this.delay;
@@ -466,6 +458,14 @@ public class DescribeSynchronizationJobsResponse extends AcsResponse {
 
 			public void setDelay(String delay) {
 				this.delay = delay;
+			}
+
+			public String getErrorMessage() {
+				return this.errorMessage;
+			}
+
+			public void setErrorMessage(String errorMessage) {
+				this.errorMessage = errorMessage;
 			}
 
 			public String getPercent() {
@@ -476,20 +476,22 @@ public class DescribeSynchronizationJobsResponse extends AcsResponse {
 				this.percent = percent;
 			}
 
-			public String getErrorMessage() {
-				return this.errorMessage;
+			public String getStatus() {
+				return this.status;
 			}
 
-			public void setErrorMessage(String errorMessage) {
-				this.errorMessage = errorMessage;
+			public void setStatus(String status) {
+				this.status = status;
 			}
 		}
 
 		public static class DestinationEndpoint {
 
-			private String instanceId;
+			private String engineName;
 
 			private String iP;
+
+			private String instanceId;
 
 			private String instanceType;
 
@@ -497,14 +499,12 @@ public class DescribeSynchronizationJobsResponse extends AcsResponse {
 
 			private String userName;
 
-			private String engineName;
-
-			public String getInstanceId() {
-				return this.instanceId;
+			public String getEngineName() {
+				return this.engineName;
 			}
 
-			public void setInstanceId(String instanceId) {
-				this.instanceId = instanceId;
+			public void setEngineName(String engineName) {
+				this.engineName = engineName;
 			}
 
 			public String getIP() {
@@ -513,6 +513,14 @@ public class DescribeSynchronizationJobsResponse extends AcsResponse {
 
 			public void setIP(String iP) {
 				this.iP = iP;
+			}
+
+			public String getInstanceId() {
+				return this.instanceId;
+			}
+
+			public void setInstanceId(String instanceId) {
+				this.instanceId = instanceId;
 			}
 
 			public String getInstanceType() {
@@ -538,29 +546,13 @@ public class DescribeSynchronizationJobsResponse extends AcsResponse {
 			public void setUserName(String userName) {
 				this.userName = userName;
 			}
-
-			public String getEngineName() {
-				return this.engineName;
-			}
-
-			public void setEngineName(String engineName) {
-				this.engineName = engineName;
-			}
 		}
 
 		public static class Performance {
 
-			private String rPS;
-
 			private String fLOW;
 
-			public String getRPS() {
-				return this.rPS;
-			}
-
-			public void setRPS(String rPS) {
-				this.rPS = rPS;
-			}
+			private String rPS;
 
 			public String getFLOW() {
 				return this.fLOW;
@@ -569,23 +561,23 @@ public class DescribeSynchronizationJobsResponse extends AcsResponse {
 			public void setFLOW(String fLOW) {
 				this.fLOW = fLOW;
 			}
+
+			public String getRPS() {
+				return this.rPS;
+			}
+
+			public void setRPS(String rPS) {
+				this.rPS = rPS;
+			}
 		}
 
 		public static class PrecheckStatus {
 
-			private String status;
-
 			private String percent;
 
+			private String status;
+
 			private List<CheckItem> detail;
-
-			public String getStatus() {
-				return this.status;
-			}
-
-			public void setStatus(String status) {
-				this.status = status;
-			}
 
 			public String getPercent() {
 				return this.percent;
@@ -593,6 +585,14 @@ public class DescribeSynchronizationJobsResponse extends AcsResponse {
 
 			public void setPercent(String percent) {
 				this.percent = percent;
+			}
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
 			}
 
 			public List<CheckItem> getDetail() {
@@ -649,9 +649,11 @@ public class DescribeSynchronizationJobsResponse extends AcsResponse {
 
 		public static class SourceEndpoint {
 
-			private String instanceId;
+			private String engineName;
 
 			private String iP;
+
+			private String instanceId;
 
 			private String instanceType;
 
@@ -659,14 +661,12 @@ public class DescribeSynchronizationJobsResponse extends AcsResponse {
 
 			private String userName;
 
-			private String engineName;
-
-			public String getInstanceId() {
-				return this.instanceId;
+			public String getEngineName() {
+				return this.engineName;
 			}
 
-			public void setInstanceId(String instanceId) {
-				this.instanceId = instanceId;
+			public void setEngineName(String engineName) {
+				this.engineName = engineName;
 			}
 
 			public String getIP() {
@@ -675,6 +675,14 @@ public class DescribeSynchronizationJobsResponse extends AcsResponse {
 
 			public void setIP(String iP) {
 				this.iP = iP;
+			}
+
+			public String getInstanceId() {
+				return this.instanceId;
+			}
+
+			public void setInstanceId(String instanceId) {
+				this.instanceId = instanceId;
 			}
 
 			public String getInstanceType() {
@@ -700,32 +708,24 @@ public class DescribeSynchronizationJobsResponse extends AcsResponse {
 			public void setUserName(String userName) {
 				this.userName = userName;
 			}
-
-			public String getEngineName() {
-				return this.engineName;
-			}
-
-			public void setEngineName(String engineName) {
-				this.engineName = engineName;
-			}
 		}
 
 		public static class StructureInitializationStatus {
 
-			private String status;
+			private String errorMessage;
 
 			private String percent;
 
-			private String errorMessage;
-
 			private String progress;
 
-			public String getStatus() {
-				return this.status;
+			private String status;
+
+			public String getErrorMessage() {
+				return this.errorMessage;
 			}
 
-			public void setStatus(String status) {
-				this.status = status;
+			public void setErrorMessage(String errorMessage) {
+				this.errorMessage = errorMessage;
 			}
 
 			public String getPercent() {
@@ -736,20 +736,20 @@ public class DescribeSynchronizationJobsResponse extends AcsResponse {
 				this.percent = percent;
 			}
 
-			public String getErrorMessage() {
-				return this.errorMessage;
-			}
-
-			public void setErrorMessage(String errorMessage) {
-				this.errorMessage = errorMessage;
-			}
-
 			public String getProgress() {
 				return this.progress;
 			}
 
 			public void setProgress(String progress) {
 				this.progress = progress;
+			}
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
 			}
 		}
 	}

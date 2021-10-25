@@ -23,12 +23,12 @@ public class UpgradeTwoWayResponseUnmarshaller {
 	public static UpgradeTwoWayResponse unmarshall(UpgradeTwoWayResponse upgradeTwoWayResponse, UnmarshallerContext _ctx) {
 		
 		upgradeTwoWayResponse.setRequestId(_ctx.stringValue("UpgradeTwoWayResponse.RequestId"));
-		upgradeTwoWayResponse.setHttpStatusCode(_ctx.integerValue("UpgradeTwoWayResponse.HttpStatusCode"));
-		upgradeTwoWayResponse.setErrCode(_ctx.stringValue("UpgradeTwoWayResponse.ErrCode"));
-		upgradeTwoWayResponse.setSuccess(_ctx.booleanValue("UpgradeTwoWayResponse.Success"));
-		upgradeTwoWayResponse.setErrMessage(_ctx.stringValue("UpgradeTwoWayResponse.ErrMessage"));
-		upgradeTwoWayResponse.setDynamicMessage(_ctx.stringValue("UpgradeTwoWayResponse.DynamicMessage"));
 		upgradeTwoWayResponse.setDynamicCode(_ctx.stringValue("UpgradeTwoWayResponse.DynamicCode"));
+		upgradeTwoWayResponse.setDynamicMessage(_ctx.stringValue("UpgradeTwoWayResponse.DynamicMessage"));
+		upgradeTwoWayResponse.setErrCode(_ctx.stringValue("UpgradeTwoWayResponse.ErrCode"));
+		upgradeTwoWayResponse.setErrMessage(_ctx.stringValue("UpgradeTwoWayResponse.ErrMessage"));
+		upgradeTwoWayResponse.setHttpStatusCode(_ctx.integerValue("UpgradeTwoWayResponse.HttpStatusCode"));
+		upgradeTwoWayResponse.setSuccess(_ctx.booleanValue("UpgradeTwoWayResponse.Success"));
 	 
 	 	return upgradeTwoWayResponse;
 	}

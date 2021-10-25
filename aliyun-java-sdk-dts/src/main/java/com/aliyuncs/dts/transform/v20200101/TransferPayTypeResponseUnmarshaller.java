@@ -23,16 +23,16 @@ public class TransferPayTypeResponseUnmarshaller {
 	public static TransferPayTypeResponse unmarshall(TransferPayTypeResponse transferPayTypeResponse, UnmarshallerContext _ctx) {
 		
 		transferPayTypeResponse.setRequestId(_ctx.stringValue("TransferPayTypeResponse.RequestId"));
-		transferPayTypeResponse.setEndTime(_ctx.stringValue("TransferPayTypeResponse.EndTime"));
-		transferPayTypeResponse.setHttpStatusCode(_ctx.integerValue("TransferPayTypeResponse.HttpStatusCode"));
-		transferPayTypeResponse.setDtsJobId(_ctx.stringValue("TransferPayTypeResponse.DtsJobId"));
-		transferPayTypeResponse.setErrCode(_ctx.stringValue("TransferPayTypeResponse.ErrCode"));
-		transferPayTypeResponse.setSuccess(_ctx.booleanValue("TransferPayTypeResponse.Success"));
-		transferPayTypeResponse.setChargeType(_ctx.stringValue("TransferPayTypeResponse.ChargeType"));
-		transferPayTypeResponse.setErrMessage(_ctx.stringValue("TransferPayTypeResponse.ErrMessage"));
 		transferPayTypeResponse.setCode(_ctx.stringValue("TransferPayTypeResponse.Code"));
 		transferPayTypeResponse.setDynamicMessage(_ctx.stringValue("TransferPayTypeResponse.DynamicMessage"));
+		transferPayTypeResponse.setErrCode(_ctx.stringValue("TransferPayTypeResponse.ErrCode"));
+		transferPayTypeResponse.setErrMessage(_ctx.stringValue("TransferPayTypeResponse.ErrMessage"));
+		transferPayTypeResponse.setHttpStatusCode(_ctx.integerValue("TransferPayTypeResponse.HttpStatusCode"));
+		transferPayTypeResponse.setSuccess(_ctx.booleanValue("TransferPayTypeResponse.Success"));
+		transferPayTypeResponse.setDtsJobId(_ctx.stringValue("TransferPayTypeResponse.DtsJobId"));
 		transferPayTypeResponse.setInstanceId(_ctx.stringValue("TransferPayTypeResponse.InstanceId"));
+		transferPayTypeResponse.setChargeType(_ctx.stringValue("TransferPayTypeResponse.ChargeType"));
+		transferPayTypeResponse.setEndTime(_ctx.stringValue("TransferPayTypeResponse.EndTime"));
 	 
 	 	return transferPayTypeResponse;
 	}

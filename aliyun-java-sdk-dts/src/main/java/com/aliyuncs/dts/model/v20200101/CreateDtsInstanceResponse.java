@@ -24,25 +24,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateDtsInstanceResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String errCode;
-
-	private String success;
-
-	private String jobId;
 
 	private String errMessage;
 
+	private String requestId;
+
+	private String success;
+
 	private String instanceId;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String jobId;
 
 	public String getErrCode() {
 		return this.errCode;
@@ -50,22 +42,6 @@ public class CreateDtsInstanceResponse extends AcsResponse {
 
 	public void setErrCode(String errCode) {
 		this.errCode = errCode;
-	}
-
-	public String getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(String success) {
-		this.success = success;
-	}
-
-	public String getJobId() {
-		return this.jobId;
-	}
-
-	public void setJobId(String jobId) {
-		this.jobId = jobId;
 	}
 
 	public String getErrMessage() {
@@ -76,12 +52,36 @@ public class CreateDtsInstanceResponse extends AcsResponse {
 		this.errMessage = errMessage;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(String success) {
+		this.success = success;
+	}
+
 	public String getInstanceId() {
 		return this.instanceId;
 	}
 
 	public void setInstanceId(String instanceId) {
 		this.instanceId = instanceId;
+	}
+
+	public String getJobId() {
+		return this.jobId;
+	}
+
+	public void setJobId(String jobId) {
+		this.jobId = jobId;
 	}
 
 	@Override

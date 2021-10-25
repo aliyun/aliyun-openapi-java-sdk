@@ -24,9 +24,9 @@ public class SwitchSynchronizationEndpointResponseUnmarshaller {
 		
 		switchSynchronizationEndpointResponse.setRequestId(_ctx.stringValue("SwitchSynchronizationEndpointResponse.RequestId"));
 		switchSynchronizationEndpointResponse.setErrCode(_ctx.stringValue("SwitchSynchronizationEndpointResponse.ErrCode"));
-		switchSynchronizationEndpointResponse.setTaskId(_ctx.stringValue("SwitchSynchronizationEndpointResponse.TaskId"));
-		switchSynchronizationEndpointResponse.setSuccess(_ctx.stringValue("SwitchSynchronizationEndpointResponse.Success"));
 		switchSynchronizationEndpointResponse.setErrMessage(_ctx.stringValue("SwitchSynchronizationEndpointResponse.ErrMessage"));
+		switchSynchronizationEndpointResponse.setSuccess(_ctx.stringValue("SwitchSynchronizationEndpointResponse.Success"));
+		switchSynchronizationEndpointResponse.setTaskId(_ctx.stringValue("SwitchSynchronizationEndpointResponse.TaskId"));
 	 
 	 	return switchSynchronizationEndpointResponse;
 	}

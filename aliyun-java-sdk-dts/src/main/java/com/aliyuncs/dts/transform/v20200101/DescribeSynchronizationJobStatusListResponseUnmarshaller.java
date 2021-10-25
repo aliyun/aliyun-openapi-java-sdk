@@ -29,11 +29,11 @@ public class DescribeSynchronizationJobStatusListResponseUnmarshaller {
 		
 		describeSynchronizationJobStatusListResponse.setRequestId(_ctx.stringValue("DescribeSynchronizationJobStatusListResponse.RequestId"));
 		describeSynchronizationJobStatusListResponse.setErrCode(_ctx.stringValue("DescribeSynchronizationJobStatusListResponse.ErrCode"));
+		describeSynchronizationJobStatusListResponse.setErrMessage(_ctx.stringValue("DescribeSynchronizationJobStatusListResponse.ErrMessage"));
+		describeSynchronizationJobStatusListResponse.setPageNumber(_ctx.integerValue("DescribeSynchronizationJobStatusListResponse.PageNumber"));
 		describeSynchronizationJobStatusListResponse.setPageRecordCount(_ctx.integerValue("DescribeSynchronizationJobStatusListResponse.PageRecordCount"));
 		describeSynchronizationJobStatusListResponse.setSuccess(_ctx.stringValue("DescribeSynchronizationJobStatusListResponse.Success"));
 		describeSynchronizationJobStatusListResponse.setTotalRecordCount(_ctx.longValue("DescribeSynchronizationJobStatusListResponse.TotalRecordCount"));
-		describeSynchronizationJobStatusListResponse.setErrMessage(_ctx.stringValue("DescribeSynchronizationJobStatusListResponse.ErrMessage"));
-		describeSynchronizationJobStatusListResponse.setPageNumber(_ctx.integerValue("DescribeSynchronizationJobStatusListResponse.PageNumber"));
 
 		List<SynchronizationJobStatusInfo> synchronizationJobListStatusList = new ArrayList<SynchronizationJobStatusInfo>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSynchronizationJobStatusListResponse.SynchronizationJobListStatusList.Length"); i++) {
@@ -43,9 +43,9 @@ public class DescribeSynchronizationJobStatusListResponseUnmarshaller {
 			List<SynchronizationDirectionInfo> synchronizationDirectionInfoList = new ArrayList<SynchronizationDirectionInfo>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeSynchronizationJobStatusListResponse.SynchronizationJobListStatusList["+ i +"].SynchronizationDirectionInfoList.Length"); j++) {
 				SynchronizationDirectionInfo synchronizationDirectionInfo = new SynchronizationDirectionInfo();
+				synchronizationDirectionInfo.setCheckpoint(_ctx.stringValue("DescribeSynchronizationJobStatusListResponse.SynchronizationJobListStatusList["+ i +"].SynchronizationDirectionInfoList["+ j +"].Checkpoint"));
 				synchronizationDirectionInfo.setStatus(_ctx.stringValue("DescribeSynchronizationJobStatusListResponse.SynchronizationJobListStatusList["+ i +"].SynchronizationDirectionInfoList["+ j +"].Status"));
 				synchronizationDirectionInfo.setSynchronizationDirection(_ctx.stringValue("DescribeSynchronizationJobStatusListResponse.SynchronizationJobListStatusList["+ i +"].SynchronizationDirectionInfoList["+ j +"].SynchronizationDirection"));
-				synchronizationDirectionInfo.setCheckpoint(_ctx.stringValue("DescribeSynchronizationJobStatusListResponse.SynchronizationJobListStatusList["+ i +"].SynchronizationDirectionInfoList["+ j +"].Checkpoint"));
 
 				synchronizationDirectionInfoList.add(synchronizationDirectionInfo);
 			}

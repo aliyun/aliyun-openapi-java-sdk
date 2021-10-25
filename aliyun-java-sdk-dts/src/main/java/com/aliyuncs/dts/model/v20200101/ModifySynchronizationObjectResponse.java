@@ -24,23 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ModifySynchronizationObjectResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String errCode;
-
-	private String taskId;
-
-	private String success;
 
 	private String errMessage;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
+	private String requestId;
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String success;
+
+	private String taskId;
 
 	public String getErrCode() {
 		return this.errCode;
@@ -50,12 +42,20 @@ public class ModifySynchronizationObjectResponse extends AcsResponse {
 		this.errCode = errCode;
 	}
 
-	public String getTaskId() {
-		return this.taskId;
+	public String getErrMessage() {
+		return this.errMessage;
 	}
 
-	public void setTaskId(String taskId) {
-		this.taskId = taskId;
+	public void setErrMessage(String errMessage) {
+		this.errMessage = errMessage;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getSuccess() {
@@ -66,12 +66,12 @@ public class ModifySynchronizationObjectResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public String getErrMessage() {
-		return this.errMessage;
+	public String getTaskId() {
+		return this.taskId;
 	}
 
-	public void setErrMessage(String errMessage) {
-		this.errMessage = errMessage;
+	public void setTaskId(String taskId) {
+		this.taskId = taskId;
 	}
 
 	@Override

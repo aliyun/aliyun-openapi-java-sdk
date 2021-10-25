@@ -24,23 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateSynchronizationJobResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String errCode;
+
+	private String errMessage;
+
+	private String requestId;
 
 	private String success;
 
 	private String synchronizationJobId;
-
-	private String errMessage;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getErrCode() {
 		return this.errCode;
@@ -48,6 +40,22 @@ public class CreateSynchronizationJobResponse extends AcsResponse {
 
 	public void setErrCode(String errCode) {
 		this.errCode = errCode;
+	}
+
+	public String getErrMessage() {
+		return this.errMessage;
+	}
+
+	public void setErrMessage(String errMessage) {
+		this.errMessage = errMessage;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getSuccess() {
@@ -64,14 +72,6 @@ public class CreateSynchronizationJobResponse extends AcsResponse {
 
 	public void setSynchronizationJobId(String synchronizationJobId) {
 		this.synchronizationJobId = synchronizationJobId;
-	}
-
-	public String getErrMessage() {
-		return this.errMessage;
-	}
-
-	public void setErrMessage(String errMessage) {
-		this.errMessage = errMessage;
 	}
 
 	@Override

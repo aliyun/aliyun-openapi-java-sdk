@@ -23,13 +23,13 @@ public class CreateJobMonitorRuleResponseUnmarshaller {
 	public static CreateJobMonitorRuleResponse unmarshall(CreateJobMonitorRuleResponse createJobMonitorRuleResponse, UnmarshallerContext _ctx) {
 		
 		createJobMonitorRuleResponse.setRequestId(_ctx.stringValue("CreateJobMonitorRuleResponse.RequestId"));
-		createJobMonitorRuleResponse.setHttpStatusCode(_ctx.integerValue("CreateJobMonitorRuleResponse.HttpStatusCode"));
-		createJobMonitorRuleResponse.setDtsJobId(_ctx.stringValue("CreateJobMonitorRuleResponse.DtsJobId"));
-		createJobMonitorRuleResponse.setErrCode(_ctx.stringValue("CreateJobMonitorRuleResponse.ErrCode"));
-		createJobMonitorRuleResponse.setSuccess(_ctx.booleanValue("CreateJobMonitorRuleResponse.Success"));
-		createJobMonitorRuleResponse.setErrMessage(_ctx.stringValue("CreateJobMonitorRuleResponse.ErrMessage"));
 		createJobMonitorRuleResponse.setCode(_ctx.stringValue("CreateJobMonitorRuleResponse.Code"));
 		createJobMonitorRuleResponse.setDynamicMessage(_ctx.stringValue("CreateJobMonitorRuleResponse.DynamicMessage"));
+		createJobMonitorRuleResponse.setErrCode(_ctx.stringValue("CreateJobMonitorRuleResponse.ErrCode"));
+		createJobMonitorRuleResponse.setErrMessage(_ctx.stringValue("CreateJobMonitorRuleResponse.ErrMessage"));
+		createJobMonitorRuleResponse.setHttpStatusCode(_ctx.integerValue("CreateJobMonitorRuleResponse.HttpStatusCode"));
+		createJobMonitorRuleResponse.setSuccess(_ctx.booleanValue("CreateJobMonitorRuleResponse.Success"));
+		createJobMonitorRuleResponse.setDtsJobId(_ctx.stringValue("CreateJobMonitorRuleResponse.DtsJobId"));
 	 
 	 	return createJobMonitorRuleResponse;
 	}

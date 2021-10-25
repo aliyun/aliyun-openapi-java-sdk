@@ -24,8 +24,8 @@ public class StartSynchronizationJobResponseUnmarshaller {
 		
 		startSynchronizationJobResponse.setRequestId(_ctx.stringValue("StartSynchronizationJobResponse.RequestId"));
 		startSynchronizationJobResponse.setErrCode(_ctx.stringValue("StartSynchronizationJobResponse.ErrCode"));
-		startSynchronizationJobResponse.setSuccess(_ctx.stringValue("StartSynchronizationJobResponse.Success"));
 		startSynchronizationJobResponse.setErrMessage(_ctx.stringValue("StartSynchronizationJobResponse.ErrMessage"));
+		startSynchronizationJobResponse.setSuccess(_ctx.stringValue("StartSynchronizationJobResponse.Success"));
 	 
 	 	return startSynchronizationJobResponse;
 	}

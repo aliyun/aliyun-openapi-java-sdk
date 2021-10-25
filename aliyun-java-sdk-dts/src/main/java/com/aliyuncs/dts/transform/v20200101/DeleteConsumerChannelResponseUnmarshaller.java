@@ -23,10 +23,10 @@ public class DeleteConsumerChannelResponseUnmarshaller {
 	public static DeleteConsumerChannelResponse unmarshall(DeleteConsumerChannelResponse deleteConsumerChannelResponse, UnmarshallerContext _ctx) {
 		
 		deleteConsumerChannelResponse.setRequestId(_ctx.stringValue("DeleteConsumerChannelResponse.RequestId"));
-		deleteConsumerChannelResponse.setHttpStatusCode(_ctx.stringValue("DeleteConsumerChannelResponse.HttpStatusCode"));
 		deleteConsumerChannelResponse.setErrCode(_ctx.stringValue("DeleteConsumerChannelResponse.ErrCode"));
-		deleteConsumerChannelResponse.setSuccess(_ctx.stringValue("DeleteConsumerChannelResponse.Success"));
 		deleteConsumerChannelResponse.setErrMessage(_ctx.stringValue("DeleteConsumerChannelResponse.ErrMessage"));
+		deleteConsumerChannelResponse.setSuccess(_ctx.stringValue("DeleteConsumerChannelResponse.Success"));
+		deleteConsumerChannelResponse.setHttpStatusCode(_ctx.stringValue("DeleteConsumerChannelResponse.HttpStatusCode"));
 	 
 	 	return deleteConsumerChannelResponse;
 	}

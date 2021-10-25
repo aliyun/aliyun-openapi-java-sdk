@@ -25,27 +25,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeInitializationStatusResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String errCode;
 
-	private String success;
-
 	private String errMessage;
+
+	private String requestId;
+
+	private String success;
 
 	private List<DataInitializationDetail> dataInitializationDetails;
 
 	private List<DataSynchronizationDetail> dataSynchronizationDetails;
 
 	private List<StructureInitializationDetail> structureInitializationDetails;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getErrCode() {
 		return this.errCode;
@@ -55,20 +47,28 @@ public class DescribeInitializationStatusResponse extends AcsResponse {
 		this.errCode = errCode;
 	}
 
-	public String getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(String success) {
-		this.success = success;
-	}
-
 	public String getErrMessage() {
 		return this.errMessage;
 	}
 
 	public void setErrMessage(String errMessage) {
 		this.errMessage = errMessage;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(String success) {
+		this.success = success;
 	}
 
 	public List<DataInitializationDetail> getDataInitializationDetails() {
@@ -97,52 +97,28 @@ public class DescribeInitializationStatusResponse extends AcsResponse {
 
 	public static class DataInitializationDetail {
 
-		private String sourceOwnerDBName;
-
-		private String status;
-
-		private String usedTime;
-
-		private String tableName;
+		private String destinationOwnerDBName;
 
 		private String errorMessage;
 
 		private String finishRowNum;
 
-		private String destinationOwnerDBName;
+		private String sourceOwnerDBName;
+
+		private String status;
+
+		private String tableName;
 
 		private String totalRowNum;
 
-		public String getSourceOwnerDBName() {
-			return this.sourceOwnerDBName;
+		private String usedTime;
+
+		public String getDestinationOwnerDBName() {
+			return this.destinationOwnerDBName;
 		}
 
-		public void setSourceOwnerDBName(String sourceOwnerDBName) {
-			this.sourceOwnerDBName = sourceOwnerDBName;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
-		public String getUsedTime() {
-			return this.usedTime;
-		}
-
-		public void setUsedTime(String usedTime) {
-			this.usedTime = usedTime;
-		}
-
-		public String getTableName() {
-			return this.tableName;
-		}
-
-		public void setTableName(String tableName) {
-			this.tableName = tableName;
+		public void setDestinationOwnerDBName(String destinationOwnerDBName) {
+			this.destinationOwnerDBName = destinationOwnerDBName;
 		}
 
 		public String getErrorMessage() {
@@ -161,34 +137,13 @@ public class DescribeInitializationStatusResponse extends AcsResponse {
 			this.finishRowNum = finishRowNum;
 		}
 
-		public String getDestinationOwnerDBName() {
-			return this.destinationOwnerDBName;
+		public String getSourceOwnerDBName() {
+			return this.sourceOwnerDBName;
 		}
 
-		public void setDestinationOwnerDBName(String destinationOwnerDBName) {
-			this.destinationOwnerDBName = destinationOwnerDBName;
+		public void setSourceOwnerDBName(String sourceOwnerDBName) {
+			this.sourceOwnerDBName = sourceOwnerDBName;
 		}
-
-		public String getTotalRowNum() {
-			return this.totalRowNum;
-		}
-
-		public void setTotalRowNum(String totalRowNum) {
-			this.totalRowNum = totalRowNum;
-		}
-	}
-
-	public static class DataSynchronizationDetail {
-
-		private String status;
-
-		private String sourceOwnerDBName;
-
-		private String tableName;
-
-		private String errorMessage;
-
-		private String destinationOwnerDBName;
 
 		public String getStatus() {
 			return this.status;
@@ -196,14 +151,6 @@ public class DescribeInitializationStatusResponse extends AcsResponse {
 
 		public void setStatus(String status) {
 			this.status = status;
-		}
-
-		public String getSourceOwnerDBName() {
-			return this.sourceOwnerDBName;
-		}
-
-		public void setSourceOwnerDBName(String sourceOwnerDBName) {
-			this.sourceOwnerDBName = sourceOwnerDBName;
 		}
 
 		public String getTableName() {
@@ -214,13 +161,34 @@ public class DescribeInitializationStatusResponse extends AcsResponse {
 			this.tableName = tableName;
 		}
 
-		public String getErrorMessage() {
-			return this.errorMessage;
+		public String getTotalRowNum() {
+			return this.totalRowNum;
 		}
 
-		public void setErrorMessage(String errorMessage) {
-			this.errorMessage = errorMessage;
+		public void setTotalRowNum(String totalRowNum) {
+			this.totalRowNum = totalRowNum;
 		}
+
+		public String getUsedTime() {
+			return this.usedTime;
+		}
+
+		public void setUsedTime(String usedTime) {
+			this.usedTime = usedTime;
+		}
+	}
+
+	public static class DataSynchronizationDetail {
+
+		private String destinationOwnerDBName;
+
+		private String errorMessage;
+
+		private String sourceOwnerDBName;
+
+		private String status;
+
+		private String tableName;
 
 		public String getDestinationOwnerDBName() {
 			return this.destinationOwnerDBName;
@@ -229,32 +197,13 @@ public class DescribeInitializationStatusResponse extends AcsResponse {
 		public void setDestinationOwnerDBName(String destinationOwnerDBName) {
 			this.destinationOwnerDBName = destinationOwnerDBName;
 		}
-	}
 
-	public static class StructureInitializationDetail {
-
-		private String status;
-
-		private String sourceOwnerDBName;
-
-		private String objectDefinition;
-
-		private String objectType;
-
-		private String errorMessage;
-
-		private String destinationOwnerDBName;
-
-		private String objectName;
-
-		private List<StructureInitializationDetail1> constraints;
-
-		public String getStatus() {
-			return this.status;
+		public String getErrorMessage() {
+			return this.errorMessage;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
+		public void setErrorMessage(String errorMessage) {
+			this.errorMessage = errorMessage;
 		}
 
 		public String getSourceOwnerDBName() {
@@ -265,20 +214,47 @@ public class DescribeInitializationStatusResponse extends AcsResponse {
 			this.sourceOwnerDBName = sourceOwnerDBName;
 		}
 
-		public String getObjectDefinition() {
-			return this.objectDefinition;
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setObjectDefinition(String objectDefinition) {
-			this.objectDefinition = objectDefinition;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
-		public String getObjectType() {
-			return this.objectType;
+		public String getTableName() {
+			return this.tableName;
 		}
 
-		public void setObjectType(String objectType) {
-			this.objectType = objectType;
+		public void setTableName(String tableName) {
+			this.tableName = tableName;
+		}
+	}
+
+	public static class StructureInitializationDetail {
+
+		private String destinationOwnerDBName;
+
+		private String errorMessage;
+
+		private String objectDefinition;
+
+		private String objectName;
+
+		private String objectType;
+
+		private String sourceOwnerDBName;
+
+		private String status;
+
+		private List<StructureInitializationDetail1> constraints;
+
+		public String getDestinationOwnerDBName() {
+			return this.destinationOwnerDBName;
+		}
+
+		public void setDestinationOwnerDBName(String destinationOwnerDBName) {
+			this.destinationOwnerDBName = destinationOwnerDBName;
 		}
 
 		public String getErrorMessage() {
@@ -289,12 +265,12 @@ public class DescribeInitializationStatusResponse extends AcsResponse {
 			this.errorMessage = errorMessage;
 		}
 
-		public String getDestinationOwnerDBName() {
-			return this.destinationOwnerDBName;
+		public String getObjectDefinition() {
+			return this.objectDefinition;
 		}
 
-		public void setDestinationOwnerDBName(String destinationOwnerDBName) {
-			this.destinationOwnerDBName = destinationOwnerDBName;
+		public void setObjectDefinition(String objectDefinition) {
+			this.objectDefinition = objectDefinition;
 		}
 
 		public String getObjectName() {
@@ -303,6 +279,30 @@ public class DescribeInitializationStatusResponse extends AcsResponse {
 
 		public void setObjectName(String objectName) {
 			this.objectName = objectName;
+		}
+
+		public String getObjectType() {
+			return this.objectType;
+		}
+
+		public void setObjectType(String objectType) {
+			this.objectType = objectType;
+		}
+
+		public String getSourceOwnerDBName() {
+			return this.sourceOwnerDBName;
+		}
+
+		public void setSourceOwnerDBName(String sourceOwnerDBName) {
+			this.sourceOwnerDBName = sourceOwnerDBName;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public List<StructureInitializationDetail1> getConstraints() {
@@ -315,50 +315,26 @@ public class DescribeInitializationStatusResponse extends AcsResponse {
 
 		public static class StructureInitializationDetail1 {
 
-			private String status;
-
-			private String sourceOwnerDBName;
-
-			private String objectDefinition;
-
-			private String objectType;
+			private String destinationOwnerDBName;
 
 			private String errorMessage;
 
-			private String destinationOwnerDBName;
+			private String objectDefinition;
 
 			private String objectName;
 
-			public String getStatus() {
-				return this.status;
+			private String objectType;
+
+			private String sourceOwnerDBName;
+
+			private String status;
+
+			public String getDestinationOwnerDBName() {
+				return this.destinationOwnerDBName;
 			}
 
-			public void setStatus(String status) {
-				this.status = status;
-			}
-
-			public String getSourceOwnerDBName() {
-				return this.sourceOwnerDBName;
-			}
-
-			public void setSourceOwnerDBName(String sourceOwnerDBName) {
-				this.sourceOwnerDBName = sourceOwnerDBName;
-			}
-
-			public String getObjectDefinition() {
-				return this.objectDefinition;
-			}
-
-			public void setObjectDefinition(String objectDefinition) {
-				this.objectDefinition = objectDefinition;
-			}
-
-			public String getObjectType() {
-				return this.objectType;
-			}
-
-			public void setObjectType(String objectType) {
-				this.objectType = objectType;
+			public void setDestinationOwnerDBName(String destinationOwnerDBName) {
+				this.destinationOwnerDBName = destinationOwnerDBName;
 			}
 
 			public String getErrorMessage() {
@@ -369,12 +345,12 @@ public class DescribeInitializationStatusResponse extends AcsResponse {
 				this.errorMessage = errorMessage;
 			}
 
-			public String getDestinationOwnerDBName() {
-				return this.destinationOwnerDBName;
+			public String getObjectDefinition() {
+				return this.objectDefinition;
 			}
 
-			public void setDestinationOwnerDBName(String destinationOwnerDBName) {
-				this.destinationOwnerDBName = destinationOwnerDBName;
+			public void setObjectDefinition(String objectDefinition) {
+				this.objectDefinition = objectDefinition;
 			}
 
 			public String getObjectName() {
@@ -383,6 +359,30 @@ public class DescribeInitializationStatusResponse extends AcsResponse {
 
 			public void setObjectName(String objectName) {
 				this.objectName = objectName;
+			}
+
+			public String getObjectType() {
+				return this.objectType;
+			}
+
+			public void setObjectType(String objectType) {
+				this.objectType = objectType;
+			}
+
+			public String getSourceOwnerDBName() {
+				return this.sourceOwnerDBName;
+			}
+
+			public void setSourceOwnerDBName(String sourceOwnerDBName) {
+				this.sourceOwnerDBName = sourceOwnerDBName;
+			}
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
 			}
 		}
 	}

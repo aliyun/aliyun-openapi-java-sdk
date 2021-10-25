@@ -24,21 +24,53 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateJobMonitorRuleResponse extends AcsResponse {
 
+	private String code;
+
+	private String dynamicMessage;
+
+	private String errCode;
+
+	private String errMessage;
+
 	private Integer httpStatusCode;
 
 	private String requestId;
 
-	private String dtsJobId;
-
-	private String errCode;
-
 	private Boolean success;
 
-	private String errMessage;
+	private String dtsJobId;
 
-	private String code;
+	public String getCode() {
+		return this.code;
+	}
 
-	private String dynamicMessage;
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getDynamicMessage() {
+		return this.dynamicMessage;
+	}
+
+	public void setDynamicMessage(String dynamicMessage) {
+		this.dynamicMessage = dynamicMessage;
+	}
+
+	public String getErrCode() {
+		return this.errCode;
+	}
+
+	public void setErrCode(String errCode) {
+		this.errCode = errCode;
+	}
+
+	public String getErrMessage() {
+		return this.errMessage;
+	}
+
+	public void setErrMessage(String errMessage) {
+		this.errMessage = errMessage;
+	}
 
 	public Integer getHttpStatusCode() {
 		return this.httpStatusCode;
@@ -56,22 +88,6 @@ public class CreateJobMonitorRuleResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getDtsJobId() {
-		return this.dtsJobId;
-	}
-
-	public void setDtsJobId(String dtsJobId) {
-		this.dtsJobId = dtsJobId;
-	}
-
-	public String getErrCode() {
-		return this.errCode;
-	}
-
-	public void setErrCode(String errCode) {
-		this.errCode = errCode;
-	}
-
 	public Boolean getSuccess() {
 		return this.success;
 	}
@@ -80,28 +96,12 @@ public class CreateJobMonitorRuleResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public String getErrMessage() {
-		return this.errMessage;
+	public String getDtsJobId() {
+		return this.dtsJobId;
 	}
 
-	public void setErrMessage(String errMessage) {
-		this.errMessage = errMessage;
-	}
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getDynamicMessage() {
-		return this.dynamicMessage;
-	}
-
-	public void setDynamicMessage(String dynamicMessage) {
-		this.dynamicMessage = dynamicMessage;
+	public void setDtsJobId(String dtsJobId) {
+		this.dtsJobId = dtsJobId;
 	}
 
 	@Override

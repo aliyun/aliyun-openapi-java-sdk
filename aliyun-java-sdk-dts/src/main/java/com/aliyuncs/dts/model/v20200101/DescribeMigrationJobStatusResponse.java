@@ -25,27 +25,27 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeMigrationJobStatusResponse extends AcsResponse {
 
-	private String requestId;
+	private String errCode;
+
+	private String errMessage;
+
+	private String migrationJobClass;
+
+	private String migrationJobId;
 
 	private String migrationJobName;
 
 	private String migrationJobStatus;
 
-	private String errCode;
-
-	private String success;
+	private String migrationObject;
 
 	private String payType;
 
-	private String errMessage;
+	private String requestId;
 
-	private String migrationObject;
-
-	private String migrationJobId;
+	private String success;
 
 	private String taskId;
-
-	private String migrationJobClass;
 
 	private DataInitializationStatus dataInitializationStatus;
 
@@ -61,12 +61,36 @@ public class DescribeMigrationJobStatusResponse extends AcsResponse {
 
 	private StructureInitializationStatus structureInitializationStatus;
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getErrCode() {
+		return this.errCode;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setErrCode(String errCode) {
+		this.errCode = errCode;
+	}
+
+	public String getErrMessage() {
+		return this.errMessage;
+	}
+
+	public void setErrMessage(String errMessage) {
+		this.errMessage = errMessage;
+	}
+
+	public String getMigrationJobClass() {
+		return this.migrationJobClass;
+	}
+
+	public void setMigrationJobClass(String migrationJobClass) {
+		this.migrationJobClass = migrationJobClass;
+	}
+
+	public String getMigrationJobId() {
+		return this.migrationJobId;
+	}
+
+	public void setMigrationJobId(String migrationJobId) {
+		this.migrationJobId = migrationJobId;
 	}
 
 	public String getMigrationJobName() {
@@ -85,20 +109,12 @@ public class DescribeMigrationJobStatusResponse extends AcsResponse {
 		this.migrationJobStatus = migrationJobStatus;
 	}
 
-	public String getErrCode() {
-		return this.errCode;
+	public String getMigrationObject() {
+		return this.migrationObject;
 	}
 
-	public void setErrCode(String errCode) {
-		this.errCode = errCode;
-	}
-
-	public String getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(String success) {
-		this.success = success;
+	public void setMigrationObject(String migrationObject) {
+		this.migrationObject = migrationObject;
 	}
 
 	public String getPayType() {
@@ -109,28 +125,20 @@ public class DescribeMigrationJobStatusResponse extends AcsResponse {
 		this.payType = payType;
 	}
 
-	public String getErrMessage() {
-		return this.errMessage;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setErrMessage(String errMessage) {
-		this.errMessage = errMessage;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
-	public String getMigrationObject() {
-		return this.migrationObject;
+	public String getSuccess() {
+		return this.success;
 	}
 
-	public void setMigrationObject(String migrationObject) {
-		this.migrationObject = migrationObject;
-	}
-
-	public String getMigrationJobId() {
-		return this.migrationJobId;
-	}
-
-	public void setMigrationJobId(String migrationJobId) {
-		this.migrationJobId = migrationJobId;
+	public void setSuccess(String success) {
+		this.success = success;
 	}
 
 	public String getTaskId() {
@@ -139,14 +147,6 @@ public class DescribeMigrationJobStatusResponse extends AcsResponse {
 
 	public void setTaskId(String taskId) {
 		this.taskId = taskId;
-	}
-
-	public String getMigrationJobClass() {
-		return this.migrationJobClass;
-	}
-
-	public void setMigrationJobClass(String migrationJobClass) {
-		this.migrationJobClass = migrationJobClass;
 	}
 
 	public DataInitializationStatus getDataInitializationStatus() {
@@ -207,29 +207,13 @@ public class DescribeMigrationJobStatusResponse extends AcsResponse {
 
 	public static class DataInitializationStatus {
 
-		private String status;
+		private String errorMessage;
 
 		private String percent;
 
-		private String errorMessage;
-
 		private String progress;
 
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
-		public String getPercent() {
-			return this.percent;
-		}
-
-		public void setPercent(String percent) {
-			this.percent = percent;
-		}
+		private String status;
 
 		public String getErrorMessage() {
 			return this.errorMessage;
@@ -239,6 +223,14 @@ public class DescribeMigrationJobStatusResponse extends AcsResponse {
 			this.errorMessage = errorMessage;
 		}
 
+		public String getPercent() {
+			return this.percent;
+		}
+
+		public void setPercent(String percent) {
+			this.percent = percent;
+		}
+
 		public String getProgress() {
 			return this.progress;
 		}
@@ -246,19 +238,6 @@ public class DescribeMigrationJobStatusResponse extends AcsResponse {
 		public void setProgress(String progress) {
 			this.progress = progress;
 		}
-	}
-
-	public static class DataSynchronizationStatus {
-
-		private String status;
-
-		private String percent;
-
-		private String delay;
-
-		private String errorMessage;
-
-		private String checkpoint;
 
 		public String getStatus() {
 			return this.status;
@@ -267,13 +246,26 @@ public class DescribeMigrationJobStatusResponse extends AcsResponse {
 		public void setStatus(String status) {
 			this.status = status;
 		}
+	}
 
-		public String getPercent() {
-			return this.percent;
+	public static class DataSynchronizationStatus {
+
+		private String checkpoint;
+
+		private String delay;
+
+		private String errorMessage;
+
+		private String percent;
+
+		private String status;
+
+		public String getCheckpoint() {
+			return this.checkpoint;
 		}
 
-		public void setPercent(String percent) {
-			this.percent = percent;
+		public void setCheckpoint(String checkpoint) {
+			this.checkpoint = checkpoint;
 		}
 
 		public String getDelay() {
@@ -292,12 +284,20 @@ public class DescribeMigrationJobStatusResponse extends AcsResponse {
 			this.errorMessage = errorMessage;
 		}
 
-		public String getCheckpoint() {
-			return this.checkpoint;
+		public String getPercent() {
+			return this.percent;
 		}
 
-		public void setCheckpoint(String checkpoint) {
-			this.checkpoint = checkpoint;
+		public void setPercent(String percent) {
+			this.percent = percent;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
 		}
 	}
 
@@ -305,9 +305,11 @@ public class DescribeMigrationJobStatusResponse extends AcsResponse {
 
 		private String databaseName;
 
-		private String instanceId;
+		private String engineName;
 
 		private String iP;
+
+		private String instanceId;
 
 		private String instanceType;
 
@@ -317,8 +319,6 @@ public class DescribeMigrationJobStatusResponse extends AcsResponse {
 
 		private String oracleSID;
 
-		private String engineName;
-
 		public String getDatabaseName() {
 			return this.databaseName;
 		}
@@ -327,12 +327,12 @@ public class DescribeMigrationJobStatusResponse extends AcsResponse {
 			this.databaseName = databaseName;
 		}
 
-		public String getInstanceId() {
-			return this.instanceId;
+		public String getEngineName() {
+			return this.engineName;
 		}
 
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
+		public void setEngineName(String engineName) {
+			this.engineName = engineName;
 		}
 
 		public String getIP() {
@@ -341,6 +341,14 @@ public class DescribeMigrationJobStatusResponse extends AcsResponse {
 
 		public void setIP(String iP) {
 			this.iP = iP;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
 		}
 
 		public String getInstanceType() {
@@ -373,14 +381,6 @@ public class DescribeMigrationJobStatusResponse extends AcsResponse {
 
 		public void setOracleSID(String oracleSID) {
 			this.oracleSID = oracleSID;
-		}
-
-		public String getEngineName() {
-			return this.engineName;
-		}
-
-		public void setEngineName(String engineName) {
-			this.engineName = engineName;
 		}
 	}
 
@@ -419,19 +419,11 @@ public class DescribeMigrationJobStatusResponse extends AcsResponse {
 
 	public static class PrecheckStatus {
 
-		private String status;
-
 		private String percent;
 
+		private String status;
+
 		private List<CheckItem> detail;
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
 
 		public String getPercent() {
 			return this.percent;
@@ -439,6 +431,14 @@ public class DescribeMigrationJobStatusResponse extends AcsResponse {
 
 		public void setPercent(String percent) {
 			this.percent = percent;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public List<CheckItem> getDetail() {
@@ -497,9 +497,11 @@ public class DescribeMigrationJobStatusResponse extends AcsResponse {
 
 		private String databaseName;
 
-		private String instanceId;
+		private String engineName;
 
 		private String iP;
+
+		private String instanceId;
 
 		private String instanceType;
 
@@ -509,8 +511,6 @@ public class DescribeMigrationJobStatusResponse extends AcsResponse {
 
 		private String oracleSID;
 
-		private String engineName;
-
 		public String getDatabaseName() {
 			return this.databaseName;
 		}
@@ -519,12 +519,12 @@ public class DescribeMigrationJobStatusResponse extends AcsResponse {
 			this.databaseName = databaseName;
 		}
 
-		public String getInstanceId() {
-			return this.instanceId;
+		public String getEngineName() {
+			return this.engineName;
 		}
 
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
+		public void setEngineName(String engineName) {
+			this.engineName = engineName;
 		}
 
 		public String getIP() {
@@ -533,6 +533,14 @@ public class DescribeMigrationJobStatusResponse extends AcsResponse {
 
 		public void setIP(String iP) {
 			this.iP = iP;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
 		}
 
 		public String getInstanceType() {
@@ -566,32 +574,24 @@ public class DescribeMigrationJobStatusResponse extends AcsResponse {
 		public void setOracleSID(String oracleSID) {
 			this.oracleSID = oracleSID;
 		}
-
-		public String getEngineName() {
-			return this.engineName;
-		}
-
-		public void setEngineName(String engineName) {
-			this.engineName = engineName;
-		}
 	}
 
 	public static class StructureInitializationStatus {
 
-		private String status;
+		private String errorMessage;
 
 		private String percent;
 
-		private String errorMessage;
-
 		private String progress;
 
-		public String getStatus() {
-			return this.status;
+		private String status;
+
+		public String getErrorMessage() {
+			return this.errorMessage;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
+		public void setErrorMessage(String errorMessage) {
+			this.errorMessage = errorMessage;
 		}
 
 		public String getPercent() {
@@ -602,20 +602,20 @@ public class DescribeMigrationJobStatusResponse extends AcsResponse {
 			this.percent = percent;
 		}
 
-		public String getErrorMessage() {
-			return this.errorMessage;
-		}
-
-		public void setErrorMessage(String errorMessage) {
-			this.errorMessage = errorMessage;
-		}
-
 		public String getProgress() {
 			return this.progress;
 		}
 
 		public void setProgress(String progress) {
 			this.progress = progress;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
 		}
 	}
 

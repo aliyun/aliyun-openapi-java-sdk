@@ -25,23 +25,63 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeJobMonitorRuleResponse extends AcsResponse {
 
+	private String code;
+
+	private String dtsJobId;
+
+	private String dynamicMessage;
+
+	private String errCode;
+
+	private String errMessage;
+
 	private Integer httpStatusCode;
 
 	private String requestId;
 
-	private String dtsJobId;
-
-	private String errCode;
-
 	private Boolean success;
 
-	private String errMessage;
-
-	private String code;
-
-	private String dynamicMessage;
-
 	private List<MonitorRule> monitorRules;
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getDtsJobId() {
+		return this.dtsJobId;
+	}
+
+	public void setDtsJobId(String dtsJobId) {
+		this.dtsJobId = dtsJobId;
+	}
+
+	public String getDynamicMessage() {
+		return this.dynamicMessage;
+	}
+
+	public void setDynamicMessage(String dynamicMessage) {
+		this.dynamicMessage = dynamicMessage;
+	}
+
+	public String getErrCode() {
+		return this.errCode;
+	}
+
+	public void setErrCode(String errCode) {
+		this.errCode = errCode;
+	}
+
+	public String getErrMessage() {
+		return this.errMessage;
+	}
+
+	public void setErrMessage(String errMessage) {
+		this.errMessage = errMessage;
+	}
 
 	public Integer getHttpStatusCode() {
 		return this.httpStatusCode;
@@ -59,52 +99,12 @@ public class DescribeJobMonitorRuleResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getDtsJobId() {
-		return this.dtsJobId;
-	}
-
-	public void setDtsJobId(String dtsJobId) {
-		this.dtsJobId = dtsJobId;
-	}
-
-	public String getErrCode() {
-		return this.errCode;
-	}
-
-	public void setErrCode(String errCode) {
-		this.errCode = errCode;
-	}
-
 	public Boolean getSuccess() {
 		return this.success;
 	}
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
-	}
-
-	public String getErrMessage() {
-		return this.errMessage;
-	}
-
-	public void setErrMessage(String errMessage) {
-		this.errMessage = errMessage;
-	}
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getDynamicMessage() {
-		return this.dynamicMessage;
-	}
-
-	public void setDynamicMessage(String dynamicMessage) {
-		this.dynamicMessage = dynamicMessage;
 	}
 
 	public List<MonitorRule> getMonitorRules() {
@@ -117,20 +117,20 @@ public class DescribeJobMonitorRuleResponse extends AcsResponse {
 
 	public static class MonitorRule {
 
-		private String type;
+		private String phone;
 
 		private Long delayRuleTime;
 
 		private String state;
 
-		private String phone;
+		private String type;
 
-		public String getType() {
-			return this.type;
+		public String getPhone() {
+			return this.phone;
 		}
 
-		public void setType(String type) {
-			this.type = type;
+		public void setPhone(String phone) {
+			this.phone = phone;
 		}
 
 		public Long getDelayRuleTime() {
@@ -149,12 +149,12 @@ public class DescribeJobMonitorRuleResponse extends AcsResponse {
 			this.state = state;
 		}
 
-		public String getPhone() {
-			return this.phone;
+		public String getType() {
+			return this.type;
 		}
 
-		public void setPhone(String phone) {
-			this.phone = phone;
+		public void setType(String type) {
+			this.type = type;
 		}
 	}
 

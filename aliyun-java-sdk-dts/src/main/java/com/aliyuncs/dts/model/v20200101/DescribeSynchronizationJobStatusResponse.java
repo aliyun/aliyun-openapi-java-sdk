@@ -25,41 +25,41 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeSynchronizationJobStatusResponse extends AcsResponse {
 
-	private String synchronizationJobName;
-
-	private String status;
+	private String checkpoint;
 
 	private String dataInitialization;
 
 	private String delay;
 
+	private Long delayMillis;
+
+	private String errCode;
+
+	private String errMessage;
+
 	private String errorMessage;
 
 	private String expireTime;
 
-	private String errCode;
-
-	private String success;
-
-	private String structureInitialization;
-
 	private String payType;
-
-	private String errMessage;
-
-	private String synchronizationJobClass;
 
 	private String requestId;
 
-	private String synchronizationJobId;
+	private String status;
 
-	private Long delayMillis;
+	private String structureInitialization;
+
+	private String success;
 
 	private String synchronizationDirection;
 
-	private String taskId;
+	private String synchronizationJobClass;
 
-	private String checkpoint;
+	private String synchronizationJobId;
+
+	private String synchronizationJobName;
+
+	private String taskId;
 
 	private List<SynchronizationObject> synchronizationObjects;
 
@@ -77,20 +77,12 @@ public class DescribeSynchronizationJobStatusResponse extends AcsResponse {
 
 	private StructureInitializationStatus structureInitializationStatus;
 
-	public String getSynchronizationJobName() {
-		return this.synchronizationJobName;
+	public String getCheckpoint() {
+		return this.checkpoint;
 	}
 
-	public void setSynchronizationJobName(String synchronizationJobName) {
-		this.synchronizationJobName = synchronizationJobName;
-	}
-
-	public String getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
+	public void setCheckpoint(String checkpoint) {
+		this.checkpoint = checkpoint;
 	}
 
 	public String getDataInitialization() {
@@ -109,6 +101,30 @@ public class DescribeSynchronizationJobStatusResponse extends AcsResponse {
 		this.delay = delay;
 	}
 
+	public Long getDelayMillis() {
+		return this.delayMillis;
+	}
+
+	public void setDelayMillis(Long delayMillis) {
+		this.delayMillis = delayMillis;
+	}
+
+	public String getErrCode() {
+		return this.errCode;
+	}
+
+	public void setErrCode(String errCode) {
+		this.errCode = errCode;
+	}
+
+	public String getErrMessage() {
+		return this.errMessage;
+	}
+
+	public void setErrMessage(String errMessage) {
+		this.errMessage = errMessage;
+	}
+
 	public String getErrorMessage() {
 		return this.errorMessage;
 	}
@@ -125,52 +141,12 @@ public class DescribeSynchronizationJobStatusResponse extends AcsResponse {
 		this.expireTime = expireTime;
 	}
 
-	public String getErrCode() {
-		return this.errCode;
-	}
-
-	public void setErrCode(String errCode) {
-		this.errCode = errCode;
-	}
-
-	public String getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(String success) {
-		this.success = success;
-	}
-
-	public String getStructureInitialization() {
-		return this.structureInitialization;
-	}
-
-	public void setStructureInitialization(String structureInitialization) {
-		this.structureInitialization = structureInitialization;
-	}
-
 	public String getPayType() {
 		return this.payType;
 	}
 
 	public void setPayType(String payType) {
 		this.payType = payType;
-	}
-
-	public String getErrMessage() {
-		return this.errMessage;
-	}
-
-	public void setErrMessage(String errMessage) {
-		this.errMessage = errMessage;
-	}
-
-	public String getSynchronizationJobClass() {
-		return this.synchronizationJobClass;
-	}
-
-	public void setSynchronizationJobClass(String synchronizationJobClass) {
-		this.synchronizationJobClass = synchronizationJobClass;
 	}
 
 	public String getRequestId() {
@@ -181,20 +157,28 @@ public class DescribeSynchronizationJobStatusResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getSynchronizationJobId() {
-		return this.synchronizationJobId;
+	public String getStatus() {
+		return this.status;
 	}
 
-	public void setSynchronizationJobId(String synchronizationJobId) {
-		this.synchronizationJobId = synchronizationJobId;
+	public void setStatus(String status) {
+		this.status = status;
 	}
 
-	public Long getDelayMillis() {
-		return this.delayMillis;
+	public String getStructureInitialization() {
+		return this.structureInitialization;
 	}
 
-	public void setDelayMillis(Long delayMillis) {
-		this.delayMillis = delayMillis;
+	public void setStructureInitialization(String structureInitialization) {
+		this.structureInitialization = structureInitialization;
+	}
+
+	public String getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(String success) {
+		this.success = success;
 	}
 
 	public String getSynchronizationDirection() {
@@ -205,20 +189,36 @@ public class DescribeSynchronizationJobStatusResponse extends AcsResponse {
 		this.synchronizationDirection = synchronizationDirection;
 	}
 
+	public String getSynchronizationJobClass() {
+		return this.synchronizationJobClass;
+	}
+
+	public void setSynchronizationJobClass(String synchronizationJobClass) {
+		this.synchronizationJobClass = synchronizationJobClass;
+	}
+
+	public String getSynchronizationJobId() {
+		return this.synchronizationJobId;
+	}
+
+	public void setSynchronizationJobId(String synchronizationJobId) {
+		this.synchronizationJobId = synchronizationJobId;
+	}
+
+	public String getSynchronizationJobName() {
+		return this.synchronizationJobName;
+	}
+
+	public void setSynchronizationJobName(String synchronizationJobName) {
+		this.synchronizationJobName = synchronizationJobName;
+	}
+
 	public String getTaskId() {
 		return this.taskId;
 	}
 
 	public void setTaskId(String taskId) {
 		this.taskId = taskId;
-	}
-
-	public String getCheckpoint() {
-		return this.checkpoint;
-	}
-
-	public void setCheckpoint(String checkpoint) {
-		this.checkpoint = checkpoint;
 	}
 
 	public List<SynchronizationObject> getSynchronizationObjects() {
@@ -356,20 +356,20 @@ public class DescribeSynchronizationJobStatusResponse extends AcsResponse {
 
 	public static class DataInitializationStatus {
 
-		private String status;
+		private String errorMessage;
 
 		private String percent;
 
-		private String errorMessage;
-
 		private String progress;
 
-		public String getStatus() {
-			return this.status;
+		private String status;
+
+		public String getErrorMessage() {
+			return this.errorMessage;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
+		public void setErrorMessage(String errorMessage) {
+			this.errorMessage = errorMessage;
 		}
 
 		public String getPercent() {
@@ -380,14 +380,6 @@ public class DescribeSynchronizationJobStatusResponse extends AcsResponse {
 			this.percent = percent;
 		}
 
-		public String getErrorMessage() {
-			return this.errorMessage;
-		}
-
-		public void setErrorMessage(String errorMessage) {
-			this.errorMessage = errorMessage;
-		}
-
 		public String getProgress() {
 			return this.progress;
 		}
@@ -395,21 +387,6 @@ public class DescribeSynchronizationJobStatusResponse extends AcsResponse {
 		public void setProgress(String progress) {
 			this.progress = progress;
 		}
-	}
-
-	public static class DataSynchronizationStatus {
-
-		private String status;
-
-		private String delay;
-
-		private String percent;
-
-		private String errorMessage;
-
-		private Long delayMillis;
-
-		private String checkpoint;
 
 		public String getStatus() {
 			return this.status;
@@ -417,6 +394,29 @@ public class DescribeSynchronizationJobStatusResponse extends AcsResponse {
 
 		public void setStatus(String status) {
 			this.status = status;
+		}
+	}
+
+	public static class DataSynchronizationStatus {
+
+		private String checkpoint;
+
+		private String delay;
+
+		private Long delayMillis;
+
+		private String errorMessage;
+
+		private String percent;
+
+		private String status;
+
+		public String getCheckpoint() {
+			return this.checkpoint;
+		}
+
+		public void setCheckpoint(String checkpoint) {
+			this.checkpoint = checkpoint;
 		}
 
 		public String getDelay() {
@@ -427,12 +427,12 @@ public class DescribeSynchronizationJobStatusResponse extends AcsResponse {
 			this.delay = delay;
 		}
 
-		public String getPercent() {
-			return this.percent;
+		public Long getDelayMillis() {
+			return this.delayMillis;
 		}
 
-		public void setPercent(String percent) {
-			this.percent = percent;
+		public void setDelayMillis(Long delayMillis) {
+			this.delayMillis = delayMillis;
 		}
 
 		public String getErrorMessage() {
@@ -443,28 +443,30 @@ public class DescribeSynchronizationJobStatusResponse extends AcsResponse {
 			this.errorMessage = errorMessage;
 		}
 
-		public Long getDelayMillis() {
-			return this.delayMillis;
+		public String getPercent() {
+			return this.percent;
 		}
 
-		public void setDelayMillis(Long delayMillis) {
-			this.delayMillis = delayMillis;
+		public void setPercent(String percent) {
+			this.percent = percent;
 		}
 
-		public String getCheckpoint() {
-			return this.checkpoint;
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setCheckpoint(String checkpoint) {
-			this.checkpoint = checkpoint;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 	}
 
 	public static class DestinationEndpoint {
 
-		private String instanceId;
+		private String engineName;
 
 		private String iP;
+
+		private String instanceId;
 
 		private String instanceType;
 
@@ -472,14 +474,12 @@ public class DescribeSynchronizationJobStatusResponse extends AcsResponse {
 
 		private String userName;
 
-		private String engineName;
-
-		public String getInstanceId() {
-			return this.instanceId;
+		public String getEngineName() {
+			return this.engineName;
 		}
 
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
+		public void setEngineName(String engineName) {
+			this.engineName = engineName;
 		}
 
 		public String getIP() {
@@ -488,6 +488,14 @@ public class DescribeSynchronizationJobStatusResponse extends AcsResponse {
 
 		public void setIP(String iP) {
 			this.iP = iP;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
 		}
 
 		public String getInstanceType() {
@@ -513,29 +521,13 @@ public class DescribeSynchronizationJobStatusResponse extends AcsResponse {
 		public void setUserName(String userName) {
 			this.userName = userName;
 		}
-
-		public String getEngineName() {
-			return this.engineName;
-		}
-
-		public void setEngineName(String engineName) {
-			this.engineName = engineName;
-		}
 	}
 
 	public static class Performance {
 
-		private String rPS;
-
 		private String fLOW;
 
-		public String getRPS() {
-			return this.rPS;
-		}
-
-		public void setRPS(String rPS) {
-			this.rPS = rPS;
-		}
+		private String rPS;
 
 		public String getFLOW() {
 			return this.fLOW;
@@ -544,23 +536,23 @@ public class DescribeSynchronizationJobStatusResponse extends AcsResponse {
 		public void setFLOW(String fLOW) {
 			this.fLOW = fLOW;
 		}
+
+		public String getRPS() {
+			return this.rPS;
+		}
+
+		public void setRPS(String rPS) {
+			this.rPS = rPS;
+		}
 	}
 
 	public static class PrecheckStatus {
 
-		private String status;
-
 		private String percent;
 
+		private String status;
+
 		private List<CheckItem> detail;
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
 
 		public String getPercent() {
 			return this.percent;
@@ -568,6 +560,14 @@ public class DescribeSynchronizationJobStatusResponse extends AcsResponse {
 
 		public void setPercent(String percent) {
 			this.percent = percent;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public List<CheckItem> getDetail() {
@@ -624,9 +624,11 @@ public class DescribeSynchronizationJobStatusResponse extends AcsResponse {
 
 	public static class SourceEndpoint {
 
-		private String instanceId;
+		private String engineName;
 
 		private String iP;
+
+		private String instanceId;
 
 		private String instanceType;
 
@@ -634,14 +636,12 @@ public class DescribeSynchronizationJobStatusResponse extends AcsResponse {
 
 		private String userName;
 
-		private String engineName;
-
-		public String getInstanceId() {
-			return this.instanceId;
+		public String getEngineName() {
+			return this.engineName;
 		}
 
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
+		public void setEngineName(String engineName) {
+			this.engineName = engineName;
 		}
 
 		public String getIP() {
@@ -650,6 +650,14 @@ public class DescribeSynchronizationJobStatusResponse extends AcsResponse {
 
 		public void setIP(String iP) {
 			this.iP = iP;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
 		}
 
 		public String getInstanceType() {
@@ -675,32 +683,24 @@ public class DescribeSynchronizationJobStatusResponse extends AcsResponse {
 		public void setUserName(String userName) {
 			this.userName = userName;
 		}
-
-		public String getEngineName() {
-			return this.engineName;
-		}
-
-		public void setEngineName(String engineName) {
-			this.engineName = engineName;
-		}
 	}
 
 	public static class StructureInitializationStatus {
 
-		private String status;
+		private String errorMessage;
 
 		private String percent;
 
-		private String errorMessage;
-
 		private String progress;
 
-		public String getStatus() {
-			return this.status;
+		private String status;
+
+		public String getErrorMessage() {
+			return this.errorMessage;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
+		public void setErrorMessage(String errorMessage) {
+			this.errorMessage = errorMessage;
 		}
 
 		public String getPercent() {
@@ -711,20 +711,20 @@ public class DescribeSynchronizationJobStatusResponse extends AcsResponse {
 			this.percent = percent;
 		}
 
-		public String getErrorMessage() {
-			return this.errorMessage;
-		}
-
-		public void setErrorMessage(String errorMessage) {
-			this.errorMessage = errorMessage;
-		}
-
 		public String getProgress() {
 			return this.progress;
 		}
 
 		public void setProgress(String progress) {
 			this.progress = progress;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
 		}
 	}
 

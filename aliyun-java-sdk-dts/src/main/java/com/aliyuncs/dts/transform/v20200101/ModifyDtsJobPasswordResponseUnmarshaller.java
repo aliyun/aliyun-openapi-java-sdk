@@ -23,12 +23,12 @@ public class ModifyDtsJobPasswordResponseUnmarshaller {
 	public static ModifyDtsJobPasswordResponse unmarshall(ModifyDtsJobPasswordResponse modifyDtsJobPasswordResponse, UnmarshallerContext _ctx) {
 		
 		modifyDtsJobPasswordResponse.setRequestId(_ctx.stringValue("ModifyDtsJobPasswordResponse.RequestId"));
-		modifyDtsJobPasswordResponse.setHttpStatusCode(_ctx.integerValue("ModifyDtsJobPasswordResponse.HttpStatusCode"));
-		modifyDtsJobPasswordResponse.setErrCode(_ctx.stringValue("ModifyDtsJobPasswordResponse.ErrCode"));
-		modifyDtsJobPasswordResponse.setSuccess(_ctx.booleanValue("ModifyDtsJobPasswordResponse.Success"));
-		modifyDtsJobPasswordResponse.setErrMessage(_ctx.stringValue("ModifyDtsJobPasswordResponse.ErrMessage"));
 		modifyDtsJobPasswordResponse.setCode(_ctx.stringValue("ModifyDtsJobPasswordResponse.Code"));
 		modifyDtsJobPasswordResponse.setDynamicMessage(_ctx.stringValue("ModifyDtsJobPasswordResponse.DynamicMessage"));
+		modifyDtsJobPasswordResponse.setErrCode(_ctx.stringValue("ModifyDtsJobPasswordResponse.ErrCode"));
+		modifyDtsJobPasswordResponse.setErrMessage(_ctx.stringValue("ModifyDtsJobPasswordResponse.ErrMessage"));
+		modifyDtsJobPasswordResponse.setHttpStatusCode(_ctx.integerValue("ModifyDtsJobPasswordResponse.HttpStatusCode"));
+		modifyDtsJobPasswordResponse.setSuccess(_ctx.booleanValue("ModifyDtsJobPasswordResponse.Success"));
 	 
 	 	return modifyDtsJobPasswordResponse;
 	}

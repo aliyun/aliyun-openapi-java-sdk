@@ -23,17 +23,17 @@ public class DescribeSynchronizationJobAlertResponseUnmarshaller {
 	public static DescribeSynchronizationJobAlertResponse unmarshall(DescribeSynchronizationJobAlertResponse describeSynchronizationJobAlertResponse, UnmarshallerContext _ctx) {
 		
 		describeSynchronizationJobAlertResponse.setRequestId(_ctx.stringValue("DescribeSynchronizationJobAlertResponse.RequestId"));
-		describeSynchronizationJobAlertResponse.setSynchronizationJobName(_ctx.stringValue("DescribeSynchronizationJobAlertResponse.SynchronizationJobName"));
-		describeSynchronizationJobAlertResponse.setErrorAlertStatus(_ctx.stringValue("DescribeSynchronizationJobAlertResponse.ErrorAlertStatus"));
-		describeSynchronizationJobAlertResponse.setErrCode(_ctx.stringValue("DescribeSynchronizationJobAlertResponse.ErrCode"));
-		describeSynchronizationJobAlertResponse.setSuccess(_ctx.stringValue("DescribeSynchronizationJobAlertResponse.Success"));
-		describeSynchronizationJobAlertResponse.setErrorAlertPhone(_ctx.stringValue("DescribeSynchronizationJobAlertResponse.ErrorAlertPhone"));
-		describeSynchronizationJobAlertResponse.setErrMessage(_ctx.stringValue("DescribeSynchronizationJobAlertResponse.ErrMessage"));
-		describeSynchronizationJobAlertResponse.setDelayAlertStatus(_ctx.stringValue("DescribeSynchronizationJobAlertResponse.DelayAlertStatus"));
 		describeSynchronizationJobAlertResponse.setDelayAlertPhone(_ctx.stringValue("DescribeSynchronizationJobAlertResponse.DelayAlertPhone"));
+		describeSynchronizationJobAlertResponse.setDelayAlertStatus(_ctx.stringValue("DescribeSynchronizationJobAlertResponse.DelayAlertStatus"));
 		describeSynchronizationJobAlertResponse.setDelayOverSeconds(_ctx.stringValue("DescribeSynchronizationJobAlertResponse.DelayOverSeconds"));
-		describeSynchronizationJobAlertResponse.setSynchronizationJobId(_ctx.stringValue("DescribeSynchronizationJobAlertResponse.SynchronizationJobId"));
+		describeSynchronizationJobAlertResponse.setErrCode(_ctx.stringValue("DescribeSynchronizationJobAlertResponse.ErrCode"));
+		describeSynchronizationJobAlertResponse.setErrMessage(_ctx.stringValue("DescribeSynchronizationJobAlertResponse.ErrMessage"));
+		describeSynchronizationJobAlertResponse.setErrorAlertPhone(_ctx.stringValue("DescribeSynchronizationJobAlertResponse.ErrorAlertPhone"));
+		describeSynchronizationJobAlertResponse.setErrorAlertStatus(_ctx.stringValue("DescribeSynchronizationJobAlertResponse.ErrorAlertStatus"));
+		describeSynchronizationJobAlertResponse.setSuccess(_ctx.stringValue("DescribeSynchronizationJobAlertResponse.Success"));
 		describeSynchronizationJobAlertResponse.setSynchronizationDirection(_ctx.stringValue("DescribeSynchronizationJobAlertResponse.SynchronizationDirection"));
+		describeSynchronizationJobAlertResponse.setSynchronizationJobId(_ctx.stringValue("DescribeSynchronizationJobAlertResponse.SynchronizationJobId"));
+		describeSynchronizationJobAlertResponse.setSynchronizationJobName(_ctx.stringValue("DescribeSynchronizationJobAlertResponse.SynchronizationJobName"));
 	 
 	 	return describeSynchronizationJobAlertResponse;
 	}

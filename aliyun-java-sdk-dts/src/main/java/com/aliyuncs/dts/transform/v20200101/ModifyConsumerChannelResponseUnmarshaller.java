@@ -23,10 +23,10 @@ public class ModifyConsumerChannelResponseUnmarshaller {
 	public static ModifyConsumerChannelResponse unmarshall(ModifyConsumerChannelResponse modifyConsumerChannelResponse, UnmarshallerContext _ctx) {
 		
 		modifyConsumerChannelResponse.setRequestId(_ctx.stringValue("ModifyConsumerChannelResponse.RequestId"));
-		modifyConsumerChannelResponse.setHttpStatusCode(_ctx.stringValue("ModifyConsumerChannelResponse.HttpStatusCode"));
 		modifyConsumerChannelResponse.setErrCode(_ctx.stringValue("ModifyConsumerChannelResponse.ErrCode"));
-		modifyConsumerChannelResponse.setSuccess(_ctx.stringValue("ModifyConsumerChannelResponse.Success"));
 		modifyConsumerChannelResponse.setErrMessage(_ctx.stringValue("ModifyConsumerChannelResponse.ErrMessage"));
+		modifyConsumerChannelResponse.setSuccess(_ctx.stringValue("ModifyConsumerChannelResponse.Success"));
+		modifyConsumerChannelResponse.setHttpStatusCode(_ctx.stringValue("ModifyConsumerChannelResponse.HttpStatusCode"));
 	 
 	 	return modifyConsumerChannelResponse;
 	}

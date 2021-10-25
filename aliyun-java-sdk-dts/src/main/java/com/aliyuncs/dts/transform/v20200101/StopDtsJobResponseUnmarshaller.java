@@ -23,12 +23,12 @@ public class StopDtsJobResponseUnmarshaller {
 	public static StopDtsJobResponse unmarshall(StopDtsJobResponse stopDtsJobResponse, UnmarshallerContext _ctx) {
 		
 		stopDtsJobResponse.setRequestId(_ctx.stringValue("StopDtsJobResponse.RequestId"));
-		stopDtsJobResponse.setHttpStatusCode(_ctx.integerValue("StopDtsJobResponse.HttpStatusCode"));
-		stopDtsJobResponse.setErrCode(_ctx.stringValue("StopDtsJobResponse.ErrCode"));
-		stopDtsJobResponse.setSuccess(_ctx.booleanValue("StopDtsJobResponse.Success"));
-		stopDtsJobResponse.setErrMessage(_ctx.stringValue("StopDtsJobResponse.ErrMessage"));
-		stopDtsJobResponse.setDynamicMessage(_ctx.stringValue("StopDtsJobResponse.DynamicMessage"));
 		stopDtsJobResponse.setDynamicCode(_ctx.stringValue("StopDtsJobResponse.DynamicCode"));
+		stopDtsJobResponse.setDynamicMessage(_ctx.stringValue("StopDtsJobResponse.DynamicMessage"));
+		stopDtsJobResponse.setErrCode(_ctx.stringValue("StopDtsJobResponse.ErrCode"));
+		stopDtsJobResponse.setErrMessage(_ctx.stringValue("StopDtsJobResponse.ErrMessage"));
+		stopDtsJobResponse.setHttpStatusCode(_ctx.integerValue("StopDtsJobResponse.HttpStatusCode"));
+		stopDtsJobResponse.setSuccess(_ctx.booleanValue("StopDtsJobResponse.Success"));
 	 
 	 	return stopDtsJobResponse;
 	}

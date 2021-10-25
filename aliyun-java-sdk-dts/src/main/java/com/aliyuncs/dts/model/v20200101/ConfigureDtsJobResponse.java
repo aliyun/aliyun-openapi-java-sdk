@@ -24,35 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ConfigureDtsJobResponse extends AcsResponse {
 
-	private String httpStatusCode;
-
-	private String requestId;
-
 	private String errCode;
-
-	private String dtsJobId;
-
-	private String dtsInstanceId;
-
-	private String success;
 
 	private String errMessage;
 
-	public String getHttpStatusCode() {
-		return this.httpStatusCode;
-	}
+	private String httpStatusCode;
 
-	public void setHttpStatusCode(String httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
-	}
+	private String dtsJobId;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
+	private String requestId;
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String success;
+
+	private String dtsInstanceId;
 
 	public String getErrCode() {
 		return this.errCode;
@@ -60,6 +44,22 @@ public class ConfigureDtsJobResponse extends AcsResponse {
 
 	public void setErrCode(String errCode) {
 		this.errCode = errCode;
+	}
+
+	public String getErrMessage() {
+		return this.errMessage;
+	}
+
+	public void setErrMessage(String errMessage) {
+		this.errMessage = errMessage;
+	}
+
+	public String getHttpStatusCode() {
+		return this.httpStatusCode;
+	}
+
+	public void setHttpStatusCode(String httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
 	}
 
 	public String getDtsJobId() {
@@ -70,12 +70,12 @@ public class ConfigureDtsJobResponse extends AcsResponse {
 		this.dtsJobId = dtsJobId;
 	}
 
-	public String getDtsInstanceId() {
-		return this.dtsInstanceId;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setDtsInstanceId(String dtsInstanceId) {
-		this.dtsInstanceId = dtsInstanceId;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getSuccess() {
@@ -86,12 +86,12 @@ public class ConfigureDtsJobResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public String getErrMessage() {
-		return this.errMessage;
+	public String getDtsInstanceId() {
+		return this.dtsInstanceId;
 	}
 
-	public void setErrMessage(String errMessage) {
-		this.errMessage = errMessage;
+	public void setDtsInstanceId(String dtsInstanceId) {
+		this.dtsInstanceId = dtsInstanceId;
 	}
 
 	@Override

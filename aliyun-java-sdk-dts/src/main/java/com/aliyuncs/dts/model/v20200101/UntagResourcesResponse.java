@@ -26,11 +26,11 @@ public class UntagResourcesResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String errCode;
-
 	private Boolean success;
 
 	private String errMessage;
+
+	private String errCode;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,14 +38,6 @@ public class UntagResourcesResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getErrCode() {
-		return this.errCode;
-	}
-
-	public void setErrCode(String errCode) {
-		this.errCode = errCode;
 	}
 
 	public Boolean getSuccess() {
@@ -62,6 +54,14 @@ public class UntagResourcesResponse extends AcsResponse {
 
 	public void setErrMessage(String errMessage) {
 		this.errMessage = errMessage;
+	}
+
+	public String getErrCode() {
+		return this.errCode;
+	}
+
+	public void setErrCode(String errCode) {
+		this.errCode = errCode;
 	}
 
 	@Override

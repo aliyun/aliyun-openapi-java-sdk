@@ -24,22 +24,30 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ModifySubscriptionResponse extends AcsResponse {
 
-	private String httpStatusCode;
-
-	private String requestId;
-
 	private String errCode;
-
-	private String success;
 
 	private String errMessage;
 
-	public String getHttpStatusCode() {
-		return this.httpStatusCode;
+	private String requestId;
+
+	private String success;
+
+	private String httpStatusCode;
+
+	public String getErrCode() {
+		return this.errCode;
 	}
 
-	public void setHttpStatusCode(String httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
+	public void setErrCode(String errCode) {
+		this.errCode = errCode;
+	}
+
+	public String getErrMessage() {
+		return this.errMessage;
+	}
+
+	public void setErrMessage(String errMessage) {
+		this.errMessage = errMessage;
 	}
 
 	public String getRequestId() {
@@ -50,14 +58,6 @@ public class ModifySubscriptionResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getErrCode() {
-		return this.errCode;
-	}
-
-	public void setErrCode(String errCode) {
-		this.errCode = errCode;
-	}
-
 	public String getSuccess() {
 		return this.success;
 	}
@@ -66,12 +66,12 @@ public class ModifySubscriptionResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public String getErrMessage() {
-		return this.errMessage;
+	public String getHttpStatusCode() {
+		return this.httpStatusCode;
 	}
 
-	public void setErrMessage(String errMessage) {
-		this.errMessage = errMessage;
+	public void setHttpStatusCode(String httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
 	}
 
 	@Override

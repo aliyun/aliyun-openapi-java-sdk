@@ -24,26 +24,34 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ConfigureSubscriptionResponse extends AcsResponse {
 
-	private String httpStatusCode;
-
-	private String requestId;
-
 	private String errCode;
-
-	private String dtsJobId;
-
-	private String success;
-
-	private String dtsInstanceId;
 
 	private String errMessage;
 
-	public String getHttpStatusCode() {
-		return this.httpStatusCode;
+	private String requestId;
+
+	private String success;
+
+	private String dtsJobId;
+
+	private String dtsInstanceId;
+
+	private String httpStatusCode;
+
+	public String getErrCode() {
+		return this.errCode;
 	}
 
-	public void setHttpStatusCode(String httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
+	public void setErrCode(String errCode) {
+		this.errCode = errCode;
+	}
+
+	public String getErrMessage() {
+		return this.errMessage;
+	}
+
+	public void setErrMessage(String errMessage) {
+		this.errMessage = errMessage;
 	}
 
 	public String getRequestId() {
@@ -54,12 +62,12 @@ public class ConfigureSubscriptionResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getErrCode() {
-		return this.errCode;
+	public String getSuccess() {
+		return this.success;
 	}
 
-	public void setErrCode(String errCode) {
-		this.errCode = errCode;
+	public void setSuccess(String success) {
+		this.success = success;
 	}
 
 	public String getDtsJobId() {
@@ -70,14 +78,6 @@ public class ConfigureSubscriptionResponse extends AcsResponse {
 		this.dtsJobId = dtsJobId;
 	}
 
-	public String getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(String success) {
-		this.success = success;
-	}
-
 	public String getDtsInstanceId() {
 		return this.dtsInstanceId;
 	}
@@ -86,12 +86,12 @@ public class ConfigureSubscriptionResponse extends AcsResponse {
 		this.dtsInstanceId = dtsInstanceId;
 	}
 
-	public String getErrMessage() {
-		return this.errMessage;
+	public String getHttpStatusCode() {
+		return this.httpStatusCode;
 	}
 
-	public void setErrMessage(String errMessage) {
-		this.errMessage = errMessage;
+	public void setHttpStatusCode(String httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
 	}
 
 	@Override

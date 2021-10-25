@@ -24,34 +24,58 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class TransferPayTypeResponse extends AcsResponse {
 
-	private String endTime;
+	private String code;
+
+	private String dynamicMessage;
+
+	private String errCode;
+
+	private String errMessage;
 
 	private Integer httpStatusCode;
 
 	private String requestId;
 
-	private String dtsJobId;
-
-	private String errCode;
-
 	private Boolean success;
 
-	private String chargeType;
-
-	private String errMessage;
-
-	private String code;
-
-	private String dynamicMessage;
+	private String dtsJobId;
 
 	private String instanceId;
 
-	public String getEndTime() {
-		return this.endTime;
+	private String chargeType;
+
+	private String endTime;
+
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getDynamicMessage() {
+		return this.dynamicMessage;
+	}
+
+	public void setDynamicMessage(String dynamicMessage) {
+		this.dynamicMessage = dynamicMessage;
+	}
+
+	public String getErrCode() {
+		return this.errCode;
+	}
+
+	public void setErrCode(String errCode) {
+		this.errCode = errCode;
+	}
+
+	public String getErrMessage() {
+		return this.errMessage;
+	}
+
+	public void setErrMessage(String errMessage) {
+		this.errMessage = errMessage;
 	}
 
 	public Integer getHttpStatusCode() {
@@ -70,6 +94,14 @@ public class TransferPayTypeResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public String getDtsJobId() {
 		return this.dtsJobId;
 	}
@@ -78,20 +110,12 @@ public class TransferPayTypeResponse extends AcsResponse {
 		this.dtsJobId = dtsJobId;
 	}
 
-	public String getErrCode() {
-		return this.errCode;
+	public String getInstanceId() {
+		return this.instanceId;
 	}
 
-	public void setErrCode(String errCode) {
-		this.errCode = errCode;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
 	}
 
 	public String getChargeType() {
@@ -102,36 +126,12 @@ public class TransferPayTypeResponse extends AcsResponse {
 		this.chargeType = chargeType;
 	}
 
-	public String getErrMessage() {
-		return this.errMessage;
+	public String getEndTime() {
+		return this.endTime;
 	}
 
-	public void setErrMessage(String errMessage) {
-		this.errMessage = errMessage;
-	}
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getDynamicMessage() {
-		return this.dynamicMessage;
-	}
-
-	public void setDynamicMessage(String dynamicMessage) {
-		this.dynamicMessage = dynamicMessage;
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
 	}
 
 	@Override
