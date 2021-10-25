@@ -53,11 +53,17 @@ public class GetNatGatewayAttributeResponse extends AcsResponse {
 
 	private String name;
 
+	private Boolean privateLinkEnabled;
+
+	private String privateLinkMode;
+
 	private List<IpListItem> ipList;
 
 	private ForwardTable forwardTable;
 
 	private SnatTable snatTable;
+
+	private FullNatTable fullNatTable;
 
 	private BillingConfig billingConfig;
 
@@ -177,6 +183,22 @@ public class GetNatGatewayAttributeResponse extends AcsResponse {
 		this.name = name;
 	}
 
+	public Boolean getPrivateLinkEnabled() {
+		return this.privateLinkEnabled;
+	}
+
+	public void setPrivateLinkEnabled(Boolean privateLinkEnabled) {
+		this.privateLinkEnabled = privateLinkEnabled;
+	}
+
+	public String getPrivateLinkMode() {
+		return this.privateLinkMode;
+	}
+
+	public void setPrivateLinkMode(String privateLinkMode) {
+		this.privateLinkMode = privateLinkMode;
+	}
+
 	public List<IpListItem> getIpList() {
 		return this.ipList;
 	}
@@ -199,6 +221,14 @@ public class GetNatGatewayAttributeResponse extends AcsResponse {
 
 	public void setSnatTable(SnatTable snatTable) {
 		this.snatTable = snatTable;
+	}
+
+	public FullNatTable getFullNatTable() {
+		return this.fullNatTable;
+	}
+
+	public void setFullNatTable(FullNatTable fullNatTable) {
+		this.fullNatTable = fullNatTable;
 	}
 
 	public BillingConfig getBillingConfig() {
@@ -301,6 +331,29 @@ public class GetNatGatewayAttributeResponse extends AcsResponse {
 
 		public void setSnatTableId(String snatTableId) {
 			this.snatTableId = snatTableId;
+		}
+	}
+
+	public static class FullNatTable {
+
+		private Long fullNatEntryCount;
+
+		private String fullNatTableId;
+
+		public Long getFullNatEntryCount() {
+			return this.fullNatEntryCount;
+		}
+
+		public void setFullNatEntryCount(Long fullNatEntryCount) {
+			this.fullNatEntryCount = fullNatEntryCount;
+		}
+
+		public String getFullNatTableId() {
+			return this.fullNatTableId;
+		}
+
+		public void setFullNatTableId(String fullNatTableId) {
+			this.fullNatTableId = fullNatTableId;
 		}
 	}
 

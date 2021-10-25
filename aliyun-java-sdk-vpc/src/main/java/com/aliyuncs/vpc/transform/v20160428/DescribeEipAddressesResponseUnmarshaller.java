@@ -29,53 +29,59 @@ public class DescribeEipAddressesResponseUnmarshaller {
 	public static DescribeEipAddressesResponse unmarshall(DescribeEipAddressesResponse describeEipAddressesResponse, UnmarshallerContext _ctx) {
 		
 		describeEipAddressesResponse.setRequestId(_ctx.stringValue("DescribeEipAddressesResponse.RequestId"));
-		describeEipAddressesResponse.setTotalCount(_ctx.integerValue("DescribeEipAddressesResponse.TotalCount"));
-		describeEipAddressesResponse.setPageNumber(_ctx.integerValue("DescribeEipAddressesResponse.PageNumber"));
 		describeEipAddressesResponse.setPageSize(_ctx.integerValue("DescribeEipAddressesResponse.PageSize"));
+		describeEipAddressesResponse.setPageNumber(_ctx.integerValue("DescribeEipAddressesResponse.PageNumber"));
+		describeEipAddressesResponse.setTotalCount(_ctx.integerValue("DescribeEipAddressesResponse.TotalCount"));
 
 		List<EipAddress> eipAddresses = new ArrayList<EipAddress>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeEipAddressesResponse.EipAddresses.Length"); i++) {
 			EipAddress eipAddress = new EipAddress();
-			eipAddress.setRegionId(_ctx.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].RegionId"));
-			eipAddress.setIpAddress(_ctx.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].IpAddress"));
-			eipAddress.setPrivateIpAddress(_ctx.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].PrivateIpAddress"));
-			eipAddress.setAllocationId(_ctx.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].AllocationId"));
-			eipAddress.setStatus(_ctx.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].Status"));
-			eipAddress.setInstanceId(_ctx.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].InstanceId"));
-			eipAddress.setBandwidth(_ctx.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].Bandwidth"));
-			eipAddress.setEipBandwidth(_ctx.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].EipBandwidth"));
-			eipAddress.setInternetChargeType(_ctx.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].InternetChargeType"));
-			eipAddress.setAllocationTime(_ctx.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].AllocationTime"));
-			eipAddress.setInstanceType(_ctx.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].InstanceType"));
-			eipAddress.setInstanceRegionId(_ctx.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].InstanceRegionId"));
-			eipAddress.setChargeType(_ctx.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].ChargeType"));
-			eipAddress.setExpiredTime(_ctx.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].ExpiredTime"));
-			eipAddress.setHDMonitorStatus(_ctx.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].HDMonitorStatus"));
-			eipAddress.setName(_ctx.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].Name"));
-			eipAddress.setISP(_ctx.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].ISP"));
-			eipAddress.setDescritpion(_ctx.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].Descritpion"));
-			eipAddress.setBandwidthPackageId(_ctx.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].BandwidthPackageId"));
-			eipAddress.setBandwidthPackageType(_ctx.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].BandwidthPackageType"));
-			eipAddress.setBandwidthPackageBandwidth(_ctx.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].BandwidthPackageBandwidth"));
-			eipAddress.setResourceGroupId(_ctx.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].ResourceGroupId"));
-			eipAddress.setHasReservationData(_ctx.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].HasReservationData"));
-			eipAddress.setReservationBandwidth(_ctx.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].ReservationBandwidth"));
-			eipAddress.setReservationInternetChargeType(_ctx.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].ReservationInternetChargeType"));
 			eipAddress.setReservationActiveTime(_ctx.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].ReservationActiveTime"));
+			eipAddress.setStatus(_ctx.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].Status"));
 			eipAddress.setReservationOrderType(_ctx.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].ReservationOrderType"));
-			eipAddress.setMode(_ctx.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].Mode"));
-			eipAddress.setDeletionProtection(_ctx.booleanValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].DeletionProtection"));
-			eipAddress.setSecondLimited(_ctx.booleanValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].SecondLimited"));
-			eipAddress.setSegmentInstanceId(_ctx.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].SegmentInstanceId"));
+			eipAddress.setAllocationTime(_ctx.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].AllocationTime"));
 			eipAddress.setNetmode(_ctx.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].Netmode"));
+			eipAddress.setChargeType(_ctx.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].ChargeType"));
+			eipAddress.setDescritpion(_ctx.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].Descritpion"));
+			eipAddress.setMode(_ctx.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].Mode"));
+			eipAddress.setSegmentInstanceId(_ctx.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].SegmentInstanceId"));
+			eipAddress.setReservationInternetChargeType(_ctx.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].ReservationInternetChargeType"));
+			eipAddress.setBandwidthPackageId(_ctx.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].BandwidthPackageId"));
+			eipAddress.setIpAddress(_ctx.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].IpAddress"));
+			eipAddress.setBandwidth(_ctx.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].Bandwidth"));
+			eipAddress.setReservationBandwidth(_ctx.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].ReservationBandwidth"));
+			eipAddress.setEipBandwidth(_ctx.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].EipBandwidth"));
+			eipAddress.setName(_ctx.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].Name"));
+			eipAddress.setPrivateIpAddress(_ctx.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].PrivateIpAddress"));
+			eipAddress.setInstanceRegionId(_ctx.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].InstanceRegionId"));
+			eipAddress.setDeletionProtection(_ctx.booleanValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].DeletionProtection"));
+			eipAddress.setInstanceId(_ctx.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].InstanceId"));
+			eipAddress.setSecondLimited(_ctx.booleanValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].SecondLimited"));
+			eipAddress.setInstanceType(_ctx.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].InstanceType"));
+			eipAddress.setHDMonitorStatus(_ctx.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].HDMonitorStatus"));
+			eipAddress.setRegionId(_ctx.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].RegionId"));
+			eipAddress.setBandwidthPackageBandwidth(_ctx.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].BandwidthPackageBandwidth"));
 			eipAddress.setServiceManaged(_ctx.integerValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].ServiceManaged"));
+			eipAddress.setExpiredTime(_ctx.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].ExpiredTime"));
+			eipAddress.setResourceGroupId(_ctx.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].ResourceGroupId"));
+			eipAddress.setAllocationId(_ctx.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].AllocationId"));
+			eipAddress.setInternetChargeType(_ctx.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].InternetChargeType"));
 			eipAddress.setBusinessStatus(_ctx.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].BusinessStatus"));
+			eipAddress.setBandwidthPackageType(_ctx.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].BandwidthPackageType"));
+			eipAddress.setHasReservationData(_ctx.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].HasReservationData"));
+			eipAddress.setISP(_ctx.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].ISP"));
 
 			List<String> availableRegions = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].AvailableRegions.Length"); j++) {
 				availableRegions.add(_ctx.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].AvailableRegions["+ j +"]"));
 			}
 			eipAddress.setAvailableRegions(availableRegions);
+
+			List<String> securityProtectionTypes = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].SecurityProtectionTypes.Length"); j++) {
+				securityProtectionTypes.add(_ctx.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].SecurityProtectionTypes["+ j +"]"));
+			}
+			eipAddress.setSecurityProtectionTypes(securityProtectionTypes);
 
 			List<LockReason> operationLocks = new ArrayList<LockReason>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].OperationLocks.Length"); j++) {

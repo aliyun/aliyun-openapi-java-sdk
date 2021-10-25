@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeEipAddressesResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer pageSize;
 
-	private Integer totalCount;
+	private String requestId;
 
 	private Integer pageNumber;
 
-	private Integer pageSize;
+	private Integer totalCount;
 
 	private List<EipAddress> eipAddresses;
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class DescribeEipAddressesResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
 	}
 
 	public Integer getPageNumber() {
@@ -59,12 +59,12 @@ public class DescribeEipAddressesResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public Integer getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<EipAddress> getEipAddresses() {
@@ -77,73 +77,73 @@ public class DescribeEipAddressesResponse extends AcsResponse {
 
 	public static class EipAddress {
 
-		private String regionId;
-
-		private String ipAddress;
-
-		private String privateIpAddress;
-
-		private String allocationId;
+		private String reservationActiveTime;
 
 		private String status;
 
-		private String instanceId;
-
-		private String bandwidth;
-
-		private String eipBandwidth;
-
-		private String internetChargeType;
+		private String reservationOrderType;
 
 		private String allocationTime;
 
-		private String instanceType;
-
-		private String instanceRegionId;
+		private String netmode;
 
 		private String chargeType;
 
-		private String expiredTime;
-
-		private String hDMonitorStatus;
-
-		private String name;
-
-		private String iSP;
-
 		private String descritpion;
-
-		private String bandwidthPackageId;
-
-		private String bandwidthPackageType;
-
-		private String bandwidthPackageBandwidth;
-
-		private String resourceGroupId;
-
-		private String hasReservationData;
-
-		private String reservationBandwidth;
-
-		private String reservationInternetChargeType;
-
-		private String reservationActiveTime;
-
-		private String reservationOrderType;
 
 		private String mode;
 
+		private String segmentInstanceId;
+
+		private String reservationInternetChargeType;
+
+		private String bandwidthPackageId;
+
+		private String ipAddress;
+
+		private String bandwidth;
+
+		private String reservationBandwidth;
+
+		private String eipBandwidth;
+
+		private String name;
+
+		private String privateIpAddress;
+
+		private String instanceRegionId;
+
 		private Boolean deletionProtection;
+
+		private String instanceId;
 
 		private Boolean secondLimited;
 
-		private String segmentInstanceId;
+		private String instanceType;
 
-		private String netmode;
+		private String hDMonitorStatus;
+
+		private String regionId;
+
+		private String bandwidthPackageBandwidth;
 
 		private Integer serviceManaged;
 
+		private String expiredTime;
+
+		private String resourceGroupId;
+
+		private String allocationId;
+
+		private String internetChargeType;
+
 		private String businessStatus;
+
+		private String bandwidthPackageType;
+
+		private String hasReservationData;
+
+		private String iSP;
 
 		private List<LockReason> operationLocks;
 
@@ -151,36 +151,14 @@ public class DescribeEipAddressesResponse extends AcsResponse {
 
 		private List<String> availableRegions;
 
-		public String getRegionId() {
-			return this.regionId;
+		private List<String> securityProtectionTypes;
+
+		public String getReservationActiveTime() {
+			return this.reservationActiveTime;
 		}
 
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		public String getIpAddress() {
-			return this.ipAddress;
-		}
-
-		public void setIpAddress(String ipAddress) {
-			this.ipAddress = ipAddress;
-		}
-
-		public String getPrivateIpAddress() {
-			return this.privateIpAddress;
-		}
-
-		public void setPrivateIpAddress(String privateIpAddress) {
-			this.privateIpAddress = privateIpAddress;
-		}
-
-		public String getAllocationId() {
-			return this.allocationId;
-		}
-
-		public void setAllocationId(String allocationId) {
-			this.allocationId = allocationId;
+		public void setReservationActiveTime(String reservationActiveTime) {
+			this.reservationActiveTime = reservationActiveTime;
 		}
 
 		public String getStatus() {
@@ -191,36 +169,12 @@ public class DescribeEipAddressesResponse extends AcsResponse {
 			this.status = status;
 		}
 
-		public String getInstanceId() {
-			return this.instanceId;
+		public String getReservationOrderType() {
+			return this.reservationOrderType;
 		}
 
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
-
-		public String getBandwidth() {
-			return this.bandwidth;
-		}
-
-		public void setBandwidth(String bandwidth) {
-			this.bandwidth = bandwidth;
-		}
-
-		public String getEipBandwidth() {
-			return this.eipBandwidth;
-		}
-
-		public void setEipBandwidth(String eipBandwidth) {
-			this.eipBandwidth = eipBandwidth;
-		}
-
-		public String getInternetChargeType() {
-			return this.internetChargeType;
-		}
-
-		public void setInternetChargeType(String internetChargeType) {
-			this.internetChargeType = internetChargeType;
+		public void setReservationOrderType(String reservationOrderType) {
+			this.reservationOrderType = reservationOrderType;
 		}
 
 		public String getAllocationTime() {
@@ -231,20 +185,12 @@ public class DescribeEipAddressesResponse extends AcsResponse {
 			this.allocationTime = allocationTime;
 		}
 
-		public String getInstanceType() {
-			return this.instanceType;
+		public String getNetmode() {
+			return this.netmode;
 		}
 
-		public void setInstanceType(String instanceType) {
-			this.instanceType = instanceType;
-		}
-
-		public String getInstanceRegionId() {
-			return this.instanceRegionId;
-		}
-
-		public void setInstanceRegionId(String instanceRegionId) {
-			this.instanceRegionId = instanceRegionId;
+		public void setNetmode(String netmode) {
+			this.netmode = netmode;
 		}
 
 		public String getChargeType() {
@@ -255,116 +201,12 @@ public class DescribeEipAddressesResponse extends AcsResponse {
 			this.chargeType = chargeType;
 		}
 
-		public String getExpiredTime() {
-			return this.expiredTime;
-		}
-
-		public void setExpiredTime(String expiredTime) {
-			this.expiredTime = expiredTime;
-		}
-
-		public String getHDMonitorStatus() {
-			return this.hDMonitorStatus;
-		}
-
-		public void setHDMonitorStatus(String hDMonitorStatus) {
-			this.hDMonitorStatus = hDMonitorStatus;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getISP() {
-			return this.iSP;
-		}
-
-		public void setISP(String iSP) {
-			this.iSP = iSP;
-		}
-
 		public String getDescritpion() {
 			return this.descritpion;
 		}
 
 		public void setDescritpion(String descritpion) {
 			this.descritpion = descritpion;
-		}
-
-		public String getBandwidthPackageId() {
-			return this.bandwidthPackageId;
-		}
-
-		public void setBandwidthPackageId(String bandwidthPackageId) {
-			this.bandwidthPackageId = bandwidthPackageId;
-		}
-
-		public String getBandwidthPackageType() {
-			return this.bandwidthPackageType;
-		}
-
-		public void setBandwidthPackageType(String bandwidthPackageType) {
-			this.bandwidthPackageType = bandwidthPackageType;
-		}
-
-		public String getBandwidthPackageBandwidth() {
-			return this.bandwidthPackageBandwidth;
-		}
-
-		public void setBandwidthPackageBandwidth(String bandwidthPackageBandwidth) {
-			this.bandwidthPackageBandwidth = bandwidthPackageBandwidth;
-		}
-
-		public String getResourceGroupId() {
-			return this.resourceGroupId;
-		}
-
-		public void setResourceGroupId(String resourceGroupId) {
-			this.resourceGroupId = resourceGroupId;
-		}
-
-		public String getHasReservationData() {
-			return this.hasReservationData;
-		}
-
-		public void setHasReservationData(String hasReservationData) {
-			this.hasReservationData = hasReservationData;
-		}
-
-		public String getReservationBandwidth() {
-			return this.reservationBandwidth;
-		}
-
-		public void setReservationBandwidth(String reservationBandwidth) {
-			this.reservationBandwidth = reservationBandwidth;
-		}
-
-		public String getReservationInternetChargeType() {
-			return this.reservationInternetChargeType;
-		}
-
-		public void setReservationInternetChargeType(String reservationInternetChargeType) {
-			this.reservationInternetChargeType = reservationInternetChargeType;
-		}
-
-		public String getReservationActiveTime() {
-			return this.reservationActiveTime;
-		}
-
-		public void setReservationActiveTime(String reservationActiveTime) {
-			this.reservationActiveTime = reservationActiveTime;
-		}
-
-		public String getReservationOrderType() {
-			return this.reservationOrderType;
-		}
-
-		public void setReservationOrderType(String reservationOrderType) {
-			this.reservationOrderType = reservationOrderType;
 		}
 
 		public String getMode() {
@@ -375,12 +217,100 @@ public class DescribeEipAddressesResponse extends AcsResponse {
 			this.mode = mode;
 		}
 
+		public String getSegmentInstanceId() {
+			return this.segmentInstanceId;
+		}
+
+		public void setSegmentInstanceId(String segmentInstanceId) {
+			this.segmentInstanceId = segmentInstanceId;
+		}
+
+		public String getReservationInternetChargeType() {
+			return this.reservationInternetChargeType;
+		}
+
+		public void setReservationInternetChargeType(String reservationInternetChargeType) {
+			this.reservationInternetChargeType = reservationInternetChargeType;
+		}
+
+		public String getBandwidthPackageId() {
+			return this.bandwidthPackageId;
+		}
+
+		public void setBandwidthPackageId(String bandwidthPackageId) {
+			this.bandwidthPackageId = bandwidthPackageId;
+		}
+
+		public String getIpAddress() {
+			return this.ipAddress;
+		}
+
+		public void setIpAddress(String ipAddress) {
+			this.ipAddress = ipAddress;
+		}
+
+		public String getBandwidth() {
+			return this.bandwidth;
+		}
+
+		public void setBandwidth(String bandwidth) {
+			this.bandwidth = bandwidth;
+		}
+
+		public String getReservationBandwidth() {
+			return this.reservationBandwidth;
+		}
+
+		public void setReservationBandwidth(String reservationBandwidth) {
+			this.reservationBandwidth = reservationBandwidth;
+		}
+
+		public String getEipBandwidth() {
+			return this.eipBandwidth;
+		}
+
+		public void setEipBandwidth(String eipBandwidth) {
+			this.eipBandwidth = eipBandwidth;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getPrivateIpAddress() {
+			return this.privateIpAddress;
+		}
+
+		public void setPrivateIpAddress(String privateIpAddress) {
+			this.privateIpAddress = privateIpAddress;
+		}
+
+		public String getInstanceRegionId() {
+			return this.instanceRegionId;
+		}
+
+		public void setInstanceRegionId(String instanceRegionId) {
+			this.instanceRegionId = instanceRegionId;
+		}
+
 		public Boolean getDeletionProtection() {
 			return this.deletionProtection;
 		}
 
 		public void setDeletionProtection(Boolean deletionProtection) {
 			this.deletionProtection = deletionProtection;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
 		}
 
 		public Boolean getSecondLimited() {
@@ -391,20 +321,36 @@ public class DescribeEipAddressesResponse extends AcsResponse {
 			this.secondLimited = secondLimited;
 		}
 
-		public String getSegmentInstanceId() {
-			return this.segmentInstanceId;
+		public String getInstanceType() {
+			return this.instanceType;
 		}
 
-		public void setSegmentInstanceId(String segmentInstanceId) {
-			this.segmentInstanceId = segmentInstanceId;
+		public void setInstanceType(String instanceType) {
+			this.instanceType = instanceType;
 		}
 
-		public String getNetmode() {
-			return this.netmode;
+		public String getHDMonitorStatus() {
+			return this.hDMonitorStatus;
 		}
 
-		public void setNetmode(String netmode) {
-			this.netmode = netmode;
+		public void setHDMonitorStatus(String hDMonitorStatus) {
+			this.hDMonitorStatus = hDMonitorStatus;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		public String getBandwidthPackageBandwidth() {
+			return this.bandwidthPackageBandwidth;
+		}
+
+		public void setBandwidthPackageBandwidth(String bandwidthPackageBandwidth) {
+			this.bandwidthPackageBandwidth = bandwidthPackageBandwidth;
 		}
 
 		public Integer getServiceManaged() {
@@ -415,12 +361,68 @@ public class DescribeEipAddressesResponse extends AcsResponse {
 			this.serviceManaged = serviceManaged;
 		}
 
+		public String getExpiredTime() {
+			return this.expiredTime;
+		}
+
+		public void setExpiredTime(String expiredTime) {
+			this.expiredTime = expiredTime;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
+		public String getAllocationId() {
+			return this.allocationId;
+		}
+
+		public void setAllocationId(String allocationId) {
+			this.allocationId = allocationId;
+		}
+
+		public String getInternetChargeType() {
+			return this.internetChargeType;
+		}
+
+		public void setInternetChargeType(String internetChargeType) {
+			this.internetChargeType = internetChargeType;
+		}
+
 		public String getBusinessStatus() {
 			return this.businessStatus;
 		}
 
 		public void setBusinessStatus(String businessStatus) {
 			this.businessStatus = businessStatus;
+		}
+
+		public String getBandwidthPackageType() {
+			return this.bandwidthPackageType;
+		}
+
+		public void setBandwidthPackageType(String bandwidthPackageType) {
+			this.bandwidthPackageType = bandwidthPackageType;
+		}
+
+		public String getHasReservationData() {
+			return this.hasReservationData;
+		}
+
+		public void setHasReservationData(String hasReservationData) {
+			this.hasReservationData = hasReservationData;
+		}
+
+		public String getISP() {
+			return this.iSP;
+		}
+
+		public void setISP(String iSP) {
+			this.iSP = iSP;
 		}
 
 		public List<LockReason> getOperationLocks() {
@@ -445,6 +447,14 @@ public class DescribeEipAddressesResponse extends AcsResponse {
 
 		public void setAvailableRegions(List<String> availableRegions) {
 			this.availableRegions = availableRegions;
+		}
+
+		public List<String> getSecurityProtectionTypes() {
+			return this.securityProtectionTypes;
+		}
+
+		public void setSecurityProtectionTypes(List<String> securityProtectionTypes) {
+			this.securityProtectionTypes = securityProtectionTypes;
 		}
 
 		public static class LockReason {

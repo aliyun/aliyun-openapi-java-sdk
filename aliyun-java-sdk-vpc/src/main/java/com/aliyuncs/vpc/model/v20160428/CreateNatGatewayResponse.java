@@ -35,6 +35,8 @@ public class CreateNatGatewayResponse extends AcsResponse {
 
 	private List<String> bandwidthPackageIds;
 
+	private List<String> fullNatTableIds;
+
 	public String getNatGatewayId() {
 		return this.natGatewayId;
 	}
@@ -73,6 +75,14 @@ public class CreateNatGatewayResponse extends AcsResponse {
 
 	public void setBandwidthPackageIds(List<String> bandwidthPackageIds) {
 		this.bandwidthPackageIds = bandwidthPackageIds;
+	}
+
+	public List<String> getFullNatTableIds() {
+		return this.fullNatTableIds;
+	}
+
+	public void setFullNatTableIds(List<String> fullNatTableIds) {
+		this.fullNatTableIds = fullNatTableIds;
 	}
 
 	@Override

@@ -21,6 +21,7 @@ import com.aliyuncs.vpc.model.v20160428.GetNatGatewayAttributeResponse;
 import com.aliyuncs.vpc.model.v20160428.GetNatGatewayAttributeResponse.BillingConfig;
 import com.aliyuncs.vpc.model.v20160428.GetNatGatewayAttributeResponse.DeletionProtectionInfo;
 import com.aliyuncs.vpc.model.v20160428.GetNatGatewayAttributeResponse.ForwardTable;
+import com.aliyuncs.vpc.model.v20160428.GetNatGatewayAttributeResponse.FullNatTable;
 import com.aliyuncs.vpc.model.v20160428.GetNatGatewayAttributeResponse.IpListItem;
 import com.aliyuncs.vpc.model.v20160428.GetNatGatewayAttributeResponse.PrivateInfo;
 import com.aliyuncs.vpc.model.v20160428.GetNatGatewayAttributeResponse.SnatTable;
@@ -45,6 +46,8 @@ public class GetNatGatewayAttributeResponseUnmarshaller {
 		getNatGatewayAttributeResponse.setNatGatewayId(_ctx.stringValue("GetNatGatewayAttributeResponse.NatGatewayId"));
 		getNatGatewayAttributeResponse.setBusinessStatus(_ctx.stringValue("GetNatGatewayAttributeResponse.BusinessStatus"));
 		getNatGatewayAttributeResponse.setName(_ctx.stringValue("GetNatGatewayAttributeResponse.Name"));
+		getNatGatewayAttributeResponse.setPrivateLinkEnabled(_ctx.booleanValue("GetNatGatewayAttributeResponse.PrivateLinkEnabled"));
+		getNatGatewayAttributeResponse.setPrivateLinkMode(_ctx.stringValue("GetNatGatewayAttributeResponse.PrivateLinkMode"));
 
 		ForwardTable forwardTable = new ForwardTable();
 		forwardTable.setForwardTableId(_ctx.stringValue("GetNatGatewayAttributeResponse.ForwardTable.ForwardTableId"));
@@ -55,6 +58,11 @@ public class GetNatGatewayAttributeResponseUnmarshaller {
 		snatTable.setSnatEntryCount(_ctx.integerValue("GetNatGatewayAttributeResponse.SnatTable.SnatEntryCount"));
 		snatTable.setSnatTableId(_ctx.stringValue("GetNatGatewayAttributeResponse.SnatTable.SnatTableId"));
 		getNatGatewayAttributeResponse.setSnatTable(snatTable);
+
+		FullNatTable fullNatTable = new FullNatTable();
+		fullNatTable.setFullNatEntryCount(_ctx.longValue("GetNatGatewayAttributeResponse.FullNatTable.FullNatEntryCount"));
+		fullNatTable.setFullNatTableId(_ctx.stringValue("GetNatGatewayAttributeResponse.FullNatTable.FullNatTableId"));
+		getNatGatewayAttributeResponse.setFullNatTable(fullNatTable);
 
 		BillingConfig billingConfig = new BillingConfig();
 		billingConfig.setInternetChargeType(_ctx.stringValue("GetNatGatewayAttributeResponse.BillingConfig.InternetChargeType"));

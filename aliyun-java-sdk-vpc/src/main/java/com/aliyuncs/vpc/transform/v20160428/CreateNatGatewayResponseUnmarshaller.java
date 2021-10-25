@@ -45,6 +45,12 @@ public class CreateNatGatewayResponseUnmarshaller {
 			bandwidthPackageIds.add(_ctx.stringValue("CreateNatGatewayResponse.BandwidthPackageIds["+ i +"]"));
 		}
 		createNatGatewayResponse.setBandwidthPackageIds(bandwidthPackageIds);
+
+		List<String> fullNatTableIds = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("CreateNatGatewayResponse.FullNatTableIds.Length"); i++) {
+			fullNatTableIds.add(_ctx.stringValue("CreateNatGatewayResponse.FullNatTableIds["+ i +"]"));
+		}
+		createNatGatewayResponse.setFullNatTableIds(fullNatTableIds);
 	 
 	 	return createNatGatewayResponse;
 	}

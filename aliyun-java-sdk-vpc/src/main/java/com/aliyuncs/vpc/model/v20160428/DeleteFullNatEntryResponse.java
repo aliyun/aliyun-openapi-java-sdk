@@ -15,28 +15,16 @@
 package com.aliyuncs.vpc.model.v20160428;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.vpc.transform.v20160428.CreateCommonBandwidthPackageResponseUnmarshaller;
+import com.aliyuncs.vpc.transform.v20160428.DeleteFullNatEntryResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateCommonBandwidthPackageResponse extends AcsResponse {
-
-	private String bandwidthPackageId;
+public class DeleteFullNatEntryResponse extends AcsResponse {
 
 	private String requestId;
-
-	private String resourceGroupId;
-
-	public String getBandwidthPackageId() {
-		return this.bandwidthPackageId;
-	}
-
-	public void setBandwidthPackageId(String bandwidthPackageId) {
-		this.bandwidthPackageId = bandwidthPackageId;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -46,16 +34,13 @@ public class CreateCommonBandwidthPackageResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getResourceGroupId() {
-		return this.resourceGroupId;
-	}
-
-	public void setResourceGroupId(String resourceGroupId) {
-		this.resourceGroupId = resourceGroupId;
+	@Override
+	public DeleteFullNatEntryResponse getInstance(UnmarshallerContext context) {
+		return	DeleteFullNatEntryResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override
-	public CreateCommonBandwidthPackageResponse getInstance(UnmarshallerContext context) {
-		return	CreateCommonBandwidthPackageResponseUnmarshaller.unmarshall(this, context);
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

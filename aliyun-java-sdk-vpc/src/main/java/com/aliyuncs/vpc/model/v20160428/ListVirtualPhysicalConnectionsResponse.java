@@ -85,17 +85,11 @@ public class ListVirtualPhysicalConnectionsResponse extends AcsResponse {
 
 		private String adLocation;
 
-		private String reservationActiveTime;
-
-		private String reservationOrderType;
-
 		private String portNumber;
 
 		private String spec;
 
 		private String chargeType;
-
-		private String reservationInternetChargeType;
 
 		private String description;
 
@@ -122,8 +116,6 @@ public class ListVirtualPhysicalConnectionsResponse extends AcsResponse {
 		private String loaStatus;
 
 		private String accessPointId;
-
-		private String hasReservationData;
 
 		private String physicalConnectionId;
 
@@ -173,22 +165,6 @@ public class ListVirtualPhysicalConnectionsResponse extends AcsResponse {
 			this.adLocation = adLocation;
 		}
 
-		public String getReservationActiveTime() {
-			return this.reservationActiveTime;
-		}
-
-		public void setReservationActiveTime(String reservationActiveTime) {
-			this.reservationActiveTime = reservationActiveTime;
-		}
-
-		public String getReservationOrderType() {
-			return this.reservationOrderType;
-		}
-
-		public void setReservationOrderType(String reservationOrderType) {
-			this.reservationOrderType = reservationOrderType;
-		}
-
 		public String getPortNumber() {
 			return this.portNumber;
 		}
@@ -211,14 +187,6 @@ public class ListVirtualPhysicalConnectionsResponse extends AcsResponse {
 
 		public void setChargeType(String chargeType) {
 			this.chargeType = chargeType;
-		}
-
-		public String getReservationInternetChargeType() {
-			return this.reservationInternetChargeType;
-		}
-
-		public void setReservationInternetChargeType(String reservationInternetChargeType) {
-			this.reservationInternetChargeType = reservationInternetChargeType;
 		}
 
 		public String getDescription() {
@@ -323,14 +291,6 @@ public class ListVirtualPhysicalConnectionsResponse extends AcsResponse {
 
 		public void setAccessPointId(String accessPointId) {
 			this.accessPointId = accessPointId;
-		}
-
-		public String getHasReservationData() {
-			return this.hasReservationData;
-		}
-
-		public void setHasReservationData(String hasReservationData) {
-			this.hasReservationData = hasReservationData;
 		}
 
 		public String getPhysicalConnectionId() {

@@ -27,6 +27,8 @@ public class DescribeCommonBandwidthPackagesRequest extends RpcAcsRequest<Descri
 
 	private Long resourceOwnerId;
 
+	private Boolean securityProtectionEnabled;
+
 	private Boolean includeReservationData;
 
 	private Integer pageNumber;
@@ -63,6 +65,17 @@ public class DescribeCommonBandwidthPackagesRequest extends RpcAcsRequest<Descri
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public Boolean getSecurityProtectionEnabled() {
+		return this.securityProtectionEnabled;
+	}
+
+	public void setSecurityProtectionEnabled(Boolean securityProtectionEnabled) {
+		this.securityProtectionEnabled = securityProtectionEnabled;
+		if(securityProtectionEnabled != null){
+			putQueryParameter("SecurityProtectionEnabled", securityProtectionEnabled.toString());
 		}
 	}
 

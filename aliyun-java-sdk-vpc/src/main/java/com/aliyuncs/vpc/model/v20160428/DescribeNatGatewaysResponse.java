@@ -117,11 +117,17 @@ public class DescribeNatGatewaysResponse extends AcsResponse {
 
 		private String name;
 
+		private Boolean privateLinkEnabled;
+
+		private String privateLinkMode;
+
 		private List<IpList> ipLists;
 
 		private List<String> forwardTableIds;
 
 		private List<String> snatTableIds;
+
+		private List<String> fullNatTableIds;
 
 		private List<String> bandwidthPackageIds;
 
@@ -287,6 +293,22 @@ public class DescribeNatGatewaysResponse extends AcsResponse {
 			this.name = name;
 		}
 
+		public Boolean getPrivateLinkEnabled() {
+			return this.privateLinkEnabled;
+		}
+
+		public void setPrivateLinkEnabled(Boolean privateLinkEnabled) {
+			this.privateLinkEnabled = privateLinkEnabled;
+		}
+
+		public String getPrivateLinkMode() {
+			return this.privateLinkMode;
+		}
+
+		public void setPrivateLinkMode(String privateLinkMode) {
+			this.privateLinkMode = privateLinkMode;
+		}
+
 		public List<IpList> getIpLists() {
 			return this.ipLists;
 		}
@@ -309,6 +331,14 @@ public class DescribeNatGatewaysResponse extends AcsResponse {
 
 		public void setSnatTableIds(List<String> snatTableIds) {
 			this.snatTableIds = snatTableIds;
+		}
+
+		public List<String> getFullNatTableIds() {
+			return this.fullNatTableIds;
+		}
+
+		public void setFullNatTableIds(List<String> fullNatTableIds) {
+			this.fullNatTableIds = fullNatTableIds;
 		}
 
 		public List<String> getBandwidthPackageIds() {

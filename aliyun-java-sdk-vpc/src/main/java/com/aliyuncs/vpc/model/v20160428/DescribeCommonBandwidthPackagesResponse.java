@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeCommonBandwidthPackagesResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer pageSize;
 
-	private Integer totalCount;
+	private String requestId;
 
 	private Integer pageNumber;
 
-	private Integer pageSize;
+	private Integer totalCount;
 
 	private List<CommonBandwidthPackage> commonBandwidthPackages;
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class DescribeCommonBandwidthPackagesResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
 	}
 
 	public Integer getPageNumber() {
@@ -59,12 +59,12 @@ public class DescribeCommonBandwidthPackagesResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public Integer getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<CommonBandwidthPackage> getCommonBandwidthPackages() {
@@ -77,56 +77,114 @@ public class DescribeCommonBandwidthPackagesResponse extends AcsResponse {
 
 	public static class CommonBandwidthPackage {
 
-		private String bandwidthPackageId;
+		private String reservationActiveTime;
+
+		private String status;
+
+		private String creationTime;
+
+		private String reservationOrderType;
+
+		private Boolean deletionProtection;
+
+		private String reservationInternetChargeType;
+
+		private Integer ratio;
+
+		private String instanceChargeType;
 
 		private String regionId;
 
-		private String name;
+		private String bandwidthPackageId;
 
-		private String description;
+		private Integer serviceManaged;
 
 		private String bandwidth;
 
-		private String instanceChargeType;
+		private String description;
+
+		private String expiredTime;
+
+		private String reservationBandwidth;
+
+		private String resourceGroupId;
 
 		private String internetChargeType;
 
 		private String businessStatus;
 
-		private String creationTime;
-
-		private String expiredTime;
-
-		private String status;
-
-		private Integer ratio;
-
-		private String resourceGroupId;
-
-		private String hasReservationData;
-
-		private String reservationBandwidth;
-
-		private String reservationInternetChargeType;
-
-		private String reservationActiveTime;
-
-		private String reservationOrderType;
+		private String name;
 
 		private String iSP;
 
-		private Boolean deletionProtection;
-
-		private Integer serviceManaged;
+		private String hasReservationData;
 
 		private List<PublicIpAddresse> publicIpAddresses;
 
-		public String getBandwidthPackageId() {
-			return this.bandwidthPackageId;
+		private List<String> securityProtectionTypes;
+
+		public String getReservationActiveTime() {
+			return this.reservationActiveTime;
 		}
 
-		public void setBandwidthPackageId(String bandwidthPackageId) {
-			this.bandwidthPackageId = bandwidthPackageId;
+		public void setReservationActiveTime(String reservationActiveTime) {
+			this.reservationActiveTime = reservationActiveTime;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
+		public String getCreationTime() {
+			return this.creationTime;
+		}
+
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
+		}
+
+		public String getReservationOrderType() {
+			return this.reservationOrderType;
+		}
+
+		public void setReservationOrderType(String reservationOrderType) {
+			this.reservationOrderType = reservationOrderType;
+		}
+
+		public Boolean getDeletionProtection() {
+			return this.deletionProtection;
+		}
+
+		public void setDeletionProtection(Boolean deletionProtection) {
+			this.deletionProtection = deletionProtection;
+		}
+
+		public String getReservationInternetChargeType() {
+			return this.reservationInternetChargeType;
+		}
+
+		public void setReservationInternetChargeType(String reservationInternetChargeType) {
+			this.reservationInternetChargeType = reservationInternetChargeType;
+		}
+
+		public Integer getRatio() {
+			return this.ratio;
+		}
+
+		public void setRatio(Integer ratio) {
+			this.ratio = ratio;
+		}
+
+		public String getInstanceChargeType() {
+			return this.instanceChargeType;
+		}
+
+		public void setInstanceChargeType(String instanceChargeType) {
+			this.instanceChargeType = instanceChargeType;
 		}
 
 		public String getRegionId() {
@@ -137,20 +195,20 @@ public class DescribeCommonBandwidthPackagesResponse extends AcsResponse {
 			this.regionId = regionId;
 		}
 
-		public String getName() {
-			return this.name;
+		public String getBandwidthPackageId() {
+			return this.bandwidthPackageId;
 		}
 
-		public void setName(String name) {
-			this.name = name;
+		public void setBandwidthPackageId(String bandwidthPackageId) {
+			this.bandwidthPackageId = bandwidthPackageId;
 		}
 
-		public String getDescription() {
-			return this.description;
+		public Integer getServiceManaged() {
+			return this.serviceManaged;
 		}
 
-		public void setDescription(String description) {
-			this.description = description;
+		public void setServiceManaged(Integer serviceManaged) {
+			this.serviceManaged = serviceManaged;
 		}
 
 		public String getBandwidth() {
@@ -161,12 +219,36 @@ public class DescribeCommonBandwidthPackagesResponse extends AcsResponse {
 			this.bandwidth = bandwidth;
 		}
 
-		public String getInstanceChargeType() {
-			return this.instanceChargeType;
+		public String getDescription() {
+			return this.description;
 		}
 
-		public void setInstanceChargeType(String instanceChargeType) {
-			this.instanceChargeType = instanceChargeType;
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getExpiredTime() {
+			return this.expiredTime;
+		}
+
+		public void setExpiredTime(String expiredTime) {
+			this.expiredTime = expiredTime;
+		}
+
+		public String getReservationBandwidth() {
+			return this.reservationBandwidth;
+		}
+
+		public void setReservationBandwidth(String reservationBandwidth) {
+			this.reservationBandwidth = reservationBandwidth;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
 		}
 
 		public String getInternetChargeType() {
@@ -185,84 +267,12 @@ public class DescribeCommonBandwidthPackagesResponse extends AcsResponse {
 			this.businessStatus = businessStatus;
 		}
 
-		public String getCreationTime() {
-			return this.creationTime;
+		public String getName() {
+			return this.name;
 		}
 
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
-		}
-
-		public String getExpiredTime() {
-			return this.expiredTime;
-		}
-
-		public void setExpiredTime(String expiredTime) {
-			this.expiredTime = expiredTime;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
-		public Integer getRatio() {
-			return this.ratio;
-		}
-
-		public void setRatio(Integer ratio) {
-			this.ratio = ratio;
-		}
-
-		public String getResourceGroupId() {
-			return this.resourceGroupId;
-		}
-
-		public void setResourceGroupId(String resourceGroupId) {
-			this.resourceGroupId = resourceGroupId;
-		}
-
-		public String getHasReservationData() {
-			return this.hasReservationData;
-		}
-
-		public void setHasReservationData(String hasReservationData) {
-			this.hasReservationData = hasReservationData;
-		}
-
-		public String getReservationBandwidth() {
-			return this.reservationBandwidth;
-		}
-
-		public void setReservationBandwidth(String reservationBandwidth) {
-			this.reservationBandwidth = reservationBandwidth;
-		}
-
-		public String getReservationInternetChargeType() {
-			return this.reservationInternetChargeType;
-		}
-
-		public void setReservationInternetChargeType(String reservationInternetChargeType) {
-			this.reservationInternetChargeType = reservationInternetChargeType;
-		}
-
-		public String getReservationActiveTime() {
-			return this.reservationActiveTime;
-		}
-
-		public void setReservationActiveTime(String reservationActiveTime) {
-			this.reservationActiveTime = reservationActiveTime;
-		}
-
-		public String getReservationOrderType() {
-			return this.reservationOrderType;
-		}
-
-		public void setReservationOrderType(String reservationOrderType) {
-			this.reservationOrderType = reservationOrderType;
+		public void setName(String name) {
+			this.name = name;
 		}
 
 		public String getISP() {
@@ -273,20 +283,12 @@ public class DescribeCommonBandwidthPackagesResponse extends AcsResponse {
 			this.iSP = iSP;
 		}
 
-		public Boolean getDeletionProtection() {
-			return this.deletionProtection;
+		public String getHasReservationData() {
+			return this.hasReservationData;
 		}
 
-		public void setDeletionProtection(Boolean deletionProtection) {
-			this.deletionProtection = deletionProtection;
-		}
-
-		public Integer getServiceManaged() {
-			return this.serviceManaged;
-		}
-
-		public void setServiceManaged(Integer serviceManaged) {
-			this.serviceManaged = serviceManaged;
+		public void setHasReservationData(String hasReservationData) {
+			this.hasReservationData = hasReservationData;
 		}
 
 		public List<PublicIpAddresse> getPublicIpAddresses() {
@@ -297,21 +299,21 @@ public class DescribeCommonBandwidthPackagesResponse extends AcsResponse {
 			this.publicIpAddresses = publicIpAddresses;
 		}
 
-		public static class PublicIpAddresse {
+		public List<String> getSecurityProtectionTypes() {
+			return this.securityProtectionTypes;
+		}
 
-			private String allocationId;
+		public void setSecurityProtectionTypes(List<String> securityProtectionTypes) {
+			this.securityProtectionTypes = securityProtectionTypes;
+		}
+
+		public static class PublicIpAddresse {
 
 			private String ipAddress;
 
+			private String allocationId;
+
 			private String bandwidthPackageIpRelationStatus;
-
-			public String getAllocationId() {
-				return this.allocationId;
-			}
-
-			public void setAllocationId(String allocationId) {
-				this.allocationId = allocationId;
-			}
 
 			public String getIpAddress() {
 				return this.ipAddress;
@@ -319,6 +321,14 @@ public class DescribeCommonBandwidthPackagesResponse extends AcsResponse {
 
 			public void setIpAddress(String ipAddress) {
 				this.ipAddress = ipAddress;
+			}
+
+			public String getAllocationId() {
+				return this.allocationId;
+			}
+
+			public void setAllocationId(String allocationId) {
+				this.allocationId = allocationId;
 			}
 
 			public String getBandwidthPackageIpRelationStatus() {

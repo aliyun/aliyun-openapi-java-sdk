@@ -38,12 +38,9 @@ public class ListVirtualPhysicalConnectionsResponseUnmarshaller {
 			virtualPhysicalConnection.setStatus(_ctx.stringValue("ListVirtualPhysicalConnectionsResponse.VirtualPhysicalConnections["+ i +"].Status"));
 			virtualPhysicalConnection.setCreationTime(_ctx.stringValue("ListVirtualPhysicalConnectionsResponse.VirtualPhysicalConnections["+ i +"].CreationTime"));
 			virtualPhysicalConnection.setAdLocation(_ctx.stringValue("ListVirtualPhysicalConnectionsResponse.VirtualPhysicalConnections["+ i +"].AdLocation"));
-			virtualPhysicalConnection.setReservationActiveTime(_ctx.stringValue("ListVirtualPhysicalConnectionsResponse.VirtualPhysicalConnections["+ i +"].ReservationActiveTime"));
-			virtualPhysicalConnection.setReservationOrderType(_ctx.stringValue("ListVirtualPhysicalConnectionsResponse.VirtualPhysicalConnections["+ i +"].ReservationOrderType"));
 			virtualPhysicalConnection.setPortNumber(_ctx.stringValue("ListVirtualPhysicalConnectionsResponse.VirtualPhysicalConnections["+ i +"].PortNumber"));
 			virtualPhysicalConnection.setSpec(_ctx.stringValue("ListVirtualPhysicalConnectionsResponse.VirtualPhysicalConnections["+ i +"].Spec"));
 			virtualPhysicalConnection.setChargeType(_ctx.stringValue("ListVirtualPhysicalConnectionsResponse.VirtualPhysicalConnections["+ i +"].ChargeType"));
-			virtualPhysicalConnection.setReservationInternetChargeType(_ctx.stringValue("ListVirtualPhysicalConnectionsResponse.VirtualPhysicalConnections["+ i +"].ReservationInternetChargeType"));
 			virtualPhysicalConnection.setDescription(_ctx.stringValue("ListVirtualPhysicalConnectionsResponse.VirtualPhysicalConnections["+ i +"].Description"));
 			virtualPhysicalConnection.setBandwidth(_ctx.longValue("ListVirtualPhysicalConnectionsResponse.VirtualPhysicalConnections["+ i +"].Bandwidth"));
 			virtualPhysicalConnection.setEnabledTime(_ctx.stringValue("ListVirtualPhysicalConnectionsResponse.VirtualPhysicalConnections["+ i +"].EnabledTime"));
@@ -57,7 +54,6 @@ public class ListVirtualPhysicalConnectionsResponseUnmarshaller {
 			virtualPhysicalConnection.setBusinessStatus(_ctx.stringValue("ListVirtualPhysicalConnectionsResponse.VirtualPhysicalConnections["+ i +"].BusinessStatus"));
 			virtualPhysicalConnection.setLoaStatus(_ctx.stringValue("ListVirtualPhysicalConnectionsResponse.VirtualPhysicalConnections["+ i +"].LoaStatus"));
 			virtualPhysicalConnection.setAccessPointId(_ctx.stringValue("ListVirtualPhysicalConnectionsResponse.VirtualPhysicalConnections["+ i +"].AccessPointId"));
-			virtualPhysicalConnection.setHasReservationData(_ctx.stringValue("ListVirtualPhysicalConnectionsResponse.VirtualPhysicalConnections["+ i +"].HasReservationData"));
 			virtualPhysicalConnection.setPhysicalConnectionId(_ctx.stringValue("ListVirtualPhysicalConnectionsResponse.VirtualPhysicalConnections["+ i +"].PhysicalConnectionId"));
 			virtualPhysicalConnection.setProductType(_ctx.stringValue("ListVirtualPhysicalConnectionsResponse.VirtualPhysicalConnections["+ i +"].ProductType"));
 			virtualPhysicalConnection.setParentPhysicalConnectionId(_ctx.stringValue("ListVirtualPhysicalConnectionsResponse.VirtualPhysicalConnections["+ i +"].ParentPhysicalConnectionId"));

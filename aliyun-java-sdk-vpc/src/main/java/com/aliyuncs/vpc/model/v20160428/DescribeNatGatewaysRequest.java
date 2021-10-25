@@ -15,6 +15,7 @@
 package com.aliyuncs.vpc.model.v20160428;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.vpc.Endpoint;
 
@@ -43,6 +44,8 @@ public class DescribeNatGatewaysRequest extends RpcAcsRequest<DescribeNatGateway
 
 	private String instanceChargeType;
 
+	private List<String> natGatewayIdss;
+
 	private Boolean dryRun;
 
 	private String resourceOwnerAccount;
@@ -51,9 +54,13 @@ public class DescribeNatGatewaysRequest extends RpcAcsRequest<DescribeNatGateway
 
 	private Long ownerId;
 
+	private String vSwitchId;
+
 	private String vpcId;
 
 	private String name;
+
+	private String zoneId;
 
 	private String status;
 	public DescribeNatGatewaysRequest() {
@@ -164,6 +171,19 @@ public class DescribeNatGatewaysRequest extends RpcAcsRequest<DescribeNatGateway
 		}
 	}
 
+	public List<String> getNatGatewayIdss() {
+		return this.natGatewayIdss;
+	}
+
+	public void setNatGatewayIdss(List<String> natGatewayIdss) {
+		this.natGatewayIdss = natGatewayIdss;	
+		if (natGatewayIdss != null) {
+			for (int i = 0; i < natGatewayIdss.size(); i++) {
+				putQueryParameter("NatGatewayIds." + (i + 1) , natGatewayIdss.get(i));
+			}
+		}	
+	}
+
 	public Boolean getDryRun() {
 		return this.dryRun;
 	}
@@ -208,6 +228,17 @@ public class DescribeNatGatewaysRequest extends RpcAcsRequest<DescribeNatGateway
 		}
 	}
 
+	public String getVSwitchId() {
+		return this.vSwitchId;
+	}
+
+	public void setVSwitchId(String vSwitchId) {
+		this.vSwitchId = vSwitchId;
+		if(vSwitchId != null){
+			putQueryParameter("VSwitchId", vSwitchId);
+		}
+	}
+
 	public String getVpcId() {
 		return this.vpcId;
 	}
@@ -227,6 +258,17 @@ public class DescribeNatGatewaysRequest extends RpcAcsRequest<DescribeNatGateway
 		this.name = name;
 		if(name != null){
 			putQueryParameter("Name", name);
+		}
+	}
+
+	public String getZoneId() {
+		return this.zoneId;
+	}
+
+	public void setZoneId(String zoneId) {
+		this.zoneId = zoneId;
+		if(zoneId != null){
+			putQueryParameter("ZoneId", zoneId);
 		}
 	}
 

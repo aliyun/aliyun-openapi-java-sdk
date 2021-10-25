@@ -29,6 +29,8 @@ public class DescribeEipAddressesRequest extends RpcAcsRequest<DescribeEipAddres
 
 	private String filter2Value;
 
+	private Boolean securityProtectionEnabled;
+
 	private String iSP;
 
 	private String eipName;
@@ -98,6 +100,17 @@ public class DescribeEipAddressesRequest extends RpcAcsRequest<DescribeEipAddres
 		this.filter2Value = filter2Value;
 		if(filter2Value != null){
 			putQueryParameter("Filter.2.Value", filter2Value);
+		}
+	}
+
+	public Boolean getSecurityProtectionEnabled() {
+		return this.securityProtectionEnabled;
+	}
+
+	public void setSecurityProtectionEnabled(Boolean securityProtectionEnabled) {
+		this.securityProtectionEnabled = securityProtectionEnabled;
+		if(securityProtectionEnabled != null){
+			putQueryParameter("SecurityProtectionEnabled", securityProtectionEnabled.toString());
 		}
 	}
 

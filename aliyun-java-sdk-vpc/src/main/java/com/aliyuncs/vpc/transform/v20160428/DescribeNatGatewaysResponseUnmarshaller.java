@@ -56,6 +56,8 @@ public class DescribeNatGatewaysResponseUnmarshaller {
 			natGateway.setInternetChargeType(_ctx.stringValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].InternetChargeType"));
 			natGateway.setBusinessStatus(_ctx.stringValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].BusinessStatus"));
 			natGateway.setName(_ctx.stringValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].Name"));
+			natGateway.setPrivateLinkEnabled(_ctx.booleanValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].PrivateLinkEnabled"));
+			natGateway.setPrivateLinkMode(_ctx.stringValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].PrivateLinkMode"));
 
 			List<String> forwardTableIds = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].ForwardTableIds.Length"); j++) {
@@ -68,6 +70,12 @@ public class DescribeNatGatewaysResponseUnmarshaller {
 				snatTableIds.add(_ctx.stringValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].SnatTableIds["+ j +"]"));
 			}
 			natGateway.setSnatTableIds(snatTableIds);
+
+			List<String> fullNatTableIds = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].FullNatTableIds.Length"); j++) {
+				fullNatTableIds.add(_ctx.stringValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].FullNatTableIds["+ j +"]"));
+			}
+			natGateway.setFullNatTableIds(fullNatTableIds);
 
 			List<String> bandwidthPackageIds = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].BandwidthPackageIds.Length"); j++) {
