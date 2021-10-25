@@ -43,7 +43,7 @@ public class ModifyScalingTaskGroupRequest extends RpcAcsRequest<ModifyScalingTa
 
 	private Integer defaultCooldown;
 	public ModifyScalingTaskGroupRequest() {
-		super("Emr", "2016-04-08", "ModifyScalingTaskGroup");
+		super("Emr", "2016-04-08", "ModifyScalingTaskGroup", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

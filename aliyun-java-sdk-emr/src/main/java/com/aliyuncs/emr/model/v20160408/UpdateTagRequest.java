@@ -35,7 +35,7 @@ public class UpdateTagRequest extends RpcAcsRequest<UpdateTagResponse> {
 
 	private String category;
 	public UpdateTagRequest() {
-		super("Emr", "2016-04-08", "UpdateTag");
+		super("Emr", "2016-04-08", "UpdateTag", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

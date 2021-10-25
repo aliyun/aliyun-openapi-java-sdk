@@ -37,7 +37,7 @@ public class ListClusterTemplatesRequest extends RpcAcsRequest<ListClusterTempla
 
 	private Integer pageSize;
 	public ListClusterTemplatesRequest() {
-		super("Emr", "2016-04-08", "ListClusterTemplates");
+		super("Emr", "2016-04-08", "ListClusterTemplates", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

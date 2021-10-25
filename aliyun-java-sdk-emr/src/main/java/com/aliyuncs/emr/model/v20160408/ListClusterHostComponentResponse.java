@@ -113,6 +113,12 @@ public class ListClusterHostComponentResponse extends AcsResponse {
 
 		private String commissionStatus;
 
+		private String state;
+
+		private String healthStatus;
+
+		private Long healthReportTime;
+
 		public String getServiceName() {
 			return this.serviceName;
 		}
@@ -255,6 +261,30 @@ public class ListClusterHostComponentResponse extends AcsResponse {
 
 		public void setCommissionStatus(String commissionStatus) {
 			this.commissionStatus = commissionStatus;
+		}
+
+		public String getState() {
+			return this.state;
+		}
+
+		public void setState(String state) {
+			this.state = state;
+		}
+
+		public String getHealthStatus() {
+			return this.healthStatus;
+		}
+
+		public void setHealthStatus(String healthStatus) {
+			this.healthStatus = healthStatus;
+		}
+
+		public Long getHealthReportTime() {
+			return this.healthReportTime;
+		}
+
+		public void setHealthReportTime(Long healthReportTime) {
+			this.healthReportTime = healthReportTime;
 		}
 	}
 

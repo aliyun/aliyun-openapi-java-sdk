@@ -30,7 +30,7 @@ public class DeleteLibrariesRequest extends RpcAcsRequest<DeleteLibrariesRespons
 
 	private List<String> libraryBizIdLists;
 	public DeleteLibrariesRequest() {
-		super("Emr", "2016-04-08", "DeleteLibraries");
+		super("Emr", "2016-04-08", "DeleteLibraries", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

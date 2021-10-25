@@ -31,7 +31,7 @@ public class ModifyClusterMetaCollectRequest extends RpcAcsRequest<ModifyCluster
 
 	private Boolean switchOn;
 	public ModifyClusterMetaCollectRequest() {
-		super("Emr", "2016-04-08", "ModifyClusterMetaCollect");
+		super("Emr", "2016-04-08", "ModifyClusterMetaCollect", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

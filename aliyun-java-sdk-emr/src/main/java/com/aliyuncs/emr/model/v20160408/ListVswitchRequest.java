@@ -33,7 +33,7 @@ public class ListVswitchRequest extends RpcAcsRequest<ListVswitchResponse> {
 
 	private String zoneId;
 	public ListVswitchRequest() {
-		super("Emr", "2016-04-08", "ListVswitch");
+		super("Emr", "2016-04-08", "ListVswitch", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

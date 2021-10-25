@@ -37,7 +37,7 @@ public class DecommissionHostComponentRequest extends RpcAcsRequest<Decommission
 
 	private String serviceName;
 	public DecommissionHostComponentRequest() {
-		super("Emr", "2016-04-08", "DecommissionHostComponent");
+		super("Emr", "2016-04-08", "DecommissionHostComponent", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

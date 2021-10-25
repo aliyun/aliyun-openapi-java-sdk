@@ -56,7 +56,7 @@ public class ListBackupsRequest extends RpcAcsRequest<ListBackupsResponse> {
 
 	private String status;
 	public ListBackupsRequest() {
-		super("Emr", "2016-04-08", "ListBackups");
+		super("Emr", "2016-04-08", "ListBackups", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

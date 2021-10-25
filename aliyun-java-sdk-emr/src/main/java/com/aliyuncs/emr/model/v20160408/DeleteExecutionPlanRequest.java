@@ -29,7 +29,7 @@ public class DeleteExecutionPlanRequest extends RpcAcsRequest<DeleteExecutionPla
 
 	private String id;
 	public DeleteExecutionPlanRequest() {
-		super("Emr", "2016-04-08", "DeleteExecutionPlan");
+		super("Emr", "2016-04-08", "DeleteExecutionPlan", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -43,7 +43,7 @@ public class ListDataSourceRequest extends RpcAcsRequest<ListDataSourceResponse>
 
 	private String projectId;
 	public ListDataSourceRequest() {
-		super("Emr", "2016-04-08", "ListDataSource");
+		super("Emr", "2016-04-08", "ListDataSource", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

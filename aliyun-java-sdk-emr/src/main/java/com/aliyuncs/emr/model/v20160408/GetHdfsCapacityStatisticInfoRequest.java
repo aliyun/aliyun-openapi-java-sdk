@@ -33,7 +33,7 @@ public class GetHdfsCapacityStatisticInfoRequest extends RpcAcsRequest<GetHdfsCa
 
 	private String toDatetime;
 	public GetHdfsCapacityStatisticInfoRequest() {
-		super("Emr", "2016-04-08", "GetHdfsCapacityStatisticInfo");
+		super("Emr", "2016-04-08", "GetHdfsCapacityStatisticInfo", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

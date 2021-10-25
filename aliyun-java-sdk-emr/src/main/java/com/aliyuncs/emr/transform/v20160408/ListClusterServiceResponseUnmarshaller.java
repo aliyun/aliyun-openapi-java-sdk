@@ -47,6 +47,7 @@ public class ListClusterServiceResponseUnmarshaller {
 			clusterService.setAbnormalNum(_ctx.integerValue("ListClusterServiceResponse.ClusterServiceList["+ i +"].AbnormalNum"));
 			clusterService.setStoppedNum(_ctx.integerValue("ListClusterServiceResponse.ClusterServiceList["+ i +"].StoppedNum"));
 			clusterService.setNeedRestartNum(_ctx.integerValue("ListClusterServiceResponse.ClusterServiceList["+ i +"].NeedRestartNum"));
+			clusterService.setState(_ctx.stringValue("ListClusterServiceResponse.ClusterServiceList["+ i +"].State"));
 
 			List<ServiceAction> serviceActionList = new ArrayList<ServiceAction>();
 			for (int j = 0; j < _ctx.lengthValue("ListClusterServiceResponse.ClusterServiceList["+ i +"].ServiceActionList.Length"); j++) {

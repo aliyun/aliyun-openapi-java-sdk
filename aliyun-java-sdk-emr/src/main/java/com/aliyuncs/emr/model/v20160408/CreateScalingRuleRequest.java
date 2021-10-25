@@ -60,7 +60,7 @@ public class CreateScalingRuleRequest extends RpcAcsRequest<CreateScalingRuleRes
 
 	private String recurrenceType;
 	public CreateScalingRuleRequest() {
-		super("Emr", "2016-04-08", "CreateScalingRule");
+		super("Emr", "2016-04-08", "CreateScalingRule", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

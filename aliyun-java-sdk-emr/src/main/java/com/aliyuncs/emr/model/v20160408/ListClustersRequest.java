@@ -50,11 +50,13 @@ public class ListClustersRequest extends RpcAcsRequest<ListClustersResponse> {
 
 	private Boolean defaultStatus;
 
+	private String vpcId;
+
 	private String name;
 
 	private List<String> clusterTypeLists;
 	public ListClustersRequest() {
-		super("Emr", "2016-04-08", "ListClusters");
+		super("Emr", "2016-04-08", "ListClusters", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -198,6 +200,17 @@ public class ListClustersRequest extends RpcAcsRequest<ListClustersResponse> {
 		this.defaultStatus = defaultStatus;
 		if(defaultStatus != null){
 			putQueryParameter("DefaultStatus", defaultStatus.toString());
+		}
+	}
+
+	public String getVpcId() {
+		return this.vpcId;
+	}
+
+	public void setVpcId(String vpcId) {
+		this.vpcId = vpcId;
+		if(vpcId != null){
+			putQueryParameter("VpcId", vpcId);
 		}
 	}
 

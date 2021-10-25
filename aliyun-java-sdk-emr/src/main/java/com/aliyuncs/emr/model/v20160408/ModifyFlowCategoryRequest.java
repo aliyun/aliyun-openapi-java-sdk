@@ -33,7 +33,7 @@ public class ModifyFlowCategoryRequest extends RpcAcsRequest<ModifyFlowCategoryR
 
 	private String projectId;
 	public ModifyFlowCategoryRequest() {
-		super("Emr", "2016-04-08", "ModifyFlowCategory");
+		super("Emr", "2016-04-08", "ModifyFlowCategory", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

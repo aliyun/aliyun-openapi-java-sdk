@@ -29,7 +29,7 @@ public class ResumeFlowRequest extends RpcAcsRequest<ResumeFlowResponse> {
 
 	private String projectId;
 	public ResumeFlowRequest() {
-		super("Emr", "2016-04-08", "ResumeFlow");
+		super("Emr", "2016-04-08", "ResumeFlow", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

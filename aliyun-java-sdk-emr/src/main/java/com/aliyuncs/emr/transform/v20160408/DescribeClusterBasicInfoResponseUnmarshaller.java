@@ -87,13 +87,17 @@ public class DescribeClusterBasicInfoResponseUnmarshaller {
 		clusterInfo.setAutoScalingByLoadAllowed(_ctx.booleanValue("DescribeClusterBasicInfoResponse.ClusterInfo.AutoScalingByLoadAllowed"));
 		clusterInfo.setAutoScalingWithGraceAllowed(_ctx.booleanValue("DescribeClusterBasicInfoResponse.ClusterInfo.AutoScalingWithGraceAllowed"));
 		clusterInfo.setResizeDiskEnable(_ctx.booleanValue("DescribeClusterBasicInfoResponse.ClusterInfo.ResizeDiskEnable"));
+		clusterInfo.setResizeClusterEnable(_ctx.booleanValue("DescribeClusterBasicInfoResponse.ClusterInfo.ResizeClusterEnable"));
 		clusterInfo.setMetaStoreType(_ctx.stringValue("DescribeClusterBasicInfoResponse.ClusterInfo.MetaStoreType"));
 		clusterInfo.setK8sClusterId(_ctx.stringValue("DescribeClusterBasicInfoResponse.ClusterInfo.K8sClusterId"));
+		clusterInfo.setOperationId(_ctx.stringValue("DescribeClusterBasicInfoResponse.ClusterInfo.OperationId"));
+		clusterInfo.setClickhouseConf(_ctx.stringValue("DescribeClusterBasicInfoResponse.ClusterInfo.ClickhouseConf"));
 
 		RelateClusterInfo relateClusterInfo = new RelateClusterInfo();
 		relateClusterInfo.setClusterId(_ctx.stringValue("DescribeClusterBasicInfoResponse.ClusterInfo.RelateClusterInfo.ClusterId"));
 		relateClusterInfo.setClusterName(_ctx.stringValue("DescribeClusterBasicInfoResponse.ClusterInfo.RelateClusterInfo.ClusterName"));
 		relateClusterInfo.setStatus(_ctx.stringValue("DescribeClusterBasicInfoResponse.ClusterInfo.RelateClusterInfo.Status"));
+		relateClusterInfo.setClusterType(_ctx.stringValue("DescribeClusterBasicInfoResponse.ClusterInfo.RelateClusterInfo.ClusterType"));
 		clusterInfo.setRelateClusterInfo(relateClusterInfo);
 
 		HostPoolInfo hostPoolInfo = new HostPoolInfo();

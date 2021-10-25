@@ -29,7 +29,7 @@ public class DescribeClusterV2Request extends RpcAcsRequest<DescribeClusterV2Res
 
 	private String id;
 	public DescribeClusterV2Request() {
-		super("Emr", "2016-04-08", "DescribeClusterV2");
+		super("Emr", "2016-04-08", "DescribeClusterV2", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

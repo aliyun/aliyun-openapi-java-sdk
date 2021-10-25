@@ -43,7 +43,7 @@ public class ModifyJobRequest extends RpcAcsRequest<ModifyJobResponse> {
 
 	private Integer maxRetry;
 	public ModifyJobRequest() {
-		super("Emr", "2016-04-08", "ModifyJob");
+		super("Emr", "2016-04-08", "ModifyJob", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

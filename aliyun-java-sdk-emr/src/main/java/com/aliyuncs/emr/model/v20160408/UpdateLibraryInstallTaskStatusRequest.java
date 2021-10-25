@@ -31,7 +31,7 @@ public class UpdateLibraryInstallTaskStatusRequest extends RpcAcsRequest<UpdateL
 
 	private String status;
 	public UpdateLibraryInstallTaskStatusRequest() {
-		super("Emr", "2016-04-08", "UpdateLibraryInstallTaskStatus");
+		super("Emr", "2016-04-08", "UpdateLibraryInstallTaskStatus", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

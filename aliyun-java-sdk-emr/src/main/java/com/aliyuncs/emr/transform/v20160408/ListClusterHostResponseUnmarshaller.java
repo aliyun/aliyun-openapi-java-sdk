@@ -63,6 +63,9 @@ public class ListClusterHostResponseUnmarshaller {
 				disk.setDevice(_ctx.stringValue("ListClusterHostResponse.HostList["+ i +"].DiskList["+ j +"].Device"));
 				disk.setDiskType(_ctx.stringValue("ListClusterHostResponse.HostList["+ i +"].DiskList["+ j +"].DiskType"));
 				disk.setDiskSize(_ctx.integerValue("ListClusterHostResponse.HostList["+ i +"].DiskList["+ j +"].DiskSize"));
+				disk.setBlockMountPoint(_ctx.stringValue("ListClusterHostResponse.HostList["+ i +"].DiskList["+ j +"].BlockMountPoint"));
+				disk.setDiskMountPoint(_ctx.stringValue("ListClusterHostResponse.HostList["+ i +"].DiskList["+ j +"].DiskMountPoint"));
+				disk.setEvent(_ctx.stringValue("ListClusterHostResponse.HostList["+ i +"].DiskList["+ j +"].Event"));
 
 				diskList.add(disk);
 			}

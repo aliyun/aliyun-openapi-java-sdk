@@ -31,7 +31,7 @@ public class DeleteResourcePoolRequest extends RpcAcsRequest<DeleteResourcePoolR
 
 	private String clusterId;
 	public DeleteResourcePoolRequest() {
-		super("Emr", "2016-04-08", "DeleteResourcePool");
+		super("Emr", "2016-04-08", "DeleteResourcePool", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

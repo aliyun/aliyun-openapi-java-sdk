@@ -33,7 +33,7 @@ public class GetUserOutputStatisticInfoRequest extends RpcAcsRequest<GetUserOutp
 
 	private String toDatetime;
 	public GetUserOutputStatisticInfoRequest() {
-		super("Emr", "2016-04-08", "GetUserOutputStatisticInfo");
+		super("Emr", "2016-04-08", "GetUserOutputStatisticInfo", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

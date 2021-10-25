@@ -31,7 +31,7 @@ public class DescribeDataSourceRequest extends RpcAcsRequest<DescribeDataSourceR
 
 	private String id;
 	public DescribeDataSourceRequest() {
-		super("Emr", "2016-04-08", "DescribeDataSource");
+		super("Emr", "2016-04-08", "DescribeDataSource", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

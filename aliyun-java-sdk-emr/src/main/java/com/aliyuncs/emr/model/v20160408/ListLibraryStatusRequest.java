@@ -45,7 +45,7 @@ public class ListLibraryStatusRequest extends RpcAcsRequest<ListLibraryStatusRes
 
 	private String libraryBizId;
 	public ListLibraryStatusRequest() {
-		super("Emr", "2016-04-08", "ListLibraryStatus");
+		super("Emr", "2016-04-08", "ListLibraryStatus", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

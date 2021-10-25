@@ -31,7 +31,7 @@ public class DeleteJobRequest extends RpcAcsRequest<DeleteJobResponse> {
 
 	private String id;
 	public DeleteJobRequest() {
-		super("Emr", "2016-04-08", "DeleteJob");
+		super("Emr", "2016-04-08", "DeleteJob", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

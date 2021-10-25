@@ -28,6 +28,8 @@ public class ListFlowInstanceRequest extends RpcAcsRequest<ListFlowInstanceRespo
 
 	private List<String> statusLists;
 
+	private String nodeInstanceId;
+
 	private Integer pageNumber;
 
 	private Integer pageSize;
@@ -50,7 +52,7 @@ public class ListFlowInstanceRequest extends RpcAcsRequest<ListFlowInstanceRespo
 
 	private String orderType;
 	public ListFlowInstanceRequest() {
-		super("Emr", "2016-04-08", "ListFlowInstance");
+		super("Emr", "2016-04-08", "ListFlowInstance", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -69,6 +71,17 @@ public class ListFlowInstanceRequest extends RpcAcsRequest<ListFlowInstanceRespo
 				putQueryParameter("StatusList." + (i + 1) , statusLists.get(i));
 			}
 		}	
+	}
+
+	public String getNodeInstanceId() {
+		return this.nodeInstanceId;
+	}
+
+	public void setNodeInstanceId(String nodeInstanceId) {
+		this.nodeInstanceId = nodeInstanceId;
+		if(nodeInstanceId != null){
+			putQueryParameter("NodeInstanceId", nodeInstanceId);
+		}
 	}
 
 	public Integer getPageNumber() {

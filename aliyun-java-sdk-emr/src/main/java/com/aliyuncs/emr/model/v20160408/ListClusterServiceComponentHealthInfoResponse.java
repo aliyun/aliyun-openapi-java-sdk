@@ -75,6 +75,22 @@ public class ListClusterServiceComponentHealthInfoResponse extends AcsResponse {
 
 		private Long createdTime;
 
+		private String healthStatus;
+
+		private Integer stoppedHealthNum;
+
+		private Integer goodHealthNum;
+
+		private Integer warningHealthNum;
+
+		private Integer badHealthNum;
+
+		private Integer unknownHealthNum;
+
+		private Integer disabledHealthNum;
+
+		private Integer noneHealthNum;
+
 		private List<HealthDetail> healthDetailList;
 
 		public String getServiceName() {
@@ -147,6 +163,70 @@ public class ListClusterServiceComponentHealthInfoResponse extends AcsResponse {
 
 		public void setCreatedTime(Long createdTime) {
 			this.createdTime = createdTime;
+		}
+
+		public String getHealthStatus() {
+			return this.healthStatus;
+		}
+
+		public void setHealthStatus(String healthStatus) {
+			this.healthStatus = healthStatus;
+		}
+
+		public Integer getStoppedHealthNum() {
+			return this.stoppedHealthNum;
+		}
+
+		public void setStoppedHealthNum(Integer stoppedHealthNum) {
+			this.stoppedHealthNum = stoppedHealthNum;
+		}
+
+		public Integer getGoodHealthNum() {
+			return this.goodHealthNum;
+		}
+
+		public void setGoodHealthNum(Integer goodHealthNum) {
+			this.goodHealthNum = goodHealthNum;
+		}
+
+		public Integer getWarningHealthNum() {
+			return this.warningHealthNum;
+		}
+
+		public void setWarningHealthNum(Integer warningHealthNum) {
+			this.warningHealthNum = warningHealthNum;
+		}
+
+		public Integer getBadHealthNum() {
+			return this.badHealthNum;
+		}
+
+		public void setBadHealthNum(Integer badHealthNum) {
+			this.badHealthNum = badHealthNum;
+		}
+
+		public Integer getUnknownHealthNum() {
+			return this.unknownHealthNum;
+		}
+
+		public void setUnknownHealthNum(Integer unknownHealthNum) {
+			this.unknownHealthNum = unknownHealthNum;
+		}
+
+		public Integer getDisabledHealthNum() {
+			return this.disabledHealthNum;
+		}
+
+		public void setDisabledHealthNum(Integer disabledHealthNum) {
+			this.disabledHealthNum = disabledHealthNum;
+		}
+
+		public Integer getNoneHealthNum() {
+			return this.noneHealthNum;
+		}
+
+		public void setNoneHealthNum(Integer noneHealthNum) {
+			this.noneHealthNum = noneHealthNum;
 		}
 
 		public List<HealthDetail> getHealthDetailList() {

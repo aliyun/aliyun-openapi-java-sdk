@@ -31,7 +31,7 @@ public class DescribeJobRequest extends RpcAcsRequest<DescribeJobResponse> {
 
 	private String id;
 	public DescribeJobRequest() {
-		super("Emr", "2016-04-08", "DescribeJob");
+		super("Emr", "2016-04-08", "DescribeJob", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

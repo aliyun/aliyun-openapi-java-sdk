@@ -102,7 +102,7 @@ public class ModifyExecutionPlanRequest extends RpcAcsRequest<ModifyExecutionPla
 
 	private Boolean logEnable;
 	public ModifyExecutionPlanRequest() {
-		super("Emr", "2016-04-08", "ModifyExecutionPlan");
+		super("Emr", "2016-04-08", "ModifyExecutionPlan", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -196,8 +196,11 @@ public class ModifyExecutionPlanRequest extends RpcAcsRequest<ModifyExecutionPla
 		if (bootstrapActions != null) {
 			for (int depth1 = 0; depth1 < bootstrapActions.size(); depth1++) {
 				putQueryParameter("BootstrapAction." + (depth1 + 1) + ".Path" , bootstrapActions.get(depth1).getPath());
+				putQueryParameter("BootstrapAction." + (depth1 + 1) + ".ExecutionTarget" , bootstrapActions.get(depth1).getExecutionTarget());
+				putQueryParameter("BootstrapAction." + (depth1 + 1) + ".ExecutionMoment" , bootstrapActions.get(depth1).getExecutionMoment());
 				putQueryParameter("BootstrapAction." + (depth1 + 1) + ".Arg" , bootstrapActions.get(depth1).getArg());
 				putQueryParameter("BootstrapAction." + (depth1 + 1) + ".Name" , bootstrapActions.get(depth1).getName());
+				putQueryParameter("BootstrapAction." + (depth1 + 1) + ".ExecutionFailStrategy" , bootstrapActions.get(depth1).getExecutionFailStrategy());
 			}
 		}	
 	}
@@ -555,9 +558,15 @@ public class ModifyExecutionPlanRequest extends RpcAcsRequest<ModifyExecutionPla
 
 		private String path;
 
+		private String executionTarget;
+
+		private String executionMoment;
+
 		private String arg;
 
 		private String name;
+
+		private String executionFailStrategy;
 
 		public String getPath() {
 			return this.path;
@@ -565,6 +574,22 @@ public class ModifyExecutionPlanRequest extends RpcAcsRequest<ModifyExecutionPla
 
 		public void setPath(String path) {
 			this.path = path;
+		}
+
+		public String getExecutionTarget() {
+			return this.executionTarget;
+		}
+
+		public void setExecutionTarget(String executionTarget) {
+			this.executionTarget = executionTarget;
+		}
+
+		public String getExecutionMoment() {
+			return this.executionMoment;
+		}
+
+		public void setExecutionMoment(String executionMoment) {
+			this.executionMoment = executionMoment;
 		}
 
 		public String getArg() {
@@ -581,6 +606,14 @@ public class ModifyExecutionPlanRequest extends RpcAcsRequest<ModifyExecutionPla
 
 		public void setName(String name) {
 			this.name = name;
+		}
+
+		public String getExecutionFailStrategy() {
+			return this.executionFailStrategy;
+		}
+
+		public void setExecutionFailStrategy(String executionFailStrategy) {
+			this.executionFailStrategy = executionFailStrategy;
 		}
 	}
 

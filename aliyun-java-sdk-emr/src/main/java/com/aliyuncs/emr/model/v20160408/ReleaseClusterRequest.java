@@ -31,7 +31,7 @@ public class ReleaseClusterRequest extends RpcAcsRequest<ReleaseClusterResponse>
 
 	private String id;
 	public ReleaseClusterRequest() {
-		super("Emr", "2016-04-08", "ReleaseCluster");
+		super("Emr", "2016-04-08", "ReleaseCluster", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

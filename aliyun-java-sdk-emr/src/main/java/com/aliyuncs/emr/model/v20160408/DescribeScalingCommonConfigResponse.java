@@ -26,7 +26,25 @@ public class DescribeScalingCommonConfigResponse extends AcsResponse {
 
 	private String requestId;
 
+	private Integer autoScalingHookHeartbeatDefaultTime;
+
+	private Integer autoScalingCoolDownTime;
+
+	private Long autoScalingMNSScalingThreadSleepTime;
+
+	private Integer autoScalingGroupMinSizeLimit;
+
+	private Integer autoScalingGroupMaxSizeLimit;
+
 	private Integer autoScalingRuleMinDelayLimit;
+
+	private Integer autoScalingRuleAlarmDelayLimit;
+
+	private Integer autoScalingRuleAlarmSilentTime;
+
+	private Integer autoScalingConfigSystemDiskSize;
+
+	private Long autoScalingConfigDecommissionQueryInterval;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -36,12 +54,84 @@ public class DescribeScalingCommonConfigResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public Integer getAutoScalingHookHeartbeatDefaultTime() {
+		return this.autoScalingHookHeartbeatDefaultTime;
+	}
+
+	public void setAutoScalingHookHeartbeatDefaultTime(Integer autoScalingHookHeartbeatDefaultTime) {
+		this.autoScalingHookHeartbeatDefaultTime = autoScalingHookHeartbeatDefaultTime;
+	}
+
+	public Integer getAutoScalingCoolDownTime() {
+		return this.autoScalingCoolDownTime;
+	}
+
+	public void setAutoScalingCoolDownTime(Integer autoScalingCoolDownTime) {
+		this.autoScalingCoolDownTime = autoScalingCoolDownTime;
+	}
+
+	public Long getAutoScalingMNSScalingThreadSleepTime() {
+		return this.autoScalingMNSScalingThreadSleepTime;
+	}
+
+	public void setAutoScalingMNSScalingThreadSleepTime(Long autoScalingMNSScalingThreadSleepTime) {
+		this.autoScalingMNSScalingThreadSleepTime = autoScalingMNSScalingThreadSleepTime;
+	}
+
+	public Integer getAutoScalingGroupMinSizeLimit() {
+		return this.autoScalingGroupMinSizeLimit;
+	}
+
+	public void setAutoScalingGroupMinSizeLimit(Integer autoScalingGroupMinSizeLimit) {
+		this.autoScalingGroupMinSizeLimit = autoScalingGroupMinSizeLimit;
+	}
+
+	public Integer getAutoScalingGroupMaxSizeLimit() {
+		return this.autoScalingGroupMaxSizeLimit;
+	}
+
+	public void setAutoScalingGroupMaxSizeLimit(Integer autoScalingGroupMaxSizeLimit) {
+		this.autoScalingGroupMaxSizeLimit = autoScalingGroupMaxSizeLimit;
+	}
+
 	public Integer getAutoScalingRuleMinDelayLimit() {
 		return this.autoScalingRuleMinDelayLimit;
 	}
 
 	public void setAutoScalingRuleMinDelayLimit(Integer autoScalingRuleMinDelayLimit) {
 		this.autoScalingRuleMinDelayLimit = autoScalingRuleMinDelayLimit;
+	}
+
+	public Integer getAutoScalingRuleAlarmDelayLimit() {
+		return this.autoScalingRuleAlarmDelayLimit;
+	}
+
+	public void setAutoScalingRuleAlarmDelayLimit(Integer autoScalingRuleAlarmDelayLimit) {
+		this.autoScalingRuleAlarmDelayLimit = autoScalingRuleAlarmDelayLimit;
+	}
+
+	public Integer getAutoScalingRuleAlarmSilentTime() {
+		return this.autoScalingRuleAlarmSilentTime;
+	}
+
+	public void setAutoScalingRuleAlarmSilentTime(Integer autoScalingRuleAlarmSilentTime) {
+		this.autoScalingRuleAlarmSilentTime = autoScalingRuleAlarmSilentTime;
+	}
+
+	public Integer getAutoScalingConfigSystemDiskSize() {
+		return this.autoScalingConfigSystemDiskSize;
+	}
+
+	public void setAutoScalingConfigSystemDiskSize(Integer autoScalingConfigSystemDiskSize) {
+		this.autoScalingConfigSystemDiskSize = autoScalingConfigSystemDiskSize;
+	}
+
+	public Long getAutoScalingConfigDecommissionQueryInterval() {
+		return this.autoScalingConfigDecommissionQueryInterval;
+	}
+
+	public void setAutoScalingConfigDecommissionQueryInterval(Long autoScalingConfigDecommissionQueryInterval) {
+		this.autoScalingConfigDecommissionQueryInterval = autoScalingConfigDecommissionQueryInterval;
 	}
 
 	@Override

@@ -33,7 +33,7 @@ public class ListSecurityGroupRequest extends RpcAcsRequest<ListSecurityGroupRes
 
 	private String vpcId;
 	public ListSecurityGroupRequest() {
-		super("Emr", "2016-04-08", "ListSecurityGroup");
+		super("Emr", "2016-04-08", "ListSecurityGroup", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

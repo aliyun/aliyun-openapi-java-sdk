@@ -29,7 +29,7 @@ public class DescribeLibraryInstallTaskDetailRequest extends RpcAcsRequest<Descr
 
 	private String taskBizId;
 	public DescribeLibraryInstallTaskDetailRequest() {
-		super("Emr", "2016-04-08", "DescribeLibraryInstallTaskDetail");
+		super("Emr", "2016-04-08", "DescribeLibraryInstallTaskDetail", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

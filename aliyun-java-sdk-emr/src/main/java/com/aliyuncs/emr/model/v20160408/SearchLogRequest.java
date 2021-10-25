@@ -47,7 +47,7 @@ public class SearchLogRequest extends RpcAcsRequest<SearchLogResponse> {
 
 	private String slsQueryString;
 	public SearchLogRequest() {
-		super("Emr", "2016-04-08", "SearchLog");
+		super("Emr", "2016-04-08", "SearchLog", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -35,7 +35,11 @@ public class ListScalingActivityV2Request extends RpcAcsRequest<ListScalingActiv
 
 	private Integer pageNumber;
 
+	private String hostGroupName;
+
 	private String scalingGroupBizId;
+
+	private String scalingRuleName;
 
 	private String resourceGroupId;
 
@@ -48,8 +52,10 @@ public class ListScalingActivityV2Request extends RpcAcsRequest<ListScalingActiv
 	private String orderField;
 
 	private String hostGroupId;
+
+	private String status;
 	public ListScalingActivityV2Request() {
-		super("Emr", "2016-04-08", "ListScalingActivityV2");
+		super("Emr", "2016-04-08", "ListScalingActivityV2", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -112,6 +118,17 @@ public class ListScalingActivityV2Request extends RpcAcsRequest<ListScalingActiv
 		}
 	}
 
+	public String getHostGroupName() {
+		return this.hostGroupName;
+	}
+
+	public void setHostGroupName(String hostGroupName) {
+		this.hostGroupName = hostGroupName;
+		if(hostGroupName != null){
+			putQueryParameter("HostGroupName", hostGroupName);
+		}
+	}
+
 	public String getScalingGroupBizId() {
 		return this.scalingGroupBizId;
 	}
@@ -120,6 +137,17 @@ public class ListScalingActivityV2Request extends RpcAcsRequest<ListScalingActiv
 		this.scalingGroupBizId = scalingGroupBizId;
 		if(scalingGroupBizId != null){
 			putQueryParameter("ScalingGroupBizId", scalingGroupBizId);
+		}
+	}
+
+	public String getScalingRuleName() {
+		return this.scalingRuleName;
+	}
+
+	public void setScalingRuleName(String scalingRuleName) {
+		this.scalingRuleName = scalingRuleName;
+		if(scalingRuleName != null){
+			putQueryParameter("ScalingRuleName", scalingRuleName);
 		}
 	}
 
@@ -186,6 +214,17 @@ public class ListScalingActivityV2Request extends RpcAcsRequest<ListScalingActiv
 		this.hostGroupId = hostGroupId;
 		if(hostGroupId != null){
 			putQueryParameter("HostGroupId", hostGroupId);
+		}
+	}
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+		if(status != null){
+			putQueryParameter("Status", status);
 		}
 	}
 

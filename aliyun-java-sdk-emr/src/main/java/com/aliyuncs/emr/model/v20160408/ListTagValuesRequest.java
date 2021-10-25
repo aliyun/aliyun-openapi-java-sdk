@@ -37,7 +37,7 @@ public class ListTagValuesRequest extends RpcAcsRequest<ListTagValuesResponse> {
 
 	private String key;
 	public ListTagValuesRequest() {
-		super("Emr", "2016-04-08", "ListTagValues");
+		super("Emr", "2016-04-08", "ListTagValues", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -29,7 +29,7 @@ public class DeleteFlowRequest extends RpcAcsRequest<DeleteFlowResponse> {
 
 	private String projectId;
 	public DeleteFlowRequest() {
-		super("Emr", "2016-04-08", "DeleteFlow");
+		super("Emr", "2016-04-08", "DeleteFlow", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

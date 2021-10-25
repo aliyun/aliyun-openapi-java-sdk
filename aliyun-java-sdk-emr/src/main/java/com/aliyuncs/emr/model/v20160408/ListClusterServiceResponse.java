@@ -101,6 +101,8 @@ public class ListClusterServiceResponse extends AcsResponse {
 
 		private Integer needRestartNum;
 
+		private String state;
+
 		private List<ServiceAction> serviceActionList;
 
 		public String getServiceName() {
@@ -197,6 +199,14 @@ public class ListClusterServiceResponse extends AcsResponse {
 
 		public void setNeedRestartNum(Integer needRestartNum) {
 			this.needRestartNum = needRestartNum;
+		}
+
+		public String getState() {
+			return this.state;
+		}
+
+		public void setState(String state) {
+			this.state = state;
 		}
 
 		public List<ServiceAction> getServiceActionList() {

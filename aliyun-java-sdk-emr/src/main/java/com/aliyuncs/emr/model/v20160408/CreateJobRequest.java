@@ -41,7 +41,7 @@ public class CreateJobRequest extends RpcAcsRequest<CreateJobResponse> {
 
 	private Integer maxRetry;
 	public CreateJobRequest() {
-		super("Emr", "2016-04-08", "CreateJob");
+		super("Emr", "2016-04-08", "CreateJob", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

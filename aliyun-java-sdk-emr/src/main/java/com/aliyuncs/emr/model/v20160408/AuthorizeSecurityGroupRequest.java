@@ -33,7 +33,7 @@ public class AuthorizeSecurityGroupRequest extends RpcAcsRequest<AuthorizeSecuri
 
 	private String bizContent;
 	public AuthorizeSecurityGroupRequest() {
-		super("Emr", "2016-04-08", "AuthorizeSecurityGroup");
+		super("Emr", "2016-04-08", "AuthorizeSecurityGroup", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

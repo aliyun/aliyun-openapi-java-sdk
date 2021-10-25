@@ -31,7 +31,7 @@ public class DeleteResourceQueueRequest extends RpcAcsRequest<DeleteResourceQueu
 
 	private String resourceQueueId;
 	public DeleteResourceQueueRequest() {
-		super("Emr", "2016-04-08", "DeleteResourceQueue");
+		super("Emr", "2016-04-08", "DeleteResourceQueue", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

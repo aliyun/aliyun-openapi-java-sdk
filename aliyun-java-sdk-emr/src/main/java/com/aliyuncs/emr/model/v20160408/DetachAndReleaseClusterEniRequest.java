@@ -31,7 +31,7 @@ public class DetachAndReleaseClusterEniRequest extends RpcAcsRequest<DetachAndRe
 
 	private String vswitchId;
 	public DetachAndReleaseClusterEniRequest() {
-		super("Emr", "2016-04-08", "DetachAndReleaseClusterEni");
+		super("Emr", "2016-04-08", "DetachAndReleaseClusterEni", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -31,7 +31,7 @@ public class ModifyResourcePoolSchedulerTypeRequest extends RpcAcsRequest<Modify
 
 	private String schedulerType;
 	public ModifyResourcePoolSchedulerTypeRequest() {
-		super("Emr", "2016-04-08", "ModifyResourcePoolSchedulerType");
+		super("Emr", "2016-04-08", "ModifyResourcePoolSchedulerType", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

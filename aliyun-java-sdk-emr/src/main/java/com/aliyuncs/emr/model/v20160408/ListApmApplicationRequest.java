@@ -59,7 +59,7 @@ public class ListApmApplicationRequest extends RpcAcsRequest<ListApmApplicationR
 
 	private String queue;
 	public ListApmApplicationRequest() {
-		super("Emr", "2016-04-08", "ListApmApplication");
+		super("Emr", "2016-04-08", "ListApmApplication", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

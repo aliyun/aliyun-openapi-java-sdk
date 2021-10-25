@@ -33,7 +33,7 @@ public class DeleteUserRequest extends RpcAcsRequest<DeleteUserResponse> {
 
 	private String userId;
 	public DeleteUserRequest() {
-		super("Emr", "2016-04-08", "DeleteUser");
+		super("Emr", "2016-04-08", "DeleteUser", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

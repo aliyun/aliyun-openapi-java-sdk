@@ -33,7 +33,7 @@ public class ListFlowNodeInstanceContainerStatusRequest extends RpcAcsRequest<Li
 
 	private String projectId;
 	public ListFlowNodeInstanceContainerStatusRequest() {
-		super("Emr", "2016-04-08", "ListFlowNodeInstanceContainerStatus");
+		super("Emr", "2016-04-08", "ListFlowNodeInstanceContainerStatus", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

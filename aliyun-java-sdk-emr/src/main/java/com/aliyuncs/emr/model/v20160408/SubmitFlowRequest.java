@@ -31,7 +31,7 @@ public class SubmitFlowRequest extends RpcAcsRequest<SubmitFlowResponse> {
 
 	private String flowId;
 	public SubmitFlowRequest() {
-		super("Emr", "2016-04-08", "SubmitFlow");
+		super("Emr", "2016-04-08", "SubmitFlow", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -27,11 +27,13 @@ public class ListClusterServiceComponentHealthInfoRequest extends RpcAcsRequest<
 
 	private Long resourceOwnerId;
 
+	private String componentName;
+
 	private String clusterId;
 
 	private String serviceName;
 	public ListClusterServiceComponentHealthInfoRequest() {
-		super("Emr", "2016-04-08", "ListClusterServiceComponentHealthInfo");
+		super("Emr", "2016-04-08", "ListClusterServiceComponentHealthInfo", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -47,6 +49,17 @@ public class ListClusterServiceComponentHealthInfoRequest extends RpcAcsRequest<
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getComponentName() {
+		return this.componentName;
+	}
+
+	public void setComponentName(String componentName) {
+		this.componentName = componentName;
+		if(componentName != null){
+			putQueryParameter("ComponentName", componentName);
 		}
 	}
 

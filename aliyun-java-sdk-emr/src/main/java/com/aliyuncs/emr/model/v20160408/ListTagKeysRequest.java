@@ -37,7 +37,7 @@ public class ListTagKeysRequest extends RpcAcsRequest<ListTagKeysResponse> {
 
 	private String category;
 	public ListTagKeysRequest() {
-		super("Emr", "2016-04-08", "ListTagKeys");
+		super("Emr", "2016-04-08", "ListTagKeys", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

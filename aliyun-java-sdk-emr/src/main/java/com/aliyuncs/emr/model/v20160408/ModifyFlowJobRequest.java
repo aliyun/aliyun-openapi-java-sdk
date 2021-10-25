@@ -64,7 +64,7 @@ public class ModifyFlowJobRequest extends RpcAcsRequest<ModifyFlowJobResponse> {
 
 	private String name;
 	public ModifyFlowJobRequest() {
-		super("Emr", "2016-04-08", "ModifyFlowJob");
+		super("Emr", "2016-04-08", "ModifyFlowJob", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

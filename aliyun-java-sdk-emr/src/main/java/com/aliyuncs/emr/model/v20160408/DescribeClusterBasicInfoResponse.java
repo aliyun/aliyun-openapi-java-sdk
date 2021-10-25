@@ -145,9 +145,15 @@ public class DescribeClusterBasicInfoResponse extends AcsResponse {
 
 		private Boolean resizeDiskEnable;
 
+		private Boolean resizeClusterEnable;
+
 		private String metaStoreType;
 
 		private String k8sClusterId;
+
+		private String operationId;
+
+		private String clickhouseConf;
 
 		private List<GatewayClusterInfo> gatewayClusterInfoList;
 
@@ -555,6 +561,14 @@ public class DescribeClusterBasicInfoResponse extends AcsResponse {
 			this.resizeDiskEnable = resizeDiskEnable;
 		}
 
+		public Boolean getResizeClusterEnable() {
+			return this.resizeClusterEnable;
+		}
+
+		public void setResizeClusterEnable(Boolean resizeClusterEnable) {
+			this.resizeClusterEnable = resizeClusterEnable;
+		}
+
 		public String getMetaStoreType() {
 			return this.metaStoreType;
 		}
@@ -569,6 +583,22 @@ public class DescribeClusterBasicInfoResponse extends AcsResponse {
 
 		public void setK8sClusterId(String k8sClusterId) {
 			this.k8sClusterId = k8sClusterId;
+		}
+
+		public String getOperationId() {
+			return this.operationId;
+		}
+
+		public void setOperationId(String operationId) {
+			this.operationId = operationId;
+		}
+
+		public String getClickhouseConf() {
+			return this.clickhouseConf;
+		}
+
+		public void setClickhouseConf(String clickhouseConf) {
+			this.clickhouseConf = clickhouseConf;
 		}
 
 		public List<GatewayClusterInfo> getGatewayClusterInfoList() {
@@ -701,6 +731,8 @@ public class DescribeClusterBasicInfoResponse extends AcsResponse {
 
 			private String status;
 
+			private String clusterType;
+
 			public String getClusterId() {
 				return this.clusterId;
 			}
@@ -723,6 +755,14 @@ public class DescribeClusterBasicInfoResponse extends AcsResponse {
 
 			public void setStatus(String status) {
 				this.status = status;
+			}
+
+			public String getClusterType() {
+				return this.clusterType;
+			}
+
+			public void setClusterType(String clusterType) {
+				this.clusterType = clusterType;
 			}
 		}
 

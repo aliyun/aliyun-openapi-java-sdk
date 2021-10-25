@@ -33,11 +33,13 @@ public class ListClusterOperationRequest extends RpcAcsRequest<ListClusterOperat
 
 	private Integer pageSize;
 
+	private String operationId;
+
 	private String serviceName;
 
 	private String status;
 	public ListClusterOperationRequest() {
-		super("Emr", "2016-04-08", "ListClusterOperation");
+		super("Emr", "2016-04-08", "ListClusterOperation", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -86,6 +88,17 @@ public class ListClusterOperationRequest extends RpcAcsRequest<ListClusterOperat
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getOperationId() {
+		return this.operationId;
+	}
+
+	public void setOperationId(String operationId) {
+		this.operationId = operationId;
+		if(operationId != null){
+			putQueryParameter("OperationId", operationId);
 		}
 	}
 

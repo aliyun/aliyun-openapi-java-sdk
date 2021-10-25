@@ -29,7 +29,7 @@ public class DeleteFlowProjectUserRequest extends RpcAcsRequest<DeleteFlowProjec
 
 	private String userName;
 	public DeleteFlowProjectUserRequest() {
-		super("Emr", "2016-04-08", "DeleteFlowProjectUser");
+		super("Emr", "2016-04-08", "DeleteFlowProjectUser", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

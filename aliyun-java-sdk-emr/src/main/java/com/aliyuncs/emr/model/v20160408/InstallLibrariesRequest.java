@@ -32,7 +32,7 @@ public class InstallLibrariesRequest extends RpcAcsRequest<InstallLibrariesRespo
 
 	private List<String> clusterBizIdLists;
 	public InstallLibrariesRequest() {
-		super("Emr", "2016-04-08", "InstallLibraries");
+		super("Emr", "2016-04-08", "InstallLibraries", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

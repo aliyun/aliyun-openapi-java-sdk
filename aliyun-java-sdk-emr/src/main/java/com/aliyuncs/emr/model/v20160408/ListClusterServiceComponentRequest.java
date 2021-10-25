@@ -41,7 +41,7 @@ public class ListClusterServiceComponentRequest extends RpcAcsRequest<ListCluste
 
 	private String serviceName;
 	public ListClusterServiceComponentRequest() {
-		super("Emr", "2016-04-08", "ListClusterServiceComponent");
+		super("Emr", "2016-04-08", "ListClusterServiceComponent", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

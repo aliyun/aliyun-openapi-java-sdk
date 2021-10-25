@@ -29,7 +29,7 @@ public class CancelOrderRequest extends RpcAcsRequest<CancelOrderResponse> {
 
 	private String clusterId;
 	public CancelOrderRequest() {
-		super("Emr", "2016-04-08", "CancelOrder");
+		super("Emr", "2016-04-08", "CancelOrder", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

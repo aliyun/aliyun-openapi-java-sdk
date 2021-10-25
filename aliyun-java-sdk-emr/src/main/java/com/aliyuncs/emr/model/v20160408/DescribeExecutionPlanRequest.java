@@ -29,7 +29,7 @@ public class DescribeExecutionPlanRequest extends RpcAcsRequest<DescribeExecutio
 
 	private String id;
 	public DescribeExecutionPlanRequest() {
-		super("Emr", "2016-04-08", "DescribeExecutionPlan");
+		super("Emr", "2016-04-08", "DescribeExecutionPlan", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

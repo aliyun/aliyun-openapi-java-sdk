@@ -39,7 +39,7 @@ public class ListClusterOperationHostTaskRequest extends RpcAcsRequest<ListClust
 
 	private String status;
 	public ListClusterOperationHostTaskRequest() {
-		super("Emr", "2016-04-08", "ListClusterOperationHostTask");
+		super("Emr", "2016-04-08", "ListClusterOperationHostTask", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

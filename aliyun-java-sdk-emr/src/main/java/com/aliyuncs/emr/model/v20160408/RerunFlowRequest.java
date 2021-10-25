@@ -31,7 +31,7 @@ public class RerunFlowRequest extends RpcAcsRequest<RerunFlowResponse> {
 
 	private String projectId;
 	public RerunFlowRequest() {
-		super("Emr", "2016-04-08", "RerunFlow");
+		super("Emr", "2016-04-08", "RerunFlow", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

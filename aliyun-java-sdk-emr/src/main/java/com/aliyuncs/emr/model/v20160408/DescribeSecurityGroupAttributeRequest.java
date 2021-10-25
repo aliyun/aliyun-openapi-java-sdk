@@ -31,7 +31,7 @@ public class DescribeSecurityGroupAttributeRequest extends RpcAcsRequest<Describ
 
 	private String resourceGroupId;
 	public DescribeSecurityGroupAttributeRequest() {
-		super("Emr", "2016-04-08", "DescribeSecurityGroupAttribute");
+		super("Emr", "2016-04-08", "DescribeSecurityGroupAttribute", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

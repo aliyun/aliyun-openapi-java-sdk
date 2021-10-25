@@ -39,7 +39,7 @@ public class DescribeFlowNodeInstanceContainerLogRequest extends RpcAcsRequest<D
 
 	private String projectId;
 	public DescribeFlowNodeInstanceContainerLogRequest() {
-		super("Emr", "2016-04-08", "DescribeFlowNodeInstanceContainerLog");
+		super("Emr", "2016-04-08", "DescribeFlowNodeInstanceContainerLog", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

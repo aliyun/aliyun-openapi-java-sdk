@@ -29,7 +29,7 @@ public class ResumeExecutionPlanSchedulerRequest extends RpcAcsRequest<ResumeExe
 
 	private String id;
 	public ResumeExecutionPlanSchedulerRequest() {
-		super("Emr", "2016-04-08", "ResumeExecutionPlanScheduler");
+		super("Emr", "2016-04-08", "ResumeExecutionPlanScheduler", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

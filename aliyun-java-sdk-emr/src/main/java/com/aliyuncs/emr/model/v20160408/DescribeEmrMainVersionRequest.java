@@ -29,7 +29,7 @@ public class DescribeEmrMainVersionRequest extends RpcAcsRequest<DescribeEmrMain
 
 	private String emrVersion;
 	public DescribeEmrMainVersionRequest() {
-		super("Emr", "2016-04-08", "DescribeEmrMainVersion");
+		super("Emr", "2016-04-08", "DescribeEmrMainVersion", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

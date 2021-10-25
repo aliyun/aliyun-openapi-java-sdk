@@ -29,7 +29,7 @@ public class SuspendExecutionPlanSchedulerRequest extends RpcAcsRequest<SuspendE
 
 	private String id;
 	public SuspendExecutionPlanSchedulerRequest() {
-		super("Emr", "2016-04-08", "SuspendExecutionPlanScheduler");
+		super("Emr", "2016-04-08", "SuspendExecutionPlanScheduler", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

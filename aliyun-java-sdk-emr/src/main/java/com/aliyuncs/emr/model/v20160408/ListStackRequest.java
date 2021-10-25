@@ -35,7 +35,7 @@ public class ListStackRequest extends RpcAcsRequest<ListStackResponse> {
 
 	private String stackVersion;
 	public ListStackRequest() {
-		super("Emr", "2016-04-08", "ListStack");
+		super("Emr", "2016-04-08", "ListStack", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

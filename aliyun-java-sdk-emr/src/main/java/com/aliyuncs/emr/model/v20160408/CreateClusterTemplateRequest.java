@@ -76,6 +76,8 @@ public class CreateClusterTemplateRequest extends RpcAcsRequest<CreateClusterTem
 
 	private Boolean initCustomHiveMetaDb;
 
+	private String clientToken;
+
 	private Boolean ioOptimized;
 
 	private String securityGroupId;
@@ -98,7 +100,7 @@ public class CreateClusterTemplateRequest extends RpcAcsRequest<CreateClusterTem
 
 	private Boolean highAvailabilityEnable;
 	public CreateClusterTemplateRequest() {
-		super("Emr", "2016-04-08", "CreateClusterTemplate");
+		super("Emr", "2016-04-08", "CreateClusterTemplate", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -225,8 +227,11 @@ public class CreateClusterTemplateRequest extends RpcAcsRequest<CreateClusterTem
 		if (bootstrapActions != null) {
 			for (int depth1 = 0; depth1 < bootstrapActions.size(); depth1++) {
 				putQueryParameter("BootstrapAction." + (depth1 + 1) + ".Path" , bootstrapActions.get(depth1).getPath());
+				putQueryParameter("BootstrapAction." + (depth1 + 1) + ".ExecutionTarget" , bootstrapActions.get(depth1).getExecutionTarget());
+				putQueryParameter("BootstrapAction." + (depth1 + 1) + ".ExecutionMoment" , bootstrapActions.get(depth1).getExecutionMoment());
 				putQueryParameter("BootstrapAction." + (depth1 + 1) + ".Arg" , bootstrapActions.get(depth1).getArg());
 				putQueryParameter("BootstrapAction." + (depth1 + 1) + ".Name" , bootstrapActions.get(depth1).getName());
+				putQueryParameter("BootstrapAction." + (depth1 + 1) + ".ExecutionFailStrategy" , bootstrapActions.get(depth1).getExecutionFailStrategy());
 			}
 		}	
 	}
@@ -390,6 +395,17 @@ public class CreateClusterTemplateRequest extends RpcAcsRequest<CreateClusterTem
 		}
 	}
 
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
 	public Boolean getIoOptimized() {
 		return this.ioOptimized;
 	}
@@ -488,6 +504,7 @@ public class CreateClusterTemplateRequest extends RpcAcsRequest<CreateClusterTem
 			for (int depth1 = 0; depth1 < hostGroups.size(); depth1++) {
 				putQueryParameter("HostGroup." + (depth1 + 1) + ".Period" , hostGroups.get(depth1).getPeriod());
 				putQueryParameter("HostGroup." + (depth1 + 1) + ".SysDiskCapacity" , hostGroups.get(depth1).getSysDiskCapacity());
+				putQueryParameter("HostGroup." + (depth1 + 1) + ".PrivatePoolOptionsId" , hostGroups.get(depth1).getPrivatePoolOptionsId());
 				putQueryParameter("HostGroup." + (depth1 + 1) + ".DiskCapacity" , hostGroups.get(depth1).getDiskCapacity());
 				putQueryParameter("HostGroup." + (depth1 + 1) + ".SysDiskType" , hostGroups.get(depth1).getSysDiskType());
 				putQueryParameter("HostGroup." + (depth1 + 1) + ".ClusterId" , hostGroups.get(depth1).getClusterId());
@@ -504,6 +521,7 @@ public class CreateClusterTemplateRequest extends RpcAcsRequest<CreateClusterTem
 				putQueryParameter("HostGroup." + (depth1 + 1) + ".MultiInstanceTypes" , hostGroups.get(depth1).getMultiInstanceTypes());
 				putQueryParameter("HostGroup." + (depth1 + 1) + ".CreateType" , hostGroups.get(depth1).getCreateType());
 				putQueryParameter("HostGroup." + (depth1 + 1) + ".HostGroupType" , hostGroups.get(depth1).getHostGroupType());
+				putQueryParameter("HostGroup." + (depth1 + 1) + ".PrivatePoolOptionsMatchCriteria" , hostGroups.get(depth1).getPrivatePoolOptionsMatchCriteria());
 			}
 		}	
 	}
@@ -541,9 +559,15 @@ public class CreateClusterTemplateRequest extends RpcAcsRequest<CreateClusterTem
 
 		private String path;
 
+		private String executionTarget;
+
+		private String executionMoment;
+
 		private String arg;
 
 		private String name;
+
+		private String executionFailStrategy;
 
 		public String getPath() {
 			return this.path;
@@ -551,6 +575,22 @@ public class CreateClusterTemplateRequest extends RpcAcsRequest<CreateClusterTem
 
 		public void setPath(String path) {
 			this.path = path;
+		}
+
+		public String getExecutionTarget() {
+			return this.executionTarget;
+		}
+
+		public void setExecutionTarget(String executionTarget) {
+			this.executionTarget = executionTarget;
+		}
+
+		public String getExecutionMoment() {
+			return this.executionMoment;
+		}
+
+		public void setExecutionMoment(String executionMoment) {
+			this.executionMoment = executionMoment;
 		}
 
 		public String getArg() {
@@ -567,6 +607,14 @@ public class CreateClusterTemplateRequest extends RpcAcsRequest<CreateClusterTem
 
 		public void setName(String name) {
 			this.name = name;
+		}
+
+		public String getExecutionFailStrategy() {
+			return this.executionFailStrategy;
+		}
+
+		public void setExecutionFailStrategy(String executionFailStrategy) {
+			this.executionFailStrategy = executionFailStrategy;
 		}
 	}
 
@@ -598,6 +646,8 @@ public class CreateClusterTemplateRequest extends RpcAcsRequest<CreateClusterTem
 		private Integer period;
 
 		private Integer sysDiskCapacity;
+
+		private String privatePoolOptionsId;
 
 		private Integer diskCapacity;
 
@@ -631,6 +681,8 @@ public class CreateClusterTemplateRequest extends RpcAcsRequest<CreateClusterTem
 
 		private String hostGroupType;
 
+		private String privatePoolOptionsMatchCriteria;
+
 		public Integer getPeriod() {
 			return this.period;
 		}
@@ -645,6 +697,14 @@ public class CreateClusterTemplateRequest extends RpcAcsRequest<CreateClusterTem
 
 		public void setSysDiskCapacity(Integer sysDiskCapacity) {
 			this.sysDiskCapacity = sysDiskCapacity;
+		}
+
+		public String getPrivatePoolOptionsId() {
+			return this.privatePoolOptionsId;
+		}
+
+		public void setPrivatePoolOptionsId(String privatePoolOptionsId) {
+			this.privatePoolOptionsId = privatePoolOptionsId;
 		}
 
 		public Integer getDiskCapacity() {
@@ -773,6 +833,14 @@ public class CreateClusterTemplateRequest extends RpcAcsRequest<CreateClusterTem
 
 		public void setHostGroupType(String hostGroupType) {
 			this.hostGroupType = hostGroupType;
+		}
+
+		public String getPrivatePoolOptionsMatchCriteria() {
+			return this.privatePoolOptionsMatchCriteria;
+		}
+
+		public void setPrivatePoolOptionsMatchCriteria(String privatePoolOptionsMatchCriteria) {
+			this.privatePoolOptionsMatchCriteria = privatePoolOptionsMatchCriteria;
 		}
 	}
 

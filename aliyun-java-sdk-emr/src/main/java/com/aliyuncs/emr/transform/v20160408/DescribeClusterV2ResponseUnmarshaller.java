@@ -98,6 +98,7 @@ public class DescribeClusterV2ResponseUnmarshaller {
 		relateClusterInfo.setClusterId(_ctx.stringValue("DescribeClusterV2Response.ClusterInfo.RelateClusterInfo.ClusterId"));
 		relateClusterInfo.setClusterName(_ctx.stringValue("DescribeClusterV2Response.ClusterInfo.RelateClusterInfo.ClusterName"));
 		relateClusterInfo.setStatus(_ctx.stringValue("DescribeClusterV2Response.ClusterInfo.RelateClusterInfo.Status"));
+		relateClusterInfo.setClusterType(_ctx.stringValue("DescribeClusterV2Response.ClusterInfo.RelateClusterInfo.ClusterType"));
 		clusterInfo.setRelateClusterInfo(relateClusterInfo);
 
 		HostPoolInfo hostPoolInfo = new HostPoolInfo();

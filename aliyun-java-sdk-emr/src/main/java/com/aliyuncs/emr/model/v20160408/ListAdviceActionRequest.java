@@ -37,7 +37,7 @@ public class ListAdviceActionRequest extends RpcAcsRequest<ListAdviceActionRespo
 
 	private String serviceName;
 	public ListAdviceActionRequest() {
-		super("Emr", "2016-04-08", "ListAdviceAction");
+		super("Emr", "2016-04-08", "ListAdviceAction", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

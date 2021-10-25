@@ -39,7 +39,7 @@ public class ModifyClusterSecurityGroupRuleRequest extends RpcAcsRequest<ModifyC
 
 	private String modifyType;
 	public ModifyClusterSecurityGroupRuleRequest() {
-		super("Emr", "2016-04-08", "ModifyClusterSecurityGroupRule");
+		super("Emr", "2016-04-08", "ModifyClusterSecurityGroupRule", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

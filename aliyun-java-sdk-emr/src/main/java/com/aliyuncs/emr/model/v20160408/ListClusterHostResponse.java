@@ -289,6 +289,12 @@ public class ListClusterHostResponse extends AcsResponse {
 
 			private Integer diskSize;
 
+			private String blockMountPoint;
+
+			private String diskMountPoint;
+
+			private String event;
+
 			public String getDiskId() {
 				return this.diskId;
 			}
@@ -327,6 +333,30 @@ public class ListClusterHostResponse extends AcsResponse {
 
 			public void setDiskSize(Integer diskSize) {
 				this.diskSize = diskSize;
+			}
+
+			public String getBlockMountPoint() {
+				return this.blockMountPoint;
+			}
+
+			public void setBlockMountPoint(String blockMountPoint) {
+				this.blockMountPoint = blockMountPoint;
+			}
+
+			public String getDiskMountPoint() {
+				return this.diskMountPoint;
+			}
+
+			public void setDiskMountPoint(String diskMountPoint) {
+				this.diskMountPoint = diskMountPoint;
+			}
+
+			public String getEvent() {
+				return this.event;
+			}
+
+			public void setEvent(String event) {
+				this.event = event;
 			}
 		}
 	}

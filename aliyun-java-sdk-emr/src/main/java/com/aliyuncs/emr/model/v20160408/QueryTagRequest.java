@@ -33,7 +33,7 @@ public class QueryTagRequest extends RpcAcsRequest<QueryTagResponse> {
 
 	private String entityType;
 	public QueryTagRequest() {
-		super("Emr", "2016-04-08", "QueryTag");
+		super("Emr", "2016-04-08", "QueryTag", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

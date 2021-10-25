@@ -35,7 +35,7 @@ public class DeleteTagRequest extends RpcAcsRequest<DeleteTagResponse> {
 
 	private String category;
 	public DeleteTagRequest() {
-		super("Emr", "2016-04-08", "DeleteTag");
+		super("Emr", "2016-04-08", "DeleteTag", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

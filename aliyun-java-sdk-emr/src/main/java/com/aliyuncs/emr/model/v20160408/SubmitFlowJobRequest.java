@@ -35,9 +35,11 @@ public class SubmitFlowJobRequest extends RpcAcsRequest<SubmitFlowJobResponse> {
 
 	private String namespace;
 
+	private String jobInstanceId;
+
 	private String projectId;
 	public SubmitFlowJobRequest() {
-		super("Emr", "2016-04-08", "SubmitFlowJob");
+		super("Emr", "2016-04-08", "SubmitFlowJob", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -97,6 +99,17 @@ public class SubmitFlowJobRequest extends RpcAcsRequest<SubmitFlowJobResponse> {
 		this.namespace = namespace;
 		if(namespace != null){
 			putQueryParameter("Namespace", namespace);
+		}
+	}
+
+	public String getJobInstanceId() {
+		return this.jobInstanceId;
+	}
+
+	public void setJobInstanceId(String jobInstanceId) {
+		this.jobInstanceId = jobInstanceId;
+		if(jobInstanceId != null){
+			putQueryParameter("JobInstanceId", jobInstanceId);
 		}
 	}
 

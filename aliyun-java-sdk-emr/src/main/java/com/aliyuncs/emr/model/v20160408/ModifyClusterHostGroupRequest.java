@@ -39,7 +39,7 @@ public class ModifyClusterHostGroupRequest extends RpcAcsRequest<ModifyClusterHo
 
 	private String comment;
 	public ModifyClusterHostGroupRequest() {
-		super("Emr", "2016-04-08", "ModifyClusterHostGroup");
+		super("Emr", "2016-04-08", "ModifyClusterHostGroup", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

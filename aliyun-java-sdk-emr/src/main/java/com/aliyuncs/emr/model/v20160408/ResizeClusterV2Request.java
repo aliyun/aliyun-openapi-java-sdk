@@ -36,11 +36,13 @@ public class ResizeClusterV2Request extends RpcAcsRequest<ResizeClusterV2Respons
 
 	private List<HostComponentInfo> hostComponentInfos;
 
+	private String clickhouseConf;
+
 	private List<HostGroup> hostGroups;
 
 	private List<PromotionInfo> promotionInfos;
 	public ResizeClusterV2Request() {
-		super("Emr", "2016-04-08", "ResizeClusterV2");
+		super("Emr", "2016-04-08", "ResizeClusterV2", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -111,6 +113,17 @@ public class ResizeClusterV2Request extends RpcAcsRequest<ResizeClusterV2Respons
 		}	
 	}
 
+	public String getClickhouseConf() {
+		return this.clickhouseConf;
+	}
+
+	public void setClickhouseConf(String clickhouseConf) {
+		this.clickhouseConf = clickhouseConf;
+		if(clickhouseConf != null){
+			putQueryParameter("ClickhouseConf", clickhouseConf);
+		}
+	}
+
 	public List<HostGroup> getHostGroups() {
 		return this.hostGroups;
 	}
@@ -122,6 +135,7 @@ public class ResizeClusterV2Request extends RpcAcsRequest<ResizeClusterV2Respons
 				putQueryParameter("HostGroup." + (depth1 + 1) + ".Period" , hostGroups.get(depth1).getPeriod());
 				putQueryParameter("HostGroup." + (depth1 + 1) + ".SysDiskCapacity" , hostGroups.get(depth1).getSysDiskCapacity());
 				putQueryParameter("HostGroup." + (depth1 + 1) + ".HostKeyPairName" , hostGroups.get(depth1).getHostKeyPairName());
+				putQueryParameter("HostGroup." + (depth1 + 1) + ".PrivatePoolOptionsId" , hostGroups.get(depth1).getPrivatePoolOptionsId());
 				putQueryParameter("HostGroup." + (depth1 + 1) + ".DiskCapacity" , hostGroups.get(depth1).getDiskCapacity());
 				putQueryParameter("HostGroup." + (depth1 + 1) + ".SysDiskType" , hostGroups.get(depth1).getSysDiskType());
 				putQueryParameter("HostGroup." + (depth1 + 1) + ".ClusterId" , hostGroups.get(depth1).getClusterId());
@@ -138,6 +152,7 @@ public class ResizeClusterV2Request extends RpcAcsRequest<ResizeClusterV2Respons
 				putQueryParameter("HostGroup." + (depth1 + 1) + ".CreateType" , hostGroups.get(depth1).getCreateType());
 				putQueryParameter("HostGroup." + (depth1 + 1) + ".HostPassword" , hostGroups.get(depth1).getHostPassword());
 				putQueryParameter("HostGroup." + (depth1 + 1) + ".HostGroupType" , hostGroups.get(depth1).getHostGroupType());
+				putQueryParameter("HostGroup." + (depth1 + 1) + ".PrivatePoolOptionsMatchCriteria" , hostGroups.get(depth1).getPrivatePoolOptionsMatchCriteria());
 			}
 		}	
 	}
@@ -198,6 +213,8 @@ public class ResizeClusterV2Request extends RpcAcsRequest<ResizeClusterV2Respons
 
 		private String hostKeyPairName;
 
+		private String privatePoolOptionsId;
+
 		private Integer diskCapacity;
 
 		private String sysDiskType;
@@ -230,6 +247,8 @@ public class ResizeClusterV2Request extends RpcAcsRequest<ResizeClusterV2Respons
 
 		private String hostGroupType;
 
+		private String privatePoolOptionsMatchCriteria;
+
 		public Integer getPeriod() {
 			return this.period;
 		}
@@ -252,6 +271,14 @@ public class ResizeClusterV2Request extends RpcAcsRequest<ResizeClusterV2Respons
 
 		public void setHostKeyPairName(String hostKeyPairName) {
 			this.hostKeyPairName = hostKeyPairName;
+		}
+
+		public String getPrivatePoolOptionsId() {
+			return this.privatePoolOptionsId;
+		}
+
+		public void setPrivatePoolOptionsId(String privatePoolOptionsId) {
+			this.privatePoolOptionsId = privatePoolOptionsId;
 		}
 
 		public Integer getDiskCapacity() {
@@ -380,6 +407,14 @@ public class ResizeClusterV2Request extends RpcAcsRequest<ResizeClusterV2Respons
 
 		public void setHostGroupType(String hostGroupType) {
 			this.hostGroupType = hostGroupType;
+		}
+
+		public String getPrivatePoolOptionsMatchCriteria() {
+			return this.privatePoolOptionsMatchCriteria;
+		}
+
+		public void setPrivatePoolOptionsMatchCriteria(String privatePoolOptionsMatchCriteria) {
+			this.privatePoolOptionsMatchCriteria = privatePoolOptionsMatchCriteria;
 		}
 	}
 

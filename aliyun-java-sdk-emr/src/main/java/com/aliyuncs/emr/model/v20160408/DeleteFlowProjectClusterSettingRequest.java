@@ -29,7 +29,7 @@ public class DeleteFlowProjectClusterSettingRequest extends RpcAcsRequest<Delete
 
 	private String projectId;
 	public DeleteFlowProjectClusterSettingRequest() {
-		super("Emr", "2016-04-08", "DeleteFlowProjectClusterSetting");
+		super("Emr", "2016-04-08", "DeleteFlowProjectClusterSetting", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -35,7 +35,7 @@ public class ListJobExecutionInstancesRequest extends RpcAcsRequest<ListJobExecu
 
 	private Integer pageSize;
 	public ListJobExecutionInstancesRequest() {
-		super("Emr", "2016-04-08", "ListJobExecutionInstances");
+		super("Emr", "2016-04-08", "ListJobExecutionInstances", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

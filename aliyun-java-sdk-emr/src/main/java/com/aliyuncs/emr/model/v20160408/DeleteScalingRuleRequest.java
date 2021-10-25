@@ -33,7 +33,7 @@ public class DeleteScalingRuleRequest extends RpcAcsRequest<DeleteScalingRuleRes
 
 	private String hostGroupId;
 	public DeleteScalingRuleRequest() {
-		super("Emr", "2016-04-08", "DeleteScalingRule");
+		super("Emr", "2016-04-08", "DeleteScalingRule", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

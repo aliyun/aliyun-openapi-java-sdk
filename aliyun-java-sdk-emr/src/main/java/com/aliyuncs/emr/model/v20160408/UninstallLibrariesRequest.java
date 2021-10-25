@@ -32,7 +32,7 @@ public class UninstallLibrariesRequest extends RpcAcsRequest<UninstallLibrariesR
 
 	private List<String> clusterBizIdLists;
 	public UninstallLibrariesRequest() {
-		super("Emr", "2016-04-08", "UninstallLibraries");
+		super("Emr", "2016-04-08", "UninstallLibraries", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

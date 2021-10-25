@@ -43,7 +43,7 @@ public class ListLibrariesRequest extends RpcAcsRequest<ListLibrariesResponse> {
 
 	private String orderField;
 	public ListLibrariesRequest() {
-		super("Emr", "2016-04-08", "ListLibraries");
+		super("Emr", "2016-04-08", "ListLibraries", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

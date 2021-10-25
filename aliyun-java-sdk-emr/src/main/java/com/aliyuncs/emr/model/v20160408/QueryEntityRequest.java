@@ -35,7 +35,7 @@ public class QueryEntityRequest extends RpcAcsRequest<QueryEntityResponse> {
 
 	private String category;
 	public QueryEntityRequest() {
-		super("Emr", "2016-04-08", "QueryEntity");
+		super("Emr", "2016-04-08", "QueryEntity", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

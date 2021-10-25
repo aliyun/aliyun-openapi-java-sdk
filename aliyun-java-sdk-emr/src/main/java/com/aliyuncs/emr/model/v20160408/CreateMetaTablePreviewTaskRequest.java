@@ -39,7 +39,7 @@ public class CreateMetaTablePreviewTaskRequest extends RpcAcsRequest<CreateMetaT
 
 	private String user;
 	public CreateMetaTablePreviewTaskRequest() {
-		super("Emr", "2016-04-08", "CreateMetaTablePreviewTask");
+		super("Emr", "2016-04-08", "CreateMetaTablePreviewTask", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

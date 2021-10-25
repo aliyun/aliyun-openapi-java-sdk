@@ -37,7 +37,7 @@ public class UpdateDataSourceRequest extends RpcAcsRequest<UpdateDataSourceRespo
 
 	private String id;
 	public UpdateDataSourceRequest() {
-		super("Emr", "2016-04-08", "UpdateDataSource");
+		super("Emr", "2016-04-08", "UpdateDataSource", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

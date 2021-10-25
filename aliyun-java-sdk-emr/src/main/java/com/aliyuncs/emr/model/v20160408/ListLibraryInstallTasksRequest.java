@@ -45,7 +45,7 @@ public class ListLibraryInstallTasksRequest extends RpcAcsRequest<ListLibraryIns
 
 	private String libraryBizId;
 	public ListLibraryInstallTasksRequest() {
-		super("Emr", "2016-04-08", "ListLibraryInstallTasks");
+		super("Emr", "2016-04-08", "ListLibraryInstallTasks", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

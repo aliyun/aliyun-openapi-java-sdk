@@ -42,7 +42,7 @@ public class CreateResourceQueueRequest extends RpcAcsRequest<CreateResourceQueu
 
 	private List<Config> configs;
 	public CreateResourceQueueRequest() {
-		super("Emr", "2016-04-08", "CreateResourceQueue");
+		super("Emr", "2016-04-08", "CreateResourceQueue", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

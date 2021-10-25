@@ -37,7 +37,7 @@ public class GetQueueSubmissionStatisticInfoRequest extends RpcAcsRequest<GetQue
 
 	private String applicationType;
 	public GetQueueSubmissionStatisticInfoRequest() {
-		super("Emr", "2016-04-08", "GetQueueSubmissionStatisticInfo");
+		super("Emr", "2016-04-08", "GetQueueSubmissionStatisticInfo", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

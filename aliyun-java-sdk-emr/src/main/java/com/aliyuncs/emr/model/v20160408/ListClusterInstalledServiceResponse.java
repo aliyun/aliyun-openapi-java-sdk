@@ -67,6 +67,8 @@ public class ListClusterInstalledServiceResponse extends AcsResponse {
 
 		private String comment;
 
+		private String state;
+
 		private List<ServiceAction> serviceActionList;
 
 		public String getServiceName() {
@@ -147,6 +149,14 @@ public class ListClusterInstalledServiceResponse extends AcsResponse {
 
 		public void setComment(String comment) {
 			this.comment = comment;
+		}
+
+		public String getState() {
+			return this.state;
+		}
+
+		public void setState(String state) {
+			this.state = state;
 		}
 
 		public List<ServiceAction> getServiceActionList() {

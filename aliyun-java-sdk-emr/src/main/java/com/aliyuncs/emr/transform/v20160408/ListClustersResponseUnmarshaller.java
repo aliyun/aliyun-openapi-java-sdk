@@ -53,6 +53,7 @@ public class ListClustersResponseUnmarshaller {
 			clusterInfo.setDepositType(_ctx.stringValue("ListClustersResponse.Clusters["+ i +"].DepositType"));
 			clusterInfo.setMetaStoreType(_ctx.stringValue("ListClustersResponse.Clusters["+ i +"].MetaStoreType"));
 			clusterInfo.setK8sClusterId(_ctx.stringValue("ListClustersResponse.Clusters["+ i +"].K8sClusterId"));
+			clusterInfo.setOperationId(_ctx.longValue("ListClustersResponse.Clusters["+ i +"].OperationId"));
 
 			OrderTaskInfo orderTaskInfo = new OrderTaskInfo();
 			orderTaskInfo.setTargetCount(_ctx.integerValue("ListClustersResponse.Clusters["+ i +"].OrderTaskInfo.TargetCount"));

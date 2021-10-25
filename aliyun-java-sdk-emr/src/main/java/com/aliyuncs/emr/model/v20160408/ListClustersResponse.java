@@ -109,6 +109,8 @@ public class ListClustersResponse extends AcsResponse {
 
 		private String k8sClusterId;
 
+		private Long operationId;
+
 		private List<Tag> tags;
 
 		private OrderTaskInfo orderTaskInfo;
@@ -241,6 +243,14 @@ public class ListClustersResponse extends AcsResponse {
 
 		public void setK8sClusterId(String k8sClusterId) {
 			this.k8sClusterId = k8sClusterId;
+		}
+
+		public Long getOperationId() {
+			return this.operationId;
+		}
+
+		public void setOperationId(Long operationId) {
+			this.operationId = operationId;
 		}
 
 		public List<Tag> getTags() {

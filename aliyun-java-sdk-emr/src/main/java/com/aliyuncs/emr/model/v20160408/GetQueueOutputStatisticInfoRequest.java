@@ -33,7 +33,7 @@ public class GetQueueOutputStatisticInfoRequest extends RpcAcsRequest<GetQueueOu
 
 	private String toDatetime;
 	public GetQueueOutputStatisticInfoRequest() {
-		super("Emr", "2016-04-08", "GetQueueOutputStatisticInfo");
+		super("Emr", "2016-04-08", "GetQueueOutputStatisticInfo", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

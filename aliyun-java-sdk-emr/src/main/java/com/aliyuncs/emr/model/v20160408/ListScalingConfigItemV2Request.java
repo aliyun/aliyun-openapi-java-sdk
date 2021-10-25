@@ -25,11 +25,9 @@ import com.aliyuncs.emr.Endpoint;
 public class ListScalingConfigItemV2Request extends RpcAcsRequest<ListScalingConfigItemV2Response> {
 	   
 
+	private String configItemType;
+
 	private Long resourceOwnerId;
-
-	private Integer pageCount;
-
-	private String orderMode;
 
 	private Integer pageNumber;
 
@@ -37,22 +35,25 @@ public class ListScalingConfigItemV2Request extends RpcAcsRequest<ListScalingCon
 
 	private String resourceGroupId;
 
-	private Integer limit;
-
 	private Integer pageSize;
-
-	private Integer currentSize;
-
-	private String orderField;
-
-	private String configItemType;
 	public ListScalingConfigItemV2Request() {
-		super("Emr", "2016-04-08", "ListScalingConfigItemV2");
+		super("Emr", "2016-04-08", "ListScalingConfigItemV2", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getConfigItemType() {
+		return this.configItemType;
+	}
+
+	public void setConfigItemType(String configItemType) {
+		this.configItemType = configItemType;
+		if(configItemType != null){
+			putQueryParameter("ConfigItemType", configItemType);
+		}
 	}
 
 	public Long getResourceOwnerId() {
@@ -63,28 +64,6 @@ public class ListScalingConfigItemV2Request extends RpcAcsRequest<ListScalingCon
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public Integer getPageCount() {
-		return this.pageCount;
-	}
-
-	public void setPageCount(Integer pageCount) {
-		this.pageCount = pageCount;
-		if(pageCount != null){
-			putQueryParameter("PageCount", pageCount.toString());
-		}
-	}
-
-	public String getOrderMode() {
-		return this.orderMode;
-	}
-
-	public void setOrderMode(String orderMode) {
-		this.orderMode = orderMode;
-		if(orderMode != null){
-			putQueryParameter("OrderMode", orderMode);
 		}
 	}
 
@@ -121,17 +100,6 @@ public class ListScalingConfigItemV2Request extends RpcAcsRequest<ListScalingCon
 		}
 	}
 
-	public Integer getLimit() {
-		return this.limit;
-	}
-
-	public void setLimit(Integer limit) {
-		this.limit = limit;
-		if(limit != null){
-			putQueryParameter("Limit", limit.toString());
-		}
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
@@ -140,39 +108,6 @@ public class ListScalingConfigItemV2Request extends RpcAcsRequest<ListScalingCon
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public Integer getCurrentSize() {
-		return this.currentSize;
-	}
-
-	public void setCurrentSize(Integer currentSize) {
-		this.currentSize = currentSize;
-		if(currentSize != null){
-			putQueryParameter("CurrentSize", currentSize.toString());
-		}
-	}
-
-	public String getOrderField() {
-		return this.orderField;
-	}
-
-	public void setOrderField(String orderField) {
-		this.orderField = orderField;
-		if(orderField != null){
-			putQueryParameter("OrderField", orderField);
-		}
-	}
-
-	public String getConfigItemType() {
-		return this.configItemType;
-	}
-
-	public void setConfigItemType(String configItemType) {
-		this.configItemType = configItemType;
-		if(configItemType != null){
-			putQueryParameter("ConfigItemType", configItemType);
 		}
 	}
 

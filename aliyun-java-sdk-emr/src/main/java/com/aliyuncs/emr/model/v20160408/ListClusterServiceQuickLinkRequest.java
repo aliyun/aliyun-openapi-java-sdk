@@ -33,7 +33,7 @@ public class ListClusterServiceQuickLinkRequest extends RpcAcsRequest<ListCluste
 
 	private String serviceName;
 	public ListClusterServiceQuickLinkRequest() {
-		super("Emr", "2016-04-08", "ListClusterServiceQuickLink");
+		super("Emr", "2016-04-08", "ListClusterServiceQuickLink", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

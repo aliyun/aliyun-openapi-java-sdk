@@ -35,6 +35,8 @@ public class ListEmrAvailableResourceRequest extends RpcAcsRequest<ListEmrAvaila
 
 	private String instanceType;
 
+	private String emrVersion;
+
 	private String instanceChargeType;
 
 	private String clusterId;
@@ -51,7 +53,7 @@ public class ListEmrAvailableResourceRequest extends RpcAcsRequest<ListEmrAvaila
 
 	private String dataDiskType;
 	public ListEmrAvailableResourceRequest() {
-		super("Emr", "2016-04-08", "ListEmrAvailableResource");
+		super("Emr", "2016-04-08", "ListEmrAvailableResource", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -111,6 +113,17 @@ public class ListEmrAvailableResourceRequest extends RpcAcsRequest<ListEmrAvaila
 		this.instanceType = instanceType;
 		if(instanceType != null){
 			putQueryParameter("InstanceType", instanceType);
+		}
+	}
+
+	public String getEmrVersion() {
+		return this.emrVersion;
+	}
+
+	public void setEmrVersion(String emrVersion) {
+		this.emrVersion = emrVersion;
+		if(emrVersion != null){
+			putQueryParameter("EmrVersion", emrVersion);
 		}
 	}
 

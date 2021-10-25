@@ -40,7 +40,7 @@ public class ListExecutionPlanInstancesRequest extends RpcAcsRequest<ListExecuti
 
 	private Integer pageSize;
 	public ListExecutionPlanInstancesRequest() {
-		super("Emr", "2016-04-08", "ListExecutionPlanInstances");
+		super("Emr", "2016-04-08", "ListExecutionPlanInstances", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

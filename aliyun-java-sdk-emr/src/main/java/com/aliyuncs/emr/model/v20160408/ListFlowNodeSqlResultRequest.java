@@ -35,7 +35,7 @@ public class ListFlowNodeSqlResultRequest extends RpcAcsRequest<ListFlowNodeSqlR
 
 	private String projectId;
 	public ListFlowNodeSqlResultRequest() {
-		super("Emr", "2016-04-08", "ListFlowNodeSqlResult");
+		super("Emr", "2016-04-08", "ListFlowNodeSqlResult", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

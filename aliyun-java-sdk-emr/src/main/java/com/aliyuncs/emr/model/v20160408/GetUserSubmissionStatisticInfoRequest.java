@@ -37,7 +37,7 @@ public class GetUserSubmissionStatisticInfoRequest extends RpcAcsRequest<GetUser
 
 	private String applicationType;
 	public GetUserSubmissionStatisticInfoRequest() {
-		super("Emr", "2016-04-08", "GetUserSubmissionStatisticInfo");
+		super("Emr", "2016-04-08", "GetUserSubmissionStatisticInfo", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

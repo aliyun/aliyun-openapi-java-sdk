@@ -31,7 +31,7 @@ public class ModifyClusterNameRequest extends RpcAcsRequest<ModifyClusterNameRes
 
 	private String id;
 	public ModifyClusterNameRequest() {
-		super("Emr", "2016-04-08", "ModifyClusterName");
+		super("Emr", "2016-04-08", "ModifyClusterName", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

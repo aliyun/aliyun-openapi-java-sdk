@@ -37,7 +37,7 @@ public class GetJobInputStatisticInfoRequest extends RpcAcsRequest<GetJobInputSt
 
 	private Integer pageSize;
 	public GetJobInputStatisticInfoRequest() {
-		super("Emr", "2016-04-08", "GetJobInputStatisticInfo");
+		super("Emr", "2016-04-08", "GetJobInputStatisticInfo", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

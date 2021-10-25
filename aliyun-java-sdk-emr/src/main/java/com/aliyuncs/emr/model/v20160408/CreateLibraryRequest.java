@@ -41,7 +41,7 @@ public class CreateLibraryRequest extends RpcAcsRequest<CreateLibraryResponse> {
 
 	private String sourceLocation;
 	public CreateLibraryRequest() {
-		super("Emr", "2016-04-08", "CreateLibrary");
+		super("Emr", "2016-04-08", "CreateLibrary", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

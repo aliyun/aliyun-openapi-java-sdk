@@ -68,7 +68,7 @@ public class CreateFlowJobRequest extends RpcAcsRequest<CreateFlowJobResponse> {
 
 	private String parentCategory;
 	public CreateFlowJobRequest() {
-		super("Emr", "2016-04-08", "CreateFlowJob");
+		super("Emr", "2016-04-08", "CreateFlowJob", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -94,7 +94,7 @@ public class CreateFlowJobRequest extends RpcAcsRequest<CreateFlowJobResponse> {
 	public void setRunConf(String runConf) {
 		this.runConf = runConf;
 		if(runConf != null){
-			putQueryParameter("RunConf", runConf);
+			putBodyParameter("RunConf", runConf);
 		}
 	}
 
@@ -105,7 +105,7 @@ public class CreateFlowJobRequest extends RpcAcsRequest<CreateFlowJobResponse> {
 	public void setDescription(String description) {
 		this.description = description;
 		if(description != null){
-			putQueryParameter("Description", description);
+			putBodyParameter("Description", description);
 		}
 	}
 
@@ -127,7 +127,7 @@ public class CreateFlowJobRequest extends RpcAcsRequest<CreateFlowJobResponse> {
 	public void setParamConf(String paramConf) {
 		this.paramConf = paramConf;
 		if(paramConf != null){
-			putQueryParameter("ParamConf", paramConf);
+			putBodyParameter("ParamConf", paramConf);
 		}
 	}
 
@@ -139,8 +139,8 @@ public class CreateFlowJobRequest extends RpcAcsRequest<CreateFlowJobResponse> {
 		this.resourceLists = resourceLists;	
 		if (resourceLists != null) {
 			for (int depth1 = 0; depth1 < resourceLists.size(); depth1++) {
-				putQueryParameter("ResourceList." + (depth1 + 1) + ".Path" , resourceLists.get(depth1).getPath());
-				putQueryParameter("ResourceList." + (depth1 + 1) + ".Alias" , resourceLists.get(depth1).getAlias());
+				putBodyParameter("ResourceList." + (depth1 + 1) + ".Path" , resourceLists.get(depth1).getPath());
+				putBodyParameter("ResourceList." + (depth1 + 1) + ".Alias" , resourceLists.get(depth1).getAlias());
 			}
 		}	
 	}
@@ -174,7 +174,7 @@ public class CreateFlowJobRequest extends RpcAcsRequest<CreateFlowJobResponse> {
 	public void setMonitorConf(String monitorConf) {
 		this.monitorConf = monitorConf;
 		if(monitorConf != null){
-			putQueryParameter("MonitorConf", monitorConf);
+			putBodyParameter("MonitorConf", monitorConf);
 		}
 	}
 
@@ -218,7 +218,7 @@ public class CreateFlowJobRequest extends RpcAcsRequest<CreateFlowJobResponse> {
 	public void setEnvConf(String envConf) {
 		this.envConf = envConf;
 		if(envConf != null){
-			putQueryParameter("EnvConf", envConf);
+			putBodyParameter("EnvConf", envConf);
 		}
 	}
 
@@ -251,7 +251,7 @@ public class CreateFlowJobRequest extends RpcAcsRequest<CreateFlowJobResponse> {
 	public void setParams(String params) {
 		this.params = params;
 		if(params != null){
-			putQueryParameter("Params", params);
+			putBodyParameter("Params", params);
 		}
 	}
 
@@ -262,7 +262,7 @@ public class CreateFlowJobRequest extends RpcAcsRequest<CreateFlowJobResponse> {
 	public void setCustomVariables(String customVariables) {
 		this.customVariables = customVariables;
 		if(customVariables != null){
-			putQueryParameter("CustomVariables", customVariables);
+			putBodyParameter("CustomVariables", customVariables);
 		}
 	}
 

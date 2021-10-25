@@ -35,7 +35,7 @@ public class CreateTagRequest extends RpcAcsRequest<CreateTagResponse> {
 
 	private String category;
 	public CreateTagRequest() {
-		super("Emr", "2016-04-08", "CreateTag");
+		super("Emr", "2016-04-08", "CreateTag", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

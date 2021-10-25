@@ -1083,6 +1083,8 @@ public class DescribeClusterV2Response extends AcsResponse {
 
 			private String status;
 
+			private String clusterType;
+
 			public String getClusterId() {
 				return this.clusterId;
 			}
@@ -1105,6 +1107,14 @@ public class DescribeClusterV2Response extends AcsResponse {
 
 			public void setStatus(String status) {
 				this.status = status;
+			}
+
+			public String getClusterType() {
+				return this.clusterType;
+			}
+
+			public void setClusterType(String clusterType) {
+				this.clusterType = clusterType;
 			}
 		}
 

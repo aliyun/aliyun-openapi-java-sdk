@@ -29,7 +29,7 @@ public class KillFlowJobRequest extends RpcAcsRequest<KillFlowJobResponse> {
 
 	private String projectId;
 	public KillFlowJobRequest() {
-		super("Emr", "2016-04-08", "KillFlowJob");
+		super("Emr", "2016-04-08", "KillFlowJob", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

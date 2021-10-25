@@ -29,7 +29,7 @@ public class DescribeLibraryDetailRequest extends RpcAcsRequest<DescribeLibraryD
 
 	private String libraryBizId;
 	public DescribeLibraryDetailRequest() {
-		super("Emr", "2016-04-08", "DescribeLibraryDetail");
+		super("Emr", "2016-04-08", "DescribeLibraryDetail", "emr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

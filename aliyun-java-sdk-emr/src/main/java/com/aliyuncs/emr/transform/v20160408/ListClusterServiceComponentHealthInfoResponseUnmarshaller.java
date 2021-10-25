@@ -43,6 +43,14 @@ public class ListClusterServiceComponentHealthInfoResponseUnmarshaller {
 			healthInfo.setTotalNum(_ctx.integerValue("ListClusterServiceComponentHealthInfoResponse.HealthInfoList["+ i +"].TotalNum"));
 			healthInfo.setAgentHeartBeatLostNum(_ctx.integerValue("ListClusterServiceComponentHealthInfoResponse.HealthInfoList["+ i +"].AgentHeartBeatLostNum"));
 			healthInfo.setCreatedTime(_ctx.longValue("ListClusterServiceComponentHealthInfoResponse.HealthInfoList["+ i +"].CreatedTime"));
+			healthInfo.setHealthStatus(_ctx.stringValue("ListClusterServiceComponentHealthInfoResponse.HealthInfoList["+ i +"].HealthStatus"));
+			healthInfo.setStoppedHealthNum(_ctx.integerValue("ListClusterServiceComponentHealthInfoResponse.HealthInfoList["+ i +"].StoppedHealthNum"));
+			healthInfo.setGoodHealthNum(_ctx.integerValue("ListClusterServiceComponentHealthInfoResponse.HealthInfoList["+ i +"].GoodHealthNum"));
+			healthInfo.setWarningHealthNum(_ctx.integerValue("ListClusterServiceComponentHealthInfoResponse.HealthInfoList["+ i +"].WarningHealthNum"));
+			healthInfo.setBadHealthNum(_ctx.integerValue("ListClusterServiceComponentHealthInfoResponse.HealthInfoList["+ i +"].BadHealthNum"));
+			healthInfo.setUnknownHealthNum(_ctx.integerValue("ListClusterServiceComponentHealthInfoResponse.HealthInfoList["+ i +"].UnknownHealthNum"));
+			healthInfo.setDisabledHealthNum(_ctx.integerValue("ListClusterServiceComponentHealthInfoResponse.HealthInfoList["+ i +"].DisabledHealthNum"));
+			healthInfo.setNoneHealthNum(_ctx.integerValue("ListClusterServiceComponentHealthInfoResponse.HealthInfoList["+ i +"].NoneHealthNum"));
 
 			List<HealthDetail> healthDetailList = new ArrayList<HealthDetail>();
 			for (int j = 0; j < _ctx.lengthValue("ListClusterServiceComponentHealthInfoResponse.HealthInfoList["+ i +"].HealthDetailList.Length"); j++) {
