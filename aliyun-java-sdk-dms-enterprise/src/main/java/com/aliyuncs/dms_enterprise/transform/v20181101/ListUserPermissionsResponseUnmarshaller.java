@@ -50,6 +50,8 @@ public class ListUserPermissionsResponseUnmarshaller {
 			userPermission.setTableId(_ctx.stringValue("ListUserPermissionsResponse.UserPermissions["+ i +"].TableId"));
 			userPermission.setSearchName(_ctx.stringValue("ListUserPermissionsResponse.UserPermissions["+ i +"].SearchName"));
 			userPermission.setAlias(_ctx.stringValue("ListUserPermissionsResponse.UserPermissions["+ i +"].Alias"));
+			userPermission.setHost(_ctx.stringValue("ListUserPermissionsResponse.UserPermissions["+ i +"].Host"));
+			userPermission.setPort(_ctx.longValue("ListUserPermissionsResponse.UserPermissions["+ i +"].Port"));
 
 			List<PermDetail> permDetails = new ArrayList<PermDetail>();
 			for (int j = 0; j < _ctx.lengthValue("ListUserPermissionsResponse.UserPermissions["+ i +"].PermDetails.Length"); j++) {

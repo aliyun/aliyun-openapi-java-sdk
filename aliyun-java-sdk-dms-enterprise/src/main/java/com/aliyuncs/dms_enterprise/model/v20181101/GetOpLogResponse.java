@@ -91,7 +91,7 @@ public class GetOpLogResponse extends AcsResponse {
 
 		private String database;
 
-		private Long userId;
+		private String userId;
 
 		private String opContent;
 
@@ -117,11 +117,11 @@ public class GetOpLogResponse extends AcsResponse {
 			this.database = database;
 		}
 
-		public Long getUserId() {
+		public String getUserId() {
 			return this.userId;
 		}
 
-		public void setUserId(Long userId) {
+		public void setUserId(String userId) {
 			this.userId = userId;
 		}
 

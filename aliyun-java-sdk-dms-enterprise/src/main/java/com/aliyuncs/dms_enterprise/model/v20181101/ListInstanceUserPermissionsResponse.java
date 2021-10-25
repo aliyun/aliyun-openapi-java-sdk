@@ -16,14 +16,14 @@ package com.aliyuncs.dms_enterprise.model.v20181101;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.dms_enterprise.transform.v20181101.ListUserPermissionsResponseUnmarshaller;
+import com.aliyuncs.dms_enterprise.transform.v20181101.ListInstanceUserPermissionsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ListUserPermissionsResponse extends AcsResponse {
+public class ListInstanceUserPermissionsResponse extends AcsResponse {
 
 	private Long totalCount;
 
@@ -87,55 +87,13 @@ public class ListUserPermissionsResponse extends AcsResponse {
 
 	public static class UserPermission {
 
-		private String dbId;
-
-		private String tableName;
-
 		private String userId;
-
-		private String schemaName;
-
-		private Boolean logic;
 
 		private String userNickName;
 
 		private String instanceId;
 
-		private String envType;
-
-		private String columnName;
-
-		private String dbType;
-
-		private String dsType;
-
-		private String tableId;
-
-		private String searchName;
-
-		private String alias;
-
-		private String host;
-
-		private Long port;
-
 		private List<PermDetail> permDetails;
-
-		public String getDbId() {
-			return this.dbId;
-		}
-
-		public void setDbId(String dbId) {
-			this.dbId = dbId;
-		}
-
-		public String getTableName() {
-			return this.tableName;
-		}
-
-		public void setTableName(String tableName) {
-			this.tableName = tableName;
-		}
 
 		public String getUserId() {
 			return this.userId;
@@ -143,22 +101,6 @@ public class ListUserPermissionsResponse extends AcsResponse {
 
 		public void setUserId(String userId) {
 			this.userId = userId;
-		}
-
-		public String getSchemaName() {
-			return this.schemaName;
-		}
-
-		public void setSchemaName(String schemaName) {
-			this.schemaName = schemaName;
-		}
-
-		public Boolean getLogic() {
-			return this.logic;
-		}
-
-		public void setLogic(Boolean logic) {
-			this.logic = logic;
 		}
 
 		public String getUserNickName() {
@@ -175,78 +117,6 @@ public class ListUserPermissionsResponse extends AcsResponse {
 
 		public void setInstanceId(String instanceId) {
 			this.instanceId = instanceId;
-		}
-
-		public String getEnvType() {
-			return this.envType;
-		}
-
-		public void setEnvType(String envType) {
-			this.envType = envType;
-		}
-
-		public String getColumnName() {
-			return this.columnName;
-		}
-
-		public void setColumnName(String columnName) {
-			this.columnName = columnName;
-		}
-
-		public String getDbType() {
-			return this.dbType;
-		}
-
-		public void setDbType(String dbType) {
-			this.dbType = dbType;
-		}
-
-		public String getDsType() {
-			return this.dsType;
-		}
-
-		public void setDsType(String dsType) {
-			this.dsType = dsType;
-		}
-
-		public String getTableId() {
-			return this.tableId;
-		}
-
-		public void setTableId(String tableId) {
-			this.tableId = tableId;
-		}
-
-		public String getSearchName() {
-			return this.searchName;
-		}
-
-		public void setSearchName(String searchName) {
-			this.searchName = searchName;
-		}
-
-		public String getAlias() {
-			return this.alias;
-		}
-
-		public void setAlias(String alias) {
-			this.alias = alias;
-		}
-
-		public String getHost() {
-			return this.host;
-		}
-
-		public void setHost(String host) {
-			this.host = host;
-		}
-
-		public Long getPort() {
-			return this.port;
-		}
-
-		public void setPort(Long port) {
-			this.port = port;
 		}
 
 		public List<PermDetail> getPermDetails() {
@@ -322,7 +192,7 @@ public class ListUserPermissionsResponse extends AcsResponse {
 	}
 
 	@Override
-	public ListUserPermissionsResponse getInstance(UnmarshallerContext context) {
-		return	ListUserPermissionsResponseUnmarshaller.unmarshall(this, context);
+	public ListInstanceUserPermissionsResponse getInstance(UnmarshallerContext context) {
+		return	ListInstanceUserPermissionsResponseUnmarshaller.unmarshall(this, context);
 	}
 }

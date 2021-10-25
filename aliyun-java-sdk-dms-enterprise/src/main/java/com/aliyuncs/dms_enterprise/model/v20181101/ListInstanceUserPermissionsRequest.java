@@ -22,55 +22,25 @@ import com.aliyuncs.dms_enterprise.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListSensitiveColumnsRequest extends RpcAcsRequest<ListSensitiveColumnsResponse> {
+public class ListInstanceUserPermissionsRequest extends RpcAcsRequest<ListInstanceUserPermissionsResponse> {
 	   
-
-	private String schemaName;
-
-	private String columnName;
 
 	private Long tid;
 
 	private Integer pageNumber;
 
-	private String securityLevel;
-
-	private Long dbId;
+	private String instanceId;
 
 	private Integer pageSize;
 
-	private Boolean logic;
-
-	private String tableName;
-	public ListSensitiveColumnsRequest() {
-		super("dms-enterprise", "2018-11-01", "ListSensitiveColumns", "dms-enterprise");
+	private String userName;
+	public ListInstanceUserPermissionsRequest() {
+		super("dms-enterprise", "2018-11-01", "ListInstanceUserPermissions", "dms-enterprise");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getSchemaName() {
-		return this.schemaName;
-	}
-
-	public void setSchemaName(String schemaName) {
-		this.schemaName = schemaName;
-		if(schemaName != null){
-			putQueryParameter("SchemaName", schemaName);
-		}
-	}
-
-	public String getColumnName() {
-		return this.columnName;
-	}
-
-	public void setColumnName(String columnName) {
-		this.columnName = columnName;
-		if(columnName != null){
-			putQueryParameter("ColumnName", columnName);
-		}
 	}
 
 	public Long getTid() {
@@ -95,25 +65,14 @@ public class ListSensitiveColumnsRequest extends RpcAcsRequest<ListSensitiveColu
 		}
 	}
 
-	public String getSecurityLevel() {
-		return this.securityLevel;
+	public String getInstanceId() {
+		return this.instanceId;
 	}
 
-	public void setSecurityLevel(String securityLevel) {
-		this.securityLevel = securityLevel;
-		if(securityLevel != null){
-			putQueryParameter("SecurityLevel", securityLevel);
-		}
-	}
-
-	public Long getDbId() {
-		return this.dbId;
-	}
-
-	public void setDbId(Long dbId) {
-		this.dbId = dbId;
-		if(dbId != null){
-			putQueryParameter("DbId", dbId.toString());
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 
@@ -128,31 +87,20 @@ public class ListSensitiveColumnsRequest extends RpcAcsRequest<ListSensitiveColu
 		}
 	}
 
-	public Boolean getLogic() {
-		return this.logic;
+	public String getUserName() {
+		return this.userName;
 	}
 
-	public void setLogic(Boolean logic) {
-		this.logic = logic;
-		if(logic != null){
-			putQueryParameter("Logic", logic.toString());
-		}
-	}
-
-	public String getTableName() {
-		return this.tableName;
-	}
-
-	public void setTableName(String tableName) {
-		this.tableName = tableName;
-		if(tableName != null){
-			putQueryParameter("TableName", tableName);
+	public void setUserName(String userName) {
+		this.userName = userName;
+		if(userName != null){
+			putQueryParameter("UserName", userName);
 		}
 	}
 
 	@Override
-	public Class<ListSensitiveColumnsResponse> getResponseClass() {
-		return ListSensitiveColumnsResponse.class;
+	public Class<ListInstanceUserPermissionsResponse> getResponseClass() {
+		return ListInstanceUserPermissionsResponse.class;
 	}
 
 }

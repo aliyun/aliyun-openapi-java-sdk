@@ -1,3 +1,9 @@
+2021-10-25 Version: 1.22.0
+- Support ListInstances and GetInstance API to return StandardGroup information.
+- Support ListUserPermissions, GrantUserPermission, GrantUserPermission to operate instance permission.
+- Support ChangeColumnSecLevel API.
+- Support CreateLogicDatabase, EditLogicDatabase, DeleteLogicDatabase API.
+
 2021-08-12 Version: 1.21.0
 - Support CreateProxy, DeleteProxy, GetProxy, ListProxies, CreateProxyAccess, DeleteProxyAccess, ListProxyAccesses, InspectProxyAccessSecret Safety Protection Management APIs.
 

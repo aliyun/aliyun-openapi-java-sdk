@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.dms_enterprise.model.v20181101.GetInstanceResponse;
 import com.aliyuncs.dms_enterprise.model.v20181101.GetInstanceResponse.Instance;
+import com.aliyuncs.dms_enterprise.model.v20181101.GetInstanceResponse.Instance.StandardGroup;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -66,6 +67,11 @@ public class GetInstanceResponseUnmarshaller {
 			ownerNameList.add(_ctx.stringValue("GetInstanceResponse.Instance.OwnerNameList["+ i +"]"));
 		}
 		instance.setOwnerNameList(ownerNameList);
+
+		StandardGroup standardGroup = new StandardGroup();
+		standardGroup.setGroupName(_ctx.stringValue("GetInstanceResponse.Instance.StandardGroup.GroupName"));
+		standardGroup.setGroupMode(_ctx.stringValue("GetInstanceResponse.Instance.StandardGroup.GroupMode"));
+		instance.setStandardGroup(standardGroup);
 		getInstanceResponse.setInstance(instance);
 	 
 	 	return getInstanceResponse;

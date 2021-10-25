@@ -125,6 +125,8 @@ public class GetInstanceResponse extends AcsResponse {
 
 		private List<String> ownerNameList;
 
+		private StandardGroup standardGroup;
+
 		public String getVpcId() {
 			return this.vpcId;
 		}
@@ -315,6 +317,37 @@ public class GetInstanceResponse extends AcsResponse {
 
 		public void setOwnerNameList(List<String> ownerNameList) {
 			this.ownerNameList = ownerNameList;
+		}
+
+		public StandardGroup getStandardGroup() {
+			return this.standardGroup;
+		}
+
+		public void setStandardGroup(StandardGroup standardGroup) {
+			this.standardGroup = standardGroup;
+		}
+
+		public static class StandardGroup {
+
+			private String groupName;
+
+			private String groupMode;
+
+			public String getGroupName() {
+				return this.groupName;
+			}
+
+			public void setGroupName(String groupName) {
+				this.groupName = groupName;
+			}
+
+			public String getGroupMode() {
+				return this.groupMode;
+			}
+
+			public void setGroupMode(String groupMode) {
+				this.groupMode = groupMode;
+			}
 		}
 	}
 

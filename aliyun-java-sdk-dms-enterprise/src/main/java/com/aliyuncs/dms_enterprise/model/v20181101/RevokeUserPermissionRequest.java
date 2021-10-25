@@ -35,6 +35,8 @@ public class RevokeUserPermissionRequest extends RpcAcsRequest<RevokeUserPermiss
 
 	private Long tid;
 
+	private Long instanceId;
+
 	private String dbId;
 
 	private String tableId;
@@ -103,6 +105,17 @@ public class RevokeUserPermissionRequest extends RpcAcsRequest<RevokeUserPermiss
 		this.tid = tid;
 		if(tid != null){
 			putQueryParameter("Tid", tid.toString());
+		}
+	}
+
+	public Long getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(Long instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId.toString());
 		}
 	}
 

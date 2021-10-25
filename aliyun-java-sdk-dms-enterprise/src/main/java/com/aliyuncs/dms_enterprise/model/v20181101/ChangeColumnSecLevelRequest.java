@@ -22,10 +22,14 @@ import com.aliyuncs.dms_enterprise.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListSensitiveColumnsDetailRequest extends RpcAcsRequest<ListSensitiveColumnsDetailResponse> {
+public class ChangeColumnSecLevelRequest extends RpcAcsRequest<ChangeColumnSecLevelResponse> {
 	   
 
 	private String schemaName;
+
+	private Boolean isLogic;
+
+	private String newLevel;
 
 	private String columnName;
 
@@ -33,11 +37,9 @@ public class ListSensitiveColumnsDetailRequest extends RpcAcsRequest<ListSensiti
 
 	private Long dbId;
 
-	private Boolean logic;
-
 	private String tableName;
-	public ListSensitiveColumnsDetailRequest() {
-		super("dms-enterprise", "2018-11-01", "ListSensitiveColumnsDetail", "dms-enterprise");
+	public ChangeColumnSecLevelRequest() {
+		super("dms-enterprise", "2018-11-01", "ChangeColumnSecLevel", "dms-enterprise");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -53,6 +55,28 @@ public class ListSensitiveColumnsDetailRequest extends RpcAcsRequest<ListSensiti
 		this.schemaName = schemaName;
 		if(schemaName != null){
 			putQueryParameter("SchemaName", schemaName);
+		}
+	}
+
+	public Boolean getIsLogic() {
+		return this.isLogic;
+	}
+
+	public void setIsLogic(Boolean isLogic) {
+		this.isLogic = isLogic;
+		if(isLogic != null){
+			putQueryParameter("IsLogic", isLogic.toString());
+		}
+	}
+
+	public String getNewLevel() {
+		return this.newLevel;
+	}
+
+	public void setNewLevel(String newLevel) {
+		this.newLevel = newLevel;
+		if(newLevel != null){
+			putQueryParameter("NewLevel", newLevel);
 		}
 	}
 
@@ -89,17 +113,6 @@ public class ListSensitiveColumnsDetailRequest extends RpcAcsRequest<ListSensiti
 		}
 	}
 
-	public Boolean getLogic() {
-		return this.logic;
-	}
-
-	public void setLogic(Boolean logic) {
-		this.logic = logic;
-		if(logic != null){
-			putQueryParameter("Logic", logic.toString());
-		}
-	}
-
 	public String getTableName() {
 		return this.tableName;
 	}
@@ -112,8 +125,8 @@ public class ListSensitiveColumnsDetailRequest extends RpcAcsRequest<ListSensiti
 	}
 
 	@Override
-	public Class<ListSensitiveColumnsDetailResponse> getResponseClass() {
-		return ListSensitiveColumnsDetailResponse.class;
+	public Class<ChangeColumnSecLevelResponse> getResponseClass() {
+		return ChangeColumnSecLevelResponse.class;
 	}
 
 }

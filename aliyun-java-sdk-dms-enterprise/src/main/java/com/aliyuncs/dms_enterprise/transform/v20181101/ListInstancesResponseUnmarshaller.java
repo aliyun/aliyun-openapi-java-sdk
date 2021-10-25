@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.dms_enterprise.model.v20181101.ListInstancesResponse;
 import com.aliyuncs.dms_enterprise.model.v20181101.ListInstancesResponse.Instance;
+import com.aliyuncs.dms_enterprise.model.v20181101.ListInstancesResponse.Instance.StandardGroup;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -69,6 +70,11 @@ public class ListInstancesResponseUnmarshaller {
 				ownerNameList.add(_ctx.stringValue("ListInstancesResponse.InstanceList["+ i +"].OwnerNameList["+ j +"]"));
 			}
 			instance.setOwnerNameList(ownerNameList);
+
+			StandardGroup standardGroup = new StandardGroup();
+			standardGroup.setGroupName(_ctx.stringValue("ListInstancesResponse.InstanceList["+ i +"].StandardGroup.GroupName"));
+			standardGroup.setGroupMode(_ctx.stringValue("ListInstancesResponse.InstanceList["+ i +"].StandardGroup.GroupMode"));
+			instance.setStandardGroup(standardGroup);
 
 			instanceList.add(instance);
 		}
