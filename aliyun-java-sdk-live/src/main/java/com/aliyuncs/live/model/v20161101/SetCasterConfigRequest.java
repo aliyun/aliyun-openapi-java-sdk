@@ -41,6 +41,8 @@ public class SetCasterConfigRequest extends RpcAcsRequest<SetCasterConfigRespons
 
 	private String sideOutputUrl;
 
+	private String syncGroupsConfig;
+
 	private String casterId;
 
 	private String domainName;
@@ -144,6 +146,17 @@ public class SetCasterConfigRequest extends RpcAcsRequest<SetCasterConfigRespons
 		this.sideOutputUrl = sideOutputUrl;
 		if(sideOutputUrl != null){
 			putQueryParameter("SideOutputUrl", sideOutputUrl);
+		}
+	}
+
+	public String getSyncGroupsConfig() {
+		return this.syncGroupsConfig;
+	}
+
+	public void setSyncGroupsConfig(String syncGroupsConfig) {
+		this.syncGroupsConfig = syncGroupsConfig;
+		if(syncGroupsConfig != null){
+			putQueryParameter("SyncGroupsConfig", syncGroupsConfig);
 		}
 	}
 

@@ -47,6 +47,8 @@ public class DescribeCasterConfigResponse extends AcsResponse {
 
 	private Integer channelEnable;
 
+	private List<SyncGroup> syncGroupsConfig;
+
 	private TranscodeConfig transcodeConfig;
 
 	private RecordConfig recordConfig;
@@ -139,6 +141,14 @@ public class DescribeCasterConfigResponse extends AcsResponse {
 		this.channelEnable = channelEnable;
 	}
 
+	public List<SyncGroup> getSyncGroupsConfig() {
+		return this.syncGroupsConfig;
+	}
+
+	public void setSyncGroupsConfig(List<SyncGroup> syncGroupsConfig) {
+		this.syncGroupsConfig = syncGroupsConfig;
+	}
+
 	public TranscodeConfig getTranscodeConfig() {
 		return this.transcodeConfig;
 	}
@@ -153,6 +163,39 @@ public class DescribeCasterConfigResponse extends AcsResponse {
 
 	public void setRecordConfig(RecordConfig recordConfig) {
 		this.recordConfig = recordConfig;
+	}
+
+	public static class SyncGroup {
+
+		private Integer mode;
+
+		private String hostResourceId;
+
+		private List<String> resourceIds;
+
+		public Integer getMode() {
+			return this.mode;
+		}
+
+		public void setMode(Integer mode) {
+			this.mode = mode;
+		}
+
+		public String getHostResourceId() {
+			return this.hostResourceId;
+		}
+
+		public void setHostResourceId(String hostResourceId) {
+			this.hostResourceId = hostResourceId;
+		}
+
+		public List<String> getResourceIds() {
+			return this.resourceIds;
+		}
+
+		public void setResourceIds(List<String> resourceIds) {
+			this.resourceIds = resourceIds;
+		}
 	}
 
 	public static class TranscodeConfig {

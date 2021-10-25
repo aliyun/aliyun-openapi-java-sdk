@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.live.model.v20161101.DescribeCasterConfigResponse;
 import com.aliyuncs.live.model.v20161101.DescribeCasterConfigResponse.RecordConfig;
 import com.aliyuncs.live.model.v20161101.DescribeCasterConfigResponse.RecordConfig.RecordFormatItem;
+import com.aliyuncs.live.model.v20161101.DescribeCasterConfigResponse.SyncGroup;
 import com.aliyuncs.live.model.v20161101.DescribeCasterConfigResponse.TranscodeConfig;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -66,6 +67,22 @@ public class DescribeCasterConfigResponseUnmarshaller {
 		}
 		recordConfig.setRecordFormat(recordFormat);
 		describeCasterConfigResponse.setRecordConfig(recordConfig);
+
+		List<SyncGroup> syncGroupsConfig = new ArrayList<SyncGroup>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeCasterConfigResponse.SyncGroupsConfig.Length"); i++) {
+			SyncGroup syncGroup = new SyncGroup();
+			syncGroup.setMode(_ctx.integerValue("DescribeCasterConfigResponse.SyncGroupsConfig["+ i +"].Mode"));
+			syncGroup.setHostResourceId(_ctx.stringValue("DescribeCasterConfigResponse.SyncGroupsConfig["+ i +"].HostResourceId"));
+
+			List<String> resourceIds = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeCasterConfigResponse.SyncGroupsConfig["+ i +"].ResourceIds.Length"); j++) {
+				resourceIds.add(_ctx.stringValue("DescribeCasterConfigResponse.SyncGroupsConfig["+ i +"].ResourceIds["+ j +"]"));
+			}
+			syncGroup.setResourceIds(resourceIds);
+
+			syncGroupsConfig.add(syncGroup);
+		}
+		describeCasterConfigResponse.setSyncGroupsConfig(syncGroupsConfig);
 	 
 	 	return describeCasterConfigResponse;
 	}
