@@ -31,6 +31,10 @@ public class SmartCallRequest extends RpcAcsRequest<SmartCallResponse> {
 
 	private Boolean earlyMediaAsr;
 
+	private Integer backgroundSpeed;
+
+	private Integer backgroundVolume;
+
 	private Integer speed;
 
 	private String asrBaseId;
@@ -46,6 +50,8 @@ public class SmartCallRequest extends RpcAcsRequest<SmartCallResponse> {
 	private String voiceCode;
 
 	private String calledShowNumber;
+
+	private Boolean enableITN;
 
 	private Integer actionCodeTimeBreak;
 
@@ -66,6 +72,8 @@ public class SmartCallRequest extends RpcAcsRequest<SmartCallResponse> {
 	private Integer volume;
 
 	private Integer muteTime;
+
+	private String backgroundFileCode;
 
 	private String outId;
 
@@ -113,6 +121,28 @@ public class SmartCallRequest extends RpcAcsRequest<SmartCallResponse> {
 		this.earlyMediaAsr = earlyMediaAsr;
 		if(earlyMediaAsr != null){
 			putQueryParameter("EarlyMediaAsr", earlyMediaAsr.toString());
+		}
+	}
+
+	public Integer getBackgroundSpeed() {
+		return this.backgroundSpeed;
+	}
+
+	public void setBackgroundSpeed(Integer backgroundSpeed) {
+		this.backgroundSpeed = backgroundSpeed;
+		if(backgroundSpeed != null){
+			putQueryParameter("BackgroundSpeed", backgroundSpeed.toString());
+		}
+	}
+
+	public Integer getBackgroundVolume() {
+		return this.backgroundVolume;
+	}
+
+	public void setBackgroundVolume(Integer backgroundVolume) {
+		this.backgroundVolume = backgroundVolume;
+		if(backgroundVolume != null){
+			putQueryParameter("BackgroundVolume", backgroundVolume.toString());
 		}
 	}
 
@@ -201,6 +231,17 @@ public class SmartCallRequest extends RpcAcsRequest<SmartCallResponse> {
 		this.calledShowNumber = calledShowNumber;
 		if(calledShowNumber != null){
 			putQueryParameter("CalledShowNumber", calledShowNumber);
+		}
+	}
+
+	public Boolean getEnableITN() {
+		return this.enableITN;
+	}
+
+	public void setEnableITN(Boolean enableITN) {
+		this.enableITN = enableITN;
+		if(enableITN != null){
+			putQueryParameter("EnableITN", enableITN.toString());
 		}
 	}
 
@@ -311,6 +352,17 @@ public class SmartCallRequest extends RpcAcsRequest<SmartCallResponse> {
 		this.muteTime = muteTime;
 		if(muteTime != null){
 			putQueryParameter("MuteTime", muteTime.toString());
+		}
+	}
+
+	public String getBackgroundFileCode() {
+		return this.backgroundFileCode;
+	}
+
+	public void setBackgroundFileCode(String backgroundFileCode) {
+		this.backgroundFileCode = backgroundFileCode;
+		if(backgroundFileCode != null){
+			putQueryParameter("BackgroundFileCode", backgroundFileCode);
 		}
 	}
 

@@ -23,9 +23,9 @@ public class SingleCallByTtsResponseUnmarshaller {
 	public static SingleCallByTtsResponse unmarshall(SingleCallByTtsResponse singleCallByTtsResponse, UnmarshallerContext _ctx) {
 		
 		singleCallByTtsResponse.setRequestId(_ctx.stringValue("SingleCallByTtsResponse.RequestId"));
-		singleCallByTtsResponse.setCallId(_ctx.stringValue("SingleCallByTtsResponse.CallId"));
 		singleCallByTtsResponse.setCode(_ctx.stringValue("SingleCallByTtsResponse.Code"));
 		singleCallByTtsResponse.setMessage(_ctx.stringValue("SingleCallByTtsResponse.Message"));
+		singleCallByTtsResponse.setCallId(_ctx.stringValue("SingleCallByTtsResponse.CallId"));
 	 
 	 	return singleCallByTtsResponse;
 	}

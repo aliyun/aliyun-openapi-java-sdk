@@ -24,29 +24,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class SmartCallResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String callId;
-
 	private String code;
 
 	private String message;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
+	private String requestId;
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getCallId() {
-		return this.callId;
-	}
-
-	public void setCallId(String callId) {
-		this.callId = callId;
-	}
+	private String callId;
 
 	public String getCode() {
 		return this.code;
@@ -62,6 +46,22 @@ public class SmartCallResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getCallId() {
+		return this.callId;
+	}
+
+	public void setCallId(String callId) {
+		this.callId = callId;
 	}
 
 	@Override
