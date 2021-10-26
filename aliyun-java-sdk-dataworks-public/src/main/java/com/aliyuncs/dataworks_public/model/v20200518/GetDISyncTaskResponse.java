@@ -24,19 +24,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetDISyncTaskResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Boolean success;
 
+	private String requestId;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Boolean getSuccess() {
 		return this.success;
@@ -44,6 +36,14 @@ public class GetDISyncTaskResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Data getData() {
@@ -98,34 +98,34 @@ public class GetDISyncTaskResponse extends AcsResponse {
 
 		public static class SolutionDetail {
 
-			private Long id;
+			private String status;
 
 			private String type;
 
-			private Long projectId;
-
-			private String status;
-
-			private String processContent;
-
 			private String startTime;
-
-			private String name;
 
 			private String creatorName;
 
+			private Long projectId;
+
 			private String sourceType;
 
-			private String submitTime;
+			private String processContent;
+
+			private String name;
 
 			private String processExtra;
 
-			public Long getId() {
-				return this.id;
+			private String submitTime;
+
+			private Long id;
+
+			public String getStatus() {
+				return this.status;
 			}
 
-			public void setId(Long id) {
-				this.id = id;
+			public void setStatus(String status) {
+				this.status = status;
 			}
 
 			public String getType() {
@@ -136,44 +136,12 @@ public class GetDISyncTaskResponse extends AcsResponse {
 				this.type = type;
 			}
 
-			public Long getProjectId() {
-				return this.projectId;
-			}
-
-			public void setProjectId(Long projectId) {
-				this.projectId = projectId;
-			}
-
-			public String getStatus() {
-				return this.status;
-			}
-
-			public void setStatus(String status) {
-				this.status = status;
-			}
-
-			public String getProcessContent() {
-				return this.processContent;
-			}
-
-			public void setProcessContent(String processContent) {
-				this.processContent = processContent;
-			}
-
 			public String getStartTime() {
 				return this.startTime;
 			}
 
 			public void setStartTime(String startTime) {
 				this.startTime = startTime;
-			}
-
-			public String getName() {
-				return this.name;
-			}
-
-			public void setName(String name) {
-				this.name = name;
 			}
 
 			public String getCreatorName() {
@@ -184,12 +152,44 @@ public class GetDISyncTaskResponse extends AcsResponse {
 				this.creatorName = creatorName;
 			}
 
+			public Long getProjectId() {
+				return this.projectId;
+			}
+
+			public void setProjectId(Long projectId) {
+				this.projectId = projectId;
+			}
+
 			public String getSourceType() {
 				return this.sourceType;
 			}
 
 			public void setSourceType(String sourceType) {
 				this.sourceType = sourceType;
+			}
+
+			public String getProcessContent() {
+				return this.processContent;
+			}
+
+			public void setProcessContent(String processContent) {
+				this.processContent = processContent;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
+
+			public String getProcessExtra() {
+				return this.processExtra;
+			}
+
+			public void setProcessExtra(String processExtra) {
+				this.processExtra = processExtra;
 			}
 
 			public String getSubmitTime() {
@@ -200,12 +200,12 @@ public class GetDISyncTaskResponse extends AcsResponse {
 				this.submitTime = submitTime;
 			}
 
-			public String getProcessExtra() {
-				return this.processExtra;
+			public Long getId() {
+				return this.id;
 			}
 
-			public void setProcessExtra(String processExtra) {
-				this.processExtra = processExtra;
+			public void setId(Long id) {
+				this.id = id;
 			}
 		}
 	}

@@ -47,69 +47,37 @@ public class ListManualDagInstancesResponse extends AcsResponse {
 
 	public static class InstancesItem {
 
-		private Long nodeId;
-
-		private Long instanceId;
-
-		private Long dagId;
-
-		private String dagType;
-
 		private String status;
+
+		private Long beginRunningTime;
 
 		private Long bizDate;
 
 		private Long cycTime;
 
+		private Long finishTime;
+
 		private Long createTime;
 
-		private Long modifyTime;
+		private Long dagId;
+
+		private Long instanceId;
+
+		private Long beginWaitResTime;
+
+		private String taskType;
+
+		private String paramValues;
+
+		private String dagType;
 
 		private String nodeName;
 
 		private Long beginWaitTimeTime;
 
-		private Long beginWaitResTime;
+		private Long nodeId;
 
-		private Long beginRunningTime;
-
-		private String paramValues;
-
-		private Long finishTime;
-
-		private String taskType;
-
-		public Long getNodeId() {
-			return this.nodeId;
-		}
-
-		public void setNodeId(Long nodeId) {
-			this.nodeId = nodeId;
-		}
-
-		public Long getInstanceId() {
-			return this.instanceId;
-		}
-
-		public void setInstanceId(Long instanceId) {
-			this.instanceId = instanceId;
-		}
-
-		public Long getDagId() {
-			return this.dagId;
-		}
-
-		public void setDagId(Long dagId) {
-			this.dagId = dagId;
-		}
-
-		public String getDagType() {
-			return this.dagType;
-		}
-
-		public void setDagType(String dagType) {
-			this.dagType = dagType;
-		}
+		private Long modifyTime;
 
 		public String getStatus() {
 			return this.status;
@@ -117,6 +85,14 @@ public class ListManualDagInstancesResponse extends AcsResponse {
 
 		public void setStatus(String status) {
 			this.status = status;
+		}
+
+		public Long getBeginRunningTime() {
+			return this.beginRunningTime;
+		}
+
+		public void setBeginRunningTime(Long beginRunningTime) {
+			this.beginRunningTime = beginRunningTime;
 		}
 
 		public Long getBizDate() {
@@ -135,6 +111,14 @@ public class ListManualDagInstancesResponse extends AcsResponse {
 			this.cycTime = cycTime;
 		}
 
+		public Long getFinishTime() {
+			return this.finishTime;
+		}
+
+		public void setFinishTime(Long finishTime) {
+			this.finishTime = finishTime;
+		}
+
 		public Long getCreateTime() {
 			return this.createTime;
 		}
@@ -143,12 +127,52 @@ public class ListManualDagInstancesResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
-		public Long getModifyTime() {
-			return this.modifyTime;
+		public Long getDagId() {
+			return this.dagId;
 		}
 
-		public void setModifyTime(Long modifyTime) {
-			this.modifyTime = modifyTime;
+		public void setDagId(Long dagId) {
+			this.dagId = dagId;
+		}
+
+		public Long getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(Long instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public Long getBeginWaitResTime() {
+			return this.beginWaitResTime;
+		}
+
+		public void setBeginWaitResTime(Long beginWaitResTime) {
+			this.beginWaitResTime = beginWaitResTime;
+		}
+
+		public String getTaskType() {
+			return this.taskType;
+		}
+
+		public void setTaskType(String taskType) {
+			this.taskType = taskType;
+		}
+
+		public String getParamValues() {
+			return this.paramValues;
+		}
+
+		public void setParamValues(String paramValues) {
+			this.paramValues = paramValues;
+		}
+
+		public String getDagType() {
+			return this.dagType;
+		}
+
+		public void setDagType(String dagType) {
+			this.dagType = dagType;
 		}
 
 		public String getNodeName() {
@@ -167,44 +191,20 @@ public class ListManualDagInstancesResponse extends AcsResponse {
 			this.beginWaitTimeTime = beginWaitTimeTime;
 		}
 
-		public Long getBeginWaitResTime() {
-			return this.beginWaitResTime;
+		public Long getNodeId() {
+			return this.nodeId;
 		}
 
-		public void setBeginWaitResTime(Long beginWaitResTime) {
-			this.beginWaitResTime = beginWaitResTime;
+		public void setNodeId(Long nodeId) {
+			this.nodeId = nodeId;
 		}
 
-		public Long getBeginRunningTime() {
-			return this.beginRunningTime;
+		public Long getModifyTime() {
+			return this.modifyTime;
 		}
 
-		public void setBeginRunningTime(Long beginRunningTime) {
-			this.beginRunningTime = beginRunningTime;
-		}
-
-		public String getParamValues() {
-			return this.paramValues;
-		}
-
-		public void setParamValues(String paramValues) {
-			this.paramValues = paramValues;
-		}
-
-		public Long getFinishTime() {
-			return this.finishTime;
-		}
-
-		public void setFinishTime(Long finishTime) {
-			this.finishTime = finishTime;
-		}
-
-		public String getTaskType() {
-			return this.taskType;
-		}
-
-		public void setTaskType(String taskType) {
-			this.taskType = taskType;
+		public void setModifyTime(Long modifyTime) {
+			this.modifyTime = modifyTime;
 		}
 	}
 

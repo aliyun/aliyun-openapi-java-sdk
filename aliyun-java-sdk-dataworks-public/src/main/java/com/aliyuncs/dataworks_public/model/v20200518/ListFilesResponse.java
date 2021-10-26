@@ -25,40 +25,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListFilesResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
-	private String errorCode;
+	private Integer httpStatusCode;
 
 	private String errorMessage;
 
-	private Integer httpStatusCode;
+	private String requestId;
+
+	private String errorCode;
+
+	private Boolean success;
 
 	private Data data;
 
-	public String getRequestId() {
-		return this.requestId;
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
 	}
 
 	public String getErrorMessage() {
@@ -69,12 +53,28 @@ public class ListFilesResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public Integer getHttpStatusCode() {
-		return this.httpStatusCode;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setHttpStatusCode(Integer httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getErrorCode() {
+		return this.errorCode;
+	}
+
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Data getData() {
@@ -129,70 +129,70 @@ public class ListFilesResponse extends AcsResponse {
 
 		public static class File {
 
-			private String connectionName;
+			private Integer commitStatus;
 
-			private Long parentId;
+			private Boolean autoParsing;
 
-			private Boolean isMaxCompute;
+			private String owner;
 
 			private Long createTime;
 
-			private String createUser;
+			private Integer fileType;
+
+			private Integer currentVersion;
 
 			private Long bizId;
 
-			private String fileFolderId;
+			private String lastEditUser;
 
 			private String fileName;
 
-			private Integer fileType;
+			private String connectionName;
 
 			private String useType;
 
+			private String fileFolderId;
+
+			private Long fileId;
+
+			private Long parentId;
+
+			private String createUser;
+
+			private Boolean isMaxCompute;
+
+			private Long businessId;
+
 			private String fileDescription;
+
+			private Long lastEditTime;
 
 			private String content;
 
 			private Long nodeId;
 
-			private Integer currentVersion;
-
-			private String owner;
-
-			private String lastEditUser;
-
-			private Long lastEditTime;
-
-			private Integer commitStatus;
-
-			private Long fileId;
-
-			private Long businessId;
-
-			private Boolean autoParsing;
-
-			public String getConnectionName() {
-				return this.connectionName;
+			public Integer getCommitStatus() {
+				return this.commitStatus;
 			}
 
-			public void setConnectionName(String connectionName) {
-				this.connectionName = connectionName;
+			public void setCommitStatus(Integer commitStatus) {
+				this.commitStatus = commitStatus;
 			}
 
-			public Long getParentId() {
-				return this.parentId;
+			public Boolean getAutoParsing() {
+				return this.autoParsing;
 			}
 
-			public void setParentId(Long parentId) {
-				this.parentId = parentId;
+			public void setAutoParsing(Boolean autoParsing) {
+				this.autoParsing = autoParsing;
 			}
 
-			public Boolean getIsMaxCompute() {
-				return this.isMaxCompute;
+			public String getOwner() {
+				return this.owner;
 			}
 
-			public void setIsMaxCompute(Boolean isMaxCompute) {
-				this.isMaxCompute = isMaxCompute;
+			public void setOwner(String owner) {
+				this.owner = owner;
 			}
 
 			public Long getCreateTime() {
@@ -203,12 +203,20 @@ public class ListFilesResponse extends AcsResponse {
 				this.createTime = createTime;
 			}
 
-			public String getCreateUser() {
-				return this.createUser;
+			public Integer getFileType() {
+				return this.fileType;
 			}
 
-			public void setCreateUser(String createUser) {
-				this.createUser = createUser;
+			public void setFileType(Integer fileType) {
+				this.fileType = fileType;
+			}
+
+			public Integer getCurrentVersion() {
+				return this.currentVersion;
+			}
+
+			public void setCurrentVersion(Integer currentVersion) {
+				this.currentVersion = currentVersion;
 			}
 
 			public Long getBizId() {
@@ -219,12 +227,12 @@ public class ListFilesResponse extends AcsResponse {
 				this.bizId = bizId;
 			}
 
-			public String getFileFolderId() {
-				return this.fileFolderId;
+			public String getLastEditUser() {
+				return this.lastEditUser;
 			}
 
-			public void setFileFolderId(String fileFolderId) {
-				this.fileFolderId = fileFolderId;
+			public void setLastEditUser(String lastEditUser) {
+				this.lastEditUser = lastEditUser;
 			}
 
 			public String getFileName() {
@@ -235,12 +243,12 @@ public class ListFilesResponse extends AcsResponse {
 				this.fileName = fileName;
 			}
 
-			public Integer getFileType() {
-				return this.fileType;
+			public String getConnectionName() {
+				return this.connectionName;
 			}
 
-			public void setFileType(Integer fileType) {
-				this.fileType = fileType;
+			public void setConnectionName(String connectionName) {
+				this.connectionName = connectionName;
 			}
 
 			public String getUseType() {
@@ -251,12 +259,68 @@ public class ListFilesResponse extends AcsResponse {
 				this.useType = useType;
 			}
 
+			public String getFileFolderId() {
+				return this.fileFolderId;
+			}
+
+			public void setFileFolderId(String fileFolderId) {
+				this.fileFolderId = fileFolderId;
+			}
+
+			public Long getFileId() {
+				return this.fileId;
+			}
+
+			public void setFileId(Long fileId) {
+				this.fileId = fileId;
+			}
+
+			public Long getParentId() {
+				return this.parentId;
+			}
+
+			public void setParentId(Long parentId) {
+				this.parentId = parentId;
+			}
+
+			public String getCreateUser() {
+				return this.createUser;
+			}
+
+			public void setCreateUser(String createUser) {
+				this.createUser = createUser;
+			}
+
+			public Boolean getIsMaxCompute() {
+				return this.isMaxCompute;
+			}
+
+			public void setIsMaxCompute(Boolean isMaxCompute) {
+				this.isMaxCompute = isMaxCompute;
+			}
+
+			public Long getBusinessId() {
+				return this.businessId;
+			}
+
+			public void setBusinessId(Long businessId) {
+				this.businessId = businessId;
+			}
+
 			public String getFileDescription() {
 				return this.fileDescription;
 			}
 
 			public void setFileDescription(String fileDescription) {
 				this.fileDescription = fileDescription;
+			}
+
+			public Long getLastEditTime() {
+				return this.lastEditTime;
+			}
+
+			public void setLastEditTime(Long lastEditTime) {
+				this.lastEditTime = lastEditTime;
 			}
 
 			public String getContent() {
@@ -273,70 +337,6 @@ public class ListFilesResponse extends AcsResponse {
 
 			public void setNodeId(Long nodeId) {
 				this.nodeId = nodeId;
-			}
-
-			public Integer getCurrentVersion() {
-				return this.currentVersion;
-			}
-
-			public void setCurrentVersion(Integer currentVersion) {
-				this.currentVersion = currentVersion;
-			}
-
-			public String getOwner() {
-				return this.owner;
-			}
-
-			public void setOwner(String owner) {
-				this.owner = owner;
-			}
-
-			public String getLastEditUser() {
-				return this.lastEditUser;
-			}
-
-			public void setLastEditUser(String lastEditUser) {
-				this.lastEditUser = lastEditUser;
-			}
-
-			public Long getLastEditTime() {
-				return this.lastEditTime;
-			}
-
-			public void setLastEditTime(Long lastEditTime) {
-				this.lastEditTime = lastEditTime;
-			}
-
-			public Integer getCommitStatus() {
-				return this.commitStatus;
-			}
-
-			public void setCommitStatus(Integer commitStatus) {
-				this.commitStatus = commitStatus;
-			}
-
-			public Long getFileId() {
-				return this.fileId;
-			}
-
-			public void setFileId(Long fileId) {
-				this.fileId = fileId;
-			}
-
-			public Long getBusinessId() {
-				return this.businessId;
-			}
-
-			public void setBusinessId(Long businessId) {
-				this.businessId = businessId;
-			}
-
-			public Boolean getAutoParsing() {
-				return this.autoParsing;
-			}
-
-			public void setAutoParsing(Boolean autoParsing) {
-				this.autoParsing = autoParsing;
 			}
 		}
 	}

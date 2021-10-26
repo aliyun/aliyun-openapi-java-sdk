@@ -25,41 +25,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetRemindResponse extends AcsResponse {
 
-	private Boolean success;
-
-	private String errorCode;
-
-	private String errorMessage;
-
 	private Integer httpStatusCode;
 
 	private String requestId;
 
+	private String errorMessage;
+
+	private String errorCode;
+
+	private Boolean success;
+
 	private Data data;
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
 
 	public Integer getHttpStatusCode() {
 		return this.httpStatusCode;
@@ -77,6 +53,30 @@ public class GetRemindResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
+	public String getErrorCode() {
+		return this.errorCode;
+	}
+
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -87,29 +87,29 @@ public class GetRemindResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Long remindId;
-
-		private String remindName;
-
-		private String dndStart;
-
-		private String dndEnd;
+		private Integer maxAlertTimes;
 
 		private String remindUnit;
 
-		private String remindType;
-
-		private String alertUnit;
+		private Integer alertInterval;
 
 		private Boolean useflag;
 
 		private String founder;
 
-		private Integer alertInterval;
+		private Long remindId;
+
+		private String dndEnd;
+
+		private String remindType;
+
+		private String alertUnit;
+
+		private String dndStart;
+
+		private String remindName;
 
 		private String detail;
-
-		private Integer maxAlertTimes;
 
 		private List<RobotsItem> robots;
 
@@ -121,40 +121,16 @@ public class GetRemindResponse extends AcsResponse {
 
 		private List<BizProcessesItem> bizProcesses;
 
-		private List<String> alertMethods;
-
 		private List<String> alertTargets;
 
-		public Long getRemindId() {
-			return this.remindId;
+		private List<String> alertMethods;
+
+		public Integer getMaxAlertTimes() {
+			return this.maxAlertTimes;
 		}
 
-		public void setRemindId(Long remindId) {
-			this.remindId = remindId;
-		}
-
-		public String getRemindName() {
-			return this.remindName;
-		}
-
-		public void setRemindName(String remindName) {
-			this.remindName = remindName;
-		}
-
-		public String getDndStart() {
-			return this.dndStart;
-		}
-
-		public void setDndStart(String dndStart) {
-			this.dndStart = dndStart;
-		}
-
-		public String getDndEnd() {
-			return this.dndEnd;
-		}
-
-		public void setDndEnd(String dndEnd) {
-			this.dndEnd = dndEnd;
+		public void setMaxAlertTimes(Integer maxAlertTimes) {
+			this.maxAlertTimes = maxAlertTimes;
 		}
 
 		public String getRemindUnit() {
@@ -165,20 +141,12 @@ public class GetRemindResponse extends AcsResponse {
 			this.remindUnit = remindUnit;
 		}
 
-		public String getRemindType() {
-			return this.remindType;
+		public Integer getAlertInterval() {
+			return this.alertInterval;
 		}
 
-		public void setRemindType(String remindType) {
-			this.remindType = remindType;
-		}
-
-		public String getAlertUnit() {
-			return this.alertUnit;
-		}
-
-		public void setAlertUnit(String alertUnit) {
-			this.alertUnit = alertUnit;
+		public void setAlertInterval(Integer alertInterval) {
+			this.alertInterval = alertInterval;
 		}
 
 		public Boolean getUseflag() {
@@ -197,12 +165,52 @@ public class GetRemindResponse extends AcsResponse {
 			this.founder = founder;
 		}
 
-		public Integer getAlertInterval() {
-			return this.alertInterval;
+		public Long getRemindId() {
+			return this.remindId;
 		}
 
-		public void setAlertInterval(Integer alertInterval) {
-			this.alertInterval = alertInterval;
+		public void setRemindId(Long remindId) {
+			this.remindId = remindId;
+		}
+
+		public String getDndEnd() {
+			return this.dndEnd;
+		}
+
+		public void setDndEnd(String dndEnd) {
+			this.dndEnd = dndEnd;
+		}
+
+		public String getRemindType() {
+			return this.remindType;
+		}
+
+		public void setRemindType(String remindType) {
+			this.remindType = remindType;
+		}
+
+		public String getAlertUnit() {
+			return this.alertUnit;
+		}
+
+		public void setAlertUnit(String alertUnit) {
+			this.alertUnit = alertUnit;
+		}
+
+		public String getDndStart() {
+			return this.dndStart;
+		}
+
+		public void setDndStart(String dndStart) {
+			this.dndStart = dndStart;
+		}
+
+		public String getRemindName() {
+			return this.remindName;
+		}
+
+		public void setRemindName(String remindName) {
+			this.remindName = remindName;
 		}
 
 		public String getDetail() {
@@ -211,14 +219,6 @@ public class GetRemindResponse extends AcsResponse {
 
 		public void setDetail(String detail) {
 			this.detail = detail;
-		}
-
-		public Integer getMaxAlertTimes() {
-			return this.maxAlertTimes;
-		}
-
-		public void setMaxAlertTimes(Integer maxAlertTimes) {
-			this.maxAlertTimes = maxAlertTimes;
 		}
 
 		public List<RobotsItem> getRobots() {
@@ -261,20 +261,20 @@ public class GetRemindResponse extends AcsResponse {
 			this.bizProcesses = bizProcesses;
 		}
 
-		public List<String> getAlertMethods() {
-			return this.alertMethods;
-		}
-
-		public void setAlertMethods(List<String> alertMethods) {
-			this.alertMethods = alertMethods;
-		}
-
 		public List<String> getAlertTargets() {
 			return this.alertTargets;
 		}
 
 		public void setAlertTargets(List<String> alertTargets) {
 			this.alertTargets = alertTargets;
+		}
+
+		public List<String> getAlertMethods() {
+			return this.alertMethods;
+		}
+
+		public void setAlertMethods(List<String> alertMethods) {
+			this.alertMethods = alertMethods;
 		}
 
 		public static class RobotsItem {
@@ -302,20 +302,20 @@ public class GetRemindResponse extends AcsResponse {
 
 		public static class NodesItem {
 
-			private Long nodeId;
+			private String owner;
 
 			private String nodeName;
 
-			private String owner;
+			private Long nodeId;
 
 			private Long projectId;
 
-			public Long getNodeId() {
-				return this.nodeId;
+			public String getOwner() {
+				return this.owner;
 			}
 
-			public void setNodeId(Long nodeId) {
-				this.nodeId = nodeId;
+			public void setOwner(String owner) {
+				this.owner = owner;
 			}
 
 			public String getNodeName() {
@@ -326,12 +326,12 @@ public class GetRemindResponse extends AcsResponse {
 				this.nodeName = nodeName;
 			}
 
-			public String getOwner() {
-				return this.owner;
+			public Long getNodeId() {
+				return this.nodeId;
 			}
 
-			public void setOwner(String owner) {
-				this.owner = owner;
+			public void setNodeId(Long nodeId) {
+				this.nodeId = nodeId;
 			}
 
 			public Long getProjectId() {
@@ -345,17 +345,9 @@ public class GetRemindResponse extends AcsResponse {
 
 		public static class BaselinesItem {
 
-			private Long baselineId;
-
 			private String baselineName;
 
-			public Long getBaselineId() {
-				return this.baselineId;
-			}
-
-			public void setBaselineId(Long baselineId) {
-				this.baselineId = baselineId;
-			}
+			private Long baselineId;
 
 			public String getBaselineName() {
 				return this.baselineName;
@@ -363,6 +355,14 @@ public class GetRemindResponse extends AcsResponse {
 
 			public void setBaselineName(String baselineName) {
 				this.baselineName = baselineName;
+			}
+
+			public Long getBaselineId() {
+				return this.baselineId;
+			}
+
+			public void setBaselineId(Long baselineId) {
+				this.baselineId = baselineId;
 			}
 		}
 
@@ -381,17 +381,9 @@ public class GetRemindResponse extends AcsResponse {
 
 		public static class BizProcessesItem {
 
-			private Long bizId;
-
 			private String bizProcessName;
 
-			public Long getBizId() {
-				return this.bizId;
-			}
-
-			public void setBizId(Long bizId) {
-				this.bizId = bizId;
-			}
+			private Long bizId;
 
 			public String getBizProcessName() {
 				return this.bizProcessName;
@@ -399,6 +391,14 @@ public class GetRemindResponse extends AcsResponse {
 
 			public void setBizProcessName(String bizProcessName) {
 				this.bizProcessName = bizProcessName;
+			}
+
+			public Long getBizId() {
+				return this.bizId;
+			}
+
+			public void setBizId(Long bizId) {
+				this.bizId = bizId;
 			}
 		}
 	}

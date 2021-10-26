@@ -25,41 +25,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListAlertMessagesResponse extends AcsResponse {
 
-	private Boolean success;
-
-	private String errorCode;
-
-	private String errorMessage;
-
 	private Integer httpStatusCode;
 
 	private String requestId;
 
+	private String errorMessage;
+
+	private String errorCode;
+
+	private Boolean success;
+
 	private Data data;
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
 
 	public Integer getHttpStatusCode() {
 		return this.httpStatusCode;
@@ -75,6 +51,30 @@ public class ListAlertMessagesResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
+	public String getErrorCode() {
+		return this.errorCode;
+	}
+
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Data getData() {
@@ -129,23 +129,23 @@ public class ListAlertMessagesResponse extends AcsResponse {
 
 		public static class AlertMessagesItem {
 
-			private Long alertId;
-
-			private Long alertTime;
-
-			private String source;
-
 			private Long remindId;
-
-			private String remindName;
-
-			private String alertUser;
-
-			private String alertMethod;
 
 			private String alertMessageStatus;
 
+			private String alertUser;
+
+			private Long alertTime;
+
+			private String alertMethod;
+
+			private String source;
+
 			private String content;
+
+			private String remindName;
+
+			private Long alertId;
 
 			private List<InstancesItem> instances;
 
@@ -155,60 +155,12 @@ public class ListAlertMessagesResponse extends AcsResponse {
 
 			private SlaAlert slaAlert;
 
-			public Long getAlertId() {
-				return this.alertId;
-			}
-
-			public void setAlertId(Long alertId) {
-				this.alertId = alertId;
-			}
-
-			public Long getAlertTime() {
-				return this.alertTime;
-			}
-
-			public void setAlertTime(Long alertTime) {
-				this.alertTime = alertTime;
-			}
-
-			public String getSource() {
-				return this.source;
-			}
-
-			public void setSource(String source) {
-				this.source = source;
-			}
-
 			public Long getRemindId() {
 				return this.remindId;
 			}
 
 			public void setRemindId(Long remindId) {
 				this.remindId = remindId;
-			}
-
-			public String getRemindName() {
-				return this.remindName;
-			}
-
-			public void setRemindName(String remindName) {
-				this.remindName = remindName;
-			}
-
-			public String getAlertUser() {
-				return this.alertUser;
-			}
-
-			public void setAlertUser(String alertUser) {
-				this.alertUser = alertUser;
-			}
-
-			public String getAlertMethod() {
-				return this.alertMethod;
-			}
-
-			public void setAlertMethod(String alertMethod) {
-				this.alertMethod = alertMethod;
 			}
 
 			public String getAlertMessageStatus() {
@@ -219,12 +171,60 @@ public class ListAlertMessagesResponse extends AcsResponse {
 				this.alertMessageStatus = alertMessageStatus;
 			}
 
+			public String getAlertUser() {
+				return this.alertUser;
+			}
+
+			public void setAlertUser(String alertUser) {
+				this.alertUser = alertUser;
+			}
+
+			public Long getAlertTime() {
+				return this.alertTime;
+			}
+
+			public void setAlertTime(Long alertTime) {
+				this.alertTime = alertTime;
+			}
+
+			public String getAlertMethod() {
+				return this.alertMethod;
+			}
+
+			public void setAlertMethod(String alertMethod) {
+				this.alertMethod = alertMethod;
+			}
+
+			public String getSource() {
+				return this.source;
+			}
+
+			public void setSource(String source) {
+				this.source = source;
+			}
+
 			public String getContent() {
 				return this.content;
 			}
 
 			public void setContent(String content) {
 				this.content = content;
+			}
+
+			public String getRemindName() {
+				return this.remindName;
+			}
+
+			public void setRemindName(String remindName) {
+				this.remindName = remindName;
+			}
+
+			public Long getAlertId() {
+				return this.alertId;
+			}
+
+			public void setAlertId(Long alertId) {
+				this.alertId = alertId;
 			}
 
 			public List<InstancesItem> getInstances() {
@@ -261,39 +261,15 @@ public class ListAlertMessagesResponse extends AcsResponse {
 
 			public static class InstancesItem {
 
-				private Long nodeId;
-
-				private String nodeName;
-
-				private Long projectId;
-
 				private String status;
 
 				private Long instanceId;
 
-				public Long getNodeId() {
-					return this.nodeId;
-				}
+				private String nodeName;
 
-				public void setNodeId(Long nodeId) {
-					this.nodeId = nodeId;
-				}
+				private Long nodeId;
 
-				public String getNodeName() {
-					return this.nodeName;
-				}
-
-				public void setNodeName(String nodeName) {
-					this.nodeName = nodeName;
-				}
-
-				public Long getProjectId() {
-					return this.projectId;
-				}
-
-				public void setProjectId(Long projectId) {
-					this.projectId = projectId;
-				}
+				private Long projectId;
 
 				public String getStatus() {
 					return this.status;
@@ -310,21 +286,14 @@ public class ListAlertMessagesResponse extends AcsResponse {
 				public void setInstanceId(Long instanceId) {
 					this.instanceId = instanceId;
 				}
-			}
 
-			public static class TopicsItem {
+				public String getNodeName() {
+					return this.nodeName;
+				}
 
-				private Long nodeId;
-
-				private Long instanceId;
-
-				private Long topicId;
-
-				private String topicName;
-
-				private String topicOwner;
-
-				private String topicStatus;
+				public void setNodeName(String nodeName) {
+					this.nodeName = nodeName;
+				}
 
 				public Long getNodeId() {
 					return this.nodeId;
@@ -332,6 +301,37 @@ public class ListAlertMessagesResponse extends AcsResponse {
 
 				public void setNodeId(Long nodeId) {
 					this.nodeId = nodeId;
+				}
+
+				public Long getProjectId() {
+					return this.projectId;
+				}
+
+				public void setProjectId(Long projectId) {
+					this.projectId = projectId;
+				}
+			}
+
+			public static class TopicsItem {
+
+				private String topicName;
+
+				private Long instanceId;
+
+				private Long topicId;
+
+				private String topicOwner;
+
+				private Long nodeId;
+
+				private String topicStatus;
+
+				public String getTopicName() {
+					return this.topicName;
+				}
+
+				public void setTopicName(String topicName) {
+					this.topicName = topicName;
 				}
 
 				public Long getInstanceId() {
@@ -350,20 +350,20 @@ public class ListAlertMessagesResponse extends AcsResponse {
 					this.topicId = topicId;
 				}
 
-				public String getTopicName() {
-					return this.topicName;
-				}
-
-				public void setTopicName(String topicName) {
-					this.topicName = topicName;
-				}
-
 				public String getTopicOwner() {
 					return this.topicOwner;
 				}
 
 				public void setTopicOwner(String topicOwner) {
 					this.topicOwner = topicOwner;
+				}
+
+				public Long getNodeId() {
+					return this.nodeId;
+				}
+
+				public void setNodeId(Long nodeId) {
+					this.nodeId = nodeId;
 				}
 
 				public String getTopicStatus() {
@@ -377,20 +377,20 @@ public class ListAlertMessagesResponse extends AcsResponse {
 
 			public static class NodesItem {
 
-				private Long nodeId;
+				private String owner;
 
 				private String nodeName;
 
-				private String owner;
+				private Long nodeId;
 
 				private Long projectId;
 
-				public Long getNodeId() {
-					return this.nodeId;
+				public String getOwner() {
+					return this.owner;
 				}
 
-				public void setNodeId(Long nodeId) {
-					this.nodeId = nodeId;
+				public void setOwner(String owner) {
+					this.owner = owner;
 				}
 
 				public String getNodeName() {
@@ -401,12 +401,12 @@ public class ListAlertMessagesResponse extends AcsResponse {
 					this.nodeName = nodeName;
 				}
 
-				public String getOwner() {
-					return this.owner;
+				public Long getNodeId() {
+					return this.nodeId;
 				}
 
-				public void setOwner(String owner) {
-					this.owner = owner;
+				public void setNodeId(Long nodeId) {
+					this.nodeId = nodeId;
 				}
 
 				public Long getProjectId() {
@@ -420,19 +420,35 @@ public class ListAlertMessagesResponse extends AcsResponse {
 
 			public static class SlaAlert {
 
+				private String status;
+
+				private String baselineOwner;
+
 				private Long baselineId;
 
 				private String baselineName;
 
-				private String baselineOwner;
-
 				private Long bizdate;
-
-				private Integer inGroupId;
 
 				private Long projectId;
 
-				private String status;
+				private Integer inGroupId;
+
+				public String getStatus() {
+					return this.status;
+				}
+
+				public void setStatus(String status) {
+					this.status = status;
+				}
+
+				public String getBaselineOwner() {
+					return this.baselineOwner;
+				}
+
+				public void setBaselineOwner(String baselineOwner) {
+					this.baselineOwner = baselineOwner;
+				}
 
 				public Long getBaselineId() {
 					return this.baselineId;
@@ -450,28 +466,12 @@ public class ListAlertMessagesResponse extends AcsResponse {
 					this.baselineName = baselineName;
 				}
 
-				public String getBaselineOwner() {
-					return this.baselineOwner;
-				}
-
-				public void setBaselineOwner(String baselineOwner) {
-					this.baselineOwner = baselineOwner;
-				}
-
 				public Long getBizdate() {
 					return this.bizdate;
 				}
 
 				public void setBizdate(Long bizdate) {
 					this.bizdate = bizdate;
-				}
-
-				public Integer getInGroupId() {
-					return this.inGroupId;
-				}
-
-				public void setInGroupId(Integer inGroupId) {
-					this.inGroupId = inGroupId;
 				}
 
 				public Long getProjectId() {
@@ -482,12 +482,12 @@ public class ListAlertMessagesResponse extends AcsResponse {
 					this.projectId = projectId;
 				}
 
-				public String getStatus() {
-					return this.status;
+				public Integer getInGroupId() {
+					return this.inGroupId;
 				}
 
-				public void setStatus(String status) {
-					this.status = status;
+				public void setInGroupId(Integer inGroupId) {
+					this.inGroupId = inGroupId;
 				}
 			}
 		}

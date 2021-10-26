@@ -27,9 +27,9 @@ public class CreateDISyncTaskResponseUnmarshaller {
 		createDISyncTaskResponse.setSuccess(_ctx.booleanValue("CreateDISyncTaskResponse.Success"));
 
 		Data data = new Data();
-		data.setFileId(_ctx.longValue("CreateDISyncTaskResponse.Data.FileId"));
 		data.setStatus(_ctx.stringValue("CreateDISyncTaskResponse.Data.Status"));
 		data.setMessage(_ctx.stringValue("CreateDISyncTaskResponse.Data.Message"));
+		data.setFileId(_ctx.longValue("CreateDISyncTaskResponse.Data.FileId"));
 		createDISyncTaskResponse.setData(data);
 	 
 	 	return createDISyncTaskResponse;

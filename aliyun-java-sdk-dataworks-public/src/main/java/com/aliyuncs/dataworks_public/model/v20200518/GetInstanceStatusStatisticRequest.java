@@ -27,7 +27,11 @@ public class GetInstanceStatusStatisticRequest extends RpcAcsRequest<GetInstance
 
 	private String projectEnv;
 
+	private String dagType;
+
 	private String bizDate;
+
+	private String schedulerType;
 
 	private Long projectId;
 	public GetInstanceStatusStatisticRequest() {
@@ -50,6 +54,17 @@ public class GetInstanceStatusStatisticRequest extends RpcAcsRequest<GetInstance
 		}
 	}
 
+	public String getDagType() {
+		return this.dagType;
+	}
+
+	public void setDagType(String dagType) {
+		this.dagType = dagType;
+		if(dagType != null){
+			putBodyParameter("DagType", dagType);
+		}
+	}
+
 	public String getBizDate() {
 		return this.bizDate;
 	}
@@ -58,6 +73,17 @@ public class GetInstanceStatusStatisticRequest extends RpcAcsRequest<GetInstance
 		this.bizDate = bizDate;
 		if(bizDate != null){
 			putBodyParameter("BizDate", bizDate);
+		}
+	}
+
+	public String getSchedulerType() {
+		return this.schedulerType;
+	}
+
+	public void setSchedulerType(String schedulerType) {
+		this.schedulerType = schedulerType;
+		if(schedulerType != null){
+			putBodyParameter("SchedulerType", schedulerType);
 		}
 	}
 

@@ -25,17 +25,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetSensitiveDataResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Map<Object,Object> sensitiveData;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public Map<Object,Object> getSensitiveData() {
 		return this.sensitiveData;
@@ -43,6 +35,14 @@ public class GetSensitiveDataResponse extends AcsResponse {
 
 	public void setSensitiveData(Map<Object,Object> sensitiveData) {
 		this.sensitiveData = sensitiveData;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

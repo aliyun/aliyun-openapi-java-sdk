@@ -28,10 +28,10 @@ public class ListRemindsResponseUnmarshaller {
 	public static ListRemindsResponse unmarshall(ListRemindsResponse listRemindsResponse, UnmarshallerContext _ctx) {
 		
 		listRemindsResponse.setRequestId(_ctx.stringValue("ListRemindsResponse.RequestId"));
-		listRemindsResponse.setSuccess(_ctx.booleanValue("ListRemindsResponse.Success"));
-		listRemindsResponse.setErrorCode(_ctx.stringValue("ListRemindsResponse.ErrorCode"));
-		listRemindsResponse.setErrorMessage(_ctx.stringValue("ListRemindsResponse.ErrorMessage"));
 		listRemindsResponse.setHttpStatusCode(_ctx.integerValue("ListRemindsResponse.HttpStatusCode"));
+		listRemindsResponse.setErrorMessage(_ctx.stringValue("ListRemindsResponse.ErrorMessage"));
+		listRemindsResponse.setErrorCode(_ctx.stringValue("ListRemindsResponse.ErrorCode"));
+		listRemindsResponse.setSuccess(_ctx.booleanValue("ListRemindsResponse.Success"));
 
 		Data data = new Data();
 		data.setPageNumber(_ctx.integerValue("ListRemindsResponse.Data.PageNumber"));
@@ -41,15 +41,21 @@ public class ListRemindsResponseUnmarshaller {
 		List<RemindsItem> reminds = new ArrayList<RemindsItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListRemindsResponse.Data.Reminds.Length"); i++) {
 			RemindsItem remindsItem = new RemindsItem();
-			remindsItem.setRemindId(_ctx.longValue("ListRemindsResponse.Data.Reminds["+ i +"].RemindId"));
-			remindsItem.setRemindName(_ctx.stringValue("ListRemindsResponse.Data.Reminds["+ i +"].RemindName"));
-			remindsItem.setDndStart(_ctx.stringValue("ListRemindsResponse.Data.Reminds["+ i +"].DndStart"));
-			remindsItem.setDndEnd(_ctx.stringValue("ListRemindsResponse.Data.Reminds["+ i +"].DndEnd"));
-			remindsItem.setRemindUnit(_ctx.stringValue("ListRemindsResponse.Data.Reminds["+ i +"].RemindUnit"));
-			remindsItem.setRemindType(_ctx.stringValue("ListRemindsResponse.Data.Reminds["+ i +"].RemindType"));
-			remindsItem.setAlertUnit(_ctx.stringValue("ListRemindsResponse.Data.Reminds["+ i +"].AlertUnit"));
-			remindsItem.setUseflag(_ctx.booleanValue("ListRemindsResponse.Data.Reminds["+ i +"].Useflag"));
 			remindsItem.setFounder(_ctx.stringValue("ListRemindsResponse.Data.Reminds["+ i +"].Founder"));
+			remindsItem.setRemindId(_ctx.longValue("ListRemindsResponse.Data.Reminds["+ i +"].RemindId"));
+			remindsItem.setAlertUnit(_ctx.stringValue("ListRemindsResponse.Data.Reminds["+ i +"].AlertUnit"));
+			remindsItem.setRemindType(_ctx.stringValue("ListRemindsResponse.Data.Reminds["+ i +"].RemindType"));
+			remindsItem.setDndEnd(_ctx.stringValue("ListRemindsResponse.Data.Reminds["+ i +"].DndEnd"));
+			remindsItem.setDndStart(_ctx.stringValue("ListRemindsResponse.Data.Reminds["+ i +"].DndStart"));
+			remindsItem.setRemindUnit(_ctx.stringValue("ListRemindsResponse.Data.Reminds["+ i +"].RemindUnit"));
+			remindsItem.setUseflag(_ctx.booleanValue("ListRemindsResponse.Data.Reminds["+ i +"].Useflag"));
+			remindsItem.setRemindName(_ctx.stringValue("ListRemindsResponse.Data.Reminds["+ i +"].RemindName"));
+
+			List<String> alertTargets = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("ListRemindsResponse.Data.Reminds["+ i +"].AlertTargets.Length"); j++) {
+				alertTargets.add(_ctx.stringValue("ListRemindsResponse.Data.Reminds["+ i +"].AlertTargets["+ j +"]"));
+			}
+			remindsItem.setAlertTargets(alertTargets);
 
 			List<Long> nodeIds = new ArrayList<Long>();
 			for (int j = 0; j < _ctx.lengthValue("ListRemindsResponse.Data.Reminds["+ i +"].NodeIds.Length"); j++) {
@@ -57,11 +63,11 @@ public class ListRemindsResponseUnmarshaller {
 			}
 			remindsItem.setNodeIds(nodeIds);
 
-			List<Long> baselineIds = new ArrayList<Long>();
-			for (int j = 0; j < _ctx.lengthValue("ListRemindsResponse.Data.Reminds["+ i +"].BaselineIds.Length"); j++) {
-				baselineIds.add(_ctx.longValue("ListRemindsResponse.Data.Reminds["+ i +"].BaselineIds["+ j +"]"));
+			List<Long> bizProcessIds = new ArrayList<Long>();
+			for (int j = 0; j < _ctx.lengthValue("ListRemindsResponse.Data.Reminds["+ i +"].BizProcessIds.Length"); j++) {
+				bizProcessIds.add(_ctx.longValue("ListRemindsResponse.Data.Reminds["+ i +"].BizProcessIds["+ j +"]"));
 			}
-			remindsItem.setBaselineIds(baselineIds);
+			remindsItem.setBizProcessIds(bizProcessIds);
 
 			List<Long> projectIds = new ArrayList<Long>();
 			for (int j = 0; j < _ctx.lengthValue("ListRemindsResponse.Data.Reminds["+ i +"].ProjectIds.Length"); j++) {
@@ -69,23 +75,17 @@ public class ListRemindsResponseUnmarshaller {
 			}
 			remindsItem.setProjectIds(projectIds);
 
-			List<Long> bizProcessIds = new ArrayList<Long>();
-			for (int j = 0; j < _ctx.lengthValue("ListRemindsResponse.Data.Reminds["+ i +"].BizProcessIds.Length"); j++) {
-				bizProcessIds.add(_ctx.longValue("ListRemindsResponse.Data.Reminds["+ i +"].BizProcessIds["+ j +"]"));
+			List<Long> baselineIds = new ArrayList<Long>();
+			for (int j = 0; j < _ctx.lengthValue("ListRemindsResponse.Data.Reminds["+ i +"].BaselineIds.Length"); j++) {
+				baselineIds.add(_ctx.longValue("ListRemindsResponse.Data.Reminds["+ i +"].BaselineIds["+ j +"]"));
 			}
-			remindsItem.setBizProcessIds(bizProcessIds);
+			remindsItem.setBaselineIds(baselineIds);
 
 			List<String> alertMethods = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("ListRemindsResponse.Data.Reminds["+ i +"].AlertMethods.Length"); j++) {
 				alertMethods.add(_ctx.stringValue("ListRemindsResponse.Data.Reminds["+ i +"].AlertMethods["+ j +"]"));
 			}
 			remindsItem.setAlertMethods(alertMethods);
-
-			List<String> alertTargets = new ArrayList<String>();
-			for (int j = 0; j < _ctx.lengthValue("ListRemindsResponse.Data.Reminds["+ i +"].AlertTargets.Length"); j++) {
-				alertTargets.add(_ctx.stringValue("ListRemindsResponse.Data.Reminds["+ i +"].AlertTargets["+ j +"]"));
-			}
-			remindsItem.setAlertTargets(alertTargets);
 
 			reminds.add(remindsItem);
 		}

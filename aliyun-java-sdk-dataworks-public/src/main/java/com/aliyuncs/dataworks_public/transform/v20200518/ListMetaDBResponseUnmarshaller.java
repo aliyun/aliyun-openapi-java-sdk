@@ -35,13 +35,13 @@ public class ListMetaDBResponseUnmarshaller {
 		List<DbListItem> dbList = new ArrayList<DbListItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListMetaDBResponse.DatabaseInfo.DbList.Length"); i++) {
 			DbListItem dbListItem = new DbListItem();
-			dbListItem.setName(_ctx.stringValue("ListMetaDBResponse.DatabaseInfo.DbList["+ i +"].Name"));
 			dbListItem.setType(_ctx.stringValue("ListMetaDBResponse.DatabaseInfo.DbList["+ i +"].Type"));
+			dbListItem.setCreateTimeStamp(_ctx.longValue("ListMetaDBResponse.DatabaseInfo.DbList["+ i +"].CreateTimeStamp"));
+			dbListItem.setUUID(_ctx.stringValue("ListMetaDBResponse.DatabaseInfo.DbList["+ i +"].UUID"));
+			dbListItem.setModifiedTimeStamp(_ctx.longValue("ListMetaDBResponse.DatabaseInfo.DbList["+ i +"].ModifiedTimeStamp"));
+			dbListItem.setName(_ctx.stringValue("ListMetaDBResponse.DatabaseInfo.DbList["+ i +"].Name"));
 			dbListItem.setOwnerId(_ctx.stringValue("ListMetaDBResponse.DatabaseInfo.DbList["+ i +"].OwnerId"));
 			dbListItem.setLocation(_ctx.stringValue("ListMetaDBResponse.DatabaseInfo.DbList["+ i +"].Location"));
-			dbListItem.setCreateTimeStamp(_ctx.longValue("ListMetaDBResponse.DatabaseInfo.DbList["+ i +"].CreateTimeStamp"));
-			dbListItem.setModifiedTimeStamp(_ctx.longValue("ListMetaDBResponse.DatabaseInfo.DbList["+ i +"].ModifiedTimeStamp"));
-			dbListItem.setUUID(_ctx.stringValue("ListMetaDBResponse.DatabaseInfo.DbList["+ i +"].UUID"));
 
 			dbList.add(dbListItem);
 		}

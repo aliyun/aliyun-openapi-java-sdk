@@ -47,17 +47,9 @@ public class ListProgramTypeCountResponse extends AcsResponse {
 
 	public static class ProgramTypeAndCount {
 
-		private String programType;
-
 		private Integer count;
 
-		public String getProgramType() {
-			return this.programType;
-		}
-
-		public void setProgramType(String programType) {
-			this.programType = programType;
-		}
+		private String programType;
 
 		public Integer getCount() {
 			return this.count;
@@ -65,6 +57,14 @@ public class ListProgramTypeCountResponse extends AcsResponse {
 
 		public void setCount(Integer count) {
 			this.count = count;
+		}
+
+		public String getProgramType() {
+			return this.programType;
+		}
+
+		public void setProgramType(String programType) {
+			this.programType = programType;
 		}
 	}
 

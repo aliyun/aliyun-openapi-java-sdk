@@ -25,32 +25,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetMetaCategoryResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String errorCode;
+	private Integer httpStatusCode;
 
 	private String errorMessage;
 
-	private Integer httpStatusCode;
+	private String requestId;
 
 	private Boolean success;
 
+	private String errorCode;
+
 	private Data data;
 
-	public String getRequestId() {
-		return this.requestId;
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
 	}
 
 	public String getErrorMessage() {
@@ -61,12 +53,12 @@ public class GetMetaCategoryResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public Integer getHttpStatusCode() {
-		return this.httpStatusCode;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setHttpStatusCode(Integer httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Boolean getSuccess() {
@@ -75,6 +67,14 @@ public class GetMetaCategoryResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getErrorCode() {
+		return this.errorCode;
+	}
+
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
 	}
 
 	public Data getData() {
@@ -129,54 +129,30 @@ public class GetMetaCategoryResponse extends AcsResponse {
 
 		public static class DataEntityListItem {
 
-			private Long categoryId;
-
-			private String name;
-
-			private Long createTime;
-
-			private Long modifiedTime;
+			private Integer depth;
 
 			private String comment;
 
-			private String ownerId;
+			private Long modifiedTime;
+
+			private Long createTime;
+
+			private Long categoryId;
 
 			private String lastOperatorId;
 
+			private String name;
+
 			private Long parentCategoryId;
 
-			private Integer depth;
+			private String ownerId;
 
-			public Long getCategoryId() {
-				return this.categoryId;
+			public Integer getDepth() {
+				return this.depth;
 			}
 
-			public void setCategoryId(Long categoryId) {
-				this.categoryId = categoryId;
-			}
-
-			public String getName() {
-				return this.name;
-			}
-
-			public void setName(String name) {
-				this.name = name;
-			}
-
-			public Long getCreateTime() {
-				return this.createTime;
-			}
-
-			public void setCreateTime(Long createTime) {
-				this.createTime = createTime;
-			}
-
-			public Long getModifiedTime() {
-				return this.modifiedTime;
-			}
-
-			public void setModifiedTime(Long modifiedTime) {
-				this.modifiedTime = modifiedTime;
+			public void setDepth(Integer depth) {
+				this.depth = depth;
 			}
 
 			public String getComment() {
@@ -187,12 +163,28 @@ public class GetMetaCategoryResponse extends AcsResponse {
 				this.comment = comment;
 			}
 
-			public String getOwnerId() {
-				return this.ownerId;
+			public Long getModifiedTime() {
+				return this.modifiedTime;
 			}
 
-			public void setOwnerId(String ownerId) {
-				this.ownerId = ownerId;
+			public void setModifiedTime(Long modifiedTime) {
+				this.modifiedTime = modifiedTime;
+			}
+
+			public Long getCreateTime() {
+				return this.createTime;
+			}
+
+			public void setCreateTime(Long createTime) {
+				this.createTime = createTime;
+			}
+
+			public Long getCategoryId() {
+				return this.categoryId;
+			}
+
+			public void setCategoryId(Long categoryId) {
+				this.categoryId = categoryId;
 			}
 
 			public String getLastOperatorId() {
@@ -203,6 +195,14 @@ public class GetMetaCategoryResponse extends AcsResponse {
 				this.lastOperatorId = lastOperatorId;
 			}
 
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
+
 			public Long getParentCategoryId() {
 				return this.parentCategoryId;
 			}
@@ -211,12 +211,12 @@ public class GetMetaCategoryResponse extends AcsResponse {
 				this.parentCategoryId = parentCategoryId;
 			}
 
-			public Integer getDepth() {
-				return this.depth;
+			public String getOwnerId() {
+				return this.ownerId;
 			}
 
-			public void setDepth(Integer depth) {
-				this.depth = depth;
+			public void setOwnerId(String ownerId) {
+				this.ownerId = ownerId;
 			}
 		}
 	}

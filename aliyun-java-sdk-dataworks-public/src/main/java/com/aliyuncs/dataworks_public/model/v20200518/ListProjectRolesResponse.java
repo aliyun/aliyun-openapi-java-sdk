@@ -47,21 +47,13 @@ public class ListProjectRolesResponse extends AcsResponse {
 
 	public static class Role {
 
-		private String projectRoleCode;
-
 		private Integer projectRoleId;
-
-		private String projectRoleName;
 
 		private String projectRoleType;
 
-		public String getProjectRoleCode() {
-			return this.projectRoleCode;
-		}
+		private String projectRoleName;
 
-		public void setProjectRoleCode(String projectRoleCode) {
-			this.projectRoleCode = projectRoleCode;
-		}
+		private String projectRoleCode;
 
 		public Integer getProjectRoleId() {
 			return this.projectRoleId;
@@ -69,6 +61,14 @@ public class ListProjectRolesResponse extends AcsResponse {
 
 		public void setProjectRoleId(Integer projectRoleId) {
 			this.projectRoleId = projectRoleId;
+		}
+
+		public String getProjectRoleType() {
+			return this.projectRoleType;
+		}
+
+		public void setProjectRoleType(String projectRoleType) {
+			this.projectRoleType = projectRoleType;
 		}
 
 		public String getProjectRoleName() {
@@ -79,12 +79,12 @@ public class ListProjectRolesResponse extends AcsResponse {
 			this.projectRoleName = projectRoleName;
 		}
 
-		public String getProjectRoleType() {
-			return this.projectRoleType;
+		public String getProjectRoleCode() {
+			return this.projectRoleCode;
 		}
 
-		public void setProjectRoleType(String projectRoleType) {
-			this.projectRoleType = projectRoleType;
+		public void setProjectRoleCode(String projectRoleCode) {
+			this.projectRoleCode = projectRoleCode;
 		}
 	}
 

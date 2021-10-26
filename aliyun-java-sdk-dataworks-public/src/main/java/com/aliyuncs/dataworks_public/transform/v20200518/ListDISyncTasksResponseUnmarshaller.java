@@ -38,10 +38,10 @@ public class ListDISyncTasksResponseUnmarshaller {
 		List<RealTimeSolutionListItem> realTimeSolutionList = new ArrayList<RealTimeSolutionListItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListDISyncTasksResponse.TaskList.RealTimeSolutionList.Length"); i++) {
 			RealTimeSolutionListItem realTimeSolutionListItem = new RealTimeSolutionListItem();
-			realTimeSolutionListItem.setProcessId(_ctx.longValue("ListDISyncTasksResponse.TaskList.RealTimeSolutionList["+ i +"].ProcessId"));
 			realTimeSolutionListItem.setProcessName(_ctx.stringValue("ListDISyncTasksResponse.TaskList.RealTimeSolutionList["+ i +"].ProcessName"));
-			realTimeSolutionListItem.setTaskStatus(_ctx.stringValue("ListDISyncTasksResponse.TaskList.RealTimeSolutionList["+ i +"].TaskStatus"));
 			realTimeSolutionListItem.setTaskType(_ctx.stringValue("ListDISyncTasksResponse.TaskList.RealTimeSolutionList["+ i +"].TaskType"));
+			realTimeSolutionListItem.setProcessId(_ctx.longValue("ListDISyncTasksResponse.TaskList.RealTimeSolutionList["+ i +"].ProcessId"));
+			realTimeSolutionListItem.setTaskStatus(_ctx.stringValue("ListDISyncTasksResponse.TaskList.RealTimeSolutionList["+ i +"].TaskStatus"));
 			realTimeSolutionListItem.setCreateTime(_ctx.longValue("ListDISyncTasksResponse.TaskList.RealTimeSolutionList["+ i +"].CreateTime"));
 
 			realTimeSolutionList.add(realTimeSolutionListItem);

@@ -25,32 +25,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetMetaTableColumnResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String errorCode;
+	private Integer httpStatusCode;
 
 	private String errorMessage;
 
-	private Integer httpStatusCode;
+	private String requestId;
 
 	private Boolean success;
 
+	private String errorCode;
+
 	private Data data;
 
-	public String getRequestId() {
-		return this.requestId;
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
 	}
 
 	public String getErrorMessage() {
@@ -61,12 +53,12 @@ public class GetMetaTableColumnResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public Integer getHttpStatusCode() {
-		return this.httpStatusCode;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setHttpStatusCode(Integer httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Boolean getSuccess() {
@@ -75,6 +67,14 @@ public class GetMetaTableColumnResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getErrorCode() {
+		return this.errorCode;
+	}
+
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
 	}
 
 	public Data getData() {
@@ -87,21 +87,13 @@ public class GetMetaTableColumnResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Long totalCount;
-
 		private Integer pageNum;
 
 		private Integer pageSize;
 
+		private Long totalCount;
+
 		private List<ColumnListItem> columnList;
-
-		public Long getTotalCount() {
-			return this.totalCount;
-		}
-
-		public void setTotalCount(Long totalCount) {
-			this.totalCount = totalCount;
-		}
 
 		public Integer getPageNum() {
 			return this.pageNum;
@@ -119,6 +111,14 @@ public class GetMetaTableColumnResponse extends AcsResponse {
 			this.pageSize = pageSize;
 		}
 
+		public Long getTotalCount() {
+			return this.totalCount;
+		}
+
+		public void setTotalCount(Long totalCount) {
+			this.totalCount = totalCount;
+		}
+
 		public List<ColumnListItem> getColumnList() {
 			return this.columnList;
 		}
@@ -129,31 +129,23 @@ public class GetMetaTableColumnResponse extends AcsResponse {
 
 		public static class ColumnListItem {
 
-			private String columnName;
-
 			private String columnGuid;
 
-			private String comment;
-
-			private Boolean isPrimaryKey;
-
-			private String columnType;
+			private String columnName;
 
 			private Boolean isPartitionColumn;
 
-			private Boolean isForeignKey;
+			private String comment;
 
-			private String caption;
+			private String columnType;
+
+			private Boolean isPrimaryKey;
 
 			private Integer position;
 
-			public String getColumnName() {
-				return this.columnName;
-			}
+			private String caption;
 
-			public void setColumnName(String columnName) {
-				this.columnName = columnName;
-			}
+			private Boolean isForeignKey;
 
 			public String getColumnGuid() {
 				return this.columnGuid;
@@ -163,28 +155,12 @@ public class GetMetaTableColumnResponse extends AcsResponse {
 				this.columnGuid = columnGuid;
 			}
 
-			public String getComment() {
-				return this.comment;
+			public String getColumnName() {
+				return this.columnName;
 			}
 
-			public void setComment(String comment) {
-				this.comment = comment;
-			}
-
-			public Boolean getIsPrimaryKey() {
-				return this.isPrimaryKey;
-			}
-
-			public void setIsPrimaryKey(Boolean isPrimaryKey) {
-				this.isPrimaryKey = isPrimaryKey;
-			}
-
-			public String getColumnType() {
-				return this.columnType;
-			}
-
-			public void setColumnType(String columnType) {
-				this.columnType = columnType;
+			public void setColumnName(String columnName) {
+				this.columnName = columnName;
 			}
 
 			public Boolean getIsPartitionColumn() {
@@ -195,12 +171,36 @@ public class GetMetaTableColumnResponse extends AcsResponse {
 				this.isPartitionColumn = isPartitionColumn;
 			}
 
-			public Boolean getIsForeignKey() {
-				return this.isForeignKey;
+			public String getComment() {
+				return this.comment;
 			}
 
-			public void setIsForeignKey(Boolean isForeignKey) {
-				this.isForeignKey = isForeignKey;
+			public void setComment(String comment) {
+				this.comment = comment;
+			}
+
+			public String getColumnType() {
+				return this.columnType;
+			}
+
+			public void setColumnType(String columnType) {
+				this.columnType = columnType;
+			}
+
+			public Boolean getIsPrimaryKey() {
+				return this.isPrimaryKey;
+			}
+
+			public void setIsPrimaryKey(Boolean isPrimaryKey) {
+				this.isPrimaryKey = isPrimaryKey;
+			}
+
+			public Integer getPosition() {
+				return this.position;
+			}
+
+			public void setPosition(Integer position) {
+				this.position = position;
 			}
 
 			public String getCaption() {
@@ -211,12 +211,12 @@ public class GetMetaTableColumnResponse extends AcsResponse {
 				this.caption = caption;
 			}
 
-			public Integer getPosition() {
-				return this.position;
+			public Boolean getIsForeignKey() {
+				return this.isForeignKey;
 			}
 
-			public void setPosition(Integer position) {
-				this.position = position;
+			public void setIsForeignKey(Boolean isForeignKey) {
+				this.isForeignKey = isForeignKey;
 			}
 		}
 	}

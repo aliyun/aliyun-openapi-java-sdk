@@ -23,11 +23,11 @@ public class SuspendInstanceResponseUnmarshaller {
 	public static SuspendInstanceResponse unmarshall(SuspendInstanceResponse suspendInstanceResponse, UnmarshallerContext _ctx) {
 		
 		suspendInstanceResponse.setRequestId(_ctx.stringValue("SuspendInstanceResponse.RequestId"));
-		suspendInstanceResponse.setErrorCode(_ctx.stringValue("SuspendInstanceResponse.ErrorCode"));
-		suspendInstanceResponse.setErrorMessage(_ctx.stringValue("SuspendInstanceResponse.ErrorMessage"));
 		suspendInstanceResponse.setHttpStatusCode(_ctx.integerValue("SuspendInstanceResponse.HttpStatusCode"));
-		suspendInstanceResponse.setSuccess(_ctx.booleanValue("SuspendInstanceResponse.Success"));
 		suspendInstanceResponse.setData(_ctx.booleanValue("SuspendInstanceResponse.Data"));
+		suspendInstanceResponse.setErrorMessage(_ctx.stringValue("SuspendInstanceResponse.ErrorMessage"));
+		suspendInstanceResponse.setErrorCode(_ctx.stringValue("SuspendInstanceResponse.ErrorCode"));
+		suspendInstanceResponse.setSuccess(_ctx.booleanValue("SuspendInstanceResponse.Success"));
 	 
 	 	return suspendInstanceResponse;
 	}

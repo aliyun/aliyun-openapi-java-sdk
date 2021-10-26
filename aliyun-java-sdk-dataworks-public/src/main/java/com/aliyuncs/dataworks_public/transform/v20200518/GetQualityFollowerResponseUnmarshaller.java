@@ -27,21 +27,21 @@ public class GetQualityFollowerResponseUnmarshaller {
 	public static GetQualityFollowerResponse unmarshall(GetQualityFollowerResponse getQualityFollowerResponse, UnmarshallerContext _ctx) {
 		
 		getQualityFollowerResponse.setRequestId(_ctx.stringValue("GetQualityFollowerResponse.RequestId"));
-		getQualityFollowerResponse.setErrorCode(_ctx.stringValue("GetQualityFollowerResponse.ErrorCode"));
-		getQualityFollowerResponse.setSuccess(_ctx.booleanValue("GetQualityFollowerResponse.Success"));
-		getQualityFollowerResponse.setErrorMessage(_ctx.stringValue("GetQualityFollowerResponse.ErrorMessage"));
 		getQualityFollowerResponse.setHttpStatusCode(_ctx.integerValue("GetQualityFollowerResponse.HttpStatusCode"));
+		getQualityFollowerResponse.setErrorMessage(_ctx.stringValue("GetQualityFollowerResponse.ErrorMessage"));
+		getQualityFollowerResponse.setSuccess(_ctx.booleanValue("GetQualityFollowerResponse.Success"));
+		getQualityFollowerResponse.setErrorCode(_ctx.stringValue("GetQualityFollowerResponse.ErrorCode"));
 
 		List<Follower> data = new ArrayList<Follower>();
 		for (int i = 0; i < _ctx.lengthValue("GetQualityFollowerResponse.Data.Length"); i++) {
 			Follower follower = new Follower();
-			follower.setProjectName(_ctx.stringValue("GetQualityFollowerResponse.Data["+ i +"].ProjectName"));
-			follower.setTableName(_ctx.stringValue("GetQualityFollowerResponse.Data["+ i +"].TableName"));
-			follower.setId(_ctx.longValue("GetQualityFollowerResponse.Data["+ i +"].Id"));
-			follower.setEntityId(_ctx.stringValue("GetQualityFollowerResponse.Data["+ i +"].EntityId"));
-			follower.setFollower(_ctx.stringValue("GetQualityFollowerResponse.Data["+ i +"].Follower"));
-			follower.setAlarmMode(_ctx.integerValue("GetQualityFollowerResponse.Data["+ i +"].AlarmMode"));
 			follower.setFollowerAccountName(_ctx.stringValue("GetQualityFollowerResponse.Data["+ i +"].FollowerAccountName"));
+			follower.setTableName(_ctx.stringValue("GetQualityFollowerResponse.Data["+ i +"].TableName"));
+			follower.setAlarmMode(_ctx.integerValue("GetQualityFollowerResponse.Data["+ i +"].AlarmMode"));
+			follower.setEntityId(_ctx.stringValue("GetQualityFollowerResponse.Data["+ i +"].EntityId"));
+			follower.setProjectName(_ctx.stringValue("GetQualityFollowerResponse.Data["+ i +"].ProjectName"));
+			follower.setId(_ctx.longValue("GetQualityFollowerResponse.Data["+ i +"].Id"));
+			follower.setFollower(_ctx.stringValue("GetQualityFollowerResponse.Data["+ i +"].Follower"));
 
 			data.add(follower);
 		}

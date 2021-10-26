@@ -24,14 +24,14 @@ public class GetFolderResponseUnmarshaller {
 	public static GetFolderResponse unmarshall(GetFolderResponse getFolderResponse, UnmarshallerContext _ctx) {
 		
 		getFolderResponse.setRequestId(_ctx.stringValue("GetFolderResponse.RequestId"));
-		getFolderResponse.setSuccess(_ctx.booleanValue("GetFolderResponse.Success"));
-		getFolderResponse.setErrorCode(_ctx.stringValue("GetFolderResponse.ErrorCode"));
-		getFolderResponse.setErrorMessage(_ctx.stringValue("GetFolderResponse.ErrorMessage"));
 		getFolderResponse.setHttpStatusCode(_ctx.integerValue("GetFolderResponse.HttpStatusCode"));
+		getFolderResponse.setErrorMessage(_ctx.stringValue("GetFolderResponse.ErrorMessage"));
+		getFolderResponse.setErrorCode(_ctx.stringValue("GetFolderResponse.ErrorCode"));
+		getFolderResponse.setSuccess(_ctx.booleanValue("GetFolderResponse.Success"));
 
 		Data data = new Data();
-		data.setFolderId(_ctx.stringValue("GetFolderResponse.Data.FolderId"));
 		data.setFolderPath(_ctx.stringValue("GetFolderResponse.Data.FolderPath"));
+		data.setFolderId(_ctx.stringValue("GetFolderResponse.Data.FolderId"));
 		getFolderResponse.setData(data);
 	 
 	 	return getFolderResponse;

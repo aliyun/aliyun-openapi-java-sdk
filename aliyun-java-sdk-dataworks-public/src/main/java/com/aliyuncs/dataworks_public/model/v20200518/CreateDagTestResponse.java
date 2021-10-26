@@ -24,24 +24,32 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateDagTestResponse extends AcsResponse {
 
-	private String errorCode;
-
-	private String errorMessage;
-
 	private Integer httpStatusCode;
-
-	private String requestId;
-
-	private Boolean success;
 
 	private Long data;
 
-	public String getErrorCode() {
-		return this.errorCode;
+	private String errorMessage;
+
+	private String requestId;
+
+	private String errorCode;
+
+	private Boolean success;
+
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
 	}
 
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
+	}
+
+	public Long getData() {
+		return this.data;
+	}
+
+	public void setData(Long data) {
+		this.data = data;
 	}
 
 	public String getErrorMessage() {
@@ -52,14 +60,6 @@ public class CreateDagTestResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public Integer getHttpStatusCode() {
-		return this.httpStatusCode;
-	}
-
-	public void setHttpStatusCode(Integer httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
-	}
-
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -68,20 +68,20 @@ public class CreateDagTestResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public String getErrorCode() {
+		return this.errorCode;
+	}
+
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
+	}
+
 	public Boolean getSuccess() {
 		return this.success;
 	}
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
-	}
-
-	public Long getData() {
-		return this.data;
-	}
-
-	public void setData(Long data) {
-		this.data = data;
 	}
 
 	@Override

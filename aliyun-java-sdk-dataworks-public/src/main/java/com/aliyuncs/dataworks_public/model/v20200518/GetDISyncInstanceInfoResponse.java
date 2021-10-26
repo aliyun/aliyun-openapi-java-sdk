@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetDISyncInstanceInfoResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Boolean success;
 
+	private String requestId;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Boolean getSuccess() {
 		return this.success;
@@ -45,6 +37,14 @@ public class GetDISyncInstanceInfoResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Data getData() {
@@ -59,9 +59,9 @@ public class GetDISyncInstanceInfoResponse extends AcsResponse {
 
 		private String status;
 
-		private String name;
-
 		private String message;
+
+		private String name;
 
 		private SolutionInfo solutionInfo;
 
@@ -73,20 +73,20 @@ public class GetDISyncInstanceInfoResponse extends AcsResponse {
 			this.status = status;
 		}
 
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
 		public String getMessage() {
 			return this.message;
 		}
 
 		public void setMessage(String message) {
 			this.message = message;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
 		}
 
 		public SolutionInfo getSolutionInfo() {
@@ -99,21 +99,13 @@ public class GetDISyncInstanceInfoResponse extends AcsResponse {
 
 		public static class SolutionInfo {
 
-			private Long id;
-
 			private String status;
+
+			private Long id;
 
 			private String creatorName;
 
 			private List<StepDetailItem> stepDetail;
-
-			public Long getId() {
-				return this.id;
-			}
-
-			public void setId(Long id) {
-				this.id = id;
-			}
 
 			public String getStatus() {
 				return this.status;
@@ -121,6 +113,14 @@ public class GetDISyncInstanceInfoResponse extends AcsResponse {
 
 			public void setStatus(String status) {
 				this.status = status;
+			}
+
+			public Long getId() {
+				return this.id;
+			}
+
+			public void setId(Long id) {
+				this.id = id;
 			}
 
 			public String getCreatorName() {
@@ -141,18 +141,18 @@ public class GetDISyncInstanceInfoResponse extends AcsResponse {
 
 			public static class StepDetailItem {
 
-				private String stepName;
+				private String status;
 
 				private Long stepId;
 
-				private String status;
+				private String stepName;
 
-				public String getStepName() {
-					return this.stepName;
+				public String getStatus() {
+					return this.status;
 				}
 
-				public void setStepName(String stepName) {
-					this.stepName = stepName;
+				public void setStatus(String status) {
+					this.status = status;
 				}
 
 				public Long getStepId() {
@@ -163,12 +163,12 @@ public class GetDISyncInstanceInfoResponse extends AcsResponse {
 					this.stepId = stepId;
 				}
 
-				public String getStatus() {
-					return this.status;
+				public String getStepName() {
+					return this.stepName;
 				}
 
-				public void setStatus(String status) {
-					this.status = status;
+				public void setStepName(String stepName) {
+					this.stepName = stepName;
 				}
 			}
 		}

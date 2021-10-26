@@ -23,10 +23,10 @@ public class UpdateUdfFileResponseUnmarshaller {
 	public static UpdateUdfFileResponse unmarshall(UpdateUdfFileResponse updateUdfFileResponse, UnmarshallerContext _ctx) {
 		
 		updateUdfFileResponse.setRequestId(_ctx.stringValue("UpdateUdfFileResponse.RequestId"));
-		updateUdfFileResponse.setSuccess(_ctx.booleanValue("UpdateUdfFileResponse.Success"));
-		updateUdfFileResponse.setErrorCode(_ctx.stringValue("UpdateUdfFileResponse.ErrorCode"));
-		updateUdfFileResponse.setErrorMessage(_ctx.stringValue("UpdateUdfFileResponse.ErrorMessage"));
 		updateUdfFileResponse.setHttpStatusCode(_ctx.integerValue("UpdateUdfFileResponse.HttpStatusCode"));
+		updateUdfFileResponse.setErrorMessage(_ctx.stringValue("UpdateUdfFileResponse.ErrorMessage"));
+		updateUdfFileResponse.setErrorCode(_ctx.stringValue("UpdateUdfFileResponse.ErrorCode"));
+		updateUdfFileResponse.setSuccess(_ctx.booleanValue("UpdateUdfFileResponse.Success"));
 	 
 	 	return updateUdfFileResponse;
 	}

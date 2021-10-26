@@ -23,11 +23,11 @@ public class GetInstanceLogResponseUnmarshaller {
 	public static GetInstanceLogResponse unmarshall(GetInstanceLogResponse getInstanceLogResponse, UnmarshallerContext _ctx) {
 		
 		getInstanceLogResponse.setRequestId(_ctx.stringValue("GetInstanceLogResponse.RequestId"));
-		getInstanceLogResponse.setErrorCode(_ctx.stringValue("GetInstanceLogResponse.ErrorCode"));
-		getInstanceLogResponse.setErrorMessage(_ctx.stringValue("GetInstanceLogResponse.ErrorMessage"));
 		getInstanceLogResponse.setHttpStatusCode(_ctx.integerValue("GetInstanceLogResponse.HttpStatusCode"));
-		getInstanceLogResponse.setSuccess(_ctx.booleanValue("GetInstanceLogResponse.Success"));
 		getInstanceLogResponse.setData(_ctx.stringValue("GetInstanceLogResponse.Data"));
+		getInstanceLogResponse.setErrorMessage(_ctx.stringValue("GetInstanceLogResponse.ErrorMessage"));
+		getInstanceLogResponse.setErrorCode(_ctx.stringValue("GetInstanceLogResponse.ErrorCode"));
+		getInstanceLogResponse.setSuccess(_ctx.booleanValue("GetInstanceLogResponse.Success"));
 	 
 	 	return getInstanceLogResponse;
 	}

@@ -25,32 +25,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListTableLevelResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String errorCode;
+	private Integer httpStatusCode;
 
 	private String errorMessage;
 
-	private Integer httpStatusCode;
+	private String requestId;
 
 	private Boolean success;
 
+	private String errorCode;
+
 	private TableLevelInfo tableLevelInfo;
 
-	public String getRequestId() {
-		return this.requestId;
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
 	}
 
 	public String getErrorMessage() {
@@ -61,12 +53,12 @@ public class ListTableLevelResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public Integer getHttpStatusCode() {
-		return this.httpStatusCode;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setHttpStatusCode(Integer httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Boolean getSuccess() {
@@ -75,6 +67,14 @@ public class ListTableLevelResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getErrorCode() {
+		return this.errorCode;
+	}
+
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
 	}
 
 	public TableLevelInfo getTableLevelInfo() {
@@ -109,22 +109,30 @@ public class ListTableLevelResponse extends AcsResponse {
 
 		public static class LevelListItem {
 
-			private Long levelId;
+			private Integer levelType;
+
+			private String description;
 
 			private String name;
 
 			private Long projectId;
 
-			private Integer levelType;
+			private Long levelId;
 
-			private String description;
-
-			public Long getLevelId() {
-				return this.levelId;
+			public Integer getLevelType() {
+				return this.levelType;
 			}
 
-			public void setLevelId(Long levelId) {
-				this.levelId = levelId;
+			public void setLevelType(Integer levelType) {
+				this.levelType = levelType;
+			}
+
+			public String getDescription() {
+				return this.description;
+			}
+
+			public void setDescription(String description) {
+				this.description = description;
 			}
 
 			public String getName() {
@@ -143,20 +151,12 @@ public class ListTableLevelResponse extends AcsResponse {
 				this.projectId = projectId;
 			}
 
-			public Integer getLevelType() {
-				return this.levelType;
+			public Long getLevelId() {
+				return this.levelId;
 			}
 
-			public void setLevelType(Integer levelType) {
-				this.levelType = levelType;
-			}
-
-			public String getDescription() {
-				return this.description;
-			}
-
-			public void setDescription(String description) {
-				this.description = description;
+			public void setLevelId(Long levelId) {
+				this.levelId = levelId;
 			}
 		}
 	}

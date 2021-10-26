@@ -23,11 +23,11 @@ public class DeleteMetaCategoryResponseUnmarshaller {
 	public static DeleteMetaCategoryResponse unmarshall(DeleteMetaCategoryResponse deleteMetaCategoryResponse, UnmarshallerContext _ctx) {
 		
 		deleteMetaCategoryResponse.setRequestId(_ctx.stringValue("DeleteMetaCategoryResponse.RequestId"));
-		deleteMetaCategoryResponse.setErrorCode(_ctx.stringValue("DeleteMetaCategoryResponse.ErrorCode"));
-		deleteMetaCategoryResponse.setErrorMessage(_ctx.stringValue("DeleteMetaCategoryResponse.ErrorMessage"));
 		deleteMetaCategoryResponse.setHttpStatusCode(_ctx.integerValue("DeleteMetaCategoryResponse.HttpStatusCode"));
-		deleteMetaCategoryResponse.setSuccess(_ctx.booleanValue("DeleteMetaCategoryResponse.Success"));
 		deleteMetaCategoryResponse.setData(_ctx.booleanValue("DeleteMetaCategoryResponse.Data"));
+		deleteMetaCategoryResponse.setErrorMessage(_ctx.stringValue("DeleteMetaCategoryResponse.ErrorMessage"));
+		deleteMetaCategoryResponse.setErrorCode(_ctx.stringValue("DeleteMetaCategoryResponse.ErrorCode"));
+		deleteMetaCategoryResponse.setSuccess(_ctx.booleanValue("DeleteMetaCategoryResponse.Success"));
 	 
 	 	return deleteMetaCategoryResponse;
 	}

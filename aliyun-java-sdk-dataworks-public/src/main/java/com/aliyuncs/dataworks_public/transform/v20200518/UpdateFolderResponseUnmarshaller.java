@@ -23,10 +23,10 @@ public class UpdateFolderResponseUnmarshaller {
 	public static UpdateFolderResponse unmarshall(UpdateFolderResponse updateFolderResponse, UnmarshallerContext _ctx) {
 		
 		updateFolderResponse.setRequestId(_ctx.stringValue("UpdateFolderResponse.RequestId"));
-		updateFolderResponse.setSuccess(_ctx.booleanValue("UpdateFolderResponse.Success"));
-		updateFolderResponse.setErrorCode(_ctx.stringValue("UpdateFolderResponse.ErrorCode"));
-		updateFolderResponse.setErrorMessage(_ctx.stringValue("UpdateFolderResponse.ErrorMessage"));
 		updateFolderResponse.setHttpStatusCode(_ctx.integerValue("UpdateFolderResponse.HttpStatusCode"));
+		updateFolderResponse.setErrorMessage(_ctx.stringValue("UpdateFolderResponse.ErrorMessage"));
+		updateFolderResponse.setErrorCode(_ctx.stringValue("UpdateFolderResponse.ErrorCode"));
+		updateFolderResponse.setSuccess(_ctx.booleanValue("UpdateFolderResponse.Success"));
 	 
 	 	return updateFolderResponse;
 	}

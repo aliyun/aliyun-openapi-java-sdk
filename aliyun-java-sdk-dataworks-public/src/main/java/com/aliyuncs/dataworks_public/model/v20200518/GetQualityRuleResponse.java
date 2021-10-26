@@ -24,41 +24,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetQualityRuleResponse extends AcsResponse {
 
-	private Boolean success;
-
-	private String errorCode;
-
-	private String errorMessage;
-
 	private Integer httpStatusCode;
 
 	private String requestId;
 
+	private String errorMessage;
+
+	private String errorCode;
+
+	private Boolean success;
+
 	private Data data;
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
 
 	public Integer getHttpStatusCode() {
 		return this.httpStatusCode;
@@ -76,6 +52,30 @@ public class GetQualityRuleResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
+	public String getErrorCode() {
+		return this.errorCode;
+	}
+
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -86,37 +86,41 @@ public class GetQualityRuleResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Long id;
-
-		private Long entityId;
-
-		private String property;
-
-		private Integer methodId;
-
-		private String methodName;
-
-		private String whereCondition;
-
-		private String onDuty;
-
-		private Integer ruleType;
-
 		private Integer blockType;
 
-		private Integer templateId;
-
-		private String templateName;
-
-		private String comment;
-
-		private String ruleName;
-
-		private Integer predictType;
+		private String onDutyAccountName;
 
 		private String warningThreshold;
 
+		private String property;
+
+		private Integer ruleType;
+
+		private String comment;
+
+		private String onDuty;
+
+		private Integer checker;
+
+		private Boolean fixCheck;
+
+		private Integer methodId;
+
 		private String criticalThreshold;
+
+		private Integer predictType;
+
+		private String templateName;
+
+		private String checkerName;
+
+		private String ruleName;
+
+		private String methodName;
+
+		private Long entityId;
+
+		private String whereCondition;
 
 		private String operator;
 
@@ -124,77 +128,9 @@ public class GetQualityRuleResponse extends AcsResponse {
 
 		private String trend;
 
-		private String checkerName;
+		private Integer templateId;
 
-		private Integer checker;
-
-		private Boolean fixCheck;
-
-		private String onDutyAccountName;
-
-		public Long getId() {
-			return this.id;
-		}
-
-		public void setId(Long id) {
-			this.id = id;
-		}
-
-		public Long getEntityId() {
-			return this.entityId;
-		}
-
-		public void setEntityId(Long entityId) {
-			this.entityId = entityId;
-		}
-
-		public String getProperty() {
-			return this.property;
-		}
-
-		public void setProperty(String property) {
-			this.property = property;
-		}
-
-		public Integer getMethodId() {
-			return this.methodId;
-		}
-
-		public void setMethodId(Integer methodId) {
-			this.methodId = methodId;
-		}
-
-		public String getMethodName() {
-			return this.methodName;
-		}
-
-		public void setMethodName(String methodName) {
-			this.methodName = methodName;
-		}
-
-		public String getWhereCondition() {
-			return this.whereCondition;
-		}
-
-		public void setWhereCondition(String whereCondition) {
-			this.whereCondition = whereCondition;
-		}
-
-		public String getOnDuty() {
-			return this.onDuty;
-		}
-
-		public void setOnDuty(String onDuty) {
-			this.onDuty = onDuty;
-		}
-
-		public Integer getRuleType() {
-			return this.ruleType;
-		}
-
-		public void setRuleType(Integer ruleType) {
-			this.ruleType = ruleType;
-		}
+		private Long id;
 
 		public Integer getBlockType() {
 			return this.blockType;
@@ -204,44 +140,12 @@ public class GetQualityRuleResponse extends AcsResponse {
 			this.blockType = blockType;
 		}
 
-		public Integer getTemplateId() {
-			return this.templateId;
+		public String getOnDutyAccountName() {
+			return this.onDutyAccountName;
 		}
 
-		public void setTemplateId(Integer templateId) {
-			this.templateId = templateId;
-		}
-
-		public String getTemplateName() {
-			return this.templateName;
-		}
-
-		public void setTemplateName(String templateName) {
-			this.templateName = templateName;
-		}
-
-		public String getComment() {
-			return this.comment;
-		}
-
-		public void setComment(String comment) {
-			this.comment = comment;
-		}
-
-		public String getRuleName() {
-			return this.ruleName;
-		}
-
-		public void setRuleName(String ruleName) {
-			this.ruleName = ruleName;
-		}
-
-		public Integer getPredictType() {
-			return this.predictType;
-		}
-
-		public void setPredictType(Integer predictType) {
-			this.predictType = predictType;
+		public void setOnDutyAccountName(String onDutyAccountName) {
+			this.onDutyAccountName = onDutyAccountName;
 		}
 
 		public String getWarningThreshold() {
@@ -252,12 +156,124 @@ public class GetQualityRuleResponse extends AcsResponse {
 			this.warningThreshold = warningThreshold;
 		}
 
+		public String getProperty() {
+			return this.property;
+		}
+
+		public void setProperty(String property) {
+			this.property = property;
+		}
+
+		public Integer getRuleType() {
+			return this.ruleType;
+		}
+
+		public void setRuleType(Integer ruleType) {
+			this.ruleType = ruleType;
+		}
+
+		public String getComment() {
+			return this.comment;
+		}
+
+		public void setComment(String comment) {
+			this.comment = comment;
+		}
+
+		public String getOnDuty() {
+			return this.onDuty;
+		}
+
+		public void setOnDuty(String onDuty) {
+			this.onDuty = onDuty;
+		}
+
+		public Integer getChecker() {
+			return this.checker;
+		}
+
+		public void setChecker(Integer checker) {
+			this.checker = checker;
+		}
+
+		public Boolean getFixCheck() {
+			return this.fixCheck;
+		}
+
+		public void setFixCheck(Boolean fixCheck) {
+			this.fixCheck = fixCheck;
+		}
+
+		public Integer getMethodId() {
+			return this.methodId;
+		}
+
+		public void setMethodId(Integer methodId) {
+			this.methodId = methodId;
+		}
+
 		public String getCriticalThreshold() {
 			return this.criticalThreshold;
 		}
 
 		public void setCriticalThreshold(String criticalThreshold) {
 			this.criticalThreshold = criticalThreshold;
+		}
+
+		public Integer getPredictType() {
+			return this.predictType;
+		}
+
+		public void setPredictType(Integer predictType) {
+			this.predictType = predictType;
+		}
+
+		public String getTemplateName() {
+			return this.templateName;
+		}
+
+		public void setTemplateName(String templateName) {
+			this.templateName = templateName;
+		}
+
+		public String getCheckerName() {
+			return this.checkerName;
+		}
+
+		public void setCheckerName(String checkerName) {
+			this.checkerName = checkerName;
+		}
+
+		public String getRuleName() {
+			return this.ruleName;
+		}
+
+		public void setRuleName(String ruleName) {
+			this.ruleName = ruleName;
+		}
+
+		public String getMethodName() {
+			return this.methodName;
+		}
+
+		public void setMethodName(String methodName) {
+			this.methodName = methodName;
+		}
+
+		public Long getEntityId() {
+			return this.entityId;
+		}
+
+		public void setEntityId(Long entityId) {
+			this.entityId = entityId;
+		}
+
+		public String getWhereCondition() {
+			return this.whereCondition;
+		}
+
+		public void setWhereCondition(String whereCondition) {
+			this.whereCondition = whereCondition;
 		}
 
 		public String getOperator() {
@@ -284,36 +300,20 @@ public class GetQualityRuleResponse extends AcsResponse {
 			this.trend = trend;
 		}
 
-		public String getCheckerName() {
-			return this.checkerName;
+		public Integer getTemplateId() {
+			return this.templateId;
 		}
 
-		public void setCheckerName(String checkerName) {
-			this.checkerName = checkerName;
+		public void setTemplateId(Integer templateId) {
+			this.templateId = templateId;
 		}
 
-		public Integer getChecker() {
-			return this.checker;
+		public Long getId() {
+			return this.id;
 		}
 
-		public void setChecker(Integer checker) {
-			this.checker = checker;
-		}
-
-		public Boolean getFixCheck() {
-			return this.fixCheck;
-		}
-
-		public void setFixCheck(Boolean fixCheck) {
-			this.fixCheck = fixCheck;
-		}
-
-		public String getOnDutyAccountName() {
-			return this.onDutyAccountName;
-		}
-
-		public void setOnDutyAccountName(String onDutyAccountName) {
-			this.onDutyAccountName = onDutyAccountName;
+		public void setId(Long id) {
+			this.id = id;
 		}
 	}
 

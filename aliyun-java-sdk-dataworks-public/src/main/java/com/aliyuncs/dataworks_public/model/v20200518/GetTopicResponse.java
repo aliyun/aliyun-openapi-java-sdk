@@ -24,41 +24,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetTopicResponse extends AcsResponse {
 
-	private Boolean success;
-
-	private String errorCode;
-
-	private String errorMessage;
-
 	private Integer httpStatusCode;
 
 	private String requestId;
 
+	private String errorMessage;
+
+	private String errorCode;
+
+	private Boolean success;
+
 	private Data data;
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
 
 	public Integer getHttpStatusCode() {
 		return this.httpStatusCode;
@@ -76,6 +52,30 @@ public class GetTopicResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
+	public String getErrorCode() {
+		return this.errorCode;
+	}
+
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -86,58 +86,58 @@ public class GetTopicResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Long topicId;
+		private String owner;
 
 		private String topicName;
 
-		private String topicStatus;
+		private String baselineStatus;
 
-		private String topicType;
+		private Long projectId;
 
-		private Long addTime;
+		private Long nextAlertTime;
 
-		private Long alertTime;
+		private Long instanceId;
 
-		private String assigner;
-
-		private Long baselineId;
-
-		private String baselineName;
+		private Long fixTime;
 
 		private Integer baselineInGroupId;
 
-		private String baselineStatus;
-
 		private Long baselineBuffer;
 
-		private Long buffer;
+		private String topicType;
+
+		private String topicStatus;
+
+		private Long happenTime;
 
 		private Long dealTime;
 
 		private String dealUser;
 
-		private Long fixTime;
+		private String baselineName;
 
-		private Long happenTime;
-
-		private Long instanceId;
-
-		private Long nextAlertTime;
-
-		private Long nodeId;
+		private Long baselineId;
 
 		private String nodeName;
 
-		private String owner;
+		private Long alertTime;
 
-		private Long projectId;
+		private Long buffer;
 
-		public Long getTopicId() {
-			return this.topicId;
+		private String assigner;
+
+		private Long topicId;
+
+		private Long addTime;
+
+		private Long nodeId;
+
+		public String getOwner() {
+			return this.owner;
 		}
 
-		public void setTopicId(Long topicId) {
-			this.topicId = topicId;
+		public void setOwner(String owner) {
+			this.owner = owner;
 		}
 
 		public String getTopicName() {
@@ -148,60 +148,44 @@ public class GetTopicResponse extends AcsResponse {
 			this.topicName = topicName;
 		}
 
-		public String getTopicStatus() {
-			return this.topicStatus;
+		public String getBaselineStatus() {
+			return this.baselineStatus;
 		}
 
-		public void setTopicStatus(String topicStatus) {
-			this.topicStatus = topicStatus;
+		public void setBaselineStatus(String baselineStatus) {
+			this.baselineStatus = baselineStatus;
 		}
 
-		public String getTopicType() {
-			return this.topicType;
+		public Long getProjectId() {
+			return this.projectId;
 		}
 
-		public void setTopicType(String topicType) {
-			this.topicType = topicType;
+		public void setProjectId(Long projectId) {
+			this.projectId = projectId;
 		}
 
-		public Long getAddTime() {
-			return this.addTime;
+		public Long getNextAlertTime() {
+			return this.nextAlertTime;
 		}
 
-		public void setAddTime(Long addTime) {
-			this.addTime = addTime;
+		public void setNextAlertTime(Long nextAlertTime) {
+			this.nextAlertTime = nextAlertTime;
 		}
 
-		public Long getAlertTime() {
-			return this.alertTime;
+		public Long getInstanceId() {
+			return this.instanceId;
 		}
 
-		public void setAlertTime(Long alertTime) {
-			this.alertTime = alertTime;
+		public void setInstanceId(Long instanceId) {
+			this.instanceId = instanceId;
 		}
 
-		public String getAssigner() {
-			return this.assigner;
+		public Long getFixTime() {
+			return this.fixTime;
 		}
 
-		public void setAssigner(String assigner) {
-			this.assigner = assigner;
-		}
-
-		public Long getBaselineId() {
-			return this.baselineId;
-		}
-
-		public void setBaselineId(Long baselineId) {
-			this.baselineId = baselineId;
-		}
-
-		public String getBaselineName() {
-			return this.baselineName;
-		}
-
-		public void setBaselineName(String baselineName) {
-			this.baselineName = baselineName;
+		public void setFixTime(Long fixTime) {
+			this.fixTime = fixTime;
 		}
 
 		public Integer getBaselineInGroupId() {
@@ -212,14 +196,6 @@ public class GetTopicResponse extends AcsResponse {
 			this.baselineInGroupId = baselineInGroupId;
 		}
 
-		public String getBaselineStatus() {
-			return this.baselineStatus;
-		}
-
-		public void setBaselineStatus(String baselineStatus) {
-			this.baselineStatus = baselineStatus;
-		}
-
 		public Long getBaselineBuffer() {
 			return this.baselineBuffer;
 		}
@@ -228,12 +204,28 @@ public class GetTopicResponse extends AcsResponse {
 			this.baselineBuffer = baselineBuffer;
 		}
 
-		public Long getBuffer() {
-			return this.buffer;
+		public String getTopicType() {
+			return this.topicType;
 		}
 
-		public void setBuffer(Long buffer) {
-			this.buffer = buffer;
+		public void setTopicType(String topicType) {
+			this.topicType = topicType;
+		}
+
+		public String getTopicStatus() {
+			return this.topicStatus;
+		}
+
+		public void setTopicStatus(String topicStatus) {
+			this.topicStatus = topicStatus;
+		}
+
+		public Long getHappenTime() {
+			return this.happenTime;
+		}
+
+		public void setHappenTime(Long happenTime) {
+			this.happenTime = happenTime;
 		}
 
 		public Long getDealTime() {
@@ -252,44 +244,20 @@ public class GetTopicResponse extends AcsResponse {
 			this.dealUser = dealUser;
 		}
 
-		public Long getFixTime() {
-			return this.fixTime;
+		public String getBaselineName() {
+			return this.baselineName;
 		}
 
-		public void setFixTime(Long fixTime) {
-			this.fixTime = fixTime;
+		public void setBaselineName(String baselineName) {
+			this.baselineName = baselineName;
 		}
 
-		public Long getHappenTime() {
-			return this.happenTime;
+		public Long getBaselineId() {
+			return this.baselineId;
 		}
 
-		public void setHappenTime(Long happenTime) {
-			this.happenTime = happenTime;
-		}
-
-		public Long getInstanceId() {
-			return this.instanceId;
-		}
-
-		public void setInstanceId(Long instanceId) {
-			this.instanceId = instanceId;
-		}
-
-		public Long getNextAlertTime() {
-			return this.nextAlertTime;
-		}
-
-		public void setNextAlertTime(Long nextAlertTime) {
-			this.nextAlertTime = nextAlertTime;
-		}
-
-		public Long getNodeId() {
-			return this.nodeId;
-		}
-
-		public void setNodeId(Long nodeId) {
-			this.nodeId = nodeId;
+		public void setBaselineId(Long baselineId) {
+			this.baselineId = baselineId;
 		}
 
 		public String getNodeName() {
@@ -300,20 +268,52 @@ public class GetTopicResponse extends AcsResponse {
 			this.nodeName = nodeName;
 		}
 
-		public String getOwner() {
-			return this.owner;
+		public Long getAlertTime() {
+			return this.alertTime;
 		}
 
-		public void setOwner(String owner) {
-			this.owner = owner;
+		public void setAlertTime(Long alertTime) {
+			this.alertTime = alertTime;
 		}
 
-		public Long getProjectId() {
-			return this.projectId;
+		public Long getBuffer() {
+			return this.buffer;
 		}
 
-		public void setProjectId(Long projectId) {
-			this.projectId = projectId;
+		public void setBuffer(Long buffer) {
+			this.buffer = buffer;
+		}
+
+		public String getAssigner() {
+			return this.assigner;
+		}
+
+		public void setAssigner(String assigner) {
+			this.assigner = assigner;
+		}
+
+		public Long getTopicId() {
+			return this.topicId;
+		}
+
+		public void setTopicId(Long topicId) {
+			this.topicId = topicId;
+		}
+
+		public Long getAddTime() {
+			return this.addTime;
+		}
+
+		public void setAddTime(Long addTime) {
+			this.addTime = addTime;
+		}
+
+		public Long getNodeId() {
+			return this.nodeId;
+		}
+
+		public void setNodeId(Long nodeId) {
+			this.nodeId = nodeId;
 		}
 	}
 
