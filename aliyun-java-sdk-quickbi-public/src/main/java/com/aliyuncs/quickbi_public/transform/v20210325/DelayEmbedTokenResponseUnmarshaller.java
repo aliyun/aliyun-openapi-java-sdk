@@ -12,20 +12,20 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.quickbi_public.transform.v20200808;
+package com.aliyuncs.quickbi_public.transform.v20210325;
 
-import com.aliyuncs.quickbi_public.model.v20200808.AuthorizeMenuResponse;
+import com.aliyuncs.quickbi_public.model.v20210325.DelayEmbedTokenResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class AuthorizeMenuResponseUnmarshaller {
+public class DelayEmbedTokenResponseUnmarshaller {
 
-	public static AuthorizeMenuResponse unmarshall(AuthorizeMenuResponse authorizeMenuResponse, UnmarshallerContext _ctx) {
+	public static DelayEmbedTokenResponse unmarshall(DelayEmbedTokenResponse delayEmbedTokenResponse, UnmarshallerContext _ctx) {
 		
-		authorizeMenuResponse.setRequestId(_ctx.stringValue("AuthorizeMenuResponse.RequestId"));
-		authorizeMenuResponse.setResult(_ctx.integerValue("AuthorizeMenuResponse.Result"));
-		authorizeMenuResponse.setSuccess(_ctx.booleanValue("AuthorizeMenuResponse.Success"));
+		delayEmbedTokenResponse.setRequestId(_ctx.stringValue("DelayEmbedTokenResponse.RequestId"));
+		delayEmbedTokenResponse.setResult(_ctx.booleanValue("DelayEmbedTokenResponse.Result"));
+		delayEmbedTokenResponse.setSuccess(_ctx.booleanValue("DelayEmbedTokenResponse.Success"));
 	 
-	 	return authorizeMenuResponse;
+	 	return delayEmbedTokenResponse;
 	}
 }

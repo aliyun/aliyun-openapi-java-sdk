@@ -12,7 +12,7 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.quickbi_public.model.v20200802;
+package com.aliyuncs.quickbi_public.model.v20210325;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
@@ -22,14 +22,14 @@ import com.aliyuncs.quickbi_public.Endpoint;
  * @author auto create
  * @version 
  */
-public class AddUserTagMetaRequest extends RpcAcsRequest<AddUserTagMetaResponse> {
+public class DelayEmbedTokenRequest extends RpcAcsRequest<DelayEmbedTokenResponse> {
 	   
 
-	private String tagDescription;
+	private Integer expireMin;
 
-	private String tagName;
-	public AddUserTagMetaRequest() {
-		super("quickbi-public", "2020-08-02", "AddUserTagMeta", "quickbi");
+	private String token;
+	public DelayEmbedTokenRequest() {
+		super("quickbi-public", "2021-03-25", "DelayEmbedToken", "quickbi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,31 +37,31 @@ public class AddUserTagMetaRequest extends RpcAcsRequest<AddUserTagMetaResponse>
 		} catch (Exception e) {}
 	}
 
-	public String getTagDescription() {
-		return this.tagDescription;
+	public Integer getExpireMin() {
+		return this.expireMin;
 	}
 
-	public void setTagDescription(String tagDescription) {
-		this.tagDescription = tagDescription;
-		if(tagDescription != null){
-			putQueryParameter("TagDescription", tagDescription);
+	public void setExpireMin(Integer expireMin) {
+		this.expireMin = expireMin;
+		if(expireMin != null){
+			putQueryParameter("ExpireMin", expireMin.toString());
 		}
 	}
 
-	public String getTagName() {
-		return this.tagName;
+	public String getToken() {
+		return this.token;
 	}
 
-	public void setTagName(String tagName) {
-		this.tagName = tagName;
-		if(tagName != null){
-			putQueryParameter("TagName", tagName);
+	public void setToken(String token) {
+		this.token = token;
+		if(token != null){
+			putQueryParameter("Token", token);
 		}
 	}
 
 	@Override
-	public Class<AddUserTagMetaResponse> getResponseClass() {
-		return AddUserTagMetaResponse.class;
+	public Class<DelayEmbedTokenResponse> getResponseClass() {
+		return DelayEmbedTokenResponse.class;
 	}
 
 }

@@ -29,8 +29,6 @@ public class AddUserRequest extends RpcAcsRequest<AddUserResponse> {
 
 	private Integer userType;
 
-	private String accountId;
-
 	private String accountName;
 
 	private String nickName;
@@ -64,17 +62,6 @@ public class AddUserRequest extends RpcAcsRequest<AddUserResponse> {
 		this.userType = userType;
 		if(userType != null){
 			putQueryParameter("UserType", userType.toString());
-		}
-	}
-
-	public String getAccountId() {
-		return this.accountId;
-	}
-
-	public void setAccountId(String accountId) {
-		this.accountId = accountId;
-		if(accountId != null){
-			putQueryParameter("AccountId", accountId);
 		}
 	}
 

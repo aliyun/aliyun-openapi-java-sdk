@@ -24,19 +24,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class AddUserResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Boolean success;
 
+	private String requestId;
+
 	private Result result;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Boolean getSuccess() {
 		return this.success;
@@ -44,6 +36,14 @@ public class AddUserResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Result getResult() {
@@ -56,54 +56,28 @@ public class AddUserResponse extends AcsResponse {
 
 	public static class Result {
 
-		private String accountId;
-
-		private String accountName;
-
-		private Boolean adminUser;
-
-		private Boolean authAdminUser;
+		private Integer userType;
 
 		private String email;
 
+		private String userId;
+
+		private Boolean authAdminUser;
+
 		private String nickName;
+
+		private Boolean adminUser;
 
 		private String phone;
 
-		private String userId;
+		private String accountName;
 
-		private Integer userType;
-
-		public String getAccountId() {
-			return this.accountId;
+		public Integer getUserType() {
+			return this.userType;
 		}
 
-		public void setAccountId(String accountId) {
-			this.accountId = accountId;
-		}
-
-		public String getAccountName() {
-			return this.accountName;
-		}
-
-		public void setAccountName(String accountName) {
-			this.accountName = accountName;
-		}
-
-		public Boolean getAdminUser() {
-			return this.adminUser;
-		}
-
-		public void setAdminUser(Boolean adminUser) {
-			this.adminUser = adminUser;
-		}
-
-		public Boolean getAuthAdminUser() {
-			return this.authAdminUser;
-		}
-
-		public void setAuthAdminUser(Boolean authAdminUser) {
-			this.authAdminUser = authAdminUser;
+		public void setUserType(Integer userType) {
+			this.userType = userType;
 		}
 
 		public String getEmail() {
@@ -114,12 +88,36 @@ public class AddUserResponse extends AcsResponse {
 			this.email = email;
 		}
 
+		public String getUserId() {
+			return this.userId;
+		}
+
+		public void setUserId(String userId) {
+			this.userId = userId;
+		}
+
+		public Boolean getAuthAdminUser() {
+			return this.authAdminUser;
+		}
+
+		public void setAuthAdminUser(Boolean authAdminUser) {
+			this.authAdminUser = authAdminUser;
+		}
+
 		public String getNickName() {
 			return this.nickName;
 		}
 
 		public void setNickName(String nickName) {
 			this.nickName = nickName;
+		}
+
+		public Boolean getAdminUser() {
+			return this.adminUser;
+		}
+
+		public void setAdminUser(Boolean adminUser) {
+			this.adminUser = adminUser;
 		}
 
 		public String getPhone() {
@@ -130,20 +128,12 @@ public class AddUserResponse extends AcsResponse {
 			this.phone = phone;
 		}
 
-		public String getUserId() {
-			return this.userId;
+		public String getAccountName() {
+			return this.accountName;
 		}
 
-		public void setUserId(String userId) {
-			this.userId = userId;
-		}
-
-		public Integer getUserType() {
-			return this.userType;
-		}
-
-		public void setUserType(Integer userType) {
-			this.userType = userType;
+		public void setAccountName(String accountName) {
+			this.accountName = accountName;
 		}
 	}
 

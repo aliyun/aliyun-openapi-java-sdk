@@ -29,6 +29,8 @@ public class AuthorizeMenuRequest extends RpcAcsRequest<AuthorizeMenuResponse> {
 
 	private String userIds;
 
+	private Integer authPointsValue;
+
 	private String userGroupIds;
 
 	private String menuIds;
@@ -60,6 +62,17 @@ public class AuthorizeMenuRequest extends RpcAcsRequest<AuthorizeMenuResponse> {
 		this.userIds = userIds;
 		if(userIds != null){
 			putQueryParameter("UserIds", userIds);
+		}
+	}
+
+	public Integer getAuthPointsValue() {
+		return this.authPointsValue;
+	}
+
+	public void setAuthPointsValue(Integer authPointsValue) {
+		this.authPointsValue = authPointsValue;
+		if(authPointsValue != null){
+			putQueryParameter("AuthPointsValue", authPointsValue.toString());
 		}
 	}
 

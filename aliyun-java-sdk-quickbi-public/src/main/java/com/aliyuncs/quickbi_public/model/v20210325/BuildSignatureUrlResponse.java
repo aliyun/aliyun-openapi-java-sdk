@@ -12,21 +12,21 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.quickbi_public.model.v20200808;
+package com.aliyuncs.quickbi_public.model.v20210325;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.quickbi_public.transform.v20200808.AuthorizeMenuResponseUnmarshaller;
+import com.aliyuncs.quickbi_public.transform.v20210325.BuildSignatureUrlResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class AuthorizeMenuResponse extends AcsResponse {
+public class BuildSignatureUrlResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Integer result;
+	private String result;
 
 	private Boolean success;
 
@@ -38,11 +38,11 @@ public class AuthorizeMenuResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Integer getResult() {
+	public String getResult() {
 		return this.result;
 	}
 
-	public void setResult(Integer result) {
+	public void setResult(String result) {
 		this.result = result;
 	}
 
@@ -55,8 +55,8 @@ public class AuthorizeMenuResponse extends AcsResponse {
 	}
 
 	@Override
-	public AuthorizeMenuResponse getInstance(UnmarshallerContext context) {
-		return	AuthorizeMenuResponseUnmarshaller.unmarshall(this, context);
+	public BuildSignatureUrlResponse getInstance(UnmarshallerContext context) {
+		return	BuildSignatureUrlResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

@@ -1,3 +1,6 @@
+2021-10-26 Version: 1.8.0
+- Add QueryEmbedTokenInfo,DeleteEmbedToken,CreateEmbedToken,DelayEmbedToken,BuildSignatureUrl, and update QueryDatasetInfo,AuthorizeMenu,AddUserTagMeta,AddUser.
+
 2021-09-02 Version: 1.7.0
 - Added apis are as follows,ListPortalMenus,QueryDatasetInfo,AddDataLevelPermissionWhiteList,SetDataLevelPermissionWhiteList,ListDataLevelPermissionWhiteList,SetDataLevelPermissionExtraConfig,DeleteDataLevelRuleConfig,SetDataLevelPermissionRuleConfig,UpdateDataLevelPermissionStatus,QueryDatasetSwitchInfo,ListCubeDataLevelPermissionConfig,DeleteDataLevelPermissionRuleUsers,AddDataLevelPermissionRuleUsers.
 
