@@ -28,17 +28,17 @@ public class ListSolutionResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String code;
+
 	private String message;
 
-	private String code;
+	private Integer totalPage;
 
 	private Integer pageSize;
 
-	private Integer page;
-
 	private Integer total;
 
-	private Integer totalPage;
+	private Integer page;
 
 	private List<Map<Object,Object>> data;
 
@@ -50,6 +50,14 @@ public class ListSolutionResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
 	public String getMessage() {
 		return this.message;
 	}
@@ -58,12 +66,12 @@ public class ListSolutionResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getCode() {
-		return this.code;
+	public Integer getTotalPage() {
+		return this.totalPage;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
+	public void setTotalPage(Integer totalPage) {
+		this.totalPage = totalPage;
 	}
 
 	public Integer getPageSize() {
@@ -74,14 +82,6 @@ public class ListSolutionResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public Integer getPage() {
-		return this.page;
-	}
-
-	public void setPage(Integer page) {
-		this.page = page;
-	}
-
 	public Integer getTotal() {
 		return this.total;
 	}
@@ -90,12 +90,12 @@ public class ListSolutionResponse extends AcsResponse {
 		this.total = total;
 	}
 
-	public Integer getTotalPage() {
-		return this.totalPage;
+	public Integer getPage() {
+		return this.page;
 	}
 
-	public void setTotalPage(Integer totalPage) {
-		this.totalPage = totalPage;
+	public void setPage(Integer page) {
+		this.page = page;
 	}
 
 	public List<Map<Object,Object>> getData() {

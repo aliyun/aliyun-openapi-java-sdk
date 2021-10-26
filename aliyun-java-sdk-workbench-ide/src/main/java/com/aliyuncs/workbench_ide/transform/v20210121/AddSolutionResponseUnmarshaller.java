@@ -24,9 +24,9 @@ public class AddSolutionResponseUnmarshaller {
 	public static AddSolutionResponse unmarshall(AddSolutionResponse addSolutionResponse, UnmarshallerContext _ctx) {
 		
 		addSolutionResponse.setRequestId(_ctx.stringValue("AddSolutionResponse.RequestId"));
-		addSolutionResponse.setData(_ctx.mapValue("AddSolutionResponse.Data"));
-		addSolutionResponse.setMessage(_ctx.stringValue("AddSolutionResponse.Message"));
 		addSolutionResponse.setCode(_ctx.stringValue("AddSolutionResponse.Code"));
+		addSolutionResponse.setMessage(_ctx.stringValue("AddSolutionResponse.Message"));
+		addSolutionResponse.setData(_ctx.mapValue("AddSolutionResponse.Data"));
 	 
 	 	return addSolutionResponse;
 	}

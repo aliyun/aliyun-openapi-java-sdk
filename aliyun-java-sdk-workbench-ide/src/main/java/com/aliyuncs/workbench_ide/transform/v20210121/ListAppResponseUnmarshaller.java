@@ -27,12 +27,12 @@ public class ListAppResponseUnmarshaller {
 	public static ListAppResponse unmarshall(ListAppResponse listAppResponse, UnmarshallerContext _ctx) {
 		
 		listAppResponse.setRequestId(_ctx.stringValue("ListAppResponse.RequestId"));
-		listAppResponse.setMessage(_ctx.stringValue("ListAppResponse.Message"));
 		listAppResponse.setCode(_ctx.stringValue("ListAppResponse.Code"));
-		listAppResponse.setPageSize(_ctx.integerValue("ListAppResponse.PageSize"));
-		listAppResponse.setPage(_ctx.integerValue("ListAppResponse.Page"));
-		listAppResponse.setTotal(_ctx.integerValue("ListAppResponse.Total"));
+		listAppResponse.setMessage(_ctx.stringValue("ListAppResponse.Message"));
 		listAppResponse.setTotalPage(_ctx.integerValue("ListAppResponse.TotalPage"));
+		listAppResponse.setPageSize(_ctx.integerValue("ListAppResponse.PageSize"));
+		listAppResponse.setTotal(_ctx.integerValue("ListAppResponse.Total"));
+		listAppResponse.setPage(_ctx.integerValue("ListAppResponse.Page"));
 
 		List<Map<Object, Object>> data = _ctx.listMapValue("ListAppResponse.Data");
 		listAppResponse.setData(data);

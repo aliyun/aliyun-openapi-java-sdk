@@ -14,6 +14,9 @@
 
 package com.aliyuncs.workbench_ide.transform.v20210121;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.workbench_ide.model.v20210121.SetAppEnvConfigResponse;
 import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -25,8 +28,10 @@ public class SetAppEnvConfigResponseUnmarshaller {
 		
 		setAppEnvConfigResponse.setRequestId(_ctx.stringValue("SetAppEnvConfigResponse.RequestId"));
 		setAppEnvConfigResponse.setCode(_ctx.stringValue("SetAppEnvConfigResponse.Code"));
-		setAppEnvConfigResponse.setData(_ctx.mapValue("SetAppEnvConfigResponse.Data"));
 		setAppEnvConfigResponse.setMessage(_ctx.stringValue("SetAppEnvConfigResponse.Message"));
+
+		List<Map<Object, Object>> data = _ctx.listMapValue("SetAppEnvConfigResponse.Data");
+		setAppEnvConfigResponse.setData(data);
 	 
 	 	return setAppEnvConfigResponse;
 	}

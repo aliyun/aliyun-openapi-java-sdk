@@ -25,8 +25,8 @@ public class SetSolutionRepoResponseUnmarshaller {
 		
 		setSolutionRepoResponse.setRequestId(_ctx.stringValue("SetSolutionRepoResponse.RequestId"));
 		setSolutionRepoResponse.setCode(_ctx.stringValue("SetSolutionRepoResponse.Code"));
-		setSolutionRepoResponse.setData(_ctx.mapValue("SetSolutionRepoResponse.Data"));
 		setSolutionRepoResponse.setMessage(_ctx.stringValue("SetSolutionRepoResponse.Message"));
+		setSolutionRepoResponse.setData(_ctx.mapValue("SetSolutionRepoResponse.Data"));
 	 
 	 	return setSolutionRepoResponse;
 	}

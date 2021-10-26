@@ -25,8 +25,8 @@ public class GetSolutionEnvResponseUnmarshaller {
 		
 		getSolutionEnvResponse.setRequestId(_ctx.stringValue("GetSolutionEnvResponse.RequestId"));
 		getSolutionEnvResponse.setCode(_ctx.stringValue("GetSolutionEnvResponse.Code"));
-		getSolutionEnvResponse.setData(_ctx.mapValue("GetSolutionEnvResponse.Data"));
 		getSolutionEnvResponse.setMessage(_ctx.stringValue("GetSolutionEnvResponse.Message"));
+		getSolutionEnvResponse.setData(_ctx.mapValue("GetSolutionEnvResponse.Data"));
 	 
 	 	return getSolutionEnvResponse;
 	}

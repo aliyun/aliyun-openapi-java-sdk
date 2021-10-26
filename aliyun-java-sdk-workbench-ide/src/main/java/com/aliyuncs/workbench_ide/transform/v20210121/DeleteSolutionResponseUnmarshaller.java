@@ -25,8 +25,8 @@ public class DeleteSolutionResponseUnmarshaller {
 		
 		deleteSolutionResponse.setRequestId(_ctx.stringValue("DeleteSolutionResponse.RequestId"));
 		deleteSolutionResponse.setCode(_ctx.stringValue("DeleteSolutionResponse.Code"));
-		deleteSolutionResponse.setData(_ctx.mapValue("DeleteSolutionResponse.Data"));
 		deleteSolutionResponse.setMessage(_ctx.stringValue("DeleteSolutionResponse.Message"));
+		deleteSolutionResponse.setData(_ctx.mapValue("DeleteSolutionResponse.Data"));
 	 
 	 	return deleteSolutionResponse;
 	}

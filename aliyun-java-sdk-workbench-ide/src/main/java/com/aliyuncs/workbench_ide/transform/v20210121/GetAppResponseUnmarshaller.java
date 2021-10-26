@@ -25,8 +25,8 @@ public class GetAppResponseUnmarshaller {
 		
 		getAppResponse.setRequestId(_ctx.stringValue("GetAppResponse.RequestId"));
 		getAppResponse.setCode(_ctx.stringValue("GetAppResponse.Code"));
-		getAppResponse.setData(_ctx.mapValue("GetAppResponse.Data"));
 		getAppResponse.setMessage(_ctx.stringValue("GetAppResponse.Message"));
+		getAppResponse.setData(_ctx.mapValue("GetAppResponse.Data"));
 	 
 	 	return getAppResponse;
 	}

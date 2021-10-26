@@ -25,8 +25,8 @@ public class GetAppApiGatewayAppResponseUnmarshaller {
 		
 		getAppApiGatewayAppResponse.setRequestId(_ctx.stringValue("GetAppApiGatewayAppResponse.RequestId"));
 		getAppApiGatewayAppResponse.setCode(_ctx.stringValue("GetAppApiGatewayAppResponse.Code"));
-		getAppApiGatewayAppResponse.setData(_ctx.mapValue("GetAppApiGatewayAppResponse.Data"));
 		getAppApiGatewayAppResponse.setMessage(_ctx.stringValue("GetAppApiGatewayAppResponse.Message"));
+		getAppApiGatewayAppResponse.setData(_ctx.mapValue("GetAppApiGatewayAppResponse.Data"));
 	 
 	 	return getAppApiGatewayAppResponse;
 	}

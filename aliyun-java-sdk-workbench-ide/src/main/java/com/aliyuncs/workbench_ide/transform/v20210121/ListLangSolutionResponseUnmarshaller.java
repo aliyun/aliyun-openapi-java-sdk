@@ -27,8 +27,8 @@ public class ListLangSolutionResponseUnmarshaller {
 	public static ListLangSolutionResponse unmarshall(ListLangSolutionResponse listLangSolutionResponse, UnmarshallerContext _ctx) {
 		
 		listLangSolutionResponse.setRequestId(_ctx.stringValue("ListLangSolutionResponse.RequestId"));
-		listLangSolutionResponse.setMessage(_ctx.stringValue("ListLangSolutionResponse.Message"));
 		listLangSolutionResponse.setCode(_ctx.stringValue("ListLangSolutionResponse.Code"));
+		listLangSolutionResponse.setMessage(_ctx.stringValue("ListLangSolutionResponse.Message"));
 
 		List<Map<Object, Object>> data = _ctx.listMapValue("ListLangSolutionResponse.Data");
 		listLangSolutionResponse.setData(data);

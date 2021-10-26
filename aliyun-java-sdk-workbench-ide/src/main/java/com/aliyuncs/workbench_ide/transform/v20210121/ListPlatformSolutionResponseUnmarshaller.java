@@ -27,12 +27,12 @@ public class ListPlatformSolutionResponseUnmarshaller {
 	public static ListPlatformSolutionResponse unmarshall(ListPlatformSolutionResponse listPlatformSolutionResponse, UnmarshallerContext _ctx) {
 		
 		listPlatformSolutionResponse.setRequestId(_ctx.stringValue("ListPlatformSolutionResponse.RequestId"));
-		listPlatformSolutionResponse.setMessage(_ctx.stringValue("ListPlatformSolutionResponse.Message"));
 		listPlatformSolutionResponse.setCode(_ctx.stringValue("ListPlatformSolutionResponse.Code"));
-		listPlatformSolutionResponse.setPageSize(_ctx.integerValue("ListPlatformSolutionResponse.PageSize"));
-		listPlatformSolutionResponse.setPage(_ctx.integerValue("ListPlatformSolutionResponse.Page"));
-		listPlatformSolutionResponse.setTotal(_ctx.integerValue("ListPlatformSolutionResponse.Total"));
+		listPlatformSolutionResponse.setMessage(_ctx.stringValue("ListPlatformSolutionResponse.Message"));
 		listPlatformSolutionResponse.setTotalPage(_ctx.integerValue("ListPlatformSolutionResponse.TotalPage"));
+		listPlatformSolutionResponse.setPageSize(_ctx.integerValue("ListPlatformSolutionResponse.PageSize"));
+		listPlatformSolutionResponse.setTotal(_ctx.integerValue("ListPlatformSolutionResponse.Total"));
+		listPlatformSolutionResponse.setPage(_ctx.integerValue("ListPlatformSolutionResponse.Page"));
 
 		List<Map<Object, Object>> data = _ctx.listMapValue("ListPlatformSolutionResponse.Data");
 		listPlatformSolutionResponse.setData(data);

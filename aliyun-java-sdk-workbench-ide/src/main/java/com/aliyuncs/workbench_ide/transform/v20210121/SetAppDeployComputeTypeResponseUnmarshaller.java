@@ -25,8 +25,8 @@ public class SetAppDeployComputeTypeResponseUnmarshaller {
 		
 		setAppDeployComputeTypeResponse.setRequestId(_ctx.stringValue("SetAppDeployComputeTypeResponse.RequestId"));
 		setAppDeployComputeTypeResponse.setCode(_ctx.stringValue("SetAppDeployComputeTypeResponse.Code"));
-		setAppDeployComputeTypeResponse.setData(_ctx.mapValue("SetAppDeployComputeTypeResponse.Data"));
 		setAppDeployComputeTypeResponse.setMessage(_ctx.stringValue("SetAppDeployComputeTypeResponse.Message"));
+		setAppDeployComputeTypeResponse.setData(_ctx.mapValue("SetAppDeployComputeTypeResponse.Data"));
 	 
 	 	return setAppDeployComputeTypeResponse;
 	}

@@ -27,12 +27,12 @@ public class ListSolutionResponseUnmarshaller {
 	public static ListSolutionResponse unmarshall(ListSolutionResponse listSolutionResponse, UnmarshallerContext _ctx) {
 		
 		listSolutionResponse.setRequestId(_ctx.stringValue("ListSolutionResponse.RequestId"));
-		listSolutionResponse.setMessage(_ctx.stringValue("ListSolutionResponse.Message"));
 		listSolutionResponse.setCode(_ctx.stringValue("ListSolutionResponse.Code"));
-		listSolutionResponse.setPageSize(_ctx.integerValue("ListSolutionResponse.PageSize"));
-		listSolutionResponse.setPage(_ctx.integerValue("ListSolutionResponse.Page"));
-		listSolutionResponse.setTotal(_ctx.integerValue("ListSolutionResponse.Total"));
+		listSolutionResponse.setMessage(_ctx.stringValue("ListSolutionResponse.Message"));
 		listSolutionResponse.setTotalPage(_ctx.integerValue("ListSolutionResponse.TotalPage"));
+		listSolutionResponse.setPageSize(_ctx.integerValue("ListSolutionResponse.PageSize"));
+		listSolutionResponse.setTotal(_ctx.integerValue("ListSolutionResponse.Total"));
+		listSolutionResponse.setPage(_ctx.integerValue("ListSolutionResponse.Page"));
 
 		List<Map<Object, Object>> data = _ctx.listMapValue("ListSolutionResponse.Data");
 		listSolutionResponse.setData(data);

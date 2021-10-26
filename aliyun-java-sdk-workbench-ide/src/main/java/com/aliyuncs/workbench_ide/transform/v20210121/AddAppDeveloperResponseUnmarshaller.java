@@ -25,8 +25,8 @@ public class AddAppDeveloperResponseUnmarshaller {
 		
 		addAppDeveloperResponse.setRequestId(_ctx.stringValue("AddAppDeveloperResponse.RequestId"));
 		addAppDeveloperResponse.setCode(_ctx.stringValue("AddAppDeveloperResponse.Code"));
-		addAppDeveloperResponse.setData(_ctx.mapValue("AddAppDeveloperResponse.Data"));
 		addAppDeveloperResponse.setMessage(_ctx.stringValue("AddAppDeveloperResponse.Message"));
+		addAppDeveloperResponse.setData(_ctx.mapValue("AddAppDeveloperResponse.Data"));
 	 
 	 	return addAppDeveloperResponse;
 	}

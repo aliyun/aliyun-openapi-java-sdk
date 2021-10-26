@@ -27,9 +27,9 @@ public class EditSolutionResponse extends AcsResponse {
 
 	private String code;
 
-	private Map<Object,Object> data;
-
 	private String message;
+
+	private Map<Object,Object> data;
 
 	private String requestId;
 
@@ -41,20 +41,20 @@ public class EditSolutionResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public Map<Object,Object> getData() {
-		return this.data;
-	}
-
-	public void setData(Map<Object,Object> data) {
-		this.data = data;
-	}
-
 	public String getMessage() {
 		return this.message;
 	}
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public Map<Object,Object> getData() {
+		return this.data;
+	}
+
+	public void setData(Map<Object,Object> data) {
+		this.data = data;
 	}
 
 	public String getRequestId() {

@@ -25,8 +25,8 @@ public class GetSolutionRelyServiceResponseUnmarshaller {
 		
 		getSolutionRelyServiceResponse.setRequestId(_ctx.stringValue("GetSolutionRelyServiceResponse.RequestId"));
 		getSolutionRelyServiceResponse.setCode(_ctx.stringValue("GetSolutionRelyServiceResponse.Code"));
-		getSolutionRelyServiceResponse.setData(_ctx.mapValue("GetSolutionRelyServiceResponse.Data"));
 		getSolutionRelyServiceResponse.setMessage(_ctx.stringValue("GetSolutionRelyServiceResponse.Message"));
+		getSolutionRelyServiceResponse.setData(_ctx.mapValue("GetSolutionRelyServiceResponse.Data"));
 	 
 	 	return getSolutionRelyServiceResponse;
 	}

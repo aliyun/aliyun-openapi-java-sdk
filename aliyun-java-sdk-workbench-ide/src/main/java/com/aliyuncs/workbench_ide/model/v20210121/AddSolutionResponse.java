@@ -25,28 +25,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class AddSolutionResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Map<Object,Object> data;
+	private String code;
 
 	private String message;
 
-	private String code;
+	private Map<Object,Object> data;
 
-	public String getRequestId() {
-		return this.requestId;
+	private String requestId;
+
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Map<Object,Object> getData() {
-		return this.data;
-	}
-
-	public void setData(Map<Object,Object> data) {
-		this.data = data;
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public String getMessage() {
@@ -57,12 +49,20 @@ public class AddSolutionResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getCode() {
-		return this.code;
+	public Map<Object,Object> getData() {
+		return this.data;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
+	public void setData(Map<Object,Object> data) {
+		this.data = data;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

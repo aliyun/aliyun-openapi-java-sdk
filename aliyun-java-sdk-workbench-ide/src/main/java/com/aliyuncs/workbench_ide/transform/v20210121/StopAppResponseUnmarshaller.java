@@ -25,8 +25,8 @@ public class StopAppResponseUnmarshaller {
 		
 		stopAppResponse.setRequestId(_ctx.stringValue("StopAppResponse.RequestId"));
 		stopAppResponse.setCode(_ctx.stringValue("StopAppResponse.Code"));
-		stopAppResponse.setData(_ctx.mapValue("StopAppResponse.Data"));
 		stopAppResponse.setMessage(_ctx.stringValue("StopAppResponse.Message"));
+		stopAppResponse.setData(_ctx.mapValue("StopAppResponse.Data"));
 	 
 	 	return stopAppResponse;
 	}

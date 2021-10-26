@@ -27,8 +27,8 @@ public class ListMoveSolutionResponseUnmarshaller {
 	public static ListMoveSolutionResponse unmarshall(ListMoveSolutionResponse listMoveSolutionResponse, UnmarshallerContext _ctx) {
 		
 		listMoveSolutionResponse.setRequestId(_ctx.stringValue("ListMoveSolutionResponse.RequestId"));
-		listMoveSolutionResponse.setMessage(_ctx.stringValue("ListMoveSolutionResponse.Message"));
 		listMoveSolutionResponse.setCode(_ctx.stringValue("ListMoveSolutionResponse.Code"));
+		listMoveSolutionResponse.setMessage(_ctx.stringValue("ListMoveSolutionResponse.Message"));
 
 		List<Map<Object, Object>> data = _ctx.listMapValue("ListMoveSolutionResponse.Data");
 		listMoveSolutionResponse.setData(data);

@@ -25,8 +25,8 @@ public class EditEnvironmentResponseUnmarshaller {
 		
 		editEnvironmentResponse.setRequestId(_ctx.stringValue("EditEnvironmentResponse.RequestId"));
 		editEnvironmentResponse.setCode(_ctx.stringValue("EditEnvironmentResponse.Code"));
-		editEnvironmentResponse.setData(_ctx.mapValue("EditEnvironmentResponse.Data"));
 		editEnvironmentResponse.setMessage(_ctx.stringValue("EditEnvironmentResponse.Message"));
+		editEnvironmentResponse.setData(_ctx.mapValue("EditEnvironmentResponse.Data"));
 	 
 	 	return editEnvironmentResponse;
 	}

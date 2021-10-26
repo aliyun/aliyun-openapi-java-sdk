@@ -25,8 +25,8 @@ public class EditSolutionResponseUnmarshaller {
 		
 		editSolutionResponse.setRequestId(_ctx.stringValue("EditSolutionResponse.RequestId"));
 		editSolutionResponse.setCode(_ctx.stringValue("EditSolutionResponse.Code"));
-		editSolutionResponse.setData(_ctx.mapValue("EditSolutionResponse.Data"));
 		editSolutionResponse.setMessage(_ctx.stringValue("EditSolutionResponse.Message"));
+		editSolutionResponse.setData(_ctx.mapValue("EditSolutionResponse.Data"));
 	 
 	 	return editSolutionResponse;
 	}

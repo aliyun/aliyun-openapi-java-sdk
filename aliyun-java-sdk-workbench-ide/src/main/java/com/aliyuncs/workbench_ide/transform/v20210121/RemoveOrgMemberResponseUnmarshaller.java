@@ -25,8 +25,8 @@ public class RemoveOrgMemberResponseUnmarshaller {
 		
 		removeOrgMemberResponse.setRequestId(_ctx.stringValue("RemoveOrgMemberResponse.RequestId"));
 		removeOrgMemberResponse.setCode(_ctx.stringValue("RemoveOrgMemberResponse.Code"));
-		removeOrgMemberResponse.setData(_ctx.mapValue("RemoveOrgMemberResponse.Data"));
 		removeOrgMemberResponse.setMessage(_ctx.stringValue("RemoveOrgMemberResponse.Message"));
+		removeOrgMemberResponse.setData(_ctx.mapValue("RemoveOrgMemberResponse.Data"));
 	 
 	 	return removeOrgMemberResponse;
 	}

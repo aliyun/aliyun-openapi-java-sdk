@@ -25,8 +25,8 @@ public class SetAppDeployEnvironmentResponseUnmarshaller {
 		
 		setAppDeployEnvironmentResponse.setRequestId(_ctx.stringValue("SetAppDeployEnvironmentResponse.RequestId"));
 		setAppDeployEnvironmentResponse.setCode(_ctx.stringValue("SetAppDeployEnvironmentResponse.Code"));
-		setAppDeployEnvironmentResponse.setData(_ctx.mapValue("SetAppDeployEnvironmentResponse.Data"));
 		setAppDeployEnvironmentResponse.setMessage(_ctx.stringValue("SetAppDeployEnvironmentResponse.Message"));
+		setAppDeployEnvironmentResponse.setData(_ctx.mapValue("SetAppDeployEnvironmentResponse.Data"));
 	 
 	 	return setAppDeployEnvironmentResponse;
 	}

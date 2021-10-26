@@ -25,8 +25,8 @@ public class GetAppDeployLogResponseUnmarshaller {
 		
 		getAppDeployLogResponse.setRequestId(_ctx.stringValue("GetAppDeployLogResponse.RequestId"));
 		getAppDeployLogResponse.setCode(_ctx.stringValue("GetAppDeployLogResponse.Code"));
-		getAppDeployLogResponse.setData(_ctx.mapValue("GetAppDeployLogResponse.Data"));
 		getAppDeployLogResponse.setMessage(_ctx.stringValue("GetAppDeployLogResponse.Message"));
+		getAppDeployLogResponse.setData(_ctx.mapValue("GetAppDeployLogResponse.Data"));
 	 
 	 	return getAppDeployLogResponse;
 	}

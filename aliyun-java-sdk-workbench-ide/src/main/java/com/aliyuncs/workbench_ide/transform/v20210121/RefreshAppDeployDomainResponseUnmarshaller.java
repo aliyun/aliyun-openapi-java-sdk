@@ -25,8 +25,8 @@ public class RefreshAppDeployDomainResponseUnmarshaller {
 		
 		refreshAppDeployDomainResponse.setRequestId(_ctx.stringValue("RefreshAppDeployDomainResponse.RequestId"));
 		refreshAppDeployDomainResponse.setCode(_ctx.stringValue("RefreshAppDeployDomainResponse.Code"));
-		refreshAppDeployDomainResponse.setData(_ctx.mapValue("RefreshAppDeployDomainResponse.Data"));
 		refreshAppDeployDomainResponse.setMessage(_ctx.stringValue("RefreshAppDeployDomainResponse.Message"));
+		refreshAppDeployDomainResponse.setData(_ctx.mapValue("RefreshAppDeployDomainResponse.Data"));
 	 
 	 	return refreshAppDeployDomainResponse;
 	}

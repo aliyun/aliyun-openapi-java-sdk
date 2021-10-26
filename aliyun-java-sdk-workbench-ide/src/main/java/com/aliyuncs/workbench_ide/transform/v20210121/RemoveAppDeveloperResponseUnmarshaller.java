@@ -25,8 +25,8 @@ public class RemoveAppDeveloperResponseUnmarshaller {
 		
 		removeAppDeveloperResponse.setRequestId(_ctx.stringValue("RemoveAppDeveloperResponse.RequestId"));
 		removeAppDeveloperResponse.setCode(_ctx.stringValue("RemoveAppDeveloperResponse.Code"));
-		removeAppDeveloperResponse.setData(_ctx.mapValue("RemoveAppDeveloperResponse.Data"));
 		removeAppDeveloperResponse.setMessage(_ctx.stringValue("RemoveAppDeveloperResponse.Message"));
+		removeAppDeveloperResponse.setData(_ctx.mapValue("RemoveAppDeveloperResponse.Data"));
 	 
 	 	return removeAppDeveloperResponse;
 	}

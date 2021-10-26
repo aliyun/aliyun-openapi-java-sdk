@@ -25,8 +25,8 @@ public class GetAppPackageUploadUrlResponseUnmarshaller {
 		
 		getAppPackageUploadUrlResponse.setRequestId(_ctx.stringValue("GetAppPackageUploadUrlResponse.RequestId"));
 		getAppPackageUploadUrlResponse.setCode(_ctx.stringValue("GetAppPackageUploadUrlResponse.Code"));
-		getAppPackageUploadUrlResponse.setData(_ctx.mapValue("GetAppPackageUploadUrlResponse.Data"));
 		getAppPackageUploadUrlResponse.setMessage(_ctx.stringValue("GetAppPackageUploadUrlResponse.Message"));
+		getAppPackageUploadUrlResponse.setData(_ctx.mapValue("GetAppPackageUploadUrlResponse.Data"));
 	 
 	 	return getAppPackageUploadUrlResponse;
 	}

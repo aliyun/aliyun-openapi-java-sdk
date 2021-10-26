@@ -25,8 +25,8 @@ public class SyncEnvironmentResourceResponseUnmarshaller {
 		
 		syncEnvironmentResourceResponse.setRequestId(_ctx.stringValue("SyncEnvironmentResourceResponse.RequestId"));
 		syncEnvironmentResourceResponse.setCode(_ctx.stringValue("SyncEnvironmentResourceResponse.Code"));
-		syncEnvironmentResourceResponse.setData(_ctx.mapValue("SyncEnvironmentResourceResponse.Data"));
 		syncEnvironmentResourceResponse.setMessage(_ctx.stringValue("SyncEnvironmentResourceResponse.Message"));
+		syncEnvironmentResourceResponse.setData(_ctx.mapValue("SyncEnvironmentResourceResponse.Data"));
 	 
 	 	return syncEnvironmentResourceResponse;
 	}

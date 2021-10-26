@@ -14,6 +14,9 @@
 
 package com.aliyuncs.workbench_ide.transform.v20210121;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.workbench_ide.model.v20210121.GetAppGlobalConfigResponse;
 import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -25,8 +28,10 @@ public class GetAppGlobalConfigResponseUnmarshaller {
 		
 		getAppGlobalConfigResponse.setRequestId(_ctx.stringValue("GetAppGlobalConfigResponse.RequestId"));
 		getAppGlobalConfigResponse.setCode(_ctx.stringValue("GetAppGlobalConfigResponse.Code"));
-		getAppGlobalConfigResponse.setData(_ctx.mapValue("GetAppGlobalConfigResponse.Data"));
 		getAppGlobalConfigResponse.setMessage(_ctx.stringValue("GetAppGlobalConfigResponse.Message"));
+
+		List<Map<Object, Object>> data = _ctx.listMapValue("GetAppGlobalConfigResponse.Data");
+		getAppGlobalConfigResponse.setData(data);
 	 
 	 	return getAppGlobalConfigResponse;
 	}

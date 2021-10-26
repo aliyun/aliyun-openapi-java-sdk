@@ -24,9 +24,9 @@ public class EditProductResponseUnmarshaller {
 	public static EditProductResponse unmarshall(EditProductResponse editProductResponse, UnmarshallerContext _ctx) {
 		
 		editProductResponse.setRequestId(_ctx.stringValue("EditProductResponse.RequestId"));
-		editProductResponse.setData(_ctx.mapValue("EditProductResponse.Data"));
-		editProductResponse.setMessage(_ctx.stringValue("EditProductResponse.Message"));
 		editProductResponse.setCode(_ctx.stringValue("EditProductResponse.Code"));
+		editProductResponse.setMessage(_ctx.stringValue("EditProductResponse.Message"));
+		editProductResponse.setData(_ctx.mapValue("EditProductResponse.Data"));
 	 
 	 	return editProductResponse;
 	}

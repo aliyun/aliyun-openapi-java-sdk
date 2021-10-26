@@ -25,8 +25,8 @@ public class AddOrgMemberResponseUnmarshaller {
 		
 		addOrgMemberResponse.setRequestId(_ctx.stringValue("AddOrgMemberResponse.RequestId"));
 		addOrgMemberResponse.setCode(_ctx.stringValue("AddOrgMemberResponse.Code"));
-		addOrgMemberResponse.setData(_ctx.mapValue("AddOrgMemberResponse.Data"));
 		addOrgMemberResponse.setMessage(_ctx.stringValue("AddOrgMemberResponse.Message"));
+		addOrgMemberResponse.setData(_ctx.mapValue("AddOrgMemberResponse.Data"));
 	 
 	 	return addOrgMemberResponse;
 	}

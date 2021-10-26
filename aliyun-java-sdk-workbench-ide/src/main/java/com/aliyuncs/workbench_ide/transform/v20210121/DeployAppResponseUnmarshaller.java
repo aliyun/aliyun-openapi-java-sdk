@@ -25,8 +25,8 @@ public class DeployAppResponseUnmarshaller {
 		
 		deployAppResponse.setRequestId(_ctx.stringValue("DeployAppResponse.RequestId"));
 		deployAppResponse.setCode(_ctx.stringValue("DeployAppResponse.Code"));
-		deployAppResponse.setData(_ctx.mapValue("DeployAppResponse.Data"));
 		deployAppResponse.setMessage(_ctx.stringValue("DeployAppResponse.Message"));
+		deployAppResponse.setData(_ctx.mapValue("DeployAppResponse.Data"));
 	 
 	 	return deployAppResponse;
 	}

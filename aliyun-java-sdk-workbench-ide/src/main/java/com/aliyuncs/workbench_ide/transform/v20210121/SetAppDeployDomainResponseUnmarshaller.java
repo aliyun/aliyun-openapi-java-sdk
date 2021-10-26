@@ -25,8 +25,8 @@ public class SetAppDeployDomainResponseUnmarshaller {
 		
 		setAppDeployDomainResponse.setRequestId(_ctx.stringValue("SetAppDeployDomainResponse.RequestId"));
 		setAppDeployDomainResponse.setCode(_ctx.stringValue("SetAppDeployDomainResponse.Code"));
-		setAppDeployDomainResponse.setData(_ctx.mapValue("SetAppDeployDomainResponse.Data"));
 		setAppDeployDomainResponse.setMessage(_ctx.stringValue("SetAppDeployDomainResponse.Message"));
+		setAppDeployDomainResponse.setData(_ctx.mapValue("SetAppDeployDomainResponse.Data"));
 	 
 	 	return setAppDeployDomainResponse;
 	}

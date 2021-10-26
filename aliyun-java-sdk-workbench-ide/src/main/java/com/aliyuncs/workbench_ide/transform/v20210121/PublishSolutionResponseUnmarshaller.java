@@ -25,8 +25,8 @@ public class PublishSolutionResponseUnmarshaller {
 		
 		publishSolutionResponse.setRequestId(_ctx.stringValue("PublishSolutionResponse.RequestId"));
 		publishSolutionResponse.setCode(_ctx.stringValue("PublishSolutionResponse.Code"));
-		publishSolutionResponse.setData(_ctx.mapValue("PublishSolutionResponse.Data"));
 		publishSolutionResponse.setMessage(_ctx.stringValue("PublishSolutionResponse.Message"));
+		publishSolutionResponse.setData(_ctx.mapValue("PublishSolutionResponse.Data"));
 	 
 	 	return publishSolutionResponse;
 	}

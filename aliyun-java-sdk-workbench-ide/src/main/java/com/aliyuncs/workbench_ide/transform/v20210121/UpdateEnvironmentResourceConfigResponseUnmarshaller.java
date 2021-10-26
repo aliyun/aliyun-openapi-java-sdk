@@ -25,8 +25,8 @@ public class UpdateEnvironmentResourceConfigResponseUnmarshaller {
 		
 		updateEnvironmentResourceConfigResponse.setRequestId(_ctx.stringValue("UpdateEnvironmentResourceConfigResponse.RequestId"));
 		updateEnvironmentResourceConfigResponse.setCode(_ctx.stringValue("UpdateEnvironmentResourceConfigResponse.Code"));
-		updateEnvironmentResourceConfigResponse.setData(_ctx.mapValue("UpdateEnvironmentResourceConfigResponse.Data"));
 		updateEnvironmentResourceConfigResponse.setMessage(_ctx.stringValue("UpdateEnvironmentResourceConfigResponse.Message"));
+		updateEnvironmentResourceConfigResponse.setData(_ctx.mapValue("UpdateEnvironmentResourceConfigResponse.Data"));
 	 
 	 	return updateEnvironmentResourceConfigResponse;
 	}

@@ -25,8 +25,8 @@ public class DeleteEnvironmentResponseUnmarshaller {
 		
 		deleteEnvironmentResponse.setRequestId(_ctx.stringValue("DeleteEnvironmentResponse.RequestId"));
 		deleteEnvironmentResponse.setCode(_ctx.stringValue("DeleteEnvironmentResponse.Code"));
-		deleteEnvironmentResponse.setData(_ctx.mapValue("DeleteEnvironmentResponse.Data"));
 		deleteEnvironmentResponse.setMessage(_ctx.stringValue("DeleteEnvironmentResponse.Message"));
+		deleteEnvironmentResponse.setData(_ctx.mapValue("DeleteEnvironmentResponse.Data"));
 	 
 	 	return deleteEnvironmentResponse;
 	}

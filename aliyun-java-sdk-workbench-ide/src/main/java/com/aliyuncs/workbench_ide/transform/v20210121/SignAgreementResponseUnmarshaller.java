@@ -25,8 +25,8 @@ public class SignAgreementResponseUnmarshaller {
 		
 		signAgreementResponse.setRequestId(_ctx.stringValue("SignAgreementResponse.RequestId"));
 		signAgreementResponse.setCode(_ctx.integerValue("SignAgreementResponse.Code"));
-		signAgreementResponse.setData(_ctx.mapValue("SignAgreementResponse.Data"));
 		signAgreementResponse.setMessage(_ctx.stringValue("SignAgreementResponse.Message"));
+		signAgreementResponse.setData(_ctx.mapValue("SignAgreementResponse.Data"));
 	 
 	 	return signAgreementResponse;
 	}

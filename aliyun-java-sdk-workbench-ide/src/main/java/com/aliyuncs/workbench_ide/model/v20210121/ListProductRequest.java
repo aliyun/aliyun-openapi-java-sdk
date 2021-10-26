@@ -28,6 +28,8 @@ public class ListProductRequest extends RpcAcsRequest<ListProductResponse> {
 
 	private Integer pageSize;
 
+	private String productName;
+
 	private Integer page;
 	public ListProductRequest() {
 		super("Workbench-ide", "2021-01-21", "ListProduct");
@@ -53,6 +55,17 @@ public class ListProductRequest extends RpcAcsRequest<ListProductResponse> {
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getProductName() {
+		return this.productName;
+	}
+
+	public void setProductName(String productName) {
+		this.productName = productName;
+		if(productName != null){
+			putQueryParameter("ProductName", productName);
 		}
 	}
 
