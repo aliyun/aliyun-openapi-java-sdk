@@ -1,3 +1,6 @@
+2021-10-27 Version: 2.9.6
+- Fix ModifyInstanceName.
+
 2021-07-02 Version: 2.9.5
 - Fix DescribeInstance EncryptionType.
 

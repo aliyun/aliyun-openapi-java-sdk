@@ -117,7 +117,11 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 	private String encryptionKey;
 
+	private Boolean needUpgrade;
+
 	private List<Tag> tags;
+
+	private List<String> needUpgradeComps;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -487,12 +491,28 @@ public class DescribeInstanceResponse extends AcsResponse {
 		this.encryptionKey = encryptionKey;
 	}
 
+	public Boolean getNeedUpgrade() {
+		return this.needUpgrade;
+	}
+
+	public void setNeedUpgrade(Boolean needUpgrade) {
+		this.needUpgrade = needUpgrade;
+	}
+
 	public List<Tag> getTags() {
 		return this.tags;
 	}
 
 	public void setTags(List<Tag> tags) {
 		this.tags = tags;
+	}
+
+	public List<String> getNeedUpgradeComps() {
+		return this.needUpgradeComps;
+	}
+
+	public void setNeedUpgradeComps(List<String> needUpgradeComps) {
+		this.needUpgradeComps = needUpgradeComps;
 	}
 
 	public static class Tag {

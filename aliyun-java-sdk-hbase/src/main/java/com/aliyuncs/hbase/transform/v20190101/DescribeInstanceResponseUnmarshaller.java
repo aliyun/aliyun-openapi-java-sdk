@@ -72,6 +72,13 @@ public class DescribeInstanceResponseUnmarshaller {
 		describeInstanceResponse.setResourceGroupId(_ctx.stringValue("DescribeInstanceResponse.ResourceGroupId"));
 		describeInstanceResponse.setEncryptionType(_ctx.stringValue("DescribeInstanceResponse.EncryptionType"));
 		describeInstanceResponse.setEncryptionKey(_ctx.stringValue("DescribeInstanceResponse.EncryptionKey"));
+		describeInstanceResponse.setNeedUpgrade(_ctx.booleanValue("DescribeInstanceResponse.NeedUpgrade"));
+
+		List<String> needUpgradeComps = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeInstanceResponse.NeedUpgradeComps.Length"); i++) {
+			needUpgradeComps.add(_ctx.stringValue("DescribeInstanceResponse.NeedUpgradeComps["+ i +"]"));
+		}
+		describeInstanceResponse.setNeedUpgradeComps(needUpgradeComps);
 
 		List<Tag> tags = new ArrayList<Tag>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeInstanceResponse.Tags.Length"); i++) {
