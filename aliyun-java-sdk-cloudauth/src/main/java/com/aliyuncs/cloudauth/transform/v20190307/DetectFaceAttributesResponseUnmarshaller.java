@@ -33,38 +33,38 @@ public class DetectFaceAttributesResponseUnmarshaller {
 	public static DetectFaceAttributesResponse unmarshall(DetectFaceAttributesResponse detectFaceAttributesResponse, UnmarshallerContext _ctx) {
 		
 		detectFaceAttributesResponse.setRequestId(_ctx.stringValue("DetectFaceAttributesResponse.RequestId"));
-		detectFaceAttributesResponse.setSuccess(_ctx.booleanValue("DetectFaceAttributesResponse.Success"));
 		detectFaceAttributesResponse.setCode(_ctx.stringValue("DetectFaceAttributesResponse.Code"));
 		detectFaceAttributesResponse.setMessage(_ctx.stringValue("DetectFaceAttributesResponse.Message"));
+		detectFaceAttributesResponse.setSuccess(_ctx.booleanValue("DetectFaceAttributesResponse.Success"));
 
 		Data data = new Data();
-		data.setImgWidth(_ctx.integerValue("DetectFaceAttributesResponse.Data.ImgWidth"));
 		data.setImgHeight(_ctx.integerValue("DetectFaceAttributesResponse.Data.ImgHeight"));
+		data.setImgWidth(_ctx.integerValue("DetectFaceAttributesResponse.Data.ImgWidth"));
 
 		List<FaceAttributesDetectInfo> faceInfos = new ArrayList<FaceAttributesDetectInfo>();
 		for (int i = 0; i < _ctx.lengthValue("DetectFaceAttributesResponse.Data.FaceInfos.Length"); i++) {
 			FaceAttributesDetectInfo faceAttributesDetectInfo = new FaceAttributesDetectInfo();
 
 			FaceRect faceRect = new FaceRect();
-			faceRect.setTop(_ctx.integerValue("DetectFaceAttributesResponse.Data.FaceInfos["+ i +"].FaceRect.Top"));
 			faceRect.setLeft(_ctx.integerValue("DetectFaceAttributesResponse.Data.FaceInfos["+ i +"].FaceRect.Left"));
+			faceRect.setTop(_ctx.integerValue("DetectFaceAttributesResponse.Data.FaceInfos["+ i +"].FaceRect.Top"));
 			faceRect.setWidth(_ctx.integerValue("DetectFaceAttributesResponse.Data.FaceInfos["+ i +"].FaceRect.Width"));
 			faceRect.setHeight(_ctx.integerValue("DetectFaceAttributesResponse.Data.FaceInfos["+ i +"].FaceRect.Height"));
 			faceAttributesDetectInfo.setFaceRect(faceRect);
 
 			FaceAttributes faceAttributes = new FaceAttributes();
-			faceAttributes.setAge(_ctx.integerValue("DetectFaceAttributesResponse.Data.FaceInfos["+ i +"].FaceAttributes.Age"));
 			faceAttributes.setGlasses(_ctx.stringValue("DetectFaceAttributesResponse.Data.FaceInfos["+ i +"].FaceAttributes.Glasses"));
-			faceAttributes.setFacetype(_ctx.stringValue("DetectFaceAttributesResponse.Data.FaceInfos["+ i +"].FaceAttributes.Facetype"));
-			faceAttributes.setBlur(_ctx.floatValue("DetectFaceAttributesResponse.Data.FaceInfos["+ i +"].FaceAttributes.Blur"));
 			faceAttributes.setFacequal(_ctx.floatValue("DetectFaceAttributesResponse.Data.FaceInfos["+ i +"].FaceAttributes.Facequal"));
 			faceAttributes.setIntegrity(_ctx.integerValue("DetectFaceAttributesResponse.Data.FaceInfos["+ i +"].FaceAttributes.Integrity"));
+			faceAttributes.setFacetype(_ctx.stringValue("DetectFaceAttributesResponse.Data.FaceInfos["+ i +"].FaceAttributes.Facetype"));
 			faceAttributes.setRespirator(_ctx.stringValue("DetectFaceAttributesResponse.Data.FaceInfos["+ i +"].FaceAttributes.Respirator"));
 			faceAttributes.setAppearanceScore(_ctx.floatValue("DetectFaceAttributesResponse.Data.FaceInfos["+ i +"].FaceAttributes.AppearanceScore"));
+			faceAttributes.setAge(_ctx.integerValue("DetectFaceAttributesResponse.Data.FaceInfos["+ i +"].FaceAttributes.Age"));
+			faceAttributes.setBlur(_ctx.floatValue("DetectFaceAttributesResponse.Data.FaceInfos["+ i +"].FaceAttributes.Blur"));
 
 			Gender gender = new Gender();
-			gender.setScore(_ctx.floatValue("DetectFaceAttributesResponse.Data.FaceInfos["+ i +"].FaceAttributes.Gender.Score"));
 			gender.setValue(_ctx.stringValue("DetectFaceAttributesResponse.Data.FaceInfos["+ i +"].FaceAttributes.Gender.Value"));
+			gender.setScore(_ctx.floatValue("DetectFaceAttributesResponse.Data.FaceInfos["+ i +"].FaceAttributes.Gender.Score"));
 			faceAttributes.setGender(gender);
 
 			Smiling smiling = new Smiling();

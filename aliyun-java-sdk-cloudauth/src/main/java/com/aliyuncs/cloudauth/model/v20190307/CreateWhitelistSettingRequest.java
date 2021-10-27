@@ -39,7 +39,7 @@ public class CreateWhitelistSettingRequest extends RpcAcsRequest<CreateWhitelist
 
 	private Long sceneId;
 	public CreateWhitelistSettingRequest() {
-		super("Cloudauth", "2019-03-07", "CreateWhitelistSetting");
+		super("Cloudauth", "2019-03-07", "CreateWhitelistSetting", "cloudauth");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

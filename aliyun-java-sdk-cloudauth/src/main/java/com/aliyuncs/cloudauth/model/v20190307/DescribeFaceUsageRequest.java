@@ -29,7 +29,7 @@ public class DescribeFaceUsageRequest extends RpcAcsRequest<DescribeFaceUsageRes
 
 	private String endDate;
 	public DescribeFaceUsageRequest() {
-		super("Cloudauth", "2019-03-07", "DescribeFaceUsage");
+		super("Cloudauth", "2019-03-07", "DescribeFaceUsage", "cloudauth");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

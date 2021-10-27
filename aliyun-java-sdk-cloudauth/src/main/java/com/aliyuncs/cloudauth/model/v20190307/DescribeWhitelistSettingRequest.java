@@ -47,7 +47,7 @@ public class DescribeWhitelistSettingRequest extends RpcAcsRequest<DescribeWhite
 
 	private String status;
 	public DescribeWhitelistSettingRequest() {
-		super("Cloudauth", "2019-03-07", "DescribeWhitelistSetting");
+		super("Cloudauth", "2019-03-07", "DescribeWhitelistSetting", "cloudauth");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

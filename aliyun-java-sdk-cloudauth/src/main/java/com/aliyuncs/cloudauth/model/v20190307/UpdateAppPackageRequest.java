@@ -33,7 +33,7 @@ public class UpdateAppPackageRequest extends RpcAcsRequest<UpdateAppPackageRespo
 
 	private Long id;
 	public UpdateAppPackageRequest() {
-		super("Cloudauth", "2019-03-07", "UpdateAppPackage");
+		super("Cloudauth", "2019-03-07", "UpdateAppPackage", "cloudauth");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

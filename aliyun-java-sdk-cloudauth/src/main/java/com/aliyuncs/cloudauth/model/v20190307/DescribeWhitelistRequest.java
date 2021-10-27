@@ -45,7 +45,7 @@ public class DescribeWhitelistRequest extends RpcAcsRequest<DescribeWhitelistRes
 
 	private String validStartDate;
 	public DescribeWhitelistRequest() {
-		super("Cloudauth", "2019-03-07", "DescribeWhitelist");
+		super("Cloudauth", "2019-03-07", "DescribeWhitelist", "cloudauth");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

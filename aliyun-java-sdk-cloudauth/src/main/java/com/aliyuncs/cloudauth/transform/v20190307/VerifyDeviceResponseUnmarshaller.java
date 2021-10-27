@@ -28,12 +28,12 @@ public class VerifyDeviceResponseUnmarshaller {
 		verifyDeviceResponse.setMessage(_ctx.stringValue("VerifyDeviceResponse.Message"));
 
 		ResultObject resultObject = new ResultObject();
-		resultObject.setValidationRetCode(_ctx.stringValue("VerifyDeviceResponse.ResultObject.ValidationRetCode"));
-		resultObject.setProductRetCode(_ctx.stringValue("VerifyDeviceResponse.ResultObject.ProductRetCode"));
 		resultObject.setRetCodeSub(_ctx.stringValue("VerifyDeviceResponse.ResultObject.RetCodeSub"));
-		resultObject.setRetMessageSub(_ctx.stringValue("VerifyDeviceResponse.ResultObject.RetMessageSub"));
+		resultObject.setProductRetCode(_ctx.stringValue("VerifyDeviceResponse.ResultObject.ProductRetCode"));
 		resultObject.setHasNext(_ctx.stringValue("VerifyDeviceResponse.ResultObject.HasNext"));
+		resultObject.setRetMessageSub(_ctx.stringValue("VerifyDeviceResponse.ResultObject.RetMessageSub"));
 		resultObject.setExtParams(_ctx.stringValue("VerifyDeviceResponse.ResultObject.ExtParams"));
+		resultObject.setValidationRetCode(_ctx.stringValue("VerifyDeviceResponse.ResultObject.ValidationRetCode"));
 		verifyDeviceResponse.setResultObject(resultObject);
 	 
 	 	return verifyDeviceResponse;

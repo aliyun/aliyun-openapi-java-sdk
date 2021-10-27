@@ -24,21 +24,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class VerifyDeviceResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String code;
 
 	private String message;
 
+	private String requestId;
+
 	private ResultObject resultObject;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -56,6 +48,14 @@ public class VerifyDeviceResponse extends AcsResponse {
 		this.message = message;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	public ResultObject getResultObject() {
 		return this.resultObject;
 	}
@@ -66,24 +66,24 @@ public class VerifyDeviceResponse extends AcsResponse {
 
 	public static class ResultObject {
 
-		private String validationRetCode;
+		private String retCodeSub;
 
 		private String productRetCode;
 
-		private String retCodeSub;
+		private String hasNext;
 
 		private String retMessageSub;
 
-		private String hasNext;
-
 		private String extParams;
 
-		public String getValidationRetCode() {
-			return this.validationRetCode;
+		private String validationRetCode;
+
+		public String getRetCodeSub() {
+			return this.retCodeSub;
 		}
 
-		public void setValidationRetCode(String validationRetCode) {
-			this.validationRetCode = validationRetCode;
+		public void setRetCodeSub(String retCodeSub) {
+			this.retCodeSub = retCodeSub;
 		}
 
 		public String getProductRetCode() {
@@ -94,12 +94,12 @@ public class VerifyDeviceResponse extends AcsResponse {
 			this.productRetCode = productRetCode;
 		}
 
-		public String getRetCodeSub() {
-			return this.retCodeSub;
+		public String getHasNext() {
+			return this.hasNext;
 		}
 
-		public void setRetCodeSub(String retCodeSub) {
-			this.retCodeSub = retCodeSub;
+		public void setHasNext(String hasNext) {
+			this.hasNext = hasNext;
 		}
 
 		public String getRetMessageSub() {
@@ -110,20 +110,20 @@ public class VerifyDeviceResponse extends AcsResponse {
 			this.retMessageSub = retMessageSub;
 		}
 
-		public String getHasNext() {
-			return this.hasNext;
-		}
-
-		public void setHasNext(String hasNext) {
-			this.hasNext = hasNext;
-		}
-
 		public String getExtParams() {
 			return this.extParams;
 		}
 
 		public void setExtParams(String extParams) {
 			this.extParams = extParams;
+		}
+
+		public String getValidationRetCode() {
+			return this.validationRetCode;
+		}
+
+		public void setValidationRetCode(String validationRetCode) {
+			this.validationRetCode = validationRetCode;
 		}
 	}
 

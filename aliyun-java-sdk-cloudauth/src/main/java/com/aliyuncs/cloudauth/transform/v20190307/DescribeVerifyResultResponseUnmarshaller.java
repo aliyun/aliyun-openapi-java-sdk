@@ -28,18 +28,18 @@ public class DescribeVerifyResultResponseUnmarshaller {
 	public static DescribeVerifyResultResponse unmarshall(DescribeVerifyResultResponse describeVerifyResultResponse, UnmarshallerContext _ctx) {
 		
 		describeVerifyResultResponse.setRequestId(_ctx.stringValue("DescribeVerifyResultResponse.RequestId"));
-		describeVerifyResultResponse.setVerifyStatus(_ctx.integerValue("DescribeVerifyResultResponse.VerifyStatus"));
 		describeVerifyResultResponse.setAuthorityComparisionScore(_ctx.floatValue("DescribeVerifyResultResponse.AuthorityComparisionScore"));
+		describeVerifyResultResponse.setVerifyStatus(_ctx.integerValue("DescribeVerifyResultResponse.VerifyStatus"));
 		describeVerifyResultResponse.setFaceComparisonScore(_ctx.floatValue("DescribeVerifyResultResponse.FaceComparisonScore"));
 		describeVerifyResultResponse.setIdCardFaceComparisonScore(_ctx.floatValue("DescribeVerifyResultResponse.IdCardFaceComparisonScore"));
 
 		Material material = new Material();
-		material.setFaceImageUrl(_ctx.stringValue("DescribeVerifyResultResponse.Material.FaceImageUrl"));
-		material.setIdCardName(_ctx.stringValue("DescribeVerifyResultResponse.Material.IdCardName"));
 		material.setIdCardNumber(_ctx.stringValue("DescribeVerifyResultResponse.Material.IdCardNumber"));
-		material.setFaceQuality(_ctx.stringValue("DescribeVerifyResultResponse.Material.FaceQuality"));
 		material.setFaceGlobalUrl(_ctx.stringValue("DescribeVerifyResultResponse.Material.FaceGlobalUrl"));
+		material.setFaceImageUrl(_ctx.stringValue("DescribeVerifyResultResponse.Material.FaceImageUrl"));
 		material.setFaceMask(_ctx.booleanValue("DescribeVerifyResultResponse.Material.FaceMask"));
+		material.setIdCardName(_ctx.stringValue("DescribeVerifyResultResponse.Material.IdCardName"));
+		material.setFaceQuality(_ctx.stringValue("DescribeVerifyResultResponse.Material.FaceQuality"));
 
 		List<String> videoUrls = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeVerifyResultResponse.Material.VideoUrls.Length"); i++) {
@@ -48,17 +48,17 @@ public class DescribeVerifyResultResponseUnmarshaller {
 		material.setVideoUrls(videoUrls);
 
 		IdCardInfo idCardInfo = new IdCardInfo();
-		idCardInfo.setNumber(_ctx.stringValue("DescribeVerifyResultResponse.Material.IdCardInfo.Number"));
-		idCardInfo.setAddress(_ctx.stringValue("DescribeVerifyResultResponse.Material.IdCardInfo.Address"));
-		idCardInfo.setNationality(_ctx.stringValue("DescribeVerifyResultResponse.Material.IdCardInfo.Nationality"));
-		idCardInfo.setEndDate(_ctx.stringValue("DescribeVerifyResultResponse.Material.IdCardInfo.EndDate"));
-		idCardInfo.setFrontImageUrl(_ctx.stringValue("DescribeVerifyResultResponse.Material.IdCardInfo.FrontImageUrl"));
-		idCardInfo.setAuthority(_ctx.stringValue("DescribeVerifyResultResponse.Material.IdCardInfo.Authority"));
 		idCardInfo.setSex(_ctx.stringValue("DescribeVerifyResultResponse.Material.IdCardInfo.Sex"));
-		idCardInfo.setName(_ctx.stringValue("DescribeVerifyResultResponse.Material.IdCardInfo.Name"));
-		idCardInfo.setBirth(_ctx.stringValue("DescribeVerifyResultResponse.Material.IdCardInfo.Birth"));
-		idCardInfo.setBackImageUrl(_ctx.stringValue("DescribeVerifyResultResponse.Material.IdCardInfo.BackImageUrl"));
+		idCardInfo.setEndDate(_ctx.stringValue("DescribeVerifyResultResponse.Material.IdCardInfo.EndDate"));
+		idCardInfo.setAuthority(_ctx.stringValue("DescribeVerifyResultResponse.Material.IdCardInfo.Authority"));
+		idCardInfo.setAddress(_ctx.stringValue("DescribeVerifyResultResponse.Material.IdCardInfo.Address"));
+		idCardInfo.setNumber(_ctx.stringValue("DescribeVerifyResultResponse.Material.IdCardInfo.Number"));
 		idCardInfo.setStartDate(_ctx.stringValue("DescribeVerifyResultResponse.Material.IdCardInfo.StartDate"));
+		idCardInfo.setBackImageUrl(_ctx.stringValue("DescribeVerifyResultResponse.Material.IdCardInfo.BackImageUrl"));
+		idCardInfo.setNationality(_ctx.stringValue("DescribeVerifyResultResponse.Material.IdCardInfo.Nationality"));
+		idCardInfo.setBirth(_ctx.stringValue("DescribeVerifyResultResponse.Material.IdCardInfo.Birth"));
+		idCardInfo.setName(_ctx.stringValue("DescribeVerifyResultResponse.Material.IdCardInfo.Name"));
+		idCardInfo.setFrontImageUrl(_ctx.stringValue("DescribeVerifyResultResponse.Material.IdCardInfo.FrontImageUrl"));
 		material.setIdCardInfo(idCardInfo);
 		describeVerifyResultResponse.setMaterial(material);
 	 

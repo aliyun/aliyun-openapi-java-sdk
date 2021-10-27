@@ -24,20 +24,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class InitDeviceResponse extends AcsResponse {
 
-	private String requestId;
+	private String code;
 
 	private String message;
 
-	private String code;
+	private String requestId;
 
 	private ResultObject resultObject;
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public String getMessage() {
@@ -48,12 +48,12 @@ public class InitDeviceResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getCode() {
-		return this.code;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public ResultObject getResultObject() {
@@ -66,66 +66,42 @@ public class InitDeviceResponse extends AcsResponse {
 
 	public static class ResultObject {
 
-		private String certifyId;
-
-		private String protocol;
-
-		private String extParams;
-
-		private String retCode;
+		private String ossEndPoint;
 
 		private String retCodeSub;
 
-		private String retMessageSub;
+		private String protocol;
+
+		private String certifyId;
+
+		private String extParams;
 
 		private String message;
 
-		private String ossEndPoint;
+		private String fileName;
 
 		private String accessKeyId;
 
-		private String accessKeySecret;
+		private String presignedUrl;
 
 		private String securityToken;
 
-		private String bucketName;
-
 		private String fileNamePrefix;
 
-		private String fileName;
+		private String bucketName;
 
-		private String presignedUrl;
+		private String accessKeySecret;
 
-		public String getCertifyId() {
-			return this.certifyId;
+		private String retMessageSub;
+
+		private String retCode;
+
+		public String getOssEndPoint() {
+			return this.ossEndPoint;
 		}
 
-		public void setCertifyId(String certifyId) {
-			this.certifyId = certifyId;
-		}
-
-		public String getBizProtocol() {
-			return this.protocol;
-		}
-
-		public void setBizProtocol(String protocol) {
-			this.protocol = protocol;
-		}
-
-		public String getExtParams() {
-			return this.extParams;
-		}
-
-		public void setExtParams(String extParams) {
-			this.extParams = extParams;
-		}
-
-		public String getRetCode() {
-			return this.retCode;
-		}
-
-		public void setRetCode(String retCode) {
-			this.retCode = retCode;
+		public void setOssEndPoint(String ossEndPoint) {
+			this.ossEndPoint = ossEndPoint;
 		}
 
 		public String getRetCodeSub() {
@@ -136,12 +112,28 @@ public class InitDeviceResponse extends AcsResponse {
 			this.retCodeSub = retCodeSub;
 		}
 
-		public String getRetMessageSub() {
-			return this.retMessageSub;
+		public String getBizProtocol() {
+			return this.protocol;
 		}
 
-		public void setRetMessageSub(String retMessageSub) {
-			this.retMessageSub = retMessageSub;
+		public void setBizProtocol(String protocol) {
+			this.protocol = protocol;
+		}
+
+		public String getCertifyId() {
+			return this.certifyId;
+		}
+
+		public void setCertifyId(String certifyId) {
+			this.certifyId = certifyId;
+		}
+
+		public String getExtParams() {
+			return this.extParams;
+		}
+
+		public void setExtParams(String extParams) {
+			this.extParams = extParams;
 		}
 
 		public String getMessage() {
@@ -152,12 +144,12 @@ public class InitDeviceResponse extends AcsResponse {
 			this.message = message;
 		}
 
-		public String getOssEndPoint() {
-			return this.ossEndPoint;
+		public String getFileName() {
+			return this.fileName;
 		}
 
-		public void setOssEndPoint(String ossEndPoint) {
-			this.ossEndPoint = ossEndPoint;
+		public void setFileName(String fileName) {
+			this.fileName = fileName;
 		}
 
 		public String getAccessKeyId() {
@@ -168,12 +160,12 @@ public class InitDeviceResponse extends AcsResponse {
 			this.accessKeyId = accessKeyId;
 		}
 
-		public String getAccessKeySecret() {
-			return this.accessKeySecret;
+		public String getPresignedUrl() {
+			return this.presignedUrl;
 		}
 
-		public void setAccessKeySecret(String accessKeySecret) {
-			this.accessKeySecret = accessKeySecret;
+		public void setPresignedUrl(String presignedUrl) {
+			this.presignedUrl = presignedUrl;
 		}
 
 		public String getSecurityToken() {
@@ -184,14 +176,6 @@ public class InitDeviceResponse extends AcsResponse {
 			this.securityToken = securityToken;
 		}
 
-		public String getBucketName() {
-			return this.bucketName;
-		}
-
-		public void setBucketName(String bucketName) {
-			this.bucketName = bucketName;
-		}
-
 		public String getFileNamePrefix() {
 			return this.fileNamePrefix;
 		}
@@ -200,20 +184,36 @@ public class InitDeviceResponse extends AcsResponse {
 			this.fileNamePrefix = fileNamePrefix;
 		}
 
-		public String getFileName() {
-			return this.fileName;
+		public String getBucketName() {
+			return this.bucketName;
 		}
 
-		public void setFileName(String fileName) {
-			this.fileName = fileName;
+		public void setBucketName(String bucketName) {
+			this.bucketName = bucketName;
 		}
 
-		public String getPresignedUrl() {
-			return this.presignedUrl;
+		public String getAccessKeySecret() {
+			return this.accessKeySecret;
 		}
 
-		public void setPresignedUrl(String presignedUrl) {
-			this.presignedUrl = presignedUrl;
+		public void setAccessKeySecret(String accessKeySecret) {
+			this.accessKeySecret = accessKeySecret;
+		}
+
+		public String getRetMessageSub() {
+			return this.retMessageSub;
+		}
+
+		public void setRetMessageSub(String retMessageSub) {
+			this.retMessageSub = retMessageSub;
+		}
+
+		public String getRetCode() {
+			return this.retCode;
+		}
+
+		public void setRetCode(String retCode) {
+			this.retCode = retCode;
 		}
 	}
 

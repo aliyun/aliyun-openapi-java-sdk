@@ -33,7 +33,7 @@ public class CreateRPSDKRequest extends RpcAcsRequest<CreateRPSDKResponse> {
 
 	private String lang;
 	public CreateRPSDKRequest() {
-		super("Cloudauth", "2019-03-07", "CreateRPSDK");
+		super("Cloudauth", "2019-03-07", "CreateRPSDK", "cloudauth");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

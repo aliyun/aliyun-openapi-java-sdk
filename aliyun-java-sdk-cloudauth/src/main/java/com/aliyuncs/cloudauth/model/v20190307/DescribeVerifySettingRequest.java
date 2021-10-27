@@ -25,7 +25,7 @@ import com.aliyuncs.cloudauth.Endpoint;
 public class DescribeVerifySettingRequest extends RpcAcsRequest<DescribeVerifySettingResponse> {
 	   
 	public DescribeVerifySettingRequest() {
-		super("Cloudauth", "2019-03-07", "DescribeVerifySetting");
+		super("Cloudauth", "2019-03-07", "DescribeVerifySetting", "cloudauth");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

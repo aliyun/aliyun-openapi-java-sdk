@@ -24,25 +24,25 @@ public class InitDeviceResponseUnmarshaller {
 	public static InitDeviceResponse unmarshall(InitDeviceResponse initDeviceResponse, UnmarshallerContext _ctx) {
 		
 		initDeviceResponse.setRequestId(_ctx.stringValue("InitDeviceResponse.RequestId"));
-		initDeviceResponse.setMessage(_ctx.stringValue("InitDeviceResponse.Message"));
 		initDeviceResponse.setCode(_ctx.stringValue("InitDeviceResponse.Code"));
+		initDeviceResponse.setMessage(_ctx.stringValue("InitDeviceResponse.Message"));
 
 		ResultObject resultObject = new ResultObject();
-		resultObject.setCertifyId(_ctx.stringValue("InitDeviceResponse.ResultObject.CertifyId"));
-		resultObject.setBizProtocol(_ctx.stringValue("InitDeviceResponse.ResultObject.Protocol"));
-		resultObject.setExtParams(_ctx.stringValue("InitDeviceResponse.ResultObject.ExtParams"));
-		resultObject.setRetCode(_ctx.stringValue("InitDeviceResponse.ResultObject.RetCode"));
-		resultObject.setRetCodeSub(_ctx.stringValue("InitDeviceResponse.ResultObject.RetCodeSub"));
-		resultObject.setRetMessageSub(_ctx.stringValue("InitDeviceResponse.ResultObject.RetMessageSub"));
-		resultObject.setMessage(_ctx.stringValue("InitDeviceResponse.ResultObject.Message"));
 		resultObject.setOssEndPoint(_ctx.stringValue("InitDeviceResponse.ResultObject.OssEndPoint"));
-		resultObject.setAccessKeyId(_ctx.stringValue("InitDeviceResponse.ResultObject.AccessKeyId"));
-		resultObject.setAccessKeySecret(_ctx.stringValue("InitDeviceResponse.ResultObject.AccessKeySecret"));
-		resultObject.setSecurityToken(_ctx.stringValue("InitDeviceResponse.ResultObject.SecurityToken"));
-		resultObject.setBucketName(_ctx.stringValue("InitDeviceResponse.ResultObject.BucketName"));
-		resultObject.setFileNamePrefix(_ctx.stringValue("InitDeviceResponse.ResultObject.FileNamePrefix"));
+		resultObject.setRetCodeSub(_ctx.stringValue("InitDeviceResponse.ResultObject.RetCodeSub"));
+		resultObject.setBizProtocol(_ctx.stringValue("InitDeviceResponse.ResultObject.Protocol"));
+		resultObject.setCertifyId(_ctx.stringValue("InitDeviceResponse.ResultObject.CertifyId"));
+		resultObject.setExtParams(_ctx.stringValue("InitDeviceResponse.ResultObject.ExtParams"));
+		resultObject.setMessage(_ctx.stringValue("InitDeviceResponse.ResultObject.Message"));
 		resultObject.setFileName(_ctx.stringValue("InitDeviceResponse.ResultObject.FileName"));
+		resultObject.setAccessKeyId(_ctx.stringValue("InitDeviceResponse.ResultObject.AccessKeyId"));
 		resultObject.setPresignedUrl(_ctx.stringValue("InitDeviceResponse.ResultObject.PresignedUrl"));
+		resultObject.setSecurityToken(_ctx.stringValue("InitDeviceResponse.ResultObject.SecurityToken"));
+		resultObject.setFileNamePrefix(_ctx.stringValue("InitDeviceResponse.ResultObject.FileNamePrefix"));
+		resultObject.setBucketName(_ctx.stringValue("InitDeviceResponse.ResultObject.BucketName"));
+		resultObject.setAccessKeySecret(_ctx.stringValue("InitDeviceResponse.ResultObject.AccessKeySecret"));
+		resultObject.setRetMessageSub(_ctx.stringValue("InitDeviceResponse.ResultObject.RetMessageSub"));
+		resultObject.setRetCode(_ctx.stringValue("InitDeviceResponse.ResultObject.RetCode"));
 		initDeviceResponse.setResultObject(resultObject);
 	 
 	 	return initDeviceResponse;
