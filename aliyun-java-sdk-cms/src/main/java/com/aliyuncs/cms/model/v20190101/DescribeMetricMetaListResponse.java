@@ -25,33 +25,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeMetricMetaListResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String message;
 
+	private String requestId;
+
 	private String totalCount;
 
+	private Boolean success;
+
 	private List<Resource> resources;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -69,12 +53,28 @@ public class DescribeMetricMetaListResponse extends AcsResponse {
 		this.message = message;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	public String getTotalCount() {
 		return this.totalCount;
 	}
 
 	public void setTotalCount(String totalCount) {
 		this.totalCount = totalCount;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<Resource> getResources() {
@@ -87,29 +87,21 @@ public class DescribeMetricMetaListResponse extends AcsResponse {
 
 	public static class Resource {
 
-		private String namespace;
-
 		private String metricName;
-
-		private String statistics;
-
-		private String unit;
 
 		private String description;
 
+		private String labels;
+
+		private String unit;
+
 		private String dimensions;
+
+		private String namespace;
 
 		private String periods;
 
-		private String labels;
-
-		public String getNamespace() {
-			return this.namespace;
-		}
-
-		public void setNamespace(String namespace) {
-			this.namespace = namespace;
-		}
+		private String statistics;
 
 		public String getMetricName() {
 			return this.metricName;
@@ -117,22 +109,6 @@ public class DescribeMetricMetaListResponse extends AcsResponse {
 
 		public void setMetricName(String metricName) {
 			this.metricName = metricName;
-		}
-
-		public String getStatistics() {
-			return this.statistics;
-		}
-
-		public void setStatistics(String statistics) {
-			this.statistics = statistics;
-		}
-
-		public String getUnit() {
-			return this.unit;
-		}
-
-		public void setUnit(String unit) {
-			this.unit = unit;
 		}
 
 		public String getDescription() {
@@ -143,12 +119,36 @@ public class DescribeMetricMetaListResponse extends AcsResponse {
 			this.description = description;
 		}
 
+		public String getLabels() {
+			return this.labels;
+		}
+
+		public void setLabels(String labels) {
+			this.labels = labels;
+		}
+
+		public String getUnit() {
+			return this.unit;
+		}
+
+		public void setUnit(String unit) {
+			this.unit = unit;
+		}
+
 		public String getDimensions() {
 			return this.dimensions;
 		}
 
 		public void setDimensions(String dimensions) {
 			this.dimensions = dimensions;
+		}
+
+		public String getNamespace() {
+			return this.namespace;
+		}
+
+		public void setNamespace(String namespace) {
+			this.namespace = namespace;
 		}
 
 		public String getPeriods() {
@@ -159,12 +159,12 @@ public class DescribeMetricMetaListResponse extends AcsResponse {
 			this.periods = periods;
 		}
 
-		public String getLabels() {
-			return this.labels;
+		public String getStatistics() {
+			return this.statistics;
 		}
 
-		public void setLabels(String labels) {
-			this.labels = labels;
+		public void setStatistics(String statistics) {
+			this.statistics = statistics;
 		}
 	}
 

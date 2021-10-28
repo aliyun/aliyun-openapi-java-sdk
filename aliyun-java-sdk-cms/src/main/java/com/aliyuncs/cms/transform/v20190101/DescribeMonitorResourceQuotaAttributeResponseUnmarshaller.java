@@ -21,6 +21,7 @@ import com.aliyuncs.cms.model.v20190101.DescribeMonitorResourceQuotaAttributeRes
 import com.aliyuncs.cms.model.v20190101.DescribeMonitorResourceQuotaAttributeResponse.ResourceQuota.EnterpriseQuota;
 import com.aliyuncs.cms.model.v20190101.DescribeMonitorResourceQuotaAttributeResponse.ResourceQuota.EventMonitor;
 import com.aliyuncs.cms.model.v20190101.DescribeMonitorResourceQuotaAttributeResponse.ResourceQuota.LogMonitor;
+import com.aliyuncs.cms.model.v20190101.DescribeMonitorResourceQuotaAttributeResponse.ResourceQuota.NAAM;
 import com.aliyuncs.cms.model.v20190101.DescribeMonitorResourceQuotaAttributeResponse.ResourceQuota.Phone;
 import com.aliyuncs.cms.model.v20190101.DescribeMonitorResourceQuotaAttributeResponse.ResourceQuota.SMS;
 import com.aliyuncs.cms.model.v20190101.DescribeMonitorResourceQuotaAttributeResponse.ResourceQuota.SiteMonitorEcsProbe;
@@ -38,10 +39,10 @@ public class DescribeMonitorResourceQuotaAttributeResponseUnmarshaller {
 		describeMonitorResourceQuotaAttributeResponse.setMessage(_ctx.stringValue("DescribeMonitorResourceQuotaAttributeResponse.Message"));
 
 		ResourceQuota resourceQuota = new ResourceQuota();
-		resourceQuota.setExpireTime(_ctx.stringValue("DescribeMonitorResourceQuotaAttributeResponse.ResourceQuota.ExpireTime"));
 		resourceQuota.setSuitInfo(_ctx.stringValue("DescribeMonitorResourceQuotaAttributeResponse.ResourceQuota.SuitInfo"));
-		resourceQuota.setCRMType(_ctx.stringValue("DescribeMonitorResourceQuotaAttributeResponse.ResourceQuota.CRMType"));
 		resourceQuota.setInstanceId(_ctx.stringValue("DescribeMonitorResourceQuotaAttributeResponse.ResourceQuota.InstanceId"));
+		resourceQuota.setExpireTime(_ctx.stringValue("DescribeMonitorResourceQuotaAttributeResponse.ResourceQuota.ExpireTime"));
+		resourceQuota.setCRMType(_ctx.stringValue("DescribeMonitorResourceQuotaAttributeResponse.ResourceQuota.CRMType"));
 
 		SiteMonitorEcsProbe siteMonitorEcsProbe = new SiteMonitorEcsProbe();
 		siteMonitorEcsProbe.setQuotaLimit(_ctx.integerValue("DescribeMonitorResourceQuotaAttributeResponse.ResourceQuota.SiteMonitorEcsProbe.QuotaLimit"));
@@ -101,6 +102,12 @@ public class DescribeMonitorResourceQuotaAttributeResponseUnmarshaller {
 		enterpriseQuota.setSuitInfo(_ctx.stringValue("DescribeMonitorResourceQuotaAttributeResponse.ResourceQuota.EnterpriseQuota.SuitInfo"));
 		enterpriseQuota.setInstanceId(_ctx.stringValue("DescribeMonitorResourceQuotaAttributeResponse.ResourceQuota.EnterpriseQuota.InstanceId"));
 		resourceQuota.setEnterpriseQuota(enterpriseQuota);
+
+		NAAM nAAM = new NAAM();
+		nAAM.setEffectTime(_ctx.stringValue("DescribeMonitorResourceQuotaAttributeResponse.ResourceQuota.NAAM.EffectTime"));
+		nAAM.setInstanceId(_ctx.stringValue("DescribeMonitorResourceQuotaAttributeResponse.ResourceQuota.NAAM.InstanceId"));
+		nAAM.setSuitInfo(_ctx.stringValue("DescribeMonitorResourceQuotaAttributeResponse.ResourceQuota.NAAM.SuitInfo"));
+		resourceQuota.setNAAM(nAAM);
 		describeMonitorResourceQuotaAttributeResponse.setResourceQuota(resourceQuota);
 	 
 	 	return describeMonitorResourceQuotaAttributeResponse;

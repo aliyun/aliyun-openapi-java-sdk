@@ -27,18 +27,18 @@ public class CreateGroupMetricRulesResponseUnmarshaller {
 	public static CreateGroupMetricRulesResponse unmarshall(CreateGroupMetricRulesResponse createGroupMetricRulesResponse, UnmarshallerContext _ctx) {
 		
 		createGroupMetricRulesResponse.setRequestId(_ctx.stringValue("CreateGroupMetricRulesResponse.RequestId"));
-		createGroupMetricRulesResponse.setSuccess(_ctx.booleanValue("CreateGroupMetricRulesResponse.Success"));
 		createGroupMetricRulesResponse.setCode(_ctx.integerValue("CreateGroupMetricRulesResponse.Code"));
 		createGroupMetricRulesResponse.setMessage(_ctx.stringValue("CreateGroupMetricRulesResponse.Message"));
+		createGroupMetricRulesResponse.setSuccess(_ctx.booleanValue("CreateGroupMetricRulesResponse.Success"));
 
 		List<AlertResult> resources = new ArrayList<AlertResult>();
 		for (int i = 0; i < _ctx.lengthValue("CreateGroupMetricRulesResponse.Resources.Length"); i++) {
 			AlertResult alertResult = new AlertResult();
-			alertResult.setRuleId(_ctx.stringValue("CreateGroupMetricRulesResponse.Resources["+ i +"].RuleId"));
-			alertResult.setRuleName(_ctx.stringValue("CreateGroupMetricRulesResponse.Resources["+ i +"].RuleName"));
-			alertResult.setMessage(_ctx.stringValue("CreateGroupMetricRulesResponse.Resources["+ i +"].Message"));
 			alertResult.setCode(_ctx.integerValue("CreateGroupMetricRulesResponse.Resources["+ i +"].Code"));
+			alertResult.setMessage(_ctx.stringValue("CreateGroupMetricRulesResponse.Resources["+ i +"].Message"));
 			alertResult.setSuccess(_ctx.booleanValue("CreateGroupMetricRulesResponse.Resources["+ i +"].Success"));
+			alertResult.setRuleName(_ctx.stringValue("CreateGroupMetricRulesResponse.Resources["+ i +"].RuleName"));
+			alertResult.setRuleId(_ctx.stringValue("CreateGroupMetricRulesResponse.Resources["+ i +"].RuleId"));
 
 			resources.add(alertResult);
 		}

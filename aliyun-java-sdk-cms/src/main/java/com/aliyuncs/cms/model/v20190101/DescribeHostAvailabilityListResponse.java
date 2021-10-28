@@ -29,11 +29,11 @@ public class DescribeHostAvailabilityListResponse extends AcsResponse {
 
 	private String message;
 
-	private Boolean success;
-
 	private String requestId;
 
 	private Integer total;
+
+	private Boolean success;
 
 	private List<NodeTaskConfig> taskList;
 
@@ -53,14 +53,6 @@ public class DescribeHostAvailabilityListResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -77,6 +69,14 @@ public class DescribeHostAvailabilityListResponse extends AcsResponse {
 		this.total = total;
 	}
 
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public List<NodeTaskConfig> getTaskList() {
 		return this.taskList;
 	}
@@ -87,41 +87,25 @@ public class DescribeHostAvailabilityListResponse extends AcsResponse {
 
 	public static class NodeTaskConfig {
 
-		private Long id;
-
-		private String taskName;
-
 		private String taskType;
 
-		private String taskScope;
-
-		private Boolean disabled;
+		private String groupName;
 
 		private Long groupId;
 
-		private String groupName;
+		private String taskName;
+
+		private Boolean disabled;
+
+		private String taskScope;
+
+		private Long id;
 
 		private List<String> instances;
 
 		private TaskOption taskOption;
 
 		private AlertConfig alertConfig;
-
-		public Long getId() {
-			return this.id;
-		}
-
-		public void setId(Long id) {
-			this.id = id;
-		}
-
-		public String getTaskName() {
-			return this.taskName;
-		}
-
-		public void setTaskName(String taskName) {
-			this.taskName = taskName;
-		}
 
 		public String getTaskType() {
 			return this.taskType;
@@ -131,20 +115,12 @@ public class DescribeHostAvailabilityListResponse extends AcsResponse {
 			this.taskType = taskType;
 		}
 
-		public String getTaskScope() {
-			return this.taskScope;
+		public String getGroupName() {
+			return this.groupName;
 		}
 
-		public void setTaskScope(String taskScope) {
-			this.taskScope = taskScope;
-		}
-
-		public Boolean getDisabled() {
-			return this.disabled;
-		}
-
-		public void setDisabled(Boolean disabled) {
-			this.disabled = disabled;
+		public void setGroupName(String groupName) {
+			this.groupName = groupName;
 		}
 
 		public Long getGroupId() {
@@ -155,12 +131,36 @@ public class DescribeHostAvailabilityListResponse extends AcsResponse {
 			this.groupId = groupId;
 		}
 
-		public String getGroupName() {
-			return this.groupName;
+		public String getTaskName() {
+			return this.taskName;
 		}
 
-		public void setGroupName(String groupName) {
-			this.groupName = groupName;
+		public void setTaskName(String taskName) {
+			this.taskName = taskName;
+		}
+
+		public Boolean getDisabled() {
+			return this.disabled;
+		}
+
+		public void setDisabled(Boolean disabled) {
+			this.disabled = disabled;
+		}
+
+		public String getTaskScope() {
+			return this.taskScope;
+		}
+
+		public void setTaskScope(String taskScope) {
+			this.taskScope = taskScope;
+		}
+
+		public Long getId() {
+			return this.id;
+		}
+
+		public void setId(Long id) {
+			this.id = id;
 		}
 
 		public List<String> getInstances() {
@@ -189,6 +189,10 @@ public class DescribeHostAvailabilityListResponse extends AcsResponse {
 
 		public static class TaskOption {
 
+			private String httpMethod;
+
+			private Integer interval;
+
 			private String httpURI;
 
 			private String telnetOrPingHost;
@@ -197,13 +201,25 @@ public class DescribeHostAvailabilityListResponse extends AcsResponse {
 
 			private String httpPostContent;
 
-			private String httpKeyword;
-
-			private String httpMethod;
-
 			private Boolean httpNegative;
 
-			private Integer interval;
+			private String httpKeyword;
+
+			public String getHttpMethod() {
+				return this.httpMethod;
+			}
+
+			public void setHttpMethod(String httpMethod) {
+				this.httpMethod = httpMethod;
+			}
+
+			public Integer getInterval() {
+				return this.interval;
+			}
+
+			public void setInterval(Integer interval) {
+				this.interval = interval;
+			}
 
 			public String getHttpURI() {
 				return this.httpURI;
@@ -237,22 +253,6 @@ public class DescribeHostAvailabilityListResponse extends AcsResponse {
 				this.httpPostContent = httpPostContent;
 			}
 
-			public String getHttpKeyword() {
-				return this.httpKeyword;
-			}
-
-			public void setHttpKeyword(String httpKeyword) {
-				this.httpKeyword = httpKeyword;
-			}
-
-			public String getHttpMethod() {
-				return this.httpMethod;
-			}
-
-			public void setHttpMethod(String httpMethod) {
-				this.httpMethod = httpMethod;
-			}
-
 			public Boolean getHttpNegative() {
 				return this.httpNegative;
 			}
@@ -261,43 +261,35 @@ public class DescribeHostAvailabilityListResponse extends AcsResponse {
 				this.httpNegative = httpNegative;
 			}
 
-			public Integer getInterval() {
-				return this.interval;
+			public String getHttpKeyword() {
+				return this.httpKeyword;
 			}
 
-			public void setInterval(Integer interval) {
-				this.interval = interval;
+			public void setHttpKeyword(String httpKeyword) {
+				this.httpKeyword = httpKeyword;
 			}
 		}
 
 		public static class AlertConfig {
 
-			private Integer notifyType;
-
-			private Integer startTime;
+			private Integer silenceTime;
 
 			private Integer endTime;
 
-			private Integer silenceTime;
+			private Integer startTime;
 
 			private String webHook;
 
+			private Integer notifyType;
+
 			private List<EscalationListItem> escalationList;
 
-			public Integer getNotifyType() {
-				return this.notifyType;
+			public Integer getSilenceTime() {
+				return this.silenceTime;
 			}
 
-			public void setNotifyType(Integer notifyType) {
-				this.notifyType = notifyType;
-			}
-
-			public Integer getStartTime() {
-				return this.startTime;
-			}
-
-			public void setStartTime(Integer startTime) {
-				this.startTime = startTime;
+			public void setSilenceTime(Integer silenceTime) {
+				this.silenceTime = silenceTime;
 			}
 
 			public Integer getEndTime() {
@@ -308,12 +300,12 @@ public class DescribeHostAvailabilityListResponse extends AcsResponse {
 				this.endTime = endTime;
 			}
 
-			public Integer getSilenceTime() {
-				return this.silenceTime;
+			public Integer getStartTime() {
+				return this.startTime;
 			}
 
-			public void setSilenceTime(Integer silenceTime) {
-				this.silenceTime = silenceTime;
+			public void setStartTime(Integer startTime) {
+				this.startTime = startTime;
 			}
 
 			public String getWebHook() {
@@ -322,6 +314,14 @@ public class DescribeHostAvailabilityListResponse extends AcsResponse {
 
 			public void setWebHook(String webHook) {
 				this.webHook = webHook;
+			}
+
+			public Integer getNotifyType() {
+				return this.notifyType;
+			}
+
+			public void setNotifyType(Integer notifyType) {
+				this.notifyType = notifyType;
 			}
 
 			public List<EscalationListItem> getEscalationList() {
@@ -334,15 +334,23 @@ public class DescribeHostAvailabilityListResponse extends AcsResponse {
 
 			public static class EscalationListItem {
 
-				private String metricName;
+				private String value;
 
-				private String aggregate;
+				private String metricName;
 
 				private String operator;
 
-				private String value;
-
 				private String times;
+
+				private String aggregate;
+
+				public String getValue() {
+					return this.value;
+				}
+
+				public void setValue(String value) {
+					this.value = value;
+				}
 
 				public String getMetricName() {
 					return this.metricName;
@@ -350,14 +358,6 @@ public class DescribeHostAvailabilityListResponse extends AcsResponse {
 
 				public void setMetricName(String metricName) {
 					this.metricName = metricName;
-				}
-
-				public String getAggregate() {
-					return this.aggregate;
-				}
-
-				public void setAggregate(String aggregate) {
-					this.aggregate = aggregate;
 				}
 
 				public String getOperator() {
@@ -368,20 +368,20 @@ public class DescribeHostAvailabilityListResponse extends AcsResponse {
 					this.operator = operator;
 				}
 
-				public String getValue() {
-					return this.value;
-				}
-
-				public void setValue(String value) {
-					this.value = value;
-				}
-
 				public String getTimes() {
 					return this.times;
 				}
 
 				public void setTimes(String times) {
 					this.times = times;
+				}
+
+				public String getAggregate() {
+					return this.aggregate;
+				}
+
+				public void setAggregate(String aggregate) {
+					this.aggregate = aggregate;
 				}
 			}
 		}

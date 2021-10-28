@@ -22,6 +22,9 @@ import com.aliyuncs.cms.model.v20190101.DescribeAlertLogListResponse.Alarm;
 import com.aliyuncs.cms.model.v20190101.DescribeAlertLogListResponse.Alarm.DimensionsItem;
 import com.aliyuncs.cms.model.v20190101.DescribeAlertLogListResponse.Alarm.Escalation;
 import com.aliyuncs.cms.model.v20190101.DescribeAlertLogListResponse.Alarm.ExtInfo;
+import com.aliyuncs.cms.model.v20190101.DescribeAlertLogListResponse.Alarm.SendDetail;
+import com.aliyuncs.cms.model.v20190101.DescribeAlertLogListResponse.Alarm.SendDetail.ChannelResult;
+import com.aliyuncs.cms.model.v20190101.DescribeAlertLogListResponse.Alarm.SendDetail.ChannelResult.Result;
 import com.aliyuncs.cms.model.v20190101.DescribeAlertLogListResponse.Alarm.WebhookListItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -101,6 +104,37 @@ public class DescribeAlertLogListResponseUnmarshaller {
 				dingdingWebhookList.add(_ctx.stringValue("DescribeAlertLogListResponse.AlertLogList["+ i +"].DingdingWebhookList["+ j +"]"));
 			}
 			alarm.setDingdingWebhookList(dingdingWebhookList);
+
+			SendDetail sendDetail = new SendDetail();
+			sendDetail.setResultCode(_ctx.stringValue("DescribeAlertLogListResponse.AlertLogList["+ i +"].SendDetail.ResultCode"));
+
+			List<ChannelResult> channelResultList = new ArrayList<ChannelResult>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeAlertLogListResponse.AlertLogList["+ i +"].SendDetail.ChannelResultList.Length"); j++) {
+				ChannelResult channelResult = new ChannelResult();
+				channelResult.setChannel(_ctx.stringValue("DescribeAlertLogListResponse.AlertLogList["+ i +"].SendDetail.ChannelResultList["+ j +"].Channel"));
+
+				List<Result> resultList = new ArrayList<Result>();
+				for (int k = 0; k < _ctx.lengthValue("DescribeAlertLogListResponse.AlertLogList["+ i +"].SendDetail.ChannelResultList["+ j +"].ResultList.Length"); k++) {
+					Result result = new Result();
+					result.setCode(_ctx.stringValue("DescribeAlertLogListResponse.AlertLogList["+ i +"].SendDetail.ChannelResultList["+ j +"].ResultList["+ k +"].Code"));
+					result.setDetail(_ctx.stringValue("DescribeAlertLogListResponse.AlertLogList["+ i +"].SendDetail.ChannelResultList["+ j +"].ResultList["+ k +"].Detail"));
+					result.setSuccess(_ctx.booleanValue("DescribeAlertLogListResponse.AlertLogList["+ i +"].SendDetail.ChannelResultList["+ j +"].ResultList["+ k +"].Success"));
+					result.setRequestId(_ctx.stringValue("DescribeAlertLogListResponse.AlertLogList["+ i +"].SendDetail.ChannelResultList["+ j +"].ResultList["+ k +"].RequestId"));
+
+					List<String> notifyTargetList = new ArrayList<String>();
+					for (int l = 0; l < _ctx.lengthValue("DescribeAlertLogListResponse.AlertLogList["+ i +"].SendDetail.ChannelResultList["+ j +"].ResultList["+ k +"].notifyTargetList.Length"); l++) {
+						notifyTargetList.add(_ctx.stringValue("DescribeAlertLogListResponse.AlertLogList["+ i +"].SendDetail.ChannelResultList["+ j +"].ResultList["+ k +"].notifyTargetList["+ l +"]"));
+					}
+					result.setNotifyTargetList(notifyTargetList);
+
+					resultList.add(result);
+				}
+				channelResult.setResultList(resultList);
+
+				channelResultList.add(channelResult);
+			}
+			sendDetail.setChannelResultList(channelResultList);
+			alarm.setSendDetail(sendDetail);
 
 			Escalation escalation = new Escalation();
 			escalation.setTimes(_ctx.integerValue("DescribeAlertLogListResponse.AlertLogList["+ i +"].Escalation.Times"));

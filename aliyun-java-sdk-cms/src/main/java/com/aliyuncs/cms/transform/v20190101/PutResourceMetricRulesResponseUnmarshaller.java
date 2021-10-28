@@ -28,9 +28,9 @@ public class PutResourceMetricRulesResponseUnmarshaller {
 	public static PutResourceMetricRulesResponse unmarshall(PutResourceMetricRulesResponse putResourceMetricRulesResponse, UnmarshallerContext _ctx) {
 		
 		putResourceMetricRulesResponse.setRequestId(_ctx.stringValue("PutResourceMetricRulesResponse.RequestId"));
-		putResourceMetricRulesResponse.setSuccess(_ctx.booleanValue("PutResourceMetricRulesResponse.Success"));
 		putResourceMetricRulesResponse.setCode(_ctx.stringValue("PutResourceMetricRulesResponse.Code"));
 		putResourceMetricRulesResponse.setMessage(_ctx.stringValue("PutResourceMetricRulesResponse.Message"));
+		putResourceMetricRulesResponse.setSuccess(_ctx.booleanValue("PutResourceMetricRulesResponse.Success"));
 
 		List<Target> failedListResult = new ArrayList<Target>();
 		for (int i = 0; i < _ctx.lengthValue("PutResourceMetricRulesResponse.FailedListResult.Length"); i++) {

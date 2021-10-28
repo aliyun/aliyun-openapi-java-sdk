@@ -34,21 +34,23 @@ public class DescribeSiteMonitorISPCityListResponseUnmarshaller {
 		List<IspCity> ispCityList = new ArrayList<IspCity>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSiteMonitorISPCityListResponse.IspCityList.Length"); i++) {
 			IspCity ispCity = new IspCity();
-			ispCity.setIsp(_ctx.stringValue("DescribeSiteMonitorISPCityListResponse.IspCityList["+ i +"].Isp"));
+			ispCity.setCityNameen(_ctx.stringValue("DescribeSiteMonitorISPCityListResponse.IspCityList["+ i +"].CityName.en"));
+			ispCity.setIPV4ProbeCount(_ctx.stringValue("DescribeSiteMonitorISPCityListResponse.IspCityList["+ i +"].IPV4ProbeCount"));
 			ispCity.setCity(_ctx.stringValue("DescribeSiteMonitorISPCityListResponse.IspCityList["+ i +"].City"));
+			ispCity.setIsp(_ctx.stringValue("DescribeSiteMonitorISPCityListResponse.IspCityList["+ i +"].Isp"));
+			ispCity.setCityNamezh_CN(_ctx.stringValue("DescribeSiteMonitorISPCityListResponse.IspCityList["+ i +"].CityName.zh_CN"));
+			ispCity.setRegionzh_CN(_ctx.stringValue("DescribeSiteMonitorISPCityListResponse.IspCityList["+ i +"].Region.zh_CN"));
+			ispCity.setIspNamezh_CN(_ctx.stringValue("DescribeSiteMonitorISPCityListResponse.IspCityList["+ i +"].IspName.zh_CN"));
+			ispCity.setCountryen(_ctx.stringValue("DescribeSiteMonitorISPCityListResponse.IspCityList["+ i +"].Country.en"));
+			ispCity.setAPIProbeCount(_ctx.stringValue("DescribeSiteMonitorISPCityListResponse.IspCityList["+ i +"].APIProbeCount"));
+			ispCity.setIPV6ProbeCount(_ctx.stringValue("DescribeSiteMonitorISPCityListResponse.IspCityList["+ i +"].IPV6ProbeCount"));
 			ispCity.setRegion(_ctx.stringValue("DescribeSiteMonitorISPCityListResponse.IspCityList["+ i +"].Region"));
 			ispCity.setCountry(_ctx.stringValue("DescribeSiteMonitorISPCityListResponse.IspCityList["+ i +"].Country"));
 			ispCity.setIspNameen(_ctx.stringValue("DescribeSiteMonitorISPCityListResponse.IspCityList["+ i +"].IspName.en"));
-			ispCity.setIspNamezh_CN(_ctx.stringValue("DescribeSiteMonitorISPCityListResponse.IspCityList["+ i +"].IspName.zh_CN"));
-			ispCity.setCityNameen(_ctx.stringValue("DescribeSiteMonitorISPCityListResponse.IspCityList["+ i +"].CityName.en"));
-			ispCity.setCityNamezh_CN(_ctx.stringValue("DescribeSiteMonitorISPCityListResponse.IspCityList["+ i +"].CityName.zh_CN"));
 			ispCity.setRegionen(_ctx.stringValue("DescribeSiteMonitorISPCityListResponse.IspCityList["+ i +"].Region.en"));
-			ispCity.setRegionzh_CN(_ctx.stringValue("DescribeSiteMonitorISPCityListResponse.IspCityList["+ i +"].Region.zh_CN"));
-			ispCity.setCountryen(_ctx.stringValue("DescribeSiteMonitorISPCityListResponse.IspCityList["+ i +"].Country.en"));
 			ispCity.setCountryzh_CN(_ctx.stringValue("DescribeSiteMonitorISPCityListResponse.IspCityList["+ i +"].Country.zh_CN"));
-			ispCity.setIPV4ProbeCount(_ctx.stringValue("DescribeSiteMonitorISPCityListResponse.IspCityList["+ i +"].IPV4ProbeCount"));
-			ispCity.setIPV6ProbeCount(_ctx.stringValue("DescribeSiteMonitorISPCityListResponse.IspCityList["+ i +"].IPV6ProbeCount"));
-			ispCity.setAPIProbeCount(_ctx.stringValue("DescribeSiteMonitorISPCityListResponse.IspCityList["+ i +"].APIProbeCount"));
+			ispCity.setAreazh_CN(_ctx.stringValue("DescribeSiteMonitorISPCityListResponse.IspCityList["+ i +"].Area.zh_CN"));
+			ispCity.setAreaen(_ctx.stringValue("DescribeSiteMonitorISPCityListResponse.IspCityList["+ i +"].Area.en"));
 
 			List<String> iPPool = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeSiteMonitorISPCityListResponse.IspCityList["+ i +"].IPPool.Length"); j++) {

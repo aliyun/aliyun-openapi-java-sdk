@@ -29,9 +29,9 @@ public class DescribeSiteMonitorAttributeResponse extends AcsResponse {
 
 	private String message;
 
-	private Boolean success;
-
 	private String requestId;
+
+	private Boolean success;
 
 	private List<MetricRule> metricRules;
 
@@ -53,20 +53,20 @@ public class DescribeSiteMonitorAttributeResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<MetricRule> getMetricRules() {
@@ -87,52 +87,52 @@ public class DescribeSiteMonitorAttributeResponse extends AcsResponse {
 
 	public static class MetricRule {
 
-		private String ruleId;
+		private String metricName;
 
-		private String ruleName;
+		private String evaluationCount;
 
 		private String namespace;
-
-		private String metricName;
 
 		private String okActions;
 
 		private String alarmActions;
 
-		private String statistics;
+		private String ruleId;
 
-		private String actionEnable;
+		private String ruleName;
 
 		private String period;
 
 		private String comparisonOperator;
 
-		private String threshold;
-
-		private String evaluationCount;
-
-		private String level;
-
 		private String expression;
-
-		private String stateValue;
 
 		private String dimensions;
 
-		public String getRuleId() {
-			return this.ruleId;
+		private String stateValue;
+
+		private String actionEnable;
+
+		private String level;
+
+		private String threshold;
+
+		private String statistics;
+
+		public String getMetricName() {
+			return this.metricName;
 		}
 
-		public void setRuleId(String ruleId) {
-			this.ruleId = ruleId;
+		public void setMetricName(String metricName) {
+			this.metricName = metricName;
 		}
 
-		public String getRuleName() {
-			return this.ruleName;
+		public String getEvaluationCount() {
+			return this.evaluationCount;
 		}
 
-		public void setRuleName(String ruleName) {
-			this.ruleName = ruleName;
+		public void setEvaluationCount(String evaluationCount) {
+			this.evaluationCount = evaluationCount;
 		}
 
 		public String getNamespace() {
@@ -141,14 +141,6 @@ public class DescribeSiteMonitorAttributeResponse extends AcsResponse {
 
 		public void setNamespace(String namespace) {
 			this.namespace = namespace;
-		}
-
-		public String getMetricName() {
-			return this.metricName;
-		}
-
-		public void setMetricName(String metricName) {
-			this.metricName = metricName;
 		}
 
 		public String getOkActions() {
@@ -167,20 +159,20 @@ public class DescribeSiteMonitorAttributeResponse extends AcsResponse {
 			this.alarmActions = alarmActions;
 		}
 
-		public String getStatistics() {
-			return this.statistics;
+		public String getRuleId() {
+			return this.ruleId;
 		}
 
-		public void setStatistics(String statistics) {
-			this.statistics = statistics;
+		public void setRuleId(String ruleId) {
+			this.ruleId = ruleId;
 		}
 
-		public String getActionEnable() {
-			return this.actionEnable;
+		public String getRuleName() {
+			return this.ruleName;
 		}
 
-		public void setActionEnable(String actionEnable) {
-			this.actionEnable = actionEnable;
+		public void setRuleName(String ruleName) {
+			this.ruleName = ruleName;
 		}
 
 		public String getPeriod() {
@@ -199,36 +191,20 @@ public class DescribeSiteMonitorAttributeResponse extends AcsResponse {
 			this.comparisonOperator = comparisonOperator;
 		}
 
-		public String getThreshold() {
-			return this.threshold;
-		}
-
-		public void setThreshold(String threshold) {
-			this.threshold = threshold;
-		}
-
-		public String getEvaluationCount() {
-			return this.evaluationCount;
-		}
-
-		public void setEvaluationCount(String evaluationCount) {
-			this.evaluationCount = evaluationCount;
-		}
-
-		public String getLevel() {
-			return this.level;
-		}
-
-		public void setLevel(String level) {
-			this.level = level;
-		}
-
 		public String getExpression() {
 			return this.expression;
 		}
 
 		public void setExpression(String expression) {
 			this.expression = expression;
+		}
+
+		public String getDimensions() {
+			return this.dimensions;
+		}
+
+		public void setDimensions(String dimensions) {
+			this.dimensions = dimensions;
 		}
 
 		public String getStateValue() {
@@ -239,34 +215,66 @@ public class DescribeSiteMonitorAttributeResponse extends AcsResponse {
 			this.stateValue = stateValue;
 		}
 
-		public String getDimensions() {
-			return this.dimensions;
+		public String getActionEnable() {
+			return this.actionEnable;
 		}
 
-		public void setDimensions(String dimensions) {
-			this.dimensions = dimensions;
+		public void setActionEnable(String actionEnable) {
+			this.actionEnable = actionEnable;
+		}
+
+		public String getLevel() {
+			return this.level;
+		}
+
+		public void setLevel(String level) {
+			this.level = level;
+		}
+
+		public String getThreshold() {
+			return this.threshold;
+		}
+
+		public void setThreshold(String threshold) {
+			this.threshold = threshold;
+		}
+
+		public String getStatistics() {
+			return this.statistics;
+		}
+
+		public void setStatistics(String statistics) {
+			this.statistics = statistics;
 		}
 	}
 
 	public static class SiteMonitors {
 
+		private String endTime;
+
 		private String taskType;
 
-		private String address;
+		private String interval;
 
 		private String taskState;
 
 		private String taskName;
 
-		private String interval;
+		private String address;
 
 		private String taskId;
-
-		private String endTime;
 
 		private List<IspCity> ispCities;
 
 		private OptionJson optionJson;
+
+		public String getEndTime() {
+			return this.endTime;
+		}
+
+		public void setEndTime(String endTime) {
+			this.endTime = endTime;
+		}
 
 		public String getTaskType() {
 			return this.taskType;
@@ -276,12 +284,12 @@ public class DescribeSiteMonitorAttributeResponse extends AcsResponse {
 			this.taskType = taskType;
 		}
 
-		public String getAddress() {
-			return this.address;
+		public String getInterval() {
+			return this.interval;
 		}
 
-		public void setAddress(String address) {
-			this.address = address;
+		public void setInterval(String interval) {
+			this.interval = interval;
 		}
 
 		public String getTaskState() {
@@ -300,12 +308,12 @@ public class DescribeSiteMonitorAttributeResponse extends AcsResponse {
 			this.taskName = taskName;
 		}
 
-		public String getInterval() {
-			return this.interval;
+		public String getAddress() {
+			return this.address;
 		}
 
-		public void setInterval(String interval) {
-			this.interval = interval;
+		public void setAddress(String address) {
+			this.address = address;
 		}
 
 		public String getTaskId() {
@@ -314,14 +322,6 @@ public class DescribeSiteMonitorAttributeResponse extends AcsResponse {
 
 		public void setTaskId(String taskId) {
 			this.taskId = taskId;
-		}
-
-		public String getEndTime() {
-			return this.endTime;
-		}
-
-		public void setEndTime(String endTime) {
-			this.endTime = endTime;
 		}
 
 		public List<IspCity> getIspCities() {
@@ -342,20 +342,20 @@ public class DescribeSiteMonitorAttributeResponse extends AcsResponse {
 
 		public static class IspCity {
 
-			private String cityName;
+			private String city;
 
 			private String ispName;
 
-			private String city;
-
 			private String isp;
 
-			public String getCityName() {
-				return this.cityName;
+			private String cityName;
+
+			public String getCity() {
+				return this.city;
 			}
 
-			public void setCityName(String cityName) {
-				this.cityName = cityName;
+			public void setCity(String city) {
+				this.city = city;
 			}
 
 			public String getIspName() {
@@ -366,14 +366,6 @@ public class DescribeSiteMonitorAttributeResponse extends AcsResponse {
 				this.ispName = ispName;
 			}
 
-			public String getCity() {
-				return this.city;
-			}
-
-			public void setCity(String city) {
-				this.city = city;
-			}
-
 			public String getIsp() {
 				return this.isp;
 			}
@@ -381,88 +373,78 @@ public class DescribeSiteMonitorAttributeResponse extends AcsResponse {
 			public void setIsp(String isp) {
 				this.isp = isp;
 			}
+
+			public String getCityName() {
+				return this.cityName;
+			}
+
+			public void setCityName(String cityName) {
+				this.cityName = cityName;
+			}
 		}
 
 		public static class OptionJson {
 
-			private String dns_type;
-
-			private String dns_server;
-
-			private String expect_value;
-
-			private String http_method;
+			private String request_format;
 
 			private String response_content;
 
-			private Integer match_rule;
-
-			private String request_content;
-
-			private String cookie;
-
-			private String header;
-
-			private String username;
-
-			private String password;
-
-			private Long time_out;
-
-			private Integer ping_num;
-
-			private Float failure_rate;
-
-			private String request_format;
-
-			private String response_format;
-
 			private Integer port;
-
-			private Integer authentication;
-
-			private Long traceroute;
-
-			private Boolean cert_verify;
-
-			private Boolean unfollow_redirect;
 
 			private Boolean proxy_protocol;
 
-			private String acceptable_response_code;
+			private Integer authentication;
+
+			private Integer match_rule;
 
 			private String ipv6_task;
 
-			public String getDns_type() {
-				return this.dns_type;
+			private String request_content;
+
+			private String acceptable_response_code;
+
+			private String username;
+
+			private Long traceroute;
+
+			private String dns_type;
+
+			private String response_format;
+
+			private String password;
+
+			private String expect_value;
+
+			private Long time_out;
+
+			private Float failure_rate;
+
+			private String header;
+
+			private String cookie;
+
+			private Integer ping_num;
+
+			private String http_method;
+
+			private Boolean unfollow_redirect;
+
+			private Boolean cert_verify;
+
+			private String dns_server;
+
+			private Boolean enable_operator_dns;
+
+			private Long attempts;
+
+			private String protocol;
+
+			public String getRequest_format() {
+				return this.request_format;
 			}
 
-			public void setDns_type(String dns_type) {
-				this.dns_type = dns_type;
-			}
-
-			public String getDns_server() {
-				return this.dns_server;
-			}
-
-			public void setDns_server(String dns_server) {
-				this.dns_server = dns_server;
-			}
-
-			public String getExpect_value() {
-				return this.expect_value;
-			}
-
-			public void setExpect_value(String expect_value) {
-				this.expect_value = expect_value;
-			}
-
-			public String getHttp_method() {
-				return this.http_method;
-			}
-
-			public void setHttp_method(String http_method) {
-				this.http_method = http_method;
+			public void setRequest_format(String request_format) {
+				this.request_format = request_format;
 			}
 
 			public String getResponse_content() {
@@ -473,132 +455,12 @@ public class DescribeSiteMonitorAttributeResponse extends AcsResponse {
 				this.response_content = response_content;
 			}
 
-			public Integer getMatch_rule() {
-				return this.match_rule;
-			}
-
-			public void setMatch_rule(Integer match_rule) {
-				this.match_rule = match_rule;
-			}
-
-			public String getRequest_content() {
-				return this.request_content;
-			}
-
-			public void setRequest_content(String request_content) {
-				this.request_content = request_content;
-			}
-
-			public String getCookie() {
-				return this.cookie;
-			}
-
-			public void setCookie(String cookie) {
-				this.cookie = cookie;
-			}
-
-			public String getHeader() {
-				return this.header;
-			}
-
-			public void setHeader(String header) {
-				this.header = header;
-			}
-
-			public String getUsername() {
-				return this.username;
-			}
-
-			public void setUsername(String username) {
-				this.username = username;
-			}
-
-			public String getPassword() {
-				return this.password;
-			}
-
-			public void setPassword(String password) {
-				this.password = password;
-			}
-
-			public Long getTime_out() {
-				return this.time_out;
-			}
-
-			public void setTime_out(Long time_out) {
-				this.time_out = time_out;
-			}
-
-			public Integer getPing_num() {
-				return this.ping_num;
-			}
-
-			public void setPing_num(Integer ping_num) {
-				this.ping_num = ping_num;
-			}
-
-			public Float getFailure_rate() {
-				return this.failure_rate;
-			}
-
-			public void setFailure_rate(Float failure_rate) {
-				this.failure_rate = failure_rate;
-			}
-
-			public String getRequest_format() {
-				return this.request_format;
-			}
-
-			public void setRequest_format(String request_format) {
-				this.request_format = request_format;
-			}
-
-			public String getResponse_format() {
-				return this.response_format;
-			}
-
-			public void setResponse_format(String response_format) {
-				this.response_format = response_format;
-			}
-
 			public Integer getPort() {
 				return this.port;
 			}
 
 			public void setPort(Integer port) {
 				this.port = port;
-			}
-
-			public Integer getAuthentication() {
-				return this.authentication;
-			}
-
-			public void setAuthentication(Integer authentication) {
-				this.authentication = authentication;
-			}
-
-			public Long getTraceroute() {
-				return this.traceroute;
-			}
-
-			public void setTraceroute(Long traceroute) {
-				this.traceroute = traceroute;
-			}
-
-			public Boolean getCert_verify() {
-				return this.cert_verify;
-			}
-
-			public void setCert_verify(Boolean cert_verify) {
-				this.cert_verify = cert_verify;
-			}
-
-			public Boolean getUnfollow_redirect() {
-				return this.unfollow_redirect;
-			}
-
-			public void setUnfollow_redirect(Boolean unfollow_redirect) {
-				this.unfollow_redirect = unfollow_redirect;
 			}
 
 			public Boolean getProxy_protocol() {
@@ -609,12 +471,20 @@ public class DescribeSiteMonitorAttributeResponse extends AcsResponse {
 				this.proxy_protocol = proxy_protocol;
 			}
 
-			public String getAcceptable_response_code() {
-				return this.acceptable_response_code;
+			public Integer getAuthentication() {
+				return this.authentication;
 			}
 
-			public void setAcceptable_response_code(String acceptable_response_code) {
-				this.acceptable_response_code = acceptable_response_code;
+			public void setAuthentication(Integer authentication) {
+				this.authentication = authentication;
+			}
+
+			public Integer getMatch_rule() {
+				return this.match_rule;
+			}
+
+			public void setMatch_rule(Integer match_rule) {
+				this.match_rule = match_rule;
 			}
 
 			public String getIpv6_task() {
@@ -623,6 +493,166 @@ public class DescribeSiteMonitorAttributeResponse extends AcsResponse {
 
 			public void setIpv6_task(String ipv6_task) {
 				this.ipv6_task = ipv6_task;
+			}
+
+			public String getRequest_content() {
+				return this.request_content;
+			}
+
+			public void setRequest_content(String request_content) {
+				this.request_content = request_content;
+			}
+
+			public String getAcceptable_response_code() {
+				return this.acceptable_response_code;
+			}
+
+			public void setAcceptable_response_code(String acceptable_response_code) {
+				this.acceptable_response_code = acceptable_response_code;
+			}
+
+			public String getUsername() {
+				return this.username;
+			}
+
+			public void setUsername(String username) {
+				this.username = username;
+			}
+
+			public Long getTraceroute() {
+				return this.traceroute;
+			}
+
+			public void setTraceroute(Long traceroute) {
+				this.traceroute = traceroute;
+			}
+
+			public String getDns_type() {
+				return this.dns_type;
+			}
+
+			public void setDns_type(String dns_type) {
+				this.dns_type = dns_type;
+			}
+
+			public String getResponse_format() {
+				return this.response_format;
+			}
+
+			public void setResponse_format(String response_format) {
+				this.response_format = response_format;
+			}
+
+			public String getPassword() {
+				return this.password;
+			}
+
+			public void setPassword(String password) {
+				this.password = password;
+			}
+
+			public String getExpect_value() {
+				return this.expect_value;
+			}
+
+			public void setExpect_value(String expect_value) {
+				this.expect_value = expect_value;
+			}
+
+			public Long getTime_out() {
+				return this.time_out;
+			}
+
+			public void setTime_out(Long time_out) {
+				this.time_out = time_out;
+			}
+
+			public Float getFailure_rate() {
+				return this.failure_rate;
+			}
+
+			public void setFailure_rate(Float failure_rate) {
+				this.failure_rate = failure_rate;
+			}
+
+			public String getHeader() {
+				return this.header;
+			}
+
+			public void setHeader(String header) {
+				this.header = header;
+			}
+
+			public String getCookie() {
+				return this.cookie;
+			}
+
+			public void setCookie(String cookie) {
+				this.cookie = cookie;
+			}
+
+			public Integer getPing_num() {
+				return this.ping_num;
+			}
+
+			public void setPing_num(Integer ping_num) {
+				this.ping_num = ping_num;
+			}
+
+			public String getHttp_method() {
+				return this.http_method;
+			}
+
+			public void setHttp_method(String http_method) {
+				this.http_method = http_method;
+			}
+
+			public Boolean getUnfollow_redirect() {
+				return this.unfollow_redirect;
+			}
+
+			public void setUnfollow_redirect(Boolean unfollow_redirect) {
+				this.unfollow_redirect = unfollow_redirect;
+			}
+
+			public Boolean getCert_verify() {
+				return this.cert_verify;
+			}
+
+			public void setCert_verify(Boolean cert_verify) {
+				this.cert_verify = cert_verify;
+			}
+
+			public String getDns_server() {
+				return this.dns_server;
+			}
+
+			public void setDns_server(String dns_server) {
+				this.dns_server = dns_server;
+			}
+
+			public Boolean getEnable_operator_dns() {
+				return this.enable_operator_dns;
+			}
+
+			public void setEnable_operator_dns(Boolean enable_operator_dns) {
+				this.enable_operator_dns = enable_operator_dns;
+			}
+
+			public Long getAttempts() {
+				return this.attempts;
+			}
+
+			public void setAttempts(Long attempts) {
+				this.attempts = attempts;
+			}
+
+			public String getBizProtocol() {
+				return this.protocol;
+			}
+
+			public void setBizProtocol(String protocol) {
+				this.protocol = protocol;
 			}
 		}
 	}

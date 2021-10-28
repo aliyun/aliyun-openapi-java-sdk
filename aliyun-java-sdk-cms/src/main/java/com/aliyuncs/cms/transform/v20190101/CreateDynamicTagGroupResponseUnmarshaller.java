@@ -26,6 +26,7 @@ public class CreateDynamicTagGroupResponseUnmarshaller {
 		createDynamicTagGroupResponse.setCode(_ctx.stringValue("CreateDynamicTagGroupResponse.Code"));
 		createDynamicTagGroupResponse.setMessage(_ctx.stringValue("CreateDynamicTagGroupResponse.Message"));
 		createDynamicTagGroupResponse.setSuccess(_ctx.booleanValue("CreateDynamicTagGroupResponse.Success"));
+		createDynamicTagGroupResponse.setId(_ctx.stringValue("CreateDynamicTagGroupResponse.Id"));
 	 
 	 	return createDynamicTagGroupResponse;
 	}

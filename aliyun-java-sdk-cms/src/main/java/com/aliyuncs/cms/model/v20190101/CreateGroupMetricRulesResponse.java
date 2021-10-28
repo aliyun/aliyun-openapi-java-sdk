@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateGroupMetricRulesResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private Integer code;
 
 	private String message;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private List<AlertResult> resources;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public Integer getCode() {
 		return this.code;
@@ -67,6 +51,22 @@ public class CreateGroupMetricRulesResponse extends AcsResponse {
 		this.message = message;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public List<AlertResult> getResources() {
 		return this.resources;
 	}
@@ -77,30 +77,22 @@ public class CreateGroupMetricRulesResponse extends AcsResponse {
 
 	public static class AlertResult {
 
-		private String ruleId;
-
-		private String ruleName;
+		private Integer code;
 
 		private String message;
 
-		private Integer code;
-
 		private Boolean success;
 
-		public String getRuleId() {
-			return this.ruleId;
+		private String ruleName;
+
+		private String ruleId;
+
+		public Integer getCode() {
+			return this.code;
 		}
 
-		public void setRuleId(String ruleId) {
-			this.ruleId = ruleId;
-		}
-
-		public String getRuleName() {
-			return this.ruleName;
-		}
-
-		public void setRuleName(String ruleName) {
-			this.ruleName = ruleName;
+		public void setCode(Integer code) {
+			this.code = code;
 		}
 
 		public String getMessage() {
@@ -111,20 +103,28 @@ public class CreateGroupMetricRulesResponse extends AcsResponse {
 			this.message = message;
 		}
 
-		public Integer getCode() {
-			return this.code;
-		}
-
-		public void setCode(Integer code) {
-			this.code = code;
-		}
-
 		public Boolean getSuccess() {
 			return this.success;
 		}
 
 		public void setSuccess(Boolean success) {
 			this.success = success;
+		}
+
+		public String getRuleName() {
+			return this.ruleName;
+		}
+
+		public void setRuleName(String ruleName) {
+			this.ruleName = ruleName;
+		}
+
+		public String getRuleId() {
+			return this.ruleId;
+		}
+
+		public void setRuleId(String ruleId) {
+			this.ruleId = ruleId;
 		}
 	}
 

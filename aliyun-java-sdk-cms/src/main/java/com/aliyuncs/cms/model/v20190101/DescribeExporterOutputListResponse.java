@@ -145,8 +145,6 @@ public class DescribeExporterOutputListResponse extends AcsResponse {
 
 			private String endpoint;
 
-			private String as;
-
 			private String ak;
 
 			public String getLogstore() {
@@ -171,14 +169,6 @@ public class DescribeExporterOutputListResponse extends AcsResponse {
 
 			public void setEndpoint(String endpoint) {
 				this.endpoint = endpoint;
-			}
-
-			public String getAs() {
-				return this.as;
-			}
-
-			public void setAs(String as) {
-				this.as = as;
 			}
 
 			public String getAk() {

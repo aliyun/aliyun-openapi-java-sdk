@@ -36,6 +36,8 @@ public class PutGroupMetricRuleRequest extends RpcAcsRequest<PutGroupMetricRuleR
 
 	private String escalationsInfoComparisonOperator;
 
+	private String noDataPolicy;
+
 	private String noEffectiveInterval;
 
 	private String emailSubject;
@@ -147,6 +149,17 @@ public class PutGroupMetricRuleRequest extends RpcAcsRequest<PutGroupMetricRuleR
 		this.escalationsInfoComparisonOperator = escalationsInfoComparisonOperator;
 		if(escalationsInfoComparisonOperator != null){
 			putQueryParameter("Escalations.Info.ComparisonOperator", escalationsInfoComparisonOperator);
+		}
+	}
+
+	public String getNoDataPolicy() {
+		return this.noDataPolicy;
+	}
+
+	public void setNoDataPolicy(String noDataPolicy) {
+		this.noDataPolicy = noDataPolicy;
+		if(noDataPolicy != null){
+			putQueryParameter("NoDataPolicy", noDataPolicy);
 		}
 	}
 

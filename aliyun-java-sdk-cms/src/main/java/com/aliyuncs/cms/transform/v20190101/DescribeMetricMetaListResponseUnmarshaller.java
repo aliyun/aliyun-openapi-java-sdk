@@ -27,22 +27,22 @@ public class DescribeMetricMetaListResponseUnmarshaller {
 	public static DescribeMetricMetaListResponse unmarshall(DescribeMetricMetaListResponse describeMetricMetaListResponse, UnmarshallerContext _ctx) {
 		
 		describeMetricMetaListResponse.setRequestId(_ctx.stringValue("DescribeMetricMetaListResponse.RequestId"));
-		describeMetricMetaListResponse.setSuccess(_ctx.booleanValue("DescribeMetricMetaListResponse.Success"));
 		describeMetricMetaListResponse.setCode(_ctx.stringValue("DescribeMetricMetaListResponse.Code"));
 		describeMetricMetaListResponse.setMessage(_ctx.stringValue("DescribeMetricMetaListResponse.Message"));
 		describeMetricMetaListResponse.setTotalCount(_ctx.stringValue("DescribeMetricMetaListResponse.TotalCount"));
+		describeMetricMetaListResponse.setSuccess(_ctx.booleanValue("DescribeMetricMetaListResponse.Success"));
 
 		List<Resource> resources = new ArrayList<Resource>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeMetricMetaListResponse.Resources.Length"); i++) {
 			Resource resource = new Resource();
-			resource.setNamespace(_ctx.stringValue("DescribeMetricMetaListResponse.Resources["+ i +"].Namespace"));
 			resource.setMetricName(_ctx.stringValue("DescribeMetricMetaListResponse.Resources["+ i +"].MetricName"));
-			resource.setStatistics(_ctx.stringValue("DescribeMetricMetaListResponse.Resources["+ i +"].Statistics"));
-			resource.setUnit(_ctx.stringValue("DescribeMetricMetaListResponse.Resources["+ i +"].Unit"));
 			resource.setDescription(_ctx.stringValue("DescribeMetricMetaListResponse.Resources["+ i +"].Description"));
-			resource.setDimensions(_ctx.stringValue("DescribeMetricMetaListResponse.Resources["+ i +"].Dimensions"));
-			resource.setPeriods(_ctx.stringValue("DescribeMetricMetaListResponse.Resources["+ i +"].Periods"));
 			resource.setLabels(_ctx.stringValue("DescribeMetricMetaListResponse.Resources["+ i +"].Labels"));
+			resource.setUnit(_ctx.stringValue("DescribeMetricMetaListResponse.Resources["+ i +"].Unit"));
+			resource.setDimensions(_ctx.stringValue("DescribeMetricMetaListResponse.Resources["+ i +"].Dimensions"));
+			resource.setNamespace(_ctx.stringValue("DescribeMetricMetaListResponse.Resources["+ i +"].Namespace"));
+			resource.setPeriods(_ctx.stringValue("DescribeMetricMetaListResponse.Resources["+ i +"].Periods"));
+			resource.setStatistics(_ctx.stringValue("DescribeMetricMetaListResponse.Resources["+ i +"].Statistics"));
 
 			resources.add(resource);
 		}

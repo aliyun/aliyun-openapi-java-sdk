@@ -66,13 +66,13 @@ public class DescribeMonitorResourceQuotaAttributeResponse extends AcsResponse {
 
 	public static class ResourceQuota {
 
-		private String expireTime;
-
 		private String suitInfo;
 
-		private String cRMType;
-
 		private String instanceId;
+
+		private String expireTime;
+
+		private String cRMType;
 
 		private SiteMonitorEcsProbe siteMonitorEcsProbe;
 
@@ -94,13 +94,7 @@ public class DescribeMonitorResourceQuotaAttributeResponse extends AcsResponse {
 
 		private EnterpriseQuota enterpriseQuota;
 
-		public String getExpireTime() {
-			return this.expireTime;
-		}
-
-		public void setExpireTime(String expireTime) {
-			this.expireTime = expireTime;
-		}
+		private NAAM nAAM;
 
 		public String getSuitInfo() {
 			return this.suitInfo;
@@ -110,20 +104,28 @@ public class DescribeMonitorResourceQuotaAttributeResponse extends AcsResponse {
 			this.suitInfo = suitInfo;
 		}
 
-		public String getCRMType() {
-			return this.cRMType;
-		}
-
-		public void setCRMType(String cRMType) {
-			this.cRMType = cRMType;
-		}
-
 		public String getInstanceId() {
 			return this.instanceId;
 		}
 
 		public void setInstanceId(String instanceId) {
 			this.instanceId = instanceId;
+		}
+
+		public String getExpireTime() {
+			return this.expireTime;
+		}
+
+		public void setExpireTime(String expireTime) {
+			this.expireTime = expireTime;
+		}
+
+		public String getCRMType() {
+			return this.cRMType;
+		}
+
+		public void setCRMType(String cRMType) {
+			this.cRMType = cRMType;
 		}
 
 		public SiteMonitorEcsProbe getSiteMonitorEcsProbe() {
@@ -204,6 +206,14 @@ public class DescribeMonitorResourceQuotaAttributeResponse extends AcsResponse {
 
 		public void setEnterpriseQuota(EnterpriseQuota enterpriseQuota) {
 			this.enterpriseQuota = enterpriseQuota;
+		}
+
+		public NAAM getNAAM() {
+			return this.nAAM;
+		}
+
+		public void setNAAM(NAAM nAAM) {
+			this.nAAM = nAAM;
 		}
 
 		public static class SiteMonitorEcsProbe {
@@ -523,6 +533,39 @@ public class DescribeMonitorResourceQuotaAttributeResponse extends AcsResponse {
 
 			public void setInstanceId(String instanceId) {
 				this.instanceId = instanceId;
+			}
+		}
+
+		public static class NAAM {
+
+			private String effectTime;
+
+			private String instanceId;
+
+			private String suitInfo;
+
+			public String getEffectTime() {
+				return this.effectTime;
+			}
+
+			public void setEffectTime(String effectTime) {
+				this.effectTime = effectTime;
+			}
+
+			public String getInstanceId() {
+				return this.instanceId;
+			}
+
+			public void setInstanceId(String instanceId) {
+				this.instanceId = instanceId;
+			}
+
+			public String getSuitInfo() {
+				return this.suitInfo;
+			}
+
+			public void setSuitInfo(String suitInfo) {
+				this.suitInfo = suitInfo;
 			}
 		}
 	}

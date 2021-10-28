@@ -25,13 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeSiteMonitorListResponse extends AcsResponse {
 
-	private String code;
-
-	private String message;
+	private String requestId;
 
 	private String success;
 
-	private String requestId;
+	private String code;
+
+	private String message;
 
 	private Integer pageNumber;
 
@@ -40,6 +40,22 @@ public class DescribeSiteMonitorListResponse extends AcsResponse {
 	private Integer totalCount;
 
 	private List<SiteMonitor> siteMonitors;
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(String success) {
+		this.success = success;
+	}
 
 	public String getCode() {
 		return this.code;
@@ -55,22 +71,6 @@ public class DescribeSiteMonitorListResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
-	}
-
-	public String getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(String success) {
-		this.success = success;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
 	}
 
 	public Integer getPageNumber() {
@@ -107,11 +107,13 @@ public class DescribeSiteMonitorListResponse extends AcsResponse {
 
 	public static class SiteMonitor {
 
-		private String taskId;
+		private String endTime;
 
 		private String taskType;
 
-		private String address;
+		private String updateTime;
+
+		private String interval;
 
 		private String taskState;
 
@@ -119,20 +121,18 @@ public class DescribeSiteMonitorListResponse extends AcsResponse {
 
 		private String taskName;
 
-		private String interval;
+		private String address;
 
-		private String updateTime;
-
-		private String endTime;
+		private String taskId;
 
 		private OptionsJson optionsJson;
 
-		public String getTaskId() {
-			return this.taskId;
+		public String getEndTime() {
+			return this.endTime;
 		}
 
-		public void setTaskId(String taskId) {
-			this.taskId = taskId;
+		public void setEndTime(String endTime) {
+			this.endTime = endTime;
 		}
 
 		public String getTaskType() {
@@ -143,12 +143,20 @@ public class DescribeSiteMonitorListResponse extends AcsResponse {
 			this.taskType = taskType;
 		}
 
-		public String getAddress() {
-			return this.address;
+		public String getUpdateTime() {
+			return this.updateTime;
 		}
 
-		public void setAddress(String address) {
-			this.address = address;
+		public void setUpdateTime(String updateTime) {
+			this.updateTime = updateTime;
+		}
+
+		public String getInterval() {
+			return this.interval;
+		}
+
+		public void setInterval(String interval) {
+			this.interval = interval;
 		}
 
 		public String getTaskState() {
@@ -175,28 +183,20 @@ public class DescribeSiteMonitorListResponse extends AcsResponse {
 			this.taskName = taskName;
 		}
 
-		public String getInterval() {
-			return this.interval;
+		public String getAddress() {
+			return this.address;
 		}
 
-		public void setInterval(String interval) {
-			this.interval = interval;
+		public void setAddress(String address) {
+			this.address = address;
 		}
 
-		public String getUpdateTime() {
-			return this.updateTime;
+		public String getTaskId() {
+			return this.taskId;
 		}
 
-		public void setUpdateTime(String updateTime) {
-			this.updateTime = updateTime;
-		}
-
-		public String getEndTime() {
-			return this.endTime;
-		}
-
-		public void setEndTime(String endTime) {
-			this.endTime = endTime;
+		public void setTaskId(String taskId) {
+			this.taskId = taskId;
 		}
 
 		public OptionsJson getOptionsJson() {
@@ -209,68 +209,66 @@ public class DescribeSiteMonitorListResponse extends AcsResponse {
 
 		public static class OptionsJson {
 
-			private String dns_type;
+			private String password;
 
-			private String dns_server;
-
-			private String group_id;
+			private String request_format;
 
 			private String expect_value;
 
-			private String http_method;
-
 			private String response_content;
+
+			private Float failure_rate;
+
+			private Long time_out;
+
+			private String header;
+
+			private String cookie;
+
+			private Integer port;
+
+			private Integer ping_num;
+
+			private Integer authentication;
+
+			private String http_method;
 
 			private Integer match_rule;
 
 			private String request_content;
 
-			private String cookie;
-
-			private String header;
-
 			private String username;
-
-			private String password;
-
-			private Long time_out;
-
-			private Integer ping_num;
-
-			private Float failure_rate;
-
-			private String request_format;
-
-			private String response_format;
-
-			private Integer port;
-
-			private Integer authentication;
 
 			private Long traceroute;
 
-			public String getDns_type() {
-				return this.dns_type;
+			private String response_format;
+
+			private String dns_type;
+
+			private String group_id;
+
+			private String dns_server;
+
+			private Boolean enable_operator_dns;
+
+			private Long attempts;
+
+			private String protocol;
+
+			public String getPassword() {
+				return this.password;
 			}
 
-			public void setDns_type(String dns_type) {
-				this.dns_type = dns_type;
+			public void setPassword(String password) {
+				this.password = password;
 			}
 
-			public String getDns_server() {
-				return this.dns_server;
+			public String getRequest_format() {
+				return this.request_format;
 			}
 
-			public void setDns_server(String dns_server) {
-				this.dns_server = dns_server;
-			}
-
-			public String getGroup_id() {
-				return this.group_id;
-			}
-
-			public void setGroup_id(String group_id) {
-				this.group_id = group_id;
+			public void setRequest_format(String request_format) {
+				this.request_format = request_format;
 			}
 
 			public String getExpect_value() {
@@ -281,20 +279,76 @@ public class DescribeSiteMonitorListResponse extends AcsResponse {
 				this.expect_value = expect_value;
 			}
 
-			public String getHttp_method() {
-				return this.http_method;
-			}
-
-			public void setHttp_method(String http_method) {
-				this.http_method = http_method;
-			}
-
 			public String getResponse_content() {
 				return this.response_content;
 			}
 
 			public void setResponse_content(String response_content) {
 				this.response_content = response_content;
+			}
+
+			public Float getFailure_rate() {
+				return this.failure_rate;
+			}
+
+			public void setFailure_rate(Float failure_rate) {
+				this.failure_rate = failure_rate;
+			}
+
+			public Long getTime_out() {
+				return this.time_out;
+			}
+
+			public void setTime_out(Long time_out) {
+				this.time_out = time_out;
+			}
+
+			public String getHeader() {
+				return this.header;
+			}
+
+			public void setHeader(String header) {
+				this.header = header;
+			}
+
+			public String getCookie() {
+				return this.cookie;
+			}
+
+			public void setCookie(String cookie) {
+				this.cookie = cookie;
+			}
+
+			public Integer getPort() {
+				return this.port;
+			}
+
+			public void setPort(Integer port) {
+				this.port = port;
+			}
+
+			public Integer getPing_num() {
+				return this.ping_num;
+			}
+
+			public void setPing_num(Integer ping_num) {
+				this.ping_num = ping_num;
+			}
+
+			public Integer getAuthentication() {
+				return this.authentication;
+			}
+
+			public void setAuthentication(Integer authentication) {
+				this.authentication = authentication;
+			}
+
+			public String getHttp_method() {
+				return this.http_method;
+			}
+
+			public void setHttp_method(String http_method) {
+				this.http_method = http_method;
 			}
 
 			public Integer getMatch_rule() {
@@ -313,22 +367,6 @@ public class DescribeSiteMonitorListResponse extends AcsResponse {
 				this.request_content = request_content;
 			}
 
-			public String getCookie() {
-				return this.cookie;
-			}
-
-			public void setCookie(String cookie) {
-				this.cookie = cookie;
-			}
-
-			public String getHeader() {
-				return this.header;
-			}
-
-			public void setHeader(String header) {
-				this.header = header;
-			}
-
 			public String getUsername() {
 				return this.username;
 			}
@@ -337,44 +375,12 @@ public class DescribeSiteMonitorListResponse extends AcsResponse {
 				this.username = username;
 			}
 
-			public String getPassword() {
-				return this.password;
+			public Long getTraceroute() {
+				return this.traceroute;
 			}
 
-			public void setPassword(String password) {
-				this.password = password;
-			}
-
-			public Long getTime_out() {
-				return this.time_out;
-			}
-
-			public void setTime_out(Long time_out) {
-				this.time_out = time_out;
-			}
-
-			public Integer getPing_num() {
-				return this.ping_num;
-			}
-
-			public void setPing_num(Integer ping_num) {
-				this.ping_num = ping_num;
-			}
-
-			public Float getFailure_rate() {
-				return this.failure_rate;
-			}
-
-			public void setFailure_rate(Float failure_rate) {
-				this.failure_rate = failure_rate;
-			}
-
-			public String getRequest_format() {
-				return this.request_format;
-			}
-
-			public void setRequest_format(String request_format) {
-				this.request_format = request_format;
+			public void setTraceroute(Long traceroute) {
+				this.traceroute = traceroute;
 			}
 
 			public String getResponse_format() {
@@ -385,28 +391,52 @@ public class DescribeSiteMonitorListResponse extends AcsResponse {
 				this.response_format = response_format;
 			}
 
-			public Integer getPort() {
-				return this.port;
+			public String getDns_type() {
+				return this.dns_type;
 			}
 
-			public void setPort(Integer port) {
-				this.port = port;
+			public void setDns_type(String dns_type) {
+				this.dns_type = dns_type;
 			}
 
-			public Integer getAuthentication() {
-				return this.authentication;
+			public String getGroup_id() {
+				return this.group_id;
 			}
 
-			public void setAuthentication(Integer authentication) {
-				this.authentication = authentication;
+			public void setGroup_id(String group_id) {
+				this.group_id = group_id;
 			}
 
-			public Long getTraceroute() {
-				return this.traceroute;
+			public String getDns_server() {
+				return this.dns_server;
 			}
 
-			public void setTraceroute(Long traceroute) {
-				this.traceroute = traceroute;
+			public void setDns_server(String dns_server) {
+				this.dns_server = dns_server;
+			}
+
+			public Boolean getEnable_operator_dns() {
+				return this.enable_operator_dns;
+			}
+
+			public void setEnable_operator_dns(Boolean enable_operator_dns) {
+				this.enable_operator_dns = enable_operator_dns;
+			}
+
+			public Long getAttempts() {
+				return this.attempts;
+			}
+
+			public void setAttempts(Long attempts) {
+				this.attempts = attempts;
+			}
+
+			public String getBizProtocol() {
+				return this.protocol;
+			}
+
+			public void setBizProtocol(String protocol) {
+				this.protocol = protocol;
 			}
 		}
 	}

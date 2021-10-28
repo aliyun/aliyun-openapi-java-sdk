@@ -19,6 +19,8 @@ import java.util.List;
 
 import com.aliyuncs.cms.model.v20190101.DescribeMetricRuleListResponse;
 import com.aliyuncs.cms.model.v20190101.DescribeMetricRuleListResponse.Alarm;
+import com.aliyuncs.cms.model.v20190101.DescribeMetricRuleListResponse.Alarm.CompositeExpression;
+import com.aliyuncs.cms.model.v20190101.DescribeMetricRuleListResponse.Alarm.CompositeExpression.ExpressionListItem;
 import com.aliyuncs.cms.model.v20190101.DescribeMetricRuleListResponse.Alarm.Escalations;
 import com.aliyuncs.cms.model.v20190101.DescribeMetricRuleListResponse.Alarm.Escalations.Critical;
 import com.aliyuncs.cms.model.v20190101.DescribeMetricRuleListResponse.Alarm.Escalations.Info;
@@ -31,60 +33,82 @@ public class DescribeMetricRuleListResponseUnmarshaller {
 	public static DescribeMetricRuleListResponse unmarshall(DescribeMetricRuleListResponse describeMetricRuleListResponse, UnmarshallerContext _ctx) {
 		
 		describeMetricRuleListResponse.setRequestId(_ctx.stringValue("DescribeMetricRuleListResponse.RequestId"));
-		describeMetricRuleListResponse.setSuccess(_ctx.booleanValue("DescribeMetricRuleListResponse.Success"));
 		describeMetricRuleListResponse.setCode(_ctx.integerValue("DescribeMetricRuleListResponse.Code"));
 		describeMetricRuleListResponse.setMessage(_ctx.stringValue("DescribeMetricRuleListResponse.Message"));
 		describeMetricRuleListResponse.setTotal(_ctx.stringValue("DescribeMetricRuleListResponse.Total"));
+		describeMetricRuleListResponse.setSuccess(_ctx.booleanValue("DescribeMetricRuleListResponse.Success"));
 
 		List<Alarm> alarms = new ArrayList<Alarm>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeMetricRuleListResponse.Alarms.Length"); i++) {
 			Alarm alarm = new Alarm();
-			alarm.setRuleId(_ctx.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].RuleId"));
-			alarm.setNamespace(_ctx.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].Namespace"));
-			alarm.setMetricName(_ctx.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].MetricName"));
-			alarm.setPeriod(_ctx.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].Period"));
-			alarm.setEffectiveInterval(_ctx.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].EffectiveInterval"));
-			alarm.setNoEffectiveInterval(_ctx.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].NoEffectiveInterval"));
 			alarm.setSilenceTime(_ctx.integerValue("DescribeMetricRuleListResponse.Alarms["+ i +"].SilenceTime"));
-			alarm.setEnableState(_ctx.booleanValue("DescribeMetricRuleListResponse.Alarms["+ i +"].EnableState"));
-			alarm.setAlertState(_ctx.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].AlertState"));
-			alarm.setContactGroups(_ctx.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].ContactGroups"));
+			alarm.setMetricName(_ctx.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].MetricName"));
 			alarm.setWebhook(_ctx.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].Webhook"));
-			alarm.setMailSubject(_ctx.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].MailSubject"));
-			alarm.setRuleName(_ctx.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].RuleName"));
-			alarm.setResources(_ctx.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].Resources"));
-			alarm.setGroupId(_ctx.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].GroupId"));
-			alarm.setGroupName(_ctx.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].GroupName"));
-			alarm.setDimensions(_ctx.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].Dimensions"));
+			alarm.setContactGroups(_ctx.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].ContactGroups"));
 			alarm.setSourceType(_ctx.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].SourceType"));
+			alarm.setNamespace(_ctx.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].Namespace"));
+			alarm.setMailSubject(_ctx.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].MailSubject"));
+			alarm.setNoEffectiveInterval(_ctx.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].NoEffectiveInterval"));
+			alarm.setEffectiveInterval(_ctx.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].EffectiveInterval"));
+			alarm.setRuleName(_ctx.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].RuleName"));
+			alarm.setAlertState(_ctx.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].AlertState"));
+			alarm.setPeriod(_ctx.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].Period"));
+			alarm.setRuleId(_ctx.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].RuleId"));
+			alarm.setGroupName(_ctx.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].GroupName"));
+			alarm.setGroupId(_ctx.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].GroupId"));
+			alarm.setDimensions(_ctx.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].Dimensions"));
+			alarm.setEnableState(_ctx.booleanValue("DescribeMetricRuleListResponse.Alarms["+ i +"].EnableState"));
 			alarm.setGroupBy(_ctx.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].GroupBy"));
+			alarm.setResources(_ctx.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].Resources"));
+			alarm.setNoDataPolicy(_ctx.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].NoDataPolicy"));
 
 			Escalations escalations = new Escalations();
 
 			Info info = new Info();
 			info.setComparisonOperator(_ctx.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].Escalations.Info.ComparisonOperator"));
-			info.setStatistics(_ctx.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].Escalations.Info.Statistics"));
-			info.setThreshold(_ctx.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].Escalations.Info.Threshold"));
-			info.setTimes(_ctx.integerValue("DescribeMetricRuleListResponse.Alarms["+ i +"].Escalations.Info.Times"));
 			info.setPreCondition(_ctx.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].Escalations.Info.PreCondition"));
+			info.setTimes(_ctx.integerValue("DescribeMetricRuleListResponse.Alarms["+ i +"].Escalations.Info.Times"));
+			info.setThreshold(_ctx.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].Escalations.Info.Threshold"));
+			info.setStatistics(_ctx.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].Escalations.Info.Statistics"));
 			escalations.setInfo(info);
 
 			Warn warn = new Warn();
 			warn.setComparisonOperator(_ctx.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].Escalations.Warn.ComparisonOperator"));
-			warn.setStatistics(_ctx.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].Escalations.Warn.Statistics"));
-			warn.setThreshold(_ctx.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].Escalations.Warn.Threshold"));
-			warn.setTimes(_ctx.integerValue("DescribeMetricRuleListResponse.Alarms["+ i +"].Escalations.Warn.Times"));
 			warn.setPreCondition(_ctx.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].Escalations.Warn.PreCondition"));
+			warn.setTimes(_ctx.integerValue("DescribeMetricRuleListResponse.Alarms["+ i +"].Escalations.Warn.Times"));
+			warn.setThreshold(_ctx.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].Escalations.Warn.Threshold"));
+			warn.setStatistics(_ctx.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].Escalations.Warn.Statistics"));
 			escalations.setWarn(warn);
 
 			Critical critical = new Critical();
 			critical.setComparisonOperator(_ctx.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].Escalations.Critical.ComparisonOperator"));
-			critical.setStatistics(_ctx.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].Escalations.Critical.Statistics"));
-			critical.setThreshold(_ctx.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].Escalations.Critical.Threshold"));
-			critical.setTimes(_ctx.integerValue("DescribeMetricRuleListResponse.Alarms["+ i +"].Escalations.Critical.Times"));
 			critical.setPreCondition(_ctx.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].Escalations.Critical.PreCondition"));
+			critical.setTimes(_ctx.integerValue("DescribeMetricRuleListResponse.Alarms["+ i +"].Escalations.Critical.Times"));
+			critical.setThreshold(_ctx.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].Escalations.Critical.Threshold"));
+			critical.setStatistics(_ctx.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].Escalations.Critical.Statistics"));
 			escalations.setCritical(critical);
 			alarm.setEscalations(escalations);
+
+			CompositeExpression compositeExpression = new CompositeExpression();
+			compositeExpression.setLevel(_ctx.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].CompositeExpression.Level"));
+			compositeExpression.setExpressionListJoin(_ctx.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].CompositeExpression.ExpressionListJoin"));
+			compositeExpression.setExpressionRaw(_ctx.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].CompositeExpression.ExpressionRaw"));
+			compositeExpression.setTimes(_ctx.integerValue("DescribeMetricRuleListResponse.Alarms["+ i +"].CompositeExpression.Times"));
+
+			List<ExpressionListItem> expressionList = new ArrayList<ExpressionListItem>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeMetricRuleListResponse.Alarms["+ i +"].CompositeExpression.ExpressionList.Length"); j++) {
+				ExpressionListItem expressionListItem = new ExpressionListItem();
+				expressionListItem.setMetricName(_ctx.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].CompositeExpression.ExpressionList["+ j +"].MetricName"));
+				expressionListItem.setComparisonOperator(_ctx.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].CompositeExpression.ExpressionList["+ j +"].ComparisonOperator"));
+				expressionListItem.setStatistics(_ctx.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].CompositeExpression.ExpressionList["+ j +"].Statistics"));
+				expressionListItem.setThreshold(_ctx.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].CompositeExpression.ExpressionList["+ j +"].Threshold"));
+				expressionListItem.setPeriod(_ctx.integerValue("DescribeMetricRuleListResponse.Alarms["+ i +"].CompositeExpression.ExpressionList["+ j +"].Period"));
+				expressionListItem.setId(_ctx.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].CompositeExpression.ExpressionList["+ j +"].Id"));
+
+				expressionList.add(expressionListItem);
+			}
+			compositeExpression.setExpressionList(expressionList);
+			alarm.setCompositeExpression(compositeExpression);
 
 			alarms.add(alarm);
 		}

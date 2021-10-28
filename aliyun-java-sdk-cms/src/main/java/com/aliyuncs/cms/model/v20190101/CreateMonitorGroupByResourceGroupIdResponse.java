@@ -28,9 +28,11 @@ public class CreateMonitorGroupByResourceGroupIdResponse extends AcsResponse {
 
 	private String message;
 
+	private String requestId;
+
 	private Boolean success;
 
-	private String requestId;
+	private Long id;
 
 	public String getCode() {
 		return this.code;
@@ -48,6 +50,14 @@ public class CreateMonitorGroupByResourceGroupIdResponse extends AcsResponse {
 		this.message = message;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	public Boolean getSuccess() {
 		return this.success;
 	}
@@ -56,12 +66,12 @@ public class CreateMonitorGroupByResourceGroupIdResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public Long getId() {
+		return this.id;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	@Override

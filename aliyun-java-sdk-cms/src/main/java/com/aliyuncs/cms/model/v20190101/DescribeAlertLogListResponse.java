@@ -163,6 +163,8 @@ public class DescribeAlertLogListResponse extends AcsResponse {
 
 		private List<String> dingdingWebhookList;
 
+		private SendDetail sendDetail;
+
 		private Escalation escalation;
 
 		public String getRuleId() {
@@ -389,6 +391,14 @@ public class DescribeAlertLogListResponse extends AcsResponse {
 			this.dingdingWebhookList = dingdingWebhookList;
 		}
 
+		public SendDetail getSendDetail() {
+			return this.sendDetail;
+		}
+
+		public void setSendDetail(SendDetail sendDetail) {
+			this.sendDetail = sendDetail;
+		}
+
 		public Escalation getEscalation() {
 			return this.escalation;
 		}
@@ -473,6 +483,105 @@ public class DescribeAlertLogListResponse extends AcsResponse {
 
 			public void setMessage(String message) {
 				this.message = message;
+			}
+		}
+
+		public static class SendDetail {
+
+			private String resultCode;
+
+			private List<ChannelResult> channelResultList;
+
+			public String getResultCode() {
+				return this.resultCode;
+			}
+
+			public void setResultCode(String resultCode) {
+				this.resultCode = resultCode;
+			}
+
+			public List<ChannelResult> getChannelResultList() {
+				return this.channelResultList;
+			}
+
+			public void setChannelResultList(List<ChannelResult> channelResultList) {
+				this.channelResultList = channelResultList;
+			}
+
+			public static class ChannelResult {
+
+				private String channel;
+
+				private List<Result> resultList;
+
+				public String getChannel() {
+					return this.channel;
+				}
+
+				public void setChannel(String channel) {
+					this.channel = channel;
+				}
+
+				public List<Result> getResultList() {
+					return this.resultList;
+				}
+
+				public void setResultList(List<Result> resultList) {
+					this.resultList = resultList;
+				}
+
+				public static class Result {
+
+					private String code;
+
+					private String detail;
+
+					private Boolean success;
+
+					private String requestId;
+
+					private List<String> notifyTargetList;
+
+					public String getCode() {
+						return this.code;
+					}
+
+					public void setCode(String code) {
+						this.code = code;
+					}
+
+					public String getDetail() {
+						return this.detail;
+					}
+
+					public void setDetail(String detail) {
+						this.detail = detail;
+					}
+
+					public Boolean getSuccess() {
+						return this.success;
+					}
+
+					public void setSuccess(Boolean success) {
+						this.success = success;
+					}
+
+					public String getRequestId() {
+						return this.requestId;
+					}
+
+					public void setRequestId(String requestId) {
+						this.requestId = requestId;
+					}
+
+					public List<String> getNotifyTargetList() {
+						return this.notifyTargetList;
+					}
+
+					public void setNotifyTargetList(List<String> notifyTargetList) {
+						this.notifyTargetList = notifyTargetList;
+					}
+				}
 			}
 		}
 

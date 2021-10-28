@@ -1,3 +1,6 @@
+2021-10-28 Version: 7.0.25
+- Add no data alarm processing.
+
 2021-07-27 Version: 7.0.24
 - Createdynamictaggroup increases the filter parameters for TagRegionId.
 

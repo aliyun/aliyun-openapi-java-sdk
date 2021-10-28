@@ -26,6 +26,7 @@ public class CreateMonitorGroupByResourceGroupIdResponseUnmarshaller {
 		createMonitorGroupByResourceGroupIdResponse.setCode(_ctx.stringValue("CreateMonitorGroupByResourceGroupIdResponse.Code"));
 		createMonitorGroupByResourceGroupIdResponse.setMessage(_ctx.stringValue("CreateMonitorGroupByResourceGroupIdResponse.Message"));
 		createMonitorGroupByResourceGroupIdResponse.setSuccess(_ctx.booleanValue("CreateMonitorGroupByResourceGroupIdResponse.Success"));
+		createMonitorGroupByResourceGroupIdResponse.setId(_ctx.longValue("CreateMonitorGroupByResourceGroupIdResponse.Id"));
 	 
 	 	return createMonitorGroupByResourceGroupIdResponse;
 	}

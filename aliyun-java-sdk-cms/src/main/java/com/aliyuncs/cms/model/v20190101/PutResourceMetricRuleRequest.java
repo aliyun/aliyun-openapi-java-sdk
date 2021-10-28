@@ -36,6 +36,8 @@ public class PutResourceMetricRuleRequest extends RpcAcsRequest<PutResourceMetri
 
 	private String escalationsInfoComparisonOperator;
 
+	private String noDataPolicy;
+
 	private String noEffectiveInterval;
 
 	private String emailSubject;
@@ -141,6 +143,17 @@ public class PutResourceMetricRuleRequest extends RpcAcsRequest<PutResourceMetri
 		this.escalationsInfoComparisonOperator = escalationsInfoComparisonOperator;
 		if(escalationsInfoComparisonOperator != null){
 			putQueryParameter("Escalations.Info.ComparisonOperator", escalationsInfoComparisonOperator);
+		}
+	}
+
+	public String getNoDataPolicy() {
+		return this.noDataPolicy;
+	}
+
+	public void setNoDataPolicy(String noDataPolicy) {
+		this.noDataPolicy = noDataPolicy;
+		if(noDataPolicy != null){
+			putQueryParameter("NoDataPolicy", noDataPolicy);
 		}
 	}
 

@@ -45,7 +45,6 @@ public class DescribeExporterOutputListResponseUnmarshaller {
 			configJson.setLogstore(_ctx.stringValue("DescribeExporterOutputListResponse.Datapoints["+ i +"].ConfigJson.logstore"));
 			configJson.setProject(_ctx.stringValue("DescribeExporterOutputListResponse.Datapoints["+ i +"].ConfigJson.project"));
 			configJson.setEndpoint(_ctx.stringValue("DescribeExporterOutputListResponse.Datapoints["+ i +"].ConfigJson.endpoint"));
-			configJson.setAs(_ctx.stringValue("DescribeExporterOutputListResponse.Datapoints["+ i +"].ConfigJson.as"));
 			configJson.setAk(_ctx.stringValue("DescribeExporterOutputListResponse.Datapoints["+ i +"].ConfigJson.ak"));
 			datapoint.setConfigJson(configJson);
 
