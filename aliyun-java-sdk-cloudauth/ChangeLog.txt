@@ -1,3 +1,6 @@
+2021-10-28 Version: 2.0.31
+- Generated 2019-03-07, 2020-06-18, 2018-09-16, 2020-11-12 for `Cloudauth`.
+
 2021-10-27 Version: 2.0.30
 - Generated 2019-03-07 for `Cloudauth`.
 
