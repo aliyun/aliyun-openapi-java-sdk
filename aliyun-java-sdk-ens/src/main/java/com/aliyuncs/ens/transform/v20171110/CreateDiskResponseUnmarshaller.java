@@ -17,22 +17,23 @@ package com.aliyuncs.ens.transform.v20171110;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.aliyuncs.ens.model.v20171110.AddDeviceInternetPortResponse;
+import com.aliyuncs.ens.model.v20171110.CreateDiskResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class AddDeviceInternetPortResponseUnmarshaller {
+public class CreateDiskResponseUnmarshaller {
 
-	public static AddDeviceInternetPortResponse unmarshall(AddDeviceInternetPortResponse addDeviceInternetPortResponse, UnmarshallerContext _ctx) {
+	public static CreateDiskResponse unmarshall(CreateDiskResponse createDiskResponse, UnmarshallerContext _ctx) {
 		
-		addDeviceInternetPortResponse.setRequestId(_ctx.stringValue("AddDeviceInternetPortResponse.RequestId"));
+		createDiskResponse.setRequestId(_ctx.stringValue("CreateDiskResponse.RequestId"));
+		createDiskResponse.setOrderId(_ctx.stringValue("CreateDiskResponse.OrderId"));
 
-		List<String> ruleIds = new ArrayList<String>();
-		for (int i = 0; i < _ctx.lengthValue("AddDeviceInternetPortResponse.RuleIds.Length"); i++) {
-			ruleIds.add(_ctx.stringValue("AddDeviceInternetPortResponse.RuleIds["+ i +"]"));
+		List<String> instanceIds = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("CreateDiskResponse.InstanceIds.Length"); i++) {
+			instanceIds.add(_ctx.stringValue("CreateDiskResponse.InstanceIds["+ i +"]"));
 		}
-		addDeviceInternetPortResponse.setRuleIds(ruleIds);
+		createDiskResponse.setInstanceIds(instanceIds);
 	 
-	 	return addDeviceInternetPortResponse;
+	 	return createDiskResponse;
 	}
 }

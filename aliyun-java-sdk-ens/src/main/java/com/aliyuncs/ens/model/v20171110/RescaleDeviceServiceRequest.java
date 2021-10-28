@@ -28,6 +28,8 @@ public class RescaleDeviceServiceRequest extends RpcAcsRequest<RescaleDeviceServ
 
 	private String rescaleType;
 
+	private String imageId;
+
 	private Long timeout;
 
 	private String rescaleLevel;
@@ -63,6 +65,17 @@ public class RescaleDeviceServiceRequest extends RpcAcsRequest<RescaleDeviceServ
 		this.rescaleType = rescaleType;
 		if(rescaleType != null){
 			putQueryParameter("RescaleType", rescaleType);
+		}
+	}
+
+	public String getImageId() {
+		return this.imageId;
+	}
+
+	public void setImageId(String imageId) {
+		this.imageId = imageId;
+		if(imageId != null){
+			putQueryParameter("ImageId", imageId);
 		}
 	}
 

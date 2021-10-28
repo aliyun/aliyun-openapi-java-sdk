@@ -14,6 +14,9 @@
 
 package com.aliyuncs.ens.transform.v20171110;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.ens.model.v20171110.DeleteDeviceInternetPortResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -23,7 +26,12 @@ public class DeleteDeviceInternetPortResponseUnmarshaller {
 	public static DeleteDeviceInternetPortResponse unmarshall(DeleteDeviceInternetPortResponse deleteDeviceInternetPortResponse, UnmarshallerContext _ctx) {
 		
 		deleteDeviceInternetPortResponse.setRequestId(_ctx.stringValue("DeleteDeviceInternetPortResponse.RequestId"));
-		deleteDeviceInternetPortResponse.setRuleId(_ctx.stringValue("DeleteDeviceInternetPortResponse.RuleId"));
+
+		List<String> ruleIds = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("DeleteDeviceInternetPortResponse.RuleIds.Length"); i++) {
+			ruleIds.add(_ctx.stringValue("DeleteDeviceInternetPortResponse.RuleIds["+ i +"]"));
+		}
+		deleteDeviceInternetPortResponse.setRuleIds(ruleIds);
 	 
 	 	return deleteDeviceInternetPortResponse;
 	}

@@ -24,6 +24,8 @@ import com.aliyuncs.http.MethodType;
 public class GetVmListRequest extends RpcAcsRequest<GetVmListResponse> {
 	   
 
+	private String instanceUuid;
+
 	private Integer pageNumber;
 
 	private String groupUuid;
@@ -31,9 +33,22 @@ public class GetVmListRequest extends RpcAcsRequest<GetVmListResponse> {
 	private Integer pageSize;
 
 	private Long aliUid;
+
+	private String workloadUuid;
 	public GetVmListRequest() {
 		super("Ens", "2017-11-10", "GetVmList", "ens");
 		setMethod(MethodType.GET);
+	}
+
+	public String getInstanceUuid() {
+		return this.instanceUuid;
+	}
+
+	public void setInstanceUuid(String instanceUuid) {
+		this.instanceUuid = instanceUuid;
+		if(instanceUuid != null){
+			putQueryParameter("InstanceUuid", instanceUuid);
+		}
 	}
 
 	public Integer getPageNumber() {
@@ -77,6 +92,17 @@ public class GetVmListRequest extends RpcAcsRequest<GetVmListResponse> {
 		this.aliUid = aliUid;
 		if(aliUid != null){
 			putQueryParameter("AliUid", aliUid.toString());
+		}
+	}
+
+	public String getWorkloadUuid() {
+		return this.workloadUuid;
+	}
+
+	public void setWorkloadUuid(String workloadUuid) {
+		this.workloadUuid = workloadUuid;
+		if(workloadUuid != null){
+			putQueryParameter("WorkloadUuid", workloadUuid);
 		}
 	}
 

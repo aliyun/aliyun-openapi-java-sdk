@@ -14,20 +14,27 @@
 
 package com.aliyuncs.ens.model.v20171110;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ens.transform.v20171110.DeleteDeviceInternetPortResponseUnmarshaller;
+import com.aliyuncs.ens.transform.v20171110.DetachDiskResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DeleteDeviceInternetPortResponse extends AcsResponse {
+public class DetachDiskResponse extends AcsResponse {
+
+	private Integer code;
 
 	private String requestId;
 
-	private List<String> ruleIds;
+	public Integer getCode() {
+		return this.code;
+	}
+
+	public void setCode(Integer code) {
+		this.code = code;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -37,21 +44,8 @@ public class DeleteDeviceInternetPortResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<String> getRuleIds() {
-		return this.ruleIds;
-	}
-
-	public void setRuleIds(List<String> ruleIds) {
-		this.ruleIds = ruleIds;
-	}
-
 	@Override
-	public DeleteDeviceInternetPortResponse getInstance(UnmarshallerContext context) {
-		return	DeleteDeviceInternetPortResponseUnmarshaller.unmarshall(this, context);
-	}
-
-	@Override
-	public boolean checkShowJsonItemName() {
-		return false;
+	public DetachDiskResponse getInstance(UnmarshallerContext context) {
+		return	DetachDiskResponseUnmarshaller.unmarshall(this, context);
 	}
 }

@@ -14,20 +14,17 @@
 
 package com.aliyuncs.ens.model.v20171110;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ens.transform.v20171110.DeleteDeviceInternetPortResponseUnmarshaller;
+import com.aliyuncs.ens.transform.v20171110.RenewInstanceResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DeleteDeviceInternetPortResponse extends AcsResponse {
+public class RenewInstanceResponse extends AcsResponse {
 
 	private String requestId;
-
-	private List<String> ruleIds;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -37,17 +34,9 @@ public class DeleteDeviceInternetPortResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<String> getRuleIds() {
-		return this.ruleIds;
-	}
-
-	public void setRuleIds(List<String> ruleIds) {
-		this.ruleIds = ruleIds;
-	}
-
 	@Override
-	public DeleteDeviceInternetPortResponse getInstance(UnmarshallerContext context) {
-		return	DeleteDeviceInternetPortResponseUnmarshaller.unmarshall(this, context);
+	public RenewInstanceResponse getInstance(UnmarshallerContext context) {
+		return	RenewInstanceResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

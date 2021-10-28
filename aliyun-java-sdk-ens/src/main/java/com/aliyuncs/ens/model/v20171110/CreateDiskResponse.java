@@ -16,18 +16,20 @@ package com.aliyuncs.ens.model.v20171110;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ens.transform.v20171110.DeleteDeviceInternetPortResponseUnmarshaller;
+import com.aliyuncs.ens.transform.v20171110.CreateDiskResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DeleteDeviceInternetPortResponse extends AcsResponse {
+public class CreateDiskResponse extends AcsResponse {
 
 	private String requestId;
 
-	private List<String> ruleIds;
+	private String orderId;
+
+	private List<String> instanceIds;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -37,17 +39,25 @@ public class DeleteDeviceInternetPortResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<String> getRuleIds() {
-		return this.ruleIds;
+	public String getOrderId() {
+		return this.orderId;
 	}
 
-	public void setRuleIds(List<String> ruleIds) {
-		this.ruleIds = ruleIds;
+	public void setOrderId(String orderId) {
+		this.orderId = orderId;
+	}
+
+	public List<String> getInstanceIds() {
+		return this.instanceIds;
+	}
+
+	public void setInstanceIds(List<String> instanceIds) {
+		this.instanceIds = instanceIds;
 	}
 
 	@Override
-	public DeleteDeviceInternetPortResponse getInstance(UnmarshallerContext context) {
-		return	DeleteDeviceInternetPortResponseUnmarshaller.unmarshall(this, context);
+	public CreateDiskResponse getInstance(UnmarshallerContext context) {
+		return	CreateDiskResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

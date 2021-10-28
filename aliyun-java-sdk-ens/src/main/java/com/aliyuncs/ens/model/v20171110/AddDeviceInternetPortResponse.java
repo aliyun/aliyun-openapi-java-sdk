@@ -14,6 +14,7 @@
 
 package com.aliyuncs.ens.model.v20171110;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.ens.transform.v20171110.AddDeviceInternetPortResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -26,7 +27,7 @@ public class AddDeviceInternetPortResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String ruleId;
+	private List<String> ruleIds;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -36,12 +37,12 @@ public class AddDeviceInternetPortResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getRuleId() {
-		return this.ruleId;
+	public List<String> getRuleIds() {
+		return this.ruleIds;
 	}
 
-	public void setRuleId(String ruleId) {
-		this.ruleId = ruleId;
+	public void setRuleIds(List<String> ruleIds) {
+		this.ruleIds = ruleIds;
 	}
 
 	@Override
