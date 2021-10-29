@@ -14,19 +14,24 @@
 
 package com.aliyuncs.clickhouse.model.v20191111;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.clickhouse.transform.v20191111.ModifyDBClusterResponseUnmarshaller;
+import com.aliyuncs.clickhouse.transform.v20191111.CreateRDSToClickhouseDbResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ModifyDBClusterResponse extends AcsResponse {
+public class CreateRDSToClickhouseDbResponse extends AcsResponse {
 
 	private String requestId;
 
-	private DBCluster dBCluster;
+	private Long status;
+
+	private String errorMsg;
+
+	private List<String> repeatedDbs;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -36,40 +41,33 @@ public class ModifyDBClusterResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public DBCluster getDBCluster() {
-		return this.dBCluster;
+	public Long getStatus() {
+		return this.status;
 	}
 
-	public void setDBCluster(DBCluster dBCluster) {
-		this.dBCluster = dBCluster;
+	public void setStatus(Long status) {
+		this.status = status;
 	}
 
-	public static class DBCluster {
+	public String getErrorMsg() {
+		return this.errorMsg;
+	}
 
-		private String dbClusterId;
+	public void setErrorMsg(String errorMsg) {
+		this.errorMsg = errorMsg;
+	}
 
-		private String orderId;
+	public List<String> getRepeatedDbs() {
+		return this.repeatedDbs;
+	}
 
-		public String getDbClusterId() {
-			return this.dbClusterId;
-		}
-
-		public void setDbClusterId(String dbClusterId) {
-			this.dbClusterId = dbClusterId;
-		}
-
-		public String getOrderId() {
-			return this.orderId;
-		}
-
-		public void setOrderId(String orderId) {
-			this.orderId = orderId;
-		}
+	public void setRepeatedDbs(List<String> repeatedDbs) {
+		this.repeatedDbs = repeatedDbs;
 	}
 
 	@Override
-	public ModifyDBClusterResponse getInstance(UnmarshallerContext context) {
-		return	ModifyDBClusterResponseUnmarshaller.unmarshall(this, context);
+	public CreateRDSToClickhouseDbResponse getInstance(UnmarshallerContext context) {
+		return	CreateRDSToClickhouseDbResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

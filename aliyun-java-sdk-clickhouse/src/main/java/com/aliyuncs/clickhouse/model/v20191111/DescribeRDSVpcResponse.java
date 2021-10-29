@@ -15,18 +15,18 @@
 package com.aliyuncs.clickhouse.model.v20191111;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.clickhouse.transform.v20191111.ModifyDBClusterResponseUnmarshaller;
+import com.aliyuncs.clickhouse.transform.v20191111.DescribeRDSVpcResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ModifyDBClusterResponse extends AcsResponse {
+public class DescribeRDSVpcResponse extends AcsResponse {
 
 	private String requestId;
 
-	private DBCluster dBCluster;
+	private String vpcId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -36,40 +36,17 @@ public class ModifyDBClusterResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public DBCluster getDBCluster() {
-		return this.dBCluster;
+	public String getVpcId() {
+		return this.vpcId;
 	}
 
-	public void setDBCluster(DBCluster dBCluster) {
-		this.dBCluster = dBCluster;
-	}
-
-	public static class DBCluster {
-
-		private String dbClusterId;
-
-		private String orderId;
-
-		public String getDbClusterId() {
-			return this.dbClusterId;
-		}
-
-		public void setDbClusterId(String dbClusterId) {
-			this.dbClusterId = dbClusterId;
-		}
-
-		public String getOrderId() {
-			return this.orderId;
-		}
-
-		public void setOrderId(String orderId) {
-			this.orderId = orderId;
-		}
+	public void setVpcId(String vpcId) {
+		this.vpcId = vpcId;
 	}
 
 	@Override
-	public ModifyDBClusterResponse getInstance(UnmarshallerContext context) {
-		return	ModifyDBClusterResponseUnmarshaller.unmarshall(this, context);
+	public DescribeRDSVpcResponse getInstance(UnmarshallerContext context) {
+		return	DescribeRDSVpcResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDBClustersResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Integer pageNumber;
-
 	private Integer totalCount;
 
 	private Integer pageSize;
 
+	private String requestId;
+
+	private Integer pageNumber;
+
 	private List<DBCluster> dBClusters;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -67,6 +51,22 @@ public class DescribeDBClustersResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+	}
+
 	public List<DBCluster> getDBClusters() {
 		return this.dBClusters;
 	}
@@ -77,82 +77,84 @@ public class DescribeDBClustersResponse extends AcsResponse {
 
 	public static class DBCluster {
 
-		private String dBClusterId;
+		private String vpcId;
 
-		private String category;
+		private Long dBNodeCount;
 
-		private String dBClusterDescription;
+		private String createTime;
 
 		private String payType;
 
-		private String regionId;
+		private String storageType;
 
-		private String zoneId;
-
-		private String expireTime;
-
-		private String isExpired;
-
-		private String dBClusterStatus;
+		private Integer port;
 
 		private String lockMode;
 
-		private String lockReason;
+		private String bid;
 
-		private String createTime;
+		private String isExpired;
+
+		private String vpcCloudInstanceId;
+
+		private String dBClusterId;
+
+		private String connectionString;
+
+		private String commodityCode;
+
+		private String expireTime;
 
 		private Long dBNodeStorage;
 
 		private String dBNodeClass;
 
-		private Long dBNodeCount;
-
-		private String storageType;
-
-		private String connectionString;
-
-		private Integer port;
-
 		private String aliUid;
 
-		private String bid;
+		private String lockReason;
 
-		private String dBClusterNetworkType;
-
-		private String vpcId;
+		private String regionId;
 
 		private String vSwitchId;
 
-		private String vpcCloudInstanceId;
+		private String dBClusterStatus;
 
-		private String commodityCode;
+		private String dBClusterDescription;
+
+		private String dBClusterNetworkType;
+
+		private String zoneId;
+
+		private String category;
+
+		private String controlVersion;
 
 		private List<Tag> tags;
 
 		private ScaleOutStatus scaleOutStatus;
 
-		public String getDBClusterId() {
-			return this.dBClusterId;
+		public String getVpcId() {
+			return this.vpcId;
 		}
 
-		public void setDBClusterId(String dBClusterId) {
-			this.dBClusterId = dBClusterId;
+		public void setVpcId(String vpcId) {
+			this.vpcId = vpcId;
 		}
 
-		public String getCategory() {
-			return this.category;
+		public Long getDBNodeCount() {
+			return this.dBNodeCount;
 		}
 
-		public void setCategory(String category) {
-			this.category = category;
+		public void setDBNodeCount(Long dBNodeCount) {
+			this.dBNodeCount = dBNodeCount;
 		}
 
-		public String getDBClusterDescription() {
-			return this.dBClusterDescription;
+		public String getCreateTime() {
+			return this.createTime;
 		}
 
-		public void setDBClusterDescription(String dBClusterDescription) {
-			this.dBClusterDescription = dBClusterDescription;
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
 		}
 
 		public String getPayType() {
@@ -163,44 +165,20 @@ public class DescribeDBClustersResponse extends AcsResponse {
 			this.payType = payType;
 		}
 
-		public String getRegionId() {
-			return this.regionId;
+		public String getStorageType() {
+			return this.storageType;
 		}
 
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
+		public void setStorageType(String storageType) {
+			this.storageType = storageType;
 		}
 
-		public String getZoneId() {
-			return this.zoneId;
+		public Integer getPort() {
+			return this.port;
 		}
 
-		public void setZoneId(String zoneId) {
-			this.zoneId = zoneId;
-		}
-
-		public String getExpireTime() {
-			return this.expireTime;
-		}
-
-		public void setExpireTime(String expireTime) {
-			this.expireTime = expireTime;
-		}
-
-		public String getIsExpired() {
-			return this.isExpired;
-		}
-
-		public void setIsExpired(String isExpired) {
-			this.isExpired = isExpired;
-		}
-
-		public String getDBClusterStatus() {
-			return this.dBClusterStatus;
-		}
-
-		public void setDBClusterStatus(String dBClusterStatus) {
-			this.dBClusterStatus = dBClusterStatus;
+		public void setPort(Integer port) {
+			this.port = port;
 		}
 
 		public String getLockMode() {
@@ -211,20 +189,60 @@ public class DescribeDBClustersResponse extends AcsResponse {
 			this.lockMode = lockMode;
 		}
 
-		public String getLockReason() {
-			return this.lockReason;
+		public String getBid() {
+			return this.bid;
 		}
 
-		public void setLockReason(String lockReason) {
-			this.lockReason = lockReason;
+		public void setBid(String bid) {
+			this.bid = bid;
 		}
 
-		public String getCreateTime() {
-			return this.createTime;
+		public String getIsExpired() {
+			return this.isExpired;
 		}
 
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
+		public void setIsExpired(String isExpired) {
+			this.isExpired = isExpired;
+		}
+
+		public String getVpcCloudInstanceId() {
+			return this.vpcCloudInstanceId;
+		}
+
+		public void setVpcCloudInstanceId(String vpcCloudInstanceId) {
+			this.vpcCloudInstanceId = vpcCloudInstanceId;
+		}
+
+		public String getDBClusterId() {
+			return this.dBClusterId;
+		}
+
+		public void setDBClusterId(String dBClusterId) {
+			this.dBClusterId = dBClusterId;
+		}
+
+		public String getConnectionString() {
+			return this.connectionString;
+		}
+
+		public void setConnectionString(String connectionString) {
+			this.connectionString = connectionString;
+		}
+
+		public String getCommodityCode() {
+			return this.commodityCode;
+		}
+
+		public void setCommodityCode(String commodityCode) {
+			this.commodityCode = commodityCode;
+		}
+
+		public String getExpireTime() {
+			return this.expireTime;
+		}
+
+		public void setExpireTime(String expireTime) {
+			this.expireTime = expireTime;
 		}
 
 		public Long getDBNodeStorage() {
@@ -243,38 +261,6 @@ public class DescribeDBClustersResponse extends AcsResponse {
 			this.dBNodeClass = dBNodeClass;
 		}
 
-		public Long getDBNodeCount() {
-			return this.dBNodeCount;
-		}
-
-		public void setDBNodeCount(Long dBNodeCount) {
-			this.dBNodeCount = dBNodeCount;
-		}
-
-		public String getStorageType() {
-			return this.storageType;
-		}
-
-		public void setStorageType(String storageType) {
-			this.storageType = storageType;
-		}
-
-		public String getConnectionString() {
-			return this.connectionString;
-		}
-
-		public void setConnectionString(String connectionString) {
-			this.connectionString = connectionString;
-		}
-
-		public Integer getPort() {
-			return this.port;
-		}
-
-		public void setPort(Integer port) {
-			this.port = port;
-		}
-
 		public String getAliUid() {
 			return this.aliUid;
 		}
@@ -283,28 +269,20 @@ public class DescribeDBClustersResponse extends AcsResponse {
 			this.aliUid = aliUid;
 		}
 
-		public String getBid() {
-			return this.bid;
+		public String getLockReason() {
+			return this.lockReason;
 		}
 
-		public void setBid(String bid) {
-			this.bid = bid;
+		public void setLockReason(String lockReason) {
+			this.lockReason = lockReason;
 		}
 
-		public String getDBClusterNetworkType() {
-			return this.dBClusterNetworkType;
+		public String getRegionId() {
+			return this.regionId;
 		}
 
-		public void setDBClusterNetworkType(String dBClusterNetworkType) {
-			this.dBClusterNetworkType = dBClusterNetworkType;
-		}
-
-		public String getVpcId() {
-			return this.vpcId;
-		}
-
-		public void setVpcId(String vpcId) {
-			this.vpcId = vpcId;
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 
 		public String getVSwitchId() {
@@ -315,20 +293,52 @@ public class DescribeDBClustersResponse extends AcsResponse {
 			this.vSwitchId = vSwitchId;
 		}
 
-		public String getVpcCloudInstanceId() {
-			return this.vpcCloudInstanceId;
+		public String getDBClusterStatus() {
+			return this.dBClusterStatus;
 		}
 
-		public void setVpcCloudInstanceId(String vpcCloudInstanceId) {
-			this.vpcCloudInstanceId = vpcCloudInstanceId;
+		public void setDBClusterStatus(String dBClusterStatus) {
+			this.dBClusterStatus = dBClusterStatus;
 		}
 
-		public String getCommodityCode() {
-			return this.commodityCode;
+		public String getDBClusterDescription() {
+			return this.dBClusterDescription;
 		}
 
-		public void setCommodityCode(String commodityCode) {
-			this.commodityCode = commodityCode;
+		public void setDBClusterDescription(String dBClusterDescription) {
+			this.dBClusterDescription = dBClusterDescription;
+		}
+
+		public String getDBClusterNetworkType() {
+			return this.dBClusterNetworkType;
+		}
+
+		public void setDBClusterNetworkType(String dBClusterNetworkType) {
+			this.dBClusterNetworkType = dBClusterNetworkType;
+		}
+
+		public String getZoneId() {
+			return this.zoneId;
+		}
+
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
+		}
+
+		public String getCategory() {
+			return this.category;
+		}
+
+		public void setCategory(String category) {
+			this.category = category;
+		}
+
+		public String getControlVersion() {
+			return this.controlVersion;
+		}
+
+		public void setControlVersion(String controlVersion) {
+			this.controlVersion = controlVersion;
 		}
 
 		public List<Tag> getTags() {

@@ -15,18 +15,20 @@
 package com.aliyuncs.clickhouse.model.v20191111;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.clickhouse.transform.v20191111.ModifyDBClusterResponseUnmarshaller;
+import com.aliyuncs.clickhouse.transform.v20191111.CheckMonitorAlertResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ModifyDBClusterResponse extends AcsResponse {
+public class CheckMonitorAlertResponse extends AcsResponse {
 
 	private String requestId;
 
-	private DBCluster dBCluster;
+	private String state;
+
+	private String parameter;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -36,44 +38,24 @@ public class ModifyDBClusterResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public DBCluster getDBCluster() {
-		return this.dBCluster;
+	public String getState() {
+		return this.state;
 	}
 
-	public void setDBCluster(DBCluster dBCluster) {
-		this.dBCluster = dBCluster;
+	public void setState(String state) {
+		this.state = state;
 	}
 
-	public static class DBCluster {
+	public String getParameter() {
+		return this.parameter;
+	}
 
-		private String dbClusterId;
-
-		private String orderId;
-
-		public String getDbClusterId() {
-			return this.dbClusterId;
-		}
-
-		public void setDbClusterId(String dbClusterId) {
-			this.dbClusterId = dbClusterId;
-		}
-
-		public String getOrderId() {
-			return this.orderId;
-		}
-
-		public void setOrderId(String orderId) {
-			this.orderId = orderId;
-		}
+	public void setParameter(String parameter) {
+		this.parameter = parameter;
 	}
 
 	@Override
-	public ModifyDBClusterResponse getInstance(UnmarshallerContext context) {
-		return	ModifyDBClusterResponseUnmarshaller.unmarshall(this, context);
-	}
-
-	@Override
-	public boolean checkShowJsonItemName() {
-		return false;
+	public CheckMonitorAlertResponse getInstance(UnmarshallerContext context) {
+		return	CheckMonitorAlertResponseUnmarshaller.unmarshall(this, context);
 	}
 }

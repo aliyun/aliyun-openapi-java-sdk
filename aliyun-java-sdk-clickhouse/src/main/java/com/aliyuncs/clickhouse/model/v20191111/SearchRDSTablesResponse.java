@@ -14,19 +14,20 @@
 
 package com.aliyuncs.clickhouse.model.v20191111;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.clickhouse.transform.v20191111.ModifyDBClusterResponseUnmarshaller;
+import com.aliyuncs.clickhouse.transform.v20191111.SearchRDSTablesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ModifyDBClusterResponse extends AcsResponse {
+public class SearchRDSTablesResponse extends AcsResponse {
 
 	private String requestId;
 
-	private DBCluster dBCluster;
+	private List<Schema> schemas;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -36,40 +37,40 @@ public class ModifyDBClusterResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public DBCluster getDBCluster() {
-		return this.dBCluster;
+	public List<Schema> getSchemas() {
+		return this.schemas;
 	}
 
-	public void setDBCluster(DBCluster dBCluster) {
-		this.dBCluster = dBCluster;
+	public void setSchemas(List<Schema> schemas) {
+		this.schemas = schemas;
 	}
 
-	public static class DBCluster {
+	public static class Schema {
 
-		private String dbClusterId;
+		private String dbName;
 
-		private String orderId;
+		private List<String> tables;
 
-		public String getDbClusterId() {
-			return this.dbClusterId;
+		public String getDbName() {
+			return this.dbName;
 		}
 
-		public void setDbClusterId(String dbClusterId) {
-			this.dbClusterId = dbClusterId;
+		public void setDbName(String dbName) {
+			this.dbName = dbName;
 		}
 
-		public String getOrderId() {
-			return this.orderId;
+		public List<String> getTables() {
+			return this.tables;
 		}
 
-		public void setOrderId(String orderId) {
-			this.orderId = orderId;
+		public void setTables(List<String> tables) {
+			this.tables = tables;
 		}
 	}
 
 	@Override
-	public ModifyDBClusterResponse getInstance(UnmarshallerContext context) {
-		return	ModifyDBClusterResponseUnmarshaller.unmarshall(this, context);
+	public SearchRDSTablesResponse getInstance(UnmarshallerContext context) {
+		return	SearchRDSTablesResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

@@ -15,6 +15,7 @@
 package com.aliyuncs.clickhouse.transform.v20191111;
 
 import com.aliyuncs.clickhouse.model.v20191111.ModifyDBClusterResponse;
+import com.aliyuncs.clickhouse.model.v20191111.ModifyDBClusterResponse.DBCluster;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -23,7 +24,11 @@ public class ModifyDBClusterResponseUnmarshaller {
 	public static ModifyDBClusterResponse unmarshall(ModifyDBClusterResponse modifyDBClusterResponse, UnmarshallerContext _ctx) {
 		
 		modifyDBClusterResponse.setRequestId(_ctx.stringValue("ModifyDBClusterResponse.RequestId"));
-		modifyDBClusterResponse.setDBCluster(_ctx.stringValue("ModifyDBClusterResponse.DBCluster"));
+
+		DBCluster dBCluster = new DBCluster();
+		dBCluster.setDbClusterId(_ctx.stringValue("ModifyDBClusterResponse.DBCluster.dbClusterId"));
+		dBCluster.setOrderId(_ctx.stringValue("ModifyDBClusterResponse.DBCluster.orderId"));
+		modifyDBClusterResponse.setDBCluster(dBCluster);
 	 
 	 	return modifyDBClusterResponse;
 	}

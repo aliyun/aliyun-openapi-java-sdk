@@ -14,19 +14,20 @@
 
 package com.aliyuncs.clickhouse.model.v20191111;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.clickhouse.transform.v20191111.ModifyDBClusterResponseUnmarshaller;
+import com.aliyuncs.clickhouse.transform.v20191111.DescribeRDSTablesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ModifyDBClusterResponse extends AcsResponse {
+public class DescribeRDSTablesResponse extends AcsResponse {
 
 	private String requestId;
 
-	private DBCluster dBCluster;
+	private List<String> tables;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -36,40 +37,17 @@ public class ModifyDBClusterResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public DBCluster getDBCluster() {
-		return this.dBCluster;
+	public List<String> getTables() {
+		return this.tables;
 	}
 
-	public void setDBCluster(DBCluster dBCluster) {
-		this.dBCluster = dBCluster;
-	}
-
-	public static class DBCluster {
-
-		private String dbClusterId;
-
-		private String orderId;
-
-		public String getDbClusterId() {
-			return this.dbClusterId;
-		}
-
-		public void setDbClusterId(String dbClusterId) {
-			this.dbClusterId = dbClusterId;
-		}
-
-		public String getOrderId() {
-			return this.orderId;
-		}
-
-		public void setOrderId(String orderId) {
-			this.orderId = orderId;
-		}
+	public void setTables(List<String> tables) {
+		this.tables = tables;
 	}
 
 	@Override
-	public ModifyDBClusterResponse getInstance(UnmarshallerContext context) {
-		return	ModifyDBClusterResponseUnmarshaller.unmarshall(this, context);
+	public DescribeRDSTablesResponse getInstance(UnmarshallerContext context) {
+		return	DescribeRDSTablesResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

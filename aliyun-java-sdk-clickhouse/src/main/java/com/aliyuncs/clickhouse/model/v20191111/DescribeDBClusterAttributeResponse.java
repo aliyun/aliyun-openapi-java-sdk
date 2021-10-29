@@ -47,140 +47,130 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 
 	public static class DBCluster {
 
-		private String regionId;
+		private String vpcId;
 
-		private String zoneId;
+		private Integer supportBackup;
 
-		private String dBClusterId;
+		private String encryptionType;
 
-		private String dBClusterType;
+		private Long dBNodeCount;
 
-		private String dBClusterDescription;
+		private String maintainTime;
 
-		private String category;
-
-		private String lockMode;
-
-		private String lockReason;
+		private String createTime;
 
 		private String payType;
 
-		private String dBClusterStatus;
+		private String publicConnectionString;
+
+		private String storageType;
+
+		private Integer port;
+
+		private String lockMode;
+
+		private String bid;
+
+		private String engineVersion;
+
+		private String isExpired;
+
+		private String vpcCloudInstanceId;
+
+		private String dBClusterId;
+
+		private String connectionString;
+
+		private String encryptionKey;
+
+		private String dBClusterType;
+
+		private String commodityCode;
+
+		private String expireTime;
 
 		private Long dBNodeStorage;
 
 		private String dBNodeClass;
 
-		private Long dBNodeCount;
+		private String aliUid;
 
-		private String createTime;
+		private String lockReason;
 
-		private String engine;
-
-		private String engineVersion;
-
-		private String expireTime;
-
-		private String isExpired;
-
-		private String maintainTime;
-
-		private String vpcId;
-
-		private String vSwitchId;
-
-		private String vpcCloudInstanceId;
-
-		private String commodityCode;
-
-		private String dBClusterNetworkType;
-
-		private String storageType;
-
-		private String publicConnectionString;
+		private String regionId;
 
 		private String publicPort;
 
-		private String connectionString;
+		private String vSwitchId;
 
-		private Integer port;
+		private String dBClusterStatus;
 
-		private String aliUid;
+		private String dBClusterNetworkType;
 
-		private String bid;
+		private String dBClusterDescription;
 
-		private String encryptionKey;
+		private String zoneId;
 
-		private String encryptionType;
+		private String category;
 
-		private Integer supportBackup;
+		private String engine;
+
+		private Boolean supportMysqlPort;
+
+		private Boolean supportHttpsPort;
+
+		private String controlVersion;
 
 		private List<Tag> tags;
 
 		private ScaleOutStatus scaleOutStatus;
 
-		public String getRegionId() {
-			return this.regionId;
+		public String getVpcId() {
+			return this.vpcId;
 		}
 
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
+		public void setVpcId(String vpcId) {
+			this.vpcId = vpcId;
 		}
 
-		public String getZoneId() {
-			return this.zoneId;
+		public Integer getSupportBackup() {
+			return this.supportBackup;
 		}
 
-		public void setZoneId(String zoneId) {
-			this.zoneId = zoneId;
+		public void setSupportBackup(Integer supportBackup) {
+			this.supportBackup = supportBackup;
 		}
 
-		public String getDBClusterId() {
-			return this.dBClusterId;
+		public String getEncryptionType() {
+			return this.encryptionType;
 		}
 
-		public void setDBClusterId(String dBClusterId) {
-			this.dBClusterId = dBClusterId;
+		public void setEncryptionType(String encryptionType) {
+			this.encryptionType = encryptionType;
 		}
 
-		public String getDBClusterType() {
-			return this.dBClusterType;
+		public Long getDBNodeCount() {
+			return this.dBNodeCount;
 		}
 
-		public void setDBClusterType(String dBClusterType) {
-			this.dBClusterType = dBClusterType;
+		public void setDBNodeCount(Long dBNodeCount) {
+			this.dBNodeCount = dBNodeCount;
 		}
 
-		public String getDBClusterDescription() {
-			return this.dBClusterDescription;
+		public String getMaintainTime() {
+			return this.maintainTime;
 		}
 
-		public void setDBClusterDescription(String dBClusterDescription) {
-			this.dBClusterDescription = dBClusterDescription;
+		public void setMaintainTime(String maintainTime) {
+			this.maintainTime = maintainTime;
 		}
 
-		public String getCategory() {
-			return this.category;
+		public String getCreateTime() {
+			return this.createTime;
 		}
 
-		public void setCategory(String category) {
-			this.category = category;
-		}
-
-		public String getLockMode() {
-			return this.lockMode;
-		}
-
-		public void setLockMode(String lockMode) {
-			this.lockMode = lockMode;
-		}
-
-		public String getLockReason() {
-			return this.lockReason;
-		}
-
-		public void setLockReason(String lockReason) {
-			this.lockReason = lockReason;
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
 		}
 
 		public String getPayType() {
@@ -191,12 +181,116 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 			this.payType = payType;
 		}
 
-		public String getDBClusterStatus() {
-			return this.dBClusterStatus;
+		public String getPublicConnectionString() {
+			return this.publicConnectionString;
 		}
 
-		public void setDBClusterStatus(String dBClusterStatus) {
-			this.dBClusterStatus = dBClusterStatus;
+		public void setPublicConnectionString(String publicConnectionString) {
+			this.publicConnectionString = publicConnectionString;
+		}
+
+		public String getStorageType() {
+			return this.storageType;
+		}
+
+		public void setStorageType(String storageType) {
+			this.storageType = storageType;
+		}
+
+		public Integer getPort() {
+			return this.port;
+		}
+
+		public void setPort(Integer port) {
+			this.port = port;
+		}
+
+		public String getLockMode() {
+			return this.lockMode;
+		}
+
+		public void setLockMode(String lockMode) {
+			this.lockMode = lockMode;
+		}
+
+		public String getBid() {
+			return this.bid;
+		}
+
+		public void setBid(String bid) {
+			this.bid = bid;
+		}
+
+		public String getEngineVersion() {
+			return this.engineVersion;
+		}
+
+		public void setEngineVersion(String engineVersion) {
+			this.engineVersion = engineVersion;
+		}
+
+		public String getIsExpired() {
+			return this.isExpired;
+		}
+
+		public void setIsExpired(String isExpired) {
+			this.isExpired = isExpired;
+		}
+
+		public String getVpcCloudInstanceId() {
+			return this.vpcCloudInstanceId;
+		}
+
+		public void setVpcCloudInstanceId(String vpcCloudInstanceId) {
+			this.vpcCloudInstanceId = vpcCloudInstanceId;
+		}
+
+		public String getDBClusterId() {
+			return this.dBClusterId;
+		}
+
+		public void setDBClusterId(String dBClusterId) {
+			this.dBClusterId = dBClusterId;
+		}
+
+		public String getConnectionString() {
+			return this.connectionString;
+		}
+
+		public void setConnectionString(String connectionString) {
+			this.connectionString = connectionString;
+		}
+
+		public String getEncryptionKey() {
+			return this.encryptionKey;
+		}
+
+		public void setEncryptionKey(String encryptionKey) {
+			this.encryptionKey = encryptionKey;
+		}
+
+		public String getDBClusterType() {
+			return this.dBClusterType;
+		}
+
+		public void setDBClusterType(String dBClusterType) {
+			this.dBClusterType = dBClusterType;
+		}
+
+		public String getCommodityCode() {
+			return this.commodityCode;
+		}
+
+		public void setCommodityCode(String commodityCode) {
+			this.commodityCode = commodityCode;
+		}
+
+		public String getExpireTime() {
+			return this.expireTime;
+		}
+
+		public void setExpireTime(String expireTime) {
+			this.expireTime = expireTime;
 		}
 
 		public Long getDBNodeStorage() {
@@ -215,116 +309,28 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 			this.dBNodeClass = dBNodeClass;
 		}
 
-		public Long getDBNodeCount() {
-			return this.dBNodeCount;
+		public String getAliUid() {
+			return this.aliUid;
 		}
 
-		public void setDBNodeCount(Long dBNodeCount) {
-			this.dBNodeCount = dBNodeCount;
+		public void setAliUid(String aliUid) {
+			this.aliUid = aliUid;
 		}
 
-		public String getCreateTime() {
-			return this.createTime;
+		public String getLockReason() {
+			return this.lockReason;
 		}
 
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
+		public void setLockReason(String lockReason) {
+			this.lockReason = lockReason;
 		}
 
-		public String getEngine() {
-			return this.engine;
+		public String getRegionId() {
+			return this.regionId;
 		}
 
-		public void setEngine(String engine) {
-			this.engine = engine;
-		}
-
-		public String getEngineVersion() {
-			return this.engineVersion;
-		}
-
-		public void setEngineVersion(String engineVersion) {
-			this.engineVersion = engineVersion;
-		}
-
-		public String getExpireTime() {
-			return this.expireTime;
-		}
-
-		public void setExpireTime(String expireTime) {
-			this.expireTime = expireTime;
-		}
-
-		public String getIsExpired() {
-			return this.isExpired;
-		}
-
-		public void setIsExpired(String isExpired) {
-			this.isExpired = isExpired;
-		}
-
-		public String getMaintainTime() {
-			return this.maintainTime;
-		}
-
-		public void setMaintainTime(String maintainTime) {
-			this.maintainTime = maintainTime;
-		}
-
-		public String getVpcId() {
-			return this.vpcId;
-		}
-
-		public void setVpcId(String vpcId) {
-			this.vpcId = vpcId;
-		}
-
-		public String getVSwitchId() {
-			return this.vSwitchId;
-		}
-
-		public void setVSwitchId(String vSwitchId) {
-			this.vSwitchId = vSwitchId;
-		}
-
-		public String getVpcCloudInstanceId() {
-			return this.vpcCloudInstanceId;
-		}
-
-		public void setVpcCloudInstanceId(String vpcCloudInstanceId) {
-			this.vpcCloudInstanceId = vpcCloudInstanceId;
-		}
-
-		public String getCommodityCode() {
-			return this.commodityCode;
-		}
-
-		public void setCommodityCode(String commodityCode) {
-			this.commodityCode = commodityCode;
-		}
-
-		public String getDBClusterNetworkType() {
-			return this.dBClusterNetworkType;
-		}
-
-		public void setDBClusterNetworkType(String dBClusterNetworkType) {
-			this.dBClusterNetworkType = dBClusterNetworkType;
-		}
-
-		public String getStorageType() {
-			return this.storageType;
-		}
-
-		public void setStorageType(String storageType) {
-			this.storageType = storageType;
-		}
-
-		public String getPublicConnectionString() {
-			return this.publicConnectionString;
-		}
-
-		public void setPublicConnectionString(String publicConnectionString) {
-			this.publicConnectionString = publicConnectionString;
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 
 		public String getPublicPort() {
@@ -335,60 +341,84 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 			this.publicPort = publicPort;
 		}
 
-		public String getConnectionString() {
-			return this.connectionString;
+		public String getVSwitchId() {
+			return this.vSwitchId;
 		}
 
-		public void setConnectionString(String connectionString) {
-			this.connectionString = connectionString;
+		public void setVSwitchId(String vSwitchId) {
+			this.vSwitchId = vSwitchId;
 		}
 
-		public Integer getPort() {
-			return this.port;
+		public String getDBClusterStatus() {
+			return this.dBClusterStatus;
 		}
 
-		public void setPort(Integer port) {
-			this.port = port;
+		public void setDBClusterStatus(String dBClusterStatus) {
+			this.dBClusterStatus = dBClusterStatus;
 		}
 
-		public String getAliUid() {
-			return this.aliUid;
+		public String getDBClusterNetworkType() {
+			return this.dBClusterNetworkType;
 		}
 
-		public void setAliUid(String aliUid) {
-			this.aliUid = aliUid;
+		public void setDBClusterNetworkType(String dBClusterNetworkType) {
+			this.dBClusterNetworkType = dBClusterNetworkType;
 		}
 
-		public String getBid() {
-			return this.bid;
+		public String getDBClusterDescription() {
+			return this.dBClusterDescription;
 		}
 
-		public void setBid(String bid) {
-			this.bid = bid;
+		public void setDBClusterDescription(String dBClusterDescription) {
+			this.dBClusterDescription = dBClusterDescription;
 		}
 
-		public String getEncryptionKey() {
-			return this.encryptionKey;
+		public String getZoneId() {
+			return this.zoneId;
 		}
 
-		public void setEncryptionKey(String encryptionKey) {
-			this.encryptionKey = encryptionKey;
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
 		}
 
-		public String getEncryptionType() {
-			return this.encryptionType;
+		public String getCategory() {
+			return this.category;
 		}
 
-		public void setEncryptionType(String encryptionType) {
-			this.encryptionType = encryptionType;
+		public void setCategory(String category) {
+			this.category = category;
 		}
 
-		public Integer getSupportBackup() {
-			return this.supportBackup;
+		public String getEngine() {
+			return this.engine;
 		}
 
-		public void setSupportBackup(Integer supportBackup) {
-			this.supportBackup = supportBackup;
+		public void setEngine(String engine) {
+			this.engine = engine;
+		}
+
+		public Boolean getSupportMysqlPort() {
+			return this.supportMysqlPort;
+		}
+
+		public void setSupportMysqlPort(Boolean supportMysqlPort) {
+			this.supportMysqlPort = supportMysqlPort;
+		}
+
+		public Boolean getSupportHttpsPort() {
+			return this.supportHttpsPort;
+		}
+
+		public void setSupportHttpsPort(Boolean supportHttpsPort) {
+			this.supportHttpsPort = supportHttpsPort;
+		}
+
+		public String getControlVersion() {
+			return this.controlVersion;
+		}
+
+		public void setControlVersion(String controlVersion) {
+			this.controlVersion = controlVersion;
 		}
 
 		public List<Tag> getTags() {
