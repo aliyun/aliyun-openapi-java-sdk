@@ -38,7 +38,7 @@ public class QueryWithPayRequest extends RpcAcsRequest<QueryWithPayResponse> {
 
 	private String channelId;
 	public QueryWithPayRequest() {
-		super("UniMkt", "2018-12-07", "QueryWithPay");
+		super("UniMkt", "2018-12-07", "QueryWithPay", "1.0.0");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

@@ -30,7 +30,7 @@ public class GetDeviceShortChainUrlRequest extends RpcAcsRequest<GetDeviceShortC
 
 	private String url;
 	public GetDeviceShortChainUrlRequest() {
-		super("UniMkt", "2019-07-24", "GetDeviceShortChainUrl");
+		super("UniMkt", "2019-07-24", "GetDeviceShortChainUrl", "1.0.0");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

@@ -36,7 +36,7 @@ public class PopUpQuery2Request extends RpcAcsRequest<PopUpQuery2Response> {
 
 	private String outerCode;
 	public PopUpQuery2Request() {
-		super("UniMkt", "2018-12-07", "PopUpQuery2");
+		super("UniMkt", "2018-12-07", "PopUpQuery2", "1.0.0");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
