@@ -12,25 +12,29 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.unimkt.model.v20181212;
+package com.aliyuncs.unimkt.model.v20181207;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.unimkt.transform.v20181212.SaveCpmTradeResponseUnmarshaller;
+import com.aliyuncs.unimkt.transform.v20181207.QueryPromotionResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class SaveCpmTradeResponse extends AcsResponse {
+public class QueryPromotionResponse extends AcsResponse {
 
 	private Boolean status;
 
 	private String msg;
 
+	private String errorCode;
+
 	private String requestId;
 
-	private String errorCode;
+	private String url;
+
+	private String unionAmount;
 
 	public Boolean getStatus() {
 		return this.status;
@@ -48,14 +52,6 @@ public class SaveCpmTradeResponse extends AcsResponse {
 		this.msg = msg;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public String getErrorCode() {
 		return this.errorCode;
 	}
@@ -64,13 +60,32 @@ public class SaveCpmTradeResponse extends AcsResponse {
 		this.errorCode = errorCode;
 	}
 
-	@Override
-	public SaveCpmTradeResponse getInstance(UnmarshallerContext context) {
-		return	SaveCpmTradeResponseUnmarshaller.unmarshall(this, context);
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getUrl() {
+		return this.url;
+	}
+
+	public void setUrl(String url) {
+		this.url = url;
+	}
+
+	public String getUnionAmount() {
+		return this.unionAmount;
+	}
+
+	public void setUnionAmount(String unionAmount) {
+		this.unionAmount = unionAmount;
 	}
 
 	@Override
-	public boolean checkShowJsonItemName() {
-		return false;
+	public QueryPromotionResponse getInstance(UnmarshallerContext context) {
+		return	QueryPromotionResponseUnmarshaller.unmarshall(this, context);
 	}
 }

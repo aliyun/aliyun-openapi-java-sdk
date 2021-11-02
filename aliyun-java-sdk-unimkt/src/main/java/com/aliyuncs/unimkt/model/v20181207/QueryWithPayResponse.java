@@ -12,25 +12,27 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.unimkt.model.v20181212;
+package com.aliyuncs.unimkt.model.v20181207;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.unimkt.transform.v20181212.SaveCpmTradeResponseUnmarshaller;
+import com.aliyuncs.unimkt.transform.v20181207.QueryWithPayResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class SaveCpmTradeResponse extends AcsResponse {
+public class QueryWithPayResponse extends AcsResponse {
 
 	private Boolean status;
 
 	private String msg;
 
+	private String errorCode;
+
 	private String requestId;
 
-	private String errorCode;
+	private Data data;
 
 	public Boolean getStatus() {
 		return this.status;
@@ -48,14 +50,6 @@ public class SaveCpmTradeResponse extends AcsResponse {
 		this.msg = msg;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public String getErrorCode() {
 		return this.errorCode;
 	}
@@ -64,13 +58,57 @@ public class SaveCpmTradeResponse extends AcsResponse {
 		this.errorCode = errorCode;
 	}
 
-	@Override
-	public SaveCpmTradeResponse getInstance(UnmarshallerContext context) {
-		return	SaveCpmTradeResponseUnmarshaller.unmarshall(this, context);
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Data getData() {
+		return this.data;
+	}
+
+	public void setData(Data data) {
+		this.data = data;
+	}
+
+	public static class Data {
+
+		private String url;
+
+		private Boolean status;
+
+		private String unionAmount;
+
+		public String getUrl() {
+			return this.url;
+		}
+
+		public void setUrl(String url) {
+			this.url = url;
+		}
+
+		public Boolean getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(Boolean status) {
+			this.status = status;
+		}
+
+		public String getUnionAmount() {
+			return this.unionAmount;
+		}
+
+		public void setUnionAmount(String unionAmount) {
+			this.unionAmount = unionAmount;
+		}
 	}
 
 	@Override
-	public boolean checkShowJsonItemName() {
-		return false;
+	public QueryWithPayResponse getInstance(UnmarshallerContext context) {
+		return	QueryWithPayResponseUnmarshaller.unmarshall(this, context);
 	}
 }

@@ -12,7 +12,7 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.unimkt.model.v20181212;
+package com.aliyuncs.unimkt.model.v20181207;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.ProtocolType;
@@ -26,34 +26,19 @@ import com.aliyuncs.unimkt.Endpoint;
 public class QueryPromotionRequest extends RpcAcsRequest<QueryPromotionResponse> {
 	   
 
-	private String proxyChannelId;
-
 	private String extra;
 
 	private String alipayOpenId;
 
-	private String userId;
-
 	private String channelId;
 	public QueryPromotionRequest() {
-		super("UniMkt", "2018-12-12", "QueryPromotion");
+		super("UniMkt", "2018-12-07", "QueryPromotion");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getProxyChannelId() {
-		return this.proxyChannelId;
-	}
-
-	public void setProxyChannelId(String proxyChannelId) {
-		this.proxyChannelId = proxyChannelId;
-		if(proxyChannelId != null){
-			putBodyParameter("ProxyChannelId", proxyChannelId);
-		}
 	}
 
 	public String getExtra() {
@@ -75,17 +60,6 @@ public class QueryPromotionRequest extends RpcAcsRequest<QueryPromotionResponse>
 		this.alipayOpenId = alipayOpenId;
 		if(alipayOpenId != null){
 			putBodyParameter("AlipayOpenId", alipayOpenId);
-		}
-	}
-
-	public String getUserId() {
-		return this.userId;
-	}
-
-	public void setUserId(String userId) {
-		this.userId = userId;
-		if(userId != null){
-			putBodyParameter("UserId", userId);
 		}
 	}
 

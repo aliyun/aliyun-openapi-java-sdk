@@ -24,25 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CheckReceivingDetailResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Boolean status;
 
 	private String msg;
 
-	private String errorCode;
+	private String requestId;
 
-	private Boolean hasPromotion;
+	private String errorCode;
 
 	private String tradeOrderId;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
+	private Boolean hasPromotion;
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String unionAmount;
 
 	public Boolean getStatus() {
 		return this.status;
@@ -60,12 +54,28 @@ public class CheckReceivingDetailResponse extends AcsResponse {
 		this.msg = msg;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	public String getErrorCode() {
 		return this.errorCode;
 	}
 
 	public void setErrorCode(String errorCode) {
 		this.errorCode = errorCode;
+	}
+
+	public String getTradeOrderId() {
+		return this.tradeOrderId;
+	}
+
+	public void setTradeOrderId(String tradeOrderId) {
+		this.tradeOrderId = tradeOrderId;
 	}
 
 	public Boolean getHasPromotion() {
@@ -76,12 +86,12 @@ public class CheckReceivingDetailResponse extends AcsResponse {
 		this.hasPromotion = hasPromotion;
 	}
 
-	public String getTradeOrderId() {
-		return this.tradeOrderId;
+	public String getUnionAmount() {
+		return this.unionAmount;
 	}
 
-	public void setTradeOrderId(String tradeOrderId) {
-		this.tradeOrderId = tradeOrderId;
+	public void setUnionAmount(String unionAmount) {
+		this.unionAmount = unionAmount;
 	}
 
 	@Override

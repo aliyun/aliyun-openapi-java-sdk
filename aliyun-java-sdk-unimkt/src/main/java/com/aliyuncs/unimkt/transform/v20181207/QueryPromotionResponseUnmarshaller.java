@@ -12,9 +12,9 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.unimkt.transform.v20181212;
+package com.aliyuncs.unimkt.transform.v20181207;
 
-import com.aliyuncs.unimkt.model.v20181212.QueryPromotionResponse;
+import com.aliyuncs.unimkt.model.v20181207.QueryPromotionResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -26,9 +26,8 @@ public class QueryPromotionResponseUnmarshaller {
 		queryPromotionResponse.setStatus(_ctx.booleanValue("QueryPromotionResponse.Status"));
 		queryPromotionResponse.setMsg(_ctx.stringValue("QueryPromotionResponse.Msg"));
 		queryPromotionResponse.setErrorCode(_ctx.stringValue("QueryPromotionResponse.ErrorCode"));
-		queryPromotionResponse.setUnionAmount(_ctx.stringValue("QueryPromotionResponse.UnionAmount"));
-		queryPromotionResponse.setNoPromotionUrl(_ctx.stringValue("QueryPromotionResponse.NoPromotionUrl"));
 		queryPromotionResponse.setUrl(_ctx.stringValue("QueryPromotionResponse.Url"));
+		queryPromotionResponse.setUnionAmount(_ctx.stringValue("QueryPromotionResponse.UnionAmount"));
 	 
 	 	return queryPromotionResponse;
 	}

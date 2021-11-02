@@ -12,25 +12,31 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.unimkt.model.v20181212;
+package com.aliyuncs.unimkt.model.v20181207;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.unimkt.transform.v20181212.SaveCpmTradeResponseUnmarshaller;
+import com.aliyuncs.unimkt.transform.v20181207.GetImageUrlResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class SaveCpmTradeResponse extends AcsResponse {
+public class GetImageUrlResponse extends AcsResponse {
 
 	private Boolean status;
 
 	private String msg;
 
-	private String requestId;
+	private String imageUrl;
 
 	private String errorCode;
+
+	private String requestId;
+
+	private String createdTime;
+
+	private String updatedTime;
 
 	public Boolean getStatus() {
 		return this.status;
@@ -48,12 +54,12 @@ public class SaveCpmTradeResponse extends AcsResponse {
 		this.msg = msg;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getImageUrl() {
+		return this.imageUrl;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setImageUrl(String imageUrl) {
+		this.imageUrl = imageUrl;
 	}
 
 	public String getErrorCode() {
@@ -64,13 +70,32 @@ public class SaveCpmTradeResponse extends AcsResponse {
 		this.errorCode = errorCode;
 	}
 
-	@Override
-	public SaveCpmTradeResponse getInstance(UnmarshallerContext context) {
-		return	SaveCpmTradeResponseUnmarshaller.unmarshall(this, context);
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getCreatedTime() {
+		return this.createdTime;
+	}
+
+	public void setCreatedTime(String createdTime) {
+		this.createdTime = createdTime;
+	}
+
+	public String getUpdatedTime() {
+		return this.updatedTime;
+	}
+
+	public void setUpdatedTime(String updatedTime) {
+		this.updatedTime = updatedTime;
 	}
 
 	@Override
-	public boolean checkShowJsonItemName() {
-		return false;
+	public GetImageUrlResponse getInstance(UnmarshallerContext context) {
+		return	GetImageUrlResponseUnmarshaller.unmarshall(this, context);
 	}
 }

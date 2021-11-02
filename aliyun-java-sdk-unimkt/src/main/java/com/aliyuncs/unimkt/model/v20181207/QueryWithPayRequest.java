@@ -12,7 +12,7 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.unimkt.model.v20181212;
+package com.aliyuncs.unimkt.model.v20181207;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.ProtocolType;
@@ -23,37 +23,28 @@ import com.aliyuncs.unimkt.Endpoint;
  * @author auto create
  * @version 
  */
-public class QueryPromotionRequest extends RpcAcsRequest<QueryPromotionResponse> {
+public class QueryWithPayRequest extends RpcAcsRequest<QueryWithPayResponse> {
 	   
-
-	private String proxyChannelId;
 
 	private String extra;
 
+	private Float salePrice;
+
+	private String commodityId;
+
 	private String alipayOpenId;
 
-	private String userId;
+	private String deviceSn;
 
 	private String channelId;
-	public QueryPromotionRequest() {
-		super("UniMkt", "2018-12-12", "QueryPromotion");
+	public QueryWithPayRequest() {
+		super("UniMkt", "2018-12-07", "QueryWithPay");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getProxyChannelId() {
-		return this.proxyChannelId;
-	}
-
-	public void setProxyChannelId(String proxyChannelId) {
-		this.proxyChannelId = proxyChannelId;
-		if(proxyChannelId != null){
-			putBodyParameter("ProxyChannelId", proxyChannelId);
-		}
 	}
 
 	public String getExtra() {
@@ -64,6 +55,28 @@ public class QueryPromotionRequest extends RpcAcsRequest<QueryPromotionResponse>
 		this.extra = extra;
 		if(extra != null){
 			putBodyParameter("Extra", extra);
+		}
+	}
+
+	public Float getSalePrice() {
+		return this.salePrice;
+	}
+
+	public void setSalePrice(Float salePrice) {
+		this.salePrice = salePrice;
+		if(salePrice != null){
+			putBodyParameter("SalePrice", salePrice.toString());
+		}
+	}
+
+	public String getCommodityId() {
+		return this.commodityId;
+	}
+
+	public void setCommodityId(String commodityId) {
+		this.commodityId = commodityId;
+		if(commodityId != null){
+			putBodyParameter("CommodityId", commodityId);
 		}
 	}
 
@@ -78,14 +91,14 @@ public class QueryPromotionRequest extends RpcAcsRequest<QueryPromotionResponse>
 		}
 	}
 
-	public String getUserId() {
-		return this.userId;
+	public String getDeviceSn() {
+		return this.deviceSn;
 	}
 
-	public void setUserId(String userId) {
-		this.userId = userId;
-		if(userId != null){
-			putBodyParameter("UserId", userId);
+	public void setDeviceSn(String deviceSn) {
+		this.deviceSn = deviceSn;
+		if(deviceSn != null){
+			putBodyParameter("DeviceSn", deviceSn);
 		}
 	}
 
@@ -101,8 +114,8 @@ public class QueryPromotionRequest extends RpcAcsRequest<QueryPromotionResponse>
 	}
 
 	@Override
-	public Class<QueryPromotionResponse> getResponseClass() {
-		return QueryPromotionResponse.class;
+	public Class<QueryWithPayResponse> getResponseClass() {
+		return QueryWithPayResponse.class;
 	}
 
 }

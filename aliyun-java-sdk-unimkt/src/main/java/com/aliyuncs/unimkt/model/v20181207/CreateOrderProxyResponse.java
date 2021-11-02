@@ -12,25 +12,27 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.unimkt.model.v20181212;
+package com.aliyuncs.unimkt.model.v20181207;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.unimkt.transform.v20181212.SaveCpmTradeResponseUnmarshaller;
+import com.aliyuncs.unimkt.transform.v20181207.CreateOrderProxyResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class SaveCpmTradeResponse extends AcsResponse {
+public class CreateOrderProxyResponse extends AcsResponse {
 
 	private Boolean status;
 
 	private String msg;
 
-	private String requestId;
+	private String aliPayOrderId;
 
 	private String errorCode;
+
+	private String requestId;
 
 	public Boolean getStatus() {
 		return this.status;
@@ -48,12 +50,12 @@ public class SaveCpmTradeResponse extends AcsResponse {
 		this.msg = msg;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getAliPayOrderId() {
+		return this.aliPayOrderId;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setAliPayOrderId(String aliPayOrderId) {
+		this.aliPayOrderId = aliPayOrderId;
 	}
 
 	public String getErrorCode() {
@@ -64,13 +66,16 @@ public class SaveCpmTradeResponse extends AcsResponse {
 		this.errorCode = errorCode;
 	}
 
-	@Override
-	public SaveCpmTradeResponse getInstance(UnmarshallerContext context) {
-		return	SaveCpmTradeResponseUnmarshaller.unmarshall(this, context);
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override
-	public boolean checkShowJsonItemName() {
-		return false;
+	public CreateOrderProxyResponse getInstance(UnmarshallerContext context) {
+		return	CreateOrderProxyResponseUnmarshaller.unmarshall(this, context);
 	}
 }

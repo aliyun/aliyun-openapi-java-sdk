@@ -28,9 +28,9 @@ public class ScanCodeNotificationResponse extends AcsResponse {
 
 	private String msg;
 
-	private String errorCode;
-
 	private String requestId;
+
+	private String errorCode;
 
 	public Boolean getStatus() {
 		return this.status;
@@ -48,20 +48,20 @@ public class ScanCodeNotificationResponse extends AcsResponse {
 		this.msg = msg;
 	}
 
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
-	}
-
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getErrorCode() {
+		return this.errorCode;
+	}
+
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
 	}
 
 	@Override

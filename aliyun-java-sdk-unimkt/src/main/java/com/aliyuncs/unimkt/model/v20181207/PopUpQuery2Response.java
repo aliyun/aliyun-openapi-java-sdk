@@ -12,25 +12,27 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.unimkt.model.v20181212;
+package com.aliyuncs.unimkt.model.v20181207;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.unimkt.transform.v20181212.SaveCpmTradeResponseUnmarshaller;
+import com.aliyuncs.unimkt.transform.v20181207.PopUpQuery2ResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class SaveCpmTradeResponse extends AcsResponse {
+public class PopUpQuery2Response extends AcsResponse {
 
 	private Boolean status;
 
 	private String msg;
 
+	private String errorCode;
+
 	private String requestId;
 
-	private String errorCode;
+	private String url;
 
 	public Boolean getStatus() {
 		return this.status;
@@ -48,14 +50,6 @@ public class SaveCpmTradeResponse extends AcsResponse {
 		this.msg = msg;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public String getErrorCode() {
 		return this.errorCode;
 	}
@@ -64,13 +58,24 @@ public class SaveCpmTradeResponse extends AcsResponse {
 		this.errorCode = errorCode;
 	}
 
-	@Override
-	public SaveCpmTradeResponse getInstance(UnmarshallerContext context) {
-		return	SaveCpmTradeResponseUnmarshaller.unmarshall(this, context);
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getUrl() {
+		return this.url;
+	}
+
+	public void setUrl(String url) {
+		this.url = url;
 	}
 
 	@Override
-	public boolean checkShowJsonItemName() {
-		return false;
+	public PopUpQuery2Response getInstance(UnmarshallerContext context) {
+		return	PopUpQuery2ResponseUnmarshaller.unmarshall(this, context);
 	}
 }

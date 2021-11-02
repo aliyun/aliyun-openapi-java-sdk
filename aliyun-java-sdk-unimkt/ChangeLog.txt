@@ -1,3 +1,6 @@
+2021-11-02 Version: 2.3.7
+- Feature.
+
 2021-09-06 Version: 2.4.0
 - Supported for custom creative union task.
 

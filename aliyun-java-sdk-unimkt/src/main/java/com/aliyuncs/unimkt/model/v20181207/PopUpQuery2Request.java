@@ -12,7 +12,7 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.unimkt.model.v20181212;
+package com.aliyuncs.unimkt.model.v20181207;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.ProtocolType;
@@ -23,37 +23,26 @@ import com.aliyuncs.unimkt.Endpoint;
  * @author auto create
  * @version 
  */
-public class QueryPromotionRequest extends RpcAcsRequest<QueryPromotionResponse> {
+public class PopUpQuery2Request extends RpcAcsRequest<PopUpQuery2Response> {
 	   
-
-	private String proxyChannelId;
 
 	private String extra;
 
+	private String urlId;
+
 	private String alipayOpenId;
 
-	private String userId;
-
 	private String channelId;
-	public QueryPromotionRequest() {
-		super("UniMkt", "2018-12-12", "QueryPromotion");
+
+	private String outerCode;
+	public PopUpQuery2Request() {
+		super("UniMkt", "2018-12-07", "PopUpQuery2");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getProxyChannelId() {
-		return this.proxyChannelId;
-	}
-
-	public void setProxyChannelId(String proxyChannelId) {
-		this.proxyChannelId = proxyChannelId;
-		if(proxyChannelId != null){
-			putBodyParameter("ProxyChannelId", proxyChannelId);
-		}
 	}
 
 	public String getExtra() {
@@ -64,6 +53,17 @@ public class QueryPromotionRequest extends RpcAcsRequest<QueryPromotionResponse>
 		this.extra = extra;
 		if(extra != null){
 			putBodyParameter("Extra", extra);
+		}
+	}
+
+	public String getUrlId() {
+		return this.urlId;
+	}
+
+	public void setUrlId(String urlId) {
+		this.urlId = urlId;
+		if(urlId != null){
+			putBodyParameter("UrlId", urlId);
 		}
 	}
 
@@ -78,17 +78,6 @@ public class QueryPromotionRequest extends RpcAcsRequest<QueryPromotionResponse>
 		}
 	}
 
-	public String getUserId() {
-		return this.userId;
-	}
-
-	public void setUserId(String userId) {
-		this.userId = userId;
-		if(userId != null){
-			putBodyParameter("UserId", userId);
-		}
-	}
-
 	public String getChannelId() {
 		return this.channelId;
 	}
@@ -100,9 +89,20 @@ public class QueryPromotionRequest extends RpcAcsRequest<QueryPromotionResponse>
 		}
 	}
 
+	public String getOuterCode() {
+		return this.outerCode;
+	}
+
+	public void setOuterCode(String outerCode) {
+		this.outerCode = outerCode;
+		if(outerCode != null){
+			putBodyParameter("OuterCode", outerCode);
+		}
+	}
+
 	@Override
-	public Class<QueryPromotionResponse> getResponseClass() {
-		return QueryPromotionResponse.class;
+	public Class<PopUpQuery2Response> getResponseClass() {
+		return PopUpQuery2Response.class;
 	}
 
 }

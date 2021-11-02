@@ -28,15 +28,15 @@ public class QueryPromotionResponse extends AcsResponse {
 
 	private String msg;
 
-	private String errorCode;
-
 	private String requestId;
 
-	private String url;
+	private String errorCode;
 
 	private String unionAmount;
 
 	private String noPromotionUrl;
+
+	private String url;
 
 	public Boolean getStatus() {
 		return this.status;
@@ -54,14 +54,6 @@ public class QueryPromotionResponse extends AcsResponse {
 		this.msg = msg;
 	}
 
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
-	}
-
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -70,12 +62,12 @@ public class QueryPromotionResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getUrl() {
-		return this.url;
+	public String getErrorCode() {
+		return this.errorCode;
 	}
 
-	public void setUrl(String url) {
-		this.url = url;
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
 	}
 
 	public String getUnionAmount() {
@@ -92,6 +84,14 @@ public class QueryPromotionResponse extends AcsResponse {
 
 	public void setNoPromotionUrl(String noPromotionUrl) {
 		this.noPromotionUrl = noPromotionUrl;
+	}
+
+	public String getUrl() {
+		return this.url;
+	}
+
+	public void setUrl(String url) {
+		this.url = url;
 	}
 
 	@Override

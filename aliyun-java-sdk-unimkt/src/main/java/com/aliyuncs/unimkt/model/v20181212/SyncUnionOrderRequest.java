@@ -55,6 +55,8 @@ public class SyncUnionOrderRequest extends RpcAcsRequest<SyncUnionOrderResponse>
 
 	private Long applyPrice;
 
+	private String tradeTimeString;
+
 	private String extendInfo;
 
 	private String channelId;
@@ -235,6 +237,17 @@ public class SyncUnionOrderRequest extends RpcAcsRequest<SyncUnionOrderResponse>
 		this.applyPrice = applyPrice;
 		if(applyPrice != null){
 			putQueryParameter("ApplyPrice", applyPrice.toString());
+		}
+	}
+
+	public String getTradeTimeString() {
+		return this.tradeTimeString;
+	}
+
+	public void setTradeTimeString(String tradeTimeString) {
+		this.tradeTimeString = tradeTimeString;
+		if(tradeTimeString != null){
+			putQueryParameter("TradeTimeString", tradeTimeString);
 		}
 	}
 

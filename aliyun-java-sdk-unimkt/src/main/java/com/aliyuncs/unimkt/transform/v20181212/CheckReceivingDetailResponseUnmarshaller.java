@@ -26,8 +26,9 @@ public class CheckReceivingDetailResponseUnmarshaller {
 		checkReceivingDetailResponse.setStatus(_ctx.booleanValue("CheckReceivingDetailResponse.Status"));
 		checkReceivingDetailResponse.setMsg(_ctx.stringValue("CheckReceivingDetailResponse.Msg"));
 		checkReceivingDetailResponse.setErrorCode(_ctx.stringValue("CheckReceivingDetailResponse.ErrorCode"));
-		checkReceivingDetailResponse.setHasPromotion(_ctx.booleanValue("CheckReceivingDetailResponse.HasPromotion"));
 		checkReceivingDetailResponse.setTradeOrderId(_ctx.stringValue("CheckReceivingDetailResponse.TradeOrderId"));
+		checkReceivingDetailResponse.setHasPromotion(_ctx.booleanValue("CheckReceivingDetailResponse.HasPromotion"));
+		checkReceivingDetailResponse.setUnionAmount(_ctx.stringValue("CheckReceivingDetailResponse.UnionAmount"));
 	 
 	 	return checkReceivingDetailResponse;
 	}
