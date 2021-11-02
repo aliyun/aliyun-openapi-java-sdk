@@ -31,7 +31,7 @@ public class PreloadVodObjectCachesRequest extends RpcAcsRequest<PreloadVodObjec
 
 	private String securityToken;
 	public PreloadVodObjectCachesRequest() {
-		super("vod", "2017-03-21", "PreloadVodObjectCaches", "vod");
+		super("vod", "2017-03-21", "PreloadVodObjectCaches");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

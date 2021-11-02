@@ -35,7 +35,7 @@ public class UploadStreamByURLRequest extends RpcAcsRequest<UploadStreamByURLRes
 
 	private String streamURL;
 	public UploadStreamByURLRequest() {
-		super("vod", "2017-03-21", "UploadStreamByURL", "vod");
+		super("vod", "2017-03-21", "UploadStreamByURL");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

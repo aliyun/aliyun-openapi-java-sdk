@@ -43,7 +43,7 @@ public class AddEditingProjectRequest extends RpcAcsRequest<AddEditingProjectRes
 
 	private String timeline;
 	public AddEditingProjectRequest() {
-		super("vod", "2017-03-21", "AddEditingProject", "vod");
+		super("vod", "2017-03-21", "AddEditingProject");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

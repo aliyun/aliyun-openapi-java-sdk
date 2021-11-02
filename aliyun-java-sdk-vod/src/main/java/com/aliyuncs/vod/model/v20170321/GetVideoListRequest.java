@@ -41,7 +41,7 @@ public class GetVideoListRequest extends RpcAcsRequest<GetVideoListResponse> {
 
 	private String status;
 	public GetVideoListRequest() {
-		super("vod", "2017-03-21", "GetVideoList", "vod");
+		super("vod", "2017-03-21", "GetVideoList");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

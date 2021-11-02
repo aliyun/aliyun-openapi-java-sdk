@@ -27,7 +27,7 @@ public class GetMediaAuditResultTimelineRequest extends RpcAcsRequest<GetMediaAu
 
 	private String mediaId;
 	public GetMediaAuditResultTimelineRequest() {
-		super("vod", "2017-03-21", "GetMediaAuditResultTimeline", "vod");
+		super("vod", "2017-03-21", "GetMediaAuditResultTimeline");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

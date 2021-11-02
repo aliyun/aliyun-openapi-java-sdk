@@ -31,7 +31,7 @@ public class AddCategoryRequest extends RpcAcsRequest<AddCategoryResponse> {
 
 	private String cateName;
 	public AddCategoryRequest() {
-		super("vod", "2017-03-21", "AddCategory", "vod");
+		super("vod", "2017-03-21", "AddCategory");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

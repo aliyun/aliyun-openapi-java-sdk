@@ -39,7 +39,7 @@ public class DescribeVodDomainUsageDataRequest extends RpcAcsRequest<DescribeVod
 
 	private String field;
 	public DescribeVodDomainUsageDataRequest() {
-		super("vod", "2017-03-21", "DescribeVodDomainUsageData", "vod");
+		super("vod", "2017-03-21", "DescribeVodDomainUsageData");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

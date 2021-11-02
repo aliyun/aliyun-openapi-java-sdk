@@ -45,7 +45,7 @@ public class SubmitDetectionJobRequest extends RpcAcsRequest<SubmitDetectionJobR
 
 	private String copyrightFile;
 	public SubmitDetectionJobRequest() {
-		super("vod", "2017-03-21", "SubmitDetectionJob", "vod");
+		super("vod", "2017-03-21", "SubmitDetectionJob");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

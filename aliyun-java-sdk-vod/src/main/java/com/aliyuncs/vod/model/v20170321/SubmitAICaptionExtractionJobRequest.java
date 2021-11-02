@@ -33,7 +33,7 @@ public class SubmitAICaptionExtractionJobRequest extends RpcAcsRequest<SubmitAIC
 
 	private String userData;
 	public SubmitAICaptionExtractionJobRequest() {
-		super("vod", "2017-03-21", "SubmitAICaptionExtractionJob", "vod");
+		super("vod", "2017-03-21", "SubmitAICaptionExtractionJob");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

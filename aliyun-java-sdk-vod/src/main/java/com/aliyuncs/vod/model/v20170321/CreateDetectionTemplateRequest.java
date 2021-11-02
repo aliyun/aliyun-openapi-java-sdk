@@ -31,7 +31,7 @@ public class CreateDetectionTemplateRequest extends RpcAcsRequest<CreateDetectio
 
 	private String templateName;
 	public CreateDetectionTemplateRequest() {
-		super("vod", "2017-03-21", "CreateDetectionTemplate", "vod");
+		super("vod", "2017-03-21", "CreateDetectionTemplate");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

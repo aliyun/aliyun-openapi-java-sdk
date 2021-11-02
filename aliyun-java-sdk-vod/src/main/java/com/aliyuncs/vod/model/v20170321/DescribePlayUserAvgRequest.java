@@ -31,7 +31,7 @@ public class DescribePlayUserAvgRequest extends RpcAcsRequest<DescribePlayUserAv
 
 	private Long ownerId;
 	public DescribePlayUserAvgRequest() {
-		super("vod", "2017-03-21", "DescribePlayUserAvg", "vod");
+		super("vod", "2017-03-21", "DescribePlayUserAvg");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

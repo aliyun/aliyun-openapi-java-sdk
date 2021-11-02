@@ -45,7 +45,7 @@ public class GetPlayInfoRequest extends RpcAcsRequest<GetPlayInfoResponse> {
 
 	private String additionType;
 	public GetPlayInfoRequest() {
-		super("vod", "2017-03-21", "GetPlayInfo", "vod");
+		super("vod", "2017-03-21", "GetPlayInfo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

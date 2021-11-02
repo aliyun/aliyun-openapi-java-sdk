@@ -29,7 +29,7 @@ public class DeleteDynamicImageRequest extends RpcAcsRequest<DeleteDynamicImageR
 
 	private String dynamicImageIds;
 	public DeleteDynamicImageRequest() {
-		super("vod", "2017-03-21", "DeleteDynamicImage", "vod");
+		super("vod", "2017-03-21", "DeleteDynamicImage");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

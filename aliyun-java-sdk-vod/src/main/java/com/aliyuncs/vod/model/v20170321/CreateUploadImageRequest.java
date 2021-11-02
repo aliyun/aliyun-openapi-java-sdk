@@ -43,7 +43,7 @@ public class CreateUploadImageRequest extends RpcAcsRequest<CreateUploadImageRes
 
 	private String appId;
 	public CreateUploadImageRequest() {
-		super("vod", "2017-03-21", "CreateUploadImage", "vod");
+		super("vod", "2017-03-21", "CreateUploadImage");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

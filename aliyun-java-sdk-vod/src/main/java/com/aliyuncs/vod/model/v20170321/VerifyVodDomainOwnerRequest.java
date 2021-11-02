@@ -31,7 +31,7 @@ public class VerifyVodDomainOwnerRequest extends RpcAcsRequest<VerifyVodDomainOw
 
 	private Long ownerId;
 	public VerifyVodDomainOwnerRequest() {
-		super("vod", "2017-03-21", "VerifyVodDomainOwner", "vod");
+		super("vod", "2017-03-21", "VerifyVodDomainOwner");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

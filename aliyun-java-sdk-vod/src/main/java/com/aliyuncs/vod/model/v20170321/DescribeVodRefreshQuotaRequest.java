@@ -29,7 +29,7 @@ public class DescribeVodRefreshQuotaRequest extends RpcAcsRequest<DescribeVodRef
 
 	private String securityToken;
 	public DescribeVodRefreshQuotaRequest() {
-		super("vod", "2017-03-21", "DescribeVodRefreshQuota", "vod");
+		super("vod", "2017-03-21", "DescribeVodRefreshQuota");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

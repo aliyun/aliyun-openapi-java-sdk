@@ -33,7 +33,7 @@ public class RefreshVodObjectCachesRequest extends RpcAcsRequest<RefreshVodObjec
 
 	private String objectType;
 	public RefreshVodObjectCachesRequest() {
-		super("vod", "2017-03-21", "RefreshVodObjectCaches", "vod");
+		super("vod", "2017-03-21", "RefreshVodObjectCaches");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

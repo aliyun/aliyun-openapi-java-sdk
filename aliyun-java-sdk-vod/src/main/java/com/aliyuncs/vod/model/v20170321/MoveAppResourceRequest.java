@@ -31,7 +31,7 @@ public class MoveAppResourceRequest extends RpcAcsRequest<MoveAppResourceRespons
 
 	private String resourceIds;
 	public MoveAppResourceRequest() {
-		super("vod", "2017-03-21", "MoveAppResource", "vod");
+		super("vod", "2017-03-21", "MoveAppResource");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -33,7 +33,7 @@ public class AttachAppPolicyToIdentityRequest extends RpcAcsRequest<AttachAppPol
 
 	private String appId;
 	public AttachAppPolicyToIdentityRequest() {
-		super("vod", "2017-03-21", "AttachAppPolicyToIdentity", "vod");
+		super("vod", "2017-03-21", "AttachAppPolicyToIdentity");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

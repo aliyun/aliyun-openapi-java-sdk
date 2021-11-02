@@ -39,7 +39,7 @@ public class DescribeVodDomainTrafficDataRequest extends RpcAcsRequest<DescribeV
 
 	private String interval;
 	public DescribeVodDomainTrafficDataRequest() {
-		super("vod", "2017-03-21", "DescribeVodDomainTrafficData", "vod");
+		super("vod", "2017-03-21", "DescribeVodDomainTrafficData");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

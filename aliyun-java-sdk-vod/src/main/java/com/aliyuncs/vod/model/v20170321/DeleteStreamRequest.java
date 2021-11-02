@@ -29,7 +29,7 @@ public class DeleteStreamRequest extends RpcAcsRequest<DeleteStreamResponse> {
 
 	private String jobIds;
 	public DeleteStreamRequest() {
-		super("vod", "2017-03-21", "DeleteStream", "vod");
+		super("vod", "2017-03-21", "DeleteStream");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

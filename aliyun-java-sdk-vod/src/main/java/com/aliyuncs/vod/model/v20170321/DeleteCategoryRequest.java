@@ -27,7 +27,7 @@ public class DeleteCategoryRequest extends RpcAcsRequest<DeleteCategoryResponse>
 
 	private Long cateId;
 	public DeleteCategoryRequest() {
-		super("vod", "2017-03-21", "DeleteCategory", "vod");
+		super("vod", "2017-03-21", "DeleteCategory");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

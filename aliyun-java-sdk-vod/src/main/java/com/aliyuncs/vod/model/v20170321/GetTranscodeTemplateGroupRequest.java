@@ -27,7 +27,7 @@ public class GetTranscodeTemplateGroupRequest extends RpcAcsRequest<GetTranscode
 
 	private String transcodeTemplateGroupId;
 	public GetTranscodeTemplateGroupRequest() {
-		super("vod", "2017-03-21", "GetTranscodeTemplateGroup", "vod");
+		super("vod", "2017-03-21", "GetTranscodeTemplateGroup");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

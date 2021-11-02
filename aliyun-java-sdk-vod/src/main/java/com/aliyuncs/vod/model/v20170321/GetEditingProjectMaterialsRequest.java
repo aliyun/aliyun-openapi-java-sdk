@@ -39,7 +39,7 @@ public class GetEditingProjectMaterialsRequest extends RpcAcsRequest<GetEditingP
 
 	private String ownerId;
 	public GetEditingProjectMaterialsRequest() {
-		super("vod", "2017-03-21", "GetEditingProjectMaterials", "vod");
+		super("vod", "2017-03-21", "GetEditingProjectMaterials");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -35,7 +35,7 @@ public class GetDetectionResultRequest extends RpcAcsRequest<GetDetectionResultR
 
 	private String status;
 	public GetDetectionResultRequest() {
-		super("vod", "2017-03-21", "GetDetectionResult", "vod");
+		super("vod", "2017-03-21", "GetDetectionResult");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

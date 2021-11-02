@@ -37,7 +37,7 @@ public class UpdateVideoInfoRequest extends RpcAcsRequest<UpdateVideoInfoRespons
 
 	private String tags;
 	public UpdateVideoInfoRequest() {
-		super("vod", "2017-03-21", "UpdateVideoInfo", "vod");
+		super("vod", "2017-03-21", "UpdateVideoInfo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

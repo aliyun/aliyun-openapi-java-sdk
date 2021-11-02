@@ -35,7 +35,7 @@ public class ListTranscodeTaskRequest extends RpcAcsRequest<ListTranscodeTaskRes
 
 	private Integer pageNo;
 	public ListTranscodeTaskRequest() {
-		super("vod", "2017-03-21", "ListTranscodeTask", "vod");
+		super("vod", "2017-03-21", "ListTranscodeTask");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

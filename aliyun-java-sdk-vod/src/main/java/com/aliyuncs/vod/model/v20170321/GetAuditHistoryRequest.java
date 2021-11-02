@@ -33,7 +33,7 @@ public class GetAuditHistoryRequest extends RpcAcsRequest<GetAuditHistoryRespons
 
 	private String sortBy;
 	public GetAuditHistoryRequest() {
-		super("vod", "2017-03-21", "GetAuditHistory", "vod");
+		super("vod", "2017-03-21", "GetAuditHistory");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

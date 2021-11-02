@@ -27,11 +27,11 @@ public class GetVideoPlayAuthResponseUnmarshaller {
 		getVideoPlayAuthResponse.setPlayAuth(_ctx.stringValue("GetVideoPlayAuthResponse.PlayAuth"));
 
 		VideoMeta videoMeta = new VideoMeta();
-		videoMeta.setCoverURL(_ctx.stringValue("GetVideoPlayAuthResponse.VideoMeta.CoverURL"));
-		videoMeta.setDuration(_ctx.floatValue("GetVideoPlayAuthResponse.VideoMeta.Duration"));
 		videoMeta.setStatus(_ctx.stringValue("GetVideoPlayAuthResponse.VideoMeta.Status"));
+		videoMeta.setDuration(_ctx.floatValue("GetVideoPlayAuthResponse.VideoMeta.Duration"));
 		videoMeta.setTitle(_ctx.stringValue("GetVideoPlayAuthResponse.VideoMeta.Title"));
 		videoMeta.setVideoId(_ctx.stringValue("GetVideoPlayAuthResponse.VideoMeta.VideoId"));
+		videoMeta.setCoverURL(_ctx.stringValue("GetVideoPlayAuthResponse.VideoMeta.CoverURL"));
 		getVideoPlayAuthResponse.setVideoMeta(videoMeta);
 	 
 	 	return getVideoPlayAuthResponse;

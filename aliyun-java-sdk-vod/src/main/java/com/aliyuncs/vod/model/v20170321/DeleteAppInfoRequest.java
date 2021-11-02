@@ -27,7 +27,7 @@ public class DeleteAppInfoRequest extends RpcAcsRequest<DeleteAppInfoResponse> {
 
 	private String appId;
 	public DeleteAppInfoRequest() {
-		super("vod", "2017-03-21", "DeleteAppInfo", "vod");
+		super("vod", "2017-03-21", "DeleteAppInfo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

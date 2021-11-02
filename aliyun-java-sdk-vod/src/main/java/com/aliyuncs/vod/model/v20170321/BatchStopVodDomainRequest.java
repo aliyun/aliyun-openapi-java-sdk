@@ -31,7 +31,7 @@ public class BatchStopVodDomainRequest extends RpcAcsRequest<BatchStopVodDomainR
 
 	private String securityToken;
 	public BatchStopVodDomainRequest() {
-		super("vod", "2017-03-21", "BatchStopVodDomain", "vod");
+		super("vod", "2017-03-21", "BatchStopVodDomain");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

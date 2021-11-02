@@ -27,7 +27,7 @@ public class SetDefaultTranscodeTemplateGroupRequest extends RpcAcsRequest<SetDe
 
 	private String transcodeTemplateGroupId;
 	public SetDefaultTranscodeTemplateGroupRequest() {
-		super("vod", "2017-03-21", "SetDefaultTranscodeTemplateGroup", "vod");
+		super("vod", "2017-03-21", "SetDefaultTranscodeTemplateGroup");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

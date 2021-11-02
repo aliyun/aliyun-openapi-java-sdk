@@ -41,7 +41,7 @@ public class SubmitAIImageJobRequest extends RpcAcsRequest<SubmitAIImageJobRespo
 
 	private String ownerId;
 	public SubmitAIImageJobRequest() {
-		super("vod", "2017-03-21", "SubmitAIImageJob", "vod");
+		super("vod", "2017-03-21", "SubmitAIImageJob");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

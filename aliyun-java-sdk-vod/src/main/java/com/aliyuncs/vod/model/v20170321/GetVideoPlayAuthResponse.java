@@ -24,19 +24,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetVideoPlayAuthResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String playAuth;
 
+	private String requestId;
+
 	private VideoMeta videoMeta;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getPlayAuth() {
 		return this.playAuth;
@@ -44,6 +36,14 @@ public class GetVideoPlayAuthResponse extends AcsResponse {
 
 	public void setPlayAuth(String playAuth) {
 		this.playAuth = playAuth;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public VideoMeta getVideoMeta() {
@@ -56,22 +56,22 @@ public class GetVideoPlayAuthResponse extends AcsResponse {
 
 	public static class VideoMeta {
 
-		private String coverURL;
+		private String status;
 
 		private Float duration;
-
-		private String status;
 
 		private String title;
 
 		private String videoId;
 
-		public String getCoverURL() {
-			return this.coverURL;
+		private String coverURL;
+
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setCoverURL(String coverURL) {
-			this.coverURL = coverURL;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public Float getDuration() {
@@ -80,14 +80,6 @@ public class GetVideoPlayAuthResponse extends AcsResponse {
 
 		public void setDuration(Float duration) {
 			this.duration = duration;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
 		}
 
 		public String getTitle() {
@@ -104,6 +96,14 @@ public class GetVideoPlayAuthResponse extends AcsResponse {
 
 		public void setVideoId(String videoId) {
 			this.videoId = videoId;
+		}
+
+		public String getCoverURL() {
+			return this.coverURL;
+		}
+
+		public void setCoverURL(String coverURL) {
+			this.coverURL = coverURL;
 		}
 	}
 

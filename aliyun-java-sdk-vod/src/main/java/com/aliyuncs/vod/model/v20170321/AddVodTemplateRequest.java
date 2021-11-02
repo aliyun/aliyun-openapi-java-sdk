@@ -33,7 +33,7 @@ public class AddVodTemplateRequest extends RpcAcsRequest<AddVodTemplateResponse>
 
 	private String name;
 	public AddVodTemplateRequest() {
-		super("vod", "2017-03-21", "AddVodTemplate", "vod");
+		super("vod", "2017-03-21", "AddVodTemplate");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

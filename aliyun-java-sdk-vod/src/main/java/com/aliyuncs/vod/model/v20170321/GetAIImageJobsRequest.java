@@ -35,7 +35,7 @@ public class GetAIImageJobsRequest extends RpcAcsRequest<GetAIImageJobsResponse>
 
 	private String jobIds;
 	public GetAIImageJobsRequest() {
-		super("vod", "2017-03-21", "GetAIImageJobs", "vod");
+		super("vod", "2017-03-21", "GetAIImageJobs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

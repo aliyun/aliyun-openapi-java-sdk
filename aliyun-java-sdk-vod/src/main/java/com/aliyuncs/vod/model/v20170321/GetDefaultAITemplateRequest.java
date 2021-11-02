@@ -27,7 +27,7 @@ public class GetDefaultAITemplateRequest extends RpcAcsRequest<GetDefaultAITempl
 
 	private String templateType;
 	public GetDefaultAITemplateRequest() {
-		super("vod", "2017-03-21", "GetDefaultAITemplate", "vod");
+		super("vod", "2017-03-21", "GetDefaultAITemplate");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

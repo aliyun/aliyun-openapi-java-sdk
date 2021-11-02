@@ -29,7 +29,7 @@ public class ListDetectionTemplateRequest extends RpcAcsRequest<ListDetectionTem
 
 	private String templateName;
 	public ListDetectionTemplateRequest() {
-		super("vod", "2017-03-21", "ListDetectionTemplate", "vod");
+		super("vod", "2017-03-21", "ListDetectionTemplate");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

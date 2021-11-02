@@ -27,7 +27,7 @@ public class DescribeVodUserTagsRequest extends RpcAcsRequest<DescribeVodUserTag
 
 	private Long ownerId;
 	public DescribeVodUserTagsRequest() {
-		super("vod", "2017-03-21", "DescribeVodUserTags", "vod");
+		super("vod", "2017-03-21", "DescribeVodUserTags");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

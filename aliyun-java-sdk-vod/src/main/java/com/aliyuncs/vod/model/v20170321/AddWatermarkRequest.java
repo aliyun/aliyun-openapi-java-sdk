@@ -35,7 +35,7 @@ public class AddWatermarkRequest extends RpcAcsRequest<AddWatermarkResponse> {
 
 	private String fileUrl;
 	public AddWatermarkRequest() {
-		super("vod", "2017-03-21", "AddWatermark", "vod");
+		super("vod", "2017-03-21", "AddWatermark");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -36,7 +36,7 @@ public class UnTagVodResourcesRequest extends RpcAcsRequest<UnTagVodResourcesRes
 
 	private List<String> tagKeys;
 	public UnTagVodResourcesRequest() {
-		super("vod", "2017-03-21", "UnTagVodResources", "vod");
+		super("vod", "2017-03-21", "UnTagVodResources");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

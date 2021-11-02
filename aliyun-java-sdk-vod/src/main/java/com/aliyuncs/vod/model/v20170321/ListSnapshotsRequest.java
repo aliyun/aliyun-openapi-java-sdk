@@ -35,7 +35,7 @@ public class ListSnapshotsRequest extends RpcAcsRequest<ListSnapshotsResponse> {
 
 	private String pageNo;
 	public ListSnapshotsRequest() {
-		super("vod", "2017-03-21", "ListSnapshots", "vod");
+		super("vod", "2017-03-21", "ListSnapshots");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

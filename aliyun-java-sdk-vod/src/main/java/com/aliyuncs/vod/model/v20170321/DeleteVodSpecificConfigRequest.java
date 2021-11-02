@@ -33,7 +33,7 @@ public class DeleteVodSpecificConfigRequest extends RpcAcsRequest<DeleteVodSpeci
 
 	private String configId;
 	public DeleteVodSpecificConfigRequest() {
-		super("vod", "2017-03-21", "DeleteVodSpecificConfig", "vod");
+		super("vod", "2017-03-21", "DeleteVodSpecificConfig");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

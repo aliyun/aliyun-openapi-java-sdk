@@ -35,7 +35,7 @@ public class SubmitAIMediaAuditJobRequest extends RpcAcsRequest<SubmitAIMediaAud
 
 	private String mediaType;
 	public SubmitAIMediaAuditJobRequest() {
-		super("vod", "2017-03-21", "SubmitAIMediaAuditJob", "vod");
+		super("vod", "2017-03-21", "SubmitAIMediaAuditJob");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

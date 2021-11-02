@@ -39,7 +39,7 @@ public class SetCrossdomainContentRequest extends RpcAcsRequest<SetCrossdomainCo
 
 	private String ownerId;
 	public SetCrossdomainContentRequest() {
-		super("vod", "2017-03-21", "SetCrossdomainContent", "vod");
+		super("vod", "2017-03-21", "SetCrossdomainContent");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

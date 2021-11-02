@@ -29,7 +29,7 @@ public class DescribeVodDomainRealtimeLogDeliveryRequest extends RpcAcsRequest<D
 
 	private Long ownerId;
 	public DescribeVodDomainRealtimeLogDeliveryRequest() {
-		super("vod", "2017-03-21", "DescribeVodDomainRealtimeLogDelivery", "vod");
+		super("vod", "2017-03-21", "DescribeVodDomainRealtimeLogDelivery");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

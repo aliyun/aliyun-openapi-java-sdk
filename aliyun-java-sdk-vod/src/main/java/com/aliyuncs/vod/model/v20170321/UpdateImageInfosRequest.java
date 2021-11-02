@@ -27,7 +27,7 @@ public class UpdateImageInfosRequest extends RpcAcsRequest<UpdateImageInfosRespo
 
 	private String updateContent;
 	public UpdateImageInfosRequest() {
-		super("vod", "2017-03-21", "UpdateImageInfos", "vod");
+		super("vod", "2017-03-21", "UpdateImageInfos");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

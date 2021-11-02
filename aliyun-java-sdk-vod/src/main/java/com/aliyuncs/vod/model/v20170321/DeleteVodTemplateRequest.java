@@ -27,7 +27,7 @@ public class DeleteVodTemplateRequest extends RpcAcsRequest<DeleteVodTemplateRes
 
 	private String vodTemplateId;
 	public DeleteVodTemplateRequest() {
-		super("vod", "2017-03-21", "DeleteVodTemplate", "vod");
+		super("vod", "2017-03-21", "DeleteVodTemplate");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

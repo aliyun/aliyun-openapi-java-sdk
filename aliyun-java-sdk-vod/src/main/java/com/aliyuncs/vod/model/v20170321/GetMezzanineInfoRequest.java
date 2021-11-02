@@ -33,7 +33,7 @@ public class GetMezzanineInfoRequest extends RpcAcsRequest<GetMezzanineInfoRespo
 
 	private String additionType;
 	public GetMezzanineInfoRequest() {
-		super("vod", "2017-03-21", "GetMezzanineInfo", "vod");
+		super("vod", "2017-03-21", "GetMezzanineInfo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

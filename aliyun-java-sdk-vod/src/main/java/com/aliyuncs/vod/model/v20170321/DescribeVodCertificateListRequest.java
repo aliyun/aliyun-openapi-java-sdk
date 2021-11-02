@@ -31,7 +31,7 @@ public class DescribeVodCertificateListRequest extends RpcAcsRequest<DescribeVod
 
 	private String securityToken;
 	public DescribeVodCertificateListRequest() {
-		super("vod", "2017-03-21", "DescribeVodCertificateList", "vod");
+		super("vod", "2017-03-21", "DescribeVodCertificateList");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

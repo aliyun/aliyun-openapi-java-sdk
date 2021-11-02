@@ -27,7 +27,7 @@ public class DeleteWatermarkRequest extends RpcAcsRequest<DeleteWatermarkRespons
 
 	private String watermarkId;
 	public DeleteWatermarkRequest() {
-		super("vod", "2017-03-21", "DeleteWatermark", "vod");
+		super("vod", "2017-03-21", "DeleteWatermark");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

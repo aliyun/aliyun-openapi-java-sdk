@@ -41,7 +41,7 @@ public class ListLiveRecordVideoRequest extends RpcAcsRequest<ListLiveRecordVide
 
 	private String sortBy;
 	public ListLiveRecordVideoRequest() {
-		super("vod", "2017-03-21", "ListLiveRecordVideo", "vod");
+		super("vod", "2017-03-21", "ListLiveRecordVideo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

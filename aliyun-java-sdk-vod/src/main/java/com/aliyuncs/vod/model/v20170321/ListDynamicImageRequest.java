@@ -27,7 +27,7 @@ public class ListDynamicImageRequest extends RpcAcsRequest<ListDynamicImageRespo
 
 	private String videoId;
 	public ListDynamicImageRequest() {
-		super("vod", "2017-03-21", "ListDynamicImage", "vod");
+		super("vod", "2017-03-21", "ListDynamicImage");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

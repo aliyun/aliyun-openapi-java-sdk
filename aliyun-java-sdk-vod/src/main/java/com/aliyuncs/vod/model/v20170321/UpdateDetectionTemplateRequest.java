@@ -33,7 +33,7 @@ public class UpdateDetectionTemplateRequest extends RpcAcsRequest<UpdateDetectio
 
 	private String templateId;
 	public UpdateDetectionTemplateRequest() {
-		super("vod", "2017-03-21", "UpdateDetectionTemplate", "vod");
+		super("vod", "2017-03-21", "UpdateDetectionTemplate");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

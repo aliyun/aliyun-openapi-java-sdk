@@ -27,7 +27,7 @@ public class DeleteDetectionTemplateRequest extends RpcAcsRequest<DeleteDetectio
 
 	private String templateId;
 	public DeleteDetectionTemplateRequest() {
-		super("vod", "2017-03-21", "DeleteDetectionTemplate", "vod");
+		super("vod", "2017-03-21", "DeleteDetectionTemplate");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

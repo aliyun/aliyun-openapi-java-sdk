@@ -47,7 +47,7 @@ public class ProduceEditingProjectVideoRequest extends RpcAcsRequest<ProduceEdit
 
 	private String timeline;
 	public ProduceEditingProjectVideoRequest() {
-		super("vod", "2017-03-21", "ProduceEditingProjectVideo", "vod");
+		super("vod", "2017-03-21", "ProduceEditingProjectVideo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

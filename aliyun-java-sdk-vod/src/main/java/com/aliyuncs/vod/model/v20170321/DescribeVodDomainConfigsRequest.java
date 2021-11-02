@@ -33,7 +33,7 @@ public class DescribeVodDomainConfigsRequest extends RpcAcsRequest<DescribeVodDo
 
 	private String securityToken;
 	public DescribeVodDomainConfigsRequest() {
-		super("vod", "2017-03-21", "DescribeVodDomainConfigs", "vod");
+		super("vod", "2017-03-21", "DescribeVodDomainConfigs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

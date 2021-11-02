@@ -35,7 +35,7 @@ public class DeleteEditingProjectRequest extends RpcAcsRequest<DeleteEditingProj
 
 	private String ownerId;
 	public DeleteEditingProjectRequest() {
-		super("vod", "2017-03-21", "DeleteEditingProject", "vod");
+		super("vod", "2017-03-21", "DeleteEditingProject");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

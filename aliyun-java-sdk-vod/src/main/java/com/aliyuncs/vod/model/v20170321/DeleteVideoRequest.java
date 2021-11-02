@@ -27,7 +27,7 @@ public class DeleteVideoRequest extends RpcAcsRequest<DeleteVideoResponse> {
 
 	private String videoIds;
 	public DeleteVideoRequest() {
-		super("vod", "2017-03-21", "DeleteVideo", "vod");
+		super("vod", "2017-03-21", "DeleteVideo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

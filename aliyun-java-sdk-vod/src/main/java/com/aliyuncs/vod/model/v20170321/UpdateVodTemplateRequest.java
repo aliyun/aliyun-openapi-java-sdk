@@ -31,7 +31,7 @@ public class UpdateVodTemplateRequest extends RpcAcsRequest<UpdateVodTemplateRes
 
 	private String vodTemplateId;
 	public UpdateVodTemplateRequest() {
-		super("vod", "2017-03-21", "UpdateVodTemplate", "vod");
+		super("vod", "2017-03-21", "UpdateVodTemplate");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
