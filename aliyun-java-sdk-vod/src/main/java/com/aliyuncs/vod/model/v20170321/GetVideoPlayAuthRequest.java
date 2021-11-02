@@ -27,6 +27,8 @@ public class GetVideoPlayAuthRequest extends RpcAcsRequest<GetVideoPlayAuthRespo
 
 	private String videoId;
 
+	private String apiVersion;
+
 	private Long authInfoTimeout;
 	public GetVideoPlayAuthRequest() {
 		super("vod", "2017-03-21", "GetVideoPlayAuth");
@@ -45,6 +47,17 @@ public class GetVideoPlayAuthRequest extends RpcAcsRequest<GetVideoPlayAuthRespo
 		this.videoId = videoId;
 		if(videoId != null){
 			putQueryParameter("VideoId", videoId);
+		}
+	}
+
+	public String getApiVersion() {
+		return this.apiVersion;
+	}
+
+	public void setApiVersion(String apiVersion) {
+		this.apiVersion = apiVersion;
+		if(apiVersion != null){
+			putQueryParameter("ApiVersion", apiVersion);
 		}
 	}
 
