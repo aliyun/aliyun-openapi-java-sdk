@@ -25,13 +25,23 @@ import java.security.NoSuchAlgorithmException;
 
 public abstract class Signer {
 
-    private final static Signer HMACSHA1_SIGNER = new HmacSHA1Signer();
-    private final static Signer SHA256_WITH_RSA_SIGNER = new SHA256withRSASigner();
-    private final static Signer BEARER_TOKEN_SIGNER = new BearerTokenSigner();
+    private final static Signer HMACSHA1_SIGNER = new com.aliyuncs.auth.signers.HmacSHA1Signer();
+    private final static Signer SHA256_WITH_RSA_SIGNER = new com.aliyuncs.auth.signers.SHA256withRSASigner();
+    private final static Signer BEARER_TOKEN_SIGNER = new com.aliyuncs.auth.signers.BearerTokenSigner();
     // Signature V3
     private final static Signer RSA_SHA256 = new NewSHA256withRSASigner();
     private final static Signer HMAC_SM3 = new HmacSM3Signer();
     private final static Signer HMAC_SHA256 = new HmacSHA256Signer();
+
+    public static Signer getSigner(AlibabaCloudCredentials credentials) {
+        if (credentials instanceof KeyPairCredentials) {
+            return SHA256_WITH_RSA_SIGNER;
+        } else if (credentials instanceof BearerTokenCredentials) {
+            return BEARER_TOKEN_SIGNER;
+        } else {
+            return HMACSHA1_SIGNER;
+        }
+    }
 
     public static Signer getSigner(AlibabaCloudCredentials credentials, SignatureVersion signatureVersion, SignatureAlgorithm signatureAlgorithm) {
         switch (signatureVersion) {
