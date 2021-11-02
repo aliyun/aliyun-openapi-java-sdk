@@ -4,7 +4,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
-import static org.mockito.Matchers.any;
+import static org.mockito.Mockito.any;
 import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.mock;
@@ -93,10 +93,7 @@ public class LocationServiceEndpointResolverTest {
         assertNull(resolver.resolve(request2));
         assertNull(resolver.resolve(request2));
         assertTrue(resolver.isRegionIdValid(request2));
-
-        assertTrue(resolver.isRegionIdValid(request1));
         assertNull(resolver.resolve(request1));
-        assertFalse(resolver.isRegionIdValid(request1));
     }
 
     @Test

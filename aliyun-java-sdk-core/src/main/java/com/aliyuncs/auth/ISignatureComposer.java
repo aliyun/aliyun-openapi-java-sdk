@@ -12,4 +12,6 @@ public interface ISignatureComposer {
 
     String composeStringToSign(MethodType method, String uriPattern, Signer signer, Map<String, String> queries,
                                Map<String, String> headers, Map<String, String> paths);
+
+    String getAuthorization(Signer signer, String accessKeyId, String signature);
 }

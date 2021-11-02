@@ -1,7 +1,11 @@
-package com.aliyuncs.auth;
+package com.aliyuncs.auth.signers;
 
+import com.aliyuncs.auth.AlibabaCloudCredentials;
 import org.junit.Assert;
 import org.junit.Test;
+
+import java.nio.charset.StandardCharsets;
+import java.security.NoSuchAlgorithmException;
 
 import static org.mockito.Mockito.mock;
 
@@ -38,5 +42,21 @@ public class BearerTokenSignerTest {
     public void getSingerType() {
         BearerTokenSigner signer = new BearerTokenSigner();
         Assert.assertEquals("BEARERTOKEN", signer.getSignerType());
+    }
+
+    @Test
+    public void hash() {
+        BearerTokenSigner signer = new BearerTokenSigner();
+        try {
+            Assert.assertNull(signer.hash("".getBytes(StandardCharsets.UTF_8)));
+        } catch (NoSuchAlgorithmException e) {
+            Assert.fail();
+        }
+    }
+
+    @Test
+    public void getContent() {
+        BearerTokenSigner signer = new BearerTokenSigner();
+        Assert.assertNull(signer.getContent());
     }
 }

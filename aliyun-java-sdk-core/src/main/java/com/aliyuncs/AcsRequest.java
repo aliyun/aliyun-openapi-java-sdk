@@ -1,19 +1,19 @@
 package com.aliyuncs;
 
 import com.aliyuncs.auth.*;
+import com.aliyuncs.auth.signers.SignatureAlgorithm;
 import com.aliyuncs.http.FormatType;
 import com.aliyuncs.http.HttpRequest;
 import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.UserAgentConfig;
 import com.aliyuncs.regions.ProductDomain;
 import com.aliyuncs.utils.ParameterHelper;
+import com.aliyuncs.utils.StringUtils;
 
 import java.io.UnsupportedEncodingException;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 import java.util.Map.Entry;
 
 public abstract class AcsRequest<T extends AcsResponse> extends HttpRequest {
@@ -38,12 +38,37 @@ public abstract class AcsRequest<T extends AcsResponse> extends HttpRequest {
     public String productEndpointRegional = null;
     public String productNetwork = "public";
     public String productSuffix = "";
+    private SignatureVersion signatureVersion;
+    private SignatureAlgorithm signatureAlgorithm;
 
     public AcsRequest(String product) {
         super(null);
         this.headers.put("x-sdk-client", "Java/2.0.0");
         this.headers.put("x-sdk-invoke-type", "normal");
         this.product = product;
+    }
+
+    public void resolveSignatureComposer() {
+        if (signatureVersion == SignatureVersion.V3) {
+            this.composer = V3SignatureComposer.getComposer();
+        }
+    }
+
+    protected String getSignedHeaders(Map<String, String> headers) {
+        String[] keys = headers.keySet().toArray(new String[headers.size()]);
+        Arrays.sort(keys);
+        List<String> canonicalizedKeys = new ArrayList<String>();
+        for (String key : keys) {
+            String lowerKey = key.toLowerCase();
+            if (lowerKey.startsWith("x-acs-") || lowerKey.equals("host")
+                    || lowerKey.equals("content-type")) {
+                if (!canonicalizedKeys.contains(lowerKey)) {
+                    canonicalizedKeys.add(lowerKey);
+                }
+            }
+        }
+        String[] canonicalizedKeysArray = canonicalizedKeys.toArray(new String[canonicalizedKeys.size()]);
+        return StringUtils.join(";", Arrays.asList(canonicalizedKeysArray));
     }
 
     public static String concatQueryString(Map<String, String> parameters) throws UnsupportedEncodingException {
@@ -402,5 +427,21 @@ public abstract class AcsRequest<T extends AcsResponse> extends HttpRequest {
             this.userAgentConfig = new UserAgentConfig();
         }
         this.userAgentConfig.append(key, value);
+    }
+
+    public SignatureVersion getSignatureVersion() {
+        return signatureVersion;
+    }
+
+    public void setSignatureVersion(SignatureVersion signatureVersion) {
+        this.signatureVersion = signatureVersion;
+    }
+
+    public SignatureAlgorithm getSignatureAlgorithm() {
+        return signatureAlgorithm;
+    }
+
+    public void setSignatureAlgorithm(SignatureAlgorithm signatureAlgorithm) {
+        this.signatureAlgorithm = signatureAlgorithm;
     }
 }

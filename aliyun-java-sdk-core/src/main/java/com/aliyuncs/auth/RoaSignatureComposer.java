@@ -136,4 +136,9 @@ public class RoaSignatureComposer implements ISignatureComposer {
         sb.append(buildQueryString(uri, queries));
         return sb.toString();
     }
+
+    @Override
+    public String getAuthorization(Signer signer, String accessKeyId, String signature) {
+        return "acs " + accessKeyId + ":" + signature;
+    }
 }

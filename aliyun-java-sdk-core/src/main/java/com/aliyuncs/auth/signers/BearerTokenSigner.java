@@ -1,4 +1,9 @@
-package com.aliyuncs.auth;
+package com.aliyuncs.auth.signers;
+
+import com.aliyuncs.auth.AlibabaCloudCredentials;
+import com.aliyuncs.auth.Signer;
+
+import java.security.NoSuchAlgorithmException;
 
 public class BearerTokenSigner extends Signer {
 
@@ -25,6 +30,16 @@ public class BearerTokenSigner extends Signer {
     @Override
     public String getSignerType() {
         return "BEARERTOKEN";
+    }
+
+    @Override
+    public byte[] hash(byte[] raw) throws NoSuchAlgorithmException {
+        return null;
+    }
+
+    @Override
+    public String getContent() {
+        return null;
     }
 
 }

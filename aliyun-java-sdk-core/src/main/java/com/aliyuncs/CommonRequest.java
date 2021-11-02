@@ -1,5 +1,7 @@
 package com.aliyuncs;
 
+import com.aliyuncs.auth.SignatureVersion;
+import com.aliyuncs.auth.signers.SignatureAlgorithm;
 import com.aliyuncs.http.FormatType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.http.ProtocolType;
@@ -33,21 +35,26 @@ public class CommonRequest {
 
     private String domain = null;
 
+    private SignatureVersion signatureVersion;
+    private SignatureAlgorithm signatureAlgorithm;
+
     @SuppressWarnings("rawtypes")
     public AcsRequest buildRequest() {
         if (uriPattern != null) {
             CommonRoaRequest request = new CommonRoaRequest(product);
             request.setSysUriPattern(uriPattern);
+            request.setSignatureVersion(signatureVersion);
+            request.setSignatureAlgorithm(signatureAlgorithm);
             for (String pathParamKey : pathParameters.keySet()) {
                 request.putPathParameter(pathParamKey, pathParameters.get(pathParamKey));
             }
             fillParams(request);
-
             return request;
         } else {
             CommonRpcRequest request = new CommonRpcRequest(product);
+            request.setSignatureVersion(signatureVersion);
+            request.setSignatureAlgorithm(signatureAlgorithm);
             fillParams(request);
-
             return request;
         }
     }
@@ -504,5 +511,21 @@ public class CommonRequest {
 
     public FormatType getSysAccept() {
         return this.accept;
+    }
+
+    public SignatureVersion getSignatureVersion() {
+        return signatureVersion;
+    }
+
+    public void setSignatureVersion(SignatureVersion signatureVersion) {
+        this.signatureVersion = signatureVersion;
+    }
+
+    public SignatureAlgorithm getSignatureAlgorithm() {
+        return signatureAlgorithm;
+    }
+
+    public void setSignatureAlgorithm(SignatureAlgorithm signatureAlgorithm) {
+        this.signatureAlgorithm = signatureAlgorithm;
     }
 }

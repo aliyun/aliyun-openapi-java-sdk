@@ -34,8 +34,6 @@ import java.util.List;
 import java.util.Map;
 
 import static com.aliyuncs.http.clients.CompatibleUrlConnClient.CONTENT_TYPE;
-import static org.mockito.Matchers.any;
-import static org.mockito.Matchers.anyString;
 import static org.mockito.Mockito.*;
 import static org.powermock.api.mockito.PowerMockito.verifyPrivate;
 

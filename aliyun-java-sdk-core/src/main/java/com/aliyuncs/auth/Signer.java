@@ -19,23 +19,40 @@
 
 package com.aliyuncs.auth;
 
-/**
- * Created by haowei.yao on 2017/9/28.
- */
+import com.aliyuncs.auth.signers.*;
+
+import java.security.NoSuchAlgorithmException;
 
 public abstract class Signer {
 
     private final static Signer HMACSHA1_SIGNER = new HmacSHA1Signer();
     private final static Signer SHA256_WITH_RSA_SIGNER = new SHA256withRSASigner();
     private final static Signer BEARER_TOKEN_SIGNER = new BearerTokenSigner();
+    // Signature V3
+    private final static Signer RSA_SHA256 = new NewSHA256withRSASigner();
+    private final static Signer HMAC_SM3 = new HmacSM3Signer();
+    private final static Signer HMAC_SHA256 = new HmacSHA256Signer();
 
-    public static Signer getSigner(AlibabaCloudCredentials credentials) {
-        if (credentials instanceof KeyPairCredentials) {
-            return SHA256_WITH_RSA_SIGNER;
-        } else if (credentials instanceof BearerTokenCredentials) {
-            return BEARER_TOKEN_SIGNER;
-        } else {
-            return HMACSHA1_SIGNER;
+    public static Signer getSigner(AlibabaCloudCredentials credentials, SignatureVersion signatureVersion, SignatureAlgorithm signatureAlgorithm) {
+        switch (signatureVersion) {
+            case V3:
+                switch (signatureAlgorithm) {
+                    case ACS3_RSA_SHA256:
+                        return RSA_SHA256;
+                    case ACS3_HMAC_SM3:
+                        return HMAC_SM3;
+                    case ACS3_HMAC_SHA256:
+                        return HMAC_SHA256;
+                }
+            case V1:
+            default:
+                if (credentials instanceof KeyPairCredentials) {
+                    return SHA256_WITH_RSA_SIGNER;
+                } else if (credentials instanceof BearerTokenCredentials) {
+                    return BEARER_TOKEN_SIGNER;
+                } else {
+                    return HMACSHA1_SIGNER;
+                }
         }
     }
 
@@ -48,4 +65,8 @@ public abstract class Signer {
     public abstract String getSignerVersion();
 
     public abstract String getSignerType();
+
+    public abstract byte[] hash(byte[] raw) throws NoSuchAlgorithmException;
+
+    public abstract String getContent();
 }
