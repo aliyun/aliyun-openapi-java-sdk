@@ -163,7 +163,7 @@ public abstract class RoaAcsRequest<T extends AcsResponse> extends AcsRequest<T>
             UnsupportedEncodingException, NoSuchAlgorithmException {
         this.resolveSignatureComposer();
         Map<String, String> bodyParams = this.getSysBodyParameters();
-        String hashedRequestPayload = hexEncode(signer.hash("".getBytes("UTF-8")));
+        String hashedRequestPayload = hexEncode(signer != null ? signer.hash("".getBytes("UTF-8")) : null);
         if (bodyParams != null && !bodyParams.isEmpty()) {
             byte[] data;
             if (FormatType.JSON == this.getHttpContentType()) {
@@ -175,16 +175,13 @@ public abstract class RoaAcsRequest<T extends AcsResponse> extends AcsRequest<T>
                 data = ParameterHelper.getFormData(bodyParams);
             }
             this.setHttpContent(data, "UTF-8", null);
-            hashedRequestPayload = hexEncode(signer.hash(data));
+            hashedRequestPayload = hexEncode(signer != null ? signer.hash(data) : null);
         }
 
         Map<String, String> imutableMap = this.composer.refreshSignParameters(this.getSysHeaders(), signer, null,
                 format);
         if (imutableMap.get("RegionId") == null) {
             imutableMap.put("RegionId", getSysRegionId());
-        }
-        if (signer.getContent() != null && hashedRequestPayload != null) {
-            imutableMap.put(signer.getContent(), hashedRequestPayload);
         }
         if (null != signer && null != credentials && !(credentials instanceof AnonymousCredentials)) {
             String accessKeyId = credentials.getAccessKeyId();
@@ -201,8 +198,12 @@ public abstract class RoaAcsRequest<T extends AcsResponse> extends AcsRequest<T>
                     imutableMap.put("x-acs-bearer-token", bearerToken);
                 }
             }
+            if (signer.getContent() != null && hashedRequestPayload != null) {
+                imutableMap.put(signer.getContent(), hashedRequestPayload);
+            }
             String strToSign = this.composer.composeStringToSign(this.getSysMethod(), this.getSysUriPattern(), signer,
                     this.getSysQueryParameters(), imutableMap, this.getPathParameters());
+            this.strToSign = strToSign;
             if (this.getSignatureVersion() == SignatureVersion.V3) {
                 strToSign += "\n" + hashedRequestPayload;
                 strToSign = signer.getSignerName() + "\n" + hexEncode(signer.hash(strToSign.getBytes("UTF-8")));

@@ -444,4 +444,9 @@ public abstract class AcsRequest<T extends AcsResponse> extends HttpRequest {
     public void setSignatureAlgorithm(SignatureAlgorithm signatureAlgorithm) {
         this.signatureAlgorithm = signatureAlgorithm;
     }
+
+    @Override
+    public String getStrToSign() {
+        return this.strToSign;
+    }
 }

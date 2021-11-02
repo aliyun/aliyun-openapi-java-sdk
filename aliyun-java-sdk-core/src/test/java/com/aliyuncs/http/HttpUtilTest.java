@@ -22,7 +22,6 @@ public class HttpUtilTest {
 
     @Test
     public void testHttpDebug() {
-        HttpUtil httpUtil = new HttpUtil();
         Assert.assertEquals(HttpUtil.getIsHttpDebug(), "sdk".equalsIgnoreCase(System.getenv("DEBUG")));
         Assert.assertEquals(HttpUtil.getIsHttpContentDebug(), "sdk".equalsIgnoreCase(System.getenv("DEBUG")));
         if (HttpUtil.getIsHttpDebug()) {
@@ -54,9 +53,9 @@ public class HttpUtilTest {
         requestHeaders.put("test2", "test2");
         Mockito.when(request.getSysHeaders()).thenReturn(requestHeaders);
         String exceptString = "> GET HTTP/1.1\n> Host : test.domain\n> test2 : test2\n> test1 : test1\n> "
-                + "Request URL : http://test.domain\n> " + "Request isIgnoreSSLCerts : false\n> "
-                + "Request connect timeout : 0\n> " + "Request read timeout : 0\n> "
-                + "Encoding : null\n> " + "\n" + "request body";
+                + "Request URL : http://test.domain\n> " + "Request string to sign: [null]\n> "
+                + "Request isIgnoreSSLCerts : false\n> " + "Request connect timeout : 0\n> "
+                + "Request read timeout : 0\n> " + "Encoding : null\n> " + "\n" + "request body";
 
         HttpUtil.setIsHttpDebug(true);
         HttpUtil.setIsHttpContentDebug(true);
@@ -64,9 +63,9 @@ public class HttpUtilTest {
 
         HttpUtil.setIsHttpContentDebug(false);
         exceptString = "> GET HTTP/1.1\n> Host : test.domain\n> test2 : test2\n> test1 : test1\n> "
-                + "Request URL : http://test.domain\n> " + "Request isIgnoreSSLCerts : false\n> "
-                + "Request connect timeout : 0\n> " + "Request read timeout : 0\n> "
-                + "Encoding : null\n> ";
+                + "Request URL : http://test.domain\n> " + "Request string to sign: [null]\n> "
+                + "Request isIgnoreSSLCerts : false\n> " + "Request connect timeout : 0\n> "
+                + "Request read timeout : 0\n> " + "Encoding : null\n> ";
         Assert.assertEquals(HttpUtil.debugHttpRequest(request), exceptString);
 
         HttpUtil.setIsHttpDebug(false);
@@ -121,7 +120,7 @@ public class HttpUtilTest {
         Mockito.when(request.getSysHeaders()).thenReturn(requestHeaders);
         String exceptString = "> GET httpss://test.domain/jdj\n> Host : httpss://test.domain/jdj\n> "
                 + "test2 : test2\n> test1 : test1\n> Request URL : httpss://test.domain/jdj\n> "
-                + "Request isIgnoreSSLCerts : false\n> "
+                + "Request string to sign: [null]\n> Request isIgnoreSSLCerts : false\n> "
                 + "Request connect timeout : 0\n> " + "Request read timeout : 0\n> "
                 + "Encoding : null\n>"
                 + " \nrequest body";
@@ -134,10 +133,10 @@ public class HttpUtilTest {
         Mockito.when(request.getSysEncoding()).thenReturn("HHH");
         exceptString = "> GET HTTP/1.1\n> Host : test.domain\n> "
                 + "test2 : test2\n> test1 : test1\n> Request URL : http://test.domain/jdj\n> "
-                + "Request isIgnoreSSLCerts : false\n> "
+                + "Request string to sign: [null]\n> Request isIgnoreSSLCerts : false\n> "
                 + "Request connect timeout : 0\n> " + "Request read timeout : 0\n> "
                 + "Encoding : HHH\n> "
-                + "\nCan not parse response due to unsupported encoding : HHH";
+                + "\nCan not parse request content due to unsupported encoding : HHH";
         Assert.assertEquals(HttpUtil.debugHttpRequest(request), exceptString);
         HttpUtil.setIsHttpDebug("sdk".equalsIgnoreCase(System.getenv("DEBUG")));
         HttpUtil.setIsHttpContentDebug("sdk".equalsIgnoreCase(System.getenv("DEBUG")));

@@ -1,6 +1,7 @@
 package com.aliyuncs;
 
 import com.aliyuncs.auth.*;
+import com.aliyuncs.auth.signers.SignatureAlgorithm;
 import com.aliyuncs.auth.sts.AssumeRoleRequest;
 import com.aliyuncs.ecs.v20140526.model.DescribeRegionsResponse;
 import com.aliyuncs.endpoint.DefaultEndpointResolver;
@@ -43,9 +44,7 @@ import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 
 import static org.mockito.ArgumentMatchers.isNull;
-import static org.mockito.Mockito.any;
 import static org.mockito.Mockito.*;
-import static org.mockito.Mockito.mock;
 
 @PowerMockIgnore("javax.net.ssl.*")
 @RunWith(PowerMockRunner.class)
@@ -223,6 +222,8 @@ public class DefaultAcsClientTest {
         Mockito.doReturn(ProtocolType.HTTP).when(request).getSysProtocol();
         when(request.getSysAcceptFormat()).thenReturn(FormatType.JSON);
         when(request.getResponseClass()).thenReturn(responseClass);
+        when(request.getSignatureVersion()).thenReturn(SignatureVersion.V1);
+        when(request.getSignatureAlgorithm()).thenReturn(SignatureAlgorithm.ACS3_HMAC_SHA256);
         return request;
     }
 

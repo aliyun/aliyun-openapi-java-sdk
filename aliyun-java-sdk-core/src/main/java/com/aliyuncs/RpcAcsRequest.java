@@ -148,7 +148,7 @@ public abstract class RpcAcsRequest<T extends AcsResponse> extends AcsRequest<T>
         this.resolveSignatureComposer();
         Map<String, String> headerMap = this.getSysHeaders();
         Map<String, String> bodyParams = this.getSysBodyParameters();
-        String hashedRequestPayload = hexEncode(signer.hash("".getBytes("UTF-8")));
+        String hashedRequestPayload = hexEncode(signer != null ? signer.hash("".getBytes("UTF-8")) : null);
         if (bodyParams != null && !bodyParams.isEmpty()) {
             byte[] data;
             if (FormatType.JSON == this.getHttpContentType()) {
@@ -160,10 +160,7 @@ public abstract class RpcAcsRequest<T extends AcsResponse> extends AcsRequest<T>
                 data = ParameterHelper.getFormData(bodyParams);
             }
             this.setHttpContent(data, "UTF-8", null);
-            hashedRequestPayload = hexEncode(signer.hash(data));
-        }
-        if (signer.getContent() != null && hashedRequestPayload != null) {
-            headerMap.put(signer.getContent(), hashedRequestPayload);
+            hashedRequestPayload = hexEncode(signer != null ? signer.hash(data) : null);
         }
         Map<String, String> imutableMap = this.composer.refreshSignParameters(this.getSysQueryParameters(), signer, null,
                 format);
@@ -173,7 +170,7 @@ public abstract class RpcAcsRequest<T extends AcsResponse> extends AcsRequest<T>
                 imutableMap.put("RegionId", getSysRegionId());
             }
         }
-        if (null != credentials && !(credentials instanceof AnonymousCredentials)) {
+        if (null != signer && null != credentials && !(credentials instanceof AnonymousCredentials)) {
             String accessKeyId = credentials.getAccessKeyId();
             String accessSecret = credentials.getAccessKeySecret();
             if (credentials instanceof BasicSessionCredentials) {
@@ -190,6 +187,9 @@ public abstract class RpcAcsRequest<T extends AcsResponse> extends AcsRequest<T>
                     headerMap.put("x-acs-bearer-token", bearerToken);
                 }
             }
+            if (signer.getContent() != null && hashedRequestPayload != null) {
+                headerMap.put(signer.getContent(), hashedRequestPayload);
+            }
             Map<String, String> paramsToSign = new HashMap<String, String>();
             paramsToSign.putAll(bodyParams);
             imutableMap.put("AccessKeyId", accessKeyId);
@@ -197,6 +197,7 @@ public abstract class RpcAcsRequest<T extends AcsResponse> extends AcsRequest<T>
             if (this.getSignatureVersion() == SignatureVersion.V3) {
                 String strToSign = this.composer.composeStringToSign(this.getSysMethod(), null, signer,
                         paramsToSign, headerMap, null) + "\n" + hashedRequestPayload;
+                this.strToSign = strToSign;
                 strToSign = signer.getSignerName() + "\n" + hexEncode(signer.hash(strToSign.getBytes("UTF-8")));
                 String signature = signer.signString(strToSign, accessSecret);
                 headerMap.put("Authorization", this.composer.getAuthorization(signer, accessKeyId, signature)
@@ -205,6 +206,7 @@ public abstract class RpcAcsRequest<T extends AcsResponse> extends AcsRequest<T>
             } else {
                 String strToSign = this.composer.composeStringToSign(
                         this.getSysMethod(), null, signer, paramsToSign, null, null);
+                this.strToSign = strToSign;
                 String signature;
                 if (credentials instanceof KeyPairCredentials) {
                     signature = signer.signString(strToSign, credentials);
@@ -212,7 +214,6 @@ public abstract class RpcAcsRequest<T extends AcsResponse> extends AcsRequest<T>
                     signature = signer.signString(strToSign, accessSecret + "&");
                 }
                 imutableMap.put("Signature", this.composer.getAuthorization(signer, accessKeyId, signature));
-                this.strToSign = strToSign;
                 headerMap = this.getSysHeaders();
             }
         }
