@@ -28,19 +28,19 @@ public class DetectIPCObjectResponseUnmarshaller {
 	public static DetectIPCObjectResponse unmarshall(DetectIPCObjectResponse detectIPCObjectResponse, UnmarshallerContext _ctx) {
 		
 		detectIPCObjectResponse.setRequestId(_ctx.stringValue("DetectIPCObjectResponse.RequestId"));
-		detectIPCObjectResponse.setMessage(_ctx.stringValue("DetectIPCObjectResponse.Message"));
 		detectIPCObjectResponse.setCode(_ctx.stringValue("DetectIPCObjectResponse.Code"));
+		detectIPCObjectResponse.setMessage(_ctx.stringValue("DetectIPCObjectResponse.Message"));
 
 		Data data = new Data();
-		data.setHeight(_ctx.longValue("DetectIPCObjectResponse.Data.Height"));
 		data.setWidth(_ctx.longValue("DetectIPCObjectResponse.Data.Width"));
+		data.setHeight(_ctx.longValue("DetectIPCObjectResponse.Data.Height"));
 
 		List<Element> elements = new ArrayList<Element>();
 		for (int i = 0; i < _ctx.lengthValue("DetectIPCObjectResponse.Data.Elements.Length"); i++) {
 			Element element = new Element();
-			element.setTargetRate(_ctx.floatValue("DetectIPCObjectResponse.Data.Elements["+ i +"].TargetRate"));
-			element.setScore(_ctx.floatValue("DetectIPCObjectResponse.Data.Elements["+ i +"].Score"));
 			element.setType(_ctx.stringValue("DetectIPCObjectResponse.Data.Elements["+ i +"].Type"));
+			element.setScore(_ctx.floatValue("DetectIPCObjectResponse.Data.Elements["+ i +"].Score"));
+			element.setTargetRate(_ctx.floatValue("DetectIPCObjectResponse.Data.Elements["+ i +"].TargetRate"));
 
 			List<Long> box = new ArrayList<Long>();
 			for (int j = 0; j < _ctx.lengthValue("DetectIPCObjectResponse.Data.Elements["+ i +"].Box.Length"); j++) {

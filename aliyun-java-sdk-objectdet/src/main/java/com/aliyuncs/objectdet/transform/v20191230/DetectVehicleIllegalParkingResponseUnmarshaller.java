@@ -30,30 +30,16 @@ public class DetectVehicleIllegalParkingResponseUnmarshaller {
 	public static DetectVehicleIllegalParkingResponse unmarshall(DetectVehicleIllegalParkingResponse detectVehicleIllegalParkingResponse, UnmarshallerContext _ctx) {
 		
 		detectVehicleIllegalParkingResponse.setRequestId(_ctx.stringValue("DetectVehicleIllegalParkingResponse.RequestId"));
-		detectVehicleIllegalParkingResponse.setMessage(_ctx.stringValue("DetectVehicleIllegalParkingResponse.Message"));
 		detectVehicleIllegalParkingResponse.setCode(_ctx.stringValue("DetectVehicleIllegalParkingResponse.Code"));
+		detectVehicleIllegalParkingResponse.setMessage(_ctx.stringValue("DetectVehicleIllegalParkingResponse.Message"));
 
 		Data data = new Data();
-
-		List<RegionIntersect> regionIntersects = new ArrayList<RegionIntersect>();
-		for (int i = 0; i < _ctx.lengthValue("DetectVehicleIllegalParkingResponse.Data.RegionIntersects.Length"); i++) {
-			RegionIntersect regionIntersect = new RegionIntersect();
-
-			List<Long> ids = new ArrayList<Long>();
-			for (int j = 0; j < _ctx.lengthValue("DetectVehicleIllegalParkingResponse.Data.RegionIntersects["+ i +"].Ids.Length"); j++) {
-				ids.add(_ctx.longValue("DetectVehicleIllegalParkingResponse.Data.RegionIntersects["+ i +"].Ids["+ j +"]"));
-			}
-			regionIntersect.setIds(ids);
-
-			regionIntersects.add(regionIntersect);
-		}
-		data.setRegionIntersects(regionIntersects);
 
 		List<Element> elements = new ArrayList<Element>();
 		for (int i = 0; i < _ctx.lengthValue("DetectVehicleIllegalParkingResponse.Data.Elements.Length"); i++) {
 			Element element = new Element();
-			element.setTypeName(_ctx.stringValue("DetectVehicleIllegalParkingResponse.Data.Elements["+ i +"].TypeName"));
 			element.setScore(_ctx.floatValue("DetectVehicleIllegalParkingResponse.Data.Elements["+ i +"].Score"));
+			element.setTypeName(_ctx.stringValue("DetectVehicleIllegalParkingResponse.Data.Elements["+ i +"].TypeName"));
 
 			List<BoxesItem> boxes = new ArrayList<BoxesItem>();
 			for (int j = 0; j < _ctx.lengthValue("DetectVehicleIllegalParkingResponse.Data.Elements["+ i +"].Boxes.Length"); j++) {
@@ -70,6 +56,20 @@ public class DetectVehicleIllegalParkingResponseUnmarshaller {
 			elements.add(element);
 		}
 		data.setElements(elements);
+
+		List<RegionIntersect> regionIntersects = new ArrayList<RegionIntersect>();
+		for (int i = 0; i < _ctx.lengthValue("DetectVehicleIllegalParkingResponse.Data.RegionIntersects.Length"); i++) {
+			RegionIntersect regionIntersect = new RegionIntersect();
+
+			List<Long> ids = new ArrayList<Long>();
+			for (int j = 0; j < _ctx.lengthValue("DetectVehicleIllegalParkingResponse.Data.RegionIntersects["+ i +"].Ids.Length"); j++) {
+				ids.add(_ctx.longValue("DetectVehicleIllegalParkingResponse.Data.RegionIntersects["+ i +"].Ids["+ j +"]"));
+			}
+			regionIntersect.setIds(ids);
+
+			regionIntersects.add(regionIntersect);
+		}
+		data.setRegionIntersects(regionIntersects);
 		detectVehicleIllegalParkingResponse.setData(data);
 	 
 	 	return detectVehicleIllegalParkingResponse;

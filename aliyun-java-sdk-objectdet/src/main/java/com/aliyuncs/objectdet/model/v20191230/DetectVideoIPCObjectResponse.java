@@ -25,21 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DetectVideoIPCObjectResponse extends AcsResponse {
 
-	private String message;
-
 	private String requestId;
 
 	private String code;
 
+	private String message;
+
 	private Data data;
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -57,6 +49,14 @@ public class DetectVideoIPCObjectResponse extends AcsResponse {
 		this.code = code;
 	}
 
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -67,21 +67,13 @@ public class DetectVideoIPCObjectResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Long height;
-
 		private Long width;
+
+		private Long height;
 
 		private String inputFile;
 
 		private List<Frame> frames;
-
-		public Long getHeight() {
-			return this.height;
-		}
-
-		public void setHeight(Long height) {
-			this.height = height;
-		}
 
 		public Long getWidth() {
 			return this.width;
@@ -89,6 +81,14 @@ public class DetectVideoIPCObjectResponse extends AcsResponse {
 
 		public void setWidth(Long width) {
 			this.width = width;
+		}
+
+		public Long getHeight() {
+			return this.height;
+		}
+
+		public void setHeight(Long height) {
+			this.height = height;
 		}
 
 		public String getInputFile() {
@@ -131,25 +131,17 @@ public class DetectVideoIPCObjectResponse extends AcsResponse {
 
 			public static class ElementsItem {
 
-				private Float score;
-
 				private String type;
 
 				private Long x;
 
 				private Long y;
 
-				private Long height;
-
 				private Long width;
 
-				public Float getScore() {
-					return this.score;
-				}
+				private Long height;
 
-				public void setScore(Float score) {
-					this.score = score;
-				}
+				private Float score;
 
 				public String getType() {
 					return this.type;
@@ -175,6 +167,14 @@ public class DetectVideoIPCObjectResponse extends AcsResponse {
 					this.y = y;
 				}
 
+				public Long getWidth() {
+					return this.width;
+				}
+
+				public void setWidth(Long width) {
+					this.width = width;
+				}
+
 				public Long getHeight() {
 					return this.height;
 				}
@@ -183,12 +183,12 @@ public class DetectVideoIPCObjectResponse extends AcsResponse {
 					this.height = height;
 				}
 
-				public Long getWidth() {
-					return this.width;
+				public Float getScore() {
+					return this.score;
 				}
 
-				public void setWidth(Long width) {
-					this.width = width;
+				public void setScore(Float score) {
+					this.score = score;
 				}
 			}
 		}

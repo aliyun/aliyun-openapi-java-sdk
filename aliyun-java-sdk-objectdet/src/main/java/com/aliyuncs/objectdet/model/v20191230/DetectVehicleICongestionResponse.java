@@ -25,21 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DetectVehicleICongestionResponse extends AcsResponse {
 
-	private String message;
-
 	private String requestId;
 
 	private String code;
 
+	private String message;
+
 	private Data data;
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -57,6 +49,14 @@ public class DetectVehicleICongestionResponse extends AcsResponse {
 		this.code = code;
 	}
 
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -67,13 +67,21 @@ public class DetectVehicleICongestionResponse extends AcsResponse {
 
 	public static class Data {
 
-		private List<RegionIntersectFeaturesItem> regionIntersectFeatures;
+		private List<Element> elements;
 
-		private List<RegionIntersectsItem> regionIntersects;
+		private List<RegionIntersectFeaturesItem> regionIntersectFeatures;
 
 		private List<RegionIntersectMatchedItem> regionIntersectMatched;
 
-		private List<Element> elements;
+		private List<RegionIntersectsItem> regionIntersects;
+
+		public List<Element> getElements() {
+			return this.elements;
+		}
+
+		public void setElements(List<Element> elements) {
+			this.elements = elements;
+		}
 
 		public List<RegionIntersectFeaturesItem> getRegionIntersectFeatures() {
 			return this.regionIntersectFeatures;
@@ -81,14 +89,6 @@ public class DetectVehicleICongestionResponse extends AcsResponse {
 
 		public void setRegionIntersectFeatures(List<RegionIntersectFeaturesItem> regionIntersectFeatures) {
 			this.regionIntersectFeatures = regionIntersectFeatures;
-		}
-
-		public List<RegionIntersectsItem> getRegionIntersects() {
-			return this.regionIntersects;
-		}
-
-		public void setRegionIntersects(List<RegionIntersectsItem> regionIntersects) {
-			this.regionIntersects = regionIntersects;
 		}
 
 		public List<RegionIntersectMatchedItem> getRegionIntersectMatched() {
@@ -99,68 +99,21 @@ public class DetectVehicleICongestionResponse extends AcsResponse {
 			this.regionIntersectMatched = regionIntersectMatched;
 		}
 
-		public List<Element> getElements() {
-			return this.elements;
+		public List<RegionIntersectsItem> getRegionIntersects() {
+			return this.regionIntersects;
 		}
 
-		public void setElements(List<Element> elements) {
-			this.elements = elements;
-		}
-
-		public static class RegionIntersectFeaturesItem {
-
-			private List<String> features;
-
-			public List<String> getFeatures() {
-				return this.features;
-			}
-
-			public void setFeatures(List<String> features) {
-				this.features = features;
-			}
-		}
-
-		public static class RegionIntersectsItem {
-
-			private List<Long> ids;
-
-			public List<Long> getIds() {
-				return this.ids;
-			}
-
-			public void setIds(List<Long> ids) {
-				this.ids = ids;
-			}
-		}
-
-		public static class RegionIntersectMatchedItem {
-
-			private List<Long> ids1;
-
-			public List<Long> getIds1() {
-				return this.ids1;
-			}
-
-			public void setIds1(List<Long> ids1) {
-				this.ids1 = ids1;
-			}
+		public void setRegionIntersects(List<RegionIntersectsItem> regionIntersects) {
+			this.regionIntersects = regionIntersects;
 		}
 
 		public static class Element {
 
-			private String typeName;
-
 			private Float score;
 
+			private String typeName;
+
 			private List<BoxesItem> boxes;
-
-			public String getTypeName() {
-				return this.typeName;
-			}
-
-			public void setTypeName(String typeName) {
-				this.typeName = typeName;
-			}
 
 			public Float getScore() {
 				return this.score;
@@ -168,6 +121,14 @@ public class DetectVehicleICongestionResponse extends AcsResponse {
 
 			public void setScore(Float score) {
 				this.score = score;
+			}
+
+			public String getTypeName() {
+				return this.typeName;
+			}
+
+			public void setTypeName(String typeName) {
+				this.typeName = typeName;
 			}
 
 			public List<BoxesItem> getBoxes() {
@@ -219,6 +180,45 @@ public class DetectVehicleICongestionResponse extends AcsResponse {
 				public void setBottom(Long bottom) {
 					this.bottom = bottom;
 				}
+			}
+		}
+
+		public static class RegionIntersectFeaturesItem {
+
+			private List<String> features;
+
+			public List<String> getFeatures() {
+				return this.features;
+			}
+
+			public void setFeatures(List<String> features) {
+				this.features = features;
+			}
+		}
+
+		public static class RegionIntersectMatchedItem {
+
+			private List<Long> ids;
+
+			public List<Long> getIds() {
+				return this.ids;
+			}
+
+			public void setIds(List<Long> ids) {
+				this.ids = ids;
+			}
+		}
+
+		public static class RegionIntersectsItem {
+
+			private List<Long> ids1;
+
+			public List<Long> getIds1() {
+				return this.ids1;
+			}
+
+			public void setIds1(List<Long> ids1) {
+				this.ids1 = ids1;
 			}
 		}
 	}

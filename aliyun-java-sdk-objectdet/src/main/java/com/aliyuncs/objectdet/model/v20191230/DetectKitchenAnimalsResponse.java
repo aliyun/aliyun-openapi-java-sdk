@@ -16,14 +16,14 @@ package com.aliyuncs.objectdet.model.v20191230;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.objectdet.transform.v20191230.DetectIPCObjectResponseUnmarshaller;
+import com.aliyuncs.objectdet.transform.v20191230.DetectKitchenAnimalsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DetectIPCObjectResponse extends AcsResponse {
+public class DetectKitchenAnimalsResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -67,45 +67,23 @@ public class DetectIPCObjectResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Long width;
+		private List<ElementsItem> elements;
 
-		private Long height;
-
-		private List<Element> elements;
-
-		public Long getWidth() {
-			return this.width;
-		}
-
-		public void setWidth(Long width) {
-			this.width = width;
-		}
-
-		public Long getHeight() {
-			return this.height;
-		}
-
-		public void setHeight(Long height) {
-			this.height = height;
-		}
-
-		public List<Element> getElements() {
+		public List<ElementsItem> getElements() {
 			return this.elements;
 		}
 
-		public void setElements(List<Element> elements) {
+		public void setElements(List<ElementsItem> elements) {
 			this.elements = elements;
 		}
 
-		public static class Element {
+		public static class ElementsItem {
 
 			private String type;
 
 			private Float score;
 
-			private Float targetRate;
-
-			private List<Long> box;
+			private Rectangles rectangles;
 
 			public String getType() {
 				return this.type;
@@ -123,27 +101,62 @@ public class DetectIPCObjectResponse extends AcsResponse {
 				this.score = score;
 			}
 
-			public Float getTargetRate() {
-				return this.targetRate;
+			public Rectangles getRectangles() {
+				return this.rectangles;
 			}
 
-			public void setTargetRate(Float targetRate) {
-				this.targetRate = targetRate;
+			public void setRectangles(Rectangles rectangles) {
+				this.rectangles = rectangles;
 			}
 
-			public List<Long> getBox() {
-				return this.box;
-			}
+			public static class Rectangles {
 
-			public void setBox(List<Long> box) {
-				this.box = box;
+				private Long top;
+
+				private Long left;
+
+				private Long height;
+
+				private Long width;
+
+				public Long getTop() {
+					return this.top;
+				}
+
+				public void setTop(Long top) {
+					this.top = top;
+				}
+
+				public Long getLeft() {
+					return this.left;
+				}
+
+				public void setLeft(Long left) {
+					this.left = left;
+				}
+
+				public Long getHeight() {
+					return this.height;
+				}
+
+				public void setHeight(Long height) {
+					this.height = height;
+				}
+
+				public Long getWidth() {
+					return this.width;
+				}
+
+				public void setWidth(Long width) {
+					this.width = width;
+				}
 			}
 		}
 	}
 
 	@Override
-	public DetectIPCObjectResponse getInstance(UnmarshallerContext context) {
-		return	DetectIPCObjectResponseUnmarshaller.unmarshall(this, context);
+	public DetectKitchenAnimalsResponse getInstance(UnmarshallerContext context) {
+		return	DetectKitchenAnimalsResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

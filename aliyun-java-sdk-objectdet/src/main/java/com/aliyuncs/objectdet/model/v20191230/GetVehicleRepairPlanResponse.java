@@ -109,34 +109,34 @@ public class GetVehicleRepairPlanResponse extends AcsResponse {
 
 		public static class RepairItems {
 
-			private Boolean partNameMatch;
+			private String relationType;
 
 			private String partsStdCode;
 
-			private String outStandardPartsName;
-
-			private String repairType;
+			private Boolean partNameMatch;
 
 			private String repairFee;
 
-			private String relationType;
-
-			private String garageType;
+			private String outStandardPartsName;
 
 			private String partsStdName;
 
-			private String outStandardPartsId;
-
 			private String repairTypeName;
+
+			private String repairType;
 
 			private Boolean oeMatch;
 
-			public Boolean getPartNameMatch() {
-				return this.partNameMatch;
+			private String outStandardPartsId;
+
+			private String garageType;
+
+			public String getRelationType() {
+				return this.relationType;
 			}
 
-			public void setPartNameMatch(Boolean partNameMatch) {
-				this.partNameMatch = partNameMatch;
+			public void setRelationType(String relationType) {
+				this.relationType = relationType;
 			}
 
 			public String getPartsStdCode() {
@@ -147,20 +147,12 @@ public class GetVehicleRepairPlanResponse extends AcsResponse {
 				this.partsStdCode = partsStdCode;
 			}
 
-			public String getOutStandardPartsName() {
-				return this.outStandardPartsName;
+			public Boolean getPartNameMatch() {
+				return this.partNameMatch;
 			}
 
-			public void setOutStandardPartsName(String outStandardPartsName) {
-				this.outStandardPartsName = outStandardPartsName;
-			}
-
-			public String getRepairType() {
-				return this.repairType;
-			}
-
-			public void setRepairType(String repairType) {
-				this.repairType = repairType;
+			public void setPartNameMatch(Boolean partNameMatch) {
+				this.partNameMatch = partNameMatch;
 			}
 
 			public String getRepairFee() {
@@ -171,20 +163,12 @@ public class GetVehicleRepairPlanResponse extends AcsResponse {
 				this.repairFee = repairFee;
 			}
 
-			public String getRelationType() {
-				return this.relationType;
+			public String getOutStandardPartsName() {
+				return this.outStandardPartsName;
 			}
 
-			public void setRelationType(String relationType) {
-				this.relationType = relationType;
-			}
-
-			public String getGarageType() {
-				return this.garageType;
-			}
-
-			public void setGarageType(String garageType) {
-				this.garageType = garageType;
+			public void setOutStandardPartsName(String outStandardPartsName) {
+				this.outStandardPartsName = outStandardPartsName;
 			}
 
 			public String getPartsStdName() {
@@ -195,14 +179,6 @@ public class GetVehicleRepairPlanResponse extends AcsResponse {
 				this.partsStdName = partsStdName;
 			}
 
-			public String getOutStandardPartsId() {
-				return this.outStandardPartsId;
-			}
-
-			public void setOutStandardPartsId(String outStandardPartsId) {
-				this.outStandardPartsId = outStandardPartsId;
-			}
-
 			public String getRepairTypeName() {
 				return this.repairTypeName;
 			}
@@ -211,12 +187,36 @@ public class GetVehicleRepairPlanResponse extends AcsResponse {
 				this.repairTypeName = repairTypeName;
 			}
 
+			public String getRepairType() {
+				return this.repairType;
+			}
+
+			public void setRepairType(String repairType) {
+				this.repairType = repairType;
+			}
+
 			public Boolean getOeMatch() {
 				return this.oeMatch;
 			}
 
 			public void setOeMatch(Boolean oeMatch) {
 				this.oeMatch = oeMatch;
+			}
+
+			public String getOutStandardPartsId() {
+				return this.outStandardPartsId;
+			}
+
+			public void setOutStandardPartsId(String outStandardPartsId) {
+				this.outStandardPartsId = outStandardPartsId;
+			}
+
+			public String getGarageType() {
+				return this.garageType;
+			}
+
+			public void setGarageType(String garageType) {
+				this.garageType = garageType;
 			}
 		}
 	}

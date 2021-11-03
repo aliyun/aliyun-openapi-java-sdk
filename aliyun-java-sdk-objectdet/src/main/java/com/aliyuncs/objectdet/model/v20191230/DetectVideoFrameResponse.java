@@ -15,16 +15,20 @@
 package com.aliyuncs.objectdet.model.v20191230;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.objectdet.transform.v20191230.DetectMainBodyResponseUnmarshaller;
+import com.aliyuncs.objectdet.transform.v20191230.DetectVideoFrameResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DetectMainBodyResponse extends AcsResponse {
+public class DetectVideoFrameResponse extends AcsResponse {
 
 	private String requestId;
+
+	private String code;
+
+	private String message;
 
 	private Data data;
 
@@ -34,6 +38,22 @@ public class DetectMainBodyResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Data getData() {
@@ -46,63 +66,20 @@ public class DetectMainBodyResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Location location;
+		private String requestId;
 
-		public Location getLocation() {
-			return this.location;
+		public String getRequestId() {
+			return this.requestId;
 		}
 
-		public void setLocation(Location location) {
-			this.location = location;
-		}
-
-		public static class Location {
-
-			private Integer width;
-
-			private Integer height;
-
-			private Integer y;
-
-			private Integer x;
-
-			public Integer getWidth() {
-				return this.width;
-			}
-
-			public void setWidth(Integer width) {
-				this.width = width;
-			}
-
-			public Integer getHeight() {
-				return this.height;
-			}
-
-			public void setHeight(Integer height) {
-				this.height = height;
-			}
-
-			public Integer getY() {
-				return this.y;
-			}
-
-			public void setY(Integer y) {
-				this.y = y;
-			}
-
-			public Integer getX() {
-				return this.x;
-			}
-
-			public void setX(Integer x) {
-				this.x = x;
-			}
+		public void setRequestId(String requestId) {
+			this.requestId = requestId;
 		}
 	}
 
 	@Override
-	public DetectMainBodyResponse getInstance(UnmarshallerContext context) {
-		return	DetectMainBodyResponseUnmarshaller.unmarshall(this, context);
+	public DetectVideoFrameResponse getInstance(UnmarshallerContext context) {
+		return	DetectVideoFrameResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

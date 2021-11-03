@@ -30,14 +30,14 @@ public class DetectObjectResponseUnmarshaller {
 		detectObjectResponse.setRequestId(_ctx.stringValue("DetectObjectResponse.RequestId"));
 
 		Data data = new Data();
-		data.setHeight(_ctx.integerValue("DetectObjectResponse.Data.Height"));
 		data.setWidth(_ctx.integerValue("DetectObjectResponse.Data.Width"));
+		data.setHeight(_ctx.integerValue("DetectObjectResponse.Data.Height"));
 
 		List<Element> elements = new ArrayList<Element>();
 		for (int i = 0; i < _ctx.lengthValue("DetectObjectResponse.Data.Elements.Length"); i++) {
 			Element element = new Element();
-			element.setScore(_ctx.floatValue("DetectObjectResponse.Data.Elements["+ i +"].Score"));
 			element.setType(_ctx.stringValue("DetectObjectResponse.Data.Elements["+ i +"].Type"));
+			element.setScore(_ctx.floatValue("DetectObjectResponse.Data.Elements["+ i +"].Score"));
 
 			List<Integer> boxes = new ArrayList<Integer>();
 			for (int j = 0; j < _ctx.lengthValue("DetectObjectResponse.Data.Elements["+ i +"].Boxes.Length"); j++) {

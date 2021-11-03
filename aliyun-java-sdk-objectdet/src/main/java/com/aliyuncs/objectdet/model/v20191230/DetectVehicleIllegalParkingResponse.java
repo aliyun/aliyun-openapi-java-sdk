@@ -25,21 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DetectVehicleIllegalParkingResponse extends AcsResponse {
 
-	private String message;
-
 	private String requestId;
 
 	private String code;
 
+	private String message;
+
 	private Data data;
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -57,6 +49,14 @@ public class DetectVehicleIllegalParkingResponse extends AcsResponse {
 		this.code = code;
 	}
 
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -67,17 +67,9 @@ public class DetectVehicleIllegalParkingResponse extends AcsResponse {
 
 	public static class Data {
 
-		private List<RegionIntersect> regionIntersects;
-
 		private List<Element> elements;
 
-		public List<RegionIntersect> getRegionIntersects() {
-			return this.regionIntersects;
-		}
-
-		public void setRegionIntersects(List<RegionIntersect> regionIntersects) {
-			this.regionIntersects = regionIntersects;
-		}
+		private List<RegionIntersect> regionIntersects;
 
 		public List<Element> getElements() {
 			return this.elements;
@@ -87,34 +79,21 @@ public class DetectVehicleIllegalParkingResponse extends AcsResponse {
 			this.elements = elements;
 		}
 
-		public static class RegionIntersect {
+		public List<RegionIntersect> getRegionIntersects() {
+			return this.regionIntersects;
+		}
 
-			private List<Long> ids;
-
-			public List<Long> getIds() {
-				return this.ids;
-			}
-
-			public void setIds(List<Long> ids) {
-				this.ids = ids;
-			}
+		public void setRegionIntersects(List<RegionIntersect> regionIntersects) {
+			this.regionIntersects = regionIntersects;
 		}
 
 		public static class Element {
 
-			private String typeName;
-
 			private Float score;
 
+			private String typeName;
+
 			private List<BoxesItem> boxes;
-
-			public String getTypeName() {
-				return this.typeName;
-			}
-
-			public void setTypeName(String typeName) {
-				this.typeName = typeName;
-			}
 
 			public Float getScore() {
 				return this.score;
@@ -122,6 +101,14 @@ public class DetectVehicleIllegalParkingResponse extends AcsResponse {
 
 			public void setScore(Float score) {
 				this.score = score;
+			}
+
+			public String getTypeName() {
+				return this.typeName;
+			}
+
+			public void setTypeName(String typeName) {
+				this.typeName = typeName;
 			}
 
 			public List<BoxesItem> getBoxes() {
@@ -173,6 +160,19 @@ public class DetectVehicleIllegalParkingResponse extends AcsResponse {
 				public void setBottom(Long bottom) {
 					this.bottom = bottom;
 				}
+			}
+		}
+
+		public static class RegionIntersect {
+
+			private List<Long> ids;
+
+			public List<Long> getIds() {
+				return this.ids;
+			}
+
+			public void setIds(List<Long> ids) {
+				this.ids = ids;
 			}
 		}
 	}

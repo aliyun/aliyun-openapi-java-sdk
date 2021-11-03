@@ -34,8 +34,8 @@ public class RecognizeVehicleDamageResponseUnmarshaller {
 		List<Element> elements = new ArrayList<Element>();
 		for (int i = 0; i < _ctx.lengthValue("RecognizeVehicleDamageResponse.Data.Elements.Length"); i++) {
 			Element element = new Element();
-			element.setScore(_ctx.floatValue("RecognizeVehicleDamageResponse.Data.Elements["+ i +"].Score"));
 			element.setType(_ctx.stringValue("RecognizeVehicleDamageResponse.Data.Elements["+ i +"].Type"));
+			element.setScore(_ctx.floatValue("RecognizeVehicleDamageResponse.Data.Elements["+ i +"].Score"));
 
 			List<Float> scores = new ArrayList<Float>();
 			for (int j = 0; j < _ctx.lengthValue("RecognizeVehicleDamageResponse.Data.Elements["+ i +"].Scores.Length"); j++) {

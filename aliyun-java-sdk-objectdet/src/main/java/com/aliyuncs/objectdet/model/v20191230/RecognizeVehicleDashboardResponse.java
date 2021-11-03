@@ -61,9 +61,9 @@ public class RecognizeVehicleDashboardResponse extends AcsResponse {
 
 			private Float score;
 
-			private String className;
-
 			private String label;
+
+			private String className;
 
 			private List<Float> boxes;
 
@@ -75,20 +75,20 @@ public class RecognizeVehicleDashboardResponse extends AcsResponse {
 				this.score = score;
 			}
 
-			public String getClassName() {
-				return this.className;
-			}
-
-			public void setClassName(String className) {
-				this.className = className;
-			}
-
 			public String getLabel() {
 				return this.label;
 			}
 
 			public void setLabel(String label) {
 				this.label = label;
+			}
+
+			public String getClassName() {
+				return this.className;
+			}
+
+			public void setClassName(String className) {
+				this.className = className;
 			}
 
 			public List<Float> getBoxes() {

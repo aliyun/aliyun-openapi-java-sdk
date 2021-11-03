@@ -32,58 +32,16 @@ public class DetectVehicleICongestionResponseUnmarshaller {
 	public static DetectVehicleICongestionResponse unmarshall(DetectVehicleICongestionResponse detectVehicleICongestionResponse, UnmarshallerContext _ctx) {
 		
 		detectVehicleICongestionResponse.setRequestId(_ctx.stringValue("DetectVehicleICongestionResponse.RequestId"));
-		detectVehicleICongestionResponse.setMessage(_ctx.stringValue("DetectVehicleICongestionResponse.Message"));
 		detectVehicleICongestionResponse.setCode(_ctx.stringValue("DetectVehicleICongestionResponse.Code"));
+		detectVehicleICongestionResponse.setMessage(_ctx.stringValue("DetectVehicleICongestionResponse.Message"));
 
 		Data data = new Data();
-
-		List<RegionIntersectFeaturesItem> regionIntersectFeatures = new ArrayList<RegionIntersectFeaturesItem>();
-		for (int i = 0; i < _ctx.lengthValue("DetectVehicleICongestionResponse.Data.RegionIntersectFeatures.Length"); i++) {
-			RegionIntersectFeaturesItem regionIntersectFeaturesItem = new RegionIntersectFeaturesItem();
-
-			List<String> features = new ArrayList<String>();
-			for (int j = 0; j < _ctx.lengthValue("DetectVehicleICongestionResponse.Data.RegionIntersectFeatures["+ i +"].Features.Length"); j++) {
-				features.add(_ctx.stringValue("DetectVehicleICongestionResponse.Data.RegionIntersectFeatures["+ i +"].Features["+ j +"]"));
-			}
-			regionIntersectFeaturesItem.setFeatures(features);
-
-			regionIntersectFeatures.add(regionIntersectFeaturesItem);
-		}
-		data.setRegionIntersectFeatures(regionIntersectFeatures);
-
-		List<RegionIntersectsItem> regionIntersects = new ArrayList<RegionIntersectsItem>();
-		for (int i = 0; i < _ctx.lengthValue("DetectVehicleICongestionResponse.Data.RegionIntersects.Length"); i++) {
-			RegionIntersectsItem regionIntersectsItem = new RegionIntersectsItem();
-
-			List<Long> ids = new ArrayList<Long>();
-			for (int j = 0; j < _ctx.lengthValue("DetectVehicleICongestionResponse.Data.RegionIntersects["+ i +"].Ids.Length"); j++) {
-				ids.add(_ctx.longValue("DetectVehicleICongestionResponse.Data.RegionIntersects["+ i +"].Ids["+ j +"]"));
-			}
-			regionIntersectsItem.setIds(ids);
-
-			regionIntersects.add(regionIntersectsItem);
-		}
-		data.setRegionIntersects(regionIntersects);
-
-		List<RegionIntersectMatchedItem> regionIntersectMatched = new ArrayList<RegionIntersectMatchedItem>();
-		for (int i = 0; i < _ctx.lengthValue("DetectVehicleICongestionResponse.Data.RegionIntersectMatched.Length"); i++) {
-			RegionIntersectMatchedItem regionIntersectMatchedItem = new RegionIntersectMatchedItem();
-
-			List<Long> ids1 = new ArrayList<Long>();
-			for (int j = 0; j < _ctx.lengthValue("DetectVehicleICongestionResponse.Data.RegionIntersectMatched["+ i +"].Ids.Length"); j++) {
-				ids1.add(_ctx.longValue("DetectVehicleICongestionResponse.Data.RegionIntersectMatched["+ i +"].Ids["+ j +"]"));
-			}
-			regionIntersectMatchedItem.setIds1(ids1);
-
-			regionIntersectMatched.add(regionIntersectMatchedItem);
-		}
-		data.setRegionIntersectMatched(regionIntersectMatched);
 
 		List<Element> elements = new ArrayList<Element>();
 		for (int i = 0; i < _ctx.lengthValue("DetectVehicleICongestionResponse.Data.Elements.Length"); i++) {
 			Element element = new Element();
-			element.setTypeName(_ctx.stringValue("DetectVehicleICongestionResponse.Data.Elements["+ i +"].TypeName"));
 			element.setScore(_ctx.floatValue("DetectVehicleICongestionResponse.Data.Elements["+ i +"].Score"));
+			element.setTypeName(_ctx.stringValue("DetectVehicleICongestionResponse.Data.Elements["+ i +"].TypeName"));
 
 			List<BoxesItem> boxes = new ArrayList<BoxesItem>();
 			for (int j = 0; j < _ctx.lengthValue("DetectVehicleICongestionResponse.Data.Elements["+ i +"].Boxes.Length"); j++) {
@@ -100,6 +58,48 @@ public class DetectVehicleICongestionResponseUnmarshaller {
 			elements.add(element);
 		}
 		data.setElements(elements);
+
+		List<RegionIntersectFeaturesItem> regionIntersectFeatures = new ArrayList<RegionIntersectFeaturesItem>();
+		for (int i = 0; i < _ctx.lengthValue("DetectVehicleICongestionResponse.Data.RegionIntersectFeatures.Length"); i++) {
+			RegionIntersectFeaturesItem regionIntersectFeaturesItem = new RegionIntersectFeaturesItem();
+
+			List<String> features = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DetectVehicleICongestionResponse.Data.RegionIntersectFeatures["+ i +"].Features.Length"); j++) {
+				features.add(_ctx.stringValue("DetectVehicleICongestionResponse.Data.RegionIntersectFeatures["+ i +"].Features["+ j +"]"));
+			}
+			regionIntersectFeaturesItem.setFeatures(features);
+
+			regionIntersectFeatures.add(regionIntersectFeaturesItem);
+		}
+		data.setRegionIntersectFeatures(regionIntersectFeatures);
+
+		List<RegionIntersectMatchedItem> regionIntersectMatched = new ArrayList<RegionIntersectMatchedItem>();
+		for (int i = 0; i < _ctx.lengthValue("DetectVehicleICongestionResponse.Data.RegionIntersectMatched.Length"); i++) {
+			RegionIntersectMatchedItem regionIntersectMatchedItem = new RegionIntersectMatchedItem();
+
+			List<Long> ids = new ArrayList<Long>();
+			for (int j = 0; j < _ctx.lengthValue("DetectVehicleICongestionResponse.Data.RegionIntersectMatched["+ i +"].Ids.Length"); j++) {
+				ids.add(_ctx.longValue("DetectVehicleICongestionResponse.Data.RegionIntersectMatched["+ i +"].Ids["+ j +"]"));
+			}
+			regionIntersectMatchedItem.setIds(ids);
+
+			regionIntersectMatched.add(regionIntersectMatchedItem);
+		}
+		data.setRegionIntersectMatched(regionIntersectMatched);
+
+		List<RegionIntersectsItem> regionIntersects = new ArrayList<RegionIntersectsItem>();
+		for (int i = 0; i < _ctx.lengthValue("DetectVehicleICongestionResponse.Data.RegionIntersects.Length"); i++) {
+			RegionIntersectsItem regionIntersectsItem = new RegionIntersectsItem();
+
+			List<Long> ids1 = new ArrayList<Long>();
+			for (int j = 0; j < _ctx.lengthValue("DetectVehicleICongestionResponse.Data.RegionIntersects["+ i +"].Ids.Length"); j++) {
+				ids1.add(_ctx.longValue("DetectVehicleICongestionResponse.Data.RegionIntersects["+ i +"].Ids["+ j +"]"));
+			}
+			regionIntersectsItem.setIds1(ids1);
+
+			regionIntersects.add(regionIntersectsItem);
+		}
+		data.setRegionIntersects(regionIntersects);
 		detectVehicleICongestionResponse.setData(data);
 	 
 	 	return detectVehicleICongestionResponse;

@@ -29,10 +29,10 @@ public class DetectMainBodyResponseUnmarshaller {
 		Data data = new Data();
 
 		Location location = new Location();
-		location.setX(_ctx.integerValue("DetectMainBodyResponse.Data.Location.X"));
-		location.setY(_ctx.integerValue("DetectMainBodyResponse.Data.Location.Y"));
-		location.setHeight(_ctx.integerValue("DetectMainBodyResponse.Data.Location.Height"));
 		location.setWidth(_ctx.integerValue("DetectMainBodyResponse.Data.Location.Width"));
+		location.setHeight(_ctx.integerValue("DetectMainBodyResponse.Data.Location.Height"));
+		location.setY(_ctx.integerValue("DetectMainBodyResponse.Data.Location.Y"));
+		location.setX(_ctx.integerValue("DetectMainBodyResponse.Data.Location.X"));
 		data.setLocation(location);
 		detectMainBodyResponse.setData(data);
 	 

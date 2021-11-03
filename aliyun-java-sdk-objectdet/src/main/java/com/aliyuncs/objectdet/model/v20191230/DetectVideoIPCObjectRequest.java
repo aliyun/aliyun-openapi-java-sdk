@@ -25,6 +25,10 @@ import com.aliyuncs.objectdet.Endpoint;
 public class DetectVideoIPCObjectRequest extends RpcAcsRequest<DetectVideoIPCObjectResponse> {
 	   
 
+	private Long startTimestamp;
+
+	private Boolean callbackOnlyHasObject;
+
 	private String videoURL;
 	public DetectVideoIPCObjectRequest() {
 		super("objectdet", "2019-12-30", "DetectVideoIPCObject");
@@ -33,6 +37,28 @@ public class DetectVideoIPCObjectRequest extends RpcAcsRequest<DetectVideoIPCObj
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Long getStartTimestamp() {
+		return this.startTimestamp;
+	}
+
+	public void setStartTimestamp(Long startTimestamp) {
+		this.startTimestamp = startTimestamp;
+		if(startTimestamp != null){
+			putBodyParameter("StartTimestamp", startTimestamp.toString());
+		}
+	}
+
+	public Boolean getCallbackOnlyHasObject() {
+		return this.callbackOnlyHasObject;
+	}
+
+	public void setCallbackOnlyHasObject(Boolean callbackOnlyHasObject) {
+		this.callbackOnlyHasObject = callbackOnlyHasObject;
+		if(callbackOnlyHasObject != null){
+			putBodyParameter("CallbackOnlyHasObject", callbackOnlyHasObject.toString());
+		}
 	}
 
 	public String getVideoURL() {

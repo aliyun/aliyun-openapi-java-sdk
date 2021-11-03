@@ -40,8 +40,8 @@ public class RecognizeVehiclePartsResponseUnmarshaller {
 		List<Element> elements = new ArrayList<Element>();
 		for (int i = 0; i < _ctx.lengthValue("RecognizeVehiclePartsResponse.Data.Elements.Length"); i++) {
 			Element element = new Element();
-			element.setScore(_ctx.floatValue("RecognizeVehiclePartsResponse.Data.Elements["+ i +"].Score"));
 			element.setType(_ctx.stringValue("RecognizeVehiclePartsResponse.Data.Elements["+ i +"].Type"));
+			element.setScore(_ctx.floatValue("RecognizeVehiclePartsResponse.Data.Elements["+ i +"].Score"));
 
 			List<Integer> boxes = new ArrayList<Integer>();
 			for (int j = 0; j < _ctx.lengthValue("RecognizeVehiclePartsResponse.Data.Elements["+ i +"].Boxes.Length"); j++) {

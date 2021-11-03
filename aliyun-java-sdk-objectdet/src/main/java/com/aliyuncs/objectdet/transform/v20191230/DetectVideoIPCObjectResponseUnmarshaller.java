@@ -29,12 +29,12 @@ public class DetectVideoIPCObjectResponseUnmarshaller {
 	public static DetectVideoIPCObjectResponse unmarshall(DetectVideoIPCObjectResponse detectVideoIPCObjectResponse, UnmarshallerContext _ctx) {
 		
 		detectVideoIPCObjectResponse.setRequestId(_ctx.stringValue("DetectVideoIPCObjectResponse.RequestId"));
-		detectVideoIPCObjectResponse.setMessage(_ctx.stringValue("DetectVideoIPCObjectResponse.Message"));
 		detectVideoIPCObjectResponse.setCode(_ctx.stringValue("DetectVideoIPCObjectResponse.Code"));
+		detectVideoIPCObjectResponse.setMessage(_ctx.stringValue("DetectVideoIPCObjectResponse.Message"));
 
 		Data data = new Data();
-		data.setHeight(_ctx.longValue("DetectVideoIPCObjectResponse.Data.Height"));
 		data.setWidth(_ctx.longValue("DetectVideoIPCObjectResponse.Data.Width"));
+		data.setHeight(_ctx.longValue("DetectVideoIPCObjectResponse.Data.Height"));
 		data.setInputFile(_ctx.stringValue("DetectVideoIPCObjectResponse.Data.InputFile"));
 
 		List<Frame> frames = new ArrayList<Frame>();
@@ -45,12 +45,12 @@ public class DetectVideoIPCObjectResponseUnmarshaller {
 			List<ElementsItem> elements = new ArrayList<ElementsItem>();
 			for (int j = 0; j < _ctx.lengthValue("DetectVideoIPCObjectResponse.Data.Frames["+ i +"].Elements.Length"); j++) {
 				ElementsItem elementsItem = new ElementsItem();
-				elementsItem.setScore(_ctx.floatValue("DetectVideoIPCObjectResponse.Data.Frames["+ i +"].Elements["+ j +"].Score"));
 				elementsItem.setType(_ctx.stringValue("DetectVideoIPCObjectResponse.Data.Frames["+ i +"].Elements["+ j +"].Type"));
 				elementsItem.setX(_ctx.longValue("DetectVideoIPCObjectResponse.Data.Frames["+ i +"].Elements["+ j +"].X"));
 				elementsItem.setY(_ctx.longValue("DetectVideoIPCObjectResponse.Data.Frames["+ i +"].Elements["+ j +"].Y"));
-				elementsItem.setHeight(_ctx.longValue("DetectVideoIPCObjectResponse.Data.Frames["+ i +"].Elements["+ j +"].Height"));
 				elementsItem.setWidth(_ctx.longValue("DetectVideoIPCObjectResponse.Data.Frames["+ i +"].Elements["+ j +"].Width"));
+				elementsItem.setHeight(_ctx.longValue("DetectVideoIPCObjectResponse.Data.Frames["+ i +"].Elements["+ j +"].Height"));
+				elementsItem.setScore(_ctx.floatValue("DetectVideoIPCObjectResponse.Data.Frames["+ i +"].Elements["+ j +"].Score"));
 
 				elements.add(elementsItem);
 			}
