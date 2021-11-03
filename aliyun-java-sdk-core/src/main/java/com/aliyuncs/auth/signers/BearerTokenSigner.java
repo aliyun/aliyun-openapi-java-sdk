@@ -1,8 +1,10 @@
-package com.aliyuncs.auth;
+package com.aliyuncs.auth.signers;
+
+import com.aliyuncs.auth.AlibabaCloudCredentials;
+import com.aliyuncs.auth.Signer;
 
 import java.security.NoSuchAlgorithmException;
 
-@Deprecated
 public class BearerTokenSigner extends Signer {
 
     @Override

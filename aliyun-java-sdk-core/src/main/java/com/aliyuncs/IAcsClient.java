@@ -19,6 +19,8 @@
 package com.aliyuncs;
 
 import com.aliyuncs.auth.Credential;
+import com.aliyuncs.auth.SignatureVersion;
+import com.aliyuncs.auth.signers.SignatureAlgorithm;
 import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.exceptions.ServerException;
 import com.aliyuncs.http.HttpResponse;
@@ -68,4 +70,12 @@ public interface IAcsClient {
     void ignoreSSLCertificate();
 
     void shutdown();
+
+    SignatureVersion getSignatureVersion();
+
+    void setSignatureVersion(SignatureVersion signatureVersion);
+
+    SignatureAlgorithm getSignatureAlgorithm();
+
+    void setSignatureAlgorithm(SignatureAlgorithm signatureAlgorithm);
 }

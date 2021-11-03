@@ -1,7 +1,11 @@
-package com.aliyuncs.auth;
+package com.aliyuncs.auth.signers;
 
+import com.aliyuncs.auth.AlibabaCloudCredentials;
 import org.junit.Assert;
 import org.junit.Test;
+
+import java.nio.charset.StandardCharsets;
+import java.security.NoSuchAlgorithmException;
 
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
@@ -43,5 +47,21 @@ public class HmacSHA1SignerTest {
         HmacSHA1Signer signer = new HmacSHA1Signer();
         String signedString = signer.signString(stringToSign, credentials);
         Assert.assertEquals("7eV3A584uvdgKVk8Ck8r9ukg1gE=", signedString);
+    }
+
+    @Test
+    public void hash() {
+        HmacSHA1Signer signer = new HmacSHA1Signer();
+        try {
+            Assert.assertNull(signer.hash("".getBytes(StandardCharsets.UTF_8)));
+        } catch (NoSuchAlgorithmException e) {
+            Assert.fail();
+        }
+    }
+
+    @Test
+    public void getContent() {
+        HmacSHA1Signer signer = new HmacSHA1Signer();
+        Assert.assertNull(signer.getContent());
     }
 }

@@ -1,6 +1,7 @@
 package com.aliyuncs;
 
 import com.aliyuncs.auth.*;
+import com.aliyuncs.auth.signers.SignatureAlgorithm;
 import com.aliyuncs.endpoint.DefaultEndpointResolver;
 import com.aliyuncs.endpoint.EndpointResolver;
 import com.aliyuncs.endpoint.ResolveEndpointRequest;
@@ -49,6 +50,9 @@ public class DefaultAcsClient implements IAcsClient {
     private EndpointResolver endpointResolver;
     private static final String SIGNATURE_BEGIN = "string to sign is:";
     private final UserAgentConfig userAgentConfig = new UserAgentConfig();
+    private SignatureVersion signatureVersion = SignatureVersion.V1;
+    private SignatureAlgorithm signatureAlgorithm = SignatureAlgorithm.ACS3_HMAC_SHA256;
+
 
     /**
      * @Deprecated : Use DefaultAcsClient(String regionId) instead of this
@@ -105,7 +109,13 @@ public class DefaultAcsClient implements IAcsClient {
     @Override
     public <T extends AcsResponse> HttpResponse doAction(AcsRequest<T> request, String regionId, Credential credential)
             throws ClientException, ServerException {
-        Signer signer = Signer.getSigner(new LegacyCredentials(credential));
+        if (null == request.getSignatureVersion()) {
+            request.setSignatureVersion(this.signatureVersion);
+        }
+        if (null == request.getSignatureAlgorithm()) {
+            request.setSignatureAlgorithm(this.signatureAlgorithm);
+        }
+        Signer signer = Signer.getSigner(new LegacyCredentials(credential), request.getSignatureVersion(), request.getSignatureAlgorithm());
         FormatType format = null;
         if (null == request.getSysRegionId()) {
             request.setSysRegionId(regionId);
@@ -191,7 +201,13 @@ public class DefaultAcsClient implements IAcsClient {
         } else {
             credentials = this.credentialsProvider.getCredentials();
         }
-        Signer signer = Signer.getSigner(credentials);
+        if (null == request.getSignatureVersion()) {
+            request.setSignatureVersion(this.signatureVersion);
+        }
+        if (null == request.getSignatureAlgorithm()) {
+            request.setSignatureAlgorithm(this.signatureAlgorithm);
+        }
+        Signer signer = Signer.getSigner(credentials, request.getSignatureVersion(), request.getSignatureAlgorithm());
         FormatType format = profile.getFormat();
 
         return this.doAction(request, retry, retryNumber, request.getSysRegionId(), credentials, signer, format);
@@ -520,6 +536,26 @@ public class DefaultAcsClient implements IAcsClient {
 
     public AlibabaCloudCredentialsProvider getCredentialsProvider() {
         return credentialsProvider;
+    }
+
+    @Override
+    public SignatureVersion getSignatureVersion() {
+        return signatureVersion;
+    }
+
+    @Override
+    public void setSignatureVersion(SignatureVersion signatureVersion) {
+        this.signatureVersion = signatureVersion;
+    }
+
+    @Override
+    public SignatureAlgorithm getSignatureAlgorithm() {
+        return signatureAlgorithm;
+    }
+
+    @Override
+    public void setSignatureAlgorithm(SignatureAlgorithm signatureAlgorithm) {
+        this.signatureAlgorithm = signatureAlgorithm;
     }
 
 }

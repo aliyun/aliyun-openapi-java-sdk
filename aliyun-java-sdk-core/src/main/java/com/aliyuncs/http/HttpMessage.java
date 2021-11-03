@@ -273,4 +273,8 @@ public abstract class HttpMessage {
     public Map<String, String> getSysHeaders() {
         return Collections.unmodifiableMap(headers);
     }
+
+    public String getStrToSign(){
+        return null;
+    }
 }

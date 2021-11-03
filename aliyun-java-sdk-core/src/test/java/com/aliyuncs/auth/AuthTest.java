@@ -20,6 +20,7 @@ package com.aliyuncs.auth;
 
 import com.aliyuncs.AcsRequest;
 import com.aliyuncs.RoaAcsRequest;
+import com.aliyuncs.auth.signers.HmacSHA1Signer;
 import com.aliyuncs.ecs.v20140526.model.DescribeRegionsRequest;
 import com.aliyuncs.ecs.v20140526.model.GetRegionsRequest;
 import com.aliyuncs.http.FormatType;

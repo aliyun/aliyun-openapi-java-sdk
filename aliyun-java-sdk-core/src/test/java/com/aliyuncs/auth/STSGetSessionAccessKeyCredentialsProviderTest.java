@@ -11,7 +11,7 @@ import org.junit.Test;
 
 import java.lang.reflect.Field;
 
-import static org.mockito.Matchers.any;
+import static org.mockito.Mockito.any;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 

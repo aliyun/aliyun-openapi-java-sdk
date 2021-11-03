@@ -16,6 +16,8 @@ public class HttpClientConfig {
     public static final long DEFAULT_CONNECTION_TIMEOUT = 5000;
 
     public static final long DEFAULT_READ_TIMEOUT = 10000;
+
+    public static final String IGNORE_SSL_ENV = "ALIBABACLOUD_JAVA_CORE_INGNORE_SSL";
     /**
      * client type
      */
@@ -255,7 +257,7 @@ public class HttpClientConfig {
     }
 
     public boolean isIgnoreSSLCerts() {
-        return ignoreSSLCerts;
+        return "YES".equals(System.getProperty(IGNORE_SSL_ENV)) || "YES".equals(System.getenv(IGNORE_SSL_ENV)) || this.ignoreSSLCerts;
     }
 
     public void setIgnoreSSLCerts(boolean ignoreSSLCerts) {

@@ -17,41 +17,34 @@
  * under the License.
  */
 
-package com.aliyuncs.auth;
+package com.aliyuncs.auth.signers;
 
-import javax.xml.bind.DatatypeConverter;
-import java.io.UnsupportedEncodingException;
-import java.security.*;
-import java.security.spec.InvalidKeySpecException;
-import java.security.spec.PKCS8EncodedKeySpec;
+import com.aliyuncs.auth.AlibabaCloudCredentials;
+import com.aliyuncs.auth.Signer;
 
-@Deprecated
-public class SHA256withRSASigner extends Signer {
+import javax.crypto.Mac;
+import javax.crypto.spec.SecretKeySpec;
+import java.security.InvalidKeyException;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 
-    public static final String ENCODING = "UTF-8";
-    private static final String ALGORITHM_NAME = "SHA256withRSA";
+import static com.aliyuncs.auth.AcsURLEncoder.hexEncode;
+
+public class HmacSHA256Signer extends Signer {
+
+    private static final String ALGORITHM_NAME = "HmacSHA256";
+    private static String HASH_SHA256 = "SHA-256";
 
     @Override
     public String signString(String stringToSign, String accessKeySecret) {
         try {
-            Signature rsaSign = Signature.getInstance("SHA256withRSA");
-            KeyFactory kf = KeyFactory.getInstance("RSA");
-            byte[] keySpec = DatatypeConverter.parseBase64Binary(accessKeySecret);
-            PrivateKey privateKey = kf.generatePrivate(new PKCS8EncodedKeySpec(keySpec));
-            rsaSign.initSign(privateKey);
-            rsaSign.update(stringToSign.getBytes(ENCODING));
-            byte[] sign = rsaSign.sign();
-            String signature = DatatypeConverter.printBase64Binary(sign);
-            return signature;
+            Mac sha256_HMAC = Mac.getInstance(ALGORITHM_NAME);
+            SecretKeySpec secret_key = new SecretKeySpec(accessKeySecret.getBytes(), ALGORITHM_NAME);
+            sha256_HMAC.init(secret_key);
+            return hexEncode(sha256_HMAC.doFinal(stringToSign.getBytes()));
         } catch (NoSuchAlgorithmException e) {
             throw new IllegalArgumentException(e.toString());
-        } catch (InvalidKeySpecException e) {
-            throw new IllegalArgumentException(e.toString());
         } catch (InvalidKeyException e) {
-            throw new IllegalArgumentException(e.toString());
-        } catch (SignatureException e) {
-            throw new IllegalArgumentException(e.toString());
-        } catch (UnsupportedEncodingException e) {
             throw new IllegalArgumentException(e.toString());
         }
     }
@@ -68,21 +61,25 @@ public class SHA256withRSASigner extends Signer {
 
     @Override
     public String getSignerVersion() {
-        return "1.0";
+        return "3.0";
     }
 
     @Override
     public String getSignerType() {
-        return "PRIVATEKEY";
+        return null;
     }
 
     @Override
     public byte[] hash(byte[] raw) throws NoSuchAlgorithmException {
-        return null;
+        if(null == raw){
+            return null;
+        }
+        MessageDigest digest = MessageDigest.getInstance(HASH_SHA256);
+        return digest.digest(raw);
     }
 
     @Override
     public String getContent() {
-        return null;
+        return "x-acs-content-sha256";
     }
 }

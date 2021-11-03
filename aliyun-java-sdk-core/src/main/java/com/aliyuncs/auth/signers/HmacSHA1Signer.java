@@ -1,13 +1,18 @@
-package com.aliyuncs.auth;
+package com.aliyuncs.auth.signers;
+
+import com.aliyuncs.auth.AlibabaCloudCredentials;
+import com.aliyuncs.auth.Signer;
+import org.bouncycastle.jce.provider.BouncyCastleProvider;
+
+import java.io.UnsupportedEncodingException;
+import java.security.InvalidKeyException;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
 import javax.xml.bind.DatatypeConverter;
-import java.io.UnsupportedEncodingException;
-import java.security.InvalidKeyException;
-import java.security.NoSuchAlgorithmException;
 
-@Deprecated
 public class HmacSHA1Signer extends Signer {
 
     public static final String ENCODING = "UTF-8";

@@ -18,7 +18,7 @@ import org.powermock.modules.junit4.PowerMockRunner;
 import com.aliyuncs.auth.AlibabaCloudCredentials;
 import com.aliyuncs.auth.BasicSessionCredentials;
 import com.aliyuncs.auth.BearerTokenCredentials;
-import com.aliyuncs.auth.HmacSHA1Signer;
+import com.aliyuncs.auth.signers.HmacSHA1Signer;
 import com.aliyuncs.auth.RoaSignatureComposer;
 import com.aliyuncs.http.FormatType;
 import com.aliyuncs.http.HttpRequest;

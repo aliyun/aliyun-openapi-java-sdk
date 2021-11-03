@@ -248,6 +248,8 @@ public class CommonRpcRequestTest {
         Map<String, String> map = commonRpcRequest.getSysBodyParameters();
         Assert.assertEquals("test", map.get("test"));
 
+        commonRpcRequest = new CommonRpcRequest("test");
+        commonRpcRequest.setSysProtocol(ProtocolType.HTTP);
         commonRpcRequest.putQueryParameter("BearerToken", "test");
         when(bearerTokenCredentials.getBearerToken()).thenReturn(null);
         commonRpcRequest.signRequest(signer, bearerTokenCredentials, FormatType.JSON, domain);
@@ -262,9 +264,12 @@ public class CommonRpcRequestTest {
         map = commonRpcRequest.getSysBodyParameters();
         Assert.assertEquals("xml", map.get("test"));
 
+        commonRpcRequest = new CommonRpcRequest("test");
+        commonRpcRequest.setSysProtocol(ProtocolType.HTTP);
         commonRpcRequest.setHttpContentType(FormatType.FORM);
-        commonRpcRequest.signRequest(signer, keyPairCredentials, FormatType.JSON, domain);
         commonRpcRequest.putBodyParameter("test", "Form");
+        commonRpcRequest.signRequest(signer, keyPairCredentials, FormatType.JSON, domain);
+        map = commonRpcRequest.getSysBodyParameters();
         Assert.assertEquals("Form", map.get("test"));
     }
 }

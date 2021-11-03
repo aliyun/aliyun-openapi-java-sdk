@@ -17,40 +17,40 @@
  * under the License.
  */
 
-package com.aliyuncs.auth;
+package com.aliyuncs.auth.signers;
 
-import javax.xml.bind.DatatypeConverter;
+import com.aliyuncs.auth.AlibabaCloudCredentials;
+import com.aliyuncs.auth.Signer;
+import org.bouncycastle.crypto.digests.SM3Digest;
+import org.bouncycastle.crypto.macs.HMac;
+import org.bouncycastle.crypto.params.KeyParameter;
+import org.bouncycastle.jce.provider.BouncyCastleProvider;
+
+import javax.crypto.SecretKey;
+import javax.crypto.spec.SecretKeySpec;
 import java.io.UnsupportedEncodingException;
-import java.security.*;
-import java.security.spec.InvalidKeySpecException;
-import java.security.spec.PKCS8EncodedKeySpec;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 
-@Deprecated
-public class SHA256withRSASigner extends Signer {
+import static com.aliyuncs.auth.AcsURLEncoder.hexEncode;
+
+public class HmacSM3Signer extends Signer {
 
     public static final String ENCODING = "UTF-8";
-    private static final String ALGORITHM_NAME = "SHA256withRSA";
+    private static final String ALGORITHM_NAME = "HMAC-SM3";
+    private static String HASH_SM3 = "SM3";
 
     @Override
     public String signString(String stringToSign, String accessKeySecret) {
         try {
-            Signature rsaSign = Signature.getInstance("SHA256withRSA");
-            KeyFactory kf = KeyFactory.getInstance("RSA");
-            byte[] keySpec = DatatypeConverter.parseBase64Binary(accessKeySecret);
-            PrivateKey privateKey = kf.generatePrivate(new PKCS8EncodedKeySpec(keySpec));
-            rsaSign.initSign(privateKey);
-            rsaSign.update(stringToSign.getBytes(ENCODING));
-            byte[] sign = rsaSign.sign();
-            String signature = DatatypeConverter.printBase64Binary(sign);
-            return signature;
-        } catch (NoSuchAlgorithmException e) {
-            throw new IllegalArgumentException(e.toString());
-        } catch (InvalidKeySpecException e) {
-            throw new IllegalArgumentException(e.toString());
-        } catch (InvalidKeyException e) {
-            throw new IllegalArgumentException(e.toString());
-        } catch (SignatureException e) {
-            throw new IllegalArgumentException(e.toString());
+            SecretKey key = new SecretKeySpec((accessKeySecret).getBytes(ENCODING), ALGORITHM_NAME);
+            HMac mac = new HMac(new SM3Digest());
+            byte[] sign = new byte[mac.getMacSize()];
+            byte[] inputBytes = stringToSign.getBytes(ENCODING);
+            mac.init(new KeyParameter(key.getEncoded()));
+            mac.update(inputBytes, 0, inputBytes.length);
+            mac.doFinal(sign, 0);
+            return hexEncode(sign);
         } catch (UnsupportedEncodingException e) {
             throw new IllegalArgumentException(e.toString());
         }
@@ -68,21 +68,26 @@ public class SHA256withRSASigner extends Signer {
 
     @Override
     public String getSignerVersion() {
-        return "1.0";
+        return "3.0";
     }
 
     @Override
     public String getSignerType() {
-        return "PRIVATEKEY";
+        return null;
     }
 
     @Override
     public byte[] hash(byte[] raw) throws NoSuchAlgorithmException {
-        return null;
+        if(null == raw){
+            return null;
+        }
+        BouncyCastleProvider provider = new BouncyCastleProvider();
+        MessageDigest digest = MessageDigest.getInstance(HASH_SM3, provider);
+        return digest.digest(raw);
     }
 
     @Override
     public String getContent() {
-        return null;
+        return "x-acs-content-sm3";
     }
 }

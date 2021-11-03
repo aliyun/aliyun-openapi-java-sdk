@@ -17,7 +17,10 @@
  * under the License.
  */
 
-package com.aliyuncs.auth;
+package com.aliyuncs.auth.signers;
+
+import com.aliyuncs.auth.AlibabaCloudCredentials;
+import com.aliyuncs.auth.Signer;
 
 import javax.xml.bind.DatatypeConverter;
 import java.io.UnsupportedEncodingException;
@@ -25,7 +28,6 @@ import java.security.*;
 import java.security.spec.InvalidKeySpecException;
 import java.security.spec.PKCS8EncodedKeySpec;
 
-@Deprecated
 public class SHA256withRSASigner extends Signer {
 
     public static final String ENCODING = "UTF-8";

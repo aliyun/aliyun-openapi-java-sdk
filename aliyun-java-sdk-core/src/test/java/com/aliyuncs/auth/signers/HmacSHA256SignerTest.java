@@ -1,33 +1,36 @@
-package com.aliyuncs.auth;
+package com.aliyuncs.auth.signers;
 
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
-
+import com.aliyuncs.auth.AlibabaCloudCredentials;
 import org.junit.Assert;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
-public class SHA256withRSASignerTest {
+import java.security.NoSuchAlgorithmException;
+
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
+
+public class HmacSHA256SignerTest {
     @Rule
     public ExpectedException thrown = ExpectedException.none();
 
     @Test
     public void getSignerName() {
-        SHA256withRSASigner signer = new SHA256withRSASigner();
-        Assert.assertEquals("SHA256withRSA", signer.getSignerName());
+        HmacSHA256Signer signer = new HmacSHA256Signer();
+        Assert.assertEquals("HmacSHA256", signer.getSignerName());
     }
 
     @Test
     public void getSignerVersion() {
-        SHA256withRSASigner signer = new SHA256withRSASigner();
-        Assert.assertEquals("1.0", signer.getSignerVersion());
+        HmacSHA256Signer signer = new HmacSHA256Signer();
+        Assert.assertEquals("3.0", signer.getSignerVersion());
     }
 
     @Test
     public void getSignerType() {
-        SHA256withRSASigner signer = new SHA256withRSASigner();
-        Assert.assertEquals("PRIVATEKEY", signer.getSignerType());
+        HmacSHA256Signer signer = new HmacSHA256Signer();
+        Assert.assertNull(signer.getSignerType());
     }
 
     @Test
@@ -51,23 +54,10 @@ public class SHA256withRSASignerTest {
                 + "y0HrYcRjDdwC/d+qoiQEJNhTFrAoGBAJqc15i8tlEVjU45uWmJs+mpG6x365MGsC7q9yZ31xUCCx1lwZSlidmaY19q+wGJK"
                 + "iYSz/4+KyWuOdRaFbWY/Y4jq7lVinc1S1OR8yqOSyCiYIJaDYHbPsMdZ9twX0aY/QkN+O9RyGnwL4Lmbkt/lry+OyC1vZEF"
                 + "SNzdR5kSfNvY";
-        SHA256withRSASigner signer = new SHA256withRSASigner();
+        HmacSHA256Signer signer = new HmacSHA256Signer();
         String signedString = signer.signString(stringToSign, sk);
-        String expectString = "j1c7LUMlLlwdQBLahl9km79D2o+sUIvWsYLM2f72ST0huc3Nyq1pxxE3zQImGDQUnDkhIA/Vt6jhq5NHE1T"
-                + "ua55YN4cmrMG88NloXXlV8LuINYhLKOUBSFFJzu7fuxDg9NZzF1h5j7jNMDghEJdzV85hy9L/8vBHQ+GnljS2dBAw4jzTyw"
-                + "6iSUE0W44+atzOzSsStbXT6Ab9nM2rVWeM6vv49CDoqn1VvgW0IpVIlmwDIY2JRarIDgyLn4ANCzijorJde0MNPOdBXNGE+"
-                + "H9gL51VoWiXVrceqjFk+CveJe30c30Po9pDCB0DWO4oG4FRJoHygg7MaB4QvHtlP3MvPg==";
+        String expectString = "7070fc618be1a3bae79889f6c8edd47c6c6054c9dcee92b9228a6787ca3729e2";
         Assert.assertEquals(expectString, signedString);
-    }
-
-    @Test
-    public void signStringWithSKThrowIllegalArgumentExceptiony() {
-        thrown.expect(IllegalArgumentException.class);
-        String stringToSign = "abc!@#";
-        String sk = "sk";
-        SHA256withRSASigner signer = new SHA256withRSASigner();
-        String signedString = signer.signString(stringToSign, sk);
-        Assert.assertEquals("abc", signedString);
     }
 
     @Test
@@ -92,12 +82,25 @@ public class SHA256withRSASignerTest {
                 + "WY/Y4jq7lVinc1S1OR8yqOSyCiYIJaDYHbPsMdZ9twX0aY/QkN+O9RyGnwL4Lmbkt/lry+OyC1vZEFSNzdR5kSfNvY";
         AlibabaCloudCredentials credentials = mock(AlibabaCloudCredentials.class);
         when(credentials.getAccessKeySecret()).thenReturn(sk);
-        SHA256withRSASigner signer = new SHA256withRSASigner();
+        HmacSHA256Signer signer = new HmacSHA256Signer();
         String signedString = signer.signString(stringToSign, credentials);
-        String expectString = "P4MU1oQMNqbj/NJiSFkRpPtytlBY5PYxyXvSrt3nhr5O2Gsrn1VUZDmsB0MHtY6/73Rjo1AbT4qMsgYsUAvZ"
-                + "+hSL8cS552EYje3pNI61+LHf3Cb2cvoPMiowqf28XB/3kbgP9L7IDu5fo51tjZmWtJyiZ7iV4JTh3Mv2JOxqUVS0r2cNf+YV"
-                + "8rj2mtpw/XwSaU3NdSP7AYdujedxhFaaEWB/udLE+PV+sbxUgWejw5LFhGvbWoO8NkPBFWwMUsxaP+0cxgoBbVwjmf8cOqZg"
-                + "asT2lOu1Jh7m7aavFnfk+0BOkxmocnQLCcSEkRiOWq371VvK1Xt/fNuRZZ0syTmViA==";
+        String expectString = "5fa387e0d92355c28e718dcf7721c232045d2ca8fcc9d4808ce7d2f9f8c9f372";
         Assert.assertEquals(expectString, signedString);
+    }
+
+    @Test
+    public void hash() {
+        HmacSHA256Signer signer = new HmacSHA256Signer();
+        try {
+            Assert.assertNull(signer.hash(null));
+        } catch (NoSuchAlgorithmException e) {
+            Assert.fail();
+        }
+    }
+
+    @Test
+    public void getContent() {
+        HmacSHA256Signer signer = new HmacSHA256Signer();
+        Assert.assertEquals("x-acs-content-sha256", signer.getContent());
     }
 }
