@@ -27,9 +27,13 @@ public class CreateRenderingDeviceRequest extends RpcAcsRequest<CreateRenderingD
 
 	private String imageId;
 
+	private String iSP;
+
 	private String securityGroupId;
 
 	private String description;
+
+	private String password;
 
 	private String instanceChargeType;
 
@@ -46,6 +50,8 @@ public class CreateRenderingDeviceRequest extends RpcAcsRequest<CreateRenderingD
 	private Long ownerId;
 
 	private String periodUnit;
+
+	private String instanceName;
 
 	private Boolean autoRenew;
 
@@ -70,6 +76,17 @@ public class CreateRenderingDeviceRequest extends RpcAcsRequest<CreateRenderingD
 		}
 	}
 
+	public String getISP() {
+		return this.iSP;
+	}
+
+	public void setISP(String iSP) {
+		this.iSP = iSP;
+		if(iSP != null){
+			putQueryParameter("ISP", iSP);
+		}
+	}
+
 	public String getSecurityGroupId() {
 		return this.securityGroupId;
 	}
@@ -89,6 +106,17 @@ public class CreateRenderingDeviceRequest extends RpcAcsRequest<CreateRenderingD
 		this.description = description;
 		if(description != null){
 			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getPassword() {
+		return this.password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+		if(password != null){
+			putQueryParameter("Password", password);
 		}
 	}
 
@@ -177,6 +205,17 @@ public class CreateRenderingDeviceRequest extends RpcAcsRequest<CreateRenderingD
 		this.periodUnit = periodUnit;
 		if(periodUnit != null){
 			putQueryParameter("PeriodUnit", periodUnit);
+		}
+	}
+
+	public String getInstanceName() {
+		return this.instanceName;
+	}
+
+	public void setInstanceName(String instanceName) {
+		this.instanceName = instanceName;
+		if(instanceName != null){
+			putQueryParameter("InstanceName", instanceName);
 		}
 	}
 

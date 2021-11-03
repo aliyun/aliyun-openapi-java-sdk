@@ -35,10 +35,13 @@ public class DescribeRenderingDevicesResponseUnmarshaller {
 			Device device = new Device();
 			device.setInstanceId(_ctx.stringValue("DescribeRenderingDevicesResponse.Devices["+ i +"].InstanceId"));
 			device.setClusterId(_ctx.stringValue("DescribeRenderingDevicesResponse.Devices["+ i +"].ClusterId"));
+			device.setDescription(_ctx.stringValue("DescribeRenderingDevicesResponse.Devices["+ i +"].Description"));
 			device.setEdgeNodeName(_ctx.stringValue("DescribeRenderingDevicesResponse.Devices["+ i +"].EdgeNodeName"));
 			device.setPlatformType(_ctx.stringValue("DescribeRenderingDevicesResponse.Devices["+ i +"].PlatformType"));
 			device.setSpecification(_ctx.stringValue("DescribeRenderingDevicesResponse.Devices["+ i +"].Specification"));
 			device.setStatus(_ctx.stringValue("DescribeRenderingDevicesResponse.Devices["+ i +"].Status"));
+			device.setImageId(_ctx.stringValue("DescribeRenderingDevicesResponse.Devices["+ i +"].ImageId"));
+			device.setInstanceName(_ctx.stringValue("DescribeRenderingDevicesResponse.Devices["+ i +"].InstanceName"));
 			device.setMacAddress(_ctx.stringValue("DescribeRenderingDevicesResponse.Devices["+ i +"].MacAddress"));
 			device.setServerName(_ctx.stringValue("DescribeRenderingDevicesResponse.Devices["+ i +"].ServerName"));
 			device.setInstanceChargeType(_ctx.stringValue("DescribeRenderingDevicesResponse.Devices["+ i +"].InstanceChargeType"));

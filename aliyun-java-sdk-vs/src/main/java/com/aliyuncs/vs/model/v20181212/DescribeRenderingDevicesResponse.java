@@ -61,6 +61,8 @@ public class DescribeRenderingDevicesResponse extends AcsResponse {
 
 		private String clusterId;
 
+		private String description;
+
 		private String edgeNodeName;
 
 		private String platformType;
@@ -68,6 +70,10 @@ public class DescribeRenderingDevicesResponse extends AcsResponse {
 		private String specification;
 
 		private String status;
+
+		private String imageId;
+
+		private String instanceName;
 
 		private String macAddress;
 
@@ -101,6 +107,14 @@ public class DescribeRenderingDevicesResponse extends AcsResponse {
 			this.clusterId = clusterId;
 		}
 
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
 		public String getEdgeNodeName() {
 			return this.edgeNodeName;
 		}
@@ -131,6 +145,22 @@ public class DescribeRenderingDevicesResponse extends AcsResponse {
 
 		public void setStatus(String status) {
 			this.status = status;
+		}
+
+		public String getImageId() {
+			return this.imageId;
+		}
+
+		public void setImageId(String imageId) {
+			this.imageId = imageId;
+		}
+
+		public String getInstanceName() {
+			return this.instanceName;
+		}
+
+		public void setInstanceName(String instanceName) {
+			this.instanceName = instanceName;
 		}
 
 		public String getMacAddress() {

@@ -1,3 +1,6 @@
+2021-11-03 Version: 1.11.4
+- Add password and instanceName for VM.
+
 2021-09-26 Version: 1.11.3
 - Support odcap device.
 

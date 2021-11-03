@@ -59,6 +59,8 @@ public class DescribeClusterDevicesResponse extends AcsResponse {
 
 		private String instanceId;
 
+		private String description;
+
 		private String edgeNodeName;
 
 		private String platformType;
@@ -87,6 +89,14 @@ public class DescribeClusterDevicesResponse extends AcsResponse {
 
 		public void setInstanceId(String instanceId) {
 			this.instanceId = instanceId;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
 		}
 
 		public String getEdgeNodeName() {

@@ -25,6 +25,8 @@ import com.aliyuncs.vs.Endpoint;
 public class ResetRenderingDevicesRequest extends RpcAcsRequest<ResetRenderingDevicesResponse> {
 	   
 
+	private String imageId;
+
 	private Long ownerId;
 
 	private String instanceIds;
@@ -35,6 +37,17 @@ public class ResetRenderingDevicesRequest extends RpcAcsRequest<ResetRenderingDe
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getImageId() {
+		return this.imageId;
+	}
+
+	public void setImageId(String imageId) {
+		this.imageId = imageId;
+		if(imageId != null){
+			putQueryParameter("ImageId", imageId);
+		}
 	}
 
 	public Long getOwnerId() {

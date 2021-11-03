@@ -34,6 +34,7 @@ public class DescribeClusterDevicesResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("DescribeClusterDevicesResponse.Devices.Length"); i++) {
 			Device device = new Device();
 			device.setInstanceId(_ctx.stringValue("DescribeClusterDevicesResponse.Devices["+ i +"].InstanceId"));
+			device.setDescription(_ctx.stringValue("DescribeClusterDevicesResponse.Devices["+ i +"].Description"));
 			device.setEdgeNodeName(_ctx.stringValue("DescribeClusterDevicesResponse.Devices["+ i +"].EdgeNodeName"));
 			device.setPlatformType(_ctx.stringValue("DescribeClusterDevicesResponse.Devices["+ i +"].PlatformType"));
 			device.setStatus(_ctx.stringValue("DescribeClusterDevicesResponse.Devices["+ i +"].Status"));

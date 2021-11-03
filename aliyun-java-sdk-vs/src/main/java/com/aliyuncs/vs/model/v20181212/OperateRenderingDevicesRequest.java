@@ -25,13 +25,13 @@ import com.aliyuncs.vs.Endpoint;
 public class OperateRenderingDevicesRequest extends RpcAcsRequest<OperateRenderingDevicesResponse> {
 	   
 
-	private Boolean forceStop;
-
 	private Long ownerId;
 
 	private String instanceIds;
 
 	private String operation;
+
+	private String podId;
 	public OperateRenderingDevicesRequest() {
 		super("vs", "2018-12-12", "OperateRenderingDevices");
 		setMethod(MethodType.POST);
@@ -39,17 +39,6 @@ public class OperateRenderingDevicesRequest extends RpcAcsRequest<OperateRenderi
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Boolean getForceStop() {
-		return this.forceStop;
-	}
-
-	public void setForceStop(Boolean forceStop) {
-		this.forceStop = forceStop;
-		if(forceStop != null){
-			putQueryParameter("ForceStop", forceStop.toString());
-		}
 	}
 
 	public Long getOwnerId() {
@@ -82,6 +71,17 @@ public class OperateRenderingDevicesRequest extends RpcAcsRequest<OperateRenderi
 		this.operation = operation;
 		if(operation != null){
 			putQueryParameter("Operation", operation);
+		}
+	}
+
+	public String getPodId() {
+		return this.podId;
+	}
+
+	public void setPodId(String podId) {
+		this.podId = podId;
+		if(podId != null){
+			putQueryParameter("PodId", podId);
 		}
 	}
 
