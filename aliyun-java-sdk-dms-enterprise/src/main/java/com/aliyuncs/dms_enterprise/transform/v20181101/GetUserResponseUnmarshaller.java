@@ -43,6 +43,11 @@ public class GetUserResponseUnmarshaller {
 		user.setCurExecuteCount(_ctx.longValue("GetUserResponse.User.CurExecuteCount"));
 		user.setMobile(_ctx.stringValue("GetUserResponse.User.Mobile"));
 		user.setUid(_ctx.stringValue("GetUserResponse.User.Uid"));
+		user.setEmail(_ctx.stringValue("GetUserResponse.User.Email"));
+		user.setDingRobot(_ctx.stringValue("GetUserResponse.User.DingRobot"));
+		user.setWebhook(_ctx.stringValue("GetUserResponse.User.Webhook"));
+		user.setSignatureMethod(_ctx.stringValue("GetUserResponse.User.SignatureMethod"));
+		user.setNotificationMode(_ctx.stringValue("GetUserResponse.User.NotificationMode"));
 
 		List<Integer> roleIdList = new ArrayList<Integer>();
 		for (int i = 0; i < _ctx.lengthValue("GetUserResponse.User.RoleIdList.Length"); i++) {

@@ -79,6 +79,8 @@ public class GetApprovalDetailResponse extends AcsResponse {
 
 		private String description;
 
+		private String createTime;
+
 		private String orderType;
 
 		private String title;
@@ -101,6 +103,14 @@ public class GetApprovalDetailResponse extends AcsResponse {
 
 		public void setDescription(String description) {
 			this.description = description;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
 		}
 
 		public String getOrderType() {

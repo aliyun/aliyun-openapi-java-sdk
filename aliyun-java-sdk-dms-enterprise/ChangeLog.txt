@@ -1,3 +1,8 @@
+2021-11-04 Version: 1.23.0
+- Support ListSQLExecAuditLog API.
+- Support ListUsers, GetUser API to return information of Email, Webhook and DingRobot.
+- Support GetApprovalDetail API to return information of CreateTime.
+
 2021-10-25 Version: 1.22.0
 - Support ListInstances and GetInstance API to return StandardGroup information.
 - Support ListUserPermissions, GrantUserPermission, GrantUserPermission to operate instance permission.

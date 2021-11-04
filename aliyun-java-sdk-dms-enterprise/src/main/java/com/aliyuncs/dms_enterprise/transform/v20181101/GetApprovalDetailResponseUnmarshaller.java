@@ -35,6 +35,7 @@ public class GetApprovalDetailResponseUnmarshaller {
 
 		ApprovalDetail approvalDetail = new ApprovalDetail();
 		approvalDetail.setDescription(_ctx.stringValue("GetApprovalDetailResponse.ApprovalDetail.Description"));
+		approvalDetail.setCreateTime(_ctx.stringValue("GetApprovalDetailResponse.ApprovalDetail.CreateTime"));
 		approvalDetail.setOrderType(_ctx.stringValue("GetApprovalDetailResponse.ApprovalDetail.OrderType"));
 		approvalDetail.setTitle(_ctx.stringValue("GetApprovalDetailResponse.ApprovalDetail.Title"));
 		approvalDetail.setAuditId(_ctx.longValue("GetApprovalDetailResponse.ApprovalDetail.AuditId"));

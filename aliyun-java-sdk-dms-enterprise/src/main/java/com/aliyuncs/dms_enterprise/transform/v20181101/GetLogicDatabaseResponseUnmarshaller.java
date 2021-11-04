@@ -38,6 +38,7 @@ public class GetLogicDatabaseResponseUnmarshaller {
 		logicDatabase.setSchemaName(_ctx.stringValue("GetLogicDatabaseResponse.LogicDatabase.SchemaName"));
 		logicDatabase.setSearchName(_ctx.stringValue("GetLogicDatabaseResponse.LogicDatabase.SearchName"));
 		logicDatabase.setEnvType(_ctx.stringValue("GetLogicDatabaseResponse.LogicDatabase.EnvType"));
+		logicDatabase.setAlias(_ctx.stringValue("GetLogicDatabaseResponse.LogicDatabase.Alias"));
 
 		List<String> ownerIdList = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("GetLogicDatabaseResponse.LogicDatabase.OwnerIdList.Length"); i++) {

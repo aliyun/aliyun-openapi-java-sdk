@@ -99,6 +99,16 @@ public class GetUserResponse extends AcsResponse {
 
 		private String uid;
 
+		private String email;
+
+		private String dingRobot;
+
+		private String webhook;
+
+		private String signatureMethod;
+
+		private String notificationMode;
+
 		private List<Integer> roleIdList;
 
 		private List<String> roleNameList;
@@ -189,6 +199,46 @@ public class GetUserResponse extends AcsResponse {
 
 		public void setUid(String uid) {
 			this.uid = uid;
+		}
+
+		public String getEmail() {
+			return this.email;
+		}
+
+		public void setEmail(String email) {
+			this.email = email;
+		}
+
+		public String getDingRobot() {
+			return this.dingRobot;
+		}
+
+		public void setDingRobot(String dingRobot) {
+			this.dingRobot = dingRobot;
+		}
+
+		public String getWebhook() {
+			return this.webhook;
+		}
+
+		public void setWebhook(String webhook) {
+			this.webhook = webhook;
+		}
+
+		public String getSignatureMethod() {
+			return this.signatureMethod;
+		}
+
+		public void setSignatureMethod(String signatureMethod) {
+			this.signatureMethod = signatureMethod;
+		}
+
+		public String getNotificationMode() {
+			return this.notificationMode;
+		}
+
+		public void setNotificationMode(String notificationMode) {
+			this.notificationMode = notificationMode;
 		}
 
 		public List<Integer> getRoleIdList() {

@@ -46,6 +46,11 @@ public class ListUsersResponseUnmarshaller {
 			user.setCurExecuteCount(_ctx.longValue("ListUsersResponse.UserList["+ i +"].CurExecuteCount"));
 			user.setMobile(_ctx.stringValue("ListUsersResponse.UserList["+ i +"].Mobile"));
 			user.setUid(_ctx.stringValue("ListUsersResponse.UserList["+ i +"].Uid"));
+			user.setEmail(_ctx.stringValue("ListUsersResponse.UserList["+ i +"].Email"));
+			user.setDingRobot(_ctx.stringValue("ListUsersResponse.UserList["+ i +"].DingRobot"));
+			user.setWebhook(_ctx.stringValue("ListUsersResponse.UserList["+ i +"].Webhook"));
+			user.setSignatureMethod(_ctx.stringValue("ListUsersResponse.UserList["+ i +"].SignatureMethod"));
+			user.setNotificationMode(_ctx.stringValue("ListUsersResponse.UserList["+ i +"].NotificationMode"));
 
 			List<Integer> roleIdList = new ArrayList<Integer>();
 			for (int j = 0; j < _ctx.lengthValue("ListUsersResponse.UserList["+ i +"].RoleIdList.Length"); j++) {
