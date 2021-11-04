@@ -35,7 +35,7 @@ public abstract class RoaAcsRequest<T extends AcsResponse> extends AcsRequest<T>
         super(product);
         this.setSysVersion(version);
         this.setSysActionName(action);
-        this.setSignatureVersion(signatureVersion);
+        this.setSysSignatureVersion(signatureVersion);
         initialize();
     }
 
@@ -52,7 +52,7 @@ public abstract class RoaAcsRequest<T extends AcsResponse> extends AcsRequest<T>
         this.setSysVersion(version);
         this.setSysActionName(action);
         this.setSysLocationProduct(locationProduct);
-        this.setSignatureVersion(signatureVersion);
+        this.setSysSignatureVersion(signatureVersion);
         initialize();
     }
 
@@ -71,7 +71,7 @@ public abstract class RoaAcsRequest<T extends AcsResponse> extends AcsRequest<T>
         this.setSysActionName(action);
         this.setSysLocationProduct(locationProduct);
         this.setSysEndpointType(endpointType);
-        this.setSignatureVersion(signatureVersion);
+        this.setSysSignatureVersion(signatureVersion);
         initialize();
     }
 
@@ -204,13 +204,13 @@ public abstract class RoaAcsRequest<T extends AcsResponse> extends AcsRequest<T>
             String strToSign = this.composer.composeStringToSign(this.getSysMethod(), this.getSysUriPattern(), signer,
                     this.getSysQueryParameters(), imutableMap, this.getPathParameters());
             this.strToSign = strToSign;
-            if (this.getSignatureVersion() == SignatureVersion.V3) {
+            if (this.getSysSignatureVersion() == SignatureVersion.V3) {
                 strToSign += "\n" + hashedRequestPayload;
                 strToSign = signer.getSignerName() + "\n" + hexEncode(signer.hash(strToSign.getBytes("UTF-8")));
             }
             String signature = signer.signString(strToSign, credentials);
             imutableMap.put("Authorization", this.composer.getAuthorization(signer, accessKeyId, signature)
-                    + (this.getSignatureVersion() == SignatureVersion.V3 ? ",SignedHeaders=" + this.getSignedHeaders(imutableMap) : ""));
+                    + (this.getSysSignatureVersion() == SignatureVersion.V3 ? ",SignedHeaders=" + this.getSysSignedHeaders(imutableMap) : ""));
         }
         this.setSysUrl(this.composeUrl(domain.getDomainName(), this.getSysQueryParameters()));
         this.headers = imutableMap;

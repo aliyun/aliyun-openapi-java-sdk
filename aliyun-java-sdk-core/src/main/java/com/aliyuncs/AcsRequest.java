@@ -54,7 +54,7 @@ public abstract class AcsRequest<T extends AcsResponse> extends HttpRequest {
         }
     }
 
-    protected String getSignedHeaders(Map<String, String> headers) {
+    protected String getSysSignedHeaders(Map<String, String> headers) {
         String[] keys = headers.keySet().toArray(new String[headers.size()]);
         Arrays.sort(keys);
         List<String> canonicalizedKeys = new ArrayList<String>();
@@ -429,24 +429,24 @@ public abstract class AcsRequest<T extends AcsResponse> extends HttpRequest {
         this.userAgentConfig.append(key, value);
     }
 
-    public SignatureVersion getSignatureVersion() {
+    public SignatureVersion getSysSignatureVersion() {
         return signatureVersion;
     }
 
-    public void setSignatureVersion(SignatureVersion signatureVersion) {
+    public void setSysSignatureVersion(SignatureVersion signatureVersion) {
         this.signatureVersion = signatureVersion;
     }
 
-    public SignatureAlgorithm getSignatureAlgorithm() {
+    public SignatureAlgorithm getSysSignatureAlgorithm() {
         return signatureAlgorithm;
     }
 
-    public void setSignatureAlgorithm(SignatureAlgorithm signatureAlgorithm) {
+    public void setSysSignatureAlgorithm(SignatureAlgorithm signatureAlgorithm) {
         this.signatureAlgorithm = signatureAlgorithm;
     }
 
     @Override
-    public String getStrToSign() {
+    public String getSysStrToSign() {
         return this.strToSign;
     }
 }

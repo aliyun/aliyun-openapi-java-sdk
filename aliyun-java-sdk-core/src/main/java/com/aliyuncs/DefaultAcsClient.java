@@ -109,13 +109,13 @@ public class DefaultAcsClient implements IAcsClient {
     @Override
     public <T extends AcsResponse> HttpResponse doAction(AcsRequest<T> request, String regionId, Credential credential)
             throws ClientException, ServerException {
-        if (null == request.getSignatureVersion()) {
-            request.setSignatureVersion(this.signatureVersion);
+        if (null == request.getSysSignatureVersion()) {
+            request.setSysSignatureVersion(this.signatureVersion);
         }
-        if (null == request.getSignatureAlgorithm()) {
-            request.setSignatureAlgorithm(this.signatureAlgorithm);
+        if (null == request.getSysSignatureAlgorithm()) {
+            request.setSysSignatureAlgorithm(this.signatureAlgorithm);
         }
-        Signer signer = Signer.getSigner(new LegacyCredentials(credential), request.getSignatureVersion(), request.getSignatureAlgorithm());
+        Signer signer = Signer.getSigner(new LegacyCredentials(credential), request.getSysSignatureVersion(), request.getSysSignatureAlgorithm());
         FormatType format = null;
         if (null == request.getSysRegionId()) {
             request.setSysRegionId(regionId);
@@ -201,13 +201,13 @@ public class DefaultAcsClient implements IAcsClient {
         } else {
             credentials = this.credentialsProvider.getCredentials();
         }
-        if (null == request.getSignatureVersion()) {
-            request.setSignatureVersion(this.signatureVersion);
+        if (null == request.getSysSignatureVersion()) {
+            request.setSysSignatureVersion(this.signatureVersion);
         }
-        if (null == request.getSignatureAlgorithm()) {
-            request.setSignatureAlgorithm(this.signatureAlgorithm);
+        if (null == request.getSysSignatureAlgorithm()) {
+            request.setSysSignatureAlgorithm(this.signatureAlgorithm);
         }
-        Signer signer = Signer.getSigner(credentials, request.getSignatureVersion(), request.getSignatureAlgorithm());
+        Signer signer = Signer.getSigner(credentials, request.getSysSignatureVersion(), request.getSysSignatureAlgorithm());
         FormatType format = profile.getFormat();
 
         return this.doAction(request, retry, retryNumber, request.getSysRegionId(), credentials, signer, format);
