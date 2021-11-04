@@ -274,7 +274,7 @@ public abstract class HttpMessage {
         return Collections.unmodifiableMap(headers);
     }
 
-    public String getStrToSign(){
+    public String getSysStrToSign(){
         return null;
     }
 }

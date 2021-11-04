@@ -222,8 +222,8 @@ public class DefaultAcsClientTest {
         Mockito.doReturn(ProtocolType.HTTP).when(request).getSysProtocol();
         when(request.getSysAcceptFormat()).thenReturn(FormatType.JSON);
         when(request.getResponseClass()).thenReturn(responseClass);
-        when(request.getSignatureVersion()).thenReturn(SignatureVersion.V1);
-        when(request.getSignatureAlgorithm()).thenReturn(SignatureAlgorithm.ACS3_HMAC_SHA256);
+        when(request.getSysSignatureVersion()).thenReturn(SignatureVersion.V1);
+        when(request.getSysSignatureAlgorithm()).thenReturn(SignatureAlgorithm.ACS3_HMAC_SHA256);
         return request;
     }
 

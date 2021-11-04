@@ -67,7 +67,7 @@ public class HttpUtil {
                 debugString.append(entry.getKey() + " : " + entry.getValue() + "\n> ");
             }
             debugString.append("Request URL : " + sysUrl + "\n> ");
-            debugString.append("Request string to sign: [" + request.getStrToSign() + "]\n> ");
+            debugString.append("Request string to sign: [" + request.getSysStrToSign() + "]\n> ");
             debugString.append("Request isIgnoreSSLCerts : " + request.isIgnoreSSLCerts() + "\n> ");
             debugString.append("Request connect timeout : " + request.getSysConnectTimeout() + "\n> ");
             debugString.append("Request read timeout : " + request.getSysReadTimeout() + "\n> ");

@@ -43,8 +43,8 @@ public class CommonRequest {
         if (uriPattern != null) {
             CommonRoaRequest request = new CommonRoaRequest(product);
             request.setSysUriPattern(uriPattern);
-            request.setSignatureVersion(signatureVersion);
-            request.setSignatureAlgorithm(signatureAlgorithm);
+            request.setSysSignatureVersion(signatureVersion);
+            request.setSysSignatureAlgorithm(signatureAlgorithm);
             for (String pathParamKey : pathParameters.keySet()) {
                 request.putPathParameter(pathParamKey, pathParameters.get(pathParamKey));
             }
@@ -52,8 +52,8 @@ public class CommonRequest {
             return request;
         } else {
             CommonRpcRequest request = new CommonRpcRequest(product);
-            request.setSignatureVersion(signatureVersion);
-            request.setSignatureAlgorithm(signatureAlgorithm);
+            request.setSysSignatureVersion(signatureVersion);
+            request.setSysSignatureAlgorithm(signatureAlgorithm);
             fillParams(request);
             return request;
         }
@@ -513,19 +513,19 @@ public class CommonRequest {
         return this.accept;
     }
 
-    public SignatureVersion getSignatureVersion() {
+    public SignatureVersion getSysSignatureVersion() {
         return signatureVersion;
     }
 
-    public void setSignatureVersion(SignatureVersion signatureVersion) {
+    public void setSysSignatureVersion(SignatureVersion signatureVersion) {
         this.signatureVersion = signatureVersion;
     }
 
-    public SignatureAlgorithm getSignatureAlgorithm() {
+    public SignatureAlgorithm getSysSignatureAlgorithm() {
         return signatureAlgorithm;
     }
 
-    public void setSignatureAlgorithm(SignatureAlgorithm signatureAlgorithm) {
+    public void setSysSignatureAlgorithm(SignatureAlgorithm signatureAlgorithm) {
         this.signatureAlgorithm = signatureAlgorithm;
     }
 }
