@@ -1,4 +1,7 @@
-﻿2021-11-03 Version:4.5.28
+﻿2021-11-04 Version:4.5.29
+1, Fix get & set method names
+
+2021-11-03 Version:4.5.28
 1, Support signature v3.
 2, Add str to sign for debug.
 3, Add env for isIgnoreSSLCerts.
