@@ -1,3 +1,6 @@
+2021-11-04 Version: 1.8.1
+- Added api AddUserGroupMembers.
+
 2021-10-26 Version: 1.8.0
 - Add QueryEmbedTokenInfo,DeleteEmbedToken,CreateEmbedToken,DelayEmbedToken,BuildSignatureUrl, and update QueryDatasetInfo,AuthorizeMenu,AddUserTagMeta,AddUser.
 
