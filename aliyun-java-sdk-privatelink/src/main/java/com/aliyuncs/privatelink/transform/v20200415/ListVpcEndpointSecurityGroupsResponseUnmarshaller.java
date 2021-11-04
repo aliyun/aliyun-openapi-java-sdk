@@ -27,8 +27,8 @@ public class ListVpcEndpointSecurityGroupsResponseUnmarshaller {
 	public static ListVpcEndpointSecurityGroupsResponse unmarshall(ListVpcEndpointSecurityGroupsResponse listVpcEndpointSecurityGroupsResponse, UnmarshallerContext _ctx) {
 		
 		listVpcEndpointSecurityGroupsResponse.setRequestId(_ctx.stringValue("ListVpcEndpointSecurityGroupsResponse.RequestId"));
-		listVpcEndpointSecurityGroupsResponse.setMaxResults(_ctx.stringValue("ListVpcEndpointSecurityGroupsResponse.MaxResults"));
 		listVpcEndpointSecurityGroupsResponse.setNextToken(_ctx.stringValue("ListVpcEndpointSecurityGroupsResponse.NextToken"));
+		listVpcEndpointSecurityGroupsResponse.setMaxResults(_ctx.stringValue("ListVpcEndpointSecurityGroupsResponse.MaxResults"));
 
 		List<SecurityGroup> securityGroups = new ArrayList<SecurityGroup>();
 		for (int i = 0; i < _ctx.lengthValue("ListVpcEndpointSecurityGroupsResponse.SecurityGroups.Length"); i++) {

@@ -27,19 +27,22 @@ public class ListVpcEndpointServiceResourcesResponseUnmarshaller {
 	public static ListVpcEndpointServiceResourcesResponse unmarshall(ListVpcEndpointServiceResourcesResponse listVpcEndpointServiceResourcesResponse, UnmarshallerContext _ctx) {
 		
 		listVpcEndpointServiceResourcesResponse.setRequestId(_ctx.stringValue("ListVpcEndpointServiceResourcesResponse.RequestId"));
-		listVpcEndpointServiceResourcesResponse.setMaxResults(_ctx.stringValue("ListVpcEndpointServiceResourcesResponse.MaxResults"));
 		listVpcEndpointServiceResourcesResponse.setNextToken(_ctx.stringValue("ListVpcEndpointServiceResourcesResponse.NextToken"));
+		listVpcEndpointServiceResourcesResponse.setMaxResults(_ctx.stringValue("ListVpcEndpointServiceResourcesResponse.MaxResults"));
 
 		List<Resource> resources = new ArrayList<Resource>();
 		for (int i = 0; i < _ctx.lengthValue("ListVpcEndpointServiceResourcesResponse.Resources.Length"); i++) {
 			Resource resource = new Resource();
-			resource.setZoneId(_ctx.stringValue("ListVpcEndpointServiceResourcesResponse.Resources["+ i +"].ZoneId"));
-			resource.setResourceId(_ctx.stringValue("ListVpcEndpointServiceResourcesResponse.Resources["+ i +"].ResourceId"));
-			resource.setResourceType(_ctx.stringValue("ListVpcEndpointServiceResourcesResponse.Resources["+ i +"].ResourceType"));
-			resource.setIp(_ctx.stringValue("ListVpcEndpointServiceResourcesResponse.Resources["+ i +"].Ip"));
 			resource.setVpcId(_ctx.stringValue("ListVpcEndpointServiceResourcesResponse.Resources["+ i +"].VpcId"));
 			resource.setVSwitchId(_ctx.stringValue("ListVpcEndpointServiceResourcesResponse.Resources["+ i +"].VSwitchId"));
+			resource.setResourceType(_ctx.stringValue("ListVpcEndpointServiceResourcesResponse.Resources["+ i +"].ResourceType"));
+			resource.setZoneId(_ctx.stringValue("ListVpcEndpointServiceResourcesResponse.Resources["+ i +"].ZoneId"));
+			resource.setIp(_ctx.stringValue("ListVpcEndpointServiceResourcesResponse.Resources["+ i +"].Ip"));
+			resource.setResourceId(_ctx.stringValue("ListVpcEndpointServiceResourcesResponse.Resources["+ i +"].ResourceId"));
 			resource.setRegionId(_ctx.stringValue("ListVpcEndpointServiceResourcesResponse.Resources["+ i +"].RegionId"));
+			resource.setRelatedEndpointCount(_ctx.longValue("ListVpcEndpointServiceResourcesResponse.Resources["+ i +"].RelatedEndpointCount"));
+			resource.setAutoAllocatedEnabled(_ctx.booleanValue("ListVpcEndpointServiceResourcesResponse.Resources["+ i +"].AutoAllocatedEnabled"));
+			resource.setStatusInfo(_ctx.stringValue("ListVpcEndpointServiceResourcesResponse.Resources["+ i +"].StatusInfo"));
 
 			resources.add(resource);
 		}

@@ -27,8 +27,8 @@ public class ListVpcEndpointServiceUsersResponseUnmarshaller {
 	public static ListVpcEndpointServiceUsersResponse unmarshall(ListVpcEndpointServiceUsersResponse listVpcEndpointServiceUsersResponse, UnmarshallerContext _ctx) {
 		
 		listVpcEndpointServiceUsersResponse.setRequestId(_ctx.stringValue("ListVpcEndpointServiceUsersResponse.RequestId"));
-		listVpcEndpointServiceUsersResponse.setMaxResults(_ctx.stringValue("ListVpcEndpointServiceUsersResponse.MaxResults"));
 		listVpcEndpointServiceUsersResponse.setNextToken(_ctx.stringValue("ListVpcEndpointServiceUsersResponse.NextToken"));
+		listVpcEndpointServiceUsersResponse.setMaxResults(_ctx.stringValue("ListVpcEndpointServiceUsersResponse.MaxResults"));
 
 		List<User> users = new ArrayList<User>();
 		for (int i = 0; i < _ctx.lengthValue("ListVpcEndpointServiceUsersResponse.Users.Length"); i++) {

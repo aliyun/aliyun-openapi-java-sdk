@@ -25,21 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListVpcEndpointServicesByEndUserResponse extends AcsResponse {
 
-	private String maxResults;
-
 	private String nextToken;
 
 	private String requestId;
 
+	private String maxResults;
+
 	private List<Service> services;
-
-	public String getMaxResults() {
-		return this.maxResults;
-	}
-
-	public void setMaxResults(String maxResults) {
-		this.maxResults = maxResults;
-	}
 
 	public String getNextToken() {
 		return this.nextToken;
@@ -57,6 +49,14 @@ public class ListVpcEndpointServicesByEndUserResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public String getMaxResults() {
+		return this.maxResults;
+	}
+
+	public void setMaxResults(String maxResults) {
+		this.maxResults = maxResults;
+	}
+
 	public List<Service> getServices() {
 		return this.services;
 	}
@@ -67,15 +67,25 @@ public class ListVpcEndpointServicesByEndUserResponse extends AcsResponse {
 
 	public static class Service {
 
+		private String payer;
+
 		private String serviceDomain;
 
 		private String serviceId;
 
 		private String serviceName;
 
-		private String payer;
+		private String serviceType;
 
 		private List<String> zones;
+
+		public String getPayer() {
+			return this.payer;
+		}
+
+		public void setPayer(String payer) {
+			this.payer = payer;
+		}
 
 		public String getServiceDomain() {
 			return this.serviceDomain;
@@ -101,12 +111,12 @@ public class ListVpcEndpointServicesByEndUserResponse extends AcsResponse {
 			this.serviceName = serviceName;
 		}
 
-		public String getPayer() {
-			return this.payer;
+		public String getServiceType() {
+			return this.serviceType;
 		}
 
-		public void setPayer(String payer) {
-			this.payer = payer;
+		public void setServiceType(String serviceType) {
+			this.serviceType = serviceType;
 		}
 
 		public List<String> getZones() {

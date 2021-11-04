@@ -25,21 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListVpcEndpointConnectionsResponse extends AcsResponse {
 
-	private String maxResults;
-
 	private String nextToken;
 
 	private String requestId;
 
+	private String maxResults;
+
 	private List<Connection> connections;
-
-	public String getMaxResults() {
-		return this.maxResults;
-	}
-
-	public void setMaxResults(String maxResults) {
-		this.maxResults = maxResults;
-	}
 
 	public String getNextToken() {
 		return this.nextToken;
@@ -57,6 +49,14 @@ public class ListVpcEndpointConnectionsResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public String getMaxResults() {
+		return this.maxResults;
+	}
+
+	public void setMaxResults(String maxResults) {
+		this.maxResults = maxResults;
+	}
+
 	public List<Connection> getConnections() {
 		return this.connections;
 	}
@@ -67,70 +67,30 @@ public class ListVpcEndpointConnectionsResponse extends AcsResponse {
 
 	public static class Connection {
 
-		private String serviceId;
-
-		private String endpointId;
-
-		private Long endpointOwnerId;
-
-		private String connectionStatus;
-
-		private String endpointVpcId;
-
-		private Integer bandwidth;
+		private Boolean resourceOwner;
 
 		private String modifiedTime;
 
-		private Boolean resourceOwner;
+		private Integer bandwidth;
+
+		private Long endpointOwnerId;
+
+		private String serviceId;
+
+		private String connectionStatus;
+
+		private String endpointId;
+
+		private String endpointVpcId;
 
 		private List<Zone> zones;
 
-		public String getServiceId() {
-			return this.serviceId;
+		public Boolean getResourceOwner() {
+			return this.resourceOwner;
 		}
 
-		public void setServiceId(String serviceId) {
-			this.serviceId = serviceId;
-		}
-
-		public String getEndpointId() {
-			return this.endpointId;
-		}
-
-		public void setEndpointId(String endpointId) {
-			this.endpointId = endpointId;
-		}
-
-		public Long getEndpointOwnerId() {
-			return this.endpointOwnerId;
-		}
-
-		public void setEndpointOwnerId(Long endpointOwnerId) {
-			this.endpointOwnerId = endpointOwnerId;
-		}
-
-		public String getConnectionStatus() {
-			return this.connectionStatus;
-		}
-
-		public void setConnectionStatus(String connectionStatus) {
-			this.connectionStatus = connectionStatus;
-		}
-
-		public String getEndpointVpcId() {
-			return this.endpointVpcId;
-		}
-
-		public void setEndpointVpcId(String endpointVpcId) {
-			this.endpointVpcId = endpointVpcId;
-		}
-
-		public Integer getBandwidth() {
-			return this.bandwidth;
-		}
-
-		public void setBandwidth(Integer bandwidth) {
-			this.bandwidth = bandwidth;
+		public void setResourceOwner(Boolean resourceOwner) {
+			this.resourceOwner = resourceOwner;
 		}
 
 		public String getModifiedTime() {
@@ -141,12 +101,52 @@ public class ListVpcEndpointConnectionsResponse extends AcsResponse {
 			this.modifiedTime = modifiedTime;
 		}
 
-		public Boolean getResourceOwner() {
-			return this.resourceOwner;
+		public Integer getBandwidth() {
+			return this.bandwidth;
 		}
 
-		public void setResourceOwner(Boolean resourceOwner) {
-			this.resourceOwner = resourceOwner;
+		public void setBandwidth(Integer bandwidth) {
+			this.bandwidth = bandwidth;
+		}
+
+		public Long getEndpointOwnerId() {
+			return this.endpointOwnerId;
+		}
+
+		public void setEndpointOwnerId(Long endpointOwnerId) {
+			this.endpointOwnerId = endpointOwnerId;
+		}
+
+		public String getServiceId() {
+			return this.serviceId;
+		}
+
+		public void setServiceId(String serviceId) {
+			this.serviceId = serviceId;
+		}
+
+		public String getConnectionStatus() {
+			return this.connectionStatus;
+		}
+
+		public void setConnectionStatus(String connectionStatus) {
+			this.connectionStatus = connectionStatus;
+		}
+
+		public String getEndpointId() {
+			return this.endpointId;
+		}
+
+		public void setEndpointId(String endpointId) {
+			this.endpointId = endpointId;
+		}
+
+		public String getEndpointVpcId() {
+			return this.endpointVpcId;
+		}
+
+		public void setEndpointVpcId(String endpointVpcId) {
+			this.endpointVpcId = endpointVpcId;
 		}
 
 		public List<Zone> getZones() {
@@ -159,15 +159,31 @@ public class ListVpcEndpointConnectionsResponse extends AcsResponse {
 
 		public static class Zone {
 
+			private String vSwitchId;
+
 			private String zoneId;
+
+			private String resourceId;
 
 			private String eniId;
 
 			private String zoneDomain;
 
-			private String vSwitchId;
+			private String zoneStatus;
 
-			private String resourceId;
+			private String replacedResourceId;
+
+			private String replacedEniId;
+
+			private String statusInfo;
+
+			public String getVSwitchId() {
+				return this.vSwitchId;
+			}
+
+			public void setVSwitchId(String vSwitchId) {
+				this.vSwitchId = vSwitchId;
+			}
 
 			public String getZoneId() {
 				return this.zoneId;
@@ -175,6 +191,14 @@ public class ListVpcEndpointConnectionsResponse extends AcsResponse {
 
 			public void setZoneId(String zoneId) {
 				this.zoneId = zoneId;
+			}
+
+			public String getResourceId() {
+				return this.resourceId;
+			}
+
+			public void setResourceId(String resourceId) {
+				this.resourceId = resourceId;
 			}
 
 			public String getEniId() {
@@ -193,20 +217,36 @@ public class ListVpcEndpointConnectionsResponse extends AcsResponse {
 				this.zoneDomain = zoneDomain;
 			}
 
-			public String getVSwitchId() {
-				return this.vSwitchId;
+			public String getZoneStatus() {
+				return this.zoneStatus;
 			}
 
-			public void setVSwitchId(String vSwitchId) {
-				this.vSwitchId = vSwitchId;
+			public void setZoneStatus(String zoneStatus) {
+				this.zoneStatus = zoneStatus;
 			}
 
-			public String getResourceId() {
-				return this.resourceId;
+			public String getReplacedResourceId() {
+				return this.replacedResourceId;
 			}
 
-			public void setResourceId(String resourceId) {
-				this.resourceId = resourceId;
+			public void setReplacedResourceId(String replacedResourceId) {
+				this.replacedResourceId = replacedResourceId;
+			}
+
+			public String getReplacedEniId() {
+				return this.replacedEniId;
+			}
+
+			public void setReplacedEniId(String replacedEniId) {
+				this.replacedEniId = replacedEniId;
+			}
+
+			public String getStatusInfo() {
+				return this.statusInfo;
+			}
+
+			public void setStatusInfo(String statusInfo) {
+				this.statusInfo = statusInfo;
 			}
 		}
 	}

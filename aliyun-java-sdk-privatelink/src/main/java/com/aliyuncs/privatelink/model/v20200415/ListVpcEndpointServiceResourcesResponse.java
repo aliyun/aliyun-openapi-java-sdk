@@ -25,21 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListVpcEndpointServiceResourcesResponse extends AcsResponse {
 
-	private String maxResults;
-
 	private String nextToken;
 
 	private String requestId;
 
+	private String maxResults;
+
 	private List<Resource> resources;
-
-	public String getMaxResults() {
-		return this.maxResults;
-	}
-
-	public void setMaxResults(String maxResults) {
-		this.maxResults = maxResults;
-	}
 
 	public String getNextToken() {
 		return this.nextToken;
@@ -57,6 +49,14 @@ public class ListVpcEndpointServiceResourcesResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public String getMaxResults() {
+		return this.maxResults;
+	}
+
+	public void setMaxResults(String maxResults) {
+		this.maxResults = maxResults;
+	}
+
 	public List<Resource> getResources() {
 		return this.resources;
 	}
@@ -67,51 +67,25 @@ public class ListVpcEndpointServiceResourcesResponse extends AcsResponse {
 
 	public static class Resource {
 
-		private String zoneId;
-
-		private String resourceId;
-
-		private String resourceType;
-
-		private String ip;
-
 		private String vpcId;
 
 		private String vSwitchId;
 
+		private String resourceType;
+
+		private String zoneId;
+
+		private String ip;
+
+		private String resourceId;
+
 		private String regionId;
 
-		public String getZoneId() {
-			return this.zoneId;
-		}
+		private Long relatedEndpointCount;
 
-		public void setZoneId(String zoneId) {
-			this.zoneId = zoneId;
-		}
+		private Boolean autoAllocatedEnabled;
 
-		public String getResourceId() {
-			return this.resourceId;
-		}
-
-		public void setResourceId(String resourceId) {
-			this.resourceId = resourceId;
-		}
-
-		public String getResourceType() {
-			return this.resourceType;
-		}
-
-		public void setResourceType(String resourceType) {
-			this.resourceType = resourceType;
-		}
-
-		public String getIp() {
-			return this.ip;
-		}
-
-		public void setIp(String ip) {
-			this.ip = ip;
-		}
+		private String statusInfo;
 
 		public String getVpcId() {
 			return this.vpcId;
@@ -129,12 +103,68 @@ public class ListVpcEndpointServiceResourcesResponse extends AcsResponse {
 			this.vSwitchId = vSwitchId;
 		}
 
+		public String getResourceType() {
+			return this.resourceType;
+		}
+
+		public void setResourceType(String resourceType) {
+			this.resourceType = resourceType;
+		}
+
+		public String getZoneId() {
+			return this.zoneId;
+		}
+
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
+		}
+
+		public String getIp() {
+			return this.ip;
+		}
+
+		public void setIp(String ip) {
+			this.ip = ip;
+		}
+
+		public String getResourceId() {
+			return this.resourceId;
+		}
+
+		public void setResourceId(String resourceId) {
+			this.resourceId = resourceId;
+		}
+
 		public String getRegionId() {
 			return this.regionId;
 		}
 
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
+		}
+
+		public Long getRelatedEndpointCount() {
+			return this.relatedEndpointCount;
+		}
+
+		public void setRelatedEndpointCount(Long relatedEndpointCount) {
+			this.relatedEndpointCount = relatedEndpointCount;
+		}
+
+		public Boolean getAutoAllocatedEnabled() {
+			return this.autoAllocatedEnabled;
+		}
+
+		public void setAutoAllocatedEnabled(Boolean autoAllocatedEnabled) {
+			this.autoAllocatedEnabled = autoAllocatedEnabled;
+		}
+
+		public String getStatusInfo() {
+			return this.statusInfo;
+		}
+
+		public void setStatusInfo(String statusInfo) {
+			this.statusInfo = statusInfo;
 		}
 	}
 

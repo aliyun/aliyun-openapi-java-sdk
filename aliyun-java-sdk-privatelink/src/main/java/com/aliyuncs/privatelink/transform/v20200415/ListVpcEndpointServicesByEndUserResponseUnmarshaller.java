@@ -27,16 +27,17 @@ public class ListVpcEndpointServicesByEndUserResponseUnmarshaller {
 	public static ListVpcEndpointServicesByEndUserResponse unmarshall(ListVpcEndpointServicesByEndUserResponse listVpcEndpointServicesByEndUserResponse, UnmarshallerContext _ctx) {
 		
 		listVpcEndpointServicesByEndUserResponse.setRequestId(_ctx.stringValue("ListVpcEndpointServicesByEndUserResponse.RequestId"));
-		listVpcEndpointServicesByEndUserResponse.setMaxResults(_ctx.stringValue("ListVpcEndpointServicesByEndUserResponse.MaxResults"));
 		listVpcEndpointServicesByEndUserResponse.setNextToken(_ctx.stringValue("ListVpcEndpointServicesByEndUserResponse.NextToken"));
+		listVpcEndpointServicesByEndUserResponse.setMaxResults(_ctx.stringValue("ListVpcEndpointServicesByEndUserResponse.MaxResults"));
 
 		List<Service> services = new ArrayList<Service>();
 		for (int i = 0; i < _ctx.lengthValue("ListVpcEndpointServicesByEndUserResponse.Services.Length"); i++) {
 			Service service = new Service();
+			service.setPayer(_ctx.stringValue("ListVpcEndpointServicesByEndUserResponse.Services["+ i +"].Payer"));
 			service.setServiceDomain(_ctx.stringValue("ListVpcEndpointServicesByEndUserResponse.Services["+ i +"].ServiceDomain"));
 			service.setServiceId(_ctx.stringValue("ListVpcEndpointServicesByEndUserResponse.Services["+ i +"].ServiceId"));
 			service.setServiceName(_ctx.stringValue("ListVpcEndpointServicesByEndUserResponse.Services["+ i +"].ServiceName"));
-			service.setPayer(_ctx.stringValue("ListVpcEndpointServicesByEndUserResponse.Services["+ i +"].Payer"));
+			service.setServiceType(_ctx.stringValue("ListVpcEndpointServicesByEndUserResponse.Services["+ i +"].ServiceType"));
 
 			List<String> zones = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("ListVpcEndpointServicesByEndUserResponse.Services["+ i +"].Zones.Length"); j++) {

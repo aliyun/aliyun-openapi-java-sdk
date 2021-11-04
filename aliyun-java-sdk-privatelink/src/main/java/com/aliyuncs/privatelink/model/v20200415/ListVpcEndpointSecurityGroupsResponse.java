@@ -25,21 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListVpcEndpointSecurityGroupsResponse extends AcsResponse {
 
-	private String maxResults;
-
 	private String nextToken;
 
 	private String requestId;
 
+	private String maxResults;
+
 	private List<SecurityGroup> securityGroups;
-
-	public String getMaxResults() {
-		return this.maxResults;
-	}
-
-	public void setMaxResults(String maxResults) {
-		this.maxResults = maxResults;
-	}
 
 	public String getNextToken() {
 		return this.nextToken;
@@ -55,6 +47,14 @@ public class ListVpcEndpointSecurityGroupsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getMaxResults() {
+		return this.maxResults;
+	}
+
+	public void setMaxResults(String maxResults) {
+		this.maxResults = maxResults;
 	}
 
 	public List<SecurityGroup> getSecurityGroups() {

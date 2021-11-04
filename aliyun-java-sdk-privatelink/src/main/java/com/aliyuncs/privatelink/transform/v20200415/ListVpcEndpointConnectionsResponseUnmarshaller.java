@@ -28,29 +28,33 @@ public class ListVpcEndpointConnectionsResponseUnmarshaller {
 	public static ListVpcEndpointConnectionsResponse unmarshall(ListVpcEndpointConnectionsResponse listVpcEndpointConnectionsResponse, UnmarshallerContext _ctx) {
 		
 		listVpcEndpointConnectionsResponse.setRequestId(_ctx.stringValue("ListVpcEndpointConnectionsResponse.RequestId"));
-		listVpcEndpointConnectionsResponse.setMaxResults(_ctx.stringValue("ListVpcEndpointConnectionsResponse.MaxResults"));
 		listVpcEndpointConnectionsResponse.setNextToken(_ctx.stringValue("ListVpcEndpointConnectionsResponse.NextToken"));
+		listVpcEndpointConnectionsResponse.setMaxResults(_ctx.stringValue("ListVpcEndpointConnectionsResponse.MaxResults"));
 
 		List<Connection> connections = new ArrayList<Connection>();
 		for (int i = 0; i < _ctx.lengthValue("ListVpcEndpointConnectionsResponse.Connections.Length"); i++) {
 			Connection connection = new Connection();
-			connection.setServiceId(_ctx.stringValue("ListVpcEndpointConnectionsResponse.Connections["+ i +"].ServiceId"));
-			connection.setEndpointId(_ctx.stringValue("ListVpcEndpointConnectionsResponse.Connections["+ i +"].EndpointId"));
-			connection.setEndpointOwnerId(_ctx.longValue("ListVpcEndpointConnectionsResponse.Connections["+ i +"].EndpointOwnerId"));
-			connection.setConnectionStatus(_ctx.stringValue("ListVpcEndpointConnectionsResponse.Connections["+ i +"].ConnectionStatus"));
-			connection.setEndpointVpcId(_ctx.stringValue("ListVpcEndpointConnectionsResponse.Connections["+ i +"].EndpointVpcId"));
-			connection.setBandwidth(_ctx.integerValue("ListVpcEndpointConnectionsResponse.Connections["+ i +"].Bandwidth"));
-			connection.setModifiedTime(_ctx.stringValue("ListVpcEndpointConnectionsResponse.Connections["+ i +"].ModifiedTime"));
 			connection.setResourceOwner(_ctx.booleanValue("ListVpcEndpointConnectionsResponse.Connections["+ i +"].ResourceOwner"));
+			connection.setModifiedTime(_ctx.stringValue("ListVpcEndpointConnectionsResponse.Connections["+ i +"].ModifiedTime"));
+			connection.setBandwidth(_ctx.integerValue("ListVpcEndpointConnectionsResponse.Connections["+ i +"].Bandwidth"));
+			connection.setEndpointOwnerId(_ctx.longValue("ListVpcEndpointConnectionsResponse.Connections["+ i +"].EndpointOwnerId"));
+			connection.setServiceId(_ctx.stringValue("ListVpcEndpointConnectionsResponse.Connections["+ i +"].ServiceId"));
+			connection.setConnectionStatus(_ctx.stringValue("ListVpcEndpointConnectionsResponse.Connections["+ i +"].ConnectionStatus"));
+			connection.setEndpointId(_ctx.stringValue("ListVpcEndpointConnectionsResponse.Connections["+ i +"].EndpointId"));
+			connection.setEndpointVpcId(_ctx.stringValue("ListVpcEndpointConnectionsResponse.Connections["+ i +"].EndpointVpcId"));
 
 			List<Zone> zones = new ArrayList<Zone>();
 			for (int j = 0; j < _ctx.lengthValue("ListVpcEndpointConnectionsResponse.Connections["+ i +"].Zones.Length"); j++) {
 				Zone zone = new Zone();
+				zone.setVSwitchId(_ctx.stringValue("ListVpcEndpointConnectionsResponse.Connections["+ i +"].Zones["+ j +"].VSwitchId"));
 				zone.setZoneId(_ctx.stringValue("ListVpcEndpointConnectionsResponse.Connections["+ i +"].Zones["+ j +"].ZoneId"));
+				zone.setResourceId(_ctx.stringValue("ListVpcEndpointConnectionsResponse.Connections["+ i +"].Zones["+ j +"].ResourceId"));
 				zone.setEniId(_ctx.stringValue("ListVpcEndpointConnectionsResponse.Connections["+ i +"].Zones["+ j +"].EniId"));
 				zone.setZoneDomain(_ctx.stringValue("ListVpcEndpointConnectionsResponse.Connections["+ i +"].Zones["+ j +"].ZoneDomain"));
-				zone.setVSwitchId(_ctx.stringValue("ListVpcEndpointConnectionsResponse.Connections["+ i +"].Zones["+ j +"].VSwitchId"));
-				zone.setResourceId(_ctx.stringValue("ListVpcEndpointConnectionsResponse.Connections["+ i +"].Zones["+ j +"].ResourceId"));
+				zone.setZoneStatus(_ctx.stringValue("ListVpcEndpointConnectionsResponse.Connections["+ i +"].Zones["+ j +"].ZoneStatus"));
+				zone.setReplacedResourceId(_ctx.stringValue("ListVpcEndpointConnectionsResponse.Connections["+ i +"].Zones["+ j +"].ReplacedResourceId"));
+				zone.setReplacedEniId(_ctx.stringValue("ListVpcEndpointConnectionsResponse.Connections["+ i +"].Zones["+ j +"].ReplacedEniId"));
+				zone.setStatusInfo(_ctx.stringValue("ListVpcEndpointConnectionsResponse.Connections["+ i +"].Zones["+ j +"].StatusInfo"));
 
 				zones.add(zone);
 			}

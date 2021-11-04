@@ -28,18 +28,27 @@ public class GetVpcEndpointServiceAttributeResponseUnmarshaller {
 		getVpcEndpointServiceAttributeResponse.setRequestId(_ctx.stringValue("GetVpcEndpointServiceAttributeResponse.RequestId"));
 		getVpcEndpointServiceAttributeResponse.setPayer(_ctx.stringValue("GetVpcEndpointServiceAttributeResponse.Payer"));
 		getVpcEndpointServiceAttributeResponse.setServiceDescription(_ctx.stringValue("GetVpcEndpointServiceAttributeResponse.ServiceDescription"));
-		getVpcEndpointServiceAttributeResponse.setMaxBandwidth(_ctx.integerValue("GetVpcEndpointServiceAttributeResponse.MaxBandwidth"));
 		getVpcEndpointServiceAttributeResponse.setCreateTime(_ctx.stringValue("GetVpcEndpointServiceAttributeResponse.CreateTime"));
-		getVpcEndpointServiceAttributeResponse.setServiceDomain(_ctx.stringValue("GetVpcEndpointServiceAttributeResponse.ServiceDomain"));
+		getVpcEndpointServiceAttributeResponse.setMaxBandwidth(_ctx.integerValue("GetVpcEndpointServiceAttributeResponse.MaxBandwidth"));
 		getVpcEndpointServiceAttributeResponse.setMinBandwidth(_ctx.integerValue("GetVpcEndpointServiceAttributeResponse.MinBandwidth"));
-		getVpcEndpointServiceAttributeResponse.setServiceId(_ctx.stringValue("GetVpcEndpointServiceAttributeResponse.ServiceId"));
+		getVpcEndpointServiceAttributeResponse.setServiceDomain(_ctx.stringValue("GetVpcEndpointServiceAttributeResponse.ServiceDomain"));
 		getVpcEndpointServiceAttributeResponse.setAutoAcceptEnabled(_ctx.booleanValue("GetVpcEndpointServiceAttributeResponse.AutoAcceptEnabled"));
+		getVpcEndpointServiceAttributeResponse.setZoneAffinityEnabled(_ctx.booleanValue("GetVpcEndpointServiceAttributeResponse.ZoneAffinityEnabled"));
+		getVpcEndpointServiceAttributeResponse.setServiceId(_ctx.stringValue("GetVpcEndpointServiceAttributeResponse.ServiceId"));
 		getVpcEndpointServiceAttributeResponse.setServiceBusinessStatus(_ctx.stringValue("GetVpcEndpointServiceAttributeResponse.ServiceBusinessStatus"));
 		getVpcEndpointServiceAttributeResponse.setServiceName(_ctx.stringValue("GetVpcEndpointServiceAttributeResponse.ServiceName"));
 		getVpcEndpointServiceAttributeResponse.setServiceStatus(_ctx.stringValue("GetVpcEndpointServiceAttributeResponse.ServiceStatus"));
 		getVpcEndpointServiceAttributeResponse.setConnectBandwidth(_ctx.integerValue("GetVpcEndpointServiceAttributeResponse.ConnectBandwidth"));
 		getVpcEndpointServiceAttributeResponse.setRegionId(_ctx.stringValue("GetVpcEndpointServiceAttributeResponse.RegionId"));
-		getVpcEndpointServiceAttributeResponse.setZoneAffinityEnabled(_ctx.booleanValue("GetVpcEndpointServiceAttributeResponse.ZoneAffinityEnabled"));
+		getVpcEndpointServiceAttributeResponse.setServiceType(_ctx.stringValue("GetVpcEndpointServiceAttributeResponse.ServiceType"));
+		getVpcEndpointServiceAttributeResponse.setServiceResourceType(_ctx.stringValue("GetVpcEndpointServiceAttributeResponse.ServiceResourceType"));
+		getVpcEndpointServiceAttributeResponse.setPrivateServiceDomainEnabled(_ctx.booleanValue("GetVpcEndpointServiceAttributeResponse.PrivateServiceDomainEnabled"));
+		getVpcEndpointServiceAttributeResponse.setPrivateServiceDomain(_ctx.stringValue("GetVpcEndpointServiceAttributeResponse.PrivateServiceDomain"));
+		getVpcEndpointServiceAttributeResponse.setPrivateServiceDomainVerifyStatus(_ctx.stringValue("GetVpcEndpointServiceAttributeResponse.PrivateServiceDomainVerifyStatus"));
+		getVpcEndpointServiceAttributeResponse.setPrivateServiceDomainBusinessStatus(_ctx.stringValue("GetVpcEndpointServiceAttributeResponse.PrivateServiceDomainBusinessStatus"));
+		getVpcEndpointServiceAttributeResponse.setPrivateServiceDomainVerifyName(_ctx.stringValue("GetVpcEndpointServiceAttributeResponse.PrivateServiceDomainVerifyName"));
+		getVpcEndpointServiceAttributeResponse.setPrivateServiceDomainVerifyValue(_ctx.stringValue("GetVpcEndpointServiceAttributeResponse.PrivateServiceDomainVerifyValue"));
+		getVpcEndpointServiceAttributeResponse.setPrivateServiceName(_ctx.stringValue("GetVpcEndpointServiceAttributeResponse.PrivateServiceName"));
 
 		List<String> zones = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("GetVpcEndpointServiceAttributeResponse.Zones.Length"); i++) {

@@ -24,21 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateVpcEndpointResponse extends AcsResponse {
 
-	private String endpointStatus;
-
-	private String endpointName;
-
-	private String vpcId;
-
-	private String requestId;
-
 	private String endpointDomain;
 
-	private String serviceName;
-
-	private String endpointId;
-
-	private Long bandwidth;
+	private String requestId;
 
 	private String createTime;
 
@@ -46,41 +34,21 @@ public class CreateVpcEndpointResponse extends AcsResponse {
 
 	private String endpointDescription;
 
-	private String connectionStatus;
-
 	private String serviceId;
 
-	public String getEndpointStatus() {
-		return this.endpointStatus;
-	}
+	private String endpointStatus;
 
-	public void setEndpointStatus(String endpointStatus) {
-		this.endpointStatus = endpointStatus;
-	}
+	private String vpcId;
 
-	public String getEndpointName() {
-		return this.endpointName;
-	}
+	private String endpointName;
 
-	public void setEndpointName(String endpointName) {
-		this.endpointName = endpointName;
-	}
+	private String serviceName;
 
-	public String getVpcId() {
-		return this.vpcId;
-	}
+	private Long bandwidth;
 
-	public void setVpcId(String vpcId) {
-		this.vpcId = vpcId;
-	}
+	private String endpointId;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String connectionStatus;
 
 	public String getEndpointDomain() {
 		return this.endpointDomain;
@@ -90,28 +58,12 @@ public class CreateVpcEndpointResponse extends AcsResponse {
 		this.endpointDomain = endpointDomain;
 	}
 
-	public String getServiceName() {
-		return this.serviceName;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setServiceName(String serviceName) {
-		this.serviceName = serviceName;
-	}
-
-	public String getEndpointId() {
-		return this.endpointId;
-	}
-
-	public void setEndpointId(String endpointId) {
-		this.endpointId = endpointId;
-	}
-
-	public Long getBandwidth() {
-		return this.bandwidth;
-	}
-
-	public void setBandwidth(Long bandwidth) {
-		this.bandwidth = bandwidth;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getCreateTime() {
@@ -138,20 +90,68 @@ public class CreateVpcEndpointResponse extends AcsResponse {
 		this.endpointDescription = endpointDescription;
 	}
 
-	public String getConnectionStatus() {
-		return this.connectionStatus;
-	}
-
-	public void setConnectionStatus(String connectionStatus) {
-		this.connectionStatus = connectionStatus;
-	}
-
 	public String getServiceId() {
 		return this.serviceId;
 	}
 
 	public void setServiceId(String serviceId) {
 		this.serviceId = serviceId;
+	}
+
+	public String getEndpointStatus() {
+		return this.endpointStatus;
+	}
+
+	public void setEndpointStatus(String endpointStatus) {
+		this.endpointStatus = endpointStatus;
+	}
+
+	public String getVpcId() {
+		return this.vpcId;
+	}
+
+	public void setVpcId(String vpcId) {
+		this.vpcId = vpcId;
+	}
+
+	public String getEndpointName() {
+		return this.endpointName;
+	}
+
+	public void setEndpointName(String endpointName) {
+		this.endpointName = endpointName;
+	}
+
+	public String getServiceName() {
+		return this.serviceName;
+	}
+
+	public void setServiceName(String serviceName) {
+		this.serviceName = serviceName;
+	}
+
+	public Long getBandwidth() {
+		return this.bandwidth;
+	}
+
+	public void setBandwidth(Long bandwidth) {
+		this.bandwidth = bandwidth;
+	}
+
+	public String getEndpointId() {
+		return this.endpointId;
+	}
+
+	public void setEndpointId(String endpointId) {
+		this.endpointId = endpointId;
+	}
+
+	public String getConnectionStatus() {
+		return this.connectionStatus;
+	}
+
+	public void setConnectionStatus(String connectionStatus) {
+		this.connectionStatus = connectionStatus;
 	}
 
 	@Override

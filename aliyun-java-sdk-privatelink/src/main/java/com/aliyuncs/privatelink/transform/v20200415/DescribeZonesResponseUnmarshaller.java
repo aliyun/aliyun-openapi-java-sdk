@@ -31,8 +31,8 @@ public class DescribeZonesResponseUnmarshaller {
 		List<Zone> zones = new ArrayList<Zone>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeZonesResponse.Zones.Length"); i++) {
 			Zone zone = new Zone();
-			zone.setZoneId(_ctx.stringValue("DescribeZonesResponse.Zones["+ i +"].ZoneId"));
 			zone.setLocalName(_ctx.stringValue("DescribeZonesResponse.Zones["+ i +"].LocalName"));
+			zone.setZoneId(_ctx.stringValue("DescribeZonesResponse.Zones["+ i +"].ZoneId"));
 
 			zones.add(zone);
 		}

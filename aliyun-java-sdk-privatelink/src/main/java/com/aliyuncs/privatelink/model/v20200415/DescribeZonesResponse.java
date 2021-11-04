@@ -47,17 +47,9 @@ public class DescribeZonesResponse extends AcsResponse {
 
 	public static class Zone {
 
-		private String zoneId;
-
 		private String localName;
 
-		public String getZoneId() {
-			return this.zoneId;
-		}
-
-		public void setZoneId(String zoneId) {
-			this.zoneId = zoneId;
-		}
+		private String zoneId;
 
 		public String getLocalName() {
 			return this.localName;
@@ -65,6 +57,14 @@ public class DescribeZonesResponse extends AcsResponse {
 
 		public void setLocalName(String localName) {
 			this.localName = localName;
+		}
+
+		public String getZoneId() {
+			return this.zoneId;
+		}
+
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
 		}
 	}
 

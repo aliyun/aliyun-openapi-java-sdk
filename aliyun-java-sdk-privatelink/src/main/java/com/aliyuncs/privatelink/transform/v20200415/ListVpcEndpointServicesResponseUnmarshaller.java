@@ -33,20 +33,22 @@ public class ListVpcEndpointServicesResponseUnmarshaller {
 		List<Service> services = new ArrayList<Service>();
 		for (int i = 0; i < _ctx.lengthValue("ListVpcEndpointServicesResponse.Services.Length"); i++) {
 			Service service = new Service();
-			service.setPayer(_ctx.stringValue("ListVpcEndpointServicesResponse.Services["+ i +"].Payer"));
-			service.setServiceDescription(_ctx.stringValue("ListVpcEndpointServicesResponse.Services["+ i +"].ServiceDescription"));
-			service.setMaxBandwidth(_ctx.integerValue("ListVpcEndpointServicesResponse.Services["+ i +"].MaxBandwidth"));
-			service.setCreateTime(_ctx.stringValue("ListVpcEndpointServicesResponse.Services["+ i +"].CreateTime"));
-			service.setServiceDomain(_ctx.stringValue("ListVpcEndpointServicesResponse.Services["+ i +"].ServiceDomain"));
-			service.setMinBandwidth(_ctx.integerValue("ListVpcEndpointServicesResponse.Services["+ i +"].MinBandwidth"));
-			service.setServiceId(_ctx.stringValue("ListVpcEndpointServicesResponse.Services["+ i +"].ServiceId"));
 			service.setAutoAcceptEnabled(_ctx.booleanValue("ListVpcEndpointServicesResponse.Services["+ i +"].AutoAcceptEnabled"));
-			service.setServiceBusinessStatus(_ctx.stringValue("ListVpcEndpointServicesResponse.Services["+ i +"].ServiceBusinessStatus"));
-			service.setServiceName(_ctx.stringValue("ListVpcEndpointServicesResponse.Services["+ i +"].ServiceName"));
+			service.setServiceId(_ctx.stringValue("ListVpcEndpointServicesResponse.Services["+ i +"].ServiceId"));
+			service.setCreateTime(_ctx.stringValue("ListVpcEndpointServicesResponse.Services["+ i +"].CreateTime"));
+			service.setMinBandwidth(_ctx.integerValue("ListVpcEndpointServicesResponse.Services["+ i +"].MinBandwidth"));
+			service.setMaxBandwidth(_ctx.integerValue("ListVpcEndpointServicesResponse.Services["+ i +"].MaxBandwidth"));
 			service.setServiceStatus(_ctx.stringValue("ListVpcEndpointServicesResponse.Services["+ i +"].ServiceStatus"));
-			service.setConnectBandwidth(_ctx.integerValue("ListVpcEndpointServicesResponse.Services["+ i +"].ConnectBandwidth"));
-			service.setRegionId(_ctx.stringValue("ListVpcEndpointServicesResponse.Services["+ i +"].RegionId"));
 			service.setZoneAffinityEnabled(_ctx.booleanValue("ListVpcEndpointServicesResponse.Services["+ i +"].ZoneAffinityEnabled"));
+			service.setRegionId(_ctx.stringValue("ListVpcEndpointServicesResponse.Services["+ i +"].RegionId"));
+			service.setServiceDomain(_ctx.stringValue("ListVpcEndpointServicesResponse.Services["+ i +"].ServiceDomain"));
+			service.setPayer(_ctx.stringValue("ListVpcEndpointServicesResponse.Services["+ i +"].Payer"));
+			service.setServiceBusinessStatus(_ctx.stringValue("ListVpcEndpointServicesResponse.Services["+ i +"].ServiceBusinessStatus"));
+			service.setConnectBandwidth(_ctx.integerValue("ListVpcEndpointServicesResponse.Services["+ i +"].ConnectBandwidth"));
+			service.setServiceName(_ctx.stringValue("ListVpcEndpointServicesResponse.Services["+ i +"].ServiceName"));
+			service.setServiceDescription(_ctx.stringValue("ListVpcEndpointServicesResponse.Services["+ i +"].ServiceDescription"));
+			service.setServiceResourceType(_ctx.stringValue("ListVpcEndpointServicesResponse.Services["+ i +"].ServiceResourceType"));
+			service.setServiceType(_ctx.stringValue("ListVpcEndpointServicesResponse.Services["+ i +"].ServiceType"));
 
 			services.add(service);
 		}

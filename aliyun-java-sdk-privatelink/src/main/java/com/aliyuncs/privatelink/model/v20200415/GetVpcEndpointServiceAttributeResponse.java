@@ -31,17 +31,19 @@ public class GetVpcEndpointServiceAttributeResponse extends AcsResponse {
 
 	private String serviceDescription;
 
-	private Integer maxBandwidth;
-
 	private String createTime;
 
-	private String serviceDomain;
+	private Integer maxBandwidth;
 
 	private Integer minBandwidth;
 
-	private String serviceId;
+	private String serviceDomain;
 
 	private Boolean autoAcceptEnabled;
+
+	private Boolean zoneAffinityEnabled;
+
+	private String serviceId;
 
 	private String serviceBusinessStatus;
 
@@ -53,7 +55,23 @@ public class GetVpcEndpointServiceAttributeResponse extends AcsResponse {
 
 	private String regionId;
 
-	private Boolean zoneAffinityEnabled;
+	private String serviceType;
+
+	private String serviceResourceType;
+
+	private Boolean privateServiceDomainEnabled;
+
+	private String privateServiceDomain;
+
+	private String privateServiceDomainVerifyStatus;
+
+	private String privateServiceDomainBusinessStatus;
+
+	private String privateServiceDomainVerifyName;
+
+	private String privateServiceDomainVerifyValue;
+
+	private String privateServiceName;
 
 	private List<String> zones;
 
@@ -81,14 +99,6 @@ public class GetVpcEndpointServiceAttributeResponse extends AcsResponse {
 		this.serviceDescription = serviceDescription;
 	}
 
-	public Integer getMaxBandwidth() {
-		return this.maxBandwidth;
-	}
-
-	public void setMaxBandwidth(Integer maxBandwidth) {
-		this.maxBandwidth = maxBandwidth;
-	}
-
 	public String getCreateTime() {
 		return this.createTime;
 	}
@@ -97,12 +107,12 @@ public class GetVpcEndpointServiceAttributeResponse extends AcsResponse {
 		this.createTime = createTime;
 	}
 
-	public String getServiceDomain() {
-		return this.serviceDomain;
+	public Integer getMaxBandwidth() {
+		return this.maxBandwidth;
 	}
 
-	public void setServiceDomain(String serviceDomain) {
-		this.serviceDomain = serviceDomain;
+	public void setMaxBandwidth(Integer maxBandwidth) {
+		this.maxBandwidth = maxBandwidth;
 	}
 
 	public Integer getMinBandwidth() {
@@ -113,12 +123,12 @@ public class GetVpcEndpointServiceAttributeResponse extends AcsResponse {
 		this.minBandwidth = minBandwidth;
 	}
 
-	public String getServiceId() {
-		return this.serviceId;
+	public String getServiceDomain() {
+		return this.serviceDomain;
 	}
 
-	public void setServiceId(String serviceId) {
-		this.serviceId = serviceId;
+	public void setServiceDomain(String serviceDomain) {
+		this.serviceDomain = serviceDomain;
 	}
 
 	public Boolean getAutoAcceptEnabled() {
@@ -127,6 +137,22 @@ public class GetVpcEndpointServiceAttributeResponse extends AcsResponse {
 
 	public void setAutoAcceptEnabled(Boolean autoAcceptEnabled) {
 		this.autoAcceptEnabled = autoAcceptEnabled;
+	}
+
+	public Boolean getZoneAffinityEnabled() {
+		return this.zoneAffinityEnabled;
+	}
+
+	public void setZoneAffinityEnabled(Boolean zoneAffinityEnabled) {
+		this.zoneAffinityEnabled = zoneAffinityEnabled;
+	}
+
+	public String getServiceId() {
+		return this.serviceId;
+	}
+
+	public void setServiceId(String serviceId) {
+		this.serviceId = serviceId;
 	}
 
 	public String getServiceBusinessStatus() {
@@ -169,12 +195,76 @@ public class GetVpcEndpointServiceAttributeResponse extends AcsResponse {
 		this.regionId = regionId;
 	}
 
-	public Boolean getZoneAffinityEnabled() {
-		return this.zoneAffinityEnabled;
+	public String getServiceType() {
+		return this.serviceType;
 	}
 
-	public void setZoneAffinityEnabled(Boolean zoneAffinityEnabled) {
-		this.zoneAffinityEnabled = zoneAffinityEnabled;
+	public void setServiceType(String serviceType) {
+		this.serviceType = serviceType;
+	}
+
+	public String getServiceResourceType() {
+		return this.serviceResourceType;
+	}
+
+	public void setServiceResourceType(String serviceResourceType) {
+		this.serviceResourceType = serviceResourceType;
+	}
+
+	public Boolean getPrivateServiceDomainEnabled() {
+		return this.privateServiceDomainEnabled;
+	}
+
+	public void setPrivateServiceDomainEnabled(Boolean privateServiceDomainEnabled) {
+		this.privateServiceDomainEnabled = privateServiceDomainEnabled;
+	}
+
+	public String getPrivateServiceDomain() {
+		return this.privateServiceDomain;
+	}
+
+	public void setPrivateServiceDomain(String privateServiceDomain) {
+		this.privateServiceDomain = privateServiceDomain;
+	}
+
+	public String getPrivateServiceDomainVerifyStatus() {
+		return this.privateServiceDomainVerifyStatus;
+	}
+
+	public void setPrivateServiceDomainVerifyStatus(String privateServiceDomainVerifyStatus) {
+		this.privateServiceDomainVerifyStatus = privateServiceDomainVerifyStatus;
+	}
+
+	public String getPrivateServiceDomainBusinessStatus() {
+		return this.privateServiceDomainBusinessStatus;
+	}
+
+	public void setPrivateServiceDomainBusinessStatus(String privateServiceDomainBusinessStatus) {
+		this.privateServiceDomainBusinessStatus = privateServiceDomainBusinessStatus;
+	}
+
+	public String getPrivateServiceDomainVerifyName() {
+		return this.privateServiceDomainVerifyName;
+	}
+
+	public void setPrivateServiceDomainVerifyName(String privateServiceDomainVerifyName) {
+		this.privateServiceDomainVerifyName = privateServiceDomainVerifyName;
+	}
+
+	public String getPrivateServiceDomainVerifyValue() {
+		return this.privateServiceDomainVerifyValue;
+	}
+
+	public void setPrivateServiceDomainVerifyValue(String privateServiceDomainVerifyValue) {
+		this.privateServiceDomainVerifyValue = privateServiceDomainVerifyValue;
+	}
+
+	public String getPrivateServiceName() {
+		return this.privateServiceName;
+	}
+
+	public void setPrivateServiceName(String privateServiceName) {
+		this.privateServiceName = privateServiceName;
 	}
 
 	public List<String> getZones() {

@@ -30,19 +30,19 @@ public class CreateVpcEndpointServiceResponse extends AcsResponse {
 
 	private String serviceName;
 
-	private String serviceDescription;
-
 	private String serviceStatus;
+
+	private String serviceDescription;
 
 	private String createTime;
 
-	private Boolean zoneAffinityEnabled;
-
 	private String serviceDomain;
 
-	private String serviceId;
+	private Boolean zoneAffinityEnabled;
 
 	private Boolean autoAcceptEnabled;
+
+	private String serviceId;
 
 	public String getServiceBusinessStatus() {
 		return this.serviceBusinessStatus;
@@ -68,20 +68,20 @@ public class CreateVpcEndpointServiceResponse extends AcsResponse {
 		this.serviceName = serviceName;
 	}
 
-	public String getServiceDescription() {
-		return this.serviceDescription;
-	}
-
-	public void setServiceDescription(String serviceDescription) {
-		this.serviceDescription = serviceDescription;
-	}
-
 	public String getServiceStatus() {
 		return this.serviceStatus;
 	}
 
 	public void setServiceStatus(String serviceStatus) {
 		this.serviceStatus = serviceStatus;
+	}
+
+	public String getServiceDescription() {
+		return this.serviceDescription;
+	}
+
+	public void setServiceDescription(String serviceDescription) {
+		this.serviceDescription = serviceDescription;
 	}
 
 	public String getCreateTime() {
@@ -92,14 +92,6 @@ public class CreateVpcEndpointServiceResponse extends AcsResponse {
 		this.createTime = createTime;
 	}
 
-	public Boolean getZoneAffinityEnabled() {
-		return this.zoneAffinityEnabled;
-	}
-
-	public void setZoneAffinityEnabled(Boolean zoneAffinityEnabled) {
-		this.zoneAffinityEnabled = zoneAffinityEnabled;
-	}
-
 	public String getServiceDomain() {
 		return this.serviceDomain;
 	}
@@ -108,12 +100,12 @@ public class CreateVpcEndpointServiceResponse extends AcsResponse {
 		this.serviceDomain = serviceDomain;
 	}
 
-	public String getServiceId() {
-		return this.serviceId;
+	public Boolean getZoneAffinityEnabled() {
+		return this.zoneAffinityEnabled;
 	}
 
-	public void setServiceId(String serviceId) {
-		this.serviceId = serviceId;
+	public void setZoneAffinityEnabled(Boolean zoneAffinityEnabled) {
+		this.zoneAffinityEnabled = zoneAffinityEnabled;
 	}
 
 	public Boolean getAutoAcceptEnabled() {
@@ -122,6 +114,14 @@ public class CreateVpcEndpointServiceResponse extends AcsResponse {
 
 	public void setAutoAcceptEnabled(Boolean autoAcceptEnabled) {
 		this.autoAcceptEnabled = autoAcceptEnabled;
+	}
+
+	public String getServiceId() {
+		return this.serviceId;
+	}
+
+	public void setServiceId(String serviceId) {
+		this.serviceId = serviceId;
 	}
 
 	@Override
