@@ -25,6 +25,8 @@ import com.aliyuncs.alimt.Endpoint;
 public class TranslateImageRequest extends RpcAcsRequest<TranslateImageResponse> {
 	   
 
+	private String ext;
+
 	private String sourceLanguage;
 
 	private String field;
@@ -41,6 +43,17 @@ public class TranslateImageRequest extends RpcAcsRequest<TranslateImageResponse>
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getExt() {
+		return this.ext;
+	}
+
+	public void setExt(String ext) {
+		this.ext = ext;
+		if(ext != null){
+			putBodyParameter("Ext", ext);
+		}
 	}
 
 	public String getSourceLanguage() {

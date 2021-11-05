@@ -1,3 +1,6 @@
+2021-11-05 Version: 3.1.1
+- Add Ext parameter to image translation API.
+
 2021-11-05 Version: 3.1.0
 - Add image translation new API.
 
