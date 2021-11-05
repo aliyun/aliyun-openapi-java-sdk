@@ -1,3 +1,6 @@
+2021-11-05 Version: 7.30.0
+- Update OTA API, including CreateOTAVerifyJob.
+
 2021-10-20 Version: 7.29.0
 - Add DeviceCenter API, including CreateDeviceDynamicGroup, DeleteDeviceDynamicGroup, QueryDynamicGroupDevices.
 - Update DeviceCenter API, including SetDeviceGroupTags, QueryDeviceGroupByFuzzyName, QueryDeviceGroupByDevice, QueryDeviceGroupTagList, UpdateDeviceGroup, QueryDeviceGroupList, QueryDeviceGroupInfo.

@@ -34,6 +34,8 @@ public class CreateOTAVerifyJobRequest extends RpcAcsRequest<CreateOTAVerifyJobR
 
 	private String iotInstanceId;
 
+	private String downloadProtocol;
+
 	private List<Tag> tags;
 
 	private String firmwareId;
@@ -91,6 +93,17 @@ public class CreateOTAVerifyJobRequest extends RpcAcsRequest<CreateOTAVerifyJobR
 		this.iotInstanceId = iotInstanceId;
 		if(iotInstanceId != null){
 			putQueryParameter("IotInstanceId", iotInstanceId);
+		}
+	}
+
+	public String getDownloadProtocol() {
+		return this.downloadProtocol;
+	}
+
+	public void setDownloadProtocol(String downloadProtocol) {
+		this.downloadProtocol = downloadProtocol;
+		if(downloadProtocol != null){
+			putQueryParameter("DownloadProtocol", downloadProtocol);
 		}
 	}
 

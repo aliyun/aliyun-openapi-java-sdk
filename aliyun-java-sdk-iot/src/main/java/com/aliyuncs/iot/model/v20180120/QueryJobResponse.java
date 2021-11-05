@@ -211,12 +211,22 @@ public class QueryJobResponse extends AcsResponse {
 
 			private Integer maximumPerMinute;
 
+			private String messageQoS;
+
 			public Integer getMaximumPerMinute() {
 				return this.maximumPerMinute;
 			}
 
 			public void setMaximumPerMinute(Integer maximumPerMinute) {
 				this.maximumPerMinute = maximumPerMinute;
+			}
+
+			public String getMessageQoS() {
+				return this.messageQoS;
+			}
+
+			public void setMessageQoS(String messageQoS) {
+				this.messageQoS = messageQoS;
 			}
 		}
 

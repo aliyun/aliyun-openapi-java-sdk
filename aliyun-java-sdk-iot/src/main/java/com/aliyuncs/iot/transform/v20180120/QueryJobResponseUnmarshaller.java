@@ -49,6 +49,7 @@ public class QueryJobResponseUnmarshaller {
 
 		RolloutConfig rolloutConfig = new RolloutConfig();
 		rolloutConfig.setMaximumPerMinute(_ctx.integerValue("QueryJobResponse.Data.RolloutConfig.MaximumPerMinute"));
+		rolloutConfig.setMessageQoS(_ctx.stringValue("QueryJobResponse.Data.RolloutConfig.MessageQoS"));
 		data.setRolloutConfig(rolloutConfig);
 
 		TimeoutConfig timeoutConfig = new TimeoutConfig();
