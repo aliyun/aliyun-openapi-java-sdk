@@ -26,21 +26,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetBatchTranslateResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer code;
 
 	private String message;
 
+	private String requestId;
+
 	private List<Map<Object,Object>> translatedList;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getCode() {
 		return this.code;
@@ -56,6 +48,14 @@ public class GetBatchTranslateResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<Map<Object,Object>> getTranslatedList() {

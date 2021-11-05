@@ -59,13 +59,21 @@ public class TranslateCertificateResponse extends AcsResponse {
 
 		public static class CertificateTranslateItemDTO {
 
+			private String keyTranslation;
+
 			private String key;
 
 			private String value;
 
 			private String valueTranslation;
 
-			private String keyTranslation;
+			public String getKeyTranslation() {
+				return this.keyTranslation;
+			}
+
+			public void setKeyTranslation(String keyTranslation) {
+				this.keyTranslation = keyTranslation;
+			}
 
 			public String getKey() {
 				return this.key;
@@ -89,14 +97,6 @@ public class TranslateCertificateResponse extends AcsResponse {
 
 			public void setValueTranslation(String valueTranslation) {
 				this.valueTranslation = valueTranslation;
-			}
-
-			public String getKeyTranslation() {
-				return this.keyTranslation;
-			}
-
-			public void setKeyTranslation(String keyTranslation) {
-				this.keyTranslation = keyTranslation;
 			}
 		}
 	}

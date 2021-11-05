@@ -37,7 +37,7 @@ public class GetBatchTranslateRequest extends RpcAcsRequest<GetBatchTranslateRes
 
 	private String targetLanguage;
 	public GetBatchTranslateRequest() {
-		super("alimt", "2018-10-12", "GetBatchTranslate", "alimt");
+		super("alimt", "2018-10-12", "GetBatchTranslate");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

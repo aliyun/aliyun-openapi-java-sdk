@@ -14,18 +14,19 @@
 
 package com.aliyuncs.alimt.transform.v20181012;
 
-import com.aliyuncs.alimt.model.v20181012.CreateDocTranslateTaskResponse;
+import com.aliyuncs.alimt.model.v20181012.GetUserResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class CreateDocTranslateTaskResponseUnmarshaller {
+public class GetUserResponseUnmarshaller {
 
-	public static CreateDocTranslateTaskResponse unmarshall(CreateDocTranslateTaskResponse createDocTranslateTaskResponse, UnmarshallerContext _ctx) {
+	public static GetUserResponse unmarshall(GetUserResponse getUserResponse, UnmarshallerContext _ctx) {
 		
-		createDocTranslateTaskResponse.setRequestId(_ctx.stringValue("CreateDocTranslateTaskResponse.RequestId"));
-		createDocTranslateTaskResponse.setStatus(_ctx.stringValue("CreateDocTranslateTaskResponse.Status"));
-		createDocTranslateTaskResponse.setTaskId(_ctx.stringValue("CreateDocTranslateTaskResponse.TaskId"));
+		getUserResponse.setRequestId(_ctx.stringValue("GetUserResponse.RequestId"));
+		getUserResponse.setCode(_ctx.integerValue("GetUserResponse.Code"));
+		getUserResponse.setMessage(_ctx.stringValue("GetUserResponse.Message"));
+		getUserResponse.setData(_ctx.stringValue("GetUserResponse.Data"));
 	 
-	 	return createDocTranslateTaskResponse;
+	 	return getUserResponse;
 	}
 }

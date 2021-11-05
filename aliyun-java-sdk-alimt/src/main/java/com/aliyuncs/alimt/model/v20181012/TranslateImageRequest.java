@@ -22,20 +22,20 @@ import com.aliyuncs.alimt.Endpoint;
  * @author auto create
  * @version 
  */
-public class TranslateRequest extends RpcAcsRequest<TranslateResponse> {
+public class TranslateImageRequest extends RpcAcsRequest<TranslateImageResponse> {
 	   
 
 	private String sourceLanguage;
 
-	private String sourceText;
+	private String field;
 
-	private String formatType;
-
-	private String scene;
+	private String imageUrl;
 
 	private String targetLanguage;
-	public TranslateRequest() {
-		super("alimt", "2018-10-12", "Translate");
+
+	private String imageBase64;
+	public TranslateImageRequest() {
+		super("alimt", "2018-10-12", "TranslateImage");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -54,36 +54,25 @@ public class TranslateRequest extends RpcAcsRequest<TranslateResponse> {
 		}
 	}
 
-	public String getSourceText() {
-		return this.sourceText;
+	public String getField() {
+		return this.field;
 	}
 
-	public void setSourceText(String sourceText) {
-		this.sourceText = sourceText;
-		if(sourceText != null){
-			putBodyParameter("SourceText", sourceText);
+	public void setField(String field) {
+		this.field = field;
+		if(field != null){
+			putBodyParameter("Field", field);
 		}
 	}
 
-	public String getFormatType() {
-		return this.formatType;
+	public String getImageUrl() {
+		return this.imageUrl;
 	}
 
-	public void setFormatType(String formatType) {
-		this.formatType = formatType;
-		if(formatType != null){
-			putBodyParameter("FormatType", formatType);
-		}
-	}
-
-	public String getScene() {
-		return this.scene;
-	}
-
-	public void setScene(String scene) {
-		this.scene = scene;
-		if(scene != null){
-			putBodyParameter("Scene", scene);
+	public void setImageUrl(String imageUrl) {
+		this.imageUrl = imageUrl;
+		if(imageUrl != null){
+			putBodyParameter("ImageUrl", imageUrl);
 		}
 	}
 
@@ -98,9 +87,20 @@ public class TranslateRequest extends RpcAcsRequest<TranslateResponse> {
 		}
 	}
 
+	public String getImageBase64() {
+		return this.imageBase64;
+	}
+
+	public void setImageBase64(String imageBase64) {
+		this.imageBase64 = imageBase64;
+		if(imageBase64 != null){
+			putBodyParameter("ImageBase64", imageBase64);
+		}
+	}
+
 	@Override
-	public Class<TranslateResponse> getResponseClass() {
-		return TranslateResponse.class;
+	public Class<TranslateImageResponse> getResponseClass() {
+		return TranslateImageResponse.class;
 	}
 
 }

@@ -24,11 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateDocTranslateTaskResponse extends AcsResponse {
 
+	private String status;
+
 	private String requestId;
 
 	private String taskId;
 
-	private String status;
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -44,14 +52,6 @@ public class CreateDocTranslateTaskResponse extends AcsResponse {
 
 	public void setTaskId(String taskId) {
 		this.taskId = taskId;
-	}
-
-	public String getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
 	}
 
 	@Override

@@ -24,35 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetDocTranslateTaskResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String taskId;
-
 	private String status;
+
+	private String requestId;
 
 	private String translateFileUrl;
 
 	private String translateErrorCode;
 
-	private String translateErrorMessage;
-
 	private Integer pageCount;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
+	private String taskId;
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getTaskId() {
-		return this.taskId;
-	}
-
-	public void setTaskId(String taskId) {
-		this.taskId = taskId;
-	}
+	private String translateErrorMessage;
 
 	public String getStatus() {
 		return this.status;
@@ -60,6 +44,14 @@ public class GetDocTranslateTaskResponse extends AcsResponse {
 
 	public void setStatus(String status) {
 		this.status = status;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getTranslateFileUrl() {
@@ -78,20 +70,28 @@ public class GetDocTranslateTaskResponse extends AcsResponse {
 		this.translateErrorCode = translateErrorCode;
 	}
 
-	public String getTranslateErrorMessage() {
-		return this.translateErrorMessage;
-	}
-
-	public void setTranslateErrorMessage(String translateErrorMessage) {
-		this.translateErrorMessage = translateErrorMessage;
-	}
-
 	public Integer getPageCount() {
 		return this.pageCount;
 	}
 
 	public void setPageCount(Integer pageCount) {
 		this.pageCount = pageCount;
+	}
+
+	public String getTaskId() {
+		return this.taskId;
+	}
+
+	public void setTaskId(String taskId) {
+		this.taskId = taskId;
+	}
+
+	public String getTranslateErrorMessage() {
+		return this.translateErrorMessage;
+	}
+
+	public void setTranslateErrorMessage(String translateErrorMessage) {
+		this.translateErrorMessage = translateErrorMessage;
 	}
 
 	@Override

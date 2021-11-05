@@ -15,25 +15,45 @@
 package com.aliyuncs.alimt.model.v20181012;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.alimt.transform.v20181012.GetDetectLanguageResponseUnmarshaller;
+import com.aliyuncs.alimt.transform.v20181012.GetUserResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetDetectLanguageResponse extends AcsResponse {
+public class GetUserResponse extends AcsResponse {
 
-	private String detectedLanguage;
+	private Integer code;
+
+	private String message;
+
+	private String data;
 
 	private String requestId;
 
-	public String getDetectedLanguage() {
-		return this.detectedLanguage;
+	public Integer getCode() {
+		return this.code;
 	}
 
-	public void setDetectedLanguage(String detectedLanguage) {
-		this.detectedLanguage = detectedLanguage;
+	public void setCode(Integer code) {
+		this.code = code;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	public String getData() {
+		return this.data;
+	}
+
+	public void setData(String data) {
+		this.data = data;
 	}
 
 	public String getRequestId() {
@@ -45,8 +65,8 @@ public class GetDetectLanguageResponse extends AcsResponse {
 	}
 
 	@Override
-	public GetDetectLanguageResponse getInstance(UnmarshallerContext context) {
-		return	GetDetectLanguageResponseUnmarshaller.unmarshall(this, context);
+	public GetUserResponse getInstance(UnmarshallerContext context) {
+		return	GetUserResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

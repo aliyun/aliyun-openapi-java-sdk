@@ -29,7 +29,7 @@ public class OpenAlimtServiceRequest extends RpcAcsRequest<OpenAlimtServiceRespo
 
 	private String type;
 	public OpenAlimtServiceRequest() {
-		super("alimt", "2018-10-12", "OpenAlimtService", "alimt");
+		super("alimt", "2018-10-12", "OpenAlimtService");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -24,21 +24,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class TranslateECommerceResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer code;
 
 	private String message;
 
+	private String requestId;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getCode() {
 		return this.code;
@@ -54,6 +46,14 @@ public class TranslateECommerceResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Data getData() {

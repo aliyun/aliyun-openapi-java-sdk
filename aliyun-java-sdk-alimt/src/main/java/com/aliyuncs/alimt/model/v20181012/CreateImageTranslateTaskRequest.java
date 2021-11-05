@@ -35,7 +35,7 @@ public class CreateImageTranslateTaskRequest extends RpcAcsRequest<CreateImageTr
 
 	private String targetLanguage;
 	public CreateImageTranslateTaskRequest() {
-		super("alimt", "2018-10-12", "CreateImageTranslateTask", "alimt");
+		super("alimt", "2018-10-12", "CreateImageTranslateTask");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

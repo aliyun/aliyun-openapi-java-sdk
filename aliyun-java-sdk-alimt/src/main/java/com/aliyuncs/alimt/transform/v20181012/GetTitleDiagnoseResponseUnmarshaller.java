@@ -28,16 +28,16 @@ public class GetTitleDiagnoseResponseUnmarshaller {
 		getTitleDiagnoseResponse.setMessage(_ctx.stringValue("GetTitleDiagnoseResponse.Message"));
 
 		Data data = new Data();
-		data.setContainCoreClasses(_ctx.stringValue("GetTitleDiagnoseResponse.Data.ContainCoreClasses"));
-		data.setOverLengthLimit(_ctx.stringValue("GetTitleDiagnoseResponse.Data.OverLengthLimit"));
-		data.setWordSpelledCorrectError(_ctx.stringValue("GetTitleDiagnoseResponse.Data.WordSpelledCorrectError"));
-		data.setAllUppercaseWords(_ctx.stringValue("GetTitleDiagnoseResponse.Data.AllUppercaseWords"));
-		data.setNoFirstUppercaseList(_ctx.stringValue("GetTitleDiagnoseResponse.Data.NoFirstUppercaseList"));
 		data.setDuplicateWords(_ctx.stringValue("GetTitleDiagnoseResponse.Data.DuplicateWords"));
-		data.setDisableWords(_ctx.stringValue("GetTitleDiagnoseResponse.Data.DisableWords"));
+		data.setContainCoreClasses(_ctx.stringValue("GetTitleDiagnoseResponse.Data.ContainCoreClasses"));
 		data.setWordCount(_ctx.stringValue("GetTitleDiagnoseResponse.Data.WordCount"));
-		data.setTotalScore(_ctx.stringValue("GetTitleDiagnoseResponse.Data.TotalScore"));
 		data.setLanguageQualityScore(_ctx.stringValue("GetTitleDiagnoseResponse.Data.LanguageQualityScore"));
+		data.setAllUppercaseWords(_ctx.stringValue("GetTitleDiagnoseResponse.Data.AllUppercaseWords"));
+		data.setOverLengthLimit(_ctx.stringValue("GetTitleDiagnoseResponse.Data.OverLengthLimit"));
+		data.setDisableWords(_ctx.stringValue("GetTitleDiagnoseResponse.Data.DisableWords"));
+		data.setNoFirstUppercaseList(_ctx.stringValue("GetTitleDiagnoseResponse.Data.NoFirstUppercaseList"));
+		data.setTotalScore(_ctx.stringValue("GetTitleDiagnoseResponse.Data.TotalScore"));
+		data.setWordSpelledCorrectError(_ctx.stringValue("GetTitleDiagnoseResponse.Data.WordSpelledCorrectError"));
 		getTitleDiagnoseResponse.setData(data);
 	 
 	 	return getTitleDiagnoseResponse;

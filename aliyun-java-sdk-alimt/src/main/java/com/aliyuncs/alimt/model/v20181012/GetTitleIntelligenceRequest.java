@@ -35,7 +35,7 @@ public class GetTitleIntelligenceRequest extends RpcAcsRequest<GetTitleIntellige
 
 	private String extra;
 	public GetTitleIntelligenceRequest() {
-		super("alimt", "2018-10-12", "GetTitleIntelligence", "alimt");
+		super("alimt", "2018-10-12", "GetTitleIntelligence");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

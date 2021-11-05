@@ -1,3 +1,6 @@
+2021-11-05 Version: 3.1.0
+- Add image translation new API.
+
 2021-01-27 Version: 3.0.30
 - Add New BatchTranslate API.
 

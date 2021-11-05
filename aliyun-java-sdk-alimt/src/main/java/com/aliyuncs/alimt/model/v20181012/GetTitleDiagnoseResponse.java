@@ -24,21 +24,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetTitleDiagnoseResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer code;
 
 	private String message;
 
+	private String requestId;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getCode() {
 		return this.code;
@@ -56,6 +48,14 @@ public class GetTitleDiagnoseResponse extends AcsResponse {
 		this.message = message;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -66,65 +66,25 @@ public class GetTitleDiagnoseResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String containCoreClasses;
-
-		private String overLengthLimit;
-
-		private String wordSpelledCorrectError;
-
-		private String allUppercaseWords;
-
-		private String noFirstUppercaseList;
-
 		private String duplicateWords;
 
-		private String disableWords;
+		private String containCoreClasses;
 
 		private String wordCount;
 
-		private String totalScore;
-
 		private String languageQualityScore;
 
-		public String getContainCoreClasses() {
-			return this.containCoreClasses;
-		}
+		private String allUppercaseWords;
 
-		public void setContainCoreClasses(String containCoreClasses) {
-			this.containCoreClasses = containCoreClasses;
-		}
+		private String overLengthLimit;
 
-		public String getOverLengthLimit() {
-			return this.overLengthLimit;
-		}
+		private String disableWords;
 
-		public void setOverLengthLimit(String overLengthLimit) {
-			this.overLengthLimit = overLengthLimit;
-		}
+		private String noFirstUppercaseList;
 
-		public String getWordSpelledCorrectError() {
-			return this.wordSpelledCorrectError;
-		}
+		private String totalScore;
 
-		public void setWordSpelledCorrectError(String wordSpelledCorrectError) {
-			this.wordSpelledCorrectError = wordSpelledCorrectError;
-		}
-
-		public String getAllUppercaseWords() {
-			return this.allUppercaseWords;
-		}
-
-		public void setAllUppercaseWords(String allUppercaseWords) {
-			this.allUppercaseWords = allUppercaseWords;
-		}
-
-		public String getNoFirstUppercaseList() {
-			return this.noFirstUppercaseList;
-		}
-
-		public void setNoFirstUppercaseList(String noFirstUppercaseList) {
-			this.noFirstUppercaseList = noFirstUppercaseList;
-		}
+		private String wordSpelledCorrectError;
 
 		public String getDuplicateWords() {
 			return this.duplicateWords;
@@ -134,12 +94,12 @@ public class GetTitleDiagnoseResponse extends AcsResponse {
 			this.duplicateWords = duplicateWords;
 		}
 
-		public String getDisableWords() {
-			return this.disableWords;
+		public String getContainCoreClasses() {
+			return this.containCoreClasses;
 		}
 
-		public void setDisableWords(String disableWords) {
-			this.disableWords = disableWords;
+		public void setContainCoreClasses(String containCoreClasses) {
+			this.containCoreClasses = containCoreClasses;
 		}
 
 		public String getWordCount() {
@@ -150,6 +110,46 @@ public class GetTitleDiagnoseResponse extends AcsResponse {
 			this.wordCount = wordCount;
 		}
 
+		public String getLanguageQualityScore() {
+			return this.languageQualityScore;
+		}
+
+		public void setLanguageQualityScore(String languageQualityScore) {
+			this.languageQualityScore = languageQualityScore;
+		}
+
+		public String getAllUppercaseWords() {
+			return this.allUppercaseWords;
+		}
+
+		public void setAllUppercaseWords(String allUppercaseWords) {
+			this.allUppercaseWords = allUppercaseWords;
+		}
+
+		public String getOverLengthLimit() {
+			return this.overLengthLimit;
+		}
+
+		public void setOverLengthLimit(String overLengthLimit) {
+			this.overLengthLimit = overLengthLimit;
+		}
+
+		public String getDisableWords() {
+			return this.disableWords;
+		}
+
+		public void setDisableWords(String disableWords) {
+			this.disableWords = disableWords;
+		}
+
+		public String getNoFirstUppercaseList() {
+			return this.noFirstUppercaseList;
+		}
+
+		public void setNoFirstUppercaseList(String noFirstUppercaseList) {
+			this.noFirstUppercaseList = noFirstUppercaseList;
+		}
+
 		public String getTotalScore() {
 			return this.totalScore;
 		}
@@ -158,12 +158,12 @@ public class GetTitleDiagnoseResponse extends AcsResponse {
 			this.totalScore = totalScore;
 		}
 
-		public String getLanguageQualityScore() {
-			return this.languageQualityScore;
+		public String getWordSpelledCorrectError() {
+			return this.wordSpelledCorrectError;
 		}
 
-		public void setLanguageQualityScore(String languageQualityScore) {
-			this.languageQualityScore = languageQualityScore;
+		public void setWordSpelledCorrectError(String wordSpelledCorrectError) {
+			this.wordSpelledCorrectError = wordSpelledCorrectError;
 		}
 	}
 

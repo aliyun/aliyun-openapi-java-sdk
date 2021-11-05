@@ -34,10 +34,10 @@ public class TranslateCertificateResponseUnmarshaller {
 		List<CertificateTranslateItemDTO> translatedValues = new ArrayList<CertificateTranslateItemDTO>();
 		for (int i = 0; i < _ctx.lengthValue("TranslateCertificateResponse.Data.TranslatedValues.Length"); i++) {
 			CertificateTranslateItemDTO certificateTranslateItemDTO = new CertificateTranslateItemDTO();
+			certificateTranslateItemDTO.setKeyTranslation(_ctx.stringValue("TranslateCertificateResponse.Data.TranslatedValues["+ i +"].KeyTranslation"));
 			certificateTranslateItemDTO.setKey(_ctx.stringValue("TranslateCertificateResponse.Data.TranslatedValues["+ i +"].Key"));
 			certificateTranslateItemDTO.setValue(_ctx.stringValue("TranslateCertificateResponse.Data.TranslatedValues["+ i +"].Value"));
 			certificateTranslateItemDTO.setValueTranslation(_ctx.stringValue("TranslateCertificateResponse.Data.TranslatedValues["+ i +"].ValueTranslation"));
-			certificateTranslateItemDTO.setKeyTranslation(_ctx.stringValue("TranslateCertificateResponse.Data.TranslatedValues["+ i +"].KeyTranslation"));
 
 			translatedValues.add(certificateTranslateItemDTO);
 		}

@@ -15,22 +15,30 @@
 package com.aliyuncs.alimt.model.v20181012;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.alimt.transform.v20181012.GetImageTranslateResponseUnmarshaller;
+import com.aliyuncs.alimt.transform.v20181012.TranslateImageResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetImageTranslateResponse extends AcsResponse {
+public class TranslateImageResponse extends AcsResponse {
+
+	private String requestId;
 
 	private Integer code;
 
 	private String message;
 
-	private String requestId;
-
 	private Data data;
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
 
 	public Integer getCode() {
 		return this.code;
@@ -48,14 +56,6 @@ public class GetImageTranslateResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public Data getData() {
 		return this.data;
 	}
@@ -66,40 +66,40 @@ public class GetImageTranslateResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String url;
+		private String inPaintingUrl;
 
-		private String orc;
+		private String templateJson;
 
-		private String pictureEditor;
+		private String finalImageUrl;
 
-		public String getUrl() {
-			return this.url;
+		public String getInPaintingUrl() {
+			return this.inPaintingUrl;
 		}
 
-		public void setUrl(String url) {
-			this.url = url;
+		public void setInPaintingUrl(String inPaintingUrl) {
+			this.inPaintingUrl = inPaintingUrl;
 		}
 
-		public String getOrc() {
-			return this.orc;
+		public String getTemplateJson() {
+			return this.templateJson;
 		}
 
-		public void setOrc(String orc) {
-			this.orc = orc;
+		public void setTemplateJson(String templateJson) {
+			this.templateJson = templateJson;
 		}
 
-		public String getPictureEditor() {
-			return this.pictureEditor;
+		public String getFinalImageUrl() {
+			return this.finalImageUrl;
 		}
 
-		public void setPictureEditor(String pictureEditor) {
-			this.pictureEditor = pictureEditor;
+		public void setFinalImageUrl(String finalImageUrl) {
+			this.finalImageUrl = finalImageUrl;
 		}
 	}
 
 	@Override
-	public GetImageTranslateResponse getInstance(UnmarshallerContext context) {
-		return	GetImageTranslateResponseUnmarshaller.unmarshall(this, context);
+	public TranslateImageResponse getInstance(UnmarshallerContext context) {
+		return	TranslateImageResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override
