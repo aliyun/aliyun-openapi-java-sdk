@@ -22,21 +22,34 @@ import com.aliyuncs.dcdn.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeDcdnUserResourcePackageRequest extends RpcAcsRequest<DescribeDcdnUserResourcePackageResponse> {
+public class SetDcdnDomainSMCertificateRequest extends RpcAcsRequest<SetDcdnDomainSMCertificateResponse> {
 	   
+
+	private String domainName;
 
 	private Long ownerId;
 
 	private String securityToken;
 
-	private String status;
-	public DescribeDcdnUserResourcePackageRequest() {
-		super("dcdn", "2018-01-15", "DescribeDcdnUserResourcePackage");
+	private String certIdentifier;
+	public SetDcdnDomainSMCertificateRequest() {
+		super("dcdn", "2018-01-15", "SetDcdnDomainSMCertificate");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
 	}
 
 	public Long getOwnerId() {
@@ -61,20 +74,20 @@ public class DescribeDcdnUserResourcePackageRequest extends RpcAcsRequest<Descri
 		}
 	}
 
-	public String getStatus() {
-		return this.status;
+	public String getCertIdentifier() {
+		return this.certIdentifier;
 	}
 
-	public void setStatus(String status) {
-		this.status = status;
-		if(status != null){
-			putQueryParameter("Status", status);
+	public void setCertIdentifier(String certIdentifier) {
+		this.certIdentifier = certIdentifier;
+		if(certIdentifier != null){
+			putQueryParameter("CertIdentifier", certIdentifier);
 		}
 	}
 
 	@Override
-	public Class<DescribeDcdnUserResourcePackageResponse> getResponseClass() {
-		return DescribeDcdnUserResourcePackageResponse.class;
+	public Class<SetDcdnDomainSMCertificateResponse> getResponseClass() {
+		return SetDcdnDomainSMCertificateResponse.class;
 	}
 
 }

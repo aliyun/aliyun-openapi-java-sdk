@@ -22,21 +22,32 @@ import com.aliyuncs.dcdn.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeDcdnUserResourcePackageRequest extends RpcAcsRequest<DescribeDcdnUserResourcePackageResponse> {
+public class DescribeDcdnSMCertificateListRequest extends RpcAcsRequest<DescribeDcdnSMCertificateListResponse> {
 	   
+
+	private String domainName;
 
 	private Long ownerId;
 
 	private String securityToken;
-
-	private String status;
-	public DescribeDcdnUserResourcePackageRequest() {
-		super("dcdn", "2018-01-15", "DescribeDcdnUserResourcePackage");
+	public DescribeDcdnSMCertificateListRequest() {
+		super("dcdn", "2018-01-15", "DescribeDcdnSMCertificateList");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
 	}
 
 	public Long getOwnerId() {
@@ -61,20 +72,9 @@ public class DescribeDcdnUserResourcePackageRequest extends RpcAcsRequest<Descri
 		}
 	}
 
-	public String getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-		if(status != null){
-			putQueryParameter("Status", status);
-		}
-	}
-
 	@Override
-	public Class<DescribeDcdnUserResourcePackageResponse> getResponseClass() {
-		return DescribeDcdnUserResourcePackageResponse.class;
+	public Class<DescribeDcdnSMCertificateListResponse> getResponseClass() {
+		return DescribeDcdnSMCertificateListResponse.class;
 	}
 
 }

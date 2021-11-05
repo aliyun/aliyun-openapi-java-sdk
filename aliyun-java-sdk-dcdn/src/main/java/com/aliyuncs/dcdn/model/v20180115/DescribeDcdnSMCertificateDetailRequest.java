@@ -22,16 +22,16 @@ import com.aliyuncs.dcdn.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeDcdnUserResourcePackageRequest extends RpcAcsRequest<DescribeDcdnUserResourcePackageResponse> {
+public class DescribeDcdnSMCertificateDetailRequest extends RpcAcsRequest<DescribeDcdnSMCertificateDetailResponse> {
 	   
 
 	private Long ownerId;
 
 	private String securityToken;
 
-	private String status;
-	public DescribeDcdnUserResourcePackageRequest() {
-		super("dcdn", "2018-01-15", "DescribeDcdnUserResourcePackage");
+	private String certIdentifier;
+	public DescribeDcdnSMCertificateDetailRequest() {
+		super("dcdn", "2018-01-15", "DescribeDcdnSMCertificateDetail");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -61,20 +61,20 @@ public class DescribeDcdnUserResourcePackageRequest extends RpcAcsRequest<Descri
 		}
 	}
 
-	public String getStatus() {
-		return this.status;
+	public String getCertIdentifier() {
+		return this.certIdentifier;
 	}
 
-	public void setStatus(String status) {
-		this.status = status;
-		if(status != null){
-			putQueryParameter("Status", status);
+	public void setCertIdentifier(String certIdentifier) {
+		this.certIdentifier = certIdentifier;
+		if(certIdentifier != null){
+			putQueryParameter("CertIdentifier", certIdentifier);
 		}
 	}
 
 	@Override
-	public Class<DescribeDcdnUserResourcePackageResponse> getResponseClass() {
-		return DescribeDcdnUserResourcePackageResponse.class;
+	public Class<DescribeDcdnSMCertificateDetailResponse> getResponseClass() {
+		return DescribeDcdnSMCertificateDetailResponse.class;
 	}
 
 }

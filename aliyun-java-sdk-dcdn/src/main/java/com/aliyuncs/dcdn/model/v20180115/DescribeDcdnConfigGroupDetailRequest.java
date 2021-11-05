@@ -22,21 +22,32 @@ import com.aliyuncs.dcdn.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeDcdnUserResourcePackageRequest extends RpcAcsRequest<DescribeDcdnUserResourcePackageResponse> {
+public class DescribeDcdnConfigGroupDetailRequest extends RpcAcsRequest<DescribeDcdnConfigGroupDetailResponse> {
 	   
+
+	private String configGroupName;
 
 	private Long ownerId;
 
-	private String securityToken;
-
-	private String status;
-	public DescribeDcdnUserResourcePackageRequest() {
-		super("dcdn", "2018-01-15", "DescribeDcdnUserResourcePackage");
+	private String configGroupId;
+	public DescribeDcdnConfigGroupDetailRequest() {
+		super("dcdn", "2018-01-15", "DescribeDcdnConfigGroupDetail");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getConfigGroupName() {
+		return this.configGroupName;
+	}
+
+	public void setConfigGroupName(String configGroupName) {
+		this.configGroupName = configGroupName;
+		if(configGroupName != null){
+			putQueryParameter("ConfigGroupName", configGroupName);
+		}
 	}
 
 	public Long getOwnerId() {
@@ -50,31 +61,20 @@ public class DescribeDcdnUserResourcePackageRequest extends RpcAcsRequest<Descri
 		}
 	}
 
-	public String getSecurityToken() {
-		return this.securityToken;
+	public String getConfigGroupId() {
+		return this.configGroupId;
 	}
 
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	public String getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-		if(status != null){
-			putQueryParameter("Status", status);
+	public void setConfigGroupId(String configGroupId) {
+		this.configGroupId = configGroupId;
+		if(configGroupId != null){
+			putQueryParameter("ConfigGroupId", configGroupId);
 		}
 	}
 
 	@Override
-	public Class<DescribeDcdnUserResourcePackageResponse> getResponseClass() {
-		return DescribeDcdnUserResourcePackageResponse.class;
+	public Class<DescribeDcdnConfigGroupDetailResponse> getResponseClass() {
+		return DescribeDcdnConfigGroupDetailResponse.class;
 	}
 
 }

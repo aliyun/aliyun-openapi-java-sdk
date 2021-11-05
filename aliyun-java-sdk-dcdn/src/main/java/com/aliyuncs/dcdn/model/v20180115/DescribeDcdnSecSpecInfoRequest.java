@@ -22,16 +22,12 @@ import com.aliyuncs.dcdn.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeDcdnUserResourcePackageRequest extends RpcAcsRequest<DescribeDcdnUserResourcePackageResponse> {
+public class DescribeDcdnSecSpecInfoRequest extends RpcAcsRequest<DescribeDcdnSecSpecInfoResponse> {
 	   
 
 	private Long ownerId;
-
-	private String securityToken;
-
-	private String status;
-	public DescribeDcdnUserResourcePackageRequest() {
-		super("dcdn", "2018-01-15", "DescribeDcdnUserResourcePackage");
+	public DescribeDcdnSecSpecInfoRequest() {
+		super("dcdn", "2018-01-15", "DescribeDcdnSecSpecInfo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -50,31 +46,9 @@ public class DescribeDcdnUserResourcePackageRequest extends RpcAcsRequest<Descri
 		}
 	}
 
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	public String getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-		if(status != null){
-			putQueryParameter("Status", status);
-		}
-	}
-
 	@Override
-	public Class<DescribeDcdnUserResourcePackageResponse> getResponseClass() {
-		return DescribeDcdnUserResourcePackageResponse.class;
+	public Class<DescribeDcdnSecSpecInfoResponse> getResponseClass() {
+		return DescribeDcdnSecSpecInfoResponse.class;
 	}
 
 }
