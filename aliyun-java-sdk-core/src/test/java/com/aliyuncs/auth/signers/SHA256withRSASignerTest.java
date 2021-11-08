@@ -9,7 +9,7 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
-import java.nio.charset.StandardCharsets;
+import java.io.UnsupportedEncodingException;
 import java.security.NoSuchAlgorithmException;
 
 public class SHA256withRSASignerTest {
@@ -109,8 +109,10 @@ public class SHA256withRSASignerTest {
     public void hash() {
         SHA256withRSASigner signer = new SHA256withRSASigner();
         try {
-            Assert.assertNull(signer.hash("".getBytes(StandardCharsets.UTF_8)));
+            Assert.assertNull(signer.hash("".getBytes("UTF-8")));
         } catch (NoSuchAlgorithmException e) {
+            Assert.fail();
+        } catch (UnsupportedEncodingException e) {
             Assert.fail();
         }
     }

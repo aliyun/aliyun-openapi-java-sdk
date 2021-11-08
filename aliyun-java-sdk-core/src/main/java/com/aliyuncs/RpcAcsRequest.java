@@ -146,7 +146,7 @@ public abstract class RpcAcsRequest<T extends AcsResponse> extends AcsRequest<T>
                                    ProductDomain domain) throws InvalidKeyException, IllegalStateException,
             UnsupportedEncodingException, NoSuchAlgorithmException {
         this.resolveSignatureComposer();
-        Map<String, String> headerMap = this.getSysHeaders();
+        Map<String, String> headerMap = new HashMap<String, String>();
         Map<String, String> bodyParams = this.getSysBodyParameters();
         String hashedRequestPayload = hexEncode(signer != null ? signer.hash("".getBytes("UTF-8")) : null);
         if (bodyParams != null && !bodyParams.isEmpty()) {
@@ -164,6 +164,7 @@ public abstract class RpcAcsRequest<T extends AcsResponse> extends AcsRequest<T>
         }
         Map<String, String> imutableMap = this.composer.refreshSignParameters(this.getSysQueryParameters(), signer, null,
                 format);
+        headerMap.putAll(this.getSysHeaders());
         headerMap = this.composer.refreshSignParameters(headerMap, signer, null, null);
         if (imutableMap.get("RegionId") == null && this.getSysRegionId() != null && !this.getSysRegionId().equals("")) {
             if ((bodyParams == null || bodyParams.get("RegionId") == null)) {
@@ -214,7 +215,8 @@ public abstract class RpcAcsRequest<T extends AcsResponse> extends AcsRequest<T>
                     signature = signer.signString(strToSign, accessSecret + "&");
                 }
                 imutableMap.put("Signature", this.composer.getAuthorization(signer, accessKeyId, signature));
-                headerMap = this.getSysHeaders();
+                headerMap.clear();
+                headerMap.putAll(this.getSysHeaders());
             }
         }
         this.setSysUrl(this.composeUrl(domain.getDomainName(), imutableMap));
