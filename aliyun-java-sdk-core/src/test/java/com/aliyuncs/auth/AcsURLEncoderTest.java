@@ -4,7 +4,6 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import java.io.UnsupportedEncodingException;
-import java.nio.charset.StandardCharsets;
 
 public class AcsURLEncoderTest {
     @Test
@@ -34,7 +33,7 @@ public class AcsURLEncoderTest {
     @Test
     public void hexEncodeReturnNormal() throws UnsupportedEncodingException {
         String value = "test";
-        String res = AcsURLEncoder.hexEncode(value.getBytes(StandardCharsets.UTF_8));
+        String res = AcsURLEncoder.hexEncode(value.getBytes("UTF-8"));
         Assert.assertEquals("74657374", res);
     }
 }

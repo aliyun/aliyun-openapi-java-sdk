@@ -4,7 +4,7 @@ import com.aliyuncs.auth.AlibabaCloudCredentials;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.nio.charset.StandardCharsets;
+import java.io.UnsupportedEncodingException;
 import java.security.NoSuchAlgorithmException;
 
 import static org.mockito.Mockito.mock;
@@ -53,8 +53,10 @@ public class HmacSHA1SignerTest {
     public void hash() {
         HmacSHA1Signer signer = new HmacSHA1Signer();
         try {
-            Assert.assertNull(signer.hash("".getBytes(StandardCharsets.UTF_8)));
+            Assert.assertNull(signer.hash("".getBytes("UTF-8")));
         } catch (NoSuchAlgorithmException e) {
+            Assert.fail();
+        } catch (UnsupportedEncodingException e) {
             Assert.fail();
         }
     }
