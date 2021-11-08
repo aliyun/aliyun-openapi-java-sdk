@@ -30,19 +30,23 @@ public class ListInstanceIndicesResponseUnmarshaller {
 		listInstanceIndicesResponse.setRequestId(_ctx.stringValue("ListInstanceIndicesResponse.RequestId"));
 
 		Headers headers = new Headers();
-		headers.setXManagedCount(_ctx.integerValue("ListInstanceIndicesResponse.Headers.X-Managed-Count"));
 		headers.setXManagedStorageSize(_ctx.longValue("ListInstanceIndicesResponse.Headers.X-Managed-StorageSize"));
+		headers.setXManagedCount(_ctx.integerValue("ListInstanceIndicesResponse.Headers.X-Managed-Count"));
+		headers.setXOSSStorageSize(_ctx.longValue("ListInstanceIndicesResponse.Headers.X-OSS-StorageSize"));
+		headers.setXOSSCount(_ctx.integerValue("ListInstanceIndicesResponse.Headers.X-OSS-Count"));
 		listInstanceIndicesResponse.setHeaders(headers);
 
 		List<ResultItem> result = new ArrayList<ResultItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListInstanceIndicesResponse.Result.Length"); i++) {
 			ResultItem resultItem = new ResultItem();
+			resultItem.setIsManaged(_ctx.stringValue("ListInstanceIndicesResponse.Result["+ i +"].isManaged"));
+			resultItem.setCreateTime(_ctx.stringValue("ListInstanceIndicesResponse.Result["+ i +"].createTime"));
+			resultItem.setSize(_ctx.longValue("ListInstanceIndicesResponse.Result["+ i +"].size"));
+			resultItem.setManagedStatus(_ctx.stringValue("ListInstanceIndicesResponse.Result["+ i +"].managedStatus"));
 			resultItem.setName(_ctx.stringValue("ListInstanceIndicesResponse.Result["+ i +"].name"));
 			resultItem.setHealth(_ctx.stringValue("ListInstanceIndicesResponse.Result["+ i +"].health"));
-			resultItem.setSize(_ctx.longValue("ListInstanceIndicesResponse.Result["+ i +"].size"));
-			resultItem.setCreateTime(_ctx.stringValue("ListInstanceIndicesResponse.Result["+ i +"].createTime"));
-			resultItem.setIsManaged(_ctx.stringValue("ListInstanceIndicesResponse.Result["+ i +"].isManaged"));
-			resultItem.setManagedStatus(_ctx.stringValue("ListInstanceIndicesResponse.Result["+ i +"].managedStatus"));
+			resultItem.setPhase(_ctx.stringValue("ListInstanceIndicesResponse.Result["+ i +"].phase"));
+			resultItem.setIlmExplain(_ctx.stringValue("ListInstanceIndicesResponse.Result["+ i +"].ilmExplain"));
 
 			result.add(resultItem);
 		}

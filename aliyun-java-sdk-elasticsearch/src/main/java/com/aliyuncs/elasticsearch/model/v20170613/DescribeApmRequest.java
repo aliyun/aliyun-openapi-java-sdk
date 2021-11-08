@@ -22,15 +22,13 @@ import com.aliyuncs.elasticsearch.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListAllNodeRequest extends RoaAcsRequest<ListAllNodeResponse> {
+public class DescribeApmRequest extends RoaAcsRequest<DescribeApmResponse> {
 	   
 
 	private String instanceId;
-
-	private Boolean extended;
-	public ListAllNodeRequest() {
-		super("elasticsearch", "2017-06-13", "ListAllNode", "elasticsearch");
-		setUriPattern("/openapi/instances/[InstanceId]/nodes");
+	public DescribeApmRequest() {
+		super("elasticsearch", "2017-06-13", "DescribeApm", "elasticsearch");
+		setUriPattern("/openapi/apm/[instanceId]");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -45,24 +43,13 @@ public class ListAllNodeRequest extends RoaAcsRequest<ListAllNodeResponse> {
 	public void setInstanceId(String instanceId) {
 		this.instanceId = instanceId;
 		if(instanceId != null){
-			putPathParameter("InstanceId", instanceId);
-		}
-	}
-
-	public Boolean getExtended() {
-		return this.extended;
-	}
-
-	public void setExtended(Boolean extended) {
-		this.extended = extended;
-		if(extended != null){
-			putQueryParameter("extended", extended.toString());
+			putPathParameter("instanceId", instanceId);
 		}
 	}
 
 	@Override
-	public Class<ListAllNodeResponse> getResponseClass() {
-		return ListAllNodeResponse.class;
+	public Class<DescribeApmResponse> getResponseClass() {
+		return DescribeApmResponse.class;
 	}
 
 }

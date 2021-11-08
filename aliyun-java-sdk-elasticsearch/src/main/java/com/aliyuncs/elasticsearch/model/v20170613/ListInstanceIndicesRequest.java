@@ -31,7 +31,13 @@ public class ListInstanceIndicesRequest extends RoaAcsRequest<ListInstanceIndice
 
 	private Boolean isManaged;
 
+	private Integer size;
+
 	private String name;
+
+	private Integer page;
+
+	private Boolean isOpenstore;
 	public ListInstanceIndicesRequest() {
 		super("elasticsearch", "2017-06-13", "ListInstanceIndices", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/indices");
@@ -75,6 +81,17 @@ public class ListInstanceIndicesRequest extends RoaAcsRequest<ListInstanceIndice
 		}
 	}
 
+	public Integer getSize() {
+		return this.size;
+	}
+
+	public void setSize(Integer size) {
+		this.size = size;
+		if(size != null){
+			putQueryParameter("size", size.toString());
+		}
+	}
+
 	public String getName() {
 		return this.name;
 	}
@@ -83,6 +100,28 @@ public class ListInstanceIndicesRequest extends RoaAcsRequest<ListInstanceIndice
 		this.name = name;
 		if(name != null){
 			putQueryParameter("name", name);
+		}
+	}
+
+	public Integer getPage() {
+		return this.page;
+	}
+
+	public void setPage(Integer page) {
+		this.page = page;
+		if(page != null){
+			putQueryParameter("page", page.toString());
+		}
+	}
+
+	public Boolean getIsOpenstore() {
+		return this.isOpenstore;
+	}
+
+	public void setIsOpenstore(Boolean isOpenstore) {
+		this.isOpenstore = isOpenstore;
+		if(isOpenstore != null){
+			putQueryParameter("isOpenstore", isOpenstore.toString());
 		}
 	}
 

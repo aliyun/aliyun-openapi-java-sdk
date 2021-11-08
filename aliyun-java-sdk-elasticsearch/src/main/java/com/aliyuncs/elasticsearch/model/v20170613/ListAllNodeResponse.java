@@ -47,38 +47,32 @@ public class ListAllNodeResponse extends AcsResponse {
 
 	public static class ResultItem {
 
-		private String host;
-
-		private Integer port;
+		private String heapPercent;
 
 		private String zoneId;
 
-		private String nodeType;
+		private String hostName;
 
 		private String cpuPercent;
 
-		private String loadOneM;
+		private String host;
 
-		private String heapPercent;
-
-		private String health;
+		private String nodeType;
 
 		private String diskUsedPercent;
 
-		public String getHost() {
-			return this.host;
+		private Integer port;
+
+		private String loadOneM;
+
+		private String health;
+
+		public String getHeapPercent() {
+			return this.heapPercent;
 		}
 
-		public void setHost(String host) {
-			this.host = host;
-		}
-
-		public Integer getPort() {
-			return this.port;
-		}
-
-		public void setPort(Integer port) {
-			this.port = port;
+		public void setHeapPercent(String heapPercent) {
+			this.heapPercent = heapPercent;
 		}
 
 		public String getZoneId() {
@@ -89,12 +83,12 @@ public class ListAllNodeResponse extends AcsResponse {
 			this.zoneId = zoneId;
 		}
 
-		public String getNodeType() {
-			return this.nodeType;
+		public String getHostName() {
+			return this.hostName;
 		}
 
-		public void setNodeType(String nodeType) {
-			this.nodeType = nodeType;
+		public void setHostName(String hostName) {
+			this.hostName = hostName;
 		}
 
 		public String getCpuPercent() {
@@ -105,28 +99,20 @@ public class ListAllNodeResponse extends AcsResponse {
 			this.cpuPercent = cpuPercent;
 		}
 
-		public String getLoadOneM() {
-			return this.loadOneM;
+		public String getHost() {
+			return this.host;
 		}
 
-		public void setLoadOneM(String loadOneM) {
-			this.loadOneM = loadOneM;
+		public void setHost(String host) {
+			this.host = host;
 		}
 
-		public String getHeapPercent() {
-			return this.heapPercent;
+		public String getNodeType() {
+			return this.nodeType;
 		}
 
-		public void setHeapPercent(String heapPercent) {
-			this.heapPercent = heapPercent;
-		}
-
-		public String getHealth() {
-			return this.health;
-		}
-
-		public void setHealth(String health) {
-			this.health = health;
+		public void setNodeType(String nodeType) {
+			this.nodeType = nodeType;
 		}
 
 		public String getDiskUsedPercent() {
@@ -135,6 +121,30 @@ public class ListAllNodeResponse extends AcsResponse {
 
 		public void setDiskUsedPercent(String diskUsedPercent) {
 			this.diskUsedPercent = diskUsedPercent;
+		}
+
+		public Integer getPort() {
+			return this.port;
+		}
+
+		public void setPort(Integer port) {
+			this.port = port;
+		}
+
+		public String getLoadOneM() {
+			return this.loadOneM;
+		}
+
+		public void setLoadOneM(String loadOneM) {
+			this.loadOneM = loadOneM;
+		}
+
+		public String getHealth() {
+			return this.health;
+		}
+
+		public void setHealth(String health) {
+			this.health = health;
 		}
 	}
 

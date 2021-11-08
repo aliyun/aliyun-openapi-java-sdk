@@ -12,12 +12,18 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.elasticsearch;
+package com.aliyuncs.elasticsearch.transform.v20170613;
 
-import java.util.HashMap;
+import com.aliyuncs.elasticsearch.model.v20170613.StartApmResponse;
+import com.aliyuncs.transform.UnmarshallerContext;
 
-public class Endpoint {
-    public static HashMap<String, String> endpointMap = new HashMap<String, String>() {};
 
-    public static String endpointRegionalType = "regional";
+public class StartApmResponseUnmarshaller {
+
+	public static StartApmResponse unmarshall(StartApmResponse startApmResponse, UnmarshallerContext _ctx) {
+		
+		startApmResponse.setRequestId(_ctx.stringValue("StartApmResponse.requestId"));
+	 
+	 	return startApmResponse;
+	}
 }

@@ -22,15 +22,13 @@ import com.aliyuncs.elasticsearch.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListAllNodeRequest extends RoaAcsRequest<ListAllNodeResponse> {
+public class GetOpenStoreUsageRequest extends RoaAcsRequest<GetOpenStoreUsageResponse> {
 	   
 
 	private String instanceId;
-
-	private Boolean extended;
-	public ListAllNodeRequest() {
-		super("elasticsearch", "2017-06-13", "ListAllNode", "elasticsearch");
-		setUriPattern("/openapi/instances/[InstanceId]/nodes");
+	public GetOpenStoreUsageRequest() {
+		super("elasticsearch", "2017-06-13", "GetOpenStoreUsage", "elasticsearch");
+		setUriPattern("/openapi/instances/[InstanceId]/openstore/usage");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -49,20 +47,9 @@ public class ListAllNodeRequest extends RoaAcsRequest<ListAllNodeResponse> {
 		}
 	}
 
-	public Boolean getExtended() {
-		return this.extended;
-	}
-
-	public void setExtended(Boolean extended) {
-		this.extended = extended;
-		if(extended != null){
-			putQueryParameter("extended", extended.toString());
-		}
-	}
-
 	@Override
-	public Class<ListAllNodeResponse> getResponseClass() {
-		return ListAllNodeResponse.class;
+	public Class<GetOpenStoreUsageResponse> getResponseClass() {
+		return GetOpenStoreUsageResponse.class;
 	}
 
 }

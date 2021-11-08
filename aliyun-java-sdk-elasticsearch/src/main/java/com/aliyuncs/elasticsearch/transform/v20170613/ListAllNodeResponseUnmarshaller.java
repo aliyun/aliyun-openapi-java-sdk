@@ -31,15 +31,16 @@ public class ListAllNodeResponseUnmarshaller {
 		List<ResultItem> result = new ArrayList<ResultItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListAllNodeResponse.Result.Length"); i++) {
 			ResultItem resultItem = new ResultItem();
-			resultItem.setHost(_ctx.stringValue("ListAllNodeResponse.Result["+ i +"].host"));
-			resultItem.setPort(_ctx.integerValue("ListAllNodeResponse.Result["+ i +"].port"));
-			resultItem.setZoneId(_ctx.stringValue("ListAllNodeResponse.Result["+ i +"].zoneId"));
-			resultItem.setNodeType(_ctx.stringValue("ListAllNodeResponse.Result["+ i +"].nodeType"));
-			resultItem.setCpuPercent(_ctx.stringValue("ListAllNodeResponse.Result["+ i +"].cpuPercent"));
-			resultItem.setLoadOneM(_ctx.stringValue("ListAllNodeResponse.Result["+ i +"].loadOneM"));
 			resultItem.setHeapPercent(_ctx.stringValue("ListAllNodeResponse.Result["+ i +"].heapPercent"));
-			resultItem.setHealth(_ctx.stringValue("ListAllNodeResponse.Result["+ i +"].health"));
+			resultItem.setZoneId(_ctx.stringValue("ListAllNodeResponse.Result["+ i +"].zoneId"));
+			resultItem.setHostName(_ctx.stringValue("ListAllNodeResponse.Result["+ i +"].hostName"));
+			resultItem.setCpuPercent(_ctx.stringValue("ListAllNodeResponse.Result["+ i +"].cpuPercent"));
+			resultItem.setHost(_ctx.stringValue("ListAllNodeResponse.Result["+ i +"].host"));
+			resultItem.setNodeType(_ctx.stringValue("ListAllNodeResponse.Result["+ i +"].nodeType"));
 			resultItem.setDiskUsedPercent(_ctx.stringValue("ListAllNodeResponse.Result["+ i +"].diskUsedPercent"));
+			resultItem.setPort(_ctx.integerValue("ListAllNodeResponse.Result["+ i +"].port"));
+			resultItem.setLoadOneM(_ctx.stringValue("ListAllNodeResponse.Result["+ i +"].loadOneM"));
+			resultItem.setHealth(_ctx.stringValue("ListAllNodeResponse.Result["+ i +"].health"));
 
 			result.add(resultItem);
 		}

@@ -57,17 +57,53 @@ public class ListInstanceIndicesResponse extends AcsResponse {
 
 	public static class ResultItem {
 
+		private String isManaged;
+
+		private String createTime;
+
+		private Long size;
+
+		private String managedStatus;
+
 		private String name;
 
 		private String health;
 
-		private Long size;
+		private String phase;
 
-		private String createTime;
+		private String ilmExplain;
 
-		private String isManaged;
+		public String getIsManaged() {
+			return this.isManaged;
+		}
 
-		private String managedStatus;
+		public void setIsManaged(String isManaged) {
+			this.isManaged = isManaged;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
+
+		public Long getSize() {
+			return this.size;
+		}
+
+		public void setSize(Long size) {
+			this.size = size;
+		}
+
+		public String getManagedStatus() {
+			return this.managedStatus;
+		}
+
+		public void setManagedStatus(String managedStatus) {
+			this.managedStatus = managedStatus;
+		}
 
 		public String getName() {
 			return this.name;
@@ -85,44 +121,40 @@ public class ListInstanceIndicesResponse extends AcsResponse {
 			this.health = health;
 		}
 
-		public Long getSize() {
-			return this.size;
+		public String getPhase() {
+			return this.phase;
 		}
 
-		public void setSize(Long size) {
-			this.size = size;
+		public void setPhase(String phase) {
+			this.phase = phase;
 		}
 
-		public String getCreateTime() {
-			return this.createTime;
+		public String getIlmExplain() {
+			return this.ilmExplain;
 		}
 
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
-		}
-
-		public String getIsManaged() {
-			return this.isManaged;
-		}
-
-		public void setIsManaged(String isManaged) {
-			this.isManaged = isManaged;
-		}
-
-		public String getManagedStatus() {
-			return this.managedStatus;
-		}
-
-		public void setManagedStatus(String managedStatus) {
-			this.managedStatus = managedStatus;
+		public void setIlmExplain(String ilmExplain) {
+			this.ilmExplain = ilmExplain;
 		}
 	}
 
 	public static class Headers {
 
+		private Long xManagedStorageSize;
+
 		private Integer xManagedCount;
 
-		private Long xManagedStorageSize;
+		private Long xOSSStorageSize;
+
+		private Integer xOSSCount;
+
+		public Long getXManagedStorageSize() {
+			return this.xManagedStorageSize;
+		}
+
+		public void setXManagedStorageSize(Long xManagedStorageSize) {
+			this.xManagedStorageSize = xManagedStorageSize;
+		}
 
 		public Integer getXManagedCount() {
 			return this.xManagedCount;
@@ -132,12 +164,20 @@ public class ListInstanceIndicesResponse extends AcsResponse {
 			this.xManagedCount = xManagedCount;
 		}
 
-		public Long getXManagedStorageSize() {
-			return this.xManagedStorageSize;
+		public Long getXOSSStorageSize() {
+			return this.xOSSStorageSize;
 		}
 
-		public void setXManagedStorageSize(Long xManagedStorageSize) {
-			this.xManagedStorageSize = xManagedStorageSize;
+		public void setXOSSStorageSize(Long xOSSStorageSize) {
+			this.xOSSStorageSize = xOSSStorageSize;
+		}
+
+		public Integer getXOSSCount() {
+			return this.xOSSCount;
+		}
+
+		public void setXOSSCount(Integer xOSSCount) {
+			this.xOSSCount = xOSSCount;
 		}
 	}
 
