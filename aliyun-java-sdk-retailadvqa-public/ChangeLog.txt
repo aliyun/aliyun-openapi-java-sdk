@@ -1,3 +1,6 @@
+2021-11-10 Version: 3.3.30
+- UserConfigQuery.
+
 2021-09-16 Version: 3.3.27
 - ListAudience.
 
