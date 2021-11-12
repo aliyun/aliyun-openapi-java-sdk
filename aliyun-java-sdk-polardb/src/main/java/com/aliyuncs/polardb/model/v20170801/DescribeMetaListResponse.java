@@ -25,24 +25,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeMetaListResponse extends AcsResponse {
 
-	private String requestId;
+	private String totalPageCount;
 
 	private String totalRecordCount;
 
-	private String totalPageCount;
-
 	private String pageSize;
+
+	private String requestId;
 
 	private String pageNumber;
 
 	private List<MetaItem> items;
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getTotalPageCount() {
+		return this.totalPageCount;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setTotalPageCount(String totalPageCount) {
+		this.totalPageCount = totalPageCount;
 	}
 
 	public String getTotalRecordCount() {
@@ -53,20 +53,20 @@ public class DescribeMetaListResponse extends AcsResponse {
 		this.totalRecordCount = totalRecordCount;
 	}
 
-	public String getTotalPageCount() {
-		return this.totalPageCount;
-	}
-
-	public void setTotalPageCount(String totalPageCount) {
-		this.totalPageCount = totalPageCount;
-	}
-
 	public String getPageSize() {
 		return this.pageSize;
 	}
 
 	public void setPageSize(String pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getPageNumber() {

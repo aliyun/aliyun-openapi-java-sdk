@@ -141,6 +141,8 @@ public class DescribeScheduleTasksResponse extends AcsResponse {
 
 			private String dbClusterDescription;
 
+			private Boolean taskCancel;
+
 			public String getStatus() {
 				return this.status;
 			}
@@ -227,6 +229,14 @@ public class DescribeScheduleTasksResponse extends AcsResponse {
 
 			public void setDbClusterDescription(String dbClusterDescription) {
 				this.dbClusterDescription = dbClusterDescription;
+			}
+
+			public Boolean getTaskCancel() {
+				return this.taskCancel;
+			}
+
+			public void setTaskCancel(Boolean taskCancel) {
+				this.taskCancel = taskCancel;
 			}
 		}
 	}

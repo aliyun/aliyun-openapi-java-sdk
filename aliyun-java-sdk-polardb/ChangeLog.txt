@@ -1,3 +1,6 @@
+2021-11-12 Version: 1.8.13
+- Optimize the API for querying storage package information.
+
 2021-09-23 Version: 1.8.11
 - Supports the purchase of polardb storage packages.
 - Support temporary upgrades and allocations of instances.

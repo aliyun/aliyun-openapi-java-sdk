@@ -27,8 +27,8 @@ public class DescribeMetaListResponseUnmarshaller {
 	public static DescribeMetaListResponse unmarshall(DescribeMetaListResponse describeMetaListResponse, UnmarshallerContext _ctx) {
 		
 		describeMetaListResponse.setRequestId(_ctx.stringValue("DescribeMetaListResponse.RequestId"));
-		describeMetaListResponse.setTotalRecordCount(_ctx.stringValue("DescribeMetaListResponse.TotalRecordCount"));
 		describeMetaListResponse.setTotalPageCount(_ctx.stringValue("DescribeMetaListResponse.TotalPageCount"));
+		describeMetaListResponse.setTotalRecordCount(_ctx.stringValue("DescribeMetaListResponse.TotalRecordCount"));
 		describeMetaListResponse.setPageSize(_ctx.stringValue("DescribeMetaListResponse.PageSize"));
 		describeMetaListResponse.setPageNumber(_ctx.stringValue("DescribeMetaListResponse.PageNumber"));
 

@@ -51,6 +51,7 @@ public class DescribeScheduleTasksResponseUnmarshaller {
 			timerInfosItem.setOrderId(_ctx.stringValue("DescribeScheduleTasksResponse.Data.TimerInfos["+ i +"].OrderId"));
 			timerInfosItem.setDbClusterStatus(_ctx.stringValue("DescribeScheduleTasksResponse.Data.TimerInfos["+ i +"].DbClusterStatus"));
 			timerInfosItem.setDbClusterDescription(_ctx.stringValue("DescribeScheduleTasksResponse.Data.TimerInfos["+ i +"].DbClusterDescription"));
+			timerInfosItem.setTaskCancel(_ctx.booleanValue("DescribeScheduleTasksResponse.Data.TimerInfos["+ i +"].TaskCancel"));
 
 			timerInfos.add(timerInfosItem);
 		}
