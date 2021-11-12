@@ -28,6 +28,8 @@ public class RegisterAuthenticatorResponse extends AcsResponse {
 
 	private String authenticatorUuid;
 
+	private String etasResponseSting;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -42,6 +44,14 @@ public class RegisterAuthenticatorResponse extends AcsResponse {
 
 	public void setAuthenticatorUuid(String authenticatorUuid) {
 		this.authenticatorUuid = authenticatorUuid;
+	}
+
+	public String getEtasResponseSting() {
+		return this.etasResponseSting;
+	}
+
+	public void setEtasResponseSting(String etasResponseSting) {
+		this.etasResponseSting = etasResponseSting;
 	}
 
 	@Override

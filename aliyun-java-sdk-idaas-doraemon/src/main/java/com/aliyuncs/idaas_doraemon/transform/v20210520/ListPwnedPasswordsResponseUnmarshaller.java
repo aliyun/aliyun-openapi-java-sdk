@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.idaas_doraemon.model.v20210520.ListPwnedPasswordsResponse;
-import com.aliyuncs.idaas_doraemon.model.v20210520.ListPwnedPasswordsResponse.PwnedPasswordInfo;
+import com.aliyuncs.idaas_doraemon.model.v20210520.ListPwnedPasswordsResponse.ItemsItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -27,17 +27,19 @@ public class ListPwnedPasswordsResponseUnmarshaller {
 	public static ListPwnedPasswordsResponse unmarshall(ListPwnedPasswordsResponse listPwnedPasswordsResponse, UnmarshallerContext _ctx) {
 		
 		listPwnedPasswordsResponse.setRequestId(_ctx.stringValue("ListPwnedPasswordsResponse.RequestId"));
+		listPwnedPasswordsResponse.setPageNumber(_ctx.longValue("ListPwnedPasswordsResponse.PageNumber"));
 		listPwnedPasswordsResponse.setTotalCount(_ctx.longValue("ListPwnedPasswordsResponse.TotalCount"));
+		listPwnedPasswordsResponse.setPageSize(_ctx.longValue("ListPwnedPasswordsResponse.PageSize"));
 
-		List<PwnedPasswordInfo> pwnedPasswordInfos = new ArrayList<PwnedPasswordInfo>();
-		for (int i = 0; i < _ctx.lengthValue("ListPwnedPasswordsResponse.PwnedPasswordInfos.Length"); i++) {
-			PwnedPasswordInfo pwnedPasswordInfo = new PwnedPasswordInfo();
-			pwnedPasswordInfo.setHexPasswordSha1Hash(_ctx.stringValue("ListPwnedPasswordsResponse.PwnedPasswordInfos["+ i +"].HexPasswordSha1Hash"));
-			pwnedPasswordInfo.setPwnedCount(_ctx.longValue("ListPwnedPasswordsResponse.PwnedPasswordInfos["+ i +"].PwnedCount"));
+		List<ItemsItem> items = new ArrayList<ItemsItem>();
+		for (int i = 0; i < _ctx.lengthValue("ListPwnedPasswordsResponse.Items.Length"); i++) {
+			ItemsItem itemsItem = new ItemsItem();
+			itemsItem.setHexPasswordSha1Hash(_ctx.stringValue("ListPwnedPasswordsResponse.Items["+ i +"].HexPasswordSha1Hash"));
+			itemsItem.setPwnedCount(_ctx.longValue("ListPwnedPasswordsResponse.Items["+ i +"].PwnedCount"));
 
-			pwnedPasswordInfos.add(pwnedPasswordInfo);
+			items.add(itemsItem);
 		}
-		listPwnedPasswordsResponse.setPwnedPasswordInfos(pwnedPasswordInfos);
+		listPwnedPasswordsResponse.setItems(items);
 	 
 	 	return listPwnedPasswordsResponse;
 	}

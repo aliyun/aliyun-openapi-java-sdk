@@ -28,6 +28,10 @@ public class VerifyUserAuthenticationResponse extends AcsResponse {
 
 	private Boolean verifyResult;
 
+	private String etasSDKString;
+
+	private String idToken;
+
 	private AuthenticateResultInfo authenticateResultInfo;
 
 	public String getRequestId() {
@@ -44,6 +48,22 @@ public class VerifyUserAuthenticationResponse extends AcsResponse {
 
 	public void setVerifyResult(Boolean verifyResult) {
 		this.verifyResult = verifyResult;
+	}
+
+	public String getEtasSDKString() {
+		return this.etasSDKString;
+	}
+
+	public void setEtasSDKString(String etasSDKString) {
+		this.etasSDKString = etasSDKString;
+	}
+
+	public String getIdToken() {
+		return this.idToken;
+	}
+
+	public void setIdToken(String idToken) {
+		this.idToken = idToken;
 	}
 
 	public AuthenticateResultInfo getAuthenticateResultInfo() {

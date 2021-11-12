@@ -25,6 +25,8 @@ public class VerifyUserAuthenticationResponseUnmarshaller {
 		
 		verifyUserAuthenticationResponse.setRequestId(_ctx.stringValue("VerifyUserAuthenticationResponse.RequestId"));
 		verifyUserAuthenticationResponse.setVerifyResult(_ctx.booleanValue("VerifyUserAuthenticationResponse.VerifyResult"));
+		verifyUserAuthenticationResponse.setEtasSDKString(_ctx.stringValue("VerifyUserAuthenticationResponse.EtasSDKString"));
+		verifyUserAuthenticationResponse.setIdToken(_ctx.stringValue("VerifyUserAuthenticationResponse.IdToken"));
 
 		AuthenticateResultInfo authenticateResultInfo = new AuthenticateResultInfo();
 		authenticateResultInfo.setUserId(_ctx.stringValue("VerifyUserAuthenticationResponse.AuthenticateResultInfo.UserId"));

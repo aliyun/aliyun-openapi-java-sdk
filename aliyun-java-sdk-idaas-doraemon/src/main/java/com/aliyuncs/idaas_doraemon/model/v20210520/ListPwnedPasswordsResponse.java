@@ -27,9 +27,13 @@ public class ListPwnedPasswordsResponse extends AcsResponse {
 
 	private String requestId;
 
+	private Long pageNumber;
+
 	private Long totalCount;
 
-	private List<PwnedPasswordInfo> pwnedPasswordInfos;
+	private Long pageSize;
+
+	private List<ItemsItem> items;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -37,6 +41,14 @@ public class ListPwnedPasswordsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Long getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Long pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public Long getTotalCount() {
@@ -47,15 +59,23 @@ public class ListPwnedPasswordsResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public List<PwnedPasswordInfo> getPwnedPasswordInfos() {
-		return this.pwnedPasswordInfos;
+	public Long getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setPwnedPasswordInfos(List<PwnedPasswordInfo> pwnedPasswordInfos) {
-		this.pwnedPasswordInfos = pwnedPasswordInfos;
+	public void setPageSize(Long pageSize) {
+		this.pageSize = pageSize;
 	}
 
-	public static class PwnedPasswordInfo {
+	public List<ItemsItem> getItems() {
+		return this.items;
+	}
+
+	public void setItems(List<ItemsItem> items) {
+		this.items = items;
+	}
+
+	public static class ItemsItem {
 
 		private String hexPasswordSha1Hash;
 

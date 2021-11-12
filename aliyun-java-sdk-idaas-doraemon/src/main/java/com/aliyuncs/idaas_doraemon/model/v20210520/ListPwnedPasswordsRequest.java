@@ -15,7 +15,6 @@
 package com.aliyuncs.idaas_doraemon.model.v20210520;
 
 import com.aliyuncs.RpcAcsRequest;
-import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.idaas_doraemon.Endpoint;
 
@@ -29,7 +28,6 @@ public class ListPwnedPasswordsRequest extends RpcAcsRequest<ListPwnedPasswordsR
 	private String prefixHexPasswordSha1Hash;
 	public ListPwnedPasswordsRequest() {
 		super("idaas-doraemon", "2021-05-20", "ListPwnedPasswords");
-		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

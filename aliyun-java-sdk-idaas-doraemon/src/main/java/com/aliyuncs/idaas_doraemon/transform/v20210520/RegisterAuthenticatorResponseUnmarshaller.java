@@ -24,6 +24,7 @@ public class RegisterAuthenticatorResponseUnmarshaller {
 		
 		registerAuthenticatorResponse.setRequestId(_ctx.stringValue("RegisterAuthenticatorResponse.RequestId"));
 		registerAuthenticatorResponse.setAuthenticatorUuid(_ctx.stringValue("RegisterAuthenticatorResponse.AuthenticatorUuid"));
+		registerAuthenticatorResponse.setEtasResponseSting(_ctx.stringValue("RegisterAuthenticatorResponse.EtasResponseSting"));
 	 
 	 	return registerAuthenticatorResponse;
 	}
