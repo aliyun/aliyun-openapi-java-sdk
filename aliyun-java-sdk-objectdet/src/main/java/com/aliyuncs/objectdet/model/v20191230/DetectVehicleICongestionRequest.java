@@ -31,12 +31,8 @@ public class DetectVehicleICongestionRequest extends RpcAcsRequest<DetectVehicle
 	@SerializedName("roadRegions")
 	private List<RoadRegions> roadRegions;
 
-	private String originRequestId;
-
 	@SerializedName("preRegionIntersectFeatures")
 	private List<PreRegionIntersectFeatures> preRegionIntersectFeatures;
-
-	private String streamArn;
 
 	private String imageURL;
 	public DetectVehicleICongestionRequest() {
@@ -59,17 +55,6 @@ public class DetectVehicleICongestionRequest extends RpcAcsRequest<DetectVehicle
 		}	
 	}
 
-	public String getOriginRequestId() {
-		return this.originRequestId;
-	}
-
-	public void setOriginRequestId(String originRequestId) {
-		this.originRequestId = originRequestId;
-		if(originRequestId != null){
-			putQueryParameter("OriginRequestId", originRequestId);
-		}
-	}
-
 	public List<PreRegionIntersectFeatures> getPreRegionIntersectFeatures() {
 		return this.preRegionIntersectFeatures;
 	}
@@ -79,17 +64,6 @@ public class DetectVehicleICongestionRequest extends RpcAcsRequest<DetectVehicle
 		if (preRegionIntersectFeatures != null) {
 			putBodyParameter("PreRegionIntersectFeatures" , new Gson().toJson(preRegionIntersectFeatures));
 		}	
-	}
-
-	public String getStreamArn() {
-		return this.streamArn;
-	}
-
-	public void setStreamArn(String streamArn) {
-		this.streamArn = streamArn;
-		if(streamArn != null){
-			putQueryParameter("StreamArn", streamArn);
-		}
 	}
 
 	public String getImageURL() {

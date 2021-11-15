@@ -42,6 +42,7 @@ public class DetectVehicleICongestionResponseUnmarshaller {
 			Element element = new Element();
 			element.setScore(_ctx.floatValue("DetectVehicleICongestionResponse.Data.Elements["+ i +"].Score"));
 			element.setTypeName(_ctx.stringValue("DetectVehicleICongestionResponse.Data.Elements["+ i +"].TypeName"));
+			element.setId(_ctx.longValue("DetectVehicleICongestionResponse.Data.Elements["+ i +"].Id"));
 
 			List<BoxesItem> boxes = new ArrayList<BoxesItem>();
 			for (int j = 0; j < _ctx.lengthValue("DetectVehicleICongestionResponse.Data.Elements["+ i +"].Boxes.Length"); j++) {

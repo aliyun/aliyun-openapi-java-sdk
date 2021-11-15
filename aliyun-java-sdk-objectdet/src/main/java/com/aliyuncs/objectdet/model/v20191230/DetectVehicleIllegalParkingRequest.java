@@ -31,10 +31,6 @@ public class DetectVehicleIllegalParkingRequest extends RpcAcsRequest<DetectVehi
 	@SerializedName("roadRegions")
 	private List<RoadRegions> roadRegions;
 
-	private String originRequestId;
-
-	private String streamArn;
-
 	private String imageURL;
 	public DetectVehicleIllegalParkingRequest() {
 		super("objectdet", "2019-12-30", "DetectVehicleIllegalParking");
@@ -54,28 +50,6 @@ public class DetectVehicleIllegalParkingRequest extends RpcAcsRequest<DetectVehi
 		if (roadRegions != null) {
 			putBodyParameter("RoadRegions" , new Gson().toJson(roadRegions));
 		}	
-	}
-
-	public String getOriginRequestId() {
-		return this.originRequestId;
-	}
-
-	public void setOriginRequestId(String originRequestId) {
-		this.originRequestId = originRequestId;
-		if(originRequestId != null){
-			putQueryParameter("OriginRequestId", originRequestId);
-		}
-	}
-
-	public String getStreamArn() {
-		return this.streamArn;
-	}
-
-	public void setStreamArn(String streamArn) {
-		this.streamArn = streamArn;
-		if(streamArn != null){
-			putQueryParameter("StreamArn", streamArn);
-		}
 	}
 
 	public String getImageURL() {

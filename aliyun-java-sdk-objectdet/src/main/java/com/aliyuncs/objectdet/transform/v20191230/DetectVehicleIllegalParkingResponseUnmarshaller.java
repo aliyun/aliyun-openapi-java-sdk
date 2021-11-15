@@ -40,6 +40,7 @@ public class DetectVehicleIllegalParkingResponseUnmarshaller {
 			Element element = new Element();
 			element.setScore(_ctx.floatValue("DetectVehicleIllegalParkingResponse.Data.Elements["+ i +"].Score"));
 			element.setTypeName(_ctx.stringValue("DetectVehicleIllegalParkingResponse.Data.Elements["+ i +"].TypeName"));
+			element.setId(_ctx.longValue("DetectVehicleIllegalParkingResponse.Data.Elements["+ i +"].Id"));
 
 			List<BoxesItem> boxes = new ArrayList<BoxesItem>();
 			for (int j = 0; j < _ctx.lengthValue("DetectVehicleIllegalParkingResponse.Data.Elements["+ i +"].Boxes.Length"); j++) {
