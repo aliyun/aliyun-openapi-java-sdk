@@ -41,6 +41,7 @@ public class DescribeInstanceSpecsResponseUnmarshaller {
 			instanceSpec.setDefenseCount(_ctx.integerValue("DescribeInstanceSpecsResponse.InstanceSpecs["+ i +"].DefenseCount"));
 			instanceSpec.setFunctionVersion(_ctx.stringValue("DescribeInstanceSpecsResponse.InstanceSpecs["+ i +"].FunctionVersion"));
 			instanceSpec.setQpsLimit(_ctx.integerValue("DescribeInstanceSpecsResponse.InstanceSpecs["+ i +"].QpsLimit"));
+			instanceSpec.setElasticBw(_ctx.integerValue("DescribeInstanceSpecsResponse.InstanceSpecs["+ i +"].ElasticBw"));
 
 			instanceSpecs.add(instanceSpec);
 		}

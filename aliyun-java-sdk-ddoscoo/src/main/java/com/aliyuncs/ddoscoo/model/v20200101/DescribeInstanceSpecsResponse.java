@@ -67,6 +67,8 @@ public class DescribeInstanceSpecsResponse extends AcsResponse {
 
 		private Integer qpsLimit;
 
+		private Integer elasticBw;
+
 		public String getInstanceId() {
 			return this.instanceId;
 		}
@@ -145,6 +147,14 @@ public class DescribeInstanceSpecsResponse extends AcsResponse {
 
 		public void setQpsLimit(Integer qpsLimit) {
 			this.qpsLimit = qpsLimit;
+		}
+
+		public Integer getElasticBw() {
+			return this.elasticBw;
+		}
+
+		public void setElasticBw(Integer elasticBw) {
+			this.elasticBw = elasticBw;
 		}
 	}
 

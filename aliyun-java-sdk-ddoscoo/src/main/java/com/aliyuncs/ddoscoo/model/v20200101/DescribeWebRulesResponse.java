@@ -71,6 +71,8 @@ public class DescribeWebRulesResponse extends AcsResponse {
 
 		private Boolean http2Enable;
 
+		private Boolean ocspEnabled;
+
 		private Boolean http2HttpsEnable;
 
 		private Boolean https2HttpEnable;
@@ -153,6 +155,14 @@ public class DescribeWebRulesResponse extends AcsResponse {
 
 		public void setHttp2Enable(Boolean http2Enable) {
 			this.http2Enable = http2Enable;
+		}
+
+		public Boolean getOcspEnabled() {
+			return this.ocspEnabled;
+		}
+
+		public void setOcspEnabled(Boolean ocspEnabled) {
+			this.ocspEnabled = ocspEnabled;
 		}
 
 		public Boolean getHttp2HttpsEnable() {

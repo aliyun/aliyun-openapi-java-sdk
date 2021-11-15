@@ -41,6 +41,7 @@ public class DescribeWebRulesResponseUnmarshaller {
 			webRule.setSslProtocols(_ctx.stringValue("DescribeWebRulesResponse.WebRules["+ i +"].SslProtocols"));
 			webRule.setSslCiphers(_ctx.stringValue("DescribeWebRulesResponse.WebRules["+ i +"].SslCiphers"));
 			webRule.setHttp2Enable(_ctx.booleanValue("DescribeWebRulesResponse.WebRules["+ i +"].Http2Enable"));
+			webRule.setOcspEnabled(_ctx.booleanValue("DescribeWebRulesResponse.WebRules["+ i +"].OcspEnabled"));
 			webRule.setHttp2HttpsEnable(_ctx.booleanValue("DescribeWebRulesResponse.WebRules["+ i +"].Http2HttpsEnable"));
 			webRule.setHttps2HttpEnable(_ctx.booleanValue("DescribeWebRulesResponse.WebRules["+ i +"].Https2HttpEnable"));
 			webRule.setPolicyMode(_ctx.stringValue("DescribeWebRulesResponse.WebRules["+ i +"].PolicyMode"));

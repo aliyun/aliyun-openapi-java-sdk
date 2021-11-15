@@ -39,6 +39,8 @@ public class DescribeDDosAllEventListResponseUnmarshaller {
 			attackEvent.setStartTime(_ctx.longValue("DescribeDDosAllEventListResponse.AttackEvents["+ i +"].StartTime"));
 			attackEvent.setEndTime(_ctx.longValue("DescribeDDosAllEventListResponse.AttackEvents["+ i +"].EndTime"));
 			attackEvent.setMbps(_ctx.longValue("DescribeDDosAllEventListResponse.AttackEvents["+ i +"].Mbps"));
+			attackEvent.setRegion(_ctx.stringValue("DescribeDDosAllEventListResponse.AttackEvents["+ i +"].Region"));
+			attackEvent.setArea(_ctx.stringValue("DescribeDDosAllEventListResponse.AttackEvents["+ i +"].Area"));
 
 			attackEvents.add(attackEvent);
 		}

@@ -22,7 +22,7 @@ import com.aliyuncs.ddoscoo.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeDDosAllEventListRequest extends RpcAcsRequest<DescribeDDosAllEventListResponse> {
+public class DescribeSystemLogRequest extends RpcAcsRequest<DescribeSystemLogResponse> {
 	   
 
 	private Long startTime;
@@ -33,9 +33,11 @@ public class DescribeDDosAllEventListRequest extends RpcAcsRequest<DescribeDDosA
 
 	private Long endTime;
 
-	private String eventType;
-	public DescribeDDosAllEventListRequest() {
-		super("ddoscoo", "2020-01-01", "DescribeDDosAllEventList");
+	private String entityObject;
+
+	private Integer entityType;
+	public DescribeSystemLogRequest() {
+		super("ddoscoo", "2020-01-01", "DescribeSystemLog");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -87,20 +89,31 @@ public class DescribeDDosAllEventListRequest extends RpcAcsRequest<DescribeDDosA
 		}
 	}
 
-	public String getEventType() {
-		return this.eventType;
+	public String getEntityObject() {
+		return this.entityObject;
 	}
 
-	public void setEventType(String eventType) {
-		this.eventType = eventType;
-		if(eventType != null){
-			putQueryParameter("EventType", eventType);
+	public void setEntityObject(String entityObject) {
+		this.entityObject = entityObject;
+		if(entityObject != null){
+			putQueryParameter("EntityObject", entityObject);
+		}
+	}
+
+	public Integer getEntityType() {
+		return this.entityType;
+	}
+
+	public void setEntityType(Integer entityType) {
+		this.entityType = entityType;
+		if(entityType != null){
+			putQueryParameter("EntityType", entityType.toString());
 		}
 	}
 
 	@Override
-	public Class<DescribeDDosAllEventListResponse> getResponseClass() {
-		return DescribeDDosAllEventListResponse.class;
+	public Class<DescribeSystemLogResponse> getResponseClass() {
+		return DescribeSystemLogResponse.class;
 	}
 
 }

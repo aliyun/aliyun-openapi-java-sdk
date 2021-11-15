@@ -71,6 +71,10 @@ public class DescribeDDosAllEventListResponse extends AcsResponse {
 
 		private Long mbps;
 
+		private String region;
+
+		private String area;
+
 		public Long getPps() {
 			return this.pps;
 		}
@@ -125,6 +129,22 @@ public class DescribeDDosAllEventListResponse extends AcsResponse {
 
 		public void setMbps(Long mbps) {
 			this.mbps = mbps;
+		}
+
+		public String getRegion() {
+			return this.region;
+		}
+
+		public void setRegion(String region) {
+			this.region = region;
+		}
+
+		public String getArea() {
+			return this.area;
+		}
+
+		public void setArea(String area) {
+			this.area = area;
 		}
 	}
 
