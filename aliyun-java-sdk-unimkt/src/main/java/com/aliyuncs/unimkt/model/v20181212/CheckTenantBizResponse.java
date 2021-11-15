@@ -26,11 +26,11 @@ public class CheckTenantBizResponse extends AcsResponse {
 
 	private String code;
 
+	private Boolean success;
+
 	private String message;
 
 	private String requestId;
-
-	private Boolean success;
 
 	private Model model;
 
@@ -40,6 +40,14 @@ public class CheckTenantBizResponse extends AcsResponse {
 
 	public void setCode(String code) {
 		this.code = code;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public String getMessage() {
@@ -56,14 +64,6 @@ public class CheckTenantBizResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
 	}
 
 	public Model getModel() {

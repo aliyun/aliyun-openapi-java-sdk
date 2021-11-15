@@ -37,26 +37,26 @@ public class QueryAppTasksResponseUnmarshaller {
 		List<ListItem> list = new ArrayList<ListItem>();
 		for (int i = 0; i < _ctx.lengthValue("QueryAppTasksResponse.Data.List.Length"); i++) {
 			ListItem listItem = new ListItem();
-			listItem.setStatus(_ctx.integerValue("QueryAppTasksResponse.Data.List["+ i +"].Status"));
-			listItem.setTimeSchema(_ctx.stringValue("QueryAppTasksResponse.Data.List["+ i +"].TimeSchema"));
-			listItem.setQuota(_ctx.longValue("QueryAppTasksResponse.Data.List["+ i +"].Quota"));
-			listItem.setContentIds(_ctx.stringValue("QueryAppTasksResponse.Data.List["+ i +"].ContentIds"));
-			listItem.setChargeCost(_ctx.longValue("QueryAppTasksResponse.Data.List["+ i +"].ChargeCost"));
-			listItem.setProxyUserId(_ctx.longValue("QueryAppTasksResponse.Data.List["+ i +"].ProxyUserId"));
-			listItem.setOpenScene(_ctx.integerValue("QueryAppTasksResponse.Data.List["+ i +"].OpenScene"));
-			listItem.setPriority(_ctx.integerValue("QueryAppTasksResponse.Data.List["+ i +"].Priority"));
-			listItem.setAccountNo(_ctx.stringValue("QueryAppTasksResponse.Data.List["+ i +"].AccountNo"));
-			listItem.setAllContentStatus(_ctx.integerValue("QueryAppTasksResponse.Data.List["+ i +"].AllContentStatus"));
-			listItem.setQuotaDay(_ctx.longValue("QueryAppTasksResponse.Data.List["+ i +"].QuotaDay"));
-			listItem.setEndTime(_ctx.stringValue("QueryAppTasksResponse.Data.List["+ i +"].EndTime"));
-			listItem.setStartTime(_ctx.stringValue("QueryAppTasksResponse.Data.List["+ i +"].StartTime"));
-			listItem.setBrandUserId(_ctx.longValue("QueryAppTasksResponse.Data.List["+ i +"].BrandUserId"));
-			listItem.setPriceType(_ctx.stringValue("QueryAppTasksResponse.Data.List["+ i +"].PriceType"));
-			listItem.setName(_ctx.stringValue("QueryAppTasksResponse.Data.List["+ i +"].Name"));
-			listItem.setBalanceDay(_ctx.longValue("QueryAppTasksResponse.Data.List["+ i +"].BalanceDay"));
-			listItem.setPopularizePosition(_ctx.integerValue("QueryAppTasksResponse.Data.List["+ i +"].PopularizePosition"));
 			listItem.setId(_ctx.longValue("QueryAppTasksResponse.Data.List["+ i +"].Id"));
+			listItem.setName(_ctx.stringValue("QueryAppTasksResponse.Data.List["+ i +"].Name"));
+			listItem.setOpenScene(_ctx.integerValue("QueryAppTasksResponse.Data.List["+ i +"].OpenScene"));
+			listItem.setAllContentStatus(_ctx.integerValue("QueryAppTasksResponse.Data.List["+ i +"].AllContentStatus"));
+			listItem.setPopularizePosition(_ctx.integerValue("QueryAppTasksResponse.Data.List["+ i +"].PopularizePosition"));
+			listItem.setPriceType(_ctx.stringValue("QueryAppTasksResponse.Data.List["+ i +"].PriceType"));
+			listItem.setContentIds(_ctx.stringValue("QueryAppTasksResponse.Data.List["+ i +"].ContentIds"));
+			listItem.setBrandUserId(_ctx.longValue("QueryAppTasksResponse.Data.List["+ i +"].BrandUserId"));
+			listItem.setProxyUserId(_ctx.longValue("QueryAppTasksResponse.Data.List["+ i +"].ProxyUserId"));
+			listItem.setAccountNo(_ctx.stringValue("QueryAppTasksResponse.Data.List["+ i +"].AccountNo"));
+			listItem.setQuota(_ctx.longValue("QueryAppTasksResponse.Data.List["+ i +"].Quota"));
+			listItem.setQuotaDay(_ctx.longValue("QueryAppTasksResponse.Data.List["+ i +"].QuotaDay"));
 			listItem.setBalance(_ctx.longValue("QueryAppTasksResponse.Data.List["+ i +"].Balance"));
+			listItem.setBalanceDay(_ctx.longValue("QueryAppTasksResponse.Data.List["+ i +"].BalanceDay"));
+			listItem.setStartTime(_ctx.stringValue("QueryAppTasksResponse.Data.List["+ i +"].StartTime"));
+			listItem.setEndTime(_ctx.stringValue("QueryAppTasksResponse.Data.List["+ i +"].EndTime"));
+			listItem.setStatus(_ctx.integerValue("QueryAppTasksResponse.Data.List["+ i +"].Status"));
+			listItem.setChargeCost(_ctx.longValue("QueryAppTasksResponse.Data.List["+ i +"].ChargeCost"));
+			listItem.setPriority(_ctx.integerValue("QueryAppTasksResponse.Data.List["+ i +"].Priority"));
+			listItem.setTimeSchema(_ctx.stringValue("QueryAppTasksResponse.Data.List["+ i +"].TimeSchema"));
 
 			list.add(listItem);
 		}

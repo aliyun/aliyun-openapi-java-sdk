@@ -26,11 +26,11 @@ public class QuerySlotResponse extends AcsResponse {
 
 	private String code;
 
+	private Boolean success;
+
 	private String message;
 
 	private String requestId;
-
-	private Boolean success;
 
 	private Model model;
 
@@ -40,6 +40,14 @@ public class QuerySlotResponse extends AcsResponse {
 
 	public void setCode(String code) {
 		this.code = code;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public String getMessage() {
@@ -58,14 +66,6 @@ public class QuerySlotResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
 	public Model getModel() {
 		return this.model;
 	}
@@ -78,33 +78,33 @@ public class QuerySlotResponse extends AcsResponse {
 
 		private Long createTime;
 
-		private String mediaName;
-
-		private String adSlotType;
-
-		private String adSlotStatus;
-
-		private String mediaId;
-
-		private String extInfo;
-
-		private String adSlotName;
-
-		private String inspireScene;
-
-		private String blockingRule;
-
-		private Long version;
-
-		private String adSlotId;
-
-		private String adSlotCorporateStatus;
-
-		private String adSlotTemplateId;
-
 		private Long modifyTime;
 
 		private String tenantId;
+
+		private String mediaName;
+
+		private String mediaId;
+
+		private String adSlotId;
+
+		private String adSlotName;
+
+		private String adSlotType;
+
+		private String adSlotTemplateId;
+
+		private String adSlotStatus;
+
+		private String adSlotCorporateStatus;
+
+		private String extInfo;
+
+		private String blockingRule;
+
+		private String inspireScene;
+
+		private Long version;
 
 		public Long getCreateTime() {
 			return this.createTime;
@@ -112,102 +112,6 @@ public class QuerySlotResponse extends AcsResponse {
 
 		public void setCreateTime(Long createTime) {
 			this.createTime = createTime;
-		}
-
-		public String getMediaName() {
-			return this.mediaName;
-		}
-
-		public void setMediaName(String mediaName) {
-			this.mediaName = mediaName;
-		}
-
-		public String getAdSlotType() {
-			return this.adSlotType;
-		}
-
-		public void setAdSlotType(String adSlotType) {
-			this.adSlotType = adSlotType;
-		}
-
-		public String getAdSlotStatus() {
-			return this.adSlotStatus;
-		}
-
-		public void setAdSlotStatus(String adSlotStatus) {
-			this.adSlotStatus = adSlotStatus;
-		}
-
-		public String getMediaId() {
-			return this.mediaId;
-		}
-
-		public void setMediaId(String mediaId) {
-			this.mediaId = mediaId;
-		}
-
-		public String getExtInfo() {
-			return this.extInfo;
-		}
-
-		public void setExtInfo(String extInfo) {
-			this.extInfo = extInfo;
-		}
-
-		public String getAdSlotName() {
-			return this.adSlotName;
-		}
-
-		public void setAdSlotName(String adSlotName) {
-			this.adSlotName = adSlotName;
-		}
-
-		public String getInspireScene() {
-			return this.inspireScene;
-		}
-
-		public void setInspireScene(String inspireScene) {
-			this.inspireScene = inspireScene;
-		}
-
-		public String getBlockingRule() {
-			return this.blockingRule;
-		}
-
-		public void setBlockingRule(String blockingRule) {
-			this.blockingRule = blockingRule;
-		}
-
-		public Long getVersion() {
-			return this.version;
-		}
-
-		public void setVersion(Long version) {
-			this.version = version;
-		}
-
-		public String getAdSlotId() {
-			return this.adSlotId;
-		}
-
-		public void setAdSlotId(String adSlotId) {
-			this.adSlotId = adSlotId;
-		}
-
-		public String getAdSlotCorporateStatus() {
-			return this.adSlotCorporateStatus;
-		}
-
-		public void setAdSlotCorporateStatus(String adSlotCorporateStatus) {
-			this.adSlotCorporateStatus = adSlotCorporateStatus;
-		}
-
-		public String getAdSlotTemplateId() {
-			return this.adSlotTemplateId;
-		}
-
-		public void setAdSlotTemplateId(String adSlotTemplateId) {
-			this.adSlotTemplateId = adSlotTemplateId;
 		}
 
 		public Long getModifyTime() {
@@ -224,6 +128,102 @@ public class QuerySlotResponse extends AcsResponse {
 
 		public void setTenantId(String tenantId) {
 			this.tenantId = tenantId;
+		}
+
+		public String getMediaName() {
+			return this.mediaName;
+		}
+
+		public void setMediaName(String mediaName) {
+			this.mediaName = mediaName;
+		}
+
+		public String getMediaId() {
+			return this.mediaId;
+		}
+
+		public void setMediaId(String mediaId) {
+			this.mediaId = mediaId;
+		}
+
+		public String getAdSlotId() {
+			return this.adSlotId;
+		}
+
+		public void setAdSlotId(String adSlotId) {
+			this.adSlotId = adSlotId;
+		}
+
+		public String getAdSlotName() {
+			return this.adSlotName;
+		}
+
+		public void setAdSlotName(String adSlotName) {
+			this.adSlotName = adSlotName;
+		}
+
+		public String getAdSlotType() {
+			return this.adSlotType;
+		}
+
+		public void setAdSlotType(String adSlotType) {
+			this.adSlotType = adSlotType;
+		}
+
+		public String getAdSlotTemplateId() {
+			return this.adSlotTemplateId;
+		}
+
+		public void setAdSlotTemplateId(String adSlotTemplateId) {
+			this.adSlotTemplateId = adSlotTemplateId;
+		}
+
+		public String getAdSlotStatus() {
+			return this.adSlotStatus;
+		}
+
+		public void setAdSlotStatus(String adSlotStatus) {
+			this.adSlotStatus = adSlotStatus;
+		}
+
+		public String getAdSlotCorporateStatus() {
+			return this.adSlotCorporateStatus;
+		}
+
+		public void setAdSlotCorporateStatus(String adSlotCorporateStatus) {
+			this.adSlotCorporateStatus = adSlotCorporateStatus;
+		}
+
+		public String getExtInfo() {
+			return this.extInfo;
+		}
+
+		public void setExtInfo(String extInfo) {
+			this.extInfo = extInfo;
+		}
+
+		public String getBlockingRule() {
+			return this.blockingRule;
+		}
+
+		public void setBlockingRule(String blockingRule) {
+			this.blockingRule = blockingRule;
+		}
+
+		public String getInspireScene() {
+			return this.inspireScene;
+		}
+
+		public void setInspireScene(String inspireScene) {
+			this.inspireScene = inspireScene;
+		}
+
+		public Long getVersion() {
+			return this.version;
+		}
+
+		public void setVersion(Long version) {
+			this.version = version;
 		}
 	}
 

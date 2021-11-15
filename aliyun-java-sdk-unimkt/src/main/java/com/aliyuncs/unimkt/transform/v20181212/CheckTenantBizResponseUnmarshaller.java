@@ -25,8 +25,8 @@ public class CheckTenantBizResponseUnmarshaller {
 		
 		checkTenantBizResponse.setRequestId(_ctx.stringValue("CheckTenantBizResponse.RequestId"));
 		checkTenantBizResponse.setCode(_ctx.stringValue("CheckTenantBizResponse.Code"));
-		checkTenantBizResponse.setMessage(_ctx.stringValue("CheckTenantBizResponse.Message"));
 		checkTenantBizResponse.setSuccess(_ctx.booleanValue("CheckTenantBizResponse.Success"));
+		checkTenantBizResponse.setMessage(_ctx.stringValue("CheckTenantBizResponse.Message"));
 
 		Model model = new Model();
 		model.setCanAccessMedia(_ctx.booleanValue("CheckTenantBizResponse.Model.CanAccessMedia"));

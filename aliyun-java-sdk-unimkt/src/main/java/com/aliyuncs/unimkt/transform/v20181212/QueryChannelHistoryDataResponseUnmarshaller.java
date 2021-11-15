@@ -25,9 +25,9 @@ public class QueryChannelHistoryDataResponseUnmarshaller {
 		
 		queryChannelHistoryDataResponse.setRequestId(_ctx.stringValue("QueryChannelHistoryDataResponse.RequestId"));
 		queryChannelHistoryDataResponse.setCode(_ctx.integerValue("QueryChannelHistoryDataResponse.Code"));
-		queryChannelHistoryDataResponse.setData(_ctx.mapValue("QueryChannelHistoryDataResponse.Data"));
-		queryChannelHistoryDataResponse.setErrorMsg(_ctx.stringValue("QueryChannelHistoryDataResponse.ErrorMsg"));
 		queryChannelHistoryDataResponse.setSuccess(_ctx.booleanValue("QueryChannelHistoryDataResponse.Success"));
+		queryChannelHistoryDataResponse.setErrorMsg(_ctx.stringValue("QueryChannelHistoryDataResponse.ErrorMsg"));
+		queryChannelHistoryDataResponse.setData(_ctx.mapValue("QueryChannelHistoryDataResponse.Data"));
 	 
 	 	return queryChannelHistoryDataResponse;
 	}

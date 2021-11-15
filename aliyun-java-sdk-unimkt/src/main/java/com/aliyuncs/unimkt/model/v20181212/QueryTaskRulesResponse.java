@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryTaskRulesResponse extends AcsResponse {
 
-	private Integer code;
-
-	private String errorMessage;
-
 	private String requestId;
+
+	private Integer code;
 
 	private Boolean success;
 
+	private String errorMessage;
+
 	private List<DataItem> data;
-
-	public Integer getCode() {
-		return this.code;
-	}
-
-	public void setCode(Integer code) {
-		this.code = code;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -59,12 +43,28 @@ public class QueryTaskRulesResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public Integer getCode() {
+		return this.code;
+	}
+
+	public void setCode(Integer code) {
+		this.code = code;
+	}
+
 	public Boolean getSuccess() {
 		return this.success;
 	}
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
 	}
 
 	public List<DataItem> getData() {
@@ -77,13 +77,29 @@ public class QueryTaskRulesResponse extends AcsResponse {
 
 	public static class DataItem {
 
+		private Integer id;
+
+		private Long taskId;
+
 		private Integer type;
 
 		private String content;
 
-		private Long taskId;
+		public Integer getId() {
+			return this.id;
+		}
 
-		private Integer id;
+		public void setId(Integer id) {
+			this.id = id;
+		}
+
+		public Long getTaskId() {
+			return this.taskId;
+		}
+
+		public void setTaskId(Long taskId) {
+			this.taskId = taskId;
+		}
 
 		public Integer getType() {
 			return this.type;
@@ -99,22 +115,6 @@ public class QueryTaskRulesResponse extends AcsResponse {
 
 		public void setContent(String content) {
 			this.content = content;
-		}
-
-		public Long getTaskId() {
-			return this.taskId;
-		}
-
-		public void setTaskId(Long taskId) {
-			this.taskId = taskId;
-		}
-
-		public Integer getId() {
-			return this.id;
-		}
-
-		public void setId(Integer id) {
-			this.id = id;
 		}
 	}
 

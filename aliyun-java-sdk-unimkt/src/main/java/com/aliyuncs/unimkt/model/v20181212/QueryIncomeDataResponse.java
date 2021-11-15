@@ -26,11 +26,11 @@ public class QueryIncomeDataResponse extends AcsResponse {
 
 	private String code;
 
+	private Boolean success;
+
 	private String message;
 
 	private String requestId;
-
-	private Boolean success;
 
 	private Model model;
 
@@ -40,6 +40,14 @@ public class QueryIncomeDataResponse extends AcsResponse {
 
 	public void setCode(String code) {
 		this.code = code;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public String getMessage() {
@@ -58,14 +66,6 @@ public class QueryIncomeDataResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
 	public Model getModel() {
 		return this.model;
 	}
@@ -76,166 +76,86 @@ public class QueryIncomeDataResponse extends AcsResponse {
 
 	public static class Model {
 
-		private Long lastDayEstimatedIncome;
+		private Long startTime;
 
-		private Long thisYearIncome;
+		private Long endTime;
 
-		private String adSlotName;
-
-		private String adSlotId;
-
-		private Long clickTimes;
-
-		private Long showTimes;
-
-		private Long adSlotHitTimes;
-
-		private Long accumulatedIncome;
-
-		private String thisMonEstIncomeRate;
-
-		private Long thisMonEstimatedIncome;
-
-		private String accEstIncomeRate;
-
-		private String thisYearEstIncomeRate;
-
-		private Long adSlotRequests;
+		private String mediaId;
 
 		private String mediaName;
 
 		private String adSlotType;
 
-		private String thisDaysEstIncomeRate;
+		private String adSlotId;
 
-		private String mediaId;
-
-		private Long endTime;
-
-		private String ecpmRate;
-
-		private Long startTime;
-
-		private String adSlotShowRate;
-
-		private Long thisDaysEstIncome;
-
-		private String channelName;
-
-		private String adSlotClickRate;
+		private String adSlotName;
 
 		private Long estimatedIncome;
 
+		private Long adSlotRequests;
+
 		private Long accessStatus;
+
+		private Long adSlotHitTimes;
+
+		private Long showTimes;
+
+		private Long clickTimes;
+
+		private Long lastDayEstimatedIncome;
+
+		private Long thisMonEstimatedIncome;
+
+		private Long thisYearIncome;
+
+		private Long accumulatedIncome;
 
 		private String channelId;
 
-		private Long ecpm;
+		private String channelName;
+
+		private Long thisDaysEstIncome;
 
 		private String adSlotHitRate;
 
-		public Long getLastDayEstimatedIncome() {
-			return this.lastDayEstimatedIncome;
+		private String adSlotShowRate;
+
+		private String adSlotClickRate;
+
+		private Long ecpm;
+
+		private String ecpmRate;
+
+		private String thisDaysEstIncomeRate;
+
+		private String thisMonEstIncomeRate;
+
+		private String thisYearEstIncomeRate;
+
+		private String accEstIncomeRate;
+
+		public Long getStartTime() {
+			return this.startTime;
 		}
 
-		public void setLastDayEstimatedIncome(Long lastDayEstimatedIncome) {
-			this.lastDayEstimatedIncome = lastDayEstimatedIncome;
+		public void setStartTime(Long startTime) {
+			this.startTime = startTime;
 		}
 
-		public Long getThisYearIncome() {
-			return this.thisYearIncome;
+		public Long getEndTime() {
+			return this.endTime;
 		}
 
-		public void setThisYearIncome(Long thisYearIncome) {
-			this.thisYearIncome = thisYearIncome;
+		public void setEndTime(Long endTime) {
+			this.endTime = endTime;
 		}
 
-		public String getAdSlotName() {
-			return this.adSlotName;
+		public String getMediaId() {
+			return this.mediaId;
 		}
 
-		public void setAdSlotName(String adSlotName) {
-			this.adSlotName = adSlotName;
-		}
-
-		public String getAdSlotId() {
-			return this.adSlotId;
-		}
-
-		public void setAdSlotId(String adSlotId) {
-			this.adSlotId = adSlotId;
-		}
-
-		public Long getClickTimes() {
-			return this.clickTimes;
-		}
-
-		public void setClickTimes(Long clickTimes) {
-			this.clickTimes = clickTimes;
-		}
-
-		public Long getShowTimes() {
-			return this.showTimes;
-		}
-
-		public void setShowTimes(Long showTimes) {
-			this.showTimes = showTimes;
-		}
-
-		public Long getAdSlotHitTimes() {
-			return this.adSlotHitTimes;
-		}
-
-		public void setAdSlotHitTimes(Long adSlotHitTimes) {
-			this.adSlotHitTimes = adSlotHitTimes;
-		}
-
-		public Long getAccumulatedIncome() {
-			return this.accumulatedIncome;
-		}
-
-		public void setAccumulatedIncome(Long accumulatedIncome) {
-			this.accumulatedIncome = accumulatedIncome;
-		}
-
-		public String getThisMonEstIncomeRate() {
-			return this.thisMonEstIncomeRate;
-		}
-
-		public void setThisMonEstIncomeRate(String thisMonEstIncomeRate) {
-			this.thisMonEstIncomeRate = thisMonEstIncomeRate;
-		}
-
-		public Long getThisMonEstimatedIncome() {
-			return this.thisMonEstimatedIncome;
-		}
-
-		public void setThisMonEstimatedIncome(Long thisMonEstimatedIncome) {
-			this.thisMonEstimatedIncome = thisMonEstimatedIncome;
-		}
-
-		public String getAccEstIncomeRate() {
-			return this.accEstIncomeRate;
-		}
-
-		public void setAccEstIncomeRate(String accEstIncomeRate) {
-			this.accEstIncomeRate = accEstIncomeRate;
-		}
-
-		public String getThisYearEstIncomeRate() {
-			return this.thisYearEstIncomeRate;
-		}
-
-		public void setThisYearEstIncomeRate(String thisYearEstIncomeRate) {
-			this.thisYearEstIncomeRate = thisYearEstIncomeRate;
-		}
-
-		public Long getAdSlotRequests() {
-			return this.adSlotRequests;
-		}
-
-		public void setAdSlotRequests(Long adSlotRequests) {
-			this.adSlotRequests = adSlotRequests;
+		public void setMediaId(String mediaId) {
+			this.mediaId = mediaId;
 		}
 
 		public String getMediaName() {
@@ -254,76 +174,20 @@ public class QueryIncomeDataResponse extends AcsResponse {
 			this.adSlotType = adSlotType;
 		}
 
-		public String getThisDaysEstIncomeRate() {
-			return this.thisDaysEstIncomeRate;
+		public String getAdSlotId() {
+			return this.adSlotId;
 		}
 
-		public void setThisDaysEstIncomeRate(String thisDaysEstIncomeRate) {
-			this.thisDaysEstIncomeRate = thisDaysEstIncomeRate;
+		public void setAdSlotId(String adSlotId) {
+			this.adSlotId = adSlotId;
 		}
 
-		public String getMediaId() {
-			return this.mediaId;
+		public String getAdSlotName() {
+			return this.adSlotName;
 		}
 
-		public void setMediaId(String mediaId) {
-			this.mediaId = mediaId;
-		}
-
-		public Long getEndTime() {
-			return this.endTime;
-		}
-
-		public void setEndTime(Long endTime) {
-			this.endTime = endTime;
-		}
-
-		public String getEcpmRate() {
-			return this.ecpmRate;
-		}
-
-		public void setEcpmRate(String ecpmRate) {
-			this.ecpmRate = ecpmRate;
-		}
-
-		public Long getStartTime() {
-			return this.startTime;
-		}
-
-		public void setStartTime(Long startTime) {
-			this.startTime = startTime;
-		}
-
-		public String getAdSlotShowRate() {
-			return this.adSlotShowRate;
-		}
-
-		public void setAdSlotShowRate(String adSlotShowRate) {
-			this.adSlotShowRate = adSlotShowRate;
-		}
-
-		public Long getThisDaysEstIncome() {
-			return this.thisDaysEstIncome;
-		}
-
-		public void setThisDaysEstIncome(Long thisDaysEstIncome) {
-			this.thisDaysEstIncome = thisDaysEstIncome;
-		}
-
-		public String getChannelName() {
-			return this.channelName;
-		}
-
-		public void setChannelName(String channelName) {
-			this.channelName = channelName;
-		}
-
-		public String getAdSlotClickRate() {
-			return this.adSlotClickRate;
-		}
-
-		public void setAdSlotClickRate(String adSlotClickRate) {
-			this.adSlotClickRate = adSlotClickRate;
+		public void setAdSlotName(String adSlotName) {
+			this.adSlotName = adSlotName;
 		}
 
 		public Long getEstimatedIncome() {
@@ -334,12 +198,76 @@ public class QueryIncomeDataResponse extends AcsResponse {
 			this.estimatedIncome = estimatedIncome;
 		}
 
+		public Long getAdSlotRequests() {
+			return this.adSlotRequests;
+		}
+
+		public void setAdSlotRequests(Long adSlotRequests) {
+			this.adSlotRequests = adSlotRequests;
+		}
+
 		public Long getAccessStatus() {
 			return this.accessStatus;
 		}
 
 		public void setAccessStatus(Long accessStatus) {
 			this.accessStatus = accessStatus;
+		}
+
+		public Long getAdSlotHitTimes() {
+			return this.adSlotHitTimes;
+		}
+
+		public void setAdSlotHitTimes(Long adSlotHitTimes) {
+			this.adSlotHitTimes = adSlotHitTimes;
+		}
+
+		public Long getShowTimes() {
+			return this.showTimes;
+		}
+
+		public void setShowTimes(Long showTimes) {
+			this.showTimes = showTimes;
+		}
+
+		public Long getClickTimes() {
+			return this.clickTimes;
+		}
+
+		public void setClickTimes(Long clickTimes) {
+			this.clickTimes = clickTimes;
+		}
+
+		public Long getLastDayEstimatedIncome() {
+			return this.lastDayEstimatedIncome;
+		}
+
+		public void setLastDayEstimatedIncome(Long lastDayEstimatedIncome) {
+			this.lastDayEstimatedIncome = lastDayEstimatedIncome;
+		}
+
+		public Long getThisMonEstimatedIncome() {
+			return this.thisMonEstimatedIncome;
+		}
+
+		public void setThisMonEstimatedIncome(Long thisMonEstimatedIncome) {
+			this.thisMonEstimatedIncome = thisMonEstimatedIncome;
+		}
+
+		public Long getThisYearIncome() {
+			return this.thisYearIncome;
+		}
+
+		public void setThisYearIncome(Long thisYearIncome) {
+			this.thisYearIncome = thisYearIncome;
+		}
+
+		public Long getAccumulatedIncome() {
+			return this.accumulatedIncome;
+		}
+
+		public void setAccumulatedIncome(Long accumulatedIncome) {
+			this.accumulatedIncome = accumulatedIncome;
 		}
 
 		public String getChannelId() {
@@ -350,12 +278,20 @@ public class QueryIncomeDataResponse extends AcsResponse {
 			this.channelId = channelId;
 		}
 
-		public Long getEcpm() {
-			return this.ecpm;
+		public String getChannelName() {
+			return this.channelName;
 		}
 
-		public void setEcpm(Long ecpm) {
-			this.ecpm = ecpm;
+		public void setChannelName(String channelName) {
+			this.channelName = channelName;
+		}
+
+		public Long getThisDaysEstIncome() {
+			return this.thisDaysEstIncome;
+		}
+
+		public void setThisDaysEstIncome(Long thisDaysEstIncome) {
+			this.thisDaysEstIncome = thisDaysEstIncome;
 		}
 
 		public String getAdSlotHitRate() {
@@ -364,6 +300,70 @@ public class QueryIncomeDataResponse extends AcsResponse {
 
 		public void setAdSlotHitRate(String adSlotHitRate) {
 			this.adSlotHitRate = adSlotHitRate;
+		}
+
+		public String getAdSlotShowRate() {
+			return this.adSlotShowRate;
+		}
+
+		public void setAdSlotShowRate(String adSlotShowRate) {
+			this.adSlotShowRate = adSlotShowRate;
+		}
+
+		public String getAdSlotClickRate() {
+			return this.adSlotClickRate;
+		}
+
+		public void setAdSlotClickRate(String adSlotClickRate) {
+			this.adSlotClickRate = adSlotClickRate;
+		}
+
+		public Long getEcpm() {
+			return this.ecpm;
+		}
+
+		public void setEcpm(Long ecpm) {
+			this.ecpm = ecpm;
+		}
+
+		public String getEcpmRate() {
+			return this.ecpmRate;
+		}
+
+		public void setEcpmRate(String ecpmRate) {
+			this.ecpmRate = ecpmRate;
+		}
+
+		public String getThisDaysEstIncomeRate() {
+			return this.thisDaysEstIncomeRate;
+		}
+
+		public void setThisDaysEstIncomeRate(String thisDaysEstIncomeRate) {
+			this.thisDaysEstIncomeRate = thisDaysEstIncomeRate;
+		}
+
+		public String getThisMonEstIncomeRate() {
+			return this.thisMonEstIncomeRate;
+		}
+
+		public void setThisMonEstIncomeRate(String thisMonEstIncomeRate) {
+			this.thisMonEstIncomeRate = thisMonEstIncomeRate;
+		}
+
+		public String getThisYearEstIncomeRate() {
+			return this.thisYearEstIncomeRate;
+		}
+
+		public void setThisYearEstIncomeRate(String thisYearEstIncomeRate) {
+			this.thisYearEstIncomeRate = thisYearEstIncomeRate;
+		}
+
+		public String getAccEstIncomeRate() {
+			return this.accEstIncomeRate;
+		}
+
+		public void setAccEstIncomeRate(String accEstIncomeRate) {
+			this.accEstIncomeRate = accEstIncomeRate;
 		}
 	}
 

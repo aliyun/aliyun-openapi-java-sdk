@@ -24,22 +24,30 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ChargeLaunchResponse extends AcsResponse {
 
-	private String requestId;
+	private Boolean success;
+
+	private Integer errorCode;
 
 	private String errorMessage;
 
 	private String result;
 
-	private Integer errorCode;
+	private String requestId;
 
-	private Boolean success;
-
-	public String getRequestId() {
-		return this.requestId;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
+	public Integer getErrorCode() {
+		return this.errorCode;
+	}
+
+	public void setErrorCode(Integer errorCode) {
+		this.errorCode = errorCode;
 	}
 
 	public String getErrorMessage() {
@@ -58,20 +66,12 @@ public class ChargeLaunchResponse extends AcsResponse {
 		this.result = result;
 	}
 
-	public Integer getErrorCode() {
-		return this.errorCode;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setErrorCode(Integer errorCode) {
-		this.errorCode = errorCode;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

@@ -25,21 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryAppTasksResponse extends AcsResponse {
 
-	private Integer code;
-
 	private String requestId;
+
+	private Integer code;
 
 	private Boolean success;
 
 	private Data data;
-
-	public Integer getCode() {
-		return this.code;
-	}
-
-	public void setCode(Integer code) {
-		this.code = code;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -47,6 +39,14 @@ public class QueryAppTasksResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Integer getCode() {
+		return this.code;
+	}
+
+	public void setCode(Integer code) {
+		this.code = code;
 	}
 
 	public Boolean getSuccess() {
@@ -89,164 +89,52 @@ public class QueryAppTasksResponse extends AcsResponse {
 
 		public static class ListItem {
 
-			private Integer status;
-
-			private String timeSchema;
-
-			private Long quota;
-
-			private String contentIds;
-
-			private Long chargeCost;
-
-			private Long proxyUserId;
-
-			private Integer openScene;
-
-			private Integer priority;
-
-			private String accountNo;
-
-			private Integer allContentStatus;
-
-			private Long quotaDay;
-
-			private String endTime;
-
-			private String startTime;
-
-			private Long brandUserId;
-
-			private String priceType;
+			private Long id;
 
 			private String name;
 
-			private Long balanceDay;
+			private Integer openScene;
+
+			private Integer allContentStatus;
 
 			private Integer popularizePosition;
 
-			private Long id;
+			private String priceType;
+
+			private String contentIds;
+
+			private Long brandUserId;
+
+			private Long proxyUserId;
+
+			private String accountNo;
+
+			private Long quota;
+
+			private Long quotaDay;
 
 			private Long balance;
 
-			public Integer getStatus() {
-				return this.status;
+			private Long balanceDay;
+
+			private String startTime;
+
+			private String endTime;
+
+			private Integer status;
+
+			private Long chargeCost;
+
+			private Integer priority;
+
+			private String timeSchema;
+
+			public Long getId() {
+				return this.id;
 			}
 
-			public void setStatus(Integer status) {
-				this.status = status;
-			}
-
-			public String getTimeSchema() {
-				return this.timeSchema;
-			}
-
-			public void setTimeSchema(String timeSchema) {
-				this.timeSchema = timeSchema;
-			}
-
-			public Long getQuota() {
-				return this.quota;
-			}
-
-			public void setQuota(Long quota) {
-				this.quota = quota;
-			}
-
-			public String getContentIds() {
-				return this.contentIds;
-			}
-
-			public void setContentIds(String contentIds) {
-				this.contentIds = contentIds;
-			}
-
-			public Long getChargeCost() {
-				return this.chargeCost;
-			}
-
-			public void setChargeCost(Long chargeCost) {
-				this.chargeCost = chargeCost;
-			}
-
-			public Long getProxyUserId() {
-				return this.proxyUserId;
-			}
-
-			public void setProxyUserId(Long proxyUserId) {
-				this.proxyUserId = proxyUserId;
-			}
-
-			public Integer getOpenScene() {
-				return this.openScene;
-			}
-
-			public void setOpenScene(Integer openScene) {
-				this.openScene = openScene;
-			}
-
-			public Integer getPriority() {
-				return this.priority;
-			}
-
-			public void setPriority(Integer priority) {
-				this.priority = priority;
-			}
-
-			public String getAccountNo() {
-				return this.accountNo;
-			}
-
-			public void setAccountNo(String accountNo) {
-				this.accountNo = accountNo;
-			}
-
-			public Integer getAllContentStatus() {
-				return this.allContentStatus;
-			}
-
-			public void setAllContentStatus(Integer allContentStatus) {
-				this.allContentStatus = allContentStatus;
-			}
-
-			public Long getQuotaDay() {
-				return this.quotaDay;
-			}
-
-			public void setQuotaDay(Long quotaDay) {
-				this.quotaDay = quotaDay;
-			}
-
-			public String getEndTime() {
-				return this.endTime;
-			}
-
-			public void setEndTime(String endTime) {
-				this.endTime = endTime;
-			}
-
-			public String getStartTime() {
-				return this.startTime;
-			}
-
-			public void setStartTime(String startTime) {
-				this.startTime = startTime;
-			}
-
-			public Long getBrandUserId() {
-				return this.brandUserId;
-			}
-
-			public void setBrandUserId(Long brandUserId) {
-				this.brandUserId = brandUserId;
-			}
-
-			public String getPriceType() {
-				return this.priceType;
-			}
-
-			public void setPriceType(String priceType) {
-				this.priceType = priceType;
+			public void setId(Long id) {
+				this.id = id;
 			}
 
 			public String getName() {
@@ -257,12 +145,20 @@ public class QueryAppTasksResponse extends AcsResponse {
 				this.name = name;
 			}
 
-			public Long getBalanceDay() {
-				return this.balanceDay;
+			public Integer getOpenScene() {
+				return this.openScene;
 			}
 
-			public void setBalanceDay(Long balanceDay) {
-				this.balanceDay = balanceDay;
+			public void setOpenScene(Integer openScene) {
+				this.openScene = openScene;
+			}
+
+			public Integer getAllContentStatus() {
+				return this.allContentStatus;
+			}
+
+			public void setAllContentStatus(Integer allContentStatus) {
+				this.allContentStatus = allContentStatus;
 			}
 
 			public Integer getPopularizePosition() {
@@ -273,12 +169,60 @@ public class QueryAppTasksResponse extends AcsResponse {
 				this.popularizePosition = popularizePosition;
 			}
 
-			public Long getId() {
-				return this.id;
+			public String getPriceType() {
+				return this.priceType;
 			}
 
-			public void setId(Long id) {
-				this.id = id;
+			public void setPriceType(String priceType) {
+				this.priceType = priceType;
+			}
+
+			public String getContentIds() {
+				return this.contentIds;
+			}
+
+			public void setContentIds(String contentIds) {
+				this.contentIds = contentIds;
+			}
+
+			public Long getBrandUserId() {
+				return this.brandUserId;
+			}
+
+			public void setBrandUserId(Long brandUserId) {
+				this.brandUserId = brandUserId;
+			}
+
+			public Long getProxyUserId() {
+				return this.proxyUserId;
+			}
+
+			public void setProxyUserId(Long proxyUserId) {
+				this.proxyUserId = proxyUserId;
+			}
+
+			public String getAccountNo() {
+				return this.accountNo;
+			}
+
+			public void setAccountNo(String accountNo) {
+				this.accountNo = accountNo;
+			}
+
+			public Long getQuota() {
+				return this.quota;
+			}
+
+			public void setQuota(Long quota) {
+				this.quota = quota;
+			}
+
+			public Long getQuotaDay() {
+				return this.quotaDay;
+			}
+
+			public void setQuotaDay(Long quotaDay) {
+				this.quotaDay = quotaDay;
 			}
 
 			public Long getBalance() {
@@ -287,6 +231,62 @@ public class QueryAppTasksResponse extends AcsResponse {
 
 			public void setBalance(Long balance) {
 				this.balance = balance;
+			}
+
+			public Long getBalanceDay() {
+				return this.balanceDay;
+			}
+
+			public void setBalanceDay(Long balanceDay) {
+				this.balanceDay = balanceDay;
+			}
+
+			public String getStartTime() {
+				return this.startTime;
+			}
+
+			public void setStartTime(String startTime) {
+				this.startTime = startTime;
+			}
+
+			public String getEndTime() {
+				return this.endTime;
+			}
+
+			public void setEndTime(String endTime) {
+				this.endTime = endTime;
+			}
+
+			public Integer getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(Integer status) {
+				this.status = status;
+			}
+
+			public Long getChargeCost() {
+				return this.chargeCost;
+			}
+
+			public void setChargeCost(Long chargeCost) {
+				this.chargeCost = chargeCost;
+			}
+
+			public Integer getPriority() {
+				return this.priority;
+			}
+
+			public void setPriority(Integer priority) {
+				this.priority = priority;
+			}
+
+			public String getTimeSchema() {
+				return this.timeSchema;
+			}
+
+			public void setTimeSchema(String timeSchema) {
+				this.timeSchema = timeSchema;
 			}
 		}
 	}

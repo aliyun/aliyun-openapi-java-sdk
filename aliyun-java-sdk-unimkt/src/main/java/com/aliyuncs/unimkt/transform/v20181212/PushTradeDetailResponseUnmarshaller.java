@@ -23,8 +23,8 @@ public class PushTradeDetailResponseUnmarshaller {
 	public static PushTradeDetailResponse unmarshall(PushTradeDetailResponse pushTradeDetailResponse, UnmarshallerContext _ctx) {
 		
 		pushTradeDetailResponse.setRequestId(_ctx.stringValue("PushTradeDetailResponse.RequestId"));
-		pushTradeDetailResponse.setMsg(_ctx.stringValue("PushTradeDetailResponse.Msg"));
 		pushTradeDetailResponse.setStatus(_ctx.booleanValue("PushTradeDetailResponse.Status"));
+		pushTradeDetailResponse.setMsg(_ctx.stringValue("PushTradeDetailResponse.Msg"));
 		pushTradeDetailResponse.setData(_ctx.stringValue("PushTradeDetailResponse.Data"));
 		pushTradeDetailResponse.setErrorCode(_ctx.stringValue("PushTradeDetailResponse.ErrorCode"));
 	 

@@ -25,13 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListRuleAreaResponse extends AcsResponse {
 
-	private String requestId;
+	private String code;
 
 	private Boolean success;
 
-	private String code;
-
 	private String message;
+
+	private String requestId;
 
 	private Integer pageNumber;
 
@@ -41,12 +41,12 @@ public class ListRuleAreaResponse extends AcsResponse {
 
 	private List<Rule> model;
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public Boolean getSuccess() {
@@ -57,20 +57,20 @@ public class ListRuleAreaResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
 	public String getMessage() {
 		return this.message;
 	}
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getPageNumber() {
@@ -107,49 +107,25 @@ public class ListRuleAreaResponse extends AcsResponse {
 
 	public static class Rule {
 
-		private String status;
-
-		private String ruleType;
-
-		private String adSlotId;
-
 		private String recordId;
-
-		private String mediaName;
-
-		private String mediaId;
-
-		private String adSlotName;
-
-		private String ruleId;
-
-		private String ruleName;
 
 		private String tenantId;
 
-		public String getStatus() {
-			return this.status;
-		}
+		private String ruleName;
 
-		public void setStatus(String status) {
-			this.status = status;
-		}
+		private String ruleId;
 
-		public String getRuleType() {
-			return this.ruleType;
-		}
+		private String ruleType;
 
-		public void setRuleType(String ruleType) {
-			this.ruleType = ruleType;
-		}
+		private String mediaId;
 
-		public String getAdSlotId() {
-			return this.adSlotId;
-		}
+		private String mediaName;
 
-		public void setAdSlotId(String adSlotId) {
-			this.adSlotId = adSlotId;
-		}
+		private String adSlotId;
+
+		private String adSlotName;
+
+		private String status;
 
 		public String getRecordId() {
 			return this.recordId;
@@ -159,36 +135,12 @@ public class ListRuleAreaResponse extends AcsResponse {
 			this.recordId = recordId;
 		}
 
-		public String getMediaName() {
-			return this.mediaName;
+		public String getTenantId() {
+			return this.tenantId;
 		}
 
-		public void setMediaName(String mediaName) {
-			this.mediaName = mediaName;
-		}
-
-		public String getMediaId() {
-			return this.mediaId;
-		}
-
-		public void setMediaId(String mediaId) {
-			this.mediaId = mediaId;
-		}
-
-		public String getAdSlotName() {
-			return this.adSlotName;
-		}
-
-		public void setAdSlotName(String adSlotName) {
-			this.adSlotName = adSlotName;
-		}
-
-		public String getRuleId() {
-			return this.ruleId;
-		}
-
-		public void setRuleId(String ruleId) {
-			this.ruleId = ruleId;
+		public void setTenantId(String tenantId) {
+			this.tenantId = tenantId;
 		}
 
 		public String getRuleName() {
@@ -199,12 +151,60 @@ public class ListRuleAreaResponse extends AcsResponse {
 			this.ruleName = ruleName;
 		}
 
-		public String getTenantId() {
-			return this.tenantId;
+		public String getRuleId() {
+			return this.ruleId;
 		}
 
-		public void setTenantId(String tenantId) {
-			this.tenantId = tenantId;
+		public void setRuleId(String ruleId) {
+			this.ruleId = ruleId;
+		}
+
+		public String getRuleType() {
+			return this.ruleType;
+		}
+
+		public void setRuleType(String ruleType) {
+			this.ruleType = ruleType;
+		}
+
+		public String getMediaId() {
+			return this.mediaId;
+		}
+
+		public void setMediaId(String mediaId) {
+			this.mediaId = mediaId;
+		}
+
+		public String getMediaName() {
+			return this.mediaName;
+		}
+
+		public void setMediaName(String mediaName) {
+			this.mediaName = mediaName;
+		}
+
+		public String getAdSlotId() {
+			return this.adSlotId;
+		}
+
+		public void setAdSlotId(String adSlotId) {
+			this.adSlotId = adSlotId;
+		}
+
+		public String getAdSlotName() {
+			return this.adSlotName;
+		}
+
+		public void setAdSlotName(String adSlotName) {
+			this.adSlotName = adSlotName;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
 		}
 	}
 

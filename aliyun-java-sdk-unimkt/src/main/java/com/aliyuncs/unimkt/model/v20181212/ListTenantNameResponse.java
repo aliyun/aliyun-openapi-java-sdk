@@ -25,13 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListTenantNameResponse extends AcsResponse {
 
-	private String requestId;
+	private String code;
 
 	private Boolean success;
 
-	private String code;
-
 	private String message;
+
+	private String requestId;
 
 	private Integer pageNumber;
 
@@ -41,12 +41,12 @@ public class ListTenantNameResponse extends AcsResponse {
 
 	private List<Tenant> model;
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public Boolean getSuccess() {
@@ -57,20 +57,20 @@ public class ListTenantNameResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
 	public String getMessage() {
 		return this.message;
 	}
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getPageNumber() {
@@ -107,18 +107,18 @@ public class ListTenantNameResponse extends AcsResponse {
 
 	public static class Tenant {
 
-		private String tenantDescription;
+		private String tenantId;
 
 		private String tenantName;
 
-		private String tenantId;
+		private String tenantDescription;
 
-		public String getTenantDescription() {
-			return this.tenantDescription;
+		public String getTenantId() {
+			return this.tenantId;
 		}
 
-		public void setTenantDescription(String tenantDescription) {
-			this.tenantDescription = tenantDescription;
+		public void setTenantId(String tenantId) {
+			this.tenantId = tenantId;
 		}
 
 		public String getTenantName() {
@@ -129,12 +129,12 @@ public class ListTenantNameResponse extends AcsResponse {
 			this.tenantName = tenantName;
 		}
 
-		public String getTenantId() {
-			return this.tenantId;
+		public String getTenantDescription() {
+			return this.tenantDescription;
 		}
 
-		public void setTenantId(String tenantId) {
-			this.tenantId = tenantId;
+		public void setTenantDescription(String tenantDescription) {
+			this.tenantDescription = tenantDescription;
 		}
 	}
 

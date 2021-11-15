@@ -23,8 +23,8 @@ public class PushDeviceStatusResponseUnmarshaller {
 	public static PushDeviceStatusResponse unmarshall(PushDeviceStatusResponse pushDeviceStatusResponse, UnmarshallerContext _ctx) {
 		
 		pushDeviceStatusResponse.setRequestId(_ctx.stringValue("PushDeviceStatusResponse.RequestId"));
-		pushDeviceStatusResponse.setMsg(_ctx.stringValue("PushDeviceStatusResponse.Msg"));
 		pushDeviceStatusResponse.setStatus(_ctx.booleanValue("PushDeviceStatusResponse.Status"));
+		pushDeviceStatusResponse.setMsg(_ctx.stringValue("PushDeviceStatusResponse.Msg"));
 		pushDeviceStatusResponse.setData(_ctx.stringValue("PushDeviceStatusResponse.Data"));
 		pushDeviceStatusResponse.setErrorCode(_ctx.stringValue("PushDeviceStatusResponse.ErrorCode"));
 	 

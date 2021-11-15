@@ -27,8 +27,8 @@ public class ListMediaNameResponseUnmarshaller {
 	public static ListMediaNameResponse unmarshall(ListMediaNameResponse listMediaNameResponse, UnmarshallerContext _ctx) {
 		
 		listMediaNameResponse.setRequestId(_ctx.stringValue("ListMediaNameResponse.RequestId"));
-		listMediaNameResponse.setSuccess(_ctx.booleanValue("ListMediaNameResponse.Success"));
 		listMediaNameResponse.setCode(_ctx.stringValue("ListMediaNameResponse.Code"));
+		listMediaNameResponse.setSuccess(_ctx.booleanValue("ListMediaNameResponse.Success"));
 		listMediaNameResponse.setMessage(_ctx.stringValue("ListMediaNameResponse.Message"));
 		listMediaNameResponse.setPageNumber(_ctx.integerValue("ListMediaNameResponse.PageNumber"));
 		listMediaNameResponse.setPageSize(_ctx.integerValue("ListMediaNameResponse.PageSize"));
@@ -37,8 +37,8 @@ public class ListMediaNameResponseUnmarshaller {
 		List<Media> model = new ArrayList<Media>();
 		for (int i = 0; i < _ctx.lengthValue("ListMediaNameResponse.Model.Length"); i++) {
 			Media media = new Media();
-			media.setMediaId(_ctx.stringValue("ListMediaNameResponse.Model["+ i +"].MediaId"));
 			media.setMediaName(_ctx.stringValue("ListMediaNameResponse.Model["+ i +"].MediaName"));
+			media.setMediaId(_ctx.stringValue("ListMediaNameResponse.Model["+ i +"].MediaId"));
 
 			model.add(media);
 		}

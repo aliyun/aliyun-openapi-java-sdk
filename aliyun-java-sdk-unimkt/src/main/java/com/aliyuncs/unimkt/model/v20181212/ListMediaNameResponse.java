@@ -25,13 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListMediaNameResponse extends AcsResponse {
 
-	private String requestId;
+	private String code;
 
 	private Boolean success;
 
-	private String code;
-
 	private String message;
+
+	private String requestId;
 
 	private Integer pageNumber;
 
@@ -41,12 +41,12 @@ public class ListMediaNameResponse extends AcsResponse {
 
 	private List<Media> model;
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public Boolean getSuccess() {
@@ -57,20 +57,20 @@ public class ListMediaNameResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
 	public String getMessage() {
 		return this.message;
 	}
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getPageNumber() {
@@ -107,17 +107,9 @@ public class ListMediaNameResponse extends AcsResponse {
 
 	public static class Media {
 
-		private String mediaId;
-
 		private String mediaName;
 
-		public String getMediaId() {
-			return this.mediaId;
-		}
-
-		public void setMediaId(String mediaId) {
-			this.mediaId = mediaId;
-		}
+		private String mediaId;
 
 		public String getMediaName() {
 			return this.mediaName;
@@ -125,6 +117,14 @@ public class ListMediaNameResponse extends AcsResponse {
 
 		public void setMediaName(String mediaName) {
 			this.mediaName = mediaName;
+		}
+
+		public String getMediaId() {
+			return this.mediaId;
+		}
+
+		public void setMediaId(String mediaId) {
+			this.mediaId = mediaId;
 		}
 	}
 

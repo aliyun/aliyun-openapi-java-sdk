@@ -26,11 +26,11 @@ public class SendTaokeInfoResponse extends AcsResponse {
 
 	private String requestId;
 
+	private Boolean success;
+
 	private String errorMessage;
 
 	private String errorCode;
-
-	private Boolean success;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,6 +38,14 @@ public class SendTaokeInfoResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public String getErrorMessage() {
@@ -54,14 +62,6 @@ public class SendTaokeInfoResponse extends AcsResponse {
 
 	public void setErrorCode(String errorCode) {
 		this.errorCode = errorCode;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
 	}
 
 	@Override

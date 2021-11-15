@@ -23,8 +23,8 @@ public class PushFaultEventResponseUnmarshaller {
 	public static PushFaultEventResponse unmarshall(PushFaultEventResponse pushFaultEventResponse, UnmarshallerContext _ctx) {
 		
 		pushFaultEventResponse.setRequestId(_ctx.stringValue("PushFaultEventResponse.RequestId"));
-		pushFaultEventResponse.setMsg(_ctx.stringValue("PushFaultEventResponse.Msg"));
 		pushFaultEventResponse.setStatus(_ctx.booleanValue("PushFaultEventResponse.Status"));
+		pushFaultEventResponse.setMsg(_ctx.stringValue("PushFaultEventResponse.Msg"));
 		pushFaultEventResponse.setData(_ctx.stringValue("PushFaultEventResponse.Data"));
 		pushFaultEventResponse.setErrorCode(_ctx.stringValue("PushFaultEventResponse.ErrorCode"));
 	 

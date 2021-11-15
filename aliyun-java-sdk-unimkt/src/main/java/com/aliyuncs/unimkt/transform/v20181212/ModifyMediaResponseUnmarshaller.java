@@ -25,26 +25,26 @@ public class ModifyMediaResponseUnmarshaller {
 		
 		modifyMediaResponse.setRequestId(_ctx.stringValue("ModifyMediaResponse.RequestId"));
 		modifyMediaResponse.setCode(_ctx.stringValue("ModifyMediaResponse.Code"));
-		modifyMediaResponse.setMessage(_ctx.stringValue("ModifyMediaResponse.Message"));
 		modifyMediaResponse.setSuccess(_ctx.booleanValue("ModifyMediaResponse.Success"));
+		modifyMediaResponse.setMessage(_ctx.stringValue("ModifyMediaResponse.Message"));
 
 		Model model = new Model();
-		model.setAccessWay(_ctx.stringValue("ModifyMediaResponse.Model.AccessWay"));
-		model.setSecondScene(_ctx.stringValue("ModifyMediaResponse.Model.SecondScene"));
 		model.setCreateTime(_ctx.longValue("ModifyMediaResponse.Model.CreateTime"));
-		model.setMediaName(_ctx.stringValue("ModifyMediaResponse.Model.MediaName"));
-		model.setOs(_ctx.stringValue("ModifyMediaResponse.Model.Os"));
-		model.setMediaType(_ctx.stringValue("ModifyMediaResponse.Model.MediaType"));
-		model.setExtInfo(_ctx.stringValue("ModifyMediaResponse.Model.ExtInfo"));
-		model.setMediaId(_ctx.stringValue("ModifyMediaResponse.Model.MediaId"));
-		model.setConfig(_ctx.stringValue("ModifyMediaResponse.Model.Config"));
-		model.setVersion(_ctx.longValue("ModifyMediaResponse.Model.Version"));
-		model.setMediaStatus(_ctx.stringValue("ModifyMediaResponse.Model.MediaStatus"));
-		model.setKeyWords(_ctx.stringValue("ModifyMediaResponse.Model.KeyWords"));
-		model.setAccessStatus(_ctx.stringValue("ModifyMediaResponse.Model.AccessStatus"));
-		model.setFirstScene(_ctx.stringValue("ModifyMediaResponse.Model.FirstScene"));
 		model.setModifyTime(_ctx.longValue("ModifyMediaResponse.Model.ModifyTime"));
 		model.setTenantId(_ctx.stringValue("ModifyMediaResponse.Model.TenantId"));
+		model.setMediaName(_ctx.stringValue("ModifyMediaResponse.Model.MediaName"));
+		model.setMediaId(_ctx.stringValue("ModifyMediaResponse.Model.MediaId"));
+		model.setMediaType(_ctx.stringValue("ModifyMediaResponse.Model.MediaType"));
+		model.setFirstScene(_ctx.stringValue("ModifyMediaResponse.Model.FirstScene"));
+		model.setSecondScene(_ctx.stringValue("ModifyMediaResponse.Model.SecondScene"));
+		model.setMediaStatus(_ctx.stringValue("ModifyMediaResponse.Model.MediaStatus"));
+		model.setAccessStatus(_ctx.stringValue("ModifyMediaResponse.Model.AccessStatus"));
+		model.setOs(_ctx.stringValue("ModifyMediaResponse.Model.Os"));
+		model.setConfig(_ctx.stringValue("ModifyMediaResponse.Model.Config"));
+		model.setKeyWords(_ctx.stringValue("ModifyMediaResponse.Model.KeyWords"));
+		model.setAccessWay(_ctx.stringValue("ModifyMediaResponse.Model.AccessWay"));
+		model.setExtInfo(_ctx.stringValue("ModifyMediaResponse.Model.ExtInfo"));
+		model.setVersion(_ctx.longValue("ModifyMediaResponse.Model.Version"));
 		modifyMediaResponse.setModel(model);
 	 
 	 	return modifyMediaResponse;

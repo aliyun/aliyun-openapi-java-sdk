@@ -27,29 +27,29 @@ public class ListUserResponseUnmarshaller {
 	public static ListUserResponse unmarshall(ListUserResponse listUserResponse, UnmarshallerContext _ctx) {
 		
 		listUserResponse.setRequestId(_ctx.stringValue("ListUserResponse.RequestId"));
-		listUserResponse.setSuccess(_ctx.booleanValue("ListUserResponse.Success"));
 		listUserResponse.setCode(_ctx.stringValue("ListUserResponse.Code"));
+		listUserResponse.setSuccess(_ctx.booleanValue("ListUserResponse.Success"));
 		listUserResponse.setMessage(_ctx.stringValue("ListUserResponse.Message"));
-		listUserResponse.setPageSize(_ctx.integerValue("ListUserResponse.PageSize"));
-		listUserResponse.setPageNumber(_ctx.integerValue("ListUserResponse.PageNumber"));
 		listUserResponse.setTotal(_ctx.longValue("ListUserResponse.Total"));
+		listUserResponse.setPageNumber(_ctx.integerValue("ListUserResponse.PageNumber"));
+		listUserResponse.setPageSize(_ctx.integerValue("ListUserResponse.PageSize"));
 
 		List<SspUserDTOModel> model = new ArrayList<SspUserDTOModel>();
 		for (int i = 0; i < _ctx.lengthValue("ListUserResponse.Model.Length"); i++) {
 			SspUserDTOModel sspUserDTOModel = new SspUserDTOModel();
-			sspUserDTOModel.setStatus(_ctx.stringValue("ListUserResponse.Model["+ i +"].Status"));
-			sspUserDTOModel.setYunPersonsId(_ctx.stringValue("ListUserResponse.Model["+ i +"].YunPersonsId"));
 			sspUserDTOModel.setSspUserId(_ctx.stringValue("ListUserResponse.Model["+ i +"].SspUserId"));
-			sspUserDTOModel.setTenantUserId(_ctx.stringValue("ListUserResponse.Model["+ i +"].TenantUserId"));
-			sspUserDTOModel.setMobilePhone(_ctx.stringValue("ListUserResponse.Model["+ i +"].MobilePhone"));
-			sspUserDTOModel.setRoleCode(_ctx.stringValue("ListUserResponse.Model["+ i +"].RoleCode"));
-			sspUserDTOModel.setGmtModifiedTime(_ctx.longValue("ListUserResponse.Model["+ i +"].GmtModifiedTime"));
 			sspUserDTOModel.setGmtCreateTime(_ctx.longValue("ListUserResponse.Model["+ i +"].GmtCreateTime"));
-			sspUserDTOModel.setEmail(_ctx.stringValue("ListUserResponse.Model["+ i +"].Email"));
+			sspUserDTOModel.setGmtModifiedTime(_ctx.longValue("ListUserResponse.Model["+ i +"].GmtModifiedTime"));
+			sspUserDTOModel.setIsDeleteTag(_ctx.stringValue("ListUserResponse.Model["+ i +"].IsDeleteTag"));
 			sspUserDTOModel.setUserName(_ctx.stringValue("ListUserResponse.Model["+ i +"].UserName"));
 			sspUserDTOModel.setYunUid(_ctx.stringValue("ListUserResponse.Model["+ i +"].YunUid"));
-			sspUserDTOModel.setIsDeleteTag(_ctx.stringValue("ListUserResponse.Model["+ i +"].IsDeleteTag"));
+			sspUserDTOModel.setYunPersonsId(_ctx.stringValue("ListUserResponse.Model["+ i +"].YunPersonsId"));
+			sspUserDTOModel.setMobilePhone(_ctx.stringValue("ListUserResponse.Model["+ i +"].MobilePhone"));
+			sspUserDTOModel.setEmail(_ctx.stringValue("ListUserResponse.Model["+ i +"].Email"));
+			sspUserDTOModel.setStatus(_ctx.stringValue("ListUserResponse.Model["+ i +"].Status"));
 			sspUserDTOModel.setTenantId(_ctx.stringValue("ListUserResponse.Model["+ i +"].TenantId"));
+			sspUserDTOModel.setTenantUserId(_ctx.stringValue("ListUserResponse.Model["+ i +"].TenantUserId"));
+			sspUserDTOModel.setRoleCode(_ctx.stringValue("ListUserResponse.Model["+ i +"].RoleCode"));
 
 			model.add(sspUserDTOModel);
 		}

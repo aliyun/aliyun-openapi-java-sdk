@@ -27,31 +27,31 @@ public class ListFlowResponseUnmarshaller {
 	public static ListFlowResponse unmarshall(ListFlowResponse listFlowResponse, UnmarshallerContext _ctx) {
 		
 		listFlowResponse.setRequestId(_ctx.stringValue("ListFlowResponse.RequestId"));
-		listFlowResponse.setSuccess(_ctx.booleanValue("ListFlowResponse.Success"));
 		listFlowResponse.setCode(_ctx.stringValue("ListFlowResponse.Code"));
+		listFlowResponse.setSuccess(_ctx.booleanValue("ListFlowResponse.Success"));
 		listFlowResponse.setMessage(_ctx.stringValue("ListFlowResponse.Message"));
-		listFlowResponse.setPageSize(_ctx.integerValue("ListFlowResponse.PageSize"));
-		listFlowResponse.setPageNumber(_ctx.integerValue("ListFlowResponse.PageNumber"));
 		listFlowResponse.setTotal(_ctx.longValue("ListFlowResponse.Total"));
+		listFlowResponse.setPageNumber(_ctx.integerValue("ListFlowResponse.PageNumber"));
+		listFlowResponse.setPageSize(_ctx.integerValue("ListFlowResponse.PageSize"));
 
 		List<FlowDTOModel> model = new ArrayList<FlowDTOModel>();
 		for (int i = 0; i < _ctx.lengthValue("ListFlowResponse.Model.Length"); i++) {
 			FlowDTOModel flowDTOModel = new FlowDTOModel();
+			flowDTOModel.setFlowId(_ctx.stringValue("ListFlowResponse.Model["+ i +"].FlowId"));
+			flowDTOModel.setGmtCreateTime(_ctx.longValue("ListFlowResponse.Model["+ i +"].GmtCreateTime"));
+			flowDTOModel.setGmtModifiedTime(_ctx.longValue("ListFlowResponse.Model["+ i +"].GmtModifiedTime"));
+			flowDTOModel.setTenantId(_ctx.stringValue("ListFlowResponse.Model["+ i +"].TenantId"));
+			flowDTOModel.setExtInfo(_ctx.stringValue("ListFlowResponse.Model["+ i +"].ExtInfo"));
 			flowDTOModel.setType(_ctx.stringValue("ListFlowResponse.Model["+ i +"].Type"));
+			flowDTOModel.setBusinessKey(_ctx.stringValue("ListFlowResponse.Model["+ i +"].BusinessKey"));
+			flowDTOModel.setReasonType(_ctx.stringValue("ListFlowResponse.Model["+ i +"].ReasonType"));
+			flowDTOModel.setOldData(_ctx.stringValue("ListFlowResponse.Model["+ i +"].OldData"));
+			flowDTOModel.setNewData(_ctx.stringValue("ListFlowResponse.Model["+ i +"].NewData"));
 			flowDTOModel.setStatus(_ctx.stringValue("ListFlowResponse.Model["+ i +"].Status"));
 			flowDTOModel.setChildStatus(_ctx.stringValue("ListFlowResponse.Model["+ i +"].ChildStatus"));
 			flowDTOModel.setApplyUserId(_ctx.stringValue("ListFlowResponse.Model["+ i +"].ApplyUserId"));
-			flowDTOModel.setApproveTime(_ctx.longValue("ListFlowResponse.Model["+ i +"].ApproveTime"));
-			flowDTOModel.setFlowId(_ctx.stringValue("ListFlowResponse.Model["+ i +"].FlowId"));
-			flowDTOModel.setExtInfo(_ctx.stringValue("ListFlowResponse.Model["+ i +"].ExtInfo"));
-			flowDTOModel.setGmtModifiedTime(_ctx.longValue("ListFlowResponse.Model["+ i +"].GmtModifiedTime"));
-			flowDTOModel.setOldData(_ctx.stringValue("ListFlowResponse.Model["+ i +"].OldData"));
-			flowDTOModel.setGmtCreateTime(_ctx.longValue("ListFlowResponse.Model["+ i +"].GmtCreateTime"));
 			flowDTOModel.setApproveUserId(_ctx.stringValue("ListFlowResponse.Model["+ i +"].ApproveUserId"));
-			flowDTOModel.setNewData(_ctx.stringValue("ListFlowResponse.Model["+ i +"].NewData"));
-			flowDTOModel.setBusinessKey(_ctx.stringValue("ListFlowResponse.Model["+ i +"].BusinessKey"));
-			flowDTOModel.setReasonType(_ctx.stringValue("ListFlowResponse.Model["+ i +"].ReasonType"));
-			flowDTOModel.setTenantId(_ctx.stringValue("ListFlowResponse.Model["+ i +"].TenantId"));
+			flowDTOModel.setApproveTime(_ctx.longValue("ListFlowResponse.Model["+ i +"].ApproveTime"));
 
 			model.add(flowDTOModel);
 		}

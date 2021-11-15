@@ -24,23 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class PushExtraTradeDetailResponse extends AcsResponse {
 
-	private String msg;
-
 	private Boolean status;
+
+	private String msg;
 
 	private String data;
 
-	private String requestId;
-
 	private String errorCode;
 
-	public String getMsg() {
-		return this.msg;
-	}
-
-	public void setMsg(String msg) {
-		this.msg = msg;
-	}
+	private String requestId;
 
 	public Boolean getStatus() {
 		return this.status;
@@ -48,6 +40,14 @@ public class PushExtraTradeDetailResponse extends AcsResponse {
 
 	public void setStatus(Boolean status) {
 		this.status = status;
+	}
+
+	public String getMsg() {
+		return this.msg;
+	}
+
+	public void setMsg(String msg) {
+		this.msg = msg;
 	}
 
 	public String getData() {
@@ -58,20 +58,20 @@ public class PushExtraTradeDetailResponse extends AcsResponse {
 		this.data = data;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public String getErrorCode() {
 		return this.errorCode;
 	}
 
 	public void setErrorCode(String errorCode) {
 		this.errorCode = errorCode;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

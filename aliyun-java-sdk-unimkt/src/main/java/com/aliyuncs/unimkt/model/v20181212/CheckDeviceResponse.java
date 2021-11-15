@@ -29,9 +29,9 @@ public class CheckDeviceResponse extends AcsResponse {
 
 	private String msg;
 
-	private String requestId;
-
 	private String errorCode;
+
+	private String requestId;
 
 	private List<PlanDto> plans;
 
@@ -51,20 +51,20 @@ public class CheckDeviceResponse extends AcsResponse {
 		this.msg = msg;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public String getErrorCode() {
 		return this.errorCode;
 	}
 
 	public void setErrorCode(String errorCode) {
 		this.errorCode = errorCode;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<PlanDto> getPlans() {
@@ -77,28 +77,20 @@ public class CheckDeviceResponse extends AcsResponse {
 
 	public static class PlanDto {
 
-		private String endTime;
-
-		private String startTime;
+		private Long id;
 
 		private String name;
 
-		private Long id;
+		private String startTime;
 
-		public String getEndTime() {
-			return this.endTime;
+		private String endTime;
+
+		public Long getId() {
+			return this.id;
 		}
 
-		public void setEndTime(String endTime) {
-			this.endTime = endTime;
-		}
-
-		public String getStartTime() {
-			return this.startTime;
-		}
-
-		public void setStartTime(String startTime) {
-			this.startTime = startTime;
+		public void setId(Long id) {
+			this.id = id;
 		}
 
 		public String getName() {
@@ -109,12 +101,20 @@ public class CheckDeviceResponse extends AcsResponse {
 			this.name = name;
 		}
 
-		public Long getId() {
-			return this.id;
+		public String getStartTime() {
+			return this.startTime;
 		}
 
-		public void setId(Long id) {
-			this.id = id;
+		public void setStartTime(String startTime) {
+			this.startTime = startTime;
+		}
+
+		public String getEndTime() {
+			return this.endTime;
+		}
+
+		public void setEndTime(String endTime) {
+			this.endTime = endTime;
 		}
 	}
 

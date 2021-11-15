@@ -25,22 +25,22 @@ public class DeleteRuleResponseUnmarshaller {
 		
 		deleteRuleResponse.setRequestId(_ctx.stringValue("DeleteRuleResponse.RequestId"));
 		deleteRuleResponse.setCode(_ctx.stringValue("DeleteRuleResponse.Code"));
-		deleteRuleResponse.setMessage(_ctx.stringValue("DeleteRuleResponse.Message"));
 		deleteRuleResponse.setSuccess(_ctx.booleanValue("DeleteRuleResponse.Success"));
+		deleteRuleResponse.setMessage(_ctx.stringValue("DeleteRuleResponse.Message"));
 
 		Model model = new Model();
-		model.setStatus(_ctx.stringValue("DeleteRuleResponse.Model.Status"));
-		model.setRuleType(_ctx.stringValue("DeleteRuleResponse.Model.RuleType"));
 		model.setCreateTime(_ctx.longValue("DeleteRuleResponse.Model.CreateTime"));
-		model.setRuleRId(_ctx.stringValue("DeleteRuleResponse.Model.RuleRId"));
-		model.setRelatedAdSlots(_ctx.stringValue("DeleteRuleResponse.Model.RelatedAdSlots"));
-		model.setExtInfo(_ctx.stringValue("DeleteRuleResponse.Model.ExtInfo"));
-		model.setRuleName(_ctx.stringValue("DeleteRuleResponse.Model.RuleName"));
-		model.setRuleId(_ctx.stringValue("DeleteRuleResponse.Model.RuleId"));
-		model.setVersion(_ctx.longValue("DeleteRuleResponse.Model.Version"));
 		model.setModifyTime(_ctx.longValue("DeleteRuleResponse.Model.ModifyTime"));
 		model.setTenantId(_ctx.stringValue("DeleteRuleResponse.Model.TenantId"));
+		model.setRuleName(_ctx.stringValue("DeleteRuleResponse.Model.RuleName"));
+		model.setRuleRId(_ctx.stringValue("DeleteRuleResponse.Model.RuleRId"));
+		model.setRuleType(_ctx.stringValue("DeleteRuleResponse.Model.RuleType"));
+		model.setRelatedAdSlots(_ctx.stringValue("DeleteRuleResponse.Model.RelatedAdSlots"));
 		model.setRuleConfig(_ctx.stringValue("DeleteRuleResponse.Model.RuleConfig"));
+		model.setStatus(_ctx.stringValue("DeleteRuleResponse.Model.Status"));
+		model.setExtInfo(_ctx.stringValue("DeleteRuleResponse.Model.ExtInfo"));
+		model.setVersion(_ctx.longValue("DeleteRuleResponse.Model.Version"));
+		model.setRuleId(_ctx.stringValue("DeleteRuleResponse.Model.RuleId"));
 		deleteRuleResponse.setModel(model);
 	 
 	 	return deleteRuleResponse;

@@ -25,23 +25,23 @@ public class QueryTenantUserResponseUnmarshaller {
 		
 		queryTenantUserResponse.setRequestId(_ctx.stringValue("QueryTenantUserResponse.RequestId"));
 		queryTenantUserResponse.setCode(_ctx.stringValue("QueryTenantUserResponse.Code"));
-		queryTenantUserResponse.setMessage(_ctx.stringValue("QueryTenantUserResponse.Message"));
 		queryTenantUserResponse.setSuccess(_ctx.booleanValue("QueryTenantUserResponse.Success"));
+		queryTenantUserResponse.setMessage(_ctx.stringValue("QueryTenantUserResponse.Message"));
 
 		Model model = new Model();
-		model.setStatus(_ctx.stringValue("QueryTenantUserResponse.Model.Status"));
-		model.setOriginSiteUserId(_ctx.stringValue("QueryTenantUserResponse.Model.OriginSiteUserId"));
 		model.setCreateTime(_ctx.longValue("QueryTenantUserResponse.Model.CreateTime"));
-		model.setTenantName(_ctx.stringValue("QueryTenantUserResponse.Model.TenantName"));
-		model.setOriginSiteUserName(_ctx.stringValue("QueryTenantUserResponse.Model.OriginSiteUserName"));
-		model.setUserId(_ctx.stringValue("QueryTenantUserResponse.Model.UserId"));
-		model.setBusiness(_ctx.stringValue("QueryTenantUserResponse.Model.Business"));
-		model.setExtInfo(_ctx.stringValue("QueryTenantUserResponse.Model.ExtInfo"));
-		model.setVersion(_ctx.longValue("QueryTenantUserResponse.Model.Version"));
-		model.setOriginSite(_ctx.stringValue("QueryTenantUserResponse.Model.OriginSite"));
-		model.setUserName(_ctx.stringValue("QueryTenantUserResponse.Model.UserName"));
 		model.setModifyTime(_ctx.longValue("QueryTenantUserResponse.Model.ModifyTime"));
 		model.setTenantId(_ctx.stringValue("QueryTenantUserResponse.Model.TenantId"));
+		model.setTenantName(_ctx.stringValue("QueryTenantUserResponse.Model.TenantName"));
+		model.setBusiness(_ctx.stringValue("QueryTenantUserResponse.Model.Business"));
+		model.setUserId(_ctx.stringValue("QueryTenantUserResponse.Model.UserId"));
+		model.setUserName(_ctx.stringValue("QueryTenantUserResponse.Model.UserName"));
+		model.setOriginSite(_ctx.stringValue("QueryTenantUserResponse.Model.OriginSite"));
+		model.setOriginSiteUserId(_ctx.stringValue("QueryTenantUserResponse.Model.OriginSiteUserId"));
+		model.setOriginSiteUserName(_ctx.stringValue("QueryTenantUserResponse.Model.OriginSiteUserName"));
+		model.setStatus(_ctx.stringValue("QueryTenantUserResponse.Model.Status"));
+		model.setVersion(_ctx.longValue("QueryTenantUserResponse.Model.Version"));
+		model.setExtInfo(_ctx.stringValue("QueryTenantUserResponse.Model.ExtInfo"));
 		queryTenantUserResponse.setModel(model);
 	 
 	 	return queryTenantUserResponse;

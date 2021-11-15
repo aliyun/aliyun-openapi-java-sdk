@@ -25,21 +25,21 @@ public class ModifyTenantInfoResponseUnmarshaller {
 		
 		modifyTenantInfoResponse.setRequestId(_ctx.stringValue("ModifyTenantInfoResponse.RequestId"));
 		modifyTenantInfoResponse.setCode(_ctx.stringValue("ModifyTenantInfoResponse.Code"));
-		modifyTenantInfoResponse.setMessage(_ctx.stringValue("ModifyTenantInfoResponse.Message"));
 		modifyTenantInfoResponse.setSuccess(_ctx.booleanValue("ModifyTenantInfoResponse.Success"));
+		modifyTenantInfoResponse.setMessage(_ctx.stringValue("ModifyTenantInfoResponse.Message"));
 
 		Model model = new Model();
-		model.setStatus(_ctx.stringValue("ModifyTenantInfoResponse.Model.Status"));
-		model.setSettleInfo(_ctx.stringValue("ModifyTenantInfoResponse.Model.SettleInfo"));
-		model.setVersion(_ctx.longValue("ModifyTenantInfoResponse.Model.Version"));
-		model.setTenantDescription(_ctx.stringValue("ModifyTenantInfoResponse.Model.TenantDescription"));
-		model.setTenantName(_ctx.stringValue("ModifyTenantInfoResponse.Model.TenantName"));
 		model.setCreateTime(_ctx.longValue("ModifyTenantInfoResponse.Model.CreateTime"));
-		model.setBusiness(_ctx.stringValue("ModifyTenantInfoResponse.Model.Business"));
-		model.setUserName(_ctx.stringValue("ModifyTenantInfoResponse.Model.UserName"));
-		model.setExtInfo(_ctx.stringValue("ModifyTenantInfoResponse.Model.ExtInfo"));
-		model.setTenantId(_ctx.stringValue("ModifyTenantInfoResponse.Model.TenantId"));
 		model.setModifyTime(_ctx.longValue("ModifyTenantInfoResponse.Model.ModifyTime"));
+		model.setTenantId(_ctx.stringValue("ModifyTenantInfoResponse.Model.TenantId"));
+		model.setTenantName(_ctx.stringValue("ModifyTenantInfoResponse.Model.TenantName"));
+		model.setBusiness(_ctx.stringValue("ModifyTenantInfoResponse.Model.Business"));
+		model.setTenantDescription(_ctx.stringValue("ModifyTenantInfoResponse.Model.TenantDescription"));
+		model.setUserName(_ctx.stringValue("ModifyTenantInfoResponse.Model.UserName"));
+		model.setSettleInfo(_ctx.stringValue("ModifyTenantInfoResponse.Model.SettleInfo"));
+		model.setExtInfo(_ctx.stringValue("ModifyTenantInfoResponse.Model.ExtInfo"));
+		model.setStatus(_ctx.stringValue("ModifyTenantInfoResponse.Model.Status"));
+		model.setVersion(_ctx.longValue("ModifyTenantInfoResponse.Model.Version"));
 		modifyTenantInfoResponse.setModel(model);
 	 
 	 	return modifyTenantInfoResponse;

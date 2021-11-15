@@ -25,25 +25,25 @@ public class UpdateFlowResponseUnmarshaller {
 		
 		updateFlowResponse.setRequestId(_ctx.stringValue("UpdateFlowResponse.RequestId"));
 		updateFlowResponse.setCode(_ctx.stringValue("UpdateFlowResponse.Code"));
-		updateFlowResponse.setMessage(_ctx.stringValue("UpdateFlowResponse.Message"));
 		updateFlowResponse.setSuccess(_ctx.booleanValue("UpdateFlowResponse.Success"));
+		updateFlowResponse.setMessage(_ctx.stringValue("UpdateFlowResponse.Message"));
 
 		Model model = new Model();
+		model.setFlowId(_ctx.stringValue("UpdateFlowResponse.Model.FlowId"));
+		model.setGmtCreateTime(_ctx.longValue("UpdateFlowResponse.Model.GmtCreateTime"));
+		model.setGmtModifiedTime(_ctx.longValue("UpdateFlowResponse.Model.GmtModifiedTime"));
+		model.setTenantId(_ctx.stringValue("UpdateFlowResponse.Model.TenantId"));
+		model.setExtInfo(_ctx.stringValue("UpdateFlowResponse.Model.ExtInfo"));
 		model.setType(_ctx.stringValue("UpdateFlowResponse.Model.Type"));
+		model.setBusinessKey(_ctx.stringValue("UpdateFlowResponse.Model.BusinessKey"));
+		model.setReasonType(_ctx.stringValue("UpdateFlowResponse.Model.ReasonType"));
+		model.setOldData(_ctx.stringValue("UpdateFlowResponse.Model.OldData"));
+		model.setNewData(_ctx.stringValue("UpdateFlowResponse.Model.NewData"));
 		model.setStatus(_ctx.stringValue("UpdateFlowResponse.Model.Status"));
 		model.setChildStatus(_ctx.stringValue("UpdateFlowResponse.Model.ChildStatus"));
 		model.setApplyUserId(_ctx.stringValue("UpdateFlowResponse.Model.ApplyUserId"));
-		model.setApproveTime(_ctx.longValue("UpdateFlowResponse.Model.ApproveTime"));
-		model.setFlowId(_ctx.stringValue("UpdateFlowResponse.Model.FlowId"));
-		model.setExtInfo(_ctx.stringValue("UpdateFlowResponse.Model.ExtInfo"));
-		model.setGmtModifiedTime(_ctx.longValue("UpdateFlowResponse.Model.GmtModifiedTime"));
-		model.setOldData(_ctx.stringValue("UpdateFlowResponse.Model.OldData"));
-		model.setGmtCreateTime(_ctx.longValue("UpdateFlowResponse.Model.GmtCreateTime"));
 		model.setApproveUserId(_ctx.stringValue("UpdateFlowResponse.Model.ApproveUserId"));
-		model.setNewData(_ctx.stringValue("UpdateFlowResponse.Model.NewData"));
-		model.setBusinessKey(_ctx.stringValue("UpdateFlowResponse.Model.BusinessKey"));
-		model.setReasonType(_ctx.stringValue("UpdateFlowResponse.Model.ReasonType"));
-		model.setTenantId(_ctx.stringValue("UpdateFlowResponse.Model.TenantId"));
+		model.setApproveTime(_ctx.longValue("UpdateFlowResponse.Model.ApproveTime"));
 		updateFlowResponse.setModel(model);
 	 
 	 	return updateFlowResponse;

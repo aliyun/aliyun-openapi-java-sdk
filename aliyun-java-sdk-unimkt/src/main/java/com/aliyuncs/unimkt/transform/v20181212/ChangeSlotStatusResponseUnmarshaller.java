@@ -25,25 +25,25 @@ public class ChangeSlotStatusResponseUnmarshaller {
 		
 		changeSlotStatusResponse.setRequestId(_ctx.stringValue("ChangeSlotStatusResponse.RequestId"));
 		changeSlotStatusResponse.setCode(_ctx.stringValue("ChangeSlotStatusResponse.Code"));
-		changeSlotStatusResponse.setMessage(_ctx.stringValue("ChangeSlotStatusResponse.Message"));
 		changeSlotStatusResponse.setSuccess(_ctx.booleanValue("ChangeSlotStatusResponse.Success"));
+		changeSlotStatusResponse.setMessage(_ctx.stringValue("ChangeSlotStatusResponse.Message"));
 
 		Model model = new Model();
 		model.setCreateTime(_ctx.longValue("ChangeSlotStatusResponse.Model.CreateTime"));
-		model.setMediaName(_ctx.stringValue("ChangeSlotStatusResponse.Model.MediaName"));
-		model.setAdSlotType(_ctx.stringValue("ChangeSlotStatusResponse.Model.AdSlotType"));
-		model.setAdSlotStatus(_ctx.stringValue("ChangeSlotStatusResponse.Model.AdSlotStatus"));
-		model.setExtInfo(_ctx.stringValue("ChangeSlotStatusResponse.Model.ExtInfo"));
-		model.setMediaId(_ctx.stringValue("ChangeSlotStatusResponse.Model.MediaId"));
-		model.setAdSlotName(_ctx.stringValue("ChangeSlotStatusResponse.Model.AdSlotName"));
-		model.setInspireScene(_ctx.stringValue("ChangeSlotStatusResponse.Model.InspireScene"));
-		model.setBlockingRule(_ctx.stringValue("ChangeSlotStatusResponse.Model.BlockingRule"));
-		model.setVersion(_ctx.longValue("ChangeSlotStatusResponse.Model.Version"));
-		model.setAdSlotId(_ctx.stringValue("ChangeSlotStatusResponse.Model.AdSlotId"));
-		model.setAdSlotCorporateStatus(_ctx.stringValue("ChangeSlotStatusResponse.Model.AdSlotCorporateStatus"));
-		model.setAdSlotTemplateId(_ctx.stringValue("ChangeSlotStatusResponse.Model.AdSlotTemplateId"));
 		model.setModifyTime(_ctx.longValue("ChangeSlotStatusResponse.Model.ModifyTime"));
 		model.setTenantId(_ctx.stringValue("ChangeSlotStatusResponse.Model.TenantId"));
+		model.setMediaName(_ctx.stringValue("ChangeSlotStatusResponse.Model.MediaName"));
+		model.setMediaId(_ctx.stringValue("ChangeSlotStatusResponse.Model.MediaId"));
+		model.setAdSlotId(_ctx.stringValue("ChangeSlotStatusResponse.Model.AdSlotId"));
+		model.setAdSlotName(_ctx.stringValue("ChangeSlotStatusResponse.Model.AdSlotName"));
+		model.setAdSlotType(_ctx.stringValue("ChangeSlotStatusResponse.Model.AdSlotType"));
+		model.setAdSlotTemplateId(_ctx.stringValue("ChangeSlotStatusResponse.Model.AdSlotTemplateId"));
+		model.setAdSlotStatus(_ctx.stringValue("ChangeSlotStatusResponse.Model.AdSlotStatus"));
+		model.setAdSlotCorporateStatus(_ctx.stringValue("ChangeSlotStatusResponse.Model.AdSlotCorporateStatus"));
+		model.setBlockingRule(_ctx.stringValue("ChangeSlotStatusResponse.Model.BlockingRule"));
+		model.setInspireScene(_ctx.stringValue("ChangeSlotStatusResponse.Model.InspireScene"));
+		model.setExtInfo(_ctx.stringValue("ChangeSlotStatusResponse.Model.ExtInfo"));
+		model.setVersion(_ctx.longValue("ChangeSlotStatusResponse.Model.Version"));
 		changeSlotStatusResponse.setModel(model);
 	 
 	 	return changeSlotStatusResponse;

@@ -27,8 +27,8 @@ public class ListSlotResponseUnmarshaller {
 	public static ListSlotResponse unmarshall(ListSlotResponse listSlotResponse, UnmarshallerContext _ctx) {
 		
 		listSlotResponse.setRequestId(_ctx.stringValue("ListSlotResponse.RequestId"));
-		listSlotResponse.setSuccess(_ctx.booleanValue("ListSlotResponse.Success"));
 		listSlotResponse.setCode(_ctx.stringValue("ListSlotResponse.Code"));
+		listSlotResponse.setSuccess(_ctx.booleanValue("ListSlotResponse.Success"));
 		listSlotResponse.setMessage(_ctx.stringValue("ListSlotResponse.Message"));
 		listSlotResponse.setPageNumber(_ctx.integerValue("ListSlotResponse.PageNumber"));
 		listSlotResponse.setPageSize(_ctx.integerValue("ListSlotResponse.PageSize"));
@@ -38,20 +38,20 @@ public class ListSlotResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("ListSlotResponse.Model.Length"); i++) {
 			AdSlot adSlot = new AdSlot();
 			adSlot.setCreateTime(_ctx.longValue("ListSlotResponse.Model["+ i +"].CreateTime"));
-			adSlot.setMediaName(_ctx.stringValue("ListSlotResponse.Model["+ i +"].MediaName"));
-			adSlot.setAdSlotType(_ctx.stringValue("ListSlotResponse.Model["+ i +"].AdSlotType"));
-			adSlot.setAdSlotStatus(_ctx.stringValue("ListSlotResponse.Model["+ i +"].AdSlotStatus"));
-			adSlot.setMediaId(_ctx.stringValue("ListSlotResponse.Model["+ i +"].MediaId"));
-			adSlot.setExtInfo(_ctx.stringValue("ListSlotResponse.Model["+ i +"].ExtInfo"));
-			adSlot.setAdSlotName(_ctx.stringValue("ListSlotResponse.Model["+ i +"].AdSlotName"));
-			adSlot.setInspireScene(_ctx.stringValue("ListSlotResponse.Model["+ i +"].InspireScene"));
-			adSlot.setBlockingRule(_ctx.stringValue("ListSlotResponse.Model["+ i +"].BlockingRule"));
-			adSlot.setVersion(_ctx.longValue("ListSlotResponse.Model["+ i +"].Version"));
-			adSlot.setAdSlotId(_ctx.stringValue("ListSlotResponse.Model["+ i +"].AdSlotId"));
-			adSlot.setAdSlotCorporateStatus(_ctx.stringValue("ListSlotResponse.Model["+ i +"].AdSlotCorporateStatus"));
-			adSlot.setAdSlotTemplateId(_ctx.stringValue("ListSlotResponse.Model["+ i +"].AdSlotTemplateId"));
 			adSlot.setModifyTime(_ctx.longValue("ListSlotResponse.Model["+ i +"].ModifyTime"));
 			adSlot.setTenantId(_ctx.stringValue("ListSlotResponse.Model["+ i +"].TenantId"));
+			adSlot.setMediaName(_ctx.stringValue("ListSlotResponse.Model["+ i +"].MediaName"));
+			adSlot.setMediaId(_ctx.stringValue("ListSlotResponse.Model["+ i +"].MediaId"));
+			adSlot.setAdSlotId(_ctx.stringValue("ListSlotResponse.Model["+ i +"].AdSlotId"));
+			adSlot.setAdSlotName(_ctx.stringValue("ListSlotResponse.Model["+ i +"].AdSlotName"));
+			adSlot.setAdSlotType(_ctx.stringValue("ListSlotResponse.Model["+ i +"].AdSlotType"));
+			adSlot.setAdSlotTemplateId(_ctx.stringValue("ListSlotResponse.Model["+ i +"].AdSlotTemplateId"));
+			adSlot.setAdSlotStatus(_ctx.stringValue("ListSlotResponse.Model["+ i +"].AdSlotStatus"));
+			adSlot.setAdSlotCorporateStatus(_ctx.stringValue("ListSlotResponse.Model["+ i +"].AdSlotCorporateStatus"));
+			adSlot.setExtInfo(_ctx.stringValue("ListSlotResponse.Model["+ i +"].ExtInfo"));
+			adSlot.setBlockingRule(_ctx.stringValue("ListSlotResponse.Model["+ i +"].BlockingRule"));
+			adSlot.setInspireScene(_ctx.stringValue("ListSlotResponse.Model["+ i +"].InspireScene"));
+			adSlot.setVersion(_ctx.longValue("ListSlotResponse.Model["+ i +"].Version"));
 
 			model.add(adSlot);
 		}

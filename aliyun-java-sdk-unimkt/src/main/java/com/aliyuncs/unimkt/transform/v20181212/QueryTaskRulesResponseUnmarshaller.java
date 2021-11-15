@@ -28,16 +28,16 @@ public class QueryTaskRulesResponseUnmarshaller {
 		
 		queryTaskRulesResponse.setRequestId(_ctx.stringValue("QueryTaskRulesResponse.RequestId"));
 		queryTaskRulesResponse.setCode(_ctx.integerValue("QueryTaskRulesResponse.Code"));
-		queryTaskRulesResponse.setErrorMessage(_ctx.stringValue("QueryTaskRulesResponse.ErrorMessage"));
 		queryTaskRulesResponse.setSuccess(_ctx.booleanValue("QueryTaskRulesResponse.Success"));
+		queryTaskRulesResponse.setErrorMessage(_ctx.stringValue("QueryTaskRulesResponse.ErrorMessage"));
 
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("QueryTaskRulesResponse.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
+			dataItem.setId(_ctx.integerValue("QueryTaskRulesResponse.Data["+ i +"].Id"));
+			dataItem.setTaskId(_ctx.longValue("QueryTaskRulesResponse.Data["+ i +"].TaskId"));
 			dataItem.setType(_ctx.integerValue("QueryTaskRulesResponse.Data["+ i +"].Type"));
 			dataItem.setContent(_ctx.stringValue("QueryTaskRulesResponse.Data["+ i +"].Content"));
-			dataItem.setTaskId(_ctx.longValue("QueryTaskRulesResponse.Data["+ i +"].TaskId"));
-			dataItem.setId(_ctx.integerValue("QueryTaskRulesResponse.Data["+ i +"].Id"));
 
 			data.add(dataItem);
 		}

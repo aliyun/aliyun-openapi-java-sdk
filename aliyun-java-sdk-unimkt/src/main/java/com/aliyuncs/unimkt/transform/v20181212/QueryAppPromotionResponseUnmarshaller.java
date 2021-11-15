@@ -23,10 +23,10 @@ public class QueryAppPromotionResponseUnmarshaller {
 	public static QueryAppPromotionResponse unmarshall(QueryAppPromotionResponse queryAppPromotionResponse, UnmarshallerContext _ctx) {
 		
 		queryAppPromotionResponse.setRequestId(_ctx.stringValue("QueryAppPromotionResponse.RequestId"));
-		queryAppPromotionResponse.setErrorMessage(_ctx.stringValue("QueryAppPromotionResponse.ErrorMessage"));
 		queryAppPromotionResponse.setResult(_ctx.stringValue("QueryAppPromotionResponse.Result"));
-		queryAppPromotionResponse.setErrorCode(_ctx.integerValue("QueryAppPromotionResponse.ErrorCode"));
 		queryAppPromotionResponse.setSuccess(_ctx.booleanValue("QueryAppPromotionResponse.Success"));
+		queryAppPromotionResponse.setErrorCode(_ctx.integerValue("QueryAppPromotionResponse.ErrorCode"));
+		queryAppPromotionResponse.setErrorMessage(_ctx.stringValue("QueryAppPromotionResponse.ErrorMessage"));
 	 
 	 	return queryAppPromotionResponse;
 	}

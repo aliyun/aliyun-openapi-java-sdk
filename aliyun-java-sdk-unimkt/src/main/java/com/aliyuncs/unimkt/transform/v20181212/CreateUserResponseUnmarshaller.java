@@ -25,23 +25,23 @@ public class CreateUserResponseUnmarshaller {
 		
 		createUserResponse.setRequestId(_ctx.stringValue("CreateUserResponse.RequestId"));
 		createUserResponse.setCode(_ctx.stringValue("CreateUserResponse.Code"));
-		createUserResponse.setMessage(_ctx.stringValue("CreateUserResponse.Message"));
 		createUserResponse.setSuccess(_ctx.booleanValue("CreateUserResponse.Success"));
+		createUserResponse.setMessage(_ctx.stringValue("CreateUserResponse.Message"));
 
 		Model model = new Model();
-		model.setStatus(_ctx.stringValue("CreateUserResponse.Model.Status"));
-		model.setYunPersonsId(_ctx.stringValue("CreateUserResponse.Model.YunPersonsId"));
 		model.setSspUserId(_ctx.stringValue("CreateUserResponse.Model.SspUserId"));
-		model.setTenantUserId(_ctx.stringValue("CreateUserResponse.Model.TenantUserId"));
-		model.setMobilePhone(_ctx.stringValue("CreateUserResponse.Model.MobilePhone"));
-		model.setRoleCode(_ctx.stringValue("CreateUserResponse.Model.RoleCode"));
-		model.setGmtModifiedTime(_ctx.longValue("CreateUserResponse.Model.GmtModifiedTime"));
 		model.setGmtCreateTime(_ctx.longValue("CreateUserResponse.Model.GmtCreateTime"));
-		model.setEmail(_ctx.stringValue("CreateUserResponse.Model.Email"));
+		model.setGmtModifiedTime(_ctx.longValue("CreateUserResponse.Model.GmtModifiedTime"));
+		model.setIsDeleteTag(_ctx.stringValue("CreateUserResponse.Model.IsDeleteTag"));
 		model.setUserName(_ctx.stringValue("CreateUserResponse.Model.UserName"));
 		model.setYunUid(_ctx.stringValue("CreateUserResponse.Model.YunUid"));
-		model.setIsDeleteTag(_ctx.stringValue("CreateUserResponse.Model.IsDeleteTag"));
+		model.setYunPersonsId(_ctx.stringValue("CreateUserResponse.Model.YunPersonsId"));
+		model.setMobilePhone(_ctx.stringValue("CreateUserResponse.Model.MobilePhone"));
+		model.setEmail(_ctx.stringValue("CreateUserResponse.Model.Email"));
+		model.setStatus(_ctx.stringValue("CreateUserResponse.Model.Status"));
 		model.setTenantId(_ctx.stringValue("CreateUserResponse.Model.TenantId"));
+		model.setTenantUserId(_ctx.stringValue("CreateUserResponse.Model.TenantUserId"));
+		model.setRoleCode(_ctx.stringValue("CreateUserResponse.Model.RoleCode"));
 		createUserResponse.setModel(model);
 	 
 	 	return createUserResponse;

@@ -23,10 +23,10 @@ public class CreateCalculationResponseUnmarshaller {
 	public static CreateCalculationResponse unmarshall(CreateCalculationResponse createCalculationResponse, UnmarshallerContext _ctx) {
 		
 		createCalculationResponse.setRequestId(_ctx.stringValue("CreateCalculationResponse.RequestId"));
+		createCalculationResponse.setSuccess(_ctx.booleanValue("CreateCalculationResponse.Success"));
+		createCalculationResponse.setErrorCode(_ctx.integerValue("CreateCalculationResponse.ErrorCode"));
 		createCalculationResponse.setErrorMessage(_ctx.stringValue("CreateCalculationResponse.ErrorMessage"));
 		createCalculationResponse.setResult(_ctx.stringValue("CreateCalculationResponse.Result"));
-		createCalculationResponse.setErrorCode(_ctx.integerValue("CreateCalculationResponse.ErrorCode"));
-		createCalculationResponse.setSuccess(_ctx.booleanValue("CreateCalculationResponse.Success"));
 	 
 	 	return createCalculationResponse;
 	}

@@ -24,31 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ReduceAmountResponse extends AcsResponse {
 
-	private String errorMsg;
-
-	private String requestId;
-
 	private Boolean success;
 
 	private Integer errorCode;
 
+	private String errorMsg;
+
+	private String requestId;
+
 	private Data data;
-
-	public String getErrorMsg() {
-		return this.errorMsg;
-	}
-
-	public void setErrorMsg(String errorMsg) {
-		this.errorMsg = errorMsg;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Boolean getSuccess() {
 		return this.success;
@@ -66,6 +50,22 @@ public class ReduceAmountResponse extends AcsResponse {
 		this.errorCode = errorCode;
 	}
 
+	public String getErrorMsg() {
+		return this.errorMsg;
+	}
+
+	public void setErrorMsg(String errorMsg) {
+		this.errorMsg = errorMsg;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -78,9 +78,9 @@ public class ReduceAmountResponse extends AcsResponse {
 
 		private String chargeDetail;
 
-		private Long price;
-
 		private Long taskId;
+
+		private Long price;
 
 		public String getChargeDetail() {
 			return this.chargeDetail;
@@ -90,20 +90,20 @@ public class ReduceAmountResponse extends AcsResponse {
 			this.chargeDetail = chargeDetail;
 		}
 
-		public Long getPrice() {
-			return this.price;
-		}
-
-		public void setPrice(Long price) {
-			this.price = price;
-		}
-
 		public Long getTaskId() {
 			return this.taskId;
 		}
 
 		public void setTaskId(Long taskId) {
 			this.taskId = taskId;
+		}
+
+		public Long getPrice() {
+			return this.price;
+		}
+
+		public void setPrice(Long price) {
+			this.price = price;
 		}
 	}
 

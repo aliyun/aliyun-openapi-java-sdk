@@ -25,23 +25,23 @@ public class CreatesSlotTemplateResponseUnmarshaller {
 		
 		createsSlotTemplateResponse.setRequestId(_ctx.stringValue("CreatesSlotTemplateResponse.RequestId"));
 		createsSlotTemplateResponse.setCode(_ctx.stringValue("CreatesSlotTemplateResponse.Code"));
-		createsSlotTemplateResponse.setMessage(_ctx.stringValue("CreatesSlotTemplateResponse.Message"));
 		createsSlotTemplateResponse.setSuccess(_ctx.booleanValue("CreatesSlotTemplateResponse.Success"));
+		createsSlotTemplateResponse.setMessage(_ctx.stringValue("CreatesSlotTemplateResponse.Message"));
 
 		Model model = new Model();
 		model.setCreateTime(_ctx.longValue("CreatesSlotTemplateResponse.Model.CreateTime"));
-		model.setAdSlotTemplateTitle(_ctx.stringValue("CreatesSlotTemplateResponse.Model.AdSlotTemplateTitle"));
-		model.setAdSlotType(_ctx.stringValue("CreatesSlotTemplateResponse.Model.AdSlotType"));
-		model.setAdSlotTemplateName(_ctx.stringValue("CreatesSlotTemplateResponse.Model.AdSlotTemplateName"));
-		model.setExtInfo(_ctx.stringValue("CreatesSlotTemplateResponse.Model.ExtInfo"));
-		model.setAdSlotTemplateDescription(_ctx.stringValue("CreatesSlotTemplateResponse.Model.AdSlotTemplateDescription"));
-		model.setVersion(_ctx.longValue("CreatesSlotTemplateResponse.Model.Version"));
-		model.setAdSlotTemplatePic(_ctx.stringValue("CreatesSlotTemplateResponse.Model.AdSlotTemplatePic"));
-		model.setAdSlotTemplatePreview(_ctx.stringValue("CreatesSlotTemplateResponse.Model.AdSlotTemplatePreview"));
-		model.setTemplateConfig(_ctx.stringValue("CreatesSlotTemplateResponse.Model.TemplateConfig"));
-		model.setAdSlotTemplateId(_ctx.stringValue("CreatesSlotTemplateResponse.Model.AdSlotTemplateId"));
 		model.setModifyTime(_ctx.longValue("CreatesSlotTemplateResponse.Model.ModifyTime"));
 		model.setTenantId(_ctx.stringValue("CreatesSlotTemplateResponse.Model.TenantId"));
+		model.setAdSlotTemplateId(_ctx.stringValue("CreatesSlotTemplateResponse.Model.AdSlotTemplateId"));
+		model.setAdSlotTemplateName(_ctx.stringValue("CreatesSlotTemplateResponse.Model.AdSlotTemplateName"));
+		model.setAdSlotTemplateTitle(_ctx.stringValue("CreatesSlotTemplateResponse.Model.AdSlotTemplateTitle"));
+		model.setAdSlotTemplatePic(_ctx.stringValue("CreatesSlotTemplateResponse.Model.AdSlotTemplatePic"));
+		model.setAdSlotTemplatePreview(_ctx.stringValue("CreatesSlotTemplateResponse.Model.AdSlotTemplatePreview"));
+		model.setAdSlotTemplateDescription(_ctx.stringValue("CreatesSlotTemplateResponse.Model.AdSlotTemplateDescription"));
+		model.setAdSlotType(_ctx.stringValue("CreatesSlotTemplateResponse.Model.AdSlotType"));
+		model.setTemplateConfig(_ctx.stringValue("CreatesSlotTemplateResponse.Model.TemplateConfig"));
+		model.setExtInfo(_ctx.stringValue("CreatesSlotTemplateResponse.Model.ExtInfo"));
+		model.setVersion(_ctx.longValue("CreatesSlotTemplateResponse.Model.Version"));
 		createsSlotTemplateResponse.setModel(model);
 	 
 	 	return createsSlotTemplateResponse;

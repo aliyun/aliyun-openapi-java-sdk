@@ -26,11 +26,11 @@ public class ModifyTenantInfoResponse extends AcsResponse {
 
 	private String code;
 
+	private Boolean success;
+
 	private String message;
 
 	private String requestId;
-
-	private Boolean success;
 
 	private Model model;
 
@@ -40,6 +40,14 @@ public class ModifyTenantInfoResponse extends AcsResponse {
 
 	public void setCode(String code) {
 		this.code = code;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public String getMessage() {
@@ -58,14 +66,6 @@ public class ModifyTenantInfoResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
 	public Model getModel() {
 		return this.model;
 	}
@@ -76,67 +76,27 @@ public class ModifyTenantInfoResponse extends AcsResponse {
 
 	public static class Model {
 
-		private String status;
-
-		private String settleInfo;
-
-		private Long version;
-
-		private String tenantDescription;
-
-		private String tenantName;
-
 		private Long createTime;
-
-		private String business;
-
-		private String userName;
-
-		private String extInfo;
-
-		private String tenantId;
 
 		private Long modifyTime;
 
-		public String getStatus() {
-			return this.status;
-		}
+		private String tenantId;
 
-		public void setStatus(String status) {
-			this.status = status;
-		}
+		private String tenantName;
 
-		public String getSettleInfo() {
-			return this.settleInfo;
-		}
+		private String business;
 
-		public void setSettleInfo(String settleInfo) {
-			this.settleInfo = settleInfo;
-		}
+		private String tenantDescription;
 
-		public Long getVersion() {
-			return this.version;
-		}
+		private String userName;
 
-		public void setVersion(Long version) {
-			this.version = version;
-		}
+		private String settleInfo;
 
-		public String getTenantDescription() {
-			return this.tenantDescription;
-		}
+		private String extInfo;
 
-		public void setTenantDescription(String tenantDescription) {
-			this.tenantDescription = tenantDescription;
-		}
+		private String status;
 
-		public String getTenantName() {
-			return this.tenantName;
-		}
-
-		public void setTenantName(String tenantName) {
-			this.tenantName = tenantName;
-		}
+		private Long version;
 
 		public Long getCreateTime() {
 			return this.createTime;
@@ -146,28 +106,12 @@ public class ModifyTenantInfoResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
-		public String getBusiness() {
-			return this.business;
+		public Long getModifyTime() {
+			return this.modifyTime;
 		}
 
-		public void setBusiness(String business) {
-			this.business = business;
-		}
-
-		public String getUserName() {
-			return this.userName;
-		}
-
-		public void setUserName(String userName) {
-			this.userName = userName;
-		}
-
-		public String getExtInfo() {
-			return this.extInfo;
-		}
-
-		public void setExtInfo(String extInfo) {
-			this.extInfo = extInfo;
+		public void setModifyTime(Long modifyTime) {
+			this.modifyTime = modifyTime;
 		}
 
 		public String getTenantId() {
@@ -178,12 +122,68 @@ public class ModifyTenantInfoResponse extends AcsResponse {
 			this.tenantId = tenantId;
 		}
 
-		public Long getModifyTime() {
-			return this.modifyTime;
+		public String getTenantName() {
+			return this.tenantName;
 		}
 
-		public void setModifyTime(Long modifyTime) {
-			this.modifyTime = modifyTime;
+		public void setTenantName(String tenantName) {
+			this.tenantName = tenantName;
+		}
+
+		public String getBusiness() {
+			return this.business;
+		}
+
+		public void setBusiness(String business) {
+			this.business = business;
+		}
+
+		public String getTenantDescription() {
+			return this.tenantDescription;
+		}
+
+		public void setTenantDescription(String tenantDescription) {
+			this.tenantDescription = tenantDescription;
+		}
+
+		public String getUserName() {
+			return this.userName;
+		}
+
+		public void setUserName(String userName) {
+			this.userName = userName;
+		}
+
+		public String getSettleInfo() {
+			return this.settleInfo;
+		}
+
+		public void setSettleInfo(String settleInfo) {
+			this.settleInfo = settleInfo;
+		}
+
+		public String getExtInfo() {
+			return this.extInfo;
+		}
+
+		public void setExtInfo(String extInfo) {
+			this.extInfo = extInfo;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
+		public Long getVersion() {
+			return this.version;
+		}
+
+		public void setVersion(Long version) {
+			this.version = version;
 		}
 	}
 

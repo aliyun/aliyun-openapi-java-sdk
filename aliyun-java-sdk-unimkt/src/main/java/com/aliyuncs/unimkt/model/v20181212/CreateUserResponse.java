@@ -26,11 +26,11 @@ public class CreateUserResponse extends AcsResponse {
 
 	private String code;
 
+	private Boolean success;
+
 	private String message;
 
 	private String requestId;
-
-	private Boolean success;
 
 	private Model model;
 
@@ -40,6 +40,14 @@ public class CreateUserResponse extends AcsResponse {
 
 	public void setCode(String code) {
 		this.code = code;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public String getMessage() {
@@ -58,14 +66,6 @@ public class CreateUserResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
 	public Model getModel() {
 		return this.model;
 	}
@@ -76,47 +76,31 @@ public class CreateUserResponse extends AcsResponse {
 
 	public static class Model {
 
-		private String status;
-
-		private String yunPersonsId;
-
 		private String sspUserId;
-
-		private String tenantUserId;
-
-		private String mobilePhone;
-
-		private String roleCode;
-
-		private Long gmtModifiedTime;
 
 		private Long gmtCreateTime;
 
-		private String email;
+		private Long gmtModifiedTime;
+
+		private String isDeleteTag;
 
 		private String userName;
 
 		private String yunUid;
 
-		private String isDeleteTag;
+		private String yunPersonsId;
+
+		private String mobilePhone;
+
+		private String email;
+
+		private String status;
 
 		private String tenantId;
 
-		public String getStatus() {
-			return this.status;
-		}
+		private String tenantUserId;
 
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
-		public String getYunPersonsId() {
-			return this.yunPersonsId;
-		}
-
-		public void setYunPersonsId(String yunPersonsId) {
-			this.yunPersonsId = yunPersonsId;
-		}
+		private String roleCode;
 
 		public String getSspUserId() {
 			return this.sspUserId;
@@ -124,38 +108,6 @@ public class CreateUserResponse extends AcsResponse {
 
 		public void setSspUserId(String sspUserId) {
 			this.sspUserId = sspUserId;
-		}
-
-		public String getTenantUserId() {
-			return this.tenantUserId;
-		}
-
-		public void setTenantUserId(String tenantUserId) {
-			this.tenantUserId = tenantUserId;
-		}
-
-		public String getMobilePhone() {
-			return this.mobilePhone;
-		}
-
-		public void setMobilePhone(String mobilePhone) {
-			this.mobilePhone = mobilePhone;
-		}
-
-		public String getRoleCode() {
-			return this.roleCode;
-		}
-
-		public void setRoleCode(String roleCode) {
-			this.roleCode = roleCode;
-		}
-
-		public Long getGmtModifiedTime() {
-			return this.gmtModifiedTime;
-		}
-
-		public void setGmtModifiedTime(Long gmtModifiedTime) {
-			this.gmtModifiedTime = gmtModifiedTime;
 		}
 
 		public Long getGmtCreateTime() {
@@ -166,12 +118,20 @@ public class CreateUserResponse extends AcsResponse {
 			this.gmtCreateTime = gmtCreateTime;
 		}
 
-		public String getEmail() {
-			return this.email;
+		public Long getGmtModifiedTime() {
+			return this.gmtModifiedTime;
 		}
 
-		public void setEmail(String email) {
-			this.email = email;
+		public void setGmtModifiedTime(Long gmtModifiedTime) {
+			this.gmtModifiedTime = gmtModifiedTime;
+		}
+
+		public String getIsDeleteTag() {
+			return this.isDeleteTag;
+		}
+
+		public void setIsDeleteTag(String isDeleteTag) {
+			this.isDeleteTag = isDeleteTag;
 		}
 
 		public String getUserName() {
@@ -190,12 +150,36 @@ public class CreateUserResponse extends AcsResponse {
 			this.yunUid = yunUid;
 		}
 
-		public String getIsDeleteTag() {
-			return this.isDeleteTag;
+		public String getYunPersonsId() {
+			return this.yunPersonsId;
 		}
 
-		public void setIsDeleteTag(String isDeleteTag) {
-			this.isDeleteTag = isDeleteTag;
+		public void setYunPersonsId(String yunPersonsId) {
+			this.yunPersonsId = yunPersonsId;
+		}
+
+		public String getMobilePhone() {
+			return this.mobilePhone;
+		}
+
+		public void setMobilePhone(String mobilePhone) {
+			this.mobilePhone = mobilePhone;
+		}
+
+		public String getEmail() {
+			return this.email;
+		}
+
+		public void setEmail(String email) {
+			this.email = email;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public String getTenantId() {
@@ -204,6 +188,22 @@ public class CreateUserResponse extends AcsResponse {
 
 		public void setTenantId(String tenantId) {
 			this.tenantId = tenantId;
+		}
+
+		public String getTenantUserId() {
+			return this.tenantUserId;
+		}
+
+		public void setTenantUserId(String tenantUserId) {
+			this.tenantUserId = tenantUserId;
+		}
+
+		public String getRoleCode() {
+			return this.roleCode;
+		}
+
+		public void setRoleCode(String roleCode) {
+			this.roleCode = roleCode;
 		}
 	}
 

@@ -26,11 +26,11 @@ public class ChangeTenantUserStatusResponse extends AcsResponse {
 
 	private String code;
 
+	private Boolean success;
+
 	private String message;
 
 	private String requestId;
-
-	private Boolean success;
 
 	private Model model;
 
@@ -40,6 +40,14 @@ public class ChangeTenantUserStatusResponse extends AcsResponse {
 
 	public void setCode(String code) {
 		this.code = code;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public String getMessage() {
@@ -58,14 +66,6 @@ public class ChangeTenantUserStatusResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
 	public Model getModel() {
 		return this.model;
 	}
@@ -76,47 +76,31 @@ public class ChangeTenantUserStatusResponse extends AcsResponse {
 
 	public static class Model {
 
-		private String status;
-
-		private String originSiteUserId;
-
 		private Long createTime;
-
-		private String tenantName;
-
-		private String originSiteUserName;
-
-		private String userId;
-
-		private String business;
-
-		private String extInfo;
-
-		private Long version;
-
-		private String originSite;
-
-		private String userName;
 
 		private Long modifyTime;
 
 		private String tenantId;
 
-		public String getStatus() {
-			return this.status;
-		}
+		private String tenantName;
 
-		public void setStatus(String status) {
-			this.status = status;
-		}
+		private String business;
 
-		public String getOriginSiteUserId() {
-			return this.originSiteUserId;
-		}
+		private String userId;
 
-		public void setOriginSiteUserId(String originSiteUserId) {
-			this.originSiteUserId = originSiteUserId;
-		}
+		private String userName;
+
+		private String originSite;
+
+		private String originSiteUserId;
+
+		private String status;
+
+		private Long version;
+
+		private String originSiteUserName;
+
+		private String extInfo;
 
 		public Long getCreateTime() {
 			return this.createTime;
@@ -124,70 +108,6 @@ public class ChangeTenantUserStatusResponse extends AcsResponse {
 
 		public void setCreateTime(Long createTime) {
 			this.createTime = createTime;
-		}
-
-		public String getTenantName() {
-			return this.tenantName;
-		}
-
-		public void setTenantName(String tenantName) {
-			this.tenantName = tenantName;
-		}
-
-		public String getOriginSiteUserName() {
-			return this.originSiteUserName;
-		}
-
-		public void setOriginSiteUserName(String originSiteUserName) {
-			this.originSiteUserName = originSiteUserName;
-		}
-
-		public String getUserId() {
-			return this.userId;
-		}
-
-		public void setUserId(String userId) {
-			this.userId = userId;
-		}
-
-		public String getBusiness() {
-			return this.business;
-		}
-
-		public void setBusiness(String business) {
-			this.business = business;
-		}
-
-		public String getExtInfo() {
-			return this.extInfo;
-		}
-
-		public void setExtInfo(String extInfo) {
-			this.extInfo = extInfo;
-		}
-
-		public Long getVersion() {
-			return this.version;
-		}
-
-		public void setVersion(Long version) {
-			this.version = version;
-		}
-
-		public String getOriginSite() {
-			return this.originSite;
-		}
-
-		public void setOriginSite(String originSite) {
-			this.originSite = originSite;
-		}
-
-		public String getUserName() {
-			return this.userName;
-		}
-
-		public void setUserName(String userName) {
-			this.userName = userName;
 		}
 
 		public Long getModifyTime() {
@@ -204,6 +124,86 @@ public class ChangeTenantUserStatusResponse extends AcsResponse {
 
 		public void setTenantId(String tenantId) {
 			this.tenantId = tenantId;
+		}
+
+		public String getTenantName() {
+			return this.tenantName;
+		}
+
+		public void setTenantName(String tenantName) {
+			this.tenantName = tenantName;
+		}
+
+		public String getBusiness() {
+			return this.business;
+		}
+
+		public void setBusiness(String business) {
+			this.business = business;
+		}
+
+		public String getUserId() {
+			return this.userId;
+		}
+
+		public void setUserId(String userId) {
+			this.userId = userId;
+		}
+
+		public String getUserName() {
+			return this.userName;
+		}
+
+		public void setUserName(String userName) {
+			this.userName = userName;
+		}
+
+		public String getOriginSite() {
+			return this.originSite;
+		}
+
+		public void setOriginSite(String originSite) {
+			this.originSite = originSite;
+		}
+
+		public String getOriginSiteUserId() {
+			return this.originSiteUserId;
+		}
+
+		public void setOriginSiteUserId(String originSiteUserId) {
+			this.originSiteUserId = originSiteUserId;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
+		public Long getVersion() {
+			return this.version;
+		}
+
+		public void setVersion(Long version) {
+			this.version = version;
+		}
+
+		public String getOriginSiteUserName() {
+			return this.originSiteUserName;
+		}
+
+		public void setOriginSiteUserName(String originSiteUserName) {
+			this.originSiteUserName = originSiteUserName;
+		}
+
+		public String getExtInfo() {
+			return this.extInfo;
+		}
+
+		public void setExtInfo(String extInfo) {
+			this.extInfo = extInfo;
 		}
 	}
 

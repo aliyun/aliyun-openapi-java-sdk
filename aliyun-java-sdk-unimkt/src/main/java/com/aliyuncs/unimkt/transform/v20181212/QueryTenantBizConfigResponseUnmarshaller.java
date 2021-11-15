@@ -28,15 +28,15 @@ public class QueryTenantBizConfigResponseUnmarshaller {
 		
 		queryTenantBizConfigResponse.setRequestId(_ctx.stringValue("QueryTenantBizConfigResponse.RequestId"));
 		queryTenantBizConfigResponse.setCode(_ctx.stringValue("QueryTenantBizConfigResponse.Code"));
-		queryTenantBizConfigResponse.setMessage(_ctx.stringValue("QueryTenantBizConfigResponse.Message"));
 		queryTenantBizConfigResponse.setSuccess(_ctx.booleanValue("QueryTenantBizConfigResponse.Success"));
+		queryTenantBizConfigResponse.setMessage(_ctx.stringValue("QueryTenantBizConfigResponse.Message"));
 
 		List<Config> model = new ArrayList<Config>();
 		for (int i = 0; i < _ctx.lengthValue("QueryTenantBizConfigResponse.Model.Length"); i++) {
 			Config config = new Config();
+			config.setBizId(_ctx.stringValue("QueryTenantBizConfigResponse.Model["+ i +"].BizId"));
 			config.setKey(_ctx.stringValue("QueryTenantBizConfigResponse.Model["+ i +"].Key"));
 			config.setValue(_ctx.stringValue("QueryTenantBizConfigResponse.Model["+ i +"].Value"));
-			config.setBizId(_ctx.stringValue("QueryTenantBizConfigResponse.Model["+ i +"].BizId"));
 			config.setConfigValueType(_ctx.stringValue("QueryTenantBizConfigResponse.Model["+ i +"].ConfigValueType"));
 			config.setConfigDescription(_ctx.stringValue("QueryTenantBizConfigResponse.Model["+ i +"].ConfigDescription"));
 

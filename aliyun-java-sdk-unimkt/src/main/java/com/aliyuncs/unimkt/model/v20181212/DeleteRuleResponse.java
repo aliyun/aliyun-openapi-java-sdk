@@ -26,11 +26,11 @@ public class DeleteRuleResponse extends AcsResponse {
 
 	private String code;
 
+	private Boolean success;
+
 	private String message;
 
 	private String requestId;
-
-	private Boolean success;
 
 	private Model model;
 
@@ -40,6 +40,14 @@ public class DeleteRuleResponse extends AcsResponse {
 
 	public void setCode(String code) {
 		this.code = code;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public String getMessage() {
@@ -58,14 +66,6 @@ public class DeleteRuleResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
 	public Model getModel() {
 		return this.model;
 	}
@@ -76,45 +76,29 @@ public class DeleteRuleResponse extends AcsResponse {
 
 	public static class Model {
 
-		private String status;
-
-		private String ruleType;
-
 		private Long createTime;
-
-		private String ruleRId;
-
-		private String relatedAdSlots;
-
-		private String extInfo;
-
-		private String ruleName;
-
-		private String ruleId;
-
-		private Long version;
 
 		private Long modifyTime;
 
 		private String tenantId;
 
+		private String ruleName;
+
+		private String ruleRId;
+
+		private String ruleType;
+
+		private String relatedAdSlots;
+
 		private String ruleConfig;
 
-		public String getStatus() {
-			return this.status;
-		}
+		private String status;
 
-		public void setStatus(String status) {
-			this.status = status;
-		}
+		private String extInfo;
 
-		public String getRuleType() {
-			return this.ruleType;
-		}
+		private Long version;
 
-		public void setRuleType(String ruleType) {
-			this.ruleType = ruleType;
-		}
+		private String ruleId;
 
 		public Long getCreateTime() {
 			return this.createTime;
@@ -122,54 +106,6 @@ public class DeleteRuleResponse extends AcsResponse {
 
 		public void setCreateTime(Long createTime) {
 			this.createTime = createTime;
-		}
-
-		public String getRuleRId() {
-			return this.ruleRId;
-		}
-
-		public void setRuleRId(String ruleRId) {
-			this.ruleRId = ruleRId;
-		}
-
-		public String getRelatedAdSlots() {
-			return this.relatedAdSlots;
-		}
-
-		public void setRelatedAdSlots(String relatedAdSlots) {
-			this.relatedAdSlots = relatedAdSlots;
-		}
-
-		public String getExtInfo() {
-			return this.extInfo;
-		}
-
-		public void setExtInfo(String extInfo) {
-			this.extInfo = extInfo;
-		}
-
-		public String getRuleName() {
-			return this.ruleName;
-		}
-
-		public void setRuleName(String ruleName) {
-			this.ruleName = ruleName;
-		}
-
-		public String getRuleId() {
-			return this.ruleId;
-		}
-
-		public void setRuleId(String ruleId) {
-			this.ruleId = ruleId;
-		}
-
-		public Long getVersion() {
-			return this.version;
-		}
-
-		public void setVersion(Long version) {
-			this.version = version;
 		}
 
 		public Long getModifyTime() {
@@ -188,12 +124,76 @@ public class DeleteRuleResponse extends AcsResponse {
 			this.tenantId = tenantId;
 		}
 
+		public String getRuleName() {
+			return this.ruleName;
+		}
+
+		public void setRuleName(String ruleName) {
+			this.ruleName = ruleName;
+		}
+
+		public String getRuleRId() {
+			return this.ruleRId;
+		}
+
+		public void setRuleRId(String ruleRId) {
+			this.ruleRId = ruleRId;
+		}
+
+		public String getRuleType() {
+			return this.ruleType;
+		}
+
+		public void setRuleType(String ruleType) {
+			this.ruleType = ruleType;
+		}
+
+		public String getRelatedAdSlots() {
+			return this.relatedAdSlots;
+		}
+
+		public void setRelatedAdSlots(String relatedAdSlots) {
+			this.relatedAdSlots = relatedAdSlots;
+		}
+
 		public String getRuleConfig() {
 			return this.ruleConfig;
 		}
 
 		public void setRuleConfig(String ruleConfig) {
 			this.ruleConfig = ruleConfig;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
+		public String getExtInfo() {
+			return this.extInfo;
+		}
+
+		public void setExtInfo(String extInfo) {
+			this.extInfo = extInfo;
+		}
+
+		public Long getVersion() {
+			return this.version;
+		}
+
+		public void setVersion(Long version) {
+			this.version = version;
+		}
+
+		public String getRuleId() {
+			return this.ruleId;
+		}
+
+		public void setRuleId(String ruleId) {
+			this.ruleId = ruleId;
 		}
 	}
 

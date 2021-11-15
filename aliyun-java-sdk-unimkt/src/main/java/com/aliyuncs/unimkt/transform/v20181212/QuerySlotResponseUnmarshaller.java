@@ -25,25 +25,25 @@ public class QuerySlotResponseUnmarshaller {
 		
 		querySlotResponse.setRequestId(_ctx.stringValue("QuerySlotResponse.RequestId"));
 		querySlotResponse.setCode(_ctx.stringValue("QuerySlotResponse.Code"));
-		querySlotResponse.setMessage(_ctx.stringValue("QuerySlotResponse.Message"));
 		querySlotResponse.setSuccess(_ctx.booleanValue("QuerySlotResponse.Success"));
+		querySlotResponse.setMessage(_ctx.stringValue("QuerySlotResponse.Message"));
 
 		Model model = new Model();
 		model.setCreateTime(_ctx.longValue("QuerySlotResponse.Model.CreateTime"));
-		model.setMediaName(_ctx.stringValue("QuerySlotResponse.Model.MediaName"));
-		model.setAdSlotType(_ctx.stringValue("QuerySlotResponse.Model.AdSlotType"));
-		model.setAdSlotStatus(_ctx.stringValue("QuerySlotResponse.Model.AdSlotStatus"));
-		model.setMediaId(_ctx.stringValue("QuerySlotResponse.Model.MediaId"));
-		model.setExtInfo(_ctx.stringValue("QuerySlotResponse.Model.ExtInfo"));
-		model.setAdSlotName(_ctx.stringValue("QuerySlotResponse.Model.AdSlotName"));
-		model.setInspireScene(_ctx.stringValue("QuerySlotResponse.Model.InspireScene"));
-		model.setBlockingRule(_ctx.stringValue("QuerySlotResponse.Model.BlockingRule"));
-		model.setVersion(_ctx.longValue("QuerySlotResponse.Model.Version"));
-		model.setAdSlotId(_ctx.stringValue("QuerySlotResponse.Model.AdSlotId"));
-		model.setAdSlotCorporateStatus(_ctx.stringValue("QuerySlotResponse.Model.AdSlotCorporateStatus"));
-		model.setAdSlotTemplateId(_ctx.stringValue("QuerySlotResponse.Model.AdSlotTemplateId"));
 		model.setModifyTime(_ctx.longValue("QuerySlotResponse.Model.ModifyTime"));
 		model.setTenantId(_ctx.stringValue("QuerySlotResponse.Model.TenantId"));
+		model.setMediaName(_ctx.stringValue("QuerySlotResponse.Model.MediaName"));
+		model.setMediaId(_ctx.stringValue("QuerySlotResponse.Model.MediaId"));
+		model.setAdSlotId(_ctx.stringValue("QuerySlotResponse.Model.AdSlotId"));
+		model.setAdSlotName(_ctx.stringValue("QuerySlotResponse.Model.AdSlotName"));
+		model.setAdSlotType(_ctx.stringValue("QuerySlotResponse.Model.AdSlotType"));
+		model.setAdSlotTemplateId(_ctx.stringValue("QuerySlotResponse.Model.AdSlotTemplateId"));
+		model.setAdSlotStatus(_ctx.stringValue("QuerySlotResponse.Model.AdSlotStatus"));
+		model.setAdSlotCorporateStatus(_ctx.stringValue("QuerySlotResponse.Model.AdSlotCorporateStatus"));
+		model.setExtInfo(_ctx.stringValue("QuerySlotResponse.Model.ExtInfo"));
+		model.setBlockingRule(_ctx.stringValue("QuerySlotResponse.Model.BlockingRule"));
+		model.setInspireScene(_ctx.stringValue("QuerySlotResponse.Model.InspireScene"));
+		model.setVersion(_ctx.longValue("QuerySlotResponse.Model.Version"));
 		querySlotResponse.setModel(model);
 	 
 	 	return querySlotResponse;

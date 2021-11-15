@@ -25,22 +25,22 @@ public class ModifyRuleResponseUnmarshaller {
 		
 		modifyRuleResponse.setRequestId(_ctx.stringValue("ModifyRuleResponse.RequestId"));
 		modifyRuleResponse.setCode(_ctx.stringValue("ModifyRuleResponse.Code"));
-		modifyRuleResponse.setMessage(_ctx.stringValue("ModifyRuleResponse.Message"));
 		modifyRuleResponse.setSuccess(_ctx.booleanValue("ModifyRuleResponse.Success"));
+		modifyRuleResponse.setMessage(_ctx.stringValue("ModifyRuleResponse.Message"));
 
 		Model model = new Model();
-		model.setStatus(_ctx.stringValue("ModifyRuleResponse.Model.Status"));
-		model.setRuleType(_ctx.stringValue("ModifyRuleResponse.Model.RuleType"));
 		model.setCreateTime(_ctx.longValue("ModifyRuleResponse.Model.CreateTime"));
-		model.setRuleRId(_ctx.stringValue("ModifyRuleResponse.Model.RuleRId"));
-		model.setRelatedAdSlots(_ctx.stringValue("ModifyRuleResponse.Model.RelatedAdSlots"));
-		model.setExtInfo(_ctx.stringValue("ModifyRuleResponse.Model.ExtInfo"));
-		model.setRuleName(_ctx.stringValue("ModifyRuleResponse.Model.RuleName"));
-		model.setRuleId(_ctx.stringValue("ModifyRuleResponse.Model.RuleId"));
-		model.setVersion(_ctx.longValue("ModifyRuleResponse.Model.Version"));
 		model.setModifyTime(_ctx.longValue("ModifyRuleResponse.Model.ModifyTime"));
 		model.setTenantId(_ctx.stringValue("ModifyRuleResponse.Model.TenantId"));
+		model.setRuleName(_ctx.stringValue("ModifyRuleResponse.Model.RuleName"));
+		model.setRuleRId(_ctx.stringValue("ModifyRuleResponse.Model.RuleRId"));
+		model.setRuleType(_ctx.stringValue("ModifyRuleResponse.Model.RuleType"));
+		model.setRelatedAdSlots(_ctx.stringValue("ModifyRuleResponse.Model.RelatedAdSlots"));
 		model.setRuleConfig(_ctx.stringValue("ModifyRuleResponse.Model.RuleConfig"));
+		model.setStatus(_ctx.stringValue("ModifyRuleResponse.Model.Status"));
+		model.setExtInfo(_ctx.stringValue("ModifyRuleResponse.Model.ExtInfo"));
+		model.setVersion(_ctx.longValue("ModifyRuleResponse.Model.Version"));
+		model.setRuleId(_ctx.stringValue("ModifyRuleResponse.Model.RuleId"));
 		modifyRuleResponse.setModel(model);
 	 
 	 	return modifyRuleResponse;

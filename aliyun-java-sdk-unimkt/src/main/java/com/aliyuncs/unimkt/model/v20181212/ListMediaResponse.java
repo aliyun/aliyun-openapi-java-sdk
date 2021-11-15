@@ -25,13 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListMediaResponse extends AcsResponse {
 
-	private String requestId;
+	private String code;
 
 	private Boolean success;
 
-	private String code;
-
 	private String message;
+
+	private String requestId;
 
 	private Integer pageNumber;
 
@@ -41,12 +41,12 @@ public class ListMediaResponse extends AcsResponse {
 
 	private List<Media> model;
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public Boolean getSuccess() {
@@ -57,20 +57,20 @@ public class ListMediaResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
 	public String getMessage() {
 		return this.message;
 	}
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getPageNumber() {
@@ -107,53 +107,37 @@ public class ListMediaResponse extends AcsResponse {
 
 	public static class Media {
 
-		private String accessWay;
-
-		private String secondScene;
-
 		private Long createTime;
-
-		private String mediaName;
-
-		private String os;
-
-		private String mediaType;
-
-		private String extInfo;
-
-		private String mediaId;
-
-		private String config;
-
-		private Long version;
-
-		private String mediaStatus;
-
-		private String keyWords;
-
-		private String accessStatus;
-
-		private String firstScene;
 
 		private Long modifyTime;
 
 		private String tenantId;
 
-		public String getAccessWay() {
-			return this.accessWay;
-		}
+		private String mediaName;
 
-		public void setAccessWay(String accessWay) {
-			this.accessWay = accessWay;
-		}
+		private String mediaId;
 
-		public String getSecondScene() {
-			return this.secondScene;
-		}
+		private String mediaType;
 
-		public void setSecondScene(String secondScene) {
-			this.secondScene = secondScene;
-		}
+		private String firstScene;
+
+		private String secondScene;
+
+		private String mediaStatus;
+
+		private String accessStatus;
+
+		private String os;
+
+		private String config;
+
+		private String keyWords;
+
+		private String accessWay;
+
+		private String extInfo;
+
+		private Long version;
 
 		public Long getCreateTime() {
 			return this.createTime;
@@ -161,94 +145,6 @@ public class ListMediaResponse extends AcsResponse {
 
 		public void setCreateTime(Long createTime) {
 			this.createTime = createTime;
-		}
-
-		public String getMediaName() {
-			return this.mediaName;
-		}
-
-		public void setMediaName(String mediaName) {
-			this.mediaName = mediaName;
-		}
-
-		public String getOs() {
-			return this.os;
-		}
-
-		public void setOs(String os) {
-			this.os = os;
-		}
-
-		public String getMediaType() {
-			return this.mediaType;
-		}
-
-		public void setMediaType(String mediaType) {
-			this.mediaType = mediaType;
-		}
-
-		public String getExtInfo() {
-			return this.extInfo;
-		}
-
-		public void setExtInfo(String extInfo) {
-			this.extInfo = extInfo;
-		}
-
-		public String getMediaId() {
-			return this.mediaId;
-		}
-
-		public void setMediaId(String mediaId) {
-			this.mediaId = mediaId;
-		}
-
-		public String getConfig() {
-			return this.config;
-		}
-
-		public void setConfig(String config) {
-			this.config = config;
-		}
-
-		public Long getVersion() {
-			return this.version;
-		}
-
-		public void setVersion(Long version) {
-			this.version = version;
-		}
-
-		public String getMediaStatus() {
-			return this.mediaStatus;
-		}
-
-		public void setMediaStatus(String mediaStatus) {
-			this.mediaStatus = mediaStatus;
-		}
-
-		public String getKeyWords() {
-			return this.keyWords;
-		}
-
-		public void setKeyWords(String keyWords) {
-			this.keyWords = keyWords;
-		}
-
-		public String getAccessStatus() {
-			return this.accessStatus;
-		}
-
-		public void setAccessStatus(String accessStatus) {
-			this.accessStatus = accessStatus;
-		}
-
-		public String getFirstScene() {
-			return this.firstScene;
-		}
-
-		public void setFirstScene(String firstScene) {
-			this.firstScene = firstScene;
 		}
 
 		public Long getModifyTime() {
@@ -265,6 +161,110 @@ public class ListMediaResponse extends AcsResponse {
 
 		public void setTenantId(String tenantId) {
 			this.tenantId = tenantId;
+		}
+
+		public String getMediaName() {
+			return this.mediaName;
+		}
+
+		public void setMediaName(String mediaName) {
+			this.mediaName = mediaName;
+		}
+
+		public String getMediaId() {
+			return this.mediaId;
+		}
+
+		public void setMediaId(String mediaId) {
+			this.mediaId = mediaId;
+		}
+
+		public String getMediaType() {
+			return this.mediaType;
+		}
+
+		public void setMediaType(String mediaType) {
+			this.mediaType = mediaType;
+		}
+
+		public String getFirstScene() {
+			return this.firstScene;
+		}
+
+		public void setFirstScene(String firstScene) {
+			this.firstScene = firstScene;
+		}
+
+		public String getSecondScene() {
+			return this.secondScene;
+		}
+
+		public void setSecondScene(String secondScene) {
+			this.secondScene = secondScene;
+		}
+
+		public String getMediaStatus() {
+			return this.mediaStatus;
+		}
+
+		public void setMediaStatus(String mediaStatus) {
+			this.mediaStatus = mediaStatus;
+		}
+
+		public String getAccessStatus() {
+			return this.accessStatus;
+		}
+
+		public void setAccessStatus(String accessStatus) {
+			this.accessStatus = accessStatus;
+		}
+
+		public String getOs() {
+			return this.os;
+		}
+
+		public void setOs(String os) {
+			this.os = os;
+		}
+
+		public String getConfig() {
+			return this.config;
+		}
+
+		public void setConfig(String config) {
+			this.config = config;
+		}
+
+		public String getKeyWords() {
+			return this.keyWords;
+		}
+
+		public void setKeyWords(String keyWords) {
+			this.keyWords = keyWords;
+		}
+
+		public String getAccessWay() {
+			return this.accessWay;
+		}
+
+		public void setAccessWay(String accessWay) {
+			this.accessWay = accessWay;
+		}
+
+		public String getExtInfo() {
+			return this.extInfo;
+		}
+
+		public void setExtInfo(String extInfo) {
+			this.extInfo = extInfo;
+		}
+
+		public Long getVersion() {
+			return this.version;
+		}
+
+		public void setVersion(Long version) {
+			this.version = version;
 		}
 	}
 
