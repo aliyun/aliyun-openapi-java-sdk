@@ -33,12 +33,13 @@ public class DescribeUisResponseUnmarshaller {
 		describeUisResponse.setState(_ctx.stringValue("DescribeUisResponse.State"));
 		describeUisResponse.setUisName(_ctx.stringValue("DescribeUisResponse.UisName"));
 		describeUisResponse.setRegionId(_ctx.stringValue("DescribeUisResponse.RegionId"));
-		describeUisResponse.setMbpsQuota(_ctx.doubleValue("DescribeUisResponse.MbpsQuota"));
-		describeUisResponse.setKppsQuota(_ctx.doubleValue("DescribeUisResponse.KppsQuota"));
-		describeUisResponse.setFlowQuota(_ctx.doubleValue("DescribeUisResponse.FlowQuota"));
-		describeUisResponse.setUsedMBpsQuota(_ctx.doubleValue("DescribeUisResponse.UsedMBpsQuota"));
-		describeUisResponse.setUsedKPpsQuota(_ctx.doubleValue("DescribeUisResponse.UsedKPpsQuota"));
-		describeUisResponse.setUsedFlowQuota(_ctx.doubleValue("DescribeUisResponse.UsedFlowQuota"));
+		describeUisResponse.setMbpsQuota(_ctx.longValue("DescribeUisResponse.MbpsQuota"));
+		describeUisResponse.setKppsQuota(_ctx.longValue("DescribeUisResponse.KppsQuota"));
+		describeUisResponse.setFlowQuota(_ctx.longValue("DescribeUisResponse.FlowQuota"));
+		describeUisResponse.setUsedMBpsQuota(_ctx.longValue("DescribeUisResponse.UsedMBpsQuota"));
+		describeUisResponse.setUsedKPpsQuota(_ctx.longValue("DescribeUisResponse.UsedKPpsQuota"));
+		describeUisResponse.setUsedFlowQuota(_ctx.longValue("DescribeUisResponse.UsedFlowQuota"));
+		describeUisResponse.setSpec(_ctx.stringValue("DescribeUisResponse.Spec"));
 
 		List<String> uisNodes = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeUisResponse.UisNodes.Length"); i++) {

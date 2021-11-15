@@ -43,12 +43,12 @@ public class DescribeUissResponseUnmarshaller {
 			uissItem.setResourceGroupId(_ctx.stringValue("DescribeUissResponse.Uiss["+ i +"].ResourceGroupId"));
 			uissItem.setUisName(_ctx.stringValue("DescribeUissResponse.Uiss["+ i +"].UisName"));
 			uissItem.setRegionId(_ctx.stringValue("DescribeUissResponse.Uiss["+ i +"].RegionId"));
-			uissItem.setMbpsQuota(_ctx.doubleValue("DescribeUissResponse.Uiss["+ i +"].MbpsQuota"));
-			uissItem.setKppsQuota(_ctx.doubleValue("DescribeUissResponse.Uiss["+ i +"].KppsQuota"));
-			uissItem.setFlowQuota(_ctx.doubleValue("DescribeUissResponse.Uiss["+ i +"].FlowQuota"));
-			uissItem.setUsedMBpsQuota(_ctx.doubleValue("DescribeUissResponse.Uiss["+ i +"].UsedMBpsQuota"));
-			uissItem.setUsedKPpsQuota(_ctx.doubleValue("DescribeUissResponse.Uiss["+ i +"].UsedKPpsQuota"));
-			uissItem.setUsedFlowQuota(_ctx.doubleValue("DescribeUissResponse.Uiss["+ i +"].UsedFlowQuota"));
+			uissItem.setMbpsQuota(_ctx.longValue("DescribeUissResponse.Uiss["+ i +"].MbpsQuota"));
+			uissItem.setKppsQuota(_ctx.longValue("DescribeUissResponse.Uiss["+ i +"].KppsQuota"));
+			uissItem.setFlowQuota(_ctx.longValue("DescribeUissResponse.Uiss["+ i +"].FlowQuota"));
+			uissItem.setUsedMBpsQuota(_ctx.longValue("DescribeUissResponse.Uiss["+ i +"].UsedMBpsQuota"));
+			uissItem.setUsedKPpsQuota(_ctx.longValue("DescribeUissResponse.Uiss["+ i +"].UsedKPpsQuota"));
+			uissItem.setUsedFlowQuota(_ctx.longValue("DescribeUissResponse.Uiss["+ i +"].UsedFlowQuota"));
 
 			uiss.add(uissItem);
 		}

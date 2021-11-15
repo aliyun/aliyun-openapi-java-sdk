@@ -87,17 +87,17 @@ public class DescribeUissResponse extends AcsResponse {
 
 		private String regionId;
 
-		private Double mbpsQuota;
+		private Long mbpsQuota;
 
-		private Double kppsQuota;
+		private Long kppsQuota;
 
-		private Double flowQuota;
+		private Long flowQuota;
 
-		private Double usedMBpsQuota;
+		private Long usedMBpsQuota;
 
-		private Double usedKPpsQuota;
+		private Long usedKPpsQuota;
 
-		private Double usedFlowQuota;
+		private Long usedFlowQuota;
 
 		public String getUisId() {
 			return this.uisId;
@@ -179,51 +179,51 @@ public class DescribeUissResponse extends AcsResponse {
 			this.regionId = regionId;
 		}
 
-		public Double getMbpsQuota() {
+		public Long getMbpsQuota() {
 			return this.mbpsQuota;
 		}
 
-		public void setMbpsQuota(Double mbpsQuota) {
+		public void setMbpsQuota(Long mbpsQuota) {
 			this.mbpsQuota = mbpsQuota;
 		}
 
-		public Double getKppsQuota() {
+		public Long getKppsQuota() {
 			return this.kppsQuota;
 		}
 
-		public void setKppsQuota(Double kppsQuota) {
+		public void setKppsQuota(Long kppsQuota) {
 			this.kppsQuota = kppsQuota;
 		}
 
-		public Double getFlowQuota() {
+		public Long getFlowQuota() {
 			return this.flowQuota;
 		}
 
-		public void setFlowQuota(Double flowQuota) {
+		public void setFlowQuota(Long flowQuota) {
 			this.flowQuota = flowQuota;
 		}
 
-		public Double getUsedMBpsQuota() {
+		public Long getUsedMBpsQuota() {
 			return this.usedMBpsQuota;
 		}
 
-		public void setUsedMBpsQuota(Double usedMBpsQuota) {
+		public void setUsedMBpsQuota(Long usedMBpsQuota) {
 			this.usedMBpsQuota = usedMBpsQuota;
 		}
 
-		public Double getUsedKPpsQuota() {
+		public Long getUsedKPpsQuota() {
 			return this.usedKPpsQuota;
 		}
 
-		public void setUsedKPpsQuota(Double usedKPpsQuota) {
+		public void setUsedKPpsQuota(Long usedKPpsQuota) {
 			this.usedKPpsQuota = usedKPpsQuota;
 		}
 
-		public Double getUsedFlowQuota() {
+		public Long getUsedFlowQuota() {
 			return this.usedFlowQuota;
 		}
 
-		public void setUsedFlowQuota(Double usedFlowQuota) {
+		public void setUsedFlowQuota(Long usedFlowQuota) {
 			this.usedFlowQuota = usedFlowQuota;
 		}
 	}
