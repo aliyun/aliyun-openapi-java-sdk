@@ -27,11 +27,11 @@ public class QueryTenantBizConfigResponse extends AcsResponse {
 
 	private String code;
 
-	private Boolean success;
-
 	private String message;
 
 	private String requestId;
+
+	private Boolean success;
 
 	private List<Config> model;
 
@@ -41,14 +41,6 @@ public class QueryTenantBizConfigResponse extends AcsResponse {
 
 	public void setCode(String code) {
 		this.code = code;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
 	}
 
 	public String getMessage() {
@@ -67,6 +59,14 @@ public class QueryTenantBizConfigResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public List<Config> getModel() {
 		return this.model;
 	}
@@ -77,23 +77,15 @@ public class QueryTenantBizConfigResponse extends AcsResponse {
 
 	public static class Config {
 
-		private String bizId;
-
 		private String key;
 
 		private String value;
 
+		private String bizId;
+
 		private String configValueType;
 
 		private String configDescription;
-
-		public String getBizId() {
-			return this.bizId;
-		}
-
-		public void setBizId(String bizId) {
-			this.bizId = bizId;
-		}
 
 		public String getKey() {
 			return this.key;
@@ -109,6 +101,14 @@ public class QueryTenantBizConfigResponse extends AcsResponse {
 
 		public void setValue(String value) {
 			this.value = value;
+		}
+
+		public String getBizId() {
+			return this.bizId;
+		}
+
+		public void setBizId(String bizId) {
+			this.bizId = bizId;
 		}
 
 		public String getConfigValueType() {

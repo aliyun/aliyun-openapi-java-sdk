@@ -24,23 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class PushFaultEventResponse extends AcsResponse {
 
-	private Boolean status;
-
 	private String msg;
+
+	private Boolean status;
 
 	private String data;
 
-	private String errorCode;
-
 	private String requestId;
 
-	public Boolean getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(Boolean status) {
-		this.status = status;
-	}
+	private String errorCode;
 
 	public String getMsg() {
 		return this.msg;
@@ -48,6 +40,14 @@ public class PushFaultEventResponse extends AcsResponse {
 
 	public void setMsg(String msg) {
 		this.msg = msg;
+	}
+
+	public Boolean getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(Boolean status) {
+		this.status = status;
 	}
 
 	public String getData() {
@@ -58,20 +58,20 @@ public class PushFaultEventResponse extends AcsResponse {
 		this.data = data;
 	}
 
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
-	}
-
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getErrorCode() {
+		return this.errorCode;
+	}
+
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
 	}
 
 	@Override

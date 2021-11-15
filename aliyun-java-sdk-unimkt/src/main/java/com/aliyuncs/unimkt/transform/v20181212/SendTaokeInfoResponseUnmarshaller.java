@@ -23,9 +23,9 @@ public class SendTaokeInfoResponseUnmarshaller {
 	public static SendTaokeInfoResponse unmarshall(SendTaokeInfoResponse sendTaokeInfoResponse, UnmarshallerContext _ctx) {
 		
 		sendTaokeInfoResponse.setRequestId(_ctx.stringValue("SendTaokeInfoResponse.RequestId"));
-		sendTaokeInfoResponse.setSuccess(_ctx.booleanValue("SendTaokeInfoResponse.Success"));
 		sendTaokeInfoResponse.setErrorMessage(_ctx.stringValue("SendTaokeInfoResponse.ErrorMessage"));
 		sendTaokeInfoResponse.setErrorCode(_ctx.stringValue("SendTaokeInfoResponse.ErrorCode"));
+		sendTaokeInfoResponse.setSuccess(_ctx.booleanValue("SendTaokeInfoResponse.Success"));
 	 
 	 	return sendTaokeInfoResponse;
 	}

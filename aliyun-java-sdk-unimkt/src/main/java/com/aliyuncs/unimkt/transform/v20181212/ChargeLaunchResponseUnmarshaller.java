@@ -23,10 +23,10 @@ public class ChargeLaunchResponseUnmarshaller {
 	public static ChargeLaunchResponse unmarshall(ChargeLaunchResponse chargeLaunchResponse, UnmarshallerContext _ctx) {
 		
 		chargeLaunchResponse.setRequestId(_ctx.stringValue("ChargeLaunchResponse.RequestId"));
-		chargeLaunchResponse.setSuccess(_ctx.booleanValue("ChargeLaunchResponse.Success"));
-		chargeLaunchResponse.setErrorCode(_ctx.integerValue("ChargeLaunchResponse.ErrorCode"));
 		chargeLaunchResponse.setErrorMessage(_ctx.stringValue("ChargeLaunchResponse.ErrorMessage"));
 		chargeLaunchResponse.setResult(_ctx.stringValue("ChargeLaunchResponse.Result"));
+		chargeLaunchResponse.setErrorCode(_ctx.integerValue("ChargeLaunchResponse.ErrorCode"));
+		chargeLaunchResponse.setSuccess(_ctx.booleanValue("ChargeLaunchResponse.Success"));
 	 
 	 	return chargeLaunchResponse;
 	}

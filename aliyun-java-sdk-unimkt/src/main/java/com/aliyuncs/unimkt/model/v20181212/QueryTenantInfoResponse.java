@@ -26,11 +26,11 @@ public class QueryTenantInfoResponse extends AcsResponse {
 
 	private String code;
 
+	private String message;
+
 	private String requestId;
 
 	private Boolean success;
-
-	private String message;
 
 	private Model model;
 
@@ -40,6 +40,14 @@ public class QueryTenantInfoResponse extends AcsResponse {
 
 	public void setCode(String code) {
 		this.code = code;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public String getRequestId() {
@@ -58,14 +66,6 @@ public class QueryTenantInfoResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
 	public Model getModel() {
 		return this.model;
 	}
@@ -76,73 +76,25 @@ public class QueryTenantInfoResponse extends AcsResponse {
 
 	public static class Model {
 
-		private Long createTime;
-
-		private Long modifyTime;
-
-		private String tenantId;
-
-		private String business;
-
-		private String tenantName;
-
-		private String tenantDescription;
-
 		private String status;
 
 		private String settleInfo;
 
-		private String extInfo;
-
 		private Long version;
 
-		public Long getCreateTime() {
-			return this.createTime;
-		}
+		private String tenantDescription;
 
-		public void setCreateTime(Long createTime) {
-			this.createTime = createTime;
-		}
+		private String tenantName;
 
-		public Long getModifyTime() {
-			return this.modifyTime;
-		}
+		private Long createTime;
 
-		public void setModifyTime(Long modifyTime) {
-			this.modifyTime = modifyTime;
-		}
+		private String business;
 
-		public String getTenantId() {
-			return this.tenantId;
-		}
+		private String extInfo;
 
-		public void setTenantId(String tenantId) {
-			this.tenantId = tenantId;
-		}
+		private String tenantId;
 
-		public String getBusiness() {
-			return this.business;
-		}
-
-		public void setBusiness(String business) {
-			this.business = business;
-		}
-
-		public String getTenantName() {
-			return this.tenantName;
-		}
-
-		public void setTenantName(String tenantName) {
-			this.tenantName = tenantName;
-		}
-
-		public String getTenantDescription() {
-			return this.tenantDescription;
-		}
-
-		public void setTenantDescription(String tenantDescription) {
-			this.tenantDescription = tenantDescription;
-		}
+		private Long modifyTime;
 
 		public String getStatus() {
 			return this.status;
@@ -160,6 +112,46 @@ public class QueryTenantInfoResponse extends AcsResponse {
 			this.settleInfo = settleInfo;
 		}
 
+		public Long getVersion() {
+			return this.version;
+		}
+
+		public void setVersion(Long version) {
+			this.version = version;
+		}
+
+		public String getTenantDescription() {
+			return this.tenantDescription;
+		}
+
+		public void setTenantDescription(String tenantDescription) {
+			this.tenantDescription = tenantDescription;
+		}
+
+		public String getTenantName() {
+			return this.tenantName;
+		}
+
+		public void setTenantName(String tenantName) {
+			this.tenantName = tenantName;
+		}
+
+		public Long getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(Long createTime) {
+			this.createTime = createTime;
+		}
+
+		public String getBusiness() {
+			return this.business;
+		}
+
+		public void setBusiness(String business) {
+			this.business = business;
+		}
+
 		public String getExtInfo() {
 			return this.extInfo;
 		}
@@ -168,12 +160,20 @@ public class QueryTenantInfoResponse extends AcsResponse {
 			this.extInfo = extInfo;
 		}
 
-		public Long getVersion() {
-			return this.version;
+		public String getTenantId() {
+			return this.tenantId;
 		}
 
-		public void setVersion(Long version) {
-			this.version = version;
+		public void setTenantId(String tenantId) {
+			this.tenantId = tenantId;
+		}
+
+		public Long getModifyTime() {
+			return this.modifyTime;
+		}
+
+		public void setModifyTime(Long modifyTime) {
+			this.modifyTime = modifyTime;
 		}
 	}
 

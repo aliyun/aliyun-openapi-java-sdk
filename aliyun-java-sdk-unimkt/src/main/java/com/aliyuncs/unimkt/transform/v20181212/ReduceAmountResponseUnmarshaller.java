@@ -24,14 +24,14 @@ public class ReduceAmountResponseUnmarshaller {
 	public static ReduceAmountResponse unmarshall(ReduceAmountResponse reduceAmountResponse, UnmarshallerContext _ctx) {
 		
 		reduceAmountResponse.setRequestId(_ctx.stringValue("ReduceAmountResponse.RequestId"));
+		reduceAmountResponse.setErrorMsg(_ctx.stringValue("ReduceAmountResponse.ErrorMsg"));
 		reduceAmountResponse.setSuccess(_ctx.booleanValue("ReduceAmountResponse.Success"));
 		reduceAmountResponse.setErrorCode(_ctx.integerValue("ReduceAmountResponse.ErrorCode"));
-		reduceAmountResponse.setErrorMsg(_ctx.stringValue("ReduceAmountResponse.ErrorMsg"));
 
 		Data data = new Data();
 		data.setChargeDetail(_ctx.stringValue("ReduceAmountResponse.Data.ChargeDetail"));
-		data.setTaskId(_ctx.longValue("ReduceAmountResponse.Data.TaskId"));
 		data.setPrice(_ctx.longValue("ReduceAmountResponse.Data.Price"));
+		data.setTaskId(_ctx.longValue("ReduceAmountResponse.Data.TaskId"));
 		reduceAmountResponse.setData(data);
 	 
 	 	return reduceAmountResponse;

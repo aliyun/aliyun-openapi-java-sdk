@@ -25,20 +25,20 @@ public class ChangeTenantStatusResponseUnmarshaller {
 		
 		changeTenantStatusResponse.setRequestId(_ctx.stringValue("ChangeTenantStatusResponse.RequestId"));
 		changeTenantStatusResponse.setCode(_ctx.stringValue("ChangeTenantStatusResponse.Code"));
-		changeTenantStatusResponse.setSuccess(_ctx.booleanValue("ChangeTenantStatusResponse.Success"));
 		changeTenantStatusResponse.setMessage(_ctx.stringValue("ChangeTenantStatusResponse.Message"));
+		changeTenantStatusResponse.setSuccess(_ctx.booleanValue("ChangeTenantStatusResponse.Success"));
 
 		Model model = new Model();
-		model.setCreateTime(_ctx.longValue("ChangeTenantStatusResponse.Model.CreateTime"));
-		model.setModifyTime(_ctx.longValue("ChangeTenantStatusResponse.Model.ModifyTime"));
-		model.setTenantId(_ctx.stringValue("ChangeTenantStatusResponse.Model.TenantId"));
-		model.setTenantName(_ctx.stringValue("ChangeTenantStatusResponse.Model.TenantName"));
-		model.setBusiness(_ctx.stringValue("ChangeTenantStatusResponse.Model.Business"));
-		model.setTenantDescription(_ctx.stringValue("ChangeTenantStatusResponse.Model.TenantDescription"));
-		model.setUserName(_ctx.stringValue("ChangeTenantStatusResponse.Model.UserName"));
-		model.setSettleInfo(_ctx.stringValue("ChangeTenantStatusResponse.Model.SettleInfo"));
-		model.setExtInfo(_ctx.stringValue("ChangeTenantStatusResponse.Model.ExtInfo"));
 		model.setStatus(_ctx.stringValue("ChangeTenantStatusResponse.Model.Status"));
+		model.setSettleInfo(_ctx.stringValue("ChangeTenantStatusResponse.Model.SettleInfo"));
+		model.setTenantDescription(_ctx.stringValue("ChangeTenantStatusResponse.Model.TenantDescription"));
+		model.setTenantName(_ctx.stringValue("ChangeTenantStatusResponse.Model.TenantName"));
+		model.setCreateTime(_ctx.longValue("ChangeTenantStatusResponse.Model.CreateTime"));
+		model.setBusiness(_ctx.stringValue("ChangeTenantStatusResponse.Model.Business"));
+		model.setUserName(_ctx.stringValue("ChangeTenantStatusResponse.Model.UserName"));
+		model.setExtInfo(_ctx.stringValue("ChangeTenantStatusResponse.Model.ExtInfo"));
+		model.setTenantId(_ctx.stringValue("ChangeTenantStatusResponse.Model.TenantId"));
+		model.setModifyTime(_ctx.longValue("ChangeTenantStatusResponse.Model.ModifyTime"));
 		changeTenantStatusResponse.setModel(model);
 	 
 	 	return changeTenantStatusResponse;

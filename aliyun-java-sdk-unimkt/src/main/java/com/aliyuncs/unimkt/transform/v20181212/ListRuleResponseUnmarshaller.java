@@ -27,8 +27,8 @@ public class ListRuleResponseUnmarshaller {
 	public static ListRuleResponse unmarshall(ListRuleResponse listRuleResponse, UnmarshallerContext _ctx) {
 		
 		listRuleResponse.setRequestId(_ctx.stringValue("ListRuleResponse.RequestId"));
-		listRuleResponse.setCode(_ctx.stringValue("ListRuleResponse.Code"));
 		listRuleResponse.setSuccess(_ctx.booleanValue("ListRuleResponse.Success"));
+		listRuleResponse.setCode(_ctx.stringValue("ListRuleResponse.Code"));
 		listRuleResponse.setMessage(_ctx.stringValue("ListRuleResponse.Message"));
 		listRuleResponse.setPageNumber(_ctx.integerValue("ListRuleResponse.PageNumber"));
 		listRuleResponse.setPageSize(_ctx.integerValue("ListRuleResponse.PageSize"));
@@ -37,18 +37,18 @@ public class ListRuleResponseUnmarshaller {
 		List<Rule> model = new ArrayList<Rule>();
 		for (int i = 0; i < _ctx.lengthValue("ListRuleResponse.Model.Length"); i++) {
 			Rule rule = new Rule();
+			rule.setStatus(_ctx.stringValue("ListRuleResponse.Model["+ i +"].Status"));
+			rule.setRuleType(_ctx.stringValue("ListRuleResponse.Model["+ i +"].RuleType"));
 			rule.setCreateTime(_ctx.longValue("ListRuleResponse.Model["+ i +"].CreateTime"));
+			rule.setRuleRId(_ctx.stringValue("ListRuleResponse.Model["+ i +"].RuleRId"));
+			rule.setRelatedAdSlots(_ctx.stringValue("ListRuleResponse.Model["+ i +"].RelatedAdSlots"));
+			rule.setExtInfo(_ctx.stringValue("ListRuleResponse.Model["+ i +"].ExtInfo"));
+			rule.setRuleName(_ctx.stringValue("ListRuleResponse.Model["+ i +"].RuleName"));
+			rule.setRuleId(_ctx.stringValue("ListRuleResponse.Model["+ i +"].RuleId"));
+			rule.setVersion(_ctx.longValue("ListRuleResponse.Model["+ i +"].Version"));
 			rule.setModifyTime(_ctx.longValue("ListRuleResponse.Model["+ i +"].ModifyTime"));
 			rule.setTenantId(_ctx.stringValue("ListRuleResponse.Model["+ i +"].TenantId"));
-			rule.setRuleName(_ctx.stringValue("ListRuleResponse.Model["+ i +"].RuleName"));
-			rule.setRuleRId(_ctx.stringValue("ListRuleResponse.Model["+ i +"].RuleRId"));
-			rule.setRuleType(_ctx.stringValue("ListRuleResponse.Model["+ i +"].RuleType"));
-			rule.setRelatedAdSlots(_ctx.stringValue("ListRuleResponse.Model["+ i +"].RelatedAdSlots"));
 			rule.setRuleConfig(_ctx.stringValue("ListRuleResponse.Model["+ i +"].RuleConfig"));
-			rule.setStatus(_ctx.stringValue("ListRuleResponse.Model["+ i +"].Status"));
-			rule.setExtInfo(_ctx.stringValue("ListRuleResponse.Model["+ i +"].ExtInfo"));
-			rule.setVersion(_ctx.longValue("ListRuleResponse.Model["+ i +"].Version"));
-			rule.setRuleId(_ctx.stringValue("ListRuleResponse.Model["+ i +"].RuleId"));
 
 			model.add(rule);
 		}

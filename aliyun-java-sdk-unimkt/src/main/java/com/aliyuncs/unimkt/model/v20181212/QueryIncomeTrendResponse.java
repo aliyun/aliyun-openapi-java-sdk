@@ -25,13 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryIncomeTrendResponse extends AcsResponse {
 
-	private String code;
+	private String requestId;
 
 	private Boolean success;
 
-	private String message;
+	private String code;
 
-	private String requestId;
+	private String message;
 
 	private Integer pageNumber;
 
@@ -41,12 +41,12 @@ public class QueryIncomeTrendResponse extends AcsResponse {
 
 	private List<Data> model;
 
-	public String getCode() {
-		return this.code;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Boolean getSuccess() {
@@ -57,20 +57,20 @@ public class QueryIncomeTrendResponse extends AcsResponse {
 		this.success = success;
 	}
 
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
 	public String getMessage() {
 		return this.message;
 	}
 
 	public void setMessage(String message) {
 		this.message = message;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
 	}
 
 	public Integer getPageNumber() {
@@ -107,80 +107,136 @@ public class QueryIncomeTrendResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Long startTime;
+		private String adSlotName;
 
-		private Long endTime;
+		private String adSlotId;
 
-		private String mediaId;
+		private Long clickTimes;
+
+		private Long showTimes;
+
+		private Long adSlotHitTimes;
+
+		private String thisMonEstIncomeRate;
+
+		private Long bizDate;
+
+		private String accEstIncomeRate;
+
+		private String thisYearEstIncomeRate;
+
+		private Long adSlotRequests;
 
 		private String mediaName;
 
 		private String adSlotType;
 
-		private String adSlotId;
-
-		private String adSlotName;
-
-		private Long estimatedIncome;
-
-		private Long adSlotRequests;
-
-		private Long accessStatus;
-
-		private Long adSlotHitTimes;
-
-		private Long showTimes;
-
-		private Long clickTimes;
-
-		private String channelId;
-
-		private String channelName;
-
-		private Long bizDate;
-
-		private Long thisDaysEstIncome;
-
-		private String adSlotHitRate;
-
-		private String adSlotShowRate;
-
-		private String adSlotClickRate;
-
-		private Long ecpm;
-
-		private String ecpmRate;
+		private String mediaId;
 
 		private String thisDaysEstIncomeRate;
 
-		private String thisMonEstIncomeRate;
+		private Long endTime;
 
-		private String thisYearEstIncomeRate;
+		private Long startTime;
 
-		private String accEstIncomeRate;
+		private String adSlotShowRate;
 
-		public Long getStartTime() {
-			return this.startTime;
+		private String ecpmRate;
+
+		private Long thisDaysEstIncome;
+
+		private String channelName;
+
+		private String adSlotClickRate;
+
+		private Long estimatedIncome;
+
+		private Long accessStatus;
+
+		private String channelId;
+
+		private Long ecpm;
+
+		private String adSlotHitRate;
+
+		public String getAdSlotName() {
+			return this.adSlotName;
 		}
 
-		public void setStartTime(Long startTime) {
-			this.startTime = startTime;
+		public void setAdSlotName(String adSlotName) {
+			this.adSlotName = adSlotName;
 		}
 
-		public Long getEndTime() {
-			return this.endTime;
+		public String getAdSlotId() {
+			return this.adSlotId;
 		}
 
-		public void setEndTime(Long endTime) {
-			this.endTime = endTime;
+		public void setAdSlotId(String adSlotId) {
+			this.adSlotId = adSlotId;
 		}
 
-		public String getMediaId() {
-			return this.mediaId;
+		public Long getClickTimes() {
+			return this.clickTimes;
 		}
 
-		public void setMediaId(String mediaId) {
-			this.mediaId = mediaId;
+		public void setClickTimes(Long clickTimes) {
+			this.clickTimes = clickTimes;
+		}
+
+		public Long getShowTimes() {
+			return this.showTimes;
+		}
+
+		public void setShowTimes(Long showTimes) {
+			this.showTimes = showTimes;
+		}
+
+		public Long getAdSlotHitTimes() {
+			return this.adSlotHitTimes;
+		}
+
+		public void setAdSlotHitTimes(Long adSlotHitTimes) {
+			this.adSlotHitTimes = adSlotHitTimes;
+		}
+
+		public String getThisMonEstIncomeRate() {
+			return this.thisMonEstIncomeRate;
+		}
+
+		public void setThisMonEstIncomeRate(String thisMonEstIncomeRate) {
+			this.thisMonEstIncomeRate = thisMonEstIncomeRate;
+		}
+
+		public Long getBizDate() {
+			return this.bizDate;
+		}
+
+		public void setBizDate(Long bizDate) {
+			this.bizDate = bizDate;
+		}
+
+		public String getAccEstIncomeRate() {
+			return this.accEstIncomeRate;
+		}
+
+		public void setAccEstIncomeRate(String accEstIncomeRate) {
+			this.accEstIncomeRate = accEstIncomeRate;
+		}
+
+		public String getThisYearEstIncomeRate() {
+			return this.thisYearEstIncomeRate;
+		}
+
+		public void setThisYearEstIncomeRate(String thisYearEstIncomeRate) {
+			this.thisYearEstIncomeRate = thisYearEstIncomeRate;
+		}
+
+		public Long getAdSlotRequests() {
+			return this.adSlotRequests;
+		}
+
+		public void setAdSlotRequests(Long adSlotRequests) {
+			this.adSlotRequests = adSlotRequests;
 		}
 
 		public String getMediaName() {
@@ -199,140 +255,12 @@ public class QueryIncomeTrendResponse extends AcsResponse {
 			this.adSlotType = adSlotType;
 		}
 
-		public String getAdSlotId() {
-			return this.adSlotId;
+		public String getMediaId() {
+			return this.mediaId;
 		}
 
-		public void setAdSlotId(String adSlotId) {
-			this.adSlotId = adSlotId;
-		}
-
-		public String getAdSlotName() {
-			return this.adSlotName;
-		}
-
-		public void setAdSlotName(String adSlotName) {
-			this.adSlotName = adSlotName;
-		}
-
-		public Long getEstimatedIncome() {
-			return this.estimatedIncome;
-		}
-
-		public void setEstimatedIncome(Long estimatedIncome) {
-			this.estimatedIncome = estimatedIncome;
-		}
-
-		public Long getAdSlotRequests() {
-			return this.adSlotRequests;
-		}
-
-		public void setAdSlotRequests(Long adSlotRequests) {
-			this.adSlotRequests = adSlotRequests;
-		}
-
-		public Long getAccessStatus() {
-			return this.accessStatus;
-		}
-
-		public void setAccessStatus(Long accessStatus) {
-			this.accessStatus = accessStatus;
-		}
-
-		public Long getAdSlotHitTimes() {
-			return this.adSlotHitTimes;
-		}
-
-		public void setAdSlotHitTimes(Long adSlotHitTimes) {
-			this.adSlotHitTimes = adSlotHitTimes;
-		}
-
-		public Long getShowTimes() {
-			return this.showTimes;
-		}
-
-		public void setShowTimes(Long showTimes) {
-			this.showTimes = showTimes;
-		}
-
-		public Long getClickTimes() {
-			return this.clickTimes;
-		}
-
-		public void setClickTimes(Long clickTimes) {
-			this.clickTimes = clickTimes;
-		}
-
-		public String getChannelId() {
-			return this.channelId;
-		}
-
-		public void setChannelId(String channelId) {
-			this.channelId = channelId;
-		}
-
-		public String getChannelName() {
-			return this.channelName;
-		}
-
-		public void setChannelName(String channelName) {
-			this.channelName = channelName;
-		}
-
-		public Long getBizDate() {
-			return this.bizDate;
-		}
-
-		public void setBizDate(Long bizDate) {
-			this.bizDate = bizDate;
-		}
-
-		public Long getThisDaysEstIncome() {
-			return this.thisDaysEstIncome;
-		}
-
-		public void setThisDaysEstIncome(Long thisDaysEstIncome) {
-			this.thisDaysEstIncome = thisDaysEstIncome;
-		}
-
-		public String getAdSlotHitRate() {
-			return this.adSlotHitRate;
-		}
-
-		public void setAdSlotHitRate(String adSlotHitRate) {
-			this.adSlotHitRate = adSlotHitRate;
-		}
-
-		public String getAdSlotShowRate() {
-			return this.adSlotShowRate;
-		}
-
-		public void setAdSlotShowRate(String adSlotShowRate) {
-			this.adSlotShowRate = adSlotShowRate;
-		}
-
-		public String getAdSlotClickRate() {
-			return this.adSlotClickRate;
-		}
-
-		public void setAdSlotClickRate(String adSlotClickRate) {
-			this.adSlotClickRate = adSlotClickRate;
-		}
-
-		public Long getEcpm() {
-			return this.ecpm;
-		}
-
-		public void setEcpm(Long ecpm) {
-			this.ecpm = ecpm;
-		}
-
-		public String getEcpmRate() {
-			return this.ecpmRate;
-		}
-
-		public void setEcpmRate(String ecpmRate) {
-			this.ecpmRate = ecpmRate;
+		public void setMediaId(String mediaId) {
+			this.mediaId = mediaId;
 		}
 
 		public String getThisDaysEstIncomeRate() {
@@ -343,28 +271,100 @@ public class QueryIncomeTrendResponse extends AcsResponse {
 			this.thisDaysEstIncomeRate = thisDaysEstIncomeRate;
 		}
 
-		public String getThisMonEstIncomeRate() {
-			return this.thisMonEstIncomeRate;
+		public Long getEndTime() {
+			return this.endTime;
 		}
 
-		public void setThisMonEstIncomeRate(String thisMonEstIncomeRate) {
-			this.thisMonEstIncomeRate = thisMonEstIncomeRate;
+		public void setEndTime(Long endTime) {
+			this.endTime = endTime;
 		}
 
-		public String getThisYearEstIncomeRate() {
-			return this.thisYearEstIncomeRate;
+		public Long getStartTime() {
+			return this.startTime;
 		}
 
-		public void setThisYearEstIncomeRate(String thisYearEstIncomeRate) {
-			this.thisYearEstIncomeRate = thisYearEstIncomeRate;
+		public void setStartTime(Long startTime) {
+			this.startTime = startTime;
 		}
 
-		public String getAccEstIncomeRate() {
-			return this.accEstIncomeRate;
+		public String getAdSlotShowRate() {
+			return this.adSlotShowRate;
 		}
 
-		public void setAccEstIncomeRate(String accEstIncomeRate) {
-			this.accEstIncomeRate = accEstIncomeRate;
+		public void setAdSlotShowRate(String adSlotShowRate) {
+			this.adSlotShowRate = adSlotShowRate;
+		}
+
+		public String getEcpmRate() {
+			return this.ecpmRate;
+		}
+
+		public void setEcpmRate(String ecpmRate) {
+			this.ecpmRate = ecpmRate;
+		}
+
+		public Long getThisDaysEstIncome() {
+			return this.thisDaysEstIncome;
+		}
+
+		public void setThisDaysEstIncome(Long thisDaysEstIncome) {
+			this.thisDaysEstIncome = thisDaysEstIncome;
+		}
+
+		public String getChannelName() {
+			return this.channelName;
+		}
+
+		public void setChannelName(String channelName) {
+			this.channelName = channelName;
+		}
+
+		public String getAdSlotClickRate() {
+			return this.adSlotClickRate;
+		}
+
+		public void setAdSlotClickRate(String adSlotClickRate) {
+			this.adSlotClickRate = adSlotClickRate;
+		}
+
+		public Long getEstimatedIncome() {
+			return this.estimatedIncome;
+		}
+
+		public void setEstimatedIncome(Long estimatedIncome) {
+			this.estimatedIncome = estimatedIncome;
+		}
+
+		public Long getAccessStatus() {
+			return this.accessStatus;
+		}
+
+		public void setAccessStatus(Long accessStatus) {
+			this.accessStatus = accessStatus;
+		}
+
+		public String getChannelId() {
+			return this.channelId;
+		}
+
+		public void setChannelId(String channelId) {
+			this.channelId = channelId;
+		}
+
+		public Long getEcpm() {
+			return this.ecpm;
+		}
+
+		public void setEcpm(Long ecpm) {
+			this.ecpm = ecpm;
+		}
+
+		public String getAdSlotHitRate() {
+			return this.adSlotHitRate;
+		}
+
+		public void setAdSlotHitRate(String adSlotHitRate) {
+			this.adSlotHitRate = adSlotHitRate;
 		}
 	}
 

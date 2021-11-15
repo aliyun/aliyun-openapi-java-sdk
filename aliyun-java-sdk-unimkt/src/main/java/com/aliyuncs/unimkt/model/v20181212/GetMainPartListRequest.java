@@ -22,20 +22,22 @@ import com.aliyuncs.unimkt.Endpoint;
  * @author auto create
  * @version 
  */
-public class QueryUnionTaskListRequest extends RpcAcsRequest<QueryUnionTaskListResponse> {
+public class GetMainPartListRequest extends RpcAcsRequest<GetMainPartListResponse> {
 	   
 
-	private Long brandUserId;
+	private String accountType;
 
 	private Integer pageSize;
 
 	private Integer pageIndex;
 
-	private Long proxyUserId;
+	private Integer mainType;
 
-	private String channelId;
-	public QueryUnionTaskListRequest() {
-		super("UniMkt", "2018-12-12", "QueryUnionTaskList");
+	private Long parentMainId;
+
+	private String mainName;
+	public GetMainPartListRequest() {
+		super("UniMkt", "2018-12-12", "GetMainPartList");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -43,14 +45,14 @@ public class QueryUnionTaskListRequest extends RpcAcsRequest<QueryUnionTaskListR
 		} catch (Exception e) {}
 	}
 
-	public Long getBrandUserId() {
-		return this.brandUserId;
+	public String getAccountType() {
+		return this.accountType;
 	}
 
-	public void setBrandUserId(Long brandUserId) {
-		this.brandUserId = brandUserId;
-		if(brandUserId != null){
-			putQueryParameter("BrandUserId", brandUserId.toString());
+	public void setAccountType(String accountType) {
+		this.accountType = accountType;
+		if(accountType != null){
+			putQueryParameter("AccountType", accountType);
 		}
 	}
 
@@ -76,31 +78,42 @@ public class QueryUnionTaskListRequest extends RpcAcsRequest<QueryUnionTaskListR
 		}
 	}
 
-	public Long getProxyUserId() {
-		return this.proxyUserId;
+	public Integer getMainType() {
+		return this.mainType;
 	}
 
-	public void setProxyUserId(Long proxyUserId) {
-		this.proxyUserId = proxyUserId;
-		if(proxyUserId != null){
-			putQueryParameter("ProxyUserId", proxyUserId.toString());
+	public void setMainType(Integer mainType) {
+		this.mainType = mainType;
+		if(mainType != null){
+			putQueryParameter("MainType", mainType.toString());
 		}
 	}
 
-	public String getChannelId() {
-		return this.channelId;
+	public Long getParentMainId() {
+		return this.parentMainId;
 	}
 
-	public void setChannelId(String channelId) {
-		this.channelId = channelId;
-		if(channelId != null){
-			putQueryParameter("ChannelId", channelId);
+	public void setParentMainId(Long parentMainId) {
+		this.parentMainId = parentMainId;
+		if(parentMainId != null){
+			putQueryParameter("ParentMainId", parentMainId.toString());
+		}
+	}
+
+	public String getMainName() {
+		return this.mainName;
+	}
+
+	public void setMainName(String mainName) {
+		this.mainName = mainName;
+		if(mainName != null){
+			putQueryParameter("MainName", mainName);
 		}
 	}
 
 	@Override
-	public Class<QueryUnionTaskListResponse> getResponseClass() {
-		return QueryUnionTaskListResponse.class;
+	public Class<GetMainPartListResponse> getResponseClass() {
+		return GetMainPartListResponse.class;
 	}
 
 }

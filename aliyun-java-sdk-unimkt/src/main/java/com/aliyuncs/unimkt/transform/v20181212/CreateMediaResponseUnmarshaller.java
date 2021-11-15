@@ -25,26 +25,26 @@ public class CreateMediaResponseUnmarshaller {
 		
 		createMediaResponse.setRequestId(_ctx.stringValue("CreateMediaResponse.RequestId"));
 		createMediaResponse.setCode(_ctx.stringValue("CreateMediaResponse.Code"));
-		createMediaResponse.setSuccess(_ctx.booleanValue("CreateMediaResponse.Success"));
 		createMediaResponse.setMessage(_ctx.stringValue("CreateMediaResponse.Message"));
+		createMediaResponse.setSuccess(_ctx.booleanValue("CreateMediaResponse.Success"));
 
 		Model model = new Model();
+		model.setAccessWay(_ctx.stringValue("CreateMediaResponse.Model.AccessWay"));
+		model.setSecondScene(_ctx.stringValue("CreateMediaResponse.Model.SecondScene"));
 		model.setCreateTime(_ctx.longValue("CreateMediaResponse.Model.CreateTime"));
+		model.setMediaName(_ctx.stringValue("CreateMediaResponse.Model.MediaName"));
+		model.setOs(_ctx.stringValue("CreateMediaResponse.Model.Os"));
+		model.setMediaType(_ctx.stringValue("CreateMediaResponse.Model.MediaType"));
+		model.setExtInfo(_ctx.stringValue("CreateMediaResponse.Model.ExtInfo"));
+		model.setMediaId(_ctx.stringValue("CreateMediaResponse.Model.MediaId"));
+		model.setConfig(_ctx.stringValue("CreateMediaResponse.Model.Config"));
+		model.setVersion(_ctx.longValue("CreateMediaResponse.Model.Version"));
+		model.setMediaStatus(_ctx.stringValue("CreateMediaResponse.Model.MediaStatus"));
+		model.setKeyWords(_ctx.stringValue("CreateMediaResponse.Model.KeyWords"));
+		model.setAccessStatus(_ctx.stringValue("CreateMediaResponse.Model.AccessStatus"));
+		model.setFirstScene(_ctx.stringValue("CreateMediaResponse.Model.FirstScene"));
 		model.setModifyTime(_ctx.longValue("CreateMediaResponse.Model.ModifyTime"));
 		model.setTenantId(_ctx.stringValue("CreateMediaResponse.Model.TenantId"));
-		model.setMediaName(_ctx.stringValue("CreateMediaResponse.Model.MediaName"));
-		model.setMediaId(_ctx.stringValue("CreateMediaResponse.Model.MediaId"));
-		model.setMediaType(_ctx.stringValue("CreateMediaResponse.Model.MediaType"));
-		model.setFirstScene(_ctx.stringValue("CreateMediaResponse.Model.FirstScene"));
-		model.setSecondScene(_ctx.stringValue("CreateMediaResponse.Model.SecondScene"));
-		model.setMediaStatus(_ctx.stringValue("CreateMediaResponse.Model.MediaStatus"));
-		model.setAccessStatus(_ctx.stringValue("CreateMediaResponse.Model.AccessStatus"));
-		model.setOs(_ctx.stringValue("CreateMediaResponse.Model.Os"));
-		model.setConfig(_ctx.stringValue("CreateMediaResponse.Model.Config"));
-		model.setKeyWords(_ctx.stringValue("CreateMediaResponse.Model.KeyWords"));
-		model.setAccessWay(_ctx.stringValue("CreateMediaResponse.Model.AccessWay"));
-		model.setExtInfo(_ctx.stringValue("CreateMediaResponse.Model.ExtInfo"));
-		model.setVersion(_ctx.longValue("CreateMediaResponse.Model.Version"));
 		createMediaResponse.setModel(model);
 	 
 	 	return createMediaResponse;

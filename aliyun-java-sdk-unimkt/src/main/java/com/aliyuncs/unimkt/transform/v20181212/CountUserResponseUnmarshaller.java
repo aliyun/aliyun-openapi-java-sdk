@@ -24,9 +24,9 @@ public class CountUserResponseUnmarshaller {
 		
 		countUserResponse.setRequestId(_ctx.stringValue("CountUserResponse.RequestId"));
 		countUserResponse.setCode(_ctx.stringValue("CountUserResponse.Code"));
-		countUserResponse.setSuccess(_ctx.booleanValue("CountUserResponse.Success"));
-		countUserResponse.setMessage(_ctx.stringValue("CountUserResponse.Message"));
 		countUserResponse.setModel(_ctx.integerValue("CountUserResponse.Model"));
+		countUserResponse.setMessage(_ctx.stringValue("CountUserResponse.Message"));
+		countUserResponse.setSuccess(_ctx.booleanValue("CountUserResponse.Success"));
 	 
 	 	return countUserResponse;
 	}

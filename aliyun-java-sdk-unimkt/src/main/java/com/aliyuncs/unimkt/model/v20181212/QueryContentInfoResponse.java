@@ -24,23 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryContentInfoResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer code;
-
-	private Boolean success;
 
 	private String errorMessage;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getCode() {
 		return this.code;
@@ -50,20 +42,28 @@ public class QueryContentInfoResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
 	public String getErrorMessage() {
 		return this.errorMessage;
 	}
 
 	public void setErrorMessage(String errorMessage) {
 		this.errorMessage = errorMessage;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Data getData() {
@@ -76,36 +76,28 @@ public class QueryContentInfoResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Long id;
-
-		private String name;
+		private Integer status;
 
 		private Long brandUserId;
 
-		private Long proxyUserId;
+		private Integer openScene;
 
-		private Integer status;
+		private Long proxyUserId;
 
 		private String templateType;
 
+		private String name;
+
+		private Long id;
+
 		private String chainValue;
 
-		private Integer openScene;
-
-		public Long getId() {
-			return this.id;
+		public Integer getStatus() {
+			return this.status;
 		}
 
-		public void setId(Long id) {
-			this.id = id;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
+		public void setStatus(Integer status) {
+			this.status = status;
 		}
 
 		public Long getBrandUserId() {
@@ -116,20 +108,20 @@ public class QueryContentInfoResponse extends AcsResponse {
 			this.brandUserId = brandUserId;
 		}
 
+		public Integer getOpenScene() {
+			return this.openScene;
+		}
+
+		public void setOpenScene(Integer openScene) {
+			this.openScene = openScene;
+		}
+
 		public Long getProxyUserId() {
 			return this.proxyUserId;
 		}
 
 		public void setProxyUserId(Long proxyUserId) {
 			this.proxyUserId = proxyUserId;
-		}
-
-		public Integer getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(Integer status) {
-			this.status = status;
 		}
 
 		public String getTemplateType() {
@@ -140,20 +132,28 @@ public class QueryContentInfoResponse extends AcsResponse {
 			this.templateType = templateType;
 		}
 
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public Long getId() {
+			return this.id;
+		}
+
+		public void setId(Long id) {
+			this.id = id;
+		}
+
 		public String getChainValue() {
 			return this.chainValue;
 		}
 
 		public void setChainValue(String chainValue) {
 			this.chainValue = chainValue;
-		}
-
-		public Integer getOpenScene() {
-			return this.openScene;
-		}
-
-		public void setOpenScene(Integer openScene) {
-			this.openScene = openScene;
 		}
 	}
 

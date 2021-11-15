@@ -25,26 +25,24 @@ public class CreateTenantUserResponseUnmarshaller {
 		
 		createTenantUserResponse.setRequestId(_ctx.stringValue("CreateTenantUserResponse.RequestId"));
 		createTenantUserResponse.setCode(_ctx.stringValue("CreateTenantUserResponse.Code"));
-		createTenantUserResponse.setSuccess(_ctx.booleanValue("CreateTenantUserResponse.Success"));
 		createTenantUserResponse.setMessage(_ctx.stringValue("CreateTenantUserResponse.Message"));
+		createTenantUserResponse.setSuccess(_ctx.booleanValue("CreateTenantUserResponse.Success"));
 
 		Model model = new Model();
-		model.setCreateTime(_ctx.longValue("CreateTenantUserResponse.Model.CreateTime"));
-		model.setModifyTime(_ctx.longValue("CreateTenantUserResponse.Model.ModifyTime"));
-		model.setTenantId(_ctx.stringValue("CreateTenantUserResponse.Model.TenantId"));
-		model.setTenantName(_ctx.stringValue("CreateTenantUserResponse.Model.TenantName"));
-		model.setBusiness(_ctx.stringValue("CreateTenantUserResponse.Model.Business"));
-		model.setUserId(_ctx.stringValue("CreateTenantUserResponse.Model.UserId"));
-		model.setUserName(_ctx.stringValue("CreateTenantUserResponse.Model.UserName"));
-		model.setSettleInfo(_ctx.stringValue("CreateTenantUserResponse.Model.SettleInfo"));
-		model.setExtInfo(_ctx.stringValue("CreateTenantUserResponse.Model.ExtInfo"));
 		model.setStatus(_ctx.stringValue("CreateTenantUserResponse.Model.Status"));
-		model.setOriginSite(_ctx.stringValue("CreateTenantUserResponse.Model.OriginSite"));
+		model.setSettleInfo(_ctx.stringValue("CreateTenantUserResponse.Model.SettleInfo"));
 		model.setOriginSiteUserId(_ctx.stringValue("CreateTenantUserResponse.Model.OriginSiteUserId"));
 		model.setOriginSiteUserName(_ctx.stringValue("CreateTenantUserResponse.Model.OriginSiteUserName"));
-		model.setStatus1(_ctx.stringValue("CreateTenantUserResponse.Model.Status"));
-		model.setExtInfo2(_ctx.stringValue("CreateTenantUserResponse.Model.ExtInfo"));
+		model.setCreateTime(_ctx.longValue("CreateTenantUserResponse.Model.CreateTime"));
+		model.setTenantName(_ctx.stringValue("CreateTenantUserResponse.Model.TenantName"));
+		model.setUserId(_ctx.stringValue("CreateTenantUserResponse.Model.UserId"));
+		model.setBusiness(_ctx.stringValue("CreateTenantUserResponse.Model.Business"));
+		model.setExtInfo(_ctx.stringValue("CreateTenantUserResponse.Model.ExtInfo"));
 		model.setVersion(_ctx.stringValue("CreateTenantUserResponse.Model.Version"));
+		model.setOriginSite(_ctx.stringValue("CreateTenantUserResponse.Model.OriginSite"));
+		model.setUserName(_ctx.stringValue("CreateTenantUserResponse.Model.UserName"));
+		model.setModifyTime(_ctx.longValue("CreateTenantUserResponse.Model.ModifyTime"));
+		model.setTenantId(_ctx.stringValue("CreateTenantUserResponse.Model.TenantId"));
 		createTenantUserResponse.setModel(model);
 	 
 	 	return createTenantUserResponse;

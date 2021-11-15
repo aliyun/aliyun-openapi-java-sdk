@@ -25,20 +25,20 @@ public class CreateTenantResponseUnmarshaller {
 		
 		createTenantResponse.setRequestId(_ctx.stringValue("CreateTenantResponse.RequestId"));
 		createTenantResponse.setCode(_ctx.stringValue("CreateTenantResponse.Code"));
-		createTenantResponse.setSuccess(_ctx.booleanValue("CreateTenantResponse.Success"));
 		createTenantResponse.setMessage(_ctx.stringValue("CreateTenantResponse.Message"));
+		createTenantResponse.setSuccess(_ctx.booleanValue("CreateTenantResponse.Success"));
 
 		Model model = new Model();
-		model.setCreateTime(_ctx.longValue("CreateTenantResponse.Model.CreateTime"));
-		model.setModifyTime(_ctx.longValue("CreateTenantResponse.Model.ModifyTime"));
-		model.setTenantId(_ctx.stringValue("CreateTenantResponse.Model.TenantId"));
-		model.setTenantName(_ctx.stringValue("CreateTenantResponse.Model.TenantName"));
-		model.setBusiness(_ctx.stringValue("CreateTenantResponse.Model.Business"));
-		model.setTenantDescription(_ctx.stringValue("CreateTenantResponse.Model.TenantDescription"));
-		model.setUserName(_ctx.stringValue("CreateTenantResponse.Model.UserName"));
-		model.setSettleInfo(_ctx.stringValue("CreateTenantResponse.Model.SettleInfo"));
-		model.setExtInfo(_ctx.stringValue("CreateTenantResponse.Model.ExtInfo"));
 		model.setStatus(_ctx.stringValue("CreateTenantResponse.Model.Status"));
+		model.setSettleInfo(_ctx.stringValue("CreateTenantResponse.Model.SettleInfo"));
+		model.setTenantDescription(_ctx.stringValue("CreateTenantResponse.Model.TenantDescription"));
+		model.setTenantName(_ctx.stringValue("CreateTenantResponse.Model.TenantName"));
+		model.setCreateTime(_ctx.longValue("CreateTenantResponse.Model.CreateTime"));
+		model.setBusiness(_ctx.stringValue("CreateTenantResponse.Model.Business"));
+		model.setUserName(_ctx.stringValue("CreateTenantResponse.Model.UserName"));
+		model.setExtInfo(_ctx.stringValue("CreateTenantResponse.Model.ExtInfo"));
+		model.setTenantId(_ctx.stringValue("CreateTenantResponse.Model.TenantId"));
+		model.setModifyTime(_ctx.longValue("CreateTenantResponse.Model.ModifyTime"));
 		createTenantResponse.setModel(model);
 	 
 	 	return createTenantResponse;

@@ -25,23 +25,23 @@ public class CreateRuleResponseUnmarshaller {
 		
 		createRuleResponse.setRequestId(_ctx.stringValue("CreateRuleResponse.RequestId"));
 		createRuleResponse.setCode(_ctx.stringValue("CreateRuleResponse.Code"));
-		createRuleResponse.setSuccess(_ctx.booleanValue("CreateRuleResponse.Success"));
 		createRuleResponse.setMessage(_ctx.stringValue("CreateRuleResponse.Message"));
+		createRuleResponse.setSuccess(_ctx.booleanValue("CreateRuleResponse.Success"));
 
 		Model model = new Model();
+		model.setStatus(_ctx.stringValue("CreateRuleResponse.Model.Status"));
+		model.setRuleType(_ctx.stringValue("CreateRuleResponse.Model.RuleType"));
 		model.setCreateTime(_ctx.longValue("CreateRuleResponse.Model.CreateTime"));
+		model.setRuleRId(_ctx.stringValue("CreateRuleResponse.Model.RuleRId"));
+		model.setRelatedAdSlots(_ctx.stringValue("CreateRuleResponse.Model.RelatedAdSlots"));
+		model.setExtInfo(_ctx.stringValue("CreateRuleResponse.Model.ExtInfo"));
+		model.setRuleId(_ctx.stringValue("CreateRuleResponse.Model.RuleId"));
+		model.setRuleName(_ctx.stringValue("CreateRuleResponse.Model.RuleName"));
+		model.setVersion(_ctx.longValue("CreateRuleResponse.Model.Version"));
+		model.setAccessStatus(_ctx.stringValue("CreateRuleResponse.Model.AccessStatus"));
 		model.setModifyTime(_ctx.longValue("CreateRuleResponse.Model.ModifyTime"));
 		model.setTenantId(_ctx.stringValue("CreateRuleResponse.Model.TenantId"));
-		model.setRuleName(_ctx.stringValue("CreateRuleResponse.Model.RuleName"));
-		model.setRuleRId(_ctx.stringValue("CreateRuleResponse.Model.RuleRId"));
-		model.setRuleType(_ctx.stringValue("CreateRuleResponse.Model.RuleType"));
-		model.setRelatedAdSlots(_ctx.stringValue("CreateRuleResponse.Model.RelatedAdSlots"));
 		model.setRuleConfig(_ctx.stringValue("CreateRuleResponse.Model.RuleConfig"));
-		model.setStatus(_ctx.stringValue("CreateRuleResponse.Model.Status"));
-		model.setAccessStatus(_ctx.stringValue("CreateRuleResponse.Model.AccessStatus"));
-		model.setExtInfo(_ctx.stringValue("CreateRuleResponse.Model.ExtInfo"));
-		model.setVersion(_ctx.longValue("CreateRuleResponse.Model.Version"));
-		model.setRuleId(_ctx.stringValue("CreateRuleResponse.Model.RuleId"));
 		createRuleResponse.setModel(model);
 	 
 	 	return createRuleResponse;

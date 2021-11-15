@@ -43,7 +43,7 @@ public class CreateFlowRequest extends RpcAcsRequest<CreateFlowResponse> {
 
 	private String flow;
 	public CreateFlowRequest() {
-		super("UniMkt", "2018-12-12", "CreateFlow", "1.0.0");
+		super("UniMkt", "2018-12-12", "CreateFlow");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

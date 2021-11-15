@@ -26,11 +26,11 @@ public class ChangeTenantStatusResponse extends AcsResponse {
 
 	private String code;
 
-	private Boolean success;
-
 	private String message;
 
 	private String requestId;
+
+	private Boolean success;
 
 	private Model model;
 
@@ -40,14 +40,6 @@ public class ChangeTenantStatusResponse extends AcsResponse {
 
 	public void setCode(String code) {
 		this.code = code;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
 	}
 
 	public String getMessage() {
@@ -66,6 +58,14 @@ public class ChangeTenantStatusResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public Model getModel() {
 		return this.model;
 	}
@@ -76,80 +76,32 @@ public class ChangeTenantStatusResponse extends AcsResponse {
 
 	public static class Model {
 
-		private Long createTime;
-
-		private Long modifyTime;
-
-		private String tenantId;
-
-		private String tenantName;
-
-		private String business;
-
-		private String tenantDescription;
-
-		private String userName;
+		private String status;
 
 		private String settleInfo;
 
+		private String tenantDescription;
+
+		private String tenantName;
+
+		private Long createTime;
+
+		private String business;
+
+		private String userName;
+
 		private String extInfo;
 
-		private String status;
+		private String tenantId;
 
-		public Long getCreateTime() {
-			return this.createTime;
+		private Long modifyTime;
+
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setCreateTime(Long createTime) {
-			this.createTime = createTime;
-		}
-
-		public Long getModifyTime() {
-			return this.modifyTime;
-		}
-
-		public void setModifyTime(Long modifyTime) {
-			this.modifyTime = modifyTime;
-		}
-
-		public String getTenantId() {
-			return this.tenantId;
-		}
-
-		public void setTenantId(String tenantId) {
-			this.tenantId = tenantId;
-		}
-
-		public String getTenantName() {
-			return this.tenantName;
-		}
-
-		public void setTenantName(String tenantName) {
-			this.tenantName = tenantName;
-		}
-
-		public String getBusiness() {
-			return this.business;
-		}
-
-		public void setBusiness(String business) {
-			this.business = business;
-		}
-
-		public String getTenantDescription() {
-			return this.tenantDescription;
-		}
-
-		public void setTenantDescription(String tenantDescription) {
-			this.tenantDescription = tenantDescription;
-		}
-
-		public String getUserName() {
-			return this.userName;
-		}
-
-		public void setUserName(String userName) {
-			this.userName = userName;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public String getSettleInfo() {
@@ -160,6 +112,46 @@ public class ChangeTenantStatusResponse extends AcsResponse {
 			this.settleInfo = settleInfo;
 		}
 
+		public String getTenantDescription() {
+			return this.tenantDescription;
+		}
+
+		public void setTenantDescription(String tenantDescription) {
+			this.tenantDescription = tenantDescription;
+		}
+
+		public String getTenantName() {
+			return this.tenantName;
+		}
+
+		public void setTenantName(String tenantName) {
+			this.tenantName = tenantName;
+		}
+
+		public Long getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(Long createTime) {
+			this.createTime = createTime;
+		}
+
+		public String getBusiness() {
+			return this.business;
+		}
+
+		public void setBusiness(String business) {
+			this.business = business;
+		}
+
+		public String getUserName() {
+			return this.userName;
+		}
+
+		public void setUserName(String userName) {
+			this.userName = userName;
+		}
+
 		public String getExtInfo() {
 			return this.extInfo;
 		}
@@ -168,12 +160,20 @@ public class ChangeTenantStatusResponse extends AcsResponse {
 			this.extInfo = extInfo;
 		}
 
-		public String getStatus() {
-			return this.status;
+		public String getTenantId() {
+			return this.tenantId;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
+		public void setTenantId(String tenantId) {
+			this.tenantId = tenantId;
+		}
+
+		public Long getModifyTime() {
+			return this.modifyTime;
+		}
+
+		public void setModifyTime(Long modifyTime) {
+			this.modifyTime = modifyTime;
 		}
 	}
 

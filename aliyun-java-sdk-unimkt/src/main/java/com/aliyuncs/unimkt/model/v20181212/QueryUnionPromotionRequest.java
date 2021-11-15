@@ -39,7 +39,7 @@ public class QueryUnionPromotionRequest extends RpcAcsRequest<QueryUnionPromotio
 
 	private String channelId;
 	public QueryUnionPromotionRequest() {
-		super("UniMkt", "2018-12-12", "QueryUnionPromotion", "1.0.0");
+		super("UniMkt", "2018-12-12", "QueryUnionPromotion");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
