@@ -79,6 +79,8 @@ public class GetManualDagInstancesResponse extends AcsResponse {
 
 		private Long modifyTime;
 
+		private String createUser;
+
 		public String getStatus() {
 			return this.status;
 		}
@@ -205,6 +207,14 @@ public class GetManualDagInstancesResponse extends AcsResponse {
 
 		public void setModifyTime(Long modifyTime) {
 			this.modifyTime = modifyTime;
+		}
+
+		public String getCreateUser() {
+			return this.createUser;
+		}
+
+		public void setCreateUser(String createUser) {
+			this.createUser = createUser;
 		}
 	}
 

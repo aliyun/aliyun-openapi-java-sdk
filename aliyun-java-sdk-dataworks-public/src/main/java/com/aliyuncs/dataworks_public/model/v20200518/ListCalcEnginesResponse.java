@@ -28,9 +28,9 @@ public class ListCalcEnginesResponse extends AcsResponse {
 
 	private Integer httpStatusCode;
 
-	private String requestId;
-
 	private Boolean success;
+
+	private String requestId;
 
 	private Data data;
 
@@ -42,20 +42,20 @@ public class ListCalcEnginesResponse extends AcsResponse {
 		this.httpStatusCode = httpStatusCode;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public Boolean getSuccess() {
 		return this.success;
 	}
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Data getData() {
@@ -110,71 +110,31 @@ public class ListCalcEnginesResponse extends AcsResponse {
 
 		public static class CalcEnginesItem {
 
-			private String bindingProjectName;
-
-			private Boolean isDefault;
-
-			private Integer engineId;
-
-			private String dwRegion;
-
-			private String taskAuthType;
-
 			private String calcEngineType;
-
-			private Map<Object,Object> engineInfo;
-
-			private String envType;
-
-			private String region;
 
 			private String gmtCreate;
 
+			private String dwRegion;
+
+			private Boolean isDefault;
+
 			private Integer bindingProjectId;
 
-			private String name;
+			private String envType;
 
 			private Long tenantId;
 
-			public String getBindingProjectName() {
-				return this.bindingProjectName;
-			}
+			private String name;
 
-			public void setBindingProjectName(String bindingProjectName) {
-				this.bindingProjectName = bindingProjectName;
-			}
+			private String bindingProjectName;
 
-			public Boolean getIsDefault() {
-				return this.isDefault;
-			}
+			private String region;
 
-			public void setIsDefault(Boolean isDefault) {
-				this.isDefault = isDefault;
-			}
+			private Integer engineId;
 
-			public Integer getEngineId() {
-				return this.engineId;
-			}
+			private Map<Object,Object> engineInfo;
 
-			public void setEngineId(Integer engineId) {
-				this.engineId = engineId;
-			}
-
-			public String getDwRegion() {
-				return this.dwRegion;
-			}
-
-			public void setDwRegion(String dwRegion) {
-				this.dwRegion = dwRegion;
-			}
-
-			public String getTaskAuthType() {
-				return this.taskAuthType;
-			}
-
-			public void setTaskAuthType(String taskAuthType) {
-				this.taskAuthType = taskAuthType;
-			}
+			private String taskAuthType;
 
 			public String getCalcEngineType() {
 				return this.calcEngineType;
@@ -182,30 +142,6 @@ public class ListCalcEnginesResponse extends AcsResponse {
 
 			public void setCalcEngineType(String calcEngineType) {
 				this.calcEngineType = calcEngineType;
-			}
-
-			public Map<Object,Object> getEngineInfo() {
-				return this.engineInfo;
-			}
-
-			public void setEngineInfo(Map<Object,Object> engineInfo) {
-				this.engineInfo = engineInfo;
-			}
-
-			public String getEnvType() {
-				return this.envType;
-			}
-
-			public void setEnvType(String envType) {
-				this.envType = envType;
-			}
-
-			public String getRegion() {
-				return this.region;
-			}
-
-			public void setRegion(String region) {
-				this.region = region;
 			}
 
 			public String getGmtCreate() {
@@ -216,12 +152,44 @@ public class ListCalcEnginesResponse extends AcsResponse {
 				this.gmtCreate = gmtCreate;
 			}
 
+			public String getDwRegion() {
+				return this.dwRegion;
+			}
+
+			public void setDwRegion(String dwRegion) {
+				this.dwRegion = dwRegion;
+			}
+
+			public Boolean getIsDefault() {
+				return this.isDefault;
+			}
+
+			public void setIsDefault(Boolean isDefault) {
+				this.isDefault = isDefault;
+			}
+
 			public Integer getBindingProjectId() {
 				return this.bindingProjectId;
 			}
 
 			public void setBindingProjectId(Integer bindingProjectId) {
 				this.bindingProjectId = bindingProjectId;
+			}
+
+			public String getEnvType() {
+				return this.envType;
+			}
+
+			public void setEnvType(String envType) {
+				this.envType = envType;
+			}
+
+			public Long getTenantId() {
+				return this.tenantId;
+			}
+
+			public void setTenantId(Long tenantId) {
+				this.tenantId = tenantId;
 			}
 
 			public String getName() {
@@ -232,12 +200,44 @@ public class ListCalcEnginesResponse extends AcsResponse {
 				this.name = name;
 			}
 
-			public Long getTenantId() {
-				return this.tenantId;
+			public String getBindingProjectName() {
+				return this.bindingProjectName;
 			}
 
-			public void setTenantId(Long tenantId) {
-				this.tenantId = tenantId;
+			public void setBindingProjectName(String bindingProjectName) {
+				this.bindingProjectName = bindingProjectName;
+			}
+
+			public String getRegion() {
+				return this.region;
+			}
+
+			public void setRegion(String region) {
+				this.region = region;
+			}
+
+			public Integer getEngineId() {
+				return this.engineId;
+			}
+
+			public void setEngineId(Integer engineId) {
+				this.engineId = engineId;
+			}
+
+			public Map<Object,Object> getEngineInfo() {
+				return this.engineInfo;
+			}
+
+			public void setEngineInfo(Map<Object,Object> engineInfo) {
+				this.engineInfo = engineInfo;
+			}
+
+			public String getTaskAuthType() {
+				return this.taskAuthType;
+			}
+
+			public void setTaskAuthType(String taskAuthType) {
+				this.taskAuthType = taskAuthType;
 			}
 		}
 	}

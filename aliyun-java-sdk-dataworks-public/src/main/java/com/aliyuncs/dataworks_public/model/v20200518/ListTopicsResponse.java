@@ -25,17 +25,41 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListTopicsResponse extends AcsResponse {
 
+	private Boolean success;
+
+	private String errorCode;
+
+	private String errorMessage;
+
 	private Integer httpStatusCode;
 
 	private String requestId;
 
-	private String errorMessage;
-
-	private String errorCode;
-
-	private Boolean success;
-
 	private Data data;
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
+	public String getErrorCode() {
+		return this.errorCode;
+	}
+
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
 
 	public Integer getHttpStatusCode() {
 		return this.httpStatusCode;
@@ -51,30 +75,6 @@ public class ListTopicsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
-
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
 	}
 
 	public Data getData() {
@@ -129,29 +129,37 @@ public class ListTopicsResponse extends AcsResponse {
 
 		public static class TopicsItem {
 
+			private Long topicId;
+
 			private String topicName;
-
-			private Long projectId;
-
-			private String nodeOwner;
-
-			private Long instanceId;
-
-			private Long fixTime;
-
-			private String topicType;
 
 			private String topicStatus;
 
-			private Long happenTime;
-
-			private String nodeName;
-
-			private Long topicId;
+			private String topicType;
 
 			private Long addTime;
 
+			private Long happenTime;
+
+			private Long fixTime;
+
+			private Long instanceId;
+
 			private Long nodeId;
+
+			private String nodeName;
+
+			private String nodeOwner;
+
+			private Long projectId;
+
+			public Long getTopicId() {
+				return this.topicId;
+			}
+
+			public void setTopicId(Long topicId) {
+				this.topicId = topicId;
+			}
 
 			public String getTopicName() {
 				return this.topicName;
@@ -159,46 +167,6 @@ public class ListTopicsResponse extends AcsResponse {
 
 			public void setTopicName(String topicName) {
 				this.topicName = topicName;
-			}
-
-			public Long getProjectId() {
-				return this.projectId;
-			}
-
-			public void setProjectId(Long projectId) {
-				this.projectId = projectId;
-			}
-
-			public String getNodeOwner() {
-				return this.nodeOwner;
-			}
-
-			public void setNodeOwner(String nodeOwner) {
-				this.nodeOwner = nodeOwner;
-			}
-
-			public Long getInstanceId() {
-				return this.instanceId;
-			}
-
-			public void setInstanceId(Long instanceId) {
-				this.instanceId = instanceId;
-			}
-
-			public Long getFixTime() {
-				return this.fixTime;
-			}
-
-			public void setFixTime(Long fixTime) {
-				this.fixTime = fixTime;
-			}
-
-			public String getTopicType() {
-				return this.topicType;
-			}
-
-			public void setTopicType(String topicType) {
-				this.topicType = topicType;
 			}
 
 			public String getTopicStatus() {
@@ -209,28 +177,12 @@ public class ListTopicsResponse extends AcsResponse {
 				this.topicStatus = topicStatus;
 			}
 
-			public Long getHappenTime() {
-				return this.happenTime;
+			public String getTopicType() {
+				return this.topicType;
 			}
 
-			public void setHappenTime(Long happenTime) {
-				this.happenTime = happenTime;
-			}
-
-			public String getNodeName() {
-				return this.nodeName;
-			}
-
-			public void setNodeName(String nodeName) {
-				this.nodeName = nodeName;
-			}
-
-			public Long getTopicId() {
-				return this.topicId;
-			}
-
-			public void setTopicId(Long topicId) {
-				this.topicId = topicId;
+			public void setTopicType(String topicType) {
+				this.topicType = topicType;
 			}
 
 			public Long getAddTime() {
@@ -241,12 +193,60 @@ public class ListTopicsResponse extends AcsResponse {
 				this.addTime = addTime;
 			}
 
+			public Long getHappenTime() {
+				return this.happenTime;
+			}
+
+			public void setHappenTime(Long happenTime) {
+				this.happenTime = happenTime;
+			}
+
+			public Long getFixTime() {
+				return this.fixTime;
+			}
+
+			public void setFixTime(Long fixTime) {
+				this.fixTime = fixTime;
+			}
+
+			public Long getInstanceId() {
+				return this.instanceId;
+			}
+
+			public void setInstanceId(Long instanceId) {
+				this.instanceId = instanceId;
+			}
+
 			public Long getNodeId() {
 				return this.nodeId;
 			}
 
 			public void setNodeId(Long nodeId) {
 				this.nodeId = nodeId;
+			}
+
+			public String getNodeName() {
+				return this.nodeName;
+			}
+
+			public void setNodeName(String nodeName) {
+				this.nodeName = nodeName;
+			}
+
+			public String getNodeOwner() {
+				return this.nodeOwner;
+			}
+
+			public void setNodeOwner(String nodeOwner) {
+				this.nodeOwner = nodeOwner;
+			}
+
+			public Long getProjectId() {
+				return this.projectId;
+			}
+
+			public void setProjectId(Long projectId) {
+				this.projectId = projectId;
 			}
 		}
 	}

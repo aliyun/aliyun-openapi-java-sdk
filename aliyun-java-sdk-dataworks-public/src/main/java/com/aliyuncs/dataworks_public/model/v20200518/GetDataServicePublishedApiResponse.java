@@ -25,17 +25,33 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetDataServicePublishedApiResponse extends AcsResponse {
 
+	private String errorCode;
+
+	private String errorMessage;
+
 	private Integer httpStatusCode;
 
 	private String requestId;
 
-	private String errorMessage;
-
 	private Boolean success;
 
-	private String errorCode;
-
 	private Data data;
+
+	public String getErrorCode() {
+		return this.errorCode;
+	}
+
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
 
 	public Integer getHttpStatusCode() {
 		return this.httpStatusCode;
@@ -53,28 +69,12 @@ public class GetDataServicePublishedApiResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
-
 	public Boolean getSuccess() {
 		return this.success;
 	}
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
-	}
-
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
 	}
 
 	public Data getData() {
@@ -87,39 +87,39 @@ public class GetDataServicePublishedApiResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Integer timeout;
-
-		private Integer status;
-
 		private Long apiId;
 
 		private Integer apiMode;
 
-		private Long projectId;
+		private String apiName;
 
-		private Integer responseContentType;
+		private String apiPath;
+
+		private String createdTime;
 
 		private String creatorId;
 
-		private Integer visibleRange;
+		private String description;
+
+		private String groupId;
 
 		private String modifiedTime;
 
 		private String operatorId;
 
-		private String groupId;
-
-		private String description;
+		private Long projectId;
 
 		private Integer requestMethod;
 
-		private String createdTime;
+		private Integer responseContentType;
 
-		private String apiName;
+		private Integer status;
 
 		private Long tenantId;
 
-		private String apiPath;
+		private Integer timeout;
+
+		private Integer visibleRange;
 
 		private List<Integer> protocols;
 
@@ -128,22 +128,6 @@ public class GetDataServicePublishedApiResponse extends AcsResponse {
 		private ScriptDetails scriptDetails;
 
 		private WizardDetails wizardDetails;
-
-		public Integer getTimeout() {
-			return this.timeout;
-		}
-
-		public void setTimeout(Integer timeout) {
-			this.timeout = timeout;
-		}
-
-		public Integer getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(Integer status) {
-			this.status = status;
-		}
 
 		public Long getApiId() {
 			return this.apiId;
@@ -161,20 +145,28 @@ public class GetDataServicePublishedApiResponse extends AcsResponse {
 			this.apiMode = apiMode;
 		}
 
-		public Long getProjectId() {
-			return this.projectId;
+		public String getApiName() {
+			return this.apiName;
 		}
 
-		public void setProjectId(Long projectId) {
-			this.projectId = projectId;
+		public void setApiName(String apiName) {
+			this.apiName = apiName;
 		}
 
-		public Integer getResponseContentType() {
-			return this.responseContentType;
+		public String getApiPath() {
+			return this.apiPath;
 		}
 
-		public void setResponseContentType(Integer responseContentType) {
-			this.responseContentType = responseContentType;
+		public void setApiPath(String apiPath) {
+			this.apiPath = apiPath;
+		}
+
+		public String getCreatedTime() {
+			return this.createdTime;
+		}
+
+		public void setCreatedTime(String createdTime) {
+			this.createdTime = createdTime;
 		}
 
 		public String getCreatorId() {
@@ -185,12 +177,20 @@ public class GetDataServicePublishedApiResponse extends AcsResponse {
 			this.creatorId = creatorId;
 		}
 
-		public Integer getVisibleRange() {
-			return this.visibleRange;
+		public String getDescription() {
+			return this.description;
 		}
 
-		public void setVisibleRange(Integer visibleRange) {
-			this.visibleRange = visibleRange;
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getGroupId() {
+			return this.groupId;
+		}
+
+		public void setGroupId(String groupId) {
+			this.groupId = groupId;
 		}
 
 		public String getModifiedTime() {
@@ -209,20 +209,12 @@ public class GetDataServicePublishedApiResponse extends AcsResponse {
 			this.operatorId = operatorId;
 		}
 
-		public String getGroupId() {
-			return this.groupId;
+		public Long getProjectId() {
+			return this.projectId;
 		}
 
-		public void setGroupId(String groupId) {
-			this.groupId = groupId;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
+		public void setProjectId(Long projectId) {
+			this.projectId = projectId;
 		}
 
 		public Integer getRequestMethod() {
@@ -233,20 +225,20 @@ public class GetDataServicePublishedApiResponse extends AcsResponse {
 			this.requestMethod = requestMethod;
 		}
 
-		public String getCreatedTime() {
-			return this.createdTime;
+		public Integer getResponseContentType() {
+			return this.responseContentType;
 		}
 
-		public void setCreatedTime(String createdTime) {
-			this.createdTime = createdTime;
+		public void setResponseContentType(Integer responseContentType) {
+			this.responseContentType = responseContentType;
 		}
 
-		public String getApiName() {
-			return this.apiName;
+		public Integer getStatus() {
+			return this.status;
 		}
 
-		public void setApiName(String apiName) {
-			this.apiName = apiName;
+		public void setStatus(Integer status) {
+			this.status = status;
 		}
 
 		public Long getTenantId() {
@@ -257,12 +249,20 @@ public class GetDataServicePublishedApiResponse extends AcsResponse {
 			this.tenantId = tenantId;
 		}
 
-		public String getApiPath() {
-			return this.apiPath;
+		public Integer getTimeout() {
+			return this.timeout;
 		}
 
-		public void setApiPath(String apiPath) {
-			this.apiPath = apiPath;
+		public void setTimeout(Integer timeout) {
+			this.timeout = timeout;
+		}
+
+		public Integer getVisibleRange() {
+			return this.visibleRange;
+		}
+
+		public void setVisibleRange(Integer visibleRange) {
+			this.visibleRange = visibleRange;
 		}
 
 		public List<Integer> getProtocols() {
@@ -299,28 +299,28 @@ public class GetDataServicePublishedApiResponse extends AcsResponse {
 
 		public static class RegistrationDetails {
 
-			private String serviceHost;
+			private String failedResultSample;
 
 			private Integer serviceContentType;
 
+			private String serviceHost;
+
 			private String servicePath;
 
-			private String successfulResultSample;
-
-			private String failedResultSample;
-
 			private String serviceRequestBodyDescription;
+
+			private String successfulResultSample;
 
 			private List<RegistrationErrorCode> registrationErrorCodes;
 
 			private List<RegistrationRequestParameter> registrationRequestParameters;
 
-			public String getServiceHost() {
-				return this.serviceHost;
+			public String getFailedResultSample() {
+				return this.failedResultSample;
 			}
 
-			public void setServiceHost(String serviceHost) {
-				this.serviceHost = serviceHost;
+			public void setFailedResultSample(String failedResultSample) {
+				this.failedResultSample = failedResultSample;
 			}
 
 			public Integer getServiceContentType() {
@@ -331,6 +331,14 @@ public class GetDataServicePublishedApiResponse extends AcsResponse {
 				this.serviceContentType = serviceContentType;
 			}
 
+			public String getServiceHost() {
+				return this.serviceHost;
+			}
+
+			public void setServiceHost(String serviceHost) {
+				this.serviceHost = serviceHost;
+			}
+
 			public String getServicePath() {
 				return this.servicePath;
 			}
@@ -339,28 +347,20 @@ public class GetDataServicePublishedApiResponse extends AcsResponse {
 				this.servicePath = servicePath;
 			}
 
-			public String getSuccessfulResultSample() {
-				return this.successfulResultSample;
-			}
-
-			public void setSuccessfulResultSample(String successfulResultSample) {
-				this.successfulResultSample = successfulResultSample;
-			}
-
-			public String getFailedResultSample() {
-				return this.failedResultSample;
-			}
-
-			public void setFailedResultSample(String failedResultSample) {
-				this.failedResultSample = failedResultSample;
-			}
-
 			public String getServiceRequestBodyDescription() {
 				return this.serviceRequestBodyDescription;
 			}
 
 			public void setServiceRequestBodyDescription(String serviceRequestBodyDescription) {
 				this.serviceRequestBodyDescription = serviceRequestBodyDescription;
+			}
+
+			public String getSuccessfulResultSample() {
+				return this.successfulResultSample;
+			}
+
+			public void setSuccessfulResultSample(String successfulResultSample) {
+				this.successfulResultSample = successfulResultSample;
 			}
 
 			public List<RegistrationErrorCode> getRegistrationErrorCodes() {
@@ -381,19 +381,11 @@ public class GetDataServicePublishedApiResponse extends AcsResponse {
 
 			public static class RegistrationErrorCode {
 
-				private String errorMessage;
-
 				private String errorCode;
 
+				private String errorMessage;
+
 				private String errorSolution;
-
-				public String getErrorMessage() {
-					return this.errorMessage;
-				}
-
-				public void setErrorMessage(String errorMessage) {
-					this.errorMessage = errorMessage;
-				}
 
 				public String getErrorCode() {
 					return this.errorCode;
@@ -401,6 +393,14 @@ public class GetDataServicePublishedApiResponse extends AcsResponse {
 
 				public void setErrorCode(String errorCode) {
 					this.errorCode = errorCode;
+				}
+
+				public String getErrorMessage() {
+					return this.errorMessage;
+				}
+
+				public void setErrorMessage(String errorMessage) {
+					this.errorMessage = errorMessage;
 				}
 
 				public String getErrorSolution() {
@@ -414,45 +414,21 @@ public class GetDataServicePublishedApiResponse extends AcsResponse {
 
 			public static class RegistrationRequestParameter {
 
-				private String parameterName;
-
-				private Integer parameterPosition;
-
-				private String parameterDescription;
-
 				private String defaultValue;
-
-				private Integer parameterOperator;
 
 				private String exampleValue;
 
-				private Integer parameterDataType;
-
 				private Boolean isRequiredParameter;
 
-				public String getParameterName() {
-					return this.parameterName;
-				}
+				private Integer parameterDataType;
 
-				public void setParameterName(String parameterName) {
-					this.parameterName = parameterName;
-				}
+				private String parameterDescription;
 
-				public Integer getParameterPosition() {
-					return this.parameterPosition;
-				}
+				private String parameterName;
 
-				public void setParameterPosition(Integer parameterPosition) {
-					this.parameterPosition = parameterPosition;
-				}
+				private Integer parameterOperator;
 
-				public String getParameterDescription() {
-					return this.parameterDescription;
-				}
-
-				public void setParameterDescription(String parameterDescription) {
-					this.parameterDescription = parameterDescription;
-				}
+				private Integer parameterPosition;
 
 				public String getDefaultValue() {
 					return this.defaultValue;
@@ -460,14 +436,6 @@ public class GetDataServicePublishedApiResponse extends AcsResponse {
 
 				public void setDefaultValue(String defaultValue) {
 					this.defaultValue = defaultValue;
-				}
-
-				public Integer getParameterOperator() {
-					return this.parameterOperator;
-				}
-
-				public void setParameterOperator(Integer parameterOperator) {
-					this.parameterOperator = parameterOperator;
 				}
 
 				public String getExampleValue() {
@@ -478,6 +446,14 @@ public class GetDataServicePublishedApiResponse extends AcsResponse {
 					this.exampleValue = exampleValue;
 				}
 
+				public Boolean getIsRequiredParameter() {
+					return this.isRequiredParameter;
+				}
+
+				public void setIsRequiredParameter(Boolean isRequiredParameter) {
+					this.isRequiredParameter = isRequiredParameter;
+				}
+
 				public Integer getParameterDataType() {
 					return this.parameterDataType;
 				}
@@ -486,25 +462,49 @@ public class GetDataServicePublishedApiResponse extends AcsResponse {
 					this.parameterDataType = parameterDataType;
 				}
 
-				public Boolean getIsRequiredParameter() {
-					return this.isRequiredParameter;
+				public String getParameterDescription() {
+					return this.parameterDescription;
 				}
 
-				public void setIsRequiredParameter(Boolean isRequiredParameter) {
-					this.isRequiredParameter = isRequiredParameter;
+				public void setParameterDescription(String parameterDescription) {
+					this.parameterDescription = parameterDescription;
+				}
+
+				public String getParameterName() {
+					return this.parameterName;
+				}
+
+				public void setParameterName(String parameterName) {
+					this.parameterName = parameterName;
+				}
+
+				public Integer getParameterOperator() {
+					return this.parameterOperator;
+				}
+
+				public void setParameterOperator(Integer parameterOperator) {
+					this.parameterOperator = parameterOperator;
+				}
+
+				public Integer getParameterPosition() {
+					return this.parameterPosition;
+				}
+
+				public void setParameterPosition(Integer parameterPosition) {
+					this.parameterPosition = parameterPosition;
 				}
 			}
 		}
 
 		public static class ScriptDetails {
 
-			private Boolean isPagedResponse;
-
-			private String successfulResultSample;
-
 			private String failedResultSample;
 
+			private Boolean isPagedResponse;
+
 			private String script;
+
+			private String successfulResultSample;
 
 			private List<ScriptErrorCode> scriptErrorCodes;
 
@@ -514,22 +514,6 @@ public class GetDataServicePublishedApiResponse extends AcsResponse {
 
 			private ScriptConnection scriptConnection;
 
-			public Boolean getIsPagedResponse() {
-				return this.isPagedResponse;
-			}
-
-			public void setIsPagedResponse(Boolean isPagedResponse) {
-				this.isPagedResponse = isPagedResponse;
-			}
-
-			public String getSuccessfulResultSample() {
-				return this.successfulResultSample;
-			}
-
-			public void setSuccessfulResultSample(String successfulResultSample) {
-				this.successfulResultSample = successfulResultSample;
-			}
-
 			public String getFailedResultSample() {
 				return this.failedResultSample;
 			}
@@ -538,12 +522,28 @@ public class GetDataServicePublishedApiResponse extends AcsResponse {
 				this.failedResultSample = failedResultSample;
 			}
 
+			public Boolean getIsPagedResponse() {
+				return this.isPagedResponse;
+			}
+
+			public void setIsPagedResponse(Boolean isPagedResponse) {
+				this.isPagedResponse = isPagedResponse;
+			}
+
 			public String getScript() {
 				return this.script;
 			}
 
 			public void setScript(String script) {
 				this.script = script;
+			}
+
+			public String getSuccessfulResultSample() {
+				return this.successfulResultSample;
+			}
+
+			public void setSuccessfulResultSample(String successfulResultSample) {
+				this.successfulResultSample = successfulResultSample;
 			}
 
 			public List<ScriptErrorCode> getScriptErrorCodes() {
@@ -580,19 +580,11 @@ public class GetDataServicePublishedApiResponse extends AcsResponse {
 
 			public static class ScriptErrorCode {
 
-				private String errorMessage;
-
 				private String errorCode;
 
+				private String errorMessage;
+
 				private String errorSolution;
-
-				public String getErrorMessage() {
-					return this.errorMessage;
-				}
-
-				public void setErrorMessage(String errorMessage) {
-					this.errorMessage = errorMessage;
-				}
 
 				public String getErrorCode() {
 					return this.errorCode;
@@ -600,6 +592,14 @@ public class GetDataServicePublishedApiResponse extends AcsResponse {
 
 				public void setErrorCode(String errorCode) {
 					this.errorCode = errorCode;
+				}
+
+				public String getErrorMessage() {
+					return this.errorMessage;
+				}
+
+				public void setErrorMessage(String errorMessage) {
+					this.errorMessage = errorMessage;
 				}
 
 				public String getErrorSolution() {
@@ -613,36 +613,52 @@ public class GetDataServicePublishedApiResponse extends AcsResponse {
 
 			public static class ScriptRequestParameter {
 
-				private String parameterName;
-
-				private Integer parameterPosition;
-
-				private String parameterDescription;
-
 				private String defaultValue;
-
-				private Integer parameterOperator;
 
 				private String exampleValue;
 
-				private Integer parameterDataType;
-
 				private Boolean isRequiredParameter;
 
-				public String getParameterName() {
-					return this.parameterName;
+				private Integer parameterDataType;
+
+				private String parameterDescription;
+
+				private String parameterName;
+
+				private Integer parameterOperator;
+
+				private Integer parameterPosition;
+
+				public String getDefaultValue() {
+					return this.defaultValue;
 				}
 
-				public void setParameterName(String parameterName) {
-					this.parameterName = parameterName;
+				public void setDefaultValue(String defaultValue) {
+					this.defaultValue = defaultValue;
 				}
 
-				public Integer getParameterPosition() {
-					return this.parameterPosition;
+				public String getExampleValue() {
+					return this.exampleValue;
 				}
 
-				public void setParameterPosition(Integer parameterPosition) {
-					this.parameterPosition = parameterPosition;
+				public void setExampleValue(String exampleValue) {
+					this.exampleValue = exampleValue;
+				}
+
+				public Boolean getIsRequiredParameter() {
+					return this.isRequiredParameter;
+				}
+
+				public void setIsRequiredParameter(Boolean isRequiredParameter) {
+					this.isRequiredParameter = isRequiredParameter;
+				}
+
+				public Integer getParameterDataType() {
+					return this.parameterDataType;
+				}
+
+				public void setParameterDataType(Integer parameterDataType) {
+					this.parameterDataType = parameterDataType;
 				}
 
 				public String getParameterDescription() {
@@ -653,12 +669,12 @@ public class GetDataServicePublishedApiResponse extends AcsResponse {
 					this.parameterDescription = parameterDescription;
 				}
 
-				public String getDefaultValue() {
-					return this.defaultValue;
+				public String getParameterName() {
+					return this.parameterName;
 				}
 
-				public void setDefaultValue(String defaultValue) {
-					this.defaultValue = defaultValue;
+				public void setParameterName(String parameterName) {
+					this.parameterName = parameterName;
 				}
 
 				public Integer getParameterOperator() {
@@ -669,6 +685,25 @@ public class GetDataServicePublishedApiResponse extends AcsResponse {
 					this.parameterOperator = parameterOperator;
 				}
 
+				public Integer getParameterPosition() {
+					return this.parameterPosition;
+				}
+
+				public void setParameterPosition(Integer parameterPosition) {
+					this.parameterPosition = parameterPosition;
+				}
+			}
+
+			public static class ScriptResponseParameter {
+
+				private String exampleValue;
+
+				private Integer parameterDataType;
+
+				private String parameterDescription;
+
+				private String parameterName;
+
 				public String getExampleValue() {
 					return this.exampleValue;
 				}
@@ -684,25 +719,6 @@ public class GetDataServicePublishedApiResponse extends AcsResponse {
 				public void setParameterDataType(Integer parameterDataType) {
 					this.parameterDataType = parameterDataType;
 				}
-
-				public Boolean getIsRequiredParameter() {
-					return this.isRequiredParameter;
-				}
-
-				public void setIsRequiredParameter(Boolean isRequiredParameter) {
-					this.isRequiredParameter = isRequiredParameter;
-				}
-			}
-
-			public static class ScriptResponseParameter {
-
-				private String parameterDescription;
-
-				private String parameterName;
-
-				private String exampleValue;
-
-				private Integer parameterDataType;
 
 				public String getParameterDescription() {
 					return this.parameterDescription;
@@ -719,37 +735,13 @@ public class GetDataServicePublishedApiResponse extends AcsResponse {
 				public void setParameterName(String parameterName) {
 					this.parameterName = parameterName;
 				}
-
-				public String getExampleValue() {
-					return this.exampleValue;
-				}
-
-				public void setExampleValue(String exampleValue) {
-					this.exampleValue = exampleValue;
-				}
-
-				public Integer getParameterDataType() {
-					return this.parameterDataType;
-				}
-
-				public void setParameterDataType(Integer parameterDataType) {
-					this.parameterDataType = parameterDataType;
-				}
 			}
 
 			public static class ScriptConnection {
 
-				private String tableName;
-
 				private Long connectionId;
 
-				public String getTableName() {
-					return this.tableName;
-				}
-
-				public void setTableName(String tableName) {
-					this.tableName = tableName;
-				}
+				private String tableName;
 
 				public Long getConnectionId() {
 					return this.connectionId;
@@ -758,16 +750,24 @@ public class GetDataServicePublishedApiResponse extends AcsResponse {
 				public void setConnectionId(Long connectionId) {
 					this.connectionId = connectionId;
 				}
+
+				public String getTableName() {
+					return this.tableName;
+				}
+
+				public void setTableName(String tableName) {
+					this.tableName = tableName;
+				}
 			}
 		}
 
 		public static class WizardDetails {
 
+			private String failedResultSample;
+
 			private Boolean isPagedResponse;
 
 			private String successfulResultSample;
-
-			private String failedResultSample;
 
 			private List<WizardErrorCode> wizardErrorCodes;
 
@@ -776,6 +776,14 @@ public class GetDataServicePublishedApiResponse extends AcsResponse {
 			private List<WizardResponseParameter> wizardResponseParameters;
 
 			private WizardConnection wizardConnection;
+
+			public String getFailedResultSample() {
+				return this.failedResultSample;
+			}
+
+			public void setFailedResultSample(String failedResultSample) {
+				this.failedResultSample = failedResultSample;
+			}
 
 			public Boolean getIsPagedResponse() {
 				return this.isPagedResponse;
@@ -791,14 +799,6 @@ public class GetDataServicePublishedApiResponse extends AcsResponse {
 
 			public void setSuccessfulResultSample(String successfulResultSample) {
 				this.successfulResultSample = successfulResultSample;
-			}
-
-			public String getFailedResultSample() {
-				return this.failedResultSample;
-			}
-
-			public void setFailedResultSample(String failedResultSample) {
-				this.failedResultSample = failedResultSample;
 			}
 
 			public List<WizardErrorCode> getWizardErrorCodes() {
@@ -835,19 +835,11 @@ public class GetDataServicePublishedApiResponse extends AcsResponse {
 
 			public static class WizardErrorCode {
 
-				private String errorMessage;
-
 				private String errorCode;
 
+				private String errorMessage;
+
 				private String errorSolution;
-
-				public String getErrorMessage() {
-					return this.errorMessage;
-				}
-
-				public void setErrorMessage(String errorMessage) {
-					this.errorMessage = errorMessage;
-				}
 
 				public String getErrorCode() {
 					return this.errorCode;
@@ -855,6 +847,14 @@ public class GetDataServicePublishedApiResponse extends AcsResponse {
 
 				public void setErrorCode(String errorCode) {
 					this.errorCode = errorCode;
+				}
+
+				public String getErrorMessage() {
+					return this.errorMessage;
+				}
+
+				public void setErrorMessage(String errorMessage) {
+					this.errorMessage = errorMessage;
 				}
 
 				public String getErrorSolution() {
@@ -868,36 +868,52 @@ public class GetDataServicePublishedApiResponse extends AcsResponse {
 
 			public static class WizardRequestParameter {
 
-				private String parameterName;
-
-				private Integer parameterPosition;
-
-				private String parameterDescription;
-
 				private String defaultValue;
-
-				private Integer parameterOperator;
 
 				private String exampleValue;
 
-				private Integer parameterDataType;
-
 				private Boolean isRequiredParameter;
 
-				public String getParameterName() {
-					return this.parameterName;
+				private Integer parameterDataType;
+
+				private String parameterDescription;
+
+				private String parameterName;
+
+				private Integer parameterOperator;
+
+				private Integer parameterPosition;
+
+				public String getDefaultValue() {
+					return this.defaultValue;
 				}
 
-				public void setParameterName(String parameterName) {
-					this.parameterName = parameterName;
+				public void setDefaultValue(String defaultValue) {
+					this.defaultValue = defaultValue;
 				}
 
-				public Integer getParameterPosition() {
-					return this.parameterPosition;
+				public String getExampleValue() {
+					return this.exampleValue;
 				}
 
-				public void setParameterPosition(Integer parameterPosition) {
-					this.parameterPosition = parameterPosition;
+				public void setExampleValue(String exampleValue) {
+					this.exampleValue = exampleValue;
+				}
+
+				public Boolean getIsRequiredParameter() {
+					return this.isRequiredParameter;
+				}
+
+				public void setIsRequiredParameter(Boolean isRequiredParameter) {
+					this.isRequiredParameter = isRequiredParameter;
+				}
+
+				public Integer getParameterDataType() {
+					return this.parameterDataType;
+				}
+
+				public void setParameterDataType(Integer parameterDataType) {
+					this.parameterDataType = parameterDataType;
 				}
 
 				public String getParameterDescription() {
@@ -908,12 +924,12 @@ public class GetDataServicePublishedApiResponse extends AcsResponse {
 					this.parameterDescription = parameterDescription;
 				}
 
-				public String getDefaultValue() {
-					return this.defaultValue;
+				public String getParameterName() {
+					return this.parameterName;
 				}
 
-				public void setDefaultValue(String defaultValue) {
-					this.defaultValue = defaultValue;
+				public void setParameterName(String parameterName) {
+					this.parameterName = parameterName;
 				}
 
 				public Integer getParameterOperator() {
@@ -924,6 +940,25 @@ public class GetDataServicePublishedApiResponse extends AcsResponse {
 					this.parameterOperator = parameterOperator;
 				}
 
+				public Integer getParameterPosition() {
+					return this.parameterPosition;
+				}
+
+				public void setParameterPosition(Integer parameterPosition) {
+					this.parameterPosition = parameterPosition;
+				}
+			}
+
+			public static class WizardResponseParameter {
+
+				private String exampleValue;
+
+				private Integer parameterDataType;
+
+				private String parameterDescription;
+
+				private String parameterName;
+
 				public String getExampleValue() {
 					return this.exampleValue;
 				}
@@ -939,25 +974,6 @@ public class GetDataServicePublishedApiResponse extends AcsResponse {
 				public void setParameterDataType(Integer parameterDataType) {
 					this.parameterDataType = parameterDataType;
 				}
-
-				public Boolean getIsRequiredParameter() {
-					return this.isRequiredParameter;
-				}
-
-				public void setIsRequiredParameter(Boolean isRequiredParameter) {
-					this.isRequiredParameter = isRequiredParameter;
-				}
-			}
-
-			public static class WizardResponseParameter {
-
-				private String parameterDescription;
-
-				private String parameterName;
-
-				private String exampleValue;
-
-				private Integer parameterDataType;
 
 				public String getParameterDescription() {
 					return this.parameterDescription;
@@ -974,37 +990,13 @@ public class GetDataServicePublishedApiResponse extends AcsResponse {
 				public void setParameterName(String parameterName) {
 					this.parameterName = parameterName;
 				}
-
-				public String getExampleValue() {
-					return this.exampleValue;
-				}
-
-				public void setExampleValue(String exampleValue) {
-					this.exampleValue = exampleValue;
-				}
-
-				public Integer getParameterDataType() {
-					return this.parameterDataType;
-				}
-
-				public void setParameterDataType(Integer parameterDataType) {
-					this.parameterDataType = parameterDataType;
-				}
 			}
 
 			public static class WizardConnection {
 
-				private String tableName;
-
 				private Long connectionId;
 
-				public String getTableName() {
-					return this.tableName;
-				}
-
-				public void setTableName(String tableName) {
-					this.tableName = tableName;
-				}
+				private String tableName;
 
 				public Long getConnectionId() {
 					return this.connectionId;
@@ -1012,6 +1004,14 @@ public class GetDataServicePublishedApiResponse extends AcsResponse {
 
 				public void setConnectionId(Long connectionId) {
 					this.connectionId = connectionId;
+				}
+
+				public String getTableName() {
+					return this.tableName;
+				}
+
+				public void setTableName(String tableName) {
+					this.tableName = tableName;
 				}
 			}
 		}

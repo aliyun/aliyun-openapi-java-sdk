@@ -46,29 +46,13 @@ public class DeleteTableResponse extends AcsResponse {
 
 	public static class TaskInfo {
 
-		private String status;
-
-		private String nextTaskId;
-
 		private String taskId;
 
 		private String content;
 
-		public String getStatus() {
-			return this.status;
-		}
+		private String status;
 
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
-		public String getNextTaskId() {
-			return this.nextTaskId;
-		}
-
-		public void setNextTaskId(String nextTaskId) {
-			this.nextTaskId = nextTaskId;
-		}
+		private String nextTaskId;
 
 		public String getTaskId() {
 			return this.taskId;
@@ -84,6 +68,22 @@ public class DeleteTableResponse extends AcsResponse {
 
 		public void setContent(String content) {
 			this.content = content;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
+		public String getNextTaskId() {
+			return this.nextTaskId;
+		}
+
+		public void setNextTaskId(String nextTaskId) {
+			this.nextTaskId = nextTaskId;
 		}
 	}
 

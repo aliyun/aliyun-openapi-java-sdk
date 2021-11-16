@@ -28,10 +28,10 @@ public class ListBaselineStatusesResponseUnmarshaller {
 	public static ListBaselineStatusesResponse unmarshall(ListBaselineStatusesResponse listBaselineStatusesResponse, UnmarshallerContext _ctx) {
 		
 		listBaselineStatusesResponse.setRequestId(_ctx.stringValue("ListBaselineStatusesResponse.RequestId"));
-		listBaselineStatusesResponse.setHttpStatusCode(_ctx.integerValue("ListBaselineStatusesResponse.HttpStatusCode"));
-		listBaselineStatusesResponse.setErrorMessage(_ctx.stringValue("ListBaselineStatusesResponse.ErrorMessage"));
-		listBaselineStatusesResponse.setErrorCode(_ctx.stringValue("ListBaselineStatusesResponse.ErrorCode"));
 		listBaselineStatusesResponse.setSuccess(_ctx.booleanValue("ListBaselineStatusesResponse.Success"));
+		listBaselineStatusesResponse.setErrorCode(_ctx.stringValue("ListBaselineStatusesResponse.ErrorCode"));
+		listBaselineStatusesResponse.setErrorMessage(_ctx.stringValue("ListBaselineStatusesResponse.ErrorMessage"));
+		listBaselineStatusesResponse.setHttpStatusCode(_ctx.integerValue("ListBaselineStatusesResponse.HttpStatusCode"));
 
 		Data data = new Data();
 		data.setPageNumber(_ctx.integerValue("ListBaselineStatusesResponse.Data.PageNumber"));
@@ -41,20 +41,20 @@ public class ListBaselineStatusesResponseUnmarshaller {
 		List<BaselineStatusesItem> baselineStatuses = new ArrayList<BaselineStatusesItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListBaselineStatusesResponse.Data.BaselineStatuses.Length"); i++) {
 			BaselineStatusesItem baselineStatusesItem = new BaselineStatusesItem();
-			baselineStatusesItem.setStatus(_ctx.stringValue("ListBaselineStatusesResponse.Data.BaselineStatuses["+ i +"].Status"));
-			baselineStatusesItem.setOwner(_ctx.stringValue("ListBaselineStatusesResponse.Data.BaselineStatuses["+ i +"].Owner"));
-			baselineStatusesItem.setFinishTime(_ctx.longValue("ListBaselineStatusesResponse.Data.BaselineStatuses["+ i +"].FinishTime"));
-			baselineStatusesItem.setProjectId(_ctx.longValue("ListBaselineStatusesResponse.Data.BaselineStatuses["+ i +"].ProjectId"));
-			baselineStatusesItem.setPriority(_ctx.integerValue("ListBaselineStatusesResponse.Data.BaselineStatuses["+ i +"].Priority"));
-			baselineStatusesItem.setEndCast(_ctx.longValue("ListBaselineStatusesResponse.Data.BaselineStatuses["+ i +"].EndCast"));
-			baselineStatusesItem.setInGroupId(_ctx.integerValue("ListBaselineStatusesResponse.Data.BaselineStatuses["+ i +"].InGroupId"));
 			baselineStatusesItem.setBaselineName(_ctx.stringValue("ListBaselineStatusesResponse.Data.BaselineStatuses["+ i +"].BaselineName"));
 			baselineStatusesItem.setBaselineId(_ctx.longValue("ListBaselineStatusesResponse.Data.BaselineStatuses["+ i +"].BaselineId"));
-			baselineStatusesItem.setFinishStatus(_ctx.stringValue("ListBaselineStatusesResponse.Data.BaselineStatuses["+ i +"].FinishStatus"));
 			baselineStatusesItem.setBizdate(_ctx.longValue("ListBaselineStatusesResponse.Data.BaselineStatuses["+ i +"].Bizdate"));
-			baselineStatusesItem.setBuffer(_ctx.longValue("ListBaselineStatusesResponse.Data.BaselineStatuses["+ i +"].Buffer"));
-			baselineStatusesItem.setSlaTime(_ctx.longValue("ListBaselineStatusesResponse.Data.BaselineStatuses["+ i +"].SlaTime"));
+			baselineStatusesItem.setOwner(_ctx.stringValue("ListBaselineStatusesResponse.Data.BaselineStatuses["+ i +"].Owner"));
 			baselineStatusesItem.setExpTime(_ctx.longValue("ListBaselineStatusesResponse.Data.BaselineStatuses["+ i +"].ExpTime"));
+			baselineStatusesItem.setFinishTime(_ctx.longValue("ListBaselineStatusesResponse.Data.BaselineStatuses["+ i +"].FinishTime"));
+			baselineStatusesItem.setEndCast(_ctx.longValue("ListBaselineStatusesResponse.Data.BaselineStatuses["+ i +"].EndCast"));
+			baselineStatusesItem.setSlaTime(_ctx.longValue("ListBaselineStatusesResponse.Data.BaselineStatuses["+ i +"].SlaTime"));
+			baselineStatusesItem.setPriority(_ctx.integerValue("ListBaselineStatusesResponse.Data.BaselineStatuses["+ i +"].Priority"));
+			baselineStatusesItem.setProjectId(_ctx.longValue("ListBaselineStatusesResponse.Data.BaselineStatuses["+ i +"].ProjectId"));
+			baselineStatusesItem.setBuffer(_ctx.longValue("ListBaselineStatusesResponse.Data.BaselineStatuses["+ i +"].Buffer"));
+			baselineStatusesItem.setStatus(_ctx.stringValue("ListBaselineStatusesResponse.Data.BaselineStatuses["+ i +"].Status"));
+			baselineStatusesItem.setFinishStatus(_ctx.stringValue("ListBaselineStatusesResponse.Data.BaselineStatuses["+ i +"].FinishStatus"));
+			baselineStatusesItem.setInGroupId(_ctx.integerValue("ListBaselineStatusesResponse.Data.BaselineStatuses["+ i +"].InGroupId"));
 
 			baselineStatuses.add(baselineStatusesItem);
 		}

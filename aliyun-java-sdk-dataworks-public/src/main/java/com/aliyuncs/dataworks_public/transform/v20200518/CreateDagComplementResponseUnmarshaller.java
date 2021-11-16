@@ -26,10 +26,10 @@ public class CreateDagComplementResponseUnmarshaller {
 	public static CreateDagComplementResponse unmarshall(CreateDagComplementResponse createDagComplementResponse, UnmarshallerContext _ctx) {
 		
 		createDagComplementResponse.setRequestId(_ctx.stringValue("CreateDagComplementResponse.RequestId"));
-		createDagComplementResponse.setHttpStatusCode(_ctx.integerValue("CreateDagComplementResponse.HttpStatusCode"));
-		createDagComplementResponse.setErrorMessage(_ctx.stringValue("CreateDagComplementResponse.ErrorMessage"));
-		createDagComplementResponse.setSuccess(_ctx.booleanValue("CreateDagComplementResponse.Success"));
 		createDagComplementResponse.setErrorCode(_ctx.stringValue("CreateDagComplementResponse.ErrorCode"));
+		createDagComplementResponse.setErrorMessage(_ctx.stringValue("CreateDagComplementResponse.ErrorMessage"));
+		createDagComplementResponse.setHttpStatusCode(_ctx.integerValue("CreateDagComplementResponse.HttpStatusCode"));
+		createDagComplementResponse.setSuccess(_ctx.booleanValue("CreateDagComplementResponse.Success"));
 
 		List<Long> data = new ArrayList<Long>();
 		for (int i = 0; i < _ctx.lengthValue("CreateDagComplementResponse.Data.Length"); i++) {

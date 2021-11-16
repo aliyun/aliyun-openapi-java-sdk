@@ -27,10 +27,10 @@ public class ListNodeIOResponseUnmarshaller {
 	public static ListNodeIOResponse unmarshall(ListNodeIOResponse listNodeIOResponse, UnmarshallerContext _ctx) {
 		
 		listNodeIOResponse.setRequestId(_ctx.stringValue("ListNodeIOResponse.RequestId"));
-		listNodeIOResponse.setHttpStatusCode(_ctx.integerValue("ListNodeIOResponse.HttpStatusCode"));
-		listNodeIOResponse.setErrorMessage(_ctx.stringValue("ListNodeIOResponse.ErrorMessage"));
-		listNodeIOResponse.setErrorCode(_ctx.stringValue("ListNodeIOResponse.ErrorCode"));
 		listNodeIOResponse.setSuccess(_ctx.booleanValue("ListNodeIOResponse.Success"));
+		listNodeIOResponse.setErrorCode(_ctx.stringValue("ListNodeIOResponse.ErrorCode"));
+		listNodeIOResponse.setErrorMessage(_ctx.stringValue("ListNodeIOResponse.ErrorMessage"));
+		listNodeIOResponse.setHttpStatusCode(_ctx.integerValue("ListNodeIOResponse.HttpStatusCode"));
 
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListNodeIOResponse.Data.Length"); i++) {

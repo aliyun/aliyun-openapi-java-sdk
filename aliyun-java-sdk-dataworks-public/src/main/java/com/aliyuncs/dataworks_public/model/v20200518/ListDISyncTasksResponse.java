@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListDISyncTasksResponse extends AcsResponse {
 
-	private Boolean success;
-
 	private String requestId;
 
+	private Boolean success;
+
 	private TaskList taskList;
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -45,6 +37,14 @@ public class ListDISyncTasksResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public TaskList getTaskList() {
@@ -99,31 +99,15 @@ public class ListDISyncTasksResponse extends AcsResponse {
 
 		public static class RealTimeSolutionListItem {
 
-			private String processName;
-
-			private String taskType;
-
 			private Long processId;
+
+			private String processName;
 
 			private String taskStatus;
 
+			private String taskType;
+
 			private Long createTime;
-
-			public String getProcessName() {
-				return this.processName;
-			}
-
-			public void setProcessName(String processName) {
-				this.processName = processName;
-			}
-
-			public String getTaskType() {
-				return this.taskType;
-			}
-
-			public void setTaskType(String taskType) {
-				this.taskType = taskType;
-			}
 
 			public Long getProcessId() {
 				return this.processId;
@@ -133,12 +117,28 @@ public class ListDISyncTasksResponse extends AcsResponse {
 				this.processId = processId;
 			}
 
+			public String getProcessName() {
+				return this.processName;
+			}
+
+			public void setProcessName(String processName) {
+				this.processName = processName;
+			}
+
 			public String getTaskStatus() {
 				return this.taskStatus;
 			}
 
 			public void setTaskStatus(String taskStatus) {
 				this.taskStatus = taskStatus;
+			}
+
+			public String getTaskType() {
+				return this.taskType;
+			}
+
+			public void setTaskType(String taskType) {
+				this.taskType = taskType;
 			}
 
 			public Long getCreateTime() {

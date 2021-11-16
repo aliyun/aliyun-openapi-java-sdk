@@ -89,17 +89,9 @@ public class GetNodeTypeListInfoResponse extends AcsResponse {
 
 		public static class NodeTypeInfoItem {
 
-			private String nodeTypeName;
-
 			private Integer nodeType;
 
-			public String getNodeTypeName() {
-				return this.nodeTypeName;
-			}
-
-			public void setNodeTypeName(String nodeTypeName) {
-				this.nodeTypeName = nodeTypeName;
-			}
+			private String nodeTypeName;
 
 			public Integer getNodeType() {
 				return this.nodeType;
@@ -107,6 +99,14 @@ public class GetNodeTypeListInfoResponse extends AcsResponse {
 
 			public void setNodeType(Integer nodeType) {
 				this.nodeType = nodeType;
+			}
+
+			public String getNodeTypeName() {
+				return this.nodeTypeName;
+			}
+
+			public void setNodeTypeName(String nodeTypeName) {
+				this.nodeTypeName = nodeTypeName;
 			}
 		}
 	}

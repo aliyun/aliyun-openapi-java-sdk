@@ -24,13 +24,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DeleteConnectionResponse extends AcsResponse {
 
+	private Boolean success;
+
 	private String httpStatusCode;
 
 	private Boolean data;
 
 	private String requestId;
 
-	private Boolean success;
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
 
 	public String getHttpStatusCode() {
 		return this.httpStatusCode;
@@ -54,14 +62,6 @@ public class DeleteConnectionResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
 	}
 
 	@Override

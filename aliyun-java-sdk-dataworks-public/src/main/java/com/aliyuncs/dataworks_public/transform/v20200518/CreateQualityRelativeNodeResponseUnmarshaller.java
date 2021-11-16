@@ -23,11 +23,11 @@ public class CreateQualityRelativeNodeResponseUnmarshaller {
 	public static CreateQualityRelativeNodeResponse unmarshall(CreateQualityRelativeNodeResponse createQualityRelativeNodeResponse, UnmarshallerContext _ctx) {
 		
 		createQualityRelativeNodeResponse.setRequestId(_ctx.stringValue("CreateQualityRelativeNodeResponse.RequestId"));
-		createQualityRelativeNodeResponse.setHttpStatusCode(_ctx.integerValue("CreateQualityRelativeNodeResponse.HttpStatusCode"));
-		createQualityRelativeNodeResponse.setData(_ctx.booleanValue("CreateQualityRelativeNodeResponse.Data"));
-		createQualityRelativeNodeResponse.setErrorMessage(_ctx.stringValue("CreateQualityRelativeNodeResponse.ErrorMessage"));
 		createQualityRelativeNodeResponse.setSuccess(_ctx.booleanValue("CreateQualityRelativeNodeResponse.Success"));
 		createQualityRelativeNodeResponse.setErrorCode(_ctx.stringValue("CreateQualityRelativeNodeResponse.ErrorCode"));
+		createQualityRelativeNodeResponse.setErrorMessage(_ctx.stringValue("CreateQualityRelativeNodeResponse.ErrorMessage"));
+		createQualityRelativeNodeResponse.setHttpStatusCode(_ctx.integerValue("CreateQualityRelativeNodeResponse.HttpStatusCode"));
+		createQualityRelativeNodeResponse.setData(_ctx.booleanValue("CreateQualityRelativeNodeResponse.Data"));
 	 
 	 	return createQualityRelativeNodeResponse;
 	}

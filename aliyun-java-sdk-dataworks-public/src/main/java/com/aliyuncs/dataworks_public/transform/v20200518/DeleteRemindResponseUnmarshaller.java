@@ -23,11 +23,11 @@ public class DeleteRemindResponseUnmarshaller {
 	public static DeleteRemindResponse unmarshall(DeleteRemindResponse deleteRemindResponse, UnmarshallerContext _ctx) {
 		
 		deleteRemindResponse.setRequestId(_ctx.stringValue("DeleteRemindResponse.RequestId"));
-		deleteRemindResponse.setHttpStatusCode(_ctx.integerValue("DeleteRemindResponse.HttpStatusCode"));
-		deleteRemindResponse.setData(_ctx.booleanValue("DeleteRemindResponse.Data"));
-		deleteRemindResponse.setErrorMessage(_ctx.stringValue("DeleteRemindResponse.ErrorMessage"));
 		deleteRemindResponse.setSuccess(_ctx.booleanValue("DeleteRemindResponse.Success"));
 		deleteRemindResponse.setErrorCode(_ctx.stringValue("DeleteRemindResponse.ErrorCode"));
+		deleteRemindResponse.setErrorMessage(_ctx.stringValue("DeleteRemindResponse.ErrorMessage"));
+		deleteRemindResponse.setHttpStatusCode(_ctx.integerValue("DeleteRemindResponse.HttpStatusCode"));
+		deleteRemindResponse.setData(_ctx.booleanValue("DeleteRemindResponse.Data"));
 	 
 	 	return deleteRemindResponse;
 	}

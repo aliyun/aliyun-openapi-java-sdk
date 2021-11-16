@@ -37,14 +37,14 @@ public class ListDataServiceFoldersResponseUnmarshaller {
 		List<Folder> folders = new ArrayList<Folder>();
 		for (int i = 0; i < _ctx.lengthValue("ListDataServiceFoldersResponse.FolderPagingResult.Folders.Length"); i++) {
 			Folder folder = new Folder();
-			folder.setParentId(_ctx.longValue("ListDataServiceFoldersResponse.FolderPagingResult.Folders["+ i +"].ParentId"));
-			folder.setModifiedTime(_ctx.stringValue("ListDataServiceFoldersResponse.FolderPagingResult.Folders["+ i +"].ModifiedTime"));
-			folder.setGroupId(_ctx.stringValue("ListDataServiceFoldersResponse.FolderPagingResult.Folders["+ i +"].GroupId"));
 			folder.setFolderId(_ctx.longValue("ListDataServiceFoldersResponse.FolderPagingResult.Folders["+ i +"].FolderId"));
 			folder.setFolderName(_ctx.stringValue("ListDataServiceFoldersResponse.FolderPagingResult.Folders["+ i +"].FolderName"));
 			folder.setProjectId(_ctx.longValue("ListDataServiceFoldersResponse.FolderPagingResult.Folders["+ i +"].ProjectId"));
-			folder.setCreatedTime(_ctx.stringValue("ListDataServiceFoldersResponse.FolderPagingResult.Folders["+ i +"].CreatedTime"));
 			folder.setTenantId(_ctx.longValue("ListDataServiceFoldersResponse.FolderPagingResult.Folders["+ i +"].TenantId"));
+			folder.setCreatedTime(_ctx.stringValue("ListDataServiceFoldersResponse.FolderPagingResult.Folders["+ i +"].CreatedTime"));
+			folder.setModifiedTime(_ctx.stringValue("ListDataServiceFoldersResponse.FolderPagingResult.Folders["+ i +"].ModifiedTime"));
+			folder.setGroupId(_ctx.stringValue("ListDataServiceFoldersResponse.FolderPagingResult.Folders["+ i +"].GroupId"));
+			folder.setParentId(_ctx.longValue("ListDataServiceFoldersResponse.FolderPagingResult.Folders["+ i +"].ParentId"));
 
 			folders.add(folder);
 		}

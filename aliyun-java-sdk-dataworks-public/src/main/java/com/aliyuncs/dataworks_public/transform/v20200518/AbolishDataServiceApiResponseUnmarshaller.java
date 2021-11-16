@@ -23,10 +23,10 @@ public class AbolishDataServiceApiResponseUnmarshaller {
 	public static AbolishDataServiceApiResponse unmarshall(AbolishDataServiceApiResponse abolishDataServiceApiResponse, UnmarshallerContext _ctx) {
 		
 		abolishDataServiceApiResponse.setRequestId(_ctx.stringValue("AbolishDataServiceApiResponse.RequestId"));
-		abolishDataServiceApiResponse.setHttpStatusCode(_ctx.integerValue("AbolishDataServiceApiResponse.HttpStatusCode"));
 		abolishDataServiceApiResponse.setData(_ctx.booleanValue("AbolishDataServiceApiResponse.Data"));
-		abolishDataServiceApiResponse.setErrorMessage(_ctx.stringValue("AbolishDataServiceApiResponse.ErrorMessage"));
 		abolishDataServiceApiResponse.setErrorCode(_ctx.stringValue("AbolishDataServiceApiResponse.ErrorCode"));
+		abolishDataServiceApiResponse.setErrorMessage(_ctx.stringValue("AbolishDataServiceApiResponse.ErrorMessage"));
+		abolishDataServiceApiResponse.setHttpStatusCode(_ctx.integerValue("AbolishDataServiceApiResponse.HttpStatusCode"));
 		abolishDataServiceApiResponse.setSuccess(_ctx.booleanValue("AbolishDataServiceApiResponse.Success"));
 	 
 	 	return abolishDataServiceApiResponse;

@@ -46,51 +46,19 @@ public class GetInstanceStatusCountResponse extends AcsResponse {
 
 	public static class StatusCount {
 
-		private Integer failureCount;
-
-		private Integer waitTimeCount;
-
-		private Integer runningCount;
-
-		private Integer successCount;
-
 		private Integer totalCount;
 
 		private Integer notRunCount;
 
+		private Integer waitTimeCount;
+
 		private Integer waitResCount;
 
-		public Integer getFailureCount() {
-			return this.failureCount;
-		}
+		private Integer runningCount;
 
-		public void setFailureCount(Integer failureCount) {
-			this.failureCount = failureCount;
-		}
+		private Integer failureCount;
 
-		public Integer getWaitTimeCount() {
-			return this.waitTimeCount;
-		}
-
-		public void setWaitTimeCount(Integer waitTimeCount) {
-			this.waitTimeCount = waitTimeCount;
-		}
-
-		public Integer getRunningCount() {
-			return this.runningCount;
-		}
-
-		public void setRunningCount(Integer runningCount) {
-			this.runningCount = runningCount;
-		}
-
-		public Integer getSuccessCount() {
-			return this.successCount;
-		}
-
-		public void setSuccessCount(Integer successCount) {
-			this.successCount = successCount;
-		}
+		private Integer successCount;
 
 		public Integer getTotalCount() {
 			return this.totalCount;
@@ -108,12 +76,44 @@ public class GetInstanceStatusCountResponse extends AcsResponse {
 			this.notRunCount = notRunCount;
 		}
 
+		public Integer getWaitTimeCount() {
+			return this.waitTimeCount;
+		}
+
+		public void setWaitTimeCount(Integer waitTimeCount) {
+			this.waitTimeCount = waitTimeCount;
+		}
+
 		public Integer getWaitResCount() {
 			return this.waitResCount;
 		}
 
 		public void setWaitResCount(Integer waitResCount) {
 			this.waitResCount = waitResCount;
+		}
+
+		public Integer getRunningCount() {
+			return this.runningCount;
+		}
+
+		public void setRunningCount(Integer runningCount) {
+			this.runningCount = runningCount;
+		}
+
+		public Integer getFailureCount() {
+			return this.failureCount;
+		}
+
+		public void setFailureCount(Integer failureCount) {
+			this.failureCount = failureCount;
+		}
+
+		public Integer getSuccessCount() {
+			return this.successCount;
+		}
+
+		public void setSuccessCount(Integer successCount) {
+			this.successCount = successCount;
 		}
 	}
 

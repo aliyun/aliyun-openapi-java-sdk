@@ -28,10 +28,10 @@ public class SearchMetaTablesResponseUnmarshaller {
 	public static SearchMetaTablesResponse unmarshall(SearchMetaTablesResponse searchMetaTablesResponse, UnmarshallerContext _ctx) {
 		
 		searchMetaTablesResponse.setRequestId(_ctx.stringValue("SearchMetaTablesResponse.RequestId"));
-		searchMetaTablesResponse.setHttpStatusCode(_ctx.integerValue("SearchMetaTablesResponse.HttpStatusCode"));
-		searchMetaTablesResponse.setErrorMessage(_ctx.stringValue("SearchMetaTablesResponse.ErrorMessage"));
-		searchMetaTablesResponse.setSuccess(_ctx.booleanValue("SearchMetaTablesResponse.Success"));
 		searchMetaTablesResponse.setErrorCode(_ctx.stringValue("SearchMetaTablesResponse.ErrorCode"));
+		searchMetaTablesResponse.setErrorMessage(_ctx.stringValue("SearchMetaTablesResponse.ErrorMessage"));
+		searchMetaTablesResponse.setHttpStatusCode(_ctx.integerValue("SearchMetaTablesResponse.HttpStatusCode"));
+		searchMetaTablesResponse.setSuccess(_ctx.booleanValue("SearchMetaTablesResponse.Success"));
 
 		Data data = new Data();
 		data.setPageNumber(_ctx.integerValue("SearchMetaTablesResponse.Data.PageNumber"));
@@ -42,15 +42,15 @@ public class SearchMetaTablesResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("SearchMetaTablesResponse.Data.DataEntityList.Length"); i++) {
 			DataEntityListItem dataEntityListItem = new DataEntityListItem();
 			dataEntityListItem.setTableName(_ctx.stringValue("SearchMetaTablesResponse.Data.DataEntityList["+ i +"].TableName"));
-			dataEntityListItem.setDatabaseName(_ctx.stringValue("SearchMetaTablesResponse.Data.DataEntityList["+ i +"].DatabaseName"));
-			dataEntityListItem.setEntityType(_ctx.integerValue("SearchMetaTablesResponse.Data.DataEntityList["+ i +"].EntityType"));
-			dataEntityListItem.setProjectName(_ctx.stringValue("SearchMetaTablesResponse.Data.DataEntityList["+ i +"].ProjectName"));
-			dataEntityListItem.setProjectId(_ctx.longValue("SearchMetaTablesResponse.Data.DataEntityList["+ i +"].ProjectId"));
 			dataEntityListItem.setTableGuid(_ctx.stringValue("SearchMetaTablesResponse.Data.DataEntityList["+ i +"].TableGuid"));
 			dataEntityListItem.setOwnerId(_ctx.stringValue("SearchMetaTablesResponse.Data.DataEntityList["+ i +"].OwnerId"));
-			dataEntityListItem.setClusterId(_ctx.stringValue("SearchMetaTablesResponse.Data.DataEntityList["+ i +"].ClusterId"));
-			dataEntityListItem.setEnvType(_ctx.integerValue("SearchMetaTablesResponse.Data.DataEntityList["+ i +"].EnvType"));
 			dataEntityListItem.setTenantId(_ctx.longValue("SearchMetaTablesResponse.Data.DataEntityList["+ i +"].TenantId"));
+			dataEntityListItem.setEnvType(_ctx.integerValue("SearchMetaTablesResponse.Data.DataEntityList["+ i +"].EnvType"));
+			dataEntityListItem.setEntityType(_ctx.integerValue("SearchMetaTablesResponse.Data.DataEntityList["+ i +"].EntityType"));
+			dataEntityListItem.setProjectId(_ctx.longValue("SearchMetaTablesResponse.Data.DataEntityList["+ i +"].ProjectId"));
+			dataEntityListItem.setProjectName(_ctx.stringValue("SearchMetaTablesResponse.Data.DataEntityList["+ i +"].ProjectName"));
+			dataEntityListItem.setClusterId(_ctx.stringValue("SearchMetaTablesResponse.Data.DataEntityList["+ i +"].ClusterId"));
+			dataEntityListItem.setDatabaseName(_ctx.stringValue("SearchMetaTablesResponse.Data.DataEntityList["+ i +"].DatabaseName"));
 
 			dataEntityList.add(dataEntityListItem);
 		}

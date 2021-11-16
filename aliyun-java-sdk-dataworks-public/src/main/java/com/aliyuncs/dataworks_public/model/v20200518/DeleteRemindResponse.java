@@ -24,49 +24,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DeleteRemindResponse extends AcsResponse {
 
-	private Integer httpStatusCode;
-
-	private Boolean data;
-
-	private String errorMessage;
-
-	private String requestId;
-
 	private Boolean success;
 
 	private String errorCode;
 
-	public Integer getHttpStatusCode() {
-		return this.httpStatusCode;
-	}
+	private String errorMessage;
 
-	public void setHttpStatusCode(Integer httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
-	}
+	private Integer httpStatusCode;
 
-	public Boolean getData() {
-		return this.data;
-	}
+	private String requestId;
 
-	public void setData(Boolean data) {
-		this.data = data;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private Boolean data;
 
 	public Boolean getSuccess() {
 		return this.success;
@@ -82,6 +50,38 @@ public class DeleteRemindResponse extends AcsResponse {
 
 	public void setErrorCode(String errorCode) {
 		this.errorCode = errorCode;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
+	}
+
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getData() {
+		return this.data;
+	}
+
+	public void setData(Boolean data) {
+		this.data = data;
 	}
 
 	@Override

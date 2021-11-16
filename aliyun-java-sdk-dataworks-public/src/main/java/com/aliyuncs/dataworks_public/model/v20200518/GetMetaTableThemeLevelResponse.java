@@ -25,24 +25,32 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetMetaTableThemeLevelResponse extends AcsResponse {
 
-	private Integer httpStatusCode;
-
-	private String errorMessage;
-
 	private String requestId;
-
-	private Boolean success;
 
 	private String errorCode;
 
+	private String errorMessage;
+
+	private Integer httpStatusCode;
+
+	private Boolean success;
+
 	private Entity entity;
 
-	public Integer getHttpStatusCode() {
-		return this.httpStatusCode;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setHttpStatusCode(Integer httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getErrorCode() {
+		return this.errorCode;
+	}
+
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
 	}
 
 	public String getErrorMessage() {
@@ -53,12 +61,12 @@ public class GetMetaTableThemeLevelResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
 	}
 
 	public Boolean getSuccess() {
@@ -67,14 +75,6 @@ public class GetMetaTableThemeLevelResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
-	}
-
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
 	}
 
 	public Entity getEntity() {
@@ -109,20 +109,20 @@ public class GetMetaTableThemeLevelResponse extends AcsResponse {
 
 		public static class ThemeItem {
 
-			private Long parentId;
+			private Long themeId;
 
 			private String name;
 
-			private Long themeId;
-
 			private Integer level;
 
-			public Long getParentId() {
-				return this.parentId;
+			private Long parentId;
+
+			public Long getThemeId() {
+				return this.themeId;
 			}
 
-			public void setParentId(Long parentId) {
-				this.parentId = parentId;
+			public void setThemeId(Long themeId) {
+				this.themeId = themeId;
 			}
 
 			public String getName() {
@@ -133,14 +133,6 @@ public class GetMetaTableThemeLevelResponse extends AcsResponse {
 				this.name = name;
 			}
 
-			public Long getThemeId() {
-				return this.themeId;
-			}
-
-			public void setThemeId(Long themeId) {
-				this.themeId = themeId;
-			}
-
 			public Integer getLevel() {
 				return this.level;
 			}
@@ -148,17 +140,41 @@ public class GetMetaTableThemeLevelResponse extends AcsResponse {
 			public void setLevel(Integer level) {
 				this.level = level;
 			}
+
+			public Long getParentId() {
+				return this.parentId;
+			}
+
+			public void setParentId(Long parentId) {
+				this.parentId = parentId;
+			}
 		}
 
 		public static class LevelItem {
+
+			private Long levelId;
+
+			private String name;
 
 			private Integer type;
 
 			private String description;
 
-			private String name;
+			public Long getLevelId() {
+				return this.levelId;
+			}
 
-			private Long levelId;
+			public void setLevelId(Long levelId) {
+				this.levelId = levelId;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
 
 			public Integer getType() {
 				return this.type;
@@ -174,22 +190,6 @@ public class GetMetaTableThemeLevelResponse extends AcsResponse {
 
 			public void setDescription(String description) {
 				this.description = description;
-			}
-
-			public String getName() {
-				return this.name;
-			}
-
-			public void setName(String name) {
-				this.name = name;
-			}
-
-			public Long getLevelId() {
-				return this.levelId;
-			}
-
-			public void setLevelId(Long levelId) {
-				this.levelId = levelId;
 			}
 		}
 	}

@@ -24,24 +24,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateQualityEntityResponse extends AcsResponse {
 
-	private Integer httpStatusCode;
+	private Boolean success;
 
 	private Integer data;
 
+	private String errorCode;
+
 	private String errorMessage;
+
+	private Integer httpStatusCode;
 
 	private String requestId;
 
-	private Boolean success;
-
-	private String errorCode;
-
-	public Integer getHttpStatusCode() {
-		return this.httpStatusCode;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setHttpStatusCode(Integer httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Integer getData() {
@@ -52,6 +52,14 @@ public class CreateQualityEntityResponse extends AcsResponse {
 		this.data = data;
 	}
 
+	public String getErrorCode() {
+		return this.errorCode;
+	}
+
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
+	}
+
 	public String getErrorMessage() {
 		return this.errorMessage;
 	}
@@ -60,28 +68,20 @@ public class CreateQualityEntityResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
+	}
+
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
+	}
+
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
 	}
 
 	@Override

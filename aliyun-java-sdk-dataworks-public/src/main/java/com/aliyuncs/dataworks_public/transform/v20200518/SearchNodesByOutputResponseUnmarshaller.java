@@ -24,11 +24,11 @@ public class SearchNodesByOutputResponseUnmarshaller {
 	public static SearchNodesByOutputResponse unmarshall(SearchNodesByOutputResponse searchNodesByOutputResponse, UnmarshallerContext _ctx) {
 		
 		searchNodesByOutputResponse.setRequestId(_ctx.stringValue("SearchNodesByOutputResponse.RequestId"));
-		searchNodesByOutputResponse.setHttpStatusCode(_ctx.integerValue("SearchNodesByOutputResponse.HttpStatusCode"));
-		searchNodesByOutputResponse.setData(_ctx.mapValue("SearchNodesByOutputResponse.Data"));
-		searchNodesByOutputResponse.setErrorMessage(_ctx.stringValue("SearchNodesByOutputResponse.ErrorMessage"));
 		searchNodesByOutputResponse.setSuccess(_ctx.booleanValue("SearchNodesByOutputResponse.Success"));
+		searchNodesByOutputResponse.setHttpStatusCode(_ctx.integerValue("SearchNodesByOutputResponse.HttpStatusCode"));
 		searchNodesByOutputResponse.setErrorCode(_ctx.stringValue("SearchNodesByOutputResponse.ErrorCode"));
+		searchNodesByOutputResponse.setErrorMessage(_ctx.stringValue("SearchNodesByOutputResponse.ErrorMessage"));
+		searchNodesByOutputResponse.setData(_ctx.mapValue("SearchNodesByOutputResponse.Data"));
 	 
 	 	return searchNodesByOutputResponse;
 	}

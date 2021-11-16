@@ -24,33 +24,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetFolderResponse extends AcsResponse {
 
-	private Integer httpStatusCode;
-
-	private String errorMessage;
-
 	private String requestId;
-
-	private String errorCode;
 
 	private Boolean success;
 
+	private String errorCode;
+
+	private String errorMessage;
+
+	private Integer httpStatusCode;
+
 	private Data data;
-
-	public Integer getHttpStatusCode() {
-		return this.httpStatusCode;
-	}
-
-	public void setHttpStatusCode(Integer httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -58,6 +42,14 @@ public class GetFolderResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public String getErrorCode() {
@@ -68,12 +60,20 @@ public class GetFolderResponse extends AcsResponse {
 		this.errorCode = errorCode;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getErrorMessage() {
+		return this.errorMessage;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
+	}
+
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
 	}
 
 	public Data getData() {
@@ -86,17 +86,9 @@ public class GetFolderResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String folderPath;
-
 		private String folderId;
 
-		public String getFolderPath() {
-			return this.folderPath;
-		}
-
-		public void setFolderPath(String folderPath) {
-			this.folderPath = folderPath;
-		}
+		private String folderPath;
 
 		public String getFolderId() {
 			return this.folderId;
@@ -104,6 +96,14 @@ public class GetFolderResponse extends AcsResponse {
 
 		public void setFolderId(String folderId) {
 			this.folderId = folderId;
+		}
+
+		public String getFolderPath() {
+			return this.folderPath;
+		}
+
+		public void setFolderPath(String folderPath) {
+			this.folderPath = folderPath;
 		}
 	}
 

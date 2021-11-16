@@ -25,17 +25,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class SearchNodesByOutputResponse extends AcsResponse {
 
+	private Boolean success;
+
 	private Integer httpStatusCode;
 
-	private Map<Object,Object> data;
+	private String errorCode;
 
 	private String errorMessage;
 
 	private String requestId;
 
-	private Boolean success;
+	private Map<Object,Object> data;
 
-	private String errorCode;
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
 
 	public Integer getHttpStatusCode() {
 		return this.httpStatusCode;
@@ -45,12 +53,12 @@ public class SearchNodesByOutputResponse extends AcsResponse {
 		this.httpStatusCode = httpStatusCode;
 	}
 
-	public Map<Object,Object> getData() {
-		return this.data;
+	public String getErrorCode() {
+		return this.errorCode;
 	}
 
-	public void setData(Map<Object,Object> data) {
-		this.data = data;
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
 	}
 
 	public String getErrorMessage() {
@@ -69,20 +77,12 @@ public class SearchNodesByOutputResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public Map<Object,Object> getData() {
+		return this.data;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
+	public void setData(Map<Object,Object> data) {
+		this.data = data;
 	}
 
 	@Override

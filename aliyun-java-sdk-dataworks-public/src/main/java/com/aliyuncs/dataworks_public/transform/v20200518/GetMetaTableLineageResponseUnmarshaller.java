@@ -28,14 +28,14 @@ public class GetMetaTableLineageResponseUnmarshaller {
 	public static GetMetaTableLineageResponse unmarshall(GetMetaTableLineageResponse getMetaTableLineageResponse, UnmarshallerContext _ctx) {
 		
 		getMetaTableLineageResponse.setRequestId(_ctx.stringValue("GetMetaTableLineageResponse.RequestId"));
-		getMetaTableLineageResponse.setHttpStatusCode(_ctx.integerValue("GetMetaTableLineageResponse.HttpStatusCode"));
-		getMetaTableLineageResponse.setErrorMessage(_ctx.stringValue("GetMetaTableLineageResponse.ErrorMessage"));
-		getMetaTableLineageResponse.setSuccess(_ctx.booleanValue("GetMetaTableLineageResponse.Success"));
 		getMetaTableLineageResponse.setErrorCode(_ctx.stringValue("GetMetaTableLineageResponse.ErrorCode"));
+		getMetaTableLineageResponse.setErrorMessage(_ctx.stringValue("GetMetaTableLineageResponse.ErrorMessage"));
+		getMetaTableLineageResponse.setHttpStatusCode(_ctx.integerValue("GetMetaTableLineageResponse.HttpStatusCode"));
+		getMetaTableLineageResponse.setSuccess(_ctx.booleanValue("GetMetaTableLineageResponse.Success"));
 
 		Data data = new Data();
-		data.setNextPrimaryKey(_ctx.stringValue("GetMetaTableLineageResponse.Data.NextPrimaryKey"));
 		data.setHasNext(_ctx.booleanValue("GetMetaTableLineageResponse.Data.HasNext"));
+		data.setNextPrimaryKey(_ctx.stringValue("GetMetaTableLineageResponse.Data.NextPrimaryKey"));
 
 		List<DataEntityListItem> dataEntityList = new ArrayList<DataEntityListItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetMetaTableLineageResponse.Data.DataEntityList.Length"); i++) {

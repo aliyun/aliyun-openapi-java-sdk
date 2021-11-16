@@ -25,17 +25,33 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListDataServiceApplicationsResponse extends AcsResponse {
 
+	private String errorCode;
+
+	private String errorMessage;
+
 	private Integer httpStatusCode;
 
 	private String requestId;
 
-	private String errorMessage;
-
 	private Boolean success;
 
-	private String errorCode;
-
 	private Data data;
+
+	public String getErrorCode() {
+		return this.errorCode;
+	}
+
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
 
 	public Integer getHttpStatusCode() {
 		return this.httpStatusCode;
@@ -53,28 +69,12 @@ public class ListDataServiceApplicationsResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
-
 	public Boolean getSuccess() {
 		return this.success;
 	}
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
-	}
-
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
 	}
 
 	public Data getData() {
@@ -129,19 +129,11 @@ public class ListDataServiceApplicationsResponse extends AcsResponse {
 
 		public static class Application {
 
-			private String applicationName;
-
 			private Long applicationId;
 
+			private String applicationName;
+
 			private Long projectId;
-
-			public String getApplicationName() {
-				return this.applicationName;
-			}
-
-			public void setApplicationName(String applicationName) {
-				this.applicationName = applicationName;
-			}
 
 			public Long getApplicationId() {
 				return this.applicationId;
@@ -149,6 +141,14 @@ public class ListDataServiceApplicationsResponse extends AcsResponse {
 
 			public void setApplicationId(Long applicationId) {
 				this.applicationId = applicationId;
+			}
+
+			public String getApplicationName() {
+				return this.applicationName;
+			}
+
+			public void setApplicationName(String applicationName) {
+				this.applicationName = applicationName;
 			}
 
 			public Long getProjectId() {

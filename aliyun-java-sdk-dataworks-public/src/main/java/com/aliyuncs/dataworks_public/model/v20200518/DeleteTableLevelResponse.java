@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DeleteTableLevelResponse extends AcsResponse {
 
-	private Boolean deleteResult;
-
 	private String requestId;
 
-	public Boolean getDeleteResult() {
-		return this.deleteResult;
-	}
-
-	public void setDeleteResult(Boolean deleteResult) {
-		this.deleteResult = deleteResult;
-	}
+	private Boolean deleteResult;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -42,6 +34,14 @@ public class DeleteTableLevelResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Boolean getDeleteResult() {
+		return this.deleteResult;
+	}
+
+	public void setDeleteResult(Boolean deleteResult) {
+		this.deleteResult = deleteResult;
 	}
 
 	@Override

@@ -26,22 +26,22 @@ public class GetMetaDBInfoResponseUnmarshaller {
 		getMetaDBInfoResponse.setRequestId(_ctx.stringValue("GetMetaDBInfoResponse.RequestId"));
 
 		Data data = new Data();
+		data.setAppGuid(_ctx.stringValue("GetMetaDBInfoResponse.Data.AppGuid"));
+		data.setTenantId(_ctx.longValue("GetMetaDBInfoResponse.Data.TenantId"));
+		data.setEndpoint(_ctx.stringValue("GetMetaDBInfoResponse.Data.Endpoint"));
+		data.setProjectId(_ctx.longValue("GetMetaDBInfoResponse.Data.ProjectId"));
+		data.setEnvType(_ctx.integerValue("GetMetaDBInfoResponse.Data.EnvType"));
+		data.setProjectName(_ctx.stringValue("GetMetaDBInfoResponse.Data.ProjectName"));
+		data.setProjectNameCn(_ctx.stringValue("GetMetaDBInfoResponse.Data.ProjectNameCn"));
+		data.setCreateTime(_ctx.longValue("GetMetaDBInfoResponse.Data.CreateTime"));
+		data.setModifyTime(_ctx.longValue("GetMetaDBInfoResponse.Data.ModifyTime"));
+		data.setOwnerId(_ctx.stringValue("GetMetaDBInfoResponse.Data.OwnerId"));
+		data.setOwnerName(_ctx.stringValue("GetMetaDBInfoResponse.Data.OwnerName"));
+		data.setName(_ctx.stringValue("GetMetaDBInfoResponse.Data.Name"));
 		data.setType(_ctx.stringValue("GetMetaDBInfoResponse.Data.Type"));
 		data.setComment(_ctx.stringValue("GetMetaDBInfoResponse.Data.Comment"));
-		data.setCreateTime(_ctx.longValue("GetMetaDBInfoResponse.Data.CreateTime"));
-		data.setProjectId(_ctx.longValue("GetMetaDBInfoResponse.Data.ProjectId"));
-		data.setProjectName(_ctx.stringValue("GetMetaDBInfoResponse.Data.ProjectName"));
-		data.setAppGuid(_ctx.stringValue("GetMetaDBInfoResponse.Data.AppGuid"));
-		data.setOwnerName(_ctx.stringValue("GetMetaDBInfoResponse.Data.OwnerName"));
-		data.setOwnerId(_ctx.stringValue("GetMetaDBInfoResponse.Data.OwnerId"));
-		data.setEnvType(_ctx.integerValue("GetMetaDBInfoResponse.Data.EnvType"));
-		data.setProjectNameCn(_ctx.stringValue("GetMetaDBInfoResponse.Data.ProjectNameCn"));
-		data.setEndpoint(_ctx.stringValue("GetMetaDBInfoResponse.Data.Endpoint"));
-		data.setClusterBizId(_ctx.stringValue("GetMetaDBInfoResponse.Data.ClusterBizId"));
-		data.setName(_ctx.stringValue("GetMetaDBInfoResponse.Data.Name"));
 		data.setLocation(_ctx.stringValue("GetMetaDBInfoResponse.Data.Location"));
-		data.setTenantId(_ctx.longValue("GetMetaDBInfoResponse.Data.TenantId"));
-		data.setModifyTime(_ctx.longValue("GetMetaDBInfoResponse.Data.ModifyTime"));
+		data.setClusterBizId(_ctx.stringValue("GetMetaDBInfoResponse.Data.ClusterBizId"));
 		getMetaDBInfoResponse.setData(data);
 	 
 	 	return getMetaDBInfoResponse;

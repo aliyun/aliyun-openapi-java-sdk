@@ -24,17 +24,41 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetBaselineStatusResponse extends AcsResponse {
 
+	private Boolean success;
+
+	private String errorCode;
+
+	private String errorMessage;
+
 	private Integer httpStatusCode;
 
 	private String requestId;
 
-	private String errorMessage;
-
-	private String errorCode;
-
-	private Boolean success;
-
 	private Data data;
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
+	public String getErrorCode() {
+		return this.errorCode;
+	}
+
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
 
 	public Integer getHttpStatusCode() {
 		return this.httpStatusCode;
@@ -52,30 +76,6 @@ public class GetBaselineStatusResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
-
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
 	public Data getData() {
 		return this.data;
 	}
@@ -86,93 +86,37 @@ public class GetBaselineStatusResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String status;
-
-		private String owner;
-
-		private Long finishTime;
-
-		private Long projectId;
-
-		private Integer priority;
-
-		private Long endCast;
-
-		private Integer inGroupId;
-
 		private String baselineName;
 
 		private Long baselineId;
 
-		private String finishStatus;
-
 		private Long bizdate;
 
-		private Float buffer;
+		private String owner;
+
+		private Long expTime;
+
+		private Long finishTime;
+
+		private Long endCast;
 
 		private Long slaTime;
 
-		private Long expTime;
+		private Integer priority;
+
+		private Long projectId;
+
+		private Float buffer;
+
+		private String status;
+
+		private String finishStatus;
+
+		private Integer inGroupId;
 
 		private LastInstance lastInstance;
 
 		private BlockInstance blockInstance;
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
-		public String getOwner() {
-			return this.owner;
-		}
-
-		public void setOwner(String owner) {
-			this.owner = owner;
-		}
-
-		public Long getFinishTime() {
-			return this.finishTime;
-		}
-
-		public void setFinishTime(Long finishTime) {
-			this.finishTime = finishTime;
-		}
-
-		public Long getProjectId() {
-			return this.projectId;
-		}
-
-		public void setProjectId(Long projectId) {
-			this.projectId = projectId;
-		}
-
-		public Integer getPriority() {
-			return this.priority;
-		}
-
-		public void setPriority(Integer priority) {
-			this.priority = priority;
-		}
-
-		public Long getEndCast() {
-			return this.endCast;
-		}
-
-		public void setEndCast(Long endCast) {
-			this.endCast = endCast;
-		}
-
-		public Integer getInGroupId() {
-			return this.inGroupId;
-		}
-
-		public void setInGroupId(Integer inGroupId) {
-			this.inGroupId = inGroupId;
-		}
 
 		public String getBaselineName() {
 			return this.baselineName;
@@ -190,14 +134,6 @@ public class GetBaselineStatusResponse extends AcsResponse {
 			this.baselineId = baselineId;
 		}
 
-		public String getFinishStatus() {
-			return this.finishStatus;
-		}
-
-		public void setFinishStatus(String finishStatus) {
-			this.finishStatus = finishStatus;
-		}
-
 		public Long getBizdate() {
 			return this.bizdate;
 		}
@@ -206,12 +142,36 @@ public class GetBaselineStatusResponse extends AcsResponse {
 			this.bizdate = bizdate;
 		}
 
-		public Float getBuffer() {
-			return this.buffer;
+		public String getOwner() {
+			return this.owner;
 		}
 
-		public void setBuffer(Float buffer) {
-			this.buffer = buffer;
+		public void setOwner(String owner) {
+			this.owner = owner;
+		}
+
+		public Long getExpTime() {
+			return this.expTime;
+		}
+
+		public void setExpTime(Long expTime) {
+			this.expTime = expTime;
+		}
+
+		public Long getFinishTime() {
+			return this.finishTime;
+		}
+
+		public void setFinishTime(Long finishTime) {
+			this.finishTime = finishTime;
+		}
+
+		public Long getEndCast() {
+			return this.endCast;
+		}
+
+		public void setEndCast(Long endCast) {
+			this.endCast = endCast;
 		}
 
 		public Long getSlaTime() {
@@ -222,12 +182,52 @@ public class GetBaselineStatusResponse extends AcsResponse {
 			this.slaTime = slaTime;
 		}
 
-		public Long getExpTime() {
-			return this.expTime;
+		public Integer getPriority() {
+			return this.priority;
 		}
 
-		public void setExpTime(Long expTime) {
-			this.expTime = expTime;
+		public void setPriority(Integer priority) {
+			this.priority = priority;
+		}
+
+		public Long getProjectId() {
+			return this.projectId;
+		}
+
+		public void setProjectId(Long projectId) {
+			this.projectId = projectId;
+		}
+
+		public Float getBuffer() {
+			return this.buffer;
+		}
+
+		public void setBuffer(Float buffer) {
+			this.buffer = buffer;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
+		public String getFinishStatus() {
+			return this.finishStatus;
+		}
+
+		public void setFinishStatus(String finishStatus) {
+			this.finishStatus = finishStatus;
+		}
+
+		public Integer getInGroupId() {
+			return this.inGroupId;
+		}
+
+		public void setInGroupId(Integer inGroupId) {
+			this.inGroupId = inGroupId;
 		}
 
 		public LastInstance getLastInstance() {
@@ -248,21 +248,29 @@ public class GetBaselineStatusResponse extends AcsResponse {
 
 		public static class LastInstance {
 
+			private Long instanceId;
+
 			private String status;
-
-			private String owner;
-
-			private Long finishTime;
-
-			private String nodeName;
 
 			private Long projectId;
 
-			private Long instanceId;
+			private String owner;
+
+			private Long nodeId;
+
+			private Long finishTime;
 
 			private Long endCast;
 
-			private Long nodeId;
+			private String nodeName;
+
+			public Long getInstanceId() {
+				return this.instanceId;
+			}
+
+			public void setInstanceId(Long instanceId) {
+				this.instanceId = instanceId;
+			}
 
 			public String getStatus() {
 				return this.status;
@@ -270,30 +278,6 @@ public class GetBaselineStatusResponse extends AcsResponse {
 
 			public void setStatus(String status) {
 				this.status = status;
-			}
-
-			public String getOwner() {
-				return this.owner;
-			}
-
-			public void setOwner(String owner) {
-				this.owner = owner;
-			}
-
-			public Long getFinishTime() {
-				return this.finishTime;
-			}
-
-			public void setFinishTime(Long finishTime) {
-				this.finishTime = finishTime;
-			}
-
-			public String getNodeName() {
-				return this.nodeName;
-			}
-
-			public void setNodeName(String nodeName) {
-				this.nodeName = nodeName;
 			}
 
 			public Long getProjectId() {
@@ -304,12 +288,28 @@ public class GetBaselineStatusResponse extends AcsResponse {
 				this.projectId = projectId;
 			}
 
-			public Long getInstanceId() {
-				return this.instanceId;
+			public String getOwner() {
+				return this.owner;
 			}
 
-			public void setInstanceId(Long instanceId) {
-				this.instanceId = instanceId;
+			public void setOwner(String owner) {
+				this.owner = owner;
+			}
+
+			public Long getNodeId() {
+				return this.nodeId;
+			}
+
+			public void setNodeId(Long nodeId) {
+				this.nodeId = nodeId;
+			}
+
+			public Long getFinishTime() {
+				return this.finishTime;
+			}
+
+			public void setFinishTime(Long finishTime) {
+				this.finishTime = finishTime;
 			}
 
 			public Long getEndCast() {
@@ -320,32 +320,40 @@ public class GetBaselineStatusResponse extends AcsResponse {
 				this.endCast = endCast;
 			}
 
-			public Long getNodeId() {
-				return this.nodeId;
+			public String getNodeName() {
+				return this.nodeName;
 			}
 
-			public void setNodeId(Long nodeId) {
-				this.nodeId = nodeId;
+			public void setNodeName(String nodeName) {
+				this.nodeName = nodeName;
 			}
 		}
 
 		public static class BlockInstance {
 
+			private Long instanceId;
+
 			private String status;
-
-			private String owner;
-
-			private Long finishTime;
-
-			private String nodeName;
 
 			private Long projectId;
 
-			private Long instanceId;
+			private String owner;
+
+			private Long nodeId;
+
+			private Long finishTime;
 
 			private Long endCast;
 
-			private Long nodeId;
+			private String nodeName;
+
+			public Long getInstanceId() {
+				return this.instanceId;
+			}
+
+			public void setInstanceId(Long instanceId) {
+				this.instanceId = instanceId;
+			}
 
 			public String getStatus() {
 				return this.status;
@@ -353,30 +361,6 @@ public class GetBaselineStatusResponse extends AcsResponse {
 
 			public void setStatus(String status) {
 				this.status = status;
-			}
-
-			public String getOwner() {
-				return this.owner;
-			}
-
-			public void setOwner(String owner) {
-				this.owner = owner;
-			}
-
-			public Long getFinishTime() {
-				return this.finishTime;
-			}
-
-			public void setFinishTime(Long finishTime) {
-				this.finishTime = finishTime;
-			}
-
-			public String getNodeName() {
-				return this.nodeName;
-			}
-
-			public void setNodeName(String nodeName) {
-				this.nodeName = nodeName;
 			}
 
 			public Long getProjectId() {
@@ -387,12 +371,28 @@ public class GetBaselineStatusResponse extends AcsResponse {
 				this.projectId = projectId;
 			}
 
-			public Long getInstanceId() {
-				return this.instanceId;
+			public String getOwner() {
+				return this.owner;
 			}
 
-			public void setInstanceId(Long instanceId) {
-				this.instanceId = instanceId;
+			public void setOwner(String owner) {
+				this.owner = owner;
+			}
+
+			public Long getNodeId() {
+				return this.nodeId;
+			}
+
+			public void setNodeId(Long nodeId) {
+				this.nodeId = nodeId;
+			}
+
+			public Long getFinishTime() {
+				return this.finishTime;
+			}
+
+			public void setFinishTime(Long finishTime) {
+				this.finishTime = finishTime;
 			}
 
 			public Long getEndCast() {
@@ -403,12 +403,12 @@ public class GetBaselineStatusResponse extends AcsResponse {
 				this.endCast = endCast;
 			}
 
-			public Long getNodeId() {
-				return this.nodeId;
+			public String getNodeName() {
+				return this.nodeName;
 			}
 
-			public void setNodeId(Long nodeId) {
-				this.nodeId = nodeId;
+			public void setNodeName(String nodeName) {
+				this.nodeName = nodeName;
 			}
 		}
 	}

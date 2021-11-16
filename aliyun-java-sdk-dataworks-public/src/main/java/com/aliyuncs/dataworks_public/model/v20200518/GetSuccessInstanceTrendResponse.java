@@ -79,17 +79,9 @@ public class GetSuccessInstanceTrendResponse extends AcsResponse {
 
 		public static class TodayTrendItem {
 
-			private String timePoint;
-
 			private Integer count;
 
-			public String getTimePoint() {
-				return this.timePoint;
-			}
-
-			public void setTimePoint(String timePoint) {
-				this.timePoint = timePoint;
-			}
+			private String timePoint;
 
 			public Integer getCount() {
 				return this.count;
@@ -97,22 +89,22 @@ public class GetSuccessInstanceTrendResponse extends AcsResponse {
 
 			public void setCount(Integer count) {
 				this.count = count;
+			}
+
+			public String getTimePoint() {
+				return this.timePoint;
+			}
+
+			public void setTimePoint(String timePoint) {
+				this.timePoint = timePoint;
 			}
 		}
 
 		public static class YesterdayTrendItem {
 
-			private String timePoint;
-
 			private Integer count;
 
-			public String getTimePoint() {
-				return this.timePoint;
-			}
-
-			public void setTimePoint(String timePoint) {
-				this.timePoint = timePoint;
-			}
+			private String timePoint;
 
 			public Integer getCount() {
 				return this.count;
@@ -120,22 +112,22 @@ public class GetSuccessInstanceTrendResponse extends AcsResponse {
 
 			public void setCount(Integer count) {
 				this.count = count;
+			}
+
+			public String getTimePoint() {
+				return this.timePoint;
+			}
+
+			public void setTimePoint(String timePoint) {
+				this.timePoint = timePoint;
 			}
 		}
 
 		public static class AvgTrendItem {
 
-			private String timePoint;
-
 			private Integer count;
 
-			public String getTimePoint() {
-				return this.timePoint;
-			}
-
-			public void setTimePoint(String timePoint) {
-				this.timePoint = timePoint;
-			}
+			private String timePoint;
 
 			public Integer getCount() {
 				return this.count;
@@ -143,6 +135,14 @@ public class GetSuccessInstanceTrendResponse extends AcsResponse {
 
 			public void setCount(Integer count) {
 				this.count = count;
+			}
+
+			public String getTimePoint() {
+				return this.timePoint;
+			}
+
+			public void setTimePoint(String timePoint) {
+				this.timePoint = timePoint;
 			}
 		}
 	}

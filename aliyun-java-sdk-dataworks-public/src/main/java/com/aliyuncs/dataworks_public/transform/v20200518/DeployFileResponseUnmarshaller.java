@@ -23,11 +23,11 @@ public class DeployFileResponseUnmarshaller {
 	public static DeployFileResponse unmarshall(DeployFileResponse deployFileResponse, UnmarshallerContext _ctx) {
 		
 		deployFileResponse.setRequestId(_ctx.stringValue("DeployFileResponse.RequestId"));
-		deployFileResponse.setHttpStatusCode(_ctx.integerValue("DeployFileResponse.HttpStatusCode"));
-		deployFileResponse.setData(_ctx.longValue("DeployFileResponse.Data"));
-		deployFileResponse.setErrorMessage(_ctx.stringValue("DeployFileResponse.ErrorMessage"));
 		deployFileResponse.setSuccess(_ctx.booleanValue("DeployFileResponse.Success"));
 		deployFileResponse.setErrorCode(_ctx.stringValue("DeployFileResponse.ErrorCode"));
+		deployFileResponse.setErrorMessage(_ctx.stringValue("DeployFileResponse.ErrorMessage"));
+		deployFileResponse.setData(_ctx.longValue("DeployFileResponse.Data"));
+		deployFileResponse.setHttpStatusCode(_ctx.integerValue("DeployFileResponse.HttpStatusCode"));
 	 
 	 	return deployFileResponse;
 	}

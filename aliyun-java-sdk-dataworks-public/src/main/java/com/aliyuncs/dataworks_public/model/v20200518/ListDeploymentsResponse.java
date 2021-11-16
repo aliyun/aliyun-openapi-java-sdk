@@ -91,7 +91,7 @@ public class ListDeploymentsResponse extends AcsResponse {
 
 			private Integer status;
 
-			private Integer errorMessage;
+			private String errorMessage;
 
 			private Long createTime;
 
@@ -113,11 +113,11 @@ public class ListDeploymentsResponse extends AcsResponse {
 				this.status = status;
 			}
 
-			public Integer getErrorMessage() {
+			public String getErrorMessage() {
 				return this.errorMessage;
 			}
 
-			public void setErrorMessage(Integer errorMessage) {
+			public void setErrorMessage(String errorMessage) {
 				this.errorMessage = errorMessage;
 			}
 

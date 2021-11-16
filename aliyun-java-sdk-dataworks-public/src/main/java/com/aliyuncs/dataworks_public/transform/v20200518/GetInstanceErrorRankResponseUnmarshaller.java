@@ -35,11 +35,11 @@ public class GetInstanceErrorRankResponseUnmarshaller {
 		List<ErrorRankItem> errorRank = new ArrayList<ErrorRankItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetInstanceErrorRankResponse.InstanceErrorRank.ErrorRank.Length"); i++) {
 			ErrorRankItem errorRankItem = new ErrorRankItem();
-			errorRankItem.setOwner(_ctx.stringValue("GetInstanceErrorRankResponse.InstanceErrorRank.ErrorRank["+ i +"].Owner"));
-			errorRankItem.setNodeName(_ctx.stringValue("GetInstanceErrorRankResponse.InstanceErrorRank.ErrorRank["+ i +"].NodeName"));
-			errorRankItem.setProjectId(_ctx.longValue("GetInstanceErrorRankResponse.InstanceErrorRank.ErrorRank["+ i +"].ProjectId"));
 			errorRankItem.setNodeId(_ctx.longValue("GetInstanceErrorRankResponse.InstanceErrorRank.ErrorRank["+ i +"].NodeId"));
+			errorRankItem.setNodeName(_ctx.stringValue("GetInstanceErrorRankResponse.InstanceErrorRank.ErrorRank["+ i +"].NodeName"));
+			errorRankItem.setOwner(_ctx.stringValue("GetInstanceErrorRankResponse.InstanceErrorRank.ErrorRank["+ i +"].Owner"));
 			errorRankItem.setCount(_ctx.integerValue("GetInstanceErrorRankResponse.InstanceErrorRank.ErrorRank["+ i +"].Count"));
+			errorRankItem.setProjectId(_ctx.longValue("GetInstanceErrorRankResponse.InstanceErrorRank.ErrorRank["+ i +"].ProjectId"));
 			errorRankItem.setPrgType(_ctx.integerValue("GetInstanceErrorRankResponse.InstanceErrorRank.ErrorRank["+ i +"].PrgType"));
 
 			errorRank.add(errorRankItem);

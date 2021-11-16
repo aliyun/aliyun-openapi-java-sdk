@@ -23,11 +23,11 @@ public class CreateImportMigrationResponseUnmarshaller {
 	public static CreateImportMigrationResponse unmarshall(CreateImportMigrationResponse createImportMigrationResponse, UnmarshallerContext _ctx) {
 		
 		createImportMigrationResponse.setRequestId(_ctx.stringValue("CreateImportMigrationResponse.RequestId"));
-		createImportMigrationResponse.setHttpStatusCode(_ctx.integerValue("CreateImportMigrationResponse.HttpStatusCode"));
-		createImportMigrationResponse.setData(_ctx.longValue("CreateImportMigrationResponse.Data"));
-		createImportMigrationResponse.setErrorMessage(_ctx.stringValue("CreateImportMigrationResponse.ErrorMessage"));
 		createImportMigrationResponse.setErrorCode(_ctx.stringValue("CreateImportMigrationResponse.ErrorCode"));
+		createImportMigrationResponse.setErrorMessage(_ctx.stringValue("CreateImportMigrationResponse.ErrorMessage"));
+		createImportMigrationResponse.setHttpStatusCode(_ctx.integerValue("CreateImportMigrationResponse.HttpStatusCode"));
 		createImportMigrationResponse.setSuccess(_ctx.booleanValue("CreateImportMigrationResponse.Success"));
+		createImportMigrationResponse.setData(_ctx.longValue("CreateImportMigrationResponse.Data"));
 	 
 	 	return createImportMigrationResponse;
 	}

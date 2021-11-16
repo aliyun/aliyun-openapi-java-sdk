@@ -47,6 +47,7 @@ public class GetManualDagInstancesResponseUnmarshaller {
 			instancesItem.setBeginWaitTimeTime(_ctx.longValue("GetManualDagInstancesResponse.Instances["+ i +"].BeginWaitTimeTime"));
 			instancesItem.setNodeId(_ctx.longValue("GetManualDagInstancesResponse.Instances["+ i +"].NodeId"));
 			instancesItem.setModifyTime(_ctx.longValue("GetManualDagInstancesResponse.Instances["+ i +"].ModifyTime"));
+			instancesItem.setCreateUser(_ctx.stringValue("GetManualDagInstancesResponse.Instances["+ i +"].CreateUser"));
 
 			instances.add(instancesItem);
 		}

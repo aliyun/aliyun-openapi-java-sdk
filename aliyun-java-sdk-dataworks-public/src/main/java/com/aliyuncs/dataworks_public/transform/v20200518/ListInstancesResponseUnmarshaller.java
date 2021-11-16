@@ -68,6 +68,7 @@ public class ListInstancesResponseUnmarshaller {
 			instance.setBeginWaitTimeTime(_ctx.longValue("ListInstancesResponse.Data.Instances["+ i +"].BeginWaitTimeTime"));
 			instance.setDqcDescription(_ctx.stringValue("ListInstancesResponse.Data.Instances["+ i +"].DqcDescription"));
 			instance.setNodeId(_ctx.longValue("ListInstancesResponse.Data.Instances["+ i +"].NodeId"));
+			instance.setCreateUser(_ctx.stringValue("ListInstancesResponse.Data.Instances["+ i +"].CreateUser"));
 
 			instances.add(instance);
 		}

@@ -23,10 +23,10 @@ public class DeleteFolderResponseUnmarshaller {
 	public static DeleteFolderResponse unmarshall(DeleteFolderResponse deleteFolderResponse, UnmarshallerContext _ctx) {
 		
 		deleteFolderResponse.setRequestId(_ctx.stringValue("DeleteFolderResponse.RequestId"));
-		deleteFolderResponse.setHttpStatusCode(_ctx.integerValue("DeleteFolderResponse.HttpStatusCode"));
-		deleteFolderResponse.setErrorMessage(_ctx.stringValue("DeleteFolderResponse.ErrorMessage"));
-		deleteFolderResponse.setErrorCode(_ctx.stringValue("DeleteFolderResponse.ErrorCode"));
 		deleteFolderResponse.setSuccess(_ctx.booleanValue("DeleteFolderResponse.Success"));
+		deleteFolderResponse.setErrorCode(_ctx.stringValue("DeleteFolderResponse.ErrorCode"));
+		deleteFolderResponse.setErrorMessage(_ctx.stringValue("DeleteFolderResponse.ErrorMessage"));
+		deleteFolderResponse.setHttpStatusCode(_ctx.integerValue("DeleteFolderResponse.HttpStatusCode"));
 	 
 	 	return deleteFolderResponse;
 	}

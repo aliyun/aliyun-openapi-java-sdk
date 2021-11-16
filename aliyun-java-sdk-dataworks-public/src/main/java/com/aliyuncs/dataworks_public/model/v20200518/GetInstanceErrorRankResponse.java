@@ -69,24 +69,24 @@ public class GetInstanceErrorRankResponse extends AcsResponse {
 
 		public static class ErrorRankItem {
 
-			private String owner;
+			private Long nodeId;
 
 			private String nodeName;
 
-			private Long projectId;
-
-			private Long nodeId;
+			private String owner;
 
 			private Integer count;
 
+			private Long projectId;
+
 			private Integer prgType;
 
-			public String getOwner() {
-				return this.owner;
+			public Long getNodeId() {
+				return this.nodeId;
 			}
 
-			public void setOwner(String owner) {
-				this.owner = owner;
+			public void setNodeId(Long nodeId) {
+				this.nodeId = nodeId;
 			}
 
 			public String getNodeName() {
@@ -97,20 +97,12 @@ public class GetInstanceErrorRankResponse extends AcsResponse {
 				this.nodeName = nodeName;
 			}
 
-			public Long getProjectId() {
-				return this.projectId;
+			public String getOwner() {
+				return this.owner;
 			}
 
-			public void setProjectId(Long projectId) {
-				this.projectId = projectId;
-			}
-
-			public Long getNodeId() {
-				return this.nodeId;
-			}
-
-			public void setNodeId(Long nodeId) {
-				this.nodeId = nodeId;
+			public void setOwner(String owner) {
+				this.owner = owner;
 			}
 
 			public Integer getCount() {
@@ -119,6 +111,14 @@ public class GetInstanceErrorRankResponse extends AcsResponse {
 
 			public void setCount(Integer count) {
 				this.count = count;
+			}
+
+			public Long getProjectId() {
+				return this.projectId;
+			}
+
+			public void setProjectId(Long projectId) {
+				this.projectId = projectId;
 			}
 
 			public Integer getPrgType() {

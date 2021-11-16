@@ -183,6 +183,8 @@ public class ListInstancesResponse extends AcsResponse {
 
 			private Long nodeId;
 
+			private String createUser;
+
 			public String getStatus() {
 				return this.status;
 			}
@@ -397,6 +399,14 @@ public class ListInstancesResponse extends AcsResponse {
 
 			public void setNodeId(Long nodeId) {
 				this.nodeId = nodeId;
+			}
+
+			public String getCreateUser() {
+				return this.createUser;
+			}
+
+			public void setCreateUser(String createUser) {
+				this.createUser = createUser;
 			}
 		}
 	}

@@ -38,7 +38,7 @@ public class ListDeploymentsResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("ListDeploymentsResponse.Data.Deployments.Length"); i++) {
 			Deployment deployment = new Deployment();
 			deployment.setStatus(_ctx.integerValue("ListDeploymentsResponse.Data.Deployments["+ i +"].Status"));
-			deployment.setErrorMessage(_ctx.integerValue("ListDeploymentsResponse.Data.Deployments["+ i +"].ErrorMessage"));
+			deployment.setErrorMessage(_ctx.stringValue("ListDeploymentsResponse.Data.Deployments["+ i +"].ErrorMessage"));
 			deployment.setCreateTime(_ctx.longValue("ListDeploymentsResponse.Data.Deployments["+ i +"].CreateTime"));
 			deployment.setExecutor(_ctx.stringValue("ListDeploymentsResponse.Data.Deployments["+ i +"].Executor"));
 			deployment.setCreator(_ctx.stringValue("ListDeploymentsResponse.Data.Deployments["+ i +"].Creator"));

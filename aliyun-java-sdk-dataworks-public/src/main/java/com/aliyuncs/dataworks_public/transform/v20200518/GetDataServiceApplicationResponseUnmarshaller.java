@@ -24,18 +24,18 @@ public class GetDataServiceApplicationResponseUnmarshaller {
 	public static GetDataServiceApplicationResponse unmarshall(GetDataServiceApplicationResponse getDataServiceApplicationResponse, UnmarshallerContext _ctx) {
 		
 		getDataServiceApplicationResponse.setRequestId(_ctx.stringValue("GetDataServiceApplicationResponse.RequestId"));
-		getDataServiceApplicationResponse.setHttpStatusCode(_ctx.integerValue("GetDataServiceApplicationResponse.HttpStatusCode"));
-		getDataServiceApplicationResponse.setErrorMessage(_ctx.stringValue("GetDataServiceApplicationResponse.ErrorMessage"));
-		getDataServiceApplicationResponse.setSuccess(_ctx.booleanValue("GetDataServiceApplicationResponse.Success"));
 		getDataServiceApplicationResponse.setErrorCode(_ctx.stringValue("GetDataServiceApplicationResponse.ErrorCode"));
+		getDataServiceApplicationResponse.setErrorMessage(_ctx.stringValue("GetDataServiceApplicationResponse.ErrorMessage"));
+		getDataServiceApplicationResponse.setHttpStatusCode(_ctx.integerValue("GetDataServiceApplicationResponse.HttpStatusCode"));
+		getDataServiceApplicationResponse.setSuccess(_ctx.booleanValue("GetDataServiceApplicationResponse.Success"));
 
 		Data data = new Data();
 		data.setApplicationCode(_ctx.stringValue("GetDataServiceApplicationResponse.Data.ApplicationCode"));
+		data.setApplicationId(_ctx.longValue("GetDataServiceApplicationResponse.Data.ApplicationId"));
 		data.setApplicationKey(_ctx.stringValue("GetDataServiceApplicationResponse.Data.ApplicationKey"));
+		data.setApplicationName(_ctx.stringValue("GetDataServiceApplicationResponse.Data.ApplicationName"));
 		data.setApplicationSecret(_ctx.stringValue("GetDataServiceApplicationResponse.Data.ApplicationSecret"));
 		data.setProjectId(_ctx.longValue("GetDataServiceApplicationResponse.Data.ProjectId"));
-		data.setApplicationName(_ctx.stringValue("GetDataServiceApplicationResponse.Data.ApplicationName"));
-		data.setApplicationId(_ctx.longValue("GetDataServiceApplicationResponse.Data.ApplicationId"));
 		getDataServiceApplicationResponse.setData(data);
 	 
 	 	return getDataServiceApplicationResponse;

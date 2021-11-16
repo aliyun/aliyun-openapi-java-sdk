@@ -35,13 +35,13 @@ public class GetInstanceConsumeTimeRankResponseUnmarshaller {
 		List<ConsumeTimeRankItem> consumeTimeRank = new ArrayList<ConsumeTimeRankItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetInstanceConsumeTimeRankResponse.InstanceConsumeTimeRank.ConsumeTimeRank.Length"); i++) {
 			ConsumeTimeRankItem consumeTimeRankItem = new ConsumeTimeRankItem();
-			consumeTimeRankItem.setOwner(_ctx.stringValue("GetInstanceConsumeTimeRankResponse.InstanceConsumeTimeRank.ConsumeTimeRank["+ i +"].Owner"));
 			consumeTimeRankItem.setNodeName(_ctx.stringValue("GetInstanceConsumeTimeRankResponse.InstanceConsumeTimeRank.ConsumeTimeRank["+ i +"].NodeName"));
+			consumeTimeRankItem.setNodeId(_ctx.longValue("GetInstanceConsumeTimeRankResponse.InstanceConsumeTimeRank.ConsumeTimeRank["+ i +"].NodeId"));
 			consumeTimeRankItem.setBizdate(_ctx.longValue("GetInstanceConsumeTimeRankResponse.InstanceConsumeTimeRank.ConsumeTimeRank["+ i +"].Bizdate"));
+			consumeTimeRankItem.setOwner(_ctx.stringValue("GetInstanceConsumeTimeRankResponse.InstanceConsumeTimeRank.ConsumeTimeRank["+ i +"].Owner"));
+			consumeTimeRankItem.setConsumed(_ctx.longValue("GetInstanceConsumeTimeRankResponse.InstanceConsumeTimeRank.ConsumeTimeRank["+ i +"].Consumed"));
 			consumeTimeRankItem.setInstanceId(_ctx.longValue("GetInstanceConsumeTimeRankResponse.InstanceConsumeTimeRank.ConsumeTimeRank["+ i +"].InstanceId"));
 			consumeTimeRankItem.setPrgType(_ctx.integerValue("GetInstanceConsumeTimeRankResponse.InstanceConsumeTimeRank.ConsumeTimeRank["+ i +"].PrgType"));
-			consumeTimeRankItem.setNodeId(_ctx.longValue("GetInstanceConsumeTimeRankResponse.InstanceConsumeTimeRank.ConsumeTimeRank["+ i +"].NodeId"));
-			consumeTimeRankItem.setConsumed(_ctx.longValue("GetInstanceConsumeTimeRankResponse.InstanceConsumeTimeRank.ConsumeTimeRank["+ i +"].Consumed"));
 
 			consumeTimeRank.add(consumeTimeRankItem);
 		}

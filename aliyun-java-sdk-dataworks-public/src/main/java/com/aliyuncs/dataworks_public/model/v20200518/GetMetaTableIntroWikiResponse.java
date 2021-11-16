@@ -24,24 +24,32 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetMetaTableIntroWikiResponse extends AcsResponse {
 
-	private Integer httpStatusCode;
-
-	private String errorMessage;
-
 	private String requestId;
-
-	private Boolean success;
 
 	private String errorCode;
 
+	private String errorMessage;
+
+	private Integer httpStatusCode;
+
+	private Boolean success;
+
 	private Data data;
 
-	public Integer getHttpStatusCode() {
-		return this.httpStatusCode;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setHttpStatusCode(Integer httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getErrorCode() {
+		return this.errorCode;
+	}
+
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
 	}
 
 	public String getErrorMessage() {
@@ -52,12 +60,12 @@ public class GetMetaTableIntroWikiResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
 	}
 
 	public Boolean getSuccess() {
@@ -66,14 +74,6 @@ public class GetMetaTableIntroWikiResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
-	}
-
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
 	}
 
 	public Data getData() {
@@ -86,17 +86,25 @@ public class GetMetaTableIntroWikiResponse extends AcsResponse {
 
 	public static class Data {
 
+		private Long createTime;
+
 		private Long modifiedTime;
 
-		private Long version;
+		private String creator;
 
-		private Long createTime;
+		private Long version;
 
 		private String creatorName;
 
 		private String content;
 
-		private String creator;
+		public Long getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(Long createTime) {
+			this.createTime = createTime;
+		}
 
 		public Long getModifiedTime() {
 			return this.modifiedTime;
@@ -106,20 +114,20 @@ public class GetMetaTableIntroWikiResponse extends AcsResponse {
 			this.modifiedTime = modifiedTime;
 		}
 
+		public String getCreator() {
+			return this.creator;
+		}
+
+		public void setCreator(String creator) {
+			this.creator = creator;
+		}
+
 		public Long getVersion() {
 			return this.version;
 		}
 
 		public void setVersion(Long version) {
 			this.version = version;
-		}
-
-		public Long getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(Long createTime) {
-			this.createTime = createTime;
 		}
 
 		public String getCreatorName() {
@@ -136,14 +144,6 @@ public class GetMetaTableIntroWikiResponse extends AcsResponse {
 
 		public void setContent(String content) {
 			this.content = content;
-		}
-
-		public String getCreator() {
-			return this.creator;
-		}
-
-		public void setCreator(String creator) {
-			this.creator = creator;
 		}
 	}
 

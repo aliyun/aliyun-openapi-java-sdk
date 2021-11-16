@@ -89,15 +89,23 @@ public class ListPermissionApplyOrdersResponse extends AcsResponse {
 
 		public static class Orders {
 
+			private String flowId;
+
 			private String applyBaseId;
 
 			private Long applyTimestamp;
 
-			private String flowId;
-
 			private Integer flowStatus;
 
 			private ApproveContent approveContent;
+
+			public String getFlowId() {
+				return this.flowId;
+			}
+
+			public void setFlowId(String flowId) {
+				this.flowId = flowId;
+			}
 
 			public String getApplyBaseId() {
 				return this.applyBaseId;
@@ -113,14 +121,6 @@ public class ListPermissionApplyOrdersResponse extends AcsResponse {
 
 			public void setApplyTimestamp(Long applyTimestamp) {
 				this.applyTimestamp = applyTimestamp;
-			}
-
-			public String getFlowId() {
-				return this.flowId;
-			}
-
-			public void setFlowId(String flowId) {
-				this.flowId = flowId;
 			}
 
 			public Integer getFlowStatus() {

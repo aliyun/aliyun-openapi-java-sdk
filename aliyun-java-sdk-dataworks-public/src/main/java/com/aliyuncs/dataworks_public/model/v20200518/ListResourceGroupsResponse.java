@@ -28,9 +28,9 @@ public class ListResourceGroupsResponse extends AcsResponse {
 
 	private Integer httpStatusCode;
 
-	private String requestId;
-
 	private Boolean success;
+
+	private String requestId;
 
 	private List<DataItem> data;
 
@@ -42,20 +42,20 @@ public class ListResourceGroupsResponse extends AcsResponse {
 		this.httpStatusCode = httpStatusCode;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public Boolean getSuccess() {
 		return this.success;
 	}
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<DataItem> getData() {
@@ -68,58 +68,42 @@ public class ListResourceGroupsResponse extends AcsResponse {
 
 	public static class DataItem {
 
-		private Integer status;
-
-		private String updateTime;
-
-		private Boolean isDefault;
+		private String identifier;
 
 		private String cluster;
 
+		private String bizExtKey;
+
 		private Boolean enableKp;
+
+		private String updateTime;
 
 		private String resourceGroupType;
 
-		private String createTime;
-
-		private String identifier;
-
 		private String mode;
-
-		private String bizExtKey;
 
 		private Integer sequence;
 
-		private Map<Object,Object> specs;
+		private Boolean isDefault;
+
+		private String createTime;
 
 		private String name;
 
-		private Long id;
-
 		private Long tenantId;
 
-		public Integer getStatus() {
-			return this.status;
+		private Long id;
+
+		private Integer status;
+
+		private Map<Object,Object> specs;
+
+		public String getIdentifier() {
+			return this.identifier;
 		}
 
-		public void setStatus(Integer status) {
-			this.status = status;
-		}
-
-		public String getUpdateTime() {
-			return this.updateTime;
-		}
-
-		public void setUpdateTime(String updateTime) {
-			this.updateTime = updateTime;
-		}
-
-		public Boolean getIsDefault() {
-			return this.isDefault;
-		}
-
-		public void setIsDefault(Boolean isDefault) {
-			this.isDefault = isDefault;
+		public void setIdentifier(String identifier) {
+			this.identifier = identifier;
 		}
 
 		public String getCluster() {
@@ -130,12 +114,28 @@ public class ListResourceGroupsResponse extends AcsResponse {
 			this.cluster = cluster;
 		}
 
+		public String getBizExtKey() {
+			return this.bizExtKey;
+		}
+
+		public void setBizExtKey(String bizExtKey) {
+			this.bizExtKey = bizExtKey;
+		}
+
 		public Boolean getEnableKp() {
 			return this.enableKp;
 		}
 
 		public void setEnableKp(Boolean enableKp) {
 			this.enableKp = enableKp;
+		}
+
+		public String getUpdateTime() {
+			return this.updateTime;
+		}
+
+		public void setUpdateTime(String updateTime) {
+			this.updateTime = updateTime;
 		}
 
 		public String getResourceGroupType() {
@@ -146,36 +146,12 @@ public class ListResourceGroupsResponse extends AcsResponse {
 			this.resourceGroupType = resourceGroupType;
 		}
 
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
-		}
-
-		public String getIdentifier() {
-			return this.identifier;
-		}
-
-		public void setIdentifier(String identifier) {
-			this.identifier = identifier;
-		}
-
 		public String getMode() {
 			return this.mode;
 		}
 
 		public void setMode(String mode) {
 			this.mode = mode;
-		}
-
-		public String getBizExtKey() {
-			return this.bizExtKey;
-		}
-
-		public void setBizExtKey(String bizExtKey) {
-			this.bizExtKey = bizExtKey;
 		}
 
 		public Integer getSequence() {
@@ -186,12 +162,20 @@ public class ListResourceGroupsResponse extends AcsResponse {
 			this.sequence = sequence;
 		}
 
-		public Map<Object,Object> getSpecs() {
-			return this.specs;
+		public Boolean getIsDefault() {
+			return this.isDefault;
 		}
 
-		public void setSpecs(Map<Object,Object> specs) {
-			this.specs = specs;
+		public void setIsDefault(Boolean isDefault) {
+			this.isDefault = isDefault;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
 		}
 
 		public String getName() {
@@ -202,6 +186,14 @@ public class ListResourceGroupsResponse extends AcsResponse {
 			this.name = name;
 		}
 
+		public Long getTenantId() {
+			return this.tenantId;
+		}
+
+		public void setTenantId(Long tenantId) {
+			this.tenantId = tenantId;
+		}
+
 		public Long getId() {
 			return this.id;
 		}
@@ -210,12 +202,20 @@ public class ListResourceGroupsResponse extends AcsResponse {
 			this.id = id;
 		}
 
-		public Long getTenantId() {
-			return this.tenantId;
+		public Integer getStatus() {
+			return this.status;
 		}
 
-		public void setTenantId(Long tenantId) {
-			this.tenantId = tenantId;
+		public void setStatus(Integer status) {
+			this.status = status;
+		}
+
+		public Map<Object,Object> getSpecs() {
+			return this.specs;
+		}
+
+		public void setSpecs(Map<Object,Object> specs) {
+			this.specs = specs;
 		}
 	}
 

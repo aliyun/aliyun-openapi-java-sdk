@@ -25,33 +25,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListFileVersionsResponse extends AcsResponse {
 
-	private Integer httpStatusCode;
-
-	private String errorMessage;
-
 	private String requestId;
-
-	private String errorCode;
 
 	private Boolean success;
 
+	private String errorCode;
+
+	private String errorMessage;
+
+	private Integer httpStatusCode;
+
 	private Data data;
-
-	public Integer getHttpStatusCode() {
-		return this.httpStatusCode;
-	}
-
-	public void setHttpStatusCode(Integer httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -59,6 +43,14 @@ public class ListFileVersionsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public String getErrorCode() {
@@ -69,12 +61,20 @@ public class ListFileVersionsResponse extends AcsResponse {
 		this.errorCode = errorCode;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getErrorMessage() {
+		return this.errorMessage;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
+	}
+
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
 	}
 
 	public Data getData() {
@@ -129,111 +129,31 @@ public class ListFileVersionsResponse extends AcsResponse {
 
 		public static class FileVersion {
 
-			private String fileContent;
-
-			private String status;
-
-			private Boolean isCurrentProd;
-
-			private String commitUser;
-
-			private String nodeContent;
-
-			private String comment;
-
-			private String filePropertyContent;
-
-			private String fileName;
-
-			private String useType;
-
-			private String changeType;
-
 			private Integer fileVersion;
+
+			private String fileContent;
 
 			private Long commitTime;
 
+			private String commitUser;
+
+			private String fileName;
+
+			private String status;
+
+			private String changeType;
+
+			private Boolean isCurrentProd;
+
 			private Long nodeId;
 
-			public String getFileContent() {
-				return this.fileContent;
-			}
+			private String comment;
 
-			public void setFileContent(String fileContent) {
-				this.fileContent = fileContent;
-			}
+			private String nodeContent;
 
-			public String getStatus() {
-				return this.status;
-			}
+			private String filePropertyContent;
 
-			public void setStatus(String status) {
-				this.status = status;
-			}
-
-			public Boolean getIsCurrentProd() {
-				return this.isCurrentProd;
-			}
-
-			public void setIsCurrentProd(Boolean isCurrentProd) {
-				this.isCurrentProd = isCurrentProd;
-			}
-
-			public String getCommitUser() {
-				return this.commitUser;
-			}
-
-			public void setCommitUser(String commitUser) {
-				this.commitUser = commitUser;
-			}
-
-			public String getNodeContent() {
-				return this.nodeContent;
-			}
-
-			public void setNodeContent(String nodeContent) {
-				this.nodeContent = nodeContent;
-			}
-
-			public String getComment() {
-				return this.comment;
-			}
-
-			public void setComment(String comment) {
-				this.comment = comment;
-			}
-
-			public String getFilePropertyContent() {
-				return this.filePropertyContent;
-			}
-
-			public void setFilePropertyContent(String filePropertyContent) {
-				this.filePropertyContent = filePropertyContent;
-			}
-
-			public String getFileName() {
-				return this.fileName;
-			}
-
-			public void setFileName(String fileName) {
-				this.fileName = fileName;
-			}
-
-			public String getUseType() {
-				return this.useType;
-			}
-
-			public void setUseType(String useType) {
-				this.useType = useType;
-			}
-
-			public String getChangeType() {
-				return this.changeType;
-			}
-
-			public void setChangeType(String changeType) {
-				this.changeType = changeType;
-			}
+			private String useType;
 
 			public Integer getFileVersion() {
 				return this.fileVersion;
@@ -241,6 +161,14 @@ public class ListFileVersionsResponse extends AcsResponse {
 
 			public void setFileVersion(Integer fileVersion) {
 				this.fileVersion = fileVersion;
+			}
+
+			public String getFileContent() {
+				return this.fileContent;
+			}
+
+			public void setFileContent(String fileContent) {
+				this.fileContent = fileContent;
 			}
 
 			public Long getCommitTime() {
@@ -251,12 +179,84 @@ public class ListFileVersionsResponse extends AcsResponse {
 				this.commitTime = commitTime;
 			}
 
+			public String getCommitUser() {
+				return this.commitUser;
+			}
+
+			public void setCommitUser(String commitUser) {
+				this.commitUser = commitUser;
+			}
+
+			public String getFileName() {
+				return this.fileName;
+			}
+
+			public void setFileName(String fileName) {
+				this.fileName = fileName;
+			}
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
+			}
+
+			public String getChangeType() {
+				return this.changeType;
+			}
+
+			public void setChangeType(String changeType) {
+				this.changeType = changeType;
+			}
+
+			public Boolean getIsCurrentProd() {
+				return this.isCurrentProd;
+			}
+
+			public void setIsCurrentProd(Boolean isCurrentProd) {
+				this.isCurrentProd = isCurrentProd;
+			}
+
 			public Long getNodeId() {
 				return this.nodeId;
 			}
 
 			public void setNodeId(Long nodeId) {
 				this.nodeId = nodeId;
+			}
+
+			public String getComment() {
+				return this.comment;
+			}
+
+			public void setComment(String comment) {
+				this.comment = comment;
+			}
+
+			public String getNodeContent() {
+				return this.nodeContent;
+			}
+
+			public void setNodeContent(String nodeContent) {
+				this.nodeContent = nodeContent;
+			}
+
+			public String getFilePropertyContent() {
+				return this.filePropertyContent;
+			}
+
+			public void setFilePropertyContent(String filePropertyContent) {
+				this.filePropertyContent = filePropertyContent;
+			}
+
+			public String getUseType() {
+				return this.useType;
+			}
+
+			public void setUseType(String useType) {
+				this.useType = useType;
 			}
 		}
 	}

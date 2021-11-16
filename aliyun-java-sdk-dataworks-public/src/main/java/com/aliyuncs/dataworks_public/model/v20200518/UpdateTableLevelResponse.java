@@ -24,25 +24,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class UpdateTableLevelResponse extends AcsResponse {
 
-	private Integer httpStatusCode;
-
 	private String requestId;
-
-	private String errorMessage;
-
-	private Boolean updateResult;
 
 	private String errorCode;
 
+	private String errorMessage;
+
+	private Integer httpStatusCode;
+
 	private Boolean success;
 
-	public Integer getHttpStatusCode() {
-		return this.httpStatusCode;
-	}
-
-	public void setHttpStatusCode(Integer httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
-	}
+	private Boolean updateResult;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -50,22 +42,6 @@ public class UpdateTableLevelResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
-
-	public Boolean getUpdateResult() {
-		return this.updateResult;
-	}
-
-	public void setUpdateResult(Boolean updateResult) {
-		this.updateResult = updateResult;
 	}
 
 	public String getErrorCode() {
@@ -76,12 +52,36 @@ public class UpdateTableLevelResponse extends AcsResponse {
 		this.errorCode = errorCode;
 	}
 
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
+	}
+
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
+	}
+
 	public Boolean getSuccess() {
 		return this.success;
 	}
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public Boolean getUpdateResult() {
+		return this.updateResult;
+	}
+
+	public void setUpdateResult(Boolean updateResult) {
+		this.updateResult = updateResult;
 	}
 
 	@Override

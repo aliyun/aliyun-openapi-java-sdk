@@ -26,10 +26,10 @@ public class UpdateTableAddColumnResponseUnmarshaller {
 		updateTableAddColumnResponse.setRequestId(_ctx.stringValue("UpdateTableAddColumnResponse.RequestId"));
 
 		TaskInfo taskInfo = new TaskInfo();
-		taskInfo.setStatus(_ctx.stringValue("UpdateTableAddColumnResponse.TaskInfo.Status"));
-		taskInfo.setNextTaskId(_ctx.stringValue("UpdateTableAddColumnResponse.TaskInfo.NextTaskId"));
 		taskInfo.setTaskId(_ctx.stringValue("UpdateTableAddColumnResponse.TaskInfo.TaskId"));
 		taskInfo.setContent(_ctx.stringValue("UpdateTableAddColumnResponse.TaskInfo.Content"));
+		taskInfo.setStatus(_ctx.stringValue("UpdateTableAddColumnResponse.TaskInfo.Status"));
+		taskInfo.setNextTaskId(_ctx.stringValue("UpdateTableAddColumnResponse.TaskInfo.NextTaskId"));
 		updateTableAddColumnResponse.setTaskInfo(taskInfo);
 	 
 	 	return updateTableAddColumnResponse;

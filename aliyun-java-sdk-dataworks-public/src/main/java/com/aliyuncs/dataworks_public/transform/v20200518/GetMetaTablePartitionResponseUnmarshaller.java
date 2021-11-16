@@ -28,10 +28,10 @@ public class GetMetaTablePartitionResponseUnmarshaller {
 	public static GetMetaTablePartitionResponse unmarshall(GetMetaTablePartitionResponse getMetaTablePartitionResponse, UnmarshallerContext _ctx) {
 		
 		getMetaTablePartitionResponse.setRequestId(_ctx.stringValue("GetMetaTablePartitionResponse.RequestId"));
-		getMetaTablePartitionResponse.setHttpStatusCode(_ctx.integerValue("GetMetaTablePartitionResponse.HttpStatusCode"));
-		getMetaTablePartitionResponse.setErrorMessage(_ctx.stringValue("GetMetaTablePartitionResponse.ErrorMessage"));
-		getMetaTablePartitionResponse.setSuccess(_ctx.booleanValue("GetMetaTablePartitionResponse.Success"));
 		getMetaTablePartitionResponse.setErrorCode(_ctx.stringValue("GetMetaTablePartitionResponse.ErrorCode"));
+		getMetaTablePartitionResponse.setErrorMessage(_ctx.stringValue("GetMetaTablePartitionResponse.ErrorMessage"));
+		getMetaTablePartitionResponse.setHttpStatusCode(_ctx.integerValue("GetMetaTablePartitionResponse.HttpStatusCode"));
+		getMetaTablePartitionResponse.setSuccess(_ctx.booleanValue("GetMetaTablePartitionResponse.Success"));
 
 		Data data = new Data();
 		data.setPageNumber(_ctx.integerValue("GetMetaTablePartitionResponse.Data.PageNumber"));
@@ -41,17 +41,17 @@ public class GetMetaTablePartitionResponseUnmarshaller {
 		List<DataEntityListItem> dataEntityList = new ArrayList<DataEntityListItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetMetaTablePartitionResponse.Data.DataEntityList.Length"); i++) {
 			DataEntityListItem dataEntityListItem = new DataEntityListItem();
-			dataEntityListItem.setPartitionPath(_ctx.stringValue("GetMetaTablePartitionResponse.Data.DataEntityList["+ i +"].PartitionPath"));
-			dataEntityListItem.setDataSize(_ctx.longValue("GetMetaTablePartitionResponse.Data.DataEntityList["+ i +"].DataSize"));
-			dataEntityListItem.setPartitionName(_ctx.stringValue("GetMetaTablePartitionResponse.Data.DataEntityList["+ i +"].PartitionName"));
-			dataEntityListItem.setComment(_ctx.stringValue("GetMetaTablePartitionResponse.Data.DataEntityList["+ i +"].Comment"));
-			dataEntityListItem.setModifiedTime(_ctx.longValue("GetMetaTablePartitionResponse.Data.DataEntityList["+ i +"].ModifiedTime"));
-			dataEntityListItem.setCreateTime(_ctx.longValue("GetMetaTablePartitionResponse.Data.DataEntityList["+ i +"].CreateTime"));
-			dataEntityListItem.setRecordCount(_ctx.longValue("GetMetaTablePartitionResponse.Data.DataEntityList["+ i +"].RecordCount"));
-			dataEntityListItem.setPartitionType(_ctx.stringValue("GetMetaTablePartitionResponse.Data.DataEntityList["+ i +"].PartitionType"));
 			dataEntityListItem.setPartitionGuid(_ctx.stringValue("GetMetaTablePartitionResponse.Data.DataEntityList["+ i +"].PartitionGuid"));
-			dataEntityListItem.setPartitionLocation(_ctx.stringValue("GetMetaTablePartitionResponse.Data.DataEntityList["+ i +"].PartitionLocation"));
+			dataEntityListItem.setPartitionName(_ctx.stringValue("GetMetaTablePartitionResponse.Data.DataEntityList["+ i +"].PartitionName"));
+			dataEntityListItem.setCreateTime(_ctx.longValue("GetMetaTablePartitionResponse.Data.DataEntityList["+ i +"].CreateTime"));
+			dataEntityListItem.setDataSize(_ctx.longValue("GetMetaTablePartitionResponse.Data.DataEntityList["+ i +"].DataSize"));
+			dataEntityListItem.setRecordCount(_ctx.longValue("GetMetaTablePartitionResponse.Data.DataEntityList["+ i +"].RecordCount"));
+			dataEntityListItem.setModifiedTime(_ctx.longValue("GetMetaTablePartitionResponse.Data.DataEntityList["+ i +"].ModifiedTime"));
 			dataEntityListItem.setTableGuid(_ctx.stringValue("GetMetaTablePartitionResponse.Data.DataEntityList["+ i +"].TableGuid"));
+			dataEntityListItem.setComment(_ctx.stringValue("GetMetaTablePartitionResponse.Data.DataEntityList["+ i +"].Comment"));
+			dataEntityListItem.setPartitionType(_ctx.stringValue("GetMetaTablePartitionResponse.Data.DataEntityList["+ i +"].PartitionType"));
+			dataEntityListItem.setPartitionPath(_ctx.stringValue("GetMetaTablePartitionResponse.Data.DataEntityList["+ i +"].PartitionPath"));
+			dataEntityListItem.setPartitionLocation(_ctx.stringValue("GetMetaTablePartitionResponse.Data.DataEntityList["+ i +"].PartitionLocation"));
 
 			dataEntityList.add(dataEntityListItem);
 		}

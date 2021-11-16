@@ -23,11 +23,11 @@ public class CreateQualityFollowerResponseUnmarshaller {
 	public static CreateQualityFollowerResponse unmarshall(CreateQualityFollowerResponse createQualityFollowerResponse, UnmarshallerContext _ctx) {
 		
 		createQualityFollowerResponse.setRequestId(_ctx.stringValue("CreateQualityFollowerResponse.RequestId"));
-		createQualityFollowerResponse.setHttpStatusCode(_ctx.integerValue("CreateQualityFollowerResponse.HttpStatusCode"));
-		createQualityFollowerResponse.setData(_ctx.integerValue("CreateQualityFollowerResponse.Data"));
-		createQualityFollowerResponse.setErrorMessage(_ctx.stringValue("CreateQualityFollowerResponse.ErrorMessage"));
 		createQualityFollowerResponse.setErrorCode(_ctx.stringValue("CreateQualityFollowerResponse.ErrorCode"));
+		createQualityFollowerResponse.setData(_ctx.integerValue("CreateQualityFollowerResponse.Data"));
 		createQualityFollowerResponse.setSuccess(_ctx.booleanValue("CreateQualityFollowerResponse.Success"));
+		createQualityFollowerResponse.setErrorMessage(_ctx.stringValue("CreateQualityFollowerResponse.ErrorMessage"));
+		createQualityFollowerResponse.setHttpStatusCode(_ctx.integerValue("CreateQualityFollowerResponse.HttpStatusCode"));
 	 
 	 	return createQualityFollowerResponse;
 	}

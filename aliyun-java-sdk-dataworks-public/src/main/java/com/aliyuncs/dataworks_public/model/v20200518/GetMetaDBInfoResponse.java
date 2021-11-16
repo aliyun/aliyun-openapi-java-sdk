@@ -46,37 +46,133 @@ public class GetMetaDBInfoResponse extends AcsResponse {
 
 	public static class Data {
 
+		private String appGuid;
+
+		private Long tenantId;
+
+		private String endpoint;
+
+		private Long projectId;
+
+		private Integer envType;
+
+		private String projectName;
+
+		private String projectNameCn;
+
+		private Long createTime;
+
+		private Long modifyTime;
+
+		private String ownerId;
+
+		private String ownerName;
+
+		private String name;
+
 		private String type;
 
 		private String comment;
 
-		private Long createTime;
-
-		private Long projectId;
-
-		private String projectName;
-
-		private String appGuid;
-
-		private String ownerName;
-
-		private String ownerId;
-
-		private Integer envType;
-
-		private String projectNameCn;
-
-		private String endpoint;
+		private String location;
 
 		private String clusterBizId;
 
-		private String name;
+		public String getAppGuid() {
+			return this.appGuid;
+		}
 
-		private String location;
+		public void setAppGuid(String appGuid) {
+			this.appGuid = appGuid;
+		}
 
-		private Long tenantId;
+		public Long getTenantId() {
+			return this.tenantId;
+		}
 
-		private Long modifyTime;
+		public void setTenantId(Long tenantId) {
+			this.tenantId = tenantId;
+		}
+
+		public String getEndpoint() {
+			return this.endpoint;
+		}
+
+		public void setEndpoint(String endpoint) {
+			this.endpoint = endpoint;
+		}
+
+		public Long getProjectId() {
+			return this.projectId;
+		}
+
+		public void setProjectId(Long projectId) {
+			this.projectId = projectId;
+		}
+
+		public Integer getEnvType() {
+			return this.envType;
+		}
+
+		public void setEnvType(Integer envType) {
+			this.envType = envType;
+		}
+
+		public String getProjectName() {
+			return this.projectName;
+		}
+
+		public void setProjectName(String projectName) {
+			this.projectName = projectName;
+		}
+
+		public String getProjectNameCn() {
+			return this.projectNameCn;
+		}
+
+		public void setProjectNameCn(String projectNameCn) {
+			this.projectNameCn = projectNameCn;
+		}
+
+		public Long getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(Long createTime) {
+			this.createTime = createTime;
+		}
+
+		public Long getModifyTime() {
+			return this.modifyTime;
+		}
+
+		public void setModifyTime(Long modifyTime) {
+			this.modifyTime = modifyTime;
+		}
+
+		public String getOwnerId() {
+			return this.ownerId;
+		}
+
+		public void setOwnerId(String ownerId) {
+			this.ownerId = ownerId;
+		}
+
+		public String getOwnerName() {
+			return this.ownerName;
+		}
+
+		public void setOwnerName(String ownerName) {
+			this.ownerName = ownerName;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
 
 		public String getType() {
 			return this.type;
@@ -94,94 +190,6 @@ public class GetMetaDBInfoResponse extends AcsResponse {
 			this.comment = comment;
 		}
 
-		public Long getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(Long createTime) {
-			this.createTime = createTime;
-		}
-
-		public Long getProjectId() {
-			return this.projectId;
-		}
-
-		public void setProjectId(Long projectId) {
-			this.projectId = projectId;
-		}
-
-		public String getProjectName() {
-			return this.projectName;
-		}
-
-		public void setProjectName(String projectName) {
-			this.projectName = projectName;
-		}
-
-		public String getAppGuid() {
-			return this.appGuid;
-		}
-
-		public void setAppGuid(String appGuid) {
-			this.appGuid = appGuid;
-		}
-
-		public String getOwnerName() {
-			return this.ownerName;
-		}
-
-		public void setOwnerName(String ownerName) {
-			this.ownerName = ownerName;
-		}
-
-		public String getOwnerId() {
-			return this.ownerId;
-		}
-
-		public void setOwnerId(String ownerId) {
-			this.ownerId = ownerId;
-		}
-
-		public Integer getEnvType() {
-			return this.envType;
-		}
-
-		public void setEnvType(Integer envType) {
-			this.envType = envType;
-		}
-
-		public String getProjectNameCn() {
-			return this.projectNameCn;
-		}
-
-		public void setProjectNameCn(String projectNameCn) {
-			this.projectNameCn = projectNameCn;
-		}
-
-		public String getEndpoint() {
-			return this.endpoint;
-		}
-
-		public void setEndpoint(String endpoint) {
-			this.endpoint = endpoint;
-		}
-
-		public String getClusterBizId() {
-			return this.clusterBizId;
-		}
-
-		public void setClusterBizId(String clusterBizId) {
-			this.clusterBizId = clusterBizId;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
 		public String getLocation() {
 			return this.location;
 		}
@@ -190,20 +198,12 @@ public class GetMetaDBInfoResponse extends AcsResponse {
 			this.location = location;
 		}
 
-		public Long getTenantId() {
-			return this.tenantId;
+		public String getClusterBizId() {
+			return this.clusterBizId;
 		}
 
-		public void setTenantId(Long tenantId) {
-			this.tenantId = tenantId;
-		}
-
-		public Long getModifyTime() {
-			return this.modifyTime;
-		}
-
-		public void setModifyTime(Long modifyTime) {
-			this.modifyTime = modifyTime;
+		public void setClusterBizId(String clusterBizId) {
+			this.clusterBizId = clusterBizId;
 		}
 	}
 

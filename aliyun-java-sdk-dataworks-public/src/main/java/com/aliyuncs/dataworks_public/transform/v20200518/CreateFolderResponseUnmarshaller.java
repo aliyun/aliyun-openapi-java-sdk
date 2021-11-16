@@ -23,11 +23,11 @@ public class CreateFolderResponseUnmarshaller {
 	public static CreateFolderResponse unmarshall(CreateFolderResponse createFolderResponse, UnmarshallerContext _ctx) {
 		
 		createFolderResponse.setRequestId(_ctx.stringValue("CreateFolderResponse.RequestId"));
-		createFolderResponse.setHttpStatusCode(_ctx.integerValue("CreateFolderResponse.HttpStatusCode"));
-		createFolderResponse.setData(_ctx.stringValue("CreateFolderResponse.Data"));
-		createFolderResponse.setErrorMessage(_ctx.stringValue("CreateFolderResponse.ErrorMessage"));
 		createFolderResponse.setSuccess(_ctx.booleanValue("CreateFolderResponse.Success"));
 		createFolderResponse.setErrorCode(_ctx.stringValue("CreateFolderResponse.ErrorCode"));
+		createFolderResponse.setErrorMessage(_ctx.stringValue("CreateFolderResponse.ErrorMessage"));
+		createFolderResponse.setData(_ctx.stringValue("CreateFolderResponse.Data"));
+		createFolderResponse.setHttpStatusCode(_ctx.integerValue("CreateFolderResponse.HttpStatusCode"));
 	 
 	 	return createFolderResponse;
 	}

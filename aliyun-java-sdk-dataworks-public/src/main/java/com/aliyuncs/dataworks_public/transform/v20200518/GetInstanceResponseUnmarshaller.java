@@ -57,6 +57,7 @@ public class GetInstanceResponseUnmarshaller {
 		data.setBeginWaitTimeTime(_ctx.longValue("GetInstanceResponse.Data.BeginWaitTimeTime"));
 		data.setDqcDescription(_ctx.stringValue("GetInstanceResponse.Data.DqcDescription"));
 		data.setNodeId(_ctx.longValue("GetInstanceResponse.Data.NodeId"));
+		data.setCreateUser(_ctx.stringValue("GetInstanceResponse.Data.CreateUser"));
 		getInstanceResponse.setData(data);
 	 
 	 	return getInstanceResponse;

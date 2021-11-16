@@ -25,17 +25,41 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListNodesByBaselineResponse extends AcsResponse {
 
+	private String success;
+
+	private String errorCode;
+
+	private String errorMessage;
+
 	private Integer httpStatusCode;
 
 	private String requestId;
 
-	private String errorMessage;
-
-	private String errorCode;
-
-	private String success;
-
 	private List<DataItem> data;
+
+	public String getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(String success) {
+		this.success = success;
+	}
+
+	public String getErrorCode() {
+		return this.errorCode;
+	}
+
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
 
 	public Integer getHttpStatusCode() {
 		return this.httpStatusCode;
@@ -53,30 +77,6 @@ public class ListNodesByBaselineResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
-
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
-	}
-
-	public String getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(String success) {
-		this.success = success;
-	}
-
 	public List<DataItem> getData() {
 		return this.data;
 	}
@@ -87,20 +87,20 @@ public class ListNodesByBaselineResponse extends AcsResponse {
 
 	public static class DataItem {
 
-		private String owner;
+		private Long nodeId;
 
 		private String nodeName;
 
-		private Long nodeId;
+		private String owner;
 
 		private Long projectId;
 
-		public String getOwner() {
-			return this.owner;
+		public Long getNodeId() {
+			return this.nodeId;
 		}
 
-		public void setOwner(String owner) {
-			this.owner = owner;
+		public void setNodeId(Long nodeId) {
+			this.nodeId = nodeId;
 		}
 
 		public String getNodeName() {
@@ -111,12 +111,12 @@ public class ListNodesByBaselineResponse extends AcsResponse {
 			this.nodeName = nodeName;
 		}
 
-		public Long getNodeId() {
-			return this.nodeId;
+		public String getOwner() {
+			return this.owner;
 		}
 
-		public void setNodeId(Long nodeId) {
-			this.nodeId = nodeId;
+		public void setOwner(String owner) {
+			this.owner = owner;
 		}
 
 		public Long getProjectId() {

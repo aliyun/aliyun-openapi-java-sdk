@@ -25,17 +25,41 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetQualityEntityResponse extends AcsResponse {
 
+	private Boolean success;
+
+	private String errorCode;
+
+	private String errorMessage;
+
 	private Integer httpStatusCode;
 
 	private String requestId;
 
-	private String errorMessage;
-
-	private String errorCode;
-
-	private Boolean success;
-
 	private List<EntityDto> data;
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
+	public String getErrorCode() {
+		return this.errorCode;
+	}
+
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
 
 	public Integer getHttpStatusCode() {
 		return this.httpStatusCode;
@@ -53,30 +77,6 @@ public class GetQualityEntityResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
-
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
 	public List<EntityDto> getData() {
 		return this.data;
 	}
@@ -87,37 +87,149 @@ public class GetQualityEntityResponse extends AcsResponse {
 
 	public static class EntityDto {
 
+		private Long id;
+
+		private String projectName;
+
+		private String tableName;
+
+		private String envType;
+
+		private String matchExpression;
+
+		private Integer entityLevel;
+
+		private String onDuty;
+
+		private String modifyUser;
+
+		private Long createTime;
+
+		private Long modifyTime;
+
+		private Integer sql;
+
+		private Integer task;
+
+		private String followers;
+
+		private Boolean hasRelativeNode;
+
 		private String relativeNode;
 
 		private String onDutyAccountName;
 
-		private Integer task;
+		public Long getId() {
+			return this.id;
+		}
 
-		private String tableName;
+		public void setId(Long id) {
+			this.id = id;
+		}
 
-		private String followers;
+		public String getProjectName() {
+			return this.projectName;
+		}
 
-		private String onDuty;
+		public void setProjectName(String projectName) {
+			this.projectName = projectName;
+		}
 
-		private String matchExpression;
+		public String getTableName() {
+			return this.tableName;
+		}
 
-		private Long createTime;
+		public void setTableName(String tableName) {
+			this.tableName = tableName;
+		}
 
-		private String projectName;
+		public String getEnvType() {
+			return this.envType;
+		}
 
-		private Boolean hasRelativeNode;
+		public void setEnvType(String envType) {
+			this.envType = envType;
+		}
 
-		private String envType;
+		public String getMatchExpression() {
+			return this.matchExpression;
+		}
 
-		private Integer entityLevel;
+		public void setMatchExpression(String matchExpression) {
+			this.matchExpression = matchExpression;
+		}
 
-		private String modifyUser;
+		public Integer getEntityLevel() {
+			return this.entityLevel;
+		}
 
-		private Integer sql;
+		public void setEntityLevel(Integer entityLevel) {
+			this.entityLevel = entityLevel;
+		}
 
-		private Long id;
+		public String getOnDuty() {
+			return this.onDuty;
+		}
 
-		private Long modifyTime;
+		public void setOnDuty(String onDuty) {
+			this.onDuty = onDuty;
+		}
+
+		public String getModifyUser() {
+			return this.modifyUser;
+		}
+
+		public void setModifyUser(String modifyUser) {
+			this.modifyUser = modifyUser;
+		}
+
+		public Long getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(Long createTime) {
+			this.createTime = createTime;
+		}
+
+		public Long getModifyTime() {
+			return this.modifyTime;
+		}
+
+		public void setModifyTime(Long modifyTime) {
+			this.modifyTime = modifyTime;
+		}
+
+		public Integer getSql() {
+			return this.sql;
+		}
+
+		public void setSql(Integer sql) {
+			this.sql = sql;
+		}
+
+		public Integer getTask() {
+			return this.task;
+		}
+
+		public void setTask(Integer task) {
+			this.task = task;
+		}
+
+		public String getFollowers() {
+			return this.followers;
+		}
+
+		public void setFollowers(String followers) {
+			this.followers = followers;
+		}
+
+		public Boolean getHasRelativeNode() {
+			return this.hasRelativeNode;
+		}
+
+		public void setHasRelativeNode(Boolean hasRelativeNode) {
+			this.hasRelativeNode = hasRelativeNode;
+		}
 
 		public String getRelativeNode() {
 			return this.relativeNode;
@@ -133,118 +245,6 @@ public class GetQualityEntityResponse extends AcsResponse {
 
 		public void setOnDutyAccountName(String onDutyAccountName) {
 			this.onDutyAccountName = onDutyAccountName;
-		}
-
-		public Integer getTask() {
-			return this.task;
-		}
-
-		public void setTask(Integer task) {
-			this.task = task;
-		}
-
-		public String getTableName() {
-			return this.tableName;
-		}
-
-		public void setTableName(String tableName) {
-			this.tableName = tableName;
-		}
-
-		public String getFollowers() {
-			return this.followers;
-		}
-
-		public void setFollowers(String followers) {
-			this.followers = followers;
-		}
-
-		public String getOnDuty() {
-			return this.onDuty;
-		}
-
-		public void setOnDuty(String onDuty) {
-			this.onDuty = onDuty;
-		}
-
-		public String getMatchExpression() {
-			return this.matchExpression;
-		}
-
-		public void setMatchExpression(String matchExpression) {
-			this.matchExpression = matchExpression;
-		}
-
-		public Long getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(Long createTime) {
-			this.createTime = createTime;
-		}
-
-		public String getProjectName() {
-			return this.projectName;
-		}
-
-		public void setProjectName(String projectName) {
-			this.projectName = projectName;
-		}
-
-		public Boolean getHasRelativeNode() {
-			return this.hasRelativeNode;
-		}
-
-		public void setHasRelativeNode(Boolean hasRelativeNode) {
-			this.hasRelativeNode = hasRelativeNode;
-		}
-
-		public String getEnvType() {
-			return this.envType;
-		}
-
-		public void setEnvType(String envType) {
-			this.envType = envType;
-		}
-
-		public Integer getEntityLevel() {
-			return this.entityLevel;
-		}
-
-		public void setEntityLevel(Integer entityLevel) {
-			this.entityLevel = entityLevel;
-		}
-
-		public String getModifyUser() {
-			return this.modifyUser;
-		}
-
-		public void setModifyUser(String modifyUser) {
-			this.modifyUser = modifyUser;
-		}
-
-		public Integer getSql() {
-			return this.sql;
-		}
-
-		public void setSql(Integer sql) {
-			this.sql = sql;
-		}
-
-		public Long getId() {
-			return this.id;
-		}
-
-		public void setId(Long id) {
-			this.id = id;
-		}
-
-		public Long getModifyTime() {
-			return this.modifyTime;
-		}
-
-		public void setModifyTime(Long modifyTime) {
-			this.modifyTime = modifyTime;
 		}
 	}
 

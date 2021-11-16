@@ -31,23 +31,23 @@ public class GetProjectDetailResponseUnmarshaller {
 		getProjectDetailResponse.setSuccess(_ctx.booleanValue("GetProjectDetailResponse.Success"));
 
 		Data data = new Data();
-		data.setStatus(_ctx.integerValue("GetProjectDetailResponse.Data.Status"));
-		data.setResidentArea(_ctx.stringValue("GetProjectDetailResponse.Data.ResidentArea"));
-		data.setProjectId(_ctx.integerValue("GetProjectDetailResponse.Data.ProjectId"));
-		data.setProjectIdentifier(_ctx.stringValue("GetProjectDetailResponse.Data.ProjectIdentifier"));
-		data.setProjectName(_ctx.stringValue("GetProjectDetailResponse.Data.ProjectName"));
-		data.setIsAllowDownload(_ctx.integerValue("GetProjectDetailResponse.Data.IsAllowDownload"));
-		data.setProjectMode(_ctx.integerValue("GetProjectDetailResponse.Data.ProjectMode"));
-		data.setProjectDescription(_ctx.stringValue("GetProjectDetailResponse.Data.ProjectDescription"));
 		data.setGmtModified(_ctx.stringValue("GetProjectDetailResponse.Data.GmtModified"));
-		data.setProjectOwnerBaseId(_ctx.stringValue("GetProjectDetailResponse.Data.ProjectOwnerBaseId"));
-		data.setDevelopmentType(_ctx.integerValue("GetProjectDetailResponse.Data.DevelopmentType"));
 		data.setDefaultDiResourceGroupIdentifier(_ctx.stringValue("GetProjectDetailResponse.Data.DefaultDiResourceGroupIdentifier"));
+		data.setIsAllowDownload(_ctx.integerValue("GetProjectDetailResponse.Data.IsAllowDownload"));
+		data.setSchedulerRetryInterval(_ctx.integerValue("GetProjectDetailResponse.Data.SchedulerRetryInterval"));
+		data.setResidentArea(_ctx.stringValue("GetProjectDetailResponse.Data.ResidentArea"));
+		data.setProjectOwnerBaseId(_ctx.stringValue("GetProjectDetailResponse.Data.ProjectOwnerBaseId"));
+		data.setProjectMode(_ctx.integerValue("GetProjectDetailResponse.Data.ProjectMode"));
 		data.setGmtCreate(_ctx.stringValue("GetProjectDetailResponse.Data.GmtCreate"));
-		data.setSchedulerMaxRetryTimes(_ctx.integerValue("GetProjectDetailResponse.Data.SchedulerMaxRetryTimes"));
 		data.setProtectedMode(_ctx.integerValue("GetProjectDetailResponse.Data.ProtectedMode"));
 		data.setTenantId(_ctx.longValue("GetProjectDetailResponse.Data.TenantId"));
-		data.setSchedulerRetryInterval(_ctx.integerValue("GetProjectDetailResponse.Data.SchedulerRetryInterval"));
+		data.setProjectDescription(_ctx.stringValue("GetProjectDetailResponse.Data.ProjectDescription"));
+		data.setSchedulerMaxRetryTimes(_ctx.integerValue("GetProjectDetailResponse.Data.SchedulerMaxRetryTimes"));
+		data.setProjectName(_ctx.stringValue("GetProjectDetailResponse.Data.ProjectName"));
+		data.setProjectIdentifier(_ctx.stringValue("GetProjectDetailResponse.Data.ProjectIdentifier"));
+		data.setProjectId(_ctx.integerValue("GetProjectDetailResponse.Data.ProjectId"));
+		data.setStatus(_ctx.integerValue("GetProjectDetailResponse.Data.Status"));
+		data.setDevelopmentType(_ctx.integerValue("GetProjectDetailResponse.Data.DevelopmentType"));
 
 		List<String> envTypes = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("GetProjectDetailResponse.Data.EnvTypes.Length"); i++) {
