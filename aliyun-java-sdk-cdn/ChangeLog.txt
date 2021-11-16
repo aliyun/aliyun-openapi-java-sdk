@@ -1,3 +1,6 @@
+2021-11-16 Version: 3.6.8
+- Update SetCdnDomainSMCertificate.
+
 2021-11-05 Version: 3.6.7
 - Add SetCdnDomainSMCertificate.
 
