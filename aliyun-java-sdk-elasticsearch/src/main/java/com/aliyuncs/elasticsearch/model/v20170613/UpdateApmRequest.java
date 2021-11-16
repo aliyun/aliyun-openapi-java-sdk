@@ -25,17 +25,9 @@ import com.aliyuncs.elasticsearch.Endpoint;
 public class UpdateApmRequest extends RoaAcsRequest<UpdateApmResponse> {
 	   
 
-	private String outputES;
-
-	private String outputESPassword;
-
 	private String instanceId;
 
-	private String yml;
-
-	private String outputESUserName;
-
-	private String token;
+	private String body;
 	public UpdateApmRequest() {
 		super("elasticsearch", "2017-06-13", "UpdateApm", "elasticsearch");
 		setUriPattern("/openapi/apm/[instanceId]");
@@ -44,28 +36,6 @@ public class UpdateApmRequest extends RoaAcsRequest<UpdateApmResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getOutputES() {
-		return this.outputES;
-	}
-
-	public void setOutputES(String outputES) {
-		this.outputES = outputES;
-		if(outputES != null){
-			putQueryParameter("outputES", outputES);
-		}
-	}
-
-	public String getOutputESPassword() {
-		return this.outputESPassword;
-	}
-
-	public void setOutputESPassword(String outputESPassword) {
-		this.outputESPassword = outputESPassword;
-		if(outputESPassword != null){
-			putQueryParameter("outputESPassword", outputESPassword);
-		}
 	}
 
 	public String getInstanceId() {
@@ -79,36 +49,14 @@ public class UpdateApmRequest extends RoaAcsRequest<UpdateApmResponse> {
 		}
 	}
 
-	public String getYml() {
-		return this.yml;
+	public String getBody() {
+		return this.body;
 	}
 
-	public void setYml(String yml) {
-		this.yml = yml;
-		if(yml != null){
-			putQueryParameter("yml", yml);
-		}
-	}
-
-	public String getOutputESUserName() {
-		return this.outputESUserName;
-	}
-
-	public void setOutputESUserName(String outputESUserName) {
-		this.outputESUserName = outputESUserName;
-		if(outputESUserName != null){
-			putQueryParameter("outputESUserName", outputESUserName);
-		}
-	}
-
-	public String getToken() {
-		return this.token;
-	}
-
-	public void setToken(String token) {
-		this.token = token;
-		if(token != null){
-			putQueryParameter("token", token);
+	public void setBody(String body) {
+		this.body = body;
+		if(body != null){
+			putBodyParameter("body", body);
 		}
 	}
 
