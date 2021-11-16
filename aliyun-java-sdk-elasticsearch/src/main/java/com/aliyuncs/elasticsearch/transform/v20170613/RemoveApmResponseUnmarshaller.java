@@ -22,7 +22,8 @@ public class RemoveApmResponseUnmarshaller {
 
 	public static RemoveApmResponse unmarshall(RemoveApmResponse removeApmResponse, UnmarshallerContext _ctx) {
 		
-		removeApmResponse.setRequestId(_ctx.stringValue("RemoveApmResponse.requestId"));
+		removeApmResponse.setRequestId(_ctx.stringValue("RemoveApmResponse.RequestId"));
+		removeApmResponse.setResult(_ctx.booleanValue("RemoveApmResponse.Result"));
 	 
 	 	return removeApmResponse;
 	}

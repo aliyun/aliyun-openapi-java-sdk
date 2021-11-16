@@ -22,7 +22,8 @@ public class UpdateApmResponseUnmarshaller {
 
 	public static UpdateApmResponse unmarshall(UpdateApmResponse updateApmResponse, UnmarshallerContext _ctx) {
 		
-		updateApmResponse.setRequestId(_ctx.stringValue("UpdateApmResponse.requestId"));
+		updateApmResponse.setRequestId(_ctx.stringValue("UpdateApmResponse.RequestId"));
+		updateApmResponse.setResult(_ctx.booleanValue("UpdateApmResponse.Result"));
 	 
 	 	return updateApmResponse;
 	}

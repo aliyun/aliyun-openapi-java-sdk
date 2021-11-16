@@ -14,19 +14,22 @@
 
 package com.aliyuncs.elasticsearch.model.v20170613;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.elasticsearch.transform.v20170613.DescribeApmResponseUnmarshaller;
+import com.aliyuncs.elasticsearch.transform.v20170613.ListApmResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeApmResponse extends AcsResponse {
+public class ListApmResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Result result;
+	private List<返回结果> result;
+
+	private Headers headers;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -36,25 +39,29 @@ public class DescribeApmResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Result getResult() {
+	public List<返回结果> getResult() {
 		return this.result;
 	}
 
-	public void setResult(Result result) {
+	public void setResult(List<返回结果> result) {
 		this.result = result;
 	}
 
-	public static class Result {
+	public Headers getHeaders() {
+		return this.headers;
+	}
 
-		private String apmServerDomain;
+	public void setHeaders(Headers headers) {
+		this.headers = headers;
+	}
+
+	public static class 返回结果 {
 
 		private String createdAt;
 
 		private Long deployedReplica;
 
 		private String description;
-
-		private Long endTime;
 
 		private String instanceId;
 
@@ -64,15 +71,13 @@ public class DescribeApmResponse extends AcsResponse {
 
 		private String outputESUserName;
 
-		private String outputEsDescription;
-
 		private String ownerId;
 
 		private String paymentType;
 
 		private String region;
 
-		private Integer replica;
+		private Long replica;
 
 		private String resourceSpec;
 
@@ -85,14 +90,6 @@ public class DescribeApmResponse extends AcsResponse {
 		private String vsArea;
 
 		private String vswitchId;
-
-		public String getApmServerDomain() {
-			return this.apmServerDomain;
-		}
-
-		public void setApmServerDomain(String apmServerDomain) {
-			this.apmServerDomain = apmServerDomain;
-		}
 
 		public String getCreatedAt() {
 			return this.createdAt;
@@ -116,14 +113,6 @@ public class DescribeApmResponse extends AcsResponse {
 
 		public void setDescription(String description) {
 			this.description = description;
-		}
-
-		public Long getEndTime() {
-			return this.endTime;
-		}
-
-		public void setEndTime(Long endTime) {
-			this.endTime = endTime;
 		}
 
 		public String getInstanceId() {
@@ -158,14 +147,6 @@ public class DescribeApmResponse extends AcsResponse {
 			this.outputESUserName = outputESUserName;
 		}
 
-		public String getOutputEsDescription() {
-			return this.outputEsDescription;
-		}
-
-		public void setOutputEsDescription(String outputEsDescription) {
-			this.outputEsDescription = outputEsDescription;
-		}
-
 		public String getOwnerId() {
 			return this.ownerId;
 		}
@@ -190,11 +171,11 @@ public class DescribeApmResponse extends AcsResponse {
 			this.region = region;
 		}
 
-		public Integer getReplica() {
+		public Long getReplica() {
 			return this.replica;
 		}
 
-		public void setReplica(Integer replica) {
+		public void setReplica(Long replica) {
 			this.replica = replica;
 		}
 
@@ -247,9 +228,22 @@ public class DescribeApmResponse extends AcsResponse {
 		}
 	}
 
+	public static class Headers {
+
+		private Long xTotalCount;
+
+		public Long getXTotalCount() {
+			return this.xTotalCount;
+		}
+
+		public void setXTotalCount(Long xTotalCount) {
+			this.xTotalCount = xTotalCount;
+		}
+	}
+
 	@Override
-	public DescribeApmResponse getInstance(UnmarshallerContext context) {
-		return	DescribeApmResponseUnmarshaller.unmarshall(this, context);
+	public ListApmResponse getInstance(UnmarshallerContext context) {
+		return	ListApmResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

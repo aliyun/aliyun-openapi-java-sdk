@@ -22,7 +22,8 @@ public class StopApmResponseUnmarshaller {
 
 	public static StopApmResponse unmarshall(StopApmResponse stopApmResponse, UnmarshallerContext _ctx) {
 		
-		stopApmResponse.setRequestId(_ctx.stringValue("StopApmResponse.requestId"));
+		stopApmResponse.setRequestId(_ctx.stringValue("StopApmResponse.RequestId"));
+		stopApmResponse.setResult(_ctx.booleanValue("StopApmResponse.Result"));
 	 
 	 	return stopApmResponse;
 	}

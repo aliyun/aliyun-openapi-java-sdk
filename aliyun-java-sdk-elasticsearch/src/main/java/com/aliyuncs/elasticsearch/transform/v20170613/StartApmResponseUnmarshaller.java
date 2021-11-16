@@ -22,7 +22,8 @@ public class StartApmResponseUnmarshaller {
 
 	public static StartApmResponse unmarshall(StartApmResponse startApmResponse, UnmarshallerContext _ctx) {
 		
-		startApmResponse.setRequestId(_ctx.stringValue("StartApmResponse.requestId"));
+		startApmResponse.setRequestId(_ctx.stringValue("StartApmResponse.RequestId"));
+		startApmResponse.setResult(_ctx.booleanValue("StartApmResponse.Result"));
 	 
 	 	return startApmResponse;
 	}
