@@ -27,7 +27,7 @@ public class ListAuditSecurityIpRequest extends RpcAcsRequest<ListAuditSecurityI
 
 	private String securityGroupName;
 	public ListAuditSecurityIpRequest() {
-		super("vod", "2017-03-21", "ListAuditSecurityIp");
+		super("vod", "2017-03-21", "ListAuditSecurityIp", "vod");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

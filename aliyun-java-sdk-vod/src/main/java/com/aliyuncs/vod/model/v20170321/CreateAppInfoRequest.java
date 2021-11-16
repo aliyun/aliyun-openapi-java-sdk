@@ -29,7 +29,7 @@ public class CreateAppInfoRequest extends RpcAcsRequest<CreateAppInfoResponse> {
 
 	private String appName;
 	public CreateAppInfoRequest() {
-		super("vod", "2017-03-21", "CreateAppInfo");
+		super("vod", "2017-03-21", "CreateAppInfo", "vod");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

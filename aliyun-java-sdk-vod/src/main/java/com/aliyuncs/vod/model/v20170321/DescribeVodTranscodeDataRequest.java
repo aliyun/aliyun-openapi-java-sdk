@@ -39,7 +39,7 @@ public class DescribeVodTranscodeDataRequest extends RpcAcsRequest<DescribeVodTr
 
 	private String region;
 	public DescribeVodTranscodeDataRequest() {
-		super("vod", "2017-03-21", "DescribeVodTranscodeData");
+		super("vod", "2017-03-21", "DescribeVodTranscodeData", "vod");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

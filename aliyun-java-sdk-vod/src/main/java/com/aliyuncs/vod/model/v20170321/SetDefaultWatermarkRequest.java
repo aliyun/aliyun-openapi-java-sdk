@@ -27,7 +27,7 @@ public class SetDefaultWatermarkRequest extends RpcAcsRequest<SetDefaultWatermar
 
 	private String watermarkId;
 	public SetDefaultWatermarkRequest() {
-		super("vod", "2017-03-21", "SetDefaultWatermark");
+		super("vod", "2017-03-21", "SetDefaultWatermark", "vod");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

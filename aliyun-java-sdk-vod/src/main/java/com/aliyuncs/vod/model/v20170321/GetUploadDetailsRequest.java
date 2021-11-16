@@ -29,7 +29,7 @@ public class GetUploadDetailsRequest extends RpcAcsRequest<GetUploadDetailsRespo
 
 	private String mediaType;
 	public GetUploadDetailsRequest() {
-		super("vod", "2017-03-21", "GetUploadDetails");
+		super("vod", "2017-03-21", "GetUploadDetails", "vod");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

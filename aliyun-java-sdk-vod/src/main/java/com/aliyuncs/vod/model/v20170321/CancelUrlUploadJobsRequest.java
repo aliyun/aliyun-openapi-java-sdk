@@ -29,7 +29,7 @@ public class CancelUrlUploadJobsRequest extends RpcAcsRequest<CancelUrlUploadJob
 
 	private String uploadUrls;
 	public CancelUrlUploadJobsRequest() {
-		super("vod", "2017-03-21", "CancelUrlUploadJobs");
+		super("vod", "2017-03-21", "CancelUrlUploadJobs", "vod");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -35,7 +35,7 @@ public class CreateVodRealTimeLogDeliveryRequest extends RpcAcsRequest<CreateVod
 
 	private String logstore;
 	public CreateVodRealTimeLogDeliveryRequest() {
-		super("vod", "2017-03-21", "CreateVodRealTimeLogDelivery");
+		super("vod", "2017-03-21", "CreateVodRealTimeLogDelivery", "vod");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

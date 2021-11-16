@@ -27,7 +27,7 @@ public class GetAIMediaAuditJobRequest extends RpcAcsRequest<GetAIMediaAuditJobR
 
 	private String jobId;
 	public GetAIMediaAuditJobRequest() {
-		super("vod", "2017-03-21", "GetAIMediaAuditJob");
+		super("vod", "2017-03-21", "GetAIMediaAuditJob", "vod");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

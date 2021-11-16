@@ -33,7 +33,7 @@ public class UpdateTranscodeTemplateGroupRequest extends RpcAcsRequest<UpdateTra
 
 	private String locked;
 	public UpdateTranscodeTemplateGroupRequest() {
-		super("vod", "2017-03-21", "UpdateTranscodeTemplateGroup");
+		super("vod", "2017-03-21", "UpdateTranscodeTemplateGroup", "vod");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -47,7 +47,7 @@ public class DescribeVodRefreshTasksRequest extends RpcAcsRequest<DescribeVodRef
 
 	private String status;
 	public DescribeVodRefreshTasksRequest() {
-		super("vod", "2017-03-21", "DescribeVodRefreshTasks");
+		super("vod", "2017-03-21", "DescribeVodRefreshTasks", "vod");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

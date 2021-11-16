@@ -29,7 +29,7 @@ public class GetMessageCallbackRequest extends RpcAcsRequest<GetMessageCallbackR
 
 	private String appId;
 	public GetMessageCallbackRequest() {
-		super("vod", "2017-03-21", "GetMessageCallback");
+		super("vod", "2017-03-21", "GetMessageCallback", "vod");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

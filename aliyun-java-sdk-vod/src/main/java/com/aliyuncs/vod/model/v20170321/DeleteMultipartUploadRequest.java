@@ -31,7 +31,7 @@ public class DeleteMultipartUploadRequest extends RpcAcsRequest<DeleteMultipartU
 
 	private String mediaType;
 	public DeleteMultipartUploadRequest() {
-		super("vod", "2017-03-21", "DeleteMultipartUpload");
+		super("vod", "2017-03-21", "DeleteMultipartUpload", "vod");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

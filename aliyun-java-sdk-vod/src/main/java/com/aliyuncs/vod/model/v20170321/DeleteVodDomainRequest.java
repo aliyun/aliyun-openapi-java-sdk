@@ -33,7 +33,7 @@ public class DeleteVodDomainRequest extends RpcAcsRequest<DeleteVodDomainRespons
 
 	private String securityToken;
 	public DeleteVodDomainRequest() {
-		super("vod", "2017-03-21", "DeleteVodDomain");
+		super("vod", "2017-03-21", "DeleteVodDomain", "vod");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

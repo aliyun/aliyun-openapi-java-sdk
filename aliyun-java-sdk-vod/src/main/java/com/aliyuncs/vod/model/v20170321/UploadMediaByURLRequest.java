@@ -39,7 +39,7 @@ public class UploadMediaByURLRequest extends RpcAcsRequest<UploadMediaByURLRespo
 
 	private String appId;
 	public UploadMediaByURLRequest() {
-		super("vod", "2017-03-21", "UploadMediaByURL");
+		super("vod", "2017-03-21", "UploadMediaByURL", "vod");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -39,7 +39,7 @@ public class SubmitTranscodeJobsRequest extends RpcAcsRequest<SubmitTranscodeJob
 
 	private String encryptConfig;
 	public SubmitTranscodeJobsRequest() {
-		super("vod", "2017-03-21", "SubmitTranscodeJobs");
+		super("vod", "2017-03-21", "SubmitTranscodeJobs", "vod");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

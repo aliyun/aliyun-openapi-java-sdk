@@ -27,7 +27,7 @@ public class GetAppInfosRequest extends RpcAcsRequest<GetAppInfosResponse> {
 
 	private String appIds;
 	public GetAppInfosRequest() {
-		super("vod", "2017-03-21", "GetAppInfos");
+		super("vod", "2017-03-21", "GetAppInfos", "vod");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

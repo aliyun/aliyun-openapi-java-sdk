@@ -31,7 +31,7 @@ public class ListAppPoliciesForIdentityRequest extends RpcAcsRequest<ListAppPoli
 
 	private String appId;
 	public ListAppPoliciesForIdentityRequest() {
-		super("vod", "2017-03-21", "ListAppPoliciesForIdentity");
+		super("vod", "2017-03-21", "ListAppPoliciesForIdentity", "vod");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

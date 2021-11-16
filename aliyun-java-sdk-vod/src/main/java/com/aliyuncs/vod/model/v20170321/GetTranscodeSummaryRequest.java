@@ -27,7 +27,7 @@ public class GetTranscodeSummaryRequest extends RpcAcsRequest<GetTranscodeSummar
 
 	private String videoIds;
 	public GetTranscodeSummaryRequest() {
-		super("vod", "2017-03-21", "GetTranscodeSummary");
+		super("vod", "2017-03-21", "GetTranscodeSummary", "vod");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -33,7 +33,7 @@ public class DetachAppPolicyFromIdentityRequest extends RpcAcsRequest<DetachAppP
 
 	private String appId;
 	public DetachAppPolicyFromIdentityRequest() {
-		super("vod", "2017-03-21", "DetachAppPolicyFromIdentity");
+		super("vod", "2017-03-21", "DetachAppPolicyFromIdentity", "vod");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

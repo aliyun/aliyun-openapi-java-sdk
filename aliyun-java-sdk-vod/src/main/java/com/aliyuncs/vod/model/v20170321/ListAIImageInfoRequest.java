@@ -27,7 +27,7 @@ public class ListAIImageInfoRequest extends RpcAcsRequest<ListAIImageInfoRespons
 
 	private String videoId;
 	public ListAIImageInfoRequest() {
-		super("vod", "2017-03-21", "ListAIImageInfo");
+		super("vod", "2017-03-21", "ListAIImageInfo", "vod");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

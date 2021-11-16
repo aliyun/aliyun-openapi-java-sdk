@@ -31,15 +31,15 @@ public class GetPlayInfoResponseUnmarshaller {
 		getPlayInfoResponse.setRequestId(_ctx.stringValue("GetPlayInfoResponse.RequestId"));
 
 		VideoBase videoBase = new VideoBase();
+		videoBase.setCreationTime(_ctx.stringValue("GetPlayInfoResponse.VideoBase.CreationTime"));
+		videoBase.setStatus(_ctx.stringValue("GetPlayInfoResponse.VideoBase.Status"));
+		videoBase.setTranscodeMode(_ctx.stringValue("GetPlayInfoResponse.VideoBase.TranscodeMode"));
 		videoBase.setOutputType(_ctx.stringValue("GetPlayInfoResponse.VideoBase.OutputType"));
+		videoBase.setVideoId(_ctx.stringValue("GetPlayInfoResponse.VideoBase.VideoId"));
 		videoBase.setCoverURL(_ctx.stringValue("GetPlayInfoResponse.VideoBase.CoverURL"));
 		videoBase.setDuration(_ctx.stringValue("GetPlayInfoResponse.VideoBase.Duration"));
-		videoBase.setStatus(_ctx.stringValue("GetPlayInfoResponse.VideoBase.Status"));
 		videoBase.setTitle(_ctx.stringValue("GetPlayInfoResponse.VideoBase.Title"));
-		videoBase.setVideoId(_ctx.stringValue("GetPlayInfoResponse.VideoBase.VideoId"));
 		videoBase.setMediaType(_ctx.stringValue("GetPlayInfoResponse.VideoBase.MediaType"));
-		videoBase.setCreationTime(_ctx.stringValue("GetPlayInfoResponse.VideoBase.CreationTime"));
-		videoBase.setTranscodeMode(_ctx.stringValue("GetPlayInfoResponse.VideoBase.TranscodeMode"));
 		videoBase.setDanMuURL(_ctx.stringValue("GetPlayInfoResponse.VideoBase.DanMuURL"));
 
 		List<Thumbnail> thumbnailList = new ArrayList<Thumbnail>();
@@ -55,29 +55,30 @@ public class GetPlayInfoResponseUnmarshaller {
 		List<PlayInfo> playInfoList = new ArrayList<PlayInfo>();
 		for (int i = 0; i < _ctx.lengthValue("GetPlayInfoResponse.PlayInfoList.Length"); i++) {
 			PlayInfo playInfo = new PlayInfo();
-			playInfo.setWidth(_ctx.longValue("GetPlayInfoResponse.PlayInfoList["+ i +"].Width"));
-			playInfo.setHeight(_ctx.longValue("GetPlayInfoResponse.PlayInfoList["+ i +"].Height"));
-			playInfo.setSize(_ctx.longValue("GetPlayInfoResponse.PlayInfoList["+ i +"].Size"));
-			playInfo.setPlayURL(_ctx.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].PlayURL"));
-			playInfo.setBitrate(_ctx.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].Bitrate"));
-			playInfo.setDefinition(_ctx.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].Definition"));
-			playInfo.setDuration(_ctx.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].Duration"));
-			playInfo.setFormat(_ctx.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].Format"));
-			playInfo.setFps(_ctx.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].Fps"));
-			playInfo.setEncrypt(_ctx.longValue("GetPlayInfoResponse.PlayInfoList["+ i +"].Encrypt"));
-			playInfo.setPlaintext(_ctx.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].Plaintext"));
-			playInfo.setComplexity(_ctx.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].Complexity"));
-			playInfo.setStreamType(_ctx.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].StreamType"));
-			playInfo.setRand(_ctx.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].Rand"));
-			playInfo.setJobId(_ctx.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].JobId"));
-			playInfo.setPreprocessStatus(_ctx.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].PreprocessStatus"));
-			playInfo.setWatermarkId(_ctx.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].WatermarkId"));
-			playInfo.setStatus(_ctx.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].Status"));
 			playInfo.setCreationTime(_ctx.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].CreationTime"));
-			playInfo.setModificationTime(_ctx.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].ModificationTime"));
-			playInfo.setEncryptType(_ctx.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].EncryptType"));
-			playInfo.setNarrowBandType(_ctx.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].NarrowBandType"));
+			playInfo.setStatus(_ctx.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].Status"));
 			playInfo.setSpecification(_ctx.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].Specification"));
+			playInfo.setComplexity(_ctx.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].Complexity"));
+			playInfo.setNarrowBandType(_ctx.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].NarrowBandType"));
+			playInfo.setHeight(_ctx.longValue("GetPlayInfoResponse.PlayInfoList["+ i +"].Height"));
+			playInfo.setBitrate(_ctx.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].Bitrate"));
+			playInfo.setModificationTime(_ctx.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].ModificationTime"));
+			playInfo.setWatermarkId(_ctx.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].WatermarkId"));
+			playInfo.setEncrypt(_ctx.longValue("GetPlayInfoResponse.PlayInfoList["+ i +"].Encrypt"));
+			playInfo.setDefinition(_ctx.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].Definition"));
+			playInfo.setRand(_ctx.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].Rand"));
+			playInfo.setEncryptType(_ctx.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].EncryptType"));
+			playInfo.setPreprocessStatus(_ctx.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].PreprocessStatus"));
+			playInfo.setStreamType(_ctx.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].StreamType"));
+			playInfo.setJobId(_ctx.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].JobId"));
+			playInfo.setPlaintext(_ctx.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].Plaintext"));
+			playInfo.setSize(_ctx.longValue("GetPlayInfoResponse.PlayInfoList["+ i +"].Size"));
+			playInfo.setWidth(_ctx.longValue("GetPlayInfoResponse.PlayInfoList["+ i +"].Width"));
+			playInfo.setFps(_ctx.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].Fps"));
+			playInfo.setDuration(_ctx.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].Duration"));
+			playInfo.setPlayURL(_ctx.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].PlayURL"));
+			playInfo.setFormat(_ctx.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].Format"));
+			playInfo.setHDRType(_ctx.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].HDRType"));
 
 			playInfoList.add(playInfo);
 		}

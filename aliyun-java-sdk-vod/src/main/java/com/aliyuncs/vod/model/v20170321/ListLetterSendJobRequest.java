@@ -31,7 +31,7 @@ public class ListLetterSendJobRequest extends RpcAcsRequest<ListLetterSendJobRes
 
 	private String detectionId;
 	public ListLetterSendJobRequest() {
-		super("vod", "2017-03-21", "ListLetterSendJob");
+		super("vod", "2017-03-21", "ListLetterSendJob", "vod");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -41,7 +41,7 @@ public class AddVodDomainRequest extends RpcAcsRequest<AddVodDomainResponse> {
 
 	private String checkUrl;
 	public AddVodDomainRequest() {
-		super("vod", "2017-03-21", "AddVodDomain");
+		super("vod", "2017-03-21", "AddVodDomain", "vod");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

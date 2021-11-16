@@ -37,7 +37,7 @@ public class GetMediaAuditAudioResultDetailRequest extends RpcAcsRequest<GetMedi
 
 	private Integer pageNo;
 	public GetMediaAuditAudioResultDetailRequest() {
-		super("vod", "2017-03-21", "GetMediaAuditAudioResultDetail");
+		super("vod", "2017-03-21", "GetMediaAuditAudioResultDetail", "vod");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

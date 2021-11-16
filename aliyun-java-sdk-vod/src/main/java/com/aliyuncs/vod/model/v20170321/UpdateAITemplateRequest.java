@@ -31,7 +31,7 @@ public class UpdateAITemplateRequest extends RpcAcsRequest<UpdateAITemplateRespo
 
 	private String templateName;
 	public UpdateAITemplateRequest() {
-		super("vod", "2017-03-21", "UpdateAITemplate");
+		super("vod", "2017-03-21", "UpdateAITemplate", "vod");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

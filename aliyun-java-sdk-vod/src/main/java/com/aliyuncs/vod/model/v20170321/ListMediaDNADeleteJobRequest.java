@@ -35,7 +35,7 @@ public class ListMediaDNADeleteJobRequest extends RpcAcsRequest<ListMediaDNADele
 
 	private String jobIds;
 	public ListMediaDNADeleteJobRequest() {
-		super("vod", "2017-03-21", "ListMediaDNADeleteJob");
+		super("vod", "2017-03-21", "ListMediaDNADeleteJob", "vod");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -27,7 +27,7 @@ public class CreateAuditRequest extends RpcAcsRequest<CreateAuditResponse> {
 
 	private String auditContent;
 	public CreateAuditRequest() {
-		super("vod", "2017-03-21", "CreateAudit");
+		super("vod", "2017-03-21", "CreateAudit", "vod");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

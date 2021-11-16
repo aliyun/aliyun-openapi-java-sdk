@@ -31,7 +31,7 @@ public class SubmitDynamicImageJobRequest extends RpcAcsRequest<SubmitDynamicIma
 
 	private String overrideParams;
 	public SubmitDynamicImageJobRequest() {
-		super("vod", "2017-03-21", "SubmitDynamicImageJob");
+		super("vod", "2017-03-21", "SubmitDynamicImageJob", "vod");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

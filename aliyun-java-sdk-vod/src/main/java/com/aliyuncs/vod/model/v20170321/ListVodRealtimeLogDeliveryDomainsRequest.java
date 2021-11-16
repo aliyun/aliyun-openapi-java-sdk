@@ -33,7 +33,7 @@ public class ListVodRealtimeLogDeliveryDomainsRequest extends RpcAcsRequest<List
 
 	private String logstore;
 	public ListVodRealtimeLogDeliveryDomainsRequest() {
-		super("vod", "2017-03-21", "ListVodRealtimeLogDeliveryDomains");
+		super("vod", "2017-03-21", "ListVodRealtimeLogDeliveryDomains", "vod");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

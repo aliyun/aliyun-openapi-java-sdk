@@ -31,7 +31,7 @@ public class DeleteTranscodeTemplateGroupRequest extends RpcAcsRequest<DeleteTra
 
 	private String forceDelGroup;
 	public DeleteTranscodeTemplateGroupRequest() {
-		super("vod", "2017-03-21", "DeleteTranscodeTemplateGroup");
+		super("vod", "2017-03-21", "DeleteTranscodeTemplateGroup", "vod");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

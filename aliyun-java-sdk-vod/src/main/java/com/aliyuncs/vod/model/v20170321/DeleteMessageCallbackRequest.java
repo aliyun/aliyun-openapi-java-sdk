@@ -29,7 +29,7 @@ public class DeleteMessageCallbackRequest extends RpcAcsRequest<DeleteMessageCal
 
 	private String appId;
 	public DeleteMessageCallbackRequest() {
-		super("vod", "2017-03-21", "DeleteMessageCallback");
+		super("vod", "2017-03-21", "DeleteMessageCallback", "vod");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

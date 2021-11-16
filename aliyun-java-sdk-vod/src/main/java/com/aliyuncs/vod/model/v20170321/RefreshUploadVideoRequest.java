@@ -33,7 +33,7 @@ public class RefreshUploadVideoRequest extends RpcAcsRequest<RefreshUploadVideoR
 
 	private Long ownerId;
 	public RefreshUploadVideoRequest() {
-		super("vod", "2017-03-21", "RefreshUploadVideo");
+		super("vod", "2017-03-21", "RefreshUploadVideo", "vod");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

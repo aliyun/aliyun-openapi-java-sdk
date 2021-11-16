@@ -35,7 +35,7 @@ public class GetCategoriesRequest extends RpcAcsRequest<GetCategoriesResponse> {
 
 	private String sortBy;
 	public GetCategoriesRequest() {
-		super("vod", "2017-03-21", "GetCategories");
+		super("vod", "2017-03-21", "GetCategories", "vod");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

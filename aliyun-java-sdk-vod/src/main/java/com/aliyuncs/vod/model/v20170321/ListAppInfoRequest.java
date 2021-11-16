@@ -31,7 +31,7 @@ public class ListAppInfoRequest extends RpcAcsRequest<ListAppInfoResponse> {
 
 	private String status;
 	public ListAppInfoRequest() {
-		super("vod", "2017-03-21", "ListAppInfo");
+		super("vod", "2017-03-21", "ListAppInfo", "vod");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

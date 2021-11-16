@@ -27,7 +27,7 @@ public class GetDetectionJobRequest extends RpcAcsRequest<GetDetectionJobRespons
 
 	private String jobId;
 	public GetDetectionJobRequest() {
-		super("vod", "2017-03-21", "GetDetectionJob");
+		super("vod", "2017-03-21", "GetDetectionJob", "vod");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

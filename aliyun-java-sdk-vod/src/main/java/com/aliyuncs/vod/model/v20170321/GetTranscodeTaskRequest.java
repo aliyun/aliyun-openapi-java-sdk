@@ -27,7 +27,7 @@ public class GetTranscodeTaskRequest extends RpcAcsRequest<GetTranscodeTaskRespo
 
 	private String transcodeTaskId;
 	public GetTranscodeTaskRequest() {
-		super("vod", "2017-03-21", "GetTranscodeTask");
+		super("vod", "2017-03-21", "GetTranscodeTask", "vod");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

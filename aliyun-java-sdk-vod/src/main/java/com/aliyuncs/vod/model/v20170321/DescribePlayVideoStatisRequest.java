@@ -33,7 +33,7 @@ public class DescribePlayVideoStatisRequest extends RpcAcsRequest<DescribePlayVi
 
 	private Long ownerId;
 	public DescribePlayVideoStatisRequest() {
-		super("vod", "2017-03-21", "DescribePlayVideoStatis");
+		super("vod", "2017-03-21", "DescribePlayVideoStatis", "vod");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

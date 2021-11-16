@@ -35,7 +35,7 @@ public class UpdateVodDomainRequest extends RpcAcsRequest<UpdateVodDomainRespons
 
 	private String securityToken;
 	public UpdateVodDomainRequest() {
-		super("vod", "2017-03-21", "UpdateVodDomain");
+		super("vod", "2017-03-21", "UpdateVodDomain", "vod");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

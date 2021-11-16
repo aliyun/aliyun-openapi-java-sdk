@@ -29,7 +29,7 @@ public class SubmitPreprocessJobsRequest extends RpcAcsRequest<SubmitPreprocessJ
 
 	private String preprocessType;
 	public SubmitPreprocessJobsRequest() {
-		super("vod", "2017-03-21", "SubmitPreprocessJobs");
+		super("vod", "2017-03-21", "SubmitPreprocessJobs", "vod");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

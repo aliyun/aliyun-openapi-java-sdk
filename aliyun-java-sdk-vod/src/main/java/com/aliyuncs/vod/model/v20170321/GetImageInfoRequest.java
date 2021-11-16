@@ -31,7 +31,7 @@ public class GetImageInfoRequest extends RpcAcsRequest<GetImageInfoResponse> {
 
 	private Long authTimeout;
 	public GetImageInfoRequest() {
-		super("vod", "2017-03-21", "GetImageInfo");
+		super("vod", "2017-03-21", "GetImageInfo", "vod");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

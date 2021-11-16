@@ -47,7 +47,7 @@ public class CreateUploadAttachedMediaRequest extends RpcAcsRequest<CreateUpload
 
 	private String appId;
 	public CreateUploadAttachedMediaRequest() {
-		super("vod", "2017-03-21", "CreateUploadAttachedMedia");
+		super("vod", "2017-03-21", "CreateUploadAttachedMedia", "vod");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

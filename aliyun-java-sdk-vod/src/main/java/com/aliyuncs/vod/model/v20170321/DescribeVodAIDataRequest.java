@@ -35,7 +35,7 @@ public class DescribeVodAIDataRequest extends RpcAcsRequest<DescribeVodAIDataRes
 
 	private String region;
 	public DescribeVodAIDataRequest() {
-		super("vod", "2017-03-21", "DescribeVodAIData");
+		super("vod", "2017-03-21", "DescribeVodAIData", "vod");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

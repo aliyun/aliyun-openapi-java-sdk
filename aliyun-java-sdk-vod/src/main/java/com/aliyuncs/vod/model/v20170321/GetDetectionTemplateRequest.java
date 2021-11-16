@@ -27,7 +27,7 @@ public class GetDetectionTemplateRequest extends RpcAcsRequest<GetDetectionTempl
 
 	private String templateId;
 	public GetDetectionTemplateRequest() {
-		super("vod", "2017-03-21", "GetDetectionTemplate");
+		super("vod", "2017-03-21", "GetDetectionTemplate", "vod");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

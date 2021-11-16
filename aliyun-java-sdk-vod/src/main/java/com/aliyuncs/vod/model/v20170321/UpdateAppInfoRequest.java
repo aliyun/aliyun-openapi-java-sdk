@@ -33,7 +33,7 @@ public class UpdateAppInfoRequest extends RpcAcsRequest<UpdateAppInfoResponse> {
 
 	private String status;
 	public UpdateAppInfoRequest() {
-		super("vod", "2017-03-21", "UpdateAppInfo");
+		super("vod", "2017-03-21", "UpdateAppInfo", "vod");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

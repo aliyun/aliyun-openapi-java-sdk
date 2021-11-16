@@ -29,7 +29,7 @@ public class DeleteMezzaninesRequest extends RpcAcsRequest<DeleteMezzaninesRespo
 
 	private String videoIds;
 	public DeleteMezzaninesRequest() {
-		super("vod", "2017-03-21", "DeleteMezzanines");
+		super("vod", "2017-03-21", "DeleteMezzanines", "vod");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

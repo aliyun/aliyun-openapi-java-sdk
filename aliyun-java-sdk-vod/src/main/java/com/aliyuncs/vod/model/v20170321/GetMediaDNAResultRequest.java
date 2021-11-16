@@ -35,7 +35,7 @@ public class GetMediaDNAResultRequest extends RpcAcsRequest<GetMediaDNAResultRes
 
 	private String mediaId;
 	public GetMediaDNAResultRequest() {
-		super("vod", "2017-03-21", "GetMediaDNAResult");
+		super("vod", "2017-03-21", "GetMediaDNAResult", "vod");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

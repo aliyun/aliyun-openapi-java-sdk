@@ -33,7 +33,7 @@ public class RegisterMediaRequest extends RpcAcsRequest<RegisterMediaResponse> {
 
 	private String workflowId;
 	public RegisterMediaRequest() {
-		super("vod", "2017-03-21", "RegisterMedia");
+		super("vod", "2017-03-21", "RegisterMedia", "vod");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

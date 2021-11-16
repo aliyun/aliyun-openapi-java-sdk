@@ -31,7 +31,7 @@ public class DescribePlayUserTotalRequest extends RpcAcsRequest<DescribePlayUser
 
 	private Long ownerId;
 	public DescribePlayUserTotalRequest() {
-		super("vod", "2017-03-21", "DescribePlayUserTotal");
+		super("vod", "2017-03-21", "DescribePlayUserTotal", "vod");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

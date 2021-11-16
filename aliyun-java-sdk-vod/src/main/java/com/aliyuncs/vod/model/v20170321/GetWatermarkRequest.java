@@ -27,7 +27,7 @@ public class GetWatermarkRequest extends RpcAcsRequest<GetWatermarkResponse> {
 
 	private String watermarkId;
 	public GetWatermarkRequest() {
-		super("vod", "2017-03-21", "GetWatermark");
+		super("vod", "2017-03-21", "GetWatermark", "vod");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

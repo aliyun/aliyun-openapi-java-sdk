@@ -27,7 +27,7 @@ public class DeleteAIImageInfosRequest extends RpcAcsRequest<DeleteAIImageInfosR
 
 	private String aIImageInfoIds;
 	public DeleteAIImageInfosRequest() {
-		super("vod", "2017-03-21", "DeleteAIImageInfos");
+		super("vod", "2017-03-21", "DeleteAIImageInfos", "vod");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

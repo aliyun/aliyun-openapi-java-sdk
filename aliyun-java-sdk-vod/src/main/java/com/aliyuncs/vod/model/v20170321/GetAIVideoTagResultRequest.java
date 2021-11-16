@@ -35,7 +35,7 @@ public class GetAIVideoTagResultRequest extends RpcAcsRequest<GetAIVideoTagResul
 
 	private String mediaId;
 	public GetAIVideoTagResultRequest() {
-		super("vod", "2017-03-21", "GetAIVideoTagResult");
+		super("vod", "2017-03-21", "GetAIVideoTagResult", "vod");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -34,7 +34,7 @@ public class DescribeVodTagResourcesRequest extends RpcAcsRequest<DescribeVodTag
 
 	private String resourceType;
 	public DescribeVodTagResourcesRequest() {
-		super("vod", "2017-03-21", "DescribeVodTagResources");
+		super("vod", "2017-03-21", "DescribeVodTagResources", "vod");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

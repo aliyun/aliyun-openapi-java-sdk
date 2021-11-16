@@ -27,7 +27,7 @@ public class GetVideoInfoRequest extends RpcAcsRequest<GetVideoInfoResponse> {
 
 	private String videoId;
 	public GetVideoInfoRequest() {
-		super("vod", "2017-03-21", "GetVideoInfo");
+		super("vod", "2017-03-21", "GetVideoInfo", "vod");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

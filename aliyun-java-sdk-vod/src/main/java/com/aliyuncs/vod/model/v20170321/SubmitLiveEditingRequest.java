@@ -51,7 +51,7 @@ public class SubmitLiveEditingRequest extends RpcAcsRequest<SubmitLiveEditingRes
 
 	private Long ownerId;
 	public SubmitLiveEditingRequest() {
-		super("vod", "2017-03-21", "SubmitLiveEditing");
+		super("vod", "2017-03-21", "SubmitLiveEditing", "vod");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

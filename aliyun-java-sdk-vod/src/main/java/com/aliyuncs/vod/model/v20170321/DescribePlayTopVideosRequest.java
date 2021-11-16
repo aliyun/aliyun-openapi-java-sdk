@@ -33,7 +33,7 @@ public class DescribePlayTopVideosRequest extends RpcAcsRequest<DescribePlayTopV
 
 	private Long pageNo;
 	public DescribePlayTopVideosRequest() {
-		super("vod", "2017-03-21", "DescribePlayTopVideos");
+		super("vod", "2017-03-21", "DescribePlayTopVideos", "vod");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

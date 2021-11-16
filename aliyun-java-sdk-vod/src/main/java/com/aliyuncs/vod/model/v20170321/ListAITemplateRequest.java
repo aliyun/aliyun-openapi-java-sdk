@@ -27,7 +27,7 @@ public class ListAITemplateRequest extends RpcAcsRequest<ListAITemplateResponse>
 
 	private String templateType;
 	public ListAITemplateRequest() {
-		super("vod", "2017-03-21", "ListAITemplate");
+		super("vod", "2017-03-21", "ListAITemplate", "vod");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

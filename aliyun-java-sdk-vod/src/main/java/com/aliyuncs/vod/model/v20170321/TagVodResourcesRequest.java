@@ -34,7 +34,7 @@ public class TagVodResourcesRequest extends RpcAcsRequest<TagVodResourcesRespons
 
 	private String resourceType;
 	public TagVodResourcesRequest() {
-		super("vod", "2017-03-21", "TagVodResources");
+		super("vod", "2017-03-21", "TagVodResources", "vod");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

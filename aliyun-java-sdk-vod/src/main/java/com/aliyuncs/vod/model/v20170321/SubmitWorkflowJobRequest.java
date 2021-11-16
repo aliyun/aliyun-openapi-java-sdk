@@ -29,7 +29,7 @@ public class SubmitWorkflowJobRequest extends RpcAcsRequest<SubmitWorkflowJobRes
 
 	private String workflowId;
 	public SubmitWorkflowJobRequest() {
-		super("vod", "2017-03-21", "SubmitWorkflowJob");
+		super("vod", "2017-03-21", "SubmitWorkflowJob", "vod");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

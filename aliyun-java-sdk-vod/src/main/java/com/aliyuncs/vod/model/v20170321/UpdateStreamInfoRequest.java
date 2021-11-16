@@ -22,16 +22,14 @@ import com.aliyuncs.vod.Endpoint;
  * @author auto create
  * @version 
  */
-public class UpdateWatermarkRequest extends RpcAcsRequest<UpdateWatermarkResponse> {
+public class UpdateStreamInfoRequest extends RpcAcsRequest<UpdateStreamInfoResponse> {
 	   
 
-	private String watermarkConfig;
+	private String jobId;
 
-	private String watermarkId;
-
-	private String name;
-	public UpdateWatermarkRequest() {
-		super("vod", "2017-03-21", "UpdateWatermark", "vod");
+	private String mediaId;
+	public UpdateStreamInfoRequest() {
+		super("vod", "2017-03-21", "UpdateStreamInfo", "vod");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -39,42 +37,31 @@ public class UpdateWatermarkRequest extends RpcAcsRequest<UpdateWatermarkRespons
 		} catch (Exception e) {}
 	}
 
-	public String getWatermarkConfig() {
-		return this.watermarkConfig;
+	public String getJobId() {
+		return this.jobId;
 	}
 
-	public void setWatermarkConfig(String watermarkConfig) {
-		this.watermarkConfig = watermarkConfig;
-		if(watermarkConfig != null){
-			putQueryParameter("WatermarkConfig", watermarkConfig);
+	public void setJobId(String jobId) {
+		this.jobId = jobId;
+		if(jobId != null){
+			putQueryParameter("JobId", jobId);
 		}
 	}
 
-	public String getWatermarkId() {
-		return this.watermarkId;
+	public String getMediaId() {
+		return this.mediaId;
 	}
 
-	public void setWatermarkId(String watermarkId) {
-		this.watermarkId = watermarkId;
-		if(watermarkId != null){
-			putQueryParameter("WatermarkId", watermarkId);
-		}
-	}
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
+	public void setMediaId(String mediaId) {
+		this.mediaId = mediaId;
+		if(mediaId != null){
+			putQueryParameter("MediaId", mediaId);
 		}
 	}
 
 	@Override
-	public Class<UpdateWatermarkResponse> getResponseClass() {
-		return UpdateWatermarkResponse.class;
+	public Class<UpdateStreamInfoResponse> getResponseClass() {
+		return UpdateStreamInfoResponse.class;
 	}
 
 }

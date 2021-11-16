@@ -35,7 +35,7 @@ public class DeleteVodRealtimeLogDeliveryRequest extends RpcAcsRequest<DeleteVod
 
 	private String logstore;
 	public DeleteVodRealtimeLogDeliveryRequest() {
-		super("vod", "2017-03-21", "DeleteVodRealtimeLogDelivery");
+		super("vod", "2017-03-21", "DeleteVodRealtimeLogDelivery", "vod");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -39,7 +39,7 @@ public class SetVodDomainCertificateRequest extends RpcAcsRequest<SetVodDomainCe
 
 	private String sSLPub;
 	public SetVodDomainCertificateRequest() {
-		super("vod", "2017-03-21", "SetVodDomainCertificate");
+		super("vod", "2017-03-21", "SetVodDomainCertificate", "vod");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

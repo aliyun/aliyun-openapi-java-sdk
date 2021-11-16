@@ -35,7 +35,7 @@ public class BatchSetVodDomainConfigsRequest extends RpcAcsRequest<BatchSetVodDo
 
 	private String securityToken;
 	public BatchSetVodDomainConfigsRequest() {
-		super("vod", "2017-03-21", "BatchSetVodDomainConfigs");
+		super("vod", "2017-03-21", "BatchSetVodDomainConfigs", "vod");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

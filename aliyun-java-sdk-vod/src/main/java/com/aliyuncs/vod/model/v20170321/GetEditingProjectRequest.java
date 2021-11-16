@@ -35,7 +35,7 @@ public class GetEditingProjectRequest extends RpcAcsRequest<GetEditingProjectRes
 
 	private String ownerId;
 	public GetEditingProjectRequest() {
-		super("vod", "2017-03-21", "GetEditingProject");
+		super("vod", "2017-03-21", "GetEditingProject", "vod");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

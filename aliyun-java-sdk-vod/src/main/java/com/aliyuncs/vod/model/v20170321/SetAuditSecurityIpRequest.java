@@ -31,7 +31,7 @@ public class SetAuditSecurityIpRequest extends RpcAcsRequest<SetAuditSecurityIpR
 
 	private String ips;
 	public SetAuditSecurityIpRequest() {
-		super("vod", "2017-03-21", "SetAuditSecurityIp");
+		super("vod", "2017-03-21", "SetAuditSecurityIp", "vod");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

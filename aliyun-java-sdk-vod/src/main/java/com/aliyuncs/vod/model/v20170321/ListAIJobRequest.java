@@ -35,7 +35,7 @@ public class ListAIJobRequest extends RpcAcsRequest<ListAIJobResponse> {
 
 	private String jobIds;
 	public ListAIJobRequest() {
-		super("vod", "2017-03-21", "ListAIJob");
+		super("vod", "2017-03-21", "ListAIJob", "vod");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

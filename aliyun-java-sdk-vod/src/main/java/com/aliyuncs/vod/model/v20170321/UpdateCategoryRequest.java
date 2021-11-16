@@ -29,7 +29,7 @@ public class UpdateCategoryRequest extends RpcAcsRequest<UpdateCategoryResponse>
 
 	private String cateName;
 	public UpdateCategoryRequest() {
-		super("vod", "2017-03-21", "UpdateCategory");
+		super("vod", "2017-03-21", "UpdateCategory", "vod");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

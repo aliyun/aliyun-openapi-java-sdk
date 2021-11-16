@@ -43,7 +43,7 @@ public class UpdateDetectionJobRequest extends RpcAcsRequest<UpdateDetectionJobR
 
 	private String copyrightFile;
 	public UpdateDetectionJobRequest() {
-		super("vod", "2017-03-21", "UpdateDetectionJob");
+		super("vod", "2017-03-21", "UpdateDetectionJob", "vod");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -37,7 +37,7 @@ public class DescribeVodStorageDataRequest extends RpcAcsRequest<DescribeVodStor
 
 	private String region;
 	public DescribeVodStorageDataRequest() {
-		super("vod", "2017-03-21", "DescribeVodStorageData");
+		super("vod", "2017-03-21", "DescribeVodStorageData", "vod");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

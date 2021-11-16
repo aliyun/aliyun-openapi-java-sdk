@@ -27,15 +27,17 @@ public class UploadStreamByURLRequest extends RpcAcsRequest<UploadStreamByURLRes
 
 	private String fileExtension;
 
-	private String mediaId;
-
 	private String userData;
+
+	private String hDRType;
 
 	private String definition;
 
 	private String streamURL;
+
+	private String mediaId;
 	public UploadStreamByURLRequest() {
-		super("vod", "2017-03-21", "UploadStreamByURL");
+		super("vod", "2017-03-21", "UploadStreamByURL", "vod");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -54,17 +56,6 @@ public class UploadStreamByURLRequest extends RpcAcsRequest<UploadStreamByURLRes
 		}
 	}
 
-	public String getMediaId() {
-		return this.mediaId;
-	}
-
-	public void setMediaId(String mediaId) {
-		this.mediaId = mediaId;
-		if(mediaId != null){
-			putQueryParameter("MediaId", mediaId);
-		}
-	}
-
 	public String getUserData() {
 		return this.userData;
 	}
@@ -73,6 +64,17 @@ public class UploadStreamByURLRequest extends RpcAcsRequest<UploadStreamByURLRes
 		this.userData = userData;
 		if(userData != null){
 			putQueryParameter("UserData", userData);
+		}
+	}
+
+	public String getHDRType() {
+		return this.hDRType;
+	}
+
+	public void setHDRType(String hDRType) {
+		this.hDRType = hDRType;
+		if(hDRType != null){
+			putQueryParameter("HDRType", hDRType);
 		}
 	}
 
@@ -95,6 +97,17 @@ public class UploadStreamByURLRequest extends RpcAcsRequest<UploadStreamByURLRes
 		this.streamURL = streamURL;
 		if(streamURL != null){
 			putQueryParameter("StreamURL", streamURL);
+		}
+	}
+
+	public String getMediaId() {
+		return this.mediaId;
+	}
+
+	public void setMediaId(String mediaId) {
+		this.mediaId = mediaId;
+		if(mediaId != null){
+			putQueryParameter("MediaId", mediaId);
 		}
 	}
 
