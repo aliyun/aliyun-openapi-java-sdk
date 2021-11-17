@@ -35,7 +35,6 @@ public class DescribeApmResponseUnmarshaller {
 		result.setNodeAmount(_ctx.longValue("DescribeApmResponse.Result.nodeAmount"));
 		result.setOutputES(_ctx.stringValue("DescribeApmResponse.Result.outputES"));
 		result.setOutputESUserName(_ctx.stringValue("DescribeApmResponse.Result.outputESUserName"));
-		result.setOutputEsDescription(_ctx.stringValue("DescribeApmResponse.Result.outputEsDescription"));
 		result.setOwnerId(_ctx.stringValue("DescribeApmResponse.Result.ownerId"));
 		result.setPaymentType(_ctx.stringValue("DescribeApmResponse.Result.paymentType"));
 		result.setRegion(_ctx.stringValue("DescribeApmResponse.Result.region"));

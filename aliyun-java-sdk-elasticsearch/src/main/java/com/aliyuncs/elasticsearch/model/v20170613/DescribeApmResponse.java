@@ -64,8 +64,6 @@ public class DescribeApmResponse extends AcsResponse {
 
 		private String outputESUserName;
 
-		private String outputEsDescription;
-
 		private String ownerId;
 
 		private String paymentType;
@@ -156,14 +154,6 @@ public class DescribeApmResponse extends AcsResponse {
 
 		public void setOutputESUserName(String outputESUserName) {
 			this.outputESUserName = outputESUserName;
-		}
-
-		public String getOutputEsDescription() {
-			return this.outputEsDescription;
-		}
-
-		public void setOutputEsDescription(String outputEsDescription) {
-			this.outputEsDescription = outputEsDescription;
 		}
 
 		public String getOwnerId() {
