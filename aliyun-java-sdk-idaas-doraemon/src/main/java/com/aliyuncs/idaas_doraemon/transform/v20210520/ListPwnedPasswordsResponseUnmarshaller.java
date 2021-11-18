@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.idaas_doraemon.model.v20210520.ListPwnedPasswordsResponse;
-import com.aliyuncs.idaas_doraemon.model.v20210520.ListPwnedPasswordsResponse.ItemsItem;
+import com.aliyuncs.idaas_doraemon.model.v20210520.ListPwnedPasswordsResponse.Items;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -31,15 +31,15 @@ public class ListPwnedPasswordsResponseUnmarshaller {
 		listPwnedPasswordsResponse.setTotalCount(_ctx.longValue("ListPwnedPasswordsResponse.TotalCount"));
 		listPwnedPasswordsResponse.setPageSize(_ctx.longValue("ListPwnedPasswordsResponse.PageSize"));
 
-		List<ItemsItem> items = new ArrayList<ItemsItem>();
-		for (int i = 0; i < _ctx.lengthValue("ListPwnedPasswordsResponse.Items.Length"); i++) {
-			ItemsItem itemsItem = new ItemsItem();
-			itemsItem.setHexPasswordSha1Hash(_ctx.stringValue("ListPwnedPasswordsResponse.Items["+ i +"].HexPasswordSha1Hash"));
-			itemsItem.setPwnedCount(_ctx.longValue("ListPwnedPasswordsResponse.Items["+ i +"].PwnedCount"));
+		List<Items> pwnedPasswordInfos = new ArrayList<Items>();
+		for (int i = 0; i < _ctx.lengthValue("ListPwnedPasswordsResponse.PwnedPasswordInfos.Length"); i++) {
+			Items items = new Items();
+			items.setHexPasswordSha1Hash(_ctx.stringValue("ListPwnedPasswordsResponse.PwnedPasswordInfos["+ i +"].HexPasswordSha1Hash"));
+			items.setPwnedCount(_ctx.longValue("ListPwnedPasswordsResponse.PwnedPasswordInfos["+ i +"].PwnedCount"));
 
-			items.add(itemsItem);
+			pwnedPasswordInfos.add(items);
 		}
-		listPwnedPasswordsResponse.setItems(items);
+		listPwnedPasswordsResponse.setPwnedPasswordInfos(pwnedPasswordInfos);
 	 
 	 	return listPwnedPasswordsResponse;
 	}

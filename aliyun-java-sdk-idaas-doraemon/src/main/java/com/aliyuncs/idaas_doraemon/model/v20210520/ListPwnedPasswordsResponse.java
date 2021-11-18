@@ -33,7 +33,7 @@ public class ListPwnedPasswordsResponse extends AcsResponse {
 
 	private Long pageSize;
 
-	private List<ItemsItem> items;
+	private List<Items> pwnedPasswordInfos;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -67,15 +67,15 @@ public class ListPwnedPasswordsResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public List<ItemsItem> getItems() {
-		return this.items;
+	public List<Items> getPwnedPasswordInfos() {
+		return this.pwnedPasswordInfos;
 	}
 
-	public void setItems(List<ItemsItem> items) {
-		this.items = items;
+	public void setPwnedPasswordInfos(List<Items> pwnedPasswordInfos) {
+		this.pwnedPasswordInfos = pwnedPasswordInfos;
 	}
 
-	public static class ItemsItem {
+	public static class Items {
 
 		private String hexPasswordSha1Hash;
 
