@@ -16,14 +16,14 @@ package com.aliyuncs.dms_enterprise.model.v20181101;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.dms_enterprise.transform.v20181101.GetOpLogResponseUnmarshaller;
+import com.aliyuncs.dms_enterprise.transform.v20181101.ListInstanceLoginAuditLogResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetOpLogResponse extends AcsResponse {
+public class ListInstanceLoginAuditLogResponse extends AcsResponse {
 
 	private Long totalCount;
 
@@ -35,7 +35,7 @@ public class GetOpLogResponse extends AcsResponse {
 
 	private Boolean success;
 
-	private List<OpLogDetail> opLogDetails;
+	private List<InstanceLoginAuditLog> instanceLoginAuditLogList;
 
 	public Long getTotalCount() {
 		return this.totalCount;
@@ -77,87 +77,29 @@ public class GetOpLogResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public List<OpLogDetail> getOpLogDetails() {
-		return this.opLogDetails;
+	public List<InstanceLoginAuditLog> getInstanceLoginAuditLogList() {
+		return this.instanceLoginAuditLogList;
 	}
 
-	public void setOpLogDetails(List<OpLogDetail> opLogDetails) {
-		this.opLogDetails = opLogDetails;
+	public void setInstanceLoginAuditLogList(List<InstanceLoginAuditLog> instanceLoginAuditLogList) {
+		this.instanceLoginAuditLogList = instanceLoginAuditLogList;
 	}
 
-	public static class OpLogDetail {
-
-		private String module;
-
-		private String database;
-
-		private String userId;
-
-		private Long opUserId;
-
-		private String opContent;
-
-		private String userNick;
-
-		private Long orderId;
+	public static class InstanceLoginAuditLog {
 
 		private String opTime;
 
-		public String getModule() {
-			return this.module;
-		}
+		private String userName;
 
-		public void setModule(String module) {
-			this.module = module;
-		}
+		private Long userId;
 
-		public String getDatabase() {
-			return this.database;
-		}
+		private String instanceName;
 
-		public void setDatabase(String database) {
-			this.database = database;
-		}
+		private Long instanceId;
 
-		public String getUserId() {
-			return this.userId;
-		}
+		private String dbUser;
 
-		public void setUserId(String userId) {
-			this.userId = userId;
-		}
-
-		public Long getOpUserId() {
-			return this.opUserId;
-		}
-
-		public void setOpUserId(Long opUserId) {
-			this.opUserId = opUserId;
-		}
-
-		public String getOpContent() {
-			return this.opContent;
-		}
-
-		public void setOpContent(String opContent) {
-			this.opContent = opContent;
-		}
-
-		public String getUserNick() {
-			return this.userNick;
-		}
-
-		public void setUserNick(String userNick) {
-			this.userNick = userNick;
-		}
-
-		public Long getOrderId() {
-			return this.orderId;
-		}
-
-		public void setOrderId(Long orderId) {
-			this.orderId = orderId;
-		}
+		private String requestIp;
 
 		public String getOpTime() {
 			return this.opTime;
@@ -166,10 +108,58 @@ public class GetOpLogResponse extends AcsResponse {
 		public void setOpTime(String opTime) {
 			this.opTime = opTime;
 		}
+
+		public String getUserName() {
+			return this.userName;
+		}
+
+		public void setUserName(String userName) {
+			this.userName = userName;
+		}
+
+		public Long getUserId() {
+			return this.userId;
+		}
+
+		public void setUserId(Long userId) {
+			this.userId = userId;
+		}
+
+		public String getInstanceName() {
+			return this.instanceName;
+		}
+
+		public void setInstanceName(String instanceName) {
+			this.instanceName = instanceName;
+		}
+
+		public Long getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(Long instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public String getDbUser() {
+			return this.dbUser;
+		}
+
+		public void setDbUser(String dbUser) {
+			this.dbUser = dbUser;
+		}
+
+		public String getRequestIp() {
+			return this.requestIp;
+		}
+
+		public void setRequestIp(String requestIp) {
+			this.requestIp = requestIp;
+		}
 	}
 
 	@Override
-	public GetOpLogResponse getInstance(UnmarshallerContext context) {
-		return	GetOpLogResponseUnmarshaller.unmarshall(this, context);
+	public ListInstanceLoginAuditLogResponse getInstance(UnmarshallerContext context) {
+		return	ListInstanceLoginAuditLogResponseUnmarshaller.unmarshall(this, context);
 	}
 }

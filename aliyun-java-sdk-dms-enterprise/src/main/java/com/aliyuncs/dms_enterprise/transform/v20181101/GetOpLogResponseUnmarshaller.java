@@ -38,6 +38,7 @@ public class GetOpLogResponseUnmarshaller {
 			opLogDetail.setModule(_ctx.stringValue("GetOpLogResponse.OpLogDetails["+ i +"].Module"));
 			opLogDetail.setDatabase(_ctx.stringValue("GetOpLogResponse.OpLogDetails["+ i +"].Database"));
 			opLogDetail.setUserId(_ctx.stringValue("GetOpLogResponse.OpLogDetails["+ i +"].UserId"));
+			opLogDetail.setOpUserId(_ctx.longValue("GetOpLogResponse.OpLogDetails["+ i +"].OpUserId"));
 			opLogDetail.setOpContent(_ctx.stringValue("GetOpLogResponse.OpLogDetails["+ i +"].OpContent"));
 			opLogDetail.setUserNick(_ctx.stringValue("GetOpLogResponse.OpLogDetails["+ i +"].UserNick"));
 			opLogDetail.setOrderId(_ctx.longValue("GetOpLogResponse.OpLogDetails["+ i +"].OrderId"));

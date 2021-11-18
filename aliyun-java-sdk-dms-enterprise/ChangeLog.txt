@@ -1,3 +1,7 @@
+2021-11-18 Version: 1.24.0
+- Support ListInstanceLoginAuditLog, ListProxySQLExecAuditLog API.
+- Support GetOpLog API to return OpUserId information.
+
 2021-11-04 Version: 1.23.0
 - Support ListSQLExecAuditLog API.
 - Support ListUsers, GetUser API to return information of Email, Webhook and DingRobot.
