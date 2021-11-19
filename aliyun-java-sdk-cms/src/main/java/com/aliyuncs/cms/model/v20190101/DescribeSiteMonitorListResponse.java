@@ -235,6 +235,8 @@ public class DescribeSiteMonitorListResponse extends AcsResponse {
 
 			private Integer match_rule;
 
+			private String dns_match_rule;
+
 			private String request_content;
 
 			private String username;
@@ -357,6 +359,14 @@ public class DescribeSiteMonitorListResponse extends AcsResponse {
 
 			public void setMatch_rule(Integer match_rule) {
 				this.match_rule = match_rule;
+			}
+
+			public String getDns_match_rule() {
+				return this.dns_match_rule;
+			}
+
+			public void setDns_match_rule(String dns_match_rule) {
+				this.dns_match_rule = dns_match_rule;
 			}
 
 			public String getRequest_content() {

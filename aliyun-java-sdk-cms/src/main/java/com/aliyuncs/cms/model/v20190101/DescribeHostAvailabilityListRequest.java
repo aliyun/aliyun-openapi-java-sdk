@@ -32,6 +32,8 @@ public class DescribeHostAvailabilityListRequest extends RpcAcsRequest<DescribeH
 
 	private Integer pageSize;
 
+	private String ids;
+
 	private Long id;
 	public DescribeHostAvailabilityListRequest() {
 		super("Cms", "2019-01-01", "DescribeHostAvailabilityList", "cms");
@@ -79,6 +81,17 @@ public class DescribeHostAvailabilityListRequest extends RpcAcsRequest<DescribeH
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getIds() {
+		return this.ids;
+	}
+
+	public void setIds(String ids) {
+		this.ids = ids;
+		if(ids != null){
+			putQueryParameter("Ids", ids);
 		}
 	}
 

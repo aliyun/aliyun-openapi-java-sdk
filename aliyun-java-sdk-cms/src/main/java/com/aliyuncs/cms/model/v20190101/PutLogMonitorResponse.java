@@ -30,9 +30,9 @@ public class PutLogMonitorResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
-
 	private String logId;
+
+	private Boolean success;
 
 	public String getCode() {
 		return this.code;
@@ -58,20 +58,20 @@ public class PutLogMonitorResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
 	public String getLogId() {
 		return this.logId;
 	}
 
 	public void setLogId(String logId) {
 		this.logId = logId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	@Override

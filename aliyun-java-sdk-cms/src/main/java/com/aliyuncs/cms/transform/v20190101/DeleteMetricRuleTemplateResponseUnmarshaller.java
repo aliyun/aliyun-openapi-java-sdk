@@ -24,9 +24,9 @@ public class DeleteMetricRuleTemplateResponseUnmarshaller {
 	public static DeleteMetricRuleTemplateResponse unmarshall(DeleteMetricRuleTemplateResponse deleteMetricRuleTemplateResponse, UnmarshallerContext _ctx) {
 		
 		deleteMetricRuleTemplateResponse.setRequestId(_ctx.stringValue("DeleteMetricRuleTemplateResponse.RequestId"));
-		deleteMetricRuleTemplateResponse.setSuccess(_ctx.booleanValue("DeleteMetricRuleTemplateResponse.Success"));
 		deleteMetricRuleTemplateResponse.setCode(_ctx.integerValue("DeleteMetricRuleTemplateResponse.Code"));
 		deleteMetricRuleTemplateResponse.setMessage(_ctx.stringValue("DeleteMetricRuleTemplateResponse.Message"));
+		deleteMetricRuleTemplateResponse.setSuccess(_ctx.booleanValue("DeleteMetricRuleTemplateResponse.Success"));
 
 		Resource resource = new Resource();
 		resource.setTemplateId(_ctx.stringValue("DeleteMetricRuleTemplateResponse.Resource.TemplateId"));

@@ -1,3 +1,6 @@
+2021-11-19 Version: 7.0.26
+- Add site monitoring dial DNS_ match_ rule.
+
 2021-10-28 Version: 7.0.25
 - Add no data alarm processing.
 

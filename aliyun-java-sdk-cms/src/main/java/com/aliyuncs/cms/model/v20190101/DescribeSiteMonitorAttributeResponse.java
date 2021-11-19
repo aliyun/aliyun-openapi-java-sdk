@@ -397,6 +397,8 @@ public class DescribeSiteMonitorAttributeResponse extends AcsResponse {
 
 			private Integer match_rule;
 
+			private String dns_match_rule;
+
 			private String ipv6_task;
 
 			private String request_content;
@@ -485,6 +487,14 @@ public class DescribeSiteMonitorAttributeResponse extends AcsResponse {
 
 			public void setMatch_rule(Integer match_rule) {
 				this.match_rule = match_rule;
+			}
+
+			public String getDns_match_rule() {
+				return this.dns_match_rule;
+			}
+
+			public void setDns_match_rule(String dns_match_rule) {
+				this.dns_match_rule = dns_match_rule;
 			}
 
 			public String getIpv6_task() {

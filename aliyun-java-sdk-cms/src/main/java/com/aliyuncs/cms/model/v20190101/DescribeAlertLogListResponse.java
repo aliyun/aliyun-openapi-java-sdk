@@ -25,21 +25,35 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeAlertLogListResponse extends AcsResponse {
 
+	private String requestId;
+
+	private Boolean success;
+
 	private String code;
 
 	private String message;
 
-	private Boolean success;
-
-	private String requestId;
-
-	private Integer total;
+	private Integer pageNumber;
 
 	private Integer pageSize;
 
-	private Integer pageNumber;
-
 	private List<Alarm> alertLogList;
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
 
 	public String getCode() {
 		return this.code;
@@ -57,28 +71,12 @@ public class DescribeAlertLogListResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Integer getTotal() {
-		return this.total;
-	}
-
-	public void setTotal(Integer total) {
-		this.total = total;
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public Integer getPageSize() {
@@ -87,14 +85,6 @@ public class DescribeAlertLogListResponse extends AcsResponse {
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
 	}
 
 	public List<Alarm> getAlertLogList() {
@@ -107,41 +97,41 @@ public class DescribeAlertLogListResponse extends AcsResponse {
 
 	public static class Alarm {
 
-		private String ruleId;
-
-		private String ruleName;
-
-		private String namespace;
-
-		private String product;
+		private String metricName;
 
 		private String eventName;
 
-		private String groupId;
-
-		private String groupName;
-
-		private String metricName;
-
-		private String instanceId;
-
-		private String instanceName;
-
-		private String level;
-
-		private String levelChange;
-
-		private String sendStatus;
-
-		private String alertTime;
-
-		private String message;
+		private String product;
 
 		private String blackListUUID;
 
+		private String message;
+
+		private String namespace;
+
+		private String levelChange;
+
+		private String instanceId;
+
+		private String ruleName;
+
+		private String ruleId;
+
 		private String blackListName;
 
+		private String groupName;
+
+		private String groupId;
+
+		private String alertTime;
+
+		private String instanceName;
+
 		private String blackListDetail;
+
+		private String level;
+
+		private String sendStatus;
 
 		private List<ExtInfo> extendedInfo;
 
@@ -149,54 +139,32 @@ public class DescribeAlertLogListResponse extends AcsResponse {
 
 		private List<WebhookListItem> webhookList;
 
+		private List<SendResult> sendResultList;
+
+		private List<String> dingdingWebhookList;
+
+		private List<String> contactOnCallList;
+
+		private List<String> contactMailList;
+
 		private List<String> contactGroups;
 
 		private List<String> contactALIIWWList;
 
 		private List<String> contactSMSList;
 
-		private List<String> contactOnCallList;
-
-		private List<String> contactMailList;
-
 		private List<String> contactDingList;
-
-		private List<String> dingdingWebhookList;
 
 		private SendDetail sendDetail;
 
 		private Escalation escalation;
 
-		public String getRuleId() {
-			return this.ruleId;
+		public String getMetricName() {
+			return this.metricName;
 		}
 
-		public void setRuleId(String ruleId) {
-			this.ruleId = ruleId;
-		}
-
-		public String getRuleName() {
-			return this.ruleName;
-		}
-
-		public void setRuleName(String ruleName) {
-			this.ruleName = ruleName;
-		}
-
-		public String getNamespace() {
-			return this.namespace;
-		}
-
-		public void setNamespace(String namespace) {
-			this.namespace = namespace;
-		}
-
-		public String getProduct() {
-			return this.product;
-		}
-
-		public void setProduct(String product) {
-			this.product = product;
+		public void setMetricName(String metricName) {
+			this.metricName = metricName;
 		}
 
 		public String getEventName() {
@@ -207,84 +175,12 @@ public class DescribeAlertLogListResponse extends AcsResponse {
 			this.eventName = eventName;
 		}
 
-		public String getGroupId() {
-			return this.groupId;
+		public String getProduct() {
+			return this.product;
 		}
 
-		public void setGroupId(String groupId) {
-			this.groupId = groupId;
-		}
-
-		public String getGroupName() {
-			return this.groupName;
-		}
-
-		public void setGroupName(String groupName) {
-			this.groupName = groupName;
-		}
-
-		public String getMetricName() {
-			return this.metricName;
-		}
-
-		public void setMetricName(String metricName) {
-			this.metricName = metricName;
-		}
-
-		public String getInstanceId() {
-			return this.instanceId;
-		}
-
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
-
-		public String getInstanceName() {
-			return this.instanceName;
-		}
-
-		public void setInstanceName(String instanceName) {
-			this.instanceName = instanceName;
-		}
-
-		public String getLevel() {
-			return this.level;
-		}
-
-		public void setLevel(String level) {
-			this.level = level;
-		}
-
-		public String getLevelChange() {
-			return this.levelChange;
-		}
-
-		public void setLevelChange(String levelChange) {
-			this.levelChange = levelChange;
-		}
-
-		public String getSendStatus() {
-			return this.sendStatus;
-		}
-
-		public void setSendStatus(String sendStatus) {
-			this.sendStatus = sendStatus;
-		}
-
-		public String getAlertTime() {
-			return this.alertTime;
-		}
-
-		public void setAlertTime(String alertTime) {
-			this.alertTime = alertTime;
-		}
-
-		public String getMessage() {
-			return this.message;
-		}
-
-		public void setMessage(String message) {
-			this.message = message;
+		public void setProduct(String product) {
+			this.product = product;
 		}
 
 		public String getBlackListUUID() {
@@ -295,6 +191,54 @@ public class DescribeAlertLogListResponse extends AcsResponse {
 			this.blackListUUID = blackListUUID;
 		}
 
+		public String getMessage() {
+			return this.message;
+		}
+
+		public void setMessage(String message) {
+			this.message = message;
+		}
+
+		public String getNamespace() {
+			return this.namespace;
+		}
+
+		public void setNamespace(String namespace) {
+			this.namespace = namespace;
+		}
+
+		public String getLevelChange() {
+			return this.levelChange;
+		}
+
+		public void setLevelChange(String levelChange) {
+			this.levelChange = levelChange;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public String getRuleName() {
+			return this.ruleName;
+		}
+
+		public void setRuleName(String ruleName) {
+			this.ruleName = ruleName;
+		}
+
+		public String getRuleId() {
+			return this.ruleId;
+		}
+
+		public void setRuleId(String ruleId) {
+			this.ruleId = ruleId;
+		}
+
 		public String getBlackListName() {
 			return this.blackListName;
 		}
@@ -303,12 +247,60 @@ public class DescribeAlertLogListResponse extends AcsResponse {
 			this.blackListName = blackListName;
 		}
 
+		public String getGroupName() {
+			return this.groupName;
+		}
+
+		public void setGroupName(String groupName) {
+			this.groupName = groupName;
+		}
+
+		public String getGroupId() {
+			return this.groupId;
+		}
+
+		public void setGroupId(String groupId) {
+			this.groupId = groupId;
+		}
+
+		public String getAlertTime() {
+			return this.alertTime;
+		}
+
+		public void setAlertTime(String alertTime) {
+			this.alertTime = alertTime;
+		}
+
+		public String getInstanceName() {
+			return this.instanceName;
+		}
+
+		public void setInstanceName(String instanceName) {
+			this.instanceName = instanceName;
+		}
+
 		public String getBlackListDetail() {
 			return this.blackListDetail;
 		}
 
 		public void setBlackListDetail(String blackListDetail) {
 			this.blackListDetail = blackListDetail;
+		}
+
+		public String getLevel() {
+			return this.level;
+		}
+
+		public void setLevel(String level) {
+			this.level = level;
+		}
+
+		public String getSendStatus() {
+			return this.sendStatus;
+		}
+
+		public void setSendStatus(String sendStatus) {
+			this.sendStatus = sendStatus;
 		}
 
 		public List<ExtInfo> getExtendedInfo() {
@@ -335,6 +327,38 @@ public class DescribeAlertLogListResponse extends AcsResponse {
 			this.webhookList = webhookList;
 		}
 
+		public List<SendResult> getSendResultList() {
+			return this.sendResultList;
+		}
+
+		public void setSendResultList(List<SendResult> sendResultList) {
+			this.sendResultList = sendResultList;
+		}
+
+		public List<String> getDingdingWebhookList() {
+			return this.dingdingWebhookList;
+		}
+
+		public void setDingdingWebhookList(List<String> dingdingWebhookList) {
+			this.dingdingWebhookList = dingdingWebhookList;
+		}
+
+		public List<String> getContactOnCallList() {
+			return this.contactOnCallList;
+		}
+
+		public void setContactOnCallList(List<String> contactOnCallList) {
+			this.contactOnCallList = contactOnCallList;
+		}
+
+		public List<String> getContactMailList() {
+			return this.contactMailList;
+		}
+
+		public void setContactMailList(List<String> contactMailList) {
+			this.contactMailList = contactMailList;
+		}
+
 		public List<String> getContactGroups() {
 			return this.contactGroups;
 		}
@@ -359,36 +383,12 @@ public class DescribeAlertLogListResponse extends AcsResponse {
 			this.contactSMSList = contactSMSList;
 		}
 
-		public List<String> getContactOnCallList() {
-			return this.contactOnCallList;
-		}
-
-		public void setContactOnCallList(List<String> contactOnCallList) {
-			this.contactOnCallList = contactOnCallList;
-		}
-
-		public List<String> getContactMailList() {
-			return this.contactMailList;
-		}
-
-		public void setContactMailList(List<String> contactMailList) {
-			this.contactMailList = contactMailList;
-		}
-
 		public List<String> getContactDingList() {
 			return this.contactDingList;
 		}
 
 		public void setContactDingList(List<String> contactDingList) {
 			this.contactDingList = contactDingList;
-		}
-
-		public List<String> getDingdingWebhookList() {
-			return this.dingdingWebhookList;
-		}
-
-		public void setDingdingWebhookList(List<String> dingdingWebhookList) {
-			this.dingdingWebhookList = dingdingWebhookList;
 		}
 
 		public SendDetail getSendDetail() {
@@ -455,19 +455,11 @@ public class DescribeAlertLogListResponse extends AcsResponse {
 
 		public static class WebhookListItem {
 
-			private String url;
-
 			private String code;
 
+			private String url;
+
 			private String message;
-
-			public String getUrl() {
-				return this.url;
-			}
-
-			public void setUrl(String url) {
-				this.url = url;
-			}
 
 			public String getCode() {
 				return this.code;
@@ -477,12 +469,43 @@ public class DescribeAlertLogListResponse extends AcsResponse {
 				this.code = code;
 			}
 
+			public String getUrl() {
+				return this.url;
+			}
+
+			public void setUrl(String url) {
+				this.url = url;
+			}
+
 			public String getMessage() {
 				return this.message;
 			}
 
 			public void setMessage(String message) {
 				this.message = message;
+			}
+		}
+
+		public static class SendResult {
+
+			private String key;
+
+			private List<String> value;
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
+
+			public List<String> getValue() {
+				return this.value;
+			}
+
+			public void setValue(List<String> value) {
+				this.value = value;
 			}
 		}
 
@@ -534,11 +557,11 @@ public class DescribeAlertLogListResponse extends AcsResponse {
 
 					private String code;
 
-					private String detail;
+					private String requestId;
 
 					private Boolean success;
 
-					private String requestId;
+					private String detail;
 
 					private List<String> notifyTargetList;
 
@@ -550,12 +573,12 @@ public class DescribeAlertLogListResponse extends AcsResponse {
 						this.code = code;
 					}
 
-					public String getDetail() {
-						return this.detail;
+					public String getRequestId() {
+						return this.requestId;
 					}
 
-					public void setDetail(String detail) {
-						this.detail = detail;
+					public void setRequestId(String requestId) {
+						this.requestId = requestId;
 					}
 
 					public Boolean getSuccess() {
@@ -566,12 +589,12 @@ public class DescribeAlertLogListResponse extends AcsResponse {
 						this.success = success;
 					}
 
-					public String getRequestId() {
-						return this.requestId;
+					public String getDetail() {
+						return this.detail;
 					}
 
-					public void setRequestId(String requestId) {
-						this.requestId = requestId;
+					public void setDetail(String detail) {
+						this.detail = detail;
 					}
 
 					public List<String> getNotifyTargetList() {
@@ -587,19 +610,11 @@ public class DescribeAlertLogListResponse extends AcsResponse {
 
 		public static class Escalation {
 
-			private Integer times;
-
 			private String expression;
 
+			private Integer times;
+
 			private String level;
-
-			public Integer getTimes() {
-				return this.times;
-			}
-
-			public void setTimes(Integer times) {
-				this.times = times;
-			}
 
 			public String getExpression() {
 				return this.expression;
@@ -607,6 +622,14 @@ public class DescribeAlertLogListResponse extends AcsResponse {
 
 			public void setExpression(String expression) {
 				this.expression = expression;
+			}
+
+			public Integer getTimes() {
+				return this.times;
+			}
+
+			public void setTimes(Integer times) {
+				this.times = times;
 			}
 
 			public String getLevel() {

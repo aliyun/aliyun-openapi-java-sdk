@@ -62,6 +62,7 @@ public class DescribeSiteMonitorListResponseUnmarshaller {
 			optionsJson.setAuthentication(_ctx.integerValue("DescribeSiteMonitorListResponse.SiteMonitors["+ i +"].OptionsJson.authentication"));
 			optionsJson.setHttp_method(_ctx.stringValue("DescribeSiteMonitorListResponse.SiteMonitors["+ i +"].OptionsJson.http_method"));
 			optionsJson.setMatch_rule(_ctx.integerValue("DescribeSiteMonitorListResponse.SiteMonitors["+ i +"].OptionsJson.match_rule"));
+			optionsJson.setDns_match_rule(_ctx.stringValue("DescribeSiteMonitorListResponse.SiteMonitors["+ i +"].OptionsJson.dns_match_rule"));
 			optionsJson.setRequest_content(_ctx.stringValue("DescribeSiteMonitorListResponse.SiteMonitors["+ i +"].OptionsJson.request_content"));
 			optionsJson.setUsername(_ctx.stringValue("DescribeSiteMonitorListResponse.SiteMonitors["+ i +"].OptionsJson.username"));
 			optionsJson.setTraceroute(_ctx.longValue("DescribeSiteMonitorListResponse.SiteMonitors["+ i +"].OptionsJson.traceroute"));

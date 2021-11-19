@@ -25,8 +25,8 @@ public class PutLogMonitorResponseUnmarshaller {
 		putLogMonitorResponse.setRequestId(_ctx.stringValue("PutLogMonitorResponse.RequestId"));
 		putLogMonitorResponse.setCode(_ctx.stringValue("PutLogMonitorResponse.Code"));
 		putLogMonitorResponse.setMessage(_ctx.stringValue("PutLogMonitorResponse.Message"));
-		putLogMonitorResponse.setSuccess(_ctx.booleanValue("PutLogMonitorResponse.Success"));
 		putLogMonitorResponse.setLogId(_ctx.stringValue("PutLogMonitorResponse.LogId"));
+		putLogMonitorResponse.setSuccess(_ctx.booleanValue("PutLogMonitorResponse.Success"));
 	 
 	 	return putLogMonitorResponse;
 	}

@@ -25,21 +25,29 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDynamicTagRuleListResponse extends AcsResponse {
 
+	private String requestId;
+
 	private Boolean success;
 
 	private String code;
 
 	private String message;
 
-	private String requestId;
-
-	private Integer total;
+	private String pageSize;
 
 	private String pageNumber;
 
-	private String pageSize;
+	private Integer total;
 
 	private List<TagGroup> tagGroupList;
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
 
 	public Boolean getSuccess() {
 		return this.success;
@@ -65,20 +73,12 @@ public class DescribeDynamicTagRuleListResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Integer getTotal() {
-		return this.total;
-	}
-
-	public void setTotal(Integer total) {
-		this.total = total;
+	public void setPageSize(String pageSize) {
+		this.pageSize = pageSize;
 	}
 
 	public String getPageNumber() {
@@ -89,12 +89,12 @@ public class DescribeDynamicTagRuleListResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public String getPageSize() {
-		return this.pageSize;
+	public Integer getTotal() {
+		return this.total;
 	}
 
-	public void setPageSize(String pageSize) {
-		this.pageSize = pageSize;
+	public void setTotal(Integer total) {
+		this.total = total;
 	}
 
 	public List<TagGroup> getTagGroupList() {
@@ -107,42 +107,28 @@ public class DescribeDynamicTagRuleListResponse extends AcsResponse {
 
 	public static class TagGroup {
 
-		private String dynamicTagRuleId;
-
-		private String tagKey;
-
-		private String regionId;
+		private String status;
 
 		private String matchExpressFilterRelation;
 
-		private String status;
+		private String regionId;
+
+		private String tagKey;
+
+		private String dynamicTagRuleId;
 
 		private List<MatchExpressItem> matchExpress;
 
 		private List<String> templateIdList;
 
-		public String getDynamicTagRuleId() {
-			return this.dynamicTagRuleId;
+		private List<String> contactGroupList;
+
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setDynamicTagRuleId(String dynamicTagRuleId) {
-			this.dynamicTagRuleId = dynamicTagRuleId;
-		}
-
-		public String getTagKey() {
-			return this.tagKey;
-		}
-
-		public void setTagKey(String tagKey) {
-			this.tagKey = tagKey;
-		}
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public String getMatchExpressFilterRelation() {
@@ -153,12 +139,28 @@ public class DescribeDynamicTagRuleListResponse extends AcsResponse {
 			this.matchExpressFilterRelation = matchExpressFilterRelation;
 		}
 
-		public String getStatus() {
-			return this.status;
+		public String getRegionId() {
+			return this.regionId;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		public String getTagKey() {
+			return this.tagKey;
+		}
+
+		public void setTagKey(String tagKey) {
+			this.tagKey = tagKey;
+		}
+
+		public String getDynamicTagRuleId() {
+			return this.dynamicTagRuleId;
+		}
+
+		public void setDynamicTagRuleId(String dynamicTagRuleId) {
+			this.dynamicTagRuleId = dynamicTagRuleId;
 		}
 
 		public List<MatchExpressItem> getMatchExpress() {
@@ -177,19 +179,19 @@ public class DescribeDynamicTagRuleListResponse extends AcsResponse {
 			this.templateIdList = templateIdList;
 		}
 
-		public static class MatchExpressItem {
+		public List<String> getContactGroupList() {
+			return this.contactGroupList;
+		}
 
-			private String tagValueMatchFunction;
+		public void setContactGroupList(List<String> contactGroupList) {
+			this.contactGroupList = contactGroupList;
+		}
+
+		public static class MatchExpressItem {
 
 			private String tagValue;
 
-			public String getTagValueMatchFunction() {
-				return this.tagValueMatchFunction;
-			}
-
-			public void setTagValueMatchFunction(String tagValueMatchFunction) {
-				this.tagValueMatchFunction = tagValueMatchFunction;
-			}
+			private String tagValueMatchFunction;
 
 			public String getTagValue() {
 				return this.tagValue;
@@ -197,6 +199,14 @@ public class DescribeDynamicTagRuleListResponse extends AcsResponse {
 
 			public void setTagValue(String tagValue) {
 				this.tagValue = tagValue;
+			}
+
+			public String getTagValueMatchFunction() {
+				return this.tagValueMatchFunction;
+			}
+
+			public void setTagValueMatchFunction(String tagValueMatchFunction) {
+				this.tagValueMatchFunction = tagValueMatchFunction;
 			}
 		}
 	}

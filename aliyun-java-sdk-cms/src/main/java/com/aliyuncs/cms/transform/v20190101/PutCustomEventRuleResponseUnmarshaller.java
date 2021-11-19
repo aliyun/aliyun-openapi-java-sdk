@@ -23,9 +23,9 @@ public class PutCustomEventRuleResponseUnmarshaller {
 	public static PutCustomEventRuleResponse unmarshall(PutCustomEventRuleResponse putCustomEventRuleResponse, UnmarshallerContext _ctx) {
 		
 		putCustomEventRuleResponse.setRequestId(_ctx.stringValue("PutCustomEventRuleResponse.RequestId"));
-		putCustomEventRuleResponse.setSuccess(_ctx.booleanValue("PutCustomEventRuleResponse.Success"));
 		putCustomEventRuleResponse.setCode(_ctx.stringValue("PutCustomEventRuleResponse.Code"));
 		putCustomEventRuleResponse.setMessage(_ctx.stringValue("PutCustomEventRuleResponse.Message"));
+		putCustomEventRuleResponse.setSuccess(_ctx.booleanValue("PutCustomEventRuleResponse.Success"));
 	 
 	 	return putCustomEventRuleResponse;
 	}

@@ -38,9 +38,9 @@ public class CreateSiteMonitorResponseUnmarshaller {
 		List<Contact> attachAlertResult = new ArrayList<Contact>();
 		for (int i = 0; i < _ctx.lengthValue("CreateSiteMonitorResponse.Data.AttachAlertResult.Length"); i++) {
 			Contact contact = new Contact();
+			contact.setCode(_ctx.stringValue("CreateSiteMonitorResponse.Data.AttachAlertResult["+ i +"].Code"));
 			contact.setMessage(_ctx.stringValue("CreateSiteMonitorResponse.Data.AttachAlertResult["+ i +"].Message"));
 			contact.setRequestId(_ctx.stringValue("CreateSiteMonitorResponse.Data.AttachAlertResult["+ i +"].RequestId"));
-			contact.setCode(_ctx.stringValue("CreateSiteMonitorResponse.Data.AttachAlertResult["+ i +"].Code"));
 			contact.setSuccess(_ctx.stringValue("CreateSiteMonitorResponse.Data.AttachAlertResult["+ i +"].Success"));
 			contact.setRuleId(_ctx.stringValue("CreateSiteMonitorResponse.Data.AttachAlertResult["+ i +"].RuleId"));
 
@@ -52,8 +52,8 @@ public class CreateSiteMonitorResponseUnmarshaller {
 		List<CreateResultListItem> createResultList = new ArrayList<CreateResultListItem>();
 		for (int i = 0; i < _ctx.lengthValue("CreateSiteMonitorResponse.CreateResultList.Length"); i++) {
 			CreateResultListItem createResultListItem = new CreateResultListItem();
-			createResultListItem.setTaskName(_ctx.stringValue("CreateSiteMonitorResponse.CreateResultList["+ i +"].TaskName"));
 			createResultListItem.setTaskId(_ctx.stringValue("CreateSiteMonitorResponse.CreateResultList["+ i +"].TaskId"));
+			createResultListItem.setTaskName(_ctx.stringValue("CreateSiteMonitorResponse.CreateResultList["+ i +"].TaskName"));
 
 			createResultList.add(createResultListItem);
 		}

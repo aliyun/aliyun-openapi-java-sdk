@@ -23,9 +23,9 @@ public class PutContactResponseUnmarshaller {
 	public static PutContactResponse unmarshall(PutContactResponse putContactResponse, UnmarshallerContext _ctx) {
 		
 		putContactResponse.setRequestId(_ctx.stringValue("PutContactResponse.RequestId"));
-		putContactResponse.setSuccess(_ctx.booleanValue("PutContactResponse.Success"));
 		putContactResponse.setCode(_ctx.stringValue("PutContactResponse.Code"));
 		putContactResponse.setMessage(_ctx.stringValue("PutContactResponse.Message"));
+		putContactResponse.setSuccess(_ctx.booleanValue("PutContactResponse.Success"));
 	 
 	 	return putContactResponse;
 	}

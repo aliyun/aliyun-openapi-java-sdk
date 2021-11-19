@@ -32,6 +32,8 @@ public class PutGroupMetricRuleResponse extends AcsResponse {
 
 	private Boolean success;
 
+	private Result result;
+
 	public String getCode() {
 		return this.code;
 	}
@@ -62,6 +64,27 @@ public class PutGroupMetricRuleResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public Result getResult() {
+		return this.result;
+	}
+
+	public void setResult(Result result) {
+		this.result = result;
+	}
+
+	public static class Result {
+
+		private String ruleId;
+
+		public String getRuleId() {
+			return this.ruleId;
+		}
+
+		public void setRuleId(String ruleId) {
+			this.ruleId = ruleId;
+		}
 	}
 
 	@Override

@@ -36,8 +36,6 @@ public class CreateSiteMonitorRequest extends RpcAcsRequest<CreateSiteMonitorRes
 
 	private String optionsJson;
 
-	private String intervalUnit;
-
 	private String interval;
 	public CreateSiteMonitorRequest() {
 		super("Cms", "2019-01-01", "CreateSiteMonitor", "cms");
@@ -107,17 +105,6 @@ public class CreateSiteMonitorRequest extends RpcAcsRequest<CreateSiteMonitorRes
 		this.optionsJson = optionsJson;
 		if(optionsJson != null){
 			putQueryParameter("OptionsJson", optionsJson);
-		}
-	}
-
-	public String getIntervalUnit() {
-		return this.intervalUnit;
-	}
-
-	public void setIntervalUnit(String intervalUnit) {
-		this.intervalUnit = intervalUnit;
-		if(intervalUnit != null){
-			putQueryParameter("IntervalUnit", intervalUnit);
 		}
 	}
 

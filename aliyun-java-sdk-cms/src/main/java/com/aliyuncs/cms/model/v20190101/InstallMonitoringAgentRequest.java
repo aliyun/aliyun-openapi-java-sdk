@@ -28,6 +28,8 @@ public class InstallMonitoringAgentRequest extends RpcAcsRequest<InstallMonitori
 	private List<String> instanceIdss;
 
 	private Boolean force;
+
+	private String installCommand;
 	public InstallMonitoringAgentRequest() {
 		super("Cms", "2019-01-01", "InstallMonitoringAgent", "cms");
 		setMethod(MethodType.POST);
@@ -54,6 +56,17 @@ public class InstallMonitoringAgentRequest extends RpcAcsRequest<InstallMonitori
 		this.force = force;
 		if(force != null){
 			putQueryParameter("Force", force.toString());
+		}
+	}
+
+	public String getInstallCommand() {
+		return this.installCommand;
+	}
+
+	public void setInstallCommand(String installCommand) {
+		this.installCommand = installCommand;
+		if(installCommand != null){
+			putQueryParameter("InstallCommand", installCommand);
 		}
 	}
 

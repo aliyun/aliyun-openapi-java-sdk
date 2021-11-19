@@ -50,6 +50,7 @@ public class DescribeSiteMonitorAttributeResponseUnmarshaller {
 		optionJson.setProxy_protocol(_ctx.booleanValue("DescribeSiteMonitorAttributeResponse.SiteMonitors.OptionJson.proxy_protocol"));
 		optionJson.setAuthentication(_ctx.integerValue("DescribeSiteMonitorAttributeResponse.SiteMonitors.OptionJson.authentication"));
 		optionJson.setMatch_rule(_ctx.integerValue("DescribeSiteMonitorAttributeResponse.SiteMonitors.OptionJson.match_rule"));
+		optionJson.setDns_match_rule(_ctx.stringValue("DescribeSiteMonitorAttributeResponse.SiteMonitors.OptionJson.dns_match_rule"));
 		optionJson.setIpv6_task(_ctx.stringValue("DescribeSiteMonitorAttributeResponse.SiteMonitors.OptionJson.ipv6_task"));
 		optionJson.setRequest_content(_ctx.stringValue("DescribeSiteMonitorAttributeResponse.SiteMonitors.OptionJson.request_content"));
 		optionJson.setAcceptable_response_code(_ctx.stringValue("DescribeSiteMonitorAttributeResponse.SiteMonitors.OptionJson.acceptable_response_code"));
