@@ -29,7 +29,7 @@ public class DescribeAppRequest extends RpcAcsRequest<DescribeAppResponse> {
 
 	private String clientIp;
 	public DescribeAppRequest() {
-		super("Sls", "2019-10-23", "DescribeApp");
+		super("Sls", "2019-10-23", "DescribeApp", "sls");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

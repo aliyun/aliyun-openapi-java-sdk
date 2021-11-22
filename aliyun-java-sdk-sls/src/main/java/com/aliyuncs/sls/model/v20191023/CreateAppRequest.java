@@ -35,7 +35,7 @@ public class CreateAppRequest extends RpcAcsRequest<CreateAppResponse> {
 
 	private String config;
 	public CreateAppRequest() {
-		super("Sls", "2019-10-23", "CreateApp");
+		super("Sls", "2019-10-23", "CreateApp", "sls");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

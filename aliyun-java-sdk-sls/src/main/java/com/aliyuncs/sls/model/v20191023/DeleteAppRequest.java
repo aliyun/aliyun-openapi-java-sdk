@@ -29,7 +29,7 @@ public class DeleteAppRequest extends RpcAcsRequest<DeleteAppResponse> {
 
 	private String clientIp;
 	public DeleteAppRequest() {
-		super("Sls", "2019-10-23", "DeleteApp");
+		super("Sls", "2019-10-23", "DeleteApp", "sls");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

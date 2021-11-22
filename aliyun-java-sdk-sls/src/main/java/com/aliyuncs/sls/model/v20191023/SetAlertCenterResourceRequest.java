@@ -31,7 +31,7 @@ public class SetAlertCenterResourceRequest extends RpcAcsRequest<SetAlertCenterR
 
 	private String region;
 	public SetAlertCenterResourceRequest() {
-		super("Sls", "2019-10-23", "SetAlertCenterResource");
+		super("Sls", "2019-10-23", "SetAlertCenterResource", "sls");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

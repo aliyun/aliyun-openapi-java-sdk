@@ -31,7 +31,7 @@ public class QuerySafServiceRequest extends RpcAcsRequest<QuerySafServiceRespons
 
 	private String paramValue;
 	public QuerySafServiceRequest() {
-		super("Sls", "2019-10-23", "QuerySafService");
+		super("Sls", "2019-10-23", "QuerySafService", "sls");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

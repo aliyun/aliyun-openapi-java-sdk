@@ -23,10 +23,11 @@ public class GetSlsServiceResponseUnmarshaller {
 	public static GetSlsServiceResponse unmarshall(GetSlsServiceResponse getSlsServiceResponse, UnmarshallerContext _ctx) {
 		
 		getSlsServiceResponse.setRequestId(_ctx.stringValue("GetSlsServiceResponse.RequestId"));
-		getSlsServiceResponse.setSuccess(_ctx.booleanValue("GetSlsServiceResponse.Success"));
-		getSlsServiceResponse.setMessage(_ctx.stringValue("GetSlsServiceResponse.Message"));
-		getSlsServiceResponse.setEnabled(_ctx.booleanValue("GetSlsServiceResponse.Enabled"));
 		getSlsServiceResponse.setCode(_ctx.stringValue("GetSlsServiceResponse.Code"));
+		getSlsServiceResponse.setMessage(_ctx.stringValue("GetSlsServiceResponse.Message"));
+		getSlsServiceResponse.setSuccess(_ctx.booleanValue("GetSlsServiceResponse.Success"));
+		getSlsServiceResponse.setEnabled(_ctx.booleanValue("GetSlsServiceResponse.Enabled"));
+		getSlsServiceResponse.setStatus(_ctx.stringValue("GetSlsServiceResponse.Status"));
 	 
 	 	return getSlsServiceResponse;
 	}

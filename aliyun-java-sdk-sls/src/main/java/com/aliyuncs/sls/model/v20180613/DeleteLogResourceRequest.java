@@ -31,7 +31,7 @@ public class DeleteLogResourceRequest extends RpcAcsRequest<DeleteLogResourceRes
 
 	private String logstore;
 	public DeleteLogResourceRequest() {
-		super("Sls", "2018-06-13", "DeleteLogResource");
+		super("Sls", "2018-06-13", "DeleteLogResource", "sls");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

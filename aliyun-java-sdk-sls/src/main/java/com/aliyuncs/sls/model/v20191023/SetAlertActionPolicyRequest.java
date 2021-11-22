@@ -33,7 +33,7 @@ public class SetAlertActionPolicyRequest extends RpcAcsRequest<SetAlertActionPol
 
 	private String policy;
 	public SetAlertActionPolicyRequest() {
-		super("Sls", "2019-10-23", "SetAlertActionPolicy");
+		super("Sls", "2019-10-23", "SetAlertActionPolicy", "sls");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

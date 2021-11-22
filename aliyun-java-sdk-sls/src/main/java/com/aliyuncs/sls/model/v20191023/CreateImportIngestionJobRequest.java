@@ -49,7 +49,7 @@ public class CreateImportIngestionJobRequest extends RpcAcsRequest<CreateImportI
 
 	private String jobName;
 	public CreateImportIngestionJobRequest() {
-		super("Sls", "2019-10-23", "CreateImportIngestionJob");
+		super("Sls", "2019-10-23", "CreateImportIngestionJob", "sls");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

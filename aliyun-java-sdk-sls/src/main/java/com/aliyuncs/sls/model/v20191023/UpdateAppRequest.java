@@ -33,7 +33,7 @@ public class UpdateAppRequest extends RpcAcsRequest<UpdateAppResponse> {
 
 	private String config;
 	public UpdateAppRequest() {
-		super("Sls", "2019-10-23", "UpdateApp");
+		super("Sls", "2019-10-23", "UpdateApp", "sls");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

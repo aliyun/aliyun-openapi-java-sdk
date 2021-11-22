@@ -23,10 +23,10 @@ public class InitUserAlertResourceResponseUnmarshaller {
 	public static InitUserAlertResourceResponse unmarshall(InitUserAlertResourceResponse initUserAlertResourceResponse, UnmarshallerContext _ctx) {
 		
 		initUserAlertResourceResponse.setRequestId(_ctx.stringValue("InitUserAlertResourceResponse.RequestId"));
-		initUserAlertResourceResponse.setSuccess(_ctx.booleanValue("InitUserAlertResourceResponse.Success"));
-		initUserAlertResourceResponse.setMessage(_ctx.stringValue("InitUserAlertResourceResponse.Message"));
-		initUserAlertResourceResponse.setCode(_ctx.stringValue("InitUserAlertResourceResponse.Code"));
 		initUserAlertResourceResponse.setHttpStatusCode(_ctx.integerValue("InitUserAlertResourceResponse.HttpStatusCode"));
+		initUserAlertResourceResponse.setCode(_ctx.stringValue("InitUserAlertResourceResponse.Code"));
+		initUserAlertResourceResponse.setMessage(_ctx.stringValue("InitUserAlertResourceResponse.Message"));
+		initUserAlertResourceResponse.setSuccess(_ctx.booleanValue("InitUserAlertResourceResponse.Success"));
 	 
 	 	return initUserAlertResourceResponse;
 	}

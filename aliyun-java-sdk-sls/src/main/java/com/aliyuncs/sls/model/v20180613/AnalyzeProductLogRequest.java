@@ -45,7 +45,7 @@ public class AnalyzeProductLogRequest extends RpcAcsRequest<AnalyzeProductLogRes
 
 	private Boolean overwrite;
 	public AnalyzeProductLogRequest() {
-		super("Sls", "2018-06-13", "AnalyzeProductLog");
+		super("Sls", "2018-06-13", "AnalyzeProductLog", "sls");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

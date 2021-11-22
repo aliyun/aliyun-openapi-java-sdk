@@ -24,15 +24,33 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetSlsServiceResponse extends AcsResponse {
 
+	private String code;
+
+	private String message;
+
 	private String requestId;
 
 	private Boolean success;
 
-	private String message;
-
 	private Boolean enabled;
 
-	private String code;
+	private String status;
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -50,14 +68,6 @@ public class GetSlsServiceResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
 	public Boolean getEnabled() {
 		return this.enabled;
 	}
@@ -66,12 +76,12 @@ public class GetSlsServiceResponse extends AcsResponse {
 		this.enabled = enabled;
 	}
 
-	public String getCode() {
-		return this.code;
+	public String getStatus() {
+		return this.status;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
+	public void setStatus(String status) {
+		this.status = status;
 	}
 
 	@Override
