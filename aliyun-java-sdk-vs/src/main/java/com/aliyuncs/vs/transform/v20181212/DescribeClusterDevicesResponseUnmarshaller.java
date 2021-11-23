@@ -38,6 +38,8 @@ public class DescribeClusterDevicesResponseUnmarshaller {
 			device.setEdgeNodeName(_ctx.stringValue("DescribeClusterDevicesResponse.Devices["+ i +"].EdgeNodeName"));
 			device.setPlatformType(_ctx.stringValue("DescribeClusterDevicesResponse.Devices["+ i +"].PlatformType"));
 			device.setStatus(_ctx.stringValue("DescribeClusterDevicesResponse.Devices["+ i +"].Status"));
+			device.setImageId(_ctx.stringValue("DescribeClusterDevicesResponse.Devices["+ i +"].ImageId"));
+			device.setInstanceName(_ctx.stringValue("DescribeClusterDevicesResponse.Devices["+ i +"].InstanceName"));
 			device.setMacAddress(_ctx.stringValue("DescribeClusterDevicesResponse.Devices["+ i +"].MacAddress"));
 			device.setServer(_ctx.stringValue("DescribeClusterDevicesResponse.Devices["+ i +"].Server"));
 			device.setInstanceChargeType(_ctx.stringValue("DescribeClusterDevicesResponse.Devices["+ i +"].InstanceChargeType"));

@@ -1,3 +1,7 @@
+2021-11-23 Version: 1.11.5
+- Add password and instanceName for VM.
+- Reset interface support pod.
+
 2021-11-03 Version: 1.11.4
 - Add password and instanceName for VM.
 

@@ -30,6 +30,8 @@ public class ResetRenderingDevicesRequest extends RpcAcsRequest<ResetRenderingDe
 	private Long ownerId;
 
 	private String instanceIds;
+
+	private String podId;
 	public ResetRenderingDevicesRequest() {
 		super("vs", "2018-12-12", "ResetRenderingDevices");
 		setMethod(MethodType.POST);
@@ -69,6 +71,17 @@ public class ResetRenderingDevicesRequest extends RpcAcsRequest<ResetRenderingDe
 		this.instanceIds = instanceIds;
 		if(instanceIds != null){
 			putQueryParameter("InstanceIds", instanceIds);
+		}
+	}
+
+	public String getPodId() {
+		return this.podId;
+	}
+
+	public void setPodId(String podId) {
+		this.podId = podId;
+		if(podId != null){
+			putQueryParameter("PodId", podId);
 		}
 	}
 

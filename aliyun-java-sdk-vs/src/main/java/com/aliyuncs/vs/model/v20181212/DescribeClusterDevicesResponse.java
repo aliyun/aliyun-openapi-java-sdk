@@ -67,6 +67,10 @@ public class DescribeClusterDevicesResponse extends AcsResponse {
 
 		private String status;
 
+		private String imageId;
+
+		private String instanceName;
+
 		private String macAddress;
 
 		private String server;
@@ -121,6 +125,22 @@ public class DescribeClusterDevicesResponse extends AcsResponse {
 
 		public void setStatus(String status) {
 			this.status = status;
+		}
+
+		public String getImageId() {
+			return this.imageId;
+		}
+
+		public void setImageId(String imageId) {
+			this.imageId = imageId;
+		}
+
+		public String getInstanceName() {
+			return this.instanceName;
+		}
+
+		public void setInstanceName(String instanceName) {
+			this.instanceName = instanceName;
 		}
 
 		public String getMacAddress() {
