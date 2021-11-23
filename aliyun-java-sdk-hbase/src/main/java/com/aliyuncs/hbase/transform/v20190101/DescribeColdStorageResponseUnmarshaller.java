@@ -23,11 +23,13 @@ public class DescribeColdStorageResponseUnmarshaller {
 	public static DescribeColdStorageResponse unmarshall(DescribeColdStorageResponse describeColdStorageResponse, UnmarshallerContext _ctx) {
 		
 		describeColdStorageResponse.setRequestId(_ctx.stringValue("DescribeColdStorageResponse.RequestId"));
-		describeColdStorageResponse.setClusterId(_ctx.stringValue("DescribeColdStorageResponse.ClusterId"));
 		describeColdStorageResponse.setOpenStatus(_ctx.stringValue("DescribeColdStorageResponse.OpenStatus"));
-		describeColdStorageResponse.setColdStorageSize(_ctx.stringValue("DescribeColdStorageResponse.ColdStorageSize"));
-		describeColdStorageResponse.setColdStorageUsePercent(_ctx.stringValue("DescribeColdStorageResponse.ColdStorageUsePercent"));
 		describeColdStorageResponse.setPayType(_ctx.stringValue("DescribeColdStorageResponse.PayType"));
+		describeColdStorageResponse.setColdStorageUsePercent(_ctx.stringValue("DescribeColdStorageResponse.ColdStorageUsePercent"));
+		describeColdStorageResponse.setColdStorageUseAmount(_ctx.stringValue("DescribeColdStorageResponse.ColdStorageUseAmount"));
+		describeColdStorageResponse.setColdStorageSize(_ctx.stringValue("DescribeColdStorageResponse.ColdStorageSize"));
+		describeColdStorageResponse.setColdStorageType(_ctx.stringValue("DescribeColdStorageResponse.ColdStorageType"));
+		describeColdStorageResponse.setClusterId(_ctx.stringValue("DescribeColdStorageResponse.ClusterId"));
 	 
 	 	return describeColdStorageResponse;
 	}

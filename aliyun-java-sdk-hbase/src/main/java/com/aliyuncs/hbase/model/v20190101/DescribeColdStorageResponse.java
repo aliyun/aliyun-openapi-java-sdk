@@ -24,33 +24,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeColdStorageResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String clusterId;
-
 	private String openStatus;
 
-	private String coldStorageSize;
-
-	private String coldStorageUsePercent;
+	private String requestId;
 
 	private String payType;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
+	private String coldStorageUsePercent;
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String coldStorageUseAmount;
 
-	public String getClusterId() {
-		return this.clusterId;
-	}
+	private String coldStorageSize;
 
-	public void setClusterId(String clusterId) {
-		this.clusterId = clusterId;
-	}
+	private String coldStorageType;
+
+	private String clusterId;
 
 	public String getOpenStatus() {
 		return this.openStatus;
@@ -60,12 +48,20 @@ public class DescribeColdStorageResponse extends AcsResponse {
 		this.openStatus = openStatus;
 	}
 
-	public String getColdStorageSize() {
-		return this.coldStorageSize;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setColdStorageSize(String coldStorageSize) {
-		this.coldStorageSize = coldStorageSize;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getPayType() {
+		return this.payType;
+	}
+
+	public void setPayType(String payType) {
+		this.payType = payType;
 	}
 
 	public String getColdStorageUsePercent() {
@@ -76,12 +72,36 @@ public class DescribeColdStorageResponse extends AcsResponse {
 		this.coldStorageUsePercent = coldStorageUsePercent;
 	}
 
-	public String getPayType() {
-		return this.payType;
+	public String getColdStorageUseAmount() {
+		return this.coldStorageUseAmount;
 	}
 
-	public void setPayType(String payType) {
-		this.payType = payType;
+	public void setColdStorageUseAmount(String coldStorageUseAmount) {
+		this.coldStorageUseAmount = coldStorageUseAmount;
+	}
+
+	public String getColdStorageSize() {
+		return this.coldStorageSize;
+	}
+
+	public void setColdStorageSize(String coldStorageSize) {
+		this.coldStorageSize = coldStorageSize;
+	}
+
+	public String getColdStorageType() {
+		return this.coldStorageType;
+	}
+
+	public void setColdStorageType(String coldStorageType) {
+		this.coldStorageType = coldStorageType;
+	}
+
+	public String getClusterId() {
+		return this.clusterId;
+	}
+
+	public void setClusterId(String clusterId) {
+		this.clusterId = clusterId;
 	}
 
 	@Override

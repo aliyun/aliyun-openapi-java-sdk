@@ -1,3 +1,6 @@
+2021-11-23 Version: 2.9.7
+- Fix BdsColdStorage.
+
 2021-10-27 Version: 2.9.6
 - Fix ModifyInstanceName.
 
