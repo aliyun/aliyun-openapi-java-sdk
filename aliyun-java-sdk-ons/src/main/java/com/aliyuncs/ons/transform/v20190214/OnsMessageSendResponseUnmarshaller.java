@@ -23,8 +23,8 @@ public class OnsMessageSendResponseUnmarshaller {
 	public static OnsMessageSendResponse unmarshall(OnsMessageSendResponse onsMessageSendResponse, UnmarshallerContext _ctx) {
 		
 		onsMessageSendResponse.setRequestId(_ctx.stringValue("OnsMessageSendResponse.RequestId"));
-		onsMessageSendResponse.setHelpUrl(_ctx.stringValue("OnsMessageSendResponse.HelpUrl"));
 		onsMessageSendResponse.setData(_ctx.stringValue("OnsMessageSendResponse.Data"));
+		onsMessageSendResponse.setHelpUrl(_ctx.stringValue("OnsMessageSendResponse.HelpUrl"));
 	 
 	 	return onsMessageSendResponse;
 	}

@@ -27,8 +27,8 @@ public class OnsMqttQueryClientByTopicResponseUnmarshaller {
 		onsMqttQueryClientByTopicResponse.setHelpUrl(_ctx.stringValue("OnsMqttQueryClientByTopicResponse.HelpUrl"));
 
 		MqttClientSetDo mqttClientSetDo = new MqttClientSetDo();
-		mqttClientSetDo.setOnlineCount(_ctx.longValue("OnsMqttQueryClientByTopicResponse.MqttClientSetDo.OnlineCount"));
 		mqttClientSetDo.setPersistCount(_ctx.longValue("OnsMqttQueryClientByTopicResponse.MqttClientSetDo.PersistCount"));
+		mqttClientSetDo.setOnlineCount(_ctx.longValue("OnsMqttQueryClientByTopicResponse.MqttClientSetDo.OnlineCount"));
 		onsMqttQueryClientByTopicResponse.setMqttClientSetDo(mqttClientSetDo);
 	 
 	 	return onsMqttQueryClientByTopicResponse;

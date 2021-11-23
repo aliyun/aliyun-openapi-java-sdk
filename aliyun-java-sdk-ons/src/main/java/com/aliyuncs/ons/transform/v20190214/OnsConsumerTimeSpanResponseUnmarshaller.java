@@ -27,10 +27,10 @@ public class OnsConsumerTimeSpanResponseUnmarshaller {
 		onsConsumerTimeSpanResponse.setHelpUrl(_ctx.stringValue("OnsConsumerTimeSpanResponse.HelpUrl"));
 
 		Data data = new Data();
-		data.setTopic(_ctx.stringValue("OnsConsumerTimeSpanResponse.Data.Topic"));
-		data.setMinTimeStamp(_ctx.longValue("OnsConsumerTimeSpanResponse.Data.MinTimeStamp"));
 		data.setMaxTimeStamp(_ctx.longValue("OnsConsumerTimeSpanResponse.Data.MaxTimeStamp"));
 		data.setConsumeTimeStamp(_ctx.longValue("OnsConsumerTimeSpanResponse.Data.ConsumeTimeStamp"));
+		data.setTopic(_ctx.stringValue("OnsConsumerTimeSpanResponse.Data.Topic"));
+		data.setMinTimeStamp(_ctx.longValue("OnsConsumerTimeSpanResponse.Data.MinTimeStamp"));
 		data.setInstanceId(_ctx.stringValue("OnsConsumerTimeSpanResponse.Data.InstanceId"));
 		onsConsumerTimeSpanResponse.setData(data);
 	 

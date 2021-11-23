@@ -56,31 +56,15 @@ public class OnsConsumerTimeSpanResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String topic;
-
-		private Long minTimeStamp;
-
 		private Long maxTimeStamp;
 
 		private Long consumeTimeStamp;
 
+		private String topic;
+
+		private Long minTimeStamp;
+
 		private String instanceId;
-
-		public String getTopic() {
-			return this.topic;
-		}
-
-		public void setTopic(String topic) {
-			this.topic = topic;
-		}
-
-		public Long getMinTimeStamp() {
-			return this.minTimeStamp;
-		}
-
-		public void setMinTimeStamp(Long minTimeStamp) {
-			this.minTimeStamp = minTimeStamp;
-		}
 
 		public Long getMaxTimeStamp() {
 			return this.maxTimeStamp;
@@ -96,6 +80,22 @@ public class OnsConsumerTimeSpanResponse extends AcsResponse {
 
 		public void setConsumeTimeStamp(Long consumeTimeStamp) {
 			this.consumeTimeStamp = consumeTimeStamp;
+		}
+
+		public String getTopic() {
+			return this.topic;
+		}
+
+		public void setTopic(String topic) {
+			this.topic = topic;
+		}
+
+		public Long getMinTimeStamp() {
+			return this.minTimeStamp;
+		}
+
+		public void setMinTimeStamp(Long minTimeStamp) {
+			this.minTimeStamp = minTimeStamp;
 		}
 
 		public String getInstanceId() {

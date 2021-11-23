@@ -57,33 +57,17 @@ public class OnsConsumerAccumulateResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Boolean online;
-
-		private Long totalDiff;
-
 		private Float consumeTps;
-
-		private Long lastTimestamp;
 
 		private Long delayTime;
 
+		private Long lastTimestamp;
+
+		private Long totalDiff;
+
+		private Boolean online;
+
 		private List<DetailInTopicDo> detailInTopicList;
-
-		public Boolean getOnline() {
-			return this.online;
-		}
-
-		public void setOnline(Boolean online) {
-			this.online = online;
-		}
-
-		public Long getTotalDiff() {
-			return this.totalDiff;
-		}
-
-		public void setTotalDiff(Long totalDiff) {
-			this.totalDiff = totalDiff;
-		}
 
 		public Float getConsumeTps() {
 			return this.consumeTps;
@@ -91,6 +75,14 @@ public class OnsConsumerAccumulateResponse extends AcsResponse {
 
 		public void setConsumeTps(Float consumeTps) {
 			this.consumeTps = consumeTps;
+		}
+
+		public Long getDelayTime() {
+			return this.delayTime;
+		}
+
+		public void setDelayTime(Long delayTime) {
+			this.delayTime = delayTime;
 		}
 
 		public Long getLastTimestamp() {
@@ -101,12 +93,20 @@ public class OnsConsumerAccumulateResponse extends AcsResponse {
 			this.lastTimestamp = lastTimestamp;
 		}
 
-		public Long getDelayTime() {
-			return this.delayTime;
+		public Long getTotalDiff() {
+			return this.totalDiff;
 		}
 
-		public void setDelayTime(Long delayTime) {
-			this.delayTime = delayTime;
+		public void setTotalDiff(Long totalDiff) {
+			this.totalDiff = totalDiff;
+		}
+
+		public Boolean getOnline() {
+			return this.online;
+		}
+
+		public void setOnline(Boolean online) {
+			this.online = online;
 		}
 
 		public List<DetailInTopicDo> getDetailInTopicList() {
@@ -119,20 +119,20 @@ public class OnsConsumerAccumulateResponse extends AcsResponse {
 
 		public static class DetailInTopicDo {
 
-			private String topic;
+			private Long delayTime;
 
 			private Long totalDiff;
 
 			private Long lastTimestamp;
 
-			private Long delayTime;
+			private String topic;
 
-			public String getTopic() {
-				return this.topic;
+			public Long getDelayTime() {
+				return this.delayTime;
 			}
 
-			public void setTopic(String topic) {
-				this.topic = topic;
+			public void setDelayTime(Long delayTime) {
+				this.delayTime = delayTime;
 			}
 
 			public Long getTotalDiff() {
@@ -151,12 +151,12 @@ public class OnsConsumerAccumulateResponse extends AcsResponse {
 				this.lastTimestamp = lastTimestamp;
 			}
 
-			public Long getDelayTime() {
-				return this.delayTime;
+			public String getTopic() {
+				return this.topic;
 			}
 
-			public void setDelayTime(Long delayTime) {
-				this.delayTime = delayTime;
+			public void setTopic(String topic) {
+				this.topic = topic;
 			}
 		}
 	}

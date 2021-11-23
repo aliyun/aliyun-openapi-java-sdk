@@ -31,14 +31,14 @@ public class OnsGroupSubDetailResponseUnmarshaller {
 
 		Data data = new Data();
 		data.setGroupId(_ctx.stringValue("OnsGroupSubDetailResponse.Data.GroupId"));
-		data.setOnline(_ctx.booleanValue("OnsGroupSubDetailResponse.Data.Online"));
 		data.setMessageModel(_ctx.stringValue("OnsGroupSubDetailResponse.Data.MessageModel"));
+		data.setOnline(_ctx.booleanValue("OnsGroupSubDetailResponse.Data.Online"));
 
 		List<SubscriptionDataListItem> subscriptionDataList = new ArrayList<SubscriptionDataListItem>();
 		for (int i = 0; i < _ctx.lengthValue("OnsGroupSubDetailResponse.Data.SubscriptionDataList.Length"); i++) {
 			SubscriptionDataListItem subscriptionDataListItem = new SubscriptionDataListItem();
-			subscriptionDataListItem.setTopic(_ctx.stringValue("OnsGroupSubDetailResponse.Data.SubscriptionDataList["+ i +"].Topic"));
 			subscriptionDataListItem.setSubString(_ctx.stringValue("OnsGroupSubDetailResponse.Data.SubscriptionDataList["+ i +"].SubString"));
+			subscriptionDataListItem.setTopic(_ctx.stringValue("OnsGroupSubDetailResponse.Data.SubscriptionDataList["+ i +"].Topic"));
 
 			subscriptionDataList.add(subscriptionDataListItem);
 		}

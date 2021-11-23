@@ -33,25 +33,25 @@ public class OnsMessageGetByKeyResponseUnmarshaller {
 		List<OnsRestMessageDo> data = new ArrayList<OnsRestMessageDo>();
 		for (int i = 0; i < _ctx.lengthValue("OnsMessageGetByKeyResponse.Data.Length"); i++) {
 			OnsRestMessageDo onsRestMessageDo = new OnsRestMessageDo();
-			onsRestMessageDo.setTopic(_ctx.stringValue("OnsMessageGetByKeyResponse.Data["+ i +"].Topic"));
-			onsRestMessageDo.setFlag(_ctx.integerValue("OnsMessageGetByKeyResponse.Data["+ i +"].Flag"));
-			onsRestMessageDo.setBody(_ctx.stringValue("OnsMessageGetByKeyResponse.Data["+ i +"].Body"));
-			onsRestMessageDo.setStoreSize(_ctx.integerValue("OnsMessageGetByKeyResponse.Data["+ i +"].StoreSize"));
-			onsRestMessageDo.setBornTimestamp(_ctx.longValue("OnsMessageGetByKeyResponse.Data["+ i +"].BornTimestamp"));
-			onsRestMessageDo.setBornHost(_ctx.stringValue("OnsMessageGetByKeyResponse.Data["+ i +"].BornHost"));
-			onsRestMessageDo.setStoreTimestamp(_ctx.longValue("OnsMessageGetByKeyResponse.Data["+ i +"].StoreTimestamp"));
-			onsRestMessageDo.setStoreHost(_ctx.stringValue("OnsMessageGetByKeyResponse.Data["+ i +"].StoreHost"));
-			onsRestMessageDo.setMsgId(_ctx.stringValue("OnsMessageGetByKeyResponse.Data["+ i +"].MsgId"));
 			onsRestMessageDo.setOffsetId(_ctx.stringValue("OnsMessageGetByKeyResponse.Data["+ i +"].OffsetId"));
-			onsRestMessageDo.setBodyCRC(_ctx.integerValue("OnsMessageGetByKeyResponse.Data["+ i +"].BodyCRC"));
+			onsRestMessageDo.setStoreSize(_ctx.integerValue("OnsMessageGetByKeyResponse.Data["+ i +"].StoreSize"));
 			onsRestMessageDo.setReconsumeTimes(_ctx.integerValue("OnsMessageGetByKeyResponse.Data["+ i +"].ReconsumeTimes"));
+			onsRestMessageDo.setStoreTimestamp(_ctx.longValue("OnsMessageGetByKeyResponse.Data["+ i +"].StoreTimestamp"));
+			onsRestMessageDo.setBody(_ctx.stringValue("OnsMessageGetByKeyResponse.Data["+ i +"].Body"));
 			onsRestMessageDo.setInstanceId(_ctx.stringValue("OnsMessageGetByKeyResponse.Data["+ i +"].InstanceId"));
+			onsRestMessageDo.setMsgId(_ctx.stringValue("OnsMessageGetByKeyResponse.Data["+ i +"].MsgId"));
+			onsRestMessageDo.setFlag(_ctx.integerValue("OnsMessageGetByKeyResponse.Data["+ i +"].Flag"));
+			onsRestMessageDo.setStoreHost(_ctx.stringValue("OnsMessageGetByKeyResponse.Data["+ i +"].StoreHost"));
+			onsRestMessageDo.setTopic(_ctx.stringValue("OnsMessageGetByKeyResponse.Data["+ i +"].Topic"));
+			onsRestMessageDo.setBornTimestamp(_ctx.longValue("OnsMessageGetByKeyResponse.Data["+ i +"].BornTimestamp"));
+			onsRestMessageDo.setBodyCRC(_ctx.integerValue("OnsMessageGetByKeyResponse.Data["+ i +"].BodyCRC"));
+			onsRestMessageDo.setBornHost(_ctx.stringValue("OnsMessageGetByKeyResponse.Data["+ i +"].BornHost"));
 
 			List<MessageProperty> propertyList = new ArrayList<MessageProperty>();
 			for (int j = 0; j < _ctx.lengthValue("OnsMessageGetByKeyResponse.Data["+ i +"].PropertyList.Length"); j++) {
 				MessageProperty messageProperty = new MessageProperty();
-				messageProperty.setName(_ctx.stringValue("OnsMessageGetByKeyResponse.Data["+ i +"].PropertyList["+ j +"].Name"));
 				messageProperty.setValue(_ctx.stringValue("OnsMessageGetByKeyResponse.Data["+ i +"].PropertyList["+ j +"].Value"));
+				messageProperty.setName(_ctx.stringValue("OnsMessageGetByKeyResponse.Data["+ i +"].PropertyList["+ j +"].Name"));
 
 				propertyList.add(messageProperty);
 			}

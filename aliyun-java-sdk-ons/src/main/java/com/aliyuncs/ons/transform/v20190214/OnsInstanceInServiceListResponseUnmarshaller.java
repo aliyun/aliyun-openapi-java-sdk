@@ -33,12 +33,12 @@ public class OnsInstanceInServiceListResponseUnmarshaller {
 		List<InstanceVO> data = new ArrayList<InstanceVO>();
 		for (int i = 0; i < _ctx.lengthValue("OnsInstanceInServiceListResponse.Data.Length"); i++) {
 			InstanceVO instanceVO = new InstanceVO();
-			instanceVO.setInstanceId(_ctx.stringValue("OnsInstanceInServiceListResponse.Data["+ i +"].InstanceId"));
-			instanceVO.setInstanceStatus(_ctx.integerValue("OnsInstanceInServiceListResponse.Data["+ i +"].InstanceStatus"));
-			instanceVO.setReleaseTime(_ctx.longValue("OnsInstanceInServiceListResponse.Data["+ i +"].ReleaseTime"));
-			instanceVO.setInstanceType(_ctx.integerValue("OnsInstanceInServiceListResponse.Data["+ i +"].InstanceType"));
-			instanceVO.setInstanceName(_ctx.stringValue("OnsInstanceInServiceListResponse.Data["+ i +"].InstanceName"));
 			instanceVO.setIndependentNaming(_ctx.booleanValue("OnsInstanceInServiceListResponse.Data["+ i +"].IndependentNaming"));
+			instanceVO.setInstanceName(_ctx.stringValue("OnsInstanceInServiceListResponse.Data["+ i +"].InstanceName"));
+			instanceVO.setReleaseTime(_ctx.longValue("OnsInstanceInServiceListResponse.Data["+ i +"].ReleaseTime"));
+			instanceVO.setInstanceStatus(_ctx.integerValue("OnsInstanceInServiceListResponse.Data["+ i +"].InstanceStatus"));
+			instanceVO.setInstanceId(_ctx.stringValue("OnsInstanceInServiceListResponse.Data["+ i +"].InstanceId"));
+			instanceVO.setInstanceType(_ctx.integerValue("OnsInstanceInServiceListResponse.Data["+ i +"].InstanceType"));
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("OnsInstanceInServiceListResponse.Data["+ i +"].Tags.Length"); j++) {

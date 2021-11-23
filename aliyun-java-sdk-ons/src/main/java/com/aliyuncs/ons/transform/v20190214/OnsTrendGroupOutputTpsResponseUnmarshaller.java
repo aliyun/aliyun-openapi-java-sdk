@@ -31,15 +31,15 @@ public class OnsTrendGroupOutputTpsResponseUnmarshaller {
 		onsTrendGroupOutputTpsResponse.setHelpUrl(_ctx.stringValue("OnsTrendGroupOutputTpsResponse.HelpUrl"));
 
 		Data data = new Data();
-		data.setTitle(_ctx.stringValue("OnsTrendGroupOutputTpsResponse.Data.Title"));
 		data.setXUnit(_ctx.stringValue("OnsTrendGroupOutputTpsResponse.Data.XUnit"));
 		data.setYUnit(_ctx.stringValue("OnsTrendGroupOutputTpsResponse.Data.YUnit"));
+		data.setTitle(_ctx.stringValue("OnsTrendGroupOutputTpsResponse.Data.Title"));
 
 		List<StatsDataDo> records = new ArrayList<StatsDataDo>();
 		for (int i = 0; i < _ctx.lengthValue("OnsTrendGroupOutputTpsResponse.Data.Records.Length"); i++) {
 			StatsDataDo statsDataDo = new StatsDataDo();
-			statsDataDo.setX(_ctx.longValue("OnsTrendGroupOutputTpsResponse.Data.Records["+ i +"].X"));
 			statsDataDo.setY(_ctx.floatValue("OnsTrendGroupOutputTpsResponse.Data.Records["+ i +"].Y"));
+			statsDataDo.setX(_ctx.longValue("OnsTrendGroupOutputTpsResponse.Data.Records["+ i +"].X"));
 
 			records.add(statsDataDo);
 		}

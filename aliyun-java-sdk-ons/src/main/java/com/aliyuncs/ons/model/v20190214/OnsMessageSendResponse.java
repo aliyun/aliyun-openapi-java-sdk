@@ -26,9 +26,9 @@ public class OnsMessageSendResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String helpUrl;
-
 	private String data;
+
+	private String helpUrl;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,20 +38,20 @@ public class OnsMessageSendResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getHelpUrl() {
-		return this.helpUrl;
-	}
-
-	public void setHelpUrl(String helpUrl) {
-		this.helpUrl = helpUrl;
-	}
-
 	public String getData() {
 		return this.data;
 	}
 
 	public void setData(String data) {
 		this.data = data;
+	}
+
+	public String getHelpUrl() {
+		return this.helpUrl;
+	}
+
+	public void setHelpUrl(String helpUrl) {
+		this.helpUrl = helpUrl;
 	}
 
 	@Override

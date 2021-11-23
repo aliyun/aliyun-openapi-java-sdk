@@ -56,17 +56,9 @@ public class OnsMqttQueryClientByTopicResponse extends AcsResponse {
 
 	public static class MqttClientSetDo {
 
-		private Long onlineCount;
-
 		private Long persistCount;
 
-		public Long getOnlineCount() {
-			return this.onlineCount;
-		}
-
-		public void setOnlineCount(Long onlineCount) {
-			this.onlineCount = onlineCount;
-		}
+		private Long onlineCount;
 
 		public Long getPersistCount() {
 			return this.persistCount;
@@ -74,6 +66,14 @@ public class OnsMqttQueryClientByTopicResponse extends AcsResponse {
 
 		public void setPersistCount(Long persistCount) {
 			this.persistCount = persistCount;
+		}
+
+		public Long getOnlineCount() {
+			return this.onlineCount;
+		}
+
+		public void setOnlineCount(Long onlineCount) {
+			this.onlineCount = onlineCount;
 		}
 	}
 

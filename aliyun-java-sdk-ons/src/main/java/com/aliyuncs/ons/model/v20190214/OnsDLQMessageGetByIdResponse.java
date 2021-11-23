@@ -57,56 +57,40 @@ public class OnsDLQMessageGetByIdResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String topic;
-
-		private Integer flag;
-
-		private String body;
+		private String offsetId;
 
 		private Integer storeSize;
 
-		private Long bornTimestamp;
-
-		private String bornHost;
+		private Integer reconsumeTimes;
 
 		private Long storeTimestamp;
 
-		private String storeHost;
-
-		private String msgId;
-
-		private String offsetId;
-
-		private Integer bodyCRC;
-
-		private Integer reconsumeTimes;
+		private String body;
 
 		private String instanceId;
 
+		private String msgId;
+
+		private Integer flag;
+
+		private String storeHost;
+
+		private String topic;
+
+		private Long bornTimestamp;
+
+		private Integer bodyCRC;
+
+		private String bornHost;
+
 		private List<MessageProperty> propertyList;
 
-		public String getTopic() {
-			return this.topic;
+		public String getOffsetId() {
+			return this.offsetId;
 		}
 
-		public void setTopic(String topic) {
-			this.topic = topic;
-		}
-
-		public Integer getFlag() {
-			return this.flag;
-		}
-
-		public void setFlag(Integer flag) {
-			this.flag = flag;
-		}
-
-		public String getBody() {
-			return this.body;
-		}
-
-		public void setBody(String body) {
-			this.body = body;
+		public void setOffsetId(String offsetId) {
+			this.offsetId = offsetId;
 		}
 
 		public Integer getStoreSize() {
@@ -117,20 +101,12 @@ public class OnsDLQMessageGetByIdResponse extends AcsResponse {
 			this.storeSize = storeSize;
 		}
 
-		public Long getBornTimestamp() {
-			return this.bornTimestamp;
+		public Integer getReconsumeTimes() {
+			return this.reconsumeTimes;
 		}
 
-		public void setBornTimestamp(Long bornTimestamp) {
-			this.bornTimestamp = bornTimestamp;
-		}
-
-		public String getBornHost() {
-			return this.bornHost;
-		}
-
-		public void setBornHost(String bornHost) {
-			this.bornHost = bornHost;
+		public void setReconsumeTimes(Integer reconsumeTimes) {
+			this.reconsumeTimes = reconsumeTimes;
 		}
 
 		public Long getStoreTimestamp() {
@@ -141,12 +117,20 @@ public class OnsDLQMessageGetByIdResponse extends AcsResponse {
 			this.storeTimestamp = storeTimestamp;
 		}
 
-		public String getStoreHost() {
-			return this.storeHost;
+		public String getBody() {
+			return this.body;
 		}
 
-		public void setStoreHost(String storeHost) {
-			this.storeHost = storeHost;
+		public void setBody(String body) {
+			this.body = body;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
 		}
 
 		public String getMsgId() {
@@ -157,12 +141,36 @@ public class OnsDLQMessageGetByIdResponse extends AcsResponse {
 			this.msgId = msgId;
 		}
 
-		public String getOffsetId() {
-			return this.offsetId;
+		public Integer getFlag() {
+			return this.flag;
 		}
 
-		public void setOffsetId(String offsetId) {
-			this.offsetId = offsetId;
+		public void setFlag(Integer flag) {
+			this.flag = flag;
+		}
+
+		public String getStoreHost() {
+			return this.storeHost;
+		}
+
+		public void setStoreHost(String storeHost) {
+			this.storeHost = storeHost;
+		}
+
+		public String getTopic() {
+			return this.topic;
+		}
+
+		public void setTopic(String topic) {
+			this.topic = topic;
+		}
+
+		public Long getBornTimestamp() {
+			return this.bornTimestamp;
+		}
+
+		public void setBornTimestamp(Long bornTimestamp) {
+			this.bornTimestamp = bornTimestamp;
 		}
 
 		public Integer getBodyCRC() {
@@ -173,20 +181,12 @@ public class OnsDLQMessageGetByIdResponse extends AcsResponse {
 			this.bodyCRC = bodyCRC;
 		}
 
-		public Integer getReconsumeTimes() {
-			return this.reconsumeTimes;
+		public String getBornHost() {
+			return this.bornHost;
 		}
 
-		public void setReconsumeTimes(Integer reconsumeTimes) {
-			this.reconsumeTimes = reconsumeTimes;
-		}
-
-		public String getInstanceId() {
-			return this.instanceId;
-		}
-
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
+		public void setBornHost(String bornHost) {
+			this.bornHost = bornHost;
 		}
 
 		public List<MessageProperty> getPropertyList() {
@@ -199,17 +199,9 @@ public class OnsDLQMessageGetByIdResponse extends AcsResponse {
 
 		public static class MessageProperty {
 
-			private String name;
-
 			private String value;
 
-			public String getName() {
-				return this.name;
-			}
-
-			public void setName(String name) {
-				this.name = name;
-			}
+			private String name;
 
 			public String getValue() {
 				return this.value;
@@ -217,6 +209,14 @@ public class OnsDLQMessageGetByIdResponse extends AcsResponse {
 
 			public void setValue(String value) {
 				this.value = value;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
 			}
 		}
 	}

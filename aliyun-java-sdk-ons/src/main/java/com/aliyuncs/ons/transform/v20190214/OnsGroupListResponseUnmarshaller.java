@@ -34,12 +34,12 @@ public class OnsGroupListResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("OnsGroupListResponse.Data.Length"); i++) {
 			SubscribeInfoDo subscribeInfoDo = new SubscribeInfoDo();
 			subscribeInfoDo.setOwner(_ctx.stringValue("OnsGroupListResponse.Data["+ i +"].Owner"));
-			subscribeInfoDo.setGroupId(_ctx.stringValue("OnsGroupListResponse.Data["+ i +"].GroupId"));
 			subscribeInfoDo.setUpdateTime(_ctx.longValue("OnsGroupListResponse.Data["+ i +"].UpdateTime"));
-			subscribeInfoDo.setRemark(_ctx.stringValue("OnsGroupListResponse.Data["+ i +"].Remark"));
-			subscribeInfoDo.setInstanceId(_ctx.stringValue("OnsGroupListResponse.Data["+ i +"].InstanceId"));
 			subscribeInfoDo.setIndependentNaming(_ctx.booleanValue("OnsGroupListResponse.Data["+ i +"].IndependentNaming"));
+			subscribeInfoDo.setGroupId(_ctx.stringValue("OnsGroupListResponse.Data["+ i +"].GroupId"));
+			subscribeInfoDo.setRemark(_ctx.stringValue("OnsGroupListResponse.Data["+ i +"].Remark"));
 			subscribeInfoDo.setCreateTime(_ctx.longValue("OnsGroupListResponse.Data["+ i +"].CreateTime"));
+			subscribeInfoDo.setInstanceId(_ctx.stringValue("OnsGroupListResponse.Data["+ i +"].InstanceId"));
 			subscribeInfoDo.setGroupType(_ctx.stringValue("OnsGroupListResponse.Data["+ i +"].GroupType"));
 
 			List<Tag> tags = new ArrayList<Tag>();

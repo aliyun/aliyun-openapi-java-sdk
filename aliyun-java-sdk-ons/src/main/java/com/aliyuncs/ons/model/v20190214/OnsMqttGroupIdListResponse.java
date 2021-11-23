@@ -57,65 +57,25 @@ public class OnsMqttGroupIdListResponse extends AcsResponse {
 
 	public static class MqttGroupIdDo {
 
-		private Long id;
-
-		private Integer channelId;
-
-		private String owner;
-
-		private String groupId;
-
-		private String topic;
-
 		private Integer status;
-
-		private Long createTime;
 
 		private Long updateTime;
 
-		private String instanceId;
+		private String owner;
 
 		private Boolean independentNaming;
 
-		public Long getId() {
-			return this.id;
-		}
+		private String groupId;
 
-		public void setId(Long id) {
-			this.id = id;
-		}
+		private Long createTime;
 
-		public Integer getChannelId() {
-			return this.channelId;
-		}
+		private String topic;
 
-		public void setChannelId(Integer channelId) {
-			this.channelId = channelId;
-		}
+		private Integer channelId;
 
-		public String getOwner() {
-			return this.owner;
-		}
+		private String instanceId;
 
-		public void setOwner(String owner) {
-			this.owner = owner;
-		}
-
-		public String getGroupId() {
-			return this.groupId;
-		}
-
-		public void setGroupId(String groupId) {
-			this.groupId = groupId;
-		}
-
-		public String getTopic() {
-			return this.topic;
-		}
-
-		public void setTopic(String topic) {
-			this.topic = topic;
-		}
+		private Long id;
 
 		public Integer getStatus() {
 			return this.status;
@@ -123,14 +83,6 @@ public class OnsMqttGroupIdListResponse extends AcsResponse {
 
 		public void setStatus(Integer status) {
 			this.status = status;
-		}
-
-		public Long getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(Long createTime) {
-			this.createTime = createTime;
 		}
 
 		public Long getUpdateTime() {
@@ -141,12 +93,12 @@ public class OnsMqttGroupIdListResponse extends AcsResponse {
 			this.updateTime = updateTime;
 		}
 
-		public String getInstanceId() {
-			return this.instanceId;
+		public String getOwner() {
+			return this.owner;
 		}
 
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
+		public void setOwner(String owner) {
+			this.owner = owner;
 		}
 
 		public Boolean getIndependentNaming() {
@@ -155,6 +107,54 @@ public class OnsMqttGroupIdListResponse extends AcsResponse {
 
 		public void setIndependentNaming(Boolean independentNaming) {
 			this.independentNaming = independentNaming;
+		}
+
+		public String getGroupId() {
+			return this.groupId;
+		}
+
+		public void setGroupId(String groupId) {
+			this.groupId = groupId;
+		}
+
+		public Long getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(Long createTime) {
+			this.createTime = createTime;
+		}
+
+		public String getTopic() {
+			return this.topic;
+		}
+
+		public void setTopic(String topic) {
+			this.topic = topic;
+		}
+
+		public Integer getChannelId() {
+			return this.channelId;
+		}
+
+		public void setChannelId(Integer channelId) {
+			this.channelId = channelId;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public Long getId() {
+			return this.id;
+		}
+
+		public void setId(Long id) {
+			this.id = id;
 		}
 	}
 

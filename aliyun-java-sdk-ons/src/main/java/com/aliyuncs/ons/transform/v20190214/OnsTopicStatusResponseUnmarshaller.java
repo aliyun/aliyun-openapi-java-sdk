@@ -27,9 +27,9 @@ public class OnsTopicStatusResponseUnmarshaller {
 		onsTopicStatusResponse.setHelpUrl(_ctx.stringValue("OnsTopicStatusResponse.HelpUrl"));
 
 		Data data = new Data();
-		data.setTotalCount(_ctx.longValue("OnsTopicStatusResponse.Data.TotalCount"));
-		data.setLastTimeStamp(_ctx.longValue("OnsTopicStatusResponse.Data.LastTimeStamp"));
 		data.setPerm(_ctx.integerValue("OnsTopicStatusResponse.Data.Perm"));
+		data.setLastTimeStamp(_ctx.longValue("OnsTopicStatusResponse.Data.LastTimeStamp"));
+		data.setTotalCount(_ctx.longValue("OnsTopicStatusResponse.Data.TotalCount"));
 		onsTopicStatusResponse.setData(data);
 	 
 	 	return onsTopicStatusResponse;

@@ -1,3 +1,6 @@
+2021-11-23 Version: 3.1.8
+- Support the IP restrictions in ram policy.
+
 2021-03-19 Version: 3.1.7
 - Modify the helpUrl parameter of OnsTopicList and OnsGroupList API to be invisible.
 

@@ -57,20 +57,20 @@ public class OnsMessageTraceResponse extends AcsResponse {
 
 	public static class MessageTrack {
 
-		private String consumerGroup;
+		private String exceptionDesc;
 
 		private String trackType;
 
-		private String exceptionDesc;
+		private String consumerGroup;
 
 		private String instanceId;
 
-		public String getConsumerGroup() {
-			return this.consumerGroup;
+		public String getExceptionDesc() {
+			return this.exceptionDesc;
 		}
 
-		public void setConsumerGroup(String consumerGroup) {
-			this.consumerGroup = consumerGroup;
+		public void setExceptionDesc(String exceptionDesc) {
+			this.exceptionDesc = exceptionDesc;
 		}
 
 		public String getTrackType() {
@@ -81,12 +81,12 @@ public class OnsMessageTraceResponse extends AcsResponse {
 			this.trackType = trackType;
 		}
 
-		public String getExceptionDesc() {
-			return this.exceptionDesc;
+		public String getConsumerGroup() {
+			return this.consumerGroup;
 		}
 
-		public void setExceptionDesc(String exceptionDesc) {
-			this.exceptionDesc = exceptionDesc;
+		public void setConsumerGroup(String consumerGroup) {
+			this.consumerGroup = consumerGroup;
 		}
 
 		public String getInstanceId() {

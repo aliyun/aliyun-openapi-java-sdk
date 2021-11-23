@@ -35,10 +35,10 @@ public class OnsConsumerGetConnectionResponseUnmarshaller {
 		List<ConnectionDo> connectionList = new ArrayList<ConnectionDo>();
 		for (int i = 0; i < _ctx.lengthValue("OnsConsumerGetConnectionResponse.Data.ConnectionList.Length"); i++) {
 			ConnectionDo connectionDo = new ConnectionDo();
-			connectionDo.setClientId(_ctx.stringValue("OnsConsumerGetConnectionResponse.Data.ConnectionList["+ i +"].ClientId"));
+			connectionDo.setVersion(_ctx.stringValue("OnsConsumerGetConnectionResponse.Data.ConnectionList["+ i +"].Version"));
 			connectionDo.setClientAddr(_ctx.stringValue("OnsConsumerGetConnectionResponse.Data.ConnectionList["+ i +"].ClientAddr"));
 			connectionDo.setLanguage(_ctx.stringValue("OnsConsumerGetConnectionResponse.Data.ConnectionList["+ i +"].Language"));
-			connectionDo.setVersion(_ctx.stringValue("OnsConsumerGetConnectionResponse.Data.ConnectionList["+ i +"].Version"));
+			connectionDo.setClientId(_ctx.stringValue("OnsConsumerGetConnectionResponse.Data.ConnectionList["+ i +"].ClientId"));
 
 			connectionList.add(connectionDo);
 		}

@@ -49,9 +49,9 @@ public class OnsGroupSubDetailResponse extends AcsResponse {
 
 		private String groupId;
 
-		private Boolean online;
-
 		private String messageModel;
+
+		private Boolean online;
 
 		private List<SubscriptionDataListItem> subscriptionDataList;
 
@@ -63,20 +63,20 @@ public class OnsGroupSubDetailResponse extends AcsResponse {
 			this.groupId = groupId;
 		}
 
-		public Boolean getOnline() {
-			return this.online;
-		}
-
-		public void setOnline(Boolean online) {
-			this.online = online;
-		}
-
 		public String getMessageModel() {
 			return this.messageModel;
 		}
 
 		public void setMessageModel(String messageModel) {
 			this.messageModel = messageModel;
+		}
+
+		public Boolean getOnline() {
+			return this.online;
+		}
+
+		public void setOnline(Boolean online) {
+			this.online = online;
 		}
 
 		public List<SubscriptionDataListItem> getSubscriptionDataList() {
@@ -89,17 +89,9 @@ public class OnsGroupSubDetailResponse extends AcsResponse {
 
 		public static class SubscriptionDataListItem {
 
-			private String topic;
-
 			private String subString;
 
-			public String getTopic() {
-				return this.topic;
-			}
-
-			public void setTopic(String topic) {
-				this.topic = topic;
-			}
+			private String topic;
 
 			public String getSubString() {
 				return this.subString;
@@ -107,6 +99,14 @@ public class OnsGroupSubDetailResponse extends AcsResponse {
 
 			public void setSubString(String subString) {
 				this.subString = subString;
+			}
+
+			public String getTopic() {
+				return this.topic;
+			}
+
+			public void setTopic(String topic) {
+				this.topic = topic;
 			}
 		}
 	}

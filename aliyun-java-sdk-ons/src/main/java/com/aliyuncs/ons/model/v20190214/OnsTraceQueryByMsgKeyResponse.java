@@ -26,9 +26,9 @@ public class OnsTraceQueryByMsgKeyResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String helpUrl;
-
 	private String queryId;
+
+	private String helpUrl;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,20 +38,20 @@ public class OnsTraceQueryByMsgKeyResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getHelpUrl() {
-		return this.helpUrl;
-	}
-
-	public void setHelpUrl(String helpUrl) {
-		this.helpUrl = helpUrl;
-	}
-
 	public String getQueryId() {
 		return this.queryId;
 	}
 
 	public void setQueryId(String queryId) {
 		this.queryId = queryId;
+	}
+
+	public String getHelpUrl() {
+		return this.helpUrl;
+	}
+
+	public void setHelpUrl(String helpUrl) {
+		this.helpUrl = helpUrl;
 	}
 
 	@Override

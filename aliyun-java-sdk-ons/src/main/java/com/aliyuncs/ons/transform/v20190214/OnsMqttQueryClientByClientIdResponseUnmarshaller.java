@@ -32,15 +32,15 @@ public class OnsMqttQueryClientByClientIdResponseUnmarshaller {
 
 		MqttClientInfoDo mqttClientInfoDo = new MqttClientInfoDo();
 		mqttClientInfoDo.setOnline(_ctx.booleanValue("OnsMqttQueryClientByClientIdResponse.MqttClientInfoDo.Online"));
-		mqttClientInfoDo.setClientId(_ctx.stringValue("OnsMqttQueryClientByClientIdResponse.MqttClientInfoDo.ClientId"));
-		mqttClientInfoDo.setSocketChannel(_ctx.stringValue("OnsMqttQueryClientByClientIdResponse.MqttClientInfoDo.SocketChannel"));
 		mqttClientInfoDo.setLastTouch(_ctx.longValue("OnsMqttQueryClientByClientIdResponse.MqttClientInfoDo.LastTouch"));
+		mqttClientInfoDo.setSocketChannel(_ctx.stringValue("OnsMqttQueryClientByClientIdResponse.MqttClientInfoDo.SocketChannel"));
+		mqttClientInfoDo.setClientId(_ctx.stringValue("OnsMqttQueryClientByClientIdResponse.MqttClientInfoDo.ClientId"));
 
 		List<SubscriptionDo> subScriptonData = new ArrayList<SubscriptionDo>();
 		for (int i = 0; i < _ctx.lengthValue("OnsMqttQueryClientByClientIdResponse.MqttClientInfoDo.SubScriptonData.Length"); i++) {
 			SubscriptionDo subscriptionDo = new SubscriptionDo();
-			subscriptionDo.setParentTopic(_ctx.stringValue("OnsMqttQueryClientByClientIdResponse.MqttClientInfoDo.SubScriptonData["+ i +"].ParentTopic"));
 			subscriptionDo.setSubTopic(_ctx.stringValue("OnsMqttQueryClientByClientIdResponse.MqttClientInfoDo.SubScriptonData["+ i +"].SubTopic"));
+			subscriptionDo.setParentTopic(_ctx.stringValue("OnsMqttQueryClientByClientIdResponse.MqttClientInfoDo.SubScriptonData["+ i +"].ParentTopic"));
 			subscriptionDo.setQos(_ctx.integerValue("OnsMqttQueryClientByClientIdResponse.MqttClientInfoDo.SubScriptonData["+ i +"].Qos"));
 
 			subScriptonData.add(subscriptionDo);

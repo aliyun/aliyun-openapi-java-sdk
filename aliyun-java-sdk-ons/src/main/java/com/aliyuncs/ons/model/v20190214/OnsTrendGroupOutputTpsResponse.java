@@ -57,21 +57,13 @@ public class OnsTrendGroupOutputTpsResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String title;
-
 		private String xUnit;
 
 		private String yUnit;
 
+		private String title;
+
 		private List<StatsDataDo> records;
-
-		public String getTitle() {
-			return this.title;
-		}
-
-		public void setTitle(String title) {
-			this.title = title;
-		}
 
 		public String getXUnit() {
 			return this.xUnit;
@@ -89,6 +81,14 @@ public class OnsTrendGroupOutputTpsResponse extends AcsResponse {
 			this.yUnit = yUnit;
 		}
 
+		public String getTitle() {
+			return this.title;
+		}
+
+		public void setTitle(String title) {
+			this.title = title;
+		}
+
 		public List<StatsDataDo> getRecords() {
 			return this.records;
 		}
@@ -99,17 +99,9 @@ public class OnsTrendGroupOutputTpsResponse extends AcsResponse {
 
 		public static class StatsDataDo {
 
-			private Long x;
-
 			private Float y;
 
-			public Long getX() {
-				return this.x;
-			}
-
-			public void setX(Long x) {
-				this.x = x;
-			}
+			private Long x;
 
 			public Float getY() {
 				return this.y;
@@ -117,6 +109,14 @@ public class OnsTrendGroupOutputTpsResponse extends AcsResponse {
 
 			public void setY(Float y) {
 				this.y = y;
+			}
+
+			public Long getX() {
+				return this.x;
+			}
+
+			public void setX(Long x) {
+				this.x = x;
 			}
 		}
 	}

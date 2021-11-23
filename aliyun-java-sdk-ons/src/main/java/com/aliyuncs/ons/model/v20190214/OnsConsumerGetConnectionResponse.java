@@ -69,20 +69,20 @@ public class OnsConsumerGetConnectionResponse extends AcsResponse {
 
 		public static class ConnectionDo {
 
-			private String clientId;
+			private String version;
 
 			private String clientAddr;
 
 			private String language;
 
-			private String version;
+			private String clientId;
 
-			public String getClientId() {
-				return this.clientId;
+			public String getVersion() {
+				return this.version;
 			}
 
-			public void setClientId(String clientId) {
-				this.clientId = clientId;
+			public void setVersion(String version) {
+				this.version = version;
 			}
 
 			public String getClientAddr() {
@@ -101,12 +101,12 @@ public class OnsConsumerGetConnectionResponse extends AcsResponse {
 				this.language = language;
 			}
 
-			public String getVersion() {
-				return this.version;
+			public String getClientId() {
+				return this.clientId;
 			}
 
-			public void setVersion(String version) {
-				this.version = version;
+			public void setClientId(String clientId) {
+				this.clientId = clientId;
 			}
 		}
 	}

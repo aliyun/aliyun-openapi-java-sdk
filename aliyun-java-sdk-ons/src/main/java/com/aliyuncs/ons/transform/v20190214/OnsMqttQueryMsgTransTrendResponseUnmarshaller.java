@@ -31,15 +31,15 @@ public class OnsMqttQueryMsgTransTrendResponseUnmarshaller {
 		onsMqttQueryMsgTransTrendResponse.setHelpUrl(_ctx.stringValue("OnsMqttQueryMsgTransTrendResponse.HelpUrl"));
 
 		Data data = new Data();
-		data.setTitle(_ctx.stringValue("OnsMqttQueryMsgTransTrendResponse.Data.Title"));
 		data.setXUnit(_ctx.stringValue("OnsMqttQueryMsgTransTrendResponse.Data.XUnit"));
 		data.setYUnit(_ctx.stringValue("OnsMqttQueryMsgTransTrendResponse.Data.YUnit"));
+		data.setTitle(_ctx.stringValue("OnsMqttQueryMsgTransTrendResponse.Data.Title"));
 
 		List<StatsDataDo> records = new ArrayList<StatsDataDo>();
 		for (int i = 0; i < _ctx.lengthValue("OnsMqttQueryMsgTransTrendResponse.Data.Records.Length"); i++) {
 			StatsDataDo statsDataDo = new StatsDataDo();
-			statsDataDo.setX(_ctx.longValue("OnsMqttQueryMsgTransTrendResponse.Data.Records["+ i +"].X"));
 			statsDataDo.setY(_ctx.floatValue("OnsMqttQueryMsgTransTrendResponse.Data.Records["+ i +"].Y"));
+			statsDataDo.setX(_ctx.longValue("OnsMqttQueryMsgTransTrendResponse.Data.Records["+ i +"].X"));
 
 			records.add(statsDataDo);
 		}

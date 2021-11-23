@@ -31,19 +31,19 @@ public class OnsConsumerAccumulateResponseUnmarshaller {
 		onsConsumerAccumulateResponse.setHelpUrl(_ctx.stringValue("OnsConsumerAccumulateResponse.HelpUrl"));
 
 		Data data = new Data();
-		data.setOnline(_ctx.booleanValue("OnsConsumerAccumulateResponse.Data.Online"));
-		data.setTotalDiff(_ctx.longValue("OnsConsumerAccumulateResponse.Data.TotalDiff"));
 		data.setConsumeTps(_ctx.floatValue("OnsConsumerAccumulateResponse.Data.ConsumeTps"));
-		data.setLastTimestamp(_ctx.longValue("OnsConsumerAccumulateResponse.Data.LastTimestamp"));
 		data.setDelayTime(_ctx.longValue("OnsConsumerAccumulateResponse.Data.DelayTime"));
+		data.setLastTimestamp(_ctx.longValue("OnsConsumerAccumulateResponse.Data.LastTimestamp"));
+		data.setTotalDiff(_ctx.longValue("OnsConsumerAccumulateResponse.Data.TotalDiff"));
+		data.setOnline(_ctx.booleanValue("OnsConsumerAccumulateResponse.Data.Online"));
 
 		List<DetailInTopicDo> detailInTopicList = new ArrayList<DetailInTopicDo>();
 		for (int i = 0; i < _ctx.lengthValue("OnsConsumerAccumulateResponse.Data.DetailInTopicList.Length"); i++) {
 			DetailInTopicDo detailInTopicDo = new DetailInTopicDo();
-			detailInTopicDo.setTopic(_ctx.stringValue("OnsConsumerAccumulateResponse.Data.DetailInTopicList["+ i +"].Topic"));
+			detailInTopicDo.setDelayTime(_ctx.longValue("OnsConsumerAccumulateResponse.Data.DetailInTopicList["+ i +"].DelayTime"));
 			detailInTopicDo.setTotalDiff(_ctx.longValue("OnsConsumerAccumulateResponse.Data.DetailInTopicList["+ i +"].TotalDiff"));
 			detailInTopicDo.setLastTimestamp(_ctx.longValue("OnsConsumerAccumulateResponse.Data.DetailInTopicList["+ i +"].LastTimestamp"));
-			detailInTopicDo.setDelayTime(_ctx.longValue("OnsConsumerAccumulateResponse.Data.DetailInTopicList["+ i +"].DelayTime"));
+			detailInTopicDo.setTopic(_ctx.stringValue("OnsConsumerAccumulateResponse.Data.DetailInTopicList["+ i +"].Topic"));
 
 			detailInTopicList.add(detailInTopicDo);
 		}

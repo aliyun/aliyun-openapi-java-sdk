@@ -33,45 +33,45 @@ public class OnsTraceGetResultResponseUnmarshaller {
 		onsTraceGetResultResponse.setHelpUrl(_ctx.stringValue("OnsTraceGetResultResponse.HelpUrl"));
 
 		TraceData traceData = new TraceData();
-		traceData.setQueryId(_ctx.stringValue("OnsTraceGetResultResponse.TraceData.QueryId"));
-		traceData.setUserId(_ctx.stringValue("OnsTraceGetResultResponse.TraceData.UserId"));
-		traceData.setTopic(_ctx.stringValue("OnsTraceGetResultResponse.TraceData.Topic"));
-		traceData.setMsgId(_ctx.stringValue("OnsTraceGetResultResponse.TraceData.MsgId"));
-		traceData.setMsgKey(_ctx.stringValue("OnsTraceGetResultResponse.TraceData.MsgKey"));
 		traceData.setStatus(_ctx.stringValue("OnsTraceGetResultResponse.TraceData.Status"));
-		traceData.setCreateTime(_ctx.longValue("OnsTraceGetResultResponse.TraceData.CreateTime"));
+		traceData.setMsgKey(_ctx.stringValue("OnsTraceGetResultResponse.TraceData.MsgKey"));
 		traceData.setUpdateTime(_ctx.longValue("OnsTraceGetResultResponse.TraceData.UpdateTime"));
+		traceData.setCreateTime(_ctx.longValue("OnsTraceGetResultResponse.TraceData.CreateTime"));
+		traceData.setTopic(_ctx.stringValue("OnsTraceGetResultResponse.TraceData.Topic"));
+		traceData.setUserId(_ctx.stringValue("OnsTraceGetResultResponse.TraceData.UserId"));
 		traceData.setInstanceId(_ctx.stringValue("OnsTraceGetResultResponse.TraceData.InstanceId"));
+		traceData.setMsgId(_ctx.stringValue("OnsTraceGetResultResponse.TraceData.MsgId"));
+		traceData.setQueryId(_ctx.stringValue("OnsTraceGetResultResponse.TraceData.QueryId"));
 
 		List<TraceMapDo> traceList = new ArrayList<TraceMapDo>();
 		for (int i = 0; i < _ctx.lengthValue("OnsTraceGetResultResponse.TraceData.TraceList.Length"); i++) {
 			TraceMapDo traceMapDo = new TraceMapDo();
+			traceMapDo.setStatus(_ctx.stringValue("OnsTraceGetResultResponse.TraceData.TraceList["+ i +"].Status"));
+			traceMapDo.setMsgKey(_ctx.stringValue("OnsTraceGetResultResponse.TraceData.TraceList["+ i +"].MsgKey"));
 			traceMapDo.setPubTime(_ctx.longValue("OnsTraceGetResultResponse.TraceData.TraceList["+ i +"].PubTime"));
 			traceMapDo.setTopic(_ctx.stringValue("OnsTraceGetResultResponse.TraceData.TraceList["+ i +"].Topic"));
-			traceMapDo.setPubGroupName(_ctx.stringValue("OnsTraceGetResultResponse.TraceData.TraceList["+ i +"].PubGroupName"));
-			traceMapDo.setMsgId(_ctx.stringValue("OnsTraceGetResultResponse.TraceData.TraceList["+ i +"].MsgId"));
-			traceMapDo.setTag(_ctx.stringValue("OnsTraceGetResultResponse.TraceData.TraceList["+ i +"].Tag"));
-			traceMapDo.setMsgKey(_ctx.stringValue("OnsTraceGetResultResponse.TraceData.TraceList["+ i +"].MsgKey"));
-			traceMapDo.setBornHost(_ctx.stringValue("OnsTraceGetResultResponse.TraceData.TraceList["+ i +"].BornHost"));
 			traceMapDo.setCostTime(_ctx.integerValue("OnsTraceGetResultResponse.TraceData.TraceList["+ i +"].CostTime"));
-			traceMapDo.setStatus(_ctx.stringValue("OnsTraceGetResultResponse.TraceData.TraceList["+ i +"].Status"));
+			traceMapDo.setTag(_ctx.stringValue("OnsTraceGetResultResponse.TraceData.TraceList["+ i +"].Tag"));
+			traceMapDo.setMsgId(_ctx.stringValue("OnsTraceGetResultResponse.TraceData.TraceList["+ i +"].MsgId"));
+			traceMapDo.setPubGroupName(_ctx.stringValue("OnsTraceGetResultResponse.TraceData.TraceList["+ i +"].PubGroupName"));
+			traceMapDo.setBornHost(_ctx.stringValue("OnsTraceGetResultResponse.TraceData.TraceList["+ i +"].BornHost"));
 
 			List<SubMapDo> subList = new ArrayList<SubMapDo>();
 			for (int j = 0; j < _ctx.lengthValue("OnsTraceGetResultResponse.TraceData.TraceList["+ i +"].SubList.Length"); j++) {
 				SubMapDo subMapDo = new SubMapDo();
+				subMapDo.setFailCount(_ctx.integerValue("OnsTraceGetResultResponse.TraceData.TraceList["+ i +"].SubList["+ j +"].FailCount"));
 				subMapDo.setSubGroupName(_ctx.stringValue("OnsTraceGetResultResponse.TraceData.TraceList["+ i +"].SubList["+ j +"].SubGroupName"));
 				subMapDo.setSuccessCount(_ctx.integerValue("OnsTraceGetResultResponse.TraceData.TraceList["+ i +"].SubList["+ j +"].SuccessCount"));
-				subMapDo.setFailCount(_ctx.integerValue("OnsTraceGetResultResponse.TraceData.TraceList["+ i +"].SubList["+ j +"].FailCount"));
 
 				List<SubClientInfoDo> clientList = new ArrayList<SubClientInfoDo>();
 				for (int k = 0; k < _ctx.lengthValue("OnsTraceGetResultResponse.TraceData.TraceList["+ i +"].SubList["+ j +"].ClientList.Length"); k++) {
 					SubClientInfoDo subClientInfoDo = new SubClientInfoDo();
-					subClientInfoDo.setSubGroupName(_ctx.stringValue("OnsTraceGetResultResponse.TraceData.TraceList["+ i +"].SubList["+ j +"].ClientList["+ k +"].SubGroupName"));
-					subClientInfoDo.setSubTime(_ctx.longValue("OnsTraceGetResultResponse.TraceData.TraceList["+ i +"].SubList["+ j +"].ClientList["+ k +"].SubTime"));
-					subClientInfoDo.setClientHost(_ctx.stringValue("OnsTraceGetResultResponse.TraceData.TraceList["+ i +"].SubList["+ j +"].ClientList["+ k +"].ClientHost"));
-					subClientInfoDo.setReconsumeTimes(_ctx.integerValue("OnsTraceGetResultResponse.TraceData.TraceList["+ i +"].SubList["+ j +"].ClientList["+ k +"].ReconsumeTimes"));
-					subClientInfoDo.setCostTime(_ctx.integerValue("OnsTraceGetResultResponse.TraceData.TraceList["+ i +"].SubList["+ j +"].ClientList["+ k +"].CostTime"));
 					subClientInfoDo.setStatus(_ctx.stringValue("OnsTraceGetResultResponse.TraceData.TraceList["+ i +"].SubList["+ j +"].ClientList["+ k +"].Status"));
+					subClientInfoDo.setSubTime(_ctx.longValue("OnsTraceGetResultResponse.TraceData.TraceList["+ i +"].SubList["+ j +"].ClientList["+ k +"].SubTime"));
+					subClientInfoDo.setReconsumeTimes(_ctx.integerValue("OnsTraceGetResultResponse.TraceData.TraceList["+ i +"].SubList["+ j +"].ClientList["+ k +"].ReconsumeTimes"));
+					subClientInfoDo.setSubGroupName(_ctx.stringValue("OnsTraceGetResultResponse.TraceData.TraceList["+ i +"].SubList["+ j +"].ClientList["+ k +"].SubGroupName"));
+					subClientInfoDo.setClientHost(_ctx.stringValue("OnsTraceGetResultResponse.TraceData.TraceList["+ i +"].SubList["+ j +"].ClientList["+ k +"].ClientHost"));
+					subClientInfoDo.setCostTime(_ctx.integerValue("OnsTraceGetResultResponse.TraceData.TraceList["+ i +"].SubList["+ j +"].ClientList["+ k +"].CostTime"));
 
 					clientList.add(subClientInfoDo);
 				}

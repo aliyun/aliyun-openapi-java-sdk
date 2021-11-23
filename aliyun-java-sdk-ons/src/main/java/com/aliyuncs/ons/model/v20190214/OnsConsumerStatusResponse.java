@@ -57,45 +57,29 @@ public class OnsConsumerStatusResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Boolean online;
-
-		private Long totalDiff;
-
 		private Float consumeTps;
-
-		private Long lastTimestamp;
-
-		private Long delayTime;
 
 		private String consumeModel;
 
-		private Boolean subscriptionSame;
-
-		private Boolean rebalanceOK;
+		private Long totalDiff;
 
 		private String instanceId;
 
-		private List<ConnectionDo> connectionSet;
+		private Boolean subscriptionSame;
 
-		private List<DetailInTopicDo> detailInTopicList;
+		private Long delayTime;
+
+		private Long lastTimestamp;
+
+		private Boolean online;
+
+		private Boolean rebalanceOK;
+
+		private List<ConnectionDo> connectionSet;
 
 		private List<ConsumerConnectionInfoDo> consumerConnectionInfoList;
 
-		public Boolean getOnline() {
-			return this.online;
-		}
-
-		public void setOnline(Boolean online) {
-			this.online = online;
-		}
-
-		public Long getTotalDiff() {
-			return this.totalDiff;
-		}
-
-		public void setTotalDiff(Long totalDiff) {
-			this.totalDiff = totalDiff;
-		}
+		private List<DetailInTopicDo> detailInTopicList;
 
 		public Float getConsumeTps() {
 			return this.consumeTps;
@@ -103,22 +87,6 @@ public class OnsConsumerStatusResponse extends AcsResponse {
 
 		public void setConsumeTps(Float consumeTps) {
 			this.consumeTps = consumeTps;
-		}
-
-		public Long getLastTimestamp() {
-			return this.lastTimestamp;
-		}
-
-		public void setLastTimestamp(Long lastTimestamp) {
-			this.lastTimestamp = lastTimestamp;
-		}
-
-		public Long getDelayTime() {
-			return this.delayTime;
-		}
-
-		public void setDelayTime(Long delayTime) {
-			this.delayTime = delayTime;
 		}
 
 		public String getConsumeModel() {
@@ -129,20 +97,12 @@ public class OnsConsumerStatusResponse extends AcsResponse {
 			this.consumeModel = consumeModel;
 		}
 
-		public Boolean getSubscriptionSame() {
-			return this.subscriptionSame;
+		public Long getTotalDiff() {
+			return this.totalDiff;
 		}
 
-		public void setSubscriptionSame(Boolean subscriptionSame) {
-			this.subscriptionSame = subscriptionSame;
-		}
-
-		public Boolean getRebalanceOK() {
-			return this.rebalanceOK;
-		}
-
-		public void setRebalanceOK(Boolean rebalanceOK) {
-			this.rebalanceOK = rebalanceOK;
+		public void setTotalDiff(Long totalDiff) {
+			this.totalDiff = totalDiff;
 		}
 
 		public String getInstanceId() {
@@ -153,20 +113,52 @@ public class OnsConsumerStatusResponse extends AcsResponse {
 			this.instanceId = instanceId;
 		}
 
+		public Boolean getSubscriptionSame() {
+			return this.subscriptionSame;
+		}
+
+		public void setSubscriptionSame(Boolean subscriptionSame) {
+			this.subscriptionSame = subscriptionSame;
+		}
+
+		public Long getDelayTime() {
+			return this.delayTime;
+		}
+
+		public void setDelayTime(Long delayTime) {
+			this.delayTime = delayTime;
+		}
+
+		public Long getLastTimestamp() {
+			return this.lastTimestamp;
+		}
+
+		public void setLastTimestamp(Long lastTimestamp) {
+			this.lastTimestamp = lastTimestamp;
+		}
+
+		public Boolean getOnline() {
+			return this.online;
+		}
+
+		public void setOnline(Boolean online) {
+			this.online = online;
+		}
+
+		public Boolean getRebalanceOK() {
+			return this.rebalanceOK;
+		}
+
+		public void setRebalanceOK(Boolean rebalanceOK) {
+			this.rebalanceOK = rebalanceOK;
+		}
+
 		public List<ConnectionDo> getConnectionSet() {
 			return this.connectionSet;
 		}
 
 		public void setConnectionSet(List<ConnectionDo> connectionSet) {
 			this.connectionSet = connectionSet;
-		}
-
-		public List<DetailInTopicDo> getDetailInTopicList() {
-			return this.detailInTopicList;
-		}
-
-		public void setDetailInTopicList(List<DetailInTopicDo> detailInTopicList) {
-			this.detailInTopicList = detailInTopicList;
 		}
 
 		public List<ConsumerConnectionInfoDo> getConsumerConnectionInfoList() {
@@ -177,24 +169,40 @@ public class OnsConsumerStatusResponse extends AcsResponse {
 			this.consumerConnectionInfoList = consumerConnectionInfoList;
 		}
 
+		public List<DetailInTopicDo> getDetailInTopicList() {
+			return this.detailInTopicList;
+		}
+
+		public void setDetailInTopicList(List<DetailInTopicDo> detailInTopicList) {
+			this.detailInTopicList = detailInTopicList;
+		}
+
 		public static class ConnectionDo {
 
-			private String clientId;
+			private String remoteIP;
+
+			private String version;
 
 			private String clientAddr;
 
 			private String language;
 
-			private String version;
+			private String clientId;
 
-			private String remoteIP;
-
-			public String getClientId() {
-				return this.clientId;
+			public String getRemoteIP() {
+				return this.remoteIP;
 			}
 
-			public void setClientId(String clientId) {
-				this.clientId = clientId;
+			public void setRemoteIP(String remoteIP) {
+				this.remoteIP = remoteIP;
+			}
+
+			public String getVersion() {
+				return this.version;
+			}
+
+			public void setVersion(String version) {
+				this.version = version;
 			}
 
 			public String getClientAddr() {
@@ -213,91 +221,72 @@ public class OnsConsumerStatusResponse extends AcsResponse {
 				this.language = language;
 			}
 
-			public String getVersion() {
-				return this.version;
+			public String getClientId() {
+				return this.clientId;
 			}
 
-			public void setVersion(String version) {
-				this.version = version;
-			}
-
-			public String getRemoteIP() {
-				return this.remoteIP;
-			}
-
-			public void setRemoteIP(String remoteIP) {
-				this.remoteIP = remoteIP;
-			}
-		}
-
-		public static class DetailInTopicDo {
-
-			private String topic;
-
-			private Long totalDiff;
-
-			private Long lastTimestamp;
-
-			private Long delayTime;
-
-			public String getTopic() {
-				return this.topic;
-			}
-
-			public void setTopic(String topic) {
-				this.topic = topic;
-			}
-
-			public Long getTotalDiff() {
-				return this.totalDiff;
-			}
-
-			public void setTotalDiff(Long totalDiff) {
-				this.totalDiff = totalDiff;
-			}
-
-			public Long getLastTimestamp() {
-				return this.lastTimestamp;
-			}
-
-			public void setLastTimestamp(Long lastTimestamp) {
-				this.lastTimestamp = lastTimestamp;
-			}
-
-			public Long getDelayTime() {
-				return this.delayTime;
-			}
-
-			public void setDelayTime(Long delayTime) {
-				this.delayTime = delayTime;
+			public void setClientId(String clientId) {
+				this.clientId = clientId;
 			}
 		}
 
 		public static class ConsumerConnectionInfoDo {
 
+			private String consumeModel;
+
+			private Long lastTimeStamp;
+
+			private Long startTimeStamp;
+
+			private String language;
+
 			private String clientId;
 
 			private String connection;
 
-			private String language;
-
 			private String version;
-
-			private String consumeModel;
 
 			private String consumeType;
 
 			private Integer threadCount;
 
-			private Long startTimeStamp;
-
-			private Long lastTimeStamp;
+			private List<ConsumerRunningDataDo> runningDataList;
 
 			private List<SubscriptionData> subscriptionSet;
 
-			private List<ConsumerRunningDataDo> runningDataList;
-
 			private List<ThreadTrackDo> jstack;
+
+			public String getConsumeModel() {
+				return this.consumeModel;
+			}
+
+			public void setConsumeModel(String consumeModel) {
+				this.consumeModel = consumeModel;
+			}
+
+			public Long getLastTimeStamp() {
+				return this.lastTimeStamp;
+			}
+
+			public void setLastTimeStamp(Long lastTimeStamp) {
+				this.lastTimeStamp = lastTimeStamp;
+			}
+
+			public Long getStartTimeStamp() {
+				return this.startTimeStamp;
+			}
+
+			public void setStartTimeStamp(Long startTimeStamp) {
+				this.startTimeStamp = startTimeStamp;
+			}
+
+			public String getLanguage() {
+				return this.language;
+			}
+
+			public void setLanguage(String language) {
+				this.language = language;
+			}
 
 			public String getClientId() {
 				return this.clientId;
@@ -315,28 +304,12 @@ public class OnsConsumerStatusResponse extends AcsResponse {
 				this.connection = connection;
 			}
 
-			public String getLanguage() {
-				return this.language;
-			}
-
-			public void setLanguage(String language) {
-				this.language = language;
-			}
-
 			public String getVersion() {
 				return this.version;
 			}
 
 			public void setVersion(String version) {
 				this.version = version;
-			}
-
-			public String getConsumeModel() {
-				return this.consumeModel;
-			}
-
-			public void setConsumeModel(String consumeModel) {
-				this.consumeModel = consumeModel;
 			}
 
 			public String getConsumeType() {
@@ -355,20 +328,12 @@ public class OnsConsumerStatusResponse extends AcsResponse {
 				this.threadCount = threadCount;
 			}
 
-			public Long getStartTimeStamp() {
-				return this.startTimeStamp;
+			public List<ConsumerRunningDataDo> getRunningDataList() {
+				return this.runningDataList;
 			}
 
-			public void setStartTimeStamp(Long startTimeStamp) {
-				this.startTimeStamp = startTimeStamp;
-			}
-
-			public Long getLastTimeStamp() {
-				return this.lastTimeStamp;
-			}
-
-			public void setLastTimeStamp(Long lastTimeStamp) {
-				this.lastTimeStamp = lastTimeStamp;
+			public void setRunningDataList(List<ConsumerRunningDataDo> runningDataList) {
+				this.runningDataList = runningDataList;
 			}
 
 			public List<SubscriptionData> getSubscriptionSet() {
@@ -379,14 +344,6 @@ public class OnsConsumerStatusResponse extends AcsResponse {
 				this.subscriptionSet = subscriptionSet;
 			}
 
-			public List<ConsumerRunningDataDo> getRunningDataList() {
-				return this.runningDataList;
-			}
-
-			public void setRunningDataList(List<ConsumerRunningDataDo> runningDataList) {
-				this.runningDataList = runningDataList;
-			}
-
 			public List<ThreadTrackDo> getJstack() {
 				return this.jstack;
 			}
@@ -395,62 +352,19 @@ public class OnsConsumerStatusResponse extends AcsResponse {
 				this.jstack = jstack;
 			}
 
-			public static class SubscriptionData {
-
-				private String topic;
-
-				private String subString;
-
-				private Long subVersion;
-
-				private List<String> tagsSet;
-
-				public String getTopic() {
-					return this.topic;
-				}
-
-				public void setTopic(String topic) {
-					this.topic = topic;
-				}
-
-				public String getSubString() {
-					return this.subString;
-				}
-
-				public void setSubString(String subString) {
-					this.subString = subString;
-				}
-
-				public Long getSubVersion() {
-					return this.subVersion;
-				}
-
-				public void setSubVersion(Long subVersion) {
-					this.subVersion = subVersion;
-				}
-
-				public List<String> getTagsSet() {
-					return this.tagsSet;
-				}
-
-				public void setTagsSet(List<String> tagsSet) {
-					this.tagsSet = tagsSet;
-				}
-			}
-
 			public static class ConsumerRunningDataDo {
 
 				private String groupId;
 
+				private Float rt;
+
 				private String topic;
 
-				private Float rt;
+				private Long failedCountPerHour;
 
 				private Float okTps;
 
 				private Float failedTps;
-
-				private Long failedCountPerHour;
 
 				public String getGroupId() {
 					return this.groupId;
@@ -460,6 +374,14 @@ public class OnsConsumerStatusResponse extends AcsResponse {
 					this.groupId = groupId;
 				}
 
+				public Float getRt() {
+					return this.rt;
+				}
+
+				public void setRt(Float rt) {
+					this.rt = rt;
+				}
+
 				public String getTopic() {
 					return this.topic;
 				}
@@ -468,12 +390,12 @@ public class OnsConsumerStatusResponse extends AcsResponse {
 					this.topic = topic;
 				}
 
-				public Float getRt() {
-					return this.rt;
+				public Long getFailedCountPerHour() {
+					return this.failedCountPerHour;
 				}
 
-				public void setRt(Float rt) {
-					this.rt = rt;
+				public void setFailedCountPerHour(Long failedCountPerHour) {
+					this.failedCountPerHour = failedCountPerHour;
 				}
 
 				public Float getOkTps() {
@@ -491,13 +413,48 @@ public class OnsConsumerStatusResponse extends AcsResponse {
 				public void setFailedTps(Float failedTps) {
 					this.failedTps = failedTps;
 				}
+			}
 
-				public Long getFailedCountPerHour() {
-					return this.failedCountPerHour;
+			public static class SubscriptionData {
+
+				private String subString;
+
+				private Long subVersion;
+
+				private String topic;
+
+				private List<String> tagsSet;
+
+				public String getSubString() {
+					return this.subString;
 				}
 
-				public void setFailedCountPerHour(Long failedCountPerHour) {
-					this.failedCountPerHour = failedCountPerHour;
+				public void setSubString(String subString) {
+					this.subString = subString;
+				}
+
+				public Long getSubVersion() {
+					return this.subVersion;
+				}
+
+				public void setSubVersion(Long subVersion) {
+					this.subVersion = subVersion;
+				}
+
+				public String getTopic() {
+					return this.topic;
+				}
+
+				public void setTopic(String topic) {
+					this.topic = topic;
+				}
+
+				public List<String> getTagsSet() {
+					return this.tagsSet;
+				}
+
+				public void setTagsSet(List<String> tagsSet) {
+					this.tagsSet = tagsSet;
 				}
 			}
 
@@ -522,6 +479,49 @@ public class OnsConsumerStatusResponse extends AcsResponse {
 				public void setTrackList(List<String> trackList) {
 					this.trackList = trackList;
 				}
+			}
+		}
+
+		public static class DetailInTopicDo {
+
+			private Long delayTime;
+
+			private Long totalDiff;
+
+			private Long lastTimestamp;
+
+			private String topic;
+
+			public Long getDelayTime() {
+				return this.delayTime;
+			}
+
+			public void setDelayTime(Long delayTime) {
+				this.delayTime = delayTime;
+			}
+
+			public Long getTotalDiff() {
+				return this.totalDiff;
+			}
+
+			public void setTotalDiff(Long totalDiff) {
+				this.totalDiff = totalDiff;
+			}
+
+			public Long getLastTimestamp() {
+				return this.lastTimestamp;
+			}
+
+			public void setLastTimestamp(Long lastTimestamp) {
+				this.lastTimestamp = lastTimestamp;
+			}
+
+			public String getTopic() {
+				return this.topic;
+			}
+
+			public void setTopic(String topic) {
+				this.topic = topic;
 			}
 		}
 	}

@@ -23,8 +23,8 @@ public class OnsTraceQueryByMsgIdResponseUnmarshaller {
 	public static OnsTraceQueryByMsgIdResponse unmarshall(OnsTraceQueryByMsgIdResponse onsTraceQueryByMsgIdResponse, UnmarshallerContext _ctx) {
 		
 		onsTraceQueryByMsgIdResponse.setRequestId(_ctx.stringValue("OnsTraceQueryByMsgIdResponse.RequestId"));
-		onsTraceQueryByMsgIdResponse.setHelpUrl(_ctx.stringValue("OnsTraceQueryByMsgIdResponse.HelpUrl"));
 		onsTraceQueryByMsgIdResponse.setQueryId(_ctx.stringValue("OnsTraceQueryByMsgIdResponse.QueryId"));
+		onsTraceQueryByMsgIdResponse.setHelpUrl(_ctx.stringValue("OnsTraceQueryByMsgIdResponse.HelpUrl"));
 	 
 	 	return onsTraceQueryByMsgIdResponse;
 	}

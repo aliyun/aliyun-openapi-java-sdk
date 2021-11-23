@@ -71,9 +71,9 @@ public class OnsTopicSubDetailResponse extends AcsResponse {
 
 			private String groupId;
 
-			private String subString;
-
 			private String messageModel;
+
+			private String subString;
 
 			public String getGroupId() {
 				return this.groupId;
@@ -83,20 +83,20 @@ public class OnsTopicSubDetailResponse extends AcsResponse {
 				this.groupId = groupId;
 			}
 
-			public String getSubString() {
-				return this.subString;
-			}
-
-			public void setSubString(String subString) {
-				this.subString = subString;
-			}
-
 			public String getMessageModel() {
 				return this.messageModel;
 			}
 
 			public void setMessageModel(String messageModel) {
 				this.messageModel = messageModel;
+			}
+
+			public String getSubString() {
+				return this.subString;
+			}
+
+			public void setSubString(String subString) {
+				this.subString = subString;
 			}
 		}
 	}

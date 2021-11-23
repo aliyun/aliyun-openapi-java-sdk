@@ -28,21 +28,21 @@ public class OnsInstanceBaseInfoResponseUnmarshaller {
 		onsInstanceBaseInfoResponse.setHelpUrl(_ctx.stringValue("OnsInstanceBaseInfoResponse.HelpUrl"));
 
 		InstanceBaseInfo instanceBaseInfo = new InstanceBaseInfo();
-		instanceBaseInfo.setInstanceId(_ctx.stringValue("OnsInstanceBaseInfoResponse.InstanceBaseInfo.InstanceId"));
-		instanceBaseInfo.setInstanceStatus(_ctx.integerValue("OnsInstanceBaseInfoResponse.InstanceBaseInfo.InstanceStatus"));
-		instanceBaseInfo.setReleaseTime(_ctx.longValue("OnsInstanceBaseInfoResponse.InstanceBaseInfo.ReleaseTime"));
-		instanceBaseInfo.setInstanceType(_ctx.integerValue("OnsInstanceBaseInfoResponse.InstanceBaseInfo.InstanceType"));
-		instanceBaseInfo.setInstanceName(_ctx.stringValue("OnsInstanceBaseInfoResponse.InstanceBaseInfo.InstanceName"));
 		instanceBaseInfo.setIndependentNaming(_ctx.booleanValue("OnsInstanceBaseInfoResponse.InstanceBaseInfo.IndependentNaming"));
-		instanceBaseInfo.setRemark(_ctx.stringValue("OnsInstanceBaseInfoResponse.InstanceBaseInfo.Remark"));
-		instanceBaseInfo.setTopicCapacity(_ctx.integerValue("OnsInstanceBaseInfoResponse.InstanceBaseInfo.TopicCapacity"));
 		instanceBaseInfo.setMaxTps(_ctx.longValue("OnsInstanceBaseInfoResponse.InstanceBaseInfo.MaxTps"));
+		instanceBaseInfo.setRemark(_ctx.stringValue("OnsInstanceBaseInfoResponse.InstanceBaseInfo.Remark"));
+		instanceBaseInfo.setInstanceName(_ctx.stringValue("OnsInstanceBaseInfoResponse.InstanceBaseInfo.InstanceName"));
+		instanceBaseInfo.setReleaseTime(_ctx.longValue("OnsInstanceBaseInfoResponse.InstanceBaseInfo.ReleaseTime"));
+		instanceBaseInfo.setTopicCapacity(_ctx.integerValue("OnsInstanceBaseInfoResponse.InstanceBaseInfo.TopicCapacity"));
+		instanceBaseInfo.setInstanceStatus(_ctx.integerValue("OnsInstanceBaseInfoResponse.InstanceBaseInfo.InstanceStatus"));
+		instanceBaseInfo.setInstanceId(_ctx.stringValue("OnsInstanceBaseInfoResponse.InstanceBaseInfo.InstanceId"));
+		instanceBaseInfo.setInstanceType(_ctx.integerValue("OnsInstanceBaseInfoResponse.InstanceBaseInfo.InstanceType"));
 
 		Endpoints endpoints = new Endpoints();
 		endpoints.setTcpEndpoint(_ctx.stringValue("OnsInstanceBaseInfoResponse.InstanceBaseInfo.Endpoints.TcpEndpoint"));
 		endpoints.setHttpInternetEndpoint(_ctx.stringValue("OnsInstanceBaseInfoResponse.InstanceBaseInfo.Endpoints.HttpInternetEndpoint"));
-		endpoints.setHttpInternetSecureEndpoint(_ctx.stringValue("OnsInstanceBaseInfoResponse.InstanceBaseInfo.Endpoints.HttpInternetSecureEndpoint"));
 		endpoints.setHttpInternalEndpoint(_ctx.stringValue("OnsInstanceBaseInfoResponse.InstanceBaseInfo.Endpoints.HttpInternalEndpoint"));
+		endpoints.setHttpInternetSecureEndpoint(_ctx.stringValue("OnsInstanceBaseInfoResponse.InstanceBaseInfo.Endpoints.HttpInternetSecureEndpoint"));
 		instanceBaseInfo.setEndpoints(endpoints);
 		onsInstanceBaseInfoResponse.setInstanceBaseInfo(instanceBaseInfo);
 	 

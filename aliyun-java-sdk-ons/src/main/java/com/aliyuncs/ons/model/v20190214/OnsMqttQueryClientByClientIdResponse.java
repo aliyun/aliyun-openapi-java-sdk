@@ -59,11 +59,11 @@ public class OnsMqttQueryClientByClientIdResponse extends AcsResponse {
 
 		private Boolean online;
 
-		private String clientId;
+		private Long lastTouch;
 
 		private String socketChannel;
 
-		private Long lastTouch;
+		private String clientId;
 
 		private List<SubscriptionDo> subScriptonData;
 
@@ -75,12 +75,12 @@ public class OnsMqttQueryClientByClientIdResponse extends AcsResponse {
 			this.online = online;
 		}
 
-		public String getClientId() {
-			return this.clientId;
+		public Long getLastTouch() {
+			return this.lastTouch;
 		}
 
-		public void setClientId(String clientId) {
-			this.clientId = clientId;
+		public void setLastTouch(Long lastTouch) {
+			this.lastTouch = lastTouch;
 		}
 
 		public String getSocketChannel() {
@@ -91,12 +91,12 @@ public class OnsMqttQueryClientByClientIdResponse extends AcsResponse {
 			this.socketChannel = socketChannel;
 		}
 
-		public Long getLastTouch() {
-			return this.lastTouch;
+		public String getClientId() {
+			return this.clientId;
 		}
 
-		public void setLastTouch(Long lastTouch) {
-			this.lastTouch = lastTouch;
+		public void setClientId(String clientId) {
+			this.clientId = clientId;
 		}
 
 		public List<SubscriptionDo> getSubScriptonData() {
@@ -109,19 +109,11 @@ public class OnsMqttQueryClientByClientIdResponse extends AcsResponse {
 
 		public static class SubscriptionDo {
 
-			private String parentTopic;
-
 			private String subTopic;
 
+			private String parentTopic;
+
 			private Integer qos;
-
-			public String getParentTopic() {
-				return this.parentTopic;
-			}
-
-			public void setParentTopic(String parentTopic) {
-				this.parentTopic = parentTopic;
-			}
 
 			public String getSubTopic() {
 				return this.subTopic;
@@ -129,6 +121,14 @@ public class OnsMqttQueryClientByClientIdResponse extends AcsResponse {
 
 			public void setSubTopic(String subTopic) {
 				this.subTopic = subTopic;
+			}
+
+			public String getParentTopic() {
+				return this.parentTopic;
+			}
+
+			public void setParentTopic(String parentTopic) {
+				this.parentTopic = parentTopic;
 			}
 
 			public Integer getQos() {

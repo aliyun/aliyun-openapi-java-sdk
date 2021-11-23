@@ -36,8 +36,8 @@ public class OnsTopicSubDetailResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("OnsTopicSubDetailResponse.Data.SubscriptionDataList.Length"); i++) {
 			SubscriptionDataListItem subscriptionDataListItem = new SubscriptionDataListItem();
 			subscriptionDataListItem.setGroupId(_ctx.stringValue("OnsTopicSubDetailResponse.Data.SubscriptionDataList["+ i +"].GroupId"));
-			subscriptionDataListItem.setSubString(_ctx.stringValue("OnsTopicSubDetailResponse.Data.SubscriptionDataList["+ i +"].SubString"));
 			subscriptionDataListItem.setMessageModel(_ctx.stringValue("OnsTopicSubDetailResponse.Data.SubscriptionDataList["+ i +"].MessageModel"));
+			subscriptionDataListItem.setSubString(_ctx.stringValue("OnsTopicSubDetailResponse.Data.SubscriptionDataList["+ i +"].SubString"));
 
 			subscriptionDataList.add(subscriptionDataListItem);
 		}

@@ -32,9 +32,9 @@ public class OnsMessageTraceResponseUnmarshaller {
 		List<MessageTrack> data = new ArrayList<MessageTrack>();
 		for (int i = 0; i < _ctx.lengthValue("OnsMessageTraceResponse.Data.Length"); i++) {
 			MessageTrack messageTrack = new MessageTrack();
-			messageTrack.setConsumerGroup(_ctx.stringValue("OnsMessageTraceResponse.Data["+ i +"].ConsumerGroup"));
-			messageTrack.setTrackType(_ctx.stringValue("OnsMessageTraceResponse.Data["+ i +"].TrackType"));
 			messageTrack.setExceptionDesc(_ctx.stringValue("OnsMessageTraceResponse.Data["+ i +"].ExceptionDesc"));
+			messageTrack.setTrackType(_ctx.stringValue("OnsMessageTraceResponse.Data["+ i +"].TrackType"));
+			messageTrack.setConsumerGroup(_ctx.stringValue("OnsMessageTraceResponse.Data["+ i +"].ConsumerGroup"));
 			messageTrack.setInstanceId(_ctx.stringValue("OnsMessageTraceResponse.Data["+ i +"].InstanceId"));
 
 			data.add(messageTrack);
