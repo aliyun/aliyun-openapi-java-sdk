@@ -29,24 +29,24 @@ public class DescribeResourceCoverageTotalResponseUnmarshaller {
 	public static DescribeResourceCoverageTotalResponse unmarshall(DescribeResourceCoverageTotalResponse describeResourceCoverageTotalResponse, UnmarshallerContext _ctx) {
 		
 		describeResourceCoverageTotalResponse.setRequestId(_ctx.stringValue("DescribeResourceCoverageTotalResponse.RequestId"));
-		describeResourceCoverageTotalResponse.setSuccess(_ctx.booleanValue("DescribeResourceCoverageTotalResponse.Success"));
 		describeResourceCoverageTotalResponse.setCode(_ctx.stringValue("DescribeResourceCoverageTotalResponse.Code"));
 		describeResourceCoverageTotalResponse.setMessage(_ctx.stringValue("DescribeResourceCoverageTotalResponse.Message"));
+		describeResourceCoverageTotalResponse.setSuccess(_ctx.booleanValue("DescribeResourceCoverageTotalResponse.Success"));
 
 		Data data = new Data();
 
 		TotalCoverage totalCoverage = new TotalCoverage();
-		totalCoverage.setCoveragePercentage(_ctx.floatValue("DescribeResourceCoverageTotalResponse.Data.TotalCoverage.CoveragePercentage"));
-		totalCoverage.setDeductQuantity(_ctx.floatValue("DescribeResourceCoverageTotalResponse.Data.TotalCoverage.DeductQuantity"));
-		totalCoverage.setTotalQuantity(_ctx.floatValue("DescribeResourceCoverageTotalResponse.Data.TotalCoverage.TotalQuantity"));
 		totalCoverage.setCapacityUnit(_ctx.stringValue("DescribeResourceCoverageTotalResponse.Data.TotalCoverage.CapacityUnit"));
+		totalCoverage.setDeductQuantity(_ctx.floatValue("DescribeResourceCoverageTotalResponse.Data.TotalCoverage.DeductQuantity"));
+		totalCoverage.setCoveragePercentage(_ctx.floatValue("DescribeResourceCoverageTotalResponse.Data.TotalCoverage.CoveragePercentage"));
+		totalCoverage.setTotalQuantity(_ctx.floatValue("DescribeResourceCoverageTotalResponse.Data.TotalCoverage.TotalQuantity"));
 		data.setTotalCoverage(totalCoverage);
 
 		List<Item> periodCoverage = new ArrayList<Item>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeResourceCoverageTotalResponse.Data.PeriodCoverage.Length"); i++) {
 			Item item = new Item();
-			item.setPeriod(_ctx.stringValue("DescribeResourceCoverageTotalResponse.Data.PeriodCoverage["+ i +"].Period"));
 			item.setCoveragePercentage(_ctx.floatValue("DescribeResourceCoverageTotalResponse.Data.PeriodCoverage["+ i +"].CoveragePercentage"));
+			item.setPeriod(_ctx.stringValue("DescribeResourceCoverageTotalResponse.Data.PeriodCoverage["+ i +"].Period"));
 
 			periodCoverage.add(item);
 		}

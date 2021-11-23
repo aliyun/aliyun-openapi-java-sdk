@@ -29,8 +29,8 @@ public class QueryRelationListResponseUnmarshaller {
 		
 		queryRelationListResponse.setRequestId(_ctx.stringValue("QueryRelationListResponse.RequestId"));
 		queryRelationListResponse.setCode(_ctx.stringValue("QueryRelationListResponse.Code"));
-		queryRelationListResponse.setSuccess(_ctx.booleanValue("QueryRelationListResponse.Success"));
 		queryRelationListResponse.setMessage(_ctx.stringValue("QueryRelationListResponse.Message"));
+		queryRelationListResponse.setSuccess(_ctx.booleanValue("QueryRelationListResponse.Success"));
 
 		Data data = new Data();
 		data.setPageNum(_ctx.integerValue("QueryRelationListResponse.Data.PageNum"));
@@ -40,16 +40,16 @@ public class QueryRelationListResponseUnmarshaller {
 		List<FinancialRelationInfoListItem> financialRelationInfoList = new ArrayList<FinancialRelationInfoListItem>();
 		for (int i = 0; i < _ctx.lengthValue("QueryRelationListResponse.Data.FinancialRelationInfoList.Length"); i++) {
 			FinancialRelationInfoListItem financialRelationInfoListItem = new FinancialRelationInfoListItem();
-			financialRelationInfoListItem.setRelationId(_ctx.longValue("QueryRelationListResponse.Data.FinancialRelationInfoList["+ i +"].RelationId"));
-			financialRelationInfoListItem.setAccountType(_ctx.stringValue("QueryRelationListResponse.Data.FinancialRelationInfoList["+ i +"].AccountType"));
-			financialRelationInfoListItem.setAccountId(_ctx.longValue("QueryRelationListResponse.Data.FinancialRelationInfoList["+ i +"].AccountId"));
-			financialRelationInfoListItem.setAccountName(_ctx.stringValue("QueryRelationListResponse.Data.FinancialRelationInfoList["+ i +"].AccountName"));
-			financialRelationInfoListItem.setAccountNickName(_ctx.stringValue("QueryRelationListResponse.Data.FinancialRelationInfoList["+ i +"].AccountNickName"));
-			financialRelationInfoListItem.setRelationType(_ctx.stringValue("QueryRelationListResponse.Data.FinancialRelationInfoList["+ i +"].RelationType"));
-			financialRelationInfoListItem.setState(_ctx.stringValue("QueryRelationListResponse.Data.FinancialRelationInfoList["+ i +"].State"));
-			financialRelationInfoListItem.setSetupTime(_ctx.stringValue("QueryRelationListResponse.Data.FinancialRelationInfoList["+ i +"].SetupTime"));
-			financialRelationInfoListItem.setStartTime(_ctx.stringValue("QueryRelationListResponse.Data.FinancialRelationInfoList["+ i +"].StartTime"));
 			financialRelationInfoListItem.setEndTime(_ctx.stringValue("QueryRelationListResponse.Data.FinancialRelationInfoList["+ i +"].EndTime"));
+			financialRelationInfoListItem.setRelationType(_ctx.stringValue("QueryRelationListResponse.Data.FinancialRelationInfoList["+ i +"].RelationType"));
+			financialRelationInfoListItem.setAccountNickName(_ctx.stringValue("QueryRelationListResponse.Data.FinancialRelationInfoList["+ i +"].AccountNickName"));
+			financialRelationInfoListItem.setStartTime(_ctx.stringValue("QueryRelationListResponse.Data.FinancialRelationInfoList["+ i +"].StartTime"));
+			financialRelationInfoListItem.setState(_ctx.stringValue("QueryRelationListResponse.Data.FinancialRelationInfoList["+ i +"].State"));
+			financialRelationInfoListItem.setAccountId(_ctx.longValue("QueryRelationListResponse.Data.FinancialRelationInfoList["+ i +"].AccountId"));
+			financialRelationInfoListItem.setSetupTime(_ctx.stringValue("QueryRelationListResponse.Data.FinancialRelationInfoList["+ i +"].SetupTime"));
+			financialRelationInfoListItem.setAccountType(_ctx.stringValue("QueryRelationListResponse.Data.FinancialRelationInfoList["+ i +"].AccountType"));
+			financialRelationInfoListItem.setAccountName(_ctx.stringValue("QueryRelationListResponse.Data.FinancialRelationInfoList["+ i +"].AccountName"));
+			financialRelationInfoListItem.setRelationId(_ctx.longValue("QueryRelationListResponse.Data.FinancialRelationInfoList["+ i +"].RelationId"));
 
 			financialRelationInfoList.add(financialRelationInfoListItem);
 		}

@@ -29,9 +29,9 @@ public class QueryInstanceByTagResponseUnmarshaller {
 		
 		queryInstanceByTagResponse.setRequestId(_ctx.stringValue("QueryInstanceByTagResponse.RequestId"));
 		queryInstanceByTagResponse.setCode(_ctx.stringValue("QueryInstanceByTagResponse.Code"));
-		queryInstanceByTagResponse.setSuccess(_ctx.booleanValue("QueryInstanceByTagResponse.Success"));
 		queryInstanceByTagResponse.setMessage(_ctx.stringValue("QueryInstanceByTagResponse.Message"));
 		queryInstanceByTagResponse.setNextToken(_ctx.stringValue("QueryInstanceByTagResponse.NextToken"));
+		queryInstanceByTagResponse.setSuccess(_ctx.booleanValue("QueryInstanceByTagResponse.Success"));
 
 		List<TagResourceItem> tagResource = new ArrayList<TagResourceItem>();
 		for (int i = 0; i < _ctx.lengthValue("QueryInstanceByTagResponse.TagResource.Length"); i++) {

@@ -24,13 +24,13 @@ public class AllocateCostUnitResourceResponseUnmarshaller {
 	public static AllocateCostUnitResourceResponse unmarshall(AllocateCostUnitResourceResponse allocateCostUnitResourceResponse, UnmarshallerContext _ctx) {
 		
 		allocateCostUnitResourceResponse.setRequestId(_ctx.stringValue("AllocateCostUnitResourceResponse.RequestId"));
-		allocateCostUnitResourceResponse.setMessage(_ctx.stringValue("AllocateCostUnitResourceResponse.Message"));
 		allocateCostUnitResourceResponse.setCode(_ctx.stringValue("AllocateCostUnitResourceResponse.Code"));
+		allocateCostUnitResourceResponse.setMessage(_ctx.stringValue("AllocateCostUnitResourceResponse.Message"));
 		allocateCostUnitResourceResponse.setSuccess(_ctx.booleanValue("AllocateCostUnitResourceResponse.Success"));
 
 		Data data = new Data();
-		data.setIsSuccess(_ctx.booleanValue("AllocateCostUnitResourceResponse.Data.IsSuccess"));
 		data.setToUnitUserId(_ctx.longValue("AllocateCostUnitResourceResponse.Data.ToUnitUserId"));
+		data.setIsSuccess(_ctx.booleanValue("AllocateCostUnitResourceResponse.Data.IsSuccess"));
 		data.setToUnitId(_ctx.longValue("AllocateCostUnitResourceResponse.Data.ToUnitId"));
 		allocateCostUnitResourceResponse.setData(data);
 	 

@@ -29,24 +29,24 @@ public class DescribeSavingsPlansUsageTotalResponseUnmarshaller {
 	public static DescribeSavingsPlansUsageTotalResponse unmarshall(DescribeSavingsPlansUsageTotalResponse describeSavingsPlansUsageTotalResponse, UnmarshallerContext _ctx) {
 		
 		describeSavingsPlansUsageTotalResponse.setRequestId(_ctx.stringValue("DescribeSavingsPlansUsageTotalResponse.RequestId"));
-		describeSavingsPlansUsageTotalResponse.setSuccess(_ctx.booleanValue("DescribeSavingsPlansUsageTotalResponse.Success"));
 		describeSavingsPlansUsageTotalResponse.setCode(_ctx.stringValue("DescribeSavingsPlansUsageTotalResponse.Code"));
 		describeSavingsPlansUsageTotalResponse.setMessage(_ctx.stringValue("DescribeSavingsPlansUsageTotalResponse.Message"));
+		describeSavingsPlansUsageTotalResponse.setSuccess(_ctx.booleanValue("DescribeSavingsPlansUsageTotalResponse.Success"));
 
 		Data data = new Data();
 
 		TotalUsage totalUsage = new TotalUsage();
-		totalUsage.setUsagePercentage(_ctx.floatValue("DescribeSavingsPlansUsageTotalResponse.Data.TotalUsage.UsagePercentage"));
 		totalUsage.setPostpaidCost(_ctx.floatValue("DescribeSavingsPlansUsageTotalResponse.Data.TotalUsage.PostpaidCost"));
-		totalUsage.setPoolValue(_ctx.floatValue("DescribeSavingsPlansUsageTotalResponse.Data.TotalUsage.PoolValue"));
 		totalUsage.setSavedCost(_ctx.floatValue("DescribeSavingsPlansUsageTotalResponse.Data.TotalUsage.SavedCost"));
+		totalUsage.setUsagePercentage(_ctx.floatValue("DescribeSavingsPlansUsageTotalResponse.Data.TotalUsage.UsagePercentage"));
+		totalUsage.setPoolValue(_ctx.floatValue("DescribeSavingsPlansUsageTotalResponse.Data.TotalUsage.PoolValue"));
 		data.setTotalUsage(totalUsage);
 
 		List<Item> periodCoverage = new ArrayList<Item>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSavingsPlansUsageTotalResponse.Data.PeriodCoverage.Length"); i++) {
 			Item item = new Item();
-			item.setPeriod(_ctx.stringValue("DescribeSavingsPlansUsageTotalResponse.Data.PeriodCoverage["+ i +"].Period"));
 			item.setPercentage(_ctx.floatValue("DescribeSavingsPlansUsageTotalResponse.Data.PeriodCoverage["+ i +"].Percentage"));
+			item.setPeriod(_ctx.stringValue("DescribeSavingsPlansUsageTotalResponse.Data.PeriodCoverage["+ i +"].Period"));
 
 			periodCoverage.add(item);
 		}

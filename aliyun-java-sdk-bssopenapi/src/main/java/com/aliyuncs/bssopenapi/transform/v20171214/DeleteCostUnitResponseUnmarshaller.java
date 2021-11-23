@@ -24,8 +24,8 @@ public class DeleteCostUnitResponseUnmarshaller {
 	public static DeleteCostUnitResponse unmarshall(DeleteCostUnitResponse deleteCostUnitResponse, UnmarshallerContext _ctx) {
 		
 		deleteCostUnitResponse.setRequestId(_ctx.stringValue("DeleteCostUnitResponse.RequestId"));
-		deleteCostUnitResponse.setMessage(_ctx.stringValue("DeleteCostUnitResponse.Message"));
 		deleteCostUnitResponse.setCode(_ctx.stringValue("DeleteCostUnitResponse.Code"));
+		deleteCostUnitResponse.setMessage(_ctx.stringValue("DeleteCostUnitResponse.Message"));
 		deleteCostUnitResponse.setSuccess(_ctx.booleanValue("DeleteCostUnitResponse.Success"));
 
 		Data data = new Data();

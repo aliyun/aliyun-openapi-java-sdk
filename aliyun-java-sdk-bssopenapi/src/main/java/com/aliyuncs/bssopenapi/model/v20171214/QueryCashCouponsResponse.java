@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryCashCouponsResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String message;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private List<CashCoupon> data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -67,6 +51,22 @@ public class QueryCashCouponsResponse extends AcsResponse {
 		this.message = message;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public List<CashCoupon> getData() {
 		return this.data;
 	}
@@ -77,56 +77,32 @@ public class QueryCashCouponsResponse extends AcsResponse {
 
 	public static class CashCoupon {
 
-		private Long cashCouponId;
-
-		private String cashCouponNo;
-
-		private String grantedTime;
-
-		private String effectiveTime;
+		private String status;
 
 		private String expiryTime;
 
-		private String applicableProducts;
-
-		private String applicableScenarios;
+		private String grantedTime;
 
 		private String nominalValue;
 
+		private String effectiveTime;
+
+		private String applicableScenarios;
+
+		private Long cashCouponId;
+
+		private String applicableProducts;
+
+		private String cashCouponNo;
+
 		private String balance;
 
-		private String status;
-
-		public Long getCashCouponId() {
-			return this.cashCouponId;
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setCashCouponId(Long cashCouponId) {
-			this.cashCouponId = cashCouponId;
-		}
-
-		public String getCashCouponNo() {
-			return this.cashCouponNo;
-		}
-
-		public void setCashCouponNo(String cashCouponNo) {
-			this.cashCouponNo = cashCouponNo;
-		}
-
-		public String getGrantedTime() {
-			return this.grantedTime;
-		}
-
-		public void setGrantedTime(String grantedTime) {
-			this.grantedTime = grantedTime;
-		}
-
-		public String getEffectiveTime() {
-			return this.effectiveTime;
-		}
-
-		public void setEffectiveTime(String effectiveTime) {
-			this.effectiveTime = effectiveTime;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public String getExpiryTime() {
@@ -137,20 +113,12 @@ public class QueryCashCouponsResponse extends AcsResponse {
 			this.expiryTime = expiryTime;
 		}
 
-		public String getApplicableProducts() {
-			return this.applicableProducts;
+		public String getGrantedTime() {
+			return this.grantedTime;
 		}
 
-		public void setApplicableProducts(String applicableProducts) {
-			this.applicableProducts = applicableProducts;
-		}
-
-		public String getApplicableScenarios() {
-			return this.applicableScenarios;
-		}
-
-		public void setApplicableScenarios(String applicableScenarios) {
-			this.applicableScenarios = applicableScenarios;
+		public void setGrantedTime(String grantedTime) {
+			this.grantedTime = grantedTime;
 		}
 
 		public String getNominalValue() {
@@ -161,20 +129,52 @@ public class QueryCashCouponsResponse extends AcsResponse {
 			this.nominalValue = nominalValue;
 		}
 
+		public String getEffectiveTime() {
+			return this.effectiveTime;
+		}
+
+		public void setEffectiveTime(String effectiveTime) {
+			this.effectiveTime = effectiveTime;
+		}
+
+		public String getApplicableScenarios() {
+			return this.applicableScenarios;
+		}
+
+		public void setApplicableScenarios(String applicableScenarios) {
+			this.applicableScenarios = applicableScenarios;
+		}
+
+		public Long getCashCouponId() {
+			return this.cashCouponId;
+		}
+
+		public void setCashCouponId(Long cashCouponId) {
+			this.cashCouponId = cashCouponId;
+		}
+
+		public String getApplicableProducts() {
+			return this.applicableProducts;
+		}
+
+		public void setApplicableProducts(String applicableProducts) {
+			this.applicableProducts = applicableProducts;
+		}
+
+		public String getCashCouponNo() {
+			return this.cashCouponNo;
+		}
+
+		public void setCashCouponNo(String cashCouponNo) {
+			this.cashCouponNo = cashCouponNo;
+		}
+
 		public String getBalance() {
 			return this.balance;
 		}
 
 		public void setBalance(String balance) {
 			this.balance = balance;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
 		}
 	}
 

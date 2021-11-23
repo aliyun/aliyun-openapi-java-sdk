@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryInstanceGaapCostResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String message;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -67,6 +51,22 @@ public class QueryInstanceGaapCostResponse extends AcsResponse {
 		this.message = message;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -77,23 +77,15 @@ public class QueryInstanceGaapCostResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String hostId;
-
 		private Integer pageNum;
 
 		private Integer pageSize;
 
 		private Integer totalCount;
 
+		private String hostId;
+
 		private List<Module> modules;
-
-		public String getHostId() {
-			return this.hostId;
-		}
-
-		public void setHostId(String hostId) {
-			this.hostId = hostId;
-		}
 
 		public Integer getPageNum() {
 			return this.pageNum;
@@ -119,6 +111,14 @@ public class QueryInstanceGaapCostResponse extends AcsResponse {
 			this.totalCount = totalCount;
 		}
 
+		public String getHostId() {
+			return this.hostId;
+		}
+
+		public void setHostId(String hostId) {
+			this.hostId = hostId;
+		}
+
 		public List<Module> getModules() {
 			return this.modules;
 		}
@@ -129,140 +129,116 @@ public class QueryInstanceGaapCostResponse extends AcsResponse {
 
 		public static class Module {
 
-			private String billingCycle;
-
-			private String instanceID;
-
-			private String productCode;
-
-			private String productType;
+			private String gaapDeductedByCashCoupons;
 
 			private String subscriptionType;
 
-			private String tag;
+			private String monthGaapPretaxAmount;
 
-			private String resourceGroup;
+			private String deductedByCoupons;
 
-			private String accountingUnit;
-
-			private String payerAccount;
-
-			private String ownerID;
+			private String subOrderId;
 
 			private String region;
 
-			private String currency;
-
-			private String paymentCurrency;
-
 			private String orderType;
+
+			private String monthGaapDeductedByPrepaidCard;
+
+			private String unallocatedDeductedByCashCoupons;
+
+			private String pretaxAmountLocal;
+
+			private String billingCycle;
+
+			private String payerAccount;
+
+			private String monthGaapPretaxAmountLocal;
+
+			private String accountingUnit;
+
+			private String gaapPretaxAmountLocal;
+
+			private String unallocatedDeductedByPrepaidCard;
+
+			private String productType;
+
+			private String paymentAmount;
+
+			private String monthGaapPretaxGrossAmount;
+
+			private String billType;
 
 			private String payTime;
 
 			private String pretaxGrossAmount;
 
-			private String pricingDiscount;
+			private String orderId;
 
-			private String deductedByCoupons;
+			private String unallocatedPricingDiscount;
 
-			private String pretaxAmount;
+			private String monthGaapDeductedByCashCoupons;
 
-			private String pretaxAmountLocal;
+			private String unallocatedPretaxGrossAmount;
 
-			private String deductedByCashCoupons;
+			private String instanceID;
 
-			private String deductedByPrepaidCard;
+			private String tag;
 
-			private String paymentAmount;
-
-			private String gaapPretaxGrossAmount;
-
-			private String gaapPricingDiscount;
+			private String currency;
 
 			private String gaapDeductedByCoupons;
 
-			private String gaapPretaxAmount;
-
-			private String gaapPretaxAmountLocal;
-
-			private String gaapDeductedByCashCoupons;
+			private String deductedByCashCoupons;
 
 			private String gaapDeductedByPrepaidCard;
 
 			private String gaapPaymentAmount;
 
-			private String monthGaapPretaxGrossAmount;
+			private String unallocatedPretaxAmountLocal;
 
 			private String monthGaapPricingDiscount;
 
-			private String monthGaapDeductedByCoupons;
+			private String pricingDiscount;
 
-			private String monthGaapPretaxAmount;
+			private String gaapPricingDiscount;
 
-			private String monthGaapPretaxAmountLocal;
-
-			private String monthGaapDeductedByCashCoupons;
-
-			private String monthGaapDeductedByPrepaidCard;
-
-			private String monthGaapPaymentAmount;
-
-			private String unallocatedPaymentAmount;
-
-			private String usageStartDate;
-
-			private String usageEndDate;
-
-			private String billType;
-
-			private String orderId;
-
-			private String subOrderId;
-
-			private String unallocatedPretaxGrossAmount;
-
-			private String unallocatedPricingDiscount;
+			private String resourceGroup;
 
 			private String unallocatedDeductedByCoupons;
 
+			private String pretaxAmount;
+
 			private String unallocatedPretaxAmount;
 
-			private String unallocatedPretaxAmountLocal;
+			private String gaapPretaxGrossAmount;
 
-			private String unallocatedDeductedByCashCoupons;
+			private String unallocatedPaymentAmount;
 
-			private String unallocatedDeductedByPrepaidCard;
+			private String paymentCurrency;
 
-			public String getBillingCycle() {
-				return this.billingCycle;
+			private String ownerID;
+
+			private String deductedByPrepaidCard;
+
+			private String gaapPretaxAmount;
+
+			private String monthGaapDeductedByCoupons;
+
+			private String monthGaapPaymentAmount;
+
+			private String usageEndDate;
+
+			private String usageStartDate;
+
+			private String productCode;
+
+			public String getGaapDeductedByCashCoupons() {
+				return this.gaapDeductedByCashCoupons;
 			}
 
-			public void setBillingCycle(String billingCycle) {
-				this.billingCycle = billingCycle;
-			}
-
-			public String getInstanceID() {
-				return this.instanceID;
-			}
-
-			public void setInstanceID(String instanceID) {
-				this.instanceID = instanceID;
-			}
-
-			public String getProductCode() {
-				return this.productCode;
-			}
-
-			public void setProductCode(String productCode) {
-				this.productCode = productCode;
-			}
-
-			public String getProductType() {
-				return this.productType;
-			}
-
-			public void setProductType(String productType) {
-				this.productType = productType;
+			public void setGaapDeductedByCashCoupons(String gaapDeductedByCashCoupons) {
+				this.gaapDeductedByCashCoupons = gaapDeductedByCashCoupons;
 			}
 
 			public String getSubscriptionType() {
@@ -273,44 +249,28 @@ public class QueryInstanceGaapCostResponse extends AcsResponse {
 				this.subscriptionType = subscriptionType;
 			}
 
-			public String getTag() {
-				return this.tag;
+			public String getMonthGaapPretaxAmount() {
+				return this.monthGaapPretaxAmount;
 			}
 
-			public void setTag(String tag) {
-				this.tag = tag;
+			public void setMonthGaapPretaxAmount(String monthGaapPretaxAmount) {
+				this.monthGaapPretaxAmount = monthGaapPretaxAmount;
 			}
 
-			public String getResourceGroup() {
-				return this.resourceGroup;
+			public String getDeductedByCoupons() {
+				return this.deductedByCoupons;
 			}
 
-			public void setResourceGroup(String resourceGroup) {
-				this.resourceGroup = resourceGroup;
+			public void setDeductedByCoupons(String deductedByCoupons) {
+				this.deductedByCoupons = deductedByCoupons;
 			}
 
-			public String getAccountingUnit() {
-				return this.accountingUnit;
+			public String getSubOrderId() {
+				return this.subOrderId;
 			}
 
-			public void setAccountingUnit(String accountingUnit) {
-				this.accountingUnit = accountingUnit;
-			}
-
-			public String getPayerAccount() {
-				return this.payerAccount;
-			}
-
-			public void setPayerAccount(String payerAccount) {
-				this.payerAccount = payerAccount;
-			}
-
-			public String getOwnerID() {
-				return this.ownerID;
-			}
-
-			public void setOwnerID(String ownerID) {
-				this.ownerID = ownerID;
+			public void setSubOrderId(String subOrderId) {
+				this.subOrderId = subOrderId;
 			}
 
 			public String getRegion() {
@@ -321,28 +281,116 @@ public class QueryInstanceGaapCostResponse extends AcsResponse {
 				this.region = region;
 			}
 
-			public String getCurrency() {
-				return this.currency;
-			}
-
-			public void setCurrency(String currency) {
-				this.currency = currency;
-			}
-
-			public String getPaymentCurrency() {
-				return this.paymentCurrency;
-			}
-
-			public void setPaymentCurrency(String paymentCurrency) {
-				this.paymentCurrency = paymentCurrency;
-			}
-
 			public String getOrderType() {
 				return this.orderType;
 			}
 
 			public void setOrderType(String orderType) {
 				this.orderType = orderType;
+			}
+
+			public String getMonthGaapDeductedByPrepaidCard() {
+				return this.monthGaapDeductedByPrepaidCard;
+			}
+
+			public void setMonthGaapDeductedByPrepaidCard(String monthGaapDeductedByPrepaidCard) {
+				this.monthGaapDeductedByPrepaidCard = monthGaapDeductedByPrepaidCard;
+			}
+
+			public String getUnallocatedDeductedByCashCoupons() {
+				return this.unallocatedDeductedByCashCoupons;
+			}
+
+			public void setUnallocatedDeductedByCashCoupons(String unallocatedDeductedByCashCoupons) {
+				this.unallocatedDeductedByCashCoupons = unallocatedDeductedByCashCoupons;
+			}
+
+			public String getPretaxAmountLocal() {
+				return this.pretaxAmountLocal;
+			}
+
+			public void setPretaxAmountLocal(String pretaxAmountLocal) {
+				this.pretaxAmountLocal = pretaxAmountLocal;
+			}
+
+			public String getBillingCycle() {
+				return this.billingCycle;
+			}
+
+			public void setBillingCycle(String billingCycle) {
+				this.billingCycle = billingCycle;
+			}
+
+			public String getPayerAccount() {
+				return this.payerAccount;
+			}
+
+			public void setPayerAccount(String payerAccount) {
+				this.payerAccount = payerAccount;
+			}
+
+			public String getMonthGaapPretaxAmountLocal() {
+				return this.monthGaapPretaxAmountLocal;
+			}
+
+			public void setMonthGaapPretaxAmountLocal(String monthGaapPretaxAmountLocal) {
+				this.monthGaapPretaxAmountLocal = monthGaapPretaxAmountLocal;
+			}
+
+			public String getAccountingUnit() {
+				return this.accountingUnit;
+			}
+
+			public void setAccountingUnit(String accountingUnit) {
+				this.accountingUnit = accountingUnit;
+			}
+
+			public String getGaapPretaxAmountLocal() {
+				return this.gaapPretaxAmountLocal;
+			}
+
+			public void setGaapPretaxAmountLocal(String gaapPretaxAmountLocal) {
+				this.gaapPretaxAmountLocal = gaapPretaxAmountLocal;
+			}
+
+			public String getUnallocatedDeductedByPrepaidCard() {
+				return this.unallocatedDeductedByPrepaidCard;
+			}
+
+			public void setUnallocatedDeductedByPrepaidCard(String unallocatedDeductedByPrepaidCard) {
+				this.unallocatedDeductedByPrepaidCard = unallocatedDeductedByPrepaidCard;
+			}
+
+			public String getProductType() {
+				return this.productType;
+			}
+
+			public void setProductType(String productType) {
+				this.productType = productType;
+			}
+
+			public String getPaymentAmount() {
+				return this.paymentAmount;
+			}
+
+			public void setPaymentAmount(String paymentAmount) {
+				this.paymentAmount = paymentAmount;
+			}
+
+			public String getMonthGaapPretaxGrossAmount() {
+				return this.monthGaapPretaxGrossAmount;
+			}
+
+			public void setMonthGaapPretaxGrossAmount(String monthGaapPretaxGrossAmount) {
+				this.monthGaapPretaxGrossAmount = monthGaapPretaxGrossAmount;
+			}
+
+			public String getBillType() {
+				return this.billType;
+			}
+
+			public void setBillType(String billType) {
+				this.billType = billType;
 			}
 
 			public String getPayTime() {
@@ -361,76 +409,60 @@ public class QueryInstanceGaapCostResponse extends AcsResponse {
 				this.pretaxGrossAmount = pretaxGrossAmount;
 			}
 
-			public String getPricingDiscount() {
-				return this.pricingDiscount;
+			public String getOrderId() {
+				return this.orderId;
 			}
 
-			public void setPricingDiscount(String pricingDiscount) {
-				this.pricingDiscount = pricingDiscount;
+			public void setOrderId(String orderId) {
+				this.orderId = orderId;
 			}
 
-			public String getDeductedByCoupons() {
-				return this.deductedByCoupons;
+			public String getUnallocatedPricingDiscount() {
+				return this.unallocatedPricingDiscount;
 			}
 
-			public void setDeductedByCoupons(String deductedByCoupons) {
-				this.deductedByCoupons = deductedByCoupons;
+			public void setUnallocatedPricingDiscount(String unallocatedPricingDiscount) {
+				this.unallocatedPricingDiscount = unallocatedPricingDiscount;
 			}
 
-			public String getPretaxAmount() {
-				return this.pretaxAmount;
+			public String getMonthGaapDeductedByCashCoupons() {
+				return this.monthGaapDeductedByCashCoupons;
 			}
 
-			public void setPretaxAmount(String pretaxAmount) {
-				this.pretaxAmount = pretaxAmount;
+			public void setMonthGaapDeductedByCashCoupons(String monthGaapDeductedByCashCoupons) {
+				this.monthGaapDeductedByCashCoupons = monthGaapDeductedByCashCoupons;
 			}
 
-			public String getPretaxAmountLocal() {
-				return this.pretaxAmountLocal;
+			public String getUnallocatedPretaxGrossAmount() {
+				return this.unallocatedPretaxGrossAmount;
 			}
 
-			public void setPretaxAmountLocal(String pretaxAmountLocal) {
-				this.pretaxAmountLocal = pretaxAmountLocal;
+			public void setUnallocatedPretaxGrossAmount(String unallocatedPretaxGrossAmount) {
+				this.unallocatedPretaxGrossAmount = unallocatedPretaxGrossAmount;
 			}
 
-			public String getDeductedByCashCoupons() {
-				return this.deductedByCashCoupons;
+			public String getInstanceID() {
+				return this.instanceID;
 			}
 
-			public void setDeductedByCashCoupons(String deductedByCashCoupons) {
-				this.deductedByCashCoupons = deductedByCashCoupons;
+			public void setInstanceID(String instanceID) {
+				this.instanceID = instanceID;
 			}
 
-			public String getDeductedByPrepaidCard() {
-				return this.deductedByPrepaidCard;
+			public String getTag() {
+				return this.tag;
 			}
 
-			public void setDeductedByPrepaidCard(String deductedByPrepaidCard) {
-				this.deductedByPrepaidCard = deductedByPrepaidCard;
+			public void setTag(String tag) {
+				this.tag = tag;
 			}
 
-			public String getPaymentAmount() {
-				return this.paymentAmount;
+			public String getCurrency() {
+				return this.currency;
 			}
 
-			public void setPaymentAmount(String paymentAmount) {
-				this.paymentAmount = paymentAmount;
-			}
-
-			public String getGaapPretaxGrossAmount() {
-				return this.gaapPretaxGrossAmount;
-			}
-
-			public void setGaapPretaxGrossAmount(String gaapPretaxGrossAmount) {
-				this.gaapPretaxGrossAmount = gaapPretaxGrossAmount;
-			}
-
-			public String getGaapPricingDiscount() {
-				return this.gaapPricingDiscount;
-			}
-
-			public void setGaapPricingDiscount(String gaapPricingDiscount) {
-				this.gaapPricingDiscount = gaapPricingDiscount;
+			public void setCurrency(String currency) {
+				this.currency = currency;
 			}
 
 			public String getGaapDeductedByCoupons() {
@@ -441,28 +473,12 @@ public class QueryInstanceGaapCostResponse extends AcsResponse {
 				this.gaapDeductedByCoupons = gaapDeductedByCoupons;
 			}
 
-			public String getGaapPretaxAmount() {
-				return this.gaapPretaxAmount;
+			public String getDeductedByCashCoupons() {
+				return this.deductedByCashCoupons;
 			}
 
-			public void setGaapPretaxAmount(String gaapPretaxAmount) {
-				this.gaapPretaxAmount = gaapPretaxAmount;
-			}
-
-			public String getGaapPretaxAmountLocal() {
-				return this.gaapPretaxAmountLocal;
-			}
-
-			public void setGaapPretaxAmountLocal(String gaapPretaxAmountLocal) {
-				this.gaapPretaxAmountLocal = gaapPretaxAmountLocal;
-			}
-
-			public String getGaapDeductedByCashCoupons() {
-				return this.gaapDeductedByCashCoupons;
-			}
-
-			public void setGaapDeductedByCashCoupons(String gaapDeductedByCashCoupons) {
-				this.gaapDeductedByCashCoupons = gaapDeductedByCashCoupons;
+			public void setDeductedByCashCoupons(String deductedByCashCoupons) {
+				this.deductedByCashCoupons = deductedByCashCoupons;
 			}
 
 			public String getGaapDeductedByPrepaidCard() {
@@ -481,12 +497,12 @@ public class QueryInstanceGaapCostResponse extends AcsResponse {
 				this.gaapPaymentAmount = gaapPaymentAmount;
 			}
 
-			public String getMonthGaapPretaxGrossAmount() {
-				return this.monthGaapPretaxGrossAmount;
+			public String getUnallocatedPretaxAmountLocal() {
+				return this.unallocatedPretaxAmountLocal;
 			}
 
-			public void setMonthGaapPretaxGrossAmount(String monthGaapPretaxGrossAmount) {
-				this.monthGaapPretaxGrossAmount = monthGaapPretaxGrossAmount;
+			public void setUnallocatedPretaxAmountLocal(String unallocatedPretaxAmountLocal) {
+				this.unallocatedPretaxAmountLocal = unallocatedPretaxAmountLocal;
 			}
 
 			public String getMonthGaapPricingDiscount() {
@@ -497,116 +513,28 @@ public class QueryInstanceGaapCostResponse extends AcsResponse {
 				this.monthGaapPricingDiscount = monthGaapPricingDiscount;
 			}
 
-			public String getMonthGaapDeductedByCoupons() {
-				return this.monthGaapDeductedByCoupons;
+			public String getPricingDiscount() {
+				return this.pricingDiscount;
 			}
 
-			public void setMonthGaapDeductedByCoupons(String monthGaapDeductedByCoupons) {
-				this.monthGaapDeductedByCoupons = monthGaapDeductedByCoupons;
+			public void setPricingDiscount(String pricingDiscount) {
+				this.pricingDiscount = pricingDiscount;
 			}
 
-			public String getMonthGaapPretaxAmount() {
-				return this.monthGaapPretaxAmount;
+			public String getGaapPricingDiscount() {
+				return this.gaapPricingDiscount;
 			}
 
-			public void setMonthGaapPretaxAmount(String monthGaapPretaxAmount) {
-				this.monthGaapPretaxAmount = monthGaapPretaxAmount;
+			public void setGaapPricingDiscount(String gaapPricingDiscount) {
+				this.gaapPricingDiscount = gaapPricingDiscount;
 			}
 
-			public String getMonthGaapPretaxAmountLocal() {
-				return this.monthGaapPretaxAmountLocal;
+			public String getResourceGroup() {
+				return this.resourceGroup;
 			}
 
-			public void setMonthGaapPretaxAmountLocal(String monthGaapPretaxAmountLocal) {
-				this.monthGaapPretaxAmountLocal = monthGaapPretaxAmountLocal;
-			}
-
-			public String getMonthGaapDeductedByCashCoupons() {
-				return this.monthGaapDeductedByCashCoupons;
-			}
-
-			public void setMonthGaapDeductedByCashCoupons(String monthGaapDeductedByCashCoupons) {
-				this.monthGaapDeductedByCashCoupons = monthGaapDeductedByCashCoupons;
-			}
-
-			public String getMonthGaapDeductedByPrepaidCard() {
-				return this.monthGaapDeductedByPrepaidCard;
-			}
-
-			public void setMonthGaapDeductedByPrepaidCard(String monthGaapDeductedByPrepaidCard) {
-				this.monthGaapDeductedByPrepaidCard = monthGaapDeductedByPrepaidCard;
-			}
-
-			public String getMonthGaapPaymentAmount() {
-				return this.monthGaapPaymentAmount;
-			}
-
-			public void setMonthGaapPaymentAmount(String monthGaapPaymentAmount) {
-				this.monthGaapPaymentAmount = monthGaapPaymentAmount;
-			}
-
-			public String getUnallocatedPaymentAmount() {
-				return this.unallocatedPaymentAmount;
-			}
-
-			public void setUnallocatedPaymentAmount(String unallocatedPaymentAmount) {
-				this.unallocatedPaymentAmount = unallocatedPaymentAmount;
-			}
-
-			public String getUsageStartDate() {
-				return this.usageStartDate;
-			}
-
-			public void setUsageStartDate(String usageStartDate) {
-				this.usageStartDate = usageStartDate;
-			}
-
-			public String getUsageEndDate() {
-				return this.usageEndDate;
-			}
-
-			public void setUsageEndDate(String usageEndDate) {
-				this.usageEndDate = usageEndDate;
-			}
-
-			public String getBillType() {
-				return this.billType;
-			}
-
-			public void setBillType(String billType) {
-				this.billType = billType;
-			}
-
-			public String getOrderId() {
-				return this.orderId;
-			}
-
-			public void setOrderId(String orderId) {
-				this.orderId = orderId;
-			}
-
-			public String getSubOrderId() {
-				return this.subOrderId;
-			}
-
-			public void setSubOrderId(String subOrderId) {
-				this.subOrderId = subOrderId;
-			}
-
-			public String getUnallocatedPretaxGrossAmount() {
-				return this.unallocatedPretaxGrossAmount;
-			}
-
-			public void setUnallocatedPretaxGrossAmount(String unallocatedPretaxGrossAmount) {
-				this.unallocatedPretaxGrossAmount = unallocatedPretaxGrossAmount;
-			}
-
-			public String getUnallocatedPricingDiscount() {
-				return this.unallocatedPricingDiscount;
-			}
-
-			public void setUnallocatedPricingDiscount(String unallocatedPricingDiscount) {
-				this.unallocatedPricingDiscount = unallocatedPricingDiscount;
+			public void setResourceGroup(String resourceGroup) {
+				this.resourceGroup = resourceGroup;
 			}
 
 			public String getUnallocatedDeductedByCoupons() {
@@ -617,6 +545,14 @@ public class QueryInstanceGaapCostResponse extends AcsResponse {
 				this.unallocatedDeductedByCoupons = unallocatedDeductedByCoupons;
 			}
 
+			public String getPretaxAmount() {
+				return this.pretaxAmount;
+			}
+
+			public void setPretaxAmount(String pretaxAmount) {
+				this.pretaxAmount = pretaxAmount;
+			}
+
 			public String getUnallocatedPretaxAmount() {
 				return this.unallocatedPretaxAmount;
 			}
@@ -625,28 +561,92 @@ public class QueryInstanceGaapCostResponse extends AcsResponse {
 				this.unallocatedPretaxAmount = unallocatedPretaxAmount;
 			}
 
-			public String getUnallocatedPretaxAmountLocal() {
-				return this.unallocatedPretaxAmountLocal;
+			public String getGaapPretaxGrossAmount() {
+				return this.gaapPretaxGrossAmount;
 			}
 
-			public void setUnallocatedPretaxAmountLocal(String unallocatedPretaxAmountLocal) {
-				this.unallocatedPretaxAmountLocal = unallocatedPretaxAmountLocal;
+			public void setGaapPretaxGrossAmount(String gaapPretaxGrossAmount) {
+				this.gaapPretaxGrossAmount = gaapPretaxGrossAmount;
 			}
 
-			public String getUnallocatedDeductedByCashCoupons() {
-				return this.unallocatedDeductedByCashCoupons;
+			public String getUnallocatedPaymentAmount() {
+				return this.unallocatedPaymentAmount;
 			}
 
-			public void setUnallocatedDeductedByCashCoupons(String unallocatedDeductedByCashCoupons) {
-				this.unallocatedDeductedByCashCoupons = unallocatedDeductedByCashCoupons;
+			public void setUnallocatedPaymentAmount(String unallocatedPaymentAmount) {
+				this.unallocatedPaymentAmount = unallocatedPaymentAmount;
 			}
 
-			public String getUnallocatedDeductedByPrepaidCard() {
-				return this.unallocatedDeductedByPrepaidCard;
+			public String getPaymentCurrency() {
+				return this.paymentCurrency;
 			}
 
-			public void setUnallocatedDeductedByPrepaidCard(String unallocatedDeductedByPrepaidCard) {
-				this.unallocatedDeductedByPrepaidCard = unallocatedDeductedByPrepaidCard;
+			public void setPaymentCurrency(String paymentCurrency) {
+				this.paymentCurrency = paymentCurrency;
+			}
+
+			public String getOwnerID() {
+				return this.ownerID;
+			}
+
+			public void setOwnerID(String ownerID) {
+				this.ownerID = ownerID;
+			}
+
+			public String getDeductedByPrepaidCard() {
+				return this.deductedByPrepaidCard;
+			}
+
+			public void setDeductedByPrepaidCard(String deductedByPrepaidCard) {
+				this.deductedByPrepaidCard = deductedByPrepaidCard;
+			}
+
+			public String getGaapPretaxAmount() {
+				return this.gaapPretaxAmount;
+			}
+
+			public void setGaapPretaxAmount(String gaapPretaxAmount) {
+				this.gaapPretaxAmount = gaapPretaxAmount;
+			}
+
+			public String getMonthGaapDeductedByCoupons() {
+				return this.monthGaapDeductedByCoupons;
+			}
+
+			public void setMonthGaapDeductedByCoupons(String monthGaapDeductedByCoupons) {
+				this.monthGaapDeductedByCoupons = monthGaapDeductedByCoupons;
+			}
+
+			public String getMonthGaapPaymentAmount() {
+				return this.monthGaapPaymentAmount;
+			}
+
+			public void setMonthGaapPaymentAmount(String monthGaapPaymentAmount) {
+				this.monthGaapPaymentAmount = monthGaapPaymentAmount;
+			}
+
+			public String getUsageEndDate() {
+				return this.usageEndDate;
+			}
+
+			public void setUsageEndDate(String usageEndDate) {
+				this.usageEndDate = usageEndDate;
+			}
+
+			public String getUsageStartDate() {
+				return this.usageStartDate;
+			}
+
+			public void setUsageStartDate(String usageStartDate) {
+				this.usageStartDate = usageStartDate;
+			}
+
+			public String getProductCode() {
+				return this.productCode;
+			}
+
+			public void setProductCode(String productCode) {
+				this.productCode = productCode;
 			}
 		}
 	}

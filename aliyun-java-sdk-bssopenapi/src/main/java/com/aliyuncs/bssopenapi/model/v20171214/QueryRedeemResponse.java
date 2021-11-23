@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryRedeemResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String message;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -65,6 +49,22 @@ public class QueryRedeemResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Data getData() {
@@ -119,25 +119,73 @@ public class QueryRedeemResponse extends AcsResponse {
 
 		public static class RedeemItem {
 
+			private String expiryTime;
+
+			private String grantedTime;
+
+			private String status;
+
+			private String specification;
+
+			private String nominalValue;
+
+			private String effectiveTime;
+
 			private String redeemId;
 
 			private String redeemNo;
 
-			private String status;
-
-			private String grantedTime;
-
-			private String effectiveTime;
-
-			private String expiryTime;
-
-			private String nominalValue;
+			private String applicableProducts;
 
 			private String balance;
 
-			private String applicableProducts;
+			public String getExpiryTime() {
+				return this.expiryTime;
+			}
 
-			private String specification;
+			public void setExpiryTime(String expiryTime) {
+				this.expiryTime = expiryTime;
+			}
+
+			public String getGrantedTime() {
+				return this.grantedTime;
+			}
+
+			public void setGrantedTime(String grantedTime) {
+				this.grantedTime = grantedTime;
+			}
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
+			}
+
+			public String getSpecification() {
+				return this.specification;
+			}
+
+			public void setSpecification(String specification) {
+				this.specification = specification;
+			}
+
+			public String getNominalValue() {
+				return this.nominalValue;
+			}
+
+			public void setNominalValue(String nominalValue) {
+				this.nominalValue = nominalValue;
+			}
+
+			public String getEffectiveTime() {
+				return this.effectiveTime;
+			}
+
+			public void setEffectiveTime(String effectiveTime) {
+				this.effectiveTime = effectiveTime;
+			}
 
 			public String getRedeemId() {
 				return this.redeemId;
@@ -155,54 +203,6 @@ public class QueryRedeemResponse extends AcsResponse {
 				this.redeemNo = redeemNo;
 			}
 
-			public String getStatus() {
-				return this.status;
-			}
-
-			public void setStatus(String status) {
-				this.status = status;
-			}
-
-			public String getGrantedTime() {
-				return this.grantedTime;
-			}
-
-			public void setGrantedTime(String grantedTime) {
-				this.grantedTime = grantedTime;
-			}
-
-			public String getEffectiveTime() {
-				return this.effectiveTime;
-			}
-
-			public void setEffectiveTime(String effectiveTime) {
-				this.effectiveTime = effectiveTime;
-			}
-
-			public String getExpiryTime() {
-				return this.expiryTime;
-			}
-
-			public void setExpiryTime(String expiryTime) {
-				this.expiryTime = expiryTime;
-			}
-
-			public String getNominalValue() {
-				return this.nominalValue;
-			}
-
-			public void setNominalValue(String nominalValue) {
-				this.nominalValue = nominalValue;
-			}
-
-			public String getBalance() {
-				return this.balance;
-			}
-
-			public void setBalance(String balance) {
-				this.balance = balance;
-			}
-
 			public String getApplicableProducts() {
 				return this.applicableProducts;
 			}
@@ -211,12 +211,12 @@ public class QueryRedeemResponse extends AcsResponse {
 				this.applicableProducts = applicableProducts;
 			}
 
-			public String getSpecification() {
-				return this.specification;
+			public String getBalance() {
+				return this.balance;
 			}
 
-			public void setSpecification(String specification) {
-				this.specification = specification;
+			public void setBalance(String balance) {
+				this.balance = balance;
 			}
 		}
 	}

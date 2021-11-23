@@ -29,25 +29,25 @@ public class DescribeResourceUsageTotalResponseUnmarshaller {
 	public static DescribeResourceUsageTotalResponse unmarshall(DescribeResourceUsageTotalResponse describeResourceUsageTotalResponse, UnmarshallerContext _ctx) {
 		
 		describeResourceUsageTotalResponse.setRequestId(_ctx.stringValue("DescribeResourceUsageTotalResponse.RequestId"));
-		describeResourceUsageTotalResponse.setSuccess(_ctx.booleanValue("DescribeResourceUsageTotalResponse.Success"));
 		describeResourceUsageTotalResponse.setCode(_ctx.stringValue("DescribeResourceUsageTotalResponse.Code"));
 		describeResourceUsageTotalResponse.setMessage(_ctx.stringValue("DescribeResourceUsageTotalResponse.Message"));
+		describeResourceUsageTotalResponse.setSuccess(_ctx.booleanValue("DescribeResourceUsageTotalResponse.Success"));
 
 		Data data = new Data();
 
 		TotalUsage totalUsage = new TotalUsage();
-		totalUsage.setUsagePercentage(_ctx.floatValue("DescribeResourceUsageTotalResponse.Data.TotalUsage.UsagePercentage"));
 		totalUsage.setPostpaidCost(_ctx.floatValue("DescribeResourceUsageTotalResponse.Data.TotalUsage.PostpaidCost"));
-		totalUsage.setReservationCost(_ctx.floatValue("DescribeResourceUsageTotalResponse.Data.TotalUsage.ReservationCost"));
 		totalUsage.setSavedCost(_ctx.floatValue("DescribeResourceUsageTotalResponse.Data.TotalUsage.SavedCost"));
+		totalUsage.setUsagePercentage(_ctx.floatValue("DescribeResourceUsageTotalResponse.Data.TotalUsage.UsagePercentage"));
 		totalUsage.setPotentialSavedCost(_ctx.floatValue("DescribeResourceUsageTotalResponse.Data.TotalUsage.PotentialSavedCost"));
+		totalUsage.setReservationCost(_ctx.floatValue("DescribeResourceUsageTotalResponse.Data.TotalUsage.ReservationCost"));
 		data.setTotalUsage(totalUsage);
 
 		List<Item> periodCoverage = new ArrayList<Item>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeResourceUsageTotalResponse.Data.PeriodCoverage.Length"); i++) {
 			Item item = new Item();
-			item.setPeriod(_ctx.stringValue("DescribeResourceUsageTotalResponse.Data.PeriodCoverage["+ i +"].Period"));
 			item.setUsagePercentage(_ctx.floatValue("DescribeResourceUsageTotalResponse.Data.PeriodCoverage["+ i +"].UsagePercentage"));
+			item.setPeriod(_ctx.stringValue("DescribeResourceUsageTotalResponse.Data.PeriodCoverage["+ i +"].Period"));
 
 			periodCoverage.add(item);
 		}

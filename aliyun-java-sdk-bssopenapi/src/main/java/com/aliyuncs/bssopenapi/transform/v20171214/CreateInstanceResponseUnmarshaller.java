@@ -24,13 +24,13 @@ public class CreateInstanceResponseUnmarshaller {
 	public static CreateInstanceResponse unmarshall(CreateInstanceResponse createInstanceResponse, UnmarshallerContext _ctx) {
 		
 		createInstanceResponse.setRequestId(_ctx.stringValue("CreateInstanceResponse.RequestId"));
-		createInstanceResponse.setSuccess(_ctx.booleanValue("CreateInstanceResponse.Success"));
 		createInstanceResponse.setCode(_ctx.stringValue("CreateInstanceResponse.Code"));
 		createInstanceResponse.setMessage(_ctx.stringValue("CreateInstanceResponse.Message"));
+		createInstanceResponse.setSuccess(_ctx.booleanValue("CreateInstanceResponse.Success"));
 
 		Data data = new Data();
-		data.setInstanceId(_ctx.stringValue("CreateInstanceResponse.Data.InstanceId"));
 		data.setOrderId(_ctx.stringValue("CreateInstanceResponse.Data.OrderId"));
+		data.setInstanceId(_ctx.stringValue("CreateInstanceResponse.Data.InstanceId"));
 		createInstanceResponse.setData(data);
 	 
 	 	return createInstanceResponse;

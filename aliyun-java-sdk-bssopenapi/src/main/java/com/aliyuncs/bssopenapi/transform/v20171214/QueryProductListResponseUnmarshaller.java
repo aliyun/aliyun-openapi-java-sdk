@@ -28,22 +28,22 @@ public class QueryProductListResponseUnmarshaller {
 	public static QueryProductListResponse unmarshall(QueryProductListResponse queryProductListResponse, UnmarshallerContext _ctx) {
 		
 		queryProductListResponse.setRequestId(_ctx.stringValue("QueryProductListResponse.RequestId"));
-		queryProductListResponse.setSuccess(_ctx.booleanValue("QueryProductListResponse.Success"));
 		queryProductListResponse.setCode(_ctx.stringValue("QueryProductListResponse.Code"));
 		queryProductListResponse.setMessage(_ctx.stringValue("QueryProductListResponse.Message"));
+		queryProductListResponse.setSuccess(_ctx.booleanValue("QueryProductListResponse.Success"));
 
 		Data data = new Data();
-		data.setTotalCount(_ctx.integerValue("QueryProductListResponse.Data.TotalCount"));
 		data.setPageNum(_ctx.integerValue("QueryProductListResponse.Data.PageNum"));
 		data.setPageSize(_ctx.integerValue("QueryProductListResponse.Data.PageSize"));
+		data.setTotalCount(_ctx.integerValue("QueryProductListResponse.Data.TotalCount"));
 
 		List<Product> productList = new ArrayList<Product>();
 		for (int i = 0; i < _ctx.lengthValue("QueryProductListResponse.Data.ProductList.Length"); i++) {
 			Product product = new Product();
-			product.setProductCode(_ctx.stringValue("QueryProductListResponse.Data.ProductList["+ i +"].ProductCode"));
 			product.setProductName(_ctx.stringValue("QueryProductListResponse.Data.ProductList["+ i +"].ProductName"));
 			product.setProductType(_ctx.stringValue("QueryProductListResponse.Data.ProductList["+ i +"].ProductType"));
 			product.setSubscriptionType(_ctx.stringValue("QueryProductListResponse.Data.ProductList["+ i +"].SubscriptionType"));
+			product.setProductCode(_ctx.stringValue("QueryProductListResponse.Data.ProductList["+ i +"].ProductCode"));
 
 			productList.add(product);
 		}

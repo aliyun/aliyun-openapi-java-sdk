@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryBillToOSSSubscriptionResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String message;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -67,6 +51,22 @@ public class QueryBillToOSSSubscriptionResponse extends AcsResponse {
 		this.message = message;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -77,19 +77,11 @@ public class QueryBillToOSSSubscriptionResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String accountID;
-
 		private String accountName;
 
+		private String accountID;
+
 		private List<Item> items;
-
-		public String getAccountID() {
-			return this.accountID;
-		}
-
-		public void setAccountID(String accountID) {
-			this.accountID = accountID;
-		}
 
 		public String getAccountName() {
 			return this.accountName;
@@ -97,6 +89,14 @@ public class QueryBillToOSSSubscriptionResponse extends AcsResponse {
 
 		public void setAccountName(String accountName) {
 			this.accountName = accountName;
+		}
+
+		public String getAccountID() {
+			return this.accountID;
+		}
+
+		public void setAccountID(String accountID) {
+			this.accountID = accountID;
 		}
 
 		public List<Item> getItems() {
@@ -109,17 +109,25 @@ public class QueryBillToOSSSubscriptionResponse extends AcsResponse {
 
 		public static class Item {
 
+			private Long bucketOwnerId;
+
 			private String subscribeType;
 
 			private String subscribeBucket;
-
-			private Long bucketOwnerId;
 
 			private String subscribeTime;
 
 			private String subscribeLanguage;
 
 			private String multAccountRelSubscribe;
+
+			public Long getBucketOwnerId() {
+				return this.bucketOwnerId;
+			}
+
+			public void setBucketOwnerId(Long bucketOwnerId) {
+				this.bucketOwnerId = bucketOwnerId;
+			}
 
 			public String getSubscribeType() {
 				return this.subscribeType;
@@ -135,14 +143,6 @@ public class QueryBillToOSSSubscriptionResponse extends AcsResponse {
 
 			public void setSubscribeBucket(String subscribeBucket) {
 				this.subscribeBucket = subscribeBucket;
-			}
-
-			public Long getBucketOwnerId() {
-				return this.bucketOwnerId;
-			}
-
-			public void setBucketOwnerId(Long bucketOwnerId) {
-				this.bucketOwnerId = bucketOwnerId;
 			}
 
 			public String getSubscribeTime() {

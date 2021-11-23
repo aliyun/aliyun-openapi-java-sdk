@@ -27,8 +27,8 @@ public class ModifyCostUnitResponseUnmarshaller {
 	public static ModifyCostUnitResponse unmarshall(ModifyCostUnitResponse modifyCostUnitResponse, UnmarshallerContext _ctx) {
 		
 		modifyCostUnitResponse.setRequestId(_ctx.stringValue("ModifyCostUnitResponse.RequestId"));
-		modifyCostUnitResponse.setMessage(_ctx.stringValue("ModifyCostUnitResponse.Message"));
 		modifyCostUnitResponse.setCode(_ctx.stringValue("ModifyCostUnitResponse.Code"));
+		modifyCostUnitResponse.setMessage(_ctx.stringValue("ModifyCostUnitResponse.Message"));
 		modifyCostUnitResponse.setSuccess(_ctx.booleanValue("ModifyCostUnitResponse.Success"));
 
 		List<DataItem> data = new ArrayList<DataItem>();

@@ -23,9 +23,9 @@ public class SetAllExpirationDayResponseUnmarshaller {
 	public static SetAllExpirationDayResponse unmarshall(SetAllExpirationDayResponse setAllExpirationDayResponse, UnmarshallerContext _ctx) {
 		
 		setAllExpirationDayResponse.setRequestId(_ctx.stringValue("SetAllExpirationDayResponse.RequestId"));
-		setAllExpirationDayResponse.setSuccess(_ctx.booleanValue("SetAllExpirationDayResponse.Success"));
 		setAllExpirationDayResponse.setCode(_ctx.stringValue("SetAllExpirationDayResponse.Code"));
 		setAllExpirationDayResponse.setMessage(_ctx.stringValue("SetAllExpirationDayResponse.Message"));
+		setAllExpirationDayResponse.setSuccess(_ctx.booleanValue("SetAllExpirationDayResponse.Success"));
 	 
 	 	return setAllExpirationDayResponse;
 	}

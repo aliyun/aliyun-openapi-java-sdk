@@ -31,31 +31,31 @@ public class QueryResourcePackageInstancesResponseUnmarshaller {
 		queryResourcePackageInstancesResponse.setSuccess(_ctx.booleanValue("QueryResourcePackageInstancesResponse.Success"));
 		queryResourcePackageInstancesResponse.setCode(_ctx.stringValue("QueryResourcePackageInstancesResponse.Code"));
 		queryResourcePackageInstancesResponse.setMessage(_ctx.stringValue("QueryResourcePackageInstancesResponse.Message"));
-		queryResourcePackageInstancesResponse.setPage(_ctx.integerValue("QueryResourcePackageInstancesResponse.Page"));
 		queryResourcePackageInstancesResponse.setPageSize(_ctx.integerValue("QueryResourcePackageInstancesResponse.PageSize"));
 		queryResourcePackageInstancesResponse.setTotal(_ctx.integerValue("QueryResourcePackageInstancesResponse.Total"));
+		queryResourcePackageInstancesResponse.setPage(_ctx.integerValue("QueryResourcePackageInstancesResponse.Page"));
 
 		Data data = new Data();
-		data.setHostId(_ctx.stringValue("QueryResourcePackageInstancesResponse.Data.HostId"));
 		data.setPageNum(_ctx.stringValue("QueryResourcePackageInstancesResponse.Data.PageNum"));
 		data.setPageSize(_ctx.stringValue("QueryResourcePackageInstancesResponse.Data.PageSize"));
 		data.setTotalCount(_ctx.stringValue("QueryResourcePackageInstancesResponse.Data.TotalCount"));
+		data.setHostId(_ctx.stringValue("QueryResourcePackageInstancesResponse.Data.HostId"));
 
 		List<Instance> instances = new ArrayList<Instance>();
 		for (int i = 0; i < _ctx.lengthValue("QueryResourcePackageInstancesResponse.Data.Instances.Length"); i++) {
 			Instance instance = new Instance();
+			instance.setExpiryTime(_ctx.stringValue("QueryResourcePackageInstancesResponse.Data.Instances["+ i +"].ExpiryTime"));
+			instance.setStatus(_ctx.stringValue("QueryResourcePackageInstancesResponse.Data.Instances["+ i +"].Status"));
+			instance.setRemark(_ctx.stringValue("QueryResourcePackageInstancesResponse.Data.Instances["+ i +"].Remark"));
+			instance.setRemainingAmountUnit(_ctx.stringValue("QueryResourcePackageInstancesResponse.Data.Instances["+ i +"].RemainingAmountUnit"));
 			instance.setInstanceId(_ctx.stringValue("QueryResourcePackageInstancesResponse.Data.Instances["+ i +"].InstanceId"));
+			instance.setPackageType(_ctx.stringValue("QueryResourcePackageInstancesResponse.Data.Instances["+ i +"].PackageType"));
+			instance.setEffectiveTime(_ctx.stringValue("QueryResourcePackageInstancesResponse.Data.Instances["+ i +"].EffectiveTime"));
 			instance.setRegion(_ctx.stringValue("QueryResourcePackageInstancesResponse.Data.Instances["+ i +"].Region"));
 			instance.setTotalAmount(_ctx.stringValue("QueryResourcePackageInstancesResponse.Data.Instances["+ i +"].TotalAmount"));
+			instance.setDeductType(_ctx.stringValue("QueryResourcePackageInstancesResponse.Data.Instances["+ i +"].DeductType"));
 			instance.setTotalAmountUnit(_ctx.stringValue("QueryResourcePackageInstancesResponse.Data.Instances["+ i +"].TotalAmountUnit"));
 			instance.setRemainingAmount(_ctx.stringValue("QueryResourcePackageInstancesResponse.Data.Instances["+ i +"].RemainingAmount"));
-			instance.setRemainingAmountUnit(_ctx.stringValue("QueryResourcePackageInstancesResponse.Data.Instances["+ i +"].RemainingAmountUnit"));
-			instance.setEffectiveTime(_ctx.stringValue("QueryResourcePackageInstancesResponse.Data.Instances["+ i +"].EffectiveTime"));
-			instance.setExpiryTime(_ctx.stringValue("QueryResourcePackageInstancesResponse.Data.Instances["+ i +"].ExpiryTime"));
-			instance.setRemark(_ctx.stringValue("QueryResourcePackageInstancesResponse.Data.Instances["+ i +"].Remark"));
-			instance.setPackageType(_ctx.stringValue("QueryResourcePackageInstancesResponse.Data.Instances["+ i +"].PackageType"));
-			instance.setStatus(_ctx.stringValue("QueryResourcePackageInstancesResponse.Data.Instances["+ i +"].Status"));
-			instance.setDeductType(_ctx.stringValue("QueryResourcePackageInstancesResponse.Data.Instances["+ i +"].DeductType"));
 
 			List<String> applicableProducts = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("QueryResourcePackageInstancesResponse.Data.Instances["+ i +"].ApplicableProducts.Length"); j++) {

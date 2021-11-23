@@ -24,23 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class SetResellerUserQuotaResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String code;
 
 	private String message;
 
-	private Boolean success;
-
 	private Boolean data;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
+	private String requestId;
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private Boolean success;
 
 	public String getCode() {
 		return this.code;
@@ -58,20 +50,28 @@ public class SetResellerUserQuotaResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
 	public Boolean getData() {
 		return this.data;
 	}
 
 	public void setData(Boolean data) {
 		this.data = data;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	@Override

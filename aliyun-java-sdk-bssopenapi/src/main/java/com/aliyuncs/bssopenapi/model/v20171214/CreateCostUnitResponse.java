@@ -25,22 +25,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateCostUnitResponse extends AcsResponse {
 
-	private String requestId;
+	private String code;
 
 	private String message;
 
-	private String code;
+	private String requestId;
 
 	private Boolean success;
 
 	private Data data;
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public String getMessage() {
@@ -51,12 +51,12 @@ public class CreateCostUnitResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getCode() {
-		return this.code;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Boolean getSuccess() {
@@ -89,21 +89,13 @@ public class CreateCostUnitResponse extends AcsResponse {
 
 		public static class CostUnitDtoListItem {
 
-			private Long unitId;
-
 			private Long parentUnitId;
-
-			private Long ownerUid;
 
 			private String unitName;
 
-			public Long getUnitId() {
-				return this.unitId;
-			}
+			private Long unitId;
 
-			public void setUnitId(Long unitId) {
-				this.unitId = unitId;
-			}
+			private Long ownerUid;
 
 			public Long getParentUnitId() {
 				return this.parentUnitId;
@@ -113,20 +105,28 @@ public class CreateCostUnitResponse extends AcsResponse {
 				this.parentUnitId = parentUnitId;
 			}
 
-			public Long getOwnerUid() {
-				return this.ownerUid;
-			}
-
-			public void setOwnerUid(Long ownerUid) {
-				this.ownerUid = ownerUid;
-			}
-
 			public String getUnitName() {
 				return this.unitName;
 			}
 
 			public void setUnitName(String unitName) {
 				this.unitName = unitName;
+			}
+
+			public Long getUnitId() {
+				return this.unitId;
+			}
+
+			public void setUnitId(Long unitId) {
+				this.unitId = unitId;
+			}
+
+			public Long getOwnerUid() {
+				return this.ownerUid;
+			}
+
+			public void setOwnerUid(Long ownerUid) {
+				this.ownerUid = ownerUid;
 			}
 		}
 	}

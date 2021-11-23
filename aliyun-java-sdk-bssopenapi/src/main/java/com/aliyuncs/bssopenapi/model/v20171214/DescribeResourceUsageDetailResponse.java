@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeResourceUsageDetailResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String message;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -67,6 +51,22 @@ public class DescribeResourceUsageDetailResponse extends AcsResponse {
 		this.message = message;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -77,21 +77,13 @@ public class DescribeResourceUsageDetailResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Integer totalCount;
-
 		private String nextToken;
+
+		private Integer totalCount;
 
 		private Integer maxResults;
 
 		private List<Item> items;
-
-		public Integer getTotalCount() {
-			return this.totalCount;
-		}
-
-		public void setTotalCount(Integer totalCount) {
-			this.totalCount = totalCount;
-		}
 
 		public String getNextToken() {
 			return this.nextToken;
@@ -99,6 +91,14 @@ public class DescribeResourceUsageDetailResponse extends AcsResponse {
 
 		public void setNextToken(String nextToken) {
 			this.nextToken = nextToken;
+		}
+
+		public Integer getTotalCount() {
+			return this.totalCount;
+		}
+
+		public void setTotalCount(Integer totalCount) {
+			this.totalCount = totalCount;
 		}
 
 		public Integer getMaxResults() {
@@ -119,66 +119,66 @@ public class DescribeResourceUsageDetailResponse extends AcsResponse {
 
 		public static class Item {
 
-			private String userId;
+			private String status;
 
-			private String userName;
+			private Float usagePercentage;
 
 			private String resourceInstanceId;
 
-			private String startTime;
+			private Float totalQuantity;
 
-			private String endTime;
-
-			private String status;
-
-			private String statusName;
-
-			private String region;
+			private String reservationCost;
 
 			private String regionNo;
 
-			private String zone;
+			private String userId;
+
+			private String statusName;
+
+			private String capacityUnit;
+
+			private String potentialSavedCost;
+
+			private String currency;
 
 			private String zoneName;
 
 			private String instanceSpec;
 
-			private Long quantity;
-
-			private String imageType;
-
-			private Float usagePercentage;
-
-			private Float deductQuantity;
-
-			private Float totalQuantity;
-
-			private String capacityUnit;
-
-			private String currency;
-
-			private String reservationCost;
+			private String endTime;
 
 			private String postpaidCost;
 
+			private String imageType;
+
+			private String startTime;
+
+			private String region;
+
+			private Float deductQuantity;
+
 			private String savedCost;
 
-			private String potentialSavedCost;
+			private String zone;
 
-			public String getUserId() {
-				return this.userId;
+			private String userName;
+
+			private Long quantity;
+
+			public String getStatus() {
+				return this.status;
 			}
 
-			public void setUserId(String userId) {
-				this.userId = userId;
+			public void setStatus(String status) {
+				this.status = status;
 			}
 
-			public String getUserName() {
-				return this.userName;
+			public Float getUsagePercentage() {
+				return this.usagePercentage;
 			}
 
-			public void setUserName(String userName) {
-				this.userName = userName;
+			public void setUsagePercentage(Float usagePercentage) {
+				this.usagePercentage = usagePercentage;
 			}
 
 			public String getResourceInstanceId() {
@@ -189,44 +189,20 @@ public class DescribeResourceUsageDetailResponse extends AcsResponse {
 				this.resourceInstanceId = resourceInstanceId;
 			}
 
-			public String getStartTime() {
-				return this.startTime;
+			public Float getTotalQuantity() {
+				return this.totalQuantity;
 			}
 
-			public void setStartTime(String startTime) {
-				this.startTime = startTime;
+			public void setTotalQuantity(Float totalQuantity) {
+				this.totalQuantity = totalQuantity;
 			}
 
-			public String getEndTime() {
-				return this.endTime;
+			public String getReservationCost() {
+				return this.reservationCost;
 			}
 
-			public void setEndTime(String endTime) {
-				this.endTime = endTime;
-			}
-
-			public String getStatus() {
-				return this.status;
-			}
-
-			public void setStatus(String status) {
-				this.status = status;
-			}
-
-			public String getStatusName() {
-				return this.statusName;
-			}
-
-			public void setStatusName(String statusName) {
-				this.statusName = statusName;
-			}
-
-			public String getRegion() {
-				return this.region;
-			}
-
-			public void setRegion(String region) {
-				this.region = region;
+			public void setReservationCost(String reservationCost) {
+				this.reservationCost = reservationCost;
 			}
 
 			public String getRegionNo() {
@@ -237,12 +213,44 @@ public class DescribeResourceUsageDetailResponse extends AcsResponse {
 				this.regionNo = regionNo;
 			}
 
-			public String getZone() {
-				return this.zone;
+			public String getUserId() {
+				return this.userId;
 			}
 
-			public void setZone(String zone) {
-				this.zone = zone;
+			public void setUserId(String userId) {
+				this.userId = userId;
+			}
+
+			public String getStatusName() {
+				return this.statusName;
+			}
+
+			public void setStatusName(String statusName) {
+				this.statusName = statusName;
+			}
+
+			public String getCapacityUnit() {
+				return this.capacityUnit;
+			}
+
+			public void setCapacityUnit(String capacityUnit) {
+				this.capacityUnit = capacityUnit;
+			}
+
+			public String getPotentialSavedCost() {
+				return this.potentialSavedCost;
+			}
+
+			public void setPotentialSavedCost(String potentialSavedCost) {
+				this.potentialSavedCost = potentialSavedCost;
+			}
+
+			public String getCurrency() {
+				return this.currency;
+			}
+
+			public void setCurrency(String currency) {
+				this.currency = currency;
 			}
 
 			public String getZoneName() {
@@ -261,68 +269,12 @@ public class DescribeResourceUsageDetailResponse extends AcsResponse {
 				this.instanceSpec = instanceSpec;
 			}
 
-			public Long getQuantity() {
-				return this.quantity;
+			public String getEndTime() {
+				return this.endTime;
 			}
 
-			public void setQuantity(Long quantity) {
-				this.quantity = quantity;
-			}
-
-			public String getImageType() {
-				return this.imageType;
-			}
-
-			public void setImageType(String imageType) {
-				this.imageType = imageType;
-			}
-
-			public Float getUsagePercentage() {
-				return this.usagePercentage;
-			}
-
-			public void setUsagePercentage(Float usagePercentage) {
-				this.usagePercentage = usagePercentage;
-			}
-
-			public Float getDeductQuantity() {
-				return this.deductQuantity;
-			}
-
-			public void setDeductQuantity(Float deductQuantity) {
-				this.deductQuantity = deductQuantity;
-			}
-
-			public Float getTotalQuantity() {
-				return this.totalQuantity;
-			}
-
-			public void setTotalQuantity(Float totalQuantity) {
-				this.totalQuantity = totalQuantity;
-			}
-
-			public String getCapacityUnit() {
-				return this.capacityUnit;
-			}
-
-			public void setCapacityUnit(String capacityUnit) {
-				this.capacityUnit = capacityUnit;
-			}
-
-			public String getCurrency() {
-				return this.currency;
-			}
-
-			public void setCurrency(String currency) {
-				this.currency = currency;
-			}
-
-			public String getReservationCost() {
-				return this.reservationCost;
-			}
-
-			public void setReservationCost(String reservationCost) {
-				this.reservationCost = reservationCost;
+			public void setEndTime(String endTime) {
+				this.endTime = endTime;
 			}
 
 			public String getPostpaidCost() {
@@ -333,6 +285,38 @@ public class DescribeResourceUsageDetailResponse extends AcsResponse {
 				this.postpaidCost = postpaidCost;
 			}
 
+			public String getImageType() {
+				return this.imageType;
+			}
+
+			public void setImageType(String imageType) {
+				this.imageType = imageType;
+			}
+
+			public String getStartTime() {
+				return this.startTime;
+			}
+
+			public void setStartTime(String startTime) {
+				this.startTime = startTime;
+			}
+
+			public String getRegion() {
+				return this.region;
+			}
+
+			public void setRegion(String region) {
+				this.region = region;
+			}
+
+			public Float getDeductQuantity() {
+				return this.deductQuantity;
+			}
+
+			public void setDeductQuantity(Float deductQuantity) {
+				this.deductQuantity = deductQuantity;
+			}
+
 			public String getSavedCost() {
 				return this.savedCost;
 			}
@@ -341,12 +325,28 @@ public class DescribeResourceUsageDetailResponse extends AcsResponse {
 				this.savedCost = savedCost;
 			}
 
-			public String getPotentialSavedCost() {
-				return this.potentialSavedCost;
+			public String getZone() {
+				return this.zone;
 			}
 
-			public void setPotentialSavedCost(String potentialSavedCost) {
-				this.potentialSavedCost = potentialSavedCost;
+			public void setZone(String zone) {
+				this.zone = zone;
+			}
+
+			public String getUserName() {
+				return this.userName;
+			}
+
+			public void setUserName(String userName) {
+				this.userName = userName;
+			}
+
+			public Long getQuantity() {
+				return this.quantity;
+			}
+
+			public void setQuantity(Long quantity) {
+				this.quantity = quantity;
 			}
 		}
 	}

@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetResourcePackagePriceResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String message;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -67,6 +51,22 @@ public class GetResourcePackagePriceResponse extends AcsResponse {
 		this.message = message;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -77,23 +77,15 @@ public class GetResourcePackagePriceResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String currency;
-
 		private Float originalPrice;
-
-		private Float tradePrice;
 
 		private Float discountPrice;
 
+		private String currency;
+
+		private Float tradePrice;
+
 		private List<Promotion> promotions;
-
-		public String getCurrency() {
-			return this.currency;
-		}
-
-		public void setCurrency(String currency) {
-			this.currency = currency;
-		}
 
 		public Float getOriginalPrice() {
 			return this.originalPrice;
@@ -103,20 +95,28 @@ public class GetResourcePackagePriceResponse extends AcsResponse {
 			this.originalPrice = originalPrice;
 		}
 
-		public Float getTradePrice() {
-			return this.tradePrice;
-		}
-
-		public void setTradePrice(Float tradePrice) {
-			this.tradePrice = tradePrice;
-		}
-
 		public Float getDiscountPrice() {
 			return this.discountPrice;
 		}
 
 		public void setDiscountPrice(Float discountPrice) {
 			this.discountPrice = discountPrice;
+		}
+
+		public String getCurrency() {
+			return this.currency;
+		}
+
+		public void setCurrency(String currency) {
+			this.currency = currency;
+		}
+
+		public Float getTradePrice() {
+			return this.tradePrice;
+		}
+
+		public void setTradePrice(Float tradePrice) {
+			this.tradePrice = tradePrice;
 		}
 
 		public List<Promotion> getPromotions() {
@@ -129,17 +129,9 @@ public class GetResourcePackagePriceResponse extends AcsResponse {
 
 		public static class Promotion {
 
-			private Long id;
-
 			private String name;
 
-			public Long getId() {
-				return this.id;
-			}
-
-			public void setId(Long id) {
-				this.id = id;
-			}
+			private Long id;
 
 			public String getName() {
 				return this.name;
@@ -147,6 +139,14 @@ public class GetResourcePackagePriceResponse extends AcsResponse {
 
 			public void setName(String name) {
 				this.name = name;
+			}
+
+			public Long getId() {
+				return this.id;
+			}
+
+			public void setId(Long id) {
+				this.id = id;
 			}
 		}
 	}

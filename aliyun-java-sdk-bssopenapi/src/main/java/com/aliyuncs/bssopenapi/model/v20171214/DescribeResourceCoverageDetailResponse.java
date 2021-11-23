@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeResourceCoverageDetailResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String message;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -67,6 +51,22 @@ public class DescribeResourceCoverageDetailResponse extends AcsResponse {
 		this.message = message;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -77,21 +77,13 @@ public class DescribeResourceCoverageDetailResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Integer totalCount;
-
 		private String nextToken;
+
+		private Integer totalCount;
 
 		private Integer maxResults;
 
 		private List<Item> items;
-
-		public Integer getTotalCount() {
-			return this.totalCount;
-		}
-
-		public void setTotalCount(Integer totalCount) {
-			this.totalCount = totalCount;
-		}
 
 		public String getNextToken() {
 			return this.nextToken;
@@ -99,6 +91,14 @@ public class DescribeResourceCoverageDetailResponse extends AcsResponse {
 
 		public void setNextToken(String nextToken) {
 			this.nextToken = nextToken;
+		}
+
+		public Integer getTotalCount() {
+			return this.totalCount;
+		}
+
+		public void setTotalCount(Integer totalCount) {
+			this.totalCount = totalCount;
 		}
 
 		public Integer getMaxResults() {
@@ -119,68 +119,52 @@ public class DescribeResourceCoverageDetailResponse extends AcsResponse {
 
 		public static class Item {
 
-			private String userId;
-
-			private String userName;
-
-			private String productCode;
+			private String commodityCode;
 
 			private String productName;
 
-			private String commodityCode;
-
-			private String commodityName;
-
-			private String instanceId;
-
-			private String region;
+			private Float totalQuantity;
 
 			private String regionNo;
 
-			private String zone;
+			private String userId;
+
+			private String commodityName;
+
+			private String capacityUnit;
+
+			private String instanceId;
+
+			private String currency;
 
 			private String zoneName;
 
 			private String instanceSpec;
 
-			private String currency;
-
-			private Float coveragePercentage;
-
-			private Float paymentAmount;
-
-			private Float deductQuantity;
-
-			private Float totalQuantity;
-
-			private String capacityUnit;
+			private String endTime;
 
 			private String startTime;
 
-			private String endTime;
+			private Float paymentAmount;
 
-			public String getUserId() {
-				return this.userId;
+			private Float coveragePercentage;
+
+			private String region;
+
+			private Float deductQuantity;
+
+			private String zone;
+
+			private String userName;
+
+			private String productCode;
+
+			public String getCommodityCode() {
+				return this.commodityCode;
 			}
 
-			public void setUserId(String userId) {
-				this.userId = userId;
-			}
-
-			public String getUserName() {
-				return this.userName;
-			}
-
-			public void setUserName(String userName) {
-				this.userName = userName;
-			}
-
-			public String getProductCode() {
-				return this.productCode;
-			}
-
-			public void setProductCode(String productCode) {
-				this.productCode = productCode;
+			public void setCommodityCode(String commodityCode) {
+				this.commodityCode = commodityCode;
 			}
 
 			public String getProductName() {
@@ -191,36 +175,12 @@ public class DescribeResourceCoverageDetailResponse extends AcsResponse {
 				this.productName = productName;
 			}
 
-			public String getCommodityCode() {
-				return this.commodityCode;
+			public Float getTotalQuantity() {
+				return this.totalQuantity;
 			}
 
-			public void setCommodityCode(String commodityCode) {
-				this.commodityCode = commodityCode;
-			}
-
-			public String getCommodityName() {
-				return this.commodityName;
-			}
-
-			public void setCommodityName(String commodityName) {
-				this.commodityName = commodityName;
-			}
-
-			public String getInstanceId() {
-				return this.instanceId;
-			}
-
-			public void setInstanceId(String instanceId) {
-				this.instanceId = instanceId;
-			}
-
-			public String getRegion() {
-				return this.region;
-			}
-
-			public void setRegion(String region) {
-				this.region = region;
+			public void setTotalQuantity(Float totalQuantity) {
+				this.totalQuantity = totalQuantity;
 			}
 
 			public String getRegionNo() {
@@ -231,12 +191,44 @@ public class DescribeResourceCoverageDetailResponse extends AcsResponse {
 				this.regionNo = regionNo;
 			}
 
-			public String getZone() {
-				return this.zone;
+			public String getUserId() {
+				return this.userId;
 			}
 
-			public void setZone(String zone) {
-				this.zone = zone;
+			public void setUserId(String userId) {
+				this.userId = userId;
+			}
+
+			public String getCommodityName() {
+				return this.commodityName;
+			}
+
+			public void setCommodityName(String commodityName) {
+				this.commodityName = commodityName;
+			}
+
+			public String getCapacityUnit() {
+				return this.capacityUnit;
+			}
+
+			public void setCapacityUnit(String capacityUnit) {
+				this.capacityUnit = capacityUnit;
+			}
+
+			public String getInstanceId() {
+				return this.instanceId;
+			}
+
+			public void setInstanceId(String instanceId) {
+				this.instanceId = instanceId;
+			}
+
+			public String getCurrency() {
+				return this.currency;
+			}
+
+			public void setCurrency(String currency) {
+				this.currency = currency;
 			}
 
 			public String getZoneName() {
@@ -255,52 +247,12 @@ public class DescribeResourceCoverageDetailResponse extends AcsResponse {
 				this.instanceSpec = instanceSpec;
 			}
 
-			public String getCurrency() {
-				return this.currency;
+			public String getEndTime() {
+				return this.endTime;
 			}
 
-			public void setCurrency(String currency) {
-				this.currency = currency;
-			}
-
-			public Float getCoveragePercentage() {
-				return this.coveragePercentage;
-			}
-
-			public void setCoveragePercentage(Float coveragePercentage) {
-				this.coveragePercentage = coveragePercentage;
-			}
-
-			public Float getPaymentAmount() {
-				return this.paymentAmount;
-			}
-
-			public void setPaymentAmount(Float paymentAmount) {
-				this.paymentAmount = paymentAmount;
-			}
-
-			public Float getDeductQuantity() {
-				return this.deductQuantity;
-			}
-
-			public void setDeductQuantity(Float deductQuantity) {
-				this.deductQuantity = deductQuantity;
-			}
-
-			public Float getTotalQuantity() {
-				return this.totalQuantity;
-			}
-
-			public void setTotalQuantity(Float totalQuantity) {
-				this.totalQuantity = totalQuantity;
-			}
-
-			public String getCapacityUnit() {
-				return this.capacityUnit;
-			}
-
-			public void setCapacityUnit(String capacityUnit) {
-				this.capacityUnit = capacityUnit;
+			public void setEndTime(String endTime) {
+				this.endTime = endTime;
 			}
 
 			public String getStartTime() {
@@ -311,12 +263,60 @@ public class DescribeResourceCoverageDetailResponse extends AcsResponse {
 				this.startTime = startTime;
 			}
 
-			public String getEndTime() {
-				return this.endTime;
+			public Float getPaymentAmount() {
+				return this.paymentAmount;
 			}
 
-			public void setEndTime(String endTime) {
-				this.endTime = endTime;
+			public void setPaymentAmount(Float paymentAmount) {
+				this.paymentAmount = paymentAmount;
+			}
+
+			public Float getCoveragePercentage() {
+				return this.coveragePercentage;
+			}
+
+			public void setCoveragePercentage(Float coveragePercentage) {
+				this.coveragePercentage = coveragePercentage;
+			}
+
+			public String getRegion() {
+				return this.region;
+			}
+
+			public void setRegion(String region) {
+				this.region = region;
+			}
+
+			public Float getDeductQuantity() {
+				return this.deductQuantity;
+			}
+
+			public void setDeductQuantity(Float deductQuantity) {
+				this.deductQuantity = deductQuantity;
+			}
+
+			public String getZone() {
+				return this.zone;
+			}
+
+			public void setZone(String zone) {
+				this.zone = zone;
+			}
+
+			public String getUserName() {
+				return this.userName;
+			}
+
+			public void setUserName(String userName) {
+				this.userName = userName;
+			}
+
+			public String getProductCode() {
+				return this.productCode;
+			}
+
+			public void setProductCode(String productCode) {
+				this.productCode = productCode;
 			}
 		}
 	}

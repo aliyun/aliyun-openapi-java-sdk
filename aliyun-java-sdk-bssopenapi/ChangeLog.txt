@@ -1,3 +1,6 @@
+2021-11-23 Version: 1.7.1
+- Add Create Savingplan Instance API.
+
 2021-08-10 Version: 1.7.7
 - Supported DescribeSavingsPlansUsageTotal.
 - Supported DescribeSavingsPlansUsageDetail.

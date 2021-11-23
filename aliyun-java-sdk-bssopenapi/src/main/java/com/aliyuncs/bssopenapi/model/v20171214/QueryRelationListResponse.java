@@ -27,11 +27,11 @@ public class QueryRelationListResponse extends AcsResponse {
 
 	private String code;
 
+	private String message;
+
 	private String requestId;
 
 	private Boolean success;
-
-	private String message;
 
 	private Data data;
 
@@ -41,6 +41,14 @@ public class QueryRelationListResponse extends AcsResponse {
 
 	public void setCode(String code) {
 		this.code = code;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public String getRequestId() {
@@ -57,14 +65,6 @@ public class QueryRelationListResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
 	}
 
 	public Data getData() {
@@ -119,64 +119,32 @@ public class QueryRelationListResponse extends AcsResponse {
 
 		public static class FinancialRelationInfoListItem {
 
-			private Long relationId;
-
-			private String accountType;
-
-			private Long accountId;
-
-			private String accountName;
-
-			private String accountNickName;
+			private String endTime;
 
 			private String relationType;
 
-			private String state;
-
-			private String setupTime;
+			private String accountNickName;
 
 			private String startTime;
 
-			private String endTime;
+			private String state;
 
-			public Long getRelationId() {
-				return this.relationId;
+			private Long accountId;
+
+			private String setupTime;
+
+			private String accountType;
+
+			private String accountName;
+
+			private Long relationId;
+
+			public String getEndTime() {
+				return this.endTime;
 			}
 
-			public void setRelationId(Long relationId) {
-				this.relationId = relationId;
-			}
-
-			public String getAccountType() {
-				return this.accountType;
-			}
-
-			public void setAccountType(String accountType) {
-				this.accountType = accountType;
-			}
-
-			public Long getAccountId() {
-				return this.accountId;
-			}
-
-			public void setAccountId(Long accountId) {
-				this.accountId = accountId;
-			}
-
-			public String getAccountName() {
-				return this.accountName;
-			}
-
-			public void setAccountName(String accountName) {
-				this.accountName = accountName;
-			}
-
-			public String getAccountNickName() {
-				return this.accountNickName;
-			}
-
-			public void setAccountNickName(String accountNickName) {
-				this.accountNickName = accountNickName;
+			public void setEndTime(String endTime) {
+				this.endTime = endTime;
 			}
 
 			public String getRelationType() {
@@ -187,20 +155,12 @@ public class QueryRelationListResponse extends AcsResponse {
 				this.relationType = relationType;
 			}
 
-			public String getState() {
-				return this.state;
+			public String getAccountNickName() {
+				return this.accountNickName;
 			}
 
-			public void setState(String state) {
-				this.state = state;
-			}
-
-			public String getSetupTime() {
-				return this.setupTime;
-			}
-
-			public void setSetupTime(String setupTime) {
-				this.setupTime = setupTime;
+			public void setAccountNickName(String accountNickName) {
+				this.accountNickName = accountNickName;
 			}
 
 			public String getStartTime() {
@@ -211,12 +171,52 @@ public class QueryRelationListResponse extends AcsResponse {
 				this.startTime = startTime;
 			}
 
-			public String getEndTime() {
-				return this.endTime;
+			public String getState() {
+				return this.state;
 			}
 
-			public void setEndTime(String endTime) {
-				this.endTime = endTime;
+			public void setState(String state) {
+				this.state = state;
+			}
+
+			public Long getAccountId() {
+				return this.accountId;
+			}
+
+			public void setAccountId(Long accountId) {
+				this.accountId = accountId;
+			}
+
+			public String getSetupTime() {
+				return this.setupTime;
+			}
+
+			public void setSetupTime(String setupTime) {
+				this.setupTime = setupTime;
+			}
+
+			public String getAccountType() {
+				return this.accountType;
+			}
+
+			public void setAccountType(String accountType) {
+				this.accountType = accountType;
+			}
+
+			public String getAccountName() {
+				return this.accountName;
+			}
+
+			public void setAccountName(String accountName) {
+				this.accountName = accountName;
+			}
+
+			public Long getRelationId() {
+				return this.relationId;
+			}
+
+			public void setRelationId(Long relationId) {
+				this.relationId = relationId;
 			}
 		}
 	}

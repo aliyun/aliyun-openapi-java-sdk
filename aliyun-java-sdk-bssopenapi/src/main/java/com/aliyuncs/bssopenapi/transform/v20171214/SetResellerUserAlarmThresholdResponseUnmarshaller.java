@@ -25,8 +25,8 @@ public class SetResellerUserAlarmThresholdResponseUnmarshaller {
 		setResellerUserAlarmThresholdResponse.setRequestId(_ctx.stringValue("SetResellerUserAlarmThresholdResponse.RequestId"));
 		setResellerUserAlarmThresholdResponse.setCode(_ctx.stringValue("SetResellerUserAlarmThresholdResponse.Code"));
 		setResellerUserAlarmThresholdResponse.setMessage(_ctx.stringValue("SetResellerUserAlarmThresholdResponse.Message"));
-		setResellerUserAlarmThresholdResponse.setSuccess(_ctx.booleanValue("SetResellerUserAlarmThresholdResponse.Success"));
 		setResellerUserAlarmThresholdResponse.setData(_ctx.booleanValue("SetResellerUserAlarmThresholdResponse.Data"));
+		setResellerUserAlarmThresholdResponse.setSuccess(_ctx.booleanValue("SetResellerUserAlarmThresholdResponse.Success"));
 	 
 	 	return setResellerUserAlarmThresholdResponse;
 	}

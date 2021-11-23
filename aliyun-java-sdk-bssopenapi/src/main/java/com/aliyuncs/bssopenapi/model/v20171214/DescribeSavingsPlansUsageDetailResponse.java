@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeSavingsPlansUsageDetailResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String message;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -65,6 +49,22 @@ public class DescribeSavingsPlansUsageDetailResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Data getData() {
@@ -109,71 +109,31 @@ public class DescribeSavingsPlansUsageDetailResponse extends AcsResponse {
 
 		public static class Item {
 
-			private Long userId;
-
-			private String userName;
-
-			private String instanceId;
-
-			private String startPeriod;
-
-			private String endPeriod;
-
 			private String status;
 
 			private String type;
 
 			private Float usagePercentage;
 
-			private Float poolValue;
+			private Long userId;
 
-			private Float deductValue;
-
-			private Float postpaidCost;
-
-			private Float savedCost;
+			private String instanceId;
 
 			private String currency;
 
-			public Long getUserId() {
-				return this.userId;
-			}
+			private Float postpaidCost;
 
-			public void setUserId(Long userId) {
-				this.userId = userId;
-			}
+			private Float deductValue;
 
-			public String getUserName() {
-				return this.userName;
-			}
+			private String startPeriod;
 
-			public void setUserName(String userName) {
-				this.userName = userName;
-			}
+			private Float savedCost;
 
-			public String getInstanceId() {
-				return this.instanceId;
-			}
+			private Float poolValue;
 
-			public void setInstanceId(String instanceId) {
-				this.instanceId = instanceId;
-			}
+			private String userName;
 
-			public String getStartPeriod() {
-				return this.startPeriod;
-			}
-
-			public void setStartPeriod(String startPeriod) {
-				this.startPeriod = startPeriod;
-			}
-
-			public String getEndPeriod() {
-				return this.endPeriod;
-			}
-
-			public void setEndPeriod(String endPeriod) {
-				this.endPeriod = endPeriod;
-			}
+			private String endPeriod;
 
 			public String getStatus() {
 				return this.status;
@@ -199,20 +159,28 @@ public class DescribeSavingsPlansUsageDetailResponse extends AcsResponse {
 				this.usagePercentage = usagePercentage;
 			}
 
-			public Float getPoolValue() {
-				return this.poolValue;
+			public Long getUserId() {
+				return this.userId;
 			}
 
-			public void setPoolValue(Float poolValue) {
-				this.poolValue = poolValue;
+			public void setUserId(Long userId) {
+				this.userId = userId;
 			}
 
-			public Float getDeductValue() {
-				return this.deductValue;
+			public String getInstanceId() {
+				return this.instanceId;
 			}
 
-			public void setDeductValue(Float deductValue) {
-				this.deductValue = deductValue;
+			public void setInstanceId(String instanceId) {
+				this.instanceId = instanceId;
+			}
+
+			public String getCurrency() {
+				return this.currency;
+			}
+
+			public void setCurrency(String currency) {
+				this.currency = currency;
 			}
 
 			public Float getPostpaidCost() {
@@ -223,6 +191,22 @@ public class DescribeSavingsPlansUsageDetailResponse extends AcsResponse {
 				this.postpaidCost = postpaidCost;
 			}
 
+			public Float getDeductValue() {
+				return this.deductValue;
+			}
+
+			public void setDeductValue(Float deductValue) {
+				this.deductValue = deductValue;
+			}
+
+			public String getStartPeriod() {
+				return this.startPeriod;
+			}
+
+			public void setStartPeriod(String startPeriod) {
+				this.startPeriod = startPeriod;
+			}
+
 			public Float getSavedCost() {
 				return this.savedCost;
 			}
@@ -231,12 +215,28 @@ public class DescribeSavingsPlansUsageDetailResponse extends AcsResponse {
 				this.savedCost = savedCost;
 			}
 
-			public String getCurrency() {
-				return this.currency;
+			public Float getPoolValue() {
+				return this.poolValue;
 			}
 
-			public void setCurrency(String currency) {
-				this.currency = currency;
+			public void setPoolValue(Float poolValue) {
+				this.poolValue = poolValue;
+			}
+
+			public String getUserName() {
+				return this.userName;
+			}
+
+			public void setUserName(String userName) {
+				this.userName = userName;
+			}
+
+			public String getEndPeriod() {
+				return this.endPeriod;
+			}
+
+			public void setEndPeriod(String endPeriod) {
+				this.endPeriod = endPeriod;
 			}
 		}
 	}

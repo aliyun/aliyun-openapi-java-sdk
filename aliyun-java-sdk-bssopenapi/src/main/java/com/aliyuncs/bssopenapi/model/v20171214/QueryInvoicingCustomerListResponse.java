@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryInvoicingCustomerListResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String message;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -65,6 +49,22 @@ public class QueryInvoicingCustomerListResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Data getData() {
@@ -89,142 +89,54 @@ public class QueryInvoicingCustomerListResponse extends AcsResponse {
 
 		public static class CustomerInvoice {
 
-			private Long id;
-
-			private Long userId;
-
-			private String userNick;
-
-			private String invoiceTitle;
-
-			private Long customerType;
-
-			private Long taxpayerType;
-
-			private String bank;
-
-			private String bankNo;
-
-			private String operatingLicenseAddress;
-
-			private String operatingLicensePhone;
-
-			private String registerNo;
-
-			private Long startCycle;
+			private Long type;
 
 			private Long status;
 
-			private String gmtCreate;
-
-			private String taxationLicense;
-
 			private Long adjustType;
 
-			private Long endCycle;
+			private String bank;
+
+			private Long startCycle;
 
 			private String titleChangeInstructions;
 
-			private Long issueType;
+			private Long userId;
 
-			private Long type;
+			private String operatingLicenseAddress;
+
+			private String invoiceTitle;
+
+			private String userNick;
+
+			private String operatingLicensePhone;
+
+			private Long endCycle;
 
 			private String defaultRemark;
 
-			public Long getId() {
-				return this.id;
+			private String taxationLicense;
+
+			private String registerNo;
+
+			private String gmtCreate;
+
+			private Long taxpayerType;
+
+			private Long customerType;
+
+			private Long issueType;
+
+			private Long id;
+
+			private String bankNo;
+
+			public Long getType() {
+				return this.type;
 			}
 
-			public void setId(Long id) {
-				this.id = id;
-			}
-
-			public Long getUserId() {
-				return this.userId;
-			}
-
-			public void setUserId(Long userId) {
-				this.userId = userId;
-			}
-
-			public String getUserNick() {
-				return this.userNick;
-			}
-
-			public void setUserNick(String userNick) {
-				this.userNick = userNick;
-			}
-
-			public String getInvoiceTitle() {
-				return this.invoiceTitle;
-			}
-
-			public void setInvoiceTitle(String invoiceTitle) {
-				this.invoiceTitle = invoiceTitle;
-			}
-
-			public Long getCustomerType() {
-				return this.customerType;
-			}
-
-			public void setCustomerType(Long customerType) {
-				this.customerType = customerType;
-			}
-
-			public Long getTaxpayerType() {
-				return this.taxpayerType;
-			}
-
-			public void setTaxpayerType(Long taxpayerType) {
-				this.taxpayerType = taxpayerType;
-			}
-
-			public String getBank() {
-				return this.bank;
-			}
-
-			public void setBank(String bank) {
-				this.bank = bank;
-			}
-
-			public String getBankNo() {
-				return this.bankNo;
-			}
-
-			public void setBankNo(String bankNo) {
-				this.bankNo = bankNo;
-			}
-
-			public String getOperatingLicenseAddress() {
-				return this.operatingLicenseAddress;
-			}
-
-			public void setOperatingLicenseAddress(String operatingLicenseAddress) {
-				this.operatingLicenseAddress = operatingLicenseAddress;
-			}
-
-			public String getOperatingLicensePhone() {
-				return this.operatingLicensePhone;
-			}
-
-			public void setOperatingLicensePhone(String operatingLicensePhone) {
-				this.operatingLicensePhone = operatingLicensePhone;
-			}
-
-			public String getRegisterNo() {
-				return this.registerNo;
-			}
-
-			public void setRegisterNo(String registerNo) {
-				this.registerNo = registerNo;
-			}
-
-			public Long getStartCycle() {
-				return this.startCycle;
-			}
-
-			public void setStartCycle(Long startCycle) {
-				this.startCycle = startCycle;
+			public void setType(Long type) {
+				this.type = type;
 			}
 
 			public Long getStatus() {
@@ -235,22 +147,6 @@ public class QueryInvoicingCustomerListResponse extends AcsResponse {
 				this.status = status;
 			}
 
-			public String getGmtCreate() {
-				return this.gmtCreate;
-			}
-
-			public void setGmtCreate(String gmtCreate) {
-				this.gmtCreate = gmtCreate;
-			}
-
-			public String getTaxationLicense() {
-				return this.taxationLicense;
-			}
-
-			public void setTaxationLicense(String taxationLicense) {
-				this.taxationLicense = taxationLicense;
-			}
-
 			public Long getAdjustType() {
 				return this.adjustType;
 			}
@@ -259,12 +155,20 @@ public class QueryInvoicingCustomerListResponse extends AcsResponse {
 				this.adjustType = adjustType;
 			}
 
-			public Long getEndCycle() {
-				return this.endCycle;
+			public String getBank() {
+				return this.bank;
 			}
 
-			public void setEndCycle(Long endCycle) {
-				this.endCycle = endCycle;
+			public void setBank(String bank) {
+				this.bank = bank;
+			}
+
+			public Long getStartCycle() {
+				return this.startCycle;
+			}
+
+			public void setStartCycle(Long startCycle) {
+				this.startCycle = startCycle;
 			}
 
 			public String getTitleChangeInstructions() {
@@ -275,20 +179,52 @@ public class QueryInvoicingCustomerListResponse extends AcsResponse {
 				this.titleChangeInstructions = titleChangeInstructions;
 			}
 
-			public Long getIssueType() {
-				return this.issueType;
+			public Long getUserId() {
+				return this.userId;
 			}
 
-			public void setIssueType(Long issueType) {
-				this.issueType = issueType;
+			public void setUserId(Long userId) {
+				this.userId = userId;
 			}
 
-			public Long getType() {
-				return this.type;
+			public String getOperatingLicenseAddress() {
+				return this.operatingLicenseAddress;
 			}
 
-			public void setType(Long type) {
-				this.type = type;
+			public void setOperatingLicenseAddress(String operatingLicenseAddress) {
+				this.operatingLicenseAddress = operatingLicenseAddress;
+			}
+
+			public String getInvoiceTitle() {
+				return this.invoiceTitle;
+			}
+
+			public void setInvoiceTitle(String invoiceTitle) {
+				this.invoiceTitle = invoiceTitle;
+			}
+
+			public String getUserNick() {
+				return this.userNick;
+			}
+
+			public void setUserNick(String userNick) {
+				this.userNick = userNick;
+			}
+
+			public String getOperatingLicensePhone() {
+				return this.operatingLicensePhone;
+			}
+
+			public void setOperatingLicensePhone(String operatingLicensePhone) {
+				this.operatingLicensePhone = operatingLicensePhone;
+			}
+
+			public Long getEndCycle() {
+				return this.endCycle;
+			}
+
+			public void setEndCycle(Long endCycle) {
+				this.endCycle = endCycle;
 			}
 
 			public String getDefaultRemark() {
@@ -297,6 +233,70 @@ public class QueryInvoicingCustomerListResponse extends AcsResponse {
 
 			public void setDefaultRemark(String defaultRemark) {
 				this.defaultRemark = defaultRemark;
+			}
+
+			public String getTaxationLicense() {
+				return this.taxationLicense;
+			}
+
+			public void setTaxationLicense(String taxationLicense) {
+				this.taxationLicense = taxationLicense;
+			}
+
+			public String getRegisterNo() {
+				return this.registerNo;
+			}
+
+			public void setRegisterNo(String registerNo) {
+				this.registerNo = registerNo;
+			}
+
+			public String getGmtCreate() {
+				return this.gmtCreate;
+			}
+
+			public void setGmtCreate(String gmtCreate) {
+				this.gmtCreate = gmtCreate;
+			}
+
+			public Long getTaxpayerType() {
+				return this.taxpayerType;
+			}
+
+			public void setTaxpayerType(Long taxpayerType) {
+				this.taxpayerType = taxpayerType;
+			}
+
+			public Long getCustomerType() {
+				return this.customerType;
+			}
+
+			public void setCustomerType(Long customerType) {
+				this.customerType = customerType;
+			}
+
+			public Long getIssueType() {
+				return this.issueType;
+			}
+
+			public void setIssueType(Long issueType) {
+				this.issueType = issueType;
+			}
+
+			public Long getId() {
+				return this.id;
+			}
+
+			public void setId(Long id) {
+				this.id = id;
+			}
+
+			public String getBankNo() {
+				return this.bankNo;
+			}
+
+			public void setBankNo(String bankNo) {
+				this.bankNo = bankNo;
 			}
 		}
 	}

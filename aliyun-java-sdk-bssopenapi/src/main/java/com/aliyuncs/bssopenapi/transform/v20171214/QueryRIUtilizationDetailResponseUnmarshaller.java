@@ -28,9 +28,9 @@ public class QueryRIUtilizationDetailResponseUnmarshaller {
 	public static QueryRIUtilizationDetailResponse unmarshall(QueryRIUtilizationDetailResponse queryRIUtilizationDetailResponse, UnmarshallerContext _ctx) {
 		
 		queryRIUtilizationDetailResponse.setRequestId(_ctx.stringValue("QueryRIUtilizationDetailResponse.RequestId"));
-		queryRIUtilizationDetailResponse.setSuccess(_ctx.booleanValue("QueryRIUtilizationDetailResponse.Success"));
 		queryRIUtilizationDetailResponse.setCode(_ctx.stringValue("QueryRIUtilizationDetailResponse.Code"));
 		queryRIUtilizationDetailResponse.setMessage(_ctx.stringValue("QueryRIUtilizationDetailResponse.Message"));
+		queryRIUtilizationDetailResponse.setSuccess(_ctx.booleanValue("QueryRIUtilizationDetailResponse.Success"));
 
 		Data data = new Data();
 		data.setPageNum(_ctx.longValue("QueryRIUtilizationDetailResponse.Data.PageNum"));
@@ -40,15 +40,15 @@ public class QueryRIUtilizationDetailResponseUnmarshaller {
 		List<DetailListItem> detailList = new ArrayList<DetailListItem>();
 		for (int i = 0; i < _ctx.lengthValue("QueryRIUtilizationDetailResponse.Data.DetailList.Length"); i++) {
 			DetailListItem detailListItem = new DetailListItem();
+			detailListItem.setDeductedCommodityCode(_ctx.stringValue("QueryRIUtilizationDetailResponse.Data.DetailList["+ i +"].DeductedCommodityCode"));
+			detailListItem.setDeductedProductDetail(_ctx.stringValue("QueryRIUtilizationDetailResponse.Data.DetailList["+ i +"].DeductedProductDetail"));
+			detailListItem.setDeductedInstanceId(_ctx.stringValue("QueryRIUtilizationDetailResponse.Data.DetailList["+ i +"].DeductedInstanceId"));
+			detailListItem.setDeductFactorTotal(_ctx.floatValue("QueryRIUtilizationDetailResponse.Data.DetailList["+ i +"].DeductFactorTotal"));
+			detailListItem.setDeductQuantity(_ctx.floatValue("QueryRIUtilizationDetailResponse.Data.DetailList["+ i +"].DeductQuantity"));
+			detailListItem.setDeductHours(_ctx.stringValue("QueryRIUtilizationDetailResponse.Data.DetailList["+ i +"].DeductHours"));
+			detailListItem.setDeductDate(_ctx.stringValue("QueryRIUtilizationDetailResponse.Data.DetailList["+ i +"].DeductDate"));
 			detailListItem.setRIInstanceId(_ctx.stringValue("QueryRIUtilizationDetailResponse.Data.DetailList["+ i +"].RIInstanceId"));
 			detailListItem.setInstanceSpec(_ctx.stringValue("QueryRIUtilizationDetailResponse.Data.DetailList["+ i +"].InstanceSpec"));
-			detailListItem.setDeductedInstanceId(_ctx.stringValue("QueryRIUtilizationDetailResponse.Data.DetailList["+ i +"].DeductedInstanceId"));
-			detailListItem.setDeductedCommodityCode(_ctx.stringValue("QueryRIUtilizationDetailResponse.Data.DetailList["+ i +"].DeductedCommodityCode"));
-			detailListItem.setDeductDate(_ctx.stringValue("QueryRIUtilizationDetailResponse.Data.DetailList["+ i +"].DeductDate"));
-			detailListItem.setDeductHours(_ctx.stringValue("QueryRIUtilizationDetailResponse.Data.DetailList["+ i +"].DeductHours"));
-			detailListItem.setDeductedProductDetail(_ctx.stringValue("QueryRIUtilizationDetailResponse.Data.DetailList["+ i +"].DeductedProductDetail"));
-			detailListItem.setDeductQuantity(_ctx.floatValue("QueryRIUtilizationDetailResponse.Data.DetailList["+ i +"].DeductQuantity"));
-			detailListItem.setDeductFactorTotal(_ctx.floatValue("QueryRIUtilizationDetailResponse.Data.DetailList["+ i +"].DeductFactorTotal"));
 
 			detailList.add(detailListItem);
 		}

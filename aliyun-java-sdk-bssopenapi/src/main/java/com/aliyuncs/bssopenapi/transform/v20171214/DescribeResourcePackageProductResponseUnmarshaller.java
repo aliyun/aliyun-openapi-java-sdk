@@ -32,25 +32,25 @@ public class DescribeResourcePackageProductResponseUnmarshaller {
 	public static DescribeResourcePackageProductResponse unmarshall(DescribeResourcePackageProductResponse describeResourcePackageProductResponse, UnmarshallerContext _ctx) {
 		
 		describeResourcePackageProductResponse.setRequestId(_ctx.stringValue("DescribeResourcePackageProductResponse.RequestId"));
-		describeResourcePackageProductResponse.setOrderId(_ctx.longValue("DescribeResourcePackageProductResponse.OrderId"));
-		describeResourcePackageProductResponse.setSuccess(_ctx.booleanValue("DescribeResourcePackageProductResponse.Success"));
 		describeResourcePackageProductResponse.setCode(_ctx.stringValue("DescribeResourcePackageProductResponse.Code"));
 		describeResourcePackageProductResponse.setMessage(_ctx.stringValue("DescribeResourcePackageProductResponse.Message"));
+		describeResourcePackageProductResponse.setSuccess(_ctx.booleanValue("DescribeResourcePackageProductResponse.Success"));
+		describeResourcePackageProductResponse.setOrderId(_ctx.longValue("DescribeResourcePackageProductResponse.OrderId"));
 
 		Data data = new Data();
 
 		List<ResourcePackage> resourcePackages = new ArrayList<ResourcePackage>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeResourcePackageProductResponse.Data.ResourcePackages.Length"); i++) {
 			ResourcePackage resourcePackage = new ResourcePackage();
-			resourcePackage.setProductCode(_ctx.stringValue("DescribeResourcePackageProductResponse.Data.ResourcePackages["+ i +"].ProductCode"));
 			resourcePackage.setProductType(_ctx.stringValue("DescribeResourcePackageProductResponse.Data.ResourcePackages["+ i +"].ProductType"));
 			resourcePackage.setName(_ctx.stringValue("DescribeResourcePackageProductResponse.Data.ResourcePackages["+ i +"].Name"));
+			resourcePackage.setProductCode(_ctx.stringValue("DescribeResourcePackageProductResponse.Data.ResourcePackages["+ i +"].ProductCode"));
 
 			List<PackageType> packageTypes = new ArrayList<PackageType>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeResourcePackageProductResponse.Data.ResourcePackages["+ i +"].PackageTypes.Length"); j++) {
 				PackageType packageType = new PackageType();
-				packageType.setName(_ctx.stringValue("DescribeResourcePackageProductResponse.Data.ResourcePackages["+ i +"].PackageTypes["+ j +"].Name"));
 				packageType.setCode(_ctx.stringValue("DescribeResourcePackageProductResponse.Data.ResourcePackages["+ i +"].PackageTypes["+ j +"].Code"));
+				packageType.setName(_ctx.stringValue("DescribeResourcePackageProductResponse.Data.ResourcePackages["+ i +"].PackageTypes["+ j +"].Name"));
 
 				List<Property> properties = new ArrayList<Property>();
 				for (int k = 0; k < _ctx.lengthValue("DescribeResourcePackageProductResponse.Data.ResourcePackages["+ i +"].PackageTypes["+ j +"].Properties.Length"); k++) {
@@ -71,8 +71,8 @@ public class DescribeResourcePackageProductResponseUnmarshaller {
 					List<AvailableDuration> availableDurations = new ArrayList<AvailableDuration>();
 					for (int l = 0; l < _ctx.lengthValue("DescribeResourcePackageProductResponse.Data.ResourcePackages["+ i +"].PackageTypes["+ j +"].Specifications["+ k +"].AvailableDurations.Length"); l++) {
 						AvailableDuration availableDuration = new AvailableDuration();
-						availableDuration.setName(_ctx.stringValue("DescribeResourcePackageProductResponse.Data.ResourcePackages["+ i +"].PackageTypes["+ j +"].Specifications["+ k +"].AvailableDurations["+ l +"].Name"));
 						availableDuration.setValue(_ctx.integerValue("DescribeResourcePackageProductResponse.Data.ResourcePackages["+ i +"].PackageTypes["+ j +"].Specifications["+ k +"].AvailableDurations["+ l +"].Value"));
+						availableDuration.setName(_ctx.stringValue("DescribeResourcePackageProductResponse.Data.ResourcePackages["+ i +"].PackageTypes["+ j +"].Specifications["+ k +"].AvailableDurations["+ l +"].Name"));
 						availableDuration.setUnit(_ctx.stringValue("DescribeResourcePackageProductResponse.Data.ResourcePackages["+ i +"].PackageTypes["+ j +"].Specifications["+ k +"].AvailableDurations["+ l +"].Unit"));
 
 						availableDurations.add(availableDuration);

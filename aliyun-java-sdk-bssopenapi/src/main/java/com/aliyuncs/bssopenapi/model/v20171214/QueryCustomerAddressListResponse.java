@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryCustomerAddressListResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String message;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -65,6 +49,22 @@ public class QueryCustomerAddressListResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Data getData() {
@@ -89,53 +89,29 @@ public class QueryCustomerAddressListResponse extends AcsResponse {
 
 		public static class CustomerInvoiceAddress {
 
-			private Long id;
-
-			private Long userId;
-
-			private String userNick;
-
 			private String addressee;
-
-			private String province;
-
-			private String city;
-
-			private String county;
-
-			private String street;
 
 			private String postalCode;
 
+			private Long userId;
+
+			private String city;
+
+			private String userNick;
+
+			private String street;
+
 			private String phone;
+
+			private String county;
 
 			private String bizType;
 
 			private String deliveryAddress;
 
-			public Long getId() {
-				return this.id;
-			}
+			private Long id;
 
-			public void setId(Long id) {
-				this.id = id;
-			}
-
-			public Long getUserId() {
-				return this.userId;
-			}
-
-			public void setUserId(Long userId) {
-				this.userId = userId;
-			}
-
-			public String getUserNick() {
-				return this.userNick;
-			}
-
-			public void setUserNick(String userNick) {
-				this.userNick = userNick;
-			}
+			private String province;
 
 			public String getAddressee() {
 				return this.addressee;
@@ -143,38 +119,6 @@ public class QueryCustomerAddressListResponse extends AcsResponse {
 
 			public void setAddressee(String addressee) {
 				this.addressee = addressee;
-			}
-
-			public String getProvince() {
-				return this.province;
-			}
-
-			public void setProvince(String province) {
-				this.province = province;
-			}
-
-			public String getCity() {
-				return this.city;
-			}
-
-			public void setCity(String city) {
-				this.city = city;
-			}
-
-			public String getCounty() {
-				return this.county;
-			}
-
-			public void setCounty(String county) {
-				this.county = county;
-			}
-
-			public String getStreet() {
-				return this.street;
-			}
-
-			public void setStreet(String street) {
-				this.street = street;
 			}
 
 			public String getPostalCode() {
@@ -185,12 +129,52 @@ public class QueryCustomerAddressListResponse extends AcsResponse {
 				this.postalCode = postalCode;
 			}
 
+			public Long getUserId() {
+				return this.userId;
+			}
+
+			public void setUserId(Long userId) {
+				this.userId = userId;
+			}
+
+			public String getCity() {
+				return this.city;
+			}
+
+			public void setCity(String city) {
+				this.city = city;
+			}
+
+			public String getUserNick() {
+				return this.userNick;
+			}
+
+			public void setUserNick(String userNick) {
+				this.userNick = userNick;
+			}
+
+			public String getStreet() {
+				return this.street;
+			}
+
+			public void setStreet(String street) {
+				this.street = street;
+			}
+
 			public String getPhone() {
 				return this.phone;
 			}
 
 			public void setPhone(String phone) {
 				this.phone = phone;
+			}
+
+			public String getCounty() {
+				return this.county;
+			}
+
+			public void setCounty(String county) {
+				this.county = county;
 			}
 
 			public String getBizType() {
@@ -207,6 +191,22 @@ public class QueryCustomerAddressListResponse extends AcsResponse {
 
 			public void setDeliveryAddress(String deliveryAddress) {
 				this.deliveryAddress = deliveryAddress;
+			}
+
+			public Long getId() {
+				return this.id;
+			}
+
+			public void setId(Long id) {
+				this.id = id;
+			}
+
+			public String getProvince() {
+				return this.province;
+			}
+
+			public void setProvince(String province) {
+				this.province = province;
 			}
 		}
 	}

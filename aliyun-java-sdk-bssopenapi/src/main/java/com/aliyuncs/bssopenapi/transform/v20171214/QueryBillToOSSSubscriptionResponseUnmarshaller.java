@@ -28,20 +28,20 @@ public class QueryBillToOSSSubscriptionResponseUnmarshaller {
 	public static QueryBillToOSSSubscriptionResponse unmarshall(QueryBillToOSSSubscriptionResponse queryBillToOSSSubscriptionResponse, UnmarshallerContext _ctx) {
 		
 		queryBillToOSSSubscriptionResponse.setRequestId(_ctx.stringValue("QueryBillToOSSSubscriptionResponse.RequestId"));
-		queryBillToOSSSubscriptionResponse.setSuccess(_ctx.booleanValue("QueryBillToOSSSubscriptionResponse.Success"));
 		queryBillToOSSSubscriptionResponse.setCode(_ctx.stringValue("QueryBillToOSSSubscriptionResponse.Code"));
 		queryBillToOSSSubscriptionResponse.setMessage(_ctx.stringValue("QueryBillToOSSSubscriptionResponse.Message"));
+		queryBillToOSSSubscriptionResponse.setSuccess(_ctx.booleanValue("QueryBillToOSSSubscriptionResponse.Success"));
 
 		Data data = new Data();
-		data.setAccountID(_ctx.stringValue("QueryBillToOSSSubscriptionResponse.Data.AccountID"));
 		data.setAccountName(_ctx.stringValue("QueryBillToOSSSubscriptionResponse.Data.AccountName"));
+		data.setAccountID(_ctx.stringValue("QueryBillToOSSSubscriptionResponse.Data.AccountID"));
 
 		List<Item> items = new ArrayList<Item>();
 		for (int i = 0; i < _ctx.lengthValue("QueryBillToOSSSubscriptionResponse.Data.Items.Length"); i++) {
 			Item item = new Item();
+			item.setBucketOwnerId(_ctx.longValue("QueryBillToOSSSubscriptionResponse.Data.Items["+ i +"].BucketOwnerId"));
 			item.setSubscribeType(_ctx.stringValue("QueryBillToOSSSubscriptionResponse.Data.Items["+ i +"].SubscribeType"));
 			item.setSubscribeBucket(_ctx.stringValue("QueryBillToOSSSubscriptionResponse.Data.Items["+ i +"].SubscribeBucket"));
-			item.setBucketOwnerId(_ctx.longValue("QueryBillToOSSSubscriptionResponse.Data.Items["+ i +"].BucketOwnerId"));
 			item.setSubscribeTime(_ctx.stringValue("QueryBillToOSSSubscriptionResponse.Data.Items["+ i +"].SubscribeTime"));
 			item.setSubscribeLanguage(_ctx.stringValue("QueryBillToOSSSubscriptionResponse.Data.Items["+ i +"].SubscribeLanguage"));
 			item.setMultAccountRelSubscribe(_ctx.stringValue("QueryBillToOSSSubscriptionResponse.Data.Items["+ i +"].MultAccountRelSubscribe"));

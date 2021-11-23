@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeSavingsPlansUsageTotalResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String message;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -65,6 +49,22 @@ public class DescribeSavingsPlansUsageTotalResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Data getData() {
@@ -99,17 +99,9 @@ public class DescribeSavingsPlansUsageTotalResponse extends AcsResponse {
 
 		public static class Item {
 
-			private String period;
-
 			private Float percentage;
 
-			public String getPeriod() {
-				return this.period;
-			}
-
-			public void setPeriod(String period) {
-				this.period = period;
-			}
+			private String period;
 
 			public Float getPercentage() {
 				return this.percentage;
@@ -118,25 +110,25 @@ public class DescribeSavingsPlansUsageTotalResponse extends AcsResponse {
 			public void setPercentage(Float percentage) {
 				this.percentage = percentage;
 			}
+
+			public String getPeriod() {
+				return this.period;
+			}
+
+			public void setPeriod(String period) {
+				this.period = period;
+			}
 		}
 
 		public static class TotalUsage {
 
-			private Float usagePercentage;
-
 			private Float postpaidCost;
-
-			private Float poolValue;
 
 			private Float savedCost;
 
-			public Float getUsagePercentage() {
-				return this.usagePercentage;
-			}
+			private Float usagePercentage;
 
-			public void setUsagePercentage(Float usagePercentage) {
-				this.usagePercentage = usagePercentage;
-			}
+			private Float poolValue;
 
 			public Float getPostpaidCost() {
 				return this.postpaidCost;
@@ -146,20 +138,28 @@ public class DescribeSavingsPlansUsageTotalResponse extends AcsResponse {
 				this.postpaidCost = postpaidCost;
 			}
 
-			public Float getPoolValue() {
-				return this.poolValue;
-			}
-
-			public void setPoolValue(Float poolValue) {
-				this.poolValue = poolValue;
-			}
-
 			public Float getSavedCost() {
 				return this.savedCost;
 			}
 
 			public void setSavedCost(Float savedCost) {
 				this.savedCost = savedCost;
+			}
+
+			public Float getUsagePercentage() {
+				return this.usagePercentage;
+			}
+
+			public void setUsagePercentage(Float usagePercentage) {
+				this.usagePercentage = usagePercentage;
+			}
+
+			public Float getPoolValue() {
+				return this.poolValue;
+			}
+
+			public void setPoolValue(Float poolValue) {
+				this.poolValue = poolValue;
 			}
 		}
 	}

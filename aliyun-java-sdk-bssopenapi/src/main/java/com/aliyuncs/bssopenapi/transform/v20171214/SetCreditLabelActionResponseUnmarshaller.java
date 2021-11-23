@@ -24,8 +24,8 @@ public class SetCreditLabelActionResponseUnmarshaller {
 		
 		setCreditLabelActionResponse.setRequestId(_ctx.stringValue("SetCreditLabelActionResponse.RequestId"));
 		setCreditLabelActionResponse.setCode(_ctx.stringValue("SetCreditLabelActionResponse.Code"));
-		setCreditLabelActionResponse.setData(_ctx.booleanValue("SetCreditLabelActionResponse.Data"));
 		setCreditLabelActionResponse.setMessage(_ctx.stringValue("SetCreditLabelActionResponse.Message"));
+		setCreditLabelActionResponse.setData(_ctx.booleanValue("SetCreditLabelActionResponse.Data"));
 		setCreditLabelActionResponse.setSuccess(_ctx.booleanValue("SetCreditLabelActionResponse.Success"));
 	 
 	 	return setCreditLabelActionResponse;

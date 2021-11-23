@@ -29,8 +29,8 @@ public class QuerySavingsPlansDeductLogResponseUnmarshaller {
 		
 		querySavingsPlansDeductLogResponse.setRequestId(_ctx.stringValue("QuerySavingsPlansDeductLogResponse.RequestId"));
 		querySavingsPlansDeductLogResponse.setCode(_ctx.stringValue("QuerySavingsPlansDeductLogResponse.Code"));
-		querySavingsPlansDeductLogResponse.setSuccess(_ctx.booleanValue("QuerySavingsPlansDeductLogResponse.Success"));
 		querySavingsPlansDeductLogResponse.setMessage(_ctx.stringValue("QuerySavingsPlansDeductLogResponse.Message"));
+		querySavingsPlansDeductLogResponse.setSuccess(_ctx.booleanValue("QuerySavingsPlansDeductLogResponse.Success"));
 
 		Data data = new Data();
 		data.setPageNum(_ctx.integerValue("QuerySavingsPlansDeductLogResponse.Data.PageNum"));
@@ -40,17 +40,17 @@ public class QuerySavingsPlansDeductLogResponseUnmarshaller {
 		List<SavingsPlansDeductDetailResponse> items = new ArrayList<SavingsPlansDeductDetailResponse>();
 		for (int i = 0; i < _ctx.lengthValue("QuerySavingsPlansDeductLogResponse.Data.Items.Length"); i++) {
 			SavingsPlansDeductDetailResponse savingsPlansDeductDetailResponse = new SavingsPlansDeductDetailResponse();
-			savingsPlansDeductDetailResponse.setInstanceId(_ctx.stringValue("QuerySavingsPlansDeductLogResponse.Data.Items["+ i +"].InstanceId"));
-			savingsPlansDeductDetailResponse.setStartTime(_ctx.stringValue("QuerySavingsPlansDeductLogResponse.Data.Items["+ i +"].StartTime"));
 			savingsPlansDeductDetailResponse.setEndTime(_ctx.stringValue("QuerySavingsPlansDeductLogResponse.Data.Items["+ i +"].EndTime"));
+			savingsPlansDeductDetailResponse.setStartTime(_ctx.stringValue("QuerySavingsPlansDeductLogResponse.Data.Items["+ i +"].StartTime"));
 			savingsPlansDeductDetailResponse.setSavingsType(_ctx.stringValue("QuerySavingsPlansDeductLogResponse.Data.Items["+ i +"].SavingsType"));
-			savingsPlansDeductDetailResponse.setBillModule(_ctx.stringValue("QuerySavingsPlansDeductLogResponse.Data.Items["+ i +"].BillModule"));
-			savingsPlansDeductDetailResponse.setDeductFee(_ctx.stringValue("QuerySavingsPlansDeductLogResponse.Data.Items["+ i +"].DeductFee"));
-			savingsPlansDeductDetailResponse.setDeductRate(_ctx.stringValue("QuerySavingsPlansDeductLogResponse.Data.Items["+ i +"].DeductRate"));
 			savingsPlansDeductDetailResponse.setUserId(_ctx.longValue("QuerySavingsPlansDeductLogResponse.Data.Items["+ i +"].UserId"));
-			savingsPlansDeductDetailResponse.setDeductCommodity(_ctx.stringValue("QuerySavingsPlansDeductLogResponse.Data.Items["+ i +"].DeductCommodity"));
-			savingsPlansDeductDetailResponse.setDeductInstanceId(_ctx.stringValue("QuerySavingsPlansDeductLogResponse.Data.Items["+ i +"].DeductInstanceId"));
 			savingsPlansDeductDetailResponse.setDiscountRate(_ctx.stringValue("QuerySavingsPlansDeductLogResponse.Data.Items["+ i +"].DiscountRate"));
+			savingsPlansDeductDetailResponse.setBillModule(_ctx.stringValue("QuerySavingsPlansDeductLogResponse.Data.Items["+ i +"].BillModule"));
+			savingsPlansDeductDetailResponse.setInstanceId(_ctx.stringValue("QuerySavingsPlansDeductLogResponse.Data.Items["+ i +"].InstanceId"));
+			savingsPlansDeductDetailResponse.setDeductInstanceId(_ctx.stringValue("QuerySavingsPlansDeductLogResponse.Data.Items["+ i +"].DeductInstanceId"));
+			savingsPlansDeductDetailResponse.setDeductCommodity(_ctx.stringValue("QuerySavingsPlansDeductLogResponse.Data.Items["+ i +"].DeductCommodity"));
+			savingsPlansDeductDetailResponse.setDeductRate(_ctx.stringValue("QuerySavingsPlansDeductLogResponse.Data.Items["+ i +"].DeductRate"));
+			savingsPlansDeductDetailResponse.setDeductFee(_ctx.stringValue("QuerySavingsPlansDeductLogResponse.Data.Items["+ i +"].DeductFee"));
 
 			items.add(savingsPlansDeductDetailResponse);
 		}

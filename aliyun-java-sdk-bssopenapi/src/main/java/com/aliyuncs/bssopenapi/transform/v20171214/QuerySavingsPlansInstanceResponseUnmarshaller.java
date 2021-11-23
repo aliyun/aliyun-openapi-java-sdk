@@ -30,8 +30,8 @@ public class QuerySavingsPlansInstanceResponseUnmarshaller {
 		
 		querySavingsPlansInstanceResponse.setRequestId(_ctx.stringValue("QuerySavingsPlansInstanceResponse.RequestId"));
 		querySavingsPlansInstanceResponse.setCode(_ctx.stringValue("QuerySavingsPlansInstanceResponse.Code"));
-		querySavingsPlansInstanceResponse.setSuccess(_ctx.booleanValue("QuerySavingsPlansInstanceResponse.Success"));
 		querySavingsPlansInstanceResponse.setMessage(_ctx.stringValue("QuerySavingsPlansInstanceResponse.Message"));
+		querySavingsPlansInstanceResponse.setSuccess(_ctx.booleanValue("QuerySavingsPlansInstanceResponse.Success"));
 
 		Data data = new Data();
 		data.setPageNum(_ctx.integerValue("QuerySavingsPlansInstanceResponse.Data.PageNum"));
@@ -41,20 +41,25 @@ public class QuerySavingsPlansInstanceResponseUnmarshaller {
 		List<SavingsPlansDetailResponse> items = new ArrayList<SavingsPlansDetailResponse>();
 		for (int i = 0; i < _ctx.lengthValue("QuerySavingsPlansInstanceResponse.Data.Items.Length"); i++) {
 			SavingsPlansDetailResponse savingsPlansDetailResponse = new SavingsPlansDetailResponse();
-			savingsPlansDetailResponse.setInstanceId(_ctx.stringValue("QuerySavingsPlansInstanceResponse.Data.Items["+ i +"].InstanceId"));
+			savingsPlansDetailResponse.setStatus(_ctx.stringValue("QuerySavingsPlansInstanceResponse.Data.Items["+ i +"].Status"));
+			savingsPlansDetailResponse.setCycle(_ctx.stringValue("QuerySavingsPlansInstanceResponse.Data.Items["+ i +"].Cycle"));
+			savingsPlansDetailResponse.setStartTimestamp(_ctx.longValue("QuerySavingsPlansInstanceResponse.Data.Items["+ i +"].StartTimestamp"));
 			savingsPlansDetailResponse.setSavingsType(_ctx.stringValue("QuerySavingsPlansInstanceResponse.Data.Items["+ i +"].SavingsType"));
+			savingsPlansDetailResponse.setUtilization(_ctx.stringValue("QuerySavingsPlansInstanceResponse.Data.Items["+ i +"].Utilization"));
+			savingsPlansDetailResponse.setPrepayFee(_ctx.stringValue("QuerySavingsPlansInstanceResponse.Data.Items["+ i +"].PrepayFee"));
+			savingsPlansDetailResponse.setInstanceId(_ctx.stringValue("QuerySavingsPlansInstanceResponse.Data.Items["+ i +"].InstanceId"));
+			savingsPlansDetailResponse.setCurrency(_ctx.stringValue("QuerySavingsPlansInstanceResponse.Data.Items["+ i +"].Currency"));
+			savingsPlansDetailResponse.setEndTimestamp(_ctx.longValue("QuerySavingsPlansInstanceResponse.Data.Items["+ i +"].EndTimestamp"));
+			savingsPlansDetailResponse.setEndTime(_ctx.stringValue("QuerySavingsPlansInstanceResponse.Data.Items["+ i +"].EndTime"));
+			savingsPlansDetailResponse.setStartTime(_ctx.stringValue("QuerySavingsPlansInstanceResponse.Data.Items["+ i +"].StartTime"));
+			savingsPlansDetailResponse.setAllocationStatus(_ctx.stringValue("QuerySavingsPlansInstanceResponse.Data.Items["+ i +"].AllocationStatus"));
 			savingsPlansDetailResponse.setInstanceFamily(_ctx.stringValue("QuerySavingsPlansInstanceResponse.Data.Items["+ i +"].InstanceFamily"));
 			savingsPlansDetailResponse.setRegion(_ctx.stringValue("QuerySavingsPlansInstanceResponse.Data.Items["+ i +"].Region"));
-			savingsPlansDetailResponse.setPoolValue(_ctx.stringValue("QuerySavingsPlansInstanceResponse.Data.Items["+ i +"].PoolValue"));
-			savingsPlansDetailResponse.setCurrency(_ctx.stringValue("QuerySavingsPlansInstanceResponse.Data.Items["+ i +"].Currency"));
-			savingsPlansDetailResponse.setStatus(_ctx.stringValue("QuerySavingsPlansInstanceResponse.Data.Items["+ i +"].Status"));
-			savingsPlansDetailResponse.setStartTime(_ctx.stringValue("QuerySavingsPlansInstanceResponse.Data.Items["+ i +"].StartTime"));
-			savingsPlansDetailResponse.setEndTime(_ctx.stringValue("QuerySavingsPlansInstanceResponse.Data.Items["+ i +"].EndTime"));
-			savingsPlansDetailResponse.setPayMode(_ctx.stringValue("QuerySavingsPlansInstanceResponse.Data.Items["+ i +"].PayMode"));
-			savingsPlansDetailResponse.setPrepayFee(_ctx.stringValue("QuerySavingsPlansInstanceResponse.Data.Items["+ i +"].PrepayFee"));
+			savingsPlansDetailResponse.setLastBillTotalUsage(_ctx.stringValue("QuerySavingsPlansInstanceResponse.Data.Items["+ i +"].LastBillTotalUsage"));
+			savingsPlansDetailResponse.setLastBillUtilization(_ctx.stringValue("QuerySavingsPlansInstanceResponse.Data.Items["+ i +"].LastBillUtilization"));
 			savingsPlansDetailResponse.setTotalSave(_ctx.stringValue("QuerySavingsPlansInstanceResponse.Data.Items["+ i +"].TotalSave"));
-			savingsPlansDetailResponse.setUtilization(_ctx.stringValue("QuerySavingsPlansInstanceResponse.Data.Items["+ i +"].Utilization"));
-			savingsPlansDetailResponse.setAllocationStatus(_ctx.stringValue("QuerySavingsPlansInstanceResponse.Data.Items["+ i +"].AllocationStatus"));
+			savingsPlansDetailResponse.setPoolValue(_ctx.stringValue("QuerySavingsPlansInstanceResponse.Data.Items["+ i +"].PoolValue"));
+			savingsPlansDetailResponse.setPayMode(_ctx.stringValue("QuerySavingsPlansInstanceResponse.Data.Items["+ i +"].PayMode"));
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("QuerySavingsPlansInstanceResponse.Data.Items["+ i +"].Tags.Length"); j++) {

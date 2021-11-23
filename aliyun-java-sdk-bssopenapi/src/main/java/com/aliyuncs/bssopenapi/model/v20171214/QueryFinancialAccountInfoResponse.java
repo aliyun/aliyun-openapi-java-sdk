@@ -26,11 +26,11 @@ public class QueryFinancialAccountInfoResponse extends AcsResponse {
 
 	private String code;
 
+	private String message;
+
 	private String requestId;
 
 	private Boolean success;
-
-	private String message;
 
 	private Data data;
 
@@ -40,6 +40,14 @@ public class QueryFinancialAccountInfoResponse extends AcsResponse {
 
 	public void setCode(String code) {
 		this.code = code;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public String getRequestId() {
@@ -58,14 +66,6 @@ public class QueryFinancialAccountInfoResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
 	public Data getData() {
 		return this.data;
 	}
@@ -76,24 +76,24 @@ public class QueryFinancialAccountInfoResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String userName;
+		private String memberNickName;
 
 		private Boolean isFinancialAccount;
 
-		private String accountType;
+		private String memberGroupName;
 
-		private String memberNickName;
+		private String userName;
+
+		private String accountType;
 
 		private Long memberGroupId;
 
-		private String memberGroupName;
-
-		public String getUserName() {
-			return this.userName;
+		public String getMemberNickName() {
+			return this.memberNickName;
 		}
 
-		public void setUserName(String userName) {
-			this.userName = userName;
+		public void setMemberNickName(String memberNickName) {
+			this.memberNickName = memberNickName;
 		}
 
 		public Boolean getIsFinancialAccount() {
@@ -104,6 +104,22 @@ public class QueryFinancialAccountInfoResponse extends AcsResponse {
 			this.isFinancialAccount = isFinancialAccount;
 		}
 
+		public String getMemberGroupName() {
+			return this.memberGroupName;
+		}
+
+		public void setMemberGroupName(String memberGroupName) {
+			this.memberGroupName = memberGroupName;
+		}
+
+		public String getUserName() {
+			return this.userName;
+		}
+
+		public void setUserName(String userName) {
+			this.userName = userName;
+		}
+
 		public String getAccountType() {
 			return this.accountType;
 		}
@@ -112,28 +128,12 @@ public class QueryFinancialAccountInfoResponse extends AcsResponse {
 			this.accountType = accountType;
 		}
 
-		public String getMemberNickName() {
-			return this.memberNickName;
-		}
-
-		public void setMemberNickName(String memberNickName) {
-			this.memberNickName = memberNickName;
-		}
-
 		public Long getMemberGroupId() {
 			return this.memberGroupId;
 		}
 
 		public void setMemberGroupId(Long memberGroupId) {
 			this.memberGroupId = memberGroupId;
-		}
-
-		public String getMemberGroupName() {
-			return this.memberGroupName;
-		}
-
-		public void setMemberGroupName(String memberGroupName) {
-			this.memberGroupName = memberGroupName;
 		}
 	}
 

@@ -24,9 +24,9 @@ public class ApplyInvoiceResponseUnmarshaller {
 	public static ApplyInvoiceResponse unmarshall(ApplyInvoiceResponse applyInvoiceResponse, UnmarshallerContext _ctx) {
 		
 		applyInvoiceResponse.setRequestId(_ctx.stringValue("ApplyInvoiceResponse.RequestId"));
-		applyInvoiceResponse.setSuccess(_ctx.booleanValue("ApplyInvoiceResponse.Success"));
 		applyInvoiceResponse.setCode(_ctx.stringValue("ApplyInvoiceResponse.Code"));
 		applyInvoiceResponse.setMessage(_ctx.stringValue("ApplyInvoiceResponse.Message"));
+		applyInvoiceResponse.setSuccess(_ctx.booleanValue("ApplyInvoiceResponse.Success"));
 
 		Data data = new Data();
 		data.setInvoiceApplyId(_ctx.longValue("ApplyInvoiceResponse.Data.InvoiceApplyId"));

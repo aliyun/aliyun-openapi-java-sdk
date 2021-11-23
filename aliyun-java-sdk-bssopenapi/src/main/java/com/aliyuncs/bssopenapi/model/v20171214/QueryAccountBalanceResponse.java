@@ -24,31 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryAccountBalanceResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String message;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -66,6 +50,22 @@ public class QueryAccountBalanceResponse extends AcsResponse {
 		this.message = message;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -78,13 +78,13 @@ public class QueryAccountBalanceResponse extends AcsResponse {
 
 		private String availableAmount;
 
-		private String availableCashAmount;
-
 		private String creditAmount;
 
 		private String mybankCreditAmount;
 
 		private String currency;
+
+		private String availableCashAmount;
 
 		public String getAvailableAmount() {
 			return this.availableAmount;
@@ -92,14 +92,6 @@ public class QueryAccountBalanceResponse extends AcsResponse {
 
 		public void setAvailableAmount(String availableAmount) {
 			this.availableAmount = availableAmount;
-		}
-
-		public String getAvailableCashAmount() {
-			return this.availableCashAmount;
-		}
-
-		public void setAvailableCashAmount(String availableCashAmount) {
-			this.availableCashAmount = availableCashAmount;
 		}
 
 		public String getCreditAmount() {
@@ -124,6 +116,14 @@ public class QueryAccountBalanceResponse extends AcsResponse {
 
 		public void setCurrency(String currency) {
 			this.currency = currency;
+		}
+
+		public String getAvailableCashAmount() {
+			return this.availableCashAmount;
+		}
+
+		public void setAvailableCashAmount(String availableCashAmount) {
+			this.availableCashAmount = availableCashAmount;
 		}
 	}
 

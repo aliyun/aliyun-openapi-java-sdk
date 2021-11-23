@@ -25,8 +25,8 @@ public class ChangeResellerConsumeAmountResponseUnmarshaller {
 		changeResellerConsumeAmountResponse.setRequestId(_ctx.stringValue("ChangeResellerConsumeAmountResponse.RequestId"));
 		changeResellerConsumeAmountResponse.setCode(_ctx.stringValue("ChangeResellerConsumeAmountResponse.Code"));
 		changeResellerConsumeAmountResponse.setMessage(_ctx.stringValue("ChangeResellerConsumeAmountResponse.Message"));
-		changeResellerConsumeAmountResponse.setSuccess(_ctx.booleanValue("ChangeResellerConsumeAmountResponse.Success"));
 		changeResellerConsumeAmountResponse.setData(_ctx.stringValue("ChangeResellerConsumeAmountResponse.Data"));
+		changeResellerConsumeAmountResponse.setSuccess(_ctx.booleanValue("ChangeResellerConsumeAmountResponse.Success"));
 	 
 	 	return changeResellerConsumeAmountResponse;
 	}

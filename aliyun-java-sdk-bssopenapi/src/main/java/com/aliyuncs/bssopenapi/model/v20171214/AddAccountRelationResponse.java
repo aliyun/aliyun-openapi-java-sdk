@@ -26,11 +26,11 @@ public class AddAccountRelationResponse extends AcsResponse {
 
 	private String code;
 
+	private String message;
+
 	private String requestId;
 
 	private Boolean success;
-
-	private String message;
 
 	private Data data;
 
@@ -40,6 +40,14 @@ public class AddAccountRelationResponse extends AcsResponse {
 
 	public void setCode(String code) {
 		this.code = code;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public String getRequestId() {
@@ -56,14 +64,6 @@ public class AddAccountRelationResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
 	}
 
 	public Data getData() {

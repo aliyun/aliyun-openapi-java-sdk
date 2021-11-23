@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryMonthlyInstanceConsumptionResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String message;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -67,6 +51,22 @@ public class QueryMonthlyInstanceConsumptionResponse extends AcsResponse {
 		this.message = message;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -79,11 +79,11 @@ public class QueryMonthlyInstanceConsumptionResponse extends AcsResponse {
 
 		private Integer pageNum;
 
+		private String billingCycle;
+
 		private Integer pageSize;
 
 		private Integer totalCount;
-
-		private String billingCycle;
 
 		private List<Item> items;
 
@@ -93,6 +93,14 @@ public class QueryMonthlyInstanceConsumptionResponse extends AcsResponse {
 
 		public void setPageNum(Integer pageNum) {
 			this.pageNum = pageNum;
+		}
+
+		public String getBillingCycle() {
+			return this.billingCycle;
+		}
+
+		public void setBillingCycle(String billingCycle) {
+			this.billingCycle = billingCycle;
 		}
 
 		public Integer getPageSize() {
@@ -111,14 +119,6 @@ public class QueryMonthlyInstanceConsumptionResponse extends AcsResponse {
 			this.totalCount = totalCount;
 		}
 
-		public String getBillingCycle() {
-			return this.billingCycle;
-		}
-
-		public void setBillingCycle(String billingCycle) {
-			this.billingCycle = billingCycle;
-		}
-
 		public List<Item> getItems() {
 			return this.items;
 		}
@@ -129,118 +129,46 @@ public class QueryMonthlyInstanceConsumptionResponse extends AcsResponse {
 
 		public static class Item {
 
-			private String instanceID;
-
-			private String productCode;
-
-			private String productType;
-
-			private String subscriptionType;
-
-			private String tag;
-
-			private String resourceGroup;
-
-			private String payerAccount;
-
-			private String ownerID;
-
-			private String region;
-
-			private Float pretaxGrossAmount;
+			private Float pretaxAmount;
 
 			private Float discountAmount;
 
-			private Float pretaxAmount;
+			private String payerAccount;
+
+			private String tag;
+
+			private String instanceID;
 
 			private String currency;
 
-			private Float pretaxAmountLocal;
-
-			private Float tax;
-
-			private Float afterTaxAmount;
+			private String subscriptionType;
 
 			private String paymentCurrency;
 
-			public String getInstanceID() {
-				return this.instanceID;
+			private String ownerID;
+
+			private String productType;
+
+			private String region;
+
+			private Float afterTaxAmount;
+
+			private Float pretaxGrossAmount;
+
+			private String resourceGroup;
+
+			private Float tax;
+
+			private Float pretaxAmountLocal;
+
+			private String productCode;
+
+			public Float getPretaxAmount() {
+				return this.pretaxAmount;
 			}
 
-			public void setInstanceID(String instanceID) {
-				this.instanceID = instanceID;
-			}
-
-			public String getProductCode() {
-				return this.productCode;
-			}
-
-			public void setProductCode(String productCode) {
-				this.productCode = productCode;
-			}
-
-			public String getProductType() {
-				return this.productType;
-			}
-
-			public void setProductType(String productType) {
-				this.productType = productType;
-			}
-
-			public String getSubscriptionType() {
-				return this.subscriptionType;
-			}
-
-			public void setSubscriptionType(String subscriptionType) {
-				this.subscriptionType = subscriptionType;
-			}
-
-			public String getTag() {
-				return this.tag;
-			}
-
-			public void setTag(String tag) {
-				this.tag = tag;
-			}
-
-			public String getResourceGroup() {
-				return this.resourceGroup;
-			}
-
-			public void setResourceGroup(String resourceGroup) {
-				this.resourceGroup = resourceGroup;
-			}
-
-			public String getPayerAccount() {
-				return this.payerAccount;
-			}
-
-			public void setPayerAccount(String payerAccount) {
-				this.payerAccount = payerAccount;
-			}
-
-			public String getOwnerID() {
-				return this.ownerID;
-			}
-
-			public void setOwnerID(String ownerID) {
-				this.ownerID = ownerID;
-			}
-
-			public String getRegion() {
-				return this.region;
-			}
-
-			public void setRegion(String region) {
-				this.region = region;
-			}
-
-			public Float getPretaxGrossAmount() {
-				return this.pretaxGrossAmount;
-			}
-
-			public void setPretaxGrossAmount(Float pretaxGrossAmount) {
-				this.pretaxGrossAmount = pretaxGrossAmount;
+			public void setPretaxAmount(Float pretaxAmount) {
+				this.pretaxAmount = pretaxAmount;
 			}
 
 			public Float getDiscountAmount() {
@@ -251,12 +179,28 @@ public class QueryMonthlyInstanceConsumptionResponse extends AcsResponse {
 				this.discountAmount = discountAmount;
 			}
 
-			public Float getPretaxAmount() {
-				return this.pretaxAmount;
+			public String getPayerAccount() {
+				return this.payerAccount;
 			}
 
-			public void setPretaxAmount(Float pretaxAmount) {
-				this.pretaxAmount = pretaxAmount;
+			public void setPayerAccount(String payerAccount) {
+				this.payerAccount = payerAccount;
+			}
+
+			public String getTag() {
+				return this.tag;
+			}
+
+			public void setTag(String tag) {
+				this.tag = tag;
+			}
+
+			public String getInstanceID() {
+				return this.instanceID;
+			}
+
+			public void setInstanceID(String instanceID) {
+				this.instanceID = instanceID;
 			}
 
 			public String getCurrency() {
@@ -267,20 +211,44 @@ public class QueryMonthlyInstanceConsumptionResponse extends AcsResponse {
 				this.currency = currency;
 			}
 
-			public Float getPretaxAmountLocal() {
-				return this.pretaxAmountLocal;
+			public String getSubscriptionType() {
+				return this.subscriptionType;
 			}
 
-			public void setPretaxAmountLocal(Float pretaxAmountLocal) {
-				this.pretaxAmountLocal = pretaxAmountLocal;
+			public void setSubscriptionType(String subscriptionType) {
+				this.subscriptionType = subscriptionType;
 			}
 
-			public Float getTax() {
-				return this.tax;
+			public String getPaymentCurrency() {
+				return this.paymentCurrency;
 			}
 
-			public void setTax(Float tax) {
-				this.tax = tax;
+			public void setPaymentCurrency(String paymentCurrency) {
+				this.paymentCurrency = paymentCurrency;
+			}
+
+			public String getOwnerID() {
+				return this.ownerID;
+			}
+
+			public void setOwnerID(String ownerID) {
+				this.ownerID = ownerID;
+			}
+
+			public String getProductType() {
+				return this.productType;
+			}
+
+			public void setProductType(String productType) {
+				this.productType = productType;
+			}
+
+			public String getRegion() {
+				return this.region;
+			}
+
+			public void setRegion(String region) {
+				this.region = region;
 			}
 
 			public Float getAfterTaxAmount() {
@@ -291,12 +259,44 @@ public class QueryMonthlyInstanceConsumptionResponse extends AcsResponse {
 				this.afterTaxAmount = afterTaxAmount;
 			}
 
-			public String getPaymentCurrency() {
-				return this.paymentCurrency;
+			public Float getPretaxGrossAmount() {
+				return this.pretaxGrossAmount;
 			}
 
-			public void setPaymentCurrency(String paymentCurrency) {
-				this.paymentCurrency = paymentCurrency;
+			public void setPretaxGrossAmount(Float pretaxGrossAmount) {
+				this.pretaxGrossAmount = pretaxGrossAmount;
+			}
+
+			public String getResourceGroup() {
+				return this.resourceGroup;
+			}
+
+			public void setResourceGroup(String resourceGroup) {
+				this.resourceGroup = resourceGroup;
+			}
+
+			public Float getTax() {
+				return this.tax;
+			}
+
+			public void setTax(Float tax) {
+				this.tax = tax;
+			}
+
+			public Float getPretaxAmountLocal() {
+				return this.pretaxAmountLocal;
+			}
+
+			public void setPretaxAmountLocal(Float pretaxAmountLocal) {
+				this.pretaxAmountLocal = pretaxAmountLocal;
+			}
+
+			public String getProductCode() {
+				return this.productCode;
+			}
+
+			public void setProductCode(String productCode) {
+				this.productCode = productCode;
 			}
 		}
 	}

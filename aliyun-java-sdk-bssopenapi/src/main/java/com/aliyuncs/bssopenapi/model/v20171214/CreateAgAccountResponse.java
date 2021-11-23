@@ -24,23 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateAgAccountResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String code;
 
 	private String message;
 
+	private String requestId;
+
 	private Boolean success;
 
 	private AgRelationDto agRelationDto;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -56,6 +48,14 @@ public class CreateAgAccountResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Boolean getSuccess() {
@@ -76,21 +76,13 @@ public class CreateAgAccountResponse extends AcsResponse {
 
 	public static class AgRelationDto {
 
-		private String pk;
-
 		private String type;
 
-		private String mpk;
+		private String pk;
 
 		private String ramAdminRoleName;
 
-		public String getPk() {
-			return this.pk;
-		}
-
-		public void setPk(String pk) {
-			this.pk = pk;
-		}
+		private String mpk;
 
 		public String getType() {
 			return this.type;
@@ -100,12 +92,12 @@ public class CreateAgAccountResponse extends AcsResponse {
 			this.type = type;
 		}
 
-		public String getMpk() {
-			return this.mpk;
+		public String getPk() {
+			return this.pk;
 		}
 
-		public void setMpk(String mpk) {
-			this.mpk = mpk;
+		public void setPk(String pk) {
+			this.pk = pk;
 		}
 
 		public String getRamAdminRoleName() {
@@ -114,6 +106,14 @@ public class CreateAgAccountResponse extends AcsResponse {
 
 		public void setRamAdminRoleName(String ramAdminRoleName) {
 			this.ramAdminRoleName = ramAdminRoleName;
+		}
+
+		public String getMpk() {
+			return this.mpk;
+		}
+
+		public void setMpk(String mpk) {
+			this.mpk = mpk;
 		}
 	}
 

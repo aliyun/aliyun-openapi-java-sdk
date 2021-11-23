@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryProductListResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String message;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -67,6 +51,22 @@ public class QueryProductListResponse extends AcsResponse {
 		this.message = message;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -77,21 +77,13 @@ public class QueryProductListResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Integer totalCount;
-
 		private Integer pageNum;
 
 		private Integer pageSize;
 
+		private Integer totalCount;
+
 		private List<Product> productList;
-
-		public Integer getTotalCount() {
-			return this.totalCount;
-		}
-
-		public void setTotalCount(Integer totalCount) {
-			this.totalCount = totalCount;
-		}
 
 		public Integer getPageNum() {
 			return this.pageNum;
@@ -109,6 +101,14 @@ public class QueryProductListResponse extends AcsResponse {
 			this.pageSize = pageSize;
 		}
 
+		public Integer getTotalCount() {
+			return this.totalCount;
+		}
+
+		public void setTotalCount(Integer totalCount) {
+			this.totalCount = totalCount;
+		}
+
 		public List<Product> getProductList() {
 			return this.productList;
 		}
@@ -119,21 +119,13 @@ public class QueryProductListResponse extends AcsResponse {
 
 		public static class Product {
 
-			private String productCode;
-
 			private String productName;
 
 			private String productType;
 
 			private String subscriptionType;
 
-			public String getProductCode() {
-				return this.productCode;
-			}
-
-			public void setProductCode(String productCode) {
-				this.productCode = productCode;
-			}
+			private String productCode;
 
 			public String getProductName() {
 				return this.productName;
@@ -157,6 +149,14 @@ public class QueryProductListResponse extends AcsResponse {
 
 			public void setSubscriptionType(String subscriptionType) {
 				this.subscriptionType = subscriptionType;
+			}
+
+			public String getProductCode() {
+				return this.productCode;
+			}
+
+			public void setProductCode(String productCode) {
+				this.productCode = productCode;
 			}
 		}
 	}

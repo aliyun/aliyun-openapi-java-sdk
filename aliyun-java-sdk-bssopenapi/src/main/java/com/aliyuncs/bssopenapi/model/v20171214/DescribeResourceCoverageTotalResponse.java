@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeResourceCoverageTotalResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String message;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -65,6 +49,22 @@ public class DescribeResourceCoverageTotalResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Data getData() {
@@ -99,9 +99,17 @@ public class DescribeResourceCoverageTotalResponse extends AcsResponse {
 
 		public static class Item {
 
+			private Float coveragePercentage;
+
 			private String period;
 
-			private Float coveragePercentage;
+			public Float getCoveragePercentage() {
+				return this.coveragePercentage;
+			}
+
+			public void setCoveragePercentage(Float coveragePercentage) {
+				this.coveragePercentage = coveragePercentage;
+			}
 
 			public String getPeriod() {
 				return this.period;
@@ -110,32 +118,24 @@ public class DescribeResourceCoverageTotalResponse extends AcsResponse {
 			public void setPeriod(String period) {
 				this.period = period;
 			}
-
-			public Float getCoveragePercentage() {
-				return this.coveragePercentage;
-			}
-
-			public void setCoveragePercentage(Float coveragePercentage) {
-				this.coveragePercentage = coveragePercentage;
-			}
 		}
 
 		public static class TotalCoverage {
 
-			private Float coveragePercentage;
+			private String capacityUnit;
 
 			private Float deductQuantity;
 
+			private Float coveragePercentage;
+
 			private Float totalQuantity;
 
-			private String capacityUnit;
-
-			public Float getCoveragePercentage() {
-				return this.coveragePercentage;
+			public String getCapacityUnit() {
+				return this.capacityUnit;
 			}
 
-			public void setCoveragePercentage(Float coveragePercentage) {
-				this.coveragePercentage = coveragePercentage;
+			public void setCapacityUnit(String capacityUnit) {
+				this.capacityUnit = capacityUnit;
 			}
 
 			public Float getDeductQuantity() {
@@ -146,20 +146,20 @@ public class DescribeResourceCoverageTotalResponse extends AcsResponse {
 				this.deductQuantity = deductQuantity;
 			}
 
+			public Float getCoveragePercentage() {
+				return this.coveragePercentage;
+			}
+
+			public void setCoveragePercentage(Float coveragePercentage) {
+				this.coveragePercentage = coveragePercentage;
+			}
+
 			public Float getTotalQuantity() {
 				return this.totalQuantity;
 			}
 
 			public void setTotalQuantity(Float totalQuantity) {
 				this.totalQuantity = totalQuantity;
-			}
-
-			public String getCapacityUnit() {
-				return this.capacityUnit;
-			}
-
-			public void setCapacityUnit(String capacityUnit) {
-				this.capacityUnit = capacityUnit;
 			}
 		}
 	}

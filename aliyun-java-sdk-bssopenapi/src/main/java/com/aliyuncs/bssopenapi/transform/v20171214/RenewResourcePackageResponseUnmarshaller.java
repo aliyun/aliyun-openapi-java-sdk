@@ -24,10 +24,10 @@ public class RenewResourcePackageResponseUnmarshaller {
 	public static RenewResourcePackageResponse unmarshall(RenewResourcePackageResponse renewResourcePackageResponse, UnmarshallerContext _ctx) {
 		
 		renewResourcePackageResponse.setRequestId(_ctx.stringValue("RenewResourcePackageResponse.RequestId"));
-		renewResourcePackageResponse.setOrderId(_ctx.longValue("RenewResourcePackageResponse.OrderId"));
-		renewResourcePackageResponse.setSuccess(_ctx.booleanValue("RenewResourcePackageResponse.Success"));
 		renewResourcePackageResponse.setCode(_ctx.stringValue("RenewResourcePackageResponse.Code"));
 		renewResourcePackageResponse.setMessage(_ctx.stringValue("RenewResourcePackageResponse.Message"));
+		renewResourcePackageResponse.setSuccess(_ctx.booleanValue("RenewResourcePackageResponse.Success"));
+		renewResourcePackageResponse.setOrderId(_ctx.longValue("RenewResourcePackageResponse.OrderId"));
 
 		Data data = new Data();
 		data.setOrderId(_ctx.longValue("RenewResourcePackageResponse.Data.OrderId"));

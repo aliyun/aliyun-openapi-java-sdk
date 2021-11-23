@@ -24,15 +24,15 @@ public class GetCustomerAccountInfoResponseUnmarshaller {
 	public static GetCustomerAccountInfoResponse unmarshall(GetCustomerAccountInfoResponse getCustomerAccountInfoResponse, UnmarshallerContext _ctx) {
 		
 		getCustomerAccountInfoResponse.setRequestId(_ctx.stringValue("GetCustomerAccountInfoResponse.RequestId"));
-		getCustomerAccountInfoResponse.setSuccess(_ctx.booleanValue("GetCustomerAccountInfoResponse.Success"));
 		getCustomerAccountInfoResponse.setCode(_ctx.stringValue("GetCustomerAccountInfoResponse.Code"));
 		getCustomerAccountInfoResponse.setMessage(_ctx.stringValue("GetCustomerAccountInfoResponse.Message"));
+		getCustomerAccountInfoResponse.setSuccess(_ctx.booleanValue("GetCustomerAccountInfoResponse.Success"));
 
 		Data data = new Data();
-		data.setLoginEmail(_ctx.stringValue("GetCustomerAccountInfoResponse.Data.LoginEmail"));
-		data.setAccountType(_ctx.stringValue("GetCustomerAccountInfoResponse.Data.AccountType"));
 		data.setMpk(_ctx.longValue("GetCustomerAccountInfoResponse.Data.Mpk"));
+		data.setLoginEmail(_ctx.stringValue("GetCustomerAccountInfoResponse.Data.LoginEmail"));
 		data.setHostingStatus(_ctx.stringValue("GetCustomerAccountInfoResponse.Data.HostingStatus"));
+		data.setAccountType(_ctx.stringValue("GetCustomerAccountInfoResponse.Data.AccountType"));
 		data.setCreditLimitStatus(_ctx.stringValue("GetCustomerAccountInfoResponse.Data.CreditLimitStatus"));
 		data.setIsCertified(_ctx.booleanValue("GetCustomerAccountInfoResponse.Data.IsCertified"));
 		getCustomerAccountInfoResponse.setData(data);

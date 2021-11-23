@@ -29,9 +29,9 @@ public class GetPayAsYouGoPriceResponseUnmarshaller {
 	public static GetPayAsYouGoPriceResponse unmarshall(GetPayAsYouGoPriceResponse getPayAsYouGoPriceResponse, UnmarshallerContext _ctx) {
 		
 		getPayAsYouGoPriceResponse.setRequestId(_ctx.stringValue("GetPayAsYouGoPriceResponse.RequestId"));
-		getPayAsYouGoPriceResponse.setSuccess(_ctx.booleanValue("GetPayAsYouGoPriceResponse.Success"));
 		getPayAsYouGoPriceResponse.setCode(_ctx.stringValue("GetPayAsYouGoPriceResponse.Code"));
 		getPayAsYouGoPriceResponse.setMessage(_ctx.stringValue("GetPayAsYouGoPriceResponse.Message"));
+		getPayAsYouGoPriceResponse.setSuccess(_ctx.booleanValue("GetPayAsYouGoPriceResponse.Success"));
 
 		Data data = new Data();
 		data.setCurrency(_ctx.stringValue("GetPayAsYouGoPriceResponse.Data.Currency"));
@@ -39,11 +39,11 @@ public class GetPayAsYouGoPriceResponseUnmarshaller {
 		List<ModuleDetail> moduleDetails = new ArrayList<ModuleDetail>();
 		for (int i = 0; i < _ctx.lengthValue("GetPayAsYouGoPriceResponse.Data.ModuleDetails.Length"); i++) {
 			ModuleDetail moduleDetail = new ModuleDetail();
-			moduleDetail.setModuleCode(_ctx.stringValue("GetPayAsYouGoPriceResponse.Data.ModuleDetails["+ i +"].ModuleCode"));
-			moduleDetail.setOriginalCost(_ctx.floatValue("GetPayAsYouGoPriceResponse.Data.ModuleDetails["+ i +"].OriginalCost"));
-			moduleDetail.setInvoiceDiscount(_ctx.floatValue("GetPayAsYouGoPriceResponse.Data.ModuleDetails["+ i +"].InvoiceDiscount"));
 			moduleDetail.setCostAfterDiscount(_ctx.floatValue("GetPayAsYouGoPriceResponse.Data.ModuleDetails["+ i +"].CostAfterDiscount"));
+			moduleDetail.setInvoiceDiscount(_ctx.floatValue("GetPayAsYouGoPriceResponse.Data.ModuleDetails["+ i +"].InvoiceDiscount"));
 			moduleDetail.setUnitPrice(_ctx.floatValue("GetPayAsYouGoPriceResponse.Data.ModuleDetails["+ i +"].UnitPrice"));
+			moduleDetail.setOriginalCost(_ctx.floatValue("GetPayAsYouGoPriceResponse.Data.ModuleDetails["+ i +"].OriginalCost"));
+			moduleDetail.setModuleCode(_ctx.stringValue("GetPayAsYouGoPriceResponse.Data.ModuleDetails["+ i +"].ModuleCode"));
 
 			moduleDetails.add(moduleDetail);
 		}
@@ -52,9 +52,9 @@ public class GetPayAsYouGoPriceResponseUnmarshaller {
 		List<PromotionDetail> promotionDetails = new ArrayList<PromotionDetail>();
 		for (int i = 0; i < _ctx.lengthValue("GetPayAsYouGoPriceResponse.Data.PromotionDetails.Length"); i++) {
 			PromotionDetail promotionDetail = new PromotionDetail();
-			promotionDetail.setPromotionName(_ctx.stringValue("GetPayAsYouGoPriceResponse.Data.PromotionDetails["+ i +"].PromotionName"));
 			promotionDetail.setPromotionDesc(_ctx.stringValue("GetPayAsYouGoPriceResponse.Data.PromotionDetails["+ i +"].PromotionDesc"));
 			promotionDetail.setPromotionId(_ctx.longValue("GetPayAsYouGoPriceResponse.Data.PromotionDetails["+ i +"].PromotionId"));
+			promotionDetail.setPromotionName(_ctx.stringValue("GetPayAsYouGoPriceResponse.Data.PromotionDetails["+ i +"].PromotionName"));
 
 			promotionDetails.add(promotionDetail);
 		}

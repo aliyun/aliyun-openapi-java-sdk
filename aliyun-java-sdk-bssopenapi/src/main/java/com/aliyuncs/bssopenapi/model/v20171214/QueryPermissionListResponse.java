@@ -27,11 +27,11 @@ public class QueryPermissionListResponse extends AcsResponse {
 
 	private String code;
 
+	private String message;
+
 	private String requestId;
 
 	private Boolean success;
-
-	private String message;
 
 	private Data data;
 
@@ -41,6 +41,14 @@ public class QueryPermissionListResponse extends AcsResponse {
 
 	public void setCode(String code) {
 		this.code = code;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public String getRequestId() {
@@ -59,14 +67,6 @@ public class QueryPermissionListResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
 	public Data getData() {
 		return this.data;
 	}
@@ -77,21 +77,53 @@ public class QueryPermissionListResponse extends AcsResponse {
 
 	public static class Data {
 
+		private String endTime;
+
+		private String relationType;
+
+		private String startTime;
+
+		private String state;
+
 		private Long masterId;
 
 		private Long memberId;
 
-		private String relationType;
-
-		private String state;
-
 		private String setupTime;
 
-		private String startTime;
-
-		private String endTime;
-
 		private List<PermissionListItem> permissionList;
+
+		public String getEndTime() {
+			return this.endTime;
+		}
+
+		public void setEndTime(String endTime) {
+			this.endTime = endTime;
+		}
+
+		public String getRelationType() {
+			return this.relationType;
+		}
+
+		public void setRelationType(String relationType) {
+			this.relationType = relationType;
+		}
+
+		public String getStartTime() {
+			return this.startTime;
+		}
+
+		public void setStartTime(String startTime) {
+			this.startTime = startTime;
+		}
+
+		public String getState() {
+			return this.state;
+		}
+
+		public void setState(String state) {
+			this.state = state;
+		}
 
 		public Long getMasterId() {
 			return this.masterId;
@@ -109,44 +141,12 @@ public class QueryPermissionListResponse extends AcsResponse {
 			this.memberId = memberId;
 		}
 
-		public String getRelationType() {
-			return this.relationType;
-		}
-
-		public void setRelationType(String relationType) {
-			this.relationType = relationType;
-		}
-
-		public String getState() {
-			return this.state;
-		}
-
-		public void setState(String state) {
-			this.state = state;
-		}
-
 		public String getSetupTime() {
 			return this.setupTime;
 		}
 
 		public void setSetupTime(String setupTime) {
 			this.setupTime = setupTime;
-		}
-
-		public String getStartTime() {
-			return this.startTime;
-		}
-
-		public void setStartTime(String startTime) {
-			this.startTime = startTime;
-		}
-
-		public String getEndTime() {
-			return this.endTime;
-		}
-
-		public void setEndTime(String endTime) {
-			this.endTime = endTime;
 		}
 
 		public List<PermissionListItem> getPermissionList() {
@@ -159,13 +159,29 @@ public class QueryPermissionListResponse extends AcsResponse {
 
 		public static class PermissionListItem {
 
+			private String endTime;
+
+			private String startTime;
+
 			private String permissionCode;
 
 			private String permissionName;
 
-			private String startTime;
+			public String getEndTime() {
+				return this.endTime;
+			}
 
-			private String endTime;
+			public void setEndTime(String endTime) {
+				this.endTime = endTime;
+			}
+
+			public String getStartTime() {
+				return this.startTime;
+			}
+
+			public void setStartTime(String startTime) {
+				this.startTime = startTime;
+			}
 
 			public String getPermissionCode() {
 				return this.permissionCode;
@@ -181,22 +197,6 @@ public class QueryPermissionListResponse extends AcsResponse {
 
 			public void setPermissionName(String permissionName) {
 				this.permissionName = permissionName;
-			}
-
-			public String getStartTime() {
-				return this.startTime;
-			}
-
-			public void setStartTime(String startTime) {
-				this.startTime = startTime;
-			}
-
-			public String getEndTime() {
-				return this.endTime;
-			}
-
-			public void setEndTime(String endTime) {
-				this.endTime = endTime;
 			}
 		}
 	}

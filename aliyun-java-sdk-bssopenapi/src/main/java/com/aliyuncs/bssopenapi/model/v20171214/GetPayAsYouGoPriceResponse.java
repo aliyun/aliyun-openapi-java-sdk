@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetPayAsYouGoPriceResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String message;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -65,6 +49,22 @@ public class GetPayAsYouGoPriceResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Data getData() {
@@ -109,30 +109,22 @@ public class GetPayAsYouGoPriceResponse extends AcsResponse {
 
 		public static class ModuleDetail {
 
-			private String moduleCode;
-
-			private Float originalCost;
+			private Float costAfterDiscount;
 
 			private Float invoiceDiscount;
 
-			private Float costAfterDiscount;
-
 			private Float unitPrice;
 
-			public String getModuleCode() {
-				return this.moduleCode;
+			private Float originalCost;
+
+			private String moduleCode;
+
+			public Float getCostAfterDiscount() {
+				return this.costAfterDiscount;
 			}
 
-			public void setModuleCode(String moduleCode) {
-				this.moduleCode = moduleCode;
-			}
-
-			public Float getOriginalCost() {
-				return this.originalCost;
-			}
-
-			public void setOriginalCost(Float originalCost) {
-				this.originalCost = originalCost;
+			public void setCostAfterDiscount(Float costAfterDiscount) {
+				this.costAfterDiscount = costAfterDiscount;
 			}
 
 			public Float getInvoiceDiscount() {
@@ -143,14 +135,6 @@ public class GetPayAsYouGoPriceResponse extends AcsResponse {
 				this.invoiceDiscount = invoiceDiscount;
 			}
 
-			public Float getCostAfterDiscount() {
-				return this.costAfterDiscount;
-			}
-
-			public void setCostAfterDiscount(Float costAfterDiscount) {
-				this.costAfterDiscount = costAfterDiscount;
-			}
-
 			public Float getUnitPrice() {
 				return this.unitPrice;
 			}
@@ -158,23 +142,31 @@ public class GetPayAsYouGoPriceResponse extends AcsResponse {
 			public void setUnitPrice(Float unitPrice) {
 				this.unitPrice = unitPrice;
 			}
+
+			public Float getOriginalCost() {
+				return this.originalCost;
+			}
+
+			public void setOriginalCost(Float originalCost) {
+				this.originalCost = originalCost;
+			}
+
+			public String getModuleCode() {
+				return this.moduleCode;
+			}
+
+			public void setModuleCode(String moduleCode) {
+				this.moduleCode = moduleCode;
+			}
 		}
 
 		public static class PromotionDetail {
-
-			private String promotionName;
 
 			private String promotionDesc;
 
 			private Long promotionId;
 
-			public String getPromotionName() {
-				return this.promotionName;
-			}
-
-			public void setPromotionName(String promotionName) {
-				this.promotionName = promotionName;
-			}
+			private String promotionName;
 
 			public String getPromotionDesc() {
 				return this.promotionDesc;
@@ -190,6 +182,14 @@ public class GetPayAsYouGoPriceResponse extends AcsResponse {
 
 			public void setPromotionId(Long promotionId) {
 				this.promotionId = promotionId;
+			}
+
+			public String getPromotionName() {
+				return this.promotionName;
+			}
+
+			public void setPromotionName(String promotionName) {
+				this.promotionName = promotionName;
 			}
 		}
 	}

@@ -24,10 +24,10 @@ public class CreateResourcePackageResponseUnmarshaller {
 	public static CreateResourcePackageResponse unmarshall(CreateResourcePackageResponse createResourcePackageResponse, UnmarshallerContext _ctx) {
 		
 		createResourcePackageResponse.setRequestId(_ctx.stringValue("CreateResourcePackageResponse.RequestId"));
-		createResourcePackageResponse.setOrderId(_ctx.longValue("CreateResourcePackageResponse.OrderId"));
-		createResourcePackageResponse.setSuccess(_ctx.booleanValue("CreateResourcePackageResponse.Success"));
 		createResourcePackageResponse.setCode(_ctx.stringValue("CreateResourcePackageResponse.Code"));
 		createResourcePackageResponse.setMessage(_ctx.stringValue("CreateResourcePackageResponse.Message"));
+		createResourcePackageResponse.setSuccess(_ctx.booleanValue("CreateResourcePackageResponse.Success"));
+		createResourcePackageResponse.setOrderId(_ctx.longValue("CreateResourcePackageResponse.OrderId"));
 
 		Data data = new Data();
 		data.setOrderId(_ctx.longValue("CreateResourcePackageResponse.Data.OrderId"));

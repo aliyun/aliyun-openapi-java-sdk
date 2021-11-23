@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryAvailableInstancesResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String message;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -65,6 +49,22 @@ public class QueryAvailableInstancesResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Data getData() {
@@ -119,136 +119,48 @@ public class QueryAvailableInstancesResponse extends AcsResponse {
 
 		public static class Instance {
 
-			private Long ownerId;
-
-			private Long sellerId;
-
-			private String productCode;
-
-			private String productType;
-
-			private String subscriptionType;
-
-			private String instanceID;
-
-			private String region;
-
-			private String createTime;
-
-			private String endTime;
-
-			private String stopTime;
-
-			private String releaseTime;
-
-			private String expectedReleaseTime;
+			private String subStatus;
 
 			private String status;
 
-			private String subStatus;
+			private String expectedReleaseTime;
 
 			private String renewStatus;
 
-			private Integer renewalDuration;
+			private String createTime;
 
-			private String renewalDurationUnit;
+			private Long sellerId;
+
+			private String instanceID;
 
 			private String seller;
 
-			public Long getOwnerId() {
-				return this.ownerId;
+			private String stopTime;
+
+			private String renewalDurationUnit;
+
+			private String subscriptionType;
+
+			private Long ownerId;
+
+			private String endTime;
+
+			private String productType;
+
+			private String region;
+
+			private String releaseTime;
+
+			private Integer renewalDuration;
+
+			private String productCode;
+
+			public String getSubStatus() {
+				return this.subStatus;
 			}
 
-			public void setOwnerId(Long ownerId) {
-				this.ownerId = ownerId;
-			}
-
-			public Long getSellerId() {
-				return this.sellerId;
-			}
-
-			public void setSellerId(Long sellerId) {
-				this.sellerId = sellerId;
-			}
-
-			public String getProductCode() {
-				return this.productCode;
-			}
-
-			public void setProductCode(String productCode) {
-				this.productCode = productCode;
-			}
-
-			public String getProductType() {
-				return this.productType;
-			}
-
-			public void setProductType(String productType) {
-				this.productType = productType;
-			}
-
-			public String getSubscriptionType() {
-				return this.subscriptionType;
-			}
-
-			public void setSubscriptionType(String subscriptionType) {
-				this.subscriptionType = subscriptionType;
-			}
-
-			public String getInstanceID() {
-				return this.instanceID;
-			}
-
-			public void setInstanceID(String instanceID) {
-				this.instanceID = instanceID;
-			}
-
-			public String getRegion() {
-				return this.region;
-			}
-
-			public void setRegion(String region) {
-				this.region = region;
-			}
-
-			public String getCreateTime() {
-				return this.createTime;
-			}
-
-			public void setCreateTime(String createTime) {
-				this.createTime = createTime;
-			}
-
-			public String getEndTime() {
-				return this.endTime;
-			}
-
-			public void setEndTime(String endTime) {
-				this.endTime = endTime;
-			}
-
-			public String getStopTime() {
-				return this.stopTime;
-			}
-
-			public void setStopTime(String stopTime) {
-				this.stopTime = stopTime;
-			}
-
-			public String getReleaseTime() {
-				return this.releaseTime;
-			}
-
-			public void setReleaseTime(String releaseTime) {
-				this.releaseTime = releaseTime;
-			}
-
-			public String getExpectedReleaseTime() {
-				return this.expectedReleaseTime;
-			}
-
-			public void setExpectedReleaseTime(String expectedReleaseTime) {
-				this.expectedReleaseTime = expectedReleaseTime;
+			public void setSubStatus(String subStatus) {
+				this.subStatus = subStatus;
 			}
 
 			public String getStatus() {
@@ -259,12 +171,12 @@ public class QueryAvailableInstancesResponse extends AcsResponse {
 				this.status = status;
 			}
 
-			public String getSubStatus() {
-				return this.subStatus;
+			public String getExpectedReleaseTime() {
+				return this.expectedReleaseTime;
 			}
 
-			public void setSubStatus(String subStatus) {
-				this.subStatus = subStatus;
+			public void setExpectedReleaseTime(String expectedReleaseTime) {
+				this.expectedReleaseTime = expectedReleaseTime;
 			}
 
 			public String getRenewStatus() {
@@ -275,12 +187,44 @@ public class QueryAvailableInstancesResponse extends AcsResponse {
 				this.renewStatus = renewStatus;
 			}
 
-			public Integer getRenewalDuration() {
-				return this.renewalDuration;
+			public String getCreateTime() {
+				return this.createTime;
 			}
 
-			public void setRenewalDuration(Integer renewalDuration) {
-				this.renewalDuration = renewalDuration;
+			public void setCreateTime(String createTime) {
+				this.createTime = createTime;
+			}
+
+			public Long getSellerId() {
+				return this.sellerId;
+			}
+
+			public void setSellerId(Long sellerId) {
+				this.sellerId = sellerId;
+			}
+
+			public String getInstanceID() {
+				return this.instanceID;
+			}
+
+			public void setInstanceID(String instanceID) {
+				this.instanceID = instanceID;
+			}
+
+			public String getSeller() {
+				return this.seller;
+			}
+
+			public void setSeller(String seller) {
+				this.seller = seller;
+			}
+
+			public String getStopTime() {
+				return this.stopTime;
+			}
+
+			public void setStopTime(String stopTime) {
+				this.stopTime = stopTime;
 			}
 
 			public String getRenewalDurationUnit() {
@@ -291,12 +235,68 @@ public class QueryAvailableInstancesResponse extends AcsResponse {
 				this.renewalDurationUnit = renewalDurationUnit;
 			}
 
-			public String getSeller() {
-				return this.seller;
+			public String getSubscriptionType() {
+				return this.subscriptionType;
 			}
 
-			public void setSeller(String seller) {
-				this.seller = seller;
+			public void setSubscriptionType(String subscriptionType) {
+				this.subscriptionType = subscriptionType;
+			}
+
+			public Long getOwnerId() {
+				return this.ownerId;
+			}
+
+			public void setOwnerId(Long ownerId) {
+				this.ownerId = ownerId;
+			}
+
+			public String getEndTime() {
+				return this.endTime;
+			}
+
+			public void setEndTime(String endTime) {
+				this.endTime = endTime;
+			}
+
+			public String getProductType() {
+				return this.productType;
+			}
+
+			public void setProductType(String productType) {
+				this.productType = productType;
+			}
+
+			public String getRegion() {
+				return this.region;
+			}
+
+			public void setRegion(String region) {
+				this.region = region;
+			}
+
+			public String getReleaseTime() {
+				return this.releaseTime;
+			}
+
+			public void setReleaseTime(String releaseTime) {
+				this.releaseTime = releaseTime;
+			}
+
+			public Integer getRenewalDuration() {
+				return this.renewalDuration;
+			}
+
+			public void setRenewalDuration(Integer renewalDuration) {
+				this.renewalDuration = renewalDuration;
+			}
+
+			public String getProductCode() {
+				return this.productCode;
+			}
+
+			public void setProductCode(String productCode) {
+				this.productCode = productCode;
 			}
 		}
 	}

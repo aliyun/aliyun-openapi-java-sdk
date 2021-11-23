@@ -28,41 +28,41 @@ public class DescribeResourceUsageDetailResponseUnmarshaller {
 	public static DescribeResourceUsageDetailResponse unmarshall(DescribeResourceUsageDetailResponse describeResourceUsageDetailResponse, UnmarshallerContext _ctx) {
 		
 		describeResourceUsageDetailResponse.setRequestId(_ctx.stringValue("DescribeResourceUsageDetailResponse.RequestId"));
-		describeResourceUsageDetailResponse.setSuccess(_ctx.booleanValue("DescribeResourceUsageDetailResponse.Success"));
 		describeResourceUsageDetailResponse.setCode(_ctx.stringValue("DescribeResourceUsageDetailResponse.Code"));
 		describeResourceUsageDetailResponse.setMessage(_ctx.stringValue("DescribeResourceUsageDetailResponse.Message"));
+		describeResourceUsageDetailResponse.setSuccess(_ctx.booleanValue("DescribeResourceUsageDetailResponse.Success"));
 
 		Data data = new Data();
-		data.setTotalCount(_ctx.integerValue("DescribeResourceUsageDetailResponse.Data.TotalCount"));
 		data.setNextToken(_ctx.stringValue("DescribeResourceUsageDetailResponse.Data.NextToken"));
+		data.setTotalCount(_ctx.integerValue("DescribeResourceUsageDetailResponse.Data.TotalCount"));
 		data.setMaxResults(_ctx.integerValue("DescribeResourceUsageDetailResponse.Data.MaxResults"));
 
 		List<Item> items = new ArrayList<Item>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeResourceUsageDetailResponse.Data.Items.Length"); i++) {
 			Item item = new Item();
-			item.setUserId(_ctx.stringValue("DescribeResourceUsageDetailResponse.Data.Items["+ i +"].UserId"));
-			item.setUserName(_ctx.stringValue("DescribeResourceUsageDetailResponse.Data.Items["+ i +"].UserName"));
-			item.setResourceInstanceId(_ctx.stringValue("DescribeResourceUsageDetailResponse.Data.Items["+ i +"].ResourceInstanceId"));
-			item.setStartTime(_ctx.stringValue("DescribeResourceUsageDetailResponse.Data.Items["+ i +"].StartTime"));
-			item.setEndTime(_ctx.stringValue("DescribeResourceUsageDetailResponse.Data.Items["+ i +"].EndTime"));
 			item.setStatus(_ctx.stringValue("DescribeResourceUsageDetailResponse.Data.Items["+ i +"].Status"));
-			item.setStatusName(_ctx.stringValue("DescribeResourceUsageDetailResponse.Data.Items["+ i +"].StatusName"));
-			item.setRegion(_ctx.stringValue("DescribeResourceUsageDetailResponse.Data.Items["+ i +"].Region"));
+			item.setUsagePercentage(_ctx.floatValue("DescribeResourceUsageDetailResponse.Data.Items["+ i +"].UsagePercentage"));
+			item.setResourceInstanceId(_ctx.stringValue("DescribeResourceUsageDetailResponse.Data.Items["+ i +"].ResourceInstanceId"));
+			item.setTotalQuantity(_ctx.floatValue("DescribeResourceUsageDetailResponse.Data.Items["+ i +"].TotalQuantity"));
+			item.setReservationCost(_ctx.stringValue("DescribeResourceUsageDetailResponse.Data.Items["+ i +"].ReservationCost"));
 			item.setRegionNo(_ctx.stringValue("DescribeResourceUsageDetailResponse.Data.Items["+ i +"].RegionNo"));
-			item.setZone(_ctx.stringValue("DescribeResourceUsageDetailResponse.Data.Items["+ i +"].Zone"));
+			item.setUserId(_ctx.stringValue("DescribeResourceUsageDetailResponse.Data.Items["+ i +"].UserId"));
+			item.setStatusName(_ctx.stringValue("DescribeResourceUsageDetailResponse.Data.Items["+ i +"].StatusName"));
+			item.setCapacityUnit(_ctx.stringValue("DescribeResourceUsageDetailResponse.Data.Items["+ i +"].CapacityUnit"));
+			item.setPotentialSavedCost(_ctx.stringValue("DescribeResourceUsageDetailResponse.Data.Items["+ i +"].PotentialSavedCost"));
+			item.setCurrency(_ctx.stringValue("DescribeResourceUsageDetailResponse.Data.Items["+ i +"].Currency"));
 			item.setZoneName(_ctx.stringValue("DescribeResourceUsageDetailResponse.Data.Items["+ i +"].ZoneName"));
 			item.setInstanceSpec(_ctx.stringValue("DescribeResourceUsageDetailResponse.Data.Items["+ i +"].InstanceSpec"));
-			item.setQuantity(_ctx.longValue("DescribeResourceUsageDetailResponse.Data.Items["+ i +"].Quantity"));
-			item.setImageType(_ctx.stringValue("DescribeResourceUsageDetailResponse.Data.Items["+ i +"].ImageType"));
-			item.setUsagePercentage(_ctx.floatValue("DescribeResourceUsageDetailResponse.Data.Items["+ i +"].UsagePercentage"));
-			item.setDeductQuantity(_ctx.floatValue("DescribeResourceUsageDetailResponse.Data.Items["+ i +"].DeductQuantity"));
-			item.setTotalQuantity(_ctx.floatValue("DescribeResourceUsageDetailResponse.Data.Items["+ i +"].TotalQuantity"));
-			item.setCapacityUnit(_ctx.stringValue("DescribeResourceUsageDetailResponse.Data.Items["+ i +"].CapacityUnit"));
-			item.setCurrency(_ctx.stringValue("DescribeResourceUsageDetailResponse.Data.Items["+ i +"].Currency"));
-			item.setReservationCost(_ctx.stringValue("DescribeResourceUsageDetailResponse.Data.Items["+ i +"].ReservationCost"));
+			item.setEndTime(_ctx.stringValue("DescribeResourceUsageDetailResponse.Data.Items["+ i +"].EndTime"));
 			item.setPostpaidCost(_ctx.stringValue("DescribeResourceUsageDetailResponse.Data.Items["+ i +"].PostpaidCost"));
+			item.setImageType(_ctx.stringValue("DescribeResourceUsageDetailResponse.Data.Items["+ i +"].ImageType"));
+			item.setStartTime(_ctx.stringValue("DescribeResourceUsageDetailResponse.Data.Items["+ i +"].StartTime"));
+			item.setRegion(_ctx.stringValue("DescribeResourceUsageDetailResponse.Data.Items["+ i +"].Region"));
+			item.setDeductQuantity(_ctx.floatValue("DescribeResourceUsageDetailResponse.Data.Items["+ i +"].DeductQuantity"));
 			item.setSavedCost(_ctx.stringValue("DescribeResourceUsageDetailResponse.Data.Items["+ i +"].SavedCost"));
-			item.setPotentialSavedCost(_ctx.stringValue("DescribeResourceUsageDetailResponse.Data.Items["+ i +"].PotentialSavedCost"));
+			item.setZone(_ctx.stringValue("DescribeResourceUsageDetailResponse.Data.Items["+ i +"].Zone"));
+			item.setUserName(_ctx.stringValue("DescribeResourceUsageDetailResponse.Data.Items["+ i +"].UserName"));
+			item.setQuantity(_ctx.longValue("DescribeResourceUsageDetailResponse.Data.Items["+ i +"].Quantity"));
 
 			items.add(item);
 		}

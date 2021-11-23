@@ -25,8 +25,8 @@ public class ConfirmRelationResponseUnmarshaller {
 		
 		confirmRelationResponse.setRequestId(_ctx.stringValue("ConfirmRelationResponse.RequestId"));
 		confirmRelationResponse.setCode(_ctx.stringValue("ConfirmRelationResponse.Code"));
-		confirmRelationResponse.setSuccess(_ctx.booleanValue("ConfirmRelationResponse.Success"));
 		confirmRelationResponse.setMessage(_ctx.stringValue("ConfirmRelationResponse.Message"));
+		confirmRelationResponse.setSuccess(_ctx.booleanValue("ConfirmRelationResponse.Success"));
 
 		Data data = new Data();
 		data.setHostId(_ctx.stringValue("ConfirmRelationResponse.Data.HostId"));

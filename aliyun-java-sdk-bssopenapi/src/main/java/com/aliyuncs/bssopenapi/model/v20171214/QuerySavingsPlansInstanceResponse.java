@@ -27,11 +27,11 @@ public class QuerySavingsPlansInstanceResponse extends AcsResponse {
 
 	private String code;
 
+	private String message;
+
 	private String requestId;
 
 	private Boolean success;
-
-	private String message;
 
 	private Data data;
 
@@ -41,6 +41,14 @@ public class QuerySavingsPlansInstanceResponse extends AcsResponse {
 
 	public void setCode(String code) {
 		this.code = code;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public String getRequestId() {
@@ -57,14 +65,6 @@ public class QuerySavingsPlansInstanceResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
 	}
 
 	public Data getData() {
@@ -119,35 +119,93 @@ public class QuerySavingsPlansInstanceResponse extends AcsResponse {
 
 		public static class SavingsPlansDetailResponse {
 
-			private String instanceId;
+			private String status;
+
+			private String cycle;
+
+			private Long startTimestamp;
 
 			private String savingsType;
+
+			private String utilization;
+
+			private String prepayFee;
+
+			private String instanceId;
+
+			private String currency;
+
+			private Long endTimestamp;
+
+			private String endTime;
+
+			private String startTime;
+
+			private String allocationStatus;
 
 			private String instanceFamily;
 
 			private String region;
 
-			private String poolValue;
+			private String lastBillTotalUsage;
 
-			private String currency;
-
-			private String status;
-
-			private String startTime;
-
-			private String endTime;
-
-			private String payMode;
-
-			private String prepayFee;
+			private String lastBillUtilization;
 
 			private String totalSave;
 
-			private String utilization;
+			private String poolValue;
 
-			private String allocationStatus;
+			private String payMode;
 
 			private List<Tag> tags;
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
+			}
+
+			public String getCycle() {
+				return this.cycle;
+			}
+
+			public void setCycle(String cycle) {
+				this.cycle = cycle;
+			}
+
+			public Long getStartTimestamp() {
+				return this.startTimestamp;
+			}
+
+			public void setStartTimestamp(Long startTimestamp) {
+				this.startTimestamp = startTimestamp;
+			}
+
+			public String getSavingsType() {
+				return this.savingsType;
+			}
+
+			public void setSavingsType(String savingsType) {
+				this.savingsType = savingsType;
+			}
+
+			public String getUtilization() {
+				return this.utilization;
+			}
+
+			public void setUtilization(String utilization) {
+				this.utilization = utilization;
+			}
+
+			public String getPrepayFee() {
+				return this.prepayFee;
+			}
+
+			public void setPrepayFee(String prepayFee) {
+				this.prepayFee = prepayFee;
+			}
 
 			public String getInstanceId() {
 				return this.instanceId;
@@ -157,12 +215,44 @@ public class QuerySavingsPlansInstanceResponse extends AcsResponse {
 				this.instanceId = instanceId;
 			}
 
-			public String getSavingsType() {
-				return this.savingsType;
+			public String getCurrency() {
+				return this.currency;
 			}
 
-			public void setSavingsType(String savingsType) {
-				this.savingsType = savingsType;
+			public void setCurrency(String currency) {
+				this.currency = currency;
+			}
+
+			public Long getEndTimestamp() {
+				return this.endTimestamp;
+			}
+
+			public void setEndTimestamp(Long endTimestamp) {
+				this.endTimestamp = endTimestamp;
+			}
+
+			public String getEndTime() {
+				return this.endTime;
+			}
+
+			public void setEndTime(String endTime) {
+				this.endTime = endTime;
+			}
+
+			public String getStartTime() {
+				return this.startTime;
+			}
+
+			public void setStartTime(String startTime) {
+				this.startTime = startTime;
+			}
+
+			public String getAllocationStatus() {
+				return this.allocationStatus;
+			}
+
+			public void setAllocationStatus(String allocationStatus) {
+				this.allocationStatus = allocationStatus;
 			}
 
 			public String getInstanceFamily() {
@@ -181,60 +271,20 @@ public class QuerySavingsPlansInstanceResponse extends AcsResponse {
 				this.region = region;
 			}
 
-			public String getPoolValue() {
-				return this.poolValue;
+			public String getLastBillTotalUsage() {
+				return this.lastBillTotalUsage;
 			}
 
-			public void setPoolValue(String poolValue) {
-				this.poolValue = poolValue;
+			public void setLastBillTotalUsage(String lastBillTotalUsage) {
+				this.lastBillTotalUsage = lastBillTotalUsage;
 			}
 
-			public String getCurrency() {
-				return this.currency;
+			public String getLastBillUtilization() {
+				return this.lastBillUtilization;
 			}
 
-			public void setCurrency(String currency) {
-				this.currency = currency;
-			}
-
-			public String getStatus() {
-				return this.status;
-			}
-
-			public void setStatus(String status) {
-				this.status = status;
-			}
-
-			public String getStartTime() {
-				return this.startTime;
-			}
-
-			public void setStartTime(String startTime) {
-				this.startTime = startTime;
-			}
-
-			public String getEndTime() {
-				return this.endTime;
-			}
-
-			public void setEndTime(String endTime) {
-				this.endTime = endTime;
-			}
-
-			public String getPayMode() {
-				return this.payMode;
-			}
-
-			public void setPayMode(String payMode) {
-				this.payMode = payMode;
-			}
-
-			public String getPrepayFee() {
-				return this.prepayFee;
-			}
-
-			public void setPrepayFee(String prepayFee) {
-				this.prepayFee = prepayFee;
+			public void setLastBillUtilization(String lastBillUtilization) {
+				this.lastBillUtilization = lastBillUtilization;
 			}
 
 			public String getTotalSave() {
@@ -245,20 +295,20 @@ public class QuerySavingsPlansInstanceResponse extends AcsResponse {
 				this.totalSave = totalSave;
 			}
 
-			public String getUtilization() {
-				return this.utilization;
+			public String getPoolValue() {
+				return this.poolValue;
 			}
 
-			public void setUtilization(String utilization) {
-				this.utilization = utilization;
+			public void setPoolValue(String poolValue) {
+				this.poolValue = poolValue;
 			}
 
-			public String getAllocationStatus() {
-				return this.allocationStatus;
+			public String getPayMode() {
+				return this.payMode;
 			}
 
-			public void setAllocationStatus(String allocationStatus) {
-				this.allocationStatus = allocationStatus;
+			public void setPayMode(String payMode) {
+				this.payMode = payMode;
 			}
 
 			public List<Tag> getTags() {

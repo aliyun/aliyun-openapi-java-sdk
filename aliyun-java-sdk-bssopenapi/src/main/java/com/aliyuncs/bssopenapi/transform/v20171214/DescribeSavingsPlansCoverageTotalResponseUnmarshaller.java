@@ -29,9 +29,9 @@ public class DescribeSavingsPlansCoverageTotalResponseUnmarshaller {
 	public static DescribeSavingsPlansCoverageTotalResponse unmarshall(DescribeSavingsPlansCoverageTotalResponse describeSavingsPlansCoverageTotalResponse, UnmarshallerContext _ctx) {
 		
 		describeSavingsPlansCoverageTotalResponse.setRequestId(_ctx.stringValue("DescribeSavingsPlansCoverageTotalResponse.RequestId"));
-		describeSavingsPlansCoverageTotalResponse.setSuccess(_ctx.booleanValue("DescribeSavingsPlansCoverageTotalResponse.Success"));
 		describeSavingsPlansCoverageTotalResponse.setCode(_ctx.stringValue("DescribeSavingsPlansCoverageTotalResponse.Code"));
 		describeSavingsPlansCoverageTotalResponse.setMessage(_ctx.stringValue("DescribeSavingsPlansCoverageTotalResponse.Message"));
+		describeSavingsPlansCoverageTotalResponse.setSuccess(_ctx.booleanValue("DescribeSavingsPlansCoverageTotalResponse.Success"));
 
 		Data data = new Data();
 
@@ -43,8 +43,8 @@ public class DescribeSavingsPlansCoverageTotalResponseUnmarshaller {
 		List<Item> periodCoverage = new ArrayList<Item>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSavingsPlansCoverageTotalResponse.Data.PeriodCoverage.Length"); i++) {
 			Item item = new Item();
-			item.setPeriod(_ctx.stringValue("DescribeSavingsPlansCoverageTotalResponse.Data.PeriodCoverage["+ i +"].Period"));
 			item.setPercentage(_ctx.floatValue("DescribeSavingsPlansCoverageTotalResponse.Data.PeriodCoverage["+ i +"].Percentage"));
+			item.setPeriod(_ctx.stringValue("DescribeSavingsPlansCoverageTotalResponse.Data.PeriodCoverage["+ i +"].Period"));
 
 			periodCoverage.add(item);
 		}

@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeSavingsPlansCoverageTotalResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String message;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -65,6 +49,22 @@ public class DescribeSavingsPlansCoverageTotalResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Data getData() {
@@ -99,17 +99,9 @@ public class DescribeSavingsPlansCoverageTotalResponse extends AcsResponse {
 
 		public static class Item {
 
-			private String period;
-
 			private Float percentage;
 
-			public String getPeriod() {
-				return this.period;
-			}
-
-			public void setPeriod(String period) {
-				this.period = period;
-			}
+			private String period;
 
 			public Float getPercentage() {
 				return this.percentage;
@@ -117,6 +109,14 @@ public class DescribeSavingsPlansCoverageTotalResponse extends AcsResponse {
 
 			public void setPercentage(Float percentage) {
 				this.percentage = percentage;
+			}
+
+			public String getPeriod() {
+				return this.period;
+			}
+
+			public void setPeriod(String period) {
+				this.period = period;
 			}
 		}
 

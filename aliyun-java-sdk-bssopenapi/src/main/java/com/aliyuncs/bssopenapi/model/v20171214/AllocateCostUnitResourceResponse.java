@@ -24,22 +24,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class AllocateCostUnitResourceResponse extends AcsResponse {
 
-	private String requestId;
+	private String code;
 
 	private String message;
 
-	private String code;
+	private String requestId;
 
 	private Boolean success;
 
 	private Data data;
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public String getMessage() {
@@ -50,12 +50,12 @@ public class AllocateCostUnitResourceResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getCode() {
-		return this.code;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Boolean getSuccess() {
@@ -76,19 +76,11 @@ public class AllocateCostUnitResourceResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Boolean isSuccess;
-
 		private Long toUnitUserId;
 
+		private Boolean isSuccess;
+
 		private Long toUnitId;
-
-		public Boolean getIsSuccess() {
-			return this.isSuccess;
-		}
-
-		public void setIsSuccess(Boolean isSuccess) {
-			this.isSuccess = isSuccess;
-		}
 
 		public Long getToUnitUserId() {
 			return this.toUnitUserId;
@@ -96,6 +88,14 @@ public class AllocateCostUnitResourceResponse extends AcsResponse {
 
 		public void setToUnitUserId(Long toUnitUserId) {
 			this.toUnitUserId = toUnitUserId;
+		}
+
+		public Boolean getIsSuccess() {
+			return this.isSuccess;
+		}
+
+		public void setIsSuccess(Boolean isSuccess) {
+			this.isSuccess = isSuccess;
 		}
 
 		public Long getToUnitId() {

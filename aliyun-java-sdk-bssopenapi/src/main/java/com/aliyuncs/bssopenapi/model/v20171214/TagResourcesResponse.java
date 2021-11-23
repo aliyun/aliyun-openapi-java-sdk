@@ -26,13 +26,13 @@ public class TagResourcesResponse extends AcsResponse {
 
 	private String code;
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String message;
 
 	private Boolean data;
+
+	private String requestId;
+
+	private Boolean success;
 
 	public String getCode() {
 		return this.code;
@@ -40,22 +40,6 @@ public class TagResourcesResponse extends AcsResponse {
 
 	public void setCode(String code) {
 		this.code = code;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
 	}
 
 	public String getMessage() {
@@ -72,6 +56,22 @@ public class TagResourcesResponse extends AcsResponse {
 
 	public void setData(Boolean data) {
 		this.data = data;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	@Override

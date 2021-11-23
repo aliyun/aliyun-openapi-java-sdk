@@ -24,8 +24,8 @@ public class SaveUserCreditResponseUnmarshaller {
 		
 		saveUserCreditResponse.setRequestId(_ctx.stringValue("SaveUserCreditResponse.RequestId"));
 		saveUserCreditResponse.setCode(_ctx.stringValue("SaveUserCreditResponse.Code"));
-		saveUserCreditResponse.setSuccess(_ctx.booleanValue("SaveUserCreditResponse.Success"));
 		saveUserCreditResponse.setMessage(_ctx.stringValue("SaveUserCreditResponse.Message"));
+		saveUserCreditResponse.setSuccess(_ctx.booleanValue("SaveUserCreditResponse.Success"));
 	 
 	 	return saveUserCreditResponse;
 	}

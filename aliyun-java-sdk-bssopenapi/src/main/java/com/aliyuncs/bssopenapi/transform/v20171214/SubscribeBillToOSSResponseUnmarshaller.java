@@ -23,9 +23,9 @@ public class SubscribeBillToOSSResponseUnmarshaller {
 	public static SubscribeBillToOSSResponse unmarshall(SubscribeBillToOSSResponse subscribeBillToOSSResponse, UnmarshallerContext _ctx) {
 		
 		subscribeBillToOSSResponse.setRequestId(_ctx.stringValue("SubscribeBillToOSSResponse.RequestId"));
-		subscribeBillToOSSResponse.setSuccess(_ctx.booleanValue("SubscribeBillToOSSResponse.Success"));
 		subscribeBillToOSSResponse.setCode(_ctx.stringValue("SubscribeBillToOSSResponse.Code"));
 		subscribeBillToOSSResponse.setMessage(_ctx.stringValue("SubscribeBillToOSSResponse.Message"));
+		subscribeBillToOSSResponse.setSuccess(_ctx.booleanValue("SubscribeBillToOSSResponse.Success"));
 	 
 	 	return subscribeBillToOSSResponse;
 	}

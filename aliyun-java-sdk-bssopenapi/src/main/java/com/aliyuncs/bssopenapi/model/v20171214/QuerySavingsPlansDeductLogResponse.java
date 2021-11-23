@@ -27,11 +27,11 @@ public class QuerySavingsPlansDeductLogResponse extends AcsResponse {
 
 	private String code;
 
+	private String message;
+
 	private String requestId;
 
 	private Boolean success;
-
-	private String message;
 
 	private Data data;
 
@@ -41,6 +41,14 @@ public class QuerySavingsPlansDeductLogResponse extends AcsResponse {
 
 	public void setCode(String code) {
 		this.code = code;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public String getRequestId() {
@@ -57,14 +65,6 @@ public class QuerySavingsPlansDeductLogResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
 	}
 
 	public Data getData() {
@@ -119,34 +119,34 @@ public class QuerySavingsPlansDeductLogResponse extends AcsResponse {
 
 		public static class SavingsPlansDeductDetailResponse {
 
-			private String instanceId;
+			private String endTime;
 
 			private String startTime;
 
-			private String endTime;
-
 			private String savingsType;
-
-			private String billModule;
-
-			private String deductFee;
-
-			private String deductRate;
 
 			private Long userId;
 
-			private String deductCommodity;
+			private String discountRate;
+
+			private String billModule;
+
+			private String instanceId;
 
 			private String deductInstanceId;
 
-			private String discountRate;
+			private String deductCommodity;
 
-			public String getInstanceId() {
-				return this.instanceId;
+			private String deductRate;
+
+			private String deductFee;
+
+			public String getEndTime() {
+				return this.endTime;
 			}
 
-			public void setInstanceId(String instanceId) {
-				this.instanceId = instanceId;
+			public void setEndTime(String endTime) {
+				this.endTime = endTime;
 			}
 
 			public String getStartTime() {
@@ -157,44 +157,12 @@ public class QuerySavingsPlansDeductLogResponse extends AcsResponse {
 				this.startTime = startTime;
 			}
 
-			public String getEndTime() {
-				return this.endTime;
-			}
-
-			public void setEndTime(String endTime) {
-				this.endTime = endTime;
-			}
-
 			public String getSavingsType() {
 				return this.savingsType;
 			}
 
 			public void setSavingsType(String savingsType) {
 				this.savingsType = savingsType;
-			}
-
-			public String getBillModule() {
-				return this.billModule;
-			}
-
-			public void setBillModule(String billModule) {
-				this.billModule = billModule;
-			}
-
-			public String getDeductFee() {
-				return this.deductFee;
-			}
-
-			public void setDeductFee(String deductFee) {
-				this.deductFee = deductFee;
-			}
-
-			public String getDeductRate() {
-				return this.deductRate;
-			}
-
-			public void setDeductRate(String deductRate) {
-				this.deductRate = deductRate;
 			}
 
 			public Long getUserId() {
@@ -205,12 +173,28 @@ public class QuerySavingsPlansDeductLogResponse extends AcsResponse {
 				this.userId = userId;
 			}
 
-			public String getDeductCommodity() {
-				return this.deductCommodity;
+			public String getDiscountRate() {
+				return this.discountRate;
 			}
 
-			public void setDeductCommodity(String deductCommodity) {
-				this.deductCommodity = deductCommodity;
+			public void setDiscountRate(String discountRate) {
+				this.discountRate = discountRate;
+			}
+
+			public String getBillModule() {
+				return this.billModule;
+			}
+
+			public void setBillModule(String billModule) {
+				this.billModule = billModule;
+			}
+
+			public String getInstanceId() {
+				return this.instanceId;
+			}
+
+			public void setInstanceId(String instanceId) {
+				this.instanceId = instanceId;
 			}
 
 			public String getDeductInstanceId() {
@@ -221,12 +205,28 @@ public class QuerySavingsPlansDeductLogResponse extends AcsResponse {
 				this.deductInstanceId = deductInstanceId;
 			}
 
-			public String getDiscountRate() {
-				return this.discountRate;
+			public String getDeductCommodity() {
+				return this.deductCommodity;
 			}
 
-			public void setDiscountRate(String discountRate) {
-				this.discountRate = discountRate;
+			public void setDeductCommodity(String deductCommodity) {
+				this.deductCommodity = deductCommodity;
+			}
+
+			public String getDeductRate() {
+				return this.deductRate;
+			}
+
+			public void setDeductRate(String deductRate) {
+				this.deductRate = deductRate;
+			}
+
+			public String getDeductFee() {
+				return this.deductFee;
+			}
+
+			public void setDeductFee(String deductFee) {
+				this.deductFee = deductFee;
 			}
 		}
 	}

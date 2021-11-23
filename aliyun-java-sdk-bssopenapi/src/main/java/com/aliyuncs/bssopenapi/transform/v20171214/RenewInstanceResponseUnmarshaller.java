@@ -24,9 +24,9 @@ public class RenewInstanceResponseUnmarshaller {
 	public static RenewInstanceResponse unmarshall(RenewInstanceResponse renewInstanceResponse, UnmarshallerContext _ctx) {
 		
 		renewInstanceResponse.setRequestId(_ctx.stringValue("RenewInstanceResponse.RequestId"));
-		renewInstanceResponse.setSuccess(_ctx.booleanValue("RenewInstanceResponse.Success"));
 		renewInstanceResponse.setCode(_ctx.stringValue("RenewInstanceResponse.Code"));
 		renewInstanceResponse.setMessage(_ctx.stringValue("RenewInstanceResponse.Message"));
+		renewInstanceResponse.setSuccess(_ctx.booleanValue("RenewInstanceResponse.Success"));
 
 		Data data = new Data();
 		data.setOrderId(_ctx.stringValue("RenewInstanceResponse.Data.OrderId"));

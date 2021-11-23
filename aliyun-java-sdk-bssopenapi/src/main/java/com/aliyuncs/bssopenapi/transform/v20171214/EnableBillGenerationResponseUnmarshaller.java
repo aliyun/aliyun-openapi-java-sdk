@@ -24,9 +24,9 @@ public class EnableBillGenerationResponseUnmarshaller {
 	public static EnableBillGenerationResponse unmarshall(EnableBillGenerationResponse enableBillGenerationResponse, UnmarshallerContext _ctx) {
 		
 		enableBillGenerationResponse.setRequestId(_ctx.stringValue("EnableBillGenerationResponse.RequestId"));
-		enableBillGenerationResponse.setSuccess(_ctx.booleanValue("EnableBillGenerationResponse.Success"));
 		enableBillGenerationResponse.setCode(_ctx.stringValue("EnableBillGenerationResponse.Code"));
 		enableBillGenerationResponse.setMessage(_ctx.stringValue("EnableBillGenerationResponse.Message"));
+		enableBillGenerationResponse.setSuccess(_ctx.booleanValue("EnableBillGenerationResponse.Success"));
 
 		Data data = new Data();
 		data.set_Boolean(_ctx.booleanValue("EnableBillGenerationResponse.Data.Boolean"));

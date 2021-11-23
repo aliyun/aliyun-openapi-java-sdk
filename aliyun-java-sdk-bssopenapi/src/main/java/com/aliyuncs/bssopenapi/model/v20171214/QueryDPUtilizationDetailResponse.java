@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryDPUtilizationDetailResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String message;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -65,6 +49,22 @@ public class QueryDPUtilizationDetailResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Data getData() {
@@ -99,40 +99,40 @@ public class QueryDPUtilizationDetailResponse extends AcsResponse {
 
 		public static class DetailListItem {
 
-			private Long uid;
+			private String deductedInstanceId;
 
 			private String instanceId;
 
-			private String instanceSpec;
+			private Float deductHours;
 
-			private String deductedInstanceId;
+			private Long shareUid;
+
+			private String deductDate;
+
+			private String instanceSpec;
 
 			private String deductedCommodityCode;
 
 			private String deductedProductDetail;
 
-			private String resCode;
-
-			private String deductDate;
-
-			private Float deductQuantity;
-
 			private Float deductMeasure;
-
-			private Float deductHours;
-
-			private Float deductFactorTotal;
 
 			private String region;
 
-			private Long shareUid;
+			private Float deductQuantity;
 
-			public Long getUid() {
-				return this.uid;
+			private Float deductFactorTotal;
+
+			private String resCode;
+
+			private Long uid;
+
+			public String getDeductedInstanceId() {
+				return this.deductedInstanceId;
 			}
 
-			public void setUid(Long uid) {
-				this.uid = uid;
+			public void setDeductedInstanceId(String deductedInstanceId) {
+				this.deductedInstanceId = deductedInstanceId;
 			}
 
 			public String getInstanceId() {
@@ -143,20 +143,36 @@ public class QueryDPUtilizationDetailResponse extends AcsResponse {
 				this.instanceId = instanceId;
 			}
 
+			public Float getDeductHours() {
+				return this.deductHours;
+			}
+
+			public void setDeductHours(Float deductHours) {
+				this.deductHours = deductHours;
+			}
+
+			public Long getShareUid() {
+				return this.shareUid;
+			}
+
+			public void setShareUid(Long shareUid) {
+				this.shareUid = shareUid;
+			}
+
+			public String getDeductDate() {
+				return this.deductDate;
+			}
+
+			public void setDeductDate(String deductDate) {
+				this.deductDate = deductDate;
+			}
+
 			public String getInstanceSpec() {
 				return this.instanceSpec;
 			}
 
 			public void setInstanceSpec(String instanceSpec) {
 				this.instanceSpec = instanceSpec;
-			}
-
-			public String getDeductedInstanceId() {
-				return this.deductedInstanceId;
-			}
-
-			public void setDeductedInstanceId(String deductedInstanceId) {
-				this.deductedInstanceId = deductedInstanceId;
 			}
 
 			public String getDeductedCommodityCode() {
@@ -175,52 +191,12 @@ public class QueryDPUtilizationDetailResponse extends AcsResponse {
 				this.deductedProductDetail = deductedProductDetail;
 			}
 
-			public String getResCode() {
-				return this.resCode;
-			}
-
-			public void setResCode(String resCode) {
-				this.resCode = resCode;
-			}
-
-			public String getDeductDate() {
-				return this.deductDate;
-			}
-
-			public void setDeductDate(String deductDate) {
-				this.deductDate = deductDate;
-			}
-
-			public Float getDeductQuantity() {
-				return this.deductQuantity;
-			}
-
-			public void setDeductQuantity(Float deductQuantity) {
-				this.deductQuantity = deductQuantity;
-			}
-
 			public Float getDeductMeasure() {
 				return this.deductMeasure;
 			}
 
 			public void setDeductMeasure(Float deductMeasure) {
 				this.deductMeasure = deductMeasure;
-			}
-
-			public Float getDeductHours() {
-				return this.deductHours;
-			}
-
-			public void setDeductHours(Float deductHours) {
-				this.deductHours = deductHours;
-			}
-
-			public Float getDeductFactorTotal() {
-				return this.deductFactorTotal;
-			}
-
-			public void setDeductFactorTotal(Float deductFactorTotal) {
-				this.deductFactorTotal = deductFactorTotal;
 			}
 
 			public String getRegion() {
@@ -231,12 +207,36 @@ public class QueryDPUtilizationDetailResponse extends AcsResponse {
 				this.region = region;
 			}
 
-			public Long getShareUid() {
-				return this.shareUid;
+			public Float getDeductQuantity() {
+				return this.deductQuantity;
 			}
 
-			public void setShareUid(Long shareUid) {
-				this.shareUid = shareUid;
+			public void setDeductQuantity(Float deductQuantity) {
+				this.deductQuantity = deductQuantity;
+			}
+
+			public Float getDeductFactorTotal() {
+				return this.deductFactorTotal;
+			}
+
+			public void setDeductFactorTotal(Float deductFactorTotal) {
+				this.deductFactorTotal = deductFactorTotal;
+			}
+
+			public String getResCode() {
+				return this.resCode;
+			}
+
+			public void setResCode(String resCode) {
+				this.resCode = resCode;
+			}
+
+			public Long getUid() {
+				return this.uid;
+			}
+
+			public void setUid(Long uid) {
+				this.uid = uid;
 			}
 		}
 	}

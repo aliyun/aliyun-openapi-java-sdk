@@ -24,31 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetCustomerAccountInfoResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String message;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -66,6 +50,22 @@ public class GetCustomerAccountInfoResponse extends AcsResponse {
 		this.message = message;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -76,33 +76,17 @@ public class GetCustomerAccountInfoResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String loginEmail;
-
-		private String accountType;
-
 		private Long mpk;
 
+		private String loginEmail;
+
 		private String hostingStatus;
+
+		private String accountType;
 
 		private String creditLimitStatus;
 
 		private Boolean isCertified;
-
-		public String getLoginEmail() {
-			return this.loginEmail;
-		}
-
-		public void setLoginEmail(String loginEmail) {
-			this.loginEmail = loginEmail;
-		}
-
-		public String getAccountType() {
-			return this.accountType;
-		}
-
-		public void setAccountType(String accountType) {
-			this.accountType = accountType;
-		}
 
 		public Long getMpk() {
 			return this.mpk;
@@ -112,12 +96,28 @@ public class GetCustomerAccountInfoResponse extends AcsResponse {
 			this.mpk = mpk;
 		}
 
+		public String getLoginEmail() {
+			return this.loginEmail;
+		}
+
+		public void setLoginEmail(String loginEmail) {
+			this.loginEmail = loginEmail;
+		}
+
 		public String getHostingStatus() {
 			return this.hostingStatus;
 		}
 
 		public void setHostingStatus(String hostingStatus) {
 			this.hostingStatus = hostingStatus;
+		}
+
+		public String getAccountType() {
+			return this.accountType;
+		}
+
+		public void setAccountType(String accountType) {
+			this.accountType = accountType;
 		}
 
 		public String getCreditLimitStatus() {

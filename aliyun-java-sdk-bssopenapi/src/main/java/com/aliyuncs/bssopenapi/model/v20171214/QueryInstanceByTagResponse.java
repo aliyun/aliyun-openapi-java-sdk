@@ -27,13 +27,13 @@ public class QueryInstanceByTagResponse extends AcsResponse {
 
 	private String code;
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String message;
 
 	private String nextToken;
+
+	private String requestId;
+
+	private Boolean success;
 
 	private List<TagResourceItem> tagResource;
 
@@ -43,22 +43,6 @@ public class QueryInstanceByTagResponse extends AcsResponse {
 
 	public void setCode(String code) {
 		this.code = code;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
 	}
 
 	public String getMessage() {
@@ -75,6 +59,22 @@ public class QueryInstanceByTagResponse extends AcsResponse {
 
 	public void setNextToken(String nextToken) {
 		this.nextToken = nextToken;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<TagResourceItem> getTagResource() {

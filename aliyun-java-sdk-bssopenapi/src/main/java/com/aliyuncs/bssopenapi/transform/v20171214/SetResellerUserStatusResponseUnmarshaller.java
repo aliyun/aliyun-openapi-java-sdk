@@ -25,8 +25,8 @@ public class SetResellerUserStatusResponseUnmarshaller {
 		setResellerUserStatusResponse.setRequestId(_ctx.stringValue("SetResellerUserStatusResponse.RequestId"));
 		setResellerUserStatusResponse.setCode(_ctx.stringValue("SetResellerUserStatusResponse.Code"));
 		setResellerUserStatusResponse.setMessage(_ctx.stringValue("SetResellerUserStatusResponse.Message"));
-		setResellerUserStatusResponse.setSuccess(_ctx.booleanValue("SetResellerUserStatusResponse.Success"));
 		setResellerUserStatusResponse.setData(_ctx.booleanValue("SetResellerUserStatusResponse.Data"));
+		setResellerUserStatusResponse.setSuccess(_ctx.booleanValue("SetResellerUserStatusResponse.Success"));
 	 
 	 	return setResellerUserStatusResponse;
 	}

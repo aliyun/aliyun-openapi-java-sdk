@@ -29,25 +29,25 @@ public class QueryPermissionListResponseUnmarshaller {
 		
 		queryPermissionListResponse.setRequestId(_ctx.stringValue("QueryPermissionListResponse.RequestId"));
 		queryPermissionListResponse.setCode(_ctx.stringValue("QueryPermissionListResponse.Code"));
-		queryPermissionListResponse.setSuccess(_ctx.booleanValue("QueryPermissionListResponse.Success"));
 		queryPermissionListResponse.setMessage(_ctx.stringValue("QueryPermissionListResponse.Message"));
+		queryPermissionListResponse.setSuccess(_ctx.booleanValue("QueryPermissionListResponse.Success"));
 
 		Data data = new Data();
+		data.setEndTime(_ctx.stringValue("QueryPermissionListResponse.Data.EndTime"));
+		data.setRelationType(_ctx.stringValue("QueryPermissionListResponse.Data.RelationType"));
+		data.setStartTime(_ctx.stringValue("QueryPermissionListResponse.Data.StartTime"));
+		data.setState(_ctx.stringValue("QueryPermissionListResponse.Data.State"));
 		data.setMasterId(_ctx.longValue("QueryPermissionListResponse.Data.MasterId"));
 		data.setMemberId(_ctx.longValue("QueryPermissionListResponse.Data.MemberId"));
-		data.setRelationType(_ctx.stringValue("QueryPermissionListResponse.Data.RelationType"));
-		data.setState(_ctx.stringValue("QueryPermissionListResponse.Data.State"));
 		data.setSetupTime(_ctx.stringValue("QueryPermissionListResponse.Data.SetupTime"));
-		data.setStartTime(_ctx.stringValue("QueryPermissionListResponse.Data.StartTime"));
-		data.setEndTime(_ctx.stringValue("QueryPermissionListResponse.Data.EndTime"));
 
 		List<PermissionListItem> permissionList = new ArrayList<PermissionListItem>();
 		for (int i = 0; i < _ctx.lengthValue("QueryPermissionListResponse.Data.PermissionList.Length"); i++) {
 			PermissionListItem permissionListItem = new PermissionListItem();
+			permissionListItem.setEndTime(_ctx.stringValue("QueryPermissionListResponse.Data.PermissionList["+ i +"].EndTime"));
+			permissionListItem.setStartTime(_ctx.stringValue("QueryPermissionListResponse.Data.PermissionList["+ i +"].StartTime"));
 			permissionListItem.setPermissionCode(_ctx.stringValue("QueryPermissionListResponse.Data.PermissionList["+ i +"].PermissionCode"));
 			permissionListItem.setPermissionName(_ctx.stringValue("QueryPermissionListResponse.Data.PermissionList["+ i +"].PermissionName"));
-			permissionListItem.setStartTime(_ctx.stringValue("QueryPermissionListResponse.Data.PermissionList["+ i +"].StartTime"));
-			permissionListItem.setEndTime(_ctx.stringValue("QueryPermissionListResponse.Data.PermissionList["+ i +"].EndTime"));
 
 			permissionList.add(permissionListItem);
 		}

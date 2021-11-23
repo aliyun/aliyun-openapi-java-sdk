@@ -26,11 +26,11 @@ public class SaveUserCreditResponse extends AcsResponse {
 
 	private String code;
 
-	private Boolean success;
+	private String message;
 
 	private String requestId;
 
-	private String message;
+	private Boolean success;
 
 	public String getCode() {
 		return this.code;
@@ -40,12 +40,12 @@ public class SaveUserCreditResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public String getRequestId() {
@@ -56,12 +56,12 @@ public class SaveUserCreditResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	@Override

@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribePricingModuleResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String message;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -65,6 +49,22 @@ public class DescribePricingModuleResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Data getData() {
@@ -99,23 +99,15 @@ public class DescribePricingModuleResponse extends AcsResponse {
 
 		public static class Module {
 
-			private String moduleCode;
-
 			private String moduleName;
 
 			private String priceType;
 
 			private String currency;
 
+			private String moduleCode;
+
 			private List<String> configList;
-
-			public String getModuleCode() {
-				return this.moduleCode;
-			}
-
-			public void setModuleCode(String moduleCode) {
-				this.moduleCode = moduleCode;
-			}
 
 			public String getModuleName() {
 				return this.moduleName;
@@ -139,6 +131,14 @@ public class DescribePricingModuleResponse extends AcsResponse {
 
 			public void setCurrency(String currency) {
 				this.currency = currency;
+			}
+
+			public String getModuleCode() {
+				return this.moduleCode;
+			}
+
+			public void setModuleCode(String moduleCode) {
+				this.moduleCode = moduleCode;
 			}
 
 			public List<String> getConfigList() {
@@ -196,11 +196,11 @@ public class DescribePricingModuleResponse extends AcsResponse {
 
 				private String type;
 
-				private String name;
-
 				private String value;
 
 				private String remark;
+
+				private String name;
 
 				public String getType() {
 					return this.type;
@@ -208,14 +208,6 @@ public class DescribePricingModuleResponse extends AcsResponse {
 
 				public void setType(String type) {
 					this.type = type;
-				}
-
-				public String getName() {
-					return this.name;
-				}
-
-				public void setName(String name) {
-					this.name = name;
 				}
 
 				public String getValue() {
@@ -232,6 +224,14 @@ public class DescribePricingModuleResponse extends AcsResponse {
 
 				public void setRemark(String remark) {
 					this.remark = remark;
+				}
+
+				public String getName() {
+					return this.name;
+				}
+
+				public void setName(String name) {
+					this.name = name;
 				}
 			}
 		}

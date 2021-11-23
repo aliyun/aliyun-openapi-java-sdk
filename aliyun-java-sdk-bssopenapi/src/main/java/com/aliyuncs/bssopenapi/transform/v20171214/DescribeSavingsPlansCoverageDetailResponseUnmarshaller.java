@@ -28,9 +28,9 @@ public class DescribeSavingsPlansCoverageDetailResponseUnmarshaller {
 	public static DescribeSavingsPlansCoverageDetailResponse unmarshall(DescribeSavingsPlansCoverageDetailResponse describeSavingsPlansCoverageDetailResponse, UnmarshallerContext _ctx) {
 		
 		describeSavingsPlansCoverageDetailResponse.setRequestId(_ctx.stringValue("DescribeSavingsPlansCoverageDetailResponse.RequestId"));
-		describeSavingsPlansCoverageDetailResponse.setSuccess(_ctx.booleanValue("DescribeSavingsPlansCoverageDetailResponse.Success"));
 		describeSavingsPlansCoverageDetailResponse.setCode(_ctx.stringValue("DescribeSavingsPlansCoverageDetailResponse.Code"));
 		describeSavingsPlansCoverageDetailResponse.setMessage(_ctx.stringValue("DescribeSavingsPlansCoverageDetailResponse.Message"));
+		describeSavingsPlansCoverageDetailResponse.setSuccess(_ctx.booleanValue("DescribeSavingsPlansCoverageDetailResponse.Success"));
 
 		Data data = new Data();
 		data.setTotalCount(_ctx.integerValue("DescribeSavingsPlansCoverageDetailResponse.Data.TotalCount"));
@@ -40,16 +40,16 @@ public class DescribeSavingsPlansCoverageDetailResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("DescribeSavingsPlansCoverageDetailResponse.Data.Items.Length"); i++) {
 			Item item = new Item();
 			item.setUserId(_ctx.longValue("DescribeSavingsPlansCoverageDetailResponse.Data.Items["+ i +"].UserId"));
-			item.setUserName(_ctx.stringValue("DescribeSavingsPlansCoverageDetailResponse.Data.Items["+ i +"].UserName"));
 			item.setInstanceId(_ctx.stringValue("DescribeSavingsPlansCoverageDetailResponse.Data.Items["+ i +"].InstanceId"));
-			item.setRegion(_ctx.stringValue("DescribeSavingsPlansCoverageDetailResponse.Data.Items["+ i +"].Region"));
-			item.setInstanceSpec(_ctx.stringValue("DescribeSavingsPlansCoverageDetailResponse.Data.Items["+ i +"].InstanceSpec"));
 			item.setCurrency(_ctx.stringValue("DescribeSavingsPlansCoverageDetailResponse.Data.Items["+ i +"].Currency"));
-			item.setCoveragePercentage(_ctx.floatValue("DescribeSavingsPlansCoverageDetailResponse.Data.Items["+ i +"].CoveragePercentage"));
-			item.setDeductAmount(_ctx.floatValue("DescribeSavingsPlansCoverageDetailResponse.Data.Items["+ i +"].DeductAmount"));
-			item.setTotalAmount(_ctx.floatValue("DescribeSavingsPlansCoverageDetailResponse.Data.Items["+ i +"].TotalAmount"));
+			item.setInstanceSpec(_ctx.stringValue("DescribeSavingsPlansCoverageDetailResponse.Data.Items["+ i +"].InstanceSpec"));
 			item.setPostpaidCost(_ctx.floatValue("DescribeSavingsPlansCoverageDetailResponse.Data.Items["+ i +"].PostpaidCost"));
+			item.setCoveragePercentage(_ctx.floatValue("DescribeSavingsPlansCoverageDetailResponse.Data.Items["+ i +"].CoveragePercentage"));
+			item.setRegion(_ctx.stringValue("DescribeSavingsPlansCoverageDetailResponse.Data.Items["+ i +"].Region"));
+			item.setDeductAmount(_ctx.floatValue("DescribeSavingsPlansCoverageDetailResponse.Data.Items["+ i +"].DeductAmount"));
 			item.setStartPeriod(_ctx.stringValue("DescribeSavingsPlansCoverageDetailResponse.Data.Items["+ i +"].StartPeriod"));
+			item.setTotalAmount(_ctx.floatValue("DescribeSavingsPlansCoverageDetailResponse.Data.Items["+ i +"].TotalAmount"));
+			item.setUserName(_ctx.stringValue("DescribeSavingsPlansCoverageDetailResponse.Data.Items["+ i +"].UserName"));
 			item.setEndPeriod(_ctx.stringValue("DescribeSavingsPlansCoverageDetailResponse.Data.Items["+ i +"].EndPeriod"));
 
 			items.add(item);

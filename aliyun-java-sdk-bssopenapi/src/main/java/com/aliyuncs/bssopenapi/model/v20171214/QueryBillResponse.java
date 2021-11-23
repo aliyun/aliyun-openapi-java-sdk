@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryBillResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String message;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -67,6 +51,22 @@ public class QueryBillResponse extends AcsResponse {
 		this.message = message;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -77,19 +77,27 @@ public class QueryBillResponse extends AcsResponse {
 
 	public static class Data {
 
+		private Integer pageNum;
+
 		private String billingCycle;
 
 		private String accountID;
-
-		private String accountName;
-
-		private Integer pageNum;
 
 		private Integer pageSize;
 
 		private Integer totalCount;
 
+		private String accountName;
+
 		private List<Item> items;
+
+		public Integer getPageNum() {
+			return this.pageNum;
+		}
+
+		public void setPageNum(Integer pageNum) {
+			this.pageNum = pageNum;
+		}
 
 		public String getBillingCycle() {
 			return this.billingCycle;
@@ -105,22 +113,6 @@ public class QueryBillResponse extends AcsResponse {
 
 		public void setAccountID(String accountID) {
 			this.accountID = accountID;
-		}
-
-		public String getAccountName() {
-			return this.accountName;
-		}
-
-		public void setAccountName(String accountName) {
-			this.accountName = accountName;
-		}
-
-		public Integer getPageNum() {
-			return this.pageNum;
-		}
-
-		public void setPageNum(Integer pageNum) {
-			this.pageNum = pageNum;
 		}
 
 		public Integer getPageSize() {
@@ -139,6 +131,14 @@ public class QueryBillResponse extends AcsResponse {
 			this.totalCount = totalCount;
 		}
 
+		public String getAccountName() {
+			return this.accountName;
+		}
+
+		public void setAccountName(String accountName) {
+			this.accountName = accountName;
+		}
+
 		public List<Item> getItems() {
 			return this.items;
 		}
@@ -149,72 +149,84 @@ public class QueryBillResponse extends AcsResponse {
 
 		public static class Item {
 
-			private String recordID;
+			private String status;
+
+			private String roundDownDiscount;
 
 			private String item;
 
-			private String ownerID;
+			private String currency;
 
 			private String usageStartTime;
 
-			private String usageEndTime;
-
-			private String paymentTime;
-
-			private String productCode;
-
-			private String productType;
-
 			private String subscriptionType;
-
-			private String productName;
-
-			private String productDetail;
-
-			private Float pretaxGrossAmount;
-
-			private Float deductedByCoupons;
-
-			private Float invoiceDiscount;
-
-			private Float pretaxAmount;
-
-			private String currency;
-
-			private Float pretaxAmountLocal;
-
-			private Float tax;
-
-			private Float paymentAmount;
 
 			private Float deductedByCashCoupons;
 
-			private Float deductedByPrepaidCard;
+			private String usageEndTime;
+
+			private Float deductedByCoupons;
+
+			private String subOrderId;
 
 			private Float outstandingAmount;
 
 			private Float afterTaxAmount;
 
-			private String status;
+			private String paymentTime;
 
-			private String paymentCurrency;
+			private Float pretaxAmountLocal;
 
-			private String paymentTransactionID;
-
-			private String roundDownDiscount;
-
-			private String subOrderId;
+			private Float tax;
 
 			private String pipCode;
 
+			private String paymentTransactionID;
+
+			private Float pretaxAmount;
+
 			private String commodityCode;
 
-			public String getRecordID() {
-				return this.recordID;
+			private String productName;
+
+			private String recordID;
+
+			private Float adjustAmount;
+
+			private String productDetail;
+
+			private String paymentCurrency;
+
+			private String ownerID;
+
+			private Float deductedByPrepaidCard;
+
+			private String productType;
+
+			private Float invoiceDiscount;
+
+			private Float paymentAmount;
+
+			private Float pretaxGrossAmount;
+
+			private Float cashAmount;
+
+			private String productCode;
+
+			public String getStatus() {
+				return this.status;
 			}
 
-			public void setRecordID(String recordID) {
-				this.recordID = recordID;
+			public void setStatus(String status) {
+				this.status = status;
+			}
+
+			public String getRoundDownDiscount() {
+				return this.roundDownDiscount;
+			}
+
+			public void setRoundDownDiscount(String roundDownDiscount) {
+				this.roundDownDiscount = roundDownDiscount;
 			}
 
 			public String getItem() {
@@ -225,12 +237,12 @@ public class QueryBillResponse extends AcsResponse {
 				this.item = item;
 			}
 
-			public String getOwnerID() {
-				return this.ownerID;
+			public String getCurrency() {
+				return this.currency;
 			}
 
-			public void setOwnerID(String ownerID) {
-				this.ownerID = ownerID;
+			public void setCurrency(String currency) {
+				this.currency = currency;
 			}
 
 			public String getUsageStartTime() {
@@ -241,124 +253,12 @@ public class QueryBillResponse extends AcsResponse {
 				this.usageStartTime = usageStartTime;
 			}
 
-			public String getUsageEndTime() {
-				return this.usageEndTime;
-			}
-
-			public void setUsageEndTime(String usageEndTime) {
-				this.usageEndTime = usageEndTime;
-			}
-
-			public String getPaymentTime() {
-				return this.paymentTime;
-			}
-
-			public void setPaymentTime(String paymentTime) {
-				this.paymentTime = paymentTime;
-			}
-
-			public String getProductCode() {
-				return this.productCode;
-			}
-
-			public void setProductCode(String productCode) {
-				this.productCode = productCode;
-			}
-
-			public String getProductType() {
-				return this.productType;
-			}
-
-			public void setProductType(String productType) {
-				this.productType = productType;
-			}
-
 			public String getSubscriptionType() {
 				return this.subscriptionType;
 			}
 
 			public void setSubscriptionType(String subscriptionType) {
 				this.subscriptionType = subscriptionType;
-			}
-
-			public String getProductName() {
-				return this.productName;
-			}
-
-			public void setProductName(String productName) {
-				this.productName = productName;
-			}
-
-			public String getProductDetail() {
-				return this.productDetail;
-			}
-
-			public void setProductDetail(String productDetail) {
-				this.productDetail = productDetail;
-			}
-
-			public Float getPretaxGrossAmount() {
-				return this.pretaxGrossAmount;
-			}
-
-			public void setPretaxGrossAmount(Float pretaxGrossAmount) {
-				this.pretaxGrossAmount = pretaxGrossAmount;
-			}
-
-			public Float getDeductedByCoupons() {
-				return this.deductedByCoupons;
-			}
-
-			public void setDeductedByCoupons(Float deductedByCoupons) {
-				this.deductedByCoupons = deductedByCoupons;
-			}
-
-			public Float getInvoiceDiscount() {
-				return this.invoiceDiscount;
-			}
-
-			public void setInvoiceDiscount(Float invoiceDiscount) {
-				this.invoiceDiscount = invoiceDiscount;
-			}
-
-			public Float getPretaxAmount() {
-				return this.pretaxAmount;
-			}
-
-			public void setPretaxAmount(Float pretaxAmount) {
-				this.pretaxAmount = pretaxAmount;
-			}
-
-			public String getCurrency() {
-				return this.currency;
-			}
-
-			public void setCurrency(String currency) {
-				this.currency = currency;
-			}
-
-			public Float getPretaxAmountLocal() {
-				return this.pretaxAmountLocal;
-			}
-
-			public void setPretaxAmountLocal(Float pretaxAmountLocal) {
-				this.pretaxAmountLocal = pretaxAmountLocal;
-			}
-
-			public Float getTax() {
-				return this.tax;
-			}
-
-			public void setTax(Float tax) {
-				this.tax = tax;
-			}
-
-			public Float getPaymentAmount() {
-				return this.paymentAmount;
-			}
-
-			public void setPaymentAmount(Float paymentAmount) {
-				this.paymentAmount = paymentAmount;
 			}
 
 			public Float getDeductedByCashCoupons() {
@@ -369,12 +269,28 @@ public class QueryBillResponse extends AcsResponse {
 				this.deductedByCashCoupons = deductedByCashCoupons;
 			}
 
-			public Float getDeductedByPrepaidCard() {
-				return this.deductedByPrepaidCard;
+			public String getUsageEndTime() {
+				return this.usageEndTime;
 			}
 
-			public void setDeductedByPrepaidCard(Float deductedByPrepaidCard) {
-				this.deductedByPrepaidCard = deductedByPrepaidCard;
+			public void setUsageEndTime(String usageEndTime) {
+				this.usageEndTime = usageEndTime;
+			}
+
+			public Float getDeductedByCoupons() {
+				return this.deductedByCoupons;
+			}
+
+			public void setDeductedByCoupons(Float deductedByCoupons) {
+				this.deductedByCoupons = deductedByCoupons;
+			}
+
+			public String getSubOrderId() {
+				return this.subOrderId;
+			}
+
+			public void setSubOrderId(String subOrderId) {
+				this.subOrderId = subOrderId;
 			}
 
 			public Float getOutstandingAmount() {
@@ -393,44 +309,28 @@ public class QueryBillResponse extends AcsResponse {
 				this.afterTaxAmount = afterTaxAmount;
 			}
 
-			public String getStatus() {
-				return this.status;
+			public String getPaymentTime() {
+				return this.paymentTime;
 			}
 
-			public void setStatus(String status) {
-				this.status = status;
+			public void setPaymentTime(String paymentTime) {
+				this.paymentTime = paymentTime;
 			}
 
-			public String getPaymentCurrency() {
-				return this.paymentCurrency;
+			public Float getPretaxAmountLocal() {
+				return this.pretaxAmountLocal;
 			}
 
-			public void setPaymentCurrency(String paymentCurrency) {
-				this.paymentCurrency = paymentCurrency;
+			public void setPretaxAmountLocal(Float pretaxAmountLocal) {
+				this.pretaxAmountLocal = pretaxAmountLocal;
 			}
 
-			public String getPaymentTransactionID() {
-				return this.paymentTransactionID;
+			public Float getTax() {
+				return this.tax;
 			}
 
-			public void setPaymentTransactionID(String paymentTransactionID) {
-				this.paymentTransactionID = paymentTransactionID;
-			}
-
-			public String getRoundDownDiscount() {
-				return this.roundDownDiscount;
-			}
-
-			public void setRoundDownDiscount(String roundDownDiscount) {
-				this.roundDownDiscount = roundDownDiscount;
-			}
-
-			public String getSubOrderId() {
-				return this.subOrderId;
-			}
-
-			public void setSubOrderId(String subOrderId) {
-				this.subOrderId = subOrderId;
+			public void setTax(Float tax) {
+				this.tax = tax;
 			}
 
 			public String getPipCode() {
@@ -441,12 +341,132 @@ public class QueryBillResponse extends AcsResponse {
 				this.pipCode = pipCode;
 			}
 
+			public String getPaymentTransactionID() {
+				return this.paymentTransactionID;
+			}
+
+			public void setPaymentTransactionID(String paymentTransactionID) {
+				this.paymentTransactionID = paymentTransactionID;
+			}
+
+			public Float getPretaxAmount() {
+				return this.pretaxAmount;
+			}
+
+			public void setPretaxAmount(Float pretaxAmount) {
+				this.pretaxAmount = pretaxAmount;
+			}
+
 			public String getCommodityCode() {
 				return this.commodityCode;
 			}
 
 			public void setCommodityCode(String commodityCode) {
 				this.commodityCode = commodityCode;
+			}
+
+			public String getProductName() {
+				return this.productName;
+			}
+
+			public void setProductName(String productName) {
+				this.productName = productName;
+			}
+
+			public String getRecordID() {
+				return this.recordID;
+			}
+
+			public void setRecordID(String recordID) {
+				this.recordID = recordID;
+			}
+
+			public Float getAdjustAmount() {
+				return this.adjustAmount;
+			}
+
+			public void setAdjustAmount(Float adjustAmount) {
+				this.adjustAmount = adjustAmount;
+			}
+
+			public String getProductDetail() {
+				return this.productDetail;
+			}
+
+			public void setProductDetail(String productDetail) {
+				this.productDetail = productDetail;
+			}
+
+			public String getPaymentCurrency() {
+				return this.paymentCurrency;
+			}
+
+			public void setPaymentCurrency(String paymentCurrency) {
+				this.paymentCurrency = paymentCurrency;
+			}
+
+			public String getOwnerID() {
+				return this.ownerID;
+			}
+
+			public void setOwnerID(String ownerID) {
+				this.ownerID = ownerID;
+			}
+
+			public Float getDeductedByPrepaidCard() {
+				return this.deductedByPrepaidCard;
+			}
+
+			public void setDeductedByPrepaidCard(Float deductedByPrepaidCard) {
+				this.deductedByPrepaidCard = deductedByPrepaidCard;
+			}
+
+			public String getProductType() {
+				return this.productType;
+			}
+
+			public void setProductType(String productType) {
+				this.productType = productType;
+			}
+
+			public Float getInvoiceDiscount() {
+				return this.invoiceDiscount;
+			}
+
+			public void setInvoiceDiscount(Float invoiceDiscount) {
+				this.invoiceDiscount = invoiceDiscount;
+			}
+
+			public Float getPaymentAmount() {
+				return this.paymentAmount;
+			}
+
+			public void setPaymentAmount(Float paymentAmount) {
+				this.paymentAmount = paymentAmount;
+			}
+
+			public Float getPretaxGrossAmount() {
+				return this.pretaxGrossAmount;
+			}
+
+			public void setPretaxGrossAmount(Float pretaxGrossAmount) {
+				this.pretaxGrossAmount = pretaxGrossAmount;
+			}
+
+			public Float getCashAmount() {
+				return this.cashAmount;
+			}
+
+			public void setCashAmount(Float cashAmount) {
+				this.cashAmount = cashAmount;
+			}
+
+			public String getProductCode() {
+				return this.productCode;
+			}
+
+			public void setProductCode(String productCode) {
+				this.productCode = productCode;
 			}
 		}
 	}

@@ -28,9 +28,9 @@ public class QueryDPUtilizationDetailResponseUnmarshaller {
 	public static QueryDPUtilizationDetailResponse unmarshall(QueryDPUtilizationDetailResponse queryDPUtilizationDetailResponse, UnmarshallerContext _ctx) {
 		
 		queryDPUtilizationDetailResponse.setRequestId(_ctx.stringValue("QueryDPUtilizationDetailResponse.RequestId"));
-		queryDPUtilizationDetailResponse.setSuccess(_ctx.booleanValue("QueryDPUtilizationDetailResponse.Success"));
 		queryDPUtilizationDetailResponse.setCode(_ctx.stringValue("QueryDPUtilizationDetailResponse.Code"));
 		queryDPUtilizationDetailResponse.setMessage(_ctx.stringValue("QueryDPUtilizationDetailResponse.Message"));
+		queryDPUtilizationDetailResponse.setSuccess(_ctx.booleanValue("QueryDPUtilizationDetailResponse.Success"));
 
 		Data data = new Data();
 		data.setNextToken(_ctx.stringValue("QueryDPUtilizationDetailResponse.Data.NextToken"));
@@ -38,20 +38,20 @@ public class QueryDPUtilizationDetailResponseUnmarshaller {
 		List<DetailListItem> detailList = new ArrayList<DetailListItem>();
 		for (int i = 0; i < _ctx.lengthValue("QueryDPUtilizationDetailResponse.Data.DetailList.Length"); i++) {
 			DetailListItem detailListItem = new DetailListItem();
-			detailListItem.setUid(_ctx.longValue("QueryDPUtilizationDetailResponse.Data.DetailList["+ i +"].Uid"));
-			detailListItem.setInstanceId(_ctx.stringValue("QueryDPUtilizationDetailResponse.Data.DetailList["+ i +"].InstanceId"));
-			detailListItem.setInstanceSpec(_ctx.stringValue("QueryDPUtilizationDetailResponse.Data.DetailList["+ i +"].InstanceSpec"));
 			detailListItem.setDeductedInstanceId(_ctx.stringValue("QueryDPUtilizationDetailResponse.Data.DetailList["+ i +"].DeductedInstanceId"));
+			detailListItem.setInstanceId(_ctx.stringValue("QueryDPUtilizationDetailResponse.Data.DetailList["+ i +"].InstanceId"));
+			detailListItem.setDeductHours(_ctx.floatValue("QueryDPUtilizationDetailResponse.Data.DetailList["+ i +"].DeductHours"));
+			detailListItem.setShareUid(_ctx.longValue("QueryDPUtilizationDetailResponse.Data.DetailList["+ i +"].ShareUid"));
+			detailListItem.setDeductDate(_ctx.stringValue("QueryDPUtilizationDetailResponse.Data.DetailList["+ i +"].DeductDate"));
+			detailListItem.setInstanceSpec(_ctx.stringValue("QueryDPUtilizationDetailResponse.Data.DetailList["+ i +"].InstanceSpec"));
 			detailListItem.setDeductedCommodityCode(_ctx.stringValue("QueryDPUtilizationDetailResponse.Data.DetailList["+ i +"].DeductedCommodityCode"));
 			detailListItem.setDeductedProductDetail(_ctx.stringValue("QueryDPUtilizationDetailResponse.Data.DetailList["+ i +"].DeductedProductDetail"));
-			detailListItem.setResCode(_ctx.stringValue("QueryDPUtilizationDetailResponse.Data.DetailList["+ i +"].ResCode"));
-			detailListItem.setDeductDate(_ctx.stringValue("QueryDPUtilizationDetailResponse.Data.DetailList["+ i +"].DeductDate"));
-			detailListItem.setDeductQuantity(_ctx.floatValue("QueryDPUtilizationDetailResponse.Data.DetailList["+ i +"].DeductQuantity"));
 			detailListItem.setDeductMeasure(_ctx.floatValue("QueryDPUtilizationDetailResponse.Data.DetailList["+ i +"].DeductMeasure"));
-			detailListItem.setDeductHours(_ctx.floatValue("QueryDPUtilizationDetailResponse.Data.DetailList["+ i +"].DeductHours"));
-			detailListItem.setDeductFactorTotal(_ctx.floatValue("QueryDPUtilizationDetailResponse.Data.DetailList["+ i +"].DeductFactorTotal"));
 			detailListItem.setRegion(_ctx.stringValue("QueryDPUtilizationDetailResponse.Data.DetailList["+ i +"].Region"));
-			detailListItem.setShareUid(_ctx.longValue("QueryDPUtilizationDetailResponse.Data.DetailList["+ i +"].ShareUid"));
+			detailListItem.setDeductQuantity(_ctx.floatValue("QueryDPUtilizationDetailResponse.Data.DetailList["+ i +"].DeductQuantity"));
+			detailListItem.setDeductFactorTotal(_ctx.floatValue("QueryDPUtilizationDetailResponse.Data.DetailList["+ i +"].DeductFactorTotal"));
+			detailListItem.setResCode(_ctx.stringValue("QueryDPUtilizationDetailResponse.Data.DetailList["+ i +"].ResCode"));
+			detailListItem.setUid(_ctx.longValue("QueryDPUtilizationDetailResponse.Data.DetailList["+ i +"].Uid"));
 
 			detailList.add(detailListItem);
 		}

@@ -24,13 +24,13 @@ public class ModifyInstanceResponseUnmarshaller {
 	public static ModifyInstanceResponse unmarshall(ModifyInstanceResponse modifyInstanceResponse, UnmarshallerContext _ctx) {
 		
 		modifyInstanceResponse.setRequestId(_ctx.stringValue("ModifyInstanceResponse.RequestId"));
-		modifyInstanceResponse.setSuccess(_ctx.booleanValue("ModifyInstanceResponse.Success"));
 		modifyInstanceResponse.setCode(_ctx.stringValue("ModifyInstanceResponse.Code"));
 		modifyInstanceResponse.setMessage(_ctx.stringValue("ModifyInstanceResponse.Message"));
+		modifyInstanceResponse.setSuccess(_ctx.booleanValue("ModifyInstanceResponse.Success"));
 
 		Data data = new Data();
-		data.setHostId(_ctx.stringValue("ModifyInstanceResponse.Data.HostId"));
 		data.setOrderId(_ctx.stringValue("ModifyInstanceResponse.Data.OrderId"));
+		data.setHostId(_ctx.stringValue("ModifyInstanceResponse.Data.HostId"));
 		modifyInstanceResponse.setData(data);
 	 
 	 	return modifyInstanceResponse;

@@ -33,11 +33,11 @@ public class QueryResourcePackageInstancesResponse extends AcsResponse {
 
 	private String message;
 
-	private Integer page;
-
 	private Integer pageSize;
 
 	private Integer total;
+
+	private Integer page;
 
 	private Data data;
 
@@ -73,14 +73,6 @@ public class QueryResourcePackageInstancesResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public Integer getPage() {
-		return this.page;
-	}
-
-	public void setPage(Integer page) {
-		this.page = page;
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
@@ -97,6 +89,14 @@ public class QueryResourcePackageInstancesResponse extends AcsResponse {
 		this.total = total;
 	}
 
+	public Integer getPage() {
+		return this.page;
+	}
+
+	public void setPage(Integer page) {
+		this.page = page;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -107,23 +107,15 @@ public class QueryResourcePackageInstancesResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String hostId;
-
 		private String pageNum;
 
 		private String pageSize;
 
 		private String totalCount;
 
+		private String hostId;
+
 		private List<Instance> instances;
-
-		public String getHostId() {
-			return this.hostId;
-		}
-
-		public void setHostId(String hostId) {
-			this.hostId = hostId;
-		}
 
 		public String getPageNum() {
 			return this.pageNum;
@@ -149,6 +141,14 @@ public class QueryResourcePackageInstancesResponse extends AcsResponse {
 			this.totalCount = totalCount;
 		}
 
+		public String getHostId() {
+			return this.hostId;
+		}
+
+		public void setHostId(String hostId) {
+			this.hostId = hostId;
+		}
+
 		public List<Instance> getInstances() {
 			return this.instances;
 		}
@@ -159,31 +159,63 @@ public class QueryResourcePackageInstancesResponse extends AcsResponse {
 
 		public static class Instance {
 
+			private String expiryTime;
+
+			private String status;
+
+			private String remark;
+
+			private String remainingAmountUnit;
+
 			private String instanceId;
+
+			private String packageType;
+
+			private String effectiveTime;
 
 			private String region;
 
 			private String totalAmount;
 
+			private String deductType;
+
 			private String totalAmountUnit;
 
 			private String remainingAmount;
 
-			private String remainingAmountUnit;
-
-			private String effectiveTime;
-
-			private String expiryTime;
-
-			private String remark;
-
-			private String packageType;
-
-			private String status;
-
-			private String deductType;
-
 			private List<String> applicableProducts;
+
+			public String getExpiryTime() {
+				return this.expiryTime;
+			}
+
+			public void setExpiryTime(String expiryTime) {
+				this.expiryTime = expiryTime;
+			}
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
+			}
+
+			public String getRemark() {
+				return this.remark;
+			}
+
+			public void setRemark(String remark) {
+				this.remark = remark;
+			}
+
+			public String getRemainingAmountUnit() {
+				return this.remainingAmountUnit;
+			}
+
+			public void setRemainingAmountUnit(String remainingAmountUnit) {
+				this.remainingAmountUnit = remainingAmountUnit;
+			}
 
 			public String getInstanceId() {
 				return this.instanceId;
@@ -191,6 +223,22 @@ public class QueryResourcePackageInstancesResponse extends AcsResponse {
 
 			public void setInstanceId(String instanceId) {
 				this.instanceId = instanceId;
+			}
+
+			public String getPackageType() {
+				return this.packageType;
+			}
+
+			public void setPackageType(String packageType) {
+				this.packageType = packageType;
+			}
+
+			public String getEffectiveTime() {
+				return this.effectiveTime;
+			}
+
+			public void setEffectiveTime(String effectiveTime) {
+				this.effectiveTime = effectiveTime;
 			}
 
 			public String getRegion() {
@@ -209,6 +257,14 @@ public class QueryResourcePackageInstancesResponse extends AcsResponse {
 				this.totalAmount = totalAmount;
 			}
 
+			public String getDeductType() {
+				return this.deductType;
+			}
+
+			public void setDeductType(String deductType) {
+				this.deductType = deductType;
+			}
+
 			public String getTotalAmountUnit() {
 				return this.totalAmountUnit;
 			}
@@ -223,62 +279,6 @@ public class QueryResourcePackageInstancesResponse extends AcsResponse {
 
 			public void setRemainingAmount(String remainingAmount) {
 				this.remainingAmount = remainingAmount;
-			}
-
-			public String getRemainingAmountUnit() {
-				return this.remainingAmountUnit;
-			}
-
-			public void setRemainingAmountUnit(String remainingAmountUnit) {
-				this.remainingAmountUnit = remainingAmountUnit;
-			}
-
-			public String getEffectiveTime() {
-				return this.effectiveTime;
-			}
-
-			public void setEffectiveTime(String effectiveTime) {
-				this.effectiveTime = effectiveTime;
-			}
-
-			public String getExpiryTime() {
-				return this.expiryTime;
-			}
-
-			public void setExpiryTime(String expiryTime) {
-				this.expiryTime = expiryTime;
-			}
-
-			public String getRemark() {
-				return this.remark;
-			}
-
-			public void setRemark(String remark) {
-				this.remark = remark;
-			}
-
-			public String getPackageType() {
-				return this.packageType;
-			}
-
-			public void setPackageType(String packageType) {
-				this.packageType = packageType;
-			}
-
-			public String getStatus() {
-				return this.status;
-			}
-
-			public void setStatus(String status) {
-				this.status = status;
-			}
-
-			public String getDeductType() {
-				return this.deductType;
-			}
-
-			public void setDeductType(String deductType) {
-				this.deductType = deductType;
 			}
 
 			public List<String> getApplicableProducts() {

@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeSavingsPlansCoverageDetailResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String message;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -65,6 +49,22 @@ public class DescribeSavingsPlansCoverageDetailResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Data getData() {
@@ -111,25 +111,25 @@ public class DescribeSavingsPlansCoverageDetailResponse extends AcsResponse {
 
 			private Long userId;
 
-			private String userName;
-
 			private String instanceId;
-
-			private String region;
-
-			private String instanceSpec;
 
 			private String currency;
 
-			private Float coveragePercentage;
-
-			private Float deductAmount;
-
-			private Float totalAmount;
+			private String instanceSpec;
 
 			private Float postpaidCost;
 
+			private Float coveragePercentage;
+
+			private String region;
+
+			private Float deductAmount;
+
 			private String startPeriod;
+
+			private Float totalAmount;
+
+			private String userName;
 
 			private String endPeriod;
 
@@ -141,36 +141,12 @@ public class DescribeSavingsPlansCoverageDetailResponse extends AcsResponse {
 				this.userId = userId;
 			}
 
-			public String getUserName() {
-				return this.userName;
-			}
-
-			public void setUserName(String userName) {
-				this.userName = userName;
-			}
-
 			public String getInstanceId() {
 				return this.instanceId;
 			}
 
 			public void setInstanceId(String instanceId) {
 				this.instanceId = instanceId;
-			}
-
-			public String getRegion() {
-				return this.region;
-			}
-
-			public void setRegion(String region) {
-				this.region = region;
-			}
-
-			public String getInstanceSpec() {
-				return this.instanceSpec;
-			}
-
-			public void setInstanceSpec(String instanceSpec) {
-				this.instanceSpec = instanceSpec;
 			}
 
 			public String getCurrency() {
@@ -181,28 +157,12 @@ public class DescribeSavingsPlansCoverageDetailResponse extends AcsResponse {
 				this.currency = currency;
 			}
 
-			public Float getCoveragePercentage() {
-				return this.coveragePercentage;
+			public String getInstanceSpec() {
+				return this.instanceSpec;
 			}
 
-			public void setCoveragePercentage(Float coveragePercentage) {
-				this.coveragePercentage = coveragePercentage;
-			}
-
-			public Float getDeductAmount() {
-				return this.deductAmount;
-			}
-
-			public void setDeductAmount(Float deductAmount) {
-				this.deductAmount = deductAmount;
-			}
-
-			public Float getTotalAmount() {
-				return this.totalAmount;
-			}
-
-			public void setTotalAmount(Float totalAmount) {
-				this.totalAmount = totalAmount;
+			public void setInstanceSpec(String instanceSpec) {
+				this.instanceSpec = instanceSpec;
 			}
 
 			public Float getPostpaidCost() {
@@ -213,12 +173,52 @@ public class DescribeSavingsPlansCoverageDetailResponse extends AcsResponse {
 				this.postpaidCost = postpaidCost;
 			}
 
+			public Float getCoveragePercentage() {
+				return this.coveragePercentage;
+			}
+
+			public void setCoveragePercentage(Float coveragePercentage) {
+				this.coveragePercentage = coveragePercentage;
+			}
+
+			public String getRegion() {
+				return this.region;
+			}
+
+			public void setRegion(String region) {
+				this.region = region;
+			}
+
+			public Float getDeductAmount() {
+				return this.deductAmount;
+			}
+
+			public void setDeductAmount(Float deductAmount) {
+				this.deductAmount = deductAmount;
+			}
+
 			public String getStartPeriod() {
 				return this.startPeriod;
 			}
 
 			public void setStartPeriod(String startPeriod) {
 				this.startPeriod = startPeriod;
+			}
+
+			public Float getTotalAmount() {
+				return this.totalAmount;
+			}
+
+			public void setTotalAmount(Float totalAmount) {
+				this.totalAmount = totalAmount;
+			}
+
+			public String getUserName() {
+				return this.userName;
+			}
+
+			public void setUserName(String userName) {
+				this.userName = userName;
 			}
 
 			public String getEndPeriod() {

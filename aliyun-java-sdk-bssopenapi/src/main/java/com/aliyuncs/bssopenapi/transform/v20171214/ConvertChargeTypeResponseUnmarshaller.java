@@ -24,9 +24,9 @@ public class ConvertChargeTypeResponseUnmarshaller {
 	public static ConvertChargeTypeResponse unmarshall(ConvertChargeTypeResponse convertChargeTypeResponse, UnmarshallerContext _ctx) {
 		
 		convertChargeTypeResponse.setRequestId(_ctx.stringValue("ConvertChargeTypeResponse.RequestId"));
-		convertChargeTypeResponse.setSuccess(_ctx.booleanValue("ConvertChargeTypeResponse.Success"));
 		convertChargeTypeResponse.setCode(_ctx.stringValue("ConvertChargeTypeResponse.Code"));
 		convertChargeTypeResponse.setMessage(_ctx.stringValue("ConvertChargeTypeResponse.Message"));
+		convertChargeTypeResponse.setSuccess(_ctx.booleanValue("ConvertChargeTypeResponse.Success"));
 
 		Data data = new Data();
 		data.setOrderId(_ctx.stringValue("ConvertChargeTypeResponse.Data.OrderId"));

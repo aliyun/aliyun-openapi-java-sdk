@@ -30,19 +30,19 @@ public class DescribePricingModuleResponseUnmarshaller {
 	public static DescribePricingModuleResponse unmarshall(DescribePricingModuleResponse describePricingModuleResponse, UnmarshallerContext _ctx) {
 		
 		describePricingModuleResponse.setRequestId(_ctx.stringValue("DescribePricingModuleResponse.RequestId"));
-		describePricingModuleResponse.setSuccess(_ctx.booleanValue("DescribePricingModuleResponse.Success"));
 		describePricingModuleResponse.setCode(_ctx.stringValue("DescribePricingModuleResponse.Code"));
 		describePricingModuleResponse.setMessage(_ctx.stringValue("DescribePricingModuleResponse.Message"));
+		describePricingModuleResponse.setSuccess(_ctx.booleanValue("DescribePricingModuleResponse.Success"));
 
 		Data data = new Data();
 
 		List<Module> moduleList = new ArrayList<Module>();
 		for (int i = 0; i < _ctx.lengthValue("DescribePricingModuleResponse.Data.ModuleList.Length"); i++) {
 			Module module = new Module();
-			module.setModuleCode(_ctx.stringValue("DescribePricingModuleResponse.Data.ModuleList["+ i +"].ModuleCode"));
 			module.setModuleName(_ctx.stringValue("DescribePricingModuleResponse.Data.ModuleList["+ i +"].ModuleName"));
 			module.setPriceType(_ctx.stringValue("DescribePricingModuleResponse.Data.ModuleList["+ i +"].PriceType"));
 			module.setCurrency(_ctx.stringValue("DescribePricingModuleResponse.Data.ModuleList["+ i +"].Currency"));
+			module.setModuleCode(_ctx.stringValue("DescribePricingModuleResponse.Data.ModuleList["+ i +"].ModuleCode"));
 
 			List<String> configList = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribePricingModuleResponse.Data.ModuleList["+ i +"].ConfigList.Length"); j++) {
@@ -65,9 +65,9 @@ public class DescribePricingModuleResponseUnmarshaller {
 			for (int j = 0; j < _ctx.lengthValue("DescribePricingModuleResponse.Data.AttributeList["+ i +"].Values.Length"); j++) {
 				AttributeValue attributeValue = new AttributeValue();
 				attributeValue.setType(_ctx.stringValue("DescribePricingModuleResponse.Data.AttributeList["+ i +"].Values["+ j +"].Type"));
-				attributeValue.setName(_ctx.stringValue("DescribePricingModuleResponse.Data.AttributeList["+ i +"].Values["+ j +"].Name"));
 				attributeValue.setValue(_ctx.stringValue("DescribePricingModuleResponse.Data.AttributeList["+ i +"].Values["+ j +"].Value"));
 				attributeValue.setRemark(_ctx.stringValue("DescribePricingModuleResponse.Data.AttributeList["+ i +"].Values["+ j +"].Remark"));
+				attributeValue.setName(_ctx.stringValue("DescribePricingModuleResponse.Data.AttributeList["+ i +"].Values["+ j +"].Name"));
 
 				values.add(attributeValue);
 			}

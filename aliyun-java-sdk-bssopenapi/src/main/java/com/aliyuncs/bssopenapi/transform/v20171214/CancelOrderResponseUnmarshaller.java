@@ -24,9 +24,9 @@ public class CancelOrderResponseUnmarshaller {
 	public static CancelOrderResponse unmarshall(CancelOrderResponse cancelOrderResponse, UnmarshallerContext _ctx) {
 		
 		cancelOrderResponse.setRequestId(_ctx.stringValue("CancelOrderResponse.RequestId"));
-		cancelOrderResponse.setSuccess(_ctx.booleanValue("CancelOrderResponse.Success"));
 		cancelOrderResponse.setCode(_ctx.stringValue("CancelOrderResponse.Code"));
 		cancelOrderResponse.setMessage(_ctx.stringValue("CancelOrderResponse.Message"));
+		cancelOrderResponse.setSuccess(_ctx.booleanValue("CancelOrderResponse.Success"));
 
 		Data data = new Data();
 		data.setHostId(_ctx.stringValue("CancelOrderResponse.Data.HostId"));

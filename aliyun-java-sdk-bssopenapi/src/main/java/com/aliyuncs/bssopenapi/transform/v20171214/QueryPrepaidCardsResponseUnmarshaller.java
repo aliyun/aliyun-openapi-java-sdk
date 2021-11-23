@@ -27,23 +27,23 @@ public class QueryPrepaidCardsResponseUnmarshaller {
 	public static QueryPrepaidCardsResponse unmarshall(QueryPrepaidCardsResponse queryPrepaidCardsResponse, UnmarshallerContext _ctx) {
 		
 		queryPrepaidCardsResponse.setRequestId(_ctx.stringValue("QueryPrepaidCardsResponse.RequestId"));
-		queryPrepaidCardsResponse.setSuccess(_ctx.booleanValue("QueryPrepaidCardsResponse.Success"));
 		queryPrepaidCardsResponse.setCode(_ctx.stringValue("QueryPrepaidCardsResponse.Code"));
 		queryPrepaidCardsResponse.setMessage(_ctx.stringValue("QueryPrepaidCardsResponse.Message"));
+		queryPrepaidCardsResponse.setSuccess(_ctx.booleanValue("QueryPrepaidCardsResponse.Success"));
 
 		List<PrepaidCard> data = new ArrayList<PrepaidCard>();
 		for (int i = 0; i < _ctx.lengthValue("QueryPrepaidCardsResponse.Data.Length"); i++) {
 			PrepaidCard prepaidCard = new PrepaidCard();
-			prepaidCard.setPrepaidCardId(_ctx.longValue("QueryPrepaidCardsResponse.Data["+ i +"].PrepaidCardId"));
-			prepaidCard.setPrepaidCardNo(_ctx.stringValue("QueryPrepaidCardsResponse.Data["+ i +"].PrepaidCardNo"));
-			prepaidCard.setGrantedTime(_ctx.stringValue("QueryPrepaidCardsResponse.Data["+ i +"].GrantedTime"));
-			prepaidCard.setEffectiveTime(_ctx.stringValue("QueryPrepaidCardsResponse.Data["+ i +"].EffectiveTime"));
-			prepaidCard.setExpiryTime(_ctx.stringValue("QueryPrepaidCardsResponse.Data["+ i +"].ExpiryTime"));
-			prepaidCard.setApplicableProducts(_ctx.stringValue("QueryPrepaidCardsResponse.Data["+ i +"].ApplicableProducts"));
-			prepaidCard.setApplicableScenarios(_ctx.stringValue("QueryPrepaidCardsResponse.Data["+ i +"].ApplicableScenarios"));
-			prepaidCard.setNominalValue(_ctx.stringValue("QueryPrepaidCardsResponse.Data["+ i +"].NominalValue"));
-			prepaidCard.setBalance(_ctx.stringValue("QueryPrepaidCardsResponse.Data["+ i +"].Balance"));
 			prepaidCard.setStatus(_ctx.stringValue("QueryPrepaidCardsResponse.Data["+ i +"].Status"));
+			prepaidCard.setExpiryTime(_ctx.stringValue("QueryPrepaidCardsResponse.Data["+ i +"].ExpiryTime"));
+			prepaidCard.setGrantedTime(_ctx.stringValue("QueryPrepaidCardsResponse.Data["+ i +"].GrantedTime"));
+			prepaidCard.setNominalValue(_ctx.stringValue("QueryPrepaidCardsResponse.Data["+ i +"].NominalValue"));
+			prepaidCard.setEffectiveTime(_ctx.stringValue("QueryPrepaidCardsResponse.Data["+ i +"].EffectiveTime"));
+			prepaidCard.setPrepaidCardNo(_ctx.stringValue("QueryPrepaidCardsResponse.Data["+ i +"].PrepaidCardNo"));
+			prepaidCard.setApplicableScenarios(_ctx.stringValue("QueryPrepaidCardsResponse.Data["+ i +"].ApplicableScenarios"));
+			prepaidCard.setPrepaidCardId(_ctx.longValue("QueryPrepaidCardsResponse.Data["+ i +"].PrepaidCardId"));
+			prepaidCard.setApplicableProducts(_ctx.stringValue("QueryPrepaidCardsResponse.Data["+ i +"].ApplicableProducts"));
+			prepaidCard.setBalance(_ctx.stringValue("QueryPrepaidCardsResponse.Data["+ i +"].Balance"));
 
 			data.add(prepaidCard);
 		}

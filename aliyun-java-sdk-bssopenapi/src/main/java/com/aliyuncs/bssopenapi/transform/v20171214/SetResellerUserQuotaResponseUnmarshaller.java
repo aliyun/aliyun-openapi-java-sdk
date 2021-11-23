@@ -25,8 +25,8 @@ public class SetResellerUserQuotaResponseUnmarshaller {
 		setResellerUserQuotaResponse.setRequestId(_ctx.stringValue("SetResellerUserQuotaResponse.RequestId"));
 		setResellerUserQuotaResponse.setCode(_ctx.stringValue("SetResellerUserQuotaResponse.Code"));
 		setResellerUserQuotaResponse.setMessage(_ctx.stringValue("SetResellerUserQuotaResponse.Message"));
-		setResellerUserQuotaResponse.setSuccess(_ctx.booleanValue("SetResellerUserQuotaResponse.Success"));
 		setResellerUserQuotaResponse.setData(_ctx.booleanValue("SetResellerUserQuotaResponse.Data"));
+		setResellerUserQuotaResponse.setSuccess(_ctx.booleanValue("SetResellerUserQuotaResponse.Success"));
 	 
 	 	return setResellerUserQuotaResponse;
 	}

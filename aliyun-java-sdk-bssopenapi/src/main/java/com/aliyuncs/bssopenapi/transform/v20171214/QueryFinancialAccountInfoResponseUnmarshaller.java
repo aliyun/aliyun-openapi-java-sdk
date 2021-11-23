@@ -25,16 +25,16 @@ public class QueryFinancialAccountInfoResponseUnmarshaller {
 		
 		queryFinancialAccountInfoResponse.setRequestId(_ctx.stringValue("QueryFinancialAccountInfoResponse.RequestId"));
 		queryFinancialAccountInfoResponse.setCode(_ctx.stringValue("QueryFinancialAccountInfoResponse.Code"));
-		queryFinancialAccountInfoResponse.setSuccess(_ctx.booleanValue("QueryFinancialAccountInfoResponse.Success"));
 		queryFinancialAccountInfoResponse.setMessage(_ctx.stringValue("QueryFinancialAccountInfoResponse.Message"));
+		queryFinancialAccountInfoResponse.setSuccess(_ctx.booleanValue("QueryFinancialAccountInfoResponse.Success"));
 
 		Data data = new Data();
-		data.setUserName(_ctx.stringValue("QueryFinancialAccountInfoResponse.Data.UserName"));
-		data.setIsFinancialAccount(_ctx.booleanValue("QueryFinancialAccountInfoResponse.Data.IsFinancialAccount"));
-		data.setAccountType(_ctx.stringValue("QueryFinancialAccountInfoResponse.Data.AccountType"));
 		data.setMemberNickName(_ctx.stringValue("QueryFinancialAccountInfoResponse.Data.MemberNickName"));
-		data.setMemberGroupId(_ctx.longValue("QueryFinancialAccountInfoResponse.Data.MemberGroupId"));
+		data.setIsFinancialAccount(_ctx.booleanValue("QueryFinancialAccountInfoResponse.Data.IsFinancialAccount"));
 		data.setMemberGroupName(_ctx.stringValue("QueryFinancialAccountInfoResponse.Data.MemberGroupName"));
+		data.setUserName(_ctx.stringValue("QueryFinancialAccountInfoResponse.Data.UserName"));
+		data.setAccountType(_ctx.stringValue("QueryFinancialAccountInfoResponse.Data.AccountType"));
+		data.setMemberGroupId(_ctx.longValue("QueryFinancialAccountInfoResponse.Data.MemberGroupId"));
 		queryFinancialAccountInfoResponse.setData(data);
 	 
 	 	return queryFinancialAccountInfoResponse;

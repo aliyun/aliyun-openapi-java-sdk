@@ -23,9 +23,9 @@ public class SetRenewalResponseUnmarshaller {
 	public static SetRenewalResponse unmarshall(SetRenewalResponse setRenewalResponse, UnmarshallerContext _ctx) {
 		
 		setRenewalResponse.setRequestId(_ctx.stringValue("SetRenewalResponse.RequestId"));
-		setRenewalResponse.setSuccess(_ctx.booleanValue("SetRenewalResponse.Success"));
 		setRenewalResponse.setCode(_ctx.stringValue("SetRenewalResponse.Code"));
 		setRenewalResponse.setMessage(_ctx.stringValue("SetRenewalResponse.Message"));
+		setRenewalResponse.setSuccess(_ctx.booleanValue("SetRenewalResponse.Success"));
 	 
 	 	return setRenewalResponse;
 	}

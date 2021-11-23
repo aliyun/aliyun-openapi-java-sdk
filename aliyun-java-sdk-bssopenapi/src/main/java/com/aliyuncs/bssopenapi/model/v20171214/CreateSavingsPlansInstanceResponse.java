@@ -15,32 +15,24 @@
 package com.aliyuncs.bssopenapi.model.v20171214;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.bssopenapi.transform.v20171214.ConfirmRelationResponseUnmarshaller;
+import com.aliyuncs.bssopenapi.transform.v20171214.CreateSavingsPlansInstanceResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ConfirmRelationResponse extends AcsResponse {
-
-	private String code;
+public class CreateSavingsPlansInstanceResponse extends AcsResponse {
 
 	private String message;
 
 	private String requestId;
 
+	private String code;
+
 	private Boolean success;
 
 	private Data data;
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
 
 	public String getMessage() {
 		return this.message;
@@ -56,6 +48,14 @@ public class ConfirmRelationResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public Boolean getSuccess() {
@@ -76,20 +76,20 @@ public class ConfirmRelationResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String hostId;
+		private Long orderId;
 
-		public String getHostId() {
-			return this.hostId;
+		public Long getOrderId() {
+			return this.orderId;
 		}
 
-		public void setHostId(String hostId) {
-			this.hostId = hostId;
+		public void setOrderId(Long orderId) {
+			this.orderId = orderId;
 		}
 	}
 
 	@Override
-	public ConfirmRelationResponse getInstance(UnmarshallerContext context) {
-		return	ConfirmRelationResponseUnmarshaller.unmarshall(this, context);
+	public CreateSavingsPlansInstanceResponse getInstance(UnmarshallerContext context) {
+		return	CreateSavingsPlansInstanceResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

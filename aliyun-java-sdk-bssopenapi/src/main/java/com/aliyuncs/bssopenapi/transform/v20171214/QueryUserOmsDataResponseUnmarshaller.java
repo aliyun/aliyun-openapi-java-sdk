@@ -28,9 +28,9 @@ public class QueryUserOmsDataResponseUnmarshaller {
 	public static QueryUserOmsDataResponse unmarshall(QueryUserOmsDataResponse queryUserOmsDataResponse, UnmarshallerContext _ctx) {
 		
 		queryUserOmsDataResponse.setRequestId(_ctx.stringValue("QueryUserOmsDataResponse.RequestId"));
-		queryUserOmsDataResponse.setSuccess(_ctx.booleanValue("QueryUserOmsDataResponse.Success"));
 		queryUserOmsDataResponse.setCode(_ctx.stringValue("QueryUserOmsDataResponse.Code"));
 		queryUserOmsDataResponse.setMessage(_ctx.stringValue("QueryUserOmsDataResponse.Message"));
+		queryUserOmsDataResponse.setSuccess(_ctx.booleanValue("QueryUserOmsDataResponse.Success"));
 
 		Data data = new Data();
 		data.setMarker(_ctx.stringValue("QueryUserOmsDataResponse.Data.Marker"));

@@ -25,8 +25,8 @@ public class ModifyAccountRelationResponseUnmarshaller {
 		
 		modifyAccountRelationResponse.setRequestId(_ctx.stringValue("ModifyAccountRelationResponse.RequestId"));
 		modifyAccountRelationResponse.setCode(_ctx.stringValue("ModifyAccountRelationResponse.Code"));
-		modifyAccountRelationResponse.setSuccess(_ctx.booleanValue("ModifyAccountRelationResponse.Success"));
 		modifyAccountRelationResponse.setMessage(_ctx.stringValue("ModifyAccountRelationResponse.Message"));
+		modifyAccountRelationResponse.setSuccess(_ctx.booleanValue("ModifyAccountRelationResponse.Success"));
 
 		Data data = new Data();
 		data.setHostId(_ctx.stringValue("ModifyAccountRelationResponse.Data.HostId"));

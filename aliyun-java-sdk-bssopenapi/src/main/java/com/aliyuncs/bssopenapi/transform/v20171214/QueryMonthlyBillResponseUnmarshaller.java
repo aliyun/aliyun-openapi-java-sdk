@@ -28,38 +28,38 @@ public class QueryMonthlyBillResponseUnmarshaller {
 	public static QueryMonthlyBillResponse unmarshall(QueryMonthlyBillResponse queryMonthlyBillResponse, UnmarshallerContext _ctx) {
 		
 		queryMonthlyBillResponse.setRequestId(_ctx.stringValue("QueryMonthlyBillResponse.RequestId"));
-		queryMonthlyBillResponse.setSuccess(_ctx.booleanValue("QueryMonthlyBillResponse.Success"));
 		queryMonthlyBillResponse.setCode(_ctx.stringValue("QueryMonthlyBillResponse.Code"));
 		queryMonthlyBillResponse.setMessage(_ctx.stringValue("QueryMonthlyBillResponse.Message"));
+		queryMonthlyBillResponse.setSuccess(_ctx.booleanValue("QueryMonthlyBillResponse.Success"));
 
 		Data data = new Data();
 		data.setOutstandingAmount(_ctx.floatValue("QueryMonthlyBillResponse.Data.OutstandingAmount"));
+		data.setBillingCycle(_ctx.stringValue("QueryMonthlyBillResponse.Data.BillingCycle"));
 		data.setTotalOutstandingAmount(_ctx.floatValue("QueryMonthlyBillResponse.Data.TotalOutstandingAmount"));
 		data.setNewInvoiceAmount(_ctx.floatValue("QueryMonthlyBillResponse.Data.NewInvoiceAmount"));
-		data.setBillingCycle(_ctx.stringValue("QueryMonthlyBillResponse.Data.BillingCycle"));
 
 		List<Item> items = new ArrayList<Item>();
 		for (int i = 0; i < _ctx.lengthValue("QueryMonthlyBillResponse.Data.Items.Length"); i++) {
 			Item item = new Item();
-			item.setItem(_ctx.stringValue("QueryMonthlyBillResponse.Data.Items["+ i +"].Item"));
-			item.setProductCode(_ctx.stringValue("QueryMonthlyBillResponse.Data.Items["+ i +"].ProductCode"));
-			item.setProductType(_ctx.stringValue("QueryMonthlyBillResponse.Data.Items["+ i +"].ProductType"));
-			item.setSubscriptionType(_ctx.stringValue("QueryMonthlyBillResponse.Data.Items["+ i +"].SubscriptionType"));
-			item.setSolutionCode(_ctx.stringValue("QueryMonthlyBillResponse.Data.Items["+ i +"].SolutionCode"));
-			item.setSolutionName(_ctx.stringValue("QueryMonthlyBillResponse.Data.Items["+ i +"].SolutionName"));
-			item.setPretaxGrossAmount(_ctx.floatValue("QueryMonthlyBillResponse.Data.Items["+ i +"].PretaxGrossAmount"));
-			item.setInvoiceDiscount(_ctx.floatValue("QueryMonthlyBillResponse.Data.Items["+ i +"].InvoiceDiscount"));
-			item.setDeductedByCoupons(_ctx.floatValue("QueryMonthlyBillResponse.Data.Items["+ i +"].DeductedByCoupons"));
 			item.setPretaxAmount(_ctx.floatValue("QueryMonthlyBillResponse.Data.Items["+ i +"].PretaxAmount"));
+			item.setSolutionCode(_ctx.stringValue("QueryMonthlyBillResponse.Data.Items["+ i +"].SolutionCode"));
+			item.setItem(_ctx.stringValue("QueryMonthlyBillResponse.Data.Items["+ i +"].Item"));
 			item.setCurrency(_ctx.stringValue("QueryMonthlyBillResponse.Data.Items["+ i +"].Currency"));
-			item.setPretaxAmountLocal(_ctx.floatValue("QueryMonthlyBillResponse.Data.Items["+ i +"].PretaxAmountLocal"));
-			item.setTax(_ctx.floatValue("QueryMonthlyBillResponse.Data.Items["+ i +"].Tax"));
-			item.setAfterTaxAmount(_ctx.floatValue("QueryMonthlyBillResponse.Data.Items["+ i +"].AfterTaxAmount"));
-			item.setOutstandingAmount(_ctx.floatValue("QueryMonthlyBillResponse.Data.Items["+ i +"].OutstandingAmount"));
 			item.setDeductedByCashCoupons(_ctx.floatValue("QueryMonthlyBillResponse.Data.Items["+ i +"].DeductedByCashCoupons"));
-			item.setDeductedByPrepaidCard(_ctx.floatValue("QueryMonthlyBillResponse.Data.Items["+ i +"].DeductedByPrepaidCard"));
-			item.setPaymentAmount(_ctx.floatValue("QueryMonthlyBillResponse.Data.Items["+ i +"].PaymentAmount"));
+			item.setSubscriptionType(_ctx.stringValue("QueryMonthlyBillResponse.Data.Items["+ i +"].SubscriptionType"));
 			item.setPaymentCurrency(_ctx.stringValue("QueryMonthlyBillResponse.Data.Items["+ i +"].PaymentCurrency"));
+			item.setDeductedByPrepaidCard(_ctx.floatValue("QueryMonthlyBillResponse.Data.Items["+ i +"].DeductedByPrepaidCard"));
+			item.setDeductedByCoupons(_ctx.floatValue("QueryMonthlyBillResponse.Data.Items["+ i +"].DeductedByCoupons"));
+			item.setPaymentAmount(_ctx.floatValue("QueryMonthlyBillResponse.Data.Items["+ i +"].PaymentAmount"));
+			item.setInvoiceDiscount(_ctx.floatValue("QueryMonthlyBillResponse.Data.Items["+ i +"].InvoiceDiscount"));
+			item.setProductType(_ctx.stringValue("QueryMonthlyBillResponse.Data.Items["+ i +"].ProductType"));
+			item.setOutstandingAmount(_ctx.floatValue("QueryMonthlyBillResponse.Data.Items["+ i +"].OutstandingAmount"));
+			item.setAfterTaxAmount(_ctx.floatValue("QueryMonthlyBillResponse.Data.Items["+ i +"].AfterTaxAmount"));
+			item.setPretaxGrossAmount(_ctx.floatValue("QueryMonthlyBillResponse.Data.Items["+ i +"].PretaxGrossAmount"));
+			item.setSolutionName(_ctx.stringValue("QueryMonthlyBillResponse.Data.Items["+ i +"].SolutionName"));
+			item.setTax(_ctx.floatValue("QueryMonthlyBillResponse.Data.Items["+ i +"].Tax"));
+			item.setPretaxAmountLocal(_ctx.floatValue("QueryMonthlyBillResponse.Data.Items["+ i +"].PretaxAmountLocal"));
+			item.setProductCode(_ctx.stringValue("QueryMonthlyBillResponse.Data.Items["+ i +"].ProductCode"));
 
 			items.add(item);
 		}

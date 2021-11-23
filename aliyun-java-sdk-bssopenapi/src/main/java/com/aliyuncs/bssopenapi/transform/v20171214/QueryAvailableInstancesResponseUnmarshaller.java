@@ -28,9 +28,9 @@ public class QueryAvailableInstancesResponseUnmarshaller {
 	public static QueryAvailableInstancesResponse unmarshall(QueryAvailableInstancesResponse queryAvailableInstancesResponse, UnmarshallerContext _ctx) {
 		
 		queryAvailableInstancesResponse.setRequestId(_ctx.stringValue("QueryAvailableInstancesResponse.RequestId"));
-		queryAvailableInstancesResponse.setSuccess(_ctx.booleanValue("QueryAvailableInstancesResponse.Success"));
 		queryAvailableInstancesResponse.setCode(_ctx.stringValue("QueryAvailableInstancesResponse.Code"));
 		queryAvailableInstancesResponse.setMessage(_ctx.stringValue("QueryAvailableInstancesResponse.Message"));
+		queryAvailableInstancesResponse.setSuccess(_ctx.booleanValue("QueryAvailableInstancesResponse.Success"));
 
 		Data data = new Data();
 		data.setPageNum(_ctx.integerValue("QueryAvailableInstancesResponse.Data.PageNum"));
@@ -40,24 +40,24 @@ public class QueryAvailableInstancesResponseUnmarshaller {
 		List<Instance> instanceList = new ArrayList<Instance>();
 		for (int i = 0; i < _ctx.lengthValue("QueryAvailableInstancesResponse.Data.InstanceList.Length"); i++) {
 			Instance instance = new Instance();
-			instance.setOwnerId(_ctx.longValue("QueryAvailableInstancesResponse.Data.InstanceList["+ i +"].OwnerId"));
-			instance.setSellerId(_ctx.longValue("QueryAvailableInstancesResponse.Data.InstanceList["+ i +"].SellerId"));
-			instance.setProductCode(_ctx.stringValue("QueryAvailableInstancesResponse.Data.InstanceList["+ i +"].ProductCode"));
-			instance.setProductType(_ctx.stringValue("QueryAvailableInstancesResponse.Data.InstanceList["+ i +"].ProductType"));
-			instance.setSubscriptionType(_ctx.stringValue("QueryAvailableInstancesResponse.Data.InstanceList["+ i +"].SubscriptionType"));
-			instance.setInstanceID(_ctx.stringValue("QueryAvailableInstancesResponse.Data.InstanceList["+ i +"].InstanceID"));
-			instance.setRegion(_ctx.stringValue("QueryAvailableInstancesResponse.Data.InstanceList["+ i +"].Region"));
-			instance.setCreateTime(_ctx.stringValue("QueryAvailableInstancesResponse.Data.InstanceList["+ i +"].CreateTime"));
-			instance.setEndTime(_ctx.stringValue("QueryAvailableInstancesResponse.Data.InstanceList["+ i +"].EndTime"));
-			instance.setStopTime(_ctx.stringValue("QueryAvailableInstancesResponse.Data.InstanceList["+ i +"].StopTime"));
-			instance.setReleaseTime(_ctx.stringValue("QueryAvailableInstancesResponse.Data.InstanceList["+ i +"].ReleaseTime"));
-			instance.setExpectedReleaseTime(_ctx.stringValue("QueryAvailableInstancesResponse.Data.InstanceList["+ i +"].ExpectedReleaseTime"));
-			instance.setStatus(_ctx.stringValue("QueryAvailableInstancesResponse.Data.InstanceList["+ i +"].Status"));
 			instance.setSubStatus(_ctx.stringValue("QueryAvailableInstancesResponse.Data.InstanceList["+ i +"].SubStatus"));
+			instance.setStatus(_ctx.stringValue("QueryAvailableInstancesResponse.Data.InstanceList["+ i +"].Status"));
+			instance.setExpectedReleaseTime(_ctx.stringValue("QueryAvailableInstancesResponse.Data.InstanceList["+ i +"].ExpectedReleaseTime"));
 			instance.setRenewStatus(_ctx.stringValue("QueryAvailableInstancesResponse.Data.InstanceList["+ i +"].RenewStatus"));
-			instance.setRenewalDuration(_ctx.integerValue("QueryAvailableInstancesResponse.Data.InstanceList["+ i +"].RenewalDuration"));
-			instance.setRenewalDurationUnit(_ctx.stringValue("QueryAvailableInstancesResponse.Data.InstanceList["+ i +"].RenewalDurationUnit"));
+			instance.setCreateTime(_ctx.stringValue("QueryAvailableInstancesResponse.Data.InstanceList["+ i +"].CreateTime"));
+			instance.setSellerId(_ctx.longValue("QueryAvailableInstancesResponse.Data.InstanceList["+ i +"].SellerId"));
+			instance.setInstanceID(_ctx.stringValue("QueryAvailableInstancesResponse.Data.InstanceList["+ i +"].InstanceID"));
 			instance.setSeller(_ctx.stringValue("QueryAvailableInstancesResponse.Data.InstanceList["+ i +"].Seller"));
+			instance.setStopTime(_ctx.stringValue("QueryAvailableInstancesResponse.Data.InstanceList["+ i +"].StopTime"));
+			instance.setRenewalDurationUnit(_ctx.stringValue("QueryAvailableInstancesResponse.Data.InstanceList["+ i +"].RenewalDurationUnit"));
+			instance.setSubscriptionType(_ctx.stringValue("QueryAvailableInstancesResponse.Data.InstanceList["+ i +"].SubscriptionType"));
+			instance.setOwnerId(_ctx.longValue("QueryAvailableInstancesResponse.Data.InstanceList["+ i +"].OwnerId"));
+			instance.setEndTime(_ctx.stringValue("QueryAvailableInstancesResponse.Data.InstanceList["+ i +"].EndTime"));
+			instance.setProductType(_ctx.stringValue("QueryAvailableInstancesResponse.Data.InstanceList["+ i +"].ProductType"));
+			instance.setRegion(_ctx.stringValue("QueryAvailableInstancesResponse.Data.InstanceList["+ i +"].Region"));
+			instance.setReleaseTime(_ctx.stringValue("QueryAvailableInstancesResponse.Data.InstanceList["+ i +"].ReleaseTime"));
+			instance.setRenewalDuration(_ctx.integerValue("QueryAvailableInstancesResponse.Data.InstanceList["+ i +"].RenewalDuration"));
+			instance.setProductCode(_ctx.stringValue("QueryAvailableInstancesResponse.Data.InstanceList["+ i +"].ProductCode"));
 
 			instanceList.add(instance);
 		}

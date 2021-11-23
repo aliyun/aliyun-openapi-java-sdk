@@ -26,13 +26,13 @@ public class SetCreditLabelActionResponse extends AcsResponse {
 
 	private String code;
 
-	private Boolean data;
-
 	private String message;
 
-	private Boolean success;
+	private Boolean data;
 
 	private String requestId;
+
+	private Boolean success;
 
 	public String getCode() {
 		return this.code;
@@ -40,14 +40,6 @@ public class SetCreditLabelActionResponse extends AcsResponse {
 
 	public void setCode(String code) {
 		this.code = code;
-	}
-
-	public Boolean getData() {
-		return this.data;
-	}
-
-	public void setData(Boolean data) {
-		this.data = data;
 	}
 
 	public String getMessage() {
@@ -58,12 +50,12 @@ public class SetCreditLabelActionResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public Boolean getData() {
+		return this.data;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setData(Boolean data) {
+		this.data = data;
 	}
 
 	public String getRequestId() {
@@ -72,6 +64,14 @@ public class SetCreditLabelActionResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	@Override

@@ -29,10 +29,10 @@ public class CreateAgAccountResponseUnmarshaller {
 		createAgAccountResponse.setSuccess(_ctx.booleanValue("CreateAgAccountResponse.Success"));
 
 		AgRelationDto agRelationDto = new AgRelationDto();
-		agRelationDto.setPk(_ctx.stringValue("CreateAgAccountResponse.AgRelationDto.Pk"));
 		agRelationDto.setType(_ctx.stringValue("CreateAgAccountResponse.AgRelationDto.Type"));
-		agRelationDto.setMpk(_ctx.stringValue("CreateAgAccountResponse.AgRelationDto.Mpk"));
+		agRelationDto.setPk(_ctx.stringValue("CreateAgAccountResponse.AgRelationDto.Pk"));
 		agRelationDto.setRamAdminRoleName(_ctx.stringValue("CreateAgAccountResponse.AgRelationDto.RamAdminRoleName"));
+		agRelationDto.setMpk(_ctx.stringValue("CreateAgAccountResponse.AgRelationDto.Mpk"));
 		createAgAccountResponse.setAgRelationDto(agRelationDto);
 	 
 	 	return createAgAccountResponse;

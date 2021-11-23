@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeResourceUsageTotalResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String message;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -65,6 +49,22 @@ public class DescribeResourceUsageTotalResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Data getData() {
@@ -99,9 +99,17 @@ public class DescribeResourceUsageTotalResponse extends AcsResponse {
 
 		public static class Item {
 
+			private Float usagePercentage;
+
 			private String period;
 
-			private Float usagePercentage;
+			public Float getUsagePercentage() {
+				return this.usagePercentage;
+			}
+
+			public void setUsagePercentage(Float usagePercentage) {
+				this.usagePercentage = usagePercentage;
+			}
 
 			public String getPeriod() {
 				return this.period;
@@ -110,35 +118,19 @@ public class DescribeResourceUsageTotalResponse extends AcsResponse {
 			public void setPeriod(String period) {
 				this.period = period;
 			}
-
-			public Float getUsagePercentage() {
-				return this.usagePercentage;
-			}
-
-			public void setUsagePercentage(Float usagePercentage) {
-				this.usagePercentage = usagePercentage;
-			}
 		}
 
 		public static class TotalUsage {
 
-			private Float usagePercentage;
-
 			private Float postpaidCost;
-
-			private Float reservationCost;
 
 			private Float savedCost;
 
+			private Float usagePercentage;
+
 			private Float potentialSavedCost;
 
-			public Float getUsagePercentage() {
-				return this.usagePercentage;
-			}
-
-			public void setUsagePercentage(Float usagePercentage) {
-				this.usagePercentage = usagePercentage;
-			}
+			private Float reservationCost;
 
 			public Float getPostpaidCost() {
 				return this.postpaidCost;
@@ -146,14 +138,6 @@ public class DescribeResourceUsageTotalResponse extends AcsResponse {
 
 			public void setPostpaidCost(Float postpaidCost) {
 				this.postpaidCost = postpaidCost;
-			}
-
-			public Float getReservationCost() {
-				return this.reservationCost;
-			}
-
-			public void setReservationCost(Float reservationCost) {
-				this.reservationCost = reservationCost;
 			}
 
 			public Float getSavedCost() {
@@ -164,12 +148,28 @@ public class DescribeResourceUsageTotalResponse extends AcsResponse {
 				this.savedCost = savedCost;
 			}
 
+			public Float getUsagePercentage() {
+				return this.usagePercentage;
+			}
+
+			public void setUsagePercentage(Float usagePercentage) {
+				this.usagePercentage = usagePercentage;
+			}
+
 			public Float getPotentialSavedCost() {
 				return this.potentialSavedCost;
 			}
 
 			public void setPotentialSavedCost(Float potentialSavedCost) {
 				this.potentialSavedCost = potentialSavedCost;
+			}
+
+			public Float getReservationCost() {
+				return this.reservationCost;
+			}
+
+			public void setReservationCost(Float reservationCost) {
+				this.reservationCost = reservationCost;
 			}
 		}
 	}

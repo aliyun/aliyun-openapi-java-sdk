@@ -25,8 +25,8 @@ public class QueryResellerAvailableQuotaResponseUnmarshaller {
 		queryResellerAvailableQuotaResponse.setRequestId(_ctx.stringValue("QueryResellerAvailableQuotaResponse.RequestId"));
 		queryResellerAvailableQuotaResponse.setCode(_ctx.stringValue("QueryResellerAvailableQuotaResponse.Code"));
 		queryResellerAvailableQuotaResponse.setMessage(_ctx.stringValue("QueryResellerAvailableQuotaResponse.Message"));
-		queryResellerAvailableQuotaResponse.setSuccess(_ctx.booleanValue("QueryResellerAvailableQuotaResponse.Success"));
 		queryResellerAvailableQuotaResponse.setData(_ctx.stringValue("QueryResellerAvailableQuotaResponse.Data"));
+		queryResellerAvailableQuotaResponse.setSuccess(_ctx.booleanValue("QueryResellerAvailableQuotaResponse.Success"));
 	 
 	 	return queryResellerAvailableQuotaResponse;
 	}

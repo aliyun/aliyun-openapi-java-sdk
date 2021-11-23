@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryEvaluateListResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String message;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -67,6 +51,22 @@ public class QueryEvaluateListResponse extends AcsResponse {
 		this.message = message;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -77,9 +77,9 @@ public class QueryEvaluateListResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String hostId;
-
 		private Integer pageNum;
+
+		private Long totalUnAppliedInvoiceAmount;
 
 		private Integer pageSize;
 
@@ -87,17 +87,9 @@ public class QueryEvaluateListResponse extends AcsResponse {
 
 		private Long totalInvoiceAmount;
 
-		private Long totalUnAppliedInvoiceAmount;
+		private String hostId;
 
 		private List<Evaluate> evaluateList;
-
-		public String getHostId() {
-			return this.hostId;
-		}
-
-		public void setHostId(String hostId) {
-			this.hostId = hostId;
-		}
 
 		public Integer getPageNum() {
 			return this.pageNum;
@@ -105,6 +97,14 @@ public class QueryEvaluateListResponse extends AcsResponse {
 
 		public void setPageNum(Integer pageNum) {
 			this.pageNum = pageNum;
+		}
+
+		public Long getTotalUnAppliedInvoiceAmount() {
+			return this.totalUnAppliedInvoiceAmount;
+		}
+
+		public void setTotalUnAppliedInvoiceAmount(Long totalUnAppliedInvoiceAmount) {
+			this.totalUnAppliedInvoiceAmount = totalUnAppliedInvoiceAmount;
 		}
 
 		public Integer getPageSize() {
@@ -131,12 +131,12 @@ public class QueryEvaluateListResponse extends AcsResponse {
 			this.totalInvoiceAmount = totalInvoiceAmount;
 		}
 
-		public Long getTotalUnAppliedInvoiceAmount() {
-			return this.totalUnAppliedInvoiceAmount;
+		public String getHostId() {
+			return this.hostId;
 		}
 
-		public void setTotalUnAppliedInvoiceAmount(Long totalUnAppliedInvoiceAmount) {
-			this.totalUnAppliedInvoiceAmount = totalUnAppliedInvoiceAmount;
+		public void setHostId(String hostId) {
+			this.hostId = hostId;
 		}
 
 		public List<Evaluate> getEvaluateList() {
@@ -149,94 +149,62 @@ public class QueryEvaluateListResponse extends AcsResponse {
 
 		public static class Evaluate {
 
-			private Long id;
+			private Integer type;
 
-			private String gmtCreate;
-
-			private String gmtModified;
-
-			private Long userId;
-
-			private String userNick;
-
-			private String outBizId;
+			private Integer status;
 
 			private Long billId;
 
-			private Long itemId;
+			private Long userId;
 
 			private String billCycle;
+
+			private Long canInvoiceAmount;
+
+			private Long offsetAcceptAmount;
+
+			private Long itemId;
+
+			private String outBizId;
+
+			private String userNick;
+
+			private String gmtModified;
+
+			private String opId;
 
 			private String bizType;
 
 			private Long originalAmount;
 
-			private Long presentAmount;
-
-			private Long canInvoiceAmount;
-
 			private Long invoicedAmount;
 
-			private Long offsetCostAmount;
+			private String gmtCreate;
 
-			private Long offsetAcceptAmount;
-
-			private Integer status;
-
-			private String opId;
-
-			private String name;
+			private Long presentAmount;
 
 			private String bizTime;
 
-			private Integer type;
+			private String name;
 
-			public Long getId() {
-				return this.id;
+			private Long offsetCostAmount;
+
+			private Long id;
+
+			public Integer getType() {
+				return this.type;
 			}
 
-			public void setId(Long id) {
-				this.id = id;
+			public void setType(Integer type) {
+				this.type = type;
 			}
 
-			public String getGmtCreate() {
-				return this.gmtCreate;
+			public Integer getStatus() {
+				return this.status;
 			}
 
-			public void setGmtCreate(String gmtCreate) {
-				this.gmtCreate = gmtCreate;
-			}
-
-			public String getGmtModified() {
-				return this.gmtModified;
-			}
-
-			public void setGmtModified(String gmtModified) {
-				this.gmtModified = gmtModified;
-			}
-
-			public Long getUserId() {
-				return this.userId;
-			}
-
-			public void setUserId(Long userId) {
-				this.userId = userId;
-			}
-
-			public String getUserNick() {
-				return this.userNick;
-			}
-
-			public void setUserNick(String userNick) {
-				this.userNick = userNick;
-			}
-
-			public String getOutBizId() {
-				return this.outBizId;
-			}
-
-			public void setOutBizId(String outBizId) {
-				this.outBizId = outBizId;
+			public void setStatus(Integer status) {
+				this.status = status;
 			}
 
 			public Long getBillId() {
@@ -247,12 +215,12 @@ public class QueryEvaluateListResponse extends AcsResponse {
 				this.billId = billId;
 			}
 
-			public Long getItemId() {
-				return this.itemId;
+			public Long getUserId() {
+				return this.userId;
 			}
 
-			public void setItemId(Long itemId) {
-				this.itemId = itemId;
+			public void setUserId(Long userId) {
+				this.userId = userId;
 			}
 
 			public String getBillCycle() {
@@ -261,6 +229,62 @@ public class QueryEvaluateListResponse extends AcsResponse {
 
 			public void setBillCycle(String billCycle) {
 				this.billCycle = billCycle;
+			}
+
+			public Long getCanInvoiceAmount() {
+				return this.canInvoiceAmount;
+			}
+
+			public void setCanInvoiceAmount(Long canInvoiceAmount) {
+				this.canInvoiceAmount = canInvoiceAmount;
+			}
+
+			public Long getOffsetAcceptAmount() {
+				return this.offsetAcceptAmount;
+			}
+
+			public void setOffsetAcceptAmount(Long offsetAcceptAmount) {
+				this.offsetAcceptAmount = offsetAcceptAmount;
+			}
+
+			public Long getItemId() {
+				return this.itemId;
+			}
+
+			public void setItemId(Long itemId) {
+				this.itemId = itemId;
+			}
+
+			public String getOutBizId() {
+				return this.outBizId;
+			}
+
+			public void setOutBizId(String outBizId) {
+				this.outBizId = outBizId;
+			}
+
+			public String getUserNick() {
+				return this.userNick;
+			}
+
+			public void setUserNick(String userNick) {
+				this.userNick = userNick;
+			}
+
+			public String getGmtModified() {
+				return this.gmtModified;
+			}
+
+			public void setGmtModified(String gmtModified) {
+				this.gmtModified = gmtModified;
+			}
+
+			public String getOpId() {
+				return this.opId;
+			}
+
+			public void setOpId(String opId) {
+				this.opId = opId;
 			}
 
 			public String getBizType() {
@@ -279,22 +303,6 @@ public class QueryEvaluateListResponse extends AcsResponse {
 				this.originalAmount = originalAmount;
 			}
 
-			public Long getPresentAmount() {
-				return this.presentAmount;
-			}
-
-			public void setPresentAmount(Long presentAmount) {
-				this.presentAmount = presentAmount;
-			}
-
-			public Long getCanInvoiceAmount() {
-				return this.canInvoiceAmount;
-			}
-
-			public void setCanInvoiceAmount(Long canInvoiceAmount) {
-				this.canInvoiceAmount = canInvoiceAmount;
-			}
-
 			public Long getInvoicedAmount() {
 				return this.invoicedAmount;
 			}
@@ -303,44 +311,20 @@ public class QueryEvaluateListResponse extends AcsResponse {
 				this.invoicedAmount = invoicedAmount;
 			}
 
-			public Long getOffsetCostAmount() {
-				return this.offsetCostAmount;
+			public String getGmtCreate() {
+				return this.gmtCreate;
 			}
 
-			public void setOffsetCostAmount(Long offsetCostAmount) {
-				this.offsetCostAmount = offsetCostAmount;
+			public void setGmtCreate(String gmtCreate) {
+				this.gmtCreate = gmtCreate;
 			}
 
-			public Long getOffsetAcceptAmount() {
-				return this.offsetAcceptAmount;
+			public Long getPresentAmount() {
+				return this.presentAmount;
 			}
 
-			public void setOffsetAcceptAmount(Long offsetAcceptAmount) {
-				this.offsetAcceptAmount = offsetAcceptAmount;
-			}
-
-			public Integer getStatus() {
-				return this.status;
-			}
-
-			public void setStatus(Integer status) {
-				this.status = status;
-			}
-
-			public String getOpId() {
-				return this.opId;
-			}
-
-			public void setOpId(String opId) {
-				this.opId = opId;
-			}
-
-			public String getName() {
-				return this.name;
-			}
-
-			public void setName(String name) {
-				this.name = name;
+			public void setPresentAmount(Long presentAmount) {
+				this.presentAmount = presentAmount;
 			}
 
 			public String getBizTime() {
@@ -351,12 +335,28 @@ public class QueryEvaluateListResponse extends AcsResponse {
 				this.bizTime = bizTime;
 			}
 
-			public Integer getType() {
-				return this.type;
+			public String getName() {
+				return this.name;
 			}
 
-			public void setType(Integer type) {
-				this.type = type;
+			public void setName(String name) {
+				this.name = name;
+			}
+
+			public Long getOffsetCostAmount() {
+				return this.offsetCostAmount;
+			}
+
+			public void setOffsetCostAmount(Long offsetCostAmount) {
+				this.offsetCostAmount = offsetCostAmount;
+			}
+
+			public Long getId() {
+				return this.id;
+			}
+
+			public void setId(Long id) {
+				this.id = id;
 			}
 		}
 	}

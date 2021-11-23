@@ -25,8 +25,8 @@ public class RelieveAccountRelationResponseUnmarshaller {
 		
 		relieveAccountRelationResponse.setRequestId(_ctx.stringValue("RelieveAccountRelationResponse.RequestId"));
 		relieveAccountRelationResponse.setCode(_ctx.stringValue("RelieveAccountRelationResponse.Code"));
-		relieveAccountRelationResponse.setSuccess(_ctx.booleanValue("RelieveAccountRelationResponse.Success"));
 		relieveAccountRelationResponse.setMessage(_ctx.stringValue("RelieveAccountRelationResponse.Message"));
+		relieveAccountRelationResponse.setSuccess(_ctx.booleanValue("RelieveAccountRelationResponse.Success"));
 
 		Data data = new Data();
 		data.setHostId(_ctx.stringValue("RelieveAccountRelationResponse.Data.HostId"));

@@ -24,10 +24,10 @@ public class UpgradeResourcePackageResponseUnmarshaller {
 	public static UpgradeResourcePackageResponse unmarshall(UpgradeResourcePackageResponse upgradeResourcePackageResponse, UnmarshallerContext _ctx) {
 		
 		upgradeResourcePackageResponse.setRequestId(_ctx.stringValue("UpgradeResourcePackageResponse.RequestId"));
-		upgradeResourcePackageResponse.setOrderId(_ctx.longValue("UpgradeResourcePackageResponse.OrderId"));
-		upgradeResourcePackageResponse.setSuccess(_ctx.booleanValue("UpgradeResourcePackageResponse.Success"));
 		upgradeResourcePackageResponse.setCode(_ctx.stringValue("UpgradeResourcePackageResponse.Code"));
 		upgradeResourcePackageResponse.setMessage(_ctx.stringValue("UpgradeResourcePackageResponse.Message"));
+		upgradeResourcePackageResponse.setSuccess(_ctx.booleanValue("UpgradeResourcePackageResponse.Success"));
+		upgradeResourcePackageResponse.setOrderId(_ctx.longValue("UpgradeResourcePackageResponse.OrderId"));
 
 		Data data = new Data();
 		data.setOrderId(_ctx.longValue("UpgradeResourcePackageResponse.Data.OrderId"));

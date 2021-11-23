@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryAccountTransactionDetailsResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String message;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -67,6 +51,22 @@ public class QueryAccountTransactionDetailsResponse extends AcsResponse {
 		this.message = message;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -77,22 +77,22 @@ public class QueryAccountTransactionDetailsResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String accountName;
+		private String nextToken;
 
 		private Integer totalCount;
 
-		private String nextToken;
-
 		private Integer maxResults;
+
+		private String accountName;
 
 		private List<AccountTransactionsListItem> accountTransactionsList;
 
-		public String getAccountName() {
-			return this.accountName;
+		public String getNextToken() {
+			return this.nextToken;
 		}
 
-		public void setAccountName(String accountName) {
-			this.accountName = accountName;
+		public void setNextToken(String nextToken) {
+			this.nextToken = nextToken;
 		}
 
 		public Integer getTotalCount() {
@@ -103,20 +103,20 @@ public class QueryAccountTransactionDetailsResponse extends AcsResponse {
 			this.totalCount = totalCount;
 		}
 
-		public String getNextToken() {
-			return this.nextToken;
-		}
-
-		public void setNextToken(String nextToken) {
-			this.nextToken = nextToken;
-		}
-
 		public Integer getMaxResults() {
 			return this.maxResults;
 		}
 
 		public void setMaxResults(Integer maxResults) {
 			this.maxResults = maxResults;
+		}
+
+		public String getAccountName() {
+			return this.accountName;
+		}
+
+		public void setAccountName(String accountName) {
+			this.accountName = accountName;
 		}
 
 		public List<AccountTransactionsListItem> getAccountTransactionsList() {
@@ -129,62 +129,38 @@ public class QueryAccountTransactionDetailsResponse extends AcsResponse {
 
 		public static class AccountTransactionsListItem {
 
-			private String transactionNumber;
-
-			private String transactionTime;
-
-			private String transactionFlow;
-
-			private String transactionType;
+			private String billingCycle;
 
 			private String transactionChannel;
-
-			private String transactionChannelSN;
-
-			private String fundType;
 
 			private String recordID;
 
 			private String remarks;
 
-			private String billingCycle;
-
 			private String amount;
-
-			private String balance;
 
 			private String transactionAccount;
 
-			public String getTransactionNumber() {
-				return this.transactionNumber;
+			private String transactionTime;
+
+			private String transactionType;
+
+			private String transactionFlow;
+
+			private String fundType;
+
+			private String transactionChannelSN;
+
+			private String transactionNumber;
+
+			private String balance;
+
+			public String getBillingCycle() {
+				return this.billingCycle;
 			}
 
-			public void setTransactionNumber(String transactionNumber) {
-				this.transactionNumber = transactionNumber;
-			}
-
-			public String getTransactionTime() {
-				return this.transactionTime;
-			}
-
-			public void setTransactionTime(String transactionTime) {
-				this.transactionTime = transactionTime;
-			}
-
-			public String getTransactionFlow() {
-				return this.transactionFlow;
-			}
-
-			public void setTransactionFlow(String transactionFlow) {
-				this.transactionFlow = transactionFlow;
-			}
-
-			public String getTransactionType() {
-				return this.transactionType;
-			}
-
-			public void setTransactionType(String transactionType) {
-				this.transactionType = transactionType;
+			public void setBillingCycle(String billingCycle) {
+				this.billingCycle = billingCycle;
 			}
 
 			public String getTransactionChannel() {
@@ -193,22 +169,6 @@ public class QueryAccountTransactionDetailsResponse extends AcsResponse {
 
 			public void setTransactionChannel(String transactionChannel) {
 				this.transactionChannel = transactionChannel;
-			}
-
-			public String getTransactionChannelSN() {
-				return this.transactionChannelSN;
-			}
-
-			public void setTransactionChannelSN(String transactionChannelSN) {
-				this.transactionChannelSN = transactionChannelSN;
-			}
-
-			public String getFundType() {
-				return this.fundType;
-			}
-
-			public void setFundType(String fundType) {
-				this.fundType = fundType;
 			}
 
 			public String getRecordID() {
@@ -227,14 +187,6 @@ public class QueryAccountTransactionDetailsResponse extends AcsResponse {
 				this.remarks = remarks;
 			}
 
-			public String getBillingCycle() {
-				return this.billingCycle;
-			}
-
-			public void setBillingCycle(String billingCycle) {
-				this.billingCycle = billingCycle;
-			}
-
 			public String getAmount() {
 				return this.amount;
 			}
@@ -243,20 +195,68 @@ public class QueryAccountTransactionDetailsResponse extends AcsResponse {
 				this.amount = amount;
 			}
 
-			public String getBalance() {
-				return this.balance;
-			}
-
-			public void setBalance(String balance) {
-				this.balance = balance;
-			}
-
 			public String getTransactionAccount() {
 				return this.transactionAccount;
 			}
 
 			public void setTransactionAccount(String transactionAccount) {
 				this.transactionAccount = transactionAccount;
+			}
+
+			public String getTransactionTime() {
+				return this.transactionTime;
+			}
+
+			public void setTransactionTime(String transactionTime) {
+				this.transactionTime = transactionTime;
+			}
+
+			public String getTransactionType() {
+				return this.transactionType;
+			}
+
+			public void setTransactionType(String transactionType) {
+				this.transactionType = transactionType;
+			}
+
+			public String getTransactionFlow() {
+				return this.transactionFlow;
+			}
+
+			public void setTransactionFlow(String transactionFlow) {
+				this.transactionFlow = transactionFlow;
+			}
+
+			public String getFundType() {
+				return this.fundType;
+			}
+
+			public void setFundType(String fundType) {
+				this.fundType = fundType;
+			}
+
+			public String getTransactionChannelSN() {
+				return this.transactionChannelSN;
+			}
+
+			public void setTransactionChannelSN(String transactionChannelSN) {
+				this.transactionChannelSN = transactionChannelSN;
+			}
+
+			public String getTransactionNumber() {
+				return this.transactionNumber;
+			}
+
+			public void setTransactionNumber(String transactionNumber) {
+				this.transactionNumber = transactionNumber;
+			}
+
+			public String getBalance() {
+				return this.balance;
+			}
+
+			public void setBalance(String balance) {
+				this.balance = balance;
 			}
 		}
 	}

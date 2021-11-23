@@ -42,9 +42,9 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 
 	private Integer renewPeriod;
 
-	private List<Parameter> parameters;
-
 	private String renewalStatus;
+
+	private List<Parameter> parameters;
 	public CreateInstanceRequest() {
 		super("BssOpenApi", "2017-12-14", "CreateInstance");
 		setMethod(MethodType.POST);
@@ -142,6 +142,17 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 		}
 	}
 
+	public String getRenewalStatus() {
+		return this.renewalStatus;
+	}
+
+	public void setRenewalStatus(String renewalStatus) {
+		this.renewalStatus = renewalStatus;
+		if(renewalStatus != null){
+			putQueryParameter("RenewalStatus", renewalStatus);
+		}
+	}
+
 	public List<Parameter> getParameters() {
 		return this.parameters;
 	}
@@ -154,17 +165,6 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 				putQueryParameter("Parameter." + (depth1 + 1) + ".Value" , parameters.get(depth1).getValue());
 			}
 		}	
-	}
-
-	public String getRenewalStatus() {
-		return this.renewalStatus;
-	}
-
-	public void setRenewalStatus(String renewalStatus) {
-		this.renewalStatus = renewalStatus;
-		if(renewalStatus != null){
-			putQueryParameter("RenewalStatus", renewalStatus);
-		}
 	}
 
 	public static class Parameter {

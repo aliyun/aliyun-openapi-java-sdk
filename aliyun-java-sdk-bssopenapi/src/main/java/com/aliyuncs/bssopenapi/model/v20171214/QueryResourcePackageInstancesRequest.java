@@ -35,6 +35,8 @@ public class QueryResourcePackageInstancesRequest extends RpcAcsRequest<QueryRes
 
 	private Integer pageNum;
 
+	private Boolean includePartner;
+
 	private Integer pageSize;
 	public QueryResourcePackageInstancesRequest() {
 		super("BssOpenApi", "2017-12-14", "QueryResourcePackageInstances");
@@ -97,6 +99,17 @@ public class QueryResourcePackageInstancesRequest extends RpcAcsRequest<QueryRes
 		this.pageNum = pageNum;
 		if(pageNum != null){
 			putQueryParameter("PageNum", pageNum.toString());
+		}
+	}
+
+	public Boolean getIncludePartner() {
+		return this.includePartner;
+	}
+
+	public void setIncludePartner(Boolean includePartner) {
+		this.includePartner = includePartner;
+		if(includePartner != null){
+			putQueryParameter("IncludePartner", includePartner.toString());
 		}
 	}
 

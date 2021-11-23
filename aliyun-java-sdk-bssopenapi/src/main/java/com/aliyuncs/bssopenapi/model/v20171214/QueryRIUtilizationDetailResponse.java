@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryRIUtilizationDetailResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String message;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -65,6 +49,22 @@ public class QueryRIUtilizationDetailResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Data getData() {
@@ -119,23 +119,79 @@ public class QueryRIUtilizationDetailResponse extends AcsResponse {
 
 		public static class DetailListItem {
 
+			private String deductedCommodityCode;
+
+			private String deductedProductDetail;
+
+			private String deductedInstanceId;
+
+			private Float deductFactorTotal;
+
+			private Float deductQuantity;
+
+			private String deductHours;
+
+			private String deductDate;
+
 			private String rIInstanceId;
 
 			private String instanceSpec;
 
-			private String deductedInstanceId;
+			public String getDeductedCommodityCode() {
+				return this.deductedCommodityCode;
+			}
 
-			private String deductedCommodityCode;
+			public void setDeductedCommodityCode(String deductedCommodityCode) {
+				this.deductedCommodityCode = deductedCommodityCode;
+			}
 
-			private String deductDate;
+			public String getDeductedProductDetail() {
+				return this.deductedProductDetail;
+			}
 
-			private String deductHours;
+			public void setDeductedProductDetail(String deductedProductDetail) {
+				this.deductedProductDetail = deductedProductDetail;
+			}
 
-			private String deductedProductDetail;
+			public String getDeductedInstanceId() {
+				return this.deductedInstanceId;
+			}
 
-			private Float deductQuantity;
+			public void setDeductedInstanceId(String deductedInstanceId) {
+				this.deductedInstanceId = deductedInstanceId;
+			}
 
-			private Float deductFactorTotal;
+			public Float getDeductFactorTotal() {
+				return this.deductFactorTotal;
+			}
+
+			public void setDeductFactorTotal(Float deductFactorTotal) {
+				this.deductFactorTotal = deductFactorTotal;
+			}
+
+			public Float getDeductQuantity() {
+				return this.deductQuantity;
+			}
+
+			public void setDeductQuantity(Float deductQuantity) {
+				this.deductQuantity = deductQuantity;
+			}
+
+			public String getDeductHours() {
+				return this.deductHours;
+			}
+
+			public void setDeductHours(String deductHours) {
+				this.deductHours = deductHours;
+			}
+
+			public String getDeductDate() {
+				return this.deductDate;
+			}
+
+			public void setDeductDate(String deductDate) {
+				this.deductDate = deductDate;
+			}
 
 			public String getRIInstanceId() {
 				return this.rIInstanceId;
@@ -151,62 +207,6 @@ public class QueryRIUtilizationDetailResponse extends AcsResponse {
 
 			public void setInstanceSpec(String instanceSpec) {
 				this.instanceSpec = instanceSpec;
-			}
-
-			public String getDeductedInstanceId() {
-				return this.deductedInstanceId;
-			}
-
-			public void setDeductedInstanceId(String deductedInstanceId) {
-				this.deductedInstanceId = deductedInstanceId;
-			}
-
-			public String getDeductedCommodityCode() {
-				return this.deductedCommodityCode;
-			}
-
-			public void setDeductedCommodityCode(String deductedCommodityCode) {
-				this.deductedCommodityCode = deductedCommodityCode;
-			}
-
-			public String getDeductDate() {
-				return this.deductDate;
-			}
-
-			public void setDeductDate(String deductDate) {
-				this.deductDate = deductDate;
-			}
-
-			public String getDeductHours() {
-				return this.deductHours;
-			}
-
-			public void setDeductHours(String deductHours) {
-				this.deductHours = deductHours;
-			}
-
-			public String getDeductedProductDetail() {
-				return this.deductedProductDetail;
-			}
-
-			public void setDeductedProductDetail(String deductedProductDetail) {
-				this.deductedProductDetail = deductedProductDetail;
-			}
-
-			public Float getDeductQuantity() {
-				return this.deductQuantity;
-			}
-
-			public void setDeductQuantity(Float deductQuantity) {
-				this.deductQuantity = deductQuantity;
-			}
-
-			public Float getDeductFactorTotal() {
-				return this.deductFactorTotal;
-			}
-
-			public void setDeductFactorTotal(Float deductFactorTotal) {
-				this.deductFactorTotal = deductFactorTotal;
 			}
 		}
 	}
