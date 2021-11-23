@@ -15,25 +15,25 @@
 package com.aliyuncs.rtc.model.v20180111;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.rtc.transform.v20180111.AddRecordTemplateResponseUnmarshaller;
+import com.aliyuncs.rtc.transform.v20180111.UpdateAutoLiveStreamRuleResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class AddRecordTemplateResponse extends AcsResponse {
+public class UpdateAutoLiveStreamRuleResponse extends AcsResponse {
 
-	private String templateId;
+	private Long ruleId;
 
 	private String requestId;
 
-	public String getTemplateId() {
-		return this.templateId;
+	public Long getRuleId() {
+		return this.ruleId;
 	}
 
-	public void setTemplateId(String templateId) {
-		this.templateId = templateId;
+	public void setRuleId(Long ruleId) {
+		this.ruleId = ruleId;
 	}
 
 	public String getRequestId() {
@@ -45,12 +45,7 @@ public class AddRecordTemplateResponse extends AcsResponse {
 	}
 
 	@Override
-	public AddRecordTemplateResponse getInstance(UnmarshallerContext context) {
-		return	AddRecordTemplateResponseUnmarshaller.unmarshall(this, context);
-	}
-
-	@Override
-	public boolean checkShowJsonItemName() {
-		return false;
+	public UpdateAutoLiveStreamRuleResponse getInstance(UnmarshallerContext context) {
+		return	UpdateAutoLiveStreamRuleResponseUnmarshaller.unmarshall(this, context);
 	}
 }

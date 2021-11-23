@@ -47,19 +47,11 @@ public class RemoveTerminalsResponse extends AcsResponse {
 
 	public static class Terminal {
 
-		private String id;
-
 		private Integer code;
 
 		private String message;
 
-		public String getId() {
-			return this.id;
-		}
-
-		public void setId(String id) {
-			this.id = id;
-		}
+		private String id;
 
 		public Integer getCode() {
 			return this.code;
@@ -75,6 +67,14 @@ public class RemoveTerminalsResponse extends AcsResponse {
 
 		public void setMessage(String message) {
 			this.message = message;
+		}
+
+		public String getId() {
+			return this.id;
+		}
+
+		public void setId(String id) {
+			this.id = id;
 		}
 	}
 

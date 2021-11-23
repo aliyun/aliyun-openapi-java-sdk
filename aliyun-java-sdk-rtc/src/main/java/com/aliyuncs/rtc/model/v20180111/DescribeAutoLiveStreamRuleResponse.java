@@ -47,22 +47,38 @@ public class DescribeAutoLiveStreamRuleResponse extends AcsResponse {
 
 	public static class Rule {
 
-		private Long ruleId;
+		private String status;
+
+		private Integer mediaEncode;
 
 		private String playDomain;
 
-		private String ruleName;
+		private String callBack;
 
 		private String createTime;
 
-		private String callBack;
+		private Long ruleId;
 
-		public Long getRuleId() {
-			return this.ruleId;
+		private String ruleName;
+
+		private List<String> channelIds;
+
+		private List<String> channelIdPrefixes;
+
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setRuleId(Long ruleId) {
-			this.ruleId = ruleId;
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
+		public Integer getMediaEncode() {
+			return this.mediaEncode;
+		}
+
+		public void setMediaEncode(Integer mediaEncode) {
+			this.mediaEncode = mediaEncode;
 		}
 
 		public String getPlayDomain() {
@@ -73,12 +89,12 @@ public class DescribeAutoLiveStreamRuleResponse extends AcsResponse {
 			this.playDomain = playDomain;
 		}
 
-		public String getRuleName() {
-			return this.ruleName;
+		public String getCallBack() {
+			return this.callBack;
 		}
 
-		public void setRuleName(String ruleName) {
-			this.ruleName = ruleName;
+		public void setCallBack(String callBack) {
+			this.callBack = callBack;
 		}
 
 		public String getCreateTime() {
@@ -89,12 +105,36 @@ public class DescribeAutoLiveStreamRuleResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
-		public String getCallBack() {
-			return this.callBack;
+		public Long getRuleId() {
+			return this.ruleId;
 		}
 
-		public void setCallBack(String callBack) {
-			this.callBack = callBack;
+		public void setRuleId(Long ruleId) {
+			this.ruleId = ruleId;
+		}
+
+		public String getRuleName() {
+			return this.ruleName;
+		}
+
+		public void setRuleName(String ruleName) {
+			this.ruleName = ruleName;
+		}
+
+		public List<String> getChannelIds() {
+			return this.channelIds;
+		}
+
+		public void setChannelIds(List<String> channelIds) {
+			this.channelIds = channelIds;
+		}
+
+		public List<String> getChannelIdPrefixes() {
+			return this.channelIdPrefixes;
+		}
+
+		public void setChannelIdPrefixes(List<String> channelIdPrefixes) {
+			this.channelIdPrefixes = channelIdPrefixes;
 		}
 	}
 

@@ -31,9 +31,9 @@ public class RemoveTerminalsResponseUnmarshaller {
 		List<Terminal> terminals = new ArrayList<Terminal>();
 		for (int i = 0; i < _ctx.lengthValue("RemoveTerminalsResponse.Terminals.Length"); i++) {
 			Terminal terminal = new Terminal();
-			terminal.setId(_ctx.stringValue("RemoveTerminalsResponse.Terminals["+ i +"].Id"));
 			terminal.setCode(_ctx.integerValue("RemoveTerminalsResponse.Terminals["+ i +"].Code"));
 			terminal.setMessage(_ctx.stringValue("RemoveTerminalsResponse.Terminals["+ i +"].Message"));
+			terminal.setId(_ctx.stringValue("RemoveTerminalsResponse.Terminals["+ i +"].Id"));
 
 			terminals.add(terminal);
 		}

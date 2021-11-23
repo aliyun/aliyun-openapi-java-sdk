@@ -31,7 +31,7 @@ public class StopRecordTaskRequest extends RpcAcsRequest<StopRecordTaskResponse>
 
 	private String appId;
 	public StopRecordTaskRequest() {
-		super("rtc", "2018-01-11", "StopRecordTask", "rtc");
+		super("rtc", "2018-01-11", "StopRecordTask");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

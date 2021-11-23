@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateAutoLiveStreamRuleResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Long ruleId;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public Long getRuleId() {
 		return this.ruleId;
@@ -42,6 +34,14 @@ public class CreateAutoLiveStreamRuleResponse extends AcsResponse {
 
 	public void setRuleId(Long ruleId) {
 		this.ruleId = ruleId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

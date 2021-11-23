@@ -23,7 +23,7 @@ import com.aliyuncs.rtc.Endpoint;
  * @author auto create
  * @version 
  */
-public class CreateAutoLiveStreamRuleRequest extends RpcAcsRequest<CreateAutoLiveStreamRuleResponse> {
+public class UpdateAutoLiveStreamRuleRequest extends RpcAcsRequest<UpdateAutoLiveStreamRuleResponse> {
 	   
 
 	private String ruleName;
@@ -40,9 +40,11 @@ public class CreateAutoLiveStreamRuleRequest extends RpcAcsRequest<CreateAutoLiv
 
 	private Integer mediaEncode;
 
+	private Integer ruleId;
+
 	private List<String> channelIdss;
-	public CreateAutoLiveStreamRuleRequest() {
-		super("rtc", "2018-01-11", "CreateAutoLiveStreamRule");
+	public UpdateAutoLiveStreamRuleRequest() {
+		super("rtc", "2018-01-11", "UpdateAutoLiveStreamRule");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -129,6 +131,17 @@ public class CreateAutoLiveStreamRuleRequest extends RpcAcsRequest<CreateAutoLiv
 		}
 	}
 
+	public Integer getRuleId() {
+		return this.ruleId;
+	}
+
+	public void setRuleId(Integer ruleId) {
+		this.ruleId = ruleId;
+		if(ruleId != null){
+			putQueryParameter("RuleId", ruleId.toString());
+		}
+	}
+
 	public List<String> getChannelIdss() {
 		return this.channelIdss;
 	}
@@ -143,8 +156,8 @@ public class CreateAutoLiveStreamRuleRequest extends RpcAcsRequest<CreateAutoLiv
 	}
 
 	@Override
-	public Class<CreateAutoLiveStreamRuleResponse> getResponseClass() {
-		return CreateAutoLiveStreamRuleResponse.class;
+	public Class<UpdateAutoLiveStreamRuleResponse> getResponseClass() {
+		return UpdateAutoLiveStreamRuleResponse.class;
 	}
 
 }

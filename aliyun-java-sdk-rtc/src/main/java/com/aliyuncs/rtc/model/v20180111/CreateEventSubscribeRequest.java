@@ -40,7 +40,7 @@ public class CreateEventSubscribeRequest extends RpcAcsRequest<CreateEventSubscr
 
 	private String channelId;
 	public CreateEventSubscribeRequest() {
-		super("rtc", "2018-01-11", "CreateEventSubscribe", "rtc");
+		super("rtc", "2018-01-11", "CreateEventSubscribe");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

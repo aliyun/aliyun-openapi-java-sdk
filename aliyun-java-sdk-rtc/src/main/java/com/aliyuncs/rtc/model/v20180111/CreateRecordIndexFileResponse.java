@@ -15,25 +15,39 @@
 package com.aliyuncs.rtc.model.v20180111;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.rtc.transform.v20180111.AddRecordTemplateResponseUnmarshaller;
+import com.aliyuncs.rtc.transform.v20180111.CreateRecordIndexFileResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class AddRecordTemplateResponse extends AcsResponse {
+public class CreateRecordIndexFileResponse extends AcsResponse {
 
-	private String templateId;
+	private String url;
+
+	private Float duration;
 
 	private String requestId;
 
-	public String getTemplateId() {
-		return this.templateId;
+	private Integer width;
+
+	private Integer height;
+
+	public String getUrl() {
+		return this.url;
 	}
 
-	public void setTemplateId(String templateId) {
-		this.templateId = templateId;
+	public void setUrl(String url) {
+		this.url = url;
+	}
+
+	public Float getDuration() {
+		return this.duration;
+	}
+
+	public void setDuration(Float duration) {
+		this.duration = duration;
 	}
 
 	public String getRequestId() {
@@ -44,13 +58,24 @@ public class AddRecordTemplateResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	@Override
-	public AddRecordTemplateResponse getInstance(UnmarshallerContext context) {
-		return	AddRecordTemplateResponseUnmarshaller.unmarshall(this, context);
+	public Integer getWidth() {
+		return this.width;
+	}
+
+	public void setWidth(Integer width) {
+		this.width = width;
+	}
+
+	public Integer getHeight() {
+		return this.height;
+	}
+
+	public void setHeight(Integer height) {
+		this.height = height;
 	}
 
 	@Override
-	public boolean checkShowJsonItemName() {
-		return false;
+	public CreateRecordIndexFileResponse getInstance(UnmarshallerContext context) {
+		return	CreateRecordIndexFileResponseUnmarshaller.unmarshall(this, context);
 	}
 }

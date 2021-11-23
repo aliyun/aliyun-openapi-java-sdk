@@ -31,7 +31,7 @@ public class DeleteRecordTemplateRequest extends RpcAcsRequest<DeleteRecordTempl
 
 	private String appId;
 	public DeleteRecordTemplateRequest() {
-		super("rtc", "2018-01-11", "DeleteRecordTemplate", "rtc");
+		super("rtc", "2018-01-11", "DeleteRecordTemplate");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

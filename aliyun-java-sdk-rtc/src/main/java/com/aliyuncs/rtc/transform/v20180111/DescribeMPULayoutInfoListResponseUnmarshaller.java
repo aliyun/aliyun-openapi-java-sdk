@@ -28,8 +28,8 @@ public class DescribeMPULayoutInfoListResponseUnmarshaller {
 	public static DescribeMPULayoutInfoListResponse unmarshall(DescribeMPULayoutInfoListResponse describeMPULayoutInfoListResponse, UnmarshallerContext _ctx) {
 		
 		describeMPULayoutInfoListResponse.setRequestId(_ctx.stringValue("DescribeMPULayoutInfoListResponse.RequestId"));
-		describeMPULayoutInfoListResponse.setTotalNum(_ctx.longValue("DescribeMPULayoutInfoListResponse.TotalNum"));
 		describeMPULayoutInfoListResponse.setTotalPage(_ctx.longValue("DescribeMPULayoutInfoListResponse.TotalPage"));
+		describeMPULayoutInfoListResponse.setTotalNum(_ctx.longValue("DescribeMPULayoutInfoListResponse.TotalNum"));
 
 		List<Layout> layouts = new ArrayList<Layout>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeMPULayoutInfoListResponse.Layouts.Length"); i++) {
@@ -41,13 +41,13 @@ public class DescribeMPULayoutInfoListResponseUnmarshaller {
 			List<PanesItem> panes = new ArrayList<PanesItem>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeMPULayoutInfoListResponse.Layouts["+ i +"].Panes.Length"); j++) {
 				PanesItem panesItem = new PanesItem();
-				panesItem.setPaneId(_ctx.integerValue("DescribeMPULayoutInfoListResponse.Layouts["+ i +"].Panes["+ j +"].PaneId"));
 				panesItem.setMajorPane(_ctx.integerValue("DescribeMPULayoutInfoListResponse.Layouts["+ i +"].Panes["+ j +"].MajorPane"));
-				panesItem.setX(_ctx.floatValue("DescribeMPULayoutInfoListResponse.Layouts["+ i +"].Panes["+ j +"].X"));
-				panesItem.setY(_ctx.floatValue("DescribeMPULayoutInfoListResponse.Layouts["+ i +"].Panes["+ j +"].Y"));
 				panesItem.setWidth(_ctx.floatValue("DescribeMPULayoutInfoListResponse.Layouts["+ i +"].Panes["+ j +"].Width"));
 				panesItem.setHeight(_ctx.floatValue("DescribeMPULayoutInfoListResponse.Layouts["+ i +"].Panes["+ j +"].Height"));
+				panesItem.setY(_ctx.floatValue("DescribeMPULayoutInfoListResponse.Layouts["+ i +"].Panes["+ j +"].Y"));
+				panesItem.setPaneId(_ctx.integerValue("DescribeMPULayoutInfoListResponse.Layouts["+ i +"].Panes["+ j +"].PaneId"));
 				panesItem.setZOrder(_ctx.integerValue("DescribeMPULayoutInfoListResponse.Layouts["+ i +"].Panes["+ j +"].ZOrder"));
+				panesItem.setX(_ctx.floatValue("DescribeMPULayoutInfoListResponse.Layouts["+ i +"].Panes["+ j +"].X"));
 
 				panes.add(panesItem);
 			}

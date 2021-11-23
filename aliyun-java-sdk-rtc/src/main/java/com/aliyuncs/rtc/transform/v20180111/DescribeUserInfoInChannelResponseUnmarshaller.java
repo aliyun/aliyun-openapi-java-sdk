@@ -28,15 +28,15 @@ public class DescribeUserInfoInChannelResponseUnmarshaller {
 		
 		describeUserInfoInChannelResponse.setRequestId(_ctx.stringValue("DescribeUserInfoInChannelResponse.RequestId"));
 		describeUserInfoInChannelResponse.setTimestamp(_ctx.integerValue("DescribeUserInfoInChannelResponse.Timestamp"));
-		describeUserInfoInChannelResponse.setIsChannelExist(_ctx.booleanValue("DescribeUserInfoInChannelResponse.IsChannelExist"));
 		describeUserInfoInChannelResponse.setIsInChannel(_ctx.booleanValue("DescribeUserInfoInChannelResponse.IsInChannel"));
+		describeUserInfoInChannelResponse.setIsChannelExist(_ctx.booleanValue("DescribeUserInfoInChannelResponse.IsChannelExist"));
 
 		List<PropertyItem> property = new ArrayList<PropertyItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeUserInfoInChannelResponse.Property.Length"); i++) {
 			PropertyItem propertyItem = new PropertyItem();
 			propertyItem.setSession(_ctx.stringValue("DescribeUserInfoInChannelResponse.Property["+ i +"].Session"));
-			propertyItem.setJoin(_ctx.integerValue("DescribeUserInfoInChannelResponse.Property["+ i +"].Join"));
 			propertyItem.setRole(_ctx.integerValue("DescribeUserInfoInChannelResponse.Property["+ i +"].Role"));
+			propertyItem.setJoin(_ctx.integerValue("DescribeUserInfoInChannelResponse.Property["+ i +"].Join"));
 
 			property.add(propertyItem);
 		}

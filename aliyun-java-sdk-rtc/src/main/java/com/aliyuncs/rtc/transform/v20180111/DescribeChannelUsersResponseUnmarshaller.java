@@ -26,12 +26,12 @@ public class DescribeChannelUsersResponseUnmarshaller {
 	public static DescribeChannelUsersResponse unmarshall(DescribeChannelUsersResponse describeChannelUsersResponse, UnmarshallerContext _ctx) {
 		
 		describeChannelUsersResponse.setRequestId(_ctx.stringValue("DescribeChannelUsersResponse.RequestId"));
-		describeChannelUsersResponse.setTimestamp(_ctx.integerValue("DescribeChannelUsersResponse.Timestamp"));
-		describeChannelUsersResponse.setIsChannelExist(_ctx.booleanValue("DescribeChannelUsersResponse.IsChannelExist"));
-		describeChannelUsersResponse.setChannelProfile(_ctx.integerValue("DescribeChannelUsersResponse.ChannelProfile"));
 		describeChannelUsersResponse.setCommTotalNum(_ctx.integerValue("DescribeChannelUsersResponse.CommTotalNum"));
-		describeChannelUsersResponse.setInteractiveUserNum(_ctx.integerValue("DescribeChannelUsersResponse.InteractiveUserNum"));
+		describeChannelUsersResponse.setIsChannelExist(_ctx.booleanValue("DescribeChannelUsersResponse.IsChannelExist"));
 		describeChannelUsersResponse.setLiveUserNum(_ctx.integerValue("DescribeChannelUsersResponse.LiveUserNum"));
+		describeChannelUsersResponse.setTimestamp(_ctx.integerValue("DescribeChannelUsersResponse.Timestamp"));
+		describeChannelUsersResponse.setChannelProfile(_ctx.integerValue("DescribeChannelUsersResponse.ChannelProfile"));
+		describeChannelUsersResponse.setInteractiveUserNum(_ctx.integerValue("DescribeChannelUsersResponse.InteractiveUserNum"));
 
 		List<String> userList = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeChannelUsersResponse.UserList.Length"); i++) {

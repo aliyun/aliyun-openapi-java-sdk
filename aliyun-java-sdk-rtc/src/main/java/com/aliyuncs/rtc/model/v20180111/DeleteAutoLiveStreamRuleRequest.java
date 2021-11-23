@@ -31,7 +31,7 @@ public class DeleteAutoLiveStreamRuleRequest extends RpcAcsRequest<DeleteAutoLiv
 
 	private Long ruleId;
 	public DeleteAutoLiveStreamRuleRequest() {
-		super("rtc", "2018-01-11", "DeleteAutoLiveStreamRule", "rtc");
+		super("rtc", "2018-01-11", "DeleteAutoLiveStreamRule");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

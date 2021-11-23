@@ -29,9 +29,9 @@ public class DescribeUserInfoInChannelResponse extends AcsResponse {
 
 	private Integer timestamp;
 
-	private Boolean isChannelExist;
-
 	private Boolean isInChannel;
+
+	private Boolean isChannelExist;
 
 	private List<PropertyItem> property;
 
@@ -51,20 +51,20 @@ public class DescribeUserInfoInChannelResponse extends AcsResponse {
 		this.timestamp = timestamp;
 	}
 
-	public Boolean getIsChannelExist() {
-		return this.isChannelExist;
-	}
-
-	public void setIsChannelExist(Boolean isChannelExist) {
-		this.isChannelExist = isChannelExist;
-	}
-
 	public Boolean getIsInChannel() {
 		return this.isInChannel;
 	}
 
 	public void setIsInChannel(Boolean isInChannel) {
 		this.isInChannel = isInChannel;
+	}
+
+	public Boolean getIsChannelExist() {
+		return this.isChannelExist;
+	}
+
+	public void setIsChannelExist(Boolean isChannelExist) {
+		this.isChannelExist = isChannelExist;
 	}
 
 	public List<PropertyItem> getProperty() {
@@ -79,9 +79,9 @@ public class DescribeUserInfoInChannelResponse extends AcsResponse {
 
 		private String session;
 
-		private Integer join;
-
 		private Integer role;
+
+		private Integer join;
 
 		public String getSession() {
 			return this.session;
@@ -91,20 +91,20 @@ public class DescribeUserInfoInChannelResponse extends AcsResponse {
 			this.session = session;
 		}
 
-		public Integer getJoin() {
-			return this.join;
-		}
-
-		public void setJoin(Integer join) {
-			this.join = join;
-		}
-
 		public Integer getRole() {
 			return this.role;
 		}
 
 		public void setRole(Integer role) {
 			this.role = role;
+		}
+
+		public Integer getJoin() {
+			return this.join;
+		}
+
+		public void setJoin(Integer join) {
+			this.join = join;
 		}
 	}
 

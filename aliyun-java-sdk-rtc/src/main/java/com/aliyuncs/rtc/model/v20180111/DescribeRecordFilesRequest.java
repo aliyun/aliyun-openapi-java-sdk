@@ -42,7 +42,7 @@ public class DescribeRecordFilesRequest extends RpcAcsRequest<DescribeRecordFile
 
 	private String channelId;
 	public DescribeRecordFilesRequest() {
-		super("rtc", "2018-01-11", "DescribeRecordFiles", "rtc");
+		super("rtc", "2018-01-11", "DescribeRecordFiles");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -28,9 +28,9 @@ public class DescribeRecordTasksRequest extends RpcAcsRequest<DescribeRecordTask
 
 	private String startTime;
 
-	private List<String> taskIdss;
-
 	private Integer pageNum;
+
+	private List<String> taskIdss;
 
 	private Integer pageSize;
 
@@ -44,7 +44,7 @@ public class DescribeRecordTasksRequest extends RpcAcsRequest<DescribeRecordTask
 
 	private String status;
 	public DescribeRecordTasksRequest() {
-		super("rtc", "2018-01-11", "DescribeRecordTasks", "rtc");
+		super("rtc", "2018-01-11", "DescribeRecordTasks");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -63,6 +63,17 @@ public class DescribeRecordTasksRequest extends RpcAcsRequest<DescribeRecordTask
 		}
 	}
 
+	public Integer getPageNum() {
+		return this.pageNum;
+	}
+
+	public void setPageNum(Integer pageNum) {
+		this.pageNum = pageNum;
+		if(pageNum != null){
+			putQueryParameter("PageNum", pageNum.toString());
+		}
+	}
+
 	public List<String> getTaskIdss() {
 		return this.taskIdss;
 	}
@@ -74,17 +85,6 @@ public class DescribeRecordTasksRequest extends RpcAcsRequest<DescribeRecordTask
 				putQueryParameter("TaskIds." + (i + 1) , taskIdss.get(i));
 			}
 		}	
-	}
-
-	public Integer getPageNum() {
-		return this.pageNum;
-	}
-
-	public void setPageNum(Integer pageNum) {
-		this.pageNum = pageNum;
-		if(pageNum != null){
-			putQueryParameter("PageNum", pageNum.toString());
-		}
 	}
 
 	public Integer getPageSize() {

@@ -25,13 +25,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeMPULayoutInfoListResponse extends AcsResponse {
 
+	private Long totalPage;
+
 	private String requestId;
 
 	private Long totalNum;
 
-	private Long totalPage;
-
 	private List<Layout> layouts;
+
+	public Long getTotalPage() {
+		return this.totalPage;
+	}
+
+	public void setTotalPage(Long totalPage) {
+		this.totalPage = totalPage;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -47,14 +55,6 @@ public class DescribeMPULayoutInfoListResponse extends AcsResponse {
 
 	public void setTotalNum(Long totalNum) {
 		this.totalNum = totalNum;
-	}
-
-	public Long getTotalPage() {
-		return this.totalPage;
-	}
-
-	public void setTotalPage(Long totalPage) {
-		this.totalPage = totalPage;
 	}
 
 	public List<Layout> getLayouts() {
@@ -109,27 +109,19 @@ public class DescribeMPULayoutInfoListResponse extends AcsResponse {
 
 		public static class PanesItem {
 
-			private Integer paneId;
-
 			private Integer majorPane;
-
-			private Float x;
-
-			private Float y;
 
 			private Float width;
 
 			private Float height;
 
+			private Float y;
+
+			private Integer paneId;
+
 			private Integer zOrder;
 
-			public Integer getPaneId() {
-				return this.paneId;
-			}
-
-			public void setPaneId(Integer paneId) {
-				this.paneId = paneId;
-			}
+			private Float x;
 
 			public Integer getMajorPane() {
 				return this.majorPane;
@@ -137,22 +129,6 @@ public class DescribeMPULayoutInfoListResponse extends AcsResponse {
 
 			public void setMajorPane(Integer majorPane) {
 				this.majorPane = majorPane;
-			}
-
-			public Float getX() {
-				return this.x;
-			}
-
-			public void setX(Float x) {
-				this.x = x;
-			}
-
-			public Float getY() {
-				return this.y;
-			}
-
-			public void setY(Float y) {
-				this.y = y;
 			}
 
 			public Float getWidth() {
@@ -171,12 +147,36 @@ public class DescribeMPULayoutInfoListResponse extends AcsResponse {
 				this.height = height;
 			}
 
+			public Float getY() {
+				return this.y;
+			}
+
+			public void setY(Float y) {
+				this.y = y;
+			}
+
+			public Integer getPaneId() {
+				return this.paneId;
+			}
+
+			public void setPaneId(Integer paneId) {
+				this.paneId = paneId;
+			}
+
 			public Integer getZOrder() {
 				return this.zOrder;
 			}
 
 			public void setZOrder(Integer zOrder) {
 				this.zOrder = zOrder;
+			}
+
+			public Float getX() {
+				return this.x;
+			}
+
+			public void setX(Float x) {
+				this.x = x;
 			}
 		}
 	}

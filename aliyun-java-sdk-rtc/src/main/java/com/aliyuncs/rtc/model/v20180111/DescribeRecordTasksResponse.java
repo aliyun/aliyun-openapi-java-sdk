@@ -25,13 +25,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeRecordTasksResponse extends AcsResponse {
 
+	private Long totalPage;
+
 	private String requestId;
 
 	private Long totalNum;
 
-	private Long totalPage;
-
 	private List<RecordTask> recordTasks;
+
+	public Long getTotalPage() {
+		return this.totalPage;
+	}
+
+	public void setTotalPage(Long totalPage) {
+		this.totalPage = totalPage;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -49,14 +57,6 @@ public class DescribeRecordTasksResponse extends AcsResponse {
 		this.totalNum = totalNum;
 	}
 
-	public Long getTotalPage() {
-		return this.totalPage;
-	}
-
-	public void setTotalPage(Long totalPage) {
-		this.totalPage = totalPage;
-	}
-
 	public List<RecordTask> getRecordTasks() {
 		return this.recordTasks;
 	}
@@ -66,6 +66,8 @@ public class DescribeRecordTasksResponse extends AcsResponse {
 	}
 
 	public static class RecordTask {
+
+		private Integer status;
 
 		private String createTime;
 
@@ -77,11 +79,17 @@ public class DescribeRecordTasksResponse extends AcsResponse {
 
 		private String templateId;
 
-		private Integer status;
-
 		private List<UserPanesItem> userPanes;
 
 		private List<String> subSpecUsers;
+
+		public Integer getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(Integer status) {
+			this.status = status;
+		}
 
 		public String getCreateTime() {
 			return this.createTime;
@@ -123,14 +131,6 @@ public class DescribeRecordTasksResponse extends AcsResponse {
 			this.templateId = templateId;
 		}
 
-		public Integer getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(Integer status) {
-			this.status = status;
-		}
-
 		public List<UserPanesItem> getUserPanes() {
 			return this.userPanes;
 		}
@@ -151,9 +151,9 @@ public class DescribeRecordTasksResponse extends AcsResponse {
 
 			private Integer paneId;
 
-			private String userId;
-
 			private String source;
+
+			private String userId;
 
 			public Integer getPaneId() {
 				return this.paneId;
@@ -163,20 +163,20 @@ public class DescribeRecordTasksResponse extends AcsResponse {
 				this.paneId = paneId;
 			}
 
-			public String getUserId() {
-				return this.userId;
-			}
-
-			public void setUserId(String userId) {
-				this.userId = userId;
-			}
-
 			public String getSource() {
 				return this.source;
 			}
 
 			public void setSource(String source) {
 				this.source = source;
+			}
+
+			public String getUserId() {
+				return this.userId;
+			}
+
+			public void setUserId(String userId) {
+				this.userId = userId;
 			}
 		}
 	}

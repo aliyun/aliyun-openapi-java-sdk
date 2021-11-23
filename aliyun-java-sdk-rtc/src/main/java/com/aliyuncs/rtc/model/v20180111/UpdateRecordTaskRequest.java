@@ -28,11 +28,25 @@ public class UpdateRecordTaskRequest extends RpcAcsRequest<UpdateRecordTaskRespo
 
 	private List<UserPanes> userPaness;
 
+	private List<String> subSpecCameraUserss;
+
+	private List<Long> layoutIdss;
+
 	private String taskId;
+
+	private List<String> unsubSpecCameraUserss;
+
+	private List<String> unsubSpecAudioUserss;
+
+	private List<String> unsubSpecShareScreenUserss;
 
 	private Long ownerId;
 
 	private String templateId;
+
+	private List<String> subSpecAudioUserss;
+
+	private List<String> subSpecShareScreenUserss;
 
 	private List<String> subSpecUserss;
 
@@ -40,7 +54,7 @@ public class UpdateRecordTaskRequest extends RpcAcsRequest<UpdateRecordTaskRespo
 
 	private String channelId;
 	public UpdateRecordTaskRequest() {
-		super("rtc", "2018-01-11", "UpdateRecordTask", "rtc");
+		super("rtc", "2018-01-11", "UpdateRecordTask");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -56,31 +70,57 @@ public class UpdateRecordTaskRequest extends RpcAcsRequest<UpdateRecordTaskRespo
 		this.userPaness = userPaness;	
 		if (userPaness != null) {
 			for (int depth1 = 0; depth1 < userPaness.size(); depth1++) {
-				putQueryParameter("UserPanes." + (depth1 + 1) + ".PaneId" , userPaness.get(depth1).getPaneId());
-				putQueryParameter("UserPanes." + (depth1 + 1) + ".UserId" , userPaness.get(depth1).getUserId());
-				putQueryParameter("UserPanes." + (depth1 + 1) + ".SourceType" , userPaness.get(depth1).getSourceType());
 				if (userPaness.get(depth1).getImagess() != null) {
 					for (int depth2 = 0; depth2 < userPaness.get(depth1).getImagess().size(); depth2++) {
-						putQueryParameter("UserPanes." + (depth1 + 1) + ".Images." + (depth2 + 1) + ".Url" , userPaness.get(depth1).getImagess().get(depth2).getUrl());
-						putQueryParameter("UserPanes." + (depth1 + 1) + ".Images." + (depth2 + 1) + ".Display" , userPaness.get(depth1).getImagess().get(depth2).getDisplay());
-						putQueryParameter("UserPanes." + (depth1 + 1) + ".Images." + (depth2 + 1) + ".X" , userPaness.get(depth1).getImagess().get(depth2).getX());
-						putQueryParameter("UserPanes." + (depth1 + 1) + ".Images." + (depth2 + 1) + ".Y" , userPaness.get(depth1).getImagess().get(depth2).getY());
 						putQueryParameter("UserPanes." + (depth1 + 1) + ".Images." + (depth2 + 1) + ".Width" , userPaness.get(depth1).getImagess().get(depth2).getWidth());
 						putQueryParameter("UserPanes." + (depth1 + 1) + ".Images." + (depth2 + 1) + ".Height" , userPaness.get(depth1).getImagess().get(depth2).getHeight());
+						putQueryParameter("UserPanes." + (depth1 + 1) + ".Images." + (depth2 + 1) + ".Y" , userPaness.get(depth1).getImagess().get(depth2).getY());
+						putQueryParameter("UserPanes." + (depth1 + 1) + ".Images." + (depth2 + 1) + ".Url" , userPaness.get(depth1).getImagess().get(depth2).getUrl());
+						putQueryParameter("UserPanes." + (depth1 + 1) + ".Images." + (depth2 + 1) + ".Display" , userPaness.get(depth1).getImagess().get(depth2).getDisplay());
 						putQueryParameter("UserPanes." + (depth1 + 1) + ".Images." + (depth2 + 1) + ".ZOrder" , userPaness.get(depth1).getImagess().get(depth2).getZOrder());
+						putQueryParameter("UserPanes." + (depth1 + 1) + ".Images." + (depth2 + 1) + ".X" , userPaness.get(depth1).getImagess().get(depth2).getX());
 					}
 				}
+				putQueryParameter("UserPanes." + (depth1 + 1) + ".UserId" , userPaness.get(depth1).getUserId());
 				if (userPaness.get(depth1).getTextss() != null) {
 					for (int depth2 = 0; depth2 < userPaness.get(depth1).getTextss().size(); depth2++) {
-						putQueryParameter("UserPanes." + (depth1 + 1) + ".Texts." + (depth2 + 1) + ".Text" , userPaness.get(depth1).getTextss().get(depth2).getText());
-						putQueryParameter("UserPanes." + (depth1 + 1) + ".Texts." + (depth2 + 1) + ".X" , userPaness.get(depth1).getTextss().get(depth2).getX());
-						putQueryParameter("UserPanes." + (depth1 + 1) + ".Texts." + (depth2 + 1) + ".Y" , userPaness.get(depth1).getTextss().get(depth2).getY());
 						putQueryParameter("UserPanes." + (depth1 + 1) + ".Texts." + (depth2 + 1) + ".FontType" , userPaness.get(depth1).getTextss().get(depth2).getFontType());
-						putQueryParameter("UserPanes." + (depth1 + 1) + ".Texts." + (depth2 + 1) + ".FontSize" , userPaness.get(depth1).getTextss().get(depth2).getFontSize());
 						putQueryParameter("UserPanes." + (depth1 + 1) + ".Texts." + (depth2 + 1) + ".FontColor" , userPaness.get(depth1).getTextss().get(depth2).getFontColor());
+						putQueryParameter("UserPanes." + (depth1 + 1) + ".Texts." + (depth2 + 1) + ".Y" , userPaness.get(depth1).getTextss().get(depth2).getY());
+						putQueryParameter("UserPanes." + (depth1 + 1) + ".Texts." + (depth2 + 1) + ".Text" , userPaness.get(depth1).getTextss().get(depth2).getText());
 						putQueryParameter("UserPanes." + (depth1 + 1) + ".Texts." + (depth2 + 1) + ".ZOrder" , userPaness.get(depth1).getTextss().get(depth2).getZOrder());
+						putQueryParameter("UserPanes." + (depth1 + 1) + ".Texts." + (depth2 + 1) + ".X" , userPaness.get(depth1).getTextss().get(depth2).getX());
+						putQueryParameter("UserPanes." + (depth1 + 1) + ".Texts." + (depth2 + 1) + ".FontSize" , userPaness.get(depth1).getTextss().get(depth2).getFontSize());
 					}
 				}
+				putQueryParameter("UserPanes." + (depth1 + 1) + ".SourceType" , userPaness.get(depth1).getSourceType());
+				putQueryParameter("UserPanes." + (depth1 + 1) + ".PaneId" , userPaness.get(depth1).getPaneId());
+			}
+		}	
+	}
+
+	public List<String> getSubSpecCameraUserss() {
+		return this.subSpecCameraUserss;
+	}
+
+	public void setSubSpecCameraUserss(List<String> subSpecCameraUserss) {
+		this.subSpecCameraUserss = subSpecCameraUserss;	
+		if (subSpecCameraUserss != null) {
+			for (int i = 0; i < subSpecCameraUserss.size(); i++) {
+				putQueryParameter("SubSpecCameraUsers." + (i + 1) , subSpecCameraUserss.get(i));
+			}
+		}	
+	}
+
+	public List<Long> getLayoutIdss() {
+		return this.layoutIdss;
+	}
+
+	public void setLayoutIdss(List<Long> layoutIdss) {
+		this.layoutIdss = layoutIdss;	
+		if (layoutIdss != null) {
+			for (int i = 0; i < layoutIdss.size(); i++) {
+				putQueryParameter("LayoutIds." + (i + 1) , layoutIdss.get(i));
 			}
 		}	
 	}
@@ -94,6 +134,45 @@ public class UpdateRecordTaskRequest extends RpcAcsRequest<UpdateRecordTaskRespo
 		if(taskId != null){
 			putQueryParameter("TaskId", taskId);
 		}
+	}
+
+	public List<String> getUnsubSpecCameraUserss() {
+		return this.unsubSpecCameraUserss;
+	}
+
+	public void setUnsubSpecCameraUserss(List<String> unsubSpecCameraUserss) {
+		this.unsubSpecCameraUserss = unsubSpecCameraUserss;	
+		if (unsubSpecCameraUserss != null) {
+			for (int i = 0; i < unsubSpecCameraUserss.size(); i++) {
+				putQueryParameter("UnsubSpecCameraUsers." + (i + 1) , unsubSpecCameraUserss.get(i));
+			}
+		}	
+	}
+
+	public List<String> getUnsubSpecAudioUserss() {
+		return this.unsubSpecAudioUserss;
+	}
+
+	public void setUnsubSpecAudioUserss(List<String> unsubSpecAudioUserss) {
+		this.unsubSpecAudioUserss = unsubSpecAudioUserss;	
+		if (unsubSpecAudioUserss != null) {
+			for (int i = 0; i < unsubSpecAudioUserss.size(); i++) {
+				putQueryParameter("UnsubSpecAudioUsers." + (i + 1) , unsubSpecAudioUserss.get(i));
+			}
+		}	
+	}
+
+	public List<String> getUnsubSpecShareScreenUserss() {
+		return this.unsubSpecShareScreenUserss;
+	}
+
+	public void setUnsubSpecShareScreenUserss(List<String> unsubSpecShareScreenUserss) {
+		this.unsubSpecShareScreenUserss = unsubSpecShareScreenUserss;	
+		if (unsubSpecShareScreenUserss != null) {
+			for (int i = 0; i < unsubSpecShareScreenUserss.size(); i++) {
+				putQueryParameter("UnsubSpecShareScreenUsers." + (i + 1) , unsubSpecShareScreenUserss.get(i));
+			}
+		}	
 	}
 
 	public Long getOwnerId() {
@@ -116,6 +195,32 @@ public class UpdateRecordTaskRequest extends RpcAcsRequest<UpdateRecordTaskRespo
 		if(templateId != null){
 			putQueryParameter("TemplateId", templateId);
 		}
+	}
+
+	public List<String> getSubSpecAudioUserss() {
+		return this.subSpecAudioUserss;
+	}
+
+	public void setSubSpecAudioUserss(List<String> subSpecAudioUserss) {
+		this.subSpecAudioUserss = subSpecAudioUserss;	
+		if (subSpecAudioUserss != null) {
+			for (int i = 0; i < subSpecAudioUserss.size(); i++) {
+				putQueryParameter("SubSpecAudioUsers." + (i + 1) , subSpecAudioUserss.get(i));
+			}
+		}	
+	}
+
+	public List<String> getSubSpecShareScreenUserss() {
+		return this.subSpecShareScreenUserss;
+	}
+
+	public void setSubSpecShareScreenUserss(List<String> subSpecShareScreenUserss) {
+		this.subSpecShareScreenUserss = subSpecShareScreenUserss;	
+		if (subSpecShareScreenUserss != null) {
+			for (int i = 0; i < subSpecShareScreenUserss.size(); i++) {
+				putQueryParameter("SubSpecShareScreenUsers." + (i + 1) , subSpecShareScreenUserss.get(i));
+			}
+		}	
 	}
 
 	public List<String> getSubSpecUserss() {
@@ -155,22 +260,22 @@ public class UpdateRecordTaskRequest extends RpcAcsRequest<UpdateRecordTaskRespo
 
 	public static class UserPanes {
 
-		private Integer paneId;
+		private List<Images> imagess;
 
 		private String userId;
 
-		private String sourceType;
-
-		private List<Images> imagess;
-
 		private List<Texts> textss;
 
-		public Integer getPaneId() {
-			return this.paneId;
+		private String sourceType;
+
+		private Integer paneId;
+
+		public List<Images> getImagess() {
+			return this.imagess;
 		}
 
-		public void setPaneId(Integer paneId) {
-			this.paneId = paneId;
+		public void setImagess(List<Images> imagess) {
+			this.imagess = imagess;
 		}
 
 		public String getUserId() {
@@ -181,22 +286,6 @@ public class UpdateRecordTaskRequest extends RpcAcsRequest<UpdateRecordTaskRespo
 			this.userId = userId;
 		}
 
-		public String getSourceType() {
-			return this.sourceType;
-		}
-
-		public void setSourceType(String sourceType) {
-			this.sourceType = sourceType;
-		}
-
-		public List<Images> getImagess() {
-			return this.imagess;
-		}
-
-		public void setImagess(List<Images> imagess) {
-			this.imagess = imagess;
-		}
-
 		public List<Texts> getTextss() {
 			return this.textss;
 		}
@@ -205,53 +294,37 @@ public class UpdateRecordTaskRequest extends RpcAcsRequest<UpdateRecordTaskRespo
 			this.textss = textss;
 		}
 
+		public String getSourceType() {
+			return this.sourceType;
+		}
+
+		public void setSourceType(String sourceType) {
+			this.sourceType = sourceType;
+		}
+
+		public Integer getPaneId() {
+			return this.paneId;
+		}
+
+		public void setPaneId(Integer paneId) {
+			this.paneId = paneId;
+		}
+
 		public static class Images {
-
-			private String url;
-
-			private Integer display;
-
-			private Float x;
-
-			private Float y;
 
 			private Float width;
 
 			private Float height;
 
+			private Float y;
+
+			private String url;
+
+			private Integer display;
+
 			private Integer zOrder;
 
-			public String getUrl() {
-				return this.url;
-			}
-
-			public void setUrl(String url) {
-				this.url = url;
-			}
-
-			public Integer getDisplay() {
-				return this.display;
-			}
-
-			public void setDisplay(Integer display) {
-				this.display = display;
-			}
-
-			public Float getX() {
-				return this.x;
-			}
-
-			public void setX(Float x) {
-				this.x = x;
-			}
-
-			public Float getY() {
-				return this.y;
-			}
-
-			public void setY(Float y) {
-				this.y = y;
-			}
+			private Float x;
 
 			public Float getWidth() {
 				return this.width;
@@ -269,37 +342,36 @@ public class UpdateRecordTaskRequest extends RpcAcsRequest<UpdateRecordTaskRespo
 				this.height = height;
 			}
 
+			public Float getY() {
+				return this.y;
+			}
+
+			public void setY(Float y) {
+				this.y = y;
+			}
+
+			public String getUrl() {
+				return this.url;
+			}
+
+			public void setUrl(String url) {
+				this.url = url;
+			}
+
+			public Integer getDisplay() {
+				return this.display;
+			}
+
+			public void setDisplay(Integer display) {
+				this.display = display;
+			}
+
 			public Integer getZOrder() {
 				return this.zOrder;
 			}
 
 			public void setZOrder(Integer zOrder) {
 				this.zOrder = zOrder;
-			}
-		}
-
-		public static class Texts {
-
-			private String text;
-
-			private Float x;
-
-			private Float y;
-
-			private Integer fontType;
-
-			private Integer fontSize;
-
-			private Integer fontColor;
-
-			private Integer zOrder;
-
-			public String getText() {
-				return this.text;
-			}
-
-			public void setText(String text) {
-				this.text = text;
 			}
 
 			public Float getX() {
@@ -309,14 +381,23 @@ public class UpdateRecordTaskRequest extends RpcAcsRequest<UpdateRecordTaskRespo
 			public void setX(Float x) {
 				this.x = x;
 			}
+		}
 
-			public Float getY() {
-				return this.y;
-			}
+		public static class Texts {
 
-			public void setY(Float y) {
-				this.y = y;
-			}
+			private Integer fontType;
+
+			private Integer fontColor;
+
+			private Float y;
+
+			private String text;
+
+			private Integer zOrder;
+
+			private Float x;
+
+			private Integer fontSize;
 
 			public Integer getFontType() {
 				return this.fontType;
@@ -324,14 +405,6 @@ public class UpdateRecordTaskRequest extends RpcAcsRequest<UpdateRecordTaskRespo
 
 			public void setFontType(Integer fontType) {
 				this.fontType = fontType;
-			}
-
-			public Integer getFontSize() {
-				return this.fontSize;
-			}
-
-			public void setFontSize(Integer fontSize) {
-				this.fontSize = fontSize;
 			}
 
 			public Integer getFontColor() {
@@ -342,12 +415,44 @@ public class UpdateRecordTaskRequest extends RpcAcsRequest<UpdateRecordTaskRespo
 				this.fontColor = fontColor;
 			}
 
+			public Float getY() {
+				return this.y;
+			}
+
+			public void setY(Float y) {
+				this.y = y;
+			}
+
+			public String getText() {
+				return this.text;
+			}
+
+			public void setText(String text) {
+				this.text = text;
+			}
+
 			public Integer getZOrder() {
 				return this.zOrder;
 			}
 
 			public void setZOrder(Integer zOrder) {
 				this.zOrder = zOrder;
+			}
+
+			public Float getX() {
+				return this.x;
+			}
+
+			public void setX(Float x) {
+				this.x = x;
+			}
+
+			public Integer getFontSize() {
+				return this.fontSize;
+			}
+
+			public void setFontSize(Integer fontSize) {
+				this.fontSize = fontSize;
 			}
 		}
 	}

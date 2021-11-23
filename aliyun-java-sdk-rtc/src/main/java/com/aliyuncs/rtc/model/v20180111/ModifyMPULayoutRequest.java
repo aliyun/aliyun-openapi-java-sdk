@@ -38,7 +38,7 @@ public class ModifyMPULayoutRequest extends RpcAcsRequest<ModifyMPULayoutRespons
 
 	private Integer audioMixCount;
 	public ModifyMPULayoutRequest() {
-		super("rtc", "2018-01-11", "ModifyMPULayout", "rtc");
+		super("rtc", "2018-01-11", "ModifyMPULayout");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -65,13 +65,13 @@ public class ModifyMPULayoutRequest extends RpcAcsRequest<ModifyMPULayoutRespons
 		this.paness = paness;	
 		if (paness != null) {
 			for (int depth1 = 0; depth1 < paness.size(); depth1++) {
-				putQueryParameter("Panes." + (depth1 + 1) + ".PaneId" , paness.get(depth1).getPaneId());
 				putQueryParameter("Panes." + (depth1 + 1) + ".MajorPane" , paness.get(depth1).getMajorPane());
-				putQueryParameter("Panes." + (depth1 + 1) + ".X" , paness.get(depth1).getX());
-				putQueryParameter("Panes." + (depth1 + 1) + ".Y" , paness.get(depth1).getY());
 				putQueryParameter("Panes." + (depth1 + 1) + ".Width" , paness.get(depth1).getWidth());
 				putQueryParameter("Panes." + (depth1 + 1) + ".Height" , paness.get(depth1).getHeight());
+				putQueryParameter("Panes." + (depth1 + 1) + ".Y" , paness.get(depth1).getY());
+				putQueryParameter("Panes." + (depth1 + 1) + ".PaneId" , paness.get(depth1).getPaneId());
 				putQueryParameter("Panes." + (depth1 + 1) + ".ZOrder" , paness.get(depth1).getZOrder());
+				putQueryParameter("Panes." + (depth1 + 1) + ".X" , paness.get(depth1).getX());
 			}
 		}	
 	}
@@ -122,27 +122,19 @@ public class ModifyMPULayoutRequest extends RpcAcsRequest<ModifyMPULayoutRespons
 
 	public static class Panes {
 
-		private Integer paneId;
-
 		private Integer majorPane;
-
-		private Float x;
-
-		private Float y;
 
 		private Float width;
 
 		private Float height;
 
+		private Float y;
+
+		private Integer paneId;
+
 		private Integer zOrder;
 
-		public Integer getPaneId() {
-			return this.paneId;
-		}
-
-		public void setPaneId(Integer paneId) {
-			this.paneId = paneId;
-		}
+		private Float x;
 
 		public Integer getMajorPane() {
 			return this.majorPane;
@@ -150,22 +142,6 @@ public class ModifyMPULayoutRequest extends RpcAcsRequest<ModifyMPULayoutRespons
 
 		public void setMajorPane(Integer majorPane) {
 			this.majorPane = majorPane;
-		}
-
-		public Float getX() {
-			return this.x;
-		}
-
-		public void setX(Float x) {
-			this.x = x;
-		}
-
-		public Float getY() {
-			return this.y;
-		}
-
-		public void setY(Float y) {
-			this.y = y;
 		}
 
 		public Float getWidth() {
@@ -184,12 +160,36 @@ public class ModifyMPULayoutRequest extends RpcAcsRequest<ModifyMPULayoutRespons
 			this.height = height;
 		}
 
+		public Float getY() {
+			return this.y;
+		}
+
+		public void setY(Float y) {
+			this.y = y;
+		}
+
+		public Integer getPaneId() {
+			return this.paneId;
+		}
+
+		public void setPaneId(Integer paneId) {
+			this.paneId = paneId;
+		}
+
 		public Integer getZOrder() {
 			return this.zOrder;
 		}
 
 		public void setZOrder(Integer zOrder) {
 			this.zOrder = zOrder;
+		}
+
+		public Float getX() {
+			return this.x;
+		}
+
+		public void setX(Float x) {
+			this.x = x;
 		}
 	}
 

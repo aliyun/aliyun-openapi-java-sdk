@@ -22,34 +22,21 @@ import com.aliyuncs.rtc.Endpoint;
  * @author auto create
  * @version 
  */
-public class StopChannelUserPublishRequest extends RpcAcsRequest<StopChannelUserPublishResponse> {
+public class EnableAutoLiveStreamRuleRequest extends RpcAcsRequest<EnableAutoLiveStreamRuleResponse> {
 	   
-
-	private String userId;
 
 	private Long ownerId;
 
 	private String appId;
 
-	private String channelId;
-	public StopChannelUserPublishRequest() {
-		super("rtc", "2018-01-11", "StopChannelUserPublish");
+	private Long ruleId;
+	public EnableAutoLiveStreamRuleRequest() {
+		super("rtc", "2018-01-11", "EnableAutoLiveStreamRule");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getUserId() {
-		return this.userId;
-	}
-
-	public void setUserId(String userId) {
-		this.userId = userId;
-		if(userId != null){
-			putQueryParameter("UserId", userId);
-		}
 	}
 
 	public Long getOwnerId() {
@@ -74,20 +61,20 @@ public class StopChannelUserPublishRequest extends RpcAcsRequest<StopChannelUser
 		}
 	}
 
-	public String getChannelId() {
-		return this.channelId;
+	public Long getRuleId() {
+		return this.ruleId;
 	}
 
-	public void setChannelId(String channelId) {
-		this.channelId = channelId;
-		if(channelId != null){
-			putQueryParameter("ChannelId", channelId);
+	public void setRuleId(Long ruleId) {
+		this.ruleId = ruleId;
+		if(ruleId != null){
+			putQueryParameter("RuleId", ruleId.toString());
 		}
 	}
 
 	@Override
-	public Class<StopChannelUserPublishResponse> getResponseClass() {
-		return StopChannelUserPublishResponse.class;
+	public Class<EnableAutoLiveStreamRuleResponse> getResponseClass() {
+		return EnableAutoLiveStreamRuleResponse.class;
 	}
 
 }

@@ -15,26 +15,16 @@
 package com.aliyuncs.rtc.model.v20180111;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.rtc.transform.v20180111.AddRecordTemplateResponseUnmarshaller;
+import com.aliyuncs.rtc.transform.v20180111.UpdateMPUTaskResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class AddRecordTemplateResponse extends AcsResponse {
-
-	private String templateId;
+public class UpdateMPUTaskResponse extends AcsResponse {
 
 	private String requestId;
-
-	public String getTemplateId() {
-		return this.templateId;
-	}
-
-	public void setTemplateId(String templateId) {
-		this.templateId = templateId;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -45,12 +35,7 @@ public class AddRecordTemplateResponse extends AcsResponse {
 	}
 
 	@Override
-	public AddRecordTemplateResponse getInstance(UnmarshallerContext context) {
-		return	AddRecordTemplateResponseUnmarshaller.unmarshall(this, context);
-	}
-
-	@Override
-	public boolean checkShowJsonItemName() {
-		return false;
+	public UpdateMPUTaskResponse getInstance(UnmarshallerContext context) {
+		return	UpdateMPUTaskResponseUnmarshaller.unmarshall(this, context);
 	}
 }

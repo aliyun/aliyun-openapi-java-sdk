@@ -25,19 +25,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeChannelUsersResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer commTotalNum;
 
-	private Integer timestamp;
+	private String requestId;
 
 	private Boolean isChannelExist;
 
+	private Integer liveUserNum;
+
+	private Integer timestamp;
+
 	private Integer channelProfile;
 
-	private Integer commTotalNum;
-
 	private Integer interactiveUserNum;
-
-	private Integer liveUserNum;
 
 	private List<String> userList;
 
@@ -45,20 +45,20 @@ public class DescribeChannelUsersResponse extends AcsResponse {
 
 	private List<String> liveUserList;
 
+	public Integer getCommTotalNum() {
+		return this.commTotalNum;
+	}
+
+	public void setCommTotalNum(Integer commTotalNum) {
+		this.commTotalNum = commTotalNum;
+	}
+
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getTimestamp() {
-		return this.timestamp;
-	}
-
-	public void setTimestamp(Integer timestamp) {
-		this.timestamp = timestamp;
 	}
 
 	public Boolean getIsChannelExist() {
@@ -69,6 +69,22 @@ public class DescribeChannelUsersResponse extends AcsResponse {
 		this.isChannelExist = isChannelExist;
 	}
 
+	public Integer getLiveUserNum() {
+		return this.liveUserNum;
+	}
+
+	public void setLiveUserNum(Integer liveUserNum) {
+		this.liveUserNum = liveUserNum;
+	}
+
+	public Integer getTimestamp() {
+		return this.timestamp;
+	}
+
+	public void setTimestamp(Integer timestamp) {
+		this.timestamp = timestamp;
+	}
+
 	public Integer getChannelProfile() {
 		return this.channelProfile;
 	}
@@ -77,28 +93,12 @@ public class DescribeChannelUsersResponse extends AcsResponse {
 		this.channelProfile = channelProfile;
 	}
 
-	public Integer getCommTotalNum() {
-		return this.commTotalNum;
-	}
-
-	public void setCommTotalNum(Integer commTotalNum) {
-		this.commTotalNum = commTotalNum;
-	}
-
 	public Integer getInteractiveUserNum() {
 		return this.interactiveUserNum;
 	}
 
 	public void setInteractiveUserNum(Integer interactiveUserNum) {
 		this.interactiveUserNum = interactiveUserNum;
-	}
-
-	public Integer getLiveUserNum() {
-		return this.liveUserNum;
-	}
-
-	public void setLiveUserNum(Integer liveUserNum) {
-		this.liveUserNum = liveUserNum;
 	}
 
 	public List<String> getUserList() {

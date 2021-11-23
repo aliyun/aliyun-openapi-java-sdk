@@ -31,7 +31,7 @@ public class StopMPUTaskRequest extends RpcAcsRequest<StopMPUTaskResponse> {
 
 	private String appId;
 	public StopMPUTaskRequest() {
-		super("rtc", "2018-01-11", "StopMPUTask", "rtc");
+		super("rtc", "2018-01-11", "StopMPUTask");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

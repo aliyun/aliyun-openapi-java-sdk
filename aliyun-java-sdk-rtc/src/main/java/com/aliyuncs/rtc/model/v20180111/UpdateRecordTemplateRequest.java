@@ -54,6 +54,8 @@ public class UpdateRecordTemplateRequest extends RpcAcsRequest<UpdateRecordTempl
 
 	private String templateId;
 
+	private Boolean enableM3u8DateTime;
+
 	private String appId;
 
 	private List<Backgrounds> backgroundss;
@@ -62,7 +64,7 @@ public class UpdateRecordTemplateRequest extends RpcAcsRequest<UpdateRecordTempl
 
 	private Integer mediaEncode;
 	public UpdateRecordTemplateRequest() {
-		super("rtc", "2018-01-11", "UpdateRecordTemplate", "rtc");
+		super("rtc", "2018-01-11", "UpdateRecordTemplate");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -137,12 +139,12 @@ public class UpdateRecordTemplateRequest extends RpcAcsRequest<UpdateRecordTempl
 		this.clockWidgetss = clockWidgetss;	
 		if (clockWidgetss != null) {
 			for (int depth1 = 0; depth1 < clockWidgetss.size(); depth1++) {
-				putQueryParameter("ClockWidgets." + (depth1 + 1) + ".X" , clockWidgetss.get(depth1).getX());
-				putQueryParameter("ClockWidgets." + (depth1 + 1) + ".Y" , clockWidgetss.get(depth1).getY());
 				putQueryParameter("ClockWidgets." + (depth1 + 1) + ".FontType" , clockWidgetss.get(depth1).getFontType());
-				putQueryParameter("ClockWidgets." + (depth1 + 1) + ".FontSize" , clockWidgetss.get(depth1).getFontSize());
 				putQueryParameter("ClockWidgets." + (depth1 + 1) + ".FontColor" , clockWidgetss.get(depth1).getFontColor());
+				putQueryParameter("ClockWidgets." + (depth1 + 1) + ".Y" , clockWidgetss.get(depth1).getY());
 				putQueryParameter("ClockWidgets." + (depth1 + 1) + ".ZOrder" , clockWidgetss.get(depth1).getZOrder());
+				putQueryParameter("ClockWidgets." + (depth1 + 1) + ".X" , clockWidgetss.get(depth1).getX());
+				putQueryParameter("ClockWidgets." + (depth1 + 1) + ".FontSize" , clockWidgetss.get(depth1).getFontSize());
 			}
 		}	
 	}
@@ -210,14 +212,14 @@ public class UpdateRecordTemplateRequest extends RpcAcsRequest<UpdateRecordTempl
 		this.watermarkss = watermarkss;	
 		if (watermarkss != null) {
 			for (int depth1 = 0; depth1 < watermarkss.size(); depth1++) {
-				putQueryParameter("Watermarks." + (depth1 + 1) + ".Url" , watermarkss.get(depth1).getUrl());
 				putQueryParameter("Watermarks." + (depth1 + 1) + ".Alpha" , watermarkss.get(depth1).getAlpha());
-				putQueryParameter("Watermarks." + (depth1 + 1) + ".Display" , watermarkss.get(depth1).getDisplay());
-				putQueryParameter("Watermarks." + (depth1 + 1) + ".X" , watermarkss.get(depth1).getX());
-				putQueryParameter("Watermarks." + (depth1 + 1) + ".Y" , watermarkss.get(depth1).getY());
 				putQueryParameter("Watermarks." + (depth1 + 1) + ".Width" , watermarkss.get(depth1).getWidth());
 				putQueryParameter("Watermarks." + (depth1 + 1) + ".Height" , watermarkss.get(depth1).getHeight());
+				putQueryParameter("Watermarks." + (depth1 + 1) + ".Y" , watermarkss.get(depth1).getY());
+				putQueryParameter("Watermarks." + (depth1 + 1) + ".Url" , watermarkss.get(depth1).getUrl());
+				putQueryParameter("Watermarks." + (depth1 + 1) + ".Display" , watermarkss.get(depth1).getDisplay());
 				putQueryParameter("Watermarks." + (depth1 + 1) + ".ZOrder" , watermarkss.get(depth1).getZOrder());
+				putQueryParameter("Watermarks." + (depth1 + 1) + ".X" , watermarkss.get(depth1).getX());
 			}
 		}	
 	}
@@ -244,6 +246,17 @@ public class UpdateRecordTemplateRequest extends RpcAcsRequest<UpdateRecordTempl
 		}
 	}
 
+	public Boolean getEnableM3u8DateTime() {
+		return this.enableM3u8DateTime;
+	}
+
+	public void setEnableM3u8DateTime(Boolean enableM3u8DateTime) {
+		this.enableM3u8DateTime = enableM3u8DateTime;
+		if(enableM3u8DateTime != null){
+			putQueryParameter("EnableM3u8DateTime", enableM3u8DateTime.toString());
+		}
+	}
+
 	public String getAppId() {
 		return this.appId;
 	}
@@ -263,13 +276,13 @@ public class UpdateRecordTemplateRequest extends RpcAcsRequest<UpdateRecordTempl
 		this.backgroundss = backgroundss;	
 		if (backgroundss != null) {
 			for (int depth1 = 0; depth1 < backgroundss.size(); depth1++) {
-				putQueryParameter("Backgrounds." + (depth1 + 1) + ".Url" , backgroundss.get(depth1).getUrl());
-				putQueryParameter("Backgrounds." + (depth1 + 1) + ".Display" , backgroundss.get(depth1).getDisplay());
-				putQueryParameter("Backgrounds." + (depth1 + 1) + ".X" , backgroundss.get(depth1).getX());
-				putQueryParameter("Backgrounds." + (depth1 + 1) + ".Y" , backgroundss.get(depth1).getY());
 				putQueryParameter("Backgrounds." + (depth1 + 1) + ".Width" , backgroundss.get(depth1).getWidth());
 				putQueryParameter("Backgrounds." + (depth1 + 1) + ".Height" , backgroundss.get(depth1).getHeight());
+				putQueryParameter("Backgrounds." + (depth1 + 1) + ".Y" , backgroundss.get(depth1).getY());
+				putQueryParameter("Backgrounds." + (depth1 + 1) + ".Url" , backgroundss.get(depth1).getUrl());
+				putQueryParameter("Backgrounds." + (depth1 + 1) + ".Display" , backgroundss.get(depth1).getDisplay());
 				putQueryParameter("Backgrounds." + (depth1 + 1) + ".ZOrder" , backgroundss.get(depth1).getZOrder());
+				putQueryParameter("Backgrounds." + (depth1 + 1) + ".X" , backgroundss.get(depth1).getX());
 			}
 		}	
 	}
@@ -298,33 +311,17 @@ public class UpdateRecordTemplateRequest extends RpcAcsRequest<UpdateRecordTempl
 
 	public static class ClockWidgets {
 
-		private Float x;
-
-		private Float y;
-
 		private Integer fontType;
-
-		private Integer fontSize;
 
 		private Integer fontColor;
 
+		private Float y;
+
 		private Integer zOrder;
 
-		public Float getX() {
-			return this.x;
-		}
+		private Float x;
 
-		public void setX(Float x) {
-			this.x = x;
-		}
-
-		public Float getY() {
-			return this.y;
-		}
-
-		public void setY(Float y) {
-			this.y = y;
-		}
+		private Integer fontSize;
 
 		public Integer getFontType() {
 			return this.fontType;
@@ -332,14 +329,6 @@ public class UpdateRecordTemplateRequest extends RpcAcsRequest<UpdateRecordTempl
 
 		public void setFontType(Integer fontType) {
 			this.fontType = fontType;
-		}
-
-		public Integer getFontSize() {
-			return this.fontSize;
-		}
-
-		public void setFontSize(Integer fontSize) {
-			this.fontSize = fontSize;
 		}
 
 		public Integer getFontColor() {
@@ -350,6 +339,14 @@ public class UpdateRecordTemplateRequest extends RpcAcsRequest<UpdateRecordTempl
 			this.fontColor = fontColor;
 		}
 
+		public Float getY() {
+			return this.y;
+		}
+
+		public void setY(Float y) {
+			this.y = y;
+		}
+
 		public Integer getZOrder() {
 			return this.zOrder;
 		}
@@ -357,33 +354,41 @@ public class UpdateRecordTemplateRequest extends RpcAcsRequest<UpdateRecordTempl
 		public void setZOrder(Integer zOrder) {
 			this.zOrder = zOrder;
 		}
+
+		public Float getX() {
+			return this.x;
+		}
+
+		public void setX(Float x) {
+			this.x = x;
+		}
+
+		public Integer getFontSize() {
+			return this.fontSize;
+		}
+
+		public void setFontSize(Integer fontSize) {
+			this.fontSize = fontSize;
+		}
 	}
 
 	public static class Watermarks {
 
-		private String url;
-
 		private Float alpha;
-
-		private Integer display;
-
-		private Float x;
-
-		private Float y;
 
 		private Float width;
 
 		private Float height;
 
+		private Float y;
+
+		private String url;
+
+		private Integer display;
+
 		private Integer zOrder;
 
-		public String getUrl() {
-			return this.url;
-		}
-
-		public void setUrl(String url) {
-			this.url = url;
-		}
+		private Float x;
 
 		public Float getAlpha() {
 			return this.alpha;
@@ -393,30 +398,6 @@ public class UpdateRecordTemplateRequest extends RpcAcsRequest<UpdateRecordTempl
 			this.alpha = alpha;
 		}
 
-		public Integer getDisplay() {
-			return this.display;
-		}
-
-		public void setDisplay(Integer display) {
-			this.display = display;
-		}
-
-		public Float getX() {
-			return this.x;
-		}
-
-		public void setX(Float x) {
-			this.x = x;
-		}
-
-		public Float getY() {
-			return this.y;
-		}
-
-		public void setY(Float y) {
-			this.y = y;
-		}
-
 		public Float getWidth() {
 			return this.width;
 		}
@@ -433,30 +414,13 @@ public class UpdateRecordTemplateRequest extends RpcAcsRequest<UpdateRecordTempl
 			this.height = height;
 		}
 
-		public Integer getZOrder() {
-			return this.zOrder;
+		public Float getY() {
+			return this.y;
 		}
 
-		public void setZOrder(Integer zOrder) {
-			this.zOrder = zOrder;
+		public void setY(Float y) {
+			this.y = y;
 		}
-	}
-
-	public static class Backgrounds {
-
-		private String url;
-
-		private Integer display;
-
-		private Float x;
-
-		private Float y;
-
-		private Float width;
-
-		private Float height;
-
-		private Integer zOrder;
 
 		public String getUrl() {
 			return this.url;
@@ -474,6 +438,14 @@ public class UpdateRecordTemplateRequest extends RpcAcsRequest<UpdateRecordTempl
 			this.display = display;
 		}
 
+		public Integer getZOrder() {
+			return this.zOrder;
+		}
+
+		public void setZOrder(Integer zOrder) {
+			this.zOrder = zOrder;
+		}
+
 		public Float getX() {
 			return this.x;
 		}
@@ -481,14 +453,23 @@ public class UpdateRecordTemplateRequest extends RpcAcsRequest<UpdateRecordTempl
 		public void setX(Float x) {
 			this.x = x;
 		}
+	}
 
-		public Float getY() {
-			return this.y;
-		}
+	public static class Backgrounds {
 
-		public void setY(Float y) {
-			this.y = y;
-		}
+		private Float width;
+
+		private Float height;
+
+		private Float y;
+
+		private String url;
+
+		private Integer display;
+
+		private Integer zOrder;
+
+		private Float x;
 
 		public Float getWidth() {
 			return this.width;
@@ -506,12 +487,44 @@ public class UpdateRecordTemplateRequest extends RpcAcsRequest<UpdateRecordTempl
 			this.height = height;
 		}
 
+		public Float getY() {
+			return this.y;
+		}
+
+		public void setY(Float y) {
+			this.y = y;
+		}
+
+		public String getUrl() {
+			return this.url;
+		}
+
+		public void setUrl(String url) {
+			this.url = url;
+		}
+
+		public Integer getDisplay() {
+			return this.display;
+		}
+
+		public void setDisplay(Integer display) {
+			this.display = display;
+		}
+
 		public Integer getZOrder() {
 			return this.zOrder;
 		}
 
 		public void setZOrder(Integer zOrder) {
 			this.zOrder = zOrder;
+		}
+
+		public Float getX() {
+			return this.x;
+		}
+
+		public void setX(Float x) {
+			this.x = x;
 		}
 	}
 

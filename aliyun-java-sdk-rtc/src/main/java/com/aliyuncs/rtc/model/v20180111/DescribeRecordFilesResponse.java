@@ -25,13 +25,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeRecordFilesResponse extends AcsResponse {
 
+	private Long totalPage;
+
 	private String requestId;
 
 	private Long totalNum;
 
-	private Long totalPage;
-
 	private List<RecordFile> recordFiles;
+
+	public Long getTotalPage() {
+		return this.totalPage;
+	}
+
+	public void setTotalPage(Long totalPage) {
+		this.totalPage = totalPage;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -49,14 +57,6 @@ public class DescribeRecordFilesResponse extends AcsResponse {
 		this.totalNum = totalNum;
 	}
 
-	public Long getTotalPage() {
-		return this.totalPage;
-	}
-
-	public void setTotalPage(Long totalPage) {
-		this.totalPage = totalPage;
-	}
-
 	public List<RecordFile> getRecordFiles() {
 		return this.recordFiles;
 	}
@@ -67,21 +67,29 @@ public class DescribeRecordFilesResponse extends AcsResponse {
 
 	public static class RecordFile {
 
+		private String startTime;
+
 		private String createTime;
 
 		private String appId;
 
 		private String channelId;
 
-		private String taskId;
-
-		private String startTime;
-
-		private String stopTime;
-
 		private String url;
 
 		private Float duration;
+
+		private String taskId;
+
+		private String stopTime;
+
+		public String getStartTime() {
+			return this.startTime;
+		}
+
+		public void setStartTime(String startTime) {
+			this.startTime = startTime;
+		}
 
 		public String getCreateTime() {
 			return this.createTime;
@@ -107,30 +115,6 @@ public class DescribeRecordFilesResponse extends AcsResponse {
 			this.channelId = channelId;
 		}
 
-		public String getTaskId() {
-			return this.taskId;
-		}
-
-		public void setTaskId(String taskId) {
-			this.taskId = taskId;
-		}
-
-		public String getStartTime() {
-			return this.startTime;
-		}
-
-		public void setStartTime(String startTime) {
-			this.startTime = startTime;
-		}
-
-		public String getStopTime() {
-			return this.stopTime;
-		}
-
-		public void setStopTime(String stopTime) {
-			this.stopTime = stopTime;
-		}
-
 		public String getUrl() {
 			return this.url;
 		}
@@ -145,6 +129,22 @@ public class DescribeRecordFilesResponse extends AcsResponse {
 
 		public void setDuration(Float duration) {
 			this.duration = duration;
+		}
+
+		public String getTaskId() {
+			return this.taskId;
+		}
+
+		public void setTaskId(String taskId) {
+			this.taskId = taskId;
+		}
+
+		public String getStopTime() {
+			return this.stopTime;
+		}
+
+		public void setStopTime(String stopTime) {
+			this.stopTime = stopTime;
 		}
 	}
 

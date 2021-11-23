@@ -31,7 +31,7 @@ public class DeleteMPULayoutRequest extends RpcAcsRequest<DeleteMPULayoutRespons
 
 	private String appId;
 	public DeleteMPULayoutRequest() {
-		super("rtc", "2018-01-11", "DeleteMPULayout", "rtc");
+		super("rtc", "2018-01-11", "DeleteMPULayout");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

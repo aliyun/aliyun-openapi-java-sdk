@@ -31,7 +31,7 @@ public class GetMPUTaskStatusRequest extends RpcAcsRequest<GetMPUTaskStatusRespo
 
 	private String appId;
 	public GetMPUTaskStatusRequest() {
-		super("rtc", "2018-01-11", "GetMPUTaskStatus", "rtc");
+		super("rtc", "2018-01-11", "GetMPUTaskStatus");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

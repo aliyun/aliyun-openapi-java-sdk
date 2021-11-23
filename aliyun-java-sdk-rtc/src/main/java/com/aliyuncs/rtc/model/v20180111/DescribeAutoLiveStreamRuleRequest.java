@@ -29,7 +29,7 @@ public class DescribeAutoLiveStreamRuleRequest extends RpcAcsRequest<DescribeAut
 
 	private String appId;
 	public DescribeAutoLiveStreamRuleRequest() {
-		super("rtc", "2018-01-11", "DescribeAutoLiveStreamRule", "rtc");
+		super("rtc", "2018-01-11", "DescribeAutoLiveStreamRule");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

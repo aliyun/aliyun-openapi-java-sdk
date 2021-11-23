@@ -23,36 +23,40 @@ import com.aliyuncs.rtc.Endpoint;
  * @author auto create
  * @version 
  */
-public class StartRecordTaskRequest extends RpcAcsRequest<StartRecordTaskResponse> {
+public class UpdateMPUTaskRequest extends RpcAcsRequest<UpdateMPUTaskResponse> {
 	   
 
 	private List<UserPanes> userPaness;
 
-	private Long cropMode;
-
-	private List<String> subSpecCameraUserss;
+	private Integer backgroundColor;
 
 	private String sourceType;
 
-	private String taskProfile;
-
-	private List<Long> layoutIdss;
-
 	private String taskId;
+
+	private List<ClockWidgets> clockWidgetss;
 
 	private List<String> unsubSpecCameraUserss;
 
-	private Integer streamType;
-
 	private List<String> unsubSpecAudioUserss;
 
-	private List<String> unsubSpecShareScreenUserss;
+	private List<Watermarks> watermarkss;
 
 	private Long ownerId;
 
-	private String templateId;
-
 	private List<String> subSpecAudioUserss;
+
+	private Integer mediaEncode;
+
+	private Integer cropMode;
+
+	private List<String> subSpecCameraUserss;
+
+	private List<Long> layoutIdss;
+
+	private Integer streamType;
+
+	private List<String> unsubSpecShareScreenUserss;
 
 	private List<String> subSpecShareScreenUserss;
 
@@ -60,13 +64,11 @@ public class StartRecordTaskRequest extends RpcAcsRequest<StartRecordTaskRespons
 
 	private String appId;
 
-	private Integer mediaEncode;
+	private List<Backgrounds> backgroundss;
 
 	private Integer mixMode;
-
-	private String channelId;
-	public StartRecordTaskRequest() {
-		super("rtc", "2018-01-11", "StartRecordTask");
+	public UpdateMPUTaskRequest() {
+		super("rtc", "2018-01-11", "UpdateMPUTask");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -93,6 +95,7 @@ public class StartRecordTaskRequest extends RpcAcsRequest<StartRecordTaskRespons
 						putQueryParameter("UserPanes." + (depth1 + 1) + ".Images." + (depth2 + 1) + ".X" , userPaness.get(depth1).getImagess().get(depth2).getX());
 					}
 				}
+				putQueryParameter("UserPanes." + (depth1 + 1) + ".SegmentType" , userPaness.get(depth1).getSegmentType());
 				putQueryParameter("UserPanes." + (depth1 + 1) + ".UserId" , userPaness.get(depth1).getUserId());
 				if (userPaness.get(depth1).getTextss() != null) {
 					for (int depth2 = 0; depth2 < userPaness.get(depth1).getTextss().size(); depth2++) {
@@ -111,11 +114,143 @@ public class StartRecordTaskRequest extends RpcAcsRequest<StartRecordTaskRespons
 		}	
 	}
 
-	public Long getCropMode() {
+	public Integer getBackgroundColor() {
+		return this.backgroundColor;
+	}
+
+	public void setBackgroundColor(Integer backgroundColor) {
+		this.backgroundColor = backgroundColor;
+		if(backgroundColor != null){
+			putQueryParameter("BackgroundColor", backgroundColor.toString());
+		}
+	}
+
+	public String getSourceType() {
+		return this.sourceType;
+	}
+
+	public void setSourceType(String sourceType) {
+		this.sourceType = sourceType;
+		if(sourceType != null){
+			putQueryParameter("SourceType", sourceType);
+		}
+	}
+
+	public String getTaskId() {
+		return this.taskId;
+	}
+
+	public void setTaskId(String taskId) {
+		this.taskId = taskId;
+		if(taskId != null){
+			putQueryParameter("TaskId", taskId);
+		}
+	}
+
+	public List<ClockWidgets> getClockWidgetss() {
+		return this.clockWidgetss;
+	}
+
+	public void setClockWidgetss(List<ClockWidgets> clockWidgetss) {
+		this.clockWidgetss = clockWidgetss;	
+		if (clockWidgetss != null) {
+			for (int depth1 = 0; depth1 < clockWidgetss.size(); depth1++) {
+				putQueryParameter("ClockWidgets." + (depth1 + 1) + ".FontType" , clockWidgetss.get(depth1).getFontType());
+				putQueryParameter("ClockWidgets." + (depth1 + 1) + ".FontColor" , clockWidgetss.get(depth1).getFontColor());
+				putQueryParameter("ClockWidgets." + (depth1 + 1) + ".Y" , clockWidgetss.get(depth1).getY());
+				putQueryParameter("ClockWidgets." + (depth1 + 1) + ".ZOrder" , clockWidgetss.get(depth1).getZOrder());
+				putQueryParameter("ClockWidgets." + (depth1 + 1) + ".X" , clockWidgetss.get(depth1).getX());
+				putQueryParameter("ClockWidgets." + (depth1 + 1) + ".FontSize" , clockWidgetss.get(depth1).getFontSize());
+			}
+		}	
+	}
+
+	public List<String> getUnsubSpecCameraUserss() {
+		return this.unsubSpecCameraUserss;
+	}
+
+	public void setUnsubSpecCameraUserss(List<String> unsubSpecCameraUserss) {
+		this.unsubSpecCameraUserss = unsubSpecCameraUserss;	
+		if (unsubSpecCameraUserss != null) {
+			for (int i = 0; i < unsubSpecCameraUserss.size(); i++) {
+				putQueryParameter("UnsubSpecCameraUsers." + (i + 1) , unsubSpecCameraUserss.get(i));
+			}
+		}	
+	}
+
+	public List<String> getUnsubSpecAudioUserss() {
+		return this.unsubSpecAudioUserss;
+	}
+
+	public void setUnsubSpecAudioUserss(List<String> unsubSpecAudioUserss) {
+		this.unsubSpecAudioUserss = unsubSpecAudioUserss;	
+		if (unsubSpecAudioUserss != null) {
+			for (int i = 0; i < unsubSpecAudioUserss.size(); i++) {
+				putQueryParameter("UnsubSpecAudioUsers." + (i + 1) , unsubSpecAudioUserss.get(i));
+			}
+		}	
+	}
+
+	public List<Watermarks> getWatermarkss() {
+		return this.watermarkss;
+	}
+
+	public void setWatermarkss(List<Watermarks> watermarkss) {
+		this.watermarkss = watermarkss;	
+		if (watermarkss != null) {
+			for (int depth1 = 0; depth1 < watermarkss.size(); depth1++) {
+				putQueryParameter("Watermarks." + (depth1 + 1) + ".Alpha" , watermarkss.get(depth1).getAlpha());
+				putQueryParameter("Watermarks." + (depth1 + 1) + ".Width" , watermarkss.get(depth1).getWidth());
+				putQueryParameter("Watermarks." + (depth1 + 1) + ".Height" , watermarkss.get(depth1).getHeight());
+				putQueryParameter("Watermarks." + (depth1 + 1) + ".Y" , watermarkss.get(depth1).getY());
+				putQueryParameter("Watermarks." + (depth1 + 1) + ".Url" , watermarkss.get(depth1).getUrl());
+				putQueryParameter("Watermarks." + (depth1 + 1) + ".Display" , watermarkss.get(depth1).getDisplay());
+				putQueryParameter("Watermarks." + (depth1 + 1) + ".ZOrder" , watermarkss.get(depth1).getZOrder());
+				putQueryParameter("Watermarks." + (depth1 + 1) + ".X" , watermarkss.get(depth1).getX());
+			}
+		}	
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public List<String> getSubSpecAudioUserss() {
+		return this.subSpecAudioUserss;
+	}
+
+	public void setSubSpecAudioUserss(List<String> subSpecAudioUserss) {
+		this.subSpecAudioUserss = subSpecAudioUserss;	
+		if (subSpecAudioUserss != null) {
+			for (int i = 0; i < subSpecAudioUserss.size(); i++) {
+				putQueryParameter("SubSpecAudioUsers." + (i + 1) , subSpecAudioUserss.get(i));
+			}
+		}	
+	}
+
+	public Integer getMediaEncode() {
+		return this.mediaEncode;
+	}
+
+	public void setMediaEncode(Integer mediaEncode) {
+		this.mediaEncode = mediaEncode;
+		if(mediaEncode != null){
+			putQueryParameter("MediaEncode", mediaEncode.toString());
+		}
+	}
+
+	public Integer getCropMode() {
 		return this.cropMode;
 	}
 
-	public void setCropMode(Long cropMode) {
+	public void setCropMode(Integer cropMode) {
 		this.cropMode = cropMode;
 		if(cropMode != null){
 			putQueryParameter("CropMode", cropMode.toString());
@@ -135,28 +270,6 @@ public class StartRecordTaskRequest extends RpcAcsRequest<StartRecordTaskRespons
 		}	
 	}
 
-	public String getSourceType() {
-		return this.sourceType;
-	}
-
-	public void setSourceType(String sourceType) {
-		this.sourceType = sourceType;
-		if(sourceType != null){
-			putQueryParameter("SourceType", sourceType);
-		}
-	}
-
-	public String getTaskProfile() {
-		return this.taskProfile;
-	}
-
-	public void setTaskProfile(String taskProfile) {
-		this.taskProfile = taskProfile;
-		if(taskProfile != null){
-			putQueryParameter("TaskProfile", taskProfile);
-		}
-	}
-
 	public List<Long> getLayoutIdss() {
 		return this.layoutIdss;
 	}
@@ -166,30 +279,6 @@ public class StartRecordTaskRequest extends RpcAcsRequest<StartRecordTaskRespons
 		if (layoutIdss != null) {
 			for (int i = 0; i < layoutIdss.size(); i++) {
 				putQueryParameter("LayoutIds." + (i + 1) , layoutIdss.get(i));
-			}
-		}	
-	}
-
-	public String getTaskId() {
-		return this.taskId;
-	}
-
-	public void setTaskId(String taskId) {
-		this.taskId = taskId;
-		if(taskId != null){
-			putQueryParameter("TaskId", taskId);
-		}
-	}
-
-	public List<String> getUnsubSpecCameraUserss() {
-		return this.unsubSpecCameraUserss;
-	}
-
-	public void setUnsubSpecCameraUserss(List<String> unsubSpecCameraUserss) {
-		this.unsubSpecCameraUserss = unsubSpecCameraUserss;	
-		if (unsubSpecCameraUserss != null) {
-			for (int i = 0; i < unsubSpecCameraUserss.size(); i++) {
-				putQueryParameter("UnsubSpecCameraUsers." + (i + 1) , unsubSpecCameraUserss.get(i));
 			}
 		}	
 	}
@@ -205,19 +294,6 @@ public class StartRecordTaskRequest extends RpcAcsRequest<StartRecordTaskRespons
 		}
 	}
 
-	public List<String> getUnsubSpecAudioUserss() {
-		return this.unsubSpecAudioUserss;
-	}
-
-	public void setUnsubSpecAudioUserss(List<String> unsubSpecAudioUserss) {
-		this.unsubSpecAudioUserss = unsubSpecAudioUserss;	
-		if (unsubSpecAudioUserss != null) {
-			for (int i = 0; i < unsubSpecAudioUserss.size(); i++) {
-				putQueryParameter("UnsubSpecAudioUsers." + (i + 1) , unsubSpecAudioUserss.get(i));
-			}
-		}	
-	}
-
 	public List<String> getUnsubSpecShareScreenUserss() {
 		return this.unsubSpecShareScreenUserss;
 	}
@@ -227,41 +303,6 @@ public class StartRecordTaskRequest extends RpcAcsRequest<StartRecordTaskRespons
 		if (unsubSpecShareScreenUserss != null) {
 			for (int i = 0; i < unsubSpecShareScreenUserss.size(); i++) {
 				putQueryParameter("UnsubSpecShareScreenUsers." + (i + 1) , unsubSpecShareScreenUserss.get(i));
-			}
-		}	
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getTemplateId() {
-		return this.templateId;
-	}
-
-	public void setTemplateId(String templateId) {
-		this.templateId = templateId;
-		if(templateId != null){
-			putQueryParameter("TemplateId", templateId);
-		}
-	}
-
-	public List<String> getSubSpecAudioUserss() {
-		return this.subSpecAudioUserss;
-	}
-
-	public void setSubSpecAudioUserss(List<String> subSpecAudioUserss) {
-		this.subSpecAudioUserss = subSpecAudioUserss;	
-		if (subSpecAudioUserss != null) {
-			for (int i = 0; i < subSpecAudioUserss.size(); i++) {
-				putQueryParameter("SubSpecAudioUsers." + (i + 1) , subSpecAudioUserss.get(i));
 			}
 		}	
 	}
@@ -303,15 +344,23 @@ public class StartRecordTaskRequest extends RpcAcsRequest<StartRecordTaskRespons
 		}
 	}
 
-	public Integer getMediaEncode() {
-		return this.mediaEncode;
+	public List<Backgrounds> getBackgroundss() {
+		return this.backgroundss;
 	}
 
-	public void setMediaEncode(Integer mediaEncode) {
-		this.mediaEncode = mediaEncode;
-		if(mediaEncode != null){
-			putQueryParameter("MediaEncode", mediaEncode.toString());
-		}
+	public void setBackgroundss(List<Backgrounds> backgroundss) {
+		this.backgroundss = backgroundss;	
+		if (backgroundss != null) {
+			for (int depth1 = 0; depth1 < backgroundss.size(); depth1++) {
+				putQueryParameter("Backgrounds." + (depth1 + 1) + ".Width" , backgroundss.get(depth1).getWidth());
+				putQueryParameter("Backgrounds." + (depth1 + 1) + ".Height" , backgroundss.get(depth1).getHeight());
+				putQueryParameter("Backgrounds." + (depth1 + 1) + ".Y" , backgroundss.get(depth1).getY());
+				putQueryParameter("Backgrounds." + (depth1 + 1) + ".Url" , backgroundss.get(depth1).getUrl());
+				putQueryParameter("Backgrounds." + (depth1 + 1) + ".Display" , backgroundss.get(depth1).getDisplay());
+				putQueryParameter("Backgrounds." + (depth1 + 1) + ".ZOrder" , backgroundss.get(depth1).getZOrder());
+				putQueryParameter("Backgrounds." + (depth1 + 1) + ".X" , backgroundss.get(depth1).getX());
+			}
+		}	
 	}
 
 	public Integer getMixMode() {
@@ -325,20 +374,11 @@ public class StartRecordTaskRequest extends RpcAcsRequest<StartRecordTaskRespons
 		}
 	}
 
-	public String getChannelId() {
-		return this.channelId;
-	}
-
-	public void setChannelId(String channelId) {
-		this.channelId = channelId;
-		if(channelId != null){
-			putQueryParameter("ChannelId", channelId);
-		}
-	}
-
 	public static class UserPanes {
 
 		private List<Images> imagess;
+
+		private Integer segmentType;
 
 		private String userId;
 
@@ -354,6 +394,14 @@ public class StartRecordTaskRequest extends RpcAcsRequest<StartRecordTaskRespons
 
 		public void setImagess(List<Images> imagess) {
 			this.imagess = imagess;
+		}
+
+		public Integer getSegmentType() {
+			return this.segmentType;
+		}
+
+		public void setSegmentType(Integer segmentType) {
+			this.segmentType = segmentType;
 		}
 
 		public String getUserId() {
@@ -535,9 +583,228 @@ public class StartRecordTaskRequest extends RpcAcsRequest<StartRecordTaskRespons
 		}
 	}
 
+	public static class ClockWidgets {
+
+		private Integer fontType;
+
+		private Integer fontColor;
+
+		private Float y;
+
+		private Integer zOrder;
+
+		private Float x;
+
+		private Integer fontSize;
+
+		public Integer getFontType() {
+			return this.fontType;
+		}
+
+		public void setFontType(Integer fontType) {
+			this.fontType = fontType;
+		}
+
+		public Integer getFontColor() {
+			return this.fontColor;
+		}
+
+		public void setFontColor(Integer fontColor) {
+			this.fontColor = fontColor;
+		}
+
+		public Float getY() {
+			return this.y;
+		}
+
+		public void setY(Float y) {
+			this.y = y;
+		}
+
+		public Integer getZOrder() {
+			return this.zOrder;
+		}
+
+		public void setZOrder(Integer zOrder) {
+			this.zOrder = zOrder;
+		}
+
+		public Float getX() {
+			return this.x;
+		}
+
+		public void setX(Float x) {
+			this.x = x;
+		}
+
+		public Integer getFontSize() {
+			return this.fontSize;
+		}
+
+		public void setFontSize(Integer fontSize) {
+			this.fontSize = fontSize;
+		}
+	}
+
+	public static class Watermarks {
+
+		private Float alpha;
+
+		private Float width;
+
+		private Float height;
+
+		private Float y;
+
+		private String url;
+
+		private Integer display;
+
+		private Integer zOrder;
+
+		private Float x;
+
+		public Float getAlpha() {
+			return this.alpha;
+		}
+
+		public void setAlpha(Float alpha) {
+			this.alpha = alpha;
+		}
+
+		public Float getWidth() {
+			return this.width;
+		}
+
+		public void setWidth(Float width) {
+			this.width = width;
+		}
+
+		public Float getHeight() {
+			return this.height;
+		}
+
+		public void setHeight(Float height) {
+			this.height = height;
+		}
+
+		public Float getY() {
+			return this.y;
+		}
+
+		public void setY(Float y) {
+			this.y = y;
+		}
+
+		public String getUrl() {
+			return this.url;
+		}
+
+		public void setUrl(String url) {
+			this.url = url;
+		}
+
+		public Integer getDisplay() {
+			return this.display;
+		}
+
+		public void setDisplay(Integer display) {
+			this.display = display;
+		}
+
+		public Integer getZOrder() {
+			return this.zOrder;
+		}
+
+		public void setZOrder(Integer zOrder) {
+			this.zOrder = zOrder;
+		}
+
+		public Float getX() {
+			return this.x;
+		}
+
+		public void setX(Float x) {
+			this.x = x;
+		}
+	}
+
+	public static class Backgrounds {
+
+		private Float width;
+
+		private Float height;
+
+		private Float y;
+
+		private String url;
+
+		private Integer display;
+
+		private Integer zOrder;
+
+		private Float x;
+
+		public Float getWidth() {
+			return this.width;
+		}
+
+		public void setWidth(Float width) {
+			this.width = width;
+		}
+
+		public Float getHeight() {
+			return this.height;
+		}
+
+		public void setHeight(Float height) {
+			this.height = height;
+		}
+
+		public Float getY() {
+			return this.y;
+		}
+
+		public void setY(Float y) {
+			this.y = y;
+		}
+
+		public String getUrl() {
+			return this.url;
+		}
+
+		public void setUrl(String url) {
+			this.url = url;
+		}
+
+		public Integer getDisplay() {
+			return this.display;
+		}
+
+		public void setDisplay(Integer display) {
+			this.display = display;
+		}
+
+		public Integer getZOrder() {
+			return this.zOrder;
+		}
+
+		public void setZOrder(Integer zOrder) {
+			this.zOrder = zOrder;
+		}
+
+		public Float getX() {
+			return this.x;
+		}
+
+		public void setX(Float x) {
+			this.x = x;
+		}
+	}
+
 	@Override
-	public Class<StartRecordTaskResponse> getResponseClass() {
-		return StartRecordTaskResponse.class;
+	public Class<UpdateMPUTaskResponse> getResponseClass() {
+		return UpdateMPUTaskResponse.class;
 	}
 
 }

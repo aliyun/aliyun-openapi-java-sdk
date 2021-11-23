@@ -36,7 +36,7 @@ public class DescribeRecordTemplatesRequest extends RpcAcsRequest<DescribeRecord
 
 	private String appId;
 	public DescribeRecordTemplatesRequest() {
-		super("rtc", "2018-01-11", "DescribeRecordTemplates", "rtc");
+		super("rtc", "2018-01-11", "DescribeRecordTemplates");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

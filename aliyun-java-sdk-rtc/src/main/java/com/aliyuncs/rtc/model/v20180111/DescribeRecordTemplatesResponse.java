@@ -25,13 +25,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeRecordTemplatesResponse extends AcsResponse {
 
+	private Long totalPage;
+
 	private String requestId;
 
 	private Long totalNum;
 
-	private Long totalPage;
-
 	private List<Template> templates;
+
+	public Long getTotalPage() {
+		return this.totalPage;
+	}
+
+	public void setTotalPage(Long totalPage) {
+		this.totalPage = totalPage;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -49,14 +57,6 @@ public class DescribeRecordTemplatesResponse extends AcsResponse {
 		this.totalNum = totalNum;
 	}
 
-	public Long getTotalPage() {
-		return this.totalPage;
-	}
-
-	public void setTotalPage(Long totalPage) {
-		this.totalPage = totalPage;
-	}
-
 	public List<Template> getTemplates() {
 		return this.templates;
 	}
@@ -67,29 +67,31 @@ public class DescribeRecordTemplatesResponse extends AcsResponse {
 
 	public static class Template {
 
-		private String createTime;
-
-		private String templateId;
-
-		private String name;
-
-		private Integer mediaEncode;
-
-		private Integer backgroundColor;
-
-		private Integer fileSplitInterval;
-
-		private String taskProfile;
-
-		private String ossBucket;
+		private String mnsQueue;
 
 		private String ossFilePrefix;
 
-		private String mnsQueue;
+		private String createTime;
+
+		private String ossBucket;
+
+		private Integer delayStopTime;
+
+		private Integer mediaEncode;
+
+		private Integer fileSplitInterval;
 
 		private String httpCallbackUrl;
 
-		private String delayStopTime;
+		private Boolean enableM3u8DateTime;
+
+		private Integer backgroundColor;
+
+		private String name;
+
+		private String templateId;
+
+		private String taskProfile;
 
 		private List<Background> backgrounds;
 
@@ -101,68 +103,12 @@ public class DescribeRecordTemplatesResponse extends AcsResponse {
 
 		private List<String> formats;
 
-		public String getCreateTime() {
-			return this.createTime;
+		public String getMnsQueue() {
+			return this.mnsQueue;
 		}
 
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
-		}
-
-		public String getTemplateId() {
-			return this.templateId;
-		}
-
-		public void setTemplateId(String templateId) {
-			this.templateId = templateId;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public Integer getMediaEncode() {
-			return this.mediaEncode;
-		}
-
-		public void setMediaEncode(Integer mediaEncode) {
-			this.mediaEncode = mediaEncode;
-		}
-
-		public Integer getBackgroundColor() {
-			return this.backgroundColor;
-		}
-
-		public void setBackgroundColor(Integer backgroundColor) {
-			this.backgroundColor = backgroundColor;
-		}
-
-		public Integer getFileSplitInterval() {
-			return this.fileSplitInterval;
-		}
-
-		public void setFileSplitInterval(Integer fileSplitInterval) {
-			this.fileSplitInterval = fileSplitInterval;
-		}
-
-		public String getTaskProfile() {
-			return this.taskProfile;
-		}
-
-		public void setTaskProfile(String taskProfile) {
-			this.taskProfile = taskProfile;
-		}
-
-		public String getOssBucket() {
-			return this.ossBucket;
-		}
-
-		public void setOssBucket(String ossBucket) {
-			this.ossBucket = ossBucket;
+		public void setMnsQueue(String mnsQueue) {
+			this.mnsQueue = mnsQueue;
 		}
 
 		public String getOssFilePrefix() {
@@ -173,12 +119,44 @@ public class DescribeRecordTemplatesResponse extends AcsResponse {
 			this.ossFilePrefix = ossFilePrefix;
 		}
 
-		public String getMnsQueue() {
-			return this.mnsQueue;
+		public String getCreateTime() {
+			return this.createTime;
 		}
 
-		public void setMnsQueue(String mnsQueue) {
-			this.mnsQueue = mnsQueue;
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
+
+		public String getOssBucket() {
+			return this.ossBucket;
+		}
+
+		public void setOssBucket(String ossBucket) {
+			this.ossBucket = ossBucket;
+		}
+
+		public Integer getDelayStopTime() {
+			return this.delayStopTime;
+		}
+
+		public void setDelayStopTime(Integer delayStopTime) {
+			this.delayStopTime = delayStopTime;
+		}
+
+		public Integer getMediaEncode() {
+			return this.mediaEncode;
+		}
+
+		public void setMediaEncode(Integer mediaEncode) {
+			this.mediaEncode = mediaEncode;
+		}
+
+		public Integer getFileSplitInterval() {
+			return this.fileSplitInterval;
+		}
+
+		public void setFileSplitInterval(Integer fileSplitInterval) {
+			this.fileSplitInterval = fileSplitInterval;
 		}
 
 		public String getHttpCallbackUrl() {
@@ -189,12 +167,44 @@ public class DescribeRecordTemplatesResponse extends AcsResponse {
 			this.httpCallbackUrl = httpCallbackUrl;
 		}
 
-		public String getDelayStopTime() {
-			return this.delayStopTime;
+		public Boolean getEnableM3u8DateTime() {
+			return this.enableM3u8DateTime;
 		}
 
-		public void setDelayStopTime(String delayStopTime) {
-			this.delayStopTime = delayStopTime;
+		public void setEnableM3u8DateTime(Boolean enableM3u8DateTime) {
+			this.enableM3u8DateTime = enableM3u8DateTime;
+		}
+
+		public Integer getBackgroundColor() {
+			return this.backgroundColor;
+		}
+
+		public void setBackgroundColor(Integer backgroundColor) {
+			this.backgroundColor = backgroundColor;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getTemplateId() {
+			return this.templateId;
+		}
+
+		public void setTemplateId(String templateId) {
+			this.templateId = templateId;
+		}
+
+		public String getTaskProfile() {
+			return this.taskProfile;
+		}
+
+		public void setTaskProfile(String taskProfile) {
+			this.taskProfile = taskProfile;
 		}
 
 		public List<Background> getBackgrounds() {
@@ -239,51 +249,19 @@ public class DescribeRecordTemplatesResponse extends AcsResponse {
 
 		public static class Background {
 
-			private String url;
-
-			private Integer display;
-
-			private Float x;
-
-			private Float y;
-
 			private Float width;
 
 			private Float height;
 
+			private Float y;
+
+			private String url;
+
+			private Integer display;
+
 			private Integer zOrder;
 
-			public String getUrl() {
-				return this.url;
-			}
-
-			public void setUrl(String url) {
-				this.url = url;
-			}
-
-			public Integer getDisplay() {
-				return this.display;
-			}
-
-			public void setDisplay(Integer display) {
-				this.display = display;
-			}
-
-			public Float getX() {
-				return this.x;
-			}
-
-			public void setX(Float x) {
-				this.x = x;
-			}
-
-			public Float getY() {
-				return this.y;
-			}
-
-			public void setY(Float y) {
-				this.y = y;
-			}
+			private Float x;
 
 			public Float getWidth() {
 				return this.width;
@@ -301,32 +279,13 @@ public class DescribeRecordTemplatesResponse extends AcsResponse {
 				this.height = height;
 			}
 
-			public Integer getZOrder() {
-				return this.zOrder;
+			public Float getY() {
+				return this.y;
 			}
 
-			public void setZOrder(Integer zOrder) {
-				this.zOrder = zOrder;
+			public void setY(Float y) {
+				this.y = y;
 			}
-		}
-
-		public static class Watermark {
-
-			private String url;
-
-			private Float alpha;
-
-			private Integer display;
-
-			private Float x;
-
-			private Float y;
-
-			private Float width;
-
-			private Float height;
-
-			private Integer zOrder;
 
 			public String getUrl() {
 				return this.url;
@@ -335,6 +294,49 @@ public class DescribeRecordTemplatesResponse extends AcsResponse {
 			public void setUrl(String url) {
 				this.url = url;
 			}
+
+			public Integer getDisplay() {
+				return this.display;
+			}
+
+			public void setDisplay(Integer display) {
+				this.display = display;
+			}
+
+			public Integer getZOrder() {
+				return this.zOrder;
+			}
+
+			public void setZOrder(Integer zOrder) {
+				this.zOrder = zOrder;
+			}
+
+			public Float getX() {
+				return this.x;
+			}
+
+			public void setX(Float x) {
+				this.x = x;
+			}
+		}
+
+		public static class Watermark {
+
+			private Float alpha;
+
+			private Float width;
+
+			private Float height;
+
+			private Float y;
+
+			private String url;
+
+			private Integer display;
+
+			private Integer zOrder;
+
+			private Float x;
 
 			public Float getAlpha() {
 				return this.alpha;
@@ -344,30 +346,6 @@ public class DescribeRecordTemplatesResponse extends AcsResponse {
 				this.alpha = alpha;
 			}
 
-			public Integer getDisplay() {
-				return this.display;
-			}
-
-			public void setDisplay(Integer display) {
-				this.display = display;
-			}
-
-			public Float getX() {
-				return this.x;
-			}
-
-			public void setX(Float x) {
-				this.x = x;
-			}
-
-			public Float getY() {
-				return this.y;
-			}
-
-			public void setY(Float y) {
-				this.y = y;
-			}
-
 			public Float getWidth() {
 				return this.width;
 			}
@@ -384,37 +362,6 @@ public class DescribeRecordTemplatesResponse extends AcsResponse {
 				this.height = height;
 			}
 
-			public Integer getZOrder() {
-				return this.zOrder;
-			}
-
-			public void setZOrder(Integer zOrder) {
-				this.zOrder = zOrder;
-			}
-		}
-
-		public static class Watermark1 {
-
-			private Float x;
-
-			private Float y;
-
-			private Integer fontType;
-
-			private Integer fontSize;
-
-			private Integer fontColor;
-
-			private Integer zOrder;
-
-			public Float getX() {
-				return this.x;
-			}
-
-			public void setX(Float x) {
-				this.x = x;
-			}
-
 			public Float getY() {
 				return this.y;
 			}
@@ -423,20 +370,59 @@ public class DescribeRecordTemplatesResponse extends AcsResponse {
 				this.y = y;
 			}
 
+			public String getUrl() {
+				return this.url;
+			}
+
+			public void setUrl(String url) {
+				this.url = url;
+			}
+
+			public Integer getDisplay() {
+				return this.display;
+			}
+
+			public void setDisplay(Integer display) {
+				this.display = display;
+			}
+
+			public Integer getZOrder() {
+				return this.zOrder;
+			}
+
+			public void setZOrder(Integer zOrder) {
+				this.zOrder = zOrder;
+			}
+
+			public Float getX() {
+				return this.x;
+			}
+
+			public void setX(Float x) {
+				this.x = x;
+			}
+		}
+
+		public static class Watermark1 {
+
+			private Integer fontType;
+
+			private Integer fontColor;
+
+			private Float y;
+
+			private Integer zOrder;
+
+			private Float x;
+
+			private Integer fontSize;
+
 			public Integer getFontType() {
 				return this.fontType;
 			}
 
 			public void setFontType(Integer fontType) {
 				this.fontType = fontType;
-			}
-
-			public Integer getFontSize() {
-				return this.fontSize;
-			}
-
-			public void setFontSize(Integer fontSize) {
-				this.fontSize = fontSize;
 			}
 
 			public Integer getFontColor() {
@@ -447,12 +433,36 @@ public class DescribeRecordTemplatesResponse extends AcsResponse {
 				this.fontColor = fontColor;
 			}
 
+			public Float getY() {
+				return this.y;
+			}
+
+			public void setY(Float y) {
+				this.y = y;
+			}
+
 			public Integer getZOrder() {
 				return this.zOrder;
 			}
 
 			public void setZOrder(Integer zOrder) {
 				this.zOrder = zOrder;
+			}
+
+			public Float getX() {
+				return this.x;
+			}
+
+			public void setX(Float x) {
+				this.x = x;
+			}
+
+			public Integer getFontSize() {
+				return this.fontSize;
+			}
+
+			public void setFontSize(Integer fontSize) {
+				this.fontSize = fontSize;
 			}
 		}
 	}

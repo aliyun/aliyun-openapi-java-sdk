@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetMPUTaskStatusResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer status;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public Integer getStatus() {
 		return this.status;
@@ -42,6 +34,14 @@ public class GetMPUTaskStatusResponse extends AcsResponse {
 
 	public void setStatus(Integer status) {
 		this.status = status;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

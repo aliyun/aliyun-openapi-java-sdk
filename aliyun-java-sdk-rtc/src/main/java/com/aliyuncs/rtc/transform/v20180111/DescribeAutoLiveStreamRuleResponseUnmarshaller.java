@@ -31,11 +31,25 @@ public class DescribeAutoLiveStreamRuleResponseUnmarshaller {
 		List<Rule> rules = new ArrayList<Rule>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeAutoLiveStreamRuleResponse.Rules.Length"); i++) {
 			Rule rule = new Rule();
-			rule.setRuleId(_ctx.longValue("DescribeAutoLiveStreamRuleResponse.Rules["+ i +"].RuleId"));
+			rule.setStatus(_ctx.stringValue("DescribeAutoLiveStreamRuleResponse.Rules["+ i +"].Status"));
+			rule.setMediaEncode(_ctx.integerValue("DescribeAutoLiveStreamRuleResponse.Rules["+ i +"].MediaEncode"));
 			rule.setPlayDomain(_ctx.stringValue("DescribeAutoLiveStreamRuleResponse.Rules["+ i +"].PlayDomain"));
-			rule.setRuleName(_ctx.stringValue("DescribeAutoLiveStreamRuleResponse.Rules["+ i +"].RuleName"));
-			rule.setCreateTime(_ctx.stringValue("DescribeAutoLiveStreamRuleResponse.Rules["+ i +"].CreateTime"));
 			rule.setCallBack(_ctx.stringValue("DescribeAutoLiveStreamRuleResponse.Rules["+ i +"].CallBack"));
+			rule.setCreateTime(_ctx.stringValue("DescribeAutoLiveStreamRuleResponse.Rules["+ i +"].CreateTime"));
+			rule.setRuleId(_ctx.longValue("DescribeAutoLiveStreamRuleResponse.Rules["+ i +"].RuleId"));
+			rule.setRuleName(_ctx.stringValue("DescribeAutoLiveStreamRuleResponse.Rules["+ i +"].RuleName"));
+
+			List<String> channelIds = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeAutoLiveStreamRuleResponse.Rules["+ i +"].ChannelIds.Length"); j++) {
+				channelIds.add(_ctx.stringValue("DescribeAutoLiveStreamRuleResponse.Rules["+ i +"].ChannelIds["+ j +"]"));
+			}
+			rule.setChannelIds(channelIds);
+
+			List<String> channelIdPrefixes = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeAutoLiveStreamRuleResponse.Rules["+ i +"].ChannelIdPrefixes.Length"); j++) {
+				channelIdPrefixes.add(_ctx.stringValue("DescribeAutoLiveStreamRuleResponse.Rules["+ i +"].ChannelIdPrefixes["+ j +"]"));
+			}
+			rule.setChannelIdPrefixes(channelIdPrefixes);
 
 			rules.add(rule);
 		}

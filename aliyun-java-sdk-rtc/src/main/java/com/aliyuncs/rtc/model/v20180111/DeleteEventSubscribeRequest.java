@@ -31,7 +31,7 @@ public class DeleteEventSubscribeRequest extends RpcAcsRequest<DeleteEventSubscr
 
 	private String appId;
 	public DeleteEventSubscribeRequest() {
-		super("rtc", "2018-01-11", "DeleteEventSubscribe", "rtc");
+		super("rtc", "2018-01-11", "DeleteEventSubscribe");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

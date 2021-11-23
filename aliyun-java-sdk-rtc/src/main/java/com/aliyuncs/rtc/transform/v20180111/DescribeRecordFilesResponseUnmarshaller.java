@@ -27,20 +27,20 @@ public class DescribeRecordFilesResponseUnmarshaller {
 	public static DescribeRecordFilesResponse unmarshall(DescribeRecordFilesResponse describeRecordFilesResponse, UnmarshallerContext _ctx) {
 		
 		describeRecordFilesResponse.setRequestId(_ctx.stringValue("DescribeRecordFilesResponse.RequestId"));
-		describeRecordFilesResponse.setTotalNum(_ctx.longValue("DescribeRecordFilesResponse.TotalNum"));
 		describeRecordFilesResponse.setTotalPage(_ctx.longValue("DescribeRecordFilesResponse.TotalPage"));
+		describeRecordFilesResponse.setTotalNum(_ctx.longValue("DescribeRecordFilesResponse.TotalNum"));
 
 		List<RecordFile> recordFiles = new ArrayList<RecordFile>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeRecordFilesResponse.RecordFiles.Length"); i++) {
 			RecordFile recordFile = new RecordFile();
+			recordFile.setStartTime(_ctx.stringValue("DescribeRecordFilesResponse.RecordFiles["+ i +"].StartTime"));
 			recordFile.setCreateTime(_ctx.stringValue("DescribeRecordFilesResponse.RecordFiles["+ i +"].CreateTime"));
 			recordFile.setAppId(_ctx.stringValue("DescribeRecordFilesResponse.RecordFiles["+ i +"].AppId"));
 			recordFile.setChannelId(_ctx.stringValue("DescribeRecordFilesResponse.RecordFiles["+ i +"].ChannelId"));
-			recordFile.setTaskId(_ctx.stringValue("DescribeRecordFilesResponse.RecordFiles["+ i +"].TaskId"));
-			recordFile.setStartTime(_ctx.stringValue("DescribeRecordFilesResponse.RecordFiles["+ i +"].StartTime"));
-			recordFile.setStopTime(_ctx.stringValue("DescribeRecordFilesResponse.RecordFiles["+ i +"].StopTime"));
 			recordFile.setUrl(_ctx.stringValue("DescribeRecordFilesResponse.RecordFiles["+ i +"].Url"));
 			recordFile.setDuration(_ctx.floatValue("DescribeRecordFilesResponse.RecordFiles["+ i +"].Duration"));
+			recordFile.setTaskId(_ctx.stringValue("DescribeRecordFilesResponse.RecordFiles["+ i +"].TaskId"));
+			recordFile.setStopTime(_ctx.stringValue("DescribeRecordFilesResponse.RecordFiles["+ i +"].StopTime"));
 
 			recordFiles.add(recordFile);
 		}

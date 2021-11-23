@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateMPULayoutResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Long layoutId;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public Long getLayoutId() {
 		return this.layoutId;
@@ -42,6 +34,14 @@ public class CreateMPULayoutResponse extends AcsResponse {
 
 	public void setLayoutId(Long layoutId) {
 		this.layoutId = layoutId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

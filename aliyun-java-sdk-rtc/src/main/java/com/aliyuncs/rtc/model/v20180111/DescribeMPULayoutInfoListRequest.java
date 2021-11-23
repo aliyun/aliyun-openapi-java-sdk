@@ -37,7 +37,7 @@ public class DescribeMPULayoutInfoListRequest extends RpcAcsRequest<DescribeMPUL
 
 	private String name;
 	public DescribeMPULayoutInfoListRequest() {
-		super("rtc", "2018-01-11", "DescribeMPULayoutInfoList", "rtc");
+		super("rtc", "2018-01-11", "DescribeMPULayoutInfoList");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

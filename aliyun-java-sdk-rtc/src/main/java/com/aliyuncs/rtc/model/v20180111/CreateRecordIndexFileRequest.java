@@ -22,18 +22,28 @@ import com.aliyuncs.rtc.Endpoint;
  * @author auto create
  * @version 
  */
-public class StopChannelUserPublishRequest extends RpcAcsRequest<StopChannelUserPublishResponse> {
+public class CreateRecordIndexFileRequest extends RpcAcsRequest<CreateRecordIndexFileResponse> {
 	   
 
-	private String userId;
+	private String ossEndpoint;
+
+	private String startTime;
+
+	private String ossObject;
+
+	private String taskId;
+
+	private String ossBucket;
+
+	private String endTime;
 
 	private Long ownerId;
 
 	private String appId;
 
 	private String channelId;
-	public StopChannelUserPublishRequest() {
-		super("rtc", "2018-01-11", "StopChannelUserPublish");
+	public CreateRecordIndexFileRequest() {
+		super("rtc", "2018-01-11", "CreateRecordIndexFile");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -41,14 +51,69 @@ public class StopChannelUserPublishRequest extends RpcAcsRequest<StopChannelUser
 		} catch (Exception e) {}
 	}
 
-	public String getUserId() {
-		return this.userId;
+	public String getOssEndpoint() {
+		return this.ossEndpoint;
 	}
 
-	public void setUserId(String userId) {
-		this.userId = userId;
-		if(userId != null){
-			putQueryParameter("UserId", userId);
+	public void setOssEndpoint(String ossEndpoint) {
+		this.ossEndpoint = ossEndpoint;
+		if(ossEndpoint != null){
+			putQueryParameter("OssEndpoint", ossEndpoint);
+		}
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
+		}
+	}
+
+	public String getOssObject() {
+		return this.ossObject;
+	}
+
+	public void setOssObject(String ossObject) {
+		this.ossObject = ossObject;
+		if(ossObject != null){
+			putQueryParameter("OssObject", ossObject);
+		}
+	}
+
+	public String getTaskId() {
+		return this.taskId;
+	}
+
+	public void setTaskId(String taskId) {
+		this.taskId = taskId;
+		if(taskId != null){
+			putQueryParameter("TaskId", taskId);
+		}
+	}
+
+	public String getOssBucket() {
+		return this.ossBucket;
+	}
+
+	public void setOssBucket(String ossBucket) {
+		this.ossBucket = ossBucket;
+		if(ossBucket != null){
+			putQueryParameter("OssBucket", ossBucket);
+		}
+	}
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime);
 		}
 	}
 
@@ -86,8 +151,8 @@ public class StopChannelUserPublishRequest extends RpcAcsRequest<StopChannelUser
 	}
 
 	@Override
-	public Class<StopChannelUserPublishResponse> getResponseClass() {
-		return StopChannelUserPublishResponse.class;
+	public Class<CreateRecordIndexFileResponse> getResponseClass() {
+		return CreateRecordIndexFileResponse.class;
 	}
 
 }
