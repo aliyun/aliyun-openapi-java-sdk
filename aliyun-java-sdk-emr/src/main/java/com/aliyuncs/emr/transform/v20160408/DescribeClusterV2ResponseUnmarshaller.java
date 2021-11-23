@@ -93,6 +93,8 @@ public class DescribeClusterV2ResponseUnmarshaller {
 		clusterInfo.setResizeDiskEnable(_ctx.booleanValue("DescribeClusterV2Response.ClusterInfo.ResizeDiskEnable"));
 		clusterInfo.setMetaStoreType(_ctx.stringValue("DescribeClusterV2Response.ClusterInfo.MetaStoreType"));
 		clusterInfo.setK8sClusterId(_ctx.stringValue("DescribeClusterV2Response.ClusterInfo.K8sClusterId"));
+		clusterInfo.setDataDiskEncrypted(_ctx.booleanValue("DescribeClusterV2Response.ClusterInfo.DataDiskEncrypted"));
+		clusterInfo.setDataDiskKMSKeyId(_ctx.stringValue("DescribeClusterV2Response.ClusterInfo.DataDiskKMSKeyId"));
 
 		RelateClusterInfo relateClusterInfo = new RelateClusterInfo();
 		relateClusterInfo.setClusterId(_ctx.stringValue("DescribeClusterV2Response.ClusterInfo.RelateClusterInfo.ClusterId"));

@@ -92,6 +92,8 @@ public class DescribeClusterBasicInfoResponseUnmarshaller {
 		clusterInfo.setK8sClusterId(_ctx.stringValue("DescribeClusterBasicInfoResponse.ClusterInfo.K8sClusterId"));
 		clusterInfo.setOperationId(_ctx.stringValue("DescribeClusterBasicInfoResponse.ClusterInfo.OperationId"));
 		clusterInfo.setClickhouseConf(_ctx.stringValue("DescribeClusterBasicInfoResponse.ClusterInfo.ClickhouseConf"));
+		clusterInfo.setDataDiskEncrypted(_ctx.booleanValue("DescribeClusterBasicInfoResponse.ClusterInfo.DataDiskEncrypted"));
+		clusterInfo.setDataDiskKMSKeyId(_ctx.stringValue("DescribeClusterBasicInfoResponse.ClusterInfo.DataDiskKMSKeyId"));
 
 		RelateClusterInfo relateClusterInfo = new RelateClusterInfo();
 		relateClusterInfo.setClusterId(_ctx.stringValue("DescribeClusterBasicInfoResponse.ClusterInfo.RelateClusterInfo.ClusterId"));

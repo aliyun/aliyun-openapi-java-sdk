@@ -155,6 +155,10 @@ public class DescribeClusterBasicInfoResponse extends AcsResponse {
 
 		private String clickhouseConf;
 
+		private Boolean dataDiskEncrypted;
+
+		private String dataDiskKMSKeyId;
+
 		private List<GatewayClusterInfo> gatewayClusterInfoList;
 
 		private List<BootstrapAction> bootstrapActionList;
@@ -599,6 +603,22 @@ public class DescribeClusterBasicInfoResponse extends AcsResponse {
 
 		public void setClickhouseConf(String clickhouseConf) {
 			this.clickhouseConf = clickhouseConf;
+		}
+
+		public Boolean getDataDiskEncrypted() {
+			return this.dataDiskEncrypted;
+		}
+
+		public void setDataDiskEncrypted(Boolean dataDiskEncrypted) {
+			this.dataDiskEncrypted = dataDiskEncrypted;
+		}
+
+		public String getDataDiskKMSKeyId() {
+			return this.dataDiskKMSKeyId;
+		}
+
+		public void setDataDiskKMSKeyId(String dataDiskKMSKeyId) {
+			this.dataDiskKMSKeyId = dataDiskKMSKeyId;
 		}
 
 		public List<GatewayClusterInfo> getGatewayClusterInfoList() {

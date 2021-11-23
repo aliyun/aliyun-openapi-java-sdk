@@ -149,6 +149,10 @@ public class DescribeClusterV2Response extends AcsResponse {
 
 		private String k8sClusterId;
 
+		private Boolean dataDiskEncrypted;
+
+		private String dataDiskKMSKeyId;
+
 		private List<GatewayClusterInfo> gatewayClusterInfoList;
 
 		private List<HostGroup> hostGroupList;
@@ -571,6 +575,22 @@ public class DescribeClusterV2Response extends AcsResponse {
 
 		public void setK8sClusterId(String k8sClusterId) {
 			this.k8sClusterId = k8sClusterId;
+		}
+
+		public Boolean getDataDiskEncrypted() {
+			return this.dataDiskEncrypted;
+		}
+
+		public void setDataDiskEncrypted(Boolean dataDiskEncrypted) {
+			this.dataDiskEncrypted = dataDiskEncrypted;
+		}
+
+		public String getDataDiskKMSKeyId() {
+			return this.dataDiskKMSKeyId;
+		}
+
+		public void setDataDiskKMSKeyId(String dataDiskKMSKeyId) {
+			this.dataDiskKMSKeyId = dataDiskKMSKeyId;
 		}
 
 		public List<GatewayClusterInfo> getGatewayClusterInfoList() {

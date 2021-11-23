@@ -68,6 +68,8 @@ public class DescribeClusterTemplateResponseUnmarshaller {
 		templateInfo.setMasterPwd(_ctx.stringValue("DescribeClusterTemplateResponse.TemplateInfo.MasterPwd"));
 		templateInfo.setMetaStoreType(_ctx.stringValue("DescribeClusterTemplateResponse.TemplateInfo.MetaStoreType"));
 		templateInfo.setMetaStoreConf(_ctx.stringValue("DescribeClusterTemplateResponse.TemplateInfo.MetaStoreConf"));
+		templateInfo.setDataDiskEncrypted(_ctx.booleanValue("DescribeClusterTemplateResponse.TemplateInfo.DataDiskEncrypted"));
+		templateInfo.setDataDiskKMSKeyId(_ctx.stringValue("DescribeClusterTemplateResponse.TemplateInfo.DataDiskKMSKeyId"));
 
 		List<String> softwareInfoList = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeClusterTemplateResponse.TemplateInfo.SoftwareInfoList.Length"); i++) {

@@ -98,11 +98,15 @@ public class CreateClusterV2Request extends RpcAcsRequest<CreateClusterV2Respons
 
 	private String depositType;
 
+	private String dataDiskKMSKeyId;
+
 	private Boolean useLocalMetaDb;
 
 	private List<UserInfo> userInfos;
 
 	private String userDefinedEmrEcsRole;
+
+	private Boolean dataDiskEncrypted;
 
 	private String whiteListType;
 
@@ -546,6 +550,17 @@ public class CreateClusterV2Request extends RpcAcsRequest<CreateClusterV2Respons
 		}
 	}
 
+	public String getDataDiskKMSKeyId() {
+		return this.dataDiskKMSKeyId;
+	}
+
+	public void setDataDiskKMSKeyId(String dataDiskKMSKeyId) {
+		this.dataDiskKMSKeyId = dataDiskKMSKeyId;
+		if(dataDiskKMSKeyId != null){
+			putQueryParameter("DataDiskKMSKeyId", dataDiskKMSKeyId);
+		}
+	}
+
 	public Boolean getUseLocalMetaDb() {
 		return this.useLocalMetaDb;
 	}
@@ -580,6 +595,17 @@ public class CreateClusterV2Request extends RpcAcsRequest<CreateClusterV2Respons
 		this.userDefinedEmrEcsRole = userDefinedEmrEcsRole;
 		if(userDefinedEmrEcsRole != null){
 			putQueryParameter("UserDefinedEmrEcsRole", userDefinedEmrEcsRole);
+		}
+	}
+
+	public Boolean getDataDiskEncrypted() {
+		return this.dataDiskEncrypted;
+	}
+
+	public void setDataDiskEncrypted(Boolean dataDiskEncrypted) {
+		this.dataDiskEncrypted = dataDiskEncrypted;
+		if(dataDiskEncrypted != null){
+			putQueryParameter("DataDiskEncrypted", dataDiskEncrypted.toString());
 		}
 	}
 

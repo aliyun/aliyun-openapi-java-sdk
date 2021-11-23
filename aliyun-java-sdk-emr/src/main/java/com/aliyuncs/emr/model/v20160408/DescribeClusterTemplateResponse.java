@@ -117,6 +117,10 @@ public class DescribeClusterTemplateResponse extends AcsResponse {
 
 		private String metaStoreConf;
 
+		private Boolean dataDiskEncrypted;
+
+		private String dataDiskKMSKeyId;
+
 		private List<BootstrapAction> bootstrapActionList;
 
 		private List<HostGroup> hostGroupList;
@@ -405,6 +409,22 @@ public class DescribeClusterTemplateResponse extends AcsResponse {
 
 		public void setMetaStoreConf(String metaStoreConf) {
 			this.metaStoreConf = metaStoreConf;
+		}
+
+		public Boolean getDataDiskEncrypted() {
+			return this.dataDiskEncrypted;
+		}
+
+		public void setDataDiskEncrypted(Boolean dataDiskEncrypted) {
+			this.dataDiskEncrypted = dataDiskEncrypted;
+		}
+
+		public String getDataDiskKMSKeyId() {
+			return this.dataDiskKMSKeyId;
+		}
+
+		public void setDataDiskKMSKeyId(String dataDiskKMSKeyId) {
+			this.dataDiskKMSKeyId = dataDiskKMSKeyId;
 		}
 
 		public List<BootstrapAction> getBootstrapActionList() {
