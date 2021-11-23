@@ -46,57 +46,33 @@ public class RecognizeBusinessLicenseResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Float angle;
-
-		private String registerNumber;
-
-		private String name;
-
 		private String type;
-
-		private String legalPerson;
 
 		private String establishDate;
 
 		private String validPeriod;
 
+		private String business;
+
+		private Float angle;
+
+		private String registerNumber;
+
 		private String address;
 
 		private String capital;
 
-		private String business;
+		private String name;
 
-		private Emblem emblem;
-
-		private Title title;
+		private String legalPerson;
 
 		private Stamp stamp;
 
+		private Title title;
+
+		private Emblem emblem;
+
 		private QRCode qRCode;
-
-		public Float getAngle() {
-			return this.angle;
-		}
-
-		public void setAngle(Float angle) {
-			this.angle = angle;
-		}
-
-		public String getRegisterNumber() {
-			return this.registerNumber;
-		}
-
-		public void setRegisterNumber(String registerNumber) {
-			this.registerNumber = registerNumber;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
 
 		public String getType() {
 			return this.type;
@@ -104,14 +80,6 @@ public class RecognizeBusinessLicenseResponse extends AcsResponse {
 
 		public void setType(String type) {
 			this.type = type;
-		}
-
-		public String getLegalPerson() {
-			return this.legalPerson;
-		}
-
-		public void setLegalPerson(String legalPerson) {
-			this.legalPerson = legalPerson;
 		}
 
 		public String getEstablishDate() {
@@ -130,6 +98,30 @@ public class RecognizeBusinessLicenseResponse extends AcsResponse {
 			this.validPeriod = validPeriod;
 		}
 
+		public String getBusiness() {
+			return this.business;
+		}
+
+		public void setBusiness(String business) {
+			this.business = business;
+		}
+
+		public Float getAngle() {
+			return this.angle;
+		}
+
+		public void setAngle(Float angle) {
+			this.angle = angle;
+		}
+
+		public String getRegisterNumber() {
+			return this.registerNumber;
+		}
+
+		public void setRegisterNumber(String registerNumber) {
+			this.registerNumber = registerNumber;
+		}
+
 		public String getAddress() {
 			return this.address;
 		}
@@ -146,28 +138,20 @@ public class RecognizeBusinessLicenseResponse extends AcsResponse {
 			this.capital = capital;
 		}
 
-		public String getBusiness() {
-			return this.business;
+		public String getName() {
+			return this.name;
 		}
 
-		public void setBusiness(String business) {
-			this.business = business;
+		public void setName(String name) {
+			this.name = name;
 		}
 
-		public Emblem getEmblem() {
-			return this.emblem;
+		public String getLegalPerson() {
+			return this.legalPerson;
 		}
 
-		public void setEmblem(Emblem emblem) {
-			this.emblem = emblem;
-		}
-
-		public Title getTitle() {
-			return this.title;
-		}
-
-		public void setTitle(Title title) {
-			this.title = title;
+		public void setLegalPerson(String legalPerson) {
+			this.legalPerson = legalPerson;
 		}
 
 		public Stamp getStamp() {
@@ -178,6 +162,22 @@ public class RecognizeBusinessLicenseResponse extends AcsResponse {
 			this.stamp = stamp;
 		}
 
+		public Title getTitle() {
+			return this.title;
+		}
+
+		public void setTitle(Title title) {
+			this.title = title;
+		}
+
+		public Emblem getEmblem() {
+			return this.emblem;
+		}
+
+		public void setEmblem(Emblem emblem) {
+			this.emblem = emblem;
+		}
+
 		public QRCode getQRCode() {
 			return this.qRCode;
 		}
@@ -186,15 +186,15 @@ public class RecognizeBusinessLicenseResponse extends AcsResponse {
 			this.qRCode = qRCode;
 		}
 
-		public static class Emblem {
+		public static class Stamp {
 
 			private Integer top;
 
-			private Integer left;
+			private Integer width;
 
 			private Integer height;
 
-			private Integer width;
+			private Integer left;
 
 			public Integer getTop() {
 				return this.top;
@@ -204,12 +204,12 @@ public class RecognizeBusinessLicenseResponse extends AcsResponse {
 				this.top = top;
 			}
 
-			public Integer getLeft() {
-				return this.left;
+			public Integer getWidth() {
+				return this.width;
 			}
 
-			public void setLeft(Integer left) {
-				this.left = left;
+			public void setWidth(Integer width) {
+				this.width = width;
 			}
 
 			public Integer getHeight() {
@@ -220,12 +220,12 @@ public class RecognizeBusinessLicenseResponse extends AcsResponse {
 				this.height = height;
 			}
 
-			public Integer getWidth() {
-				return this.width;
+			public Integer getLeft() {
+				return this.left;
 			}
 
-			public void setWidth(Integer width) {
-				this.width = width;
+			public void setLeft(Integer left) {
+				this.left = left;
 			}
 		}
 
@@ -233,11 +233,11 @@ public class RecognizeBusinessLicenseResponse extends AcsResponse {
 
 			private Integer top;
 
-			private Integer left;
+			private Integer width;
 
 			private Integer height;
 
-			private Integer width;
+			private Integer left;
 
 			public Integer getTop() {
 				return this.top;
@@ -247,12 +247,12 @@ public class RecognizeBusinessLicenseResponse extends AcsResponse {
 				this.top = top;
 			}
 
-			public Integer getLeft() {
-				return this.left;
+			public Integer getWidth() {
+				return this.width;
 			}
 
-			public void setLeft(Integer left) {
-				this.left = left;
+			public void setWidth(Integer width) {
+				this.width = width;
 			}
 
 			public Integer getHeight() {
@@ -263,24 +263,24 @@ public class RecognizeBusinessLicenseResponse extends AcsResponse {
 				this.height = height;
 			}
 
-			public Integer getWidth() {
-				return this.width;
+			public Integer getLeft() {
+				return this.left;
 			}
 
-			public void setWidth(Integer width) {
-				this.width = width;
+			public void setLeft(Integer left) {
+				this.left = left;
 			}
 		}
 
-		public static class Stamp {
+		public static class Emblem {
 
 			private Integer top;
 
-			private Integer left;
+			private Integer width;
 
 			private Integer height;
 
-			private Integer width;
+			private Integer left;
 
 			public Integer getTop() {
 				return this.top;
@@ -290,12 +290,12 @@ public class RecognizeBusinessLicenseResponse extends AcsResponse {
 				this.top = top;
 			}
 
-			public Integer getLeft() {
-				return this.left;
+			public Integer getWidth() {
+				return this.width;
 			}
 
-			public void setLeft(Integer left) {
-				this.left = left;
+			public void setWidth(Integer width) {
+				this.width = width;
 			}
 
 			public Integer getHeight() {
@@ -306,12 +306,12 @@ public class RecognizeBusinessLicenseResponse extends AcsResponse {
 				this.height = height;
 			}
 
-			public Integer getWidth() {
-				return this.width;
+			public Integer getLeft() {
+				return this.left;
 			}
 
-			public void setWidth(Integer width) {
-				this.width = width;
+			public void setLeft(Integer left) {
+				this.left = left;
 			}
 		}
 
@@ -319,11 +319,11 @@ public class RecognizeBusinessLicenseResponse extends AcsResponse {
 
 			private Integer top;
 
-			private Integer left;
+			private Integer width;
 
 			private Integer height;
 
-			private Integer width;
+			private Integer left;
 
 			public Integer getTop() {
 				return this.top;
@@ -333,12 +333,12 @@ public class RecognizeBusinessLicenseResponse extends AcsResponse {
 				this.top = top;
 			}
 
-			public Integer getLeft() {
-				return this.left;
+			public Integer getWidth() {
+				return this.width;
 			}
 
-			public void setLeft(Integer left) {
-				this.left = left;
+			public void setWidth(Integer width) {
+				this.width = width;
 			}
 
 			public Integer getHeight() {
@@ -349,12 +349,12 @@ public class RecognizeBusinessLicenseResponse extends AcsResponse {
 				this.height = height;
 			}
 
-			public Integer getWidth() {
-				return this.width;
+			public Integer getLeft() {
+				return this.left;
 			}
 
-			public void setWidth(Integer width) {
-				this.width = width;
+			public void setLeft(Integer left) {
+				this.left = left;
 			}
 		}
 	}

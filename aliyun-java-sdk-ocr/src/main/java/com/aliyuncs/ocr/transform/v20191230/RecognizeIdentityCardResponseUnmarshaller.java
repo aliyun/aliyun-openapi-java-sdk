@@ -37,54 +37,54 @@ public class RecognizeIdentityCardResponseUnmarshaller {
 
 		Data data = new Data();
 
+		BackResult backResult = new BackResult();
+		backResult.setEndDate(_ctx.stringValue("RecognizeIdentityCardResponse.Data.BackResult.EndDate"));
+		backResult.setIssue(_ctx.stringValue("RecognizeIdentityCardResponse.Data.BackResult.Issue"));
+		backResult.setStartDate(_ctx.stringValue("RecognizeIdentityCardResponse.Data.BackResult.StartDate"));
+		data.setBackResult(backResult);
+
 		FrontResult frontResult = new FrontResult();
-		frontResult.setAddress(_ctx.stringValue("RecognizeIdentityCardResponse.Data.FrontResult.Address"));
-		frontResult.setName(_ctx.stringValue("RecognizeIdentityCardResponse.Data.FrontResult.Name"));
-		frontResult.setNationality(_ctx.stringValue("RecognizeIdentityCardResponse.Data.FrontResult.Nationality"));
-		frontResult.setIDNumber(_ctx.stringValue("RecognizeIdentityCardResponse.Data.FrontResult.IDNumber"));
-		frontResult.setGender(_ctx.stringValue("RecognizeIdentityCardResponse.Data.FrontResult.Gender"));
 		frontResult.setBirthDate(_ctx.stringValue("RecognizeIdentityCardResponse.Data.FrontResult.BirthDate"));
+		frontResult.setGender(_ctx.stringValue("RecognizeIdentityCardResponse.Data.FrontResult.Gender"));
+		frontResult.setAddress(_ctx.stringValue("RecognizeIdentityCardResponse.Data.FrontResult.Address"));
+		frontResult.setNationality(_ctx.stringValue("RecognizeIdentityCardResponse.Data.FrontResult.Nationality"));
+		frontResult.setName(_ctx.stringValue("RecognizeIdentityCardResponse.Data.FrontResult.Name"));
+		frontResult.setIDNumber(_ctx.stringValue("RecognizeIdentityCardResponse.Data.FrontResult.IDNumber"));
 
 		FaceRectangle faceRectangle = new FaceRectangle();
 		faceRectangle.setAngle(_ctx.floatValue("RecognizeIdentityCardResponse.Data.FrontResult.FaceRectangle.Angle"));
 
-		Center center = new Center();
-		center.setX(_ctx.floatValue("RecognizeIdentityCardResponse.Data.FrontResult.FaceRectangle.Center.X"));
-		center.setY(_ctx.floatValue("RecognizeIdentityCardResponse.Data.FrontResult.FaceRectangle.Center.Y"));
-		faceRectangle.setCenter(center);
-
 		Size size = new Size();
-		size.setHeight(_ctx.floatValue("RecognizeIdentityCardResponse.Data.FrontResult.FaceRectangle.Size.Height"));
 		size.setWidth(_ctx.floatValue("RecognizeIdentityCardResponse.Data.FrontResult.FaceRectangle.Size.Width"));
+		size.setHeight(_ctx.floatValue("RecognizeIdentityCardResponse.Data.FrontResult.FaceRectangle.Size.Height"));
 		faceRectangle.setSize(size);
+
+		Center center = new Center();
+		center.setY(_ctx.floatValue("RecognizeIdentityCardResponse.Data.FrontResult.FaceRectangle.Center.Y"));
+		center.setX(_ctx.floatValue("RecognizeIdentityCardResponse.Data.FrontResult.FaceRectangle.Center.X"));
+		faceRectangle.setCenter(center);
 		frontResult.setFaceRectangle(faceRectangle);
-
-		List<CardArea> cardAreas = new ArrayList<CardArea>();
-		for (int i = 0; i < _ctx.lengthValue("RecognizeIdentityCardResponse.Data.FrontResult.CardAreas.Length"); i++) {
-			CardArea cardArea = new CardArea();
-			cardArea.setX(_ctx.floatValue("RecognizeIdentityCardResponse.Data.FrontResult.CardAreas["+ i +"].X"));
-			cardArea.setY(_ctx.floatValue("RecognizeIdentityCardResponse.Data.FrontResult.CardAreas["+ i +"].Y"));
-
-			cardAreas.add(cardArea);
-		}
-		frontResult.setCardAreas(cardAreas);
 
 		List<FaceRectVertice> faceRectVertices = new ArrayList<FaceRectVertice>();
 		for (int i = 0; i < _ctx.lengthValue("RecognizeIdentityCardResponse.Data.FrontResult.FaceRectVertices.Length"); i++) {
 			FaceRectVertice faceRectVertice = new FaceRectVertice();
-			faceRectVertice.setX(_ctx.floatValue("RecognizeIdentityCardResponse.Data.FrontResult.FaceRectVertices["+ i +"].X"));
 			faceRectVertice.setY(_ctx.floatValue("RecognizeIdentityCardResponse.Data.FrontResult.FaceRectVertices["+ i +"].Y"));
+			faceRectVertice.setX(_ctx.floatValue("RecognizeIdentityCardResponse.Data.FrontResult.FaceRectVertices["+ i +"].X"));
 
 			faceRectVertices.add(faceRectVertice);
 		}
 		frontResult.setFaceRectVertices(faceRectVertices);
-		data.setFrontResult(frontResult);
 
-		BackResult backResult = new BackResult();
-		backResult.setStartDate(_ctx.stringValue("RecognizeIdentityCardResponse.Data.BackResult.StartDate"));
-		backResult.setEndDate(_ctx.stringValue("RecognizeIdentityCardResponse.Data.BackResult.EndDate"));
-		backResult.setIssue(_ctx.stringValue("RecognizeIdentityCardResponse.Data.BackResult.Issue"));
-		data.setBackResult(backResult);
+		List<CardArea> cardAreas = new ArrayList<CardArea>();
+		for (int i = 0; i < _ctx.lengthValue("RecognizeIdentityCardResponse.Data.FrontResult.CardAreas.Length"); i++) {
+			CardArea cardArea = new CardArea();
+			cardArea.setY(_ctx.floatValue("RecognizeIdentityCardResponse.Data.FrontResult.CardAreas["+ i +"].Y"));
+			cardArea.setX(_ctx.floatValue("RecognizeIdentityCardResponse.Data.FrontResult.CardAreas["+ i +"].X"));
+
+			cardAreas.add(cardArea);
+		}
+		frontResult.setCardAreas(cardAreas);
+		data.setFrontResult(frontResult);
 		recognizeIdentityCardResponse.setData(data);
 	 
 	 	return recognizeIdentityCardResponse;

@@ -59,19 +59,11 @@ public class RecognizeQrCodeResponse extends AcsResponse {
 
 		public static class Element {
 
-			private String taskId;
-
 			private String imageURL;
 
+			private String taskId;
+
 			private List<Result> results;
-
-			public String getTaskId() {
-				return this.taskId;
-			}
-
-			public void setTaskId(String taskId) {
-				this.taskId = taskId;
-			}
 
 			public String getImageURL() {
 				return this.imageURL;
@@ -79,6 +71,14 @@ public class RecognizeQrCodeResponse extends AcsResponse {
 
 			public void setImageURL(String imageURL) {
 				this.imageURL = imageURL;
+			}
+
+			public String getTaskId() {
+				return this.taskId;
+			}
+
+			public void setTaskId(String taskId) {
+				this.taskId = taskId;
 			}
 
 			public List<Result> getResults() {
@@ -91,21 +91,13 @@ public class RecognizeQrCodeResponse extends AcsResponse {
 
 			public static class Result {
 
-				private String label;
-
 				private String suggestion;
+
+				private String label;
 
 				private Float rate;
 
 				private List<String> qrCodesData;
-
-				public String getLabel() {
-					return this.label;
-				}
-
-				public void setLabel(String label) {
-					this.label = label;
-				}
 
 				public String getSuggestion() {
 					return this.suggestion;
@@ -113,6 +105,14 @@ public class RecognizeQrCodeResponse extends AcsResponse {
 
 				public void setSuggestion(String suggestion) {
 					this.suggestion = suggestion;
+				}
+
+				public String getLabel() {
+					return this.label;
+				}
+
+				public void setLabel(String label) {
+					this.label = label;
 				}
 
 				public Float getRate() {

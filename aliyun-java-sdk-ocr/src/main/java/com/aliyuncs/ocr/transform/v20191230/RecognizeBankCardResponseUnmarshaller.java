@@ -26,9 +26,9 @@ public class RecognizeBankCardResponseUnmarshaller {
 		recognizeBankCardResponse.setRequestId(_ctx.stringValue("RecognizeBankCardResponse.RequestId"));
 
 		Data data = new Data();
-		data.setBankName(_ctx.stringValue("RecognizeBankCardResponse.Data.BankName"));
 		data.setCardNumber(_ctx.stringValue("RecognizeBankCardResponse.Data.CardNumber"));
 		data.setValidDate(_ctx.stringValue("RecognizeBankCardResponse.Data.ValidDate"));
+		data.setBankName(_ctx.stringValue("RecognizeBankCardResponse.Data.BankName"));
 		recognizeBankCardResponse.setData(data);
 	 
 	 	return recognizeBankCardResponse;

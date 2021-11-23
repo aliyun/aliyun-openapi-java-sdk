@@ -35,14 +35,14 @@ public class RecognizeQrCodeResponseUnmarshaller {
 		List<Element> elements = new ArrayList<Element>();
 		for (int i = 0; i < _ctx.lengthValue("RecognizeQrCodeResponse.Data.Elements.Length"); i++) {
 			Element element = new Element();
-			element.setTaskId(_ctx.stringValue("RecognizeQrCodeResponse.Data.Elements["+ i +"].TaskId"));
 			element.setImageURL(_ctx.stringValue("RecognizeQrCodeResponse.Data.Elements["+ i +"].ImageURL"));
+			element.setTaskId(_ctx.stringValue("RecognizeQrCodeResponse.Data.Elements["+ i +"].TaskId"));
 
 			List<Result> results = new ArrayList<Result>();
 			for (int j = 0; j < _ctx.lengthValue("RecognizeQrCodeResponse.Data.Elements["+ i +"].Results.Length"); j++) {
 				Result result = new Result();
-				result.setLabel(_ctx.stringValue("RecognizeQrCodeResponse.Data.Elements["+ i +"].Results["+ j +"].Label"));
 				result.setSuggestion(_ctx.stringValue("RecognizeQrCodeResponse.Data.Elements["+ i +"].Results["+ j +"].Suggestion"));
+				result.setLabel(_ctx.stringValue("RecognizeQrCodeResponse.Data.Elements["+ i +"].Results["+ j +"].Label"));
 				result.setRate(_ctx.floatValue("RecognizeQrCodeResponse.Data.Elements["+ i +"].Results["+ j +"].Rate"));
 
 				List<String> qrCodesData = new ArrayList<String>();

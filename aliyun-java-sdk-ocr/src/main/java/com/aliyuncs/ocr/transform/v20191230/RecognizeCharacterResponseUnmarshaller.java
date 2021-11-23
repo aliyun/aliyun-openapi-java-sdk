@@ -35,15 +35,15 @@ public class RecognizeCharacterResponseUnmarshaller {
 		List<Result> results = new ArrayList<Result>();
 		for (int i = 0; i < _ctx.lengthValue("RecognizeCharacterResponse.Data.Results.Length"); i++) {
 			Result result = new Result();
-			result.setProbability(_ctx.floatValue("RecognizeCharacterResponse.Data.Results["+ i +"].Probability"));
 			result.setText(_ctx.stringValue("RecognizeCharacterResponse.Data.Results["+ i +"].Text"));
+			result.setProbability(_ctx.floatValue("RecognizeCharacterResponse.Data.Results["+ i +"].Probability"));
 
 			TextRectangles textRectangles = new TextRectangles();
-			textRectangles.setAngle(_ctx.integerValue("RecognizeCharacterResponse.Data.Results["+ i +"].TextRectangles.Angle"));
-			textRectangles.setLeft(_ctx.integerValue("RecognizeCharacterResponse.Data.Results["+ i +"].TextRectangles.Left"));
 			textRectangles.setTop(_ctx.integerValue("RecognizeCharacterResponse.Data.Results["+ i +"].TextRectangles.Top"));
 			textRectangles.setWidth(_ctx.integerValue("RecognizeCharacterResponse.Data.Results["+ i +"].TextRectangles.Width"));
 			textRectangles.setHeight(_ctx.integerValue("RecognizeCharacterResponse.Data.Results["+ i +"].TextRectangles.Height"));
+			textRectangles.setAngle(_ctx.integerValue("RecognizeCharacterResponse.Data.Results["+ i +"].TextRectangles.Angle"));
+			textRectangles.setLeft(_ctx.integerValue("RecognizeCharacterResponse.Data.Results["+ i +"].TextRectangles.Left"));
 			result.setTextRectangles(textRectangles);
 
 			results.add(result);

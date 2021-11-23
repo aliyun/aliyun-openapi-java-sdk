@@ -59,19 +59,11 @@ public class RecognizeCharacterResponse extends AcsResponse {
 
 		public static class Result {
 
-			private Float probability;
-
 			private String text;
 
+			private Float probability;
+
 			private TextRectangles textRectangles;
-
-			public Float getProbability() {
-				return this.probability;
-			}
-
-			public void setProbability(Float probability) {
-				this.probability = probability;
-			}
 
 			public String getText() {
 				return this.text;
@@ -79,6 +71,14 @@ public class RecognizeCharacterResponse extends AcsResponse {
 
 			public void setText(String text) {
 				this.text = text;
+			}
+
+			public Float getProbability() {
+				return this.probability;
+			}
+
+			public void setProbability(Float probability) {
+				this.probability = probability;
 			}
 
 			public TextRectangles getTextRectangles() {
@@ -91,31 +91,15 @@ public class RecognizeCharacterResponse extends AcsResponse {
 
 			public static class TextRectangles {
 
-				private Integer angle;
-
-				private Integer left;
-
 				private Integer top;
 
 				private Integer width;
 
 				private Integer height;
 
-				public Integer getAngle() {
-					return this.angle;
-				}
+				private Integer angle;
 
-				public void setAngle(Integer angle) {
-					this.angle = angle;
-				}
-
-				public Integer getLeft() {
-					return this.left;
-				}
-
-				public void setLeft(Integer left) {
-					this.left = left;
-				}
+				private Integer left;
 
 				public Integer getTop() {
 					return this.top;
@@ -139,6 +123,22 @@ public class RecognizeCharacterResponse extends AcsResponse {
 
 				public void setHeight(Integer height) {
 					this.height = height;
+				}
+
+				public Integer getAngle() {
+					return this.angle;
+				}
+
+				public void setAngle(Integer angle) {
+					this.angle = angle;
+				}
+
+				public Integer getLeft() {
+					return this.left;
+				}
+
+				public void setLeft(Integer left) {
+					this.left = left;
 				}
 			}
 		}

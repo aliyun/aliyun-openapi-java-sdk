@@ -46,19 +46,11 @@ public class RecognizeBankCardResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String bankName;
-
 		private String cardNumber;
 
 		private String validDate;
 
-		public String getBankName() {
-			return this.bankName;
-		}
-
-		public void setBankName(String bankName) {
-			this.bankName = bankName;
-		}
+		private String bankName;
 
 		public String getCardNumber() {
 			return this.cardNumber;
@@ -74,6 +66,14 @@ public class RecognizeBankCardResponse extends AcsResponse {
 
 		public void setValidDate(String validDate) {
 			this.validDate = validDate;
+		}
+
+		public String getBankName() {
+			return this.bankName;
+		}
+
+		public void setBankName(String bankName) {
+			this.bankName = bankName;
 		}
 	}
 

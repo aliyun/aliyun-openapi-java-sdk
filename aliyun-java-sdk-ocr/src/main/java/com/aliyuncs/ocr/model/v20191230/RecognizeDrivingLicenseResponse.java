@@ -46,17 +46,9 @@ public class RecognizeDrivingLicenseResponse extends AcsResponse {
 
 	public static class Data {
 
-		private FaceResult faceResult;
-
 		private BackResult backResult;
 
-		public FaceResult getFaceResult() {
-			return this.faceResult;
-		}
-
-		public void setFaceResult(FaceResult faceResult) {
-			this.faceResult = faceResult;
-		}
+		private FaceResult faceResult;
 
 		public BackResult getBackResult() {
 			return this.backResult;
@@ -66,27 +58,83 @@ public class RecognizeDrivingLicenseResponse extends AcsResponse {
 			this.backResult = backResult;
 		}
 
-		public static class FaceResult {
+		public FaceResult getFaceResult() {
+			return this.faceResult;
+		}
+
+		public void setFaceResult(FaceResult faceResult) {
+			this.faceResult = faceResult;
+		}
+
+		public static class BackResult {
+
+			private String overallDimension;
+
+			private String inspectionRecord;
+
+			private String unladenMass;
+
+			private String fileNumber;
+
+			private String tractionMass;
+
+			private String grossMass;
 
 			private String plateNumber;
 
-			private String vehicleType;
+			private String approvedPassengerCapacity;
 
-			private String owner;
+			private String energyType;
 
-			private String useCharacter;
+			private String approvedLoad;
 
-			private String address;
+			public String getOverallDimension() {
+				return this.overallDimension;
+			}
 
-			private String model;
+			public void setOverallDimension(String overallDimension) {
+				this.overallDimension = overallDimension;
+			}
 
-			private String vin;
+			public String getInspectionRecord() {
+				return this.inspectionRecord;
+			}
 
-			private String engineNumber;
+			public void setInspectionRecord(String inspectionRecord) {
+				this.inspectionRecord = inspectionRecord;
+			}
 
-			private String registerDate;
+			public String getUnladenMass() {
+				return this.unladenMass;
+			}
 
-			private String issueDate;
+			public void setUnladenMass(String unladenMass) {
+				this.unladenMass = unladenMass;
+			}
+
+			public String getFileNumber() {
+				return this.fileNumber;
+			}
+
+			public void setFileNumber(String fileNumber) {
+				this.fileNumber = fileNumber;
+			}
+
+			public String getTractionMass() {
+				return this.tractionMass;
+			}
+
+			public void setTractionMass(String tractionMass) {
+				this.tractionMass = tractionMass;
+			}
+
+			public String getGrossMass() {
+				return this.grossMass;
+			}
+
+			public void setGrossMass(String grossMass) {
+				this.grossMass = grossMass;
+			}
 
 			public String getPlateNumber() {
 				return this.plateNumber;
@@ -94,6 +142,69 @@ public class RecognizeDrivingLicenseResponse extends AcsResponse {
 
 			public void setPlateNumber(String plateNumber) {
 				this.plateNumber = plateNumber;
+			}
+
+			public String getApprovedPassengerCapacity() {
+				return this.approvedPassengerCapacity;
+			}
+
+			public void setApprovedPassengerCapacity(String approvedPassengerCapacity) {
+				this.approvedPassengerCapacity = approvedPassengerCapacity;
+			}
+
+			public String getEnergyType() {
+				return this.energyType;
+			}
+
+			public void setEnergyType(String energyType) {
+				this.energyType = energyType;
+			}
+
+			public String getApprovedLoad() {
+				return this.approvedLoad;
+			}
+
+			public void setApprovedLoad(String approvedLoad) {
+				this.approvedLoad = approvedLoad;
+			}
+		}
+
+		public static class FaceResult {
+
+			private String issueDate;
+
+			private String model;
+
+			private String vehicleType;
+
+			private String owner;
+
+			private String engineNumber;
+
+			private String plateNumber;
+
+			private String address;
+
+			private String useCharacter;
+
+			private String vin;
+
+			private String registerDate;
+
+			public String getIssueDate() {
+				return this.issueDate;
+			}
+
+			public void setIssueDate(String issueDate) {
+				this.issueDate = issueDate;
+			}
+
+			public String getModel() {
+				return this.model;
+			}
+
+			public void setModel(String model) {
+				this.model = model;
 			}
 
 			public String getVehicleType() {
@@ -112,12 +223,20 @@ public class RecognizeDrivingLicenseResponse extends AcsResponse {
 				this.owner = owner;
 			}
 
-			public String getUseCharacter() {
-				return this.useCharacter;
+			public String getEngineNumber() {
+				return this.engineNumber;
 			}
 
-			public void setUseCharacter(String useCharacter) {
-				this.useCharacter = useCharacter;
+			public void setEngineNumber(String engineNumber) {
+				this.engineNumber = engineNumber;
+			}
+
+			public String getPlateNumber() {
+				return this.plateNumber;
+			}
+
+			public void setPlateNumber(String plateNumber) {
+				this.plateNumber = plateNumber;
 			}
 
 			public String getAddress() {
@@ -128,12 +247,12 @@ public class RecognizeDrivingLicenseResponse extends AcsResponse {
 				this.address = address;
 			}
 
-			public String getModel() {
-				return this.model;
+			public String getUseCharacter() {
+				return this.useCharacter;
 			}
 
-			public void setModel(String model) {
-				this.model = model;
+			public void setUseCharacter(String useCharacter) {
+				this.useCharacter = useCharacter;
 			}
 
 			public String getVin() {
@@ -144,131 +263,12 @@ public class RecognizeDrivingLicenseResponse extends AcsResponse {
 				this.vin = vin;
 			}
 
-			public String getEngineNumber() {
-				return this.engineNumber;
-			}
-
-			public void setEngineNumber(String engineNumber) {
-				this.engineNumber = engineNumber;
-			}
-
 			public String getRegisterDate() {
 				return this.registerDate;
 			}
 
 			public void setRegisterDate(String registerDate) {
 				this.registerDate = registerDate;
-			}
-
-			public String getIssueDate() {
-				return this.issueDate;
-			}
-
-			public void setIssueDate(String issueDate) {
-				this.issueDate = issueDate;
-			}
-		}
-
-		public static class BackResult {
-
-			private String approvedPassengerCapacity;
-
-			private String approvedLoad;
-
-			private String fileNumber;
-
-			private String grossMass;
-
-			private String energyType;
-
-			private String inspectionRecord;
-
-			private String overallDimension;
-
-			private String tractionMass;
-
-			private String unladenMass;
-
-			private String plateNumber;
-
-			public String getApprovedPassengerCapacity() {
-				return this.approvedPassengerCapacity;
-			}
-
-			public void setApprovedPassengerCapacity(String approvedPassengerCapacity) {
-				this.approvedPassengerCapacity = approvedPassengerCapacity;
-			}
-
-			public String getApprovedLoad() {
-				return this.approvedLoad;
-			}
-
-			public void setApprovedLoad(String approvedLoad) {
-				this.approvedLoad = approvedLoad;
-			}
-
-			public String getFileNumber() {
-				return this.fileNumber;
-			}
-
-			public void setFileNumber(String fileNumber) {
-				this.fileNumber = fileNumber;
-			}
-
-			public String getGrossMass() {
-				return this.grossMass;
-			}
-
-			public void setGrossMass(String grossMass) {
-				this.grossMass = grossMass;
-			}
-
-			public String getEnergyType() {
-				return this.energyType;
-			}
-
-			public void setEnergyType(String energyType) {
-				this.energyType = energyType;
-			}
-
-			public String getInspectionRecord() {
-				return this.inspectionRecord;
-			}
-
-			public void setInspectionRecord(String inspectionRecord) {
-				this.inspectionRecord = inspectionRecord;
-			}
-
-			public String getOverallDimension() {
-				return this.overallDimension;
-			}
-
-			public void setOverallDimension(String overallDimension) {
-				this.overallDimension = overallDimension;
-			}
-
-			public String getTractionMass() {
-				return this.tractionMass;
-			}
-
-			public void setTractionMass(String tractionMass) {
-				this.tractionMass = tractionMass;
-			}
-
-			public String getUnladenMass() {
-				return this.unladenMass;
-			}
-
-			public void setUnladenMass(String unladenMass) {
-				this.unladenMass = unladenMass;
-			}
-
-			public String getPlateNumber() {
-				return this.plateNumber;
-			}
-
-			public void setPlateNumber(String plateNumber) {
-				this.plateNumber = plateNumber;
 			}
 		}
 	}

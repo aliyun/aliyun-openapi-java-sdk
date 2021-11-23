@@ -29,31 +29,31 @@ public class RecognizeDrivingLicenseResponseUnmarshaller {
 
 		Data data = new Data();
 
+		BackResult backResult = new BackResult();
+		backResult.setOverallDimension(_ctx.stringValue("RecognizeDrivingLicenseResponse.Data.BackResult.OverallDimension"));
+		backResult.setInspectionRecord(_ctx.stringValue("RecognizeDrivingLicenseResponse.Data.BackResult.InspectionRecord"));
+		backResult.setUnladenMass(_ctx.stringValue("RecognizeDrivingLicenseResponse.Data.BackResult.UnladenMass"));
+		backResult.setFileNumber(_ctx.stringValue("RecognizeDrivingLicenseResponse.Data.BackResult.FileNumber"));
+		backResult.setTractionMass(_ctx.stringValue("RecognizeDrivingLicenseResponse.Data.BackResult.TractionMass"));
+		backResult.setGrossMass(_ctx.stringValue("RecognizeDrivingLicenseResponse.Data.BackResult.GrossMass"));
+		backResult.setPlateNumber(_ctx.stringValue("RecognizeDrivingLicenseResponse.Data.BackResult.PlateNumber"));
+		backResult.setApprovedPassengerCapacity(_ctx.stringValue("RecognizeDrivingLicenseResponse.Data.BackResult.ApprovedPassengerCapacity"));
+		backResult.setEnergyType(_ctx.stringValue("RecognizeDrivingLicenseResponse.Data.BackResult.EnergyType"));
+		backResult.setApprovedLoad(_ctx.stringValue("RecognizeDrivingLicenseResponse.Data.BackResult.ApprovedLoad"));
+		data.setBackResult(backResult);
+
 		FaceResult faceResult = new FaceResult();
-		faceResult.setPlateNumber(_ctx.stringValue("RecognizeDrivingLicenseResponse.Data.FaceResult.PlateNumber"));
+		faceResult.setIssueDate(_ctx.stringValue("RecognizeDrivingLicenseResponse.Data.FaceResult.IssueDate"));
+		faceResult.setModel(_ctx.stringValue("RecognizeDrivingLicenseResponse.Data.FaceResult.Model"));
 		faceResult.setVehicleType(_ctx.stringValue("RecognizeDrivingLicenseResponse.Data.FaceResult.VehicleType"));
 		faceResult.setOwner(_ctx.stringValue("RecognizeDrivingLicenseResponse.Data.FaceResult.Owner"));
-		faceResult.setUseCharacter(_ctx.stringValue("RecognizeDrivingLicenseResponse.Data.FaceResult.UseCharacter"));
-		faceResult.setAddress(_ctx.stringValue("RecognizeDrivingLicenseResponse.Data.FaceResult.Address"));
-		faceResult.setModel(_ctx.stringValue("RecognizeDrivingLicenseResponse.Data.FaceResult.Model"));
-		faceResult.setVin(_ctx.stringValue("RecognizeDrivingLicenseResponse.Data.FaceResult.Vin"));
 		faceResult.setEngineNumber(_ctx.stringValue("RecognizeDrivingLicenseResponse.Data.FaceResult.EngineNumber"));
+		faceResult.setPlateNumber(_ctx.stringValue("RecognizeDrivingLicenseResponse.Data.FaceResult.PlateNumber"));
+		faceResult.setAddress(_ctx.stringValue("RecognizeDrivingLicenseResponse.Data.FaceResult.Address"));
+		faceResult.setUseCharacter(_ctx.stringValue("RecognizeDrivingLicenseResponse.Data.FaceResult.UseCharacter"));
+		faceResult.setVin(_ctx.stringValue("RecognizeDrivingLicenseResponse.Data.FaceResult.Vin"));
 		faceResult.setRegisterDate(_ctx.stringValue("RecognizeDrivingLicenseResponse.Data.FaceResult.RegisterDate"));
-		faceResult.setIssueDate(_ctx.stringValue("RecognizeDrivingLicenseResponse.Data.FaceResult.IssueDate"));
 		data.setFaceResult(faceResult);
-
-		BackResult backResult = new BackResult();
-		backResult.setApprovedPassengerCapacity(_ctx.stringValue("RecognizeDrivingLicenseResponse.Data.BackResult.ApprovedPassengerCapacity"));
-		backResult.setApprovedLoad(_ctx.stringValue("RecognizeDrivingLicenseResponse.Data.BackResult.ApprovedLoad"));
-		backResult.setFileNumber(_ctx.stringValue("RecognizeDrivingLicenseResponse.Data.BackResult.FileNumber"));
-		backResult.setGrossMass(_ctx.stringValue("RecognizeDrivingLicenseResponse.Data.BackResult.GrossMass"));
-		backResult.setEnergyType(_ctx.stringValue("RecognizeDrivingLicenseResponse.Data.BackResult.EnergyType"));
-		backResult.setInspectionRecord(_ctx.stringValue("RecognizeDrivingLicenseResponse.Data.BackResult.InspectionRecord"));
-		backResult.setOverallDimension(_ctx.stringValue("RecognizeDrivingLicenseResponse.Data.BackResult.OverallDimension"));
-		backResult.setTractionMass(_ctx.stringValue("RecognizeDrivingLicenseResponse.Data.BackResult.TractionMass"));
-		backResult.setUnladenMass(_ctx.stringValue("RecognizeDrivingLicenseResponse.Data.BackResult.UnladenMass"));
-		backResult.setPlateNumber(_ctx.stringValue("RecognizeDrivingLicenseResponse.Data.BackResult.PlateNumber"));
-		data.setBackResult(backResult);
 		recognizeDrivingLicenseResponse.setData(data);
 	 
 	 	return recognizeDrivingLicenseResponse;
