@@ -149,6 +149,8 @@ public class ListClustersResponse extends AcsResponse {
 
 		private Long instanceCount;
 
+		private String clusterName;
+
 		public String getEndDate() {
 			return this.endDate;
 		}
@@ -275,6 +277,14 @@ public class ListClustersResponse extends AcsResponse {
 
 		public void setInstanceCount(Long instanceCount) {
 			this.instanceCount = instanceCount;
+		}
+
+		public String getClusterName() {
+			return this.clusterName;
+		}
+
+		public void setClusterName(String clusterName) {
+			this.clusterName = clusterName;
 		}
 	}
 

@@ -112,6 +112,8 @@ public class AddMockRuleResponse extends AcsResponse {
 
 		private Boolean enable;
 
+		private Long mockType;
+
 		public String getNamespaceId() {
 			return this.namespaceId;
 		}
@@ -214,6 +216,14 @@ public class AddMockRuleResponse extends AcsResponse {
 
 		public void setEnable(Boolean enable) {
 			this.enable = enable;
+		}
+
+		public Long getMockType() {
+			return this.mockType;
+		}
+
+		public void setMockType(Long mockType) {
+			this.mockType = mockType;
 		}
 	}
 

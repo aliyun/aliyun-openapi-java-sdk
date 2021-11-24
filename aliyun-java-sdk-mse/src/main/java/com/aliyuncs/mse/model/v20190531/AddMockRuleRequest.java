@@ -43,6 +43,8 @@ public class AddMockRuleRequest extends RpcAcsRequest<AddMockRuleResponse> {
 
 	private String name;
 
+	private Long mockType;
+
 	private String region;
 	public AddMockRuleRequest() {
 		super("mse", "2019-05-31", "AddMockRule");
@@ -149,6 +151,17 @@ public class AddMockRuleRequest extends RpcAcsRequest<AddMockRuleResponse> {
 		this.name = name;
 		if(name != null){
 			putQueryParameter("Name", name);
+		}
+	}
+
+	public Long getMockType() {
+		return this.mockType;
+	}
+
+	public void setMockType(Long mockType) {
+		this.mockType = mockType;
+		if(mockType != null){
+			putQueryParameter("MockType", mockType.toString());
 		}
 	}
 

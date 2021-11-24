@@ -106,8 +106,17 @@ public class ListGatewayRequest extends RpcAcsRequest<ListGatewayResponse> {
 		@SerializedName("GatewayType")
 		private String gatewayType;
 
+		@SerializedName("InstanceId")
+		private String instanceId;
+
+		@SerializedName("GatewayUniqueId")
+		private String gatewayUniqueId;
+
 		@SerializedName("Name")
 		private String name;
+
+		@SerializedName("Vpc")
+		private String vpc;
 
 		public String getGatewayType() {
 			return this.gatewayType;
@@ -117,12 +126,36 @@ public class ListGatewayRequest extends RpcAcsRequest<ListGatewayResponse> {
 			this.gatewayType = gatewayType;
 		}
 
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public String getGatewayUniqueId() {
+			return this.gatewayUniqueId;
+		}
+
+		public void setGatewayUniqueId(String gatewayUniqueId) {
+			this.gatewayUniqueId = gatewayUniqueId;
+		}
+
 		public String getName() {
 			return this.name;
 		}
 
 		public void setName(String name) {
 			this.name = name;
+		}
+
+		public String getVpc() {
+			return this.vpc;
+		}
+
+		public void setVpc(String vpc) {
+			this.vpc = vpc;
 		}
 	}
 

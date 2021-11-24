@@ -43,6 +43,7 @@ public class AddMockRuleResponseUnmarshaller {
 		data.setName(_ctx.stringValue("AddMockRuleResponse.Data.Name"));
 		data.setId(_ctx.longValue("AddMockRuleResponse.Data.Id"));
 		data.setEnable(_ctx.booleanValue("AddMockRuleResponse.Data.Enable"));
+		data.setMockType(_ctx.longValue("AddMockRuleResponse.Data.MockType"));
 		addMockRuleResponse.setData(data);
 	 
 	 	return addMockRuleResponse;
