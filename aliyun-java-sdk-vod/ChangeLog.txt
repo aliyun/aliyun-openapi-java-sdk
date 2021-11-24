@@ -1,3 +1,6 @@
+2021-11-24 Version: 2.16.4
+- Set API DescribeVodDomainSrcBpsData to public.
+
 2021-11-16 Version: 2.16.3
 - Add parameter type HDRType.
 
