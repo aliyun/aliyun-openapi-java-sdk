@@ -28,11 +28,15 @@ public class QueryDevicePictureByListRequest extends RpcAcsRequest<QueryDevicePi
 
 	private Integer pictureType;
 
+	private Integer thumbWidth;
+
 	private String iotId;
 
 	private String iotInstanceId;
 
 	private List<String> pictureIdLists;
+
+	private Integer expireTime;
 
 	private String productKey;
 
@@ -54,6 +58,17 @@ public class QueryDevicePictureByListRequest extends RpcAcsRequest<QueryDevicePi
 		this.pictureType = pictureType;
 		if(pictureType != null){
 			putQueryParameter("PictureType", pictureType.toString());
+		}
+	}
+
+	public Integer getThumbWidth() {
+		return this.thumbWidth;
+	}
+
+	public void setThumbWidth(Integer thumbWidth) {
+		this.thumbWidth = thumbWidth;
+		if(thumbWidth != null){
+			putQueryParameter("ThumbWidth", thumbWidth.toString());
 		}
 	}
 
@@ -90,6 +105,17 @@ public class QueryDevicePictureByListRequest extends RpcAcsRequest<QueryDevicePi
 				putQueryParameter("PictureIdList." + (i + 1) , pictureIdLists.get(i));
 			}
 		}	
+	}
+
+	public Integer getExpireTime() {
+		return this.expireTime;
+	}
+
+	public void setExpireTime(Integer expireTime) {
+		this.expireTime = expireTime;
+		if(expireTime != null){
+			putQueryParameter("ExpireTime", expireTime.toString());
+		}
 	}
 
 	public String getProductKey() {

@@ -27,9 +27,13 @@ public class QueryDevicePictureFileRequest extends RpcAcsRequest<QueryDevicePict
 
 	private Integer pictureType;
 
+	private Integer thumbWidth;
+
 	private String iotId;
 
 	private String iotInstanceId;
+
+	private Integer expireTime;
 
 	private String productKey;
 
@@ -56,6 +60,17 @@ public class QueryDevicePictureFileRequest extends RpcAcsRequest<QueryDevicePict
 		}
 	}
 
+	public Integer getThumbWidth() {
+		return this.thumbWidth;
+	}
+
+	public void setThumbWidth(Integer thumbWidth) {
+		this.thumbWidth = thumbWidth;
+		if(thumbWidth != null){
+			putQueryParameter("ThumbWidth", thumbWidth.toString());
+		}
+	}
+
 	public String getIotId() {
 		return this.iotId;
 	}
@@ -75,6 +90,17 @@ public class QueryDevicePictureFileRequest extends RpcAcsRequest<QueryDevicePict
 		this.iotInstanceId = iotInstanceId;
 		if(iotInstanceId != null){
 			putQueryParameter("IotInstanceId", iotInstanceId);
+		}
+	}
+
+	public Integer getExpireTime() {
+		return this.expireTime;
+	}
+
+	public void setExpireTime(Integer expireTime) {
+		this.expireTime = expireTime;
+		if(expireTime != null){
+			putQueryParameter("ExpireTime", expireTime.toString());
 		}
 	}
 
