@@ -23,7 +23,6 @@ public class UpdateAutoLiveStreamRuleResponseUnmarshaller {
 	public static UpdateAutoLiveStreamRuleResponse unmarshall(UpdateAutoLiveStreamRuleResponse updateAutoLiveStreamRuleResponse, UnmarshallerContext _ctx) {
 		
 		updateAutoLiveStreamRuleResponse.setRequestId(_ctx.stringValue("UpdateAutoLiveStreamRuleResponse.RequestId"));
-		updateAutoLiveStreamRuleResponse.setRuleId(_ctx.longValue("UpdateAutoLiveStreamRuleResponse.RuleId"));
 	 
 	 	return updateAutoLiveStreamRuleResponse;
 	}
