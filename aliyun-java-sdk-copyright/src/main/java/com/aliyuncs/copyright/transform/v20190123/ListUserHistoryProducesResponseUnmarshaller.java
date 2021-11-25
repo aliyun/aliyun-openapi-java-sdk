@@ -40,15 +40,16 @@ public class ListUserHistoryProducesResponseUnmarshaller {
 			produces.setBizType(_ctx.stringValue("ListUserHistoryProducesResponse.Data["+ i +"].BizType"));
 			produces.setExtInfo(_ctx.stringValue("ListUserHistoryProducesResponse.Data["+ i +"].ExtInfo"));
 			produces.setIntentionBizId(_ctx.stringValue("ListUserHistoryProducesResponse.Data["+ i +"].IntentionBizId"));
+			produces.setModifyTime(_ctx.stringValue("ListUserHistoryProducesResponse.Data["+ i +"].ModifyTime"));
+			produces.setOldOrder(_ctx.booleanValue("ListUserHistoryProducesResponse.Data["+ i +"].OldOrder"));
 			produces.setOrderId(_ctx.stringValue("ListUserHistoryProducesResponse.Data["+ i +"].OrderId"));
 			produces.setOrderPrice(_ctx.stringValue("ListUserHistoryProducesResponse.Data["+ i +"].OrderPrice"));
+			produces.setOrderTime(_ctx.stringValue("ListUserHistoryProducesResponse.Data["+ i +"].OrderTime"));
 			produces.setPartnerCode(_ctx.stringValue("ListUserHistoryProducesResponse.Data["+ i +"].PartnerCode"));
 			produces.setSolutionBizId(_ctx.stringValue("ListUserHistoryProducesResponse.Data["+ i +"].SolutionBizId"));
 			produces.setStatus(_ctx.integerValue("ListUserHistoryProducesResponse.Data["+ i +"].Status"));
 			produces.setUserId(_ctx.stringValue("ListUserHistoryProducesResponse.Data["+ i +"].UserId"));
-			produces.setOrderTime(_ctx.stringValue("ListUserHistoryProducesResponse.Data["+ i +"].OrderTime"));
-			produces.setModifyTime(_ctx.stringValue("ListUserHistoryProducesResponse.Data["+ i +"].ModifyTime"));
-			produces.setOldOrder(_ctx.booleanValue("ListUserHistoryProducesResponse.Data["+ i +"].OldOrder"));
+			produces.setSerialNumber(_ctx.stringValue("ListUserHistoryProducesResponse.Data["+ i +"].SerialNumber"));
 
 			data.add(produces);
 		}

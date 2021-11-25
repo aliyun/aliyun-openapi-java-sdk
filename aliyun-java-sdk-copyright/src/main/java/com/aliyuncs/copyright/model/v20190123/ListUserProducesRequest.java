@@ -15,6 +15,8 @@
 package com.aliyuncs.copyright.model.v20190123;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
+import com.google.gson.Gson;
 import com.aliyuncs.http.MethodType;
 
 /**
@@ -24,28 +26,74 @@ import com.aliyuncs.http.MethodType;
 public class ListUserProducesRequest extends RpcAcsRequest<ListUserProducesResponse> {
 	   
 
+	private String intentionBizId;
+
+	private Integer pageNum;
+
+	private Integer pageSize;
+
+	private String sortParam;
+
 	private String extCondition;
 
 	private String orderId;
 
-	private String intentionBizId;
-
-	private Integer pageNum;
+	private List<Object> existStatus;
 
 	private String bizType;
 
 	private String bizId;
 
-	private Integer pageSize;
-
 	private String solutionBizId;
 
 	private Integer status;
-
-	private String sortParam;
 	public ListUserProducesRequest() {
 		super("Copyright", "2019-01-23", "ListUserProduces");
 		setMethod(MethodType.POST);
+	}
+
+	public String getIntentionBizId() {
+		return this.intentionBizId;
+	}
+
+	public void setIntentionBizId(String intentionBizId) {
+		this.intentionBizId = intentionBizId;
+		if(intentionBizId != null){
+			putQueryParameter("IntentionBizId", intentionBizId);
+		}
+	}
+
+	public Integer getPageNum() {
+		return this.pageNum;
+	}
+
+	public void setPageNum(Integer pageNum) {
+		this.pageNum = pageNum;
+		if(pageNum != null){
+			putQueryParameter("PageNum", pageNum.toString());
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getSortParam() {
+		return this.sortParam;
+	}
+
+	public void setSortParam(String sortParam) {
+		this.sortParam = sortParam;
+		if(sortParam != null){
+			putQueryParameter("SortParam", sortParam);
+		}
 	}
 
 	public String getExtCondition() {
@@ -70,25 +118,14 @@ public class ListUserProducesRequest extends RpcAcsRequest<ListUserProducesRespo
 		}
 	}
 
-	public String getIntentionBizId() {
-		return this.intentionBizId;
+	public List<Object> getExistStatus() {
+		return this.existStatus;
 	}
 
-	public void setIntentionBizId(String intentionBizId) {
-		this.intentionBizId = intentionBizId;
-		if(intentionBizId != null){
-			putQueryParameter("IntentionBizId", intentionBizId);
-		}
-	}
-
-	public Integer getPageNum() {
-		return this.pageNum;
-	}
-
-	public void setPageNum(Integer pageNum) {
-		this.pageNum = pageNum;
-		if(pageNum != null){
-			putQueryParameter("PageNum", pageNum.toString());
+	public void setExistStatus(List<Object> existStatus) {
+		this.existStatus = existStatus;
+		if(existStatus != null){
+			putQueryParameter("ExistStatus", new Gson().toJson(existStatus));
 		}
 	}
 
@@ -114,17 +151,6 @@ public class ListUserProducesRequest extends RpcAcsRequest<ListUserProducesRespo
 		}
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
 	public String getSolutionBizId() {
 		return this.solutionBizId;
 	}
@@ -144,17 +170,6 @@ public class ListUserProducesRequest extends RpcAcsRequest<ListUserProducesRespo
 		this.status = status;
 		if(status != null){
 			putQueryParameter("Status", status.toString());
-		}
-	}
-
-	public String getSortParam() {
-		return this.sortParam;
-	}
-
-	public void setSortParam(String sortParam) {
-		this.sortParam = sortParam;
-		if(sortParam != null){
-			putQueryParameter("SortParam", sortParam);
 		}
 	}
 

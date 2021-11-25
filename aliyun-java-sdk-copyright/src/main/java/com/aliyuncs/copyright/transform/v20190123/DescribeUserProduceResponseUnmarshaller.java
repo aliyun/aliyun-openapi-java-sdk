@@ -23,19 +23,21 @@ public class DescribeUserProduceResponseUnmarshaller {
 	public static DescribeUserProduceResponse unmarshall(DescribeUserProduceResponse describeUserProduceResponse, UnmarshallerContext _ctx) {
 		
 		describeUserProduceResponse.setRequestId(_ctx.stringValue("DescribeUserProduceResponse.RequestId"));
-		describeUserProduceResponse.setErrorCode(_ctx.stringValue("DescribeUserProduceResponse.ErrorCode"));
-		describeUserProduceResponse.setErrorMsg(_ctx.stringValue("DescribeUserProduceResponse.ErrorMsg"));
-		describeUserProduceResponse.setSuccess(_ctx.booleanValue("DescribeUserProduceResponse.Success"));
 		describeUserProduceResponse.setBizId(_ctx.stringValue("DescribeUserProduceResponse.BizId"));
 		describeUserProduceResponse.setBizType(_ctx.stringValue("DescribeUserProduceResponse.BizType"));
-		describeUserProduceResponse.setUserId(_ctx.stringValue("DescribeUserProduceResponse.UserId"));
-		describeUserProduceResponse.setStatus(_ctx.integerValue("DescribeUserProduceResponse.Status"));
-		describeUserProduceResponse.setPartnerCode(_ctx.stringValue("DescribeUserProduceResponse.PartnerCode"));
+		describeUserProduceResponse.setEndTime(_ctx.stringValue("DescribeUserProduceResponse.EndTime"));
+		describeUserProduceResponse.setErrorCode(_ctx.stringValue("DescribeUserProduceResponse.ErrorCode"));
+		describeUserProduceResponse.setErrorMsg(_ctx.stringValue("DescribeUserProduceResponse.ErrorMsg"));
+		describeUserProduceResponse.setExtInfo(_ctx.stringValue("DescribeUserProduceResponse.ExtInfo"));
+		describeUserProduceResponse.setIntentionBizId(_ctx.stringValue("DescribeUserProduceResponse.IntentionBizId"));
 		describeUserProduceResponse.setOrderId(_ctx.stringValue("DescribeUserProduceResponse.OrderId"));
 		describeUserProduceResponse.setOrderPrice(_ctx.stringValue("DescribeUserProduceResponse.OrderPrice"));
-		describeUserProduceResponse.setIntentionBizId(_ctx.stringValue("DescribeUserProduceResponse.IntentionBizId"));
+		describeUserProduceResponse.setPartnerCode(_ctx.stringValue("DescribeUserProduceResponse.PartnerCode"));
 		describeUserProduceResponse.setSolutionBizId(_ctx.stringValue("DescribeUserProduceResponse.SolutionBizId"));
-		describeUserProduceResponse.setExtInfo(_ctx.stringValue("DescribeUserProduceResponse.ExtInfo"));
+		describeUserProduceResponse.setStartTime(_ctx.stringValue("DescribeUserProduceResponse.StartTime"));
+		describeUserProduceResponse.setStatus(_ctx.integerValue("DescribeUserProduceResponse.Status"));
+		describeUserProduceResponse.setSuccess(_ctx.booleanValue("DescribeUserProduceResponse.Success"));
+		describeUserProduceResponse.setUserId(_ctx.stringValue("DescribeUserProduceResponse.UserId"));
 	 
 	 	return describeUserProduceResponse;
 	}

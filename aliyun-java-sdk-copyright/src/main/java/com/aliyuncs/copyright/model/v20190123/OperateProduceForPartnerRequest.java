@@ -24,11 +24,11 @@ import com.aliyuncs.http.MethodType;
 public class OperateProduceForPartnerRequest extends RpcAcsRequest<OperateProduceForPartnerResponse> {
 	   
 
-	private String bizType;
-
 	private String extInfo;
 
 	private String note;
+
+	private String bizType;
 
 	private String bizId;
 
@@ -36,17 +36,6 @@ public class OperateProduceForPartnerRequest extends RpcAcsRequest<OperateProduc
 	public OperateProduceForPartnerRequest() {
 		super("Copyright", "2019-01-23", "OperateProduceForPartner");
 		setMethod(MethodType.POST);
-	}
-
-	public String getBizType() {
-		return this.bizType;
-	}
-
-	public void setBizType(String bizType) {
-		this.bizType = bizType;
-		if(bizType != null){
-			putQueryParameter("BizType", bizType);
-		}
 	}
 
 	public String getExtInfo() {
@@ -68,6 +57,17 @@ public class OperateProduceForPartnerRequest extends RpcAcsRequest<OperateProduc
 		this.note = note;
 		if(note != null){
 			putQueryParameter("Note", note);
+		}
+	}
+
+	public String getBizType() {
+		return this.bizType;
+	}
+
+	public void setBizType(String bizType) {
+		this.bizType = bizType;
+		if(bizType != null){
+			putQueryParameter("BizType", bizType);
 		}
 	}
 

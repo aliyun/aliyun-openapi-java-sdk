@@ -24,50 +24,28 @@ import com.aliyuncs.http.MethodType;
 public class ListUserHistoryProducesRequest extends RpcAcsRequest<ListUserHistoryProducesResponse> {
 	   
 
-	private String extCondition;
-
-	private String orderId;
-
 	private String intentionBizId;
 
 	private Integer pageNum;
+
+	private Integer pageSize;
+
+	private String sortParam;
+
+	private String extCondition;
+
+	private String orderId;
 
 	private String bizType;
 
 	private String bizId;
 
-	private Integer pageSize;
-
 	private String solutionBizId;
 
 	private Integer status;
-
-	private String sortParam;
 	public ListUserHistoryProducesRequest() {
 		super("Copyright", "2019-01-23", "ListUserHistoryProduces");
 		setMethod(MethodType.POST);
-	}
-
-	public String getExtCondition() {
-		return this.extCondition;
-	}
-
-	public void setExtCondition(String extCondition) {
-		this.extCondition = extCondition;
-		if(extCondition != null){
-			putQueryParameter("ExtCondition", extCondition);
-		}
-	}
-
-	public String getOrderId() {
-		return this.orderId;
-	}
-
-	public void setOrderId(String orderId) {
-		this.orderId = orderId;
-		if(orderId != null){
-			putQueryParameter("OrderId", orderId);
-		}
 	}
 
 	public String getIntentionBizId() {
@@ -89,6 +67,50 @@ public class ListUserHistoryProducesRequest extends RpcAcsRequest<ListUserHistor
 		this.pageNum = pageNum;
 		if(pageNum != null){
 			putQueryParameter("PageNum", pageNum.toString());
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getSortParam() {
+		return this.sortParam;
+	}
+
+	public void setSortParam(String sortParam) {
+		this.sortParam = sortParam;
+		if(sortParam != null){
+			putQueryParameter("SortParam", sortParam);
+		}
+	}
+
+	public String getExtCondition() {
+		return this.extCondition;
+	}
+
+	public void setExtCondition(String extCondition) {
+		this.extCondition = extCondition;
+		if(extCondition != null){
+			putQueryParameter("ExtCondition", extCondition);
+		}
+	}
+
+	public String getOrderId() {
+		return this.orderId;
+	}
+
+	public void setOrderId(String orderId) {
+		this.orderId = orderId;
+		if(orderId != null){
+			putQueryParameter("OrderId", orderId);
 		}
 	}
 
@@ -114,17 +136,6 @@ public class ListUserHistoryProducesRequest extends RpcAcsRequest<ListUserHistor
 		}
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
 	public String getSolutionBizId() {
 		return this.solutionBizId;
 	}
@@ -144,17 +155,6 @@ public class ListUserHistoryProducesRequest extends RpcAcsRequest<ListUserHistor
 		this.status = status;
 		if(status != null){
 			putQueryParameter("Status", status.toString());
-		}
-	}
-
-	public String getSortParam() {
-		return this.sortParam;
-	}
-
-	public void setSortParam(String sortParam) {
-		this.sortParam = sortParam;
-		if(sortParam != null){
-			putQueryParameter("SortParam", sortParam);
 		}
 	}
 

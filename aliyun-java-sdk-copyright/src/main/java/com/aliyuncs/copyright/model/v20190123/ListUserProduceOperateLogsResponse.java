@@ -99,7 +99,11 @@ public class ListUserProduceOperateLogsResponse extends AcsResponse {
 
 		private String bizId;
 
+		private Integer bizStatus;
+
 		private String bizType;
+
+		private String note;
 
 		private String operateName;
 
@@ -107,11 +111,7 @@ public class ListUserProduceOperateLogsResponse extends AcsResponse {
 
 		private String operateUserType;
 
-		private Integer bizStatus;
-
 		private Integer toBizStatus;
-
-		private String note;
 
 		public String getBizId() {
 			return this.bizId;
@@ -121,12 +121,28 @@ public class ListUserProduceOperateLogsResponse extends AcsResponse {
 			this.bizId = bizId;
 		}
 
+		public Integer getBizStatus() {
+			return this.bizStatus;
+		}
+
+		public void setBizStatus(Integer bizStatus) {
+			this.bizStatus = bizStatus;
+		}
+
 		public String getBizType() {
 			return this.bizType;
 		}
 
 		public void setBizType(String bizType) {
 			this.bizType = bizType;
+		}
+
+		public String getNote() {
+			return this.note;
+		}
+
+		public void setNote(String note) {
+			this.note = note;
 		}
 
 		public String getOperateName() {
@@ -153,28 +169,12 @@ public class ListUserProduceOperateLogsResponse extends AcsResponse {
 			this.operateUserType = operateUserType;
 		}
 
-		public Integer getBizStatus() {
-			return this.bizStatus;
-		}
-
-		public void setBizStatus(Integer bizStatus) {
-			this.bizStatus = bizStatus;
-		}
-
 		public Integer getToBizStatus() {
 			return this.toBizStatus;
 		}
 
 		public void setToBizStatus(Integer toBizStatus) {
 			this.toBizStatus = toBizStatus;
-		}
-
-		public String getNote() {
-			return this.note;
-		}
-
-		public void setNote(String note) {
-			this.note = note;
 		}
 	}
 

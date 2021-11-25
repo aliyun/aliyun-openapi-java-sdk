@@ -101,25 +101,29 @@ public class ListUserProducesResponse extends AcsResponse {
 
 		private String bizType;
 
+		private String endTime;
+
 		private String extInfo;
 
 		private String intentionBizId;
+
+		private String modifyTime;
 
 		private String orderId;
 
 		private String orderPrice;
 
+		private String orderTime;
+
 		private String partnerCode;
 
 		private String solutionBizId;
 
+		private String startTime;
+
 		private Integer status;
 
 		private String userId;
-
-		private String orderTime;
-
-		private String modifyTime;
 
 		public String getBizId() {
 			return this.bizId;
@@ -135,6 +139,14 @@ public class ListUserProducesResponse extends AcsResponse {
 
 		public void setBizType(String bizType) {
 			this.bizType = bizType;
+		}
+
+		public String getEndTime() {
+			return this.endTime;
+		}
+
+		public void setEndTime(String endTime) {
+			this.endTime = endTime;
 		}
 
 		public String getExtInfo() {
@@ -153,6 +165,14 @@ public class ListUserProducesResponse extends AcsResponse {
 			this.intentionBizId = intentionBizId;
 		}
 
+		public String getModifyTime() {
+			return this.modifyTime;
+		}
+
+		public void setModifyTime(String modifyTime) {
+			this.modifyTime = modifyTime;
+		}
+
 		public String getOrderId() {
 			return this.orderId;
 		}
@@ -167,6 +187,14 @@ public class ListUserProducesResponse extends AcsResponse {
 
 		public void setOrderPrice(String orderPrice) {
 			this.orderPrice = orderPrice;
+		}
+
+		public String getOrderTime() {
+			return this.orderTime;
+		}
+
+		public void setOrderTime(String orderTime) {
+			this.orderTime = orderTime;
 		}
 
 		public String getPartnerCode() {
@@ -185,6 +213,14 @@ public class ListUserProducesResponse extends AcsResponse {
 			this.solutionBizId = solutionBizId;
 		}
 
+		public String getStartTime() {
+			return this.startTime;
+		}
+
+		public void setStartTime(String startTime) {
+			this.startTime = startTime;
+		}
+
 		public Integer getStatus() {
 			return this.status;
 		}
@@ -199,22 +235,6 @@ public class ListUserProducesResponse extends AcsResponse {
 
 		public void setUserId(String userId) {
 			this.userId = userId;
-		}
-
-		public String getOrderTime() {
-			return this.orderTime;
-		}
-
-		public void setOrderTime(String orderTime) {
-			this.orderTime = orderTime;
-		}
-
-		public String getModifyTime() {
-			return this.modifyTime;
-		}
-
-		public void setModifyTime(String modifyTime) {
-			this.modifyTime = modifyTime;
 		}
 	}
 

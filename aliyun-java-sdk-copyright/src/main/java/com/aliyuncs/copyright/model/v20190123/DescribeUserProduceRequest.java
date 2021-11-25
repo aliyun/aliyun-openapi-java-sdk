@@ -24,12 +24,25 @@ import com.aliyuncs.http.MethodType;
 public class DescribeUserProduceRequest extends RpcAcsRequest<DescribeUserProduceResponse> {
 	   
 
+	private String extInfo;
+
 	private String bizType;
 
 	private String bizId;
 	public DescribeUserProduceRequest() {
 		super("Copyright", "2019-01-23", "DescribeUserProduce");
 		setMethod(MethodType.POST);
+	}
+
+	public String getExtInfo() {
+		return this.extInfo;
+	}
+
+	public void setExtInfo(String extInfo) {
+		this.extInfo = extInfo;
+		if(extInfo != null){
+			putQueryParameter("ExtInfo", extInfo);
+		}
 	}
 
 	public String getBizType() {

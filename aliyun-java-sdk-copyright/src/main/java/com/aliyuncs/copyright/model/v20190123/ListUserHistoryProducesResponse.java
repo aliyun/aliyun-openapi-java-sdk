@@ -105,9 +105,15 @@ public class ListUserHistoryProducesResponse extends AcsResponse {
 
 		private String intentionBizId;
 
+		private String modifyTime;
+
+		private Boolean oldOrder;
+
 		private String orderId;
 
 		private String orderPrice;
+
+		private String orderTime;
 
 		private String partnerCode;
 
@@ -117,11 +123,7 @@ public class ListUserHistoryProducesResponse extends AcsResponse {
 
 		private String userId;
 
-		private String orderTime;
-
-		private String modifyTime;
-
-		private Boolean oldOrder;
+		private String serialNumber;
 
 		public String getBizId() {
 			return this.bizId;
@@ -155,6 +157,22 @@ public class ListUserHistoryProducesResponse extends AcsResponse {
 			this.intentionBizId = intentionBizId;
 		}
 
+		public String getModifyTime() {
+			return this.modifyTime;
+		}
+
+		public void setModifyTime(String modifyTime) {
+			this.modifyTime = modifyTime;
+		}
+
+		public Boolean getOldOrder() {
+			return this.oldOrder;
+		}
+
+		public void setOldOrder(Boolean oldOrder) {
+			this.oldOrder = oldOrder;
+		}
+
 		public String getOrderId() {
 			return this.orderId;
 		}
@@ -169,6 +187,14 @@ public class ListUserHistoryProducesResponse extends AcsResponse {
 
 		public void setOrderPrice(String orderPrice) {
 			this.orderPrice = orderPrice;
+		}
+
+		public String getOrderTime() {
+			return this.orderTime;
+		}
+
+		public void setOrderTime(String orderTime) {
+			this.orderTime = orderTime;
 		}
 
 		public String getPartnerCode() {
@@ -203,28 +229,12 @@ public class ListUserHistoryProducesResponse extends AcsResponse {
 			this.userId = userId;
 		}
 
-		public String getOrderTime() {
-			return this.orderTime;
+		public String getSerialNumber() {
+			return this.serialNumber;
 		}
 
-		public void setOrderTime(String orderTime) {
-			this.orderTime = orderTime;
-		}
-
-		public String getModifyTime() {
-			return this.modifyTime;
-		}
-
-		public void setModifyTime(String modifyTime) {
-			this.modifyTime = modifyTime;
-		}
-
-		public Boolean getOldOrder() {
-			return this.oldOrder;
-		}
-
-		public void setOldOrder(Boolean oldOrder) {
-			this.oldOrder = oldOrder;
+		public void setSerialNumber(String serialNumber) {
+			this.serialNumber = serialNumber;
 		}
 	}
 

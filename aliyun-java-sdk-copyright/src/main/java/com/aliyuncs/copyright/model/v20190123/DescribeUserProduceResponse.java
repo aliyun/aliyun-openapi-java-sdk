@@ -24,40 +24,60 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeUserProduceResponse extends AcsResponse {
 
-	private String requestId;
+	private String bizId;
+
+	private String bizType;
+
+	private String endTime;
 
 	private String errorCode;
 
 	private String errorMsg;
 
-	private Boolean success;
+	private String extInfo;
 
-	private String bizId;
-
-	private String bizType;
-
-	private String userId;
-
-	private Integer status;
-
-	private String partnerCode;
+	private String intentionBizId;
 
 	private String orderId;
 
 	private String orderPrice;
 
-	private String intentionBizId;
+	private String partnerCode;
+
+	private String requestId;
 
 	private String solutionBizId;
 
-	private String extInfo;
+	private String startTime;
 
-	public String getRequestId() {
-		return this.requestId;
+	private Integer status;
+
+	private Boolean success;
+
+	private String userId;
+
+	public String getBizId() {
+		return this.bizId;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setBizId(String bizId) {
+		this.bizId = bizId;
+	}
+
+	public String getBizType() {
+		return this.bizType;
+	}
+
+	public void setBizType(String bizType) {
+		this.bizType = bizType;
+	}
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
 	}
 
 	public String getErrorCode() {
@@ -76,52 +96,20 @@ public class DescribeUserProduceResponse extends AcsResponse {
 		this.errorMsg = errorMsg;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getExtInfo() {
+		return this.extInfo;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setExtInfo(String extInfo) {
+		this.extInfo = extInfo;
 	}
 
-	public String getBizId() {
-		return this.bizId;
+	public String getIntentionBizId() {
+		return this.intentionBizId;
 	}
 
-	public void setBizId(String bizId) {
-		this.bizId = bizId;
-	}
-
-	public String getBizType() {
-		return this.bizType;
-	}
-
-	public void setBizType(String bizType) {
-		this.bizType = bizType;
-	}
-
-	public String getUserId() {
-		return this.userId;
-	}
-
-	public void setUserId(String userId) {
-		this.userId = userId;
-	}
-
-	public Integer getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(Integer status) {
-		this.status = status;
-	}
-
-	public String getPartnerCode() {
-		return this.partnerCode;
-	}
-
-	public void setPartnerCode(String partnerCode) {
-		this.partnerCode = partnerCode;
+	public void setIntentionBizId(String intentionBizId) {
+		this.intentionBizId = intentionBizId;
 	}
 
 	public String getOrderId() {
@@ -140,12 +128,20 @@ public class DescribeUserProduceResponse extends AcsResponse {
 		this.orderPrice = orderPrice;
 	}
 
-	public String getIntentionBizId() {
-		return this.intentionBizId;
+	public String getPartnerCode() {
+		return this.partnerCode;
 	}
 
-	public void setIntentionBizId(String intentionBizId) {
-		this.intentionBizId = intentionBizId;
+	public void setPartnerCode(String partnerCode) {
+		this.partnerCode = partnerCode;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getSolutionBizId() {
@@ -156,12 +152,36 @@ public class DescribeUserProduceResponse extends AcsResponse {
 		this.solutionBizId = solutionBizId;
 	}
 
-	public String getExtInfo() {
-		return this.extInfo;
+	public String getStartTime() {
+		return this.startTime;
 	}
 
-	public void setExtInfo(String extInfo) {
-		this.extInfo = extInfo;
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+	}
+
+	public Integer getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(Integer status) {
+		this.status = status;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
+	public String getUserId() {
+		return this.userId;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
 	}
 
 	@Override

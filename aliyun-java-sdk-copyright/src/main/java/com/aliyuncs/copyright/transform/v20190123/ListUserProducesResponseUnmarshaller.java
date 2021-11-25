@@ -38,16 +38,18 @@ public class ListUserProducesResponseUnmarshaller {
 			Produces produces = new Produces();
 			produces.setBizId(_ctx.stringValue("ListUserProducesResponse.Data["+ i +"].BizId"));
 			produces.setBizType(_ctx.stringValue("ListUserProducesResponse.Data["+ i +"].BizType"));
+			produces.setEndTime(_ctx.stringValue("ListUserProducesResponse.Data["+ i +"].EndTime"));
 			produces.setExtInfo(_ctx.stringValue("ListUserProducesResponse.Data["+ i +"].ExtInfo"));
 			produces.setIntentionBizId(_ctx.stringValue("ListUserProducesResponse.Data["+ i +"].IntentionBizId"));
+			produces.setModifyTime(_ctx.stringValue("ListUserProducesResponse.Data["+ i +"].ModifyTime"));
 			produces.setOrderId(_ctx.stringValue("ListUserProducesResponse.Data["+ i +"].OrderId"));
 			produces.setOrderPrice(_ctx.stringValue("ListUserProducesResponse.Data["+ i +"].OrderPrice"));
+			produces.setOrderTime(_ctx.stringValue("ListUserProducesResponse.Data["+ i +"].OrderTime"));
 			produces.setPartnerCode(_ctx.stringValue("ListUserProducesResponse.Data["+ i +"].PartnerCode"));
 			produces.setSolutionBizId(_ctx.stringValue("ListUserProducesResponse.Data["+ i +"].SolutionBizId"));
+			produces.setStartTime(_ctx.stringValue("ListUserProducesResponse.Data["+ i +"].StartTime"));
 			produces.setStatus(_ctx.integerValue("ListUserProducesResponse.Data["+ i +"].Status"));
 			produces.setUserId(_ctx.stringValue("ListUserProducesResponse.Data["+ i +"].UserId"));
-			produces.setOrderTime(_ctx.stringValue("ListUserProducesResponse.Data["+ i +"].OrderTime"));
-			produces.setModifyTime(_ctx.stringValue("ListUserProducesResponse.Data["+ i +"].ModifyTime"));
 
 			data.add(produces);
 		}
