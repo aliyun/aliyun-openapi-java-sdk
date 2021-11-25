@@ -38,6 +38,8 @@ public class SaveRecordingRequest extends RpcAcsRequest<SaveRecordingResponse> {
 	private String fileName;
 
 	private String filePath;
+
+	private Long instanceOwnerId;
 	public SaveRecordingRequest() {
 		super("VoiceNavigator", "2018-06-12", "SaveRecording", "voicebot");
 		setMethod(MethodType.POST);
@@ -121,6 +123,17 @@ public class SaveRecordingRequest extends RpcAcsRequest<SaveRecordingResponse> {
 		this.filePath = filePath;
 		if(filePath != null){
 			putQueryParameter("FilePath", filePath);
+		}
+	}
+
+	public Long getInstanceOwnerId() {
+		return this.instanceOwnerId;
+	}
+
+	public void setInstanceOwnerId(Long instanceOwnerId) {
+		this.instanceOwnerId = instanceOwnerId;
+		if(instanceOwnerId != null){
+			putQueryParameter("InstanceOwnerId", instanceOwnerId.toString());
 		}
 	}
 

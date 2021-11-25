@@ -35,6 +35,8 @@ public class DialogueRequest extends RpcAcsRequest<DialogueResponse> {
 
 	private String additionalContext;
 
+	private Long instanceOwnerId;
+
 	private String utterance;
 	public DialogueRequest() {
 		super("VoiceNavigator", "2018-06-12", "Dialogue", "voicebot");
@@ -97,6 +99,17 @@ public class DialogueRequest extends RpcAcsRequest<DialogueResponse> {
 		this.additionalContext = additionalContext;
 		if(additionalContext != null){
 			putQueryParameter("AdditionalContext", additionalContext);
+		}
+	}
+
+	public Long getInstanceOwnerId() {
+		return this.instanceOwnerId;
+	}
+
+	public void setInstanceOwnerId(Long instanceOwnerId) {
+		this.instanceOwnerId = instanceOwnerId;
+		if(instanceOwnerId != null){
+			putQueryParameter("InstanceOwnerId", instanceOwnerId.toString());
 		}
 	}
 

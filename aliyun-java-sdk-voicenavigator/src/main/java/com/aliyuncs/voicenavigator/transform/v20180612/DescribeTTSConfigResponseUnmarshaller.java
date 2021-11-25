@@ -23,9 +23,9 @@ public class DescribeTTSConfigResponseUnmarshaller {
 	public static DescribeTTSConfigResponse unmarshall(DescribeTTSConfigResponse describeTTSConfigResponse, UnmarshallerContext _ctx) {
 		
 		describeTTSConfigResponse.setRequestId(_ctx.stringValue("DescribeTTSConfigResponse.RequestId"));
+		describeTTSConfigResponse.setVolume(_ctx.integerValue("DescribeTTSConfigResponse.Volume"));
 		describeTTSConfigResponse.setVoice(_ctx.stringValue("DescribeTTSConfigResponse.Voice"));
 		describeTTSConfigResponse.setSpeechRate(_ctx.integerValue("DescribeTTSConfigResponse.SpeechRate"));
-		describeTTSConfigResponse.setVolume(_ctx.integerValue("DescribeTTSConfigResponse.Volume"));
 	 
 	 	return describeTTSConfigResponse;
 	}

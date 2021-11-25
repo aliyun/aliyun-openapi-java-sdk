@@ -22,14 +22,14 @@ import com.aliyuncs.voicenavigator.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeTTSConfigRequest extends RpcAcsRequest<DescribeTTSConfigResponse> {
+public class ListDownloadTasksRequest extends RpcAcsRequest<ListDownloadTasksResponse> {
 	   
 
-	private String instanceId;
+	private Integer pageNumber;
 
-	private Long instanceOwnerId;
-	public DescribeTTSConfigRequest() {
-		super("VoiceNavigator", "2018-06-12", "DescribeTTSConfig", "voicebot");
+	private Integer pageSize;
+	public ListDownloadTasksRequest() {
+		super("VoiceNavigator", "2018-06-12", "ListDownloadTasks", "voicebot");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,31 +37,31 @@ public class DescribeTTSConfigRequest extends RpcAcsRequest<DescribeTTSConfigRes
 		} catch (Exception e) {}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 
-	public Long getInstanceOwnerId() {
-		return this.instanceOwnerId;
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setInstanceOwnerId(Long instanceOwnerId) {
-		this.instanceOwnerId = instanceOwnerId;
-		if(instanceOwnerId != null){
-			putQueryParameter("InstanceOwnerId", instanceOwnerId.toString());
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
 	@Override
-	public Class<DescribeTTSConfigResponse> getResponseClass() {
-		return DescribeTTSConfigResponse.class;
+	public Class<ListDownloadTasksResponse> getResponseClass() {
+		return ListDownloadTasksResponse.class;
 	}
 
 }

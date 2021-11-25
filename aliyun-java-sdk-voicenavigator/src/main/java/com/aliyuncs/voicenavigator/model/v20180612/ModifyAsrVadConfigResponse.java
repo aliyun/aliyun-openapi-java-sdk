@@ -15,22 +15,16 @@
 package com.aliyuncs.voicenavigator.model.v20180612;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.voicenavigator.transform.v20180612.DescribeTTSConfigResponseUnmarshaller;
+import com.aliyuncs.voicenavigator.transform.v20180612.ModifyAsrVadConfigResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeTTSConfigResponse extends AcsResponse {
+public class ModifyAsrVadConfigResponse extends AcsResponse {
 
 	private String requestId;
-
-	private Integer volume;
-
-	private String voice;
-
-	private Integer speechRate;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -40,33 +34,9 @@ public class DescribeTTSConfigResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Integer getVolume() {
-		return this.volume;
-	}
-
-	public void setVolume(Integer volume) {
-		this.volume = volume;
-	}
-
-	public String getVoice() {
-		return this.voice;
-	}
-
-	public void setVoice(String voice) {
-		this.voice = voice;
-	}
-
-	public Integer getSpeechRate() {
-		return this.speechRate;
-	}
-
-	public void setSpeechRate(Integer speechRate) {
-		this.speechRate = speechRate;
-	}
-
 	@Override
-	public DescribeTTSConfigResponse getInstance(UnmarshallerContext context) {
-		return	DescribeTTSConfigResponseUnmarshaller.unmarshall(this, context);
+	public ModifyAsrVadConfigResponse getInstance(UnmarshallerContext context) {
+		return	ModifyAsrVadConfigResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

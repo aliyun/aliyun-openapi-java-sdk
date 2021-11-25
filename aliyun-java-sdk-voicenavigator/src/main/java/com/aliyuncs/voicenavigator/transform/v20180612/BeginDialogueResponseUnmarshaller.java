@@ -23,10 +23,10 @@ public class BeginDialogueResponseUnmarshaller {
 	public static BeginDialogueResponse unmarshall(BeginDialogueResponse beginDialogueResponse, UnmarshallerContext _ctx) {
 		
 		beginDialogueResponse.setRequestId(_ctx.stringValue("BeginDialogueResponse.RequestId"));
-		beginDialogueResponse.setTextResponse(_ctx.stringValue("BeginDialogueResponse.TextResponse"));
-		beginDialogueResponse.setInterruptible(_ctx.booleanValue("BeginDialogueResponse.Interruptible"));
 		beginDialogueResponse.setAction(_ctx.stringValue("BeginDialogueResponse.Action"));
+		beginDialogueResponse.setInterruptible(_ctx.booleanValue("BeginDialogueResponse.Interruptible"));
 		beginDialogueResponse.setActionParams(_ctx.stringValue("BeginDialogueResponse.ActionParams"));
+		beginDialogueResponse.setTextResponse(_ctx.stringValue("BeginDialogueResponse.TextResponse"));
 	 
 	 	return beginDialogueResponse;
 	}

@@ -30,6 +30,8 @@ public class CollectedNumberRequest extends RpcAcsRequest<CollectedNumberRespons
 	private String number;
 
 	private String instanceId;
+
+	private Long instanceOwnerId;
 	public CollectedNumberRequest() {
 		super("VoiceNavigator", "2018-06-12", "CollectedNumber", "voicebot");
 		setMethod(MethodType.POST);
@@ -69,6 +71,17 @@ public class CollectedNumberRequest extends RpcAcsRequest<CollectedNumberRespons
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public Long getInstanceOwnerId() {
+		return this.instanceOwnerId;
+	}
+
+	public void setInstanceOwnerId(Long instanceOwnerId) {
+		this.instanceOwnerId = instanceOwnerId;
+		if(instanceOwnerId != null){
+			putQueryParameter("InstanceOwnerId", instanceOwnerId.toString());
 		}
 	}
 

@@ -30,6 +30,8 @@ public class SilenceTimeoutRequest extends RpcAcsRequest<SilenceTimeoutResponse>
 	private String initialContext;
 
 	private String instanceId;
+
+	private Long instanceOwnerId;
 	public SilenceTimeoutRequest() {
 		super("VoiceNavigator", "2018-06-12", "SilenceTimeout", "voicebot");
 		setMethod(MethodType.POST);
@@ -69,6 +71,17 @@ public class SilenceTimeoutRequest extends RpcAcsRequest<SilenceTimeoutResponse>
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public Long getInstanceOwnerId() {
+		return this.instanceOwnerId;
+	}
+
+	public void setInstanceOwnerId(Long instanceOwnerId) {
+		this.instanceOwnerId = instanceOwnerId;
+		if(instanceOwnerId != null){
+			putQueryParameter("InstanceOwnerId", instanceOwnerId.toString());
 		}
 	}
 

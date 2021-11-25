@@ -22,14 +22,14 @@ import com.aliyuncs.voicenavigator.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeTTSConfigRequest extends RpcAcsRequest<DescribeTTSConfigResponse> {
+public class CreateDownloadUrlRequest extends RpcAcsRequest<CreateDownloadUrlResponse> {
 	   
 
-	private String instanceId;
+	private String downloadTaskId;
 
-	private Long instanceOwnerId;
-	public DescribeTTSConfigRequest() {
-		super("VoiceNavigator", "2018-06-12", "DescribeTTSConfig", "voicebot");
+	private String fileId;
+	public CreateDownloadUrlRequest() {
+		super("VoiceNavigator", "2018-06-12", "CreateDownloadUrl", "voicebot");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,31 +37,31 @@ public class DescribeTTSConfigRequest extends RpcAcsRequest<DescribeTTSConfigRes
 		} catch (Exception e) {}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
+	public String getDownloadTaskId() {
+		return this.downloadTaskId;
 	}
 
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
+	public void setDownloadTaskId(String downloadTaskId) {
+		this.downloadTaskId = downloadTaskId;
+		if(downloadTaskId != null){
+			putQueryParameter("DownloadTaskId", downloadTaskId);
 		}
 	}
 
-	public Long getInstanceOwnerId() {
-		return this.instanceOwnerId;
+	public String getFileId() {
+		return this.fileId;
 	}
 
-	public void setInstanceOwnerId(Long instanceOwnerId) {
-		this.instanceOwnerId = instanceOwnerId;
-		if(instanceOwnerId != null){
-			putQueryParameter("InstanceOwnerId", instanceOwnerId.toString());
+	public void setFileId(String fileId) {
+		this.fileId = fileId;
+		if(fileId != null){
+			putQueryParameter("FileId", fileId);
 		}
 	}
 
 	@Override
-	public Class<DescribeTTSConfigResponse> getResponseClass() {
-		return DescribeTTSConfigResponse.class;
+	public Class<CreateDownloadUrlResponse> getResponseClass() {
+		return CreateDownloadUrlResponse.class;
 	}
 
 }

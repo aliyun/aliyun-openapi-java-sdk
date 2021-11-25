@@ -22,32 +22,17 @@ import com.aliyuncs.voicenavigator.Endpoint;
  * @author auto create
  * @version 
  */
-public class EndDialogueRequest extends RpcAcsRequest<EndDialogueResponse> {
+public class DescribeAsrVadConfigRequest extends RpcAcsRequest<DescribeAsrVadConfigResponse> {
 	   
 
-	private String conversationId;
-
 	private String instanceId;
-
-	private Long instanceOwnerId;
-	public EndDialogueRequest() {
-		super("VoiceNavigator", "2018-06-12", "EndDialogue", "voicebot");
-		setMethod(MethodType.POST);
+	public DescribeAsrVadConfigRequest() {
+		super("VoiceNavigator", "2018-06-12", "DescribeAsrVadConfig", "voicebot");
+		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getConversationId() {
-		return this.conversationId;
-	}
-
-	public void setConversationId(String conversationId) {
-		this.conversationId = conversationId;
-		if(conversationId != null){
-			putQueryParameter("ConversationId", conversationId);
-		}
 	}
 
 	public String getInstanceId() {
@@ -61,20 +46,9 @@ public class EndDialogueRequest extends RpcAcsRequest<EndDialogueResponse> {
 		}
 	}
 
-	public Long getInstanceOwnerId() {
-		return this.instanceOwnerId;
-	}
-
-	public void setInstanceOwnerId(Long instanceOwnerId) {
-		this.instanceOwnerId = instanceOwnerId;
-		if(instanceOwnerId != null){
-			putQueryParameter("InstanceOwnerId", instanceOwnerId.toString());
-		}
-	}
-
 	@Override
-	public Class<EndDialogueResponse> getResponseClass() {
-		return EndDialogueResponse.class;
+	public Class<DescribeAsrVadConfigResponse> getResponseClass() {
+		return DescribeAsrVadConfigResponse.class;
 	}
 
 }

@@ -28,20 +28,20 @@ public class ListConversationsResponseUnmarshaller {
 		
 		listConversationsResponse.setRequestId(_ctx.stringValue("ListConversationsResponse.RequestId"));
 		listConversationsResponse.setTotalCount(_ctx.longValue("ListConversationsResponse.TotalCount"));
-		listConversationsResponse.setPageNumber(_ctx.integerValue("ListConversationsResponse.PageNumber"));
 		listConversationsResponse.setPageSize(_ctx.integerValue("ListConversationsResponse.PageSize"));
+		listConversationsResponse.setPageNumber(_ctx.integerValue("ListConversationsResponse.PageNumber"));
 
 		List<Conversation> conversations = new ArrayList<Conversation>();
 		for (int i = 0; i < _ctx.lengthValue("ListConversationsResponse.Conversations.Length"); i++) {
 			Conversation conversation = new Conversation();
-			conversation.setCallingNumber(_ctx.stringValue("ListConversationsResponse.Conversations["+ i +"].CallingNumber"));
-			conversation.setBeginTime(_ctx.longValue("ListConversationsResponse.Conversations["+ i +"].BeginTime"));
 			conversation.setEndTime(_ctx.longValue("ListConversationsResponse.Conversations["+ i +"].EndTime"));
-			conversation.setTransferredToAgent(_ctx.booleanValue("ListConversationsResponse.Conversations["+ i +"].TransferredToAgent"));
-			conversation.setSkillGroupId(_ctx.stringValue("ListConversationsResponse.Conversations["+ i +"].SkillGroupId"));
-			conversation.setUserUtteranceCount(_ctx.integerValue("ListConversationsResponse.Conversations["+ i +"].UserUtteranceCount"));
-			conversation.setEffectiveAnswerCount(_ctx.integerValue("ListConversationsResponse.Conversations["+ i +"].EffectiveAnswerCount"));
+			conversation.setHasToAgent(_ctx.booleanValue("ListConversationsResponse.Conversations["+ i +"].HasToAgent"));
+			conversation.setStartTime(_ctx.longValue("ListConversationsResponse.Conversations["+ i +"].StartTime"));
+			conversation.setSkillGroup(_ctx.stringValue("ListConversationsResponse.Conversations["+ i +"].SkillGroup"));
 			conversation.setConversationId(_ctx.stringValue("ListConversationsResponse.Conversations["+ i +"].ConversationId"));
+			conversation.setCallingNumber(_ctx.stringValue("ListConversationsResponse.Conversations["+ i +"].CallingNumber"));
+			conversation.setEndReason(_ctx.integerValue("ListConversationsResponse.Conversations["+ i +"].EndReason"));
+			conversation.setRounds(_ctx.integerValue("ListConversationsResponse.Conversations["+ i +"].Rounds"));
 
 			conversations.add(conversation);
 		}

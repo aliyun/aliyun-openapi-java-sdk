@@ -34,6 +34,8 @@ public class BeginDialogueRequest extends RpcAcsRequest<BeginDialogueResponse> {
 	private String instanceId;
 
 	private String calledNumber;
+
+	private Long instanceOwnerId;
 	public BeginDialogueRequest() {
 		super("VoiceNavigator", "2018-06-12", "BeginDialogue", "voicebot");
 		setMethod(MethodType.POST);
@@ -95,6 +97,17 @@ public class BeginDialogueRequest extends RpcAcsRequest<BeginDialogueResponse> {
 		this.calledNumber = calledNumber;
 		if(calledNumber != null){
 			putQueryParameter("CalledNumber", calledNumber);
+		}
+	}
+
+	public Long getInstanceOwnerId() {
+		return this.instanceOwnerId;
+	}
+
+	public void setInstanceOwnerId(Long instanceOwnerId) {
+		this.instanceOwnerId = instanceOwnerId;
+		if(instanceOwnerId != null){
+			putQueryParameter("InstanceOwnerId", instanceOwnerId.toString());
 		}
 	}
 

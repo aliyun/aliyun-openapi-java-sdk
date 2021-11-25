@@ -1,3 +1,6 @@
+2021-11-25 Version: 1.1.2
+- Supported new features etc.
+
 2020-12-02 Version: 1.1.1
 - Update version.
 

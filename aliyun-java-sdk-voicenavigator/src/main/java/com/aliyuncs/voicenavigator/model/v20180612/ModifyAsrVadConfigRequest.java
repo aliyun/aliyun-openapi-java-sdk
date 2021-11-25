@@ -22,32 +22,19 @@ import com.aliyuncs.voicenavigator.Endpoint;
  * @author auto create
  * @version 
  */
-public class EndDialogueRequest extends RpcAcsRequest<EndDialogueResponse> {
+public class ModifyAsrVadConfigRequest extends RpcAcsRequest<ModifyAsrVadConfigResponse> {
 	   
-
-	private String conversationId;
 
 	private String instanceId;
 
-	private Long instanceOwnerId;
-	public EndDialogueRequest() {
-		super("VoiceNavigator", "2018-06-12", "EndDialogue", "voicebot");
-		setMethod(MethodType.POST);
+	private String speechNoiseThreshold;
+	public ModifyAsrVadConfigRequest() {
+		super("VoiceNavigator", "2018-06-12", "ModifyAsrVadConfig", "voicebot");
+		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getConversationId() {
-		return this.conversationId;
-	}
-
-	public void setConversationId(String conversationId) {
-		this.conversationId = conversationId;
-		if(conversationId != null){
-			putQueryParameter("ConversationId", conversationId);
-		}
 	}
 
 	public String getInstanceId() {
@@ -61,20 +48,20 @@ public class EndDialogueRequest extends RpcAcsRequest<EndDialogueResponse> {
 		}
 	}
 
-	public Long getInstanceOwnerId() {
-		return this.instanceOwnerId;
+	public String getSpeechNoiseThreshold() {
+		return this.speechNoiseThreshold;
 	}
 
-	public void setInstanceOwnerId(Long instanceOwnerId) {
-		this.instanceOwnerId = instanceOwnerId;
-		if(instanceOwnerId != null){
-			putQueryParameter("InstanceOwnerId", instanceOwnerId.toString());
+	public void setSpeechNoiseThreshold(String speechNoiseThreshold) {
+		this.speechNoiseThreshold = speechNoiseThreshold;
+		if(speechNoiseThreshold != null){
+			putQueryParameter("SpeechNoiseThreshold", speechNoiseThreshold);
 		}
 	}
 
 	@Override
-	public Class<EndDialogueResponse> getResponseClass() {
-		return EndDialogueResponse.class;
+	public Class<ModifyAsrVadConfigResponse> getResponseClass() {
+		return ModifyAsrVadConfigResponse.class;
 	}
 
 }

@@ -24,8 +24,8 @@ public class SilenceTimeoutResponseUnmarshaller {
 		
 		silenceTimeoutResponse.setRequestId(_ctx.stringValue("SilenceTimeoutResponse.RequestId"));
 		silenceTimeoutResponse.setAction(_ctx.stringValue("SilenceTimeoutResponse.Action"));
-		silenceTimeoutResponse.setActionParams(_ctx.stringValue("SilenceTimeoutResponse.ActionParams"));
 		silenceTimeoutResponse.setInterruptible(_ctx.booleanValue("SilenceTimeoutResponse.Interruptible"));
+		silenceTimeoutResponse.setActionParams(_ctx.stringValue("SilenceTimeoutResponse.ActionParams"));
 		silenceTimeoutResponse.setTextResponse(_ctx.stringValue("SilenceTimeoutResponse.TextResponse"));
 	 
 	 	return silenceTimeoutResponse;

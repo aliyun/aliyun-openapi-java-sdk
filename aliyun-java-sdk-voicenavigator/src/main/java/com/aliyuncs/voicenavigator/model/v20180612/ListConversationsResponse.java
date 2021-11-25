@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListConversationsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Long totalCount;
-
-	private Integer pageNumber;
 
 	private Integer pageSize;
 
+	private String requestId;
+
+	private Integer pageNumber;
+
 	private List<Conversation> conversations;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Long getTotalCount() {
 		return this.totalCount;
@@ -51,20 +43,28 @@ public class ListConversationsResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<Conversation> getConversations() {
@@ -77,37 +77,21 @@ public class ListConversationsResponse extends AcsResponse {
 
 	public static class Conversation {
 
-		private String callingNumber;
-
-		private Long beginTime;
-
 		private Long endTime;
 
-		private Boolean transferredToAgent;
+		private Boolean hasToAgent;
 
-		private String skillGroupId;
+		private Long startTime;
 
-		private Integer userUtteranceCount;
-
-		private Integer effectiveAnswerCount;
+		private String skillGroup;
 
 		private String conversationId;
 
-		public String getCallingNumber() {
-			return this.callingNumber;
-		}
+		private String callingNumber;
 
-		public void setCallingNumber(String callingNumber) {
-			this.callingNumber = callingNumber;
-		}
+		private Integer endReason;
 
-		public Long getBeginTime() {
-			return this.beginTime;
-		}
-
-		public void setBeginTime(Long beginTime) {
-			this.beginTime = beginTime;
-		}
+		private Integer rounds;
 
 		public Long getEndTime() {
 			return this.endTime;
@@ -117,36 +101,28 @@ public class ListConversationsResponse extends AcsResponse {
 			this.endTime = endTime;
 		}
 
-		public Boolean getTransferredToAgent() {
-			return this.transferredToAgent;
+		public Boolean getHasToAgent() {
+			return this.hasToAgent;
 		}
 
-		public void setTransferredToAgent(Boolean transferredToAgent) {
-			this.transferredToAgent = transferredToAgent;
+		public void setHasToAgent(Boolean hasToAgent) {
+			this.hasToAgent = hasToAgent;
 		}
 
-		public String getSkillGroupId() {
-			return this.skillGroupId;
+		public Long getStartTime() {
+			return this.startTime;
 		}
 
-		public void setSkillGroupId(String skillGroupId) {
-			this.skillGroupId = skillGroupId;
+		public void setStartTime(Long startTime) {
+			this.startTime = startTime;
 		}
 
-		public Integer getUserUtteranceCount() {
-			return this.userUtteranceCount;
+		public String getSkillGroup() {
+			return this.skillGroup;
 		}
 
-		public void setUserUtteranceCount(Integer userUtteranceCount) {
-			this.userUtteranceCount = userUtteranceCount;
-		}
-
-		public Integer getEffectiveAnswerCount() {
-			return this.effectiveAnswerCount;
-		}
-
-		public void setEffectiveAnswerCount(Integer effectiveAnswerCount) {
-			this.effectiveAnswerCount = effectiveAnswerCount;
+		public void setSkillGroup(String skillGroup) {
+			this.skillGroup = skillGroup;
 		}
 
 		public String getConversationId() {
@@ -155,6 +131,30 @@ public class ListConversationsResponse extends AcsResponse {
 
 		public void setConversationId(String conversationId) {
 			this.conversationId = conversationId;
+		}
+
+		public String getCallingNumber() {
+			return this.callingNumber;
+		}
+
+		public void setCallingNumber(String callingNumber) {
+			this.callingNumber = callingNumber;
+		}
+
+		public Integer getEndReason() {
+			return this.endReason;
+		}
+
+		public void setEndReason(Integer endReason) {
+			this.endReason = endReason;
+		}
+
+		public Integer getRounds() {
+			return this.rounds;
+		}
+
+		public void setRounds(Integer rounds) {
+			this.rounds = rounds;
 		}
 	}
 

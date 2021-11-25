@@ -23,10 +23,10 @@ public class CollectedNumberResponseUnmarshaller {
 	public static CollectedNumberResponse unmarshall(CollectedNumberResponse collectedNumberResponse, UnmarshallerContext _ctx) {
 		
 		collectedNumberResponse.setRequestId(_ctx.stringValue("CollectedNumberResponse.RequestId"));
-		collectedNumberResponse.setTextResponse(_ctx.stringValue("CollectedNumberResponse.TextResponse"));
-		collectedNumberResponse.setInterruptible(_ctx.booleanValue("CollectedNumberResponse.Interruptible"));
 		collectedNumberResponse.setAction(_ctx.stringValue("CollectedNumberResponse.Action"));
+		collectedNumberResponse.setInterruptible(_ctx.booleanValue("CollectedNumberResponse.Interruptible"));
 		collectedNumberResponse.setActionParams(_ctx.stringValue("CollectedNumberResponse.ActionParams"));
+		collectedNumberResponse.setTextResponse(_ctx.stringValue("CollectedNumberResponse.TextResponse"));
 	 
 	 	return collectedNumberResponse;
 	}

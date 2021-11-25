@@ -14,20 +14,16 @@
 
 package com.aliyuncs.voicenavigator.transform.v20180612;
 
-import com.aliyuncs.voicenavigator.model.v20180612.DialogueResponse;
+import com.aliyuncs.voicenavigator.model.v20180612.ModifyAsrVadConfigResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class DialogueResponseUnmarshaller {
+public class ModifyAsrVadConfigResponseUnmarshaller {
 
-	public static DialogueResponse unmarshall(DialogueResponse dialogueResponse, UnmarshallerContext _ctx) {
+	public static ModifyAsrVadConfigResponse unmarshall(ModifyAsrVadConfigResponse modifyAsrVadConfigResponse, UnmarshallerContext _ctx) {
 		
-		dialogueResponse.setRequestId(_ctx.stringValue("DialogueResponse.RequestId"));
-		dialogueResponse.setAction(_ctx.stringValue("DialogueResponse.Action"));
-		dialogueResponse.setInterruptible(_ctx.booleanValue("DialogueResponse.Interruptible"));
-		dialogueResponse.setActionParams(_ctx.stringValue("DialogueResponse.ActionParams"));
-		dialogueResponse.setTextResponse(_ctx.stringValue("DialogueResponse.TextResponse"));
+		modifyAsrVadConfigResponse.setRequestId(_ctx.stringValue("ModifyAsrVadConfigResponse.RequestId"));
 	 
-	 	return dialogueResponse;
+	 	return modifyAsrVadConfigResponse;
 	}
 }

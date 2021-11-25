@@ -15,22 +15,26 @@
 package com.aliyuncs.voicenavigator.model.v20180612;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.voicenavigator.transform.v20180612.DescribeTTSConfigResponseUnmarshaller;
+import com.aliyuncs.voicenavigator.transform.v20180612.DescribeAsrVadConfigResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeTTSConfigResponse extends AcsResponse {
+public class DescribeAsrVadConfigResponse extends AcsResponse {
+
+	private String speechNoiseThreshold;
 
 	private String requestId;
 
-	private Integer volume;
+	public String getSpeechNoiseThreshold() {
+		return this.speechNoiseThreshold;
+	}
 
-	private String voice;
-
-	private Integer speechRate;
+	public void setSpeechNoiseThreshold(String speechNoiseThreshold) {
+		this.speechNoiseThreshold = speechNoiseThreshold;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -40,33 +44,9 @@ public class DescribeTTSConfigResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Integer getVolume() {
-		return this.volume;
-	}
-
-	public void setVolume(Integer volume) {
-		this.volume = volume;
-	}
-
-	public String getVoice() {
-		return this.voice;
-	}
-
-	public void setVoice(String voice) {
-		this.voice = voice;
-	}
-
-	public Integer getSpeechRate() {
-		return this.speechRate;
-	}
-
-	public void setSpeechRate(Integer speechRate) {
-		this.speechRate = speechRate;
-	}
-
 	@Override
-	public DescribeTTSConfigResponse getInstance(UnmarshallerContext context) {
-		return	DescribeTTSConfigResponseUnmarshaller.unmarshall(this, context);
+	public DescribeAsrVadConfigResponse getInstance(UnmarshallerContext context) {
+		return	DescribeAsrVadConfigResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override
