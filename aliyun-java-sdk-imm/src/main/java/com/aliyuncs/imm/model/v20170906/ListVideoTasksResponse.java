@@ -57,27 +57,35 @@ public class ListVideoTasksResponse extends AcsResponse {
 
 	public static class TasksItem {
 
+		private String endTime;
+
 		private String status;
 
-		private String taskId;
+		private String startTime;
 
 		private String taskType;
+
+		private Integer progress;
+
+		private String notifyEndpoint;
+
+		private String errorMessage;
 
 		private String parameters;
 
 		private String result;
 
-		private String startTime;
-
-		private String endTime;
-
-		private String errorMessage;
-
-		private String notifyEndpoint;
+		private String taskId;
 
 		private String notifyTopicName;
 
-		private Integer progress;
+		public String getEndTime() {
+			return this.endTime;
+		}
+
+		public void setEndTime(String endTime) {
+			this.endTime = endTime;
+		}
 
 		public String getStatus() {
 			return this.status;
@@ -87,12 +95,12 @@ public class ListVideoTasksResponse extends AcsResponse {
 			this.status = status;
 		}
 
-		public String getTaskId() {
-			return this.taskId;
+		public String getStartTime() {
+			return this.startTime;
 		}
 
-		public void setTaskId(String taskId) {
-			this.taskId = taskId;
+		public void setStartTime(String startTime) {
+			this.startTime = startTime;
 		}
 
 		public String getTaskType() {
@@ -101,6 +109,30 @@ public class ListVideoTasksResponse extends AcsResponse {
 
 		public void setTaskType(String taskType) {
 			this.taskType = taskType;
+		}
+
+		public Integer getProgress() {
+			return this.progress;
+		}
+
+		public void setProgress(Integer progress) {
+			this.progress = progress;
+		}
+
+		public String getNotifyEndpoint() {
+			return this.notifyEndpoint;
+		}
+
+		public void setNotifyEndpoint(String notifyEndpoint) {
+			this.notifyEndpoint = notifyEndpoint;
+		}
+
+		public String getErrorMessage() {
+			return this.errorMessage;
+		}
+
+		public void setErrorMessage(String errorMessage) {
+			this.errorMessage = errorMessage;
 		}
 
 		public String getParameters() {
@@ -119,36 +151,12 @@ public class ListVideoTasksResponse extends AcsResponse {
 			this.result = result;
 		}
 
-		public String getStartTime() {
-			return this.startTime;
+		public String getTaskId() {
+			return this.taskId;
 		}
 
-		public void setStartTime(String startTime) {
-			this.startTime = startTime;
-		}
-
-		public String getEndTime() {
-			return this.endTime;
-		}
-
-		public void setEndTime(String endTime) {
-			this.endTime = endTime;
-		}
-
-		public String getErrorMessage() {
-			return this.errorMessage;
-		}
-
-		public void setErrorMessage(String errorMessage) {
-			this.errorMessage = errorMessage;
-		}
-
-		public String getNotifyEndpoint() {
-			return this.notifyEndpoint;
-		}
-
-		public void setNotifyEndpoint(String notifyEndpoint) {
-			this.notifyEndpoint = notifyEndpoint;
+		public void setTaskId(String taskId) {
+			this.taskId = taskId;
 		}
 
 		public String getNotifyTopicName() {
@@ -157,14 +165,6 @@ public class ListVideoTasksResponse extends AcsResponse {
 
 		public void setNotifyTopicName(String notifyTopicName) {
 			this.notifyTopicName = notifyTopicName;
-		}
-
-		public Integer getProgress() {
-			return this.progress;
-		}
-
-		public void setProgress(Integer progress) {
-			this.progress = progress;
 		}
 	}
 

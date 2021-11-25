@@ -32,9 +32,9 @@ public class CreateOfficeConversionTaskResponse extends AcsResponse {
 
 	private Integer percent;
 
-	private String tgtLoc;
-
 	private String createTime;
+
+	private String tgtLoc;
 
 	public String getStatus() {
 		return this.status;
@@ -68,20 +68,20 @@ public class CreateOfficeConversionTaskResponse extends AcsResponse {
 		this.percent = percent;
 	}
 
-	public String getTgtLoc() {
-		return this.tgtLoc;
-	}
-
-	public void setTgtLoc(String tgtLoc) {
-		this.tgtLoc = tgtLoc;
-	}
-
 	public String getCreateTime() {
 		return this.createTime;
 	}
 
 	public void setCreateTime(String createTime) {
 		this.createTime = createTime;
+	}
+
+	public String getTgtLoc() {
+		return this.tgtLoc;
+	}
+
+	public void setTgtLoc(String tgtLoc) {
+		this.tgtLoc = tgtLoc;
 	}
 
 	@Override

@@ -79,61 +79,29 @@ public class GetMediaMetaResponse extends AcsResponse {
 
 		public static class MediaFormat {
 
-			private String size;
-
-			private Integer numberStreams;
-
-			private String formatLongName;
-
-			private String startTime;
-
 			private String creationTime;
-
-			private String formatName;
-
-			private String duration;
-
-			private String bitrate;
-
-			private String location;
 
 			private Integer numberPrograms;
 
-			private Address address;
+			private Integer numberStreams;
+
+			private String bitrate;
+
+			private String startTime;
+
+			private String size;
+
+			private String formatLongName;
+
+			private String duration;
+
+			private String formatName;
+
+			private String location;
 
 			private Tag tag;
 
-			public String getSize() {
-				return this.size;
-			}
-
-			public void setSize(String size) {
-				this.size = size;
-			}
-
-			public Integer getNumberStreams() {
-				return this.numberStreams;
-			}
-
-			public void setNumberStreams(Integer numberStreams) {
-				this.numberStreams = numberStreams;
-			}
-
-			public String getFormatLongName() {
-				return this.formatLongName;
-			}
-
-			public void setFormatLongName(String formatLongName) {
-				this.formatLongName = formatLongName;
-			}
-
-			public String getStartTime() {
-				return this.startTime;
-			}
-
-			public void setStartTime(String startTime) {
-				this.startTime = startTime;
-			}
+			private Address address;
 
 			public String getCreationTime() {
 				return this.creationTime;
@@ -141,38 +109,6 @@ public class GetMediaMetaResponse extends AcsResponse {
 
 			public void setCreationTime(String creationTime) {
 				this.creationTime = creationTime;
-			}
-
-			public String getFormatName() {
-				return this.formatName;
-			}
-
-			public void setFormatName(String formatName) {
-				this.formatName = formatName;
-			}
-
-			public String getDuration() {
-				return this.duration;
-			}
-
-			public void setDuration(String duration) {
-				this.duration = duration;
-			}
-
-			public String getBitrate() {
-				return this.bitrate;
-			}
-
-			public void setBitrate(String bitrate) {
-				this.bitrate = bitrate;
-			}
-
-			public String getLocation() {
-				return this.location;
-			}
-
-			public void setLocation(String location) {
-				this.location = location;
 			}
 
 			public Integer getNumberPrograms() {
@@ -183,12 +119,68 @@ public class GetMediaMetaResponse extends AcsResponse {
 				this.numberPrograms = numberPrograms;
 			}
 
-			public Address getAddress() {
-				return this.address;
+			public Integer getNumberStreams() {
+				return this.numberStreams;
 			}
 
-			public void setAddress(Address address) {
-				this.address = address;
+			public void setNumberStreams(Integer numberStreams) {
+				this.numberStreams = numberStreams;
+			}
+
+			public String getBitrate() {
+				return this.bitrate;
+			}
+
+			public void setBitrate(String bitrate) {
+				this.bitrate = bitrate;
+			}
+
+			public String getStartTime() {
+				return this.startTime;
+			}
+
+			public void setStartTime(String startTime) {
+				this.startTime = startTime;
+			}
+
+			public String getSize() {
+				return this.size;
+			}
+
+			public void setSize(String size) {
+				this.size = size;
+			}
+
+			public String getFormatLongName() {
+				return this.formatLongName;
+			}
+
+			public void setFormatLongName(String formatLongName) {
+				this.formatLongName = formatLongName;
+			}
+
+			public String getDuration() {
+				return this.duration;
+			}
+
+			public void setDuration(String duration) {
+				this.duration = duration;
+			}
+
+			public String getFormatName() {
+				return this.formatName;
+			}
+
+			public void setFormatName(String formatName) {
+				this.formatName = formatName;
+			}
+
+			public String getLocation() {
+				return this.location;
+			}
+
+			public void setLocation(String location) {
+				this.location = location;
 			}
 
 			public Tag getTag() {
@@ -199,17 +191,108 @@ public class GetMediaMetaResponse extends AcsResponse {
 				this.tag = tag;
 			}
 
+			public Address getAddress() {
+				return this.address;
+			}
+
+			public void setAddress(Address address) {
+				this.address = address;
+			}
+
+			public static class Tag {
+
+				private String creationTime;
+
+				private String album;
+
+				private String albumArtist;
+
+				private String performer;
+
+				private String composer;
+
+				private String artist;
+
+				private String title;
+
+				private String language;
+
+				public String getCreationTime() {
+					return this.creationTime;
+				}
+
+				public void setCreationTime(String creationTime) {
+					this.creationTime = creationTime;
+				}
+
+				public String getAlbum() {
+					return this.album;
+				}
+
+				public void setAlbum(String album) {
+					this.album = album;
+				}
+
+				public String getAlbumArtist() {
+					return this.albumArtist;
+				}
+
+				public void setAlbumArtist(String albumArtist) {
+					this.albumArtist = albumArtist;
+				}
+
+				public String getPerformer() {
+					return this.performer;
+				}
+
+				public void setPerformer(String performer) {
+					this.performer = performer;
+				}
+
+				public String getComposer() {
+					return this.composer;
+				}
+
+				public void setComposer(String composer) {
+					this.composer = composer;
+				}
+
+				public String getArtist() {
+					return this.artist;
+				}
+
+				public void setArtist(String artist) {
+					this.artist = artist;
+				}
+
+				public String getTitle() {
+					return this.title;
+				}
+
+				public void setTitle(String title) {
+					this.title = title;
+				}
+
+				public String getLanguage() {
+					return this.language;
+				}
+
+				public void setLanguage(String language) {
+					this.language = language;
+				}
+			}
+
 			public static class Address {
 
 				private String township;
+
+				private String district;
 
 				private String addressLine;
 
 				private String country;
 
 				private String city;
-
-				private String district;
 
 				private String province;
 
@@ -219,6 +302,14 @@ public class GetMediaMetaResponse extends AcsResponse {
 
 				public void setTownship(String township) {
 					this.township = township;
+				}
+
+				public String getDistrict() {
+					return this.district;
+				}
+
+				public void setDistrict(String district) {
+					this.district = district;
 				}
 
 				public String getAddressLine() {
@@ -245,14 +336,6 @@ public class GetMediaMetaResponse extends AcsResponse {
 					this.city = city;
 				}
 
-				public String getDistrict() {
-					return this.district;
-				}
-
-				public void setDistrict(String district) {
-					this.district = district;
-				}
-
 				public String getProvince() {
 					return this.province;
 				}
@@ -261,98 +344,15 @@ public class GetMediaMetaResponse extends AcsResponse {
 					this.province = province;
 				}
 			}
-
-			public static class Tag {
-
-				private String artist;
-
-				private String composer;
-
-				private String performer;
-
-				private String language;
-
-				private String creationTime;
-
-				private String title;
-
-				private String album;
-
-				private String albumArtist;
-
-				public String getArtist() {
-					return this.artist;
-				}
-
-				public void setArtist(String artist) {
-					this.artist = artist;
-				}
-
-				public String getComposer() {
-					return this.composer;
-				}
-
-				public void setComposer(String composer) {
-					this.composer = composer;
-				}
-
-				public String getPerformer() {
-					return this.performer;
-				}
-
-				public void setPerformer(String performer) {
-					this.performer = performer;
-				}
-
-				public String getLanguage() {
-					return this.language;
-				}
-
-				public void setLanguage(String language) {
-					this.language = language;
-				}
-
-				public String getCreationTime() {
-					return this.creationTime;
-				}
-
-				public void setCreationTime(String creationTime) {
-					this.creationTime = creationTime;
-				}
-
-				public String getTitle() {
-					return this.title;
-				}
-
-				public void setTitle(String title) {
-					this.title = title;
-				}
-
-				public String getAlbum() {
-					return this.album;
-				}
-
-				public void setAlbum(String album) {
-					this.album = album;
-				}
-
-				public String getAlbumArtist() {
-					return this.albumArtist;
-				}
-
-				public void setAlbumArtist(String albumArtist) {
-					this.albumArtist = albumArtist;
-				}
-			}
 		}
 
 		public static class MediaStreams {
 
 			private List<VideoStream> videoStreams;
 
-			private List<SubtitleStream> subtitleStreams;
-
 			private List<AudioStream> audioStreams;
+
+			private List<SubtitleStream> subtitleStreams;
 
 			public List<VideoStream> getVideoStreams() {
 				return this.videoStreams;
@@ -360,14 +360,6 @@ public class GetMediaMetaResponse extends AcsResponse {
 
 			public void setVideoStreams(List<VideoStream> videoStreams) {
 				this.videoStreams = videoStreams;
-			}
-
-			public List<SubtitleStream> getSubtitleStreams() {
-				return this.subtitleStreams;
-			}
-
-			public void setSubtitleStreams(List<SubtitleStream> subtitleStreams) {
-				this.subtitleStreams = subtitleStreams;
 			}
 
 			public List<AudioStream> getAudioStreams() {
@@ -378,109 +370,61 @@ public class GetMediaMetaResponse extends AcsResponse {
 				this.audioStreams = audioStreams;
 			}
 
+			public List<SubtitleStream> getSubtitleStreams() {
+				return this.subtitleStreams;
+			}
+
+			public void setSubtitleStreams(List<SubtitleStream> subtitleStreams) {
+				this.subtitleStreams = subtitleStreams;
+			}
+
 			public static class VideoStream {
-
-				private String codecTag;
-
-				private String frames;
-
-				private String codecTimeBase;
-
-				private String rotate;
-
-				private String sampleAspectRatio;
-
-				private String startTime;
-
-				private String duration;
 
 				private Integer index;
 
-				private String codecName;
-
-				private String bitrate;
-
-				private String profile;
-
-				private String displayAspectRatio;
-
-				private Integer hasBFrames;
-
-				private String codecTagString;
-
-				private String averageFrameRate;
-
-				private String language;
-
 				private String codecLongName;
-
-				private String pixelFormat;
-
-				private Integer level;
 
 				private Integer height;
 
+				private String sampleAspectRatio;
+
+				private String averageFrameRate;
+
+				private String bitrate;
+
+				private String rotate;
+
+				private String codecTagString;
+
+				private String language;
+
+				private Integer hasBFrames;
+
 				private String frameRrate;
+
+				private String profile;
+
+				private String startTime;
+
+				private String frames;
+
+				private String codecName;
 
 				private Integer width;
 
+				private String duration;
+
+				private String displayAspectRatio;
+
+				private String codecTag;
+
+				private String codecTimeBase;
+
 				private String timeBase;
 
-				public String getCodecTag() {
-					return this.codecTag;
-				}
+				private Integer level;
 
-				public void setCodecTag(String codecTag) {
-					this.codecTag = codecTag;
-				}
-
-				public String getFrames() {
-					return this.frames;
-				}
-
-				public void setFrames(String frames) {
-					this.frames = frames;
-				}
-
-				public String getCodecTimeBase() {
-					return this.codecTimeBase;
-				}
-
-				public void setCodecTimeBase(String codecTimeBase) {
-					this.codecTimeBase = codecTimeBase;
-				}
-
-				public String getRotate() {
-					return this.rotate;
-				}
-
-				public void setRotate(String rotate) {
-					this.rotate = rotate;
-				}
-
-				public String getSampleAspectRatio() {
-					return this.sampleAspectRatio;
-				}
-
-				public void setSampleAspectRatio(String sampleAspectRatio) {
-					this.sampleAspectRatio = sampleAspectRatio;
-				}
-
-				public String getStartTime() {
-					return this.startTime;
-				}
-
-				public void setStartTime(String startTime) {
-					this.startTime = startTime;
-				}
-
-				public String getDuration() {
-					return this.duration;
-				}
-
-				public void setDuration(String duration) {
-					this.duration = duration;
-				}
+				private String pixelFormat;
 
 				public Integer getIndex() {
 					return this.index;
@@ -488,70 +432,6 @@ public class GetMediaMetaResponse extends AcsResponse {
 
 				public void setIndex(Integer index) {
 					this.index = index;
-				}
-
-				public String getCodecName() {
-					return this.codecName;
-				}
-
-				public void setCodecName(String codecName) {
-					this.codecName = codecName;
-				}
-
-				public String getBitrate() {
-					return this.bitrate;
-				}
-
-				public void setBitrate(String bitrate) {
-					this.bitrate = bitrate;
-				}
-
-				public String getProfile() {
-					return this.profile;
-				}
-
-				public void setProfile(String profile) {
-					this.profile = profile;
-				}
-
-				public String getDisplayAspectRatio() {
-					return this.displayAspectRatio;
-				}
-
-				public void setDisplayAspectRatio(String displayAspectRatio) {
-					this.displayAspectRatio = displayAspectRatio;
-				}
-
-				public Integer getHasBFrames() {
-					return this.hasBFrames;
-				}
-
-				public void setHasBFrames(Integer hasBFrames) {
-					this.hasBFrames = hasBFrames;
-				}
-
-				public String getCodecTagString() {
-					return this.codecTagString;
-				}
-
-				public void setCodecTagString(String codecTagString) {
-					this.codecTagString = codecTagString;
-				}
-
-				public String getAverageFrameRate() {
-					return this.averageFrameRate;
-				}
-
-				public void setAverageFrameRate(String averageFrameRate) {
-					this.averageFrameRate = averageFrameRate;
-				}
-
-				public String getLanguage() {
-					return this.language;
-				}
-
-				public void setLanguage(String language) {
-					this.language = language;
 				}
 
 				public String getCodecLongName() {
@@ -562,28 +442,68 @@ public class GetMediaMetaResponse extends AcsResponse {
 					this.codecLongName = codecLongName;
 				}
 
-				public String getPixelFormat() {
-					return this.pixelFormat;
-				}
-
-				public void setPixelFormat(String pixelFormat) {
-					this.pixelFormat = pixelFormat;
-				}
-
-				public Integer getLevel() {
-					return this.level;
-				}
-
-				public void setLevel(Integer level) {
-					this.level = level;
-				}
-
 				public Integer getHeight() {
 					return this.height;
 				}
 
 				public void setHeight(Integer height) {
 					this.height = height;
+				}
+
+				public String getSampleAspectRatio() {
+					return this.sampleAspectRatio;
+				}
+
+				public void setSampleAspectRatio(String sampleAspectRatio) {
+					this.sampleAspectRatio = sampleAspectRatio;
+				}
+
+				public String getAverageFrameRate() {
+					return this.averageFrameRate;
+				}
+
+				public void setAverageFrameRate(String averageFrameRate) {
+					this.averageFrameRate = averageFrameRate;
+				}
+
+				public String getBitrate() {
+					return this.bitrate;
+				}
+
+				public void setBitrate(String bitrate) {
+					this.bitrate = bitrate;
+				}
+
+				public String getRotate() {
+					return this.rotate;
+				}
+
+				public void setRotate(String rotate) {
+					this.rotate = rotate;
+				}
+
+				public String getCodecTagString() {
+					return this.codecTagString;
+				}
+
+				public void setCodecTagString(String codecTagString) {
+					this.codecTagString = codecTagString;
+				}
+
+				public String getLanguage() {
+					return this.language;
+				}
+
+				public void setLanguage(String language) {
+					this.language = language;
+				}
+
+				public Integer getHasBFrames() {
+					return this.hasBFrames;
+				}
+
+				public void setHasBFrames(Integer hasBFrames) {
+					this.hasBFrames = hasBFrames;
 				}
 
 				public String getFrameRrate() {
@@ -594,12 +514,255 @@ public class GetMediaMetaResponse extends AcsResponse {
 					this.frameRrate = frameRrate;
 				}
 
+				public String getProfile() {
+					return this.profile;
+				}
+
+				public void setProfile(String profile) {
+					this.profile = profile;
+				}
+
+				public String getStartTime() {
+					return this.startTime;
+				}
+
+				public void setStartTime(String startTime) {
+					this.startTime = startTime;
+				}
+
+				public String getFrames() {
+					return this.frames;
+				}
+
+				public void setFrames(String frames) {
+					this.frames = frames;
+				}
+
+				public String getCodecName() {
+					return this.codecName;
+				}
+
+				public void setCodecName(String codecName) {
+					this.codecName = codecName;
+				}
+
 				public Integer getWidth() {
 					return this.width;
 				}
 
 				public void setWidth(Integer width) {
 					this.width = width;
+				}
+
+				public String getDuration() {
+					return this.duration;
+				}
+
+				public void setDuration(String duration) {
+					this.duration = duration;
+				}
+
+				public String getDisplayAspectRatio() {
+					return this.displayAspectRatio;
+				}
+
+				public void setDisplayAspectRatio(String displayAspectRatio) {
+					this.displayAspectRatio = displayAspectRatio;
+				}
+
+				public String getCodecTag() {
+					return this.codecTag;
+				}
+
+				public void setCodecTag(String codecTag) {
+					this.codecTag = codecTag;
+				}
+
+				public String getCodecTimeBase() {
+					return this.codecTimeBase;
+				}
+
+				public void setCodecTimeBase(String codecTimeBase) {
+					this.codecTimeBase = codecTimeBase;
+				}
+
+				public String getTimeBase() {
+					return this.timeBase;
+				}
+
+				public void setTimeBase(String timeBase) {
+					this.timeBase = timeBase;
+				}
+
+				public Integer getLevel() {
+					return this.level;
+				}
+
+				public void setLevel(Integer level) {
+					this.level = level;
+				}
+
+				public String getPixelFormat() {
+					return this.pixelFormat;
+				}
+
+				public void setPixelFormat(String pixelFormat) {
+					this.pixelFormat = pixelFormat;
+				}
+			}
+
+			public static class AudioStream {
+
+				private Integer index;
+
+				private String sampleRate;
+
+				private String channelLayout;
+
+				private String codecLongName;
+
+				private Integer channels;
+
+				private String bitrate;
+
+				private String codecTagString;
+
+				private String language;
+
+				private String startTime;
+
+				private String sampleFormat;
+
+				private String frames;
+
+				private String codecName;
+
+				private String duration;
+
+				private String codecTag;
+
+				private String codecTimeBase;
+
+				private String timeBase;
+
+				public Integer getIndex() {
+					return this.index;
+				}
+
+				public void setIndex(Integer index) {
+					this.index = index;
+				}
+
+				public String getSampleRate() {
+					return this.sampleRate;
+				}
+
+				public void setSampleRate(String sampleRate) {
+					this.sampleRate = sampleRate;
+				}
+
+				public String getChannelLayout() {
+					return this.channelLayout;
+				}
+
+				public void setChannelLayout(String channelLayout) {
+					this.channelLayout = channelLayout;
+				}
+
+				public String getCodecLongName() {
+					return this.codecLongName;
+				}
+
+				public void setCodecLongName(String codecLongName) {
+					this.codecLongName = codecLongName;
+				}
+
+				public Integer getChannels() {
+					return this.channels;
+				}
+
+				public void setChannels(Integer channels) {
+					this.channels = channels;
+				}
+
+				public String getBitrate() {
+					return this.bitrate;
+				}
+
+				public void setBitrate(String bitrate) {
+					this.bitrate = bitrate;
+				}
+
+				public String getCodecTagString() {
+					return this.codecTagString;
+				}
+
+				public void setCodecTagString(String codecTagString) {
+					this.codecTagString = codecTagString;
+				}
+
+				public String getLanguage() {
+					return this.language;
+				}
+
+				public void setLanguage(String language) {
+					this.language = language;
+				}
+
+				public String getStartTime() {
+					return this.startTime;
+				}
+
+				public void setStartTime(String startTime) {
+					this.startTime = startTime;
+				}
+
+				public String getSampleFormat() {
+					return this.sampleFormat;
+				}
+
+				public void setSampleFormat(String sampleFormat) {
+					this.sampleFormat = sampleFormat;
+				}
+
+				public String getFrames() {
+					return this.frames;
+				}
+
+				public void setFrames(String frames) {
+					this.frames = frames;
+				}
+
+				public String getCodecName() {
+					return this.codecName;
+				}
+
+				public void setCodecName(String codecName) {
+					this.codecName = codecName;
+				}
+
+				public String getDuration() {
+					return this.duration;
+				}
+
+				public void setDuration(String duration) {
+					this.duration = duration;
+				}
+
+				public String getCodecTag() {
+					return this.codecTag;
+				}
+
+				public void setCodecTag(String codecTag) {
+					this.codecTag = codecTag;
+				}
+
+				public String getCodecTimeBase() {
+					return this.codecTimeBase;
+				}
+
+				public void setCodecTimeBase(String codecTimeBase) {
+					this.codecTimeBase = codecTimeBase;
 				}
 
 				public String getTimeBase() {
@@ -613,108 +776,9 @@ public class GetMediaMetaResponse extends AcsResponse {
 
 			public static class SubtitleStream {
 
-				private String language;
-
 				private Integer index;
 
-				public String getLanguage() {
-					return this.language;
-				}
-
-				public void setLanguage(String language) {
-					this.language = language;
-				}
-
-				public Integer getIndex() {
-					return this.index;
-				}
-
-				public void setIndex(Integer index) {
-					this.index = index;
-				}
-			}
-
-			public static class AudioStream {
-
-				private String codecTag;
-
-				private String frames;
-
-				private String codecTimeBase;
-
-				private String channelLayout;
-
-				private String startTime;
-
-				private String duration;
-
-				private Integer index;
-
-				private String codecName;
-
-				private String bitrate;
-
-				private String sampleFormat;
-
-				private Integer channels;
-
-				private String codecTagString;
-
-				private String sampleRate;
-
 				private String language;
-
-				private String codecLongName;
-
-				private String timeBase;
-
-				public String getCodecTag() {
-					return this.codecTag;
-				}
-
-				public void setCodecTag(String codecTag) {
-					this.codecTag = codecTag;
-				}
-
-				public String getFrames() {
-					return this.frames;
-				}
-
-				public void setFrames(String frames) {
-					this.frames = frames;
-				}
-
-				public String getCodecTimeBase() {
-					return this.codecTimeBase;
-				}
-
-				public void setCodecTimeBase(String codecTimeBase) {
-					this.codecTimeBase = codecTimeBase;
-				}
-
-				public String getChannelLayout() {
-					return this.channelLayout;
-				}
-
-				public void setChannelLayout(String channelLayout) {
-					this.channelLayout = channelLayout;
-				}
-
-				public String getStartTime() {
-					return this.startTime;
-				}
-
-				public void setStartTime(String startTime) {
-					this.startTime = startTime;
-				}
-
-				public String getDuration() {
-					return this.duration;
-				}
-
-				public void setDuration(String duration) {
-					this.duration = duration;
-				}
 
 				public Integer getIndex() {
 					return this.index;
@@ -724,76 +788,12 @@ public class GetMediaMetaResponse extends AcsResponse {
 					this.index = index;
 				}
 
-				public String getCodecName() {
-					return this.codecName;
-				}
-
-				public void setCodecName(String codecName) {
-					this.codecName = codecName;
-				}
-
-				public String getBitrate() {
-					return this.bitrate;
-				}
-
-				public void setBitrate(String bitrate) {
-					this.bitrate = bitrate;
-				}
-
-				public String getSampleFormat() {
-					return this.sampleFormat;
-				}
-
-				public void setSampleFormat(String sampleFormat) {
-					this.sampleFormat = sampleFormat;
-				}
-
-				public Integer getChannels() {
-					return this.channels;
-				}
-
-				public void setChannels(Integer channels) {
-					this.channels = channels;
-				}
-
-				public String getCodecTagString() {
-					return this.codecTagString;
-				}
-
-				public void setCodecTagString(String codecTagString) {
-					this.codecTagString = codecTagString;
-				}
-
-				public String getSampleRate() {
-					return this.sampleRate;
-				}
-
-				public void setSampleRate(String sampleRate) {
-					this.sampleRate = sampleRate;
-				}
-
 				public String getLanguage() {
 					return this.language;
 				}
 
 				public void setLanguage(String language) {
 					this.language = language;
-				}
-
-				public String getCodecLongName() {
-					return this.codecLongName;
-				}
-
-				public void setCodecLongName(String codecLongName) {
-					this.codecLongName = codecLongName;
-				}
-
-				public String getTimeBase() {
-					return this.timeBase;
-				}
-
-				public void setTimeBase(String timeBase) {
-					this.timeBase = timeBase;
 				}
 			}
 		}

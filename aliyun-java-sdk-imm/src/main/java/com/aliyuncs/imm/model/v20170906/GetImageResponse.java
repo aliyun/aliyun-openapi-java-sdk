@@ -27,9 +27,9 @@ public class GetImageResponse extends AcsResponse {
 
 	private String modifyTime;
 
-	private String sourceUri;
-
 	private String sourceType;
+
+	private String sourceUri;
 
 	private String facesFailReason;
 
@@ -37,23 +37,23 @@ public class GetImageResponse extends AcsResponse {
 
 	private String croppingSuggestionFailReason;
 
-	private String remarksA;
-
 	private String addressFailReason;
 
-	private String remarksB;
+	private String remarksA;
 
 	private String addressModifyTime;
 
-	private String imageFormat;
+	private String remarksB;
 
-	private String remarksArrayB;
+	private String imageFormat;
 
 	private String tagsFailReason;
 
-	private String exif;
+	private String remarksArrayB;
 
 	private String facesModifyTime;
+
+	private String exif;
 
 	private String remarksC;
 
@@ -61,9 +61,9 @@ public class GetImageResponse extends AcsResponse {
 
 	private Integer imageWidth;
 
-	private String sourcePosition;
-
 	private String remarksArrayA;
+
+	private String sourcePosition;
 
 	private String addressStatus;
 
@@ -73,45 +73,45 @@ public class GetImageResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String tagsModifyTime;
+	private String createTime;
 
 	private String externalId;
 
-	private String createTime;
+	private String tagsModifyTime;
 
 	private String imageQualityFailReason;
 
-	private String imageUri;
-
 	private String orientation;
+
+	private String imageUri;
 
 	private String oCRStatus;
 
 	private String oCRModifyTime;
 
-	private String croppingSuggestionModifyTime;
-
 	private String imageTime;
 
-	private String tagsStatus;
+	private String croppingSuggestionModifyTime;
+
+	private Integer imageHeight;
 
 	private String imageQualityStatus;
 
-	private Integer imageHeight;
+	private String tagsStatus;
 
 	private String oCRFailReason;
 
 	private String setId;
 
-	private String location;
-
 	private Integer fileSize;
 
-	private List<CroppingSuggestionItem> croppingSuggestion;
+	private String location;
+
+	private List<TagsItem> tags;
 
 	private List<FacesItem> faces;
 
-	private List<TagsItem> tags;
+	private List<CroppingSuggestionItem> croppingSuggestion;
 
 	private List<OCRItem> oCR;
 
@@ -127,20 +127,20 @@ public class GetImageResponse extends AcsResponse {
 		this.modifyTime = modifyTime;
 	}
 
-	public String getSourceUri() {
-		return this.sourceUri;
-	}
-
-	public void setSourceUri(String sourceUri) {
-		this.sourceUri = sourceUri;
-	}
-
 	public String getSourceType() {
 		return this.sourceType;
 	}
 
 	public void setSourceType(String sourceType) {
 		this.sourceType = sourceType;
+	}
+
+	public String getSourceUri() {
+		return this.sourceUri;
+	}
+
+	public void setSourceUri(String sourceUri) {
+		this.sourceUri = sourceUri;
 	}
 
 	public String getFacesFailReason() {
@@ -167,14 +167,6 @@ public class GetImageResponse extends AcsResponse {
 		this.croppingSuggestionFailReason = croppingSuggestionFailReason;
 	}
 
-	public String getRemarksA() {
-		return this.remarksA;
-	}
-
-	public void setRemarksA(String remarksA) {
-		this.remarksA = remarksA;
-	}
-
 	public String getAddressFailReason() {
 		return this.addressFailReason;
 	}
@@ -183,12 +175,12 @@ public class GetImageResponse extends AcsResponse {
 		this.addressFailReason = addressFailReason;
 	}
 
-	public String getRemarksB() {
-		return this.remarksB;
+	public String getRemarksA() {
+		return this.remarksA;
 	}
 
-	public void setRemarksB(String remarksB) {
-		this.remarksB = remarksB;
+	public void setRemarksA(String remarksA) {
+		this.remarksA = remarksA;
 	}
 
 	public String getAddressModifyTime() {
@@ -199,20 +191,20 @@ public class GetImageResponse extends AcsResponse {
 		this.addressModifyTime = addressModifyTime;
 	}
 
+	public String getRemarksB() {
+		return this.remarksB;
+	}
+
+	public void setRemarksB(String remarksB) {
+		this.remarksB = remarksB;
+	}
+
 	public String getImageFormat() {
 		return this.imageFormat;
 	}
 
 	public void setImageFormat(String imageFormat) {
 		this.imageFormat = imageFormat;
-	}
-
-	public String getRemarksArrayB() {
-		return this.remarksArrayB;
-	}
-
-	public void setRemarksArrayB(String remarksArrayB) {
-		this.remarksArrayB = remarksArrayB;
 	}
 
 	public String getTagsFailReason() {
@@ -223,12 +215,12 @@ public class GetImageResponse extends AcsResponse {
 		this.tagsFailReason = tagsFailReason;
 	}
 
-	public String getExif() {
-		return this.exif;
+	public String getRemarksArrayB() {
+		return this.remarksArrayB;
 	}
 
-	public void setExif(String exif) {
-		this.exif = exif;
+	public void setRemarksArrayB(String remarksArrayB) {
+		this.remarksArrayB = remarksArrayB;
 	}
 
 	public String getFacesModifyTime() {
@@ -237,6 +229,14 @@ public class GetImageResponse extends AcsResponse {
 
 	public void setFacesModifyTime(String facesModifyTime) {
 		this.facesModifyTime = facesModifyTime;
+	}
+
+	public String getExif() {
+		return this.exif;
+	}
+
+	public void setExif(String exif) {
+		this.exif = exif;
 	}
 
 	public String getRemarksC() {
@@ -263,20 +263,20 @@ public class GetImageResponse extends AcsResponse {
 		this.imageWidth = imageWidth;
 	}
 
-	public String getSourcePosition() {
-		return this.sourcePosition;
-	}
-
-	public void setSourcePosition(String sourcePosition) {
-		this.sourcePosition = sourcePosition;
-	}
-
 	public String getRemarksArrayA() {
 		return this.remarksArrayA;
 	}
 
 	public void setRemarksArrayA(String remarksArrayA) {
 		this.remarksArrayA = remarksArrayA;
+	}
+
+	public String getSourcePosition() {
+		return this.sourcePosition;
+	}
+
+	public void setSourcePosition(String sourcePosition) {
+		this.sourcePosition = sourcePosition;
 	}
 
 	public String getAddressStatus() {
@@ -311,12 +311,12 @@ public class GetImageResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getTagsModifyTime() {
-		return this.tagsModifyTime;
+	public String getCreateTime() {
+		return this.createTime;
 	}
 
-	public void setTagsModifyTime(String tagsModifyTime) {
-		this.tagsModifyTime = tagsModifyTime;
+	public void setCreateTime(String createTime) {
+		this.createTime = createTime;
 	}
 
 	public String getExternalId() {
@@ -327,12 +327,12 @@ public class GetImageResponse extends AcsResponse {
 		this.externalId = externalId;
 	}
 
-	public String getCreateTime() {
-		return this.createTime;
+	public String getTagsModifyTime() {
+		return this.tagsModifyTime;
 	}
 
-	public void setCreateTime(String createTime) {
-		this.createTime = createTime;
+	public void setTagsModifyTime(String tagsModifyTime) {
+		this.tagsModifyTime = tagsModifyTime;
 	}
 
 	public String getImageQualityFailReason() {
@@ -343,20 +343,20 @@ public class GetImageResponse extends AcsResponse {
 		this.imageQualityFailReason = imageQualityFailReason;
 	}
 
-	public String getImageUri() {
-		return this.imageUri;
-	}
-
-	public void setImageUri(String imageUri) {
-		this.imageUri = imageUri;
-	}
-
 	public String getOrientation() {
 		return this.orientation;
 	}
 
 	public void setOrientation(String orientation) {
 		this.orientation = orientation;
+	}
+
+	public String getImageUri() {
+		return this.imageUri;
+	}
+
+	public void setImageUri(String imageUri) {
+		this.imageUri = imageUri;
 	}
 
 	public String getOCRStatus() {
@@ -375,14 +375,6 @@ public class GetImageResponse extends AcsResponse {
 		this.oCRModifyTime = oCRModifyTime;
 	}
 
-	public String getCroppingSuggestionModifyTime() {
-		return this.croppingSuggestionModifyTime;
-	}
-
-	public void setCroppingSuggestionModifyTime(String croppingSuggestionModifyTime) {
-		this.croppingSuggestionModifyTime = croppingSuggestionModifyTime;
-	}
-
 	public String getImageTime() {
 		return this.imageTime;
 	}
@@ -391,12 +383,20 @@ public class GetImageResponse extends AcsResponse {
 		this.imageTime = imageTime;
 	}
 
-	public String getTagsStatus() {
-		return this.tagsStatus;
+	public String getCroppingSuggestionModifyTime() {
+		return this.croppingSuggestionModifyTime;
 	}
 
-	public void setTagsStatus(String tagsStatus) {
-		this.tagsStatus = tagsStatus;
+	public void setCroppingSuggestionModifyTime(String croppingSuggestionModifyTime) {
+		this.croppingSuggestionModifyTime = croppingSuggestionModifyTime;
+	}
+
+	public Integer getImageHeight() {
+		return this.imageHeight;
+	}
+
+	public void setImageHeight(Integer imageHeight) {
+		this.imageHeight = imageHeight;
 	}
 
 	public String getImageQualityStatus() {
@@ -407,12 +407,12 @@ public class GetImageResponse extends AcsResponse {
 		this.imageQualityStatus = imageQualityStatus;
 	}
 
-	public Integer getImageHeight() {
-		return this.imageHeight;
+	public String getTagsStatus() {
+		return this.tagsStatus;
 	}
 
-	public void setImageHeight(Integer imageHeight) {
-		this.imageHeight = imageHeight;
+	public void setTagsStatus(String tagsStatus) {
+		this.tagsStatus = tagsStatus;
 	}
 
 	public String getOCRFailReason() {
@@ -431,14 +431,6 @@ public class GetImageResponse extends AcsResponse {
 		this.setId = setId;
 	}
 
-	public String getLocation() {
-		return this.location;
-	}
-
-	public void setLocation(String location) {
-		this.location = location;
-	}
-
 	public Integer getFileSize() {
 		return this.fileSize;
 	}
@@ -447,12 +439,20 @@ public class GetImageResponse extends AcsResponse {
 		this.fileSize = fileSize;
 	}
 
-	public List<CroppingSuggestionItem> getCroppingSuggestion() {
-		return this.croppingSuggestion;
+	public String getLocation() {
+		return this.location;
 	}
 
-	public void setCroppingSuggestion(List<CroppingSuggestionItem> croppingSuggestion) {
-		this.croppingSuggestion = croppingSuggestion;
+	public void setLocation(String location) {
+		this.location = location;
+	}
+
+	public List<TagsItem> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<TagsItem> tags) {
+		this.tags = tags;
 	}
 
 	public List<FacesItem> getFaces() {
@@ -463,12 +463,12 @@ public class GetImageResponse extends AcsResponse {
 		this.faces = faces;
 	}
 
-	public List<TagsItem> getTags() {
-		return this.tags;
+	public List<CroppingSuggestionItem> getCroppingSuggestion() {
+		return this.croppingSuggestion;
 	}
 
-	public void setTags(List<TagsItem> tags) {
-		this.tags = tags;
+	public void setCroppingSuggestion(List<CroppingSuggestionItem> croppingSuggestion) {
+		this.croppingSuggestion = croppingSuggestion;
 	}
 
 	public List<OCRItem> getOCR() {
@@ -495,138 +495,91 @@ public class GetImageResponse extends AcsResponse {
 		this.address = address;
 	}
 
-	public static class CroppingSuggestionItem {
+	public static class TagsItem {
 
-		private String aspectRatio;
+		private String tagName;
 
-		private Float score;
+		private Float tagConfidence;
 
-		private CroppingBoundary croppingBoundary;
+		private Float centricScore;
 
-		public String getAspectRatio() {
-			return this.aspectRatio;
+		private Integer tagLevel;
+
+		private String parentTagName;
+
+		public String getTagName() {
+			return this.tagName;
 		}
 
-		public void setAspectRatio(String aspectRatio) {
-			this.aspectRatio = aspectRatio;
+		public void setTagName(String tagName) {
+			this.tagName = tagName;
 		}
 
-		public Float getScore() {
-			return this.score;
+		public Float getTagConfidence() {
+			return this.tagConfidence;
 		}
 
-		public void setScore(Float score) {
-			this.score = score;
+		public void setTagConfidence(Float tagConfidence) {
+			this.tagConfidence = tagConfidence;
 		}
 
-		public CroppingBoundary getCroppingBoundary() {
-			return this.croppingBoundary;
+		public Float getCentricScore() {
+			return this.centricScore;
 		}
 
-		public void setCroppingBoundary(CroppingBoundary croppingBoundary) {
-			this.croppingBoundary = croppingBoundary;
+		public void setCentricScore(Float centricScore) {
+			this.centricScore = centricScore;
 		}
 
-		public static class CroppingBoundary {
+		public Integer getTagLevel() {
+			return this.tagLevel;
+		}
 
-			private Integer left;
+		public void setTagLevel(Integer tagLevel) {
+			this.tagLevel = tagLevel;
+		}
 
-			private Integer top;
+		public String getParentTagName() {
+			return this.parentTagName;
+		}
 
-			private Integer height;
-
-			private Integer width;
-
-			public Integer getLeft() {
-				return this.left;
-			}
-
-			public void setLeft(Integer left) {
-				this.left = left;
-			}
-
-			public Integer getTop() {
-				return this.top;
-			}
-
-			public void setTop(Integer top) {
-				this.top = top;
-			}
-
-			public Integer getHeight() {
-				return this.height;
-			}
-
-			public void setHeight(Integer height) {
-				this.height = height;
-			}
-
-			public Integer getWidth() {
-				return this.width;
-			}
-
-			public void setWidth(Integer width) {
-				this.width = width;
-			}
+		public void setParentTagName(String parentTagName) {
+			this.parentTagName = parentTagName;
 		}
 	}
 
 	public static class FacesItem {
 
-		private Float faceConfidence;
-
-		private String faceId;
-
-		private Float attractive;
-
-		private Float faceQuality;
+		private String gender;
 
 		private Float genderConfidence;
 
-		private Float emotionConfidence;
+		private String faceId;
+
+		private Float faceQuality;
 
 		private String emotion;
 
-		private String gender;
-
 		private String age;
+
+		private Float faceConfidence;
+
+		private Float emotionConfidence;
+
+		private Float attractive;
 
 		private String groupId;
 
-		private EmotionDetails emotionDetails;
-
 		private FaceAttributes faceAttributes;
 
-		public Float getFaceConfidence() {
-			return this.faceConfidence;
+		private EmotionDetails emotionDetails;
+
+		public String getGender() {
+			return this.gender;
 		}
 
-		public void setFaceConfidence(Float faceConfidence) {
-			this.faceConfidence = faceConfidence;
-		}
-
-		public String getFaceId() {
-			return this.faceId;
-		}
-
-		public void setFaceId(String faceId) {
-			this.faceId = faceId;
-		}
-
-		public Float getAttractive() {
-			return this.attractive;
-		}
-
-		public void setAttractive(Float attractive) {
-			this.attractive = attractive;
-		}
-
-		public Float getFaceQuality() {
-			return this.faceQuality;
-		}
-
-		public void setFaceQuality(Float faceQuality) {
-			this.faceQuality = faceQuality;
+		public void setGender(String gender) {
+			this.gender = gender;
 		}
 
 		public Float getGenderConfidence() {
@@ -637,12 +590,20 @@ public class GetImageResponse extends AcsResponse {
 			this.genderConfidence = genderConfidence;
 		}
 
-		public Float getEmotionConfidence() {
-			return this.emotionConfidence;
+		public String getFaceId() {
+			return this.faceId;
 		}
 
-		public void setEmotionConfidence(Float emotionConfidence) {
-			this.emotionConfidence = emotionConfidence;
+		public void setFaceId(String faceId) {
+			this.faceId = faceId;
+		}
+
+		public Float getFaceQuality() {
+			return this.faceQuality;
+		}
+
+		public void setFaceQuality(Float faceQuality) {
+			this.faceQuality = faceQuality;
 		}
 
 		public String getEmotion() {
@@ -653,20 +614,36 @@ public class GetImageResponse extends AcsResponse {
 			this.emotion = emotion;
 		}
 
-		public String getGender() {
-			return this.gender;
-		}
-
-		public void setGender(String gender) {
-			this.gender = gender;
-		}
-
 		public String getAge() {
 			return this.age;
 		}
 
 		public void setAge(String age) {
 			this.age = age;
+		}
+
+		public Float getFaceConfidence() {
+			return this.faceConfidence;
+		}
+
+		public void setFaceConfidence(Float faceConfidence) {
+			this.faceConfidence = faceConfidence;
+		}
+
+		public Float getEmotionConfidence() {
+			return this.emotionConfidence;
+		}
+
+		public void setEmotionConfidence(Float emotionConfidence) {
+			this.emotionConfidence = emotionConfidence;
+		}
+
+		public Float getAttractive() {
+			return this.attractive;
+		}
+
+		public void setAttractive(Float attractive) {
+			this.attractive = attractive;
 		}
 
 		public String getGroupId() {
@@ -677,14 +654,6 @@ public class GetImageResponse extends AcsResponse {
 			this.groupId = groupId;
 		}
 
-		public EmotionDetails getEmotionDetails() {
-			return this.emotionDetails;
-		}
-
-		public void setEmotionDetails(EmotionDetails emotionDetails) {
-			this.emotionDetails = emotionDetails;
-		}
-
 		public FaceAttributes getFaceAttributes() {
 			return this.faceAttributes;
 		}
@@ -693,103 +662,54 @@ public class GetImageResponse extends AcsResponse {
 			this.faceAttributes = faceAttributes;
 		}
 
-		public static class EmotionDetails {
+		public EmotionDetails getEmotionDetails() {
+			return this.emotionDetails;
+		}
 
-			private Float cALM;
-
-			private Float sCARED;
-
-			private Float hAPPY;
-
-			private Float sAD;
-
-			private Float sURPRISED;
-
-			private Float aNGRY;
-
-			private Float dISGUSTED;
-
-			public Float getCALM() {
-				return this.cALM;
-			}
-
-			public void setCALM(Float cALM) {
-				this.cALM = cALM;
-			}
-
-			public Float getSCARED() {
-				return this.sCARED;
-			}
-
-			public void setSCARED(Float sCARED) {
-				this.sCARED = sCARED;
-			}
-
-			public Float getHAPPY() {
-				return this.hAPPY;
-			}
-
-			public void setHAPPY(Float hAPPY) {
-				this.hAPPY = hAPPY;
-			}
-
-			public Float getSAD() {
-				return this.sAD;
-			}
-
-			public void setSAD(Float sAD) {
-				this.sAD = sAD;
-			}
-
-			public Float getSURPRISED() {
-				return this.sURPRISED;
-			}
-
-			public void setSURPRISED(Float sURPRISED) {
-				this.sURPRISED = sURPRISED;
-			}
-
-			public Float getANGRY() {
-				return this.aNGRY;
-			}
-
-			public void setANGRY(Float aNGRY) {
-				this.aNGRY = aNGRY;
-			}
-
-			public Float getDISGUSTED() {
-				return this.dISGUSTED;
-			}
-
-			public void setDISGUSTED(Float dISGUSTED) {
-				this.dISGUSTED = dISGUSTED;
-			}
+		public void setEmotionDetails(EmotionDetails emotionDetails) {
+			this.emotionDetails = emotionDetails;
 		}
 
 		public static class FaceAttributes {
 
-			private String beard;
+			private Float glassesConfidence;
+
+			private String glasses;
+
+			private String mask;
 
 			private Float beardConfidence;
 
 			private Float maskConfidence;
 
-			private String mask;
-
-			private String glasses;
-
-			private Float glassesConfidence;
+			private String beard;
 
 			private FaceBoundary faceBoundary;
 
 			private HeadPose headPose;
 
-			public String getBeard() {
-				return this.beard;
+			public Float getGlassesConfidence() {
+				return this.glassesConfidence;
 			}
 
-			public void setBeard(String beard) {
-				this.beard = beard;
+			public void setGlassesConfidence(Float glassesConfidence) {
+				this.glassesConfidence = glassesConfidence;
+			}
+
+			public String getGlasses() {
+				return this.glasses;
+			}
+
+			public void setGlasses(String glasses) {
+				this.glasses = glasses;
+			}
+
+			public String getMask() {
+				return this.mask;
+			}
+
+			public void setMask(String mask) {
+				this.mask = mask;
 			}
 
 			public Float getBeardConfidence() {
@@ -808,28 +728,12 @@ public class GetImageResponse extends AcsResponse {
 				this.maskConfidence = maskConfidence;
 			}
 
-			public String getMask() {
-				return this.mask;
+			public String getBeard() {
+				return this.beard;
 			}
 
-			public void setMask(String mask) {
-				this.mask = mask;
-			}
-
-			public String getGlasses() {
-				return this.glasses;
-			}
-
-			public void setGlasses(String glasses) {
-				this.glasses = glasses;
-			}
-
-			public Float getGlassesConfidence() {
-				return this.glassesConfidence;
-			}
-
-			public void setGlassesConfidence(Float glassesConfidence) {
-				this.glassesConfidence = glassesConfidence;
+			public void setBeard(String beard) {
+				this.beard = beard;
 			}
 
 			public FaceBoundary getFaceBoundary() {
@@ -850,21 +754,13 @@ public class GetImageResponse extends AcsResponse {
 
 			public static class FaceBoundary {
 
-				private Integer left;
-
 				private Integer top;
-
-				private Integer height;
 
 				private Integer width;
 
-				public Integer getLeft() {
-					return this.left;
-				}
+				private Integer height;
 
-				public void setLeft(Integer left) {
-					this.left = left;
-				}
+				private Integer left;
 
 				public Integer getTop() {
 					return this.top;
@@ -872,6 +768,14 @@ public class GetImageResponse extends AcsResponse {
 
 				public void setTop(Integer top) {
 					this.top = top;
+				}
+
+				public Integer getWidth() {
+					return this.width;
+				}
+
+				public void setWidth(Integer width) {
+					this.width = width;
 				}
 
 				public Integer getHeight() {
@@ -882,12 +786,12 @@ public class GetImageResponse extends AcsResponse {
 					this.height = height;
 				}
 
-				public Integer getWidth() {
-					return this.width;
+				public Integer getLeft() {
+					return this.left;
 				}
 
-				public void setWidth(Integer width) {
-					this.width = width;
+				public void setLeft(Integer left) {
+					this.left = left;
 				}
 			}
 
@@ -924,48 +828,154 @@ public class GetImageResponse extends AcsResponse {
 				}
 			}
 		}
+
+		public static class EmotionDetails {
+
+			private Float hAPPY;
+
+			private Float cALM;
+
+			private Float sURPRISED;
+
+			private Float dISGUSTED;
+
+			private Float aNGRY;
+
+			private Float sAD;
+
+			private Float sCARED;
+
+			public Float getHAPPY() {
+				return this.hAPPY;
+			}
+
+			public void setHAPPY(Float hAPPY) {
+				this.hAPPY = hAPPY;
+			}
+
+			public Float getCALM() {
+				return this.cALM;
+			}
+
+			public void setCALM(Float cALM) {
+				this.cALM = cALM;
+			}
+
+			public Float getSURPRISED() {
+				return this.sURPRISED;
+			}
+
+			public void setSURPRISED(Float sURPRISED) {
+				this.sURPRISED = sURPRISED;
+			}
+
+			public Float getDISGUSTED() {
+				return this.dISGUSTED;
+			}
+
+			public void setDISGUSTED(Float dISGUSTED) {
+				this.dISGUSTED = dISGUSTED;
+			}
+
+			public Float getANGRY() {
+				return this.aNGRY;
+			}
+
+			public void setANGRY(Float aNGRY) {
+				this.aNGRY = aNGRY;
+			}
+
+			public Float getSAD() {
+				return this.sAD;
+			}
+
+			public void setSAD(Float sAD) {
+				this.sAD = sAD;
+			}
+
+			public Float getSCARED() {
+				return this.sCARED;
+			}
+
+			public void setSCARED(Float sCARED) {
+				this.sCARED = sCARED;
+			}
+		}
 	}
 
-	public static class TagsItem {
+	public static class CroppingSuggestionItem {
 
-		private Float tagConfidence;
+		private Float score;
 
-		private String tagName;
+		private String aspectRatio;
 
-		private Integer tagLevel;
+		private CroppingBoundary croppingBoundary;
 
-		private String parentTagName;
-
-		public Float getTagConfidence() {
-			return this.tagConfidence;
+		public Float getScore() {
+			return this.score;
 		}
 
-		public void setTagConfidence(Float tagConfidence) {
-			this.tagConfidence = tagConfidence;
+		public void setScore(Float score) {
+			this.score = score;
 		}
 
-		public String getTagName() {
-			return this.tagName;
+		public String getAspectRatio() {
+			return this.aspectRatio;
 		}
 
-		public void setTagName(String tagName) {
-			this.tagName = tagName;
+		public void setAspectRatio(String aspectRatio) {
+			this.aspectRatio = aspectRatio;
 		}
 
-		public Integer getTagLevel() {
-			return this.tagLevel;
+		public CroppingBoundary getCroppingBoundary() {
+			return this.croppingBoundary;
 		}
 
-		public void setTagLevel(Integer tagLevel) {
-			this.tagLevel = tagLevel;
+		public void setCroppingBoundary(CroppingBoundary croppingBoundary) {
+			this.croppingBoundary = croppingBoundary;
 		}
 
-		public String getParentTagName() {
-			return this.parentTagName;
-		}
+		public static class CroppingBoundary {
 
-		public void setParentTagName(String parentTagName) {
-			this.parentTagName = parentTagName;
+			private Integer top;
+
+			private Integer width;
+
+			private Integer height;
+
+			private Integer left;
+
+			public Integer getTop() {
+				return this.top;
+			}
+
+			public void setTop(Integer top) {
+				this.top = top;
+			}
+
+			public Integer getWidth() {
+				return this.width;
+			}
+
+			public void setWidth(Integer width) {
+				this.width = width;
+			}
+
+			public Integer getHeight() {
+				return this.height;
+			}
+
+			public void setHeight(Integer height) {
+				this.height = height;
+			}
+
+			public Integer getLeft() {
+				return this.left;
+			}
+
+			public void setLeft(Integer left) {
+				this.left = left;
+			}
 		}
 	}
 
@@ -1003,21 +1013,13 @@ public class GetImageResponse extends AcsResponse {
 
 		public static class OCRBoundary {
 
-			private Integer left;
-
 			private Integer top;
-
-			private Integer height;
 
 			private Integer width;
 
-			public Integer getLeft() {
-				return this.left;
-			}
+			private Integer height;
 
-			public void setLeft(Integer left) {
-				this.left = left;
-			}
+			private Integer left;
 
 			public Integer getTop() {
 				return this.top;
@@ -1025,6 +1027,14 @@ public class GetImageResponse extends AcsResponse {
 
 			public void setTop(Integer top) {
 				this.top = top;
+			}
+
+			public Integer getWidth() {
+				return this.width;
+			}
+
+			public void setWidth(Integer width) {
+				this.width = width;
 			}
 
 			public Integer getHeight() {
@@ -1035,60 +1045,44 @@ public class GetImageResponse extends AcsResponse {
 				this.height = height;
 			}
 
-			public Integer getWidth() {
-				return this.width;
+			public Integer getLeft() {
+				return this.left;
 			}
 
-			public void setWidth(Integer width) {
-				this.width = width;
+			public void setLeft(Integer left) {
+				this.left = left;
 			}
 		}
 	}
 
 	public static class ImageQuality {
 
-		private Float clarityScore;
-
-		private Float compositionScore;
-
-		private Float contrastScore;
+		private Float overallScore;
 
 		private Float color;
 
-		private Float exposure;
+		private Float colorScore;
 
-		private Float overallScore;
-
-		private Float clarity;
+		private Float contrastScore;
 
 		private Float contrast;
 
 		private Float exposureScore;
 
-		private Float colorScore;
+		private Float clarityScore;
 
-		public Float getClarityScore() {
-			return this.clarityScore;
+		private Float clarity;
+
+		private Float exposure;
+
+		private Float compositionScore;
+
+		public Float getOverallScore() {
+			return this.overallScore;
 		}
 
-		public void setClarityScore(Float clarityScore) {
-			this.clarityScore = clarityScore;
-		}
-
-		public Float getCompositionScore() {
-			return this.compositionScore;
-		}
-
-		public void setCompositionScore(Float compositionScore) {
-			this.compositionScore = compositionScore;
-		}
-
-		public Float getContrastScore() {
-			return this.contrastScore;
-		}
-
-		public void setContrastScore(Float contrastScore) {
-			this.contrastScore = contrastScore;
+		public void setOverallScore(Float overallScore) {
+			this.overallScore = overallScore;
 		}
 
 		public Float getColor() {
@@ -1099,28 +1093,20 @@ public class GetImageResponse extends AcsResponse {
 			this.color = color;
 		}
 
-		public Float getExposure() {
-			return this.exposure;
+		public Float getColorScore() {
+			return this.colorScore;
 		}
 
-		public void setExposure(Float exposure) {
-			this.exposure = exposure;
+		public void setColorScore(Float colorScore) {
+			this.colorScore = colorScore;
 		}
 
-		public Float getOverallScore() {
-			return this.overallScore;
+		public Float getContrastScore() {
+			return this.contrastScore;
 		}
 
-		public void setOverallScore(Float overallScore) {
-			this.overallScore = overallScore;
-		}
-
-		public Float getClarity() {
-			return this.clarity;
-		}
-
-		public void setClarity(Float clarity) {
-			this.clarity = clarity;
+		public void setContrastScore(Float contrastScore) {
+			this.contrastScore = contrastScore;
 		}
 
 		public Float getContrast() {
@@ -1139,12 +1125,36 @@ public class GetImageResponse extends AcsResponse {
 			this.exposureScore = exposureScore;
 		}
 
-		public Float getColorScore() {
-			return this.colorScore;
+		public Float getClarityScore() {
+			return this.clarityScore;
 		}
 
-		public void setColorScore(Float colorScore) {
-			this.colorScore = colorScore;
+		public void setClarityScore(Float clarityScore) {
+			this.clarityScore = clarityScore;
+		}
+
+		public Float getClarity() {
+			return this.clarity;
+		}
+
+		public void setClarity(Float clarity) {
+			this.clarity = clarity;
+		}
+
+		public Float getExposure() {
+			return this.exposure;
+		}
+
+		public void setExposure(Float exposure) {
+			this.exposure = exposure;
+		}
+
+		public Float getCompositionScore() {
+			return this.compositionScore;
+		}
+
+		public void setCompositionScore(Float compositionScore) {
+			this.compositionScore = compositionScore;
 		}
 	}
 
@@ -1152,13 +1162,13 @@ public class GetImageResponse extends AcsResponse {
 
 		private String township;
 
+		private String district;
+
 		private String addressLine;
 
 		private String country;
 
 		private String city;
-
-		private String district;
 
 		private String province;
 
@@ -1168,6 +1178,14 @@ public class GetImageResponse extends AcsResponse {
 
 		public void setTownship(String township) {
 			this.township = township;
+		}
+
+		public String getDistrict() {
+			return this.district;
+		}
+
+		public void setDistrict(String district) {
+			this.district = district;
 		}
 
 		public String getAddressLine() {
@@ -1192,14 +1210,6 @@ public class GetImageResponse extends AcsResponse {
 
 		public void setCity(String city) {
 			this.city = city;
-		}
-
-		public String getDistrict() {
-			return this.district;
-		}
-
-		public void setDistrict(String district) {
-			this.district = district;
 		}
 
 		public String getProvince() {

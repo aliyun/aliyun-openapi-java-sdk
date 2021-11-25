@@ -38,16 +38,16 @@ public class FindSimilarFacesResponseUnmarshaller {
 			FacesItem facesItem = new FacesItem();
 			facesItem.setFaceId(_ctx.stringValue("FindSimilarFacesResponse.Faces["+ i +"].FaceId"));
 			facesItem.setImageUri(_ctx.stringValue("FindSimilarFacesResponse.Faces["+ i +"].ImageUri"));
-			facesItem.setSimilarity(_ctx.floatValue("FindSimilarFacesResponse.Faces["+ i +"].Similarity"));
 			facesItem.setExternalId(_ctx.stringValue("FindSimilarFacesResponse.Faces["+ i +"].ExternalId"));
+			facesItem.setSimilarity(_ctx.floatValue("FindSimilarFacesResponse.Faces["+ i +"].Similarity"));
 
 			FaceAttributes faceAttributes = new FaceAttributes();
 
 			FaceBoundary2 faceBoundary2 = new FaceBoundary2();
-			faceBoundary2.setLeft(_ctx.integerValue("FindSimilarFacesResponse.Faces["+ i +"].FaceAttributes.FaceBoundary.Left"));
 			faceBoundary2.setTop(_ctx.integerValue("FindSimilarFacesResponse.Faces["+ i +"].FaceAttributes.FaceBoundary.Top"));
 			faceBoundary2.setWidth(_ctx.integerValue("FindSimilarFacesResponse.Faces["+ i +"].FaceAttributes.FaceBoundary.Width"));
 			faceBoundary2.setHeight(_ctx.integerValue("FindSimilarFacesResponse.Faces["+ i +"].FaceAttributes.FaceBoundary.Height"));
+			faceBoundary2.setLeft(_ctx.integerValue("FindSimilarFacesResponse.Faces["+ i +"].FaceAttributes.FaceBoundary.Left"));
 			faceAttributes.setFaceBoundary2(faceBoundary2);
 			facesItem.setFaceAttributes(faceAttributes);
 
@@ -56,16 +56,16 @@ public class FindSimilarFacesResponseUnmarshaller {
 				SimilarFacesItem similarFacesItem = new SimilarFacesItem();
 				similarFacesItem.setFaceId(_ctx.stringValue("FindSimilarFacesResponse.Faces["+ i +"].SimilarFaces["+ j +"].FaceId"));
 				similarFacesItem.setImageUri(_ctx.stringValue("FindSimilarFacesResponse.Faces["+ i +"].SimilarFaces["+ j +"].ImageUri"));
-				similarFacesItem.setSimilarity(_ctx.floatValue("FindSimilarFacesResponse.Faces["+ i +"].SimilarFaces["+ j +"].Similarity"));
 				similarFacesItem.setExternalId(_ctx.stringValue("FindSimilarFacesResponse.Faces["+ i +"].SimilarFaces["+ j +"].ExternalId"));
+				similarFacesItem.setSimilarity(_ctx.floatValue("FindSimilarFacesResponse.Faces["+ i +"].SimilarFaces["+ j +"].Similarity"));
 
 				FaceAttributes1 faceAttributes1 = new FaceAttributes1();
 
 				FaceBoundary faceBoundary = new FaceBoundary();
-				faceBoundary.setLeft(_ctx.integerValue("FindSimilarFacesResponse.Faces["+ i +"].SimilarFaces["+ j +"].FaceAttributes.FaceBoundary.Left"));
 				faceBoundary.setTop(_ctx.integerValue("FindSimilarFacesResponse.Faces["+ i +"].SimilarFaces["+ j +"].FaceAttributes.FaceBoundary.Top"));
 				faceBoundary.setWidth(_ctx.integerValue("FindSimilarFacesResponse.Faces["+ i +"].SimilarFaces["+ j +"].FaceAttributes.FaceBoundary.Width"));
 				faceBoundary.setHeight(_ctx.integerValue("FindSimilarFacesResponse.Faces["+ i +"].SimilarFaces["+ j +"].FaceAttributes.FaceBoundary.Height"));
+				faceBoundary.setLeft(_ctx.integerValue("FindSimilarFacesResponse.Faces["+ i +"].SimilarFaces["+ j +"].FaceAttributes.FaceBoundary.Left"));
 				faceAttributes1.setFaceBoundary(faceBoundary);
 				similarFacesItem.setFaceAttributes1(faceAttributes1);
 

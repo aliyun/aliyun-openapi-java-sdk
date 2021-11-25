@@ -32,15 +32,15 @@ public class ListProjectsResponseUnmarshaller {
 		List<ProjectsItem> projects = new ArrayList<ProjectsItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListProjectsResponse.Projects.Length"); i++) {
 			ProjectsItem projectsItem = new ProjectsItem();
-			projectsItem.setProject(_ctx.stringValue("ListProjectsResponse.Projects["+ i +"].Project"));
-			projectsItem.setEndpoint(_ctx.stringValue("ListProjectsResponse.Projects["+ i +"].Endpoint"));
-			projectsItem.setServiceRole(_ctx.stringValue("ListProjectsResponse.Projects["+ i +"].ServiceRole"));
-			projectsItem.setCreateTime(_ctx.stringValue("ListProjectsResponse.Projects["+ i +"].CreateTime"));
-			projectsItem.setModifyTime(_ctx.stringValue("ListProjectsResponse.Projects["+ i +"].ModifyTime"));
-			projectsItem.setCU(_ctx.integerValue("ListProjectsResponse.Projects["+ i +"].CU"));
 			projectsItem.setType(_ctx.stringValue("ListProjectsResponse.Projects["+ i +"].Type"));
-			projectsItem.setBillingType(_ctx.stringValue("ListProjectsResponse.Projects["+ i +"].BillingType"));
+			projectsItem.setCU(_ctx.integerValue("ListProjectsResponse.Projects["+ i +"].CU"));
+			projectsItem.setCreateTime(_ctx.stringValue("ListProjectsResponse.Projects["+ i +"].CreateTime"));
+			projectsItem.setServiceRole(_ctx.stringValue("ListProjectsResponse.Projects["+ i +"].ServiceRole"));
+			projectsItem.setEndpoint(_ctx.stringValue("ListProjectsResponse.Projects["+ i +"].Endpoint"));
+			projectsItem.setProject(_ctx.stringValue("ListProjectsResponse.Projects["+ i +"].Project"));
 			projectsItem.setRegionId(_ctx.stringValue("ListProjectsResponse.Projects["+ i +"].RegionId"));
+			projectsItem.setBillingType(_ctx.stringValue("ListProjectsResponse.Projects["+ i +"].BillingType"));
+			projectsItem.setModifyTime(_ctx.stringValue("ListProjectsResponse.Projects["+ i +"].ModifyTime"));
 
 			projects.add(projectsItem);
 		}

@@ -23,8 +23,8 @@ public class DecodeBlindWatermarkResponseUnmarshaller {
 	public static DecodeBlindWatermarkResponse unmarshall(DecodeBlindWatermarkResponse decodeBlindWatermarkResponse, UnmarshallerContext _ctx) {
 		
 		decodeBlindWatermarkResponse.setRequestId(_ctx.stringValue("DecodeBlindWatermarkResponse.RequestId"));
-		decodeBlindWatermarkResponse.setTargetUri(_ctx.stringValue("DecodeBlindWatermarkResponse.TargetUri"));
 		decodeBlindWatermarkResponse.setContent(_ctx.stringValue("DecodeBlindWatermarkResponse.Content"));
+		decodeBlindWatermarkResponse.setTargetUri(_ctx.stringValue("DecodeBlindWatermarkResponse.TargetUri"));
 	 
 	 	return decodeBlindWatermarkResponse;
 	}

@@ -57,64 +57,48 @@ public class ListFaceGroupsResponse extends AcsResponse {
 
 	public static class FaceGroupsItem {
 
-		private String groupName;
-
-		private String modifyTime;
-
-		private String externalId;
+		private String gender;
 
 		private String createTime;
 
-		private Float maxAge;
-
-		private String gender;
-
-		private Float averageAge;
-
-		private String remarksA;
-
-		private String remarksB;
-
-		private String groupId;
-
-		private String remarksArrayB;
-
-		private Integer imageCount;
-
-		private Float minAge;
-
 		private String remarksC;
-
-		private String remarksD;
-
-		private String remarksArrayA;
 
 		private Integer faceCount;
 
+		private String remarksArrayB;
+
+		private String remarksD;
+
+		private Float maxAge;
+
+		private String groupId;
+
+		private String groupName;
+
+		private String remarksA;
+
+		private Float averageAge;
+
+		private String remarksArrayA;
+
+		private Float minAge;
+
+		private Integer imageCount;
+
+		private String externalId;
+
+		private String remarksB;
+
+		private String modifyTime;
+
 		private GroupCoverFace groupCoverFace;
 
-		public String getGroupName() {
-			return this.groupName;
+		public String getGender() {
+			return this.gender;
 		}
 
-		public void setGroupName(String groupName) {
-			this.groupName = groupName;
-		}
-
-		public String getModifyTime() {
-			return this.modifyTime;
-		}
-
-		public void setModifyTime(String modifyTime) {
-			this.modifyTime = modifyTime;
-		}
-
-		public String getExternalId() {
-			return this.externalId;
-		}
-
-		public void setExternalId(String externalId) {
-			this.externalId = externalId;
+		public void setGender(String gender) {
+			this.gender = gender;
 		}
 
 		public String getCreateTime() {
@@ -125,52 +109,20 @@ public class ListFaceGroupsResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
-		public Float getMaxAge() {
-			return this.maxAge;
+		public String getRemarksC() {
+			return this.remarksC;
 		}
 
-		public void setMaxAge(Float maxAge) {
-			this.maxAge = maxAge;
+		public void setRemarksC(String remarksC) {
+			this.remarksC = remarksC;
 		}
 
-		public String getGender() {
-			return this.gender;
+		public Integer getFaceCount() {
+			return this.faceCount;
 		}
 
-		public void setGender(String gender) {
-			this.gender = gender;
-		}
-
-		public Float getAverageAge() {
-			return this.averageAge;
-		}
-
-		public void setAverageAge(Float averageAge) {
-			this.averageAge = averageAge;
-		}
-
-		public String getRemarksA() {
-			return this.remarksA;
-		}
-
-		public void setRemarksA(String remarksA) {
-			this.remarksA = remarksA;
-		}
-
-		public String getRemarksB() {
-			return this.remarksB;
-		}
-
-		public void setRemarksB(String remarksB) {
-			this.remarksB = remarksB;
-		}
-
-		public String getGroupId() {
-			return this.groupId;
-		}
-
-		public void setGroupId(String groupId) {
-			this.groupId = groupId;
+		public void setFaceCount(Integer faceCount) {
+			this.faceCount = faceCount;
 		}
 
 		public String getRemarksArrayB() {
@@ -181,36 +133,52 @@ public class ListFaceGroupsResponse extends AcsResponse {
 			this.remarksArrayB = remarksArrayB;
 		}
 
-		public Integer getImageCount() {
-			return this.imageCount;
-		}
-
-		public void setImageCount(Integer imageCount) {
-			this.imageCount = imageCount;
-		}
-
-		public Float getMinAge() {
-			return this.minAge;
-		}
-
-		public void setMinAge(Float minAge) {
-			this.minAge = minAge;
-		}
-
-		public String getRemarksC() {
-			return this.remarksC;
-		}
-
-		public void setRemarksC(String remarksC) {
-			this.remarksC = remarksC;
-		}
-
 		public String getRemarksD() {
 			return this.remarksD;
 		}
 
 		public void setRemarksD(String remarksD) {
 			this.remarksD = remarksD;
+		}
+
+		public Float getMaxAge() {
+			return this.maxAge;
+		}
+
+		public void setMaxAge(Float maxAge) {
+			this.maxAge = maxAge;
+		}
+
+		public String getGroupId() {
+			return this.groupId;
+		}
+
+		public void setGroupId(String groupId) {
+			this.groupId = groupId;
+		}
+
+		public String getGroupName() {
+			return this.groupName;
+		}
+
+		public void setGroupName(String groupName) {
+			this.groupName = groupName;
+		}
+
+		public String getRemarksA() {
+			return this.remarksA;
+		}
+
+		public void setRemarksA(String remarksA) {
+			this.remarksA = remarksA;
+		}
+
+		public Float getAverageAge() {
+			return this.averageAge;
+		}
+
+		public void setAverageAge(Float averageAge) {
+			this.averageAge = averageAge;
 		}
 
 		public String getRemarksArrayA() {
@@ -221,12 +189,44 @@ public class ListFaceGroupsResponse extends AcsResponse {
 			this.remarksArrayA = remarksArrayA;
 		}
 
-		public Integer getFaceCount() {
-			return this.faceCount;
+		public Float getMinAge() {
+			return this.minAge;
 		}
 
-		public void setFaceCount(Integer faceCount) {
-			this.faceCount = faceCount;
+		public void setMinAge(Float minAge) {
+			this.minAge = minAge;
+		}
+
+		public Integer getImageCount() {
+			return this.imageCount;
+		}
+
+		public void setImageCount(Integer imageCount) {
+			this.imageCount = imageCount;
+		}
+
+		public String getExternalId() {
+			return this.externalId;
+		}
+
+		public void setExternalId(String externalId) {
+			this.externalId = externalId;
+		}
+
+		public String getRemarksB() {
+			return this.remarksB;
+		}
+
+		public void setRemarksB(String remarksB) {
+			this.remarksB = remarksB;
+		}
+
+		public String getModifyTime() {
+			return this.modifyTime;
+		}
+
+		public void setModifyTime(String modifyTime) {
+			this.modifyTime = modifyTime;
 		}
 
 		public GroupCoverFace getGroupCoverFace() {
@@ -241,13 +241,13 @@ public class ListFaceGroupsResponse extends AcsResponse {
 
 			private String faceId;
 
-			private Long imageHeight;
-
-			private Long imageWidth;
+			private String imageUri;
 
 			private String externalId;
 
-			private String imageUri;
+			private Long imageHeight;
+
+			private Long imageWidth;
 
 			private FaceBoundary faceBoundary;
 
@@ -257,6 +257,22 @@ public class ListFaceGroupsResponse extends AcsResponse {
 
 			public void setFaceId(String faceId) {
 				this.faceId = faceId;
+			}
+
+			public String getImageUri() {
+				return this.imageUri;
+			}
+
+			public void setImageUri(String imageUri) {
+				this.imageUri = imageUri;
+			}
+
+			public String getExternalId() {
+				return this.externalId;
+			}
+
+			public void setExternalId(String externalId) {
+				this.externalId = externalId;
 			}
 
 			public Long getImageHeight() {
@@ -275,22 +291,6 @@ public class ListFaceGroupsResponse extends AcsResponse {
 				this.imageWidth = imageWidth;
 			}
 
-			public String getExternalId() {
-				return this.externalId;
-			}
-
-			public void setExternalId(String externalId) {
-				this.externalId = externalId;
-			}
-
-			public String getImageUri() {
-				return this.imageUri;
-			}
-
-			public void setImageUri(String imageUri) {
-				this.imageUri = imageUri;
-			}
-
 			public FaceBoundary getFaceBoundary() {
 				return this.faceBoundary;
 			}
@@ -301,21 +301,13 @@ public class ListFaceGroupsResponse extends AcsResponse {
 
 			public static class FaceBoundary {
 
-				private Integer left;
-
 				private Integer top;
-
-				private Integer height;
 
 				private Integer width;
 
-				public Integer getLeft() {
-					return this.left;
-				}
+				private Integer height;
 
-				public void setLeft(Integer left) {
-					this.left = left;
-				}
+				private Integer left;
 
 				public Integer getTop() {
 					return this.top;
@@ -323,6 +315,14 @@ public class ListFaceGroupsResponse extends AcsResponse {
 
 				public void setTop(Integer top) {
 					this.top = top;
+				}
+
+				public Integer getWidth() {
+					return this.width;
+				}
+
+				public void setWidth(Integer width) {
+					this.width = width;
 				}
 
 				public Integer getHeight() {
@@ -333,12 +333,12 @@ public class ListFaceGroupsResponse extends AcsResponse {
 					this.height = height;
 				}
 
-				public Integer getWidth() {
-					return this.width;
+				public Integer getLeft() {
+					return this.left;
 				}
 
-				public void setWidth(Integer width) {
-					this.width = width;
+				public void setLeft(Integer left) {
+					this.left = left;
 				}
 			}
 		}

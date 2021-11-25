@@ -57,17 +57,27 @@ public class DetectImageTagsResponse extends AcsResponse {
 
 	public static class TagsItem {
 
+		private String parentTagEnName;
+
 		private String tagName;
 
 		private Float tagConfidence;
+
+		private Float centricScore;
+
+		private String tagEnName;
 
 		private Integer tagLevel;
 
 		private String parentTagName;
 
-		private String parentTagEnName;
+		public String getParentTagEnName() {
+			return this.parentTagEnName;
+		}
 
-		private String tagEnName;
+		public void setParentTagEnName(String parentTagEnName) {
+			this.parentTagEnName = parentTagEnName;
+		}
 
 		public String getTagName() {
 			return this.tagName;
@@ -85,6 +95,22 @@ public class DetectImageTagsResponse extends AcsResponse {
 			this.tagConfidence = tagConfidence;
 		}
 
+		public Float getCentricScore() {
+			return this.centricScore;
+		}
+
+		public void setCentricScore(Float centricScore) {
+			this.centricScore = centricScore;
+		}
+
+		public String getTagEnName() {
+			return this.tagEnName;
+		}
+
+		public void setTagEnName(String tagEnName) {
+			this.tagEnName = tagEnName;
+		}
+
 		public Integer getTagLevel() {
 			return this.tagLevel;
 		}
@@ -99,22 +125,6 @@ public class DetectImageTagsResponse extends AcsResponse {
 
 		public void setParentTagName(String parentTagName) {
 			this.parentTagName = parentTagName;
-		}
-
-		public String getParentTagEnName() {
-			return this.parentTagEnName;
-		}
-
-		public void setParentTagEnName(String parentTagEnName) {
-			this.parentTagEnName = parentTagEnName;
-		}
-
-		public String getTagEnName() {
-			return this.tagEnName;
-		}
-
-		public void setTagEnName(String tagEnName) {
-			this.tagEnName = tagEnName;
 		}
 	}
 

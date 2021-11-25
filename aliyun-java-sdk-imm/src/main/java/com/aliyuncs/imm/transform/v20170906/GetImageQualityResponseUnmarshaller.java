@@ -28,14 +28,14 @@ public class GetImageQualityResponseUnmarshaller {
 
 		ImageQuality imageQuality = new ImageQuality();
 		imageQuality.setOverallScore(_ctx.floatValue("GetImageQualityResponse.ImageQuality.OverallScore"));
-		imageQuality.setClarityScore(_ctx.floatValue("GetImageQualityResponse.ImageQuality.ClarityScore"));
-		imageQuality.setClarity(_ctx.floatValue("GetImageQualityResponse.ImageQuality.Clarity"));
-		imageQuality.setExposureScore(_ctx.floatValue("GetImageQualityResponse.ImageQuality.ExposureScore"));
-		imageQuality.setExposure(_ctx.floatValue("GetImageQualityResponse.ImageQuality.Exposure"));
+		imageQuality.setColor(_ctx.floatValue("GetImageQualityResponse.ImageQuality.Color"));
+		imageQuality.setColorScore(_ctx.floatValue("GetImageQualityResponse.ImageQuality.ColorScore"));
 		imageQuality.setContrastScore(_ctx.floatValue("GetImageQualityResponse.ImageQuality.ContrastScore"));
 		imageQuality.setContrast(_ctx.floatValue("GetImageQualityResponse.ImageQuality.Contrast"));
-		imageQuality.setColorScore(_ctx.floatValue("GetImageQualityResponse.ImageQuality.ColorScore"));
-		imageQuality.setColor(_ctx.floatValue("GetImageQualityResponse.ImageQuality.Color"));
+		imageQuality.setExposureScore(_ctx.floatValue("GetImageQualityResponse.ImageQuality.ExposureScore"));
+		imageQuality.setClarityScore(_ctx.floatValue("GetImageQualityResponse.ImageQuality.ClarityScore"));
+		imageQuality.setClarity(_ctx.floatValue("GetImageQualityResponse.ImageQuality.Clarity"));
+		imageQuality.setExposure(_ctx.floatValue("GetImageQualityResponse.ImageQuality.Exposure"));
 		imageQuality.setCompositionScore(_ctx.floatValue("GetImageQualityResponse.ImageQuality.CompositionScore"));
 		getImageQualityResponse.setImageQuality(imageQuality);
 	 

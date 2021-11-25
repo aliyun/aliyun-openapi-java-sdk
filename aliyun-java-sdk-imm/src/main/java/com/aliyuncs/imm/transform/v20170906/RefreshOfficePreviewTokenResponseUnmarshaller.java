@@ -23,10 +23,10 @@ public class RefreshOfficePreviewTokenResponseUnmarshaller {
 	public static RefreshOfficePreviewTokenResponse unmarshall(RefreshOfficePreviewTokenResponse refreshOfficePreviewTokenResponse, UnmarshallerContext _ctx) {
 		
 		refreshOfficePreviewTokenResponse.setRequestId(_ctx.stringValue("RefreshOfficePreviewTokenResponse.RequestId"));
-		refreshOfficePreviewTokenResponse.setAccessToken(_ctx.stringValue("RefreshOfficePreviewTokenResponse.AccessToken"));
-		refreshOfficePreviewTokenResponse.setAccessTokenExpiredTime(_ctx.stringValue("RefreshOfficePreviewTokenResponse.AccessTokenExpiredTime"));
 		refreshOfficePreviewTokenResponse.setRefreshToken(_ctx.stringValue("RefreshOfficePreviewTokenResponse.RefreshToken"));
+		refreshOfficePreviewTokenResponse.setAccessToken(_ctx.stringValue("RefreshOfficePreviewTokenResponse.AccessToken"));
 		refreshOfficePreviewTokenResponse.setRefreshTokenExpiredTime(_ctx.stringValue("RefreshOfficePreviewTokenResponse.RefreshTokenExpiredTime"));
+		refreshOfficePreviewTokenResponse.setAccessTokenExpiredTime(_ctx.stringValue("RefreshOfficePreviewTokenResponse.AccessTokenExpiredTime"));
 	 
 	 	return refreshOfficePreviewTokenResponse;
 	}

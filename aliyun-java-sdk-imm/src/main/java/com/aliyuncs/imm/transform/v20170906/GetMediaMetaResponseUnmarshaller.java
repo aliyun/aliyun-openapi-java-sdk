@@ -39,36 +39,36 @@ public class GetMediaMetaResponseUnmarshaller {
 		MediaMeta mediaMeta = new MediaMeta();
 
 		MediaFormat mediaFormat = new MediaFormat();
-		mediaFormat.setSize(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaFormat.Size"));
-		mediaFormat.setNumberStreams(_ctx.integerValue("GetMediaMetaResponse.MediaMeta.MediaFormat.NumberStreams"));
-		mediaFormat.setFormatLongName(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaFormat.FormatLongName"));
-		mediaFormat.setStartTime(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaFormat.StartTime"));
 		mediaFormat.setCreationTime(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaFormat.CreationTime"));
-		mediaFormat.setFormatName(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaFormat.FormatName"));
-		mediaFormat.setDuration(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaFormat.Duration"));
-		mediaFormat.setBitrate(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaFormat.Bitrate"));
-		mediaFormat.setLocation(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaFormat.Location"));
 		mediaFormat.setNumberPrograms(_ctx.integerValue("GetMediaMetaResponse.MediaMeta.MediaFormat.NumberPrograms"));
+		mediaFormat.setNumberStreams(_ctx.integerValue("GetMediaMetaResponse.MediaMeta.MediaFormat.NumberStreams"));
+		mediaFormat.setBitrate(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaFormat.Bitrate"));
+		mediaFormat.setStartTime(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaFormat.StartTime"));
+		mediaFormat.setSize(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaFormat.Size"));
+		mediaFormat.setFormatLongName(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaFormat.FormatLongName"));
+		mediaFormat.setDuration(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaFormat.Duration"));
+		mediaFormat.setFormatName(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaFormat.FormatName"));
+		mediaFormat.setLocation(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaFormat.Location"));
+
+		Tag tag = new Tag();
+		tag.setCreationTime(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaFormat.Tag.CreationTime"));
+		tag.setAlbum(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaFormat.Tag.Album"));
+		tag.setAlbumArtist(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaFormat.Tag.AlbumArtist"));
+		tag.setPerformer(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaFormat.Tag.Performer"));
+		tag.setComposer(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaFormat.Tag.Composer"));
+		tag.setArtist(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaFormat.Tag.Artist"));
+		tag.setTitle(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaFormat.Tag.Title"));
+		tag.setLanguage(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaFormat.Tag.Language"));
+		mediaFormat.setTag(tag);
 
 		Address address = new Address();
 		address.setTownship(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaFormat.Address.Township"));
+		address.setDistrict(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaFormat.Address.District"));
 		address.setAddressLine(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaFormat.Address.AddressLine"));
 		address.setCountry(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaFormat.Address.Country"));
 		address.setCity(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaFormat.Address.City"));
-		address.setDistrict(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaFormat.Address.District"));
 		address.setProvince(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaFormat.Address.Province"));
 		mediaFormat.setAddress(address);
-
-		Tag tag = new Tag();
-		tag.setArtist(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaFormat.Tag.Artist"));
-		tag.setComposer(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaFormat.Tag.Composer"));
-		tag.setPerformer(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaFormat.Tag.Performer"));
-		tag.setLanguage(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaFormat.Tag.Language"));
-		tag.setCreationTime(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaFormat.Tag.CreationTime"));
-		tag.setTitle(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaFormat.Tag.Title"));
-		tag.setAlbum(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaFormat.Tag.Album"));
-		tag.setAlbumArtist(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaFormat.Tag.AlbumArtist"));
-		mediaFormat.setTag(tag);
 		mediaMeta.setMediaFormat(mediaFormat);
 
 		MediaStreams mediaStreams = new MediaStreams();
@@ -76,67 +76,67 @@ public class GetMediaMetaResponseUnmarshaller {
 		List<VideoStream> videoStreams = new ArrayList<VideoStream>();
 		for (int i = 0; i < _ctx.lengthValue("GetMediaMetaResponse.MediaMeta.MediaStreams.VideoStreams.Length"); i++) {
 			VideoStream videoStream = new VideoStream();
-			videoStream.setCodecTag(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaStreams.VideoStreams["+ i +"].CodecTag"));
-			videoStream.setFrames(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaStreams.VideoStreams["+ i +"].Frames"));
-			videoStream.setCodecTimeBase(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaStreams.VideoStreams["+ i +"].CodecTimeBase"));
-			videoStream.setRotate(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaStreams.VideoStreams["+ i +"].Rotate"));
-			videoStream.setSampleAspectRatio(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaStreams.VideoStreams["+ i +"].SampleAspectRatio"));
-			videoStream.setStartTime(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaStreams.VideoStreams["+ i +"].StartTime"));
-			videoStream.setDuration(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaStreams.VideoStreams["+ i +"].Duration"));
 			videoStream.setIndex(_ctx.integerValue("GetMediaMetaResponse.MediaMeta.MediaStreams.VideoStreams["+ i +"].Index"));
-			videoStream.setCodecName(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaStreams.VideoStreams["+ i +"].CodecName"));
-			videoStream.setBitrate(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaStreams.VideoStreams["+ i +"].Bitrate"));
-			videoStream.setProfile(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaStreams.VideoStreams["+ i +"].Profile"));
-			videoStream.setDisplayAspectRatio(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaStreams.VideoStreams["+ i +"].DisplayAspectRatio"));
-			videoStream.setHasBFrames(_ctx.integerValue("GetMediaMetaResponse.MediaMeta.MediaStreams.VideoStreams["+ i +"].HasBFrames"));
-			videoStream.setCodecTagString(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaStreams.VideoStreams["+ i +"].CodecTagString"));
-			videoStream.setAverageFrameRate(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaStreams.VideoStreams["+ i +"].AverageFrameRate"));
-			videoStream.setLanguage(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaStreams.VideoStreams["+ i +"].Language"));
 			videoStream.setCodecLongName(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaStreams.VideoStreams["+ i +"].CodecLongName"));
-			videoStream.setPixelFormat(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaStreams.VideoStreams["+ i +"].PixelFormat"));
-			videoStream.setLevel(_ctx.integerValue("GetMediaMetaResponse.MediaMeta.MediaStreams.VideoStreams["+ i +"].Level"));
 			videoStream.setHeight(_ctx.integerValue("GetMediaMetaResponse.MediaMeta.MediaStreams.VideoStreams["+ i +"].Height"));
+			videoStream.setSampleAspectRatio(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaStreams.VideoStreams["+ i +"].SampleAspectRatio"));
+			videoStream.setAverageFrameRate(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaStreams.VideoStreams["+ i +"].AverageFrameRate"));
+			videoStream.setBitrate(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaStreams.VideoStreams["+ i +"].Bitrate"));
+			videoStream.setRotate(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaStreams.VideoStreams["+ i +"].Rotate"));
+			videoStream.setCodecTagString(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaStreams.VideoStreams["+ i +"].CodecTagString"));
+			videoStream.setLanguage(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaStreams.VideoStreams["+ i +"].Language"));
+			videoStream.setHasBFrames(_ctx.integerValue("GetMediaMetaResponse.MediaMeta.MediaStreams.VideoStreams["+ i +"].HasBFrames"));
 			videoStream.setFrameRrate(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaStreams.VideoStreams["+ i +"].FrameRrate"));
+			videoStream.setProfile(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaStreams.VideoStreams["+ i +"].Profile"));
+			videoStream.setStartTime(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaStreams.VideoStreams["+ i +"].StartTime"));
+			videoStream.setFrames(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaStreams.VideoStreams["+ i +"].Frames"));
+			videoStream.setCodecName(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaStreams.VideoStreams["+ i +"].CodecName"));
 			videoStream.setWidth(_ctx.integerValue("GetMediaMetaResponse.MediaMeta.MediaStreams.VideoStreams["+ i +"].Width"));
+			videoStream.setDuration(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaStreams.VideoStreams["+ i +"].Duration"));
+			videoStream.setDisplayAspectRatio(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaStreams.VideoStreams["+ i +"].DisplayAspectRatio"));
+			videoStream.setCodecTag(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaStreams.VideoStreams["+ i +"].CodecTag"));
+			videoStream.setCodecTimeBase(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaStreams.VideoStreams["+ i +"].CodecTimeBase"));
 			videoStream.setTimeBase(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaStreams.VideoStreams["+ i +"].TimeBase"));
+			videoStream.setLevel(_ctx.integerValue("GetMediaMetaResponse.MediaMeta.MediaStreams.VideoStreams["+ i +"].Level"));
+			videoStream.setPixelFormat(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaStreams.VideoStreams["+ i +"].PixelFormat"));
 
 			videoStreams.add(videoStream);
 		}
 		mediaStreams.setVideoStreams(videoStreams);
 
-		List<SubtitleStream> subtitleStreams = new ArrayList<SubtitleStream>();
-		for (int i = 0; i < _ctx.lengthValue("GetMediaMetaResponse.MediaMeta.MediaStreams.SubtitleStreams.Length"); i++) {
-			SubtitleStream subtitleStream = new SubtitleStream();
-			subtitleStream.setLanguage(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaStreams.SubtitleStreams["+ i +"].Language"));
-			subtitleStream.setIndex(_ctx.integerValue("GetMediaMetaResponse.MediaMeta.MediaStreams.SubtitleStreams["+ i +"].Index"));
-
-			subtitleStreams.add(subtitleStream);
-		}
-		mediaStreams.setSubtitleStreams(subtitleStreams);
-
 		List<AudioStream> audioStreams = new ArrayList<AudioStream>();
 		for (int i = 0; i < _ctx.lengthValue("GetMediaMetaResponse.MediaMeta.MediaStreams.AudioStreams.Length"); i++) {
 			AudioStream audioStream = new AudioStream();
-			audioStream.setCodecTag(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaStreams.AudioStreams["+ i +"].CodecTag"));
-			audioStream.setFrames(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaStreams.AudioStreams["+ i +"].Frames"));
-			audioStream.setCodecTimeBase(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaStreams.AudioStreams["+ i +"].CodecTimeBase"));
-			audioStream.setChannelLayout(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaStreams.AudioStreams["+ i +"].ChannelLayout"));
-			audioStream.setStartTime(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaStreams.AudioStreams["+ i +"].StartTime"));
-			audioStream.setDuration(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaStreams.AudioStreams["+ i +"].Duration"));
 			audioStream.setIndex(_ctx.integerValue("GetMediaMetaResponse.MediaMeta.MediaStreams.AudioStreams["+ i +"].Index"));
-			audioStream.setCodecName(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaStreams.AudioStreams["+ i +"].CodecName"));
-			audioStream.setBitrate(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaStreams.AudioStreams["+ i +"].Bitrate"));
-			audioStream.setSampleFormat(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaStreams.AudioStreams["+ i +"].SampleFormat"));
-			audioStream.setChannels(_ctx.integerValue("GetMediaMetaResponse.MediaMeta.MediaStreams.AudioStreams["+ i +"].Channels"));
-			audioStream.setCodecTagString(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaStreams.AudioStreams["+ i +"].CodecTagString"));
 			audioStream.setSampleRate(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaStreams.AudioStreams["+ i +"].SampleRate"));
-			audioStream.setLanguage(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaStreams.AudioStreams["+ i +"].Language"));
+			audioStream.setChannelLayout(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaStreams.AudioStreams["+ i +"].ChannelLayout"));
 			audioStream.setCodecLongName(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaStreams.AudioStreams["+ i +"].CodecLongName"));
+			audioStream.setChannels(_ctx.integerValue("GetMediaMetaResponse.MediaMeta.MediaStreams.AudioStreams["+ i +"].Channels"));
+			audioStream.setBitrate(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaStreams.AudioStreams["+ i +"].Bitrate"));
+			audioStream.setCodecTagString(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaStreams.AudioStreams["+ i +"].CodecTagString"));
+			audioStream.setLanguage(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaStreams.AudioStreams["+ i +"].Language"));
+			audioStream.setStartTime(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaStreams.AudioStreams["+ i +"].StartTime"));
+			audioStream.setSampleFormat(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaStreams.AudioStreams["+ i +"].SampleFormat"));
+			audioStream.setFrames(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaStreams.AudioStreams["+ i +"].Frames"));
+			audioStream.setCodecName(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaStreams.AudioStreams["+ i +"].CodecName"));
+			audioStream.setDuration(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaStreams.AudioStreams["+ i +"].Duration"));
+			audioStream.setCodecTag(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaStreams.AudioStreams["+ i +"].CodecTag"));
+			audioStream.setCodecTimeBase(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaStreams.AudioStreams["+ i +"].CodecTimeBase"));
 			audioStream.setTimeBase(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaStreams.AudioStreams["+ i +"].TimeBase"));
 
 			audioStreams.add(audioStream);
 		}
 		mediaStreams.setAudioStreams(audioStreams);
+
+		List<SubtitleStream> subtitleStreams = new ArrayList<SubtitleStream>();
+		for (int i = 0; i < _ctx.lengthValue("GetMediaMetaResponse.MediaMeta.MediaStreams.SubtitleStreams.Length"); i++) {
+			SubtitleStream subtitleStream = new SubtitleStream();
+			subtitleStream.setIndex(_ctx.integerValue("GetMediaMetaResponse.MediaMeta.MediaStreams.SubtitleStreams["+ i +"].Index"));
+			subtitleStream.setLanguage(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaStreams.SubtitleStreams["+ i +"].Language"));
+
+			subtitleStreams.add(subtitleStream);
+		}
+		mediaStreams.setSubtitleStreams(subtitleStreams);
 		mediaMeta.setMediaStreams(mediaStreams);
 		getMediaMetaResponse.setMediaMeta(mediaMeta);
 	 

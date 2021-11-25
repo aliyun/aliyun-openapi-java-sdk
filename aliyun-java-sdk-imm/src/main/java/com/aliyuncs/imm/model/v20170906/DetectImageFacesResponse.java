@@ -57,54 +57,38 @@ public class DetectImageFacesResponse extends AcsResponse {
 
 	public static class FacesItem {
 
-		private String faceId;
-
-		private Float faceConfidence;
-
-		private Integer age;
+		private Float attractiveConfidence;
 
 		private String gender;
 
-		private String emotion;
-
-		private Float attractive;
-
 		private Float genderConfidence;
 
-		private Float ageConfidence;
+		private String faceId;
 
-		private Float attractiveConfidence;
+		private Float faceQuality;
+
+		private String emotion;
+
+		private Integer age;
+
+		private Float faceConfidence;
 
 		private Float emotionConfidence;
 
-		private Float faceQuality;
+		private Float attractive;
+
+		private Float ageConfidence;
 
 		private FaceAttributes faceAttributes;
 
 		private EmotionDetails emotionDetails;
 
-		public String getFaceId() {
-			return this.faceId;
+		public Float getAttractiveConfidence() {
+			return this.attractiveConfidence;
 		}
 
-		public void setFaceId(String faceId) {
-			this.faceId = faceId;
-		}
-
-		public Float getFaceConfidence() {
-			return this.faceConfidence;
-		}
-
-		public void setFaceConfidence(Float faceConfidence) {
-			this.faceConfidence = faceConfidence;
-		}
-
-		public Integer getAge() {
-			return this.age;
-		}
-
-		public void setAge(Integer age) {
-			this.age = age;
+		public void setAttractiveConfidence(Float attractiveConfidence) {
+			this.attractiveConfidence = attractiveConfidence;
 		}
 
 		public String getGender() {
@@ -115,22 +99,6 @@ public class DetectImageFacesResponse extends AcsResponse {
 			this.gender = gender;
 		}
 
-		public String getEmotion() {
-			return this.emotion;
-		}
-
-		public void setEmotion(String emotion) {
-			this.emotion = emotion;
-		}
-
-		public Float getAttractive() {
-			return this.attractive;
-		}
-
-		public void setAttractive(Float attractive) {
-			this.attractive = attractive;
-		}
-
 		public Float getGenderConfidence() {
 			return this.genderConfidence;
 		}
@@ -139,20 +107,44 @@ public class DetectImageFacesResponse extends AcsResponse {
 			this.genderConfidence = genderConfidence;
 		}
 
-		public Float getAgeConfidence() {
-			return this.ageConfidence;
+		public String getFaceId() {
+			return this.faceId;
 		}
 
-		public void setAgeConfidence(Float ageConfidence) {
-			this.ageConfidence = ageConfidence;
+		public void setFaceId(String faceId) {
+			this.faceId = faceId;
 		}
 
-		public Float getAttractiveConfidence() {
-			return this.attractiveConfidence;
+		public Float getFaceQuality() {
+			return this.faceQuality;
 		}
 
-		public void setAttractiveConfidence(Float attractiveConfidence) {
-			this.attractiveConfidence = attractiveConfidence;
+		public void setFaceQuality(Float faceQuality) {
+			this.faceQuality = faceQuality;
+		}
+
+		public String getEmotion() {
+			return this.emotion;
+		}
+
+		public void setEmotion(String emotion) {
+			this.emotion = emotion;
+		}
+
+		public Integer getAge() {
+			return this.age;
+		}
+
+		public void setAge(Integer age) {
+			this.age = age;
+		}
+
+		public Float getFaceConfidence() {
+			return this.faceConfidence;
+		}
+
+		public void setFaceConfidence(Float faceConfidence) {
+			this.faceConfidence = faceConfidence;
 		}
 
 		public Float getEmotionConfidence() {
@@ -163,12 +155,20 @@ public class DetectImageFacesResponse extends AcsResponse {
 			this.emotionConfidence = emotionConfidence;
 		}
 
-		public Float getFaceQuality() {
-			return this.faceQuality;
+		public Float getAttractive() {
+			return this.attractive;
 		}
 
-		public void setFaceQuality(Float faceQuality) {
-			this.faceQuality = faceQuality;
+		public void setAttractive(Float attractive) {
+			this.attractive = attractive;
+		}
+
+		public Float getAgeConfidence() {
+			return this.ageConfidence;
+		}
+
+		public void setAgeConfidence(Float ageConfidence) {
+			this.ageConfidence = ageConfidence;
 		}
 
 		public FaceAttributes getFaceAttributes() {
@@ -189,21 +189,29 @@ public class DetectImageFacesResponse extends AcsResponse {
 
 		public static class FaceAttributes {
 
+			private Float glassesConfidence;
+
 			private String glasses;
 
-			private String beard;
-
 			private String mask;
-
-			private Float glassesConfidence;
 
 			private Float beardConfidence;
 
 			private Float maskConfidence;
 
+			private String beard;
+
 			private FaceBoundary faceBoundary;
 
 			private HeadPose headPose;
+
+			public Float getGlassesConfidence() {
+				return this.glassesConfidence;
+			}
+
+			public void setGlassesConfidence(Float glassesConfidence) {
+				this.glassesConfidence = glassesConfidence;
+			}
 
 			public String getGlasses() {
 				return this.glasses;
@@ -213,28 +221,12 @@ public class DetectImageFacesResponse extends AcsResponse {
 				this.glasses = glasses;
 			}
 
-			public String getBeard() {
-				return this.beard;
-			}
-
-			public void setBeard(String beard) {
-				this.beard = beard;
-			}
-
 			public String getMask() {
 				return this.mask;
 			}
 
 			public void setMask(String mask) {
 				this.mask = mask;
-			}
-
-			public Float getGlassesConfidence() {
-				return this.glassesConfidence;
-			}
-
-			public void setGlassesConfidence(Float glassesConfidence) {
-				this.glassesConfidence = glassesConfidence;
 			}
 
 			public Float getBeardConfidence() {
@@ -251,6 +243,14 @@ public class DetectImageFacesResponse extends AcsResponse {
 
 			public void setMaskConfidence(Float maskConfidence) {
 				this.maskConfidence = maskConfidence;
+			}
+
+			public String getBeard() {
+				return this.beard;
+			}
+
+			public void setBeard(String beard) {
+				this.beard = beard;
 			}
 
 			public FaceBoundary getFaceBoundary() {
@@ -271,21 +271,13 @@ public class DetectImageFacesResponse extends AcsResponse {
 
 			public static class FaceBoundary {
 
-				private Integer left;
-
 				private Integer top;
 
 				private Integer width;
 
 				private Integer height;
 
-				public Integer getLeft() {
-					return this.left;
-				}
-
-				public void setLeft(Integer left) {
-					this.left = left;
-				}
+				private Integer left;
 
 				public Integer getTop() {
 					return this.top;
@@ -309,6 +301,14 @@ public class DetectImageFacesResponse extends AcsResponse {
 
 				public void setHeight(Integer height) {
 					this.height = height;
+				}
+
+				public Integer getLeft() {
+					return this.left;
+				}
+
+				public void setLeft(Integer left) {
+					this.left = left;
 				}
 			}
 
@@ -350,17 +350,17 @@ public class DetectImageFacesResponse extends AcsResponse {
 
 			private Float hAPPY;
 
-			private Float sAD;
-
-			private Float aNGRY;
+			private Float cALM;
 
 			private Float sURPRISED;
 
-			private Float sCARED;
-
 			private Float dISGUSTED;
 
-			private Float cALM;
+			private Float aNGRY;
+
+			private Float sAD;
+
+			private Float sCARED;
 
 			public Float getHAPPY() {
 				return this.hAPPY;
@@ -370,20 +370,12 @@ public class DetectImageFacesResponse extends AcsResponse {
 				this.hAPPY = hAPPY;
 			}
 
-			public Float getSAD() {
-				return this.sAD;
+			public Float getCALM() {
+				return this.cALM;
 			}
 
-			public void setSAD(Float sAD) {
-				this.sAD = sAD;
-			}
-
-			public Float getANGRY() {
-				return this.aNGRY;
-			}
-
-			public void setANGRY(Float aNGRY) {
-				this.aNGRY = aNGRY;
+			public void setCALM(Float cALM) {
+				this.cALM = cALM;
 			}
 
 			public Float getSURPRISED() {
@@ -394,14 +386,6 @@ public class DetectImageFacesResponse extends AcsResponse {
 				this.sURPRISED = sURPRISED;
 			}
 
-			public Float getSCARED() {
-				return this.sCARED;
-			}
-
-			public void setSCARED(Float sCARED) {
-				this.sCARED = sCARED;
-			}
-
 			public Float getDISGUSTED() {
 				return this.dISGUSTED;
 			}
@@ -410,12 +394,28 @@ public class DetectImageFacesResponse extends AcsResponse {
 				this.dISGUSTED = dISGUSTED;
 			}
 
-			public Float getCALM() {
-				return this.cALM;
+			public Float getANGRY() {
+				return this.aNGRY;
 			}
 
-			public void setCALM(Float cALM) {
-				this.cALM = cALM;
+			public void setANGRY(Float aNGRY) {
+				this.aNGRY = aNGRY;
+			}
+
+			public Float getSAD() {
+				return this.sAD;
+			}
+
+			public void setSAD(Float sAD) {
+				this.sAD = sAD;
+			}
+
+			public Float getSCARED() {
+				return this.sCARED;
+			}
+
+			public void setSCARED(Float sCARED) {
+				this.sCARED = sCARED;
 			}
 		}
 	}

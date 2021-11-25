@@ -58,21 +58,21 @@ public class GetImageQualityResponse extends AcsResponse {
 
 		private Float overallScore;
 
-		private Float clarityScore;
+		private Float color;
 
-		private Float clarity;
-
-		private Float exposureScore;
-
-		private Float exposure;
+		private Float colorScore;
 
 		private Float contrastScore;
 
 		private Float contrast;
 
-		private Float colorScore;
+		private Float exposureScore;
 
-		private Float color;
+		private Float clarityScore;
+
+		private Float clarity;
+
+		private Float exposure;
 
 		private Float compositionScore;
 
@@ -84,36 +84,20 @@ public class GetImageQualityResponse extends AcsResponse {
 			this.overallScore = overallScore;
 		}
 
-		public Float getClarityScore() {
-			return this.clarityScore;
+		public Float getColor() {
+			return this.color;
 		}
 
-		public void setClarityScore(Float clarityScore) {
-			this.clarityScore = clarityScore;
+		public void setColor(Float color) {
+			this.color = color;
 		}
 
-		public Float getClarity() {
-			return this.clarity;
+		public Float getColorScore() {
+			return this.colorScore;
 		}
 
-		public void setClarity(Float clarity) {
-			this.clarity = clarity;
-		}
-
-		public Float getExposureScore() {
-			return this.exposureScore;
-		}
-
-		public void setExposureScore(Float exposureScore) {
-			this.exposureScore = exposureScore;
-		}
-
-		public Float getExposure() {
-			return this.exposure;
-		}
-
-		public void setExposure(Float exposure) {
-			this.exposure = exposure;
+		public void setColorScore(Float colorScore) {
+			this.colorScore = colorScore;
 		}
 
 		public Float getContrastScore() {
@@ -132,20 +116,36 @@ public class GetImageQualityResponse extends AcsResponse {
 			this.contrast = contrast;
 		}
 
-		public Float getColorScore() {
-			return this.colorScore;
+		public Float getExposureScore() {
+			return this.exposureScore;
 		}
 
-		public void setColorScore(Float colorScore) {
-			this.colorScore = colorScore;
+		public void setExposureScore(Float exposureScore) {
+			this.exposureScore = exposureScore;
 		}
 
-		public Float getColor() {
-			return this.color;
+		public Float getClarityScore() {
+			return this.clarityScore;
 		}
 
-		public void setColor(Float color) {
-			this.color = color;
+		public void setClarityScore(Float clarityScore) {
+			this.clarityScore = clarityScore;
+		}
+
+		public Float getClarity() {
+			return this.clarity;
+		}
+
+		public void setClarity(Float clarity) {
+			this.clarity = clarity;
+		}
+
+		public Float getExposure() {
+			return this.exposure;
+		}
+
+		public void setExposure(Float exposure) {
+			this.exposure = exposure;
 		}
 
 		public Float getCompositionScore() {

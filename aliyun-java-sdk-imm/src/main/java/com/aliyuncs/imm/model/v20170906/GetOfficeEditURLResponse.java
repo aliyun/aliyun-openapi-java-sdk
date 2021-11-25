@@ -24,17 +24,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetOfficeEditURLResponse extends AcsResponse {
 
+	private String refreshToken;
+
 	private String requestId;
 
 	private String editURL;
 
 	private String accessToken;
 
-	private String refreshToken;
+	private String refreshTokenExpiredTime;
 
 	private String accessTokenExpiredTime;
 
-	private String refreshTokenExpiredTime;
+	public String getRefreshToken() {
+		return this.refreshToken;
+	}
+
+	public void setRefreshToken(String refreshToken) {
+		this.refreshToken = refreshToken;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -60,12 +68,12 @@ public class GetOfficeEditURLResponse extends AcsResponse {
 		this.accessToken = accessToken;
 	}
 
-	public String getRefreshToken() {
-		return this.refreshToken;
+	public String getRefreshTokenExpiredTime() {
+		return this.refreshTokenExpiredTime;
 	}
 
-	public void setRefreshToken(String refreshToken) {
-		this.refreshToken = refreshToken;
+	public void setRefreshTokenExpiredTime(String refreshTokenExpiredTime) {
+		this.refreshTokenExpiredTime = refreshTokenExpiredTime;
 	}
 
 	public String getAccessTokenExpiredTime() {
@@ -74,14 +82,6 @@ public class GetOfficeEditURLResponse extends AcsResponse {
 
 	public void setAccessTokenExpiredTime(String accessTokenExpiredTime) {
 		this.accessTokenExpiredTime = accessTokenExpiredTime;
-	}
-
-	public String getRefreshTokenExpiredTime() {
-		return this.refreshTokenExpiredTime;
-	}
-
-	public void setRefreshTokenExpiredTime(String refreshTokenExpiredTime) {
-		this.refreshTokenExpiredTime = refreshTokenExpiredTime;
 	}
 
 	@Override

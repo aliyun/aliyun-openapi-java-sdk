@@ -42,10 +42,10 @@ public class DetectQRCodesResponseUnmarshaller {
 				qRCodesItem.setContent(_ctx.stringValue("DetectQRCodesResponse.SuccessDetails["+ i +"].QRCodes["+ j +"].Content"));
 
 				QRCodesRectangle qRCodesRectangle = new QRCodesRectangle();
-				qRCodesRectangle.setLeft(_ctx.stringValue("DetectQRCodesResponse.SuccessDetails["+ i +"].QRCodes["+ j +"].QRCodesRectangle.Left"));
 				qRCodesRectangle.setTop(_ctx.stringValue("DetectQRCodesResponse.SuccessDetails["+ i +"].QRCodes["+ j +"].QRCodesRectangle.Top"));
 				qRCodesRectangle.setWidth(_ctx.stringValue("DetectQRCodesResponse.SuccessDetails["+ i +"].QRCodes["+ j +"].QRCodesRectangle.Width"));
 				qRCodesRectangle.setHeight(_ctx.stringValue("DetectQRCodesResponse.SuccessDetails["+ i +"].QRCodes["+ j +"].QRCodesRectangle.Height"));
+				qRCodesRectangle.setLeft(_ctx.stringValue("DetectQRCodesResponse.SuccessDetails["+ i +"].QRCodes["+ j +"].QRCodesRectangle.Left"));
 				qRCodesItem.setQRCodesRectangle(qRCodesRectangle);
 
 				qRCodes.add(qRCodesItem);
@@ -59,9 +59,9 @@ public class DetectQRCodesResponseUnmarshaller {
 		List<FailDetailsItem> failDetails = new ArrayList<FailDetailsItem>();
 		for (int i = 0; i < _ctx.lengthValue("DetectQRCodesResponse.FailDetails.Length"); i++) {
 			FailDetailsItem failDetailsItem = new FailDetailsItem();
+			failDetailsItem.setErrorMessage(_ctx.stringValue("DetectQRCodesResponse.FailDetails["+ i +"].ErrorMessage"));
 			failDetailsItem.setSrcUri(_ctx.stringValue("DetectQRCodesResponse.FailDetails["+ i +"].SrcUri"));
 			failDetailsItem.setErrorCode(_ctx.stringValue("DetectQRCodesResponse.FailDetails["+ i +"].ErrorCode"));
-			failDetailsItem.setErrorMessage(_ctx.stringValue("DetectQRCodesResponse.FailDetails["+ i +"].ErrorMessage"));
 
 			failDetails.add(failDetailsItem);
 		}

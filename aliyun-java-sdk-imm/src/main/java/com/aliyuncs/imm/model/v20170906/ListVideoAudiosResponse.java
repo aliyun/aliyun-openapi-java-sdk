@@ -25,22 +25,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListVideoAudiosResponse extends AcsResponse {
 
-	private String setId;
+	private String requestId;
 
 	private String videoUri;
 
 	private String nextMarker;
 
-	private String requestId;
+	private String setId;
 
 	private List<AudiosItem> audios;
 
-	public String getSetId() {
-		return this.setId;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setSetId(String setId) {
-		this.setId = setId;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getVideoUri() {
@@ -59,12 +59,12 @@ public class ListVideoAudiosResponse extends AcsResponse {
 		this.nextMarker = nextMarker;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getSetId() {
+		return this.setId;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setSetId(String setId) {
+		this.setId = setId;
 	}
 
 	public List<AudiosItem> getAudios() {
@@ -77,49 +77,73 @@ public class ListVideoAudiosResponse extends AcsResponse {
 
 	public static class AudiosItem {
 
+		private String sourcePosition;
+
+		private String createTime;
+
+		private String remarksC;
+
 		private Float audioDuration;
+
+		private String sourceType;
+
+		private String audioTextsStatus;
+
+		private String audioFormat;
+
+		private String remarksD;
+
+		private String processModifyTime;
+
+		private String processFailReason;
 
 		private String audioUri;
 
 		private Integer audioRate;
 
-		private String sourceType;
-
-		private String modifyTime;
-
-		private Integer fileSize;
-
-		private String sourceUri;
-
-		private String createTime;
+		private String audioTextsModifyTime;
 
 		private String remarksA;
 
-		private String remarksB;
+		private String externalId;
 
-		private String audioTextsStatus;
-
-		private String audioTextsModifyTime;
-
-		private String processModifyTime;
+		private String sourceUri;
 
 		private String processStatus;
 
-		private String sourcePosition;
-
-		private String audioFormat;
-
 		private String audioTextsFailReason;
 
-		private String processFailReason;
+		private String remarksB;
 
-		private String remarksC;
+		private Integer fileSize;
 
-		private String remarksD;
-
-		private String externalId;
+		private String modifyTime;
 
 		private List<AudioTextsItem> audioTexts;
+
+		public String getSourcePosition() {
+			return this.sourcePosition;
+		}
+
+		public void setSourcePosition(String sourcePosition) {
+			this.sourcePosition = sourcePosition;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
+
+		public String getRemarksC() {
+			return this.remarksC;
+		}
+
+		public void setRemarksC(String remarksC) {
+			this.remarksC = remarksC;
+		}
 
 		public Float getAudioDuration() {
 			return this.audioDuration;
@@ -127,6 +151,54 @@ public class ListVideoAudiosResponse extends AcsResponse {
 
 		public void setAudioDuration(Float audioDuration) {
 			this.audioDuration = audioDuration;
+		}
+
+		public String getSourceType() {
+			return this.sourceType;
+		}
+
+		public void setSourceType(String sourceType) {
+			this.sourceType = sourceType;
+		}
+
+		public String getAudioTextsStatus() {
+			return this.audioTextsStatus;
+		}
+
+		public void setAudioTextsStatus(String audioTextsStatus) {
+			this.audioTextsStatus = audioTextsStatus;
+		}
+
+		public String getAudioFormat() {
+			return this.audioFormat;
+		}
+
+		public void setAudioFormat(String audioFormat) {
+			this.audioFormat = audioFormat;
+		}
+
+		public String getRemarksD() {
+			return this.remarksD;
+		}
+
+		public void setRemarksD(String remarksD) {
+			this.remarksD = remarksD;
+		}
+
+		public String getProcessModifyTime() {
+			return this.processModifyTime;
+		}
+
+		public void setProcessModifyTime(String processModifyTime) {
+			this.processModifyTime = processModifyTime;
+		}
+
+		public String getProcessFailReason() {
+			return this.processFailReason;
+		}
+
+		public void setProcessFailReason(String processFailReason) {
+			this.processFailReason = processFailReason;
 		}
 
 		public String getAudioUri() {
@@ -145,44 +217,12 @@ public class ListVideoAudiosResponse extends AcsResponse {
 			this.audioRate = audioRate;
 		}
 
-		public String getSourceType() {
-			return this.sourceType;
+		public String getAudioTextsModifyTime() {
+			return this.audioTextsModifyTime;
 		}
 
-		public void setSourceType(String sourceType) {
-			this.sourceType = sourceType;
-		}
-
-		public String getModifyTime() {
-			return this.modifyTime;
-		}
-
-		public void setModifyTime(String modifyTime) {
-			this.modifyTime = modifyTime;
-		}
-
-		public Integer getFileSize() {
-			return this.fileSize;
-		}
-
-		public void setFileSize(Integer fileSize) {
-			this.fileSize = fileSize;
-		}
-
-		public String getSourceUri() {
-			return this.sourceUri;
-		}
-
-		public void setSourceUri(String sourceUri) {
-			this.sourceUri = sourceUri;
-		}
-
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
+		public void setAudioTextsModifyTime(String audioTextsModifyTime) {
+			this.audioTextsModifyTime = audioTextsModifyTime;
 		}
 
 		public String getRemarksA() {
@@ -193,36 +233,20 @@ public class ListVideoAudiosResponse extends AcsResponse {
 			this.remarksA = remarksA;
 		}
 
-		public String getRemarksB() {
-			return this.remarksB;
+		public String getExternalId() {
+			return this.externalId;
 		}
 
-		public void setRemarksB(String remarksB) {
-			this.remarksB = remarksB;
+		public void setExternalId(String externalId) {
+			this.externalId = externalId;
 		}
 
-		public String getAudioTextsStatus() {
-			return this.audioTextsStatus;
+		public String getSourceUri() {
+			return this.sourceUri;
 		}
 
-		public void setAudioTextsStatus(String audioTextsStatus) {
-			this.audioTextsStatus = audioTextsStatus;
-		}
-
-		public String getAudioTextsModifyTime() {
-			return this.audioTextsModifyTime;
-		}
-
-		public void setAudioTextsModifyTime(String audioTextsModifyTime) {
-			this.audioTextsModifyTime = audioTextsModifyTime;
-		}
-
-		public String getProcessModifyTime() {
-			return this.processModifyTime;
-		}
-
-		public void setProcessModifyTime(String processModifyTime) {
-			this.processModifyTime = processModifyTime;
+		public void setSourceUri(String sourceUri) {
+			this.sourceUri = sourceUri;
 		}
 
 		public String getProcessStatus() {
@@ -233,22 +257,6 @@ public class ListVideoAudiosResponse extends AcsResponse {
 			this.processStatus = processStatus;
 		}
 
-		public String getSourcePosition() {
-			return this.sourcePosition;
-		}
-
-		public void setSourcePosition(String sourcePosition) {
-			this.sourcePosition = sourcePosition;
-		}
-
-		public String getAudioFormat() {
-			return this.audioFormat;
-		}
-
-		public void setAudioFormat(String audioFormat) {
-			this.audioFormat = audioFormat;
-		}
-
 		public String getAudioTextsFailReason() {
 			return this.audioTextsFailReason;
 		}
@@ -257,36 +265,28 @@ public class ListVideoAudiosResponse extends AcsResponse {
 			this.audioTextsFailReason = audioTextsFailReason;
 		}
 
-		public String getProcessFailReason() {
-			return this.processFailReason;
+		public String getRemarksB() {
+			return this.remarksB;
 		}
 
-		public void setProcessFailReason(String processFailReason) {
-			this.processFailReason = processFailReason;
+		public void setRemarksB(String remarksB) {
+			this.remarksB = remarksB;
 		}
 
-		public String getRemarksC() {
-			return this.remarksC;
+		public Integer getFileSize() {
+			return this.fileSize;
 		}
 
-		public void setRemarksC(String remarksC) {
-			this.remarksC = remarksC;
+		public void setFileSize(Integer fileSize) {
+			this.fileSize = fileSize;
 		}
 
-		public String getRemarksD() {
-			return this.remarksD;
+		public String getModifyTime() {
+			return this.modifyTime;
 		}
 
-		public void setRemarksD(String remarksD) {
-			this.remarksD = remarksD;
-		}
-
-		public String getExternalId() {
-			return this.externalId;
-		}
-
-		public void setExternalId(String externalId) {
-			this.externalId = externalId;
+		public void setModifyTime(String modifyTime) {
+			this.modifyTime = modifyTime;
 		}
 
 		public List<AudioTextsItem> getAudioTexts() {
@@ -299,41 +299,25 @@ public class ListVideoAudiosResponse extends AcsResponse {
 
 		public static class AudioTextsItem {
 
-			private String text;
-
-			private Float beginTime;
-
 			private Float endTime;
-
-			private Float silenceDuration;
-
-			private Float emotionValue;
-
-			private Integer channelId;
-
-			private Integer speechRate;
-
-			private Float confidence;
-
-			private String person;
 
 			private String library;
 
-			public String getText() {
-				return this.text;
-			}
+			private Float confidence;
 
-			public void setText(String text) {
-				this.text = text;
-			}
+			private Float beginTime;
 
-			public Float getBeginTime() {
-				return this.beginTime;
-			}
+			private Integer channelId;
 
-			public void setBeginTime(Float beginTime) {
-				this.beginTime = beginTime;
-			}
+			private Float emotionValue;
+
+			private Integer speechRate;
+
+			private String text;
+
+			private String person;
+
+			private Float silenceDuration;
 
 			public Float getEndTime() {
 				return this.endTime;
@@ -343,36 +327,12 @@ public class ListVideoAudiosResponse extends AcsResponse {
 				this.endTime = endTime;
 			}
 
-			public Float getSilenceDuration() {
-				return this.silenceDuration;
+			public String getLibrary() {
+				return this.library;
 			}
 
-			public void setSilenceDuration(Float silenceDuration) {
-				this.silenceDuration = silenceDuration;
-			}
-
-			public Float getEmotionValue() {
-				return this.emotionValue;
-			}
-
-			public void setEmotionValue(Float emotionValue) {
-				this.emotionValue = emotionValue;
-			}
-
-			public Integer getChannelId() {
-				return this.channelId;
-			}
-
-			public void setChannelId(Integer channelId) {
-				this.channelId = channelId;
-			}
-
-			public Integer getSpeechRate() {
-				return this.speechRate;
-			}
-
-			public void setSpeechRate(Integer speechRate) {
-				this.speechRate = speechRate;
+			public void setLibrary(String library) {
+				this.library = library;
 			}
 
 			public Float getConfidence() {
@@ -383,6 +343,46 @@ public class ListVideoAudiosResponse extends AcsResponse {
 				this.confidence = confidence;
 			}
 
+			public Float getBeginTime() {
+				return this.beginTime;
+			}
+
+			public void setBeginTime(Float beginTime) {
+				this.beginTime = beginTime;
+			}
+
+			public Integer getChannelId() {
+				return this.channelId;
+			}
+
+			public void setChannelId(Integer channelId) {
+				this.channelId = channelId;
+			}
+
+			public Float getEmotionValue() {
+				return this.emotionValue;
+			}
+
+			public void setEmotionValue(Float emotionValue) {
+				this.emotionValue = emotionValue;
+			}
+
+			public Integer getSpeechRate() {
+				return this.speechRate;
+			}
+
+			public void setSpeechRate(Integer speechRate) {
+				this.speechRate = speechRate;
+			}
+
+			public String getText() {
+				return this.text;
+			}
+
+			public void setText(String text) {
+				this.text = text;
+			}
+
 			public String getPerson() {
 				return this.person;
 			}
@@ -391,12 +391,12 @@ public class ListVideoAudiosResponse extends AcsResponse {
 				this.person = person;
 			}
 
-			public String getLibrary() {
-				return this.library;
+			public Float getSilenceDuration() {
+				return this.silenceDuration;
 			}
 
-			public void setLibrary(String library) {
-				this.library = library;
+			public void setSilenceDuration(Float silenceDuration) {
+				this.silenceDuration = silenceDuration;
 			}
 		}
 	}

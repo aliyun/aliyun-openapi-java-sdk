@@ -24,18 +24,18 @@ public class GetOfficeConversionTaskResponseUnmarshaller {
 	public static GetOfficeConversionTaskResponse unmarshall(GetOfficeConversionTaskResponse getOfficeConversionTaskResponse, UnmarshallerContext _ctx) {
 		
 		getOfficeConversionTaskResponse.setRequestId(_ctx.stringValue("GetOfficeConversionTaskResponse.RequestId"));
-		getOfficeConversionTaskResponse.setTgtType(_ctx.stringValue("GetOfficeConversionTaskResponse.TgtType"));
 		getOfficeConversionTaskResponse.setStatus(_ctx.stringValue("GetOfficeConversionTaskResponse.Status"));
-		getOfficeConversionTaskResponse.setPercent(_ctx.integerValue("GetOfficeConversionTaskResponse.Percent"));
-		getOfficeConversionTaskResponse.setPageCount(_ctx.integerValue("GetOfficeConversionTaskResponse.PageCount"));
+		getOfficeConversionTaskResponse.setTgtType(_ctx.stringValue("GetOfficeConversionTaskResponse.TgtType"));
 		getOfficeConversionTaskResponse.setTaskId(_ctx.stringValue("GetOfficeConversionTaskResponse.TaskId"));
-		getOfficeConversionTaskResponse.setTgtUri(_ctx.stringValue("GetOfficeConversionTaskResponse.TgtUri"));
-		getOfficeConversionTaskResponse.setImageSpec(_ctx.stringValue("GetOfficeConversionTaskResponse.ImageSpec"));
-		getOfficeConversionTaskResponse.setNotifyTopicName(_ctx.stringValue("GetOfficeConversionTaskResponse.NotifyTopicName"));
-		getOfficeConversionTaskResponse.setNotifyEndpoint(_ctx.stringValue("GetOfficeConversionTaskResponse.NotifyEndpoint"));
-		getOfficeConversionTaskResponse.setExternalID(_ctx.stringValue("GetOfficeConversionTaskResponse.ExternalID"));
+		getOfficeConversionTaskResponse.setPercent(_ctx.integerValue("GetOfficeConversionTaskResponse.Percent"));
 		getOfficeConversionTaskResponse.setCreateTime(_ctx.stringValue("GetOfficeConversionTaskResponse.CreateTime"));
+		getOfficeConversionTaskResponse.setExternalID(_ctx.stringValue("GetOfficeConversionTaskResponse.ExternalID"));
+		getOfficeConversionTaskResponse.setImageSpec(_ctx.stringValue("GetOfficeConversionTaskResponse.ImageSpec"));
+		getOfficeConversionTaskResponse.setNotifyEndpoint(_ctx.stringValue("GetOfficeConversionTaskResponse.NotifyEndpoint"));
+		getOfficeConversionTaskResponse.setTgtUri(_ctx.stringValue("GetOfficeConversionTaskResponse.TgtUri"));
 		getOfficeConversionTaskResponse.setFinishTime(_ctx.stringValue("GetOfficeConversionTaskResponse.FinishTime"));
+		getOfficeConversionTaskResponse.setPageCount(_ctx.integerValue("GetOfficeConversionTaskResponse.PageCount"));
+		getOfficeConversionTaskResponse.setNotifyTopicName(_ctx.stringValue("GetOfficeConversionTaskResponse.NotifyTopicName"));
 		getOfficeConversionTaskResponse.setSrcUri(_ctx.stringValue("GetOfficeConversionTaskResponse.SrcUri"));
 
 		FailDetail failDetail = new FailDetail();

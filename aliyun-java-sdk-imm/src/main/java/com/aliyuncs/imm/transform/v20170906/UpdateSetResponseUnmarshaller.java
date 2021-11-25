@@ -23,10 +23,10 @@ public class UpdateSetResponseUnmarshaller {
 	public static UpdateSetResponse unmarshall(UpdateSetResponse updateSetResponse, UnmarshallerContext _ctx) {
 		
 		updateSetResponse.setRequestId(_ctx.stringValue("UpdateSetResponse.RequestId"));
-		updateSetResponse.setSetId(_ctx.stringValue("UpdateSetResponse.SetId"));
-		updateSetResponse.setSetName(_ctx.stringValue("UpdateSetResponse.SetName"));
-		updateSetResponse.setCreateTime(_ctx.stringValue("UpdateSetResponse.CreateTime"));
 		updateSetResponse.setModifyTime(_ctx.stringValue("UpdateSetResponse.ModifyTime"));
+		updateSetResponse.setCreateTime(_ctx.stringValue("UpdateSetResponse.CreateTime"));
+		updateSetResponse.setSetName(_ctx.stringValue("UpdateSetResponse.SetName"));
+		updateSetResponse.setSetId(_ctx.stringValue("UpdateSetResponse.SetId"));
 	 
 	 	return updateSetResponse;
 	}

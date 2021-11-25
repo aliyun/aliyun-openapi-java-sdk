@@ -26,9 +26,9 @@ public class CompareImageFacesResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String setId;
-
 	private Float similarity;
+
+	private String setId;
 
 	private FaceA faceA;
 
@@ -42,20 +42,20 @@ public class CompareImageFacesResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getSetId() {
-		return this.setId;
-	}
-
-	public void setSetId(String setId) {
-		this.setId = setId;
-	}
-
 	public Float getSimilarity() {
 		return this.similarity;
 	}
 
 	public void setSimilarity(Float similarity) {
 		this.similarity = similarity;
+	}
+
+	public String getSetId() {
+		return this.setId;
+	}
+
+	public void setSetId(String setId) {
+		this.setId = setId;
 	}
 
 	public FaceA getFaceA() {
@@ -110,21 +110,13 @@ public class CompareImageFacesResponse extends AcsResponse {
 
 			public static class FaceBoundary {
 
-				private Integer left;
-
 				private Integer top;
 
 				private Integer width;
 
 				private Integer height;
 
-				public Integer getLeft() {
-					return this.left;
-				}
-
-				public void setLeft(Integer left) {
-					this.left = left;
-				}
+				private Integer left;
 
 				public Integer getTop() {
 					return this.top;
@@ -148,6 +140,14 @@ public class CompareImageFacesResponse extends AcsResponse {
 
 				public void setHeight(Integer height) {
 					this.height = height;
+				}
+
+				public Integer getLeft() {
+					return this.left;
+				}
+
+				public void setLeft(Integer left) {
+					this.left = left;
 				}
 			}
 		}
@@ -189,21 +189,13 @@ public class CompareImageFacesResponse extends AcsResponse {
 
 			public static class FaceBoundary2 {
 
-				private Integer left;
-
 				private Integer top;
 
 				private Integer width;
 
 				private Integer height;
 
-				public Integer getLeft() {
-					return this.left;
-				}
-
-				public void setLeft(Integer left) {
-					this.left = left;
-				}
+				private Integer left;
 
 				public Integer getTop() {
 					return this.top;
@@ -227,6 +219,14 @@ public class CompareImageFacesResponse extends AcsResponse {
 
 				public void setHeight(Integer height) {
 					this.height = height;
+				}
+
+				public Integer getLeft() {
+					return this.left;
+				}
+
+				public void setLeft(Integer left) {
+					this.left = left;
 				}
 			}
 		}

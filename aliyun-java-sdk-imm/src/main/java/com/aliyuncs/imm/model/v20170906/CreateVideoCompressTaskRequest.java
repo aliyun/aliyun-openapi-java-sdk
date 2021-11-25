@@ -25,11 +25,11 @@ import com.aliyuncs.imm.Endpoint;
 public class CreateVideoCompressTaskRequest extends RpcAcsRequest<CreateVideoCompressTaskResponse> {
 	   
 
+	private String targetSubtitle;
+
 	private String project;
 
 	private String notifyEndpoint;
-
-	private String targetContainer;
 
 	private String customMessage;
 
@@ -47,6 +47,17 @@ public class CreateVideoCompressTaskRequest extends RpcAcsRequest<CreateVideoCom
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getTargetSubtitle() {
+		return this.targetSubtitle;
+	}
+
+	public void setTargetSubtitle(String targetSubtitle) {
+		this.targetSubtitle = targetSubtitle;
+		if(targetSubtitle != null){
+			putQueryParameter("TargetSubtitle", targetSubtitle);
+		}
 	}
 
 	public String getProject() {
@@ -68,17 +79,6 @@ public class CreateVideoCompressTaskRequest extends RpcAcsRequest<CreateVideoCom
 		this.notifyEndpoint = notifyEndpoint;
 		if(notifyEndpoint != null){
 			putQueryParameter("NotifyEndpoint", notifyEndpoint);
-		}
-	}
-
-	public String getTargetContainer() {
-		return this.targetContainer;
-	}
-
-	public void setTargetContainer(String targetContainer) {
-		this.targetContainer = targetContainer;
-		if(targetContainer != null){
-			putQueryParameter("TargetContainer", targetContainer);
 		}
 	}
 

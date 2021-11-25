@@ -36,31 +36,31 @@ public class DetectImageFacesResponseUnmarshaller {
 		List<FacesItem> faces = new ArrayList<FacesItem>();
 		for (int i = 0; i < _ctx.lengthValue("DetectImageFacesResponse.Faces.Length"); i++) {
 			FacesItem facesItem = new FacesItem();
-			facesItem.setFaceId(_ctx.stringValue("DetectImageFacesResponse.Faces["+ i +"].FaceId"));
-			facesItem.setFaceConfidence(_ctx.floatValue("DetectImageFacesResponse.Faces["+ i +"].FaceConfidence"));
-			facesItem.setAge(_ctx.integerValue("DetectImageFacesResponse.Faces["+ i +"].Age"));
-			facesItem.setGender(_ctx.stringValue("DetectImageFacesResponse.Faces["+ i +"].Gender"));
-			facesItem.setEmotion(_ctx.stringValue("DetectImageFacesResponse.Faces["+ i +"].Emotion"));
-			facesItem.setAttractive(_ctx.floatValue("DetectImageFacesResponse.Faces["+ i +"].Attractive"));
-			facesItem.setGenderConfidence(_ctx.floatValue("DetectImageFacesResponse.Faces["+ i +"].GenderConfidence"));
-			facesItem.setAgeConfidence(_ctx.floatValue("DetectImageFacesResponse.Faces["+ i +"].AgeConfidence"));
 			facesItem.setAttractiveConfidence(_ctx.floatValue("DetectImageFacesResponse.Faces["+ i +"].AttractiveConfidence"));
-			facesItem.setEmotionConfidence(_ctx.floatValue("DetectImageFacesResponse.Faces["+ i +"].EmotionConfidence"));
+			facesItem.setGender(_ctx.stringValue("DetectImageFacesResponse.Faces["+ i +"].Gender"));
+			facesItem.setGenderConfidence(_ctx.floatValue("DetectImageFacesResponse.Faces["+ i +"].GenderConfidence"));
+			facesItem.setFaceId(_ctx.stringValue("DetectImageFacesResponse.Faces["+ i +"].FaceId"));
 			facesItem.setFaceQuality(_ctx.floatValue("DetectImageFacesResponse.Faces["+ i +"].FaceQuality"));
+			facesItem.setEmotion(_ctx.stringValue("DetectImageFacesResponse.Faces["+ i +"].Emotion"));
+			facesItem.setAge(_ctx.integerValue("DetectImageFacesResponse.Faces["+ i +"].Age"));
+			facesItem.setFaceConfidence(_ctx.floatValue("DetectImageFacesResponse.Faces["+ i +"].FaceConfidence"));
+			facesItem.setEmotionConfidence(_ctx.floatValue("DetectImageFacesResponse.Faces["+ i +"].EmotionConfidence"));
+			facesItem.setAttractive(_ctx.floatValue("DetectImageFacesResponse.Faces["+ i +"].Attractive"));
+			facesItem.setAgeConfidence(_ctx.floatValue("DetectImageFacesResponse.Faces["+ i +"].AgeConfidence"));
 
 			FaceAttributes faceAttributes = new FaceAttributes();
-			faceAttributes.setGlasses(_ctx.stringValue("DetectImageFacesResponse.Faces["+ i +"].FaceAttributes.Glasses"));
-			faceAttributes.setBeard(_ctx.stringValue("DetectImageFacesResponse.Faces["+ i +"].FaceAttributes.Beard"));
-			faceAttributes.setMask(_ctx.stringValue("DetectImageFacesResponse.Faces["+ i +"].FaceAttributes.Mask"));
 			faceAttributes.setGlassesConfidence(_ctx.floatValue("DetectImageFacesResponse.Faces["+ i +"].FaceAttributes.GlassesConfidence"));
+			faceAttributes.setGlasses(_ctx.stringValue("DetectImageFacesResponse.Faces["+ i +"].FaceAttributes.Glasses"));
+			faceAttributes.setMask(_ctx.stringValue("DetectImageFacesResponse.Faces["+ i +"].FaceAttributes.Mask"));
 			faceAttributes.setBeardConfidence(_ctx.floatValue("DetectImageFacesResponse.Faces["+ i +"].FaceAttributes.BeardConfidence"));
 			faceAttributes.setMaskConfidence(_ctx.floatValue("DetectImageFacesResponse.Faces["+ i +"].FaceAttributes.MaskConfidence"));
+			faceAttributes.setBeard(_ctx.stringValue("DetectImageFacesResponse.Faces["+ i +"].FaceAttributes.Beard"));
 
 			FaceBoundary faceBoundary = new FaceBoundary();
-			faceBoundary.setLeft(_ctx.integerValue("DetectImageFacesResponse.Faces["+ i +"].FaceAttributes.FaceBoundary.Left"));
 			faceBoundary.setTop(_ctx.integerValue("DetectImageFacesResponse.Faces["+ i +"].FaceAttributes.FaceBoundary.Top"));
 			faceBoundary.setWidth(_ctx.integerValue("DetectImageFacesResponse.Faces["+ i +"].FaceAttributes.FaceBoundary.Width"));
 			faceBoundary.setHeight(_ctx.integerValue("DetectImageFacesResponse.Faces["+ i +"].FaceAttributes.FaceBoundary.Height"));
+			faceBoundary.setLeft(_ctx.integerValue("DetectImageFacesResponse.Faces["+ i +"].FaceAttributes.FaceBoundary.Left"));
 			faceAttributes.setFaceBoundary(faceBoundary);
 
 			HeadPose headPose = new HeadPose();
@@ -72,12 +72,12 @@ public class DetectImageFacesResponseUnmarshaller {
 
 			EmotionDetails emotionDetails = new EmotionDetails();
 			emotionDetails.setHAPPY(_ctx.floatValue("DetectImageFacesResponse.Faces["+ i +"].EmotionDetails.HAPPY"));
-			emotionDetails.setSAD(_ctx.floatValue("DetectImageFacesResponse.Faces["+ i +"].EmotionDetails.SAD"));
-			emotionDetails.setANGRY(_ctx.floatValue("DetectImageFacesResponse.Faces["+ i +"].EmotionDetails.ANGRY"));
-			emotionDetails.setSURPRISED(_ctx.floatValue("DetectImageFacesResponse.Faces["+ i +"].EmotionDetails.SURPRISED"));
-			emotionDetails.setSCARED(_ctx.floatValue("DetectImageFacesResponse.Faces["+ i +"].EmotionDetails.SCARED"));
-			emotionDetails.setDISGUSTED(_ctx.floatValue("DetectImageFacesResponse.Faces["+ i +"].EmotionDetails.DISGUSTED"));
 			emotionDetails.setCALM(_ctx.floatValue("DetectImageFacesResponse.Faces["+ i +"].EmotionDetails.CALM"));
+			emotionDetails.setSURPRISED(_ctx.floatValue("DetectImageFacesResponse.Faces["+ i +"].EmotionDetails.SURPRISED"));
+			emotionDetails.setDISGUSTED(_ctx.floatValue("DetectImageFacesResponse.Faces["+ i +"].EmotionDetails.DISGUSTED"));
+			emotionDetails.setANGRY(_ctx.floatValue("DetectImageFacesResponse.Faces["+ i +"].EmotionDetails.ANGRY"));
+			emotionDetails.setSAD(_ctx.floatValue("DetectImageFacesResponse.Faces["+ i +"].EmotionDetails.SAD"));
+			emotionDetails.setSCARED(_ctx.floatValue("DetectImageFacesResponse.Faces["+ i +"].EmotionDetails.SCARED"));
 			facesItem.setEmotionDetails(emotionDetails);
 
 			faces.add(facesItem);

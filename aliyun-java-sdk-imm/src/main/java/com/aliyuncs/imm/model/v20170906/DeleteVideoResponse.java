@@ -26,9 +26,9 @@ public class DeleteVideoResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String setId;
-
 	private String videoUri;
+
+	private String setId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,20 +38,20 @@ public class DeleteVideoResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getSetId() {
-		return this.setId;
-	}
-
-	public void setSetId(String setId) {
-		this.setId = setId;
-	}
-
 	public String getVideoUri() {
 		return this.videoUri;
 	}
 
 	public void setVideoUri(String videoUri) {
 		this.videoUri = videoUri;
+	}
+
+	public String getSetId() {
+		return this.setId;
+	}
+
+	public void setSetId(String setId) {
+		this.setId = setId;
 	}
 
 	@Override

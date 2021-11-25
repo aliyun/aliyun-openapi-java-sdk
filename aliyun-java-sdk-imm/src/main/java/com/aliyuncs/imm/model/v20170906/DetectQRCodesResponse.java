@@ -101,21 +101,13 @@ public class DetectQRCodesResponse extends AcsResponse {
 
 			public static class QRCodesRectangle {
 
-				private String left;
-
 				private String top;
 
 				private String width;
 
 				private String height;
 
-				public String getLeft() {
-					return this.left;
-				}
-
-				public void setLeft(String left) {
-					this.left = left;
-				}
+				private String left;
 
 				public String getTop() {
 					return this.top;
@@ -140,17 +132,33 @@ public class DetectQRCodesResponse extends AcsResponse {
 				public void setHeight(String height) {
 					this.height = height;
 				}
+
+				public String getLeft() {
+					return this.left;
+				}
+
+				public void setLeft(String left) {
+					this.left = left;
+				}
 			}
 		}
 	}
 
 	public static class FailDetailsItem {
 
+		private String errorMessage;
+
 		private String srcUri;
 
 		private String errorCode;
 
-		private String errorMessage;
+		public String getErrorMessage() {
+			return this.errorMessage;
+		}
+
+		public void setErrorMessage(String errorMessage) {
+			this.errorMessage = errorMessage;
+		}
 
 		public String getSrcUri() {
 			return this.srcUri;
@@ -166,14 +174,6 @@ public class DetectQRCodesResponse extends AcsResponse {
 
 		public void setErrorCode(String errorCode) {
 			this.errorCode = errorCode;
-		}
-
-		public String getErrorMessage() {
-			return this.errorMessage;
-		}
-
-		public void setErrorMessage(String errorMessage) {
-			this.errorMessage = errorMessage;
 		}
 	}
 

@@ -81,11 +81,11 @@ public class DetectImageQRCodesResponse extends AcsResponse {
 
 			private Integer top;
 
-			private Integer left;
-
 			private Integer width;
 
 			private Integer height;
+
+			private Integer left;
 
 			public Integer getTop() {
 				return this.top;
@@ -93,14 +93,6 @@ public class DetectImageQRCodesResponse extends AcsResponse {
 
 			public void setTop(Integer top) {
 				this.top = top;
-			}
-
-			public Integer getLeft() {
-				return this.left;
-			}
-
-			public void setLeft(Integer left) {
-				this.left = left;
 			}
 
 			public Integer getWidth() {
@@ -117,6 +109,14 @@ public class DetectImageQRCodesResponse extends AcsResponse {
 
 			public void setHeight(Integer height) {
 				this.height = height;
+			}
+
+			public Integer getLeft() {
+				return this.left;
+			}
+
+			public void setLeft(Integer left) {
+				this.left = left;
 			}
 		}
 	}

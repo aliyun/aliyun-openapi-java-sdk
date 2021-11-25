@@ -24,25 +24,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetOfficePreviewURLResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String previewURL;
-
-	private String accessToken;
 
 	private String refreshToken;
 
-	private String accessTokenExpiredTime;
+	private String requestId;
+
+	private String accessToken;
 
 	private String refreshTokenExpiredTime;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String accessTokenExpiredTime;
 
 	public String getPreviewURL() {
 		return this.previewURL;
@@ -50,14 +42,6 @@ public class GetOfficePreviewURLResponse extends AcsResponse {
 
 	public void setPreviewURL(String previewURL) {
 		this.previewURL = previewURL;
-	}
-
-	public String getAccessToken() {
-		return this.accessToken;
-	}
-
-	public void setAccessToken(String accessToken) {
-		this.accessToken = accessToken;
 	}
 
 	public String getRefreshToken() {
@@ -68,12 +52,20 @@ public class GetOfficePreviewURLResponse extends AcsResponse {
 		this.refreshToken = refreshToken;
 	}
 
-	public String getAccessTokenExpiredTime() {
-		return this.accessTokenExpiredTime;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setAccessTokenExpiredTime(String accessTokenExpiredTime) {
-		this.accessTokenExpiredTime = accessTokenExpiredTime;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getAccessToken() {
+		return this.accessToken;
+	}
+
+	public void setAccessToken(String accessToken) {
+		this.accessToken = accessToken;
 	}
 
 	public String getRefreshTokenExpiredTime() {
@@ -82,6 +74,14 @@ public class GetOfficePreviewURLResponse extends AcsResponse {
 
 	public void setRefreshTokenExpiredTime(String refreshTokenExpiredTime) {
 		this.refreshTokenExpiredTime = refreshTokenExpiredTime;
+	}
+
+	public String getAccessTokenExpiredTime() {
+		return this.accessTokenExpiredTime;
+	}
+
+	public void setAccessTokenExpiredTime(String accessTokenExpiredTime) {
+		this.accessTokenExpiredTime = accessTokenExpiredTime;
 	}
 
 	@Override

@@ -24,10 +24,10 @@ public class GetOfficePreviewURLResponseUnmarshaller {
 		
 		getOfficePreviewURLResponse.setRequestId(_ctx.stringValue("GetOfficePreviewURLResponse.RequestId"));
 		getOfficePreviewURLResponse.setPreviewURL(_ctx.stringValue("GetOfficePreviewURLResponse.PreviewURL"));
-		getOfficePreviewURLResponse.setAccessToken(_ctx.stringValue("GetOfficePreviewURLResponse.AccessToken"));
 		getOfficePreviewURLResponse.setRefreshToken(_ctx.stringValue("GetOfficePreviewURLResponse.RefreshToken"));
-		getOfficePreviewURLResponse.setAccessTokenExpiredTime(_ctx.stringValue("GetOfficePreviewURLResponse.AccessTokenExpiredTime"));
+		getOfficePreviewURLResponse.setAccessToken(_ctx.stringValue("GetOfficePreviewURLResponse.AccessToken"));
 		getOfficePreviewURLResponse.setRefreshTokenExpiredTime(_ctx.stringValue("GetOfficePreviewURLResponse.RefreshTokenExpiredTime"));
+		getOfficePreviewURLResponse.setAccessTokenExpiredTime(_ctx.stringValue("GetOfficePreviewURLResponse.AccessTokenExpiredTime"));
 	 
 	 	return getOfficePreviewURLResponse;
 	}

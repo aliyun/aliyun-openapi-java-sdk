@@ -27,12 +27,12 @@ public class IndexImageResponseUnmarshaller {
 		indexImageResponse.setModifyTime(_ctx.stringValue("IndexImageResponse.ModifyTime"));
 		indexImageResponse.setRemarksC(_ctx.stringValue("IndexImageResponse.RemarksC"));
 		indexImageResponse.setRemarksD(_ctx.stringValue("IndexImageResponse.RemarksD"));
-		indexImageResponse.setRemarksArrayA(_ctx.stringValue("IndexImageResponse.RemarksArrayA"));
-		indexImageResponse.setExternalId(_ctx.stringValue("IndexImageResponse.ExternalId"));
 		indexImageResponse.setCreateTime(_ctx.stringValue("IndexImageResponse.CreateTime"));
-		indexImageResponse.setSetId(_ctx.stringValue("IndexImageResponse.SetId"));
-		indexImageResponse.setImageUri(_ctx.stringValue("IndexImageResponse.ImageUri"));
+		indexImageResponse.setExternalId(_ctx.stringValue("IndexImageResponse.ExternalId"));
+		indexImageResponse.setRemarksArrayA(_ctx.stringValue("IndexImageResponse.RemarksArrayA"));
 		indexImageResponse.setRemarksA(_ctx.stringValue("IndexImageResponse.RemarksA"));
+		indexImageResponse.setImageUri(_ctx.stringValue("IndexImageResponse.ImageUri"));
+		indexImageResponse.setSetId(_ctx.stringValue("IndexImageResponse.SetId"));
 		indexImageResponse.setRemarksB(_ctx.stringValue("IndexImageResponse.RemarksB"));
 	 
 	 	return indexImageResponse;

@@ -1,3 +1,6 @@
+2021-11-25 Version: 1.23.7
+- Minor changes.
+
 2021-04-27 Version: 1.23.4
 - Add CustomMessage to CreateMergeFaceGroupsJob.
 

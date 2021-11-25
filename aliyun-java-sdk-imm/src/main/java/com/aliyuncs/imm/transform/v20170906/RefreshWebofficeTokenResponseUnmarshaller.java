@@ -23,10 +23,10 @@ public class RefreshWebofficeTokenResponseUnmarshaller {
 	public static RefreshWebofficeTokenResponse unmarshall(RefreshWebofficeTokenResponse refreshWebofficeTokenResponse, UnmarshallerContext _ctx) {
 		
 		refreshWebofficeTokenResponse.setRequestId(_ctx.stringValue("RefreshWebofficeTokenResponse.RequestId"));
-		refreshWebofficeTokenResponse.setAccessToken(_ctx.stringValue("RefreshWebofficeTokenResponse.AccessToken"));
-		refreshWebofficeTokenResponse.setAccessTokenExpiredTime(_ctx.stringValue("RefreshWebofficeTokenResponse.AccessTokenExpiredTime"));
 		refreshWebofficeTokenResponse.setRefreshToken(_ctx.stringValue("RefreshWebofficeTokenResponse.RefreshToken"));
+		refreshWebofficeTokenResponse.setAccessToken(_ctx.stringValue("RefreshWebofficeTokenResponse.AccessToken"));
 		refreshWebofficeTokenResponse.setRefreshTokenExpiredTime(_ctx.stringValue("RefreshWebofficeTokenResponse.RefreshTokenExpiredTime"));
+		refreshWebofficeTokenResponse.setAccessTokenExpiredTime(_ctx.stringValue("RefreshWebofficeTokenResponse.AccessTokenExpiredTime"));
 	 
 	 	return refreshWebofficeTokenResponse;
 	}

@@ -24,14 +24,14 @@ public class GetProjectResponseUnmarshaller {
 		
 		getProjectResponse.setRequestId(_ctx.stringValue("GetProjectResponse.RequestId"));
 		getProjectResponse.setProject(_ctx.stringValue("GetProjectResponse.Project"));
-		getProjectResponse.setServiceRole(_ctx.stringValue("GetProjectResponse.ServiceRole"));
-		getProjectResponse.setEndpoint(_ctx.stringValue("GetProjectResponse.Endpoint"));
-		getProjectResponse.setCreateTime(_ctx.stringValue("GetProjectResponse.CreateTime"));
 		getProjectResponse.setModifyTime(_ctx.stringValue("GetProjectResponse.ModifyTime"));
 		getProjectResponse.setType(_ctx.stringValue("GetProjectResponse.Type"));
 		getProjectResponse.setCU(_ctx.integerValue("GetProjectResponse.CU"));
-		getProjectResponse.setBillingType(_ctx.stringValue("GetProjectResponse.BillingType"));
+		getProjectResponse.setServiceRole(_ctx.stringValue("GetProjectResponse.ServiceRole"));
+		getProjectResponse.setEndpoint(_ctx.stringValue("GetProjectResponse.Endpoint"));
+		getProjectResponse.setCreateTime(_ctx.stringValue("GetProjectResponse.CreateTime"));
 		getProjectResponse.setRegionId(_ctx.stringValue("GetProjectResponse.RegionId"));
+		getProjectResponse.setBillingType(_ctx.stringValue("GetProjectResponse.BillingType"));
 	 
 	 	return getProjectResponse;
 	}

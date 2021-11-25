@@ -26,17 +26,17 @@ public class GetVideoTaskResponse extends AcsResponse {
 
 	private String status;
 
-	private String notifyEndpoint;
-
 	private Integer progress;
 
-	private String taskId;
+	private String notifyEndpoint;
 
 	private String parameters;
 
-	private String requestId;
+	private String taskId;
 
 	private String endTime;
+
+	private String requestId;
 
 	private String taskType;
 
@@ -56,14 +56,6 @@ public class GetVideoTaskResponse extends AcsResponse {
 		this.status = status;
 	}
 
-	public String getNotifyEndpoint() {
-		return this.notifyEndpoint;
-	}
-
-	public void setNotifyEndpoint(String notifyEndpoint) {
-		this.notifyEndpoint = notifyEndpoint;
-	}
-
 	public Integer getProgress() {
 		return this.progress;
 	}
@@ -72,12 +64,12 @@ public class GetVideoTaskResponse extends AcsResponse {
 		this.progress = progress;
 	}
 
-	public String getTaskId() {
-		return this.taskId;
+	public String getNotifyEndpoint() {
+		return this.notifyEndpoint;
 	}
 
-	public void setTaskId(String taskId) {
-		this.taskId = taskId;
+	public void setNotifyEndpoint(String notifyEndpoint) {
+		this.notifyEndpoint = notifyEndpoint;
 	}
 
 	public String getParameters() {
@@ -88,12 +80,12 @@ public class GetVideoTaskResponse extends AcsResponse {
 		this.parameters = parameters;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getTaskId() {
+		return this.taskId;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setTaskId(String taskId) {
+		this.taskId = taskId;
 	}
 
 	public String getEndTime() {
@@ -102,6 +94,14 @@ public class GetVideoTaskResponse extends AcsResponse {
 
 	public void setEndTime(String endTime) {
 		this.endTime = endTime;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getTaskType() {

@@ -26,21 +26,21 @@ public class IndexVideoResponse extends AcsResponse {
 
 	private String modifyTime;
 
-	private String requestId;
-
 	private String endTime;
+
+	private String requestId;
 
 	private Boolean saveType;
 
-	private String externalId;
-
 	private String createTime;
+
+	private String externalId;
 
 	private String startTime;
 
-	private String videoUri;
-
 	private String grabType;
+
+	private String videoUri;
 
 	private String remarksA;
 
@@ -48,9 +48,9 @@ public class IndexVideoResponse extends AcsResponse {
 
 	private String remarksC;
 
-	private String tgtUri;
-
 	private String remarksD;
+
+	private String tgtUri;
 
 	private String setId;
 
@@ -64,20 +64,20 @@ public class IndexVideoResponse extends AcsResponse {
 		this.modifyTime = modifyTime;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public String getEndTime() {
 		return this.endTime;
 	}
 
 	public void setEndTime(String endTime) {
 		this.endTime = endTime;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Boolean getSaveType() {
@@ -88,20 +88,20 @@ public class IndexVideoResponse extends AcsResponse {
 		this.saveType = saveType;
 	}
 
-	public String getExternalId() {
-		return this.externalId;
-	}
-
-	public void setExternalId(String externalId) {
-		this.externalId = externalId;
-	}
-
 	public String getCreateTime() {
 		return this.createTime;
 	}
 
 	public void setCreateTime(String createTime) {
 		this.createTime = createTime;
+	}
+
+	public String getExternalId() {
+		return this.externalId;
+	}
+
+	public void setExternalId(String externalId) {
+		this.externalId = externalId;
 	}
 
 	public String getStartTime() {
@@ -112,20 +112,20 @@ public class IndexVideoResponse extends AcsResponse {
 		this.startTime = startTime;
 	}
 
-	public String getVideoUri() {
-		return this.videoUri;
-	}
-
-	public void setVideoUri(String videoUri) {
-		this.videoUri = videoUri;
-	}
-
 	public String getGrabType() {
 		return this.grabType;
 	}
 
 	public void setGrabType(String grabType) {
 		this.grabType = grabType;
+	}
+
+	public String getVideoUri() {
+		return this.videoUri;
+	}
+
+	public void setVideoUri(String videoUri) {
+		this.videoUri = videoUri;
 	}
 
 	public String getRemarksA() {
@@ -152,20 +152,20 @@ public class IndexVideoResponse extends AcsResponse {
 		this.remarksC = remarksC;
 	}
 
-	public String getTgtUri() {
-		return this.tgtUri;
-	}
-
-	public void setTgtUri(String tgtUri) {
-		this.tgtUri = tgtUri;
-	}
-
 	public String getRemarksD() {
 		return this.remarksD;
 	}
 
 	public void setRemarksD(String remarksD) {
 		this.remarksD = remarksD;
+	}
+
+	public String getTgtUri() {
+		return this.tgtUri;
+	}
+
+	public void setTgtUri(String tgtUri) {
+		this.tgtUri = tgtUri;
 	}
 
 	public String getSetId() {

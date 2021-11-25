@@ -24,10 +24,10 @@ public class GetVideoTaskResponseUnmarshaller {
 		
 		getVideoTaskResponse.setRequestId(_ctx.stringValue("GetVideoTaskResponse.RequestId"));
 		getVideoTaskResponse.setStatus(_ctx.stringValue("GetVideoTaskResponse.Status"));
-		getVideoTaskResponse.setNotifyEndpoint(_ctx.stringValue("GetVideoTaskResponse.NotifyEndpoint"));
 		getVideoTaskResponse.setProgress(_ctx.integerValue("GetVideoTaskResponse.Progress"));
-		getVideoTaskResponse.setTaskId(_ctx.stringValue("GetVideoTaskResponse.TaskId"));
+		getVideoTaskResponse.setNotifyEndpoint(_ctx.stringValue("GetVideoTaskResponse.NotifyEndpoint"));
 		getVideoTaskResponse.setParameters(_ctx.stringValue("GetVideoTaskResponse.Parameters"));
+		getVideoTaskResponse.setTaskId(_ctx.stringValue("GetVideoTaskResponse.TaskId"));
 		getVideoTaskResponse.setEndTime(_ctx.stringValue("GetVideoTaskResponse.EndTime"));
 		getVideoTaskResponse.setTaskType(_ctx.stringValue("GetVideoTaskResponse.TaskType"));
 		getVideoTaskResponse.setStartTime(_ctx.stringValue("GetVideoTaskResponse.StartTime"));

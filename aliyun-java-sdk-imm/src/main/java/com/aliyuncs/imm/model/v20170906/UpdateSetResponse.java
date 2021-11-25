@@ -24,15 +24,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class UpdateSetResponse extends AcsResponse {
 
+	private String modifyTime;
+
 	private String requestId;
-
-	private String setId;
-
-	private String setName;
 
 	private String createTime;
 
-	private String modifyTime;
+	private String setName;
+
+	private String setId;
+
+	public String getModifyTime() {
+		return this.modifyTime;
+	}
+
+	public void setModifyTime(String modifyTime) {
+		this.modifyTime = modifyTime;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -40,22 +48,6 @@ public class UpdateSetResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getSetId() {
-		return this.setId;
-	}
-
-	public void setSetId(String setId) {
-		this.setId = setId;
-	}
-
-	public String getSetName() {
-		return this.setName;
-	}
-
-	public void setSetName(String setName) {
-		this.setName = setName;
 	}
 
 	public String getCreateTime() {
@@ -66,12 +58,20 @@ public class UpdateSetResponse extends AcsResponse {
 		this.createTime = createTime;
 	}
 
-	public String getModifyTime() {
-		return this.modifyTime;
+	public String getSetName() {
+		return this.setName;
 	}
 
-	public void setModifyTime(String modifyTime) {
-		this.modifyTime = modifyTime;
+	public void setSetName(String setName) {
+		this.setName = setName;
+	}
+
+	public String getSetId() {
+		return this.setId;
+	}
+
+	public void setSetId(String setId) {
+		this.setId = setId;
 	}
 
 	@Override

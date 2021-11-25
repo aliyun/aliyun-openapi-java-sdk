@@ -24,11 +24,11 @@ public class UpdateProjectResponseUnmarshaller {
 		
 		updateProjectResponse.setRequestId(_ctx.stringValue("UpdateProjectResponse.RequestId"));
 		updateProjectResponse.setProject(_ctx.stringValue("UpdateProjectResponse.Project"));
-		updateProjectResponse.setCreateTime(_ctx.stringValue("UpdateProjectResponse.CreateTime"));
 		updateProjectResponse.setModifyTime(_ctx.stringValue("UpdateProjectResponse.ModifyTime"));
-		updateProjectResponse.setServiceRole(_ctx.stringValue("UpdateProjectResponse.ServiceRole"));
-		updateProjectResponse.setCU(_ctx.integerValue("UpdateProjectResponse.CU"));
 		updateProjectResponse.setType(_ctx.stringValue("UpdateProjectResponse.Type"));
+		updateProjectResponse.setCU(_ctx.integerValue("UpdateProjectResponse.CU"));
+		updateProjectResponse.setServiceRole(_ctx.stringValue("UpdateProjectResponse.ServiceRole"));
+		updateProjectResponse.setCreateTime(_ctx.stringValue("UpdateProjectResponse.CreateTime"));
 		updateProjectResponse.setRegionId(_ctx.stringValue("UpdateProjectResponse.RegionId"));
 	 
 	 	return updateProjectResponse;

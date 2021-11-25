@@ -34,17 +34,17 @@ public class IndexImageResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String remarksArrayA;
+	private String createTime;
 
 	private String externalId;
 
-	private String createTime;
+	private String remarksArrayA;
 
-	private String setId;
+	private String remarksA;
 
 	private String imageUri;
 
-	private String remarksA;
+	private String setId;
 
 	private String remarksB;
 
@@ -88,12 +88,12 @@ public class IndexImageResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getRemarksArrayA() {
-		return this.remarksArrayA;
+	public String getCreateTime() {
+		return this.createTime;
 	}
 
-	public void setRemarksArrayA(String remarksArrayA) {
-		this.remarksArrayA = remarksArrayA;
+	public void setCreateTime(String createTime) {
+		this.createTime = createTime;
 	}
 
 	public String getExternalId() {
@@ -104,20 +104,20 @@ public class IndexImageResponse extends AcsResponse {
 		this.externalId = externalId;
 	}
 
-	public String getCreateTime() {
-		return this.createTime;
+	public String getRemarksArrayA() {
+		return this.remarksArrayA;
 	}
 
-	public void setCreateTime(String createTime) {
-		this.createTime = createTime;
+	public void setRemarksArrayA(String remarksArrayA) {
+		this.remarksArrayA = remarksArrayA;
 	}
 
-	public String getSetId() {
-		return this.setId;
+	public String getRemarksA() {
+		return this.remarksA;
 	}
 
-	public void setSetId(String setId) {
-		this.setId = setId;
+	public void setRemarksA(String remarksA) {
+		this.remarksA = remarksA;
 	}
 
 	public String getImageUri() {
@@ -128,12 +128,12 @@ public class IndexImageResponse extends AcsResponse {
 		this.imageUri = imageUri;
 	}
 
-	public String getRemarksA() {
-		return this.remarksA;
+	public String getSetId() {
+		return this.setId;
 	}
 
-	public void setRemarksA(String remarksA) {
-		this.remarksA = remarksA;
+	public void setSetId(String setId) {
+		this.setId = setId;
 	}
 
 	public String getRemarksB() {

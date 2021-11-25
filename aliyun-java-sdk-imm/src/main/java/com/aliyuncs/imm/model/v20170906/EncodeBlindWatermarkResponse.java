@@ -26,9 +26,9 @@ public class EncodeBlindWatermarkResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String targetUri;
-
 	private String content;
+
+	private String targetUri;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,20 +38,20 @@ public class EncodeBlindWatermarkResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getTargetUri() {
-		return this.targetUri;
-	}
-
-	public void setTargetUri(String targetUri) {
-		this.targetUri = targetUri;
-	}
-
 	public String getContent() {
 		return this.content;
 	}
 
 	public void setContent(String content) {
 		this.content = content;
+	}
+
+	public String getTargetUri() {
+		return this.targetUri;
+	}
+
+	public void setTargetUri(String targetUri) {
+		this.targetUri = targetUri;
 	}
 
 	@Override

@@ -24,14 +24,14 @@ public class PutProjectResponseUnmarshaller {
 		
 		putProjectResponse.setRequestId(_ctx.stringValue("PutProjectResponse.RequestId"));
 		putProjectResponse.setProject(_ctx.stringValue("PutProjectResponse.Project"));
-		putProjectResponse.setCreateTime(_ctx.stringValue("PutProjectResponse.CreateTime"));
 		putProjectResponse.setModifyTime(_ctx.stringValue("PutProjectResponse.ModifyTime"));
-		putProjectResponse.setServiceRole(_ctx.stringValue("PutProjectResponse.ServiceRole"));
-		putProjectResponse.setCU(_ctx.integerValue("PutProjectResponse.CU"));
 		putProjectResponse.setType(_ctx.stringValue("PutProjectResponse.Type"));
+		putProjectResponse.setCU(_ctx.integerValue("PutProjectResponse.CU"));
+		putProjectResponse.setServiceRole(_ctx.stringValue("PutProjectResponse.ServiceRole"));
 		putProjectResponse.setEndpoint(_ctx.stringValue("PutProjectResponse.Endpoint"));
-		putProjectResponse.setBillingType(_ctx.stringValue("PutProjectResponse.BillingType"));
+		putProjectResponse.setCreateTime(_ctx.stringValue("PutProjectResponse.CreateTime"));
 		putProjectResponse.setRegionId(_ctx.stringValue("PutProjectResponse.RegionId"));
+		putProjectResponse.setBillingType(_ctx.stringValue("PutProjectResponse.BillingType"));
 	 
 	 	return putProjectResponse;
 	}

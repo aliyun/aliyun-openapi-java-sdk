@@ -57,36 +57,28 @@ public class ListSetsResponse extends AcsResponse {
 
 	public static class SetsItem {
 
-		private String setId;
-
-		private String setName;
+		private Integer videoCount;
 
 		private String createTime;
 
-		private String modifyTime;
+		private Integer videoLength;
 
-		private Integer faceCount;
+		private String setId;
 
 		private Integer imageCount;
 
-		private Integer videoCount;
+		private Integer faceCount;
 
-		private Integer videoLength;
+		private String setName;
 
-		public String getSetId() {
-			return this.setId;
+		private String modifyTime;
+
+		public Integer getVideoCount() {
+			return this.videoCount;
 		}
 
-		public void setSetId(String setId) {
-			this.setId = setId;
-		}
-
-		public String getSetName() {
-			return this.setName;
-		}
-
-		public void setSetName(String setName) {
-			this.setName = setName;
+		public void setVideoCount(Integer videoCount) {
+			this.videoCount = videoCount;
 		}
 
 		public String getCreateTime() {
@@ -97,20 +89,20 @@ public class ListSetsResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
-		public String getModifyTime() {
-			return this.modifyTime;
+		public Integer getVideoLength() {
+			return this.videoLength;
 		}
 
-		public void setModifyTime(String modifyTime) {
-			this.modifyTime = modifyTime;
+		public void setVideoLength(Integer videoLength) {
+			this.videoLength = videoLength;
 		}
 
-		public Integer getFaceCount() {
-			return this.faceCount;
+		public String getSetId() {
+			return this.setId;
 		}
 
-		public void setFaceCount(Integer faceCount) {
-			this.faceCount = faceCount;
+		public void setSetId(String setId) {
+			this.setId = setId;
 		}
 
 		public Integer getImageCount() {
@@ -121,20 +113,28 @@ public class ListSetsResponse extends AcsResponse {
 			this.imageCount = imageCount;
 		}
 
-		public Integer getVideoCount() {
-			return this.videoCount;
+		public Integer getFaceCount() {
+			return this.faceCount;
 		}
 
-		public void setVideoCount(Integer videoCount) {
-			this.videoCount = videoCount;
+		public void setFaceCount(Integer faceCount) {
+			this.faceCount = faceCount;
 		}
 
-		public Integer getVideoLength() {
-			return this.videoLength;
+		public String getSetName() {
+			return this.setName;
 		}
 
-		public void setVideoLength(Integer videoLength) {
-			this.videoLength = videoLength;
+		public void setSetName(String setName) {
+			this.setName = setName;
+		}
+
+		public String getModifyTime() {
+			return this.modifyTime;
+		}
+
+		public void setModifyTime(String modifyTime) {
+			this.modifyTime = modifyTime;
 		}
 	}
 

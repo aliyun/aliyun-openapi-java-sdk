@@ -37,9 +37,9 @@ public class DetectImageQRCodesResponseUnmarshaller {
 
 			QRCodeBoundary qRCodeBoundary = new QRCodeBoundary();
 			qRCodeBoundary.setTop(_ctx.integerValue("DetectImageQRCodesResponse.QRCodes["+ i +"].QRCodeBoundary.Top"));
-			qRCodeBoundary.setLeft(_ctx.integerValue("DetectImageQRCodesResponse.QRCodes["+ i +"].QRCodeBoundary.Left"));
 			qRCodeBoundary.setWidth(_ctx.integerValue("DetectImageQRCodesResponse.QRCodes["+ i +"].QRCodeBoundary.Width"));
 			qRCodeBoundary.setHeight(_ctx.integerValue("DetectImageQRCodesResponse.QRCodes["+ i +"].QRCodeBoundary.Height"));
+			qRCodeBoundary.setLeft(_ctx.integerValue("DetectImageQRCodesResponse.QRCodes["+ i +"].QRCodeBoundary.Left"));
 			qRCodesItem.setQRCodeBoundary(qRCodeBoundary);
 
 			qRCodes.add(qRCodesItem);

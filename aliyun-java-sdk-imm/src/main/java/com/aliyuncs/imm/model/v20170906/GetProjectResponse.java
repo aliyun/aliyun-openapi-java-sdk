@@ -24,15 +24,7 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetProjectResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String project;
-
-	private String serviceRole;
-
-	private String endpoint;
-
-	private String createTime;
 
 	private String modifyTime;
 
@@ -40,17 +32,17 @@ public class GetProjectResponse extends AcsResponse {
 
 	private Integer cU;
 
-	private String billingType;
+	private String serviceRole;
+
+	private String requestId;
+
+	private String endpoint;
+
+	private String createTime;
 
 	private String regionId;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String billingType;
 
 	public String getProject() {
 		return this.project;
@@ -58,30 +50,6 @@ public class GetProjectResponse extends AcsResponse {
 
 	public void setProject(String project) {
 		this.project = project;
-	}
-
-	public String getServiceRole() {
-		return this.serviceRole;
-	}
-
-	public void setServiceRole(String serviceRole) {
-		this.serviceRole = serviceRole;
-	}
-
-	public String getEndpoint() {
-		return this.endpoint;
-	}
-
-	public void setEndpoint(String endpoint) {
-		this.endpoint = endpoint;
-	}
-
-	public String getCreateTime() {
-		return this.createTime;
-	}
-
-	public void setCreateTime(String createTime) {
-		this.createTime = createTime;
 	}
 
 	public String getModifyTime() {
@@ -108,12 +76,36 @@ public class GetProjectResponse extends AcsResponse {
 		this.cU = cU;
 	}
 
-	public String getBillingType() {
-		return this.billingType;
+	public String getServiceRole() {
+		return this.serviceRole;
 	}
 
-	public void setBillingType(String billingType) {
-		this.billingType = billingType;
+	public void setServiceRole(String serviceRole) {
+		this.serviceRole = serviceRole;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getEndpoint() {
+		return this.endpoint;
+	}
+
+	public void setEndpoint(String endpoint) {
+		this.endpoint = endpoint;
+	}
+
+	public String getCreateTime() {
+		return this.createTime;
+	}
+
+	public void setCreateTime(String createTime) {
+		this.createTime = createTime;
 	}
 
 	public String getRegionId() {
@@ -122,6 +114,14 @@ public class GetProjectResponse extends AcsResponse {
 
 	public void setRegionId(String regionId) {
 		this.regionId = regionId;
+	}
+
+	public String getBillingType() {
+		return this.billingType;
+	}
+
+	public void setBillingType(String billingType) {
+		this.billingType = billingType;
 	}
 
 	@Override

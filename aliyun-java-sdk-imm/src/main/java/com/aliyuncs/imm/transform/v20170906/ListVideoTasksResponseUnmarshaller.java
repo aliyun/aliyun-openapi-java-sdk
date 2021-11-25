@@ -32,17 +32,17 @@ public class ListVideoTasksResponseUnmarshaller {
 		List<TasksItem> tasks = new ArrayList<TasksItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListVideoTasksResponse.Tasks.Length"); i++) {
 			TasksItem tasksItem = new TasksItem();
+			tasksItem.setEndTime(_ctx.stringValue("ListVideoTasksResponse.Tasks["+ i +"].EndTime"));
 			tasksItem.setStatus(_ctx.stringValue("ListVideoTasksResponse.Tasks["+ i +"].Status"));
-			tasksItem.setTaskId(_ctx.stringValue("ListVideoTasksResponse.Tasks["+ i +"].TaskId"));
+			tasksItem.setStartTime(_ctx.stringValue("ListVideoTasksResponse.Tasks["+ i +"].StartTime"));
 			tasksItem.setTaskType(_ctx.stringValue("ListVideoTasksResponse.Tasks["+ i +"].TaskType"));
+			tasksItem.setProgress(_ctx.integerValue("ListVideoTasksResponse.Tasks["+ i +"].Progress"));
+			tasksItem.setNotifyEndpoint(_ctx.stringValue("ListVideoTasksResponse.Tasks["+ i +"].NotifyEndpoint"));
+			tasksItem.setErrorMessage(_ctx.stringValue("ListVideoTasksResponse.Tasks["+ i +"].ErrorMessage"));
 			tasksItem.setParameters(_ctx.stringValue("ListVideoTasksResponse.Tasks["+ i +"].Parameters"));
 			tasksItem.setResult(_ctx.stringValue("ListVideoTasksResponse.Tasks["+ i +"].Result"));
-			tasksItem.setStartTime(_ctx.stringValue("ListVideoTasksResponse.Tasks["+ i +"].StartTime"));
-			tasksItem.setEndTime(_ctx.stringValue("ListVideoTasksResponse.Tasks["+ i +"].EndTime"));
-			tasksItem.setErrorMessage(_ctx.stringValue("ListVideoTasksResponse.Tasks["+ i +"].ErrorMessage"));
-			tasksItem.setNotifyEndpoint(_ctx.stringValue("ListVideoTasksResponse.Tasks["+ i +"].NotifyEndpoint"));
+			tasksItem.setTaskId(_ctx.stringValue("ListVideoTasksResponse.Tasks["+ i +"].TaskId"));
 			tasksItem.setNotifyTopicName(_ctx.stringValue("ListVideoTasksResponse.Tasks["+ i +"].NotifyTopicName"));
-			tasksItem.setProgress(_ctx.integerValue("ListVideoTasksResponse.Tasks["+ i +"].Progress"));
 
 			tasks.add(tasksItem);
 		}

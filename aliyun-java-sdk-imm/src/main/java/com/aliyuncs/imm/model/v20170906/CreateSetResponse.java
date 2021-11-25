@@ -24,55 +24,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateSetResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String setId;
-
-	private String setName;
-
-	private String createTime;
-
 	private String modifyTime;
-
-	private Integer faceCount;
-
-	private Integer imageCount;
 
 	private Integer videoCount;
 
+	private Integer imageCount;
+
+	private String requestId;
+
+	private String createTime;
+
+	private String setName;
+
+	private String setId;
+
 	private Integer videoLength;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getSetId() {
-		return this.setId;
-	}
-
-	public void setSetId(String setId) {
-		this.setId = setId;
-	}
-
-	public String getSetName() {
-		return this.setName;
-	}
-
-	public void setSetName(String setName) {
-		this.setName = setName;
-	}
-
-	public String getCreateTime() {
-		return this.createTime;
-	}
-
-	public void setCreateTime(String createTime) {
-		this.createTime = createTime;
-	}
+	private Integer faceCount;
 
 	public String getModifyTime() {
 		return this.modifyTime;
@@ -80,22 +48,6 @@ public class CreateSetResponse extends AcsResponse {
 
 	public void setModifyTime(String modifyTime) {
 		this.modifyTime = modifyTime;
-	}
-
-	public Integer getFaceCount() {
-		return this.faceCount;
-	}
-
-	public void setFaceCount(Integer faceCount) {
-		this.faceCount = faceCount;
-	}
-
-	public Integer getImageCount() {
-		return this.imageCount;
-	}
-
-	public void setImageCount(Integer imageCount) {
-		this.imageCount = imageCount;
 	}
 
 	public Integer getVideoCount() {
@@ -106,12 +58,60 @@ public class CreateSetResponse extends AcsResponse {
 		this.videoCount = videoCount;
 	}
 
+	public Integer getImageCount() {
+		return this.imageCount;
+	}
+
+	public void setImageCount(Integer imageCount) {
+		this.imageCount = imageCount;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getCreateTime() {
+		return this.createTime;
+	}
+
+	public void setCreateTime(String createTime) {
+		this.createTime = createTime;
+	}
+
+	public String getSetName() {
+		return this.setName;
+	}
+
+	public void setSetName(String setName) {
+		this.setName = setName;
+	}
+
+	public String getSetId() {
+		return this.setId;
+	}
+
+	public void setSetId(String setId) {
+		this.setId = setId;
+	}
+
 	public Integer getVideoLength() {
 		return this.videoLength;
 	}
 
 	public void setVideoLength(Integer videoLength) {
 		this.videoLength = videoLength;
+	}
+
+	public Integer getFaceCount() {
+		return this.faceCount;
+	}
+
+	public void setFaceCount(Integer faceCount) {
+		this.faceCount = faceCount;
 	}
 
 	@Override

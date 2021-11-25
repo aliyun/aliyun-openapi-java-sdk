@@ -26,16 +26,16 @@ public class IndexVideoResponseUnmarshaller {
 		indexVideoResponse.setModifyTime(_ctx.stringValue("IndexVideoResponse.ModifyTime"));
 		indexVideoResponse.setEndTime(_ctx.stringValue("IndexVideoResponse.EndTime"));
 		indexVideoResponse.setSaveType(_ctx.booleanValue("IndexVideoResponse.SaveType"));
-		indexVideoResponse.setExternalId(_ctx.stringValue("IndexVideoResponse.ExternalId"));
 		indexVideoResponse.setCreateTime(_ctx.stringValue("IndexVideoResponse.CreateTime"));
+		indexVideoResponse.setExternalId(_ctx.stringValue("IndexVideoResponse.ExternalId"));
 		indexVideoResponse.setStartTime(_ctx.stringValue("IndexVideoResponse.StartTime"));
-		indexVideoResponse.setVideoUri(_ctx.stringValue("IndexVideoResponse.VideoUri"));
 		indexVideoResponse.setGrabType(_ctx.stringValue("IndexVideoResponse.GrabType"));
+		indexVideoResponse.setVideoUri(_ctx.stringValue("IndexVideoResponse.VideoUri"));
 		indexVideoResponse.setRemarksA(_ctx.stringValue("IndexVideoResponse.RemarksA"));
 		indexVideoResponse.setRemarksB(_ctx.stringValue("IndexVideoResponse.RemarksB"));
 		indexVideoResponse.setRemarksC(_ctx.stringValue("IndexVideoResponse.RemarksC"));
-		indexVideoResponse.setTgtUri(_ctx.stringValue("IndexVideoResponse.TgtUri"));
 		indexVideoResponse.setRemarksD(_ctx.stringValue("IndexVideoResponse.RemarksD"));
+		indexVideoResponse.setTgtUri(_ctx.stringValue("IndexVideoResponse.TgtUri"));
 		indexVideoResponse.setSetId(_ctx.stringValue("IndexVideoResponse.SetId"));
 		indexVideoResponse.setInterval(_ctx.floatValue("IndexVideoResponse.Interval"));
 	 

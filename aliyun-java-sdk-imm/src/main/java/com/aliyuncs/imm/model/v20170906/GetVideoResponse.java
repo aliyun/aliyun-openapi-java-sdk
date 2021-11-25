@@ -31,25 +31,25 @@ public class GetVideoResponse extends AcsResponse {
 
 	private Integer videoWidth;
 
-	private String sourceUri;
-
 	private String sourceType;
+
+	private String sourceUri;
 
 	private String videoInfo;
 
-	private String remarksA;
-
 	private String videoFrameTagsModifyTime;
 
-	private String remarksB;
+	private String remarksA;
 
 	private String videoFacesFailReason;
 
+	private String remarksB;
+
 	private String videoFacesStatus;
 
-	private String videoOCRModifyTime;
-
 	private String remarksC;
+
+	private String videoOCRModifyTime;
 
 	private String remarksD;
 
@@ -71,23 +71,23 @@ public class GetVideoResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String videoSTTModifyTime;
-
 	private String processModifyTime;
+
+	private String videoSTTModifyTime;
 
 	private String processFailReason;
 
-	private String videoSTTFailReason;
+	private String createTime;
 
 	private String externalId;
 
-	private String createTime;
+	private String videoSTTFailReason;
 
 	private String videoUri;
 
-	private String videoFormat;
-
 	private String videoFrameTagsFailReason;
+
+	private String videoFormat;
 
 	private String videoSTTStatus;
 
@@ -99,19 +99,19 @@ public class GetVideoResponse extends AcsResponse {
 
 	private String celebrityFailReason;
 
-	private String celebrityStatus;
-
 	private String setId;
+
+	private String celebrityStatus;
 
 	private String videoTagsStatus;
 
 	private Integer fileSize;
 
-	private List<VideoTagsItem> videoTags;
-
 	private List<PersonsItem> persons;
 
 	private List<CelebrityItem> celebrity;
+
+	private List<VideoTagsItem> videoTags;
 
 	public String getModifyTime() {
 		return this.modifyTime;
@@ -137,20 +137,20 @@ public class GetVideoResponse extends AcsResponse {
 		this.videoWidth = videoWidth;
 	}
 
-	public String getSourceUri() {
-		return this.sourceUri;
-	}
-
-	public void setSourceUri(String sourceUri) {
-		this.sourceUri = sourceUri;
-	}
-
 	public String getSourceType() {
 		return this.sourceType;
 	}
 
 	public void setSourceType(String sourceType) {
 		this.sourceType = sourceType;
+	}
+
+	public String getSourceUri() {
+		return this.sourceUri;
+	}
+
+	public void setSourceUri(String sourceUri) {
+		this.sourceUri = sourceUri;
 	}
 
 	public String getVideoInfo() {
@@ -161,14 +161,6 @@ public class GetVideoResponse extends AcsResponse {
 		this.videoInfo = videoInfo;
 	}
 
-	public String getRemarksA() {
-		return this.remarksA;
-	}
-
-	public void setRemarksA(String remarksA) {
-		this.remarksA = remarksA;
-	}
-
 	public String getVideoFrameTagsModifyTime() {
 		return this.videoFrameTagsModifyTime;
 	}
@@ -177,12 +169,12 @@ public class GetVideoResponse extends AcsResponse {
 		this.videoFrameTagsModifyTime = videoFrameTagsModifyTime;
 	}
 
-	public String getRemarksB() {
-		return this.remarksB;
+	public String getRemarksA() {
+		return this.remarksA;
 	}
 
-	public void setRemarksB(String remarksB) {
-		this.remarksB = remarksB;
+	public void setRemarksA(String remarksA) {
+		this.remarksA = remarksA;
 	}
 
 	public String getVideoFacesFailReason() {
@@ -193,6 +185,14 @@ public class GetVideoResponse extends AcsResponse {
 		this.videoFacesFailReason = videoFacesFailReason;
 	}
 
+	public String getRemarksB() {
+		return this.remarksB;
+	}
+
+	public void setRemarksB(String remarksB) {
+		this.remarksB = remarksB;
+	}
+
 	public String getVideoFacesStatus() {
 		return this.videoFacesStatus;
 	}
@@ -201,20 +201,20 @@ public class GetVideoResponse extends AcsResponse {
 		this.videoFacesStatus = videoFacesStatus;
 	}
 
-	public String getVideoOCRModifyTime() {
-		return this.videoOCRModifyTime;
-	}
-
-	public void setVideoOCRModifyTime(String videoOCRModifyTime) {
-		this.videoOCRModifyTime = videoOCRModifyTime;
-	}
-
 	public String getRemarksC() {
 		return this.remarksC;
 	}
 
 	public void setRemarksC(String remarksC) {
 		this.remarksC = remarksC;
+	}
+
+	public String getVideoOCRModifyTime() {
+		return this.videoOCRModifyTime;
+	}
+
+	public void setVideoOCRModifyTime(String videoOCRModifyTime) {
+		this.videoOCRModifyTime = videoOCRModifyTime;
 	}
 
 	public String getRemarksD() {
@@ -297,20 +297,20 @@ public class GetVideoResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getVideoSTTModifyTime() {
-		return this.videoSTTModifyTime;
-	}
-
-	public void setVideoSTTModifyTime(String videoSTTModifyTime) {
-		this.videoSTTModifyTime = videoSTTModifyTime;
-	}
-
 	public String getProcessModifyTime() {
 		return this.processModifyTime;
 	}
 
 	public void setProcessModifyTime(String processModifyTime) {
 		this.processModifyTime = processModifyTime;
+	}
+
+	public String getVideoSTTModifyTime() {
+		return this.videoSTTModifyTime;
+	}
+
+	public void setVideoSTTModifyTime(String videoSTTModifyTime) {
+		this.videoSTTModifyTime = videoSTTModifyTime;
 	}
 
 	public String getProcessFailReason() {
@@ -321,12 +321,12 @@ public class GetVideoResponse extends AcsResponse {
 		this.processFailReason = processFailReason;
 	}
 
-	public String getVideoSTTFailReason() {
-		return this.videoSTTFailReason;
+	public String getCreateTime() {
+		return this.createTime;
 	}
 
-	public void setVideoSTTFailReason(String videoSTTFailReason) {
-		this.videoSTTFailReason = videoSTTFailReason;
+	public void setCreateTime(String createTime) {
+		this.createTime = createTime;
 	}
 
 	public String getExternalId() {
@@ -337,12 +337,12 @@ public class GetVideoResponse extends AcsResponse {
 		this.externalId = externalId;
 	}
 
-	public String getCreateTime() {
-		return this.createTime;
+	public String getVideoSTTFailReason() {
+		return this.videoSTTFailReason;
 	}
 
-	public void setCreateTime(String createTime) {
-		this.createTime = createTime;
+	public void setVideoSTTFailReason(String videoSTTFailReason) {
+		this.videoSTTFailReason = videoSTTFailReason;
 	}
 
 	public String getVideoUri() {
@@ -353,20 +353,20 @@ public class GetVideoResponse extends AcsResponse {
 		this.videoUri = videoUri;
 	}
 
-	public String getVideoFormat() {
-		return this.videoFormat;
-	}
-
-	public void setVideoFormat(String videoFormat) {
-		this.videoFormat = videoFormat;
-	}
-
 	public String getVideoFrameTagsFailReason() {
 		return this.videoFrameTagsFailReason;
 	}
 
 	public void setVideoFrameTagsFailReason(String videoFrameTagsFailReason) {
 		this.videoFrameTagsFailReason = videoFrameTagsFailReason;
+	}
+
+	public String getVideoFormat() {
+		return this.videoFormat;
+	}
+
+	public void setVideoFormat(String videoFormat) {
+		this.videoFormat = videoFormat;
 	}
 
 	public String getVideoSTTStatus() {
@@ -409,20 +409,20 @@ public class GetVideoResponse extends AcsResponse {
 		this.celebrityFailReason = celebrityFailReason;
 	}
 
-	public String getCelebrityStatus() {
-		return this.celebrityStatus;
-	}
-
-	public void setCelebrityStatus(String celebrityStatus) {
-		this.celebrityStatus = celebrityStatus;
-	}
-
 	public String getSetId() {
 		return this.setId;
 	}
 
 	public void setSetId(String setId) {
 		this.setId = setId;
+	}
+
+	public String getCelebrityStatus() {
+		return this.celebrityStatus;
+	}
+
+	public void setCelebrityStatus(String celebrityStatus) {
+		this.celebrityStatus = celebrityStatus;
 	}
 
 	public String getVideoTagsStatus() {
@@ -441,14 +441,6 @@ public class GetVideoResponse extends AcsResponse {
 		this.fileSize = fileSize;
 	}
 
-	public List<VideoTagsItem> getVideoTags() {
-		return this.videoTags;
-	}
-
-	public void setVideoTags(List<VideoTagsItem> videoTags) {
-		this.videoTags = videoTags;
-	}
-
 	public List<PersonsItem> getPersons() {
 		return this.persons;
 	}
@@ -465,23 +457,109 @@ public class GetVideoResponse extends AcsResponse {
 		this.celebrity = celebrity;
 	}
 
+	public List<VideoTagsItem> getVideoTags() {
+		return this.videoTags;
+	}
+
+	public void setVideoTags(List<VideoTagsItem> videoTags) {
+		this.videoTags = videoTags;
+	}
+
+	public static class PersonsItem {
+
+		private String gender;
+
+		private Float ageConfidence;
+
+		private Float genderConfidence;
+
+		private Integer age;
+
+		private String personId;
+
+		public String getGender() {
+			return this.gender;
+		}
+
+		public void setGender(String gender) {
+			this.gender = gender;
+		}
+
+		public Float getAgeConfidence() {
+			return this.ageConfidence;
+		}
+
+		public void setAgeConfidence(Float ageConfidence) {
+			this.ageConfidence = ageConfidence;
+		}
+
+		public Float getGenderConfidence() {
+			return this.genderConfidence;
+		}
+
+		public void setGenderConfidence(Float genderConfidence) {
+			this.genderConfidence = genderConfidence;
+		}
+
+		public Integer getAge() {
+			return this.age;
+		}
+
+		public void setAge(Integer age) {
+			this.age = age;
+		}
+
+		public String getPersonId() {
+			return this.personId;
+		}
+
+		public void setPersonId(String personId) {
+			this.personId = personId;
+		}
+	}
+
+	public static class CelebrityItem {
+
+		private Integer celebrityNum;
+
+		private String celebrityName;
+
+		private String celebrityLibraryName;
+
+		public Integer getCelebrityNum() {
+			return this.celebrityNum;
+		}
+
+		public void setCelebrityNum(Integer celebrityNum) {
+			this.celebrityNum = celebrityNum;
+		}
+
+		public String getCelebrityName() {
+			return this.celebrityName;
+		}
+
+		public void setCelebrityName(String celebrityName) {
+			this.celebrityName = celebrityName;
+		}
+
+		public String getCelebrityLibraryName() {
+			return this.celebrityLibraryName;
+		}
+
+		public void setCelebrityLibraryName(String celebrityLibraryName) {
+			this.celebrityLibraryName = celebrityLibraryName;
+		}
+	}
+
 	public static class VideoTagsItem {
 
-		private Float tagConfidence;
-
 		private String tagName;
+
+		private Float tagConfidence;
 
 		private Integer tagLevel;
 
 		private String parentTagName;
-
-		public Float getTagConfidence() {
-			return this.tagConfidence;
-		}
-
-		public void setTagConfidence(Float tagConfidence) {
-			this.tagConfidence = tagConfidence;
-		}
 
 		public String getTagName() {
 			return this.tagName;
@@ -489,6 +567,14 @@ public class GetVideoResponse extends AcsResponse {
 
 		public void setTagName(String tagName) {
 			this.tagName = tagName;
+		}
+
+		public Float getTagConfidence() {
+			return this.tagConfidence;
+		}
+
+		public void setTagConfidence(Float tagConfidence) {
+			this.tagConfidence = tagConfidence;
 		}
 
 		public Integer getTagLevel() {
@@ -505,92 +591,6 @@ public class GetVideoResponse extends AcsResponse {
 
 		public void setParentTagName(String parentTagName) {
 			this.parentTagName = parentTagName;
-		}
-	}
-
-	public static class PersonsItem {
-
-		private String personId;
-
-		private Float genderConfidence;
-
-		private String gender;
-
-		private Integer age;
-
-		private Float ageConfidence;
-
-		public String getPersonId() {
-			return this.personId;
-		}
-
-		public void setPersonId(String personId) {
-			this.personId = personId;
-		}
-
-		public Float getGenderConfidence() {
-			return this.genderConfidence;
-		}
-
-		public void setGenderConfidence(Float genderConfidence) {
-			this.genderConfidence = genderConfidence;
-		}
-
-		public String getGender() {
-			return this.gender;
-		}
-
-		public void setGender(String gender) {
-			this.gender = gender;
-		}
-
-		public Integer getAge() {
-			return this.age;
-		}
-
-		public void setAge(Integer age) {
-			this.age = age;
-		}
-
-		public Float getAgeConfidence() {
-			return this.ageConfidence;
-		}
-
-		public void setAgeConfidence(Float ageConfidence) {
-			this.ageConfidence = ageConfidence;
-		}
-	}
-
-	public static class CelebrityItem {
-
-		private String celebrityName;
-
-		private Integer celebrityNum;
-
-		private String celebrityLibraryName;
-
-		public String getCelebrityName() {
-			return this.celebrityName;
-		}
-
-		public void setCelebrityName(String celebrityName) {
-			this.celebrityName = celebrityName;
-		}
-
-		public Integer getCelebrityNum() {
-			return this.celebrityNum;
-		}
-
-		public void setCelebrityNum(Integer celebrityNum) {
-			this.celebrityNum = celebrityNum;
-		}
-
-		public String getCelebrityLibraryName() {
-			return this.celebrityLibraryName;
-		}
-
-		public void setCelebrityLibraryName(String celebrityLibraryName) {
-			this.celebrityLibraryName = celebrityLibraryName;
 		}
 	}
 

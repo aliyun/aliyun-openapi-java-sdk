@@ -57,39 +57,31 @@ public class ListOfficeConversionTaskResponse extends AcsResponse {
 
 	public static class TasksItem {
 
-		private String taskId;
-
 		private String status;
 
 		private Integer percent;
 
+		private String finishTime;
+
+		private String createTime;
+
 		private Integer pageCount;
-
-		private String srcUri;
-
-		private String tgtType;
-
-		private String tgtUri;
-
-		private String imageSpec;
 
 		private String notifyTopicName;
 
 		private String notifyEndpoint;
 
+		private String tgtUri;
+
+		private String tgtType;
+
+		private String srcUri;
+
+		private String imageSpec;
+
 		private String externalID;
 
-		private String createTime;
-
-		private String finishTime;
-
-		public String getTaskId() {
-			return this.taskId;
-		}
-
-		public void setTaskId(String taskId) {
-			this.taskId = taskId;
-		}
+		private String taskId;
 
 		public String getStatus() {
 			return this.status;
@@ -107,44 +99,28 @@ public class ListOfficeConversionTaskResponse extends AcsResponse {
 			this.percent = percent;
 		}
 
+		public String getFinishTime() {
+			return this.finishTime;
+		}
+
+		public void setFinishTime(String finishTime) {
+			this.finishTime = finishTime;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
+
 		public Integer getPageCount() {
 			return this.pageCount;
 		}
 
 		public void setPageCount(Integer pageCount) {
 			this.pageCount = pageCount;
-		}
-
-		public String getSrcUri() {
-			return this.srcUri;
-		}
-
-		public void setSrcUri(String srcUri) {
-			this.srcUri = srcUri;
-		}
-
-		public String getTgtType() {
-			return this.tgtType;
-		}
-
-		public void setTgtType(String tgtType) {
-			this.tgtType = tgtType;
-		}
-
-		public String getTgtUri() {
-			return this.tgtUri;
-		}
-
-		public void setTgtUri(String tgtUri) {
-			this.tgtUri = tgtUri;
-		}
-
-		public String getImageSpec() {
-			return this.imageSpec;
-		}
-
-		public void setImageSpec(String imageSpec) {
-			this.imageSpec = imageSpec;
 		}
 
 		public String getNotifyTopicName() {
@@ -163,6 +139,38 @@ public class ListOfficeConversionTaskResponse extends AcsResponse {
 			this.notifyEndpoint = notifyEndpoint;
 		}
 
+		public String getTgtUri() {
+			return this.tgtUri;
+		}
+
+		public void setTgtUri(String tgtUri) {
+			this.tgtUri = tgtUri;
+		}
+
+		public String getTgtType() {
+			return this.tgtType;
+		}
+
+		public void setTgtType(String tgtType) {
+			this.tgtType = tgtType;
+		}
+
+		public String getSrcUri() {
+			return this.srcUri;
+		}
+
+		public void setSrcUri(String srcUri) {
+			this.srcUri = srcUri;
+		}
+
+		public String getImageSpec() {
+			return this.imageSpec;
+		}
+
+		public void setImageSpec(String imageSpec) {
+			this.imageSpec = imageSpec;
+		}
+
 		public String getExternalID() {
 			return this.externalID;
 		}
@@ -171,20 +179,12 @@ public class ListOfficeConversionTaskResponse extends AcsResponse {
 			this.externalID = externalID;
 		}
 
-		public String getCreateTime() {
-			return this.createTime;
+		public String getTaskId() {
+			return this.taskId;
 		}
 
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
-		}
-
-		public String getFinishTime() {
-			return this.finishTime;
-		}
-
-		public void setFinishTime(String finishTime) {
-			this.finishTime = finishTime;
+		public void setTaskId(String taskId) {
+			this.taskId = taskId;
 		}
 	}
 

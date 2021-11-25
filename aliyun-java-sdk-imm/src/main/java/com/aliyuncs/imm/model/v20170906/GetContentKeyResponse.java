@@ -24,19 +24,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetContentKeyResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String versionId;
 
+	private String requestId;
+
 	private String keyInfos;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getVersionId() {
 		return this.versionId;
@@ -44,6 +36,14 @@ public class GetContentKeyResponse extends AcsResponse {
 
 	public void setVersionId(String versionId) {
 		this.versionId = versionId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getKeyInfos() {

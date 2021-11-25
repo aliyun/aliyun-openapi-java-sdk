@@ -24,42 +24,42 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetOfficeConversionTaskResponse extends AcsResponse {
 
-	private String requestId;
+	private String status;
 
 	private String tgtType;
 
-	private String status;
+	private String taskId;
+
+	private String requestId;
 
 	private Integer percent;
 
-	private Integer pageCount;
-
-	private String taskId;
-
-	private String tgtUri;
-
-	private String imageSpec;
-
-	private String notifyTopicName;
-
-	private String notifyEndpoint;
+	private String createTime;
 
 	private String externalID;
 
-	private String createTime;
+	private String imageSpec;
+
+	private String notifyEndpoint;
+
+	private String tgtUri;
 
 	private String finishTime;
+
+	private Integer pageCount;
+
+	private String notifyTopicName;
 
 	private String srcUri;
 
 	private FailDetail failDetail;
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getStatus() {
+		return this.status;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setStatus(String status) {
+		this.status = status;
 	}
 
 	public String getTgtType() {
@@ -70,12 +70,20 @@ public class GetOfficeConversionTaskResponse extends AcsResponse {
 		this.tgtType = tgtType;
 	}
 
-	public String getStatus() {
-		return this.status;
+	public String getTaskId() {
+		return this.taskId;
 	}
 
-	public void setStatus(String status) {
-		this.status = status;
+	public void setTaskId(String taskId) {
+		this.taskId = taskId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getPercent() {
@@ -86,52 +94,12 @@ public class GetOfficeConversionTaskResponse extends AcsResponse {
 		this.percent = percent;
 	}
 
-	public Integer getPageCount() {
-		return this.pageCount;
+	public String getCreateTime() {
+		return this.createTime;
 	}
 
-	public void setPageCount(Integer pageCount) {
-		this.pageCount = pageCount;
-	}
-
-	public String getTaskId() {
-		return this.taskId;
-	}
-
-	public void setTaskId(String taskId) {
-		this.taskId = taskId;
-	}
-
-	public String getTgtUri() {
-		return this.tgtUri;
-	}
-
-	public void setTgtUri(String tgtUri) {
-		this.tgtUri = tgtUri;
-	}
-
-	public String getImageSpec() {
-		return this.imageSpec;
-	}
-
-	public void setImageSpec(String imageSpec) {
-		this.imageSpec = imageSpec;
-	}
-
-	public String getNotifyTopicName() {
-		return this.notifyTopicName;
-	}
-
-	public void setNotifyTopicName(String notifyTopicName) {
-		this.notifyTopicName = notifyTopicName;
-	}
-
-	public String getNotifyEndpoint() {
-		return this.notifyEndpoint;
-	}
-
-	public void setNotifyEndpoint(String notifyEndpoint) {
-		this.notifyEndpoint = notifyEndpoint;
+	public void setCreateTime(String createTime) {
+		this.createTime = createTime;
 	}
 
 	public String getExternalID() {
@@ -142,12 +110,28 @@ public class GetOfficeConversionTaskResponse extends AcsResponse {
 		this.externalID = externalID;
 	}
 
-	public String getCreateTime() {
-		return this.createTime;
+	public String getImageSpec() {
+		return this.imageSpec;
 	}
 
-	public void setCreateTime(String createTime) {
-		this.createTime = createTime;
+	public void setImageSpec(String imageSpec) {
+		this.imageSpec = imageSpec;
+	}
+
+	public String getNotifyEndpoint() {
+		return this.notifyEndpoint;
+	}
+
+	public void setNotifyEndpoint(String notifyEndpoint) {
+		this.notifyEndpoint = notifyEndpoint;
+	}
+
+	public String getTgtUri() {
+		return this.tgtUri;
+	}
+
+	public void setTgtUri(String tgtUri) {
+		this.tgtUri = tgtUri;
 	}
 
 	public String getFinishTime() {
@@ -156,6 +140,22 @@ public class GetOfficeConversionTaskResponse extends AcsResponse {
 
 	public void setFinishTime(String finishTime) {
 		this.finishTime = finishTime;
+	}
+
+	public Integer getPageCount() {
+		return this.pageCount;
+	}
+
+	public void setPageCount(Integer pageCount) {
+		this.pageCount = pageCount;
+	}
+
+	public String getNotifyTopicName() {
+		return this.notifyTopicName;
+	}
+
+	public void setNotifyTopicName(String notifyTopicName) {
+		this.notifyTopicName = notifyTopicName;
 	}
 
 	public String getSrcUri() {

@@ -23,11 +23,11 @@ public class GetOfficeEditURLResponseUnmarshaller {
 	public static GetOfficeEditURLResponse unmarshall(GetOfficeEditURLResponse getOfficeEditURLResponse, UnmarshallerContext _ctx) {
 		
 		getOfficeEditURLResponse.setRequestId(_ctx.stringValue("GetOfficeEditURLResponse.RequestId"));
+		getOfficeEditURLResponse.setRefreshToken(_ctx.stringValue("GetOfficeEditURLResponse.RefreshToken"));
 		getOfficeEditURLResponse.setEditURL(_ctx.stringValue("GetOfficeEditURLResponse.EditURL"));
 		getOfficeEditURLResponse.setAccessToken(_ctx.stringValue("GetOfficeEditURLResponse.AccessToken"));
-		getOfficeEditURLResponse.setRefreshToken(_ctx.stringValue("GetOfficeEditURLResponse.RefreshToken"));
-		getOfficeEditURLResponse.setAccessTokenExpiredTime(_ctx.stringValue("GetOfficeEditURLResponse.AccessTokenExpiredTime"));
 		getOfficeEditURLResponse.setRefreshTokenExpiredTime(_ctx.stringValue("GetOfficeEditURLResponse.RefreshTokenExpiredTime"));
+		getOfficeEditURLResponse.setAccessTokenExpiredTime(_ctx.stringValue("GetOfficeEditURLResponse.AccessTokenExpiredTime"));
 	 
 	 	return getOfficeEditURLResponse;
 	}

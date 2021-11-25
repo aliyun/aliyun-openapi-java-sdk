@@ -24,31 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class RefreshOfficeEditTokenResponse extends AcsResponse {
 
-	private String accessToken;
-
-	private String accessTokenExpiredTime;
-
 	private String refreshToken;
-
-	private String refreshTokenExpiredTime;
 
 	private String requestId;
 
-	public String getAccessToken() {
-		return this.accessToken;
-	}
+	private String accessToken;
 
-	public void setAccessToken(String accessToken) {
-		this.accessToken = accessToken;
-	}
+	private String refreshTokenExpiredTime;
 
-	public String getAccessTokenExpiredTime() {
-		return this.accessTokenExpiredTime;
-	}
-
-	public void setAccessTokenExpiredTime(String accessTokenExpiredTime) {
-		this.accessTokenExpiredTime = accessTokenExpiredTime;
-	}
+	private String accessTokenExpiredTime;
 
 	public String getRefreshToken() {
 		return this.refreshToken;
@@ -56,6 +40,22 @@ public class RefreshOfficeEditTokenResponse extends AcsResponse {
 
 	public void setRefreshToken(String refreshToken) {
 		this.refreshToken = refreshToken;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getAccessToken() {
+		return this.accessToken;
+	}
+
+	public void setAccessToken(String accessToken) {
+		this.accessToken = accessToken;
 	}
 
 	public String getRefreshTokenExpiredTime() {
@@ -66,12 +66,12 @@ public class RefreshOfficeEditTokenResponse extends AcsResponse {
 		this.refreshTokenExpiredTime = refreshTokenExpiredTime;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getAccessTokenExpiredTime() {
+		return this.accessTokenExpiredTime;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setAccessTokenExpiredTime(String accessTokenExpiredTime) {
+		this.accessTokenExpiredTime = accessTokenExpiredTime;
 	}
 
 	@Override

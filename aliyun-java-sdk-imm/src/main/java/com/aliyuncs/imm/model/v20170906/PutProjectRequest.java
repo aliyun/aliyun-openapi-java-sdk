@@ -27,13 +27,7 @@ public class PutProjectRequest extends RpcAcsRequest<PutProjectResponse> {
 
 	private String project;
 
-	private String type;
-
-	private Integer cU;
-
 	private String serviceRole;
-
-	private String billingType;
 	public PutProjectRequest() {
 		super("imm", "2017-09-06", "PutProject", "imm");
 		setMethod(MethodType.POST);
@@ -54,28 +48,6 @@ public class PutProjectRequest extends RpcAcsRequest<PutProjectResponse> {
 		}
 	}
 
-	public String getType() {
-		return this.type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
-		if(type != null){
-			putQueryParameter("Type", type);
-		}
-	}
-
-	public Integer getCU() {
-		return this.cU;
-	}
-
-	public void setCU(Integer cU) {
-		this.cU = cU;
-		if(cU != null){
-			putQueryParameter("CU", cU.toString());
-		}
-	}
-
 	public String getServiceRole() {
 		return this.serviceRole;
 	}
@@ -84,17 +56,6 @@ public class PutProjectRequest extends RpcAcsRequest<PutProjectResponse> {
 		this.serviceRole = serviceRole;
 		if(serviceRole != null){
 			putQueryParameter("ServiceRole", serviceRole);
-		}
-	}
-
-	public String getBillingType() {
-		return this.billingType;
-	}
-
-	public void setBillingType(String billingType) {
-		this.billingType = billingType;
-		if(billingType != null){
-			putQueryParameter("BillingType", billingType);
 		}
 	}
 

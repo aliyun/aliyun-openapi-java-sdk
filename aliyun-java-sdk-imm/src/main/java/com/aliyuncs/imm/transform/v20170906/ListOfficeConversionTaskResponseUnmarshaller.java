@@ -32,19 +32,19 @@ public class ListOfficeConversionTaskResponseUnmarshaller {
 		List<TasksItem> tasks = new ArrayList<TasksItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListOfficeConversionTaskResponse.Tasks.Length"); i++) {
 			TasksItem tasksItem = new TasksItem();
-			tasksItem.setTaskId(_ctx.stringValue("ListOfficeConversionTaskResponse.Tasks["+ i +"].TaskId"));
 			tasksItem.setStatus(_ctx.stringValue("ListOfficeConversionTaskResponse.Tasks["+ i +"].Status"));
 			tasksItem.setPercent(_ctx.integerValue("ListOfficeConversionTaskResponse.Tasks["+ i +"].Percent"));
+			tasksItem.setFinishTime(_ctx.stringValue("ListOfficeConversionTaskResponse.Tasks["+ i +"].FinishTime"));
+			tasksItem.setCreateTime(_ctx.stringValue("ListOfficeConversionTaskResponse.Tasks["+ i +"].CreateTime"));
 			tasksItem.setPageCount(_ctx.integerValue("ListOfficeConversionTaskResponse.Tasks["+ i +"].PageCount"));
-			tasksItem.setSrcUri(_ctx.stringValue("ListOfficeConversionTaskResponse.Tasks["+ i +"].SrcUri"));
-			tasksItem.setTgtType(_ctx.stringValue("ListOfficeConversionTaskResponse.Tasks["+ i +"].TgtType"));
-			tasksItem.setTgtUri(_ctx.stringValue("ListOfficeConversionTaskResponse.Tasks["+ i +"].TgtUri"));
-			tasksItem.setImageSpec(_ctx.stringValue("ListOfficeConversionTaskResponse.Tasks["+ i +"].ImageSpec"));
 			tasksItem.setNotifyTopicName(_ctx.stringValue("ListOfficeConversionTaskResponse.Tasks["+ i +"].NotifyTopicName"));
 			tasksItem.setNotifyEndpoint(_ctx.stringValue("ListOfficeConversionTaskResponse.Tasks["+ i +"].NotifyEndpoint"));
+			tasksItem.setTgtUri(_ctx.stringValue("ListOfficeConversionTaskResponse.Tasks["+ i +"].TgtUri"));
+			tasksItem.setTgtType(_ctx.stringValue("ListOfficeConversionTaskResponse.Tasks["+ i +"].TgtType"));
+			tasksItem.setSrcUri(_ctx.stringValue("ListOfficeConversionTaskResponse.Tasks["+ i +"].SrcUri"));
+			tasksItem.setImageSpec(_ctx.stringValue("ListOfficeConversionTaskResponse.Tasks["+ i +"].ImageSpec"));
 			tasksItem.setExternalID(_ctx.stringValue("ListOfficeConversionTaskResponse.Tasks["+ i +"].ExternalID"));
-			tasksItem.setCreateTime(_ctx.stringValue("ListOfficeConversionTaskResponse.Tasks["+ i +"].CreateTime"));
-			tasksItem.setFinishTime(_ctx.stringValue("ListOfficeConversionTaskResponse.Tasks["+ i +"].FinishTime"));
+			tasksItem.setTaskId(_ctx.stringValue("ListOfficeConversionTaskResponse.Tasks["+ i +"].TaskId"));
 
 			tasks.add(tasksItem);
 		}

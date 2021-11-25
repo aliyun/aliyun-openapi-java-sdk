@@ -32,12 +32,13 @@ public class DetectImageTagsResponseUnmarshaller {
 		List<TagsItem> tags = new ArrayList<TagsItem>();
 		for (int i = 0; i < _ctx.lengthValue("DetectImageTagsResponse.Tags.Length"); i++) {
 			TagsItem tagsItem = new TagsItem();
+			tagsItem.setParentTagEnName(_ctx.stringValue("DetectImageTagsResponse.Tags["+ i +"].ParentTagEnName"));
 			tagsItem.setTagName(_ctx.stringValue("DetectImageTagsResponse.Tags["+ i +"].TagName"));
 			tagsItem.setTagConfidence(_ctx.floatValue("DetectImageTagsResponse.Tags["+ i +"].TagConfidence"));
+			tagsItem.setCentricScore(_ctx.floatValue("DetectImageTagsResponse.Tags["+ i +"].CentricScore"));
+			tagsItem.setTagEnName(_ctx.stringValue("DetectImageTagsResponse.Tags["+ i +"].TagEnName"));
 			tagsItem.setTagLevel(_ctx.integerValue("DetectImageTagsResponse.Tags["+ i +"].TagLevel"));
 			tagsItem.setParentTagName(_ctx.stringValue("DetectImageTagsResponse.Tags["+ i +"].ParentTagName"));
-			tagsItem.setParentTagEnName(_ctx.stringValue("DetectImageTagsResponse.Tags["+ i +"].ParentTagEnName"));
-			tagsItem.setTagEnName(_ctx.stringValue("DetectImageTagsResponse.Tags["+ i +"].TagEnName"));
 
 			tags.add(tagsItem);
 		}

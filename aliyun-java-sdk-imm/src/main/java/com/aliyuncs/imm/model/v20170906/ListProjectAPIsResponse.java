@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListProjectAPIsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String project;
 
+	private String requestId;
+
 	private List<String> aPIs;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getProject() {
 		return this.project;
@@ -45,6 +37,14 @@ public class ListProjectAPIsResponse extends AcsResponse {
 
 	public void setProject(String project) {
 		this.project = project;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<String> getAPIs() {

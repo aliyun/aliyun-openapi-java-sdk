@@ -23,8 +23,8 @@ public class DeleteVideoResponseUnmarshaller {
 	public static DeleteVideoResponse unmarshall(DeleteVideoResponse deleteVideoResponse, UnmarshallerContext _ctx) {
 		
 		deleteVideoResponse.setRequestId(_ctx.stringValue("DeleteVideoResponse.RequestId"));
-		deleteVideoResponse.setSetId(_ctx.stringValue("DeleteVideoResponse.SetId"));
 		deleteVideoResponse.setVideoUri(_ctx.stringValue("DeleteVideoResponse.VideoUri"));
+		deleteVideoResponse.setSetId(_ctx.stringValue("DeleteVideoResponse.SetId"));
 	 
 	 	return deleteVideoResponse;
 	}

@@ -29,8 +29,8 @@ public class CompareImageFacesResponseUnmarshaller {
 	public static CompareImageFacesResponse unmarshall(CompareImageFacesResponse compareImageFacesResponse, UnmarshallerContext _ctx) {
 		
 		compareImageFacesResponse.setRequestId(_ctx.stringValue("CompareImageFacesResponse.RequestId"));
-		compareImageFacesResponse.setSetId(_ctx.stringValue("CompareImageFacesResponse.SetId"));
 		compareImageFacesResponse.setSimilarity(_ctx.floatValue("CompareImageFacesResponse.Similarity"));
+		compareImageFacesResponse.setSetId(_ctx.stringValue("CompareImageFacesResponse.SetId"));
 
 		FaceA faceA = new FaceA();
 		faceA.setFaceId(_ctx.stringValue("CompareImageFacesResponse.FaceA.FaceId"));
@@ -38,10 +38,10 @@ public class CompareImageFacesResponseUnmarshaller {
 		FaceAttributes faceAttributes = new FaceAttributes();
 
 		FaceBoundary faceBoundary = new FaceBoundary();
-		faceBoundary.setLeft(_ctx.integerValue("CompareImageFacesResponse.FaceA.FaceAttributes.FaceBoundary.Left"));
 		faceBoundary.setTop(_ctx.integerValue("CompareImageFacesResponse.FaceA.FaceAttributes.FaceBoundary.Top"));
 		faceBoundary.setWidth(_ctx.integerValue("CompareImageFacesResponse.FaceA.FaceAttributes.FaceBoundary.Width"));
 		faceBoundary.setHeight(_ctx.integerValue("CompareImageFacesResponse.FaceA.FaceAttributes.FaceBoundary.Height"));
+		faceBoundary.setLeft(_ctx.integerValue("CompareImageFacesResponse.FaceA.FaceAttributes.FaceBoundary.Left"));
 		faceAttributes.setFaceBoundary(faceBoundary);
 		faceA.setFaceAttributes(faceAttributes);
 		compareImageFacesResponse.setFaceA(faceA);
@@ -52,10 +52,10 @@ public class CompareImageFacesResponseUnmarshaller {
 		FaceAttributes1 faceAttributes1 = new FaceAttributes1();
 
 		FaceBoundary2 faceBoundary2 = new FaceBoundary2();
-		faceBoundary2.setLeft(_ctx.integerValue("CompareImageFacesResponse.FaceB.FaceAttributes.FaceBoundary.Left"));
 		faceBoundary2.setTop(_ctx.integerValue("CompareImageFacesResponse.FaceB.FaceAttributes.FaceBoundary.Top"));
 		faceBoundary2.setWidth(_ctx.integerValue("CompareImageFacesResponse.FaceB.FaceAttributes.FaceBoundary.Width"));
 		faceBoundary2.setHeight(_ctx.integerValue("CompareImageFacesResponse.FaceB.FaceAttributes.FaceBoundary.Height"));
+		faceBoundary2.setLeft(_ctx.integerValue("CompareImageFacesResponse.FaceB.FaceAttributes.FaceBoundary.Left"));
 		faceAttributes1.setFaceBoundary2(faceBoundary2);
 		faceB.setFaceAttributes1(faceAttributes1);
 		compareImageFacesResponse.setFaceB(faceB);

@@ -51,9 +51,9 @@ public class FindSimilarFacesResponse extends AcsResponse {
 
 		private String imageUri;
 
-		private Float similarity;
-
 		private String externalId;
+
+		private Float similarity;
 
 		private List<SimilarFacesItem> similarFaces;
 
@@ -75,20 +75,20 @@ public class FindSimilarFacesResponse extends AcsResponse {
 			this.imageUri = imageUri;
 		}
 
-		public Float getSimilarity() {
-			return this.similarity;
-		}
-
-		public void setSimilarity(Float similarity) {
-			this.similarity = similarity;
-		}
-
 		public String getExternalId() {
 			return this.externalId;
 		}
 
 		public void setExternalId(String externalId) {
 			this.externalId = externalId;
+		}
+
+		public Float getSimilarity() {
+			return this.similarity;
+		}
+
+		public void setSimilarity(Float similarity) {
+			this.similarity = similarity;
 		}
 
 		public List<SimilarFacesItem> getSimilarFaces() {
@@ -113,9 +113,9 @@ public class FindSimilarFacesResponse extends AcsResponse {
 
 			private String imageUri;
 
-			private Float similarity;
-
 			private String externalId;
+
+			private Float similarity;
 
 			private FaceAttributes1 faceAttributes1;
 
@@ -135,20 +135,20 @@ public class FindSimilarFacesResponse extends AcsResponse {
 				this.imageUri = imageUri;
 			}
 
-			public Float getSimilarity() {
-				return this.similarity;
-			}
-
-			public void setSimilarity(Float similarity) {
-				this.similarity = similarity;
-			}
-
 			public String getExternalId() {
 				return this.externalId;
 			}
 
 			public void setExternalId(String externalId) {
 				this.externalId = externalId;
+			}
+
+			public Float getSimilarity() {
+				return this.similarity;
+			}
+
+			public void setSimilarity(Float similarity) {
+				this.similarity = similarity;
 			}
 
 			public FaceAttributes1 getFaceAttributes1() {
@@ -173,21 +173,13 @@ public class FindSimilarFacesResponse extends AcsResponse {
 
 				public static class FaceBoundary {
 
-					private Integer left;
-
 					private Integer top;
 
 					private Integer width;
 
 					private Integer height;
 
-					public Integer getLeft() {
-						return this.left;
-					}
-
-					public void setLeft(Integer left) {
-						this.left = left;
-					}
+					private Integer left;
 
 					public Integer getTop() {
 						return this.top;
@@ -212,6 +204,14 @@ public class FindSimilarFacesResponse extends AcsResponse {
 					public void setHeight(Integer height) {
 						this.height = height;
 					}
+
+					public Integer getLeft() {
+						return this.left;
+					}
+
+					public void setLeft(Integer left) {
+						this.left = left;
+					}
 				}
 			}
 		}
@@ -230,21 +230,13 @@ public class FindSimilarFacesResponse extends AcsResponse {
 
 			public static class FaceBoundary2 {
 
-				private Integer left;
-
 				private Integer top;
 
 				private Integer width;
 
 				private Integer height;
 
-				public Integer getLeft() {
-					return this.left;
-				}
-
-				public void setLeft(Integer left) {
-					this.left = left;
-				}
+				private Integer left;
 
 				public Integer getTop() {
 					return this.top;
@@ -268,6 +260,14 @@ public class FindSimilarFacesResponse extends AcsResponse {
 
 				public void setHeight(Integer height) {
 					this.height = height;
+				}
+
+				public Integer getLeft() {
+					return this.left;
+				}
+
+				public void setLeft(Integer left) {
+					this.left = left;
 				}
 			}
 		}

@@ -37,10 +37,10 @@ public class GetImageCroppingSuggestionsResponseUnmarshaller {
 			croppingSuggestionsItem.setAspectRatio(_ctx.stringValue("GetImageCroppingSuggestionsResponse.CroppingSuggestions["+ i +"].AspectRatio"));
 
 			CroppingBoundary croppingBoundary = new CroppingBoundary();
-			croppingBoundary.setLeft(_ctx.integerValue("GetImageCroppingSuggestionsResponse.CroppingSuggestions["+ i +"].CroppingBoundary.Left"));
 			croppingBoundary.setTop(_ctx.integerValue("GetImageCroppingSuggestionsResponse.CroppingSuggestions["+ i +"].CroppingBoundary.Top"));
 			croppingBoundary.setWidth(_ctx.integerValue("GetImageCroppingSuggestionsResponse.CroppingSuggestions["+ i +"].CroppingBoundary.Width"));
 			croppingBoundary.setHeight(_ctx.integerValue("GetImageCroppingSuggestionsResponse.CroppingSuggestions["+ i +"].CroppingBoundary.Height"));
+			croppingBoundary.setLeft(_ctx.integerValue("GetImageCroppingSuggestionsResponse.CroppingSuggestions["+ i +"].CroppingBoundary.Left"));
 			croppingSuggestionsItem.setCroppingBoundary(croppingBoundary);
 
 			croppingSuggestions.add(croppingSuggestionsItem);

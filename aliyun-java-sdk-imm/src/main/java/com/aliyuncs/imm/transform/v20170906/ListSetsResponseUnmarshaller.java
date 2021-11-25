@@ -32,14 +32,14 @@ public class ListSetsResponseUnmarshaller {
 		List<SetsItem> sets = new ArrayList<SetsItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListSetsResponse.Sets.Length"); i++) {
 			SetsItem setsItem = new SetsItem();
-			setsItem.setSetId(_ctx.stringValue("ListSetsResponse.Sets["+ i +"].SetId"));
-			setsItem.setSetName(_ctx.stringValue("ListSetsResponse.Sets["+ i +"].SetName"));
-			setsItem.setCreateTime(_ctx.stringValue("ListSetsResponse.Sets["+ i +"].CreateTime"));
-			setsItem.setModifyTime(_ctx.stringValue("ListSetsResponse.Sets["+ i +"].ModifyTime"));
-			setsItem.setFaceCount(_ctx.integerValue("ListSetsResponse.Sets["+ i +"].FaceCount"));
-			setsItem.setImageCount(_ctx.integerValue("ListSetsResponse.Sets["+ i +"].ImageCount"));
 			setsItem.setVideoCount(_ctx.integerValue("ListSetsResponse.Sets["+ i +"].VideoCount"));
+			setsItem.setCreateTime(_ctx.stringValue("ListSetsResponse.Sets["+ i +"].CreateTime"));
 			setsItem.setVideoLength(_ctx.integerValue("ListSetsResponse.Sets["+ i +"].VideoLength"));
+			setsItem.setSetId(_ctx.stringValue("ListSetsResponse.Sets["+ i +"].SetId"));
+			setsItem.setImageCount(_ctx.integerValue("ListSetsResponse.Sets["+ i +"].ImageCount"));
+			setsItem.setFaceCount(_ctx.integerValue("ListSetsResponse.Sets["+ i +"].FaceCount"));
+			setsItem.setSetName(_ctx.stringValue("ListSetsResponse.Sets["+ i +"].SetName"));
+			setsItem.setModifyTime(_ctx.stringValue("ListSetsResponse.Sets["+ i +"].ModifyTime"));
 
 			sets.add(setsItem);
 		}

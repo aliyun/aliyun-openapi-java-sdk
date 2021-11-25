@@ -36,10 +36,10 @@ public class DetectImageBodiesResponseUnmarshaller {
 			bodiesItem.setBodyConfidence(_ctx.floatValue("DetectImageBodiesResponse.Bodies["+ i +"].BodyConfidence"));
 
 			BodyBoundary bodyBoundary = new BodyBoundary();
-			bodyBoundary.setLeft(_ctx.integerValue("DetectImageBodiesResponse.Bodies["+ i +"].BodyBoundary.Left"));
 			bodyBoundary.setTop(_ctx.integerValue("DetectImageBodiesResponse.Bodies["+ i +"].BodyBoundary.Top"));
 			bodyBoundary.setWidth(_ctx.integerValue("DetectImageBodiesResponse.Bodies["+ i +"].BodyBoundary.Width"));
 			bodyBoundary.setHeight(_ctx.integerValue("DetectImageBodiesResponse.Bodies["+ i +"].BodyBoundary.Height"));
+			bodyBoundary.setLeft(_ctx.integerValue("DetectImageBodiesResponse.Bodies["+ i +"].BodyBoundary.Left"));
 			bodiesItem.setBodyBoundary(bodyBoundary);
 
 			bodies.add(bodiesItem);

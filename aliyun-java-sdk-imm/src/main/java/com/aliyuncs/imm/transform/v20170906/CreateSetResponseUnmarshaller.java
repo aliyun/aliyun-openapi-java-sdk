@@ -23,14 +23,14 @@ public class CreateSetResponseUnmarshaller {
 	public static CreateSetResponse unmarshall(CreateSetResponse createSetResponse, UnmarshallerContext _ctx) {
 		
 		createSetResponse.setRequestId(_ctx.stringValue("CreateSetResponse.RequestId"));
-		createSetResponse.setSetId(_ctx.stringValue("CreateSetResponse.SetId"));
-		createSetResponse.setSetName(_ctx.stringValue("CreateSetResponse.SetName"));
-		createSetResponse.setCreateTime(_ctx.stringValue("CreateSetResponse.CreateTime"));
 		createSetResponse.setModifyTime(_ctx.stringValue("CreateSetResponse.ModifyTime"));
-		createSetResponse.setFaceCount(_ctx.integerValue("CreateSetResponse.FaceCount"));
-		createSetResponse.setImageCount(_ctx.integerValue("CreateSetResponse.ImageCount"));
 		createSetResponse.setVideoCount(_ctx.integerValue("CreateSetResponse.VideoCount"));
+		createSetResponse.setImageCount(_ctx.integerValue("CreateSetResponse.ImageCount"));
+		createSetResponse.setCreateTime(_ctx.stringValue("CreateSetResponse.CreateTime"));
+		createSetResponse.setSetName(_ctx.stringValue("CreateSetResponse.SetName"));
+		createSetResponse.setSetId(_ctx.stringValue("CreateSetResponse.SetId"));
 		createSetResponse.setVideoLength(_ctx.integerValue("CreateSetResponse.VideoLength"));
+		createSetResponse.setFaceCount(_ctx.integerValue("CreateSetResponse.FaceCount"));
 	 
 	 	return createSetResponse;
 	}
