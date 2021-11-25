@@ -38,6 +38,8 @@ public class DescribeDataSourcesRequest extends RpcAcsRequest<DescribeDataSource
 	private Long pageSize;
 
 	private String dataSourceCategory;
+
+	private String streamStatus;
 	public DescribeDataSourcesRequest() {
 		super("Vcs", "2020-05-15", "DescribeDataSources");
 		setMethod(MethodType.POST);
@@ -121,6 +123,17 @@ public class DescribeDataSourcesRequest extends RpcAcsRequest<DescribeDataSource
 		this.dataSourceCategory = dataSourceCategory;
 		if(dataSourceCategory != null){
 			putBodyParameter("DataSourceCategory", dataSourceCategory);
+		}
+	}
+
+	public String getStreamStatus() {
+		return this.streamStatus;
+	}
+
+	public void setStreamStatus(String streamStatus) {
+		this.streamStatus = streamStatus;
+		if(streamStatus != null){
+			putBodyParameter("StreamStatus", streamStatus);
 		}
 	}
 
