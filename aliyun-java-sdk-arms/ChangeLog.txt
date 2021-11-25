@@ -1,3 +1,6 @@
+2021-11-25 Version: 2.7.39
+- Add new Region.
+
 2021-11-25 Version: 2.7.38
 - Add new Region.
 
