@@ -23,10 +23,10 @@ public class GetUnionTaskStatusResponseUnmarshaller {
 	public static GetUnionTaskStatusResponse unmarshall(GetUnionTaskStatusResponse getUnionTaskStatusResponse, UnmarshallerContext _ctx) {
 		
 		getUnionTaskStatusResponse.setRequestId(_ctx.stringValue("GetUnionTaskStatusResponse.RequestId"));
-		getUnionTaskStatusResponse.setSuccess(_ctx.booleanValue("GetUnionTaskStatusResponse.Success"));
-		getUnionTaskStatusResponse.setErrorCode(_ctx.integerValue("GetUnionTaskStatusResponse.ErrorCode"));
 		getUnionTaskStatusResponse.setErrorMessage(_ctx.stringValue("GetUnionTaskStatusResponse.ErrorMessage"));
 		getUnionTaskStatusResponse.setResult(_ctx.booleanValue("GetUnionTaskStatusResponse.Result"));
+		getUnionTaskStatusResponse.setErrorCode(_ctx.integerValue("GetUnionTaskStatusResponse.ErrorCode"));
+		getUnionTaskStatusResponse.setSuccess(_ctx.booleanValue("GetUnionTaskStatusResponse.Success"));
 	 
 	 	return getUnionTaskStatusResponse;
 	}

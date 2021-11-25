@@ -41,7 +41,7 @@ public class ModifyTenantInfoRequest extends RpcAcsRequest<ModifyTenantInfoRespo
 
 	private String tenant;
 	public ModifyTenantInfoRequest() {
-		super("UniMkt", "2018-12-12", "ModifyTenantInfo");
+		super("UniMkt", "2018-12-12", "ModifyTenantInfo", "1.0.0");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

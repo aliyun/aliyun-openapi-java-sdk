@@ -34,8 +34,10 @@ public class GetUnionTaskStatusRequest extends RpcAcsRequest<GetUnionTaskStatusR
 	private Long userId;
 
 	private Long taskId;
+
+	private String channelId;
 	public GetUnionTaskStatusRequest() {
-		super("UniMkt", "2018-12-12", "GetUnionTaskStatus");
+		super("UniMkt", "2018-12-12", "GetUnionTaskStatus", "1.0.0");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -95,6 +97,17 @@ public class GetUnionTaskStatusRequest extends RpcAcsRequest<GetUnionTaskStatusR
 		this.taskId = taskId;
 		if(taskId != null){
 			putQueryParameter("TaskId", taskId.toString());
+		}
+	}
+
+	public String getChannelId() {
+		return this.channelId;
+	}
+
+	public void setChannelId(String channelId) {
+		this.channelId = channelId;
+		if(channelId != null){
+			putQueryParameter("ChannelId", channelId);
 		}
 	}
 
