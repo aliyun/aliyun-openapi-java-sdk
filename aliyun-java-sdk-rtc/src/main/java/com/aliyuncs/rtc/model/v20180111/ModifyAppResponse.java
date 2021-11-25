@@ -15,14 +15,14 @@
 package com.aliyuncs.rtc.model.v20180111;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.rtc.transform.v20180111.StopChannelUserPublishResponseUnmarshaller;
+import com.aliyuncs.rtc.transform.v20180111.ModifyAppResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class StopChannelUserPublishResponse extends AcsResponse {
+public class ModifyAppResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -35,12 +35,7 @@ public class StopChannelUserPublishResponse extends AcsResponse {
 	}
 
 	@Override
-	public StopChannelUserPublishResponse getInstance(UnmarshallerContext context) {
-		return	StopChannelUserPublishResponseUnmarshaller.unmarshall(this, context);
-	}
-
-	@Override
-	public boolean checkShowJsonItemName() {
-		return false;
+	public ModifyAppResponse getInstance(UnmarshallerContext context) {
+		return	ModifyAppResponseUnmarshaller.unmarshall(this, context);
 	}
 }

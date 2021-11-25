@@ -1,3 +1,7 @@
+2021-11-25 Version: 1.3.2
+- Delete some abandoned interface.
+- Add some interfaces.
+
 2021-11-24 Version: 1.3.1
 - Delete some abandoned interface in SDK.
 

@@ -14,16 +14,16 @@
 
 package com.aliyuncs.rtc.transform.v20180111;
 
-import com.aliyuncs.rtc.model.v20180111.StopChannelUserPublishResponse;
+import com.aliyuncs.rtc.model.v20180111.DeleteChannelResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class StopChannelUserPublishResponseUnmarshaller {
+public class DeleteChannelResponseUnmarshaller {
 
-	public static StopChannelUserPublishResponse unmarshall(StopChannelUserPublishResponse stopChannelUserPublishResponse, UnmarshallerContext _ctx) {
+	public static DeleteChannelResponse unmarshall(DeleteChannelResponse deleteChannelResponse, UnmarshallerContext _ctx) {
 		
-		stopChannelUserPublishResponse.setRequestId(_ctx.stringValue("StopChannelUserPublishResponse.RequestId"));
+		deleteChannelResponse.setRequestId(_ctx.stringValue("DeleteChannelResponse.RequestId"));
 	 
-	 	return stopChannelUserPublishResponse;
+	 	return deleteChannelResponse;
 	}
 }

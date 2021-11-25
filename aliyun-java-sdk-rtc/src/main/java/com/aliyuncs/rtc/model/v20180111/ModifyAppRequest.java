@@ -22,18 +22,16 @@ import com.aliyuncs.rtc.Endpoint;
  * @author auto create
  * @version 
  */
-public class StopChannelUserPublishRequest extends RpcAcsRequest<StopChannelUserPublishResponse> {
+public class ModifyAppRequest extends RpcAcsRequest<ModifyAppResponse> {
 	   
 
-	private String userId;
+	private String appName;
 
 	private Long ownerId;
 
 	private String appId;
-
-	private String channelId;
-	public StopChannelUserPublishRequest() {
-		super("rtc", "2018-01-11", "StopChannelUserPublish");
+	public ModifyAppRequest() {
+		super("rtc", "2018-01-11", "ModifyApp");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -41,14 +39,14 @@ public class StopChannelUserPublishRequest extends RpcAcsRequest<StopChannelUser
 		} catch (Exception e) {}
 	}
 
-	public String getUserId() {
-		return this.userId;
+	public String getAppName() {
+		return this.appName;
 	}
 
-	public void setUserId(String userId) {
-		this.userId = userId;
-		if(userId != null){
-			putQueryParameter("UserId", userId);
+	public void setAppName(String appName) {
+		this.appName = appName;
+		if(appName != null){
+			putQueryParameter("AppName", appName);
 		}
 	}
 
@@ -74,20 +72,9 @@ public class StopChannelUserPublishRequest extends RpcAcsRequest<StopChannelUser
 		}
 	}
 
-	public String getChannelId() {
-		return this.channelId;
-	}
-
-	public void setChannelId(String channelId) {
-		this.channelId = channelId;
-		if(channelId != null){
-			putQueryParameter("ChannelId", channelId);
-		}
-	}
-
 	@Override
-	public Class<StopChannelUserPublishResponse> getResponseClass() {
-		return StopChannelUserPublishResponse.class;
+	public Class<ModifyAppResponse> getResponseClass() {
+		return ModifyAppResponse.class;
 	}
 
 }
