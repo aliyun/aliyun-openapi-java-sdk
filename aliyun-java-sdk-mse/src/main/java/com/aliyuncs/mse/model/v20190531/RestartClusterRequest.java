@@ -27,6 +27,8 @@ public class RestartClusterRequest extends RpcAcsRequest<RestartClusterResponse>
 
 	private String clusterId;
 
+	private String podNameList;
+
 	private String instanceId;
 
 	private String requestPars;
@@ -47,6 +49,17 @@ public class RestartClusterRequest extends RpcAcsRequest<RestartClusterResponse>
 		this.clusterId = clusterId;
 		if(clusterId != null){
 			putQueryParameter("ClusterId", clusterId);
+		}
+	}
+
+	public String getPodNameList() {
+		return this.podNameList;
+	}
+
+	public void setPodNameList(String podNameList) {
+		this.podNameList = podNameList;
+		if(podNameList != null){
+			putQueryParameter("PodNameList", podNameList);
 		}
 	}
 
