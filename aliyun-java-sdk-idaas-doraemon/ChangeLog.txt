@@ -1,3 +1,6 @@
+2021-11-25 Version: 1.2.4
+- Support Check weak Password.
+
 2021-11-18 Version: 1.2.3
 - Support Check weak Password.
 

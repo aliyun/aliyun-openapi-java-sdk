@@ -25,6 +25,8 @@ import com.aliyuncs.idaas_doraemon.Endpoint;
 public class FetchAccessTokenRequest extends RpcAcsRequest<FetchAccessTokenResponse> {
 	   
 
+	private String userId;
+
 	private String xClientIp;
 
 	private String mobileExtendParamsJsonSign;
@@ -41,6 +43,17 @@ public class FetchAccessTokenRequest extends RpcAcsRequest<FetchAccessTokenRespo
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getUserId() {
+		return this.userId;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
+		if(userId != null){
+			putQueryParameter("UserId", userId);
+		}
 	}
 
 	public String getXClientIp() {
