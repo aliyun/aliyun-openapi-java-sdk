@@ -15,26 +15,18 @@
 package com.aliyuncs.arms.model.v20190808;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.arms.transform.v20190808.OpenArmsServiceSecondVersionResponseUnmarshaller;
+import com.aliyuncs.arms.transform.v20190808.AddRecordingRuleResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class OpenArmsServiceSecondVersionResponse extends AcsResponse {
-
-	private String orderId;
+public class AddRecordingRuleResponse extends AcsResponse {
 
 	private String requestId;
 
-	public String getOrderId() {
-		return this.orderId;
-	}
-
-	public void setOrderId(String orderId) {
-		this.orderId = orderId;
-	}
+	private String data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -44,9 +36,17 @@ public class OpenArmsServiceSecondVersionResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public String getData() {
+		return this.data;
+	}
+
+	public void setData(String data) {
+		this.data = data;
+	}
+
 	@Override
-	public OpenArmsServiceSecondVersionResponse getInstance(UnmarshallerContext context) {
-		return	OpenArmsServiceSecondVersionResponseUnmarshaller.unmarshall(this, context);
+	public AddRecordingRuleResponse getInstance(UnmarshallerContext context) {
+		return	AddRecordingRuleResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

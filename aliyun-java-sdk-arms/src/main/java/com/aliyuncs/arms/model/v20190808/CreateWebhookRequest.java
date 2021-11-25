@@ -36,6 +36,8 @@ public class CreateWebhookRequest extends RpcAcsRequest<CreateWebhookResponse> {
 	private String url;
 
 	private String contactName;
+
+	private String recoverBody;
 	public CreateWebhookRequest() {
 		super("ARMS", "2019-08-08", "CreateWebhook", "arms");
 		setMethod(MethodType.POST);
@@ -108,6 +110,17 @@ public class CreateWebhookRequest extends RpcAcsRequest<CreateWebhookResponse> {
 		this.contactName = contactName;
 		if(contactName != null){
 			putQueryParameter("ContactName", contactName);
+		}
+	}
+
+	public String getRecoverBody() {
+		return this.recoverBody;
+	}
+
+	public void setRecoverBody(String recoverBody) {
+		this.recoverBody = recoverBody;
+		if(recoverBody != null){
+			putQueryParameter("RecoverBody", recoverBody);
 		}
 	}
 

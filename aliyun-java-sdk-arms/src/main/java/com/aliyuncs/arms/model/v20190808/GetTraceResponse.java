@@ -15,6 +15,7 @@
 package com.aliyuncs.arms.model.v20190808;
 
 import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.arms.transform.v20190808.GetTraceResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -47,40 +48,42 @@ public class GetTraceResponse extends AcsResponse {
 
 	public static class Span {
 
-		private String traceID;
+		private String spanId;
 
 		private String operationName;
 
-		private Long duration;
-
-		private String serviceName;
-
-		private String serviceIp;
+		private String resultCode;
 
 		private Long timestamp;
 
-		private String rpcId;
+		private Integer rpcType;
 
-		private String resultCode;
+		private String serviceIp;
 
 		private Boolean haveStack;
 
-		private Integer rpcType;
-
-		private String spanId;
-
 		private String parentSpanId;
+
+		private Long duration;
+
+		private String rpcId;
+
+		private String serviceName;
+
+		private String traceID;
 
 		private List<TagEntry> tagEntryList;
 
 		private List<LogEvent> logEventList;
 
-		public String getTraceID() {
-			return this.traceID;
+		private List<Map<Object,Object>> children;
+
+		public String getSpanId() {
+			return this.spanId;
 		}
 
-		public void setTraceID(String traceID) {
-			this.traceID = traceID;
+		public void setSpanId(String spanId) {
+			this.spanId = spanId;
 		}
 
 		public String getOperationName() {
@@ -91,28 +94,12 @@ public class GetTraceResponse extends AcsResponse {
 			this.operationName = operationName;
 		}
 
-		public Long getDuration() {
-			return this.duration;
+		public String getResultCode() {
+			return this.resultCode;
 		}
 
-		public void setDuration(Long duration) {
-			this.duration = duration;
-		}
-
-		public String getServiceName() {
-			return this.serviceName;
-		}
-
-		public void setServiceName(String serviceName) {
-			this.serviceName = serviceName;
-		}
-
-		public String getServiceIp() {
-			return this.serviceIp;
-		}
-
-		public void setServiceIp(String serviceIp) {
-			this.serviceIp = serviceIp;
+		public void setResultCode(String resultCode) {
+			this.resultCode = resultCode;
 		}
 
 		public Long getTimestamp() {
@@ -123,20 +110,20 @@ public class GetTraceResponse extends AcsResponse {
 			this.timestamp = timestamp;
 		}
 
-		public String getRpcId() {
-			return this.rpcId;
+		public Integer getRpcType() {
+			return this.rpcType;
 		}
 
-		public void setRpcId(String rpcId) {
-			this.rpcId = rpcId;
+		public void setRpcType(Integer rpcType) {
+			this.rpcType = rpcType;
 		}
 
-		public String getResultCode() {
-			return this.resultCode;
+		public String getServiceIp() {
+			return this.serviceIp;
 		}
 
-		public void setResultCode(String resultCode) {
-			this.resultCode = resultCode;
+		public void setServiceIp(String serviceIp) {
+			this.serviceIp = serviceIp;
 		}
 
 		public Boolean getHaveStack() {
@@ -147,28 +134,44 @@ public class GetTraceResponse extends AcsResponse {
 			this.haveStack = haveStack;
 		}
 
-		public Integer getRpcType() {
-			return this.rpcType;
-		}
-
-		public void setRpcType(Integer rpcType) {
-			this.rpcType = rpcType;
-		}
-
-		public String getSpanId() {
-			return this.spanId;
-		}
-
-		public void setSpanId(String spanId) {
-			this.spanId = spanId;
-		}
-
 		public String getParentSpanId() {
 			return this.parentSpanId;
 		}
 
 		public void setParentSpanId(String parentSpanId) {
 			this.parentSpanId = parentSpanId;
+		}
+
+		public Long getDuration() {
+			return this.duration;
+		}
+
+		public void setDuration(Long duration) {
+			this.duration = duration;
+		}
+
+		public String getRpcId() {
+			return this.rpcId;
+		}
+
+		public void setRpcId(String rpcId) {
+			this.rpcId = rpcId;
+		}
+
+		public String getServiceName() {
+			return this.serviceName;
+		}
+
+		public void setServiceName(String serviceName) {
+			this.serviceName = serviceName;
+		}
+
+		public String getTraceID() {
+			return this.traceID;
+		}
+
+		public void setTraceID(String traceID) {
+			this.traceID = traceID;
 		}
 
 		public List<TagEntry> getTagEntryList() {
@@ -185,6 +188,14 @@ public class GetTraceResponse extends AcsResponse {
 
 		public void setLogEventList(List<LogEvent> logEventList) {
 			this.logEventList = logEventList;
+		}
+
+		public List<Map<Object,Object>> getChildren() {
+			return this.children;
+		}
+
+		public void setChildren(List<Map<Object,Object>> children) {
+			this.children = children;
 		}
 
 		public static class TagEntry {

@@ -29,13 +29,13 @@ public class QueryMetricByPageResponseUnmarshaller {
 		
 		queryMetricByPageResponse.setRequestId(_ctx.stringValue("QueryMetricByPageResponse.RequestId"));
 		queryMetricByPageResponse.setCode(_ctx.stringValue("QueryMetricByPageResponse.Code"));
-		queryMetricByPageResponse.setSuccess(_ctx.booleanValue("QueryMetricByPageResponse.Success"));
 		queryMetricByPageResponse.setMessage(_ctx.stringValue("QueryMetricByPageResponse.Message"));
+		queryMetricByPageResponse.setSuccess(_ctx.booleanValue("QueryMetricByPageResponse.Success"));
 
 		Data data = new Data();
+		data.setPageSize(_ctx.integerValue("QueryMetricByPageResponse.Data.PageSize"));
 		data.setTotal(_ctx.integerValue("QueryMetricByPageResponse.Data.Total"));
 		data.setPage(_ctx.integerValue("QueryMetricByPageResponse.Data.Page"));
-		data.setPageSize(_ctx.integerValue("QueryMetricByPageResponse.Data.PageSize"));
 
 		List<Map<Object, Object>> items = _ctx.listMapValue("QueryMetricByPageResponse.Data.Items");
 		data.setItems(items);

@@ -42,13 +42,11 @@ public class QueryMetricByPageRequest extends RpcAcsRequest<QueryMetricByPageRes
 
 	private String metric;
 
-	private List<String> customFilterss;
-
 	private Integer pageSize;
 
-	private List<String> dimensionss;
-
 	private String order;
+
+	private List<String> dimensionss;
 	public QueryMetricByPageRequest() {
 		super("ARMS", "2019-08-08", "QueryMetricByPage", "arms");
 		setMethod(MethodType.POST);
@@ -151,19 +149,6 @@ public class QueryMetricByPageRequest extends RpcAcsRequest<QueryMetricByPageRes
 		}
 	}
 
-	public List<String> getCustomFilterss() {
-		return this.customFilterss;
-	}
-
-	public void setCustomFilterss(List<String> customFilterss) {
-		this.customFilterss = customFilterss;	
-		if (customFilterss != null) {
-			for (int i = 0; i < customFilterss.size(); i++) {
-				putQueryParameter("CustomFilters." + (i + 1) , customFilterss.get(i));
-			}
-		}	
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
@@ -172,6 +157,17 @@ public class QueryMetricByPageRequest extends RpcAcsRequest<QueryMetricByPageRes
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getOrder() {
+		return this.order;
+	}
+
+	public void setOrder(String order) {
+		this.order = order;
+		if(order != null){
+			putQueryParameter("Order", order);
 		}
 	}
 
@@ -186,17 +182,6 @@ public class QueryMetricByPageRequest extends RpcAcsRequest<QueryMetricByPageRes
 				putQueryParameter("Dimensions." + (i + 1) , dimensionss.get(i));
 			}
 		}	
-	}
-
-	public String getOrder() {
-		return this.order;
-	}
-
-	public void setOrder(String order) {
-		this.order = order;
-		if(order != null){
-			putQueryParameter("Order", order);
-		}
 	}
 
 	public static class Filters {

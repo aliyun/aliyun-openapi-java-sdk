@@ -38,6 +38,8 @@ public class UpdateWebhookRequest extends RpcAcsRequest<UpdateWebhookResponse> {
 	private String url;
 
 	private String contactName;
+
+	private String recoverBody;
 	public UpdateWebhookRequest() {
 		super("ARMS", "2019-08-08", "UpdateWebhook", "arms");
 		setMethod(MethodType.POST);
@@ -121,6 +123,17 @@ public class UpdateWebhookRequest extends RpcAcsRequest<UpdateWebhookResponse> {
 		this.contactName = contactName;
 		if(contactName != null){
 			putQueryParameter("ContactName", contactName);
+		}
+	}
+
+	public String getRecoverBody() {
+		return this.recoverBody;
+	}
+
+	public void setRecoverBody(String recoverBody) {
+		this.recoverBody = recoverBody;
+		if(recoverBody != null){
+			putQueryParameter("RecoverBody", recoverBody);
 		}
 	}
 

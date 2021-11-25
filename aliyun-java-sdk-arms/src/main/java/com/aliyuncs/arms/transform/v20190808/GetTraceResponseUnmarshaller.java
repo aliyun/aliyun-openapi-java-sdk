@@ -22,6 +22,7 @@ import com.aliyuncs.arms.model.v20190808.GetTraceResponse.Span;
 import com.aliyuncs.arms.model.v20190808.GetTraceResponse.Span.LogEvent;
 import com.aliyuncs.arms.model.v20190808.GetTraceResponse.Span.LogEvent.TagEntry2;
 import com.aliyuncs.arms.model.v20190808.GetTraceResponse.Span.TagEntry;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -34,18 +35,21 @@ public class GetTraceResponseUnmarshaller {
 		List<Span> spans = new ArrayList<Span>();
 		for (int i = 0; i < _ctx.lengthValue("GetTraceResponse.Spans.Length"); i++) {
 			Span span = new Span();
-			span.setTraceID(_ctx.stringValue("GetTraceResponse.Spans["+ i +"].TraceID"));
-			span.setOperationName(_ctx.stringValue("GetTraceResponse.Spans["+ i +"].OperationName"));
-			span.setDuration(_ctx.longValue("GetTraceResponse.Spans["+ i +"].Duration"));
-			span.setServiceName(_ctx.stringValue("GetTraceResponse.Spans["+ i +"].ServiceName"));
-			span.setServiceIp(_ctx.stringValue("GetTraceResponse.Spans["+ i +"].ServiceIp"));
-			span.setTimestamp(_ctx.longValue("GetTraceResponse.Spans["+ i +"].Timestamp"));
-			span.setRpcId(_ctx.stringValue("GetTraceResponse.Spans["+ i +"].RpcId"));
-			span.setResultCode(_ctx.stringValue("GetTraceResponse.Spans["+ i +"].ResultCode"));
-			span.setHaveStack(_ctx.booleanValue("GetTraceResponse.Spans["+ i +"].HaveStack"));
-			span.setRpcType(_ctx.integerValue("GetTraceResponse.Spans["+ i +"].RpcType"));
 			span.setSpanId(_ctx.stringValue("GetTraceResponse.Spans["+ i +"].SpanId"));
+			span.setOperationName(_ctx.stringValue("GetTraceResponse.Spans["+ i +"].OperationName"));
+			span.setResultCode(_ctx.stringValue("GetTraceResponse.Spans["+ i +"].ResultCode"));
+			span.setTimestamp(_ctx.longValue("GetTraceResponse.Spans["+ i +"].Timestamp"));
+			span.setRpcType(_ctx.integerValue("GetTraceResponse.Spans["+ i +"].RpcType"));
+			span.setServiceIp(_ctx.stringValue("GetTraceResponse.Spans["+ i +"].ServiceIp"));
+			span.setHaveStack(_ctx.booleanValue("GetTraceResponse.Spans["+ i +"].HaveStack"));
 			span.setParentSpanId(_ctx.stringValue("GetTraceResponse.Spans["+ i +"].ParentSpanId"));
+			span.setDuration(_ctx.longValue("GetTraceResponse.Spans["+ i +"].Duration"));
+			span.setRpcId(_ctx.stringValue("GetTraceResponse.Spans["+ i +"].RpcId"));
+			span.setServiceName(_ctx.stringValue("GetTraceResponse.Spans["+ i +"].ServiceName"));
+			span.setTraceID(_ctx.stringValue("GetTraceResponse.Spans["+ i +"].TraceID"));
+
+			List<Map<Object, Object>> children = _ctx.listMapValue("GetTraceResponse.Spans["+ i +"].Children");
+			span.setChildren(children);
 
 			List<TagEntry> tagEntryList = new ArrayList<TagEntry>();
 			for (int j = 0; j < _ctx.lengthValue("GetTraceResponse.Spans["+ i +"].TagEntryList.Length"); j++) {
