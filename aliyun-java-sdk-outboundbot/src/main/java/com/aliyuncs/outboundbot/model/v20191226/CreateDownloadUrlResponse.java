@@ -15,24 +15,26 @@
 package com.aliyuncs.outboundbot.model.v20191226;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.outboundbot.transform.v20191226.RecordFailureResponseUnmarshaller;
+import com.aliyuncs.outboundbot.transform.v20191226.CreateDownloadUrlResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class RecordFailureResponse extends AcsResponse {
+public class CreateDownloadUrlResponse extends AcsResponse {
 
 	private Integer httpStatusCode;
 
-	private String code;
-
-	private String message;
+	private String fileHttpUrl;
 
 	private String requestId;
 
 	private Boolean success;
+
+	private String code;
+
+	private String message;
 
 	public Integer getHttpStatusCode() {
 		return this.httpStatusCode;
@@ -42,20 +44,12 @@ public class RecordFailureResponse extends AcsResponse {
 		this.httpStatusCode = httpStatusCode;
 	}
 
-	public String getCode() {
-		return this.code;
+	public String getFileHttpUrl() {
+		return this.fileHttpUrl;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
+	public void setFileHttpUrl(String fileHttpUrl) {
+		this.fileHttpUrl = fileHttpUrl;
 	}
 
 	public String getRequestId() {
@@ -74,9 +68,25 @@ public class RecordFailureResponse extends AcsResponse {
 		this.success = success;
 	}
 
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
 	@Override
-	public RecordFailureResponse getInstance(UnmarshallerContext context) {
-		return	RecordFailureResponseUnmarshaller.unmarshall(this, context);
+	public CreateDownloadUrlResponse getInstance(UnmarshallerContext context) {
+		return	CreateDownloadUrlResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

@@ -38,6 +38,8 @@ public class RecordFailureRequest extends RpcAcsRequest<RecordFailureResponse> {
 	private String calledNumber;
 
 	private String taskId;
+
+	private String exceptionCodes;
 	public RecordFailureRequest() {
 		super("OutboundBot", "2019-12-26", "RecordFailure", "outboundbot");
 		setMethod(MethodType.POST);
@@ -121,6 +123,17 @@ public class RecordFailureRequest extends RpcAcsRequest<RecordFailureResponse> {
 		this.taskId = taskId;
 		if(taskId != null){
 			putQueryParameter("TaskId", taskId);
+		}
+	}
+
+	public String getExceptionCodes() {
+		return this.exceptionCodes;
+	}
+
+	public void setExceptionCodes(String exceptionCodes) {
+		this.exceptionCodes = exceptionCodes;
+		if(exceptionCodes != null){
+			putQueryParameter("ExceptionCodes", exceptionCodes);
 		}
 	}
 

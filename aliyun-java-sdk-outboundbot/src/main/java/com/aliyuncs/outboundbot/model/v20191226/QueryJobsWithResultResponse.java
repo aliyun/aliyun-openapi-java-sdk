@@ -25,34 +25,26 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryJobsWithResultResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
+	private Integer httpStatusCode;
 
 	private String code;
 
 	private String message;
 
-	private Integer httpStatusCode;
+	private String requestId;
+
+	private Boolean success;
 
 	private List<String> variableNames;
 
 	private Jobs jobs;
 
-	public String getRequestId() {
-		return this.requestId;
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
 	}
 
 	public String getCode() {
@@ -71,12 +63,20 @@ public class QueryJobsWithResultResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public Integer getHttpStatusCode() {
-		return this.httpStatusCode;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setHttpStatusCode(Integer httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<String> getVariableNames() {
@@ -97,23 +97,15 @@ public class QueryJobsWithResultResponse extends AcsResponse {
 
 	public static class Jobs {
 
-		private Integer pageCount;
-
 		private Integer pageNumber;
 
 		private Integer pageSize;
 
+		private Integer pageCount;
+
 		private Integer rowCount;
 
 		private List<Job> list;
-
-		public Integer getPageCount() {
-			return this.pageCount;
-		}
-
-		public void setPageCount(Integer pageCount) {
-			this.pageCount = pageCount;
-		}
 
 		public Integer getPageNumber() {
 			return this.pageNumber;
@@ -129,6 +121,14 @@ public class QueryJobsWithResultResponse extends AcsResponse {
 
 		public void setPageSize(Integer pageSize) {
 			this.pageSize = pageSize;
+		}
+
+		public Integer getPageCount() {
+			return this.pageCount;
+		}
+
+		public void setPageCount(Integer pageCount) {
+			this.pageCount = pageCount;
 		}
 
 		public Integer getRowCount() {
@@ -149,22 +149,22 @@ public class QueryJobsWithResultResponse extends AcsResponse {
 
 		public static class Job {
 
-			private String jobFailureReason;
+			private String status;
 
 			private String statusName;
 
-			private String id;
+			private String jobFailureReason;
 
-			private String status;
+			private String id;
 
 			private LatestTask latestTask;
 
-			public String getJobFailureReason() {
-				return this.jobFailureReason;
+			public String getStatus() {
+				return this.status;
 			}
 
-			public void setJobFailureReason(String jobFailureReason) {
-				this.jobFailureReason = jobFailureReason;
+			public void setStatus(String status) {
+				this.status = status;
 			}
 
 			public String getStatusName() {
@@ -175,20 +175,20 @@ public class QueryJobsWithResultResponse extends AcsResponse {
 				this.statusName = statusName;
 			}
 
+			public String getJobFailureReason() {
+				return this.jobFailureReason;
+			}
+
+			public void setJobFailureReason(String jobFailureReason) {
+				this.jobFailureReason = jobFailureReason;
+			}
+
 			public String getId() {
 				return this.id;
 			}
 
 			public void setId(String id) {
 				this.id = id;
-			}
-
-			public String getStatus() {
-				return this.status;
-			}
-
-			public void setStatus(String status) {
-				this.status = status;
 			}
 
 			public LatestTask getLatestTask() {
@@ -201,29 +201,39 @@ public class QueryJobsWithResultResponse extends AcsResponse {
 
 			public static class LatestTask {
 
+				private String status;
+
 				private String taskEndReason;
-
-				private Integer callDuration;
-
-				private String callDurationDisplay;
-
-				private String statusName;
 
 				private Boolean hasAnswered;
 
+				private Integer callDuration;
+
 				private Boolean hasReachedEndOfFlow;
+
+				private String statusName;
 
 				private Long callTime;
 
-				private Boolean hasHangUpByRejection;
+				private String callDurationDisplay;
 
-				private String status;
+				private Boolean hasHangUpByRejection;
 
 				private List<Extra> extras;
 
 				private List<TagHit> tagHits;
 
+				private List<ExceptionCode> dialExceptionCodes;
+
 				private Contact contact;
+
+				public String getStatus() {
+					return this.status;
+				}
+
+				public void setStatus(String status) {
+					this.status = status;
+				}
 
 				public String getTaskEndReason() {
 					return this.taskEndReason;
@@ -231,30 +241,6 @@ public class QueryJobsWithResultResponse extends AcsResponse {
 
 				public void setTaskEndReason(String taskEndReason) {
 					this.taskEndReason = taskEndReason;
-				}
-
-				public Integer getCallDuration() {
-					return this.callDuration;
-				}
-
-				public void setCallDuration(Integer callDuration) {
-					this.callDuration = callDuration;
-				}
-
-				public String getCallDurationDisplay() {
-					return this.callDurationDisplay;
-				}
-
-				public void setCallDurationDisplay(String callDurationDisplay) {
-					this.callDurationDisplay = callDurationDisplay;
-				}
-
-				public String getStatusName() {
-					return this.statusName;
-				}
-
-				public void setStatusName(String statusName) {
-					this.statusName = statusName;
 				}
 
 				public Boolean getHasAnswered() {
@@ -265,12 +251,28 @@ public class QueryJobsWithResultResponse extends AcsResponse {
 					this.hasAnswered = hasAnswered;
 				}
 
+				public Integer getCallDuration() {
+					return this.callDuration;
+				}
+
+				public void setCallDuration(Integer callDuration) {
+					this.callDuration = callDuration;
+				}
+
 				public Boolean getHasReachedEndOfFlow() {
 					return this.hasReachedEndOfFlow;
 				}
 
 				public void setHasReachedEndOfFlow(Boolean hasReachedEndOfFlow) {
 					this.hasReachedEndOfFlow = hasReachedEndOfFlow;
+				}
+
+				public String getStatusName() {
+					return this.statusName;
+				}
+
+				public void setStatusName(String statusName) {
+					this.statusName = statusName;
 				}
 
 				public Long getCallTime() {
@@ -281,20 +283,20 @@ public class QueryJobsWithResultResponse extends AcsResponse {
 					this.callTime = callTime;
 				}
 
+				public String getCallDurationDisplay() {
+					return this.callDurationDisplay;
+				}
+
+				public void setCallDurationDisplay(String callDurationDisplay) {
+					this.callDurationDisplay = callDurationDisplay;
+				}
+
 				public Boolean getHasHangUpByRejection() {
 					return this.hasHangUpByRejection;
 				}
 
 				public void setHasHangUpByRejection(Boolean hasHangUpByRejection) {
 					this.hasHangUpByRejection = hasHangUpByRejection;
-				}
-
-				public String getStatus() {
-					return this.status;
-				}
-
-				public void setStatus(String status) {
-					this.status = status;
 				}
 
 				public List<Extra> getExtras() {
@@ -311,6 +313,14 @@ public class QueryJobsWithResultResponse extends AcsResponse {
 
 				public void setTagHits(List<TagHit> tagHits) {
 					this.tagHits = tagHits;
+				}
+
+				public List<ExceptionCode> getDialExceptionCodes() {
+					return this.dialExceptionCodes;
+				}
+
+				public void setDialExceptionCodes(List<ExceptionCode> dialExceptionCodes) {
+					this.dialExceptionCodes = dialExceptionCodes;
 				}
 
 				public Contact getContact() {
@@ -346,17 +356,9 @@ public class QueryJobsWithResultResponse extends AcsResponse {
 
 				public static class TagHit {
 
-					private String tagGroup;
-
 					private String tagName;
 
-					public String getTagGroup() {
-						return this.tagGroup;
-					}
-
-					public void setTagGroup(String tagGroup) {
-						this.tagGroup = tagGroup;
-					}
+					private String tagGroup;
 
 					public String getTagName() {
 						return this.tagName;
@@ -365,36 +367,67 @@ public class QueryJobsWithResultResponse extends AcsResponse {
 					public void setTagName(String tagName) {
 						this.tagName = tagName;
 					}
+
+					public String getTagGroup() {
+						return this.tagGroup;
+					}
+
+					public void setTagGroup(String tagGroup) {
+						this.tagGroup = tagGroup;
+					}
+				}
+
+				public static class ExceptionCode {
+
+					private String code;
+
+					private String hint;
+
+					public String getCode() {
+						return this.code;
+					}
+
+					public void setCode(String code) {
+						this.code = code;
+					}
+
+					public String getHint() {
+						return this.hint;
+					}
+
+					public void setHint(String hint) {
+						this.hint = hint;
+					}
 				}
 
 				public static class Contact {
 
-					private String preferredPhoneNumber;
+					private Integer round;
 
 					private String jobUuid;
 
+					private String preferredPhoneNumber;
+
 					private String phoneNumber;
-
-					private String role;
-
-					private Integer round;
-
-					private String name;
-
-					private String id;
 
 					private String state;
 
-					private String referenceId;
-
 					private String honorific;
 
-					public String getPreferredPhoneNumber() {
-						return this.preferredPhoneNumber;
+					private String name;
+
+					private String role;
+
+					private String id;
+
+					private String referenceId;
+
+					public Integer getRound() {
+						return this.round;
 					}
 
-					public void setPreferredPhoneNumber(String preferredPhoneNumber) {
-						this.preferredPhoneNumber = preferredPhoneNumber;
+					public void setRound(Integer round) {
+						this.round = round;
 					}
 
 					public String getJobUuid() {
@@ -405,44 +438,20 @@ public class QueryJobsWithResultResponse extends AcsResponse {
 						this.jobUuid = jobUuid;
 					}
 
+					public String getPreferredPhoneNumber() {
+						return this.preferredPhoneNumber;
+					}
+
+					public void setPreferredPhoneNumber(String preferredPhoneNumber) {
+						this.preferredPhoneNumber = preferredPhoneNumber;
+					}
+
 					public String getPhoneNumber() {
 						return this.phoneNumber;
 					}
 
 					public void setPhoneNumber(String phoneNumber) {
 						this.phoneNumber = phoneNumber;
-					}
-
-					public String getRole() {
-						return this.role;
-					}
-
-					public void setRole(String role) {
-						this.role = role;
-					}
-
-					public Integer getRound() {
-						return this.round;
-					}
-
-					public void setRound(Integer round) {
-						this.round = round;
-					}
-
-					public String getName() {
-						return this.name;
-					}
-
-					public void setName(String name) {
-						this.name = name;
-					}
-
-					public String getId() {
-						return this.id;
-					}
-
-					public void setId(String id) {
-						this.id = id;
 					}
 
 					public String getState() {
@@ -453,20 +462,44 @@ public class QueryJobsWithResultResponse extends AcsResponse {
 						this.state = state;
 					}
 
-					public String getReferenceId() {
-						return this.referenceId;
-					}
-
-					public void setReferenceId(String referenceId) {
-						this.referenceId = referenceId;
-					}
-
 					public String getHonorific() {
 						return this.honorific;
 					}
 
 					public void setHonorific(String honorific) {
 						this.honorific = honorific;
+					}
+
+					public String getName() {
+						return this.name;
+					}
+
+					public void setName(String name) {
+						this.name = name;
+					}
+
+					public String getRole() {
+						return this.role;
+					}
+
+					public void setRole(String role) {
+						this.role = role;
+					}
+
+					public String getId() {
+						return this.id;
+					}
+
+					public void setId(String id) {
+						this.id = id;
+					}
+
+					public String getReferenceId() {
+						return this.referenceId;
+					}
+
+					public void setReferenceId(String referenceId) {
+						this.referenceId = referenceId;
 					}
 				}
 			}

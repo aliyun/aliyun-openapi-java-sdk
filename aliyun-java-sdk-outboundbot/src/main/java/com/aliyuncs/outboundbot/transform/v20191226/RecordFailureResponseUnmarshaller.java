@@ -23,8 +23,8 @@ public class RecordFailureResponseUnmarshaller {
 	public static RecordFailureResponse unmarshall(RecordFailureResponse recordFailureResponse, UnmarshallerContext _ctx) {
 		
 		recordFailureResponse.setRequestId(_ctx.stringValue("RecordFailureResponse.RequestId"));
-		recordFailureResponse.setCode(_ctx.stringValue("RecordFailureResponse.Code"));
 		recordFailureResponse.setHttpStatusCode(_ctx.integerValue("RecordFailureResponse.HttpStatusCode"));
+		recordFailureResponse.setCode(_ctx.stringValue("RecordFailureResponse.Code"));
 		recordFailureResponse.setMessage(_ctx.stringValue("RecordFailureResponse.Message"));
 		recordFailureResponse.setSuccess(_ctx.booleanValue("RecordFailureResponse.Success"));
 	 
