@@ -26,6 +26,8 @@ import com.aliyuncs.gpdb.Endpoint;
 public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstancesResponse> {
 	   
 
+	private List<String> dBInstanceModes;
+
 	private List<String> dBInstanceStatuses;
 
 	private Integer pageNumber;
@@ -52,6 +54,19 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public List<String> getDBInstanceModes() {
+		return this.dBInstanceModes;
+	}
+
+	public void setDBInstanceModes(List<String> dBInstanceModes) {
+		this.dBInstanceModes = dBInstanceModes;	
+		if (dBInstanceModes != null) {
+			for (int depth1 = 0; depth1 < dBInstanceModes.size(); depth1++) {
+				putQueryParameter("DBInstanceModes." + (depth1 + 1) , dBInstanceModes.get(depth1));
+			}
+		}	
 	}
 
 	public List<String> getDBInstanceStatuses() {

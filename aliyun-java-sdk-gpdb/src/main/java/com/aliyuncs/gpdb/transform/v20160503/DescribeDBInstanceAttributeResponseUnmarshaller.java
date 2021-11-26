@@ -72,6 +72,17 @@ public class DescribeDBInstanceAttributeResponseUnmarshaller {
 			dBInstanceAttribute.setDBInstanceClass(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].DBInstanceClass"));
 			dBInstanceAttribute.setEngine(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].Engine"));
 			dBInstanceAttribute.setDBInstanceCategory(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].DBInstanceCategory"));
+			dBInstanceAttribute.setCpuCores(_ctx.integerValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].CpuCores"));
+			dBInstanceAttribute.setMemorySize(_ctx.longValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].MemorySize"));
+			dBInstanceAttribute.setStorageSize(_ctx.longValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].StorageSize"));
+			dBInstanceAttribute.setSegNodeNum(_ctx.integerValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].SegNodeNum"));
+			dBInstanceAttribute.setMasterNodeNum(_ctx.integerValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].MasterNodeNum"));
+			dBInstanceAttribute.setDBInstanceMode(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].DBInstanceMode"));
+			dBInstanceAttribute.setMinorVersion(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].MinorVersion"));
+			dBInstanceAttribute.setSupportRestore(_ctx.booleanValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].SupportRestore"));
+			dBInstanceAttribute.setVSwitchId(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].VSwitchId"));
+			dBInstanceAttribute.setEncryptionKey(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].EncryptionKey"));
+			dBInstanceAttribute.setEncryptionType(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].EncryptionType"));
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].Tags.Length"); j++) {

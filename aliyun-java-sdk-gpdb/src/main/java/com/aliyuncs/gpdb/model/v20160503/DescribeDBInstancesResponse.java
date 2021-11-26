@@ -123,6 +123,8 @@ public class DescribeDBInstancesResponse extends AcsResponse {
 
 		private String dBInstanceCategory;
 
+		private String dBInstanceMode;
+
 		private List<Tag> tags;
 
 		public String getVpcId() {
@@ -307,6 +309,14 @@ public class DescribeDBInstancesResponse extends AcsResponse {
 
 		public void setDBInstanceCategory(String dBInstanceCategory) {
 			this.dBInstanceCategory = dBInstanceCategory;
+		}
+
+		public String getDBInstanceMode() {
+			return this.dBInstanceMode;
+		}
+
+		public void setDBInstanceMode(String dBInstanceMode) {
+			this.dBInstanceMode = dBInstanceMode;
 		}
 
 		public List<Tag> getTags() {

@@ -127,6 +127,28 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 		private String dBInstanceCategory;
 
+		private Integer cpuCores;
+
+		private Long memorySize;
+
+		private Long storageSize;
+
+		private Integer segNodeNum;
+
+		private Integer masterNodeNum;
+
+		private String dBInstanceMode;
+
+		private String minorVersion;
+
+		private Boolean supportRestore;
+
+		private String vSwitchId;
+
+		private String encryptionKey;
+
+		private String encryptionType;
+
 		private List<Tag> tags;
 
 		public String getVpcId() {
@@ -447,6 +469,94 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 		public void setDBInstanceCategory(String dBInstanceCategory) {
 			this.dBInstanceCategory = dBInstanceCategory;
+		}
+
+		public Integer getCpuCores() {
+			return this.cpuCores;
+		}
+
+		public void setCpuCores(Integer cpuCores) {
+			this.cpuCores = cpuCores;
+		}
+
+		public Long getMemorySize() {
+			return this.memorySize;
+		}
+
+		public void setMemorySize(Long memorySize) {
+			this.memorySize = memorySize;
+		}
+
+		public Long getStorageSize() {
+			return this.storageSize;
+		}
+
+		public void setStorageSize(Long storageSize) {
+			this.storageSize = storageSize;
+		}
+
+		public Integer getSegNodeNum() {
+			return this.segNodeNum;
+		}
+
+		public void setSegNodeNum(Integer segNodeNum) {
+			this.segNodeNum = segNodeNum;
+		}
+
+		public Integer getMasterNodeNum() {
+			return this.masterNodeNum;
+		}
+
+		public void setMasterNodeNum(Integer masterNodeNum) {
+			this.masterNodeNum = masterNodeNum;
+		}
+
+		public String getDBInstanceMode() {
+			return this.dBInstanceMode;
+		}
+
+		public void setDBInstanceMode(String dBInstanceMode) {
+			this.dBInstanceMode = dBInstanceMode;
+		}
+
+		public String getMinorVersion() {
+			return this.minorVersion;
+		}
+
+		public void setMinorVersion(String minorVersion) {
+			this.minorVersion = minorVersion;
+		}
+
+		public Boolean getSupportRestore() {
+			return this.supportRestore;
+		}
+
+		public void setSupportRestore(Boolean supportRestore) {
+			this.supportRestore = supportRestore;
+		}
+
+		public String getVSwitchId() {
+			return this.vSwitchId;
+		}
+
+		public void setVSwitchId(String vSwitchId) {
+			this.vSwitchId = vSwitchId;
+		}
+
+		public String getEncryptionKey() {
+			return this.encryptionKey;
+		}
+
+		public void setEncryptionKey(String encryptionKey) {
+			this.encryptionKey = encryptionKey;
+		}
+
+		public String getEncryptionType() {
+			return this.encryptionType;
+		}
+
+		public void setEncryptionType(String encryptionType) {
+			this.encryptionType = encryptionType;
 		}
 
 		public List<Tag> getTags() {
