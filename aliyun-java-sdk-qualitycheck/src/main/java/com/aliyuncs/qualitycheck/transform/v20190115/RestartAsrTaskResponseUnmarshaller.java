@@ -27,16 +27,16 @@ public class RestartAsrTaskResponseUnmarshaller {
 	public static RestartAsrTaskResponse unmarshall(RestartAsrTaskResponse restartAsrTaskResponse, UnmarshallerContext _ctx) {
 		
 		restartAsrTaskResponse.setRequestId(_ctx.stringValue("RestartAsrTaskResponse.RequestId"));
-		restartAsrTaskResponse.setSuccess(_ctx.booleanValue("RestartAsrTaskResponse.Success"));
 		restartAsrTaskResponse.setCode(_ctx.stringValue("RestartAsrTaskResponse.Code"));
 		restartAsrTaskResponse.setMessage(_ctx.stringValue("RestartAsrTaskResponse.Message"));
+		restartAsrTaskResponse.setSuccess(_ctx.booleanValue("RestartAsrTaskResponse.Success"));
 
 		List<RestartResult> data = new ArrayList<RestartResult>();
 		for (int i = 0; i < _ctx.lengthValue("RestartAsrTaskResponse.Data.Length"); i++) {
 			RestartResult restartResult = new RestartResult();
-			restartResult.setSuccess(_ctx.booleanValue("RestartAsrTaskResponse.Data["+ i +"].Success"));
-			restartResult.setData(_ctx.stringValue("RestartAsrTaskResponse.Data["+ i +"].Data"));
 			restartResult.setMessage(_ctx.stringValue("RestartAsrTaskResponse.Data["+ i +"].Message"));
+			restartResult.setData(_ctx.stringValue("RestartAsrTaskResponse.Data["+ i +"].Data"));
+			restartResult.setSuccess(_ctx.booleanValue("RestartAsrTaskResponse.Data["+ i +"].Success"));
 
 			data.add(restartResult);
 		}

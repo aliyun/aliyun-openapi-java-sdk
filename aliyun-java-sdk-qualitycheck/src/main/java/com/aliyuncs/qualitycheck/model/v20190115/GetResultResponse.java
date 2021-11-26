@@ -29,17 +29,17 @@ public class GetResultResponse extends AcsResponse {
 
 	private Boolean success;
 
+	private String resultCountId;
+
 	private String code;
 
 	private String message;
 
-	private Integer count;
+	private Integer pageNumber;
 
 	private Integer pageSize;
 
-	private Integer pageNumber;
-
-	private String resultCountId;
+	private Integer count;
 
 	private List<ResultInfo> data;
 
@@ -59,6 +59,14 @@ public class GetResultResponse extends AcsResponse {
 		this.success = success;
 	}
 
+	public String getResultCountId() {
+		return this.resultCountId;
+	}
+
+	public void setResultCountId(String resultCountId) {
+		this.resultCountId = resultCountId;
+	}
+
 	public String getCode() {
 		return this.code;
 	}
@@ -75,12 +83,12 @@ public class GetResultResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public Integer getCount() {
-		return this.count;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setCount(Integer count) {
-		this.count = count;
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public Integer getPageSize() {
@@ -91,20 +99,12 @@ public class GetResultResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public Integer getCount() {
+		return this.count;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
-	public String getResultCountId() {
-		return this.resultCountId;
-	}
-
-	public void setResultCountId(String resultCountId) {
-		this.resultCountId = resultCountId;
+	public void setCount(Integer count) {
+		this.count = count;
 	}
 
 	public List<ResultInfo> getData() {
@@ -117,39 +117,39 @@ public class GetResultResponse extends AcsResponse {
 
 	public static class ResultInfo {
 
-		private Integer score;
-
-		private String comments;
-
-		private String errorMessage;
-
 		private Integer status;
-
-		private Integer reviewStatus;
-
-		private Integer reviewResult;
-
-		private String taskId;
-
-		private String taskName;
-
-		private String createTime;
-
-		private String reviewer;
-
-		private String resolver;
-
-		private String reviewTime;
-
-		private String createTimeLong;
-
-		private String reviewTimeLong;
-
-		private Integer reviewType;
 
 		private String assignmentTime;
 
 		private String lastDataId;
+
+		private String errorMessage;
+
+		private String reviewer;
+
+		private String createTime;
+
+		private Integer reviewStatus;
+
+		private String reviewTimeLong;
+
+		private String taskName;
+
+		private Integer reviewResult;
+
+		private Integer score;
+
+		private String createTimeLong;
+
+		private String reviewTime;
+
+		private String comments;
+
+		private String taskId;
+
+		private Integer reviewType;
+
+		private String resolver;
 
 		private List<AsrResultItem> asrResult;
 
@@ -161,124 +161,12 @@ public class GetResultResponse extends AcsResponse {
 
 		private Agent agent;
 
-		public Integer getScore() {
-			return this.score;
-		}
-
-		public void setScore(Integer score) {
-			this.score = score;
-		}
-
-		public String getComments() {
-			return this.comments;
-		}
-
-		public void setComments(String comments) {
-			this.comments = comments;
-		}
-
-		public String getErrorMessage() {
-			return this.errorMessage;
-		}
-
-		public void setErrorMessage(String errorMessage) {
-			this.errorMessage = errorMessage;
-		}
-
 		public Integer getStatus() {
 			return this.status;
 		}
 
 		public void setStatus(Integer status) {
 			this.status = status;
-		}
-
-		public Integer getReviewStatus() {
-			return this.reviewStatus;
-		}
-
-		public void setReviewStatus(Integer reviewStatus) {
-			this.reviewStatus = reviewStatus;
-		}
-
-		public Integer getReviewResult() {
-			return this.reviewResult;
-		}
-
-		public void setReviewResult(Integer reviewResult) {
-			this.reviewResult = reviewResult;
-		}
-
-		public String getTaskId() {
-			return this.taskId;
-		}
-
-		public void setTaskId(String taskId) {
-			this.taskId = taskId;
-		}
-
-		public String getTaskName() {
-			return this.taskName;
-		}
-
-		public void setTaskName(String taskName) {
-			this.taskName = taskName;
-		}
-
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
-		}
-
-		public String getReviewer() {
-			return this.reviewer;
-		}
-
-		public void setReviewer(String reviewer) {
-			this.reviewer = reviewer;
-		}
-
-		public String getResolver() {
-			return this.resolver;
-		}
-
-		public void setResolver(String resolver) {
-			this.resolver = resolver;
-		}
-
-		public String getReviewTime() {
-			return this.reviewTime;
-		}
-
-		public void setReviewTime(String reviewTime) {
-			this.reviewTime = reviewTime;
-		}
-
-		public String getCreateTimeLong() {
-			return this.createTimeLong;
-		}
-
-		public void setCreateTimeLong(String createTimeLong) {
-			this.createTimeLong = createTimeLong;
-		}
-
-		public String getReviewTimeLong() {
-			return this.reviewTimeLong;
-		}
-
-		public void setReviewTimeLong(String reviewTimeLong) {
-			this.reviewTimeLong = reviewTimeLong;
-		}
-
-		public Integer getReviewType() {
-			return this.reviewType;
-		}
-
-		public void setReviewType(Integer reviewType) {
-			this.reviewType = reviewType;
 		}
 
 		public String getAssignmentTime() {
@@ -295,6 +183,118 @@ public class GetResultResponse extends AcsResponse {
 
 		public void setLastDataId(String lastDataId) {
 			this.lastDataId = lastDataId;
+		}
+
+		public String getErrorMessage() {
+			return this.errorMessage;
+		}
+
+		public void setErrorMessage(String errorMessage) {
+			this.errorMessage = errorMessage;
+		}
+
+		public String getReviewer() {
+			return this.reviewer;
+		}
+
+		public void setReviewer(String reviewer) {
+			this.reviewer = reviewer;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
+
+		public Integer getReviewStatus() {
+			return this.reviewStatus;
+		}
+
+		public void setReviewStatus(Integer reviewStatus) {
+			this.reviewStatus = reviewStatus;
+		}
+
+		public String getReviewTimeLong() {
+			return this.reviewTimeLong;
+		}
+
+		public void setReviewTimeLong(String reviewTimeLong) {
+			this.reviewTimeLong = reviewTimeLong;
+		}
+
+		public String getTaskName() {
+			return this.taskName;
+		}
+
+		public void setTaskName(String taskName) {
+			this.taskName = taskName;
+		}
+
+		public Integer getReviewResult() {
+			return this.reviewResult;
+		}
+
+		public void setReviewResult(Integer reviewResult) {
+			this.reviewResult = reviewResult;
+		}
+
+		public Integer getScore() {
+			return this.score;
+		}
+
+		public void setScore(Integer score) {
+			this.score = score;
+		}
+
+		public String getCreateTimeLong() {
+			return this.createTimeLong;
+		}
+
+		public void setCreateTimeLong(String createTimeLong) {
+			this.createTimeLong = createTimeLong;
+		}
+
+		public String getReviewTime() {
+			return this.reviewTime;
+		}
+
+		public void setReviewTime(String reviewTime) {
+			this.reviewTime = reviewTime;
+		}
+
+		public String getComments() {
+			return this.comments;
+		}
+
+		public void setComments(String comments) {
+			this.comments = comments;
+		}
+
+		public String getTaskId() {
+			return this.taskId;
+		}
+
+		public void setTaskId(String taskId) {
+			this.taskId = taskId;
+		}
+
+		public Integer getReviewType() {
+			return this.reviewType;
+		}
+
+		public void setReviewType(Integer reviewType) {
+			this.reviewType = reviewType;
+		}
+
+		public String getResolver() {
+			return this.resolver;
+		}
+
+		public void setResolver(String resolver) {
+			this.resolver = resolver;
 		}
 
 		public List<AsrResultItem> getAsrResult() {
@@ -339,25 +339,17 @@ public class GetResultResponse extends AcsResponse {
 
 		public static class AsrResultItem {
 
-			private String role;
-
 			private String words;
 
 			private Long begin;
 
-			private Long end;
-
 			private Integer emotionValue;
+
+			private Long end;
 
 			private Integer speechRate;
 
-			public String getRole() {
-				return this.role;
-			}
-
-			public void setRole(String role) {
-				this.role = role;
-			}
+			private String role;
 
 			public String getWords() {
 				return this.words;
@@ -375,20 +367,20 @@ public class GetResultResponse extends AcsResponse {
 				this.begin = begin;
 			}
 
-			public Long getEnd() {
-				return this.end;
-			}
-
-			public void setEnd(Long end) {
-				this.end = end;
-			}
-
 			public Integer getEmotionValue() {
 				return this.emotionValue;
 			}
 
 			public void setEmotionValue(Integer emotionValue) {
 				this.emotionValue = emotionValue;
+			}
+
+			public Long getEnd() {
+				return this.end;
+			}
+
+			public void setEnd(Long end) {
+				this.end = end;
 			}
 
 			public Integer getSpeechRate() {
@@ -398,35 +390,27 @@ public class GetResultResponse extends AcsResponse {
 			public void setSpeechRate(Integer speechRate) {
 				this.speechRate = speechRate;
 			}
+
+			public String getRole() {
+				return this.role;
+			}
+
+			public void setRole(String role) {
+				this.role = role;
+			}
 		}
 
 		public static class HitResultItem {
-
-			private String rid;
-
-			private String name;
 
 			private String type;
 
 			private Integer reviewResult;
 
+			private String name;
+
+			private String rid;
+
 			private List<Hit> hits;
-
-			public String getRid() {
-				return this.rid;
-			}
-
-			public void setRid(String rid) {
-				this.rid = rid;
-			}
-
-			public String getName() {
-				return this.name;
-			}
-
-			public void setName(String name) {
-				this.name = name;
-			}
 
 			public String getType() {
 				return this.type;
@@ -442,6 +426,22 @@ public class GetResultResponse extends AcsResponse {
 
 			public void setReviewResult(Integer reviewResult) {
 				this.reviewResult = reviewResult;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
+
+			public String getRid() {
+				return this.rid;
+			}
+
+			public void setRid(String rid) {
+				this.rid = rid;
 			}
 
 			public List<Hit> getHits() {
@@ -486,21 +486,13 @@ public class GetResultResponse extends AcsResponse {
 
 				public static class KeyWord {
 
-					private String cid;
-
 					private Integer from;
 
 					private Integer to;
 
 					private String val;
 
-					public String getCid() {
-						return this.cid;
-					}
-
-					public void setCid(String cid) {
-						this.cid = cid;
-					}
+					private String cid;
 
 					public Integer getFrom() {
 						return this.from;
@@ -525,42 +517,34 @@ public class GetResultResponse extends AcsResponse {
 					public void setVal(String val) {
 						this.val = val;
 					}
+
+					public String getCid() {
+						return this.cid;
+					}
+
+					public void setCid(String cid) {
+						this.cid = cid;
+					}
 				}
 
 				public static class Phrase {
 
-					private String role;
-
-					private String words;
-
-					private Long begin;
+					private Integer emotionValue;
 
 					private Integer end;
 
-					private Integer emotionValue;
+					private String words;
 
-					public String getRole() {
-						return this.role;
+					private String role;
+
+					private Long begin;
+
+					public Integer getEmotionValue() {
+						return this.emotionValue;
 					}
 
-					public void setRole(String role) {
-						this.role = role;
-					}
-
-					public String getWords() {
-						return this.words;
-					}
-
-					public void setWords(String words) {
-						this.words = words;
-					}
-
-					public Long getBegin() {
-						return this.begin;
-					}
-
-					public void setBegin(Long begin) {
-						this.begin = begin;
+					public void setEmotionValue(Integer emotionValue) {
+						this.emotionValue = emotionValue;
 					}
 
 					public Integer getEnd() {
@@ -571,12 +555,28 @@ public class GetResultResponse extends AcsResponse {
 						this.end = end;
 					}
 
-					public Integer getEmotionValue() {
-						return this.emotionValue;
+					public String getWords() {
+						return this.words;
 					}
 
-					public void setEmotionValue(Integer emotionValue) {
-						this.emotionValue = emotionValue;
+					public void setWords(String words) {
+						this.words = words;
+					}
+
+					public String getRole() {
+						return this.role;
+					}
+
+					public void setRole(String role) {
+						this.role = role;
+					}
+
+					public Long getBegin() {
+						return this.begin;
+					}
+
+					public void setBegin(Long begin) {
+						this.begin = begin;
 					}
 				}
 			}
@@ -584,29 +584,13 @@ public class GetResultResponse extends AcsResponse {
 
 		public static class HitScoreItem {
 
-			private String scoreId;
-
-			private String ruleId;
-
 			private String scoreName;
 
 			private String scoreNumber;
 
-			public String getScoreId() {
-				return this.scoreId;
-			}
+			private String scoreId;
 
-			public void setScoreId(String scoreId) {
-				this.scoreId = scoreId;
-			}
-
-			public String getRuleId() {
-				return this.ruleId;
-			}
-
-			public void setRuleId(String ruleId) {
-				this.ruleId = ruleId;
-			}
+			private String ruleId;
 
 			public String getScoreName() {
 				return this.scoreName;
@@ -623,124 +607,84 @@ public class GetResultResponse extends AcsResponse {
 			public void setScoreNumber(String scoreNumber) {
 				this.scoreNumber = scoreNumber;
 			}
+
+			public String getScoreId() {
+				return this.scoreId;
+			}
+
+			public void setScoreId(String scoreId) {
+				this.scoreId = scoreId;
+			}
+
+			public String getRuleId() {
+				return this.ruleId;
+			}
+
+			public void setRuleId(String ruleId) {
+				this.ruleId = ruleId;
+			}
 		}
 
 		public static class Recording {
 
-			private String id;
-
-			private String primaryId;
-
-			private String callId;
-
-			private String name;
-
-			private String url;
-
-			private String dataSetName;
-
-			private Long duration;
-
-			private String caller;
+			private String remark13;
 
 			private String callee;
 
-			private String callTime;
+			private Integer dialogueSize;
 
-			private Integer callType;
+			private String primaryId;
 
-			private String business;
+			private String remark12;
 
 			private String remark1;
-
-			private String remark2;
-
-			private String remark3;
-
-			private String remark4;
-
-			private Long remark5;
-
-			private String remark6;
 
 			private String remark7;
 
 			private String remark8;
 
+			private String remark2;
+
+			private String callId;
+
 			private String remark9;
+
+			private String name;
+
+			private String remark6;
 
 			private String remark10;
 
+			private String business;
+
+			private String remark3;
+
+			private String url;
+
 			private String remark11;
 
-			private String remark12;
+			private String remark4;
 
-			private String remark13;
+			private Integer callType;
 
-			private Integer dialogueSize;
+			private String caller;
 
-			public String getId() {
-				return this.id;
+			private String dataSetName;
+
+			private Long duration;
+
+			private Long remark5;
+
+			private String id;
+
+			private String callTime;
+
+			public String getRemark13() {
+				return this.remark13;
 			}
 
-			public void setId(String id) {
-				this.id = id;
-			}
-
-			public String getPrimaryId() {
-				return this.primaryId;
-			}
-
-			public void setPrimaryId(String primaryId) {
-				this.primaryId = primaryId;
-			}
-
-			public String getCallId() {
-				return this.callId;
-			}
-
-			public void setCallId(String callId) {
-				this.callId = callId;
-			}
-
-			public String getName() {
-				return this.name;
-			}
-
-			public void setName(String name) {
-				this.name = name;
-			}
-
-			public String getUrl() {
-				return this.url;
-			}
-
-			public void setUrl(String url) {
-				this.url = url;
-			}
-
-			public String getDataSetName() {
-				return this.dataSetName;
-			}
-
-			public void setDataSetName(String dataSetName) {
-				this.dataSetName = dataSetName;
-			}
-
-			public Long getDuration() {
-				return this.duration;
-			}
-
-			public void setDuration(Long duration) {
-				this.duration = duration;
-			}
-
-			public String getCaller() {
-				return this.caller;
-			}
-
-			public void setCaller(String caller) {
-				this.caller = caller;
+			public void setRemark13(String remark13) {
+				this.remark13 = remark13;
 			}
 
 			public String getCallee() {
@@ -751,28 +695,28 @@ public class GetResultResponse extends AcsResponse {
 				this.callee = callee;
 			}
 
-			public String getCallTime() {
-				return this.callTime;
+			public Integer getDialogueSize() {
+				return this.dialogueSize;
 			}
 
-			public void setCallTime(String callTime) {
-				this.callTime = callTime;
+			public void setDialogueSize(Integer dialogueSize) {
+				this.dialogueSize = dialogueSize;
 			}
 
-			public Integer getCallType() {
-				return this.callType;
+			public String getPrimaryId() {
+				return this.primaryId;
 			}
 
-			public void setCallType(Integer callType) {
-				this.callType = callType;
+			public void setPrimaryId(String primaryId) {
+				this.primaryId = primaryId;
 			}
 
-			public String getBusiness() {
-				return this.business;
+			public String getRemark12() {
+				return this.remark12;
 			}
 
-			public void setBusiness(String business) {
-				this.business = business;
+			public void setRemark12(String remark12) {
+				this.remark12 = remark12;
 			}
 
 			public String getRemark1() {
@@ -781,46 +725,6 @@ public class GetResultResponse extends AcsResponse {
 
 			public void setRemark1(String remark1) {
 				this.remark1 = remark1;
-			}
-
-			public String getRemark2() {
-				return this.remark2;
-			}
-
-			public void setRemark2(String remark2) {
-				this.remark2 = remark2;
-			}
-
-			public String getRemark3() {
-				return this.remark3;
-			}
-
-			public void setRemark3(String remark3) {
-				this.remark3 = remark3;
-			}
-
-			public String getRemark4() {
-				return this.remark4;
-			}
-
-			public void setRemark4(String remark4) {
-				this.remark4 = remark4;
-			}
-
-			public Long getRemark5() {
-				return this.remark5;
-			}
-
-			public void setRemark5(Long remark5) {
-				this.remark5 = remark5;
-			}
-
-			public String getRemark6() {
-				return this.remark6;
-			}
-
-			public void setRemark6(String remark6) {
-				this.remark6 = remark6;
 			}
 
 			public String getRemark7() {
@@ -839,12 +743,44 @@ public class GetResultResponse extends AcsResponse {
 				this.remark8 = remark8;
 			}
 
+			public String getRemark2() {
+				return this.remark2;
+			}
+
+			public void setRemark2(String remark2) {
+				this.remark2 = remark2;
+			}
+
+			public String getCallId() {
+				return this.callId;
+			}
+
+			public void setCallId(String callId) {
+				this.callId = callId;
+			}
+
 			public String getRemark9() {
 				return this.remark9;
 			}
 
 			public void setRemark9(String remark9) {
 				this.remark9 = remark9;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
+
+			public String getRemark6() {
+				return this.remark6;
+			}
+
+			public void setRemark6(String remark6) {
+				this.remark6 = remark6;
 			}
 
 			public String getRemark10() {
@@ -855,6 +791,30 @@ public class GetResultResponse extends AcsResponse {
 				this.remark10 = remark10;
 			}
 
+			public String getBusiness() {
+				return this.business;
+			}
+
+			public void setBusiness(String business) {
+				this.business = business;
+			}
+
+			public String getRemark3() {
+				return this.remark3;
+			}
+
+			public void setRemark3(String remark3) {
+				this.remark3 = remark3;
+			}
+
+			public String getUrl() {
+				return this.url;
+			}
+
+			public void setUrl(String url) {
+				this.url = url;
+			}
+
 			public String getRemark11() {
 				return this.remark11;
 			}
@@ -863,38 +823,53 @@ public class GetResultResponse extends AcsResponse {
 				this.remark11 = remark11;
 			}
 
-			public String getRemark12() {
-				return this.remark12;
+			public String getRemark4() {
+				return this.remark4;
 			}
 
-			public void setRemark12(String remark12) {
-				this.remark12 = remark12;
+			public void setRemark4(String remark4) {
+				this.remark4 = remark4;
 			}
 
-			public String getRemark13() {
-				return this.remark13;
+			public Integer getCallType() {
+				return this.callType;
 			}
 
-			public void setRemark13(String remark13) {
-				this.remark13 = remark13;
+			public void setCallType(Integer callType) {
+				this.callType = callType;
 			}
 
-			public Integer getDialogueSize() {
-				return this.dialogueSize;
+			public String getCaller() {
+				return this.caller;
 			}
 
-			public void setDialogueSize(Integer dialogueSize) {
-				this.dialogueSize = dialogueSize;
+			public void setCaller(String caller) {
+				this.caller = caller;
 			}
-		}
 
-		public static class Agent {
+			public String getDataSetName() {
+				return this.dataSetName;
+			}
 
-			private String id;
+			public void setDataSetName(String dataSetName) {
+				this.dataSetName = dataSetName;
+			}
 
-			private String name;
+			public Long getDuration() {
+				return this.duration;
+			}
 
-			private String skillGroup;
+			public void setDuration(Long duration) {
+				this.duration = duration;
+			}
+
+			public Long getRemark5() {
+				return this.remark5;
+			}
+
+			public void setRemark5(Long remark5) {
+				this.remark5 = remark5;
+			}
 
 			public String getId() {
 				return this.id;
@@ -903,6 +878,23 @@ public class GetResultResponse extends AcsResponse {
 			public void setId(String id) {
 				this.id = id;
 			}
+
+			public String getCallTime() {
+				return this.callTime;
+			}
+
+			public void setCallTime(String callTime) {
+				this.callTime = callTime;
+			}
+		}
+
+		public static class Agent {
+
+			private String name;
+
+			private String skillGroup;
+
+			private String id;
 
 			public String getName() {
 				return this.name;
@@ -918,6 +910,14 @@ public class GetResultResponse extends AcsResponse {
 
 			public void setSkillGroup(String skillGroup) {
 				this.skillGroup = skillGroup;
+			}
+
+			public String getId() {
+				return this.id;
+			}
+
+			public void setId(String id) {
+				this.id = id;
 			}
 		}
 	}

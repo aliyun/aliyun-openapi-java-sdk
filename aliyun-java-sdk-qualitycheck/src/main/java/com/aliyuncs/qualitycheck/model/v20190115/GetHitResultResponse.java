@@ -33,11 +33,11 @@ public class GetHitResultResponse extends AcsResponse {
 
 	private String message;
 
-	private Integer count;
+	private Integer pageNumber;
 
 	private Integer pageSize;
 
-	private Integer pageNumber;
+	private Integer count;
 
 	private List<ResultInfo> data;
 
@@ -73,12 +73,12 @@ public class GetHitResultResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public Integer getCount() {
-		return this.count;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setCount(Integer count) {
-		this.count = count;
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public Integer getPageSize() {
@@ -89,12 +89,12 @@ public class GetHitResultResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public Integer getCount() {
+		return this.count;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
+	public void setCount(Integer count) {
+		this.count = count;
 	}
 
 	public List<ResultInfo> getData() {
@@ -107,17 +107,9 @@ public class GetHitResultResponse extends AcsResponse {
 
 	public static class ResultInfo {
 
-		private Long rid;
-
 		private String ruleName;
 
-		public Long getRid() {
-			return this.rid;
-		}
-
-		public void setRid(Long rid) {
-			this.rid = rid;
-		}
+		private Long rid;
 
 		public String getRuleName() {
 			return this.ruleName;
@@ -125,6 +117,14 @@ public class GetHitResultResponse extends AcsResponse {
 
 		public void setRuleName(String ruleName) {
 			this.ruleName = ruleName;
+		}
+
+		public Long getRid() {
+			return this.rid;
+		}
+
+		public void setRid(Long rid) {
+			this.rid = rid;
 		}
 	}
 

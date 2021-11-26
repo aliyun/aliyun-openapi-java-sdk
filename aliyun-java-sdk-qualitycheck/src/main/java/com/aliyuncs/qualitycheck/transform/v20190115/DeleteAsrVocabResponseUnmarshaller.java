@@ -23,10 +23,10 @@ public class DeleteAsrVocabResponseUnmarshaller {
 	public static DeleteAsrVocabResponse unmarshall(DeleteAsrVocabResponse deleteAsrVocabResponse, UnmarshallerContext _ctx) {
 		
 		deleteAsrVocabResponse.setRequestId(_ctx.stringValue("DeleteAsrVocabResponse.RequestId"));
-		deleteAsrVocabResponse.setSuccess(_ctx.booleanValue("DeleteAsrVocabResponse.Success"));
 		deleteAsrVocabResponse.setCode(_ctx.stringValue("DeleteAsrVocabResponse.Code"));
 		deleteAsrVocabResponse.setMessage(_ctx.stringValue("DeleteAsrVocabResponse.Message"));
 		deleteAsrVocabResponse.setData(_ctx.stringValue("DeleteAsrVocabResponse.Data"));
+		deleteAsrVocabResponse.setSuccess(_ctx.booleanValue("DeleteAsrVocabResponse.Success"));
 	 
 	 	return deleteAsrVocabResponse;
 	}

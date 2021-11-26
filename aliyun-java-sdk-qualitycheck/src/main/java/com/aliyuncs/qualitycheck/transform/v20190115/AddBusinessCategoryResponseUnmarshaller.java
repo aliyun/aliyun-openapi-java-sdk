@@ -23,10 +23,10 @@ public class AddBusinessCategoryResponseUnmarshaller {
 	public static AddBusinessCategoryResponse unmarshall(AddBusinessCategoryResponse addBusinessCategoryResponse, UnmarshallerContext _ctx) {
 		
 		addBusinessCategoryResponse.setRequestId(_ctx.stringValue("AddBusinessCategoryResponse.RequestId"));
-		addBusinessCategoryResponse.setSuccess(_ctx.booleanValue("AddBusinessCategoryResponse.Success"));
 		addBusinessCategoryResponse.setCode(_ctx.stringValue("AddBusinessCategoryResponse.Code"));
 		addBusinessCategoryResponse.setMessage(_ctx.stringValue("AddBusinessCategoryResponse.Message"));
 		addBusinessCategoryResponse.setData(_ctx.stringValue("AddBusinessCategoryResponse.Data"));
+		addBusinessCategoryResponse.setSuccess(_ctx.booleanValue("AddBusinessCategoryResponse.Success"));
 	 
 	 	return addBusinessCategoryResponse;
 	}

@@ -23,10 +23,10 @@ public class CreateWarningConfigResponseUnmarshaller {
 	public static CreateWarningConfigResponse unmarshall(CreateWarningConfigResponse createWarningConfigResponse, UnmarshallerContext _ctx) {
 		
 		createWarningConfigResponse.setRequestId(_ctx.stringValue("CreateWarningConfigResponse.RequestId"));
-		createWarningConfigResponse.setSuccess(_ctx.booleanValue("CreateWarningConfigResponse.Success"));
 		createWarningConfigResponse.setCode(_ctx.stringValue("CreateWarningConfigResponse.Code"));
 		createWarningConfigResponse.setMessage(_ctx.stringValue("CreateWarningConfigResponse.Message"));
 		createWarningConfigResponse.setData(_ctx.stringValue("CreateWarningConfigResponse.Data"));
+		createWarningConfigResponse.setSuccess(_ctx.booleanValue("CreateWarningConfigResponse.Success"));
 	 
 	 	return createWarningConfigResponse;
 	}

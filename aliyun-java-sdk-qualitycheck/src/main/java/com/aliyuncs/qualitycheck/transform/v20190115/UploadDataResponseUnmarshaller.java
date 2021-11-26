@@ -23,10 +23,10 @@ public class UploadDataResponseUnmarshaller {
 	public static UploadDataResponse unmarshall(UploadDataResponse uploadDataResponse, UnmarshallerContext _ctx) {
 		
 		uploadDataResponse.setRequestId(_ctx.stringValue("UploadDataResponse.RequestId"));
-		uploadDataResponse.setSuccess(_ctx.booleanValue("UploadDataResponse.Success"));
 		uploadDataResponse.setCode(_ctx.stringValue("UploadDataResponse.Code"));
 		uploadDataResponse.setMessage(_ctx.stringValue("UploadDataResponse.Message"));
 		uploadDataResponse.setData(_ctx.stringValue("UploadDataResponse.Data"));
+		uploadDataResponse.setSuccess(_ctx.booleanValue("UploadDataResponse.Success"));
 	 
 	 	return uploadDataResponse;
 	}

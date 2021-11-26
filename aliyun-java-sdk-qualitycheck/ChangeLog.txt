@@ -1,3 +1,6 @@
+2021-11-26 Version: 4.1.0
+- Update GetSyncResult.
+
 2021-05-19 Version: 3.1.3
 - Update API.
 

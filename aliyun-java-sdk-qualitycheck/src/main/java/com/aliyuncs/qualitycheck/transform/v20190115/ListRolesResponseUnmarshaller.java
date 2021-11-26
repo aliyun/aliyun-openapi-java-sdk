@@ -27,19 +27,19 @@ public class ListRolesResponseUnmarshaller {
 	public static ListRolesResponse unmarshall(ListRolesResponse listRolesResponse, UnmarshallerContext _ctx) {
 		
 		listRolesResponse.setRequestId(_ctx.stringValue("ListRolesResponse.RequestId"));
-		listRolesResponse.setSuccess(_ctx.booleanValue("ListRolesResponse.Success"));
 		listRolesResponse.setCode(_ctx.stringValue("ListRolesResponse.Code"));
 		listRolesResponse.setMessage(_ctx.stringValue("ListRolesResponse.Message"));
+		listRolesResponse.setSuccess(_ctx.booleanValue("ListRolesResponse.Success"));
 
 		List<Role> data = new ArrayList<Role>();
 		for (int i = 0; i < _ctx.lengthValue("ListRolesResponse.Data.Length"); i++) {
 			Role role = new Role();
-			role.setId(_ctx.longValue("ListRolesResponse.Data["+ i +"].Id"));
-			role.setName(_ctx.stringValue("ListRolesResponse.Data["+ i +"].Name"));
 			role.setDisplayName(_ctx.stringValue("ListRolesResponse.Data["+ i +"].DisplayName"));
-			role.setLevel(_ctx.integerValue("ListRolesResponse.Data["+ i +"].Level"));
-			role.setCreateTime(_ctx.stringValue("ListRolesResponse.Data["+ i +"].CreateTime"));
 			role.setUpdateTime(_ctx.stringValue("ListRolesResponse.Data["+ i +"].UpdateTime"));
+			role.setCreateTime(_ctx.stringValue("ListRolesResponse.Data["+ i +"].CreateTime"));
+			role.setName(_ctx.stringValue("ListRolesResponse.Data["+ i +"].Name"));
+			role.setId(_ctx.longValue("ListRolesResponse.Data["+ i +"].Id"));
+			role.setLevel(_ctx.integerValue("ListRolesResponse.Data["+ i +"].Level"));
 
 			data.add(role);
 		}

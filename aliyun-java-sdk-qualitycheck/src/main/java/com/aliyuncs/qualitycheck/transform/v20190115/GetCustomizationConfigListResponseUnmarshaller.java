@@ -27,19 +27,19 @@ public class GetCustomizationConfigListResponseUnmarshaller {
 	public static GetCustomizationConfigListResponse unmarshall(GetCustomizationConfigListResponse getCustomizationConfigListResponse, UnmarshallerContext _ctx) {
 		
 		getCustomizationConfigListResponse.setRequestId(_ctx.stringValue("GetCustomizationConfigListResponse.RequestId"));
-		getCustomizationConfigListResponse.setSuccess(_ctx.booleanValue("GetCustomizationConfigListResponse.Success"));
 		getCustomizationConfigListResponse.setCode(_ctx.stringValue("GetCustomizationConfigListResponse.Code"));
 		getCustomizationConfigListResponse.setMessage(_ctx.stringValue("GetCustomizationConfigListResponse.Message"));
+		getCustomizationConfigListResponse.setSuccess(_ctx.booleanValue("GetCustomizationConfigListResponse.Success"));
 
 		List<ModelCustomizationDataSetPo> data = new ArrayList<ModelCustomizationDataSetPo>();
 		for (int i = 0; i < _ctx.lengthValue("GetCustomizationConfigListResponse.Data.Length"); i++) {
 			ModelCustomizationDataSetPo modelCustomizationDataSetPo = new ModelCustomizationDataSetPo();
-			modelCustomizationDataSetPo.setModelId(_ctx.longValue("GetCustomizationConfigListResponse.Data["+ i +"].ModelId"));
-			modelCustomizationDataSetPo.setModeCustomizationId(_ctx.stringValue("GetCustomizationConfigListResponse.Data["+ i +"].ModeCustomizationId"));
-			modelCustomizationDataSetPo.setModelName(_ctx.stringValue("GetCustomizationConfigListResponse.Data["+ i +"].ModelName"));
-			modelCustomizationDataSetPo.setModelStatus(_ctx.integerValue("GetCustomizationConfigListResponse.Data["+ i +"].ModelStatus"));
 			modelCustomizationDataSetPo.setTaskType(_ctx.integerValue("GetCustomizationConfigListResponse.Data["+ i +"].TaskType"));
 			modelCustomizationDataSetPo.setCreateTime(_ctx.stringValue("GetCustomizationConfigListResponse.Data["+ i +"].CreateTime"));
+			modelCustomizationDataSetPo.setModelStatus(_ctx.integerValue("GetCustomizationConfigListResponse.Data["+ i +"].ModelStatus"));
+			modelCustomizationDataSetPo.setModelName(_ctx.stringValue("GetCustomizationConfigListResponse.Data["+ i +"].ModelName"));
+			modelCustomizationDataSetPo.setModelId(_ctx.longValue("GetCustomizationConfigListResponse.Data["+ i +"].ModelId"));
+			modelCustomizationDataSetPo.setModeCustomizationId(_ctx.stringValue("GetCustomizationConfigListResponse.Data["+ i +"].ModeCustomizationId"));
 
 			data.add(modelCustomizationDataSetPo);
 		}

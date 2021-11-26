@@ -23,9 +23,9 @@ public class UpdateWarningConfigResponseUnmarshaller {
 	public static UpdateWarningConfigResponse unmarshall(UpdateWarningConfigResponse updateWarningConfigResponse, UnmarshallerContext _ctx) {
 		
 		updateWarningConfigResponse.setRequestId(_ctx.stringValue("UpdateWarningConfigResponse.RequestId"));
-		updateWarningConfigResponse.setSuccess(_ctx.booleanValue("UpdateWarningConfigResponse.Success"));
 		updateWarningConfigResponse.setCode(_ctx.stringValue("UpdateWarningConfigResponse.Code"));
 		updateWarningConfigResponse.setMessage(_ctx.stringValue("UpdateWarningConfigResponse.Message"));
+		updateWarningConfigResponse.setSuccess(_ctx.booleanValue("UpdateWarningConfigResponse.Success"));
 	 
 	 	return updateWarningConfigResponse;
 	}

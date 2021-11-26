@@ -27,18 +27,18 @@ public class ListAsrVocabResponseUnmarshaller {
 	public static ListAsrVocabResponse unmarshall(ListAsrVocabResponse listAsrVocabResponse, UnmarshallerContext _ctx) {
 		
 		listAsrVocabResponse.setRequestId(_ctx.stringValue("ListAsrVocabResponse.RequestId"));
-		listAsrVocabResponse.setSuccess(_ctx.booleanValue("ListAsrVocabResponse.Success"));
 		listAsrVocabResponse.setCode(_ctx.stringValue("ListAsrVocabResponse.Code"));
 		listAsrVocabResponse.setMessage(_ctx.stringValue("ListAsrVocabResponse.Message"));
+		listAsrVocabResponse.setSuccess(_ctx.booleanValue("ListAsrVocabResponse.Success"));
 
 		List<AsrVocab> data = new ArrayList<AsrVocab>();
 		for (int i = 0; i < _ctx.lengthValue("ListAsrVocabResponse.Data.Length"); i++) {
 			AsrVocab asrVocab = new AsrVocab();
-			asrVocab.setId(_ctx.stringValue("ListAsrVocabResponse.Data["+ i +"].Id"));
+			asrVocab.setVocabularyId(_ctx.stringValue("ListAsrVocabResponse.Data["+ i +"].VocabularyId"));
+			asrVocab.setUpdateTime(_ctx.stringValue("ListAsrVocabResponse.Data["+ i +"].UpdateTime"));
 			asrVocab.setName(_ctx.stringValue("ListAsrVocabResponse.Data["+ i +"].Name"));
 			asrVocab.setCreateTime(_ctx.stringValue("ListAsrVocabResponse.Data["+ i +"].CreateTime"));
-			asrVocab.setUpdateTime(_ctx.stringValue("ListAsrVocabResponse.Data["+ i +"].UpdateTime"));
-			asrVocab.setVocabularyId(_ctx.stringValue("ListAsrVocabResponse.Data["+ i +"].VocabularyId"));
+			asrVocab.setId(_ctx.stringValue("ListAsrVocabResponse.Data["+ i +"].Id"));
 
 			data.add(asrVocab);
 		}

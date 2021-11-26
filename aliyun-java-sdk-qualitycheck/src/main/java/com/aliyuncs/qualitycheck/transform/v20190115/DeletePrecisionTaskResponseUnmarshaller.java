@@ -23,9 +23,9 @@ public class DeletePrecisionTaskResponseUnmarshaller {
 	public static DeletePrecisionTaskResponse unmarshall(DeletePrecisionTaskResponse deletePrecisionTaskResponse, UnmarshallerContext _ctx) {
 		
 		deletePrecisionTaskResponse.setRequestId(_ctx.stringValue("DeletePrecisionTaskResponse.RequestId"));
-		deletePrecisionTaskResponse.setSuccess(_ctx.booleanValue("DeletePrecisionTaskResponse.Success"));
 		deletePrecisionTaskResponse.setCode(_ctx.stringValue("DeletePrecisionTaskResponse.Code"));
 		deletePrecisionTaskResponse.setMessage(_ctx.stringValue("DeletePrecisionTaskResponse.Message"));
+		deletePrecisionTaskResponse.setSuccess(_ctx.booleanValue("DeletePrecisionTaskResponse.Success"));
 	 
 	 	return deletePrecisionTaskResponse;
 	}

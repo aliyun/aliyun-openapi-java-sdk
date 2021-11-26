@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetPrecisionTaskResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String message;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -67,6 +51,22 @@ public class GetPrecisionTaskResponse extends AcsResponse {
 		this.message = message;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -77,76 +77,36 @@ public class GetPrecisionTaskResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String name;
-
-		private Integer source;
-
-		private Long dataSetId;
-
-		private String dataSetName;
-
-		private String taskId;
-
-		private Integer duration;
+		private Integer status;
 
 		private String updateTime;
 
-		private Integer status;
+		private Integer incorrectWords;
 
-		private Integer totalCount;
+		private Long dataSetId;
 
 		private Integer verifiedCount;
 
-		private Integer incorrectWords;
+		private Integer duration;
+
+		private String dataSetName;
+
+		private Integer totalCount;
+
+		private Integer source;
+
+		private String name;
+
+		private String taskId;
 
 		private List<Precision> precisions;
 
-		public String getName() {
-			return this.name;
+		public Integer getStatus() {
+			return this.status;
 		}
 
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public Integer getSource() {
-			return this.source;
-		}
-
-		public void setSource(Integer source) {
-			this.source = source;
-		}
-
-		public Long getDataSetId() {
-			return this.dataSetId;
-		}
-
-		public void setDataSetId(Long dataSetId) {
-			this.dataSetId = dataSetId;
-		}
-
-		public String getDataSetName() {
-			return this.dataSetName;
-		}
-
-		public void setDataSetName(String dataSetName) {
-			this.dataSetName = dataSetName;
-		}
-
-		public String getTaskId() {
-			return this.taskId;
-		}
-
-		public void setTaskId(String taskId) {
-			this.taskId = taskId;
-		}
-
-		public Integer getDuration() {
-			return this.duration;
-		}
-
-		public void setDuration(Integer duration) {
-			this.duration = duration;
+		public void setStatus(Integer status) {
+			this.status = status;
 		}
 
 		public String getUpdateTime() {
@@ -157,20 +117,20 @@ public class GetPrecisionTaskResponse extends AcsResponse {
 			this.updateTime = updateTime;
 		}
 
-		public Integer getStatus() {
-			return this.status;
+		public Integer getIncorrectWords() {
+			return this.incorrectWords;
 		}
 
-		public void setStatus(Integer status) {
-			this.status = status;
+		public void setIncorrectWords(Integer incorrectWords) {
+			this.incorrectWords = incorrectWords;
 		}
 
-		public Integer getTotalCount() {
-			return this.totalCount;
+		public Long getDataSetId() {
+			return this.dataSetId;
 		}
 
-		public void setTotalCount(Integer totalCount) {
-			this.totalCount = totalCount;
+		public void setDataSetId(Long dataSetId) {
+			this.dataSetId = dataSetId;
 		}
 
 		public Integer getVerifiedCount() {
@@ -181,12 +141,52 @@ public class GetPrecisionTaskResponse extends AcsResponse {
 			this.verifiedCount = verifiedCount;
 		}
 
-		public Integer getIncorrectWords() {
-			return this.incorrectWords;
+		public Integer getDuration() {
+			return this.duration;
 		}
 
-		public void setIncorrectWords(Integer incorrectWords) {
-			this.incorrectWords = incorrectWords;
+		public void setDuration(Integer duration) {
+			this.duration = duration;
+		}
+
+		public String getDataSetName() {
+			return this.dataSetName;
+		}
+
+		public void setDataSetName(String dataSetName) {
+			this.dataSetName = dataSetName;
+		}
+
+		public Integer getTotalCount() {
+			return this.totalCount;
+		}
+
+		public void setTotalCount(Integer totalCount) {
+			this.totalCount = totalCount;
+		}
+
+		public Integer getSource() {
+			return this.source;
+		}
+
+		public void setSource(Integer source) {
+			this.source = source;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getTaskId() {
+			return this.taskId;
+		}
+
+		public void setTaskId(String taskId) {
+			this.taskId = taskId;
 		}
 
 		public List<Precision> getPrecisions() {
@@ -199,15 +199,23 @@ public class GetPrecisionTaskResponse extends AcsResponse {
 
 		public static class Precision {
 
+			private Integer status;
+
 			private String modelName;
 
-			private Long modelId;
+			private String taskId;
 
 			private Float precision;
 
-			private Integer status;
+			private Long modelId;
 
-			private String taskId;
+			public Integer getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(Integer status) {
+				this.status = status;
+			}
 
 			public String getModelName() {
 				return this.modelName;
@@ -217,12 +225,12 @@ public class GetPrecisionTaskResponse extends AcsResponse {
 				this.modelName = modelName;
 			}
 
-			public Long getModelId() {
-				return this.modelId;
+			public String getTaskId() {
+				return this.taskId;
 			}
 
-			public void setModelId(Long modelId) {
-				this.modelId = modelId;
+			public void setTaskId(String taskId) {
+				this.taskId = taskId;
 			}
 
 			public Float getPrecision() {
@@ -233,20 +241,12 @@ public class GetPrecisionTaskResponse extends AcsResponse {
 				this.precision = precision;
 			}
 
-			public Integer getStatus() {
-				return this.status;
+			public Long getModelId() {
+				return this.modelId;
 			}
 
-			public void setStatus(Integer status) {
-				this.status = status;
-			}
-
-			public String getTaskId() {
-				return this.taskId;
-			}
-
-			public void setTaskId(String taskId) {
-				this.taskId = taskId;
+			public void setModelId(Long modelId) {
+				this.modelId = modelId;
 			}
 		}
 	}

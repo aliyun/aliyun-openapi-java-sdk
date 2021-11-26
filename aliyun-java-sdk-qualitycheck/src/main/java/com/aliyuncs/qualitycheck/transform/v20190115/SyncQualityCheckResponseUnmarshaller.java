@@ -31,45 +31,45 @@ public class SyncQualityCheckResponseUnmarshaller {
 	public static SyncQualityCheckResponse unmarshall(SyncQualityCheckResponse syncQualityCheckResponse, UnmarshallerContext _ctx) {
 		
 		syncQualityCheckResponse.setRequestId(_ctx.stringValue("SyncQualityCheckResponse.RequestId"));
-		syncQualityCheckResponse.setSuccess(_ctx.booleanValue("SyncQualityCheckResponse.Success"));
 		syncQualityCheckResponse.setCode(_ctx.stringValue("SyncQualityCheckResponse.Code"));
 		syncQualityCheckResponse.setMessage(_ctx.stringValue("SyncQualityCheckResponse.Message"));
+		syncQualityCheckResponse.setSuccess(_ctx.booleanValue("SyncQualityCheckResponse.Success"));
 
 		Data data = new Data();
 		data.setScore(_ctx.integerValue("SyncQualityCheckResponse.Data.Score"));
+		data.setTaskId(_ctx.stringValue("SyncQualityCheckResponse.Data.TaskId"));
 		data.setTid(_ctx.stringValue("SyncQualityCheckResponse.Data.Tid"));
 		data.setBeginTime(_ctx.longValue("SyncQualityCheckResponse.Data.BeginTime"));
-		data.setTaskId(_ctx.stringValue("SyncQualityCheckResponse.Data.TaskId"));
 
 		List<RuleHitInfo> rules = new ArrayList<RuleHitInfo>();
 		for (int i = 0; i < _ctx.lengthValue("SyncQualityCheckResponse.Data.Rules.Length"); i++) {
 			RuleHitInfo ruleHitInfo = new RuleHitInfo();
-			ruleHitInfo.setRid(_ctx.stringValue("SyncQualityCheckResponse.Data.Rules["+ i +"].Rid"));
 			ruleHitInfo.setRuleName(_ctx.stringValue("SyncQualityCheckResponse.Data.Rules["+ i +"].RuleName"));
+			ruleHitInfo.setRid(_ctx.stringValue("SyncQualityCheckResponse.Data.Rules["+ i +"].Rid"));
 
 			List<ConditionHitInfo> hit = new ArrayList<ConditionHitInfo>();
 			for (int j = 0; j < _ctx.lengthValue("SyncQualityCheckResponse.Data.Rules["+ i +"].Hit.Length"); j++) {
 				ConditionHitInfo conditionHitInfo = new ConditionHitInfo();
 
 				Phrase phrase = new Phrase();
-				phrase.setRole(_ctx.stringValue("SyncQualityCheckResponse.Data.Rules["+ i +"].Hit["+ j +"].Phrase.Role"));
-				phrase.setIdentity(_ctx.stringValue("SyncQualityCheckResponse.Data.Rules["+ i +"].Hit["+ j +"].Phrase.Identity"));
 				phrase.setWords(_ctx.stringValue("SyncQualityCheckResponse.Data.Rules["+ i +"].Hit["+ j +"].Phrase.Words"));
+				phrase.setIdentity(_ctx.stringValue("SyncQualityCheckResponse.Data.Rules["+ i +"].Hit["+ j +"].Phrase.Identity"));
 				phrase.setBegin(_ctx.longValue("SyncQualityCheckResponse.Data.Rules["+ i +"].Hit["+ j +"].Phrase.Begin"));
-				phrase.setEnd(_ctx.longValue("SyncQualityCheckResponse.Data.Rules["+ i +"].Hit["+ j +"].Phrase.End"));
 				phrase.setEmotionValue(_ctx.integerValue("SyncQualityCheckResponse.Data.Rules["+ i +"].Hit["+ j +"].Phrase.EmotionValue"));
+				phrase.setEnd(_ctx.longValue("SyncQualityCheckResponse.Data.Rules["+ i +"].Hit["+ j +"].Phrase.End"));
 				phrase.setSpeechRate(_ctx.integerValue("SyncQualityCheckResponse.Data.Rules["+ i +"].Hit["+ j +"].Phrase.SpeechRate"));
+				phrase.setRole(_ctx.stringValue("SyncQualityCheckResponse.Data.Rules["+ i +"].Hit["+ j +"].Phrase.Role"));
 				phrase.setSilenceDuration(_ctx.integerValue("SyncQualityCheckResponse.Data.Rules["+ i +"].Hit["+ j +"].Phrase.SilenceDuration"));
 				conditionHitInfo.setPhrase(phrase);
 
 				List<HitKeyWord> hitKeyWords = new ArrayList<HitKeyWord>();
 				for (int k = 0; k < _ctx.lengthValue("SyncQualityCheckResponse.Data.Rules["+ i +"].Hit["+ j +"].HitKeyWords.Length"); k++) {
 					HitKeyWord hitKeyWord = new HitKeyWord();
-					hitKeyWord.setVal(_ctx.stringValue("SyncQualityCheckResponse.Data.Rules["+ i +"].Hit["+ j +"].HitKeyWords["+ k +"].Val"));
-					hitKeyWord.setPid(_ctx.integerValue("SyncQualityCheckResponse.Data.Rules["+ i +"].Hit["+ j +"].HitKeyWords["+ k +"].Pid"));
-					hitKeyWord.setFrom(_ctx.integerValue("SyncQualityCheckResponse.Data.Rules["+ i +"].Hit["+ j +"].HitKeyWords["+ k +"].From"));
 					hitKeyWord.setTo(_ctx.integerValue("SyncQualityCheckResponse.Data.Rules["+ i +"].Hit["+ j +"].HitKeyWords["+ k +"].To"));
+					hitKeyWord.setFrom(_ctx.integerValue("SyncQualityCheckResponse.Data.Rules["+ i +"].Hit["+ j +"].HitKeyWords["+ k +"].From"));
+					hitKeyWord.setVal(_ctx.stringValue("SyncQualityCheckResponse.Data.Rules["+ i +"].Hit["+ j +"].HitKeyWords["+ k +"].Val"));
 					hitKeyWord.setCid(_ctx.integerValue("SyncQualityCheckResponse.Data.Rules["+ i +"].Hit["+ j +"].HitKeyWords["+ k +"].Cid"));
+					hitKeyWord.setPid(_ctx.integerValue("SyncQualityCheckResponse.Data.Rules["+ i +"].Hit["+ j +"].HitKeyWords["+ k +"].Pid"));
 
 					hitKeyWords.add(hitKeyWord);
 				}

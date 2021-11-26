@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetNextResultToVerifyResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String message;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -67,6 +51,22 @@ public class GetNextResultToVerifyResponse extends AcsResponse {
 		this.message = message;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -77,33 +77,41 @@ public class GetNextResultToVerifyResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Integer status;
+		private Integer index;
 
-		private String audioURL;
+		private Integer status;
 
 		private String audioScheme;
 
-		private String fileName;
-
-		private String fileId;
-
-		private Boolean verified;
-
-		private Integer totalCount;
-
-		private Integer verifiedCount;
-
-		private Integer incorrectWords;
-
-		private Float precision;
+		private String audioURL;
 
 		private String updateTime;
 
+		private Integer incorrectWords;
+
+		private Integer verifiedCount;
+
+		private Boolean verified;
+
+		private String fileName;
+
+		private Integer totalCount;
+
+		private Float precision;
+
+		private String fileId;
+
 		private Integer duration;
 
-		private Integer index;
-
 		private List<Dialogue> dialogues;
+
+		public Integer getIndex() {
+			return this.index;
+		}
+
+		public void setIndex(Integer index) {
+			this.index = index;
+		}
 
 		public Integer getStatus() {
 			return this.status;
@@ -111,14 +119,6 @@ public class GetNextResultToVerifyResponse extends AcsResponse {
 
 		public void setStatus(Integer status) {
 			this.status = status;
-		}
-
-		public String getAudioURL() {
-			return this.audioURL;
-		}
-
-		public void setAudioURL(String audioURL) {
-			this.audioURL = audioURL;
 		}
 
 		public String getAudioScheme() {
@@ -129,60 +129,12 @@ public class GetNextResultToVerifyResponse extends AcsResponse {
 			this.audioScheme = audioScheme;
 		}
 
-		public String getFileName() {
-			return this.fileName;
+		public String getAudioURL() {
+			return this.audioURL;
 		}
 
-		public void setFileName(String fileName) {
-			this.fileName = fileName;
-		}
-
-		public String getFileId() {
-			return this.fileId;
-		}
-
-		public void setFileId(String fileId) {
-			this.fileId = fileId;
-		}
-
-		public Boolean getVerified() {
-			return this.verified;
-		}
-
-		public void setVerified(Boolean verified) {
-			this.verified = verified;
-		}
-
-		public Integer getTotalCount() {
-			return this.totalCount;
-		}
-
-		public void setTotalCount(Integer totalCount) {
-			this.totalCount = totalCount;
-		}
-
-		public Integer getVerifiedCount() {
-			return this.verifiedCount;
-		}
-
-		public void setVerifiedCount(Integer verifiedCount) {
-			this.verifiedCount = verifiedCount;
-		}
-
-		public Integer getIncorrectWords() {
-			return this.incorrectWords;
-		}
-
-		public void setIncorrectWords(Integer incorrectWords) {
-			this.incorrectWords = incorrectWords;
-		}
-
-		public Float getPrecision() {
-			return this.precision;
-		}
-
-		public void setPrecision(Float precision) {
-			this.precision = precision;
+		public void setAudioURL(String audioURL) {
+			this.audioURL = audioURL;
 		}
 
 		public String getUpdateTime() {
@@ -193,20 +145,68 @@ public class GetNextResultToVerifyResponse extends AcsResponse {
 			this.updateTime = updateTime;
 		}
 
+		public Integer getIncorrectWords() {
+			return this.incorrectWords;
+		}
+
+		public void setIncorrectWords(Integer incorrectWords) {
+			this.incorrectWords = incorrectWords;
+		}
+
+		public Integer getVerifiedCount() {
+			return this.verifiedCount;
+		}
+
+		public void setVerifiedCount(Integer verifiedCount) {
+			this.verifiedCount = verifiedCount;
+		}
+
+		public Boolean getVerified() {
+			return this.verified;
+		}
+
+		public void setVerified(Boolean verified) {
+			this.verified = verified;
+		}
+
+		public String getFileName() {
+			return this.fileName;
+		}
+
+		public void setFileName(String fileName) {
+			this.fileName = fileName;
+		}
+
+		public Integer getTotalCount() {
+			return this.totalCount;
+		}
+
+		public void setTotalCount(Integer totalCount) {
+			this.totalCount = totalCount;
+		}
+
+		public Float getPrecision() {
+			return this.precision;
+		}
+
+		public void setPrecision(Float precision) {
+			this.precision = precision;
+		}
+
+		public String getFileId() {
+			return this.fileId;
+		}
+
+		public void setFileId(String fileId) {
+			this.fileId = fileId;
+		}
+
 		public Integer getDuration() {
 			return this.duration;
 		}
 
 		public void setDuration(Integer duration) {
 			this.duration = duration;
-		}
-
-		public Integer getIndex() {
-			return this.index;
-		}
-
-		public void setIndex(Integer index) {
-			this.index = index;
 		}
 
 		public List<Dialogue> getDialogues() {
@@ -219,72 +219,40 @@ public class GetNextResultToVerifyResponse extends AcsResponse {
 
 		public static class Dialogue {
 
-			private Long begin;
-
-			private String beginTime;
-
-			private Integer emotionValue;
-
-			private Long end;
-
-			private String hourMinSec;
+			private String words;
 
 			private String identity;
 
-			private String role;
+			private Integer incorrectWords;
 
-			private String sourceRole;
-
-			private Integer silenceDuration;
-
-			private Integer speechRate;
-
-			private String words;
+			private String beginTime;
 
 			private String sourceWords;
 
-			private Integer incorrectWords;
+			private Long end;
+
+			private Integer speechRate;
+
+			private String hourMinSec;
+
+			private String sourceRole;
+
+			private Long begin;
+
+			private Integer emotionValue;
+
+			private String role;
+
+			private Integer silenceDuration;
 
 			private List<Delta> deltas;
 
-			public Long getBegin() {
-				return this.begin;
+			public String getWords() {
+				return this.words;
 			}
 
-			public void setBegin(Long begin) {
-				this.begin = begin;
-			}
-
-			public String getBeginTime() {
-				return this.beginTime;
-			}
-
-			public void setBeginTime(String beginTime) {
-				this.beginTime = beginTime;
-			}
-
-			public Integer getEmotionValue() {
-				return this.emotionValue;
-			}
-
-			public void setEmotionValue(Integer emotionValue) {
-				this.emotionValue = emotionValue;
-			}
-
-			public Long getEnd() {
-				return this.end;
-			}
-
-			public void setEnd(Long end) {
-				this.end = end;
-			}
-
-			public String getHourMinSec() {
-				return this.hourMinSec;
-			}
-
-			public void setHourMinSec(String hourMinSec) {
-				this.hourMinSec = hourMinSec;
+			public void setWords(String words) {
+				this.words = words;
 			}
 
 			public String getIdentity() {
@@ -295,44 +263,20 @@ public class GetNextResultToVerifyResponse extends AcsResponse {
 				this.identity = identity;
 			}
 
-			public String getRole() {
-				return this.role;
+			public Integer getIncorrectWords() {
+				return this.incorrectWords;
 			}
 
-			public void setRole(String role) {
-				this.role = role;
+			public void setIncorrectWords(Integer incorrectWords) {
+				this.incorrectWords = incorrectWords;
 			}
 
-			public String getSourceRole() {
-				return this.sourceRole;
+			public String getBeginTime() {
+				return this.beginTime;
 			}
 
-			public void setSourceRole(String sourceRole) {
-				this.sourceRole = sourceRole;
-			}
-
-			public Integer getSilenceDuration() {
-				return this.silenceDuration;
-			}
-
-			public void setSilenceDuration(Integer silenceDuration) {
-				this.silenceDuration = silenceDuration;
-			}
-
-			public Integer getSpeechRate() {
-				return this.speechRate;
-			}
-
-			public void setSpeechRate(Integer speechRate) {
-				this.speechRate = speechRate;
-			}
-
-			public String getWords() {
-				return this.words;
-			}
-
-			public void setWords(String words) {
-				this.words = words;
+			public void setBeginTime(String beginTime) {
+				this.beginTime = beginTime;
 			}
 
 			public String getSourceWords() {
@@ -343,12 +287,68 @@ public class GetNextResultToVerifyResponse extends AcsResponse {
 				this.sourceWords = sourceWords;
 			}
 
-			public Integer getIncorrectWords() {
-				return this.incorrectWords;
+			public Long getEnd() {
+				return this.end;
 			}
 
-			public void setIncorrectWords(Integer incorrectWords) {
-				this.incorrectWords = incorrectWords;
+			public void setEnd(Long end) {
+				this.end = end;
+			}
+
+			public Integer getSpeechRate() {
+				return this.speechRate;
+			}
+
+			public void setSpeechRate(Integer speechRate) {
+				this.speechRate = speechRate;
+			}
+
+			public String getHourMinSec() {
+				return this.hourMinSec;
+			}
+
+			public void setHourMinSec(String hourMinSec) {
+				this.hourMinSec = hourMinSec;
+			}
+
+			public String getSourceRole() {
+				return this.sourceRole;
+			}
+
+			public void setSourceRole(String sourceRole) {
+				this.sourceRole = sourceRole;
+			}
+
+			public Long getBegin() {
+				return this.begin;
+			}
+
+			public void setBegin(Long begin) {
+				this.begin = begin;
+			}
+
+			public Integer getEmotionValue() {
+				return this.emotionValue;
+			}
+
+			public void setEmotionValue(Integer emotionValue) {
+				this.emotionValue = emotionValue;
+			}
+
+			public String getRole() {
+				return this.role;
+			}
+
+			public void setRole(String role) {
+				this.role = role;
+			}
+
+			public Integer getSilenceDuration() {
+				return this.silenceDuration;
+			}
+
+			public void setSilenceDuration(Integer silenceDuration) {
+				this.silenceDuration = silenceDuration;
 			}
 
 			public List<Delta> getDeltas() {

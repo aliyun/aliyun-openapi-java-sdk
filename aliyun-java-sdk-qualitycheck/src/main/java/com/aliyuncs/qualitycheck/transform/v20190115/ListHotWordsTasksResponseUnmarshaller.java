@@ -39,33 +39,33 @@ public class ListHotWordsTasksResponseUnmarshaller {
 		List<HotWordsTaskPo> data = new ArrayList<HotWordsTaskPo>();
 		for (int i = 0; i < _ctx.lengthValue("ListHotWordsTasksResponse.Data.Length"); i++) {
 			HotWordsTaskPo hotWordsTaskPo = new HotWordsTaskPo();
-			hotWordsTaskPo.setTaskConfigId(_ctx.longValue("ListHotWordsTasksResponse.Data["+ i +"].TaskConfigId"));
-			hotWordsTaskPo.setName(_ctx.stringValue("ListHotWordsTasksResponse.Data["+ i +"].Name"));
-			hotWordsTaskPo.setStatus(_ctx.integerValue("ListHotWordsTasksResponse.Data["+ i +"].Status"));
-			hotWordsTaskPo.setType(_ctx.integerValue("ListHotWordsTasksResponse.Data["+ i +"].Type"));
-			hotWordsTaskPo.setStartTime(_ctx.stringValue("ListHotWordsTasksResponse.Data["+ i +"].StartTime"));
-			hotWordsTaskPo.setTimeInterval(_ctx.integerValue("ListHotWordsTasksResponse.Data["+ i +"].TimeInterval"));
-			hotWordsTaskPo.setTimeUnit(_ctx.integerValue("ListHotWordsTasksResponse.Data["+ i +"].TimeUnit"));
 			hotWordsTaskPo.setEndTime(_ctx.stringValue("ListHotWordsTasksResponse.Data["+ i +"].EndTime"));
+			hotWordsTaskPo.setType(_ctx.integerValue("ListHotWordsTasksResponse.Data["+ i +"].Type"));
+			hotWordsTaskPo.setStatus(_ctx.integerValue("ListHotWordsTasksResponse.Data["+ i +"].Status"));
+			hotWordsTaskPo.setTimeInterval(_ctx.integerValue("ListHotWordsTasksResponse.Data["+ i +"].TimeInterval"));
+			hotWordsTaskPo.setStartTime(_ctx.stringValue("ListHotWordsTasksResponse.Data["+ i +"].StartTime"));
+			hotWordsTaskPo.setTaskConfigId(_ctx.longValue("ListHotWordsTasksResponse.Data["+ i +"].TaskConfigId"));
+			hotWordsTaskPo.setMessage(_ctx.stringValue("ListHotWordsTasksResponse.Data["+ i +"].Message"));
 			hotWordsTaskPo.setInstanceStatus(_ctx.integerValue("ListHotWordsTasksResponse.Data["+ i +"].InstanceStatus"));
 			hotWordsTaskPo.setLastExecutionTime(_ctx.stringValue("ListHotWordsTasksResponse.Data["+ i +"].LastExecutionTime"));
-			hotWordsTaskPo.setMessage(_ctx.stringValue("ListHotWordsTasksResponse.Data["+ i +"].Message"));
+			hotWordsTaskPo.setName(_ctx.stringValue("ListHotWordsTasksResponse.Data["+ i +"].Name"));
+			hotWordsTaskPo.setTimeUnit(_ctx.integerValue("ListHotWordsTasksResponse.Data["+ i +"].TimeUnit"));
 
 			DialogueParam dialogueParam = new DialogueParam();
-			dialogueParam.setDialogueId(_ctx.longValue("ListHotWordsTasksResponse.Data["+ i +"].DialogueParam.DialogueId"));
-			dialogueParam.setRole(_ctx.integerValue("ListHotWordsTasksResponse.Data["+ i +"].DialogueParam.Role"));
-			dialogueParam.setStartIndex(_ctx.integerValue("ListHotWordsTasksResponse.Data["+ i +"].DialogueParam.StartIndex"));
-			dialogueParam.setEndIndex(_ctx.integerValue("ListHotWordsTasksResponse.Data["+ i +"].DialogueParam.EndIndex"));
-			dialogueParam.setSourceType(_ctx.integerValue("ListHotWordsTasksResponse.Data["+ i +"].DialogueParam.SourceType"));
-			dialogueParam.setDataSetIds(_ctx.stringValue("ListHotWordsTasksResponse.Data["+ i +"].DialogueParam.DataSetIds"));
-			dialogueParam.setStartTime(_ctx.stringValue("ListHotWordsTasksResponse.Data["+ i +"].DialogueParam.StartTime"));
 			dialogueParam.setEndTime(_ctx.stringValue("ListHotWordsTasksResponse.Data["+ i +"].DialogueParam.EndTime"));
+			dialogueParam.setDialogueId(_ctx.longValue("ListHotWordsTasksResponse.Data["+ i +"].DialogueParam.DialogueId"));
+			dialogueParam.setEndIndex(_ctx.integerValue("ListHotWordsTasksResponse.Data["+ i +"].DialogueParam.EndIndex"));
+			dialogueParam.setStartTime(_ctx.stringValue("ListHotWordsTasksResponse.Data["+ i +"].DialogueParam.StartTime"));
+			dialogueParam.setSourceType(_ctx.integerValue("ListHotWordsTasksResponse.Data["+ i +"].DialogueParam.SourceType"));
+			dialogueParam.setStartIndex(_ctx.integerValue("ListHotWordsTasksResponse.Data["+ i +"].DialogueParam.StartIndex"));
+			dialogueParam.setRole(_ctx.integerValue("ListHotWordsTasksResponse.Data["+ i +"].DialogueParam.Role"));
+			dialogueParam.setDataSetIds(_ctx.stringValue("ListHotWordsTasksResponse.Data["+ i +"].DialogueParam.DataSetIds"));
 			hotWordsTaskPo.setDialogueParam(dialogueParam);
 
 			WordsParam wordsParam = new WordsParam();
-			wordsParam.setExtraConfigId(_ctx.longValue("ListHotWordsTasksResponse.Data["+ i +"].WordsParam.ExtraConfigId"));
 			wordsParam.setExcludes(_ctx.stringValue("ListHotWordsTasksResponse.Data["+ i +"].WordsParam.Excludes"));
 			wordsParam.setIncludes(_ctx.stringValue("ListHotWordsTasksResponse.Data["+ i +"].WordsParam.Includes"));
+			wordsParam.setExtraConfigId(_ctx.longValue("ListHotWordsTasksResponse.Data["+ i +"].WordsParam.ExtraConfigId"));
 			hotWordsTaskPo.setWordsParam(wordsParam);
 
 			data.add(hotWordsTaskPo);

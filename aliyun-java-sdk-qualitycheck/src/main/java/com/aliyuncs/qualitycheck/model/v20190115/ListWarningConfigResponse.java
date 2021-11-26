@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListWarningConfigResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String message;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private List<WarningConfigInfo> data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -67,6 +51,22 @@ public class ListWarningConfigResponse extends AcsResponse {
 		this.message = message;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public List<WarningConfigInfo> getData() {
 		return this.data;
 	}
@@ -77,15 +77,15 @@ public class ListWarningConfigResponse extends AcsResponse {
 
 	public static class WarningConfigInfo {
 
-		private Long configId;
+		private Integer status;
 
 		private String configName;
 
-		private Integer status;
+		private String updateTime;
+
+		private Long configId;
 
 		private String createTime;
-
-		private String updateTime;
 
 		private List<WarningRule> ruleList;
 
@@ -93,12 +93,12 @@ public class ListWarningConfigResponse extends AcsResponse {
 
 		private List<String> ridList;
 
-		public Long getConfigId() {
-			return this.configId;
+		public Integer getStatus() {
+			return this.status;
 		}
 
-		public void setConfigId(Long configId) {
-			this.configId = configId;
+		public void setStatus(Integer status) {
+			this.status = status;
 		}
 
 		public String getConfigName() {
@@ -109,12 +109,20 @@ public class ListWarningConfigResponse extends AcsResponse {
 			this.configName = configName;
 		}
 
-		public Integer getStatus() {
-			return this.status;
+		public String getUpdateTime() {
+			return this.updateTime;
 		}
 
-		public void setStatus(Integer status) {
-			this.status = status;
+		public void setUpdateTime(String updateTime) {
+			this.updateTime = updateTime;
+		}
+
+		public Long getConfigId() {
+			return this.configId;
+		}
+
+		public void setConfigId(Long configId) {
+			this.configId = configId;
 		}
 
 		public String getCreateTime() {
@@ -123,14 +131,6 @@ public class ListWarningConfigResponse extends AcsResponse {
 
 		public void setCreateTime(String createTime) {
 			this.createTime = createTime;
-		}
-
-		public String getUpdateTime() {
-			return this.updateTime;
-		}
-
-		public void setUpdateTime(String updateTime) {
-			this.updateTime = updateTime;
 		}
 
 		public List<WarningRule> getRuleList() {
@@ -159,17 +159,9 @@ public class ListWarningConfigResponse extends AcsResponse {
 
 		public static class WarningRule {
 
-			private Long rid;
-
 			private String ruleName;
 
-			public Long getRid() {
-				return this.rid;
-			}
-
-			public void setRid(Long rid) {
-				this.rid = rid;
-			}
+			private Long rid;
 
 			public String getRuleName() {
 				return this.ruleName;
@@ -177,6 +169,14 @@ public class ListWarningConfigResponse extends AcsResponse {
 
 			public void setRuleName(String ruleName) {
 				this.ruleName = ruleName;
+			}
+
+			public Long getRid() {
+				return this.rid;
+			}
+
+			public void setRid(Long rid) {
+				this.rid = rid;
 			}
 		}
 

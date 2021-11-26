@@ -37,15 +37,15 @@ public class ListUsersResponseUnmarshaller {
 		List<User> data = new ArrayList<User>();
 		for (int i = 0; i < _ctx.lengthValue("ListUsersResponse.Data.Length"); i++) {
 			User user = new User();
-			user.setId(_ctx.longValue("ListUsersResponse.Data["+ i +"].Id"));
-			user.setUserName(_ctx.stringValue("ListUsersResponse.Data["+ i +"].UserName"));
 			user.setDisplayName(_ctx.stringValue("ListUsersResponse.Data["+ i +"].DisplayName"));
-			user.setCreateTime(_ctx.stringValue("ListUsersResponse.Data["+ i +"].CreateTime"));
 			user.setUpdateTime(_ctx.stringValue("ListUsersResponse.Data["+ i +"].UpdateTime"));
 			user.setDescription(_ctx.stringValue("ListUsersResponse.Data["+ i +"].Description"));
+			user.setCreateTime(_ctx.stringValue("ListUsersResponse.Data["+ i +"].CreateTime"));
+			user.setLoginUserType(_ctx.integerValue("ListUsersResponse.Data["+ i +"].LoginUserType"));
 			user.setAliUid(_ctx.stringValue("ListUsersResponse.Data["+ i +"].AliUid"));
 			user.setRoleName(_ctx.stringValue("ListUsersResponse.Data["+ i +"].RoleName"));
-			user.setLoginUserType(_ctx.integerValue("ListUsersResponse.Data["+ i +"].LoginUserType"));
+			user.setUserName(_ctx.stringValue("ListUsersResponse.Data["+ i +"].UserName"));
+			user.setId(_ctx.longValue("ListUsersResponse.Data["+ i +"].Id"));
 
 			data.add(user);
 		}

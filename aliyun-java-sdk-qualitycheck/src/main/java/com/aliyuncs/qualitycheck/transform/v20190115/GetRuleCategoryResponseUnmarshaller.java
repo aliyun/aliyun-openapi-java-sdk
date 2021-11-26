@@ -27,9 +27,9 @@ public class GetRuleCategoryResponseUnmarshaller {
 	public static GetRuleCategoryResponse unmarshall(GetRuleCategoryResponse getRuleCategoryResponse, UnmarshallerContext _ctx) {
 		
 		getRuleCategoryResponse.setRequestId(_ctx.stringValue("GetRuleCategoryResponse.RequestId"));
-		getRuleCategoryResponse.setSuccess(_ctx.booleanValue("GetRuleCategoryResponse.Success"));
 		getRuleCategoryResponse.setCode(_ctx.stringValue("GetRuleCategoryResponse.Code"));
 		getRuleCategoryResponse.setMessage(_ctx.stringValue("GetRuleCategoryResponse.Message"));
+		getRuleCategoryResponse.setSuccess(_ctx.booleanValue("GetRuleCategoryResponse.Success"));
 
 		List<RuleCountInfo> data = new ArrayList<RuleCountInfo>();
 		for (int i = 0; i < _ctx.lengthValue("GetRuleCategoryResponse.Data.Length"); i++) {

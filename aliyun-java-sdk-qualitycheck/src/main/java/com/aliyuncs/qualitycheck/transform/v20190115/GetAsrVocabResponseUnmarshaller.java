@@ -28,9 +28,9 @@ public class GetAsrVocabResponseUnmarshaller {
 	public static GetAsrVocabResponse unmarshall(GetAsrVocabResponse getAsrVocabResponse, UnmarshallerContext _ctx) {
 		
 		getAsrVocabResponse.setRequestId(_ctx.stringValue("GetAsrVocabResponse.RequestId"));
-		getAsrVocabResponse.setSuccess(_ctx.booleanValue("GetAsrVocabResponse.Success"));
 		getAsrVocabResponse.setCode(_ctx.stringValue("GetAsrVocabResponse.Code"));
 		getAsrVocabResponse.setMessage(_ctx.stringValue("GetAsrVocabResponse.Message"));
+		getAsrVocabResponse.setSuccess(_ctx.booleanValue("GetAsrVocabResponse.Success"));
 
 		Data data = new Data();
 		data.setName(_ctx.stringValue("GetAsrVocabResponse.Data.Name"));
@@ -38,8 +38,8 @@ public class GetAsrVocabResponseUnmarshaller {
 		List<Word> words = new ArrayList<Word>();
 		for (int i = 0; i < _ctx.lengthValue("GetAsrVocabResponse.Data.Words.Length"); i++) {
 			Word word = new Word();
-			word.setWord(_ctx.stringValue("GetAsrVocabResponse.Data.Words["+ i +"].Word"));
 			word.setWeight(_ctx.integerValue("GetAsrVocabResponse.Data.Words["+ i +"].Weight"));
+			word.setWord(_ctx.stringValue("GetAsrVocabResponse.Data.Words["+ i +"].Word"));
 
 			words.add(word);
 		}

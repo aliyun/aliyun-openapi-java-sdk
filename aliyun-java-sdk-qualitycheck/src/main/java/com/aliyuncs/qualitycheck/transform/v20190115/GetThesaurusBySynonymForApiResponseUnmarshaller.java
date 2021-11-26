@@ -27,15 +27,15 @@ public class GetThesaurusBySynonymForApiResponseUnmarshaller {
 	public static GetThesaurusBySynonymForApiResponse unmarshall(GetThesaurusBySynonymForApiResponse getThesaurusBySynonymForApiResponse, UnmarshallerContext _ctx) {
 		
 		getThesaurusBySynonymForApiResponse.setRequestId(_ctx.stringValue("GetThesaurusBySynonymForApiResponse.RequestId"));
-		getThesaurusBySynonymForApiResponse.setSuccess(_ctx.booleanValue("GetThesaurusBySynonymForApiResponse.Success"));
 		getThesaurusBySynonymForApiResponse.setCode(_ctx.stringValue("GetThesaurusBySynonymForApiResponse.Code"));
 		getThesaurusBySynonymForApiResponse.setMessage(_ctx.stringValue("GetThesaurusBySynonymForApiResponse.Message"));
+		getThesaurusBySynonymForApiResponse.setSuccess(_ctx.booleanValue("GetThesaurusBySynonymForApiResponse.Success"));
 
 		List<ThesaurusPo> data = new ArrayList<ThesaurusPo>();
 		for (int i = 0; i < _ctx.lengthValue("GetThesaurusBySynonymForApiResponse.Data.Length"); i++) {
 			ThesaurusPo thesaurusPo = new ThesaurusPo();
-			thesaurusPo.setId(_ctx.longValue("GetThesaurusBySynonymForApiResponse.Data["+ i +"].Id"));
 			thesaurusPo.setBusiness(_ctx.stringValue("GetThesaurusBySynonymForApiResponse.Data["+ i +"].Business"));
+			thesaurusPo.setId(_ctx.longValue("GetThesaurusBySynonymForApiResponse.Data["+ i +"].Id"));
 
 			List<String> synonymList = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("GetThesaurusBySynonymForApiResponse.Data["+ i +"].SynonymList.Length"); j++) {

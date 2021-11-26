@@ -23,10 +23,10 @@ public class CreateTaskAssignRuleResponseUnmarshaller {
 	public static CreateTaskAssignRuleResponse unmarshall(CreateTaskAssignRuleResponse createTaskAssignRuleResponse, UnmarshallerContext _ctx) {
 		
 		createTaskAssignRuleResponse.setRequestId(_ctx.stringValue("CreateTaskAssignRuleResponse.RequestId"));
-		createTaskAssignRuleResponse.setSuccess(_ctx.booleanValue("CreateTaskAssignRuleResponse.Success"));
 		createTaskAssignRuleResponse.setCode(_ctx.stringValue("CreateTaskAssignRuleResponse.Code"));
 		createTaskAssignRuleResponse.setMessage(_ctx.stringValue("CreateTaskAssignRuleResponse.Message"));
 		createTaskAssignRuleResponse.setData(_ctx.stringValue("CreateTaskAssignRuleResponse.Data"));
+		createTaskAssignRuleResponse.setSuccess(_ctx.booleanValue("CreateTaskAssignRuleResponse.Success"));
 	 
 	 	return createTaskAssignRuleResponse;
 	}

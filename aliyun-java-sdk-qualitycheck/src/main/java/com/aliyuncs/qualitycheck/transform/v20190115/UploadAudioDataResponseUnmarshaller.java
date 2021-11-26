@@ -23,10 +23,10 @@ public class UploadAudioDataResponseUnmarshaller {
 	public static UploadAudioDataResponse unmarshall(UploadAudioDataResponse uploadAudioDataResponse, UnmarshallerContext _ctx) {
 		
 		uploadAudioDataResponse.setRequestId(_ctx.stringValue("UploadAudioDataResponse.RequestId"));
-		uploadAudioDataResponse.setSuccess(_ctx.booleanValue("UploadAudioDataResponse.Success"));
 		uploadAudioDataResponse.setCode(_ctx.stringValue("UploadAudioDataResponse.Code"));
 		uploadAudioDataResponse.setMessage(_ctx.stringValue("UploadAudioDataResponse.Message"));
 		uploadAudioDataResponse.setData(_ctx.stringValue("UploadAudioDataResponse.Data"));
+		uploadAudioDataResponse.setSuccess(_ctx.booleanValue("UploadAudioDataResponse.Success"));
 	 
 	 	return uploadAudioDataResponse;
 	}

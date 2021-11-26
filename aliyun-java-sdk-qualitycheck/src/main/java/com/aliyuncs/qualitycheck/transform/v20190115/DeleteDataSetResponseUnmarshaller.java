@@ -23,9 +23,9 @@ public class DeleteDataSetResponseUnmarshaller {
 	public static DeleteDataSetResponse unmarshall(DeleteDataSetResponse deleteDataSetResponse, UnmarshallerContext _ctx) {
 		
 		deleteDataSetResponse.setRequestId(_ctx.stringValue("DeleteDataSetResponse.RequestId"));
-		deleteDataSetResponse.setSuccess(_ctx.booleanValue("DeleteDataSetResponse.Success"));
 		deleteDataSetResponse.setCode(_ctx.stringValue("DeleteDataSetResponse.Code"));
 		deleteDataSetResponse.setMessage(_ctx.stringValue("DeleteDataSetResponse.Message"));
+		deleteDataSetResponse.setSuccess(_ctx.booleanValue("DeleteDataSetResponse.Success"));
 	 
 	 	return deleteDataSetResponse;
 	}

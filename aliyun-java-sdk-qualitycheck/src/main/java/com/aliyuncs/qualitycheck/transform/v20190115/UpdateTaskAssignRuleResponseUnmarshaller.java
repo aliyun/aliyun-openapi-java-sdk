@@ -23,9 +23,9 @@ public class UpdateTaskAssignRuleResponseUnmarshaller {
 	public static UpdateTaskAssignRuleResponse unmarshall(UpdateTaskAssignRuleResponse updateTaskAssignRuleResponse, UnmarshallerContext _ctx) {
 		
 		updateTaskAssignRuleResponse.setRequestId(_ctx.stringValue("UpdateTaskAssignRuleResponse.RequestId"));
-		updateTaskAssignRuleResponse.setSuccess(_ctx.booleanValue("UpdateTaskAssignRuleResponse.Success"));
 		updateTaskAssignRuleResponse.setCode(_ctx.stringValue("UpdateTaskAssignRuleResponse.Code"));
 		updateTaskAssignRuleResponse.setMessage(_ctx.stringValue("UpdateTaskAssignRuleResponse.Message"));
+		updateTaskAssignRuleResponse.setSuccess(_ctx.booleanValue("UpdateTaskAssignRuleResponse.Success"));
 	 
 	 	return updateTaskAssignRuleResponse;
 	}

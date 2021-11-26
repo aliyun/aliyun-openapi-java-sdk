@@ -29,15 +29,15 @@ public class VerifySentenceResponse extends AcsResponse {
 
 	private Boolean success;
 
+	private Integer incorrectWords;
+
+	private Integer targetRole;
+
 	private String code;
 
 	private String message;
 
 	private Integer sourceRole;
-
-	private Integer targetRole;
-
-	private Integer incorrectWords;
 
 	private List<Delta> data;
 
@@ -55,6 +55,22 @@ public class VerifySentenceResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public Integer getIncorrectWords() {
+		return this.incorrectWords;
+	}
+
+	public void setIncorrectWords(Integer incorrectWords) {
+		this.incorrectWords = incorrectWords;
+	}
+
+	public Integer getTargetRole() {
+		return this.targetRole;
+	}
+
+	public void setTargetRole(Integer targetRole) {
+		this.targetRole = targetRole;
 	}
 
 	public String getCode() {
@@ -79,22 +95,6 @@ public class VerifySentenceResponse extends AcsResponse {
 
 	public void setSourceRole(Integer sourceRole) {
 		this.sourceRole = sourceRole;
-	}
-
-	public Integer getTargetRole() {
-		return this.targetRole;
-	}
-
-	public void setTargetRole(Integer targetRole) {
-		this.targetRole = targetRole;
-	}
-
-	public Integer getIncorrectWords() {
-		return this.incorrectWords;
-	}
-
-	public void setIncorrectWords(Integer incorrectWords) {
-		this.incorrectWords = incorrectWords;
 	}
 
 	public List<Delta> getData() {

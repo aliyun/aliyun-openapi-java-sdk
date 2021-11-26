@@ -107,33 +107,33 @@ public class ListTaskAssignRulesResponse extends AcsResponse {
 
 	public static class TaskAssignRuleInfo {
 
-		private Long ruleId;
+		private String updateTime;
 
-		private Integer enabled;
+		private String skillGroupsStr;
 
-		private Integer callType;
-
-		private Integer priority;
-
-		private Integer durationMin;
+		private Long callTimeEnd;
 
 		private Integer durationMax;
 
 		private String createTime;
 
-		private String updateTime;
+		private Integer priority;
+
+		private Integer durationMin;
 
 		private String agentsStr;
 
-		private String skillGroupsStr;
+		private String ruleName;
 
-		private Long callTimeStart;
-
-		private Long callTimeEnd;
+		private Long ruleId;
 
 		private Integer assignmentType;
 
-		private String ruleName;
+		private Integer callType;
+
+		private Integer enabled;
+
+		private Long callTimeStart;
 
 		private List<Agent> agents;
 
@@ -145,44 +145,28 @@ public class ListTaskAssignRulesResponse extends AcsResponse {
 
 		private SamplingMode samplingMode;
 
-		public Long getRuleId() {
-			return this.ruleId;
+		public String getUpdateTime() {
+			return this.updateTime;
 		}
 
-		public void setRuleId(Long ruleId) {
-			this.ruleId = ruleId;
+		public void setUpdateTime(String updateTime) {
+			this.updateTime = updateTime;
 		}
 
-		public Integer getEnabled() {
-			return this.enabled;
+		public String getSkillGroupsStr() {
+			return this.skillGroupsStr;
 		}
 
-		public void setEnabled(Integer enabled) {
-			this.enabled = enabled;
+		public void setSkillGroupsStr(String skillGroupsStr) {
+			this.skillGroupsStr = skillGroupsStr;
 		}
 
-		public Integer getCallType() {
-			return this.callType;
+		public Long getCallTimeEnd() {
+			return this.callTimeEnd;
 		}
 
-		public void setCallType(Integer callType) {
-			this.callType = callType;
-		}
-
-		public Integer getPriority() {
-			return this.priority;
-		}
-
-		public void setPriority(Integer priority) {
-			this.priority = priority;
-		}
-
-		public Integer getDurationMin() {
-			return this.durationMin;
-		}
-
-		public void setDurationMin(Integer durationMin) {
-			this.durationMin = durationMin;
+		public void setCallTimeEnd(Long callTimeEnd) {
+			this.callTimeEnd = callTimeEnd;
 		}
 
 		public Integer getDurationMax() {
@@ -201,12 +185,20 @@ public class ListTaskAssignRulesResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
-		public String getUpdateTime() {
-			return this.updateTime;
+		public Integer getPriority() {
+			return this.priority;
 		}
 
-		public void setUpdateTime(String updateTime) {
-			this.updateTime = updateTime;
+		public void setPriority(Integer priority) {
+			this.priority = priority;
+		}
+
+		public Integer getDurationMin() {
+			return this.durationMin;
+		}
+
+		public void setDurationMin(Integer durationMin) {
+			this.durationMin = durationMin;
 		}
 
 		public String getAgentsStr() {
@@ -217,28 +209,20 @@ public class ListTaskAssignRulesResponse extends AcsResponse {
 			this.agentsStr = agentsStr;
 		}
 
-		public String getSkillGroupsStr() {
-			return this.skillGroupsStr;
+		public String getRuleName() {
+			return this.ruleName;
 		}
 
-		public void setSkillGroupsStr(String skillGroupsStr) {
-			this.skillGroupsStr = skillGroupsStr;
+		public void setRuleName(String ruleName) {
+			this.ruleName = ruleName;
 		}
 
-		public Long getCallTimeStart() {
-			return this.callTimeStart;
+		public Long getRuleId() {
+			return this.ruleId;
 		}
 
-		public void setCallTimeStart(Long callTimeStart) {
-			this.callTimeStart = callTimeStart;
-		}
-
-		public Long getCallTimeEnd() {
-			return this.callTimeEnd;
-		}
-
-		public void setCallTimeEnd(Long callTimeEnd) {
-			this.callTimeEnd = callTimeEnd;
+		public void setRuleId(Long ruleId) {
+			this.ruleId = ruleId;
 		}
 
 		public Integer getAssignmentType() {
@@ -249,12 +233,28 @@ public class ListTaskAssignRulesResponse extends AcsResponse {
 			this.assignmentType = assignmentType;
 		}
 
-		public String getRuleName() {
-			return this.ruleName;
+		public Integer getCallType() {
+			return this.callType;
 		}
 
-		public void setRuleName(String ruleName) {
-			this.ruleName = ruleName;
+		public void setCallType(Integer callType) {
+			this.callType = callType;
+		}
+
+		public Integer getEnabled() {
+			return this.enabled;
+		}
+
+		public void setEnabled(Integer enabled) {
+			this.enabled = enabled;
+		}
+
+		public Long getCallTimeStart() {
+			return this.callTimeStart;
+		}
+
+		public void setCallTimeStart(Long callTimeStart) {
+			this.callTimeStart = callTimeStart;
 		}
 
 		public List<Agent> getAgents() {
@@ -299,17 +299,9 @@ public class ListTaskAssignRulesResponse extends AcsResponse {
 
 		public static class Agent {
 
-			private String agentId;
-
 			private String agentName;
 
-			public String getAgentId() {
-				return this.agentId;
-			}
-
-			public void setAgentId(String agentId) {
-				this.agentId = agentId;
-			}
+			private String agentId;
 
 			public String getAgentName() {
 				return this.agentName;
@@ -318,21 +310,21 @@ public class ListTaskAssignRulesResponse extends AcsResponse {
 			public void setAgentName(String agentName) {
 				this.agentName = agentName;
 			}
+
+			public String getAgentId() {
+				return this.agentId;
+			}
+
+			public void setAgentId(String agentId) {
+				this.agentId = agentId;
+			}
 		}
 
 		public static class SkillGroup {
 
-			private String skillId;
-
 			private String skillName;
 
-			public String getSkillId() {
-				return this.skillId;
-			}
-
-			public void setSkillId(String skillId) {
-				this.skillId = skillId;
-			}
+			private String skillId;
 
 			public String getSkillName() {
 				return this.skillName;
@@ -340,6 +332,14 @@ public class ListTaskAssignRulesResponse extends AcsResponse {
 
 			public void setSkillName(String skillName) {
 				this.skillName = skillName;
+			}
+
+			public String getSkillId() {
+				return this.skillId;
+			}
+
+			public void setSkillId(String skillId) {
+				this.skillId = skillId;
 			}
 		}
 
@@ -368,17 +368,9 @@ public class ListTaskAssignRulesResponse extends AcsResponse {
 
 		public static class RuleBasicInfo {
 
-			private String rid;
-
 			private String name;
 
-			public String getRid() {
-				return this.rid;
-			}
-
-			public void setRid(String rid) {
-				this.rid = rid;
-			}
+			private String rid;
 
 			public String getName() {
 				return this.name;
@@ -387,49 +379,33 @@ public class ListTaskAssignRulesResponse extends AcsResponse {
 			public void setName(String name) {
 				this.name = name;
 			}
+
+			public String getRid() {
+				return this.rid;
+			}
+
+			public void setRid(String rid) {
+				this.rid = rid;
+			}
 		}
 
 		public static class SamplingMode {
 
-			private Integer dimension;
-
-			private Float proportion;
-
-			private Integer limit;
-
 			private Integer numberOfDraws;
 
 			private Integer anyNumberOfDraws;
+
+			private Integer limit;
+
+			private Float proportion;
+
+			private Integer dimension;
 
 			private Boolean designated;
 
 			private Integer randomInspectionNumber;
 
 			private List<SamplingModeAgent> samplingModeAgents;
-
-			public Integer getDimension() {
-				return this.dimension;
-			}
-
-			public void setDimension(Integer dimension) {
-				this.dimension = dimension;
-			}
-
-			public Float getProportion() {
-				return this.proportion;
-			}
-
-			public void setProportion(Float proportion) {
-				this.proportion = proportion;
-			}
-
-			public Integer getLimit() {
-				return this.limit;
-			}
-
-			public void setLimit(Integer limit) {
-				this.limit = limit;
-			}
 
 			public Integer getNumberOfDraws() {
 				return this.numberOfDraws;
@@ -445,6 +421,30 @@ public class ListTaskAssignRulesResponse extends AcsResponse {
 
 			public void setAnyNumberOfDraws(Integer anyNumberOfDraws) {
 				this.anyNumberOfDraws = anyNumberOfDraws;
+			}
+
+			public Integer getLimit() {
+				return this.limit;
+			}
+
+			public void setLimit(Integer limit) {
+				this.limit = limit;
+			}
+
+			public Float getProportion() {
+				return this.proportion;
+			}
+
+			public void setProportion(Float proportion) {
+				this.proportion = proportion;
+			}
+
+			public Integer getDimension() {
+				return this.dimension;
+			}
+
+			public void setDimension(Integer dimension) {
+				this.dimension = dimension;
 			}
 
 			public Boolean getDesignated() {
@@ -473,17 +473,9 @@ public class ListTaskAssignRulesResponse extends AcsResponse {
 
 			public static class SamplingModeAgent {
 
-				private String agentId;
-
 				private String agentName;
 
-				public String getAgentId() {
-					return this.agentId;
-				}
-
-				public void setAgentId(String agentId) {
-					this.agentId = agentId;
-				}
+				private String agentId;
 
 				public String getAgentName() {
 					return this.agentName;
@@ -491,6 +483,14 @@ public class ListTaskAssignRulesResponse extends AcsResponse {
 
 				public void setAgentName(String agentName) {
 					this.agentName = agentName;
+				}
+
+				public String getAgentId() {
+					return this.agentId;
+				}
+
+				public void setAgentId(String agentId) {
+					this.agentId = agentId;
 				}
 			}
 		}

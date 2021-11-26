@@ -24,9 +24,9 @@ public class InsertScoreForApiResponseUnmarshaller {
 	public static InsertScoreForApiResponse unmarshall(InsertScoreForApiResponse insertScoreForApiResponse, UnmarshallerContext _ctx) {
 		
 		insertScoreForApiResponse.setRequestId(_ctx.stringValue("InsertScoreForApiResponse.RequestId"));
-		insertScoreForApiResponse.setSuccess(_ctx.booleanValue("InsertScoreForApiResponse.Success"));
 		insertScoreForApiResponse.setCode(_ctx.stringValue("InsertScoreForApiResponse.Code"));
 		insertScoreForApiResponse.setMessage(_ctx.stringValue("InsertScoreForApiResponse.Message"));
+		insertScoreForApiResponse.setSuccess(_ctx.booleanValue("InsertScoreForApiResponse.Success"));
 
 		Data data = new Data();
 		data.setScoreId(_ctx.longValue("InsertScoreForApiResponse.Data.ScoreId"));

@@ -23,9 +23,9 @@ public class AssignReviewerResponseUnmarshaller {
 	public static AssignReviewerResponse unmarshall(AssignReviewerResponse assignReviewerResponse, UnmarshallerContext _ctx) {
 		
 		assignReviewerResponse.setRequestId(_ctx.stringValue("AssignReviewerResponse.RequestId"));
-		assignReviewerResponse.setSuccess(_ctx.booleanValue("AssignReviewerResponse.Success"));
 		assignReviewerResponse.setCode(_ctx.stringValue("AssignReviewerResponse.Code"));
 		assignReviewerResponse.setMessage(_ctx.stringValue("AssignReviewerResponse.Message"));
+		assignReviewerResponse.setSuccess(_ctx.booleanValue("AssignReviewerResponse.Success"));
 	 
 	 	return assignReviewerResponse;
 	}

@@ -23,10 +23,10 @@ public class SubmitComplaintResponseUnmarshaller {
 	public static SubmitComplaintResponse unmarshall(SubmitComplaintResponse submitComplaintResponse, UnmarshallerContext _ctx) {
 		
 		submitComplaintResponse.setRequestId(_ctx.stringValue("SubmitComplaintResponse.RequestId"));
-		submitComplaintResponse.setSuccess(_ctx.booleanValue("SubmitComplaintResponse.Success"));
 		submitComplaintResponse.setCode(_ctx.stringValue("SubmitComplaintResponse.Code"));
 		submitComplaintResponse.setMessage(_ctx.stringValue("SubmitComplaintResponse.Message"));
 		submitComplaintResponse.setData(_ctx.stringValue("SubmitComplaintResponse.Data"));
+		submitComplaintResponse.setSuccess(_ctx.booleanValue("SubmitComplaintResponse.Success"));
 	 
 	 	return submitComplaintResponse;
 	}

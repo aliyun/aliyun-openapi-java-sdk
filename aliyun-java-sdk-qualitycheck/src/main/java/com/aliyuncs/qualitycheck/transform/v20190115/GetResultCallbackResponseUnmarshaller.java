@@ -23,9 +23,9 @@ public class GetResultCallbackResponseUnmarshaller {
 	public static GetResultCallbackResponse unmarshall(GetResultCallbackResponse getResultCallbackResponse, UnmarshallerContext _ctx) {
 		
 		getResultCallbackResponse.setRequestId(_ctx.stringValue("GetResultCallbackResponse.RequestId"));
-		getResultCallbackResponse.setSuccess(_ctx.booleanValue("GetResultCallbackResponse.Success"));
 		getResultCallbackResponse.setCode(_ctx.stringValue("GetResultCallbackResponse.Code"));
 		getResultCallbackResponse.setMessage(_ctx.stringValue("GetResultCallbackResponse.Message"));
+		getResultCallbackResponse.setSuccess(_ctx.booleanValue("GetResultCallbackResponse.Success"));
 	 
 	 	return getResultCallbackResponse;
 	}

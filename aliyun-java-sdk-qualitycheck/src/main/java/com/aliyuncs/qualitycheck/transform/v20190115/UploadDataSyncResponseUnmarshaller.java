@@ -32,9 +32,9 @@ public class UploadDataSyncResponseUnmarshaller {
 	public static UploadDataSyncResponse unmarshall(UploadDataSyncResponse uploadDataSyncResponse, UnmarshallerContext _ctx) {
 		
 		uploadDataSyncResponse.setRequestId(_ctx.stringValue("UploadDataSyncResponse.RequestId"));
-		uploadDataSyncResponse.setSuccess(_ctx.booleanValue("UploadDataSyncResponse.Success"));
 		uploadDataSyncResponse.setCode(_ctx.stringValue("UploadDataSyncResponse.Code"));
 		uploadDataSyncResponse.setMessage(_ctx.stringValue("UploadDataSyncResponse.Message"));
+		uploadDataSyncResponse.setSuccess(_ctx.booleanValue("UploadDataSyncResponse.Success"));
 
 		List<ResultInfo> data = new ArrayList<ResultInfo>();
 		for (int i = 0; i < _ctx.lengthValue("UploadDataSyncResponse.Data.Length"); i++) {
@@ -50,8 +50,8 @@ public class UploadDataSyncResponseUnmarshaller {
 			List<RuleHitInfo> rules = new ArrayList<RuleHitInfo>();
 			for (int j = 0; j < _ctx.lengthValue("UploadDataSyncResponse.Data["+ i +"].Rules.Length"); j++) {
 				RuleHitInfo ruleHitInfo = new RuleHitInfo();
-				ruleHitInfo.setRid(_ctx.stringValue("UploadDataSyncResponse.Data["+ i +"].Rules["+ j +"].Rid"));
 				ruleHitInfo.setTid(_ctx.stringValue("UploadDataSyncResponse.Data["+ i +"].Rules["+ j +"].Tid"));
+				ruleHitInfo.setRid(_ctx.stringValue("UploadDataSyncResponse.Data["+ i +"].Rules["+ j +"].Rid"));
 
 				List<ConditionHitInfo> hit = new ArrayList<ConditionHitInfo>();
 				for (int k = 0; k < _ctx.lengthValue("UploadDataSyncResponse.Data["+ i +"].Rules["+ j +"].Hit.Length"); k++) {
@@ -64,22 +64,22 @@ public class UploadDataSyncResponseUnmarshaller {
 					conditionHitInfo.setHitCids(hitCids);
 
 					Phrase phrase = new Phrase();
-					phrase.setRole(_ctx.stringValue("UploadDataSyncResponse.Data["+ i +"].Rules["+ j +"].Hit["+ k +"].Phrase.Role"));
-					phrase.setIdentity(_ctx.stringValue("UploadDataSyncResponse.Data["+ i +"].Rules["+ j +"].Hit["+ k +"].Phrase.Identity"));
 					phrase.setWords(_ctx.stringValue("UploadDataSyncResponse.Data["+ i +"].Rules["+ j +"].Hit["+ k +"].Phrase.Words"));
+					phrase.setIdentity(_ctx.stringValue("UploadDataSyncResponse.Data["+ i +"].Rules["+ j +"].Hit["+ k +"].Phrase.Identity"));
 					phrase.setBegin(_ctx.longValue("UploadDataSyncResponse.Data["+ i +"].Rules["+ j +"].Hit["+ k +"].Phrase.Begin"));
-					phrase.setEnd(_ctx.longValue("UploadDataSyncResponse.Data["+ i +"].Rules["+ j +"].Hit["+ k +"].Phrase.End"));
 					phrase.setBeginTime(_ctx.stringValue("UploadDataSyncResponse.Data["+ i +"].Rules["+ j +"].Hit["+ k +"].Phrase.BeginTime"));
+					phrase.setEnd(_ctx.longValue("UploadDataSyncResponse.Data["+ i +"].Rules["+ j +"].Hit["+ k +"].Phrase.End"));
+					phrase.setRole(_ctx.stringValue("UploadDataSyncResponse.Data["+ i +"].Rules["+ j +"].Hit["+ k +"].Phrase.Role"));
 					conditionHitInfo.setPhrase(phrase);
 
 					List<HitKeyWord> hitKeyWords = new ArrayList<HitKeyWord>();
 					for (int l = 0; l < _ctx.lengthValue("UploadDataSyncResponse.Data["+ i +"].Rules["+ j +"].Hit["+ k +"].HitKeyWords.Length"); l++) {
 						HitKeyWord hitKeyWord = new HitKeyWord();
-						hitKeyWord.setVal(_ctx.stringValue("UploadDataSyncResponse.Data["+ i +"].Rules["+ j +"].Hit["+ k +"].HitKeyWords["+ l +"].Val"));
-						hitKeyWord.setPid(_ctx.integerValue("UploadDataSyncResponse.Data["+ i +"].Rules["+ j +"].Hit["+ k +"].HitKeyWords["+ l +"].Pid"));
-						hitKeyWord.setFrom(_ctx.integerValue("UploadDataSyncResponse.Data["+ i +"].Rules["+ j +"].Hit["+ k +"].HitKeyWords["+ l +"].From"));
 						hitKeyWord.setTo(_ctx.integerValue("UploadDataSyncResponse.Data["+ i +"].Rules["+ j +"].Hit["+ k +"].HitKeyWords["+ l +"].To"));
+						hitKeyWord.setFrom(_ctx.integerValue("UploadDataSyncResponse.Data["+ i +"].Rules["+ j +"].Hit["+ k +"].HitKeyWords["+ l +"].From"));
+						hitKeyWord.setVal(_ctx.stringValue("UploadDataSyncResponse.Data["+ i +"].Rules["+ j +"].Hit["+ k +"].HitKeyWords["+ l +"].Val"));
 						hitKeyWord.setTid(_ctx.stringValue("UploadDataSyncResponse.Data["+ i +"].Rules["+ j +"].Hit["+ k +"].HitKeyWords["+ l +"].Tid"));
+						hitKeyWord.setPid(_ctx.integerValue("UploadDataSyncResponse.Data["+ i +"].Rules["+ j +"].Hit["+ k +"].HitKeyWords["+ l +"].Pid"));
 
 						hitKeyWords.add(hitKeyWord);
 					}

@@ -23,10 +23,10 @@ public class SubmitQualityCheckTaskResponseUnmarshaller {
 	public static SubmitQualityCheckTaskResponse unmarshall(SubmitQualityCheckTaskResponse submitQualityCheckTaskResponse, UnmarshallerContext _ctx) {
 		
 		submitQualityCheckTaskResponse.setRequestId(_ctx.stringValue("SubmitQualityCheckTaskResponse.RequestId"));
-		submitQualityCheckTaskResponse.setSuccess(_ctx.booleanValue("SubmitQualityCheckTaskResponse.Success"));
 		submitQualityCheckTaskResponse.setCode(_ctx.stringValue("SubmitQualityCheckTaskResponse.Code"));
 		submitQualityCheckTaskResponse.setMessage(_ctx.stringValue("SubmitQualityCheckTaskResponse.Message"));
 		submitQualityCheckTaskResponse.setData(_ctx.stringValue("SubmitQualityCheckTaskResponse.Data"));
+		submitQualityCheckTaskResponse.setSuccess(_ctx.booleanValue("SubmitQualityCheckTaskResponse.Success"));
 	 
 	 	return submitQualityCheckTaskResponse;
 	}

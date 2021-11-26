@@ -107,39 +107,23 @@ public class ListUsersResponse extends AcsResponse {
 
 	public static class User {
 
-		private Long id;
-
-		private String userName;
-
 		private String displayName;
-
-		private String createTime;
 
 		private String updateTime;
 
 		private String description;
 
+		private String createTime;
+
+		private Integer loginUserType;
+
 		private String aliUid;
 
 		private String roleName;
 
-		private Integer loginUserType;
+		private String userName;
 
-		public Long getId() {
-			return this.id;
-		}
-
-		public void setId(Long id) {
-			this.id = id;
-		}
-
-		public String getUserName() {
-			return this.userName;
-		}
-
-		public void setUserName(String userName) {
-			this.userName = userName;
-		}
+		private Long id;
 
 		public String getDisplayName() {
 			return this.displayName;
@@ -147,14 +131,6 @@ public class ListUsersResponse extends AcsResponse {
 
 		public void setDisplayName(String displayName) {
 			this.displayName = displayName;
-		}
-
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
 		}
 
 		public String getUpdateTime() {
@@ -173,6 +149,22 @@ public class ListUsersResponse extends AcsResponse {
 			this.description = description;
 		}
 
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
+
+		public Integer getLoginUserType() {
+			return this.loginUserType;
+		}
+
+		public void setLoginUserType(Integer loginUserType) {
+			this.loginUserType = loginUserType;
+		}
+
 		public String getAliUid() {
 			return this.aliUid;
 		}
@@ -189,12 +181,20 @@ public class ListUsersResponse extends AcsResponse {
 			this.roleName = roleName;
 		}
 
-		public Integer getLoginUserType() {
-			return this.loginUserType;
+		public String getUserName() {
+			return this.userName;
 		}
 
-		public void setLoginUserType(Integer loginUserType) {
-			this.loginUserType = loginUserType;
+		public void setUserName(String userName) {
+			this.userName = userName;
+		}
+
+		public Long getId() {
+			return this.id;
+		}
+
+		public void setId(Long id) {
+			this.id = id;
 		}
 	}
 

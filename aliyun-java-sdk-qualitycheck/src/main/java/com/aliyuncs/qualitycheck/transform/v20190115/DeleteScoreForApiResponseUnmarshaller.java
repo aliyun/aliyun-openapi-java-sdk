@@ -23,9 +23,9 @@ public class DeleteScoreForApiResponseUnmarshaller {
 	public static DeleteScoreForApiResponse unmarshall(DeleteScoreForApiResponse deleteScoreForApiResponse, UnmarshallerContext _ctx) {
 		
 		deleteScoreForApiResponse.setRequestId(_ctx.stringValue("DeleteScoreForApiResponse.RequestId"));
-		deleteScoreForApiResponse.setSuccess(_ctx.booleanValue("DeleteScoreForApiResponse.Success"));
 		deleteScoreForApiResponse.setCode(_ctx.stringValue("DeleteScoreForApiResponse.Code"));
 		deleteScoreForApiResponse.setMessage(_ctx.stringValue("DeleteScoreForApiResponse.Message"));
+		deleteScoreForApiResponse.setSuccess(_ctx.booleanValue("DeleteScoreForApiResponse.Success"));
 	 
 	 	return deleteScoreForApiResponse;
 	}

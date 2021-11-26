@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetAsrVocabResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String message;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -65,6 +49,22 @@ public class GetAsrVocabResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Data getData() {
@@ -99,17 +99,9 @@ public class GetAsrVocabResponse extends AcsResponse {
 
 		public static class Word {
 
-			private String word;
-
 			private Integer weight;
 
-			public String getWord() {
-				return this.word;
-			}
-
-			public void setWord(String word) {
-				this.word = word;
-			}
+			private String word;
 
 			public Integer getWeight() {
 				return this.weight;
@@ -117,6 +109,14 @@ public class GetAsrVocabResponse extends AcsResponse {
 
 			public void setWeight(Integer weight) {
 				this.weight = weight;
+			}
+
+			public String getWord() {
+				return this.word;
+			}
+
+			public void setWord(String word) {
+				this.word = word;
 			}
 		}
 	}

@@ -35,62 +35,63 @@ public class GetSyncResultResponseUnmarshaller {
 		
 		getSyncResultResponse.setRequestId(_ctx.stringValue("GetSyncResultResponse.RequestId"));
 		getSyncResultResponse.setSuccess(_ctx.booleanValue("GetSyncResultResponse.Success"));
+		getSyncResultResponse.setResultCountId(_ctx.stringValue("GetSyncResultResponse.ResultCountId"));
 		getSyncResultResponse.setCode(_ctx.stringValue("GetSyncResultResponse.Code"));
 		getSyncResultResponse.setMessage(_ctx.stringValue("GetSyncResultResponse.Message"));
-		getSyncResultResponse.setCount(_ctx.integerValue("GetSyncResultResponse.Count"));
-		getSyncResultResponse.setPageSize(_ctx.integerValue("GetSyncResultResponse.PageSize"));
 		getSyncResultResponse.setPageNumber(_ctx.integerValue("GetSyncResultResponse.PageNumber"));
-		getSyncResultResponse.setResultCountId(_ctx.stringValue("GetSyncResultResponse.ResultCountId"));
+		getSyncResultResponse.setPageSize(_ctx.integerValue("GetSyncResultResponse.PageSize"));
+		getSyncResultResponse.setCount(_ctx.integerValue("GetSyncResultResponse.Count"));
 
 		List<ResultInfo> data = new ArrayList<ResultInfo>();
 		for (int i = 0; i < _ctx.lengthValue("GetSyncResultResponse.Data.Length"); i++) {
 			ResultInfo resultInfo = new ResultInfo();
-			resultInfo.setScore(_ctx.integerValue("GetSyncResultResponse.Data["+ i +"].Score"));
-			resultInfo.setComments(_ctx.stringValue("GetSyncResultResponse.Data["+ i +"].Comments"));
-			resultInfo.setErrorMessage(_ctx.stringValue("GetSyncResultResponse.Data["+ i +"].ErrorMessage"));
 			resultInfo.setStatus(_ctx.integerValue("GetSyncResultResponse.Data["+ i +"].Status"));
-			resultInfo.setReviewStatus(_ctx.integerValue("GetSyncResultResponse.Data["+ i +"].ReviewStatus"));
-			resultInfo.setReviewResult(_ctx.integerValue("GetSyncResultResponse.Data["+ i +"].ReviewResult"));
-			resultInfo.setTaskId(_ctx.stringValue("GetSyncResultResponse.Data["+ i +"].TaskId"));
-			resultInfo.setTaskName(_ctx.stringValue("GetSyncResultResponse.Data["+ i +"].TaskName"));
-			resultInfo.setCreateTime(_ctx.stringValue("GetSyncResultResponse.Data["+ i +"].CreateTime"));
+			resultInfo.setErrorMessage(_ctx.stringValue("GetSyncResultResponse.Data["+ i +"].ErrorMessage"));
 			resultInfo.setReviewer(_ctx.stringValue("GetSyncResultResponse.Data["+ i +"].Reviewer"));
+			resultInfo.setCreateTime(_ctx.stringValue("GetSyncResultResponse.Data["+ i +"].CreateTime"));
+			resultInfo.setReviewStatus(_ctx.integerValue("GetSyncResultResponse.Data["+ i +"].ReviewStatus"));
+			resultInfo.setTaskName(_ctx.stringValue("GetSyncResultResponse.Data["+ i +"].TaskName"));
+			resultInfo.setComments(_ctx.stringValue("GetSyncResultResponse.Data["+ i +"].Comments"));
+			resultInfo.setReviewResult(_ctx.integerValue("GetSyncResultResponse.Data["+ i +"].ReviewResult"));
+			resultInfo.setScore(_ctx.integerValue("GetSyncResultResponse.Data["+ i +"].Score"));
+			resultInfo.setTaskId(_ctx.stringValue("GetSyncResultResponse.Data["+ i +"].TaskId"));
 			resultInfo.setResolver(_ctx.stringValue("GetSyncResultResponse.Data["+ i +"].Resolver"));
 
 			Recording recording = new Recording();
-			recording.setId(_ctx.stringValue("GetSyncResultResponse.Data["+ i +"].Recording.Id"));
-			recording.setPrimaryId(_ctx.stringValue("GetSyncResultResponse.Data["+ i +"].Recording.PrimaryId"));
-			recording.setCallId(_ctx.stringValue("GetSyncResultResponse.Data["+ i +"].Recording.CallId"));
-			recording.setName(_ctx.stringValue("GetSyncResultResponse.Data["+ i +"].Recording.Name"));
-			recording.setUrl(_ctx.stringValue("GetSyncResultResponse.Data["+ i +"].Recording.Url"));
-			recording.setDataSetName(_ctx.stringValue("GetSyncResultResponse.Data["+ i +"].Recording.DataSetName"));
-			recording.setDuration(_ctx.longValue("GetSyncResultResponse.Data["+ i +"].Recording.Duration"));
-			recording.setCaller(_ctx.stringValue("GetSyncResultResponse.Data["+ i +"].Recording.Caller"));
 			recording.setCallee(_ctx.stringValue("GetSyncResultResponse.Data["+ i +"].Recording.Callee"));
-			recording.setCallTime(_ctx.stringValue("GetSyncResultResponse.Data["+ i +"].Recording.CallTime"));
-			recording.setCallType(_ctx.integerValue("GetSyncResultResponse.Data["+ i +"].Recording.CallType"));
+			recording.setRemark3(_ctx.stringValue("GetSyncResultResponse.Data["+ i +"].Recording.Remark3"));
 			recording.setBusiness(_ctx.stringValue("GetSyncResultResponse.Data["+ i +"].Recording.Business"));
+			recording.setUrl(_ctx.stringValue("GetSyncResultResponse.Data["+ i +"].Recording.Url"));
+			recording.setPrimaryId(_ctx.stringValue("GetSyncResultResponse.Data["+ i +"].Recording.PrimaryId"));
 			recording.setRemark1(_ctx.stringValue("GetSyncResultResponse.Data["+ i +"].Recording.Remark1"));
 			recording.setRemark2(_ctx.stringValue("GetSyncResultResponse.Data["+ i +"].Recording.Remark2"));
-			recording.setRemark3(_ctx.stringValue("GetSyncResultResponse.Data["+ i +"].Recording.Remark3"));
+			recording.setCallType(_ctx.integerValue("GetSyncResultResponse.Data["+ i +"].Recording.CallType"));
+			recording.setCaller(_ctx.stringValue("GetSyncResultResponse.Data["+ i +"].Recording.Caller"));
+			recording.setCallId(_ctx.stringValue("GetSyncResultResponse.Data["+ i +"].Recording.CallId"));
+			recording.setDataSetName(_ctx.stringValue("GetSyncResultResponse.Data["+ i +"].Recording.DataSetName"));
+			recording.setDuration(_ctx.longValue("GetSyncResultResponse.Data["+ i +"].Recording.Duration"));
+			recording.setDurationAudio(_ctx.longValue("GetSyncResultResponse.Data["+ i +"].Recording.DurationAudio"));
+			recording.setName(_ctx.stringValue("GetSyncResultResponse.Data["+ i +"].Recording.Name"));
+			recording.setId(_ctx.stringValue("GetSyncResultResponse.Data["+ i +"].Recording.Id"));
+			recording.setCallTime(_ctx.stringValue("GetSyncResultResponse.Data["+ i +"].Recording.CallTime"));
 			resultInfo.setRecording(recording);
 
 			Agent agent = new Agent();
-			agent.setId(_ctx.stringValue("GetSyncResultResponse.Data["+ i +"].Agent.Id"));
 			agent.setName(_ctx.stringValue("GetSyncResultResponse.Data["+ i +"].Agent.Name"));
 			agent.setSkillGroup(_ctx.stringValue("GetSyncResultResponse.Data["+ i +"].Agent.SkillGroup"));
+			agent.setId(_ctx.stringValue("GetSyncResultResponse.Data["+ i +"].Agent.Id"));
 			resultInfo.setAgent(agent);
 
 			List<AsrResultItem> asrResult = new ArrayList<AsrResultItem>();
 			for (int j = 0; j < _ctx.lengthValue("GetSyncResultResponse.Data["+ i +"].AsrResult.Length"); j++) {
 				AsrResultItem asrResultItem = new AsrResultItem();
-				asrResultItem.setRole(_ctx.stringValue("GetSyncResultResponse.Data["+ i +"].AsrResult["+ j +"].Role"));
 				asrResultItem.setWords(_ctx.stringValue("GetSyncResultResponse.Data["+ i +"].AsrResult["+ j +"].Words"));
 				asrResultItem.setBegin(_ctx.longValue("GetSyncResultResponse.Data["+ i +"].AsrResult["+ j +"].Begin"));
-				asrResultItem.setEnd(_ctx.longValue("GetSyncResultResponse.Data["+ i +"].AsrResult["+ j +"].End"));
 				asrResultItem.setEmotionValue(_ctx.integerValue("GetSyncResultResponse.Data["+ i +"].AsrResult["+ j +"].EmotionValue"));
-				asrResultItem.setSilenceDuration(_ctx.integerValue("GetSyncResultResponse.Data["+ i +"].AsrResult["+ j +"].SilenceDuration"));
+				asrResultItem.setEnd(_ctx.longValue("GetSyncResultResponse.Data["+ i +"].AsrResult["+ j +"].End"));
 				asrResultItem.setSpeechRate(_ctx.integerValue("GetSyncResultResponse.Data["+ i +"].AsrResult["+ j +"].SpeechRate"));
+				asrResultItem.setRole(_ctx.stringValue("GetSyncResultResponse.Data["+ i +"].AsrResult["+ j +"].Role"));
+				asrResultItem.setSilenceDuration(_ctx.integerValue("GetSyncResultResponse.Data["+ i +"].AsrResult["+ j +"].SilenceDuration"));
 
 				asrResult.add(asrResultItem);
 			}
@@ -99,10 +100,10 @@ public class GetSyncResultResponseUnmarshaller {
 			List<HitResultItem> hitResult = new ArrayList<HitResultItem>();
 			for (int j = 0; j < _ctx.lengthValue("GetSyncResultResponse.Data["+ i +"].HitResult.Length"); j++) {
 				HitResultItem hitResultItem = new HitResultItem();
-				hitResultItem.setRid(_ctx.stringValue("GetSyncResultResponse.Data["+ i +"].HitResult["+ j +"].Rid"));
-				hitResultItem.setName(_ctx.stringValue("GetSyncResultResponse.Data["+ i +"].HitResult["+ j +"].Name"));
 				hitResultItem.setType(_ctx.stringValue("GetSyncResultResponse.Data["+ i +"].HitResult["+ j +"].Type"));
 				hitResultItem.setReviewResult(_ctx.integerValue("GetSyncResultResponse.Data["+ i +"].HitResult["+ j +"].ReviewResult"));
+				hitResultItem.setName(_ctx.stringValue("GetSyncResultResponse.Data["+ i +"].HitResult["+ j +"].Name"));
+				hitResultItem.setRid(_ctx.stringValue("GetSyncResultResponse.Data["+ i +"].HitResult["+ j +"].Rid"));
 
 				List<Hit> hits = new ArrayList<Hit>();
 				for (int k = 0; k < _ctx.lengthValue("GetSyncResultResponse.Data["+ i +"].HitResult["+ j +"].Hits.Length"); k++) {
@@ -115,22 +116,22 @@ public class GetSyncResultResponseUnmarshaller {
 					hit.setCid(cid);
 
 					Phrase phrase = new Phrase();
-					phrase.setRole(_ctx.stringValue("GetSyncResultResponse.Data["+ i +"].HitResult["+ j +"].Hits["+ k +"].Phrase.Role"));
 					phrase.setWords(_ctx.stringValue("GetSyncResultResponse.Data["+ i +"].HitResult["+ j +"].Hits["+ k +"].Phrase.Words"));
 					phrase.setBegin(_ctx.longValue("GetSyncResultResponse.Data["+ i +"].HitResult["+ j +"].Hits["+ k +"].Phrase.Begin"));
-					phrase.setEnd(_ctx.integerValue("GetSyncResultResponse.Data["+ i +"].HitResult["+ j +"].Hits["+ k +"].Phrase.End"));
 					phrase.setEmotionValue(_ctx.integerValue("GetSyncResultResponse.Data["+ i +"].HitResult["+ j +"].Hits["+ k +"].Phrase.EmotionValue"));
-					phrase.setSilenceDuration(_ctx.integerValue("GetSyncResultResponse.Data["+ i +"].HitResult["+ j +"].Hits["+ k +"].Phrase.SilenceDuration"));
+					phrase.setEnd(_ctx.integerValue("GetSyncResultResponse.Data["+ i +"].HitResult["+ j +"].Hits["+ k +"].Phrase.End"));
 					phrase.setSpeechRate(_ctx.integerValue("GetSyncResultResponse.Data["+ i +"].HitResult["+ j +"].Hits["+ k +"].Phrase.SpeechRate"));
+					phrase.setRole(_ctx.stringValue("GetSyncResultResponse.Data["+ i +"].HitResult["+ j +"].Hits["+ k +"].Phrase.Role"));
+					phrase.setSilenceDuration(_ctx.integerValue("GetSyncResultResponse.Data["+ i +"].HitResult["+ j +"].Hits["+ k +"].Phrase.SilenceDuration"));
 					hit.setPhrase(phrase);
 
 					List<KeyWord> keyWords = new ArrayList<KeyWord>();
 					for (int l = 0; l < _ctx.lengthValue("GetSyncResultResponse.Data["+ i +"].HitResult["+ j +"].Hits["+ k +"].KeyWords.Length"); l++) {
 						KeyWord keyWord = new KeyWord();
-						keyWord.setCid(_ctx.stringValue("GetSyncResultResponse.Data["+ i +"].HitResult["+ j +"].Hits["+ k +"].KeyWords["+ l +"].Cid"));
 						keyWord.setFrom(_ctx.integerValue("GetSyncResultResponse.Data["+ i +"].HitResult["+ j +"].Hits["+ k +"].KeyWords["+ l +"].From"));
 						keyWord.setTo(_ctx.integerValue("GetSyncResultResponse.Data["+ i +"].HitResult["+ j +"].Hits["+ k +"].KeyWords["+ l +"].To"));
 						keyWord.setVal(_ctx.stringValue("GetSyncResultResponse.Data["+ i +"].HitResult["+ j +"].Hits["+ k +"].KeyWords["+ l +"].Val"));
+						keyWord.setCid(_ctx.stringValue("GetSyncResultResponse.Data["+ i +"].HitResult["+ j +"].Hits["+ k +"].KeyWords["+ l +"].Cid"));
 
 						keyWords.add(keyWord);
 					}

@@ -23,9 +23,9 @@ public class UpdateSubScoreForApiResponseUnmarshaller {
 	public static UpdateSubScoreForApiResponse unmarshall(UpdateSubScoreForApiResponse updateSubScoreForApiResponse, UnmarshallerContext _ctx) {
 		
 		updateSubScoreForApiResponse.setRequestId(_ctx.stringValue("UpdateSubScoreForApiResponse.RequestId"));
-		updateSubScoreForApiResponse.setSuccess(_ctx.booleanValue("UpdateSubScoreForApiResponse.Success"));
 		updateSubScoreForApiResponse.setCode(_ctx.stringValue("UpdateSubScoreForApiResponse.Code"));
 		updateSubScoreForApiResponse.setMessage(_ctx.stringValue("UpdateSubScoreForApiResponse.Message"));
+		updateSubScoreForApiResponse.setSuccess(_ctx.booleanValue("UpdateSubScoreForApiResponse.Success"));
 	 
 	 	return updateSubScoreForApiResponse;
 	}

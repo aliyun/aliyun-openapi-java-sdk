@@ -35,11 +35,14 @@ public class GetRuleDetailResponseUnmarshaller {
 	public static GetRuleDetailResponse unmarshall(GetRuleDetailResponse getRuleDetailResponse, UnmarshallerContext _ctx) {
 		
 		getRuleDetailResponse.setRequestId(_ctx.stringValue("GetRuleDetailResponse.RequestId"));
-		getRuleDetailResponse.setSuccess(_ctx.booleanValue("GetRuleDetailResponse.Success"));
 		getRuleDetailResponse.setCode(_ctx.stringValue("GetRuleDetailResponse.Code"));
 		getRuleDetailResponse.setMessage(_ctx.stringValue("GetRuleDetailResponse.Message"));
+		getRuleDetailResponse.setSuccess(_ctx.booleanValue("GetRuleDetailResponse.Success"));
 
 		Data data = new Data();
+		data.setPageSize(_ctx.integerValue("GetRuleDetailResponse.Data.PageSize"));
+		data.setPageNumber(_ctx.integerValue("GetRuleDetailResponse.Data.PageNumber"));
+		data.setCount(_ctx.integerValue("GetRuleDetailResponse.Data.Count"));
 
 		List<ConditionBasicInfo> conditions = new ArrayList<ConditionBasicInfo>();
 		for (int i = 0; i < _ctx.lengthValue("GetRuleDetailResponse.Data.Conditions.Length"); i++) {
@@ -48,62 +51,72 @@ public class GetRuleDetailResponseUnmarshaller {
 			conditionBasicInfo.setOperLambda(_ctx.stringValue("GetRuleDetailResponse.Data.Conditions["+ i +"].OperLambda"));
 
 			CheckRange checkRange = new CheckRange();
-			checkRange.setRole(_ctx.stringValue("GetRuleDetailResponse.Data.Conditions["+ i +"].CheckRange.Role"));
 			checkRange.setAbsolute(_ctx.booleanValue("GetRuleDetailResponse.Data.Conditions["+ i +"].CheckRange.Absolute"));
+			checkRange.setRole(_ctx.stringValue("GetRuleDetailResponse.Data.Conditions["+ i +"].CheckRange.Role"));
 
 			Anchor anchor = new Anchor();
-			anchor.setAnchorCid(_ctx.stringValue("GetRuleDetailResponse.Data.Conditions["+ i +"].CheckRange.Anchor.AnchorCid"));
-			anchor.setLocation(_ctx.stringValue("GetRuleDetailResponse.Data.Conditions["+ i +"].CheckRange.Anchor.Location"));
 			anchor.setHitTime(_ctx.integerValue("GetRuleDetailResponse.Data.Conditions["+ i +"].CheckRange.Anchor.HitTime"));
+			anchor.setLocation(_ctx.stringValue("GetRuleDetailResponse.Data.Conditions["+ i +"].CheckRange.Anchor.Location"));
+			anchor.setAnchorCid(_ctx.stringValue("GetRuleDetailResponse.Data.Conditions["+ i +"].CheckRange.Anchor.AnchorCid"));
 			checkRange.setAnchor(anchor);
 
 			Range range = new Range();
-			range.setFrom(_ctx.integerValue("GetRuleDetailResponse.Data.Conditions["+ i +"].CheckRange.Range.From"));
 			range.setTo(_ctx.integerValue("GetRuleDetailResponse.Data.Conditions["+ i +"].CheckRange.Range.To"));
+			range.setFrom(_ctx.integerValue("GetRuleDetailResponse.Data.Conditions["+ i +"].CheckRange.Range.From"));
 			checkRange.setRange(range);
 			conditionBasicInfo.setCheckRange(checkRange);
 
 			List<OperatorBasicInfo> operators = new ArrayList<OperatorBasicInfo>();
 			for (int j = 0; j < _ctx.lengthValue("GetRuleDetailResponse.Data.Conditions["+ i +"].Operators.Length"); j++) {
 				OperatorBasicInfo operatorBasicInfo = new OperatorBasicInfo();
-				operatorBasicInfo.setOid(_ctx.stringValue("GetRuleDetailResponse.Data.Conditions["+ i +"].Operators["+ j +"].Oid"));
 				operatorBasicInfo.setType(_ctx.stringValue("GetRuleDetailResponse.Data.Conditions["+ i +"].Operators["+ j +"].Type"));
+				operatorBasicInfo.setOid(_ctx.stringValue("GetRuleDetailResponse.Data.Conditions["+ i +"].Operators["+ j +"].Oid"));
 				operatorBasicInfo.setOperName(_ctx.stringValue("GetRuleDetailResponse.Data.Conditions["+ i +"].Operators["+ j +"].OperName"));
 
 				Param param = new Param();
-				param.setRegex(_ctx.stringValue("GetRuleDetailResponse.Data.Conditions["+ i +"].Operators["+ j +"].Param.Regex"));
-				param.setPhrase(_ctx.stringValue("GetRuleDetailResponse.Data.Conditions["+ i +"].Operators["+ j +"].Param.Phrase"));
-				param.setInterval(_ctx.integerValue("GetRuleDetailResponse.Data.Conditions["+ i +"].Operators["+ j +"].Param.Interval"));
-				param.setThreshold(_ctx.floatValue("GetRuleDetailResponse.Data.Conditions["+ i +"].Operators["+ j +"].Param.Threshold"));
-				param.setInSentence(_ctx.booleanValue("GetRuleDetailResponse.Data.Conditions["+ i +"].Operators["+ j +"].Param.InSentence"));
-				param.setTarget(_ctx.integerValue("GetRuleDetailResponse.Data.Conditions["+ i +"].Operators["+ j +"].Param.Target"));
-				param.setFromEnd(_ctx.booleanValue("GetRuleDetailResponse.Data.Conditions["+ i +"].Operators["+ j +"].Param.FromEnd"));
 				param.setDifferentRole(_ctx.booleanValue("GetRuleDetailResponse.Data.Conditions["+ i +"].Operators["+ j +"].Param.DifferentRole"));
+				param.setRegex(_ctx.stringValue("GetRuleDetailResponse.Data.Conditions["+ i +"].Operators["+ j +"].Param.Regex"));
 				param.setTargetRole(_ctx.stringValue("GetRuleDetailResponse.Data.Conditions["+ i +"].Operators["+ j +"].Param.TargetRole"));
-				param.setScore(_ctx.integerValue("GetRuleDetailResponse.Data.Conditions["+ i +"].Operators["+ j +"].Param.Score"));
-				param.setContextChatMatch(_ctx.booleanValue("GetRuleDetailResponse.Data.Conditions["+ i +"].Operators["+ j +"].Param.ContextChatMatch"));
-				param.setKeywordMatchSize(_ctx.integerValue("GetRuleDetailResponse.Data.Conditions["+ i +"].Operators["+ j +"].Param.KeywordMatchSize"));
-				param.setAverage(_ctx.booleanValue("GetRuleDetailResponse.Data.Conditions["+ i +"].Operators["+ j +"].Param.Average"));
 				param.setVelocityInMint(_ctx.integerValue("GetRuleDetailResponse.Data.Conditions["+ i +"].Operators["+ j +"].Param.VelocityInMint"));
-				param.setMinWordSize(_ctx.integerValue("GetRuleDetailResponse.Data.Conditions["+ i +"].Operators["+ j +"].Param.MinWordSize"));
+				param.setAverage(_ctx.booleanValue("GetRuleDetailResponse.Data.Conditions["+ i +"].Operators["+ j +"].Param.Average"));
 				param.setKeywordExtension(_ctx.booleanValue("GetRuleDetailResponse.Data.Conditions["+ i +"].Operators["+ j +"].Param.KeywordExtension"));
-				param.setHitTime(_ctx.integerValue("GetRuleDetailResponse.Data.Conditions["+ i +"].Operators["+ j +"].Param.HitTime"));
-				param.setFrom(_ctx.integerValue("GetRuleDetailResponse.Data.Conditions["+ i +"].Operators["+ j +"].Param.From"));
-				param.setBeginType(_ctx.stringValue("GetRuleDetailResponse.Data.Conditions["+ i +"].Operators["+ j +"].Param.BeginType"));
-				param.setCompareOperator(_ctx.stringValue("GetRuleDetailResponse.Data.Conditions["+ i +"].Operators["+ j +"].Param.CompareOperator"));
-				param.setCheckType(_ctx.integerValue("GetRuleDetailResponse.Data.Conditions["+ i +"].Operators["+ j +"].Param.CheckType"));
-				param.setMaxEmotionChangeValue(_ctx.integerValue("GetRuleDetailResponse.Data.Conditions["+ i +"].Operators["+ j +"].Param.MaxEmotionChangeValue"));
-				param.setCheckType1(_ctx.integerValue("GetRuleDetailResponse.Data.Conditions["+ i +"].Operators["+ j +"].Param.CheckType"));
-				param.setMaxEmotionChangeValue2(_ctx.integerValue("GetRuleDetailResponse.Data.Conditions["+ i +"].Operators["+ j +"].Param.MaxEmotionChangeValue"));
+				param.setScore(_ctx.integerValue("GetRuleDetailResponse.Data.Conditions["+ i +"].Operators["+ j +"].Param.Score"));
 				param.setNotRegex(_ctx.stringValue("GetRuleDetailResponse.Data.Conditions["+ i +"].Operators["+ j +"].Param.NotRegex"));
-				param.setSimilarity_threshold(_ctx.floatValue("GetRuleDetailResponse.Data.Conditions["+ i +"].Operators["+ j +"].Param.Similarity_threshold"));
+				param.setCompareOperator(_ctx.stringValue("GetRuleDetailResponse.Data.Conditions["+ i +"].Operators["+ j +"].Param.CompareOperator"));
 				param.setDelayTime(_ctx.integerValue("GetRuleDetailResponse.Data.Conditions["+ i +"].Operators["+ j +"].Param.DelayTime"));
+				param.setKeywordMatchSize(_ctx.integerValue("GetRuleDetailResponse.Data.Conditions["+ i +"].Operators["+ j +"].Param.KeywordMatchSize"));
+				param.setHitTime(_ctx.integerValue("GetRuleDetailResponse.Data.Conditions["+ i +"].Operators["+ j +"].Param.HitTime"));
+				param.setBeginType(_ctx.stringValue("GetRuleDetailResponse.Data.Conditions["+ i +"].Operators["+ j +"].Param.BeginType"));
+				param.setTarget(_ctx.integerValue("GetRuleDetailResponse.Data.Conditions["+ i +"].Operators["+ j +"].Param.Target"));
+				param.setMaxEmotionChangeValue(_ctx.integerValue("GetRuleDetailResponse.Data.Conditions["+ i +"].Operators["+ j +"].Param.MaxEmotionChangeValue"));
+				param.setThreshold(_ctx.floatValue("GetRuleDetailResponse.Data.Conditions["+ i +"].Operators["+ j +"].Param.Threshold"));
+				param.setFrom(_ctx.integerValue("GetRuleDetailResponse.Data.Conditions["+ i +"].Operators["+ j +"].Param.From"));
+				param.setFromEnd(_ctx.booleanValue("GetRuleDetailResponse.Data.Conditions["+ i +"].Operators["+ j +"].Param.FromEnd"));
+				param.setMinWordSize(_ctx.integerValue("GetRuleDetailResponse.Data.Conditions["+ i +"].Operators["+ j +"].Param.MinWordSize"));
+				param.setInSentence(_ctx.booleanValue("GetRuleDetailResponse.Data.Conditions["+ i +"].Operators["+ j +"].Param.InSentence"));
+				param.setPhrase(_ctx.stringValue("GetRuleDetailResponse.Data.Conditions["+ i +"].Operators["+ j +"].Param.Phrase"));
+				param.setSimilarity_threshold(_ctx.floatValue("GetRuleDetailResponse.Data.Conditions["+ i +"].Operators["+ j +"].Param.Similarity_threshold"));
+				param.setCheckType(_ctx.integerValue("GetRuleDetailResponse.Data.Conditions["+ i +"].Operators["+ j +"].Param.CheckType"));
+				param.setInterval(_ctx.integerValue("GetRuleDetailResponse.Data.Conditions["+ i +"].Operators["+ j +"].Param.Interval"));
+				param.setContextChatMatch(_ctx.booleanValue("GetRuleDetailResponse.Data.Conditions["+ i +"].Operators["+ j +"].Param.ContextChatMatch"));
 
-				List<String> operKeyWords = new ArrayList<String>();
-				for (int k = 0; k < _ctx.lengthValue("GetRuleDetailResponse.Data.Conditions["+ i +"].Operators["+ j +"].Param.OperKeyWords.Length"); k++) {
-					operKeyWords.add(_ctx.stringValue("GetRuleDetailResponse.Data.Conditions["+ i +"].Operators["+ j +"].Param.OperKeyWords["+ k +"]"));
+				List<String> excludes = new ArrayList<String>();
+				for (int k = 0; k < _ctx.lengthValue("GetRuleDetailResponse.Data.Conditions["+ i +"].Operators["+ j +"].Param.Excludes.Length"); k++) {
+					excludes.add(_ctx.stringValue("GetRuleDetailResponse.Data.Conditions["+ i +"].Operators["+ j +"].Param.Excludes["+ k +"]"));
 				}
-				param.setOperKeyWords(operKeyWords);
+				param.setExcludes(excludes);
+
+				List<String> antModelInfo = new ArrayList<String>();
+				for (int k = 0; k < _ctx.lengthValue("GetRuleDetailResponse.Data.Conditions["+ i +"].Operators["+ j +"].Param.AntModelInfo.Length"); k++) {
+					antModelInfo.add(_ctx.stringValue("GetRuleDetailResponse.Data.Conditions["+ i +"].Operators["+ j +"].Param.AntModelInfo["+ k +"]"));
+				}
+				param.setAntModelInfo(antModelInfo);
+
+				List<String> pvalues = new ArrayList<String>();
+				for (int k = 0; k < _ctx.lengthValue("GetRuleDetailResponse.Data.Conditions["+ i +"].Operators["+ j +"].Param.Pvalues.Length"); k++) {
+					pvalues.add(_ctx.stringValue("GetRuleDetailResponse.Data.Conditions["+ i +"].Operators["+ j +"].Param.Pvalues["+ k +"]"));
+				}
+				param.setPvalues(pvalues);
 
 				List<String> references = new ArrayList<String>();
 				for (int k = 0; k < _ctx.lengthValue("GetRuleDetailResponse.Data.Conditions["+ i +"].Operators["+ j +"].Param.References.Length"); k++) {
@@ -117,23 +130,11 @@ public class GetRuleDetailResponseUnmarshaller {
 				}
 				param.setSimilarlySentences(similarlySentences);
 
-				List<String> excludes = new ArrayList<String>();
-				for (int k = 0; k < _ctx.lengthValue("GetRuleDetailResponse.Data.Conditions["+ i +"].Operators["+ j +"].Param.Excludes.Length"); k++) {
-					excludes.add(_ctx.stringValue("GetRuleDetailResponse.Data.Conditions["+ i +"].Operators["+ j +"].Param.Excludes["+ k +"]"));
+				List<String> operKeyWords = new ArrayList<String>();
+				for (int k = 0; k < _ctx.lengthValue("GetRuleDetailResponse.Data.Conditions["+ i +"].Operators["+ j +"].Param.OperKeyWords.Length"); k++) {
+					operKeyWords.add(_ctx.stringValue("GetRuleDetailResponse.Data.Conditions["+ i +"].Operators["+ j +"].Param.OperKeyWords["+ k +"]"));
 				}
-				param.setExcludes(excludes);
-
-				List<String> pvalues = new ArrayList<String>();
-				for (int k = 0; k < _ctx.lengthValue("GetRuleDetailResponse.Data.Conditions["+ i +"].Operators["+ j +"].Param.Pvalues.Length"); k++) {
-					pvalues.add(_ctx.stringValue("GetRuleDetailResponse.Data.Conditions["+ i +"].Operators["+ j +"].Param.Pvalues["+ k +"]"));
-				}
-				param.setPvalues(pvalues);
-
-				List<String> antModelInfo = new ArrayList<String>();
-				for (int k = 0; k < _ctx.lengthValue("GetRuleDetailResponse.Data.Conditions["+ i +"].Operators["+ j +"].Param.AntModelInfo.Length"); k++) {
-					antModelInfo.add(_ctx.stringValue("GetRuleDetailResponse.Data.Conditions["+ i +"].Operators["+ j +"].Param.AntModelInfo["+ k +"]"));
-				}
-				param.setAntModelInfo(antModelInfo);
+				param.setOperKeyWords(operKeyWords);
 				operatorBasicInfo.setParam(param);
 
 				operators.add(operatorBasicInfo);
@@ -147,8 +148,8 @@ public class GetRuleDetailResponseUnmarshaller {
 		List<RuleBasicInfo> rules = new ArrayList<RuleBasicInfo>();
 		for (int i = 0; i < _ctx.lengthValue("GetRuleDetailResponse.Data.Rules.Length"); i++) {
 			RuleBasicInfo ruleBasicInfo = new RuleBasicInfo();
-			ruleBasicInfo.setRid(_ctx.stringValue("GetRuleDetailResponse.Data.Rules["+ i +"].Rid"));
 			ruleBasicInfo.setRuleLambda(_ctx.stringValue("GetRuleDetailResponse.Data.Rules["+ i +"].RuleLambda"));
+			ruleBasicInfo.setRid(_ctx.stringValue("GetRuleDetailResponse.Data.Rules["+ i +"].Rid"));
 
 			List<String> triggers = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("GetRuleDetailResponse.Data.Rules["+ i +"].Triggers.Length"); j++) {
@@ -159,9 +160,9 @@ public class GetRuleDetailResponseUnmarshaller {
 			List<BusinessCategoryBasicInfo> businessCategories = new ArrayList<BusinessCategoryBasicInfo>();
 			for (int j = 0; j < _ctx.lengthValue("GetRuleDetailResponse.Data.Rules["+ i +"].BusinessCategories.Length"); j++) {
 				BusinessCategoryBasicInfo businessCategoryBasicInfo = new BusinessCategoryBasicInfo();
-				businessCategoryBasicInfo.setBid(_ctx.integerValue("GetRuleDetailResponse.Data.Rules["+ i +"].BusinessCategories["+ j +"].Bid"));
-				businessCategoryBasicInfo.setServiceType(_ctx.integerValue("GetRuleDetailResponse.Data.Rules["+ i +"].BusinessCategories["+ j +"].ServiceType"));
 				businessCategoryBasicInfo.setBusinessName(_ctx.stringValue("GetRuleDetailResponse.Data.Rules["+ i +"].BusinessCategories["+ j +"].BusinessName"));
+				businessCategoryBasicInfo.setServiceType(_ctx.integerValue("GetRuleDetailResponse.Data.Rules["+ i +"].BusinessCategories["+ j +"].ServiceType"));
+				businessCategoryBasicInfo.setBid(_ctx.integerValue("GetRuleDetailResponse.Data.Rules["+ i +"].BusinessCategories["+ j +"].Bid"));
 
 				businessCategories.add(businessCategoryBasicInfo);
 			}

@@ -23,10 +23,10 @@ public class DeleteBusinessCategoryResponseUnmarshaller {
 	public static DeleteBusinessCategoryResponse unmarshall(DeleteBusinessCategoryResponse deleteBusinessCategoryResponse, UnmarshallerContext _ctx) {
 		
 		deleteBusinessCategoryResponse.setRequestId(_ctx.stringValue("DeleteBusinessCategoryResponse.RequestId"));
-		deleteBusinessCategoryResponse.setSuccess(_ctx.booleanValue("DeleteBusinessCategoryResponse.Success"));
 		deleteBusinessCategoryResponse.setCode(_ctx.stringValue("DeleteBusinessCategoryResponse.Code"));
 		deleteBusinessCategoryResponse.setMessage(_ctx.stringValue("DeleteBusinessCategoryResponse.Message"));
 		deleteBusinessCategoryResponse.setData(_ctx.stringValue("DeleteBusinessCategoryResponse.Data"));
+		deleteBusinessCategoryResponse.setSuccess(_ctx.booleanValue("DeleteBusinessCategoryResponse.Success"));
 	 
 	 	return deleteBusinessCategoryResponse;
 	}

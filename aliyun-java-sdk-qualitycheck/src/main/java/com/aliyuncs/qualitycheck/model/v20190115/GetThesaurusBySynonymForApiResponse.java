@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetThesaurusBySynonymForApiResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String message;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private List<ThesaurusPo> data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -67,6 +51,22 @@ public class GetThesaurusBySynonymForApiResponse extends AcsResponse {
 		this.message = message;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public List<ThesaurusPo> getData() {
 		return this.data;
 	}
@@ -77,19 +77,11 @@ public class GetThesaurusBySynonymForApiResponse extends AcsResponse {
 
 	public static class ThesaurusPo {
 
-		private Long id;
-
 		private String business;
 
+		private Long id;
+
 		private List<String> synonymList;
-
-		public Long getId() {
-			return this.id;
-		}
-
-		public void setId(Long id) {
-			this.id = id;
-		}
 
 		public String getBusiness() {
 			return this.business;
@@ -97,6 +89,14 @@ public class GetThesaurusBySynonymForApiResponse extends AcsResponse {
 
 		public void setBusiness(String business) {
 			this.business = business;
+		}
+
+		public Long getId() {
+			return this.id;
+		}
+
+		public void setId(Long id) {
+			this.id = id;
 		}
 
 		public List<String> getSynonymList() {

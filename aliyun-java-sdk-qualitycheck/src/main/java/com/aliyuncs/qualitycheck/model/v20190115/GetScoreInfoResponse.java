@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetScoreInfoResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String message;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private List<ScorePo> data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -65,6 +49,22 @@ public class GetScoreInfoResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<ScorePo> getData() {
@@ -109,13 +109,21 @@ public class GetScoreInfoResponse extends AcsResponse {
 
 		public static class ScoreParam {
 
+			private String scoreSubName;
+
 			private Integer scoreNum;
 
 			private Integer scoreSubId;
 
-			private String scoreSubName;
-
 			private Integer scoreType;
+
+			public String getScoreSubName() {
+				return this.scoreSubName;
+			}
+
+			public void setScoreSubName(String scoreSubName) {
+				this.scoreSubName = scoreSubName;
+			}
 
 			public Integer getScoreNum() {
 				return this.scoreNum;
@@ -131,14 +139,6 @@ public class GetScoreInfoResponse extends AcsResponse {
 
 			public void setScoreSubId(Integer scoreSubId) {
 				this.scoreSubId = scoreSubId;
-			}
-
-			public String getScoreSubName() {
-				return this.scoreSubName;
-			}
-
-			public void setScoreSubName(String scoreSubName) {
-				this.scoreSubName = scoreSubName;
 			}
 
 			public Integer getScoreType() {

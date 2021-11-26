@@ -30,19 +30,19 @@ public class ListRulesResponseUnmarshaller {
 		listRulesResponse.setSuccess(_ctx.booleanValue("ListRulesResponse.Success"));
 		listRulesResponse.setCode(_ctx.stringValue("ListRulesResponse.Code"));
 		listRulesResponse.setMessage(_ctx.stringValue("ListRulesResponse.Message"));
-		listRulesResponse.setCount(_ctx.integerValue("ListRulesResponse.Count"));
-		listRulesResponse.setPageSize(_ctx.integerValue("ListRulesResponse.PageSize"));
 		listRulesResponse.setPageNumber(_ctx.integerValue("ListRulesResponse.PageNumber"));
+		listRulesResponse.setPageSize(_ctx.integerValue("ListRulesResponse.PageSize"));
+		listRulesResponse.setCount(_ctx.integerValue("ListRulesResponse.Count"));
 
 		List<Rule> data = new ArrayList<Rule>();
 		for (int i = 0; i < _ctx.lengthValue("ListRulesResponse.Data.Length"); i++) {
 			Rule rule = new Rule();
-			rule.setName(_ctx.stringValue("ListRulesResponse.Data["+ i +"].Name"));
 			rule.setType(_ctx.integerValue("ListRulesResponse.Data["+ i +"].Type"));
-			rule.setComments(_ctx.stringValue("ListRulesResponse.Data["+ i +"].Comments"));
-			rule.setCreateTime(_ctx.stringValue("ListRulesResponse.Data["+ i +"].CreateTime"));
-			rule.setTypeName(_ctx.stringValue("ListRulesResponse.Data["+ i +"].TypeName"));
 			rule.setRuleType(_ctx.integerValue("ListRulesResponse.Data["+ i +"].RuleType"));
+			rule.setCreateTime(_ctx.stringValue("ListRulesResponse.Data["+ i +"].CreateTime"));
+			rule.setComments(_ctx.stringValue("ListRulesResponse.Data["+ i +"].Comments"));
+			rule.setTypeName(_ctx.stringValue("ListRulesResponse.Data["+ i +"].TypeName"));
+			rule.setName(_ctx.stringValue("ListRulesResponse.Data["+ i +"].Name"));
 			rule.setRid(_ctx.longValue("ListRulesResponse.Data["+ i +"].Rid"));
 
 			List<String> businessCategoryNameList = new ArrayList<String>();

@@ -23,10 +23,10 @@ public class CreateAsrVocabResponseUnmarshaller {
 	public static CreateAsrVocabResponse unmarshall(CreateAsrVocabResponse createAsrVocabResponse, UnmarshallerContext _ctx) {
 		
 		createAsrVocabResponse.setRequestId(_ctx.stringValue("CreateAsrVocabResponse.RequestId"));
-		createAsrVocabResponse.setSuccess(_ctx.booleanValue("CreateAsrVocabResponse.Success"));
 		createAsrVocabResponse.setCode(_ctx.stringValue("CreateAsrVocabResponse.Code"));
 		createAsrVocabResponse.setMessage(_ctx.stringValue("CreateAsrVocabResponse.Message"));
 		createAsrVocabResponse.setData(_ctx.stringValue("CreateAsrVocabResponse.Data"));
+		createAsrVocabResponse.setSuccess(_ctx.booleanValue("CreateAsrVocabResponse.Success"));
 	 
 	 	return createAsrVocabResponse;
 	}

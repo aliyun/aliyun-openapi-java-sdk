@@ -43,35 +43,35 @@ public class ListTaskAssignRulesResponseUnmarshaller {
 		List<TaskAssignRuleInfo> data = new ArrayList<TaskAssignRuleInfo>();
 		for (int i = 0; i < _ctx.lengthValue("ListTaskAssignRulesResponse.Data.Length"); i++) {
 			TaskAssignRuleInfo taskAssignRuleInfo = new TaskAssignRuleInfo();
-			taskAssignRuleInfo.setRuleId(_ctx.longValue("ListTaskAssignRulesResponse.Data["+ i +"].RuleId"));
-			taskAssignRuleInfo.setEnabled(_ctx.integerValue("ListTaskAssignRulesResponse.Data["+ i +"].Enabled"));
-			taskAssignRuleInfo.setCallType(_ctx.integerValue("ListTaskAssignRulesResponse.Data["+ i +"].CallType"));
-			taskAssignRuleInfo.setPriority(_ctx.integerValue("ListTaskAssignRulesResponse.Data["+ i +"].Priority"));
-			taskAssignRuleInfo.setDurationMin(_ctx.integerValue("ListTaskAssignRulesResponse.Data["+ i +"].DurationMin"));
+			taskAssignRuleInfo.setUpdateTime(_ctx.stringValue("ListTaskAssignRulesResponse.Data["+ i +"].UpdateTime"));
+			taskAssignRuleInfo.setSkillGroupsStr(_ctx.stringValue("ListTaskAssignRulesResponse.Data["+ i +"].SkillGroupsStr"));
+			taskAssignRuleInfo.setCallTimeEnd(_ctx.longValue("ListTaskAssignRulesResponse.Data["+ i +"].CallTimeEnd"));
 			taskAssignRuleInfo.setDurationMax(_ctx.integerValue("ListTaskAssignRulesResponse.Data["+ i +"].DurationMax"));
 			taskAssignRuleInfo.setCreateTime(_ctx.stringValue("ListTaskAssignRulesResponse.Data["+ i +"].CreateTime"));
-			taskAssignRuleInfo.setUpdateTime(_ctx.stringValue("ListTaskAssignRulesResponse.Data["+ i +"].UpdateTime"));
+			taskAssignRuleInfo.setPriority(_ctx.integerValue("ListTaskAssignRulesResponse.Data["+ i +"].Priority"));
+			taskAssignRuleInfo.setDurationMin(_ctx.integerValue("ListTaskAssignRulesResponse.Data["+ i +"].DurationMin"));
 			taskAssignRuleInfo.setAgentsStr(_ctx.stringValue("ListTaskAssignRulesResponse.Data["+ i +"].AgentsStr"));
-			taskAssignRuleInfo.setSkillGroupsStr(_ctx.stringValue("ListTaskAssignRulesResponse.Data["+ i +"].SkillGroupsStr"));
-			taskAssignRuleInfo.setCallTimeStart(_ctx.longValue("ListTaskAssignRulesResponse.Data["+ i +"].CallTimeStart"));
-			taskAssignRuleInfo.setCallTimeEnd(_ctx.longValue("ListTaskAssignRulesResponse.Data["+ i +"].CallTimeEnd"));
-			taskAssignRuleInfo.setAssignmentType(_ctx.integerValue("ListTaskAssignRulesResponse.Data["+ i +"].AssignmentType"));
 			taskAssignRuleInfo.setRuleName(_ctx.stringValue("ListTaskAssignRulesResponse.Data["+ i +"].RuleName"));
+			taskAssignRuleInfo.setRuleId(_ctx.longValue("ListTaskAssignRulesResponse.Data["+ i +"].RuleId"));
+			taskAssignRuleInfo.setAssignmentType(_ctx.integerValue("ListTaskAssignRulesResponse.Data["+ i +"].AssignmentType"));
+			taskAssignRuleInfo.setCallType(_ctx.integerValue("ListTaskAssignRulesResponse.Data["+ i +"].CallType"));
+			taskAssignRuleInfo.setEnabled(_ctx.integerValue("ListTaskAssignRulesResponse.Data["+ i +"].Enabled"));
+			taskAssignRuleInfo.setCallTimeStart(_ctx.longValue("ListTaskAssignRulesResponse.Data["+ i +"].CallTimeStart"));
 
 			SamplingMode samplingMode = new SamplingMode();
-			samplingMode.setDimension(_ctx.integerValue("ListTaskAssignRulesResponse.Data["+ i +"].SamplingMode.Dimension"));
-			samplingMode.setProportion(_ctx.floatValue("ListTaskAssignRulesResponse.Data["+ i +"].SamplingMode.Proportion"));
-			samplingMode.setLimit(_ctx.integerValue("ListTaskAssignRulesResponse.Data["+ i +"].SamplingMode.Limit"));
 			samplingMode.setNumberOfDraws(_ctx.integerValue("ListTaskAssignRulesResponse.Data["+ i +"].SamplingMode.NumberOfDraws"));
 			samplingMode.setAnyNumberOfDraws(_ctx.integerValue("ListTaskAssignRulesResponse.Data["+ i +"].SamplingMode.AnyNumberOfDraws"));
+			samplingMode.setLimit(_ctx.integerValue("ListTaskAssignRulesResponse.Data["+ i +"].SamplingMode.Limit"));
+			samplingMode.setProportion(_ctx.floatValue("ListTaskAssignRulesResponse.Data["+ i +"].SamplingMode.Proportion"));
+			samplingMode.setDimension(_ctx.integerValue("ListTaskAssignRulesResponse.Data["+ i +"].SamplingMode.Dimension"));
 			samplingMode.setDesignated(_ctx.booleanValue("ListTaskAssignRulesResponse.Data["+ i +"].SamplingMode.Designated"));
 			samplingMode.setRandomInspectionNumber(_ctx.integerValue("ListTaskAssignRulesResponse.Data["+ i +"].SamplingMode.RandomInspectionNumber"));
 
 			List<SamplingModeAgent> samplingModeAgents = new ArrayList<SamplingModeAgent>();
 			for (int j = 0; j < _ctx.lengthValue("ListTaskAssignRulesResponse.Data["+ i +"].SamplingMode.SamplingModeAgents.Length"); j++) {
 				SamplingModeAgent samplingModeAgent = new SamplingModeAgent();
-				samplingModeAgent.setAgentId(_ctx.stringValue("ListTaskAssignRulesResponse.Data["+ i +"].SamplingMode.SamplingModeAgents["+ j +"].AgentId"));
 				samplingModeAgent.setAgentName(_ctx.stringValue("ListTaskAssignRulesResponse.Data["+ i +"].SamplingMode.SamplingModeAgents["+ j +"].AgentName"));
+				samplingModeAgent.setAgentId(_ctx.stringValue("ListTaskAssignRulesResponse.Data["+ i +"].SamplingMode.SamplingModeAgents["+ j +"].AgentId"));
 
 				samplingModeAgents.add(samplingModeAgent);
 			}
@@ -81,8 +81,8 @@ public class ListTaskAssignRulesResponseUnmarshaller {
 			List<Agent> agents = new ArrayList<Agent>();
 			for (int j = 0; j < _ctx.lengthValue("ListTaskAssignRulesResponse.Data["+ i +"].Agents.Length"); j++) {
 				Agent agent = new Agent();
-				agent.setAgentId(_ctx.stringValue("ListTaskAssignRulesResponse.Data["+ i +"].Agents["+ j +"].AgentId"));
 				agent.setAgentName(_ctx.stringValue("ListTaskAssignRulesResponse.Data["+ i +"].Agents["+ j +"].AgentName"));
+				agent.setAgentId(_ctx.stringValue("ListTaskAssignRulesResponse.Data["+ i +"].Agents["+ j +"].AgentId"));
 
 				agents.add(agent);
 			}
@@ -91,8 +91,8 @@ public class ListTaskAssignRulesResponseUnmarshaller {
 			List<SkillGroup> skillGroups = new ArrayList<SkillGroup>();
 			for (int j = 0; j < _ctx.lengthValue("ListTaskAssignRulesResponse.Data["+ i +"].SkillGroups.Length"); j++) {
 				SkillGroup skillGroup = new SkillGroup();
-				skillGroup.setSkillId(_ctx.stringValue("ListTaskAssignRulesResponse.Data["+ i +"].SkillGroups["+ j +"].SkillId"));
 				skillGroup.setSkillName(_ctx.stringValue("ListTaskAssignRulesResponse.Data["+ i +"].SkillGroups["+ j +"].SkillName"));
+				skillGroup.setSkillId(_ctx.stringValue("ListTaskAssignRulesResponse.Data["+ i +"].SkillGroups["+ j +"].SkillId"));
 
 				skillGroups.add(skillGroup);
 			}
@@ -111,8 +111,8 @@ public class ListTaskAssignRulesResponseUnmarshaller {
 			List<RuleBasicInfo> rules = new ArrayList<RuleBasicInfo>();
 			for (int j = 0; j < _ctx.lengthValue("ListTaskAssignRulesResponse.Data["+ i +"].Rules.Length"); j++) {
 				RuleBasicInfo ruleBasicInfo = new RuleBasicInfo();
-				ruleBasicInfo.setRid(_ctx.stringValue("ListTaskAssignRulesResponse.Data["+ i +"].Rules["+ j +"].Rid"));
 				ruleBasicInfo.setName(_ctx.stringValue("ListTaskAssignRulesResponse.Data["+ i +"].Rules["+ j +"].Name"));
+				ruleBasicInfo.setRid(_ctx.stringValue("ListTaskAssignRulesResponse.Data["+ i +"].Rules["+ j +"].Rid"));
 
 				rules.add(ruleBasicInfo);
 			}

@@ -33,11 +33,11 @@ public class ListRulesResponse extends AcsResponse {
 
 	private String message;
 
-	private Integer count;
+	private Integer pageNumber;
 
 	private Integer pageSize;
 
-	private Integer pageNumber;
+	private Integer count;
 
 	private List<Rule> data;
 
@@ -73,12 +73,12 @@ public class ListRulesResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public Integer getCount() {
-		return this.count;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setCount(Integer count) {
-		this.count = count;
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public Integer getPageSize() {
@@ -89,12 +89,12 @@ public class ListRulesResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public Integer getCount() {
+		return this.count;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
+	public void setCount(Integer count) {
+		this.count = count;
 	}
 
 	public List<Rule> getData() {
@@ -107,29 +107,21 @@ public class ListRulesResponse extends AcsResponse {
 
 	public static class Rule {
 
-		private String name;
-
 		private Integer type;
 
-		private String comments;
+		private Integer ruleType;
 
 		private String createTime;
 
+		private String comments;
+
 		private String typeName;
 
-		private Integer ruleType;
+		private String name;
 
 		private Long rid;
 
 		private List<String> businessCategoryNameList;
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
 
 		public Integer getType() {
 			return this.type;
@@ -139,12 +131,12 @@ public class ListRulesResponse extends AcsResponse {
 			this.type = type;
 		}
 
-		public String getComments() {
-			return this.comments;
+		public Integer getRuleType() {
+			return this.ruleType;
 		}
 
-		public void setComments(String comments) {
-			this.comments = comments;
+		public void setRuleType(Integer ruleType) {
+			this.ruleType = ruleType;
 		}
 
 		public String getCreateTime() {
@@ -155,6 +147,14 @@ public class ListRulesResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
+		public String getComments() {
+			return this.comments;
+		}
+
+		public void setComments(String comments) {
+			this.comments = comments;
+		}
+
 		public String getTypeName() {
 			return this.typeName;
 		}
@@ -163,12 +163,12 @@ public class ListRulesResponse extends AcsResponse {
 			this.typeName = typeName;
 		}
 
-		public Integer getRuleType() {
-			return this.ruleType;
+		public String getName() {
+			return this.name;
 		}
 
-		public void setRuleType(Integer ruleType) {
-			this.ruleType = ruleType;
+		public void setName(String name) {
+			this.name = name;
 		}
 
 		public Long getRid() {

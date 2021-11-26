@@ -27,16 +27,16 @@ public class GetBusinessCategoryListResponseUnmarshaller {
 	public static GetBusinessCategoryListResponse unmarshall(GetBusinessCategoryListResponse getBusinessCategoryListResponse, UnmarshallerContext _ctx) {
 		
 		getBusinessCategoryListResponse.setRequestId(_ctx.stringValue("GetBusinessCategoryListResponse.RequestId"));
-		getBusinessCategoryListResponse.setSuccess(_ctx.booleanValue("GetBusinessCategoryListResponse.Success"));
 		getBusinessCategoryListResponse.setCode(_ctx.stringValue("GetBusinessCategoryListResponse.Code"));
 		getBusinessCategoryListResponse.setMessage(_ctx.stringValue("GetBusinessCategoryListResponse.Message"));
+		getBusinessCategoryListResponse.setSuccess(_ctx.booleanValue("GetBusinessCategoryListResponse.Success"));
 
 		List<BusinessCategoryBasicInfo> data = new ArrayList<BusinessCategoryBasicInfo>();
 		for (int i = 0; i < _ctx.lengthValue("GetBusinessCategoryListResponse.Data.Length"); i++) {
 			BusinessCategoryBasicInfo businessCategoryBasicInfo = new BusinessCategoryBasicInfo();
-			businessCategoryBasicInfo.setBid(_ctx.integerValue("GetBusinessCategoryListResponse.Data["+ i +"].Bid"));
-			businessCategoryBasicInfo.setServiceType(_ctx.integerValue("GetBusinessCategoryListResponse.Data["+ i +"].ServiceType"));
 			businessCategoryBasicInfo.setBusinessName(_ctx.stringValue("GetBusinessCategoryListResponse.Data["+ i +"].BusinessName"));
+			businessCategoryBasicInfo.setServiceType(_ctx.integerValue("GetBusinessCategoryListResponse.Data["+ i +"].ServiceType"));
+			businessCategoryBasicInfo.setBid(_ctx.integerValue("GetBusinessCategoryListResponse.Data["+ i +"].Bid"));
 
 			data.add(businessCategoryBasicInfo);
 		}

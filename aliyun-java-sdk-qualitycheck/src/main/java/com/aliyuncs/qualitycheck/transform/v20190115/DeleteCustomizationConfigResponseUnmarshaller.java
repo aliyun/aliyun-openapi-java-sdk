@@ -23,10 +23,10 @@ public class DeleteCustomizationConfigResponseUnmarshaller {
 	public static DeleteCustomizationConfigResponse unmarshall(DeleteCustomizationConfigResponse deleteCustomizationConfigResponse, UnmarshallerContext _ctx) {
 		
 		deleteCustomizationConfigResponse.setRequestId(_ctx.stringValue("DeleteCustomizationConfigResponse.RequestId"));
-		deleteCustomizationConfigResponse.setSuccess(_ctx.booleanValue("DeleteCustomizationConfigResponse.Success"));
 		deleteCustomizationConfigResponse.setCode(_ctx.stringValue("DeleteCustomizationConfigResponse.Code"));
 		deleteCustomizationConfigResponse.setMessage(_ctx.stringValue("DeleteCustomizationConfigResponse.Message"));
 		deleteCustomizationConfigResponse.setData(_ctx.stringValue("DeleteCustomizationConfigResponse.Data"));
+		deleteCustomizationConfigResponse.setSuccess(_ctx.booleanValue("DeleteCustomizationConfigResponse.Success"));
 	 
 	 	return deleteCustomizationConfigResponse;
 	}

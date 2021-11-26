@@ -23,10 +23,10 @@ public class UpdateRuleResponseUnmarshaller {
 	public static UpdateRuleResponse unmarshall(UpdateRuleResponse updateRuleResponse, UnmarshallerContext _ctx) {
 		
 		updateRuleResponse.setRequestId(_ctx.stringValue("UpdateRuleResponse.RequestId"));
-		updateRuleResponse.setSuccess(_ctx.booleanValue("UpdateRuleResponse.Success"));
 		updateRuleResponse.setCode(_ctx.stringValue("UpdateRuleResponse.Code"));
 		updateRuleResponse.setMessage(_ctx.stringValue("UpdateRuleResponse.Message"));
 		updateRuleResponse.setData(_ctx.stringValue("UpdateRuleResponse.Data"));
+		updateRuleResponse.setSuccess(_ctx.booleanValue("UpdateRuleResponse.Success"));
 	 
 	 	return updateRuleResponse;
 	}

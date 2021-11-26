@@ -23,9 +23,9 @@ public class DelThesaurusForApiResponseUnmarshaller {
 	public static DelThesaurusForApiResponse unmarshall(DelThesaurusForApiResponse delThesaurusForApiResponse, UnmarshallerContext _ctx) {
 		
 		delThesaurusForApiResponse.setRequestId(_ctx.stringValue("DelThesaurusForApiResponse.RequestId"));
-		delThesaurusForApiResponse.setSuccess(_ctx.booleanValue("DelThesaurusForApiResponse.Success"));
 		delThesaurusForApiResponse.setCode(_ctx.stringValue("DelThesaurusForApiResponse.Code"));
 		delThesaurusForApiResponse.setMessage(_ctx.stringValue("DelThesaurusForApiResponse.Message"));
+		delThesaurusForApiResponse.setSuccess(_ctx.booleanValue("DelThesaurusForApiResponse.Success"));
 	 
 	 	return delThesaurusForApiResponse;
 	}

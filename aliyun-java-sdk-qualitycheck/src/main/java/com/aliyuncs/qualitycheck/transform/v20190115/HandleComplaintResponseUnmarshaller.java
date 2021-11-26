@@ -23,10 +23,10 @@ public class HandleComplaintResponseUnmarshaller {
 	public static HandleComplaintResponse unmarshall(HandleComplaintResponse handleComplaintResponse, UnmarshallerContext _ctx) {
 		
 		handleComplaintResponse.setRequestId(_ctx.stringValue("HandleComplaintResponse.RequestId"));
-		handleComplaintResponse.setSuccess(_ctx.booleanValue("HandleComplaintResponse.Success"));
 		handleComplaintResponse.setCode(_ctx.stringValue("HandleComplaintResponse.Code"));
 		handleComplaintResponse.setMessage(_ctx.stringValue("HandleComplaintResponse.Message"));
 		handleComplaintResponse.setData(_ctx.stringValue("HandleComplaintResponse.Data"));
+		handleComplaintResponse.setSuccess(_ctx.booleanValue("HandleComplaintResponse.Success"));
 	 
 	 	return handleComplaintResponse;
 	}

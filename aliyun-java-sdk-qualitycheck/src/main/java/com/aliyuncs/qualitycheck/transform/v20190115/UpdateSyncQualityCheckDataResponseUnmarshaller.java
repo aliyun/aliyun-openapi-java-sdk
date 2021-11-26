@@ -24,9 +24,9 @@ public class UpdateSyncQualityCheckDataResponseUnmarshaller {
 	public static UpdateSyncQualityCheckDataResponse unmarshall(UpdateSyncQualityCheckDataResponse updateSyncQualityCheckDataResponse, UnmarshallerContext _ctx) {
 		
 		updateSyncQualityCheckDataResponse.setRequestId(_ctx.stringValue("UpdateSyncQualityCheckDataResponse.RequestId"));
-		updateSyncQualityCheckDataResponse.setSuccess(_ctx.booleanValue("UpdateSyncQualityCheckDataResponse.Success"));
 		updateSyncQualityCheckDataResponse.setCode(_ctx.stringValue("UpdateSyncQualityCheckDataResponse.Code"));
 		updateSyncQualityCheckDataResponse.setMessage(_ctx.stringValue("UpdateSyncQualityCheckDataResponse.Message"));
+		updateSyncQualityCheckDataResponse.setSuccess(_ctx.booleanValue("UpdateSyncQualityCheckDataResponse.Success"));
 
 		Data data = new Data();
 		data.setTaskId(_ctx.stringValue("UpdateSyncQualityCheckDataResponse.Data.TaskId"));

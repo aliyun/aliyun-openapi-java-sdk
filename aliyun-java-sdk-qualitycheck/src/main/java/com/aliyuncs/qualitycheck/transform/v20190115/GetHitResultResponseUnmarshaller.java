@@ -30,15 +30,15 @@ public class GetHitResultResponseUnmarshaller {
 		getHitResultResponse.setSuccess(_ctx.booleanValue("GetHitResultResponse.Success"));
 		getHitResultResponse.setCode(_ctx.stringValue("GetHitResultResponse.Code"));
 		getHitResultResponse.setMessage(_ctx.stringValue("GetHitResultResponse.Message"));
-		getHitResultResponse.setCount(_ctx.integerValue("GetHitResultResponse.Count"));
-		getHitResultResponse.setPageSize(_ctx.integerValue("GetHitResultResponse.PageSize"));
 		getHitResultResponse.setPageNumber(_ctx.integerValue("GetHitResultResponse.PageNumber"));
+		getHitResultResponse.setPageSize(_ctx.integerValue("GetHitResultResponse.PageSize"));
+		getHitResultResponse.setCount(_ctx.integerValue("GetHitResultResponse.Count"));
 
 		List<ResultInfo> data = new ArrayList<ResultInfo>();
 		for (int i = 0; i < _ctx.lengthValue("GetHitResultResponse.Data.Length"); i++) {
 			ResultInfo resultInfo = new ResultInfo();
-			resultInfo.setRid(_ctx.longValue("GetHitResultResponse.Data["+ i +"].Rid"));
 			resultInfo.setRuleName(_ctx.stringValue("GetHitResultResponse.Data["+ i +"].RuleName"));
+			resultInfo.setRid(_ctx.longValue("GetHitResultResponse.Data["+ i +"].Rid"));
 
 			data.add(resultInfo);
 		}

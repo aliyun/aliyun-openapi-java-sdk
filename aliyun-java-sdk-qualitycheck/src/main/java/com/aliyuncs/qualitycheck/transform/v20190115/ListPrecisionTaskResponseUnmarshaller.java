@@ -38,28 +38,28 @@ public class ListPrecisionTaskResponseUnmarshaller {
 		List<PrecisionTask> data = new ArrayList<PrecisionTask>();
 		for (int i = 0; i < _ctx.lengthValue("ListPrecisionTaskResponse.Data.Length"); i++) {
 			PrecisionTask precisionTask = new PrecisionTask();
-			precisionTask.setName(_ctx.stringValue("ListPrecisionTaskResponse.Data["+ i +"].Name"));
-			precisionTask.setTaskId(_ctx.stringValue("ListPrecisionTaskResponse.Data["+ i +"].TaskId"));
-			precisionTask.setSource(_ctx.integerValue("ListPrecisionTaskResponse.Data["+ i +"].Source"));
-			precisionTask.setDataSetId(_ctx.longValue("ListPrecisionTaskResponse.Data["+ i +"].DataSetId"));
-			precisionTask.setDataSetName(_ctx.stringValue("ListPrecisionTaskResponse.Data["+ i +"].DataSetName"));
-			precisionTask.setDuration(_ctx.integerValue("ListPrecisionTaskResponse.Data["+ i +"].Duration"));
 			precisionTask.setStatus(_ctx.integerValue("ListPrecisionTaskResponse.Data["+ i +"].Status"));
-			precisionTask.setTotalCount(_ctx.integerValue("ListPrecisionTaskResponse.Data["+ i +"].TotalCount"));
-			precisionTask.setVerifiedCount(_ctx.integerValue("ListPrecisionTaskResponse.Data["+ i +"].VerifiedCount"));
+			precisionTask.setUpdateTime(_ctx.stringValue("ListPrecisionTaskResponse.Data["+ i +"].UpdateTime"));
 			precisionTask.setIncorrectWords(_ctx.integerValue("ListPrecisionTaskResponse.Data["+ i +"].IncorrectWords"));
 			precisionTask.setCreateTime(_ctx.stringValue("ListPrecisionTaskResponse.Data["+ i +"].CreateTime"));
-			precisionTask.setUpdateTime(_ctx.stringValue("ListPrecisionTaskResponse.Data["+ i +"].UpdateTime"));
+			precisionTask.setDataSetId(_ctx.longValue("ListPrecisionTaskResponse.Data["+ i +"].DataSetId"));
+			precisionTask.setVerifiedCount(_ctx.integerValue("ListPrecisionTaskResponse.Data["+ i +"].VerifiedCount"));
+			precisionTask.setSource(_ctx.integerValue("ListPrecisionTaskResponse.Data["+ i +"].Source"));
+			precisionTask.setTotalCount(_ctx.integerValue("ListPrecisionTaskResponse.Data["+ i +"].TotalCount"));
+			precisionTask.setDataSetName(_ctx.stringValue("ListPrecisionTaskResponse.Data["+ i +"].DataSetName"));
+			precisionTask.setDuration(_ctx.integerValue("ListPrecisionTaskResponse.Data["+ i +"].Duration"));
+			precisionTask.setName(_ctx.stringValue("ListPrecisionTaskResponse.Data["+ i +"].Name"));
+			precisionTask.setTaskId(_ctx.stringValue("ListPrecisionTaskResponse.Data["+ i +"].TaskId"));
 
 			List<Precision> precisions = new ArrayList<Precision>();
 			for (int j = 0; j < _ctx.lengthValue("ListPrecisionTaskResponse.Data["+ i +"].Precisions.Length"); j++) {
 				Precision precision = new Precision();
+				precision.setStatus(_ctx.integerValue("ListPrecisionTaskResponse.Data["+ i +"].Precisions["+ j +"].Status"));
+				precision.setCreateTime(_ctx.stringValue("ListPrecisionTaskResponse.Data["+ i +"].Precisions["+ j +"].CreateTime"));
 				precision.setModelName(_ctx.stringValue("ListPrecisionTaskResponse.Data["+ i +"].Precisions["+ j +"].ModelName"));
+				precision.setTaskId(_ctx.stringValue("ListPrecisionTaskResponse.Data["+ i +"].Precisions["+ j +"].TaskId"));
 				precision.setModelId(_ctx.longValue("ListPrecisionTaskResponse.Data["+ i +"].Precisions["+ j +"].ModelId"));
 				precision.setPrecision(_ctx.floatValue("ListPrecisionTaskResponse.Data["+ i +"].Precisions["+ j +"].Precision"));
-				precision.setStatus(_ctx.integerValue("ListPrecisionTaskResponse.Data["+ i +"].Precisions["+ j +"].Status"));
-				precision.setTaskId(_ctx.stringValue("ListPrecisionTaskResponse.Data["+ i +"].Precisions["+ j +"].TaskId"));
-				precision.setCreateTime(_ctx.stringValue("ListPrecisionTaskResponse.Data["+ i +"].Precisions["+ j +"].CreateTime"));
 
 				precisions.add(precision);
 			}

@@ -24,9 +24,9 @@ public class AddRuleCategoryResponseUnmarshaller {
 	public static AddRuleCategoryResponse unmarshall(AddRuleCategoryResponse addRuleCategoryResponse, UnmarshallerContext _ctx) {
 		
 		addRuleCategoryResponse.setRequestId(_ctx.stringValue("AddRuleCategoryResponse.RequestId"));
-		addRuleCategoryResponse.setSuccess(_ctx.booleanValue("AddRuleCategoryResponse.Success"));
 		addRuleCategoryResponse.setCode(_ctx.stringValue("AddRuleCategoryResponse.Code"));
 		addRuleCategoryResponse.setMessage(_ctx.stringValue("AddRuleCategoryResponse.Message"));
+		addRuleCategoryResponse.setSuccess(_ctx.booleanValue("AddRuleCategoryResponse.Success"));
 
 		Data data = new Data();
 		data.setSelect(_ctx.booleanValue("AddRuleCategoryResponse.Data.Select"));

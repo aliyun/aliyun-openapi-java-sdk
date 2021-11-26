@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetBusinessCategoryListResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String message;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private List<BusinessCategoryBasicInfo> data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -67,6 +51,22 @@ public class GetBusinessCategoryListResponse extends AcsResponse {
 		this.message = message;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public List<BusinessCategoryBasicInfo> getData() {
 		return this.data;
 	}
@@ -77,18 +77,18 @@ public class GetBusinessCategoryListResponse extends AcsResponse {
 
 	public static class BusinessCategoryBasicInfo {
 
-		private Integer bid;
+		private String businessName;
 
 		private Integer serviceType;
 
-		private String businessName;
+		private Integer bid;
 
-		public Integer getBid() {
-			return this.bid;
+		public String getBusinessName() {
+			return this.businessName;
 		}
 
-		public void setBid(Integer bid) {
-			this.bid = bid;
+		public void setBusinessName(String businessName) {
+			this.businessName = businessName;
 		}
 
 		public Integer getServiceType() {
@@ -99,12 +99,12 @@ public class GetBusinessCategoryListResponse extends AcsResponse {
 			this.serviceType = serviceType;
 		}
 
-		public String getBusinessName() {
-			return this.businessName;
+		public Integer getBid() {
+			return this.bid;
 		}
 
-		public void setBusinessName(String businessName) {
-			this.businessName = businessName;
+		public void setBid(Integer bid) {
+			this.bid = bid;
 		}
 	}
 

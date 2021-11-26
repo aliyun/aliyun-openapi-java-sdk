@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class UploadDataSyncResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String message;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private List<ResultInfo> data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -65,6 +49,22 @@ public class UploadDataSyncResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<ResultInfo> getData() {
@@ -109,21 +109,13 @@ public class UploadDataSyncResponse extends AcsResponse {
 
 		public static class RuleHitInfo {
 
-			private String rid;
-
 			private String tid;
+
+			private String rid;
 
 			private List<ConditionHitInfo> hit;
 
 			private List<ConditionBasicInfo> conditionInfo;
-
-			public String getRid() {
-				return this.rid;
-			}
-
-			public void setRid(String rid) {
-				this.rid = rid;
-			}
 
 			public String getTid() {
 				return this.tid;
@@ -131,6 +123,14 @@ public class UploadDataSyncResponse extends AcsResponse {
 
 			public void setTid(String tid) {
 				this.tid = tid;
+			}
+
+			public String getRid() {
+				return this.rid;
+			}
+
+			public void setRid(String rid) {
+				this.rid = rid;
 			}
 
 			public List<ConditionHitInfo> getHit() {
@@ -183,30 +183,22 @@ public class UploadDataSyncResponse extends AcsResponse {
 
 				public static class HitKeyWord {
 
-					private String val;
-
-					private Integer pid;
+					private Integer to;
 
 					private Integer from;
 
-					private Integer to;
+					private String val;
 
 					private String tid;
 
-					public String getVal() {
-						return this.val;
+					private Integer pid;
+
+					public Integer getTo() {
+						return this.to;
 					}
 
-					public void setVal(String val) {
-						this.val = val;
-					}
-
-					public Integer getPid() {
-						return this.pid;
-					}
-
-					public void setPid(Integer pid) {
-						this.pid = pid;
+					public void setTo(Integer to) {
+						this.to = to;
 					}
 
 					public Integer getFrom() {
@@ -217,12 +209,12 @@ public class UploadDataSyncResponse extends AcsResponse {
 						this.from = from;
 					}
 
-					public Integer getTo() {
-						return this.to;
+					public String getVal() {
+						return this.val;
 					}
 
-					public void setTo(Integer to) {
-						this.to = to;
+					public void setVal(String val) {
+						this.val = val;
 					}
 
 					public String getTid() {
@@ -232,28 +224,36 @@ public class UploadDataSyncResponse extends AcsResponse {
 					public void setTid(String tid) {
 						this.tid = tid;
 					}
+
+					public Integer getPid() {
+						return this.pid;
+					}
+
+					public void setPid(Integer pid) {
+						this.pid = pid;
+					}
 				}
 
 				public static class Phrase {
 
-					private String role;
+					private String words;
 
 					private String identity;
 
-					private String words;
-
 					private Long begin;
-
-					private Long end;
 
 					private String beginTime;
 
-					public String getRole() {
-						return this.role;
+					private Long end;
+
+					private String role;
+
+					public String getWords() {
+						return this.words;
 					}
 
-					public void setRole(String role) {
-						this.role = role;
+					public void setWords(String words) {
+						this.words = words;
 					}
 
 					public String getIdentity() {
@@ -264,20 +264,20 @@ public class UploadDataSyncResponse extends AcsResponse {
 						this.identity = identity;
 					}
 
-					public String getWords() {
-						return this.words;
-					}
-
-					public void setWords(String words) {
-						this.words = words;
-					}
-
 					public Long getBegin() {
 						return this.begin;
 					}
 
 					public void setBegin(Long begin) {
 						this.begin = begin;
+					}
+
+					public String getBeginTime() {
+						return this.beginTime;
+					}
+
+					public void setBeginTime(String beginTime) {
+						this.beginTime = beginTime;
 					}
 
 					public Long getEnd() {
@@ -288,12 +288,12 @@ public class UploadDataSyncResponse extends AcsResponse {
 						this.end = end;
 					}
 
-					public String getBeginTime() {
-						return this.beginTime;
+					public String getRole() {
+						return this.role;
 					}
 
-					public void setBeginTime(String beginTime) {
-						this.beginTime = beginTime;
+					public void setRole(String role) {
+						this.role = role;
 					}
 				}
 			}

@@ -23,9 +23,9 @@ public class SaveConfigDataSetResponseUnmarshaller {
 	public static SaveConfigDataSetResponse unmarshall(SaveConfigDataSetResponse saveConfigDataSetResponse, UnmarshallerContext _ctx) {
 		
 		saveConfigDataSetResponse.setRequestId(_ctx.stringValue("SaveConfigDataSetResponse.RequestId"));
-		saveConfigDataSetResponse.setSuccess(_ctx.booleanValue("SaveConfigDataSetResponse.Success"));
 		saveConfigDataSetResponse.setCode(_ctx.stringValue("SaveConfigDataSetResponse.Code"));
 		saveConfigDataSetResponse.setMessage(_ctx.stringValue("SaveConfigDataSetResponse.Message"));
+		saveConfigDataSetResponse.setSuccess(_ctx.booleanValue("SaveConfigDataSetResponse.Success"));
 	 
 	 	return saveConfigDataSetResponse;
 	}

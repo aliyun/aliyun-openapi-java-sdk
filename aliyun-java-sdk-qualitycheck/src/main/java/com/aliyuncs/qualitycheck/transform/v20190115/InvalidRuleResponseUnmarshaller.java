@@ -23,10 +23,10 @@ public class InvalidRuleResponseUnmarshaller {
 	public static InvalidRuleResponse unmarshall(InvalidRuleResponse invalidRuleResponse, UnmarshallerContext _ctx) {
 		
 		invalidRuleResponse.setRequestId(_ctx.stringValue("InvalidRuleResponse.RequestId"));
-		invalidRuleResponse.setSuccess(_ctx.booleanValue("InvalidRuleResponse.Success"));
 		invalidRuleResponse.setCode(_ctx.stringValue("InvalidRuleResponse.Code"));
 		invalidRuleResponse.setMessage(_ctx.stringValue("InvalidRuleResponse.Message"));
 		invalidRuleResponse.setData(_ctx.booleanValue("InvalidRuleResponse.Data"));
+		invalidRuleResponse.setSuccess(_ctx.booleanValue("InvalidRuleResponse.Success"));
 	 
 	 	return invalidRuleResponse;
 	}

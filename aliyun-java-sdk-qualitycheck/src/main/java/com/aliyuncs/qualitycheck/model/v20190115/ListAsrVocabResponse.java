@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListAsrVocabResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String message;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private List<AsrVocab> data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -67,6 +51,22 @@ public class ListAsrVocabResponse extends AcsResponse {
 		this.message = message;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public List<AsrVocab> getData() {
 		return this.data;
 	}
@@ -77,22 +77,30 @@ public class ListAsrVocabResponse extends AcsResponse {
 
 	public static class AsrVocab {
 
-		private String id;
+		private String vocabularyId;
+
+		private String updateTime;
 
 		private String name;
 
 		private String createTime;
 
-		private String updateTime;
+		private String id;
 
-		private String vocabularyId;
-
-		public String getId() {
-			return this.id;
+		public String getVocabularyId() {
+			return this.vocabularyId;
 		}
 
-		public void setId(String id) {
-			this.id = id;
+		public void setVocabularyId(String vocabularyId) {
+			this.vocabularyId = vocabularyId;
+		}
+
+		public String getUpdateTime() {
+			return this.updateTime;
+		}
+
+		public void setUpdateTime(String updateTime) {
+			this.updateTime = updateTime;
 		}
 
 		public String getName() {
@@ -111,20 +119,12 @@ public class ListAsrVocabResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
-		public String getUpdateTime() {
-			return this.updateTime;
+		public String getId() {
+			return this.id;
 		}
 
-		public void setUpdateTime(String updateTime) {
-			this.updateTime = updateTime;
-		}
-
-		public String getVocabularyId() {
-			return this.vocabularyId;
-		}
-
-		public void setVocabularyId(String vocabularyId) {
-			this.vocabularyId = vocabularyId;
+		public void setId(String id) {
+			this.id = id;
 		}
 	}
 

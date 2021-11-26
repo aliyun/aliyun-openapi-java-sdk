@@ -23,10 +23,10 @@ public class VerifyFileResponseUnmarshaller {
 	public static VerifyFileResponse unmarshall(VerifyFileResponse verifyFileResponse, UnmarshallerContext _ctx) {
 		
 		verifyFileResponse.setRequestId(_ctx.stringValue("VerifyFileResponse.RequestId"));
-		verifyFileResponse.setSuccess(_ctx.booleanValue("VerifyFileResponse.Success"));
 		verifyFileResponse.setCode(_ctx.stringValue("VerifyFileResponse.Code"));
 		verifyFileResponse.setMessage(_ctx.stringValue("VerifyFileResponse.Message"));
 		verifyFileResponse.setData(_ctx.floatValue("VerifyFileResponse.Data"));
+		verifyFileResponse.setSuccess(_ctx.booleanValue("VerifyFileResponse.Success"));
 	 
 	 	return verifyFileResponse;
 	}

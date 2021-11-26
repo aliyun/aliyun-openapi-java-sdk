@@ -23,10 +23,10 @@ public class AddThesaurusForApiResponseUnmarshaller {
 	public static AddThesaurusForApiResponse unmarshall(AddThesaurusForApiResponse addThesaurusForApiResponse, UnmarshallerContext _ctx) {
 		
 		addThesaurusForApiResponse.setRequestId(_ctx.stringValue("AddThesaurusForApiResponse.RequestId"));
-		addThesaurusForApiResponse.setSuccess(_ctx.booleanValue("AddThesaurusForApiResponse.Success"));
 		addThesaurusForApiResponse.setCode(_ctx.stringValue("AddThesaurusForApiResponse.Code"));
 		addThesaurusForApiResponse.setMessage(_ctx.stringValue("AddThesaurusForApiResponse.Message"));
 		addThesaurusForApiResponse.setData(_ctx.longValue("AddThesaurusForApiResponse.Data"));
+		addThesaurusForApiResponse.setSuccess(_ctx.booleanValue("AddThesaurusForApiResponse.Success"));
 	 
 	 	return addThesaurusForApiResponse;
 	}

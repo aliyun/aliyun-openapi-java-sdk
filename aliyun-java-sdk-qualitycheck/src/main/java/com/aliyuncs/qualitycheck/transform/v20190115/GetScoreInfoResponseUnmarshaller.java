@@ -28,9 +28,9 @@ public class GetScoreInfoResponseUnmarshaller {
 	public static GetScoreInfoResponse unmarshall(GetScoreInfoResponse getScoreInfoResponse, UnmarshallerContext _ctx) {
 		
 		getScoreInfoResponse.setRequestId(_ctx.stringValue("GetScoreInfoResponse.RequestId"));
-		getScoreInfoResponse.setSuccess(_ctx.booleanValue("GetScoreInfoResponse.Success"));
 		getScoreInfoResponse.setCode(_ctx.stringValue("GetScoreInfoResponse.Code"));
 		getScoreInfoResponse.setMessage(_ctx.stringValue("GetScoreInfoResponse.Message"));
+		getScoreInfoResponse.setSuccess(_ctx.booleanValue("GetScoreInfoResponse.Success"));
 
 		List<ScorePo> data = new ArrayList<ScorePo>();
 		for (int i = 0; i < _ctx.lengthValue("GetScoreInfoResponse.Data.Length"); i++) {
@@ -41,9 +41,9 @@ public class GetScoreInfoResponseUnmarshaller {
 			List<ScoreParam> scoreInfos = new ArrayList<ScoreParam>();
 			for (int j = 0; j < _ctx.lengthValue("GetScoreInfoResponse.Data["+ i +"].ScoreInfos.Length"); j++) {
 				ScoreParam scoreParam = new ScoreParam();
+				scoreParam.setScoreSubName(_ctx.stringValue("GetScoreInfoResponse.Data["+ i +"].ScoreInfos["+ j +"].ScoreSubName"));
 				scoreParam.setScoreNum(_ctx.integerValue("GetScoreInfoResponse.Data["+ i +"].ScoreInfos["+ j +"].ScoreNum"));
 				scoreParam.setScoreSubId(_ctx.integerValue("GetScoreInfoResponse.Data["+ i +"].ScoreInfos["+ j +"].ScoreSubId"));
-				scoreParam.setScoreSubName(_ctx.stringValue("GetScoreInfoResponse.Data["+ i +"].ScoreInfos["+ j +"].ScoreSubName"));
 				scoreParam.setScoreType(_ctx.integerValue("GetScoreInfoResponse.Data["+ i +"].ScoreInfos["+ j +"].ScoreType"));
 
 				scoreInfos.add(scoreParam);

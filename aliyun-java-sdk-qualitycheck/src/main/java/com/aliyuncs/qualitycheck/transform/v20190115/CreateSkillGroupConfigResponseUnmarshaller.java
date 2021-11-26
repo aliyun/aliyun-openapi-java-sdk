@@ -23,10 +23,10 @@ public class CreateSkillGroupConfigResponseUnmarshaller {
 	public static CreateSkillGroupConfigResponse unmarshall(CreateSkillGroupConfigResponse createSkillGroupConfigResponse, UnmarshallerContext _ctx) {
 		
 		createSkillGroupConfigResponse.setRequestId(_ctx.stringValue("CreateSkillGroupConfigResponse.RequestId"));
-		createSkillGroupConfigResponse.setSuccess(_ctx.booleanValue("CreateSkillGroupConfigResponse.Success"));
 		createSkillGroupConfigResponse.setCode(_ctx.stringValue("CreateSkillGroupConfigResponse.Code"));
 		createSkillGroupConfigResponse.setMessage(_ctx.stringValue("CreateSkillGroupConfigResponse.Message"));
 		createSkillGroupConfigResponse.setData(_ctx.longValue("CreateSkillGroupConfigResponse.Data"));
+		createSkillGroupConfigResponse.setSuccess(_ctx.booleanValue("CreateSkillGroupConfigResponse.Success"));
 	 
 	 	return createSkillGroupConfigResponse;
 	}

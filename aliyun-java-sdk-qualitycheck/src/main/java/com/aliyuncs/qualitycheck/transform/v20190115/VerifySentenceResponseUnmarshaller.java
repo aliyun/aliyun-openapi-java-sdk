@@ -30,11 +30,11 @@ public class VerifySentenceResponseUnmarshaller {
 		
 		verifySentenceResponse.setRequestId(_ctx.stringValue("VerifySentenceResponse.RequestId"));
 		verifySentenceResponse.setSuccess(_ctx.booleanValue("VerifySentenceResponse.Success"));
+		verifySentenceResponse.setIncorrectWords(_ctx.integerValue("VerifySentenceResponse.IncorrectWords"));
+		verifySentenceResponse.setTargetRole(_ctx.integerValue("VerifySentenceResponse.TargetRole"));
 		verifySentenceResponse.setCode(_ctx.stringValue("VerifySentenceResponse.Code"));
 		verifySentenceResponse.setMessage(_ctx.stringValue("VerifySentenceResponse.Message"));
 		verifySentenceResponse.setSourceRole(_ctx.integerValue("VerifySentenceResponse.SourceRole"));
-		verifySentenceResponse.setTargetRole(_ctx.integerValue("VerifySentenceResponse.TargetRole"));
-		verifySentenceResponse.setIncorrectWords(_ctx.integerValue("VerifySentenceResponse.IncorrectWords"));
 
 		List<Delta> data = new ArrayList<Delta>();
 		for (int i = 0; i < _ctx.lengthValue("VerifySentenceResponse.Data.Length"); i++) {

@@ -29,18 +29,18 @@ public class ListWarningConfigResponseUnmarshaller {
 	public static ListWarningConfigResponse unmarshall(ListWarningConfigResponse listWarningConfigResponse, UnmarshallerContext _ctx) {
 		
 		listWarningConfigResponse.setRequestId(_ctx.stringValue("ListWarningConfigResponse.RequestId"));
-		listWarningConfigResponse.setSuccess(_ctx.booleanValue("ListWarningConfigResponse.Success"));
 		listWarningConfigResponse.setCode(_ctx.stringValue("ListWarningConfigResponse.Code"));
 		listWarningConfigResponse.setMessage(_ctx.stringValue("ListWarningConfigResponse.Message"));
+		listWarningConfigResponse.setSuccess(_ctx.booleanValue("ListWarningConfigResponse.Success"));
 
 		List<WarningConfigInfo> data = new ArrayList<WarningConfigInfo>();
 		for (int i = 0; i < _ctx.lengthValue("ListWarningConfigResponse.Data.Length"); i++) {
 			WarningConfigInfo warningConfigInfo = new WarningConfigInfo();
-			warningConfigInfo.setConfigId(_ctx.longValue("ListWarningConfigResponse.Data["+ i +"].ConfigId"));
-			warningConfigInfo.setConfigName(_ctx.stringValue("ListWarningConfigResponse.Data["+ i +"].ConfigName"));
 			warningConfigInfo.setStatus(_ctx.integerValue("ListWarningConfigResponse.Data["+ i +"].Status"));
-			warningConfigInfo.setCreateTime(_ctx.stringValue("ListWarningConfigResponse.Data["+ i +"].CreateTime"));
+			warningConfigInfo.setConfigName(_ctx.stringValue("ListWarningConfigResponse.Data["+ i +"].ConfigName"));
 			warningConfigInfo.setUpdateTime(_ctx.stringValue("ListWarningConfigResponse.Data["+ i +"].UpdateTime"));
+			warningConfigInfo.setConfigId(_ctx.longValue("ListWarningConfigResponse.Data["+ i +"].ConfigId"));
+			warningConfigInfo.setCreateTime(_ctx.stringValue("ListWarningConfigResponse.Data["+ i +"].CreateTime"));
 
 			List<String> ridList = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("ListWarningConfigResponse.Data["+ i +"].RidList.Length"); j++) {
@@ -51,8 +51,8 @@ public class ListWarningConfigResponseUnmarshaller {
 			List<WarningRule> ruleList = new ArrayList<WarningRule>();
 			for (int j = 0; j < _ctx.lengthValue("ListWarningConfigResponse.Data["+ i +"].RuleList.Length"); j++) {
 				WarningRule warningRule = new WarningRule();
-				warningRule.setRid(_ctx.longValue("ListWarningConfigResponse.Data["+ i +"].RuleList["+ j +"].Rid"));
 				warningRule.setRuleName(_ctx.stringValue("ListWarningConfigResponse.Data["+ i +"].RuleList["+ j +"].RuleName"));
+				warningRule.setRid(_ctx.longValue("ListWarningConfigResponse.Data["+ i +"].RuleList["+ j +"].Rid"));
 
 				ruleList.add(warningRule);
 			}

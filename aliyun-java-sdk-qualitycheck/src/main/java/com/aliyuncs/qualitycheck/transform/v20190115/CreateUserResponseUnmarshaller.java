@@ -23,9 +23,9 @@ public class CreateUserResponseUnmarshaller {
 	public static CreateUserResponse unmarshall(CreateUserResponse createUserResponse, UnmarshallerContext _ctx) {
 		
 		createUserResponse.setRequestId(_ctx.stringValue("CreateUserResponse.RequestId"));
-		createUserResponse.setSuccess(_ctx.booleanValue("CreateUserResponse.Success"));
 		createUserResponse.setCode(_ctx.stringValue("CreateUserResponse.Code"));
 		createUserResponse.setMessage(_ctx.stringValue("CreateUserResponse.Message"));
+		createUserResponse.setSuccess(_ctx.booleanValue("CreateUserResponse.Success"));
 	 
 	 	return createUserResponse;
 	}

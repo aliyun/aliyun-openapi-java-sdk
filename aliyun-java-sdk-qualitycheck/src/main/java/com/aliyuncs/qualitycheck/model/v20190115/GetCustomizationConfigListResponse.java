@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetCustomizationConfigListResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String message;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private List<ModelCustomizationDataSetPo> data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -67,6 +51,22 @@ public class GetCustomizationConfigListResponse extends AcsResponse {
 		this.message = message;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public List<ModelCustomizationDataSetPo> getData() {
 		return this.data;
 	}
@@ -77,49 +77,17 @@ public class GetCustomizationConfigListResponse extends AcsResponse {
 
 	public static class ModelCustomizationDataSetPo {
 
-		private Long modelId;
-
-		private String modeCustomizationId;
-
-		private String modelName;
-
-		private Integer modelStatus;
-
 		private Integer taskType;
 
 		private String createTime;
 
-		public Long getModelId() {
-			return this.modelId;
-		}
+		private Integer modelStatus;
 
-		public void setModelId(Long modelId) {
-			this.modelId = modelId;
-		}
+		private String modelName;
 
-		public String getModeCustomizationId() {
-			return this.modeCustomizationId;
-		}
+		private Long modelId;
 
-		public void setModeCustomizationId(String modeCustomizationId) {
-			this.modeCustomizationId = modeCustomizationId;
-		}
-
-		public String getModelName() {
-			return this.modelName;
-		}
-
-		public void setModelName(String modelName) {
-			this.modelName = modelName;
-		}
-
-		public Integer getModelStatus() {
-			return this.modelStatus;
-		}
-
-		public void setModelStatus(Integer modelStatus) {
-			this.modelStatus = modelStatus;
-		}
+		private String modeCustomizationId;
 
 		public Integer getTaskType() {
 			return this.taskType;
@@ -135,6 +103,38 @@ public class GetCustomizationConfigListResponse extends AcsResponse {
 
 		public void setCreateTime(String createTime) {
 			this.createTime = createTime;
+		}
+
+		public Integer getModelStatus() {
+			return this.modelStatus;
+		}
+
+		public void setModelStatus(Integer modelStatus) {
+			this.modelStatus = modelStatus;
+		}
+
+		public String getModelName() {
+			return this.modelName;
+		}
+
+		public void setModelName(String modelName) {
+			this.modelName = modelName;
+		}
+
+		public Long getModelId() {
+			return this.modelId;
+		}
+
+		public void setModelId(Long modelId) {
+			this.modelId = modelId;
+		}
+
+		public String getModeCustomizationId() {
+			return this.modeCustomizationId;
+		}
+
+		public void setModeCustomizationId(String modeCustomizationId) {
+			this.modeCustomizationId = modeCustomizationId;
 		}
 	}
 

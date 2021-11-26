@@ -23,10 +23,10 @@ public class SubmitReviewInfoResponseUnmarshaller {
 	public static SubmitReviewInfoResponse unmarshall(SubmitReviewInfoResponse submitReviewInfoResponse, UnmarshallerContext _ctx) {
 		
 		submitReviewInfoResponse.setRequestId(_ctx.stringValue("SubmitReviewInfoResponse.RequestId"));
-		submitReviewInfoResponse.setSuccess(_ctx.booleanValue("SubmitReviewInfoResponse.Success"));
 		submitReviewInfoResponse.setCode(_ctx.stringValue("SubmitReviewInfoResponse.Code"));
 		submitReviewInfoResponse.setMessage(_ctx.stringValue("SubmitReviewInfoResponse.Message"));
 		submitReviewInfoResponse.setData(_ctx.stringValue("SubmitReviewInfoResponse.Data"));
+		submitReviewInfoResponse.setSuccess(_ctx.booleanValue("SubmitReviewInfoResponse.Success"));
 	 
 	 	return submitReviewInfoResponse;
 	}

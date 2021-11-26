@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class SyncQualityCheckResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String message;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -67,6 +51,22 @@ public class SyncQualityCheckResponse extends AcsResponse {
 		this.message = message;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -79,11 +79,11 @@ public class SyncQualityCheckResponse extends AcsResponse {
 
 		private Integer score;
 
+		private String taskId;
+
 		private String tid;
 
 		private Long beginTime;
-
-		private String taskId;
 
 		private List<RuleHitInfo> rules;
 
@@ -93,6 +93,14 @@ public class SyncQualityCheckResponse extends AcsResponse {
 
 		public void setScore(Integer score) {
 			this.score = score;
+		}
+
+		public String getTaskId() {
+			return this.taskId;
+		}
+
+		public void setTaskId(String taskId) {
+			this.taskId = taskId;
 		}
 
 		public String getTid() {
@@ -111,14 +119,6 @@ public class SyncQualityCheckResponse extends AcsResponse {
 			this.beginTime = beginTime;
 		}
 
-		public String getTaskId() {
-			return this.taskId;
-		}
-
-		public void setTaskId(String taskId) {
-			this.taskId = taskId;
-		}
-
 		public List<RuleHitInfo> getRules() {
 			return this.rules;
 		}
@@ -129,19 +129,11 @@ public class SyncQualityCheckResponse extends AcsResponse {
 
 		public static class RuleHitInfo {
 
-			private String rid;
-
 			private String ruleName;
 
+			private String rid;
+
 			private List<ConditionHitInfo> hit;
-
-			public String getRid() {
-				return this.rid;
-			}
-
-			public void setRid(String rid) {
-				this.rid = rid;
-			}
 
 			public String getRuleName() {
 				return this.ruleName;
@@ -149,6 +141,14 @@ public class SyncQualityCheckResponse extends AcsResponse {
 
 			public void setRuleName(String ruleName) {
 				this.ruleName = ruleName;
+			}
+
+			public String getRid() {
+				return this.rid;
+			}
+
+			public void setRid(String rid) {
+				this.rid = rid;
 			}
 
 			public List<ConditionHitInfo> getHit() {
@@ -183,30 +183,22 @@ public class SyncQualityCheckResponse extends AcsResponse {
 
 				public static class HitKeyWord {
 
-					private String val;
-
-					private Integer pid;
+					private Integer to;
 
 					private Integer from;
 
-					private Integer to;
+					private String val;
 
 					private Integer cid;
 
-					public String getVal() {
-						return this.val;
+					private Integer pid;
+
+					public Integer getTo() {
+						return this.to;
 					}
 
-					public void setVal(String val) {
-						this.val = val;
-					}
-
-					public Integer getPid() {
-						return this.pid;
-					}
-
-					public void setPid(Integer pid) {
-						this.pid = pid;
+					public void setTo(Integer to) {
+						this.to = to;
 					}
 
 					public Integer getFrom() {
@@ -217,12 +209,12 @@ public class SyncQualityCheckResponse extends AcsResponse {
 						this.from = from;
 					}
 
-					public Integer getTo() {
-						return this.to;
+					public String getVal() {
+						return this.val;
 					}
 
-					public void setTo(Integer to) {
-						this.to = to;
+					public void setVal(String val) {
+						this.val = val;
 					}
 
 					public Integer getCid() {
@@ -232,32 +224,40 @@ public class SyncQualityCheckResponse extends AcsResponse {
 					public void setCid(Integer cid) {
 						this.cid = cid;
 					}
+
+					public Integer getPid() {
+						return this.pid;
+					}
+
+					public void setPid(Integer pid) {
+						this.pid = pid;
+					}
 				}
 
 				public static class Phrase {
 
-					private String role;
+					private String words;
 
 					private String identity;
 
-					private String words;
-
 					private Long begin;
-
-					private Long end;
 
 					private Integer emotionValue;
 
+					private Long end;
+
 					private Integer speechRate;
+
+					private String role;
 
 					private Integer silenceDuration;
 
-					public String getRole() {
-						return this.role;
+					public String getWords() {
+						return this.words;
 					}
 
-					public void setRole(String role) {
-						this.role = role;
+					public void setWords(String words) {
+						this.words = words;
 					}
 
 					public String getIdentity() {
@@ -268,28 +268,12 @@ public class SyncQualityCheckResponse extends AcsResponse {
 						this.identity = identity;
 					}
 
-					public String getWords() {
-						return this.words;
-					}
-
-					public void setWords(String words) {
-						this.words = words;
-					}
-
 					public Long getBegin() {
 						return this.begin;
 					}
 
 					public void setBegin(Long begin) {
 						this.begin = begin;
-					}
-
-					public Long getEnd() {
-						return this.end;
-					}
-
-					public void setEnd(Long end) {
-						this.end = end;
 					}
 
 					public Integer getEmotionValue() {
@@ -300,12 +284,28 @@ public class SyncQualityCheckResponse extends AcsResponse {
 						this.emotionValue = emotionValue;
 					}
 
+					public Long getEnd() {
+						return this.end;
+					}
+
+					public void setEnd(Long end) {
+						this.end = end;
+					}
+
 					public Integer getSpeechRate() {
 						return this.speechRate;
 					}
 
 					public void setSpeechRate(Integer speechRate) {
 						this.speechRate = speechRate;
+					}
+
+					public String getRole() {
+						return this.role;
+					}
+
+					public void setRole(String role) {
+						this.role = role;
 					}
 
 					public Integer getSilenceDuration() {

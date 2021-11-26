@@ -107,54 +107,38 @@ public class ListHotWordsTasksResponse extends AcsResponse {
 
 	public static class HotWordsTaskPo {
 
-		private Long taskConfigId;
-
-		private String name;
-
-		private Integer status;
+		private String endTime;
 
 		private Integer type;
 
-		private String startTime;
+		private Integer status;
 
 		private Integer timeInterval;
 
-		private Integer timeUnit;
+		private String startTime;
 
-		private String endTime;
+		private Long taskConfigId;
+
+		private String message;
 
 		private Integer instanceStatus;
 
 		private String lastExecutionTime;
 
-		private String message;
+		private String name;
+
+		private Integer timeUnit;
 
 		private DialogueParam dialogueParam;
 
 		private WordsParam wordsParam;
 
-		public Long getTaskConfigId() {
-			return this.taskConfigId;
+		public String getEndTime() {
+			return this.endTime;
 		}
 
-		public void setTaskConfigId(Long taskConfigId) {
-			this.taskConfigId = taskConfigId;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public Integer getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(Integer status) {
-			this.status = status;
+		public void setEndTime(String endTime) {
+			this.endTime = endTime;
 		}
 
 		public Integer getType() {
@@ -165,12 +149,12 @@ public class ListHotWordsTasksResponse extends AcsResponse {
 			this.type = type;
 		}
 
-		public String getStartTime() {
-			return this.startTime;
+		public Integer getStatus() {
+			return this.status;
 		}
 
-		public void setStartTime(String startTime) {
-			this.startTime = startTime;
+		public void setStatus(Integer status) {
+			this.status = status;
 		}
 
 		public Integer getTimeInterval() {
@@ -181,20 +165,28 @@ public class ListHotWordsTasksResponse extends AcsResponse {
 			this.timeInterval = timeInterval;
 		}
 
-		public Integer getTimeUnit() {
-			return this.timeUnit;
+		public String getStartTime() {
+			return this.startTime;
 		}
 
-		public void setTimeUnit(Integer timeUnit) {
-			this.timeUnit = timeUnit;
+		public void setStartTime(String startTime) {
+			this.startTime = startTime;
 		}
 
-		public String getEndTime() {
-			return this.endTime;
+		public Long getTaskConfigId() {
+			return this.taskConfigId;
 		}
 
-		public void setEndTime(String endTime) {
-			this.endTime = endTime;
+		public void setTaskConfigId(Long taskConfigId) {
+			this.taskConfigId = taskConfigId;
+		}
+
+		public String getMessage() {
+			return this.message;
+		}
+
+		public void setMessage(String message) {
+			this.message = message;
 		}
 
 		public Integer getInstanceStatus() {
@@ -213,12 +205,20 @@ public class ListHotWordsTasksResponse extends AcsResponse {
 			this.lastExecutionTime = lastExecutionTime;
 		}
 
-		public String getMessage() {
-			return this.message;
+		public String getName() {
+			return this.name;
 		}
 
-		public void setMessage(String message) {
-			this.message = message;
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public Integer getTimeUnit() {
+			return this.timeUnit;
+		}
+
+		public void setTimeUnit(Integer timeUnit) {
+			this.timeUnit = timeUnit;
 		}
 
 		public DialogueParam getDialogueParam() {
@@ -239,21 +239,29 @@ public class ListHotWordsTasksResponse extends AcsResponse {
 
 		public static class DialogueParam {
 
+			private String endTime;
+
 			private Long dialogueId;
-
-			private Integer role;
-
-			private Integer startIndex;
 
 			private Integer endIndex;
 
+			private String startTime;
+
 			private Integer sourceType;
+
+			private Integer startIndex;
+
+			private Integer role;
 
 			private String dataSetIds;
 
-			private String startTime;
+			public String getEndTime() {
+				return this.endTime;
+			}
 
-			private String endTime;
+			public void setEndTime(String endTime) {
+				this.endTime = endTime;
+			}
 
 			public Long getDialogueId() {
 				return this.dialogueId;
@@ -261,22 +269,6 @@ public class ListHotWordsTasksResponse extends AcsResponse {
 
 			public void setDialogueId(Long dialogueId) {
 				this.dialogueId = dialogueId;
-			}
-
-			public Integer getRole() {
-				return this.role;
-			}
-
-			public void setRole(Integer role) {
-				this.role = role;
-			}
-
-			public Integer getStartIndex() {
-				return this.startIndex;
-			}
-
-			public void setStartIndex(Integer startIndex) {
-				this.startIndex = startIndex;
 			}
 
 			public Integer getEndIndex() {
@@ -287,12 +279,36 @@ public class ListHotWordsTasksResponse extends AcsResponse {
 				this.endIndex = endIndex;
 			}
 
+			public String getStartTime() {
+				return this.startTime;
+			}
+
+			public void setStartTime(String startTime) {
+				this.startTime = startTime;
+			}
+
 			public Integer getSourceType() {
 				return this.sourceType;
 			}
 
 			public void setSourceType(Integer sourceType) {
 				this.sourceType = sourceType;
+			}
+
+			public Integer getStartIndex() {
+				return this.startIndex;
+			}
+
+			public void setStartIndex(Integer startIndex) {
+				this.startIndex = startIndex;
+			}
+
+			public Integer getRole() {
+				return this.role;
+			}
+
+			public void setRole(Integer role) {
+				this.role = role;
 			}
 
 			public String getDataSetIds() {
@@ -302,39 +318,15 @@ public class ListHotWordsTasksResponse extends AcsResponse {
 			public void setDataSetIds(String dataSetIds) {
 				this.dataSetIds = dataSetIds;
 			}
-
-			public String getStartTime() {
-				return this.startTime;
-			}
-
-			public void setStartTime(String startTime) {
-				this.startTime = startTime;
-			}
-
-			public String getEndTime() {
-				return this.endTime;
-			}
-
-			public void setEndTime(String endTime) {
-				this.endTime = endTime;
-			}
 		}
 
 		public static class WordsParam {
-
-			private Long extraConfigId;
 
 			private String excludes;
 
 			private String includes;
 
-			public Long getExtraConfigId() {
-				return this.extraConfigId;
-			}
-
-			public void setExtraConfigId(Long extraConfigId) {
-				this.extraConfigId = extraConfigId;
-			}
+			private Long extraConfigId;
 
 			public String getExcludes() {
 				return this.excludes;
@@ -350,6 +342,14 @@ public class ListHotWordsTasksResponse extends AcsResponse {
 
 			public void setIncludes(String includes) {
 				this.includes = includes;
+			}
+
+			public Long getExtraConfigId() {
+				return this.extraConfigId;
+			}
+
+			public void setExtraConfigId(Long extraConfigId) {
+				this.extraConfigId = extraConfigId;
 			}
 		}
 	}

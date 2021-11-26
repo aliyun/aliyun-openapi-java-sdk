@@ -24,9 +24,9 @@ public class DelRuleCategoryResponseUnmarshaller {
 	public static DelRuleCategoryResponse unmarshall(DelRuleCategoryResponse delRuleCategoryResponse, UnmarshallerContext _ctx) {
 		
 		delRuleCategoryResponse.setRequestId(_ctx.stringValue("DelRuleCategoryResponse.RequestId"));
-		delRuleCategoryResponse.setSuccess(_ctx.booleanValue("DelRuleCategoryResponse.Success"));
 		delRuleCategoryResponse.setCode(_ctx.stringValue("DelRuleCategoryResponse.Code"));
 		delRuleCategoryResponse.setMessage(_ctx.stringValue("DelRuleCategoryResponse.Message"));
+		delRuleCategoryResponse.setSuccess(_ctx.booleanValue("DelRuleCategoryResponse.Success"));
 
 		Data data = new Data();
 		data.setSelect(_ctx.booleanValue("DelRuleCategoryResponse.Data.Select"));

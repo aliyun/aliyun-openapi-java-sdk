@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListSkillGroupConfigResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String message;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private List<SkillGroupConfig> data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -67,6 +51,22 @@ public class ListSkillGroupConfigResponse extends AcsResponse {
 		this.message = message;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public List<SkillGroupConfig> getData() {
 		return this.data;
 	}
@@ -77,43 +77,43 @@ public class ListSkillGroupConfigResponse extends AcsResponse {
 
 	public static class SkillGroupConfig {
 
-		private Long id;
-
-		private String instanceId;
-
-		private Long modelId;
-
-		private String modelName;
-
-		private String name;
-
-		private String rid;
-
-		private String skillGroupId;
-
-		private String skillGroupName;
+		private Integer type;
 
 		private Integer status;
 
-		private Integer type;
-
-		private Long vocabId;
-
-		private String vocabName;
-
-		private String createTime;
-
 		private String updateTime;
-
-		private Integer qualityCheckType;
 
 		private Integer allContentQualityCheck;
 
-		private String allRids;
+		private String createTime;
+
+		private String skillGroupId;
+
+		private Boolean screenSwitch;
+
+		private String instanceId;
+
+		private Long vocabId;
 
 		private Integer skillGroupFrom;
 
-		private Boolean screenSwitch;
+		private String rid;
+
+		private String skillGroupName;
+
+		private String modelName;
+
+		private String allRids;
+
+		private String name;
+
+		private Long modelId;
+
+		private Long id;
+
+		private Integer qualityCheckType;
+
+		private String vocabName;
 
 		private List<RuleNameInfo> ruleList;
 
@@ -121,68 +121,12 @@ public class ListSkillGroupConfigResponse extends AcsResponse {
 
 		private List<SkillGroupScreen> skillGroupScreens;
 
-		public Long getId() {
-			return this.id;
+		public Integer getType() {
+			return this.type;
 		}
 
-		public void setId(Long id) {
-			this.id = id;
-		}
-
-		public String getInstanceId() {
-			return this.instanceId;
-		}
-
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
-
-		public Long getModelId() {
-			return this.modelId;
-		}
-
-		public void setModelId(Long modelId) {
-			this.modelId = modelId;
-		}
-
-		public String getModelName() {
-			return this.modelName;
-		}
-
-		public void setModelName(String modelName) {
-			this.modelName = modelName;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getRid() {
-			return this.rid;
-		}
-
-		public void setRid(String rid) {
-			this.rid = rid;
-		}
-
-		public String getSkillGroupId() {
-			return this.skillGroupId;
-		}
-
-		public void setSkillGroupId(String skillGroupId) {
-			this.skillGroupId = skillGroupId;
-		}
-
-		public String getSkillGroupName() {
-			return this.skillGroupName;
-		}
-
-		public void setSkillGroupName(String skillGroupName) {
-			this.skillGroupName = skillGroupName;
+		public void setType(Integer type) {
+			this.type = type;
 		}
 
 		public Integer getStatus() {
@@ -193,52 +137,12 @@ public class ListSkillGroupConfigResponse extends AcsResponse {
 			this.status = status;
 		}
 
-		public Integer getType() {
-			return this.type;
-		}
-
-		public void setType(Integer type) {
-			this.type = type;
-		}
-
-		public Long getVocabId() {
-			return this.vocabId;
-		}
-
-		public void setVocabId(Long vocabId) {
-			this.vocabId = vocabId;
-		}
-
-		public String getVocabName() {
-			return this.vocabName;
-		}
-
-		public void setVocabName(String vocabName) {
-			this.vocabName = vocabName;
-		}
-
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
-		}
-
 		public String getUpdateTime() {
 			return this.updateTime;
 		}
 
 		public void setUpdateTime(String updateTime) {
 			this.updateTime = updateTime;
-		}
-
-		public Integer getQualityCheckType() {
-			return this.qualityCheckType;
-		}
-
-		public void setQualityCheckType(Integer qualityCheckType) {
-			this.qualityCheckType = qualityCheckType;
 		}
 
 		public Integer getAllContentQualityCheck() {
@@ -249,12 +153,44 @@ public class ListSkillGroupConfigResponse extends AcsResponse {
 			this.allContentQualityCheck = allContentQualityCheck;
 		}
 
-		public String getAllRids() {
-			return this.allRids;
+		public String getCreateTime() {
+			return this.createTime;
 		}
 
-		public void setAllRids(String allRids) {
-			this.allRids = allRids;
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
+
+		public String getSkillGroupId() {
+			return this.skillGroupId;
+		}
+
+		public void setSkillGroupId(String skillGroupId) {
+			this.skillGroupId = skillGroupId;
+		}
+
+		public Boolean getScreenSwitch() {
+			return this.screenSwitch;
+		}
+
+		public void setScreenSwitch(Boolean screenSwitch) {
+			this.screenSwitch = screenSwitch;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public Long getVocabId() {
+			return this.vocabId;
+		}
+
+		public void setVocabId(Long vocabId) {
+			this.vocabId = vocabId;
 		}
 
 		public Integer getSkillGroupFrom() {
@@ -265,12 +201,76 @@ public class ListSkillGroupConfigResponse extends AcsResponse {
 			this.skillGroupFrom = skillGroupFrom;
 		}
 
-		public Boolean getScreenSwitch() {
-			return this.screenSwitch;
+		public String getRid() {
+			return this.rid;
 		}
 
-		public void setScreenSwitch(Boolean screenSwitch) {
-			this.screenSwitch = screenSwitch;
+		public void setRid(String rid) {
+			this.rid = rid;
+		}
+
+		public String getSkillGroupName() {
+			return this.skillGroupName;
+		}
+
+		public void setSkillGroupName(String skillGroupName) {
+			this.skillGroupName = skillGroupName;
+		}
+
+		public String getModelName() {
+			return this.modelName;
+		}
+
+		public void setModelName(String modelName) {
+			this.modelName = modelName;
+		}
+
+		public String getAllRids() {
+			return this.allRids;
+		}
+
+		public void setAllRids(String allRids) {
+			this.allRids = allRids;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public Long getModelId() {
+			return this.modelId;
+		}
+
+		public void setModelId(Long modelId) {
+			this.modelId = modelId;
+		}
+
+		public Long getId() {
+			return this.id;
+		}
+
+		public void setId(Long id) {
+			this.id = id;
+		}
+
+		public Integer getQualityCheckType() {
+			return this.qualityCheckType;
+		}
+
+		public void setQualityCheckType(Integer qualityCheckType) {
+			this.qualityCheckType = qualityCheckType;
+		}
+
+		public String getVocabName() {
+			return this.vocabName;
+		}
+
+		public void setVocabName(String vocabName) {
+			this.vocabName = vocabName;
 		}
 
 		public List<RuleNameInfo> getRuleList() {
@@ -299,17 +299,9 @@ public class ListSkillGroupConfigResponse extends AcsResponse {
 
 		public static class RuleNameInfo {
 
-			private Long rid;
-
 			private String ruleName;
 
-			public Long getRid() {
-				return this.rid;
-			}
-
-			public void setRid(Long rid) {
-				this.rid = rid;
-			}
+			private Long rid;
 
 			public String getRuleName() {
 				return this.ruleName;
@@ -318,24 +310,32 @@ public class ListSkillGroupConfigResponse extends AcsResponse {
 			public void setRuleName(String ruleName) {
 				this.ruleName = ruleName;
 			}
+
+			public Long getRid() {
+				return this.rid;
+			}
+
+			public void setRid(Long rid) {
+				this.rid = rid;
+			}
 		}
 
 		public static class SkillGroupScreen {
 
-			private String name;
+			private String value;
 
 			private Integer dataType;
 
 			private Integer symbol;
 
-			private String value;
+			private String name;
 
-			public String getName() {
-				return this.name;
+			public String getValue() {
+				return this.value;
 			}
 
-			public void setName(String name) {
-				this.name = name;
+			public void setValue(String value) {
+				this.value = value;
 			}
 
 			public Integer getDataType() {
@@ -354,12 +354,12 @@ public class ListSkillGroupConfigResponse extends AcsResponse {
 				this.symbol = symbol;
 			}
 
-			public String getValue() {
-				return this.value;
+			public String getName() {
+				return this.name;
 			}
 
-			public void setValue(String value) {
-				this.value = value;
+			public void setName(String name) {
+				this.name = name;
 			}
 		}
 	}

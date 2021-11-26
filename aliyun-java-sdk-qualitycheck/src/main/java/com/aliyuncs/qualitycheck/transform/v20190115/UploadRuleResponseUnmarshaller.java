@@ -26,9 +26,9 @@ public class UploadRuleResponseUnmarshaller {
 	public static UploadRuleResponse unmarshall(UploadRuleResponse uploadRuleResponse, UnmarshallerContext _ctx) {
 		
 		uploadRuleResponse.setRequestId(_ctx.stringValue("UploadRuleResponse.RequestId"));
-		uploadRuleResponse.setSuccess(_ctx.booleanValue("UploadRuleResponse.Success"));
 		uploadRuleResponse.setCode(_ctx.stringValue("UploadRuleResponse.Code"));
 		uploadRuleResponse.setMessage(_ctx.stringValue("UploadRuleResponse.Message"));
+		uploadRuleResponse.setSuccess(_ctx.booleanValue("UploadRuleResponse.Success"));
 
 		List<String> data = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("UploadRuleResponse.Data.Length"); i++) {

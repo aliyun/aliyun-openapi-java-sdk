@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListRolesResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String message;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private List<Role> data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -67,6 +51,22 @@ public class ListRolesResponse extends AcsResponse {
 		this.message = message;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public List<Role> getData() {
 		return this.data;
 	}
@@ -77,33 +77,17 @@ public class ListRolesResponse extends AcsResponse {
 
 	public static class Role {
 
-		private Long id;
-
-		private String name;
-
 		private String displayName;
-
-		private Integer level;
-
-		private String createTime;
 
 		private String updateTime;
 
-		public Long getId() {
-			return this.id;
-		}
+		private String createTime;
 
-		public void setId(Long id) {
-			this.id = id;
-		}
+		private String name;
 
-		public String getName() {
-			return this.name;
-		}
+		private Long id;
 
-		public void setName(String name) {
-			this.name = name;
-		}
+		private Integer level;
 
 		public String getDisplayName() {
 			return this.displayName;
@@ -113,12 +97,12 @@ public class ListRolesResponse extends AcsResponse {
 			this.displayName = displayName;
 		}
 
-		public Integer getLevel() {
-			return this.level;
+		public String getUpdateTime() {
+			return this.updateTime;
 		}
 
-		public void setLevel(Integer level) {
-			this.level = level;
+		public void setUpdateTime(String updateTime) {
+			this.updateTime = updateTime;
 		}
 
 		public String getCreateTime() {
@@ -129,12 +113,28 @@ public class ListRolesResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
-		public String getUpdateTime() {
-			return this.updateTime;
+		public String getName() {
+			return this.name;
 		}
 
-		public void setUpdateTime(String updateTime) {
-			this.updateTime = updateTime;
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public Long getId() {
+			return this.id;
+		}
+
+		public void setId(Long id) {
+			this.id = id;
+		}
+
+		public Integer getLevel() {
+			return this.level;
+		}
+
+		public void setLevel(Integer level) {
+			this.level = level;
 		}
 	}
 

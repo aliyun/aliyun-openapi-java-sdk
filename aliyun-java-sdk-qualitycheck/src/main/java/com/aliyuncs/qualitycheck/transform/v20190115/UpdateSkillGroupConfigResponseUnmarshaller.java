@@ -23,9 +23,9 @@ public class UpdateSkillGroupConfigResponseUnmarshaller {
 	public static UpdateSkillGroupConfigResponse unmarshall(UpdateSkillGroupConfigResponse updateSkillGroupConfigResponse, UnmarshallerContext _ctx) {
 		
 		updateSkillGroupConfigResponse.setRequestId(_ctx.stringValue("UpdateSkillGroupConfigResponse.RequestId"));
-		updateSkillGroupConfigResponse.setSuccess(_ctx.booleanValue("UpdateSkillGroupConfigResponse.Success"));
 		updateSkillGroupConfigResponse.setCode(_ctx.stringValue("UpdateSkillGroupConfigResponse.Code"));
 		updateSkillGroupConfigResponse.setMessage(_ctx.stringValue("UpdateSkillGroupConfigResponse.Message"));
+		updateSkillGroupConfigResponse.setSuccess(_ctx.booleanValue("UpdateSkillGroupConfigResponse.Success"));
 	 
 	 	return updateSkillGroupConfigResponse;
 	}

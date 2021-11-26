@@ -23,9 +23,9 @@ public class DeleteTaskAssignRuleResponseUnmarshaller {
 	public static DeleteTaskAssignRuleResponse unmarshall(DeleteTaskAssignRuleResponse deleteTaskAssignRuleResponse, UnmarshallerContext _ctx) {
 		
 		deleteTaskAssignRuleResponse.setRequestId(_ctx.stringValue("DeleteTaskAssignRuleResponse.RequestId"));
-		deleteTaskAssignRuleResponse.setSuccess(_ctx.booleanValue("DeleteTaskAssignRuleResponse.Success"));
 		deleteTaskAssignRuleResponse.setCode(_ctx.stringValue("DeleteTaskAssignRuleResponse.Code"));
 		deleteTaskAssignRuleResponse.setMessage(_ctx.stringValue("DeleteTaskAssignRuleResponse.Message"));
+		deleteTaskAssignRuleResponse.setSuccess(_ctx.booleanValue("DeleteTaskAssignRuleResponse.Success"));
 	 
 	 	return deleteTaskAssignRuleResponse;
 	}
