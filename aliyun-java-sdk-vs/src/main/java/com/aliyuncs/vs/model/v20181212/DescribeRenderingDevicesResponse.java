@@ -91,6 +91,8 @@ public class DescribeRenderingDevicesResponse extends AcsResponse {
 
 		private List<IpInfo> ipInfos;
 
+		private List<PodInfo> podInfos;
+
 		public String getInstanceId() {
 			return this.instanceId;
 		}
@@ -227,6 +229,14 @@ public class DescribeRenderingDevicesResponse extends AcsResponse {
 			this.ipInfos = ipInfos;
 		}
 
+		public List<PodInfo> getPodInfos() {
+			return this.podInfos;
+		}
+
+		public void setPodInfos(List<PodInfo> podInfos) {
+			this.podInfos = podInfos;
+		}
+
 		public static class IpInfo {
 
 			private String natType;
@@ -297,6 +307,72 @@ public class DescribeRenderingDevicesResponse extends AcsResponse {
 
 			public void setISP(String iSP) {
 				this.iSP = iSP;
+			}
+		}
+
+		public static class PodInfo {
+
+			private String podId;
+
+			private String status;
+
+			private List<PodInfo1> network;
+
+			public String getPodId() {
+				return this.podId;
+			}
+
+			public void setPodId(String podId) {
+				this.podId = podId;
+			}
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
+			}
+
+			public List<PodInfo1> getNetwork() {
+				return this.network;
+			}
+
+			public void setNetwork(List<PodInfo1> network) {
+				this.network = network;
+			}
+
+			public static class PodInfo1 {
+
+				private String externalIp;
+
+				private String containerPorts;
+
+				private String externalPort;
+
+				public String getExternalIp() {
+					return this.externalIp;
+				}
+
+				public void setExternalIp(String externalIp) {
+					this.externalIp = externalIp;
+				}
+
+				public String getContainerPorts() {
+					return this.containerPorts;
+				}
+
+				public void setContainerPorts(String containerPorts) {
+					this.containerPorts = containerPorts;
+				}
+
+				public String getExternalPort() {
+					return this.externalPort;
+				}
+
+				public void setExternalPort(String externalPort) {
+					this.externalPort = externalPort;
+				}
 			}
 		}
 	}

@@ -20,6 +20,8 @@ import java.util.List;
 import com.aliyuncs.vs.model.v20181212.DescribeClusterDevicesResponse;
 import com.aliyuncs.vs.model.v20181212.DescribeClusterDevicesResponse.Device;
 import com.aliyuncs.vs.model.v20181212.DescribeClusterDevicesResponse.Device.IpInfo;
+import com.aliyuncs.vs.model.v20181212.DescribeClusterDevicesResponse.Device.PodInfo;
+import com.aliyuncs.vs.model.v20181212.DescribeClusterDevicesResponse.Device.PodInfo.PodInfo1;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -62,6 +64,27 @@ public class DescribeClusterDevicesResponseUnmarshaller {
 				ipInfos.add(ipInfo);
 			}
 			device.setIpInfos(ipInfos);
+
+			List<PodInfo> podInfos = new ArrayList<PodInfo>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeClusterDevicesResponse.Devices["+ i +"].PodInfos.Length"); j++) {
+				PodInfo podInfo = new PodInfo();
+				podInfo.setPodId(_ctx.stringValue("DescribeClusterDevicesResponse.Devices["+ i +"].PodInfos["+ j +"].PodId"));
+				podInfo.setStatus(_ctx.stringValue("DescribeClusterDevicesResponse.Devices["+ i +"].PodInfos["+ j +"].Status"));
+
+				List<PodInfo1> network = new ArrayList<PodInfo1>();
+				for (int k = 0; k < _ctx.lengthValue("DescribeClusterDevicesResponse.Devices["+ i +"].PodInfos["+ j +"].Network.Length"); k++) {
+					PodInfo1 podInfo1 = new PodInfo1();
+					podInfo1.setExternalIp(_ctx.stringValue("DescribeClusterDevicesResponse.Devices["+ i +"].PodInfos["+ j +"].Network["+ k +"].ExternalIp"));
+					podInfo1.setContainerPorts(_ctx.stringValue("DescribeClusterDevicesResponse.Devices["+ i +"].PodInfos["+ j +"].Network["+ k +"].ContainerPorts"));
+					podInfo1.setExternalPort(_ctx.stringValue("DescribeClusterDevicesResponse.Devices["+ i +"].PodInfos["+ j +"].Network["+ k +"].ExternalPort"));
+
+					network.add(podInfo1);
+				}
+				podInfo.setNetwork(network);
+
+				podInfos.add(podInfo);
+			}
+			device.setPodInfos(podInfos);
 
 			devices.add(device);
 		}
