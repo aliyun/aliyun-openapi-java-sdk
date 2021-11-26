@@ -15,25 +15,25 @@
 package com.aliyuncs.cbn.model.v20170912;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cbn.transform.v20170912.ModifyFlowLogAttributeResponseUnmarshaller;
+import com.aliyuncs.cbn.transform.v20170912.OpenTransitRouterServiceResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ModifyFlowLogAttributeResponse extends AcsResponse {
+public class OpenTransitRouterServiceResponse extends AcsResponse {
 
-	private String success;
+	private String orderId;
 
 	private String requestId;
 
-	public String getSuccess() {
-		return this.success;
+	public String getOrderId() {
+		return this.orderId;
 	}
 
-	public void setSuccess(String success) {
-		this.success = success;
+	public void setOrderId(String orderId) {
+		this.orderId = orderId;
 	}
 
 	public String getRequestId() {
@@ -45,7 +45,12 @@ public class ModifyFlowLogAttributeResponse extends AcsResponse {
 	}
 
 	@Override
-	public ModifyFlowLogAttributeResponse getInstance(UnmarshallerContext context) {
-		return	ModifyFlowLogAttributeResponseUnmarshaller.unmarshall(this, context);
+	public OpenTransitRouterServiceResponse getInstance(UnmarshallerContext context) {
+		return	OpenTransitRouterServiceResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

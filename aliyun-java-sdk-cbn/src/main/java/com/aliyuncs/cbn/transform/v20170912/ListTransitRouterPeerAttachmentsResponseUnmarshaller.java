@@ -50,6 +50,7 @@ public class ListTransitRouterPeerAttachmentsResponseUnmarshaller {
 			transitRouterAttachment.setRegionId(_ctx.stringValue("ListTransitRouterPeerAttachmentsResponse.TransitRouterAttachments["+ i +"].RegionId"));
 			transitRouterAttachment.setGeographicSpanId(_ctx.stringValue("ListTransitRouterPeerAttachmentsResponse.TransitRouterAttachments["+ i +"].GeographicSpanId"));
 			transitRouterAttachment.setCenBandwidthPackageId(_ctx.stringValue("ListTransitRouterPeerAttachmentsResponse.TransitRouterAttachments["+ i +"].CenBandwidthPackageId"));
+			transitRouterAttachment.setBandwidthType(_ctx.stringValue("ListTransitRouterPeerAttachmentsResponse.TransitRouterAttachments["+ i +"].BandwidthType"));
 
 			transitRouterAttachments.add(transitRouterAttachment);
 		}

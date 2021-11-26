@@ -27,23 +27,26 @@ public class DescribeFlowlogsResponseUnmarshaller {
 	public static DescribeFlowlogsResponse unmarshall(DescribeFlowlogsResponse describeFlowlogsResponse, UnmarshallerContext _ctx) {
 		
 		describeFlowlogsResponse.setRequestId(_ctx.stringValue("DescribeFlowlogsResponse.RequestId"));
-		describeFlowlogsResponse.setSuccess(_ctx.stringValue("DescribeFlowlogsResponse.Success"));
-		describeFlowlogsResponse.setTotalCount(_ctx.stringValue("DescribeFlowlogsResponse.TotalCount"));
-		describeFlowlogsResponse.setPageNumber(_ctx.stringValue("DescribeFlowlogsResponse.PageNumber"));
 		describeFlowlogsResponse.setPageSize(_ctx.stringValue("DescribeFlowlogsResponse.PageSize"));
+		describeFlowlogsResponse.setPageNumber(_ctx.stringValue("DescribeFlowlogsResponse.PageNumber"));
+		describeFlowlogsResponse.setTotalCount(_ctx.stringValue("DescribeFlowlogsResponse.TotalCount"));
+		describeFlowlogsResponse.setSuccess(_ctx.stringValue("DescribeFlowlogsResponse.Success"));
 
 		List<FlowLog> flowLogs = new ArrayList<FlowLog>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeFlowlogsResponse.FlowLogs.Length"); i++) {
 			FlowLog flowLog = new FlowLog();
-			flowLog.setFlowLogId(_ctx.stringValue("DescribeFlowlogsResponse.FlowLogs["+ i +"].FlowLogId"));
+			flowLog.setStatus(_ctx.stringValue("DescribeFlowlogsResponse.FlowLogs["+ i +"].Status"));
+			flowLog.setCreationTime(_ctx.stringValue("DescribeFlowlogsResponse.FlowLogs["+ i +"].CreationTime"));
 			flowLog.setFlowLogName(_ctx.stringValue("DescribeFlowlogsResponse.FlowLogs["+ i +"].FlowLogName"));
 			flowLog.setDescription(_ctx.stringValue("DescribeFlowlogsResponse.FlowLogs["+ i +"].Description"));
-			flowLog.setCreationTime(_ctx.stringValue("DescribeFlowlogsResponse.FlowLogs["+ i +"].CreationTime"));
-			flowLog.setCenId(_ctx.stringValue("DescribeFlowlogsResponse.FlowLogs["+ i +"].CenId"));
 			flowLog.setProjectName(_ctx.stringValue("DescribeFlowlogsResponse.FlowLogs["+ i +"].ProjectName"));
+			flowLog.setCenId(_ctx.stringValue("DescribeFlowlogsResponse.FlowLogs["+ i +"].CenId"));
 			flowLog.setLogStoreName(_ctx.stringValue("DescribeFlowlogsResponse.FlowLogs["+ i +"].LogStoreName"));
-			flowLog.setStatus(_ctx.stringValue("DescribeFlowlogsResponse.FlowLogs["+ i +"].Status"));
 			flowLog.setRegionId(_ctx.stringValue("DescribeFlowlogsResponse.FlowLogs["+ i +"].RegionId"));
+			flowLog.setFlowLogId(_ctx.stringValue("DescribeFlowlogsResponse.FlowLogs["+ i +"].FlowLogId"));
+			flowLog.setPeerRegionId(_ctx.stringValue("DescribeFlowlogsResponse.FlowLogs["+ i +"].PeerRegionId"));
+			flowLog.setTransitRouterAttachmentId(_ctx.stringValue("DescribeFlowlogsResponse.FlowLogs["+ i +"].TransitRouterAttachmentId"));
+			flowLog.setInterval(_ctx.longValue("DescribeFlowlogsResponse.FlowLogs["+ i +"].Interval"));
 
 			flowLogs.add(flowLog);
 		}

@@ -25,40 +25,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeFlowlogsResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String success;
-
-	private String totalCount;
+	private String pageSize;
 
 	private String pageNumber;
 
-	private String pageSize;
+	private String requestId;
+
+	private String totalCount;
+
+	private String success;
 
 	private List<FlowLog> flowLogs;
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(String success) {
-		this.success = success;
-	}
-
-	public String getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(String totalCount) {
-		this.totalCount = totalCount;
+	public void setPageSize(String pageSize) {
+		this.pageSize = pageSize;
 	}
 
 	public String getPageNumber() {
@@ -69,12 +53,28 @@ public class DescribeFlowlogsResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public String getPageSize() {
-		return this.pageSize;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setPageSize(String pageSize) {
-		this.pageSize = pageSize;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(String totalCount) {
+		this.totalCount = totalCount;
+	}
+
+	public String getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(String success) {
+		this.success = success;
 	}
 
 	public List<FlowLog> getFlowLogs() {
@@ -87,30 +87,44 @@ public class DescribeFlowlogsResponse extends AcsResponse {
 
 	public static class FlowLog {
 
-		private String flowLogId;
+		private String status;
+
+		private String creationTime;
 
 		private String flowLogName;
 
 		private String description;
 
-		private String creationTime;
+		private String projectName;
 
 		private String cenId;
 
-		private String projectName;
-
 		private String logStoreName;
-
-		private String status;
 
 		private String regionId;
 
-		public String getFlowLogId() {
-			return this.flowLogId;
+		private String flowLogId;
+
+		private String peerRegionId;
+
+		private String transitRouterAttachmentId;
+
+		private Long interval;
+
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setFlowLogId(String flowLogId) {
-			this.flowLogId = flowLogId;
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
+		public String getCreationTime() {
+			return this.creationTime;
+		}
+
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
 		}
 
 		public String getFlowLogName() {
@@ -129,12 +143,12 @@ public class DescribeFlowlogsResponse extends AcsResponse {
 			this.description = description;
 		}
 
-		public String getCreationTime() {
-			return this.creationTime;
+		public String getProjectName() {
+			return this.projectName;
 		}
 
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
+		public void setProjectName(String projectName) {
+			this.projectName = projectName;
 		}
 
 		public String getCenId() {
@@ -145,14 +159,6 @@ public class DescribeFlowlogsResponse extends AcsResponse {
 			this.cenId = cenId;
 		}
 
-		public String getProjectName() {
-			return this.projectName;
-		}
-
-		public void setProjectName(String projectName) {
-			this.projectName = projectName;
-		}
-
 		public String getLogStoreName() {
 			return this.logStoreName;
 		}
@@ -161,20 +167,44 @@ public class DescribeFlowlogsResponse extends AcsResponse {
 			this.logStoreName = logStoreName;
 		}
 
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
 		public String getRegionId() {
 			return this.regionId;
 		}
 
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
+		}
+
+		public String getFlowLogId() {
+			return this.flowLogId;
+		}
+
+		public void setFlowLogId(String flowLogId) {
+			this.flowLogId = flowLogId;
+		}
+
+		public String getPeerRegionId() {
+			return this.peerRegionId;
+		}
+
+		public void setPeerRegionId(String peerRegionId) {
+			this.peerRegionId = peerRegionId;
+		}
+
+		public String getTransitRouterAttachmentId() {
+			return this.transitRouterAttachmentId;
+		}
+
+		public void setTransitRouterAttachmentId(String transitRouterAttachmentId) {
+			this.transitRouterAttachmentId = transitRouterAttachmentId;
+		}
+
+		public Long getInterval() {
+			return this.interval;
+		}
+
+		public void setInterval(Long interval) {
+			this.interval = interval;
 		}
 	}
 

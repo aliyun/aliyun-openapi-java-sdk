@@ -15,26 +15,16 @@
 package com.aliyuncs.cbn.model.v20170912;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cbn.transform.v20170912.ModifyFlowLogAttributeResponseUnmarshaller;
+import com.aliyuncs.cbn.transform.v20170912.AddTraficMatchRuleToTrafficMarkingPolicyResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ModifyFlowLogAttributeResponse extends AcsResponse {
-
-	private String success;
+public class AddTraficMatchRuleToTrafficMarkingPolicyResponse extends AcsResponse {
 
 	private String requestId;
-
-	public String getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(String success) {
-		this.success = success;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -45,7 +35,12 @@ public class ModifyFlowLogAttributeResponse extends AcsResponse {
 	}
 
 	@Override
-	public ModifyFlowLogAttributeResponse getInstance(UnmarshallerContext context) {
-		return	ModifyFlowLogAttributeResponseUnmarshaller.unmarshall(this, context);
+	public AddTraficMatchRuleToTrafficMarkingPolicyResponse getInstance(UnmarshallerContext context) {
+		return	AddTraficMatchRuleToTrafficMarkingPolicyResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

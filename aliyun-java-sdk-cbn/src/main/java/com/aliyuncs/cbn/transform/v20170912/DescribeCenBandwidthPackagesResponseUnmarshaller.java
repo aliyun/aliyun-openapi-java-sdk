@@ -29,34 +29,34 @@ public class DescribeCenBandwidthPackagesResponseUnmarshaller {
 	public static DescribeCenBandwidthPackagesResponse unmarshall(DescribeCenBandwidthPackagesResponse describeCenBandwidthPackagesResponse, UnmarshallerContext _ctx) {
 		
 		describeCenBandwidthPackagesResponse.setRequestId(_ctx.stringValue("DescribeCenBandwidthPackagesResponse.RequestId"));
-		describeCenBandwidthPackagesResponse.setTotalCount(_ctx.integerValue("DescribeCenBandwidthPackagesResponse.TotalCount"));
-		describeCenBandwidthPackagesResponse.setPageNumber(_ctx.integerValue("DescribeCenBandwidthPackagesResponse.PageNumber"));
 		describeCenBandwidthPackagesResponse.setPageSize(_ctx.integerValue("DescribeCenBandwidthPackagesResponse.PageSize"));
+		describeCenBandwidthPackagesResponse.setPageNumber(_ctx.integerValue("DescribeCenBandwidthPackagesResponse.PageNumber"));
+		describeCenBandwidthPackagesResponse.setTotalCount(_ctx.integerValue("DescribeCenBandwidthPackagesResponse.TotalCount"));
 
 		List<CenBandwidthPackage> cenBandwidthPackages = new ArrayList<CenBandwidthPackage>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeCenBandwidthPackagesResponse.CenBandwidthPackages.Length"); i++) {
 			CenBandwidthPackage cenBandwidthPackage = new CenBandwidthPackage();
-			cenBandwidthPackage.setCenBandwidthPackageId(_ctx.stringValue("DescribeCenBandwidthPackagesResponse.CenBandwidthPackages["+ i +"].CenBandwidthPackageId"));
-			cenBandwidthPackage.setName(_ctx.stringValue("DescribeCenBandwidthPackagesResponse.CenBandwidthPackages["+ i +"].Name"));
-			cenBandwidthPackage.setDescription(_ctx.stringValue("DescribeCenBandwidthPackagesResponse.CenBandwidthPackages["+ i +"].Description"));
-			cenBandwidthPackage.setBandwidth(_ctx.longValue("DescribeCenBandwidthPackagesResponse.CenBandwidthPackages["+ i +"].Bandwidth"));
-			cenBandwidthPackage.setBandwidthPackageChargeType(_ctx.stringValue("DescribeCenBandwidthPackagesResponse.CenBandwidthPackages["+ i +"].BandwidthPackageChargeType"));
-			cenBandwidthPackage.setGeographicRegionAId(_ctx.stringValue("DescribeCenBandwidthPackagesResponse.CenBandwidthPackages["+ i +"].GeographicRegionAId"));
-			cenBandwidthPackage.setGeographicRegionBId(_ctx.stringValue("DescribeCenBandwidthPackagesResponse.CenBandwidthPackages["+ i +"].GeographicRegionBId"));
-			cenBandwidthPackage.setGeographicSpanId(_ctx.stringValue("DescribeCenBandwidthPackagesResponse.CenBandwidthPackages["+ i +"].GeographicSpanId"));
-			cenBandwidthPackage.setBusinessStatus(_ctx.stringValue("DescribeCenBandwidthPackagesResponse.CenBandwidthPackages["+ i +"].BusinessStatus"));
-			cenBandwidthPackage.setCreationTime(_ctx.stringValue("DescribeCenBandwidthPackagesResponse.CenBandwidthPackages["+ i +"].CreationTime"));
-			cenBandwidthPackage.setExpiredTime(_ctx.stringValue("DescribeCenBandwidthPackagesResponse.CenBandwidthPackages["+ i +"].ExpiredTime"));
-			cenBandwidthPackage.setStatus(_ctx.stringValue("DescribeCenBandwidthPackagesResponse.CenBandwidthPackages["+ i +"].Status"));
-			cenBandwidthPackage.setIsCrossBorder(_ctx.booleanValue("DescribeCenBandwidthPackagesResponse.CenBandwidthPackages["+ i +"].IsCrossBorder"));
-			cenBandwidthPackage.setTypeFor95(_ctx.stringValue("DescribeCenBandwidthPackagesResponse.CenBandwidthPackages["+ i +"].TypeFor95"));
-			cenBandwidthPackage.setRatio(_ctx.stringValue("DescribeCenBandwidthPackagesResponse.CenBandwidthPackages["+ i +"].Ratio"));
-			cenBandwidthPackage.setHasReservationData(_ctx.stringValue("DescribeCenBandwidthPackagesResponse.CenBandwidthPackages["+ i +"].HasReservationData"));
-			cenBandwidthPackage.setReservationBandwidth(_ctx.stringValue("DescribeCenBandwidthPackagesResponse.CenBandwidthPackages["+ i +"].ReservationBandwidth"));
-			cenBandwidthPackage.setReservationInternetChargeType(_ctx.stringValue("DescribeCenBandwidthPackagesResponse.CenBandwidthPackages["+ i +"].ReservationInternetChargeType"));
 			cenBandwidthPackage.setReservationActiveTime(_ctx.stringValue("DescribeCenBandwidthPackagesResponse.CenBandwidthPackages["+ i +"].ReservationActiveTime"));
+			cenBandwidthPackage.setStatus(_ctx.stringValue("DescribeCenBandwidthPackagesResponse.CenBandwidthPackages["+ i +"].Status"));
+			cenBandwidthPackage.setCreationTime(_ctx.stringValue("DescribeCenBandwidthPackagesResponse.CenBandwidthPackages["+ i +"].CreationTime"));
 			cenBandwidthPackage.setReservationOrderType(_ctx.stringValue("DescribeCenBandwidthPackagesResponse.CenBandwidthPackages["+ i +"].ReservationOrderType"));
+			cenBandwidthPackage.setBandwidthPackageChargeType(_ctx.stringValue("DescribeCenBandwidthPackagesResponse.CenBandwidthPackages["+ i +"].BandwidthPackageChargeType"));
+			cenBandwidthPackage.setCenBandwidthPackageId(_ctx.stringValue("DescribeCenBandwidthPackagesResponse.CenBandwidthPackages["+ i +"].CenBandwidthPackageId"));
+			cenBandwidthPackage.setReservationInternetChargeType(_ctx.stringValue("DescribeCenBandwidthPackagesResponse.CenBandwidthPackages["+ i +"].ReservationInternetChargeType"));
+			cenBandwidthPackage.setRatio(_ctx.stringValue("DescribeCenBandwidthPackagesResponse.CenBandwidthPackages["+ i +"].Ratio"));
+			cenBandwidthPackage.setGeographicRegionAId(_ctx.stringValue("DescribeCenBandwidthPackagesResponse.CenBandwidthPackages["+ i +"].GeographicRegionAId"));
+			cenBandwidthPackage.setTypeFor95(_ctx.stringValue("DescribeCenBandwidthPackagesResponse.CenBandwidthPackages["+ i +"].TypeFor95"));
+			cenBandwidthPackage.setBandwidth(_ctx.longValue("DescribeCenBandwidthPackagesResponse.CenBandwidthPackages["+ i +"].Bandwidth"));
+			cenBandwidthPackage.setDescription(_ctx.stringValue("DescribeCenBandwidthPackagesResponse.CenBandwidthPackages["+ i +"].Description"));
+			cenBandwidthPackage.setExpiredTime(_ctx.stringValue("DescribeCenBandwidthPackagesResponse.CenBandwidthPackages["+ i +"].ExpiredTime"));
+			cenBandwidthPackage.setReservationBandwidth(_ctx.stringValue("DescribeCenBandwidthPackagesResponse.CenBandwidthPackages["+ i +"].ReservationBandwidth"));
+			cenBandwidthPackage.setGeographicSpanId(_ctx.stringValue("DescribeCenBandwidthPackagesResponse.CenBandwidthPackages["+ i +"].GeographicSpanId"));
+			cenBandwidthPackage.setGeographicRegionBId(_ctx.stringValue("DescribeCenBandwidthPackagesResponse.CenBandwidthPackages["+ i +"].GeographicRegionBId"));
 			cenBandwidthPackage.setResourceGroupId(_ctx.stringValue("DescribeCenBandwidthPackagesResponse.CenBandwidthPackages["+ i +"].ResourceGroupId"));
+			cenBandwidthPackage.setIsCrossBorder(_ctx.booleanValue("DescribeCenBandwidthPackagesResponse.CenBandwidthPackages["+ i +"].IsCrossBorder"));
+			cenBandwidthPackage.setBusinessStatus(_ctx.stringValue("DescribeCenBandwidthPackagesResponse.CenBandwidthPackages["+ i +"].BusinessStatus"));
+			cenBandwidthPackage.setName(_ctx.stringValue("DescribeCenBandwidthPackagesResponse.CenBandwidthPackages["+ i +"].Name"));
+			cenBandwidthPackage.setHasReservationData(_ctx.stringValue("DescribeCenBandwidthPackagesResponse.CenBandwidthPackages["+ i +"].HasReservationData"));
 
 			List<String> cenIds = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeCenBandwidthPackagesResponse.CenBandwidthPackages["+ i +"].CenIds.Length"); j++) {
@@ -67,10 +67,10 @@ public class DescribeCenBandwidthPackagesResponseUnmarshaller {
 			List<OrginInterRegionBandwidthLimit> orginInterRegionBandwidthLimits = new ArrayList<OrginInterRegionBandwidthLimit>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeCenBandwidthPackagesResponse.CenBandwidthPackages["+ i +"].OrginInterRegionBandwidthLimits.Length"); j++) {
 				OrginInterRegionBandwidthLimit orginInterRegionBandwidthLimit = new OrginInterRegionBandwidthLimit();
-				orginInterRegionBandwidthLimit.setLocalRegionId(_ctx.stringValue("DescribeCenBandwidthPackagesResponse.CenBandwidthPackages["+ i +"].OrginInterRegionBandwidthLimits["+ j +"].LocalRegionId"));
+				orginInterRegionBandwidthLimit.setBandwidthLimit(_ctx.stringValue("DescribeCenBandwidthPackagesResponse.CenBandwidthPackages["+ i +"].OrginInterRegionBandwidthLimits["+ j +"].BandwidthLimit"));
 				orginInterRegionBandwidthLimit.setOppositeRegionId(_ctx.stringValue("DescribeCenBandwidthPackagesResponse.CenBandwidthPackages["+ i +"].OrginInterRegionBandwidthLimits["+ j +"].OppositeRegionId"));
 				orginInterRegionBandwidthLimit.setGeographicSpanId(_ctx.stringValue("DescribeCenBandwidthPackagesResponse.CenBandwidthPackages["+ i +"].OrginInterRegionBandwidthLimits["+ j +"].GeographicSpanId"));
-				orginInterRegionBandwidthLimit.setBandwidthLimit(_ctx.stringValue("DescribeCenBandwidthPackagesResponse.CenBandwidthPackages["+ i +"].OrginInterRegionBandwidthLimits["+ j +"].BandwidthLimit"));
+				orginInterRegionBandwidthLimit.setLocalRegionId(_ctx.stringValue("DescribeCenBandwidthPackagesResponse.CenBandwidthPackages["+ i +"].OrginInterRegionBandwidthLimits["+ j +"].LocalRegionId"));
 
 				orginInterRegionBandwidthLimits.add(orginInterRegionBandwidthLimit);
 			}

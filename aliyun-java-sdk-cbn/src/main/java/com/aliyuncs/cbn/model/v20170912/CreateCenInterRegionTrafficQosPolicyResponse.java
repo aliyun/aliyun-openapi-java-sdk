@@ -15,25 +15,25 @@
 package com.aliyuncs.cbn.model.v20170912;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cbn.transform.v20170912.ModifyFlowLogAttributeResponseUnmarshaller;
+import com.aliyuncs.cbn.transform.v20170912.CreateCenInterRegionTrafficQosPolicyResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ModifyFlowLogAttributeResponse extends AcsResponse {
+public class CreateCenInterRegionTrafficQosPolicyResponse extends AcsResponse {
 
-	private String success;
+	private String trafficQosPolicyId;
 
 	private String requestId;
 
-	public String getSuccess() {
-		return this.success;
+	public String getTrafficQosPolicyId() {
+		return this.trafficQosPolicyId;
 	}
 
-	public void setSuccess(String success) {
-		this.success = success;
+	public void setTrafficQosPolicyId(String trafficQosPolicyId) {
+		this.trafficQosPolicyId = trafficQosPolicyId;
 	}
 
 	public String getRequestId() {
@@ -45,7 +45,12 @@ public class ModifyFlowLogAttributeResponse extends AcsResponse {
 	}
 
 	@Override
-	public ModifyFlowLogAttributeResponse getInstance(UnmarshallerContext context) {
-		return	ModifyFlowLogAttributeResponseUnmarshaller.unmarshall(this, context);
+	public CreateCenInterRegionTrafficQosPolicyResponse getInstance(UnmarshallerContext context) {
+		return	CreateCenInterRegionTrafficQosPolicyResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeRouteServicesInCenResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer pageSize;
 
-	private Integer totalCount;
+	private String requestId;
 
 	private Integer pageNumber;
 
-	private Integer pageSize;
+	private Integer totalCount;
 
 	private List<RouteServiceEntry> routeServiceEntries;
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class DescribeRouteServicesInCenResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
 	}
 
 	public Integer getPageNumber() {
@@ -59,12 +59,12 @@ public class DescribeRouteServicesInCenResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public Integer getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<RouteServiceEntry> getRouteServiceEntries() {
@@ -77,30 +77,30 @@ public class DescribeRouteServicesInCenResponse extends AcsResponse {
 
 	public static class RouteServiceEntry {
 
-		private String cenId;
+		private String status;
 
 		private String host;
 
-		private String hostRegionId;
-
-		private String accessRegionId;
-
-		private String updateInterval;
-
-		private String status;
+		private String description;
 
 		private String hostVpcId;
 
-		private String description;
+		private String cenId;
+
+		private String accessRegionId;
+
+		private String hostRegionId;
+
+		private String updateInterval;
 
 		private List<String> cidrs;
 
-		public String getCenId() {
-			return this.cenId;
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setCenId(String cenId) {
-			this.cenId = cenId;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public String getHost() {
@@ -111,36 +111,12 @@ public class DescribeRouteServicesInCenResponse extends AcsResponse {
 			this.host = host;
 		}
 
-		public String getHostRegionId() {
-			return this.hostRegionId;
+		public String getDescription() {
+			return this.description;
 		}
 
-		public void setHostRegionId(String hostRegionId) {
-			this.hostRegionId = hostRegionId;
-		}
-
-		public String getAccessRegionId() {
-			return this.accessRegionId;
-		}
-
-		public void setAccessRegionId(String accessRegionId) {
-			this.accessRegionId = accessRegionId;
-		}
-
-		public String getUpdateInterval() {
-			return this.updateInterval;
-		}
-
-		public void setUpdateInterval(String updateInterval) {
-			this.updateInterval = updateInterval;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
+		public void setDescription(String description) {
+			this.description = description;
 		}
 
 		public String getHostVpcId() {
@@ -151,12 +127,36 @@ public class DescribeRouteServicesInCenResponse extends AcsResponse {
 			this.hostVpcId = hostVpcId;
 		}
 
-		public String getDescription() {
-			return this.description;
+		public String getCenId() {
+			return this.cenId;
 		}
 
-		public void setDescription(String description) {
-			this.description = description;
+		public void setCenId(String cenId) {
+			this.cenId = cenId;
+		}
+
+		public String getAccessRegionId() {
+			return this.accessRegionId;
+		}
+
+		public void setAccessRegionId(String accessRegionId) {
+			this.accessRegionId = accessRegionId;
+		}
+
+		public String getHostRegionId() {
+			return this.hostRegionId;
+		}
+
+		public void setHostRegionId(String hostRegionId) {
+			this.hostRegionId = hostRegionId;
+		}
+
+		public String getUpdateInterval() {
+			return this.updateInterval;
+		}
+
+		public void setUpdateInterval(String updateInterval) {
+			this.updateInterval = updateInterval;
 		}
 
 		public List<String> getCidrs() {

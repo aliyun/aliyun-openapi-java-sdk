@@ -109,6 +109,8 @@ public class ListTransitRouterPeerAttachmentsResponse extends AcsResponse {
 
 		private String cenBandwidthPackageId;
 
+		private String bandwidthType;
+
 		public String getTransitRouterAttachmentId() {
 			return this.transitRouterAttachmentId;
 		}
@@ -235,6 +237,14 @@ public class ListTransitRouterPeerAttachmentsResponse extends AcsResponse {
 
 		public void setCenBandwidthPackageId(String cenBandwidthPackageId) {
 			this.cenBandwidthPackageId = cenBandwidthPackageId;
+		}
+
+		public String getBandwidthType() {
+			return this.bandwidthType;
+		}
+
+		public void setBandwidthType(String bandwidthType) {
+			this.bandwidthType = bandwidthType;
 		}
 	}
 
