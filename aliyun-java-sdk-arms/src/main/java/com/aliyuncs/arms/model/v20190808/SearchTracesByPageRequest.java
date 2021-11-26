@@ -46,7 +46,7 @@ public class SearchTracesByPageRequest extends RpcAcsRequest<SearchTracesByPageR
 
 	private String serviceName;
 	public SearchTracesByPageRequest() {
-		super("ARMS", "2019-08-08", "SearchTracesByPage", "arms");
+		super("ARMS", "2019-08-08", "SearchTracesByPage");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

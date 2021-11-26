@@ -27,7 +27,7 @@ public class DeleteRetcodeAppRequest extends RpcAcsRequest<DeleteRetcodeAppRespo
 
 	private String appId;
 	public DeleteRetcodeAppRequest() {
-		super("ARMS", "2019-08-08", "DeleteRetcodeApp", "arms");
+		super("ARMS", "2019-08-08", "DeleteRetcodeApp");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

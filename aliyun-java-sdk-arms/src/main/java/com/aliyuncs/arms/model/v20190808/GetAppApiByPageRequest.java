@@ -37,7 +37,7 @@ public class GetAppApiByPageRequest extends RpcAcsRequest<GetAppApiByPageRespons
 
 	private Integer intervalMills;
 	public GetAppApiByPageRequest() {
-		super("ARMS", "2019-08-08", "GetAppApiByPage", "arms");
+		super("ARMS", "2019-08-08", "GetAppApiByPage");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

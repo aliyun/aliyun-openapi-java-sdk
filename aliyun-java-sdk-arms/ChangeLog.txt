@@ -1,3 +1,7 @@
+2021-11-26 Version: 2.7.40
+- New add addRecordingRule and getRecordingRule api.
+- Update ListDashBoards api.
+
 2021-11-25 Version: 2.7.39
 - Add new Region.
 

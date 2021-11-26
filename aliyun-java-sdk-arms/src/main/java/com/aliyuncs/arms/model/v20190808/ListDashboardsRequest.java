@@ -33,13 +33,11 @@ public class ListDashboardsRequest extends RpcAcsRequest<ListDashboardsResponse>
 
 	private String clusterId;
 
-	private String proxyUserId;
-
 	private String title;
 
 	private String clusterType;
 	public ListDashboardsRequest() {
-		super("ARMS", "2019-08-08", "ListDashboards", "arms");
+		super("ARMS", "2019-08-08", "ListDashboards");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -88,17 +86,6 @@ public class ListDashboardsRequest extends RpcAcsRequest<ListDashboardsResponse>
 		this.clusterId = clusterId;
 		if(clusterId != null){
 			putQueryParameter("ClusterId", clusterId);
-		}
-	}
-
-	public String getProxyUserId() {
-		return this.proxyUserId;
-	}
-
-	public void setProxyUserId(String proxyUserId) {
-		this.proxyUserId = proxyUserId;
-		if(proxyUserId != null){
-			putQueryParameter("ProxyUserId", proxyUserId);
 		}
 	}
 

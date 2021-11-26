@@ -33,7 +33,7 @@ public class OpenVClusterRequest extends RpcAcsRequest<OpenVClusterResponse> {
 
 	private Integer length;
 	public OpenVClusterRequest() {
-		super("ARMS", "2019-08-08", "OpenVCluster", "arms");
+		super("ARMS", "2019-08-08", "OpenVCluster");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -31,7 +31,7 @@ public class GetExploreUrlRequest extends RpcAcsRequest<GetExploreUrlResponse> {
 
 	private String type;
 	public GetExploreUrlRequest() {
-		super("ARMS", "2019-08-08", "GetExploreUrl", "arms");
+		super("ARMS", "2019-08-08", "GetExploreUrl");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

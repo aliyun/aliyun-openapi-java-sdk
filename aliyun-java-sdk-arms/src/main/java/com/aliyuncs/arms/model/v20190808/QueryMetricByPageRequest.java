@@ -42,13 +42,15 @@ public class QueryMetricByPageRequest extends RpcAcsRequest<QueryMetricByPageRes
 
 	private String metric;
 
+	private List<String> customFilterss;
+
 	private Integer pageSize;
 
 	private String order;
 
 	private List<String> dimensionss;
 	public QueryMetricByPageRequest() {
-		super("ARMS", "2019-08-08", "QueryMetricByPage", "arms");
+		super("ARMS", "2019-08-08", "QueryMetricByPage");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -147,6 +149,19 @@ public class QueryMetricByPageRequest extends RpcAcsRequest<QueryMetricByPageRes
 		if(metric != null){
 			putQueryParameter("Metric", metric);
 		}
+	}
+
+	public List<String> getCustomFilterss() {
+		return this.customFilterss;
+	}
+
+	public void setCustomFilterss(List<String> customFilterss) {
+		this.customFilterss = customFilterss;	
+		if (customFilterss != null) {
+			for (int i = 0; i < customFilterss.size(); i++) {
+				putQueryParameter("CustomFilters." + (i + 1) , customFilterss.get(i));
+			}
+		}	
 	}
 
 	public Integer getPageSize() {
