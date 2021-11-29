@@ -23,7 +23,7 @@ public class CreateCampaignResponseUnmarshaller {
 	public static CreateCampaignResponse unmarshall(CreateCampaignResponse createCampaignResponse, UnmarshallerContext _ctx) {
 		
 		createCampaignResponse.setRequestId(_ctx.stringValue("CreateCampaignResponse.RequestId"));
-		createCampaignResponse.setCampaignId(_ctx.stringValue("CreateCampaignResponse.CampaignId"));
+		createCampaignResponse.setData(_ctx.stringValue("CreateCampaignResponse.Data"));
 		createCampaignResponse.setCode(_ctx.stringValue("CreateCampaignResponse.Code"));
 		createCampaignResponse.setMessage(_ctx.stringValue("CreateCampaignResponse.Message"));
 		createCampaignResponse.setHttpStatusCode(_ctx.longValue("CreateCampaignResponse.HttpStatusCode"));

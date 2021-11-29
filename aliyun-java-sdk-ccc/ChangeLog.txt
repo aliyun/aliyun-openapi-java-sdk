@@ -1,3 +1,6 @@
+2021-11-29 Version: 2.1.0
+- Add API for unregister sip phone device, masked callee, etc.
+
 2021-10-14 Version: 2.0.18
 - Add API for predictive dialer.
 

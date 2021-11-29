@@ -27,6 +27,8 @@ public class MakeCallRequest extends RpcAcsRequest<MakeCallResponse> {
 
 	private String callee;
 
+	private String maskedCallee;
+
 	private String userId;
 
 	private String deviceId;
@@ -55,6 +57,17 @@ public class MakeCallRequest extends RpcAcsRequest<MakeCallResponse> {
 		this.callee = callee;
 		if(callee != null){
 			putQueryParameter("Callee", callee);
+		}
+	}
+
+	public String getMaskedCallee() {
+		return this.maskedCallee;
+	}
+
+	public void setMaskedCallee(String maskedCallee) {
+		this.maskedCallee = maskedCallee;
+		if(maskedCallee != null){
+			putQueryParameter("MaskedCallee", maskedCallee);
 		}
 	}
 

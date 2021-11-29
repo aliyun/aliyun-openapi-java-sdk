@@ -40,13 +40,13 @@ public class ListSkillGroupsResponseUnmarshaller {
 		List<SkillGroup> list = new ArrayList<SkillGroup>();
 		for (int i = 0; i < _ctx.lengthValue("ListSkillGroupsResponse.Data.List.Length"); i++) {
 			SkillGroup skillGroup = new SkillGroup();
-			skillGroup.setDescription(_ctx.stringValue("ListSkillGroupsResponse.Data.List["+ i +"].Description"));
 			skillGroup.setDisplayName(_ctx.stringValue("ListSkillGroupsResponse.Data.List["+ i +"].DisplayName"));
-			skillGroup.setInstanceId(_ctx.stringValue("ListSkillGroupsResponse.Data.List["+ i +"].InstanceId"));
+			skillGroup.setDescription(_ctx.stringValue("ListSkillGroupsResponse.Data.List["+ i +"].Description"));
 			skillGroup.setPhoneNumberCount(_ctx.integerValue("ListSkillGroupsResponse.Data.List["+ i +"].PhoneNumberCount"));
 			skillGroup.setSkillGroupId(_ctx.stringValue("ListSkillGroupsResponse.Data.List["+ i +"].SkillGroupId"));
 			skillGroup.setSkillGroupName(_ctx.stringValue("ListSkillGroupsResponse.Data.List["+ i +"].SkillGroupName"));
 			skillGroup.setUserCount(_ctx.integerValue("ListSkillGroupsResponse.Data.List["+ i +"].UserCount"));
+			skillGroup.setInstanceId(_ctx.stringValue("ListSkillGroupsResponse.Data.List["+ i +"].InstanceId"));
 
 			list.add(skillGroup);
 		}

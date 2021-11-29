@@ -139,8 +139,6 @@ public class ListCampaignsResponse extends AcsResponse {
 
 			private Long casesConnected;
 
-			private Long completedRate;
-
 			private Long maxAttemptCount;
 
 			private Long minAttemptInterval;
@@ -205,14 +203,6 @@ public class ListCampaignsResponse extends AcsResponse {
 
 			public void setCasesConnected(Long casesConnected) {
 				this.casesConnected = casesConnected;
-			}
-
-			public Long getCompletedRate() {
-				return this.completedRate;
-			}
-
-			public void setCompletedRate(Long completedRate) {
-				this.completedRate = completedRate;
 			}
 
 			public Long getMaxAttemptCount() {

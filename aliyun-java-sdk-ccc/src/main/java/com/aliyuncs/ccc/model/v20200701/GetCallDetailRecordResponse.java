@@ -125,6 +125,8 @@ public class GetCallDetailRecordResponse extends AcsResponse {
 
 		private List<QueueEventsItem> queueEvents;
 
+		private List<CustomerEventsItem> customerEvents;
+
 		public String getReleaseInitiator() {
 			return this.releaseInitiator;
 		}
@@ -317,6 +319,14 @@ public class GetCallDetailRecordResponse extends AcsResponse {
 			this.queueEvents = queueEvents;
 		}
 
+		public List<CustomerEventsItem> getCustomerEvents() {
+			return this.customerEvents;
+		}
+
+		public void setCustomerEvents(List<CustomerEventsItem> customerEvents) {
+			this.customerEvents = customerEvents;
+		}
+
 		public static class AgentEventsItem {
 
 			private String agentName;
@@ -482,6 +492,52 @@ public class GetCallDetailRecordResponse extends AcsResponse {
 			}
 
 			public static class EventSequenceItem4 {
+
+				private String event;
+
+				private Long eventTime;
+
+				public String getEvent() {
+					return this.event;
+				}
+
+				public void setEvent(String event) {
+					this.event = event;
+				}
+
+				public Long getEventTime() {
+					return this.eventTime;
+				}
+
+				public void setEventTime(Long eventTime) {
+					this.eventTime = eventTime;
+				}
+			}
+		}
+
+		public static class CustomerEventsItem {
+
+			private String customerId;
+
+			private List<EventSequenceItem6> eventSequence5;
+
+			public String getCustomerId() {
+				return this.customerId;
+			}
+
+			public void setCustomerId(String customerId) {
+				this.customerId = customerId;
+			}
+
+			public List<EventSequenceItem6> getEventSequence5() {
+				return this.eventSequence5;
+			}
+
+			public void setEventSequence5(List<EventSequenceItem6> eventSequence5) {
+				this.eventSequence5 = eventSequence5;
+			}
+
+			public static class EventSequenceItem6 {
 
 				private String event;
 

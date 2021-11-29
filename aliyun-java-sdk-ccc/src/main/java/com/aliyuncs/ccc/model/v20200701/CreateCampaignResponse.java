@@ -26,7 +26,7 @@ public class CreateCampaignResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String campaignId;
+	private String data;
 
 	private String code;
 
@@ -42,12 +42,12 @@ public class CreateCampaignResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getCampaignId() {
-		return this.campaignId;
+	public String getData() {
+		return this.data;
 	}
 
-	public void setCampaignId(String campaignId) {
-		this.campaignId = campaignId;
+	public void setData(String data) {
+		this.data = data;
 	}
 
 	public String getCode() {

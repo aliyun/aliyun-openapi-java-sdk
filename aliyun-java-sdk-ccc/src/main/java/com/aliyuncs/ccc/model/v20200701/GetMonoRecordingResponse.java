@@ -76,17 +76,9 @@ public class GetMonoRecordingResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String fileName;
-
 		private String fileUrl;
 
-		public String getFileName() {
-			return this.fileName;
-		}
-
-		public void setFileName(String fileName) {
-			this.fileName = fileName;
-		}
+		private String fileName;
 
 		public String getFileUrl() {
 			return this.fileUrl;
@@ -94,6 +86,14 @@ public class GetMonoRecordingResponse extends AcsResponse {
 
 		public void setFileUrl(String fileUrl) {
 			this.fileUrl = fileUrl;
+		}
+
+		public String getFileName() {
+			return this.fileName;
+		}
+
+		public void setFileName(String fileName) {
+			this.fileName = fileName;
 		}
 	}
 

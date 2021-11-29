@@ -46,7 +46,6 @@ public class ListCampaignsResponseUnmarshaller {
 			listItem.setCasesAborted(_ctx.longValue("ListCampaignsResponse.Data.List["+ i +"].CasesAborted"));
 			listItem.setCasesUncompleted(_ctx.longValue("ListCampaignsResponse.Data.List["+ i +"].CasesUncompleted"));
 			listItem.setCasesConnected(_ctx.longValue("ListCampaignsResponse.Data.List["+ i +"].CasesConnected"));
-			listItem.setCompletedRate(_ctx.longValue("ListCampaignsResponse.Data.List["+ i +"].CompletedRate"));
 			listItem.setMaxAttemptCount(_ctx.longValue("ListCampaignsResponse.Data.List["+ i +"].MaxAttemptCount"));
 			listItem.setMinAttemptInterval(_ctx.longValue("ListCampaignsResponse.Data.List["+ i +"].MinAttemptInterval"));
 			listItem.setName(_ctx.stringValue("ListCampaignsResponse.Data.List["+ i +"].Name"));

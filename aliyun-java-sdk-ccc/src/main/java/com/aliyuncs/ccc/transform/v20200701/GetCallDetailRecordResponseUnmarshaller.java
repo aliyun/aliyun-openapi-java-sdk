@@ -21,6 +21,8 @@ import com.aliyuncs.ccc.model.v20200701.GetCallDetailRecordResponse;
 import com.aliyuncs.ccc.model.v20200701.GetCallDetailRecordResponse.Data;
 import com.aliyuncs.ccc.model.v20200701.GetCallDetailRecordResponse.Data.AgentEventsItem;
 import com.aliyuncs.ccc.model.v20200701.GetCallDetailRecordResponse.Data.AgentEventsItem.EventSequenceItem;
+import com.aliyuncs.ccc.model.v20200701.GetCallDetailRecordResponse.Data.CustomerEventsItem;
+import com.aliyuncs.ccc.model.v20200701.GetCallDetailRecordResponse.Data.CustomerEventsItem.EventSequenceItem6;
 import com.aliyuncs.ccc.model.v20200701.GetCallDetailRecordResponse.Data.IvrEventsItem;
 import com.aliyuncs.ccc.model.v20200701.GetCallDetailRecordResponse.Data.IvrEventsItem.EventSequenceItem2;
 import com.aliyuncs.ccc.model.v20200701.GetCallDetailRecordResponse.Data.QueueEventsItem;
@@ -121,6 +123,25 @@ public class GetCallDetailRecordResponseUnmarshaller {
 			queueEvents.add(queueEventsItem);
 		}
 		data.setQueueEvents(queueEvents);
+
+		List<CustomerEventsItem> customerEvents = new ArrayList<CustomerEventsItem>();
+		for (int i = 0; i < _ctx.lengthValue("GetCallDetailRecordResponse.Data.CustomerEvents.Length"); i++) {
+			CustomerEventsItem customerEventsItem = new CustomerEventsItem();
+			customerEventsItem.setCustomerId(_ctx.stringValue("GetCallDetailRecordResponse.Data.CustomerEvents["+ i +"].CustomerId"));
+
+			List<EventSequenceItem6> eventSequence5 = new ArrayList<EventSequenceItem6>();
+			for (int j = 0; j < _ctx.lengthValue("GetCallDetailRecordResponse.Data.CustomerEvents["+ i +"].EventSequence.Length"); j++) {
+				EventSequenceItem6 eventSequenceItem6 = new EventSequenceItem6();
+				eventSequenceItem6.setEvent(_ctx.stringValue("GetCallDetailRecordResponse.Data.CustomerEvents["+ i +"].EventSequence["+ j +"].Event"));
+				eventSequenceItem6.setEventTime(_ctx.longValue("GetCallDetailRecordResponse.Data.CustomerEvents["+ i +"].EventSequence["+ j +"].EventTime"));
+
+				eventSequence5.add(eventSequenceItem6);
+			}
+			customerEventsItem.setEventSequence5(eventSequence5);
+
+			customerEvents.add(customerEventsItem);
+		}
+		data.setCustomerEvents(customerEvents);
 		getCallDetailRecordResponse.setData(data);
 	 
 	 	return getCallDetailRecordResponse;

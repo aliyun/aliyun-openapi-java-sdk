@@ -119,11 +119,9 @@ public class ListSkillGroupsResponse extends AcsResponse {
 
 		public static class SkillGroup {
 
-			private String description;
-
 			private String displayName;
 
-			private String instanceId;
+			private String description;
 
 			private Integer phoneNumberCount;
 
@@ -133,13 +131,7 @@ public class ListSkillGroupsResponse extends AcsResponse {
 
 			private Integer userCount;
 
-			public String getDescription() {
-				return this.description;
-			}
-
-			public void setDescription(String description) {
-				this.description = description;
-			}
+			private String instanceId;
 
 			public String getDisplayName() {
 				return this.displayName;
@@ -149,12 +141,12 @@ public class ListSkillGroupsResponse extends AcsResponse {
 				this.displayName = displayName;
 			}
 
-			public String getInstanceId() {
-				return this.instanceId;
+			public String getDescription() {
+				return this.description;
 			}
 
-			public void setInstanceId(String instanceId) {
-				this.instanceId = instanceId;
+			public void setDescription(String description) {
+				this.description = description;
 			}
 
 			public Integer getPhoneNumberCount() {
@@ -187,6 +179,14 @@ public class ListSkillGroupsResponse extends AcsResponse {
 
 			public void setUserCount(Integer userCount) {
 				this.userCount = userCount;
+			}
+
+			public String getInstanceId() {
+				return this.instanceId;
+			}
+
+			public void setInstanceId(String instanceId) {
+				this.instanceId = instanceId;
 			}
 		}
 	}

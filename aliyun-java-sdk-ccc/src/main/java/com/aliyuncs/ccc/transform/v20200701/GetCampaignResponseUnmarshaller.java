@@ -34,7 +34,6 @@ public class GetCampaignResponseUnmarshaller {
 		data.setCasesAborted(_ctx.longValue("GetCampaignResponse.Data.CasesAborted"));
 		data.setCasesUncompleted(_ctx.longValue("GetCampaignResponse.Data.CasesUncompleted"));
 		data.setCasesConnected(_ctx.longValue("GetCampaignResponse.Data.CasesConnected"));
-		data.setCompletedRate(_ctx.longValue("GetCampaignResponse.Data.CompletedRate"));
 		data.setMaxAttemptCount(_ctx.longValue("GetCampaignResponse.Data.MaxAttemptCount"));
 		data.setMinAttemptInterval(_ctx.longValue("GetCampaignResponse.Data.MinAttemptInterval"));
 		data.setName(_ctx.stringValue("GetCampaignResponse.Data.Name"));

@@ -29,6 +29,8 @@ public class StartPredictiveCallRequest extends RpcAcsRequest<StartPredictiveCal
 
 	private String callee;
 
+	private String maskedCallee;
+
 	private String contactFlowVariables;
 
 	private String tags;
@@ -66,6 +68,17 @@ public class StartPredictiveCallRequest extends RpcAcsRequest<StartPredictiveCal
 		this.callee = callee;
 		if(callee != null){
 			putQueryParameter("Callee", callee);
+		}
+	}
+
+	public String getMaskedCallee() {
+		return this.maskedCallee;
+	}
+
+	public void setMaskedCallee(String maskedCallee) {
+		this.maskedCallee = maskedCallee;
+		if(maskedCallee != null){
+			putQueryParameter("MaskedCallee", maskedCallee);
 		}
 	}
 
