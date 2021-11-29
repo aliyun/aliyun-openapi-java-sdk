@@ -99,6 +99,8 @@ public class DescribeDomainsBySourceResponse extends AcsResponse {
 
 			private String status;
 
+			private String cdnType;
+
 			public String getDomainName() {
 				return this.domainName;
 			}
@@ -137,6 +139,14 @@ public class DescribeDomainsBySourceResponse extends AcsResponse {
 
 			public void setStatus(String status) {
 				this.status = status;
+			}
+
+			public String getCdnType() {
+				return this.cdnType;
+			}
+
+			public void setCdnType(String cdnType) {
+				this.cdnType = cdnType;
 			}
 		}
 	}

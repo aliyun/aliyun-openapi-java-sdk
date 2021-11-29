@@ -49,6 +49,7 @@ public class DescribeDomainsBySourceResponseUnmarshaller {
 				domainInfo.setCreateTime(_ctx.stringValue("DescribeDomainsBySourceResponse.DomainsList["+ i +"].DomainInfos["+ j +"].CreateTime"));
 				domainInfo.setUpdateTime(_ctx.stringValue("DescribeDomainsBySourceResponse.DomainsList["+ i +"].DomainInfos["+ j +"].UpdateTime"));
 				domainInfo.setStatus(_ctx.stringValue("DescribeDomainsBySourceResponse.DomainsList["+ i +"].DomainInfos["+ j +"].Status"));
+				domainInfo.setCdnType(_ctx.stringValue("DescribeDomainsBySourceResponse.DomainsList["+ i +"].DomainInfos["+ j +"].CdnType"));
 
 				domainInfos.add(domainInfo);
 			}

@@ -27,9 +27,9 @@ public class BatchStopCdnDomainRequest extends RpcAcsRequest<BatchStopCdnDomainR
 
 	private String domainNames;
 
-	private Long ownerId;
-
 	private String securityToken;
+
+	private Long ownerId;
 	public BatchStopCdnDomainRequest() {
 		super("Cdn", "2018-05-10", "BatchStopCdnDomain");
 		setMethod(MethodType.POST);
@@ -50,17 +50,6 @@ public class BatchStopCdnDomainRequest extends RpcAcsRequest<BatchStopCdnDomainR
 		}
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
 	public String getSecurityToken() {
 		return this.securityToken;
 	}
@@ -69,6 +58,17 @@ public class BatchStopCdnDomainRequest extends RpcAcsRequest<BatchStopCdnDomainR
 		this.securityToken = securityToken;
 		if(securityToken != null){
 			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 
