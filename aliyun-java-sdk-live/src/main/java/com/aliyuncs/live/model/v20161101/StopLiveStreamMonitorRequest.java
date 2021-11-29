@@ -22,18 +22,14 @@ import com.aliyuncs.live.Endpoint;
  * @author auto create
  * @version 
  */
-public class DeleteLivePullStreamInfoConfigRequest extends RpcAcsRequest<DeleteLivePullStreamInfoConfigResponse> {
+public class StopLiveStreamMonitorRequest extends RpcAcsRequest<StopLiveStreamMonitorResponse> {
 	   
 
-	private String appName;
-
-	private String streamName;
-
-	private String domainName;
+	private String monitorId;
 
 	private Long ownerId;
-	public DeleteLivePullStreamInfoConfigRequest() {
-		super("live", "2016-11-01", "DeleteLivePullStreamInfoConfig", "live");
+	public StopLiveStreamMonitorRequest() {
+		super("live", "2016-11-01", "StopLiveStreamMonitor", "live");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -41,36 +37,14 @@ public class DeleteLivePullStreamInfoConfigRequest extends RpcAcsRequest<DeleteL
 		} catch (Exception e) {}
 	}
 
-	public String getAppName() {
-		return this.appName;
+	public String getMonitorId() {
+		return this.monitorId;
 	}
 
-	public void setAppName(String appName) {
-		this.appName = appName;
-		if(appName != null){
-			putQueryParameter("AppName", appName);
-		}
-	}
-
-	public String getStreamName() {
-		return this.streamName;
-	}
-
-	public void setStreamName(String streamName) {
-		this.streamName = streamName;
-		if(streamName != null){
-			putQueryParameter("StreamName", streamName);
-		}
-	}
-
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		if(domainName != null){
-			putQueryParameter("DomainName", domainName);
+	public void setMonitorId(String monitorId) {
+		this.monitorId = monitorId;
+		if(monitorId != null){
+			putQueryParameter("MonitorId", monitorId);
 		}
 	}
 
@@ -86,8 +60,8 @@ public class DeleteLivePullStreamInfoConfigRequest extends RpcAcsRequest<DeleteL
 	}
 
 	@Override
-	public Class<DeleteLivePullStreamInfoConfigResponse> getResponseClass() {
-		return DeleteLivePullStreamInfoConfigResponse.class;
+	public Class<StopLiveStreamMonitorResponse> getResponseClass() {
+		return StopLiveStreamMonitorResponse.class;
 	}
 
 }

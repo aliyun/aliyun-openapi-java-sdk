@@ -43,6 +43,8 @@ public class AddCasterVideoResourceRequest extends RpcAcsRequest<AddCasterVideoR
 
 	private Integer beginOffset;
 
+	private Integer fixedDelayDuration;
+
 	private String liveStreamUrl;
 
 	private String locationId;
@@ -157,6 +159,17 @@ public class AddCasterVideoResourceRequest extends RpcAcsRequest<AddCasterVideoR
 		this.beginOffset = beginOffset;
 		if(beginOffset != null){
 			putQueryParameter("BeginOffset", beginOffset.toString());
+		}
+	}
+
+	public Integer getFixedDelayDuration() {
+		return this.fixedDelayDuration;
+	}
+
+	public void setFixedDelayDuration(Integer fixedDelayDuration) {
+		this.fixedDelayDuration = fixedDelayDuration;
+		if(fixedDelayDuration != null){
+			putQueryParameter("FixedDelayDuration", fixedDelayDuration.toString());
 		}
 	}
 

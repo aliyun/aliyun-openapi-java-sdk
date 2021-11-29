@@ -22,55 +22,55 @@ import com.aliyuncs.live.Endpoint;
  * @author auto create
  * @version 
  */
-public class DeleteLivePullStreamInfoConfigRequest extends RpcAcsRequest<DeleteLivePullStreamInfoConfigResponse> {
+public class DescribeDomainWithIntegrityRequest extends RpcAcsRequest<DescribeDomainWithIntegrityResponse> {
 	   
 
-	private String appName;
+	private String startTime;
 
-	private String streamName;
+	private Float integrity;
 
-	private String domainName;
+	private String endTime;
 
 	private Long ownerId;
-	public DeleteLivePullStreamInfoConfigRequest() {
-		super("live", "2016-11-01", "DeleteLivePullStreamInfoConfig", "live");
-		setMethod(MethodType.POST);
+	public DescribeDomainWithIntegrityRequest() {
+		super("live", "2016-11-01", "DescribeDomainWithIntegrity", "live");
+		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	public String getAppName() {
-		return this.appName;
+	public String getStartTime() {
+		return this.startTime;
 	}
 
-	public void setAppName(String appName) {
-		this.appName = appName;
-		if(appName != null){
-			putQueryParameter("AppName", appName);
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
 		}
 	}
 
-	public String getStreamName() {
-		return this.streamName;
+	public Float getIntegrity() {
+		return this.integrity;
 	}
 
-	public void setStreamName(String streamName) {
-		this.streamName = streamName;
-		if(streamName != null){
-			putQueryParameter("StreamName", streamName);
+	public void setIntegrity(Float integrity) {
+		this.integrity = integrity;
+		if(integrity != null){
+			putQueryParameter("Integrity", integrity.toString());
 		}
 	}
 
-	public String getDomainName() {
-		return this.domainName;
+	public String getEndTime() {
+		return this.endTime;
 	}
 
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		if(domainName != null){
-			putQueryParameter("DomainName", domainName);
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime);
 		}
 	}
 
@@ -86,8 +86,8 @@ public class DeleteLivePullStreamInfoConfigRequest extends RpcAcsRequest<DeleteL
 	}
 
 	@Override
-	public Class<DeleteLivePullStreamInfoConfigResponse> getResponseClass() {
-		return DeleteLivePullStreamInfoConfigResponse.class;
+	public Class<DescribeDomainWithIntegrityResponse> getResponseClass() {
+		return DescribeDomainWithIntegrityResponse.class;
 	}
 
 }
