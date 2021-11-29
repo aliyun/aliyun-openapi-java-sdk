@@ -1,3 +1,9 @@
+2021-11-29 Version: 1.25.0
+- Supported ListLogicTableRouteConfig, AddLogicTableRouteConfig, DeleteLogicTableRouteConfig API.
+- Supported ModifyDataCorrectExecSQL, RetryDataCorrectPreCheck API.
+- Supported GetDBTaskSQLJobLog API.
+- Supported ListDBTaskSQLJobDetail to return execute log information.
+
 2021-11-18 Version: 1.24.0
 - Support ListInstanceLoginAuditLog, ListProxySQLExecAuditLog API.
 - Support GetOpLog API to return OpUserId information.

@@ -105,6 +105,8 @@ public class ListDBTaskSQLJobDetailResponse extends AcsResponse {
 
 		private String status;
 
+		private String log;
+
 		public Long getJobDetailId() {
 			return this.jobDetailId;
 		}
@@ -175,6 +177,14 @@ public class ListDBTaskSQLJobDetailResponse extends AcsResponse {
 
 		public void setStatus(String status) {
 			this.status = status;
+		}
+
+		public String getLog() {
+			return this.log;
+		}
+
+		public void setLog(String log) {
+			this.log = log;
 		}
 	}
 

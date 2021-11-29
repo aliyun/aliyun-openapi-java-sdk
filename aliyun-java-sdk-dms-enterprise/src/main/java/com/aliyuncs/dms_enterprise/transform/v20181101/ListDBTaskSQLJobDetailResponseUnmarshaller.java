@@ -44,6 +44,7 @@ public class ListDBTaskSQLJobDetailResponseUnmarshaller {
 			dBTaskSQLJobDetail.setSkip(_ctx.booleanValue("ListDBTaskSQLJobDetailResponse.DBTaskSQLJobDetailList["+ i +"].Skip"));
 			dBTaskSQLJobDetail.setSqlType(_ctx.stringValue("ListDBTaskSQLJobDetailResponse.DBTaskSQLJobDetailList["+ i +"].SqlType"));
 			dBTaskSQLJobDetail.setStatus(_ctx.stringValue("ListDBTaskSQLJobDetailResponse.DBTaskSQLJobDetailList["+ i +"].Status"));
+			dBTaskSQLJobDetail.setLog(_ctx.stringValue("ListDBTaskSQLJobDetailResponse.DBTaskSQLJobDetailList["+ i +"].Log"));
 
 			dBTaskSQLJobDetailList.add(dBTaskSQLJobDetail);
 		}
