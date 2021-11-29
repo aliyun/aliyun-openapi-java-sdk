@@ -22,18 +22,16 @@ import com.aliyuncs.dcdn.Endpoint;
  * @author auto create
  * @version 
  */
-public class DeleteDcdnDomainRequest extends RpcAcsRequest<DeleteDcdnDomainResponse> {
+public class DescribeDcdnSLSRealtimeLogDeliveryRequest extends RpcAcsRequest<DescribeDcdnSLSRealtimeLogDeliveryResponse> {
 	   
 
-	private String securityToken;
+	private String businessType;
 
-	private String ownerAccount;
-
-	private String domainName;
+	private String projectName;
 
 	private Long ownerId;
-	public DeleteDcdnDomainRequest() {
-		super("dcdn", "2018-01-15", "DeleteDcdnDomain");
+	public DescribeDcdnSLSRealtimeLogDeliveryRequest() {
+		super("dcdn", "2018-01-15", "DescribeDcdnSLSRealtimeLogDelivery");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -41,36 +39,25 @@ public class DeleteDcdnDomainRequest extends RpcAcsRequest<DeleteDcdnDomainRespo
 		} catch (Exception e) {}
 	}
 
-	public String getSecurityToken() {
-		return this.securityToken;
+	public String getBusinessType() {
+		return this.businessType;
 	}
 
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
+	public void setBusinessType(String businessType) {
+		this.businessType = businessType;
+		if(businessType != null){
+			putQueryParameter("BusinessType", businessType);
 		}
 	}
 
-	public String getOwnerAccount() {
-		return this.ownerAccount;
+	public String getProjectName() {
+		return this.projectName;
 	}
 
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		if(domainName != null){
-			putQueryParameter("DomainName", domainName);
+	public void setProjectName(String projectName) {
+		this.projectName = projectName;
+		if(projectName != null){
+			putQueryParameter("ProjectName", projectName);
 		}
 	}
 
@@ -86,8 +73,8 @@ public class DeleteDcdnDomainRequest extends RpcAcsRequest<DeleteDcdnDomainRespo
 	}
 
 	@Override
-	public Class<DeleteDcdnDomainResponse> getResponseClass() {
-		return DeleteDcdnDomainResponse.class;
+	public Class<DescribeDcdnSLSRealtimeLogDeliveryResponse> getResponseClass() {
+		return DescribeDcdnSLSRealtimeLogDeliveryResponse.class;
 	}
 
 }

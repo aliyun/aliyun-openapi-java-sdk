@@ -22,18 +22,18 @@ import com.aliyuncs.dcdn.Endpoint;
  * @author auto create
  * @version 
  */
-public class DeleteDcdnDomainRequest extends RpcAcsRequest<DeleteDcdnDomainResponse> {
+public class SetDcdnFullDomainsBlockIPRequest extends RpcAcsRequest<SetDcdnFullDomainsBlockIPResponse> {
 	   
 
-	private String securityToken;
+	private String iPList;
 
-	private String ownerAccount;
+	private Integer blockInterval;
 
-	private String domainName;
+	private String operationType;
 
 	private Long ownerId;
-	public DeleteDcdnDomainRequest() {
-		super("dcdn", "2018-01-15", "DeleteDcdnDomain");
+	public SetDcdnFullDomainsBlockIPRequest() {
+		super("dcdn", "2018-01-15", "SetDcdnFullDomainsBlockIP");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -41,36 +41,36 @@ public class DeleteDcdnDomainRequest extends RpcAcsRequest<DeleteDcdnDomainRespo
 		} catch (Exception e) {}
 	}
 
-	public String getSecurityToken() {
-		return this.securityToken;
+	public String getIPList() {
+		return this.iPList;
 	}
 
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
+	public void setIPList(String iPList) {
+		this.iPList = iPList;
+		if(iPList != null){
+			putBodyParameter("IPList", iPList);
 		}
 	}
 
-	public String getOwnerAccount() {
-		return this.ownerAccount;
+	public Integer getBlockInterval() {
+		return this.blockInterval;
 	}
 
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
+	public void setBlockInterval(Integer blockInterval) {
+		this.blockInterval = blockInterval;
+		if(blockInterval != null){
+			putBodyParameter("BlockInterval", blockInterval.toString());
 		}
 	}
 
-	public String getDomainName() {
-		return this.domainName;
+	public String getOperationType() {
+		return this.operationType;
 	}
 
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		if(domainName != null){
-			putQueryParameter("DomainName", domainName);
+	public void setOperationType(String operationType) {
+		this.operationType = operationType;
+		if(operationType != null){
+			putBodyParameter("OperationType", operationType);
 		}
 	}
 
@@ -86,8 +86,8 @@ public class DeleteDcdnDomainRequest extends RpcAcsRequest<DeleteDcdnDomainRespo
 	}
 
 	@Override
-	public Class<DeleteDcdnDomainResponse> getResponseClass() {
-		return DeleteDcdnDomainResponse.class;
+	public Class<SetDcdnFullDomainsBlockIPResponse> getResponseClass() {
+		return SetDcdnFullDomainsBlockIPResponse.class;
 	}
 
 }

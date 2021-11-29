@@ -33,25 +33,25 @@ public class DescribeDcdnDomainWebsocketHttpCodeDataResponseUnmarshaller {
 		describeDcdnDomainWebsocketHttpCodeDataResponse.setEndTime(_ctx.stringValue("DescribeDcdnDomainWebsocketHttpCodeDataResponse.EndTime"));
 		describeDcdnDomainWebsocketHttpCodeDataResponse.setDataInterval(_ctx.stringValue("DescribeDcdnDomainWebsocketHttpCodeDataResponse.DataInterval"));
 
-		List<DataModule> dataPerInterval = new ArrayList<DataModule>();
-		for (int i = 0; i < _ctx.lengthValue("DescribeDcdnDomainWebsocketHttpCodeDataResponse.DataPerInterval.Length"); i++) {
+		List<DataModule> httpCodeDataPerInterval = new ArrayList<DataModule>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeDcdnDomainWebsocketHttpCodeDataResponse.HttpCodeDataPerInterval.Length"); i++) {
 			DataModule dataModule = new DataModule();
-			dataModule.setTimeStamp(_ctx.stringValue("DescribeDcdnDomainWebsocketHttpCodeDataResponse.DataPerInterval["+ i +"].TimeStamp"));
+			dataModule.setTimeStamp(_ctx.stringValue("DescribeDcdnDomainWebsocketHttpCodeDataResponse.HttpCodeDataPerInterval["+ i +"].TimeStamp"));
 
-			List<HttpCodeDataModule> websocketHttpCodeDataPerInterval = new ArrayList<HttpCodeDataModule>();
-			for (int j = 0; j < _ctx.lengthValue("DescribeDcdnDomainWebsocketHttpCodeDataResponse.DataPerInterval["+ i +"].WebsocketHttpCodeDataPerInterval.Length"); j++) {
+			List<HttpCodeDataModule> websocketHttpCode = new ArrayList<HttpCodeDataModule>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeDcdnDomainWebsocketHttpCodeDataResponse.HttpCodeDataPerInterval["+ i +"].WebsocketHttpCode.Length"); j++) {
 				HttpCodeDataModule httpCodeDataModule = new HttpCodeDataModule();
-				httpCodeDataModule.setCode(_ctx.integerValue("DescribeDcdnDomainWebsocketHttpCodeDataResponse.DataPerInterval["+ i +"].WebsocketHttpCodeDataPerInterval["+ j +"].Code"));
-				httpCodeDataModule.setProportion(_ctx.floatValue("DescribeDcdnDomainWebsocketHttpCodeDataResponse.DataPerInterval["+ i +"].WebsocketHttpCodeDataPerInterval["+ j +"].Proportion"));
-				httpCodeDataModule.setCount(_ctx.floatValue("DescribeDcdnDomainWebsocketHttpCodeDataResponse.DataPerInterval["+ i +"].WebsocketHttpCodeDataPerInterval["+ j +"].Count"));
+				httpCodeDataModule.setCode(_ctx.integerValue("DescribeDcdnDomainWebsocketHttpCodeDataResponse.HttpCodeDataPerInterval["+ i +"].WebsocketHttpCode["+ j +"].Code"));
+				httpCodeDataModule.setProportion(_ctx.floatValue("DescribeDcdnDomainWebsocketHttpCodeDataResponse.HttpCodeDataPerInterval["+ i +"].WebsocketHttpCode["+ j +"].Proportion"));
+				httpCodeDataModule.setCount(_ctx.floatValue("DescribeDcdnDomainWebsocketHttpCodeDataResponse.HttpCodeDataPerInterval["+ i +"].WebsocketHttpCode["+ j +"].Count"));
 
-				websocketHttpCodeDataPerInterval.add(httpCodeDataModule);
+				websocketHttpCode.add(httpCodeDataModule);
 			}
-			dataModule.setWebsocketHttpCodeDataPerInterval(websocketHttpCodeDataPerInterval);
+			dataModule.setWebsocketHttpCode(websocketHttpCode);
 
-			dataPerInterval.add(dataModule);
+			httpCodeDataPerInterval.add(dataModule);
 		}
-		describeDcdnDomainWebsocketHttpCodeDataResponse.setDataPerInterval(dataPerInterval);
+		describeDcdnDomainWebsocketHttpCodeDataResponse.setHttpCodeDataPerInterval(httpCodeDataPerInterval);
 	 
 	 	return describeDcdnDomainWebsocketHttpCodeDataResponse;
 	}

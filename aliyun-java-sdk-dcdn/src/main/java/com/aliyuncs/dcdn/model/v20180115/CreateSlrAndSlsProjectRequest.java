@@ -22,56 +22,19 @@ import com.aliyuncs.dcdn.Endpoint;
  * @author auto create
  * @version 
  */
-public class DeleteDcdnDomainRequest extends RpcAcsRequest<DeleteDcdnDomainResponse> {
+public class CreateSlrAndSlsProjectRequest extends RpcAcsRequest<CreateSlrAndSlsProjectResponse> {
 	   
 
-	private String securityToken;
-
-	private String ownerAccount;
-
-	private String domainName;
-
 	private Long ownerId;
-	public DeleteDcdnDomainRequest() {
-		super("dcdn", "2018-01-15", "DeleteDcdnDomain");
+
+	private String region;
+	public CreateSlrAndSlsProjectRequest() {
+		super("dcdn", "2018-01-15", "CreateSlrAndSlsProject");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		if(domainName != null){
-			putQueryParameter("DomainName", domainName);
-		}
 	}
 
 	public Long getOwnerId() {
@@ -85,9 +48,20 @@ public class DeleteDcdnDomainRequest extends RpcAcsRequest<DeleteDcdnDomainRespo
 		}
 	}
 
+	public String getRegion() {
+		return this.region;
+	}
+
+	public void setRegion(String region) {
+		this.region = region;
+		if(region != null){
+			putBodyParameter("Region", region);
+		}
+	}
+
 	@Override
-	public Class<DeleteDcdnDomainResponse> getResponseClass() {
-		return DeleteDcdnDomainResponse.class;
+	public Class<CreateSlrAndSlsProjectResponse> getResponseClass() {
+		return CreateSlrAndSlsProjectResponse.class;
 	}
 
 }

@@ -1,3 +1,6 @@
+2021-11-29 Version: 2.1.8
+- Update SetDcdnDomainSMCertificate.
+
 2021-11-05 Version: 2.1.7
 - Add SetDcdnDomainSMCertificate.
 

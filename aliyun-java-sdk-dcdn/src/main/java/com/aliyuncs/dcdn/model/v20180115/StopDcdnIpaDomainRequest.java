@@ -25,11 +25,11 @@ import com.aliyuncs.dcdn.Endpoint;
 public class StopDcdnIpaDomainRequest extends RpcAcsRequest<StopDcdnIpaDomainResponse> {
 	   
 
+	private String securityToken;
+
 	private String domainName;
 
 	private Long ownerId;
-
-	private String securityToken;
 	public StopDcdnIpaDomainRequest() {
 		super("dcdn", "2018-01-15", "StopDcdnIpaDomain");
 		setMethod(MethodType.POST);
@@ -37,6 +37,17 @@ public class StopDcdnIpaDomainRequest extends RpcAcsRequest<StopDcdnIpaDomainRes
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
 	}
 
 	public String getDomainName() {
@@ -58,17 +69,6 @@ public class StopDcdnIpaDomainRequest extends RpcAcsRequest<StopDcdnIpaDomainRes
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 

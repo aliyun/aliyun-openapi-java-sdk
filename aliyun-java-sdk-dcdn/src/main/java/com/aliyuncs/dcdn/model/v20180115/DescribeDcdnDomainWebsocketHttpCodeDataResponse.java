@@ -35,7 +35,7 @@ public class DescribeDcdnDomainWebsocketHttpCodeDataResponse extends AcsResponse
 
 	private String dataInterval;
 
-	private List<DataModule> dataPerInterval;
+	private List<DataModule> httpCodeDataPerInterval;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -77,19 +77,19 @@ public class DescribeDcdnDomainWebsocketHttpCodeDataResponse extends AcsResponse
 		this.dataInterval = dataInterval;
 	}
 
-	public List<DataModule> getDataPerInterval() {
-		return this.dataPerInterval;
+	public List<DataModule> getHttpCodeDataPerInterval() {
+		return this.httpCodeDataPerInterval;
 	}
 
-	public void setDataPerInterval(List<DataModule> dataPerInterval) {
-		this.dataPerInterval = dataPerInterval;
+	public void setHttpCodeDataPerInterval(List<DataModule> httpCodeDataPerInterval) {
+		this.httpCodeDataPerInterval = httpCodeDataPerInterval;
 	}
 
 	public static class DataModule {
 
 		private String timeStamp;
 
-		private List<HttpCodeDataModule> websocketHttpCodeDataPerInterval;
+		private List<HttpCodeDataModule> websocketHttpCode;
 
 		public String getTimeStamp() {
 			return this.timeStamp;
@@ -99,12 +99,12 @@ public class DescribeDcdnDomainWebsocketHttpCodeDataResponse extends AcsResponse
 			this.timeStamp = timeStamp;
 		}
 
-		public List<HttpCodeDataModule> getWebsocketHttpCodeDataPerInterval() {
-			return this.websocketHttpCodeDataPerInterval;
+		public List<HttpCodeDataModule> getWebsocketHttpCode() {
+			return this.websocketHttpCode;
 		}
 
-		public void setWebsocketHttpCodeDataPerInterval(List<HttpCodeDataModule> websocketHttpCodeDataPerInterval) {
-			this.websocketHttpCodeDataPerInterval = websocketHttpCodeDataPerInterval;
+		public void setWebsocketHttpCode(List<HttpCodeDataModule> websocketHttpCode) {
+			this.websocketHttpCode = websocketHttpCode;
 		}
 
 		public static class HttpCodeDataModule {

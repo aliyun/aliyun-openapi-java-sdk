@@ -22,55 +22,29 @@ import com.aliyuncs.dcdn.Endpoint;
  * @author auto create
  * @version 
  */
-public class DeleteDcdnDomainRequest extends RpcAcsRequest<DeleteDcdnDomainResponse> {
+public class DescribeDcdnUserRealTimeDeliveryFieldRequest extends RpcAcsRequest<DescribeDcdnUserRealTimeDeliveryFieldResponse> {
 	   
 
-	private String securityToken;
-
-	private String ownerAccount;
-
-	private String domainName;
+	private String businessType;
 
 	private Long ownerId;
-	public DeleteDcdnDomainRequest() {
-		super("dcdn", "2018-01-15", "DeleteDcdnDomain");
-		setMethod(MethodType.POST);
+	public DescribeDcdnUserRealTimeDeliveryFieldRequest() {
+		super("dcdn", "2018-01-15", "DescribeDcdnUserRealTimeDeliveryField");
+		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	public String getSecurityToken() {
-		return this.securityToken;
+	public String getBusinessType() {
+		return this.businessType;
 	}
 
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		if(domainName != null){
-			putQueryParameter("DomainName", domainName);
+	public void setBusinessType(String businessType) {
+		this.businessType = businessType;
+		if(businessType != null){
+			putQueryParameter("BusinessType", businessType);
 		}
 	}
 
@@ -86,8 +60,8 @@ public class DeleteDcdnDomainRequest extends RpcAcsRequest<DeleteDcdnDomainRespo
 	}
 
 	@Override
-	public Class<DeleteDcdnDomainResponse> getResponseClass() {
-		return DeleteDcdnDomainResponse.class;
+	public Class<DescribeDcdnUserRealTimeDeliveryFieldResponse> getResponseClass() {
+		return DescribeDcdnUserRealTimeDeliveryFieldResponse.class;
 	}
 
 }

@@ -25,6 +25,8 @@ import com.aliyuncs.dcdn.Endpoint;
 public class SetDcdnDomainSMCertificateRequest extends RpcAcsRequest<SetDcdnDomainSMCertificateResponse> {
 	   
 
+	private String sSLProtocol;
+
 	private String domainName;
 
 	private Long ownerId;
@@ -39,6 +41,17 @@ public class SetDcdnDomainSMCertificateRequest extends RpcAcsRequest<SetDcdnDoma
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getSSLProtocol() {
+		return this.sSLProtocol;
+	}
+
+	public void setSSLProtocol(String sSLProtocol) {
+		this.sSLProtocol = sSLProtocol;
+		if(sSLProtocol != null){
+			putQueryParameter("SSLProtocol", sSLProtocol);
+		}
 	}
 
 	public String getDomainName() {

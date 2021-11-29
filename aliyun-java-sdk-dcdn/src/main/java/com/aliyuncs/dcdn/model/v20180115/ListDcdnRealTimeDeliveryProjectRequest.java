@@ -22,18 +22,20 @@ import com.aliyuncs.dcdn.Endpoint;
  * @author auto create
  * @version 
  */
-public class DeleteDcdnDomainRequest extends RpcAcsRequest<DeleteDcdnDomainResponse> {
+public class ListDcdnRealTimeDeliveryProjectRequest extends RpcAcsRequest<ListDcdnRealTimeDeliveryProjectResponse> {
 	   
 
-	private String securityToken;
+	private Integer pageNumber;
 
-	private String ownerAccount;
+	private String businessType;
+
+	private Integer pageSize;
 
 	private String domainName;
 
 	private Long ownerId;
-	public DeleteDcdnDomainRequest() {
-		super("dcdn", "2018-01-15", "DeleteDcdnDomain");
+	public ListDcdnRealTimeDeliveryProjectRequest() {
+		super("dcdn", "2018-01-15", "ListDcdnRealTimeDeliveryProject");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -41,25 +43,36 @@ public class DeleteDcdnDomainRequest extends RpcAcsRequest<DeleteDcdnDomainRespo
 		} catch (Exception e) {}
 	}
 
-	public String getSecurityToken() {
-		return this.securityToken;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 
-	public String getOwnerAccount() {
-		return this.ownerAccount;
+	public String getBusinessType() {
+		return this.businessType;
 	}
 
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
+	public void setBusinessType(String businessType) {
+		this.businessType = businessType;
+		if(businessType != null){
+			putQueryParameter("BusinessType", businessType);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
@@ -86,8 +99,8 @@ public class DeleteDcdnDomainRequest extends RpcAcsRequest<DeleteDcdnDomainRespo
 	}
 
 	@Override
-	public Class<DeleteDcdnDomainResponse> getResponseClass() {
-		return DeleteDcdnDomainResponse.class;
+	public Class<ListDcdnRealTimeDeliveryProjectResponse> getResponseClass() {
+		return ListDcdnRealTimeDeliveryProjectResponse.class;
 	}
 
 }

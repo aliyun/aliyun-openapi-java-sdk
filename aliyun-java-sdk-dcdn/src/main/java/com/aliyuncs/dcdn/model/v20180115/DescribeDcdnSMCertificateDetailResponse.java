@@ -34,6 +34,14 @@ public class DescribeDcdnSMCertificateDetailResponse extends AcsResponse {
 
 	private String certName;
 
+	private String commonName;
+
+	private String sans;
+
+	private String certOrg;
+
+	private String certExpireTime;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -72,6 +80,38 @@ public class DescribeDcdnSMCertificateDetailResponse extends AcsResponse {
 
 	public void setCertName(String certName) {
 		this.certName = certName;
+	}
+
+	public String getCommonName() {
+		return this.commonName;
+	}
+
+	public void setCommonName(String commonName) {
+		this.commonName = commonName;
+	}
+
+	public String getSans() {
+		return this.sans;
+	}
+
+	public void setSans(String sans) {
+		this.sans = sans;
+	}
+
+	public String getCertOrg() {
+		return this.certOrg;
+	}
+
+	public void setCertOrg(String certOrg) {
+		this.certOrg = certOrg;
+	}
+
+	public String getCertExpireTime() {
+		return this.certExpireTime;
+	}
+
+	public void setCertExpireTime(String certExpireTime) {
+		this.certExpireTime = certExpireTime;
 	}
 
 	@Override

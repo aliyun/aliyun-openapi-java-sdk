@@ -27,6 +27,10 @@ public class DescribeDcdnSMCertificateDetailResponseUnmarshaller {
 		describeDcdnSMCertificateDetailResponse.setEncryptCertificate(_ctx.stringValue("DescribeDcdnSMCertificateDetailResponse.EncryptCertificate"));
 		describeDcdnSMCertificateDetailResponse.setCertIdentifier(_ctx.stringValue("DescribeDcdnSMCertificateDetailResponse.CertIdentifier"));
 		describeDcdnSMCertificateDetailResponse.setCertName(_ctx.stringValue("DescribeDcdnSMCertificateDetailResponse.CertName"));
+		describeDcdnSMCertificateDetailResponse.setCommonName(_ctx.stringValue("DescribeDcdnSMCertificateDetailResponse.CommonName"));
+		describeDcdnSMCertificateDetailResponse.setSans(_ctx.stringValue("DescribeDcdnSMCertificateDetailResponse.Sans"));
+		describeDcdnSMCertificateDetailResponse.setCertOrg(_ctx.stringValue("DescribeDcdnSMCertificateDetailResponse.CertOrg"));
+		describeDcdnSMCertificateDetailResponse.setCertExpireTime(_ctx.stringValue("DescribeDcdnSMCertificateDetailResponse.CertExpireTime"));
 	 
 	 	return describeDcdnSMCertificateDetailResponse;
 	}
