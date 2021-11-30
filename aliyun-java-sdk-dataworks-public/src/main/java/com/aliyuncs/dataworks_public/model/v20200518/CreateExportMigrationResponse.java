@@ -15,50 +15,20 @@
 package com.aliyuncs.dataworks_public.model.v20200518;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.dataworks_public.transform.v20200518.CreateQualityRuleResponseUnmarshaller;
+import com.aliyuncs.dataworks_public.transform.v20200518.CreateExportMigrationResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateQualityRuleResponse extends AcsResponse {
-
-	private Integer httpStatusCode;
-
-	private String data;
-
-	private String errorMessage;
+public class CreateExportMigrationResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String errorCode;
+	private Long data;
 
 	private Boolean success;
-
-	public Integer getHttpStatusCode() {
-		return this.httpStatusCode;
-	}
-
-	public void setHttpStatusCode(Integer httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
-	}
-
-	public String getData() {
-		return this.data;
-	}
-
-	public void setData(String data) {
-		this.data = data;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -68,12 +38,12 @@ public class CreateQualityRuleResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getErrorCode() {
-		return this.errorCode;
+	public Long getData() {
+		return this.data;
 	}
 
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
+	public void setData(Long data) {
+		this.data = data;
 	}
 
 	public Boolean getSuccess() {
@@ -85,8 +55,8 @@ public class CreateQualityRuleResponse extends AcsResponse {
 	}
 
 	@Override
-	public CreateQualityRuleResponse getInstance(UnmarshallerContext context) {
-		return	CreateQualityRuleResponseUnmarshaller.unmarshall(this, context);
+	public CreateExportMigrationResponse getInstance(UnmarshallerContext context) {
+		return	CreateExportMigrationResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override
