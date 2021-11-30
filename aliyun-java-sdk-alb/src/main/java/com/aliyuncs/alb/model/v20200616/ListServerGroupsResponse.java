@@ -89,7 +89,17 @@ public class ListServerGroupsResponse extends AcsResponse {
 
 		private String serverGroupStatus;
 
+		private String serverGroupType;
+
 		private String vpcId;
+
+		private Boolean configManagedEnabled;
+
+		private Boolean upstreamKeepaliveEnabled;
+
+		private Boolean ipv6Enabled;
+
+		private Integer serverCount;
 
 		private List<Tag> tags;
 
@@ -145,12 +155,52 @@ public class ListServerGroupsResponse extends AcsResponse {
 			this.serverGroupStatus = serverGroupStatus;
 		}
 
+		public String getServerGroupType() {
+			return this.serverGroupType;
+		}
+
+		public void setServerGroupType(String serverGroupType) {
+			this.serverGroupType = serverGroupType;
+		}
+
 		public String getVpcId() {
 			return this.vpcId;
 		}
 
 		public void setVpcId(String vpcId) {
 			this.vpcId = vpcId;
+		}
+
+		public Boolean getConfigManagedEnabled() {
+			return this.configManagedEnabled;
+		}
+
+		public void setConfigManagedEnabled(Boolean configManagedEnabled) {
+			this.configManagedEnabled = configManagedEnabled;
+		}
+
+		public Boolean getUpstreamKeepaliveEnabled() {
+			return this.upstreamKeepaliveEnabled;
+		}
+
+		public void setUpstreamKeepaliveEnabled(Boolean upstreamKeepaliveEnabled) {
+			this.upstreamKeepaliveEnabled = upstreamKeepaliveEnabled;
+		}
+
+		public Boolean getIpv6Enabled() {
+			return this.ipv6Enabled;
+		}
+
+		public void setIpv6Enabled(Boolean ipv6Enabled) {
+			this.ipv6Enabled = ipv6Enabled;
+		}
+
+		public Integer getServerCount() {
+			return this.serverCount;
+		}
+
+		public void setServerCount(Integer serverCount) {
+			this.serverCount = serverCount;
 		}
 
 		public List<Tag> getTags() {

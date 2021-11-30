@@ -101,6 +101,10 @@ public class ListLoadBalancersResponse extends AcsResponse {
 
 		private String vpcId;
 
+		private String addressIpVersion;
+
+		private String ipv6AddressType;
+
 		private List<LoadBalancerOperationLock> loadBalancerOperationLocks;
 
 		private List<Tag> tags;
@@ -207,6 +211,22 @@ public class ListLoadBalancersResponse extends AcsResponse {
 
 		public void setVpcId(String vpcId) {
 			this.vpcId = vpcId;
+		}
+
+		public String getAddressIpVersion() {
+			return this.addressIpVersion;
+		}
+
+		public void setAddressIpVersion(String addressIpVersion) {
+			this.addressIpVersion = addressIpVersion;
+		}
+
+		public String getIpv6AddressType() {
+			return this.ipv6AddressType;
+		}
+
+		public void setIpv6AddressType(String ipv6AddressType) {
+			this.ipv6AddressType = ipv6AddressType;
 		}
 
 		public List<LoadBalancerOperationLock> getLoadBalancerOperationLocks() {

@@ -186,6 +186,7 @@ public class CreateRulesRequest extends RpcAcsRequest<CreateRulesResponse> {
 								}
 							}
 						}
+						putQueryParameter("Rules." + (depth1 + 1) + ".Direction" , rules.get(depth1).getDirection());
 				}
 			}
 		}	
@@ -223,6 +224,8 @@ public class CreateRulesRequest extends RpcAcsRequest<CreateRulesResponse> {
 
 		private List<RuleActionsItem> ruleActions;
 
+		private String direction;
+
 		public List<RuleConditionsItem> getRuleConditions() {
 			return this.ruleConditions;
 		}
@@ -253,6 +256,14 @@ public class CreateRulesRequest extends RpcAcsRequest<CreateRulesResponse> {
 
 		public void setRuleActions(List<RuleActionsItem> ruleActions) {
 			this.ruleActions = ruleActions;
+		}
+
+		public String getDirection() {
+			return this.direction;
+		}
+
+		public void setDirection(String direction) {
+			this.direction = direction;
 		}
 
 		public static class RuleConditionsItem {

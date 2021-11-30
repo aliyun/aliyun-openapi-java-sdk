@@ -42,6 +42,8 @@ public class CreateServerGroupRequest extends RpcAcsRequest<CreateServerGroupRes
 
 	private Boolean dryRun;
 
+	private String serverGroupType;
+
 	private String vpcId;
 	public CreateServerGroupRequest() {
 		super("Alb", "2020-06-16", "CreateServerGroup", "alb");
@@ -157,6 +159,17 @@ public class CreateServerGroupRequest extends RpcAcsRequest<CreateServerGroupRes
 		this.dryRun = dryRun;
 		if(dryRun != null){
 			putQueryParameter("DryRun", dryRun.toString());
+		}
+	}
+
+	public String getServerGroupType() {
+		return this.serverGroupType;
+	}
+
+	public void setServerGroupType(String serverGroupType) {
+		this.serverGroupType = serverGroupType;
+		if(serverGroupType != null){
+			putQueryParameter("ServerGroupType", serverGroupType);
 		}
 	}
 

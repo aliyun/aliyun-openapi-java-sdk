@@ -52,6 +52,8 @@ public class ListLoadBalancersResponseUnmarshaller {
 			loadBalancer.setLoadBalancerStatus(_ctx.stringValue("ListLoadBalancersResponse.LoadBalancers["+ i +"].LoadBalancerStatus"));
 			loadBalancer.setResourceGroupId(_ctx.stringValue("ListLoadBalancersResponse.LoadBalancers["+ i +"].ResourceGroupId"));
 			loadBalancer.setVpcId(_ctx.stringValue("ListLoadBalancersResponse.LoadBalancers["+ i +"].VpcId"));
+			loadBalancer.setAddressIpVersion(_ctx.stringValue("ListLoadBalancersResponse.LoadBalancers["+ i +"].AddressIpVersion"));
+			loadBalancer.setIpv6AddressType(_ctx.stringValue("ListLoadBalancersResponse.LoadBalancers["+ i +"].Ipv6AddressType"));
 
 			AccessLogConfig accessLogConfig = new AccessLogConfig();
 			accessLogConfig.setLogProject(_ctx.stringValue("ListLoadBalancersResponse.LoadBalancers["+ i +"].AccessLogConfig.LogProject"));

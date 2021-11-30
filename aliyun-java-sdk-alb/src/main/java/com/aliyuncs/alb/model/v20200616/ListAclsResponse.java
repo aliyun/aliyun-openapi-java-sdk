@@ -87,6 +87,8 @@ public class ListAclsResponse extends AcsResponse {
 
 		private String resourceGroupId;
 
+		private Boolean configManagedEnabled;
+
 		public String getAclId() {
 			return this.aclId;
 		}
@@ -125,6 +127,14 @@ public class ListAclsResponse extends AcsResponse {
 
 		public void setResourceGroupId(String resourceGroupId) {
 			this.resourceGroupId = resourceGroupId;
+		}
+
+		public Boolean getConfigManagedEnabled() {
+			return this.configManagedEnabled;
+		}
+
+		public void setConfigManagedEnabled(Boolean configManagedEnabled) {
+			this.configManagedEnabled = configManagedEnabled;
 		}
 	}
 

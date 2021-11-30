@@ -42,6 +42,8 @@ public class UpdateListenerAttributeRequest extends RpcAcsRequest<UpdateListener
 
 	private Integer requestTimeout;
 
+	private List<CaCertificates> caCertificates;
+
 	private XForwardedForConfig xForwardedForConfig;
 
 	private String securityPolicyId;
@@ -51,6 +53,8 @@ public class UpdateListenerAttributeRequest extends RpcAcsRequest<UpdateListener
 	private List<Certificates> certificates;
 
 	private String listenerDescription;
+
+	private Boolean caEnabled;
 	public UpdateListenerAttributeRequest() {
 		super("Alb", "2020-06-16", "UpdateListenerAttribute", "alb");
 		setMethod(MethodType.POST);
@@ -166,6 +170,21 @@ public class UpdateListenerAttributeRequest extends RpcAcsRequest<UpdateListener
 		}
 	}
 
+	public List<CaCertificates> getCaCertificates() {
+		return this.caCertificates;
+	}
+
+	public void setCaCertificates(List<CaCertificates> caCertificates) {
+		this.caCertificates = caCertificates;	
+		if (caCertificates != null) {
+			for (int depth1 = 0; depth1 < caCertificates.size(); depth1++) {
+				if (caCertificates.get(depth1) != null) {
+					
+				}
+			}
+		}	
+	}
+
 	public XForwardedForConfig getXForwardedForConfig() {
 		return this.xForwardedForConfig;
 	}
@@ -239,6 +258,17 @@ public class UpdateListenerAttributeRequest extends RpcAcsRequest<UpdateListener
 		}
 	}
 
+	public Boolean getCaEnabled() {
+		return this.caEnabled;
+	}
+
+	public void setCaEnabled(Boolean caEnabled) {
+		this.caEnabled = caEnabled;
+		if(caEnabled != null){
+			putQueryParameter("CaEnabled", caEnabled.toString());
+		}
+	}
+
 	public static class QuicConfig {
 
 		private Boolean quicUpgradeEnabled;
@@ -309,6 +339,9 @@ public class UpdateListenerAttributeRequest extends RpcAcsRequest<UpdateListener
 				}
 			}
 		}
+	}
+
+	public static class CaCertificates {
 	}
 
 	public static class XForwardedForConfig {

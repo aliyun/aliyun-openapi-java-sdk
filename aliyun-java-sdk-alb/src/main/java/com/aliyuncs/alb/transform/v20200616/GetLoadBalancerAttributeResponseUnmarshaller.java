@@ -47,6 +47,8 @@ public class GetLoadBalancerAttributeResponseUnmarshaller {
 		getLoadBalancerAttributeResponse.setRegionId(_ctx.stringValue("GetLoadBalancerAttributeResponse.RegionId"));
 		getLoadBalancerAttributeResponse.setResourceGroupId(_ctx.stringValue("GetLoadBalancerAttributeResponse.ResourceGroupId"));
 		getLoadBalancerAttributeResponse.setVpcId(_ctx.stringValue("GetLoadBalancerAttributeResponse.VpcId"));
+		getLoadBalancerAttributeResponse.setAddressIpVersion(_ctx.stringValue("GetLoadBalancerAttributeResponse.AddressIpVersion"));
+		getLoadBalancerAttributeResponse.setIpv6AddressType(_ctx.stringValue("GetLoadBalancerAttributeResponse.Ipv6AddressType"));
 
 		AccessLogConfig accessLogConfig = new AccessLogConfig();
 		accessLogConfig.setLogProject(_ctx.stringValue("GetLoadBalancerAttributeResponse.AccessLogConfig.LogProject"));
@@ -97,6 +99,7 @@ public class GetLoadBalancerAttributeResponseUnmarshaller {
 			for (int j = 0; j < _ctx.lengthValue("GetLoadBalancerAttributeResponse.ZoneMappings["+ i +"].LoadBalancerAddresses.Length"); j++) {
 				LoadBalancerAddress loadBalancerAddress = new LoadBalancerAddress();
 				loadBalancerAddress.setAddress(_ctx.stringValue("GetLoadBalancerAttributeResponse.ZoneMappings["+ i +"].LoadBalancerAddresses["+ j +"].Address"));
+				loadBalancerAddress.setIpv6Address(_ctx.stringValue("GetLoadBalancerAttributeResponse.ZoneMappings["+ i +"].LoadBalancerAddresses["+ j +"].Ipv6Address"));
 
 				loadBalancerAddresses.add(loadBalancerAddress);
 			}

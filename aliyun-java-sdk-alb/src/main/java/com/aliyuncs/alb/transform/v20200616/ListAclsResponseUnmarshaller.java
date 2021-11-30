@@ -39,6 +39,7 @@ public class ListAclsResponseUnmarshaller {
 			acl.setAclStatus(_ctx.stringValue("ListAclsResponse.Acls["+ i +"].AclStatus"));
 			acl.setAddressIPVersion(_ctx.stringValue("ListAclsResponse.Acls["+ i +"].AddressIPVersion"));
 			acl.setResourceGroupId(_ctx.stringValue("ListAclsResponse.Acls["+ i +"].ResourceGroupId"));
+			acl.setConfigManagedEnabled(_ctx.booleanValue("ListAclsResponse.Acls["+ i +"].ConfigManagedEnabled"));
 
 			acls.add(acl);
 		}
