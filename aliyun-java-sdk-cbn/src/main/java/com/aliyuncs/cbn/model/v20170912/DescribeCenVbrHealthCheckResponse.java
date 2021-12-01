@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeCenVbrHealthCheckResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer pageSize;
 
-	private Integer totalCount;
+	private String requestId;
 
 	private Integer pageNumber;
 
-	private Integer pageSize;
+	private Integer totalCount;
 
 	private List<VbrHealthCheck> vbrHealthChecks;
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class DescribeCenVbrHealthCheckResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
 	}
 
 	public Integer getPageNumber() {
@@ -59,12 +59,12 @@ public class DescribeCenVbrHealthCheckResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public Integer getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<VbrHealthCheck> getVbrHealthChecks() {
@@ -77,32 +77,34 @@ public class DescribeCenVbrHealthCheckResponse extends AcsResponse {
 
 	public static class VbrHealthCheck {
 
-		private String cenId;
+		private String healthCheckTargetIp;
 
 		private String vbrInstanceId;
 
-		private String linkStatus;
-
-		private Long packetLoss;
-
-		private String healthCheckSourceIp;
-
-		private String healthCheckTargetIp;
+		private String vbrInstanceRegionId;
 
 		private Long delay;
 
-		private Integer healthCheckInterval;
+		private String linkStatus;
+
+		private String cenId;
 
 		private Integer healthyThreshold;
 
-		private String vbrInstanceRegionId;
+		private Integer healthCheckInterval;
 
-		public String getCenId() {
-			return this.cenId;
+		private String healthCheckSourceIp;
+
+		private Long packetLoss;
+
+		private Boolean healthCheckOnly;
+
+		public String getHealthCheckTargetIp() {
+			return this.healthCheckTargetIp;
 		}
 
-		public void setCenId(String cenId) {
-			this.cenId = cenId;
+		public void setHealthCheckTargetIp(String healthCheckTargetIp) {
+			this.healthCheckTargetIp = healthCheckTargetIp;
 		}
 
 		public String getVbrInstanceId() {
@@ -113,36 +115,12 @@ public class DescribeCenVbrHealthCheckResponse extends AcsResponse {
 			this.vbrInstanceId = vbrInstanceId;
 		}
 
-		public String getLinkStatus() {
-			return this.linkStatus;
+		public String getVbrInstanceRegionId() {
+			return this.vbrInstanceRegionId;
 		}
 
-		public void setLinkStatus(String linkStatus) {
-			this.linkStatus = linkStatus;
-		}
-
-		public Long getPacketLoss() {
-			return this.packetLoss;
-		}
-
-		public void setPacketLoss(Long packetLoss) {
-			this.packetLoss = packetLoss;
-		}
-
-		public String getHealthCheckSourceIp() {
-			return this.healthCheckSourceIp;
-		}
-
-		public void setHealthCheckSourceIp(String healthCheckSourceIp) {
-			this.healthCheckSourceIp = healthCheckSourceIp;
-		}
-
-		public String getHealthCheckTargetIp() {
-			return this.healthCheckTargetIp;
-		}
-
-		public void setHealthCheckTargetIp(String healthCheckTargetIp) {
-			this.healthCheckTargetIp = healthCheckTargetIp;
+		public void setVbrInstanceRegionId(String vbrInstanceRegionId) {
+			this.vbrInstanceRegionId = vbrInstanceRegionId;
 		}
 
 		public Long getDelay() {
@@ -153,12 +131,20 @@ public class DescribeCenVbrHealthCheckResponse extends AcsResponse {
 			this.delay = delay;
 		}
 
-		public Integer getHealthCheckInterval() {
-			return this.healthCheckInterval;
+		public String getLinkStatus() {
+			return this.linkStatus;
 		}
 
-		public void setHealthCheckInterval(Integer healthCheckInterval) {
-			this.healthCheckInterval = healthCheckInterval;
+		public void setLinkStatus(String linkStatus) {
+			this.linkStatus = linkStatus;
+		}
+
+		public String getCenId() {
+			return this.cenId;
+		}
+
+		public void setCenId(String cenId) {
+			this.cenId = cenId;
 		}
 
 		public Integer getHealthyThreshold() {
@@ -169,12 +155,36 @@ public class DescribeCenVbrHealthCheckResponse extends AcsResponse {
 			this.healthyThreshold = healthyThreshold;
 		}
 
-		public String getVbrInstanceRegionId() {
-			return this.vbrInstanceRegionId;
+		public Integer getHealthCheckInterval() {
+			return this.healthCheckInterval;
 		}
 
-		public void setVbrInstanceRegionId(String vbrInstanceRegionId) {
-			this.vbrInstanceRegionId = vbrInstanceRegionId;
+		public void setHealthCheckInterval(Integer healthCheckInterval) {
+			this.healthCheckInterval = healthCheckInterval;
+		}
+
+		public String getHealthCheckSourceIp() {
+			return this.healthCheckSourceIp;
+		}
+
+		public void setHealthCheckSourceIp(String healthCheckSourceIp) {
+			this.healthCheckSourceIp = healthCheckSourceIp;
+		}
+
+		public Long getPacketLoss() {
+			return this.packetLoss;
+		}
+
+		public void setPacketLoss(Long packetLoss) {
+			this.packetLoss = packetLoss;
+		}
+
+		public Boolean getHealthCheckOnly() {
+			return this.healthCheckOnly;
+		}
+
+		public void setHealthCheckOnly(Boolean healthCheckOnly) {
+			this.healthCheckOnly = healthCheckOnly;
 		}
 	}
 

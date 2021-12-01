@@ -31,11 +31,12 @@ public class DescribeGrantRulesToCenResponseUnmarshaller {
 		List<GrantRule> grantRules = new ArrayList<GrantRule>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeGrantRulesToCenResponse.GrantRules.Length"); i++) {
 			GrantRule grantRule = new GrantRule();
-			grantRule.setCenId(_ctx.stringValue("DescribeGrantRulesToCenResponse.GrantRules["+ i +"].CenId"));
-			grantRule.setChildInstanceRegionId(_ctx.stringValue("DescribeGrantRulesToCenResponse.GrantRules["+ i +"].ChildInstanceRegionId"));
 			grantRule.setChildInstanceType(_ctx.stringValue("DescribeGrantRulesToCenResponse.GrantRules["+ i +"].ChildInstanceType"));
-			grantRule.setChildInstanceId(_ctx.stringValue("DescribeGrantRulesToCenResponse.GrantRules["+ i +"].ChildInstanceId"));
+			grantRule.setChildInstanceRegionId(_ctx.stringValue("DescribeGrantRulesToCenResponse.GrantRules["+ i +"].ChildInstanceRegionId"));
 			grantRule.setChildInstanceOwnerId(_ctx.longValue("DescribeGrantRulesToCenResponse.GrantRules["+ i +"].ChildInstanceOwnerId"));
+			grantRule.setChildInstanceId(_ctx.stringValue("DescribeGrantRulesToCenResponse.GrantRules["+ i +"].ChildInstanceId"));
+			grantRule.setCenId(_ctx.stringValue("DescribeGrantRulesToCenResponse.GrantRules["+ i +"].CenId"));
+			grantRule.setOrderType(_ctx.stringValue("DescribeGrantRulesToCenResponse.GrantRules["+ i +"].OrderType"));
 
 			grantRules.add(grantRule);
 		}

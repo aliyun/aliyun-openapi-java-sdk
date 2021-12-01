@@ -35,6 +35,8 @@ public class EnableCenVbrHealthCheckRequest extends RpcAcsRequest<EnableCenVbrHe
 
 	private Long vbrInstanceOwnerId;
 
+	private Boolean healthCheckOnly;
+
 	private String vbrInstanceRegionId;
 
 	private String resourceOwnerAccount;
@@ -109,6 +111,17 @@ public class EnableCenVbrHealthCheckRequest extends RpcAcsRequest<EnableCenVbrHe
 		this.vbrInstanceOwnerId = vbrInstanceOwnerId;
 		if(vbrInstanceOwnerId != null){
 			putQueryParameter("VbrInstanceOwnerId", vbrInstanceOwnerId.toString());
+		}
+	}
+
+	public Boolean getHealthCheckOnly() {
+		return this.healthCheckOnly;
+	}
+
+	public void setHealthCheckOnly(Boolean healthCheckOnly) {
+		this.healthCheckOnly = healthCheckOnly;
+		if(healthCheckOnly != null){
+			putQueryParameter("HealthCheckOnly", healthCheckOnly.toString());
 		}
 	}
 

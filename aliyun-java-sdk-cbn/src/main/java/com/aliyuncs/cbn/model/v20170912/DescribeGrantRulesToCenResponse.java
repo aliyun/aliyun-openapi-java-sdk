@@ -47,22 +47,24 @@ public class DescribeGrantRulesToCenResponse extends AcsResponse {
 
 	public static class GrantRule {
 
-		private String cenId;
+		private String childInstanceType;
 
 		private String childInstanceRegionId;
 
-		private String childInstanceType;
+		private Long childInstanceOwnerId;
 
 		private String childInstanceId;
 
-		private Long childInstanceOwnerId;
+		private String cenId;
 
-		public String getCenId() {
-			return this.cenId;
+		private String orderType;
+
+		public String getChildInstanceType() {
+			return this.childInstanceType;
 		}
 
-		public void setCenId(String cenId) {
-			this.cenId = cenId;
+		public void setChildInstanceType(String childInstanceType) {
+			this.childInstanceType = childInstanceType;
 		}
 
 		public String getChildInstanceRegionId() {
@@ -73,12 +75,12 @@ public class DescribeGrantRulesToCenResponse extends AcsResponse {
 			this.childInstanceRegionId = childInstanceRegionId;
 		}
 
-		public String getChildInstanceType() {
-			return this.childInstanceType;
+		public Long getChildInstanceOwnerId() {
+			return this.childInstanceOwnerId;
 		}
 
-		public void setChildInstanceType(String childInstanceType) {
-			this.childInstanceType = childInstanceType;
+		public void setChildInstanceOwnerId(Long childInstanceOwnerId) {
+			this.childInstanceOwnerId = childInstanceOwnerId;
 		}
 
 		public String getChildInstanceId() {
@@ -89,12 +91,20 @@ public class DescribeGrantRulesToCenResponse extends AcsResponse {
 			this.childInstanceId = childInstanceId;
 		}
 
-		public Long getChildInstanceOwnerId() {
-			return this.childInstanceOwnerId;
+		public String getCenId() {
+			return this.cenId;
 		}
 
-		public void setChildInstanceOwnerId(Long childInstanceOwnerId) {
-			this.childInstanceOwnerId = childInstanceOwnerId;
+		public void setCenId(String cenId) {
+			this.cenId = cenId;
+		}
+
+		public String getOrderType() {
+			return this.orderType;
+		}
+
+		public void setOrderType(String orderType) {
+			this.orderType = orderType;
 		}
 	}
 

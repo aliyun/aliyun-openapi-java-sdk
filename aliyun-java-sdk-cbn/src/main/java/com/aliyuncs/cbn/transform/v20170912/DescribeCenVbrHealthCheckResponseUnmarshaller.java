@@ -27,23 +27,24 @@ public class DescribeCenVbrHealthCheckResponseUnmarshaller {
 	public static DescribeCenVbrHealthCheckResponse unmarshall(DescribeCenVbrHealthCheckResponse describeCenVbrHealthCheckResponse, UnmarshallerContext _ctx) {
 		
 		describeCenVbrHealthCheckResponse.setRequestId(_ctx.stringValue("DescribeCenVbrHealthCheckResponse.RequestId"));
-		describeCenVbrHealthCheckResponse.setTotalCount(_ctx.integerValue("DescribeCenVbrHealthCheckResponse.TotalCount"));
-		describeCenVbrHealthCheckResponse.setPageNumber(_ctx.integerValue("DescribeCenVbrHealthCheckResponse.PageNumber"));
 		describeCenVbrHealthCheckResponse.setPageSize(_ctx.integerValue("DescribeCenVbrHealthCheckResponse.PageSize"));
+		describeCenVbrHealthCheckResponse.setPageNumber(_ctx.integerValue("DescribeCenVbrHealthCheckResponse.PageNumber"));
+		describeCenVbrHealthCheckResponse.setTotalCount(_ctx.integerValue("DescribeCenVbrHealthCheckResponse.TotalCount"));
 
 		List<VbrHealthCheck> vbrHealthChecks = new ArrayList<VbrHealthCheck>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeCenVbrHealthCheckResponse.VbrHealthChecks.Length"); i++) {
 			VbrHealthCheck vbrHealthCheck = new VbrHealthCheck();
-			vbrHealthCheck.setCenId(_ctx.stringValue("DescribeCenVbrHealthCheckResponse.VbrHealthChecks["+ i +"].CenId"));
-			vbrHealthCheck.setVbrInstanceId(_ctx.stringValue("DescribeCenVbrHealthCheckResponse.VbrHealthChecks["+ i +"].VbrInstanceId"));
-			vbrHealthCheck.setLinkStatus(_ctx.stringValue("DescribeCenVbrHealthCheckResponse.VbrHealthChecks["+ i +"].LinkStatus"));
-			vbrHealthCheck.setPacketLoss(_ctx.longValue("DescribeCenVbrHealthCheckResponse.VbrHealthChecks["+ i +"].PacketLoss"));
-			vbrHealthCheck.setHealthCheckSourceIp(_ctx.stringValue("DescribeCenVbrHealthCheckResponse.VbrHealthChecks["+ i +"].HealthCheckSourceIp"));
 			vbrHealthCheck.setHealthCheckTargetIp(_ctx.stringValue("DescribeCenVbrHealthCheckResponse.VbrHealthChecks["+ i +"].HealthCheckTargetIp"));
-			vbrHealthCheck.setDelay(_ctx.longValue("DescribeCenVbrHealthCheckResponse.VbrHealthChecks["+ i +"].Delay"));
-			vbrHealthCheck.setHealthCheckInterval(_ctx.integerValue("DescribeCenVbrHealthCheckResponse.VbrHealthChecks["+ i +"].HealthCheckInterval"));
-			vbrHealthCheck.setHealthyThreshold(_ctx.integerValue("DescribeCenVbrHealthCheckResponse.VbrHealthChecks["+ i +"].HealthyThreshold"));
+			vbrHealthCheck.setVbrInstanceId(_ctx.stringValue("DescribeCenVbrHealthCheckResponse.VbrHealthChecks["+ i +"].VbrInstanceId"));
 			vbrHealthCheck.setVbrInstanceRegionId(_ctx.stringValue("DescribeCenVbrHealthCheckResponse.VbrHealthChecks["+ i +"].VbrInstanceRegionId"));
+			vbrHealthCheck.setDelay(_ctx.longValue("DescribeCenVbrHealthCheckResponse.VbrHealthChecks["+ i +"].Delay"));
+			vbrHealthCheck.setLinkStatus(_ctx.stringValue("DescribeCenVbrHealthCheckResponse.VbrHealthChecks["+ i +"].LinkStatus"));
+			vbrHealthCheck.setCenId(_ctx.stringValue("DescribeCenVbrHealthCheckResponse.VbrHealthChecks["+ i +"].CenId"));
+			vbrHealthCheck.setHealthyThreshold(_ctx.integerValue("DescribeCenVbrHealthCheckResponse.VbrHealthChecks["+ i +"].HealthyThreshold"));
+			vbrHealthCheck.setHealthCheckInterval(_ctx.integerValue("DescribeCenVbrHealthCheckResponse.VbrHealthChecks["+ i +"].HealthCheckInterval"));
+			vbrHealthCheck.setHealthCheckSourceIp(_ctx.stringValue("DescribeCenVbrHealthCheckResponse.VbrHealthChecks["+ i +"].HealthCheckSourceIp"));
+			vbrHealthCheck.setPacketLoss(_ctx.longValue("DescribeCenVbrHealthCheckResponse.VbrHealthChecks["+ i +"].PacketLoss"));
+			vbrHealthCheck.setHealthCheckOnly(_ctx.booleanValue("DescribeCenVbrHealthCheckResponse.VbrHealthChecks["+ i +"].HealthCheckOnly"));
 
 			vbrHealthChecks.add(vbrHealthCheck);
 		}
