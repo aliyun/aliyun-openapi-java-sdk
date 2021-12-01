@@ -24,10 +24,10 @@ public class DescribeDTSIPResponseUnmarshaller {
 		
 		describeDTSIPResponse.setRequestId(_ctx.stringValue("DescribeDTSIPResponse.RequestId"));
 		describeDTSIPResponse.setErrCode(_ctx.stringValue("DescribeDTSIPResponse.ErrCode"));
-		describeDTSIPResponse.setErrMessage(_ctx.stringValue("DescribeDTSIPResponse.ErrMessage"));
 		describeDTSIPResponse.setSuccess(_ctx.stringValue("DescribeDTSIPResponse.Success"));
-		describeDTSIPResponse.setDynamicCode(_ctx.stringValue("DescribeDTSIPResponse.DynamicCode"));
+		describeDTSIPResponse.setErrMessage(_ctx.stringValue("DescribeDTSIPResponse.ErrMessage"));
 		describeDTSIPResponse.setDynamicMessage(_ctx.stringValue("DescribeDTSIPResponse.DynamicMessage"));
+		describeDTSIPResponse.setDynamicCode(_ctx.stringValue("DescribeDTSIPResponse.DynamicCode"));
 	 
 	 	return describeDTSIPResponse;
 	}

@@ -24,17 +24,33 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ModifyDtsJobResponse extends AcsResponse {
 
+	private String status;
+
+	private String requestId;
+
 	private String dtsJobId;
 
 	private String errCode;
 
+	private Boolean success;
+
 	private Boolean errMessage;
 
-	private String requestId;
+	public String getStatus() {
+		return this.status;
+	}
 
-	private String status;
+	public void setStatus(String status) {
+		this.status = status;
+	}
 
-	private Boolean success;
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
 
 	public String getDtsJobId() {
 		return this.dtsJobId;
@@ -52,36 +68,20 @@ public class ModifyDtsJobResponse extends AcsResponse {
 		this.errCode = errCode;
 	}
 
-	public Boolean getErrMessage() {
-		return this.errMessage;
-	}
-
-	public void setErrMessage(Boolean errMessage) {
-		this.errMessage = errMessage;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-	}
-
 	public Boolean getSuccess() {
 		return this.success;
 	}
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public Boolean getErrMessage() {
+		return this.errMessage;
+	}
+
+	public void setErrMessage(Boolean errMessage) {
+		this.errMessage = errMessage;
 	}
 
 	@Override

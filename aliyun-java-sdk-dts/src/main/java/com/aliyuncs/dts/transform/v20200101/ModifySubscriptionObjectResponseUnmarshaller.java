@@ -24,8 +24,8 @@ public class ModifySubscriptionObjectResponseUnmarshaller {
 		
 		modifySubscriptionObjectResponse.setRequestId(_ctx.stringValue("ModifySubscriptionObjectResponse.RequestId"));
 		modifySubscriptionObjectResponse.setErrCode(_ctx.stringValue("ModifySubscriptionObjectResponse.ErrCode"));
-		modifySubscriptionObjectResponse.setErrMessage(_ctx.stringValue("ModifySubscriptionObjectResponse.ErrMessage"));
 		modifySubscriptionObjectResponse.setSuccess(_ctx.stringValue("ModifySubscriptionObjectResponse.Success"));
+		modifySubscriptionObjectResponse.setErrMessage(_ctx.stringValue("ModifySubscriptionObjectResponse.ErrMessage"));
 	 
 	 	return modifySubscriptionObjectResponse;
 	}

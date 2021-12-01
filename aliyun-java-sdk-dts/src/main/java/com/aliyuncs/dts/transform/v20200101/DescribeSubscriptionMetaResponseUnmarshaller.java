@@ -27,19 +27,19 @@ public class DescribeSubscriptionMetaResponseUnmarshaller {
 	public static DescribeSubscriptionMetaResponse unmarshall(DescribeSubscriptionMetaResponse describeSubscriptionMetaResponse, UnmarshallerContext _ctx) {
 		
 		describeSubscriptionMetaResponse.setRequestId(_ctx.stringValue("DescribeSubscriptionMetaResponse.RequestId"));
-		describeSubscriptionMetaResponse.setErrCode(_ctx.stringValue("DescribeSubscriptionMetaResponse.ErrCode"));
-		describeSubscriptionMetaResponse.setErrMessage(_ctx.stringValue("DescribeSubscriptionMetaResponse.ErrMessage"));
 		describeSubscriptionMetaResponse.setHttpStatusCode(_ctx.stringValue("DescribeSubscriptionMetaResponse.HttpStatusCode"));
+		describeSubscriptionMetaResponse.setErrCode(_ctx.stringValue("DescribeSubscriptionMetaResponse.ErrCode"));
 		describeSubscriptionMetaResponse.setSuccess(_ctx.stringValue("DescribeSubscriptionMetaResponse.Success"));
+		describeSubscriptionMetaResponse.setErrMessage(_ctx.stringValue("DescribeSubscriptionMetaResponse.ErrMessage"));
 
 		List<SubscriptionMetaListItem> subscriptionMetaList = new ArrayList<SubscriptionMetaListItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSubscriptionMetaResponse.SubscriptionMetaList.Length"); i++) {
 			SubscriptionMetaListItem subscriptionMetaListItem = new SubscriptionMetaListItem();
-			subscriptionMetaListItem.setDProxyUrl(_ctx.stringValue("DescribeSubscriptionMetaResponse.SubscriptionMetaList["+ i +"].DProxyUrl"));
-			subscriptionMetaListItem.setTopic(_ctx.stringValue("DescribeSubscriptionMetaResponse.SubscriptionMetaList["+ i +"].Topic"));
 			subscriptionMetaListItem.setSid(_ctx.stringValue("DescribeSubscriptionMetaResponse.SubscriptionMetaList["+ i +"].Sid"));
 			subscriptionMetaListItem.setCheckpoint(_ctx.longValue("DescribeSubscriptionMetaResponse.SubscriptionMetaList["+ i +"].Checkpoint"));
+			subscriptionMetaListItem.setDProxyUrl(_ctx.stringValue("DescribeSubscriptionMetaResponse.SubscriptionMetaList["+ i +"].DProxyUrl"));
 			subscriptionMetaListItem.setDBList(_ctx.stringValue("DescribeSubscriptionMetaResponse.SubscriptionMetaList["+ i +"].DBList"));
+			subscriptionMetaListItem.setTopic(_ctx.stringValue("DescribeSubscriptionMetaResponse.SubscriptionMetaList["+ i +"].Topic"));
 
 			subscriptionMetaList.add(subscriptionMetaListItem);
 		}

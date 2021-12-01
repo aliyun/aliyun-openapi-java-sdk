@@ -24,59 +24,27 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class SkipPreCheckResponse extends AcsResponse {
 
-	private String code;
-
-	private String dynamicMessage;
-
-	private String errCode;
-
-	private String errMessage;
-
 	private Integer httpStatusCode;
 
 	private String requestId;
 
+	private String errCode;
+
 	private Boolean success;
 
-	private String migrationJobId;
-
-	private String scheduleJobId;
-
-	private String skipItems;
+	private String errMessage;
 
 	private String skipNames;
 
-	public String getCode() {
-		return this.code;
-	}
+	private String code;
 
-	public void setCode(String code) {
-		this.code = code;
-	}
+	private String scheduleJobId;
 
-	public String getDynamicMessage() {
-		return this.dynamicMessage;
-	}
+	private String dynamicMessage;
 
-	public void setDynamicMessage(String dynamicMessage) {
-		this.dynamicMessage = dynamicMessage;
-	}
+	private String migrationJobId;
 
-	public String getErrCode() {
-		return this.errCode;
-	}
-
-	public void setErrCode(String errCode) {
-		this.errCode = errCode;
-	}
-
-	public String getErrMessage() {
-		return this.errMessage;
-	}
-
-	public void setErrMessage(String errMessage) {
-		this.errMessage = errMessage;
-	}
+	private String skipItems;
 
 	public Integer getHttpStatusCode() {
 		return this.httpStatusCode;
@@ -94,6 +62,14 @@ public class SkipPreCheckResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public String getErrCode() {
+		return this.errCode;
+	}
+
+	public void setErrCode(String errCode) {
+		this.errCode = errCode;
+	}
+
 	public Boolean getSuccess() {
 		return this.success;
 	}
@@ -102,12 +78,28 @@ public class SkipPreCheckResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public String getMigrationJobId() {
-		return this.migrationJobId;
+	public String getErrMessage() {
+		return this.errMessage;
 	}
 
-	public void setMigrationJobId(String migrationJobId) {
-		this.migrationJobId = migrationJobId;
+	public void setErrMessage(String errMessage) {
+		this.errMessage = errMessage;
+	}
+
+	public String getSkipNames() {
+		return this.skipNames;
+	}
+
+	public void setSkipNames(String skipNames) {
+		this.skipNames = skipNames;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public String getScheduleJobId() {
@@ -118,20 +110,28 @@ public class SkipPreCheckResponse extends AcsResponse {
 		this.scheduleJobId = scheduleJobId;
 	}
 
+	public String getDynamicMessage() {
+		return this.dynamicMessage;
+	}
+
+	public void setDynamicMessage(String dynamicMessage) {
+		this.dynamicMessage = dynamicMessage;
+	}
+
+	public String getMigrationJobId() {
+		return this.migrationJobId;
+	}
+
+	public void setMigrationJobId(String migrationJobId) {
+		this.migrationJobId = migrationJobId;
+	}
+
 	public String getSkipItems() {
 		return this.skipItems;
 	}
 
 	public void setSkipItems(String skipItems) {
 		this.skipItems = skipItems;
-	}
-
-	public String getSkipNames() {
-		return this.skipNames;
-	}
-
-	public void setSkipNames(String skipNames) {
-		this.skipNames = skipNames;
 	}
 
 	@Override

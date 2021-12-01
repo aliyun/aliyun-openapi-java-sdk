@@ -24,8 +24,8 @@ public class DeleteMigrationJobResponseUnmarshaller {
 		
 		deleteMigrationJobResponse.setRequestId(_ctx.stringValue("DeleteMigrationJobResponse.RequestId"));
 		deleteMigrationJobResponse.setErrCode(_ctx.stringValue("DeleteMigrationJobResponse.ErrCode"));
-		deleteMigrationJobResponse.setErrMessage(_ctx.stringValue("DeleteMigrationJobResponse.ErrMessage"));
 		deleteMigrationJobResponse.setSuccess(_ctx.stringValue("DeleteMigrationJobResponse.Success"));
+		deleteMigrationJobResponse.setErrMessage(_ctx.stringValue("DeleteMigrationJobResponse.ErrMessage"));
 	 
 	 	return deleteMigrationJobResponse;
 	}

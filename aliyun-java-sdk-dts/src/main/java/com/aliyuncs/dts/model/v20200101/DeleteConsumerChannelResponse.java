@@ -24,30 +24,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DeleteConsumerChannelResponse extends AcsResponse {
 
-	private String errCode;
-
-	private String errMessage;
+	private String httpStatusCode;
 
 	private String requestId;
 
+	private String errCode;
+
 	private String success;
 
-	private String httpStatusCode;
+	private String errMessage;
 
-	public String getErrCode() {
-		return this.errCode;
+	public String getHttpStatusCode() {
+		return this.httpStatusCode;
 	}
 
-	public void setErrCode(String errCode) {
-		this.errCode = errCode;
-	}
-
-	public String getErrMessage() {
-		return this.errMessage;
-	}
-
-	public void setErrMessage(String errMessage) {
-		this.errMessage = errMessage;
+	public void setHttpStatusCode(String httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
 	}
 
 	public String getRequestId() {
@@ -58,6 +50,14 @@ public class DeleteConsumerChannelResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public String getErrCode() {
+		return this.errCode;
+	}
+
+	public void setErrCode(String errCode) {
+		this.errCode = errCode;
+	}
+
 	public String getSuccess() {
 		return this.success;
 	}
@@ -66,12 +66,12 @@ public class DeleteConsumerChannelResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public String getHttpStatusCode() {
-		return this.httpStatusCode;
+	public String getErrMessage() {
+		return this.errMessage;
 	}
 
-	public void setHttpStatusCode(String httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
+	public void setErrMessage(String errMessage) {
+		this.errMessage = errMessage;
 	}
 
 	@Override

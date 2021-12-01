@@ -23,10 +23,10 @@ public class ModifySubscriptionResponseUnmarshaller {
 	public static ModifySubscriptionResponse unmarshall(ModifySubscriptionResponse modifySubscriptionResponse, UnmarshallerContext _ctx) {
 		
 		modifySubscriptionResponse.setRequestId(_ctx.stringValue("ModifySubscriptionResponse.RequestId"));
-		modifySubscriptionResponse.setErrCode(_ctx.stringValue("ModifySubscriptionResponse.ErrCode"));
-		modifySubscriptionResponse.setErrMessage(_ctx.stringValue("ModifySubscriptionResponse.ErrMessage"));
-		modifySubscriptionResponse.setSuccess(_ctx.stringValue("ModifySubscriptionResponse.Success"));
 		modifySubscriptionResponse.setHttpStatusCode(_ctx.stringValue("ModifySubscriptionResponse.HttpStatusCode"));
+		modifySubscriptionResponse.setErrCode(_ctx.stringValue("ModifySubscriptionResponse.ErrCode"));
+		modifySubscriptionResponse.setSuccess(_ctx.stringValue("ModifySubscriptionResponse.Success"));
+		modifySubscriptionResponse.setErrMessage(_ctx.stringValue("ModifySubscriptionResponse.ErrMessage"));
 	 
 	 	return modifySubscriptionResponse;
 	}

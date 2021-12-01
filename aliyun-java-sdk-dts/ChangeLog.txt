@@ -1,3 +1,6 @@
+2021-12-01 Version: 5.1.22-snapshots
+- Fix CreateDtsInstance bug.
+
 2021-10-25 Version: 5.1.22
 - DescribeDtsJobs api, delay filed change from int to long.
 

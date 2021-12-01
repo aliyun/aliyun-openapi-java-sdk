@@ -37,46 +37,46 @@ public class DescribeMigrationJobsResponseUnmarshaller {
 		
 		describeMigrationJobsResponse.setRequestId(_ctx.stringValue("DescribeMigrationJobsResponse.RequestId"));
 		describeMigrationJobsResponse.setErrCode(_ctx.stringValue("DescribeMigrationJobsResponse.ErrCode"));
-		describeMigrationJobsResponse.setErrMessage(_ctx.stringValue("DescribeMigrationJobsResponse.ErrMessage"));
-		describeMigrationJobsResponse.setPageNumber(_ctx.integerValue("DescribeMigrationJobsResponse.PageNumber"));
 		describeMigrationJobsResponse.setPageRecordCount(_ctx.integerValue("DescribeMigrationJobsResponse.PageRecordCount"));
 		describeMigrationJobsResponse.setSuccess(_ctx.stringValue("DescribeMigrationJobsResponse.Success"));
 		describeMigrationJobsResponse.setTotalRecordCount(_ctx.longValue("DescribeMigrationJobsResponse.TotalRecordCount"));
+		describeMigrationJobsResponse.setErrMessage(_ctx.stringValue("DescribeMigrationJobsResponse.ErrMessage"));
+		describeMigrationJobsResponse.setPageNumber(_ctx.integerValue("DescribeMigrationJobsResponse.PageNumber"));
 
 		List<MigrationJob> migrationJobs = new ArrayList<MigrationJob>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeMigrationJobsResponse.MigrationJobs.Length"); i++) {
 			MigrationJob migrationJob = new MigrationJob();
-			migrationJob.setMigrationJobClass(_ctx.stringValue("DescribeMigrationJobsResponse.MigrationJobs["+ i +"].MigrationJobClass"));
-			migrationJob.setMigrationJobID(_ctx.stringValue("DescribeMigrationJobsResponse.MigrationJobs["+ i +"].MigrationJobID"));
 			migrationJob.setMigrationJobName(_ctx.stringValue("DescribeMigrationJobsResponse.MigrationJobs["+ i +"].MigrationJobName"));
 			migrationJob.setMigrationJobStatus(_ctx.stringValue("DescribeMigrationJobsResponse.MigrationJobs["+ i +"].MigrationJobStatus"));
 			migrationJob.setPayType(_ctx.stringValue("DescribeMigrationJobsResponse.MigrationJobs["+ i +"].PayType"));
-			migrationJob.setJobCreateTime(_ctx.stringValue("DescribeMigrationJobsResponse.MigrationJobs["+ i +"].JobCreateTime"));
+			migrationJob.setMigrationJobClass(_ctx.stringValue("DescribeMigrationJobsResponse.MigrationJobs["+ i +"].MigrationJobClass"));
 			migrationJob.setInstanceCreateTime(_ctx.stringValue("DescribeMigrationJobsResponse.MigrationJobs["+ i +"].InstanceCreateTime"));
+			migrationJob.setMigrationJobID(_ctx.stringValue("DescribeMigrationJobsResponse.MigrationJobs["+ i +"].MigrationJobID"));
+			migrationJob.setJobCreateTime(_ctx.stringValue("DescribeMigrationJobsResponse.MigrationJobs["+ i +"].JobCreateTime"));
 
 			DataInitialization dataInitialization = new DataInitialization();
-			dataInitialization.setErrorMessage(_ctx.stringValue("DescribeMigrationJobsResponse.MigrationJobs["+ i +"].DataInitialization.ErrorMessage"));
 			dataInitialization.setPercent(_ctx.stringValue("DescribeMigrationJobsResponse.MigrationJobs["+ i +"].DataInitialization.Percent"));
-			dataInitialization.setProgress(_ctx.stringValue("DescribeMigrationJobsResponse.MigrationJobs["+ i +"].DataInitialization.Progress"));
 			dataInitialization.setStatus(_ctx.stringValue("DescribeMigrationJobsResponse.MigrationJobs["+ i +"].DataInitialization.status"));
+			dataInitialization.setErrorMessage(_ctx.stringValue("DescribeMigrationJobsResponse.MigrationJobs["+ i +"].DataInitialization.ErrorMessage"));
+			dataInitialization.setProgress(_ctx.stringValue("DescribeMigrationJobsResponse.MigrationJobs["+ i +"].DataInitialization.Progress"));
 			migrationJob.setDataInitialization(dataInitialization);
 
 			DataSynchronization dataSynchronization = new DataSynchronization();
 			dataSynchronization.setDelay(_ctx.stringValue("DescribeMigrationJobsResponse.MigrationJobs["+ i +"].DataSynchronization.Delay"));
-			dataSynchronization.setErrorMessage(_ctx.stringValue("DescribeMigrationJobsResponse.MigrationJobs["+ i +"].DataSynchronization.ErrorMessage"));
 			dataSynchronization.setPercent(_ctx.stringValue("DescribeMigrationJobsResponse.MigrationJobs["+ i +"].DataSynchronization.Percent"));
 			dataSynchronization.setStatus(_ctx.stringValue("DescribeMigrationJobsResponse.MigrationJobs["+ i +"].DataSynchronization.status"));
+			dataSynchronization.setErrorMessage(_ctx.stringValue("DescribeMigrationJobsResponse.MigrationJobs["+ i +"].DataSynchronization.ErrorMessage"));
 			migrationJob.setDataSynchronization(dataSynchronization);
 
 			DestinationEndpoint destinationEndpoint = new DestinationEndpoint();
-			destinationEndpoint.setDatabaseName(_ctx.stringValue("DescribeMigrationJobsResponse.MigrationJobs["+ i +"].DestinationEndpoint.DatabaseName"));
-			destinationEndpoint.setEngineName(_ctx.stringValue("DescribeMigrationJobsResponse.MigrationJobs["+ i +"].DestinationEndpoint.EngineName"));
-			destinationEndpoint.setIP(_ctx.stringValue("DescribeMigrationJobsResponse.MigrationJobs["+ i +"].DestinationEndpoint.IP"));
-			destinationEndpoint.setInstanceID(_ctx.stringValue("DescribeMigrationJobsResponse.MigrationJobs["+ i +"].DestinationEndpoint.InstanceID"));
-			destinationEndpoint.setInstanceType(_ctx.stringValue("DescribeMigrationJobsResponse.MigrationJobs["+ i +"].DestinationEndpoint.InstanceType"));
 			destinationEndpoint.setOracleSID(_ctx.stringValue("DescribeMigrationJobsResponse.MigrationJobs["+ i +"].DestinationEndpoint.OracleSID"));
+			destinationEndpoint.setDatabaseName(_ctx.stringValue("DescribeMigrationJobsResponse.MigrationJobs["+ i +"].DestinationEndpoint.DatabaseName"));
+			destinationEndpoint.setInstanceID(_ctx.stringValue("DescribeMigrationJobsResponse.MigrationJobs["+ i +"].DestinationEndpoint.InstanceID"));
 			destinationEndpoint.setPort(_ctx.stringValue("DescribeMigrationJobsResponse.MigrationJobs["+ i +"].DestinationEndpoint.Port"));
+			destinationEndpoint.setIP(_ctx.stringValue("DescribeMigrationJobsResponse.MigrationJobs["+ i +"].DestinationEndpoint.IP"));
+			destinationEndpoint.setInstanceType(_ctx.stringValue("DescribeMigrationJobsResponse.MigrationJobs["+ i +"].DestinationEndpoint.InstanceType"));
 			destinationEndpoint.setUserName(_ctx.stringValue("DescribeMigrationJobsResponse.MigrationJobs["+ i +"].DestinationEndpoint.UserName"));
+			destinationEndpoint.setEngineName(_ctx.stringValue("DescribeMigrationJobsResponse.MigrationJobs["+ i +"].DestinationEndpoint.EngineName"));
 			migrationJob.setDestinationEndpoint(destinationEndpoint);
 
 			MigrationMode migrationMode = new MigrationMode();
@@ -86,26 +86,26 @@ public class DescribeMigrationJobsResponseUnmarshaller {
 			migrationJob.setMigrationMode(migrationMode);
 
 			Precheck precheck = new Precheck();
-			precheck.setPercent(_ctx.stringValue("DescribeMigrationJobsResponse.MigrationJobs["+ i +"].Precheck.Percent"));
 			precheck.setStatus(_ctx.stringValue("DescribeMigrationJobsResponse.MigrationJobs["+ i +"].Precheck.Status"));
+			precheck.setPercent(_ctx.stringValue("DescribeMigrationJobsResponse.MigrationJobs["+ i +"].Precheck.Percent"));
 			migrationJob.setPrecheck(precheck);
 
 			SourceEndpoint sourceEndpoint = new SourceEndpoint();
-			sourceEndpoint.setDatabaseName(_ctx.stringValue("DescribeMigrationJobsResponse.MigrationJobs["+ i +"].SourceEndpoint.DatabaseName"));
-			sourceEndpoint.setEngineName(_ctx.stringValue("DescribeMigrationJobsResponse.MigrationJobs["+ i +"].SourceEndpoint.EngineName"));
-			sourceEndpoint.setIP(_ctx.stringValue("DescribeMigrationJobsResponse.MigrationJobs["+ i +"].SourceEndpoint.IP"));
-			sourceEndpoint.setInstanceID(_ctx.stringValue("DescribeMigrationJobsResponse.MigrationJobs["+ i +"].SourceEndpoint.InstanceID"));
-			sourceEndpoint.setInstanceType(_ctx.stringValue("DescribeMigrationJobsResponse.MigrationJobs["+ i +"].SourceEndpoint.InstanceType"));
 			sourceEndpoint.setOracleSID(_ctx.stringValue("DescribeMigrationJobsResponse.MigrationJobs["+ i +"].SourceEndpoint.OracleSID"));
+			sourceEndpoint.setDatabaseName(_ctx.stringValue("DescribeMigrationJobsResponse.MigrationJobs["+ i +"].SourceEndpoint.DatabaseName"));
+			sourceEndpoint.setInstanceID(_ctx.stringValue("DescribeMigrationJobsResponse.MigrationJobs["+ i +"].SourceEndpoint.InstanceID"));
 			sourceEndpoint.setPort(_ctx.stringValue("DescribeMigrationJobsResponse.MigrationJobs["+ i +"].SourceEndpoint.Port"));
+			sourceEndpoint.setIP(_ctx.stringValue("DescribeMigrationJobsResponse.MigrationJobs["+ i +"].SourceEndpoint.IP"));
+			sourceEndpoint.setInstanceType(_ctx.stringValue("DescribeMigrationJobsResponse.MigrationJobs["+ i +"].SourceEndpoint.InstanceType"));
 			sourceEndpoint.setUserName(_ctx.stringValue("DescribeMigrationJobsResponse.MigrationJobs["+ i +"].SourceEndpoint.UserName"));
+			sourceEndpoint.setEngineName(_ctx.stringValue("DescribeMigrationJobsResponse.MigrationJobs["+ i +"].SourceEndpoint.EngineName"));
 			migrationJob.setSourceEndpoint(sourceEndpoint);
 
 			StructureInitialization structureInitialization = new StructureInitialization();
-			structureInitialization.setErrorMessage(_ctx.stringValue("DescribeMigrationJobsResponse.MigrationJobs["+ i +"].StructureInitialization.ErrorMessage"));
 			structureInitialization.setPercent(_ctx.stringValue("DescribeMigrationJobsResponse.MigrationJobs["+ i +"].StructureInitialization.Percent"));
-			structureInitialization.setProgress(_ctx.stringValue("DescribeMigrationJobsResponse.MigrationJobs["+ i +"].StructureInitialization.Progress"));
 			structureInitialization.setStatus(_ctx.stringValue("DescribeMigrationJobsResponse.MigrationJobs["+ i +"].StructureInitialization.status"));
+			structureInitialization.setErrorMessage(_ctx.stringValue("DescribeMigrationJobsResponse.MigrationJobs["+ i +"].StructureInitialization.ErrorMessage"));
+			structureInitialization.setProgress(_ctx.stringValue("DescribeMigrationJobsResponse.MigrationJobs["+ i +"].StructureInitialization.Progress"));
 			migrationJob.setStructureInitialization(structureInitialization);
 
 			List<SynchronousObject> migrationObject = new ArrayList<SynchronousObject>();

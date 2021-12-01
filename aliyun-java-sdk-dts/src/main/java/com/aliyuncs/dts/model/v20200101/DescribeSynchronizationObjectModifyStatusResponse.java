@@ -25,17 +25,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeSynchronizationObjectModifyStatusResponse extends AcsResponse {
 
-	private String errCode;
-
-	private String errMessage;
+	private String status;
 
 	private String errorMessage;
 
 	private String requestId;
 
-	private String status;
+	private String errCode;
 
 	private String success;
+
+	private String errMessage;
 
 	private DataInitializationStatus dataInitializationStatus;
 
@@ -45,20 +45,12 @@ public class DescribeSynchronizationObjectModifyStatusResponse extends AcsRespon
 
 	private StructureInitializationStatus structureInitializationStatus;
 
-	public String getErrCode() {
-		return this.errCode;
+	public String getStatus() {
+		return this.status;
 	}
 
-	public void setErrCode(String errCode) {
-		this.errCode = errCode;
-	}
-
-	public String getErrMessage() {
-		return this.errMessage;
-	}
-
-	public void setErrMessage(String errMessage) {
-		this.errMessage = errMessage;
+	public void setStatus(String status) {
+		this.status = status;
 	}
 
 	public String getErrorMessage() {
@@ -77,12 +69,12 @@ public class DescribeSynchronizationObjectModifyStatusResponse extends AcsRespon
 		this.requestId = requestId;
 	}
 
-	public String getStatus() {
-		return this.status;
+	public String getErrCode() {
+		return this.errCode;
 	}
 
-	public void setStatus(String status) {
-		this.status = status;
+	public void setErrCode(String errCode) {
+		this.errCode = errCode;
 	}
 
 	public String getSuccess() {
@@ -91,6 +83,14 @@ public class DescribeSynchronizationObjectModifyStatusResponse extends AcsRespon
 
 	public void setSuccess(String success) {
 		this.success = success;
+	}
+
+	public String getErrMessage() {
+		return this.errMessage;
+	}
+
+	public void setErrMessage(String errMessage) {
+		this.errMessage = errMessage;
 	}
 
 	public DataInitializationStatus getDataInitializationStatus() {
@@ -127,20 +127,20 @@ public class DescribeSynchronizationObjectModifyStatusResponse extends AcsRespon
 
 	public static class DataInitializationStatus {
 
-		private String errorMessage;
+		private String status;
 
 		private String percent;
 
+		private String errorMessage;
+
 		private String progress;
 
-		private String status;
-
-		public String getErrorMessage() {
-			return this.errorMessage;
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setErrorMessage(String errorMessage) {
-			this.errorMessage = errorMessage;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public String getPercent() {
@@ -149,6 +149,14 @@ public class DescribeSynchronizationObjectModifyStatusResponse extends AcsRespon
 
 		public void setPercent(String percent) {
 			this.percent = percent;
+		}
+
+		public String getErrorMessage() {
+			return this.errorMessage;
+		}
+
+		public void setErrorMessage(String errorMessage) {
+			this.errorMessage = errorMessage;
 		}
 
 		public String getProgress() {
@@ -158,6 +166,17 @@ public class DescribeSynchronizationObjectModifyStatusResponse extends AcsRespon
 		public void setProgress(String progress) {
 			this.progress = progress;
 		}
+	}
+
+	public static class DataSynchronizationStatus {
+
+		private String status;
+
+		private String delay;
+
+		private String percent;
+
+		private String errorMessage;
 
 		public String getStatus() {
 			return this.status;
@@ -166,17 +185,6 @@ public class DescribeSynchronizationObjectModifyStatusResponse extends AcsRespon
 		public void setStatus(String status) {
 			this.status = status;
 		}
-	}
-
-	public static class DataSynchronizationStatus {
-
-		private String delay;
-
-		private String errorMessage;
-
-		private String percent;
-
-		private String status;
 
 		public String getDelay() {
 			return this.delay;
@@ -186,6 +194,14 @@ public class DescribeSynchronizationObjectModifyStatusResponse extends AcsRespon
 			this.delay = delay;
 		}
 
+		public String getPercent() {
+			return this.percent;
+		}
+
+		public void setPercent(String percent) {
+			this.percent = percent;
+		}
+
 		public String getErrorMessage() {
 			return this.errorMessage;
 		}
@@ -193,39 +209,15 @@ public class DescribeSynchronizationObjectModifyStatusResponse extends AcsRespon
 		public void setErrorMessage(String errorMessage) {
 			this.errorMessage = errorMessage;
 		}
-
-		public String getPercent() {
-			return this.percent;
-		}
-
-		public void setPercent(String percent) {
-			this.percent = percent;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
 	}
 
 	public static class PrecheckStatus {
 
-		private String percent;
-
 		private String status;
 
+		private String percent;
+
 		private List<CheckItem> detail;
-
-		public String getPercent() {
-			return this.percent;
-		}
-
-		public void setPercent(String percent) {
-			this.percent = percent;
-		}
 
 		public String getStatus() {
 			return this.status;
@@ -233,6 +225,14 @@ public class DescribeSynchronizationObjectModifyStatusResponse extends AcsRespon
 
 		public void setStatus(String status) {
 			this.status = status;
+		}
+
+		public String getPercent() {
+			return this.percent;
+		}
+
+		public void setPercent(String percent) {
+			this.percent = percent;
 		}
 
 		public List<CheckItem> getDetail() {
@@ -289,20 +289,20 @@ public class DescribeSynchronizationObjectModifyStatusResponse extends AcsRespon
 
 	public static class StructureInitializationStatus {
 
-		private String errorMessage;
+		private String status;
 
 		private String percent;
 
+		private String errorMessage;
+
 		private String progress;
 
-		private String status;
-
-		public String getErrorMessage() {
-			return this.errorMessage;
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setErrorMessage(String errorMessage) {
-			this.errorMessage = errorMessage;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public String getPercent() {
@@ -313,20 +313,20 @@ public class DescribeSynchronizationObjectModifyStatusResponse extends AcsRespon
 			this.percent = percent;
 		}
 
+		public String getErrorMessage() {
+			return this.errorMessage;
+		}
+
+		public void setErrorMessage(String errorMessage) {
+			this.errorMessage = errorMessage;
+		}
+
 		public String getProgress() {
 			return this.progress;
 		}
 
 		public void setProgress(String progress) {
 			this.progress = progress;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
 		}
 	}
 

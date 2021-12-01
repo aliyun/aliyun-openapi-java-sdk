@@ -24,8 +24,8 @@ public class ConfigureSubscriptionInstanceAlertResponseUnmarshaller {
 		
 		configureSubscriptionInstanceAlertResponse.setRequestId(_ctx.stringValue("ConfigureSubscriptionInstanceAlertResponse.RequestId"));
 		configureSubscriptionInstanceAlertResponse.setErrCode(_ctx.stringValue("ConfigureSubscriptionInstanceAlertResponse.ErrCode"));
-		configureSubscriptionInstanceAlertResponse.setErrMessage(_ctx.stringValue("ConfigureSubscriptionInstanceAlertResponse.ErrMessage"));
 		configureSubscriptionInstanceAlertResponse.setSuccess(_ctx.stringValue("ConfigureSubscriptionInstanceAlertResponse.Success"));
+		configureSubscriptionInstanceAlertResponse.setErrMessage(_ctx.stringValue("ConfigureSubscriptionInstanceAlertResponse.ErrMessage"));
 	 
 	 	return configureSubscriptionInstanceAlertResponse;
 	}

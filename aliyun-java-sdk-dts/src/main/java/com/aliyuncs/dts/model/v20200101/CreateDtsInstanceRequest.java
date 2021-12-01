@@ -37,6 +37,8 @@ public class CreateDtsInstanceRequest extends RpcAcsRequest<CreateDtsInstanceRes
 
 	private Integer computeUnit;
 
+	private String feeType;
+
 	private String destinationRegion;
 
 	private String period;
@@ -128,6 +130,17 @@ public class CreateDtsInstanceRequest extends RpcAcsRequest<CreateDtsInstanceRes
 		this.computeUnit = computeUnit;
 		if(computeUnit != null){
 			putQueryParameter("ComputeUnit", computeUnit.toString());
+		}
+	}
+
+	public String getFeeType() {
+		return this.feeType;
+	}
+
+	public void setFeeType(String feeType) {
+		this.feeType = feeType;
+		if(feeType != null){
+			putQueryParameter("FeeType", feeType);
 		}
 	}
 

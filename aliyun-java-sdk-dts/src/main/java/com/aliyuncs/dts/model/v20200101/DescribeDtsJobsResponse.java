@@ -139,6 +139,8 @@ public class DescribeDtsJobsResponse extends AcsResponse {
 
 		private String status;
 
+		private String originType;
+
 		private String dtsJobName;
 
 		private Long delay;
@@ -205,6 +207,14 @@ public class DescribeDtsJobsResponse extends AcsResponse {
 
 		public void setStatus(String status) {
 			this.status = status;
+		}
+
+		public String getOriginType() {
+			return this.originType;
+		}
+
+		public void setOriginType(String originType) {
+			this.originType = originType;
 		}
 
 		public String getDtsJobName() {

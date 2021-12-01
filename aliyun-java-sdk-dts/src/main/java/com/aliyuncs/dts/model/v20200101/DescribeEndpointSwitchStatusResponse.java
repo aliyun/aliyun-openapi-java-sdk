@@ -24,32 +24,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeEndpointSwitchStatusResponse extends AcsResponse {
 
-	private String errCode;
-
-	private String errMessage;
+	private String status;
 
 	private String errorMessage;
 
 	private String requestId;
 
-	private String status;
+	private String errCode;
 
 	private String success;
 
-	public String getErrCode() {
-		return this.errCode;
+	private String errMessage;
+
+	public String getStatus() {
+		return this.status;
 	}
 
-	public void setErrCode(String errCode) {
-		this.errCode = errCode;
-	}
-
-	public String getErrMessage() {
-		return this.errMessage;
-	}
-
-	public void setErrMessage(String errMessage) {
-		this.errMessage = errMessage;
+	public void setStatus(String status) {
+		this.status = status;
 	}
 
 	public String getErrorMessage() {
@@ -68,12 +60,12 @@ public class DescribeEndpointSwitchStatusResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getStatus() {
-		return this.status;
+	public String getErrCode() {
+		return this.errCode;
 	}
 
-	public void setStatus(String status) {
-		this.status = status;
+	public void setErrCode(String errCode) {
+		this.errCode = errCode;
 	}
 
 	public String getSuccess() {
@@ -82,6 +74,14 @@ public class DescribeEndpointSwitchStatusResponse extends AcsResponse {
 
 	public void setSuccess(String success) {
 		this.success = success;
+	}
+
+	public String getErrMessage() {
+		return this.errMessage;
+	}
+
+	public void setErrMessage(String errMessage) {
+		this.errMessage = errMessage;
 	}
 
 	@Override

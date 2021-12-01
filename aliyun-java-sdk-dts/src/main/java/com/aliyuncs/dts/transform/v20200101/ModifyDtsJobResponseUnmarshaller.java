@@ -23,11 +23,11 @@ public class ModifyDtsJobResponseUnmarshaller {
 	public static ModifyDtsJobResponse unmarshall(ModifyDtsJobResponse modifyDtsJobResponse, UnmarshallerContext _ctx) {
 		
 		modifyDtsJobResponse.setRequestId(_ctx.stringValue("ModifyDtsJobResponse.RequestId"));
+		modifyDtsJobResponse.setStatus(_ctx.stringValue("ModifyDtsJobResponse.Status"));
 		modifyDtsJobResponse.setDtsJobId(_ctx.stringValue("ModifyDtsJobResponse.DtsJobId"));
 		modifyDtsJobResponse.setErrCode(_ctx.stringValue("ModifyDtsJobResponse.ErrCode"));
-		modifyDtsJobResponse.setErrMessage(_ctx.booleanValue("ModifyDtsJobResponse.ErrMessage"));
-		modifyDtsJobResponse.setStatus(_ctx.stringValue("ModifyDtsJobResponse.Status"));
 		modifyDtsJobResponse.setSuccess(_ctx.booleanValue("ModifyDtsJobResponse.Success"));
+		modifyDtsJobResponse.setErrMessage(_ctx.booleanValue("ModifyDtsJobResponse.ErrMessage"));
 	 
 	 	return modifyDtsJobResponse;
 	}

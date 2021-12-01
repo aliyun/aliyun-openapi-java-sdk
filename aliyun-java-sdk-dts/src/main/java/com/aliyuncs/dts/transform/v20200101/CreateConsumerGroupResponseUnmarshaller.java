@@ -25,8 +25,8 @@ public class CreateConsumerGroupResponseUnmarshaller {
 		createConsumerGroupResponse.setRequestId(_ctx.stringValue("CreateConsumerGroupResponse.RequestId"));
 		createConsumerGroupResponse.setConsumerGroupID(_ctx.stringValue("CreateConsumerGroupResponse.ConsumerGroupID"));
 		createConsumerGroupResponse.setErrCode(_ctx.stringValue("CreateConsumerGroupResponse.ErrCode"));
-		createConsumerGroupResponse.setErrMessage(_ctx.stringValue("CreateConsumerGroupResponse.ErrMessage"));
 		createConsumerGroupResponse.setSuccess(_ctx.stringValue("CreateConsumerGroupResponse.Success"));
+		createConsumerGroupResponse.setErrMessage(_ctx.stringValue("CreateConsumerGroupResponse.ErrMessage"));
 	 
 	 	return createConsumerGroupResponse;
 	}

@@ -25,65 +25,33 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribePreCheckStatusResponse extends AcsResponse {
 
-	private String code;
-
-	private Integer errorItem;
-
-	private Integer httpStatusCode;
-
-	private String jobName;
-
 	private String state;
 
 	private Boolean success;
 
+	private Long pageRecordCount;
+
 	private Integer total;
+
+	private Integer httpStatusCode;
 
 	private String requestId;
 
+	private String jobName;
+
 	private String jobId;
 
-	private Long pageNumber;
-
-	private Long pageRecordCount;
+	private Integer errorItem;
 
 	private Long totalRecordCount;
+
+	private String code;
+
+	private Long pageNumber;
 
 	private List<ProgressInfo> jobProgress;
 
 	private List<SubDistributedJobStatusItem> subDistributedJobStatus;
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public Integer getErrorItem() {
-		return this.errorItem;
-	}
-
-	public void setErrorItem(Integer errorItem) {
-		this.errorItem = errorItem;
-	}
-
-	public Integer getHttpStatusCode() {
-		return this.httpStatusCode;
-	}
-
-	public void setHttpStatusCode(Integer httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
-	}
-
-	public String getJobName() {
-		return this.jobName;
-	}
-
-	public void setJobName(String jobName) {
-		this.jobName = jobName;
-	}
 
 	public String getState() {
 		return this.state;
@@ -101,12 +69,28 @@ public class DescribePreCheckStatusResponse extends AcsResponse {
 		this.success = success;
 	}
 
+	public Long getPageRecordCount() {
+		return this.pageRecordCount;
+	}
+
+	public void setPageRecordCount(Long pageRecordCount) {
+		this.pageRecordCount = pageRecordCount;
+	}
+
 	public Integer getTotal() {
 		return this.total;
 	}
 
 	public void setTotal(Integer total) {
 		this.total = total;
+	}
+
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
+	}
+
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
 	}
 
 	public String getRequestId() {
@@ -117,6 +101,14 @@ public class DescribePreCheckStatusResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public String getJobName() {
+		return this.jobName;
+	}
+
+	public void setJobName(String jobName) {
+		this.jobName = jobName;
+	}
+
 	public String getJobId() {
 		return this.jobId;
 	}
@@ -125,20 +117,12 @@ public class DescribePreCheckStatusResponse extends AcsResponse {
 		this.jobId = jobId;
 	}
 
-	public Long getPageNumber() {
-		return this.pageNumber;
+	public Integer getErrorItem() {
+		return this.errorItem;
 	}
 
-	public void setPageNumber(Long pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
-	public Long getPageRecordCount() {
-		return this.pageRecordCount;
-	}
-
-	public void setPageRecordCount(Long pageRecordCount) {
-		this.pageRecordCount = pageRecordCount;
+	public void setErrorItem(Integer errorItem) {
+		this.errorItem = errorItem;
 	}
 
 	public Long getTotalRecordCount() {
@@ -147,6 +131,22 @@ public class DescribePreCheckStatusResponse extends AcsResponse {
 
 	public void setTotalRecordCount(Long totalRecordCount) {
 		this.totalRecordCount = totalRecordCount;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public Long getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Long pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<ProgressInfo> getJobProgress() {
@@ -169,47 +169,47 @@ public class DescribePreCheckStatusResponse extends AcsResponse {
 
 		private Boolean skip;
 
-		private Boolean canSkip;
-
-		private String errMsg;
-
-		private String bootTime;
-
-		private Integer delaySeconds;
-
 		private String finishTime;
 
 		private String ignoreFlag;
 
-		private String item;
+		private Integer delaySeconds;
 
-		private String jobId;
-
-		private String names;
-
-		private Integer orderNum;
+		private String ddlSql;
 
 		private String state;
 
+		private String bootTime;
+
+		private String item;
+
 		private String sub;
-
-		private String repairMethod;
-
-		private String targetNames;
 
 		private Integer total;
 
-		private String sourceSchema;
+		private String targetNames;
 
-		private String parentObj;
+		private Boolean canSkip;
 
-		private Long diffRow;
-
-		private String destSchema;
+		private String names;
 
 		private String errDetail;
 
-		private String ddlSql;
+		private Long diffRow;
+
+		private String jobId;
+
+		private String sourceSchema;
+
+		private String destSchema;
+
+		private String parentObj;
+
+		private String errMsg;
+
+		private Integer orderNum;
+
+		private String repairMethod;
 
 		private String id;
 
@@ -221,38 +221,6 @@ public class DescribePreCheckStatusResponse extends AcsResponse {
 
 		public void setSkip(Boolean skip) {
 			this.skip = skip;
-		}
-
-		public Boolean getCanSkip() {
-			return this.canSkip;
-		}
-
-		public void setCanSkip(Boolean canSkip) {
-			this.canSkip = canSkip;
-		}
-
-		public String getErrMsg() {
-			return this.errMsg;
-		}
-
-		public void setErrMsg(String errMsg) {
-			this.errMsg = errMsg;
-		}
-
-		public String getBootTime() {
-			return this.bootTime;
-		}
-
-		public void setBootTime(String bootTime) {
-			this.bootTime = bootTime;
-		}
-
-		public Integer getDelaySeconds() {
-			return this.delaySeconds;
-		}
-
-		public void setDelaySeconds(Integer delaySeconds) {
-			this.delaySeconds = delaySeconds;
 		}
 
 		public String getFinishTime() {
@@ -271,36 +239,20 @@ public class DescribePreCheckStatusResponse extends AcsResponse {
 			this.ignoreFlag = ignoreFlag;
 		}
 
-		public String getItem() {
-			return this.item;
+		public Integer getDelaySeconds() {
+			return this.delaySeconds;
 		}
 
-		public void setItem(String item) {
-			this.item = item;
+		public void setDelaySeconds(Integer delaySeconds) {
+			this.delaySeconds = delaySeconds;
 		}
 
-		public String getJobId() {
-			return this.jobId;
+		public String getDdlSql() {
+			return this.ddlSql;
 		}
 
-		public void setJobId(String jobId) {
-			this.jobId = jobId;
-		}
-
-		public String getNames() {
-			return this.names;
-		}
-
-		public void setNames(String names) {
-			this.names = names;
-		}
-
-		public Integer getOrderNum() {
-			return this.orderNum;
-		}
-
-		public void setOrderNum(Integer orderNum) {
-			this.orderNum = orderNum;
+		public void setDdlSql(String ddlSql) {
+			this.ddlSql = ddlSql;
 		}
 
 		public String getState() {
@@ -311,28 +263,28 @@ public class DescribePreCheckStatusResponse extends AcsResponse {
 			this.state = state;
 		}
 
+		public String getBootTime() {
+			return this.bootTime;
+		}
+
+		public void setBootTime(String bootTime) {
+			this.bootTime = bootTime;
+		}
+
+		public String getItem() {
+			return this.item;
+		}
+
+		public void setItem(String item) {
+			this.item = item;
+		}
+
 		public String getSub() {
 			return this.sub;
 		}
 
 		public void setSub(String sub) {
 			this.sub = sub;
-		}
-
-		public String getRepairMethod() {
-			return this.repairMethod;
-		}
-
-		public void setRepairMethod(String repairMethod) {
-			this.repairMethod = repairMethod;
-		}
-
-		public String getTargetNames() {
-			return this.targetNames;
-		}
-
-		public void setTargetNames(String targetNames) {
-			this.targetNames = targetNames;
 		}
 
 		public Integer getTotal() {
@@ -343,36 +295,28 @@ public class DescribePreCheckStatusResponse extends AcsResponse {
 			this.total = total;
 		}
 
-		public String getSourceSchema() {
-			return this.sourceSchema;
+		public String getTargetNames() {
+			return this.targetNames;
 		}
 
-		public void setSourceSchema(String sourceSchema) {
-			this.sourceSchema = sourceSchema;
+		public void setTargetNames(String targetNames) {
+			this.targetNames = targetNames;
 		}
 
-		public String getParentObj() {
-			return this.parentObj;
+		public Boolean getCanSkip() {
+			return this.canSkip;
 		}
 
-		public void setParentObj(String parentObj) {
-			this.parentObj = parentObj;
+		public void setCanSkip(Boolean canSkip) {
+			this.canSkip = canSkip;
 		}
 
-		public Long getDiffRow() {
-			return this.diffRow;
+		public String getNames() {
+			return this.names;
 		}
 
-		public void setDiffRow(Long diffRow) {
-			this.diffRow = diffRow;
-		}
-
-		public String getDestSchema() {
-			return this.destSchema;
-		}
-
-		public void setDestSchema(String destSchema) {
-			this.destSchema = destSchema;
+		public void setNames(String names) {
+			this.names = names;
 		}
 
 		public String getErrDetail() {
@@ -383,12 +327,68 @@ public class DescribePreCheckStatusResponse extends AcsResponse {
 			this.errDetail = errDetail;
 		}
 
-		public String getDdlSql() {
-			return this.ddlSql;
+		public Long getDiffRow() {
+			return this.diffRow;
 		}
 
-		public void setDdlSql(String ddlSql) {
-			this.ddlSql = ddlSql;
+		public void setDiffRow(Long diffRow) {
+			this.diffRow = diffRow;
+		}
+
+		public String getJobId() {
+			return this.jobId;
+		}
+
+		public void setJobId(String jobId) {
+			this.jobId = jobId;
+		}
+
+		public String getSourceSchema() {
+			return this.sourceSchema;
+		}
+
+		public void setSourceSchema(String sourceSchema) {
+			this.sourceSchema = sourceSchema;
+		}
+
+		public String getDestSchema() {
+			return this.destSchema;
+		}
+
+		public void setDestSchema(String destSchema) {
+			this.destSchema = destSchema;
+		}
+
+		public String getParentObj() {
+			return this.parentObj;
+		}
+
+		public void setParentObj(String parentObj) {
+			this.parentObj = parentObj;
+		}
+
+		public String getErrMsg() {
+			return this.errMsg;
+		}
+
+		public void setErrMsg(String errMsg) {
+			this.errMsg = errMsg;
+		}
+
+		public Integer getOrderNum() {
+			return this.orderNum;
+		}
+
+		public void setOrderNum(Integer orderNum) {
+			this.orderNum = orderNum;
+		}
+
+		public String getRepairMethod() {
+			return this.repairMethod;
+		}
+
+		public void setRepairMethod(String repairMethod) {
+			this.repairMethod = repairMethod;
 		}
 
 		public String getId() {
@@ -413,9 +413,9 @@ public class DescribePreCheckStatusResponse extends AcsResponse {
 
 			private String errMsg;
 
-			private String errType;
-
 			private String logLevel;
+
+			private String errType;
 
 			public String getErrData() {
 				return this.errData;
@@ -433,14 +433,6 @@ public class DescribePreCheckStatusResponse extends AcsResponse {
 				this.errMsg = errMsg;
 			}
 
-			public String getErrType() {
-				return this.errType;
-			}
-
-			public void setErrType(String errType) {
-				this.errType = errType;
-			}
-
 			public String getLogLevel() {
 				return this.logLevel;
 			}
@@ -448,40 +440,32 @@ public class DescribePreCheckStatusResponse extends AcsResponse {
 			public void setLogLevel(String logLevel) {
 				this.logLevel = logLevel;
 			}
+
+			public String getErrType() {
+				return this.errType;
+			}
+
+			public void setErrType(String errType) {
+				this.errType = errType;
+			}
 		}
 	}
 
 	public static class SubDistributedJobStatusItem {
 
-		private String state;
-
-		private Integer errorItem;
-
 		private String jobName;
 
+		private String state;
+
 		private String jobId;
+
+		private Integer errorItem;
 
 		private String code;
 
 		private Integer total;
 
 		private List<ProgressInfo2> jobProgress1;
-
-		public String getState() {
-			return this.state;
-		}
-
-		public void setState(String state) {
-			this.state = state;
-		}
-
-		public Integer getErrorItem() {
-			return this.errorItem;
-		}
-
-		public void setErrorItem(Integer errorItem) {
-			this.errorItem = errorItem;
-		}
 
 		public String getJobName() {
 			return this.jobName;
@@ -491,12 +475,28 @@ public class DescribePreCheckStatusResponse extends AcsResponse {
 			this.jobName = jobName;
 		}
 
+		public String getState() {
+			return this.state;
+		}
+
+		public void setState(String state) {
+			this.state = state;
+		}
+
 		public String getJobId() {
 			return this.jobId;
 		}
 
 		public void setJobId(String jobId) {
 			this.jobId = jobId;
+		}
+
+		public Integer getErrorItem() {
+			return this.errorItem;
+		}
+
+		public void setErrorItem(Integer errorItem) {
+			this.errorItem = errorItem;
 		}
 
 		public String getCode() {
@@ -527,47 +527,47 @@ public class DescribePreCheckStatusResponse extends AcsResponse {
 
 			private Boolean skip;
 
-			private Boolean canSkip;
-
-			private String errMsg;
-
-			private String bootTime;
-
-			private Integer delaySeconds;
-
 			private String finishTime;
 
 			private String ignoreFlag;
 
-			private String item;
+			private Integer delaySeconds;
 
-			private String jobId;
-
-			private String names;
-
-			private Integer orderNum;
+			private String ddlSql;
 
 			private String state;
 
+			private String bootTime;
+
+			private String item;
+
 			private String sub;
-
-			private String repairMethod;
-
-			private String targetNames;
 
 			private Integer total;
 
-			private String sourceSchema;
+			private String targetNames;
 
-			private String parentObj;
+			private Boolean canSkip;
 
-			private Long diffRow;
-
-			private String destSchema;
+			private String names;
 
 			private String errDetail;
 
-			private String ddlSql;
+			private Long diffRow;
+
+			private String jobId;
+
+			private String sourceSchema;
+
+			private String destSchema;
+
+			private String parentObj;
+
+			private String errMsg;
+
+			private Integer orderNum;
+
+			private String repairMethod;
 
 			private String id;
 
@@ -579,38 +579,6 @@ public class DescribePreCheckStatusResponse extends AcsResponse {
 
 			public void setSkip(Boolean skip) {
 				this.skip = skip;
-			}
-
-			public Boolean getCanSkip() {
-				return this.canSkip;
-			}
-
-			public void setCanSkip(Boolean canSkip) {
-				this.canSkip = canSkip;
-			}
-
-			public String getErrMsg() {
-				return this.errMsg;
-			}
-
-			public void setErrMsg(String errMsg) {
-				this.errMsg = errMsg;
-			}
-
-			public String getBootTime() {
-				return this.bootTime;
-			}
-
-			public void setBootTime(String bootTime) {
-				this.bootTime = bootTime;
-			}
-
-			public Integer getDelaySeconds() {
-				return this.delaySeconds;
-			}
-
-			public void setDelaySeconds(Integer delaySeconds) {
-				this.delaySeconds = delaySeconds;
 			}
 
 			public String getFinishTime() {
@@ -629,36 +597,20 @@ public class DescribePreCheckStatusResponse extends AcsResponse {
 				this.ignoreFlag = ignoreFlag;
 			}
 
-			public String getItem() {
-				return this.item;
+			public Integer getDelaySeconds() {
+				return this.delaySeconds;
 			}
 
-			public void setItem(String item) {
-				this.item = item;
+			public void setDelaySeconds(Integer delaySeconds) {
+				this.delaySeconds = delaySeconds;
 			}
 
-			public String getJobId() {
-				return this.jobId;
+			public String getDdlSql() {
+				return this.ddlSql;
 			}
 
-			public void setJobId(String jobId) {
-				this.jobId = jobId;
-			}
-
-			public String getNames() {
-				return this.names;
-			}
-
-			public void setNames(String names) {
-				this.names = names;
-			}
-
-			public Integer getOrderNum() {
-				return this.orderNum;
-			}
-
-			public void setOrderNum(Integer orderNum) {
-				this.orderNum = orderNum;
+			public void setDdlSql(String ddlSql) {
+				this.ddlSql = ddlSql;
 			}
 
 			public String getState() {
@@ -669,28 +621,28 @@ public class DescribePreCheckStatusResponse extends AcsResponse {
 				this.state = state;
 			}
 
+			public String getBootTime() {
+				return this.bootTime;
+			}
+
+			public void setBootTime(String bootTime) {
+				this.bootTime = bootTime;
+			}
+
+			public String getItem() {
+				return this.item;
+			}
+
+			public void setItem(String item) {
+				this.item = item;
+			}
+
 			public String getSub() {
 				return this.sub;
 			}
 
 			public void setSub(String sub) {
 				this.sub = sub;
-			}
-
-			public String getRepairMethod() {
-				return this.repairMethod;
-			}
-
-			public void setRepairMethod(String repairMethod) {
-				this.repairMethod = repairMethod;
-			}
-
-			public String getTargetNames() {
-				return this.targetNames;
-			}
-
-			public void setTargetNames(String targetNames) {
-				this.targetNames = targetNames;
 			}
 
 			public Integer getTotal() {
@@ -701,36 +653,28 @@ public class DescribePreCheckStatusResponse extends AcsResponse {
 				this.total = total;
 			}
 
-			public String getSourceSchema() {
-				return this.sourceSchema;
+			public String getTargetNames() {
+				return this.targetNames;
 			}
 
-			public void setSourceSchema(String sourceSchema) {
-				this.sourceSchema = sourceSchema;
+			public void setTargetNames(String targetNames) {
+				this.targetNames = targetNames;
 			}
 
-			public String getParentObj() {
-				return this.parentObj;
+			public Boolean getCanSkip() {
+				return this.canSkip;
 			}
 
-			public void setParentObj(String parentObj) {
-				this.parentObj = parentObj;
+			public void setCanSkip(Boolean canSkip) {
+				this.canSkip = canSkip;
 			}
 
-			public Long getDiffRow() {
-				return this.diffRow;
+			public String getNames() {
+				return this.names;
 			}
 
-			public void setDiffRow(Long diffRow) {
-				this.diffRow = diffRow;
-			}
-
-			public String getDestSchema() {
-				return this.destSchema;
-			}
-
-			public void setDestSchema(String destSchema) {
-				this.destSchema = destSchema;
+			public void setNames(String names) {
+				this.names = names;
 			}
 
 			public String getErrDetail() {
@@ -741,12 +685,68 @@ public class DescribePreCheckStatusResponse extends AcsResponse {
 				this.errDetail = errDetail;
 			}
 
-			public String getDdlSql() {
-				return this.ddlSql;
+			public Long getDiffRow() {
+				return this.diffRow;
 			}
 
-			public void setDdlSql(String ddlSql) {
-				this.ddlSql = ddlSql;
+			public void setDiffRow(Long diffRow) {
+				this.diffRow = diffRow;
+			}
+
+			public String getJobId() {
+				return this.jobId;
+			}
+
+			public void setJobId(String jobId) {
+				this.jobId = jobId;
+			}
+
+			public String getSourceSchema() {
+				return this.sourceSchema;
+			}
+
+			public void setSourceSchema(String sourceSchema) {
+				this.sourceSchema = sourceSchema;
+			}
+
+			public String getDestSchema() {
+				return this.destSchema;
+			}
+
+			public void setDestSchema(String destSchema) {
+				this.destSchema = destSchema;
+			}
+
+			public String getParentObj() {
+				return this.parentObj;
+			}
+
+			public void setParentObj(String parentObj) {
+				this.parentObj = parentObj;
+			}
+
+			public String getErrMsg() {
+				return this.errMsg;
+			}
+
+			public void setErrMsg(String errMsg) {
+				this.errMsg = errMsg;
+			}
+
+			public Integer getOrderNum() {
+				return this.orderNum;
+			}
+
+			public void setOrderNum(Integer orderNum) {
+				this.orderNum = orderNum;
+			}
+
+			public String getRepairMethod() {
+				return this.repairMethod;
+			}
+
+			public void setRepairMethod(String repairMethod) {
+				this.repairMethod = repairMethod;
 			}
 
 			public String getId() {
@@ -771,9 +771,9 @@ public class DescribePreCheckStatusResponse extends AcsResponse {
 
 				private String errMsg;
 
-				private String errType;
-
 				private String logLevel;
+
+				private String errType;
 
 				public String getErrData() {
 					return this.errData;
@@ -791,20 +791,20 @@ public class DescribePreCheckStatusResponse extends AcsResponse {
 					this.errMsg = errMsg;
 				}
 
-				public String getErrType() {
-					return this.errType;
-				}
-
-				public void setErrType(String errType) {
-					this.errType = errType;
-				}
-
 				public String getLogLevel() {
 					return this.logLevel;
 				}
 
 				public void setLogLevel(String logLevel) {
 					this.logLevel = logLevel;
+				}
+
+				public String getErrType() {
+					return this.errType;
+				}
+
+				public void setErrType(String errType) {
+					this.errType = errType;
 				}
 			}
 		}

@@ -63,6 +63,7 @@ public class DescribeDtsJobsResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("DescribeDtsJobsResponse.DtsJobList.Length"); i++) {
 			DtsJobStatus dtsJobStatus = new DtsJobStatus();
 			dtsJobStatus.setStatus(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].Status"));
+			dtsJobStatus.setOriginType(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].OriginType"));
 			dtsJobStatus.setDtsJobName(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].DtsJobName"));
 			dtsJobStatus.setDelay(_ctx.longValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].Delay"));
 			dtsJobStatus.setErrorMessage(_ctx.stringValue("DescribeDtsJobsResponse.DtsJobList["+ i +"].ErrorMessage"));

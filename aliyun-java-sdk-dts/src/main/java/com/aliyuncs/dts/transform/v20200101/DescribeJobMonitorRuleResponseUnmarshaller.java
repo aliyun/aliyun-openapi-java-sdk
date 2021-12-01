@@ -27,21 +27,27 @@ public class DescribeJobMonitorRuleResponseUnmarshaller {
 	public static DescribeJobMonitorRuleResponse unmarshall(DescribeJobMonitorRuleResponse describeJobMonitorRuleResponse, UnmarshallerContext _ctx) {
 		
 		describeJobMonitorRuleResponse.setRequestId(_ctx.stringValue("DescribeJobMonitorRuleResponse.RequestId"));
-		describeJobMonitorRuleResponse.setCode(_ctx.stringValue("DescribeJobMonitorRuleResponse.Code"));
-		describeJobMonitorRuleResponse.setDtsJobId(_ctx.stringValue("DescribeJobMonitorRuleResponse.DtsJobId"));
-		describeJobMonitorRuleResponse.setDynamicMessage(_ctx.stringValue("DescribeJobMonitorRuleResponse.DynamicMessage"));
-		describeJobMonitorRuleResponse.setErrCode(_ctx.stringValue("DescribeJobMonitorRuleResponse.ErrCode"));
-		describeJobMonitorRuleResponse.setErrMessage(_ctx.stringValue("DescribeJobMonitorRuleResponse.ErrMessage"));
 		describeJobMonitorRuleResponse.setHttpStatusCode(_ctx.integerValue("DescribeJobMonitorRuleResponse.HttpStatusCode"));
+		describeJobMonitorRuleResponse.setDtsJobId(_ctx.stringValue("DescribeJobMonitorRuleResponse.DtsJobId"));
+		describeJobMonitorRuleResponse.setErrCode(_ctx.stringValue("DescribeJobMonitorRuleResponse.ErrCode"));
 		describeJobMonitorRuleResponse.setSuccess(_ctx.booleanValue("DescribeJobMonitorRuleResponse.Success"));
+		describeJobMonitorRuleResponse.setErrMessage(_ctx.stringValue("DescribeJobMonitorRuleResponse.ErrMessage"));
+		describeJobMonitorRuleResponse.setCode(_ctx.stringValue("DescribeJobMonitorRuleResponse.Code"));
+		describeJobMonitorRuleResponse.setDynamicMessage(_ctx.stringValue("DescribeJobMonitorRuleResponse.DynamicMessage"));
+
+		List<String> topics = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeJobMonitorRuleResponse.Topics.Length"); i++) {
+			topics.add(_ctx.stringValue("DescribeJobMonitorRuleResponse.Topics["+ i +"]"));
+		}
+		describeJobMonitorRuleResponse.setTopics(topics);
 
 		List<MonitorRule> monitorRules = new ArrayList<MonitorRule>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeJobMonitorRuleResponse.MonitorRules.Length"); i++) {
 			MonitorRule monitorRule = new MonitorRule();
-			monitorRule.setPhone(_ctx.stringValue("DescribeJobMonitorRuleResponse.MonitorRules["+ i +"].Phone"));
+			monitorRule.setType(_ctx.stringValue("DescribeJobMonitorRuleResponse.MonitorRules["+ i +"].Type"));
 			monitorRule.setDelayRuleTime(_ctx.longValue("DescribeJobMonitorRuleResponse.MonitorRules["+ i +"].DelayRuleTime"));
 			monitorRule.setState(_ctx.stringValue("DescribeJobMonitorRuleResponse.MonitorRules["+ i +"].State"));
-			monitorRule.setType(_ctx.stringValue("DescribeJobMonitorRuleResponse.MonitorRules["+ i +"].Type"));
+			monitorRule.setPhone(_ctx.stringValue("DescribeJobMonitorRuleResponse.MonitorRules["+ i +"].Phone"));
 
 			monitorRules.add(monitorRule);
 		}

@@ -25,38 +25,30 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeConsumerChannelResponse extends AcsResponse {
 
-	private String errCode;
-
-	private String errMessage;
+	private String httpStatusCode;
 
 	private String requestId;
 
-	private String success;
-
-	private String httpStatusCode;
-
-	private Integer pageNumber;
+	private String errCode;
 
 	private Integer pageRecordCount;
 
+	private String success;
+
 	private Long totalRecordCount;
+
+	private String errMessage;
+
+	private Integer pageNumber;
 
 	private List<ConsumerChannel> consumerChannels;
 
-	public String getErrCode() {
-		return this.errCode;
+	public String getHttpStatusCode() {
+		return this.httpStatusCode;
 	}
 
-	public void setErrCode(String errCode) {
-		this.errCode = errCode;
-	}
-
-	public String getErrMessage() {
-		return this.errMessage;
-	}
-
-	public void setErrMessage(String errMessage) {
-		this.errMessage = errMessage;
+	public void setHttpStatusCode(String httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
 	}
 
 	public String getRequestId() {
@@ -67,28 +59,12 @@ public class DescribeConsumerChannelResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getSuccess() {
-		return this.success;
+	public String getErrCode() {
+		return this.errCode;
 	}
 
-	public void setSuccess(String success) {
-		this.success = success;
-	}
-
-	public String getHttpStatusCode() {
-		return this.httpStatusCode;
-	}
-
-	public void setHttpStatusCode(String httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
+	public void setErrCode(String errCode) {
+		this.errCode = errCode;
 	}
 
 	public Integer getPageRecordCount() {
@@ -99,12 +75,36 @@ public class DescribeConsumerChannelResponse extends AcsResponse {
 		this.pageRecordCount = pageRecordCount;
 	}
 
+	public String getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(String success) {
+		this.success = success;
+	}
+
 	public Long getTotalRecordCount() {
 		return this.totalRecordCount;
 	}
 
 	public void setTotalRecordCount(Long totalRecordCount) {
 		this.totalRecordCount = totalRecordCount;
+	}
+
+	public String getErrMessage() {
+		return this.errMessage;
+	}
+
+	public void setErrMessage(String errMessage) {
+		this.errMessage = errMessage;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<ConsumerChannel> getConsumerChannels() {
@@ -117,7 +117,11 @@ public class DescribeConsumerChannelResponse extends AcsResponse {
 
 	public static class ConsumerChannel {
 
+		private String consumerGroupUserName;
+
 		private String consumerGroupId;
+
+		private Long messageDelay;
 
 		private String consumerGroupName;
 
@@ -125,9 +129,13 @@ public class DescribeConsumerChannelResponse extends AcsResponse {
 
 		private Long unconsumedData;
 
-		private Long messageDelay;
+		public String getConsumerGroupUserName() {
+			return this.consumerGroupUserName;
+		}
 
-		private String consumerGroupUserName;
+		public void setConsumerGroupUserName(String consumerGroupUserName) {
+			this.consumerGroupUserName = consumerGroupUserName;
+		}
 
 		public String getConsumerGroupId() {
 			return this.consumerGroupId;
@@ -135,6 +143,14 @@ public class DescribeConsumerChannelResponse extends AcsResponse {
 
 		public void setConsumerGroupId(String consumerGroupId) {
 			this.consumerGroupId = consumerGroupId;
+		}
+
+		public Long getMessageDelay() {
+			return this.messageDelay;
+		}
+
+		public void setMessageDelay(Long messageDelay) {
+			this.messageDelay = messageDelay;
 		}
 
 		public String getConsumerGroupName() {
@@ -159,22 +175,6 @@ public class DescribeConsumerChannelResponse extends AcsResponse {
 
 		public void setUnconsumedData(Long unconsumedData) {
 			this.unconsumedData = unconsumedData;
-		}
-
-		public Long getMessageDelay() {
-			return this.messageDelay;
-		}
-
-		public void setMessageDelay(Long messageDelay) {
-			this.messageDelay = messageDelay;
-		}
-
-		public String getConsumerGroupUserName() {
-			return this.consumerGroupUserName;
-		}
-
-		public void setConsumerGroupUserName(String consumerGroupUserName) {
-			this.consumerGroupUserName = consumerGroupUserName;
 		}
 	}
 

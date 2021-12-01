@@ -27,23 +27,23 @@ public class DescribeConsumerChannelResponseUnmarshaller {
 	public static DescribeConsumerChannelResponse unmarshall(DescribeConsumerChannelResponse describeConsumerChannelResponse, UnmarshallerContext _ctx) {
 		
 		describeConsumerChannelResponse.setRequestId(_ctx.stringValue("DescribeConsumerChannelResponse.RequestId"));
-		describeConsumerChannelResponse.setErrCode(_ctx.stringValue("DescribeConsumerChannelResponse.ErrCode"));
-		describeConsumerChannelResponse.setErrMessage(_ctx.stringValue("DescribeConsumerChannelResponse.ErrMessage"));
-		describeConsumerChannelResponse.setSuccess(_ctx.stringValue("DescribeConsumerChannelResponse.Success"));
 		describeConsumerChannelResponse.setHttpStatusCode(_ctx.stringValue("DescribeConsumerChannelResponse.HttpStatusCode"));
-		describeConsumerChannelResponse.setPageNumber(_ctx.integerValue("DescribeConsumerChannelResponse.PageNumber"));
+		describeConsumerChannelResponse.setErrCode(_ctx.stringValue("DescribeConsumerChannelResponse.ErrCode"));
 		describeConsumerChannelResponse.setPageRecordCount(_ctx.integerValue("DescribeConsumerChannelResponse.PageRecordCount"));
+		describeConsumerChannelResponse.setSuccess(_ctx.stringValue("DescribeConsumerChannelResponse.Success"));
 		describeConsumerChannelResponse.setTotalRecordCount(_ctx.longValue("DescribeConsumerChannelResponse.TotalRecordCount"));
+		describeConsumerChannelResponse.setErrMessage(_ctx.stringValue("DescribeConsumerChannelResponse.ErrMessage"));
+		describeConsumerChannelResponse.setPageNumber(_ctx.integerValue("DescribeConsumerChannelResponse.PageNumber"));
 
 		List<ConsumerChannel> consumerChannels = new ArrayList<ConsumerChannel>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeConsumerChannelResponse.ConsumerChannels.Length"); i++) {
 			ConsumerChannel consumerChannel = new ConsumerChannel();
+			consumerChannel.setConsumerGroupUserName(_ctx.stringValue("DescribeConsumerChannelResponse.ConsumerChannels["+ i +"].ConsumerGroupUserName"));
 			consumerChannel.setConsumerGroupId(_ctx.stringValue("DescribeConsumerChannelResponse.ConsumerChannels["+ i +"].ConsumerGroupId"));
+			consumerChannel.setMessageDelay(_ctx.longValue("DescribeConsumerChannelResponse.ConsumerChannels["+ i +"].MessageDelay"));
 			consumerChannel.setConsumerGroupName(_ctx.stringValue("DescribeConsumerChannelResponse.ConsumerChannels["+ i +"].ConsumerGroupName"));
 			consumerChannel.setConsumptionCheckpoint(_ctx.stringValue("DescribeConsumerChannelResponse.ConsumerChannels["+ i +"].ConsumptionCheckpoint"));
 			consumerChannel.setUnconsumedData(_ctx.longValue("DescribeConsumerChannelResponse.ConsumerChannels["+ i +"].UnconsumedData"));
-			consumerChannel.setMessageDelay(_ctx.longValue("DescribeConsumerChannelResponse.ConsumerChannels["+ i +"].MessageDelay"));
-			consumerChannel.setConsumerGroupUserName(_ctx.stringValue("DescribeConsumerChannelResponse.ConsumerChannels["+ i +"].ConsumerGroupUserName"));
 
 			consumerChannels.add(consumerChannel);
 		}

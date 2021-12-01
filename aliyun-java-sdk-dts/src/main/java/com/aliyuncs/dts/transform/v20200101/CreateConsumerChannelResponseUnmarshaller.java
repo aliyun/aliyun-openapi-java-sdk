@@ -23,11 +23,11 @@ public class CreateConsumerChannelResponseUnmarshaller {
 	public static CreateConsumerChannelResponse unmarshall(CreateConsumerChannelResponse createConsumerChannelResponse, UnmarshallerContext _ctx) {
 		
 		createConsumerChannelResponse.setRequestId(_ctx.stringValue("CreateConsumerChannelResponse.RequestId"));
-		createConsumerChannelResponse.setErrCode(_ctx.stringValue("CreateConsumerChannelResponse.ErrCode"));
-		createConsumerChannelResponse.setErrMessage(_ctx.stringValue("CreateConsumerChannelResponse.ErrMessage"));
-		createConsumerChannelResponse.setSuccess(_ctx.stringValue("CreateConsumerChannelResponse.Success"));
-		createConsumerChannelResponse.setConsumerGroupID(_ctx.stringValue("CreateConsumerChannelResponse.ConsumerGroupID"));
 		createConsumerChannelResponse.setHttpStatusCode(_ctx.stringValue("CreateConsumerChannelResponse.HttpStatusCode"));
+		createConsumerChannelResponse.setErrCode(_ctx.stringValue("CreateConsumerChannelResponse.ErrCode"));
+		createConsumerChannelResponse.setSuccess(_ctx.stringValue("CreateConsumerChannelResponse.Success"));
+		createConsumerChannelResponse.setErrMessage(_ctx.stringValue("CreateConsumerChannelResponse.ErrMessage"));
+		createConsumerChannelResponse.setConsumerGroupID(_ctx.stringValue("CreateConsumerChannelResponse.ConsumerGroupID"));
 	 
 	 	return createConsumerChannelResponse;
 	}
