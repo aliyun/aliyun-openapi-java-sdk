@@ -1,3 +1,6 @@
+2021-12-01 Version: 1.11.7
+- Add UpgradeRenderingDevicesImage and UpgradeRenderingDevicesHostOS.
+
 2021-11-26 Version: 1.11.6
 - Add PodInfos for DescribeClusterDevices and DescribeRenderingDevices.
 
