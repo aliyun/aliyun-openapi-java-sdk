@@ -24,10 +24,10 @@ public class ExecuteExtendServiceResponseUnmarshaller {
 	public static ExecuteExtendServiceResponse unmarshall(ExecuteExtendServiceResponse executeExtendServiceResponse, UnmarshallerContext _ctx) {
 		
 		executeExtendServiceResponse.setRequestId(_ctx.stringValue("ExecuteExtendServiceResponse.RequestId"));
-		executeExtendServiceResponse.setCode(_ctx.stringValue("ExecuteExtendServiceResponse.Code"));
-		executeExtendServiceResponse.setSuccess(_ctx.booleanValue("ExecuteExtendServiceResponse.Success"));
-		executeExtendServiceResponse.setMessage(_ctx.stringValue("ExecuteExtendServiceResponse.Message"));
 		executeExtendServiceResponse.setHttpStatusCode(_ctx.stringValue("ExecuteExtendServiceResponse.HttpStatusCode"));
+		executeExtendServiceResponse.setCode(_ctx.stringValue("ExecuteExtendServiceResponse.Code"));
+		executeExtendServiceResponse.setMessage(_ctx.stringValue("ExecuteExtendServiceResponse.Message"));
+		executeExtendServiceResponse.setSuccess(_ctx.booleanValue("ExecuteExtendServiceResponse.Success"));
 
 		Data data = new Data();
 		data.setInvokeResult(_ctx.stringValue("ExecuteExtendServiceResponse.Data.InvokeResult"));

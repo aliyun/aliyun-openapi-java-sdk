@@ -24,17 +24,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ExecuteExtendServiceResponse extends AcsResponse {
 
+	private String httpStatusCode;
+
 	private String code;
+
+	private String message;
 
 	private String requestId;
 
 	private Boolean success;
 
-	private String message;
-
-	private String httpStatusCode;
-
 	private Data data;
+
+	public String getHttpStatusCode() {
+		return this.httpStatusCode;
+	}
+
+	public void setHttpStatusCode(String httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
+	}
 
 	public String getCode() {
 		return this.code;
@@ -42,6 +50,14 @@ public class ExecuteExtendServiceResponse extends AcsResponse {
 
 	public void setCode(String code) {
 		this.code = code;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public String getRequestId() {
@@ -58,22 +74,6 @@ public class ExecuteExtendServiceResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
-	public String getHttpStatusCode() {
-		return this.httpStatusCode;
-	}
-
-	public void setHttpStatusCode(String httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
 	}
 
 	public Data getData() {

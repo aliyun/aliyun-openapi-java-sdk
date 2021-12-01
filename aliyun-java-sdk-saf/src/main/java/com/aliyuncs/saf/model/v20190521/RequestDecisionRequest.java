@@ -12,10 +12,9 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.saf.model.v20180919;
+package com.aliyuncs.saf.model.v20190521;
 
 import com.aliyuncs.RpcAcsRequest;
-import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.saf.Endpoint;
 
@@ -23,15 +22,14 @@ import com.aliyuncs.saf.Endpoint;
  * @author auto create
  * @version 
  */
-public class ExecuteRequestRequest extends RpcAcsRequest<ExecuteRequestResponse> {
+public class RequestDecisionRequest extends RpcAcsRequest<RequestDecisionResponse> {
 	   
 
 	private String serviceParameters;
 
-	private String service;
-	public ExecuteRequestRequest() {
-		super("saf", "2018-09-19", "ExecuteRequest", "saf");
-		setProtocol(ProtocolType.HTTPS);
+	private String eventCode;
+	public RequestDecisionRequest() {
+		super("saf", "2019-05-21", "RequestDecision");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -50,20 +48,20 @@ public class ExecuteRequestRequest extends RpcAcsRequest<ExecuteRequestResponse>
 		}
 	}
 
-	public String getService() {
-		return this.service;
+	public String getEventCode() {
+		return this.eventCode;
 	}
 
-	public void setService(String service) {
-		this.service = service;
-		if(service != null){
-			putQueryParameter("Service", service);
+	public void setEventCode(String eventCode) {
+		this.eventCode = eventCode;
+		if(eventCode != null){
+			putQueryParameter("EventCode", eventCode);
 		}
 	}
 
 	@Override
-	public Class<ExecuteRequestResponse> getResponseClass() {
-		return ExecuteRequestResponse.class;
+	public Class<RequestDecisionResponse> getResponseClass() {
+		return RequestDecisionResponse.class;
 	}
 
 }

@@ -29,8 +29,10 @@ public class ExecuteRequestMLRequest extends RpcAcsRequest<ExecuteRequestMLRespo
 	private String serviceParameters;
 
 	private String service;
+
+	private String lang;
 	public ExecuteRequestMLRequest() {
-		super("saf", "2019-05-21", "ExecuteRequestML", "saf");
+		super("saf", "2019-05-21", "ExecuteRequestML");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
@@ -58,6 +60,17 @@ public class ExecuteRequestMLRequest extends RpcAcsRequest<ExecuteRequestMLRespo
 		this.service = service;
 		if(service != null){
 			putQueryParameter("Service", service);
+		}
+	}
+
+	public String getLang() {
+		return this.lang;
+	}
+
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
 		}
 	}
 

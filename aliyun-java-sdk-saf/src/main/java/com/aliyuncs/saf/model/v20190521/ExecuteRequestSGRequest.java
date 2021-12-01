@@ -29,8 +29,10 @@ public class ExecuteRequestSGRequest extends RpcAcsRequest<ExecuteRequestSGRespo
 	private String serviceParameters;
 
 	private String service;
+
+	private String lang;
 	public ExecuteRequestSGRequest() {
-		super("saf", "2019-05-21", "ExecuteRequestSG", "saf");
+		super("saf", "2019-05-21", "ExecuteRequestSG");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
@@ -58,6 +60,17 @@ public class ExecuteRequestSGRequest extends RpcAcsRequest<ExecuteRequestSGRespo
 		this.service = service;
 		if(service != null){
 			putQueryParameter("Service", service);
+		}
+	}
+
+	public String getLang() {
+		return this.lang;
+	}
+
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
 		}
 	}
 

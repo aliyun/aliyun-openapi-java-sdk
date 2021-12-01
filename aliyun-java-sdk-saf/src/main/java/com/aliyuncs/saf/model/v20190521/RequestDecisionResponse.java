@@ -12,25 +12,26 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.saf.model.v20180919;
+package com.aliyuncs.saf.model.v20190521;
 
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.saf.transform.v20180919.ExecuteRequestResponseUnmarshaller;
+import com.aliyuncs.saf.transform.v20190521.RequestDecisionResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ExecuteRequestResponse extends AcsResponse {
+public class RequestDecisionResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Integer code;
+	private Long code;
 
 	private String message;
 
-	private Data data;
+	private Map<Object,Object> data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -40,11 +41,11 @@ public class ExecuteRequestResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Integer getCode() {
+	public Long getCode() {
 		return this.code;
 	}
 
-	public void setCode(Integer code) {
+	public void setCode(Long code) {
 		this.code = code;
 	}
 
@@ -56,49 +57,21 @@ public class ExecuteRequestResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public Data getData() {
+	public Map<Object,Object> getData() {
 		return this.data;
 	}
 
-	public void setData(Data data) {
+	public void setData(Map<Object,Object> data) {
 		this.data = data;
 	}
 
-	public static class Data {
-
-		private String tags;
-
-		private String score;
-
-		private String extend;
-
-		public String getTags() {
-			return this.tags;
-		}
-
-		public void setTags(String tags) {
-			this.tags = tags;
-		}
-
-		public String getScore() {
-			return this.score;
-		}
-
-		public void setScore(String score) {
-			this.score = score;
-		}
-
-		public String getExtend() {
-			return this.extend;
-		}
-
-		public void setExtend(String extend) {
-			this.extend = extend;
-		}
+	@Override
+	public RequestDecisionResponse getInstance(UnmarshallerContext context) {
+		return	RequestDecisionResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override
-	public ExecuteRequestResponse getInstance(UnmarshallerContext context) {
-		return	ExecuteRequestResponseUnmarshaller.unmarshall(this, context);
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }
